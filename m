@@ -4,83 +4,130 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 72EB4C433EF
-	for <linux-phy@archiver.kernel.org>; Tue,  5 Jul 2022 22:49:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 25D35C43334
+	for <linux-phy@archiver.kernel.org>; Wed,  6 Jul 2022 01:33:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=G/uWHGlx/rTQZVlB4TSGfj+9Q+rsbX06DeuQVC27a0M=; b=iGM/A3HUTmAWcB
-	ZrnoBppFMX5N/X7e/3OVJdA0t8o237J0e4mjgQOEX/m5h8ViTEk+yNcAMw38OKntVp3yf1kEL8swt
-	qdpltkhguz8jRMgbMJyhWch4WQZdT/cCG9U/fvwlmf0Nm5zME9aWUWcVE0CKpOnGBq841JdwGla1z
-	JQPDJcBlPi7ub4o8KKkRJ/kPon7i7MkjN43T0kfuvRLvpJdi3HqXx0F94u7djpGlDUPiH1LdpqFc9
-	EoBsSeRJhExboelR2S5tk4SrfKsw28Vo1PnEiJbXB5KA3f+6Vdre8ZnnILWC2a9yhCSc8EGGUv8cX
-	Dpnaga2+pv8drp3X+hcw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:References:
+	In-Reply-To:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=EYLWfxIm70CgzamkAdnEc0XomC7WKxFdZPhHJqDTYyM=; b=i7SKAlZ/jbcnXEVewveKR/S8OG
+	hoSHDf35/o6pZ8Ax5hOYGg66H8HF7AhS0iIdDyJtpARdFhLYprpfZN6/8Jo1+VSkTfy9zM4B30EqU
+	N4wjcfR7u6V5iUEr9X1npDZfb36dqJrysOpQdDpSa7fchNNHazUinyj6IviKs0DBdguddJ5fJWCrK
+	5vMXoXSuDwCwRV/xsi3HaImNYJ1npqBE2dEZfAi+80/5i+ZFOtSQVazTgcHvTj6kaB/bwBKW6KqNG
+	+TmO0hIMDvLtlsZf3T//lecxiiIhWwxGs+m7PErV2vhg/dJET0eF4M2MH+T91YvLyRhcmMtLN6met
+	mCs9ALPg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o8rLz-003IZc-OZ; Tue, 05 Jul 2022 22:49:11 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1o8tvS-005EH7-C7; Wed, 06 Jul 2022 01:33:58 +0000
+Received: from mail-vi1eur05on2081.outbound.protection.outlook.com ([40.107.21.81] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o8fO1-00H219-AS
-	for linux-phy@bombadil.infradead.org; Tue, 05 Jul 2022 10:02:29 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
-	:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
-	Content-Type:Content-ID:Content-Description;
-	bh=LyZG814cLZUwWL6VWDbrXyUCApcvrncQqEb1pQY0yrA=; b=L8S0Ik61Nqn9Hf1ggD0j+RvXgW
-	r2xK9lbEhQr/Sqf8bPAfrmRrlYZ4PKYwsl+5k6nzRXAyBbtTLuh7rXkE7vZgOuoPmoagZEsE545Fx
-	Jjsp0qZOz4MCeRRcmVr/5BZbUQE1xr+QXAb5snu0/ewq7REQzS6A36GstqCbkvImH+SyAMv8TIgHW
-	HeLz6g0TRX3Q0urM88J/FeaWrBowtqTN1AemzqKbtrlS2P3TosYIKNSs2uNtDTd4WKE2pSxPiJzWf
-	6/7unp48SDjLtHJeJa3K2WM02mOK9+GjCtVUDllc/9YUmlLo+Ub6dtCGrKtk4HmMyEvwgAOkigacc
-	cBMS/FKQ==;
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
-	by desiato.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o8fBF-00HV7I-Dy
-	for linux-phy@lists.infradead.org; Tue, 05 Jul 2022 09:49:20 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id ED4026195D;
-	Tue,  5 Jul 2022 09:49:06 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 053BFC36AFB;
-	Tue,  5 Jul 2022 09:49:05 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1657014545;
-	bh=wcigz9eclfSlWhiIkb00jJF/UDQ56QYbAzKSS2z1YZ8=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=kS5qxQ0WIivvIBz1ZT5ed8ga5vBNVzH0vvcvbnikOB18zbQ3Ahg89WGoDp2Hbe4Bk
-	 DGXYq6wRxTa2OW0akV/vfoO28WjOHOmlTA9HKtJWfEJYE82znjn8ptSypyWH4gaV9O
-	 4ja90ZV6zmc10StWi9rbSP2aV5t/ukUBE19BnvwtHn0fr6X+uhd5A1EYbzC9MWSUtV
-	 64hcgg4ReNdLJvCj/HOhAAIyOptEZ9tfnwcy/pZG0tI3pKjiibuTHSskFguML9Cnbv
-	 p7ZTot6duCOe1YhBYJaA3pO/44+4Ww+hZJWLCFeCm+bpUW4eNT0Zg/dZ5j7WqBsou/
-	 JXo2cVUL8Md1Q==
-Received: from johan by xi.lan with local (Exim 4.94.2)
-	(envelope-from <johan+linaro@kernel.org>)
-	id 1o8fB3-0004Yf-TZ; Tue, 05 Jul 2022 11:49:05 +0200
-From: Johan Hovold <johan+linaro@kernel.org>
-To: Vinod Koul <vkoul@kernel.org>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
-Cc: Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <bjorn.andersson@linaro.org>,
-	Kishon Vijay Abraham I <kishon@ti.com>,
-	linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH 38/43] phy: qcom-qmp-pcie: drop pipe clock lane suffix
-Date: Tue,  5 Jul 2022 11:42:34 +0200
-Message-Id: <20220705094239.17174-39-johan+linaro@kernel.org>
-X-Mailer: git-send-email 2.35.1
-In-Reply-To: <20220705094239.17174-1-johan+linaro@kernel.org>
-References: <20220705094239.17174-1-johan+linaro@kernel.org>
+	id 1o8tvO-005EFc-HD; Wed, 06 Jul 2022 01:33:57 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=Xj+8LssfFAGyW79hqPSoMEwVvV+iKVZ2yclArPp5dirKY0EaL8P5P2HPbHhP9UA0zd9LowqWy5CH/48uK6MvDjN4pmsbz53hItpfQTUhX+ejBQx/rvGkDUYPc+IFQMm6WapuDR1hIxeSu2tRvbXRH7FBeffUmEjkaXo8lCfB9knlpiA05dxM4Q2LIALjRE7ZHD3yOiQUinNRtbPdfWwSlQt+4jgGxgEuKRV6UBnDwwC7LYlJyh0LuwTnGB9b8NXdYs0/ucCyIEnBRgn42zJQGe5hkq10taX5d9WrtsqOsZe27zxxx+cIEySXgyqMxPuPGaPsDtPBn08h1ftzPbZ6cA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=pg4VKaqA2QaZd/zcNlL9JGMIr9mW/5XH/vQuMNrGYGE=;
+ b=XKA0qZPGhnVIZxeqrA+C1SkEhqaP+gFcQ6BpXPoc6IeZGS8vKcQeJQvTtAnJ3r63/+6NhvxuqB0anxX1A04f4H9sdTB0oKhLufwVyFUu4i3fo1Wl9lY51m08CDgF8M+1x1j2BlyxUK7xlGrfJMsuBVBnBZbD6CjtrgoQTpFjnQAlsfuwil+Mu2205r6f2K23RhKgWZqJBF9aKD3k8eGEsPZHzuyCA1cYs/Ru+lTRLU0UwV8g/T9fvtIi3yeAzpgM2fej7gSk0quD5nGXzvH8IgHLZu3FtcjxfleABoLwaahhPm9oJoe4VxQcUEQa1aTGg4WF24/7nxWeDyDC3u/Gew==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=pg4VKaqA2QaZd/zcNlL9JGMIr9mW/5XH/vQuMNrGYGE=;
+ b=AT0tQ/bzC58ex+Y3xW6BsbEiXKlkyLrRYWFVYcjVVkS/XEac9GHwUL/dO4Xl/uE7njOPPixaqsrq+YThOTGRYEB1a4IgMweH1SJaRxC6qZjSU8OfbrcD3f2OkO+GF8k51qKagWzyKjPs1cm2t+FYZJh+ZaofOBrtMv9Sez8wOuo=
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from AM7PR04MB7046.eurprd04.prod.outlook.com (2603:10a6:20b:113::22)
+ by PAXPR04MB8407.eurprd04.prod.outlook.com (2603:10a6:102:1c7::21) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5395.21; Wed, 6 Jul
+ 2022 01:33:49 +0000
+Received: from AM7PR04MB7046.eurprd04.prod.outlook.com
+ ([fe80::416e:6e99:bac6:d3a9]) by AM7PR04MB7046.eurprd04.prod.outlook.com
+ ([fe80::416e:6e99:bac6:d3a9%5]) with mapi id 15.20.5395.021; Wed, 6 Jul 2022
+ 01:33:49 +0000
+Message-ID: <e39faddb23c80a5cfa600109ae2d20335435c234.camel@nxp.com>
+Subject: Re: [PATCH v3 3/3] phy: freescale: Add i.MX8qm Mixel LVDS PHY
+ support
+From: Liu Ying <victor.liu@nxp.com>
+To: Vinod Koul <vkoul@kernel.org>
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, 
+	kishon@ti.com, robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org, 
+	shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de, 
+	festevam@gmail.com, linux-imx@nxp.com, krzysztof.kozlowski@linaro.org
+In-Reply-To: <YsP8TYgA7SU72/xE@matsya>
+References: <20220620123854.1138028-1-victor.liu@nxp.com>
+	 <20220620123854.1138028-4-victor.liu@nxp.com> <YsP8TYgA7SU72/xE@matsya>
+Date: Tue, 05 Jul 2022 23:10:29 +0800
+X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
+X-ClientProxiedBy: SG2PR04CA0201.apcprd04.prod.outlook.com
+ (2603:1096:4:187::23) To AM7PR04MB7046.eurprd04.prod.outlook.com
+ (2603:10a6:20b:113::22)
 MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 0cdf0049-8997-4765-0c29-08da5eef932f
+X-MS-TrafficTypeDiagnostic: PAXPR04MB8407:EE_
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: 	A71o1C9KkoF4unqvwCdqSBYzaRDAWYhRP28MO1BQqtyo79MyuQUA6ziP9gTdIVxc6vHyTbLMnDU1uu0B2twPe6ObneAJfAppOESufV3rc5DWcwW7A9wY1ffxTGsVIUAEcWfcDdrUJPVhXguGShXTp9GM+saNQVbNSqA4d7MmUOEGZ2ZpXxt/I7FYa+d6XeCDegFLr8nWIvdAs5FumYsIyZ+zsgJg2RGvATb5xUJgRb6WH75rAUCv4PuvSOu92bHP7X2osylWbZ3luNNXrAdaY2wMyrg01E3uVgmeKAfCkJH9wTEfAxARbmd9eKSuoU0M24o+c5pgjqnC6niypVpIxyy/0CT2Zk6nT4UAS+1/Wa4aEyLYLeCBx1okyqz2bhxODr3QNBH0Fk7M93gbnBzW2aE9cfsb2XDq2oc4QJn/KztdNkWI1lKpYuQmAl4tR3NOWg3dd+pqQgaM5vkqouzkluB66iQtBmr4T4BQNHb9/nf9FKQyR76EXrciq0d1j7+H8grogCt/UHh2cIA/bjNuNiHQWRqjJ5oX0iHDQYkbyEHb8L0CfQGPwjPn1v/0oaGUO+3VxIst4qcziwC/v25J5gNSFs4U8QPMmulLJo4Xo/kTuEsb4pXojlVuyTt+mQ0MuaLgXoKt7riWJiD+HuuSPGnOq0zF/rV2MzsdWMwF3R/p2yeM6ok8KimCLAwTB2imwVo12gjOeIfCe84NSskyEDpjpEr9GiWu3F5pqP8gwcyfyUZVxS3t2c5+s5BFF6aEkIGt/LRzEp81poBho4mX4Yi7fbuoA8QHzeUFSvWX1qUjiwjZdszf4IC9Ql8nxhydySk9IsrBsqnBMbO40lc05A==
+X-Forefront-Antispam-Report: 	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM7PR04MB7046.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230016)(4636009)(346002)(39860400002)(376002)(396003)(366004)(136003)(6506007)(36756003)(6916009)(53546011)(52116002)(86362001)(38100700002)(38350700002)(6666004)(316002)(8676002)(2906002)(83380400001)(41300700001)(4326008)(6486002)(5660300002)(66476007)(66556008)(6512007)(26005)(66946007)(186003)(8936002)(7416002)(478600001)(2616005)(99106002);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: 	=?utf-8?B?bzZDMHBHelpKajFPVmpmMmRhSGxBRUtGRHJsZmJRSUpsWnJCd3MvdXBjL09T?=
+ =?utf-8?B?OTF1d3BReFlhSnE4bnNseW5iNGgzb2toRDRUYTJsemQ3V09QWFdBZzNMOXBr?=
+ =?utf-8?B?c01EUWhjYW42c3ZUWDk5OSsrUWdVQkg0ekFmcVdsKzMvVTBxVHV0aDAzbGZ6?=
+ =?utf-8?B?R2VKVTFoT1g0MENiclZRODAwQUxuUHkvSmxFampkS1FJOUhFS1d4Zi9CQ3Bl?=
+ =?utf-8?B?ZzlyTHpvQzhwcjhIaHF2M3hCY1lmS0VpSFEzUnd1V0h0QlFOUU1sbXVyd01k?=
+ =?utf-8?B?bm9ScjM1Z2Z2TVBjNFJTdWtXTGZxblhJYTEyalZEUmZQWTFBa2Zwd280VmQ4?=
+ =?utf-8?B?c0dCbk52NGpTQUdhbUtCdVpoNDhmVGJqRFRlR1FrWCsxdjRiMnRWdjJGS0RQ?=
+ =?utf-8?B?Rnc0a0E0am9EVmloNk1aeldUaUhIeFM4SHR4REgxc1I1a2ZIVVFKQk02U2Rt?=
+ =?utf-8?B?VG9MRDBWcnpOZzdUVjk0b0xKa2lkcnkxSDhRYnc0cDdCK015K2RweXZXck51?=
+ =?utf-8?B?blhTVkNhazlZeFFzOFAxRDlibWZGSGhDaW9HbVlpWUZJdHh1RVNYTmVGTU1T?=
+ =?utf-8?B?NnhSa0tXZ1FrRkoxUGRFa1NiM0FwWWVYTERxeGsyMU52a04vcjV0MU5pRzls?=
+ =?utf-8?B?ZHM3aWVvaFJiSnFYak5ja25FVjRMMGJqdnhLeTdPcFVscUd4b3NwSFZRUlcz?=
+ =?utf-8?B?WEdnVlBkL2haRFNwcjVuSlUzV1B4TmxQbTlJN0ZYSVBRQlBwcnpJbDZvZ2pU?=
+ =?utf-8?B?TXBFWE5LQXV6SUNmVEd6c1F5TXIva1h4Smhjc0hydlRZMkRWQ0ZmbU02ekRi?=
+ =?utf-8?B?WjcvM0NMTHByQnJoVTNuQWlqdVhJM1grNTdvUU9tSFR1VnQzRnpUek9hM0Fr?=
+ =?utf-8?B?c2JOZHJqUk9uaDZaMVNsYmFiK0NSVmdtekxONERXV0V3NHM4MUNUeXlYeHNk?=
+ =?utf-8?B?czFkNVFGY25KWGVFdHJkNkdwdWw5dE1PMkE2MTJqRmIwY0FxMTR2bFkvTDJF?=
+ =?utf-8?B?amtXNHVrRUJCUzZIeTdpYUUvUU4wMHdPTVZac0wzaFhDTUxKQ2Fib1RNNmt0?=
+ =?utf-8?B?RXFZbDUxSXFIeUFCekpYNk5pNDhwUXZDc2dqUUlVRlZreFVyV0ttZGJLbHp5?=
+ =?utf-8?B?R2ZhTmRFaVBkVjJYSVJYbkNLVVNCenU2U2lSMXlXNTl2WTVuZkI0cE5CUWtJ?=
+ =?utf-8?B?OXhIb1dXd2VOblpZREUwNHVwYWdHZXJTQU5xaG5odElxVks2Z3JXR2ljb1NY?=
+ =?utf-8?B?b0xJZUhYZ2kyUkptRURUeVJXVUhUMWhSdEZQQkhBeElheEZ4N2xTeC9YV0hh?=
+ =?utf-8?B?WHVyYTAvbmtkWnhXQjhtK1BXcVVzZFJZNWdSdlV0a1NzempWRTZJeTYrai9J?=
+ =?utf-8?B?NEVaZ3lJMWYvSE1GWGpYYUFEWmY4NVIxL1ZtcmRObVFleW1tL2VLV28rdlpy?=
+ =?utf-8?B?VHJ4OUtLbit3WWdFRWxRa0lRR1dseEE0S2xieXUvSWVzbVhicDZxenh4MmZZ?=
+ =?utf-8?B?eHV3REtsMDByMDRvWUZObHdUQ3lhNGpvemI2Vk9EOCtnV0N3NHlDVlg5VUw0?=
+ =?utf-8?B?RUt3bFRtalVrazBBQ1pteEVlakhoQmtXWEJ2OEJSdEFNUUZHL1dPSWJ4WmE4?=
+ =?utf-8?B?VEdqRjVtcDdpR2lvTm9nb2tYNVJSWm9WYjVYK2libnNzd21mS2hiSVBhdmZB?=
+ =?utf-8?B?V1ZYb0d2UWlIcXZrME9leVJORUw3NFQwZEpuRzRlOFZxTHdNVFM3WmZLU2x6?=
+ =?utf-8?B?Y1Z4dUpCc1pGOGlqWHhRcmtITUFYbHVTdWdvNEVyanFKV1Zia2p5V3Q1a3dt?=
+ =?utf-8?B?NDdPcXQwaUdDRVlsUWtWSWhmajZYZjVTcFVwczZhbUVZVkF2ZmJab2FVbWk2?=
+ =?utf-8?B?MmloU2NuYmdkcUxoMmpaVHZnY0EwaDg3RU5mZlk3cEpqYXZtWkcvbGdGZ1hO?=
+ =?utf-8?B?QnR4dnpEWWZEU1N0R0l1RmhZZTk0akJDL01STDRlYmgwZFV5QS9EZE1zcW55?=
+ =?utf-8?B?OTI1UTZ1L2YvN0orODc1YUQrWW9hYmZPdC80a3JhY3NWeTArR3JpTUtXVmFu?=
+ =?utf-8?B?WkhuazcxUjJETXpQL21WTUFHUnVFVEZGcGJNWFljcHpoY2lTVzhhdE5VNFdH?=
+ =?utf-8?Q?XrNpzZAvD+enYQWLjE0hXCSI7?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 0cdf0049-8997-4765-0c29-08da5eef932f
+X-MS-Exchange-CrossTenant-AuthSource: AM7PR04MB7046.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 06 Jul 2022 01:33:48.8999
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: WJM+/F15JSWLoRgpw/PrQWSgsqBu6aYU8kVP1YpnKWukC/YshCYBe7x4x3DSc0Ko02+vvQKWaWio74NKaKIbjg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PAXPR04MB8407
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220705_104918_304846_193A0A1D 
-X-CRM114-Status: GOOD (  12.16  )
+X-CRM114-CacheID: sfid-20220705_183355_025608_627F1D80 
+X-CRM114-Status: GOOD (  29.63  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,38 +144,286 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The pipe clock is defined in the "lane" node so there's no need to keep
-adding a redundant lane-number suffix to the clock name.
+On Tue, 2022-07-05 at 14:24 +0530, Vinod Koul wrote:
+> On 20-06-22, 20:38, Liu Ying wrote:
+> > Add Freescale i.MX8qm LVDS PHY support.
+> > The PHY IP is from Mixel, Inc.
+> > 
+> > Signed-off-by: Liu Ying <victor.liu@nxp.com>
+> > ---
+> > v2->v3:
+> > * No change.
+> > 
+> > v1->v2:
+> > * Drop 'This patch' from commit message. (Krzysztof)
+> > * Make dev_err_probe() function calls as one-liners. (Krzysztof)
+> > * Drop unnecessary debug messages. (Krzysztof)
+> > * Get phy_ref_clk without name specified due to 'clock-names'
+> > dropped from
+> >   dt-binding.
+> > 
+> >  drivers/phy/freescale/Kconfig                 |   9 +
+> >  drivers/phy/freescale/Makefile                |   1 +
+> >  .../phy/freescale/phy-fsl-imx8qm-lvds-phy.c   | 440
+> > ++++++++++++++++++
+> >  3 files changed, 450 insertions(+)
+> >  create mode 100644 drivers/phy/freescale/phy-fsl-imx8qm-lvds-phy.c
+> > 
+> > diff --git a/drivers/phy/freescale/Kconfig
+> > b/drivers/phy/freescale/Kconfig
+> > index f9c54cd02036..853958fb2c06 100644
+> > --- a/drivers/phy/freescale/Kconfig
+> > +++ b/drivers/phy/freescale/Kconfig
+> > @@ -8,6 +8,15 @@ config PHY_FSL_IMX8MQ_USB
+> >  	select GENERIC_PHY
+> >  	default ARCH_MXC && ARM64
+> >  
+> > +config PHY_MIXEL_LVDS_PHY
+> > +	tristate "Mixel LVDS PHY support"
+> > +	depends on OF
+> > +	select GENERIC_PHY
+> > +	select REGMAP_MMIO
+> > +	help
+> > +	  Enable this to add support for the Mixel LVDS PHY as found
+> > +	  on NXP's i.MX8qm SoC.
+> > +
+> >  config PHY_MIXEL_MIPI_DPHY
+> >  	tristate "Mixel MIPI DSI PHY support"
+> >  	depends on OF && HAS_IOMEM
+> > diff --git a/drivers/phy/freescale/Makefile
+> > b/drivers/phy/freescale/Makefile
+> > index 3518d5dbe8a7..cedb328bc4d2 100644
+> > --- a/drivers/phy/freescale/Makefile
+> > +++ b/drivers/phy/freescale/Makefile
+> > @@ -1,5 +1,6 @@
+> >  # SPDX-License-Identifier: GPL-2.0-only
+> >  obj-$(CONFIG_PHY_FSL_IMX8MQ_USB)	+= phy-fsl-imx8mq-usb.o
+> > +obj-$(CONFIG_PHY_MIXEL_LVDS_PHY)	+= phy-fsl-imx8qm-lvds-phy.o
+> >  obj-$(CONFIG_PHY_MIXEL_MIPI_DPHY)	+= phy-fsl-imx8-mipi-dphy.o
+> >  obj-$(CONFIG_PHY_FSL_IMX8M_PCIE)	+= phy-fsl-imx8m-pcie.o
+> >  obj-$(CONFIG_PHY_FSL_LYNX_28G)		+= phy-fsl-lynx-28g.o
+> > diff --git a/drivers/phy/freescale/phy-fsl-imx8qm-lvds-phy.c
+> > b/drivers/phy/freescale/phy-fsl-imx8qm-lvds-phy.c
+> > new file mode 100644
+> > index 000000000000..37f77115ddab
+> > --- /dev/null
+> > +++ b/drivers/phy/freescale/phy-fsl-imx8qm-lvds-phy.c
+> > @@ -0,0 +1,440 @@
+> > +// SPDX-License-Identifier: GPL-2.0+
+> > +/*
+> > + * Copyright 2017-2020,2022 NXP
+> > + */
+> > +
+> > +#include <linux/bitfield.h>
+> > +#include <linux/bits.h>
+> > +#include <linux/clk.h>
+> > +#include <linux/mfd/syscon.h>
+> > +#include <linux/module.h>
+> > +#include <linux/of.h>
+> > +#include <linux/phy/phy.h>
+> > +#include <linux/platform_device.h>
+> > +#include <linux/pm_runtime.h>
+> > +#include <linux/regmap.h>
+> > +
+> > +#define REG_SET		0x4
+> > +#define REG_CLR		0x8
+> > +
+> > +#define PHY_CTRL	0x0
+> > +#define  M_MASK		GENMASK(18, 17)
+> > +#define  M(n)		FIELD_PREP(M_MASK, (n))
+> > +#define  CCM_MASK	GENMASK(16, 14)
+> > +#define  CCM(n)		FIELD_PREP(CCM_MASK, (n))
+> > +#define  CA_MASK	GENMASK(13, 11)
+> > +#define  CA(n)		FIELD_PREP(CA_MASK, (n))
+> > +#define  TST_MASK	GENMASK(10, 5)
+> > +#define  TST(n)		FIELD_PREP(TST_MASK, (n))
+> > +#define  CH_EN(id)	BIT(3 + (id))
+> > +#define  NB		BIT(2)
+> > +#define  RFB		BIT(1)
+> > +#define  PD		BIT(0)
+> > +
+> > +/* Power On Reset(POR) value */
+> > +#define  CTRL_RESET_VAL	(M(0x0) | CCM(0x4) | CA(0x4) |
+> > TST(0x25))
+> > +
+> > +/* PHY initialization value and mask */
+> > +#define  CTRL_INIT_MASK	(M_MASK | CCM_MASK | CA_MASK | TST_MASK
+> > | NB | RFB)
+> > +#define  CTRL_INIT_VAL	(M(0x0) | CCM(0x5) | CA(0x4) |
+> > TST(0x25) | RFB)
+> > +
+> > +#define PHY_STATUS	0x10
+> > +#define  LOCK		BIT(0)
+> > +
+> > +#define PHY_NUM		2
+> > +
+> > +#define MIN_CLKIN_FREQ	25000000
+> 
+> this is 25MHz, so lets write as 25 * MEGA (see units.h)
 
-Drop the lane suffix from the pipe clock name, but continue supporting
-the legacy name as a fall back.
+Will do.
 
-Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
----
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 8 ++++++--
- 1 file changed, 6 insertions(+), 2 deletions(-)
+> 
+> > +#define MAX_CLKIN_FREQ	165000000
+> 
+> here too
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-index 385ea3d8de08..254ad25591b9 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-@@ -2210,8 +2210,12 @@ int qcom_qmp_phy_pcie_create(struct device *dev, struct device_node *np, int id,
- 	if (!qphy->pcs_misc)
- 		dev_vdbg(dev, "PHY pcs_misc-reg not used\n");
- 
--	snprintf(prop_name, sizeof(prop_name), "pipe%d", id);
--	qphy->pipe_clk = devm_get_clk_from_child(dev, np, prop_name);
-+	qphy->pipe_clk = devm_get_clk_from_child(dev, np, "pipe");
-+	if (IS_ERR(qphy->pipe_clk) && PTR_ERR(qphy->pipe_clk) != -EPROBE_DEFER) {
-+		/* Fall back to the legacy pipe clock name. */
-+		snprintf(prop_name, sizeof(prop_name), "pipe%d", id);
-+		qphy->pipe_clk = devm_get_clk_from_child(dev, np, prop_name);
-+	}
- 	if (IS_ERR(qphy->pipe_clk)) {
- 		return dev_err_probe(dev, PTR_ERR(qphy->pipe_clk),
- 				     "failed to get lane%d pipe clock\n", id);
--- 
-2.35.1
+Will do.
+
+> > +
+> > +#define PLL_LOCK_SLEEP		10
+> > +#define PLL_LOCK_TIMEOUT	1000
+> > +
+> > 
+
+[...]
+
+> > +
+> > +static int mixel_lvds_phy_power_off(struct phy *phy)
+> > +{
+> > +	struct mixel_lvds_phy_priv *priv = dev_get_drvdata(phy-
+> > >dev.parent);
+> > +	struct mixel_lvds_phy *lvds_phy = phy_get_drvdata(phy);
+> > +
+> > +	mutex_lock(&priv->lock);
+> > +	regmap_write(priv->regmap, PHY_CTRL + REG_CLR, CH_EN(lvds_phy-
+> > >id));
+> > +	mutex_unlock(&priv->lock);
+> 
+> No check for slave here?
+
+I don't worry too much about separate channel power off. But, it should
+be fine to power off the two channels together if the companion is a
+slave phy. So, will check for slave here.
+
+> 
+> > +
+> > +	clk_disable_unprepare(priv->phy_ref_clk);
+> > +
+> > +	return 0;
+> > +}
+> > +
+> > +static int mixel_lvds_phy_configure(struct phy *phy,
+> > +				    union phy_configure_opts *opts)
+> > +{
+> > +	struct mixel_lvds_phy_priv *priv = dev_get_drvdata(phy-
+> > >dev.parent);
+> > +	struct phy_configure_opts_lvds *cfg = &opts->lvds;
+> > +	int ret;
+> > +
+> > +	ret = clk_set_rate(priv->phy_ref_clk, cfg-
+> > >differential_clk_rate);
+> > +	if (ret)
+> > +		dev_err(&phy->dev,
+> > +			"failed to set PHY reference clock rate(%lu):
+> > %d\n",
+> 
+> this can fit in a single line (100 chars is okay)
+
+Will do.
+
+> 
+> > +			cfg->differential_clk_rate, ret);
+> > +
+> > +	return ret;
+> > +}
+> > +
+> > 
+
+[...]
+
+> > +static int mixel_lvds_phy_validate(struct phy *phy, enum phy_mode
+> > mode,
+> > +				   int submode, union
+> > phy_configure_opts *opts)
+> > +{
+> > +	struct mixel_lvds_phy_priv *priv = dev_get_drvdata(phy-
+> > >dev.parent);
+> > +	struct mixel_lvds_phy *lvds_phy = phy_get_drvdata(phy);
+> > +	struct phy_configure_opts_lvds *cfg = &opts->lvds;
+> > +	int ret = 0;
+> > +
+> > +	if (mode != PHY_MODE_LVDS) {
+> > +		dev_err(&phy->dev, "invalid PHY mode(%d)\n", mode);
+> > +		return -EINVAL;
+> > +	}
+> > +
+> > +	if (cfg->bits_per_lane_and_dclk_cycle != 7 &&
+> > +	    cfg->bits_per_lane_and_dclk_cycle != 10) {
+> > +		dev_err(&phy->dev, "invalid bits per data lane(%u)\n",
+> > +			cfg->bits_per_lane_and_dclk_cycle);
+> > +		return -EINVAL;
+> > +	}
+> > +
+> > +	if (cfg->lanes != 4 && cfg->lanes != 3) {
+> > +		dev_err(&phy->dev, "invalid data lanes(%u)\n", cfg-
+> > >lanes);
+> > +		return -EINVAL;
+> > +	}
+> > +
+> > +	if (cfg->differential_clk_rate < MIN_CLKIN_FREQ ||
+> > +	    cfg->differential_clk_rate > MAX_CLKIN_FREQ) {
+> > +		dev_err(&phy->dev, "invalid differential clock
+> > rate(%lu)\n",
+> > +			cfg->differential_clk_rate);
+> > +		return -EINVAL;
+> > +	}
+> > +
+> > +	mutex_lock(&priv->lock);
+> > +	/* cache configuration set of our own for check */
+> > +	memcpy(&lvds_phy->cfg, cfg, sizeof(*cfg));
+> > +
+> > +	if (cfg->is_slave) {
+> > +		ret = mixel_lvds_phy_check_slave(phy);
+> > +		if (ret)
+> > +			dev_err(&phy->dev,
+> > +				"failed to check slave PHY: %d\n",
+> > ret);
+> 
+> very ugly, single line pls
+
+Will do.
+
+> 
+> > +	}
+> > +	mutex_unlock(&priv->lock);
+> > +
+> > +	return ret;
+> > +}
+> > +
+> > 
+
+[...]
+
+> > +
+> > +static int mixel_lvds_phy_reset(struct device *dev)
+> > +{
+> > +	struct mixel_lvds_phy_priv *priv = dev_get_drvdata(dev);
+> > +	int ret;
+> > +
+> > +	ret = pm_runtime_get_sync(dev);
+> 
+> pm_runtime_resume_and_get() pls
+
+Will do.
+
+> 
+> > +	if (ret < 0) {
+> > +		dev_err(dev, "failed to get PM runtime: %d\n", ret);
+> > +		return ret;
+> > +	}
+> > +
+> > +	regmap_write(priv->regmap, PHY_CTRL, CTRL_RESET_VAL);
+> > +
+> > +	ret = pm_runtime_put(dev);
+> 
+> this seems to be done only around reset, why not in on/off method?
+
+The reason is that phy-core.c does that (See phy_pm_runtime_get_sync
+and phy_pm_runtime_put).
+
+Thanks,
+Liu Ying
 
 
 -- 
