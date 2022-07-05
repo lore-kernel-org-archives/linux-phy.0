@@ -4,83 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C6AF2C43334
-	for <linux-phy@archiver.kernel.org>; Tue,  5 Jul 2022 12:19:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7C937C433EF
+	for <linux-phy@archiver.kernel.org>; Tue,  5 Jul 2022 12:43:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SgE3c+E4FbsUEsmR0n7nL+WTqBErtGa0/BXLHip69EM=; b=L0NE8uIjSEXetQ
-	WgMV9CT+auuA0v0eVxVjw7ePsxvzHzVjxH9AfA/+u8MM84M73FpG7h33FF1ScZbiumUipmflvtM1g
-	ob6rFtTtug6iy6G4JuxEvOVMKrkf7hBgaOCB0yXn+7bFAWjDDrAe6DpSECYlPilRTvnDJUuaMlPeb
-	aBc6QZEywXNQ6Rq3+3Ez/Unh+EvDryUkhisUv8Zy/JiYLJaT1qXOo+grGuUVwSF7x2dycVU7vrHSp
-	8jBhisQbtv93LVWhNWLNfsQgSCK84g638vb/rcC1XwUnuhyLqGt3yNISwEANNkRXp6zrp4olF0zAi
-	WN8a4fwsMOt5oSQys5cg==;
+	List-Owner; bh=pcLm2wWu1HjSfysB0eQ9X1a895dCmMG9akrcFODdwgY=; b=RyT/DhB2zYRHFc
+	tw0aCG7PbSRQ3H3oCCqmcN/a+Alz5AtVf1O9ndG81atANGKNNGDvwQ5ODX0nO3Ehq1blYOPHI0R8f
+	Zi513BBr2+WPgDai91QLa4JEgZt43CiSwx7EMTEO0sgU5tXb/4LEf21664YN3F+T2DdHuYjj1r6PY
+	pcCZ31T61/eRyZalmc+BSCOHZEvrt/0cSmRIWGKuGKIlGk74e/emXfxPUBMygV+LN/1ssBtjfy0ZM
+	7hwDhyziHZewAoy035uSHZqlDxgcvihD5nAKXZHTrv1Z7Q/IpdJgvWjdhG7/XDrGe2W2WS+GOi10P
+	/GLlMKUyVTzrgGzp113w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o8hWg-0006zd-3j; Tue, 05 Jul 2022 12:19:34 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1o8htR-000FaQ-9d; Tue, 05 Jul 2022 12:43:05 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o8fOB-00H219-5w
-	for linux-phy@bombadil.infradead.org; Tue, 05 Jul 2022 10:02:39 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
-	:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
-	Content-Type:Content-ID:Content-Description;
-	bh=Lqy1nseGPV/bM14nsynNpEENe8OR6MfzEH7cyCF0wKs=; b=RLeqdsYgo5GD9LFFN2HyXQq3gq
-	+wuhoOWNCdcUpwYpDoMkYW+5/U4F6wGcBcYsjbh+d9M4tt/IOeQVsJot0nASYhYJAgVqxgXSKekFr
-	8gnJpRyh1gw+Azeg4YgEdj9IrLZzudn6dVM9/M9wFpLHhn9WVDgJkLVXWNaXQC/wtEDBOKQP9BUmi
-	FLndYqQIb3XNmU1mGieNLg/flQC+5STiCd++MVxyWN/NjfgKd7nBXtc59N4omZPmLwBOq5cL9Tchk
-	FeFJyEjle0YwKxtANsq1BREE+zCGLFeCRcgUOUN8pY4IP/dYD4ewkK8iUf3HJUreujPlO9ZA8lurh
-	UsY7MEog==;
-Received: from ams.source.kernel.org ([145.40.68.75])
-	by desiato.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o8fB9-00HV5c-Ce
-	for linux-phy@lists.infradead.org; Tue, 05 Jul 2022 09:49:15 +0000
+	id 1o8htO-000FZk-JR
+	for linux-phy@lists.infradead.org; Tue, 05 Jul 2022 12:43:03 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id ACD97B81673;
-	Tue,  5 Jul 2022 09:49:04 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1F5D8C341CB;
-	Tue,  5 Jul 2022 09:49:02 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 1D4696066C;
+	Tue,  5 Jul 2022 12:43:02 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 750D3C341C7;
+	Tue,  5 Jul 2022 12:43:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1657014542;
-	bh=1ywPuUGGmVk88S12Lk0XJfL/+Jy0pPRKtjm1IVstW78=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=c6KZVuLfU3aIE/1QuMLiqqYH1Zkodqo3a9BBQvcecMYItrVqRyyj5npEVkwaTOfjN
-	 2UoZAJUyrT6/ZAkZUs5I4WRXWkqEvEYKV1bX43mpsCEMNIPhGDaW7w2TcR0PFHk/hW
-	 0KbmfsY8AZIkGDzOvCbrv+yzyW+L+OZtjzVUgVP5MliHCFhthh83u2zWhpl4nrO5R3
-	 z5cKmi+4hXBMIPbx6gCcgZnAKwFCLiwISIBaLIz6Mx5QuJFBTuKMCOlCtcwqvSi8ef
-	 d7Ac1LSLKZ5iluof8MUzJjCzbXBfv6KmCRkxcO67QHK/ZEtCd6xdjOzuRo5qse/AaI
-	 G9IOu60LIkXyQ==
+	s=k20201202; t=1657024981;
+	bh=R3LFkiD0sDZpLAm8EjSt1H2PdJiaXoZldhKa+Ii5tH0=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=fi5Wu9DOGA5Elh+LCgd1aNY4sGDvKNuJ439ZQ04PvCl9vmypJwPyle3JeU3Jekrws
+	 S0NOSKH783XgjHTfmwltbMHqZC/Zw7NxqH8CSWlseTp5eiHrtoUGvic3L1aLYV+yJE
+	 jvBDZ92N8QklsbqKEaqeEpOEKvais/o6HS9z/nafKhqRDDLwk99ITE9DdGd8+92W3l
+	 FGng+cdGGRFuJDP75YlyWDnTrFGaUheX3qJx5XYPMBH65r+Qh1CZjIhYdWSH1wZrNj
+	 KWDakkfHyZE3y+LVkFtgvXhoGKXXHt2Iz4X+d9Znt5/ToSMhYio5bkQyts7eORuEXS
+	 jBYXGhwsT+dzg==
 Received: from johan by xi.lan with local (Exim 4.94.2)
-	(envelope-from <johan+linaro@kernel.org>)
-	id 1o8fB0-0004Wv-Mv; Tue, 05 Jul 2022 11:49:02 +0200
-From: Johan Hovold <johan+linaro@kernel.org>
-To: Vinod Koul <vkoul@kernel.org>,
+	(envelope-from <johan@kernel.org>)
+	id 1o8htN-0006q0-GA; Tue, 05 Jul 2022 14:43:02 +0200
+Date: Tue, 5 Jul 2022 14:43:01 +0200
+From: Johan Hovold <johan@kernel.org>
+To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Cc: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>,
 	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
-Cc: Andy Gross <agross@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Andy Gross <agross@kernel.org>,
 	Bjorn Andersson <bjorn.andersson@linaro.org>,
 	Kishon Vijay Abraham I <kishon@ti.com>,
-	linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH 02/43] dt-bindings: phy: qcom,qmp: sort compatible strings
-Date: Tue,  5 Jul 2022 11:41:58 +0200
-Message-Id: <20220705094239.17174-3-johan+linaro@kernel.org>
-X-Mailer: git-send-email 2.35.1
-In-Reply-To: <20220705094239.17174-1-johan+linaro@kernel.org>
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 16/43] dt-bindings: phy: qcom,qmp-pcie: drop unused
+ vddp-ref-clk supply
+Message-ID: <YsQx1SMEsMnmoQ2d@hovoldconsulting.com>
 References: <20220705094239.17174-1-johan+linaro@kernel.org>
+ <20220705094239.17174-17-johan+linaro@kernel.org>
+ <d3a49c05-0fd0-920e-bd0a-f821e8e27b8b@linaro.org>
+ <YsQkmUVla9+CDYly@hovoldconsulting.com>
+ <8d739c84-ba61-a030-ea8a-63a3f45c642c@linaro.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <8d739c84-ba61-a030-ea8a-63a3f45c642c@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220705_104912_318865_2842A791 
-X-CRM114-Status: GOOD (  10.35  )
+X-CRM114-CacheID: sfid-20220705_054302_714654_266AF6EA 
+X-CRM114-Status: GOOD (  21.27  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,66 +86,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Sort the compatible strings alphabetically to make it easier to look up
-entries and add new ones.
+On Tue, Jul 05, 2022 at 01:59:26PM +0200, Krzysztof Kozlowski wrote:
+> On 05/07/2022 13:46, Johan Hovold wrote:
+> >> It's okay to copy existing bindings which are applicable and then in
+> >> separate patch deprecate things or remove pieces which are not correct.
+> >> But all this in assumption that the first copy already selected only
+> >> applicable parts.
+> > 
+> > But how would you be able to tell what parts I left out from the
+> > original copy 
+> 
+> They are obvious and immediately visible. I see old bindings and new
+> bindings - no troubles to compare. I review new bindings - everything in
+> place.
 
-Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
----
- .../devicetree/bindings/phy/qcom,qmp-phy.yaml        | 12 ++++++------
- 1 file changed, 6 insertions(+), 6 deletions(-)
+Heh, with all these conditionals in place that may be harder than it
+sounds.
 
-diff --git a/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
-index f74b3bf34a23..38e0ade01687 100644
---- a/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
-@@ -38,15 +38,18 @@ properties:
-       - qcom,sdm845-qmp-ufs-phy
-       - qcom,sdm845-qmp-usb3-phy
-       - qcom,sdm845-qmp-usb3-uni-phy
-+      - qcom,sdx55-qmp-pcie-phy
-+      - qcom,sdx55-qmp-usb3-uni-phy
-+      - qcom,sdx65-qmp-usb3-uni-phy
-       - qcom,sm6115-qmp-ufs-phy
-       - qcom,sm6350-qmp-ufs-phy
-       - qcom,sm8150-qmp-ufs-phy
-       - qcom,sm8150-qmp-usb3-phy
-       - qcom,sm8150-qmp-usb3-uni-phy
--      - qcom,sm8250-qmp-ufs-phy
-       - qcom,sm8250-qmp-gen3x1-pcie-phy
-       - qcom,sm8250-qmp-gen3x2-pcie-phy
-       - qcom,sm8250-qmp-modem-pcie-phy
-+      - qcom,sm8250-qmp-ufs-phy
-       - qcom,sm8250-qmp-usb3-phy
-       - qcom,sm8250-qmp-usb3-uni-phy
-       - qcom,sm8350-qmp-ufs-phy
-@@ -56,9 +59,6 @@ properties:
-       - qcom,sm8450-qmp-gen4x2-pcie-phy
-       - qcom,sm8450-qmp-ufs-phy
-       - qcom,sm8450-qmp-usb3-phy
--      - qcom,sdx55-qmp-pcie-phy
--      - qcom,sdx55-qmp-usb3-uni-phy
--      - qcom,sdx65-qmp-usb3-uni-phy
- 
-   reg:
-     minItems: 1
-@@ -277,12 +277,12 @@ allOf:
-           contains:
-             enum:
-               - qcom,msm8998-qmp-ufs-phy
-+              - qcom,sc8180x-qmp-ufs-phy
-+              - qcom,sc8280xp-qmp-ufs-phy
-               - qcom,sdm845-qmp-ufs-phy
-               - qcom,sm6350-qmp-ufs-phy
-               - qcom,sm8150-qmp-ufs-phy
-               - qcom,sm8250-qmp-ufs-phy
--              - qcom,sc8180x-qmp-ufs-phy
--              - qcom,sc8280xp-qmp-ufs-phy
-     then:
-       properties:
-         clocks:
--- 
-2.35.1
+> I don't want to review old code, inapplicable code. The patch I am
+> reviewing (the one doing the split) must bring correct bindings, except
+> these few differences like deprecated stuff.
 
+Sure, I get that. But this very patch is an example of why I tried to
+remove things explicitly instead folding this into the original patch
+and risking it not being noticed.
+
+It's not always obvious what is applicable and what is not, especially
+when the old schema is in the state it is.
+
+> > unless I first do the split and then explicitly remove
+> > things that were presumably *never* applicable and just happened to be
+> > added because all bindings where combined in one large mess of a schema?
+
+So you suggest we keep this regulator for all PHY variants even though
+it was probably only needed for UFS on some older SoCs?
+
+Johan
 
 -- 
 linux-phy mailing list
