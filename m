@@ -4,95 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9FA04C433EF
-	for <linux-phy@archiver.kernel.org>; Wed,  6 Jul 2022 16:56:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 67412C43334
+	for <linux-phy@archiver.kernel.org>; Wed,  6 Jul 2022 17:10:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MIJCBXZZhbkdbN6qdy587eJh19ZZivFX5BlbZX+p82U=; b=Dyo/Pyx7XYXm6Q
-	Hm3sDmtJTsaQaHB0/t9rLyCuPU2k0UliV6lTQeY76ddx6C3rP5UxaJWHrLsDnh8X9oUEuj1kQnTCS
-	rwJHbxoKGaZ6FmQccWo5z3Qu9Tq0miMOkQvUK4BBFuuvftV3cGYJIAv22fJzTcYENMRHoLAw7DxmF
-	Bs+gs34XSEwE6etyysyaYa4SdnwDQyB9iYdUc7o8CIx0Mpc6IQoDgj43RNjHjYcXwjDX8ldd+WK8a
-	vu148NJG+V1aUrASjAm1/qJIUKZbHMXGO5KCyYEQYd+XtiPIRLFdXQB3QfZi5QLcRWQ+uAFPKDVh1
-	YiSSRmQbzTVm1ClFJbRg==;
+	List-Owner; bh=j6y03T3KKN3K6x0Em0OryFm1cUSNgBG9Q6V/shSbRuk=; b=znNsNHSLIRWdqO
+	9IjrhEhRt4HGC6bZUt+ZT07PyLH/MxOD7lLCCqlbfXlpy3EytMxO5WVanl+nCw6PxQLTr4cSWcmVi
+	cTXSwTGQc/c6kaDbEI8ocEFpK7zGWaYrixRNZzjULO8bvqZRoLvLHBxPf7InShg36rIzYPIvF/b5S
+	qILvaQIba9q9bpmQX4rkCcO51HL85eyJCOi0TrCMOnuV+BMMtQcWFl95r0ewYFA4J/EDr1sJq8wMx
+	2luIDen+Eh0w2yt5iOY6ftWacjGJQ0hJrmqLqwUv1QyH8354mZXivf+gPG3j0sVLnsLEI02UBxX+/
+	HTREGKx2prHmUlivDdtw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o98K8-00BW1B-FS; Wed, 06 Jul 2022 16:56:24 +0000
+	id 1o98Xw-00Bbvr-Nq; Wed, 06 Jul 2022 17:10:40 +0000
 Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o98Gq-00BUX9-97; Wed, 06 Jul 2022 16:53:03 +0000
+	id 1o98Ku-00BWNF-3F; Wed, 06 Jul 2022 16:57:13 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 6978361E0E;
-	Wed,  6 Jul 2022 16:52:59 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0AB5BC3411C;
-	Wed,  6 Jul 2022 16:52:58 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id BA36961E24;
+	Wed,  6 Jul 2022 16:57:10 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 555C8C3411C;
+	Wed,  6 Jul 2022 16:57:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1657126378;
-	bh=p9+EIYiQFsEijWg7qUqn4ryIqQU2p1/cxe9Pq3LUI5I=;
+	s=k20201202; t=1657126630;
+	bh=GF/aKIAzhOdpyO5Xdb1pXVqwDvZ44YUeDjQ86DdLEVU=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=VaUuO1RwaFm+0u5ev1dM72McKyCsJgUoMfeulJYPkHososvaV+WDRIKh2rSmPq/5I
-	 ycOK+fXQFhN0cAzIGuEIRUGAc72n1Dg8BvFGxp45CG3JXMdbYTikfi2jlnQVeNoBij
-	 r2zfhkuKbEGjlN+md/SkAdY1aYaN4T4QB9EM0K5JZp4RG2Q+wkmpDBNq3N+VeK0/PO
-	 qidIwXyZj01SxZRRmEYAqsn075IAurVDuHlFh+oh0YwLTG7MhXCwpEFRQBF5dKSyW9
-	 ciX4ZrYzhQCwlQ0ADndLsxjzn5lmyyRbMban5DzpUIt/qICAYJNnuSF7Qx6E13IbEF
-	 uVl1lLdxPW9uA==
-Date: Wed, 6 Jul 2022 22:22:55 +0530
+	b=B7UfPWR6H7wHVWrVGgUXtsz5mVegP0uqNRm7Rl0GaG6lSk3/XF0bJ1dRDz910/nrw
+	 ArJlrBbcmQVUkXNEozaNrykOgZ0XjbILwzH8Eig5ZPcPfEFKMTk1JzxGSdij9yq67/
+	 xOtgyfqkH+q2ZHp2h9BXhpi1JfDk6uKgD51fVcSVBFpqrBwKzY7rLXfVsxlhUhgZM9
+	 CMDchWma018hV0+3hZpxLL5P198TNxnQukwCj8zo74rOMxLjpft0GWboEFVGfNRYBH
+	 dVp5s+/IxNrMQyMbS6/mLBlKrb3ESTrf8ZNrF6Lyz4CJD9yebEDJ5ftpznp9zNLEc9
+	 NUsajuj6c/aKA==
+Date: Wed, 6 Jul 2022 22:27:05 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: William Zhang <william.zhang@broadcom.com>
-Cc: Linux ARM List <linux-arm-kernel@lists.infradead.org>,
-	joel.peshkin@broadcom.com, kursad.oney@broadcom.com,
-	f.fainelli@gmail.com, anand.gore@broadcom.com,
-	Broadcom Kernel List <bcm-kernel-feedback-list@broadcom.com>,
-	philippe.reynes@softathome.com, dan.beygelman@broadcom.com,
-	Al Cooper <alcooperx@gmail.com>,
-	Andre Przywara <andre.przywara@arm.com>,
-	Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
-	Ard Biesheuvel <ardb@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
-	Cai Huoqing <cai.huoqing@linux.dev>,
-	Conor Dooley <conor.dooley@microchip.com>,
-	Damien Le Moal <damien.lemoal@opensource.wdc.com>,
-	Eugen Hristev <eugen.hristev@microchip.com>,
-	Geert Uytterhoeven <geert+renesas@glider.be>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Herbert Xu <herbert@gondor.apana.org.au>,
-	Jan Dabros <jsd@semihalf.com>,
-	Jarkko Nikula <jarkko.nikula@linux.intel.com>,
-	Jie Deng <jie.deng@intel.com>, Jiri Slaby <jirislaby@kernel.org>,
-	Kavyasree Kotagiri <kavyasree.kotagiri@microchip.com>,
+To: Sean Anderson <sean.anderson@seco.com>
+Cc: "David S . Miller" <davem@davemloft.net>,
+	Jakub Kicinski <kuba@kernel.org>,
+	Madalin Bucur <madalin.bucur@nxp.com>, netdev@vger.kernel.org,
+	Russell King <linux@armlinux.org.uk>,
+	Paolo Abeni <pabeni@redhat.com>,
+	linux-arm-kernel@lists.infradead.org,
+	Eric Dumazet <edumazet@google.com>, linux-kernel@vger.kernel.org,
+	Ioana Ciornei <ioana.ciornei@nxp.com>,
+	Jonathan Corbet <corbet@lwn.net>,
 	Kishon Vijay Abraham I <kishon@ti.com>,
-	Krzysztof Kozlowski <krzk@kernel.org>,
-	Lukas Bulwahn <lukas.bulwahn@gmail.com>,
-	Mark Brown <broonie@kernel.org>, Matt Mackall <mpm@selenic.com>,
-	Michael Turquette <mturquette@baylibre.com>,
-	Nathan Chancellor <nathan@kernel.org>,
-	Nicolas Ferre <nicolas.ferre@microchip.com>,
-	=?utf-8?B?UmFmYcWCIE1pxYJlY2tp?= <rafal@milecki.pl>,
-	Rob Herring <robh@kernel.org>, Russell King <linux@armlinux.org.uk>,
-	Sam Protsenko <semen.protsenko@linaro.org>,
-	Stephen Boyd <sboyd@kernel.org>,
-	Sunil Goutham <sgoutham@marvell.com>,
-	Sven Peter <sven@svenpeter.dev>,
-	Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
-	Tyrone Ting <kfting@nuvoton.com>, Wolfram Sang <wsa@kernel.org>,
-	linux-clk@vger.kernel.org, linux-crypto@vger.kernel.org,
-	linux-i2c@vger.kernel.org, linux-ide@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-serial@vger.kernel.org, linux-spi@vger.kernel.org
-Subject: Re: [PATCH 5/9] arm: bcmbca: Replace ARCH_BCM_63XX with ARCH_BCMBCA
-Message-ID: <YsW95wP010g9z1P7@matsya>
-References: <20220705172613.21152-1-william.zhang@broadcom.com>
- <20220705172613.21152-6-william.zhang@broadcom.com>
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Rob Herring <robh+dt@kernel.org>, devicetree@vger.kernel.org,
+	linux-doc@vger.kernel.org, linux-phy@lists.infradead.org
+Subject: Re: [PATCH net-next v2 04/35] [RFC] phy: fsl: Add Lynx 10G SerDes
+ driver
+Message-ID: <YsW+4fm/613ByK09@matsya>
+References: <20220628221404.1444200-1-sean.anderson@seco.com>
+ <20220628221404.1444200-5-sean.anderson@seco.com>
+ <YsPWMYjyu2nyk+w8@matsya>
+ <431a014a-3a8f-fdc7-319e-29df52832128@seco.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20220705172613.21152-6-william.zhang@broadcom.com>
+In-Reply-To: <431a014a-3a8f-fdc7-319e-29df52832128@seco.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220706_095300_441258_88CB0E18 
-X-CRM114-Status: GOOD (  10.40  )
+X-CRM114-CacheID: sfid-20220706_095712_224641_C3EBF7BE 
+X-CRM114-Status: GOOD (  18.99  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -109,22 +86,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 05-07-22, 10:26, William Zhang wrote:
-> Update ARCH_BCM_63XX in all sources to use ARCHB_BCMBCA instead.
+On 05-07-22, 11:29, Sean Anderson wrote:
+
+> >> +	/* TODO: wait for the PLL to lock */
+> > 
+> > when will this be added?
 > 
-> Signed-off-by: William Zhang <william.zhang@broadcom.com>
-> ---
+> I'm not sure. I haven't had any issues with this, and waiting on the lock bit is
+> only mentioned in some datasheets for this SerDes. On the LS1046A for example,
+> there is no mention of waiting for lock.
+
+okay maybe remove the comment then?
+
+> >> +static const struct clk_ops lynx_pll_clk_ops = {
+> >> +	.enable = lynx_pll_enable,
+> >> +	.disable = lynx_pll_disable,
+> >> +	.is_enabled = lynx_pll_is_enabled,
+> >> +	.recalc_rate = lynx_pll_recalc_rate,
+> >> +	.round_rate = lynx_pll_round_rate,
+> >> +	.set_rate = lynx_pll_set_rate,
+> >> +};
+> > 
+> > right, this should be a clk driver
 > 
->  arch/arm/Kconfig.debug         | 2 +-
->  drivers/ata/Kconfig            | 2 +-
->  drivers/char/hw_random/Kconfig | 2 +-
->  drivers/clk/bcm/Kconfig        | 4 ++--
->  drivers/i2c/busses/Kconfig     | 2 +-
->  drivers/phy/broadcom/Kconfig   | 2 +-
+> Well, it is a clock driver, effectively internal to the SerDes. There are a few
+> examples of this already (e.g. the qualcomm and cadence phys). It could of course
+> be split off, but I would prefer that they remained together.
 
-Acked-By: Vinod Koul <vkoul@kernel.org>
-
-
+I would prefer clk driver is split and we maintain clean split b/w phy
+and clk
 
 -- 
 ~Vinod
