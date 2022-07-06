@@ -4,134 +4,123 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 351DECCA482
-	for <linux-phy@archiver.kernel.org>; Wed,  6 Jul 2022 03:45:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 317C3C433EF
+	for <linux-phy@archiver.kernel.org>; Wed,  6 Jul 2022 03:46:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1qgU0EGT3lfSOULeiWiu1P2mLOilKM/TCvoFfeRFokY=; b=E1fQjLwZ1i6uTK
-	zcl05sx1YrrpNY2qAz8u7UljXP5nFWu6dIhB9uxmYcLYvI8Gb3DC0pA7Tq5OEPrqnaTOmTzUyG6yC
-	FkBhOSvM8wQGJW57hPpxZ5TEx6a8LRXrJNCSm4gdoyI10fQF5emmbnryFsTkiRkAR1TgCfuyMs9OB
-	QaqOKmqZo7OhVm6UfPYRTZrqYrnCdzKCZdA284pqpbQuflNf0VrSoRSnHyH0ro0utCzsnEbwY1Qey
-	TCsiYNh4OHHq89+avZocubdnF0BtKhJIhZltDqYS5JCGKWG1sn3svzhJR4eOpE/GQAMEklqiF4Rki
-	kV/E+fRmJs/Sk7Q2AvBw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=/fbidB0C4dIdKedpRDJfUI+sb/CWcQWvGgfLbPCqukQ=; b=4jc8MnAQnVLM5D
+	6tEnavxSfksJ/8UHXUPjliY/8QSQyLdigZiJeB8U1N/OupX34EXXrKz2YLJwO/sXfHUcSxlHk9pO2
+	r4kKlCu2+LJIJvQkPJZxmYlSTO03By8Apo4TcaWNgYftPKjTFko/h1G7eKBWG5pvKy1BaMbphZ6tK
+	IwT5ESNJlOMWx5zEMf4IUgwqqEG/924k+So8++aBi5qzO9Ybn9oOhfB69NUZw+Af+vOlyVEytt2rl
+	stQTd0C0DY007gztOAHi0A7XjADV1Ld2jU0GQGl3hhvSMZutsdmxy5r4dIUrAt47KnPUJtLXPcRF1
+	IGc0Bc6nvpjb+cBDBXpw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o8vyg-005Z3m-Gi; Wed, 06 Jul 2022 03:45:26 +0000
-Received: from esa2.hgst.iphmx.com ([68.232.143.124])
+	id 1o8vzt-005ZRt-AY; Wed, 06 Jul 2022 03:46:41 +0000
+Received: from mail-eopbgr80077.outbound.protection.outlook.com ([40.107.8.77] helo=EUR04-VI1-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o8vyd-005Z1D-GO
-	for linux-phy@lists.infradead.org; Wed, 06 Jul 2022 03:45:25 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
-  d=wdc.com; i=@wdc.com; q=dns/txt; s=dkim.wdc.com;
-  t=1657079123; x=1688615123;
-  h=message-id:date:mime-version:subject:to:cc:references:
-   from:in-reply-to:content-transfer-encoding;
-  bh=ge/ABfXnrM5/z7n6G4b0DuoSM+BhI8eaEOtVOhmsYv4=;
-  b=n3QjbMFIoYnCElNGueAy5ou/Pd/8zTKvPoLly45Z1OXWDoxVxcmnHVNA
-   xfTXXJ4dOaCRPvz5LKMZzWkri+qkr/eZwoF4p85WN3Cd/45LUnmpNVRhr
-   ytFtIOArJgMqPvLQEktUvBffA9a2tvsbjvAKYEaMZowohex9yn5eihlfx
-   mjN7vKH35uAEiAVCgbBiVFgMaRD5QEA26FNOtd6GxLBCNKM5r1PUhVGq5
-   pxx7S7eApSzoVZEMO9CwgKwSmFNYS10v9LBzWc+M7O/EI51EQgT3RD9m1
-   rolrzfAq1WMcpIzuuwMEotwoLbdlVGQOoavw2lrUe/SZ+TFKert0jr3zi
-   A==;
-X-IronPort-AV: E=Sophos;i="5.92,248,1650902400"; 
-   d="scan'208";a="309267829"
-Received: from h199-255-45-15.hgst.com (HELO uls-op-cesaep02.wdc.com) ([199.255.45.15])
-  by ob1.hgst.iphmx.com with ESMTP; 06 Jul 2022 11:45:17 +0800
-IronPort-SDR: THPb9Xlv1RJE8zFcphSPz8bQ9dYXYMpdskGuNnRty2qRhHpuc1KaScFtYPNZGWrCLlvD93C99v
- yzCsm0Oyo4m1ittbOB1sfdrkOEA05aLp+Z5VS9SbjYliXMKAarCGYjT+zQrR32ZmhErJCkljxQ
- K1/XT8c0OFG6d4LcY2CymR2OwkyK64kN994Bfct654VLdQ+cFKN9+ZcTDtWXa3KeAEH8LscUGa
- jMWjzXz76Rw60lZ7TzOhkbIPyX4MMnEXO/Sm/xCcK2ZB6X0eP+CXcXuCkHCUUsQiz6A01ZPWj4
- hHgk6FeO/TR8E7wt6A+8TzTb
-Received: from uls-op-cesaip01.wdc.com ([10.248.3.36])
-  by uls-op-cesaep02.wdc.com with ESMTP/TLS/ECDHE-RSA-AES128-GCM-SHA256; 05 Jul 2022 20:02:36 -0700
-IronPort-SDR: /HwzrACE7vd0xdeN7hR4aRTeiL1SqseS87kcqkBIKzAICh9kb4s3WQaBYB3A7u2ukH+qPpJ1nI
- UJVoqgnHbQ6eKty/ra5d0sHDikHcYE0/IWmNaD+F9vbBkhDjznTGb0OKRsIj4h1oJls3AhbI2A
- r2lLxmm8QNAnz+H19LKXodBEkVuzt5Gna3y+blqzT5+9MGNqvlo3y0AbTjPeMPGtNbqo6rMxdv
- P7nMUE7FaFcwUQdog9M5KXLy2R+sBhEvjqTvYdiglkNsuYYhCNitYYWa5MrCNV7MxlsO8xOu/9
- bIk=
-WDCIronportException: Internal
-Received: from usg-ed-osssrv.wdc.com ([10.3.10.180])
-  by uls-op-cesaip01.wdc.com with ESMTP/TLS/ECDHE-RSA-AES128-GCM-SHA256; 05 Jul 2022 20:45:18 -0700
-Received: from usg-ed-osssrv.wdc.com (usg-ed-osssrv.wdc.com [127.0.0.1])
-	by usg-ed-osssrv.wdc.com (Postfix) with ESMTP id 4Ld5652jFCz1Rwnl
-	for <linux-phy@lists.infradead.org>; Tue,  5 Jul 2022 20:45:17 -0700 (PDT)
-Authentication-Results: usg-ed-osssrv.wdc.com (amavisd-new); dkim=pass
-	reason="pass (just generated, assumed good)"
-	header.d=opensource.wdc.com
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=
-	opensource.wdc.com; h=content-transfer-encoding:content-type
-	:in-reply-to:organization:from:references:to:content-language
-	:subject:user-agent:mime-version:date:message-id; s=dkim; t=
-	1657079116; x=1659671117; bh=ge/ABfXnrM5/z7n6G4b0DuoSM+BhI8eaEOt
-	VOhmsYv4=; b=WB3cjMwZsUuggq2VYtBWujX/fQJNZdojEJCcfq0XptimZZkxpq3
-	tRok4ex2PrIlFXn0xGP+9IALyTaNOsU5S5ydhHQbnHBViWX1BK6jJUOXe+cQcjUS
-	OH008kUbbhMRUl2BWy09jcE4Y6OPkXhfcaEvZ1HasNQG6cx7tjHYea80POfbYPQt
-	8qC3l9ncwG7wUbwb8yPihZGe1Yw6FBe7ntxEQ/7L6U2NDT2ogl+ug7DSdfckO+RW
-	m1LyNt4ecGAOh32P0rOqeQpKibogozgm+iENNShvTMWfo9UTqvtlTv8dbVEiq/7o
-	ULf7TJY7YwuLurg3JatsC2Yc+8bB7HJGaRw==
-X-Virus-Scanned: amavisd-new at usg-ed-osssrv.wdc.com
-Received: from usg-ed-osssrv.wdc.com ([127.0.0.1])
-	by usg-ed-osssrv.wdc.com (usg-ed-osssrv.wdc.com [127.0.0.1]) (amavisd-new, port 10026)
-	with ESMTP id MFSkcjKkp5Dy for <linux-phy@lists.infradead.org>;
-	Tue,  5 Jul 2022 20:45:16 -0700 (PDT)
-Received: from [10.225.163.110] (unknown [10.225.163.110])
-	by usg-ed-osssrv.wdc.com (Postfix) with ESMTPSA id 4Ld55s01rTz1RtVk;
-	Tue,  5 Jul 2022 20:45:04 -0700 (PDT)
-Message-ID: <50b65a2b-49fb-41d9-d68c-af1d908ba5db@opensource.wdc.com>
-Date: Wed, 6 Jul 2022 12:45:03 +0900
+	id 1o8vzq-005ZPR-G4; Wed, 06 Jul 2022 03:46:40 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=aP8e+Sz/yk4oxxN31QL4pLZPH7uaJMPK/97Za7ssz0+YBrmgpM3ZOecAigOwn1k9IzZPkLwrW019j3Y6YUn0Q8ctu36YJl8gcgQEIV2SX6yMSIAkm8eywzEV7s8yl8QayYq4VePi36/fRzCt1MprRPTftAZsvMjtYL34BUuxCYRrkLYiNwksDxUUt7bBa4rEulW+OIkVX/0OOJEM4s8nRjbKU7G3FB7PCX2SBWaogFyb5yUSTm1EGIPH0vaaSceTbHm0TFOYngn6LSR6ta+SbF4YX+cGel/CYhCKmKwnE7hDJfa5CH/lHXb2ykyML/XKxy79vSvziI9a8S0LV6TtAw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=tFXfUmnGm5gmvqpJzrn/u5SkYgStRNlRnoPR0OAjFd4=;
+ b=kkPcQYsohcChZyDxFa8w4GqHQ5FPN+nviTdPEeRGjWlD/wufvHEe2NBR5f27HZvsroWNHXbLedAUav6TqLicyX39WTGX4V9J2QQaX+8dQJVXK+Y91JQVNr9wGhPBCmOp8+N80HDxF98XudYYgkHH1ZQdsd4DIN/2OloxgTRQu2PyiwbBhPxV7djnlBjEIHkxykothjuzNuFWiDDjkyLI3JfewQeirzf+hS3yDf3sYc8z3Oyd4ucciH9S3PVgV2Q91ebs70gdigZnYKFntJmgbjcdFIfVA1Y2HDZ1Y/f9gzO4tL1vO2ghxYxoqSe1iF9/1I1xDFry0FDPu0S/SNsruw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=tFXfUmnGm5gmvqpJzrn/u5SkYgStRNlRnoPR0OAjFd4=;
+ b=EyBE6mKCN8MeSepbSpAUYFYYaQh0Y6lXugUDs5cKt6XXdJEvz/zQj1gMwtDHnCizTE42eqYJRDGkRtJx1xTiYfLM/eeMJMyVDGG7IcCVGW/8Vawc1xprMDVvIP5wB7JaldMYCBZmb4uuGj5owOVJhbsWeLUUUhuqFsGNl8r8+2A=
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from AM7PR04MB7046.eurprd04.prod.outlook.com (2603:10a6:20b:113::22)
+ by VE1PR04MB6463.eurprd04.prod.outlook.com (2603:10a6:803:11d::20) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5395.21; Wed, 6 Jul
+ 2022 03:46:33 +0000
+Received: from AM7PR04MB7046.eurprd04.prod.outlook.com
+ ([fe80::416e:6e99:bac6:d3a9]) by AM7PR04MB7046.eurprd04.prod.outlook.com
+ ([fe80::416e:6e99:bac6:d3a9%5]) with mapi id 15.20.5395.021; Wed, 6 Jul 2022
+ 03:46:33 +0000
+From: Liu Ying <victor.liu@nxp.com>
+To: linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Cc: kishon@ti.com,
+	vkoul@kernel.org,
+	robh+dt@kernel.org,
+	krzysztof.kozlowski+dt@linaro.org,
+	shawnguo@kernel.org,
+	s.hauer@pengutronix.de,
+	kernel@pengutronix.de,
+	festevam@gmail.com,
+	linux-imx@nxp.com,
+	krzysztof.kozlowski@linaro.org
+Subject: [PATCH v4 0/3] phy: freescale: Add i.MX8qm Mixel LVDS PHY support
+Date: Wed,  6 Jul 2022 11:48:07 +0800
+Message-Id: <20220706034810.2352641-1-victor.liu@nxp.com>
+X-Mailer: git-send-email 2.25.1
+X-ClientProxiedBy: SG2P153CA0045.APCP153.PROD.OUTLOOK.COM (2603:1096:4:c6::14)
+ To AM7PR04MB7046.eurprd04.prod.outlook.com (2603:10a6:20b:113::22)
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.11.0
-Subject: Re: [PATCH 5/9] arm: bcmbca: Replace ARCH_BCM_63XX with ARCH_BCMBCA
-Content-Language: en-US
-To: William Zhang <william.zhang@broadcom.com>,
- Linux ARM List <linux-arm-kernel@lists.infradead.org>
-Cc: joel.peshkin@broadcom.com, kursad.oney@broadcom.com,
- f.fainelli@gmail.com, anand.gore@broadcom.com,
- Broadcom Kernel List <bcm-kernel-feedback-list@broadcom.com>,
- philippe.reynes@softathome.com, dan.beygelman@broadcom.com,
- Al Cooper <alcooperx@gmail.com>, Andre Przywara <andre.przywara@arm.com>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Ard Biesheuvel <ardb@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
- Cai Huoqing <cai.huoqing@linux.dev>,
- Conor Dooley <conor.dooley@microchip.com>,
- Eugen Hristev <eugen.hristev@microchip.com>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Herbert Xu <herbert@gondor.apana.org.au>, Jan Dabros <jsd@semihalf.com>,
- Jarkko Nikula <jarkko.nikula@linux.intel.com>, Jie Deng
- <jie.deng@intel.com>, Jiri Slaby <jirislaby@kernel.org>,
- Kavyasree Kotagiri <kavyasree.kotagiri@microchip.com>,
- Kishon Vijay Abraham I <kishon@ti.com>, Krzysztof Kozlowski
- <krzk@kernel.org>, Lukas Bulwahn <lukas.bulwahn@gmail.com>,
- Mark Brown <broonie@kernel.org>, Matt Mackall <mpm@selenic.com>,
- Michael Turquette <mturquette@baylibre.com>,
- Nathan Chancellor <nathan@kernel.org>,
- Nicolas Ferre <nicolas.ferre@microchip.com>, =?UTF-8?B?UmFmYcWCIE1pxYJlY2tp?=
- <rafal@milecki.pl>, Rob Herring <robh@kernel.org>,
- Russell King <linux@armlinux.org.uk>,
- Sam Protsenko <semen.protsenko@linaro.org>, Stephen Boyd <sboyd@kernel.org>,
- Sunil Goutham <sgoutham@marvell.com>, Sven Peter <sven@svenpeter.dev>,
- Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
- Tyrone Ting <kfting@nuvoton.com>, Vinod Koul <vkoul@kernel.org>,
- Wolfram Sang <wsa@kernel.org>, linux-clk@vger.kernel.org,
- linux-crypto@vger.kernel.org, linux-i2c@vger.kernel.org,
- linux-ide@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-serial@vger.kernel.org,
- linux-spi@vger.kernel.org
-References: <20220705172613.21152-1-william.zhang@broadcom.com>
- <20220705172613.21152-6-william.zhang@broadcom.com>
-From: Damien Le Moal <damien.lemoal@opensource.wdc.com>
-Organization: Western Digital Research
-In-Reply-To: <20220705172613.21152-6-william.zhang@broadcom.com>
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 899736fd-e570-435b-963b-08da5f021eaa
+X-MS-TrafficTypeDiagnostic: VE1PR04MB6463:EE_
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: 	ttDcFSXWsqLOSVyyPyDePTanjgzehWNNTNwGjAMjkSqt4bIqtf0OO1vvjNd/j3IE/0u13ts64zWfEKRHXhZpdEHYkIrb5LiQzc5NMLL2rmYm6v9o59nhRiDtnDUBO7jnSwT65LfQHbQG+NzB4YwxlcCGwwTU0JNCngdCXXEPnQ8bKcCdOpTjwAvaFuRThMx/sJUHoJahZh9YmbmXMNfd1RxNk5Yiul6KlkjBpDlzfZrDWYTKIxtdIf/MQ0cBPCSsav8K1zCdnSuvOig/gS5B4yl2KeQdB1+aT+CuLOzAfCdMrk/PrBUr5DeeOeftPamxv56Zxpfps47vp/d79P4Suw0tF49042/PXKjj4rGDGznv5yKwtN6ab3gWiwmreanNEtDd2QHQeaKWOlp2GOfw3fwl+SdlKMP9vriRkqK9pZ/4BuObwSXifj26LbyRWLD1JZ7lm3W8IdXShG3VAAdZFk/gyL8ZYWyPbqlGJ1HCCF2tGSN68PzWKiMWeqq66CVChRtQS05LfylRurDdtRK30cFZd7na1S5DodzLtrtbv7c+uInDdsCbqXacVVldtiJWphrAbrW6N1jAbHOJgfWWuoKXO3EPOorHJeho/N+I0O/5GmHMz1uUjtErpfX6WfLsVnSMbIi+7PHPsH+SR8IOKBqSlYqgaLqzINVbm0mbN5V6Fmk4XsK/loGgwLNAUzolI8VYRXOf2O+onhmYGe6ZuWpbyxSbw0msxmnz8d5dOztNaoanJQGFgV02P+MBJQODWAqSJZuJmcvbGgOceKq/BZP9aQH+RjfwfD5KcLevepbki/Ug5/3s593mG4uLT2m5
+X-Forefront-Antispam-Report: 	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM7PR04MB7046.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230016)(4636009)(396003)(136003)(376002)(346002)(39860400002)(366004)(1076003)(8936002)(6486002)(478600001)(86362001)(38100700002)(38350700002)(66946007)(4326008)(6512007)(8676002)(66476007)(66556008)(5660300002)(2616005)(7416002)(26005)(186003)(52116002)(36756003)(316002)(2906002)(6506007)(41300700001)(83380400001)(6666004);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: 	=?us-ascii?Q?b2lc3X4wNAxVhCtooHpCEZQQBLNjNb5/J1K9fHPPfVjYJvdXJXRMmSG7zi03?=
+ =?us-ascii?Q?yD/QvQ1wOISX/ATL1HcPsPDmb2SmuF5zVs7z2ZTVE/+ajlMjWR9QjP0b/fet?=
+ =?us-ascii?Q?BZCNHDCrwbXsCC549OlkShJ5xG4SZH5fjEXjBjjj/24WAD5Uov+DSAn/ZM7F?=
+ =?us-ascii?Q?twBqaEpdVsZw+BiowE6YccvXSppw5Ry3DQ6Bl1sl7XiUinuSCQ6tmWfxFVsa?=
+ =?us-ascii?Q?juRSqrf9bwGdbQZA+TGAay9cwGoJZGLG6qWQ6IXAj85KFC5ZgY0Or/NTDtWi?=
+ =?us-ascii?Q?TOoeiAEO3rRYCoZbLPb5q9Y9xeuc9HiumkX5AjmIq9xcCh77wvTwy1t1pWLh?=
+ =?us-ascii?Q?w3m30qZOZO3eFColjj2LZBwAMO7hkiK6gjxjKQwlQR7e3M9W5hzMf3U2Ae6Q?=
+ =?us-ascii?Q?uYTZUBoAV381ATscQCyrVY6docJ4VyRO9YFoawU7+h3WVhoN01lXVF+Wkmzx?=
+ =?us-ascii?Q?DNF7VF/Po6gd0WX1UHrKiBTwR8cqkC/YbO19OrtjchqEmHMFg9izMWUVDv/b?=
+ =?us-ascii?Q?+g7/GguOfF/Z7l94bQfjgsaYnXDD3E92iNKsLN7yjBjhZMYxHiDq/iSIQBbz?=
+ =?us-ascii?Q?I7UdHP8UPTr7sS9uyXi+IJJKkqxcQuAkDX0kCTVtX+DCf46TvJ8l3wdZC5PN?=
+ =?us-ascii?Q?sZaRcQUDYzY40v8OLuYNbpWH3Z40mAlsvzxJhwGDsoMMwow5WZwgHPkMo+mr?=
+ =?us-ascii?Q?EqiuT7u8ATCRGL4fDxzrZN9ZI7F8GDgE2NNz8a75X/gUL4lxeKiO+UH2QbYL?=
+ =?us-ascii?Q?4vjW0vrlNtgtn80jODcF4sRQ0ZUYGZBClKsZl/Izqdm6zWdIQlVAlMy8j52o?=
+ =?us-ascii?Q?b5CJ60ElXGbtxhVBAWASRM4gCOm/1/f0UZTzshqKC0RQnwK/RvfqqmgMeNLH?=
+ =?us-ascii?Q?PVmrqR/M9aLgPuyxzIje7CB0yyDjQz6R6qoL227n0DdeBd88xEiog9yR78+c?=
+ =?us-ascii?Q?8Zd3dlOaZ8ITfnw6KZ6w9FGOfRXarc3MGtA4YAT+rXEaZSlDdUZqebJOMyP9?=
+ =?us-ascii?Q?rF7LMrpV5DSjW5n/WBA7h8CaBnYBhhODzrHNxbocks5GPToYv6thmlfznmJf?=
+ =?us-ascii?Q?Y49bB281xEPDVWsIsmsjZ08R6N4mdVrzS3GIs8XvkeiUpXQbJOBZa47g0PoI?=
+ =?us-ascii?Q?bPXt0Y5g6JAgYBTpEqwERKD/4R97Sp49II3BHqyYTLeQ5On6xbZgmBSJgh7m?=
+ =?us-ascii?Q?1d2Sq1KPVcoPOGeidihL5TKnpRzXe307IRwwYe5TtYo9J+KCwWkD9Zjqcr2l?=
+ =?us-ascii?Q?e+ezmeZRp8bn5fnvN5L+0nM1KVMaATymDRdEzd0sg1DeD8TR8qAxUV84p31/?=
+ =?us-ascii?Q?LJIAXKjMx1vIYC4Mk3Wa0gudctzUAtcr81zx+LuIPpmS7C7fa3X+6Q42Ng3g?=
+ =?us-ascii?Q?q8vicsD8k41sFur6w8sF9/S4iEI8RgDSHRgagYiX0t2qJ8rG8DkGgZrEeNK9?=
+ =?us-ascii?Q?I/BbKqlkbOQW4PrzYEyvO0CbaeLXITDjJILsxZRFCJzr5tVXm1kc7C7w4zmG?=
+ =?us-ascii?Q?PcmpF7/il0Sz2iU979GzywCYx25gtutQHWd7CYJAvoPRu4DedjiwrvxllpIe?=
+ =?us-ascii?Q?YIuN14nwgMCPCdO5qV/T/LUuJnW8x7RpoABZVFy4?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 899736fd-e570-435b-963b-08da5f021eaa
+X-MS-Exchange-CrossTenant-AuthSource: AM7PR04MB7046.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 06 Jul 2022 03:46:33.6978
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: mZYW/BRYKzTN8q2F7YolqtpDsb+UGrfuyuOoIG2ZnXUeuSefTVkyeDw/VD+W/OquYPna+MuEInv4uzJLFJaFJQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR04MB6463
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220705_204523_625008_206CE10D 
-X-CRM114-Status: GOOD (  21.11  )
+X-CRM114-CacheID: sfid-20220705_204638_802260_312C9E0D 
+X-CRM114-Status: GOOD (  11.07  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -148,142 +137,65 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 7/6/22 02:26, William Zhang wrote:
-> Update ARCH_BCM_63XX in all sources to use ARCHB_BCMBCA instead.
-> 
-> Signed-off-by: William Zhang <william.zhang@broadcom.com>
+Hi,
 
-For the ata Kconfig change:
+This series aims to add Freescale i.MX8qm LVDS PHY driver and dt-binding
+support.
 
-Acked-by: Damien Le Moal <damien.lemoal@opensource.wdc.com>
+The PHY IP is from Mixel, Inc.
+The PHY IP supports two LVDS PHYs, thus two LVDS channels.
+
+Each LVDS PHY may work by itself to support a LVDS display device.
+
+When two LVDS PHYs are enabled simultaneously, PHY configurations and reference
+clock rate have to be the same since there is only one set of PHY registers.
+In this case, the two LVDS PHYs are usually used to support a dual LVDS link
+display device, one as master PHY and the other as slave PHY.
+
+Patch 1/3 adds vendor prefix for the PHY IP vendor 'Mixel, Inc.'.
+Patch 2/3 adds dt-binding for the PHY IP.
+Patch 3/3 adds PHY driver support.
+
+v3->v4:
+* Use MEGA macro in patch 3/3. (Vinod)
+* Check slave phy in ->power_off() and power off two phy synchronously
+  in patch 3/3 when necessary. (Vinod)
+* Use single line for error message in patch 3/3. (Vinod)
+* Use pm_runtime_resume_and_get() instead of pm_runtime_get_sync()
+  in patch 3/3. (Vinod)
+
+v2->v3:
+* Add Krzysztof's A-b tag on patch 1/3.
+* Change compatible string from 'mixel,lvds-phy' to
+  'mixel,28fdsoi-lvds-1250-8ch-tx-pll' in patch 1/3. (Krzysztof)
+* Rename dt-binding file to 'fsl,imx8qm-lvds-phy.yaml'. (Krzysztof)
+
+v1->v2:
+* Document vendor prefix for the PHY IP vendor 'Mixel, Inc.'. (Krzysztof)
+* Set fsl,imx8qm-lvds-phy' and 'mixel,lvds-phy' as compatible's enum. (Krzysztof)
+* Skip 'clock-names' property. (Krzysztof)
+* Drop 'This patch' from commit messages. (Krzysztof)
+* Make dev_err_probe() function calls as one-liners. (Krzysztof)
+* Drop unnecessary debug messages. (Krzysztof)
 
 
-> ---
-> 
->  arch/arm/Kconfig.debug         | 2 +-
->  drivers/ata/Kconfig            | 2 +-
->  drivers/char/hw_random/Kconfig | 2 +-
->  drivers/clk/bcm/Kconfig        | 4 ++--
->  drivers/i2c/busses/Kconfig     | 2 +-
->  drivers/phy/broadcom/Kconfig   | 2 +-
->  drivers/spi/Kconfig            | 2 +-
->  drivers/tty/serial/Kconfig     | 4 ++--
->  8 files changed, 10 insertions(+), 10 deletions(-)
-> 
-> diff --git a/arch/arm/Kconfig.debug b/arch/arm/Kconfig.debug
-> index 9b0aa4822d69..792796a348c3 100644
-> --- a/arch/arm/Kconfig.debug
-> +++ b/arch/arm/Kconfig.debug
-> @@ -271,7 +271,7 @@ choice
->  
->  	config DEBUG_BCM63XX_UART
->  		bool "Kernel low-level debugging on BCM63XX UART"
-> -		depends on ARCH_BCM_63XX
-> +		depends on ARCH_BCMBCA
->  
->  	config DEBUG_BERLIN_UART
->  		bool "Marvell Berlin SoC Debug UART"
-> diff --git a/drivers/ata/Kconfig b/drivers/ata/Kconfig
-> index bb45a9c00514..1c9f4fb2595d 100644
-> --- a/drivers/ata/Kconfig
-> +++ b/drivers/ata/Kconfig
-> @@ -148,7 +148,7 @@ config SATA_AHCI_PLATFORM
->  config AHCI_BRCM
->  	tristate "Broadcom AHCI SATA support"
->  	depends on ARCH_BRCMSTB || BMIPS_GENERIC || ARCH_BCM_NSP || \
-> -		   ARCH_BCM_63XX || COMPILE_TEST
-> +		   ARCH_BCMBCA || COMPILE_TEST
->  	select SATA_HOST
->  	help
->  	  This option enables support for the AHCI SATA3 controller found on
-> diff --git a/drivers/char/hw_random/Kconfig b/drivers/char/hw_random/Kconfig
-> index b3f2d55dc551..3da8e85f8aae 100644
-> --- a/drivers/char/hw_random/Kconfig
-> +++ b/drivers/char/hw_random/Kconfig
-> @@ -87,7 +87,7 @@ config HW_RANDOM_BA431
->  config HW_RANDOM_BCM2835
->  	tristate "Broadcom BCM2835/BCM63xx Random Number Generator support"
->  	depends on ARCH_BCM2835 || ARCH_BCM_NSP || ARCH_BCM_5301X || \
-> -		   ARCH_BCM_63XX || BCM63XX || BMIPS_GENERIC || COMPILE_TEST
-> +		   ARCH_BCMBCA || BCM63XX || BMIPS_GENERIC || COMPILE_TEST
->  	default HW_RANDOM
->  	help
->  	  This driver provides kernel-side support for the Random Number
-> diff --git a/drivers/clk/bcm/Kconfig b/drivers/clk/bcm/Kconfig
-> index ec738f74a026..77266afb1c79 100644
-> --- a/drivers/clk/bcm/Kconfig
-> +++ b/drivers/clk/bcm/Kconfig
-> @@ -22,9 +22,9 @@ config CLK_BCM2835
->  
->  config CLK_BCM_63XX
->  	bool "Broadcom BCM63xx clock support"
-> -	depends on ARCH_BCM_63XX || COMPILE_TEST
-> +	depends on ARCH_BCMBCA || COMPILE_TEST
->  	select COMMON_CLK_IPROC
-> -	default ARCH_BCM_63XX
-> +	default ARCH_BCMBCA
->  	help
->  	  Enable common clock framework support for Broadcom BCM63xx DSL SoCs
->  	  based on the ARM architecture
-> diff --git a/drivers/i2c/busses/Kconfig b/drivers/i2c/busses/Kconfig
-> index b1d7069dd377..acf2a393bd56 100644
-> --- a/drivers/i2c/busses/Kconfig
-> +++ b/drivers/i2c/busses/Kconfig
-> @@ -486,7 +486,7 @@ config I2C_BCM_KONA
->  
->  config I2C_BRCMSTB
->  	tristate "BRCM Settop/DSL I2C controller"
-> -	depends on ARCH_BCM2835 || ARCH_BCM4908 || ARCH_BCM_63XX || \
-> +	depends on ARCH_BCM2835 || ARCH_BCM4908 || ARCH_BCMBCA || \
->  		   ARCH_BRCMSTB || BMIPS_GENERIC || COMPILE_TEST
->  	default y
->  	help
-> diff --git a/drivers/phy/broadcom/Kconfig b/drivers/phy/broadcom/Kconfig
-> index 849c4204f550..93a6a8ee4716 100644
-> --- a/drivers/phy/broadcom/Kconfig
-> +++ b/drivers/phy/broadcom/Kconfig
-> @@ -83,7 +83,7 @@ config PHY_NS2_USB_DRD
->  config PHY_BRCM_SATA
->  	tristate "Broadcom SATA PHY driver"
->  	depends on ARCH_BRCMSTB || ARCH_BCM_IPROC || BMIPS_GENERIC || \
-> -		   ARCH_BCM_63XX || COMPILE_TEST
-> +		   ARCH_BCMBCA || COMPILE_TEST
->  	depends on OF
->  	select GENERIC_PHY
->  	default ARCH_BCM_IPROC
-> diff --git a/drivers/spi/Kconfig b/drivers/spi/Kconfig
-> index 2d034459e79f..8e550269d488 100644
-> --- a/drivers/spi/Kconfig
-> +++ b/drivers/spi/Kconfig
-> @@ -183,7 +183,7 @@ config SPI_BCM63XX
->  
->  config SPI_BCM63XX_HSSPI
->  	tristate "Broadcom BCM63XX HS SPI controller driver"
-> -	depends on BCM63XX || BMIPS_GENERIC || ARCH_BCM_63XX || COMPILE_TEST
-> +	depends on BCM63XX || BMIPS_GENERIC || ARCH_BCMBCA || COMPILE_TEST
->  	help
->  	  This enables support for the High Speed SPI controller present on
->  	  newer Broadcom BCM63XX SoCs.
-> diff --git a/drivers/tty/serial/Kconfig b/drivers/tty/serial/Kconfig
-> index 8a3ee1525d80..e3279544b03c 100644
-> --- a/drivers/tty/serial/Kconfig
-> +++ b/drivers/tty/serial/Kconfig
-> @@ -1100,8 +1100,8 @@ config SERIAL_TIMBERDALE
->  config SERIAL_BCM63XX
->  	tristate "Broadcom BCM63xx/BCM33xx UART support"
->  	select SERIAL_CORE
-> -	depends on ARCH_BCM4908 || ARCH_BCM_63XX || BCM63XX || BMIPS_GENERIC || COMPILE_TEST
-> -	default ARCH_BCM4908 || ARCH_BCM_63XX || BCM63XX || BMIPS_GENERIC
-> +	depends on ARCH_BCM4908 || ARCH_BCMBCA || BCM63XX || BMIPS_GENERIC || COMPILE_TEST
-> +	default ARCH_BCM4908 || ARCH_BCMBCA || BCM63XX || BMIPS_GENERIC
->  	help
->  	  This enables the driver for the onchip UART core found on
->  	  the following chipsets:
+Liu Ying (3):
+  dt-bindings: vendor-prefixes: Add prefix for Mixel, Inc.
+  dt-bindings: phy: Add Freescale i.MX8qm Mixel LVDS PHY binding
+  phy: freescale: Add i.MX8qm Mixel LVDS PHY support
 
+ .../bindings/phy/fsl,imx8qm-lvds-phy.yaml     |  61 +++
+ .../devicetree/bindings/vendor-prefixes.yaml  |   2 +
+ drivers/phy/freescale/Kconfig                 |   9 +
+ drivers/phy/freescale/Makefile                |   1 +
+ .../phy/freescale/phy-fsl-imx8qm-lvds-phy.c   | 450 ++++++++++++++++++
+ 5 files changed, 523 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/fsl,imx8qm-lvds-phy.yaml
+ create mode 100644 drivers/phy/freescale/phy-fsl-imx8qm-lvds-phy.c
 
 -- 
-Damien Le Moal
-Western Digital Research
+2.25.1
+
 
 -- 
 linux-phy mailing list
