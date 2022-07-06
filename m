@@ -4,74 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 23F87C43334
-	for <linux-phy@archiver.kernel.org>; Wed,  6 Jul 2022 06:06:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BD8DBCCA47F
+	for <linux-phy@archiver.kernel.org>; Wed,  6 Jul 2022 06:28:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ccb/XiL4O4XsYaTJyur9QJDLSuNWV8UbeLbrrm5NMKc=; b=Q8kzKBCStjtVOh
-	ekVzYeKm9Odllj0bzQ7+Yf2tf0TfDo+xCn8CxgtHuqDsvpj9Yp+9VmCrATt8pl5vIHJ3UoBy3JQq/
-	PdWFRW9yfb4QhWWW1GOjAnW8SKlO/MMPuPjYLsYHdUwgoThxjJYhAZs9NKGsu1uKDViBSRx3lTBVi
-	cHu3EE/6jYhLQcfUz9Vv+4TO8XE4iP1dLlpubNWDRM1Y/gyDNjyTQOTE4oQc1L1QfXqnxGpBS2+TN
-	azvZPnm6ZKoIp32c0h8gIkEJIucw9j/rwllYcHTfLSCcgCLNsRGONjFJuWCafAUiwU82BQ5sLUmEz
-	BYo/WK+8XlvJz1fkGdLw==;
+	List-Owner; bh=1PFzTqelEl0gTzs1Y0UpE+QsKrm8/xr4OwCX1jBkM2Y=; b=DDYts9On+cdYw+
+	ugWpWBrOqZlDcz/f65LacFnwcYo+l8CRDjaXhPPq4O10hkMa4g5QCsRQbHrEphVjTMt+tJHPyAOfF
+	Og9/05Qo5NrUXi4kd2YRLN9vxfQrkew0B6cW7jP9HQx4lYWwe6Vc+/RJfCP/ByOAqpvPkEqHsMwJh
+	6BWAfMGoBJPNJagqx39xQKqMXcroIrJokxu2fU8tHNDXoOWlMa0TSXL8t+eQblhbsWNKJP9tirQUZ
+	IGgFI8r95yDkjEJDk4O6Sq2QLz+LSLmi9xo1PFiP2tR/K3G/sd6kCv+hRyfDIzu7sF+/X00P2rkoo
+	AEEXQKocKqQHr0gdp0GA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o8yAy-006XEG-EX; Wed, 06 Jul 2022 06:06:16 +0000
-Received: from ams.source.kernel.org ([145.40.68.75])
+	id 1o8yWS-006hAw-Uu; Wed, 06 Jul 2022 06:28:28 +0000
+Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o8yAw-006XBi-6N
-	for linux-phy@lists.infradead.org; Wed, 06 Jul 2022 06:06:15 +0000
+	id 1o8yWP-006h4I-Iz
+	for linux-phy@lists.infradead.org; Wed, 06 Jul 2022 06:28:27 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id AA2A2B81A61;
-	Wed,  6 Jul 2022 06:06:12 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5985AC3411C;
-	Wed,  6 Jul 2022 06:06:11 +0000 (UTC)
+	by ams.source.kernel.org (Postfix) with ESMTPS id 2FBEAB81A61
+	for <linux-phy@lists.infradead.org>; Wed,  6 Jul 2022 06:28:24 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 50A3EC341CE
+	for <linux-phy@lists.infradead.org>; Wed,  6 Jul 2022 06:28:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1657087571;
-	bh=jvOZq722r7H/JpYeXiuNKx8BxoPr4CD4sprkmcgtsHU=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=UBISZFg4Ge7GQRk6VQfVTF0yeKRCowRMpeEhSqfcgqOTkWKECP5WgnXEXnrA+Wa9R
-	 eeFmxIOC0Qxgez3KYCybtXaG4ryLGcV+6uNrYabuz6gsK0ZN+TndJmRB5CLbqG8+ai
-	 Aj3hvh/M9zGBWZl1H2Hh3mk07Ct6GjGlhxjF+bKEfiy47H6/OJKPw8vVeOOfV9soWc
-	 ezvm5XBPimU5RauYA17Htscla7WBVZ+/F13srgoW7V0YtPQ08z3OvAd5kyrov6RUmO
-	 wHYOGcdVtnhy8BdxrIydQdsdKoWLlThm3hG619QsiTgjsCYmUoA0l0G1X6yJxdodAd
-	 nu7FQDLJ6MNiQ==
-Received: from johan by xi.lan with local (Exim 4.94.2)
-	(envelope-from <johan@kernel.org>)
-	id 1o8yAu-0004bk-7I; Wed, 06 Jul 2022 08:06:12 +0200
-Date: Wed, 6 Jul 2022 08:06:12 +0200
-From: Johan Hovold <johan@kernel.org>
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Cc: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <bjorn.andersson@linaro.org>,
-	Kishon Vijay Abraham I <kishon@ti.com>,
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 17/43] dt-bindings: phy: qcom,qmp-pcie: add missing child
- node schema
-Message-ID: <YsUmVBXWPojz0woT@hovoldconsulting.com>
-References: <20220705094239.17174-1-johan+linaro@kernel.org>
- <20220705094239.17174-18-johan+linaro@kernel.org>
- <4bc79a1c-66b1-225d-5026-ddf3e6f7d22c@linaro.org>
- <YsQlzr6nyvz761Kz@hovoldconsulting.com>
- <963917cf-0f9d-600f-564e-9e687270b1af@linaro.org>
- <YsQqcKZAs1xAB9+S@hovoldconsulting.com>
- <cf61b071-aa31-6f67-07f1-4f15e0fe7511@linaro.org>
+	s=k20201202; t=1657088903;
+	bh=uf62HvexVvB/Jx636o0MTt6E8hWMJQJNNvtBTXI9zxU=;
+	h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+	b=inhfUNQ4eoL/s3BvkLPhTfpTXUyY3Um/ynU4oJD6fAmIxr2da4mvIonLnOhuSE4S2
+	 xtZP1F+/IckpFSk/VgPIzcAqZkbDucMs7Mwt269DQmrASyWxH1jz5dlJhigA9w4IS3
+	 sIVpag65QuzZlPt16iddFyqWtX2jf1iUgUY3Dj13lPQHv77T4rI3PEGveVNYrQDSys
+	 7j1SF3T2ZYRiqhQYlPwUl9Df1AiJ5HwwbFJyc3spw8U7bgRzuwET2oMjNC3Xwscppg
+	 Sx+T7CWGyUyzWAwoglJNoQsumuM/CoylPF49jeuhM40LsjboVZKd2HrG4IVq/xw/y7
+	 8Xxe+2nH7yCPg==
+Received: by mail-ot1-f52.google.com with SMTP id q18-20020a9d7c92000000b00616b27cda7cso11200140otn.9
+        for <linux-phy@lists.infradead.org>; Tue, 05 Jul 2022 23:28:23 -0700 (PDT)
+X-Gm-Message-State: AJIora9kDYE6nKmYT80bFAxxfreaUzJAEB41NwlSxMCaVa1mER0Qu6U0
+	jitGilArGRYRBVdGUZP32Ptmj7zacowvJsfMges=
+X-Google-Smtp-Source: AGRyM1utRDa88CHhHTp5mP603IgAR57zrfhTLhegc113/GcO7yyNAJfXIpPN9E4szsM0k5P00ekmC12Kbd2fKlOgQfk=
+X-Received: by 2002:a05:6830:d0d:b0:616:99da:1fb0 with SMTP id
+ bu13-20020a0568300d0d00b0061699da1fb0mr16396323otb.109.1657088902445; Tue, 05
+ Jul 2022 23:28:22 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <cf61b071-aa31-6f67-07f1-4f15e0fe7511@linaro.org>
+References: <CGME20220614011616epcms2p7dcaa67c53b7df5802dd7a697e2d472d7@epcms2p4>
+ <20220706052217epcms2p444cc8608b21d483a66a43ecf4f2140d4@epcms2p4>
+In-Reply-To: <20220706052217epcms2p444cc8608b21d483a66a43ecf4f2140d4@epcms2p4>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Date: Wed, 6 Jul 2022 08:28:11 +0200
+X-Gmail-Original-Message-ID: <CAJKOXPfA_5a9bfx5=p=2qj1GxLRxt-1WsHwPfT3iho48mxiANw@mail.gmail.com>
+Message-ID: <CAJKOXPfA_5a9bfx5=p=2qj1GxLRxt-1WsHwPfT3iho48mxiANw@mail.gmail.com>
+Subject: Re: [PATCH v3 2/5] dt-bindings: phy: Add ARTPEC-8 PCIe phy
+To: wangseok.lee@samsung.com
+Cc: "robh+dt@kernel.org" <robh+dt@kernel.org>, "krzk+dt@kernel.org" <krzk+dt@kernel.org>, 
+	"kishon@ti.com" <kishon@ti.com>, "vkoul@kernel.org" <vkoul@kernel.org>, 
+	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>, 
+	"jesper.nilsson@axis.com" <jesper.nilsson@axis.com>, "lars.persson@axis.com" <lars.persson@axis.com>, 
+	"bhelgaas@google.com" <bhelgaas@google.com>, 
+	"linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>, 
+	"linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>, 
+	"devicetree@vger.kernel.org" <devicetree@vger.kernel.org>, 
+	"lorenzo.pieralisi@arm.com" <lorenzo.pieralisi@arm.com>, "kw@linux.com" <kw@linux.com>, 
+	"linux-arm-kernel@axis.com" <linux-arm-kernel@axis.com>, "kernel@axis.com" <kernel@axis.com>, 
+	Moon-Ki Jun <moonki.jun@samsung.com>, Sang Min Kim <hypmean.kim@samsung.com>, 
+	Dongjin Yang <dj76.yang@samsung.com>, Yeeun Kim <yeeun119.kim@samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220705_230614_430290_8604838F 
-X-CRM114-Status: GOOD (  17.62  )
+X-CRM114-CacheID: sfid-20220705_232825_813510_F0AAB85B 
+X-CRM114-Status: GOOD (  17.13  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,47 +91,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Jul 05, 2022 at 08:21:12PM +0200, Krzysztof Kozlowski wrote:
-> On 05/07/2022 14:11, Johan Hovold wrote:
+On Wed, 6 Jul 2022 at 07:22, Wangseok Lee <wangseok.lee@samsung.com> wrote:
+>
+> On 05/07/2022 19:59, Krzysztof Kozlowski wrote:
+> > On 29/06/2022 09:18, Wangseok Lee wrote:
+> >> Just a gentle ping for this patch, if any concern on this patch please let me know.
+> >>
+> >
+> > You received comments to fix in this patch. Exactly four. Four important
+> > points to fix. Therefore what is this ping about?
+> >
+> > Without fixing these items, your patch cannot be accepted. What is more
+> > to ping here?
+> >
+> > Best regards,
+> > Krzysztof
+>
+> I tried to receive your opinion about the fix point .
+> I will request a review again after modifying it in the next patch.
 
-> > Ok, so you want to flatten this by repeating also the register
-> > descriptions?
-> > 
-> > That wouldn't hurt readability as much, but doing so would be more error
-> > prone as it's easy to miss adding a new compatible in every group of
-> > conditionals and there's no else clause to catch the mistake.
-> > 
-> > Right know the logic is
-> > 
-> > 	if dual-lane
-> > 		items = 6
-> > 	else
-> > 		items = 3 or 4
-> > 		if single-lane-exception
-> > 			items = 3
-> > 		else
-> > 			items = 4
-> > 
-> > Flattening this gives
-> > 
-> > 	if dual-lane
-> > 		items = 6
-> > 	if single-lane-normal
-> > 		items = 4
-> > 	if single-lane-exception
-> > 		items = 3
-> > 
-> > Which means that every compatible must now be listed in one of the
-> > conditionals.
-> 
-> Yes, because it's explicit and easy to read. Handling compatibles in
-> 'else' makes it opposite - one cannot use grep and cannot easily find
-> what is actually covered by maxItems:4 (you need to check all 7
-> compatibles to find what is not covered here).
+But there was no quote about any fix point in your message. You
+replied on top of it so there was no reference to any previous topic.
 
-I'll go with that then.
-
-Johan
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
