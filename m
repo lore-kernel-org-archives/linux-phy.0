@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5058CCCA480
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 98486CCA497
 	for <linux-phy@archiver.kernel.org>; Thu,  7 Jul 2022 13:48:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,39 +12,53 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=agSAg/XiTck/VS0SrTNKly9Oc7LqZf44bTll03yjFXk=; b=nxm06Jmlvv3wnV
-	h4+S2trdxRGltY1pMc9XnBMqoFwncGBzccn57nU0JVTjaDiWreAwE1KlU6f15vZpO80zo6U/SvpGQ
-	pZijoYPiGoGwlHczp1dqkN0kLxkUWn68Ra6G/ZYAlgYcc4/uvjhP+UG8WXrSnO+ABVXFfMoF9op/g
-	TJQtMwTLqHeKst9ihdhwTcJlSPkWk/agGzLJqevOFw6YSddGYtdRrWUJXCQ9bWOXE+8HJV1zfdgcO
-	Fc3wI+KguqQvAS37EvQnAxgnry2KxntV9M3NuFiQFdVRuGwdG1/SJnvh2GITu3Yga+r1YjjTKb78v
-	xDigbykoaeVS6Norvdsg==;
+	List-Owner; bh=g+EW546JF1HqUXfBFrdRSQPYqadlrMd6S7TKqHX4kBE=; b=pH/QkNnCUyHDFu
+	ct866PLtMv61H/aVJd4l901BKMqNsYvMQcznEX2HpRWWUMyz7K5YtTq1vyqc6TQDY8z4631ijTMDE
+	TkQbTXG1hZCwW4/Axre9+Qb5OBvhMG+iOOpg4dQMT5g+rW93Dy6eysUZg5g7z6XLTkZbKht2NDj8A
+	/GJPLCb1G5exp1+/sv+Dl7tPCj7P5kDa/czTUj2NB7krL2M19rZJjJeJM/R6osdCcX5F5o/JLmWSN
+	6Q8obeedS9GaEWFYoTeE8oEnz18QFNRcF637VmBw/zrU8UTCLJPc1hYwxaLqq5I0UYiKswiOQe/ul
+	Tj/gL6UZUjvAy/xXVf4g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o9RrS-00GL3A-HT; Thu, 07 Jul 2022 13:48:06 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1o9RrS-00GL3a-Ow; Thu, 07 Jul 2022 13:48:06 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o9RrD-00GKlH-59
-	for linux-phy@lists.infradead.org; Thu, 07 Jul 2022 13:47:57 +0000
+	id 1o9RrJ-00GKsW-Sf
+	for linux-phy@bombadil.infradead.org; Thu, 07 Jul 2022 13:47:57 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
+	:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
+	Content-Type:Content-ID:Content-Description;
+	bh=pvB1P+xZ5x+QFg4fLByOGkM5nP+aNmCtjY3cEeKH3XE=; b=rhsd70GtdiFOPONpmgcMI46dnq
+	J1u91MnqdGVqniQGd5GXDpeWnHINVYIouFzsQHGv1cjhETviO+9ZuWXBcpd0dXLoOze5nU6iJOuT/
+	nJbbkOQ6KUy6kGnYmDsXGlOkmZTd7bI/Sa+XvSV/kTohK4/MwzqaVGnYg4kKCbJaXFgyEQFbqksrg
+	bthwY+2f0VwZokYFaZeXsSaZFb96S6XxVBv2kPlBnjeIztmszuAeVTVlZrSexp/x5QgJEnE/lIrfE
+	vRA7KbwuHwaBhMd1wUWGiHojA9inu8vOAv0TV/sRZ6nAnwkj25ekea3SQUtUwhURTbtbKqE3PXU82
+	qbJ8H2FA==;
+Received: from dfw.source.kernel.org ([139.178.84.217])
+	by desiato.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
+	id 1o9RrD-001IQE-K2
+	for linux-phy@lists.infradead.org; Thu, 07 Jul 2022 13:47:55 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 67C1F62206;
-	Thu,  7 Jul 2022 13:47:42 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6EB47C53FC7;
-	Thu,  7 Jul 2022 13:47:40 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id CDBE4621D3;
+	Thu,  7 Jul 2022 13:47:41 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0A661C341FA;
+	Thu,  7 Jul 2022 13:47:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1657201660;
-	bh=boTqnhrrai2ijoY0lbc9OfpsU2lJU7ALSG8HtXGg5yE=;
+	bh=Y+J7Plv+oHOVcHXQp7HO15QDcgjd2W96yFr9wmzsNjI=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=JmNCa/fSfvhSeZVOUTo5MoKIebcREIeYOd+oDUy9vg9RHsHlMD/sSLjQCJuPQji2B
-	 xJS+nsm0kHAVsnENRX9fkMa66NmCEeTYFWj/FdB3SMN0giT0WAZTiAwcZNQvHXFykR
-	 iMeW86Ch1YcjiVEFyy9K/p+IosNG8A1zq+HMrQP2eH/ErKaTGRy50ObvDn6XG5e/vw
-	 aFnL2wi+xWx89v52VXQFf0eNGrLhJ5bFfagllm69vywEy2WDvLpAV6iXyJ04qPKy+0
-	 T4h/WO2N8QMWC2yXI9+9/rWAyC6B79oQhwfB83DCbvv97WaUQ/D3nKBea3z+4DR9bc
-	 3ZLF0xhJuVrsw==
+	b=jqKoKRNETCw8VvrS7CbL/LS2UraJauzpiKvDXgEfFi25I9n653jl6jW1jh0OEr+Tx
+	 +P+kdsHhgv4l0pqJyP2E97Wjje9CLihdqoW0oU0y/89YDTpmZGiA6Pwm6WSTUZEkNn
+	 uqu3QM9YeS7WK8UTyGn+pPDRP4vlSjl/gWdoME7qYJyxxjn0u67oYGVUpCo9FGTTtd
+	 tvYKYLCEypoDtgagxnnyUvgw/lohWnzovnzUGE6NxaHjgtBlSoeNM8YRMyHZR71EZo
+	 DnBoH4TgvnHXCQNOuqNKQQxf3HCz5gFJHgR/yK3R1JpaQgKu9MnQTXT8afU5aBSh+N
+	 ADJglmaBRYeUA==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1o9Rr5-0000yD-Ie; Thu, 07 Jul 2022 15:47:43 +0200
+	id 1o9Rr4-0000wp-WB; Thu, 07 Jul 2022 15:47:43 +0200
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>,
 	Rob Herring <robh+dt@kernel.org>,
@@ -58,16 +72,16 @@ Cc: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
 	devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH v2 22/30] dt-bindings: phy: qcom,qmp-usb: add missing qcom,sc7180-qmp-usb3-phy schema
-Date: Thu,  7 Jul 2022 15:47:17 +0200
-Message-Id: <20220707134725.3512-23-johan+linaro@kernel.org>
+Subject: [PATCH v2 16/30] dt-bindings: phy: qcom,qmp-ufs: add missing SM8450 clock
+Date: Thu,  7 Jul 2022 15:47:11 +0200
+Message-Id: <20220707134725.3512-17-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.35.1
 In-Reply-To: <20220707134725.3512-1-johan+linaro@kernel.org>
 References: <20220707134725.3512-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220707_064751_289283_C18F04CD 
-X-CRM114-Status: GOOD (  10.70  )
+X-CRM114-CacheID: sfid-20220707_144752_518229_5E81F22C 
+X-CRM114-Status: GOOD (  10.36  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,50 +98,57 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The "qcom,sc7180-qmp-usb3-phy" compatible is apparently used to describe
-a combo PHY where only the USB part is used. Specifically, only a single
-reset is used.
+Add the missing "qref" clock used by the SM8450 UFS QMP PHY to the
+binding.
 
-4ad7d7eeed3a ("dt-bindings: phy: qcom,qmp-usb3-dp: Add support for SC7180")
-94c34600b617 ("dt-bindings: phy: qcom,qmp-usb3-dp-phy: move usb3 compatibles back to qcom,qmp-phy.yaml")
+Fixes: e04121ba1b08 ("dt-bindings: phy: qcom,qmp: Add SM8450 UFS phy compatible")
+Fixes: 07fa917a335e ("arm64: dts: qcom: sm8450: add ufs nodes")
 Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- .../bindings/phy/qcom,qmp-usb-phy.yaml        | 22 +++++++++++++++++++
- 1 file changed, 22 insertions(+)
+ .../bindings/phy/qcom,qmp-ufs-phy.yaml        | 20 +++++++++++++++++--
+ 1 file changed, 18 insertions(+), 2 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/phy/qcom,qmp-usb-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,qmp-usb-phy.yaml
-index 174f96d53d6b..65e8e4ec656b 100644
---- a/Documentation/devicetree/bindings/phy/qcom,qmp-usb-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/qcom,qmp-usb-phy.yaml
-@@ -123,6 +123,28 @@ required:
- additionalProperties: false
+diff --git a/Documentation/devicetree/bindings/phy/qcom,qmp-ufs-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,qmp-ufs-phy.yaml
+index e9dfed29e996..7a1f80e2cf23 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,qmp-ufs-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,qmp-ufs-phy.yaml
+@@ -42,11 +42,11 @@ properties:
  
- allOf:
+   clocks:
+     minItems: 1
+-    maxItems: 2
++    maxItems: 3
+ 
+   clock-names:
+     minItems: 1
+-    maxItems: 2
++    maxItems: 3
+ 
+   resets:
+     maxItems: 1
+@@ -117,6 +117,22 @@ allOf:
+             - const: ref
+             - const: ref_aux
+ 
 +  - if:
 +      properties:
 +        compatible:
 +          contains:
 +            enum:
-+              - qcom,sc7180-qmp-usb3-phy
++              - qcom,sm8450-qmp-ufs-phy
 +    then:
 +      properties:
 +        clocks:
-+          maxItems: 4
++          maxItems: 3
 +        clock-names:
 +          items:
-+            - const: aux
-+            - const: cfg_ahb
 +            - const: ref
-+            - const: com_aux
-+        resets:
-+          maxItems: 1
-+        reset-names:
-+          items:
-+            - const: phy
++            - const: ref_aux
++            - const: qref
 +
-   - if:
-       properties:
-         compatible:
+ examples:
+   - |
+     #include <dt-bindings/clock/qcom,gcc-sc8280xp.h>
 -- 
 2.35.1
 
