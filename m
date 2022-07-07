@@ -4,54 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id ECD3EC43334
-	for <linux-phy@archiver.kernel.org>; Thu,  7 Jul 2022 13:43:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9E673C43334
+	for <linux-phy@archiver.kernel.org>; Thu,  7 Jul 2022 13:47:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Kwseb93AnoXxC/gI17sFS3tgMxlM6sAsqzkdBs8xWq4=; b=i5Xc6GnzrGIwYN
-	vjRA9tfvrvt7dFjPJFjtBVxG1BQTUcjxQtq19rpYKx/3d8YmqSl5CXht2S+BD/hmgyQjNH0Z8HhjR
-	I4fdRO2nuiwEmbxYYyiYXbJy8sb+Njh0bK7RM1V14bmyf1gXWe5kwXKfMEdBrQnEeu9Xr4WxrPiKT
-	u2k8OGnpgBcXHRMITOcGK3FbuGYMaQtpNJnD/VS0KXQGaAmjSK653sikX9Wp90batQ2QdLSLF0krL
-	fiW6Tu6h83EPzfZOI50VU66lXydqs55/f5L0daEUWGSVnARRiJV69fSJ8WpTgOoAGl7ck5brhjjfC
-	XV/K4kpQRLR8RRYK1Ffw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=YgXNTg7dNx9Gh2aiRFSrejmf91Ag0KsJN58hX/jSzwU=; b=fMjdTRY1xTv+OY
+	i96phaCQpertJGptsrd7f/RmsmrCt5Ev2kOFQaOkagVUpzV+LH2A+QtTuzpR8jTwSDQEyGLPsOimd
+	cVzz9qDV4yP8iMLmyjW8/h1fo/RwpO7DTKnaANL4rzP85ywnOg/v083Myl9Nd4UhmldWHj5Pc6iDr
+	sbOv5SEKT4IwpVDN8CF31y/06SjEbKf3K0BfukcMUjlkBVULpJ1OY3oTN9tEDZinqexJ5rdoBfqEo
+	dnyWiR32mIPXP3Qx7fmZ0/5pYyPuV9YB+dyG2bfEFDNqPcWhQTpTUH7cgvsi9tdw0Z7+sH++x5RqX
+	indhJmsDmmKVv13znD9A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o9RnT-00GJfg-B7; Thu, 07 Jul 2022 13:43:59 +0000
-Received: from szxga01-in.huawei.com ([45.249.212.187])
+	id 1o9Rr8-00GKhK-Kp; Thu, 07 Jul 2022 13:47:46 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o9RnD-00GJZC-P9; Thu, 07 Jul 2022 13:43:45 +0000
-Received: from dggpemm500022.china.huawei.com (unknown [172.30.72.53])
-	by szxga01-in.huawei.com (SkyGuard) with ESMTP id 4LdyH55BXxzhZFF;
-	Thu,  7 Jul 2022 21:41:05 +0800 (CST)
-Received: from dggpemm500007.china.huawei.com (7.185.36.183) by
- dggpemm500022.china.huawei.com (7.185.36.162) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.2375.24; Thu, 7 Jul 2022 21:43:33 +0800
-Received: from huawei.com (10.175.103.91) by dggpemm500007.china.huawei.com
- (7.185.36.183) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2375.24; Thu, 7 Jul
- 2022 21:43:32 +0800
-From: Yang Yingliang <yangyingliang@huawei.com>
-To: <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-	<linux-arm-kernel@lists.infradead.org>, <linux-mediatek@lists.infradead.org>,
-	<dri-devel@lists.freedesktop.org>
-CC: <msp@baylibre.com>, <vkoul@kernel.org>, <chunkuang.hu@kernel.org>
-Subject: [PATCH -next] phy: phy-mtk-dp: change mtk_dp_phy_driver to static
-Date: Thu, 7 Jul 2022 21:53:09 +0800
-Message-ID: <20220707135309.801181-1-yangyingliang@huawei.com>
-X-Mailer: git-send-email 2.25.1
+	id 1o9Rr4-00GKcb-G5
+	for linux-phy@lists.infradead.org; Thu, 07 Jul 2022 13:47:44 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 83F9F621A4;
+	Thu,  7 Jul 2022 13:47:40 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 31927C341CE;
+	Thu,  7 Jul 2022 13:47:38 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1657201659;
+	bh=t37NNwLh8MwSux7U3ureG58oP/xr5nX9uYzRDQ0W8Dw=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=Ipp8H3Cz2npmAH3g3htm83GAkhbejAdjQdZlM++d9T00FQGCgVj+U5t26ntJSwVJF
+	 aYIDCMfv7RnKuVU9rwQGrpQ7XxcJad+0SwwnJ0YCJuFpmv53ePaFmiCiV5lS5PAATB
+	 9ShS0QFk44sY+wSkFNxxVQ6v7kVXZkhbHYaftn+RtS/5REH4dfJAOMv/SOKM4NePrd
+	 lz7p4zhAi2U+nW4mH9/REyavTxbxdND+G0Jtn06btjA3panEnRfw5DXHBmWq6Bftkr
+	 zuF+kdtScya0QepF5Zf9Modudjaoe4llx+dKhPvdtulAB1va0S2d9PqcQQCM1tgzM0
+	 q3KR0tkiBVrQA==
+Received: from johan by xi.lan with local (Exim 4.94.2)
+	(envelope-from <johan+linaro@kernel.org>)
+	id 1o9Rr3-0000vx-TR; Thu, 07 Jul 2022 15:47:41 +0200
+From: Johan Hovold <johan+linaro@kernel.org>
+To: Vinod Koul <vkoul@kernel.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
+Cc: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+	Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <bjorn.andersson@linaro.org>,
+	Kishon Vijay Abraham I <kishon@ti.com>,
+	linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	Johan Hovold <johan+linaro@kernel.org>
+Subject: [PATCH v2 04/30] dt-bindings: phy: qcom,qmp: fix child node description
+Date: Thu,  7 Jul 2022 15:46:59 +0200
+Message-Id: <20220707134725.3512-5-johan+linaro@kernel.org>
+X-Mailer: git-send-email 2.35.1
+In-Reply-To: <20220707134725.3512-1-johan+linaro@kernel.org>
+References: <20220707134725.3512-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
-X-Originating-IP: [10.175.103.91]
-X-ClientProxiedBy: dggems704-chm.china.huawei.com (10.3.19.181) To
- dggpemm500007.china.huawei.com (7.185.36.183)
-X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220707_064344_038752_0DC63124 
-X-CRM114-Status: GOOD (  10.56  )
+X-CRM114-CacheID: sfid-20220707_064742_596195_7D96A57B 
+X-CRM114-Status: GOOD (  10.74  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -68,28 +84,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-mtk_dp_phy_driver is only used in phy-mtk-dp.c now, change it to static.
+Fix the incorrect description of the child nodes which claimed that one
+node is required per lane rather than per PHY.
 
-Signed-off-by: Yang Yingliang <yangyingliang@huawei.com>
+Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- drivers/phy/mediatek/phy-mtk-dp.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
 
-diff --git a/drivers/phy/mediatek/phy-mtk-dp.c b/drivers/phy/mediatek/phy-mtk-dp.c
-index 715bd2336c17..31266e7ca324 100644
---- a/drivers/phy/mediatek/phy-mtk-dp.c
-+++ b/drivers/phy/mediatek/phy-mtk-dp.c
-@@ -189,7 +189,7 @@ static int mtk_dp_phy_probe(struct platform_device *pdev)
- 	return 0;
- }
+diff --git a/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
+index ea028bad961d..f7b8898fd95d 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
+@@ -100,9 +100,7 @@ properties:
+ patternProperties:
+   "^phy@[0-9a-f]+$":
+     type: object
+-    description:
+-      Each device node of QMP phy is required to have as many child nodes as
+-      the number of lanes the PHY has.
++    description: one child node per PHY provided by this block
  
--struct platform_driver mtk_dp_phy_driver = {
-+static struct platform_driver mtk_dp_phy_driver = {
- 	.probe = mtk_dp_phy_probe,
- 	.driver = {
- 		.name = "mediatek-dp-phy",
+ required:
+   - compatible
 -- 
-2.25.1
+2.35.1
 
 
 -- 
