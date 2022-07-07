@@ -4,70 +4,103 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 58354C43334
-	for <linux-phy@archiver.kernel.org>; Thu,  7 Jul 2022 07:38:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A5907C433EF
+	for <linux-phy@archiver.kernel.org>; Thu,  7 Jul 2022 08:08:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TlGZE4kwA1KT7tToEmlyfr15sbB/LB259uln+CwSkug=; b=21x5OMyuajtISD
-	eIz/fnzyLsN32MooxCUI3y5wCD4U5QzTRTNq1ZbfJWaSprhIsOP3rxs3Lc9gZkQHXpeY9ptAGxYnB
-	gT0xjXzqmQ7eLMc7+4tQ7usScm/8VcDxU1AeNYRo/99HwsVD/7S4I6bUqYoRphkHnhXGSN1p+BzDh
-	j46zNp3/7/aLTb6VBMNjqgj9rJ9d6ulJbM9y1O5LfeyD9ScHcMVp2Sa3N8BTGGpaX9ksJoUg/8z80
-	LqmUhRXIO+xr8zFHOi+ZE4v+yq9qA9fSF6NPr7fVc54qU1kZPzg1/fCHoomjSSE2h5wy3uYaYv5Rz
-	q0IJjUw6hUjdbEXZoLsA==;
+	List-Owner; bh=y/d9vruU1kGu9KH4XWUMMAC9gGMEPsZlnUqBFGmXUrA=; b=dS3r3jkcBjm5u0
+	pHtgruXbWzIP0FMelrHX2qFU9Gxki3O237sqNvtHT+LjMbhTO7O/eu3vFN8bQkHNkT7CvadlwH0lY
+	CEObWk+tXwH/qGDOVa0yeeQnlkb4TETk4Q/JI70WOVODoR/BB4vPEU4tv7Vh0tueDqtfU1zB4m2VN
+	EoEr+2NBX7J5GBxT3+lk0dSRQAYUoYwltGlttzS+q43wDajj3xTSmV2W+QVGEluPloUTSfncmfgxs
+	4zMBmz4hzhNa+e2TPWlBihvsrwgFiQQ0Vpla65IX5tHAuayMeQmZgrkUU4cRxUC7N+5rNXStmnqeg
+	xk+7iaXcOqYJxufQLfvg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o9M5w-00Ejf5-OW; Thu, 07 Jul 2022 07:38:40 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1o9MZB-00F4SA-QK; Thu, 07 Jul 2022 08:08:53 +0000
+Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o9M5t-00EjaH-OH
-	for linux-phy@lists.infradead.org; Thu, 07 Jul 2022 07:38:39 +0000
+	id 1o9MYx-00F4Hp-OU; Thu, 07 Jul 2022 08:08:41 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 5794261540;
-	Thu,  7 Jul 2022 07:38:36 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B2C07C3411E;
-	Thu,  7 Jul 2022 07:38:35 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1657179515;
-	bh=dEH00sPee+QPLnv4vCT0+HRB/HiN2iqpU4CrPolA87A=;
+	by ams.source.kernel.org (Postfix) with ESMTPS id B2D21B81ADA;
+	Thu,  7 Jul 2022 08:08:37 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5C8D2C3411E;
+	Thu,  7 Jul 2022 08:08:35 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=linuxfoundation.org;
+	s=korg; t=1657181316;
+	bh=Mzw+guaGxcvS7S4YlQr9bq/AYy4U/puT8v9DMSRjm+c=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=pr3afQObb2yiXatw9whVzqKy3t1SWArA7c5qdephf6Eu2In0y9jjAc7uJkyHaTtRQ
-	 RizEOEFsIZ8ZfYclMF/ClpnGUxwRm+FlHbZmOGit74tSA003KaUDCOvUAkd3O7XGi+
-	 RsUVglrGvjxr/xQcv5WoRFoPH58lxw9lFfmKQ97XAb5XKWTooPHvbV6K9nE3Izel7v
-	 RnY5El1xSJSDLX6wvLHo0J4wwvFkigGOqHNRrh7mGyxcsLjW7ODwbxoWtWeDX6wzIB
-	 tFdHv3k1nKrVDxr3vbskQvBXU11LmmL1A9HeiVBPQxHPuuksR9/L7VlVtWl/b9RdLz
-	 NIikfJJ7HAgvQ==
-Received: from johan by xi.lan with local (Exim 4.94.2)
-	(envelope-from <johan@kernel.org>)
-	id 1o9M5s-0004XB-V3; Thu, 07 Jul 2022 09:38:37 +0200
-Date: Thu, 7 Jul 2022 09:38:36 +0200
-From: Johan Hovold <johan@kernel.org>
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Cc: Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <bjorn.andersson@linaro.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@ti.com>,
-	Stephen Boyd <swboyd@chromium.org>,
-	Michael Turquette <mturquette@baylibre.com>,
-	Taniya Das <quic_tdas@quicinc.com>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-clk@vger.kernel.org
-Subject: Re: [PATCH 2/2] phy: qcom-qmp-ufs: provide symbol clocks
-Message-ID: <YsaNfK64RGNp/ZvT@hovoldconsulting.com>
-References: <20220620153956.1723269-1-dmitry.baryshkov@linaro.org>
- <20220620153956.1723269-2-dmitry.baryshkov@linaro.org>
+	b=o8T0RPLH1+QXuxRGiOx0iOcZa4PNW1RYnmq0rwqP4JlY+PYLChMX98BzUOmDLYQt5
+	 WHtgniPDP3fJS/IKoiVXIaVBC8g4rRYZFs4Es7HO3CMez5153+NrgRKDzbP84fxvsI
+	 PrLKzhYgkU2Ze+gIXne4sqvbIkFu3tT1lxy0BeOk=
+Date: Thu, 7 Jul 2022 10:08:33 +0200
+From: Greg KH <gregkh@linuxfoundation.org>
+To: kernel test robot <lkp@intel.com>
+Cc: Andrew Morton <akpm@linux-foundation.org>,
+	virtualization@lists.linux-foundation.org,
+	usbb2k-api-dev@nongnu.org, tipc-discussion@lists.sourceforge.net,
+	target-devel@vger.kernel.org, sound-open-firmware@alsa-project.org,
+	samba-technical@lists.samba.org, rds-devel@oss.oracle.com,
+	patches@opensource.cirrus.com, osmocom-net-gprs@lists.osmocom.org,
+	openipmi-developer@lists.sourceforge.net, nvdimm@lists.linux.dev,
+	ntb@lists.linux.dev, netfilter-devel@vger.kernel.org,
+	netdev@vger.kernel.org, mjpeg-users@lists.sourceforge.net,
+	megaraidlinux.pdl@broadcom.com, linuxppc-dev@lists.ozlabs.org,
+	linux1394-devel@lists.sourceforge.net, linux-x25@vger.kernel.org,
+	linux-wpan@vger.kernel.org, linux-wireless@vger.kernel.org,
+	linux-watchdog@vger.kernel.org, linux-usb@vger.kernel.org,
+	linux-unionfs@vger.kernel.org, linux-tegra@vger.kernel.org,
+	linux-stm32@st-md-mailman.stormreply.com,
+	linux-staging@lists.linux.dev, linux-serial@vger.kernel.org,
+	linux-sctp@vger.kernel.org, linux-scsi@vger.kernel.org,
+	linux-samsung-soc@vger.kernel.org,
+	linux-rockchip@lists.infradead.org,
+	linux-renesas-soc@vger.kernel.org, linux-rdma@vger.kernel.org,
+	linux-raid@vger.kernel.org, linux-pm@vger.kernel.org,
+	linux-phy@lists.infradead.org, linux-perf-users@vger.kernel.org,
+	linux-pci@vger.kernel.org, linux-parport@lists.infradead.org,
+	linux-parisc@vger.kernel.org, linux-omap@vger.kernel.org,
+	linux-nfc@lists.01.org, linux-mtd@lists.infradead.org,
+	linux-mmc@vger.kernel.org, linux-mm@kvack.org,
+	linux-mediatek@lists.infradead.org, linux-media@vger.kernel.org,
+	linux-leds@vger.kernel.org, linux-integrity@vger.kernel.org,
+	linux-input@vger.kernel.org, linux-iio@vger.kernel.org,
+	linux-ide@vger.kernel.org, linux-hwmon@vger.kernel.org,
+	linux-fsdevel@vger.kernel.org, linux-fpga@vger.kernel.org,
+	linux-fbdev@vger.kernel.org, linux-ext4@vger.kernel.org,
+	linux-efi@vger.kernel.org, linux-doc@vger.kernel.org,
+	linux-cxl@vger.kernel.org, linux-crypto@vger.kernel.org,
+	linux-clk@vger.kernel.org, linux-cifs@vger.kernel.org,
+	linux-btrfs@vger.kernel.org, linux-bluetooth@vger.kernel.org,
+	linux-block@vger.kernel.org, linux-bcache@vger.kernel.org,
+	linux-arm-msm@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-amlogic@lists.infradead.org, linaro-mm-sig@lists.linaro.org,
+	legousb-devel@lists.sourceforge.net, kvm@vger.kernel.org,
+	keyrings@vger.kernel.org, isdn4linux@listserv.isdn4linux.de,
+	iommu@lists.linux.dev, iommu@lists.linux-foundation.org,
+	intel-wired-lan@lists.osuosl.org, greybus-dev@lists.linaro.org,
+	dri-devel@lists.freedesktop.org, dm-devel@redhat.com,
+	devicetree@vger.kernel.org, dev@openvswitch.org,
+	dccp@vger.kernel.org, damon@lists.linux.dev, coreteam@netfilter.org,
+	cgroups@vger.kernel.org, ceph-devel@vger.kernel.org,
+	ath11k@lists.infradead.org, apparmor@lists.ubuntu.com,
+	amd-gfx@lists.freedesktop.org, alsa-devel@alsa-project.org,
+	accessrunner-general@lists.sourceforge.net
+Subject: Re: [linux-next:master] BUILD REGRESSION
+ 088b9c375534d905a4d337c78db3b3bfbb52c4a0
+Message-ID: <YsaUgfPbOg7WuBuB@kroah.com>
+References: <62c683a2.g1VSVt6BrQC6ZzOz%lkp@intel.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20220620153956.1723269-2-dmitry.baryshkov@linaro.org>
+In-Reply-To: <62c683a2.g1VSVt6BrQC6ZzOz%lkp@intel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220707_003837_885723_BBF9262B 
-X-CRM114-Status: GOOD (  20.09  )
+X-CRM114-CacheID: sfid-20220707_010840_139556_5126D48E 
+X-CRM114-Status: GOOD (  10.83  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,82 +117,73 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Jun 20, 2022 at 06:39:56PM +0300, Dmitry Baryshkov wrote:
-> Register three UFS symbol clocks (ufs_rx_symbol_0_clk_src,
-> ufs_rx_symbol_1_clk_src ufs_tx_symbol_0_clk_src). Register OF clock
-> provider to let other devices link these clocks through the DT.
+On Thu, Jul 07, 2022 at 02:56:34PM +0800, kernel test robot wrote:
+> tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git master
+> branch HEAD: 088b9c375534d905a4d337c78db3b3bfbb52c4a0  Add linux-next specific files for 20220706
 > 
-> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-> ---
->  drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 55 +++++++++++++++++++++++++
->  1 file changed, 55 insertions(+)
+> Error/Warning reports:
 > 
-> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-> index a2526068232b..0f31d3255897 100644
-> --- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-> @@ -1167,6 +1167,54 @@ static int qcom_qmp_phy_ufs_clk_init(struct device *dev, const struct qmp_phy_cf
->  	return devm_clk_bulk_get(dev, num, qmp->clks);
->  }
->  
-> +static void phy_clk_release_provider(void *res)
-> +{
-> +	of_clk_del_provider(res);
-> +}
-> +
-> +#define UFS_SYMBOL_CLOCKS 3
-> +
-> +static int phy_symbols_clk_register(struct qcom_qmp *qmp, struct device_node *np)
-> +{
-> +	struct clk_hw_onecell_data *clk_data;
-> +	struct clk_hw *hw;
-> +	int ret;
-> +
-> +	clk_data = devm_kzalloc(qmp->dev, struct_size(clk_data, hws, UFS_SYMBOL_CLOCKS), GFP_KERNEL);
+> https://lore.kernel.org/linux-doc/202207070644.x48XOOvs-lkp@intel.com
+> 
+> Error/Warning: (recently discovered and may have been fixed)
+> 
+> Documentation/arm/google/chromebook-boot-flow.rst: WARNING: document isn't included in any toctree
+> arm-linux-gnueabi-ld: dc_dmub_srv.c:(.text+0x1108): undefined reference to `__aeabi_ddiv'
+> arm-linux-gnueabi-ld: dc_dmub_srv.c:(.text+0x1124): undefined reference to `__aeabi_ui2d'
+> arm-linux-gnueabi-ld: dc_dmub_srv.c:(.text+0x1164): undefined reference to `__aeabi_dmul'
+> arm-linux-gnueabi-ld: dc_dmub_srv.c:(.text+0x1170): undefined reference to `__aeabi_dadd'
+> arm-linux-gnueabi-ld: dc_dmub_srv.c:(.text+0x1180): undefined reference to `__aeabi_dsub'
+> arm-linux-gnueabi-ld: dc_dmub_srv.c:(.text+0x1190): undefined reference to `__aeabi_d2uiz'
+> arm-linux-gnueabi-ld: dc_dmub_srv.c:(.text+0x162c): undefined reference to `__aeabi_d2iz'
+> arm-linux-gnueabi-ld: dc_dmub_srv.c:(.text+0x16b0): undefined reference to `__aeabi_i2d'
+> dc_dmub_srv.c:(.text+0x10f8): undefined reference to `__aeabi_ui2d'
+> dc_dmub_srv.c:(.text+0x464): undefined reference to `__floatunsidf'
+> dc_dmub_srv.c:(.text.dc_dmub_setup_subvp_dmub_command+0x33c): undefined reference to `__floatunsidf'
+> drivers/pci/endpoint/functions/pci-epf-vntb.c:975:5: warning: no previous prototype for 'pci_read' [-Wmissing-prototypes]
+> drivers/pci/endpoint/functions/pci-epf-vntb.c:984:5: warning: no previous prototype for 'pci_write' [-Wmissing-prototypes]
+> drivers/vfio/vfio_iommu_type1.c:2141:35: warning: cast to smaller integer type 'enum iommu_cap' from 'void *' [-Wvoid-pointer-to-enum-cast]
+> mips-linux-ld: dc_dmub_srv.c:(.text.dc_dmub_setup_subvp_dmub_command+0x34c): undefined reference to `__floatunsidf'
+> mips-linux-ld: dc_dmub_srv.c:(.text.dc_dmub_setup_subvp_dmub_command+0x378): undefined reference to `__divdf3'
+> mips-linux-ld: dc_dmub_srv.c:(.text.dc_dmub_setup_subvp_dmub_command+0x38c): undefined reference to `__muldf3'
+> mips-linux-ld: dc_dmub_srv.c:(.text.dc_dmub_setup_subvp_dmub_command+0x3a0): undefined reference to `__adddf3'
+> mips-linux-ld: dc_dmub_srv.c:(.text.dc_dmub_setup_subvp_dmub_command+0x3b4): undefined reference to `__subdf3'
+> mips-linux-ld: dc_dmub_srv.c:(.text.dc_dmub_setup_subvp_dmub_command+0x3d4): undefined reference to `__fixunsdfsi'
+> mips-linux-ld: dc_dmub_srv.c:(.text.dc_dmub_setup_subvp_dmub_command+0x750): undefined reference to `__fixdfsi'
+> mips-linux-ld: dc_dmub_srv.c:(.text.dc_dmub_setup_subvp_dmub_command+0x7c0): undefined reference to `__floatsidf'
+> powerpc-linux-ld: drivers/pci/endpoint/functions/pci-epf-vntb.c:174: undefined reference to `ntb_link_event'
+> xtensa-linux-ld: dc_dmub_srv.c:(.text+0x468): undefined reference to `__divdf3'
+> xtensa-linux-ld: dc_dmub_srv.c:(.text+0x46c): undefined reference to `__muldf3'
+> xtensa-linux-ld: dc_dmub_srv.c:(.text+0x470): undefined reference to `__adddf3'
+> xtensa-linux-ld: dc_dmub_srv.c:(.text+0x474): undefined reference to `__subdf3'
+> xtensa-linux-ld: dc_dmub_srv.c:(.text+0x478): undefined reference to `__fixunsdfsi'
+> xtensa-linux-ld: dc_dmub_srv.c:(.text+0x47c): undefined reference to `__fixdfsi'
+> xtensa-linux-ld: dc_dmub_srv.c:(.text+0x480): undefined reference to `__floatsidf'
+> xtensa-linux-ld: dc_dmub_srv.c:(.text+0x60c): undefined reference to `__floatunsidf'
+> 
+> Unverified Error/Warning (likely false positive, please contact us if interested):
+> 
+> arch/x86/events/core.c:2114 init_hw_perf_events() warn: missing error code 'err'
+> drivers/android/binder.c:1481:19-23: ERROR: from is NULL but dereferenced.
+> drivers/android/binder.c:2920:29-33: ERROR: target_thread is NULL but dereferenced.
+> drivers/android/binder.c:353:25-35: ERROR: node -> proc is NULL but dereferenced.
+> drivers/android/binder.c:4888:16-20: ERROR: t is NULL but dereferenced.
+> drivers/base/regmap/regmap.c:1996:1: internal compiler error: in arc_ifcvt, at config/arc/arc.c:9637
+> drivers/char/random.c:869:1: internal compiler error: in arc_ifcvt, at config/arc/arc.c:9637
+> drivers/firmware/arm_scmi/clock.c:394:1: internal compiler error: in arc_ifcvt, at config/arc/arc.c:9637
+> drivers/firmware/arm_scmi/powercap.c:376:1: internal compiler error: in arc_ifcvt, at config/arc/arc.c:9637
+> drivers/gpu/drm/amd/amdgpu/../pm/powerplay/hwmgr/vega10_powertune.c:1214:1: internal compiler error: in arc_ifcvt, at config/arc/arc.c:9637
+> drivers/gpu/drm/amd/display/dc/os_types.h: drm/drm_print.h is included more than once.
+> drivers/gpu/drm/bridge/ite-it66121.c:1398:1: internal compiler error: in arc_ifcvt, at config/arc/arc.c:9637
+> drivers/greybus/operation.c:617:1: internal compiler error: in arc_ifcvt, at config/arc/arc.c:9637
 
-Missing error handling.
+<snip>
 
-> +	clk_data->num = UFS_SYMBOL_CLOCKS;
-> +
-> +	hw = devm_clk_hw_register_fixed_rate(qmp->dev, "ufs_rx_symbol_0_clk_src",
+When the compiler crashes, why are you blaming all of these different
+mailing lists?  Perhaps you need to fix your compiler :)
 
-Don't the clock names need to be globally unique and hence either come
-from the devicetree or encode the device topology some other way?
+thanks,
 
-We have two UFS PHYs on sc8280xp for example.
-
-> +							   NULL, 0, 0);
-> +	if (IS_ERR(hw))
-> +		return PTR_ERR(hw);
-> +
-> +	clk_data->hws[0] = hw;
-> +
-> +	hw = devm_clk_hw_register_fixed_rate(qmp->dev, "ufs_rx_symbol_1_clk_src",
-> +							   NULL, 0, 0);
-> +	if (IS_ERR(hw))
-> +		return PTR_ERR(hw);
-> +
-> +	clk_data->hws[1] = hw;
-> +
-> +	hw = devm_clk_hw_register_fixed_rate(qmp->dev, "ufs_tx_symbol_0_clk_src",
-> +							   NULL, 0, 0);
-> +	if (IS_ERR(hw))
-> +		return PTR_ERR(hw);
-> +
-> +	clk_data->hws[2] = hw;
-> +
-> +	ret = of_clk_add_hw_provider(np, of_clk_hw_onecell_get, clk_data);
-> +	if (ret)
-> +		return ret;
-> +
-> +        /*
-> +         * Roll a devm action because the clock provider is the child node, but
-> +         * the child node is not actually a device.
-> +         */
-> +        return devm_add_action_or_reset(qmp->dev, phy_clk_release_provider, np);
-> +}
-
-Johan
+greg k-h
 
 -- 
 linux-phy mailing list
