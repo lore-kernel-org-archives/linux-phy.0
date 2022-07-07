@@ -4,47 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 68F07CCA490
-	for <linux-phy@archiver.kernel.org>; Thu,  7 Jul 2022 13:48:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 199ADCCA49E
+	for <linux-phy@archiver.kernel.org>; Thu,  7 Jul 2022 13:48:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/DqcU5YN8d0APav+8GhhxFqNA2OSlNI6HlgldZa8cUc=; b=X7liTAHJRiIg/z
-	/iQswCvPOepOvhH+GC6gwlQIdvRhG7vaQ9vI7NIijBQ/w3Se3bW6Hze76C3ATpwq5bwOGl3L8kn88
-	w7WFJt2OEMNbGOgqikbYnvFhRbwgN+k2t+kDMDbLITyEJ62gOyxD9/NBV5OrSuqlxikywUiozULzX
-	awoFcQiko3DEDgMMUHTYcO8GKUk2b49KmZBLb5kyBSBkVfJYF5GC7uNSwftnlqKU6l4fRRQgeDobg
-	m9ENQaWgjTj+OF9H4zIGARlbZB+d1sgl+rB7eB3vOQRgnitc669ztbQTxtr0nWcGdqhFlSeGfgWa+
-	cnhSC78lJdlfQVMKWDyw==;
+	List-Owner; bh=hsQ26EkbXkr2T7KWGAQlNNilktylGb57wJnwT4FZlCg=; b=438fk9r3yCsLE+
+	a47jF+950Og9EpRu47Xd8Ah4km/Ci3pItg0eyfyD7VosnvqpWvwNJ+UqGrp9leJdK/DMH6wEgJS2R
+	qFz3QOB5EB171y15i6GY6EeouWNZJtbrNao6Wishle3vfV/nNFEM1a7TVOoe7gwF0eqaOuK8s9oo3
+	VL48TK7/netLqGmwj4DM7g5u89WcDbBbgqh5rlFHrj/fr/L24GDN0wifcuQXCq64B0rrq4s/jYWzN
+	Jj9uwWoCFkzOB/e9FW3lZlGmFtK7WEPVjB6ASimLWp9c14XmAjXCT+tp0J2v2uczL22lAxpNdfz/D
+	UaeKRFZYJUSTgEzM3tIA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o9RrQ-00GL09-Fd; Thu, 07 Jul 2022 13:48:04 +0000
-Received: from ams.source.kernel.org ([145.40.68.75])
+	id 1o9RrR-00GL1N-3s; Thu, 07 Jul 2022 13:48:05 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o9RrB-00GKjb-Tr
-	for linux-phy@lists.infradead.org; Thu, 07 Jul 2022 13:47:54 +0000
+	id 1o9RrC-00GKg7-H4
+	for linux-phy@lists.infradead.org; Thu, 07 Jul 2022 13:47:56 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id 31BF8B8221D;
-	Thu,  7 Jul 2022 13:47:43 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9083DC341F2;
-	Thu,  7 Jul 2022 13:47:41 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 2614F621B8;
+	Thu,  7 Jul 2022 13:47:42 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 51806C36B1D;
+	Thu,  7 Jul 2022 13:47:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1657201661;
-	bh=if7x9pUFUD8PopCzs/NYjEUQxvbby1hAw9eciZM4+V4=;
+	s=k20201202; t=1657201660;
+	bh=C5IH9V8OeiPW6ZDsr6cW0jLF0qN3Y7T0u5S3JZ9QpP4=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=QzkzIeMzJKw1Rq2wRdJPGUbA+d4SWDDVM0DhtgUatxOhFm48arTnEr0hPMj8R51a0
-	 WMdNYPk8iCuhAAY6/L/8m5f3IY8MPHbwMvKcP95GDY7rPQzs3+iAmDNRliYXyx9m4Y
-	 WikmOWMg9+yVEe9T6MTzJ9eyjtvnAr9snwtk64TYodjDB1uIuNVvwd0dQFB/wqI1OF
-	 mTIXK1gH99GD74yat9mI4TUF/xGL8RrG5Qb5c3DTBnwk1hPhjcW10gdeF+a+9DqoF4
-	 HtKUbZ1yqAJTfPOKbCS42dICyDe410JMyFpb/zYw+pyVVsYNj3OD0Q4GJnpy4h64k1
-	 acXB3B7he7MXw==
+	b=jTe3MiiMF48wP54DJvvwgNehIHqzWC4a0rsDbMrc30eKU5vcYZDZVndBjt5EWdxPk
+	 cg98xWDGrx/DecclveuLxOzyPVTwhJnCwTZxpde65HQfg4A74NtDzxUK6YhPhDhNu3
+	 dJvCWlDcj38kUknUtI88f0KuSaMrezJSdls0FHfvnVu5UwfPExmFuAZCFaybZH/WLT
+	 Fcj5p5Mq7eMl9qQehfqcDV5Gbz5cS0uRMXH6PW6/yTOt7Bye8dyRlkY1ndu14QDau+
+	 k13vEmlGOfLvJG1h7dTdhH/o1ZkS66stVKW+K+twA8PVwFSkc54L5aSoZvHB4Lj9Za
+	 GOLDbgYykuIQw==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1o9Rr6-0000zK-86; Thu, 07 Jul 2022 15:47:44 +0200
+	id 1o9Rr5-0000xS-CC; Thu, 07 Jul 2022 15:47:43 +0200
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>,
 	Rob Herring <robh+dt@kernel.org>,
@@ -58,16 +58,17 @@ Cc: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
 	devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH v2 30/30] phy: qcom-qmp-usb: drop pipe clock lane suffix
-Date: Thu,  7 Jul 2022 15:47:25 +0200
-Message-Id: <20220707134725.3512-31-johan+linaro@kernel.org>
+Subject: [PATCH v2 20/30] dt-bindings: phy: qcom,qmp-usb: add missing child node schema
+Date: Thu,  7 Jul 2022 15:47:15 +0200
+Message-Id: <20220707134725.3512-21-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.35.1
 In-Reply-To: <20220707134725.3512-1-johan+linaro@kernel.org>
 References: <20220707134725.3512-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220707_064750_158775_4F85F772 
-X-CRM114-Status: GOOD (  13.17  )
+X-CRM114-CacheID: sfid-20220707_064750_715124_D5DFE7C2 
+X-CRM114-Status: UNSURE (   9.91  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,39 +85,147 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The pipe clock is defined in the "lane" node so there's no need to keep
-adding a redundant lane-number suffix to the clock name.
+Add the missing the description of the PHY-provider child node which was
+ignored when converting to DT schema.
 
-Update driver to support the new binding where the pipe clock name has
-been deprecated by instead requesting the clock by index.
-
+Fixes: ccf51c1cedfd ("dt-bindings: phy: qcom,qmp: Convert QMP PHY bindings to yaml")
 Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-usb.c | 4 +---
- 1 file changed, 1 insertion(+), 3 deletions(-)
+ .../bindings/phy/qcom,qmp-usb-phy.yaml        | 114 ++++++++++++++++++
+ 1 file changed, 114 insertions(+)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-index 994a8232be7b..2ed9b031bde4 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-@@ -2609,7 +2609,6 @@ int qcom_qmp_phy_usb_create(struct device *dev, struct device_node *np, int id,
- 	struct qcom_qmp *qmp = dev_get_drvdata(dev);
- 	struct phy *generic_phy;
- 	struct qmp_phy *qphy;
--	char prop_name[MAX_PROP_NAME];
- 	int ret;
+diff --git a/Documentation/devicetree/bindings/phy/qcom,qmp-usb-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,qmp-usb-phy.yaml
+index 66cabf4d5722..0e9f909ccb82 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,qmp-usb-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,qmp-usb-phy.yaml
+@@ -75,6 +75,37 @@ patternProperties:
+   "^phy@[0-9a-f]+$":
+     type: object
+     description: single PHY-provider child node
++    properties:
++      reg:
++        minItems: 3
++        maxItems: 6
++
++      clocks:
++        items:
++          - description: PIPE clock
++
++      clock-names:
++        items:
++          - const: pipe0
++
++      "#clock-cells":
++        const: 0
++
++      clock-output-names:
++        maxItems: 1
++
++      "#phy-cells":
++        const: 0
++
++    required:
++      - reg
++      - clocks
++      - clock-names
++      - "#clock-cells"
++      - clock-output-names
++      - "#phy-cells"
++
++    additionalProperties: false
  
- 	qphy = devm_kzalloc(dev, sizeof(*qphy), GFP_KERNEL);
-@@ -2665,8 +2664,7 @@ int qcom_qmp_phy_usb_create(struct device *dev, struct device_node *np, int id,
- 	if (!qphy->pcs_misc)
- 		dev_vdbg(dev, "PHY pcs_misc-reg not used\n");
+ required:
+   - compatible
+@@ -212,6 +243,89 @@ allOf:
+             - const: phy_phy
+             - const: phy
  
--	snprintf(prop_name, sizeof(prop_name), "pipe%d", id);
--	qphy->pipe_clk = devm_get_clk_from_child(dev, np, prop_name);
-+	qphy->pipe_clk = devm_get_clk_from_child(dev, np, NULL);
- 	if (IS_ERR(qphy->pipe_clk)) {
- 		return dev_err_probe(dev, PTR_ERR(qphy->pipe_clk),
- 				     "failed to get lane%d pipe clock\n", id);
++  - if:
++      properties:
++        compatible:
++          contains:
++            enum:
++              - qcom,sdm845-qmp-usb3-phy
++              - qcom,sm8150-qmp-usb3-phy
++              - qcom,sm8350-qmp-usb3-phy
++              - qcom,sm8450-qmp-usb3-phy
++    then:
++      patternProperties:
++        "^phy@[0-9a-f]+$":
++          properties:
++            reg:
++              items:
++                - description: TX lane 1
++                - description: RX lane 1
++                - description: PCS
++                - description: TX lane 2
++                - description: RX lane 2
++                - description: PCS_MISC
++
++  - if:
++      properties:
++        compatible:
++          contains:
++            enum:
++              - qcom,msm8998-qmp-usb3-phy
++    then:
++      patternProperties:
++        "^phy@[0-9a-f]+$":
++          properties:
++            reg:
++              items:
++                - description: TX lane 1
++                - description: RX lane 1
++                - description: PCS
++                - description: TX lane 2
++                - description: RX lane 2
++
++  - if:
++      properties:
++        compatible:
++          contains:
++            enum:
++              - qcom,ipq6018-qmp-usb3-phy
++              - qcom,ipq8074-qmp-usb3-phy
++              - qcom,qcm2290-qmp-usb3-phy
++              - qcom,sc7180-qmp-usb3-phy
++              - qcom,sc8180x-qmp-usb3-phy
++              - qcom,sdx55-qmp-usb3-uni-phy
++              - qcom,sdx65-qmp-usb3-uni-phy
++              - qcom,sm8150-qmp-usb3-uni-phy
++              - qcom,sm8250-qmp-usb3-phy
++    then:
++      patternProperties:
++        "^phy@[0-9a-f]+$":
++          properties:
++            reg:
++              items:
++                - description: TX
++                - description: RX
++                - description: PCS
++                - description: PCS_MISC
++
++  - if:
++      properties:
++        compatible:
++          contains:
++            enum:
++              - qcom,msm8996-qmp-usb3-phy
++              - qcom,sm8250-qmp-usb3-uni-phy
++              - qcom,sm8350-qmp-usb3-uni-phy
++    then:
++      patternProperties:
++        "^phy@[0-9a-f]+$":
++          properties:
++            reg:
++              items:
++                - description: TX
++                - description: RX
++                - description: PCS
++
+ examples:
+   - |
+     #include <dt-bindings/clock/qcom,gcc-sdm845.h>
 -- 
 2.35.1
 
