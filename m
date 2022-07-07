@@ -4,124 +4,139 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D4DD4CCA479
-	for <linux-phy@archiver.kernel.org>; Thu,  7 Jul 2022 14:03:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 90CEAC433EF
+	for <linux-phy@archiver.kernel.org>; Thu,  7 Jul 2022 15:00:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9akGggaUdzjM+vFe7KHLyfGRnSkZuIm+nbOvSkm9vE0=; b=wEAjXQcFGncZXB
-	NdrbmnxrKnJY7/PON+BhRoELbxRg4PqO3xCDE3Ela1JxsRgM84YGWq35jDL40IxRXKMFtbFlDUhLz
-	JVuv/d9+/0+inU9Ny1sOk+e7KXj6We8RkbK6vtbdyop7YStW0MfrLyJ6KMgsKCognmcfJ2Eg0QRgw
-	jgzrNyPAXA41pjQGBN+NEFE/Vhy21u05cS1GYovgp+aqhkrd0MgtAGEHQT/LpJIYVDWirmdMB/uuA
-	+Y7hK7vkesLYVSnbf6TszdBx0db0S7y1NypMejZ6QL8uzqF1zt9onlLgYDMERn8VWSYgwvid1iCRs
-	rbBYZ6O08hjBTWksVEJA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:Date:
+	Message-ID:From:References:Cc:To:Subject:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=kCVzG/2KO2ZT+ZmTwjg2Tm9dIoCMzXVZMsNtE4bud88=; b=0HzhUfEP6KIrDWF4vuzGcIM6hd
+	vIDQ0bi/VR2njPMe2cT3jH7+2tnjr9DqK1e19CN/tnxDCWrH9kSyOvSGVM/2WOHp5Z2H4X9A3zfRr
+	dw+u7S6+QGWeojs6TPRkCOxc21fE0ZYoIa22CQ7WsvG8rCapitC04bdzbyoVMwGHCVkXyCsRP904z
+	WZbRSBbMMmMMlzzzJABnIlBhLGrXXX7JqUt5LUjwr0ApcQ1z918xoaX9EEIAsUrblTuSOUYmujNCL
+	Hs2Cn6PjM+INLH47tFmfaMfJT2x1rMuVHIoUWUWHYItvZCbUpy0wKGwsLgvFURQnvVbvjnhjIaDwR
+	n/sISppQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o9S60-00GOr9-7g; Thu, 07 Jul 2022 14:03:08 +0000
-Received: from mail-pf1-x42e.google.com ([2607:f8b0:4864:20::42e])
+	id 1o9Szc-00Gfaq-Vk; Thu, 07 Jul 2022 15:00:37 +0000
+Received: from mail-dbaeur03on2044.outbound.protection.outlook.com ([40.107.104.44] helo=EUR03-DBA-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o9S5w-00GOmb-SQ; Thu, 07 Jul 2022 14:03:06 +0000
-Received: by mail-pf1-x42e.google.com with SMTP id j3so6934638pfb.6;
-        Thu, 07 Jul 2022 07:03:01 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20210112;
-        h=sender:date:from:to:cc:subject:message-id:references:mime-version
-         :content-disposition:in-reply-to;
-        bh=afbiyF16Fd4Ewaaf3EKKCpvpR7aHAsNAQp7K3TuQXs4=;
-        b=EzpeppBfdoHkOWruUNAYNHzOi8S5lBuVkWR/uarc/O7MDVJ2qM1NUNdy3hxzZeKinw
-         1f6tPe15AftcBiSP1Sugt5jiQpAKlLcyz+gPyHgHTvK6IkiuSg6SYHkmzqBCpGaHkm3K
-         GirawtqITR+EFkG0pF8QxPm0bxzk97EH7JYJxQXFRi4d1kRfsZVOuxKRapjByLByJ3DF
-         qAVqAZfaAfJT+F8T/W2rPtPmXy6/uaYwejGaDWQ5Frl3XCXwsQlqWF67lU3BIXdseGBS
-         CTJ5pH+oR76s++4uNTCxHCZwHNyWF4xdxY3ay2k5fQlKGRbstnEbIjnAVDZkl7wMQgN9
-         oSpA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
-         :references:mime-version:content-disposition:in-reply-to;
-        bh=afbiyF16Fd4Ewaaf3EKKCpvpR7aHAsNAQp7K3TuQXs4=;
-        b=N1Pm889/ZxFEDqfLXpSp3Pulplms+j8WQItLnmqecLAcF1WB2akH+TmTy/FmGml2/g
-         zRSb+TjdUU6ZILaoXpBAnxekmDO29NhfUPNp6ThNUbpwFhwXpFj76HLWQydqAqjttPO9
-         rsn/+dnFMrmiqiYdyTdIhNOF0RwSJfoxKsQ0BhArZsZ+xXeL8aI5+8dYzfPx3GjuLE4H
-         Isn6n75mNhBJ8c6SXZMtimr9f6eK2nw3hhg+5xDwXPMqpjk7rOWbuoKmow1AJR3TAbie
-         YUq67PbqmcmTKX7eOXB9HCz/eVJUWf26sFCrbJSeABCiOo8JJE6m1UesCXnIbwlVf7j8
-         qdFA==
-X-Gm-Message-State: AJIora/KahlyT5YYkbmw7be7XMyX9GGAIzTECmINdwRfdJFYT6BBNI9j
-	miSSyh9tairCSSaBnCOFfNQ=
-X-Google-Smtp-Source: AGRyM1uGEg1zRLKU3mt/8yK/HfEqKFBdv1eoQpzxhqHLW6DjIp1gLh6JEsU/RWRdBfoHFypH/TfaNQ==
-X-Received: by 2002:a17:90b:4c8f:b0:1ec:cdd0:41b7 with SMTP id my15-20020a17090b4c8f00b001eccdd041b7mr5420238pjb.119.1657202580508;
-        Thu, 07 Jul 2022 07:03:00 -0700 (PDT)
-Received: from server.roeck-us.net ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
-        by smtp.gmail.com with ESMTPSA id k127-20020a632485000000b004148cbdd4e5sm1215293pgk.57.2022.07.07.07.02.58
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 07 Jul 2022 07:02:59 -0700 (PDT)
-Date: Thu, 7 Jul 2022 07:02:58 -0700
-From: Guenter Roeck <linux@roeck-us.net>
-To: Greg KH <gregkh@linuxfoundation.org>
-Cc: kernel test robot <lkp@intel.com>,
-	Andrew Morton <akpm@linux-foundation.org>,
-	virtualization@lists.linux-foundation.org,
-	usbb2k-api-dev@nongnu.org, tipc-discussion@lists.sourceforge.net,
-	target-devel@vger.kernel.org, sound-open-firmware@alsa-project.org,
-	samba-technical@lists.samba.org, rds-devel@oss.oracle.com,
-	patches@opensource.cirrus.com, osmocom-net-gprs@lists.osmocom.org,
-	openipmi-developer@lists.sourceforge.net, nvdimm@lists.linux.dev,
-	ntb@lists.linux.dev, netfilter-devel@vger.kernel.org,
-	netdev@vger.kernel.org, mjpeg-users@lists.sourceforge.net,
-	megaraidlinux.pdl@broadcom.com, linuxppc-dev@lists.ozlabs.org,
-	linux1394-devel@lists.sourceforge.net, linux-x25@vger.kernel.org,
-	linux-wpan@vger.kernel.org, linux-wireless@vger.kernel.org,
-	linux-watchdog@vger.kernel.org, linux-usb@vger.kernel.org,
-	linux-unionfs@vger.kernel.org, linux-tegra@vger.kernel.org,
-	linux-stm32@st-md-mailman.stormreply.com,
-	linux-staging@lists.linux.dev, linux-serial@vger.kernel.org,
-	linux-sctp@vger.kernel.org, linux-scsi@vger.kernel.org,
-	linux-samsung-soc@vger.kernel.org,
-	linux-rockchip@lists.infradead.org,
-	linux-renesas-soc@vger.kernel.org, linux-rdma@vger.kernel.org,
-	linux-raid@vger.kernel.org, linux-pm@vger.kernel.org,
-	linux-phy@lists.infradead.org, linux-perf-users@vger.kernel.org,
-	linux-pci@vger.kernel.org, linux-parport@lists.infradead.org,
-	linux-parisc@vger.kernel.org, linux-omap@vger.kernel.org,
-	linux-nfc@lists.01.org, linux-mtd@lists.infradead.org,
-	linux-mmc@vger.kernel.org, linux-mm@kvack.org,
-	linux-mediatek@lists.infradead.org, linux-media@vger.kernel.org,
-	linux-leds@vger.kernel.org, linux-integrity@vger.kernel.org,
-	linux-input@vger.kernel.org, linux-iio@vger.kernel.org,
-	linux-ide@vger.kernel.org, linux-hwmon@vger.kernel.org,
-	linux-fsdevel@vger.kernel.org, linux-fpga@vger.kernel.org,
-	linux-fbdev@vger.kernel.org, linux-ext4@vger.kernel.org,
-	linux-efi@vger.kernel.org, linux-doc@vger.kernel.org,
-	linux-cxl@vger.kernel.org, linux-crypto@vger.kernel.org,
-	linux-clk@vger.kernel.org, linux-cifs@vger.kernel.org,
-	linux-btrfs@vger.kernel.org, linux-bluetooth@vger.kernel.org,
-	linux-block@vger.kernel.org, linux-bcache@vger.kernel.org,
-	linux-arm-msm@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	linux-amlogic@lists.infradead.org, linaro-mm-sig@lists.linaro.org,
-	legousb-devel@lists.sourceforge.net, kvm@vger.kernel.org,
-	keyrings@vger.kernel.org, isdn4linux@listserv.isdn4linux.de,
-	iommu@lists.linux.dev, iommu@lists.linux-foundation.org,
-	intel-wired-lan@lists.osuosl.org, greybus-dev@lists.linaro.org,
-	dri-devel@lists.freedesktop.org, dm-devel@redhat.com,
-	devicetree@vger.kernel.org, dev@openvswitch.org,
-	dccp@vger.kernel.org, damon@lists.linux.dev, coreteam@netfilter.org,
-	cgroups@vger.kernel.org, ceph-devel@vger.kernel.org,
-	ath11k@lists.infradead.org, apparmor@lists.ubuntu.com,
-	amd-gfx@lists.freedesktop.org, alsa-devel@alsa-project.org,
-	accessrunner-general@lists.sourceforge.net
-Subject: Re: [linux-next:master] BUILD REGRESSION
- 088b9c375534d905a4d337c78db3b3bfbb52c4a0
-Message-ID: <20220707140258.GA3492673@roeck-us.net>
-References: <62c683a2.g1VSVt6BrQC6ZzOz%lkp@intel.com>
- <YsaUgfPbOg7WuBuB@kroah.com>
+	id 1o9Sza-00GfZP-Em; Thu, 07 Jul 2022 15:00:36 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=H0nd8juVVxdlIYphYSYKTb4p6hFAJMCJ4ISDk/oEUFvr04hexuWws5pqH2fHQJHxLEdNN+AWfS7wsmwA2meNg+FCyjDdKWZqqsU7o7sXiu6XoAv1uf7P2XD0LX8hc1+Pwl8bFbUbXy289WQehpievQjWQaX8eNC7nEM88uIYDB0gCTjQgCzNA4rUyfCWFrPkgdQnnmxTFwFYuWyduk/dzXWXQgQvbwBRzOTptM9HcSyZJ8HcfEdtGKbUe7pb44RitPUs5+xOL5EJoRXJB+NhiPxBEQLz20DmKC57BPPMZsNgJrKlaIRNlCZ4JTsTzXgG2lWTr3ZwUjClFszJLpvCyg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=ecedMdUa9UhAfpsTIqAEINcbcP/2xpTrW3vWneaE0L8=;
+ b=me0tur5dCQUxaTzXUgFjOEbIdAwYN2cCi4zpEak2xBOj0fa4XKjucM/EZodKsmn7plxGyrm5iKuhIyYx4MIZ5tJLKnEn9d/sUQASkt6XlM66YpEq87w4GjiI9xnxIi+Jl+jB7nJIrjsu8IyTRRxWtsxzjX51ruj7xRIgd9oj0cmYN+nHBMS1q+PSY1NJt9KpfCOOqU7ArZmTBdYuKivQg8/1sLqfGsMUUQSvJZ6CvNlrnaHCkKXXIsxRyU74ktJ78Liyxsgo/cc9s5NhxgX0GRLbIEAiT6HaeHNLMr+1y/UPTn9S6uGE8kOCftIAIdKFNKXt5wIn/SnCzo5Juw48gA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=seco.com; dmarc=pass action=none header.from=seco.com;
+ dkim=pass header.d=seco.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=seco.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=ecedMdUa9UhAfpsTIqAEINcbcP/2xpTrW3vWneaE0L8=;
+ b=qt4OcKo2aokeAzEjsoGJ2eqCu2yMAZzAWQpZWjuhhF2mX/Op/PyJKGujXmc1RNtcFuIRFhnXkxkpCkbmBlOZifUaiJVwX/VVjJnKmGORHKWMldHnN3eFPE/X8Eq76k+WHuernCgRs8am3IT2FL9w454cL2aMhPKWhx5dSGCgxho50SmQd0ci6QODH423l1s6jCYVutKFMQGaS4yx9t8siq5p9sPmujXDMOmOXTg6tGSd/s5ktDlFqQQouixsGPxCYwudmxEVInd/0NrZk2NuJovreUpjM4LF9lCmtRbv6bAdVmb0H8TwdfgL91ijRyZZFNRLXjPUOb63eJmn+dZ56g==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=seco.com;
+Received: from DB7PR03MB4972.eurprd03.prod.outlook.com (2603:10a6:10:7d::22)
+ by PAXPR03MB8114.eurprd03.prod.outlook.com (2603:10a6:102:227::15) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5395.21; Thu, 7 Jul
+ 2022 15:00:27 +0000
+Received: from DB7PR03MB4972.eurprd03.prod.outlook.com
+ ([fe80::757e:b75f:3449:45b1]) by DB7PR03MB4972.eurprd03.prod.outlook.com
+ ([fe80::757e:b75f:3449:45b1%6]) with mapi id 15.20.5417.016; Thu, 7 Jul 2022
+ 15:00:27 +0000
+Subject: Re: [PATCH net-next v2 04/35] [RFC] phy: fsl: Add Lynx 10G SerDes
+ driver
+To: Vinod Koul <vkoul@kernel.org>
+Cc: "David S . Miller" <davem@davemloft.net>, Jakub Kicinski
+ <kuba@kernel.org>, Madalin Bucur <madalin.bucur@nxp.com>,
+ netdev@vger.kernel.org, Russell King <linux@armlinux.org.uk>,
+ Paolo Abeni <pabeni@redhat.com>, linux-arm-kernel@lists.infradead.org,
+ Eric Dumazet <edumazet@google.com>, linux-kernel@vger.kernel.org,
+ Ioana Ciornei <ioana.ciornei@nxp.com>, Jonathan Corbet <corbet@lwn.net>,
+ Kishon Vijay Abraham I <kishon@ti.com>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Rob Herring <robh+dt@kernel.org>, devicetree@vger.kernel.org,
+ linux-doc@vger.kernel.org, linux-phy@lists.infradead.org
+References: <20220628221404.1444200-1-sean.anderson@seco.com>
+ <20220628221404.1444200-5-sean.anderson@seco.com> <YsPWMYjyu2nyk+w8@matsya>
+ <431a014a-3a8f-fdc7-319e-29df52832128@seco.com> <YsW+4fm/613ByK09@matsya>
+From: Sean Anderson <sean.anderson@seco.com>
+Message-ID: <e4664a59-773a-cb72-3abe-ab4bb69aa9ea@seco.com>
+Date: Thu, 7 Jul 2022 11:00:20 -0400
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.10.0
+In-Reply-To: <YsW+4fm/613ByK09@matsya>
+Content-Language: en-US
+X-ClientProxiedBy: BL0PR02CA0044.namprd02.prod.outlook.com
+ (2603:10b6:207:3d::21) To DB7PR03MB4972.eurprd03.prod.outlook.com
+ (2603:10a6:10:7d::22)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <YsaUgfPbOg7WuBuB@kroah.com>
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: f5a07ca6-7ef0-419e-5cd5-08da60296d02
+X-MS-TrafficTypeDiagnostic: PAXPR03MB8114:EE_
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: 	Z/5/6arsFB73NafNvLeQO0ufNAX3X5WS6CSW71rH6X8+e0RI9QUuUT1fX0HMIm73wwKChr3haIR6yi3KdJVZTpBFj99MR8LYz3275CnIWBho9fNbWlFNXM2dnAtrlvLwdJ4LSZbL5wSZTO1lrUUaeCn25SF6dR/AaYIb3AOD3aXaa7Il4OrEtMEAoPQybnMsEwpqvFgdchqTwgREMJfXpp1sKDUmCz93QhungFVm+fLf8omXhcjGSKvmBozXv7xsByiruvVMbFHAMj/9ZtiN6G3j/v8w+k2chUv4TWb34/98GGXmNBoExm3XwD2UuTCmzSVPRYfjrrxsAZ1hAooPV4X2EoUEbd3Fljjpl1006uRWhIZPQ1gLlPSJn5hDuhZnqwssrKarOWqDq4Y0vu7dcQUE6OUs3GNQDpscEFpKO1W8Uaf5m3Di0B6wQU4cIH+RV9y8yT7MgmS0OYa/HhvOVgqGbqBp9T+qGFeQJqkcxyElnKPEAmN3GJeDDxOTm/z7Z2ISTI22MkItRcnRKAahJ6DYfApVC5LN8oHp9Dpoqz8kde5K3jveRJt6WVLYbGOJhzbT4CEO9eEZ+q0Ihri3iDrgjwnwCTbs4VsU3ysOKv+HW+f3mtNmNf14qe3cFrFUuveX9nOHLcDaXOw26k+qaZ/NhH6h3I0cxG6CL2syXooZjZ7k1B1lPckGrof1QLnp03MYGxc+AmKYbR3sgxV9mIFBC59aCh+4TMu/PQoPdsUdndiY66muWzaMKnRPunP+rzrrA92u216e8CNaS6C0+OuzHZ/uwJClzw4T//TxKRSN6PRlT8mxZTSCQOTyIToGzrQZoRlq5DMZ393ZL4qkG9hjdBlCAX3I+xCpXmH94+Qls3Wnln21LwYOQMRWOzq0
+X-Forefront-Antispam-Report: 	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DB7PR03MB4972.eurprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230016)(346002)(39850400004)(396003)(376002)(136003)(366004)(2616005)(186003)(26005)(38350700002)(4326008)(36756003)(54906003)(31686004)(8676002)(6916009)(38100700002)(66556008)(83380400001)(66476007)(66946007)(86362001)(6486002)(478600001)(5660300002)(53546011)(6506007)(6666004)(31696002)(316002)(7416002)(44832011)(6512007)(8936002)(2906002)(41300700001)(52116002)(45980500001)(43740500002);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: 	=?utf-8?B?QmVqNWFmT0JOaTV6c000SzhHRDN4Y2djWnBMOUVZL2JzbmR6c0dJM0s0emRr?=
+ =?utf-8?B?dVJabXR4UEs0VFY3aDJpdGhBaDhCSkNvSEtxVVUvMzR4NU9icEV5UnZBVGVD?=
+ =?utf-8?B?SUZzM3pBMzN3d0FUMjFpUXBoaW43TDdMR0RDSVhSYjRzc2JZbUNuZmh1WnFL?=
+ =?utf-8?B?SWVCUlRPMzRlQTY2a3ZlNWE4dHdmL1V4S1VHN1ZnNml5RHVNYWdjTFk0RWFu?=
+ =?utf-8?B?NjJKVzZvcDUxZXFDT2NWT2xGV2x0UXB5ZWpiRGQ2cWgxK1FBQ0wwYlJPcEVP?=
+ =?utf-8?B?ZW5PZVZHMWFWeW1tMHpodUovWjhKeFhrdnR5Z1RrOTZtWW0xYTlWQmJUeDQx?=
+ =?utf-8?B?aVBHMUtMTE9uRTMvZ2Y3VDRQTDAwdXZ1NTFBWmRLcUtCY3ZvdU02bG1uakYv?=
+ =?utf-8?B?UFZ1VVhJN1MwTUI4SGFGM3RQTGRTQUUrMTQwdG8wSWEzUUFrMWpLRG1iaW55?=
+ =?utf-8?B?UHp3RW9SRHJNb3dEQVAyc1JmWWxyYlZaaGhQUVZIL1RmQ1kvakZBSkhzK3F1?=
+ =?utf-8?B?RmxocXlqQmxjSjhicjlGeUNYQ015WkZ3UGxMSjU4ZjR0RzQ2alhRdC8vUTlB?=
+ =?utf-8?B?TWNsb1lBOFhRckVFZWh2QlljN3BlbDdGSm5DMUxnUDg0VCtoS3lXZTI2dU14?=
+ =?utf-8?B?cEdXY2QvUXY4N3NCcEJhKzluOEFKaWRsTjVCSVhvWHVRM2s1cHF6dVBIRVJz?=
+ =?utf-8?B?QVV4eWFyNlFXMW5BbUd2ZlBPd25VTzZESS8vaFJSTm1teGFydUtRS3FISEUw?=
+ =?utf-8?B?bjlyTnBVV043dGpDN0M4bldDNGNLTGlkVFhhc3RiNDJ1Q0dMWjdQSnl5V2JH?=
+ =?utf-8?B?TlVWdzNLY3dTSG1seGJnWUQ4bjloZ3ZyMjBVVGZCQ0JXQzM3d3dDcjJSc01S?=
+ =?utf-8?B?SmZCR1VpQ256aFZJRkszSHJtTEJOejhxNWpsaE9sWFFBbi90SFJzQzh1NlFL?=
+ =?utf-8?B?aW1MNTFBMXhteXErYk1KTCtjaGFNeklndEpHL0w1SEVqR0Z3dXluS2ZlRjNK?=
+ =?utf-8?B?MG5La0lOcDc0Y0NUN1RhL3ZINUl0ZDRQVXJwVVJlOEFnK2VzYnYzVTd0K2F3?=
+ =?utf-8?B?Q2NhZ1BMN3NWRlRzR2kzTkx1WktCY0hmTTlzN0w5RTY0RjkrdzZhdnduMUhh?=
+ =?utf-8?B?N0RrOWVYUnJvdWl1NUJxMUZOUm9nRHhxVXJpNlMrd3kyNm1jaFpFSXBVUEtu?=
+ =?utf-8?B?RGNLRk1XekxIVEEycUtaK3k5Kzlta0JKMHFkRmU3YWViR0xOWk84WmpFbHFN?=
+ =?utf-8?B?ZU9FajlqNDUxdEExa0ZVZFptMUNIcWs5VUFSRG1CVFFXVzUrS0ovV2RnOEJO?=
+ =?utf-8?B?TDVSU1FZOXNPbXUrM1RraDI4R01YZUUxQ092bnUzcFpWdktFN1poUFVmUHgr?=
+ =?utf-8?B?NHYxZDVLVitYeTZMV3g1ZXNQWFo5OUMvZXllQmprSXN5QTFWTTJIc3U1RFhL?=
+ =?utf-8?B?a2toUFFOOFViVk9EYmtuTlVjRkdSOFZqWEtaNUpHZFkrOXZFU1JtaGNsczBE?=
+ =?utf-8?B?c1RtM1A3eGRCajhoTDFOamNWNmYxalJwYnRhN0ZGaHp0elJKUlhrVE9LSVVK?=
+ =?utf-8?B?WXUvNVZLS1c5YkpMd0NXSHVOVHZKRUJ4Mlk0dmRGcG9yN3JEeGNYdHgrdFgz?=
+ =?utf-8?B?QnJFUVBKNi9JSFFwczZmL1E2T2VhYkJ1N3JUejJtVVByVVcwVFNzSlZDT3d4?=
+ =?utf-8?B?OHhZTlgvbk9ITldlY2g2dm1CRTJSVEpwV0l2aDlYRXRaMVZ0c01aQzdtclBk?=
+ =?utf-8?B?aEtEcVRSYktSTTA2Nm5tKzVpVUVCYnN3c3gxSFMzKzBBVFJRL0dkN3Z5bm5m?=
+ =?utf-8?B?dGNDdklVQkVBcUluNzVqS1RqUkxCdUV2NzRyazJONFJqUFpFaVJKNS83ck9Y?=
+ =?utf-8?B?cFJMcmIzL2NyNGsvbXozdHdrcUZOalZtVDU1Q09GcGYrZlE3cEZlT0YxZWtw?=
+ =?utf-8?B?TTN6QU5iY0dBL05UT3N0OVU4eld4SWpVRjN6ZTIzMjJjN2k4NlRnUFdWZDhn?=
+ =?utf-8?B?cFJQRDdQbzBPRURWQVhtL2RYMjNtMlBWbjZvWmJJR2ZlaG9HVC90VEdBSWF5?=
+ =?utf-8?B?R0xvNk1kcWd6N211YXNOZnVnNjdqT1hFV2FhYVJybnBndXM2UVd6bk12VDJX?=
+ =?utf-8?B?RC9OOEdkM1NLVXN1cFY2bE5DZDl6QzB3WTY1YUlLNk1RVTQ3WFVmVElNTy9l?=
+ =?utf-8?B?UkE9PQ==?=
+X-OriginatorOrg: seco.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: f5a07ca6-7ef0-419e-5cd5-08da60296d02
+X-MS-Exchange-CrossTenant-AuthSource: DB7PR03MB4972.eurprd03.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 07 Jul 2022 15:00:26.8424
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: bebe97c3-6438-442e-ade3-ff17aa50e733
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: /r6MRSZA4GDwcXoooFqBO4bzNSVX1olrpWprsDsE7tbNFuq93n3or5MMWTzN0S+UgX1KNIFu9syjE27VU2+Vzw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PAXPR03MB8114
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220707_070304_956905_F5982C70 
-X-CRM114-Status: GOOD (  10.68  )
+X-CRM114-CacheID: sfid-20220707_080035_001563_B73C4F8D 
+X-CRM114-Status: GOOD (  18.53  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -138,37 +153,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Jul 07, 2022 at 10:08:33AM +0200, Greg KH wrote:
+Hi Vinod,
 
-[ ... ]
-> > 
-> > Unverified Error/Warning (likely false positive, please contact us if interested):
-> > 
-> > arch/x86/events/core.c:2114 init_hw_perf_events() warn: missing error code 'err'
-> > drivers/android/binder.c:1481:19-23: ERROR: from is NULL but dereferenced.
-> > drivers/android/binder.c:2920:29-33: ERROR: target_thread is NULL but dereferenced.
-> > drivers/android/binder.c:353:25-35: ERROR: node -> proc is NULL but dereferenced.
-> > drivers/android/binder.c:4888:16-20: ERROR: t is NULL but dereferenced.
-> > drivers/base/regmap/regmap.c:1996:1: internal compiler error: in arc_ifcvt, at config/arc/arc.c:9637
-> > drivers/char/random.c:869:1: internal compiler error: in arc_ifcvt, at config/arc/arc.c:9637
-> > drivers/firmware/arm_scmi/clock.c:394:1: internal compiler error: in arc_ifcvt, at config/arc/arc.c:9637
-> > drivers/firmware/arm_scmi/powercap.c:376:1: internal compiler error: in arc_ifcvt, at config/arc/arc.c:9637
-> > drivers/gpu/drm/amd/amdgpu/../pm/powerplay/hwmgr/vega10_powertune.c:1214:1: internal compiler error: in arc_ifcvt, at config/arc/arc.c:9637
-> > drivers/gpu/drm/amd/display/dc/os_types.h: drm/drm_print.h is included more than once.
-> > drivers/gpu/drm/bridge/ite-it66121.c:1398:1: internal compiler error: in arc_ifcvt, at config/arc/arc.c:9637
-> > drivers/greybus/operation.c:617:1: internal compiler error: in arc_ifcvt, at config/arc/arc.c:9637
+On 7/6/22 12:57 PM, Vinod Koul wrote:
+> On 05-07-22, 11:29, Sean Anderson wrote:
 > 
-> <snip>
+>> >> +	/* TODO: wait for the PLL to lock */
+>> > 
+>> > when will this be added?
+>> 
+>> I'm not sure. I haven't had any issues with this, and waiting on the lock bit is
+>> only mentioned in some datasheets for this SerDes. On the LS1046A for example,
+>> there is no mention of waiting for lock.
 > 
-> When the compiler crashes, why are you blaming all of these different
-> mailing lists?  Perhaps you need to fix your compiler :)
+> okay maybe remove the comment then?
+
+Well, as it happens, on the write before this (where we request the reset), we must
+wait for the request to clear before making this write. Since that needed a
+read_poll_timeout anyway, I added one for this line as well.
+
+>> >> +static const struct clk_ops lynx_pll_clk_ops = {
+>> >> +	.enable = lynx_pll_enable,
+>> >> +	.disable = lynx_pll_disable,
+>> >> +	.is_enabled = lynx_pll_is_enabled,
+>> >> +	.recalc_rate = lynx_pll_recalc_rate,
+>> >> +	.round_rate = lynx_pll_round_rate,
+>> >> +	.set_rate = lynx_pll_set_rate,
+>> >> +};
+>> > 
+>> > right, this should be a clk driver
+>> 
+>> Well, it is a clock driver, effectively internal to the SerDes. There are a few
+>> examples of this already (e.g. the qualcomm and cadence phys). It could of course
+>> be split off, but I would prefer that they remained together.
+> 
+> I would prefer clk driver is split and we maintain clean split b/w phy
+> and clk
 > 
 
-To be fair, it says above "likely false positive, please contact us
-if interested". Also, the 32-bit build errors _are_ real, and the NULL
-dereferences in the binder driver are at the very least suspicious.
+OK. I will split this into drivers/phy/freescale/phy-fsl-lynx-10g-clk.c
 
-Guenter
+--Sean
 
 -- 
 linux-phy mailing list
