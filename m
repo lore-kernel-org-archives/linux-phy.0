@@ -4,76 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7F3EAC433EF
-	for <linux-phy@archiver.kernel.org>; Fri,  8 Jul 2022 11:47:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7323EC43334
+	for <linux-phy@archiver.kernel.org>; Fri,  8 Jul 2022 12:20:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:Date:Subject:Cc:
 	To:From:Message-ID:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KjSkuKBcTQpFH6Dr2hXWd+u+weZrUBRXClEO1pkwYN0=; b=qiyirPCBzKjBiM
-	GGmJN9+RhX3YahGUOOH+s1IFOjrYKsD/RIDTYlMciZkLXQORut2ATWUqiZ00kxTt1ZccIlioq2BuY
-	3KBCCV6upBeQ7VnyQEZFEPszSFTl9UkuXMbE1idSqu5fIRXeOO6POS4NfxczSVGRFCiVbBYIfn/Be
-	seX6SYottt6W9AtJPxr2AK8dUTHYtxUE5Ra5Z0JQOQCs8GxnHpipqjmRZZ4JjWj65ORgJgkIoJdHv
-	KjVFXySUOQN+VpUn84eBXTFiUQLOF1+ZXJ6QtyMxkJIDG/6GA6waFmNCnPm85tnsS3np+bTKUsgV7
-	HjKWFkJRhBKbnsRc7I6A==;
+	List-Owner; bh=g8OUbLWGDenwqJd90On3LvQJ3rXIPMLf9m4OnZPd0lw=; b=Y1kT1v9VjUPRvl
+	RCuG/yijtInCrcrYPIFkSfC+N0dJWMIi7twClmDX4xagzqBK2j1qnL5f8BKSg/LT6xPyqgw5BFi7h
+	tcGXi6oaDAoJ1sAY6Ob7BU+Yw551ngx1cWdPw1PQSS1Bd++T6QfXqqFswtQYRIRW7p1pNIxmt4EPS
+	K9RAv76jPDnD0fkg7vRLwcJZ5+UJ0PkMo5+UdmjTujjolGX7Uz2j9fOLxYU9XXq7WJxDHofbfUpW+
+	iVCeKbPirR3qPlr/trOr4sDNTOpN9mxUBkeQ3jKsCMTkVHn3oCMu0Ptgq/VBeynR22J/8A9AwacQR
+	kMA0FeyF5XyvE6hkBsXQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o9mSQ-003T0E-RP; Fri, 08 Jul 2022 11:47:38 +0000
-Received: from mout.gmx.net ([212.227.17.20])
+	id 1o9mxv-003fut-Fm; Fri, 08 Jul 2022 12:20:11 +0000
+Received: from mout.gmx.net ([212.227.15.15])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o9mSN-003SyL-7a; Fri, 08 Jul 2022 11:47:37 +0000
+	id 1o9muK-003do1-Ud; Fri, 08 Jul 2022 12:16:32 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
-	s=badeba3b8450; t=1657280834;
-	bh=EWEAPU38vj7LmQ0GV5eR0yBw5Q9Puye2G39BDYq0u9U=;
+	s=badeba3b8450; t=1657282571;
+	bh=sLmOfEnVNSVJmG8OJ3heD6wggMT/SeCDldQQU4BqbpY=;
 	h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
-	b=i08e/rcxzGvUZZ6G9QLLYOldTQAicMr5nKV+Jya7oEM29J+uy5Q6o5EJcefDdpCZp
-	 xdi6J6MpXUGzoRZ8zjfu66CheQjXhBeFlXe13MGZz5Xa0vSbYrgLoAL+tcjAIZkYzw
-	 VKn4C9OaaRAaMlmX7ilOm6kVXI0xOFQZ0D8ihV4o=
+	b=DyhV7FdbUVKU7Ttey7nDmGkD+9TlO6L1Mv7tpQytkaOh1gboOWChF58Z1Fv0nFj+b
+	 SUIJUELDjlU9g+2s9f+dHvsKd2djsEf793iFNX425K23OFnfY2CE/fVr7gHEzyf83r
+	 A4rEoZoYB6dVQkiNshc44BvPfRJJKqTQghMle/5Q=
 X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
 Received: from [157.180.225.69] ([157.180.225.69]) by web-mail.gmx.net
  (3c-app-gmx-bs34.server.lan [172.19.170.86]) (via HTTP); Fri, 8 Jul 2022
- 13:47:14 +0200
+ 14:16:11 +0200
 MIME-Version: 1.0
-Message-ID: <trinity-e64eb9b8-7b25-4893-a1a2-ecbf9da3ef71-1657280834206@3c-app-gmx-bs34>
+Message-ID: <trinity-05389b8f-a479-47b6-bc3b-5a02b4804627-1657282571466@3c-app-gmx-bs34>
 From: Frank Wunderlich <frank-w@public-files.de>
-To: Samuel Holland <samuel@sholland.org>
-Cc: Vinod Koul <vkoul@kernel.org>, Greg Kroah-Hartman
- <gregkh@linuxfoundation.org>, Peter Geis <pgwipeout@gmail.com>, Samuel
- Holland <samuel@sholland.org>, Heiko Stuebner <heiko@sntech.de>, Kishon
- Vijay Abraham I <kishon@ti.com>, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-rockchip@lists.infradead.org
-Subject: Aw: [PATCH] phy: rockchip-inno-usb2: Ignore OTG IRQs in host mode
-Date: Fri, 8 Jul 2022 13:47:14 +0200
+To: Vinod Koul <vkoul@kernel.org>
+Cc: Peter Geis <pgwipeout@gmail.com>, Samuel Holland <samuel@sholland.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, "open list:GENERIC PHY
+ FRAMEWORK" <linux-phy@lists.infradead.org>, arm-mail-list
+ <linux-arm-kernel@lists.infradead.org>, "open list:ARM/Rockchip SoC..."
+ <linux-rockchip@lists.infradead.org>, Linux Kernel Mailing List
+ <linux-kernel@vger.kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
+ Heiko Stuebner <heiko@sntech.de>
+Subject: Aw: Re: [BUG] USB broken on rk3568 based R2Pro
+Date: Fri, 8 Jul 2022 14:16:11 +0200
 Importance: normal
 Sensitivity: Normal
-In-Reply-To: <20220708061434.38115-1-samuel@sholland.org>
-References: <20220708061434.38115-1-samuel@sholland.org>
+In-Reply-To: <Yse9nz9jjRoiPq6K@matsya>
+References: <trinity-54ed588d-4b2c-4177-83b0-4eda8ff16a42-1657210235522@3c-app-gmx-bap68>
+ <trinity-ec3b4258-cb12-42c2-9058-362260a275d2-1657216287085@3c-app-gmx-bap68>
+ <CAMdYzYrs0oJXVcViOmJk4E7PSTeP5TYs0O_ePHmrcAiKtOAWXQ@mail.gmail.com>
+ <Yse9nz9jjRoiPq6K@matsya>
 X-UI-Message-Type: mail
 X-Priority: 3
-X-Provags-ID: V03:K1:GfoyUgrdNBpE5DDJbWK8te0BuGsOwpkIMZlmgMLq1ItIB/f3fCmj/9ymcLMVp17XUT2zY
- 3xp9r+UOjlAqGwFSDjqez3Ln2yovoTGQGt22vq8xptS1y220lsviKcnC5y3XihFCTJvaqPSWydpT
- QlSQW2TRIZRyM/vB9LZ5Xr2rjIbYLlexTW8UsnotLz3QUPu6HzZGLZtgNPTHuhvrsiYkai6FHyZC
- SkWma4f0xPHm3Y/9yGxeETmZ3QWbEZrDg0V1WCAv7o89412MTt2PfkAno2j+6BBSizptC/DqVu+F
- Fo=
-X-UI-Out-Filterresults: notjunk:1;V03:K0:wytnxtIYGok=:dTYOmJoT3eHdOG7IhPcXGp
- OGG8ryZh66JdV6Kq/GVwA8zElZc+LivbVYefnktcRVFAV/5PacCunOPDFSVGh/JcbSrFq5mO2
- B34W9Mkpio1MGUgNaCmWdlxC6Gg5V1I7dijebd5UbtMDRddWD6Mgt9OP981YMO/A5tBNAgcYq
- xsZxL7Zyqv1xwrQ+KTlyxKY+KlJsLvnKxlf5vQ4kYLg5SVImesW9Nz8AXiH0cw0fTIMZmRrXX
- 9JV6HJXqmiZViJcpUNceMvSel/WGRQ75Knt6G1L45YhSb2C4C9qHfKfJ+vl+Xp0feQM0tqnQx
- tx4IRW3jrTqByEK0zl4rfDtMXBZ8HxDuxZXrPjqE7W7SMwFixbeM7TXWtfCe1N9C0cOJywGRR
- zVOSBAlMuZcRplnszMihWYtjlfesdzhB3xJtq3Wz87tfWUNdiW20Fy1eQCDrlXsHIdjfjnfYz
- be1mE3jHyh2LGPSVe5r4hU1x3RMKeQYu2ypkNwzO8YH86Z3+hPTiKeHGdpwe6HiXO8ZAdp8nM
- hzBafo32SQglxXd65Otp9vZT90+0dSpvESQdV66xftA2woSAFqbiZqTogIVSF85fqdr3wR9Wv
- EP9husCEOd2RJvTHaJxVAnaVB65mLBn0Xtsd3i7clKmxKN0yWuffwy+YTDIDFB2FsoWrvdQGz
- aIwQRVCtsspGPgs0zTDJM+6fyljHzHqI6tZ4foTlX7xk8MNLm3phwIXzVZljwZOZjVzbvwlb8
- fKCiPz/aKZCsEFFbTU0wOkCOBWJA2ybdzGuEm2/mVKA2o1XC0m7umnxZAnj/9mul/0gfujTJT
- xszZGf7
+X-Provags-ID: V03:K1:vgMfP4yrgP6IpedEv6CgTxZAAf8HIDhFKdiUyaeSHdg2tVzwFrS50PzJNDIePsXF7KbF6
+ J9K5v57XKgWKAYmgNXjWqx1t0N68O3WYkk1cznqmNUekVop9kGV1Ob//cSMx0eWbITKbussxkMCD
+ dlEvBpRPrIUOab5UiCWjJaz+eqA4bz1WmJ645Y3qjbo93khRXmfQFEaOvKzqvz2+IwR53d/drNNF
+ RknhomxxLXlzclbVM/uMNZBAbyS+R85IJ27MP3j8fDB6okU2YcyQTiDFzs0PBAaEAoDChtj6jxt2
+ yI=
+X-UI-Out-Filterresults: notjunk:1;V03:K0:v1BOECItVR8=:ulQ1qSe1hQy0NTW9mWO0kE
+ c2a22fNZRvgOYXx6+tObJX3UwhLQgRSedAB8WhQAvHHIHu2OV7pHs3atR5BBZ34FuiBDBLv43
+ 9AQcBtuMGz8xnX0qvYxX6JPV1xtLOWYi2/Vt3rcmtbeXTQR65EgqxmOhK+cf3PvVAwXcVER8V
+ pQ9tkkOnSaz+yai0boxtj4y1sCzO0VPFlQyCx8+D0IYoWw/L9mQ8bJyoswiWYEe0eHOhQXiAM
+ HeulOpEuktmuy+exEJjP7mFRO201HN25HHMV+UbnY9q33+o7m1tSUHSw9J7oCwZRAfqYBVVqe
+ QTKcJP0Npt3jcw+N0c/Ex6b1bZwsrr7XQ0kg9CPtN+faTa/8UAPR4zrxGL+GBG/NxQ2xj4J83
+ 56kPfAncml2s/3IomVNxv7Bqdn31RqYzVQNoX2BL0tqIk6RwYq/SdxrbqH5kqKP66gTLZ/dNH
+ 4FSkg1D2Es1SuGupZGyt8NfU483TNNFDWdshbvfjW55JeCVcGTuZm8x5tOVcfohitog3CEDMj
+ ziw2HatpZwPF9/dJEyBkkHSXgZBLP3g8Qh71IBzQbipNqhDlZED/mL7GtMewbY5QpQpm4FZWM
+ WAbiksoSaFHszJ5keonTv9gKNUr0yq6/uw8Zmy57mEhf8XOwPN4ZLz4oAXrkl5G13WLFG5PrI
+ 83gkhY6vx/inIfg6rPCcxFxuDWPrUAaP7Ip12zsIf3FOTjmXQyMHrvw1Js6B9fHk96m364/lZ
+ daWdVhHkCCo4nk9qCgu6ZY8oFOg8hOZBlYIW/56bL4yT3+pEXZI88r91F18PfEvMfp3T8+1Qt
+ zdvUabr
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220708_044735_749929_50447B53 
-X-CRM114-Status: GOOD (  17.74  )
+X-CRM114-CacheID: sfid-20220708_051629_330140_17F2C533 
+X-CRM114-Status: GOOD (  25.48  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,55 +94,70 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Samuel
+Hi
 
-thx for the fix...with this it works again
+Samuels Patch fixes my issue
 
-Tested-by: Frank Wunderlich <frank-w@public-files.de>
+https://patchwork.kernel.org/project/linux-rockchip/patch/20220708061434.38115-1-samuel@sholland.org/
 
 regards Frank
 
-
-> Gesendet: Freitag, 08. Juli 2022 um 08:14 Uhr
-> Von: "Samuel Holland" <samuel@sholland.org>
-> An: "Frank Wunderlich" <frank-w@public-files.de>, "Vinod Koul" <vkoul@kernel.org>
-> Cc: "Greg Kroah-Hartman" <gregkh@linuxfoundation.org>, "Peter Geis" <pgwipeout@gmail.com>, "Samuel Holland" <samuel@sholland.org>, "Heiko Stuebner" <heiko@sntech.de>, "Kishon Vijay Abraham I" <kishon@ti.com>, linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, linux-rockchip@lists.infradead.org
-> Betreff: [PATCH] phy: rockchip-inno-usb2: Ignore OTG IRQs in host mode
+> Gesendet: Freitag, 08. Juli 2022 um 07:16 Uhr
+> Von: "Vinod Koul" <vkoul@kernel.org>
+> On 07-07-22, 15:41, Peter Geis wrote:
+> > On Thu, Jul 7, 2022 at 1:51 PM Frank Wunderlich <frank-w@public-files.de> wrote:
+> > >
+> > > Hi,
+> > >
+> > > traced it down with manual reverts to this one:
+> > >
+> > > commit 6a98df08ccd55e87947d253b19925691763e755c
+> > >     phy: rockchip-inno-usb2: Fix muxed interrupt support
+> > >
+> > > luckily i can revert only this and now upper usb-port works again
+> > >
+> > > @samuel: have you an idea how to fix your problem without breaking my board? :)
+> > >
+> > > @greg/Vinod: maybe we can add a revert of this in mainline till issue is resolved?
 >
-> When the OTG port is fixed to host mode, the driver does not request its
-> IRQs, nor does it enable those IRQs in hardware. Similarly, the driver
-> should ignore the OTG port IRQs when handling the shared interrupt.
+> Lets give it a few days if we can find a fix, if not we can revert
 >
-> Otherwise, it would update the extcon based on an ID pin which may be in
-> an undefined state, or try to queue a uninitialized work item.
+> > >
+> > > regards Frank
+> >
+> > I don't know what you're running, but with the standard arm64
+> > defconfig w/ all rockchip stuff built in, I have no issues here on
+> > 5.19.
 >
-> Fixes: 6a98df08ccd5 ("phy: rockchip-inno-usb2: Fix muxed interrupt support")
-> Reported-by: Frank Wunderlich <frank-w@public-files.de>
-> Signed-off-by: Samuel Holland <samuel@sholland.org>
-> ---
+> Please share the config and other details on what your running so that
+> Peter can repro this...
 >
->  drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 4 +++-
->  1 file changed, 3 insertions(+), 1 deletion(-)
+> > Note, the following changes are necessary to the 5.19 dts here:
+> > Remove the extcon from usb_host0_xhci, as the production model doesn't
+> > have automatic switching capabilities. The ID pin was removed in favor
+> > of the usb debug function which also doesn't work.
+> > Add dr_mode = "host" to the same node, for the same reason.
+> >
+> > >
+> > >
+> > > > Von: "Frank Wunderlich" <frank-w@public-files.de>
+> > > > i noticed that upper usb-Port (otg) is broken on my Bananapi R2Pro with 5.19-rc1, works with 5.18.0
+> > > >
+> > > > this port is a usb3 (xhci) port which includes an usb2-phy and should support otg, but i still want
+> > > > to use it in host-only mode (USB-A socket).
+> > > >
+> > > > already tried setting dr_mode in dts back to "host" as this was changed in rk356x.dtsi by this commit:
+> > > >
+> > > > bc405bb3eeee 2022-04-25 arm64: dts: rockchip: enable otg/drd operation of usb_host0_xhci in rk356x
+> > > >
+> > > > i see no error in dmesg and usb-controllers seem to be initialized completely (visible in lsusb).
+> > > >
+> > > > r2pro has ID-Pin not connected, so i tried also peters Patch without success :(
+> > >
 >
-> diff --git a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-> index 6711659f727c..26b841c49ec6 100644
-> --- a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-> +++ b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-> @@ -978,7 +978,9 @@ static irqreturn_t rockchip_usb2phy_irq(int irq, void *data)
->
->  		switch (rport->port_id) {
->  		case USB2PHY_PORT_OTG:
-> -			ret |= rockchip_usb2phy_otg_mux_irq(irq, rport);
-> +			if (rport->mode != USB_DR_MODE_HOST &&
-> +			    rport->mode != USB_DR_MODE_UNKNOWN)
-> +				ret |= rockchip_usb2phy_otg_mux_irq(irq, rport);
->  			break;
->  		case USB2PHY_PORT_HOST:
->  			ret |= rockchip_usb2phy_linestate_irq(irq, rport);
 > --
-> 2.35.1
->
->
+> ~Vinod
+
 
 -- 
 linux-phy mailing list
