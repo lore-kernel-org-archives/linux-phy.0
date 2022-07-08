@@ -4,60 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D5CE6CCA47B
-	for <linux-phy@archiver.kernel.org>; Fri,  8 Jul 2022 13:13:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 01424C3F2D4
+	for <linux-phy@archiver.kernel.org>; Fri,  8 Jul 2022 13:13:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=K5APhde9zmrFShxRX2PdN42qmj0iy9AzE0fDeSD0gzw=; b=deu/zBiSVcjBP2
-	ml3NSvZB7+ZV+CVz7xb2+xJs9LWzADsjr1OLpx0bV0+t2vP07FKEaOLXpWPnlnTxD+3pa7BMB1zAJ
-	HBpZrKSrFgLKK2nlJk6aYqqsV0FNQbJ8Q6YWFw3gLqHjLVyLT+6mlMK9DrN4I4qBMAdYu4RQnWKM8
-	svWVL6ONcmqJ8Pg9lm1VgxwD0jcg983geupOBTfnXX/VXD6zovPsBHcattyPoM4F8Nv2kS3pleQcC
-	OSXtVPeNC9mWHY3FM+gCybomm2IXto4xLBx2juPevUUXI3OPnGqOOQrl1jlXeWqqAY8SwQX839WhC
-	bhc/yN48fN31hx934pQQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Cq4M6Ot9I167gndgcnQjE5JTLvqTdYvLReddxquPCMc=; b=gC1+i+zXwHDVau
+	AFYJACjVrSvlL3V1JNZabemkmN4Ft5U85zIlygzq7vTSA94MiiuN9MMugdtms/MTzLdb3uwaaAAq9
+	sTeit9WunXQfEw/ruAnoVWILUWnNmzh2bg/6reCP5Sly4bW6NpJfymLERsFi9IDGWMGlGNjaIrpXy
+	50kMP1KA/NsMiT2vvGUrmcJGqjPN1xW5Cxj7JxbF8UgaXVjgIToHn/LV/lEr0zjY7NizldDP8eyJ6
+	BH6e0mF12PH2SHiBW/YieiwsUY6UDWp79Xh5K2C+8OExXJlUeMl+hqb0aDDlatH9JgUox3e0ujJxj
+	KMWIxYBXVUEP3OH1Achg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o9nng-003skU-A7; Fri, 08 Jul 2022 13:13:40 +0000
-Received: from mail-lj1-x236.google.com ([2a00:1450:4864:20::236])
+	id 1o9nnh-003slC-EP; Fri, 08 Jul 2022 13:13:41 +0000
+Received: from mail-lj1-x22d.google.com ([2a00:1450:4864:20::22d])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o9nnd-003sid-QK
+	id 1o9nne-003siw-HF
 	for linux-phy@lists.infradead.org; Fri, 08 Jul 2022 13:13:40 +0000
-Received: by mail-lj1-x236.google.com with SMTP id u14so25917582ljh.2
+Received: by mail-lj1-x22d.google.com with SMTP id bx13so25895443ljb.1
         for <linux-phy@lists.infradead.org>; Fri, 08 Jul 2022 06:13:36 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
-        h=from:to:cc:subject:date:message-id:mime-version
-         :content-transfer-encoding;
-        bh=v6/PCW5WRbzPZN02phmsvBdyayCNpfl8Zb3T8MmgeGc=;
-        b=iKiqZFrK3BS6sQC5nrTlmwt3NnZd4cUx/MBTVfs2e+got39YBiKpi9Qe4WDmC7ojyr
-         CIrKaDPDo5heACWSoTVUmQnVTohdFk5P6qJ4S0o1DdJQoBFemCLle5S3VvBdh+yi7bpy
-         EuVyrNAoQAqm2oooz6f973dzd37Kl5IrUHFGoqueydRWKAErukWU38ddvlnsCV+mQHtt
-         y5jDb20yclSDKU8TLBfft0nuCWk1p1LdjIwfQbXaV64ywlAfY5IjQcKYP9AVuFDrH2cT
-         12j33DCZC8jUOP1hbfZeSLT3EcqaMktR4A39oFT7maR6uqP4LB1OPATmZXBiRp6a+l5K
-         bquQ==
+        h=from:to:cc:subject:date:message-id:in-reply-to:references
+         :mime-version:content-transfer-encoding;
+        bh=IjR+2F8VDVzWZtZbL2H5UO7CpeJEqxrSNDvsv43xJOY=;
+        b=I0msIR1xHsrK427ROpYty93HRV1Cf5ngV2kxkvQkzAOxgzph0oKhs9P+bDanaafDLZ
+         H0XsGEMCv7ljW1RXECph6U9flE4iF1S7+BehA1PsEdQBVth996KZ31klFnJhQtGMBGym
+         gZ4pqEmQU99IpsBtLL7Rd0eebCucU/ERWyP3yoT/iZkZ02SVD4J4n0RXu4Z9zMC0IFoL
+         M/RHb34qu0cWPhxkgMV92AGLwvbwLovkIE90g1Lk+B3iyyM3uDreLi5LUPCzegERyUH+
+         GmGUxUGPvYj5M1vCTsanDd1UCZb5tM3Ir/ttI38F2MjmrAOBRfl6WHGdazXNcYVcAHhX
+         hYXA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
-         :content-transfer-encoding;
-        bh=v6/PCW5WRbzPZN02phmsvBdyayCNpfl8Zb3T8MmgeGc=;
-        b=qCiNQW/N50ZgeSfpPDB4d/aJXAzriZCBJ2y2bzGZKTonCTYL9F+LOenFlRdLrSypu3
-         zi8cX/z/007icRwpyWJO5T+AZsM57nkxzjyU1zZVbNbJECEI5hHZxVhciXviTKGjyyYD
-         LpP3O6LkR61hhtIJ34pZdFtIhZviN3SndTh5dx33VX6WtNpGt4gg3O8e+/QbQ6klC4wo
-         GbdrJMHS31YRK4xju4Gem5UJ+nGz+aebA9BivM6rabpAfIXVLUxkRlS/v2oHSkhrYDSj
-         LGhTJi7JeJRXEh5cY0U64EGe8GbXiN4a4JS41CvmkIDrukemiIMILlfKPo1RSaUPpQSh
-         qO4A==
-X-Gm-Message-State: AJIora8InfTNlxb8FuftcRN2K9NAk2CaXjUjSOzMLOA1WDvyzML4VrV9
-	RWtHu/Sbr9zmbEx+LiCmUTDfbA==
-X-Google-Smtp-Source: AGRyM1vffmcfCTZuyPN85KWpI/SicQtx6Zz4UnQksr1NwxLiUcF19Wx7+PpLpTNeleYc6hVNsFiORQ==
-X-Received: by 2002:a2e:b703:0:b0:25a:93d0:8a57 with SMTP id j3-20020a2eb703000000b0025a93d08a57mr1964890ljo.487.1657286014824;
-        Fri, 08 Jul 2022 06:13:34 -0700 (PDT)
+        h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+         :references:mime-version:content-transfer-encoding;
+        bh=IjR+2F8VDVzWZtZbL2H5UO7CpeJEqxrSNDvsv43xJOY=;
+        b=fwyA9RgJAUf2uWr9ol3IEbYwBInkxZykM081wFj2fcLdgVqVjqSFL1ye5ISpVaBIcm
+         FwRKx6g9dAgwIvUwCT2mxxOLecXTjL1l/wKWweZ9oNX1TzYMP2lLmA1YKBZzdsU8Nqjx
+         oijwjqnVuQSWKiH7WdVOo0l72vwBBPdpjbzec//bsi6rmHJOT4RI8VxsX5yEKMKgdkNn
+         0/jfNnjOCgCR8sP24OwiLv1HefdeiRrjjVBFfx3MCwb7dS3mIzeevDUbIP1O/35KvMWO
+         5tLlcjkmuELyTCvRwLENLjTsI9qEEsH7BQVw5ytz3EuJiWYJC3+Iw1Zvz+Pz2Af6eLH3
+         +PrQ==
+X-Gm-Message-State: AJIora9pwCth8tWC2FUWUXo5/hMZjiELhhdGmduYy64djwTQd0ie5/xW
+	YuT2vL0otb3EsnkL3Y0cVzEJ7Q==
+X-Google-Smtp-Source: AGRyM1vS4wofuQbXsdOj4XwEHt7DCrtCFNOpkaD2vtOzu4vM+8vBWRpkAEjkfAI0qItm3zkqMesnhQ==
+X-Received: by 2002:a2e:a54d:0:b0:25d:4fc6:7b4d with SMTP id e13-20020a2ea54d000000b0025d4fc67b4dmr1859128ljn.11.1657286015648;
+        Fri, 08 Jul 2022 06:13:35 -0700 (PDT)
 Received: from eriador.lan ([37.153.55.125])
         by smtp.gmail.com with ESMTPSA id bu35-20020a05651216a300b0047255d211b9sm7410844lfb.232.2022.07.08.06.13.34
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 08 Jul 2022 06:13:34 -0700 (PDT)
+        Fri, 08 Jul 2022 06:13:35 -0700 (PDT)
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 To: Andy Gross <agross@kernel.org>,
 	Bjorn Andersson <bjorn.andersson@linaro.org>,
@@ -72,15 +72,16 @@ Cc: Philipp Zabel <p.zabel@pengutronix.de>,
 	linux-clk@vger.kernel.org,
 	linux-phy@lists.infradead.org,
 	Johan Hovold <johan@kernel.org>
-Subject: [PATCH v2 0/3] phy: qcom-qmp-ufs: add symbol clocks support
-Date: Fri,  8 Jul 2022 16:13:30 +0300
-Message-Id: <20220708131333.2836900-1-dmitry.baryshkov@linaro.org>
+Subject: [PATCH v2 1/3] clk: asm9260: use new helper for fixed rate clock creation
+Date: Fri,  8 Jul 2022 16:13:31 +0300
+Message-Id: <20220708131333.2836900-2-dmitry.baryshkov@linaro.org>
 X-Mailer: git-send-email 2.35.1
+In-Reply-To: <20220708131333.2836900-1-dmitry.baryshkov@linaro.org>
+References: <20220708131333.2836900-1-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220708_061337_878328_FBAD3120 
-X-CRM114-Status: UNSURE (   6.90  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220708_061338_593161_C376F9EB 
+X-CRM114-Status: GOOD (  12.92  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,28 +98,58 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Register UFS symbol clocks in the Qualcomm QMP PHY driver. Some of the
-platforms (msm8996, sc7280, sm8350/sm8450) expect them to be defined (to
-be used as GCC clock parents).
+The __clk_hw_register_fixed_rate() is an internal API, which is better
+not to be called directly. Add new helper to create fixed rate clocks
+using parent clock accuracy.
 
-Changes since v1:
-- Added a macro used by clk-asm9260, so that the clk-fixed-rate changes
-  do not affect the driver, requested by Stephen;
+Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+---
+ drivers/clk/clk-asm9260.c    |  6 ++----
+ include/linux/clk-provider.h | 14 ++++++++++++++
+ 2 files changed, 16 insertions(+), 4 deletions(-)
 
-- Changed registered clock names to be unique (as e.g. SC8280XP will
-  have two UFS PHYs), suggested by Johan.
-
-Dmitry Baryshkov (3):
-  clk: asm9260: use new helper for fixed rate clock creation
-  clk: fixed-rate: add devm_clk_hw_register_fixed_rate
-  phy: qcom-qmp-ufs: provide symbol clocks
-
- drivers/clk/clk-asm9260.c               |  6 +--
- drivers/clk/clk-fixed-rate.c            | 28 +++++++++++--
- drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 56 +++++++++++++++++++++++++
- include/linux/clk-provider.h            | 41 ++++++++++++++----
- 4 files changed, 116 insertions(+), 15 deletions(-)
-
+diff --git a/drivers/clk/clk-asm9260.c b/drivers/clk/clk-asm9260.c
+index bacebd457e6f..0609b661ff5a 100644
+--- a/drivers/clk/clk-asm9260.c
++++ b/drivers/clk/clk-asm9260.c
+@@ -276,10 +276,8 @@ static void __init asm9260_acc_init(struct device_node *np)
+ 
+ 	/* TODO: Convert to DT parent scheme */
+ 	ref_clk = of_clk_get_parent_name(np, 0);
+-	hw = __clk_hw_register_fixed_rate(NULL, NULL, pll_clk,
+-			ref_clk, NULL, NULL, 0, rate, 0,
+-			CLK_FIXED_RATE_PARENT_ACCURACY);
+-
++	hw = clk_hw_register_fixed_rate_parent_accuracy(NULL, pll_clk, ref_clk,
++							0, rate);
+ 	if (IS_ERR(hw))
+ 		panic("%pOFn: can't register REFCLK. Check DT!", np);
+ 
+diff --git a/include/linux/clk-provider.h b/include/linux/clk-provider.h
+index 72d937c03a3e..659ef5a77246 100644
+--- a/include/linux/clk-provider.h
++++ b/include/linux/clk-provider.h
+@@ -439,6 +439,20 @@ struct clk *clk_register_fixed_rate(struct device *dev, const char *name,
+ 	__clk_hw_register_fixed_rate((dev), NULL, (name), NULL, NULL,	      \
+ 				     (parent_data), NULL, (flags),	      \
+ 				     (fixed_rate), (fixed_accuracy), 0)
++/**
++ * clk_hw_register_fixed_rate_parent_accuracy - register fixed-rate clock with
++ * the clock framework
++ * @dev: device that is registering this clock
++ * @name: name of this clock
++ * @parent_name: name of clock's parent
++ * @flags: framework-specific flags
++ * @fixed_rate: non-adjustable clock rate
++ */
++#define clk_hw_register_fixed_rate_parent_accuracy(dev, name, parent_name,    \
++						   flags, fixed_rate)	      \
++	__clk_hw_register_fixed_rate((dev), NULL, (name), (parent_name),      \
++				     NULL, NULL, (flags), (fixed_rate), 0,    \
++				     CLK_FIXED_RATE_PARENT_ACCURACY)
+ 
+ void clk_unregister_fixed_rate(struct clk *clk);
+ void clk_hw_unregister_fixed_rate(struct clk_hw *hw);
 -- 
 2.35.1
 
