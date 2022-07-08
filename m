@@ -4,64 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F0F2EC43334
-	for <linux-phy@archiver.kernel.org>; Fri,  8 Jul 2022 06:58:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6F6E5C43334
+	for <linux-phy@archiver.kernel.org>; Fri,  8 Jul 2022 08:02:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=sZ26BrbFXJj+HpGBS/5iNvgMgzrglSQjVwS0DjjDOyo=; b=bsl33qUsnbY/Xq
-	UDGZ6ykv5TZhiQU8RZV9ek1Ah47E6ERdoMqILDg0FV2mjPeKOhURQ/tZYLd4r3W076K6RO0QKwO+6
-	SBxkQuXGrfNLMHF9eriakBPZCLgD7gneHsHhXdYpeOWUgaemCKZOAk4EFCbqCRQjGn8og3h8tGVXo
-	TqHcD4sBBNBbBgt/tJksHJtuCporxIfm/W6g7gBQ7eqo/3x3Ect4WXhoaJ3KLLE2Myc+3zGkNC3qg
-	zZAx1EmN/G0VEVkw8glSx98S2DMbs6yXeVz94ePh998AMRwSvdVf93x2YAhp3wIlgeFdk2WPNiJUT
-	AANPDpHmU6D6zLoRx/3g==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Uq3DJ0RTdpccQ8TPmuC4OTYBERts/ZvmsoZRoxAUSqI=; b=rJAy5HP8C5jdWE
+	YwTd5OprsNaIdrGwbZdXlEHbA8vqGfI27gxBTZw40KKFBx70f+BEp9DbqThOn8bQb+AS44uGRMjBd
+	spAtj+z7s731juTwXAOuGAL/f8fpP2eiSdPM4uVGd6GueHsyahsn/0846FW0zduoCBDO9uKpKzJPr
+	e5xOwhAc25NFv722hCUaFvUj+A12zSvgeF8dI1FQKOF+fhBsVzEyyZpDfkbAVIZYl28JXSS1IpOrl
+	Bu59dWUlfUAAq8eECNq7bnCzsQstoZw/6v9QzLuOURmVQjOef/USa8A4dupW/1LB91OAFz+SWLVRG
+	I9wzMsGfKcSsZH2XZghg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o9hx3-0027vP-7L; Fri, 08 Jul 2022 06:58:57 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1o9iwr-002LXw-SY; Fri, 08 Jul 2022 08:02:49 +0000
+Received: from mail-io1-xd2e.google.com ([2607:f8b0:4864:20::d2e])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o9hwz-0027uF-HK; Fri, 08 Jul 2022 06:58:54 +0000
-X-UUID: 1196c01ea5bb4a8fbcc9a986b448df32-20220707
-X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.1.8,REQID:93c7bdd8-99b7-4e71-91c1-d73cb7f52016,OB:0,LO
-	B:0,IP:0,URL:5,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,RULE:Release_Ham,ACTI
-	ON:release,TS:5
-X-CID-META: VersionHash:0f94e32,CLOUDID:9366e386-57f0-47ca-ba27-fe8c57fbf305,C
-	OID:IGNORED,Recheck:0,SF:nil,TC:nil,Content:0,EDM:-3,IP:nil,URL:1,File:nil
-	,QS:nil,BEC:nil,COL:0
-X-UUID: 1196c01ea5bb4a8fbcc9a986b448df32-20220707
-Received: from mtkmbs11n1.mediatek.inc [(172.21.101.185)] by mailgw02.mediatek.com
-	(envelope-from <chunfeng.yun@mediatek.com>)
-	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
-	with ESMTP id 1554834858; Thu, 07 Jul 2022 23:58:48 -0700
-Received: from mtkmbs11n2.mediatek.inc (172.21.101.187) by
- mtkmbs10n1.mediatek.inc (172.21.101.34) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.792.15; Fri, 8 Jul 2022 14:58:35 +0800
-Received: from localhost.localdomain (10.17.3.154) by mtkmbs11n2.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.2.792.3 via Frontend
- Transport; Fri, 8 Jul 2022 14:58:35 +0800
-From: Chunfeng Yun <chunfeng.yun@mediatek.com>
-To: Vinod Koul <vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>
-CC: Chunfeng Yun <chunfeng.yun@mediatek.com>, Kishon Vijay Abraham I
-	<kishon@ti.com>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	<linux-arm-kernel@lists.infradead.org>, <linux-mediatek@lists.infradead.org>,
-	<linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
-	<linux-kernel@vger.kernel.org>
-Subject: [PATCH] dt-bindings: phy: mediatek: tphy: add compatible for mt8188
-Date: Fri, 8 Jul 2022 14:58:34 +0800
-Message-ID: <20220708065834.25424-1-chunfeng.yun@mediatek.com>
-X-Mailer: git-send-email 2.25.1
+	id 1o9iwd-002LQf-Ut; Fri, 08 Jul 2022 08:02:38 +0000
+Received: by mail-io1-xd2e.google.com with SMTP id e5so3292914iof.2;
+        Fri, 08 Jul 2022 01:02:29 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20210112;
+        h=message-id:date:mime-version:user-agent:subject:content-language:to
+         :cc:references:from:in-reply-to:content-transfer-encoding;
+        bh=hODnMtf+5EqhbkNx2oX7wxZqY8zZUB9OLPetFR2uH7A=;
+        b=I1oaVBalKTFKJVlbbTyhQWS1ol5E6FcVkwflucZasxRgPj/Kt3Y/wo+VsrsGKPfEK9
+         WbRFB7uTsXHD1sjwAiU4jzq7HjI3kqUC7ZIGCdt1Ya2aFhyZdhd9sJamF8KF8keifkrl
+         gjSzpl8EDPbvrNYPZM1PmW41ZfqJHD71UYrK0topX6tbCbA5um5EP9691DUMHpPE7M3O
+         s1SXAw+K7y3GUQxpfyElP0H7NiPCm3RMMX7KsqRYaSl7LXLYfpmznJ4DsY+xY8hmHuPm
+         QbciU7n6qBFcQnzz8dl6yyf1U2Gy+R2xx/5kJpMUPZza2PgUBSjN0FsMro5mt+B8eVzx
+         0bcw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
+         :content-language:to:cc:references:from:in-reply-to
+         :content-transfer-encoding;
+        bh=hODnMtf+5EqhbkNx2oX7wxZqY8zZUB9OLPetFR2uH7A=;
+        b=io7P/xIkIft4ytQ/JM49hp7dmiBJjB9fArsoinNN7Ih5ffhXdfmARIn7bB/oYYBq7D
+         +TOqbp+ob9SHeWSgSUt6JJEpqSpZHE53Ecw1qcbIpvvqCdWMJbcR5tUo+Fmk8QiRvFMW
+         wYYR1e9qZnFrPBNT5boWFg/MPb3vc/LKAsZamDIuYRi9+rfbEld+QndG0Ih9Y5VIky+5
+         PaVgvV1W5G2ZQG5/EyKoK/1aQLCKoLVfz1m8FZkrW+VCoQ6SughZ7bXFJpFQBB8dmwgT
+         uy/2+lQIPi8Hoxfxg9cB37dEfHq2NrvqbvaNMbuD3iyaqka44MK/8F+yCt0/o5NQtPSB
+         pgcg==
+X-Gm-Message-State: AJIora9Ff9dncY3vdyGfUqQR1ezJgMWbqTjJwdgsuqRRSF1foBTUXple
+	i7helLekrlg79Se5HTR6KAg=
+X-Google-Smtp-Source: AGRyM1vbUvAEnsSVMwsqK+d3yPV/Acfg2dPnTr9AEZlB91dT5n/m3+vacP7LrXDKsxdL1C5fh2Ls6g==
+X-Received: by 2002:a05:6638:dcb:b0:33e:bd5c:2195 with SMTP id m11-20020a0566380dcb00b0033ebd5c2195mr1321012jaj.312.1657267349186;
+        Fri, 08 Jul 2022 01:02:29 -0700 (PDT)
+Received: from [192.168.1.145] ([207.188.167.132])
+        by smtp.gmail.com with ESMTPSA id w13-20020a927b0d000000b002dc33dbed87sm2642328ilc.39.2022.07.08.01.02.26
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 08 Jul 2022 01:02:28 -0700 (PDT)
+Message-ID: <d2872f3e-1dc0-01ea-9385-29c089bc10b8@gmail.com>
+Date: Fri, 8 Jul 2022 10:02:25 +0200
 MIME-Version: 1.0
-X-MTK: N
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
+ Thunderbird/91.11.0
+Subject: Re: [PATCH] dt-bindings: phy: mediatek: tphy: add compatible for
+ mt8188
+Content-Language: en-US
+To: Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>
+Cc: Kishon Vijay Abraham I <kishon@ti.com>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org
+References: <20220708065834.25424-1-chunfeng.yun@mediatek.com>
+From: Matthias Brugger <matthias.bgg@gmail.com>
+In-Reply-To: <20220708065834.25424-1-chunfeng.yun@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220707_235853_595568_C71038D1 
-X-CRM114-Status: UNSURE (   8.08  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220708_010236_045438_C99778C1 
+X-CRM114-Status: GOOD (  11.54  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,33 +90,36 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add compatible for mt8188
 
-Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
----
- Documentation/devicetree/bindings/phy/mediatek,tphy.yaml | 1 +
- 1 file changed, 1 insertion(+)
 
-diff --git a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
-index 7b2e1bc119be..9fd27d64aca0 100644
---- a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
-+++ b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
-@@ -85,6 +85,7 @@ properties:
-           - const: mediatek,generic-tphy-v2
-       - items:
-           - enum:
-+              - mediatek,mt8188-tphy
-               - mediatek,mt8195-tphy
-           - const: mediatek,generic-tphy-v3
-       - const: mediatek,mt2701-u3phy
--- 
-2.18.0
+On 08/07/2022 08:58, Chunfeng Yun wrote:
+> Add compatible for mt8188
+> 
+> Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
 
+Reviewed-by: Matthias Brugger <matthias.bgg@gmail.com>
+
+> ---
+>   Documentation/devicetree/bindings/phy/mediatek,tphy.yaml | 1 +
+>   1 file changed, 1 insertion(+)
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
+> index 7b2e1bc119be..9fd27d64aca0 100644
+> --- a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
+> @@ -85,6 +85,7 @@ properties:
+>             - const: mediatek,generic-tphy-v2
+>         - items:
+>             - enum:
+> +              - mediatek,mt8188-tphy
+>                 - mediatek,mt8195-tphy
+>             - const: mediatek,generic-tphy-v3
+>         - const: mediatek,mt2701-u3phy
 
 -- 
 linux-phy mailing list
