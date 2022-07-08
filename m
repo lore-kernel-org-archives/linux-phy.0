@@ -4,79 +4,197 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E2CC7C43334
-	for <linux-phy@archiver.kernel.org>; Fri,  8 Jul 2022 09:37:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 72C98C43334
+	for <linux-phy@archiver.kernel.org>; Fri,  8 Jul 2022 10:04:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:Date:Subject:Cc:
-	To:From:Message-ID:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pxCyJwrcHyhRLMiNsALCq3VpN5j5NX61uXWV5DTfxkE=; b=qOIieLc0hcg7t7
-	DkUBkHIIZjs0N5M+gJG2g93HBpGE5eQd2RCq+l6DpHPbj+JRKu80bsmy4W9r+AeZpH8YgAEpdf/ab
-	jinLzHdf1bJ/GlcZW8DrrOvnZkvyTewRoYlScNnTRCsAqAndHl4YOszxpP4cUVdfa222xaLa83t8a
-	jeQLczpTKJQPjbA0s3PDpYH71fiJk7+qLSoKWILcA/kZHm46UgMWheTKwxcOX/xi7vWxRp+wCif2K
-	c+USbSch87QUNSdo90rjpFhp1RzvImIURwrVNPVeyr3Rbkf/dAPc99d4H9uTPDHhPMzvHS0npaLO4
-	LfquoyzqYhVxdvGS0hrA==;
+	List-Owner; bh=O3IQY3YxfJ5KRA+o6XTKf651Pr3zAcOTFO6ViP9Qzho=; b=V0wF7j5asNWB43
+	g51kOfd24h1YIq7OBscsRXOIuWgjvf5+rY9bDq/NfPEFzXLvlBaQRALRKS8IMMqf7RBXkKQeaQdFQ
+	R+ndMIfIjV3bJuacpULmcZSeUXnhmormTYhxgkSgAAkSUz9+3oSMWK4YGmqcGqES7pY1FcE71TxR3
+	FHE+LSPMojslx2v/wLnRMyG52dq9cR/Ul17PSHSLavGB6WhL4l6YKldDLI842WSRX6xkCEEtU8ejO
+	G8ndAzqhn062ykwTqDdfkml2PEOu6A0Jc80Awv/cYfXLiEd1bNIfF0Fdgw/5xCZ/hQXe11IDRvw0R
+	lC1zz1z5lVJp7J8SOjOQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o9kQv-002xxK-AF; Fri, 08 Jul 2022 09:37:57 +0000
-Received: from mout.gmx.net ([212.227.15.18])
+	id 1o9kqa-0036g8-Ie; Fri, 08 Jul 2022 10:04:28 +0000
+Received: from mx0a-00069f02.pphosted.com ([205.220.165.32])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o9kQh-002xr1-IG; Fri, 08 Jul 2022 09:37:46 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
-	s=badeba3b8450; t=1657273045;
-	bh=7DjN/u4lV28JQGeSo7v9VWllQNWiCVT/J6Yw1Y7f+08=;
-	h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
-	b=K7jYehq7hFxHD1ijV4FP+4DLs+ERcehlEmVXuwgjDeMMzR3ms9bKrJuPKRKOg+de4
-	 sPp56q65AEtO+1qlRQarUPsFgnDlTFWQmgraD76xF3Mp+b7bcRshGcJndGc7Dv9gSG
-	 ha/owRF7z6CbMzCi3g7vWswStSU36lH6Uy8YFQo0=
-X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
-Received: from [157.180.225.69] ([157.180.225.69]) by web-mail.gmx.net
- (3c-app-gmx-bs34.server.lan [172.19.170.86]) (via HTTP); Fri, 8 Jul 2022
- 11:37:25 +0200
+	id 1o9kqH-0036Mg-5j; Fri, 08 Jul 2022 10:04:11 +0000
+Received: from pps.filterd (m0246617.ppops.net [127.0.0.1])
+	by mx0b-00069f02.pphosted.com (8.17.1.5/8.17.1.5) with ESMTP id 2689TC68005072;
+	Fri, 8 Jul 2022 10:03:43 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com; h=date : from : to : cc
+ : subject : message-id : references : content-type : in-reply-to :
+ mime-version; s=corp-2021-07-09;
+ bh=5pLPxSfVxyKstenSeJF5S36kf0san/dvZM+lTJUj5kk=;
+ b=PA50aJSWEClK7uNepTEBZoL1lirjNs/B6KGo9hv+IgJJBjI6PrnU57gxCy/+qz2/vyQj
+ oL0aTg5oA3vyQMa5i4vjthnyKQ6BWTpbc8hSzC0vhsKNARztRAH/NSsh9dW8f41s1/so
+ h5x4py0i5Nyy4To7vgnyw4i4pepyPuSuElcTKvhwEliSRnJF5BIoM6faxeMhcKGZ71tu
+ g6CK9oLrA1c0tCFliM/drLZbAOaKa4nWye+NvPyHRWT2dOAH5yfsktPPdZbnkumXqDVe
+ vFnJqDCdS5VkE4w/NgvMoS8PEsTTgT8axv27cKNHj4hM8Pf0gEOvc6MehQ4ndh5dhJ+k bw== 
+Received: from iadpaimrmta03.imrmtpd1.prodappiadaev1.oraclevcn.com (iadpaimrmta03.appoci.oracle.com [130.35.103.27])
+	by mx0b-00069f02.pphosted.com (PPS) with ESMTPS id 3h4ubyqr0t-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+	Fri, 08 Jul 2022 10:03:43 +0000
+Received: from pps.filterd (iadpaimrmta03.imrmtpd1.prodappiadaev1.oraclevcn.com [127.0.0.1])
+	by iadpaimrmta03.imrmtpd1.prodappiadaev1.oraclevcn.com (8.16.1.2/8.16.1.2) with SMTP id 268A1thI017973;
+	Fri, 8 Jul 2022 10:03:41 GMT
+Received: from nam11-co1-obe.outbound.protection.outlook.com (mail-co1nam11lp2170.outbound.protection.outlook.com [104.47.56.170])
+	by iadpaimrmta03.imrmtpd1.prodappiadaev1.oraclevcn.com with ESMTP id 3h4ud9qcwg-2
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+	Fri, 08 Jul 2022 10:03:41 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=TuiT5fxH64XD++PmsUHkgC7ckixWshUllFXzVoKD339c0SUUkEprR7RnhpyFoyYisCA3NgjigZj0XW0EB5megweHyiCr6hSkfjB4vmdtFZJIMeIcOup727hO99v4rU+KHGM2VxwCN0yEPdAuLSBVLjtDTX+2+alSVMxVUN1rOEFRoTOqCwuurnCJXuJ1xPpJDNTQHwg2CNYTSw5W3ZOLPO8s1GctuCHa9QH/Ddp/uuq+iey3U7OeI5ijPny7xK4dwWsD56h4gO5WjB52nrwuK9WvUAqgGj2AkqywRBgcs4ouzPFjlOii0aq44XhdilOpDJ5HsYjXYD41Haw5vgod9g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=5pLPxSfVxyKstenSeJF5S36kf0san/dvZM+lTJUj5kk=;
+ b=kn1SRlyC5i2qMq14iJp3u48Sc+6YLSyptZNqh+j52LiRAD4GE2LcttsO6tAENFsPKuzk0Ce08wCzR+lQG8YmiaOgDnuauDBR2FvBbWexvMMmaZ1Gtgall4dYhQ8nFYVBMV+c4a2xbe0iKblpnv5Lbi5/H/pOGmdYGjmGP1p+wxaosjR71LV5GqWcVa04uuscYArmjbbs+qiZZIVeTb6tTvgvlzG5R23qxAzaJ8iflf+0CtE45WIcD0krL0IkSbT/GPMV9C2DEQxNKh8rwrnxfyMJIVACZCMqqIyLV0YCRqAjFA2nxRbNB1uuBMsc2b+mBbGgrzbk6dvqLMZZkRVkOg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=oracle.com; dmarc=pass action=none header.from=oracle.com;
+ dkim=pass header.d=oracle.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=oracle.onmicrosoft.com; s=selector2-oracle-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=5pLPxSfVxyKstenSeJF5S36kf0san/dvZM+lTJUj5kk=;
+ b=d5aihqu/jeH907HQhVDkAIsIAk1o2UUnZLfhRzqbZs24b2LPJu/0i/iO9RegZ/usVjNRK7F6zKl0TV7RkbNtwNk5jSLgf7v7g1ni6mo16f9Ema6DtSWAvvMnjH5lMjvtoIAn4Dcxo3jB26XbdYBYv/P0T7VJlIaKMBVEZ26Hd3s=
+Received: from MWHPR1001MB2365.namprd10.prod.outlook.com
+ (2603:10b6:301:2d::28) by CH0PR10MB4924.namprd10.prod.outlook.com
+ (2603:10b6:610:ca::19) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5417.20; Fri, 8 Jul
+ 2022 10:03:37 +0000
+Received: from MWHPR1001MB2365.namprd10.prod.outlook.com
+ ([fe80::5020:9b82:5917:40b]) by MWHPR1001MB2365.namprd10.prod.outlook.com
+ ([fe80::5020:9b82:5917:40b%6]) with mapi id 15.20.5417.016; Fri, 8 Jul 2022
+ 10:03:37 +0000
+Date: Fri, 8 Jul 2022 13:02:19 +0300
+From: Dan Carpenter <dan.carpenter@oracle.com>
+To: Guenter Roeck <linux@roeck-us.net>
+Cc: Greg KH <gregkh@linuxfoundation.org>, kernel test robot <lkp@intel.com>,
+        Andrew Morton <akpm@linux-foundation.org>,
+        virtualization@lists.linux-foundation.org, usbb2k-api-dev@nongnu.org,
+        tipc-discussion@lists.sourceforge.net, target-devel@vger.kernel.org,
+        sound-open-firmware@alsa-project.org, samba-technical@lists.samba.org,
+        rds-devel@oss.oracle.com, patches@opensource.cirrus.com,
+        osmocom-net-gprs@lists.osmocom.org,
+        openipmi-developer@lists.sourceforge.net, nvdimm@lists.linux.dev,
+        ntb@lists.linux.dev, netfilter-devel@vger.kernel.org,
+        netdev@vger.kernel.org, mjpeg-users@lists.sourceforge.net,
+        megaraidlinux.pdl@broadcom.com, linuxppc-dev@lists.ozlabs.org,
+        linux1394-devel@lists.sourceforge.net, linux-x25@vger.kernel.org,
+        linux-wpan@vger.kernel.org, linux-wireless@vger.kernel.org,
+        linux-watchdog@vger.kernel.org, linux-usb@vger.kernel.org,
+        linux-unionfs@vger.kernel.org, linux-tegra@vger.kernel.org,
+        linux-stm32@st-md-mailman.stormreply.com,
+        linux-staging@lists.linux.dev, linux-serial@vger.kernel.org,
+        linux-sctp@vger.kernel.org, linux-scsi@vger.kernel.org,
+        linux-samsung-soc@vger.kernel.org, linux-rockchip@lists.infradead.org,
+        linux-renesas-soc@vger.kernel.org, linux-rdma@vger.kernel.org,
+        linux-raid@vger.kernel.org, linux-pm@vger.kernel.org,
+        linux-phy@lists.infradead.org, linux-perf-users@vger.kernel.org,
+        linux-pci@vger.kernel.org, linux-parport@lists.infradead.org,
+        linux-parisc@vger.kernel.org, linux-omap@vger.kernel.org,
+        linux-nfc@lists.01.org, linux-mtd@lists.infradead.org,
+        linux-mmc@vger.kernel.org, linux-mm@kvack.org,
+        linux-mediatek@lists.infradead.org, linux-media@vger.kernel.org,
+        linux-leds@vger.kernel.org, linux-integrity@vger.kernel.org,
+        linux-input@vger.kernel.org, linux-iio@vger.kernel.org,
+        linux-ide@vger.kernel.org, linux-hwmon@vger.kernel.org,
+        linux-fsdevel@vger.kernel.org, linux-fpga@vger.kernel.org,
+        linux-fbdev@vger.kernel.org, linux-ext4@vger.kernel.org,
+        linux-efi@vger.kernel.org, linux-doc@vger.kernel.org,
+        linux-cxl@vger.kernel.org, linux-crypto@vger.kernel.org,
+        linux-clk@vger.kernel.org, linux-cifs@vger.kernel.org,
+        linux-btrfs@vger.kernel.org, linux-bluetooth@vger.kernel.org,
+        linux-block@vger.kernel.org, linux-bcache@vger.kernel.org,
+        linux-arm-msm@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+        linux-amlogic@lists.infradead.org, linaro-mm-sig@lists.linaro.org,
+        legousb-devel@lists.sourceforge.net, kvm@vger.kernel.org,
+        keyrings@vger.kernel.org, isdn4linux@listserv.isdn4linux.de,
+        iommu@lists.linux.dev, iommu@lists.linux-foundation.org,
+        intel-wired-lan@lists.osuosl.org, greybus-dev@lists.linaro.org,
+        dri-devel@lists.freedesktop.org, dm-devel@redhat.com,
+        devicetree@vger.kernel.org, dev@openvswitch.org, dccp@vger.kernel.org,
+        damon@lists.linux.dev, coreteam@netfilter.org, cgroups@vger.kernel.org,
+        ceph-devel@vger.kernel.org, ath11k@lists.infradead.org,
+        apparmor@lists.ubuntu.com, amd-gfx@lists.freedesktop.org,
+        alsa-devel@alsa-project.org,
+        accessrunner-general@lists.sourceforge.net
+Subject: Re: [linux-next:master] BUILD REGRESSION
+ 088b9c375534d905a4d337c78db3b3bfbb52c4a0
+Message-ID: <20220708100219.GJ2338@kadam>
+References: <62c683a2.g1VSVt6BrQC6ZzOz%lkp@intel.com>
+ <YsaUgfPbOg7WuBuB@kroah.com>
+ <20220707140258.GA3492673@roeck-us.net>
+Content-Disposition: inline
+In-Reply-To: <20220707140258.GA3492673@roeck-us.net>
+User-Agent: Mutt/1.9.4 (2018-02-28)
+X-ClientProxiedBy: JNAP275CA0050.ZAFP275.PROD.OUTLOOK.COM (2603:1086:0:4e::10)
+ To MWHPR1001MB2365.namprd10.prod.outlook.com (2603:10b6:301:2d::28)
 MIME-Version: 1.0
-Message-ID: <trinity-8311107f-8d47-4da9-8b30-012156e1ce68-1657273045706@3c-app-gmx-bs34>
-From: Frank Wunderlich <frank-w@public-files.de>
-To: Peter Geis <pgwipeout@gmail.com>
-Cc: Samuel Holland <samuel@sholland.org>, Greg Kroah-Hartman
- <gregkh@linuxfoundation.org>, Vinod Koul <vkoul@kernel.org>, "open
- list:GENERIC PHY FRAMEWORK" <linux-phy@lists.infradead.org>, arm-mail-list
- <linux-arm-kernel@lists.infradead.org>, "open list:ARM/Rockchip SoC..."
- <linux-rockchip@lists.infradead.org>, Linux Kernel Mailing List
- <linux-kernel@vger.kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
- Heiko Stuebner <heiko@sntech.de>
-Subject: Aw: Re: [BUG] USB broken on rk3568 based R2Pro
-Date: Fri, 8 Jul 2022 11:37:25 +0200
-Importance: normal
-Sensitivity: Normal
-In-Reply-To: <CAMdYzYrs0oJXVcViOmJk4E7PSTeP5TYs0O_ePHmrcAiKtOAWXQ@mail.gmail.com>
-References: <trinity-54ed588d-4b2c-4177-83b0-4eda8ff16a42-1657210235522@3c-app-gmx-bap68>
- <trinity-ec3b4258-cb12-42c2-9058-362260a275d2-1657216287085@3c-app-gmx-bap68>
- <CAMdYzYrs0oJXVcViOmJk4E7PSTeP5TYs0O_ePHmrcAiKtOAWXQ@mail.gmail.com>
-X-UI-Message-Type: mail
-X-Priority: 3
-X-Provags-ID: V03:K1:4OJhdHFpq7YpX6xsUbZCX2nrOMgzlmYf82BMa6ciaZDE8xDzru1jsrfijDkjdym8cGddL
- t8cHv+WAuN/5qZ8W0/Ljxq206ngky8YIv1Ro6nQCJ3zOP/kp6hsytwtZIhsSV01khwuindPc0lCO
- iXBoDiZ93w+k7tl2GT8/8b7ws2eAD7M+iKW9W6JxhFrtNx7vgYluHLlP7CMMKdeva8JXZbnJXUz6
- BE5HJleqt/5vCL0rCQhY46dYdu1JNW/diQy5cr3Eg6gbHjx6A8RZ0RGypkaK2dLFHvmjb4NOMuRq
- X0=
-X-UI-Out-Filterresults: notjunk:1;V03:K0:Muo9ZjD44g4=:51OLlILkc6InU8bvJlJVsp
- 1+i1blCY6q/2wG5K+hJ8K1AjFJBmeqZ1gMWElBAs3GQqLT6TJwIAoTPkZUddVNZOMQZnfN9/p
- Eot5yUV8zbAQLZqt74VVnkdY7b6gpleCZsuyx/mjUUx4nz+SlND4+UBJkJCGvhu003dyU8DfW
- zytMXqC/S5tqhPBd9CrNqTO46hquSDttq0yJVZWjSR6yatqdmZhZ8NXcEkicGKGtcu3LHUQpY
- g+fXltGEw65/eV7+y/shwme8qzN704++mKsKZZy2XRwf4vaT4Os/zivvyZ0JzhTgiTmSwMnsX
- uNcPMlmxd3TCrxctvUMEOgjK/BELiEJEOoJIMT8tMx3wICjJAOpHsdqFr6N4pokycbOR+sDls
- AFIMA1G1/KUDQ1c7Ed8sONZEjwcp/PwJWHZYsLvi2kPr3Af3d5xuUE6wFuqBk7/OxxOWBFssn
- m9dw0H/49mQLce4FVp13f02YIQL4PCS3fveXdqkcbCYRHuRikGkoiE2UP90tK83HxULUYk50T
- Oj+HcwCaXWUzf7rONtgv2tcqzKxFYcfi+L/qG+wD6M/eCNPgP6jT4i6XI/eIWCLWSbc6fkSMW
- tofIhv6AAGZABxpy5bnYfgVBx/irueB8erMzRDYFJa2Gc72r1+0HVN/3EtA/bV05Y+tOUogqG
- 8agarUPV+ejsTNfLVVXyBotQyuF1FSc8s3WAqlbMGwX20xgraFif1J5MMa9uiHlvy/bb1rV+a
- lB6tyew6UGYWgpkQHuNSgsFTOPn3pq2/e5rnGUbQuoQh6RwVEq5/MZBlRg3EWdsek8BhoRFq/
- IFb+Mfb
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 60888dca-74ab-415d-c312-08da60c91fbd
+X-MS-TrafficTypeDiagnostic: CH0PR10MB4924:EE_
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: 	QpeUnUA80G+bljAIjcJUjdGQmN5uY1eFjfrdzbA17ZIS3uabFZv6Hj1kGve2Lkd6ukSIrwiau9r0ovgbwx+dZEkKmEv6+vXYk4KZAt/MIhaL91UGE+paD/7pDhxzw4BYYVzzpcTlpWSU2EifziKfjy7zSFc7TnpneOwuqT8aeevBVsak78DiURzZSmtUYh/Qt36gA5/ksmagoLtxfOrwnwiX4glTSsn8t5yf7q4IzdByoZMhq0/OHP2LZ5gMTFtZ6UHjHdMMXGvblMy4nwFFyDxr86OS56TwXu8Un5G4D4DsBq8RB57WhWGKUtSyUbZZbVRFVkXmco1NenhtSk86OVpxyYHEtK55FxQsoFvpcV9t5yQLp1tE1ssb1OlZae0sqORl49xAPisMT7jN1cFGRywkbs4jxpVhNo8QYdWoQ3VACsB1KUJ93fDES9dLhmgaIFwDWA8dmP2LXuL1Pd+DFJJTLkU2NgkpHh5jR/cu2c2jTU6PpCMhJIrwzdDt8sfkR6UcBI76NJL0PW+PVyYni0a7Pe3rbeU1PW70RjKKv2/VmnwT8TE08KBGeDQFp1AHEmMbpH2SgzlQWxMvwgGWtM/6/xUqkCQd/CwrTTQo63A1MOH6B7syzqHOaHclI2HJeLiaHI3iu+zlJxnG2+klM626OprekeiAtpkpRWukWRhFT8PONEEVRTQsT2XM6vCyFIqckzuC+ioRgs4tOx6NIenPb/oTrABzGoY+mHsNaR1Q2HerdVNbOlkOvYEcJhoSs2/qCEmiEqL11HGPPZoOhtWl90u/pVoJWO8OqO1Cy/1JYLe4uJbmE6i1YFG6PeLI
+X-Forefront-Antispam-Report: 	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:MWHPR1001MB2365.namprd10.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230016)(7916004)(376002)(346002)(136003)(39860400002)(396003)(366004)(33716001)(33656002)(478600001)(41300700001)(44832011)(52116002)(6486002)(38100700002)(6506007)(316002)(54906003)(6666004)(4744005)(38350700002)(6916009)(2906002)(86362001)(66556008)(6512007)(66946007)(8676002)(7336002)(7366002)(7416002)(7406005)(26005)(9686003)(5660300002)(66476007)(186003)(4326008)(1076003)(83380400001)(8936002);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: 	=?us-ascii?Q?uG7EisZU53uo3Eyn1rAkH1Zp7prdDVjLvtewrji3nHaInhwwPqKJd8IS9Ml6?=
+ =?us-ascii?Q?cCMDRE9xZtRy2ixvN9HtQCxQ6wyVdCMjht4JEfcGvVBGnhiqaHo4dtqdZQNj?=
+ =?us-ascii?Q?TGMY5D1FDrgRGu1ZqSXbxw6awVGysMa0+MX66gOjQV085NsMve2O4eyl5F5y?=
+ =?us-ascii?Q?1R/1hXNMky/piEnyu/AV2u9cPc8QXEEh5K/YB5xHM0lnOA68c0zycKWASuhL?=
+ =?us-ascii?Q?Kla+gf2FV2JSVMUu/Ri/D4jFuSeza/bxZHWLcnm2ZsVWcrf0/LgByhqRjtSp?=
+ =?us-ascii?Q?is7aqVU5aytLlmIcj33/i5SfhSOL6wtmqbxmSOEOtAVcsEJtIXON2a0hsur6?=
+ =?us-ascii?Q?hsWV1BvYk4AATAbHUOntCKDw5fmW1Zb7JOZVwY9IVuxyRJroXe+t96bJLXrI?=
+ =?us-ascii?Q?MssjNzxXj4Jypus/6TmDDUIrYr/PohLpQ7G33Mmk20Wl8iVHL8gXU0umskty?=
+ =?us-ascii?Q?O4Hi9SohVBBFpOOh6t4TgJ/w2hGioWQ3sldG+lmRcJwb3j0MzuvquWbIKe1R?=
+ =?us-ascii?Q?gnxXwQFlT03ge3rnLtt4I5eXee2ZugYaT8hbKKltmH00UW2rot4ogdsXX2iI?=
+ =?us-ascii?Q?DNsESB9w2oxovD/ZQf1hpR0G4CNtCUS0CYB5QKnSBDpXPeXkQpoHeFzSSfjR?=
+ =?us-ascii?Q?wLuWIMCwND+t3ovztoAdWN/UQtE5mMC0kkUBUToTTjIvLciDMD0PSNB6BJUe?=
+ =?us-ascii?Q?w0PR0q9LRd1D/jkiavRKpLKgXzeczspq+Psu7R01u1srIE/QHzUUjYVl5f9a?=
+ =?us-ascii?Q?L02x85oqudSEWTubWsX6ss1WfTqA+8NqL5ENwQjoi9UEoTolcwA7e2XUcwAO?=
+ =?us-ascii?Q?ic9ZTDSAl8/AsX+2l6+qsgzLGODxDFe3K1ko9b4kwkQxpr9NU9z8O/MWDlAK?=
+ =?us-ascii?Q?Dnlvq31Zf740z3fuyX3wN9p5/ha59mVpxZF+xjtVxT7DoDfkostGyBOBfUce?=
+ =?us-ascii?Q?e6fdpEx92+LmFi1lzmVO4Ia+ECDiem6tXYEmQXIyfxx3Lw0RUCChVAujKWLo?=
+ =?us-ascii?Q?oUy4+s0iF6iSny0nF8zOLNHqJzxvFEexDubf1ILb/3btBYa9NgUS5BOaIoA9?=
+ =?us-ascii?Q?WqJ1H2aDG9Kic8ymHAc4FFqNBtuTucRoBG6Ms8LMqLNF0Vza4OaikcRksmX4?=
+ =?us-ascii?Q?rgBMlDqx5pO3KFCTenU+qbHOBovKp6H6HnXn/7m/aF3l+ZqmdwuG77shGwxJ?=
+ =?us-ascii?Q?u+KGV063dyQ+dCgsyvudHwbxefjBFDbkHK/Ybw0NmKX2mYGuv7jbzKnp7JDc?=
+ =?us-ascii?Q?AF5HmXDQhKXZbO2HxUKsXY8vRrxFZhmbIJJMirc8HFwPS3gAzjzb+szX+vF7?=
+ =?us-ascii?Q?xOUKc56091EkjOl6fcqQEf5AMF6UjW4HOZCLHO1S/4o81dPO+oVZQykyHGNa?=
+ =?us-ascii?Q?fevSECWId0k6CwanCU7579YdUXJJMBRkComEJNrTAoR4lhftqLiI0U3rDdrj?=
+ =?us-ascii?Q?Del01xUlm7N66LbqNEPYOHt8Vj9P+Nd4ahXQKeqyeKRQ+d5V2/xM7j6eGiim?=
+ =?us-ascii?Q?CELTFADnEsTdWjQiE8bsPhByqbhH87XWEemEF1ulwsM6DII28FAYU+uBiySC?=
+ =?us-ascii?Q?89eQCwECLDAfd9gxbLFLH7xJjKAclbo03RJxaMbLiExaPJ39HgBBQBjVroGH?=
+ =?us-ascii?Q?Pw=3D=3D?=
+X-OriginatorOrg: oracle.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 60888dca-74ab-415d-c312-08da60c91fbd
+X-MS-Exchange-CrossTenant-AuthSource: MWHPR1001MB2365.namprd10.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 08 Jul 2022 10:03:37.5131
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 4e2c6054-71cb-48f1-bd6c-3a9705aca71b
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: Xmfxxd2ImvCkN86fhSrHry1xr1wVpvkQCd/kvXC28R2/OhB8G8NrxAgoSiTGxSTnG4h/h/BFA9rqzl+lMJyKXtKr24bFre3OPhNr8wLciI8=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH0PR10MB4924
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.517,18.0.883
+ definitions=2022-07-08_08:2022-06-28,2022-07-08 signatures=0
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 phishscore=0 bulkscore=0 malwarescore=0
+ mlxscore=0 spamscore=0 suspectscore=0 adultscore=0 mlxlogscore=999
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2206140000
+ definitions=main-2207080036
+X-Proofpoint-GUID: icb9VT_VTJOlnrB-CrUswsRECbryCeZq
+X-Proofpoint-ORIG-GUID: icb9VT_VTJOlnrB-CrUswsRECbryCeZq
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220708_023744_111593_820CA457 
-X-CRM114-Status: GOOD (  23.05  )
+X-CRM114-CacheID: sfid-20220708_030409_263740_FE9AB326 
+X-CRM114-Status: GOOD (  11.99  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,269 +211,20 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On Thu, Jul 07, 2022 at 07:02:58AM -0700, Guenter Roeck wrote:
+> and the NULL
+> dereferences in the binder driver are at the very least suspicious.
 
+The NULL dereferences in binder are just nonsense Sparse annotations.
+They don't affect runtime.
 
-regards Frank
+drivers/android/binder.c:1481:19-23: ERROR: from is NULL but dereferenced.
+drivers/android/binder.c:2920:29-33: ERROR: target_thread is NULL but dereferenced.
+drivers/android/binder.c:353:25-35: ERROR: node -> proc is NULL but dereferenced.
+drivers/android/binder.c:4888:16-20: ERROR: t is NULL but dereferenced.
 
-
-> Gesendet: Donnerstag, 07. Juli 2022 um 21:41 Uhr
-> Von: "Peter Geis" <pgwipeout@gmail.com>
-> On Thu, Jul 7, 2022 at 1:51 PM Frank Wunderlich <frank-w@public-files.de> wrote:
-> >
-> > Hi,
-> >
-> > traced it down with manual reverts to this one:
-> >
-> > commit 6a98df08ccd55e87947d253b19925691763e755c
-> >     phy: rockchip-inno-usb2: Fix muxed interrupt support
-> >
-> > luckily i can revert only this and now upper usb-port works again
-> >
-> > @samuel: have you an idea how to fix your problem without breaking my board? :)
-> >
-> > @greg/Vinod: maybe we can add a revert of this in mainline till issue is resolved?
-> >
-> > regards Frank
->
-> I don't know what you're running, but with the standard arm64
-> defconfig w/ all rockchip stuff built in, I have no issues here on
-> 5.19.
-> Note, the following changes are necessary to the 5.19 dts here:
-> Remove the extcon from usb_host0_xhci, as the production model doesn't
-> have automatic switching capabilities. The ID pin was removed in favor
-> of the usb debug function which also doesn't work.
-> Add dr_mode = "host" to the same node, for the same reason.
-
-i already added the dr_mode=host to my xhci-node [1], but it is not pushed down to usb2-phy
-
-it looks like the dr_mode property is ignored (or not yet set)...so the switch statement which is added by the patch choose the wrong initialization. in 5.18 init was done independ from phy-mode
-
-# dmesg | grep -i debug
-[    1.093370] phy phy-fe8a0000.usb2phy.0: DEBUG: Passed rockchip_usb2phy_irq 981 port_id:1(OTG:0,HOST:1)
-[    1.094739] phy phy-fe8a0000.usb2phy.1: DEBUG: Passed rockchip_usb2phy_irq 981 port_id:0(OTG:0,HOST:1)
-# cat /sys/firmware/devicetree/base/usb@fcc00000/dr_mode
-host#
-# cat /sys/firmware/devicetree/base/usb@fd000000/dr_mode
-host#
-
-usb_host0_xhci: usb@fcc00000 {
-  phys = <&usb2phy0_otg>, <&combphy0 PHY_TYPE_USB3>; <<<< usb2phy0_otg seems to be initialized to otg mode and dr_mode is not applied when rockchip_usb2phy_irq is run
-
-second controller works
-usb_host1_xhci: usb@fd000000 {
-  phy-names = "usb2-phy", "usb3-phy";
-
-in case that defconfig is the cause like peter guessed...i use same defconfig for 5.18 (working) and 5.19-rc (only lower port working)
-
-$ grep -i 'usb\|hci\|otg' ../build/.config
-# CONFIG_HISI_HIKEY_USB is not set
-# CONFIG_MISC_RTSX_USB is not set
-CONFIG_SATA_AHCI=y
-CONFIG_SATA_AHCI_PLATFORM=y
-# CONFIG_AHCI_CEVA is not set
-# CONFIG_AHCI_QORIQ is not set
-# CONFIG_SATA_ACARD_AHCI is not set
-# CONFIG_MDIO_MVUSB is not set
-CONFIG_USB_NET_DRIVERS=y
-# CONFIG_USB_CATC is not set
-# CONFIG_USB_KAWETH is not set
-# CONFIG_USB_PEGASUS is not set
-# CONFIG_USB_RTL8150 is not set
-# CONFIG_USB_RTL8152 is not set
-# CONFIG_USB_LAN78XX is not set
-# CONFIG_USB_USBNET is not set
-# CONFIG_USB_HSO is not set
-# CONFIG_USB_IPHETH is not set
-# CONFIG_USB_NET_RNDIS_WLAN is not set
-# CONFIG_MOUSE_SYNAPTICS_USB is not set
-# CONFIG_XILLYUSB is not set
-# CONFIG_I2C_TINY_USB is not set
-# USB GPIO expanders
-# end of USB GPIO expanders
-# USB-based Watchdog Cards
-# CONFIG_USBPCWATCHDOG is not set
-# CONFIG_REGULATOR_QCOM_USB_VBUS is not set
-# CONFIG_USB_PULSE8_CEC is not set
-# CONFIG_USB_RAINSHADOW_CEC is not set
-CONFIG_SND_USB=y
-# CONFIG_SND_USB_AUDIO is not set
-# CONFIG_SND_USB_UA101 is not set
-# CONFIG_SND_USB_CAIAQ is not set
-# CONFIG_SND_USB_6FIRE is not set
-# CONFIG_SND_USB_HIFACE is not set
-# CONFIG_SND_USB_POD is not set
-# CONFIG_SND_USB_PODHD is not set
-# CONFIG_SND_USB_TONEPORT is not set
-# CONFIG_SND_USB_VARIAX is not set
-# USB HID support
-CONFIG_USB_HID=y
-# CONFIG_USB_HIDDEV is not set
-# end of USB HID support
-CONFIG_USB_OHCI_LITTLE_ENDIAN=y
-CONFIG_USB_SUPPORT=y
-CONFIG_USB_COMMON=y
-# CONFIG_USB_LED_TRIG is not set
-# CONFIG_USB_ULPI_BUS is not set
-CONFIG_USB_CONN_GPIO=y
-CONFIG_USB_ARCH_HAS_HCD=y
-CONFIG_USB=y
-CONFIG_USB_PCI=y
-# CONFIG_USB_ANNOUNCE_NEW_DEVICES is not set
-# Miscellaneous USB options
-CONFIG_USB_DEFAULT_PERSIST=y
-# CONFIG_USB_FEW_INIT_RETRIES is not set
-# CONFIG_USB_DYNAMIC_MINORS is not set
-CONFIG_USB_OTG=y
-# CONFIG_USB_OTG_PRODUCTLIST is not set
-# CONFIG_USB_OTG_DISABLE_EXTERNAL_HUB is not set
-# CONFIG_USB_OTG_FSM is not set
-# CONFIG_USB_LEDS_TRIGGER_USBPORT is not set
-CONFIG_USB_AUTOSUSPEND_DELAY=2
-# CONFIG_USB_MON is not set
-# USB Host Controller Drivers
-# CONFIG_USB_C67X00_HCD is not set
-CONFIG_USB_XHCI_HCD=y
-# CONFIG_USB_XHCI_DBGCAP is not set
-CONFIG_USB_XHCI_PCI=y
-# CONFIG_USB_XHCI_PCI_RENESAS is not set
-CONFIG_USB_XHCI_PLATFORM=y
-CONFIG_USB_EHCI_HCD=y
-CONFIG_USB_EHCI_ROOT_HUB_TT=y
-CONFIG_USB_EHCI_TT_NEWSCHED=y
-CONFIG_USB_EHCI_PCI=y
-# CONFIG_USB_EHCI_FSL is not set
-CONFIG_USB_EHCI_HCD_PLATFORM=y
-# CONFIG_USB_OXU210HP_HCD is not set
-# CONFIG_USB_ISP116X_HCD is not set
-# CONFIG_USB_FOTG210_HCD is not set
-# CONFIG_USB_MAX3421_HCD is not set
-CONFIG_USB_OHCI_HCD=y
-CONFIG_USB_OHCI_HCD_PCI=y
-CONFIG_USB_OHCI_HCD_PLATFORM=y
-# CONFIG_USB_UHCI_HCD is not set
-# CONFIG_USB_SL811_HCD is not set
-# CONFIG_USB_R8A66597_HCD is not set
-# CONFIG_USB_HCD_TEST_MODE is not set
-# CONFIG_USB_XEN_HCD is not set
-# USB Device Class drivers
-# CONFIG_USB_ACM is not set
-# CONFIG_USB_PRINTER is not set
-# CONFIG_USB_WDM is not set
-# CONFIG_USB_TMC is not set
-# NOTE: USB_STORAGE depends on SCSI but BLK_DEV_SD may
-# also be needed; see USB_STORAGE Help for more info
-CONFIG_USB_STORAGE=y
-# CONFIG_USB_STORAGE_DEBUG is not set
-# CONFIG_USB_STORAGE_REALTEK is not set
-# CONFIG_USB_STORAGE_DATAFAB is not set
-# CONFIG_USB_STORAGE_FREECOM is not set
-# CONFIG_USB_STORAGE_ISD200 is not set
-# CONFIG_USB_STORAGE_USBAT is not set
-# CONFIG_USB_STORAGE_SDDR09 is not set
-# CONFIG_USB_STORAGE_SDDR55 is not set
-# CONFIG_USB_STORAGE_JUMPSHOT is not set
-# CONFIG_USB_STORAGE_ALAUDA is not set
-# CONFIG_USB_STORAGE_ONETOUCH is not set
-# CONFIG_USB_STORAGE_KARMA is not set
-# CONFIG_USB_STORAGE_CYPRESS_ATACB is not set
-# CONFIG_USB_STORAGE_ENE_UB6250 is not set
-# CONFIG_USB_UAS is not set
-# USB Imaging devices
-# CONFIG_USB_MDC800 is not set
-# CONFIG_USB_MICROTEK is not set
-# CONFIG_USBIP_CORE is not set
-# CONFIG_USB_CDNS_SUPPORT is not set
-# CONFIG_USB_MUSB_HDRC is not set
-CONFIG_USB_DWC3=y
-CONFIG_USB_DWC3_HOST=y
-CONFIG_USB_DWC3_PCI=y
-CONFIG_USB_DWC3_HAPS=y
-CONFIG_USB_DWC3_OF_SIMPLE=y
-CONFIG_USB_DWC2=y
-CONFIG_USB_DWC2_HOST=y
-# Gadget/Dual-role mode requires USB Gadget support to be enabled
-# CONFIG_USB_DWC2_PCI is not set
-# CONFIG_USB_DWC2_DEBUG is not set
-# CONFIG_USB_DWC2_TRACK_MISSED_SOFS is not set
-# CONFIG_USB_CHIPIDEA is not set
-# CONFIG_USB_ISP1760 is not set
-# USB port drivers
-# CONFIG_USB_SERIAL is not set
-# USB Miscellaneous drivers
-# CONFIG_USB_EMI62 is not set
-# CONFIG_USB_EMI26 is not set
-# CONFIG_USB_ADUTUX is not set
-# CONFIG_USB_SEVSEG is not set
-# CONFIG_USB_LEGOTOWER is not set
-# CONFIG_USB_LCD is not set
-# CONFIG_USB_CYPRESS_CY7C63 is not set
-# CONFIG_USB_CYTHERM is not set
-# CONFIG_USB_IDMOUSE is not set
-# CONFIG_USB_FTDI_ELAN is not set
-# CONFIG_USB_APPLEDISPLAY is not set
-# CONFIG_USB_SISUSBVGA is not set
-# CONFIG_USB_LD is not set
-# CONFIG_USB_TRANCEVIBRATOR is not set
-# CONFIG_USB_IOWARRIOR is not set
-# CONFIG_USB_TEST is not set
-# CONFIG_USB_EHSET_TEST_FIXTURE is not set
-# CONFIG_USB_ISIGHTFW is not set
-# CONFIG_USB_YUREX is not set
-# CONFIG_USB_EZUSB_FX2 is not set
-# CONFIG_USB_HUB_USB251XB is not set
-# CONFIG_USB_HSIC_USB3503 is not set
-# CONFIG_USB_HSIC_USB4604 is not set
-# CONFIG_USB_LINK_LAYER_TEST is not set
-# CONFIG_USB_CHAOSKEY is not set
-# USB Physical Layer drivers
-CONFIG_USB_PHY=y
-CONFIG_NOP_USB_XCEIV=y
-# CONFIG_USB_GPIO_VBUS is not set
-# CONFIG_USB_ISP1301 is not set
-# CONFIG_USB_ULPI is not set
-# end of USB Physical Layer drivers
-# CONFIG_USB_GADGET is not set
-CONFIG_USB_ROLE_SWITCH=y
-CONFIG_MMC_SDHCI=y
-# CONFIG_MMC_SDHCI_PCI is not set
-CONFIG_MMC_SDHCI_ACPI=y
-CONFIG_MMC_SDHCI_PLTFM=y
-# CONFIG_MMC_SDHCI_OF_ARASAN is not set
-# CONFIG_MMC_SDHCI_OF_ASPEED is not set
-# CONFIG_MMC_SDHCI_OF_AT91 is not set
-CONFIG_MMC_SDHCI_OF_DWCMSHC=y
-# CONFIG_MMC_SDHCI_CADENCE is not set
-CONFIG_MMC_SDHCI_F_SDH30=y
-# CONFIG_MMC_SDHCI_MILBEAUT is not set
-CONFIG_MMC_CQHCI=y
-# CONFIG_MMC_SDHCI_XENON is not set
-# CONFIG_MMC_SDHCI_OMAP is not set
-# CONFIG_MMC_SDHCI_AM654 is not set
-# LED driver for blink(1) USB RGB LED is under Special HID drivers (HID_THINGM)
-CONFIG_EXTCON_USB_GPIO=y
-# CONFIG_EXTCON_USBC_TUSB320 is not set
-# CONFIG_BCM_KONA_USB2_PHY is not set
-# CONFIG_PHY_PXA_28NM_USB2 is not set
-# CONFIG_PHY_CPCAP_USB is not set
-CONFIG_PHY_ROCKCHIP_INNO_USB2=y
-CONFIG_PHY_ROCKCHIP_USB=y
-# CONFIG_PHY_SAMSUNG_USB2 is not set
-# CONFIG_USB4 is not set
-
-as you see i have
-
-CONFIG_USB_OTG=y
-and
-CONFIG_USB_ROLE_SWITCH=y
-
-enabled which should push down the dr_mode property to phy
-
-my full defconfig/source is here [2]
-
-regards Frank
-
-[1] https://github.com/frank-w/BPI-R2-4.14/commit/0530fbbf7785a9709354c3de1e5a3cd01a3a859a
-[2] https://github.com/frank-w/BPI-R2-4.14/blob/5.19-rc/arch/arm64/configs/quartz64_defconfig
+regards,
+dan carpenter
 
 
 -- 
