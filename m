@@ -4,85 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 10CF5C43334
-	for <linux-phy@archiver.kernel.org>; Fri,  8 Jul 2022 21:10:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2F2FFC433EF
+	for <linux-phy@archiver.kernel.org>; Mon, 11 Jul 2022 08:50:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0K3WLJN9NM8QZeOVn3qaez5ZvVDJUcNHQ65fMyTN1o8=; b=KyKlDNxvlJrhNK
-	y8D7vlayRq2L5/YueP1+FNQnJMJ+nBPjlhCNDaMpr3OmHOCJSMjdei4u+fHUWromOEu4nSVCcG58R
-	asCSHkxaEHAEdwqOKRrfl6IIjoJc+IgdpJIbeB+Y63EPjQxlYYm1cwZr77Cnh06RcWgh7o0Xp7P/8
-	KeaemgSXJyE7SKFgbh1VcNhqs0unyfQDT5Naaddrdw/KsAXYM31yP/aGGR1RID4EidZnGAhe6j8RT
-	EFAknkJJl8cq2/G10KuN9iEAVjb7WAn7ja20s7eQ/SCncqSuiw06daectsqHq5eR30m0v8hpoHyvN
-	pQf+YekTPZZVoWZJeamA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=tIlXKVVBU5bM7YWz0Btz0exXa3Qb8tYH/sXsjdnYOxM=; b=FZbvDznevSeABU
+	cCALg56o73CWbH+dMDig3S0JxJADZyS/9kWnLJgFAJyUGmCVsrhkaR7lF4LxWpC/cdX8HRv8w7B7T
+	3dnxBG8NDFdBQ0Mg2JSBeS5vJnNtnz1KZxAB6pJWtyH4Mdopt/vl3nmOxYuuhWZclSs+1r5/TSEWG
+	NHs0aWdOBAaHHSa2/omiqT3ATt5ne9OnJXo8jbNcSYHg5qIQMAp1iZydKm1PgEGn1+RbwTT41/qCw
+	J1wSprM8DnSMqg0t56eo2d5nvQeXEV5eRKvNAdAGIIVFywQpRpYAzBrGFI44TTaEbRzgD86s8vqlj
+	58vfalYGZ8HxC5VtBddg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o9vEz-005xVc-B4; Fri, 08 Jul 2022 21:10:21 +0000
-Received: from mail-pj1-x1035.google.com ([2607:f8b0:4864:20::1035])
+	id 1oAp7i-00HLSt-Av; Mon, 11 Jul 2022 08:50:34 +0000
+Received: from mail-pg1-x531.google.com ([2607:f8b0:4864:20::531])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o9vEh-005xCh-NB; Fri, 08 Jul 2022 21:10:04 +0000
-Received: by mail-pj1-x1035.google.com with SMTP id o5-20020a17090a3d4500b001ef76490983so2807110pjf.2;
-        Fri, 08 Jul 2022 14:10:03 -0700 (PDT)
+	id 1oAp7e-00HLQH-NE
+	for linux-phy@lists.infradead.org; Mon, 11 Jul 2022 08:50:32 +0000
+Received: by mail-pg1-x531.google.com with SMTP id 23so4167317pgc.8
+        for <linux-phy@lists.infradead.org>; Mon, 11 Jul 2022 01:50:29 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=gmail.com; s=20210112;
-        h=from:to:cc:subject:date:message-id:in-reply-to:references
-         :mime-version:content-transfer-encoding;
-        bh=RMmp67crMhq7PWWgYC+oDhvsTdKYOIxkTFPZEODBIXc=;
-        b=V6+rubc2RgfxmFafvlgEYRMyNK7pQjM9CyUyqwmXU4mu2VolWpJ+8H0H6f984MwZq0
-         xp+GBCAwIXA2/Wt4+K1y0VlfnggWGPM80T4eCbsq1powQ7s/SELrMKKokoyZ214ZqfH9
-         IvcEM4R6qW47/P1u53kn9zz1VLfbnNPZICG4uErOD7bI+wbo5dR2pCCC5bHcQl9qfEeQ
-         eSXD4ClctFcsaEvuxzPg3MTUHh5fTj1hQBcjmKMtXvkcD+0vhTtmEVlrjKT+oWzTf1bm
-         4vyjNe4Xpk9ErxOY1jBxqOBHuRAdp8LQpd0ZYLjwmxApr+XlTYef8Hcen8VlsiIlEfhp
-         F14w==
+        h=from:to:cc:subject:date:message-id;
+        bh=5g/2NksbO4TUZ12uNSjT5a+ira1ltuOc9HP/0hIVc7w=;
+        b=KLLHc9drTZpul79nRihIyI5PAyxXRTmdJkXV8pzA8J0w53gdZiHv+aCEKAOoj5htXN
+         WukzwCYDOFLeN9WMRfuWgHNfFY3WTACBv3kpUvoltkku6OyB0kfynjWHVWqCWgGxymlO
+         eARtdYfOu6/d+ODhfp+g+RM5KlvTXdN6fQI5IhyYHO22XNZtH0s/N+G2KS2uTcRPl2/R
+         92Wq/IBaQjOpleIN3NsSVRoGqaYsFbLCogPpYOWc3A7G7eQgfVjOSFDzxZwKO2hwgmsy
+         n2AT2E+M/PFLrO0q9yRstAXHsI3rmIju8eUFoKv0mMzTEhMbUudGiOCOA7/qgfET06ZK
+         XkZA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
-         :references:mime-version:content-transfer-encoding;
-        bh=RMmp67crMhq7PWWgYC+oDhvsTdKYOIxkTFPZEODBIXc=;
-        b=voMGHinibuIPWwmjXuKw3tG5GiUpAqJIz1cDA1I4oqmASsea7rAdj864T9l0KBh1UC
-         GAcdRAsWojzMWVk7BrBH5Vczcm/1Z3I61g761rTsLR8UjzfkhNJ1bKahiehcBZ1DQZF/
-         DfsHoGShrSVy+XSq+3LWZlmtZCrprKninhm97uKj0HMyphHhkLcppkMaUyc114ORolJu
-         +wO1ZtJ9gB1AaTJwbiepcCt5uxjEpYTo+6/mlUf7/lFCvuGJAgF3nFK1zei6AgVoiaNV
-         4TAn6zm6fzaRMOTakN8IwCuOYrJgeZCzZm58ivdOCRoPIOMECHs00e8aNS0/Z1aUVVi+
-         MbWg==
-X-Gm-Message-State: AJIora/nXDjGhFx1VwRmeksxzTc32R5ptcY5Y39CJtiJPUXSl/JB5wDQ
-	Y0SPXOu8ZmCRl0V8jOE7tKw=
-X-Google-Smtp-Source: AGRyM1uxeKx7gaOfdIL+u6yF6SPE91AaQ2/VL4LqgQj+efcRTMx0j7H5cxNrg67yxye8CdwlHBZu0w==
-X-Received: by 2002:a17:90b:38c5:b0:1ef:a7ad:ebb9 with SMTP id nn5-20020a17090b38c500b001efa7adebb9mr2086742pjb.110.1657314603373;
-        Fri, 08 Jul 2022 14:10:03 -0700 (PDT)
-Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
-        by smtp.gmail.com with ESMTPSA id l9-20020a170902f68900b0016a111c83cdsm1848957plg.119.2022.07.08.14.10.01
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 08 Jul 2022 14:10:02 -0700 (PDT)
-From: Florian Fainelli <f.fainelli@gmail.com>
-To: bcm-kernel-feedback-list@broadcom.com,
-	William Zhang <william.zhang@broadcom.com>,
-	Linux ARM List <linux-arm-kernel@lists.infradead.org>
-Cc: anand.gore@broadcom.com,
-	dan.beygelman@broadcom.com,
-	kursad.oney@broadcom.com,
-	joel.peshkin@broadcom.com,
-	Vinod Koul <vkoul@kernel.org>,
-	Al Cooper <alcooperx@gmail.com>,
-	Cai Huoqing <cai.huoqing@linux.dev>,
-	Kishon Vijay Abraham I <kishon@ti.com>,
-	=?iso-8859-2?q?Rafa=B3_Mi=B3ecki?= <rafal@milecki.pl>,
+        h=x-gm-message-state:from:to:cc:subject:date:message-id;
+        bh=5g/2NksbO4TUZ12uNSjT5a+ira1ltuOc9HP/0hIVc7w=;
+        b=m/nmbP9jyVVBlv6xz68jDMVzmBu0/oHrl4YuSyP+3fS3ktTiSkan2P+HEHMwPYPWb7
+         osH3fy00XeDfaKKzcNobKgTLyIWllLjhZO4QvK9+OUGsYy86x+xkRqNOVADrmTUHVytE
+         rPWEQib4oAiy3fv6H3PUW54Hwkc48BVRMhgqe7cCyKgBi9f1uYyBsX4MFy3naDxwLW/4
+         vk8BrKzod5+rhHe4ZV2bay0KxqKLoIQJNWG2kBUVtJrOktWpcmYXkpfxYnHajVM1MpRQ
+         F8hHbjKyzsPUgjizOmW8r1oyPDR+dxrYaxtIXO4fwICb62L4N+jLh9QF/z8KbciuhcxG
+         bGfg==
+X-Gm-Message-State: AJIora8mL698XdstphFeJH1uxfK36H88Gs/WpvUAoYg/DlV49IQoCeRX
+	H9ZA2CK1dnQuMRh2R8m/Gso=
+X-Google-Smtp-Source: AGRyM1skthwwca9xztYJduWQLAXrcwAXdYzCophm5dltSeq/9zR0kDVYVJguSnQHST3WWGzv/qygdw==
+X-Received: by 2002:a63:ff66:0:b0:412:6f4c:1e11 with SMTP id s38-20020a63ff66000000b004126f4c1e11mr15162809pgk.396.1657529428611;
+        Mon, 11 Jul 2022 01:50:28 -0700 (PDT)
+Received: from scdiu3.sunplus.com ([113.196.136.192])
+        by smtp.googlemail.com with ESMTPSA id b21-20020aa79515000000b0052ac5e304ccsm2489388pfp.194.2022.07.11.01.50.26
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 11 Jul 2022 01:50:28 -0700 (PDT)
+From: Vincent Shih <vincent.sunplus@gmail.com>
+To: kishon@ti.com,
+	vkoul@kernel.org,
+	p.zabel@pengutronix.de,
 	linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org
-Subject: Re: [RESEND PATCH 6/8] phy: brcm-sata: bcmbca: Replace ARCH_BCM_63XX with ARCH_BCMBCA
-Date: Fri,  8 Jul 2022 14:10:00 -0700
-Message-Id: <20220708211000.2661166-1-f.fainelli@gmail.com>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20220707065800.261269-6-william.zhang@broadcom.com>
-References: <20220707065800.261269-1-william.zhang@broadcom.com> <20220707065800.261269-6-william.zhang@broadcom.com>
-MIME-Version: 1.0
+	linux-phy@lists.infradead.org,
+	linux-usb@vger.kernel.org,
+	robh+dt@kernel.org,
+	krzysztof.kozlowski+dt@linaro.org,
+	devicetree@vger.kernel.org,
+	wells.lu@sunplus.com
+Cc: Vincent Shih <vincent.sunplus@gmail.com>
+Subject: [PATCH v3 0/2] Add USB2.0 phy driver for Sunplus SP7021
+Date: Mon, 11 Jul 2022 16:50:01 +0800
+Message-Id: <1657529403-18084-1-git-send-email-vincent.sunplus@gmail.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220708_141003_794539_52F198A1 
-X-CRM114-Status: UNSURE (   6.96  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220711_015030_796570_A8092EBB 
+X-CRM114-Status: GOOD (  10.77  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,22 +86,42 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed,  6 Jul 2022 23:57:57 -0700, William Zhang <william.zhang@broadcom.com> wrote:
-> Prepare for the BCM63138 ARCH_BCM_63XX migration to ARCH_BCMBCA. Make
-> PHY_BRCM_SATA depending on ARCH_BCMBCA.
-> 
-> Signed-off-by: William Zhang <william.zhang@broadcom.com>
-> Acked-by: Vinod Koul <vkoul@kernel.org>
-> ---
+This is a patch series for USB2.0 phy driver for Sunplus SP7021 SoC.
 
-Applied to https://github.com/Broadcom/stblinux/commits/drivers/next, thanks!
---
-Florian
+Sunplus SP7021 is an ARM Coretex A7 (4 cores) based SoC. It integrates
+many peripherals (ex: UART, I2C, SPI, SDIO, eMMC, USB, SD Card and
+etc.) into a single chip. It is designed for industrial control.
+
+Refer to:
+https://sunplus-tibbo.atlassian.net/wiki/spaces/doc/overview
+https://tibbo.com/store/plus1.html
+
+Vincent Shih (2):
+  phy: usb: Add USB2.0 phy driver for Sunplus SP7021
+  dt-bindings: phy: Add bindings doc for Sunplus USB2 PHY driver
+
+ .../bindings/phy/sunplus,sp7021-usb2-phy.yaml      |  73 +++++
+ MAINTAINERS                                        |   9 +
+ drivers/phy/Kconfig                                |   1 +
+ drivers/phy/Makefile                               |   1 +
+ drivers/phy/sunplus/Kconfig                        |  13 +
+ drivers/phy/sunplus/Makefile                       |   2 +
+ drivers/phy/sunplus/phy-sunplus-usb2.c             | 297 +++++++++++++++++++++
+ 7 files changed, 396 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/sunplus,sp7021-usb2-phy.yaml
+ create mode 100644 drivers/phy/sunplus/Kconfig
+ create mode 100644 drivers/phy/sunplus/Makefile
+ create mode 100644 drivers/phy/sunplus/phy-sunplus-usb2.c
+
+-- 
+2.7.4
+
 
 -- 
 linux-phy mailing list
