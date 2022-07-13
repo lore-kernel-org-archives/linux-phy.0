@@ -4,61 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 12B03C433EF
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E4BDDC43334
 	for <linux-phy@archiver.kernel.org>; Wed, 13 Jul 2022 07:21:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:References:Message-Id:Date:
-	Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	List-Owner; bh=dytZWAgJycvQBYzEhXVOFfMhS2n1lY8vXK/uLYpOkIk=; b=0hBFOtGDMMtr61
-	0rV4BV/YyVUtvJ5POLK33DwD3nRN3/UDEb7ZLz1Oy3PCxsRSq9YVlih9zwZKj6AkZb3gdXi4yeTXP
-	/52dYd6NBpHWivMRVJObSnSbTIcmGP21lmEG4Nq98eS44Q0C+V7U++kVxxl0e+urEG56Vrz0IGBTG
-	CPyi/5yNfPWT4NQucRA2F1JJng+Rv2BlR+S2uDfNPH7NcI4q0lHoFM+bu5GYpkWbVblc23ofcvkCI
-	ASpS09WwLUb4em0Ai7/G4SEnAfgFFMoLY9nbH/HpiMaie+S9m4hDuwf4SBFEkTV5mTjzOeIuOyVD1
-	1XTvQc1msk+bijHBizHQ==;
+	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5Wgja0Pm0hV3v1+zQqOPiRcQKAOEEfhyeHP+3gaSjzs=; b=wlY9oyzpIeRGmy
+	08huIw8nWgLSzcJCOrbomsDMiqtlm2Z89MB0TNPpkJv9G4nYTd3d9WcUDBWZHvlYg2SApT9ht9YYq
+	WCp4onBIcvQcaKBaBhjw0ZnII0iNBxrQqmTJ4pJ76Qii+QaHnNRTQBt+Xv6o3uRi0ASFU6Wrx1/u4
+	AX1zuTYnejCVJ5PC2z5h3f2mNKZuJmcV5ChiFiw08rW9RpmgH4XZPJJdnagdECoGhdy5Aip9oIdEN
+	zzcTNK5mH0iGJgT/6mwGl83AWDb4OlEz8/sWTEzTqN6rkmzr0evyWIpl4lWc+1Y6Fom6bDf9G6KR2
+	0M5pt5Yk4OHDTqjST/Pg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oBWgg-001BDz-Cx; Wed, 13 Jul 2022 07:21:34 +0000
+	id 1oBWgg-001BDs-7j; Wed, 13 Jul 2022 07:21:34 +0000
 Received: from mailout1.w1.samsung.com ([210.118.77.11])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oBWgb-001Avw-LB
+	id 1oBWgb-001AwC-LC
 	for linux-phy@lists.infradead.org; Wed, 13 Jul 2022 07:21:32 +0000
 Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
-	by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id 20220713072118euoutp01729f814d449e8e538cd3084ffc1db748~BUocovLha0048300483euoutp018
+	by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id 20220713072118euoutp01d451d92294872795af861f3360826a4d~BUodDPbSm0048300483euoutp019
 	for <linux-phy@lists.infradead.org>; Wed, 13 Jul 2022 07:21:18 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com 20220713072118euoutp01729f814d449e8e538cd3084ffc1db748~BUocovLha0048300483euoutp018
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com 20220713072118euoutp01d451d92294872795af861f3360826a4d~BUodDPbSm0048300483euoutp019
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
 	s=mail20170921; t=1657696878;
-	bh=4jNX0/yddyFVvQxFkzzI7CauiT51RvLrIq2J6TvPY98=;
-	h=From:To:Cc:Subject:Date:References:From;
-	b=aPvjlQaS3kUjkzC0GTmQ5tfwoAbRo13kIY+IxiPqUpCKNl9EN9hoGQI6caqjN64g4
-	 m3zI7IeltRA3/z0VUxZZoWiLjAwuA23VcTjShMtzQ4IVwXxlxtOEbWtrZlr7ScMw+Z
-	 M/gc54vweNmOybE5rnUQXdTs4TednbAn0mIU6gl4=
+	bh=2Ta3TuKGXv0L3LTBVhBgRdKPCtOl8ZEL6TkDPEKZdKw=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=V8DONIDVg1bz6dplvApktSxCBim0vBcNPjq8ezqszXsVwuIIb1bJhl1N8ckf1QJHQ
+	 VvAU77QbZTkQH14Z+a3buvK6XujIJwKKettKfxFqRKbaOoAzPm1q6iEVeUxmlnSB88
+	 9z22V6ZVDcPI6AqUcr7mR1NFAKRzvZpkisbCle3U=
 Received: from eusmges2new.samsung.com (unknown [203.254.199.244]) by
 	eucas1p2.samsung.com (KnoxPortal) with ESMTP id
-	20220713072117eucas1p29eb373ae9098a8a60a37deb1b9daa535~BUocUQuMe2030220302eucas1p2P;
-	Wed, 13 Jul 2022 07:21:17 +0000 (GMT)
+	20220713072118eucas1p211eb0ed80a20187f92dcd49cd17ba124~BUocsHaZF0420804208eucas1p2A;
+	Wed, 13 Jul 2022 07:21:18 +0000 (GMT)
 Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
-	eusmges2new.samsung.com (EUCPMTA) with SMTP id 5F.D2.10067.D627EC26; Wed, 13
-	Jul 2022 08:21:17 +0100 (BST)
+	eusmges2new.samsung.com (EUCPMTA) with SMTP id 30.E2.10067.E627EC26; Wed, 13
+	Jul 2022 08:21:18 +0100 (BST)
 Received: from eusmtrp1.samsung.com (unknown [182.198.249.138]) by
-	eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
-	20220713072117eucas1p23fb25c2e8bba73200690d289f1b3e91a~BUob3xu_A1709117091eucas1p2M;
+	eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
+	20220713072117eucas1p1a41eabf7c568cff1b02ea79bfa400b7b~BUocUpzjb1173411734eucas1p1Q;
 	Wed, 13 Jul 2022 07:21:17 +0000 (GMT)
 Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
 	eusmtrp1.samsung.com (KnoxPortal) with ESMTP id
-	20220713072117eusmtrp1100884715ea86a5599e26c49f557fc22~BUob2PgWB1724517245eusmtrp17;
+	20220713072117eusmtrp1db1b162ed8808e49901a9f55147a58e0~BUocT05ce1722217222eusmtrp1C;
 	Wed, 13 Jul 2022 07:21:17 +0000 (GMT)
-X-AuditID: cbfec7f4-dd7ff70000002753-be-62ce726da2e9
+X-AuditID: cbfec7f4-dc1ff70000002753-bf-62ce726e95c8
 Received: from eusmtip2.samsung.com ( [203.254.199.222]) by
-	eusmgms2.samsung.com (EUCPMTA) with SMTP id CE.99.09038.D627EC26; Wed, 13
+	eusmgms2.samsung.com (EUCPMTA) with SMTP id 10.A9.09038.D627EC26; Wed, 13
 	Jul 2022 08:21:17 +0100 (BST)
 Received: from AMDC2765.digital.local (unknown [106.120.51.73]) by
 	eusmtip2.samsung.com (KnoxPortal) with ESMTPA id
-	20220713072116eusmtip25f4dd7ce1fdc7f22c429782418585635~BUobTRrlA0202902029eusmtip2_;
-	Wed, 13 Jul 2022 07:21:16 +0000 (GMT)
+	20220713072117eusmtip2e317ba649f98c633f0d8159fd7a7cbc8~BUobyfbEt3224832248eusmtip2D;
+	Wed, 13 Jul 2022 07:21:17 +0000 (GMT)
 From: Marek Szyprowski <m.szyprowski@samsung.com>
 To: linux-pci@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
 	linux-phy@lists.infradead.org
@@ -68,52 +68,54 @@ Cc: Marek Szyprowski <m.szyprowski@samsung.com>, Jingoo Han
 	<kw@linux.com>, Bjorn Helgaas <bhelgaas@google.com>, Krzysztof Kozlowski
 	<krzysztof.kozlowski@linaro.org>, Alim Akhtar <alim.akhtar@samsung.com>,
 	Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>
-Subject: [PATCH v2 1/2] phy: samsung: phy-exynos-pcie: sanitize
- init/power_on callbacks
-Date: Wed, 13 Jul 2022 09:21:01 +0200
-Message-Id: <20220713072102.2432-1-m.szyprowski@samsung.com>
+Subject: [PATCH v2 2/2] PCI: dwc: exynos: Correct generic PHY usage
+Date: Wed, 13 Jul 2022 09:21:02 +0200
+Message-Id: <20220713072102.2432-2-m.szyprowski@samsung.com>
 X-Mailer: git-send-email 2.17.1
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFupmleLIzCtJLcpLzFFi42LZduzned3conNJBkv+mVk8mLeNzWJJU4bF
-	ii8z2S0uPO1hs9j7eiu7RUPPb1aLs/OOs1lMWPWNxWLG+X1MFi1/Wlgs1h65y27xf88Odoud
-	d04wO/B67Jx1l91jwaZSj02rOtk87lzbw+bx5Mp0Jo/NS+o9+rasYvQ4fmM7k8fnTXIBnFFc
-	NimpOZllqUX6dglcGa/vvGMseCdY8fLzJLYGxh7+LkZODgkBE4mfB1tZQWwhgRWMEm93BXUx
-	cgHZXxglvp/8wwLhfGaUuDPpIjNMx9kDF1ghEssZJa7t/cEG13LlwX4mkCo2AUOJrrddbCC2
-	iECixOZFXcwgRcwCy5klFq+dArZQWCBSYvbTnUANHBwsAqoSE+/Wg5i8AjYSm/usIJbJS6ze
-	cACsVULgBIfE5W8rmEFqJARcJI7edYOoEZZ4dXwLO4QtI3F6cg8LREm+xN8ZxhDhColrr9dA
-	3W8tcefcLzaQEmYBTYn1u/Qhwo4STZu3Qw3nk7jxVhAkzAxkTto2HSrMK9HRJgRRrSYx6/g6
-	uJ0HL1yCKvGQ+NgqBwnNWInnp9uZJjDKzUJYtYCRcRWjeGppcW56arFRXmq5XnFibnFpXrpe
-	cn7uJkZgejn97/iXHYzLX33UO8TIxMF4iFGCg1lJhPfP2VNJQrwpiZVVqUX58UWlOanFhxil
-	OViUxHmTMzckCgmkJ5akZqemFqQWwWSZODilGpjSfZ73fWtj07t4u/w6r+ez+IuKaRs7DWxX
-	btum8GDDt6of03luyorLBC05cOda+ga1ZSz/VNxcmFN18qdvW/mJUY/XymqfqzbHUYcczo5T
-	k18ctr5TvGzGhVWXpjP+V9Nd/6PvZoiszsmI23HpgotD52rOVI6tuCkpuG9CidGbaReeL7KW
-	9mf0nm/U/OZ9QsssM26nPc36T7IDV3+VPTsnVHfhtzX3pfbkVVtoLXuiOevOsaZC8foTrP/3
-	OEq6r56Ze27OrP70dXx7VV9davu2YoJr0YzuShmLX4cCbM7OPnLy37mSo/uNZyfN7jXb89LS
-	eN7KTvcXchKHxJ1nHNJtWGP8MV7YPj1FyCgm2CtSiaU4I9FQi7moOBEAAqKFYZ4DAAA=
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFnrKLMWRmVeSWpSXmKPExsVy+t/xe7q5ReeSDJqui1s8mLeNzWJJU4bF
+In-Reply-To: <20220713072102.2432-1-m.szyprowski@samsung.com>
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFprDKsWRmVeSWpSXmKPExsWy7djP87p5ReeSDD4/E7B4MG8bm8WSpgyL
+	FV9msltceNrDZrH39VZ2i4ae36wWZ+cdZ7OYsOobi8WM8/uYLFr+tLBYrD1yl93i/54d7BY7
+	75xgduD12DnrLrvHgk2lHptWdbJ53Lm2h83jyZXpTB6bl9R79G1Zxehx/MZ2Jo/Pm+QCOKO4
+	bFJSczLLUov07RK4Mi79XMlWsIOzomXTO6YGxikcXYycHBICJhIzznUzdjFycQgJrGCUmPqt
+	nQnC+cIo8bdzITOE85lR4s/zs6wwLS+2zIZqWc4oMWfSeWa4lqXHljGCVLEJGEp0ve1iA7FF
+	BBIlNi/qAitiFljOLLF47RSwUcICzhI3fp0CK2IRUJVoPLubBcTmFbCR2LrrChPEOnmJ1RsO
+	MIPYnAK2EhdnPWEDGSQh8IBD4vqey1BFLhJX30+Guk9Y4tXxLewQtozE6ck9QEM5gOx8ib8z
+	jCHCFRLXXq9hhrCtJe6c+8UGUsIsoCmxfpc+RNhRYukNkJtBOvkkbrwVBAkzA5mTtk2HCvNK
+	dLQJQVSrScw6vg5u58ELl6BKPCRe3CyChM4ERokl6zayT2CUn4WwawEj4ypG8dTS4tz01GKj
+	vNRyveLE3OLSvHS95PzcTYzABHT63/EvOxiXv/qod4iRiYPxEKMEB7OSCO+fs6eShHhTEiur
+	Uovy44tKc1KLDzFKc7AoifMmZ25IFBJITyxJzU5NLUgtgskycXBKNTDVlH97fuOEyxM/ToUd
+	Rzx5Yp6usbk942NRd2nY/dMdD/x+hT50mN5W+N0wZDnfuQnKHjnNocJvLlxK3BIRlNPRuGJR
+	yO9p5mvVT9+YW8Y6sfgss++tS4pP3+k+fHorstXa+eH7qzE7v3Wf8X/WcvDC7wdF176H39YX
+	Klh3c+OUpMUlnWlieo+dr6+QSuO4NP9tQEg7x7SNX1dkdZ70uXqieILPBptbS6qEPkirihjv
+	coj8GNi/w431Qk3iU8/fDU6eu3ziN3fG/zIIdjl0R+28RtMMzY1RfuzcM2x/u8n6slhlxew5
+	w9DBkT778Aet1S7b+EXmfJB/176aVd6vuHFrYmiVav7MiDNZD0WLPDcosRRnJBpqMRcVJwIA
+	RLUQY68DAAA=
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFmpgkeLIzCtJLcpLzFFi42I5/e/4Pd3conNJBid/mFk8mLeNzWJJU4bF
 	ii8z2S0uPO1hs9j7eiu7RUPPb1aLs/OOs1lMWPWNxWLG+X1MFi1/Wlgs1h65y27xf88Odoud
 	d04wO/B67Jx1l91jwaZSj02rOtk87lzbw+bx5Mp0Jo/NS+o9+rasYvQ4fmM7k8fnTXIBnFF6
-	NkX5pSWpChn5xSW2StGGFkZ6hpYWekYmlnqGxuaxVkamSvp2NimpOZllqUX6dgl6Ga/vvGMs
-	eCdY8fLzJLYGxh7+LkZODgkBE4mzBy6wgthCAksZJb6u9ISIy0icnNbACmELS/y51sXWxcgF
-	VPOJUeJd10tGkASbgKFE11uQBCeHiECyxObzP8CKmAXWM0vsv36dCSQhLBAucfD1Y6BJHBws
-	AqoSE+/Wg5i8AjYSm/usIObLS6zecIB5AiPPAkaGVYwiqaXFuem5xUZ6xYm5xaV56XrJ+bmb
-	GIHhve3Yzy07GFe++qh3iJGJg/EQowQHs5II75+zp5KEeFMSK6tSi/Lji0pzUosPMZoCbZvI
-	LCWanA+MsLySeEMzA1NDEzNLA1NLM2MlcV7Pgo5EIYH0xJLU7NTUgtQimD4mDk6pBqbs+bte
-	H9vZceG66tWlLDp3Lk9b2Hkvozvk865NuYEZS5z3rlH9uEd6hQvrryPrDjKqzeiv967NuJWc
-	Nr9rklVwp6Hlm/OMR1nVsjYen2v498EV9gXbCz1mrQ67Y8Vmost+7No23pxlWx7tb+BQXXV/
-	fw7bOld/x6kfjwTozn/oMeE895dTMtd8pcs+POOY6DHT8tPfy6JWHP81JDynHdxcocTz4lt/
-	fnXa6nOHTXfeOy+9QORF8kGz6hObI5eZ1CV0hT09uM4u+KLixdJEhykhXgZTdx79fOLrP5M3
-	ktMz9F6anZ76hjfv/YMPWY55mvUik+ctir3pdk3zUm3Ryv83Pn/lOCTVlzwhNYHzg9H1a0os
-	xRmJhlrMRcWJAEH29aT4AgAA
-X-CMS-MailID: 20220713072117eucas1p23fb25c2e8bba73200690d289f1b3e91a
+	NkX5pSWpChn5xSW2StGGFkZ6hpYWekYmlnqGxuaxVkamSvp2NimpOZllqUX6dgl6GZd+rmQr
+	2MFZ0bLpHVMD4xSOLkZODgkBE4kXW2YzdjFycQgJLGWU6Lp+lxEiISNxcloDK4QtLPHnWhcb
+	RNEnRomGyUdZQBJsAoYSXW9BEpwcIgLJEpvP/wArYhZYzyyx//p1JpCEsICzxI1fp8CKWARU
+	JRrP7gZr5hWwkdi66woTxAZ5idUbDjCD2JwCthIXZz0BqxcCquma9ZF5AiPfAkaGVYwiqaXF
+	uem5xUZ6xYm5xaV56XrJ+bmbGIFRse3Yzy07GFe++qh3iJGJg/EQowQHs5II75+zp5KEeFMS
+	K6tSi/Lji0pzUosPMZoC3TGRWUo0OR8Yl3kl8YZmBqaGJmaWBqaWZsZK4ryeBR2JQgLpiSWp
+	2ampBalFMH1MHJxSDUwlZw5mp1Q57VQKKBDeVrXDRfV0rvY133Nnt8nH75u77N+u1QHCu34V
+	O1Q0Lj34/M/m+tPvj855tdResvFj/4H23OLzGv++zJojLnC4+8SriNOXwncXCS7Oz7nl+2DZ
+	YguGne+39Cy7fvpBopv3EtZtwt62xk1V/h7l87tenHz3RHj/9MdB5Wu3XDNcUXzJw+2LdQiT
+	kst37v+VHWZzBDn+Cx2/e+cQh46VzE6nRXf8J72zyeA7/Orffx3mNSs25vw98/x0TPM2idul
+	lu4i7TEfjD9om4uFr897/S2m9t/KY2tyrU2+eRXvUWZRyErkW72oxHzBLye/1XMWZlm+6J70
+	bU3BlcjV7cJFizZUnz1jrcRSnJFoqMVcVJwIAF3FiEATAwAA
+X-CMS-MailID: 20220713072117eucas1p1a41eabf7c568cff1b02ea79bfa400b7b
 X-Msg-Generator: CA
-X-RootMTR: 20220713072117eucas1p23fb25c2e8bba73200690d289f1b3e91a
+X-RootMTR: 20220713072117eucas1p1a41eabf7c568cff1b02ea79bfa400b7b
 X-EPHeader: CA
 CMS-TYPE: 201P
-X-CMS-RootMailID: 20220713072117eucas1p23fb25c2e8bba73200690d289f1b3e91a
-References: <CGME20220713072117eucas1p23fb25c2e8bba73200690d289f1b3e91a@eucas1p2.samsung.com>
+X-CMS-RootMailID: 20220713072117eucas1p1a41eabf7c568cff1b02ea79bfa400b7b
+References: <20220713072102.2432-1-m.szyprowski@samsung.com>
+	<CGME20220713072117eucas1p1a41eabf7c568cff1b02ea79bfa400b7b@eucas1p1.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220713_002129_988249_17DFC86F 
-X-CRM114-Status: GOOD (  13.73  )
+X-CRM114-CacheID: sfid-20220713_002129_989172_29B50A1C 
+X-CRM114-Status: GOOD (  11.31  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -131,58 +133,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The exynos-pcie driver called phy_power_on() and then phy_init() for some
-historical reasons. However the generic PHY framework assumes that the
-proper sequence is to call phy_init() first, then phy_power_on(). The
-operations done by both functions should be considered as one action and
-as such they are called by the exynos-pcie driver (without doing anything
-between them). The initialization is just a sequence of register writes,
-which cannot be altered, without breaking the hardware operation.
+The proper initialization for generic PHYs is to call first phy_init(),
+then phy_power_on().
 
-To match the generic PHY framework requirement, simply call the
-power_on() code directly from the init() callback and drop it from the
-phy ops.  This way the driver will also work with the old (incorrect) PHY
-initialization call sequence.
+While touching this, lets remove the phy_reset() call. It is just a
+left-over from the obsoleted Exynos5440 support and current exynos-pcie
+PHY driver doesn't even support this function. It is also rarely used by
+other drivers.
 
 Reported-by: Bjorn Helgaas <helgaas@kernel.org>
-Suggested-by: Vinod Koul <vkoul@kernel.org>
 Signed-off-by: Marek Szyprowski <m.szyprowski@samsung.com>
+Reviewed-by: Chanho Park <chanho61.park@samsung.com>
+Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 ---
-v2:
-- keep exynos5433_pcie_phy_power_on() function and call it directly from
-  exynos5433_pcie_phy_init() as suggested by Vinod Koul
----
- drivers/phy/samsung/phy-exynos-pcie.c | 6 +++++-
- 1 file changed, 5 insertions(+), 1 deletion(-)
+ drivers/pci/controller/dwc/pci-exynos.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
 
-diff --git a/drivers/phy/samsung/phy-exynos-pcie.c b/drivers/phy/samsung/phy-exynos-pcie.c
-index 578cfe07d07a..152f99762093 100644
---- a/drivers/phy/samsung/phy-exynos-pcie.c
-+++ b/drivers/phy/samsung/phy-exynos-pcie.c
-@@ -47,10 +47,15 @@ static void exynos_pcie_phy_writel(void __iomem *base, u32 val, u32 offset)
- }
+diff --git a/drivers/pci/controller/dwc/pci-exynos.c b/drivers/pci/controller/dwc/pci-exynos.c
+index 2044d191fba6..6d0742207f43 100644
+--- a/drivers/pci/controller/dwc/pci-exynos.c
++++ b/drivers/pci/controller/dwc/pci-exynos.c
+@@ -258,9 +258,8 @@ static int exynos_pcie_host_init(struct dw_pcie_rp *pp)
  
- /* Exynos5433 specific functions */
-+static int exynos5433_pcie_phy_power_on(struct phy *phy);
-+
- static int exynos5433_pcie_phy_init(struct phy *phy)
- {
- 	struct exynos_pcie_phy *ep = phy_get_drvdata(phy);
+ 	exynos_pcie_assert_core_reset(ep);
  
-+	/* Power must be enabled in PMU before any other register write */
-+	exynos5433_pcie_phy_power_on(phy);
-+
- 	regmap_update_bits(ep->fsysreg,	PCIE_EXYNOS5433_PHY_COMMON_RESET,
- 			   PCIE_PHY_RESET, 1);
- 	regmap_update_bits(ep->fsysreg, PCIE_EXYNOS5433_PHY_MAC_RESET,
-@@ -135,7 +140,6 @@ static int exynos5433_pcie_phy_power_off(struct phy *phy)
+-	phy_reset(ep->phy);
+-	phy_power_on(ep->phy);
+ 	phy_init(ep->phy);
++	phy_power_on(ep->phy);
  
- static const struct phy_ops exynos5433_phy_ops = {
- 	.init		= exynos5433_pcie_phy_init,
--	.power_on	= exynos5433_pcie_phy_power_on,
- 	.power_off	= exynos5433_pcie_phy_power_off,
- 	.owner		= THIS_MODULE,
- };
+ 	exynos_pcie_deassert_core_reset(ep);
+ 	exynos_pcie_enable_irq_pulse(ep);
 -- 
 2.17.1
 
