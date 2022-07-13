@@ -4,118 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E4BDDC43334
-	for <linux-phy@archiver.kernel.org>; Wed, 13 Jul 2022 07:21:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EC910C433EF
+	for <linux-phy@archiver.kernel.org>; Wed, 13 Jul 2022 13:40:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5Wgja0Pm0hV3v1+zQqOPiRcQKAOEEfhyeHP+3gaSjzs=; b=wlY9oyzpIeRGmy
-	08huIw8nWgLSzcJCOrbomsDMiqtlm2Z89MB0TNPpkJv9G4nYTd3d9WcUDBWZHvlYg2SApT9ht9YYq
-	WCp4onBIcvQcaKBaBhjw0ZnII0iNBxrQqmTJ4pJ76Qii+QaHnNRTQBt+Xv6o3uRi0ASFU6Wrx1/u4
-	AX1zuTYnejCVJ5PC2z5h3f2mNKZuJmcV5ChiFiw08rW9RpmgH4XZPJJdnagdECoGhdy5Aip9oIdEN
-	zzcTNK5mH0iGJgT/6mwGl83AWDb4OlEz8/sWTEzTqN6rkmzr0evyWIpl4lWc+1Y6Fom6bDf9G6KR2
-	0M5pt5Yk4OHDTqjST/Pg==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=+4XrfBSkzGcc8jLcvfzkB7ObA5+WjG2D22CooD/bVlQ=; b=x62WLFng0FYKhW
+	LW+UkBpRtjHMr94yHP/3ZujTa+CXtgMMDpygavakwOgiH4x3o7aqFMTyKkqmHkQZiADkTUsfILNDH
+	SujpDNM5NguGOQRey1mH8JZt/6rkpqDAzMQVdP9Wx32B4N+XgBXxgAoh8HpicGm61lqbNbw8ltd5o
+	M3j1G4DWGNhL6ObV4MHLsdF4+nig1Aa5bvhQKM49W5jf5QEoaFCzoNd/v8bBZMgSXjAC7LgbKqTp3
+	G7UE3xlG9UQXLMm0cznZVCSJcd+TA5Vs9un1irmXLB1vldxIOM0PHAiPB5+Ip7z0x8lnqTthxhi5b
+	E3o+nVrnapZNRM46eoKw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oBWgg-001BDs-7j; Wed, 13 Jul 2022 07:21:34 +0000
-Received: from mailout1.w1.samsung.com ([210.118.77.11])
+	id 1oBcbF-0041Bv-EX; Wed, 13 Jul 2022 13:40:21 +0000
+Received: from mx07-00178001.pphosted.com ([185.132.182.106])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oBWgb-001AwC-LC
-	for linux-phy@lists.infradead.org; Wed, 13 Jul 2022 07:21:32 +0000
-Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
-	by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id 20220713072118euoutp01d451d92294872795af861f3360826a4d~BUodDPbSm0048300483euoutp019
-	for <linux-phy@lists.infradead.org>; Wed, 13 Jul 2022 07:21:18 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com 20220713072118euoutp01d451d92294872795af861f3360826a4d~BUodDPbSm0048300483euoutp019
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
-	s=mail20170921; t=1657696878;
-	bh=2Ta3TuKGXv0L3LTBVhBgRdKPCtOl8ZEL6TkDPEKZdKw=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=V8DONIDVg1bz6dplvApktSxCBim0vBcNPjq8ezqszXsVwuIIb1bJhl1N8ckf1QJHQ
-	 VvAU77QbZTkQH14Z+a3buvK6XujIJwKKettKfxFqRKbaOoAzPm1q6iEVeUxmlnSB88
-	 9z22V6ZVDcPI6AqUcr7mR1NFAKRzvZpkisbCle3U=
-Received: from eusmges2new.samsung.com (unknown [203.254.199.244]) by
-	eucas1p2.samsung.com (KnoxPortal) with ESMTP id
-	20220713072118eucas1p211eb0ed80a20187f92dcd49cd17ba124~BUocsHaZF0420804208eucas1p2A;
-	Wed, 13 Jul 2022 07:21:18 +0000 (GMT)
-Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
-	eusmges2new.samsung.com (EUCPMTA) with SMTP id 30.E2.10067.E627EC26; Wed, 13
-	Jul 2022 08:21:18 +0100 (BST)
-Received: from eusmtrp1.samsung.com (unknown [182.198.249.138]) by
-	eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
-	20220713072117eucas1p1a41eabf7c568cff1b02ea79bfa400b7b~BUocUpzjb1173411734eucas1p1Q;
-	Wed, 13 Jul 2022 07:21:17 +0000 (GMT)
-Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
-	eusmtrp1.samsung.com (KnoxPortal) with ESMTP id
-	20220713072117eusmtrp1db1b162ed8808e49901a9f55147a58e0~BUocT05ce1722217222eusmtrp1C;
-	Wed, 13 Jul 2022 07:21:17 +0000 (GMT)
-X-AuditID: cbfec7f4-dc1ff70000002753-bf-62ce726e95c8
-Received: from eusmtip2.samsung.com ( [203.254.199.222]) by
-	eusmgms2.samsung.com (EUCPMTA) with SMTP id 10.A9.09038.D627EC26; Wed, 13
-	Jul 2022 08:21:17 +0100 (BST)
-Received: from AMDC2765.digital.local (unknown [106.120.51.73]) by
-	eusmtip2.samsung.com (KnoxPortal) with ESMTPA id
-	20220713072117eusmtip2e317ba649f98c633f0d8159fd7a7cbc8~BUobyfbEt3224832248eusmtip2D;
-	Wed, 13 Jul 2022 07:21:17 +0000 (GMT)
-From: Marek Szyprowski <m.szyprowski@samsung.com>
-To: linux-pci@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
-	linux-phy@lists.infradead.org
-Cc: Marek Szyprowski <m.szyprowski@samsung.com>, Jingoo Han
-	<jingoohan1@gmail.com>, Lorenzo Pieralisi <lpieralisi@kernel.org>, Rob
-	Herring <robh@kernel.org>, =?UTF-8?q?Krzysztof=20Wilczy=C5=84ski?=
-	<kw@linux.com>, Bjorn Helgaas <bhelgaas@google.com>, Krzysztof Kozlowski
-	<krzysztof.kozlowski@linaro.org>, Alim Akhtar <alim.akhtar@samsung.com>,
-	Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>
-Subject: [PATCH v2 2/2] PCI: dwc: exynos: Correct generic PHY usage
-Date: Wed, 13 Jul 2022 09:21:02 +0200
-Message-Id: <20220713072102.2432-2-m.szyprowski@samsung.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20220713072102.2432-1-m.szyprowski@samsung.com>
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFprDKsWRmVeSWpSXmKPExsWy7djP87p5ReeSDD4/E7B4MG8bm8WSpgyL
-	FV9msltceNrDZrH39VZ2i4ae36wWZ+cdZ7OYsOobi8WM8/uYLFr+tLBYrD1yl93i/54d7BY7
-	75xgduD12DnrLrvHgk2lHptWdbJ53Lm2h83jyZXpTB6bl9R79G1Zxehx/MZ2Jo/Pm+QCOKO4
-	bFJSczLLUov07RK4Mi79XMlWsIOzomXTO6YGxikcXYycHBICJhIzznUzdjFycQgJrGCUmPqt
-	nQnC+cIo8bdzITOE85lR4s/zs6wwLS+2zIZqWc4oMWfSeWa4lqXHljGCVLEJGEp0ve1iA7FF
-	BBIlNi/qAitiFljOLLF47RSwUcICzhI3fp0CK2IRUJVoPLubBcTmFbCR2LrrChPEOnmJ1RsO
-	MIPYnAK2EhdnPWEDGSQh8IBD4vqey1BFLhJX30+Guk9Y4tXxLewQtozE6ck9QEM5gOx8ib8z
-	jCHCFRLXXq9hhrCtJe6c+8UGUsIsoCmxfpc+RNhRYukNkJtBOvkkbrwVBAkzA5mTtk2HCvNK
-	dLQJQVSrScw6vg5u58ELl6BKPCRe3CyChM4ERokl6zayT2CUn4WwawEj4ypG8dTS4tz01GKj
-	vNRyveLE3OLSvHS95PzcTYzABHT63/EvOxiXv/qod4iRiYPxEKMEB7OSCO+fs6eShHhTEiur
-	Uovy44tKc1KLDzFKc7AoifMmZ25IFBJITyxJzU5NLUgtgskycXBKNTDVlH97fuOEyxM/ToUd
-	Rzx5Yp6usbk942NRd2nY/dMdD/x+hT50mN5W+N0wZDnfuQnKHjnNocJvLlxK3BIRlNPRuGJR
-	yO9p5mvVT9+YW8Y6sfgss++tS4pP3+k+fHorstXa+eH7qzE7v3Wf8X/WcvDC7wdF176H39YX
-	Klh3c+OUpMUlnWlieo+dr6+QSuO4NP9tQEg7x7SNX1dkdZ70uXqieILPBptbS6qEPkirihjv
-	coj8GNi/w431Qk3iU8/fDU6eu3ziN3fG/zIIdjl0R+28RtMMzY1RfuzcM2x/u8n6slhlxew5
-	w9DBkT778Aet1S7b+EXmfJB/176aVd6vuHFrYmiVav7MiDNZD0WLPDcosRRnJBpqMRcVJwIA
-	RLUQY68DAAA=
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFmpgkeLIzCtJLcpLzFFi42I5/e/4Pd3conNJBid/mFk8mLeNzWJJU4bF
-	ii8z2S0uPO1hs9j7eiu7RUPPb1aLs/OOs1lMWPWNxWLG+X1MFi1/Wlgs1h65y27xf88Odoud
-	d04wO/B67Jx1l91jwaZSj02rOtk87lzbw+bx5Mp0Jo/NS+o9+rasYvQ4fmM7k8fnTXIBnFF6
-	NkX5pSWpChn5xSW2StGGFkZ6hpYWekYmlnqGxuaxVkamSvp2NimpOZllqUX6dgl6GZd+rmQr
-	2MFZ0bLpHVMD4xSOLkZODgkBE4kXW2YzdjFycQgJLGWU6Lp+lxEiISNxcloDK4QtLPHnWhcb
-	RNEnRomGyUdZQBJsAoYSXW9BEpwcIgLJEpvP/wArYhZYzyyx//p1JpCEsICzxI1fp8CKWARU
-	JRrP7gZr5hWwkdi66woTxAZ5idUbDjCD2JwCthIXZz0BqxcCquma9ZF5AiPfAkaGVYwiqaXF
-	uem5xUZ6xYm5xaV56XrJ+bmbGIFRse3Yzy07GFe++qh3iJGJg/EQowQHs5II75+zp5KEeFMS
-	K6tSi/Lji0pzUosPMZoC3TGRWUo0OR8Yl3kl8YZmBqaGJmaWBqaWZsZK4ryeBR2JQgLpiSWp
-	2ampBalFMH1MHJxSDUwlZw5mp1Q57VQKKBDeVrXDRfV0rvY133Nnt8nH75u77N+u1QHCu34V
-	O1Q0Lj34/M/m+tPvj855tdResvFj/4H23OLzGv++zJojLnC4+8SriNOXwncXCS7Oz7nl+2DZ
-	YguGne+39Cy7fvpBopv3EtZtwt62xk1V/h7l87tenHz3RHj/9MdB5Wu3XDNcUXzJw+2LdQiT
-	kst37v+VHWZzBDn+Cx2/e+cQh46VzE6nRXf8J72zyeA7/Orffx3mNSs25vw98/x0TPM2idul
-	lu4i7TEfjD9om4uFr897/S2m9t/KY2tyrU2+eRXvUWZRyErkW72oxHzBLye/1XMWZlm+6J70
-	bU3BlcjV7cJFizZUnz1jrcRSnJFoqMVcVJwIAF3FiEATAwAA
-X-CMS-MailID: 20220713072117eucas1p1a41eabf7c568cff1b02ea79bfa400b7b
-X-Msg-Generator: CA
-X-RootMTR: 20220713072117eucas1p1a41eabf7c568cff1b02ea79bfa400b7b
-X-EPHeader: CA
-CMS-TYPE: 201P
-X-CMS-RootMailID: 20220713072117eucas1p1a41eabf7c568cff1b02ea79bfa400b7b
-References: <20220713072102.2432-1-m.szyprowski@samsung.com>
-	<CGME20220713072117eucas1p1a41eabf7c568cff1b02ea79bfa400b7b@eucas1p1.samsung.com>
+	id 1oBcbC-00419Z-3L; Wed, 13 Jul 2022 13:40:19 +0000
+Received: from pps.filterd (m0288072.ppops.net [127.0.0.1])
+	by mx07-00178001.pphosted.com (8.17.1.5/8.17.1.5) with ESMTP id 26DAkwjr027681;
+	Wed, 13 Jul 2022 15:40:10 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com; h=from : to : cc :
+ subject : date : message-id : mime-version : content-transfer-encoding :
+ content-type; s=selector1;
+ bh=JRyv1cb2Gr7w/X2gySSfzHJgcDNDC1uKvi9JD4ouJro=;
+ b=uxo6Dn2D4OrxCBt13hKgXlMQssGX75dS+VpBAutkoEczXuGj/bt63GIA/gj1WjROUAEn
+ KPuo60hCkMaqwJXcg9N+q3YidK0/RJp1ACrKT4Z1cwaTPrMAzBhsLNzLLbp3z2fu6Vof
+ kyZfE8nfW2DlIMGupt5Oxn0gWBH503RDNQfTqSXRB6RdeHGqLWvcr4QsIoBO0Pcxw23m
+ ljbj8BTiExwk08Ex5TEKD8L1QHDPRRX9QBJMOw8i44Qkbe7DtW+r/WICfQWiVNsuxEmm
+ 1h45HJTihG7GcuGCwInsz/newACWSP9dn8ICqV09XAF3DrIK2tXkU6cBKRA6NI4lYVHb DA== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+	by mx07-00178001.pphosted.com (PPS) with ESMTPS id 3h93cwhtbc-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 13 Jul 2022 15:40:10 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+	by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 757C210002A;
+	Wed, 13 Jul 2022 15:40:07 +0200 (CEST)
+Received: from Webmail-eu.st.com (shfdag1node2.st.com [10.75.129.70])
+	by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id E9273222C90;
+	Wed, 13 Jul 2022 15:40:07 +0200 (CEST)
+Received: from localhost (10.75.127.47) by SHFDAG1NODE2.st.com (10.75.129.70)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id 15.1.2308.20; Wed, 13 Jul
+ 2022 15:40:07 +0200
+From: Fabrice Gasnier <fabrice.gasnier@foss.st.com>
+To: <vkoul@kernel.org>, <kishon@ti.com>
+CC: <amelie.delaunay@foss.st.com>, <alexandre.torgue@foss.st.com>,
+        <linux-phy@lists.infradead.org>,
+        <linux-stm32@st-md-mailman.stormreply.com>,
+        <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>
+Subject: [PATCH] phy: stm32: fix error return in stm32_usbphyc_phy_init
+Date: Wed, 13 Jul 2022 15:39:53 +0200
+Message-ID: <20220713133953.595134-1-fabrice.gasnier@foss.st.com>
+X-Mailer: git-send-email 2.25.1
+MIME-Version: 1.0
+X-Originating-IP: [10.75.127.47]
+X-ClientProxiedBy: SFHDAG2NODE3.st.com (10.75.127.6) To SHFDAG1NODE2.st.com
+ (10.75.129.70)
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.205,Aquarius:18.0.883,Hydra:6.0.517,FMLib:17.11.122.1
+ definitions=2022-07-13_03,2022-07-13_02,2022-06-22_01
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220713_002129_989172_29B50A1C 
-X-CRM114-Status: GOOD (  11.31  )
+X-CRM114-CacheID: sfid-20220713_064018_454157_E92F24AC 
+X-CRM114-Status: GOOD (  15.52  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -127,45 +81,39 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The proper initialization for generic PHYs is to call first phy_init(),
-then phy_power_on().
+Error code is overridden, in case the PLL doesn't lock. So, the USB
+initialization can continue. This leads to a platform freeze.
+This can be avoided by returning proper error code to avoid USB probe
+freezing the platform. It also displays proper errors in log.
 
-While touching this, lets remove the phy_reset() call. It is just a
-left-over from the obsoleted Exynos5440 support and current exynos-pcie
-PHY driver doesn't even support this function. It is also rarely used by
-other drivers.
-
-Reported-by: Bjorn Helgaas <helgaas@kernel.org>
-Signed-off-by: Marek Szyprowski <m.szyprowski@samsung.com>
-Reviewed-by: Chanho Park <chanho61.park@samsung.com>
-Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Fixes: 5b1af71280ab ("phy: stm32: rework PLL Lock detection")
+Signed-off-by: Fabrice Gasnier <fabrice.gasnier@foss.st.com>
 ---
- drivers/pci/controller/dwc/pci-exynos.c | 3 +--
- 1 file changed, 1 insertion(+), 2 deletions(-)
+ drivers/phy/st/phy-stm32-usbphyc.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/pci/controller/dwc/pci-exynos.c b/drivers/pci/controller/dwc/pci-exynos.c
-index 2044d191fba6..6d0742207f43 100644
---- a/drivers/pci/controller/dwc/pci-exynos.c
-+++ b/drivers/pci/controller/dwc/pci-exynos.c
-@@ -258,9 +258,8 @@ static int exynos_pcie_host_init(struct dw_pcie_rp *pp)
+diff --git a/drivers/phy/st/phy-stm32-usbphyc.c b/drivers/phy/st/phy-stm32-usbphyc.c
+index 007a23c78d562..a98c911cc37ae 100644
+--- a/drivers/phy/st/phy-stm32-usbphyc.c
++++ b/drivers/phy/st/phy-stm32-usbphyc.c
+@@ -358,7 +358,9 @@ static int stm32_usbphyc_phy_init(struct phy *phy)
+ 	return 0;
  
- 	exynos_pcie_assert_core_reset(ep);
+ pll_disable:
+-	return stm32_usbphyc_pll_disable(usbphyc);
++	stm32_usbphyc_pll_disable(usbphyc);
++
++	return ret;
+ }
  
--	phy_reset(ep->phy);
--	phy_power_on(ep->phy);
- 	phy_init(ep->phy);
-+	phy_power_on(ep->phy);
- 
- 	exynos_pcie_deassert_core_reset(ep);
- 	exynos_pcie_enable_irq_pulse(ep);
+ static int stm32_usbphyc_phy_exit(struct phy *phy)
 -- 
-2.17.1
+2.25.1
 
 
 -- 
