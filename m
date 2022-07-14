@@ -4,47 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 51BFDCCA486
-	for <linux-phy@archiver.kernel.org>; Thu, 14 Jul 2022 12:47:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 31912CCA47B
+	for <linux-phy@archiver.kernel.org>; Thu, 14 Jul 2022 12:47:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RmArjoPEpNwRnuzEOaUxZXq7TmvTCurh6JzXIHTkz3E=; b=xt3AYA9g9kw7/j
-	wy/7NhLZCiE5dP3CA1KB48Xr5cIs3/8UBM7mZI3IAwSo1OJsCqSetPQKaViV+GEC6KcpCXnbW12hW
-	cJD/acc5lfQCrNJdASPny7eNhEVB1Fhtu9jGW5PKk6qeSsny3A9mZnAf2+n2eJR6MepnaF5FNwGsA
-	gj9VOkkUATafkUF8YyXENHdvIPpwOCL48gXXoR2Hn7i7Dz8vq5xjA7G8AN5yaRxgXVhzjRFwln8nU
-	w8mSWbm4qYOtjcA99rxS+2kXghK843RBw1McXoUzB8vNwLuLDaBA5TeKD+al2I4VVF3WZtb5edyzq
-	pDQso0KZ78k67K/U19rg==;
+	List-Owner; bh=cBuIl/S7j/0C+NxrVLX/27WVb3MggJSmmm/mI56adbk=; b=YOC4XA94WKvxgk
+	9ProM4t2OkHE02MD4WCsKtF+In4rvHwqp4EI4q5xbl1nJCwqpe/Elukgms61C9qI1Vk5b2AuOoqKa
+	rgq/7Up3JRhcHo+ROXCtPabrjV4cFsi6zeFLxHWdNEaBFEHNPFeZ12MKJxQUP8UdKiht/UpKeywqj
+	CzsPqWOkse4Mq2R/GevtOYV4WY3kIOF9p9Ij9d0fWWONspaE2cvSJyaJWD9PyHvmzOpOQ4yY/hMz1
+	jLtEnUMsuOUwfVl3OCx+iyUYJcHrgWW9R5kr9s0YqxtJIIldhJ3u3D5RJufMDQBHleeasIdUJ6Tyd
+	sZoKxEoN+JeL9y0JgkAg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oByFF-00ENFL-EI; Thu, 14 Jul 2022 12:47:05 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1oByFF-00ENG3-SK; Thu, 14 Jul 2022 12:47:05 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oByCN-00EL6H-Ht
+	id 1oByCN-00EL6I-KE
 	for linux-phy@lists.infradead.org; Thu, 14 Jul 2022 12:44:11 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id B7BF361F77;
-	Thu, 14 Jul 2022 12:44:05 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id EA1FBC34115;
-	Thu, 14 Jul 2022 12:44:03 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 0EC0961F95;
+	Thu, 14 Jul 2022 12:44:06 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 85E63C341ED;
+	Thu, 14 Jul 2022 12:44:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1657802644;
-	bh=qmg0PoPSNW26UsXhfD2Q9qsF4W171kv+wv6j1LGVsok=;
+	bh=j1dhx1YqSNY9UPQU8mPTaGXSGfew5NKMLBnGxEcHOCE=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=d7O0iR/9/G8jl6QptcfX/t3fv2u0snanine1fiNEASXOp8MmiWsb84rJZm7KTWNE7
-	 mPhGaz0vjWotqNSg9nn5H/UgO2XOQ7z3kXr5pIgVaU06U6/gOWBXz7G4aObAvLziSS
-	 2k7FBLi4UvA1j6Ovx9ma7TuTOepPX/GjAmWHEd2C7NrdQzCznI8JWUJcjdpmemuhsi
-	 SbWDYGTceefle588OxpdZnw9MJytb3/nhlOoqJs1nr2kGaTywMZvIZjKCqSBiLY1l9
-	 ijUw6lR3JWVbnc8G923znFF1x+yDzfM2J7ZrAYSgknUaVdMzecfj47z8BRtKK+1YYy
-	 +ka70YBl79s+Q==
+	b=dv3azyGZ9IYdXiR+njx7crS/eP8M2DFxpYT0mHDSMIpugZ90/Xiz2ihs1336Tp59q
+	 AL4Jja76hkJSQGqOraTb7aY2Xa2x5RXqpT5XhrXFvrN/VvTSpRgjp/pmtJA1MiF08c
+	 l+/ByADvuS+x7XIALW44G2ssHVwVhwpqvcRpWyYBN+Edm/1IsDtExjoCVGwc35pVB2
+	 vo4/DQqjHkoieJayYhTq/hD1CPYezvQ32wfqIZzPiUdulOWTQ4acs9BjpORmZoxsOQ
+	 GQdBCP5/CKRagPArYB3oKfUShE60wEFnpW6RAtc6qXnNPcLLJgnA8Eeho+DFOpPdzA
+	 cX0TnGqPshqsw==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1oByCO-0007DB-W7; Thu, 14 Jul 2022 14:44:09 +0200
+	id 1oByCP-0007Di-V3; Thu, 14 Jul 2022 14:44:09 +0200
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>,
 	Rob Herring <robh+dt@kernel.org>,
@@ -60,17 +60,16 @@ Cc: Andy Gross <agross@kernel.org>,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>,
 	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Subject: [PATCH v3 03/30] dt-bindings: phy: qcom,qmp: drop redundant descriptions
-Date: Thu, 14 Jul 2022 14:43:06 +0200
-Message-Id: <20220714124333.27643-4-johan+linaro@kernel.org>
+Subject: [PATCH v3 14/30] dt-bindings: phy: qcom,qmp-pcie: deprecate PIPE clock name
+Date: Thu, 14 Jul 2022 14:43:17 +0200
+Message-Id: <20220714124333.27643-15-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.35.1
 In-Reply-To: <20220714124333.27643-1-johan+linaro@kernel.org>
 References: <20220714124333.27643-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220714_054407_746334_630C7E77 
-X-CRM114-Status: UNSURE (   9.59  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220714_054407_822912_512C7A2F 
+X-CRM114-Status: GOOD (  10.18  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,279 +86,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Drop the redundant supply and clock descriptions which did not add much
-information beyond what can be inferred from the corresponding resource
-names.
+Deprecate the PHY node 'clock-names' property which specified that the
+PIPE clock name should have a bogus "lane" suffix.
 
 Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- .../devicetree/bindings/phy/qcom,qmp-phy.yaml | 108 ++++--------------
- 1 file changed, 25 insertions(+), 83 deletions(-)
+ Documentation/devicetree/bindings/phy/qcom,qmp-pcie-phy.yaml | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
-index ec4ddaef2ba9..0359f06bc37d 100644
---- a/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
-@@ -91,17 +91,11 @@ properties:
-     minItems: 1
-     maxItems: 3
+diff --git a/Documentation/devicetree/bindings/phy/qcom,qmp-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,qmp-pcie-phy.yaml
+index 5466a6d35e2a..324ad7d03a38 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,qmp-pcie-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,qmp-pcie-phy.yaml
+@@ -78,6 +78,7 @@ patternProperties:
+           - description: PIPE clock
  
--  vdda-phy-supply:
--    description:
--      Phandle to a regulator supply to PHY core block.
-+  vdda-phy-supply: true
+       clock-names:
++        deprecated: true
+         items:
+           - const: pipe0
  
--  vdda-pll-supply:
--    description:
--      Phandle to 1.8V regulator supply to PHY refclk pll block.
-+  vdda-pll-supply: true
+@@ -93,7 +94,6 @@ patternProperties:
+     required:
+       - reg
+       - clocks
+-      - clock-names
+       - "#clock-cells"
+       - clock-output-names
+       - "#phy-cells"
+@@ -287,7 +287,6 @@ examples:
+                   <0xe00 0xf4>;
  
--  vddp-ref-clk-supply:
--    description:
--      Phandle to a regulator supply to any specific refclk pll block.
-+  vddp-ref-clk-supply: true
+             clocks = <&gcc GCC_PCIE_1_PIPE_CLK>;
+-            clock-names = "pipe0";
  
- #Required nodes:
- patternProperties:
-@@ -134,11 +128,7 @@ allOf:
-     then:
-       properties:
-         clocks:
--          items:
--            - description: Phy aux clock.
--            - description: Phy config clock.
--            - description: 19.2 MHz ref clk.
--            - description: Phy common block aux clock.
-+          maxItems: 4
-         clock-names:
-           items:
-             - const: aux
-@@ -146,9 +136,7 @@ allOf:
-             - const: ref
-             - const: com_aux
-         resets:
--          items:
--            - description: reset of phy block.
--            - description: phy common block reset.
-+          maxItems: 2
-         reset-names:
-           items:
-             - const: phy
-@@ -166,19 +154,14 @@ allOf:
-     then:
-       properties:
-         clocks:
--          items:
--            - description: Phy aux clock.
--            - description: Phy config clock.
--            - description: 19.2 MHz ref clk.
-+          maxItems: 3
-         clock-names:
-           items:
-             - const: aux
-             - const: cfg_ahb
-             - const: ref
-         resets:
--          items:
--            - description: reset of phy block.
--            - description: phy common block reset.
-+          maxItems: 2
-         reset-names:
-           items:
-             - const: phy
-@@ -195,20 +178,14 @@ allOf:
-     then:
-       properties:
-         clocks:
--          items:
--            - description: Phy aux clock.
--            - description: Phy config clock.
--            - description: 19.2 MHz ref clk.
-+          maxItems: 3
-         clock-names:
-           items:
-             - const: aux
-             - const: cfg_ahb
-             - const: ref
-         resets:
--          items:
--            - description: reset of phy block.
--            - description: phy common block reset.
--            - description: phy's ahb cfg block reset.
-+          maxItems: 3
-         reset-names:
-           items:
-             - const: phy
-@@ -229,19 +206,14 @@ allOf:
-     then:
-       properties:
-         clocks:
--          items:
--            - description: Phy aux clock.
--            - description: Phy config clock.
--            - description: 19.2 MHz ref clk.
-+          maxItems: 3
-         clock-names:
-           items:
-             - const: aux
-             - const: cfg_ahb
-             - const: ref
-         resets:
--          items:
--            - description: reset of phy block.
--            - description: phy common block reset.
-+          maxItems: 2
-         reset-names:
-           items:
-             - const: phy
-@@ -258,14 +230,12 @@ allOf:
-     then:
-       properties:
-         clocks:
--          items:
--            - description: 19.2 MHz ref clk.
-+          maxItems: 1
-         clock-names:
-           items:
-             - const: ref
-         resets:
--          items:
--            - description: PHY reset in the UFS controller.
-+          maxItems: 1
-         reset-names:
-           items:
-             - const: ufsphy
-@@ -287,16 +257,13 @@ allOf:
-     then:
-       properties:
-         clocks:
--          items:
--            - description: 19.2 MHz ref clk.
--            - description: Phy reference aux clock.
-+          maxItems: 2
-         clock-names:
-           items:
-             - const: ref
-             - const: ref_aux
-         resets:
--          items:
--            - description: PHY reset in the UFS controller.
-+          maxItems: 1
-         reset-names:
-           items:
-             - const: ufsphy
-@@ -314,17 +281,13 @@ allOf:
-     then:
-       properties:
-         clocks:
--          items:
--            - description: Phy aux clock.
--            - description: Phy config clock.
-+          maxItems: 2
-         clock-names:
-           items:
-             - const: aux
-             - const: cfg_ahb
-         resets:
--          items:
--            - description: reset of phy block.
--            - description: phy common block reset.
-+          maxItems: 2
-         reset-names:
-           items:
-             - const: phy
-@@ -346,11 +309,7 @@ allOf:
-     then:
-       properties:
-         clocks:
--          items:
--            - description: Phy aux clock.
--            - description: Phy config clock.
--            - description: 19.2 MHz ref clk.
--            - description: Phy refgen clk.
-+          maxItems: 4
-         clock-names:
-           items:
-             - const: aux
-@@ -358,8 +317,7 @@ allOf:
-             - const: ref
-             - const: refgen
-         resets:
--          items:
--            - description: reset of phy block.
-+          maxItems: 1
-         reset-names:
-           items:
-             - const: phy
-@@ -378,11 +336,7 @@ allOf:
-     then:
-       properties:
-         clocks:
--          items:
--            - description: Phy aux clock.
--            - description: 19.2 MHz ref clk source.
--            - description: 19.2 MHz ref clk.
--            - description: Phy common block aux clock.
-+          maxItems: 4
-         clock-names:
-           items:
-             - const: aux
-@@ -390,9 +344,7 @@ allOf:
-             - const: ref
-             - const: com_aux
-         resets:
--          items:
--            - description: reset of phy block.
--            - description: phy common block reset.
-+          maxItems: 2
-         reset-names:
-           items:
-             - const: phy
-@@ -410,19 +362,14 @@ allOf:
-     then:
-       properties:
-         clocks:
--          items:
--            - description: Phy aux clock.
--            - description: 19.2 MHz ref clk.
--            - description: Phy common block aux clock.
-+          maxItems: 3
-         clock-names:
-           items:
-             - const: aux
-             - const: ref_clk_src
-             - const: com_aux
-         resets:
--          items:
--            - description: reset of phy block.
--            - description: phy common block reset.
-+          maxItems: 2
-         reset-names:
-           items:
-             - const: phy
-@@ -439,19 +386,14 @@ allOf:
-     then:
-       properties:
-         clocks:
--          items:
--            - description: Phy config clock.
--            - description: 19.2 MHz ref clk.
--            - description: Phy common block aux clock.
-+          maxItems: 3
-         clock-names:
-           items:
-             - const: cfg_ahb
-             - const: ref
-             - const: com_aux
-         resets:
--          items:
--            - description: phy_phy reset.
--            - description: reset of phy block.
-+          maxItems: 2
-         reset-names:
-           items:
-             - const: phy_phy
+             #clock-cells = <0>;
+             clock-output-names = "pcie_1_pipe_clk";
 -- 
 2.35.1
 
