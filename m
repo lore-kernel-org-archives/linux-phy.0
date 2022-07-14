@@ -4,63 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 37AE0C43334
-	for <linux-phy@archiver.kernel.org>; Thu, 14 Jul 2022 09:32:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 53814C433EF
+	for <linux-phy@archiver.kernel.org>; Thu, 14 Jul 2022 09:32:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9oeMGm0lpD05KjtXZjK5qWf/savedXrQbsZEMu4O1Fo=; b=pgwIQ4EEIPlofW
-	blvZBVN27VhIgdeFIgkgpCIKx5kJXUu8RLoRaZhEU/Cmpj8C64nej7YocRyUG9n41yEM3KKGPL3j2
-	cxgXCTr4YTSvReovcgx7aTs5GblDgKuQ0xOppqrrUSHDFkhY2FFkE286Jfm8Yw7eFi8T4GE7TX47T
-	X/xkwGI7x2A3WC3quu0HeIxUUNiMltcp0ELgZauXzQ6u0D3V283ZaD10pLZnb/I3oIFzJ9nWl2w1O
-	1yQ3KYTXxzyE5ocsDhojT8hgLQWNOSTJSBZ6lc2FVlAg925S6iBeadXyJdl3+02A1YCanaraG0BLS
-	os3J0Z9H1MPue5lOBKdA==;
+	List-Owner; bh=h7D5Itx1/GmT3nTHidKUwlPMoeB9CHtkhNjIBtfZXJ0=; b=VIM7aLQFoZfUWr
+	mtNKPBoOJCjqEe26BkPEuIjjM7LE60lVLcxNi620aIHK5vPuzuEl2wCk4Rd6lDOmRClKZPIrMi6X8
+	u0fVKkpDTOz3jeVoZCQttMzXBDvfT2q0cIrq9mUpg2zBdD79tbK9QDHq0Cup+bedYvA3YNMjU6s4E
+	nbR6LqdpqTLZoh4b8bXsE7r4xMjucffZNdMsMM8vYigxP1KphJzVQDtIFkSWxm02brWtvpSyDmTSX
+	fW5pyhNzNImloKfIXUx+EXJLE3a4SMuTVXAl2fKtSQQtVfnAS3I4D4EUg/i2Iop5SHY43HpMT9Z0o
+	KpVy1Iu7y2snaFsYFkrg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oBvDI-00Ct4N-4p; Thu, 14 Jul 2022 09:32:52 +0000
-Received: from mail-lf1-x136.google.com ([2a00:1450:4864:20::136])
+	id 1oBvDO-00CtBr-Jl; Thu, 14 Jul 2022 09:32:58 +0000
+Received: from mail-lf1-x12a.google.com ([2a00:1450:4864:20::12a])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oBvAG-00CqqJ-V0
-	for linux-phy@lists.infradead.org; Thu, 14 Jul 2022 09:29:46 +0000
-Received: by mail-lf1-x136.google.com with SMTP id y11so1829129lfs.6
-        for <linux-phy@lists.infradead.org>; Thu, 14 Jul 2022 02:29:44 -0700 (PDT)
+	id 1oBvBA-00CrQ2-W4
+	for linux-phy@lists.infradead.org; Thu, 14 Jul 2022 09:30:42 +0000
+Received: by mail-lf1-x12a.google.com with SMTP id t25so1831266lfg.7
+        for <linux-phy@lists.infradead.org>; Thu, 14 Jul 2022 02:30:40 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=message-id:date:mime-version:user-agent:subject:content-language:to
          :cc:references:from:in-reply-to:content-transfer-encoding;
-        bh=yEOuNrBYev+o1IcwiET9jNJzGDCPmfSFpx+DLuvyDlw=;
-        b=ADGZGqHS+KsPPXQ2vye8T68IwBUeTG5I19gcCOX86Xr6TeAKosTtwALFoPE+2m4XQK
-         t7cxRmQTf22lsmvDTwxcoLpbkgIzoPomlFKlm+RFeQkKN66C4jvX8UM6b7QvNYzDV5uE
-         I/7E/1YvL9dP6BGotOxJ/gyihFzm175LEspNeODYpsQaQ3Ltf3Hxd7C6H6V/MAyOV4cs
-         WVOk4mapQluVrdenPXMTWgZHs1zhG5kJNyhKax8WKphHyfZeMu58Urwv7XDmgad5lzIR
-         ighJygKdnSY1pI/a5HffGtZ07ndjkgiFBSRfL+XDdVeQOZl8DbeZsnbwqybdSHgGU8J9
-         IFzA==
+        bh=SHM451NPbgKsmNQ8PtztjljKT0jHIg5pN+JDdK2LOGc=;
+        b=JGBVhHIf2Ztn+/rTU20oGHT3tRc+uVB74gZZOjFy/Oq4+pilCf+trBlX2JYNeOWhfy
+         HIsDDNEGlB/opLqgZwih4kcG9bVjpkXRKAQMQo/BBZnOL49xGsEEhHAtesqMWaf0sP2H
+         4KM1n3403NMikdrDY5LvSOgXPvH+qMXNROXjvbBpy1Gpeo8Aq5tGC8DGkWwRcGuG4phH
+         DNCHnWnaFiBGakxRgtEa6Omf+pisz8qLAJGenYcJR2QwM4uPnQGsciqVkCrq41L4sN0V
+         mhm1vQhnA1idS6q7gUEmq7sWUrSZ4QPUs9jYOcvwfsFW8KQjI4mjQRqN8oBhgHG4jyDP
+         9Pzg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
          :content-language:to:cc:references:from:in-reply-to
          :content-transfer-encoding;
-        bh=yEOuNrBYev+o1IcwiET9jNJzGDCPmfSFpx+DLuvyDlw=;
-        b=wX9C49e5JLMWe2XOZJDM/x+MbWLASTUobKXMRyTpfQ0Zu0hV4Qt27OzkVUzq2rnhU9
-         HIPsW38+2b8To7jCrnsaN5wnkleuJG6qiq9D5P3PwY6KKc0F7xlrhGWXCLjt5ybzQXUJ
-         XpPyhtzZO6YISYm9J0gEbULvGm0fYeo3wZS6zpNgxk+/rVrfyy5KEoE6EgNsoqdwwe58
-         q3GeC3n0/V3PhzFv+PG+aUkxZ4N/Or2POs/3ETzT5zHvKU0AisTiNYWeASmUchx72kDs
-         mDarl5DPhUh9TwAt2ePHuQek4bjLcQxxHlzGX0pUBc94itQvlX9QV3omI8khD8ENiS/B
-         QOTA==
-X-Gm-Message-State: AJIora9dUKMcgz05CnD5pap3bAGoi2tWR2KUMtfoK4jzRmBQ9qPipgvZ
-	ZhsBZz+bBPFUphhbtff9k//T4w==
-X-Google-Smtp-Source: AGRyM1uIZ8Aq9O28VGC8BeThyVI5AV6EvuwlsA2x0KZizc6umgDcOhBraI/zRvUjGs9IFGZaOwJ4gw==
-X-Received: by 2002:a05:6512:2308:b0:48a:f9d:7389 with SMTP id o8-20020a056512230800b0048a0f9d7389mr3791536lfu.235.1657790983374;
-        Thu, 14 Jul 2022 02:29:43 -0700 (PDT)
+        bh=SHM451NPbgKsmNQ8PtztjljKT0jHIg5pN+JDdK2LOGc=;
+        b=TO/fjUCdcn8q2nLFsl7SGkRWe1qS8PsKd/zsypXyJcKKC/ki+T38l94/tAALmN16Z1
+         yLUrw/+BlD895czI/hMA4V535ZH9vWN9DYok+fzK2c99REjo7ibl8sJwGmbfTSoW99AK
+         VJ9Jtg45Rooj1J9SKJSe7yVHdHH7HZqTDeEcLDOR9V0mmB0uD28LTQns2nSGC+hGa1G9
+         VX/86hzave5U5BpAuPw7MwSyFGYytxP9YFoS12yD4qveGLC/qFMuStjaNCLd06LkmHTn
+         L8nP/W68Y8QAkkcW1xb6SG/46zIgQCuxEYRNp3Ok0vLpNNBrGcSN6IN2Pqmv1rkVsVpJ
+         6NxA==
+X-Gm-Message-State: AJIora/OBL5LhGoIvaxmboYVeiquMRELWhiVQ4vNtlLS8szdfQdGaGej
+	YxXV71KpktINlWhXoowqeY9X2Q==
+X-Google-Smtp-Source: AGRyM1vZbPmXWd/Rg+BwcDzMyac2id4EVE5D5arZiQqoCdYui/t3G6LCIBqQ6q4eve6FLfeArgfxkA==
+X-Received: by 2002:a05:6512:22c8:b0:488:e69b:9311 with SMTP id g8-20020a05651222c800b00488e69b9311mr4450974lfu.564.1657791039566;
+        Thu, 14 Jul 2022 02:30:39 -0700 (PDT)
 Received: from [10.0.0.8] (fwa5da9-171.bb.online.no. [88.93.169.171])
-        by smtp.gmail.com with ESMTPSA id f13-20020ac251ad000000b00482d0643976sm256243lfk.258.2022.07.14.02.29.41
+        by smtp.gmail.com with ESMTPSA id k12-20020ac257cc000000b004811bf4999csm257295lfo.290.2022.07.14.02.30.37
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 14 Jul 2022 02:29:42 -0700 (PDT)
-Message-ID: <90a56db5-f41e-681d-2b3e-c16b6ab456a5@linaro.org>
-Date: Thu, 14 Jul 2022 11:29:40 +0200
+        Thu, 14 Jul 2022 02:30:39 -0700 (PDT)
+Message-ID: <a2706253-41c1-84fa-2e17-053759888214@linaro.org>
+Date: Thu, 14 Jul 2022 11:30:36 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
  Thunderbird/91.11.0
@@ -80,8 +80,8 @@ References: <20220707134725.3512-1-johan+linaro@kernel.org>
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 In-Reply-To: <20220707134725.3512-29-johan+linaro@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220714_022945_065836_1A34CD51 
-X-CRM114-Status: GOOD (  11.33  )
+X-CRM114-CacheID: sfid-20220714_023041_071275_E76FD3AE 
+X-CRM114-Status: GOOD (  16.67  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -108,10 +108,20 @@ On 07/07/2022 15:47, Johan Hovold wrote:
 > Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 > ---
 >  drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c | 4 +---
+>  1 file changed, 1 insertion(+), 3 deletions(-)
+> 
+> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c
+> index 812d14afb5ec..af2f14a53b38 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c
+> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c
+> @@ -872,7 +872,6 @@ int qcom_qmp_phy_pcie_msm8996_create(struct device *dev, struct device_node *np,
+>  	struct qcom_qmp *qmp = dev_get_drvdata(dev);
+>  	struct phy *generic_phy;
+>  	struct qmp_phy *qphy;
+> -	char prop_name[MAX_PROP_NAME];
 
-
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-
+Wait, it looks like your patchset is not bisectable. Be sure each commit
+compiles cleanly.
 
 Best regards,
 Krzysztof
