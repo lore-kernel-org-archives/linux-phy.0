@@ -4,47 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AE026CCA485
-	for <linux-phy@archiver.kernel.org>; Thu, 14 Jul 2022 12:47:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 64AFBC43334
+	for <linux-phy@archiver.kernel.org>; Thu, 14 Jul 2022 12:47:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bMlHPVY48CEQlTOET8VGHOTjsLPKV8qleG2cglh4Cqg=; b=MWpdC/qz9+1hsX
-	AxqwEC3EfuKt3sSxS3Kby4eyWCBNum2NS9Adf+0So5axISdLrmUk+s/Wn7g5lOEgZnc/qCxFtqOTM
-	s5zK70rvf6vyETzgxa9Nwi1/0fPVUzZZ101D2ekAhTOFLY3A+pLf/O+p3r3FTnt1CJGOsMmmOMHgB
-	Hc5ypNT1ng+St313eUI5MZdu9TAYydmMfd6U7+3/X4H3U0a4RvPYNx8qGG7xF6ngIK4tE4RyelYZl
-	f7Fr3ksMo352/dxfZdolrKAfIsw5+8DN6ejeyNy/2A6i34nPIPYf2c9FlckDUUzhpjV2aEtgpgOV4
-	pKMD/gdV89E0Ws0lw2ZQ==;
+	List-Owner; bh=sKsT4B3pn3+1KL08jHg5cFw1pa4QeZbNPFR1vaKFu7I=; b=Us8N0Ii6SGHIR8
+	iMOh9qFUQwhsuJccn2dzva5rygfvKBlwuDG4etZJftQrW0AWD51aGnIoVgm1N+53cgHujB56ACiHd
+	xldXWUbXUHHcKNQWlao4h4WycOF8Dko3lTm5ApPKMywRbfrlSKABTJFPSnim0zKjYrAuu7HDH8Pgw
+	qUcRjRmLIRSS5r1LbFrJ4FSxLLCmsrCp+00tx6LSA6YdF26p+Do3XdjUi9EmT+aF8hBbVZmAY/YWc
+	S7DXJKb00pHN9VnmCOnJcUQhavHaQ1t70cVpZCKAXxiy9JQpnIDE4PzHk8FhzaXcO8Zb/+GGLxkHF
+	Hhq1/DR5Lzcew4MUZ+0Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oByFD-00ENCw-HQ; Thu, 14 Jul 2022 12:47:03 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1oByFE-00ENDi-79; Thu, 14 Jul 2022 12:47:04 +0000
+Received: from ams.source.kernel.org ([145.40.68.75])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oByCL-00EL4B-Ri
-	for linux-phy@lists.infradead.org; Thu, 14 Jul 2022 12:44:09 +0000
+	id 1oByCN-00EL5u-D6
+	for linux-phy@lists.infradead.org; Thu, 14 Jul 2022 12:44:11 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 2BEFB61F7E;
-	Thu, 14 Jul 2022 12:44:05 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 14516C341CE;
+	by ams.source.kernel.org (Postfix) with ESMTPS id 026B6B824EE;
+	Thu, 14 Jul 2022 12:44:06 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 51E59C341E7;
 	Thu, 14 Jul 2022 12:44:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1657802644;
-	bh=lSJ9xBkkNJpW7UWc1fqDijAGAp3EYYVJ/ShIuYKYdIY=;
+	bh=tBb3TBcfg9s+9Nc73d6Io6kUB8boSCIbXgoJx8j5hJE=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=lWyNevUAYWvxNhRNAxuNENqp68UbzhN7zGQZSe5hWS/ub6zVP2CegsCE0bNHvk/Rs
-	 VKn9OL5HoN8UATGsANacS2ea0o3Tnh2FdPI6q0Y6V5hpWABmSeoj0x2kJwFervTmTq
-	 /dbOvKiBYZ4mS9VmhJ+WJ3yHnQD7c4Qmf0VS08T4UwGjf7vjYOc0yQ2lMkxgFuqbC/
-	 H89k7pWN+4ruXKvsy8EutYrNhYqGYUGgLI0cUXV7YfvpTEU8S4yuacdjeQPZC0Q6ng
-	 CD0UQnynowqIwUPbzGzroqvNUO4vvYT3+iBSWnRGl+uRMfr7pfrp+7Cfvd5fI1Z9TR
-	 92pJPNZMgC1VA==
+	b=NY9+/TnIkUpxV+x8FQaV+/zdNwONZuqc+Ggv4HhrsDh7QTXvH+34ZrJLBv1gro5S6
+	 C/oaNEGd1WU5Ih12JGjcE19PrOK5PoLEdLAoNiTEDeKpL58NNnJGFM88SdCP0+wN3q
+	 wsACciJSBOd7zAqJiAKkMd3YUH5k4Xri29qZdeK+5itJifGqbxahD9jLpc2+bqVJ/l
+	 VZsR8/bAtfATRLtpwsjYGNOu4EgizYrXNfAUK1wQTDliD3Cwm4mdXvdtqQXgUpsXFo
+	 ZT44ro08Qu0MyToBojo6xPud3V9Tlfq70EBJfqpdB44Smcr2mCRu1DVzCxpyjpzf+p
+	 gacoLusart4Gg==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1oByCP-0007DL-Dm; Thu, 14 Jul 2022 14:44:09 +0200
+	id 1oByCP-0007DY-MC; Thu, 14 Jul 2022 14:44:09 +0200
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>,
 	Rob Herring <robh+dt@kernel.org>,
@@ -60,16 +60,16 @@ Cc: Andy Gross <agross@kernel.org>,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>,
 	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Subject: [PATCH v3 08/30] dt-bindings: phy: add qcom,msm8996-qmp-pcie-phy schema
-Date: Thu, 14 Jul 2022 14:43:11 +0200
-Message-Id: <20220714124333.27643-9-johan+linaro@kernel.org>
+Subject: [PATCH v3 11/30] dt-bindings: phy: qcom,msm8996-qmp-pcie: deprecate reset names
+Date: Thu, 14 Jul 2022 14:43:14 +0200
+Message-Id: <20220714124333.27643-12-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.35.1
 In-Reply-To: <20220714124333.27643-1-johan+linaro@kernel.org>
 References: <20220714124333.27643-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220714_054406_033861_62C20CD9 
-X-CRM114-Status: GOOD (  14.17  )
+X-CRM114-CacheID: sfid-20220714_054407_780440_FF9F4EA3 
+X-CRM114-Status: GOOD (  10.13  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,216 +86,63 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The QMP PHY DT schema is getting unwieldy. Break out the odd-bird
-msm8996-qmp-pcie-phy which is the only QMP PHY that uses separate
-"per-lane" nodes.
-
-Add an example node based on a cleaned up version of msm8996.dtsi.
+Deprecate the PHY node 'reset-names' property which specified that the
+reset name should have an unnecessary "lane" suffix.
 
 Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- .../phy/qcom,msm8996-qmp-pcie-phy.yaml        | 146 ++++++++++++++++++
- .../devicetree/bindings/phy/qcom,qmp-phy.yaml |  26 ----
- 2 files changed, 146 insertions(+), 26 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-pcie-phy.yaml
+ .../devicetree/bindings/phy/qcom,msm8996-qmp-pcie-phy.yaml | 7 ++-----
+ 1 file changed, 2 insertions(+), 5 deletions(-)
 
 diff --git a/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-pcie-phy.yaml
-new file mode 100644
-index 000000000000..accbcb8b5c6f
---- /dev/null
+index b7b115e021d4..4e710ef75523 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-pcie-phy.yaml
 +++ b/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-pcie-phy.yaml
-@@ -0,0 +1,146 @@
-+# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/phy/qcom,msm8996-qmp-pcie-phy.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Qualcomm QMP PHY controller (MSM8996 PCIe)
-+
-+maintainers:
-+  - Vinod Koul <vkoul@kernel.org>
-+
-+description:
-+  QMP PHY controller supports physical layer functionality for a number of
-+  controllers on Qualcomm chipsets, such as, PCIe, UFS, and USB.
-+
-+properties:
-+  compatible:
-+    const: qcom,msm8996-qmp-pcie-phy
-+
-+  reg:
-+    items:
-+      - description: serdes
-+
-+  "#address-cells":
-+    enum: [ 1, 2 ]
-+
-+  "#size-cells":
-+    enum: [ 1, 2 ]
-+
-+  ranges: true
-+
-+  clocks:
-+    maxItems: 3
-+
-+  clock-names:
-+    items:
-+      - const: aux
-+      - const: cfg_ahb
-+      - const: ref
-+
-+  resets:
-+    maxItems: 3
-+
-+  reset-names:
-+    items:
-+      - const: phy
-+      - const: common
-+      - const: cfg
-+
-+  vdda-phy-supply: true
-+
-+  vdda-pll-supply: true
-+
-+  vddp-ref-clk-supply: true
-+
-+patternProperties:
-+  "^phy@[0-9a-f]+$":
-+    type: object
-+    description: one child node per PHY provided by this block
-+
-+required:
-+  - compatible
-+  - reg
-+  - "#address-cells"
-+  - "#size-cells"
-+  - ranges
-+  - clocks
-+  - clock-names
-+  - resets
-+  - reset-names
-+  - vdda-phy-supply
-+  - vdda-pll-supply
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    #include <dt-bindings/clock/qcom,gcc-msm8996.h>
-+    pcie_phy: phy-wrapper@34000 {
-+        compatible = "qcom,msm8996-qmp-pcie-phy";
-+        reg = <0x34000 0x488>;
-+        #address-cells = <1>;
-+        #size-cells = <1>;
-+        ranges = <0x0 0x34000 0x4000>;
-+
-+        clocks = <&gcc GCC_PCIE_PHY_AUX_CLK>,
-+                 <&gcc GCC_PCIE_PHY_CFG_AHB_CLK>,
-+                 <&gcc GCC_PCIE_CLKREF_CLK>;
-+        clock-names = "aux", "cfg_ahb", "ref";
-+
-+        resets = <&gcc GCC_PCIE_PHY_BCR>,
-+                 <&gcc GCC_PCIE_PHY_COM_BCR>,
-+                 <&gcc GCC_PCIE_PHY_COM_NOCSR_BCR>;
-+        reset-names = "phy", "common", "cfg";
-+
-+        vdda-phy-supply = <&vreg_l28a_0p925>;
-+        vdda-pll-supply = <&vreg_l12a_1p8>;
-+
-+        pciephy_0: phy@1000 {
-+            reg = <0x1000 0x130>,
-+                  <0x1200 0x200>,
-+                  <0x1400 0x1dc>;
-+
-+            clocks = <&gcc GCC_PCIE_0_PIPE_CLK>;
-+            clock-names = "pipe0";
-+            resets = <&gcc GCC_PCIE_0_PHY_BCR>;
-+            reset-names = "lane0";
-+
-+            #clock-cells = <0>;
-+            clock-output-names = "pcie_0_pipe_clk_src";
-+
-+            #phy-cells = <0>;
-+        };
-+
-+        pciephy_1: phy@2000 {
-+            reg = <0x2000 0x130>,
-+                  <0x2200 0x200>,
-+                  <0x2400 0x1dc>;
-+
-+            clocks = <&gcc GCC_PCIE_1_PIPE_CLK>;
-+            clock-names = "pipe1";
-+            resets = <&gcc GCC_PCIE_1_PHY_BCR>;
-+            reset-names = "lane1";
-+
-+            #clock-cells = <0>;
-+            clock-output-names = "pcie_1_pipe_clk_src";
-+
-+            #phy-cells = <0>;
-+        };
-+
-+        pciephy_2: phy@3000 {
-+            reg = <0x3000 0x130>,
-+                  <0x3200 0x200>,
-+                  <0x3400 0x1dc>;
-+
-+            clocks = <&gcc GCC_PCIE_2_PIPE_CLK>;
-+            clock-names = "pipe2";
-+            resets = <&gcc GCC_PCIE_2_PHY_BCR>;
-+            reset-names = "lane2";
-+
-+            #clock-cells = <0>;
-+            clock-output-names = "pcie_2_pipe_clk_src";
-+
-+            #phy-cells = <0>;
-+        };
-+    };
-diff --git a/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
-index 693cec10d7d6..90d703548913 100644
---- a/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
-@@ -22,7 +22,6 @@ properties:
-       - qcom,ipq8074-qmp-gen3-pcie-phy
-       - qcom,ipq8074-qmp-pcie-phy
-       - qcom,ipq8074-qmp-usb3-phy
--      - qcom,msm8996-qmp-pcie-phy
-       - qcom,msm8996-qmp-ufs-phy
-       - qcom,msm8996-qmp-usb3-phy
-       - qcom,msm8998-qmp-pcie-phy
-@@ -166,31 +165,6 @@ allOf:
-       required:
-         - vdda-phy-supply
-         - vdda-pll-supply
--  - if:
--      properties:
--        compatible:
--          contains:
--            enum:
--              - qcom,msm8996-qmp-pcie-phy
--    then:
--      properties:
--        clocks:
--          maxItems: 3
--        clock-names:
--          items:
--            - const: aux
--            - const: cfg_ahb
--            - const: ref
--        resets:
--          maxItems: 3
--        reset-names:
--          items:
--            - const: phy
--            - const: common
--            - const: cfg
--      required:
--        - vdda-phy-supply
--        - vdda-pll-supply
-   - if:
-       properties:
-         compatible:
+@@ -78,9 +78,10 @@ patternProperties:
+ 
+       resets:
+         items:
+-          - description: PHY (lane) reset
++          - description: PHY reset
+ 
+       reset-names:
++        deprecated: true
+         items:
+           - enum:
+               - lane0
+@@ -100,7 +101,6 @@ patternProperties:
+       - reg
+       - clocks
+       - resets
+-      - reset-names
+       - "#clock-cells"
+       - clock-output-names
+       - "#phy-cells"
+@@ -152,7 +152,6 @@ examples:
+ 
+             clocks = <&gcc GCC_PCIE_0_PIPE_CLK>;
+             resets = <&gcc GCC_PCIE_0_PHY_BCR>;
+-            reset-names = "lane0";
+ 
+             #clock-cells = <0>;
+             clock-output-names = "pcie_0_pipe_clk_src";
+@@ -167,7 +166,6 @@ examples:
+ 
+             clocks = <&gcc GCC_PCIE_1_PIPE_CLK>;
+             resets = <&gcc GCC_PCIE_1_PHY_BCR>;
+-            reset-names = "lane1";
+ 
+             #clock-cells = <0>;
+             clock-output-names = "pcie_1_pipe_clk_src";
+@@ -182,7 +180,6 @@ examples:
+ 
+             clocks = <&gcc GCC_PCIE_2_PIPE_CLK>;
+             resets = <&gcc GCC_PCIE_2_PHY_BCR>;
+-            reset-names = "lane2";
+ 
+             #clock-cells = <0>;
+             clock-output-names = "pcie_2_pipe_clk_src";
 -- 
 2.35.1
 
