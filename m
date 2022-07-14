@@ -4,47 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7DFE4C43334
-	for <linux-phy@archiver.kernel.org>; Thu, 14 Jul 2022 12:47:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 690B4CCA47B
+	for <linux-phy@archiver.kernel.org>; Thu, 14 Jul 2022 12:47:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=n6zKjWEkV0K2zry9ZbPIC/IdhBZ1h5qryvzttEmY+jU=; b=hfJTlyk30jk/yM
-	p5ba1tYtMqPBrcONvZwL79kdg2xMVFMya1bD5SRRWVvDOmwfjNwwE1ZbwMbE2IxiML24kpF14Z9j4
-	qIxsABR8VUMXZOMKoKa9DOAB5nKkQku2rUNmLA37bSaaPfc3t1ebTAyLAiRsFKpWgRrfrmVgKhC18
-	qZioQ84JmolNY6IPFLJNBHDd8kyBcod9+tdZtRztaPopQlLuZHaQOgRfKmokp+D2MsQqZ3uXOir3d
-	4VXFvxhbO631rB7vfNhLDHOKKyaKOuKCdfOUcgh7BvaocN+KZugb6d6q9bzivUXmuwX9XIHaC8Tqz
-	8z4QbWtQZ4ieVoEj4/wg==;
+	List-Owner; bh=/yBTUzeuLNSWELzZdCbTvp3MJuPLeENDNTTkV477SF0=; b=DylkEP7jgeD2K1
+	8tuW7TlE8VJ+C5cn3DFhHq5rBCarz0BvswIByd53M6Zu4VtAMUM+5clFjNz0QgMuqZymybTcE/iC6
+	nYJ19jjS9bABJmhMl1txFkNjeVFsrCjgpXNaEz42qBDrmvEG6dsAIWyRWQoQTjdkwCTAx+VhocrJB
+	odvWw1B3rIoDbT0cmIZ5I+DgX9EDgGwCcgXRbYqE/VfdbCDgtYxL5ITJtRShAlvA+ivYWds+bgp6M
+	iQtnccQV5F5xyly304oEGczPdh1TuETWV2d8Sy4GtagKXcVwBw0WS8uKTSHTroKy5a+SnVtuTXaTy
+	woZMt2Lsd7Y6L9JeKQNg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oByFH-00ENHT-Dx; Thu, 14 Jul 2022 12:47:07 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1oByFI-00ENHz-60; Thu, 14 Jul 2022 12:47:08 +0000
+Received: from ams.source.kernel.org ([145.40.68.75])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oByCN-00EL6C-NY
-	for linux-phy@lists.infradead.org; Thu, 14 Jul 2022 12:44:12 +0000
+	id 1oByCR-00ELBW-VR
+	for linux-phy@lists.infradead.org; Thu, 14 Jul 2022 12:44:16 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 87A0661F8F;
+	by ams.source.kernel.org (Postfix) with ESMTPS id F07FFB824E9;
+	Thu, 14 Jul 2022 12:44:06 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5A652C341DB;
 	Thu, 14 Jul 2022 12:44:05 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 256C0C341D7;
-	Thu, 14 Jul 2022 12:44:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1657802644;
-	bh=PsV1H7I2xcbdp4ZG7x9wTuYvt6EoxjXfLIKWptuuQtA=;
+	s=k20201202; t=1657802645;
+	bh=SF7Y6R56kZ9U9YdGxbE66G75h5S5SElX8IDdKYlYFmE=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=thYG15RmBrdD1pOwt1BbL70eaMBmuqVjOI10VdSjEhv+YMaSotqHrQWBrN4urJs4m
-	 JfrpPBrbM+PboDnScmGiG7gZ1qL55NFly+9z/LXPvYvmJLxyGlm9OZ+vIgD/CaUmmr
-	 dUzhnhDIB6fO5pQGXrDRIbLWgt/p7Fm+btVAtBmHHVcAxY/nqKMLAYy8qhSf8ELwYQ
-	 hpeRxCv8hTs2E+C9wi4ohmyts9H8wdaABF0hfYqPXRpyVVupAhO8wK3zIzXk8oRzQy
-	 Aa3+2IwFeFgxZMsOB0YD0sa9VolMyFipAEwRaxg/w0jMl5mwi/+B0VHq3xOoLlIwax
-	 FKGqQne9ktbvg==
+	b=iBJPPXzvPKstyLXQxmyhaOuT8cmNWKwr0ipI6YT/kYZdrtjyTY149LbCBMc0UH17Q
+	 G0mNfxAHGiQxvIw/XSTcJI9FV7UfkN1eHHujBt18H1+xMvMCWFHh3Fp1wk+H6OVp1H
+	 I63Ept/Mf+6pdl7AWRMTKNAXW57vWRACwxsv/Wz1luh+TGkqY9nNwWvQjQY8F+8CuE
+	 T1IhX4qqmhtBHRXUdPiSj1Ibmia53lWQL6FEW7RsvR0Ki9Hskk+Nn/b9JJc6v6w+Ar
+	 iw5kIaegtV4rA+4WvgT0JaMXTHo0GfrbjZd1zJqJri1qT7CsCvYb4XoVk6/rh/wDh7
+	 Z8/vNFJSB6ppQ==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1oByCP-0007DV-JA; Thu, 14 Jul 2022 14:44:09 +0200
+	id 1oByCQ-0007E6-NA; Thu, 14 Jul 2022 14:44:10 +0200
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>,
 	Rob Herring <robh+dt@kernel.org>,
@@ -60,17 +60,16 @@ Cc: Andy Gross <agross@kernel.org>,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>,
 	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Subject: [PATCH v3 10/30] dt-bindings: phy: qcom,msm8996-qmp-pcie: deprecate PIPE clock names
-Date: Thu, 14 Jul 2022 14:43:13 +0200
-Message-Id: <20220714124333.27643-11-johan+linaro@kernel.org>
+Subject: [PATCH v3 22/30] dt-bindings: phy: qcom,qmp-usb: add missing qcom,sc7180-qmp-usb3-phy schema
+Date: Thu, 14 Jul 2022 14:43:25 +0200
+Message-Id: <20220714124333.27643-23-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.35.1
 In-Reply-To: <20220714124333.27643-1-johan+linaro@kernel.org>
 References: <20220714124333.27643-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220714_054407_870979_3ABC6D66 
-X-CRM114-Status: UNSURE (   9.91  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220714_054412_213249_38935F59 
+X-CRM114-Status: GOOD (  10.14  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,59 +86,51 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Deprecate the PHY node 'clock-names' property which specified that the
-PIPE clock name should have an unnecessary "lane" suffix.
+The "qcom,sc7180-qmp-usb3-phy" compatible is apparently used to describe
+a combo PHY where only the USB part is used. Specifically, only a single
+reset is used.
 
+Fixes: 4ad7d7eeed3a ("dt-bindings: phy: qcom,qmp-usb3-dp: Add support for SC7180")
+Fixes: 94c34600b617 ("dt-bindings: phy: qcom,qmp-usb3-dp-phy: move usb3 compatibles back to qcom,qmp-phy.yaml")
 Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- .../devicetree/bindings/phy/qcom,msm8996-qmp-pcie-phy.yaml   | 5 +----
- 1 file changed, 1 insertion(+), 4 deletions(-)
+ .../bindings/phy/qcom,qmp-usb-phy.yaml        | 22 +++++++++++++++++++
+ 1 file changed, 22 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-pcie-phy.yaml
-index 8125a91a3591..b7b115e021d4 100644
---- a/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-pcie-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-pcie-phy.yaml
-@@ -69,6 +69,7 @@ patternProperties:
-           - description: PIPE clock
+diff --git a/Documentation/devicetree/bindings/phy/qcom,qmp-usb-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,qmp-usb-phy.yaml
+index 604d22f47a56..472a5ef029d5 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,qmp-usb-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,qmp-usb-phy.yaml
+@@ -121,6 +121,28 @@ required:
+ additionalProperties: false
  
-       clock-names:
-+        deprecated: true
-         items:
-           - enum:
-               - pipe0
-@@ -98,7 +99,6 @@ patternProperties:
-     required:
-       - reg
-       - clocks
--      - clock-names
-       - resets
-       - reset-names
-       - "#clock-cells"
-@@ -151,7 +151,6 @@ examples:
-                   <0x1400 0x1dc>;
- 
-             clocks = <&gcc GCC_PCIE_0_PIPE_CLK>;
--            clock-names = "pipe0";
-             resets = <&gcc GCC_PCIE_0_PHY_BCR>;
-             reset-names = "lane0";
- 
-@@ -167,7 +166,6 @@ examples:
-                   <0x2400 0x1dc>;
- 
-             clocks = <&gcc GCC_PCIE_1_PIPE_CLK>;
--            clock-names = "pipe1";
-             resets = <&gcc GCC_PCIE_1_PHY_BCR>;
-             reset-names = "lane1";
- 
-@@ -183,7 +181,6 @@ examples:
-                   <0x3400 0x1dc>;
- 
-             clocks = <&gcc GCC_PCIE_2_PIPE_CLK>;
--            clock-names = "pipe2";
-             resets = <&gcc GCC_PCIE_2_PHY_BCR>;
-             reset-names = "lane2";
- 
+ allOf:
++  - if:
++      properties:
++        compatible:
++          contains:
++            enum:
++              - qcom,sc7180-qmp-usb3-phy
++    then:
++      properties:
++        clocks:
++          maxItems: 4
++        clock-names:
++          items:
++            - const: aux
++            - const: cfg_ahb
++            - const: ref
++            - const: com_aux
++        resets:
++          maxItems: 1
++        reset-names:
++          items:
++            - const: phy
++
+   - if:
+       properties:
+         compatible:
 -- 
 2.35.1
 
