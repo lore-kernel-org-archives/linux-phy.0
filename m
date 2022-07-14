@@ -4,72 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EC910C433EF
-	for <linux-phy@archiver.kernel.org>; Wed, 13 Jul 2022 13:40:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8DB09CCA47B
+	for <linux-phy@archiver.kernel.org>; Thu, 14 Jul 2022 08:12:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=+4XrfBSkzGcc8jLcvfzkB7ObA5+WjG2D22CooD/bVlQ=; b=x62WLFng0FYKhW
-	LW+UkBpRtjHMr94yHP/3ZujTa+CXtgMMDpygavakwOgiH4x3o7aqFMTyKkqmHkQZiADkTUsfILNDH
-	SujpDNM5NguGOQRey1mH8JZt/6rkpqDAzMQVdP9Wx32B4N+XgBXxgAoh8HpicGm61lqbNbw8ltd5o
-	M3j1G4DWGNhL6ObV4MHLsdF4+nig1Aa5bvhQKM49W5jf5QEoaFCzoNd/v8bBZMgSXjAC7LgbKqTp3
-	G7UE3xlG9UQXLMm0cznZVCSJcd+TA5Vs9un1irmXLB1vldxIOM0PHAiPB5+Ip7z0x8lnqTthxhi5b
-	E3o+nVrnapZNRM46eoKw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=JrmfgOboeiFb5kBhZee5NQFZxqnYgUlkUIVRsp7UJuY=; b=C06rTO+bq4Eh9s
+	TsWwY2cfkWJiRbj7HIQ72CDFzl/LUCmkbWW/AIIb61+oQzHOG753Y2SokPqZn+CcVEBv1cNaH/M6X
+	VU7Nr+/6PqKItzfAfrlqWT5rqxeRgA4aECNhdlz+EIojsPYItOCG/cy8ErMmHgDduTCEt53nz44WJ
+	gUqKDNDecUJUFHgVb8U/zArhrle2ZXH0QOxougCGfw3i6fcAepDssv712f/Gc6F5PznwvHgZ651gL
+	89DFAyTbeZOepj6THnflDVwmzLOY8N6YSY8baPdUNazSdULUxz3k3hZ2FjrTHgRuxsKfXf4DdAaUq
+	Jb7yW0NTBYDC0nJ3xUgQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oBcbF-0041Bv-EX; Wed, 13 Jul 2022 13:40:21 +0000
-Received: from mx07-00178001.pphosted.com ([185.132.182.106])
+	id 1oBtxw-00CETW-I1; Thu, 14 Jul 2022 08:12:56 +0000
+Received: from ams.source.kernel.org ([145.40.68.75])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oBcbC-00419Z-3L; Wed, 13 Jul 2022 13:40:19 +0000
-Received: from pps.filterd (m0288072.ppops.net [127.0.0.1])
-	by mx07-00178001.pphosted.com (8.17.1.5/8.17.1.5) with ESMTP id 26DAkwjr027681;
-	Wed, 13 Jul 2022 15:40:10 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com; h=from : to : cc :
- subject : date : message-id : mime-version : content-transfer-encoding :
- content-type; s=selector1;
- bh=JRyv1cb2Gr7w/X2gySSfzHJgcDNDC1uKvi9JD4ouJro=;
- b=uxo6Dn2D4OrxCBt13hKgXlMQssGX75dS+VpBAutkoEczXuGj/bt63GIA/gj1WjROUAEn
- KPuo60hCkMaqwJXcg9N+q3YidK0/RJp1ACrKT4Z1cwaTPrMAzBhsLNzLLbp3z2fu6Vof
- kyZfE8nfW2DlIMGupt5Oxn0gWBH503RDNQfTqSXRB6RdeHGqLWvcr4QsIoBO0Pcxw23m
- ljbj8BTiExwk08Ex5TEKD8L1QHDPRRX9QBJMOw8i44Qkbe7DtW+r/WICfQWiVNsuxEmm
- 1h45HJTihG7GcuGCwInsz/newACWSP9dn8ICqV09XAF3DrIK2tXkU6cBKRA6NI4lYVHb DA== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
-	by mx07-00178001.pphosted.com (PPS) with ESMTPS id 3h93cwhtbc-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 13 Jul 2022 15:40:10 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
-	by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 757C210002A;
-	Wed, 13 Jul 2022 15:40:07 +0200 (CEST)
-Received: from Webmail-eu.st.com (shfdag1node2.st.com [10.75.129.70])
-	by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id E9273222C90;
-	Wed, 13 Jul 2022 15:40:07 +0200 (CEST)
-Received: from localhost (10.75.127.47) by SHFDAG1NODE2.st.com (10.75.129.70)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id 15.1.2308.20; Wed, 13 Jul
- 2022 15:40:07 +0200
-From: Fabrice Gasnier <fabrice.gasnier@foss.st.com>
-To: <vkoul@kernel.org>, <kishon@ti.com>
-CC: <amelie.delaunay@foss.st.com>, <alexandre.torgue@foss.st.com>,
-        <linux-phy@lists.infradead.org>,
-        <linux-stm32@st-md-mailman.stormreply.com>,
-        <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>
-Subject: [PATCH] phy: stm32: fix error return in stm32_usbphyc_phy_init
-Date: Wed, 13 Jul 2022 15:39:53 +0200
-Message-ID: <20220713133953.595134-1-fabrice.gasnier@foss.st.com>
-X-Mailer: git-send-email 2.25.1
+	id 1oBtxs-00CEPS-JI
+	for linux-phy@lists.infradead.org; Thu, 14 Jul 2022 08:12:55 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by ams.source.kernel.org (Postfix) with ESMTPS id 6F3DDB823BE;
+	Thu, 14 Jul 2022 08:12:50 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 01EF6C34115;
+	Thu, 14 Jul 2022 08:12:48 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1657786369;
+	bh=Ta1vn2x5HVKuOgcfwWuXxEO6fu8hsyoTtGuIzVqCGVE=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=pZBnkvI26oawo/yamxGpGKg5YjDbIrkv/So6Jx6C3QXiQxCeQqny/o2DMAjo2mtgp
+	 Xg7vuGcREtW8Ye2dbqmWuHSPo156X6S2QqfHpxcH96Da6+Sk8V7nL9xJyG4MXdYM96
+	 PJhPysDIcOhOK86wAK/bPJVqf2wl9xJ9UusaQKWlZGHgWZhggo1SxpBgI1NgzTLF91
+	 wzENR4I+VbEqOtNXJm3CJ8GvbFhM6aaGi55lyeeFVLoIWkrIOlZvTVjddSzpUyM5Jq
+	 OdjLLne4ZD67QQVHAMO2b4aXJMPsG+0XY2dmkNTMOtIe/GIimaWjVIvRzl0sSbTpXh
+	 XBjXDWNpo4HAw==
+Received: from johan by xi.lan with local (Exim 4.94.2)
+	(envelope-from <johan@kernel.org>)
+	id 1oBtxs-0004Iw-Qa; Thu, 14 Jul 2022 10:12:53 +0200
+Date: Thu, 14 Jul 2022 10:12:52 +0200
+From: Johan Hovold <johan@kernel.org>
+To: Vinod Koul <vkoul@kernel.org>
+Cc: Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+	Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <bjorn.andersson@linaro.org>,
+	Kishon Vijay Abraham I <kishon@ti.com>,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v2 00/30] phy: qcom,qmp: fix dt-bindings and deprecate
+ lane suffix
+Message-ID: <Ys/QBPJmkWO6O3Fw@hovoldconsulting.com>
+References: <20220707134725.3512-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.47]
-X-ClientProxiedBy: SFHDAG2NODE3.st.com (10.75.127.6) To SHFDAG1NODE2.st.com
- (10.75.129.70)
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.205,Aquarius:18.0.883,Hydra:6.0.517,FMLib:17.11.122.1
- definitions=2022-07-13_03,2022-07-13_02,2022-06-22_01
+Content-Disposition: inline
+In-Reply-To: <20220707134725.3512-1-johan+linaro@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220713_064018_454157_E92F24AC 
-X-CRM114-Status: GOOD (  15.52  )
+X-CRM114-CacheID: sfid-20220714_011252_992703_701389D2 
+X-CRM114-Status: GOOD (  23.65  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,35 +82,58 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Error code is overridden, in case the PLL doesn't lock. So, the USB
-initialization can continue. This leads to a platform freeze.
-This can be avoided by returning proper error code to avoid USB probe
-freezing the platform. It also displays proper errors in log.
+On Thu, Jul 07, 2022 at 03:46:55PM +0200, Johan Hovold wrote:
+> When adding support for SC8280XP to the QMP PHY driver I noticed that
+> the PHY provider child node was not described by the current DT schema.
+> 
+> The SC8280XP PHYs also need a second fixed-divider PIPE clock
+> ("pipediv2") and I didn't want to have to add a bogus "lane" suffix to
+> the clock name just to match the current "pipe0" name so I decided to
+> deprecate the unnecessary suffix in the current binding instead.
+> 
+> To be able to add the missing child-node schema and handle device
+> specifics like additional PIPE clocks, it quickly became obvious that
+> the binding needs to be split up.
+> 
+> This series clean up and fixes some issue with the current schema before
+> splitting it up in separate schemas for PCIe, UFS and USB and adding
+> missing parts like the child PHY provider nodes.
+> 
+> The MSM8996 PCIe PHY gets its own schema as this is the only non-combo
+> PHY that actually provides more than one PHY per IP block. Note that the
+> "lane" suffix is still unnecessary and misleading.
+> 
+> The final patches add support for the updated binding to the (recently
+> split up) PHY drivers. Included is also a related combo PHY cleanup.
+> 
+> Johan
+> 
+> 
+> Changes in v2
+>  - squash split + cleanup + example patches (Krzysztof)
+>  - deprecate clock-names instead of dropping suffix (Krzysztof)
+>  - deprecate reset-names instead of dropping suffix (Krzysztof)
+>  - flatten child reg if/then schemas (Krzysztof)
+>  - add back optional vddp-ref-clk to all bindings even though it likely
+>    only applies to MSM8996/98 UFS (Krzysztof)
+>  - add missing sc7180 schema to USB binding
+>  - misc clean ups
+>    - shorten or drop descriptions
+>    - drop quotes around $id and $schema (Krzysztof)
+>    - use maxItems with clock-output-names
+>    - combine two USB clock+reset schemas
+>  - add Reviewed-by/Acked-by tags
 
-Fixes: 5b1af71280ab ("phy: stm32: rework PLL Lock detection")
-Signed-off-by: Fabrice Gasnier <fabrice.gasnier@foss.st.com>
----
- drivers/phy/st/phy-stm32-usbphyc.c | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
+Any further comments to this series?
 
-diff --git a/drivers/phy/st/phy-stm32-usbphyc.c b/drivers/phy/st/phy-stm32-usbphyc.c
-index 007a23c78d562..a98c911cc37ae 100644
---- a/drivers/phy/st/phy-stm32-usbphyc.c
-+++ b/drivers/phy/st/phy-stm32-usbphyc.c
-@@ -358,7 +358,9 @@ static int stm32_usbphyc_phy_init(struct phy *phy)
- 	return 0;
- 
- pll_disable:
--	return stm32_usbphyc_pll_disable(usbphyc);
-+	stm32_usbphyc_pll_disable(usbphyc);
-+
-+	return ret;
- }
- 
- static int stm32_usbphyc_phy_exit(struct phy *phy)
--- 
-2.25.1
+Vinod, I noticed there was a conflict when rebasing on linux-next due to
+commit 85d43a69db2d ("dt-bindings: phy: qcom,qmp: add IPQ8074 PCIe Gen3
+PHY binding").
 
+I'll send a v3 so you don't have to do the resolution, but I figured I'd
+wait a bit in case there are any other changes that need to be made.
+
+Johan
 
 -- 
 linux-phy mailing list
