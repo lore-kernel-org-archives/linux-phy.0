@@ -4,48 +4,48 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F2F73CCA480
-	for <linux-phy@archiver.kernel.org>; Thu, 14 Jul 2022 10:00:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 15721C433EF
+	for <linux-phy@archiver.kernel.org>; Thu, 14 Jul 2022 10:07:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FdVuQqEMKn4MZF6gOU0aiGp3KkRPX+oTFLP3POvAmlI=; b=J492x/3o+GcD0m
-	MmzFO3owGEYYE9DsAraW6j9IYnCbDjBoeouTfuPy1jx+CdtZIJayPgV1e9DtRvDhb+hvToI7MWFES
-	SYescQIrub1Xo8whpeV/+k0SbJx2pC7o5FmbQ+D0srzb2LcyEGnO1Tf9nbOdf7iCQlZd5EufXERbM
-	+ZyQyfEUuRfOoiyKZRFto3IRHg5Q/YP1hXp8JG9JDGRuAQ8qr1i6NpbR5X/FenOegVyUnTEGdTnxR
-	OpODinNFsjw9H1NMIaZU7sCCFghXgiDnBF095CI5kIRN+ZXHUqxjoCTWyMDv9iII5ih/hnZoprMzQ
-	dSRQvgWygoulUJJQVvvw==;
+	List-Owner; bh=qALOz6H+Nim3xrf+u3x01aMFN4eZ4hG11uMwJe78BHg=; b=p4vWVqgm0chIRI
+	9qrFBMSvi0vE7ndeJ3bggg9Aci+WAulpx5Cw8se2Dy6cdgnOqlE/BM7eGueD14QPf6HKHwPHmY9JG
+	0HG1YnX22qZrmFBgl9YkSwiMxRclIzdr6zQD+YRpTKnQbnLchafUpGdZ7GB7D2bsMJ5xI51UeXUUO
+	v0vdYHtb2Jz2HO1nFOKbRZVjjBQ0iheiRe0/hu4e0XPu4FsJcRW6xf9GjpgM/L71cI8L/HOR138w3
+	8bbMFQ2CL3c3Z+qDh2KopR6xtymVZfq6odsPksG7GYiMkM8O3NbABfLYZJ4iPyWzd1SY/OlGhODdy
+	VD0Fs8SzenQRHh3O9R5g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oBveE-00D9AN-FC; Thu, 14 Jul 2022 10:00:42 +0000
-Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
+	id 1oBvke-00DCS7-DV; Thu, 14 Jul 2022 10:07:20 +0000
+Received: from ams.source.kernel.org ([145.40.68.75])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oBveB-00D94Y-79
-	for linux-phy@lists.infradead.org; Thu, 14 Jul 2022 10:00:40 +0000
+	id 1oBvkb-00DCQQ-1E
+	for linux-phy@lists.infradead.org; Thu, 14 Jul 2022 10:07:18 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by sin.source.kernel.org (Postfix) with ESMTPS id 7AF73CE2395;
-	Thu, 14 Jul 2022 10:00:32 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D54E1C34114;
-	Thu, 14 Jul 2022 10:00:30 +0000 (UTC)
+	by ams.source.kernel.org (Postfix) with ESMTPS id 97A28B823F3;
+	Thu, 14 Jul 2022 10:07:15 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 32832C34114;
+	Thu, 14 Jul 2022 10:07:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1657792830;
-	bh=HoH9YJdc2U+sb80GLj9TQU8IV2cMXr3qp2pjDocp0xk=;
+	s=k20201202; t=1657793234;
+	bh=bSKkH2jvKSAI3EiQUqhslwIC6F4g+v4LiBs8ZL7Da80=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=fVqvxHdjm5/kh1jkEfizpjQRdnJujKLLlp5S3PCueFNHbC8MaYDAA5hqlLM0n+Kyv
-	 bXtxrqAtMzmWPx7ucIcuMGB9XGHeyyfRYL/Q1C7XJ2JirDWXaCtWz0eUGtL62SGJYf
-	 O0JZ3e7PMxZZrp9XQn3FT+SbWSjVmWsOsOL7EJXUsizrQpXmfAR6gdfGFleyFZi531
-	 uEwHRMbafssOa0u5dfeAEm02KI/Z/t32ajV4gQMk48CmWdRDMHZHCjJM+8twTIgrw8
-	 MrL5UTZ1wITIT57aWE7v1gOf8nFn0K9BXGo1tHh9BhXuhyRbf2bpUOSq1f2t9nju9N
-	 fnaJhm3Uv0YVg==
+	b=POcam2qFW9ucCQKozq6eRb7dLksw5QSsF4HPhST5L9cJchZbGVS8pZhrB+OFfFgg6
+	 va14SjilQwkXkHBRd0ETpPGywkoc1wW1bhF3SoFMUvAhv/hOyDfnOl5b3+hE/EZSA6
+	 vOTOZ4TCW5mSGa01x0fc6FZWZtDWq3B25oI2njoolmQMgGu6hu3EQWPawXK+beKJDF
+	 XExxqSBY0jyixrLSyEW1rNP488WG/wOjifSRX6/CVfmyNZkapZcFYXTxJ7ONkBps7v
+	 yAx7LBSlwdHWDLnRkKW/Z7mgSmvef8DxJEEeDMyJnKzjXX2IWLgj6udaTPoCmhkReU
+	 xNLfgaBbO5HGw==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan@kernel.org>)
-	id 1oBve7-0008NT-GR; Thu, 14 Jul 2022 12:00:35 +0200
-Date: Thu, 14 Jul 2022 12:00:35 +0200
+	id 1oBvkb-0008Qr-Uv; Thu, 14 Jul 2022 12:07:18 +0200
+Date: Thu, 14 Jul 2022 12:07:17 +0200
 From: Johan Hovold <johan@kernel.org>
 To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 Cc: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>,
@@ -57,18 +57,18 @@ Cc: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@ti.com>,
 	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
 	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v2 03/30] dt-bindings: phy: qcom,qmp: drop redundant
- descriptions
-Message-ID: <Ys/pQw3e0HPhLZUg@hovoldconsulting.com>
+Subject: Re: [PATCH v2 16/30] dt-bindings: phy: qcom,qmp-ufs: add missing
+ SM8450 clock
+Message-ID: <Ys/q1crMhS3Ou+qu@hovoldconsulting.com>
 References: <20220707134725.3512-1-johan+linaro@kernel.org>
- <20220707134725.3512-4-johan+linaro@kernel.org>
- <26916d41-f398-8527-96f4-9a28f4f4e789@linaro.org>
+ <20220707134725.3512-17-johan+linaro@kernel.org>
+ <e8046961-9555-07b7-721c-eeb278cb2ec7@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <26916d41-f398-8527-96f4-9a28f4f4e789@linaro.org>
+In-Reply-To: <e8046961-9555-07b7-721c-eeb278cb2ec7@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220714_030039_788499_A5D64523 
-X-CRM114-Status: GOOD (  13.62  )
+X-CRM114-CacheID: sfid-20220714_030717_244914_636B7870 
+X-CRM114-Status: GOOD (  12.19  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,42 +85,21 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Jul 14, 2022 at 11:07:21AM +0200, Krzysztof Kozlowski wrote:
-> On 07/07/2022 15:46, Johan Hovold wrote:
-> > Drop the redundant supply and clock descriptions which did not add much
-> > information beyond what can be inferred from the corresponding resource
-> > names.
+On Thu, Jul 14, 2022 at 11:21:52AM +0200, Krzysztof Kozlowski wrote:
+> On 07/07/2022 15:47, Johan Hovold wrote:
+> > Add the missing "qref" clock used by the SM8450 UFS QMP PHY to the
+> > binding.
 > > 
-> > Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
+> > Fixes: e04121ba1b08 ("dt-bindings: phy: qcom,qmp: Add SM8450 UFS phy compatible")
+> > Fixes: 07fa917a335e ("arm64: dts: qcom: sm8450: add ufs nodes")
 > 
-> 
-> (...)
-> 
-> >              - const: ref
-> >              - const: refgen
-> >          resets:
-> > -          items:
-> > -            - description: reset of phy block.
-> > +          maxItems: 1
-> >          reset-names:
-> >            items:
-> >              - const: phy
-> > @@ -376,11 +334,7 @@ allOf:
-> >      then:
-> >        properties:
-> >          clocks:
-> > -          items:
-> > -            - description: Phy aux clock.
-> > -            - description: 19.2 MHz ref clk source.
-> > -            - description: 19.2 MHz ref clk.
-> 
-> Here and in other places - I think you loose information, because the
-> frequency is not mentioned in clock name.
+> The second fixes seems not appropriate here, because you are not fixing
+> a DTS. A fix for DTS would be a fix for that one.
 
-Right, but it is also arguable redundant information for the binding
-(similar for the vdda-pll voltage).
-
-I can add a comment after the name if you prefer that?
+I wanted to highlight the fact the binding wasn't amended when the DTS
+started using the new clock, which it should have. But sure, that would
+have gone in a separate patch. I can replace the second Fixes with a
+Link to the dts submission as a reference instead.
 
 Johan
 
