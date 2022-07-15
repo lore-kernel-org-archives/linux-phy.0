@@ -4,86 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1141BC433EF
-	for <linux-phy@archiver.kernel.org>; Thu, 14 Jul 2022 12:47:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4BB43C433EF
+	for <linux-phy@archiver.kernel.org>; Fri, 15 Jul 2022 01:56:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BxUuc9OIPFtUKzaE/+AR+mJek5TKM/5kcYozjIiLBGo=; b=dK8UJ8IuhUPLbK
-	ktjnh+yWq2m5BqyOBhqW1RhEUwEVp2ldD/qEYz/K6AS8ICvNfQ3Le/1eyO+j3uQT1sxpie2+zeWxK
-	vOG0Qxjc+CVu0tC/fQ3xZGlW+beolYEg6Yfks/Or+R+7eWyxUt61fzJH3462FdJE6mefhql1zSUnE
-	3avbNMYOzBBY5Jqb3dkTA4K5ObL3ugfiEqdOohufVbKE3kJECuwRC7JospJdcGK3dKQMWsEpV2i7K
-	+28X5oE3hE4Cby2cavsxoSS5aOdeVlH3o4cmoh32jyL3ZcSGRP/EZHQz6hoFdeInes1SmUTa0Mly0
-	MzToq5S5BcMYUuLRXpnw==;
+	List-Owner; bh=fRY7JlviVWwSv1r5FQ5zUmAzxCOaGI3pBc80V2idJL8=; b=Ed7DoRkDWDAfJe
+	b/EbuMwf/4qCfjkir3RyvrCE/xk0fQAYLgk3lI639Uy2FUMjVAWpZShgeTWxo3i1AEcEIkPiQpnBd
+	awB44nd8Fs7mXlLULqkzpFi5Tm9WBxpDUUQrPdNEhY8VSaMo+a+qvrT6D4lB/+K26oeLc+m9sTBlM
+	R/xPj9mJDUO9J1ZiBbfAxky85c/fclMa2m4VThIPFbk49WjKD4ACWukFJQrPsByo5O8K7yKcVuMTy
+	5l6MjgXFeuuzj6NthkTNYx7SKt2ScS9BCQGb9qyeJiI2fjgroPO/uJeSMiuONRaXGIg3xB8pYM2m2
+	i4VAA0RpZHOT2nWbr63A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oByFS-00ENUN-5Q; Thu, 14 Jul 2022 12:47:18 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1oCAYo-003Lc3-E3; Fri, 15 Jul 2022 01:56:06 +0000
+Received: from mga07.intel.com ([134.134.136.100])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oByCj-00ELOR-1P
-	for linux-phy@bombadil.infradead.org; Thu, 14 Jul 2022 12:44:29 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
-	:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
-	Content-Type:Content-ID:Content-Description;
-	bh=RtM1K4KYFO7+zN1BLFNXEOH4cdrni4QHNyFMOL0ipDQ=; b=GFKio/jdp1ByUZCcZFP4Czir0l
-	IHqurU+sdcGQ/PQVZR7S1fpKXytsWUpYycVGKfmEGVoHh4T7wOBK0+F03Pg8Idl/vO5Ln6xwcVTQA
-	tKDWWut3NO6iyMeJreMayet1uTVt+F61RBKGlayv9M1oxG/cIhi7dT5eavViKQdMDToei3i9QXwJ4
-	Uutpk3Xt0aYC5LR8opi/S/imvfIU8WbqVlcGRWCavCW3rYiDYfsTHdeI2ywZc8HTcibE+nN6dkOko
-	f0SOQIyhD1TfxdLVJzEcfgmr5qK8N8SEIZnxIqmnHD4BKlaCKZ0Y/BkpnPQC5ZqCYbJC1jwNPNulm
-	gZaCWmSw==;
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
-	by desiato.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oByCd-003q71-7v
-	for linux-phy@lists.infradead.org; Thu, 14 Jul 2022 12:44:27 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id F373C61F8A;
-	Thu, 14 Jul 2022 12:44:06 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9BC53C341DE;
-	Thu, 14 Jul 2022 12:44:05 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1657802645;
-	bh=/vdrzpj1m7eqBV6SFnyhWrugY9ghVbbon0lym+Lzgkg=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=EOmneFR1RJp2AUoMuvbpP7N51zc9ML7/iYWlWV0HwelsXLRZzKbbOr+t7E0iJMpT3
-	 Qs4II4C3fmolb43ZukjEsB7fCA8e4wSaNC4vXkv5+cuKq7ED1MUJHZwD26RtfIKUBW
-	 /jwvMcQ6S82pRkbKTxbFfb6j252dV7Bvofy91jCGusZo45+1hdvW8wByJWe+tsWHVV
-	 Rea7HflVsdA6vApNmkmlftDejzvPe7YzA4Qp9AnewgW8Jvh7Ie0qiZyVxUjlTX8U+Z
-	 3SbCTR7xv8uKK16SXG+5FIZkc77HO7mkxRf3i03OO1cjsCSJc7wHkM53OeGkn3s0II
-	 g2QVfuIHR/U7Q==
-Received: from johan by xi.lan with local (Exim 4.94.2)
-	(envelope-from <johan+linaro@kernel.org>)
-	id 1oByCR-0007EF-0B; Thu, 14 Jul 2022 14:44:11 +0200
-From: Johan Hovold <johan+linaro@kernel.org>
-To: Vinod Koul <vkoul@kernel.org>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
-Cc: Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <bjorn.andersson@linaro.org>,
-	Konrad Dybcio <konrad.dybcio@somainline.org>,
-	Kishon Vijay Abraham I <kishon@ti.com>,
-	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
-	linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	Johan Hovold <johan+linaro@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Subject: [PATCH v3 25/30] phy: qcom-qmp-pcie: drop pipe clock lane suffix
-Date: Thu, 14 Jul 2022 14:43:28 +0200
-Message-Id: <20220714124333.27643-26-johan+linaro@kernel.org>
-X-Mailer: git-send-email 2.35.1
-In-Reply-To: <20220714124333.27643-1-johan+linaro@kernel.org>
-References: <20220714124333.27643-1-johan+linaro@kernel.org>
+	id 1oCAYl-003La9-Tu
+	for linux-phy@lists.infradead.org; Fri, 15 Jul 2022 01:56:05 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1657850163; x=1689386163;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=KChe3YiLWvtfY16v3Wrv+LYGFrMr3lG5eJioM1UXoK8=;
+  b=HueIi0ktKx+4+UK2s84g3j/49QxWDLG1owBYR/IIKXyG29fRqOjvAty/
+   XMSZODw96USQQLeXPPLzCqbbOGYpnyjPIxrN8LGkJ3vG5ikotuGo9WkmI
+   3PU0WEKnHdWNLscfv4573EfWVjcvdmkTZqQe9Sl646K9jLpR8R8/nua1g
+   ZGf/87WCO5uTDUgnzF1aOyqwWb5CjMLwmGG6i1xsFGE+tv5BSvUFDX5C9
+   xVKs1DBiGXkuDRzhzG05saFmlV/0MfQfq0D/sbjQN5fdz+lJF/7gtAF6r
+   7m+3wTVqADU0OWuVW/E9XCgvKyFsjNy/I1Y6pcndirkGmTfxF2cZN8y+Q
+   g==;
+X-IronPort-AV: E=McAfee;i="6400,9594,10408"; a="349642800"
+X-IronPort-AV: E=Sophos;i="5.92,272,1650956400"; 
+   d="scan'208";a="349642800"
+Received: from fmsmga007.fm.intel.com ([10.253.24.52])
+  by orsmga105.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 14 Jul 2022 18:56:00 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.92,272,1650956400"; 
+   d="scan'208";a="600335169"
+Received: from lkp-server01.sh.intel.com (HELO fd2c14d642b4) ([10.239.97.150])
+  by fmsmga007.fm.intel.com with ESMTP; 14 Jul 2022 18:55:57 -0700
+Received: from kbuild by fd2c14d642b4 with local (Exim 4.95)
+	(envelope-from <lkp@intel.com>)
+	id 1oCAYe-0001Pp-Fp;
+	Fri, 15 Jul 2022 01:55:56 +0000
+Date: Fri, 15 Jul 2022 09:55:18 +0800
+From: kernel test robot <lkp@intel.com>
+To: Vincent Shih <vincent.sunplus@gmail.com>, kishon@ti.com,
+	vkoul@kernel.org, p.zabel@pengutronix.de,
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-usb@vger.kernel.org, robh+dt@kernel.org,
+	krzysztof.kozlowski+dt@linaro.org, devicetree@vger.kernel.org,
+	wells.lu@sunplus.com
+Cc: Paul Gazzillo <paul@pgazz.com>,
+	Necip Fazil Yildiran <fazilyildiran@gmail.com>,
+	kbuild-all@lists.01.org, Vincent Shih <vincent.sunplus@gmail.com>
+Subject: Re: [PATCH v3 1/2] phy: usb: Add USB2.0 phy driver for Sunplus SP7021
+Message-ID: <202207150959.Pamg8oYO-lkp@intel.com>
+References: <1657529403-18084-2-git-send-email-vincent.sunplus@gmail.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1657529403-18084-2-git-send-email-vincent.sunplus@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220714_134423_876119_D26F8999 
-X-CRM114-Status: GOOD (  12.54  )
+X-CRM114-CacheID: sfid-20220714_185604_045915_1E3F25AF 
+X-CRM114-Status: UNSURE (   9.53  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,43 +89,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The pipe clock is defined in the "lane" node so there's no need to keep
-adding a redundant lane-number suffix to the clock name.
+Hi Vincent,
 
-Update driver to support the new binding where the pipe clock name has
-been deprecated by instead requesting the clock by index.
+I love your patch! Perhaps something to improve:
 
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
----
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 4 +---
- 1 file changed, 1 insertion(+), 3 deletions(-)
+[auto build test WARNING on robh/for-next]
+[also build test WARNING on pza/reset/next linus/master v5.19-rc6 next-20220714]
+[If your patch is applied to the wrong git tree, kindly drop us a note.
+And when submitting patch, we suggest to use '--base' as documented in
+https://git-scm.com/docs/git-format-patch#_base_tree_information]
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-index 2d65e1f56bfc..3ddbb8e89f04 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-@@ -2314,7 +2314,6 @@ int qcom_qmp_phy_pcie_create(struct device *dev, struct device_node *np, int id,
- 	struct qcom_qmp *qmp = dev_get_drvdata(dev);
- 	struct phy *generic_phy;
- 	struct qmp_phy *qphy;
--	char prop_name[MAX_PROP_NAME];
- 	int ret;
- 
- 	qphy = devm_kzalloc(dev, sizeof(*qphy), GFP_KERNEL);
-@@ -2374,8 +2373,7 @@ int qcom_qmp_phy_pcie_create(struct device *dev, struct device_node *np, int id,
- 	if (!qphy->pcs_misc)
- 		dev_vdbg(dev, "PHY pcs_misc-reg not used\n");
- 
--	snprintf(prop_name, sizeof(prop_name), "pipe%d", id);
--	qphy->pipe_clk = devm_get_clk_from_child(dev, np, prop_name);
-+	qphy->pipe_clk = devm_get_clk_from_child(dev, np, NULL);
- 	if (IS_ERR(qphy->pipe_clk)) {
- 		return dev_err_probe(dev, PTR_ERR(qphy->pipe_clk),
- 				     "failed to get lane%d pipe clock\n", id);
+url:    https://github.com/intel-lab-lkp/linux/commits/Vincent-Shih/Add-USB2-0-phy-driver-for-Sunplus-SP7021/20220711-165347
+base:   https://git.kernel.org/pub/scm/linux/kernel/git/robh/linux.git for-next
+config: (https://download.01.org/0day-ci/archive/20220715/202207150959.Pamg8oYO-lkp@intel.com/config)
+reproduce:
+        # https://github.com/intel-lab-lkp/linux/commit/7370e305e24f576291c9f474664b068188d6de57
+        git remote add linux-review https://github.com/intel-lab-lkp/linux
+        git fetch --no-tags linux-review Vincent-Shih/Add-USB2-0-phy-driver-for-Sunplus-SP7021/20220711-165347
+        git checkout 7370e305e24f576291c9f474664b068188d6de57
+        # 1. reproduce by kismet
+           # install kmax per https://github.com/paulgazz/kmax/blob/master/README.md
+           kismet --linux-ksrc=linux --selectees CONFIG_NVMEM_SUNPLUS_OCOTP --selectors CONFIG_PHY_SUNPLUS_USB -a=i386
+        # 2. reproduce by make
+           # save the config file to linux source tree
+           cd linux
+           make ARCH=i386 olddefconfig
+
+If you fix the issue, kindly add following tag where applicable
+Reported-by: kernel test robot <lkp@intel.com>
+
+
+kismet warnings: (new ones prefixed by >>)
+>> kismet: WARNING: unmet direct dependencies detected for NVMEM_SUNPLUS_OCOTP when selected by PHY_SUNPLUS_USB
+   
+   WARNING: unmet direct dependencies detected for NVMEM_SUNPLUS_OCOTP
+     Depends on [n]: NVMEM [=n] && (SOC_SP7021 || COMPILE_TEST [=y]) && HAS_IOMEM [=y]
+     Selected by [y]:
+     - PHY_SUNPLUS_USB [=y] && OF [=y] && (SOC_SP7021 || COMPILE_TEST [=y])
+
 -- 
-2.35.1
-
+0-DAY CI Kernel Test Service
+https://01.org/lkp
 
 -- 
 linux-phy mailing list
