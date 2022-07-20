@@ -4,99 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DD7A0C43334
-	for <linux-phy@archiver.kernel.org>; Wed, 20 Jul 2022 13:13:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 42E58C43334
+	for <linux-phy@archiver.kernel.org>; Wed, 20 Jul 2022 14:17:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:
+	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YNWOWqBCiqnkuxBNOxeBTdYhPESFVEf0c6dRe8/Ldk4=; b=xCCPcThk9Pgx2g
-	Ex7QSrIWblEtgZUBQN++8WxseGDzrNxEUXr/qfBWxb6l1KaE2wI1i4cR5qCPECP8bj//EzpjfUkhO
-	MsSrMr0anBjMRIySp3+wwNP0lGKmVh6zBTQHaRz7hXV2YBGuA+j6cGpuVbgbWNnoTEB+7oXzWFHVg
-	7jPDxumN506OwfE5H4/p8hPYdmN7ms6J7Ze3MDmbIt8AAYh759r86h7Sd1XaXwQxMXkKDIKJ/kjwb
-	2QWpZ850HQvvMw5GHzOg+3i0lSoK16BP7682a+1kNb+Yp+izIA9ddTZlYfdLi/wyAF/vENjSYdfoX
-	9lYfnFwILZM0YKmfMGxA==;
+	List-Owner; bh=0f+B7r7j7T2LsZiyDDwWPH3hJ+hqmYGkPMe27JBAXzs=; b=QHSjBZOKm0Uxo2
+	mtfjCdgqKFTGQuU6VDIUkdHJTjLE6qwq3/99/920Wx25L4yza6NihEg84kMzgi7fIJPAg/H5ImSHN
+	YGdMGsa/i1OLcBfM1ymhktVp3qilmQBxsZlzOqmwK11oVpJpnnkHXANa+GUGgH3AUwVRYX3x9G9gp
+	/xMVoUBYwYwsZr0fHGMgSAw3VXRex0+v71O7UQPwnOy6nrR6qW/JHnHJVifJzUorpjLdVCVSLqypl
+	ptRfznJCqlxtm4IDyPEeiSrno5flEtZc+jnZNS1CIi3x5pEA9crlc5AN70rDl+f46+ZO1elbFezdX
+	6eUYIZskk2evWN09+Cgg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oE9Vi-005pR8-Hi; Wed, 20 Jul 2022 13:13:06 +0000
-Received: from mail-wm1-x32c.google.com ([2a00:1450:4864:20::32c])
+	id 1oEAW8-006gtw-Kr; Wed, 20 Jul 2022 14:17:36 +0000
+Received: from mail-io1-f47.google.com ([209.85.166.47])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oE9Vd-005pGZ-Tt
-	for linux-phy@lists.infradead.org; Wed, 20 Jul 2022 13:13:04 +0000
-Received: by mail-wm1-x32c.google.com with SMTP id u14-20020a05600c00ce00b003a323062569so1239924wmm.4
-        for <linux-phy@lists.infradead.org>; Wed, 20 Jul 2022 06:13:00 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=baylibre-com.20210112.gappssmtp.com; s=20210112;
-        h=from:to:cc:subject:date:message-id:in-reply-to:references
-         :mime-version:content-transfer-encoding;
-        bh=9LgN/S0aDXYI9VGCuWlvvgvQnGpuTnnqHsiuzMd2wxQ=;
-        b=hZDBwVWDP5UPXoM/26p/r+j251hc2vAqDOCERxSqp1n7sS06JhTWTNUFrAn/iDVTDd
-         sk1s9gAeT8g6iMlidLoC2ByWsp6jDzKjyGiwTrHFM+kSqmhnpOGy27aGmIOCRSPQXtjU
-         iuHcWvpuEBu/GQL3HjFfyH38HWdcfRwpw/QCs8xRs37MzT7Ik+pcHBHS4PQz7Y7kmEGs
-         2zEZT/L22GV5s5xGf/GZOt2FikEOhhfo8etSuo2R+s9KR06g6oLOKoKJ9cp2Devph4aN
-         HYnuH9yadQ7mkeUaGKIxYyw+FFFXzGLODhmRa8DXLmg2/yBLqQ88/ndcWxmAnabBH3H2
-         gPtg==
+	id 1oEAW5-006gmP-8A
+	for linux-phy@lists.infradead.org; Wed, 20 Jul 2022 14:17:34 +0000
+Received: by mail-io1-f47.google.com with SMTP id r70so13220025iod.10
+        for <linux-phy@lists.infradead.org>; Wed, 20 Jul 2022 07:17:31 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
-         :references:mime-version:content-transfer-encoding;
-        bh=9LgN/S0aDXYI9VGCuWlvvgvQnGpuTnnqHsiuzMd2wxQ=;
-        b=Ll4U/AJs5D+slF+4OpoinBOEJOCgU8vnVV9N95ioEveE+kmTToBlFKs/Den1V40l6o
-         Fg+gJhqBY+Ec2+YULgA32HhYaQWM44fTzKdVZnGZj7kMhDAXWLFnurMfVLTGrElCl7hI
-         lgCzRZ32Cmj5ZPwQS0v4P1MteRk7bbb7Q+xr/OVJTzzH0tJrp+jYm718xLNBYEL66Pz7
-         SdcJx8HSq09AGuQ9oqbeeP/qMddQR0zOI7HAdOMglt7f6M7bpXPw2+ttAa1+ranv/+vl
-         t1XsnyTNBXcYSgKX+vW5wsnFCp1fuvgVjEDnLr8pabjJCw40vrgf/ootkDvPJ8QPjbdD
-         f3xg==
-X-Gm-Message-State: AJIora/QUBQvs5Ubi8XUhk8nJn9Lb3EVTcLUIbUOGfk24fTPvw48u+GI
-	7tOc+y+vyZ2nbQmWNSid4SX3kw==
-X-Google-Smtp-Source: AGRyM1tHJE+D+NzsNowU+goDfK+LE01p5AmV4nGBMM9nPZVjT15IP9nJaaafPk1bF4qVs2pE8TNv1A==
-X-Received: by 2002:a05:600c:3b91:b0:3a3:1cbe:d531 with SMTP id n17-20020a05600c3b9100b003a31cbed531mr3812400wms.159.1658322779330;
-        Wed, 20 Jul 2022 06:12:59 -0700 (PDT)
-Received: from amjad-ThinkPad-T490.home (2a01cb040613180084408ac44a1fa242.ipv6.abo.wanadoo.fr. [2a01:cb04:613:1800:8440:8ac4:4a1f:a242])
-        by smtp.googlemail.com with ESMTPSA id y11-20020adfc7cb000000b0021d6924b777sm16853316wrg.115.2022.07.20.06.12.57
+        h=x-gm-message-state:from:to:cc:in-reply-to:references:subject:date
+         :message-id;
+        bh=fTbHuzNk788olqUHrliPvBvFbjERGU5VKnP1jkIeETE=;
+        b=lt1kl5E7Gjv+809IDc5M0ev8S55hEVJMT4JxmxTztgedRSJYg5QTVX200+1dzHAqN7
+         c564w59OGM9nmjNcDCTH8HKYImB7mozkNMpuq1plTMUg4j3NzKd7LfM5045ZI66RBd/O
+         uCQEM2iczDnkeekR+dOva9/J4FYY4YIXH2qTDcdD1Az/Ns4RQd+QHbpKgMF6vntnEHL+
+         fPqwaHfNSNEb3UTsE+RZobwWKOW1uF+CvlqlBn/xH4p/z/PrhgMArvn5uH3Co63MIcly
+         /c5ckOqh+VT4RtwRxJubrLNFO0+S9mYrAQ1OI8f+ZcoenlHlJG7T2ksezidwV9QcXT1V
+         K2Dw==
+X-Gm-Message-State: AJIora9cbME/WdVNdX1w5ocaUYti+CpAbuDxeuMG4bIUx59rfl9NE8ah
+	Iz6l6oHzkwi8qgZfJ4k7jQ==
+X-Google-Smtp-Source: AGRyM1v1gxgKIvHOMxLR/VgWQI1MqZ7vRACS7FQYPq1C8bqyEIFjCWJ6rX5JLcQbBrttPj2w905law==
+X-Received: by 2002:a02:cea6:0:b0:33f:774f:5267 with SMTP id z6-20020a02cea6000000b0033f774f5267mr19939966jaq.274.1658326650262;
+        Wed, 20 Jul 2022 07:17:30 -0700 (PDT)
+Received: from robh.at.kernel.org ([64.188.179.248])
+        by smtp.gmail.com with ESMTPSA id m15-20020a056e020def00b002dce9ddcb08sm3619740ilj.30.2022.07.20.07.17.27
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 20 Jul 2022 06:12:58 -0700 (PDT)
-From: Amjad Ouled-Ameur <aouledameur@baylibre.com>
-To: fparent@baylibre.com
-Cc: broonie@kernel.org,
-	chaotian.jing@mediatek.com,
-	chunfeng.yun@mediatek.com,
-	devicetree@vger.kernel.org,
-	dmaengine@vger.kernel.org,
-	jic23@kernel.org,
-	krzysztof.kozlowski+dt@linaro.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-i2c@vger.kernel.org,
-	linux-iio@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	linux-mediatek@lists.infradead.org,
-	linux-mmc@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-serial@vger.kernel.org,
-	linux-spi@vger.kernel.org,
-	linux-usb@vger.kernel.org,
-	linux-watchdog@vger.kernel.org,
-	linux@roeck-us.net,
-	matthias.bgg@gmail.com,
-	qii.wang@mediatek.com,
-	robh+dt@kernel.org,
-	srinivas.kandagatla@linaro.org,
-	ulf.hansson@linaro.org,
-	vkoul@kernel.org,
-	wim@linux-watchdog.org
-Subject: Re: [PATCH 16/17] arm64: dts: mediatek: add mt8365 device-tree
-Date: Wed, 20 Jul 2022 15:12:57 +0200
-Message-Id: <20220720131257.530168-1-aouledameur@baylibre.com>
-X-Mailer: git-send-email 2.37.1
-In-Reply-To: <20220531135026.238475-17-fparent@baylibre.com>
-References: <20220531135026.238475-17-fparent@baylibre.com>
-MIME-Version: 1.0
+        Wed, 20 Jul 2022 07:17:29 -0700 (PDT)
+Received: (nullmailer pid 3267382 invoked by uid 1000);
+	Wed, 20 Jul 2022 14:17:27 -0000
+From: Rob Herring <robh@kernel.org>
+To: Wangseok Lee <wangseok.lee@samsung.com>
+Cc: "kw@linux.com" <kw@linux.com>, Sang Min Kim <hypmean.kim@samsung.com>, Yeeun Kim <yeeun119.kim@samsung.com>, "jesper.nilsson@axis.com" <jesper.nilsson@axis.com>, "lars.persson@axis.com" <lars.persson@axis.com>, "kernel@axis.com" <kernel@axis.com>, "robh+dt@kernel.org" <robh+dt@kernel.org>, "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>, "kishon@ti.com" <kishon@ti.com>, "lorenzo.pieralisi@arm.com" <lorenzo.pieralisi@arm.com>, "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>, Dongjin Yang <dj76.yang@samsung.com>, "linux-arm-kernel@axis.com" <linux-arm-kernel@axis.com>, "bhelgaas@google.com" <bhelgaas@google.com>, "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>, "vkoul@kernel.org" <vkoul@kernel.org>, Moon-Ki Jun <moonki.jun@samsung.com>, "krzk+dt@kernel.org" <krzk+dt@kernel.org>, "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>
+In-Reply-To: <20220720055436epcms2p63896ebe4e2131e3844044d0112288570@epcms2p6>
+References: <20220720055108epcms2p563c65b3de6333ccbc68386aa2471a800@epcms2p5>        <CGME20220720055108epcms2p563c65b3de6333ccbc68386aa2471a800@epcms2p6> <20220720055436epcms2p63896ebe4e2131e3844044d0112288570@epcms2p6>
+Subject: Re: [PATCH v4 1/5] dt-bindings: pci: Add ARTPEC-8 PCIe controller
+Date: Wed, 20 Jul 2022 08:17:27 -0600
+Message-Id: <1658326647.075453.3267381.nullmailer@robh.at.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220720_061302_235410_894BB4D3 
-X-CRM114-Status: UNSURE (   5.73  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220720_071733_313102_1EF5B9C1 
+X-CRM114-Status: GOOD (  12.88  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -108,26 +71,66 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Fabien,
+On Wed, 20 Jul 2022 14:54:36 +0900, Wangseok Lee wrote:
+> Add description to support Axis, ARTPEC-8 SoC. ARTPEC-8 is the SoC platform
+> of Axis Communications and PCIe controller is designed based on Design-Ware
+> PCIe controller.
+> 
+> Signed-off-by: Wangseok Lee <wangseok.lee@samsung.com>
+> ---
+> v3->v4 :
+> -Add missing properties
+> 
+> v2->v3 :
+> -Modify version history to fit the linux commit rule
+> -Remove 'Device Tree Bindings' on title
+> -Remove clock-names entries
+> -Change node name to soc from artpec8 on excamples
+> 
+> v1->v2 :
+> -'make dt_binding_check' result improvement
+> -Add the missing property list
+> -Align the indentation of continued lines/entries
+> ---
+>  .../bindings/pci/axis,artpec8-pcie-ep.yaml         | 138 +++++++++++++++++++
+>  .../devicetree/bindings/pci/axis,artpec8-pcie.yaml | 148 +++++++++++++++++++++
+>  2 files changed, 286 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/pci/axis,artpec8-pcie-ep.yaml
+>  create mode 100644 Documentation/devicetree/bindings/pci/axis,artpec8-pcie.yaml
+> 
 
-> +		tzts4: tzts4-thermal {
-> +			polling-delay-passive = <0>;
-> +			polling-delay = <0>;
-> +			thermal-sensors = <&thermal 4>;
-> +			trips {};
-> +			cooling-maps {};
-> +		};
+My bot found errors running 'make DT_CHECKER_FLAGS=-m dt_binding_check'
+on your patch (DT_CHECKER_FLAGS is new in v5.13):
 
-AFAIK mt8365 has only 3 thermal sensors, therefore tzts4 should not be
-added.
+yamllint warnings/errors:
 
-Regards,
-Amjad
+dtschema/dtc warnings/errors:
+/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/pci/axis,artpec8-pcie-ep.example.dtb: pcie-ep@17200000: Unevaluated properties are not allowed ('#interrupt-cells', 'bus-range', 'interrupt-names', 'samsung,syscon-bus-p-fsys', 'samsung,syscon-bus-s-fsys' were unexpected)
+	From schema: /builds/robherring/linux-dt-review/Documentation/devicetree/bindings/pci/axis,artpec8-pcie-ep.yaml
+/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/pci/axis,artpec8-pcie.example.dtb: pcie@17200000: Unevaluated properties are not allowed ('samsung,syscon-bus-p-fsys', 'samsung,syscon-bus-s-fsys' were unexpected)
+	From schema: /builds/robherring/linux-dt-review/Documentation/devicetree/bindings/pci/axis,artpec8-pcie.yaml
+
+doc reference errors (make refcheckdocs):
+
+See https://patchwork.ozlabs.org/patch/
+
+This check can fail if there are any dependencies. The base for a patch
+series is generally the most recent rc1.
+
+If you already ran 'make dt_binding_check' and didn't see the above
+error(s), then make sure 'yamllint' is installed and dt-schema is up to
+date:
+
+pip3 install dtschema --upgrade
+
+Please check and re-submit.
+
 
 -- 
 linux-phy mailing list
