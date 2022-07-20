@@ -4,109 +4,128 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 76C01C43334
-	for <linux-phy@archiver.kernel.org>; Wed, 20 Jul 2022 06:18:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4600EC433EF
+	for <linux-phy@archiver.kernel.org>; Wed, 20 Jul 2022 09:15:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:References:Date:Message-ID:
-	In-Reply-To:CC:To:From:Subject:Mime-Version:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LEswA9HAB0POW2+ZLIwAdeEAS8iZPY6EQhssKC5Jxls=; b=aTPc/LV51X53H6
-	VjZnYf1ewRcpisMoTwjbOZGeVN6iL7v7RiqTtzBRou7EICMaKDNTl5xFJqKYQLpQohf2P9M0rH8d0
-	f6J8k3nfFQIPyFBJfymWaKlNxwCbu1M5poiKJLSZXmNDQPIpuNGo2sY8SFxSQkL2P3n19YQv72cTg
-	RC7gAJ5HHTL003Eih1+jXM/bWNtDAX1jpdlceMZz3Dk2AL6mfX9xk2eBcg45X/GnokrbTuqBHMMYA
-	LNwG6Ftc1DDw4NM3rPP2eWFb+yEcISN5Gr7FvL7S6JIFRezWD5y20SGIQ4AfYS0SrbNPbbYv2A4UR
-	BbAxE3Y9VRH9tddPQN5g==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=djWijyOypoytPMvzgzO8RtJtGUrCkN7FRZ6i2jXv/yo=; b=eyoyrnoYZZKmlP
+	9q7dX7ZL3n/4vnVghgWpIp0pgFADK+obn17CslEn7z9ZspVr0qTEaXHmQViKGpN9gDJCsT+Hrvm0Y
+	xt0r2ECay5XrBe26w3vWYyjw+A60YXxnUFp7F8779zvUIOUNXWFxRz/N1aK9KIvK+YIV1WzzEKyLw
+	xKNbq1qdZTWr+s1QhXWmxBpBFts5Hiw/2dz9k08ATd6RZkwEJEOc+kmARHupsZbCMLBvWMxRQ22ir
+	bRwRWvvukSkXo8stgkXZQVO8D2NO7ohG/fHVh1eTigWtvpRg9sqr42OhOiRh7ae3kNhXGJwMHV2k8
+	xrzdSWPazTnc8Ypzsxmw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oE32U-0017fW-Tx; Wed, 20 Jul 2022 06:18:30 +0000
-Received: from mailout4.samsung.com ([203.254.224.34])
+	id 1oE5oA-0037lM-Mk; Wed, 20 Jul 2022 09:15:54 +0000
+Received: from mail-db8eur05on2066.outbound.protection.outlook.com ([40.107.20.66] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oE32R-0017Tu-E8
-	for linux-phy@lists.infradead.org; Wed, 20 Jul 2022 06:18:29 +0000
-Received: from epcas2p4.samsung.com (unknown [182.195.41.56])
-	by mailout4.samsung.com (KnoxPortal) with ESMTP id 20220720061821epoutp048cb1f7c5e74632d8133d388a5a5bc15b~DdSe8XuO92524725247epoutp046
-	for <linux-phy@lists.infradead.org>; Wed, 20 Jul 2022 06:18:21 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout4.samsung.com 20220720061821epoutp048cb1f7c5e74632d8133d388a5a5bc15b~DdSe8XuO92524725247epoutp046
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
-	s=mail20170921; t=1658297901;
-	bh=3r2pbWvirGByjB+v0MQEPuj3WAwHhq1rsruPh5OW+3I=;
-	h=Subject:Reply-To:From:To:CC:In-Reply-To:Date:References:From;
-	b=tRScmwnc3RsmnI9WiqsCNaML+bzCREY00i9aJP81URn5xQweklWuryzGnv6HYPIiM
-	 D8LjouROTQJh2yQX390el9rTIrQgl2pp3WH21LAqpWic6c3/7U3wiutn84iefKtHGx
-	 2iOkJEZfdHyAUCHkjDnaoTAJ6y6EVCXigXv0lJlA=
-Received: from epsnrtp2.localdomain (unknown [182.195.42.163]) by
-	epcas2p2.samsung.com (KnoxPortal) with ESMTP id
-	20220720061820epcas2p25cfc6bf201ff238eda734135791994be~DdSdvZjyH2579125791epcas2p25;
-	Wed, 20 Jul 2022 06:18:20 +0000 (GMT)
-Received: from epsmges2p3.samsung.com (unknown [182.195.36.68]) by
-	epsnrtp2.localdomain (Postfix) with ESMTP id 4LnlrC3Qm4z4x9Q9; Wed, 20 Jul
-	2022 06:18:19 +0000 (GMT)
-X-AuditID: b6c32a47-5f7ff700000025aa-ba-62d79e2b3363
-Received: from epcas2p2.samsung.com ( [182.195.41.54]) by
-	epsmges2p3.samsung.com (Symantec Messaging Gateway) with SMTP id
-	63.9E.09642.B2E97D26; Wed, 20 Jul 2022 15:18:19 +0900 (KST)
-Mime-Version: 1.0
-Subject: [PATCH v4 5/5] MAINTAINERS: Add Axis ARTPEC-8 PCIe PHY maintainers
-From: Wangseok Lee <wangseok.lee@samsung.com>
-To: "robh+dt@kernel.org" <robh+dt@kernel.org>, "krzk+dt@kernel.org"
-	<krzk+dt@kernel.org>, "kishon@ti.com" <kishon@ti.com>, "vkoul@kernel.org"
-	<vkoul@kernel.org>, "linux-kernel@vger.kernel.org"
-	<linux-kernel@vger.kernel.org>, "jesper.nilsson@axis.com"
-	<jesper.nilsson@axis.com>, "lars.persson@axis.com" <lars.persson@axis.com>,
-	"bhelgaas@google.com" <bhelgaas@google.com>, "linux-phy@lists.infradead.org"
-	<linux-phy@lists.infradead.org>, "linux-pci@vger.kernel.org"
-	<linux-pci@vger.kernel.org>, "devicetree@vger.kernel.org"
-	<devicetree@vger.kernel.org>, "lorenzo.pieralisi@arm.com"
-	<lorenzo.pieralisi@arm.com>, "kw@linux.com" <kw@linux.com>,
-	"linux-arm-kernel@axis.com" <linux-arm-kernel@axis.com>, "kernel@axis.com"
-	<kernel@axis.com>
-CC: Moon-Ki Jun <moonki.jun@samsung.com>, Sang Min Kim
-	<hypmean.kim@samsung.com>, Dongjin Yang <dj76.yang@samsung.com>, Yeeun Kim
-	<yeeun119.kim@samsung.com>
-X-Priority: 3
-X-Content-Kind-Code: NORMAL
-In-Reply-To: <20220720055108epcms2p563c65b3de6333ccbc68386aa2471a800@epcms2p5>
-X-CPGS-Detection: blocking_info_exchange
-X-Drm-Type: N,general
-X-Msg-Generator: Mail
-X-Msg-Type: PERSONAL
-X-Reply-Demand: N
-Message-ID: <20220720061818epcms2p55e9dc4d71232cc37bef0fd1ff525ded5@epcms2p5>
-Date: Wed, 20 Jul 2022 15:18:18 +0900
-X-CMS-MailID: 20220720061818epcms2p55e9dc4d71232cc37bef0fd1ff525ded5
-X-Sendblock-Type: AUTO_CONFIDENTIAL
-X-CPGSPASS: Y
-X-CPGSPASS: Y
-CMS-TYPE: 102P
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFrrAJsWRmVeSWpSXmKPExsWy7bCmma72vOtJBp3nxS2WNGVYvDykaTH/
-	yDlWi90zljNZzJx6htni+aFZzBafWlQtLjztYbN4Oesem0VDz29WiyNvPjJb7D++ksni8q45
-	bBZn5x1ns5iw6huLxZvfL9gtzi3OtGjde4TdYuedE8wWv7b+YXIQ8Vgzbw2jx/V1AR4LNpV6
-	bFrVyebx5Mp0Jo/NS+o9+rasYvQ4fmM7k8fnTXIBnFHZNhmpiSmpRQqpecn5KZl56bZK3sHx
-	zvGmZgaGuoaWFuZKCnmJuam2Si4+AbpumTlATykplCXmlAKFAhKLi5X07WyK8ktLUhUy8otL
-	bJVSC1JyCswL9IoTc4tL89L18lJLrAwNDIxMgQoTsjNWzDvBUtDDVfH78S+2BsZ7HF2MHBwS
-	AiYSdzaFdjFycggJ7GCU+LbWGyTMKyAo8XeHMEhYWMBb4tPlZnaIEiWJHWvmMUPE9SWur+hm
-	BbHZBHQl/i1+yQZiiwh8ZpW4vkewi5GLg1lgAaPE/t/7GEESEgK8EjPan7JA2NIS25dvZQTZ
-	xSngJ/G2zQEirCHxY1kvM4QtKnFz9Vt2GPv9sflQY0QkWu+dhaoRlHjwczdUXEpiwZNDrBB2
-	tcT+v7+ZIOwGRon++6kQ3+pL7LhuDBLmFfCVuDLzJNgYFgFViRk3lkCNcZG4vf4d2BhmAXmJ
-	7W/nMIO0MgtoSqzfpQ8xRVniyC0WmJ8aNv5mR2czC/BJdBz+CxffMe8J1DFqEvNW7mSewKg8
-	CxHMs5DsmoWwawEj8ypGsdSC4tz01GKjAmN4vCbn525iBCdtLfcdjDPeftA7xMjEwXiIUYKD
-	WUmE92nh9SQh3pTEyqrUovz4otKc1OJDjKZAX05klhJNzgfmjbySeEMTSwMTMzNDcyNTA3Ml
-	cV6vlA2JQgLpiSWp2ampBalFMH1MHJxSDUy+fuvKt95YuPDQ98kW27e/kxR4mGUZ3yod9+xw
-	PffR6JiQiEXK+9OjWq5bi3ec1xV5N22BekrW2ieO7b3PHm3aU+TMIvWa6fe6vDfl1Uc2qoR5
-	H3mivj9YYGpiUVCYxy8jQ4ZjC1JqbaMLp0r39y93753wlT9J5ne5gGrEy82XLu7jXW3714WL
-	I99Lea9F+vOD+/baGhmePPi/+OHP4gkre/vs71dl9b0SKrM8uC1xmcjPZEeVoiePsueaXYt+
-	ZqNryy5Z83/OzL9sM44tzJn0NGSPj9YWjx7PvGjRnonu65vvqCQyCF9cznXDYdOtIqYv7tY7
-	kjy6lF9nFxRNDTWNspl55d6VzG6p2zptIUosxRmJhlrMRcWJADNwa7JjBAAA
-DLP-Filter: Pass
-X-CFilter-Loop: Reflected
-X-CMS-RootMailID: 20220720055108epcms2p563c65b3de6333ccbc68386aa2471a800
-References: <20220720055108epcms2p563c65b3de6333ccbc68386aa2471a800@epcms2p5>
-	<CGME20220720055108epcms2p563c65b3de6333ccbc68386aa2471a800@epcms2p5>
+	id 1oE5o7-0037hf-MB; Wed, 20 Jul 2022 09:15:53 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=SLGB8ULKWjoJjlPlyoj1GvXJ9NA/kyOxmBvS0HHtI0sePDn+V/YbYW9edAsw9YeTxMGUSR2ELDfV/WlgJJaLUYGNcAp4rcPnaw3AyfJ49Cur4xbNLMez3+QVfE+oPsE3ghif/MUclYEj6IOscSQFhKs8BsMPoFOM1b0KViZBwnqBrZUeCwVxyzBkvuaJt6vmRuxold8Oqa2q8FB+5c7fbGxEIr9QQnffL/FxhbyAFg9pHEzbPbXHyIEdYh78ST+2QndIracsKxCVrWeRQJ8+Oc72GLRneRVBxEuB3JIOzo0NbrKSgu+iJucNSEuNTKez5h9nqLvIw3bT8FPap3fcQQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=P8DF1s5WrwmrwwUmlEp6RwKEYGF2Sy/Vka4kl+zTXRc=;
+ b=mB+uvh3VvESIoQOKlyDV03r3kf7Ujwj9/YBqPFNj075OQNTeaFvhuTpgXy/6moJiSO+WDZw7LTeXyC6xXLTsMVYN95JjJLyz18aiYqd+Ff5CSrSzQ+klj0H1wylVsrT5yp7ZrbSZa1gx8L1hDJkyEShEpv0ZFBR09CLfXxpgoxjKCgR65GzpggfVuglJV+cFL9yKqrPTKiuOOYOPF2FlXLFETU+qphw65BUCg+H4hO4TdhDPzTS6EUJt17gbnZjNcPdTcfnzRHCXbjyvY661aXZohlmpZsebE2FcN7GBxypGcqMHrEgiL2g8dRKDk6xqdS+J8ZlXyiLU2VsbMUaVFA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=wolfvision.net; dmarc=pass action=none
+ header.from=wolfvision.net; dkim=pass header.d=wolfvision.net; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=wolfvision.net;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=P8DF1s5WrwmrwwUmlEp6RwKEYGF2Sy/Vka4kl+zTXRc=;
+ b=2mgkAhLzozI9D47bJlTuuU/yTrcximJpbBbbEIhxSQt3hLS7jWwA6kG538/sjp5yWLbpMgWn8GPUhjAB50XjpHorkUGbSVSUTB9MVOh6wVOVbejZHUBuHXfEN0Gfjp3WHzjfuVKgtXjJxnmAMvy597Gezn2z7qyIl6ccHvRo9ag=
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=wolfvision.net;
+Received: from AM4PR0802MB2131.eurprd08.prod.outlook.com
+ (2603:10a6:200:5c::22) by VI1PR08MB3934.eurprd08.prod.outlook.com
+ (2603:10a6:803:df::22) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5458.18; Wed, 20 Jul
+ 2022 09:15:43 +0000
+Received: from AM4PR0802MB2131.eurprd08.prod.outlook.com
+ ([fe80::dcaa:905c:ff8:1f5b]) by AM4PR0802MB2131.eurprd08.prod.outlook.com
+ ([fe80::dcaa:905c:ff8:1f5b%9]) with mapi id 15.20.5458.018; Wed, 20 Jul 2022
+ 09:15:43 +0000
+From: Michael Riesch <michael.riesch@wolfvision.net>
+To: linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Cc: Kishon Vijay Abraham I <kishon@ti.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Heiko Stuebner <heiko@sntech.de>,
+	Peter Geis <pgwipeout@gmail.com>,
+	Michael Riesch <michael.riesch@wolfvision.net>,
+	Sascha Hauer <s.hauer@pengutronix.de>,
+	Nicolas Frattaroli <frattaroli.nicolas@gmail.com>,
+	Liang Chen <cl@rock-chips.com>
+Subject: [PATCH 0/3] Add support for the RK356x variant of the Inno CSI DPHY
+Date: Wed, 20 Jul 2022 11:15:24 +0200
+Message-Id: <20220720091527.1270365-1-michael.riesch@wolfvision.net>
+X-Mailer: git-send-email 2.30.2
+X-ClientProxiedBy: ZR0P278CA0129.CHEP278.PROD.OUTLOOK.COM
+ (2603:10a6:910:40::8) To AM4PR0802MB2131.eurprd08.prod.outlook.com
+ (2603:10a6:200:5c::22)
+MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: cda34942-328d-4f94-56f8-08da6a306c41
+X-MS-TrafficTypeDiagnostic: VI1PR08MB3934:EE_
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: 	yVaM0Uliu9kiVYz/BFIQokil/XCmB/E68rxTXbkvhCKouuI2POQzVYLVQdfziNZtRGXsaj7YuFeKH75a/d2aHS1jhVo/zdji+yWKz9Q4ZVnyT/bHbDCVHKjswpPAgDrq+Ft7cq9syAJJM+ajAt8keIzdKmi+pySp9nhe2tIAGMlv7B0rEKb7JRlDwvrqFxz44KPI9QFFALste+a9ICLUsvW4zzovV3rsikK+AuYTCD0acwEnIxiJwzzDnQIH2fhjqDtoTGYJvxjN24nqoFTAGIGvhU9+j8bus0QivwTcRJyuRof81jfWWwnaJvPKat4K1hfwhfTxTDCmZt3GJLb9imTXJD0vBzTFS5A7H45V4SQtF2Q4PHAeSHKdeyLSBC67KRva0nZseSQ+T722valin3spUd7EeHbqRp7Jw42oU1/vMx577XKeqGFc8ig0HTkdZABS1SIRSGRkHpMZU2jVEjU/LQiGLQXVqEER0din2iYfWWzflUrsE49iVyHYFN8Wc4X1BThUgdOb5jA78rZReVig+gi6p7h9uAVP5RUeeUuz8g6+LRMff0Umn76Vs03Ct5cEyAJJJ/a07FXJa2yIBV7wwFVtUpBu1bqB+wKSIRM52V3Cf/Ddon57mn8UBUJdSSehXD5dSh1++GDoz+ds5qrxzI/a0Zv+PykZY4jNDkG9a/nhNL65HqqUNqpkJRuBX6UDEG1g+JoedjPl24DSknJf6mAU2xnr4p1kRZ6Bgwg=
+X-Forefront-Antispam-Report: 	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM4PR0802MB2131.eurprd08.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230016)(4636009)(346002)(39840400004)(396003)(376002)(366004)(136003)(38100700002)(52116002)(41300700001)(6506007)(6666004)(8936002)(7416002)(5660300002)(6486002)(2616005)(478600001)(1076003)(66476007)(8676002)(66946007)(66556008)(6512007)(54906003)(316002)(4326008)(2906002)(186003)(44832011)(36756003)(86362001);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: 	=?us-ascii?Q?nMFryQfNESHQbCUJrYU7UrsldKACyNN126q57MORakXkbGO9vNM5ktLG5Tm+?=
+ =?us-ascii?Q?cslfY/ujOLlya6d9hQWN5viW7dovgrse/zkKGN8rCh2GvwLmg3oCws+fCTHP?=
+ =?us-ascii?Q?VgTFcFEZbkgjH0sNDJzBVtgh2dkDbZjpV36kQgWzeBLSYKsMVFENwJgmQwhJ?=
+ =?us-ascii?Q?fQMgw8PlIv19r8kboolgUVkgix2/2Kg/Ero4AdhlUEfgLeiRemzXfxWnoXM/?=
+ =?us-ascii?Q?3QW01EOuITpnExxq6yHIXC2vQ4TuF4AJ5bWfY9q3wfZ3VdW97hh7blVynO36?=
+ =?us-ascii?Q?yaxoTyGstWpKTxbD26Ys+Jotd1jGKD/JzrHb2RnXk9UHHyWyxejHIpFFtwPw?=
+ =?us-ascii?Q?41YUdnKJh625gHJoeM3pw0dLoadqipIFz+vg/mQizr0ot0m/XnD66O8qZjKz?=
+ =?us-ascii?Q?Qn+3IFxgT1pLJp/FcxIlIgGcIZFSN/e7oSDGoE3Of1JEA1vg/kjrpCyXNJuW?=
+ =?us-ascii?Q?NpU6Qewpzn7DjCW6BJTQEMd89Br2fKUpYHJ8gMLDWGhQCn4c9Wo+P9jyqWWc?=
+ =?us-ascii?Q?9/KL7J4wfMDIymfZRa6bIQOq1X6Ro61+bpxgdpUSGXEuWSFYme9BeEy7Cdgf?=
+ =?us-ascii?Q?vpWNaEB1dNyBRFm2uAln13Wuj3Hpg2zLMw/dZchh04sbjDSqqP6rzdhNfJ3o?=
+ =?us-ascii?Q?azds1LKAvLgE+umU6MJZ6Vzp6GBQPgr0WNf1NJKc8Dj6R9e2UNmGwb6lqN7J?=
+ =?us-ascii?Q?cLjG092aRxHWW8ke4S0UCYl/nx/9WThpMf0OjAL6fi2KxjMd2bNWYSCRs2FL?=
+ =?us-ascii?Q?gUgDy4NpaJe0UrmVXpX7aGSKsE7hlK5gxxBaLy9NptRIPbKGBmk+4oBNxH4f?=
+ =?us-ascii?Q?ST8I63OkKOXPMqwja/cPVv/nf6rx1scs5bhDAdr+itZwKisbN2jFe315A/BU?=
+ =?us-ascii?Q?2YRlEnFlNEanSWRMvNCizg/oaTYMMejiu7909qbhYhVV3FK2nkNASAV5pOF+?=
+ =?us-ascii?Q?JVXEm54ehlXIa7v7tot9+yxWN47NBGUheIve0kfc4j2a9ZFuWsC/qrddEOnp?=
+ =?us-ascii?Q?IqpkJDQlxh5C4KU+aSc7YxoAo3Mk4o1jXg0klqA7m4GF+m2Vmgq6oIRmfF06?=
+ =?us-ascii?Q?aK3YTmt5geAh+7k8B2KkPhv9FoNmWkBZCPtqCk1AxSfy4iroNdk6VD+5imKX?=
+ =?us-ascii?Q?NwazZNtiap5Wkj1artmzVP6l/qtJKIX6AfREkanuflQxfyoDCWzvQHBYAicc?=
+ =?us-ascii?Q?IFZKDj9kpFJeneBS5ZZGItjTl/7U4GrEkoIqTcXmpW6x3a40JmdOUMyFxgMR?=
+ =?us-ascii?Q?M4u5ZwPHeemGtRs4DqudXZrCNIFXuNWNnY82p6oFn94cQujVFXgV4acLzk8J?=
+ =?us-ascii?Q?0Aj9JwAxwiROOkEmHCGWv7Ld1CoKa9jmaWlHv6tez7z9usXLMYe7L02879U3?=
+ =?us-ascii?Q?7H4vvsCfzOyxkdkPwf20oA7xuHt08lSoT+8/LRbM2r8cJi+o2IQp3tn4g3yq?=
+ =?us-ascii?Q?qKUA4MNy6ITvESTomG1ly5qOqvth1N1dZobIBlZ7cIcwFFT9b2O0h3ZhDj+g?=
+ =?us-ascii?Q?0QF41jMVqNWMBdLNMSY6ytfWxL3Nppj6SCq5oQTDKkMB8YcasYzEfxfUo1Ws?=
+ =?us-ascii?Q?vk/ddFybZPp1jLD31c/O77X27R1hOGhqfZKk5SbJKZqgB7tIjxPMS5rifQC/?=
+ =?us-ascii?Q?iGzZsPxkDcWUHSVvpHDEw3wc4N4StGf8kdpXCTjYPgQgTwerBM5N8tEFKiop?=
+ =?us-ascii?Q?nzcEPA=3D=3D?=
+X-OriginatorOrg: wolfvision.net
+X-MS-Exchange-CrossTenant-Network-Message-Id: cda34942-328d-4f94-56f8-08da6a306c41
+X-MS-Exchange-CrossTenant-AuthSource: AM4PR0802MB2131.eurprd08.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 20 Jul 2022 09:15:43.5417
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: e94ec9da-9183-471e-83b3-51baa8eb804f
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: 9oWSi7BjVjsWzd4Q0aC8BpWYL30cESSawuc4PSZHiGWSoliZbJokXZVR/jpEEKm/dXf00DOI6Uczk8oDKv9xE8lg8WPaOIbHLVMm304LWtc=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR08MB3934
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220719_231827_994455_BB2E0937 
-X-CRM114-Status: GOOD (  15.46  )
+X-CRM114-CacheID: sfid-20220720_021551_770579_3E9145D9 
+X-CRM114-Status: GOOD (  10.09  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -118,49 +137,43 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: wangseok.lee@samsung.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add maintainer for Axis ARTPEC-8 PCIe PHY. Add Jesper Nilsson
-<jesper.nilsson@axis.com> and Lars Persson <lars.persson@axis.com>
-as maintainer for these files. ARTPEC-8 is the SoC platform of Axis
-Communications and PCIe PHY is designed based on Samsung PHY.
+Hi all,
 
-Signed-off-by: Wangseok Lee <wangseok.lee@samsung.com>
----
-v3->v4 :
--Add axis,artpec8-pcie.yaml and axis,artpec8-pcie-ep.yaml
--Change file path to axis from artpec
----
- MAINTAINERS | 4 ++++
- 1 file changed, 4 insertions(+)
+This series adds support for the variant of the Innosilicon MIPI CSI DPHY that
+can be found in Rockchip RK356x SoCs.
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 264e7a7..e4a0635 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -1897,12 +1897,16 @@ M:	Jesper Nilsson <jesper.nilsson@axis.com>
- M:	Lars Persson <lars.persson@axis.com>
- L:	linux-arm-kernel@axis.com
- S:	Maintained
-+F:	Documentation/devicetree/bindings/pci/axis,artpec8-pcie-ep.yaml
-+F:	Documentation/devicetree/bindings/pci/axis,artpec8-pcie.yaml
-+F:	Documentation/devicetree/bindings/phy/axis,artpec8-pcie-phy.yaml
- F:	Documentation/devicetree/bindings/pinctrl/axis,artpec6-pinctrl.txt
- F:	arch/arm/boot/dts/artpec6*
- F:	arch/arm/mach-artpec
- F:	drivers/clk/axis
- F:	drivers/crypto/axis
- F:	drivers/mmc/host/usdhi6rol0.c
-+F:	drivers/phy/axis/phy-artpec*
- F:	drivers/pinctrl/pinctrl-artpec*
- 
- ARM/ASPEED I2C DRIVER
+Please note that only the basic operating mode is supported, in which all four
+CSI lanes are controlled by the Rockchip ISP. Split lane operation (e.g., two
+lanes to ISP and two lanes to VICAP) is not supported.
+
+This has been tested on a Radxa ROCK3 Model A board together with an IMX219
+camera sensor and a patched version of the rkisp1 driver (with support for the
+RK356x variant V2.1 added in a very crude way).
+
+Looking forward to your comments!
+
+Best regards,
+Michael
+
+Michael Riesch (3):
+  dt-bindings: phy: add compatible for rk356x to rockchip-inno-csi-dphy
+  phy: rockchip: add support for the rk356x variant to
+    rockchip-inno-csidphy
+  arm64: dts: rockchip: add csi dphy node to rk356x
+
+ .../bindings/phy/rockchip-inno-csi-dphy.yaml  |  1 +
+ arch/arm64/boot/dts/rockchip/rk356x.dtsi      | 12 ++++++++++
+ .../phy/rockchip/phy-rockchip-inno-csidphy.c  | 24 +++++++++++++++++++
+ 3 files changed, 37 insertions(+)
+
 -- 
-2.9.5
+2.30.2
+
 
 -- 
 linux-phy mailing list
