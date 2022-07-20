@@ -4,130 +4,98 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 52577C433EF
-	for <linux-phy@archiver.kernel.org>; Wed, 20 Jul 2022 09:16:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DD7A0C43334
+	for <linux-phy@archiver.kernel.org>; Wed, 20 Jul 2022 13:13:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fVl8lKmPNAaBhTNBE8wdfgjL7v2NSvOGz8nvhLVT130=; b=GeZph9TyyT/SdM
-	YK4D2yB1MDsPBg80isuzUfij4nzwfPNCEAICzoGqh5FPUdcCrsySTtdKqRrIjUjcjjjt55gWoy2/E
-	fnzpQ6hqYwrWUErS4vd9vAfB9ABX/94jA8QG/b9/fENnSGhUydM7eB/Asgk7MZtjsfIlUWrxGWuj2
-	ojCtZiC2wPHPC+DuPPPGmVZJmg6OgPnqrox7ocszFqUrtcK+X7IF5YpMZfrVOIh2IJKlq/hCni/bQ
-	gIB+qlKNbGzVtcWxvCRnNW2NEO09QYED2dTAZNBFX3nhlyR172JUodbGFrEMzRZGbi8eeRAEtV0D8
-	0CDSpz0WxJn6mjR50xHQ==;
+	List-Owner; bh=YNWOWqBCiqnkuxBNOxeBTdYhPESFVEf0c6dRe8/Ldk4=; b=xCCPcThk9Pgx2g
+	Ex7QSrIWblEtgZUBQN++8WxseGDzrNxEUXr/qfBWxb6l1KaE2wI1i4cR5qCPECP8bj//EzpjfUkhO
+	MsSrMr0anBjMRIySp3+wwNP0lGKmVh6zBTQHaRz7hXV2YBGuA+j6cGpuVbgbWNnoTEB+7oXzWFHVg
+	7jPDxumN506OwfE5H4/p8hPYdmN7ms6J7Ze3MDmbIt8AAYh759r86h7Sd1XaXwQxMXkKDIKJ/kjwb
+	2QWpZ850HQvvMw5GHzOg+3i0lSoK16BP7682a+1kNb+Yp+izIA9ddTZlYfdLi/wyAF/vENjSYdfoX
+	9lYfnFwILZM0YKmfMGxA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oE5oj-0038Di-MX; Wed, 20 Jul 2022 09:16:29 +0000
-Received: from mail-db8eur05on2066.outbound.protection.outlook.com ([40.107.20.66] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
+	id 1oE9Vi-005pR8-Hi; Wed, 20 Jul 2022 13:13:06 +0000
+Received: from mail-wm1-x32c.google.com ([2a00:1450:4864:20::32c])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oE5oC-0037hf-RJ; Wed, 20 Jul 2022 09:15:58 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Dj+Y7iAQUghxTnLOkAR6BCNBcXy2X0wNrwIvpSfKgWkp3YYLwEnXj/brmiPwV3Kzms3ng1cdzWMFZ2IOY/i+fuuyjd36U0E+R2zvy+BBCaTdKWHC+YHADT9bTwd/SsMGFyBpkXHA98O7HlfEJbolURXXYqVSlbT0TCoMN8Lt8Tp++I56P0d3vXt7IASvwhFP5pMsC3aVXXB3UUAgBeXfOsQ5ZULH5oV+LCQxtXYFUKoFdGMvVEUOu0aFM19jYewdtDm9HaGyfHtGB9Wgws8Ic6hsODqNJAahEgaq/z/KLuaUzcp6Zzf4ixkVhWH1scOz5asFuzdfLJ8u7ryV/MSIFQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=FpfwSrVzevjJQQTaaJ+swW9Ris/wtp2z/7wmHe3+9/o=;
- b=hladPWHkW6oNdOUBq/WKsP1gAGrGs0f+jSWhYGIz5SvpS8WdsRYcrVDVbAHbcoHtFq2DoBgaSxP2xbBxAW6C78UBLv0iW2uHke9k96gJEvlvkN+ia/lXvjitBJ6USwTZNFXkMlpeyQuiJBaP8AlpNfeI4ubxXXcr/4W17HSjtO6HztS/mQcXR/DGpkbcF2f1eaP8aMJx7BDY6OQ1Py4MRR+gYiWGR+GTStuegnnnHzE65i2z38WJMoZRk867bGfYG5ZnV5/83HnjnMfY2ruHSXYXSUa+tmqjaubw7CYJATtwSrytLaSXmW4qIGJIFzaR52nmoh5YV3suFr61InYQKg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=wolfvision.net; dmarc=pass action=none
- header.from=wolfvision.net; dkim=pass header.d=wolfvision.net; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=wolfvision.net;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=FpfwSrVzevjJQQTaaJ+swW9Ris/wtp2z/7wmHe3+9/o=;
- b=D/8enNyUZ7toJXjrJZvY/V6xujzRXoTRdq07iNSNVKC01Wv15G+CvGJ2ptoIrnXDtRIESzFydEGCiRB7zd4ErfEQcHZ/kwjwZ/dhSVEnj/BWc7LSmQXJDRXTg+lMDZZTxP1Av64vRMaZWrupKpA9I4j1WS3AudCUyLSHktEWhSc=
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=wolfvision.net;
-Received: from AM4PR0802MB2131.eurprd08.prod.outlook.com
- (2603:10a6:200:5c::22) by VI1PR08MB3934.eurprd08.prod.outlook.com
- (2603:10a6:803:df::22) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5458.18; Wed, 20 Jul
- 2022 09:15:47 +0000
-Received: from AM4PR0802MB2131.eurprd08.prod.outlook.com
- ([fe80::dcaa:905c:ff8:1f5b]) by AM4PR0802MB2131.eurprd08.prod.outlook.com
- ([fe80::dcaa:905c:ff8:1f5b%9]) with mapi id 15.20.5458.018; Wed, 20 Jul 2022
- 09:15:47 +0000
-From: Michael Riesch <michael.riesch@wolfvision.net>
-To: linux-phy@lists.infradead.org,
+	id 1oE9Vd-005pGZ-Tt
+	for linux-phy@lists.infradead.org; Wed, 20 Jul 2022 13:13:04 +0000
+Received: by mail-wm1-x32c.google.com with SMTP id u14-20020a05600c00ce00b003a323062569so1239924wmm.4
+        for <linux-phy@lists.infradead.org>; Wed, 20 Jul 2022 06:13:00 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=baylibre-com.20210112.gappssmtp.com; s=20210112;
+        h=from:to:cc:subject:date:message-id:in-reply-to:references
+         :mime-version:content-transfer-encoding;
+        bh=9LgN/S0aDXYI9VGCuWlvvgvQnGpuTnnqHsiuzMd2wxQ=;
+        b=hZDBwVWDP5UPXoM/26p/r+j251hc2vAqDOCERxSqp1n7sS06JhTWTNUFrAn/iDVTDd
+         sk1s9gAeT8g6iMlidLoC2ByWsp6jDzKjyGiwTrHFM+kSqmhnpOGy27aGmIOCRSPQXtjU
+         iuHcWvpuEBu/GQL3HjFfyH38HWdcfRwpw/QCs8xRs37MzT7Ik+pcHBHS4PQz7Y7kmEGs
+         2zEZT/L22GV5s5xGf/GZOt2FikEOhhfo8etSuo2R+s9KR06g6oLOKoKJ9cp2Devph4aN
+         HYnuH9yadQ7mkeUaGKIxYyw+FFFXzGLODhmRa8DXLmg2/yBLqQ88/ndcWxmAnabBH3H2
+         gPtg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+         :references:mime-version:content-transfer-encoding;
+        bh=9LgN/S0aDXYI9VGCuWlvvgvQnGpuTnnqHsiuzMd2wxQ=;
+        b=Ll4U/AJs5D+slF+4OpoinBOEJOCgU8vnVV9N95ioEveE+kmTToBlFKs/Den1V40l6o
+         Fg+gJhqBY+Ec2+YULgA32HhYaQWM44fTzKdVZnGZj7kMhDAXWLFnurMfVLTGrElCl7hI
+         lgCzRZ32Cmj5ZPwQS0v4P1MteRk7bbb7Q+xr/OVJTzzH0tJrp+jYm718xLNBYEL66Pz7
+         SdcJx8HSq09AGuQ9oqbeeP/qMddQR0zOI7HAdOMglt7f6M7bpXPw2+ttAa1+ranv/+vl
+         t1XsnyTNBXcYSgKX+vW5wsnFCp1fuvgVjEDnLr8pabjJCw40vrgf/ootkDvPJ8QPjbdD
+         f3xg==
+X-Gm-Message-State: AJIora/QUBQvs5Ubi8XUhk8nJn9Lb3EVTcLUIbUOGfk24fTPvw48u+GI
+	7tOc+y+vyZ2nbQmWNSid4SX3kw==
+X-Google-Smtp-Source: AGRyM1tHJE+D+NzsNowU+goDfK+LE01p5AmV4nGBMM9nPZVjT15IP9nJaaafPk1bF4qVs2pE8TNv1A==
+X-Received: by 2002:a05:600c:3b91:b0:3a3:1cbe:d531 with SMTP id n17-20020a05600c3b9100b003a31cbed531mr3812400wms.159.1658322779330;
+        Wed, 20 Jul 2022 06:12:59 -0700 (PDT)
+Received: from amjad-ThinkPad-T490.home (2a01cb040613180084408ac44a1fa242.ipv6.abo.wanadoo.fr. [2a01:cb04:613:1800:8440:8ac4:4a1f:a242])
+        by smtp.googlemail.com with ESMTPSA id y11-20020adfc7cb000000b0021d6924b777sm16853316wrg.115.2022.07.20.06.12.57
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 20 Jul 2022 06:12:58 -0700 (PDT)
+From: Amjad Ouled-Ameur <aouledameur@baylibre.com>
+To: fparent@baylibre.com
+Cc: broonie@kernel.org,
+	chaotian.jing@mediatek.com,
+	chunfeng.yun@mediatek.com,
 	devicetree@vger.kernel.org,
+	dmaengine@vger.kernel.org,
+	jic23@kernel.org,
+	krzysztof.kozlowski+dt@linaro.org,
 	linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Cc: Kishon Vijay Abraham I <kishon@ti.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Heiko Stuebner <heiko@sntech.de>,
-	Peter Geis <pgwipeout@gmail.com>,
-	Michael Riesch <michael.riesch@wolfvision.net>,
-	Sascha Hauer <s.hauer@pengutronix.de>,
-	Nicolas Frattaroli <frattaroli.nicolas@gmail.com>,
-	Liang Chen <cl@rock-chips.com>
-Subject: [PATCH 3/3] arm64: dts: rockchip: add csi dphy node to rk356x
-Date: Wed, 20 Jul 2022 11:15:27 +0200
-Message-Id: <20220720091527.1270365-4-michael.riesch@wolfvision.net>
-X-Mailer: git-send-email 2.30.2
-In-Reply-To: <20220720091527.1270365-1-michael.riesch@wolfvision.net>
-References: <20220720091527.1270365-1-michael.riesch@wolfvision.net>
-X-ClientProxiedBy: ZR0P278CA0129.CHEP278.PROD.OUTLOOK.COM
- (2603:10a6:910:40::8) To AM4PR0802MB2131.eurprd08.prod.outlook.com
- (2603:10a6:200:5c::22)
+	linux-i2c@vger.kernel.org,
+	linux-iio@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-mediatek@lists.infradead.org,
+	linux-mmc@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-serial@vger.kernel.org,
+	linux-spi@vger.kernel.org,
+	linux-usb@vger.kernel.org,
+	linux-watchdog@vger.kernel.org,
+	linux@roeck-us.net,
+	matthias.bgg@gmail.com,
+	qii.wang@mediatek.com,
+	robh+dt@kernel.org,
+	srinivas.kandagatla@linaro.org,
+	ulf.hansson@linaro.org,
+	vkoul@kernel.org,
+	wim@linux-watchdog.org
+Subject: Re: [PATCH 16/17] arm64: dts: mediatek: add mt8365 device-tree
+Date: Wed, 20 Jul 2022 15:12:57 +0200
+Message-Id: <20220720131257.530168-1-aouledameur@baylibre.com>
+X-Mailer: git-send-email 2.37.1
+In-Reply-To: <20220531135026.238475-17-fparent@baylibre.com>
+References: <20220531135026.238475-17-fparent@baylibre.com>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: ea02d018-38f5-4a98-1977-08da6a306ed8
-X-MS-TrafficTypeDiagnostic: VI1PR08MB3934:EE_
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 	+wUns6jhnx2Pbhs1D3PuMSiMwgFAKFn18bbQVFHZutM2iRVgLOlcm3uTDl14NQajVLO8UCZ0iThjXZy2rrDDxiiuiDtDknbP96dLfZnbI3TiYNeE7nRovIUWPPmV6YfW5mqfldVhVo5J9/z7J+f2ErPIULW3VXU5Wztqn5pufAf3X1h+SYLDF/ieIspN59oxdbqnd/w+UDC477NFmByA5oxu/kPzqeY7sxlaBmth0xKhc1p+NH/6vejqoaCPFkumtMYka7JxbEdHsN42xPbeZda8QVCA6wqoei1bTCdPWB2w0X2vkJC5OGNZBTdvAf4X2MI0MblqZcXNVnmvKx1TMLReu/I+VHAHWfsdqRfHq54pb/KuZm9YfbfX1aRcKSmj5PuSGBjGjNpv5Vwl8WQBRsUYTF5p3I66ThKbtO4o+vi1rCvnilcrQ+RVkeciMEqHNXMwF2Zywz5c+9mH+ZdS6ilg+BzVO7z3oMcYF7cfrzEVvYn2FLfTi9c64A/30U/7Ro7g6rXWRj5IFhk7a/DFIZg7z4WjpYcX/0hIjw5n9zy3bkKretRIwJAPZ52hUBQpQ4c6WetXLR1DNIrQpnB/5eUOwReMd6rkFMMiRKqqaZ32Jomx01VlzmbX8iNhdxWRgKMrLlPmykPAdr83Cefy7hUL9Mv3EBDqKFgLR0W9GSHZ990sLJmhUeVRB6xuIWAZhIobnPdLY2Ox87J+qlxsoYLwcyIC8V/3/+yyX4tIFRM=
-X-Forefront-Antispam-Report: 	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM4PR0802MB2131.eurprd08.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230016)(4636009)(346002)(39840400004)(396003)(376002)(366004)(136003)(38100700002)(52116002)(41300700001)(6506007)(6666004)(8936002)(7416002)(5660300002)(6486002)(2616005)(478600001)(4744005)(1076003)(66476007)(8676002)(66946007)(66556008)(83380400001)(6512007)(54906003)(316002)(4326008)(2906002)(186003)(44832011)(36756003)(86362001);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: 	=?us-ascii?Q?NXJb+jBsUwqXh+zzahqV0Uc4UnjAR0oqh+meNhHfgE5QuXhVEtDYr1dUy8M9?=
- =?us-ascii?Q?3KBdr8OqR5CoRV1RbwqduorO38bjjKWkG8RWnOO0C2A4NgVgys6BfB9/M/9K?=
- =?us-ascii?Q?F8A7QjIS+dQw/GL3b/druz93ScX+WFDemxDR1DcdKJBsP8a489F7Gyiq85YR?=
- =?us-ascii?Q?UtYAQI7D8TuEqDHaZfJJ/ppB/2xkCVYxFymJ/7hFJsD+0Pot9C93dqygWvXb?=
- =?us-ascii?Q?yvGgrTUWY9BfAT8wT/+OCszJfRg7ji6ueEWEo7E1gI3ywuiO5tdbo8mcKJ1/?=
- =?us-ascii?Q?Mht3/X0HwI6kqzaY7Ojmo4LWp31XNX62F5+IuuvUskMJKxlBblmUREPkZFC0?=
- =?us-ascii?Q?oIIs1Bc/6UR3W+2iFg2jZjTLkf71Y1+/VPV3J53uC/7wwfQkA6B3GlYBs8hu?=
- =?us-ascii?Q?q0+TAbIPM6koYzbHnRF/1PUeAH5TPqUidY9UCVy0qsYwdlbxlNrBGy+Ll/LU?=
- =?us-ascii?Q?ZDINhW1HZfMNff2ClCq/9PKxbQd+XirOzAhIv+Xc2wiTL1WuOoMB77OSW8nP?=
- =?us-ascii?Q?GcZA/ElB5724c6SXHEC9jMXh0/vIzamBfLIAx7R6y/g2g/4IAT0zJBvcPEFg?=
- =?us-ascii?Q?jPFYauP+ztPdROoSu3+uAZtyjq/eK6YeAiI1LnTxa3II8ABIb5eVMmRFr4OF?=
- =?us-ascii?Q?3HZwrBObT7w1PwSgcJB2xofvgPp3qgYFEDS0yOfiS2lh0X178jurOCjlsdnk?=
- =?us-ascii?Q?VGygG3O82yptexujcl7BP4kke09n/Z6GEGun7sCG6KX7EYrnuqlwPwSJ55DX?=
- =?us-ascii?Q?87TuP63tj5EPRR97d6vVmOFqD7q52YYmL2S6thuonNlqm4QSZ7b9QZQnvxI9?=
- =?us-ascii?Q?e+Wdlx5MkYl/Xs6Pq5lRzYbzJOpi54c16JxNZrbUJg3efkF/cxj5/BI9xKay?=
- =?us-ascii?Q?+9pMUwRHA3OgZIg1ViSxK/lKZwARxQRRYymsQN5d5zDaEZil0p99wb1XyrsK?=
- =?us-ascii?Q?Y5s0PlHuar7/zWM2B28cIlLUvyqPqcobIk5f3lI3Lw9czcNPNzwpG1vCJtKu?=
- =?us-ascii?Q?ar4NW2gOAuUSJJ4/cPgF+JZyyfqIWoqn39rB8OrGrVDpdYLlh/3J4Rw0VZxv?=
- =?us-ascii?Q?3SOLvys4SQs6xtoQvfXdjXOSfaORl86h1SxeyfIj8rP1hrj/vDvLqjFYNbpc?=
- =?us-ascii?Q?QaF3ME2OGKHLYJfH1Dsx/2K3eMHeGJ2WRo1lTOFI+I6SRg9QXQPQlYqHwrCt?=
- =?us-ascii?Q?SeKYNnXI/8X7foSm2IiDLYeQs/E8WfBPOQ2m/xzZCwSgzDk+fQvdCAX4gbgV?=
- =?us-ascii?Q?bDv12gSlmyeL7bkVTjnlLfltzsJMGo7KudWPpFvTUX3elG2dAqYxJE/o69ef?=
- =?us-ascii?Q?StK54HcxCzCHJc5FJhsNgBH/AxM8/tKVW4COGQDDWIF9g4HDFHeIM80/BNe2?=
- =?us-ascii?Q?UyeO0Yux+lMlpQH58jwrJRWiOSbXyjuXvES/7xdp3eULpzYRutQEJkQdcJVt?=
- =?us-ascii?Q?aYJgW644j3fnD13tL5z73h4Qe3gxqteMu37YXagDO97elwfy1D6atsT9eWKn?=
- =?us-ascii?Q?D4Xx7RnLm3izozDOJ7JDFLyANMUzA60z4zMC1CWDvxxbvSY64Ge/1mCozd3I?=
- =?us-ascii?Q?15aqDvd/JtWmSJqDUiMKAeHMXlMJk6ZZk3BD/bXsDjeLtHazd+Es4uiqGwsP?=
- =?us-ascii?Q?LeY7LTnWGXduYb4Lq5i+JB9aaYzSzVAO8L+M4FJamyO4V+evHQpDiMCmCq8l?=
- =?us-ascii?Q?T1sRHQ=3D=3D?=
-X-OriginatorOrg: wolfvision.net
-X-MS-Exchange-CrossTenant-Network-Message-Id: ea02d018-38f5-4a98-1977-08da6a306ed8
-X-MS-Exchange-CrossTenant-AuthSource: AM4PR0802MB2131.eurprd08.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 20 Jul 2022 09:15:47.8383
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: e94ec9da-9183-471e-83b3-51baa8eb804f
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: 9nZ1Nkf/iNERPdlgUT86FA67IauoF5JV2IB4mDDanTMWiZREGJsRuh9mU8f+mxMxbIaxY1t1v0GGd+PlFxSkZdNnwn0wGdfC7OKpzZCuHC4=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR08MB3934
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220720_021556_920357_DEA800F8 
-X-CRM114-Status: UNSURE (   9.10  )
+X-CRM114-CacheID: sfid-20220720_061302_235410_894BB4D3 
+X-CRM114-Status: UNSURE (   5.73  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -145,39 +113,21 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add the MIPI CSI DPHY node to the RK356x device tree.
+Hi Fabien,
 
-Signed-off-by: Michael Riesch <michael.riesch@wolfvision.net>
----
- arch/arm64/boot/dts/rockchip/rk356x.dtsi | 12 ++++++++++++
- 1 file changed, 12 insertions(+)
+> +		tzts4: tzts4-thermal {
+> +			polling-delay-passive = <0>;
+> +			polling-delay = <0>;
+> +			thermal-sensors = <&thermal 4>;
+> +			trips {};
+> +			cooling-maps {};
+> +		};
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk356x.dtsi b/arch/arm64/boot/dts/rockchip/rk356x.dtsi
-index 7d9ad6aa4052..16d18170ae82 100644
---- a/arch/arm64/boot/dts/rockchip/rk356x.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk356x.dtsi
-@@ -1544,6 +1544,18 @@ combphy2: phy@fe840000 {
- 		status = "disabled";
- 	};
- 
-+	csi_dphy: phy@fe870000 {
-+		compatible = "rockchip,rk3568-csi-dphy";
-+		reg = <0x0 0xfe870000 0x0 0x10000>;
-+		clocks = <&cru PCLK_MIPICSIPHY>;
-+		clock-names = "pclk";
-+		#phy-cells = <0>;
-+		resets = <&cru SRST_P_MIPICSIPHY>;
-+		reset-names = "apb";
-+		rockchip,grf = <&grf>;
-+		status = "disabled";
-+	};
-+
- 	usb2phy0: usb2phy@fe8a0000 {
- 		compatible = "rockchip,rk3568-usb2phy";
- 		reg = <0x0 0xfe8a0000 0x0 0x10000>;
--- 
-2.30.2
+AFAIK mt8365 has only 3 thermal sensors, therefore tzts4 should not be
+added.
 
+Regards,
+Amjad
 
 -- 
 linux-phy mailing list
