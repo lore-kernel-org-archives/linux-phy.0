@@ -4,51 +4,51 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 572FCCCA483
-	for <linux-phy@archiver.kernel.org>; Wed, 20 Jul 2022 05:54:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 47708C433EF
+	for <linux-phy@archiver.kernel.org>; Wed, 20 Jul 2022 05:57:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
 	List-Post:List-Archive:List-Unsubscribe:List-Id:References:Date:Message-ID:
 	In-Reply-To:CC:To:From:Subject:Mime-Version:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CzfXyJLbDpVNUn44HxFRzlSs9xRJ/JJkFXn5JC5PVeI=; b=cKGyz1gzQldeAC
-	Fu4g+Pfz0Yu0JxHqnLITxZaBT5P1OdqAOKOoxC2Juj0GngW+cQVx02Heo9qfvxVngBeqWNDB7CrkS
-	ugjDJAXHIGzLmpP6RXx/LAVjKXrpvuLgPPRj/qmF4qBqxeFPVuLqSZ1fQIPYXidP5HZGcFzDIJf9u
-	pRjwAWHpCT7q1R5etak5Iu8Ja6W+cdHD7O5Usl3GZX1pUrv4vh6Ah1sUc4RljQP00AhX4o3/BzWwS
-	r3v36jhw+cVMbbR7z7we81MNJiBQW/Uwj9S3qsH2nhIr2UFCbke1jlfQ0IckzVisH3cZrRslC5gyr
-	I1OUjtmXPVYb1KxJCHOQ==;
+	List-Owner; bh=5uihqN1vBHKow1307hUBlSk59GKvCNWwG2hfWFcv6O8=; b=U4cvffTVteIdIu
+	5Gma43kigqQh21OdYZ4sK+QBXStiWMBpyxwMkISDj96LLlHeOzLMpk7WBc/uBS7JP4pc/SkFvEmHi
+	2wPlG97dcMKUg2/IaloS5XmkcNs59QQhmqmBea7FFlS3yE3sZPs2r70CKzJNReR6Xl98VGaE7MQEg
+	DlJugc34QjZNi77Xt1V2+wvvs+XBDZsgz1g23Fkb/TNQzsvfVS8JGLtkR0kB/RAPPQ0ZRKu6N7qjO
+	CSWJzU8Kddxu7/CUTB6k7hCP54lEy+l44/pu53zWoVrcjnVGCXCACXywEUQYpqBfI9iEVOwl3Bwdq
+	SdMuZovnG2HJCpOY9F0Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oE2fW-000mOg-If; Wed, 20 Jul 2022 05:54:46 +0000
+	id 1oE2i4-000oIV-NA; Wed, 20 Jul 2022 05:57:24 +0000
 Received: from mailout3.samsung.com ([203.254.224.33])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oE2fT-000mLb-LI
-	for linux-phy@lists.infradead.org; Wed, 20 Jul 2022 05:54:46 +0000
-Received: from epcas2p1.samsung.com (unknown [182.195.41.53])
-	by mailout3.samsung.com (KnoxPortal) with ESMTP id 20220720055438epoutp03afbc29abb09516d78903a8f8fc9de583~Dc9xxfD1j1307613076epoutp03R
-	for <linux-phy@lists.infradead.org>; Wed, 20 Jul 2022 05:54:38 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout3.samsung.com 20220720055438epoutp03afbc29abb09516d78903a8f8fc9de583~Dc9xxfD1j1307613076epoutp03R
+	id 1oE2i0-000oDo-NL
+	for linux-phy@lists.infradead.org; Wed, 20 Jul 2022 05:57:23 +0000
+Received: from epcas2p4.samsung.com (unknown [182.195.41.56])
+	by mailout3.samsung.com (KnoxPortal) with ESMTP id 20220720055717epoutp03bfc494418d6571558d24bf78763ae375~DdAGXlKSU1525315253epoutp03S
+	for <linux-phy@lists.infradead.org>; Wed, 20 Jul 2022 05:57:17 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout3.samsung.com 20220720055717epoutp03bfc494418d6571558d24bf78763ae375~DdAGXlKSU1525315253epoutp03S
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
-	s=mail20170921; t=1658296478;
-	bh=DMK8IgTtZbHF6hI7hCGciRf8wUaVR1Ad9VNtzlXOziE=;
+	s=mail20170921; t=1658296638;
+	bh=eEzTLcInQohfGMzkO9dU6+s8ihd2sWC+hDcEBUfC1Us=;
 	h=Subject:Reply-To:From:To:CC:In-Reply-To:Date:References:From;
-	b=LlaiAQ8w54lSde459i/hirpm9PQpceKB3h3b5wTjC31pkYwW/gRh+dFWJ+ydJIk+d
-	 THNunWieSixaFDJECnZRjepR0ud7vHJ+7G/pLIsnSyoeAX7sbquNhKuM4p2mBBgU1i
-	 UBag+N74hLaIgvvvrEIzzKw9B0gO3PGfi5bKIisQ=
-Received: from epsnrtp2.localdomain (unknown [182.195.42.163]) by
+	b=UgOmMKURNOEWoJVnaJBth01S+lsqARuTM5bkNoPlBPHvK7bWOrwFcKr3mE6omfVL9
+	 CZY3Vf6tu6Y5gKz2l8wRwjpHtKmEnQEHTEPxNTUIHoWYWFC9DRb96ueHz+I3gSuqw3
+	 g/KLJCFMRFANgR/0AM1mS3Tx1rqR8jn0JQiIAcrI=
+Received: from epsnrtp3.localdomain (unknown [182.195.42.164]) by
 	epcas2p3.samsung.com (KnoxPortal) with ESMTP id
-	20220720055437epcas2p34da9921fabb951376fd1c7a2611e4704~Dc9xGq7du1267612676epcas2p3z;
-	Wed, 20 Jul 2022 05:54:37 +0000 (GMT)
-Received: from epsmges2p2.samsung.com (unknown [182.195.36.98]) by
-	epsnrtp2.localdomain (Postfix) with ESMTP id 4LnlJs0nVdz4x9Q1; Wed, 20 Jul
-	2022 05:54:37 +0000 (GMT)
-X-AuditID: b6c32a46-0a3ff700000025b2-60-62d7989c37e5
-Received: from epcas2p2.samsung.com ( [182.195.41.54]) by
-	epsmges2p2.samsung.com (Symantec Messaging Gateway) with SMTP id
-	2F.84.09650.C9897D26; Wed, 20 Jul 2022 14:54:37 +0900 (KST)
+	20220720055717epcas2p3a3e4e7bf83d6eedc83646ed245433c0a~DdAFz273L0525505255epcas2p3l;
+	Wed, 20 Jul 2022 05:57:17 +0000 (GMT)
+Received: from epsmges2p4.samsung.com (unknown [182.195.36.69]) by
+	epsnrtp3.localdomain (Postfix) with ESMTP id 4LnlMw5yQvz4x9Q8; Wed, 20 Jul
+	2022 05:57:16 +0000 (GMT)
+X-AuditID: b6c32a48-9f7ff700000025be-3b-62d7993c5791
+Received: from epcas2p4.samsung.com ( [182.195.41.56]) by
+	epsmges2p4.samsung.com (Symantec Messaging Gateway) with SMTP id
+	14.52.09662.C3997D26; Wed, 20 Jul 2022 14:57:16 +0900 (KST)
 Mime-Version: 1.0
-Subject: [PATCH v4 1/5] dt-bindings: pci: Add ARTPEC-8 PCIe controller
+Subject: [PATCH v4 2/5] dt-bindings: phy: Add ARTPEC-8 PCIe phy
 From: Wangseok Lee <wangseok.lee@samsung.com>
 To: "robh+dt@kernel.org" <robh+dt@kernel.org>, "krzk+dt@kernel.org"
 	<krzk+dt@kernel.org>, "kishon@ti.com" <kishon@ti.com>, "vkoul@kernel.org"
@@ -73,40 +73,40 @@ X-Drm-Type: N,general
 X-Msg-Generator: Mail
 X-Msg-Type: PERSONAL
 X-Reply-Demand: N
-Message-ID: <20220720055436epcms2p63896ebe4e2131e3844044d0112288570@epcms2p6>
-Date: Wed, 20 Jul 2022 14:54:36 +0900
-X-CMS-MailID: 20220720055436epcms2p63896ebe4e2131e3844044d0112288570
+Message-ID: <20220720055716epcms2p60e80b1089dca0f83a894262bce676858@epcms2p6>
+Date: Wed, 20 Jul 2022 14:57:16 +0900
+X-CMS-MailID: 20220720055716epcms2p60e80b1089dca0f83a894262bce676858
 X-Sendblock-Type: AUTO_CONFIDENTIAL
 X-CPGSPASS: Y
 X-CPGSPASS: Y
 CMS-TYPE: 102P
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFrrIJsWRmVeSWpSXmKPExsWy7bCmme7cGdeTDKYeYbJY0pRh8fKQpsX8
-	I+dYLXbPWM5kMXPqGWaL54dmMVt8alG1uPC0h83i5ax7bBYNPb9ZLY68+chssf/4SiaLy7vm
-	sFmcnXeczWLCqm8sFm9+v2C3OLc406J17xF2i513TjBb/Nr6h8lBxGPNvDWMHtfXBXgs2FTq
-	sWlVJ5vHkyvTmTw2L6n36NuyitHj+I3tTB6fN8kFcEZl22SkJqakFimk5iXnp2TmpdsqeQfH
-	O8ebmhkY6hpaWpgrKeQl5qbaKrn4BOi6ZeYAPaWkUJaYUwoUCkgsLlbSt7Mpyi8tSVXIyC8u
-	sVVKLUjJKTAv0CtOzC0uzUvXy0stsTI0MDAyBSpMyM74taeTueCbT8WvnrksDYxzLLoYOTkk
-	BEwkZq1YzdTFyMUhJLCDUeLJg9fMXYwcHLwCghJ/dwiD1AgLuEl0bTvMCGILCShJ7Fgzjxki
-	ri9xfUU3K4jNJqAr8W/xSzYQW0TgM6vE9T2CIDOZBRYwSuz/vY8RYhmvxIz2pywQtrTE9uVb
-	GUF2cQr4Sbxtc4AIa0j8WNbLDGGLStxc/ZYdxn5/bD7UGBGJ1ntnoWoEJR783A0Vl5JY8OQQ
-	K4RdLbH/728mCLuBUaL/firIKgmgm3dcNwYJ8wr4SlxacpUFJMwioCox/WkxRLWLxLcdN8Cm
-	MAvIS2x/OwccIMwCmhLrd+lDDFGWOHKLBealho2/2dHZzAJ8Eh2H/8LFd8x7AnWLmsS8lTuZ
-	JzAqz0KE8iwku2Yh7FrAyLyKUSy1oDg3PbXYqMAIHrHJ+bmbGMFpW8ttB+OUtx/0DjEycTAe
-	YpTgYFYS4X1aeD1JiDclsbIqtSg/vqg0J7X4EKMp0JMTmaVEk/OBmSOvJN7QxNLAxMzM0NzI
-	1MBcSZzXK2VDopBAemJJanZqakFqEUwfEwenVAOTrujXbQc+csvu5+bK2irz7ejX9AczeER8
-	rlyaUrjqbaLCM+b4bwLHKtO4HUIcZYymtZZnsokxNMce25ZdKVjINelOggOn5I3WSgVh/yPc
-	FzTkN35VyZW+5mXc9srZr+ztn7KOO81O83VMf7x8er/h0GVPp6XrIhte1JQy8Msb/eXn3CxU
-	s1a54W/2Zt+AeubJ953s65XjA9cK1V5eO13yotmEJ1a6Twp8BL/43OX87S5x2CbgVajgUoPd
-	R7Szbm34dt6r1W2TuMJrr5NtPx601Tf9T35tZCAXmiy3Zk7V85UipcVuUh955oU6+Qut1mry
-	cXF6vi/NcHpS7HQjyetLHGLdp5S9n2x9me22gxJLcUaioRZzUXEiAKGkd4JkBAAA
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFrrAJsWRmVeSWpSXmKPExsWy7bCmha7NzOtJBjca1C2WNGVYvDykaTH/
+	yDlWi90zljNZzJx6htni+aFZzBafWlQtLjztYbN4Oesem0VDz29WiyNvPjJb7D++ksni8q45
+	bBZn5x1ns5iw6huLxZvfL9gtzi3OtGjde4TdYuedE8wWv7b+YXIQ8Vgzbw2jx/V1AR4LNpV6
+	bFrVyebx5Mp0Jo/NS+o9+rasYvQ4fmM7k8fnTXIBnFHZNhmpiSmpRQqpecn5KZl56bZK3sHx
+	zvGmZgaGuoaWFuZKCnmJuam2Si4+AbpumTlATykplCXmlAKFAhKLi5X07WyK8ktLUhUy8otL
+	bJVSC1JyCswL9IoTc4tL89L18lJLrAwNDIxMgQoTsjMut/1mLpgiVdE3J7mBsVWki5GTQ0LA
+	ROJcw2XmLkYuDiGBHYwSm3dMBXI4OHgFBCX+7hAGqREWsJf48mQDO4gtJKAksWPNPGaIuL7E
+	9RXdrCA2m4CuxL/FL9lAbBGBz6wS1/cIgsxkFljAKLH/9z5GiGW8EjPan7JA2NIS25dvZQTZ
+	xSngJ/G2zQEirCHxY1kvM4QtKnFz9Vt2GPv9sflQY0QkWu+dhaoRlHjwczdUXEpiwZNDrBB2
+	tcT+v7+ZIOwGRon++6kgqySAbt5x3RgkzCvgK7F+y0uwchYBVYlrn4+wQ5S4SCx/UgQSZhaQ
+	l9j+dg44QJgFNCXW79KHqFCWOHKLBealho2/2dHZzAJ8Eh2H/8LFd8x7AnWLmsS8lTuZJzAq
+	z0KE8iwku2Yh7FrAyLyKUSy1oDg3PbXYqMAEHq/J+bmbGMFJW8tjB+Pstx/0DjEycTAeYpTg
+	YFYS4X1aeD1JiDclsbIqtSg/vqg0J7X4EKMp0JMTmaVEk/OBeSOvJN7QxNLAxMzM0NzI1MBc
+	SZzXK2VDopBAemJJanZqakFqEUwfEwenVAOT1cy3MXX/JPIP3/SJ1pFx+V13aEt+knqe52Tx
+	a5WJcwVOF5bq7ph4+23SeXPxpTULHq5Y9IJnS3mvlGv+2t0pz84KcrGUt+peZnmX1FH7JkFL
+	s3Gq9bPM2/Jf6z/uKzhoycOub915zE3S86HmT8nJgrmnJa+lGPx4qxfb3H3sj8OSjWYXv1Y/
+	ZHV49oOl8e7Hzt9757ZvyHaunv/iD9daF6/VAoJu3xTd+lcLFjRvfHtWymxjekfMfd/GpXm7
+	+H73N8Z9U3i7uOdHwgmHPTumuR7tO6NX+nSmdqDBDMGg6k69aQKv0tZ03W8pCkkoPSV7q8Od
+	06xVna2YWfdOQ6tebrd6+ulLvJ9EltVvv6bEUpyRaKjFXFScCAAAntsiYwQAAA==
 DLP-Filter: Pass
 X-CFilter-Loop: Reflected
 X-CMS-RootMailID: 20220720055108epcms2p563c65b3de6333ccbc68386aa2471a800
 References: <20220720055108epcms2p563c65b3de6333ccbc68386aa2471a800@epcms2p5>
 	<CGME20220720055108epcms2p563c65b3de6333ccbc68386aa2471a800@epcms2p6>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220719_225444_071079_F1070A84 
-X-CRM114-Status: GOOD (  23.08  )
+X-CRM114-CacheID: sfid-20220719_225721_274937_429169B7 
+X-CRM114-Status: GOOD (  20.59  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -125,13 +125,16 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 Add description to support Axis, ARTPEC-8 SoC. ARTPEC-8 is the SoC platform
-of Axis Communications and PCIe controller is designed based on Design-Ware
-PCIe controller.
+of Axis Communications and PCIe PHY is designed based on Samsung PHY.
 
 Signed-off-by: Wangseok Lee <wangseok.lee@samsung.com>
 ---
 v3->v4 :
--Add missing properties
+-Add "fsys-sysreg" to properties
+-Modify the "lcpll-ref-clk" and "clocks" in properties
+ "lcpll-ref-clk" is custom properties, so add 'vendor', type(enum),
+ description
+ Add the maxItem in clocks, add clock-names in properties
 
 v2->v3 :
 -Modify version history to fit the linux commit rule
@@ -144,120 +147,78 @@ v1->v2 :
 -Add the missing property list
 -Align the indentation of continued lines/entries
 ---
- .../bindings/pci/axis,artpec8-pcie-ep.yaml         | 138 +++++++++++++++++++
- .../devicetree/bindings/pci/axis,artpec8-pcie.yaml | 148 +++++++++++++++++++++
- 2 files changed, 286 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/pci/axis,artpec8-pcie-ep.yaml
- create mode 100644 Documentation/devicetree/bindings/pci/axis,artpec8-pcie.yaml
+ .../bindings/phy/axis,artpec8-pcie-phy.yaml        | 85 ++++++++++++++++++++++
+ 1 file changed, 85 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/axis,artpec8-pcie-phy.yaml
 
-diff --git a/Documentation/devicetree/bindings/pci/axis,artpec8-pcie-ep.yaml b/Documentation/devicetree/bindings/pci/axis,artpec8-pcie-ep.yaml
+diff --git a/Documentation/devicetree/bindings/phy/axis,artpec8-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/axis,artpec8-pcie-phy.yaml
 new file mode 100644
-index 0000000..435e86f
+index 0000000..9db39ef
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/pci/axis,artpec8-pcie-ep.yaml
-@@ -0,0 +1,138 @@
-+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++++ b/Documentation/devicetree/bindings/phy/axis,artpec8-pcie-phy.yaml
+@@ -0,0 +1,85 @@
++# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
 +%YAML 1.2
 +---
-+$id: http://devicetree.org/schemas/pci/axis,artpec8-pcie-ep.yaml#
++$id: http://devicetree.org/schemas/phy/axis,artpec8-pcie-phy.yaml#
 +$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+title: ARTPEC-8 SoC PCIe Controller
++title: ARTPEC-8 SoC PCIe PHY
 +
 +maintainers:
 +  - Jesper Nilsson <jesper.nilsson@axis.com>
 +
-+description: |+
-+  This PCIe end-point controller is based on the Synopsys DesignWare PCIe IP
-+  and thus inherits all the common properties defined in snps,dw-pcie-ep.yaml.
-+
-+allOf:
-+  - $ref: /schemas/pci/snps,dw-pcie-ep.yaml#
-+
 +properties:
 +  compatible:
-+    const: axis,artpec8-pcie-ep
++    const: axis,artpec8-pcie-phy
 +
 +  reg:
 +    items:
-+      - description: Data Bus Interface (DBI) registers.
-+      - description: Data Bus Interface (DBI2) registers.
-+      - description: PCIe address space region.
++      - description: PHY registers.
++      - description: PHY coding sublayer registers.
 +
 +  reg-names:
 +    items:
-+      - const: dbi
-+      - const: dbi2
-+      - const: addr_space
++      - const: phy
++      - const: pcs
 +
-+  interrupts:
-+    maxItems: 1
++  "#phy-cells":
++    const: 0
 +
 +  clocks:
-+    items:
-+      - description: PIPE clock, used by the controller to clock the PIPE
-+      - description: PCIe dbi clock, ungated version
-+      - description: PCIe master clock, ungated version
-+      - description: PCIe slave clock, ungated version
++    maxItems: 1
 +
 +  clock-names:
 +    items:
-+      - const: pipe
-+      - const: dbi
-+      - const: mstr
-+      - const: slv
++      - const: ref
 +
 +  samsung,fsys-sysreg:
 +    description:
 +      Phandle to system register of fsys block.
 +    $ref: /schemas/types.yaml#/definitions/phandle
 +
-+  samsung,syscon-phandle:
-+    description:
-+      Phandle to the PMU system controller node.
-+    $ref: /schemas/types.yaml#/definitions/phandle
-+
-+  samsung,fsys-bus-s:
-+    description:
-+      Phandle to bus-s of fsys block, this register
-+      is additional control sysreg in fsys block and
-+      this is used for pcie slave control setting.
-+    $ref: /schemas/types.yaml#/definitions/phandle
-+
-+  samsung,fsys-bus-p:
-+    description:
-+      Phandle to bus-p of fsys block, this register
-+      is additional control sysreg in fsys block and
-+      this is used for pcie dbi control setting.
-+    $ref: /schemas/types.yaml#/definitions/phandle
-+
-+  phys:
-+    maxItems: 1
-+
-+  phy-names:
-+    items:
-+      - const: pcie_phy
-+
 +  num-lanes:
 +    const: 2
++
++  axis,lcpll-ref-clk:
++    description:
++      select the reference clock of phy and initialization is performed
++      with the reference clock according to the selected value.
++    $ref: /schemas/types.yaml#/definitions/uint32
++    enum: [ 0, 1, 2, 3, 4 ]
 +
 +required:
 +  - compatible
 +  - reg
 +  - reg-names
-+  - interrupts
-+  - interrupt-names
++  - "#phy-cells"
 +  - clocks
 +  - clock-names
 +  - samsung,fsys-sysreg
-+  - samsung,syscon-phandle
-+  - samsung,syscon-bus-s-fsys
-+  - samsung,syscon-bus-p-fsys
-+  - phys
-+  - phy-names
 +  - num-lanes
++  - axis,lcpll-ref-clk
 +
-+unevaluatedProperties: false
++additionalProperties: false
 +
 +examples:
 +  - |
@@ -267,184 +228,17 @@ index 0000000..435e86f
 +    soc {
 +        #address-cells = <2>;
 +        #size-cells = <2>;
-+        pcie_ep: pcie-ep@17200000 {
-+            compatible = "axis,artpec8-pcie-ep";
-+            reg = <0x0 0x17200000 0x0 0x1000>,
-+                  <0x0 0x17201000 0x0 0x1000>,
-+                  <0x2 0x00000000 0x6 0x00000000>;
-+            reg-names = "dbi", "dbi2", "addr_space";
-+            #interrupt-cells = <1>;
-+            interrupts = <GIC_SPI 115 IRQ_TYPE_LEVEL_HIGH>;
-+            interrupt-names = "intr";
-+            clocks = <&clock_cmu_fsys 39>,
-+                     <&clock_cmu_fsys 38>,
-+                     <&clock_cmu_fsys 37>,
-+                     <&clock_cmu_fsys 36>;
-+            clock-names = "pipe", "dbi", "mstr", "slv";
++        pcie_phy: pcie-phy@16c80000 {
++            compatible = "axis,artpec8-pcie-phy";
++            reg = <0x0 0x16c80000 0x0 0x2000>,
++                  <0x0 0x16c90000 0x0 0x1000>;
++            reg-names = "phy", "pcs";
++            #phy-cells = <0>;
++            clocks = <&clock_cmu_fsys 53>;
++            clock-names = "ref";
 +            samsung,fsys-sysreg = <&syscon_fsys>;
-+            samsung,syscon-phandle = <&pmu_system_controller>;
-+            samsung,syscon-bus-s-fsys = <&syscon_bus_s_fsys>;
-+            samsung,syscon-bus-p-fsys = <&syscon_bus_p_fsys>;
-+            phys = <&pcie_phy>;
-+            phy-names = "pcie_phy";
 +            num-lanes = <2>;
-+            bus-range = <0x00 0xff>;
-+            num-ib-windows = <16>;
-+            num-ob-windows = <16>;
-+        };
-+    };
-+...
-diff --git a/Documentation/devicetree/bindings/pci/axis,artpec8-pcie.yaml b/Documentation/devicetree/bindings/pci/axis,artpec8-pcie.yaml
-new file mode 100644
-index 0000000..b7cff4f
---- /dev/null
-+++ b/Documentation/devicetree/bindings/pci/axis,artpec8-pcie.yaml
-@@ -0,0 +1,148 @@
-+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/pci/axis,artpec8-pcie.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Artpec-8 SoC PCIe Controller
-+
-+maintainers:
-+  - Jesper Nilsson <jesper.nilsson@axis.com>
-+
-+description: |+
-+  This PCIe host controller is based on the Synopsys DesignWare PCIe IP
-+  and thus inherits all the common properties defined in snps,dw-pcie.yaml.
-+
-+allOf:
-+  - $ref: /schemas/pci/snps,dw-pcie.yaml#
-+
-+properties:
-+  compatible:
-+    const: axis,artpec8-pcie
-+
-+  reg:
-+    items:
-+      - description: Data Bus Interface (DBI) registers.
-+      - description: External Local Bus interface (ELBI) registers.
-+      - description: PCIe configuration space region.
-+
-+  reg-names:
-+    items:
-+      - const: dbi
-+      - const: elbi
-+      - const: config
-+
-+  ranges:
-+    maxItems: 2
-+
-+  num-lanes:
-+    const: 2
-+
-+  interrupts:
-+    maxItems: 1
-+
-+  clocks:
-+    items:
-+      - description: PIPE clock, used by the controller to clock the PIPE
-+      - description: PCIe dbi clock, ungated version
-+      - description: PCIe master clock,  ungated version
-+      - description: PCIe slave clock, ungated version
-+
-+  clock-names:
-+    items:
-+      - const: pipe
-+      - const: dbi
-+      - const: mstr
-+      - const: slv
-+
-+  samsung,fsys-sysreg:
-+    description:
-+      Phandle to system register of fsys block.
-+    $ref: /schemas/types.yaml#/definitions/phandle
-+
-+  samsung,syscon-phandle:
-+    description:
-+      Phandle to the PMU system controller node.
-+    $ref: /schemas/types.yaml#/definitions/phandle
-+
-+  samsung,fsys-bus-s:
-+    description:
-+      Phandle to bus-s of fsys block, this register
-+      is additional control sysreg in fsys block and
-+      this is used for pcie slave control setting.
-+    $ref: /schemas/types.yaml#/definitions/phandle
-+
-+  samsung,fsys-bus-p:
-+    description:
-+      Phandle to bus-p of fsys block, this register
-+      is additional control sysreg in fsys block and
-+      this is used for pcie dbi control setting.
-+    $ref: /schemas/types.yaml#/definitions/phandle
-+
-+  phys:
-+    maxItems: 1
-+
-+  phy-names:
-+    items:
-+      - const: pcie_phy
-+
-+required:
-+  - compatible
-+  - reg
-+  - reg-names
-+  - device_type
-+  - ranges
-+  - num-lanes
-+  - interrupts
-+  - interrupt-names
-+  - clocks
-+  - clock-names
-+  - samsung,fsys-sysreg
-+  - samsung,syscon-phandle
-+  - samsung,syscon-bus-s-fsys
-+  - samsung,syscon-bus-p-fsys
-+  - phys
-+  - phy-names
-+
-+unevaluatedProperties: false
-+
-+examples:
-+  - |
-+    #include <dt-bindings/interrupt-controller/irq.h>
-+    #include <dt-bindings/interrupt-controller/arm-gic.h>
-+
-+    soc {
-+        #address-cells = <2>;
-+        #size-cells = <2>;
-+        pcie: pcie@17200000 {
-+            compatible = "axis,artpec8-pcie";
-+            reg = <0x0 0x17200000 0x0 0x1000>,
-+                  <0x0 0x16ca0000 0x0 0x2000>,
-+                  <0x7 0x0001e000 0x0 0x2000>;
-+            reg-names = "dbi", "elbi", "config";
-+            #address-cells = <3>;
-+            #size-cells = <2>;
-+            device_type = "pci";
-+            ranges = </* non-prefetchable memory */
-+                      0x83000000 0x0 0x0000000 0x2 0x00000000 0x5 0x00000000
-+                      /* downstream I/O */
-+                      0x81000000 0x0 0x0000000 0x7 0x00000000 0x0 0x00010000>;
-+            num-lanes = <2>;
-+            bus-range = <0x00 0xff>;
-+            interrupts = <GIC_SPI 115 IRQ_TYPE_LEVEL_HIGH>;
-+            interrupt-names = "intr";
-+            #interrupt-cells = <1>;
-+            clocks = <&cmu_fsys 39>,
-+                     <&cmu_fsys 38>,
-+                     <&cmu_fsys 37>,
-+                     <&cmu_fsys 36>;
-+            clock-names = "pipe", "dbi", "mstr", "slv";
-+            samsung,fsys-sysreg = <&syscon_fsys>;
-+            samsung,syscon-phandle = <&pmu_system_controller>;
-+            samsung,syscon-bus-s-fsys = <&syscon_bus_s_fsys>;
-+            samsung,syscon-bus-p-fsys = <&syscon_bus_p_fsys>;
-+            phys = <&pcie_phy>;
-+            phy-names = "pcie_phy";
++            axis,lcpll-ref-clk = <1>;
 +        };
 +    };
 +...
