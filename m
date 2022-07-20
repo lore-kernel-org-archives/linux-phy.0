@@ -4,65 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2A258C43334
-	for <linux-phy@archiver.kernel.org>; Wed, 20 Jul 2022 22:17:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D3A7CCCA48D
+	for <linux-phy@archiver.kernel.org>; Wed, 20 Jul 2022 23:52:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DxPC3avXH8mvelrNoMP8BgartprZZLt0PjH2ChzEQ68=; b=MlXVxfB2/+svi1
-	2TW3MdSdpNEqM2/Uk1KbN+/WU2THeVuF/t3wd04ZPV/CUhlbHpvUZvD8GZeNWrS6NlcZmRntca4E/
-	seWweDj1z4ujgPm1oDXd3jR2WHDLK4U8L+LZ2FQ67qMbiJNDISCUCovHO1HZYiwzz69VGk2UusqfK
-	wT6QAk4bvxi4WTkgSgI9O94RRNiyu0LjzgPSXVsXXlR2AluYeIZO70qlOJJtx2T6i7PTu7BqyhfYd
-	U4El0LPM1WhVb0QlGBXwyYbS9eEGtGRkfQGwjizkiJhw3Khw9arOfs9WYouKzJp5u1B0OEy6VhKdO
-	Aa/wCAaG8ju8UwA7Nqxw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=VeRFxHczmqtSr108YdHlNzZJBt/5493gnWLUBHa/dh4=; b=oj7
+	qXmsTOUHmiC9pl9c+FFvaFAxG5RsRFx/IkP0MPdUEEgmlOdwAb6nWUyzQYNA9HbfvejZkq6ZKhiKT
+	p0gwvNLCSEHeKLEsu1x+0B4VvmIfp/hC4luCGtvl3JS94+yMzvsGSDPVOQqOjseFdB419gJkcFsHq
+	uAuTDbXhm8ihqcmea/ZsD3hCuQ4Pxy3l7+x6SqvToFezWHxtu5v9twfDykNJoewy7v0aJkpK7Yyn9
+	jMZfw+ElichYXSecSRoy3MsjLBlAesbVvFypvbbaDAorSGqHLE7pDcq1sFQjJ96Dzz/RZObTQJSct
+	Kkrqgq99fBQC6FvxcisWENN3BzFH6Dw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oEI0Q-00CFgk-Cu; Wed, 20 Jul 2022 22:17:22 +0000
-Received: from mail-il1-f175.google.com ([209.85.166.175])
+	id 1oEJU0-00DSjw-4v; Wed, 20 Jul 2022 23:52:00 +0000
+Received: from mail-pf1-x42a.google.com ([2607:f8b0:4864:20::42a])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oEI0E-00CFH7-CO; Wed, 20 Jul 2022 22:17:12 +0000
-Received: by mail-il1-f175.google.com with SMTP id i5so2673555ila.6;
-        Wed, 20 Jul 2022 15:17:07 -0700 (PDT)
+	id 1oEJTx-00DSg1-7W
+	for linux-phy@lists.infradead.org; Wed, 20 Jul 2022 23:51:58 +0000
+Received: by mail-pf1-x42a.google.com with SMTP id y9so182054pff.12
+        for <linux-phy@lists.infradead.org>; Wed, 20 Jul 2022 16:51:53 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=broadcom.com; s=google;
+        h=from:to:cc:subject:date:message-id:mime-version;
+        bh=OktbOdDuBQthOQj8zvQa8cjH6aRl5vvN3vEQ2TBbNUY=;
+        b=ghp1D1skRpqEZOSslMThFPa3otbA4enqEXvMta5YckQW2UtGEG+Y66TTW/h8q85Yn0
+         NK7U5uLpJNXhSkJdqkffxDtFLaUgA2yBopcupCdpE1+ObqGXD12GUMx/HoUV21XBkzAD
+         5LP73bvKWB8v7rZUU/rIheq0FzVq0V6AJC1JM=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=x-gm-message-state:date:from:to:cc:subject:message-id:references
-         :mime-version:content-disposition:in-reply-to;
-        bh=aUlOd+EpVilq1LbBbOdnAUUakZ1pmB0C8nlxw1tK264=;
-        b=mFGMFUUYWQwgaliimeaw6bM0RK7aQC5nZV0WwMBTef+T8miFyU7XW9AIfrevXwVlWm
-         VTS0k/SPxKbbGE3MM71YV119iE99q+MXDbSo2/3c6vbJ4yN71FR8H66aO/gvPQrXJSKC
-         JU3NPSe5NX6t2tPPrF3tLDjfabAC6/W9KSZbfjjrxKM0CibrlDO0WHo46C6oZ2f8I35N
-         6V0lGnCSIBEHs7WlTj6cDuW9VSy8v83cQpcL/u8PrEYd0Xp2/nmQm327UximiKMs3Nud
-         hynn2Mi2YpULWfkkk7i7GyNmsS1ejkWoyK6d8wVAyjuXpSL7NbM/4+rECpWbJ+/tXbDb
-         agQg==
-X-Gm-Message-State: AJIora+mU6GNFwnWIzJF9gci6AhaEjJmIQUGC+qxllO04rxNloQALDuh
-	spZree6hypLqcaE0cZF/2g==
-X-Google-Smtp-Source: AGRyM1ucGxMPK6PIuTcVoOD7WoI7SmAzmBLBAjid9V6pCEpsJf5qwJh8tZ+HnYsW8k3BoW2u51OOiQ==
-X-Received: by 2002:a05:6e02:1a6e:b0:2dc:ff0b:3e3e with SMTP id w14-20020a056e021a6e00b002dcff0b3e3emr4972041ilv.219.1658355426542;
-        Wed, 20 Jul 2022 15:17:06 -0700 (PDT)
-Received: from robh.at.kernel.org ([64.188.179.248])
-        by smtp.gmail.com with ESMTPSA id o14-20020a02740e000000b00331b9a3c5adsm24659jac.170.2022.07.20.15.17.05
+        h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version;
+        bh=OktbOdDuBQthOQj8zvQa8cjH6aRl5vvN3vEQ2TBbNUY=;
+        b=CxhDUpOsiCvizQY6SaaRHMNIu+8d0wHiRGwm3yI9QqqKpce1wx7I5KQXZkIvDdJQ1W
+         w1xk3UH00YOUALUW2yrAwocazH9MuV+KbvMgrKyUi8IhLfHItCrZZxLQFwBN0jtdQ0KB
+         TQhzl2w1/XzLhOVl0LsmQwDze9ElgcnPws650GA7daBZkAnG7fY4TD9Nrr6MwoT+conL
+         +2xx9xqTJJ4Vll4h6uQ4S3n00fn79CUerYYbXOOaSeXCxhq+YgNnv6u0QS9UtBoQQbEE
+         GFzA7G5GGPoDs/0e3HscVKNSxViRKzuKBAJfNrdTBvG/EKVY3kwMFe3FOiWII+7zu+8S
+         +W5Q==
+X-Gm-Message-State: AJIora/4oDXLGuVxDe2ldTBI/tc+S0nq1iWnKfDWdnKBlczUi6Dl5PQ3
+	c9C4gr/kK9TWHzGxpOZOdckcaA==
+X-Google-Smtp-Source: AGRyM1u7M2xR4x12JwYIuJAyqIyWCnUkPMz6ebyMu8nMudRwiShEyQg2JvTKydooYsWmvqzX3dYowg==
+X-Received: by 2002:a05:6a00:23c9:b0:52a:cedd:3992 with SMTP id g9-20020a056a0023c900b0052acedd3992mr40987168pfc.43.1658361113294;
+        Wed, 20 Jul 2022 16:51:53 -0700 (PDT)
+Received: from ubuntu-22.localdomain ([192.19.222.250])
+        by smtp.gmail.com with ESMTPSA id z1-20020aa79f81000000b0052ba78e7c20sm209171pfr.97.2022.07.20.16.51.50
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 20 Jul 2022 15:17:06 -0700 (PDT)
-Received: (nullmailer pid 4079078 invoked by uid 1000);
-	Wed, 20 Jul 2022 22:17:04 -0000
-Date: Wed, 20 Jul 2022 16:17:04 -0600
-From: Rob Herring <robh@kernel.org>
-To: Sean Anderson <sean.anderson@seco.com>
-Cc: "David S . Miller" <davem@davemloft.net>, Jakub Kicinski <kuba@kernel.org>, Madalin Bucur <madalin.bucur@nxp.com>, netdev@vger.kernel.org, Paolo Abeni <pabeni@redhat.com>, Eric Dumazet <edumazet@google.com>, linux-arm-kernel@lists.infradead.org, Russell King <linux@armlinux.org.uk>, linux-kernel@vger.kernel.org, Kishon Vijay Abraham I <kishon@ti.com>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Vinod Koul <vkoul@kernel.org>, devicetree@vger.kernel.org, linux-phy@lists.infradead.org
-Subject: Re: [PATCH net-next v3 01/47] dt-bindings: phy: Add Lynx 10G phy
- binding
-Message-ID: <20220720221704.GA4049520-robh@kernel.org>
-References: <20220715215954.1449214-1-sean.anderson@seco.com>
- <20220715215954.1449214-2-sean.anderson@seco.com>
+        Wed, 20 Jul 2022 16:51:52 -0700 (PDT)
+From: William Zhang <william.zhang@broadcom.com>
+To: william.zhang@broadcom.com
+Cc: joel.peshkin@broadcom.com,
+	dan.beygelman@broadcom.com,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	=?UTF-8?q?Rafa=C5=82=20Mi=C5=82ecki?= <rafal@milecki.pl>,
+	Broadcom internal kernel review list <bcm-kernel-feedback-list@broadcom.com>,
+	devicetree@vger.kernel.org (open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS),
+	linux-kernel@vger.kernel.org (open list),
+	linux-arm-kernel@lists.infradead.org (moderated list:BROADCOM BCMBCA ARM ARCHITECTURE),
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	linux-i2c@vger.kernel.org (open list:I2C SUBSYSTEM HOST DRIVERS),
+	linux-mtd@lists.infradead.org (open list:MEMORY TECHNOLOGY DEVICES (MTD)),
+	netdev@vger.kernel.org (open list:NETWORKING DRIVERS),
+	linux-pci@vger.kernel.org (open list:PCI NATIVE HOST BRIDGE AND ENDPOINT DRIVERS),
+	linux-phy@lists.infradead.org (open list:GENERIC PHY FRAMEWORK),
+	linux-gpio@vger.kernel.org (open list:PIN CONTROL SUBSYSTEM),
+	linux-mips@vger.kernel.org (open list:BROADCOM BMIPS MIPS ARCHITECTURE),
+	linux-serial@vger.kernel.org (open list:SERIAL DRIVERS),
+	linux-watchdog@vger.kernel.org (open list:WATCHDOG DEVICE DRIVERS),
+	Catalin Marinas <catalin.marinas@arm.com>,
+	Will Deacon <will@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Subject: [PATCH 0/9] arm64: bcmbca: Move BCM4908 SoC support under ARCH_BCMBCA
+Date: Wed, 20 Jul 2022 16:51:35 -0700
+Message-Id: <20220720235135.29044-1-william.zhang@broadcom.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20220715215954.1449214-2-sean.anderson@seco.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220720_151710_467727_BE9285DA 
-X-CRM114-Status: GOOD (  52.99  )
+X-CRM114-CacheID: sfid-20220720_165157_367121_A20B039F 
+X-CRM114-Status: GOOD (  12.95  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,418 +96,165 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============4329389999035336000=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Jul 15, 2022 at 05:59:08PM -0400, Sean Anderson wrote:
-> This adds a binding for the SerDes module found on QorIQ processors. The
-> phy reference has two cells, one for the first lane and one for the
-> last. This should allow for good support of multi-lane protocols when
-> (if) they are added. There is no protocol option, because the driver is
-> designed to be able to completely reconfigure lanes at runtime.
-> Generally, the phy consumer can select the appropriate protocol using
-> set_mode. For the most part there is only one protocol controller
-> (consumer) per lane/protocol combination. The exception to this is the
-> B4860 processor, which has some lanes which can be connected to
-> multiple MACs. For that processor, I anticipate the easiest way to
-> resolve this will be to add an additional cell with a "protocol
-> controller instance" property.
-> 
-> Each serdes has a unique set of supported protocols (and lanes). The
-> support matrix is configured in the device tree. The format of each
-> PCCR (protocol configuration register) is modeled. Although the general
-> format is typically the same across different SoCs, the specific
-> supported protocols (and the values necessary to select them) are
-> particular to individual SerDes. A nested structure is used to reduce
-> duplication of data.
-> 
-> There are two PLLs, each of which can be used as the master clock for
-> each lane. Each PLL has its own reference. For the moment they are
-> required, because it simplifies the driver implementation. Absent
-> reference clocks can be modeled by a fixed-clock with a rate of 0.
-> 
-> Signed-off-by: Sean Anderson <sean.anderson@seco.com>
-> ---
-> 
-> Changes in v3:
-> - Manually expand yaml references
-> - Add mode configuration to device tree
-> 
-> Changes in v2:
-> - Rename to fsl,lynx-10g.yaml
-> - Refer to the device in the documentation, rather than the binding
-> - Move compatible first
-> - Document phy cells in the description
-> - Allow a value of 1 for phy-cells. This allows for compatibility with
->   the similar (but according to Ioana Ciornei different enough) lynx-28g
->   binding.
-> - Remove minItems
-> - Use list for clock-names
-> - Fix example binding having too many cells in regs
-> - Add #clock-cells. This will allow using assigned-clocks* to configure
->   the PLLs.
-> - Document the structure of the compatible strings
-> 
->  .../devicetree/bindings/phy/fsl,lynx-10g.yaml | 311 ++++++++++++++++++
->  1 file changed, 311 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/fsl,lynx-10g.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/fsl,lynx-10g.yaml b/Documentation/devicetree/bindings/phy/fsl,lynx-10g.yaml
-> new file mode 100644
-> index 000000000000..a2c37225bb67
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/fsl,lynx-10g.yaml
-> @@ -0,0 +1,311 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/fsl,lynx-10g.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: NXP Lynx 10G SerDes
-> +
-> +maintainers:
-> +  - Sean Anderson <sean.anderson@seco.com>
-> +
-> +description: |
-> +  These Lynx "SerDes" devices are found in NXP's QorIQ line of processors. The
-> +  SerDes provides up to eight lanes. Each lane may be configured individually,
-> +  or may be combined with adjacent lanes for a multi-lane protocol. The SerDes
-> +  supports a variety of protocols, including up to 10G Ethernet, PCIe, SATA, and
-> +  others. The specific protocols supported for each lane depend on the
-> +  particular SoC.
-> +
-> +definitions:
+--===============4329389999035336000==
+Content-Type: multipart/signed; protocol="application/pkcs7-signature"; micalg=sha-256;
+	boundary="00000000000016cce705e445494b"
 
-$defs:
+--00000000000016cce705e445494b
+Content-Transfer-Encoding: 8bit
 
-> +  fsl,cfg:
-> +    $ref: /schemas/types.yaml#/definitions/uint32
-> +    minimum: 1
-> +    description: |
-> +      The configuration value to program into the field.
+Now that Broadcom Broadband arch ARCH_BCMBCA is in the kernel, this
+patch series migrates the existing broadband chip BCM4908 support to
+ARCH_BCMBCA.
 
-What field?
+William Zhang (9):
+  dt-bindings: arm64: bcmbca: Merge BCM4908 into BCMBCA
+  dt-bindings: arm64: bcmbca: Update BCM4908 description
+  arm64: dts: bcmbca: update BCM4908 board dts files
+  arm64: dts: Move BCM4908 dts to bcmbca folder
+  arm64: dts: Add BCM4908 generic board dts
+  arm64: bcmbca: Make BCM4908 drivers depend on ARCH_BCMBCA
+  arm64: bcmbca: Merge ARCH_BCM4908 to ARCH_BCMBCA
+  MAINTAINERS: Add BCM4908 maintainer to BCMBCA entry
+  arm64: defconfig: remove BCM4908
 
-> +
-> +  fsl,first-lane:
-> +    $ref: /schemas/types.yaml#/definitions/uint32
-> +    minimum: 0
-> +    maximum: 7
-> +    description: |
-> +      The first lane in the group configured by fsl,cfg. This lane will have
-> +      the FIRST_LANE bit set in GCR0. The reset direction will also be set
-> +      based on whether this property is less than or greater than
-> +      fsl,last-lane.
-> +
-> +  fsl,last-lane:
-> +    $ref: /schemas/types.yaml#/definitions/uint32
-> +    minimum: 0
-> +    maximum: 7
-> +    description: |
-> +      The last lane configured by fsl,cfg. If this property is absent,
-> +      then it will default to the value of fsl,first-lane.
-> +
-> +properties:
-> +  compatible:
-> +    items:
-> +      - enum:
-> +          - fsl,ls1046a-serdes
-> +          - fsl,ls1088a-serdes
-> +      - const: fsl,lynx-10g
-> +
-> +  "#clock-cells":
-> +    const: 1
-> +    description: |
-> +      The cell contains the index of the PLL, starting from 0. Note that when
-> +      assigning a rate to a PLL, the PLLs' rates are divided by 1000 to avoid
-> +      overflow. A rate of 5000000 corresponds to 5GHz.
-> +
-> +  "#phy-cells":
-> +    minimum: 1
-> +    maximum: 2
-> +    description: |
-> +      The cells contain the following arguments:
-> +      - The first lane in the group. Lanes are numbered based on the register
-> +        offsets, not the I/O ports. This corresponds to the letter-based ("Lane
-> +        A") naming scheme, and not the number-based ("Lane 0") naming scheme. On
-> +        most SoCs, "Lane A" is "Lane 0", but not always.
-> +      - Last lane. For single-lane protocols, this should be the same as the
-> +        first lane.
+ .../bindings/arm/bcm/brcm,bcm4908.yaml        | 42 -------------------
+ .../bindings/arm/bcm/brcm,bcmbca.yaml         | 25 +++++++++++
+ MAINTAINERS                                   |  1 +
+ arch/arm64/Kconfig.platforms                  | 10 +----
+ arch/arm64/boot/dts/broadcom/Makefile         |  1 -
+ arch/arm64/boot/dts/broadcom/bcm4908/Makefile |  5 ---
+ arch/arm64/boot/dts/broadcom/bcmbca/Makefile  |  5 +++
+ .../bcm4906-netgear-r8000p.dts                |  2 +-
+ .../bcm4906-tplink-archer-c2300-v1.dts        |  2 +-
+ .../broadcom/{bcm4908 => bcmbca}/bcm4906.dtsi |  0
+ .../bcm4908-asus-gt-ac5300.dts                |  2 +-
+ .../bcm4908-netgear-raxe500.dts               |  2 +-
+ .../broadcom/{bcm4908 => bcmbca}/bcm4908.dtsi |  0
+ .../boot/dts/broadcom/bcmbca/bcm94908.dts     | 30 +++++++++++++
+ arch/arm64/configs/defconfig                  |  1 -
+ drivers/i2c/busses/Kconfig                    |  4 +-
+ drivers/mtd/parsers/Kconfig                   |  6 +--
+ drivers/net/ethernet/broadcom/Kconfig         |  4 +-
+ drivers/pci/controller/Kconfig                |  2 +-
+ drivers/phy/broadcom/Kconfig                  |  4 +-
+ drivers/pinctrl/bcm/Kconfig                   |  4 +-
+ drivers/reset/Kconfig                         |  2 +-
+ drivers/soc/bcm/bcm63xx/Kconfig               |  4 +-
+ drivers/tty/serial/Kconfig                    |  4 +-
+ drivers/watchdog/Kconfig                      |  2 +-
+ 25 files changed, 84 insertions(+), 80 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/arm/bcm/brcm,bcm4908.yaml
+ delete mode 100644 arch/arm64/boot/dts/broadcom/bcm4908/Makefile
+ rename arch/arm64/boot/dts/broadcom/{bcm4908 => bcmbca}/bcm4906-netgear-r8000p.dts (96%)
+ rename arch/arm64/boot/dts/broadcom/{bcm4908 => bcmbca}/bcm4906-tplink-archer-c2300-v1.dts (99%)
+ rename arch/arm64/boot/dts/broadcom/{bcm4908 => bcmbca}/bcm4906.dtsi (100%)
+ rename arch/arm64/boot/dts/broadcom/{bcm4908 => bcmbca}/bcm4908-asus-gt-ac5300.dts (97%)
+ rename arch/arm64/boot/dts/broadcom/{bcm4908 => bcmbca}/bcm4908-netgear-raxe500.dts (89%)
+ rename arch/arm64/boot/dts/broadcom/{bcm4908 => bcmbca}/bcm4908.dtsi (100%)
+ create mode 100644 arch/arm64/boot/dts/broadcom/bcmbca/bcm94908.dts
 
-Perhaps a single cell with a lane mask would be simpler.
+-- 
+2.34.1
 
-> +      If no lanes in a SerDes can be grouped, then #phy-cells may be 1, and the
-> +      first cell will specify the only lane in the group.
 
-It is generally easier to have a fixed number of cells.
+--00000000000016cce705e445494b
+Content-Type: application/pkcs7-signature; name="smime.p7s"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="smime.p7s"
+Content-Description: S/MIME Cryptographic Signature
 
-> +
-> +  clocks:
-> +    maxItems: 2
-> +    description: |
-> +      Clock for each PLL reference clock input.
-> +
-> +  clock-names:
-> +    minItems: 2
-> +    maxItems: 2
-> +    items:
-> +      enum:
-> +        - ref0
-> +        - ref1
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +patternProperties:
-> +  '^pccr-':
-> +    type: object
-> +
-> +    description: |
-> +      One of the protocol configuration registers (PCCRs). These contains
-> +      several fields, each of which mux a particular protocol onto a particular
-> +      lane.
-> +
-> +    properties:
-> +      fsl,pccr:
-> +        $ref: /schemas/types.yaml#/definitions/uint32
-> +        description: |
-> +          The index of the PCCR. This is the same as the register name suffix.
-> +          For example, a node for PCCRB would use a value of '0xb' for an
-> +          offset of 0x22C (0x200 + 4 * 0xb).
-> +
-> +    patternProperties:
-> +      '^(q?sgmii|xfi|pcie|sata)-':
-> +        type: object
-> +
-> +        description: |
-> +          A configuration field within a PCCR. Each field configures one
-> +          protocol controller. The value of the field determines the lanes the
-> +          controller is connected to, if any.
-> +
-> +        properties:
-> +          fsl,index:
+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
+TltlrAeBKRJ1M9O/DY5v7L1Yrs//7XIRg/d2ZPAOSGBQzFYjYTFWwNBiR1s1zP0m2y56DPbS5gwj
+fqAN/I4PJHIvTh3zUgHXNKadYoYRiPHXfaTWO9UhzysOpQIDAQABo4IB2zCCAdcwDgYDVR0PAQH/
+BAQDAgWgMIGjBggrBgEFBQcBAQSBljCBkzBOBggrBgEFBQcwAoZCaHR0cDovL3NlY3VyZS5nbG9i
+YWxzaWduLmNvbS9jYWNlcnQvZ3NnY2NyM3BlcnNvbmFsc2lnbjJjYTIwMjAuY3J0MEEGCCsGAQUF
+BzABhjVodHRwOi8vb2NzcC5nbG9iYWxzaWduLmNvbS9nc2djY3IzcGVyc29uYWxzaWduMmNhMjAy
+MDBNBgNVHSAERjBEMEIGCisGAQQBoDIBKAowNDAyBggrBgEFBQcCARYmaHR0cHM6Ly93d3cuZ2xv
+YmFsc2lnbi5jb20vcmVwb3NpdG9yeS8wCQYDVR0TBAIwADBJBgNVHR8EQjBAMD6gPKA6hjhodHRw
+Oi8vY3JsLmdsb2JhbHNpZ24uY29tL2dzZ2NjcjNwZXJzb25hbHNpZ24yY2EyMDIwLmNybDAlBgNV
+HREEHjAcgRp3aWxsaWFtLnpoYW5nQGJyb2FkY29tLmNvbTATBgNVHSUEDDAKBggrBgEFBQcDBDAf
+BgNVHSMEGDAWgBSWM9HmWBdbNHWKgVZk1b5I3qGPzzAdBgNVHQ4EFgQUohM5GmNlGWe5wpzDxzIy
++EgzbRswDQYJKoZIhvcNAQELBQADggEBACKu9JSQAYTlmC+JTniO/C/UcXGonATI/muBjWTxtkHc
+abZtz0uwzzrRrpV+mbHLGVFFeRbXSLvcEzqHp8VomXifEZlfsE9LajSehzaqhd+np+tmUPz1RlI/
+ibZ7vW+1VF18lfoL+wHs2H0fsG6JfoqZldEWYXASXnUrs0iTLgXxvwaQj69cSMuzfFm1X5kWqWCP
+W0KkR8025J0L5L4yXfkSO6psD/k4VcTsMJHLN4RfMuaXIT6EM0cNO6h3GypyTuPf1N1X+F6WQPKb
+1u+rvdML63P9fX7e7mwwGt5klRnf8aK2VU7mIdYCcrFHaKDTW3fkG6kIgrE1wWSgiZYL400xggJt
+MIICaQIBATBrMFsxCzAJBgNVBAYTAkJFMRkwFwYDVQQKExBHbG9iYWxTaWduIG52LXNhMTEwLwYD
+VQQDEyhHbG9iYWxTaWduIEdDQyBSMyBQZXJzb25hbFNpZ24gMiBDQSAyMDIwAgw28eX6TfvsbNfu
+SIMwDQYJYIZIAWUDBAIBBQCggdQwLwYJKoZIhvcNAQkEMSIEIC+VGi0iJxiJTnPCM53DAIYniJ5B
+RZK3GO6r3CaUkXk9MBgGCSqGSIb3DQEJAzELBgkqhkiG9w0BBwEwHAYJKoZIhvcNAQkFMQ8XDTIy
+MDcyMDIzNTE1M1owaQYJKoZIhvcNAQkPMVwwWjALBglghkgBZQMEASowCwYJYIZIAWUDBAEWMAsG
+CWCGSAFlAwQBAjAKBggqhkiG9w0DBzALBgkqhkiG9w0BAQowCwYJKoZIhvcNAQEHMAsGCWCGSAFl
+AwQCATANBgkqhkiG9w0BAQEFAASCAQBZLz7sf9dse+D9zZpDwivDvMhOuVj+XQ/+Ph18GJjUT5LB
+ge5C2lfz3L3GR4wgrcXO+pnwuK9RrRWB8IFknkBhV1yeJbl7qd86YqEE2kC/tsxyPVJQ5CZnfcWw
+j04pgplpf07gINpurEmZyFMi2Pl1VZG4Pxzs0jJVSuryY0WrdATfHWB853tQlfdPTQhz+tb9blTj
++NHRzU0Z8uRFuh8e57IoahVbp0oVfDXR77/VmDf6kIbIM1EdmmcApRybkqnO7E1JzS73q9hW2T9G
+3faPsmgypTPE+UzOjqRPJN5RMDFM8naTSCOVICU87Df4/MIqKt19KzgmrnIAZBSzUPdT
+--00000000000016cce705e445494b--
 
-indexes are generally a red flag in binding. What is the index, how does 
-it correspond to the h/w and why do you need it. If we do end up needing 
-it, 'reg' is generally how we address some component.
 
-> +            $ref: /schemas/types.yaml#/definitions/uint32
-> +            description: |
-> +              The index of the field. This corresponds to the suffix in the
-
-What field?
-
-> +              documentation. For example, PEXa would be 0, PEXb 1, etc.
-> +              Generally, higher fields occupy lower bits.
-> +
-> +              If there are any subnodes present, they will be preferred over
-> +              fsl,cfg et. al.
-> +
-> +          fsl,cfg:
-> +            $ref: "#/definitions/fsl,cfg"
-> +
-> +          fsl,first-lane:
-> +            $ref: "#/definitions/fsl,first-lane"
-> +
-> +          fsl,last-lane:
-> +            $ref: "#/definitions/fsl,last-lane"
-
-Why do you have lane assignments here and in the phy cells?
-
-> +
-> +          fsl,proto:
-> +            $ref: /schemas/types.yaml#/definitions/string
-> +            enum:
-> +              - sgmii
-> +              - sgmii25
-> +              - qsgmii
-> +              - xfi
-> +              - pcie
-> +              - sata
-
-We have standard phy modes already for at least most of these types. 
-Generally the mode is set in the phy cells.
-
-> +            description: |
-> +              Indicates the basic group protocols supported by this field.
-> +              Individual protocols are selected by configuring the protocol
-> +              controller.
-> +
-> +              - sgmii: 1000BASE-X, SGMII, and 1000BASE-KX (depending on the
-> +                       SoC)
-> +              - sgmii25: 2500BASE-X, 1000BASE-X, SGMII, and 1000BASE-KX
-> +                         (depending on the SoC)
-> +              - qsgmii: QSGMII
-> +              - xfi: 10GBASE-R and 10GBASE-KR (depending on the SoC)
-> +              - pcie: PCIe
-> +              - sata: SATA
-> +
-> +        patternProperties:
-> +          '^cfg-':
-> +            type: object
-> +
-> +            description: |
-> +              A single field may have multiple values which, when programmed,
-> +              connect the protocol controller to different lanes. If this is the
-> +              case, multiple sub-nodes may be provided, each describing a
-> +              single muxing.
-> +
-> +            properties:
-> +              fsl,cfg:
-> +                $ref: "#/definitions/fsl,cfg"
-> +
-> +              fsl,first-lane:
-> +                $ref: "#/definitions/fsl,first-lane"
-> +
-> +              fsl,last-lane:
-> +                $ref: "#/definitions/fsl,last-lane"
-> +
-> +            required:
-> +              - fsl,cfg
-> +              - fsl,first-lane
-> +
-> +            dependencies:
-> +              fsl,last-lane:
-> +                - fsl,first-lane
-> +
-> +            additionalProperties: false
-> +
-> +        required:
-> +          - fsl,index
-> +          - fsl,proto
-> +
-> +        dependencies:
-> +          fsl,last-lane:
-> +            - fsl,first-lane
-> +          fsl,cfg:
-> +            - fsl,first-lane
-> +          fsl,first-lane:
-> +            - fsl,cfg
-> +
-> +        # I would like to require either a config subnode or the config
-> +        # properties (and not both), but from what I can tell that can't be
-> +        # expressed in json schema. In particular, it is not possible to
-> +        # require a pattern property.
-
-Indeed, it is not. There's been some proposals.
-
-> +
-> +        additionalProperties: false
-> +
-> +    required:
-> +      - fsl,pccr
-> +
-> +    additionalProperties: false
-> +
-> +required:
-> +  - "#clock-cells"
-> +  - "#phy-cells"
-> +  - compatible
-> +  - clocks
-> +  - clock-names
-> +  - reg
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    serdes1: phy@1ea0000 {
-> +      #clock-cells = <1>;
-> +      #phy-cells = <2>;
-> +      compatible = "fsl,ls1088a-serdes", "fsl,lynx-10g";
-> +      reg = <0x1ea0000 0x2000>;
-> +      clocks = <&clk_100mhz>, <&clk_156_mhz>;
-> +      clock-names = "ref0", "ref1";
-> +      assigned-clocks = <&serdes1 0>;
-> +      assigned-clock-rates = <5000000>;
-> +
-> +      pccr-8 {
-> +        fsl,pccr = <0x8>;
-> +
-> +        sgmii-0 {
-> +          fsl,index = <0>;
-> +          fsl,cfg = <0x1>;
-> +          fsl,first-lane = <3>;
-> +          fsl,proto = "sgmii";
-> +        };
-> +
-> +        sgmii-1 {
-> +          fsl,index = <1>;
-> +          fsl,cfg = <0x1>;
-> +          fsl,first-lane = <2>;
-> +          fsl,proto = "sgmii";
-> +        };
-> +
-> +        sgmii-2 {
-> +          fsl,index = <2>;
-> +          fsl,cfg = <0x1>;
-> +          fsl,first-lane = <1>;
-> +          fsl,proto = "sgmii25";
-> +        };
-> +
-> +        sgmii-3 {
-> +          fsl,index = <3>;
-> +          fsl,cfg = <0x1>;
-> +          fsl,first-lane = <0>;
-> +          fsl,proto = "sgmii25";
-> +        };
-> +      };
-> +
-> +      pccr-9 {
-> +        fsl,pccr = <0x9>;
-> +
-> +        qsgmii-0 {
-> +          fsl,index = <0>;
-> +          fsl,cfg = <0x1>;
-> +          fsl,first-lane = <3>;
-> +          fsl,proto = "qsgmii";
-> +        };
-> +
-> +        qsgmii-1 {
-> +          fsl,index = <1>;
-> +          fsl,proto = "qsgmii";
-> +
-> +          cfg-1 {
-> +            fsl,cfg = <0x1>;
-> +            fsl,first-lane = <2>;
-> +          };
-> +
-> +          cfg-2 {
-> +            fsl,cfg = <0x2>;
-> +            fsl,first-lane = <0>;
-> +          };
-> +        };
-> +      };
-> +
-> +      pccr-b {
-> +        fsl,pccr = <0xb>;
-> +
-> +        xfi-0 {
-> +          fsl,index = <0>;
-> +          fsl,cfg = <0x1>;
-> +          fsl,first-lane = <1>;
-> +          fsl,proto = "xfi";
-> +        };
-> +
-> +        xfi-1 {
-> +          fsl,index = <1>;
-> +          fsl,cfg = <0x1>;
-> +          fsl,first-lane = <0>;
-> +          fsl,proto = "xfi";
-> +        };
-> +      };
-> +    };
-
-Other than lane assignments and modes, I don't really understand what 
-you are trying to do. It all looks too complex and I don't see any other 
-phy bindings needing something this complex.
-
-Rob
+--===============4329389999035336000==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============4329389999035336000==--
+
