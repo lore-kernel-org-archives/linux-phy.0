@@ -4,87 +4,108 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D4360CCA486
-	for <linux-phy@archiver.kernel.org>; Tue, 19 Jul 2022 20:06:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AC21EC433EF
+	for <linux-phy@archiver.kernel.org>; Wed, 20 Jul 2022 05:51:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fURIFSExQOTrJ7YYa2SLJkAhUhkX8MbOu8QHlVHxPKk=; b=cKWVpja8YzAlb1
-	61jAg6ne47k6hP4i2kB2fTNTTsJo7Ym2FuS1Le0wD1NrlFfJ2M6yc7EB5oP2tTYkf8RBlOKqZog9F
-	TyPaVONX7ToHnSHFDWKw7gDBFKIHRX+lznM3CHAMOi8kN1Fa1hlU2TwzG72r6y/w8pDTXpiVJiq3c
-	svIp1qv5egmTd5K0QZf2+WB+xvBFy/Ve0z/xclOnMVxb3hX7Op+b5jp9hOQw/WHF03hxgZ00DKjp4
-	WjuQ18oy9s9iNBfnfmbnH1481XuXBPXldw8kHIkHuZXx46L5R48TOrC3duXrORJQuwJGnJxf+Kpmr
-	V32f2XnhP/PoxQ2eNckA==;
+	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:References:Date:Message-ID:CC
+	:To:From:Subject:Mime-Version:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	List-Owner; bh=qNMsTR4IbfxyRsoK7tUhB8Xd86yVn0j8qbCJO8tUflc=; b=XgBGNPSmctjfgp
+	TobOf9zTeCTUtuJmLzmUEqJQh7aCaqy7cj81ZniEFXVj3tN361KAuJotvQ6VAI958dLirZ0kqofzS
+	yKrmJgEx+AJt5+Md9pfIzlDJ1K8SAmUMe0JuhxkXpT+aLZ9FaSbUdDXyk3+o/pumVpSoB15iDwEzL
+	be+fPj6/eoXjd8139aIXc8MHFk+LbcSTlt4yk8lAbk0F6xuDqcMOl24BQBA74QOp1tT8angyykCzQ
+	Dt7Wo+MM+JQ4sEIkGneE3WfFu21zEhso8Do3RIsPWRn+b1VuTY5BJDw8wVYphuSVI5jAX1P3Tmo96
+	Q21pDZm6pbbCjurRaU6w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oDtUM-00CKpz-7k; Tue, 19 Jul 2022 20:06:38 +0000
-Received: from mail-lj1-x236.google.com ([2a00:1450:4864:20::236])
+	id 1oE2cL-000jy7-Qo; Wed, 20 Jul 2022 05:51:29 +0000
+Received: from mailout2.samsung.com ([203.254.224.25])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oDtUI-00CKiz-BO
-	for linux-phy@lists.infradead.org; Tue, 19 Jul 2022 20:06:36 +0000
-Received: by mail-lj1-x236.google.com with SMTP id w17so18708272ljh.6
-        for <linux-phy@lists.infradead.org>; Tue, 19 Jul 2022 13:06:32 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=from:to:cc:subject:date:message-id:in-reply-to:references
-         :mime-version:content-transfer-encoding;
-        bh=4mVgMU0JNbVFGBujet/TzqwP83qk1CmJW+qJ8LQMNlY=;
-        b=i7hZ0hMngQc7Ox586XnCw14dO3Q76ewcYwgL3JWtCROESiVwqKdBy9DFJe0N+Ku07T
-         XGJBTpOR0aB2NdTqxGYEFlDsA9I04V2Mg7Jm1ymf/QPQEtjhnbPDwS22IIxrD7kq/P4r
-         cKdXI9DDQlJ3uG3jXTQJy/aWFABS9IwAjr7znXlMBeq4jC0JR2rWi89MLpTD+xzTXbYa
-         YNupmECt+x8NABwGeg0CQwV/BXjMR4C0+3uGrWB1alu2GtqOO2XuEJc0Wwe5BWITUaHK
-         t/uP3h2tIfbo6sUbjfaUE1rdpHoo3go85/HDFcaCL3gvz7HjoaGmlCWqAAejNj+ZeC15
-         HGPA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
-         :references:mime-version:content-transfer-encoding;
-        bh=4mVgMU0JNbVFGBujet/TzqwP83qk1CmJW+qJ8LQMNlY=;
-        b=r3CFqXmI4gHxbl2Dp8ZEVop2iYoRFWcSNss3SssTa2FCPeHFlSKWjq0bETnoE8JRcW
-         l9yTcBoUbz8z5bHumq6c0FW1Y4ZSWKozj25kcolnid2FuOZQfE2T8+/C/e/Y/DQ9c8SQ
-         z2PtpuRIzv2LBUPdmVJTJ5Y7IYjFgjjoPCd/+eqEruB6wCRE7oRf+t00PXF5K59QSmw4
-         FVkQjzycTVCO6lyMwRY5+UVKgA0uA+2wtK2u9t4rfihytEb+EzFbJ1KJH7hMfG2r+r+x
-         wJYHV4Yux2/HteJ3biBpB4ffb+81zj3O/vCLWzamtKflR3AhXF6ClG3zpfBe3PCevpLB
-         +EPw==
-X-Gm-Message-State: AJIora/zLaGlCNRSfZ4VJuk5NXfptPcqSSXQpIB89VB2YNzYdREyIoLh
-	MPEUpR9ITZCQ+S/fwj+9/v2KjA==
-X-Google-Smtp-Source: AGRyM1u9CfxPl7wPBc48239pNVGU8t/qNRvfHJmFtQjpS/0pPx2/sF6/y3/uj8+7LTvllVEsX6jQQQ==
-X-Received: by 2002:a2e:a277:0:b0:25d:6904:d97a with SMTP id k23-20020a2ea277000000b0025d6904d97amr15463932ljm.76.1658261191484;
-        Tue, 19 Jul 2022 13:06:31 -0700 (PDT)
-Received: from eriador.lan ([37.153.55.125])
-        by smtp.gmail.com with ESMTPSA id w16-20020a05651234d000b00485caa0f5dfsm3402324lfr.44.2022.07.19.13.06.30
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 19 Jul 2022 13:06:30 -0700 (PDT)
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-To: Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <bjorn.andersson@linaro.org>,
-	Konrad Dybcio <konrad.dybcio@somainline.org>,
-	Rob Herring <robh+dt@kernel.org>,
-	Jingoo Han <jingoohan1@gmail.com>,
-	Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
-	Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
-	=?UTF-8?q?Krzysztof=20Wilczy=C5=84ski?= <kw@linux.com>,
-	Bjorn Helgaas <bhelgaas@google.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@ti.com>
-Cc: Philipp Zabel <p.zabel@pengutronix.de>,
-	Johan Hovold <johan@kernel.org>,
-	linux-arm-msm@vger.kernel.org,
-	linux-pci@vger.kernel.org,
-	linux-phy@lists.infradead.org
-Subject: [RFC PATCH 4/4] PCI: qcom-ep: call phy_set_mode_ext()
-Date: Tue, 19 Jul 2022 23:06:26 +0300
-Message-Id: <20220719200626.976084-5-dmitry.baryshkov@linaro.org>
-X-Mailer: git-send-email 2.35.1
-In-Reply-To: <20220719200626.976084-1-dmitry.baryshkov@linaro.org>
-References: <20220719200626.976084-1-dmitry.baryshkov@linaro.org>
-MIME-Version: 1.0
+	id 1oE2cH-000jac-PL
+	for linux-phy@lists.infradead.org; Wed, 20 Jul 2022 05:51:28 +0000
+Received: from epcas2p3.samsung.com (unknown [182.195.41.55])
+	by mailout2.samsung.com (KnoxPortal) with ESMTP id 20220720055110epoutp024ffa2368fde8b3be80ad4d517580df4e~Dc6v0Qsjh1609316093epoutp02s
+	for <linux-phy@lists.infradead.org>; Wed, 20 Jul 2022 05:51:10 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.samsung.com 20220720055110epoutp024ffa2368fde8b3be80ad4d517580df4e~Dc6v0Qsjh1609316093epoutp02s
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+	s=mail20170921; t=1658296270;
+	bh=3p3lLHwRdWTjXTaLmAUolgHNqvzHyulS4Li8okLvbgE=;
+	h=Subject:Reply-To:From:To:CC:Date:References:From;
+	b=FrY7l6JZrFMBhfnz0E/HmSU4jIo2wYVFJUQOgH9hev5lK2c9u2eBFzdM1C/goXMzz
+	 oMXU/qJU9K2pmodhq9chnmCbM4pr5B6+wBK1tG04SlwU5N+jBG+yRl7biKbMiNnO/n
+	 Bkr8DHBNNBhLRLyernrnk5h6oikQBuBbMxQqlDsk=
+Received: from epsnrtp2.localdomain (unknown [182.195.42.163]) by
+	epcas2p4.samsung.com (KnoxPortal) with ESMTP id
+	20220720055109epcas2p44a64871e83de0d62ac39ecd83225fd00~Dc6vNK3gQ0172601726epcas2p4S;
+	Wed, 20 Jul 2022 05:51:09 +0000 (GMT)
+Received: from epsmges2p2.samsung.com (unknown [182.195.36.99]) by
+	epsnrtp2.localdomain (Postfix) with ESMTP id 4LnlDs00Grz4x9Q6; Wed, 20 Jul
+	2022 05:51:08 +0000 (GMT)
+X-AuditID: b6c32a46-0b9ff700000025b2-12-62d797cc5a28
+Received: from epcas2p4.samsung.com ( [182.195.41.56]) by
+	epsmges2p2.samsung.com (Symantec Messaging Gateway) with SMTP id
+	FB.62.09650.CC797D26; Wed, 20 Jul 2022 14:51:08 +0900 (KST)
+Mime-Version: 1.0
+Subject: [PATCH v4 0/5] Add support for Axis, ARTPEC-8 PCIe driver
+From: Wangseok Lee <wangseok.lee@samsung.com>
+To: "robh+dt@kernel.org" <robh+dt@kernel.org>, "krzk+dt@kernel.org"
+	<krzk+dt@kernel.org>, "kishon@ti.com" <kishon@ti.com>, "vkoul@kernel.org"
+	<vkoul@kernel.org>, "linux-kernel@vger.kernel.org"
+	<linux-kernel@vger.kernel.org>, "jesper.nilsson@axis.com"
+	<jesper.nilsson@axis.com>, "lars.persson@axis.com" <lars.persson@axis.com>,
+	"bhelgaas@google.com" <bhelgaas@google.com>, "linux-phy@lists.infradead.org"
+	<linux-phy@lists.infradead.org>, "linux-pci@vger.kernel.org"
+	<linux-pci@vger.kernel.org>, "devicetree@vger.kernel.org"
+	<devicetree@vger.kernel.org>, "lorenzo.pieralisi@arm.com"
+	<lorenzo.pieralisi@arm.com>, "kw@linux.com" <kw@linux.com>,
+	"linux-arm-kernel@axis.com" <linux-arm-kernel@axis.com>, "kernel@axis.com"
+	<kernel@axis.com>
+CC: Moon-Ki Jun <moonki.jun@samsung.com>, Sang Min Kim
+	<hypmean.kim@samsung.com>, Dongjin Yang <dj76.yang@samsung.com>, Yeeun Kim
+	<yeeun119.kim@samsung.com>, Wangseok Lee <wangseok.lee@samsung.com>
+X-Priority: 3
+X-Content-Kind-Code: NORMAL
+X-CPGS-Detection: blocking_info_exchange
+X-Drm-Type: N,general
+X-Msg-Generator: Mail
+X-Msg-Type: PERSONAL
+X-Reply-Demand: N
+Message-ID: <20220720055108epcms2p563c65b3de6333ccbc68386aa2471a800@epcms2p5>
+Date: Wed, 20 Jul 2022 14:51:08 +0900
+X-CMS-MailID: 20220720055108epcms2p563c65b3de6333ccbc68386aa2471a800
+X-Sendblock-Type: AUTO_CONFIDENTIAL
+X-CPGSPASS: Y
+X-CPGSPASS: Y
+CMS-TYPE: 102P
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFrrGJsWRmVeSWpSXmKPExsWy7bCmhe6Z6deTDM7OM7FY0pRh8fKQpsX8
+	I+dYLXbPWM5kMXPqGWaL54dmMVt8alG1uPC0h83i5ax7bBYNPb9ZLY68+chssf/4SiaLy7vm
+	sFmcnXeczWLCqm8sFm9+v2C3OLc406J17xF2i513TjBb3Dl8lsXi19Y/TA6iHmvmrWH0uL4u
+	wGPBplKPTas62TyeXJnO5LF5Sb1H35ZVjB7Hb2xn8vi8SS6AMyrbJiM1MSW1SCE1Lzk/JTMv
+	3VbJOzjeOd7UzMBQ19DSwlxJIS8xN9VWycUnQNctMwfoMyWFssScUqBQQGJxsZK+nU1RfmlJ
+	qkJGfnGJrVJqQUpOgXmBXnFibnFpXrpeXmqJlaGBgZEpUGFCdsapY/8YC/4oV/ycvIC9gfGn
+	TBcjJ4eEgInEwu0z2LoYuTiEBHYwSryYfI+xi5GDg1dAUOLvDmEQU1jASWJvdzBIuZCAksSO
+	NfOYQWxhAX2J6yu6WUFsNgFdiX+LX7KB2CICn1klru8RBBnJLHCSUWL54fVsELt4JWa0P2WB
+	sKUlti/fyghha0j8WNbLDGGLStxc/ZYdxn5/bD5UjYhE672zUDWCEg9+7oaKS0kseHKIFcKu
+	ltj/9zcThN3AKNF/PxXkfgmgQ3dcNwYJ8wr4Slx8fg5sDIuAqkTn7DNQ57hInF2wCWwts4C8
+	xPa3c5hBWpkFNCXW79KHmKIsceQWC8wjDRt/s6OzmQX4JDoO/4WL75j3BOoYNYl5K3cyQ4yR
+	kdj60n8Co9IsRCjPQrJ2FsLaBYzMqxjFUguKc9NTi40KjOARm5yfu4kRnMC13HYwTnn7Qe8Q
+	IxMH4yFGCQ5mJRHep4XXk4R4UxIrq1KL8uOLSnNSiw8xmgI9PJFZSjQ5H5hD8kriDU0sDUzM
+	zAzNjUwNzJXEeb1SNiQKCaQnlqRmp6YWpBbB9DFxcEo1MK01KWT+dXjPZlXt0NtCr48tVmnL
+	EDt7Mz9DolWAK/Qe978PvtpTV1RIuf+wvRaR3l9gdEpIoEn3jfpF0YnLbquEHTyjcYnxcfaB
+	q+8W1bvOOvYr8HxQuI3gMxPnF3F1gk46hw4z19scd2J48dNw3y61S2+2z777mD/Re0JY/e81
+	XtP6Sxds7WBYEJ0rtHPbrvkOX62dphtpX0q5fEfpcdMKnaO682IUo49dkq1iDA/YdeFf0d8w
+	9/132Ntn7Vg7radC0rc6O0FuQq1S9Ye/Gc+qlm4+Mbtxxekr2Xs3/d/1sb2/4ML0zWKXpjtv
+	KHyx5NbZBaoleUnPT+U/1VtStXGXmOfGOxEhtrUvr9ccDxRUYinOSDTUYi4qTgQAQlQM7GkE
+	AAA=
+DLP-Filter: Pass
+X-CFilter-Loop: Reflected
+X-CMS-RootMailID: 20220720055108epcms2p563c65b3de6333ccbc68386aa2471a800
+References: <CGME20220720055108epcms2p563c65b3de6333ccbc68386aa2471a800@epcms2p5>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220719_130634_437462_87712F67 
-X-CRM114-Status: GOOD (  10.56  )
+X-CRM114-CacheID: sfid-20220719_225126_201091_187C146F 
+X-CRM114-Status: GOOD (  21.09  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,37 +117,120 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Reply-To: wangseok.lee@samsung.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Call phy_set_mode_ext() to notify the PHY driver that the PHY is being
-used in the EP mode.
+This v4 patchset is improvement several review comments received from patchset v3.
 
-Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
----
- drivers/pci/controller/dwc/pcie-qcom-ep.c | 4 ++++
- 1 file changed, 4 insertions(+)
+Main changes since v3 [3]:
+dt-bindings: pci: Add ARTPEC-8 PCIe controller
+-add missing properties
 
-diff --git a/drivers/pci/controller/dwc/pcie-qcom-ep.c b/drivers/pci/controller/dwc/pcie-qcom-ep.c
-index ec99116ad05c..11f887a2f7c4 100644
---- a/drivers/pci/controller/dwc/pcie-qcom-ep.c
-+++ b/drivers/pci/controller/dwc/pcie-qcom-ep.c
-@@ -240,6 +240,10 @@ static int qcom_pcie_enable_resources(struct qcom_pcie_ep *pcie_ep)
- 	if (ret)
- 		goto err_disable_clk;
- 
-+	ret = phy_set_mode_ext(pcie->phy, PHY_MODE_PCIE, 1);
-+	if (ret)
-+		goto err_phy_exit;
-+
- 	ret = phy_power_on(pcie_ep->phy);
- 	if (ret)
- 		goto err_phy_exit;
+dt-bindings: phy: Add ARTPEC-8 PCIe phy
+-add "fsys-sysreg" to properties
+-modify the "lcpll-ref-clk" and "clocks" in properties
+ "lcpll-ref-clk" is custom properties, so add 'vendor', type(enum),
+ description
+ Add the maxItem in clocks, add clock-names in properties
+
+PCI: axis: Add ARTPEC-8 PCIe controller driver
+-remove unnecessary enum type
+-fix indentation
+
+phy: Add ARTPEC-8 PCIe PHY driver
+-modify to use GENMASK
+-fix indentation
+-remove the driver data
+
+Main changes since v2 [2]:
+dt-bindings: pci: Add ARTPEC-8 PCIe controller
+-modify version history to fit the linux commit rule
+-remove 'Device Tree Bindings' on title
+-remove the interrupt-names, phy-names entries
+-remove '_clk' suffix
+-add the compatible entries on required
+-change node name to soc from artpec8 on examples
+
+dt-bindings: phy: Add ARTPEC-8 PCIe phy
+-modify version history to fit the linux commit rule
+-remove 'Device Tree Bindings' on title
+-remove clock-names entries
+-change node name to soc from artpec8 on excamples
+
+PCI: axis: Add ARTPEC-8 PCIe controller driver
+-add 'COMPILE_TEST' and improvement help on kconfig
+-reorder obj on makefile
+-use clk_bulk_api
+-remove unnecessary comment
+-redefine the ELBI register to distinguish between offset and
+ bit definition
+-improvement order local variable of function
+-remove unnecessary local return variable
+
+phy: Add ARTPEC-8 PCIe PHY driver
+-remove unnecessary indentation
+-redefine local struct to statis const
+-add static const to struct that requires static const definition
+-remove wrappers on writel and readl
+
+Main changes since v1 [1]:
+-'make dt_binding_check' result improvement
+-Add the missing property list
+-improvement review comment of Krzysztof on driver code
+-change folder name of phy driver to axis from artpec
+
+[3] https://lore.kernel.org/lkml/20220614011616epcms2p7dcaa67c53b7df5802dd7a697e2d472d7@epcms2p7/T
+[2] https://lore.kernel.org/lkml/20220613015023epcms2p70e6700a99042d4deb560e40ab5397001@epcms2p7/T/
+[1] https://lore.kernel.org/lkml/20220328014430epcms2p7063834feb0abdf2f38a62723c96c9ff1@epcms2p7/
+
+--------------------------------------------------------------
+This series patches include newly PCIe support for Axis ARTPEC-8 SoC.
+ARTPEC-8 is the SoC platform of Axis Communications.
+PCIe controller driver and phy driver have been newly added.
+There is also a new MAINTAINER in the addition of phy driver.
+PCIe controller is designed based on Design-Ware PCIe controller IP
+and PCIe phy is desinged based on SAMSUNG PHY IP.
+It also includes modifications to the Design-Ware controller driver to 
+run the 64bit-based ARTPEC-8 PCIe controller driver.
+It consists of 6 patches in total.
+
+This series has been tested on AXIS SW bring-up board 
+with ARTPEC-8 chipset.
+--------------------------------------------------------------
+
+Wangseok Lee (5):
+  dt-bindings: pci: Add ARTPEC-8 PCIe controller
+  dt-bindings: phy: Add ARTPEC-8 PCIe phy
+  PCI: axis: Add ARTPEC-8 PCIe controller driver
+  phy: Add ARTPEC-8 PCIe PHY driver
+  MAINTAINERS: Add Axis ARTPEC-8 PCIe PHY maintainers
+
+ .../bindings/pci/axis,artpec8-pcie-ep.yaml         | 138 ++++
+ .../devicetree/bindings/pci/axis,artpec8-pcie.yaml | 148 ++++
+ .../bindings/phy/axis,artpec8-pcie-phy.yaml        |  85 +++
+ MAINTAINERS                                        |   2 +
+ drivers/pci/controller/dwc/Kconfig                 |  31 +
+ drivers/pci/controller/dwc/Makefile                |   1 +
+ drivers/pci/controller/dwc/pcie-artpec8.c          | 788 +++++++++++++++++++++
+ drivers/phy/Kconfig                                |   1 +
+ drivers/phy/Makefile                               |   1 +
+ drivers/phy/axis/Kconfig                           |   9 +
+ drivers/phy/axis/Makefile                          |   2 +
+ drivers/phy/axis/phy-artpec8-pcie.c                | 753 ++++++++++++++++++++
+ 12 files changed, 1959 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/pci/axis,artpec8-pcie-ep.yaml
+ create mode 100644 Documentation/devicetree/bindings/pci/axis,artpec8-pcie.yaml
+ create mode 100644 Documentation/devicetree/bindings/phy/axis,artpec8-pcie-phy.yaml
+ create mode 100644 drivers/pci/controller/dwc/pcie-artpec8.c
+ create mode 100644 drivers/phy/axis/Kconfig
+ create mode 100644 drivers/phy/axis/Makefile
+ create mode 100644 drivers/phy/axis/phy-artpec8-pcie.c
+
 -- 
-2.35.1
-
+2.9.5
 
 -- 
 linux-phy mailing list
