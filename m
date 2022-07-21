@@ -4,135 +4,150 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A8453C433EF
-	for <linux-phy@archiver.kernel.org>; Thu, 21 Jul 2022 14:27:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CB5DDC43334
+	for <linux-phy@archiver.kernel.org>; Thu, 21 Jul 2022 15:43:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GSc4u5GL0CcMAkAeTOhcAvsTbqxpJbd1vLo8yMtgll8=; b=wx34X6o1HstwHh
-	vrEd3QGdjjKec7qoCH6aGBiziU4gbuJs+C/8mmIEaPal5acuYOz5MZH35wmMsgrwFCmvNtH6h8tzr
-	S/dp0zvaToRIbnsLNxrugldl9dp+UxmXFofYIeifRoGBSExvvFvsQAXkSUImBWeelpkpFg/MIgYEX
-	0H0BUoAYGNzWj/YtKEt9KBipThCSrZjoVlYcWDjPJ2cxiodXlC4WxLHQH7Eqh26HfaY38lRKBZyRS
-	t9J7J4se/O6OURithltopCB1fAKksCbwW7C6rPSXEhZKmwe5fVNjAY7oLsrMPB5lNmq1gEturZYjS
-	8Y6BHssH+xVnrmGvV8gQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:Date:
+	Message-ID:From:References:Cc:To:Subject:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=ajlAVgExlh2W5UOydb62IZZWKsL9XzeAFhrCH9bV1fw=; b=MOTJ38kBl8KL7KvaHwLZkMIrtA
+	g5UP6paBRoEjbGcbgG9BV9p2eDTCj0gWzJgRr4tLoBU4wxEWH7rbyQX7SMCui7fyatppHo296+jXr
+	KSySh0eOQd2szDxxnIpIcAd/GCccfmb7rc+FZN6pD7YOMoYEq/bwomtvMwcY/436+IZGA/DtzP4k5
+	Kq9g73qTuaRd2LB99LQ9pEY/h2NhZrQiaZMKS7/j+YJsFVFbyEz4PuFJtPpMUQOwyfOVSuQOq1m1i
+	OjDFH/yCkImCyVfSrv6/NS9PkYEcjgBAjVdwD9JmzbisoF+1Vk+nBd2ZA3dqmV9PKDfIzjT82NAF3
+	72VCByjA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oEX8x-007tW5-QT; Thu, 21 Jul 2022 14:27:11 +0000
-Received: from mail-eopbgr150085.outbound.protection.outlook.com ([40.107.15.85] helo=EUR01-DB5-obe.outbound.protection.outlook.com)
+	id 1oEYKn-009G9F-0G; Thu, 21 Jul 2022 15:43:29 +0000
+Received: from mail-eopbgr70042.outbound.protection.outlook.com ([40.107.7.42] helo=EUR04-HE1-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oEX8I-007skE-Cd; Thu, 21 Jul 2022 14:26:34 +0000
+	id 1oEYGk-009DIf-DX; Thu, 21 Jul 2022 15:39:21 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=QXRN4adteelGRf+pNkX+5vRRziZZQhskVjzi6r2nqfYMr9We3BDBNCWwQdntnDV4jBNO3bxSfJjTDWO4sWXMx6wXgffe45TbR9+MSbuh1hOunUH14zQvFDinJBSN+Wr+wq3G/dRgdT+4MSDsaueW6Bg0Q5SDTnuBMw47OPuOyPt+ylhauQ6FeVfzhH/I1KXvNCLtvp/WWR9b7CgWsR4zAya5P1xSbZXBEfHyNfumnWFrwF6pwvsUot3K6KHgkEGnqvvlNAk79j9KjbUbogpqujTq0qvjjWHJuQwZLgzKGv7ihO/IUPujTl5UZHWN2ukIW4N3oHw1Hw7u+6ogPe9Oyg==
+ b=LS3kCtJVQGI5Rov6oz6A7g/z7P1DPlGEgzc7SFGWVLC2Z2bdm8uinjHzEsuNA/ZJxZLqPpPxY9Fryu5w4gYSoibUdBCmcs98j/3PG9QqgwyFM0P3LiEr7PnI8ICZ5pmqp0xfCI6JsjWmdCyNNxkqoNvNppJgxHOdKW7bq3lRQh4eWHJ1mk8oIy/0fhY+7xW4vRo4wTQy9UyhAd04/RR2mMMa0G1EOwe+p5Q/Thu6aP44G1bq4hvZPFHR1eHI4LV4X5Ig2hBAfWoqqIDgU+bjc1EKOQBMqGogxZWD2tM5L2v12tYHkvWHq0edLTv2wWgQvn2FAHKhxSfTWTfyjMMgGg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=Dbn0xb72kD9/HT5ympexUj2da69n66xsy+uGC6BMCrI=;
- b=nMoDjUT5/+C7tjL5h9tnjealDDH+Dh9ecQhSZvfVGh2sEHM5z8d6ouocZUEaFB4k8cwssYtkbe+CvpXiWHl8dOiWksi9QGk95m22BLZja+fIRBUyCAXvFTD1fuj3/NRN7hKl4q88PrUOdNlfVNDP4i5kmuiO8vcAql6ShlN7ZmVQLC7FeBZDE9ibEA2K6ea39GJ7LoGMOVRMX5lICb8zfKtpHGYl6XgpqRGRXU2nvpIstnbs65+h+wiaLUgXcwGgzz4sNe4o7BW2m5tjAmCemyXffPILm1vKE6rJgiD4KPVIBndsYzbA1c2s+ioZ5MOKtHAhoO5yKkH78OI8TEa2CA==
+ bh=hOlq98c+xkxD3rKU5H8w750qcGTz3dFQV0ojgQwbWUI=;
+ b=YPRg0AMBXCLsjLOZceEs4rQuSfYAbJDOfCo+92sYeF4B7WQHCYip45iK+2Xxl2t9TmR+BMFpNTgzAA9MCyjnD34NA93b7eFcnP04eGjZcYKINip5yf0bSX0MN90RD66a448zzKtFUyFToyKVdqzo1yQYVr/byWRe0wVdGY/jTWGeLtY/4wMmN9CrqEUgUHVZeFUiCjCvk6lSwOLN6DN1Jc3SqXRJN5rmu6eK3vnef5ssvteSqiBokUsofv3hmOuReU3OMQdJiPoVlrgZHbIVqij/SFdhbaZ9L5F02OAR3ymHKjrA6lwMXuHTxVuF7H3xV7BNNSZDsmtykNCZOIvjdg==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
+ smtp.mailfrom=seco.com; dmarc=pass action=none header.from=seco.com;
+ dkim=pass header.d=seco.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=seco.com; s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Dbn0xb72kD9/HT5ympexUj2da69n66xsy+uGC6BMCrI=;
- b=jXoKoZcTdBJobKyyv3hHo9Tfj0w6dffGWeSqWIi+IWdcpi7++2R3QY/Kx1wCrW5B/KpBE3LZUwsRkNcLA2KG38COlwRlAOt1YKtKexW5TDekYQYk1voL2OxIk3XXXIDLZkxL2Pw6opTObPV2FmbdTfes3jm3hlqGSnopfCQPg/0=
-Received: from VI1PR04MB5807.eurprd04.prod.outlook.com (2603:10a6:803:ec::21)
- by AM6PR04MB4999.eurprd04.prod.outlook.com (2603:10a6:20b:2::12) with
+ bh=hOlq98c+xkxD3rKU5H8w750qcGTz3dFQV0ojgQwbWUI=;
+ b=H7aqYSSuwec1xBA9iGFQ49l/ReAbSdCdPl1UId29T0S6Juynp3kj0yp5tkJ/9RjY/Isaqpqj5HYwfjn4Gy2k+ciOWI5iUFMNKyx90Lz3hIGsC4RZEjyHsdbo13fyX9VhM4FjosCFQp6yOyVgk+qQzlCvxlnJBOqV8Ynjt5gpTnluZsIrC2kpMlMH89bJGvpohT7s1Ytvp/5+sgYvjdC7+utQ8Bj2j/BL+CZrDAyVPTgnpRcPKL0Xcd1ENHkfAJkbjtVN82cMJhmm2e4Vti5VAfzaRc5yQmhoPoUWBXWFg57hieSrQcYmCzcEgbMgQnbg6/t2S/iBp21g7bap1UsYzA==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=seco.com;
+Received: from DB7PR03MB4972.eurprd03.prod.outlook.com (2603:10a6:10:7d::22)
+ by VI1PR0302MB3280.eurprd03.prod.outlook.com (2603:10a6:803:21::22) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5458.19; Thu, 21 Jul
- 2022 14:26:25 +0000
-Received: from VI1PR04MB5807.eurprd04.prod.outlook.com
- ([fe80::1df3:3463:6004:6e27]) by VI1PR04MB5807.eurprd04.prod.outlook.com
- ([fe80::1df3:3463:6004:6e27%4]) with mapi id 15.20.5458.018; Thu, 21 Jul 2022
- 14:26:25 +0000
-From: Camelia Alexandra Groza <camelia.groza@nxp.com>
-To: Sean Anderson <sean.anderson@seco.com>, "David S . Miller"
-	<davem@davemloft.net>, Jakub Kicinski <kuba@kernel.org>, Madalin Bucur
-	<madalin.bucur@nxp.com>, "netdev@vger.kernel.org" <netdev@vger.kernel.org>
-CC: Paolo Abeni <pabeni@redhat.com>, Eric Dumazet <edumazet@google.com>,
-	"linux-arm-kernel@lists.infradead.org"
-	<linux-arm-kernel@lists.infradead.org>, Russell King <linux@armlinux.org.uk>,
-	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>, Sean Anderson
-	<sean.anderson@seco.com>, Alexandru Marginean <alexandru.marginean@nxp.com>,
-	Andrew Lunn <andrew@lunn.ch>, Benjamin Herrenschmidt
-	<benh@kernel.crashing.org>, Heiner Kallweit <hkallweit1@gmail.com>, Ioana
- Ciornei <ioana.ciornei@nxp.com>, Jonathan Corbet <corbet@lwn.net>, Kishon
- Vijay Abraham I <kishon@ti.com>, Krzysztof Kozlowski
-	<krzysztof.kozlowski+dt@linaro.org>, Leo Li <leoyang.li@nxp.com>, Michael
- Ellerman <mpe@ellerman.id.au>, Paul Mackerras <paulus@samba.org>, Rob Herring
-	<robh+dt@kernel.org>, Shawn Guo <shawnguo@kernel.org>, Vinod Koul
-	<vkoul@kernel.org>, Vladimir Oltean <olteanv@gmail.com>,
-	"devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
-	"linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
-	"linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
-	"linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>
-Subject: RE: [PATCH net-next v3 00/47] [RFT] net: dpaa: Convert to phylink
-Thread-Topic: [PATCH net-next v3 00/47] [RFT] net: dpaa: Convert to phylink
-Thread-Index: AQHYmJZJ/hG18GH0IEKaWS+j6cSegK2I6SsQ
-Date: Thu, 21 Jul 2022 14:26:24 +0000
-Message-ID:  <VI1PR04MB5807612C5CD9C5976FC92C4EF2919@VI1PR04MB5807.eurprd04.prod.outlook.com>
+ 2022 15:39:15 +0000
+Received: from DB7PR03MB4972.eurprd03.prod.outlook.com
+ ([fe80::59ef:35d2:2f27:e98b]) by DB7PR03MB4972.eurprd03.prod.outlook.com
+ ([fe80::59ef:35d2:2f27:e98b%4]) with mapi id 15.20.5458.018; Thu, 21 Jul 2022
+ 15:39:15 +0000
+Subject: Re: [PATCH net-next v3 00/47] [RFT] net: dpaa: Convert to phylink
+To: Camelia Alexandra Groza <camelia.groza@nxp.com>,
+ "David S . Miller" <davem@davemloft.net>, Jakub Kicinski <kuba@kernel.org>,
+ Madalin Bucur <madalin.bucur@nxp.com>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>
+Cc: Paolo Abeni <pabeni@redhat.com>, Eric Dumazet <edumazet@google.com>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, Russell King
+ <linux@armlinux.org.uk>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Alexandru Marginean <alexandru.marginean@nxp.com>,
+ Andrew Lunn <andrew@lunn.ch>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Heiner Kallweit <hkallweit1@gmail.com>, Ioana Ciornei
+ <ioana.ciornei@nxp.com>, Jonathan Corbet <corbet@lwn.net>,
+ Kishon Vijay Abraham I <kishon@ti.com>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Leo Li <leoyang.li@nxp.com>, Michael Ellerman <mpe@ellerman.id.au>,
+ Paul Mackerras <paulus@samba.org>, Rob Herring <robh+dt@kernel.org>,
+ Shawn Guo <shawnguo@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+ Vladimir Oltean <olteanv@gmail.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
+ "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
+ "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>
 References: <20220715215954.1449214-1-sean.anderson@seco.com>
-In-Reply-To: <20220715215954.1449214-1-sean.anderson@seco.com>
-Accept-Language: en-GB, ro-RO, en-US
+ <VI1PR04MB5807612C5CD9C5976FC92C4EF2919@VI1PR04MB5807.eurprd04.prod.outlook.com>
+From: Sean Anderson <sean.anderson@seco.com>
+Message-ID: <7a3556b7-606e-a1ce-e52a-2b3bc9effeb8@seco.com>
+Date: Thu, 21 Jul 2022 11:39:08 -0400
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.10.0
+In-Reply-To: <VI1PR04MB5807612C5CD9C5976FC92C4EF2919@VI1PR04MB5807.eurprd04.prod.outlook.com>
 Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 8cbdba59-ecb9-4164-0cfd-08da6b24fdff
-x-ms-traffictypediagnostic: AM6PR04MB4999:EE_
-x-ld-processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info:  kB5xymA+THpYOdl8/TmJtCoF2Dyc3PGj9z6EHakDJuIOFDkFFC/wf4F6fI7w4sODWXEpDpdBpMqkBFHODawpu0tyejPLYIs1EsReLJXQGeRf1wCydzEUDTW3LFr6ZCn1dr9ZgUmKFNlVWbgSBobnpONX/NB2x40uOsk9qq9PTeZ8ZL+rK1hmAOdaSd3U8M3LIuY+xnkAsrT2PwY/+Vz8xsHzYmrpRLDror4zuSCWbU002SfcpcUGUcLNCkyxTABoeR7dUiEaiBolZwvWQmFp2kAz3MbBrHqHI2QyrQWrrwyjPUdBq7RMdoGTPB6Lq9YC4roemmLzfxIuRU//udnrmUT83HnGGbs0wnr4Q8AicWbJe227lcMaHiYPbNI0r8YQXICcIvSex/jDRV6G6t9gKj850DXg6a+85KVL/K+W7wU5oXi2kwADa2hU+NEUEx5wjVSJUVa7DAcafacGIZATbelWwNxu+wH2hY+lSUAladqYxzbB7IrNqYMCalGAXpARkIuE60iJwsEUtoe3dctLBuy7dfKCj9LQBNxIps5ncHyZ/bzHh2BadeZFqkTZM3s1DghUBB34ho1hSGavdPUZiLLF9iRbVDBrmaDQpDyk1uA9Q3Bh2GMF/4eRQxE6/ohUORMxqCS23mPCVuSqqZjl7QdaHy6+cvBbXDtDvUmadpg9IyitEpPXQ21ORqwzvOgdgJlkyTnGChZiryYcXBoV+bnKALLwTXVvqjcG1LyMLalQ4QHP0T352EnVP57kHUgYVWdEu+KBUdwvPZckOffEByVFwm0jDPjoCJjrcOLhJrWVQcOLKxyoL88hK85kNMg/ZT+Y7cj0f9mrhYl3cjzlUA==
-x-forefront-antispam-report:  CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:VI1PR04MB5807.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230016)(4636009)(39860400002)(376002)(136003)(396003)(346002)(366004)(71200400001)(38100700002)(478600001)(38070700005)(9686003)(6506007)(7696005)(55236004)(53546011)(966005)(41300700001)(316002)(186003)(26005)(110136005)(55016003)(54906003)(5660300002)(64756008)(66446008)(66556008)(30864003)(7416002)(8676002)(66476007)(66946007)(8936002)(76116006)(52536014)(83380400001)(2906002)(33656002)(122000001)(4326008)(86362001);DIR:OUT;SFP:1101;
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0:  =?us-ascii?Q?eKFdSUy5Rg1Rl19QP/0VqOxgVKUUYYrcnczlpd2b9NDH8qcXFUgPL4kGfDOG?=
- =?us-ascii?Q?LBDMA+1bDWjPuLHO4AVTsKzXssaqVC/26yAaEVNnC7J8yYhxVwXIF8XeLrhM?=
- =?us-ascii?Q?nYzIfAKS8Jo26ief0QI1KVUb49rHYEk8IRhOAu7t7N22Pz4gF++TmKmzjrHy?=
- =?us-ascii?Q?p4Vcc6y3m7mm34xMNFBlYj+I+504xkNJKr74IGpF0b1Xvy4dvn8nB6ZvpPSV?=
- =?us-ascii?Q?l14JHnd16IBQehUiRYGyLUS0kyWgjypJeacjy1WYhLMAHBDX/3pfbs37XVxY?=
- =?us-ascii?Q?lCNRNRD6KkJvF+JpNJ/Pyt4PTsBkX0OXRHrnaAEYdNRH6rhPS/qf7vSS/tKB?=
- =?us-ascii?Q?JpDAOtO1WwI9wzUEwkCjnw3HsAaq6P7TCgka576HNr897yALzw6ecqt17PXq?=
- =?us-ascii?Q?QwkrVD75sVtijR0vm5x/52dt/3zwl8QiRZoF0J9mwbhDHY0IpuS5sFnWn7oh?=
- =?us-ascii?Q?lYIis4M6lyD5vIoq101y/E8tjiDcJsGyKJuOAkcUjzkZTnkB2zRU1bqXqjHB?=
- =?us-ascii?Q?n84ShyNQomqzEXx02fmJ4NzMarBxPb3kl81oJsGtD0ggya3PJX953Xr7F5z8?=
- =?us-ascii?Q?YprxgNzDwbhTJzSfz93eMjhB60emdpbG4iqcvh+rZx2rL8KLjGwg8cR4XVRR?=
- =?us-ascii?Q?w5OeeKJjkbEJHm9HfBTIzKBCyoo46CMc34CSHksw6yKeNspP3Ua0GimhQ7fV?=
- =?us-ascii?Q?YCQTh7otWCfv0KMghLTDe5irN5X48Bu8lthYI2K0Va08+b6gHt52ONdqSysJ?=
- =?us-ascii?Q?K2u0mJh7R//0RRQsvp37CH+qrSglwv9Gax0K1nZ4Co2qWsSnbEOfX7dwumjE?=
- =?us-ascii?Q?s/mRajTuiiSS1GPMq9vBxkl7zk5zr3T1Bf1p6SVObQJIeCvF/w7tViu7Jm7p?=
- =?us-ascii?Q?0xEppNAcZk12aOyHmnviqomIESw1X2J0NCdab+VmIJ133WQHxsGvfGcYUu4x?=
- =?us-ascii?Q?xkiJ+ZuPDiuwErxWWRqgywRW3K5B+Ros+NgVsIMja09zk1FshV3II2kIc1dy?=
- =?us-ascii?Q?YCchIaPbFUr/HJgO78sapaNKz4Ct9HDGptwxZlOP7CusFvGzVUV+HPBFZVv0?=
- =?us-ascii?Q?wP/8kftruqhO5EA5VCKuJEuUyvGkXlENpGwoZBq1eR8d3l5Zgh4oDknnwfMV?=
- =?us-ascii?Q?98u2Le11BAIjh+79P0fuvZSVbfZtYWULcFQifSn8loyg7jvvJw6TbFl3DYyr?=
- =?us-ascii?Q?KHNqAC4NImMakHWMTkeCd6D2H4K8HphFwYumjaPdkvrI883Kdf0c+mID+cG4?=
- =?us-ascii?Q?ui85rDo13CKdJ+YU0LcyZ7p5QhDWmqBq24bbtx1g3l/mUpNtPirxre9hwWZz?=
- =?us-ascii?Q?LGmMWM6CLVVBrlw3vZW3F7rj95l5XzdRksGqOuOcdOs1jPJivqDviceuRr1v?=
- =?us-ascii?Q?0vjJdnXeZtLsxSe/0JU7INZcrJL/CGYLzaprkVuwoEDphlRxwwlR/4rEPU/P?=
- =?us-ascii?Q?jS4UO8+tHQxmvOF9PAcMekINOLRoeo8xyLv60cDacncL24t1RwT8NgcbwNmW?=
- =?us-ascii?Q?16TNr5JALNaOVxMgsr6t/tHEJwuvjIjKLaXJcSpWlJAFshS9AkdnGdyFsd1G?=
- =?us-ascii?Q?68W67ocj54aPfBX+hD69FTqrO78JihH/2t/OkDx2?=
+X-ClientProxiedBy: MN2PR04CA0013.namprd04.prod.outlook.com
+ (2603:10b6:208:d4::26) To DB7PR03MB4972.eurprd03.prod.outlook.com
+ (2603:10a6:10:7d::22)
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 7b18ead1-ca3e-4498-629c-08da6b2f2a72
+X-MS-TrafficTypeDiagnostic: VI1PR0302MB3280:EE_
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: 	hum1FrEVSGcEkxr+3vifaUbyALQI3G+8P+p1osN2Au3WkieLZ8HZ7qVTzzbTdOe/YFJAEIBEfheIKbKS61mQW3fbXTLObioRF8tBER9XfhjLmDVNvksYIDiYRfQgC0x0UKZDvHNdO1xTBBpArwsgOd61A90liYjNnNPazHtaclHbW1ww70tEaBJtD0EyOjHv+t2pxGjd6Zke8T+g0Yos8t8vdHcuGpC+X37yihf4YhxEGyBCLgpohyXmzL1w81Rg/H0PwmgIcnnD7FebVZVlasWMmLylDugZjPfQMnRYPCVQiPbN0UlKmVfjtKYjfk4DXZ5AoDBFGJBpe2G0BRETc04DjqbMC5ceTSZpjcibP8SnV57RmwSle4LQ+pjKFrUvm4zPBoyO/MFVDmTorxBK2AvkkgK4fKi+lXVmlayR/9EQ9IGiSoq+FPLb+UJ5cdmCkvofRYqwaAHj3bLuC/7AXBPtivYHARoT4UsK/YOhu9zpPfd/oMzLeCBpdSicYxgMrn3z1Pa3oQm+gfBTnYtkg6I5TiAED/Y86w9Oj8WcxGqo3vn/KXsiy58k+sGyFYcp1A0Vko93H0TZycNNmYST9oZ9ASofYawD+8mnGgeLluNRedL3VBEcEGocf5AWOSJuZ01vXWuO0O8auliV+A8cXqjhU0Ij6TBXYxt6nY5gujvdVV91PmJPQ8Wftaw3c3Kr07a0DTHuRSQf/J2TGV6c9LRXcmwqgIngv+DYrezpSif8a9x7dpC02DqgJgGDBYXrnbE2H/fwZqu5JaEry6Zx7H10+QCEc4V4nDcCFN0c1ovX36yt0+A/M7vQZWBJXHKTWvOEq0MFsYaf+HaOr5UmM7ck2PT7+HK4+n6yxkq57R38bCMf++0Fv51XBtikws8vQ2CQOa7ExxoxmFjokDoGkw==
+X-Forefront-Antispam-Report: 	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DB7PR03MB4972.eurprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230016)(346002)(366004)(396003)(39850400004)(376002)(136003)(38350700002)(6506007)(52116002)(36756003)(53546011)(8936002)(5660300002)(7416002)(30864003)(44832011)(6486002)(316002)(26005)(31686004)(966005)(478600001)(2616005)(41300700001)(6666004)(6512007)(31696002)(86362001)(83380400001)(186003)(2906002)(110136005)(66556008)(66476007)(8676002)(66946007)(4326008)(38100700002)(54906003)(43740500002)(45980500001);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: 	=?utf-8?B?NXJEL0ppT3NDTTl3TG1oUkhYRHdCcDhOSEpXZjk1NDUreDEyQ3F5N09QR0R0?=
+ =?utf-8?B?SXdvMTBFblVQUDBlb2puRTBycnJoK3VFRmMwWW50eTgyS1FFbXVIK2hCa0pt?=
+ =?utf-8?B?TTVHcUhrWUV2RVBlbU5BM2VJdUJiWFl1djEwN21kMWRDYjU4QXFQbkR5U3dL?=
+ =?utf-8?B?cTdKaUx5TDFnUXMwRGJqNnVpWkh0d0hLdURvM0VQczUrYVFGdnBaVW1jbGc5?=
+ =?utf-8?B?eks0R0ZVWlJxRVJUQXI5UGJLNjZFMzlWM3Azc3pYSmpPbkR3c09tdlpnMWpP?=
+ =?utf-8?B?RFdQeWRNZTdtVG5QQ2VHNGZOUVNVZCt0QWhiNU9WRHBDck9hL0t3cncrckJC?=
+ =?utf-8?B?ekVrN2o3RnNCSVZVaDBZWVFqQUp4YUxYTTRtQVZDSGFGK3VRZzNDNUZTYnda?=
+ =?utf-8?B?cmxRcm9GUTRvZ0Q4blNKUU9TaytRY2tTLzlVNld5djRaeWpVQTV0RFlCOE5T?=
+ =?utf-8?B?NFpBT0psSVR2ZkcvU3FKWmhKQ3BycTJHSjNQSFdVc0NyQWUybjZwV25BLzVD?=
+ =?utf-8?B?clFySS83Qk5zTkRxZDUxMnNjNTZhNFlnU0VFeFYvb2JlR3dKZWIrUW5lM0ph?=
+ =?utf-8?B?ZkhWaWVFMkxrcHNGSlZZTldvSlJpRk1uSXB3TlRwVXZuVnpjRmhTUE1kbEp0?=
+ =?utf-8?B?V3RPTDM0SkdvN1hLTmJOd3R5K3dNOSthaDNDNktGbHY2TjFKN3RSR0VFZHdZ?=
+ =?utf-8?B?b0piRno2N256WW9acGpvKzh5am1zM0llU0wzekFqa1VCMWpLVDRmazB0cVV5?=
+ =?utf-8?B?aldlQ1l2M2ZZMVBkM0tZWnZPeWd0VGIva1d6Rm8zSjk0d1plUmlMeDMwVDhh?=
+ =?utf-8?B?NmZmb0Mxd3JnamYvYWUwaXZ3ZGV0dGhaY29XZzdYY25ocmVZYzNDL2V5b3JY?=
+ =?utf-8?B?VndSaVFYQ1JvWWFZemZxcTZjQ1NvdGU2Z0p5N1ZyUGU5K1ZROG5rOUJPd0tr?=
+ =?utf-8?B?NDR4emwyVURCZWZRN0ZLSUV6SjhFRTNRdm5uQWw0Tkd2MFUrYU95WG16RVl2?=
+ =?utf-8?B?RUlDdlFEcHgyTFBiUlVRdnJwQTkrbWIySVdsNVhjMXRucmkxWTdwc0tiamV1?=
+ =?utf-8?B?VnpsL05PdXFWNDBQS3B3UDI4Y3Jkb1VPa2J1N3Y5OGRMNGFZUjVqTnUrTE1P?=
+ =?utf-8?B?NXhBYlVwZ2EyaXNld2FmYWE2RXFQbHY3OGZsa0lQdnhPVUFZVk1kZ2xEMitr?=
+ =?utf-8?B?Q082eVlaY1ZiV2VlNmRXUkRLb0p4Y01ubmIxMDlrN1h6ZWJWa3MzWUljQkR1?=
+ =?utf-8?B?eURrZEVhbXI5anNMZHR2NzI4Mjd0bm11TkFtWkFqUUdDaWZlWEVOWGF5Rll3?=
+ =?utf-8?B?cW1MZXFTblIrSm1BTHdUYXA3STlPZG9BR3hENG5lUFZ6bTh1a1FxSlJLYm5w?=
+ =?utf-8?B?WWV4SjlweXpvTm1CcnZSSlF5bnJNR0ltWEJmK3lTS3ZYY1VtUXB6TnRrdDFX?=
+ =?utf-8?B?dENCQWExUEZVbkMrNHZXeFdqd1VhZHlicHRMMUJHS3NlY3J5VVV1aHFpeUxp?=
+ =?utf-8?B?cXFWMk9YN0Nxa0pMa0pTSm51c2lpRG4zZ0ZzYmY5QzlTSU1UaThsU09JdTZE?=
+ =?utf-8?B?VnRZdlpOZXNZcmU3SWdHblI1YStnZmhNWWJ0c2FPSVdVcG1mQ2hKWXBNOTFS?=
+ =?utf-8?B?bWFXM2N4ekc0RjVISkFwc1R1NDdNYytXN2Jlb1NEMTVBUVdIM21mZlZaOGdp?=
+ =?utf-8?B?K0tISUVZZUlNMTJVSUpLSFQ0b0xuVDdiSDFFblpHMDFBNFh2aG5yaWl6OFRS?=
+ =?utf-8?B?ZHA0bWU0WnhHRDlVZjBqNE51N3RRTUljZENKdzBaaUxUV2pzNFd6Z1pCS3Vn?=
+ =?utf-8?B?dHRwQnM4UG10ZW5TQ2lnUjJrT3pJVmR0UWQrejRhUkZsbk9PUUg4RFNGQVBJ?=
+ =?utf-8?B?RkpvMDJqKzVDK1phbWQwQ3Z2NlZHeUh6RWNTNGhKN04yU0lwdSs2YWlFKzNZ?=
+ =?utf-8?B?RjJtaUF5cDM4dURGQmlIZXFFbW00UEFrcXZ6YzFYcE93djFOWEFaRElVZEJC?=
+ =?utf-8?B?WlZESWdlcFE1c3NxZWVUOFo2Rk90UVMvR255ay9lTGkzUEZSMU91OC9xbXZk?=
+ =?utf-8?B?TXpMT1pKZTR5bzJxZi9SdHZBNFVCUnpRc0w0cmgzdm5JR0FXRmNRQVc5VHl6?=
+ =?utf-8?B?UWhJNk9hdjZ5K3hyakRBY3QzKzMvbWRMNFVHbVpwaHNTQ1JPbnJtNVhDNDRB?=
+ =?utf-8?B?cXc9PQ==?=
+X-OriginatorOrg: seco.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 7b18ead1-ca3e-4498-629c-08da6b2f2a72
+X-MS-Exchange-CrossTenant-AuthSource: DB7PR03MB4972.eurprd03.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: VI1PR04MB5807.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 8cbdba59-ecb9-4164-0cfd-08da6b24fdff
-X-MS-Exchange-CrossTenant-originalarrivaltime: 21 Jul 2022 14:26:25.0379
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 21 Jul 2022 15:39:14.9089
  (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: SmcHPUiKi11wMEHPzRdsXSIcp0pJAfhK423q0eUv8SBdxu1NZwjOKaonh5z2VtJ8Pb1M898ivqQ6EyZ7C0+kDg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR04MB4999
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: bebe97c3-6438-442e-ade3-ff17aa50e733
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: dOFlf9a8p3244IykKD+MQJ1yCl7TUn9m623ytxiEBiAOEXfaHCgExwtqg1f7MGCkdk0dPdSsFvNI4RHJceiSVw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR0302MB3280
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220721_072630_645764_44E1599E 
-X-CRM114-Status: GOOD (  41.96  )
+X-CRM114-CacheID: sfid-20220721_083918_721713_7F5C1756 
+X-CRM114-Status: GOOD (  27.43  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -149,300 +164,307 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-> -----Original Message-----
-> From: Sean Anderson <sean.anderson@seco.com>
-> Sent: Saturday, July 16, 2022 0:59
-> To: David S . Miller <davem@davemloft.net>; Jakub Kicinski
-> <kuba@kernel.org>; Madalin Bucur <madalin.bucur@nxp.com>;
-> netdev@vger.kernel.org
-> Cc: Paolo Abeni <pabeni@redhat.com>; Eric Dumazet
-> <edumazet@google.com>; linux-arm-kernel@lists.infradead.org; Russell
-> King <linux@armlinux.org.uk>; linux-kernel@vger.kernel.org; Sean Anderson
-> <sean.anderson@seco.com>; Alexandru Marginean
-> <alexandru.marginean@nxp.com>; Andrew Lunn <andrew@lunn.ch>;
-> Benjamin Herrenschmidt <benh@kernel.crashing.org>; Heiner Kallweit
-> <hkallweit1@gmail.com>; Ioana Ciornei <ioana.ciornei@nxp.com>; Jonathan
-> Corbet <corbet@lwn.net>; Kishon Vijay Abraham I <kishon@ti.com>;
-> Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>; Leo Li
-> <leoyang.li@nxp.com>; Michael Ellerman <mpe@ellerman.id.au>; Paul
-> Mackerras <paulus@samba.org>; Rob Herring <robh+dt@kernel.org>;
-> Shawn Guo <shawnguo@kernel.org>; Vinod Koul <vkoul@kernel.org>;
-> Vladimir Oltean <olteanv@gmail.com>; devicetree@vger.kernel.org; linux-
-> doc@vger.kernel.org; linux-phy@lists.infradead.org; linuxppc-
-> dev@lists.ozlabs.org
-> Subject: [PATCH net-next v3 00/47] [RFT] net: dpaa: Convert to phylink
-> 
-> This series converts the DPAA driver to phylink. Additionally,
-> it also adds a serdes driver to allow for dynamic reconfiguration
-> between 1g and 10g interfaces (such as in an SFP+ slot). These changes
-> are submitted together for this RFT, but they will eventually be
-> submitted separately to the appropriate subsystem maintainers.
-> 
-> I have tried to maintain backwards compatibility with existing device
-> trees whereever possible. However, one area where I was unable to
-> achieve this was with QSGMII. Please refer to patch 4 for details.
-> 
-> All mac drivers have now been converted. I would greatly appreciate if
-> anyone has QorIQ boards they can test/debug this series on. I only have an
-> LS1046ARDB. Everything but QSGMII should work without breakage; QSGMII
-> needs patches 42 and 43.
-> 
-> The serdes driver is mostly functional (except for XFI). This series
-> only adds support for the LS1046ARDB SerDes (and untested LS1088ARDB),
-> but it should be fairly straightforward to add support for other SoCs
-> and boards (see Documentation/driver-api/phy/qoriq.rst).
-> 
-> This is the last spin of this series with all patches included. After next
-> week (depending on feedback) I will resend the patches broken up as
-> follows:
-> - 5: 1000BASE-KX support
-> - 1, 6, 44, 45: Lynx 10G support
-> - 7-10, 12-14: Phy rate adaptation support
-> - 2-4, 15-43, 46, 47: DPAA phylink conversion
 
-Please also send patches 15-38 separately from the DPAA1 SerDes and phylink set for easier review
 
-> Patches 15-19 were first submitted as [1].
+On 7/21/22 10:26 AM, Camelia Alexandra Groza wrote:
+>> -----Original Message-----
+>> From: Sean Anderson <sean.anderson@seco.com>
+>> Sent: Saturday, July 16, 2022 0:59
+>> To: David S . Miller <davem@davemloft.net>; Jakub Kicinski
+>> <kuba@kernel.org>; Madalin Bucur <madalin.bucur@nxp.com>;
+>> netdev@vger.kernel.org
+>> Cc: Paolo Abeni <pabeni@redhat.com>; Eric Dumazet
+>> <edumazet@google.com>; linux-arm-kernel@lists.infradead.org; Russell
+>> King <linux@armlinux.org.uk>; linux-kernel@vger.kernel.org; Sean Anderson
+>> <sean.anderson@seco.com>; Alexandru Marginean
+>> <alexandru.marginean@nxp.com>; Andrew Lunn <andrew@lunn.ch>;
+>> Benjamin Herrenschmidt <benh@kernel.crashing.org>; Heiner Kallweit
+>> <hkallweit1@gmail.com>; Ioana Ciornei <ioana.ciornei@nxp.com>; Jonathan
+>> Corbet <corbet@lwn.net>; Kishon Vijay Abraham I <kishon@ti.com>;
+>> Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>; Leo Li
+>> <leoyang.li@nxp.com>; Michael Ellerman <mpe@ellerman.id.au>; Paul
+>> Mackerras <paulus@samba.org>; Rob Herring <robh+dt@kernel.org>;
+>> Shawn Guo <shawnguo@kernel.org>; Vinod Koul <vkoul@kernel.org>;
+>> Vladimir Oltean <olteanv@gmail.com>; devicetree@vger.kernel.org; linux-
+>> doc@vger.kernel.org; linux-phy@lists.infradead.org; linuxppc-
+>> dev@lists.ozlabs.org
+>> Subject: [PATCH net-next v3 00/47] [RFT] net: dpaa: Convert to phylink
+>> 
+>> This series converts the DPAA driver to phylink. Additionally,
+>> it also adds a serdes driver to allow for dynamic reconfiguration
+>> between 1g and 10g interfaces (such as in an SFP+ slot). These changes
+>> are submitted together for this RFT, but they will eventually be
+>> submitted separately to the appropriate subsystem maintainers.
+>> 
+>> I have tried to maintain backwards compatibility with existing device
+>> trees whereever possible. However, one area where I was unable to
+>> achieve this was with QSGMII. Please refer to patch 4 for details.
+>> 
+>> All mac drivers have now been converted. I would greatly appreciate if
+>> anyone has QorIQ boards they can test/debug this series on. I only have an
+>> LS1046ARDB. Everything but QSGMII should work without breakage; QSGMII
+>> needs patches 42 and 43.
+>> 
+>> The serdes driver is mostly functional (except for XFI). This series
+>> only adds support for the LS1046ARDB SerDes (and untested LS1088ARDB),
+>> but it should be fairly straightforward to add support for other SoCs
+>> and boards (see Documentation/driver-api/phy/qoriq.rst).
+>> 
+>> This is the last spin of this series with all patches included. After next
+>> week (depending on feedback) I will resend the patches broken up as
+>> follows:
+>> - 5: 1000BASE-KX support
+>> - 1, 6, 44, 45: Lynx 10G support
+>> - 7-10, 12-14: Phy rate adaptation support
+>> - 2-4, 15-43, 46, 47: DPAA phylink conversion
 > 
-> [1] https://lore.kernel.org/netdev/20220531195851.1592220-1-sean.anderson@seco.com/
-> 
-> Changes in v3:
-> - Manually expand yaml references
-> - Add mode configuration to device tree
-> - Expand pcs-handle to an array
-> - Incorperate some minor changes into the first FMan binding commit
-> - Add vendor prefix 'fsl,' to rgmii and mii properties.
-> - Set maxItems for pcs-names
-> - Remove phy-* properties from example because dt-schema complains and
-> I
->   can't be bothered to figure out how to make it work.
-> - Add pcs-handle as a preferred version of pcsphy-handle
-> - Deprecate pcsphy-handle
-> - Remove mii/rmii properties
-> - Add 1000BASE-KX interface mode
-> - Rename remaining references to QorIQ SerDes to Lynx 10G
-> - Fix PLL enable sequence by waiting for our reset request to be cleared
->   before continuing. Do the same for the lock, even though it isn't as
->   critical. Because we will delay for 1.5ms on average, use prepare
->   instead of enable so we can sleep.
-> - Document the status of each protocol
-> - Fix offset of several bitfields in RECR0
-> - Take into account PLLRST_B, SDRST_B, and SDEN when considering whether
->   a PLL is "enabled."
-> - Only power off unused lanes.
-> - Split mode lane mask into first/last lane (like group)
-> - Read modes from device tree
-> - Use caps to determine whether KX/KR are supported
-> - Move modes to lynx_priv
-> - Ensure that the protocol controller is not already in-use when we try
->   to configure a new mode. This should only occur if the device tree is
->   misconfigured (e.g. when QSGMII is selected on two lanes but there is
->   only one QSGMII controller).
-> - Split PLL drivers off into their own file
-> - Add clock for "ext_dly" instead of writing the bit directly (and
->   racing with any clock code).
-> - Use kasprintf instead of open-coding the snprintf dance
-> - Support 1000BASE-KX in lynx_lookup_proto. This still requires PCS
->   support, so nothing is truly "enabled" yet.
-> - Add support for phy rate adaptation
-> - Support differing link speeds and interface speeds
-> - Adjust advertisement based on rate adaptation
-> - Adjust link settings based on rate adaptation
-> - Add support for CRS-based rate adaptation
-> - Add support for AQR115
-> - Add some additional phy interfaces
-> - Add support for aquantia rate adaptation
-> - Put the PCS mdiodev only after we are done with it (since the PCS
->   does not perform a get itself).
-> - Remove _return label from memac_initialization in favor of returning
->   directly
-> - Fix grabbing the default PCS not checking for -ENODATA from
->   of_property_match_string
-> - Set DTSEC_ECNTRL_R100M in dtsec_link_up instead of dtsec_mac_config
-> - Remove rmii/mii properties
-> - Replace 1000Base... with 1000BASE... to match IEEE capitalization
-> - Add compatibles for QSGMII PCSs
-> - Split arm and powerpcs dts updates
-> - Describe modes in device tree
-> - ls1088a: Add serdes bindings
-> 
-> Changes in v2:
-> - Rename to fsl,lynx-10g.yaml
-> - Refer to the device in the documentation, rather than the binding
-> - Move compatible first
-> - Document phy cells in the description
-> - Allow a value of 1 for phy-cells. This allows for compatibility with
->   the similar (but according to Ioana Ciornei different enough) lynx-28g
->   binding.
-> - Remove minItems
-> - Use list for clock-names
-> - Fix example binding having too many cells in regs
-> - Add #clock-cells. This will allow using assigned-clocks* to configure
->   the PLLs.
-> - Document the structure of the compatible strings
-> - Convert FMan MAC bindings to yaml
-> - Better document how we select which PCS to use in the default case
-> - Rename driver to Lynx 10G (etc.)
-> - Fix not clearing group->pll after disabling it
-> - Support 1 and 2 phy-cells
-> - Power off lanes during probe
-> - Clear SGMIIaCR1_PCS_EN during probe
-> - Rename LYNX_PROTO_UNKNOWN to LYNX_PROTO_NONE
-> - Handle 1000BASE-KX in lynx_proto_mode_prep
-> - Remove some unused variables
-> - Fix prototype for dtsec_initialization
-> - Fix warning if sizeof(void *) != sizeof(resource_size_t)
-> - Specify type of mac_dev for exception_cb
-> - Add helper for sanity checking cgr ops
-> - Add CGR update function
-> - Adjust queue depth on rate change
-> - Move PCS_LYNX dependency to fman Kconfig
-> - Remove unused variable slow_10g_if
-> - Restrict valid link modes based on the phy interface. This is easier
->   to set up, and mostly captures what I intended to do the first time.
->   We now have a custom validate which restricts half-duplex for some SoCs
->   for RGMII, but generally just uses the default phylink validate.
-> - Configure the SerDes in enable/disable
-> - Properly implement all ethtool ops and ioctls. These were mostly
->   stubbed out just enough to compile last time.
-> - Convert 10GEC and dTSEC as well
-> - Fix capitalization of mEMAC in commit messages
-> - Add nodes for QSGMII PCSs
-> - Add nodes for QSGMII PCSs
-> - Use one phy cell for SerDes1, since no lanes can be grouped
-> - Disable SerDes by default to prevent breaking boards inadvertently.
-> 
-> Sean Anderson (47):
->   dt-bindings: phy: Add Lynx 10G phy binding
->   dt-bindings: net: Expand pcs-handle to an array
->   dt-bindings: net: Convert FMan MAC bindings to yaml
->   dt-bindings: net: fman: Add additional interface properties
->   net: phy: Add 1000BASE-KX interface mode
->   [RFT] phy: fsl: Add Lynx 10G SerDes driver
->   net: phy: Add support for rate adaptation
->   net: phylink: Support differing link speeds and interface speeds
->   net: phylink: Adjust advertisement based on rate adaptation
->   net: phylink: Adjust link settings based on rate adaptation
->   [RFC] net: phylink: Add support for CRS-based rate adaptation
->   net: phy: aquantia: Add support for AQR115
->   net: phy: aquantia: Add some additional phy interfaces
->   net: phy: aquantia: Add support for rate adaptation
->   net: fman: Convert to SPDX identifiers
->   net: fman: Don't pass comm_mode to enable/disable
->   net: fman: Store en/disable in mac_device instead of mac_priv_s
->   net: fman: dtsec: Always gracefully stop/start
->   net: fman: Get PCS node in per-mac init
->   net: fman: Store initialization function in match data
->   net: fman: Move struct dev to mac_device
->   net: fman: Configure fixed link in memac_initialization
->   net: fman: Export/rename some common functions
->   net: fman: memac: Use params instead of priv for max_speed
->   net: fman: Move initialization to mac-specific files
->   net: fman: Mark mac methods static
->   net: fman: Inline several functions into initialization
->   net: fman: Remove internal_phy_node from params
->   net: fman: Map the base address once
->   net: fman: Pass params directly to mac init
->   net: fman: Use mac_dev for some params
->   net: fman: Specify type of mac_dev for exception_cb
->   net: fman: Clean up error handling
->   net: fman: Change return type of disable to void
->   net: dpaa: Use mac_dev variable in dpaa_netdev_init
->   soc: fsl: qbman: Add helper for sanity checking cgr ops
->   soc: fsl: qbman: Add CGR update function
->   net: dpaa: Adjust queue depth on rate change
->   net: fman: memac: Add serdes support
->   net: fman: memac: Use lynx pcs driver
->   [RFT] net: dpaa: Convert to phylink
->   powerpc: dts: qoriq: Add nodes for QSGMII PCSs
->   arm64: dts: layerscape: Add nodes for QSGMII PCSs
->   arm64: dts: ls1046a: Add serdes bindings
->   arm64: dts: ls1088a: Add serdes bindings
->   arm64: dts: ls1046ardb: Add serdes bindings
->   [WIP] arm64: dts: ls1088ardb: Add serdes bindings
-> 
->  .../bindings/net/dsa/renesas,rzn1-a5psw.yaml  |    1 +
->  .../bindings/net/ethernet-controller.yaml     |   10 +-
->  .../bindings/net/fsl,fman-dtsec.yaml          |  172 +++
->  .../bindings/net/fsl,qoriq-mc-dpmac.yaml      |    2 +-
->  .../devicetree/bindings/net/fsl-fman.txt      |  133 +-
->  .../devicetree/bindings/phy/fsl,lynx-10g.yaml |  311 ++++
->  Documentation/driver-api/phy/index.rst        |    1 +
->  Documentation/driver-api/phy/lynx_10g.rst     |   73 +
->  MAINTAINERS                                   |    6 +
->  .../boot/dts/freescale/fsl-ls1043-post.dtsi   |   24 +
->  .../boot/dts/freescale/fsl-ls1046-post.dtsi   |   25 +
->  .../boot/dts/freescale/fsl-ls1046a-rdb.dts    |   34 +
->  .../arm64/boot/dts/freescale/fsl-ls1046a.dtsi |  179 +++
->  .../boot/dts/freescale/fsl-ls1088a-rdb.dts    |   87 ++
->  .../arm64/boot/dts/freescale/fsl-ls1088a.dtsi |   96 ++
->  .../fsl/qoriq-fman3-0-10g-0-best-effort.dtsi  |    3 +-
->  .../boot/dts/fsl/qoriq-fman3-0-10g-0.dtsi     |   10 +-
->  .../fsl/qoriq-fman3-0-10g-1-best-effort.dtsi  |   10 +-
->  .../boot/dts/fsl/qoriq-fman3-0-10g-1.dtsi     |   10 +-
->  .../boot/dts/fsl/qoriq-fman3-0-1g-0.dtsi      |    3 +-
->  .../boot/dts/fsl/qoriq-fman3-0-1g-1.dtsi      |   10 +-
->  .../boot/dts/fsl/qoriq-fman3-0-1g-2.dtsi      |   10 +-
->  .../boot/dts/fsl/qoriq-fman3-0-1g-3.dtsi      |   10 +-
->  .../boot/dts/fsl/qoriq-fman3-0-1g-4.dtsi      |    3 +-
->  .../boot/dts/fsl/qoriq-fman3-0-1g-5.dtsi      |   10 +-
->  .../boot/dts/fsl/qoriq-fman3-1-10g-0.dtsi     |   10 +-
->  .../boot/dts/fsl/qoriq-fman3-1-10g-1.dtsi     |   10 +-
->  .../boot/dts/fsl/qoriq-fman3-1-1g-0.dtsi      |    3 +-
->  .../boot/dts/fsl/qoriq-fman3-1-1g-1.dtsi      |   10 +-
->  .../boot/dts/fsl/qoriq-fman3-1-1g-2.dtsi      |   10 +-
->  .../boot/dts/fsl/qoriq-fman3-1-1g-3.dtsi      |   10 +-
->  .../boot/dts/fsl/qoriq-fman3-1-1g-4.dtsi      |    3 +-
->  .../boot/dts/fsl/qoriq-fman3-1-1g-5.dtsi      |   10 +-
->  drivers/net/ethernet/freescale/dpaa/Kconfig   |    4 +-
->  .../net/ethernet/freescale/dpaa/dpaa_eth.c    |  132 +-
->  .../ethernet/freescale/dpaa/dpaa_eth_sysfs.c  |    2 +-
->  .../ethernet/freescale/dpaa/dpaa_ethtool.c    |   90 +-
->  drivers/net/ethernet/freescale/fman/Kconfig   |    4 +-
->  drivers/net/ethernet/freescale/fman/fman.c    |   31 +-
->  drivers/net/ethernet/freescale/fman/fman.h    |   31 +-
->  .../net/ethernet/freescale/fman/fman_dtsec.c  |  674 ++++-----
->  .../net/ethernet/freescale/fman/fman_dtsec.h  |   58 +-
->  .../net/ethernet/freescale/fman/fman_keygen.c |   29 +-
->  .../net/ethernet/freescale/fman/fman_keygen.h |   29 +-
->  .../net/ethernet/freescale/fman/fman_mac.h    |   34 +-
->  .../net/ethernet/freescale/fman/fman_memac.c  |  864 +++++------
->  .../net/ethernet/freescale/fman/fman_memac.h  |   57 +-
->  .../net/ethernet/freescale/fman/fman_muram.c  |   31 +-
->  .../net/ethernet/freescale/fman/fman_muram.h  |   32 +-
->  .../net/ethernet/freescale/fman/fman_port.c   |   29 +-
->  .../net/ethernet/freescale/fman/fman_port.h   |   29 +-
->  drivers/net/ethernet/freescale/fman/fman_sp.c |   29 +-
->  drivers/net/ethernet/freescale/fman/fman_sp.h |   28 +-
->  .../net/ethernet/freescale/fman/fman_tgec.c   |  274 ++--
->  .../net/ethernet/freescale/fman/fman_tgec.h   |   54 +-
->  drivers/net/ethernet/freescale/fman/mac.c     |  653 +--------
->  drivers/net/ethernet/freescale/fman/mac.h     |   66 +-
->  drivers/net/phy/aquantia_main.c               |   86 +-
->  drivers/net/phy/phy.c                         |   21 +
->  drivers/net/phy/phylink.c                     |  161 +-
->  drivers/phy/freescale/Kconfig                 |   20 +
->  drivers/phy/freescale/Makefile                |    3 +
->  drivers/phy/freescale/lynx-10g.h              |   36 +
->  drivers/phy/freescale/phy-fsl-lynx-10g-clk.c  |  438 ++++++
->  drivers/phy/freescale/phy-fsl-lynx-10g.c      | 1297 +++++++++++++++++
->  drivers/soc/fsl/qbman/qman.c                  |   76 +-
->  include/linux/phy.h                           |   42 +
->  include/linux/phylink.h                       |   12 +-
->  include/soc/fsl/qman.h                        |    9 +
->  69 files changed, 4408 insertions(+), 2356 deletions(-)
->  create mode 100644 Documentation/devicetree/bindings/net/fsl,fman-
-> dtsec.yaml
->  create mode 100644 Documentation/devicetree/bindings/phy/fsl,lynx-
-> 10g.yaml
->  create mode 100644 Documentation/driver-api/phy/lynx_10g.rst
->  create mode 100644 drivers/phy/freescale/lynx-10g.h
->  create mode 100644 drivers/phy/freescale/phy-fsl-lynx-10g-clk.c
->  create mode 100644 drivers/phy/freescale/phy-fsl-lynx-10g.c
-> 
-> --
-> 2.35.1.1320.gc452695387.dirty
+> Please also send patches 15-38 separately from the DPAA1 SerDes and phylink set for easier review
 
+OK.
+
+--Sean
+
+>> Patches 15-19 were first submitted as [1].
+>> 
+>> [1] https://lore.kernel.org/netdev/20220531195851.1592220-1-sean.anderson@seco.com/
+>> 
+>> Changes in v3:
+>> - Manually expand yaml references
+>> - Add mode configuration to device tree
+>> - Expand pcs-handle to an array
+>> - Incorperate some minor changes into the first FMan binding commit
+>> - Add vendor prefix 'fsl,' to rgmii and mii properties.
+>> - Set maxItems for pcs-names
+>> - Remove phy-* properties from example because dt-schema complains and
+>> I
+>>   can't be bothered to figure out how to make it work.
+>> - Add pcs-handle as a preferred version of pcsphy-handle
+>> - Deprecate pcsphy-handle
+>> - Remove mii/rmii properties
+>> - Add 1000BASE-KX interface mode
+>> - Rename remaining references to QorIQ SerDes to Lynx 10G
+>> - Fix PLL enable sequence by waiting for our reset request to be cleared
+>>   before continuing. Do the same for the lock, even though it isn't as
+>>   critical. Because we will delay for 1.5ms on average, use prepare
+>>   instead of enable so we can sleep.
+>> - Document the status of each protocol
+>> - Fix offset of several bitfields in RECR0
+>> - Take into account PLLRST_B, SDRST_B, and SDEN when considering whether
+>>   a PLL is "enabled."
+>> - Only power off unused lanes.
+>> - Split mode lane mask into first/last lane (like group)
+>> - Read modes from device tree
+>> - Use caps to determine whether KX/KR are supported
+>> - Move modes to lynx_priv
+>> - Ensure that the protocol controller is not already in-use when we try
+>>   to configure a new mode. This should only occur if the device tree is
+>>   misconfigured (e.g. when QSGMII is selected on two lanes but there is
+>>   only one QSGMII controller).
+>> - Split PLL drivers off into their own file
+>> - Add clock for "ext_dly" instead of writing the bit directly (and
+>>   racing with any clock code).
+>> - Use kasprintf instead of open-coding the snprintf dance
+>> - Support 1000BASE-KX in lynx_lookup_proto. This still requires PCS
+>>   support, so nothing is truly "enabled" yet.
+>> - Add support for phy rate adaptation
+>> - Support differing link speeds and interface speeds
+>> - Adjust advertisement based on rate adaptation
+>> - Adjust link settings based on rate adaptation
+>> - Add support for CRS-based rate adaptation
+>> - Add support for AQR115
+>> - Add some additional phy interfaces
+>> - Add support for aquantia rate adaptation
+>> - Put the PCS mdiodev only after we are done with it (since the PCS
+>>   does not perform a get itself).
+>> - Remove _return label from memac_initialization in favor of returning
+>>   directly
+>> - Fix grabbing the default PCS not checking for -ENODATA from
+>>   of_property_match_string
+>> - Set DTSEC_ECNTRL_R100M in dtsec_link_up instead of dtsec_mac_config
+>> - Remove rmii/mii properties
+>> - Replace 1000Base... with 1000BASE... to match IEEE capitalization
+>> - Add compatibles for QSGMII PCSs
+>> - Split arm and powerpcs dts updates
+>> - Describe modes in device tree
+>> - ls1088a: Add serdes bindings
+>> 
+>> Changes in v2:
+>> - Rename to fsl,lynx-10g.yaml
+>> - Refer to the device in the documentation, rather than the binding
+>> - Move compatible first
+>> - Document phy cells in the description
+>> - Allow a value of 1 for phy-cells. This allows for compatibility with
+>>   the similar (but according to Ioana Ciornei different enough) lynx-28g
+>>   binding.
+>> - Remove minItems
+>> - Use list for clock-names
+>> - Fix example binding having too many cells in regs
+>> - Add #clock-cells. This will allow using assigned-clocks* to configure
+>>   the PLLs.
+>> - Document the structure of the compatible strings
+>> - Convert FMan MAC bindings to yaml
+>> - Better document how we select which PCS to use in the default case
+>> - Rename driver to Lynx 10G (etc.)
+>> - Fix not clearing group->pll after disabling it
+>> - Support 1 and 2 phy-cells
+>> - Power off lanes during probe
+>> - Clear SGMIIaCR1_PCS_EN during probe
+>> - Rename LYNX_PROTO_UNKNOWN to LYNX_PROTO_NONE
+>> - Handle 1000BASE-KX in lynx_proto_mode_prep
+>> - Remove some unused variables
+>> - Fix prototype for dtsec_initialization
+>> - Fix warning if sizeof(void *) != sizeof(resource_size_t)
+>> - Specify type of mac_dev for exception_cb
+>> - Add helper for sanity checking cgr ops
+>> - Add CGR update function
+>> - Adjust queue depth on rate change
+>> - Move PCS_LYNX dependency to fman Kconfig
+>> - Remove unused variable slow_10g_if
+>> - Restrict valid link modes based on the phy interface. This is easier
+>>   to set up, and mostly captures what I intended to do the first time.
+>>   We now have a custom validate which restricts half-duplex for some SoCs
+>>   for RGMII, but generally just uses the default phylink validate.
+>> - Configure the SerDes in enable/disable
+>> - Properly implement all ethtool ops and ioctls. These were mostly
+>>   stubbed out just enough to compile last time.
+>> - Convert 10GEC and dTSEC as well
+>> - Fix capitalization of mEMAC in commit messages
+>> - Add nodes for QSGMII PCSs
+>> - Add nodes for QSGMII PCSs
+>> - Use one phy cell for SerDes1, since no lanes can be grouped
+>> - Disable SerDes by default to prevent breaking boards inadvertently.
+>> 
+>> Sean Anderson (47):
+>>   dt-bindings: phy: Add Lynx 10G phy binding
+>>   dt-bindings: net: Expand pcs-handle to an array
+>>   dt-bindings: net: Convert FMan MAC bindings to yaml
+>>   dt-bindings: net: fman: Add additional interface properties
+>>   net: phy: Add 1000BASE-KX interface mode
+>>   [RFT] phy: fsl: Add Lynx 10G SerDes driver
+>>   net: phy: Add support for rate adaptation
+>>   net: phylink: Support differing link speeds and interface speeds
+>>   net: phylink: Adjust advertisement based on rate adaptation
+>>   net: phylink: Adjust link settings based on rate adaptation
+>>   [RFC] net: phylink: Add support for CRS-based rate adaptation
+>>   net: phy: aquantia: Add support for AQR115
+>>   net: phy: aquantia: Add some additional phy interfaces
+>>   net: phy: aquantia: Add support for rate adaptation
+>>   net: fman: Convert to SPDX identifiers
+>>   net: fman: Don't pass comm_mode to enable/disable
+>>   net: fman: Store en/disable in mac_device instead of mac_priv_s
+>>   net: fman: dtsec: Always gracefully stop/start
+>>   net: fman: Get PCS node in per-mac init
+>>   net: fman: Store initialization function in match data
+>>   net: fman: Move struct dev to mac_device
+>>   net: fman: Configure fixed link in memac_initialization
+>>   net: fman: Export/rename some common functions
+>>   net: fman: memac: Use params instead of priv for max_speed
+>>   net: fman: Move initialization to mac-specific files
+>>   net: fman: Mark mac methods static
+>>   net: fman: Inline several functions into initialization
+>>   net: fman: Remove internal_phy_node from params
+>>   net: fman: Map the base address once
+>>   net: fman: Pass params directly to mac init
+>>   net: fman: Use mac_dev for some params
+>>   net: fman: Specify type of mac_dev for exception_cb
+>>   net: fman: Clean up error handling
+>>   net: fman: Change return type of disable to void
+>>   net: dpaa: Use mac_dev variable in dpaa_netdev_init
+>>   soc: fsl: qbman: Add helper for sanity checking cgr ops
+>>   soc: fsl: qbman: Add CGR update function
+>>   net: dpaa: Adjust queue depth on rate change
+>>   net: fman: memac: Add serdes support
+>>   net: fman: memac: Use lynx pcs driver
+>>   [RFT] net: dpaa: Convert to phylink
+>>   powerpc: dts: qoriq: Add nodes for QSGMII PCSs
+>>   arm64: dts: layerscape: Add nodes for QSGMII PCSs
+>>   arm64: dts: ls1046a: Add serdes bindings
+>>   arm64: dts: ls1088a: Add serdes bindings
+>>   arm64: dts: ls1046ardb: Add serdes bindings
+>>   [WIP] arm64: dts: ls1088ardb: Add serdes bindings
+>> 
+>>  .../bindings/net/dsa/renesas,rzn1-a5psw.yaml  |    1 +
+>>  .../bindings/net/ethernet-controller.yaml     |   10 +-
+>>  .../bindings/net/fsl,fman-dtsec.yaml          |  172 +++
+>>  .../bindings/net/fsl,qoriq-mc-dpmac.yaml      |    2 +-
+>>  .../devicetree/bindings/net/fsl-fman.txt      |  133 +-
+>>  .../devicetree/bindings/phy/fsl,lynx-10g.yaml |  311 ++++
+>>  Documentation/driver-api/phy/index.rst        |    1 +
+>>  Documentation/driver-api/phy/lynx_10g.rst     |   73 +
+>>  MAINTAINERS                                   |    6 +
+>>  .../boot/dts/freescale/fsl-ls1043-post.dtsi   |   24 +
+>>  .../boot/dts/freescale/fsl-ls1046-post.dtsi   |   25 +
+>>  .../boot/dts/freescale/fsl-ls1046a-rdb.dts    |   34 +
+>>  .../arm64/boot/dts/freescale/fsl-ls1046a.dtsi |  179 +++
+>>  .../boot/dts/freescale/fsl-ls1088a-rdb.dts    |   87 ++
+>>  .../arm64/boot/dts/freescale/fsl-ls1088a.dtsi |   96 ++
+>>  .../fsl/qoriq-fman3-0-10g-0-best-effort.dtsi  |    3 +-
+>>  .../boot/dts/fsl/qoriq-fman3-0-10g-0.dtsi     |   10 +-
+>>  .../fsl/qoriq-fman3-0-10g-1-best-effort.dtsi  |   10 +-
+>>  .../boot/dts/fsl/qoriq-fman3-0-10g-1.dtsi     |   10 +-
+>>  .../boot/dts/fsl/qoriq-fman3-0-1g-0.dtsi      |    3 +-
+>>  .../boot/dts/fsl/qoriq-fman3-0-1g-1.dtsi      |   10 +-
+>>  .../boot/dts/fsl/qoriq-fman3-0-1g-2.dtsi      |   10 +-
+>>  .../boot/dts/fsl/qoriq-fman3-0-1g-3.dtsi      |   10 +-
+>>  .../boot/dts/fsl/qoriq-fman3-0-1g-4.dtsi      |    3 +-
+>>  .../boot/dts/fsl/qoriq-fman3-0-1g-5.dtsi      |   10 +-
+>>  .../boot/dts/fsl/qoriq-fman3-1-10g-0.dtsi     |   10 +-
+>>  .../boot/dts/fsl/qoriq-fman3-1-10g-1.dtsi     |   10 +-
+>>  .../boot/dts/fsl/qoriq-fman3-1-1g-0.dtsi      |    3 +-
+>>  .../boot/dts/fsl/qoriq-fman3-1-1g-1.dtsi      |   10 +-
+>>  .../boot/dts/fsl/qoriq-fman3-1-1g-2.dtsi      |   10 +-
+>>  .../boot/dts/fsl/qoriq-fman3-1-1g-3.dtsi      |   10 +-
+>>  .../boot/dts/fsl/qoriq-fman3-1-1g-4.dtsi      |    3 +-
+>>  .../boot/dts/fsl/qoriq-fman3-1-1g-5.dtsi      |   10 +-
+>>  drivers/net/ethernet/freescale/dpaa/Kconfig   |    4 +-
+>>  .../net/ethernet/freescale/dpaa/dpaa_eth.c    |  132 +-
+>>  .../ethernet/freescale/dpaa/dpaa_eth_sysfs.c  |    2 +-
+>>  .../ethernet/freescale/dpaa/dpaa_ethtool.c    |   90 +-
+>>  drivers/net/ethernet/freescale/fman/Kconfig   |    4 +-
+>>  drivers/net/ethernet/freescale/fman/fman.c    |   31 +-
+>>  drivers/net/ethernet/freescale/fman/fman.h    |   31 +-
+>>  .../net/ethernet/freescale/fman/fman_dtsec.c  |  674 ++++-----
+>>  .../net/ethernet/freescale/fman/fman_dtsec.h  |   58 +-
+>>  .../net/ethernet/freescale/fman/fman_keygen.c |   29 +-
+>>  .../net/ethernet/freescale/fman/fman_keygen.h |   29 +-
+>>  .../net/ethernet/freescale/fman/fman_mac.h    |   34 +-
+>>  .../net/ethernet/freescale/fman/fman_memac.c  |  864 +++++------
+>>  .../net/ethernet/freescale/fman/fman_memac.h  |   57 +-
+>>  .../net/ethernet/freescale/fman/fman_muram.c  |   31 +-
+>>  .../net/ethernet/freescale/fman/fman_muram.h  |   32 +-
+>>  .../net/ethernet/freescale/fman/fman_port.c   |   29 +-
+>>  .../net/ethernet/freescale/fman/fman_port.h   |   29 +-
+>>  drivers/net/ethernet/freescale/fman/fman_sp.c |   29 +-
+>>  drivers/net/ethernet/freescale/fman/fman_sp.h |   28 +-
+>>  .../net/ethernet/freescale/fman/fman_tgec.c   |  274 ++--
+>>  .../net/ethernet/freescale/fman/fman_tgec.h   |   54 +-
+>>  drivers/net/ethernet/freescale/fman/mac.c     |  653 +--------
+>>  drivers/net/ethernet/freescale/fman/mac.h     |   66 +-
+>>  drivers/net/phy/aquantia_main.c               |   86 +-
+>>  drivers/net/phy/phy.c                         |   21 +
+>>  drivers/net/phy/phylink.c                     |  161 +-
+>>  drivers/phy/freescale/Kconfig                 |   20 +
+>>  drivers/phy/freescale/Makefile                |    3 +
+>>  drivers/phy/freescale/lynx-10g.h              |   36 +
+>>  drivers/phy/freescale/phy-fsl-lynx-10g-clk.c  |  438 ++++++
+>>  drivers/phy/freescale/phy-fsl-lynx-10g.c      | 1297 +++++++++++++++++
+>>  drivers/soc/fsl/qbman/qman.c                  |   76 +-
+>>  include/linux/phy.h                           |   42 +
+>>  include/linux/phylink.h                       |   12 +-
+>>  include/soc/fsl/qman.h                        |    9 +
+>>  69 files changed, 4408 insertions(+), 2356 deletions(-)
+>>  create mode 100644 Documentation/devicetree/bindings/net/fsl,fman-
+>> dtsec.yaml
+>>  create mode 100644 Documentation/devicetree/bindings/phy/fsl,lynx-
+>> 10g.yaml
+>>  create mode 100644 Documentation/driver-api/phy/lynx_10g.rst
+>>  create mode 100644 drivers/phy/freescale/lynx-10g.h
+>>  create mode 100644 drivers/phy/freescale/phy-fsl-lynx-10g-clk.c
+>>  create mode 100644 drivers/phy/freescale/phy-fsl-lynx-10g.c
+>> 
+>> --
+>> 2.35.1.1320.gc452695387.dirty
+> 
 
 -- 
 linux-phy mailing list
