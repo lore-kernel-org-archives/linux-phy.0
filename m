@@ -4,93 +4,138 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F27D2CCA479
-	for <linux-phy@archiver.kernel.org>; Thu, 21 Jul 2022 09:13:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 90EEAC433EF
+	for <linux-phy@archiver.kernel.org>; Thu, 21 Jul 2022 09:38:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aW/izhCesgF2Z74VMx1IS/uLpImzzPw1docI2v3xilI=; b=F1lin6Rsbkh5HQ
-	+UUXByLFwV2345Hyes1nA7WO84MgykrpqXRAWz2SvCiPSqiLPyvBEcLGC/JBwjS33FmoRfAGC0X/n
-	B9oEZjLnMWxkCUKYkl/pwovH7TpGDoDMbvyXxv6dMcVdFkW3tGNjXuD1XViUkJq+B2pqEn4O+HnHQ
-	bY0j0FRa8Z/m1bB51rsgSqXrS5f6+8GUq9KyXdUUqgIY0TXpmo3CE1gpoYzB5f++PbSpyKHqQRV5X
-	FhHwo0sOv/qG6TKEoFhXi9QN63si7KKI+h+jTTLB6NDInMrYauqSw07lktI+aHjLnD7RxShdhJ0QX
-	vxk5Br9r0JZhsVDNX2yw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:
+	References:Cc:To:Subject:Date:Message-ID:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=GT9jC7hlkO0PW9Q/vtNcpNJGhCfwMGAPTA/QFVpb+3Q=; b=P/2W9n4G7mlFs4Q1znxMi7GLVa
+	chU5hGL2yCJYGAtGB5KWl9BaUuJve4huT6chRLyIxzSO5ore9JOUNfwVGWu8FzI9UZs+t0QGk/TQ8
+	FljBMx80AyEhXBD685HtAKKG/+m+D9Zp5lmww7JpekJXeaR9Km7d2wv76tIfIrBot2xikT+fakr8r
+	nfajkkbmWl6ahnl+nLAtp5epGMU7qr72xacUbe6y07o8PcqjmJDakHRNJux1IbT5hKBX3++EGuc/e
+	9755+qPhTVSVWxB1Lb6c8UOv8cfEZuZaBOHe/bbaSSXa74xNR1UN8xV91kMPceqBhDhMRV1aGdxiZ
+	stEp4mfw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oESFT-0034wQ-EF; Thu, 21 Jul 2022 09:13:35 +0000
-Received: from mail-lj1-x22b.google.com ([2a00:1450:4864:20::22b])
+	id 1oESdv-003QKE-1f; Thu, 21 Jul 2022 09:38:51 +0000
+Received: from mail-eopbgr50052.outbound.protection.outlook.com ([40.107.5.52] helo=EUR03-VE1-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oESFQ-0034tM-0k
-	for linux-phy@lists.infradead.org; Thu, 21 Jul 2022 09:13:33 +0000
-Received: by mail-lj1-x22b.google.com with SMTP id a13so899528ljr.11
-        for <linux-phy@lists.infradead.org>; Thu, 21 Jul 2022 02:13:30 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=message-id:date:mime-version:user-agent:subject:content-language:to
-         :cc:references:from:in-reply-to:content-transfer-encoding;
-        bh=TpS5izxbfaIi7KiXxTWz4goQ0xYb3Nec6QgQZFgkaFE=;
-        b=Ne/Tamn9sbxHkFifvNCByhbqPuu7S59vYRhKjA+pAGtq/voVmRpIKPGl9l2Kjbc98w
-         5CKROxuqxUCEqexcCgU3SHklH4gCpLkkMPZ5fTqsEk1Q0mBkpckAnTqyH19AT7cWqqx1
-         GtuOTVsIHaeXnoC4oGX78S5T9pCG+PPPP/NfC/cu7xK69P8GkXvmY2Yoe7utySXmSHLB
-         l3QomXa/Hw95FksUG9tfQW0bJ+lNDf0NtjzhudXzf2B6isggQukBIHvIZGLeSQl7OOxI
-         oqCh+uWtxNvECLXZPtL8zCbd6CyhMkDXx2EuFxw7aizwyLDeGHefcD2w32KfH0X1pIw6
-         9qpw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
-         :content-language:to:cc:references:from:in-reply-to
-         :content-transfer-encoding;
-        bh=TpS5izxbfaIi7KiXxTWz4goQ0xYb3Nec6QgQZFgkaFE=;
-        b=0n6hHaWDO7jpweYt5NOPVsD+mkfxJ7bqOp+LOTUdvQNSmZZASgDz9V1Pr7dmt0CASa
-         ukjErucyojhi4iWkWDiM+LTat/scFVVlo79OeL29a1t0uCGYFlg7dHrHhJdfkBWX1cIB
-         pTcXMdXmk6DEtq6bdg1ycfgrmB/CEC8QihhnzvAXGDjsgnt4hswtphWG9yFfmT5hDr+R
-         roS61lWO0qF4dut866bZCBhhybQ/NpKnsdABJx7OpMKp3u6IyC1F/z8nnZIlJimA4Pl8
-         3RXeWNsotObcn+ImTCUIV/h+RbjSoyri/5/LMv/sd6vpP0fyN02uE01ZMJP2gIya4qxj
-         Ph7g==
-X-Gm-Message-State: AJIora8JkV6O9VqRjcGwBXLwsZxnZiV8//1ag9Afhx+UoGsRCqzGDojb
-	+2FUhISsedhsZV+vP1m8ioYS/g==
-X-Google-Smtp-Source: AGRyM1vl+UbQxsnzo9Wgux87cQYIJBlZXhKDpg0KV4cXsthLRh+gvdcdYWQ7aL/wMk5e1MmMIqymUg==
-X-Received: by 2002:a2e:504:0:b0:25d:529a:3852 with SMTP id 4-20020a2e0504000000b0025d529a3852mr17569239ljf.179.1658394809488;
-        Thu, 21 Jul 2022 02:13:29 -0700 (PDT)
-Received: from [192.168.115.193] (89-162-31-138.fiber.signal.no. [89.162.31.138])
-        by smtp.gmail.com with ESMTPSA id y11-20020a05651c106b00b002554dce4048sm366771ljm.53.2022.07.21.02.13.27
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 21 Jul 2022 02:13:28 -0700 (PDT)
-Message-ID: <84853ee4-94aa-585d-e13d-dca21a6ac37e@linaro.org>
-Date: Thu, 21 Jul 2022 11:13:26 +0200
-MIME-Version: 1.0
+	id 1oESdr-003QFX-G4; Thu, 21 Jul 2022 09:38:49 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=PJlQiFSn9ksb7OWhEnDYPozRCK8UeeKN1GvO2Hyhpqo2xJr2aLaWNHdw9OI9cTgFc3ys5P5ih++4pqG63Tfkyl6sUPSt3Mue2NMb84751pCwk1NbZVolXGX0MpsRJth9BVUkOOwBnL4jy1Gro+ak75cJBXti/p6aDTh6d3nDsnAoN+xmPaa9rHhVivEYlaQ8XlnfzFgC/jxf4rv62LyIbfP2RtjgvxnPPbFZMqNye6kte7s+mmDv4n9FAmYU7tCo+9nCtdQHxuhQ3vPYvF6w5NYXBac6ED6JFfuOXb/Dy9cshIjCFpYa5Dz76bRNhqgPqht7mpVe+3qhvRUfGKAVxw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=kwWeXZPIK8mAFd8gHS6YNrbZi1Wkh7SFTqER8vFCPV8=;
+ b=NHZVuEGIs63GXZPJzhAyG/JZx9WBeTOOW0iqD5yCOem7YHDhgg7ItnX/zp2Du7n+ckMkDF/Gx7uKxhKpt73+wERPAzcMJXiaCoZZxLfFtt2q9ZbqQgvpbEk8LBeKheP5EmfZtT3dFL59eePd0h8JTJJBq7TAbNonIeHLhUMoZHJbagzN2XUuMy2hKMs5WV1z9Qub+wF8QgA6EGegZJmhZdE1F5+huVCY0QKSYWDtCNMXlPvWK8oNKNSCcYizXfqiOOPWfubz7ghobRj9f+QZLRkFmAo6CGMvXhwRRIkQliSiRf1mYsn+Gi7qtGOZefE4ICcxiVnZhdAsRBSjVHknFw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=wolfvision.net; dmarc=pass action=none
+ header.from=wolfvision.net; dkim=pass header.d=wolfvision.net; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=wolfvision.net;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=kwWeXZPIK8mAFd8gHS6YNrbZi1Wkh7SFTqER8vFCPV8=;
+ b=CsBJ2DFqyIFJju4qq5iUOHdPBgpGvYHU/Lx21d7QQCr07mr182kRUmEpbRMj2HB4jqOJASh/cO0iL6yc0IC11YdzVBDcjGfPqQ3kRB4rXIdvWa6YBLpRV3AKHEm8TxLWuMttiy9TzKdquo67c/+FvPkBwMbZEDXGoUUZAxzCYOY=
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=wolfvision.net;
+Received: from AM4PR0802MB2131.eurprd08.prod.outlook.com
+ (2603:10a6:200:5c::22) by VI1PR0801MB2030.eurprd08.prod.outlook.com
+ (2603:10a6:800:81::17) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5438.14; Thu, 21 Jul
+ 2022 09:38:37 +0000
+Received: from AM4PR0802MB2131.eurprd08.prod.outlook.com
+ ([fe80::dcaa:905c:ff8:1f5b]) by AM4PR0802MB2131.eurprd08.prod.outlook.com
+ ([fe80::dcaa:905c:ff8:1f5b%9]) with mapi id 15.20.5458.018; Thu, 21 Jul 2022
+ 09:38:37 +0000
+Message-ID: <4acf184d-3ebf-1b14-e921-0b0d5151b310@wolfvision.net>
+Date: Thu, 21 Jul 2022 11:38:33 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
  Thunderbird/91.11.0
-Subject: Re: [PATCH v4 2/5] dt-bindings: phy: Add ARTPEC-8 PCIe phy
+Subject: Re: [PATCH 0/3] Add support for the RK356x variant of the Inno CSI
+ DPHY
 Content-Language: en-US
-To: wangseok.lee@samsung.com, "robh+dt@kernel.org" <robh+dt@kernel.org>,
- "krzk+dt@kernel.org" <krzk+dt@kernel.org>, "kishon@ti.com" <kishon@ti.com>,
- "vkoul@kernel.org" <vkoul@kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "jesper.nilsson@axis.com" <jesper.nilsson@axis.com>,
- "lars.persson@axis.com" <lars.persson@axis.com>,
- "bhelgaas@google.com" <bhelgaas@google.com>,
- "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
- "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "lorenzo.pieralisi@arm.com" <lorenzo.pieralisi@arm.com>,
- "kw@linux.com" <kw@linux.com>,
- "linux-arm-kernel@axis.com" <linux-arm-kernel@axis.com>,
- "kernel@axis.com" <kernel@axis.com>
-Cc: Moon-Ki Jun <moonki.jun@samsung.com>,
- Sang Min Kim <hypmean.kim@samsung.com>, Dongjin Yang
- <dj76.yang@samsung.com>, Yeeun Kim <yeeun119.kim@samsung.com>
-References: <20220720055108epcms2p563c65b3de6333ccbc68386aa2471a800@epcms2p5>
- <CGME20220720055108epcms2p563c65b3de6333ccbc68386aa2471a800@epcms2p6>
- <20220720055716epcms2p60e80b1089dca0f83a894262bce676858@epcms2p6>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20220720055716epcms2p60e80b1089dca0f83a894262bce676858@epcms2p6>
+To: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Cc: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Heiko Stuebner <heiko@sntech.de>, Peter Geis <pgwipeout@gmail.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ Nicolas Frattaroli <frattaroli.nicolas@gmail.com>,
+ Liang Chen <cl@rock-chips.com>
+References: <20220720091527.1270365-1-michael.riesch@wolfvision.net>
+From: Michael Riesch <michael.riesch@wolfvision.net>
+In-Reply-To: <20220720091527.1270365-1-michael.riesch@wolfvision.net>
+X-ClientProxiedBy: ZR0P278CA0190.CHEP278.PROD.OUTLOOK.COM
+ (2603:10a6:910:44::17) To AM4PR0802MB2131.eurprd08.prod.outlook.com
+ (2603:10a6:200:5c::22)
+MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: ad74ae6f-84a0-4ae5-f76d-08da6afcc993
+X-MS-TrafficTypeDiagnostic: VI1PR0801MB2030:EE_
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: 	ZsentFGZXA3sgcmRXuL8Nok7By9rjyyh7hcv+tvDwxUtImzKy0odLCua7bTfqr3Tspfwcni4/wSd2wD+Le/hXB0Vmdx4FYRVAvElLENsGEvtO2I4wiXbmYOgCSqzfgvKtwnWPtStCndpFPT7zCnPdeF0oC0PDnIThj8UuI6g+ERAct1iRT3vih+3unRxadelcVbBx7hzkfhebVbWHaonjqZ4bPC4AYeyNOf0VrWeolQRu7rXPein7T9AMrsTBHlGdB8QW5bOBgOieWNSA3Zd78/FefGDJeb2EieqtxyHRnq4DffRxnXP5Byw2ErQZz5F65tW8sbLECCKnQOn7pqq1nEvFq8KRg1392nlJ7xMKk/tdd4Yt0t+G2slVb1eHzFHJLlkcWH0VJgzDoVJzRsH3eEoMWeN4Rlsu1knOky+XKNsqTy/ib0uyKKN4puR6pezZ7uoJpGHOk7vSHbP7rEpbWjflQsMdEnp7I0CqLLhI1WRWu4nr8kYSQy6cr6z8XuZPmACVpge17hjBC2/A68k2U4Cc84xD6R5G3r0+V6x1OUwd87BR+Vyb/NMGOrKVwwNRMlZ24V0wb6L9dmVW8egiHQCwOztjlr4ybgs7TNxjtvxqFpXIP6t4aOLPuhGeGZQTlMHhnB9TPrNpYS49HmIU4HcYOlTOfieTk1zFuKgGNZbJ2a94BOZhzDUuk1LO+8fewl2iHAIcjBl+wklOl/Xai+3LTrZXsA75hUW83vNjyiq2WRLA4eQuM4z55HzLA3izKP0LTEMASozCwCRHlewnTgSJvtLtI1ncbpXaOPVwlRf9dt3ZwaeB1oyGo8ud+YaxrN0GNGouHJtNxwk3TQHnx8sPllsHPy5oK5dleLfXLg=
+X-Forefront-Antispam-Report: 	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM4PR0802MB2131.eurprd08.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230016)(4636009)(39840400004)(396003)(376002)(366004)(346002)(136003)(6666004)(52116002)(2906002)(6506007)(6512007)(186003)(53546011)(38100700002)(31696002)(2616005)(86362001)(41300700001)(478600001)(8676002)(31686004)(5660300002)(54906003)(316002)(7416002)(4326008)(8936002)(66946007)(36756003)(66476007)(66556008)(966005)(6486002)(44832011)(45980500001)(43740500002);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: 	=?utf-8?B?dXFpc2RoQjUreE9JNVRJaEpQdWZZNGZOemdJRzFZbDk1enJaWlJyQjBFR0VC?=
+ =?utf-8?B?K2lGQ0pPczBiOGh0VlV1aHVXbVVqWWw0Z0dhMDBwWnl6UTdCNllYY084QkF0?=
+ =?utf-8?B?NUZnOS9FaktRMFRrZ0VIQk84ZS9FdUZBeWNGN05DN285cUhtWEhtVGNEQUJn?=
+ =?utf-8?B?SWYvbDdIVTQ0dVBpSGhvT2xtOVozY0JKOXV3TWNsQWdrdTZtVWVlWnFRUFBJ?=
+ =?utf-8?B?OTRYTmY4QXpsWEZpeHJtaFE3Ni9UME1sdzhvcm9EK1Ewcm1PMFB3WFRncGdO?=
+ =?utf-8?B?b3NCb2crTG9aQ3p5VHFVTnNhMkFRZEtWeHVjRFludzhZVURXZVNjNFo4NGU1?=
+ =?utf-8?B?MWxhVnRENTNnbDFyTE5udm5QeVJNMTF6K3VvY0NZSy9rVDU4NGlrU2hKUk5p?=
+ =?utf-8?B?Z3FVM01PTk5rdUJjcjZrWGs0U1BkMDdvaWY1eGVFZjdiQ1FvckU1VzNFVWtP?=
+ =?utf-8?B?c2l0TGdyRDA4ZnBlZUdyc0R5b2lJd2RoVmsyWlAwZ3A3N2dpbVRadllqWW05?=
+ =?utf-8?B?SHIxWkYwUTE5TGMyOG1DU0FzajdZQVIzc0Q2UkZzVWJDTnVjSWZTbVIxOWhp?=
+ =?utf-8?B?S2NiYXNzRE5vSmRpTHBIS3JZOXJnZ1JTMHhUL0dRN3BMTGZmRnowdk0xdUg2?=
+ =?utf-8?B?c1N1YXZwN0Z2anlmRlZ4b0xWWlRZRTdZQWlKWnZybk5ZM0YySHV6VWFzSzhJ?=
+ =?utf-8?B?TGtQdkZ2Wno4WTdRZk5wSEdzMUZFQm1ETlNLMkpKRCs3NHJobllkRThUNWVn?=
+ =?utf-8?B?RXpYNUp4a3hBUWpQYTVZWUV4akhNWjdFbGdxcVV0elQxYnZuQndNSXh6aWVS?=
+ =?utf-8?B?d21oQVpEUWYzL2JRaW1KVzVJM0xtTGNTVWdvbGREbkVsUGJUNTAzNzM5L2dJ?=
+ =?utf-8?B?NVMwTEtxR2FyaU9MQmJKVHZhMWlOZkRiQkY2ajNlc0JiLzluY2tlNGNIYkVo?=
+ =?utf-8?B?M2tkaHBHejJUb3V4V0MxdFZQZHNKV1Z6NktaYUFralh2Nm9GcmJGcEsrcTRw?=
+ =?utf-8?B?dWk0eGFWRzVVcjZ3M01NVmVMSkJRK05GWDFDRWZLMlFQZDMxcXZiMUl0aFIz?=
+ =?utf-8?B?R2c3d1FWQldndUFuYXN6SmNpdlJ6ZEU4TzM2SW1kVjBsVjJteG1jWU9JbHJZ?=
+ =?utf-8?B?THF2TmZudkN6S1pkTkxaUnk5WjVEWmNjTHJLa1RKYm00U01oUDNCMTZsbUZt?=
+ =?utf-8?B?OEFDNXpIWGZJUUl6b2pLb01nN0RpdkdjbVFseDU5NUtqM0hZaDh4azRqSXhO?=
+ =?utf-8?B?VktwOHBNMGExSHhzUVBvVFZHY0ZJVE1Kb25TYlIzNE1rYVd3L0ZQTXVua3g3?=
+ =?utf-8?B?WlVBNEpYOUlwaTRITnBZd2RWRTlBd2JodTZTQThVQWkveUt5SXZiZFdlUjNH?=
+ =?utf-8?B?d1JYeEhVVHFpeWhCQi83Kzg1elFEL3F1UzdaZzZOc0NKTGEvVEFaQ05yUWhz?=
+ =?utf-8?B?aXF2dWNIUnhjaURwdW5pL1hHWG5SaHFJT3djYVZ5VnlCcnpqanplbVBWdTZL?=
+ =?utf-8?B?Nk1Wa2NuOFR3NzFmYTJOMStiZkx2UUd1NC9rQi9pSlJkc0ltS1hMV3JyMXhr?=
+ =?utf-8?B?Z0pkR0lta3lsaElFVCtBQUREQWJ1KzRld05LWFpBRTJhbVlCcVJ5c2xGZm1I?=
+ =?utf-8?B?NXdCV05CTXRjV0pVeUVJbWtQSXVRNWlVM1ZyVkVhTDduN3p5NjFPVWRQZTAy?=
+ =?utf-8?B?TUhFN0xBL1lRd2VjVFBhU2hrY0VSTjl5TUxJVkdFZ2l1SUxERTBkS2ZjSzNO?=
+ =?utf-8?B?WlFLL1dPeDdKRTlyYm9PMjE0ZWc5dGlvd3UyT1kxTGhiYkxmZTV5cDByV1E0?=
+ =?utf-8?B?Rmo1Vk1UMXVzUzluQVBRdUZReXh2VnMyUlBGbzNRWmZKNmlsMHhnSGdFT2dI?=
+ =?utf-8?B?NUo2d3psdUp1aTZoY3NFZ09HcXJPNXFTMDZaRldjU203U2RHT0l3Q1BxMWdk?=
+ =?utf-8?B?UTYrOUVpd1RZNUNsd1JlczZTcGFZbndzcWpuU3hvc3pSK0xNNlRpSkhNbUkz?=
+ =?utf-8?B?QTRuUlJaUmlCQUtjVHVHbzZtYllDa1JMRDEyYitSNGJiVllzQ09Ubko4aHhC?=
+ =?utf-8?B?ZEVDNUdvK2MvaHNxQm5SeGx6c0w3b0Q5Z29HWkduenhzSkRwaUFXL2hacVZ5?=
+ =?utf-8?B?cEJHeE82ZEFCUnloOC9GZmczTmw4TThQNW5zbHRGZU11WFg5ZExuRkRWTXNq?=
+ =?utf-8?B?SUVhRkJLdURodHpmOHRvaXlxSWpiRFlzWnJQNjIwZWd5RExxT2pNejM3ckJB?=
+ =?utf-8?B?bDBtbVNaMXNGOXZRalFFSFJZNTZnPT0=?=
+X-OriginatorOrg: wolfvision.net
+X-MS-Exchange-CrossTenant-Network-Message-Id: ad74ae6f-84a0-4ae5-f76d-08da6afcc993
+X-MS-Exchange-CrossTenant-AuthSource: AM4PR0802MB2131.eurprd08.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 21 Jul 2022 09:38:37.4129
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: e94ec9da-9183-471e-83b3-51baa8eb804f
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: +piiyKQE1BNJwmvZo/OavtW/u0aiHoYHeFIKZ+pPBkt56zXJl2XFd1BAtDLk4sqtcpU4nNhKmlbWIc3fEbmKUOqIOUFOrq+DZYb0eTQ7zQ4=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR0801MB2030
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220721_021332_146495_0B97381A 
-X-CRM114-Status: GOOD (  19.37  )
+X-CRM114-CacheID: sfid-20220721_023847_597520_7C2EEE03 
+X-CRM114-Status: GOOD (  21.24  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -107,102 +152,80 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 20/07/2022 07:57, Wangseok Lee wrote:
-> Add description to support Axis, ARTPEC-8 SoC. ARTPEC-8 is the SoC platform
-> of Axis Communications and PCIe PHY is designed based on Samsung PHY.
-> 
-> Signed-off-by: Wangseok Lee <wangseok.lee@samsung.com>
-> ---
-> v3->v4 :
-> -Add "fsys-sysreg" to properties
-> -Modify the "lcpll-ref-clk" and "clocks" in properties
->  "lcpll-ref-clk" is custom properties, so add 'vendor', type(enum),
->  description
->  Add the maxItem in clocks, add clock-names in properties
-> 
-> v2->v3 :
-> -Modify version history to fit the linux commit rule
-> -Remove 'Device Tree Bindings' on title
-> -Remove clock-names entries
-> -Change node name to soc from artpec8 on excamples
-> 
-> v1->v2 :
-> -'make dt_binding_check' result improvement
-> -Add the missing property list
-> -Align the indentation of continued lines/entries
-> ---
->  .../bindings/phy/axis,artpec8-pcie-phy.yaml        | 85 ++++++++++++++++++++++
->  1 file changed, 85 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/axis,artpec8-pcie-phy.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/axis,artpec8-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/axis,artpec8-pcie-phy.yaml
-> new file mode 100644
-> index 0000000..9db39ef
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/axis,artpec8-pcie-phy.yaml
-> @@ -0,0 +1,85 @@
-> +# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/axis,artpec8-pcie-phy.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: ARTPEC-8 SoC PCIe PHY
-> +
-> +maintainers:
-> +  - Jesper Nilsson <jesper.nilsson@axis.com>
-> +
-> +properties:
-> +  compatible:
-> +    const: axis,artpec8-pcie-phy
-> +
-> +  reg:
-> +    items:
-> +      - description: PHY registers.
-> +      - description: PHY coding sublayer registers.
-> +
-> +  reg-names:
-> +    items:
-> +      - const: phy
-> +      - const: pcs
-> +
-> +  "#phy-cells":
-> +    const: 0
-> +
-> +  clocks:
-> +    maxItems: 1
-> +
-> +  clock-names:
-> +    items:
-> +      - const: ref
-> +
-> +  samsung,fsys-sysreg:
-> +    description:
-> +      Phandle to system register of fsys block.
-> +    $ref: /schemas/types.yaml#/definitions/phandle
-> +
-> +  num-lanes:
-> +    const: 2
-> +
-> +  axis,lcpll-ref-clk:
-> +    description:
-> +      select the reference clock of phy and initialization is performed
-> +      with the reference clock according to the selected value.
-> +    $ref: /schemas/types.yaml#/definitions/uint32
+Hi all,
 
-This looks like hardware register value... but after looking at driver
-you rather need string... although REF_CLK_RESERVED is confusing. You
-need to describe the feature, not some device programming model.
+On 7/20/22 11:15, Michael Riesch wrote:
+> Hi all,
+> 
+> This series adds support for the variant of the Innosilicon MIPI CSI DPHY that
+> can be found in Rockchip RK356x SoCs.
+> 
+> Please note that only the basic operating mode is supported, in which all four
+> CSI lanes are controlled by the Rockchip ISP. Split lane operation (e.g., two
+> lanes to ISP and two lanes to VICAP) is not supported.
+> 
+> This has been tested on a Radxa ROCK3 Model A board together with an IMX219
+> camera sensor and a patched version of the rkisp1 driver (with support for the
+> RK356x variant V2.1 added in a very crude way).
 
-Then looking deeper it seems you just made a workaround around common
-clock framework. At least for XO and SOC case - you just implemented a
-clock mux in your PHY driver!
+If someone would like to test the patches, I pushed the hacks required
+to bring up the RK3568 ISP to
 
-Implement a clock driver instead and handle only special case - clock
-coming from IO.
+    https://github.com/mriesch-wv/linux/commits/feature/isp2
+
+The following commands are required to set up streaming for my IMX219
+module (Raspberry Pi Camera V2.1):
+
+media-ctl -d "platform:rkisp1" --set-v4l2 '"rkisp1_isp":0
+[fmt:SRGGB10_1X10/3280x2464 crop: (0,0)/3200x2400]'
+
+media-ctl -d "platform:rkisp1" --set-v4l2 '"rkisp1_isp":2
+[fmt:YUYV8_2X8/3200x2400 crop: (0,0)/3200x2400]'
+
+media-ctl -d "platform:rkisp1" --set-v4l2 '"rkisp1_resizer_mainpath":0
+[fmt:YUYV8_2X8/3200x2400 crop: (0,0)/3200x2400]'
+
+media-ctl -d "platform:rkisp1" --set-v4l2 '"rkisp1_resizer_mainpath":1
+[fmt:YUYV8_2X8/3200x2400]'
+
+media-ctl -d "platform:rkisp1" --set-v4l2 '"rkisp1_resizer_selfpath":0
+[fmt:YUYV8_2X8/3200x2400]'
+
+media-ctl -d "platform:rkisp1" --set-v4l2 '"rkisp1_resizer_selfpath":1
+[fmt:YUYV8_2X8/800x600]'
+
+v4l2-ctl -z "platform:rkisp1" -d "rkisp1_mainpath" -v
+"width=3200,height=2400"
+
+(adjust to your camera module as required). After that, I can stream
+with, e.g.,
+
+gst-launch-1.0 v4l2src ! video/x-raw,width=3200,height=2400 ! waylandsink
+
+The image quality is horrid, of course (I think the ISP is not even
+debayering the sensor data), but one can recognize the objects before
+the camera and it can be proved that the CSI DPHY works.
 
 Best regards,
-Krzysztof
+Michael
+
+> 
+> Looking forward to your comments!
+> 
+> Best regards,
+> Michael
+> 
+> Michael Riesch (3):
+>   dt-bindings: phy: add compatible for rk356x to rockchip-inno-csi-dphy
+>   phy: rockchip: add support for the rk356x variant to
+>     rockchip-inno-csidphy
+>   arm64: dts: rockchip: add csi dphy node to rk356x
+> 
+>  .../bindings/phy/rockchip-inno-csi-dphy.yaml  |  1 +
+>  arch/arm64/boot/dts/rockchip/rk356x.dtsi      | 12 ++++++++++
+>  .../phy/rockchip/phy-rockchip-inno-csidphy.c  | 24 +++++++++++++++++++
+>  3 files changed, 37 insertions(+)
+> 
 
 -- 
 linux-phy mailing list
