@@ -4,67 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3842BC433EF
-	for <linux-phy@archiver.kernel.org>; Thu, 21 Jul 2022 07:45:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6EEF6CCA479
+	for <linux-phy@archiver.kernel.org>; Thu, 21 Jul 2022 08:55:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:Cc:To:From
-	:Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=5Q4nMM6Uc4b5gFfJYKx4T90+9n5QEDRvX/E9sEt3iCk=; b=zqTjfZOyvWjxKI2HJGmWuRnqrB
-	Vk5b2bG7yd1TH0txxtBz266jjbzQMKs/+QxGI6IvzqJoCN36gDZtCtYQctSHkkQD3rH6BBEwdNNRm
-	1GdlQkJipPi9yjEEf7jA+EsZjIkQ5bZA+OgNXpW82gEdRDog4KsCnBLvjO1WHMsQSJR7Ood28kSOu
-	xL9lM0hgmzLjRnga7XnhdnJUShO1vOLDbogS1/AI2vWRU3A91W+8rf0XS/ws+p8vPXWjkIPsfz/yz
-	7/DqpZmKkYmmkzb456Yd70OX5OmxsdX5HksdnBX1XQWhKTMRLjBIUXYDY79lBA5GW/hCYDW2/dlMZ
-	KVR/HNLg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=+BUQH8elkg6vksd3KV2zGiJ+eo46dlKbc0ozKDrD/24=; b=xsSSCB9P3bS192
+	XgXghBcVg60NpmHWgy9sIUUB03EyvwCL4qTdc1TiSRdRrDXlU0yZxQw3MfQbQzi5OO7ENW3+h0lpH
+	RvM3WjyQ0H1T50RdD7yaK/CcxYpwJlSHtf/5Ic65ElPtLDV5g8DOsPAYyR4HyaKsypSGKcbp4xwAo
+	GLFTzYMDT7487hls2SuhM+5/kV2Odwmku2GcbkOcqlCWjd24HaAzuYqSaH+7fenydzy/Ha+mHACby
+	4hfHzs7vNDH/7Zg89u0LV1fpZ9vh952I9VxH7XNgZYy0dde2oyx8syaBUXGkYBuZ9ZS6wDkzN0pPy
+	Xg/ugb66g8EEfDqxbL8Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oEQsE-0022k1-I5; Thu, 21 Jul 2022 07:45:30 +0000
-Received: from 11.mo584.mail-out.ovh.net ([46.105.34.195])
+	id 1oERyA-002plH-Pg; Thu, 21 Jul 2022 08:55:42 +0000
+Received: from mail-lj1-x229.google.com ([2a00:1450:4864:20::229])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oEQsA-0022eU-C5
-	for linux-phy@lists.infradead.org; Thu, 21 Jul 2022 07:45:28 +0000
-Received: from player770.ha.ovh.net (unknown [10.110.171.96])
-	by mo584.mail-out.ovh.net (Postfix) with ESMTP id 18A3F24867
-	for <linux-phy@lists.infradead.org>; Thu, 21 Jul 2022 07:45:21 +0000 (UTC)
-Received: from RCM-web2.webmail.mail.ovh.net (ip-194-187-74-233.konfederacka.maverick.com.pl [194.187.74.233])
-	(Authenticated sender: rafal@milecki.pl)
-	by player770.ha.ovh.net (Postfix) with ESMTPSA id 1AB9D2CDC81C6;
-	Thu, 21 Jul 2022 07:44:57 +0000 (UTC)
+	id 1oERy7-002pgF-3e
+	for linux-phy@lists.infradead.org; Thu, 21 Jul 2022 08:55:40 +0000
+Received: by mail-lj1-x229.google.com with SMTP id e11so1034042ljl.4
+        for <linux-phy@lists.infradead.org>; Thu, 21 Jul 2022 01:55:36 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google;
+        h=message-id:date:mime-version:user-agent:subject:content-language:to
+         :cc:references:from:in-reply-to:content-transfer-encoding;
+        bh=4GeLyV51uYj8j4S4aBve635E01r+lvLx2pbTjxK4lWY=;
+        b=r7/Jn5fBFKJaOhtb44Dkjir5D0my9GI5ryjs+mFVridMBGrA31diU16QC2UbpL167X
+         eWcY8H3uvQu/abRABlzE4W9nzhLybMEhXsBOdE58UnvdATo2x6OEIbQqKhZdpU3IPFRs
+         OuFHTLK8S75Bpltb/aEvT2UawF69arCPTyn/s7/V7R2GFzZEHjUXqM1Lj6ZVHtKihRFk
+         L6sMUxXH+LKkm7F5trbtBIN0gM93PTfJSox5aFPGm5Igsp6ejwaOqGtyDZL+eaFLO406
+         pFblBNMt5JH4n1C5KILz8CDIoS9kmWbFwlGYo0UEgw77xnYXHEGzBawWEW4cymTG2oO0
+         GEig==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
+         :content-language:to:cc:references:from:in-reply-to
+         :content-transfer-encoding;
+        bh=4GeLyV51uYj8j4S4aBve635E01r+lvLx2pbTjxK4lWY=;
+        b=g+uudVQrJZPMh9ngxKnYmzANMFTmusMHy9r0WqfUYVF98SjvUnwapy5fK4MCH5MDbc
+         y/Ye537Lwej5z5N3Q5PG69mRLGnHbpsUHAN02lcGHdbtAwcqIQiUuJUfcsME+pS+zXCp
+         4StK7Gv9W+ZBuK/0XIFsgEU4qEGFiRn/fud60gSOYq5lKJ+N+p3lFhe2qqeLg5e1xSRm
+         uXuXcaZHXUKAQhV2Vhyxbq0uXYrXaufKFRkIik9HmnRsuzauNOEo5nsUtOUWHJHW9WsP
+         3TaPbxArHCGeEI8GSZRKRjzZINqoG8RAnG7NQ+HSP2ck8pXduU4hshz3n8+9TbQG8lwt
+         P4Rg==
+X-Gm-Message-State: AJIora8PDuU6MKsdcMSlfDElupQ/CQUEmmupLER/50JODacPRlQmc74b
+	DWWyR0bIAlbiKo/BDYiBNg43TQ==
+X-Google-Smtp-Source: AGRyM1t+1EDHj6uDmmwBE6CgTZopBYct95p34fYs4E202hjjQ4LPh6wl3Vozu3ATNCFfiaswEwGWyw==
+X-Received: by 2002:a2e:8852:0:b0:25d:4ab5:593b with SMTP id z18-20020a2e8852000000b0025d4ab5593bmr17501577ljj.261.1658393735136;
+        Thu, 21 Jul 2022 01:55:35 -0700 (PDT)
+Received: from [192.168.115.193] (89-162-31-138.fiber.signal.no. [89.162.31.138])
+        by smtp.gmail.com with ESMTPSA id bp25-20020a056512159900b0047f76a935a5sm308444lfb.137.2022.07.21.01.55.32
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 21 Jul 2022 01:55:33 -0700 (PDT)
+Message-ID: <19ccf775-cc1d-37de-bf4e-7745f0943851@linaro.org>
+Date: Thu, 21 Jul 2022 10:55:32 +0200
 MIME-Version: 1.0
-Date: Thu, 21 Jul 2022 09:44:57 +0200
-From: =?UTF-8?Q?Rafa=C5=82_Mi=C5=82ecki?= <rafal@milecki.pl>
-To: William Zhang <william.zhang@broadcom.com>
-Cc: Linux ARM List <linux-arm-kernel@lists.infradead.org>,
- joel.peshkin@broadcom.com, dan.beygelman@broadcom.com, Miquel Raynal
- <miquel.raynal@bootlin.com>, "David S. Miller" <davem@davemloft.net>, Rob
- Herring <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>, Kishon Vijay
- Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, Linus Walleij
- <linus.walleij@linaro.org>, Philipp Zabel <p.zabel@pengutronix.de>, Florian
- Fainelli <f.fainelli@gmail.com>, Greg Kroah-Hartman
- <gregkh@linuxfoundation.org>, Wim Van Sebroeck <wim@linux-watchdog.org>,
- linux-i2c@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-mtd@lists.infradead.org, netdev@vger.kernel.org,
- linux-pci@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-gpio@vger.kernel.org, linux-mips@vger.kernel.org,
- linux-serial@vger.kernel.org, linux-watchdog@vger.kernel.org
-Subject: Re: [RESEND PATCH 6/9] arm64: bcmbca: Make BCM4908 drivers depend on
- ARCH_BCMBCA
-In-Reply-To: <20220721000740.29624-1-william.zhang@broadcom.com>
-References: <20220721000740.29624-1-william.zhang@broadcom.com>
-User-Agent: Roundcube Webmail/1.4.13
-Message-ID: <eee8c85652e6dac69420a876d03f67c4@milecki.pl>
-X-Sender: rafal@milecki.pl
-X-Originating-IP: 194.187.74.233
-X-Webmail-UserID: rafal@milecki.pl
-X-Ovh-Tracer-Id: 293015452666211156
-X-VR-SPAMSTATE: OK
-X-VR-SPAMSCORE: -100
-X-VR-SPAMCAUSE: gggruggvucftvghtrhhoucdtuddrgedvfedrudelkedgvdejucetufdoteggodetrfdotffvucfrrhhofhhilhgvmecuqfggjfdpvefjgfevmfevgfenuceurghilhhouhhtmecuhedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmnecujfgurhepggffhffvvefujghffgfkgihitgfgsehtjehjtddtredvnecuhfhrohhmpeftrghfrghlpgfoihhlvggtkhhiuceorhgrfhgrlhesmhhilhgvtghkihdrphhlqeenucggtffrrghtthgvrhhnpeegvdffjeelvdeggeetheegveejieetgeeiiefggeelveejffehieekhfduueelhfenucfkpheptddrtddrtddrtddpudelgedrudekjedrjeegrddvfeefnecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmohguvgepshhmthhpohhuthdphhgvlhhopehplhgrhigvrhejjedtrdhhrgdrohhvhhdrnhgvthdpihhnvghtpedtrddtrddtrddtpdhmrghilhhfrhhomheprhgrfhgrlhesmhhilhgvtghkihdrphhlpdhnsggprhgtphhtthhopedupdhrtghpthhtoheplhhinhhugidqphhhhieslhhishhtshdrihhnfhhrrgguvggrugdrohhrghdpoffvtefjohhsthepmhhoheekge
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
+ Thunderbird/91.11.0
+Subject: Re: [PATCH v4 1/5] dt-bindings: pci: Add ARTPEC-8 PCIe controller
+Content-Language: en-US
+To: wangseok.lee@samsung.com, "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "krzk+dt@kernel.org" <krzk+dt@kernel.org>, "kishon@ti.com" <kishon@ti.com>,
+ "vkoul@kernel.org" <vkoul@kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "jesper.nilsson@axis.com" <jesper.nilsson@axis.com>,
+ "lars.persson@axis.com" <lars.persson@axis.com>,
+ "bhelgaas@google.com" <bhelgaas@google.com>,
+ "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
+ "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "lorenzo.pieralisi@arm.com" <lorenzo.pieralisi@arm.com>,
+ "kw@linux.com" <kw@linux.com>,
+ "linux-arm-kernel@axis.com" <linux-arm-kernel@axis.com>,
+ "kernel@axis.com" <kernel@axis.com>
+Cc: Moon-Ki Jun <moonki.jun@samsung.com>,
+ Sang Min Kim <hypmean.kim@samsung.com>, Dongjin Yang
+ <dj76.yang@samsung.com>, Yeeun Kim <yeeun119.kim@samsung.com>
+References: <20220720055108epcms2p563c65b3de6333ccbc68386aa2471a800@epcms2p5>
+ <CGME20220720055108epcms2p563c65b3de6333ccbc68386aa2471a800@epcms2p6>
+ <20220720055436epcms2p63896ebe4e2131e3844044d0112288570@epcms2p6>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <20220720055436epcms2p63896ebe4e2131e3844044d0112288570@epcms2p6>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220721_004526_739063_690FDD10 
-X-CRM114-Status: GOOD (  24.21  )
+X-CRM114-CacheID: sfid-20220721_015539_199394_D86EC37E 
+X-CRM114-Status: GOOD (  21.35  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,232 +102,160 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 2022-07-21 02:07, William Zhang wrote:
-> Replace ARCH_BCM4908 with ARCH_BCMBCA in subsystem Kconfig files.
-
-This change will make symbols (and relevant drivers):
-1. MTD_OF_PARTS_BCM4908
-2. MTD_OF_PARTS_LINKSYS_NS
-3. BCM4908_ENET
-4. PINCTRL_BCM4908
-available on all BCA (sub)families.
-
-Above drivers are BCM4908 specific and I think they will never be needed
-for other BCA (sub)families. That list seems to be growing big:
-BCM47622, BCM4912 BCM63138, BCM63146, BCM63148, BCM63158, BCM63178,
-BCM6756, BCM6813, BCM6846, BCM6855, BCM6856, BCM6858, BCM6878.
-
-So I'm still wondering if dropping ARCH_BCM4908 makes sense. It seems to
-me we're saving 10 lines of clean Kconfig code while introducing a bit
-of mess to kernel config.
-
-If you take a look at Documentation/kbuild/kconfig-language.rst it says
-that symbols visibility should be limited to platform(s) (check the
-"Architecture and platform dependencies" part). There is there is
-however no clear documentation what platform should be.
-
-Personally I think I'd:
-1. Keep ARCH_BCM4908 for BCM4908 (BCM4906 too) specific stuff
-2. Use ARCH_BCMBCA for actual BCA-generic drivers (serial, WD, PMB)
-
-I'm happy to hear other maintainers opinions.
-
-
-> Signed-off-by: William Zhang <william.zhang@broadcom.com>
+On 20/07/2022 07:54, Wangseok Lee wrote:
+> Add description to support Axis, ARTPEC-8 SoC. ARTPEC-8 is the SoC platform
+> of Axis Communications and PCIe controller is designed based on Design-Ware
+> PCIe controller.
+> 
+> Signed-off-by: Wangseok Lee <wangseok.lee@samsung.com>
 > ---
+> v3->v4 :
+> -Add missing properties
 > 
->  drivers/i2c/busses/Kconfig            | 4 ++--
->  drivers/mtd/parsers/Kconfig           | 6 +++---
->  drivers/net/ethernet/broadcom/Kconfig | 4 ++--
->  drivers/pci/controller/Kconfig        | 2 +-
->  drivers/phy/broadcom/Kconfig          | 4 ++--
->  drivers/pinctrl/bcm/Kconfig           | 4 ++--
->  drivers/reset/Kconfig                 | 2 +-
->  drivers/soc/bcm/bcm63xx/Kconfig       | 4 ++--
->  drivers/tty/serial/Kconfig            | 4 ++--
->  drivers/watchdog/Kconfig              | 2 +-
->  10 files changed, 18 insertions(+), 18 deletions(-)
+> v2->v3 :
+> -Modify version history to fit the linux commit rule
+> -Remove 'Device Tree Bindings' on title
+> -Remove clock-names entries
+> -Change node name to soc from artpec8 on excamples
+
+Please rebase on newest Linux kernel or linux-next and use
+get_maintainers.pl script.
+
 > 
-> diff --git a/drivers/i2c/busses/Kconfig b/drivers/i2c/busses/Kconfig
-> index 45a4e9f1b639..fd9a4dd01997 100644
-> --- a/drivers/i2c/busses/Kconfig
-> +++ b/drivers/i2c/busses/Kconfig
-> @@ -487,8 +487,8 @@ config I2C_BCM_KONA
+> v1->v2 :
+> -'make dt_binding_check' result improvement
+> -Add the missing property list
+> -Align the indentation of continued lines/entries
+> ---
+>  .../bindings/pci/axis,artpec8-pcie-ep.yaml         | 138 +++++++++++++++++++
+>  .../devicetree/bindings/pci/axis,artpec8-pcie.yaml | 148 +++++++++++++++++++++
+>  2 files changed, 286 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/pci/axis,artpec8-pcie-ep.yaml
+>  create mode 100644 Documentation/devicetree/bindings/pci/axis,artpec8-pcie.yaml
 > 
->  config I2C_BRCMSTB
->  	tristate "BRCM Settop/DSL I2C controller"
-> -	depends on ARCH_BCM2835 || ARCH_BCM4908 || ARCH_BCMBCA || \
-> -		   ARCH_BRCMSTB || BMIPS_GENERIC || COMPILE_TEST
-> +	depends on ARCH_BCM2835 || ARCH_BCMBCA || ARCH_BRCMSTB || \
-> +		   BMIPS_GENERIC || COMPILE_TEST
->  	default y
->  	help
->  	  If you say yes to this option, support will be included for the
-> diff --git a/drivers/mtd/parsers/Kconfig b/drivers/mtd/parsers/Kconfig
-> index b43df73927a0..d6db655a1d24 100644
-> --- a/drivers/mtd/parsers/Kconfig
-> +++ b/drivers/mtd/parsers/Kconfig
-> @@ -69,8 +69,8 @@ config MTD_OF_PARTS
-> 
->  config MTD_OF_PARTS_BCM4908
->  	bool "BCM4908 partitioning support"
-> -	depends on MTD_OF_PARTS && (ARCH_BCM4908 || COMPILE_TEST)
-> -	default ARCH_BCM4908
-> +	depends on MTD_OF_PARTS && (ARCH_BCMBCA || COMPILE_TEST)
-> +	default ARCH_BCMBCA
->  	help
->  	  This provides partitions parser for BCM4908 family devices
->  	  that can have multiple "firmware" partitions. It takes care of
-> @@ -78,7 +78,7 @@ config MTD_OF_PARTS_BCM4908
-> 
->  config MTD_OF_PARTS_LINKSYS_NS
->  	bool "Linksys Northstar partitioning support"
-> -	depends on MTD_OF_PARTS && (ARCH_BCM_5301X || ARCH_BCM4908 || 
-> COMPILE_TEST)
-> +	depends on MTD_OF_PARTS && (ARCH_BCM_5301X || ARCH_BCMBCA || 
-> COMPILE_TEST)
->  	default ARCH_BCM_5301X
->  	help
->  	  This provides partitions parser for Linksys devices based on 
-> Broadcom
-> diff --git a/drivers/net/ethernet/broadcom/Kconfig
-> b/drivers/net/ethernet/broadcom/Kconfig
-> index 56e0fb07aec7..f4e1ca68d831 100644
-> --- a/drivers/net/ethernet/broadcom/Kconfig
-> +++ b/drivers/net/ethernet/broadcom/Kconfig
-> @@ -53,8 +53,8 @@ config B44_PCI
-> 
->  config BCM4908_ENET
->  	tristate "Broadcom BCM4908 internal mac support"
-> -	depends on ARCH_BCM4908 || COMPILE_TEST
-> -	default y if ARCH_BCM4908
-> +	depends on ARCH_BCMBCA || COMPILE_TEST
-> +	default y if ARCH_BCMBCA
->  	help
->  	  This driver supports Ethernet controller integrated into Broadcom
->  	  BCM4908 family SoCs.
-> diff --git a/drivers/pci/controller/Kconfig 
-> b/drivers/pci/controller/Kconfig
-> index d1c5fcf00a8a..bfd9bac37e24 100644
-> --- a/drivers/pci/controller/Kconfig
-> +++ b/drivers/pci/controller/Kconfig
-> @@ -274,7 +274,7 @@ config VMD
-> 
->  config PCIE_BRCMSTB
->  	tristate "Broadcom Brcmstb PCIe host controller"
-> -	depends on ARCH_BRCMSTB || ARCH_BCM2835 || ARCH_BCM4908 || \
-> +	depends on ARCH_BRCMSTB || ARCH_BCM2835 || ARCH_BCMBCA || \
->  		   BMIPS_GENERIC || COMPILE_TEST
->  	depends on OF
->  	depends on PCI_MSI_IRQ_DOMAIN
-> diff --git a/drivers/phy/broadcom/Kconfig 
-> b/drivers/phy/broadcom/Kconfig
-> index 93a6a8ee4716..1d89a2fd9b79 100644
-> --- a/drivers/phy/broadcom/Kconfig
-> +++ b/drivers/phy/broadcom/Kconfig
-> @@ -93,11 +93,11 @@ config PHY_BRCM_SATA
-> 
->  config PHY_BRCM_USB
->  	tristate "Broadcom STB USB PHY driver"
-> -	depends on ARCH_BCM4908 || ARCH_BRCMSTB || COMPILE_TEST
-> +	depends on ARCH_BCMBCA || ARCH_BRCMSTB || COMPILE_TEST
->  	depends on OF
->  	select GENERIC_PHY
->  	select SOC_BRCMSTB if ARCH_BRCMSTB
-> -	default ARCH_BCM4908 || ARCH_BRCMSTB
-> +	default ARCH_BCMBCA || ARCH_BRCMSTB
->  	help
->  	  Enable this to support the Broadcom STB USB PHY.
->  	  This driver is required by the USB XHCI, EHCI and OHCI
-> diff --git a/drivers/pinctrl/bcm/Kconfig b/drivers/pinctrl/bcm/Kconfig
-> index 8f4d89806fcb..35b51ce4298e 100644
-> --- a/drivers/pinctrl/bcm/Kconfig
-> +++ b/drivers/pinctrl/bcm/Kconfig
-> @@ -31,13 +31,13 @@ config PINCTRL_BCM2835
-> 
->  config PINCTRL_BCM4908
->  	tristate "Broadcom BCM4908 pinmux driver"
-> -	depends on OF && (ARCH_BCM4908 || COMPILE_TEST)
-> +	depends on OF && (ARCH_BCMBCA || COMPILE_TEST)
->  	select PINMUX
->  	select PINCONF
->  	select GENERIC_PINCONF
->  	select GENERIC_PINCTRL_GROUPS
->  	select GENERIC_PINMUX_FUNCTIONS
-> -	default ARCH_BCM4908
-> +	default ARCH_BCMBCA
->  	help
->  	  Driver for BCM4908 family SoCs with integrated pin controller.
-> 
-> diff --git a/drivers/reset/Kconfig b/drivers/reset/Kconfig
-> index f9a7cee01659..7ae71535fe2a 100644
-> --- a/drivers/reset/Kconfig
-> +++ b/drivers/reset/Kconfig
-> @@ -201,7 +201,7 @@ config RESET_SCMI
-> 
->  config RESET_SIMPLE
->  	bool "Simple Reset Controller Driver" if COMPILE_TEST || EXPERT
-> -	default ARCH_ASPEED || ARCH_BCM4908 || ARCH_BITMAIN || ARCH_REALTEK
-> || ARCH_STM32 || (ARCH_INTEL_SOCFPGA && ARM64) || ARCH_SUNXI || ARC
-> +	default ARCH_ASPEED || ARCH_BCMBCA || ARCH_BITMAIN || ARCH_REALTEK
-> || ARCH_STM32 || (ARCH_INTEL_SOCFPGA && ARM64) || ARCH_SUNXI || ARC
->  	help
->  	  This enables a simple reset controller driver for reset lines that
->  	  that can be asserted and deasserted by toggling bits in a 
-> contiguous,
-> diff --git a/drivers/soc/bcm/bcm63xx/Kconfig 
-> b/drivers/soc/bcm/bcm63xx/Kconfig
-> index 9e501c8ac5ce..355c34482076 100644
-> --- a/drivers/soc/bcm/bcm63xx/Kconfig
-> +++ b/drivers/soc/bcm/bcm63xx/Kconfig
-> @@ -13,8 +13,8 @@ endif # SOC_BCM63XX
-> 
->  config BCM_PMB
->  	bool "Broadcom PMB (Power Management Bus) driver"
-> -	depends on ARCH_BCM4908 || (COMPILE_TEST && OF)
-> -	default ARCH_BCM4908
-> +	depends on ARCH_BCMBCA || (COMPILE_TEST && OF)
-> +	default ARCH_BCMBCA
->  	select PM_GENERIC_DOMAINS if PM
->  	help
->  	  This enables support for the Broadcom's PMB (Power Management Bus) 
-> that
-> diff --git a/drivers/tty/serial/Kconfig b/drivers/tty/serial/Kconfig
-> index e3279544b03c..f32bb01c3feb 100644
-> --- a/drivers/tty/serial/Kconfig
-> +++ b/drivers/tty/serial/Kconfig
-> @@ -1100,8 +1100,8 @@ config SERIAL_TIMBERDALE
->  config SERIAL_BCM63XX
->  	tristate "Broadcom BCM63xx/BCM33xx UART support"
->  	select SERIAL_CORE
-> -	depends on ARCH_BCM4908 || ARCH_BCMBCA || BCM63XX || BMIPS_GENERIC
-> || COMPILE_TEST
-> -	default ARCH_BCM4908 || ARCH_BCMBCA || BCM63XX || BMIPS_GENERIC
-> +	depends on ARCH_BCMBCA || BCM63XX || BMIPS_GENERIC || COMPILE_TEST
-> +	default ARCH_BCMBCA || BCM63XX || BMIPS_GENERIC
->  	help
->  	  This enables the driver for the onchip UART core found on
->  	  the following chipsets:
-> diff --git a/drivers/watchdog/Kconfig b/drivers/watchdog/Kconfig
-> index 32fd37698932..1f85ec8a4b3b 100644
-> --- a/drivers/watchdog/Kconfig
-> +++ b/drivers/watchdog/Kconfig
-> @@ -1798,7 +1798,7 @@ config BCM7038_WDT
->  	tristate "BCM63xx/BCM7038 Watchdog"
->  	select WATCHDOG_CORE
->  	depends on HAS_IOMEM
-> -	depends on ARCH_BCM4908 || ARCH_BRCMSTB || BMIPS_GENERIC || BCM63XX
-> || COMPILE_TEST
-> +	depends on ARCH_BCMBCA || ARCH_BRCMSTB || BMIPS_GENERIC || BCM63XX
-> || COMPILE_TEST
->  	help
->  	  Watchdog driver for the built-in hardware in Broadcom 7038 and
->  	  later SoCs used in set-top boxes.  BCM7038 was made public
+> diff --git a/Documentation/devicetree/bindings/pci/axis,artpec8-pcie-ep.yaml b/Documentation/devicetree/bindings/pci/axis,artpec8-pcie-ep.yaml
+> new file mode 100644
+> index 0000000..435e86f
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/pci/axis,artpec8-pcie-ep.yaml
+> @@ -0,0 +1,138 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/pci/axis,artpec8-pcie-ep.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: ARTPEC-8 SoC PCIe Controller
+> +
+> +maintainers:
+> +  - Jesper Nilsson <jesper.nilsson@axis.com>
+> +
+> +description: |+
+> +  This PCIe end-point controller is based on the Synopsys DesignWare PCIe IP
+> +  and thus inherits all the common properties defined in snps,dw-pcie-ep.yaml.
+> +
+> +allOf:
+> +  - $ref: /schemas/pci/snps,dw-pcie-ep.yaml#
+> +
+> +properties:
+> +  compatible:
+> +    const: axis,artpec8-pcie-ep
+> +
+> +  reg:
+> +    items:
+> +      - description: Data Bus Interface (DBI) registers.
+> +      - description: Data Bus Interface (DBI2) registers.
+> +      - description: PCIe address space region.
+> +
+> +  reg-names:
+> +    items:
+> +      - const: dbi
+> +      - const: dbi2
+> +      - const: addr_space
+> +
+> +  interrupts:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    items:
+> +      - description: PIPE clock, used by the controller to clock the PIPE
+> +      - description: PCIe dbi clock, ungated version
+> +      - description: PCIe master clock, ungated version
+> +      - description: PCIe slave clock, ungated version
+> +
+> +  clock-names:
+> +    items:
+> +      - const: pipe
+> +      - const: dbi
+> +      - const: mstr
+> +      - const: slv
+> +
+> +  samsung,fsys-sysreg:
+> +    description:
+> +      Phandle to system register of fsys block.
+> +    $ref: /schemas/types.yaml#/definitions/phandle
+
+Since you wrote this is one register, I expect offset:
+https://elixir.bootlin.com/linux/v5.18-rc1/source/Documentation/devicetree/bindings/soc/samsung/exynos-usi.yaml#L42
+
+
+> +
+> +  samsung,syscon-phandle:
+> +    description:
+> +      Phandle to the PMU system controller node.
+> +    $ref: /schemas/types.yaml#/definitions/phandle
+> +
+> +  samsung,fsys-bus-s:
+> +    description:
+> +      Phandle to bus-s of fsys block, this register
+> +      is additional control sysreg in fsys block and
+> +      this is used for pcie slave control setting.
+> +    $ref: /schemas/types.yaml#/definitions/phandle
+
+Ditto
+
+> +
+> +  samsung,fsys-bus-p:
+> +    description:
+> +      Phandle to bus-p of fsys block, this register
+> +      is additional control sysreg in fsys block and
+> +      this is used for pcie dbi control setting.
+> +    $ref: /schemas/types.yaml#/definitions/phandle
+
+Ditto
+
+> +
+> +  phys:
+> +    maxItems: 1
+> +
+> +  phy-names:
+> +    items:
+> +      - const: pcie_phy
+> +
+> +  num-lanes:
+> +    const: 2
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - reg-names
+> +  - interrupts
+> +  - interrupt-names
+> +  - clocks
+> +  - clock-names
+> +  - samsung,fsys-sysreg
+> +  - samsung,syscon-phandle
+> +  - samsung,syscon-bus-s-fsys
+
+This does not match what you wrote in properties.
+
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
