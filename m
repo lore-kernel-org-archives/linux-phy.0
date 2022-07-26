@@ -4,57 +4,99 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 72662C43334
-	for <linux-phy@archiver.kernel.org>; Tue, 26 Jul 2022 08:55:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DE949C433EF
+	for <linux-phy@archiver.kernel.org>; Tue, 26 Jul 2022 09:57:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XP6Pvb0ONBuMmsnZIRto0/rr6e2lsMXGTLOCSmYmpcs=; b=iCey9LioBuWSy4
-	e21I2qfSE2k1ZF1ot/nY+XVVcuWuhlA0Vt/wyAIEevzxH8rbufMbUqhCkUS1NSMEGaroRL6BTOutr
-	A8ZJXILAKfP6Vj8WIySpaUTLWrOcc5NWq8HmLBJIO1GoyvW9YM7th+M5hN5x6B7NObgYb1E+//Le4
-	FQix104g1CFc+PftRQgu7xGdJks3gHzzqqc9Ykg/UQiy0jCvux0e7c3C7XZtxmoQZZR8Zyc/43eQ9
-	l5GlEfsqvELFENf0t83iDhBAO7vYYrxcdBEXXF5lqgpngA6MHjSZgi0OBqZO2dOPk2lXy40qsKAcd
-	Y3Kh9PGGtI1UHQ79Z9yg==;
+	List-Owner; bh=djQo+3tA0y8ttrpbqlMkTda07C4cH68OZE/TFstE9so=; b=2Qy2E51gLvGol0
+	ana/lX0Ak5PY9SX5HikmVTD2wEFaKY9LnuXF0CkFeBLV8PWprYgVvKvSxaWvA8pUnXynvRyKibWkL
+	CrgF3yNb//KeLF1TQDtRSDnvUcevplGjMsT/BiO4qIU5VS2iRS281xWc+u8KscQuGlxEVgKI4HR/T
+	pH6YM+XfL4Su7vKTxbjObWDUCj/loVhS5pApS0h2wV3eAwlRAPCmHgRb8M+972iBiESMy8PW0gSi1
+	N4CKREZFX7FxWzhoacU09yH0UB6tuHVLfRp8eTxOax9zjXHSdL5fb5pxih3EhjzT5mHdszruvuI5J
+	AKQdicrZvcOVpeI/n6Fw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oGGLa-00AdVD-RP; Tue, 26 Jul 2022 08:55:22 +0000
-Received: from wp126.webpack.hosteurope.de ([2a01:488:42:1000:50ed:8485::])
+	id 1oGHJZ-00C0na-8P; Tue, 26 Jul 2022 09:57:21 +0000
+Received: from mail-wr1-x42a.google.com ([2a00:1450:4864:20::42a])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oGGLM-00Acmt-QZ; Tue, 26 Jul 2022 08:55:11 +0000
-Received: from p5098d998.dip0.t-ipconnect.de ([80.152.217.152] helo=hermes.fivetechno.de); authenticated
-	by wp126.webpack.hosteurope.de running ExIM with esmtpsa (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
-	id 1oGGL6-0002fl-Dq; Tue, 26 Jul 2022 10:54:52 +0200
-X-Virus-Scanned: by amavisd-new 2.12.2 using newest ClamAV at
-	linuxbbg.five-lan.de
-Received: from [192.168.34.101] (p5098d998.dip0.t-ipconnect.de [80.152.217.152])
-	(authenticated bits=0)
-	by hermes.fivetechno.de (8.15.2/8.16.1/SUSE Linux 0.8) with ESMTPSA id 26Q8snZh029298
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NO);
-	Tue, 26 Jul 2022 10:54:49 +0200
-Message-ID: <ae2a4f1c-6bf9-b2dd-35c8-5cdc5f102e03@fivetechno.de>
-Date: Tue, 26 Jul 2022 10:54:49 +0200
+	id 1oGHJV-00C0gi-Kx
+	for linux-phy@lists.infradead.org; Tue, 26 Jul 2022 09:57:19 +0000
+Received: by mail-wr1-x42a.google.com with SMTP id l15so15356560wro.11
+        for <linux-phy@lists.infradead.org>; Tue, 26 Jul 2022 02:57:15 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=baylibre-com.20210112.gappssmtp.com; s=20210112;
+        h=from:to:cc:subject:date:message-id:in-reply-to:references
+         :mime-version:content-transfer-encoding;
+        bh=iUicZLyBaZmjv2lqx7fW4HMBGqk7G7eOOVk/ONJ/4PI=;
+        b=a9jshOAIwiw5ztp0+n80iX49X5uP9g1fIPLWAKA0Oebli99rLSK1JSwbKX/TWSIEKD
+         O8RAu6x1EuYGsc6oXUYHrmfMJXvk5iAAbsgDFp3wtW13E5HsTmbU8dXiDaDJtMrBEKfo
+         BtLocFdB4gelyGOYkHzTosErUmhiDP8/zjswgy3RH2fFxA6Xdh3CA/yI5iTiW9jbWJ9K
+         oN+oMjKZdsMTijOKOP2BcUYtUHprOqVqAeK+KFkaDem1o5Ff7dUDZtyl1X5TpjYEAD8P
+         dBkE0hdxwnSaGXsfATXn6MSzu2tBqE1Ie2s0Wxg+NyX5ban32/phra4XzX8bj2k4iDT4
+         H/tA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+         :references:mime-version:content-transfer-encoding;
+        bh=iUicZLyBaZmjv2lqx7fW4HMBGqk7G7eOOVk/ONJ/4PI=;
+        b=hgYY0lUJvEiMKXuXEpQ2CWHKott2w9raIwQ1WmjZfmj+eYRb0L/2DP5B7DwvPR8U7L
+         byvJ/Fdw9ovIQQNUYUMho+xm9NyR+4R1hQ2z8XGDszeaQ5IGO9GbwIDIZQ4a4wv0owzp
+         sETPrE5v7w9kSI4DWAPXC/cxzYZF7bxxp6KBB8K3/mrhWLxrt33/ZBShRpjonnZCI5mk
+         EeXoMNCgmrLKAadxPsF9Ggdup8yUi2OAUjRaOucp/nHNIgEjCwM6glFTEDfMPBIpldbP
+         7i43Y6d3qxxPsMnHyekx7rCe8QkvKaP3AUV9py1cyckOcvop5XIpxs5KlWKihEcaAfam
+         6Ezw==
+X-Gm-Message-State: AJIora9BXd9ZuePxvSxWyqpCb5RLUYfi5om3YCPa6GVnPgay6FCbRNsR
+	Eg2wnurppoMPRBTvIMh89MDMXK01rHbEvBM0
+X-Google-Smtp-Source: AGRyM1vaVzTyQ5b+nn+RlJ42faxYO14TpuNlzllTL+nY6z4bb/G0nOBbFTz5DJTxQxp7SwpuN92A3g==
+X-Received: by 2002:adf:e84b:0:b0:21e:61cd:647e with SMTP id d11-20020adfe84b000000b0021e61cd647emr10370152wrn.715.1658829433726;
+        Tue, 26 Jul 2022 02:57:13 -0700 (PDT)
+Received: from localhost.localdomain (210.145.15.109.rev.sfr.net. [109.15.145.210])
+        by smtp.googlemail.com with ESMTPSA id t3-20020a1c4603000000b003a2d87aea57sm21170873wma.10.2022.07.26.02.57.11
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 26 Jul 2022 02:57:12 -0700 (PDT)
+From: Amjad Ouled-Ameur <aouledameur@baylibre.com>
+To: fparent@baylibre.com
+Cc: broonie@kernel.org,
+	chaotian.jing@mediatek.com,
+	chunfeng.yun@mediatek.com,
+	devicetree@vger.kernel.org,
+	dmaengine@vger.kernel.org,
+	jic23@kernel.org,
+	krzysztof.kozlowski+dt@linaro.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-i2c@vger.kernel.org,
+	linux-iio@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-mediatek@lists.infradead.org,
+	linux-mmc@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-serial@vger.kernel.org,
+	linux-spi@vger.kernel.org,
+	linux-usb@vger.kernel.org,
+	linux-watchdog@vger.kernel.org,
+	linux@roeck-us.net,
+	matthias.bgg@gmail.com,
+	qii.wang@mediatek.com,
+	robh+dt@kernel.org,
+	srinivas.kandagatla@linaro.org,
+	ulf.hansson@linaro.org,
+	vkoul@kernel.org,
+	wim@linux-watchdog.org
+Subject: Re: [PATCH 16/17] arm64: dts: mediatek: add mt8365 device-tree
+Date: Tue, 26 Jul 2022 11:57:11 +0200
+Message-Id: <20220726095711.708310-1-aouledameur@baylibre.com>
+X-Mailer: git-send-email 2.37.1
+In-Reply-To: <20220531135026.238475-17-fparent@baylibre.com>
+References: <20220531135026.238475-17-fparent@baylibre.com>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.11.0
-Subject: Re: [PATCH] phy: rockchip-inno-usb2: Sync initial otg state
-Content-Language: de-DE
-To: Peter Geis <pgwipeout@gmail.com>, Heiko Stuebner <heiko@sntech.de>,
-        Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
-        Samuel Holland <samuel@sholland.org>
-Cc: linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
-        linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
-References: <20220622003140.30365-1-pgwipeout@gmail.com>
-From: Markus Reichl <m.reichl@fivetechno.de>
-Organization: five technologies GmbH
-In-Reply-To: <20220622003140.30365-1-pgwipeout@gmail.com>
-X-bounce-key: webpack.hosteurope.de;m.reichl@fivetechno.de;1658825708;9312c8b3;
-X-HE-SMSGID: 1oGGL6-0002fl-Dq
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220726_015509_039588_79FD8BE2 
-X-CRM114-Status: GOOD (  15.01  )
+X-CRM114-CacheID: sfid-20220726_025717_718769_962DE0CA 
+X-CRM114-Status: UNSURE (   9.23  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -66,91 +108,93 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SGkgUGV0ZXIsCkFtIDIyLjA2LjIyIHVtIDAyOjMxIHNjaHJpZWIgUGV0ZXIgR2VpczoKPiBUaGUg
-aW5pdGlhbCBvdGcgc3RhdGUgZm9yIHRoZSBwaHkgZGVmYXVsdHMgdG8gZGV2aWNlIG1vZGUuIFRo
-ZSBhY3R1YWwKPiBzdGF0ZSBpc24ndCBkZXRlY3RlZCB1bnRpbCBhbiBJRCBJUlEgZmlyZXMuIEZp
-eCB0aGlzIGJ5IHN5bmNpbmcgdGhlIElECj4gc3RhdGUgZHVyaW5nIGluaXRpYWxpemF0aW9uLgo+
-IAo+IEZpeGVzOiA1MWE5YjJjMDNkZDMgKCJwaHk6IHJvY2tjaGlwLWlubm8tdXNiMjogSGFuZGxl
-IElEIElSUSIpCj4gU2lnbmVkLW9mZi1ieTogUGV0ZXIgR2VpcyA8cGd3aXBlb3V0QGdtYWlsLmNv
-bT4KPiAtLS0KPiAgIGRyaXZlcnMvcGh5L3JvY2tjaGlwL3BoeS1yb2NrY2hpcC1pbm5vLXVzYjIu
-YyB8IDYgKysrKysrCj4gICAxIGZpbGUgY2hhbmdlZCwgNiBpbnNlcnRpb25zKCspCj4gCj4gZGlm
-ZiAtLWdpdCBhL2RyaXZlcnMvcGh5L3JvY2tjaGlwL3BoeS1yb2NrY2hpcC1pbm5vLXVzYjIuYyBi
-L2RyaXZlcnMvcGh5L3JvY2tjaGlwL3BoeS1yb2NrY2hpcC1pbm5vLXVzYjIuYwo+IGluZGV4IDY3
-MTE2NTlmNzI3Yy4uNmU0NDA2OTYxN2RmIDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvcGh5L3JvY2tj
-aGlwL3BoeS1yb2NrY2hpcC1pbm5vLXVzYjIuYwo+ICsrKyBiL2RyaXZlcnMvcGh5L3JvY2tjaGlw
-L3BoeS1yb2NrY2hpcC1pbm5vLXVzYjIuYwo+IEBAIC0xMTYyLDYgKzExNjIsMTIgQEAgc3RhdGlj
-IGludCByb2NrY2hpcF91c2IycGh5X290Z19wb3J0X2luaXQoc3RydWN0IHJvY2tjaGlwX3VzYjJw
-aHkgKnJwaHksCj4gICAJCQkJCUVYVENPTl9VU0JfSE9TVCwgJnJwb3J0LT5ldmVudF9uYik7Cj4g
-ICAJCWlmIChyZXQpCj4gICAJCQlkZXZfZXJyKHJwaHktPmRldiwgInJlZ2lzdGVyIFVTQiBIT1NU
-IG5vdGlmaWVyIGZhaWxlZFxuIik7Cj4gKwo+ICsJCWlmICghb2ZfcHJvcGVydHlfcmVhZF9ib29s
-KHJwaHktPmRldi0+b2Zfbm9kZSwgImV4dGNvbiIpKSB7Cj4gKwkJCS8qIGRvIGluaXRpYWwgc3lu
-YyBvZiB1c2Igc3RhdGUgKi8KPiArCQkJcmV0ID0gcHJvcGVydHlfZW5hYmxlZChycGh5LT5ncmYs
-ICZycG9ydC0+cG9ydF9jZmctPnV0bWlfaWQpOwo+ICsJCQlleHRjb25fc2V0X3N0YXRlX3N5bmMo
-cnBoeS0+ZWRldiwgRVhUQ09OX1VTQl9IT1NULCAhcmV0KTsKPiArCQl9Cj4gICAJfQo+ICAgCj4g
-ICBvdXQ6Cgp3aXRoIHJlY2VudCBsaW51eC1uZXh0IGtlcm5lbHMsIGhlcmUgd2l0aCBuZXh0LTIw
-MjIwNzI1IG15IHJrMzM5OS1yb2MtcGMgZG9lcyBub3QgCmJvb3QuIEJpc2VjdGluZyBwb2ludGVk
-IHRvIHRoaXMgY29tbWl0LgpCeSByZXZlcnRpbmcgdGhpcyBjb21taXQgdGhlIGJvYXJkIGJvb3Rz
-IGFnYWluLgoKICAyLjQzMTAwNV0gVW5hYmxlIHRvIGhhbmRsZSBrZXJuZWwgTlVMTCBwb2ludGVy
-IGRlcmVmZXJlbmNlIGF0IHZpcnR1YWwgYWRkcmVzcyAKMDAwMDAwMDAwMDAwMDAwMApbICAgIDIu
-NDMyMTUyXSBNZW0gYWJvcnQgaW5mbzoKWyAgICAyLjQzMjUxOV0gICBFU1IgPSAweDAwMDAwMDAw
-ODYwMDAwMDQKWyAgICAyLjQzMzAwMV0gICBFQyA9IDB4MjE6IElBQlQgKGN1cnJlbnQgRUwpLCBJ
-TCA9IDMyIGJpdHMKWyAgICAyLjQzMzY3NF0gICBTRVQgPSAwLCBGblYgPSAwClsgICAgMi40MzQw
-NzVdICAgRUEgPSAwLCBTMVBUVyA9IDAKWyAgICAyLjQzNDQ4NF0gICBGU0MgPSAweDA0OiBsZXZl
-bCAwIHRyYW5zbGF0aW9uIGZhdWx0ClsgICAgMi40MzUxMDJdIHVzZXIgcGd0YWJsZTogNGsgcGFn
-ZXMsIDQ4LWJpdCBWQXMsIHBnZHA9MDAwMDAwMDAwMTc2NTAwMApbICAgIDIuNDM1OTExXSBbMDAw
-MDAwMDAwMDAwMDAwMF0gcGdkPTAwMDAwMDAwMDAwMDAwMDAsIHA0ZD0wMDAwMDAwMDAwMDAwMDAw
-ClsgICAgMi40MzY3NzVdIEludGVybmFsIGVycm9yOiBPb3BzOiA4NjAwMDAwNCBbIzFdIFNNUApb
-ICAgIDIuNDM3Mzk3XSBNb2R1bGVzIGxpbmtlZCBpbjogaXBfdGFibGVzIHhfdGFibGVzIGlwdjYg
-eGhjaV9wbGF0X2hjZCB4aGNpX2hjZCAKcm9ja2NoaXBkcm0gZHJtX2NtYV9oZWxwZXIgZHdjMyBh
-bmFsb2dpeF9kcCBkd19oZG1pIHJlYWx0ZWsgZHdjM19vZl9zaW1wbGUgCmRybV9kaXNwbGF5X2hl
-bHBlciBkd19taXBpX2RzaSBkcm1fa21zX2hlbHBlciBzeXNjb3B5YXJlYSBvaGNpX3BsYXRmb3Jt
-IG9oY2lfaGNkIAplaGNpX3BsYXRmb3JtIHN5c2ZpbGxyZWN0IHN5c2ltZ2JsdCBlaGNpX2hjZCBk
-d21hY19yayBmYl9zeXNfZm9wcyBzdG1tYWNfcGxhdGZvcm0gCnN0bW1hYyBwY3NfeHBjcyBwaHls
-aW5rIGRybSB1c2Jjb3JlIGRybV9wYW5lbF9vcmllbnRhdGlvbl9xdWlya3MKWyAgICAyLjQ0MTY1
-MV0gQ1BVOiAzIFBJRDogMCBDb21tOiBzd2FwcGVyLzMgTm90IHRhaW50ZWQgNS4xOS4wLXJjOC1u
-ZXh0LTIwMjIwNzI1ICM0MTcKWyAgICAyLjQ0MjYwOV0gSGFyZHdhcmUgbmFtZTogRmlyZWZseSBS
-T0MtUkszMzk5LVBDIE1lenphbmluZSBCb2FyZCAoRFQpClsgICAgMi40NDM0MTVdIHBzdGF0ZTog
-MjAwMDAwMDUgKG56Q3YgZGFpZiAtUEFOIC1VQU8gLVRDTyAtRElUIC1TU0JTIEJUWVBFPS0tKQpb
-ICAgIDIuNDQ0Mjg5XSBwYyA6IDB4MApbICAgIDIuNDQ0NTk0XSBsciA6IGNhbGxfdGltZXJfZm4u
-Y29uc3Rwcm9wLjArMHgyNC8weDgwClsgICAgMi40NDUyNDddIHNwIDogZmZmZjgwMDAwOGY0M2E1
-MApbICAgIDIuNDQ1Njc4XSB4Mjk6IGZmZmY4MDAwMDhmNDNhNTAgeDI4OiAwMDAwMDAwMDAwMDAw
-MDA1IHgyNzogMDAwMDAwMDAwMDAwMDAyMApbICAgIDIuNDUzMzM0XSB4MjY6IGZmZmYwMDAwMDA2
-NDY1ODAgeDI1OiBmZmZmODAwMDA4ZjQzYjAwIHgyNDogMDAwMDAwMDAwMDAwMDAwMApbICAgIDIu
-NDYxMDI4XSB4MjM6IDAwMDAwMDAwMDAwMDAwMDEgeDIyOiAwMDAwMDAwMDAwMDAwMGUwIHgyMTog
-MDAwMDAwMDAwMDAwMDEwMApbICAgIDIuNDY2NzI3XSB4MjA6IGZmZmYwMDAwMDA2NDY1ODAgeDE5
-OiAwMDAwMDAwMDAwMDAwMDAwIHgxODogZmZmZjAwMDAwNjc5ZTgwYwpbICAgIDIuNDcxNjE0XSB4
-MTc6IGZmZmY4MDAwZWVjNzMwMDAgeDE2OiBmZmZmODAwMDA4ZDg0MDAwIHgxNTogMDAwMDAwMDAw
-MDAwNDAwMApbICAgIDIuNDc2NTI0XSB4MTQ6IGZmZmYwMDAwMDA2NDY1ODAgeDEzOiBmZmZmODAw
-MGVlYzczMDAwIHgxMjogZmZmZjAwMDBmNzc4NmVmMApbICAgIDIuNDgxNDA4XSB4MTE6IDAwMDAw
-MDAwMDAwMDAwMDEgeDEwOiAwMDAwMDAwMDAwMDAwMDAwIHg5IDogMDAwMDAwMDAwMDAwMDA2ZApb
-ICAgIDIuNDg2MzA5XSB4OCA6IGZmZmYwMDAwZjc3ODZlYTggeDcgOiBmZmZmZmZmZmZmZmZmZmZm
-IHg2IDogMDAwMDAwMDAwMDAwMDAwMApbICAgIDIuNDkxMTk3XSB4NSA6IDAwMDAwMDAwMDAwMDAw
-MDAgeDQgOiAwMDAwMDAwMDAwMDAwMDAwIHgzIDogZmZmZjgwMDAwOGY0M2IwMApbICAgIDIuNDk2
-MDc3XSB4MiA6IDAwMDAwMDAwMDAwMDAwMDAgeDEgOiAwMDAwMDAwMDAwMDAwMDAwIHgwIDogZmZm
-ZjAwMDAwMThlMGIxMApbICAgIDIuNTAwODcxXSBDYWxsIHRyYWNlOgpbICAgIDIuNTA1MDk4XSAg
-MHgwClsgICAgMi41MDkyNDldICBleHBpcmVfdGltZXJzKzB4Y2MvMHgxMDAKWyAgICAyLjUxMzUz
-M10gIHJ1bl90aW1lcl9zb2Z0aXJxKzB4MTFjLzB4MzAwClsgICAgMi41MTc4NDJdICBfc3RleHQr
-MHgxMjQvMHgyYTQKWyAgICAyLjUyMjA1MF0gIF9faXJxX2V4aXRfcmN1KzB4Y2MvMHhmYwpbICAg
-IDIuNTI2Mjg5XSAgaXJxX2V4aXRfcmN1KzB4MTAvMHgxYwpbICAgIDIuNTMwNDQ4XSAgZWwxX2lu
-dGVycnVwdCsweDM4LzB4NTQKWyAgICAyLjUzNDYwMV0gIGVsMWhfNjRfaXJxX2hhbmRsZXIrMHgx
-OC8weDI0ClsgICAgMi41Mzg3OTFdICBlbDFoXzY0X2lycSsweDY0LzB4NjgKWyAgICAyLjU0Mjg5
-Ml0gIGNwdWlkbGVfZW50ZXJfc3RhdGUrMHgxMzAvMHgyZjAKWyAgICAyLjU0NzA2NF0gIGNwdWlk
-bGVfZW50ZXIrMHgzOC8weDUwClsgICAgMi41NTExNjddICBkb19pZGxlKzB4MjI4LzB4MmFjClsg
-ICAgMi41NTUyNjddICBjcHVfc3RhcnR1cF9lbnRyeSsweDI0LzB4MzAKWyAgICAyLjU1OTM5Nl0g
-IHNlY29uZGFyeV9zdGFydF9rZXJuZWwrMHgxMjQvMHgxNDAKWyAgICAyLjU2MzUyNl0gIF9fc2Vj
-b25kYXJ5X3N3aXRjaGVkKzB4YjAvMHhiNApbICAgIDIuNTY3NTk5XSBDb2RlOiBiYWQgUEMgdmFs
-dWUKWyAgICAyLjU3MTU2N10gLS0tWyBlbmQgdHJhY2UgMDAwMDAwMDAwMDAwMDAwMCBdLS0tClsg
-ICAgMi41NzU2MjVdIEtlcm5lbCBwYW5pYyAtIG5vdCBzeW5jaW5nOiBPb3BzOiBGYXRhbCBleGNl
-cHRpb24gaW4gaW50ZXJydXB0ClsgICAgMi41Nzk5MDFdIFNNUDogc3RvcHBpbmcgc2Vjb25kYXJ5
-IENQVXMKWyAgICAyLjU4NDAyMF0gS2VybmVsIE9mZnNldDogZGlzYWJsZWQKWyAgICAyLjU4Nzk1
-NV0gQ1BVIGZlYXR1cmVzOiAweDIwMDAsMDgyMGIwMjEsMDAwMDEwODIKWyAgICAyLjU5MjAwMF0g
-TWVtb3J5IExpbWl0OiBub25lClsgICAgMi41OTU4NDRdIC0tLVsgZW5kIEtlcm5lbCBwYW5pYyAt
-IG5vdCBzeW5jaW5nOiBPb3BzOiBGYXRhbCBleGNlcHRpb24gaW4gCmludGVycnVwdCBdLS0tCgoK
-R3J1w58sCi0tIApNYXJrdXMgUmVpY2hsCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51
-eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFp
-bG1hbi9saXN0aW5mby9saW51eC1waHkK
+Hi Fabien,
+
+Could you please add CPUIDLE support:
+
+diff --git a/arch/arm64/boot/dts/mediatek/mt8365.dtsi b/arch/arm64/boot/dts/mediatek/mt8365.dtsi
+index 323c814c10cc..1df4075db58f 100644
+--- a/arch/arm64/boot/dts/mediatek/mt8365.dtsi
++++ b/arch/arm64/boot/dts/mediatek/mt8365.dtsi
+@@ -59,6 +59,7 @@ cpu0: cpu@0 {
+ 			clocks = <&mcucfg CLK_MCU_BUS_SEL>,
+ 				 <&apmixedsys CLK_APMIXED_MAINPLL>;
+ 			clock-names = "cpu", "intermediate";
++			cpu-idle-states = <&MCDI_CPU &MCDI_CLUSTER &DPIDLE>;
+ 			operating-points-v2 = <&cluster0_opp>;
+ 			#cooling-cells = <2>;
+ 			enable-method = "psci";
+@@ -72,6 +73,7 @@ cpu1: cpu@1 {
+ 			clocks = <&mcucfg CLK_MCU_BUS_SEL>,
+ 				 <&apmixedsys CLK_APMIXED_MAINPLL>;
+ 			clock-names = "cpu", "intermediate", "armpll";
++			cpu-idle-states = <&MCDI_CPU &MCDI_CLUSTER &DPIDLE>;
+ 			operating-points-v2 = <&cluster0_opp>;
+ 			#cooling-cells = <2>;
+ 			enable-method = "psci";
+@@ -85,6 +87,7 @@ cpu2: cpu@2 {
+ 			clocks = <&mcucfg CLK_MCU_BUS_SEL>,
+ 				 <&apmixedsys CLK_APMIXED_MAINPLL>;
+ 			clock-names = "cpu", "intermediate", "armpll";
++			cpu-idle-states = <&MCDI_CPU &MCDI_CLUSTER &DPIDLE>;
+ 			operating-points-v2 = <&cluster0_opp>;
+ 			#cooling-cells = <2>;
+ 			enable-method = "psci";
+@@ -98,10 +101,42 @@ cpu3: cpu@3 {
+ 			clocks = <&mcucfg CLK_MCU_BUS_SEL>,
+ 				 <&apmixedsys CLK_APMIXED_MAINPLL>;
+ 			clock-names = "cpu", "intermediate", "armpll";
++			cpu-idle-states = <&MCDI_CPU &MCDI_CLUSTER &DPIDLE>;
+ 			operating-points-v2 = <&cluster0_opp>;
+ 			#cooling-cells = <2>;
+ 			enable-method = "psci";
+ 		};
++
++		idle-states {
++			entry-method = "psci";
++
++			MCDI_CPU: mcdi-cpu {
++				compatible = "arm,idle-state";
++				local-timer-stop;
++				arm,psci-suspend-param = <0x00010001>;
++				entry-latency-us = <300>;
++				exit-latency-us = <200>;
++				min-residency-us = <1000>;
++			};
++
++			MCDI_CLUSTER: mcdi-cluster {
++				compatible = "arm,idle-state";
++				local-timer-stop;
++				arm,psci-suspend-param = <0x01010001>;
++				entry-latency-us = <350>;
++				exit-latency-us = <250>;
++				min-residency-us = <1200>;
++			};
++
++			DPIDLE: dpidle {
++				compatible = "arm,idle-state";
++				local-timer-stop;
++				arm,psci-suspend-param = <0x01010004>;
++				entry-latency-us = <300>;
++				exit-latency-us = <800>;
++				min-residency-us = <3300>;
++			};
++		};
+ 	};
+ 
+ 	cluster0_opp: opp-table-0 {
+
+I have tested it on i350 evk and each idle state is used properly.
+
+Regards,
+Amjad
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
