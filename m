@@ -4,65 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 54037CCA48A
-	for <linux-phy@archiver.kernel.org>; Mon, 25 Jul 2022 22:22:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3F832C43334
+	for <linux-phy@archiver.kernel.org>; Tue, 26 Jul 2022 08:30:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+kQaJnpOLK6BnfgZoL0XdPTUltqYkS00U9VEugz/QOg=; b=Y9TEoLsxUgaZza
-	ewFFgsPD6ApOKjv657gVJmikM2PcvX8KoUHP5z4ReAlo+OJPqhBZgcOUOIUQFKsd8D7bx7nzVJ6fT
-	YwEe5ORxLiARCm+QUdvn5ECBKJkygkMNRM9QCk6PTHiOGOKYcku9IfYSuIjQ8v2ZtnW9bAQTAQGhG
-	JXygWTBsoBLa6t0i6CL6C0MViSBJr/N+rX0R2QsF3toSRQ+WT8vgGvAZM/2IDQ6nF1BOLQaqJ9WQc
-	dhMNYqQZFr4YfJdyHiitK2taZydxcU3flKPMQ18ed5FPn35iqZ4gQDyJV0ihWVtoHFzircOF6vkVj
-	RXzL0+Nz2QkLVnH8n70A==;
+	List-Owner; bh=ZPwHendHod1LzAmngbP1mkyms+iSFxIKSzwpelyfZBo=; b=pGcsr+W09S7g6+
+	8jECy+DneuXU1oViQ/yNWohy9eaLRujyEqqQ+qKlv8uYyimaZv3qRE8/9uIP5rZUxXRQu9INFSg/x
+	ARuMtftEjX6Dbz+SIgPO4vXUP0AmK4LtOmKz0nyKtuAklq7/eALtHvxPToLWV+xSWvR7kCgYqOfs3
+	7XwZW3yhLqmF2Kb8OgR7AZyoAnIxNfaKwyY9HolhuQhzag5BvVUE4sxhnIuYgOxQVvvYAvjais1+i
+	g2BWRmunfsxUnc0kRlcpQ/cnWPhCOwyPQEtE7KImnMBWZUnULJ919fxoYtHoVji8xzMcabzlA4uGY
+	p5eo0E7Te75K/kWYnj5g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oG6Sv-00398D-P9; Mon, 25 Jul 2022 22:22:17 +0000
-Received: from mail-ot1-f54.google.com ([209.85.210.54])
+	id 1oGFx3-00ACv0-7O; Tue, 26 Jul 2022 08:30:01 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oG6St-00395N-Rx; Mon, 25 Jul 2022 22:22:17 +0000
-Received: by mail-ot1-f54.google.com with SMTP id z12-20020a056830128c00b0061c8168d3faso9715123otp.7;
-        Mon, 25 Jul 2022 15:22:13 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=x-gm-message-state:date:from:to:cc:subject:message-id:references
-         :mime-version:content-disposition:in-reply-to;
-        bh=usnmbR/AmFXf0Qdhxn6n0uStsPRrPklSyxofovA7ixo=;
-        b=Gm+6kgoBKslMlS95MhvbegjCpLeJY2NIc772gWeG0GyxtX0UmvcaZXehmhSlO/PKIs
-         h0/lAfoctWDob4LA+ETXoQI6+AZmld0L+56qQ9mTvUgnna7iycdVRHM1GrdHuh2QiS/A
-         qVc0g7OjTygOykT7CaojSkoik+PvM4P5K92A0hnh1xfP+BD7+gmfNCAp/ECS2a8zadOg
-         HdNqUEKO7BZjiYxT9Dcu5Wt5zTe+7xmCxP3YPpaOAXFdm/mtSWiGD3WtrFt8TM4nXnW9
-         ZtaJpuYZTS7MvbUKuR6gIDNaWVIJECgPVSRId2jBNSqTOpyzw114b5pfBjdUQLLI7EFq
-         W1EQ==
-X-Gm-Message-State: AJIora85Srrg9IBtjs05DwI77L6kMhg6ffPL+tQL3CK3U8ZwlA8IlfjI
-	/ci9cfKBGlHk9XlsgBT1vw==
-X-Google-Smtp-Source: AGRyM1vN8EPdmzVTTKufoNx4fMFcuAy/FFxvpsZpHOw3pLDW7a+ZmZ+FUbbvHDo2ZRb7xwrcjSXdpw==
-X-Received: by 2002:a05:6830:600f:b0:619:1d62:60c2 with SMTP id bx15-20020a056830600f00b006191d6260c2mr5553879otb.11.1658787732972;
-        Mon, 25 Jul 2022 15:22:12 -0700 (PDT)
-Received: from robh.at.kernel.org ([64.188.179.248])
-        by smtp.gmail.com with ESMTPSA id v188-20020a4a5ac5000000b00435b646f160sm5316984ooa.5.2022.07.25.15.22.11
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 25 Jul 2022 15:22:12 -0700 (PDT)
-Received: (nullmailer pid 2848618 invoked by uid 1000);
-	Mon, 25 Jul 2022 22:22:10 -0000
-Date: Mon, 25 Jul 2022 16:22:10 -0600
-From: Rob Herring <robh@kernel.org>
-To: Michael Riesch <michael.riesch@wolfvision.net>
-Cc: linux-phy@lists.infradead.org, linux-rockchip@lists.infradead.org, Heiko Stuebner <heiko@sntech.de>, Sascha Hauer <s.hauer@pengutronix.de>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, devicetree@vger.kernel.org, Rob Herring <robh+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>, Nicolas Frattaroli <frattaroli.nicolas@gmail.com>, Liang Chen <cl@rock-chips.com>, Peter Geis <pgwipeout@gmail.com>, linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 1/3] dt-bindings: phy: add compatible for rk356x to
- rockchip-inno-csi-dphy
-Message-ID: <20220725222210.GA2848546-robh@kernel.org>
-References: <20220720091527.1270365-1-michael.riesch@wolfvision.net>
- <20220720091527.1270365-2-michael.riesch@wolfvision.net>
+	id 1oGFvx-00ABr1-TV
+	for linux-phy@lists.infradead.org; Tue, 26 Jul 2022 08:28:55 +0000
+Received: from drehscheibe.grey.stw.pengutronix.de ([2a0a:edc0:0:c01:1d::a2])
+	by metis.ext.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
+	(Exim 4.92)
+	(envelope-from <p.zabel@pengutronix.de>)
+	id 1oGFvQ-0006c7-GN; Tue, 26 Jul 2022 10:28:20 +0200
+Received: from [2a0a:edc0:0:900:1d::4e] (helo=lupine)
+	by drehscheibe.grey.stw.pengutronix.de with esmtp (Exim 4.94.2)
+	(envelope-from <p.zabel@pengutronix.de>)
+	id 1oGFvJ-003HT4-4w; Tue, 26 Jul 2022 10:28:13 +0200
+Received: from pza by lupine with local (Exim 4.94.2)
+	(envelope-from <p.zabel@pengutronix.de>)
+	id 1oGFvI-0003CM-92; Tue, 26 Jul 2022 10:28:12 +0200
+Message-ID: <55668d62aad8feedb7fa78f410f4f71ecfce8c98.camel@pengutronix.de>
+Subject: Re: [PATCH v2 6/9] arm64: bcmbca: Make BCM4908 drivers depend on
+ ARCH_BCMBCA
+From: Philipp Zabel <p.zabel@pengutronix.de>
+To: William Zhang <william.zhang@broadcom.com>, Linux ARM List
+	 <linux-arm-kernel@lists.infradead.org>
+Cc: joel.peshkin@broadcom.com, f.fainelli@gmail.com, Broadcom Kernel List
+ <bcm-kernel-feedback-list@broadcom.com>, dan.beygelman@broadcom.com, 
+ anand.gore@broadcom.com, kursad.oney@broadcom.com, rafal@milecki.pl, 
+ krzysztof.kozlowski@linaro.org, Guenter Roeck <linux@roeck-us.net>, Bjorn
+ Helgaas <bhelgaas@google.com>, Miquel Raynal <miquel.raynal@bootlin.com>,
+ "David S. Miller" <davem@davemloft.net>, Rob Herring <robh@kernel.org>,
+ Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Linus Walleij <linus.walleij@linaro.org>, Greg Kroah-Hartman
+ <gregkh@linuxfoundation.org>,  Wim Van Sebroeck <wim@linux-watchdog.org>,
+ "open list:I2C SUBSYSTEM HOST DRIVERS" <linux-i2c@vger.kernel.org>,  open
+ list <linux-kernel@vger.kernel.org>, "open list:MEMORY TECHNOLOGY DEVICES
+ (MTD)" <linux-mtd@lists.infradead.org>, "open list:NETWORKING DRIVERS"
+ <netdev@vger.kernel.org>, "open list:PCI NATIVE HOST BRIDGE AND ENDPOINT
+ DRIVERS" <linux-pci@vger.kernel.org>, "open list:GENERIC PHY FRAMEWORK"
+ <linux-phy@lists.infradead.org>, "open list:PIN CONTROL SUBSYSTEM"
+ <linux-gpio@vger.kernel.org>, "open list:BROADCOM BMIPS MIPS ARCHITECTURE"
+ <linux-mips@vger.kernel.org>, "open list:SERIAL DRIVERS"
+ <linux-serial@vger.kernel.org>, "open list:WATCHDOG DEVICE DRIVERS"
+ <linux-watchdog@vger.kernel.org>
+Date: Tue, 26 Jul 2022 10:28:12 +0200
+In-Reply-To: <20220725055402.6013-7-william.zhang@broadcom.com>
+References: <20220725055402.6013-1-william.zhang@broadcom.com>
+	 <20220725055402.6013-7-william.zhang@broadcom.com>
+User-Agent: Evolution 3.38.3-1 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20220720091527.1270365-2-michael.riesch@wolfvision.net>
+X-SA-Exim-Connect-IP: 2a0a:edc0:0:c01:1d::a2
+X-SA-Exim-Mail-From: p.zabel@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de); SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220725_152215_934530_847002AF 
-X-CRM114-Status: GOOD (  12.50  )
+X-CRM114-CacheID: sfid-20220726_012853_971442_62C94F55 
+X-CRM114-Status: UNSURE (   8.17  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,17 +92,19 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, 20 Jul 2022 11:15:25 +0200, Michael Riesch wrote:
-> The driver for the Innosilicon MIPI CSI DPHY is compatible with the variant
-> in the Rockchip RK356x SoCs. Add the compatible string to the binding.
+On So, 2022-07-24 at 22:53 -0700, William Zhang wrote:
+> With Broadcom Broadband arch ARCH_BCMBCA supported in the kernel, this
+> patch series migrate the ARCH_BCM4908 symbol to ARCH_BCMBCA. Hence
+> replace ARCH_BCM4908 with ARCH_BCMBCA in subsystem Kconfig files.
 > 
-> Signed-off-by: Michael Riesch <michael.riesch@wolfvision.net>
-> ---
->  .../devicetree/bindings/phy/rockchip-inno-csi-dphy.yaml          | 1 +
->  1 file changed, 1 insertion(+)
-> 
+> Signed-off-by: William Zhang <william.zhang@broadcom.com>
+> Acked-by: Guenter Roeck <linux@roeck-us.net> (for watchdog)
+> Acked-by: Bjorn Helgaas <bhelgaas@google.com> (for drivers/pci)
 
-Acked-by: Rob Herring <robh@kernel.org>
+Acked-by: Philipp Zabel <p.zabel@pengutronix.de> (for reset)
+
+regards
+Philipp
 
 -- 
 linux-phy mailing list
