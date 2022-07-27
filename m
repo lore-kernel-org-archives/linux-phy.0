@@ -4,87 +4,108 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A0038C00144
-	for <linux-phy@archiver.kernel.org>; Tue, 26 Jul 2022 20:34:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 267EFC04A68
+	for <linux-phy@archiver.kernel.org>; Wed, 27 Jul 2022 10:53:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nCoKteR5q1feGaym+hJAdLZPnVvofepvJ6nI1VgRaIA=; b=w+RK0QWguxL+YJ
-	FwAM8GVJxFoOakI63NrSiSo1t6B2Ou6FleiDR4VOrkdFQcNeY1WsqhR5gyokay4J1dI+HVlDcEnc7
-	yCojsRnlVVDg4notik59N1HsDc7h79WKX653PORGrWPZKy/A7JBdH8veScjOFF/CaLYlR0iVBn5zW
-	vu/jxcY3XkKfgNQQalZSkHy5R+2LZ0ka3MxibkU78eL1A0vcqQ4202drxDzLTDmYJSV06aFOnd606
-	hfyZV7jxIMcoLV/+tJPeqNOd+Bbpo4QFNDM3ttDyNMIIr1S/C3vr396UVVmyczZcmgtZnDBJxeflG
-	wBXZC0kRQvPlqkgLi4eg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=/a9yu8Nbk6AiKlu/J0wkWjPM+YqdERjD9dZdjlxz4SE=; b=jH/ZxBZprMYcTt
+	8DoEqbyfYxdU//qvSw1NTnoYtMiUfFJSQOlMC+0OHFtQva09lWn4wwesIqO9yf979SGpuTk9b57Ej
+	e8w0UGJn94sSzUaP+YLsxwKZLE8aKjNSrXAZNlH2a0Pg5U3TTX9XnHfsgu3+ymfgZgM8ctyh5L/zM
+	JVY55mf/tYWAVG54elnzD75f1jqQol9nmlIIokVvFhPV+UbnHeNeWKXm/qoBsCWb2JE5XQP/FiyUb
+	KmjGPt5ThXglQS66ax5EfkjJZusb5i5XV+Lq/Oky8/UhOgY0abc5K9VJ3WD4eLJH6F/Ce2PcgSsW1
+	IRTySv6oUmkqwPC/XHhg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oGRG1-003Kua-2L; Tue, 26 Jul 2022 20:34:21 +0000
-Received: from mail-lf1-x12e.google.com ([2a00:1450:4864:20::12e])
+	id 1oGefe-00Ccc5-JN; Wed, 27 Jul 2022 10:53:42 +0000
+Received: from mail-co1nam11on2045.outbound.protection.outlook.com ([40.107.220.45] helo=NAM11-CO1-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oGRFu-003Kgm-Fk
-	for linux-phy@lists.infradead.org; Tue, 26 Jul 2022 20:34:18 +0000
-Received: by mail-lf1-x12e.google.com with SMTP id p10so16790232lfd.9
-        for <linux-phy@lists.infradead.org>; Tue, 26 Jul 2022 13:34:05 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=from:to:cc:subject:date:message-id:in-reply-to:references
-         :mime-version:content-transfer-encoding;
-        bh=r9CvxJEUdcQdHD0WrVmPrqI1VZpseVhxrT0zsSd1Sqc=;
-        b=MKm6Odn1nWBKRV7pyExikkY0pc5STaPGBWzgxbZJL5JRt4JMew5+vCMj4Nm74CBK4d
-         mYNOFDowwwNU9Cvlp82LyY/N73A/Nkorbdiab1dv67objk+Q7T8ubQxEsEMD6YcnK1Tc
-         nFGJbSgjQdsX+P5UA67lZoZq0NoevvwaZMBc4J5Gn9pKQAuB0olSNs/D8tnUXYdDRl1M
-         X3e4zpI/V+yMWyDB0/OsM0Wf5OC42+KzzLmG/xwJmaCnFvXtiBvYW7fNndm5W8J4hggH
-         Hd93+tf1XmduKzQNHT26AWBUuWMa9oTWEdUlAWvMg1ePkqrqEhUTF50fA/6pbMb9uy6m
-         LEoQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
-         :references:mime-version:content-transfer-encoding;
-        bh=r9CvxJEUdcQdHD0WrVmPrqI1VZpseVhxrT0zsSd1Sqc=;
-        b=QU1rwkBIirT9VPXCGir+BXJPcQmfjpr7A3Qz8T908gUVbE2l3AzZGt8eCcJgLMbWEo
-         2G6lXAR/OCtg3AHs2ZHADXN/D7qgEBeP7RKm9xNst1KFQ8n4Xn4IcuzQIt2zd6P+tCuV
-         8H4T0Ox1qe+e6h5OIs//oPuWsNG3ZJ+G7usC1KEFRp3VpEDowM59CKpx94y3KOcCHffz
-         yFm52yQSOoRrteA3cHPU8t8/xh6RracDbvgxDruir9AAjhLqJCvGerv9H0tW92Dntgi5
-         9O33GMQGSrecitKYAhs16OKUv4gsjBamliAg1FaciuFb/GpKsfRFbuBHBchcQAS2fLBb
-         UGfw==
-X-Gm-Message-State: AJIora9QCZC4IaxLu5eG+P/5yW6lJtuFNWs0FSWHjeRx8hti0+4sq7Ld
-	L7HZC3Yf1J8+/qW9o58qvM3MEA==
-X-Google-Smtp-Source: AGRyM1tCoutw9HCCyQQ7oEcFnzO3ipOZEK+oMWly7trPlMCwZiVpVPV2kQbT58Ml+66BeYnQSIRByw==
-X-Received: by 2002:a05:6512:1286:b0:48a:877f:fa85 with SMTP id u6-20020a056512128600b0048a877ffa85mr4738304lfs.461.1658867644113;
-        Tue, 26 Jul 2022 13:34:04 -0700 (PDT)
-Received: from eriador.lan ([37.153.55.125])
-        by smtp.gmail.com with ESMTPSA id o14-20020ac24e8e000000b0048a8899db0fsm1468548lfr.7.2022.07.26.13.34.03
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 26 Jul 2022 13:34:03 -0700 (PDT)
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-To: Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <bjorn.andersson@linaro.org>,
-	Konrad Dybcio <konrad.dybcio@somainline.org>,
-	Rob Herring <robh+dt@kernel.org>,
-	Jingoo Han <jingoohan1@gmail.com>,
-	Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
-	Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
-	=?UTF-8?q?Krzysztof=20Wilczy=C5=84ski?= <kw@linux.com>,
-	Bjorn Helgaas <bhelgaas@google.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@ti.com>
-Cc: Philipp Zabel <p.zabel@pengutronix.de>,
-	Johan Hovold <johan@kernel.org>,
-	linux-arm-msm@vger.kernel.org,
-	linux-pci@vger.kernel.org,
-	linux-phy@lists.infradead.org
-Subject: [PATCH v1 1/4] phy: qcom-qmp-pcie: split register tables into primary and secondary part
-Date: Tue, 26 Jul 2022 23:33:58 +0300
-Message-Id: <20220726203401.595934-2-dmitry.baryshkov@linaro.org>
-X-Mailer: git-send-email 2.35.1
-In-Reply-To: <20220726203401.595934-1-dmitry.baryshkov@linaro.org>
-References: <20220726203401.595934-1-dmitry.baryshkov@linaro.org>
+	id 1oGefa-00CcYm-H9
+	for linux-phy@lists.infradead.org; Wed, 27 Jul 2022 10:53:41 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=B+/L/Q5rqsrGrXenMFp3Az+Evut0SZdOGt3OZN1/ablEAcW9d5khsWRvmqpZXGB2X4APIWmQ/KDyuHU2LHoU1BU/Rc2oOxSvUJ0pKHBnTh7+AKJlyRwUpDasbjkx/bGQCe+uSkrdjouXsA001u31WIyCChtcdpIms9I4iwjft7DVUxMXZJ4hBjnAgn4QNaUPjFBb9NDkvwufzoYIduZ1b8vhFynznRM/ACQYWzEAEUuXRIu8sRCl/fvzhCgoKdM2Mdpg0qCtfE1k2YiZqhCvTRlCEACxqB283dPD1JHl9AmyL/OLzYVcE1+Gshe9w9xgVL2mz/N54zc4kcCr01PDYw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=Y153DK/GI5QuMyg4zUmXG44fmLb4Qj0QpjgjeUh2A8g=;
+ b=LSxwGCkWe4KheaX1e+B10h3wxOrCspNTpUqbaDOeusOHkScVzkj4LV9Uj/SqWuUffog1rMeWzu0nYJ2CBIZBYc5Mc1eyG81gvUTu1OxoWHWZXjCFa5WWCKX8o8jZucA++YtSKs4EeHjnASAdcMoVk9p718iiPEyfUYiVOqIQoEFjhoMROs1LhOhNY0gKqsEdE6wTbPFm3ETxFeDdM3tXh1FnuFQhh7fcrHzOf+NAkszvjVTQ8Mqgr1Qz6Ey1QeHveSKe1MqgHNkap7EVGKnXziwa5agXBMZqoz8oo6IvpNLHdfeS3jMKJysZY+aJeeoPRqg5w+W4+GLPB+Hj7OmFew==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 12.22.5.236) smtp.rcpttodomain=kernel.org smtp.mailfrom=nvidia.com;
+ dmarc=pass (p=reject sp=reject pct=100) action=none header.from=nvidia.com;
+ dkim=none (message not signed); arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Y153DK/GI5QuMyg4zUmXG44fmLb4Qj0QpjgjeUh2A8g=;
+ b=p8WKsRs7yMoo6cvBYmy1r4847vAIcl2X1TYVYGjO8li3TRiHKZ9axYPW3J4Jd07K1aAniD2bHvWMrO0tCHEPJZJaFxdtSWGLllGl+gYYLQkSfTsni+3xytEfQ8zfwGIk4ZTDnhSG6tZtiQTwJqq2iXbPXlQfrhA5AqnNjLcF8PCKYkVZpfpvWewcD/Ck941m++s/KyJyERTUI9V+2GD5LPYNusDdrHPnfMUWpRJyDFifO3qr1/ppAYCZtbi5pcDJSzifvtmPpP16Hc/ZJk+FOKXgpI2gw1gknUKXI0nxEQKJBjT4erD6FzxlTDzbeGS3SScdKmJJ1Yx7vha54oQHdg==
+Received: from BN6PR17CA0016.namprd17.prod.outlook.com (2603:10b6:404:65::26)
+ by DM6PR12MB2697.namprd12.prod.outlook.com (2603:10b6:5:49::18) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5458.19; Wed, 27 Jul
+ 2022 10:53:33 +0000
+Received: from BN8NAM11FT006.eop-nam11.prod.protection.outlook.com
+ (2603:10b6:404:65:cafe::ce) by BN6PR17CA0016.outlook.office365.com
+ (2603:10b6:404:65::26) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5482.7 via Frontend
+ Transport; Wed, 27 Jul 2022 10:53:33 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 12.22.5.236)
+ smtp.mailfrom=nvidia.com; dkim=none (message not signed)
+ header.d=none;dmarc=pass action=none header.from=nvidia.com;
+Received-SPF: Pass (protection.outlook.com: domain of nvidia.com designates
+ 12.22.5.236 as permitted sender) receiver=protection.outlook.com;
+ client-ip=12.22.5.236; helo=mail.nvidia.com; pr=C
+Received: from mail.nvidia.com (12.22.5.236) by
+ BN8NAM11FT006.mail.protection.outlook.com (10.13.177.21) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id
+ 15.20.5482.10 via Frontend Transport; Wed, 27 Jul 2022 10:53:33 +0000
+Received: from rnnvmail204.nvidia.com (10.129.68.6) by DRHQMAIL109.nvidia.com
+ (10.27.9.19) with Microsoft SMTP Server (TLS) id 15.0.1497.32; Wed, 27 Jul
+ 2022 10:53:21 +0000
+Received: from rnnvmail201.nvidia.com (10.129.68.8) by rnnvmail204.nvidia.com
+ (10.129.68.6) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.986.26; Wed, 27 Jul
+ 2022 03:53:20 -0700
+Received: from jilin-desktop.nvidia.com (10.127.8.11) by mail.nvidia.com
+ (10.129.68.8) with Microsoft SMTP Server id 15.2.986.26 via Frontend
+ Transport; Wed, 27 Jul 2022 03:53:18 -0700
+From: Jim Lin <jilin@nvidia.com>
+To: <jckuo@nvidia.com>
+CC: <thierry.reding@gmail.com>, <jonathanh@nvidia.com>,
+	<linux-tegra@vger.kernel.org>, <linux-usb@vger.kernel.org>,
+	<linux-phy@lists.infradead.org>, <balbi@kernel.org>, <vkoul@kernel.org>,
+	<gregkh@linuxfoundation.org>, <mathias.nyman@intel.com>, Jim Lin
+	<jilin@nvidia.com>, Allie Liu <alliel@nvidia.com>
+Subject: [PATCH] xhci: tegra: USB2 pad power controls
+Date: Wed, 27 Jul 2022 18:53:14 +0800
+Message-ID: <20220727105314.14681-1-jilin@nvidia.com>
+X-Mailer: git-send-email 2.17.1
+X-NVConfidentiality: public
 MIME-Version: 1.0
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 43f9b9bf-5e3f-4690-5e29-08da6fbe3ff8
+X-MS-TrafficTypeDiagnostic: DM6PR12MB2697:EE_
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: 	6NH3a6c1K+/i6n6pCe3o1KqIAgwW1v4e0Zog1zrig9HeDpva1BrFHFEVN23UKdOL4RJIFvQPqUkak32EvrJrapFbX8ctNFlKGoyS9o67qsUnxHC08kGWC9jj9Mx54zNiaFBdJlJpuogopfxx5IkVuHBWJE0len9JaykePOXFPmxK/HcF8D4a5LYKrs7dfvRcap+DnK4fcK1vpBCMeuAjG/Zmi+XV9oIDD5F88K0fc9UPEJlatptwOwQ8t3vbLHc0ERTvqW/ZtwDDxFnO0OPptqaIxbSLchuzoHZbdxwcJcexpvC/Pmw/08kYLCyZQ0FExqnpS6y5zpme4oGP4Sxgq5IPQR4xhprZ/ypTqQwKvIGf/63WZEnMhyYYHIqiqqJZXTJaTD/6VLIgWPwOV7MQTrCP38ig9UiWzJs95fKItxgBBzQt4rcLTP4/1S0UpM9+9jxlupij92d8bFvJ/cz7bTyF+/mKWui6eccHEVJhzHrk/6A10cH/XtfHc6LTSJzKcKtJg90Xr2bw6VVFFqz+aoe0jrVHEAM3YyKiyliLdXZUS34fpyTSn4gffj7cyQ2MfT5FPylBR2vBxvZdu1c5AnwcjCqE7hO4Ph/KZPPRlQ9FCC9Bbhh64NyTYV643VxudtICXMkkpq9KqKHrIUB5cFDj3VHpAFS7l7ufEHX8Xxy6BKTPA0lqjZNN0y4H0p0UzYbFm18xseuQJpfUppdU7YZKfe7mrsWjAoLlMfGs3bblHrd7CCZYHcFpcZxXxu7dpCl/A9Ck9kwyFD77UznuyQh3q48kCfR6xdL8Vs40no6c3cSoihXPgPkeJbe4OvJKN0Ez6j/750V960ZeZM0WJg==
+X-Forefront-Antispam-Report: 	CIP:12.22.5.236;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:InfoNoRecords;CAT:NONE;SFS:(13230016)(4636009)(376002)(346002)(136003)(396003)(39860400002)(36840700001)(40470700004)(46966006)(6666004)(86362001)(5660300002)(41300700001)(40460700003)(83380400001)(2906002)(478600001)(426003)(82310400005)(6862004)(30864003)(8936002)(7696005)(107886003)(2616005)(336012)(47076005)(36860700001)(6636002)(1076003)(186003)(40480700001)(81166007)(26005)(356005)(82740400003)(70586007)(70206006)(36756003)(54906003)(8676002)(316002)(4326008)(37006003)(36900700001);DIR:OUT;SFP:1101;
+X-OriginatorOrg: Nvidia.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 27 Jul 2022 10:53:33.1401
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 43f9b9bf-5e3f-4690-5e29-08da6fbe3ff8
+X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[12.22.5.236];Helo=[mail.nvidia.com]
+X-MS-Exchange-CrossTenant-AuthSource: 	BN8NAM11FT006.eop-nam11.prod.protection.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR12MB2697
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220726_133414_648693_B57BCBE4 
-X-CRM114-Status: GOOD (  14.42  )
+X-CRM114-CacheID: sfid-20220727_035338_829851_234458C6 
+X-CRM114-Status: GOOD (  15.51  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,402 +122,510 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Split register tables list into primary and secondary parts. While we
-are at it, drop unused if (table) conditions, since the function
-qcom_qmp_phy_pcie_configure_lane() has this check anyway.
+Program USB2 pad PD controls during port
+connect/disconnect, port suspend/resume etc
+as suggested by HW to reduce power consumption.
 
-Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Squash following fixes from local kernel 4.9 to this commit:
+ce4e7e5 usb: host: tegra: Power on utmi pads
+3a10c61 usb: tegra: Program USB2 pad PD controls
+4e62fbb xhci: tegra: move pad power on to non-atomic place
+ed0fb0a usb: xhci: tegra: don't use hs_pls in xhci-iov
+401801a usb: xhci: add USB2 pad PD control for Test Mode
+
+Signed-off-by: Allie Liu <alliel@nvidia.com>
+Signed-off-by: Jim Lin <jilin@nvidia.com>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 156 +++++++++++++----------
- 1 file changed, 87 insertions(+), 69 deletions(-)
+ drivers/phy/tegra/xusb-tegra186.c   |  27 +++--
+ drivers/phy/tegra/xusb.c            |  32 +++++-
+ drivers/phy/tegra/xusb.h            |   4 +-
+ drivers/usb/gadget/udc/tegra-xudc.c |   8 +-
+ drivers/usb/host/xhci-hub.c         |   2 +
+ drivers/usb/host/xhci-tegra.c       | 146 +++++++++++++++++++++++++++-
+ include/linux/phy/tegra/xusb.h      |   4 +-
+ 7 files changed, 209 insertions(+), 14 deletions(-)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-index 2d65e1f56bfc..e6272bd3d735 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-@@ -1346,34 +1346,33 @@ static const struct qmp_phy_init_tbl sm8450_qmp_gen4x2_pcie_pcs_misc_tbl[] = {
+diff --git a/drivers/phy/tegra/xusb-tegra186.c b/drivers/phy/tegra/xusb-tegra186.c
+index ae3915ed9fef..4eb29189ebfc 100644
+--- a/drivers/phy/tegra/xusb-tegra186.c
++++ b/drivers/phy/tegra/xusb-tegra186.c
+@@ -1,6 +1,6 @@
+ // SPDX-License-Identifier: GPL-2.0
+ /*
+- * Copyright (c) 2016-2020, NVIDIA CORPORATION.  All rights reserved.
++ * Copyright (c) 2016-2022, NVIDIA CORPORATION.  All rights reserved.
+  */
  
- struct qmp_phy;
- 
--/* struct qmp_phy_cfg - per-PHY initialization config */
--struct qmp_phy_cfg {
--	/* phy-type - PCIE/UFS/USB */
--	unsigned int type;
--	/* number of lanes provided by phy */
--	int nlanes;
--
--	/* Init sequence for PHY blocks - serdes, tx, rx, pcs */
-+struct qmp_phy_cfg_tables {
- 	const struct qmp_phy_init_tbl *serdes_tbl;
- 	int serdes_tbl_num;
--	const struct qmp_phy_init_tbl *serdes_tbl_sec;
--	int serdes_tbl_num_sec;
- 	const struct qmp_phy_init_tbl *tx_tbl;
- 	int tx_tbl_num;
--	const struct qmp_phy_init_tbl *tx_tbl_sec;
--	int tx_tbl_num_sec;
- 	const struct qmp_phy_init_tbl *rx_tbl;
- 	int rx_tbl_num;
--	const struct qmp_phy_init_tbl *rx_tbl_sec;
--	int rx_tbl_num_sec;
- 	const struct qmp_phy_init_tbl *pcs_tbl;
- 	int pcs_tbl_num;
--	const struct qmp_phy_init_tbl *pcs_tbl_sec;
--	int pcs_tbl_num_sec;
- 	const struct qmp_phy_init_tbl *pcs_misc_tbl;
- 	int pcs_misc_tbl_num;
--	const struct qmp_phy_init_tbl *pcs_misc_tbl_sec;
--	int pcs_misc_tbl_num_sec;
-+};
-+
-+/* struct qmp_phy_cfg - per-PHY initialization config */
-+struct qmp_phy_cfg {
-+	/* phy-type - PCIE/UFS/USB */
-+	unsigned int type;
-+	/* number of lanes provided by phy */
-+	int nlanes;
-+
-+	/* Init sequence for PHY blocks - serdes, tx, rx, pcs */
-+	struct qmp_phy_cfg_tables primary;
-+	/*
-+	 * Init sequence for PHY blocks, providing additional register
-+	 * programming. Unless required it can be left omitted.
-+	 */
-+	struct qmp_phy_cfg_tables secondary;
- 
- 	/* clock ids to be requested */
- 	const char * const *clk_list;
-@@ -1396,7 +1395,7 @@ struct qmp_phy_cfg {
- 
- 	/* true, if PHY needs delay after POWER_DOWN */
- 	bool has_pwrdn_delay;
--	/* power_down delay in usec */
-+	/* power_down delay in usecondary */
- 	int pwrdn_delay_min;
- 	int pwrdn_delay_max;
- 
-@@ -1517,6 +1516,7 @@ static const struct qmp_phy_cfg ipq8074_pciephy_cfg = {
- 	.type			= PHY_TYPE_PCIE,
- 	.nlanes			= 1,
- 
-+	.primary = {
- 	.serdes_tbl		= ipq8074_pcie_serdes_tbl,
- 	.serdes_tbl_num		= ARRAY_SIZE(ipq8074_pcie_serdes_tbl),
- 	.tx_tbl			= ipq8074_pcie_tx_tbl,
-@@ -1525,6 +1525,7 @@ static const struct qmp_phy_cfg ipq8074_pciephy_cfg = {
- 	.rx_tbl_num		= ARRAY_SIZE(ipq8074_pcie_rx_tbl),
- 	.pcs_tbl		= ipq8074_pcie_pcs_tbl,
- 	.pcs_tbl_num		= ARRAY_SIZE(ipq8074_pcie_pcs_tbl),
-+	},
- 	.clk_list		= ipq8074_pciephy_clk_l,
- 	.num_clks		= ARRAY_SIZE(ipq8074_pciephy_clk_l),
- 	.reset_list		= ipq8074_pciephy_reset_l,
-@@ -1546,6 +1547,7 @@ static const struct qmp_phy_cfg ipq8074_pciephy_gen3_cfg = {
- 	.type			= PHY_TYPE_PCIE,
- 	.nlanes			= 1,
- 
-+	.primary = {
- 	.serdes_tbl		= ipq8074_pcie_gen3_serdes_tbl,
- 	.serdes_tbl_num		= ARRAY_SIZE(ipq8074_pcie_gen3_serdes_tbl),
- 	.tx_tbl			= ipq8074_pcie_gen3_tx_tbl,
-@@ -1554,6 +1556,7 @@ static const struct qmp_phy_cfg ipq8074_pciephy_gen3_cfg = {
- 	.rx_tbl_num		= ARRAY_SIZE(ipq8074_pcie_gen3_rx_tbl),
- 	.pcs_tbl		= ipq8074_pcie_gen3_pcs_tbl,
- 	.pcs_tbl_num		= ARRAY_SIZE(ipq8074_pcie_gen3_pcs_tbl),
-+	},
- 	.clk_list		= ipq8074_pciephy_clk_l,
- 	.num_clks		= ARRAY_SIZE(ipq8074_pciephy_clk_l),
- 	.reset_list		= ipq8074_pciephy_reset_l,
-@@ -1576,6 +1579,7 @@ static const struct qmp_phy_cfg ipq6018_pciephy_cfg = {
- 	.type			= PHY_TYPE_PCIE,
- 	.nlanes			= 1,
- 
-+	.primary = {
- 	.serdes_tbl		= ipq6018_pcie_serdes_tbl,
- 	.serdes_tbl_num		= ARRAY_SIZE(ipq6018_pcie_serdes_tbl),
- 	.tx_tbl			= ipq6018_pcie_tx_tbl,
-@@ -1586,6 +1590,7 @@ static const struct qmp_phy_cfg ipq6018_pciephy_cfg = {
- 	.pcs_tbl_num		= ARRAY_SIZE(ipq6018_pcie_pcs_tbl),
- 	.pcs_misc_tbl		= ipq6018_pcie_pcs_misc_tbl,
- 	.pcs_misc_tbl_num	= ARRAY_SIZE(ipq6018_pcie_pcs_misc_tbl),
-+	},
- 	.clk_list		= ipq8074_pciephy_clk_l,
- 	.num_clks		= ARRAY_SIZE(ipq8074_pciephy_clk_l),
- 	.reset_list		= ipq8074_pciephy_reset_l,
-@@ -1606,6 +1611,7 @@ static const struct qmp_phy_cfg sdm845_qmp_pciephy_cfg = {
- 	.type = PHY_TYPE_PCIE,
- 	.nlanes = 1,
- 
-+	.primary = {
- 	.serdes_tbl		= sdm845_qmp_pcie_serdes_tbl,
- 	.serdes_tbl_num		= ARRAY_SIZE(sdm845_qmp_pcie_serdes_tbl),
- 	.tx_tbl			= sdm845_qmp_pcie_tx_tbl,
-@@ -1616,6 +1622,7 @@ static const struct qmp_phy_cfg sdm845_qmp_pciephy_cfg = {
- 	.pcs_tbl_num		= ARRAY_SIZE(sdm845_qmp_pcie_pcs_tbl),
- 	.pcs_misc_tbl		= sdm845_qmp_pcie_pcs_misc_tbl,
- 	.pcs_misc_tbl_num	= ARRAY_SIZE(sdm845_qmp_pcie_pcs_misc_tbl),
-+	},
- 	.clk_list		= sdm845_pciephy_clk_l,
- 	.num_clks		= ARRAY_SIZE(sdm845_pciephy_clk_l),
- 	.reset_list		= sdm845_pciephy_reset_l,
-@@ -1637,6 +1644,7 @@ static const struct qmp_phy_cfg sdm845_qhp_pciephy_cfg = {
- 	.type = PHY_TYPE_PCIE,
- 	.nlanes = 1,
- 
-+	.primary = {
- 	.serdes_tbl		= sdm845_qhp_pcie_serdes_tbl,
- 	.serdes_tbl_num		= ARRAY_SIZE(sdm845_qhp_pcie_serdes_tbl),
- 	.tx_tbl			= sdm845_qhp_pcie_tx_tbl,
-@@ -1645,6 +1653,7 @@ static const struct qmp_phy_cfg sdm845_qhp_pciephy_cfg = {
- 	.rx_tbl_num		= ARRAY_SIZE(sdm845_qhp_pcie_rx_tbl),
- 	.pcs_tbl		= sdm845_qhp_pcie_pcs_tbl,
- 	.pcs_tbl_num		= ARRAY_SIZE(sdm845_qhp_pcie_pcs_tbl),
-+	},
- 	.clk_list		= sdm845_pciephy_clk_l,
- 	.num_clks		= ARRAY_SIZE(sdm845_pciephy_clk_l),
- 	.reset_list		= sdm845_pciephy_reset_l,
-@@ -1666,24 +1675,28 @@ static const struct qmp_phy_cfg sm8250_qmp_gen3x1_pciephy_cfg = {
- 	.type = PHY_TYPE_PCIE,
- 	.nlanes = 1,
- 
-+	.primary = {
- 	.serdes_tbl		= sm8250_qmp_pcie_serdes_tbl,
- 	.serdes_tbl_num		= ARRAY_SIZE(sm8250_qmp_pcie_serdes_tbl),
--	.serdes_tbl_sec		= sm8250_qmp_gen3x1_pcie_serdes_tbl,
--	.serdes_tbl_num_sec	= ARRAY_SIZE(sm8250_qmp_gen3x1_pcie_serdes_tbl),
- 	.tx_tbl			= sm8250_qmp_pcie_tx_tbl,
- 	.tx_tbl_num		= ARRAY_SIZE(sm8250_qmp_pcie_tx_tbl),
- 	.rx_tbl			= sm8250_qmp_pcie_rx_tbl,
- 	.rx_tbl_num		= ARRAY_SIZE(sm8250_qmp_pcie_rx_tbl),
--	.rx_tbl_sec		= sm8250_qmp_gen3x1_pcie_rx_tbl,
--	.rx_tbl_num_sec		= ARRAY_SIZE(sm8250_qmp_gen3x1_pcie_rx_tbl),
- 	.pcs_tbl		= sm8250_qmp_pcie_pcs_tbl,
- 	.pcs_tbl_num		= ARRAY_SIZE(sm8250_qmp_pcie_pcs_tbl),
--	.pcs_tbl_sec		= sm8250_qmp_gen3x1_pcie_pcs_tbl,
--	.pcs_tbl_num_sec		= ARRAY_SIZE(sm8250_qmp_gen3x1_pcie_pcs_tbl),
- 	.pcs_misc_tbl		= sm8250_qmp_pcie_pcs_misc_tbl,
- 	.pcs_misc_tbl_num	= ARRAY_SIZE(sm8250_qmp_pcie_pcs_misc_tbl),
--	.pcs_misc_tbl_sec		= sm8250_qmp_gen3x1_pcie_pcs_misc_tbl,
--	.pcs_misc_tbl_num_sec	= ARRAY_SIZE(sm8250_qmp_gen3x1_pcie_pcs_misc_tbl),
-+	},
-+	.secondary = {
-+	.serdes_tbl		= sm8250_qmp_gen3x1_pcie_serdes_tbl,
-+	.serdes_tbl_num		= ARRAY_SIZE(sm8250_qmp_gen3x1_pcie_serdes_tbl),
-+	.rx_tbl			= sm8250_qmp_gen3x1_pcie_rx_tbl,
-+	.rx_tbl_num		= ARRAY_SIZE(sm8250_qmp_gen3x1_pcie_rx_tbl),
-+	.pcs_tbl		= sm8250_qmp_gen3x1_pcie_pcs_tbl,
-+	.pcs_tbl_num		= ARRAY_SIZE(sm8250_qmp_gen3x1_pcie_pcs_tbl),
-+	.pcs_misc_tbl		= sm8250_qmp_gen3x1_pcie_pcs_misc_tbl,
-+	.pcs_misc_tbl_num	= ARRAY_SIZE(sm8250_qmp_gen3x1_pcie_pcs_misc_tbl),
-+	},
- 	.clk_list		= sdm845_pciephy_clk_l,
- 	.num_clks		= ARRAY_SIZE(sdm845_pciephy_clk_l),
- 	.reset_list		= sdm845_pciephy_reset_l,
-@@ -1705,24 +1718,28 @@ static const struct qmp_phy_cfg sm8250_qmp_gen3x2_pciephy_cfg = {
- 	.type = PHY_TYPE_PCIE,
- 	.nlanes = 2,
- 
-+	.primary = {
- 	.serdes_tbl		= sm8250_qmp_pcie_serdes_tbl,
- 	.serdes_tbl_num		= ARRAY_SIZE(sm8250_qmp_pcie_serdes_tbl),
- 	.tx_tbl			= sm8250_qmp_pcie_tx_tbl,
- 	.tx_tbl_num		= ARRAY_SIZE(sm8250_qmp_pcie_tx_tbl),
--	.tx_tbl_sec		= sm8250_qmp_gen3x2_pcie_tx_tbl,
--	.tx_tbl_num_sec		= ARRAY_SIZE(sm8250_qmp_gen3x2_pcie_tx_tbl),
- 	.rx_tbl			= sm8250_qmp_pcie_rx_tbl,
- 	.rx_tbl_num		= ARRAY_SIZE(sm8250_qmp_pcie_rx_tbl),
--	.rx_tbl_sec		= sm8250_qmp_gen3x2_pcie_rx_tbl,
--	.rx_tbl_num_sec		= ARRAY_SIZE(sm8250_qmp_gen3x2_pcie_rx_tbl),
- 	.pcs_tbl		= sm8250_qmp_pcie_pcs_tbl,
- 	.pcs_tbl_num		= ARRAY_SIZE(sm8250_qmp_pcie_pcs_tbl),
--	.pcs_tbl_sec		= sm8250_qmp_gen3x2_pcie_pcs_tbl,
--	.pcs_tbl_num_sec		= ARRAY_SIZE(sm8250_qmp_gen3x2_pcie_pcs_tbl),
- 	.pcs_misc_tbl		= sm8250_qmp_pcie_pcs_misc_tbl,
- 	.pcs_misc_tbl_num	= ARRAY_SIZE(sm8250_qmp_pcie_pcs_misc_tbl),
--	.pcs_misc_tbl_sec		= sm8250_qmp_gen3x2_pcie_pcs_misc_tbl,
--	.pcs_misc_tbl_num_sec	= ARRAY_SIZE(sm8250_qmp_gen3x2_pcie_pcs_misc_tbl),
-+	},
-+	.secondary = {
-+	.tx_tbl			= sm8250_qmp_gen3x2_pcie_tx_tbl,
-+	.tx_tbl_num		= ARRAY_SIZE(sm8250_qmp_gen3x2_pcie_tx_tbl),
-+	.rx_tbl			= sm8250_qmp_gen3x2_pcie_rx_tbl,
-+	.rx_tbl_num		= ARRAY_SIZE(sm8250_qmp_gen3x2_pcie_rx_tbl),
-+	.pcs_tbl		= sm8250_qmp_gen3x2_pcie_pcs_tbl,
-+	.pcs_tbl_num		= ARRAY_SIZE(sm8250_qmp_gen3x2_pcie_pcs_tbl),
-+	.pcs_misc_tbl		= sm8250_qmp_gen3x2_pcie_pcs_misc_tbl,
-+	.pcs_misc_tbl_num	= ARRAY_SIZE(sm8250_qmp_gen3x2_pcie_pcs_misc_tbl),
-+	},
- 	.clk_list		= sdm845_pciephy_clk_l,
- 	.num_clks		= ARRAY_SIZE(sdm845_pciephy_clk_l),
- 	.reset_list		= sdm845_pciephy_reset_l,
-@@ -1745,6 +1762,7 @@ static const struct qmp_phy_cfg msm8998_pciephy_cfg = {
- 	.type			= PHY_TYPE_PCIE,
- 	.nlanes			= 1,
- 
-+	.primary = {
- 	.serdes_tbl		= msm8998_pcie_serdes_tbl,
- 	.serdes_tbl_num		= ARRAY_SIZE(msm8998_pcie_serdes_tbl),
- 	.tx_tbl			= msm8998_pcie_tx_tbl,
-@@ -1753,6 +1771,7 @@ static const struct qmp_phy_cfg msm8998_pciephy_cfg = {
- 	.rx_tbl_num		= ARRAY_SIZE(msm8998_pcie_rx_tbl),
- 	.pcs_tbl		= msm8998_pcie_pcs_tbl,
- 	.pcs_tbl_num		= ARRAY_SIZE(msm8998_pcie_pcs_tbl),
-+	},
- 	.clk_list		= msm8996_phy_clk_l,
- 	.num_clks		= ARRAY_SIZE(msm8996_phy_clk_l),
- 	.reset_list		= ipq8074_pciephy_reset_l,
-@@ -1770,6 +1789,7 @@ static const struct qmp_phy_cfg sc8180x_pciephy_cfg = {
- 	.type = PHY_TYPE_PCIE,
- 	.nlanes = 1,
- 
-+	.primary = {
- 	.serdes_tbl		= sc8180x_qmp_pcie_serdes_tbl,
- 	.serdes_tbl_num		= ARRAY_SIZE(sc8180x_qmp_pcie_serdes_tbl),
- 	.tx_tbl			= sc8180x_qmp_pcie_tx_tbl,
-@@ -1780,6 +1800,7 @@ static const struct qmp_phy_cfg sc8180x_pciephy_cfg = {
- 	.pcs_tbl_num		= ARRAY_SIZE(sc8180x_qmp_pcie_pcs_tbl),
- 	.pcs_misc_tbl		= sc8180x_qmp_pcie_pcs_misc_tbl,
- 	.pcs_misc_tbl_num	= ARRAY_SIZE(sc8180x_qmp_pcie_pcs_misc_tbl),
-+	},
- 	.clk_list		= sdm845_pciephy_clk_l,
- 	.num_clks		= ARRAY_SIZE(sdm845_pciephy_clk_l),
- 	.reset_list		= sdm845_pciephy_reset_l,
-@@ -1800,6 +1821,7 @@ static const struct qmp_phy_cfg sdx55_qmp_pciephy_cfg = {
- 	.type = PHY_TYPE_PCIE,
- 	.nlanes = 2,
- 
-+	.primary = {
- 	.serdes_tbl		= sdx55_qmp_pcie_serdes_tbl,
- 	.serdes_tbl_num		= ARRAY_SIZE(sdx55_qmp_pcie_serdes_tbl),
- 	.tx_tbl			= sdx55_qmp_pcie_tx_tbl,
-@@ -1810,6 +1832,7 @@ static const struct qmp_phy_cfg sdx55_qmp_pciephy_cfg = {
- 	.pcs_tbl_num		= ARRAY_SIZE(sdx55_qmp_pcie_pcs_tbl),
- 	.pcs_misc_tbl		= sdx55_qmp_pcie_pcs_misc_tbl,
- 	.pcs_misc_tbl_num	= ARRAY_SIZE(sdx55_qmp_pcie_pcs_misc_tbl),
-+	},
- 	.clk_list		= sdm845_pciephy_clk_l,
- 	.num_clks		= ARRAY_SIZE(sdm845_pciephy_clk_l),
- 	.reset_list		= sdm845_pciephy_reset_l,
-@@ -1832,6 +1855,7 @@ static const struct qmp_phy_cfg sm8450_qmp_gen3x1_pciephy_cfg = {
- 	.type = PHY_TYPE_PCIE,
- 	.nlanes = 1,
- 
-+	.primary = {
- 	.serdes_tbl		= sm8450_qmp_gen3x1_pcie_serdes_tbl,
- 	.serdes_tbl_num		= ARRAY_SIZE(sm8450_qmp_gen3x1_pcie_serdes_tbl),
- 	.tx_tbl			= sm8450_qmp_gen3x1_pcie_tx_tbl,
-@@ -1842,6 +1866,7 @@ static const struct qmp_phy_cfg sm8450_qmp_gen3x1_pciephy_cfg = {
- 	.pcs_tbl_num		= ARRAY_SIZE(sm8450_qmp_gen3x1_pcie_pcs_tbl),
- 	.pcs_misc_tbl		= sm8450_qmp_gen3x1_pcie_pcs_misc_tbl,
- 	.pcs_misc_tbl_num	= ARRAY_SIZE(sm8450_qmp_gen3x1_pcie_pcs_misc_tbl),
-+	},
- 	.clk_list		= sdm845_pciephy_clk_l,
- 	.num_clks		= ARRAY_SIZE(sdm845_pciephy_clk_l),
- 	.reset_list		= sdm845_pciephy_reset_l,
-@@ -1863,6 +1888,7 @@ static const struct qmp_phy_cfg sm8450_qmp_gen4x2_pciephy_cfg = {
- 	.type = PHY_TYPE_PCIE,
- 	.nlanes = 2,
- 
-+	.primary = {
- 	.serdes_tbl		= sm8450_qmp_gen4x2_pcie_serdes_tbl,
- 	.serdes_tbl_num		= ARRAY_SIZE(sm8450_qmp_gen4x2_pcie_serdes_tbl),
- 	.tx_tbl			= sm8450_qmp_gen4x2_pcie_tx_tbl,
-@@ -1873,6 +1899,7 @@ static const struct qmp_phy_cfg sm8450_qmp_gen4x2_pciephy_cfg = {
- 	.pcs_tbl_num		= ARRAY_SIZE(sm8450_qmp_gen4x2_pcie_pcs_tbl),
- 	.pcs_misc_tbl		= sm8450_qmp_gen4x2_pcie_pcs_misc_tbl,
- 	.pcs_misc_tbl_num	= ARRAY_SIZE(sm8450_qmp_gen4x2_pcie_pcs_misc_tbl),
-+	},
- 	.clk_list		= sdm845_pciephy_clk_l,
- 	.num_clks		= ARRAY_SIZE(sdm845_pciephy_clk_l),
- 	.reset_list		= sdm845_pciephy_reset_l,
-@@ -1926,13 +1953,9 @@ static int qcom_qmp_phy_pcie_serdes_init(struct qmp_phy *qphy)
+ #include <linux/delay.h>
+@@ -642,20 +642,25 @@ static void tegra_phy_xusb_utmi_pad_power_on(struct phy *phy)
  {
- 	const struct qmp_phy_cfg *cfg = qphy->cfg;
- 	void __iomem *serdes = qphy->serdes;
--	const struct qmp_phy_init_tbl *serdes_tbl = cfg->serdes_tbl;
--	int serdes_tbl_num = cfg->serdes_tbl_num;
+ 	struct tegra_xusb_lane *lane = phy_get_drvdata(phy);
+ 	struct tegra_xusb_padctl *padctl = lane->pad->padctl;
++	struct tegra_xusb_usb2_lane *usb2 = to_usb2_lane(lane);
+ 	struct tegra_xusb_usb2_port *port;
+-	struct device *dev = padctl->dev;
+ 	unsigned int index = lane->index;
+ 	u32 value;
  
--	qcom_qmp_phy_pcie_configure(serdes, cfg->regs, serdes_tbl, serdes_tbl_num);
--	if (cfg->serdes_tbl_sec)
--		qcom_qmp_phy_pcie_configure(serdes, cfg->regs, cfg->serdes_tbl_sec,
--				       cfg->serdes_tbl_num_sec);
-+	qcom_qmp_phy_pcie_configure(serdes, cfg->regs, cfg->primary.serdes_tbl, cfg->primary.serdes_tbl_num);
-+	qcom_qmp_phy_pcie_configure(serdes, cfg->regs, cfg->secondary.serdes_tbl, cfg->secondary.serdes_tbl_num);
++	dev_dbg(padctl->dev, "power on UTMI pads %u\n", index);
++
+ 	if (!phy)
+ 		return;
  
+ 	port = tegra_xusb_find_usb2_port(padctl, index);
+ 	if (!port) {
+-		dev_err(dev, "no port found for USB2 lane %u\n", index);
++		dev_err(padctl->dev, "no port found for USB2 lane %u\n", index);
+ 		return;
+ 	}
+ 
++	if (usb2->powered_on)
++		return;
++
+ 	tegra186_utmi_bias_pad_power_on(padctl);
+ 
+ 	udelay(2);
+@@ -667,18 +672,26 @@ static void tegra_phy_xusb_utmi_pad_power_on(struct phy *phy)
+ 	value = padctl_readl(padctl, XUSB_PADCTL_USB2_OTG_PADX_CTL1(index));
+ 	value &= ~USB2_OTG_PD_DR;
+ 	padctl_writel(padctl, value, XUSB_PADCTL_USB2_OTG_PADX_CTL1(index));
++
++	usb2->powered_on = true;
+ }
+ 
+ static void tegra_phy_xusb_utmi_pad_power_down(struct phy *phy)
+ {
+ 	struct tegra_xusb_lane *lane = phy_get_drvdata(phy);
+ 	struct tegra_xusb_padctl *padctl = lane->pad->padctl;
++	struct tegra_xusb_usb2_lane *usb2 = to_usb2_lane(lane);
+ 	unsigned int index = lane->index;
+ 	u32 value;
+ 
++	dev_dbg(padctl->dev, "power down UTMI pad %u\n", index);
++
+ 	if (!phy)
+ 		return;
+ 
++	if (!usb2->powered_on)
++		return;
++
+ 	value = padctl_readl(padctl, XUSB_PADCTL_USB2_OTG_PADX_CTL0(index));
+ 	value |= USB2_OTG_PD;
+ 	padctl_writel(padctl, value, XUSB_PADCTL_USB2_OTG_PADX_CTL0(index));
+@@ -688,8 +701,9 @@ static void tegra_phy_xusb_utmi_pad_power_down(struct phy *phy)
+ 	padctl_writel(padctl, value, XUSB_PADCTL_USB2_OTG_PADX_CTL1(index));
+ 
+ 	udelay(2);
+-
+ 	tegra186_utmi_bias_pad_power_off(padctl);
++
++	usb2->powered_on = false;
+ }
+ 
+ static int tegra186_xusb_padctl_vbus_override(struct tegra_xusb_padctl *padctl,
+@@ -849,14 +863,11 @@ static int tegra186_utmi_phy_power_on(struct phy *phy)
+ 	value |= RPD_CTRL(priv->calib.rpd_ctrl);
+ 	padctl_writel(padctl, value, XUSB_PADCTL_USB2_OTG_PADX_CTL1(index));
+ 
+-	/* TODO: pad power saving */
+-	tegra_phy_xusb_utmi_pad_power_on(phy);
  	return 0;
  }
-@@ -2036,46 +2059,41 @@ static int qcom_qmp_phy_pcie_power_on(struct phy *phy)
  
- 	/* Tx, Rx, and PCS configurations */
- 	qcom_qmp_phy_pcie_configure_lane(tx, cfg->regs,
--				    cfg->tx_tbl, cfg->tx_tbl_num, 1);
--	if (cfg->tx_tbl_sec)
--		qcom_qmp_phy_pcie_configure_lane(tx, cfg->regs, cfg->tx_tbl_sec,
--					    cfg->tx_tbl_num_sec, 1);
-+					 cfg->primary.tx_tbl, cfg->primary.tx_tbl_num, 1);
-+	qcom_qmp_phy_pcie_configure_lane(tx, cfg->regs,
-+					 cfg->secondary.tx_tbl, cfg->secondary.tx_tbl_num, 1);
+ static int tegra186_utmi_phy_power_off(struct phy *phy)
+ {
+-	/* TODO: pad power saving */
+ 	tegra_phy_xusb_utmi_pad_power_down(phy);
  
- 	/* Configuration for other LANE for USB-DP combo PHY */
- 	if (cfg->is_dual_lane_phy) {
- 		qcom_qmp_phy_pcie_configure_lane(qphy->tx2, cfg->regs,
--					    cfg->tx_tbl, cfg->tx_tbl_num, 2);
--		if (cfg->tx_tbl_sec)
--			qcom_qmp_phy_pcie_configure_lane(qphy->tx2, cfg->regs,
--						    cfg->tx_tbl_sec,
--						    cfg->tx_tbl_num_sec, 2);
-+						 cfg->primary.tx_tbl, cfg->primary.tx_tbl_num, 2);
-+		qcom_qmp_phy_pcie_configure_lane(qphy->tx2, cfg->regs,
-+						 cfg->secondary.tx_tbl, cfg->secondary.tx_tbl_num, 2);
- 	}
+ 	return 0;
+@@ -1486,6 +1497,8 @@ static const struct tegra_xusb_padctl_ops tegra186_xusb_padctl_ops = {
+ 	.suspend_noirq = tegra186_xusb_padctl_suspend_noirq,
+ 	.resume_noirq = tegra186_xusb_padctl_resume_noirq,
+ 	.vbus_override = tegra186_xusb_padctl_vbus_override,
++	.utmi_pad_power_on = tegra_phy_xusb_utmi_pad_power_on,
++	.utmi_pad_power_down = tegra_phy_xusb_utmi_pad_power_down,
+ };
  
- 	qcom_qmp_phy_pcie_configure_lane(rx, cfg->regs,
--				    cfg->rx_tbl, cfg->rx_tbl_num, 1);
--	if (cfg->rx_tbl_sec)
--		qcom_qmp_phy_pcie_configure_lane(rx, cfg->regs,
--					    cfg->rx_tbl_sec, cfg->rx_tbl_num_sec, 1);
-+					 cfg->primary.rx_tbl, cfg->primary.rx_tbl_num, 1);
-+	qcom_qmp_phy_pcie_configure_lane(rx, cfg->regs,
-+					 cfg->secondary.rx_tbl, cfg->secondary.rx_tbl_num, 1);
+ #if IS_ENABLED(CONFIG_ARCH_TEGRA_186_SOC)
+diff --git a/drivers/phy/tegra/xusb.c b/drivers/phy/tegra/xusb.c
+index 963de5913e50..a6c7550e3a3a 100644
+--- a/drivers/phy/tegra/xusb.c
++++ b/drivers/phy/tegra/xusb.c
+@@ -1,6 +1,6 @@
+ // SPDX-License-Identifier: GPL-2.0-only
+ /*
+- * Copyright (c) 2014-2020, NVIDIA CORPORATION.  All rights reserved.
++ * Copyright (c) 2014-2022, NVIDIA CORPORATION.  All rights reserved.
+  */
  
- 	if (cfg->is_dual_lane_phy) {
- 		qcom_qmp_phy_pcie_configure_lane(qphy->rx2, cfg->regs,
--					    cfg->rx_tbl, cfg->rx_tbl_num, 2);
--		if (cfg->rx_tbl_sec)
--			qcom_qmp_phy_pcie_configure_lane(qphy->rx2, cfg->regs,
--						    cfg->rx_tbl_sec,
--						    cfg->rx_tbl_num_sec, 2);
-+						 cfg->primary.rx_tbl, cfg->primary.rx_tbl_num, 2);
-+		qcom_qmp_phy_pcie_configure_lane(qphy->rx2, cfg->regs,
-+						 cfg->secondary.rx_tbl, cfg->secondary.rx_tbl_num, 2);
- 	}
+ #include <linux/delay.h>
+@@ -1446,6 +1446,36 @@ int tegra_xusb_padctl_set_vbus_override(struct tegra_xusb_padctl *padctl,
+ }
+ EXPORT_SYMBOL_GPL(tegra_xusb_padctl_set_vbus_override);
  
--	qcom_qmp_phy_pcie_configure(pcs, cfg->regs, cfg->pcs_tbl, cfg->pcs_tbl_num);
--	if (cfg->pcs_tbl_sec)
--		qcom_qmp_phy_pcie_configure(pcs, cfg->regs, cfg->pcs_tbl_sec,
--				       cfg->pcs_tbl_num_sec);
--
--	qcom_qmp_phy_pcie_configure(pcs_misc, cfg->regs, cfg->pcs_misc_tbl,
--			       cfg->pcs_misc_tbl_num);
--	if (cfg->pcs_misc_tbl_sec)
--		qcom_qmp_phy_pcie_configure(pcs_misc, cfg->regs, cfg->pcs_misc_tbl_sec,
--				       cfg->pcs_misc_tbl_num_sec);
-+	qcom_qmp_phy_pcie_configure(pcs, cfg->regs,
-+				    cfg->primary.pcs_tbl, cfg->primary.pcs_tbl_num);
-+	qcom_qmp_phy_pcie_configure(pcs, cfg->regs,
-+				    cfg->secondary.pcs_tbl, cfg->secondary.pcs_tbl_num);
++void tegra_phy_xusb_utmi_pad_power_on(struct phy *phy)
++{
++	struct tegra_xusb_lane *lane;
++	struct tegra_xusb_padctl *padctl;
 +
-+	qcom_qmp_phy_pcie_configure(pcs_misc, cfg->regs,
-+				    cfg->primary.pcs_misc_tbl,
-+				    cfg->primary.pcs_misc_tbl_num);
-+	qcom_qmp_phy_pcie_configure(pcs_misc, cfg->regs,
-+				    cfg->secondary.pcs_misc_tbl,
-+				    cfg->secondary.pcs_misc_tbl_num);
++	if (!phy)
++		return;
++
++	lane = phy_get_drvdata(phy);
++	padctl = lane->pad->padctl;
++	if (padctl->soc->ops->utmi_pad_power_on)
++		padctl->soc->ops->utmi_pad_power_on(phy);
++}
++EXPORT_SYMBOL_GPL(tegra_phy_xusb_utmi_pad_power_on);
++
++void tegra_phy_xusb_utmi_pad_power_down(struct phy *phy)
++{
++	struct tegra_xusb_lane *lane;
++	struct tegra_xusb_padctl *padctl;
++
++	if (!phy)
++		return;
++
++	lane = phy_get_drvdata(phy);
++	padctl = lane->pad->padctl;
++	if (padctl->soc->ops->utmi_pad_power_down)
++		padctl->soc->ops->utmi_pad_power_down(phy);
++}
++EXPORT_SYMBOL_GPL(tegra_phy_xusb_utmi_pad_power_down);
++
+ int tegra_phy_xusb_utmi_port_reset(struct phy *phy)
+ {
+ 	struct tegra_xusb_lane *lane = phy_get_drvdata(phy);
+diff --git a/drivers/phy/tegra/xusb.h b/drivers/phy/tegra/xusb.h
+index 034f7a2c28d6..02cc5c6a588e 100644
+--- a/drivers/phy/tegra/xusb.h
++++ b/drivers/phy/tegra/xusb.h
+@@ -1,6 +1,6 @@
+ /* SPDX-License-Identifier: GPL-2.0-only */
+ /*
+- * Copyright (c) 2014-2020, NVIDIA CORPORATION.  All rights reserved.
++ * Copyright (c) 2014-2022, NVIDIA CORPORATION.  All rights reserved.
+  * Copyright (c) 2015, Google Inc.
+  */
  
- 	/*
- 	 * Pull out PHY from POWER DOWN state.
+@@ -411,6 +411,8 @@ struct tegra_xusb_padctl_ops {
+ 	int (*usb3_set_lfps_detect)(struct tegra_xusb_padctl *padctl,
+ 				    unsigned int index, bool enable);
+ 	int (*vbus_override)(struct tegra_xusb_padctl *padctl, bool set);
++	void (*utmi_pad_power_on)(struct phy *phy);
++	void (*utmi_pad_power_down)(struct phy *phy);
+ 	int (*utmi_port_reset)(struct phy *phy);
+ };
+ 
+diff --git a/drivers/usb/gadget/udc/tegra-xudc.c b/drivers/usb/gadget/udc/tegra-xudc.c
+index 43f1b0d461c1..bca059b58bc9 100644
+--- a/drivers/usb/gadget/udc/tegra-xudc.c
++++ b/drivers/usb/gadget/udc/tegra-xudc.c
+@@ -2,7 +2,7 @@
+ /*
+  * NVIDIA Tegra XUSB device mode controller
+  *
+- * Copyright (c) 2013-2019, NVIDIA CORPORATION.  All rights reserved.
++ * Copyright (c) 2013-2022, NVIDIA CORPORATION.  All rights reserved.
+  * Copyright (c) 2015, Google Inc.
+  */
+ 
+@@ -703,6 +703,9 @@ static void tegra_xudc_device_mode_on(struct tegra_xudc *xudc)
+ 
+ 	pm_runtime_get_sync(xudc->dev);
+ 
++	if (xudc->curr_utmi_phy)
++		tegra_phy_xusb_utmi_pad_power_on(xudc->curr_utmi_phy);
++
+ 	err = phy_power_on(xudc->curr_utmi_phy);
+ 	if (err < 0)
+ 		dev_err(xudc->dev, "UTMI power on failed: %d\n", err);
+@@ -757,6 +760,9 @@ static void tegra_xudc_device_mode_off(struct tegra_xudc *xudc)
+ 	/* Make sure interrupt handler has completed before powergating. */
+ 	synchronize_irq(xudc->irq);
+ 
++	if (xudc->curr_utmi_phy)
++		tegra_phy_xusb_utmi_pad_power_down(xudc->curr_utmi_phy);
++
+ 	err = phy_power_off(xudc->curr_utmi_phy);
+ 	if (err < 0)
+ 		dev_err(xudc->dev, "UTMI PHY power off failed: %d\n", err);
+diff --git a/drivers/usb/host/xhci-hub.c b/drivers/usb/host/xhci-hub.c
+index af946c42b6f0..9e458a748a4f 100644
+--- a/drivers/usb/host/xhci-hub.c
++++ b/drivers/usb/host/xhci-hub.c
+@@ -646,6 +646,7 @@ struct xhci_hub *xhci_get_rhub(struct usb_hcd *hcd)
+ 		return &xhci->usb3_rhub;
+ 	return &xhci->usb2_rhub;
+ }
++EXPORT_SYMBOL_GPL(xhci_get_rhub);
+ 
+ /*
+  * xhci_set_port_power() must be called with xhci->lock held.
+@@ -1604,6 +1605,7 @@ int xhci_hub_control(struct usb_hcd *hcd, u16 typeReq, u16 wValue,
+ 	spin_unlock_irqrestore(&xhci->lock, flags);
+ 	return retval;
+ }
++EXPORT_SYMBOL_GPL(xhci_hub_control);
+ 
+ /*
+  * Returns 0 if the status hasn't changed, or the number of bytes in buf.
+diff --git a/drivers/usb/host/xhci-tegra.c b/drivers/usb/host/xhci-tegra.c
+index c8af2cd2216d..ea7863cae180 100644
+--- a/drivers/usb/host/xhci-tegra.c
++++ b/drivers/usb/host/xhci-tegra.c
+@@ -2,7 +2,7 @@
+ /*
+  * NVIDIA Tegra xHCI host controller driver
+  *
+- * Copyright (c) 2014-2020, NVIDIA CORPORATION. All rights reserved.
++ * Copyright (c) 2014-2022, NVIDIA CORPORATION. All rights reserved.
+  * Copyright (C) 2014 Google, Inc.
+  */
+ 
+@@ -189,6 +189,13 @@ struct tegra_xusb_context_soc {
+ 	} fpci;
+ };
+ 
++enum tegra_xhci_phy_type {
++	USB3_PHY,
++	USB2_PHY,
++	HSIC_PHY,
++	MAX_PHY_TYPES,
++};
++
+ struct tegra_xusb_soc {
+ 	const char *firmware;
+ 	const char * const *supply_names;
+@@ -274,10 +281,16 @@ struct tegra_xusb {
+ 
+ 	bool suspended;
+ 	struct tegra_xusb_context context;
++	u32 enable_utmi_pad_after_lp0_exit;
+ };
+ 
+ static struct hc_driver __read_mostly tegra_xhci_hc_driver;
+ 
++static inline struct tegra_xusb *hcd_to_tegra_xusb(struct usb_hcd *hcd)
++{
++	return (struct tegra_xusb *) dev_get_drvdata(hcd->self.controller);
++}
++
+ static inline u32 fpci_readl(struct tegra_xusb *tegra, unsigned int offset)
+ {
+ 	return readl(tegra->fpci_base + offset);
+@@ -1949,12 +1962,32 @@ static void tegra_xhci_enable_phy_sleepwalk_wake(struct tegra_xusb *tegra)
+ static void tegra_xhci_disable_phy_wake(struct tegra_xusb *tegra)
+ {
+ 	struct tegra_xusb_padctl *padctl = tegra->padctl;
+-	unsigned int i;
++	unsigned int i, j;
++	char phy_name[5];
+ 
+ 	for (i = 0; i < tegra->num_phys; i++) {
+ 		if (!tegra->phys[i])
+ 			continue;
++		if (tegra_xusb_padctl_remote_wake_detected(padctl, tegra->phys[i])) {
++			if (i < (tegra->soc->ports.usb3.offset +
++					tegra->soc->ports.usb3.count)) {
++				j = i;
++				strcpy(phy_name, "usb3");
++			} else if (i < (tegra->soc->ports.usb2.offset +
++					tegra->soc->ports.usb2.count)) {
++				j = i - tegra->soc->ports.usb2.offset;
++				strcpy(phy_name, "usb2");
++
++				tegra_phy_xusb_utmi_pad_power_on(tegra->phys[i]);
++			} else {
++				j = i - (tegra->soc->ports.usb2.offset +
++					tegra->soc->ports.usb2.count);
++				strcpy(phy_name, "hsic");
++			}
++			dev_dbg(tegra->dev,
++				"%s port %u (0 based) remote wake detected\n", phy_name, j);
+ 
++		}
+ 		tegra_xusb_padctl_disable_phy_wake(padctl, tegra->phys[i]);
+ 	}
+ }
+@@ -1967,11 +2000,27 @@ static void tegra_xhci_disable_phy_sleepwalk(struct tegra_xusb *tegra)
+ 	for (i = 0; i < tegra->num_phys; i++) {
+ 		if (!tegra->phys[i])
+ 			continue;
+-
+ 		tegra_xusb_padctl_disable_phy_sleepwalk(padctl, tegra->phys[i]);
+ 	}
+ }
+ 
++static void tegra_xhci_program_utmi_power_lp0_exit(
++	struct tegra_xusb *tegra)
++{
++	unsigned int i;
++
++	for (i = 0; i < tegra->soc->ports.usb2.count; i++) {
++		if (!is_host_mode_phy(tegra, USB2_PHY, i))
++			continue;
++		if (tegra->enable_utmi_pad_after_lp0_exit & BIT(i))
++			tegra_phy_xusb_utmi_pad_power_on(
++					tegra->phys[tegra->soc->ports.usb2.offset + i]);
++		else
++			tegra_phy_xusb_utmi_pad_power_down(
++					tegra->phys[tegra->soc->ports.usb2.offset + i]);
++	}
++}
++
+ static int tegra_xusb_enter_elpg(struct tegra_xusb *tegra, bool runtime)
+ {
+ 	struct xhci_hcd *xhci = hcd_to_xhci(tegra->hcd);
+@@ -1980,6 +2029,7 @@ static int tegra_xusb_enter_elpg(struct tegra_xusb *tegra, bool runtime)
+ 	unsigned int i;
+ 	int err;
+ 	u32 usbcmd;
++	u32 portsc;
+ 
+ 	dev_dbg(dev, "entering ELPG\n");
+ 
+@@ -1993,6 +2043,16 @@ static int tegra_xusb_enter_elpg(struct tegra_xusb *tegra, bool runtime)
+ 		goto out;
+ 	}
+ 
++	for (i = 0; i < tegra->soc->ports.usb2.count; i++) {
++		if (!xhci->usb2_rhub.ports[i])
++			continue;
++		portsc = readl(xhci->usb2_rhub.ports[i]->addr);
++		tegra->enable_utmi_pad_after_lp0_exit &= ~BIT(i);
++		if (((portsc & PORT_PLS_MASK) == XDEV_U3) ||
++			((portsc & DEV_SPEED_MASK) == XDEV_FS))
++			tegra->enable_utmi_pad_after_lp0_exit |= BIT(i);
++	}
++
+ 	err = xhci_suspend(xhci, wakeup);
+ 	if (err < 0) {
+ 		dev_err(tegra->dev, "failed to suspend XHCI: %d\n", err);
+@@ -2067,6 +2127,9 @@ static int tegra_xusb_exit_elpg(struct tegra_xusb *tegra, bool runtime)
+ 		phy_power_on(tegra->phys[i]);
+ 	}
+ 
++	if (tegra->suspended)
++		tegra_xhci_program_utmi_power_lp0_exit(tegra);
++
+ 	tegra_xusb_config(tegra);
+ 	tegra_xusb_restore_context(tegra);
+ 
+@@ -2437,6 +2500,82 @@ static int tegra_xhci_setup(struct usb_hcd *hcd)
+ 	return xhci_gen_setup(hcd, tegra_xhci_quirks);
+ }
+ 
++static int tegra_xhci_hub_control(struct usb_hcd *hcd, u16 type_req,
++		u16 value, u16 index, char *buf, u16 length)
++
++{
++	struct tegra_xusb *tegra = hcd_to_tegra_xusb(hcd);
++	struct xhci_hub *rhub;
++	struct xhci_bus_state *bus_state;
++	int port = (index & 0xff) - 1;
++	int port_index;
++	struct xhci_port **ports;
++	u32 portsc;
++	int ret;
++
++	rhub = xhci_get_rhub(hcd);
++	bus_state = &rhub->bus_state;
++	if (bus_state->resuming_ports && hcd->speed == HCD_USB2) {
++		ports = rhub->ports;
++		port_index = rhub->num_ports;
++		while (port_index--) {
++			if (!test_bit(port_index, &bus_state->resuming_ports))
++				continue;
++			portsc = readl(ports[port_index]->addr);
++			if ((port_index < tegra->soc->ports.usb2.count)
++					&& ((portsc & PORT_PLS_MASK) == XDEV_RESUME))
++				tegra_phy_xusb_utmi_pad_power_on(
++					tegra->phys[tegra->soc->ports.usb2.offset + port_index]);
++		}
++	}
++
++	if (hcd->speed == HCD_USB2) {
++		if ((type_req == ClearPortFeature) &&
++				(value == USB_PORT_FEAT_SUSPEND))
++			tegra_phy_xusb_utmi_pad_power_on(
++				tegra->phys[tegra->soc->ports.usb2.offset + port]);
++	}
++
++	ret = xhci_hub_control(hcd, type_req, value, index, buf, length);
++
++	if ((hcd->speed == HCD_USB2) && (ret == 0)) {
++		if ((type_req == SetPortFeature) &&
++			(value == USB_PORT_FEAT_SUSPEND))
++			/* We dont suspend the PAD while HNP role swap happens
++			 * on the OTG port
++			 */
++			if (!((hcd->self.otg_port == (port + 1)) &&
++					hcd->self.b_hnp_enable))
++				tegra_phy_xusb_utmi_pad_power_down(
++					tegra->phys[tegra->soc->ports.usb2.offset + port]);
++
++		if ((type_req == ClearPortFeature) &&
++				(value == USB_PORT_FEAT_C_CONNECTION)) {
++			rhub = xhci_get_rhub(hcd);
++			ports = rhub->ports;
++			portsc = readl(ports[port]->addr);
++			if (portsc & PORT_CONNECT)
++				tegra_phy_xusb_utmi_pad_power_on(
++					  tegra->phys[tegra->soc->ports.usb2.offset + port]);
++			else {
++				/* We dont suspend the PAD while HNP
++				 * role swap happens on the OTG port
++				 */
++				if (!((hcd->self.otg_port == (port + 1))
++						&& hcd->self.b_hnp_enable))
++					tegra_phy_xusb_utmi_pad_power_down(
++						tegra->phys[tegra->soc->ports.usb2.offset + port]);
++			}
++		}
++		if ((type_req == SetPortFeature) &&
++		    (value == USB_PORT_FEAT_TEST))
++			tegra_phy_xusb_utmi_pad_power_on(
++				tegra->phys[tegra->soc->ports.usb2.offset + port]);
++	}
++
++	return ret;
++}
++
+ static const struct xhci_driver_overrides tegra_xhci_overrides __initconst = {
+ 	.reset = tegra_xhci_setup,
+ };
+@@ -2444,6 +2583,7 @@ static const struct xhci_driver_overrides tegra_xhci_overrides __initconst = {
+ static int __init tegra_xusb_init(void)
+ {
+ 	xhci_init_driver(&tegra_xhci_hc_driver, &tegra_xhci_overrides);
++	tegra_xhci_hc_driver.hub_control = tegra_xhci_hub_control;
+ 
+ 	return platform_driver_register(&tegra_xusb_driver);
+ }
+diff --git a/include/linux/phy/tegra/xusb.h b/include/linux/phy/tegra/xusb.h
+index 3a35e74cdc61..70998e6dd6fd 100644
+--- a/include/linux/phy/tegra/xusb.h
++++ b/include/linux/phy/tegra/xusb.h
+@@ -1,6 +1,6 @@
+ /* SPDX-License-Identifier: GPL-2.0-only */
+ /*
+- * Copyright (c) 2016-2020, NVIDIA CORPORATION.  All rights reserved.
++ * Copyright (c) 2016-2022, NVIDIA CORPORATION.  All rights reserved.
+  */
+ 
+ #ifndef PHY_TEGRA_XUSB_H
+@@ -21,6 +21,8 @@ int tegra_xusb_padctl_usb3_set_lfps_detect(struct tegra_xusb_padctl *padctl,
+ 					   unsigned int port, bool enable);
+ int tegra_xusb_padctl_set_vbus_override(struct tegra_xusb_padctl *padctl,
+ 					bool val);
++void tegra_phy_xusb_utmi_pad_power_on(struct phy *phy);
++void tegra_phy_xusb_utmi_pad_power_down(struct phy *phy);
+ int tegra_phy_xusb_utmi_port_reset(struct phy *phy);
+ int tegra_xusb_padctl_get_usb3_companion(struct tegra_xusb_padctl *padctl,
+ 					 unsigned int port);
 -- 
-2.35.1
+2.17.1
 
 
 -- 
