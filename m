@@ -4,59 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 428C3C19F28
-	for <linux-phy@archiver.kernel.org>; Wed,  3 Aug 2022 15:00:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 90845C19F2C
+	for <linux-phy@archiver.kernel.org>; Wed,  3 Aug 2022 15:30:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pRntu8VJqNqdawUpD9W72h70DKkDGMjQaiVO5tivz6k=; b=JCeuK/cVn64HHl
-	d2UVk8MDFDIFbLaPHcRVG6jtpZLaVGTYRAI/re0Mp79U9xBT9KK5D4PicjPVztC41ES3ISGX6jGow
-	/MhCvf0UcFKjjCle6cTVq8f0VG5jLLRcqHs+ug6iyrenpYEKC/UUUx4UtfBgY2Yc6zBpeXPptpoRe
-	/38u11PvQi8PBt0EwLOeik2tHMYFn7xkqkFi1s1w4eAIp8R/ReK6XOaJuVfp/fvFn/8T+GwdoxOjN
-	NQeq3/5KIBnV5aBTuhLbVqhsrbBpPxPBMHMsWS7uZMN+lGJlMTokyIClt3fSkrgADrJn/fmy4lLPQ
-	OAmATk3Z8lcebwdh8J+Q==;
+	List-Owner; bh=JdeRpHfqMnSFeE7fqsZ8SZ5eXqzyRZv1IqrJF+skees=; b=qDP2RRAMH36rBp
+	BhgeyIOFFbGmItcwE/mGtuenIvR6bSc1HpQdifsD4G27PYhahoR7TooEvIuPnMAjhKYqPFBtBwVaX
+	IpiubIUEARSav74nJ3cNbOV9TexxODDuoCJVBORpITUctp8xL1TW8ZRZLN1uRLrPiclCcl3SVisf/
+	hDDCDoWPASPct5GeCSgbpy/TM+KFpZfmhD6+NLeUVaxy4klR/wQmKEKnMMWgARtViETLIHIgsk50o
+	ngLrFWeSWeVRbG8S+VR4DpU2RAeco+PeZnuEGnZUKOS0LDeo/TO3MPrqQXWnLrN0I6dBE4zhlh6T3
+	wh9V8mJtokT2A3Ca3zag==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oJFrj-006xXm-DE; Wed, 03 Aug 2022 15:00:55 +0000
-Received: from wp126.webpack.hosteurope.de ([2a01:488:42:1000:50ed:8485::])
+	id 1oJGKM-0078RT-VG; Wed, 03 Aug 2022 15:30:31 +0000
+Received: from mail-ej1-x62e.google.com ([2a00:1450:4864:20::62e])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oIrBX-00E4J9-GX; Tue, 02 Aug 2022 12:39:45 +0000
-Received: from p5098d998.dip0.t-ipconnect.de ([80.152.217.152] helo=hermes.fivetechno.de); authenticated
-	by wp126.webpack.hosteurope.de running ExIM with esmtpsa (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
-	id 1oIrBR-0003Qp-Dc; Tue, 02 Aug 2022 14:39:37 +0200
-X-Virus-Scanned: by amavisd-new 2.12.2 using newest ClamAV at
-	linuxbbg.five-lan.de
-Received: from [192.168.34.101] (p5098d998.dip0.t-ipconnect.de [80.152.217.152])
-	(authenticated bits=0)
-	by hermes.fivetechno.de (8.15.2/8.16.1/SUSE Linux 0.8) with ESMTPSA id 272CdYrP002926
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NO);
-	Tue, 2 Aug 2022 14:39:35 +0200
-Message-ID: <88f2de00-32e3-ed74-082f-c0972a81f0f8@fivetechno.de>
-Date: Tue, 2 Aug 2022 14:39:34 +0200
+	id 1oJGKJ-0078Oy-26
+	for linux-phy@lists.infradead.org; Wed, 03 Aug 2022 15:30:29 +0000
+Received: by mail-ej1-x62e.google.com with SMTP id uj29so18979023ejc.0
+        for <linux-phy@lists.infradead.org>; Wed, 03 Aug 2022 08:30:25 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=chromium.org; s=google;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc;
+        bh=QSNLoRq7qbNX21X/zV/2AlYjV7hEb4BXWVGqbeUJ24g=;
+        b=nzI1RPneh/LJJCu1k6xuiZTtzaae82xzjDcJUWtbJsNeS7XJdegrZyHq7NHnqw/K3v
+         z5eW0E4AYjhiQE3UwN3v0NPjuunZorY6mJSCV9HwvyMq3kEg6Oek6rOvDV1r5SPQL06U
+         pPeZgIcmUj31NF0m2C/T7AnXuxaoNbub9usmg=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc;
+        bh=QSNLoRq7qbNX21X/zV/2AlYjV7hEb4BXWVGqbeUJ24g=;
+        b=Wjm6bKQ+do55xbN26OrUB4IoYG0rB3BTt6WykaEt0OOKdQMRRfeJYVX2HkdwngvSmC
+         6cm0JvIwkVo322B+MqQz4GcYPKGKeBIRlqiLuOui6r3uSC3y4y4yexhpleW2wWoE4dO2
+         g51K28ImquvEqee43DJm2ciyA+HVB9SeXa9CGHsg0iWd8VyO91WNsrcuCUbT5XPMgyF3
+         F9K15dam4Vvzv/yYeps1hgA2mzudjEsMZnUnp1pDMXFmCSgbwHGnB4Dwg5y8iwwh3vpj
+         wBm2dSzhelvsl4StQVtQ/BHy/dypmowoJHi+0WqNRa0QI25hUyf6qpxxnlGl7Q/pFZ9w
+         +Ssg==
+X-Gm-Message-State: ACgBeo218L03Djp2feReSvO5hxCBnK8OQP3zZHOYq2eFssRF4i1BV6de
+	VjquljmNeUTFstIgAWaqLvIB8JqVjpDwGGdPadM=
+X-Google-Smtp-Source: AA6agR7F9L/TAO/FaIHUpGwjRQsmy24EOSuj20dwbDv0N0F1iGNMjTtTiknh3N+4B4FUB8Ch3gaIWQ==
+X-Received: by 2002:a17:906:9b14:b0:730:984e:a51c with SMTP id eo20-20020a1709069b1400b00730984ea51cmr8923434ejc.435.1659540624209;
+        Wed, 03 Aug 2022 08:30:24 -0700 (PDT)
+Received: from mail-wr1-f43.google.com (mail-wr1-f43.google.com. [209.85.221.43])
+        by smtp.gmail.com with ESMTPSA id y8-20020aa7c248000000b0043c7efb8badsm9587952edo.61.2022.08.03.08.30.22
+        for <linux-phy@lists.infradead.org>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 03 Aug 2022 08:30:22 -0700 (PDT)
+Received: by mail-wr1-f43.google.com with SMTP id z16so21938767wrh.12
+        for <linux-phy@lists.infradead.org>; Wed, 03 Aug 2022 08:30:22 -0700 (PDT)
+X-Received: by 2002:a5d:5889:0:b0:21d:bccd:38e3 with SMTP id
+ n9-20020a5d5889000000b0021dbccd38e3mr16118496wrf.659.1659540622383; Wed, 03
+ Aug 2022 08:30:22 -0700 (PDT)
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.11.0
-Subject: [BUG BISECT] phy: rockchip-inno-usb2: Sync initial otg state
-Content-Language: de-DE
-To: Peter Geis <pgwipeout@gmail.com>, Heiko Stuebner <heiko@sntech.de>,
-        Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
-        Samuel Holland <samuel@sholland.org>
-Cc: linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
-        linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
-References: <20220622003140.30365-1-pgwipeout@gmail.com>
-From: Markus Reichl <m.reichl@fivetechno.de>
-Organization: five technologies GmbH
-In-Reply-To: <20220622003140.30365-1-pgwipeout@gmail.com>
-X-bounce-key: webpack.hosteurope.de;m.reichl@fivetechno.de;1659443983;9ecc8262;
-X-HE-SMSGID: 1oIrBR-0003Qp-Dc
-X-Bad-Reply: References and In-Reply-To but no 'Re:' in Subject.
+References: <20220803123332.8138-1-johan+linaro@kernel.org>
+In-Reply-To: <20220803123332.8138-1-johan+linaro@kernel.org>
+From: Doug Anderson <dianders@chromium.org>
+Date: Wed, 3 Aug 2022 08:30:09 -0700
+X-Gmail-Original-Message-ID: <CAD=FV=VoFgMj9iOx1HR72AcnTi9OOSCOFm39kKOGXHkeb2SYBg@mail.gmail.com>
+Message-ID: <CAD=FV=VoFgMj9iOx1HR72AcnTi9OOSCOFm39kKOGXHkeb2SYBg@mail.gmail.com>
+Subject: Re: [PATCH 0/2] phy: qcom: drop regulator loads
+To: Johan Hovold <johan+linaro@kernel.org>
+Cc: Vinod Koul <vkoul@kernel.org>, Andy Gross <agross@kernel.org>, 
+	Bjorn Andersson <bjorn.andersson@linaro.org>, Konrad Dybcio <konrad.dybcio@somainline.org>, 
+	Kishon Vijay Abraham I <kishon@ti.com>, Kuogee Hsieh <quic_khsieh@quicinc.com>, 
+	Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>, 
+	linux-arm-msm <linux-arm-msm@vger.kernel.org>, linux-phy@lists.infradead.org, 
+	LKML <linux-kernel@vger.kernel.org>, 
+	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220802_053943_721752_5F520037 
-X-CRM114-Status: GOOD (  14.22  )
-X-Mailman-Approved-At: Wed, 03 Aug 2022 08:00:54 -0700
+X-CRM114-CacheID: sfid-20220803_083027_622068_AD61699B 
+X-CRM114-Status: GOOD (  23.76  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -68,81 +91,71 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SGksCgp3aXRoIGxpbnV4LW5leHQtMjAyMjA3MjggcmszMzk5LXJvYy1wYyBkb2VzIG5vdCBib290
-LgpCaXNlY3RpbmcgcG9pbnRlZCB0byB0aGlzIGNvbW1pdC4KQnkgcmV2ZXJ0aW5nIHRoaXMgY29t
-bWl0IHRoZSBib2FyZCBib290cyBhZ2Fpbi4KClsgICAgMi4zOTg3MDBdIFVuYWJsZSB0byBoYW5k
-bGUga2VybmVsIE5VTEwgcG9pbnRlciBkZXJlZmVyZW5jZSBhdCB2aXJ0dWFsIGFkZHJlc3MgCjAw
-MDAwMDAwMDAwMDAwMDgKWyAgICAyLjM5OTUxN10gTWVtIGFib3J0IGluZm86ClsgICAgMi4zOTk3
-NzJdICAgRVNSID0gMHgwMDAwMDAwMDk2MDAwMDA0ClsgICAgMi40MDAxMTRdICAgRUMgPSAweDI1
-OiBEQUJUIChjdXJyZW50IEVMKSwgSUwgPSAzMiBiaXRzClsgICAgMi40MDA1OTRdICAgU0VUID0g
-MCwgRm5WID0gMApbICAgIDIuNDAwODczXSAgIEVBID0gMCwgUzFQVFcgPSAwClsgICAgMi40MDEx
-NjFdICAgRlNDID0gMHgwNDogbGV2ZWwgMCB0cmFuc2xhdGlvbiBmYXVsdApbICAgIDIuNDAxNjAy
-XSBEYXRhIGFib3J0IGluZm86ClsgICAgMi40MDE4NjRdICAgSVNWID0gMCwgSVNTID0gMHgwMDAw
-MDAwNApbICAgIDIuNDAyMjEyXSAgIENNID0gMCwgV25SID0gMApbICAgIDIuNDAyNDg0XSB1c2Vy
-IHBndGFibGU6IDRrIHBhZ2VzLCA0OC1iaXQgVkFzLCBwZ2RwPTAwMDAwMDAwMDEzNzYwMDAKWyAg
-ICAyLjQwMzA3MV0gWzAwMDAwMDAwMDAwMDAwMDhdIHBnZD0wMDAwMDAwMDAwMDAwMDAwLCBwNGQ9
-MDAwMDAwMDAwMDAwMDAwMApbICAgIDIuNDAzNjg3XSBJbnRlcm5hbCBlcnJvcjogT29wczogOTYw
-MDAwMDQgWyMxXSBTTVAKWyAgICAyLjQwNDEzMF0gTW9kdWxlcyBsaW5rZWQgaW46IGlwX3RhYmxl
-cyB4X3RhYmxlcyBpcHY2IHhoY2lfcGxhdF9oY2QgeGhjaV9oY2QgCmR3YzMgcm9ja2NoaXBkcm0g
-ZHJtX2NtYV9oZWxwZXIgYW5hbG9naXhfZHAgZHdfaGRtaSByZWFsdGVrIGRybV9kaXNwbGF5X2hl
-bHBlciAKZHdjM19vZl9zaW1wbGUgZHdfbWlwaV9kc2kgZWhjaV9wbGF0Zm9ybSBvaGNpX3BsYXRm
-b3JtIG9oY2lfaGNkIGVoY2lfaGNkIApkcm1fa21zX2hlbHBlciBkd21hY19yayBzeXNjb3B5YXJl
-YSBzeXNmaWxscmVjdCBzdG1tYWNfcGxhdGZvcm0gc3lzaW1nYmx0IApmYl9zeXNfZm9wcyB1c2Jj
-b3JlIHN0bW1hYyBwY3NfeHBjcyBkcm0gcGh5bGluayBkcm1fcGFuZWxfb3JpZW50YXRpb25fcXVp
-cmtzClsgICAgMi40MDcxNTVdIENQVTogNCBQSUQ6IDcxIENvbW06IGt3b3JrZXIvNDo2IE5vdCB0
-YWludGVkIAo1LjE5LjAtcmM4LW5leHQtMjAyMjA3MjggIzQzNwpbICAgIDIuNDA3ODY4XSBIYXJk
-d2FyZSBuYW1lOiBGaXJlZmx5IFJPQy1SSzMzOTktUEMgTWV6emFuaW5lIEJvYXJkIChEVCkKWyAg
-ICAyLjQwODQ0OF0gV29ya3F1ZXVlOiBldmVudHMgcm9ja2NoaXBfdXNiMnBoeV9vdGdfc21fd29y
-awpbICAgIDIuNDA4OTU4XSBwc3RhdGU6IDYwMDAwMDA1IChuWkN2IGRhaWYgLVBBTiAtVUFPIC1U
-Q08gLURJVCAtU1NCUyBCVFlQRT0tLSkKWyAgICAyLjQxMTYzNF0gcGMgOiByb2NrY2hpcF91c2Iy
-cGh5X290Z19zbV93b3JrKzB4NTAvMHgzMzAKWyAgICAyLjQxNDMzMl0gbHIgOiBwcm9jZXNzX29u
-ZV93b3JrKzB4MWQ4LzB4MzgwClsgICAgMi40MTY5NDhdIHNwIDogZmZmZjgwMDAwOTM3M2Q2MApb
-ICAgIDIuNDE5NDA2XSB4Mjk6IGZmZmY4MDAwMDkzNzNkNjAgeDI4OiAwMDAwMDAwMDAwMDAwMDAw
-IHgyNzogMDAwMDAwMDAwMDAwMDAwMApbICAgIDIuNDIyMTk5XSB4MjY6IGZmZmYwMDAwZjc3OWZj
-YjggeDI1OiBmZmZmMDAwMGY3N2EzYTA1IHgyNDogMDAwMDAwMDAwMDAwMDAwYwpbICAgIDIuNDI0
-OTc4XSB4MjM6IDAwMDAwMDAwMDAwMDAwMDAgeDIyOiBmZmZmMDAwMDAxMGM4MjU4IHgyMTogZmZm
-ZjgwMDAwODg4ZWMxMApbICAgIDIuNDI3NzY4XSB4MjA6IGZmZmYwMDAwMDEwYzgyZjAgeDE5OiAw
-MDAwMDAwMDAwMDAwMDBjIHgxODogMDAwMDAwMDAwMDAwMDAwMQpbICAgIDIuNDMwNjA0XSB4MTc6
-IDAwMDAwMDA0MDA0NGZmZmYgeDE2OiAwMDQwMDAzNGI1NTAzNTEwIHgxNTogMDAwMDAwMDAwMDAw
-MDAwMApbICAgIDIuNDMzMzkwXSB4MTQ6IGZmZmYwMDAwMDA3MDgwMDAgeDEzOiBmZmZmODAwMGVl
-Yzk2MDAwIHgxMjogMDAwMDAwMDAzNGQ0ZDkxZApbICAgIDIuNDM2MTg1XSB4MTE6IDAwMDAwMDAw
-MDAwMDAwMDAgeDEwOiAwMDAwMDAwMDAwMDAwYTEwIHg5IDogZmZmZjAwMDAwMWFhN2E3NApbICAg
-IDIuNDM4OTU4XSB4OCA6IGZlZmVmZWZlZmVmZWZlZmYgeDcgOiAwMDAwMDAwMDAwMDAwMDE4IHg2
-IDogZmZmZjAwMDAwMWFhN2E3NApbICAgIDIuNDQxNjY4XSB4NSA6IDAwMDA3Mzc0NmU2NTc2NjUg
-eDQgOiAwMDAwMDAwMDAwMDAwMDJmIHgzIDogZmZmZjAwMDAwMzU2YzgwOApbICAgIDIuNDQ0NDA3
-XSB4MiA6IGZmZmY4MDAwMDkzNzNkYTQgeDEgOiAwMDAwMDAwMDAwMDBlMmFjIHgwIDogZmZmZjgw
-MDAwODg4ZWIzNApbICAgIDIuNDQ3MTkwXSBDYWxsIHRyYWNlOgpbICAgIDIuNDQ5NTU3XSAgcm9j
-a2NoaXBfdXNiMnBoeV9vdGdfc21fd29yaysweDUwLzB4MzMwClsgICAgMi40NTIxNjldICBwcm9j
-ZXNzX29uZV93b3JrKzB4MWQ4LzB4MzgwClsgICAgMi40NTQ2ODRdICB3b3JrZXJfdGhyZWFkKzB4
-MTcwLzB4NGUwClsgICAgMi40NTcwNTZdICBrdGhyZWFkKzB4ZDgvMHhkYwpbICAgIDIuNDU5MzU0
-XSAgcmV0X2Zyb21fZm9yaysweDEwLzB4MjAKWyAgICAyLjQ2MTcyOF0gQ29kZTogOTEwMzcwMTUg
-Mjk1YmUwMDEgZjk0MDNjNzcgYjk0MGU0MTMgKGY5NDAwNmUwKQpbICAgIDIuNDY0MzM4XSAtLS1b
-IGVuZCB0cmFjZSAwMDAwMDAwMDAwMDAwMDAwIF0tLS0KCkFtIDIyLjA2LjIyIHVtIDAyOjMxIHNj
-aHJpZWIgUGV0ZXIgR2VpczoKPiBUaGUgaW5pdGlhbCBvdGcgc3RhdGUgZm9yIHRoZSBwaHkgZGVm
-YXVsdHMgdG8gZGV2aWNlIG1vZGUuIFRoZSBhY3R1YWwKPiBzdGF0ZSBpc24ndCBkZXRlY3RlZCB1
-bnRpbCBhbiBJRCBJUlEgZmlyZXMuIEZpeCB0aGlzIGJ5IHN5bmNpbmcgdGhlIElECj4gc3RhdGUg
-ZHVyaW5nIGluaXRpYWxpemF0aW9uLgo+IAo+IEZpeGVzOiA1MWE5YjJjMDNkZDMgKCJwaHk6IHJv
-Y2tjaGlwLWlubm8tdXNiMjogSGFuZGxlIElEIElSUSIpCj4gU2lnbmVkLW9mZi1ieTogUGV0ZXIg
-R2VpcyA8cGd3aXBlb3V0QGdtYWlsLmNvbT4KPiAtLS0KPiAgIGRyaXZlcnMvcGh5L3JvY2tjaGlw
-L3BoeS1yb2NrY2hpcC1pbm5vLXVzYjIuYyB8IDYgKysrKysrCj4gICAxIGZpbGUgY2hhbmdlZCwg
-NiBpbnNlcnRpb25zKCspCj4gCj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvcGh5L3JvY2tjaGlwL3Bo
-eS1yb2NrY2hpcC1pbm5vLXVzYjIuYyBiL2RyaXZlcnMvcGh5L3JvY2tjaGlwL3BoeS1yb2NrY2hp
-cC1pbm5vLXVzYjIuYwo+IGluZGV4IDY3MTE2NTlmNzI3Yy4uNmU0NDA2OTYxN2RmIDEwMDY0NAo+
-IC0tLSBhL2RyaXZlcnMvcGh5L3JvY2tjaGlwL3BoeS1yb2NrY2hpcC1pbm5vLXVzYjIuYwo+ICsr
-KyBiL2RyaXZlcnMvcGh5L3JvY2tjaGlwL3BoeS1yb2NrY2hpcC1pbm5vLXVzYjIuYwo+IEBAIC0x
-MTYyLDYgKzExNjIsMTIgQEAgc3RhdGljIGludCByb2NrY2hpcF91c2IycGh5X290Z19wb3J0X2lu
-aXQoc3RydWN0IHJvY2tjaGlwX3VzYjJwaHkgKnJwaHksCj4gICAJCQkJCUVYVENPTl9VU0JfSE9T
-VCwgJnJwb3J0LT5ldmVudF9uYik7Cj4gICAJCWlmIChyZXQpCj4gICAJCQlkZXZfZXJyKHJwaHkt
-PmRldiwgInJlZ2lzdGVyIFVTQiBIT1NUIG5vdGlmaWVyIGZhaWxlZFxuIik7Cj4gKwo+ICsJCWlm
-ICghb2ZfcHJvcGVydHlfcmVhZF9ib29sKHJwaHktPmRldi0+b2Zfbm9kZSwgImV4dGNvbiIpKSB7
-Cj4gKwkJCS8qIGRvIGluaXRpYWwgc3luYyBvZiB1c2Igc3RhdGUgKi8KPiArCQkJcmV0ID0gcHJv
-cGVydHlfZW5hYmxlZChycGh5LT5ncmYsICZycG9ydC0+cG9ydF9jZmctPnV0bWlfaWQpOwo+ICsJ
-CQlleHRjb25fc2V0X3N0YXRlX3N5bmMocnBoeS0+ZWRldiwgRVhUQ09OX1VTQl9IT1NULCAhcmV0
-KTsKPiArCQl9Cj4gICAJfQo+ICAgCj4gICBvdXQ6CgpHcnXDnywKLS0gCk1hcmt1cyBSZWljaGwK
-Ci0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3Jn
-Cmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+Hi,
+
+On Wed, Aug 3, 2022 at 5:34 AM Johan Hovold <johan+linaro@kernel.org> wrote:
+>
+> Unless a driver implements an idle mode, there's generally no point in
+> specifying an active-mode regulator load.
+>
+> Drop the regulator loads that were recently added to the Qualcomm QMP
+> combo and edp PHY drivers.
+>
+> For a background discussion on this matter, see the following thread:
+>
+>         https://lore.kernel.org/r/YuPps+cvVAMugWmy@sirena.org.uk
+>
+> Johan
+>
+>
+> Johan Hovold (2):
+>   phy: qcom-qmp-combo: drop regulator loads
+>   phy: qcom-edp: drop regulator loads
+>
+>  drivers/phy/qualcomm/phy-qcom-edp.c       | 12 -------
+>  drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 40 +++++------------------
+>  2 files changed, 9 insertions(+), 43 deletions(-)
+
+It's really hard to evaluate this based on the information I have
+available to me. :( I'm all for getting rid of all this complexity if
+it was added for no reason and I could definitely believe that on most
+boards there is no reason for it at all as talked about in other
+threads.
+
+I guess I worry that there is some use case where LPM mode is actually
+usable to power these devices when they're active. It seems like
+_maybe_ it could be but only if nothing else is pulling power from the
+same LDO? Some LDOs on the board I have seem to be able to do LPM up
+to 30 mA and some of the rails are being specified as ~22mA.
+
+The problem with regulator loads is that using them is kinda an "all
+or nothing". Either all the consumers need to specify something or
+none of them can. :( This means that once the first user comes in and
+is able to run the device in LPM (maybe only if they're the only
+consumer?) that everything will break. I honestly have no idea if this
+will ever happen, though... Mark said the phrase "actively managing
+loads it's probably not doing anything useful" and I think "probably"
+is an important word there. If that word was "never" then it would
+definitely be OK to remove load management like this, but with
+"probably" it becomes a lot harder.
+
+If we needed a hack, I'd somewhat prefer a hack that just bumps the
+"mA" value here up to something higher. That would force it to HPM...
+...although maybe it still won't work? Then the regulator will still
+go down to LPM for other consumers if the PHY ever turns off. In that
+case I guess there's no getting around other consumers requesting the
+load or finding some way to say that on your board this regulator can
+only ever be in HPM mode.
+
+
+-Doug
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
