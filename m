@@ -4,82 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 90845C19F2C
-	for <linux-phy@archiver.kernel.org>; Wed,  3 Aug 2022 15:30:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 76C6BC19F28
+	for <linux-phy@archiver.kernel.org>; Wed,  3 Aug 2022 17:55:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JdeRpHfqMnSFeE7fqsZ8SZ5eXqzyRZv1IqrJF+skees=; b=qDP2RRAMH36rBp
-	BhgeyIOFFbGmItcwE/mGtuenIvR6bSc1HpQdifsD4G27PYhahoR7TooEvIuPnMAjhKYqPFBtBwVaX
-	IpiubIUEARSav74nJ3cNbOV9TexxODDuoCJVBORpITUctp8xL1TW8ZRZLN1uRLrPiclCcl3SVisf/
-	hDDCDoWPASPct5GeCSgbpy/TM+KFpZfmhD6+NLeUVaxy4klR/wQmKEKnMMWgARtViETLIHIgsk50o
-	ngLrFWeSWeVRbG8S+VR4DpU2RAeco+PeZnuEGnZUKOS0LDeo/TO3MPrqQXWnLrN0I6dBE4zhlh6T3
-	wh9V8mJtokT2A3Ca3zag==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=tr62s8xgeN0D+cJCgkSUUeUZ7dTZHRPh9Qrr1CCnW1I=; b=Ms8
+	qi+8agpha8AzUOPZXH/msW/N9AjpEg8zloiV4fVGe0ZZx8rtncOnSNoA7NUdS699b4pZzvv5mCfyk
+	7NOZeJvbT8GnRVkPXwCusY/J+UwqY6xsAzadQZsKGYKlJx4AaUk+KFO4T2i5gRLokLkqUD8qVaybV
+	QAQj37cMYq9Za4w/Mh9uTNYszpYdOWAvjfVg7Dbl0/D97fRxMf/GrPJBkxsGqol3QMId5shJ9QhX+
+	oHOkCleFTSwhkR+gh8/v0eCa/qwX63CwMWOR4wjw+00xST+WWHHW38ZCtHVkPvuzvGRFhfNFRkEiY
+	YjV2f7RAF8vN6GyLfWSQMooVhCHHYyQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oJGKM-0078RT-VG; Wed, 03 Aug 2022 15:30:31 +0000
-Received: from mail-ej1-x62e.google.com ([2a00:1450:4864:20::62e])
+	id 1oJIb7-0087bf-PY; Wed, 03 Aug 2022 17:55:57 +0000
+Received: from mail-pf1-x432.google.com ([2607:f8b0:4864:20::432])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oJGKJ-0078Oy-26
-	for linux-phy@lists.infradead.org; Wed, 03 Aug 2022 15:30:29 +0000
-Received: by mail-ej1-x62e.google.com with SMTP id uj29so18979023ejc.0
-        for <linux-phy@lists.infradead.org>; Wed, 03 Aug 2022 08:30:25 -0700 (PDT)
+	id 1oJIar-0087TD-IS
+	for linux-phy@lists.infradead.org; Wed, 03 Aug 2022 17:55:44 +0000
+Received: by mail-pf1-x432.google.com with SMTP id 130so9309437pfv.13
+        for <linux-phy@lists.infradead.org>; Wed, 03 Aug 2022 10:55:38 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=chromium.org; s=google;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc;
-        bh=QSNLoRq7qbNX21X/zV/2AlYjV7hEb4BXWVGqbeUJ24g=;
-        b=nzI1RPneh/LJJCu1k6xuiZTtzaae82xzjDcJUWtbJsNeS7XJdegrZyHq7NHnqw/K3v
-         z5eW0E4AYjhiQE3UwN3v0NPjuunZorY6mJSCV9HwvyMq3kEg6Oek6rOvDV1r5SPQL06U
-         pPeZgIcmUj31NF0m2C/T7AnXuxaoNbub9usmg=
+        d=broadcom.com; s=google;
+        h=mime-version:message-id:date:subject:cc:to:from:from:to:cc;
+        bh=OynSVEAVJEQnm/2KsQ6tjg88wZCCbj+/PBqK7ptyFog=;
+        b=MoB2ORug/eyI9GRt/QeFJ+GwlbxTj+Lri1DOWbg0QnutiiwWdZdWulgQMLSDI9sQ9u
+         BVrTe7hhOXoobZUAWS/TZ0BWj2yyvEJXsmOs8v+po3ocHANfCRQ4EFzpseVtb2YwEXaM
+         8tCXGlCIW68QcEQ6YK1AkcNQckXco+Gd3vFgA=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc;
-        bh=QSNLoRq7qbNX21X/zV/2AlYjV7hEb4BXWVGqbeUJ24g=;
-        b=Wjm6bKQ+do55xbN26OrUB4IoYG0rB3BTt6WykaEt0OOKdQMRRfeJYVX2HkdwngvSmC
-         6cm0JvIwkVo322B+MqQz4GcYPKGKeBIRlqiLuOui6r3uSC3y4y4yexhpleW2wWoE4dO2
-         g51K28ImquvEqee43DJm2ciyA+HVB9SeXa9CGHsg0iWd8VyO91WNsrcuCUbT5XPMgyF3
-         F9K15dam4Vvzv/yYeps1hgA2mzudjEsMZnUnp1pDMXFmCSgbwHGnB4Dwg5y8iwwh3vpj
-         wBm2dSzhelvsl4StQVtQ/BHy/dypmowoJHi+0WqNRa0QI25hUyf6qpxxnlGl7Q/pFZ9w
-         +Ssg==
-X-Gm-Message-State: ACgBeo218L03Djp2feReSvO5hxCBnK8OQP3zZHOYq2eFssRF4i1BV6de
-	VjquljmNeUTFstIgAWaqLvIB8JqVjpDwGGdPadM=
-X-Google-Smtp-Source: AA6agR7F9L/TAO/FaIHUpGwjRQsmy24EOSuj20dwbDv0N0F1iGNMjTtTiknh3N+4B4FUB8Ch3gaIWQ==
-X-Received: by 2002:a17:906:9b14:b0:730:984e:a51c with SMTP id eo20-20020a1709069b1400b00730984ea51cmr8923434ejc.435.1659540624209;
-        Wed, 03 Aug 2022 08:30:24 -0700 (PDT)
-Received: from mail-wr1-f43.google.com (mail-wr1-f43.google.com. [209.85.221.43])
-        by smtp.gmail.com with ESMTPSA id y8-20020aa7c248000000b0043c7efb8badsm9587952edo.61.2022.08.03.08.30.22
-        for <linux-phy@lists.infradead.org>
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 03 Aug 2022 08:30:22 -0700 (PDT)
-Received: by mail-wr1-f43.google.com with SMTP id z16so21938767wrh.12
-        for <linux-phy@lists.infradead.org>; Wed, 03 Aug 2022 08:30:22 -0700 (PDT)
-X-Received: by 2002:a5d:5889:0:b0:21d:bccd:38e3 with SMTP id
- n9-20020a5d5889000000b0021dbccd38e3mr16118496wrf.659.1659540622383; Wed, 03
- Aug 2022 08:30:22 -0700 (PDT)
+        h=mime-version:message-id:date:subject:cc:to:from:x-gm-message-state
+         :from:to:cc;
+        bh=OynSVEAVJEQnm/2KsQ6tjg88wZCCbj+/PBqK7ptyFog=;
+        b=mgyv+gIU9U8t1KxxrIMjpBqaHoiZmX2p7lCia3YowqLTsUSEOlfLPn2kd1PwcjOK6C
+         PH7YSFAHakENSsHi4ajqYYOG11tZeHlK35GZEC6GFOCmDqcN8oHCR9I6139yVAHuzW/J
+         LCDvI2MLJBaXavh1u2nWlMCyIkZnoOIrF7py3pbEL0BNs0l1uWvNZ2AZoMSAeNWqwvj5
+         xuWp5ZuwoK6cztBoiivbzjdqRxL/kjKxInPajoPTsQCd5kSSdskArJNbeVhnwTdVviLT
+         MidJ0KF0fC5dMIwhU5Uc67fRkSj/idmb88XxpwtMSM5w3Qgw8hMevziC7Uz6J+fMg6lM
+         47hA==
+X-Gm-Message-State: AJIora+tu1BC6fP/3iGLHYvg9utD2BS1l7vZQixmLu8oJ1IKL0MaImic
+	rFyO41Wz3QyOodeP7q3wXstN3Q==
+X-Google-Smtp-Source: AGRyM1vlkoaI20p/BpkCX3BLfVXJxUkwzNyyCPxrki36VpTCnSdv/zY6bmlRD4yqhoStLPiwAvTLKg==
+X-Received: by 2002:a63:2bc4:0:b0:419:7b8c:210a with SMTP id r187-20020a632bc4000000b004197b8c210amr21830478pgr.439.1659549338018;
+        Wed, 03 Aug 2022 10:55:38 -0700 (PDT)
+Received: from ubuntu-22.localdomain ([192.19.222.250])
+        by smtp.gmail.com with ESMTPSA id iw4-20020a170903044400b0016d150c6c6dsm2238639plb.45.2022.08.03.10.55.34
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 03 Aug 2022 10:55:36 -0700 (PDT)
+From: William Zhang <william.zhang@broadcom.com>
+To: Linux ARM List <linux-arm-kernel@lists.infradead.org>
+Cc: Broadcom Kernel List <bcm-kernel-feedback-list@broadcom.com>,
+	joel.peshkin@broadcom.com,
+	dan.beygelman@broadcom.com,
+	f.fainelli@gmail.com,
+	krzysztof.kozlowski@linaro.org,
+	rafal@milecki.pl,
+	William Zhang <william.zhang@broadcom.com>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	devicetree@vger.kernel.org (open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS),
+	linux-kernel@vger.kernel.org (open list),
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	linux-i2c@vger.kernel.org (open list:I2C SUBSYSTEM HOST DRIVERS),
+	linux-mtd@lists.infradead.org (open list:MEMORY TECHNOLOGY DEVICES (MTD)),
+	netdev@vger.kernel.org (open list:NETWORKING DRIVERS),
+	linux-pci@vger.kernel.org (open list:PCI NATIVE HOST BRIDGE AND ENDPOINT DRIVERS),
+	linux-phy@lists.infradead.org (open list:GENERIC PHY FRAMEWORK),
+	linux-gpio@vger.kernel.org (open list:PIN CONTROL SUBSYSTEM),
+	linux-mips@vger.kernel.org (open list:BROADCOM BMIPS MIPS ARCHITECTURE),
+	linux-serial@vger.kernel.org (open list:SERIAL DRIVERS),
+	linux-watchdog@vger.kernel.org (open list:WATCHDOG DEVICE DRIVERS),
+	Catalin Marinas <catalin.marinas@arm.com>,
+	Will Deacon <will@kernel.org>
+Subject: [PATCH v3 0/9] arm64: bcmbca: Move BCM4908 SoC support under ARCH_BCMBCA
+Date: Wed,  3 Aug 2022 10:54:46 -0700
+Message-Id: <20220803175455.47638-1-william.zhang@broadcom.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-References: <20220803123332.8138-1-johan+linaro@kernel.org>
-In-Reply-To: <20220803123332.8138-1-johan+linaro@kernel.org>
-From: Doug Anderson <dianders@chromium.org>
-Date: Wed, 3 Aug 2022 08:30:09 -0700
-X-Gmail-Original-Message-ID: <CAD=FV=VoFgMj9iOx1HR72AcnTi9OOSCOFm39kKOGXHkeb2SYBg@mail.gmail.com>
-Message-ID: <CAD=FV=VoFgMj9iOx1HR72AcnTi9OOSCOFm39kKOGXHkeb2SYBg@mail.gmail.com>
-Subject: Re: [PATCH 0/2] phy: qcom: drop regulator loads
-To: Johan Hovold <johan+linaro@kernel.org>
-Cc: Vinod Koul <vkoul@kernel.org>, Andy Gross <agross@kernel.org>, 
-	Bjorn Andersson <bjorn.andersson@linaro.org>, Konrad Dybcio <konrad.dybcio@somainline.org>, 
-	Kishon Vijay Abraham I <kishon@ti.com>, Kuogee Hsieh <quic_khsieh@quicinc.com>, 
-	Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>, 
-	linux-arm-msm <linux-arm-msm@vger.kernel.org>, linux-phy@lists.infradead.org, 
-	LKML <linux-kernel@vger.kernel.org>, 
-	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220803_083027_622068_AD61699B 
-X-CRM114-Status: GOOD (  23.76  )
+X-CRM114-CacheID: sfid-20220803_105541_624178_18BC79DF 
+X-CRM114-Status: GOOD (  14.73  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,71 +98,178 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============9020640390879379349=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi,
+--===============9020640390879379349==
+Content-Type: multipart/signed; protocol="application/pkcs7-signature"; micalg=sha-256;
+	boundary="000000000000cdf32b05e559f07d"
 
-On Wed, Aug 3, 2022 at 5:34 AM Johan Hovold <johan+linaro@kernel.org> wrote:
->
-> Unless a driver implements an idle mode, there's generally no point in
-> specifying an active-mode regulator load.
->
-> Drop the regulator loads that were recently added to the Qualcomm QMP
-> combo and edp PHY drivers.
->
-> For a background discussion on this matter, see the following thread:
->
->         https://lore.kernel.org/r/YuPps+cvVAMugWmy@sirena.org.uk
->
-> Johan
->
->
-> Johan Hovold (2):
->   phy: qcom-qmp-combo: drop regulator loads
->   phy: qcom-edp: drop regulator loads
->
->  drivers/phy/qualcomm/phy-qcom-edp.c       | 12 -------
->  drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 40 +++++------------------
->  2 files changed, 9 insertions(+), 43 deletions(-)
+--000000000000cdf32b05e559f07d
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
 
-It's really hard to evaluate this based on the information I have
-available to me. :( I'm all for getting rid of all this complexity if
-it was added for no reason and I could definitely believe that on most
-boards there is no reason for it at all as talked about in other
-threads.
+BCM4908 is one of the Broadcom Broadband origin WLAN Router/Access
+Pointer SoCs. It was originally added by Rafał before Broadcom started
+to upstream the support for broadband SoCs. All other ARM based Broadcom
+Broadband SoCs are now supported under arch ARCH_BCMBCA. This patch
+series migrate the BCM4908 support to ARCH_BCMBCA.
 
-I guess I worry that there is some use case where LPM mode is actually
-usable to power these devices when they're active. It seems like
-_maybe_ it could be but only if nothing else is pulling power from the
-same LDO? Some LDOs on the board I have seem to be able to do LPM up
-to 30 mA and some of the rails are being specified as ~22mA.
+Changes in v3:
+- Add Reviewed-by tag
+- Add Acked-by tags
+- Remove the dts break warning from commit message
 
-The problem with regulator loads is that using them is kinda an "all
-or nothing". Either all the consumers need to specify something or
-none of them can. :( This means that once the first user comes in and
-is able to run the device in LPM (maybe only if they're the only
-consumer?) that everything will break. I honestly have no idea if this
-will ever happen, though... Mark said the phrase "actively managing
-loads it's probably not doing anything useful" and I think "probably"
-is an important word there. If that word was "never" then it would
-definitely be OK to remove load management like this, but with
-"probably" it becomes a lot harder.
+Changes in v2:
+- Add Acked-by tag
+- Improve commit message with more details
+- Insert the 4908 generic compatible string in alphabetical order
 
-If we needed a hack, I'd somewhat prefer a hack that just bumps the
-"mA" value here up to something higher. That would force it to HPM...
-...although maybe it still won't work? Then the regulator will still
-go down to LPM for other consumers if the PHY ever turns off. In that
-case I guess there's no getting around other consumers requesting the
-load or finding some way to say that on your board this regulator can
-only ever be in HPM mode.
+William Zhang (9):
+  dt-bindings: arm64: bcmbca: Merge BCM4908 into BCMBCA
+  dt-bindings: arm64: bcmbca: Update BCM4908 description
+  arm64: dts: bcmbca: update BCM4908 board dts files
+  arm64: dts: Move BCM4908 dts to bcmbca folder
+  arm64: dts: Add BCM4908 generic board dts
+  arm64: bcmbca: Make BCM4908 drivers depend on ARCH_BCMBCA
+  arm64: bcmbca: Merge ARCH_BCM4908 to ARCH_BCMBCA
+  MAINTAINERS: Add BCM4908 maintainer to BCMBCA entry
+  arm64: defconfig: remove BCM4908
+
+ .../bindings/arm/bcm/brcm,bcm4908.yaml        | 42 -------------------
+ .../bindings/arm/bcm/brcm,bcmbca.yaml         | 25 +++++++++++
+ MAINTAINERS                                   |  1 +
+ arch/arm64/Kconfig.platforms                  | 10 +----
+ arch/arm64/boot/dts/broadcom/Makefile         |  1 -
+ arch/arm64/boot/dts/broadcom/bcm4908/Makefile |  5 ---
+ arch/arm64/boot/dts/broadcom/bcmbca/Makefile  |  5 +++
+ .../bcm4906-netgear-r8000p.dts                |  2 +-
+ .../bcm4906-tplink-archer-c2300-v1.dts        |  2 +-
+ .../broadcom/{bcm4908 => bcmbca}/bcm4906.dtsi |  0
+ .../bcm4908-asus-gt-ac5300.dts                |  2 +-
+ .../bcm4908-netgear-raxe500.dts               |  2 +-
+ .../broadcom/{bcm4908 => bcmbca}/bcm4908.dtsi |  0
+ .../boot/dts/broadcom/bcmbca/bcm94908.dts     | 30 +++++++++++++
+ arch/arm64/configs/defconfig                  |  1 -
+ drivers/i2c/busses/Kconfig                    |  4 +-
+ drivers/mtd/parsers/Kconfig                   |  6 +--
+ drivers/net/ethernet/broadcom/Kconfig         |  4 +-
+ drivers/pci/controller/Kconfig                |  2 +-
+ drivers/phy/broadcom/Kconfig                  |  4 +-
+ drivers/pinctrl/bcm/Kconfig                   |  4 +-
+ drivers/reset/Kconfig                         |  2 +-
+ drivers/soc/bcm/bcm63xx/Kconfig               |  4 +-
+ drivers/tty/serial/Kconfig                    |  4 +-
+ drivers/watchdog/Kconfig                      |  2 +-
+ 25 files changed, 84 insertions(+), 80 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/arm/bcm/brcm,bcm4908.yaml
+ delete mode 100644 arch/arm64/boot/dts/broadcom/bcm4908/Makefile
+ rename arch/arm64/boot/dts/broadcom/{bcm4908 => bcmbca}/bcm4906-netgear-r8000p.dts (96%)
+ rename arch/arm64/boot/dts/broadcom/{bcm4908 => bcmbca}/bcm4906-tplink-archer-c2300-v1.dts (99%)
+ rename arch/arm64/boot/dts/broadcom/{bcm4908 => bcmbca}/bcm4906.dtsi (100%)
+ rename arch/arm64/boot/dts/broadcom/{bcm4908 => bcmbca}/bcm4908-asus-gt-ac5300.dts (97%)
+ rename arch/arm64/boot/dts/broadcom/{bcm4908 => bcmbca}/bcm4908-netgear-raxe500.dts (89%)
+ rename arch/arm64/boot/dts/broadcom/{bcm4908 => bcmbca}/bcm4908.dtsi (100%)
+ create mode 100644 arch/arm64/boot/dts/broadcom/bcmbca/bcm94908.dts
+
+-- 
+2.34.1
 
 
--Doug
+--000000000000cdf32b05e559f07d
+Content-Type: application/pkcs7-signature; name="smime.p7s"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="smime.p7s"
+Content-Description: S/MIME Cryptographic Signature
+
+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
+TltlrAeBKRJ1M9O/DY5v7L1Yrs//7XIRg/d2ZPAOSGBQzFYjYTFWwNBiR1s1zP0m2y56DPbS5gwj
+fqAN/I4PJHIvTh3zUgHXNKadYoYRiPHXfaTWO9UhzysOpQIDAQABo4IB2zCCAdcwDgYDVR0PAQH/
+BAQDAgWgMIGjBggrBgEFBQcBAQSBljCBkzBOBggrBgEFBQcwAoZCaHR0cDovL3NlY3VyZS5nbG9i
+YWxzaWduLmNvbS9jYWNlcnQvZ3NnY2NyM3BlcnNvbmFsc2lnbjJjYTIwMjAuY3J0MEEGCCsGAQUF
+BzABhjVodHRwOi8vb2NzcC5nbG9iYWxzaWduLmNvbS9nc2djY3IzcGVyc29uYWxzaWduMmNhMjAy
+MDBNBgNVHSAERjBEMEIGCisGAQQBoDIBKAowNDAyBggrBgEFBQcCARYmaHR0cHM6Ly93d3cuZ2xv
+YmFsc2lnbi5jb20vcmVwb3NpdG9yeS8wCQYDVR0TBAIwADBJBgNVHR8EQjBAMD6gPKA6hjhodHRw
+Oi8vY3JsLmdsb2JhbHNpZ24uY29tL2dzZ2NjcjNwZXJzb25hbHNpZ24yY2EyMDIwLmNybDAlBgNV
+HREEHjAcgRp3aWxsaWFtLnpoYW5nQGJyb2FkY29tLmNvbTATBgNVHSUEDDAKBggrBgEFBQcDBDAf
+BgNVHSMEGDAWgBSWM9HmWBdbNHWKgVZk1b5I3qGPzzAdBgNVHQ4EFgQUohM5GmNlGWe5wpzDxzIy
++EgzbRswDQYJKoZIhvcNAQELBQADggEBACKu9JSQAYTlmC+JTniO/C/UcXGonATI/muBjWTxtkHc
+abZtz0uwzzrRrpV+mbHLGVFFeRbXSLvcEzqHp8VomXifEZlfsE9LajSehzaqhd+np+tmUPz1RlI/
+ibZ7vW+1VF18lfoL+wHs2H0fsG6JfoqZldEWYXASXnUrs0iTLgXxvwaQj69cSMuzfFm1X5kWqWCP
+W0KkR8025J0L5L4yXfkSO6psD/k4VcTsMJHLN4RfMuaXIT6EM0cNO6h3GypyTuPf1N1X+F6WQPKb
+1u+rvdML63P9fX7e7mwwGt5klRnf8aK2VU7mIdYCcrFHaKDTW3fkG6kIgrE1wWSgiZYL400xggJt
+MIICaQIBATBrMFsxCzAJBgNVBAYTAkJFMRkwFwYDVQQKExBHbG9iYWxTaWduIG52LXNhMTEwLwYD
+VQQDEyhHbG9iYWxTaWduIEdDQyBSMyBQZXJzb25hbFNpZ24gMiBDQSAyMDIwAgw28eX6TfvsbNfu
+SIMwDQYJYIZIAWUDBAIBBQCggdQwLwYJKoZIhvcNAQkEMSIEIJi7Jochq0m9DJtt7E7KnJczdnMn
+KTqhDwinhgdh42k+MBgGCSqGSIb3DQEJAzELBgkqhkiG9w0BBwEwHAYJKoZIhvcNAQkFMQ8XDTIy
+MDgwMzE3NTUzOFowaQYJKoZIhvcNAQkPMVwwWjALBglghkgBZQMEASowCwYJYIZIAWUDBAEWMAsG
+CWCGSAFlAwQBAjAKBggqhkiG9w0DBzALBgkqhkiG9w0BAQowCwYJKoZIhvcNAQEHMAsGCWCGSAFl
+AwQCATANBgkqhkiG9w0BAQEFAASCAQCfPwsDJOMs3Zes99X6w8tgi6Z+lxLFzWKzNNkJkTbAL5jm
+RPKduRypa/oJBfkRhDkb0xYg9+o3EVEiZoddSG1U6Bh+ly3DmtKFPjKREkelem2lum0/nF9Rp/nQ
+stG5r4gFNHmHEopwK7Kce8zs19TtAVCpXraWga6mRqmC7khj5yKEBF830BxDO0T3UGAUPJ8fagr6
+jfaOUh0YqL9sQAE7XHfSaEYDt1dse+uU0grH1u2bNpPSvfQT7OaBBQc/CiIpIMVqoQf9UzsTQkY2
+NpWb7tIjpcuB9EJhaD1IsXiXvQ5SbGCQK7pvhgIGRQX5OsT2tRxLcYEpaCr7IsVwfKgw
+--000000000000cdf32b05e559f07d--
+
+
+--===============9020640390879379349==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============9020640390879379349==--
+
