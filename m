@@ -4,86 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9DA92C00140
-	for <linux-phy@archiver.kernel.org>; Tue,  2 Aug 2022 08:35:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E0FCFC19F28
+	for <linux-phy@archiver.kernel.org>; Wed,  3 Aug 2022 06:17:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=To2i+s9Fj69wBynuiFOVo+lnyQDI+RtwNaDF6/WQULY=; b=y9Ta39e476VG4E
-	8n4bzpW7W6HwE2fMxAQsyrLW9V1/BCOm+rYIDY0D8vHC5Jcf3FQpVDgFUxy00mGnN9TgKIDLcw300
-	KbEc3GA/A8vU1pffeGpLLHJ4KW58U2c6wbISpLV9zyzieUQ8duz012qP/MBp62dqm8Nx1uCf+BlZ8
-	dmrT7iPE+t0oFG741PB1K7eBLIrqRGE1THZZAkFYtpvCXdRlY63AFkVMRmJFUsPNslESAn0LLOdc8
-	/aNG8w9Gi2uk5xkedbLHM2C5BeZXJlx7lynz3Xnctk15NMBjbBp55f+f0huaM4pfYQ5BysqoqvBXb
-	VSOUHf6PMabYsrhpFAsA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=B3JAhja8dHQhE4B6TQzifXEUiE1v3iqwxyqFkZXZiC4=; b=lgCpjIWq9G3V6m
+	snDts4hdpiPhVBmSjGDfNfCm69wlWH3C3x4p2o9wUP8WhoNzAVHFkWXbD9NqE7yx76oTYKIYPRQXm
+	8zP4IvLfnCjFUhoUNiHIEGeh2lMRGH6I+Y/pzhQW9nVL8E3bY9tW3fabe88MqwmC6T4/TP2hSu6z7
+	EnQi2uxRMnSRviWWEV+tO50Ft0Tk+Ug3ZJolD97ZZnUoBTSpWy7b5vx09N3keNZNT0hJ90WAhNNm8
+	z8ERMOVDBlsGrrq8amATSZO6y3YPOHxGRtTAhmRVVzyCaj9b0jDTB8/jppdhOxBDX7sMFwqWqVgmJ
+	elJbZBRYgSii5YM93gFQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oInMs-00Bsog-30; Tue, 02 Aug 2022 08:35:10 +0000
-Received: from mail-lf1-x12c.google.com ([2a00:1450:4864:20::12c])
+	id 1oJ7hO-0033fV-5S; Wed, 03 Aug 2022 06:17:42 +0000
+Received: from mail-pl1-x62f.google.com ([2607:f8b0:4864:20::62f])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oInMn-00Bsds-To
-	for linux-phy@lists.infradead.org; Tue, 02 Aug 2022 08:35:07 +0000
-Received: by mail-lf1-x12c.google.com with SMTP id z25so20964172lfr.2
-        for <linux-phy@lists.infradead.org>; Tue, 02 Aug 2022 01:34:52 -0700 (PDT)
+	id 1oJ7hL-0033dU-9M
+	for linux-phy@lists.infradead.org; Wed, 03 Aug 2022 06:17:40 +0000
+Received: by mail-pl1-x62f.google.com with SMTP id x10so14789326plb.3
+        for <linux-phy@lists.infradead.org>; Tue, 02 Aug 2022 23:17:38 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=message-id:date:mime-version:user-agent:subject:content-language:to
-         :cc:references:from:in-reply-to:content-transfer-encoding;
-        bh=yIcStRv9ulCANbO8uCjB32zEZVUYQGls0B2oaU68FpI=;
-        b=LharOYx++PG4xJGBwWCor32BdSD67j3bVEZQEArCBXQoeJoV6YvwqmCioZh9pe65UT
-         WUELomWtAgV5nsOfYFeAVChzVoS4pwNhlK+BHeq+1XlAESPIdkqL+7N1g/jpsTegC91Y
-         Cwh6sgZgJmaKkcQ0peQJ8das8vL27ZFIl+/ulrv3bVtErSt65oe4wEJd8kA08CuVMryZ
-         /y5kSKTVHae4BYfxUVjc7j8F+2eZmmROPRjJAMnkGABmClvfaoJQpeYrDUd31lw+MzQX
-         3dzp136+DrRYTU79ThBYQ/ObFHYtH6sEwpmM2kpeXpWZx7JVeo53oEiRQ4DOUjAZYeqI
-         Rdvw==
+        d=gmail.com; s=20210112;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc;
+        bh=Jlv66Vke6l8SYjueTnqS1mdIvxjlr2VRAIqrKVb1kto=;
+        b=WEvmmSZzPBk5pgi20n1KHhSr4m0/uV5Gp/E10LInyrGNM5KdfCx/lCWizepPxUuaD4
+         AgKPVrf2wr59DyEhXIPtWLBNIdEpHiPeAN1Jc0VZIL08L8siZ/yz7fdxCvhtUyuFuz8G
+         hY2xd+nnbc6FEcLJxmMemWavAGQUQfCqa9GderCVzegyX0Rbf2fNrr3blz/0vpMKtV81
+         fkA/ZRX/UmLTkB/1ssvViXY1GFsymmmaAj6D9GVoxMrb7yu8pctQKxroB1BkO2fAf4D5
+         yy49Guqi41IG+ZA7srtGumj9ZvZHZ+XtbIFsx7/F7eZxkvgTGimc0ApDZ/4k60dMUHAx
+         +LNA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
-         :content-language:to:cc:references:from:in-reply-to
-         :content-transfer-encoding;
-        bh=yIcStRv9ulCANbO8uCjB32zEZVUYQGls0B2oaU68FpI=;
-        b=aaLNhwsR26xJBfajwREdVkpxGSqBbePcF5OxUzJio0nneCKYFsk2vVeF41xcxZpEUp
-         edn62LZTDfkwU+7k6ys0k4gwMA9ijLczdBc49IlQx8ZyzyRuEc+cEaV0Tb8oRsXuDPuR
-         LfnKFKaWupzc7fvmifiqSREZSQfxDM8F5sqWCyRaI4KYalxVYmFA30yWwFBmL1aFBF4D
-         fqWhsUIO+8EEuzUTDUePP2UxAsju8Q0ueoBI+be48AbTUkO5jtFQ2iEfqT1DWSpH0DoJ
-         FhhrE8+Cy5/dH4z9GNwWXEglv4sAr6tcfiLY7RgyVyYEkSR18GcDwzMheZs4TyKxkTXy
-         7eiQ==
-X-Gm-Message-State: AJIora+3q9Qw91H0S0SvguuQWst42+9iLuhRHQvtJOKTV8wPlnVaWb50
-	WN+JLeNGLYEztv6ZO7r+9mUyvw==
-X-Google-Smtp-Source: AGRyM1uM4iPgGWr4Sodi73rqrFxGOSqxoKWlfh6r9yGr3qAoEULG7J9r4F+g8OXcWMDf4fRVtWXi8w==
-X-Received: by 2002:a05:6512:374a:b0:48a:8c6c:20d with SMTP id a10-20020a056512374a00b0048a8c6c020dmr7040027lfs.234.1659429291642;
-        Tue, 02 Aug 2022 01:34:51 -0700 (PDT)
-Received: from [192.168.1.6] ([213.161.169.44])
-        by smtp.gmail.com with ESMTPSA id g23-20020a19ee17000000b00489e88d6a72sm1561169lfb.198.2022.08.02.01.34.50
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 02 Aug 2022 01:34:50 -0700 (PDT)
-Message-ID: <6b4474f6-2fa6-0a86-6bd7-45d540701417@linaro.org>
-Date: Tue, 2 Aug 2022 10:34:49 +0200
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc;
+        bh=Jlv66Vke6l8SYjueTnqS1mdIvxjlr2VRAIqrKVb1kto=;
+        b=gBoMLciGGmBz9NjkodHYXAIhDc+YHLdD2NV8bE1koKdlk65QgwV0MZMQHQW/WogOpI
+         vQtzFnjb9IBf0dChV9agT1OFkqnuxFA6JPBpdH1xFVYPNV5cUuiDm6wULYCdAUyhKsuA
+         ez3DNMV0UrBpqDf/OIZi5jVhE8uEKo0j9g61kwd9fDY3FaKov5UhiN5jN6UB6JX2R0ya
+         6gYs+wsPLgyGM8nH9Hjg7mmEP/8us0dsEis/rIxFlOJKAr3WLmXuY/y/rYhT+bmb9Gfn
+         LdDJwerwRxjp1In6g5ROHHXf0Z+ZHz7sYpBHZx3KJ7ud9avcDZu0n87XNxD0bi0GdGGa
+         EGsQ==
+X-Gm-Message-State: ACgBeo2h66I2zQ0KCGafcsNHQmoaofO+Rycdq3cbKskRwgpZAskcTl+l
+	peMAzZzm4HePjp6XWlsMP5SsKeYEBk4=
+X-Google-Smtp-Source: AA6agR5gwzAONw8jejdaO+54xyeQ2fkw6EGCJC+kNk5R3U7hy6Da9RcVOJfBYcckeuLmTUg6Pdau0w==
+X-Received: by 2002:a17:90a:430e:b0:1f2:33ee:75da with SMTP id q14-20020a17090a430e00b001f233ee75damr3352958pjg.140.1659507457879;
+        Tue, 02 Aug 2022 23:17:37 -0700 (PDT)
+Received: from localhost.localdomain ([193.203.214.57])
+        by smtp.gmail.com with ESMTPSA id a9-20020a170902710900b0016dbce87aecsm852115pll.182.2022.08.02.23.17.36
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 02 Aug 2022 23:17:37 -0700 (PDT)
+From: cgel.zte@gmail.com
+X-Google-Original-From: ye.xingchen@zte.com.cn
+To: linux-phy@lists.infradead.org
+Cc: kishon@ti.com,
+	linux-kernel@vger.kernel.org,
+	ye xingchen <ye.xingchen@zte.com.cn>,
+	Zeal Robot <zealci@zte.com.cn>
+Subject: [PATCH linux-next] phy: mapphone-mdm6600:using the pm_runtime_resume_and_get to  simplify the code
+Date: Wed,  3 Aug 2022 06:17:34 +0000
+Message-Id: <20220803061734.1650606-1-ye.xingchen@zte.com.cn>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.12.0
-Subject: Re: [PATCH v2 3/3] dt-bindings: phy: qcom,usb-hs-phy: add definition
- for MSM8960
-Content-Language: en-US
-To: Shinjo Park <peremen@gmail.com>
-Cc: David Heidelberg <david@ixit.cz>, Andy Gross <agross@kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Konrad Dybcio <konrad.dybcio@somainline.org>,
- Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-References: <84923720-30a6-1a49-48f6-96e078a46743@linaro.org>
- <20220730081536.14511-1-peremen@gmail.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20220730081536.14511-1-peremen@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220802_013506_266579_9A268A49 
-X-CRM114-Status: UNSURE (   7.93  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220802_231739_355690_818B628A 
+X-CRM114-Status: GOOD (  11.14  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,19 +89,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 30/07/2022 10:15, Shinjo Park wrote:
-> Document the changes introduced by MSM8960 inclusion.
-> 
-> Signed-off-by: Shinjo Park <peremen@gmail.com>
-> Reviewed-by: David Heidelberg <david@ixit.cz>
-> ---
+From: ye xingchen <ye.xingchen@zte.com.cn>
 
+Using pm_runtime_resume_and_get() to instade of  pm_runtime_get_sync
+and pm_runtime_put_noidle.
 
-Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Reported-by: Zeal Robot <zealci@zte.com.cn>
+Signed-off-by: ye xingchen <ye.xingchen@zte.com.cn>
+---
+ drivers/phy/motorola/phy-mapphone-mdm6600.c | 6 ++----
+ 1 file changed, 2 insertions(+), 4 deletions(-)
 
-
-Best regards,
-Krzysztof
+diff --git a/drivers/phy/motorola/phy-mapphone-mdm6600.c b/drivers/phy/motorola/phy-mapphone-mdm6600.c
+index 3cd4d51c247c..c1a1b8b0a13b 100644
+--- a/drivers/phy/motorola/phy-mapphone-mdm6600.c
++++ b/drivers/phy/motorola/phy-mapphone-mdm6600.c
+@@ -253,9 +253,8 @@ static irqreturn_t phy_mdm6600_wakeirq_thread(int irq, void *data)
+ 		return IRQ_NONE;
+ 
+ 	dev_dbg(ddata->dev, "OOB wake on mode_gpio1: %i\n", wakeup);
+-	error = pm_runtime_get_sync(ddata->dev);
++	error = pm_runtime_resume_and_get(ddata->dev);
+ 	if (error < 0) {
+-		pm_runtime_put_noidle(ddata->dev);
+ 
+ 		return IRQ_NONE;
+ 	}
+@@ -601,10 +600,9 @@ static int phy_mdm6600_probe(struct platform_device *pdev)
+ 	pm_runtime_set_autosuspend_delay(ddata->dev,
+ 					 MDM6600_MODEM_IDLE_DELAY_MS);
+ 	pm_runtime_enable(ddata->dev);
+-	error = pm_runtime_get_sync(ddata->dev);
++	error = pm_runtime_resume_and_get(ddata->dev);
+ 	if (error < 0) {
+ 		dev_warn(ddata->dev, "failed to wake modem: %i\n", error);
+-		pm_runtime_put_noidle(ddata->dev);
+ 		goto cleanup;
+ 	}
+ 
+-- 
+2.25.1
 
 -- 
 linux-phy mailing list
