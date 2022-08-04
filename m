@@ -4,98 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 27CACC19F28
-	for <linux-phy@archiver.kernel.org>; Wed,  3 Aug 2022 17:59:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 828A0C19F2B
+	for <linux-phy@archiver.kernel.org>; Thu,  4 Aug 2022 09:49:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=fIw9lYm4yIoX4x3KWyYwGo2Uf3MxJwatjHVI5LUOhj8=; b=njk2EtWoi2qYNveg11F5zVZEL+
-	m83QpQZPeogLtUYNFkosRe64o4IyKlhPlj40ZjKrMBLRRv3ER78pXftqLF4izcIuB3ggxBp13uNtG
-	hyDeB5sAcgb7zjDD0NaVh/OizJg6MCqklQUzkKVxMASfAHzUH43KVAfbt4+NtoX9Ss9zo2nZycwI/
-	yJCxNHtrnXdnIboM5F7rJo/79UW8hmIeSHrEoUwIgQ10hOzcMW4KfO2UkXIRd+PGKMhBDqnWwcZJp
-	VRnAD1XjGCXWHqoUcUYs5S8QLOI0KMcJkNMpC8DazhAE7cRrpL4l6m+bm+qZY4WrMNKOJ+pH3dUYC
-	0CnS/XNw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=h9wGkMVdn6MxTD+KNCa1uV3REQRDyxZTDb+au177ROU=; b=n159q6gbZnFcXD
+	sJZW8QwagexfP2jdbecMHQ+5sLIRLEkJyzmZleJxdXeSxfyfn0rV+m+fPZVxmICUg7myMTFLJSHCZ
+	I7SXWtiQtgDcECjaq8AUE+y6BbHTUdcbM/4naDPKItTxEHUOZg6t37fZU6B8ovEVW4OiHkK+mBfhM
+	9r/ccJrbDp4dYhe27GR+cp6NfvrMK6r6RC/mG1ocYAQkvP0fJoEFl7GvKBLCxsFIKTlTIqqFm6gYm
+	kECPPT4qANVbzB+x5fyDw2M7NzdsOGdOD9uQIwCVCayUe/Vcgw7uWSnWsvLURw7IxENXDuKHC8xD7
+	AWGIo1PoNRLmEQD/uacw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oJIe3-0089ac-6w; Wed, 03 Aug 2022 17:58:59 +0000
-Received: from mail-pj1-x102b.google.com ([2607:f8b0:4864:20::102b])
+	id 1oJXTw-004yY5-UM; Thu, 04 Aug 2022 09:49:32 +0000
+Received: from mail-wr1-x433.google.com ([2a00:1450:4864:20::433])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oJIcL-0088Lq-0i
-	for linux-phy@lists.infradead.org; Wed, 03 Aug 2022 17:57:17 +0000
-Received: by mail-pj1-x102b.google.com with SMTP id p14-20020a17090a74ce00b001f4d04492faso2905872pjl.4
-        for <linux-phy@lists.infradead.org>; Wed, 03 Aug 2022 10:57:10 -0700 (PDT)
+	id 1oJXTu-004yVx-ET; Thu, 04 Aug 2022 09:49:32 +0000
+Received: by mail-wr1-x433.google.com with SMTP id j15so16512073wrr.2;
+        Thu, 04 Aug 2022 02:49:28 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=broadcom.com; s=google;
-        h=mime-version:references:in-reply-to:message-id:date:subject:cc:to
-         :from:from:to:cc;
-        bh=9OShQqJZqLj7fXKyIohsYSxJitGabhF5LM1nrn+8H9c=;
-        b=OpZAQsI5FYWK+gn8A43VV9+EQvKia7291DbveLi16Wf/4jHa+k1zOzU+VhOPEcjH24
-         tD1dR9yDm62U2/svNmpoZV4iABVTczyGA5j4zJqsEqgjY4TflcLgHWng/HUV96yzFSvX
-         hKZHbntdjvO76SkOVXmZINwzUDchVwirLsd9o=
+        d=gmail.com; s=20210112;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:from:to:cc;
+        bh=jf6rQzWg9XKx/4I7TLqmE7aH4TSjEP5xXPJunNqSOyo=;
+        b=YyR4TFTALZdOKf6UBX8SDF3Px8qtx8DUe449U0on/FHPvOlKR1mppH2M9R6o+HMU1B
+         HJEczZ3Iu4kE3jpHQeHLzJU+bICJBzgAttQumRjJUyPX2GaxoL06yhk3BhRVPHLtGUSg
+         D1xyeqHYcbGD+ql7RlmL/2dLdga1eObVFrptcCGh2inU+35g6etgkYF5aODPwUv4eGWY
+         fYwL9vRyjZniZPyUpPKatwZbBztduliAAFP9HakU5ZT072lQ54FygCEQlfmFkxs0FqiM
+         iQCIwM3/s7DBk1w29IvcTAowkYYVXg9PUZqQb4Zm86BeQkmoC47wMKpFHyiOMcyBc4KJ
+         cPHw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=mime-version:references:in-reply-to:message-id:date:subject:cc:to
-         :from:x-gm-message-state:from:to:cc;
-        bh=9OShQqJZqLj7fXKyIohsYSxJitGabhF5LM1nrn+8H9c=;
-        b=bJCYYuoHkysbT4rlcE2RTJPfJmF0K8scT2PdkeCCBszFu/ZpgCklMMT9D8LowmwCjO
-         +mHCYyFuV54mZQnN2NAUeMSNh9fzQMoDTKpxdjcKMdJTRyATZxF91t4IMkC0x5T9tlW6
-         hUw9HdUCt+2W05vvOamlOtwHzYBdcu2BUtso871GSduPBT/qUktTaZjQN+EYxkL950vz
-         LMhUBuljqpqr0FaPJZPQLd8y/+lgNcMawJBpbPTeUNauBxY13lD6pIKT76QiGclt2+vE
-         /6vY7XnJ+N6I0+7i0zpkOd/thdPAEvIaqrkayh6U+3sIABWzXLOrQdbBrR0Az9HS78f2
-         GQeg==
-X-Gm-Message-State: ACgBeo0KRKx5FwFqabnzO2bUnaFQvT9y/tu26StIKqZfQvS+nQePvIFV
-	pGPlUS1vz8phhZYpS3fGL0WW3w==
-X-Google-Smtp-Source: AA6agR5va9MhuaZhZywLaxnHgY7I7BrniDnmb+lAXjca1oS7TxHm2E1xVkLv8hpbAWiN1i43uJSQJA==
-X-Received: by 2002:a17:90b:4c8d:b0:1f5:409b:b017 with SMTP id my13-20020a17090b4c8d00b001f5409bb017mr5966761pjb.52.1659549429811;
-        Wed, 03 Aug 2022 10:57:09 -0700 (PDT)
-Received: from ubuntu-22.localdomain ([192.19.222.250])
-        by smtp.gmail.com with ESMTPSA id iw4-20020a170903044400b0016d150c6c6dsm2238639plb.45.2022.08.03.10.57.06
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 03 Aug 2022 10:57:08 -0700 (PDT)
-From: William Zhang <william.zhang@broadcom.com>
-To: Linux ARM List <linux-arm-kernel@lists.infradead.org>
-Cc: Broadcom Kernel List <bcm-kernel-feedback-list@broadcom.com>,
-	joel.peshkin@broadcom.com,
-	dan.beygelman@broadcom.com,
-	f.fainelli@gmail.com,
-	krzysztof.kozlowski@linaro.org,
-	rafal@milecki.pl,
-	William Zhang <william.zhang@broadcom.com>,
-	Guenter Roeck <linux@roeck-us.net>,
-	Bjorn Helgaas <bhelgaas@google.com>,
-	Wolfram Sang <wsa@kernel.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Miquel Raynal <miquel.raynal@bootlin.com>,
-	"David S. Miller" <davem@davemloft.net>,
-	Rob Herring <robh@kernel.org>,
-	Kishon Vijay Abraham I <kishon@ti.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Linus Walleij <linus.walleij@linaro.org>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Wim Van Sebroeck <wim@linux-watchdog.org>,
-	linux-i2c@vger.kernel.org (open list:I2C SUBSYSTEM HOST DRIVERS),
-	linux-kernel@vger.kernel.org (open list),
-	linux-mtd@lists.infradead.org (open list:MEMORY TECHNOLOGY DEVICES (MTD)),
-	netdev@vger.kernel.org (open list:NETWORKING DRIVERS),
-	linux-pci@vger.kernel.org (open list:PCI NATIVE HOST BRIDGE AND ENDPOINT DRIVERS),
-	linux-phy@lists.infradead.org (open list:GENERIC PHY FRAMEWORK),
-	linux-gpio@vger.kernel.org (open list:PIN CONTROL SUBSYSTEM),
-	linux-mips@vger.kernel.org (open list:BROADCOM BMIPS MIPS ARCHITECTURE),
-	linux-serial@vger.kernel.org (open list:SERIAL DRIVERS),
-	linux-watchdog@vger.kernel.org (open list:WATCHDOG DEVICE DRIVERS)
-Subject: [PATCH v3 6/9] arm64: bcmbca: Make BCM4908 drivers depend on ARCH_BCMBCA
-Date: Wed,  3 Aug 2022 10:54:52 -0700
-Message-Id: <20220803175455.47638-7-william.zhang@broadcom.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20220803175455.47638-1-william.zhang@broadcom.com>
-References: <20220803175455.47638-1-william.zhang@broadcom.com>
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc;
+        bh=jf6rQzWg9XKx/4I7TLqmE7aH4TSjEP5xXPJunNqSOyo=;
+        b=ATe01zgNNm9yXt43OynbprBL+x0ZuceNuu3jn1H4derObJqHXzVkxWCufyvWsCql/G
+         wPpFKYWcugmgeAgdNFhS5CZhVTYjL6PyCXX/HTUW/nf/cYYpvT+HI92pFEoQ3iu4h9KG
+         gPsPM3YfJEF6fGs37JT4wSnxRBUe76+0ntpMLbRX8CR5sv632B22jy0ORx8X7oCVj9V1
+         4oaoFfvoS/jmG+JBpdzyXK9YurcGcR7z0aJb/ME90WurHIDp/pBUKnlN5dbpJfzM/4JJ
+         uzb9Lz+F7dTKgOEzVWF/7u5yWt1xu2rCA/49x/c7JhqCOgOs6OyKfy5TZDe3s23ZC98I
+         ZAIg==
+X-Gm-Message-State: ACgBeo18aMiD1YUSzas98shlJCRzRyJLxwADiLeJnTu56tDSe6byA7VK
+	ph1MUVmDCFDI0kdhRiInKcWwuMv7WxwOnaaGDFn1Cyz9CkgrZ2pq
+X-Google-Smtp-Source: AA6agR7xLOWYmPNSQmmTeLo+20pG87QI8F2XC5TJ2AqFstiTtnsMHYG62WaR/6cgnhISHEN3k2q2M0UAJNx+FNhoFpI=
+X-Received: by 2002:a5d:410a:0:b0:220:5ff7:3968 with SMTP id
+ l10-20020a5d410a000000b002205ff73968mr801540wrp.689.1659606567069; Thu, 04
+ Aug 2022 02:49:27 -0700 (PDT)
 MIME-Version: 1.0
+References: <20220622003140.30365-1-pgwipeout@gmail.com> <88f2de00-32e3-ed74-082f-c0972a81f0f8@fivetechno.de>
+In-Reply-To: <88f2de00-32e3-ed74-082f-c0972a81f0f8@fivetechno.de>
+From: Peter Geis <pgwipeout@gmail.com>
+Date: Thu, 4 Aug 2022 11:49:15 +0200
+Message-ID: <CAMdYzYoTLjRW1FgwfizUu-+k0R4tCO78qYa7MEpgfz99aj3SvQ@mail.gmail.com>
+Subject: Re: [BUG BISECT] phy: rockchip-inno-usb2: Sync initial otg state
+To: Markus Reichl <m.reichl@fivetechno.de>
+Cc: Heiko Stuebner <heiko@sntech.de>, Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, 
+	Samuel Holland <samuel@sholland.org>, 
+	"open list:GENERIC PHY FRAMEWORK" <linux-phy@lists.infradead.org>, 
+	arm-mail-list <linux-arm-kernel@lists.infradead.org>, 
+	"open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>, 
+	Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220803_105713_175245_AA62E1A2 
-X-CRM114-Status: GOOD (  19.86  )
+X-CRM114-CacheID: sfid-20220804_024930_513123_EC69D813 
+X-CRM114-Status: GOOD (  20.60  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -107,306 +82,93 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============0492839795720799786=="
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
---===============0492839795720799786==
-Content-Type: multipart/signed; protocol="application/pkcs7-signature"; micalg=sha-256;
-	boundary="00000000000046c62305e559f66d"
-
---00000000000046c62305e559f66d
-Content-Transfer-Encoding: 8bit
-
-With Broadcom Broadband arch ARCH_BCMBCA supported in the kernel, this
-patch series migrate the ARCH_BCM4908 symbol to ARCH_BCMBCA. Hence
-replace ARCH_BCM4908 with ARCH_BCMBCA in subsystem Kconfig files.
-
-Signed-off-by: William Zhang <william.zhang@broadcom.com>
-Acked-by: Guenter Roeck <linux@roeck-us.net> (for watchdog)
-Acked-by: Bjorn Helgaas <bhelgaas@google.com> (for drivers/pci)
-Acked-by: Wolfram Sang <wsa@kernel.org> (for i2c)
-Acked-by: Philipp Zabel <p.zabel@pengutronix.de> (for reset)
-
----
-
-Changes in v3:
-- Add Acked-by tags
-
-Changes in v2:
-- Add Acked-by tags
-- Update commit message with more details
-
- drivers/i2c/busses/Kconfig            | 4 ++--
- drivers/mtd/parsers/Kconfig           | 6 +++---
- drivers/net/ethernet/broadcom/Kconfig | 4 ++--
- drivers/pci/controller/Kconfig        | 2 +-
- drivers/phy/broadcom/Kconfig          | 4 ++--
- drivers/pinctrl/bcm/Kconfig           | 4 ++--
- drivers/reset/Kconfig                 | 2 +-
- drivers/soc/bcm/bcm63xx/Kconfig       | 4 ++--
- drivers/tty/serial/Kconfig            | 4 ++--
- drivers/watchdog/Kconfig              | 2 +-
- 10 files changed, 18 insertions(+), 18 deletions(-)
-
-diff --git a/drivers/i2c/busses/Kconfig b/drivers/i2c/busses/Kconfig
-index 45a4e9f1b639..fd9a4dd01997 100644
---- a/drivers/i2c/busses/Kconfig
-+++ b/drivers/i2c/busses/Kconfig
-@@ -487,8 +487,8 @@ config I2C_BCM_KONA
- 
- config I2C_BRCMSTB
- 	tristate "BRCM Settop/DSL I2C controller"
--	depends on ARCH_BCM2835 || ARCH_BCM4908 || ARCH_BCMBCA || \
--		   ARCH_BRCMSTB || BMIPS_GENERIC || COMPILE_TEST
-+	depends on ARCH_BCM2835 || ARCH_BCMBCA || ARCH_BRCMSTB || \
-+		   BMIPS_GENERIC || COMPILE_TEST
- 	default y
- 	help
- 	  If you say yes to this option, support will be included for the
-diff --git a/drivers/mtd/parsers/Kconfig b/drivers/mtd/parsers/Kconfig
-index b43df73927a0..d6db655a1d24 100644
---- a/drivers/mtd/parsers/Kconfig
-+++ b/drivers/mtd/parsers/Kconfig
-@@ -69,8 +69,8 @@ config MTD_OF_PARTS
- 
- config MTD_OF_PARTS_BCM4908
- 	bool "BCM4908 partitioning support"
--	depends on MTD_OF_PARTS && (ARCH_BCM4908 || COMPILE_TEST)
--	default ARCH_BCM4908
-+	depends on MTD_OF_PARTS && (ARCH_BCMBCA || COMPILE_TEST)
-+	default ARCH_BCMBCA
- 	help
- 	  This provides partitions parser for BCM4908 family devices
- 	  that can have multiple "firmware" partitions. It takes care of
-@@ -78,7 +78,7 @@ config MTD_OF_PARTS_BCM4908
- 
- config MTD_OF_PARTS_LINKSYS_NS
- 	bool "Linksys Northstar partitioning support"
--	depends on MTD_OF_PARTS && (ARCH_BCM_5301X || ARCH_BCM4908 || COMPILE_TEST)
-+	depends on MTD_OF_PARTS && (ARCH_BCM_5301X || ARCH_BCMBCA || COMPILE_TEST)
- 	default ARCH_BCM_5301X
- 	help
- 	  This provides partitions parser for Linksys devices based on Broadcom
-diff --git a/drivers/net/ethernet/broadcom/Kconfig b/drivers/net/ethernet/broadcom/Kconfig
-index 56e0fb07aec7..f4e1ca68d831 100644
---- a/drivers/net/ethernet/broadcom/Kconfig
-+++ b/drivers/net/ethernet/broadcom/Kconfig
-@@ -53,8 +53,8 @@ config B44_PCI
- 
- config BCM4908_ENET
- 	tristate "Broadcom BCM4908 internal mac support"
--	depends on ARCH_BCM4908 || COMPILE_TEST
--	default y if ARCH_BCM4908
-+	depends on ARCH_BCMBCA || COMPILE_TEST
-+	default y if ARCH_BCMBCA
- 	help
- 	  This driver supports Ethernet controller integrated into Broadcom
- 	  BCM4908 family SoCs.
-diff --git a/drivers/pci/controller/Kconfig b/drivers/pci/controller/Kconfig
-index d1c5fcf00a8a..bfd9bac37e24 100644
---- a/drivers/pci/controller/Kconfig
-+++ b/drivers/pci/controller/Kconfig
-@@ -274,7 +274,7 @@ config VMD
- 
- config PCIE_BRCMSTB
- 	tristate "Broadcom Brcmstb PCIe host controller"
--	depends on ARCH_BRCMSTB || ARCH_BCM2835 || ARCH_BCM4908 || \
-+	depends on ARCH_BRCMSTB || ARCH_BCM2835 || ARCH_BCMBCA || \
- 		   BMIPS_GENERIC || COMPILE_TEST
- 	depends on OF
- 	depends on PCI_MSI_IRQ_DOMAIN
-diff --git a/drivers/phy/broadcom/Kconfig b/drivers/phy/broadcom/Kconfig
-index 93a6a8ee4716..1d89a2fd9b79 100644
---- a/drivers/phy/broadcom/Kconfig
-+++ b/drivers/phy/broadcom/Kconfig
-@@ -93,11 +93,11 @@ config PHY_BRCM_SATA
- 
- config PHY_BRCM_USB
- 	tristate "Broadcom STB USB PHY driver"
--	depends on ARCH_BCM4908 || ARCH_BRCMSTB || COMPILE_TEST
-+	depends on ARCH_BCMBCA || ARCH_BRCMSTB || COMPILE_TEST
- 	depends on OF
- 	select GENERIC_PHY
- 	select SOC_BRCMSTB if ARCH_BRCMSTB
--	default ARCH_BCM4908 || ARCH_BRCMSTB
-+	default ARCH_BCMBCA || ARCH_BRCMSTB
- 	help
- 	  Enable this to support the Broadcom STB USB PHY.
- 	  This driver is required by the USB XHCI, EHCI and OHCI
-diff --git a/drivers/pinctrl/bcm/Kconfig b/drivers/pinctrl/bcm/Kconfig
-index 8f4d89806fcb..35b51ce4298e 100644
---- a/drivers/pinctrl/bcm/Kconfig
-+++ b/drivers/pinctrl/bcm/Kconfig
-@@ -31,13 +31,13 @@ config PINCTRL_BCM2835
- 
- config PINCTRL_BCM4908
- 	tristate "Broadcom BCM4908 pinmux driver"
--	depends on OF && (ARCH_BCM4908 || COMPILE_TEST)
-+	depends on OF && (ARCH_BCMBCA || COMPILE_TEST)
- 	select PINMUX
- 	select PINCONF
- 	select GENERIC_PINCONF
- 	select GENERIC_PINCTRL_GROUPS
- 	select GENERIC_PINMUX_FUNCTIONS
--	default ARCH_BCM4908
-+	default ARCH_BCMBCA
- 	help
- 	  Driver for BCM4908 family SoCs with integrated pin controller.
- 
-diff --git a/drivers/reset/Kconfig b/drivers/reset/Kconfig
-index f9a7cee01659..7ae71535fe2a 100644
---- a/drivers/reset/Kconfig
-+++ b/drivers/reset/Kconfig
-@@ -201,7 +201,7 @@ config RESET_SCMI
- 
- config RESET_SIMPLE
- 	bool "Simple Reset Controller Driver" if COMPILE_TEST || EXPERT
--	default ARCH_ASPEED || ARCH_BCM4908 || ARCH_BITMAIN || ARCH_REALTEK || ARCH_STM32 || (ARCH_INTEL_SOCFPGA && ARM64) || ARCH_SUNXI || ARC
-+	default ARCH_ASPEED || ARCH_BCMBCA || ARCH_BITMAIN || ARCH_REALTEK || ARCH_STM32 || (ARCH_INTEL_SOCFPGA && ARM64) || ARCH_SUNXI || ARC
- 	help
- 	  This enables a simple reset controller driver for reset lines that
- 	  that can be asserted and deasserted by toggling bits in a contiguous,
-diff --git a/drivers/soc/bcm/bcm63xx/Kconfig b/drivers/soc/bcm/bcm63xx/Kconfig
-index 9e501c8ac5ce..355c34482076 100644
---- a/drivers/soc/bcm/bcm63xx/Kconfig
-+++ b/drivers/soc/bcm/bcm63xx/Kconfig
-@@ -13,8 +13,8 @@ endif # SOC_BCM63XX
- 
- config BCM_PMB
- 	bool "Broadcom PMB (Power Management Bus) driver"
--	depends on ARCH_BCM4908 || (COMPILE_TEST && OF)
--	default ARCH_BCM4908
-+	depends on ARCH_BCMBCA || (COMPILE_TEST && OF)
-+	default ARCH_BCMBCA
- 	select PM_GENERIC_DOMAINS if PM
- 	help
- 	  This enables support for the Broadcom's PMB (Power Management Bus) that
-diff --git a/drivers/tty/serial/Kconfig b/drivers/tty/serial/Kconfig
-index e3279544b03c..f32bb01c3feb 100644
---- a/drivers/tty/serial/Kconfig
-+++ b/drivers/tty/serial/Kconfig
-@@ -1100,8 +1100,8 @@ config SERIAL_TIMBERDALE
- config SERIAL_BCM63XX
- 	tristate "Broadcom BCM63xx/BCM33xx UART support"
- 	select SERIAL_CORE
--	depends on ARCH_BCM4908 || ARCH_BCMBCA || BCM63XX || BMIPS_GENERIC || COMPILE_TEST
--	default ARCH_BCM4908 || ARCH_BCMBCA || BCM63XX || BMIPS_GENERIC
-+	depends on ARCH_BCMBCA || BCM63XX || BMIPS_GENERIC || COMPILE_TEST
-+	default ARCH_BCMBCA || BCM63XX || BMIPS_GENERIC
- 	help
- 	  This enables the driver for the onchip UART core found on
- 	  the following chipsets:
-diff --git a/drivers/watchdog/Kconfig b/drivers/watchdog/Kconfig
-index 32fd37698932..1f85ec8a4b3b 100644
---- a/drivers/watchdog/Kconfig
-+++ b/drivers/watchdog/Kconfig
-@@ -1798,7 +1798,7 @@ config BCM7038_WDT
- 	tristate "BCM63xx/BCM7038 Watchdog"
- 	select WATCHDOG_CORE
- 	depends on HAS_IOMEM
--	depends on ARCH_BCM4908 || ARCH_BRCMSTB || BMIPS_GENERIC || BCM63XX || COMPILE_TEST
-+	depends on ARCH_BCMBCA || ARCH_BRCMSTB || BMIPS_GENERIC || BCM63XX || COMPILE_TEST
- 	help
- 	  Watchdog driver for the built-in hardware in Broadcom 7038 and
- 	  later SoCs used in set-top boxes.  BCM7038 was made public
--- 
-2.34.1
-
-
---00000000000046c62305e559f66d
-Content-Type: application/pkcs7-signature; name="smime.p7s"
-Content-Transfer-Encoding: base64
-Content-Disposition: attachment; filename="smime.p7s"
-Content-Description: S/MIME Cryptographic Signature
-
-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
-TltlrAeBKRJ1M9O/DY5v7L1Yrs//7XIRg/d2ZPAOSGBQzFYjYTFWwNBiR1s1zP0m2y56DPbS5gwj
-fqAN/I4PJHIvTh3zUgHXNKadYoYRiPHXfaTWO9UhzysOpQIDAQABo4IB2zCCAdcwDgYDVR0PAQH/
-BAQDAgWgMIGjBggrBgEFBQcBAQSBljCBkzBOBggrBgEFBQcwAoZCaHR0cDovL3NlY3VyZS5nbG9i
-YWxzaWduLmNvbS9jYWNlcnQvZ3NnY2NyM3BlcnNvbmFsc2lnbjJjYTIwMjAuY3J0MEEGCCsGAQUF
-BzABhjVodHRwOi8vb2NzcC5nbG9iYWxzaWduLmNvbS9nc2djY3IzcGVyc29uYWxzaWduMmNhMjAy
-MDBNBgNVHSAERjBEMEIGCisGAQQBoDIBKAowNDAyBggrBgEFBQcCARYmaHR0cHM6Ly93d3cuZ2xv
-YmFsc2lnbi5jb20vcmVwb3NpdG9yeS8wCQYDVR0TBAIwADBJBgNVHR8EQjBAMD6gPKA6hjhodHRw
-Oi8vY3JsLmdsb2JhbHNpZ24uY29tL2dzZ2NjcjNwZXJzb25hbHNpZ24yY2EyMDIwLmNybDAlBgNV
-HREEHjAcgRp3aWxsaWFtLnpoYW5nQGJyb2FkY29tLmNvbTATBgNVHSUEDDAKBggrBgEFBQcDBDAf
-BgNVHSMEGDAWgBSWM9HmWBdbNHWKgVZk1b5I3qGPzzAdBgNVHQ4EFgQUohM5GmNlGWe5wpzDxzIy
-+EgzbRswDQYJKoZIhvcNAQELBQADggEBACKu9JSQAYTlmC+JTniO/C/UcXGonATI/muBjWTxtkHc
-abZtz0uwzzrRrpV+mbHLGVFFeRbXSLvcEzqHp8VomXifEZlfsE9LajSehzaqhd+np+tmUPz1RlI/
-ibZ7vW+1VF18lfoL+wHs2H0fsG6JfoqZldEWYXASXnUrs0iTLgXxvwaQj69cSMuzfFm1X5kWqWCP
-W0KkR8025J0L5L4yXfkSO6psD/k4VcTsMJHLN4RfMuaXIT6EM0cNO6h3GypyTuPf1N1X+F6WQPKb
-1u+rvdML63P9fX7e7mwwGt5klRnf8aK2VU7mIdYCcrFHaKDTW3fkG6kIgrE1wWSgiZYL400xggJt
-MIICaQIBATBrMFsxCzAJBgNVBAYTAkJFMRkwFwYDVQQKExBHbG9iYWxTaWduIG52LXNhMTEwLwYD
-VQQDEyhHbG9iYWxTaWduIEdDQyBSMyBQZXJzb25hbFNpZ24gMiBDQSAyMDIwAgw28eX6TfvsbNfu
-SIMwDQYJYIZIAWUDBAIBBQCggdQwLwYJKoZIhvcNAQkEMSIEIHrq+h8RW0Pf2kMivQnjp2YjTzdG
-7kfGraoT83JDCRjgMBgGCSqGSIb3DQEJAzELBgkqhkiG9w0BBwEwHAYJKoZIhvcNAQkFMQ8XDTIy
-MDgwMzE3NTcxMFowaQYJKoZIhvcNAQkPMVwwWjALBglghkgBZQMEASowCwYJYIZIAWUDBAEWMAsG
-CWCGSAFlAwQBAjAKBggqhkiG9w0DBzALBgkqhkiG9w0BAQowCwYJKoZIhvcNAQEHMAsGCWCGSAFl
-AwQCATANBgkqhkiG9w0BAQEFAASCAQA7cOHyB2PiLGq/3ua4xPIWHvfWN//4idrG9xqWFl9wATVR
-hXZ3D5wvvg7uDiLvYUWKew6Fd60ZLIvc01nVkDt/SNunoFg9Y1t2o8B5bGa7iNhsbT0CZ39CUfEy
-YMU45HBvO4RMEP8hXh2Nv1xJujKYJmnD0faqsO0chUMFqHeU/ohdmvD49uLpP8seu88CyF8Za+r6
-Dpxh9eWwpTxQtttdlpU5uJBKfV+ggGtkc71rqqbPAhiIHa6L0fPBcrQjaWy8cfB3mg3/aFM5UwnZ
-jw0SPsy0V9vPGw7Mw+38H0db0au0E6qjKMbnSLBR1ZjhX+tebNJrw2j9kSGc54EDyNV8
---00000000000046c62305e559f66d--
-
-
---===============0492839795720799786==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============0492839795720799786==--
-
+T24gVHVlLCBBdWcgMiwgMjAyMiBhdCAyOjM5IFBNIE1hcmt1cyBSZWljaGwgPG0ucmVpY2hsQGZp
+dmV0ZWNobm8uZGU+IHdyb3RlOgo+Cj4gSGksCj4KPiB3aXRoIGxpbnV4LW5leHQtMjAyMjA3Mjgg
+cmszMzk5LXJvYy1wYyBkb2VzIG5vdCBib290Lgo+IEJpc2VjdGluZyBwb2ludGVkIHRvIHRoaXMg
+Y29tbWl0Lgo+IEJ5IHJldmVydGluZyB0aGlzIGNvbW1pdCB0aGUgYm9hcmQgYm9vdHMgYWdhaW4u
+CgpUaGFuayB5b3UgZm9yIHJlcG9ydGluZyB0aGlzLCBzb21lb25lIHdhcyBraW5kIGVub3VnaCB0
+byByZXByb2R1Y2UgdGhlCnByb2JsZW0gb24gdGhlIHJvY2twcm82NCBhbmQgY29uZmlybWVkIHRo
+aXMgaXMgYW4gaXNzdWUuIEFzIEkgd29uJ3QKaGF2ZSBhY2Nlc3MgdG8gbXkgaGFyZHdhcmUgdW50
+aWwgbmV4dCBtb250aCwgd2Ugc2hvdWxkIHByb2JhYmx5IHJldmVydAp0aGlzIHVudGlsIHRoZSBy
+b290IGNhdXNlIGNhbiBiZSBpZGVudGlmaWVkLgoKVmVyeSBSZXNwZWN0ZnVsbHksClBldGVyIEdl
+aXMKCj4KPiBbICAgIDIuMzk4NzAwXSBVbmFibGUgdG8gaGFuZGxlIGtlcm5lbCBOVUxMIHBvaW50
+ZXIgZGVyZWZlcmVuY2UgYXQgdmlydHVhbCBhZGRyZXNzCj4gMDAwMDAwMDAwMDAwMDAwOAo+IFsg
+ICAgMi4zOTk1MTddIE1lbSBhYm9ydCBpbmZvOgo+IFsgICAgMi4zOTk3NzJdICAgRVNSID0gMHgw
+MDAwMDAwMDk2MDAwMDA0Cj4gWyAgICAyLjQwMDExNF0gICBFQyA9IDB4MjU6IERBQlQgKGN1cnJl
+bnQgRUwpLCBJTCA9IDMyIGJpdHMKPiBbICAgIDIuNDAwNTk0XSAgIFNFVCA9IDAsIEZuViA9IDAK
+PiBbICAgIDIuNDAwODczXSAgIEVBID0gMCwgUzFQVFcgPSAwCj4gWyAgICAyLjQwMTE2MV0gICBG
+U0MgPSAweDA0OiBsZXZlbCAwIHRyYW5zbGF0aW9uIGZhdWx0Cj4gWyAgICAyLjQwMTYwMl0gRGF0
+YSBhYm9ydCBpbmZvOgo+IFsgICAgMi40MDE4NjRdICAgSVNWID0gMCwgSVNTID0gMHgwMDAwMDAw
+NAo+IFsgICAgMi40MDIyMTJdICAgQ00gPSAwLCBXblIgPSAwCj4gWyAgICAyLjQwMjQ4NF0gdXNl
+ciBwZ3RhYmxlOiA0ayBwYWdlcywgNDgtYml0IFZBcywgcGdkcD0wMDAwMDAwMDAxMzc2MDAwCj4g
+WyAgICAyLjQwMzA3MV0gWzAwMDAwMDAwMDAwMDAwMDhdIHBnZD0wMDAwMDAwMDAwMDAwMDAwLCBw
+NGQ9MDAwMDAwMDAwMDAwMDAwMAo+IFsgICAgMi40MDM2ODddIEludGVybmFsIGVycm9yOiBPb3Bz
+OiA5NjAwMDAwNCBbIzFdIFNNUAo+IFsgICAgMi40MDQxMzBdIE1vZHVsZXMgbGlua2VkIGluOiBp
+cF90YWJsZXMgeF90YWJsZXMgaXB2NiB4aGNpX3BsYXRfaGNkIHhoY2lfaGNkCj4gZHdjMyByb2Nr
+Y2hpcGRybSBkcm1fY21hX2hlbHBlciBhbmFsb2dpeF9kcCBkd19oZG1pIHJlYWx0ZWsgZHJtX2Rp
+c3BsYXlfaGVscGVyCj4gZHdjM19vZl9zaW1wbGUgZHdfbWlwaV9kc2kgZWhjaV9wbGF0Zm9ybSBv
+aGNpX3BsYXRmb3JtIG9oY2lfaGNkIGVoY2lfaGNkCj4gZHJtX2ttc19oZWxwZXIgZHdtYWNfcmsg
+c3lzY29weWFyZWEgc3lzZmlsbHJlY3Qgc3RtbWFjX3BsYXRmb3JtIHN5c2ltZ2JsdAo+IGZiX3N5
+c19mb3BzIHVzYmNvcmUgc3RtbWFjIHBjc194cGNzIGRybSBwaHlsaW5rIGRybV9wYW5lbF9vcmll
+bnRhdGlvbl9xdWlya3MKPiBbICAgIDIuNDA3MTU1XSBDUFU6IDQgUElEOiA3MSBDb21tOiBrd29y
+a2VyLzQ6NiBOb3QgdGFpbnRlZAo+IDUuMTkuMC1yYzgtbmV4dC0yMDIyMDcyOCAjNDM3Cj4gWyAg
+ICAyLjQwNzg2OF0gSGFyZHdhcmUgbmFtZTogRmlyZWZseSBST0MtUkszMzk5LVBDIE1lenphbmlu
+ZSBCb2FyZCAoRFQpCj4gWyAgICAyLjQwODQ0OF0gV29ya3F1ZXVlOiBldmVudHMgcm9ja2NoaXBf
+dXNiMnBoeV9vdGdfc21fd29yawo+IFsgICAgMi40MDg5NThdIHBzdGF0ZTogNjAwMDAwMDUgKG5a
+Q3YgZGFpZiAtUEFOIC1VQU8gLVRDTyAtRElUIC1TU0JTIEJUWVBFPS0tKQo+IFsgICAgMi40MTE2
+MzRdIHBjIDogcm9ja2NoaXBfdXNiMnBoeV9vdGdfc21fd29yaysweDUwLzB4MzMwCj4gWyAgICAy
+LjQxNDMzMl0gbHIgOiBwcm9jZXNzX29uZV93b3JrKzB4MWQ4LzB4MzgwCj4gWyAgICAyLjQxNjk0
+OF0gc3AgOiBmZmZmODAwMDA5MzczZDYwCj4gWyAgICAyLjQxOTQwNl0geDI5OiBmZmZmODAwMDA5
+MzczZDYwIHgyODogMDAwMDAwMDAwMDAwMDAwMCB4Mjc6IDAwMDAwMDAwMDAwMDAwMDAKPiBbICAg
+IDIuNDIyMTk5XSB4MjY6IGZmZmYwMDAwZjc3OWZjYjggeDI1OiBmZmZmMDAwMGY3N2EzYTA1IHgy
+NDogMDAwMDAwMDAwMDAwMDAwYwo+IFsgICAgMi40MjQ5NzhdIHgyMzogMDAwMDAwMDAwMDAwMDAw
+MCB4MjI6IGZmZmYwMDAwMDEwYzgyNTggeDIxOiBmZmZmODAwMDA4ODhlYzEwCj4gWyAgICAyLjQy
+Nzc2OF0geDIwOiBmZmZmMDAwMDAxMGM4MmYwIHgxOTogMDAwMDAwMDAwMDAwMDAwYyB4MTg6IDAw
+MDAwMDAwMDAwMDAwMDEKPiBbICAgIDIuNDMwNjA0XSB4MTc6IDAwMDAwMDA0MDA0NGZmZmYgeDE2
+OiAwMDQwMDAzNGI1NTAzNTEwIHgxNTogMDAwMDAwMDAwMDAwMDAwMAo+IFsgICAgMi40MzMzOTBd
+IHgxNDogZmZmZjAwMDAwMDcwODAwMCB4MTM6IGZmZmY4MDAwZWVjOTYwMDAgeDEyOiAwMDAwMDAw
+MDM0ZDRkOTFkCj4gWyAgICAyLjQzNjE4NV0geDExOiAwMDAwMDAwMDAwMDAwMDAwIHgxMDogMDAw
+MDAwMDAwMDAwMGExMCB4OSA6IGZmZmYwMDAwMDFhYTdhNzQKPiBbICAgIDIuNDM4OTU4XSB4OCA6
+IGZlZmVmZWZlZmVmZWZlZmYgeDcgOiAwMDAwMDAwMDAwMDAwMDE4IHg2IDogZmZmZjAwMDAwMWFh
+N2E3NAo+IFsgICAgMi40NDE2NjhdIHg1IDogMDAwMDczNzQ2ZTY1NzY2NSB4NCA6IDAwMDAwMDAw
+MDAwMDAwMmYgeDMgOiBmZmZmMDAwMDAzNTZjODA4Cj4gWyAgICAyLjQ0NDQwN10geDIgOiBmZmZm
+ODAwMDA5MzczZGE0IHgxIDogMDAwMDAwMDAwMDAwZTJhYyB4MCA6IGZmZmY4MDAwMDg4OGViMzQK
+PiBbICAgIDIuNDQ3MTkwXSBDYWxsIHRyYWNlOgo+IFsgICAgMi40NDk1NTddICByb2NrY2hpcF91
+c2IycGh5X290Z19zbV93b3JrKzB4NTAvMHgzMzAKPiBbICAgIDIuNDUyMTY5XSAgcHJvY2Vzc19v
+bmVfd29yaysweDFkOC8weDM4MAo+IFsgICAgMi40NTQ2ODRdICB3b3JrZXJfdGhyZWFkKzB4MTcw
+LzB4NGUwCj4gWyAgICAyLjQ1NzA1Nl0gIGt0aHJlYWQrMHhkOC8weGRjCj4gWyAgICAyLjQ1OTM1
+NF0gIHJldF9mcm9tX2ZvcmsrMHgxMC8weDIwCj4gWyAgICAyLjQ2MTcyOF0gQ29kZTogOTEwMzcw
+MTUgMjk1YmUwMDEgZjk0MDNjNzcgYjk0MGU0MTMgKGY5NDAwNmUwKQo+IFsgICAgMi40NjQzMzhd
+IC0tLVsgZW5kIHRyYWNlIDAwMDAwMDAwMDAwMDAwMDAgXS0tLQo+Cj4gQW0gMjIuMDYuMjIgdW0g
+MDI6MzEgc2NocmllYiBQZXRlciBHZWlzOgo+ID4gVGhlIGluaXRpYWwgb3RnIHN0YXRlIGZvciB0
+aGUgcGh5IGRlZmF1bHRzIHRvIGRldmljZSBtb2RlLiBUaGUgYWN0dWFsCj4gPiBzdGF0ZSBpc24n
+dCBkZXRlY3RlZCB1bnRpbCBhbiBJRCBJUlEgZmlyZXMuIEZpeCB0aGlzIGJ5IHN5bmNpbmcgdGhl
+IElECj4gPiBzdGF0ZSBkdXJpbmcgaW5pdGlhbGl6YXRpb24uCj4gPgo+ID4gRml4ZXM6IDUxYTli
+MmMwM2RkMyAoInBoeTogcm9ja2NoaXAtaW5uby11c2IyOiBIYW5kbGUgSUQgSVJRIikKPiA+IFNp
+Z25lZC1vZmYtYnk6IFBldGVyIEdlaXMgPHBnd2lwZW91dEBnbWFpbC5jb20+Cj4gPiAtLS0KPiA+
+ICAgZHJpdmVycy9waHkvcm9ja2NoaXAvcGh5LXJvY2tjaGlwLWlubm8tdXNiMi5jIHwgNiArKysr
+KysKPiA+ICAgMSBmaWxlIGNoYW5nZWQsIDYgaW5zZXJ0aW9ucygrKQo+ID4KPiA+IGRpZmYgLS1n
+aXQgYS9kcml2ZXJzL3BoeS9yb2NrY2hpcC9waHktcm9ja2NoaXAtaW5uby11c2IyLmMgYi9kcml2
+ZXJzL3BoeS9yb2NrY2hpcC9waHktcm9ja2NoaXAtaW5uby11c2IyLmMKPiA+IGluZGV4IDY3MTE2
+NTlmNzI3Yy4uNmU0NDA2OTYxN2RmIDEwMDY0NAo+ID4gLS0tIGEvZHJpdmVycy9waHkvcm9ja2No
+aXAvcGh5LXJvY2tjaGlwLWlubm8tdXNiMi5jCj4gPiArKysgYi9kcml2ZXJzL3BoeS9yb2NrY2hp
+cC9waHktcm9ja2NoaXAtaW5uby11c2IyLmMKPiA+IEBAIC0xMTYyLDYgKzExNjIsMTIgQEAgc3Rh
+dGljIGludCByb2NrY2hpcF91c2IycGh5X290Z19wb3J0X2luaXQoc3RydWN0IHJvY2tjaGlwX3Vz
+YjJwaHkgKnJwaHksCj4gPiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIEVY
+VENPTl9VU0JfSE9TVCwgJnJwb3J0LT5ldmVudF9uYik7Cj4gPiAgICAgICAgICAgICAgIGlmIChy
+ZXQpCj4gPiAgICAgICAgICAgICAgICAgICAgICAgZGV2X2VycihycGh5LT5kZXYsICJyZWdpc3Rl
+ciBVU0IgSE9TVCBub3RpZmllciBmYWlsZWRcbiIpOwo+ID4gKwo+ID4gKyAgICAgICAgICAgICBp
+ZiAoIW9mX3Byb3BlcnR5X3JlYWRfYm9vbChycGh5LT5kZXYtPm9mX25vZGUsICJleHRjb24iKSkg
+ewo+ID4gKyAgICAgICAgICAgICAgICAgICAgIC8qIGRvIGluaXRpYWwgc3luYyBvZiB1c2Igc3Rh
+dGUgKi8KPiA+ICsgICAgICAgICAgICAgICAgICAgICByZXQgPSBwcm9wZXJ0eV9lbmFibGVkKHJw
+aHktPmdyZiwgJnJwb3J0LT5wb3J0X2NmZy0+dXRtaV9pZCk7Cj4gPiArICAgICAgICAgICAgICAg
+ICAgICAgZXh0Y29uX3NldF9zdGF0ZV9zeW5jKHJwaHktPmVkZXYsIEVYVENPTl9VU0JfSE9TVCwg
+IXJldCk7Cj4gPiArICAgICAgICAgICAgIH0KPiA+ICAgICAgIH0KPiA+Cj4gPiAgIG91dDoKPgo+
+IEdydcOfLAo+IC0tCj4gTWFya3VzIFJlaWNobAoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QK
+bGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3Jn
+L21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
