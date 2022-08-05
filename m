@@ -4,84 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7B5F2C00140
-	for <linux-phy@archiver.kernel.org>; Fri,  5 Aug 2022 06:53:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7D20BC00140
+	for <linux-phy@archiver.kernel.org>; Fri,  5 Aug 2022 14:09:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:
+	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=r9AtSYSB0R5n9+w/7korkDG27X5Qe3TDCx2c7XFjp10=; b=pdN4CqosDl9md6
-	HMK+gULXjsNlNJpmJdKoZUIDkbxWAS1K8Vq7Z1+hYUz4vWW2hm994tb4k2zZdpbGR1J+tLUc/tjcR
-	lRD+UKfkG+RM01+6z4IpK3EFv0UD9urPxN8VKrB6Nd/UCr5gvZGdeZnrdz+qZi0fqbH68aw1ZUvxd
-	gG5TJKYJGG5i5vWPBWj+vKcocwZZuNQri/vyN7QkQ0YFlfTh57qejzDwQ1gg7AMGhr6i0tnTNNar4
-	xK86LaqQvnWb1r38FIRmoM+qS+P1icGaTSDoy7+2pXzowWIFa1zyLYr+mAmfjLyulB6pvtv6taD1h
-	xBghAe6FBaEXZCJEVJMQ==;
+	List-Owner; bh=oX+gJwKYSrno44b4LxVTlpY+MgsSbWgxuwSS2i+/Rfw=; b=QUWO2U5BMQwnx8
+	Tpg3YK//ChZObTgBRO1XstoZ2+10Ldm3WrdBGdQUqNXHRxt31YYlHl+XvxX51uJsYWLY+8rQS7+cI
+	8cDQPF8BKPkCXKu4HHTFfYy7UvBzxXQv98aVxM7LZho3rPGTPxyz2QG+oSexpvp0RnpYf/GKzOCkk
+	sADtiVV8VntSo+CkpFLZ8+XGlAJ/zFgZmv4EKuXsy3IMP3leAIVmlRlk3HslNqjub6CszyIqEuJYQ
+	14aiKF7/hLNLqOSxmDKuoPSImvP5XYvVgUGFeqgqUOkYFkg25GQAhrdH084bhRdjscmN8FiHhwRwj
+	tGwf/9pLsuPNP9vdEjmA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oJrDL-00CZvY-Lh; Fri, 05 Aug 2022 06:53:43 +0000
-Received: from mail-lf1-x129.google.com ([2a00:1450:4864:20::129])
+	id 1oJy1W-00Fiv4-H2; Fri, 05 Aug 2022 14:09:58 +0000
+Received: from mail-il1-f172.google.com ([209.85.166.172])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oJrD6-00CZnI-An
-	for linux-phy@lists.infradead.org; Fri, 05 Aug 2022 06:53:29 +0000
-Received: by mail-lf1-x129.google.com with SMTP id bq11so2169377lfb.5
-        for <linux-phy@lists.infradead.org>; Thu, 04 Aug 2022 23:53:27 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=message-id:date:mime-version:user-agent:subject:content-language:to
-         :cc:references:from:in-reply-to:content-transfer-encoding;
-        bh=svGbdJtoA42vxhMw0xl6uJ/CKt4Zq7+usPD0U/PNy5Q=;
-        b=fcizwj7UD0ZDd1mZ0oDmsurKWnpaQ6W8uIjVJaOD0QvmsghpTV2mhyjgilSZfV3gfp
-         VKxKifhMNxIxkv84hkBVE/pSxJMeMj+KoWkFL2y+KDM6m2ZZWeC9sJYVxT6Eo7Xe5I1W
-         iV/F1O2wQ9eUQTVwfppVzZa0FHW+OxPbQV5/ji8lTUwWD3fxaFyFZOx4kNeQCte4KSj8
-         xKOGnH+sqff7E8e7Pb1UHtsuYRJl+IYJZbr6Ce0PeJiLzh1nHgmWeMbzZFyduUJFdbcX
-         GB7zxiqDzQ0zakdY5rGcgEwK7b7VDGioVCMp2950fn0J5lmPnn7nh8gr6S99j3QHei4p
-         vsYg==
+	id 1oJy1S-00Fisd-G3; Fri, 05 Aug 2022 14:09:56 +0000
+Received: by mail-il1-f172.google.com with SMTP id t15so1417029ilm.7;
+        Fri, 05 Aug 2022 07:09:53 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
-         :content-language:to:cc:references:from:in-reply-to
-         :content-transfer-encoding;
-        bh=svGbdJtoA42vxhMw0xl6uJ/CKt4Zq7+usPD0U/PNy5Q=;
-        b=MgdeqGVBPdhXG+ib/mma2ef4PUZEWvimMoZ5TQe26M5hI5IiyBug+I1sXdrxhCSxZ6
-         V5Glh/1k3vPf0YAYVN1g7+XXYjR6zgowHZFir4996JaTPvD0VV70xAh4zSTXWKMCuK9w
-         p+r3kU1w3E1YxYdhb9PdgreQMxnrKV77zFptz/Y/772snTDobnUolWlcqox1sBvWRZH8
-         zx4YGQDe1XOHf7G0/se5uAf28rzlLzXjAW+u7TcEzSnNrwn2Km55LZPWomFrhIuTAmbe
-         O2NSTJzzBTw1MwlLaLZ1Wmmyxe5RQOyKGRfXiXEobVsjVDTfAf1k7TO6hHybB42h1N5P
-         u9lw==
-X-Gm-Message-State: ACgBeo0ywmDZ2Z7/O2HwjbbWCEcXahDQEdscQHLoeltHFudoYA+4cEop
-	zUGdo7q9EBvcXd75k1DNIatEPg==
-X-Google-Smtp-Source: AA6agR5PP/ENG7yXEHTvyafw/XQB2vIAh7cCSieTd83vPiy91LJfZPa5YrNOmaUMVOVwlr0V6qymXg==
-X-Received: by 2002:a05:6512:230b:b0:48a:7c11:664d with SMTP id o11-20020a056512230b00b0048a7c11664dmr2034885lfu.390.1659682405752;
-        Thu, 04 Aug 2022 23:53:25 -0700 (PDT)
-Received: from [192.168.1.6] ([77.222.167.48])
-        by smtp.gmail.com with ESMTPSA id z16-20020a2e9650000000b0025dd6c8933csm362348ljh.114.2022.08.04.23.53.22
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 04 Aug 2022 23:53:23 -0700 (PDT)
-Message-ID: <bee3d724-1efb-d5c7-6698-c98a198e69fd@linaro.org>
-Date: Fri, 5 Aug 2022 08:53:21 +0200
-MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.12.0
-Subject: Re: [PATCH v4 3/8] dt-bindings: clock: Add ids for Lynx 10g PLLs
-Content-Language: en-US
-To: Sean Anderson <sean.anderson@seco.com>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@ti.com>, linux-phy@lists.infradead.org
-Cc: devicetree@vger.kernel.org, Madalin Bucur <madalin.bucur@nxp.com>,
- Camelia Alexandra Groza <camelia.groza@nxp.com>,
- linuxppc-dev@lists.ozlabs.org, Rob Herring <robh+dt@kernel.org>,
- linux-arm-kernel@lists.infradead.org, Ioana Ciornei <ioana.ciornei@nxp.com>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
- <sboyd@kernel.org>, linux-clk@vger.kernel.org
-References: <20220804220602.477589-1-sean.anderson@seco.com>
- <20220804220602.477589-4-sean.anderson@seco.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20220804220602.477589-4-sean.anderson@seco.com>
+        h=message-id:date:subject:references:in-reply-to:cc:to:from
+         :x-gm-message-state:from:to:cc;
+        bh=4wU29egtLMNG+tGI0yk/oLxzbleDgRoflVboG4WD0GM=;
+        b=h6OhITkZ82ghNuVorDvez820pmCdQvej2j73dXsJS6FtJSz4fbBezgdkrPl7hE2MfH
+         9ExexkL6o4DohkS82bWvoX/vdJ7OTsxiTgJNt1HoMsz1eMC5uf8QyLnVO1eX3AHd/o/w
+         gnR1Iwhr5qfUNvSJ2q2rltdN6g55RuewHj7p4Wfd+rr9xeJDZ05k0vf7O27ZMl4Jdroi
+         AhKGevAfFde/MdSJEMjPNpl5KFh3W+Lj65mvev+IhbPorc+G3UQrosXy0h/t/6LzgTY7
+         osH+JLavai8XwbHwKHjtIXOVj53kPqcOYwOXY61R+OXlHxtrjwz+UT3THg++DGXmzzMY
+         VlFg==
+X-Gm-Message-State: ACgBeo0M79yFNxnQY9Pwo3I2EDQ5l2rbNFlH9d5nEbMMhZXCylFQyMf/
+	HA4pAg0RX82Fp7mwdm6eDEy4T6qk0A==
+X-Google-Smtp-Source: AA6agR5/LQJibOTqVIimFgDhK095NQ+fg7nigus3m4Dfff2GNYlsUbKl8lciS3gMG3znsPQfY2wOsg==
+X-Received: by 2002:a05:6e02:1a87:b0:2de:8da2:9ecf with SMTP id k7-20020a056e021a8700b002de8da29ecfmr3104073ilv.263.1659708593198;
+        Fri, 05 Aug 2022 07:09:53 -0700 (PDT)
+Received: from robh.at.kernel.org ([64.188.179.248])
+        by smtp.gmail.com with ESMTPSA id s17-20020a92cc11000000b002ddf58d8828sm1687134ilp.19.2022.08.05.07.09.51
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 05 Aug 2022 07:09:52 -0700 (PDT)
+Received: (nullmailer pid 1802483 invoked by uid 1000);
+	Fri, 05 Aug 2022 14:09:50 -0000
+From: Rob Herring <robh@kernel.org>
+To: Sean Anderson <sean.anderson@seco.com>
+Cc: Kishon Vijay Abraham I <kishon@ti.com>, Ioana Ciornei <ioana.ciornei@nxp.com>, linux-phy@lists.infradead.org, Camelia Alexandra Groza <camelia.groza@nxp.com>, Madalin Bucur <madalin.bucur@nxp.com>, Vinod Koul <vkoul@kernel.org>, linuxppc-dev@lists.ozlabs.org, Rob Herring <robh+dt@kernel.org>, Stephen Boyd <sboyd@kernel.org>, devicetree@vger.kernel.org, linux-clk@vger.kernel.org, Michael Turquette <mturquette@baylibre.com>, linux-arm-kernel@lists.infradead.org, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
+In-Reply-To: <20220804220602.477589-3-sean.anderson@seco.com>
+References: <20220804220602.477589-1-sean.anderson@seco.com> <20220804220602.477589-3-sean.anderson@seco.com>
+Subject: Re: [PATCH v4 2/8] dt-bindings: phy: Add Lynx 10G phy binding
+Date: Fri, 05 Aug 2022 08:09:50 -0600
+Message-Id: <1659708590.965354.1802482.nullmailer@robh.at.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220804_235328_424884_B7E066EA 
-X-CRM114-Status: GOOD (  17.85  )
+X-CRM114-CacheID: sfid-20220805_070954_591723_B6907444 
+X-CRM114-Status: GOOD (  24.87  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,62 +70,88 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 05/08/2022 00:05, Sean Anderson wrote:
-> This adds ids for the Lynx 10g SerDes's internal PLLs. These may be used
-> witn assigned-clock* to specify a particular frequency to use.
+On Thu, 04 Aug 2022 18:05:56 -0400, Sean Anderson wrote:
+> This adds a binding for the SerDes module found on QorIQ processors.
+> Each phy is a subnode of the top-level device, possibly supporting
+> multiple lanes and protocols. This "thick" #phy-cells is used due to
+> allow for better organization of parameters. Note that the particular
+> parameters necessary to select a protocol-controller/lane combination
+> vary across different SoCs, and even within different SerDes on the same
+> SoC.
+> 
+> The driver is designed to be able to completely reconfigure lanes at
+> runtime. Generally, the phy consumer can select the appropriate
+> protocol using set_mode.
+> 
+> There are two PLLs, each of which can be used as the master clock for
+> each lane. Each PLL has its own reference. For the moment they are
+> required, because it simplifies the driver implementation. Absent
+> reference clocks can be modeled by a fixed-clock with a rate of 0.
 > 
 > Signed-off-by: Sean Anderson <sean.anderson@seco.com>
 > ---
 > 
 > Changes in v4:
-> - New
+> - Use subnodes to describe lane configuration, instead of describing
+>   PCCRs. This is the same style used by phy-cadence-sierra et al.
 > 
->  include/dt-bindings/clock/fsl,lynx-10g.h | 14 ++++++++++++++
->  1 file changed, 14 insertions(+)
->  create mode 100644 include/dt-bindings/clock/fsl,lynx-10g.h
+> Changes in v3:
+> - Manually expand yaml references
+> - Add mode configuration to device tree
 > 
-> diff --git a/include/dt-bindings/clock/fsl,lynx-10g.h b/include/dt-bindings/clock/fsl,lynx-10g.h
-> new file mode 100644
-> index 000000000000..f5b955658106
-> --- /dev/null
-> +++ b/include/dt-bindings/clock/fsl,lynx-10g.h
-> @@ -0,0 +1,14 @@
-> +/* SPDX-License-Identifier: GPL-2.0-only */
+> Changes in v2:
+> - Rename to fsl,lynx-10g.yaml
+> - Refer to the device in the documentation, rather than the binding
+> - Move compatible first
+> - Document phy cells in the description
+> - Allow a value of 1 for phy-cells. This allows for compatibility with
+>   the similar (but according to Ioana Ciornei different enough) lynx-28g
+>   binding.
+> - Remove minItems
+> - Use list for clock-names
+> - Fix example binding having too many cells in regs
+> - Add #clock-cells. This will allow using assigned-clocks* to configure
+>   the PLLs.
+> - Document the structure of the compatible strings
+> 
+>  .../devicetree/bindings/phy/fsl,lynx-10g.yaml | 236 ++++++++++++++++++
+>  1 file changed, 236 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/fsl,lynx-10g.yaml
+> 
 
-This should be dual license.
+My bot found errors running 'make DT_CHECKER_FLAGS=-m dt_binding_check'
+on your patch (DT_CHECKER_FLAGS is new in v5.13):
 
-> +/*
-> + * Copyright (C) 2022 Sean Anderson <sean.anderson@seco.com>
+yamllint warnings/errors:
 
-It's confusing to see personal copyrights with company email. Either the
-copyright is attributed to your employer or to you. If to you, use
-private email.
+dtschema/dtc warnings/errors:
+Error: Documentation/devicetree/bindings/phy/fsl,lynx-10g.example.dts:51.27-28 syntax error
+FATAL ERROR: Unable to parse input tree
+make[1]: *** [scripts/Makefile.lib:383: Documentation/devicetree/bindings/phy/fsl,lynx-10g.example.dtb] Error 1
+make[1]: *** Waiting for unfinished jobs....
+make: *** [Makefile:1404: dt_binding_check] Error 2
 
-> + */
-> +
-> +#ifndef __DT_BINDINGS_CLK_LYNX_10G_H
-> +#define __DT_BINDINGS_CLK_LYNX_10G_H
-> +
-> +#define LYNX10G_CLKS_PER_PLL 2
-> +
-> +#define LYNX10G_PLLa(a)		((a) * LYNX10G_CLKS_PER_PLL)
-> +#define LYNX10G_PLLa_EX_DLY(a)	((a) * LYNX10G_CLKS_PER_PLL + 1)
+doc reference errors (make refcheckdocs):
 
-These do not look like proper IDs for clocks for bindings. Numbering
-starts from 0 or 1 and any "a" needs to be clearly explained. What do
-you bind here?
+See https://patchwork.ozlabs.org/patch/
 
-> +
-> +#endif /* __DT_BINDINGS_CLK_LYNX_10G_H */
+This check can fail if there are any dependencies. The base for a patch
+series is generally the most recent rc1.
 
+If you already ran 'make dt_binding_check' and didn't see the above
+error(s), then make sure 'yamllint' is installed and dt-schema is up to
+date:
 
-Best regards,
-Krzysztof
+pip3 install dtschema --upgrade
+
+Please check and re-submit.
+
 
 -- 
 linux-phy mailing list
