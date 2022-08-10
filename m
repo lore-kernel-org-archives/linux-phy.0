@@ -4,60 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E56A2C25B07
-	for <linux-phy@archiver.kernel.org>; Wed, 10 Aug 2022 04:05:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F3B3BC19F2A
+	for <linux-phy@archiver.kernel.org>; Wed, 10 Aug 2022 04:05:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=yqNnpRPDRrjUFIMfdXg9anRhJkp0eaBkkYMGoT0Xh0A=; b=spnvY/+2QpSCNP
-	6e4gv7RXgfGUzHQ6Ni4R8cdjboQL6kfpAhc2eOf9zLzrfywbMUa4wl0SVtjlOU77VYIpRBReR09jy
-	uOQedS9qWG6EyZqfCOSDFGwkejI13LZQE0x71wyI6q6S7X0Ei+Bw99JLyrz8lGNsWv49wKOV4vOOZ
-	QgUWS85Nno6ivwVKxXRNUC1IfyjZil6tYHAlgr3sOP84+jrD2drUeTyAkQN3az8VGGzrlb6SVCv6u
-	0HAvzdQXlc5x7G1jcS4voFf1AiUv24VDWJCaBwaMFQy4hDq6YQQUUCmhO9EVO5W/2ctBX6xVvfMhg
-	Gb2j7WLnLMJMdRzK7STg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=eTnpgC989pDzv4KhcvS7WVe4XlBfXdj9QEjwELqOJ2Q=; b=iwUy8lFa/FpPEM
+	KbqGLi8fWT7pxBSDjlZwFVZsDgr1p7qulshm71+mahdyVRsMQNRroi7jP8cXxxDqQ4Z4tzyqvSNKU
+	PeM6iLYXCVKcuHHvVrktBOA6CXUYflEVQr1HBzUqtrj6Pt7ZnVbE+hoCbEkqw7gTbZ7R1VWWqwjeo
+	6NGdtOlvsP4fA2j1ZNrmHiXokKoiUhUem8Zx6cCeB50dVLiWt+uML12WJOeOf3lZpWfrZxBTFhsRI
+	jx+GMpSSDeDFL2GyLCRMNpBCgLy4QLSRFKa/Ya7sXOGUljkBOr+R2g7/ST3bJoFQB3rQcQCDwr2jD
+	L6+lzLau8ClDIudVYWaA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oLcy0-0090RW-05; Wed, 10 Aug 2022 04:05:12 +0000
-Received: from mail-oa1-x29.google.com ([2001:4860:4864:20::29])
+	id 1oLcy2-0090TT-89; Wed, 10 Aug 2022 04:05:14 +0000
+Received: from mail-oi1-x234.google.com ([2607:f8b0:4864:20::234])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oLcxx-0090Ok-H9
-	for linux-phy@lists.infradead.org; Wed, 10 Aug 2022 04:05:11 +0000
-Received: by mail-oa1-x29.google.com with SMTP id 586e51a60fabf-10ea7d8fbf7so16423666fac.7
-        for <linux-phy@lists.infradead.org>; Tue, 09 Aug 2022 21:05:08 -0700 (PDT)
+	id 1oLcxy-0090P7-7v
+	for linux-phy@lists.infradead.org; Wed, 10 Aug 2022 04:05:12 +0000
+Received: by mail-oi1-x234.google.com with SMTP id q184so16327188oif.1
+        for <linux-phy@lists.infradead.org>; Tue, 09 Aug 2022 21:05:09 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc;
-        bh=Vlw+TzWyPgd12y2oMgL4R4HJ50qc9vxXJ8xI2NT6Tgg=;
-        b=Mk4YfbNfP4qekf3kspd/n/RA9L1SskyD7kfFxDIvLgVsj2TsbRdfY9nGNc329hUhxM
-         eA770fwsJI+gDIGmLiCNVDI4QiLq09juBYN2Gg0yQaLti5RIWuYKIGRXUn5nzqhhEKp0
-         eVvmNbyWIknpUporgF1/3gI8g2AxZuGpSNmrdn+DXZTjKC/D3HpET2yvcNmjLeYHVtn8
-         0LOA6D4zDQxKayH5LiH56wboTQcGwYtKG+Wkmlf603G8zHCfU2Om2CggUrEGDE3ubMdY
-         PJq7XIh/n7nrB5ke+cEDQ5/FhTlIzlV82aEOzs01o11XKmdRyhXUrSu8tUvhsX/dO4v/
-         TOYg==
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc;
+        bh=xXPgGKwOMrjLyfAADDT/AWNmata1kzLm9fIfAkbzbZM=;
+        b=qAnvnfMMVZYcYHicgKM2AGxF/A7jQubJZ6OJJyF+JPog16lBXI23vNPbgCFoIjKV9N
+         4Cl/caJ3ga3MMWImjVlfrBNE8AEqNX02w0KwFtjyw4Rrgae2O5ZYXPbmBrXdF8XnzEAE
+         E0LxPqYNeTJzuB3GSYudPHfnbXJsZRn8lG/wbs6UULyAws2d86RCR5AXgFZlLeF9RIhS
+         ikZ0EteS7pAtqISbDgBtNFnni6qVbdq0Susrw5VKR/C6GjhC/xRrmpLd9VN6OIN5YkVl
+         MXx8lDHSnvhZnm3MZiY7XwR7XrdxEiAzg14WB6XXdJba5dCGiAx7OTqQcWKqntya0X5Y
+         XT1g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc;
-        bh=Vlw+TzWyPgd12y2oMgL4R4HJ50qc9vxXJ8xI2NT6Tgg=;
-        b=kF/O88juqUhEeKnCLlci6IlAnmjznv5cLWZRgQHcd8x4Ia3JJ1AGK/a3N4jDYZsw8S
-         DuKt+ixgS4KEp2r7On5uM8ZR4AS5pCMvf9NfJ/LyUlQOvzuXflX+NiYSAlmfB05M0bso
-         UeOnBU5XwbMYUCvxNgQxUQqo1nrIZBZWXJYW07CVqpJC6ERFpqjZxUXInww74q0I4sBe
-         4Cj8NJrfo5KeuxdMGG7bH2/t/+C9H7q/SiXG9GVFmXvFibgO9H/bZwqdR0f0sljo9mQy
-         rv7SzuSVfAXotlDwTUQD6z66EK5PtE9u/85athArTSJ1pK/Wri9uehFsc1WVzl3Ir4bq
-         QPcA==
-X-Gm-Message-State: ACgBeo2dfcIKphYFxOhqoJHCiE4KR7tUHz8vgUrKBAj7aNEz85Ly03Ps
-	j28qmxHtmZ8E9UvEYmX5zQizvw==
-X-Google-Smtp-Source: AA6agR4LektJYrndrjLttwdRSjj4K+7Ffy786YpK2tM5CGpnIvHPzcP5IYgpUzjroGVsdFZZ8NUYCg==
-X-Received: by 2002:a05:6870:f203:b0:108:4a52:da42 with SMTP id t3-20020a056870f20300b001084a52da42mr663381oao.59.1660104307980;
-        Tue, 09 Aug 2022 21:05:07 -0700 (PDT)
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc;
+        bh=xXPgGKwOMrjLyfAADDT/AWNmata1kzLm9fIfAkbzbZM=;
+        b=mQyKxH+4bII+oPiRgfeoWQQ/v8lb3UDgb81ZiIJE0V/gZ4Kp+DUjX2w6er/HxH0vwb
+         O4//RVd7iB4P5B7NobindMyZZHg8h5bgUxZOEqpt6QQZYhfJ+2b4njr5oSQSMj6VwL4U
+         g7gRP+xyJGbS6pyLWxesuVjf3h1mV6scIWuHxm3DiY1X5WFQXOV0CKgLSeWIvYe7UUd9
+         sSt+KyQlT0fWjd/S1bYSwMoed1BkrEzuoc5Ryz1Ct+DkOAH08pescXh/8QYHZ/kLexXA
+         1gnvEem8YF6KKvZ9aQLL92iUP3YS1gtjGC1cwf5SP+IKKQaG33QTpF2YW2uthrsTaY0y
+         OuEw==
+X-Gm-Message-State: ACgBeo13QjIKxRMKk8xSz8G4QNBPiI/DXQQcOTAb9VldWY97jBbQ1P/K
+	LLxpRZiLCQuBbEGNICI/b1I6pQ==
+X-Google-Smtp-Source: AA6agR5RykGQceERY8ctKnJAYF2cVcM8MVRZuZecMttZYm7qy2ENEgWrTeNpmoGCS32W7HWPfwivPQ==
+X-Received: by 2002:a05:6808:190f:b0:343:2fbd:9b62 with SMTP id bf15-20020a056808190f00b003432fbd9b62mr392751oib.176.1660104309089;
+        Tue, 09 Aug 2022 21:05:09 -0700 (PDT)
 Received: from ripper.. (104-57-184-186.lightspeed.austtx.sbcglobal.net. [104.57.184.186])
-        by smtp.gmail.com with ESMTPSA id q6-20020a056830440600b00616dfd2c859sm449027otv.59.2022.08.09.21.05.07
+        by smtp.gmail.com with ESMTPSA id q6-20020a056830440600b00616dfd2c859sm449027otv.59.2022.08.09.21.05.08
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 09 Aug 2022 21:05:07 -0700 (PDT)
+        Tue, 09 Aug 2022 21:05:08 -0700 (PDT)
 From: Bjorn Andersson <bjorn.andersson@linaro.org>
 To: Kishon Vijay Abraham I <kishon@ti.com>,
 	Vinod Koul <vkoul@kernel.org>,
@@ -67,14 +67,16 @@ Cc: linux-arm-msm@vger.kernel.org,
 	linux-phy@lists.infradead.org,
 	devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH 0/5] phy: qcom: edp: Introduce SC8280XP support
-Date: Tue,  9 Aug 2022 21:07:40 -0700
-Message-Id: <20220810040745.3582985-1-bjorn.andersson@linaro.org>
+Subject: [PATCH 1/5] dt-bindings: phy: qcom-edp: Add SC8280XP PHY compatibles
+Date: Tue,  9 Aug 2022 21:07:41 -0700
+Message-Id: <20220810040745.3582985-2-bjorn.andersson@linaro.org>
 X-Mailer: git-send-email 2.35.1
+In-Reply-To: <20220810040745.3582985-1-bjorn.andersson@linaro.org>
+References: <20220810040745.3582985-1-bjorn.andersson@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220809_210509_619183_BBE13F7D 
-X-CRM114-Status: UNSURE (   6.26  )
+X-CRM114-CacheID: sfid-20220809_210510_295791_134BF539 
+X-CRM114-Status: UNSURE (   8.51  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -92,19 +94,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-What the subject says.
+The Qualcomm SC8280XP platform has both eDP and DP PHYs, add compatibles
+for these.
 
-Bjorn Andersson (5):
-  dt-bindings: phy: qcom-edp: Add SC8280XP PHY compatibles
-  phy: qcom: edp: Generate unique clock names
-  phy: qcom: edp: Perform lane configuration
-  phy: qcom: edp: Introduce support for DisplayPort
-  phy: qcom: edp: Add SC8280XP eDP and DP PHYs
+Signed-off-by: Bjorn Andersson <bjorn.andersson@linaro.org>
+---
+ Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml | 2 ++
+ 1 file changed, 2 insertions(+)
 
- .../devicetree/bindings/phy/qcom,edp-phy.yaml |   2 +
- drivers/phy/qualcomm/phy-qcom-edp.c           | 193 +++++++++++++++++-
- 2 files changed, 184 insertions(+), 11 deletions(-)
-
+diff --git a/Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml
+index cf9e9b8011cb..1e104ae76ee6 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml
+@@ -19,6 +19,8 @@ properties:
+     enum:
+       - qcom,sc7280-edp-phy
+       - qcom,sc8180x-edp-phy
++      - qcom,sc8280xp-dp-phy
++      - qcom,sc8280xp-edp-phy
+ 
+   reg:
+     items:
 -- 
 2.35.1
 
