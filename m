@@ -4,100 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 064EBC25B0F
-	for <linux-phy@archiver.kernel.org>; Fri, 12 Aug 2022 08:04:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8C695C00140
+	for <linux-phy@archiver.kernel.org>; Fri, 12 Aug 2022 08:21:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7TQRmFVqSRdzwzs889eP87OSlSKEuIBsPnHJSHnpujU=; b=SbV94X1bFNFEp/
-	HIN0SUmfPUUm9ZI1nwIPNVd4dok/VQWu8mGqdYv+Tkvp+ejNe8vGwd8I+eZc5OlPizP6Eay53o/Pt
-	ZoRUL/RVhIeVtjJ5dZOw853AuqrIrP3ogYZ002laPkB49hynSbKSRA+BmPhMWte3kA1+IZuUQaNVG
-	XP3xCwNGBNBZL45d7Zhhm1nZBKUv5ooss/GBbJsB0u5RHk2kwYEnU07GGBoGQIhyK7okF21l6HNol
-	mgRLNpSv5qmPZwrB/evujxHf7IPQTPyX06y48YOAoP52u2ptV75ZwZp6vQ6W5Us4+jwbk2rxDHlE3
-	iOQUpo27JnLT9Xzhgvgw==;
+	List-Owner; bh=RKgE5gWS9AmdN8s16IMBFo/g8XKy1yOcjeeqon7gOJE=; b=Z+r/IQudXhy3fB
+	/6oN/JeCIiekX6fiD2PR2z7sAXe3RzRkUs6xbkgjrvlxUa3vyOUUGswqyBKK8G0uypJfgYGTvzeZH
+	ohTJnPh5izA8l3Gv/7JOnuuBxyWC1U28SApuBBB6pz2g2/sxdDoqYKXVCJ9nzKnO1ti4V82JXy9Hz
+	MLqcqv8JygwG0Jq7PY05WFWHG7/382pBR10K2vNwbnxAvwkaakd2ns41iPCv+BpK2v/sOr3ftHeBw
+	8DedjswTlXVVPEKoBU9iRZtHdh3iffKn3i+fE3WfA9x3nPMKLt0imlBew3DLFbqSqB+sUKKsCC40v
+	cV24aGZgOuJdGTVUMepA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oMPeR-002PQG-Vl; Fri, 12 Aug 2022 08:04:16 +0000
-Received: from out2-smtp.messagingengine.com ([66.111.4.26])
+	id 1oMPuk-0030Pq-Sn; Fri, 12 Aug 2022 08:21:06 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oMPWh-002BoW-Vb; Fri, 12 Aug 2022 07:56:17 +0000
-Received: from compute2.internal (compute2.nyi.internal [10.202.2.46])
-	by mailout.nyi.internal (Postfix) with ESMTP id 40FAB5C0115;
-	Fri, 12 Aug 2022 03:56:15 -0400 (EDT)
-Received: from mailfrontend2 ([10.202.2.163])
-  by compute2.internal (MEProxy); Fri, 12 Aug 2022 03:56:15 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sholland.org; h=
-	cc:cc:content-transfer-encoding:date:date:from:from:in-reply-to
-	:in-reply-to:message-id:mime-version:references:reply-to:sender
-	:subject:subject:to:to; s=fm2; t=1660290975; x=1660377375; bh=Bf
-	V3swjxdx5USfEaE1XeMwxBAoZADIoLTz1F96t9hyc=; b=mvhlbbw8hqnin7iWcj
-	j9ayN8AKVFxbvvsBfnJBdUZWQAb11a1GmPy9ygUUVF4sQE63XL/2TCBSCBL3FnCE
-	a9chhyqZZVKXpMIVEXrL/c85vV8RCDkNlJZ79PkTNs3dB7nppYAPeLzBNqxP8NfS
-	YOZ5xZhzRiSlBGhFY1v2fM2Gd8VuGltI2v4oIEh8/uIRZ0YV8dHLxeSkSZ4FXzAM
-	glPfRvYyxR1156ZM5CgaKZPDkOS6lD4mPp0pykdeRnfAIzWwuG/7wvodsBFym6c8
-	ZX5K1cFUt6kqQKeVIaKsTlLcdiQe9HS2b1zyV6OhBgHFEZ3snQ6CJ46AUoht3nyE
-	oV8Q==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
-	messagingengine.com; h=cc:cc:content-transfer-encoding:date:date
-	:feedback-id:feedback-id:from:from:in-reply-to:in-reply-to
-	:message-id:mime-version:references:reply-to:sender:subject
-	:subject:to:to:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender
-	:x-sasl-enc; s=fm1; t=1660290975; x=1660377375; bh=BfV3swjxdx5US
-	fEaE1XeMwxBAoZADIoLTz1F96t9hyc=; b=fydXvwbHgZ4JtYaMqdaUC89RBeCOQ
-	beUbmsCp0snlosi4OFRwCMKNgQ/6oTgtVtSyUW2Z0pojGiwRiqzAwH9Z0nMyzq4q
-	y/fkFbVkrm6vMgTaxZBdZi/2MtvM2TGo+YjqCqOd1g+sftai7WNwUa/CzYCmP4EB
-	QSE48HYvGCmMJQuaWn3rm6YzlapENStfBp+G+UOefGF9DGXPRNfcThux1ejFQv6q
-	jT5CUXjsbaufZ6cZyaTvTPA3hbWEnosfqn9iYGodrsrTEQB7wtXWy/2aKvBi4aSb
-	MghntvjpJyv5iBI8sAVSGHhZu+UTmZHlN9XGg24uALIDCT3u767dAc1Yg==
-X-ME-Sender: <xms:nwf2YsTcidG-5ff6Qdq2jvqYlzlaxJne6QTV3XdDBTnaAYOgbPkccg>
-    <xme:nwf2YpwzsdjLeLNMfgVRC33fAbsp5xFsPFEQwHuo_f06OIIrFIEJQPYewfKWqxOxM
-    lwOqHrsUyCyv6Qxig>
-X-ME-Received: <xmr:nwf2Yp15AUvG5oQhg3F-UxzM8vwUEx7yYlgdlJOLYMIb7WkmMnvK5rubA04__VmlE10IE_BAQTFy7VFmV6xjfitQ_uaBuE8pbEtqWwxnzNIM5OgtuJCdDMUWpG3RercE4NHJig>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvfedrvdeghedguddvjecutefuodetggdotefrod
-    ftvfcurfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfgh
-    necuuegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmd
-    enucfjughrpefhvfevufffkffojghfggfgsedtkeertdertddtnecuhfhrohhmpefurghm
-    uhgvlhcujfholhhlrghnugcuoehsrghmuhgvlhesshhhohhllhgrnhgurdhorhhgqeenuc
-    ggtffrrghtthgvrhhnpedukeetueduhedtleetvefguddvvdejhfefudelgfduveeggeeh
-    gfdufeeitdevteenucevlhhushhtvghrufhiiigvpeehnecurfgrrhgrmhepmhgrihhlfh
-    hrohhmpehsrghmuhgvlhesshhhohhllhgrnhgurdhorhhg
-X-ME-Proxy: <xmx:nwf2YgBCg8qO0B-6xul1HMAcq3XMc4uX_XmPpH-hsOP0xg6h62z3Mw>
-    <xmx:nwf2YljecjsV57Qf1EuePOCacz2Q9qfBgM6i5b5L_SW5Y3awWOFsEA>
-    <xmx:nwf2YspXsk3XEoFPtMSXg4GAc9v9nLKF0MQgTjOd6F1XA3PxVnXWpA>
-    <xmx:nwf2Yl5ei5AYU0joqZubc-zmHzfJ3cYiAm2tEQ15hov7Qx7QxpdZJg>
-Feedback-ID: i0ad843c9:Fastmail
-Received: by mail.messagingengine.com (Postfix) with ESMTPA; Fri,
- 12 Aug 2022 03:56:14 -0400 (EDT)
-From: Samuel Holland <samuel@sholland.org>
-To: Kishon Vijay Abraham I <kishon@ti.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Chen-Yu Tsai <wens@csie.org>,
-	Jernej Skrabec <jernej.skrabec@gmail.com>,
-	Maxime Ripard <mripard@kernel.org>
-Cc: Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
-	Samuel Holland <samuel@sholland.org>,
-	Jagan Teki <jagan@amarulasolutions.com>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Maxime Ripard <maxime@cerno.tech>,
-	Rob Herring <robh+dt@kernel.org>,
-	devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-sunxi@lists.linux.dev
-Subject: [PATCH 8/8] phy: allwinner: phy-sun6i-mipi-dphy: Add the A100 DPHY variant
-Date: Fri, 12 Aug 2022 02:56:03 -0500
-Message-Id: <20220812075603.59375-9-samuel@sholland.org>
-X-Mailer: git-send-email 2.35.1
-In-Reply-To: <20220812075603.59375-1-samuel@sholland.org>
-References: <20220812075603.59375-1-samuel@sholland.org>
+	id 1oMPuf-0030Nk-NF
+	for linux-phy@lists.infradead.org; Fri, 12 Aug 2022 08:21:05 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 3BB3661199;
+	Fri, 12 Aug 2022 08:21:00 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4D968C433C1;
+	Fri, 12 Aug 2022 08:20:59 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1660292459;
+	bh=d9zP4H0UFD4Sl1+Gv++ashYrv/DoMSrzuwjV1oU6id0=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=H/VDuK0oPVft7Tl0EFQRN351+RUZqh/nPihJv4R0QVsNdcbUDQcadtIYvrcBfoxm0
+	 MfxJO6qpBHXP00kWXGHUcsyHf8R6QSp25CLvUBmIY4CjCSKCi6O88hOT7KtXhCdEao
+	 VLFGndmzkSscb9xLbW49nvhLnt48pfY8zcs15XQopkB9DCj6uhTYAk6lWd7mlQ2piu
+	 4GBYJpwRBeAhNf68FbnpAXim9BvV1u7CS/LBZolSf9ZttBJA/Y9/pzSFLVVYbv1Ubs
+	 zXwS25h0mudgwOKRedun/NoRUfLeX7hR3COIfhSd3md8eAKYtaNg1WMVNLNvZ6UsFP
+	 lAnfJ42W66+Bg==
+Received: by pali.im (Postfix)
+	id 1E74B9CF; Fri, 12 Aug 2022 10:20:56 +0200 (CEST)
+Date: Fri, 12 Aug 2022 10:20:55 +0200
+From: Pali =?utf-8?B?Um9ow6Fy?= <pali@kernel.org>
+To: Shinichiro Kawasaki <shinichiro.kawasaki@wdc.com>
+Cc: "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
+	"kabel@kernel.org" <kabel@kernel.org>,
+	Damien Le Moal <Damien.LeMoal@wdc.com>
+Subject: Re: ARMADA espressobin SATA drive detection failure
+Message-ID: <20220812082055.dvwmjcvsyb3iglav@pali>
+References: <20220531124159.3e4lgn2v462irbtz@shindev>
+ <20220809094234.cpv6tdpmqfb3cfqq@pali>
+ <20220810103654.w3yurhdeulgyepbb@shindev>
+ <20220812045650.nzisin52zfbbwhsq@shindev>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20220812045650.nzisin52zfbbwhsq@shindev>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220812_005616_132103_7B4DE482 
-X-CRM114-Status: GOOD (  13.89  )
+X-CRM114-CacheID: sfid-20220812_012101_878672_C7358F1B 
+X-CRM114-Status: GOOD (  26.88  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -109,228 +74,69 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-A100 features an updated DPHY, which moves PLL control inside the DPHY
-register space (previously the PLL was controlled from the CCU). It also
-requires a modified analog power-on sequence. This "combo PHY" can also
-be used as an LVDS PHY, but that is not yet supported by the driver.
-
-Signed-off-by: Samuel Holland <samuel@sholland.org>
----
-
- drivers/phy/allwinner/phy-sun6i-mipi-dphy.c | 143 +++++++++++++++++++-
- 1 file changed, 142 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/phy/allwinner/phy-sun6i-mipi-dphy.c b/drivers/phy/allwinner/phy-sun6i-mipi-dphy.c
-index 6a1993c434e8..9911c4a5c318 100644
---- a/drivers/phy/allwinner/phy-sun6i-mipi-dphy.c
-+++ b/drivers/phy/allwinner/phy-sun6i-mipi-dphy.c
-@@ -70,11 +70,19 @@
- 
- #define SUN6I_DPHY_ANA0_REG		0x4c
- #define SUN6I_DPHY_ANA0_REG_PWS			BIT(31)
-+#define SUN6I_DPHY_ANA0_REG_PWEND		BIT(30)
-+#define SUN6I_DPHY_ANA0_REG_PWENC		BIT(29)
- #define SUN6I_DPHY_ANA0_REG_DMPC		BIT(28)
- #define SUN6I_DPHY_ANA0_REG_DMPD(n)		(((n) & 0xf) << 24)
-+#define SUN6I_DPHY_ANA0_REG_SRXDT(n)		(((n) & 0xf) << 20)
-+#define SUN6I_DPHY_ANA0_REG_SRXCK(n)		(((n) & 0xf) << 16)
-+#define SUN6I_DPHY_ANA0_REG_SDIV2		BIT(15)
- #define SUN6I_DPHY_ANA0_REG_SLV(n)		(((n) & 7) << 12)
- #define SUN6I_DPHY_ANA0_REG_DEN(n)		(((n) & 0xf) << 8)
-+#define SUN6I_DPHY_ANA0_REG_PLR(n)		(((n) & 0xf) << 4)
- #define SUN6I_DPHY_ANA0_REG_SFB(n)		(((n) & 3) << 2)
-+#define SUN6I_DPHY_ANA0_REG_RSD			BIT(1)
-+#define SUN6I_DPHY_ANA0_REG_SELSCK		BIT(0)
- 
- #define SUN6I_DPHY_ANA1_REG		0x50
- #define SUN6I_DPHY_ANA1_REG_VTTMODE		BIT(31)
-@@ -97,8 +105,13 @@
- #define SUN6I_DPHY_ANA3_EN_LDOR			BIT(18)
- 
- #define SUN6I_DPHY_ANA4_REG		0x5c
-+#define SUN6I_DPHY_ANA4_REG_EN_MIPI		BIT(31)
-+#define SUN6I_DPHY_ANA4_REG_EN_COMTEST		BIT(30)
-+#define SUN6I_DPHY_ANA4_REG_COMTEST(n)		(((n) & 3) << 28)
-+#define SUN6I_DPHY_ANA4_REG_IB(n)		(((n) & 3) << 25)
- #define SUN6I_DPHY_ANA4_REG_DMPLVC		BIT(24)
- #define SUN6I_DPHY_ANA4_REG_DMPLVD(n)		(((n) & 0xf) << 20)
-+#define SUN6I_DPHY_ANA4_REG_VTT_SET(n)		(((n) & 0x7) << 17)
- #define SUN6I_DPHY_ANA4_REG_CKDV(n)		(((n) & 0x1f) << 12)
- #define SUN6I_DPHY_ANA4_REG_TMSC(n)		(((n) & 3) << 10)
- #define SUN6I_DPHY_ANA4_REG_TMSD(n)		(((n) & 3) << 8)
-@@ -109,6 +122,56 @@
- 
- #define SUN6I_DPHY_DBG5_REG		0xf4
- 
-+#define SUN50I_DPHY_TX_SLEW_REG0	0xf8
-+#define SUN50I_DPHY_TX_SLEW_REG1	0xfc
-+#define SUN50I_DPHY_TX_SLEW_REG2	0x100
-+
-+#define SUN50I_DPHY_PLL_REG0		0x104
-+#define SUN50I_DPHY_PLL_REG0_CP36_EN		BIT(23)
-+#define SUN50I_DPHY_PLL_REG0_LDO_EN		BIT(22)
-+#define SUN50I_DPHY_PLL_REG0_EN_LVS		BIT(21)
-+#define SUN50I_DPHY_PLL_REG0_PLL_EN		BIT(20)
-+#define SUN50I_DPHY_PLL_REG0_P(n)		(((n) & 0xf) << 16)
-+#define SUN50I_DPHY_PLL_REG0_N(n)		(((n) & 0xff) << 8)
-+#define SUN50I_DPHY_PLL_REG0_NDET		BIT(7)
-+#define SUN50I_DPHY_PLL_REG0_TDIV		BIT(6)
-+#define SUN50I_DPHY_PLL_REG0_M0(n)		(((n) & 3) << 4)
-+#define SUN50I_DPHY_PLL_REG0_M1(n)		((n) & 0xf)
-+
-+#define SUN50I_DPHY_PLL_REG1		0x108
-+#define SUN50I_DPHY_PLL_REG1_UNLOCK_MDSEL(n)	(((n) & 3) << 14)
-+#define SUN50I_DPHY_PLL_REG1_LOCKMDSEL		BIT(13)
-+#define SUN50I_DPHY_PLL_REG1_LOCKDET_EN		BIT(12)
-+#define SUN50I_DPHY_PLL_REG1_VSETA(n)		(((n) & 0x7) << 9)
-+#define SUN50I_DPHY_PLL_REG1_VSETD(n)		(((n) & 0x7) << 6)
-+#define SUN50I_DPHY_PLL_REG1_LPF_SW		BIT(5)
-+#define SUN50I_DPHY_PLL_REG1_ICP_SEL(n)		(((n) & 3) << 3)
-+#define SUN50I_DPHY_PLL_REG1_ATEST_SEL(n)	(((n) & 3) << 1)
-+#define SUN50I_DPHY_PLL_REG1_TEST_EN		BIT(0)
-+
-+#define SUN50I_DPHY_PLL_REG2		0x10c
-+#define SUN50I_DPHY_PLL_REG2_SDM_EN		BIT(31)
-+#define SUN50I_DPHY_PLL_REG2_FF_EN		BIT(30)
-+#define SUN50I_DPHY_PLL_REG2_SS_EN		BIT(29)
-+#define SUN50I_DPHY_PLL_REG2_SS_FRAC(n)		(((n) & 0x1ff) << 20)
-+#define SUN50I_DPHY_PLL_REG2_SS_INT(n)		(((n) & 0xff) << 12)
-+#define SUN50I_DPHY_PLL_REG2_FRAC(n)		((n) & 0xfff)
-+
-+#define SUN50I_COMBO_PHY_REG0		0x110
-+#define SUN50I_COMBO_PHY_REG0_EN_TEST_COMBOLDO	BIT(5)
-+#define SUN50I_COMBO_PHY_REG0_EN_TEST_0P8	BIT(4)
-+#define SUN50I_COMBO_PHY_REG0_EN_MIPI		BIT(3)
-+#define SUN50I_COMBO_PHY_REG0_EN_LVDS		BIT(2)
-+#define SUN50I_COMBO_PHY_REG0_EN_COMBOLDO	BIT(1)
-+#define SUN50I_COMBO_PHY_REG0_EN_CP		BIT(0)
-+
-+#define SUN50I_COMBO_PHY_REG1		0x114
-+#define SUN50I_COMBO_PHY_REG2_REG_VREF1P6(n)	(((n) & 0x7) << 4)
-+#define SUN50I_COMBO_PHY_REG2_REG_VREF0P8(n)	((n) & 0x7)
-+
-+#define SUN50I_COMBO_PHY_REG2		0x118
-+#define SUN50I_COMBO_PHY_REG2_HS_STOP_DLY(n)	((n) & 0xff)
-+
- enum sun6i_dphy_direction {
- 	SUN6I_DPHY_DIRECTION_TX,
- 	SUN6I_DPHY_DIRECTION_RX,
-@@ -196,6 +259,76 @@ static void sun6i_a31_mipi_dphy_tx_power_on(struct sun6i_dphy *dphy)
- 	udelay(1);
- }
- 
-+static void sun50i_a100_mipi_dphy_tx_power_on(struct sun6i_dphy *dphy)
-+{
-+	unsigned long mipi_symbol_rate = dphy->config.hs_clk_rate;
-+	unsigned int div, n;
-+
-+	regmap_write(dphy->regs, SUN6I_DPHY_ANA4_REG,
-+		     SUN6I_DPHY_ANA4_REG_IB(2) |
-+		     SUN6I_DPHY_ANA4_REG_DMPLVD(4) |
-+		     SUN6I_DPHY_ANA4_REG_VTT_SET(3) |
-+		     SUN6I_DPHY_ANA4_REG_CKDV(3) |
-+		     SUN6I_DPHY_ANA4_REG_TMSD(1) |
-+		     SUN6I_DPHY_ANA4_REG_TMSC(1) |
-+		     SUN6I_DPHY_ANA4_REG_TXPUSD(2) |
-+		     SUN6I_DPHY_ANA4_REG_TXPUSC(3) |
-+		     SUN6I_DPHY_ANA4_REG_TXDNSD(2) |
-+		     SUN6I_DPHY_ANA4_REG_TXDNSC(3));
-+
-+	regmap_update_bits(dphy->regs, SUN6I_DPHY_ANA2_REG,
-+			   SUN6I_DPHY_ANA2_EN_CK_CPU,
-+			   SUN6I_DPHY_ANA2_EN_CK_CPU);
-+
-+	regmap_update_bits(dphy->regs, SUN6I_DPHY_ANA2_REG,
-+			   SUN6I_DPHY_ANA2_REG_ENIB,
-+			   SUN6I_DPHY_ANA2_REG_ENIB);
-+
-+	regmap_write(dphy->regs, SUN6I_DPHY_ANA3_REG,
-+		     SUN6I_DPHY_ANA3_EN_LDOR |
-+		     SUN6I_DPHY_ANA3_EN_LDOC |
-+		     SUN6I_DPHY_ANA3_EN_LDOD);
-+
-+	regmap_write(dphy->regs, SUN6I_DPHY_ANA0_REG,
-+		     SUN6I_DPHY_ANA0_REG_PLR(4) |
-+		     SUN6I_DPHY_ANA0_REG_SFB(1));
-+
-+	regmap_write(dphy->regs, SUN50I_COMBO_PHY_REG0,
-+		     SUN50I_COMBO_PHY_REG0_EN_CP);
-+
-+	/* Choose a divider to limit the VCO frequency to around 2 GHz. */
-+	div = 16 >> order_base_2(DIV_ROUND_UP(mipi_symbol_rate, 264000000));
-+	n = mipi_symbol_rate * div / 24000000;
-+
-+	regmap_write(dphy->regs, SUN50I_DPHY_PLL_REG0,
-+		     SUN50I_DPHY_PLL_REG0_CP36_EN |
-+		     SUN50I_DPHY_PLL_REG0_LDO_EN |
-+		     SUN50I_DPHY_PLL_REG0_EN_LVS |
-+		     SUN50I_DPHY_PLL_REG0_PLL_EN |
-+		     SUN50I_DPHY_PLL_REG0_NDET |
-+		     SUN50I_DPHY_PLL_REG0_P((div - 1) % 8) |
-+		     SUN50I_DPHY_PLL_REG0_N(n) |
-+		     SUN50I_DPHY_PLL_REG0_M0((div - 1) / 8) |
-+		     SUN50I_DPHY_PLL_REG0_M1(2));
-+
-+	/* Disable sigma-delta modulation. */
-+	regmap_write(dphy->regs, SUN50I_DPHY_PLL_REG2, 0);
-+
-+	regmap_update_bits(dphy->regs, SUN6I_DPHY_ANA4_REG,
-+			   SUN6I_DPHY_ANA4_REG_EN_MIPI,
-+			   SUN6I_DPHY_ANA4_REG_EN_MIPI);
-+
-+	regmap_update_bits(dphy->regs, SUN50I_COMBO_PHY_REG0,
-+			   SUN50I_COMBO_PHY_REG0_EN_MIPI |
-+			   SUN50I_COMBO_PHY_REG0_EN_COMBOLDO,
-+			   SUN50I_COMBO_PHY_REG0_EN_MIPI |
-+			   SUN50I_COMBO_PHY_REG0_EN_COMBOLDO);
-+
-+	regmap_write(dphy->regs, SUN50I_COMBO_PHY_REG2,
-+		     SUN50I_COMBO_PHY_REG2_HS_STOP_DLY(20));
-+	udelay(1);
-+}
-+
- static int sun6i_dphy_tx_power_on(struct sun6i_dphy *dphy)
- {
- 	u8 lanes_mask = GENMASK(dphy->config.lanes - 1, 0);
-@@ -408,7 +541,7 @@ static const struct regmap_config sun6i_dphy_regmap_config = {
- 	.reg_bits	= 32,
- 	.val_bits	= 32,
- 	.reg_stride	= 4,
--	.max_register	= SUN6I_DPHY_DBG5_REG,
-+	.max_register	= SUN50I_COMBO_PHY_REG2,
- 	.name		= "mipi-dphy",
- };
- 
-@@ -483,11 +616,19 @@ static const struct sun6i_dphy_variant sun6i_a31_mipi_dphy_variant = {
- 	.supports_rx	= true,
- };
- 
-+static const struct sun6i_dphy_variant sun50i_a100_mipi_dphy_variant = {
-+	.tx_power_on	= sun50i_a100_mipi_dphy_tx_power_on,
-+};
-+
- static const struct of_device_id sun6i_dphy_of_table[] = {
- 	{
- 		.compatible	= "allwinner,sun6i-a31-mipi-dphy",
- 		.data		= &sun6i_a31_mipi_dphy_variant,
- 	},
-+	{
-+		.compatible	= "allwinner,sun50i-a100-mipi-dphy",
-+		.data		= &sun50i_a100_mipi_dphy_variant,
-+	},
- 	{ }
- };
- MODULE_DEVICE_TABLE(of, sun6i_dphy_of_table);
--- 
-2.35.1
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gRnJpZGF5IDEyIEF1Z3VzdCAyMDIyIDA0OjU2OjUwIFNoaW5pY2hpcm8gS2F3YXNha2kgd3Jv
+dGU6Cj4gT24gQXVnIDEwLCAyMDIyIC8gMTk6MzYsIFNoaW4naWNoaXJvIEthd2FzYWtpIHdyb3Rl
+Ogo+ID4gT24gQXVnIDA5LCAyMDIyIC8gMTE6NDIsIFBhbGkgUm9ow6FyIHdyb3RlOgo+ID4gPiBI
+ZWxsbyBTaGluaWNoaXJvIQo+ID4gCj4gPiBbLi4uXQo+ID4gCj4gPiA+IFNvcnJ5IGZvciBsYXRl
+IHJlcGx5LiBBdCB0aGUgdGltZSB3aGVuIHlvdSBzZW50IHRoaXMgbWVzc2FnZSBJIGhhZAo+ID4g
+PiBpc3N1ZXMgd2l0aCBvZmZpY2Ugc3RhdGlvbiBhbmQgd2FzIHdhaXRpbmcgZm9yIHJlcGFpcmlu
+ZyBzdXBwb3J0LiBBbmQKPiA+ID4gYWZ0ZXIgdGhhdCBJIGZvcmdvdCBhYm91dCB0aGlzIGVtYWls
+Lgo+ID4gPiAKPiA+ID4gTm93IEkgaGF2ZSBsb29rZWQgYXQgaXQuIEZvciB0ZXN0aW5nIHB1cnBv
+c2VzIEkgdG9vayBFc3ByZXNzb2JpbiBWNQo+ID4gPiBib2FyZCBhbmQgc29tZSByYW5kb20gU0FU
+QSBkaXNrIChzb21lIFNhbXN1bmcgU1NEKS4gSSBpbnN0YWxsZWQgbGF0ZXN0Cj4gPiA+IGZpcm13
+YXJlcyAoc2VjdXJlLWZpcm13YXJlLCBBUk0gdHJ1c3RlZC1maXJtd2FyZSBhbmQgVS1Cb290KSBv
+bgo+ID4gPiBFc3ByZXNzb2JpbidzIFNQSS1OT1IgYW5kIExpbnV4IGtlcm5lbCB2ZXJzaW9uIDUu
+MTguMTYgb24gU0QgY2FyZC4KPiA+ID4gCj4gPiA+IERpc2sgaXMgc3VjY2Vzc2Z1bGx5IGRldGVj
+dGVkIGluIFUtQm9vdCBhczoKPiA+IAo+ID4gSGVsbG8gUGFsaSEgVGhhbmsgeW91IGZvciBsb29r
+aW5nIGludG8gdGhpcy4gU28sIHRoZXJlIHNob3VsZCBiZSBzb21ldGhpbmcKPiA+IGRpZmZlcmVu
+dCBiZXR3ZWVuIHlvdXIgc3lzdGVtIGFuZCBteSBzeXN0ZW0uCj4gPiAKPiA+ID4gQ291bGQgeW91
+IHBsZWFzZSBjaGVjayBpZiB5b3Ugc3RpbGwgaGF2ZSB0aGVzZSBpc3N1ZXMgd2l0aCB0aGUgNS4x
+OC4xNgo+ID4gPiBrZXJuZWwgdmVyc2lvbiAoSUlSQyBpdCBzaG91bGQgYmUgdGhlIGxhdGVzdCA1
+LjE4IHJlbGVhc2UpPwo+ID4gPiAKPiA+ID4gQW5kIGNvdWxkIHlvdSBwbGVhc2UgY2hlY2sgaWYg
+eW91ciBkaXNrIGlzIHdvcmtpbmcgZmluZSBpbiBVLUJvb3Q/Cj4gPiAKPiA+IFllcywgSSB3aWxs
+IGNoZWNrIHRoZXNlIHBvaW50cy4gTGV0IG1lIGhhdmUgc2V2ZXJhbCBkYXlzIHRvIHdvcmsgb24g
+dGhlbS4KPiAKPiBIZWxsbyBQYWxpLCBJJ3ZlIHRyaWVkIHRoZSBsYXRlc3QgNS4xOC54IGtlcm5l
+bCBhbmQgZGlzayBkZXRlY3Rpb24gYnkgVS1ib290Lgo+IFVuZm9ydHVuYXRlbHksIHRoZSBpc3N1
+ZSBpcyBzdGlsbCBvYnNlcnZlZCB3aXRoIHRoZSBrZXJuZWwgdjUuMTguMTYuIFdoZW4gSQo+IGNv
+bm5lY3QgbXkgU1NEIHRvIHRoZSBib2FyZCwgaXQgcHJpbnRzIG91dCB0aGUgbWVzc2FnZSAiYXRh
+MTogU0FUQSBsaW5rIGRvd24KPiAoU1N0YXR1cyAxMDEgU0NvbnRyb2wgMzAwKSIsIGFuZCB0aGUg
+U1NEIGlzIG5vdCBkZXRlY3RlZCBhcyBhIHNkIGRldmljZS4KPiAKPiBGcm9tIFUtQm9vdCwgbXkg
+U1NEIGlzIGRldGVjdGVkLiAic2NzaSBzY2FuIiBjb21tYW5kIHNob3dzIHRoZSBTU0QgdmVuZG9y
+IG5hbWUKPiAiU2FuRGlzayIuIEkgd2FzIGFibGUgdG8gbG9vayBpbiBleHQ0IGZpbGVzeXN0ZW0g
+b24gdGhlIFNTRCBmcm9tIFUtQm9vdC4gU28gaXQKPiBsb29rcyBvayBmcm9tIFUtQm9vdCB0byBh
+Y2Nlc3MgdGhlIFNTRC4KPiAKPiAgIE1hcnZlbGw+PiBzY3NpIHNjYW4KPiAgIHNjYW5uaW5nIGJ1
+cyBmb3IgZGV2aWNlcy4uLgo+ICAgVGFyZ2V0IHNwaW51cCB0b29rIDAgbXMuCj4gICBBSENJIDAw
+MDEuMDMwMCAzMiBzbG90cyAxIHBvcnRzIDYgR2JwcyAweDEgaW1wbCBTQVRBIG1vZGUKPiAgIGZs
+YWdzOiBuY3EgbGVkIG9ubHkgcG1wIGZic3MgcGlvIHNsdW0gcGFydCBzeHMgCj4gICAgIERldmlj
+ZSAwOiAoMDowKSBWZW5kb3I6IEFUQSBQcm9kLjogU2FuRGlzayBTRFNTREEyNCBSZXY6IFUyMTAK
+PiAgICAgICAgICAgICAgIFR5cGU6IEhhcmQgRGlzawo+ICAgICAgICAgICAgICAgQ2FwYWNpdHk6
+IDIyODkzNi41IE1CID0gMjIzLjUgR0IgKDQ2ODg2MjEyOCB4IDUxMikKPiAgIE1hcnZlbGw+PiBz
+Y3NpIGluZm8KPiAgIERldmljZSAwOiAoMDowKSBWZW5kb3I6IEFUQSBQcm9kLjogU2FuRGlzayBT
+RFNTREEyNCBSZXY6IFUyMTAKPiAgICAgICAgICAgICAgIFR5cGU6IEhhcmQgRGlzawo+ICAgICAg
+ICAgICAgICAgQ2FwYWNpdHk6IDIyODkzNi41IE1CID0gMjIzLjUgR0IgKDQ2ODg2MjEyOCB4IDUx
+MikKPiAgIE1hcnZlbGw+PiBleHQ0bHMgc2NzaSAwIC8KPiAgIDxESVI+ICAgICAgIDQwOTYgLgo+
+ICAgPERJUj4gICAgICAgNDA5NiAuLgo+ICAgPERJUj4gICAgICAxNjM4NCBsb3N0K2ZvdW5kCj4g
+ICAgICAgICAgICAgICAgICA0IGJhcgo+ICAgTWFydmVsbD4+Cj4gCj4gCj4gSSBub3RpY2VkIG9u
+ZSBkaWZmZXJlbmNlIGJldHdlZW4geW91ciBzeXN0ZW0gYW5kIG1pbmU6IFUtQm9vdCB2ZXJzaW9u
+Lgo+IE9uIG15IHN5c3RlbSwgaXQgaGFzIHJhdGhlciBvbGQgdmVyc2lvbiBub3c6Cj4gCj4gICBN
+YXJ2ZWxsPj4gdmVyc2lvbgo+ICAgVS1Cb290IDIwMTcuMDMtYXJtYWRhLTE3LjEwLjItZzE0YWVl
+ZGMgKEp1biAwMSAyMDE4IC0gMTU6Mzk6MTAgKzA4MDApCj4gICBhYXJjaDY0LWxpbnV4LWdudS1n
+Y2MgKExpbmFybyBHQ0MgNS4yLTIwMTUuMTEtMikgNS4yLjEgMjAxNTEwMDUKPiAgIEdOVSBsZCAo
+R05VIEJpbnV0aWxzKSAyLjI1LjAgTGluYXJvIDIwMTVfMTAKPiAKPiBEbyB5b3UgdGhpbmsgaXQn
+cyB3b3J0aCB0cnlpbmcgdGhlIGxhdGVzdCBVLWJvb3Q/Cj4gCj4gLS0gCj4gU2hpbidpY2hpcm8g
+S2F3YXNha2kKClllcywgcGxlYXNlIHVwZGF0ZSBmaXJtd2FyZXMgdG8gdGhlIGxhdGVzdHMgdmVy
+c2lvbnMuIE9yIGF0IGxlYXN0IHRyeSB0bwpib290IG5ldyBVLUJvb3QgdmlhIFVBUlQgKHdpdGhv
+dXQgcmVwbGFjaW5nIGV4aXN0aW5nIHZlcnNpb24pIGFuZCBjaGVjawpmb3IgZGlmZmVyZW5jZXMu
+CgpCdWlsZGluZyBkb2N1bWVudGF0aW9uczoKaHR0cHM6Ly90cnVzdGVkZmlybXdhcmUtYS5yZWFk
+dGhlZG9jcy5pby9lbi9sYXRlc3QvcGxhdC9tYXJ2ZWxsL2FybWFkYS9idWlsZC5odG1sCmh0dHBz
+Oi8vc291cmNlLmRlbnguZGUvdS1ib290L3UtYm9vdC8tL2Jsb2IvdjIwMjIuMDcvZG9jL1JFQURN
+RS5tYXJ2ZWxsCgpVQVJUIGJvb3RpbmcgZG9jdW1lbnRhdGlvbiBpcyBjdXJyZW50bHkgd2FpdGlu
+ZyBmb3IgcmV2aWV3OgpodHRwczovL3Jldmlldy50cnVzdGVkZmlybXdhcmUub3JnL2MvVEYtQS90
+cnVzdGVkLWZpcm13YXJlLWEvKy8xNjE5OAoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGlu
+dXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21h
+aWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
