@@ -4,73 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 880BCC00140
-	for <linux-phy@archiver.kernel.org>; Fri, 12 Aug 2022 08:01:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3053FC00140
+	for <linux-phy@archiver.kernel.org>; Fri, 12 Aug 2022 08:03:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qvuaLbw6qp2WfMTOn13rB9ztXAd4vxrOREg35Noa7A4=; b=Z5GZB9xDX0ZfaL
-	432VC+RKWA2ptM5KwnjBcnBCqzVF26eXGvbcN0ABM7L5IQqCrlcJQ0WZ30TrKPd8eIX1pF3CGGfyp
-	xAwYXXrEmK0m35gbDt8iOsDznoFmNeGryhXySEQThv20MA4BqVHUSfzwohVreyAYhj8sxXvy0RNMP
-	ijpn7XFYJuV3nrOcbhvYYPQpFW77gixHZUr2csRKJoRg/VOSPy5R0IKFjawrLPg5nB0Bmi+OcdSDh
-	voLjsiGFvz0QYxOVlSU8cDTukq/Q0wMupe6DT0ZdkiWDYQxy8sGhvuZRGNKehLu77c0UXNtcV02E+
-	A8BjINGYY7jG0ilgPleg==;
+	List-Owner; bh=2Ld119t7sTtgtoA3awztxU93UUmWinzyWu8Mx+BivpQ=; b=MC5vSOeyfmU81E
+	6KuKneS38VpGc6TYTfFxCbupYSMs2MQcImhKJPXpJhg+efpdkB1ABS7oMbdQAsfgzZAmANMZqh7t5
+	p9w6N1S293XU/ZcBMXWrFdpUhIf59wovgR0esOMNRx2WtxNjbD+jEHl78rDHjXZ2p1G7DXbrvdv/e
+	FMdxFGy5IDT9kn9J9zS3xNld0y61++T0w7+uTYRxGZ3JCPZfukeemWahYnWpB1Bp2ONenVAgIdQPv
+	3DVBfUfmZtu0CL4oIxVwPTvcaAOoCS9JkVDHToX5XWFKs6QKih//TfdCu34oVqN9LYhJxnknDyomz
+	dR36unhVOD/dM1eRg2Mw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oMPbx-002KvT-Pu; Fri, 12 Aug 2022 08:01:41 +0000
+	id 1oMPdl-002O2x-F9; Fri, 12 Aug 2022 08:03:33 +0000
 Received: from out2-smtp.messagingengine.com ([66.111.4.26])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oMPWe-002Bi8-AE; Fri, 12 Aug 2022 07:56:13 +0000
-Received: from compute2.internal (compute2.nyi.internal [10.202.2.46])
-	by mailout.nyi.internal (Postfix) with ESMTP id A453D5C0093;
-	Fri, 12 Aug 2022 03:56:11 -0400 (EDT)
+	id 1oMPWg-002Bmh-Qy; Fri, 12 Aug 2022 07:56:16 +0000
+Received: from compute5.internal (compute5.nyi.internal [10.202.2.45])
+	by mailout.nyi.internal (Postfix) with ESMTP id 2026B5C0093;
+	Fri, 12 Aug 2022 03:56:14 -0400 (EDT)
 Received: from mailfrontend2 ([10.202.2.163])
-  by compute2.internal (MEProxy); Fri, 12 Aug 2022 03:56:11 -0400
+  by compute5.internal (MEProxy); Fri, 12 Aug 2022 03:56:14 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sholland.org; h=
 	cc:cc:content-transfer-encoding:date:date:from:from:in-reply-to
 	:in-reply-to:message-id:mime-version:references:reply-to:sender
-	:subject:subject:to:to; s=fm2; t=1660290971; x=1660377371; bh=Ku
-	PNx3e+Sm9vGFleyNWbDoSIPJDEO6zCItICk8V/+dA=; b=Brk9lXs7GgGEb+m5Jn
-	+T9S+mP79jOOIoEoavKZg2ipEPWsEFjEGE437NKhxxpP23VdEsSRKTIN+n5g4ouL
-	q0v+F4vLk6cbq8J6sipe0SQXXP0hSnk9M5injNPpqcEuDBNuwIETQ/HwxFaJe6/T
-	fsMvaifDpgE86fAmyL+btx7BDI1lPPLgWzMRVeMDykjsBeJtT/wh0VQbQzxRsYzp
-	SazfA6R6cYpgSeBQkdPIsmtp0sDAanmAOqnHeL3RtQdSIvG9NzRUCCAaFtzHaFYo
-	PUMfWjDquCyWxNM4Q5yVPS8ZVu9UE9tY0c2/5MgQWsALRobh6fbZMKcBt9x51D+9
-	YwUw==
+	:subject:subject:to:to; s=fm2; t=1660290974; x=1660377374; bh=Xh
+	qRMH3MJeMc6YrQbqiTmLMH13EPFmaYzv6faVKxorM=; b=WZU+6aZvdLjRK/J+pm
+	DhSPRq8+2HALluyZujThpLBO1xqmBlNmzMX22dExx4294kLhvD4yW1D7X4hmgYlb
+	EFH/+S5dpse6/DdFuAWsIrFGabo+HnR5rtnyt7iG5eqkIi8mi7VD/yiVfb/cowwM
+	DSyffMtGYrpVEeVhjHUzoFfpmAazCmp0yVzfT2M8Uu2tD0+GlLoo5/Op3MrIaGfg
+	50keaS1DUcn/sMa8whKkyFAC6UP4DgjQ7V68xEkyvoyWuV+SQ/QLd/HqAd/cDI35
+	Xzvg8Hdx3qYjxbZtEfd10MM350JzqwXntwTEIviQ5Jqq7LncNCP6LnumbURqFwry
+	RP5A==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
 	messagingengine.com; h=cc:cc:content-transfer-encoding:date:date
 	:feedback-id:feedback-id:from:from:in-reply-to:in-reply-to
 	:message-id:mime-version:references:reply-to:sender:subject
 	:subject:to:to:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender
-	:x-sasl-enc; s=fm1; t=1660290971; x=1660377371; bh=KuPNx3e+Sm9vG
-	FleyNWbDoSIPJDEO6zCItICk8V/+dA=; b=n6OUOQdmH/4seqTdDZGZhUd3mNXYt
-	7EIDmX596A96pW+aJ+op9FUvyVZFWJY3q28fNNJagH4S0nyplCG3Dg3Vfj+W0RAn
-	bHzPGhAkgNx1MGVmB79LBd1DUKFSLI9fwnZ3RNjMUkiKX0+a6M/MxovYWgtKor4a
-	IjDP45DDYH03pKh6PYJ094CKC6MSKBvYa/bGfwZ4miYK+M4JVdWe7R+IS7DAvGP8
-	RwuGSa47kECXIv44l/DQsz5ZB2qvmok899Wr7eAchga+LvQ0UsChMlcruoekQ56J
-	S4fg7dBBYokrvUzaytM4+yOf11nJ67UvQ1iFPoP+4Clunr52DKyUk4jcA==
-X-ME-Sender: <xms:mwf2YsLNx0Zlpm_77pnC3CNkNSrtZK29JbMnKiMt-uGEEf1gMGCE8w>
-    <xme:mwf2YsIDvdh54luOtLNw-Mfd0DTdxkvhv2mt4HyGQkL-AkanVdZYMhKO-LHfm6_bA
-    9qpB3oXYbgjzcJlug>
-X-ME-Received: <xmr:mwf2Yss9E8SLVm_OjBr3LuBtNhZzFt4ZQl9dh1gUXEBoRepykIg1iOpxht_JX2AUCW1iaNDjxGgUoWuWLHHM_4MnZBP98FQzUR4RQrkqYl3qxqjo-pP4nZvpyIUoUCBguxvWsw>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvfedrvdeghedguddvjecutefuodetggdotefrod
+	:x-sasl-enc; s=fm1; t=1660290974; x=1660377374; bh=XhqRMH3MJeMc6
+	YrQbqiTmLMH13EPFmaYzv6faVKxorM=; b=MWQADjMIosg2aHbFkUI/R7PJnC9V0
+	1koHuooHgoScbFhJxQowO37I1kbaGHPajMzTclPgORzRPgGLq5jF+hfR2aG+js2j
+	xyJ2WbBevZzDdmS9woZFnI9dsMEsSgtVukN0rM1o1q9SO0YnWK6GIgkPhlIrKP/0
+	C591RKV+Xt8/PwVWsxfKiRZiWxg4cUnXPYrku4PUqMyonzMQY0fTxwSqtoqPCVtK
+	c/6sFfXmJ/aagmcoN3zXR0N+kd//1PydZSqTQxn2vmgJa+2cIg1V9ysaO5XXwo1I
+	YLcSAaL2z23NyGR0IGTUzWnvJTYr5Px0H5WyHA3luGW2TT1nUVzPXJ5Gg==
+X-ME-Sender: <xms:nQf2YmeQHSYGD8zkB6Z7sFiwIfA36BXYJLlay_t1nrs2Lna3wXZB2Q>
+    <xme:nQf2YgMiPYOAbhbnLT7zDvi9SB0yYjsxUV5J5Outxaos5mM_F_EVlyosU8grATQ8T
+    _r33_gi-s-sVY33zg>
+X-ME-Received: <xmr:nQf2YniFurl0dBlKpWAClTfo0sWe1Aq3vu5IeXaZ9TO3iYxbF5LIInx8YkdQKO9teado-oK1fSDPsgJ6y8yQH-_I8VzfHGk04T_uOU7FzfL2f6XI5yjzjaQ_jmEHFH1X6Ozf-g>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvfedrvdeghedguddviecutefuodetggdotefrod
     ftvfcurfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfgh
     necuuegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmd
     enucfjughrpefhvfevufffkffojghfggfgsedtkeertdertddtnecuhfhrohhmpefurghm
     uhgvlhcujfholhhlrghnugcuoehsrghmuhgvlhesshhhohhllhgrnhgurdhorhhgqeenuc
     ggtffrrghtthgvrhhnpedukeetueduhedtleetvefguddvvdejhfefudelgfduveeggeeh
-    gfdufeeitdevteenucevlhhushhtvghrufhiiigvpedvnecurfgrrhgrmhepmhgrihhlfh
+    gfdufeeitdevteenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfh
     hrohhmpehsrghmuhgvlhesshhhohhllhgrnhgurdhorhhg
-X-ME-Proxy: <xmx:mwf2YpYdvQt736OOElQx1hkLYtDnx_fnlIkZ_di3WJHty0Yl7doj3w>
-    <xmx:mwf2YjYhpn4x6gYI6N0UPmpMJZTQp7I-m-kX-D4jeKhmh6DhaetHuA>
-    <xmx:mwf2YlBEQSGonJWKrRB2tfaIYgO5sRPv24Fpo6yz6cLAGj3NIR5eug>
-    <xmx:mwf2YpxcnVKVfH7cNlPyqoumBeaZE33a429pUyr4cKBr-5UGJRyuFQ>
+X-ME-Proxy: <xmx:nQf2Yj8Q2AePKnrMN8CsovvEDmfRlsGzPoQIeH0zaa2ziAOFy1qbfw>
+    <xmx:nQf2YitJ7001INZ_RMw4zxAi_QYoGbSJECHhx8t18WnbX7xQ6vWBDg>
+    <xmx:nQf2YqFlKWmiRSTM4UUErYIjxbXT-WoMrBQQl_FUT5MZHcqFQmsrQw>
+    <xmx:ngf2YiEKtm4w8Vurc38nqVNHlTYWjqnuKRwb5W_n_j7dNfv2kfetsg>
 Feedback-ID: i0ad843c9:Fastmail
 Received: by mail.messagingengine.com (Postfix) with ESMTPA; Fri,
- 12 Aug 2022 03:56:10 -0400 (EDT)
+ 12 Aug 2022 03:56:13 -0400 (EDT)
 From: Samuel Holland <samuel@sholland.org>
 To: Kishon Vijay Abraham I <kishon@ti.com>,
 	Vinod Koul <vkoul@kernel.org>,
@@ -88,16 +88,16 @@ Cc: Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
 	linux-kernel@vger.kernel.org,
 	linux-phy@lists.infradead.org,
 	linux-sunxi@lists.linux.dev
-Subject: [PATCH 5/8] phy: allwinner: phy-sun6i-mipi-dphy: Make RX support optional
-Date: Fri, 12 Aug 2022 02:56:00 -0500
-Message-Id: <20220812075603.59375-6-samuel@sholland.org>
+Subject: [PATCH 7/8] phy: allwinner: phy-sun6i-mipi-dphy: Add a variant power-on hook
+Date: Fri, 12 Aug 2022 02:56:02 -0500
+Message-Id: <20220812075603.59375-8-samuel@sholland.org>
 X-Mailer: git-send-email 2.35.1
 In-Reply-To: <20220812075603.59375-1-samuel@sholland.org>
 References: <20220812075603.59375-1-samuel@sholland.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220812_005612_476345_59F8AB32 
-X-CRM114-Status: GOOD (  15.55  )
+X-CRM114-CacheID: sfid-20220812_005614_976271_620CC4C1 
+X-CRM114-Status: GOOD (  12.17  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -114,83 +114,112 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-While all variants of the DPHY likely support RX mode, the new variant
-in the A100 is not used in this direction by the BSP, and it has some
-analog register changes, so its RX power-on sequence is unknown. To be
-safe, limit RX support to variants where the power-on sequence is known.
+The A100 variant uses the same values for the timing registers, and it
+uses the same final power-on sequence, but it needs a different analog
+register configuration in the middle. Support this by moving the
+variant-specific parts to a hook provided by the variant.
 
 Signed-off-by: Samuel Holland <samuel@sholland.org>
 ---
 
- drivers/phy/allwinner/phy-sun6i-mipi-dphy.c | 25 +++++++++++++++++++--
- 1 file changed, 23 insertions(+), 2 deletions(-)
+ drivers/phy/allwinner/phy-sun6i-mipi-dphy.c | 59 ++++++++++++---------
+ 1 file changed, 35 insertions(+), 24 deletions(-)
 
 diff --git a/drivers/phy/allwinner/phy-sun6i-mipi-dphy.c b/drivers/phy/allwinner/phy-sun6i-mipi-dphy.c
-index 3900f1650851..625c6e1e9990 100644
+index 9698d68d0db7..6a1993c434e8 100644
 --- a/drivers/phy/allwinner/phy-sun6i-mipi-dphy.c
 +++ b/drivers/phy/allwinner/phy-sun6i-mipi-dphy.c
-@@ -114,6 +114,10 @@ enum sun6i_dphy_direction {
+@@ -114,7 +114,10 @@ enum sun6i_dphy_direction {
  	SUN6I_DPHY_DIRECTION_RX,
  };
  
-+struct sun6i_dphy_variant {
-+	bool	supports_rx;
-+};
++struct sun6i_dphy;
 +
- struct sun6i_dphy {
- 	struct clk				*bus_clk;
- 	struct clk				*mod_clk;
-@@ -123,6 +127,7 @@ struct sun6i_dphy {
- 	struct phy				*phy;
- 	struct phy_configure_opts_mipi_dphy	config;
- 
-+	const struct sun6i_dphy_variant		*variant;
- 	enum sun6i_dphy_direction		direction;
+ struct sun6i_dphy_variant {
++	void	(*tx_power_on)(struct sun6i_dphy *dphy);
+ 	bool	supports_rx;
  };
  
-@@ -409,6 +414,10 @@ static int sun6i_dphy_probe(struct platform_device *pdev)
- 	if (!dphy)
- 		return -ENOMEM;
- 
-+	dphy->variant = device_get_match_data(&pdev->dev);
-+	if (!dphy->variant)
-+		return -EINVAL;
-+
- 	regs = devm_platform_ioremap_resource(pdev, 0);
- 	if (IS_ERR(regs)) {
- 		dev_err(&pdev->dev, "Couldn't map the DPHY encoder registers\n");
-@@ -445,8 +454,13 @@ static int sun6i_dphy_probe(struct platform_device *pdev)
- 	ret = of_property_read_string(pdev->dev.of_node, "allwinner,direction",
- 				      &direction);
- 
--	if (!ret && !strncmp(direction, "rx", 2))
-+	if (!ret && !strncmp(direction, "rx", 2)) {
-+		if (!dphy->variant->supports_rx) {
-+			dev_err(&pdev->dev, "RX not supported on this variant\n");
-+			return -EOPNOTSUPP;
-+		}
- 		dphy->direction = SUN6I_DPHY_DIRECTION_RX;
-+	}
- 
- 	phy_set_drvdata(dphy->phy, dphy);
- 	phy_provider = devm_of_phy_provider_register(&pdev->dev, of_phy_simple_xlate);
-@@ -454,8 +468,15 @@ static int sun6i_dphy_probe(struct platform_device *pdev)
- 	return PTR_ERR_OR_ZERO(phy_provider);
+@@ -156,33 +159,10 @@ static int sun6i_dphy_configure(struct phy *phy, union phy_configure_opts *opts)
+ 	return 0;
  }
  
-+static const struct sun6i_dphy_variant sun6i_a31_mipi_dphy_variant = {
-+	.supports_rx	= true,
-+};
+-static int sun6i_dphy_tx_power_on(struct sun6i_dphy *dphy)
++static void sun6i_a31_mipi_dphy_tx_power_on(struct sun6i_dphy *dphy)
+ {
+ 	u8 lanes_mask = GENMASK(dphy->config.lanes - 1, 0);
+ 
+-	regmap_write(dphy->regs, SUN6I_DPHY_TX_CTL_REG,
+-		     SUN6I_DPHY_TX_CTL_HS_TX_CLK_CONT);
+-
+-	regmap_write(dphy->regs, SUN6I_DPHY_TX_TIME0_REG,
+-		     SUN6I_DPHY_TX_TIME0_LP_CLK_DIV(14) |
+-		     SUN6I_DPHY_TX_TIME0_HS_PREPARE(6) |
+-		     SUN6I_DPHY_TX_TIME0_HS_TRAIL(10));
+-
+-	regmap_write(dphy->regs, SUN6I_DPHY_TX_TIME1_REG,
+-		     SUN6I_DPHY_TX_TIME1_CLK_PREPARE(7) |
+-		     SUN6I_DPHY_TX_TIME1_CLK_ZERO(50) |
+-		     SUN6I_DPHY_TX_TIME1_CLK_PRE(3) |
+-		     SUN6I_DPHY_TX_TIME1_CLK_POST(10));
+-
+-	regmap_write(dphy->regs, SUN6I_DPHY_TX_TIME2_REG,
+-		     SUN6I_DPHY_TX_TIME2_CLK_TRAIL(30));
+-
+-	regmap_write(dphy->regs, SUN6I_DPHY_TX_TIME3_REG, 0);
+-
+-	regmap_write(dphy->regs, SUN6I_DPHY_TX_TIME4_REG,
+-		     SUN6I_DPHY_TX_TIME4_HS_TX_ANA0(3) |
+-		     SUN6I_DPHY_TX_TIME4_HS_TX_ANA1(3));
+-
+ 	regmap_write(dphy->regs, SUN6I_DPHY_ANA0_REG,
+ 		     SUN6I_DPHY_ANA0_REG_PWS |
+ 		     SUN6I_DPHY_ANA0_REG_DMPC |
+@@ -214,6 +194,36 @@ static int sun6i_dphy_tx_power_on(struct sun6i_dphy *dphy)
+ 		     SUN6I_DPHY_ANA3_EN_LDOC |
+ 		     SUN6I_DPHY_ANA3_EN_LDOD);
+ 	udelay(1);
++}
 +
- static const struct of_device_id sun6i_dphy_of_table[] = {
--	{ .compatible = "allwinner,sun6i-a31-mipi-dphy" },
-+	{
-+		.compatible	= "allwinner,sun6i-a31-mipi-dphy",
-+		.data		= &sun6i_a31_mipi_dphy_variant,
-+	},
- 	{ }
++static int sun6i_dphy_tx_power_on(struct sun6i_dphy *dphy)
++{
++	u8 lanes_mask = GENMASK(dphy->config.lanes - 1, 0);
++
++	regmap_write(dphy->regs, SUN6I_DPHY_TX_CTL_REG,
++		     SUN6I_DPHY_TX_CTL_HS_TX_CLK_CONT);
++
++	regmap_write(dphy->regs, SUN6I_DPHY_TX_TIME0_REG,
++		     SUN6I_DPHY_TX_TIME0_LP_CLK_DIV(14) |
++		     SUN6I_DPHY_TX_TIME0_HS_PREPARE(6) |
++		     SUN6I_DPHY_TX_TIME0_HS_TRAIL(10));
++
++	regmap_write(dphy->regs, SUN6I_DPHY_TX_TIME1_REG,
++		     SUN6I_DPHY_TX_TIME1_CLK_PREPARE(7) |
++		     SUN6I_DPHY_TX_TIME1_CLK_ZERO(50) |
++		     SUN6I_DPHY_TX_TIME1_CLK_PRE(3) |
++		     SUN6I_DPHY_TX_TIME1_CLK_POST(10));
++
++	regmap_write(dphy->regs, SUN6I_DPHY_TX_TIME2_REG,
++		     SUN6I_DPHY_TX_TIME2_CLK_TRAIL(30));
++
++	regmap_write(dphy->regs, SUN6I_DPHY_TX_TIME3_REG, 0);
++
++	regmap_write(dphy->regs, SUN6I_DPHY_TX_TIME4_REG,
++		     SUN6I_DPHY_TX_TIME4_HS_TX_ANA0(3) |
++		     SUN6I_DPHY_TX_TIME4_HS_TX_ANA1(3));
++
++	dphy->variant->tx_power_on(dphy);
+ 
+ 	regmap_update_bits(dphy->regs, SUN6I_DPHY_ANA3_REG,
+ 			   SUN6I_DPHY_ANA3_EN_VTTC |
+@@ -469,6 +479,7 @@ static int sun6i_dphy_probe(struct platform_device *pdev)
+ }
+ 
+ static const struct sun6i_dphy_variant sun6i_a31_mipi_dphy_variant = {
++	.tx_power_on	= sun6i_a31_mipi_dphy_tx_power_on,
+ 	.supports_rx	= true,
  };
- MODULE_DEVICE_TABLE(of, sun6i_dphy_of_table);
+ 
 -- 
 2.35.1
 
