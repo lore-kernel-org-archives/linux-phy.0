@@ -4,73 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2BF1CC00140
-	for <linux-phy@archiver.kernel.org>; Fri, 12 Aug 2022 08:04:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 064EBC25B0F
+	for <linux-phy@archiver.kernel.org>; Fri, 12 Aug 2022 08:04:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4BlewI6wYwQPxpDrS5Lm1F0gyMLwgdZoMHQskC8m57g=; b=djJID55oksa+0c
-	W3OnSM6welMARDDdUJIjFMxkaqCmW78o8iNs6IqgPpSHliSPeDQSRS201Up2I+UZ5+OHG0EmKyuOD
-	13mYP2/eKqRtdnPYiJibfVEPLOKSCDsmB8p+BTRTSkIzD8wrMCb+68WosGCX8JCdH8MW1I3SpoRrz
-	WDzgCR6HPm4bZGjso8JhBe7Gx0HkM32JR1N3bTpQ15mRVNlQLHIiOSM4W/ANSSlbzG2Hiv4OhBHG9
-	nQd7URLadDNZ1rJqqWRypvC081Q/mM7F83RK8SGaP+VqaxXFpwfYnDydqgoIdbf8LslIu9bwFHR91
-	mZdCQ53P5i0M2CsE+VAA==;
+	List-Owner; bh=7TQRmFVqSRdzwzs889eP87OSlSKEuIBsPnHJSHnpujU=; b=SbV94X1bFNFEp/
+	HIN0SUmfPUUm9ZI1nwIPNVd4dok/VQWu8mGqdYv+Tkvp+ejNe8vGwd8I+eZc5OlPizP6Eay53o/Pt
+	ZoRUL/RVhIeVtjJ5dZOw853AuqrIrP3ogYZ002laPkB49hynSbKSRA+BmPhMWte3kA1+IZuUQaNVG
+	XP3xCwNGBNBZL45d7Zhhm1nZBKUv5ooss/GBbJsB0u5RHk2kwYEnU07GGBoGQIhyK7okF21l6HNol
+	mgRLNpSv5qmPZwrB/evujxHf7IPQTPyX06y48YOAoP52u2ptV75ZwZp6vQ6W5Us4+jwbk2rxDHlE3
+	iOQUpo27JnLT9Xzhgvgw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oMPeR-002PPI-EJ; Fri, 12 Aug 2022 08:04:15 +0000
+	id 1oMPeR-002PQG-Vl; Fri, 12 Aug 2022 08:04:16 +0000
 Received: from out2-smtp.messagingengine.com ([66.111.4.26])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oMPWf-002BkC-OS; Fri, 12 Aug 2022 07:56:15 +0000
+	id 1oMPWh-002BoW-Vb; Fri, 12 Aug 2022 07:56:17 +0000
 Received: from compute2.internal (compute2.nyi.internal [10.202.2.46])
-	by mailout.nyi.internal (Postfix) with ESMTP id CB7555C00E4;
-	Fri, 12 Aug 2022 03:56:12 -0400 (EDT)
+	by mailout.nyi.internal (Postfix) with ESMTP id 40FAB5C0115;
+	Fri, 12 Aug 2022 03:56:15 -0400 (EDT)
 Received: from mailfrontend2 ([10.202.2.163])
-  by compute2.internal (MEProxy); Fri, 12 Aug 2022 03:56:12 -0400
+  by compute2.internal (MEProxy); Fri, 12 Aug 2022 03:56:15 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sholland.org; h=
 	cc:cc:content-transfer-encoding:date:date:from:from:in-reply-to
 	:in-reply-to:message-id:mime-version:references:reply-to:sender
-	:subject:subject:to:to; s=fm2; t=1660290972; x=1660377372; bh=88
-	QB6K6RMHFX6L5k2LBFzL7b2vGRx9MIF2yOLaRtynY=; b=OpEpoz/HG/oBMRVUi9
-	upByrHpG2nTvBLwTjd6i7AAOWmfij4vHaWBAERjj1I8Cobz0+vNvHu76kqq2a1g3
-	a0ynv3j8t/m86Rh+FvF1aSr6nbx4PKCJIjSU1mFgB7khucoQk3H2gt6ulghw73NH
-	bg9mTDdJ+WzXro/3pC3Pq+kQDKShLp9Kc65t6Fo5gS2ibdyQ/oex4O5+CILHQNII
-	9nIR5kBTmYDjuj73xCSYPnl/4sbDtwBGVed/38k4u8kRWmdo7xGhDUiJR1OrftIY
-	mi1j4k2b4VhvtF5vyElRrQoUktQRkAXI9UO24Ng7EC4slRqgwP9IlMI45JsTA2Wo
-	Ehzw==
+	:subject:subject:to:to; s=fm2; t=1660290975; x=1660377375; bh=Bf
+	V3swjxdx5USfEaE1XeMwxBAoZADIoLTz1F96t9hyc=; b=mvhlbbw8hqnin7iWcj
+	j9ayN8AKVFxbvvsBfnJBdUZWQAb11a1GmPy9ygUUVF4sQE63XL/2TCBSCBL3FnCE
+	a9chhyqZZVKXpMIVEXrL/c85vV8RCDkNlJZ79PkTNs3dB7nppYAPeLzBNqxP8NfS
+	YOZ5xZhzRiSlBGhFY1v2fM2Gd8VuGltI2v4oIEh8/uIRZ0YV8dHLxeSkSZ4FXzAM
+	glPfRvYyxR1156ZM5CgaKZPDkOS6lD4mPp0pykdeRnfAIzWwuG/7wvodsBFym6c8
+	ZX5K1cFUt6kqQKeVIaKsTlLcdiQe9HS2b1zyV6OhBgHFEZ3snQ6CJ46AUoht3nyE
+	oV8Q==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
 	messagingengine.com; h=cc:cc:content-transfer-encoding:date:date
 	:feedback-id:feedback-id:from:from:in-reply-to:in-reply-to
 	:message-id:mime-version:references:reply-to:sender:subject
 	:subject:to:to:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender
-	:x-sasl-enc; s=fm1; t=1660290972; x=1660377372; bh=88QB6K6RMHFX6
-	L5k2LBFzL7b2vGRx9MIF2yOLaRtynY=; b=jrb/CiVXpdw5Wdy2da5/yIPTvMoH2
-	7rz4+UEJo7OIgy3Zlcfl4ikzTlcIhefpOUdfq4ztfHUgA9q1q7i3V5crBEc4na23
-	6TVgnHMCnVlPsWa+kBn9CsP/6TvikDuQE0B1FGHQn0LON54FcEGy1zIwW0B5YTdt
-	hOeaIm1kBvkGkc6VrfDdPLeqkz2zxk4RdXfUCPrM8R5utL6GQd8F4MMeGunu5rq/
-	39kfQwI0+qKXw6IZCe0oVZFpiFytUs0cq5QYg1v94lgNGPwdvPZ+gFIOPRjsUz1F
-	XBr5uFG0o/hwEbQuqQdiYTrwcRFGE6ELByJAICaTsyB63F9H2wk6Xh2bg==
-X-ME-Sender: <xms:nAf2YgVoMZp4NEIOuwAOirA4Cwde2u61oX2GHqpBakwQtqxh9Ho4cQ>
-    <xme:nAf2YknkD420v-siHqED5tfSbgUMHc8HEqcpxe2nqeF_nNHrYHcjZ-xIOophS5j-X
-    V_kbI8d5ifJaMdtsA>
-X-ME-Received: <xmr:nAf2YkYhig-9IgspZ5KxoUYXaJFfJ6kVGKjEzXSg9iqqYq2zV6KWCXZhUzSU_1n85ccBXGs-HwkNOLjI4vRjNKDYVe2nsZE0rFcM377f0HM4wfdTjLMHui7vai49mTMSCiWEYA>
+	:x-sasl-enc; s=fm1; t=1660290975; x=1660377375; bh=BfV3swjxdx5US
+	fEaE1XeMwxBAoZADIoLTz1F96t9hyc=; b=fydXvwbHgZ4JtYaMqdaUC89RBeCOQ
+	beUbmsCp0snlosi4OFRwCMKNgQ/6oTgtVtSyUW2Z0pojGiwRiqzAwH9Z0nMyzq4q
+	y/fkFbVkrm6vMgTaxZBdZi/2MtvM2TGo+YjqCqOd1g+sftai7WNwUa/CzYCmP4EB
+	QSE48HYvGCmMJQuaWn3rm6YzlapENStfBp+G+UOefGF9DGXPRNfcThux1ejFQv6q
+	jT5CUXjsbaufZ6cZyaTvTPA3hbWEnosfqn9iYGodrsrTEQB7wtXWy/2aKvBi4aSb
+	MghntvjpJyv5iBI8sAVSGHhZu+UTmZHlN9XGg24uALIDCT3u767dAc1Yg==
+X-ME-Sender: <xms:nwf2YsTcidG-5ff6Qdq2jvqYlzlaxJne6QTV3XdDBTnaAYOgbPkccg>
+    <xme:nwf2YpwzsdjLeLNMfgVRC33fAbsp5xFsPFEQwHuo_f06OIIrFIEJQPYewfKWqxOxM
+    lwOqHrsUyCyv6Qxig>
+X-ME-Received: <xmr:nwf2Yp15AUvG5oQhg3F-UxzM8vwUEx7yYlgdlJOLYMIb7WkmMnvK5rubA04__VmlE10IE_BAQTFy7VFmV6xjfitQ_uaBuE8pbEtqWwxnzNIM5OgtuJCdDMUWpG3RercE4NHJig>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvfedrvdeghedguddvjecutefuodetggdotefrod
     ftvfcurfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfgh
     necuuegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmd
     enucfjughrpefhvfevufffkffojghfggfgsedtkeertdertddtnecuhfhrohhmpefurghm
     uhgvlhcujfholhhlrghnugcuoehsrghmuhgvlhesshhhohhllhgrnhgurdhorhhgqeenuc
     ggtffrrghtthgvrhhnpedukeetueduhedtleetvefguddvvdejhfefudelgfduveeggeeh
-    gfdufeeitdevteenucevlhhushhtvghrufhiiigvpedvnecurfgrrhgrmhepmhgrihhlfh
+    gfdufeeitdevteenucevlhhushhtvghrufhiiigvpeehnecurfgrrhgrmhepmhgrihhlfh
     hrohhmpehsrghmuhgvlhesshhhohhllhgrnhgurdhorhhg
-X-ME-Proxy: <xmx:nAf2YvV6IF0sxIx52qGkuhcmZ4OSO3v1Uf8t3LAc3pjkKkSkg-gHlw>
-    <xmx:nAf2Yqk8bOGSGiF48zrglgr1DQ2ZU48gB4xb7AxmdLSVme2qQ35h-w>
-    <xmx:nAf2YkdGSDRBCAaBpKL7UC3tOaQWu9vpjuIAvtjLIIZ5X2Ki0r_JWg>
-    <xmx:nAf2Yv8KdMYKC1iONlV5XUL5Bxmlh78U8FxxD3IGtrSOV_dYr5mGFA>
+X-ME-Proxy: <xmx:nwf2YgBCg8qO0B-6xul1HMAcq3XMc4uX_XmPpH-hsOP0xg6h62z3Mw>
+    <xmx:nwf2YljecjsV57Qf1EuePOCacz2Q9qfBgM6i5b5L_SW5Y3awWOFsEA>
+    <xmx:nwf2YspXsk3XEoFPtMSXg4GAc9v9nLKF0MQgTjOd6F1XA3PxVnXWpA>
+    <xmx:nwf2Yl5ei5AYU0joqZubc-zmHzfJ3cYiAm2tEQ15hov7Qx7QxpdZJg>
 Feedback-ID: i0ad843c9:Fastmail
 Received: by mail.messagingengine.com (Postfix) with ESMTPA; Fri,
- 12 Aug 2022 03:56:11 -0400 (EDT)
+ 12 Aug 2022 03:56:14 -0400 (EDT)
 From: Samuel Holland <samuel@sholland.org>
 To: Kishon Vijay Abraham I <kishon@ti.com>,
 	Vinod Koul <vkoul@kernel.org>,
@@ -88,16 +88,16 @@ Cc: Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
 	linux-kernel@vger.kernel.org,
 	linux-phy@lists.infradead.org,
 	linux-sunxi@lists.linux.dev
-Subject: [PATCH 6/8] phy: allwinner: phy-sun6i-mipi-dphy: Set enable bit last
-Date: Fri, 12 Aug 2022 02:56:01 -0500
-Message-Id: <20220812075603.59375-7-samuel@sholland.org>
+Subject: [PATCH 8/8] phy: allwinner: phy-sun6i-mipi-dphy: Add the A100 DPHY variant
+Date: Fri, 12 Aug 2022 02:56:03 -0500
+Message-Id: <20220812075603.59375-9-samuel@sholland.org>
 X-Mailer: git-send-email 2.35.1
 In-Reply-To: <20220812075603.59375-1-samuel@sholland.org>
 References: <20220812075603.59375-1-samuel@sholland.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220812_005613_902160_88F58803 
-X-CRM114-Status: GOOD (  10.41  )
+X-CRM114-CacheID: sfid-20220812_005616_132103_7B4DE482 
+X-CRM114-Status: GOOD (  13.89  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -114,42 +114,218 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The A100 variant of the DPHY requires configuring the analog registers
-before setting the global enable bit. Since this order also works on the
-other variants, always use it, to minimize the differences between them.
+A100 features an updated DPHY, which moves PLL control inside the DPHY
+register space (previously the PLL was controlled from the CCU). It also
+requires a modified analog power-on sequence. This "combo PHY" can also
+be used as an LVDS PHY, but that is not yet supported by the driver.
 
 Signed-off-by: Samuel Holland <samuel@sholland.org>
 ---
 
- drivers/phy/allwinner/phy-sun6i-mipi-dphy.c | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
+ drivers/phy/allwinner/phy-sun6i-mipi-dphy.c | 143 +++++++++++++++++++-
+ 1 file changed, 142 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/phy/allwinner/phy-sun6i-mipi-dphy.c b/drivers/phy/allwinner/phy-sun6i-mipi-dphy.c
-index 625c6e1e9990..9698d68d0db7 100644
+index 6a1993c434e8..9911c4a5c318 100644
 --- a/drivers/phy/allwinner/phy-sun6i-mipi-dphy.c
 +++ b/drivers/phy/allwinner/phy-sun6i-mipi-dphy.c
-@@ -183,10 +183,6 @@ static int sun6i_dphy_tx_power_on(struct sun6i_dphy *dphy)
- 		     SUN6I_DPHY_TX_TIME4_HS_TX_ANA0(3) |
- 		     SUN6I_DPHY_TX_TIME4_HS_TX_ANA1(3));
+@@ -70,11 +70,19 @@
  
--	regmap_write(dphy->regs, SUN6I_DPHY_GCTL_REG,
--		     SUN6I_DPHY_GCTL_LANE_NUM(dphy->config.lanes) |
--		     SUN6I_DPHY_GCTL_EN);
--
- 	regmap_write(dphy->regs, SUN6I_DPHY_ANA0_REG,
- 		     SUN6I_DPHY_ANA0_REG_PWS |
- 		     SUN6I_DPHY_ANA0_REG_DMPC |
-@@ -244,6 +240,10 @@ static int sun6i_dphy_tx_power_on(struct sun6i_dphy *dphy)
- 			   SUN6I_DPHY_ANA2_EN_P2S_CPU_MASK,
- 			   SUN6I_DPHY_ANA2_EN_P2S_CPU(lanes_mask));
+ #define SUN6I_DPHY_ANA0_REG		0x4c
+ #define SUN6I_DPHY_ANA0_REG_PWS			BIT(31)
++#define SUN6I_DPHY_ANA0_REG_PWEND		BIT(30)
++#define SUN6I_DPHY_ANA0_REG_PWENC		BIT(29)
+ #define SUN6I_DPHY_ANA0_REG_DMPC		BIT(28)
+ #define SUN6I_DPHY_ANA0_REG_DMPD(n)		(((n) & 0xf) << 24)
++#define SUN6I_DPHY_ANA0_REG_SRXDT(n)		(((n) & 0xf) << 20)
++#define SUN6I_DPHY_ANA0_REG_SRXCK(n)		(((n) & 0xf) << 16)
++#define SUN6I_DPHY_ANA0_REG_SDIV2		BIT(15)
+ #define SUN6I_DPHY_ANA0_REG_SLV(n)		(((n) & 7) << 12)
+ #define SUN6I_DPHY_ANA0_REG_DEN(n)		(((n) & 0xf) << 8)
++#define SUN6I_DPHY_ANA0_REG_PLR(n)		(((n) & 0xf) << 4)
+ #define SUN6I_DPHY_ANA0_REG_SFB(n)		(((n) & 3) << 2)
++#define SUN6I_DPHY_ANA0_REG_RSD			BIT(1)
++#define SUN6I_DPHY_ANA0_REG_SELSCK		BIT(0)
  
-+	regmap_write(dphy->regs, SUN6I_DPHY_GCTL_REG,
-+		     SUN6I_DPHY_GCTL_LANE_NUM(dphy->config.lanes) |
-+		     SUN6I_DPHY_GCTL_EN);
+ #define SUN6I_DPHY_ANA1_REG		0x50
+ #define SUN6I_DPHY_ANA1_REG_VTTMODE		BIT(31)
+@@ -97,8 +105,13 @@
+ #define SUN6I_DPHY_ANA3_EN_LDOR			BIT(18)
+ 
+ #define SUN6I_DPHY_ANA4_REG		0x5c
++#define SUN6I_DPHY_ANA4_REG_EN_MIPI		BIT(31)
++#define SUN6I_DPHY_ANA4_REG_EN_COMTEST		BIT(30)
++#define SUN6I_DPHY_ANA4_REG_COMTEST(n)		(((n) & 3) << 28)
++#define SUN6I_DPHY_ANA4_REG_IB(n)		(((n) & 3) << 25)
+ #define SUN6I_DPHY_ANA4_REG_DMPLVC		BIT(24)
+ #define SUN6I_DPHY_ANA4_REG_DMPLVD(n)		(((n) & 0xf) << 20)
++#define SUN6I_DPHY_ANA4_REG_VTT_SET(n)		(((n) & 0x7) << 17)
+ #define SUN6I_DPHY_ANA4_REG_CKDV(n)		(((n) & 0x1f) << 12)
+ #define SUN6I_DPHY_ANA4_REG_TMSC(n)		(((n) & 3) << 10)
+ #define SUN6I_DPHY_ANA4_REG_TMSD(n)		(((n) & 3) << 8)
+@@ -109,6 +122,56 @@
+ 
+ #define SUN6I_DPHY_DBG5_REG		0xf4
+ 
++#define SUN50I_DPHY_TX_SLEW_REG0	0xf8
++#define SUN50I_DPHY_TX_SLEW_REG1	0xfc
++#define SUN50I_DPHY_TX_SLEW_REG2	0x100
 +
- 	return 0;
++#define SUN50I_DPHY_PLL_REG0		0x104
++#define SUN50I_DPHY_PLL_REG0_CP36_EN		BIT(23)
++#define SUN50I_DPHY_PLL_REG0_LDO_EN		BIT(22)
++#define SUN50I_DPHY_PLL_REG0_EN_LVS		BIT(21)
++#define SUN50I_DPHY_PLL_REG0_PLL_EN		BIT(20)
++#define SUN50I_DPHY_PLL_REG0_P(n)		(((n) & 0xf) << 16)
++#define SUN50I_DPHY_PLL_REG0_N(n)		(((n) & 0xff) << 8)
++#define SUN50I_DPHY_PLL_REG0_NDET		BIT(7)
++#define SUN50I_DPHY_PLL_REG0_TDIV		BIT(6)
++#define SUN50I_DPHY_PLL_REG0_M0(n)		(((n) & 3) << 4)
++#define SUN50I_DPHY_PLL_REG0_M1(n)		((n) & 0xf)
++
++#define SUN50I_DPHY_PLL_REG1		0x108
++#define SUN50I_DPHY_PLL_REG1_UNLOCK_MDSEL(n)	(((n) & 3) << 14)
++#define SUN50I_DPHY_PLL_REG1_LOCKMDSEL		BIT(13)
++#define SUN50I_DPHY_PLL_REG1_LOCKDET_EN		BIT(12)
++#define SUN50I_DPHY_PLL_REG1_VSETA(n)		(((n) & 0x7) << 9)
++#define SUN50I_DPHY_PLL_REG1_VSETD(n)		(((n) & 0x7) << 6)
++#define SUN50I_DPHY_PLL_REG1_LPF_SW		BIT(5)
++#define SUN50I_DPHY_PLL_REG1_ICP_SEL(n)		(((n) & 3) << 3)
++#define SUN50I_DPHY_PLL_REG1_ATEST_SEL(n)	(((n) & 3) << 1)
++#define SUN50I_DPHY_PLL_REG1_TEST_EN		BIT(0)
++
++#define SUN50I_DPHY_PLL_REG2		0x10c
++#define SUN50I_DPHY_PLL_REG2_SDM_EN		BIT(31)
++#define SUN50I_DPHY_PLL_REG2_FF_EN		BIT(30)
++#define SUN50I_DPHY_PLL_REG2_SS_EN		BIT(29)
++#define SUN50I_DPHY_PLL_REG2_SS_FRAC(n)		(((n) & 0x1ff) << 20)
++#define SUN50I_DPHY_PLL_REG2_SS_INT(n)		(((n) & 0xff) << 12)
++#define SUN50I_DPHY_PLL_REG2_FRAC(n)		((n) & 0xfff)
++
++#define SUN50I_COMBO_PHY_REG0		0x110
++#define SUN50I_COMBO_PHY_REG0_EN_TEST_COMBOLDO	BIT(5)
++#define SUN50I_COMBO_PHY_REG0_EN_TEST_0P8	BIT(4)
++#define SUN50I_COMBO_PHY_REG0_EN_MIPI		BIT(3)
++#define SUN50I_COMBO_PHY_REG0_EN_LVDS		BIT(2)
++#define SUN50I_COMBO_PHY_REG0_EN_COMBOLDO	BIT(1)
++#define SUN50I_COMBO_PHY_REG0_EN_CP		BIT(0)
++
++#define SUN50I_COMBO_PHY_REG1		0x114
++#define SUN50I_COMBO_PHY_REG2_REG_VREF1P6(n)	(((n) & 0x7) << 4)
++#define SUN50I_COMBO_PHY_REG2_REG_VREF0P8(n)	((n) & 0x7)
++
++#define SUN50I_COMBO_PHY_REG2		0x118
++#define SUN50I_COMBO_PHY_REG2_HS_STOP_DLY(n)	((n) & 0xff)
++
+ enum sun6i_dphy_direction {
+ 	SUN6I_DPHY_DIRECTION_TX,
+ 	SUN6I_DPHY_DIRECTION_RX,
+@@ -196,6 +259,76 @@ static void sun6i_a31_mipi_dphy_tx_power_on(struct sun6i_dphy *dphy)
+ 	udelay(1);
  }
  
++static void sun50i_a100_mipi_dphy_tx_power_on(struct sun6i_dphy *dphy)
++{
++	unsigned long mipi_symbol_rate = dphy->config.hs_clk_rate;
++	unsigned int div, n;
++
++	regmap_write(dphy->regs, SUN6I_DPHY_ANA4_REG,
++		     SUN6I_DPHY_ANA4_REG_IB(2) |
++		     SUN6I_DPHY_ANA4_REG_DMPLVD(4) |
++		     SUN6I_DPHY_ANA4_REG_VTT_SET(3) |
++		     SUN6I_DPHY_ANA4_REG_CKDV(3) |
++		     SUN6I_DPHY_ANA4_REG_TMSD(1) |
++		     SUN6I_DPHY_ANA4_REG_TMSC(1) |
++		     SUN6I_DPHY_ANA4_REG_TXPUSD(2) |
++		     SUN6I_DPHY_ANA4_REG_TXPUSC(3) |
++		     SUN6I_DPHY_ANA4_REG_TXDNSD(2) |
++		     SUN6I_DPHY_ANA4_REG_TXDNSC(3));
++
++	regmap_update_bits(dphy->regs, SUN6I_DPHY_ANA2_REG,
++			   SUN6I_DPHY_ANA2_EN_CK_CPU,
++			   SUN6I_DPHY_ANA2_EN_CK_CPU);
++
++	regmap_update_bits(dphy->regs, SUN6I_DPHY_ANA2_REG,
++			   SUN6I_DPHY_ANA2_REG_ENIB,
++			   SUN6I_DPHY_ANA2_REG_ENIB);
++
++	regmap_write(dphy->regs, SUN6I_DPHY_ANA3_REG,
++		     SUN6I_DPHY_ANA3_EN_LDOR |
++		     SUN6I_DPHY_ANA3_EN_LDOC |
++		     SUN6I_DPHY_ANA3_EN_LDOD);
++
++	regmap_write(dphy->regs, SUN6I_DPHY_ANA0_REG,
++		     SUN6I_DPHY_ANA0_REG_PLR(4) |
++		     SUN6I_DPHY_ANA0_REG_SFB(1));
++
++	regmap_write(dphy->regs, SUN50I_COMBO_PHY_REG0,
++		     SUN50I_COMBO_PHY_REG0_EN_CP);
++
++	/* Choose a divider to limit the VCO frequency to around 2 GHz. */
++	div = 16 >> order_base_2(DIV_ROUND_UP(mipi_symbol_rate, 264000000));
++	n = mipi_symbol_rate * div / 24000000;
++
++	regmap_write(dphy->regs, SUN50I_DPHY_PLL_REG0,
++		     SUN50I_DPHY_PLL_REG0_CP36_EN |
++		     SUN50I_DPHY_PLL_REG0_LDO_EN |
++		     SUN50I_DPHY_PLL_REG0_EN_LVS |
++		     SUN50I_DPHY_PLL_REG0_PLL_EN |
++		     SUN50I_DPHY_PLL_REG0_NDET |
++		     SUN50I_DPHY_PLL_REG0_P((div - 1) % 8) |
++		     SUN50I_DPHY_PLL_REG0_N(n) |
++		     SUN50I_DPHY_PLL_REG0_M0((div - 1) / 8) |
++		     SUN50I_DPHY_PLL_REG0_M1(2));
++
++	/* Disable sigma-delta modulation. */
++	regmap_write(dphy->regs, SUN50I_DPHY_PLL_REG2, 0);
++
++	regmap_update_bits(dphy->regs, SUN6I_DPHY_ANA4_REG,
++			   SUN6I_DPHY_ANA4_REG_EN_MIPI,
++			   SUN6I_DPHY_ANA4_REG_EN_MIPI);
++
++	regmap_update_bits(dphy->regs, SUN50I_COMBO_PHY_REG0,
++			   SUN50I_COMBO_PHY_REG0_EN_MIPI |
++			   SUN50I_COMBO_PHY_REG0_EN_COMBOLDO,
++			   SUN50I_COMBO_PHY_REG0_EN_MIPI |
++			   SUN50I_COMBO_PHY_REG0_EN_COMBOLDO);
++
++	regmap_write(dphy->regs, SUN50I_COMBO_PHY_REG2,
++		     SUN50I_COMBO_PHY_REG2_HS_STOP_DLY(20));
++	udelay(1);
++}
++
+ static int sun6i_dphy_tx_power_on(struct sun6i_dphy *dphy)
+ {
+ 	u8 lanes_mask = GENMASK(dphy->config.lanes - 1, 0);
+@@ -408,7 +541,7 @@ static const struct regmap_config sun6i_dphy_regmap_config = {
+ 	.reg_bits	= 32,
+ 	.val_bits	= 32,
+ 	.reg_stride	= 4,
+-	.max_register	= SUN6I_DPHY_DBG5_REG,
++	.max_register	= SUN50I_COMBO_PHY_REG2,
+ 	.name		= "mipi-dphy",
+ };
+ 
+@@ -483,11 +616,19 @@ static const struct sun6i_dphy_variant sun6i_a31_mipi_dphy_variant = {
+ 	.supports_rx	= true,
+ };
+ 
++static const struct sun6i_dphy_variant sun50i_a100_mipi_dphy_variant = {
++	.tx_power_on	= sun50i_a100_mipi_dphy_tx_power_on,
++};
++
+ static const struct of_device_id sun6i_dphy_of_table[] = {
+ 	{
+ 		.compatible	= "allwinner,sun6i-a31-mipi-dphy",
+ 		.data		= &sun6i_a31_mipi_dphy_variant,
+ 	},
++	{
++		.compatible	= "allwinner,sun50i-a100-mipi-dphy",
++		.data		= &sun50i_a100_mipi_dphy_variant,
++	},
+ 	{ }
+ };
+ MODULE_DEVICE_TABLE(of, sun6i_dphy_of_table);
 -- 
 2.35.1
 
