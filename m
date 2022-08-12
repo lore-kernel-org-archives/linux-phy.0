@@ -4,59 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A16F5C282E7
-	for <linux-phy@archiver.kernel.org>; Fri, 12 Aug 2022 14:33:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0A663C19F2D
+	for <linux-phy@archiver.kernel.org>; Fri, 12 Aug 2022 14:33:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+tndnrQlEpsHHlM8+9zGLdOEgJItbENHM/sh/49yZTU=; b=jx4vPXJZAT7sLW
-	m/KgA7+NS816JSmTpycSL8v091fXlwLjQ3RnQ06a/R1dzau//4pOGOfsC0AQAdeZnuT4fEP8PpDiP
-	f9OEjxlACgXV62b1Luy/TiRwtpABHZj7dJy240hV9NqY50zy8b1xlk2yFbHzqp9YaYHRBOEjB6Izw
-	eXd18hhR8YddcjH39jAXqow6jPIwrrwucXRzWT80auZrukDEMTLznWK1/k+V2/QzfP6wo8EIekDSy
-	hsFW+mHRGndil2DFVYeb7K6IsiohUIBFMFjpDjmkFkZXer0huE2lcCSBI+qKXMRW1UFzQom3KiZCL
-	P0/CrYWX2wuj9gIbhzUA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=BtGBVF4Nyt5mmMOXBU9PzGniOeG4pnROs0V1KnjY4U8=; b=eYVAQ2KZifRMVc
+	MLer0LRZqwWNAP3sc3nLDLA+B2qTQSrCEMXmBd82Sj4jf78FdS/A12USTjE/eeDLb8mKkmVN1iTfz
+	v/RJIB9TldndTUXx8+OLySBOsoI6uWhpqdrhHimh5jsNa8ueSd76tdNX57/iiuV4ksubuwH8pUu0H
+	xJvnA9TtokJZNDbby0wiSzLRjACLjG+sVxD8T5YBk2hPSqGjOtzEseI1EtDmxPk3DpFIGamyzEhC5
+	QTH8kb39+ERsMTNb8NIvcUq5onTZQSAOtUoyiP+ZKuaCkbKEQhHRfUc9Gj6ieYPE7+6LO3rGu0+ER
+	2SHwPMcfwpKaYSi/1t+Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oMVih-008xpl-2Y; Fri, 12 Aug 2022 14:33:03 +0000
-Received: from mail-ot1-x32a.google.com ([2607:f8b0:4864:20::32a])
+	id 1oMVih-008xpz-F2; Fri, 12 Aug 2022 14:33:03 +0000
+Received: from mail-ot1-x332.google.com ([2607:f8b0:4864:20::332])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oMViZ-008xiT-57; Fri, 12 Aug 2022 14:32:59 +0000
-Received: by mail-ot1-x32a.google.com with SMTP id h9-20020a9d5549000000b0063727299bb4so665470oti.9;
-        Fri, 12 Aug 2022 07:32:53 -0700 (PDT)
+	id 1oMViY-008xiM-9G; Fri, 12 Aug 2022 14:32:59 +0000
+Received: by mail-ot1-x332.google.com with SMTP id t11-20020a05683014cb00b0063734a2a786so661164otq.11;
+        Fri, 12 Aug 2022 07:32:52 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=gmail.com; s=20210112;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc;
-        bh=ORAgmiG57p/S9ocR1iRk76VvyBsd1+DxcS7O0rlHDs0=;
-        b=L19EYLdShAwN3qzEFR6fD2T75Fo5SjgH9YAE1tB7BZwbamNWm69s2TazBuiEWpVdjP
-         6q90Et1+osane5GyjPjHIy/N7zHzKxkZtj3iLNBKt1AZZtGDaRrGGXmERhGxR5P8bcYb
-         EkHQVxOwW5nmHP/KaWYGKrMA+b1I621PC7b87OhtknlVyKmNHxa3ncfUa9GQxcEZUd+Z
-         aLpauA69TRhf1xl6Piz8oQHi1D5vQnzaGxicUSsJpLGz/SpcIdCy3qbrV2WE/KfoNdGr
-         frF+a2SAfgDJ0+yRRP8MBG1SGcY+tkHN2VGLKMgOTI3t8v6YRs/AJj5uCYhlT1SMx2Kx
-         7rhA==
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc;
+        bh=hTos8OHgwFshY7dxk6YkVaVl45UAbrAfHyN2eZ+ZjUc=;
+        b=DFtvGARmm+GsyUAA3dGxfVZOL3HaJlJjuzo5fkGeRjK1IBhyqZxNK5MsHPZE5TnCeP
+         5pgK0WZF1wEJkfwf5fn1OU4cw+/d/vzFq69g3cJyiD2j1G3TnSoBFzAhQ27pMSxIuhnH
+         h0PWCibH5HVdSPe0lVy8LSIebmlgHfrejSDkZ6+s1XM41mUcxzHXEWbK9l/M9Sgf6WiX
+         EGNjXA4RTdEbcf9jBrj9SiUBRZXTfnjdl42M/HAvezBVX+soLPsn6XGIfiLI5AkmK+eK
+         f3ITY+y53bC0R86QHqgvXVmog0yBpLFSxZ9s9QFTJiI86/m4xpsXlBhOpCb+thM11kju
+         iLWA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc;
-        bh=ORAgmiG57p/S9ocR1iRk76VvyBsd1+DxcS7O0rlHDs0=;
-        b=BIQURCzOIqueZOjB6oN9PNJERpU8D+6mpGYzOn0mS7KwjTZGsdvWOuj7WfdEE3LlZ4
-         zNX67yX48x2DSRy5x8op+PW5bHYsCfGYd6uWBbAPpiT0+fDbbGG/xJBcoeuBfofUFMiY
-         OhTKJGQsD8AdccJniQiVWDunLloGXHbsQxfC0GQsiBnTJd+dGnjUjiWbgEgS6b7ExtwE
-         Fw6BSj81shPC7yWwjtdBlUPk5PZA12MPMAHDhW0MqSGsi8DkX2GaE9qCE/O3duerJiMK
-         JQFVvT0M0DbHfZnwcfbulokS5anSeS+QpEkuoSj2eL4/lKjZuXQBPvajV+U/AFfRdAZM
-         /BVQ==
-X-Gm-Message-State: ACgBeo1kcs7nukHGPVwkO2vAdilNEXEaSwzb/TEuZXR9nk1CK3Z2NAbo
-	VWAYbASyxrCQ5WEOfV5hfUolDirDvP0=
-X-Google-Smtp-Source: AA6agR5VxJHnzw9+8xRuZYBQGYnX+/ThoSrZzHgyNEu8fN+Id2bgeKZHZFCAIxPWejdhKq8FHKUUaA==
-X-Received: by 2002:a05:6830:16d9:b0:637:2e86:68a8 with SMTP id l25-20020a05683016d900b006372e8668a8mr1497242otr.334.1660314772643;
-        Fri, 12 Aug 2022 07:32:52 -0700 (PDT)
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc;
+        bh=hTos8OHgwFshY7dxk6YkVaVl45UAbrAfHyN2eZ+ZjUc=;
+        b=WpZQR/EI6lEBTj13dYv+aUzGZ8uGfLW5bjWqPT6i3a7WCzbYV4LrsrO0DAAyQ6fSeS
+         yoiMvRTa1l+RrrLgG5bU7B891R81ItHCwZDAiRxYCIppYGG5cSeQ3SpM79Yf+/YUTWnU
+         U0BP9Gtyrg9wr7XRngNKzYEPixssGzirFKiGS4zMAHcw5Lj6eq6u+RiZWLl6CpTHnVBE
+         XDRTM2KPVx1v2DxV0qVzcYZSEYCC4lD/1qcFVK/PPbUid0u/CE/GlpiinPNWYdLZDTG7
+         GMu7TN+l65TyXm3WGCqPKYLaDJui61SWcFbD0/9tFWi5nZiHP/EDdwxjpliw+87k8aJP
+         Dylw==
+X-Gm-Message-State: ACgBeo02DDVPuWQpQw9Mz1NodBdFdrhMq8Osxd0jxqXxnYBHRPm+J5NN
+	jmPkvyfWNMWjgE2ycsb1UOFoNORhoug=
+X-Google-Smtp-Source: AA6agR4gGe3vsOcQQhWRpqOHohyJTInaQR4HayXakB9KjD3urVkHTl1NNhMiBgegZArCRWUv7LE8FQ==
+X-Received: by 2002:a05:6830:1699:b0:637:1f6c:f9eb with SMTP id k25-20020a056830169900b006371f6cf9ebmr1555004otr.17.1660314771414;
+        Fri, 12 Aug 2022 07:32:51 -0700 (PDT)
 Received: from wintermute.localdomain (cpe-76-183-134-35.tx.res.rr.com. [76.183.134.35])
-        by smtp.gmail.com with ESMTPSA id n28-20020a0568080a1c00b003436fa2c23bsm282879oij.7.2022.08.12.07.32.51
+        by smtp.gmail.com with ESMTPSA id n28-20020a0568080a1c00b003436fa2c23bsm282879oij.7.2022.08.12.07.32.49
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 12 Aug 2022 07:32:52 -0700 (PDT)
+        Fri, 12 Aug 2022 07:32:50 -0700 (PDT)
 From: Chris Morgan <macroalpha82@gmail.com>
 To: linux-rockchip@lists.infradead.org
 Cc: linux-phy@lists.infradead.org,
@@ -71,17 +71,14 @@ Cc: linux-phy@lists.infradead.org,
 	heiko@sntech.de,
 	hjc@rock-chips.com,
 	Chris Morgan <macromorgan@hotmail.com>
-Subject: [RFC 1/4] dt-bindings: display: rockchip-dsi: add rk3568 compatible
-Date: Fri, 12 Aug 2022 09:32:44 -0500
-Message-Id: <20220812143247.25825-2-macroalpha82@gmail.com>
+Subject: [RFC 0/4] rockchip-dsi for rk3568
+Date: Fri, 12 Aug 2022 09:32:43 -0500
+Message-Id: <20220812143247.25825-1-macroalpha82@gmail.com>
 X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20220812143247.25825-1-macroalpha82@gmail.com>
-References: <20220812143247.25825-1-macroalpha82@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220812_073255_224480_8344D783 
-X-CRM114-Status: UNSURE (   8.30  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220812_073254_364958_49D027C7 
+X-CRM114-Status: GOOD (  12.38  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,26 +97,38 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Chris Morgan <macromorgan@hotmail.com>
 
-The rk3568 uses the same dw-mipi-dsi controller as previous Rockchip
-SOCs, so add a compatible string for it.
+This series adds support for the dsi and dphy controllers on the
+Rockchip RK3568. I can confirm that for the Rockchip RK3568 this
+current series DOES NOT WORK properly yet. The image on the screen
+is shifted about 100 pixels to the right and does not appear to be
+a timing issue. This behavior was observed on both the Anbernic RG503
+and RG353 portable gaming devices with different screens. These changes
+were also tested on an RK3326 based device (an Odroid Go Advance) with
+no noticeable regressions.
 
-Signed-off-by: Chris Morgan <macromorgan@hotmail.com>
----
- .../bindings/display/rockchip/dw_mipi_dsi_rockchip.txt           | 1 +
- 1 file changed, 1 insertion(+)
+An example of the issue on multiple devices:
+https://media.discordapp.net/attachments/973914035890290718/1007407064647221299/IMG_1999.jpg
+https://media.discordapp.net/attachments/995430498677571604/1003754966932008960/AB25898E-73EC-40A9-BD47-3FB970DDFB31.jpg
 
-diff --git a/Documentation/devicetree/bindings/display/rockchip/dw_mipi_dsi_rockchip.txt b/Documentation/devicetree/bindings/display/rockchip/dw_mipi_dsi_rockchip.txt
-index 39792f051d2d..9a223df8530c 100644
---- a/Documentation/devicetree/bindings/display/rockchip/dw_mipi_dsi_rockchip.txt
-+++ b/Documentation/devicetree/bindings/display/rockchip/dw_mipi_dsi_rockchip.txt
-@@ -8,6 +8,7 @@ Required properties:
- 	"rockchip,px30-mipi-dsi", "snps,dw-mipi-dsi"
- 	"rockchip,rk3288-mipi-dsi", "snps,dw-mipi-dsi"
- 	"rockchip,rk3399-mipi-dsi", "snps,dw-mipi-dsi"
-+	"rockchip,rk3568-mipi-dsi", "snps,dw-mipi-dsi"
- - reg: Represent the physical address range of the controller.
- - interrupts: Represent the controller's interrupt to the CPU(s).
- - clocks, clock-names: Phandles to the controller's pll reference
+
+Given the fact that the DSI controller is identical on the PX30 and
+RK3568 aside from different grf registers I am assuming the PHY is
+likely where the bugs are currently. I'm posting this as an RFC in the
+hopes that someone more knowledgeable than I can help identify the
+problem.
+
+Chris Morgan (4):
+  dt-bindings: display: rockchip-dsi: add rk3568 compatible
+  dt-bindings: phy: phy-rockchip-inno-dsidphy: add compatible for rk3568
+  drm/rockchip: dsi: add rk3568 support
+  phy/rockchip: inno-dsidphy: Add support for rk3568
+
+ .../display/rockchip/dw_mipi_dsi_rockchip.txt |   1 +
+ .../bindings/phy/rockchip,px30-dsi-dphy.yaml  |   1 +
+ .../gpu/drm/rockchip/dw-mipi-dsi-rockchip.c   |  51 ++++-
+ .../phy/rockchip/phy-rockchip-inno-dsidphy.c  | 204 ++++++++++++++----
+ 4 files changed, 209 insertions(+), 48 deletions(-)
+
 -- 
 2.25.1
 
