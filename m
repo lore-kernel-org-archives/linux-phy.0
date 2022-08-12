@@ -4,63 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6394CC00140
-	for <linux-phy@archiver.kernel.org>; Fri, 12 Aug 2022 12:22:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 459E3C00140
+	for <linux-phy@archiver.kernel.org>; Fri, 12 Aug 2022 12:44:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=4s7YtUvVaSd1P91aLEbrbT6XNf0RypJBFpjN9zQrGXE=; b=FPQvOC2XGQxk9pffePYf3/di2a
-	wcO/Q8/QwbKpa1K9qy4770WlHCngsAG1MEzxEbWs3OHDedsPJyWLAEdUO+IU+WgP+UIotCZ5GOPyK
-	6CXspHIftxwLlW4YDC7i9aFBlAl/6f+ewMRyFtW24fXNk20NswegA4OQoF/jwA47T2eazZmuULFtV
-	i5x0gMgC3MVumU2Fe137ByGFyd1XhAfqtgGYPVN/kfT8t1n8mYVvLDHnBQRXYXYro7M/cubnoZP1l
-	ffYhKNrAPlToVatogjL3R6M5+qzhF/acTAEkz/EvEsqPVNOv+U2wrwArYDYQRfKAPTH4YEetLnOkJ
-	GxTRhlMg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=RK1jxwKbxuuoO4/FqRo2LIUr+s9DJFvtSPCpWdoL3hY=; b=x2wI7l83Ru84gU
+	eBOSQsk6w9m+dMaCOXOWEN2wucIG++01CDzYdn14+yberbeymSXtm2iIIDLzmHXrAmzwnra/g0+rL
+	e0HAlCWoMVglZSPRLaenJqeNUAuiAUwvgsqo7VmgO+rakBKE6vBt4d4qzhyLozL4e267sNLw/2opG
+	/DzbGh/pIBfhjwXMauCjlV72coiGzU4NAHKnUYj7nnCPsKUs2KDQEkKS1yS8FrwiJ8dE2n5P/Xs7j
+	IBQGImuoJM+1OCu5ZxtSAan1w/YbYh2lLUxV2mdmrEe8zbF06U0OAstfQxP7D+s0ui85K9QgORbnc
+	RLKfFBymEYHjFpGOsuPA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oMTgZ-0079Ia-J3; Fri, 12 Aug 2022 12:22:43 +0000
-Received: from relay6-d.mail.gandi.net ([217.70.183.198])
+	id 1oMU1Q-007LHQ-KO; Fri, 12 Aug 2022 12:44:16 +0000
+Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oMTgO-0079DC-8O; Fri, 12 Aug 2022 12:22:34 +0000
-Received: (Authenticated sender: paul.kocialkowski@bootlin.com)
-	by mail.gandi.net (Postfix) with ESMTPSA id 8730DC0010;
-	Fri, 12 Aug 2022 12:22:25 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
-	t=1660306947;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 in-reply-to:in-reply-to:references:references;
-	bh=24bKiqU55JXRuVlkYegpaqJ9og5C48IeVZvaeDQry2M=;
-	b=Hv0YvjVZadPNGue6A/WQsAZQfBtEXiAYedGoDH36AbycZTxH5OSk9lJrz+Uvt9lB7o3lik
-	9sJOQAsAKAScXMgOQti3u4SzvK14cOpXcc4kcYEeuP3XD2YmJGMbSX2nv0G3yi0WkznDpV
-	iOJL+vI3nvGck2HkVtkVJzgeQvZsGMX+3Nj3/eSXP4bni36Dc09smaOrJX2b/2QKysJRLe
-	Mkd56fjrYzCDdjs/LFm2NWGpjENLmNLCVCKpE3WRCqfQplFa8fNyOXlhxgCoTFjKMyTUcb
-	5xDL/VkuoiVPwi24eEhcsogqCvsrIGs1mVzuQNEgx6hjliHgr5hE6i19jN5OfQ==
-Date: Fri, 12 Aug 2022 14:22:24 +0200
-From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-To: Samuel Holland <samuel@sholland.org>
-Cc: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
-	Chen-Yu Tsai <wens@csie.org>,
-	Jernej Skrabec <jernej.skrabec@gmail.com>,
-	Maxime Ripard <mripard@kernel.org>,
-	Jagan Teki <jagan@amarulasolutions.com>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Maxime Ripard <maxime@cerno.tech>, Rob Herring <robh+dt@kernel.org>,
-	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-sunxi@lists.linux.dev
-Subject: Re: [PATCH 1/8] dt-bindings: sun6i-a31-mipi-dphy: Add the interrupts
- property
-Message-ID: <YvZGAEM4B8SdDjwJ@aptenodytes>
-References: <20220812075603.59375-1-samuel@sholland.org>
- <20220812075603.59375-2-samuel@sholland.org>
+	id 1oMU1N-007LFA-Fj
+	for linux-phy@lists.infradead.org; Fri, 12 Aug 2022 12:44:15 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by ams.source.kernel.org (Postfix) with ESMTPS id EF36EB823AD;
+	Fri, 12 Aug 2022 12:44:11 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8FEFFC433C1;
+	Fri, 12 Aug 2022 12:44:10 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1660308250;
+	bh=v4r6uGM2LXsRrkD3UxFHiSK374SWrfGW5tK23a7bkx4=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=gYQyS8yW2SjLbDuY25vnjlZ58lUZ5hzoD57ZLxy2bIaYm5zo57ZVUczseGtcQAfpb
+	 P32BVL15LrrXEGN+7ncFYmm3isKNsuxzwojaa+FzBKLYiM586z2h0WB8z3cx3ZLWgT
+	 4yhS13QLJeh705zsSkFxdGfSa0rJF/NdU7sGW0rNxBuAGUCt1hWuWjhgXiLE76+6TN
+	 39tmOpUExb3h/wNFDAIz1EXkaVGgqMal87fFBmmPbrzFJGBlUSwplOU9Q0ppM9dROC
+	 IB5O6E28HTslZCgYKRyJDkWanH/oZDVBsBN0QFhjdC+OYlN9zy7EQPWKlhpnfgUPVg
+	 l9fCNN9wroJQQ==
+Received: by pali.im (Postfix)
+	id ADB7C9CF; Fri, 12 Aug 2022 14:44:07 +0200 (CEST)
+Date: Fri, 12 Aug 2022 14:44:07 +0200
+From: Pali =?utf-8?B?Um9ow6Fy?= <pali@kernel.org>
+To: Shinichiro Kawasaki <shinichiro.kawasaki@wdc.com>
+Cc: "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
+	"kabel@kernel.org" <kabel@kernel.org>,
+	Damien Le Moal <Damien.LeMoal@wdc.com>
+Subject: Re: ARMADA espressobin SATA drive detection failure
+Message-ID: <20220812124407.pdjjxpsf6pddsmsr@pali>
+References: <20220531124159.3e4lgn2v462irbtz@shindev>
+ <20220809094234.cpv6tdpmqfb3cfqq@pali>
+ <20220810103654.w3yurhdeulgyepbb@shindev>
+ <20220812045650.nzisin52zfbbwhsq@shindev>
+ <20220812082055.dvwmjcvsyb3iglav@pali>
+ <20220812120028.xcnvr3ocxmmkioqi@shindev>
 MIME-Version: 1.0
-In-Reply-To: <20220812075603.59375-2-samuel@sholland.org>
+Content-Disposition: inline
+In-Reply-To: <20220812120028.xcnvr3ocxmmkioqi@shindev>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220812_052232_590642_640BA6B7 
-X-CRM114-Status: GOOD (  19.50  )
+X-CRM114-CacheID: sfid-20220812_054413_839147_7DFF4C01 
+X-CRM114-Status: GOOD (  22.57  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,119 +76,54 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============0299052238214480953=="
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
---===============0299052238214480953==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="KjPeSdJ+GXZUw4K/"
-Content-Disposition: inline
-
-
---KjPeSdJ+GXZUw4K/
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-Hi Samuel,
-
-On Fri 12 Aug 22, 02:55, Samuel Holland wrote:
-> The sun6i DPHY can generate several interrupts, mostly for reporting
-> error conditions, but also for detecting BTA and UPLS sequences.
-> Document this capability in order to accurately describe the hardware.
->=20
-> The DPHY has no interrupt number provided in the vendor documentation
-> because its interrupt line is shared with the DSI controller.
-
-Interesting! I do see DPHY_INT_EN*/PD* in the Allwinner BSP's
-drivers/media/video/sunxi-vfe/mipi_csi/dphy/dphy_reg_i.h
-
-Maybe it would be useful to import the fields in the driver so that the
-next person who'll try to debug DSI can use them directly?
-
-You might also want to submit a patch as [PATCH NOT FOR MERGE] that
-adds an interrupt routine and some useful debugging.
-
-Do you think this is also available without a DSI controller?
-I could just give it a try on V3/A83t here and find out :)
-
-Cheers,
-
-Paul
-
-> Fixes: c25b84c00826 ("dt-bindings: display: Convert Allwinner DSI to a sc=
-hema")
-> Signed-off-by: Samuel Holland <samuel@sholland.org>
-> ---
->=20
->  .../bindings/phy/allwinner,sun6i-a31-mipi-dphy.yaml           | 4 ++++
->  1 file changed, 4 insertions(+)
->=20
-> diff --git a/Documentation/devicetree/bindings/phy/allwinner,sun6i-a31-mi=
-pi-dphy.yaml b/Documentation/devicetree/bindings/phy/allwinner,sun6i-a31-mi=
-pi-dphy.yaml
-> index 22636c9fdab8..cf49bd99b3e2 100644
-> --- a/Documentation/devicetree/bindings/phy/allwinner,sun6i-a31-mipi-dphy=
-=2Eyaml
-> +++ b/Documentation/devicetree/bindings/phy/allwinner,sun6i-a31-mipi-dphy=
-=2Eyaml
-> @@ -24,6 +24,9 @@ properties:
->    reg:
->      maxItems: 1
-> =20
-> +  interrupts:
-> +    maxItems: 1
-> +
->    clocks:
->      items:
->        - description: Bus Clock
-> @@ -53,6 +56,7 @@ required:
->    - "#phy-cells"
->    - compatible
->    - reg
-> +  - interrupts
->    - clocks
->    - clock-names
->    - resets
-> --=20
-> 2.35.1
->=20
-
---=20
-Paul Kocialkowski, Bootlin
-Embedded Linux and kernel engineering
-https://bootlin.com
-
---KjPeSdJ+GXZUw4K/
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAEBCAAdFiEEJZpWjZeIetVBefti3cLmz3+fv9EFAmL2RgAACgkQ3cLmz3+f
-v9EJmAf/RUjmCJrqT+VVsenrzACFjYYacE4PB9OUct0QvopV8HTeQ4cpP5PxQ7Hq
-Z7EDMun2tudD2q3tgqtIMRIjtikuL/VYQuBh+rCTEdxj+BUsRVFU6bXR3/CH4gp8
-dJcZuMc3pXWDq74sLz5JscdEaUAGTUJqqkl5TsSR/Kt0BVEKP7sHTg1xEVfJ0N6K
-OPP5oxJYMR3WSEiPpN7Vy3jeCpijm8hJJTHrbY6un7PfddvTXiBm0AU02RJ1PD2+
-nJwVDo+AO+E8WJsKoa+5BWCCPF+it7dVcyPLZszuYxYGC0B5+Yv+hjOeBw/Ouggf
-vuufwYdETc2xCdlsjvAp90wcwj1F0g==
-=A0Yv
------END PGP SIGNATURE-----
-
---KjPeSdJ+GXZUw4K/--
-
-
---===============0299052238214480953==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============0299052238214480953==--
-
+T24gRnJpZGF5IDEyIEF1Z3VzdCAyMDIyIDEyOjAwOjI4IFNoaW5pY2hpcm8gS2F3YXNha2kgd3Jv
+dGU6Cj4gT24gQXVnIDEyLCAyMDIyIC8gMTA6MjAsIFBhbGkgUm9ow6FyIHdyb3RlOgo+ID4gT24g
+RnJpZGF5IDEyIEF1Z3VzdCAyMDIyIDA0OjU2OjUwIFNoaW5pY2hpcm8gS2F3YXNha2kgd3JvdGU6
+Cj4gCj4gWy4uLl0KPiAKPiA+ID4gSSBub3RpY2VkIG9uZSBkaWZmZXJlbmNlIGJldHdlZW4geW91
+ciBzeXN0ZW0gYW5kIG1pbmU6IFUtQm9vdCB2ZXJzaW9uLgo+ID4gPiBPbiBteSBzeXN0ZW0sIGl0
+IGhhcyByYXRoZXIgb2xkIHZlcnNpb24gbm93Ogo+ID4gPiAKPiA+ID4gICBNYXJ2ZWxsPj4gdmVy
+c2lvbgo+ID4gPiAgIFUtQm9vdCAyMDE3LjAzLWFybWFkYS0xNy4xMC4yLWcxNGFlZWRjIChKdW4g
+MDEgMjAxOCAtIDE1OjM5OjEwICswODAwKQo+ID4gPiAgIGFhcmNoNjQtbGludXgtZ251LWdjYyAo
+TGluYXJvIEdDQyA1LjItMjAxNS4xMS0yKSA1LjIuMSAyMDE1MTAwNQo+ID4gPiAgIEdOVSBsZCAo
+R05VIEJpbnV0aWxzKSAyLjI1LjAgTGluYXJvIDIwMTVfMTAKPiA+ID4gCj4gPiA+IERvIHlvdSB0
+aGluayBpdCdzIHdvcnRoIHRyeWluZyB0aGUgbGF0ZXN0IFUtYm9vdD8KPiA+ID4gCj4gPiA+IC0t
+IAo+ID4gPiBTaGluJ2ljaGlybyBLYXdhc2FraQo+ID4gCj4gPiBZZXMsIHBsZWFzZSB1cGRhdGUg
+ZmlybXdhcmVzIHRvIHRoZSBsYXRlc3RzIHZlcnNpb25zLiBPciBhdCBsZWFzdCB0cnkgdG8KPiA+
+IGJvb3QgbmV3IFUtQm9vdCB2aWEgVUFSVCAod2l0aG91dCByZXBsYWNpbmcgZXhpc3RpbmcgdmVy
+c2lvbikgYW5kIGNoZWNrCj4gPiBmb3IgZGlmZmVyZW5jZXMuCj4gPiAKPiA+IEJ1aWxkaW5nIGRv
+Y3VtZW50YXRpb25zOgo+ID4gaHR0cHM6Ly90cnVzdGVkZmlybXdhcmUtYS5yZWFkdGhlZG9jcy5p
+by9lbi9sYXRlc3QvcGxhdC9tYXJ2ZWxsL2FybWFkYS9idWlsZC5odG1sCj4gPiBodHRwczovL3Nv
+dXJjZS5kZW54LmRlL3UtYm9vdC91LWJvb3QvLS9ibG9iL3YyMDIyLjA3L2RvYy9SRUFETUUubWFy
+dmVsbAo+ID4gCj4gPiBVQVJUIGJvb3RpbmcgZG9jdW1lbnRhdGlvbiBpcyBjdXJyZW50bHkgd2Fp
+dGluZyBmb3IgcmV2aWV3Ogo+ID4gaHR0cHM6Ly9yZXZpZXcudHJ1c3RlZGZpcm13YXJlLm9yZy9j
+L1RGLUEvdHJ1c3RlZC1maXJtd2FyZS1hLysvMTYxOTgKPiAKPiBUaGFua3MgZm9yIHRoZSBnb29k
+IHJlZmVyZW5jZXMuIEkndmUgbWFuYWdlZCB0byBidWlsZCBVLUJvb3QgZm9yIFVBUlQgYm9vdGlu
+ZyAoSQo+IHVzZSBmZWRvcmEsIHRoZW4gbmVlZGVkIHRvIGlkZW50aWZ5IEZlZG9yYSBwYWNrYWdl
+cyBjb3JyZXNwb25kaW5nIHRvIGd1aWRlZCBhcHQKPiBwYWNrYWdlcy4gSSBhbHNvIG5lZWRlZCB0
+byBmaXggYSBidWlsZCBmYWlsdXJlIGluIEEzNzAwLXV0aWxzLW1hcnZlbGwuKQo+IAo+IEkgbW9k
+aWZpZWQgYm9hcmQganVtcGVyIHBpbnMgdG8gVUFSVCBtb2RlIGFuZCBkb3dubG9hZGVkIHRoZSBi
+dWlsdCBVLUJvb3QgdXNpbmcKPiBtb3gtaW1hZ2VyLiBUaGUgZG93bmxvYWRlZCBVLUJvb3Qgc2hv
+d2VkIHRoZSBuZXcgdmVyc2lvbiBhbmQgZGV0ZWN0ZWQgbXkgU1NEOgo+IAo+ICAgPT4gdmVyc2lv
+bgo+ICAgVS1Cb290IDIwMjIuMTAtcmMyLTAwMDQ5LWcxNTc4NjFlNmFmIChBdWcgMTIgMjAyMiAt
+IDE4OjEwOjIxICswOTAwKQo+IAo+ICAgYWFyY2g2NC1saW51eC1nbnUtZ2NjIChHQ0MpIDEyLjEu
+MSAyMDIyMDUwNyAoUmVkIEhhdCBDcm9zcyAxMi4xLjEtMSkKPiAgIEdOVSBsZCB2ZXJzaW9uIDIu
+MzctNy5mYzM2Cj4gICA9PiBzY3NpIHNjYW4KPiAgIHNjYW5uaW5nIGJ1cyBmb3IgZGV2aWNlcy4u
+Lgo+ICAgICBEZXZpY2UgMDogKDA6MCkgVmVuZG9yOiBBVEEgUHJvZC46IFNhbkRpc2sgU0RTU0RB
+MjQgUmV2OiBVMjEwCj4gICAgICAgICAgICAgICBUeXBlOiBIYXJkIERpc2sKPiAgICAgICAgICAg
+ICAgIENhcGFjaXR5OiAyMjg5MzYuNSBNQiA9IDIyMy41IEdCICg0Njg4NjIxMjggeCA1MTIpCj4g
+Cj4gSG93ZXZlciwgYWZ0ZXIgYm9vdGluZyBMaW51eCBrZXJuZWwgdjUuMTguMTYgZnJvbSB0aGUg
+VS1Cb290LCBzdGlsbCB0aGUgZXJyb3IKPiBtZXNzYWdlICJhdGExOiBTQVRBIGxpbmsgZG93biAo
+U1N0YXR1cyAwIFNDb250cm9sIDMwMCkiIGlzIHByaW50ZWQuCj4gVGhpcyBtYXkgaW5kaWNhdGUg
+dGhhdCB0aGUgZXJyb3IgaXMgbm90IHJlbGF0ZWQgVS1Cb290Lgo+IAo+IE5vdyBJJ20gbm90IHN1
+cmUgd2hhdCdzIHRoZSBrZXkgZGlmZmVyZW5jZSBiZXR3ZWVuIHlvdXIgc3lzdGVtIGFuZCBtaW5l
+LiBJZgo+IHRoZXJlIGlzIGFueXRoaW5nIEkgY2FuIGRvIG5leHQsIHBsZWFzZSBsZXQgbWUga25v
+dy4KPiAKPiAtLSAKPiBTaGluJ2ljaGlybyBLYXdhc2FraQoKUHJvYmFibHkgdGhpcyBpcyBTU0Qg
+ZGlzayBzcGVjaWZpYy4gSSB3aWxsIHRyeSB0byBwcmVwYXJlIHNvbWUga2VybmVsCmNoYW5nZXMg
+dG8gdGVzdCBpZiBpdCBjaGFuZ2VzIHNvbWV0aGluZy4KCi0tIApsaW51eC1waHkgbWFpbGluZyBs
+aXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFk
+Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
