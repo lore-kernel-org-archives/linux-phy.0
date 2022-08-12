@@ -4,59 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5363AC00140
-	for <linux-phy@archiver.kernel.org>; Fri, 12 Aug 2022 14:33:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2FDCDC28B2B
+	for <linux-phy@archiver.kernel.org>; Fri, 12 Aug 2022 14:33:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bGB/MbO/lI0oIouQ5oRUQIHAp9K8yKLxY4BMVpeW6+M=; b=yCSanjTYfL4dga
-	oHCVsJF9m57QIsRboYS7htf30imsnm81HhFsPahUM46sdOi16ntDj/gBqsjwGTl/BSqh/F9NxO1Xc
-	C0LF0gl6grGk/SAuB4rGNI7uCRjmu8y3HjH7irkvHVcRCqdQ4Stkvllvyj0s61aKbHJjYoSoHB9zx
-	IJO3eUPmi545w0AmCiPfGiv2H0iBnKqVO1IsM/jtrMuZSVJ67bBmYFBRcc0OTnVy3jEjLWTcAxF6N
-	B7vbtXABYjgR+psEQNBttgpvMU3A/3RjIlrAZH/UvlgupB+tl7rAJHJr1TAXucIj38OVro0LtuTZL
-	HjPEtqL3d1oMRDd69DvQ==;
+	List-Owner; bh=C2EZ7yDP3Kux3WC0IsvpnLBxLRZxHboSj17lyTy3th0=; b=zkU/CGmJSpaz4V
+	srLDzLDv4CdA7Y+2imTcPkJgvzoAxbdiKzwWk4nV//jtJ3RVAifVpTDpv1tVTYyJZPue66uxSSI4D
+	IqYJy6u6Hvx4luvnn8rJK4EeAMU1CNJatLiACpITd6uwmPBrtg4NZCmm6FNiwqBP2TQAHmJkjpLuD
+	dpRmKjVRG8VgMCvBIENrNhy29jREvCaOSf1xUEYbpp0Pyr0yChaL1rPRg1SZVIvGb4htcuV5JZDP6
+	Leb30YJFzbOjdHiuXV3uMir3KyYsRRgi+brEq5AVoljL/PZFXONexMArhEgDGaQDtvEhn8mqMzbt5
+	bINdYRabRiW30br2oHGw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oMVif-008xpB-K9; Fri, 12 Aug 2022 14:33:01 +0000
-Received: from mail-oi1-x235.google.com ([2607:f8b0:4864:20::235])
+	id 1oMVih-008xq6-HP; Fri, 12 Aug 2022 14:33:03 +0000
+Received: from mail-ot1-x32f.google.com ([2607:f8b0:4864:20::32f])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oMVia-008xkE-B5; Fri, 12 Aug 2022 14:32:59 +0000
-Received: by mail-oi1-x235.google.com with SMTP id u14so1339806oie.2;
-        Fri, 12 Aug 2022 07:32:54 -0700 (PDT)
+	id 1oMVic-008xl7-Ab; Fri, 12 Aug 2022 14:32:59 +0000
+Received: by mail-ot1-x32f.google.com with SMTP id q6-20020a05683033c600b0061d2f64df5dso656686ott.13;
+        Fri, 12 Aug 2022 07:32:55 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=gmail.com; s=20210112;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc;
-        bh=qnSptJt7AFNWmzxMCkqf7MrpKQxtkc2Z0kVrcaCyyfQ=;
-        b=fHUNNf1S5S9u5i9fO6AoDb45aFdyI7LsAef5jdetPzmCLDJQDqxAxoVfC/3HOZ1+fF
-         rXvmcusyEHkXlXsD6IUcE8yfI6sTcNMZ8Jt0Qs/s3VMKIwyyrQLlJc2zCziVEyxSopG4
-         uHzcI2qvtqh+d2Zv+GYT3xA/rlsx2w73DAHXU2Ii8O/EYYW54l8xhJkmjSrplePShJ8G
-         rRU9XPhaBlRLEOKg1iqbtJ/nz5ik/U2i988xeKfWsZDnMaziVQBNdST8lfYWlNBuqhyj
-         XCI4hk6UqVGh7k+7D1wbiidrlhynmE2m0hg5cxxn+C7eACMsBSF/p89iIzNC5CJACXqm
-         KzXQ==
+        bh=Z861jG7BMhx/UqAm+BGR/UQTJzU7P1PboLjcZWY5WRs=;
+        b=RmPB7YB/RZJpHwqeBcu+PkPPyHv7N2fInWOSLc8+7HagSm77fxUwDXAW0f0o2rSC5e
+         uMUOrtvDz9qZbqS2FKvcg5GShPRqkYE2dAzWbB2FhH5W3A3jWInUpnNL3o/VsUl+11hU
+         tpheMZ00CQT538nzsmUypQNSB3hbugUodOpCK4LRo5EeXiCahjTnrwR3YwmX3ENuzag+
+         o9nuM4EhSzLyenCF+fIYLw3KbuolaZDk5xguMKtB95N5t/ipvYCyORoK3ViFfHTMi9eU
+         iwdZ/j5ZBbseVA5vJ7ieQp86G4c8ikWbFvXUJARByDMTEnPAP/LdoEEFkdnRAq40ZfuS
+         goBA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc;
-        bh=qnSptJt7AFNWmzxMCkqf7MrpKQxtkc2Z0kVrcaCyyfQ=;
-        b=hxDvvtK1Zx7diLahdx4Fnk7sh/C+iwiVPaviFFVe84eXW++ntrs/eHi637/I5+eXUf
-         1ZKfbvq+jImYCtf53TnBUrl02DDMoCa/jJ8cuU1YLoJL2okG6kBQQkFyTr4nInt9D/yB
-         aCn+wGcPH3P9xWWon9dVnjJGMOjhwzfw9ZeB3+7Z2OHlOBcnkS4jl6nIgRUcPLHhKLho
-         fotzdeaURwvEQZx3t7qSaLXgHAxZlR4Dwc9GzLiOfemK4eslC5njPREY1qBW/FY1+yS1
-         n9Xhx7UVcvXxnMKU3N5zcKX5a4j8zNUQ93u5/q9lkz83vZ0G2qHpQMzQ94mcaTuVYUwZ
-         JFrA==
-X-Gm-Message-State: ACgBeo20T5Hxtaq5P90AT9JaBmQGQwsUELfpnyi7TdOGHKTqR4laEuDd
-	aqUHmaBVmG7/tMbEGHjxk4gg+i6Y8dE=
-X-Google-Smtp-Source: AA6agR74gN/Xj6CR93wrkDgpBU4uyyTXxxFhv531ShDGFeFjwDWXTSLw+iPpQOL7fuxOLOc8RLh9UQ==
-X-Received: by 2002:a05:6808:1c07:b0:342:d3f8:e73c with SMTP id ch7-20020a0568081c0700b00342d3f8e73cmr1767595oib.71.1660314773714;
-        Fri, 12 Aug 2022 07:32:53 -0700 (PDT)
+        bh=Z861jG7BMhx/UqAm+BGR/UQTJzU7P1PboLjcZWY5WRs=;
+        b=y5tBgFle7psWquBkTH1AvEYgqVDbikwGUxK0WX3REMxf8CGA/Aq077pPe83+PZfS6S
+         lcjUwrFgWkbrJ4qkEPjPiZnDPAuTGtkL50DO/puWujDdWwtt1s2EG99JMEhJCNtRIoii
+         VXyGrKJfm9QbFltb6fke+NHAjkbCIFA9Z0rH/Ach2rlQchS90uYFojc+Loo8b/gQxqai
+         yakfYEZf/NBjPHNLC4Mo83RaD4TlFvpJHY+oH9rMn9slfOhHCN2N+oLYLGh9J18EI+c9
+         42UYhnnR9MF0WI/TG7S/ei9Yin55EiFV3Ii+nuo3Dh/blMvUNzidDI9CRq9Ay4mwv2pw
+         W2qQ==
+X-Gm-Message-State: ACgBeo2zVCAfC0rVGw8dv0xuDE6rmNYu3B7I9fhmxazxCZLXTkx9odgt
+	IbIO4cLPP6nPtJcn7j2stxMSOmNV6t0=
+X-Google-Smtp-Source: AA6agR7QtAT5mXjQhzxM/chs9icZWvO85teHKtiA9oDENOvnbOuz9aOqNNNFrhRSL7CkTGWm2BTR9A==
+X-Received: by 2002:a9d:2cb:0:b0:636:dd6a:b3e6 with SMTP id 69-20020a9d02cb000000b00636dd6ab3e6mr1455445otl.254.1660314774879;
+        Fri, 12 Aug 2022 07:32:54 -0700 (PDT)
 Received: from wintermute.localdomain (cpe-76-183-134-35.tx.res.rr.com. [76.183.134.35])
-        by smtp.gmail.com with ESMTPSA id n28-20020a0568080a1c00b003436fa2c23bsm282879oij.7.2022.08.12.07.32.52
+        by smtp.gmail.com with ESMTPSA id n28-20020a0568080a1c00b003436fa2c23bsm282879oij.7.2022.08.12.07.32.53
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 12 Aug 2022 07:32:53 -0700 (PDT)
+        Fri, 12 Aug 2022 07:32:54 -0700 (PDT)
 From: Chris Morgan <macroalpha82@gmail.com>
 To: linux-rockchip@lists.infradead.org
 Cc: linux-phy@lists.infradead.org,
@@ -71,17 +71,16 @@ Cc: linux-phy@lists.infradead.org,
 	heiko@sntech.de,
 	hjc@rock-chips.com,
 	Chris Morgan <macromorgan@hotmail.com>
-Subject: [RFC 2/4] dt-bindings: phy: phy-rockchip-inno-dsidphy: add compatible for rk3568
-Date: Fri, 12 Aug 2022 09:32:45 -0500
-Message-Id: <20220812143247.25825-3-macroalpha82@gmail.com>
+Subject: [RFC 3/4] drm/rockchip: dsi: add rk3568 support
+Date: Fri, 12 Aug 2022 09:32:46 -0500
+Message-Id: <20220812143247.25825-4-macroalpha82@gmail.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20220812143247.25825-1-macroalpha82@gmail.com>
 References: <20220812143247.25825-1-macroalpha82@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220812_073256_400608_70484A3F 
-X-CRM114-Status: UNSURE (   8.08  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220812_073258_413265_935BDD05 
+X-CRM114-Status: GOOD (  15.19  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,25 +99,103 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Chris Morgan <macromorgan@hotmail.com>
 
-Add a compatible string for the rk3568 dsi-dphy.
+Add the compatible and GRF definitions for the RK3568 soc.
 
 Signed-off-by: Chris Morgan <macromorgan@hotmail.com>
 ---
- .../devicetree/bindings/phy/rockchip,px30-dsi-dphy.yaml          | 1 +
- 1 file changed, 1 insertion(+)
+ .../gpu/drm/rockchip/dw-mipi-dsi-rockchip.c   | 51 ++++++++++++++++++-
+ 1 file changed, 49 insertions(+), 2 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/phy/rockchip,px30-dsi-dphy.yaml b/Documentation/devicetree/bindings/phy/rockchip,px30-dsi-dphy.yaml
-index 8a3032a3bd73..5c35e5ceec0b 100644
---- a/Documentation/devicetree/bindings/phy/rockchip,px30-dsi-dphy.yaml
-+++ b/Documentation/devicetree/bindings/phy/rockchip,px30-dsi-dphy.yaml
-@@ -18,6 +18,7 @@ properties:
-       - rockchip,px30-dsi-dphy
-       - rockchip,rk3128-dsi-dphy
-       - rockchip,rk3368-dsi-dphy
-+      - rockchip,rk3568-dsi-dphy
+diff --git a/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c b/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c
+index 110e83aad9bb..bf6948125b84 100644
+--- a/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c
++++ b/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c
+@@ -179,6 +179,23 @@
+ #define RK3399_TXRX_SRC_SEL_ISP0	BIT(4)
+ #define RK3399_TXRX_TURNREQUEST		GENMASK(3, 0)
  
-   reg:
-     maxItems: 1
++#define RK3568_GRF_VO_CON2		0x0368
++#define RK3568_DSI0_SKEWCALHS		(0x1f << 11)
++#define RK3568_DSI0_FORCETXSTOPMODE	(0xf << 4)
++#define RK3568_DSI0_TURNDISABLE		BIT(2)
++#define RK3568_DSI0_FORCERXMODE		BIT(0)
++
++/*
++ * Note these registers do not appear in the datasheet, they are
++ * however present in the BSP driver which is where these values
++ * come from. Name GRF_VO_CON3 is assumed.
++ */
++#define RK3568_GRF_VO_CON3		0x36c
++#define RK3568_DSI1_SKEWCALHS		(0x1f << 11)
++#define RK3568_DSI1_FORCETXSTOPMODE	(0xf << 4)
++#define RK3568_DSI1_TURNDISABLE		BIT(2)
++#define RK3568_DSI1_FORCERXMODE		BIT(0)
++
+ #define HIWORD_UPDATE(val, mask)	(val | (mask) << 16)
+ 
+ enum {
+@@ -735,8 +752,9 @@ static void dw_mipi_dsi_rockchip_config(struct dw_mipi_dsi_rockchip *dsi)
+ static void dw_mipi_dsi_rockchip_set_lcdsel(struct dw_mipi_dsi_rockchip *dsi,
+ 					    int mux)
+ {
+-	regmap_write(dsi->grf_regmap, dsi->cdata->lcdsel_grf_reg,
+-		mux ? dsi->cdata->lcdsel_lit : dsi->cdata->lcdsel_big);
++	if (dsi->cdata->lcdsel_grf_reg < 0)
++		regmap_write(dsi->grf_regmap, dsi->cdata->lcdsel_grf_reg,
++			mux ? dsi->cdata->lcdsel_lit : dsi->cdata->lcdsel_big);
+ }
+ 
+ static int
+@@ -963,6 +981,8 @@ static int dw_mipi_dsi_rockchip_bind(struct device *dev,
+ 		DRM_DEV_ERROR(dev, "Failed to create drm encoder\n");
+ 		goto out_pll_clk;
+ 	}
++	rockchip_drm_encoder_set_crtc_endpoint_id(&dsi->encoder,
++						  dev->of_node, 0, 0);
+ 
+ 	ret = dw_mipi_dsi_bind(dsi->dmd, &dsi->encoder.encoder);
+ 	if (ret) {
+@@ -1612,6 +1632,30 @@ static const struct rockchip_dw_dsi_chip_data rk3399_chip_data[] = {
+ 	{ /* sentinel */ }
+ };
+ 
++static const struct rockchip_dw_dsi_chip_data rk3568_chip_data[] = {
++	{
++		.reg = 0xfe060000,
++		.lcdsel_grf_reg = -1,
++		.lanecfg1_grf_reg = RK3568_GRF_VO_CON2,
++		.lanecfg1 = HIWORD_UPDATE(0, RK3568_DSI0_SKEWCALHS |
++					  RK3568_DSI0_FORCETXSTOPMODE |
++					  RK3568_DSI0_TURNDISABLE |
++					  RK3568_DSI0_FORCERXMODE),
++		.max_data_lanes = 4,
++	},
++	{
++		.reg = 0xfe070000,
++		.lcdsel_grf_reg = -1,
++		.lanecfg1_grf_reg = RK3568_GRF_VO_CON3,
++		.lanecfg1 = HIWORD_UPDATE(0, RK3568_DSI1_SKEWCALHS |
++					  RK3568_DSI1_FORCETXSTOPMODE |
++					  RK3568_DSI1_TURNDISABLE |
++					  RK3568_DSI1_FORCERXMODE),
++		.max_data_lanes = 4,
++	},
++	{ /* sentinel */ }
++};
++
+ static const struct of_device_id dw_mipi_dsi_rockchip_dt_ids[] = {
+ 	{
+ 	 .compatible = "rockchip,px30-mipi-dsi",
+@@ -1622,6 +1666,9 @@ static const struct of_device_id dw_mipi_dsi_rockchip_dt_ids[] = {
+ 	}, {
+ 	 .compatible = "rockchip,rk3399-mipi-dsi",
+ 	 .data = &rk3399_chip_data,
++	}, {
++	 .compatible = "rockchip,rk3568-mipi-dsi",
++	 .data = &rk3568_chip_data,
+ 	},
+ 	{ /* sentinel */ }
+ };
 -- 
 2.25.1
 
