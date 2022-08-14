@@ -4,74 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9E41DC25B0D
-	for <linux-phy@archiver.kernel.org>; Sun, 14 Aug 2022 13:11:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BCDF2C25B06
+	for <linux-phy@archiver.kernel.org>; Sun, 14 Aug 2022 15:31:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0tHC38Jbe7J4ghF2cum3fGNarME7YyBDBgDMrfi+p10=; b=TrRJS5YE6Bug2c
-	07TCcvIyFlUZd3FkKA3szpiM4FnI5aOa3Od7swfrSONtHXE2yj7mM/vps/loLAAM2EDRy92MhSIPB
-	gLHiWkUErnML7tqS7kbbB6se/kKmQXl8e5D7T1nlASiExtoFhmjVvnIOdbxbleJuZTz9GM8n5wxv+
-	bW1yZqi5hf7D3o1ARpSXYniqyD6YrUJTe8Sm+5GfthD/SYbBibYWRUJzIurhauQm6eNTI+DbU2sQX
-	WSGNoYChrIBOT9dEBbHJGbFjaGw5q5ikgDVTjbu66Ai+VHlxGvOBiY0gdWY6QKN44rt2Uc1U5I+AU
-	WhJ3hAtboKUcE0BJ0N+g==;
+	List-Owner; bh=slejkVFWdRaq3ZGtmsM/DEG6aAHNNi8wC7969pKk+Hg=; b=fFjrJZhSYmv2Rc
+	F1/hBfJRFyxtt0g/dVtUfqD0BW+rMRUizLEJELKtj92DZftEptT5jf3nPazA3BMBVm+JHIOtVkXnh
+	+8B1Zz/F+Co1FaP020HqdCS41/IBOj5FurMsE7gIxZoichzaDwFCmHqQeFfu3ejlKcL2dtnUMesSG
+	5gkjotHkJLCnOcDJFfvlsAIq1pr/2yqhmMreNuS4+aCJeq/22vsa7Lwg9TmzSiQP1XNlXd+cgF5BH
+	R4Qcu7uTg+giSqZEYto+vqSjr6jWQonhWxO9XyOZerefrZh0Z4MonmQ1kLXFbqCrpcmYb+WIO76PJ
+	0YR3R9p9EEvH70hcsTAA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oNDOp-006gpy-LL; Sun, 14 Aug 2022 13:11:27 +0000
-Received: from mail-wm1-x32d.google.com ([2a00:1450:4864:20::32d])
+	id 1oNFa3-007PYE-1y; Sun, 14 Aug 2022 15:31:11 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oNDOm-006gnv-1s; Sun, 14 Aug 2022 13:11:25 +0000
-Received: by mail-wm1-x32d.google.com with SMTP id r83-20020a1c4456000000b003a5cb389944so2726330wma.4;
-        Sun, 14 Aug 2022 06:11:22 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20210112;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc;
-        bh=AwhK7wTBXcBXgJI8gYQWdu+no9daQGPqNzLmnBIJk/Y=;
-        b=i2DReFLns7Fc0u+ltP6g2mGaoIGlbozNy1cckeaLmSueCXTgtqvrVuhYwrKpJMw2w7
-         +jhgnTwrMsvUB72dyJ7jsaZwVrb34oZGho2Zcdk7aC1GXOiAqUemzz3dh3Bd1W4K90+Z
-         WxDEus9fCX9hu3/GN4NAVFQV4fZFaAKPjjpyca6kn2E1ugUGatoiEslHnsQDd6zBecNj
-         0CAFVi1xlMCiKoSXwPzUMOr9C4cQs+IQ1AcPQELPWOxZatTo7kcDIqp2k+moA8cp3r65
-         H3eamcbSIGbvtp2wiby02RbbXOXDVeXsHRHP4RBeJZq7869hbUoZzI6uDqNJYxytZcGJ
-         8kjQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc;
-        bh=AwhK7wTBXcBXgJI8gYQWdu+no9daQGPqNzLmnBIJk/Y=;
-        b=7Bkp/OCRfHZbewHG2k1wBK+ZYojchUhvz3otDjltqm+td5txAOvLQCIu+0d2u02s6t
-         my5xXty2Xzwb5Ax9+1EN5p3XhulsuUhl11Ouzs+a80ajCL86IQKBI/zjhlx2la/taD4c
-         LQezQhL3wNmqPsz+rg8jXTuRt6NbhjNFsO3UYb7nC3nKYA5HcOu2cpo3RbMUUIXJC77a
-         NaJHlUH97C66Qw/fsGfprS+OjwpkMmtbtUHoVzu0ynjI9N4i8LGFlh1CiyYYYxI/Y4sG
-         rvdlcYA3N9Lh8erslarpfWJnIAaRTFO66nRQhdMK0+lzNolP6d/sM2UUQ7cWpWAEud3v
-         fRcQ==
-X-Gm-Message-State: ACgBeo2WXrgTZof9BhtwUZYGCnVmjAyLGdeY61dA+DMCYhOxPRGclbYJ
-	CfLPW6+n1WqjyDqgUoHux0DmKCshUcf5Ac+5yEs=
-X-Google-Smtp-Source: AA6agR5efggXY+S2mxoio8litXwouBnsyAK6zubmq0Kp4pzIcv/kqz9XG5Z24VzuncXXvhfpWZ6fKxiwDXznkK/mSlk=
-X-Received: by 2002:a05:600c:1e1c:b0:3a5:b668:4e2 with SMTP id
- ay28-20020a05600c1e1c00b003a5b66804e2mr12767740wmb.112.1660482681273; Sun, 14
- Aug 2022 06:11:21 -0700 (PDT)
+	id 1oNFZC-007OtP-6K; Sun, 14 Aug 2022 15:30:20 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 163B160C95;
+	Sun, 14 Aug 2022 15:30:16 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 82022C4314B;
+	Sun, 14 Aug 2022 15:30:14 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1660491015;
+	bh=dA6ZEuwj7DPqjItnEoT4QchiUOKqV/ohRsxC0LHDOW0=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=JXgTDBOABiffiVpBOZfuKphny11/sBUdu9XH6rSx2Le0+ZVvPZA6uVdOqfEH6zf70
+	 XT+PwuWuP6bVRzEJ2CfMTdAlTQAdh022fPxZwykUm9Rfon5nO7znLU6DQkYlWNO0OF
+	 +XNhlk0SHXW32KTur71FLx2az4mDKGfsqQyZCb+ZNkezdnfbeaIYZq7fDIVptgw/VE
+	 uwFhLg6X85kd9nPZcdsjSchYtw5p5/iUTDc/4XQRim15GqltX2tTk9F3sWI/ZpWeCR
+	 +JZgXJlG+dilyeW6aKnSGzf3vSDBNRud6Rv76FTJCpbkQ9wQZdiB+xXEd047ONjPJF
+	 ymIDFnjapy3Qw==
+From: Sasha Levin <sashal@kernel.org>
+To: linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org
+Cc: Marek Szyprowski <m.szyprowski@samsung.com>,
+	Bjorn Helgaas <helgaas@kernel.org>,
+	Bjorn Helgaas <bhelgaas@google.com>,
+	Chanho Park <chanho61.park@samsung.com>,
+	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Sasha Levin <sashal@kernel.org>,
+	kishon@ti.com,
+	linux-phy@lists.infradead.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-samsung-soc@vger.kernel.org
+Subject: [PATCH AUTOSEL 5.19 57/64] phy: samsung: phy-exynos-pcie: sanitize init/power_on callbacks
+Date: Sun, 14 Aug 2022 11:24:30 -0400
+Message-Id: <20220814152437.2374207-57-sashal@kernel.org>
+X-Mailer: git-send-email 2.35.1
+In-Reply-To: <20220814152437.2374207-1-sashal@kernel.org>
+References: <20220814152437.2374207-1-sashal@kernel.org>
 MIME-Version: 1.0
-References: <20220812143247.25825-1-macroalpha82@gmail.com>
-In-Reply-To: <20220812143247.25825-1-macroalpha82@gmail.com>
-From: Peter Geis <pgwipeout@gmail.com>
-Date: Sun, 14 Aug 2022 15:11:09 +0200
-Message-ID: <CAMdYzYqno-kWvUjU37XjTwOQQKbf1uvpU02hHbB4hhVOEDVgig@mail.gmail.com>
-Subject: Re: [RFC 0/4] rockchip-dsi for rk3568
-To: Chris Morgan <macroalpha82@gmail.com>
-Cc: "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>, 
-	"open list:GENERIC PHY FRAMEWORK" <linux-phy@lists.infradead.org>, devicetree <devicetree@vger.kernel.org>, 
-	dri-devel@lists.freedesktop.org, Vinod Koul <vkoul@kernel.org>, 
-	"Kishon Vijay Abraham, I" <kishon@ti.com>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, 
-	Rob Herring <robh+dt@kernel.org>, Daniel Vetter <daniel@ffwll.ch>, David Airlie <airlied@linux.ie>, 
-	Heiko Stuebner <heiko@sntech.de>, Sandy Huang <hjc@rock-chips.com>, 
-	Chris Morgan <macromorgan@hotmail.com>
+X-stable: review
+X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220814_061124_138767_10EE549F 
-X-CRM114-Status: GOOD (  23.71  )
+X-CRM114-CacheID: sfid-20220814_083018_539112_6852EF8A 
+X-CRM114-Status: GOOD (  11.77  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,64 +83,88 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Aug 12, 2022 at 4:33 PM Chris Morgan <macroalpha82@gmail.com> wrote:
->
-> From: Chris Morgan <macromorgan@hotmail.com>
+From: Marek Szyprowski <m.szyprowski@samsung.com>
 
-Good Afternoon,
+[ Upstream commit f2812227bb07e2eaee74253f11cea1576945df31 ]
 
->
-> This series adds support for the dsi and dphy controllers on the
-> Rockchip RK3568. I can confirm that for the Rockchip RK3568 this
-> current series DOES NOT WORK properly yet. The image on the screen
-> is shifted about 100 pixels to the right and does not appear to be
-> a timing issue. This behavior was observed on both the Anbernic RG503
-> and RG353 portable gaming devices with different screens. These changes
-> were also tested on an RK3326 based device (an Odroid Go Advance) with
-> no noticeable regressions.
->
-> An example of the issue on multiple devices:
-> https://media.discordapp.net/attachments/973914035890290718/1007407064647221299/IMG_1999.jpg
-> https://media.discordapp.net/attachments/995430498677571604/1003754966932008960/AB25898E-73EC-40A9-BD47-3FB970DDFB31.jpg
->
->
-> Given the fact that the DSI controller is identical on the PX30 and
-> RK3568 aside from different grf registers I am assuming the PHY is
-> likely where the bugs are currently. I'm posting this as an RFC in the
-> hopes that someone more knowledgeable than I can help identify the
-> problem.
+The exynos-pcie driver called phy_power_on() before phy_init() for some
+historical reasons. However the generic PHY framework assumes that the
+proper sequence is to call phy_init() first, then phy_power_on(). The
+operations done by both functions should be considered as one action and as
+such they are called by the exynos-pcie driver (without doing anything
+between them). The initialization is just a sequence of register writes,
+which cannot be altered without breaking the hardware operation.
 
-Thank you for this. It will be a few weeks before I'm in the position
-to test your series, but what you have described matches what I have
-observed in my attempts as well. I suspect the issue is actually in
-the VOP2 driver, since the PHY test functions display without
-corruption and loading up a 1080P hdmi connection allows DSI to
-display correctly.
+To match the generic PHY framework requirement, simply move all register
+writes to the phy_init()/phy_exit() and drop power_on()/power_off()
+callbacks. This way the driver will also work with the old (incorrect)
+PHY initialization call sequence.
 
-Very Respectfully,
-Peter Geis
+Link: https://lore.kernel.org/r/20220628220409.26545-1-m.szyprowski@samsung.com
+Reported-by: Bjorn Helgaas <helgaas@kernel.org>
+Signed-off-by: Marek Szyprowski <m.szyprowski@samsung.com>
+Signed-off-by: Bjorn Helgaas <bhelgaas@google.com>
+Reviewed-by: Chanho Park <chanho61.park@samsung.com>
+Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Acked-By: Vinod Koul <vkoul@kernel.org>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
+---
+ drivers/phy/samsung/phy-exynos-pcie.c | 25 +++++++++----------------
+ 1 file changed, 9 insertions(+), 16 deletions(-)
 
->
-> Chris Morgan (4):
->   dt-bindings: display: rockchip-dsi: add rk3568 compatible
->   dt-bindings: phy: phy-rockchip-inno-dsidphy: add compatible for rk3568
->   drm/rockchip: dsi: add rk3568 support
->   phy/rockchip: inno-dsidphy: Add support for rk3568
->
->  .../display/rockchip/dw_mipi_dsi_rockchip.txt |   1 +
->  .../bindings/phy/rockchip,px30-dsi-dphy.yaml  |   1 +
->  .../gpu/drm/rockchip/dw-mipi-dsi-rockchip.c   |  51 ++++-
->  .../phy/rockchip/phy-rockchip-inno-dsidphy.c  | 204 ++++++++++++++----
->  4 files changed, 209 insertions(+), 48 deletions(-)
->
-> --
-> 2.25.1
->
->
-> _______________________________________________
-> Linux-rockchip mailing list
-> Linux-rockchip@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-rockchip
+diff --git a/drivers/phy/samsung/phy-exynos-pcie.c b/drivers/phy/samsung/phy-exynos-pcie.c
+index 578cfe07d07a..53c9230c2907 100644
+--- a/drivers/phy/samsung/phy-exynos-pcie.c
++++ b/drivers/phy/samsung/phy-exynos-pcie.c
+@@ -51,6 +51,13 @@ static int exynos5433_pcie_phy_init(struct phy *phy)
+ {
+ 	struct exynos_pcie_phy *ep = phy_get_drvdata(phy);
+ 
++	regmap_update_bits(ep->pmureg, EXYNOS5433_PMU_PCIE_PHY_OFFSET,
++			   BIT(0), 1);
++	regmap_update_bits(ep->fsysreg, PCIE_EXYNOS5433_PHY_GLOBAL_RESET,
++			   PCIE_APP_REQ_EXIT_L1_MODE, 0);
++	regmap_update_bits(ep->fsysreg, PCIE_EXYNOS5433_PHY_L1SUB_CM_CON,
++			   PCIE_REFCLK_GATING_EN, 0);
++
+ 	regmap_update_bits(ep->fsysreg,	PCIE_EXYNOS5433_PHY_COMMON_RESET,
+ 			   PCIE_PHY_RESET, 1);
+ 	regmap_update_bits(ep->fsysreg, PCIE_EXYNOS5433_PHY_MAC_RESET,
+@@ -109,20 +116,7 @@ static int exynos5433_pcie_phy_init(struct phy *phy)
+ 	return 0;
+ }
+ 
+-static int exynos5433_pcie_phy_power_on(struct phy *phy)
+-{
+-	struct exynos_pcie_phy *ep = phy_get_drvdata(phy);
+-
+-	regmap_update_bits(ep->pmureg, EXYNOS5433_PMU_PCIE_PHY_OFFSET,
+-			   BIT(0), 1);
+-	regmap_update_bits(ep->fsysreg, PCIE_EXYNOS5433_PHY_GLOBAL_RESET,
+-			   PCIE_APP_REQ_EXIT_L1_MODE, 0);
+-	regmap_update_bits(ep->fsysreg, PCIE_EXYNOS5433_PHY_L1SUB_CM_CON,
+-			   PCIE_REFCLK_GATING_EN, 0);
+-	return 0;
+-}
+-
+-static int exynos5433_pcie_phy_power_off(struct phy *phy)
++static int exynos5433_pcie_phy_exit(struct phy *phy)
+ {
+ 	struct exynos_pcie_phy *ep = phy_get_drvdata(phy);
+ 
+@@ -135,8 +129,7 @@ static int exynos5433_pcie_phy_power_off(struct phy *phy)
+ 
+ static const struct phy_ops exynos5433_phy_ops = {
+ 	.init		= exynos5433_pcie_phy_init,
+-	.power_on	= exynos5433_pcie_phy_power_on,
+-	.power_off	= exynos5433_pcie_phy_power_off,
++	.exit		= exynos5433_pcie_phy_exit,
+ 	.owner		= THIS_MODULE,
+ };
+ 
+-- 
+2.35.1
+
 
 -- 
 linux-phy mailing list
