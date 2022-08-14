@@ -4,43 +4,43 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BCDF2C25B06
-	for <linux-phy@archiver.kernel.org>; Sun, 14 Aug 2022 15:31:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CB59DC25B0F
+	for <linux-phy@archiver.kernel.org>; Sun, 14 Aug 2022 15:38:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=slejkVFWdRaq3ZGtmsM/DEG6aAHNNi8wC7969pKk+Hg=; b=fFjrJZhSYmv2Rc
-	F1/hBfJRFyxtt0g/dVtUfqD0BW+rMRUizLEJELKtj92DZftEptT5jf3nPazA3BMBVm+JHIOtVkXnh
-	+8B1Zz/F+Co1FaP020HqdCS41/IBOj5FurMsE7gIxZoichzaDwFCmHqQeFfu3ejlKcL2dtnUMesSG
-	5gkjotHkJLCnOcDJFfvlsAIq1pr/2yqhmMreNuS4+aCJeq/22vsa7Lwg9TmzSiQP1XNlXd+cgF5BH
-	R4Qcu7uTg+giSqZEYto+vqSjr6jWQonhWxO9XyOZerefrZh0Z4MonmQ1kLXFbqCrpcmYb+WIO76PJ
-	0YR3R9p9EEvH70hcsTAA==;
+	List-Owner; bh=slejkVFWdRaq3ZGtmsM/DEG6aAHNNi8wC7969pKk+Hg=; b=msJ5SA9dY3wRg2
+	E32+CXOw8u6iX6CWLfdKHbrugaucU8iYj9FXb7GDCtik3N90STHN7oF8XunpY/rSGdKJBT1EsUhB6
+	d6dZIop4POExoN6pRNkR6Y5Bb6xUuoBBBbD82wmtgUib25b4kgvG3dfZytrLbgLh9QhhuQhCh+VuK
+	4c2v1wzjFkytIRvITYbjuHtVpXkWWFsIF714t4I851hQQQ0W1+TUHfzNAboafebHH3Nub3rP9+Pk4
+	mNBtkNgA/5hXJLFTTSG/d3Ki5aMwsi4t/qhGVtYRxhvbMYQSF8yb2loWYZlaKayJAhVWZg84qlYrd
+	d0OWtTmiVMtyi3/S0l5Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oNFa3-007PYE-1y; Sun, 14 Aug 2022 15:31:11 +0000
+	id 1oNFhZ-007Uf8-SU; Sun, 14 Aug 2022 15:38:57 +0000
 Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oNFZC-007OtP-6K; Sun, 14 Aug 2022 15:30:20 +0000
+	id 1oNFbS-007Qcf-Rl; Sun, 14 Aug 2022 15:32:40 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 163B160C95;
-	Sun, 14 Aug 2022 15:30:16 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 82022C4314B;
-	Sun, 14 Aug 2022 15:30:14 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 52BE860C94;
+	Sun, 14 Aug 2022 15:32:38 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6D29BC433C1;
+	Sun, 14 Aug 2022 15:32:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1660491015;
+	s=k20201202; t=1660491157;
 	bh=dA6ZEuwj7DPqjItnEoT4QchiUOKqV/ohRsxC0LHDOW0=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=JXgTDBOABiffiVpBOZfuKphny11/sBUdu9XH6rSx2Le0+ZVvPZA6uVdOqfEH6zf70
-	 XT+PwuWuP6bVRzEJ2CfMTdAlTQAdh022fPxZwykUm9Rfon5nO7znLU6DQkYlWNO0OF
-	 +XNhlk0SHXW32KTur71FLx2az4mDKGfsqQyZCb+ZNkezdnfbeaIYZq7fDIVptgw/VE
-	 uwFhLg6X85kd9nPZcdsjSchYtw5p5/iUTDc/4XQRim15GqltX2tTk9F3sWI/ZpWeCR
-	 +JZgXJlG+dilyeW6aKnSGzf3vSDBNRud6Rv76FTJCpbkQ9wQZdiB+xXEd047ONjPJF
-	 ymIDFnjapy3Qw==
+	b=QeRSoMzGIlF3L6l/gDD7IZz3YrqVAUiMASb27r2UB0vr7xEehOymyJoVj2DNLvjU9
+	 YABNf49Chh5ZRY9mZEZPhrvhgrp6vL4iZW630Wwj9DqztSHnVNUgzI1u5G2QAohKWx
+	 bQehrR6IvYiXrJsbwSvAoBiStEzO0MQxVeKSBPosSWp6LzBLfD2ocmg9lWdSa5nwkE
+	 sA6zEy0QosZmCULHQ6kWLE+g4xcxST1PhkfT8UhI42vPHB9pZ2WfdrQi3RxCDmTGhw
+	 78EDBNfxvRmWnQ4afuUD6SPEUAhnNOBW+Ydw64wVt7U5uWA1uI3PNpG3PqOKhEljGI
+	 T6mjPwseZdLtQ==
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
@@ -55,17 +55,17 @@ Cc: Marek Szyprowski <m.szyprowski@samsung.com>,
 	linux-phy@lists.infradead.org,
 	linux-arm-kernel@lists.infradead.org,
 	linux-samsung-soc@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.19 57/64] phy: samsung: phy-exynos-pcie: sanitize init/power_on callbacks
-Date: Sun, 14 Aug 2022 11:24:30 -0400
-Message-Id: <20220814152437.2374207-57-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.18 49/56] phy: samsung: phy-exynos-pcie: sanitize init/power_on callbacks
+Date: Sun, 14 Aug 2022 11:30:19 -0400
+Message-Id: <20220814153026.2377377-49-sashal@kernel.org>
 X-Mailer: git-send-email 2.35.1
-In-Reply-To: <20220814152437.2374207-1-sashal@kernel.org>
-References: <20220814152437.2374207-1-sashal@kernel.org>
+In-Reply-To: <20220814153026.2377377-1-sashal@kernel.org>
+References: <20220814153026.2377377-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220814_083018_539112_6852EF8A 
+X-CRM114-CacheID: sfid-20220814_083239_065044_B274B4F3 
 X-CRM114-Status: GOOD (  11.77  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
