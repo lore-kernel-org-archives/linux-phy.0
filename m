@@ -4,64 +4,107 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E310AC25B0D
-	for <linux-phy@archiver.kernel.org>; Sun, 14 Aug 2022 21:11:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C150AC00140
+	for <linux-phy@archiver.kernel.org>; Mon, 15 Aug 2022 14:59:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=23YNCv5MfLNFp5S8pok+kRLeIygBqvDA3iWRAlvkyKo=; b=CoQF/B8AEgSBvR
-	nvwaGsjKjCKeoi+NI/siFmBt3jzms0sbANEMe4rKAootmijsZkKQoaftvuHbNwakxf6tI04zhwsiq
-	VxyqaieWoDGMbh6E0ORAMdsAXyk76vB80tyEv02MAr/Yc5CdNxzbSYT9GtOqkNyBBo4mXxvxIVK5J
-	CvvBp7JkrlvZQdYiewbsRYrlglRisrj27sbmQK2PX1LEZAGg98ldWrGbV6Gdj5Cq0zO0UqFLFGgCE
-	suvjXNeBx8O6lzI94junZfx4lnmfmyJ/ObmNcWbOSVBnoao79D9dYthY5vxWtu4bJRKvbcCgsN1jt
-	Fvbeij+FOLiQYTXaWzfA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=idGB3Ft+qgHURuwqdTNO47HLj0M+/6q3QifzVMWO/0o=; b=ClV+0fnHgBkW4i
+	H0fIGae1TIrJQglK4Ly6hmDaFxSHF/fqma8C+4JXMemOPq/rGrfVv2ydOD5Udo4xKg56Ehk298mv2
+	zvETzljrE8eOm8uTxapYAejsfEONdUCIxIZDcwfVpzUJJKySGTMgVN/dEngob733ScRb5++wuhTNY
+	mBRBRcX88IQQ/YCJE2X+wxsXbjTPNSZ6kyPPw2Nth7QPEjYTAVr4f4E9A2iLHY+tA6YJGc1OfnLTt
+	yUVbDpoy3K+UfX1NtC1vDAsHkI5OxV1JKeVY2lDhd9Bkq7gu9vbDWoESVqGhhLeN0BGdjZyVBtghO
+	q3vCHCX7uA3u5765nLsA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oNKtN-009B6V-18; Sun, 14 Aug 2022 21:11:29 +0000
-Received: from mail-ot1-f41.google.com ([209.85.210.41])
+	id 1oNbZB-000UiW-HA; Mon, 15 Aug 2022 14:59:45 +0000
+Received: from mail-mw2nam10on2076.outbound.protection.outlook.com ([40.107.94.76] helo=NAM10-MW2-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oNKtK-009B5h-FH
-	for linux-phy@lists.infradead.org; Sun, 14 Aug 2022 21:11:27 +0000
-Received: by mail-ot1-f41.google.com with SMTP id q6-20020a05683033c600b0061d2f64df5dso4323291ott.13
-        for <linux-phy@lists.infradead.org>; Sun, 14 Aug 2022 14:11:24 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc;
-        bh=SNtxptsKRfjxSNBzwKDrbRbP+rVioeM6pMX342S2Bzo=;
-        b=L4T6kAbPeR5RlIc1ha+dOL0EuSSfg4qPLOf+vTrG8VrH9xesl5vtof+aNblpgZibEf
-         bw/vt+sqFhHUyWjIZEIM0OfUXBvtS+3v/dmfyPSk2EUP3Ayneep83v70xJ4XQU1Q7I+H
-         pq7o5xeAvx8B0oZuItlduoWh+CNdvM2tFjPU7SR3/yqbahWe22DYgEspapJwdkfSnYKy
-         LDbA2Q3am2VCc17yQuOJ+2XU4yeNlZYA9EfreMCdsS+8GpTzYsaZdJhxkX2FGjJ4QVu2
-         4Cnd7k7s5OTOdlVydP20kYa8962kHHDkEb8mDDi510GOOXEkhF6P+nOaeGmsCcWCCS7W
-         FuWA==
-X-Gm-Message-State: ACgBeo39M4qKwBmtFcvTPId4yyyhxshnFb3es/C/TPiQHdi6Bzsf1PJb
-	aDlXXZ3qsLybfIZFF0xIbQ==
-X-Google-Smtp-Source: AA6agR4VVIBNTZCoEgw4V7rWL5Xl6HZTIc9xhHfD7yz058qiISTBRw/kvHeZmSjVqY9jQPet77fZmw==
-X-Received: by 2002:a9d:748a:0:b0:637:2ef1:f3f3 with SMTP id t10-20020a9d748a000000b006372ef1f3f3mr4959581otk.90.1660511483711;
-        Sun, 14 Aug 2022 14:11:23 -0700 (PDT)
-Received: from robh.at.kernel.org ([172.58.176.57])
-        by smtp.gmail.com with ESMTPSA id m15-20020a056870a10f00b000fb2aa6eef2sm1049682oae.32.2022.08.14.14.11.20
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 14 Aug 2022 14:11:23 -0700 (PDT)
-Received: (nullmailer pid 716555 invoked by uid 1000);
-	Sun, 14 Aug 2022 21:11:04 -0000
-Date: Sun, 14 Aug 2022 15:11:04 -0600
-From: Rob Herring <robh@kernel.org>
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Cc: Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Kishon Vijay Abraham I <kishon@ti.com>, Rob Herring <robh+dt@kernel.org>, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, Vinod Koul <vkoul@kernel.org>
-Subject: Re: [PATCH] dt-bindings: phy: Drop Pratyush Yadav
-Message-ID: <20220814211104.GA716504-robh@kernel.org>
-References: <20220811063840.7670-1-krzysztof.kozlowski@linaro.org>
+	id 1oNbLW-000Iv9-8p
+	for linux-phy@lists.infradead.org; Mon, 15 Aug 2022 14:45:40 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=nwu+ZFyz1j9cwafCgQU1eRn9AmyljWpyqaa99CHT/EhqkKFv7LDLqFzjalGyvUO+x3+i3VmprmcIwQAT2kz7x4jM8ugghySj1aSpwNc9ii3szIIvlVfGbPMAbmXSZjCDEKe3KjmChZDunHD+s2JBDrxFfo5RxhaHjtvykp3t/C+Q1U+sh01c7Y4KAL7IVQ5mIG+318yynBmQzX4nzC1rp4uAwjeaMTgg0yP6ibP7VqcF3EzJcIGx8ncey9YOjNmTvgp2/Hj7yYKAlpRDByoOTUisu+4zVmpEKN9M0xyT4LvOnEo7//FHFmMeT52BSGqkUSWrM6vyPqAY3hPnL9sEnA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=rV6aFZhwlMIKe8BW/4iD7Fc9HRKFVUHewdKVeTg9ruU=;
+ b=dgYmHyjj2ry/9pHotuLz++WDbw5REGzfCnQKF3vtH6lFrncydGY0g8Lcp7LdpgyO7/s3CSzi5r1g0hZVpvrFwNrAQ/lUiH6FH34r1YYB6wFJvK8SUu2vFahfSPDBq2PhwaGcxmmze2Ry6v99rjMqIBnycNTrlyj/Z2Sejaa4Pd5fscIDXKEcQhz4MtImz6P4xRJ2eKDcZZGnb1P1TTW83kHeIqgebU+buyp+TLYpQuYXMNugBFpzgRw/vuAaWw5sn6AfEIHDlVOMmx94qYIMgrbtp0xBXZjPYinNtBLaNnT2WINAkPlc3MLRxfdHM5/f2tEKAEtpo8xs6b24uO3gNA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 12.22.5.234) smtp.rcpttodomain=vger.kernel.org smtp.mailfrom=nvidia.com;
+ dmarc=pass (p=reject sp=reject pct=100) action=none header.from=nvidia.com;
+ dkim=none (message not signed); arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=rV6aFZhwlMIKe8BW/4iD7Fc9HRKFVUHewdKVeTg9ruU=;
+ b=H589z16b7ptR8TAf77TnthvYj2dNQV+eOGstSZAJysrpLIPVWWRjsbf3b2H9zi7J0zpBFapC6QxVU/XSVb3M2TRM3gaX4T3aklgWqWcWmgF/78PiWRc5lpimbgaB8YwijhnYEiyhUMaQ8Wel9nRqh1M1fRIWA61KJ08SZMyN6vAypuh6yyL9ItpOQKk0BYbaJYQXmldVcJCOOq9nhj5UyXvbTqUpSAZNfuzL8l5ssHvENjP34pt5mmthRt6q7Oc9dEPgNA+HyJFLwV6GsNVhgn59wbp2hOLRmtXPp7PU5sStuTYSLy+9/UQYQRM7B/b3cmGBHNkmilcRDOAPTbDI8Q==
+Received: from BN9P221CA0012.NAMP221.PROD.OUTLOOK.COM (2603:10b6:408:10a::7)
+ by DM5PR12MB2424.namprd12.prod.outlook.com (2603:10b6:4:b7::34) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5504.17; Mon, 15 Aug
+ 2022 14:45:32 +0000
+Received: from BN8NAM11FT059.eop-nam11.prod.protection.outlook.com
+ (2603:10b6:408:10a:cafe::b2) by BN9P221CA0012.outlook.office365.com
+ (2603:10b6:408:10a::7) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5525.16 via Frontend
+ Transport; Mon, 15 Aug 2022 14:45:32 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 12.22.5.234)
+ smtp.mailfrom=nvidia.com; dkim=none (message not signed)
+ header.d=none;dmarc=pass action=none header.from=nvidia.com;
+Received-SPF: Pass (protection.outlook.com: domain of nvidia.com designates
+ 12.22.5.234 as permitted sender) receiver=protection.outlook.com;
+ client-ip=12.22.5.234; helo=mail.nvidia.com; pr=C
+Received: from mail.nvidia.com (12.22.5.234) by
+ BN8NAM11FT059.mail.protection.outlook.com (10.13.177.120) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id
+ 15.20.5525.11 via Frontend Transport; Mon, 15 Aug 2022 14:45:32 +0000
+Received: from rnnvmail202.nvidia.com (10.129.68.7) by DRHQMAIL101.nvidia.com
+ (10.27.9.10) with Microsoft SMTP Server (TLS) id 15.0.1497.38; Mon, 15 Aug
+ 2022 14:45:31 +0000
+Received: from rnnvmail205.nvidia.com (10.129.68.10) by rnnvmail202.nvidia.com
+ (10.129.68.7) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.986.29; Mon, 15 Aug
+ 2022 07:45:30 -0700
+Received: from jilin-desktop.nvidia.com (10.127.8.11) by mail.nvidia.com
+ (10.129.68.10) with Microsoft SMTP Server id 15.2.986.29 via Frontend
+ Transport; Mon, 15 Aug 2022 07:45:28 -0700
+From: Jim Lin <jilin@nvidia.com>
+To: <jckuo@nvidia.com>, <thierry.reding@gmail.com>, <jonathanh@nvidia.com>
+CC: <kishon@ti.com>, <vkoul@kernel.org>, <balbi@kernel.org>,
+	<gregkh@linuxfoundation.org>, <jilin@nvidia.com>, <bhsieh@nvidia.com>,
+	<linux-phy@lists.infradead.org>, <linux-tegra@vger.kernel.org>,
+	<linux-kernel@vger.kernel.org>, <linux-usb@vger.kernel.org>
+Subject: [PATCH 0/2] usb: tegra: power down UTMI pad
+Date: Mon, 15 Aug 2022 22:44:47 +0800
+Message-ID: <20220815144449.9525-1-jilin@nvidia.com>
+X-Mailer: git-send-email 2.17.1
+X-NVConfidentiality: public
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20220811063840.7670-1-krzysztof.kozlowski@linaro.org>
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 6e5feb56-3f6b-454d-0dd5-08da7eccce26
+X-MS-TrafficTypeDiagnostic: DM5PR12MB2424:EE_
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: 	voCeQl3ucvl5cQXKTo6CybMF8/5ecmypcvT6NwcJ82X5rnzCKSzp65evS6CQ4WW5k8eoCRK7S7JaeuiCOcpjf+/EXWQvHMsx3TTRYZygzS4+vvz5Qo7/s6940CxWEyprzkOEKZ4aR3OvttBNbbmJiT6c82gGgTmS3RnuU1iEHjaVCFzJTP8+6Rvqi8IpoUsRSiOsjKGszrSJpRxu3QG/orGgdojMf9T2TJvx9ZmTjz8tOu6EhBP/Ixiubj1V9M6WcawCm/dpZR3aha5hlWNXUv7dSz7ILtLIceX53L/NGhvRVrhDH3xss8Z/GuwadZnmBHVS6mWZhYVJczNWG4Ayqsfe6DX41nsK9C0hGtFhginRMXj44qu+nhBqG57cB78LIo+bpfAgxjAewdOqRnOUYBSV4sKCENwelraPbcMwkqb1KgAEmD9cbkNZr/o5Qhply63BbCzYdqLseAxmZGPDt4SUbF2wT0JmlzW7hmwfCVtsmKkZqAtK53pWKOP0CONu9VnXAv+BeZ+ENhGxmaNKVy4zEMdxa/E/SofEiwd2Jctne9AOGFBPGBFXepcwF3vfN7/wt6L2ATGdMWE82Sr/R69Go/i5r/2t3leOe5/Mod/gQUZ4H80Z7b7XJTpJPZDFwhn3QeXNJfxY3ZCIMrn/NTuWgpSGvrxXMo+ImXXg2284zfD1YaaSjt35fYsgK4HUWhBQcnqSZFtaVcJkyAeA1JhYgLrq/MhM6KeUvOpXO0+WC5xqp1vjgMb8wudHz1OS2zuYXdq6pv8XcyY/qMCM86kybsayz7IAgy/OVuJmST4sARp8plnVRz6qCiBECo8Rvq1GmOThIR2Nk9uzMtU0kA==
+X-Forefront-Antispam-Report: 	CIP:12.22.5.234;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:InfoNoRecords;CAT:NONE;SFS:(13230016)(4636009)(346002)(396003)(376002)(136003)(39860400002)(46966006)(36840700001)(40470700004)(40480700001)(36860700001)(83380400001)(40460700003)(81166007)(356005)(86362001)(82740400003)(70206006)(70586007)(316002)(478600001)(82310400005)(4326008)(8676002)(54906003)(6636002)(186003)(336012)(426003)(1076003)(7696005)(47076005)(26005)(5660300002)(110136005)(2906002)(2616005)(36756003)(8936002)(6666004)(4744005)(41300700001)(36900700001);DIR:OUT;SFP:1101;
+X-OriginatorOrg: Nvidia.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 15 Aug 2022 14:45:32.1656
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 6e5feb56-3f6b-454d-0dd5-08da7eccce26
+X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[12.22.5.234];Helo=[mail.nvidia.com]
+X-MS-Exchange-CrossTenant-AuthSource: 	BN8NAM11FT059.eop-nam11.prod.protection.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM5PR12MB2424
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220814_141126_582504_1D80AD39 
-X-CRM114-Status: UNSURE (   8.09  )
+X-CRM114-CacheID: sfid-20220815_074538_645096_D00FE0B0 
+X-CRM114-Status: UNSURE (   4.39  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -79,17 +122,24 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, 11 Aug 2022 09:38:40 +0300, Krzysztof Kozlowski wrote:
-> Emails to Pratyush Yadav bounce ("550 Invalid recipient").
-> 
-> Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-> ---
->  Documentation/devicetree/bindings/phy/cdns,dphy-rx.yaml | 2 +-
->  Documentation/devicetree/bindings/phy/cdns,dphy.yaml    | 2 +-
->  2 files changed, 2 insertions(+), 2 deletions(-)
-> 
+1. Make functions to be generic and public for tegra host/gadget driver 
+ to power on/down UTMI pad
+2. For tegra gadget driver to power down pad after disconnected
 
-Acked-by: Rob Herring <robh@kernel.org>
+Jim Lin (2):
+  phy: tegra: xusb: add utmi pad power on/down ops
+  usb: gadget: tegra: Reduce pad power
+
+ drivers/phy/tegra/xusb-tegra186.c   | 19 ++++++++++++-------
+ drivers/phy/tegra/xusb.c            | 22 +++++++++++++++++++++-
+ drivers/phy/tegra/xusb.h            |  4 +++-
+ drivers/usb/gadget/udc/tegra-xudc.c |  4 ++++
+ include/linux/phy/tegra/xusb.h      |  2 ++
+ 5 files changed, 42 insertions(+), 9 deletions(-)
+
+-- 
+2.17.1
+
 
 -- 
 linux-phy mailing list
