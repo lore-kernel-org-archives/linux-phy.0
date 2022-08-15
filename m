@@ -4,101 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3C1C4C00140
-	for <linux-phy@archiver.kernel.org>; Mon, 15 Aug 2022 17:41:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 21334C00140
+	for <linux-phy@archiver.kernel.org>; Mon, 15 Aug 2022 22:00:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HmJcnRa+bj/6cgxo/cxeiU74KqRRiRM3B8dZl+BodNk=; b=4GH9xcOpTyu7K0
-	s/uSQwrYxglQD07g70LpwIYgwg98ijvrcNoirks4PRpv1sGQ1vS5VNlcJ2U0x4r7cO093uE3/wca3
-	UXqkFXP3iIKQPUY/0oh0Vc2C7F2gn/1ARstSOC23vuVqeJ8hBjnXj04fpmkudCEpBn/Pv7no0j/BE
-	96q9lQw9f4zkCqzWGjaZxLTgHstZnESw003PschP/QfQsop6To79QSUip/j7PM9lWXllhNnB+tJNV
-	snoKgxrN2LElX7CNhu9Q/QYPDSaFckAkbFm/oMcnAjY0ILOu2kNtkXmJBUbXiU7j4qgruNnlqzFuY
-	Ol391aW9VjZ76CQ3vSWA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Em9x8U6YJbV5D3hPAH0e8f+W2fJhLtTLB6oLmtsaT2E=; b=V0joMxYn7V+AxP
+	QN1mSePL6fNgFsDc1puB/qJW8+GME8SLzaMDaHArHVpNvGQ+qpPPYxENPtffftsGGr5jYASxpok/L
+	E6mGlkvPiDPwZQDKNGv5OcP3iYhyiVWr/G7K7fh+ZnGEzx0iP3R6dj9Os3JiPqXAwJbiI9GTSD1Ze
+	41pvkuxoOzbWXuxcJSsO59aePZTjru2Q4BL2y9IfGrOUZDIsvrY9sFNkimh6rUa6T2/tQNn1PQAUR
+	aerK+57tTZXP6LeBiZP2OYNgpr5RiNzK1UzD4b1MP/x2NkNIdj0ds4UvaTbTuvAMIboJUusMmf8tB
+	gZa3sRBPV8JNor6i8Ejw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oNe5F-002SbG-Ga; Mon, 15 Aug 2022 17:41:01 +0000
-Received: from mail-qv1-xf2d.google.com ([2607:f8b0:4864:20::f2d])
+	id 1oNi8C-006LPk-6d; Mon, 15 Aug 2022 22:00:20 +0000
+Received: from mail-wr1-x435.google.com ([2a00:1450:4864:20::435])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oNdPK-001xZn-Gz; Mon, 15 Aug 2022 16:57:44 +0000
-Received: by mail-qv1-xf2d.google.com with SMTP id j1so991224qvv.8;
-        Mon, 15 Aug 2022 09:57:41 -0700 (PDT)
+	id 1oNi85-006LFd-Df; Mon, 15 Aug 2022 22:00:15 +0000
+Received: by mail-wr1-x435.google.com with SMTP id j7so10514491wrh.3;
+        Mon, 15 Aug 2022 15:00:11 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=gmail.com; s=20210112;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc;
-        bh=dT9Pg0cgomgnI0kkqHjm6eb1hxEl1p1LNNw04+pYAiw=;
-        b=UAbnyBq77vyYNRVvJhwDaocodBZTdW/rY26aTPJ3tUoVcG8kLbkvDeuHoCDVazGTqp
-         U3sWT1HisJNc/seNXOnderJHWURJq9o4MgfiwPF0JBbdfW64WPTclAeuu4L0OJZbxuLR
-         TcysGwk8ohcgr0uCvm6OGzo6qR8haErFewbD2I0+n3DaZN4NDE5GhwIJaJ5iAKsS7YjB
-         J67OCySu8M6iaLP6QU0K9qUMuaaQNz53rc7Mc+kihyUpk4ZXKxciQTtZMWWmzwdTR1iK
-         ylcJ2kUbrNKv0MWTDSbr31gytziDJYbVssAOt0Ez9SBA8elvqQr5y6onp0bOpYZVWs0k
-         Af3g==
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc;
+        bh=F2rGFENzHI0E3i8mswF35hHoUMszy0CZxP2MWQKHpBQ=;
+        b=SwigwelJnmy5DhbwCbX4EIFty2vdJVo6HL901+2tfj45cuM+Dm4xSkjCK5i5aB1ucr
+         BogTShuXqf9zG5AWFiFvUfiIYTKNG+Gg/fdYxyYjBA0kqyQujK08eirJUAS6pF40YghK
+         QHw3mHBtJLp0EJC/vs3bl/khLlZXi1+zp6i+VlHNGVUbEaOwZUEaJpRNj+e44esGtT3J
+         IY6Ljvy2jvT6QOjEJwNIM3fhCw4sSXWsNBGueBXZvsWAf8E3OQ4Q5LdITTsM15uvvpFT
+         oJGa+TnZX7IzahqmWQDHMWYfb701XbLihdRlnBqtunzTIdlATyWMi9NKr58jl2M0mYLM
+         sl9w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc;
-        bh=dT9Pg0cgomgnI0kkqHjm6eb1hxEl1p1LNNw04+pYAiw=;
-        b=CBbcWTs5phAqQapkE+9JQmzNg+IxCl+ybPkVmbjk0n7mun/Am02P2OjVgwILLjXcMS
-         K5iTSmIWPzFnUZVRCwuOoir4wkBxZCezlDBNUqho+G8efhe5RuhODPTy9+GkB7VyjeGp
-         1BEwT4FarNcA/zTZYH9Fg7el669UNP61HJfUr8QaZ2R29VMR3xY/aR09YpPbSVBzyah9
-         Pg7ifuRmc6Udrg7Z7Qnvd2OzkJT7BVOQq9Cv5WzmOEOkiMjMeHhUncCjyyGfUJgPbP37
-         m7tFOdHGqeOVWopbu1jE1yRP76TJPBMIG7AFbY6gC6bzwSHG7tQK1m/6cq5e//b/UtWV
-         TBXw==
-X-Gm-Message-State: ACgBeo0C1sb2NdSjwuIhMEIbaa3HRN1KSzu36tthoQB7ckA3/EoLR1Bj
-	7hBajCAgcso2VIrqrUmgsHE=
-X-Google-Smtp-Source: AA6agR5+e4ITrllG9Zdjcav/qnQ/K77ki/+NPhNuFZ+FfibDMeCZLlBPNoSOkBpDKq1B9dRdFkv1qQ==
-X-Received: by 2002:a05:6214:62a:b0:476:858d:b2c8 with SMTP id a10-20020a056214062a00b00476858db2c8mr13917327qvx.65.1660582660417;
-        Mon, 15 Aug 2022 09:57:40 -0700 (PDT)
-Received: from [10.67.48.245] ([192.19.223.252])
-        by smtp.googlemail.com with ESMTPSA id f8-20020ac84648000000b0033e51aea00esm8459756qto.25.2022.08.15.09.57.32
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 15 Aug 2022 09:57:39 -0700 (PDT)
-Message-ID: <584ebb0e-2d55-348f-18f7-a555c3a359b9@gmail.com>
-Date: Mon, 15 Aug 2022 09:57:30 -0700
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc;
+        bh=F2rGFENzHI0E3i8mswF35hHoUMszy0CZxP2MWQKHpBQ=;
+        b=U81+9ICSUS1C8o51l/1Sffs/5cuGMYbilJLbthfTZjnvjkVx/zJvAZEl2Dtce7yKEp
+         aZ5AEck2i4xsqK/Lv1uT94SWRHRzAkYVRIUHM7q3owpgkfQC0QKYigwbDlId1LTjMZR9
+         Qntgy1VFWBdCLpw/SwCeP9BjbKlW2NNz8LUtbCwaj3dXQNdycXnTKPbwKJXfpfuNyLHE
+         mYyUIkOCriUvboaX5pxlyECbAuRcuyXRr8e8l6276m49YzNgsn6flhnQgU8tpvrocX+k
+         fD4tdHE9KibW618HrNV/rtSgW5fGG4dlgemf9RppuEkUEQuCfrQr4e22U/igUv30FWio
+         ymcg==
+X-Gm-Message-State: ACgBeo2AfQa61eMzUKh6n3r0uFYrMdCOXscFJu+vTx/W+S3MHiFOig3V
+	UHKhFDg1iAeVGu9EtaN3G40=
+X-Google-Smtp-Source: AA6agR7uQBKz9p2RoPuPctiBHIoYB4Qu2te8eOPpUxlusmYdKqLIHMU/LCxGvX4St+OzDGJl/1h/uw==
+X-Received: by 2002:adf:dbc1:0:b0:224:fc61:fef7 with SMTP id e1-20020adfdbc1000000b00224fc61fef7mr4956247wrj.312.1660600810584;
+        Mon, 15 Aug 2022 15:00:10 -0700 (PDT)
+Received: from localhost.localdomain ([105.235.130.28])
+        by smtp.gmail.com with ESMTPSA id y10-20020adfee0a000000b00223664ab3a8sm10195480wrn.90.2022.08.15.15.00.01
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 15 Aug 2022 15:00:10 -0700 (PDT)
+From: Yassine Oudjana <yassine.oudjana@gmail.com>
+X-Google-Original-From: Yassine Oudjana <y.oudjana@protonmail.com>
+To: Chunfeng Yun <chunfeng.yun@mediatek.com>,
+	Kishon Vijay Abraham I <kishon@ti.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Matthias Brugger <matthias.bgg@gmail.com>,
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Cc: Yassine Oudjana <y.oudjana@protonmail.com>,
+	Yassine Oudjana <yassine.oudjana@gmail.com>,
+	linux-mediatek@lists.infradead.org,
+	linux-phy@lists.infradead.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: [RFC PATCH] phy: phy-mtk-tphy: Make USB PHY work on MT6735
+Date: Mon, 15 Aug 2022 22:58:59 +0100
+Message-Id: <20220815215859.253962-1-y.oudjana@protonmail.com>
+X-Mailer: git-send-email 2.37.1
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.11.0
-Subject: Re: [PATCH v3 6/9] arm64: bcmbca: Make BCM4908 drivers depend on
- ARCH_BCMBCA
-Content-Language: en-US
-To: William Zhang <william.zhang@broadcom.com>,
- Linux ARM List <linux-arm-kernel@lists.infradead.org>
-Cc: Broadcom Kernel List <bcm-kernel-feedback-list@broadcom.com>,
- joel.peshkin@broadcom.com, dan.beygelman@broadcom.com, f.fainelli@gmail.com,
- krzysztof.kozlowski@linaro.org, rafal@milecki.pl,
- Guenter Roeck <linux@roeck-us.net>, Bjorn Helgaas <bhelgaas@google.com>,
- Wolfram Sang <wsa@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>,
- Miquel Raynal <miquel.raynal@bootlin.com>,
- "David S. Miller" <davem@davemloft.net>, Rob Herring <robh@kernel.org>,
- Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- Linus Walleij <linus.walleij@linaro.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Wim Van Sebroeck <wim@linux-watchdog.org>,
- "open list:I2C SUBSYSTEM HOST DRIVERS" <linux-i2c@vger.kernel.org>,
- open list <linux-kernel@vger.kernel.org>,
- "open list:MEMORY TECHNOLOGY DEVICES (MTD)" <linux-mtd@lists.infradead.org>,
- "open list:NETWORKING DRIVERS" <netdev@vger.kernel.org>,
- "open list:PCI NATIVE HOST BRIDGE AND ENDPOINT DRIVERS"
- <linux-pci@vger.kernel.org>,
- "open list:GENERIC PHY FRAMEWORK" <linux-phy@lists.infradead.org>,
- "open list:PIN CONTROL SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- "open list:BROADCOM BMIPS MIPS ARCHITECTURE" <linux-mips@vger.kernel.org>,
- "open list:SERIAL DRIVERS" <linux-serial@vger.kernel.org>,
- "open list:WATCHDOG DEVICE DRIVERS" <linux-watchdog@vger.kernel.org>
-References: <20220803175455.47638-1-william.zhang@broadcom.com>
- <20220803175455.47638-7-william.zhang@broadcom.com>
-From: Florian Fainelli <f.fainelli@gmail.com>
-In-Reply-To: <20220803175455.47638-7-william.zhang@broadcom.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220815_095742_802499_FE61FEA3 
-X-CRM114-Status: UNSURE (   9.56  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220815_150013_507302_9429EA5E 
+X-CRM114-Status: GOOD (  20.86  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -110,26 +89,71 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 8/3/22 10:54, William Zhang wrote:
-> With Broadcom Broadband arch ARCH_BCMBCA supported in the kernel, this
-> patch series migrate the ARCH_BCM4908 symbol to ARCH_BCMBCA. Hence
-> replace ARCH_BCM4908 with ARCH_BCMBCA in subsystem Kconfig files.
-> 
-> Signed-off-by: William Zhang <william.zhang@broadcom.com>
-> Acked-by: Guenter Roeck <linux@roeck-us.net> (for watchdog)
-> Acked-by: Bjorn Helgaas <bhelgaas@google.com> (for drivers/pci)
-> Acked-by: Wolfram Sang <wsa@kernel.org> (for i2c)
-> Acked-by: Philipp Zabel <p.zabel@pengutronix.de> (for reset)
+The USB PHY on MT6735 seems to be a TPHY V1, but the FMREG base
+here is 0xf00 rather than 0x100. Since it is definitely not a V2
+or later as it has shared registers, would this mean that it is
+an even earlier revision, or one between V1 and V2? Or is the
+address used currently in this driver wrong?
 
-Applied to https://github.com/Broadcom/stblinux/commits/drivers/next, 
-thanks!
+Furthermore, there is one additional step needed in the power on
+sequence to make USB work on MT6735, which is to set the 10th bit
+of U3P_U2PHYDTM1. This was found through trial and error by adding
+the power on sequence from the downstream driver then stripping
+parts of it until a critical part is found. This specific part[1]
+was found under a comment saying "force enter device mode", but
+there are other bits that are cleared/set under the same comment,
+some of which are set in the same write as this bit, so it is
+unclear whether this bit is the one (or the only one) responsible
+for "forcing enter device mode". There is no documentation on this
+register (or any port registers for that matter) so this bit's
+name and function are unknown. Does anyone have more information
+on this? And if no information were to be found, would leaving
+this as a magic value, or with the placeholder name currently used
+(P2C_FORCE_ENTER_DEVICE_MODE) be acceptable?
+
+[1] https://gitlab.com/Tooniis/linux-samsung-grandpplte/-/blob/master/drivers/misc/mediatek/usb20/mt6735/usb20_phy.c#L404
+---
+ drivers/phy/mediatek/phy-mtk-tphy.c | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/phy/mediatek/phy-mtk-tphy.c b/drivers/phy/mediatek/phy-mtk-tphy.c
+index 8ee7682b8e93..f54b8a9872bf 100644
+--- a/drivers/phy/mediatek/phy-mtk-tphy.c
++++ b/drivers/phy/mediatek/phy-mtk-tphy.c
+@@ -23,7 +23,7 @@
+ /* version V1 sub-banks offset base address */
+ /* banks shared by multiple phys */
+ #define SSUSB_SIFSLV_V1_SPLLC		0x000	/* shared by u3 phys */
+-#define SSUSB_SIFSLV_V1_U2FREQ		0x100	/* shared by u2 phys */
++#define SSUSB_SIFSLV_V1_U2FREQ		0xf00	/* shared by u2 phys */
+ #define SSUSB_SIFSLV_V1_CHIP		0x300	/* shared by u3 phys */
+ /* u2 phy bank */
+ #define SSUSB_SIFSLV_V1_U2PHY_COM	0x000
+@@ -119,6 +119,7 @@
+ 
+ #define U3P_U2PHYDTM1		0x06C
+ #define P2C_RG_UART_EN			BIT(16)
++#define P2C_FORCE_ENTER_DEVICE_MODE	BIT(10)
+ #define P2C_FORCE_IDDIG		BIT(9)
+ #define P2C_RG_VBUSVALID		BIT(5)
+ #define P2C_RG_SESSEND			BIT(4)
+@@ -579,6 +580,8 @@ static void u2_phy_instance_power_on(struct mtk_tphy *tphy,
+ 		mtk_phy_set_bits(com + U3P_U2PHYDTM0, P2C_RG_SUSPENDM | P2C_FORCE_SUSPENDM);
+ 	}
+ 	dev_dbg(tphy->dev, "%s(%d)\n", __func__, index);
++
++	mtk_phy_set_bits(com + U3P_U2PHYDTM1, P2C_FORCE_ENTER_DEVICE_MODE);
+ }
+ 
+ static void u2_phy_instance_power_off(struct mtk_tphy *tphy,
 -- 
-Florian
+2.37.1
+
 
 -- 
 linux-phy mailing list
