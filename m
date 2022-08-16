@@ -4,70 +4,108 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1766EC19F2C
-	for <linux-phy@archiver.kernel.org>; Tue, 16 Aug 2022 05:59:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BA09FC2BB41
+	for <linux-phy@archiver.kernel.org>; Tue, 16 Aug 2022 08:24:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eN+RnyOFKwQZf+GN+NUGWslMs0vd8+NatDOYCyOgZyg=; b=XQ7XNwnvrMMyS0
-	d7bhWJtG1oi5RNHgyU7yaYf8ExPF7b2CPIlWegb8K/sgDcJnV1dIkaxaKmAY4kOFSQt6nCOVKWo06
-	UKbr0QJYn5kzlPQa6w8VQhGwvGnODqZtj4J7Uj1dXW2hPbWdUHMVmzkyoCV0lFo6DcdOxF9SD7VZq
-	RqBor3P4WXnTPpBPDsA28zhbAZTVv7WwnyfOwb1+i9VKbS2VX84+dFq9NPsfGsJZn/9EKq2m0tIzm
-	eeLJKlNTdqJjBK6kVpINedYIWyea+hDhp/2MM6gGCyOPwc2Y3DZIT0DEy19mKyvmzlMq9qb1Ltaya
-	Yvaw+Ho1oaSCSbDIZWDQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=C0Xn5/dTs27lwqU/fHheT9BUOVtyPc8tZCGbYvdaTM4=; b=Ykd2D3MmLloXBI
+	mfUuI6Wl5cFGh7fnIJbzawKdHliyJPGUNZl+6Q4Y9aimiWBsNY/Oo7UvOO37Hr7fHOrOZy4LwtrvN
+	3EQWzTXpbMGVPa9H+WxIGk+Sa9zHB8hAxM5gskSsAl50FYPl3NUHjzhhE5s23hoHeE6V6DgGSDPz5
+	k4LRZl2eKG9M+AzyfYNH12vIqPNPZYnQJrueu8aUpq75myeBxlYgAbpDtAIKUUk+QHOVYEGvs8yhz
+	QUvLTQLIqKcaAnk5uSi/KgAoT9djaeS6qjpjRceXtyS2viGUDhRI3qLK2WyFtP6z7o92i+RiaUPnV
+	Xcp2f5n1Oh4OoFxv57rQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oNpbv-00Cyxb-1X; Tue, 16 Aug 2022 05:59:31 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1oNrrs-00GZey-2m; Tue, 16 Aug 2022 08:24:08 +0000
+Received: from mail-bn8nam11on2040.outbound.protection.outlook.com ([40.107.236.40] helo=NAM11-BN8-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oNpbj-00CylL-4M
-	for linux-phy@lists.infradead.org; Tue, 16 Aug 2022 05:59:24 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
-	by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 27G5x36g029614;
-	Tue, 16 Aug 2022 00:59:03 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
-	s=ti-com-17Q1; t=1660629543;
-	bh=V5Ka5UXfv6A4IhWDBTifW60sQoNxzaXMBT9NUt0YenI=;
-	h=From:To:CC:Subject:Date:In-Reply-To:References;
-	b=WIMlvFkZdBE/dUNN5FLUuOzIFP/j0ZcRWIPlN8STKoF9iZhZYIxHTnxC6bZI9xybn
-	 Jl/JCZAbDpFikFZq/EHkrZErfAyRxbmubqdw3PLviSNwaq6spBSMdoUBuX8R0HV/P3
-	 3Mo9CL2uyl8iqrht3qUhAH+xqYveRZFrqCXQeTcg=
-Received: from DLEE107.ent.ti.com (dlee107.ent.ti.com [157.170.170.37])
-	by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 27G5x397014394
-	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Tue, 16 Aug 2022 00:59:03 -0500
-Received: from DLEE101.ent.ti.com (157.170.170.31) by DLEE107.ent.ti.com
- (157.170.170.37) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.6; Tue, 16
- Aug 2022 00:59:00 -0500
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE101.ent.ti.com
- (157.170.170.31) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.6 via
- Frontend Transport; Tue, 16 Aug 2022 00:59:00 -0500
-Received: from uda0492258.dhcp.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
-	by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 27G5wm3e109354;
-	Tue, 16 Aug 2022 00:58:57 -0500
-From: Siddharth Vadapalli <s-vadapalli@ti.com>
-To: <robh+dt@kernel.org>, <lee.jones@linaro.org>,
-        <krzysztof.kozlowski+dt@linaro.org>, <kishon@ti.com>,
-        <vkoul@kernel.org>, <dan.carpenter@oracle.com>,
-        <grygorii.strashko@ti.com>, <rogerq@kernel.org>
-CC: <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-        <linux-phy@lists.infradead.org>, <s-vadapalli@ti.com>
-Subject: [PATCH v2 2/2] phy: ti: gmii-sel: Add support for CPSW5G GMII SEL in J7200
-Date: Tue, 16 Aug 2022 11:28:48 +0530
-Message-ID: <20220816055848.111482-3-s-vadapalli@ti.com>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20220816055848.111482-1-s-vadapalli@ti.com>
-References: <20220816055848.111482-1-s-vadapalli@ti.com>
+	id 1oNrrp-00GZZS-Bv
+	for linux-phy@lists.infradead.org; Tue, 16 Aug 2022 08:24:06 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=ZEDn+MMpPPuhHnbRNaM0Ny661NrO9XDFJYoHpOWNYTJo5Po0vcj/xzc2Dewg5vjYrYTnx8sqYDBek3fbplegsUtenQhrAcLsZEWlmNWVVSfDuLJod8fMQqmmEiwcpH+8IfyHDW0SOfgyqvAOZ0xXDCoUJK8x5lkZXyk9LQ+c1pM+23ygYJlbT2i0DAjquIMvL+gP5Dkxx1GLZHtWPNh5v3e2VCZHZGmgk9F6qqWOn5U80h7KMOEYXKHqRZFO+tXtnxg21ROuGoe6j8RrQHZOa30SBrIQ16Od6A279AAJjrPxRixqJfqcacYxc4z3K9K7zXwhD0SZMU9HW5Psri6uBQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=QbSqgDbRO1qrFuSattDjN/6k3i4SwBMrEUT990l7bxQ=;
+ b=D6t1HNcuVRyc1uVpzY7kV29agXWSf6Hth1new4BqBxa8EJTEepy6CHHIVzg15PYcXKhTcsUtfgLdUF7MCVvFYNOwmyAe0cVJdN4w3ncIZkM5eIOtjgGk+Rz40i9toKRoKDO6A0QylVQuBZfO/Ba49BQf2U4UOpUbyMNDQTvXhUihu3lpbQVrp1MDiLMK93MRF18OlZ4jPFjXxaI9lvo1/svcy8c8IQO6fXU/iH75BvJ4RvnxJdAWqlYIK2zlRXuXOMwg+oPAB5SXpzZLnFCL6mLitTZ3S7dwCFupkGNGV+hS0n7qJ/TtLqYUaWmRWDy5MVl6zUdsqEmmGjIYKkg0yA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 12.22.5.236) smtp.rcpttodomain=vger.kernel.org smtp.mailfrom=nvidia.com;
+ dmarc=pass (p=reject sp=reject pct=100) action=none header.from=nvidia.com;
+ dkim=none (message not signed); arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=QbSqgDbRO1qrFuSattDjN/6k3i4SwBMrEUT990l7bxQ=;
+ b=f3H8VH2ctYE24fl2vJ5vopwvrJGVeN8K7BCJmdkZMSQGmTxQrTheSB5O2yBG1wJOris0J4BWsIe4nH1L0/aIMI4FCFRouuyDtx9WhQmotyDqh0p4n9Sxsc8u8F16FYw5ODZZJ+XokfPjsxPrO0Bw58/Iuiw3x0PJ2Z1MI6NoRSp1K4vj6V51JI14dx9Dg4tOZdtoRtcUzZZXcamjaNuLnpLHIq2EVXrdHFL4iwA+nJrr/kUCodhVLulP4qquKn84ivtM8dGLHrjAx8zTbv8TY9NwM1Ody+cLDRMDPuR/zErwAte3nTT+ejr2YQcwdMbWaeFKOCFN5kWMuV/nGCi/uQ==
+Received: from DS7PR07CA0004.namprd07.prod.outlook.com (2603:10b6:5:3af::13)
+ by BN6PR1201MB0004.namprd12.prod.outlook.com (2603:10b6:404:ac::23) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5525.10; Tue, 16 Aug
+ 2022 08:24:01 +0000
+Received: from DM6NAM11FT030.eop-nam11.prod.protection.outlook.com
+ (2603:10b6:5:3af:cafe::f5) by DS7PR07CA0004.outlook.office365.com
+ (2603:10b6:5:3af::13) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5525.10 via Frontend
+ Transport; Tue, 16 Aug 2022 08:24:01 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 12.22.5.236)
+ smtp.mailfrom=nvidia.com; dkim=none (message not signed)
+ header.d=none;dmarc=pass action=none header.from=nvidia.com;
+Received-SPF: Pass (protection.outlook.com: domain of nvidia.com designates
+ 12.22.5.236 as permitted sender) receiver=protection.outlook.com;
+ client-ip=12.22.5.236; helo=mail.nvidia.com; pr=C
+Received: from mail.nvidia.com (12.22.5.236) by
+ DM6NAM11FT030.mail.protection.outlook.com (10.13.172.146) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id
+ 15.20.5525.11 via Frontend Transport; Tue, 16 Aug 2022 08:24:01 +0000
+Received: from rnnvmail201.nvidia.com (10.129.68.8) by DRHQMAIL109.nvidia.com
+ (10.27.9.19) with Microsoft SMTP Server (TLS) id 15.0.1497.38; Tue, 16 Aug
+ 2022 08:23:59 +0000
+Received: from rnnvmail203.nvidia.com (10.129.68.9) by rnnvmail201.nvidia.com
+ (10.129.68.8) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.986.29; Tue, 16 Aug
+ 2022 01:23:58 -0700
+Received: from jilin-desktop.nvidia.com (10.127.8.12) by mail.nvidia.com
+ (10.129.68.9) with Microsoft SMTP Server id 15.2.986.29 via Frontend
+ Transport; Tue, 16 Aug 2022 01:23:56 -0700
+From: Jim Lin <jilin@nvidia.com>
+To: <jckuo@nvidia.com>, <thierry.reding@gmail.com>, <jonathanh@nvidia.com>
+CC: <vkoul@kernel.org>, <balbi@kernel.org>, <gregkh@linuxfoundation.org>,
+	<jilin@nvidia.com>, <bhsieh@nvidia.com>, <linux-phy@lists.infradead.org>,
+	<linux-tegra@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+	<linux-usb@vger.kernel.org>
+Subject: [PATCH v2 0/2] usb: tegra: power down UTMI pad
+Date: Tue, 16 Aug 2022 16:23:51 +0800
+Message-ID: <20220816082353.13390-1-jilin@nvidia.com>
+X-Mailer: git-send-email 2.17.1
+X-NVConfidentiality: public
 MIME-Version: 1.0
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 3407395d-378a-464b-fa0e-08da7f60ac6f
+X-MS-TrafficTypeDiagnostic: BN6PR1201MB0004:EE_
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: 	zTAgtGPQocCTpqOaQ2n+4XJBRDPL5HXBJ4FXNytfIQhgSyGwB+aIYaUjdsEr+ahRze8u0kJTU87Jm8KzUDiZ83W4UUOMG6iv0yhXjycvFXLX32rSgbANtJ8MTVQLMlW+GPNL3HTigzVButfCj2NzADEUsFT8aUWMNrOFVXsoEIUpCbyKjRH6bZlyAYNkWt+NiSB7RjWWParDsKeCjBEJvcAy3cnQJ+V79IJYChy/FXXNstnMM5CetTGk14TdFwKZ72KiVKsreha7+czJsehSNba1Nht8PSpub+lpfFHTWIjFP3l8E0qMnSpbtvBrCt/zUesecD7zSLHmgW4Ozh9qN9hhzPHE/Z0OHaiTol20m+LBXSlBLWqOKhbnMcw8xTdVSleuaamC3ZilonoMq+rJSknloNqlXD6d1WEiIsp8Uc2OaFwftwg7S+YaN/IEBhSJ+OvlqezrSKuyywsW9cXlFQr6MjvCzjGSpqmYYO+8PPBVl6ouJYcBJO/Tyqo2riGQXRWGbO0dNItr/1mylz18oBdKaAB1VEAvKYYyHNm6BVSIzKTxzp9SOzvjbeuPfkURNRFpWapMrad4shqmNb0WzfEhsKSeGa+5cJ8tckAYawaHhdBKnCzZolWYjaIho/aYmzrW5MaOD4BqexaLAeXkXOpPtckEpdoKFnc97K4Bo1srN4lqFGYlVDih6DKMleKKPRXca+5NLAvlLz5Scefl6QXu80AUx36/fXVvUz3UkYTDLcI0Y8E8KRmyC+V7ejwIIM7eqxoJo6UO5VWipz8yqBmUIYoNyLt3QRLcRFzJseaf2U0/YJROjN4KohoPMGtw9rptfKCVwoLyzpJpMcw+dg==
+X-Forefront-Antispam-Report: 	CIP:12.22.5.236;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:InfoNoRecords;CAT:NONE;SFS:(13230016)(4636009)(376002)(396003)(39860400002)(136003)(346002)(36840700001)(40470700004)(46966006)(336012)(7696005)(6666004)(36756003)(86362001)(41300700001)(186003)(47076005)(83380400001)(1076003)(110136005)(426003)(478600001)(2616005)(26005)(40460700003)(36860700001)(316002)(6636002)(82740400003)(2906002)(8676002)(70206006)(40480700001)(54906003)(70586007)(4744005)(4326008)(5660300002)(356005)(81166007)(8936002)(82310400005)(36900700001);DIR:OUT;SFP:1101;
+X-OriginatorOrg: Nvidia.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 16 Aug 2022 08:24:01.1704
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 3407395d-378a-464b-fa0e-08da7f60ac6f
+X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[12.22.5.236];Helo=[mail.nvidia.com]
+X-MS-Exchange-CrossTenant-AuthSource: 	DM6NAM11FT030.eop-nam11.prod.protection.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN6PR1201MB0004
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220815_225922_231703_8127E872 
-X-CRM114-Status: GOOD (  17.75  )
+X-CRM114-CacheID: sfid-20220816_012405_504116_40187DD5 
+X-CRM114-Status: UNSURE (   5.29  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,136 +122,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Each of the CPSW5G ports in J7200 support additional modes like QSGMII.
-Add a new compatible for J7200 to support the additional modes.
+1. Make functions to be generic and public for tegra host/gadget driver 
+ to power on/down UTMI pad
+2. For tegra gadget driver to power down pad after disconnected
+--
+v2: update copyright year
+    drivers/usb/gadget/udc/tegra-xudc.c
+    include/linux/phy/tegra/xusb.h
 
-In TI's J7200, each of the CPSW5G ethernet interfaces can act as a
-QSGMII or QSGMII-SUB port. The QSGMII interface is responsible for
-performing auto-negotiation between the MAC and the PHY while the rest of
-the interfaces are designated as QSGMII-SUB interfaces, indicating that
-they will not be taking part in the auto-negotiation process.
+Jim Lin (2):
+  phy: tegra: xusb: add utmi pad power on/down ops
+  usb: gadget: tegra: Reduce pad power
 
-To indicate the interface which will serve as the main QSGMII interface,
-add a property "ti,qsgmii-main-ports", whose value indicates the
-port number of the interface which shall serve as the main QSGMII
-interface. The rest of the interfaces are then assigned QSGMII-SUB mode by
-default.
+ drivers/phy/tegra/xusb-tegra186.c   | 19 ++++++++++++-------
+ drivers/phy/tegra/xusb.c            | 22 +++++++++++++++++++++-
+ drivers/phy/tegra/xusb.h            |  4 +++-
+ drivers/usb/gadget/udc/tegra-xudc.c |  6 +++++-
+ include/linux/phy/tegra/xusb.h      |  4 +++-
+ 5 files changed, 44 insertions(+), 11 deletions(-)
 
-Signed-off-by: Siddharth Vadapalli <s-vadapalli@ti.com>
----
- drivers/phy/ti/phy-gmii-sel.c | 40 ++++++++++++++++++++++++++++++++---
- 1 file changed, 37 insertions(+), 3 deletions(-)
-
-diff --git a/drivers/phy/ti/phy-gmii-sel.c b/drivers/phy/ti/phy-gmii-sel.c
-index d0ab69750c6b..270083606b14 100644
---- a/drivers/phy/ti/phy-gmii-sel.c
-+++ b/drivers/phy/ti/phy-gmii-sel.c
-@@ -22,6 +22,12 @@
- #define AM33XX_GMII_SEL_MODE_RMII	1
- #define AM33XX_GMII_SEL_MODE_RGMII	2
- 
-+/* J72xx SoC specific definitions for the CONTROL port */
-+#define J72XX_GMII_SEL_MODE_QSGMII	4
-+#define J72XX_GMII_SEL_MODE_QSGMII_SUB	6
-+
-+#define PHY_GMII_PORT(n)	BIT((n) - 1)
-+
- enum {
- 	PHY_GMII_SEL_PORT_MODE = 0,
- 	PHY_GMII_SEL_RGMII_ID_MODE,
-@@ -43,6 +49,7 @@ struct phy_gmii_sel_soc_data {
- 	u32 features;
- 	const struct reg_field (*regfields)[PHY_GMII_SEL_LAST];
- 	bool use_of_data;
-+	u64 extra_modes;
- };
- 
- struct phy_gmii_sel_priv {
-@@ -53,6 +60,7 @@ struct phy_gmii_sel_priv {
- 	struct phy_gmii_sel_phy_priv *if_phys;
- 	u32 num_ports;
- 	u32 reg_offset;
-+	u32 qsgmii_main_ports;
- };
- 
- static int phy_gmii_sel_mode(struct phy *phy, enum phy_mode mode, int submode)
-@@ -88,10 +96,17 @@ static int phy_gmii_sel_mode(struct phy *phy, enum phy_mode mode, int submode)
- 		gmii_sel_mode = AM33XX_GMII_SEL_MODE_MII;
- 		break;
- 
-+	case PHY_INTERFACE_MODE_QSGMII:
-+		if (!(soc_data->extra_modes & BIT(PHY_INTERFACE_MODE_QSGMII)))
-+			goto unsupported;
-+		if (if_phy->priv->qsgmii_main_ports & BIT(if_phy->id - 1))
-+			gmii_sel_mode = J72XX_GMII_SEL_MODE_QSGMII;
-+		else
-+			gmii_sel_mode = J72XX_GMII_SEL_MODE_QSGMII_SUB;
-+		break;
-+
- 	default:
--		dev_warn(dev, "port%u: unsupported mode: \"%s\"\n",
--			 if_phy->id, phy_modes(submode));
--		return -EINVAL;
-+		goto unsupported;
- 	}
- 
- 	if_phy->phy_if_mode = submode;
-@@ -123,6 +138,11 @@ static int phy_gmii_sel_mode(struct phy *phy, enum phy_mode mode, int submode)
- 	}
- 
- 	return 0;
-+
-+unsupported:
-+	dev_warn(dev, "port%u: unsupported mode: \"%s\"\n",
-+		 if_phy->id, phy_modes(submode));
-+	return -EINVAL;
- }
- 
- static const
-@@ -188,6 +208,13 @@ struct phy_gmii_sel_soc_data phy_gmii_sel_soc_am654 = {
- 	.regfields = phy_gmii_sel_fields_am654,
- };
- 
-+static const
-+struct phy_gmii_sel_soc_data phy_gmii_sel_cpsw5g_soc_j7200 = {
-+	.use_of_data = true,
-+	.regfields = phy_gmii_sel_fields_am654,
-+	.extra_modes = BIT(PHY_INTERFACE_MODE_QSGMII),
-+};
-+
- static const struct of_device_id phy_gmii_sel_id_table[] = {
- 	{
- 		.compatible	= "ti,am3352-phy-gmii-sel",
-@@ -209,6 +236,10 @@ static const struct of_device_id phy_gmii_sel_id_table[] = {
- 		.compatible	= "ti,am654-phy-gmii-sel",
- 		.data		= &phy_gmii_sel_soc_am654,
- 	},
-+	{
-+		.compatible	= "ti,j7200-cpsw5g-phy-gmii-sel",
-+		.data		= &phy_gmii_sel_cpsw5g_soc_j7200,
-+	},
- 	{}
- };
- MODULE_DEVICE_TABLE(of, phy_gmii_sel_id_table);
-@@ -350,6 +381,7 @@ static int phy_gmii_sel_probe(struct platform_device *pdev)
- 	struct device_node *node = dev->of_node;
- 	const struct of_device_id *of_id;
- 	struct phy_gmii_sel_priv *priv;
-+	u32 main_ports = 1;
- 	int ret;
- 
- 	of_id = of_match_node(phy_gmii_sel_id_table, pdev->dev.of_node);
-@@ -363,6 +395,8 @@ static int phy_gmii_sel_probe(struct platform_device *pdev)
- 	priv->dev = &pdev->dev;
- 	priv->soc_data = of_id->data;
- 	priv->num_ports = priv->soc_data->num_ports;
-+	of_property_read_u32_array(node, "ti,qsgmii-main-ports", &main_ports, 1);
-+	priv->qsgmii_main_ports = PHY_GMII_PORT(main_ports);
- 
- 	priv->regmap = syscon_node_to_regmap(node->parent);
- 	if (IS_ERR(priv->regmap)) {
 -- 
-2.25.1
+2.17.1
 
 
 -- 
