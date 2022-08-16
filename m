@@ -4,80 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 21334C00140
-	for <linux-phy@archiver.kernel.org>; Mon, 15 Aug 2022 22:00:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F2F9DC19F2C
+	for <linux-phy@archiver.kernel.org>; Tue, 16 Aug 2022 05:59:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
 	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Em9x8U6YJbV5D3hPAH0e8f+W2fJhLtTLB6oLmtsaT2E=; b=V0joMxYn7V+AxP
-	QN1mSePL6fNgFsDc1puB/qJW8+GME8SLzaMDaHArHVpNvGQ+qpPPYxENPtffftsGGr5jYASxpok/L
-	E6mGlkvPiDPwZQDKNGv5OcP3iYhyiVWr/G7K7fh+ZnGEzx0iP3R6dj9Os3JiPqXAwJbiI9GTSD1Ze
-	41pvkuxoOzbWXuxcJSsO59aePZTjru2Q4BL2y9IfGrOUZDIsvrY9sFNkimh6rUa6T2/tQNn1PQAUR
-	aerK+57tTZXP6LeBiZP2OYNgpr5RiNzK1UzD4b1MP/x2NkNIdj0ds4UvaTbTuvAMIboJUusMmf8tB
-	gZa3sRBPV8JNor6i8Ejw==;
+	List-Owner; bh=+FWEGidQenb9nmmsUD42lT4GcwAo4MCFzu1v7KMahiU=; b=oUHzRSKtd8Kq/l
+	ENK4PNkAhpdJIiByv4zspBGyyrqnyg2auJds3TMS32nrKTWa7khh7TethSW9L/cecmlHMoy6ipGCo
+	UrF6wLGd6D6/JAK5Qlr3IyipwYeNge+BAqRKj3nEaRvKzm4eGNYAqUxUDp9eJA4FU+ZfYOsbCtUES
+	rsmxiGyMVLqbeEytg23B4xqZL5M52WuJ86TfmLbnsfgTwHCfjaxdq8Ui3yy3hQQnvI3oCJkvJYHDI
+	bkYrhPudTRI1IjIHmiTkVbuArhA6QGSEl/7Ox3tMiG2wwpIABnyXahxwkzpzvbFZT3MyglAXm+JFa
+	tkL+8Z3xSj8Cn+VRI/7A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oNi8C-006LPk-6d; Mon, 15 Aug 2022 22:00:20 +0000
-Received: from mail-wr1-x435.google.com ([2a00:1450:4864:20::435])
+	id 1oNpbV-00CyOo-5d; Tue, 16 Aug 2022 05:59:05 +0000
+Received: from lelv0143.ext.ti.com ([198.47.23.248])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oNi85-006LFd-Df; Mon, 15 Aug 2022 22:00:15 +0000
-Received: by mail-wr1-x435.google.com with SMTP id j7so10514491wrh.3;
-        Mon, 15 Aug 2022 15:00:11 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20210112;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc;
-        bh=F2rGFENzHI0E3i8mswF35hHoUMszy0CZxP2MWQKHpBQ=;
-        b=SwigwelJnmy5DhbwCbX4EIFty2vdJVo6HL901+2tfj45cuM+Dm4xSkjCK5i5aB1ucr
-         BogTShuXqf9zG5AWFiFvUfiIYTKNG+Gg/fdYxyYjBA0kqyQujK08eirJUAS6pF40YghK
-         QHw3mHBtJLp0EJC/vs3bl/khLlZXi1+zp6i+VlHNGVUbEaOwZUEaJpRNj+e44esGtT3J
-         IY6Ljvy2jvT6QOjEJwNIM3fhCw4sSXWsNBGueBXZvsWAf8E3OQ4Q5LdITTsM15uvvpFT
-         oJGa+TnZX7IzahqmWQDHMWYfb701XbLihdRlnBqtunzTIdlATyWMi9NKr58jl2M0mYLM
-         sl9w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc;
-        bh=F2rGFENzHI0E3i8mswF35hHoUMszy0CZxP2MWQKHpBQ=;
-        b=U81+9ICSUS1C8o51l/1Sffs/5cuGMYbilJLbthfTZjnvjkVx/zJvAZEl2Dtce7yKEp
-         aZ5AEck2i4xsqK/Lv1uT94SWRHRzAkYVRIUHM7q3owpgkfQC0QKYigwbDlId1LTjMZR9
-         Qntgy1VFWBdCLpw/SwCeP9BjbKlW2NNz8LUtbCwaj3dXQNdycXnTKPbwKJXfpfuNyLHE
-         mYyUIkOCriUvboaX5pxlyECbAuRcuyXRr8e8l6276m49YzNgsn6flhnQgU8tpvrocX+k
-         fD4tdHE9KibW618HrNV/rtSgW5fGG4dlgemf9RppuEkUEQuCfrQr4e22U/igUv30FWio
-         ymcg==
-X-Gm-Message-State: ACgBeo2AfQa61eMzUKh6n3r0uFYrMdCOXscFJu+vTx/W+S3MHiFOig3V
-	UHKhFDg1iAeVGu9EtaN3G40=
-X-Google-Smtp-Source: AA6agR7uQBKz9p2RoPuPctiBHIoYB4Qu2te8eOPpUxlusmYdKqLIHMU/LCxGvX4St+OzDGJl/1h/uw==
-X-Received: by 2002:adf:dbc1:0:b0:224:fc61:fef7 with SMTP id e1-20020adfdbc1000000b00224fc61fef7mr4956247wrj.312.1660600810584;
-        Mon, 15 Aug 2022 15:00:10 -0700 (PDT)
-Received: from localhost.localdomain ([105.235.130.28])
-        by smtp.gmail.com with ESMTPSA id y10-20020adfee0a000000b00223664ab3a8sm10195480wrn.90.2022.08.15.15.00.01
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 15 Aug 2022 15:00:10 -0700 (PDT)
-From: Yassine Oudjana <yassine.oudjana@gmail.com>
-X-Google-Original-From: Yassine Oudjana <y.oudjana@protonmail.com>
-To: Chunfeng Yun <chunfeng.yun@mediatek.com>,
-	Kishon Vijay Abraham I <kishon@ti.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-Cc: Yassine Oudjana <y.oudjana@protonmail.com>,
-	Yassine Oudjana <yassine.oudjana@gmail.com>,
-	linux-mediatek@lists.infradead.org,
-	linux-phy@lists.infradead.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: [RFC PATCH] phy: phy-mtk-tphy: Make USB PHY work on MT6735
-Date: Mon, 15 Aug 2022 22:58:59 +0100
-Message-Id: <20220815215859.253962-1-y.oudjana@protonmail.com>
-X-Mailer: git-send-email 2.37.1
+	id 1oNpbR-00Cy9U-0p
+	for linux-phy@lists.infradead.org; Tue, 16 Aug 2022 05:59:02 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+	by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 27G5wsMh061765;
+	Tue, 16 Aug 2022 00:58:54 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+	s=ti-com-17Q1; t=1660629534;
+	bh=Qshoc3TozitcOBveB/ojj1zsYjU6ve0AOwT34babB/g=;
+	h=From:To:CC:Subject:Date;
+	b=XlbXD0tuVUoDOsMEGZbcgdl7+50QbsLgG7Bug8eJFP/Dilu/v+94LL4e3hrduYeDY
+	 1f1rvuMNhFKarl/LZy9JUEjpiLkLjyIPHmKSgZ7jj0RprqdDnSlXLo/BYpYQGMcrE2
+	 vmKEzzL2xOAvIFsNAE6dZig6NSN7osUxogAX6Oy4=
+Received: from DLEE103.ent.ti.com (dlee103.ent.ti.com [157.170.170.33])
+	by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 27G5wsu3014212
+	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+	Tue, 16 Aug 2022 00:58:54 -0500
+Received: from DLEE112.ent.ti.com (157.170.170.23) by DLEE103.ent.ti.com
+ (157.170.170.33) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.6; Tue, 16
+ Aug 2022 00:58:52 -0500
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE112.ent.ti.com
+ (157.170.170.23) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.6 via
+ Frontend Transport; Tue, 16 Aug 2022 00:58:52 -0500
+Received: from uda0492258.dhcp.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
+	by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 27G5wm3c109354;
+	Tue, 16 Aug 2022 00:58:49 -0500
+From: Siddharth Vadapalli <s-vadapalli@ti.com>
+To: <robh+dt@kernel.org>, <lee.jones@linaro.org>,
+        <krzysztof.kozlowski+dt@linaro.org>, <kishon@ti.com>,
+        <vkoul@kernel.org>, <dan.carpenter@oracle.com>,
+        <grygorii.strashko@ti.com>, <rogerq@kernel.org>
+CC: <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+        <linux-phy@lists.infradead.org>, <s-vadapalli@ti.com>
+Subject: [PATCH v2 0/2] Add support for QSGMII mode
+Date: Tue, 16 Aug 2022 11:28:46 +0530
+Message-ID: <20220816055848.111482-1-s-vadapalli@ti.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220815_150013_507302_9429EA5E 
-X-CRM114-Status: GOOD (  20.86  )
+X-CRM114-CacheID: sfid-20220815_225901_384373_898C2F0E 
+X-CRM114-Status: UNSURE (   7.38  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,65 +83,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The USB PHY on MT6735 seems to be a TPHY V1, but the FMREG base
-here is 0xf00 rather than 0x100. Since it is definitely not a V2
-or later as it has shared registers, would this mean that it is
-an even earlier revision, or one between V1 and V2? Or is the
-address used currently in this driver wrong?
+Add compatible for J7200 CPSW5G.
 
-Furthermore, there is one additional step needed in the power on
-sequence to make USB work on MT6735, which is to set the 10th bit
-of U3P_U2PHYDTM1. This was found through trial and error by adding
-the power on sequence from the downstream driver then stripping
-parts of it until a critical part is found. This specific part[1]
-was found under a comment saying "force enter device mode", but
-there are other bits that are cleared/set under the same comment,
-some of which are set in the same write as this bit, so it is
-unclear whether this bit is the one (or the only one) responsible
-for "forcing enter device mode". There is no documentation on this
-register (or any port registers for that matter) so this bit's
-name and function are unknown. Does anyone have more information
-on this? And if no information were to be found, would leaving
-this as a magic value, or with the placeholder name currently used
-(P2C_FORCE_ENTER_DEVICE_MODE) be acceptable?
+Add support for QSGMII mode in phy-gmii-sel driver for CPSW5G in J7200.
 
-[1] https://gitlab.com/Tooniis/linux-samsung-grandpplte/-/blob/master/drivers/misc/mediatek/usb20/mt6735/usb20_phy.c#L404
----
- drivers/phy/mediatek/phy-mtk-tphy.c | 5 ++++-
- 1 file changed, 4 insertions(+), 1 deletion(-)
+Change log:
 
-diff --git a/drivers/phy/mediatek/phy-mtk-tphy.c b/drivers/phy/mediatek/phy-mtk-tphy.c
-index 8ee7682b8e93..f54b8a9872bf 100644
---- a/drivers/phy/mediatek/phy-mtk-tphy.c
-+++ b/drivers/phy/mediatek/phy-mtk-tphy.c
-@@ -23,7 +23,7 @@
- /* version V1 sub-banks offset base address */
- /* banks shared by multiple phys */
- #define SSUSB_SIFSLV_V1_SPLLC		0x000	/* shared by u3 phys */
--#define SSUSB_SIFSLV_V1_U2FREQ		0x100	/* shared by u2 phys */
-+#define SSUSB_SIFSLV_V1_U2FREQ		0xf00	/* shared by u2 phys */
- #define SSUSB_SIFSLV_V1_CHIP		0x300	/* shared by u3 phys */
- /* u2 phy bank */
- #define SSUSB_SIFSLV_V1_U2PHY_COM	0x000
-@@ -119,6 +119,7 @@
- 
- #define U3P_U2PHYDTM1		0x06C
- #define P2C_RG_UART_EN			BIT(16)
-+#define P2C_FORCE_ENTER_DEVICE_MODE	BIT(10)
- #define P2C_FORCE_IDDIG		BIT(9)
- #define P2C_RG_VBUSVALID		BIT(5)
- #define P2C_RG_SESSEND			BIT(4)
-@@ -579,6 +580,8 @@ static void u2_phy_instance_power_on(struct mtk_tphy *tphy,
- 		mtk_phy_set_bits(com + U3P_U2PHYDTM0, P2C_RG_SUSPENDM | P2C_FORCE_SUSPENDM);
- 	}
- 	dev_dbg(tphy->dev, "%s(%d)\n", __func__, index);
-+
-+	mtk_phy_set_bits(com + U3P_U2PHYDTM1, P2C_FORCE_ENTER_DEVICE_MODE);
- }
- 
- static void u2_phy_instance_power_off(struct mtk_tphy *tphy,
--- 
-2.37.1
+v1->v2:
+1. Rename ti,enet-ctrl-qsgmii as ti,qsgmii-main-ports.
+2. Change ti,qsgmii-main-ports property from bitmask to integer.
+3.Update commit message with property name as ti,qsgmii-main-ports.
+
+v1: https://lore.kernel.org/r/20220531111221.22963-1-s-vadapalli@ti.com/
+
+Siddharth Vadapalli (2):
+  dt-bindings: phy: ti: phy-gmii-sel: Add bindings for J7200
+  phy: ti: gmii-sel: Add support for CPSW5G GMII SEL in J7200
+
+ .../mfd/ti,j721e-system-controller.yaml       |  5 +++
+ .../bindings/phy/ti,phy-gmii-sel.yaml         | 27 ++++++++++++-
+ drivers/phy/ti/phy-gmii-sel.c                 | 40 +++++++++++++++++--
+ 3 files changed, 68 insertions(+), 4 deletions(-)
+
+--
+2.25.1
 
 
 -- 
