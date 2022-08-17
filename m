@@ -4,60 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 11414C32792
-	for <linux-phy@archiver.kernel.org>; Wed, 17 Aug 2022 14:23:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2296BC32771
+	for <linux-phy@archiver.kernel.org>; Wed, 17 Aug 2022 14:23:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Pz98U6Te72V104ZFkyC1lScuVaOUa4cjqOkrTWtc5nY=; b=O+qpzfzKJgdlAV
-	h1QsFw/YX+7OnseWpMt7M/x09yURbtAuc9NARP8/Txf29646wQtTLnIGCK3ODtovP8FHLClZg98fq
-	Xj036mkUpDFDUwfJR1pbZjbqZYMe8HgQqN71oQsBBbQERQFTu1Wk7Tgke6+vKnilZWjq0txRjGZec
-	bN+PSxUrBLYUEB8kKtCKxT4r876tv1WSfXWF96EhZH++RPNkGXRhjLvb2RqTdHEr3Q9TFG8xk54r/
-	hL2SKy6LH8FboM9OL6l1Z+9bUUf/KLWMTDPeupIL8OXJhP5XEPVj3XQkI/ACb00We89jrHp+759M5
-	1/5x1YO7pg8d1rdIF9lA==;
+	List-Owner; bh=lB/1J+mrBLR+p7xHrVorUpFVnclO+QyjdzodnZG8ZPU=; b=Oksw7eJn9W+Rqi
+	tnLDgtEreFoXZuU1HBNYMgXX+6zPwdGhMjPkjCJtR3h2rjCBGGmeujlS5XIL9c4oaKkd70QzXSyH6
+	3wJAWrq6eijExbA/MzowplH5SjWup85MnmhUJ/wXP1pq54Op1nfyU/ju03mk1exZZx7abhiJxSwDH
+	+ikvcWqX5MK8Rxz/JPDMxihvqTKVfUMtuzmtVijtWNT83z5+j+bgBcN8HBLS2ifVpvkFaalIUyWEX
+	3EKtSodG3ZLriaVP95dNsRtSvX2VXGCFKWsXsNedQNzaYkcs3AKnAy/G789EQ/CJVa6yLNYZ8EFnL
+	Opjy0FZf+r1FQ51qLqFA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oOJwi-002nZA-7Z; Wed, 17 Aug 2022 14:23:00 +0000
-Received: from mail-lf1-x135.google.com ([2a00:1450:4864:20::135])
+	id 1oOJwk-002nbe-HZ; Wed, 17 Aug 2022 14:23:02 +0000
+Received: from mail-lf1-x12f.google.com ([2a00:1450:4864:20::12f])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oOJwf-002nT8-Bq
-	for linux-phy@lists.infradead.org; Wed, 17 Aug 2022 14:22:59 +0000
-Received: by mail-lf1-x135.google.com with SMTP id s7so602118lfp.8
-        for <linux-phy@lists.infradead.org>; Wed, 17 Aug 2022 07:22:54 -0700 (PDT)
+	id 1oOJwh-002nUT-66
+	for linux-phy@lists.infradead.org; Wed, 17 Aug 2022 14:23:00 +0000
+Received: by mail-lf1-x12f.google.com with SMTP id i19so901556lfr.10
+        for <linux-phy@lists.infradead.org>; Wed, 17 Aug 2022 07:22:56 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc;
-        bh=Ts76PcyKw0jM6XarGajWHwsIAiV4DTWPpPPo0AWZtJA=;
-        b=JOJbWVLtHO6s9Pc8HcJChhshshhY2T/4/MCUDhf62a1FLjYupcZU4YieZWuff3QUQe
-         Bmo0/osTc77ZNgs2QpSJ/S1IZwE0FFgGMork/YRXtt0HXbvNAc2oKtrarCpQcTHhRbBN
-         D8qpKos+7Rlv+L1SnE5uF1nlfkG27KdJLiPgyDruh48s8nP7qfekstOKH4inFZUl4VnL
-         fjNdITKaE2d8NE6egykSQK+x6FklOvlT/bKuSrN43tASRXm7eJwdrFK13Ut38I9Z8cBo
-         MfL2onHGHoYx8kkYpPIA552aF+WAulZML5pi8jS7IuhYExm0MSnI1zqu2cX1RTLBa4Jp
-         KPJw==
+        bh=RLFtxKe+OhZckW6UWUlO5nQyi+aAQydRisAUQ2pGnOo=;
+        b=xqUTUYdhUtcYoktp6glAcArIaK4BJecsnSG+eYbnh+bBkTvA/igs7Cm3Y+DX06ff34
+         dH2MyV38XqULqXLco2U2xv1SzQW4kIGxdd6Yr5ndocQeuOPIdzCOBf+mPnKhaHhJIK7R
+         v3C0R2bOJqjJkKxbVO32Fr0CR0uiyiiKpunD9GkSut+dTB8sN0z4eCurCYaFedel0QQJ
+         bMAW+47BHd6JipjDY0MEgyU+Jwrpeu13lLdT1dDlYk2OqCyP/ImEgeXKNAxAJ2BCDm+L
+         B98+zNRAbeao+uDz/LV3hmSOCH+zyLHlnA2HeDVdvtDl98Z2PCB2i5rqLz2dExWHwN2I
+         ua2A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc;
-        bh=Ts76PcyKw0jM6XarGajWHwsIAiV4DTWPpPPo0AWZtJA=;
-        b=wcxZ6w1a4NDoqIkilwRcrEEfDPuThUOlKraBdUseYptSKPCNsq3rcOPyek3uZPDECL
-         3GhR/hykyMtvgpodfOqCOW1J6wZsR0gmw14jmJnLXbd0hBXrc+FfaEBSRsem5u+IV2gn
-         50FoSrLn+9rE3woTF3D2cuMFSO2uzGlOxmHqeeYe3feepYb6uAhcxTU3nkDf0pQu+kgJ
-         DGr+6SQ/uZgOsryQZO6C6/wy6YkFwN7qmlRQ+RaZduUUnxgc2neqllgXKkJ6jdSWFQm8
-         1MlYqsDxG38Q3/9qbmOa3Lv0OnMlU9xuWASDxMBCoBM9oL2GVqzYfiAuPW+CGd3IotaL
-         HVew==
-X-Gm-Message-State: ACgBeo3leO9T1OsTKQ9QmyCEcxjfCJzWdtRjliRZydzM7F1mKq996ntO
-	GWWhINkLp73ixJOXfjY69emapw==
-X-Google-Smtp-Source: AA6agR4qGhm3oKo5ILBcJJjEibUlASlIQgN2sJ66ZGB2EpL2gJQJVh0eh9J0qhasVYm0uW5uTG0XAA==
-X-Received: by 2002:a05:6512:ba4:b0:48a:f185:db17 with SMTP id b36-20020a0565120ba400b0048af185db17mr8107080lfv.107.1660746173606;
-        Wed, 17 Aug 2022 07:22:53 -0700 (PDT)
+        bh=RLFtxKe+OhZckW6UWUlO5nQyi+aAQydRisAUQ2pGnOo=;
+        b=eSZ/g3aHl4H+3rDkuDkx+2OsLvFiCIgzc8vKiEv5bCVqENtbASZrU6AnT4HTHqFHDp
+         24s8ibxgz0AOL5lJJ49nNnyftAOY1Bk7K93EhRdpg8Y0nOLNB5f0oBuqQcfTZS3o8OTF
+         Ngz/jfpfLGOasJhmpBr0DbGPVk5FSNd6vyb4oZQ4m4vA+/GPh/D6k120EbOINwzRMcQg
+         eOVtPImbDrp+e9J4iB1CpUkAE5ZeaVeZkb13JJL4+7DWrxlplFTfRx53QflXh2QrFCpE
+         9yj+wx7f1v6Ue9vGx6ABy6RO1Cc9Q7CZz+vdJO2VM5df5VnqbrlYY0XSXIY0w92Pprf5
+         su7g==
+X-Gm-Message-State: ACgBeo2x/etA5nePU2AUEaRy0idPvD8P1A9otZ7BuSF1bSx6VEMMuF56
+	k7y/zirDEur4FBXBt/9IcjFq/A==
+X-Google-Smtp-Source: AA6agR59CBGcXaV0hie1fj1kHHlCqZogn30/K0KtyO73p7KQ0SRzgXOusSqZ3nNin28PDKqXiffn0Q==
+X-Received: by 2002:a05:6512:1045:b0:491:f371:ad5d with SMTP id c5-20020a056512104500b00491f371ad5dmr5839628lfb.425.1660746175435;
+        Wed, 17 Aug 2022 07:22:55 -0700 (PDT)
 Received: from krzk-bin.. (d15l54h48cw7vbh-qr4-4.rev.dnainternet.fi. [2001:14bb:ae:539c:1b1c:14b7:109b:ed76])
-        by smtp.gmail.com with ESMTPSA id u1-20020ac258c1000000b0047f7722b73csm1704647lfo.142.2022.08.17.07.22.52
+        by smtp.gmail.com with ESMTPSA id u1-20020ac258c1000000b0047f7722b73csm1704647lfo.142.2022.08.17.07.22.53
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 17 Aug 2022 07:22:53 -0700 (PDT)
+        Wed, 17 Aug 2022 07:22:55 -0700 (PDT)
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 To: Lee Jones <lee@kernel.org>,
 	Rob Herring <robh+dt@kernel.org>,
@@ -79,17 +79,16 @@ To: Lee Jones <lee@kernel.org>,
 	linux-arm-msm@vger.kernel.org,
 	linux-remoteproc@vger.kernel.org
 Cc: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Subject: [PATCH 2/4] dt-bindings: phy: hisilicon,hi3670-usb3: simplify example
-Date: Wed, 17 Aug 2022 17:22:44 +0300
-Message-Id: <20220817142246.828762-3-krzysztof.kozlowski@linaro.org>
+Subject: [PATCH 3/4] dt-bindings: remoteproc: qcom,pil-info: add missing imem compatible
+Date: Wed, 17 Aug 2022 17:22:45 +0300
+Message-Id: <20220817142246.828762-4-krzysztof.kozlowski@linaro.org>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20220817142246.828762-1-krzysztof.kozlowski@linaro.org>
 References: <20220817142246.828762-1-krzysztof.kozlowski@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220817_072257_429791_20C2934E 
-X-CRM114-Status: UNSURE (   9.47  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220817_072259_250186_EBD9E35F 
+X-CRM114-Status: GOOD (  10.36  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,49 +105,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-syscon and simple-mfd cannot be used without device specific compatible,
-so simplify the example to fix this.
+syscon and simple-mfd cannot be used without device specific compatible.
 
 Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 ---
- .../bindings/phy/hisilicon,hi3670-usb3.yaml   | 26 ++++++-------------
- 1 file changed, 8 insertions(+), 18 deletions(-)
+ Documentation/devicetree/bindings/remoteproc/qcom,pil-info.yaml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/Documentation/devicetree/bindings/phy/hisilicon,hi3670-usb3.yaml b/Documentation/devicetree/bindings/phy/hisilicon,hi3670-usb3.yaml
-index ebd78acfe2de..1cb00dbcd4c5 100644
---- a/Documentation/devicetree/bindings/phy/hisilicon,hi3670-usb3.yaml
-+++ b/Documentation/devicetree/bindings/phy/hisilicon,hi3670-usb3.yaml
-@@ -52,22 +52,12 @@ additionalProperties: false
- 
+diff --git a/Documentation/devicetree/bindings/remoteproc/qcom,pil-info.yaml b/Documentation/devicetree/bindings/remoteproc/qcom,pil-info.yaml
+index 9282837d64ba..a7711e3c998c 100644
+--- a/Documentation/devicetree/bindings/remoteproc/qcom,pil-info.yaml
++++ b/Documentation/devicetree/bindings/remoteproc/qcom,pil-info.yaml
+@@ -30,7 +30,7 @@ additionalProperties: false
  examples:
    - |
--    bus {
--      #address-cells = <2>;
--      #size-cells = <2>;
--
--      usb3_otg_bc: usb3_otg_bc@ff200000 {
--        compatible = "syscon", "simple-mfd";
--        reg = <0x0 0xff200000 0x0 0x1000>;
--
--        usb_phy {
--          compatible = "hisilicon,hi3670-usb-phy";
--          #phy-cells = <0>;
--          hisilicon,pericrg-syscon = <&crg_ctrl>;
--          hisilicon,pctrl-syscon = <&pctrl>;
--          hisilicon,sctrl-syscon = <&sctrl>;
--          hisilicon,eye-diagram-param = <0xfdfee4>;
--          hisilicon,tx-vboost-lvl = <0x5>;
--        };
--      };
-+    usb-phy {
-+        compatible = "hisilicon,hi3670-usb-phy";
-+        #phy-cells = <0>;
-+        hisilicon,pericrg-syscon = <&crg_ctrl>;
-+        hisilicon,pctrl-syscon = <&pctrl>;
-+        hisilicon,sctrl-syscon = <&sctrl>;
-+        hisilicon,eye-diagram-param = <0xfdfee4>;
-+        hisilicon,tx-vboost-lvl = <0x5>;
-     };
+     imem@146bf000 {
+-      compatible = "syscon", "simple-mfd";
++      compatible = "qcom,sdm630-imem", "syscon", "simple-mfd";
+       reg = <0x146bf000 0x1000>;
+ 
+       #address-cells = <1>;
 -- 
 2.34.1
 
