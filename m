@@ -4,62 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F0793C00140
-	for <linux-phy@archiver.kernel.org>; Thu, 18 Aug 2022 19:44:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3A752C00140
+	for <linux-phy@archiver.kernel.org>; Thu, 18 Aug 2022 19:48:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VQizxDwa3pdUEuv7NcyeSp4sU9AViewJa719hA1SgUY=; b=sl/nRaO53n34t4
-	NUAYrCsmpW5Bf754vpg0dyAofCKibQom8AJmLJLJ4jH1IsWwFoiXKs6TI+e6RoyXuN++EdT8mms9+
-	O4Z/Zp7DPaxLzEfMyPj4xu4jiFiqOZi0R2zjg+8s6kyATNKn4k88p3VDvjL5cug+BDnHAt3oPYYzr
-	gPj0lRe/tbjtuEnhR9btP/0HPPp5qDsU1p+KHrYzHwKZxWJehH1xLAxBVUK09Vn0HRWm0uNyNkfdh
-	83lTPwF8s8q9+tnAVtA/keyHbYvgLB7ZLxI57z4i7JWQAeMo8w3Qnf4DMCAqfTuUCqPrt23czlOlo
-	KrHBZ6/2Bb1ve8uICRqw==;
+	List-Owner; bh=9c0mReDUUqUibQUn1J5eqBit6Y5A3O4XX7lpi8m+isA=; b=SBxakFjKKCwIdh
+	tpCSyqgKQXBeC4ZOJTx7or2m5h/emcgu8wH7So4DMztKP8Xn/5B3qVsrkp0uCHieali09kRNnvUNk
+	/0rmKlDgcP9v3Z0Q0NbBg06Bmr5vIKr0KcLZZAQPqqzUTqdVZCq73G/2oMNuyIWhZgHmUqDutilj9
+	uce0cThSp+KthYkGJX1abtLgELxxKSozFu2cX0Tgh9oiZXf22hCtaaz7vdJqGXSjzgmz92342rlsP
+	SH248H7FMpEZBRKyaXNBDpbqI1Bs/pnoBk0/1kfmt180Ib8IrV7dG7SV2lIo/GEoNI7Kve/4RGN5f
+	GS9dVbpUROaokE1HAbsQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oOlRH-008m2Y-BU; Thu, 18 Aug 2022 19:44:23 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1oOlVR-008oHe-Ht; Thu, 18 Aug 2022 19:48:41 +0000
+Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oOlRF-008m1J-ER
-	for linux-phy@lists.infradead.org; Thu, 18 Aug 2022 19:44:22 +0000
+	id 1oOlVN-008oCH-My
+	for linux-phy@lists.infradead.org; Thu, 18 Aug 2022 19:48:39 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id D82666129E;
-	Thu, 18 Aug 2022 19:44:19 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B40C1C433C1;
-	Thu, 18 Aug 2022 19:44:18 +0000 (UTC)
+	by ams.source.kernel.org (Postfix) with ESMTPS id 18D2FB8240F;
+	Thu, 18 Aug 2022 19:48:36 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 07503C433C1;
+	Thu, 18 Aug 2022 19:48:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1660851859;
-	bh=rPY2Sny802bupQgHO80LHiaN+qHFvSiRug8RSfwD7yg=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=ow+dC5w7EzavfA5oRx1zTe9KtsEal05g896omdoiOCSZvvw1ub2lKxkrNeoeHwqTr
-	 U7+ZYHAw5zuJKq7/S5kn9DVP+dqpjIu9TdYd9N387I+nZAqTjYSt0MxCC7ZN6v+1eq
-	 WdoH/Mfq9YDl2tsCfj011ZVxb/EiylaaNK6PyKSLieI8jTbbIbONFRXBM2vohZsp/9
-	 LlYZBNiq2Zhc/ZRHo70fJcrPz4w5EV+REhocq0tIlAcC5oAZlbOg9K7HlNsJbex1/Q
-	 ldLnW2NoaaxsZH8rtyLNsC0vWKVxhBno/WfU2msETZ5I63n/eoRVBe8i2UcoREtcEC
-	 NsYUzzaQjszrQ==
-Date: Fri, 19 Aug 2022 01:14:09 +0530
-From: Pratyush Yadav <pratyush@kernel.org>
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Cc: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH v2] dt-bindings: phy: Update Pratyush Yadav's email
-Message-ID: <20220818194409.zicuzhcg36qw5her@yadavpratyush.com>
-References: <20220816132131.75591-1-krzysztof.kozlowski@linaro.org>
+	s=k20201202; t=1660852114;
+	bh=LbfCHFjKk6kzGgxEEUBJgU/bUqUM3IB8CCxE0P4a6bY=;
+	h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+	b=OzoOBygBfdk21arMXR12/gapkYCLUl5DIZIjGoyLdNfq6LLBUnayGq4VlmnHl323L
+	 iZx3xye5Bssk3Ez9gQME9SMvSAdHMUaNueGBEKGwyKqLyF/Z3A/8vDgmzU7vzj+YNw
+	 /dPIV2coNRspoY2u0ns/Kb+OTFDInFA9saWHLRn66nOcXEeVl1eXzOTBvbcjbhI3GX
+	 ueICF1IHxevnJkimJ5YUZ3bj14htoUYrdSQTyrUFmGovJVl1rh8VQd6p2LnCzKJO0C
+	 M1R/9YezXiYJoWBw/nhVmU/GAhwePb02Ze6VKUNtoKK31e03j8DEFjuqjYdhHvrBBJ
+	 bFRPejkcm5irw==
+Date: Thu, 18 Aug 2022 21:48:28 +0200
+From: Marek =?UTF-8?B?QmVow7pu?= <kabel@kernel.org>
+To: Andy Shevchenko <andy.shevchenko@gmail.com>
+Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
+ Linux Phy <linux-phy@lists.infradead.org>, Kees Cook
+ <keescook@chromium.org>, Andy Shevchenko
+ <andriy.shevchenko@linux.intel.com>, Daniel Scally <djrscally@gmail.com>,
+ Gregory Clement <gregory.clement@bootlin.com>, Heikki Krogerus
+ <heikki.krogerus@linux.intel.com>, Sakari Ailus
+ <sakari.ailus@linux.intel.com>, Linux Kernel Mailing List
+ <linux-kernel@vger.kernel.org>, Pali =?UTF-8?B?Um9ow6Fy?=
+ <pali@kernel.org>, josef.schlehofer@nic.cz
+Subject: Re: [PATCH linux-phy v2 1/4] string.h: Add str_has_proper_prefix()
+Message-ID: <20220818214828.22023dc7@thinkpad>
+In-Reply-To: <CAHp75VecURpGCBY3WVKqhd64Ngobjvi-w=PuHQBH2V-MqCzkuw@mail.gmail.com>
+References: <20220817200335.911-1-kabel@kernel.org>
+	<20220817200335.911-2-kabel@kernel.org>
+	<CAHp75VecURpGCBY3WVKqhd64Ngobjvi-w=PuHQBH2V-MqCzkuw@mail.gmail.com>
+X-Mailer: Claws Mail 3.19.0 (GTK+ 2.24.33; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20220816132131.75591-1-krzysztof.kozlowski@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220818_124421_558358_1D5C4E36 
-X-CRM114-Status: UNSURE (   9.70  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220818_124837_919328_A9F5AA33 
+X-CRM114-Status: GOOD (  19.50  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,31 +76,35 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi,
-
-On 16/08/22 04:21PM, Krzysztof Kozlowski wrote:
-> Emails to Pratyush Yadav bounce ("550 Invalid recipient"), so update to
-> match one in commit 92714596cdbe ("MAINTAINERS: Use my kernel.org
-> email").
-> 
-> Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-> Acked-by: Rob Herring <robh@kernel.org>
-
-I am not yet sure if I will have the bandwidth to review the patches for 
-these. But anyway
-
-Acked-by: Pratyush Yadav <pratyush@kernel.org>
-
--- 
-Regards,
-Pratyush Yadav
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gVGh1LCAxOCBBdWcgMjAyMiAyMjoxMDo1OCArMDMwMApBbmR5IFNoZXZjaGVua28gPGFuZHku
+c2hldmNoZW5rb0BnbWFpbC5jb20+IHdyb3RlOgoKPiBPbiBXZWQsIEF1ZyAxNywgMjAyMiBhdCAx
+MTowNiBQTSBNYXJlayBCZWjDum4gPGthYmVsQGtlcm5lbC5vcmc+IHdyb3RlOgo+ID4KPiA+IEFk
+ZCBzdHJfaGFzX3Byb3Blcl9wcmVmaXgoKSwgc2ltaWxhciB0byBzdHJfaGFzX3ByZWZpeCgpLCBi
+dXQgcmVxdWlyZXMKPiA+IHRoYXQgdGhlIHByZWZpeCBpcyBwcm9wZXI6IHRoZSBzdHJpbmcgaXRz
+ZWxmIG11c3QgYmUgbG9uZ2VyIHRoYW4gdGhlCj4gPiBwcmVmaXguCj4gPgo+ID4gU2lnbmVkLW9m
+Zi1ieTogTWFyZWsgQmVow7puIDxrYWJlbEBrZXJuZWwub3JnPgo+ID4gLS0tCj4gPiBBbmR5LCBL
+ZWVzLCBjb3VsZCB5b3UgYWNrIHRoaXMgaWYgaXQgaXMgb2s/ICAKPiAKPiBTZWVtcyB0byBtZSB0
+aGVyZSBhcmUgdG9vIG1hbnkgc3RybGVuKCk6cy4gT25lIGlzIGhpZGRlbiBpbiBzdHJuY21wKCku
+CgpJIHRob3VnaHQgdGhpcyB3YXMgb2sgY2F1c2UgZ2NjIGhhcyBvcHRpbWl6YXRpb25zIGZvciB0
+aGlzIGluCmh0dHBzOi8vZ2l0aHViLmNvbS9nY2MtbWlycm9yL2djYy9ibG9iL21hc3Rlci9nY2Mv
+dHJlZS1zc2Etc3RybGVuLmNjCgpCdXQgbm93IEkgc2VlIHRoYXQga2VybmVsIGRvZXMgbm90IGRl
+Y2xhcmUgdGhlc2UgZnVuY3Rpb25zIGFzIGlubGluZQp0aGF0IGNhbGwgX19idWlsdGluX3N0cmxl
+bigpLi4uIHNvIHByb2JhYmx5IHRoZSBvcHRpbWl6YXRpb25zIGFyZSBub3QKdXNlZC4KCj4gQmVz
+aWRlcyBub3QgdGhlIGdvb2QgbmFtaW5nICh3aGF0ICdwcm9wZXInIG1lYW5zKSwKClRoZSBuYW1p
+bmcgY29tZXMgZnJvbSBzaW1pbGFyIG5hbWluZyBpbiBtYXRoOiBwcm9wZXIgc3Vic2V0IGlzIGFz
+CnN1YnNldCB0aGF0IGlzIG5vdCBlcXVhbCB0byB0aGUgc3VwZXJzZXQuIFNlZQpodHRwczovL2Vu
+Lndpa2lwZWRpYS5vcmcvd2lraS9TdWJzdHJpbmcgOgogICJBIHByb3BlciBwcmVmaXggb2YgYSBz
+dHJpbmcgaXMgbm90IGVxdWFsIHRvIHRoZSBzdHJpbmcgaXRzZWxmIgoKPiB0aGUgZW50aXJlIGZ1
+bmN0aW9uIGlzIG5vdCBuZWVkZWQuIFlvdSBtYXkgc2ltcGx5IGNhbGwKPiAKPiAgIHN0cl9oYXNf
+cHJlZml4KCkgJiYgcFtsZW5dICE9ICdcMCc7Cj4gCj4gQ29ycmVjdD8KCkRvIHlvdSBtZWFuIHRo
+YXQgSSBzaG91bGQgaW1wbGVtZW50IHRoaXMgZnVuY3Rpb24gdG8gc2ltcGx5IHJldHVybgogIHN0
+cl9oYXNfcHJlZml4KCkgJiYgcFtsZW5dICE9ICdcMCcKb3IgdGhhdCB0aGlzIGZ1bmN0aW9uIHNo
+b3VsZCBub3QgZXhpc3QgYXQgYWxsIGFuZCBJIHNob3VsZCBkbyB0aGF0IGluCnRoZSBjb2RlIHdo
+ZXJlIEkgd291bGQgaGF2ZSB1c2VkIHRoZSBmdW5jdGlvbj8KClRoYW5rcy4KCk1hcmVrCgotLSAK
+bGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRw
+czovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
