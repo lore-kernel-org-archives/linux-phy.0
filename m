@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 12AA3C00140
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5B2CBC32772
 	for <linux-phy@archiver.kernel.org>; Thu, 18 Aug 2022 14:45:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,31 +12,31 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=B71FQ2VNekXgND93Ea7kZglZZsduEy02izQIcfa9v1o=; b=35wX5Ul737/FG3
-	+M5T3SB54jYUvQpbYOQnDmy0ye2/Fuo1FcsynA+XZplHbUhhbMgR4kKnbqJd/YwzBxl6pVQASBC3J
-	5GLj25FsZ1ExhshIE04/Os/YxHTLWFbT2K40ZaunCu/u/6nxL/6COp5xYskSO2KCEJsilVrVxYN6c
-	KU+v6c9EURwsLpXhzhYZCPaeF42jt9Xo9iXG+Faeh2Whg8yt6tWmplgYlvGdcoGd9/p8/Efcoa1Da
-	8YexvnXP7wTd+zd+0lGAktKnJQA3fkAiJWq0EAL2OhCb7I71OGrVYZdLf3pPuOelz9drm14ix3pcH
-	Jr04ZKzd+KXwNJ+WY89g==;
+	List-Owner; bh=ti70bMdwGtauZdszC7/19VoYuimxDh/ZdRlkhVdahXA=; b=nuE2sY3N1Grf/a
+	rg5KP6eMc0YyohdVLjbUzIQhU3gShfFt8jOHBUpdg9TaMwmnQe/fFExU96QBLMiBnyEW/TfPS9THV
+	E8Z2Vbn+GokkvCRPq3iF4I9gUrn2pVADl7PN9AA4nKyudXV/678JrWGpGD9ojij4K9NFKUezhA1VL
+	6n85eM9GTV3cq+qrzTTcC0x00D4rlHqA6pEbz+3oQEx+bYvV/qvV7HGM9XeXMJI2pJJDnVqycrzjY
+	9Y3eh0xqekcWPpg0ewEZTuives4VhV3KcF0SO2+IS56dIgOiHMP/0o7+tsRCf01obPBw/tNcGhGSw
+	4huPVFwLTZ+gguQuG3+w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oOglw-006DFi-38; Thu, 18 Aug 2022 14:45:24 +0000
+	id 1oOglw-006DFq-De; Thu, 18 Aug 2022 14:45:24 +0000
 Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oOgaY-0065sf-FG
-	for linux-phy@lists.infradead.org; Thu, 18 Aug 2022 14:33:41 +0000
+	id 1oOgaY-0065se-Fx
+	for linux-phy@lists.infradead.org; Thu, 18 Aug 2022 14:33:40 +0000
 Received: from drehscheibe.grey.stw.pengutronix.de ([2a0a:edc0:0:c01:1d::a2])
 	by metis.ext.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
 	(Exim 4.92)
 	(envelope-from <mfe@pengutronix.de>)
-	id 1oOgaJ-0005lN-Ki; Thu, 18 Aug 2022 16:33:23 +0200
+	id 1oOgaJ-0005lR-Kg; Thu, 18 Aug 2022 16:33:23 +0200
 Received: from [2a0a:edc0:0:1101:1d::28] (helo=dude02.red.stw.pengutronix.de)
 	by drehscheibe.grey.stw.pengutronix.de with esmtp (Exim 4.94.2)
 	(envelope-from <mfe@pengutronix.de>)
-	id 1oOgaH-000X0w-Vf; Thu, 18 Aug 2022 16:33:21 +0200
+	id 1oOgaI-000X15-PW; Thu, 18 Aug 2022 16:33:22 +0200
 Received: from mfe by dude02.red.stw.pengutronix.de with local (Exim 4.94.2)
 	(envelope-from <mfe@pengutronix.de>)
-	id 1oOgaH-0043dU-3I; Thu, 18 Aug 2022 16:33:21 +0200
+	id 1oOgaH-0043dR-2W; Thu, 18 Aug 2022 16:33:21 +0200
 From: Marco Felsch <m.felsch@pengutronix.de>
 To: mchehab@kernel.org,
 	robh+dt@kernel.org,
@@ -52,9 +52,9 @@ Cc: linux-kernel@vger.kernel.org,
 	devicetree@vger.kernel.org,
 	linux-media@vger.kernel.org,
 	kernel@pengutronix.de
-Subject: [PATCH 3/4] media: dt-bindings: add bindings for Toshiba TC358746
-Date: Thu, 18 Aug 2022 16:33:06 +0200
-Message-Id: <20220818143307.967150-4-m.felsch@pengutronix.de>
+Subject: [PATCH 2/4] phy: dphy: add support to calculate the timing based on hs_clk_rate
+Date: Thu, 18 Aug 2022 16:33:05 +0200
+Message-Id: <20220818143307.967150-3-m.felsch@pengutronix.de>
 X-Mailer: git-send-email 2.30.2
 In-Reply-To: <20220818143307.967150-1-m.felsch@pengutronix.de>
 References: <20220818143307.967150-1-m.felsch@pengutronix.de>
@@ -64,8 +64,8 @@ X-SA-Exim-Mail-From: mfe@pengutronix.de
 X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de); SAEximRunCond expanded to false
 X-PTX-Original-Recipient: linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220818_073338_620286_2F625BC5 
-X-CRM114-Status: GOOD (  17.35  )
+X-CRM114-CacheID: sfid-20220818_073338_610604_33EB60F0 
+X-CRM114-Status: GOOD (  15.59  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,92 +77,95 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-QWRkIHRoZSBiaW5kaW5ncyBmb3IgdGhlIFRvc2hpYmEgVEMzNTg3NDYgUGFyYWxsZWwgPC0+IE1J
-UEktQ1NJIGJyaWRnZQpkcml2ZXIuCgpTaWduZWQtb2ZmLWJ5OiBNYXJjbyBGZWxzY2ggPG0uZmVs
-c2NoQHBlbmd1dHJvbml4LmRlPgotLS0KIC4uLi9iaW5kaW5ncy9tZWRpYS9pMmMvdG9zaGliYSx0
-YzM1ODc0Ni55YW1sICB8IDE1NyArKysrKysrKysrKysrKysrKysKIDEgZmlsZSBjaGFuZ2VkLCAx
-NTcgaW5zZXJ0aW9ucygrKQogY3JlYXRlIG1vZGUgMTAwNjQ0IERvY3VtZW50YXRpb24vZGV2aWNl
-dHJlZS9iaW5kaW5ncy9tZWRpYS9pMmMvdG9zaGliYSx0YzM1ODc0Ni55YW1sCgpkaWZmIC0tZ2l0
-IGEvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL21lZGlhL2kyYy90b3NoaWJhLHRj
-MzU4NzQ2LnlhbWwgYi9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvbWVkaWEvaTJj
-L3Rvc2hpYmEsdGMzNTg3NDYueWFtbApuZXcgZmlsZSBtb2RlIDEwMDY0NAppbmRleCAwMDAwMDAw
-MDAwMDAuLjk3ODNjY2EzNjNjNgotLS0gL2Rldi9udWxsCisrKyBiL0RvY3VtZW50YXRpb24vZGV2
-aWNldHJlZS9iaW5kaW5ncy9tZWRpYS9pMmMvdG9zaGliYSx0YzM1ODc0Ni55YW1sCkBAIC0wLDAg
-KzEsMTU3IEBACisjIFNQRFgtTGljZW5zZS1JZGVudGlmaWVyOiAoR1BMLTIuMC1vbmx5IE9SIEJT
-RC0yLUNsYXVzZSkKKyVZQU1MIDEuMgorLS0tCiskaWQ6IGh0dHA6Ly9kZXZpY2V0cmVlLm9yZy9z
-Y2hlbWFzL21lZGlhL2kyYy90b3NoaWJhLHRjMzU4NzQ2LnlhbWwjCiskc2NoZW1hOiBodHRwOi8v
-ZGV2aWNldHJlZS5vcmcvbWV0YS1zY2hlbWFzL2NvcmUueWFtbCMKKwordGl0bGU6IFRvc2hpYmEg
-VEMzNTg3NDYgUGFyYWxsZWwgdG8gTUlQSSBDU0kyIEJyaWRnZQorCittYWludGFpbmVyczoKKyAg
-LSBNYXJjbyBGZWxzY2ggPGtlcm5lbEBwZW5ndXRyb25peC5kZT4KKworZGVzY3JpcHRpb246IHwt
-CisgIFRoZSBUb3NoaWJhIFRDMzU4NzQ2IGNvbnZlcnRzIGEgcGFyYWxsZWwgdmlkZW8gc3RyZWFt
-IGludG8gYSBNSVBJIENTSS0yCisgIHN0cmVhbS4gVGhlIGRpcmVjdGlvbiBjYW4gYmUgZWl0aGVy
-IHBhcmFsbGVsLWluIC0+IGNzaS1vdXQgb3IgY3NpLWluIC0+CisgIHBhcmFsbGVsLW91dCBUaGUg
-Y2hpcCBpcyBwcm9ncmFtbWFibGUgdHJvdWdoIEkyQyBhbmQgU1BJIGJ1dCB0aGUgU1BJCisgIGlu
-dGVyZmFjZSBpcyBvbmx5IHN1cHBvcnRlZCBpbiBwYXJhbGxlbC1pbiAtPiBjc2ktb3V0IG1vZGUu
-CisKKyAgTm90ZSB0aGF0IHRoZSBjdXJyZW50IGRldmljZSB0cmVlIGJpbmRpbmdzIG9ubHkgc3Vw
-cG9ydCB0aGUKKyAgcGFyYWxsZWwtaW4gLT4gY3NpLW91dCBwYXRoLgorCitwcm9wZXJ0aWVzOgor
-ICBjb21wYXRpYmxlOgorICAgIGNvbnN0OiB0b3NoaWJhLHRjMzU4NzQ2CisKKyAgcmVnOgorICAg
-IG1heEl0ZW1zOiAxCisKKyAgY2xvY2tzOgorICAgIGRlc2NyaXB0aW9uOgorICAgICAgVGhlIHBo
-YW5kbGUgdG8gdGhlIHJlZmVyZW5jZSBjbG9jayBzb3VyY2UuIFRoaXMgY29ycmVzcG9uZHMgdG8g
-dGhlCisgICAgICBoYXJkd2FyZSBwaW4gUkVGQ0xLLgorICAgIG1heEl0ZW1zOiAxCisKKyAgY2xv
-Y2stbmFtZXM6CisgICAgY29uc3Q6IHJlZmNsaworCisjIFRoZSBicmlkZ2UgY2FuIGFjdCBhcyBj
-bG9jayBwcm92aWRlciBmb3IgdGhlIHNlbnNvci4gVG8gZW5hYmxlIHRoaXMgc3VwcG9ydAorIyAj
-Y2xvY2stY2VsbHMgbXVzdCBiZSBzcGVjaWZpZWQuIEF0dGVudGlvbiBpZiB0aGlzIGZlYXR1cmUg
-aXMgdXNlZCB0aGFuIHRoZQorIyBtY2xrIHJhdGUgbXVzdCBiZSBhdCBsZWFzdDogKDIgKiBsaW5r
-LWZyZXF1ZW5jeSkgLyA4CisjICAgICAgICAgICAgICAgICAgICAgICAgICAgICBgLS0tLS0tLS0t
-LS0tLS0tLS0twrQgICBeCisjICAgICAgICAgICAgICAgICAgICAgICAgICAgICBpbnRlcm5hbCBQ
-TEwgcmF0ZSAgIHNtYWxsZXN0IHBvc3NpYmxlIG1jbGstZGl2CisgICIjY2xvY2stY2VsbHMiOgor
-ICAgIGNvbnN0OiAwCisKKyAgY2xvY2stb3V0cHV0LW5hbWVzOgorICAgIGRlc2NyaXB0aW9uOgor
-ICAgICAgVGhlIGNsb2NrIG5hbWUgb2YgdGhlIE1DTEsgb3V0cHV0LCB0aGUgZGVmYXVsdCBuYW1l
-IGlzIHRjMzU4NzQ2LW1jbGsuCisgICAgbWF4SXRlbXM6IDEKKworICB2ZGRjLXN1cHBseToKKyAg
-ICBkZXNjcmlwdGlvbjogRGlnaXRhbCBjb3JlIHZvbHRhZ2Ugc3VwcGx5LCAxLjIgdm9sdHMKKwor
-ICB2ZGRpby1zdXBwbHk6CisgICAgZGVzY3JpcHRpb246IERpZ2l0YWwgSS9PIHZvbHRhZ2Ugc3Vw
-cGx5LCAxLjggdm9sdHMKKworICB2ZGRtaXBpLXN1cHBseToKKyAgICBkZXNjcmlwdGlvbjogTUlQ
-SSBDU0kgcGh5IHZvbHRhZ2Ugc3VwcGx5LCAxLjIgdm9sdHMKKworICByZXNldC1ncGlvczoKKyAg
-ICBkZXNjcmlwdGlvbjoKKyAgICAgIFRoZSBwaGFuZGxlIGFuZCBzcGVjaWZpZXIgZm9yIHRoZSBH
-UElPIHRoYXQgY29udHJvbHMgdGhlIGNoaXAgcmVzZXQuCisgICAgICBUaGlzIGNvcnJlc3BvbmRz
-IHRvIHRoZSBoYXJkd2FyZSBwaW4gUkVTWCB3aGljaCBpcyBwaHlzaWNhbGx5IGFjdGl2ZSBsb3cu
-CisgICAgbWF4SXRlbXM6IDEKKworICBwb3J0czoKKyAgICAkcmVmOiAvc2NoZW1hcy9ncmFwaC55
-YW1sIy9wcm9wZXJ0aWVzL3BvcnRzCisgICAgcHJvcGVydGllczoKKyAgICAgIHBvcnRAMDoKKyAg
-ICAgICAgJHJlZjogL3NjaGVtYXMvZ3JhcGgueWFtbCMvcHJvcGVydGllcy9wb3J0CisgICAgICAg
-IGRlc2NyaXB0aW9uOiBJbnB1dCBwb3J0CisKKyAgICAgIHBvcnRAMToKKyAgICAgICAgJHJlZjog
-L3NjaGVtYXMvZ3JhcGgueWFtbCMvJGRlZnMvcG9ydC1iYXNlCisgICAgICAgIGRlc2NyaXB0aW9u
-OiBPdXRwdXQgcG9ydAorCisgICAgICAgIHByb3BlcnRpZXM6CisgICAgICAgICAgZW5kcG9pbnQ6
-CisgICAgICAgICAgICAkcmVmOiAvc2NoZW1hcy9tZWRpYS92aWRlby1pbnRlcmZhY2VzLnlhbWwj
-CisgICAgICAgICAgICB1bmV2YWx1YXRlZFByb3BlcnRpZXM6IGZhbHNlCisKKyAgICAgICAgICAg
-IHByb3BlcnRpZXM6CisgICAgICAgICAgICAgIGRhdGEtbGFuZXM6CisgICAgICAgICAgICAgICAg
-bWluSXRlbXM6IDEKKyAgICAgICAgICAgICAgICBtYXhJdGVtczogNAorCisgICAgICAgICAgICAg
-IGNsb2NrLW5vbmNvbnRpbnVvdXM6IHRydWUKKyAgICAgICAgICAgICAgbGluay1mcmVxdWVuY2ll
-czogdHJ1ZQorCisgICAgICAgICAgICByZXF1aXJlZDoKKyAgICAgICAgICAgICAgLSBkYXRhLWxh
-bmVzCisgICAgICAgICAgICAgIC0gbGluay1mcmVxdWVuY2llcworCisgICAgcmVxdWlyZWQ6Cisg
-ICAgICAtIHBvcnRAMAorICAgICAgLSBwb3J0QDEKKworcmVxdWlyZWQ6CisgIC0gY29tcGF0aWJs
-ZQorICAtIHJlZworICAtIGNsb2NrcworICAtIGNsb2NrLW5hbWVzCisgIC0gdmRkYy1zdXBwbHkK
-KyAgLSB2ZGRpby1zdXBwbHkKKyAgLSB2ZGRtaXBpLXN1cHBseQorICAtIHBvcnRzCisKK2FkZGl0
-aW9uYWxQcm9wZXJ0aWVzOiBmYWxzZQorCitleGFtcGxlczoKKyAgLSB8CisgICAgI2luY2x1ZGUg
-PGR0LWJpbmRpbmdzL2dwaW8vZ3Bpby5oPgorCisgICAgaTJjIHsKKyAgICAgICNhZGRyZXNzLWNl
-bGxzID0gPDE+OworICAgICAgI3NpemUtY2VsbHMgPSA8MD47CisKKyAgICAgIGNzaS1icmlkZ2VA
-ZSB7CisgICAgICAgIGNvbXBhdGlibGUgPSAidG9zaGliYSx0YzM1ODc0NiI7CisgICAgICAgIHJl
-ZyA9IDwweGU+OworCisgICAgICAgIGNsb2NrcyA9IDwmcmVmY2xrPjsKKyAgICAgICAgY2xvY2st
-bmFtZXMgPSAicmVmY2xrIjsKKworICAgICAgICByZXNldC1ncGlvcyA9IDwmZ3BpbyAyIEdQSU9f
-QUNUSVZFX0xPVz47CisKKyAgICAgICAgdmRkYy1zdXBwbHkgPSA8JnYxXzJkPjsKKyAgICAgICAg
-dmRkaW8tc3VwcGx5ID0gPCZ2MV84ZD47CisgICAgICAgIHZkZG1pcGktc3VwcGx5ID0gPCZ2MV8y
-ZD47CisKKyAgICAgICAgLyogc2Vuc29yIG1jbGsgcHJvdmlkZXIgKi8KKyAgICAgICAgI2Nsb2Nr
-LWNlbGxzID0gPDA+OworCisgICAgICAgIHBvcnRzIHsKKyAgICAgICAgICAjYWRkcmVzcy1jZWxs
-cyA9IDwxPjsKKyAgICAgICAgICAjc2l6ZS1jZWxscyA9IDwwPjsKKworICAgICAgICAgIC8qIElu
-cHV0ICovCisgICAgICAgICAgcG9ydEAwIHsKKyAgICAgICAgICAgIHJlZyA9IDwwPjsKKyAgICAg
-ICAgICAgIHRjMzU4NzQ2X2luOiBlbmRwb2ludCB7CisgICAgICAgICAgICAgIHJlbW90ZS1lbmRw
-b2ludCA9IDwmc2Vuc29yX291dD47CisgICAgICAgICAgICAgIH07CisgICAgICAgICAgfTsKKwor
-ICAgICAgICAgIC8qIE91dHB1dCAqLworICAgICAgICAgIHBvcnRAMSB7CisgICAgICAgICAgICBy
-ZWcgPSA8MT47CisgICAgICAgICAgICB0YzM1ODc0Nl9vdXQ6IGVuZHBvaW50IHsKKyAgICAgICAg
-ICAgICAgcmVtb3RlLWVuZHBvaW50ID0gPCZtaXBpX2NzaTJfaW4+OworICAgICAgICAgICAgICBk
-YXRhLWxhbmVzID0gPDEgMj47CisgICAgICAgICAgICAgIGNsb2NrLW5vbmNvbnRpbnVvdXM7Cisg
-ICAgICAgICAgICAgIGxpbmstZnJlcXVlbmNpZXMgPSAvYml0cy8gNjQgPDIxNjAwMDAwMD47Cisg
-ICAgICAgICAgICB9OworICAgICAgICAgIH07CisgICAgICAgIH07CisgICAgICB9OworICAgIH07
-Ci0tIAoyLjMwLjIKCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMu
-aW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5m
-by9saW51eC1waHkK
+For MIPI-CSI sender use-case it is common to specify the allowed
+link-frequencies which should be used for the MIPI link and is
+half the hs-clock rate.
+
+This commit adds a helper to calculate the D-PHY timing based on the
+hs-clock rate so we don't need to calculate the timings within the
+driver.
+
+Signed-off-by: Marco Felsch <m.felsch@pengutronix.de>
+---
+ drivers/phy/phy-core-mipi-dphy.c  | 22 ++++++++++++++++++----
+ include/linux/phy/phy-mipi-dphy.h |  3 +++
+ 2 files changed, 21 insertions(+), 4 deletions(-)
+
+diff --git a/drivers/phy/phy-core-mipi-dphy.c b/drivers/phy/phy-core-mipi-dphy.c
+index ba365bc77407..f4956a417a47 100644
+--- a/drivers/phy/phy-core-mipi-dphy.c
++++ b/drivers/phy/phy-core-mipi-dphy.c
+@@ -20,16 +20,18 @@
+ static int phy_mipi_dphy_calc_config(unsigned long pixel_clock,
+ 				     unsigned int bpp,
+ 				     unsigned int lanes,
++				     unsigned long long hs_clk_rate,
+ 				     struct phy_configure_opts_mipi_dphy *cfg)
+ {
+-	unsigned long long hs_clk_rate;
+ 	unsigned long long ui;
+ 
+ 	if (!cfg)
+ 		return -EINVAL;
+ 
+-	hs_clk_rate = pixel_clock * bpp;
+-	do_div(hs_clk_rate, lanes);
++	if (!hs_clk_rate) {
++		hs_clk_rate = pixel_clock * bpp;
++		do_div(hs_clk_rate, lanes);
++	}
+ 
+ 	ui = ALIGN(PSEC_PER_SEC, hs_clk_rate);
+ 	do_div(ui, hs_clk_rate);
+@@ -81,11 +83,23 @@ int phy_mipi_dphy_get_default_config(unsigned long pixel_clock,
+ 				     unsigned int lanes,
+ 				     struct phy_configure_opts_mipi_dphy *cfg)
+ {
+-	return phy_mipi_dphy_calc_config(pixel_clock, bpp, lanes, cfg);
++	return phy_mipi_dphy_calc_config(pixel_clock, bpp, lanes, 0, cfg);
+ 
+ }
+ EXPORT_SYMBOL(phy_mipi_dphy_get_default_config);
+ 
++int phy_mipi_dphy_get_default_config_for_hsclk(unsigned long long hs_clk_rate,
++					       unsigned int lanes,
++					       struct phy_configure_opts_mipi_dphy *cfg)
++{
++	if (!hs_clk_rate)
++		return -EINVAL;
++
++	return phy_mipi_dphy_calc_config(0, 0, lanes, hs_clk_rate, cfg);
++
++}
++EXPORT_SYMBOL(phy_mipi_dphy_get_default_config_for_hsclk);
++
+ /*
+  * Validate D-PHY configuration according to MIPI D-PHY specification
+  * (v1.2, Section Section 6.9 "Global Operation Timing Parameters").
+diff --git a/include/linux/phy/phy-mipi-dphy.h b/include/linux/phy/phy-mipi-dphy.h
+index a877ffee845d..1ac128d78dfe 100644
+--- a/include/linux/phy/phy-mipi-dphy.h
++++ b/include/linux/phy/phy-mipi-dphy.h
+@@ -279,6 +279,9 @@ int phy_mipi_dphy_get_default_config(unsigned long pixel_clock,
+ 				     unsigned int bpp,
+ 				     unsigned int lanes,
+ 				     struct phy_configure_opts_mipi_dphy *cfg);
++int phy_mipi_dphy_get_default_config_for_hsclk(unsigned long long hs_clk_rate,
++					       unsigned int lanes,
++					       struct phy_configure_opts_mipi_dphy *cfg);
+ int phy_mipi_dphy_config_validate(struct phy_configure_opts_mipi_dphy *cfg);
+ 
+ #endif /* __PHY_MIPI_DPHY_H_ */
+-- 
+2.30.2
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
