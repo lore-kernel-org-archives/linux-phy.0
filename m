@@ -4,68 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B1ECBC2BB41
-	for <linux-phy@archiver.kernel.org>; Wed, 17 Aug 2022 20:04:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9F8FDC25B0E
+	for <linux-phy@archiver.kernel.org>; Thu, 18 Aug 2022 07:19:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GvxPzdsvY/TFQWx9fzHRZzLacyCxayGyxZM+zqmD+wM=; b=iaj6ZPBLpY+Y6g
-	FTVnmaRMTuMyjUuyDjmMnmK7b0FUbx9Ij4lG9ulg+U1H6D8vhvxi4NpRGxBPMB0g9QN4B2F1f5L0B
-	XEFOMKrg29/2Y8+j46Z999uGcuLBa3Mu0/7qx5XhF5yehQkC/ysWJNd2Q5c4xCHSDBsDyINYHQE3g
-	kMoQUPjO+T5CCf4rSOu0jtF6PDTLNhERV0pN86D366nxvCTmh0sA3rBntYGO5YcL3q9WjDjifiNtT
-	kXzNPoFKq0dQZQfBd0Z/9tTJy745EbBz1FhmrW8qVOSByHbh8TuuiMuFF6HxCOyeZ7PAXpZxZoV0O
-	8LP+GOJw7DBVwJLXH1rA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=TMFfToYWBAganWi/l7NFBXUDCMV6dRzB1oeDGNH3fVw=; b=HbCwQvGrxQnqeV
+	QaLbAiKAmWA4Nc4hSk9+m6dYuUby7WoBLeAl5lqCQcuNOYKLRhnE0ErCabK1Uyu4FCV7sCOhlMyWM
+	z0Y5IcgsppzQzAU77tkIfiCBQ/QLzfvA0miIl8kz06KQ41ESrPvm6wtYfN3e5CQIjJHC1mLBpizyx
+	9Kd0DROVraNPmZhcjusAnlp4wH4M7S+QtHnJdGYDQ2Vh13D31nTNSmRSXqRGavOQMXyg7OnLYvQLN
+	L8OLjfxNy8GIaWDtaMGg8c6E82YzXu3sxX6Ot0cJmqD4SfJ+AR5iHR/Y34wDanGQKkXU59EfcmAVN
+	eWYIP95cPVvAV1ilp6Gg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oOPGi-0065Ro-3p; Wed, 17 Aug 2022 20:04:00 +0000
-Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
+	id 1oOZon-00Ha7T-04; Thu, 18 Aug 2022 07:19:53 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oOPGe-0065NF-Ih
-	for linux-phy@lists.infradead.org; Wed, 17 Aug 2022 20:03:58 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id 362CFB81F13;
-	Wed, 17 Aug 2022 20:03:50 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 87076C43143;
-	Wed, 17 Aug 2022 20:03:46 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1660766629;
-	bh=Q+R9USyKy7p7mEYIj9z8Lowa0yqJDDTBygy/2GjV1T8=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=ppqaUYsbIJC8pN4ebTEfrBqnmX1EqQbKaLHcDoFsD0ave51ycO5RZ2ZJGwA0/hAOe
-	 BiydbR8W48AoFyOB4jBNOL30/5ye16yXz/i5oSHGgVm6eNGOtQ410ytJYubDF2d5Ah
-	 sTUPCNbtSdsND5LmM0x1oMl6Nsm+GLoS066hwdmfX8vFD1MqEuUgJR0xA52B0e0HH8
-	 p4RLl4fDH/apj+Wgjy0AwMkP50+iHjbQZk9q7flVHwkfcfZoTUPB7OX2jXZdtDBJTF
-	 Bndx3F+WEJiRViHZ6Bq9y8ugzbGSpZXIRMGnfGIwXVbUlX713u7fZO7+fdp2lsFlZS
-	 Ppp5vxbyoqsPw==
-From: =?UTF-8?q?Marek=20Beh=C3=BAn?= <kabel@kernel.org>
-To: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@ti.com>,
-	Linux Phy <linux-phy@lists.infradead.org>
-Cc: Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
-	Daniel Scally <djrscally@gmail.com>,
-	Gregory Clement <gregory.clement@bootlin.com>,
-	Heikki Krogerus <heikki.krogerus@linux.intel.com>,
-	Kees Cook <keescook@chromium.org>,
-	Sakari Ailus <sakari.ailus@linux.intel.com>,
+	id 1oOZob-00HZpN-EZ; Thu, 18 Aug 2022 07:19:42 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+	by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id DF260202EE3;
+	Thu, 18 Aug 2022 09:19:35 +0200 (CEST)
+Received: from aprdc01srsp001v.ap-rdc01.nxp.com (aprdc01srsp001v.ap-rdc01.nxp.com [165.114.16.16])
+	by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id A8B832006BA;
+	Thu, 18 Aug 2022 09:19:35 +0200 (CEST)
+Received: from localhost.localdomain (shlinux2.ap.freescale.net [10.192.224.44])
+	by aprdc01srsp001v.ap-rdc01.nxp.com (Postfix) with ESMTP id D9E781820F56;
+	Thu, 18 Aug 2022 15:19:33 +0800 (+08)
+From: Richard Zhu <hongxing.zhu@nxp.com>
+To: p.zabel@pengutronix.de,
+	l.stach@pengutronix.de,
+	bhelgaas@google.com,
+	lorenzo.pieralisi@arm.com,
+	robh@kernel.org,
+	shawnguo@kernel.org,
+	vkoul@kernel.org,
+	alexander.stein@ew.tq-group.com,
+	marex@denx.de
+Cc: linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-pci@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
-	pali@kernel.org,
-	josef.schlehofer@nic.cz,
-	=?UTF-8?q?Marek=20Beh=C3=BAn?= <kabel@kernel.org>
-Subject: [PATCH linux-phy v2 3/4] phy: marvell: phy-mvebu-a3700-comphy: Support changing tx amplitude for ethernet
-Date: Wed, 17 Aug 2022 22:03:34 +0200
-Message-Id: <20220817200335.911-4-kabel@kernel.org>
-X-Mailer: git-send-email 2.35.1
-In-Reply-To: <20220817200335.911-1-kabel@kernel.org>
-References: <20220817200335.911-1-kabel@kernel.org>
-MIME-Version: 1.0
+	kernel@pengutronix.de,
+	linux-imx@nxp.com
+Subject: [PATCH v3 0/6] Add the iMX8MP PCIe support
+Date: Thu, 18 Aug 2022 15:02:27 +0800
+Message-Id: <1660806153-29001-1-git-send-email-hongxing.zhu@nxp.com>
+X-Mailer: git-send-email 2.7.4
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220817_130356_985799_30486B00 
-X-CRM114-Status: GOOD (  18.16  )
+X-CRM114-CacheID: sfid-20220818_001941_672858_58D1D484 
+X-CRM114-Status: GOOD (  10.04  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,103 +69,53 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-QWRkIHN1cHBvcnQgdG8gc2V0IFNlckRlcyB0cmFuc21pdCBhbXBsaXR1ZGUgaWYgc3BlY2lmaWVk
-IHZpYSB0aGUKJ3R4LXAycC1taWNyb3ZvbHQnIGFuZCAndHgtcDJwLW1pY3Jvdm9sdC1uYW1lcycg
-ZGV2aWNlLXRyZWUgcHJvcGVydGllcy4KClRoaXMgc3VwcG9ydCBpcyBjdXJyZW50bHkgb25seSBm
-b3IgZXRoZXJuZXQgbW9kZS4KClNpZ25lZC1vZmYtYnk6IE1hcmVrIEJlaMO6biA8a2FiZWxAa2Vy
-bmVsLm9yZz4KLS0tCiBkcml2ZXJzL3BoeS9tYXJ2ZWxsL3BoeS1tdmVidS1hMzcwMC1jb21waHku
-YyB8IDEwOSArKysrKysrKysrKysrKysrKystCiAxIGZpbGUgY2hhbmdlZCwgMTA4IGluc2VydGlv
-bnMoKyksIDEgZGVsZXRpb24oLSkKCmRpZmYgLS1naXQgYS9kcml2ZXJzL3BoeS9tYXJ2ZWxsL3Bo
-eS1tdmVidS1hMzcwMC1jb21waHkuYyBiL2RyaXZlcnMvcGh5L21hcnZlbGwvcGh5LW12ZWJ1LWEz
-NzAwLWNvbXBoeS5jCmluZGV4IGE0ZDdkOWJkMTAwZC4uN2ZhYmQ5NTlhZTBmIDEwMDY0NAotLS0g
-YS9kcml2ZXJzL3BoeS9tYXJ2ZWxsL3BoeS1tdmVidS1hMzcwMC1jb21waHkuYworKysgYi9kcml2
-ZXJzL3BoeS9tYXJ2ZWxsL3BoeS1tdmVidS1hMzcwMC1jb21waHkuYwpAQCAtNjgsNiArNjgsMTYg
-QEAKICNkZWZpbmUgU1BFRURfUExMX01BU0sJCQlHRU5NQVNLKDcsIDIpCiAjZGVmaW5lIFNQRUVE
-X1BMTF9WQUxVRV8xNgkJRklFTERfUFJFUChTUEVFRF9QTExfTUFTSywgMHgxMCkKIAorI2RlZmlu
-ZSBDT01QSFlfR0VOMV9TRVQwCQkweDBkCisjZGVmaW5lIENPTVBIWV9HRU4yX1NFVDAJCTB4MGYK
-KyNkZWZpbmUgQ09NUEhZX0dFTjNfU0VUMAkJMHgxMQorI2RlZmluZSBDT01QSFlfR0VONF9TRVQw
-CQkweDEzCisjZGVmaW5lIENPTVBIWV9HRU54X1NFVDAoeCkJCSgweDBkICsgKCgoeCkgJiAzKSAt
-IDEpICogMikKKyNkZWZpbmUgR3hfVFhfQU1QX01BU0sJCQlHRU5NQVNLKDUsIDEpCisjZGVmaW5l
-IEd4X1RYX0FNUF9WQUxVRSh4KQkJRklFTERfUFJFUChHeF9UWF9BTVBfTUFTSywgeCkKKyNkZWZp
-bmUgR3hfVFhfQU1QX0FESgkJCUJJVCg2KQorI2RlZmluZSBHeF9UWF9BTVBfMTAyNU1WCQkoR3hf
-VFhfQU1QX1ZBTFVFKDB4MTIpIHwgR3hfVFhfQU1QX0FESikKKwogI2RlZmluZSBDT01QSFlfRElH
-X0xPT1BCQUNLX0VOCQkweDIzCiAjZGVmaW5lIFNFTF9EQVRBX1dJRFRIX01BU0sJCUdFTk1BU0so
-MTEsIDEwKQogI2RlZmluZSBEQVRBX1dJRFRIXzEwQklUCQlGSUVMRF9QUkVQKFNFTF9EQVRBX1dJ
-RFRIX01BU0ssIDB4MCkKQEAgLTI2OSw2ICsyNzksNyBAQCBzdHJ1Y3QgbXZlYnVfYTM3MDBfY29t
-cGh5X3ByaXYgewogc3RydWN0IG12ZWJ1X2EzNzAwX2NvbXBoeV9sYW5lIHsKIAlzdHJ1Y3QgbXZl
-YnVfYTM3MDBfY29tcGh5X3ByaXYgKnByaXY7CiAJc3RydWN0IGRldmljZSAqZGV2OworCXN0cnVj
-dCBwaHkgKnBoeTsKIAl1bnNpZ25lZCBpbnQgaWQ7CiAJZW51bSBwaHlfbW9kZSBtb2RlOwogCWlu
-dCBzdWJtb2RlOwpAQCAtMzg1LDYgKzM5NiwxNSBAQCBzdGF0aWMgaW5saW5lIHZvaWQgY29tcGh5
-X3JlZ19zZXQxNih2b2lkIF9faW9tZW0gKmFkZHIsIHUxNiBkYXRhLCB1MTYgbWFzaykKIH0KIAog
-LyogVXNlZCBmb3IgYWNjZXNzaW5nIGxhbmUgMiByZWdpc3RlcnMgKFNBVEEvVVNCMyBQSFkpICov
-CitzdGF0aWMgdTE2IGNvbXBoeV9nZXRfaW5kaXJlY3Qoc3RydWN0IG12ZWJ1X2EzNzAwX2NvbXBo
-eV9wcml2ICpwcml2LCB1MzIgb2Zmc2V0KQoreworCXdyaXRlbChvZmZzZXQsCisJICAgICAgIHBy
-aXYtPmxhbmUyX3BoeV9pbmRpcmVjdCArIENPTVBIWV9MQU5FMl9JTkRJUl9BRERSKTsKKworCS8q
-IFdlIG5lZWQgdG8gcmVhZCB0aGUgcmVnaXN0ZXIgd2l0aCAzMi1iaXQgcmVhZCAqLworCXJldHVy
-biByZWFkbChwcml2LT5sYW5lMl9waHlfaW5kaXJlY3QgKyBDT01QSFlfTEFORTJfSU5ESVJfREFU
-QSk7Cit9CisKIHN0YXRpYyB2b2lkIGNvbXBoeV9zZXRfaW5kaXJlY3Qoc3RydWN0IG12ZWJ1X2Ez
-NzAwX2NvbXBoeV9wcml2ICpwcml2LAogCQkJCXUzMiBvZmZzZXQsIHUxNiBkYXRhLCB1MTYgbWFz
-aykKIHsKQEAgLTM5NCw2ICs0MTQsMjEgQEAgc3RhdGljIHZvaWQgY29tcGh5X3NldF9pbmRpcmVj
-dChzdHJ1Y3QgbXZlYnVfYTM3MDBfY29tcGh5X3ByaXYgKnByaXYsCiAJCSAgICAgICBkYXRhLCBt
-YXNrKTsKIH0KIAorc3RhdGljIHUxNiBjb21waHlfbGFuZV9yZWdfZ2V0KHN0cnVjdCBtdmVidV9h
-MzcwMF9jb21waHlfbGFuZSAqbGFuZSwgdTE2IHJlZykKK3sKKwlpZiAobGFuZS0+aWQgPT0gMikg
-eworCQkvKiBsYW5lIDIgUEhZIHJlZ2lzdGVycyBhcmUgYWNjZXNzZWQgaW5kaXJlY3RseSAqLwor
-CQlyZXR1cm4gY29tcGh5X2dldF9pbmRpcmVjdChsYW5lLT5wcml2LAorCQkJCQkgICByZWcgKyBD
-T01QSFlfTEFORTJfUkVHU19CQVNFKTsKKwl9IGVsc2UgeworCQl2b2lkIF9faW9tZW0gKmJhc2Ug
-PSBsYW5lLT5pZCA9PSAxID8KKwkJCQkgICAgIGxhbmUtPnByaXYtPmxhbmUxX3BoeV9yZWdzIDoK
-KwkJCQkgICAgIGxhbmUtPnByaXYtPmxhbmUwX3BoeV9yZWdzOworCisJCXJldHVybiByZWFkdyhi
-YXNlICsgQ09NUEhZX0xBTkVfUkVHX0RJUkVDVChyZWcpKTsKKwl9Cit9CisKIHN0YXRpYyB2b2lk
-IGNvbXBoeV9sYW5lX3JlZ19zZXQoc3RydWN0IG12ZWJ1X2EzNzAwX2NvbXBoeV9sYW5lICpsYW5l
-LAogCQkJCXUxNiByZWcsIHUxNiBkYXRhLCB1MTYgbWFzaykKIHsKQEAgLTYyNCwxMCArNjU5LDUz
-IEBAIHN0YXRpYyB2b2lkIGNvbXBoeV9nYmVfcGh5X2luaXQoc3RydWN0IG12ZWJ1X2EzNzAwX2Nv
-bXBoeV9sYW5lICpsYW5lLAogCX0KIH0KIAorc3RhdGljIHU4IGNvbXBoeV9maW5kX2Jlc3RfdHhf
-YW1wKGJvb2wgZnVsbF9zd2luZywgdTMyIGFtcCwgdTMyICp0cnVlX2FtcCkKK3sKKwlzdGF0aWMg
-Y29uc3QgdTMyIGhhbGZfc3dpbmdfdGFibGVbMzJdID0geworCQkyNTAsIDI3MCwgMjkwLCAzMTAs
-IDMzMCwgMzQ1LCAzNjUsIDM4MCwKKwkJNDAwLCA0MjAsIDQzNSwgNDU1LCA0NzAsIDQ5MCwgNTA1
-LCA1MjUsCisJCTQ4NSwgNTIwLCA1NTUsIDU5MCwgNjI1LCA2NjAsIDY5NSwgNzMwLAorCQk3NjUs
-IDgwMCwgODMwLCA4NjUsIDkwMCwgOTMwLCA5NjUsIDEwMDAsCisJfTsKKwlzdGF0aWMgY29uc3Qg
-dTMyIGZ1bGxfc3dpbmdfdGFibGVbMjJdID0geworCQk0NzAsIDUwNSwgNTQwLCA1NzUsIDYxMCwg
-NjQ1LCA2ODAsIDcxNSwKKwkJNzUwLCA3ODUsIDgyMCwgODUwLCA4ODUsIDkxNSwgOTUwLCA5ODAs
-CisJCTkwMCwgOTY1LCAxMDI1LCAxMDk1LCAxMTYwLCAxMjIwLAorCX07CisJdTMyIGRpZmYsIG1p
-bl9kaWZmOworCWNvbnN0IHUzMiAqdGFibGU7CisJc2l6ZV90IGxlbjsKKwl1OCByZXM7CisKKwlp
-ZiAoZnVsbF9zd2luZykgeworCQl0YWJsZSA9IGZ1bGxfc3dpbmdfdGFibGU7CisJCWxlbiA9IEFS
-UkFZX1NJWkUoZnVsbF9zd2luZ190YWJsZSk7CisJfSBlbHNlIHsKKwkJdGFibGUgPSBoYWxmX3N3
-aW5nX3RhYmxlOworCQlsZW4gPSBBUlJBWV9TSVpFKGhhbGZfc3dpbmdfdGFibGUpOworCX0KKwor
-CXJlcyA9IDA7CisJbWluX2RpZmYgPSBhYnMoYW1wIC0gdGFibGVbMF0pOworCisJZm9yIChzaXpl
-X3QgaSA9IDE7IGkgPCBsZW47ICsraSkgeworCQlkaWZmID0gYWJzKGFtcCAtIHRhYmxlW2ldKTsK
-KwkJaWYgKGRpZmYgPCBtaW5fZGlmZikgeworCQkJbWluX2RpZmYgPSBkaWZmOworCQkJcmVzID0g
-aTsKKwkJfQorCX0KKworCWlmICh0cnVlX2FtcCkKKwkJKnRydWVfYW1wID0gdGFibGVbcmVzXTsK
-KworCXJldHVybiByZXM7Cit9CisKIHN0YXRpYyBpbnQKIG12ZWJ1X2EzNzAwX2NvbXBoeV9ldGhl
-cm5ldF9wb3dlcl9vbihzdHJ1Y3QgbXZlYnVfYTM3MDBfY29tcGh5X2xhbmUgKmxhbmUpCiB7Ci0J
-dTMyIG1hc2ssIGRhdGEsIHNwZWVkX3NlbDsKKwl1MzIgbWFzaywgZGF0YSwgc3BlZWRfc2VsLCB0
-eF9hbXBfdXY7CiAJaW50IHJldDsKIAogCS8qIFNldCBzZWxlY3RvciAqLwpAQCAtNzQ2LDYgKzgy
-NCwzNCBAQCBtdmVidV9hMzcwMF9jb21waHlfZXRoZXJuZXRfcG93ZXJfb24oc3RydWN0IG12ZWJ1
-X2EzNzAwX2NvbXBoeV9sYW5lICpsYW5lKQogCQljb21waHlfZ2JlX3BoeV9pbml0KGxhbmUsCiAJ
-CQkJICAgIGxhbmUtPnN1Ym1vZGUgIT0gUEhZX0lOVEVSRkFDRV9NT0RFXzI1MDBCQVNFWCk7CiAK
-KwkvKgorCSAqIENoYW5nZSB0cmFuc21pdCBhbXBsaXR1ZGUgaWYgc3BlY2lmaWVkIGluIGRldmlj
-ZS10cmVlLgorCSAqLworCWlmICghZGV2aWNlX2dldF90eF9wMnBfYW1wbGl0dWRlKCZsYW5lLT5w
-aHktPmRldiwKKwkJCQkJIHBoeV9tb2RlcyhsYW5lLT5zdWJtb2RlKSwKKwkJCQkJICZ0eF9hbXBf
-dXYpKSB7CisJCXUzMiB0eF9hbXBfbXYsIHRydWVfdHhfYW1wX212OworCQlib29sIGZ1bGxfc3dp
-bmc7CisJCXU4IHR4X2FtcDsKKwkJdTE2IHJlZzsKKworCQlyZWcgPSBDT01QSFlfR0VOeF9TRVQw
-KHNwZWVkX3NlbCArIDEpOworCisJCWRhdGEgPSBjb21waHlfbGFuZV9yZWdfZ2V0KGxhbmUsIHJl
-Zyk7CisJCWZ1bGxfc3dpbmcgPSBkYXRhICYgR3hfVFhfQU1QX0FESjsKKwkJdHhfYW1wX212ID0g
-RElWX1JPVU5EX0NMT1NFU1QodHhfYW1wX3V2LCAxMDAwKTsKKwkJdHhfYW1wID0gY29tcGh5X2Zp
-bmRfYmVzdF90eF9hbXAoZnVsbF9zd2luZywgdHhfYW1wX212LAorCQkJCQkJICZ0cnVlX3R4X2Ft
-cF9tdik7CisKKwkJZGF0YSA9IEd4X1RYX0FNUF9WQUxVRSh0eF9hbXApOworCQltYXNrID0gR3hf
-VFhfQU1QX01BU0s7CisJCWNvbXBoeV9sYW5lX3JlZ19zZXQobGFuZSwgcmVnLCBkYXRhLCBtYXNr
-KTsKKworCQlkZXZfZGJnKGxhbmUtPmRldiwKKwkJCSJjaGFuZ2VkIHR4IGFtcGxpdHVkZSB0byAl
-dSBtViAocmVxdWVzdGVkICV1IG1WKSBvbiBsYW5lICVkXG4iLAorCQkJdHJ1ZV90eF9hbXBfbXYs
-IHR4X2FtcF9tdiwgbGFuZS0+aWQpOworCX0KKwogCS8qCiAJICogMTQuIENoZWNrIHRoZSBQSFkg
-UG9sYXJpdHkgaW52ZXJ0IGJpdAogCSAqLwpAQCAtMTM4Miw2ICsxNDg4LDcgQEAgc3RhdGljIGlu
-dCBtdmVidV9hMzcwMF9jb21waHlfcHJvYmUoc3RydWN0IHBsYXRmb3JtX2RldmljZSAqcGRldikK
-IAogCQlsYW5lLT5wcml2ID0gcHJpdjsKIAkJbGFuZS0+ZGV2ID0gJnBkZXYtPmRldjsKKwkJbGFu
-ZS0+cGh5ID0gcGh5OwogCQlsYW5lLT5tb2RlID0gUEhZX01PREVfSU5WQUxJRDsKIAkJbGFuZS0+
-c3VibW9kZSA9IFBIWV9JTlRFUkZBQ0VfTU9ERV9OQTsKIAkJbGFuZS0+aWQgPSBsYW5lX2lkOwot
-LSAKMi4zNS4xCgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmlu
-ZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8v
-bGludXgtcGh5Cg==
+Based on the 6.0-rc1 of the pci/next branch. 
+This series adds the i.MX8MP PCIe support and had been tested on i.MX8MP
+EVK board when one PCIe NVME device is used.
+
+- i.MX8MP PCIe has reversed initial PERST bit value refer to i.MX8MQ/i.MX8MM.
+  Add the PHY PERST explicitly for i.MX8MP PCIe PHY.
+- Add the i.MX8MP PCIe PHY support in the i.MX8M PCIe PHY driver.
+  And share as much as possible codes with i.MX8MM PCIe PHY.
+- Add the i.MX8MP PCIe support in binding document, DTS files, and PCIe
+  driver.
+
+Main changes v2-->v3:
+- Fix the schema checking error in the PHY dt-binding patch.
+- Inspired by Lucas, the PLL configurations might not required when
+  external OSC is used as PCIe referrence clock. It's true. Remove all
+  the HSIO PLL bit manipulations, and PCIe works fine on i.MX8MP EVK board
+  with one NVME device is used.
+- Drop the #4 patch of v2, since it had been applied by Rob.
+
+Main changes v1-->v2:
+- It's my fault forget including Vinod, re-send v2 after include Vinod
+  and linux-phy@lists.infradead.org.
+- List the basements of this patch-set. The branch, codes changes and so on.
+- Clean up some useless register and bit definitions in #3 patch.
+
+Documentation/devicetree/bindings/phy/fsl,imx8-pcie-phy.yaml |  16 +++++++--
+arch/arm64/boot/dts/freescale/imx8mp-evk.dts                 |  53 +++++++++++++++++++++++++++++
+arch/arm64/boot/dts/freescale/imx8mp.dtsi                    |  46 ++++++++++++++++++++++++-
+drivers/pci/controller/dwc/pci-imx6.c                        |  17 +++++++++-
+drivers/phy/freescale/phy-fsl-imx8m-pcie.c                   | 150 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------
+drivers/reset/reset-imx7.c                                   |   1 +
+6 files changed, 232 insertions(+), 51 deletions(-)
+
+ [PATCH v3 1/6] reset: imx7: Add the iMX8MP PCIe PHY PERST support
+ [PATCH v3 2/6] dt-binding: phy: Add iMX8MP PCIe PHY binding
+ [PATCH v3 3/6] phy: freescale: imx8m-pcie: Add iMX8MP PCIe PHY
+ [PATCH v3 4/6] arm64: dts: imx8mp: add the iMX8MP PCIe support
+ [PATCH v3 5/6] arm64: dts: imx8mp-evk: Add PCIe support
+ [PATCH v3 6/6] PCI: imx6: Add the iMX8MP PCIe support
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
