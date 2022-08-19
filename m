@@ -4,68 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3C3C3C32771
-	for <linux-phy@archiver.kernel.org>; Fri, 19 Aug 2022 10:14:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 16A5AC32771
+	for <linux-phy@archiver.kernel.org>; Fri, 19 Aug 2022 12:16:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AJQJgGX++mMrqz4xpo0vPHLWqLxp9LKYcpva9rMzeXY=; b=O4ajYJkne8nyVo
-	U/QUvZjqfrkT3raoxvfcNAA5MG+AYU8JA6vMmS08V6QYfOdVvnFxu5UPzAlqVVHLF3bIiOOJLsib7
-	hED2pYHL65cP9BZtPRPhG8/Nr+qXHhQ6MfdDdkBRuLUHnm0IvioQmKku+pOQiTpYuaqlsmV9OIPyt
-	SSeSbz/Qcmkr2EcjiklsMyeIWvucOE63gY9kU6bk2IUTNUwj96dwyh7segHwMA9dYB2D8HsS9s5wh
-	dXrqTcuRkKiW9AdaKdqlIdImIY++sXslQt+qX3ewaviKQ9mjkRWEkQEn15ONr2AQHUKhdpJkM7eiZ
-	OCwLQ2fgJ5cWuPScrcbw==;
+	List-Owner; bh=rsPT0nYcewszJ4bI4JgdWNf3YPp8x3/wo37s/oXFQ9A=; b=Nn6cdvMrbmAh/7
+	H8R4aMpbnbmrb3b1AoiJbH0esjIqlZ95KH1Wcp6evSdRWbE+qdsieHtYHrFtr76um2bUbaWs55ZPI
+	sCljQqbSkqOFSf5igcIbi6bNVW/yuuIciKpEaGqYAxwJyoppgqz85EOtMVCZ6qtk5kaK8niHX7LzV
+	p/1RUUmhlNrKRB07bi5Pot96azpkgu2fjDSjGi3Lrtydp1qynVOn/44GGNbValfRtpRQolVeaZD8u
+	VC1b6P8J5to5ZQT8KQHdJmpxC34nqbGPmiQE0qkvB8VQ5s+Wo42L9ksRO9Tm7BdHrlK/vQQl9yv7f
+	CYtDqwkEGFmNeplKwMsA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oOz1L-005XGF-Hh; Fri, 19 Aug 2022 10:14:31 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1oP0v9-007eM8-UV; Fri, 19 Aug 2022 12:16:15 +0000
+Received: from mail-lf1-x132.google.com ([2a00:1450:4864:20::132])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oOz1J-005XEg-2e; Fri, 19 Aug 2022 10:14:30 +0000
-X-UUID: e44107f262814b5eb75c2caa4b8b9c50-20220819
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
-	h=Content-Type:Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From; bh=m9Mn/Y5eqL1fhFPMyU3DqaJWhYp9JczK52OrynSvfJU=;
-	b=QvZ3p99bZR3K9hr/XRwGnUqC/Ogg31S10Y2UjSGEYdVJu0RMsePxf8/ua5a7HgkZD97LcVP8LIk4ryI56lC1BOCsOZdqjpykeFyoskRdAUENTMwZkHopyFEJft5GnFkqiuv0vofyAwthd4hCagQecN5+01/J9XT1fLtDt0HalCk=;
-X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.1.10,REQID:812cc10a-8cc4-481f-aad8-a48d6cbd9f43,OB:0,L
-	OB:0,IP:0,URL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_
-	Ham,ACTION:release,TS:0
-X-CID-META: VersionHash:84eae18,CLOUDID:6bb234c9-6b09-4f60-bf82-12f039f5d530,C
-	OID:IGNORED,Recheck:0,SF:nil,TC:nil,Content:0,EDM:-3,IP:nil,URL:11|1,File:
-	nil,Bulk:nil,QS:nil,BEC:nil,COL:0
-X-UUID: e44107f262814b5eb75c2caa4b8b9c50-20220819
-Received: from mtkmbs11n1.mediatek.inc [(172.21.101.185)] by mailgw02.mediatek.com
-	(envelope-from <chunfeng.yun@mediatek.com>)
-	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
-	with ESMTP id 1300949681; Fri, 19 Aug 2022 03:14:25 -0700
-Received: from mtkcas10.mediatek.inc (172.21.101.39) by
- mtkmbs11n2.mediatek.inc (172.21.101.187) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id
- 15.2.792.15; Fri, 19 Aug 2022 17:13:47 +0800
-Received: from localhost.localdomain (10.17.3.154) by mtkcas10.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Fri, 19 Aug 2022 17:13:46 +0800
-From: Chunfeng Yun <chunfeng.yun@mediatek.com>
-To: Vinod Koul <vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>
-CC: Chunfeng Yun <chunfeng.yun@mediatek.com>, Kishon Vijay Abraham I
-	<kishon@ti.com>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	<linux-arm-kernel@lists.infradead.org>, <linux-mediatek@lists.infradead.org>,
-	<linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
-	<linux-kernel@vger.kernel.org>, Eddie Hung <eddie.hung@mediatek.com>
-Subject: [PATCH 3/7] phy: phy-mtk-tphy: add property to set pre-emphasis
-Date: Fri, 19 Aug 2022 17:13:40 +0800
-Message-ID: <20220819091344.2274-3-chunfeng.yun@mediatek.com>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20220819091344.2274-1-chunfeng.yun@mediatek.com>
-References: <20220819091344.2274-1-chunfeng.yun@mediatek.com>
+	id 1oP0uy-007e7L-70
+	for linux-phy@lists.infradead.org; Fri, 19 Aug 2022 12:16:05 +0000
+Received: by mail-lf1-x132.google.com with SMTP id z25so5916656lfr.2
+        for <linux-phy@lists.infradead.org>; Fri, 19 Aug 2022 05:16:01 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc;
+        bh=iRQAht+syD+WoClHi+abQcpzAmB47QGZmxwK52W8goQ=;
+        b=gAnalwOyubLu6+wLXJWbeHG2l/u2fmMgVQ9Vpx1zAjL7bFzAM5ZzxJQcJDTeot4yn+
+         i1AJkCiTdquYltpTVt2ufhmroC5Uj/FxxUY6TdC9cKeyHf3f/ViVjSeGky44Bm+U7x03
+         7UcAcO4Ol3ry4gVYmwiLyIvga5mk111OYk+z1mTQjAUBS8QbknoRSmXCcSeqxp3J4BAM
+         lGS55fHy2ePWP/sOp3TCd1gTP+zRBRsgcPLcehqXQBBqRL8CghXkoR/xGnXewBmiDEEG
+         oqeNqSFRTsqamvLgd0nUvdFvmZ0A8GCy2DBVQx14FWpRe3kQcv0YPrMQacMchQJe6X1b
+         96MQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc;
+        bh=iRQAht+syD+WoClHi+abQcpzAmB47QGZmxwK52W8goQ=;
+        b=zFUv3oX0Bo1lPc8YzvXBSUDLijFDYirgXK6C9VIj1wzqwp8oTKfKBacd7nJTv8RUjM
+         JPabmVI1rkD0zgPz0JurfLEbnsn4vquqqwT/QaScXE0usQbToiussuKJIM6G35VIyN4V
+         tlm6gdUmmOIi5fOqouUDMHhkcPnMf2zBjy67ogFRYvWEo6zhr1ue+fwZyuKIIwKZGSww
+         fqSCChxI8q0GSRIC4xai7Y4y/iKUcl9/tuSy+LrNkOb1bPU3Q5dGseBmckIC1+baClQs
+         UXWagmOhvE4wskgMKBEbAy+vsf3H7AqOQw11lSfQfafnBX8us1oBcH/s3FeJKaXW0P/f
+         FFHw==
+X-Gm-Message-State: ACgBeo2eVM/lRxMoQZbe2+kI7dKgqlt31UsfFxhmdytoSCjomvNA3RP+
+	Rb5u6KUhpoEOvkKRLux2OASGEA==
+X-Google-Smtp-Source: AA6agR6ZzDgldit3bbnQaHeffN9D/ccyNG3aT6Z0pYd8NszNFSXmXT7adl+3BQtJYB1uFOadxcnBlQ==
+X-Received: by 2002:ac2:5e75:0:b0:492:c50a:3a89 with SMTP id a21-20020ac25e75000000b00492c50a3a89mr1449763lfr.68.1660911360346;
+        Fri, 19 Aug 2022 05:16:00 -0700 (PDT)
+Received: from ?IPV6:2001:14bb:ac:e5a8:ef73:73ed:75b3:8ed5? (d1xw6v77xrs23np8r6z-4.rev.dnainternet.fi. [2001:14bb:ac:e5a8:ef73:73ed:75b3:8ed5])
+        by smtp.gmail.com with ESMTPSA id t14-20020a2e8e6e000000b00261af4754bbsm594964ljk.41.2022.08.19.05.15.58
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 19 Aug 2022 05:15:59 -0700 (PDT)
+Message-ID: <438da392-f419-ad76-7e91-aa4aab36e12c@linaro.org>
+Date: Fri, 19 Aug 2022 15:15:58 +0300
 MIME-Version: 1.0
-X-MTK: N
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
+ Thunderbird/91.12.0
+Subject: Re: [PATCH 2/7] dt-bindings: phy: mediatek,tphy: add property to set
+ pre-emphasis
+Content-Language: en-US
+To: Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>
+Cc: Kishon Vijay Abraham I <kishon@ti.com>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Eddie Hung <eddie.hung@mediatek.com>
+References: <20220819091344.2274-1-chunfeng.yun@mediatek.com>
+ <20220819091344.2274-2-chunfeng.yun@mediatek.com>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <20220819091344.2274-2-chunfeng.yun@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220819_031429_168384_F6D85EDB 
-X-CRM114-Status: GOOD (  10.03  )
+X-CRM114-CacheID: sfid-20220819_051604_299663_DDDF4A9B 
+X-CRM114-Status: GOOD (  13.41  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,63 +99,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add a property to set usb2 phy's pre-emphasis, it's disabled by default
-on some SoCs.
+On 19/08/2022 12:13, Chunfeng Yun wrote:
+> Add a property to set usb2 phy's pre-emphasis.
+> 
+> Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+> ---
+>  Documentation/devicetree/bindings/phy/mediatek,tphy.yaml | 7 +++++++
+>  1 file changed, 7 insertions(+)
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
+> index 848edfb1f677..aee2f3027371 100644
+> --- a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
+> @@ -219,6 +219,13 @@ patternProperties:
+>          minimum: 1
+>          maximum: 15
+>  
+> +      mediatek,pre-emphasis:
+> +        description:
+> +          The selection of pre-emphasis (U2 phy)
+> +        $ref: /schemas/types.yaml#/definitions/uint32
+> +        minimum: 1
+> +        maximum: 3
 
-Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
----
- drivers/phy/mediatek/phy-mtk-tphy.c | 10 ++++++++++
- 1 file changed, 10 insertions(+)
+Instead of hard-coding register values in bindings, you should rather
+describe here feature/effect. If it is in units, use unit suffixes. If
+it is some choice, usually string enum is appropriate.
 
-diff --git a/drivers/phy/mediatek/phy-mtk-tphy.c b/drivers/phy/mediatek/phy-mtk-tphy.c
-index 8ee7682b8e93..986fde0f63a0 100644
---- a/drivers/phy/mediatek/phy-mtk-tphy.c
-+++ b/drivers/phy/mediatek/phy-mtk-tphy.c
-@@ -72,6 +72,8 @@
- #define PA5_RG_U2_HS_100U_U3_EN	BIT(11)
- 
- #define U3P_USBPHYACR6		0x018
-+#define PA6_RG_U2_PRE_EMP		GENMASK(31, 30)
-+#define PA6_RG_U2_PRE_EMP_VAL(x)	((0x3 & (x)) << 30)
- #define PA6_RG_U2_BC11_SW_EN		BIT(23)
- #define PA6_RG_U2_OTG_VBUSCMP_EN	BIT(20)
- #define PA6_RG_U2_DISCTH		GENMASK(7, 4)
-@@ -370,6 +372,7 @@ struct mtk_phy_instance {
- 	int eye_term;
- 	int intr;
- 	int discth;
-+	int pre_emphasis;
- 	bool bc12_en;
- };
- 
-@@ -841,10 +844,13 @@ static void phy_parse_property(struct mtk_tphy *tphy,
- 				 &instance->intr);
- 	device_property_read_u32(dev, "mediatek,discth",
- 				 &instance->discth);
-+	device_property_read_u32(dev, "mediatek,pre-emphasis",
-+				 &instance->pre_emphasis);
- 	dev_dbg(dev, "bc12:%d, src:%d, vrt:%d, term:%d, intr:%d, disc:%d\n",
- 		instance->bc12_en, instance->eye_src,
- 		instance->eye_vrt, instance->eye_term,
- 		instance->intr, instance->discth);
-+	dev_dbg(dev, "pre-emp:%d\n", instance->pre_emphasis);
- }
- 
- static void u2_phy_props_set(struct mtk_tphy *tphy,
-@@ -875,6 +881,10 @@ static void u2_phy_props_set(struct mtk_tphy *tphy,
- 	if (instance->discth)
- 		mtk_phy_update_bits(com + U3P_USBPHYACR6, PA6_RG_U2_DISCTH,
- 				    PA6_RG_U2_DISCTH_VAL(instance->discth));
-+
-+	if (instance->pre_emphasis)
-+		mtk_phy_update_bits(com + U3P_USBPHYACR6, PA6_RG_U2_PRE_EMP,
-+				    PA6_RG_U2_PRE_EMP_VAL(instance->pre_emphasis));
- }
- 
- /* type switch for usb3/pcie/sgmii/sata */
--- 
-2.25.1
-
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
