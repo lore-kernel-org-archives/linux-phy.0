@@ -4,79 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 96345C3F6B0
-	for <linux-phy@archiver.kernel.org>; Mon, 22 Aug 2022 10:33:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8D343C28D13
+	for <linux-phy@archiver.kernel.org>; Mon, 22 Aug 2022 13:28:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=+R7HG18mWGKEXUpRHeQICSYtCtcfMM6KuIk6Em6E5DA=; b=AQF5wVtzOuao1p
-	l6gu2quN4vk2qUmmG+/L6fbPmbbpFfLeokWYD7wDYRYwbASqm/m8XrEedX1NeCSwi5P0x8R8KcWcn
-	ohCMnW3ywi3ZOReXv9IPU+FXEVTSUCR4zVW0YbKJ57dY+Ecec3tpAOviNyOrSEkEqgRDsIns2x1MZ
-	iuoYEtGSeRTapNPCSK0oOj63DtMK+u7bHAxlYUOE/+cDoteTzi7jTgZmoROE8D5/ealGnNZ3fdeBy
-	+dsF4E3IDYKaRV2hTYsiSlHNHjQGtVMKiREmPUo63dgw5XUvLFx4gCIBoXHWSSZiA5k0mu2CsQIYt
-	YANB2AxSeB1Lk25+nEXA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qxV8KziWmA2Is3d5oc7w9i+ie9RMnjWElkqJ8Ke9cA4=; b=CPjGntjuXmnk3E
+	R1psFPGjM01f3DknGZoCrfijbQy/WLhP5T/PS+mn/+ajfIthmSY8pmdtZ12oMROFjogJsVtaoBIkM
+	bze1qilRHRV7sL6WnQ1BTqVsEhvW3cKk04YWQ9GlqAZVD7SNJth0vcHy1JgokTzh3Bjjfsbu+nzFW
+	r2ruzo2CVfjtaimm7C3W9ruV05/iK+DC5Y85AMbIszPQ0xtmfuEFeBWIfSrR7J7S/k+I19kyckJ9/
+	R3TFRRbPYw2ihX8U1TUA16Ah35UiUj07Q66+xMEH/kiNBWbqGd0JCATys4/IbglGmWmN0QFpeSnA9
+	7umSFDC4vw26TNDzalAw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oQ4kR-007YdU-Cx; Mon, 22 Aug 2022 10:33:35 +0000
-Received: from mail-qv1-xf31.google.com ([2607:f8b0:4864:20::f31])
+	id 1oQ7U1-00A0PK-MH; Mon, 22 Aug 2022 13:28:49 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oQ4kO-007YZR-9G; Mon, 22 Aug 2022 10:33:33 +0000
-Received: by mail-qv1-xf31.google.com with SMTP id de16so5415832qvb.12;
-        Mon, 22 Aug 2022 03:33:30 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20210112;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc;
-        bh=7biQyLR7kJdpU1WtkQOgvb5Tg9+FQQtrig74Eiy/kVo=;
-        b=JELjLkIpNcd4VCCyPrqAuWDw8LrY8z49NyEQFVOYJGwys6rEo6o9Q0/ONTSAvE2z5v
-         l/PbUhfwOd1suKSnPlsvd7lh61VMKSvKmvkCfnTA2Osg6Fm5OFnaOXhWmXx0QbuaA5RC
-         d+lezk/7PzbE0/VVtv+H7GTvwi8L40OuFfMHGehb67TwtZLZo0XLrY6PMTlq4VAl59GI
-         JjoGpUUMGmMRWR5H+T/nrlAfWIheEM/vqb2HsUd6NUVDFtUg5YWcZeV1o+YBMRYG4yj2
-         Zf7J1VxGuo6R6QdTsTMjpBVMFV3iENQEY6miZje9+xQXCrgFNAVcqAdQx49Epw1R9+/e
-         H4Ow==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc;
-        bh=7biQyLR7kJdpU1WtkQOgvb5Tg9+FQQtrig74Eiy/kVo=;
-        b=MR4M2GMVQR77dBVTQkmbu/c6IrenMWCmcsSQf5xjSObGramw91QbPBTXBR87KObr9N
-         iFMVRog/1akuOVu2znrYhYdK1MfVRGP3ep07GmpLOXErUdHUjoH4SV95mCyq/2qW4cM7
-         ekKQ8MrsdCz8InJySDxAG+GGrCymXH8ujjpCddXJGIgnSEeqfbUMrhtJW+jleUuQDIAG
-         q5JBRYnh8T1FHik7+Wz3V9hjEmp+HHH6Fe65ddqDfCw2ad2H/MlqhSmUUlxtM046v5Om
-         gZGGwrHam96F1tqkzqdVNFpPDQjonFBnLL1RwqGmXYMgUfEOHaz3ellJkPDOXJOUURkg
-         jGig==
-X-Gm-Message-State: ACgBeo39I6ISRbVMScWmtUccMrIg+8CGizp/xJ3n18bl4L+ZTRbuwEJk
-	JB35eevYPyQBhu9LkzcpBdU=
-X-Google-Smtp-Source: AA6agR4Y8CzCM94I8+mbSKTO7qptiETBHal4Zr+63IbKfwbKSCEBnW1MOXvbeQn8KxNDEOnSKRmUWA==
-X-Received: by 2002:ad4:5aae:0:b0:496:dcfc:92aa with SMTP id u14-20020ad45aae000000b00496dcfc92aamr4276349qvg.105.1661164409282;
-        Mon, 22 Aug 2022 03:33:29 -0700 (PDT)
-Received: from master-x64.sparksnet ([2601:153:901:9131::10])
-        by smtp.gmail.com with ESMTPSA id bw12-20020a05622a098c00b0031eddc83560sm8716516qtb.90.2022.08.22.03.33.28
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 22 Aug 2022 03:33:28 -0700 (PDT)
-From: Peter Geis <pgwipeout@gmail.com>
-To: Heiko Stuebner <heiko@sntech.de>,
-	Kishon Vijay Abraham I <kishon@ti.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Samuel Holland <samuel@sholland.org>,
-	Peter Geis <pgwipeout@gmail.com>
-Cc: Markus Reichl <m.reichl@fivetechno.de>,
-	Michael Riesch <michael.riesch@wolfvision.net>,
+	id 1oQ7TY-009zvC-63; Mon, 22 Aug 2022 13:28:21 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+	by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id C40D51A1E03;
+	Mon, 22 Aug 2022 15:28:15 +0200 (CEST)
+Received: from aprdc01srsp001v.ap-rdc01.nxp.com (aprdc01srsp001v.ap-rdc01.nxp.com [165.114.16.16])
+	by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 8A05D1A1DAB;
+	Mon, 22 Aug 2022 15:28:15 +0200 (CEST)
+Received: from localhost.localdomain (shlinux2.ap.freescale.net [10.192.224.44])
+	by aprdc01srsp001v.ap-rdc01.nxp.com (Postfix) with ESMTP id DE6E91820F5A;
+	Mon, 22 Aug 2022 21:28:13 +0800 (+08)
+From: Richard Zhu <hongxing.zhu@nxp.com>
+To: l.stach@pengutronix.de,
+	bhelgaas@google.com,
+	lorenzo.pieralisi@arm.com,
+	vkoul@kernel.org,
+	marcel.ziswiler@toradex.com,
+	kishon@ti.com
+Cc: hongxing.zhu@nxp.com,
 	linux-phy@lists.infradead.org,
+	linux-pci@vger.kernel.org,
 	linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: [PATCH] phy: rockchip-inno-usb2: Return zero after otg sync
-Date: Mon, 22 Aug 2022 06:32:18 -0400
-Message-Id: <20220822103219.3985075-1-pgwipeout@gmail.com>
-X-Mailer: git-send-email 2.25.1
-MIME-Version: 1.0
+	linux-kernel@vger.kernel.org,
+	kernel@pengutronix.de,
+	linux-imx@nxp.com
+Subject: [PATCH v1 1/2] PCI: imx6: Fix the wrong order of phy_init() and phy_power_on()
+Date: Mon, 22 Aug 2022 21:10:55 +0800
+Message-Id: <1661173856-1192-2-git-send-email-hongxing.zhu@nxp.com>
+X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1661173856-1192-1-git-send-email-hongxing.zhu@nxp.com>
+References: <1661173856-1192-1-git-send-email-hongxing.zhu@nxp.com>
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220822_033332_369188_48F337CA 
-X-CRM114-Status: UNSURE (   9.55  )
+X-CRM114-CacheID: sfid-20220822_062820_420003_A69C02F9 
+X-CRM114-Status: UNSURE (   8.99  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -89,39 +69,52 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The otg sync state patch reuses the ret variable, but fails to set it to
-zero after use. This leads to a situation when the otg port is in
-peripheral mode where the otg phy aborts halfway through setup. Fix this
-by setting ret to zero after use.
+Refer to phy_core driver, phy_init() must be called before phy_power_on().
+Fix the wrong order of phy_init() and phy_power_on() here.
 
-Fixes: 8dc60f8da22f ("phy: rockchip-inno-usb2: Sync initial otg state")
-
-Reported-by: Markus Reichl <m.reichl@fivetechno.de>
-Reported-by: Michael Riesch <michael.riesch@wolfvision.net>
-Signed-off-by: Peter Geis <pgwipeout@gmail.com>
-Tested-by: Michael Riesch <michael.riesch@wolfvision.net>
-Tested-by: Markus Reichl <m.reichl@fivetechno.de>
+Fixes: 1aa97b002258 ("phy: freescale: pcie: Initialize the imx8 pcie standalone phy driver")
+Signed-off-by: Richard Zhu <hongxing.zhu@nxp.com>
 ---
- drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/pci/controller/dwc/pci-imx6.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-index 0b1e9337ee8e..5fc7c374a6b4 100644
---- a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-+++ b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-@@ -1169,6 +1169,7 @@ static int rockchip_usb2phy_otg_port_init(struct rockchip_usb2phy *rphy,
- 			/* do initial sync of usb state */
- 			ret = property_enabled(rphy->grf, &rport->port_cfg->utmi_id);
- 			extcon_set_state_sync(rphy->edev, EXTCON_USB_HOST, !ret);
-+			ret = 0;
- 		}
+diff --git a/drivers/pci/controller/dwc/pci-imx6.c b/drivers/pci/controller/dwc/pci-imx6.c
+index 6e5debdbc55b..b5f0de455a7b 100644
+--- a/drivers/pci/controller/dwc/pci-imx6.c
++++ b/drivers/pci/controller/dwc/pci-imx6.c
+@@ -935,7 +935,7 @@ static int imx6_pcie_host_init(struct dw_pcie_rp *pp)
  	}
  
+ 	if (imx6_pcie->phy) {
+-		ret = phy_power_on(imx6_pcie->phy);
++		ret = phy_init(imx6_pcie->phy);
+ 		if (ret) {
+ 			dev_err(dev, "pcie PHY power up failed\n");
+ 			goto err_clk_disable;
+@@ -949,7 +949,7 @@ static int imx6_pcie_host_init(struct dw_pcie_rp *pp)
+ 	}
+ 
+ 	if (imx6_pcie->phy) {
+-		ret = phy_init(imx6_pcie->phy);
++		ret = phy_power_on(imx6_pcie->phy);
+ 		if (ret) {
+ 			dev_err(dev, "waiting for PHY ready timeout!\n");
+ 			goto err_phy_off;
+@@ -961,7 +961,7 @@ static int imx6_pcie_host_init(struct dw_pcie_rp *pp)
+ 
+ err_phy_off:
+ 	if (imx6_pcie->phy)
+-		phy_power_off(imx6_pcie->phy);
++		phy_exit(imx6_pcie->phy);
+ err_clk_disable:
+ 	imx6_pcie_clk_disable(imx6_pcie);
+ err_reg_disable:
 -- 
 2.25.1
 
