@@ -4,76 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0EAB7C32792
-	for <linux-phy@archiver.kernel.org>; Tue, 23 Aug 2022 09:31:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 40D43C32772
+	for <linux-phy@archiver.kernel.org>; Tue, 23 Aug 2022 10:24:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
-	CC:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zTumscdy1P/QKdWcCITSM1Fp5OzAtux/+YOc670OuHY=; b=C5MyZ+SmDyaz/r
-	8dy3PUJcat+NYNa0l8bs0rWsp6hw9Xz7qWHqw5jKcWrMmSY+xGtgR1R8lT+Ygbvn8rw9n6tDBzgF/
-	4dY2LZJuru0/AyP6NZfi1ak2+NPpWPekDOzRUWG8TDfZiecdWxHYXMvJLRyEgX9fQ0UNSuS5uPgOl
-	hrna8HzPN7sUcVn5pjinqlc1OjBRg+5t0ApaAXQ7YnfHFwivEO8932vQ0nytDxG9t1dvuK9AMMJ/A
-	b6KRVnyRWrl+mKVHw6FjtTT50ow4XBGosSVcze9psjn9jVYQGCCVy36Ak7oWoVYbkHbpbwlAkTwz0
-	1iDt0Be6qaLuOY0/URzA==;
+	List-Owner; bh=NVghLpidDicCZbvn4unu0bUrRyv0olEDcfdJefgVYYo=; b=OwE+GoCI4reioA
+	PCoCzGAM4IICnK8F4rz4OmicjZo32FmtTjhMrxKoE4dxUXEqRf1K7/W07a6HiEJKZrW5R9EWc1tSN
+	LpTYPsTyISOpjWOGUyH+dBC5bMMcIBeuZM9idYe0GBgISOE+JrIO1Pdm/o8zUmY6PZuO7q6RW5D5l
+	Z8IgTYswXlIkYkfX83Booi8zGqSTb5Ob0hM50r6qM/8wXWzcacZ6AknWXxnhBwInayreXByLBzkRm
+	ZTWGHUrtR9h5AXVEvJOHerQKhNt0tz6/Ku1qXhwxrNFDi5pb2xbtitlHcmNnkZXrrMEiMMwtkkzQW
+	ouAC4NMOHriTOw2aDH6w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oQQFv-004VNN-9J; Tue, 23 Aug 2022 09:31:31 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1oQR5V-004v4U-Bv; Tue, 23 Aug 2022 10:24:49 +0000
+Received: from mail-lf1-x12a.google.com ([2a00:1450:4864:20::12a])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oQQCr-004Tdq-Sa
-	for linux-phy@lists.infradead.org; Tue, 23 Aug 2022 09:28:32 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
-	by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 27N9RwWQ080103;
-	Tue, 23 Aug 2022 04:27:58 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
-	s=ti-com-17Q1; t=1661246878;
-	bh=xd4qm/j7upLytEKeiy06TJdA6DbvK6VC227evNzbywg=;
-	h=Date:CC:Subject:To:References:From:In-Reply-To;
-	b=MmhNIicLemZVBqA7iUZ+/2S9/VTqObVudRkclB6P03U/ynv1XIahQKCKFvLQL5mlE
-	 l7SrT3cog495av+XnkJFY5VoOaCPtzsEC9AMOTPKdLFeIZhIi47KkYu9K5bsxyFbaP
-	 ehswb6ecd5j3bxcZMf2/9FPNewy6Z1pJleyqVxq8=
-Received: from DFLE102.ent.ti.com (dfle102.ent.ti.com [10.64.6.23])
-	by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 27N9RwZc068060
-	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Tue, 23 Aug 2022 04:27:58 -0500
-Received: from DFLE115.ent.ti.com (10.64.6.36) by DFLE102.ent.ti.com
- (10.64.6.23) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.6; Tue, 23
- Aug 2022 04:27:58 -0500
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE115.ent.ti.com
- (10.64.6.36) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.6 via
- Frontend Transport; Tue, 23 Aug 2022 04:27:58 -0500
-Received: from [10.24.69.241] (ileax41-snat.itg.ti.com [10.172.224.153])
-	by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 27N9RsMR112681;
-	Tue, 23 Aug 2022 04:27:55 -0500
-Message-ID: <7cd7e745-11d1-476b-a7f6-3131a4ad2bd3@ti.com>
-Date: Tue, 23 Aug 2022 14:57:53 +0530
+	id 1oQR5I-004uxe-50
+	for linux-phy@lists.infradead.org; Tue, 23 Aug 2022 10:24:37 +0000
+Received: by mail-lf1-x12a.google.com with SMTP id bt10so6055846lfb.1
+        for <linux-phy@lists.infradead.org>; Tue, 23 Aug 2022 03:24:32 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc;
+        bh=1E0cCe5cEaQJfe86WNnJmjkEbqjIELBXQL3k/KZdD48=;
+        b=QSA3yhWCG+SVJuohL5IMAtHe2qODfXcRxnbjC0pXCGrCLc01hGLKlYJjItBNEgYh4P
+         2oqodZ1jRtDXD5Oc3bAfumtqxB5IQ6YdRiiPRZ7OrrnwI3Pu4U3mMOjhhgnvx877F1ch
+         jtf1HReSx9JOob/Orgo1zPyhaK2lJsT7nxaXQsiraZ8a68CQwQp1q4W8+7L3CTN6YwC9
+         f8XJY2cEoQvDXtcfWF/QPBl1q54iQfuUwh4R3Gb7chQMxLr07oGYnUKawwkyE/qfQQIZ
+         I640N+no44vjt4uJ172x7uqbiH+3N1d2WMGNnw+9A4G9Drc3v+qgsFLUOQuUs4rUYPET
+         b7Vg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc;
+        bh=1E0cCe5cEaQJfe86WNnJmjkEbqjIELBXQL3k/KZdD48=;
+        b=HtDbJ9Z8N6bDaaaV53zgQgsTXAw77fhNv7DOicor81ocBIGuOgP72/8KiFdtTBfpfa
+         1HQq089cODBWdi5QPHNJBeIk8oboLh9ZE7T4E1UhQ1vzWMzQcJnQ2eB1YyPL6hkyvG0V
+         Pt8Wo1X4hKGl+P6lplvUEkS7vMoIm/PxOYKwUXkWTWh+Tkyua4887leog6pqAr9U2Yvx
+         6nBR7QENutO6h3yed/QvtMhAoZLyOijKxOINhLTkYpJFjEDLwOwHsND3Voo8XGu/KnoO
+         ad4YwbCn9/1HN6xySS5HjylBQNALBzjg/bCrYNBLmHltBhiPksD+ehtVu9ShX6Wn6dnu
+         hMpA==
+X-Gm-Message-State: ACgBeo08Kp59NMPOv7K3A+Z4CQDn1k+GPv7HTszxKqkQF707No9WFdJu
+	/CNZthnq6XxgHfhBX8GfUEC1zg==
+X-Google-Smtp-Source: AA6agR6el3uDAHqHIosEoBa7BJJVdeCX9cSrpx/F0nnzHgPz/5FfAVCMOm6iQIFk/R8G13WzCYBggA==
+X-Received: by 2002:a05:6512:3e25:b0:492:db16:4636 with SMTP id i37-20020a0565123e2500b00492db164636mr4317221lfv.657.1661250271586;
+        Tue, 23 Aug 2022 03:24:31 -0700 (PDT)
+Received: from [192.168.0.11] (89-27-92-210.bb.dnainternet.fi. [89.27.92.210])
+        by smtp.gmail.com with ESMTPSA id o3-20020ac24e83000000b00492d7a7b4e3sm1655294lfr.4.2022.08.23.03.24.30
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 23 Aug 2022 03:24:31 -0700 (PDT)
+Message-ID: <bee8abe5-0299-d05e-643c-4810aa33f978@linaro.org>
+Date: Tue, 23 Aug 2022 13:24:30 +0300
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.11.0
-CC: <lee.jones@linaro.org>, <krzysztof.kozlowski@linaro.org>,
-        <krzysztof.kozlowski+dt@linaro.org>, <kishon@ti.com>,
-        <vkoul@kernel.org>, <dan.carpenter@oracle.com>,
-        <grygorii.strashko@ti.com>, <rogerq@kernel.org>,
-        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-        <linux-phy@lists.infradead.org>, <s-vadapalli@ti.com>
-Subject: Re: [PATCH v3 1/2] dt-bindings: phy: ti: phy-gmii-sel: Add bindings
- for J7200
+ Thunderbird/91.12.0
+Subject: Re: [PATCH 2/7] dt-bindings: phy: mediatek,tphy: add property to set
+ pre-emphasis
 Content-Language: en-US
-To: Rob Herring <robh@kernel.org>
-References: <20220822065631.27933-1-s-vadapalli@ti.com>
- <20220822065631.27933-2-s-vadapalli@ti.com>
- <20220822214126.GA896562-robh@kernel.org>
-From: Siddharth Vadapalli <s-vadapalli@ti.com>
-In-Reply-To: <20220822214126.GA896562-robh@kernel.org>
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+To: Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>
+Cc: Kishon Vijay Abraham I <kishon@ti.com>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Eddie Hung <eddie.hung@mediatek.com>
+References: <20220819091344.2274-1-chunfeng.yun@mediatek.com>
+ <20220819091344.2274-2-chunfeng.yun@mediatek.com>
+ <438da392-f419-ad76-7e91-aa4aab36e12c@linaro.org>
+ <816ecf6287533137b750c8bde9de5830e4229c56.camel@mediatek.com>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <816ecf6287533137b750c8bde9de5830e4229c56.camel@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220823_022827_746669_D500D3C8 
-X-CRM114-Status: GOOD (  20.47  )
+X-CRM114-CacheID: sfid-20220823_032436_269085_72C4EB24 
+X-CRM114-Status: GOOD (  13.73  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,105 +101,49 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hello Rob,
-
-On 23/08/22 03:11, Rob Herring wrote:
-> On Mon, Aug 22, 2022 at 12:26:30PM +0530, Siddharth Vadapalli wrote:
->> TI's J7200 SoC supports additional PHY modes like QSGMII and SGMII
->> that are not supported on earlier SoCs. Add a compatible for it.
+On 22/08/2022 10:07, Chunfeng Yun wrote:
+> On Fri, 2022-08-19 at 15:15 +0300, Krzysztof Kozlowski wrote:
+>> On 19/08/2022 12:13, Chunfeng Yun wrote:
+>>> Add a property to set usb2 phy's pre-emphasis.
+>>>
+>>> Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+>>> ---
+>>>  Documentation/devicetree/bindings/phy/mediatek,tphy.yaml | 7
+>>> +++++++
+>>>  1 file changed, 7 insertions(+)
+>>>
+>>> diff --git
+>>> a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
+>>> b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
+>>> index 848edfb1f677..aee2f3027371 100644
+>>> --- a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
+>>> +++ b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
+>>> @@ -219,6 +219,13 @@ patternProperties:
+>>>          minimum: 1
+>>>          maximum: 15
+>>>  
+>>> +      mediatek,pre-emphasis:
+>>> +        description:
+>>> +          The selection of pre-emphasis (U2 phy)
+>>> +        $ref: /schemas/types.yaml#/definitions/uint32
+>>> +        minimum: 1
+>>> +        maximum: 3
 >>
->> Signed-off-by: Siddharth Vadapalli <s-vadapalli@ti.com>
->> ---
->>  .../mfd/ti,j721e-system-controller.yaml       |  6 ++++
->>  .../bindings/phy/ti,phy-gmii-sel.yaml         | 30 ++++++++++++++++++-
->>  2 files changed, 35 insertions(+), 1 deletion(-)
->>
->> diff --git a/Documentation/devicetree/bindings/mfd/ti,j721e-system-controller.yaml b/Documentation/devicetree/bindings/mfd/ti,j721e-system-controller.yaml
->> index 73cffc45e056..466724cb4157 100644
->> --- a/Documentation/devicetree/bindings/mfd/ti,j721e-system-controller.yaml
->> +++ b/Documentation/devicetree/bindings/mfd/ti,j721e-system-controller.yaml
->> @@ -54,6 +54,12 @@ patternProperties:
->>      description:
->>        Clock provider for TI EHRPWM nodes.
->>  
->> +  "phy@[0-9a-f]+$":
->> +    type: object
->> +    $ref: ../phy/ti,phy-gmii-sel.yaml
+>> Instead of hard-coding register values in bindings, you should rather
+>> describe here feature/effect. If it is in units, use unit suffixes.
+>> If
+>> it is some choice, usually string enum is appropriate.
+> How about changing description as bellow:
 > 
-> /schemas/phy/...
-
-Thank you for reviewing the patch. I will update $ref to
-/schemas/phy/phy-provider.yaml.
-
+> "The level of pre-emphasis, increases one level, boosts the relative
+> amplitudes of signal's higher frequencies components about 4.16% (U2
+> phy)"
 > 
->> +    description:
->> +      This is the register to set phy mode through phy-gmii-sel driver.
->> +
->>  required:
->>    - compatible
->>    - reg
->> diff --git a/Documentation/devicetree/bindings/phy/ti,phy-gmii-sel.yaml b/Documentation/devicetree/bindings/phy/ti,phy-gmii-sel.yaml
->> index ff8a6d9eb153..0ffb97f1a77c 100644
->> --- a/Documentation/devicetree/bindings/phy/ti,phy-gmii-sel.yaml
->> +++ b/Documentation/devicetree/bindings/phy/ti,phy-gmii-sel.yaml
->> @@ -53,12 +53,24 @@ properties:
->>        - ti,am43xx-phy-gmii-sel
->>        - ti,dm814-phy-gmii-sel
->>        - ti,am654-phy-gmii-sel
->> +      - ti,j7200-cpsw5g-phy-gmii-sel
->>  
->>    reg:
->>      maxItems: 1
->>  
->>    '#phy-cells': true
->>  
->> +  ti,qsgmii-main-ports:
->> +    $ref: /schemas/types.yaml#/definitions/uint32-array
->> +    description: |
->> +      Required only for QSGMII mode. Array to select the port for
->> +      QSGMII main mode. Rest of the ports are selected as QSGMII_SUB
->> +      ports automatically. Any one of the 4 CPSW5G ports can act as the
->> +      main port with the rest of them being the QSGMII_SUB ports.
->> +    items:
->> +      minimum: 1
->> +      maximum: 4
->> +
->>  allOf:
->>    - if:
->>        properties:
->> @@ -73,6 +85,22 @@ allOf:
->>          '#phy-cells':
->>            const: 1
->>            description: CPSW port number (starting from 1)
->> +  - if:
->> +      properties:
->> +        compatible:
->> +          contains:
->> +            enum:
->> +              - ti,j7200-cpsw5g-phy-gmii-sel
->> +    then:
->> +      properties:
->> +        '#phy-cells':
->> +          const: 1
->> +          description: CPSW port number (starting from 1)
->> +        ti,qsgmii-main-ports:
->> +          maxItems: 1
-> 
-> If the array size can only ever be 1, then it's a uint32, not a 
-> uint32-array.
 
-For the current device, there can be only one QSGMII main port and
-uint32 will be sufficient. However, I plan to send patches for TI's
-J721e device which supports up to 2 QSGMII main ports. I wish to
-implement the property such that it can be reused by J721e. For this
-reason, I am defining the property as a uint32-array. With this
-implementation, J7200 will use the property as an array with one
-element, while J721e will use the property as an array with two
-elements. This is being done to avoid adding a new property in the
-future just for J721e. Please let me know if this is fine.
+Still the question is what is the unit. 4.16%?
 
-Regards,
-Siddharth.
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
