@@ -4,84 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6C539C32796
-	for <linux-phy@archiver.kernel.org>; Tue, 23 Aug 2022 08:36:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0EAB7C32792
+	for <linux-phy@archiver.kernel.org>; Tue, 23 Aug 2022 09:31:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
+	CC:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9xNgwrQoymIHT6bSVGuSr/AnXJSPHFjB8aSeR/POj/s=; b=elH3ZA7OCItlpI
-	G0XImbvn+yFtfFibZi5ax1tPgkS4jDuRAwXSdFoSBoLB7jpjYvq45SLBVSoTBorvKmj+89V8tiJHV
-	mt4buPjEEKygKvjDDaax8dGH1Xa0qhQ4G75yZKVkofFPT3Ex0GSH5oLAVbVatLNxYDZegFtsW5kpd
-	QJYLAjqmuGWHRRBHdcrHA5Ux0sHlEIlV5WoFtR5HKustexkLT7HBfCLTz9UkOd9KlerHMbGDohawW
-	OQ11i1+4lkcrV5tscJVLEtFp38uF5uuyWezeZo0l4q+tu9MYhx0rdDVxn9a+ao1j8BZdsM2Lcd+Zt
-	1rrUbZlfcswHNFFj8piw==;
+	List-Owner; bh=zTumscdy1P/QKdWcCITSM1Fp5OzAtux/+YOc670OuHY=; b=C5MyZ+SmDyaz/r
+	8dy3PUJcat+NYNa0l8bs0rWsp6hw9Xz7qWHqw5jKcWrMmSY+xGtgR1R8lT+Ygbvn8rw9n6tDBzgF/
+	4dY2LZJuru0/AyP6NZfi1ak2+NPpWPekDOzRUWG8TDfZiecdWxHYXMvJLRyEgX9fQ0UNSuS5uPgOl
+	hrna8HzPN7sUcVn5pjinqlc1OjBRg+5t0ApaAXQ7YnfHFwivEO8932vQ0nytDxG9t1dvuK9AMMJ/A
+	b6KRVnyRWrl+mKVHw6FjtTT50ow4XBGosSVcze9psjn9jVYQGCCVy36Ak7oWoVYbkHbpbwlAkTwz0
+	1iDt0Be6qaLuOY0/URzA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oQPOq-0044HZ-OO; Tue, 23 Aug 2022 08:36:40 +0000
-Received: from mail-lj1-x229.google.com ([2a00:1450:4864:20::229])
+	id 1oQQFv-004VNN-9J; Tue, 23 Aug 2022 09:31:31 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oQPOl-0044Br-4B
-	for linux-phy@lists.infradead.org; Tue, 23 Aug 2022 08:36:38 +0000
-Received: by mail-lj1-x229.google.com with SMTP id x25so12822686ljm.5
-        for <linux-phy@lists.infradead.org>; Tue, 23 Aug 2022 01:36:32 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc;
-        bh=+aSY9Y33CDXgz04lbF3PqxrBUx68k/v5JOdwfPTNsck=;
-        b=QkuAXN+U7cnhI883/vPgSeyqlE+WERE888alAVsSQAP6K76e4Lq6scqjW5YP5gY4Zv
-         gVD8rvePqRyUWnq08fWShX0UKGdz+64B0i1RmzOIMHquRKO34P4KjKVA1eQgbCOvET5c
-         XLxKuXdMN7i7FrPlNniRLvaqe2MWHiMxe1+cKHpfOkn+zWrbYLoyoNUBJsvd/NsQRIxV
-         0PAJTxFQYRRA1GjSzaLlvTMnfy5dlgNal0BIxfiprXMoLEB+392bMAYUtrZkZdjn3QD4
-         aRNoqblddkQYhPC/kwhTpB8oFZ8tZvUr4aA/AJhU5tY5FrlelbEHmPwxWc2JqMxLkFl+
-         3slw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc;
-        bh=+aSY9Y33CDXgz04lbF3PqxrBUx68k/v5JOdwfPTNsck=;
-        b=do3AklSHGkPpMlDxm7uXi6bvHXLvPxZBlGUx6uFYWIengVVXTn9qlZYXmGI2cz9KWW
-         QwhP5qKpa9rCksKpBowHZ2vkp+g4whcj0amhCuMQUfe9ubJnU/vWMoFmOImSSI+AFNWh
-         KHM3ahaEXbjnGtuKeoBKIu4ZBtS5VgYaPOdDjIZ1KvIDaMunBX5RCxk0V+CWK8kt7HQ5
-         LvDduE3EwAsClHNw2LBOc0+QHxV4ktPUomKo8SPrbcIipxSv7VWtuWKDqrQauan0HS+o
-         w/I4Q08iHaQ+AF/O8NSPfZRiqBUHsltIjIcdmKXACgBmBUl1hZO5Y1WY+5oELKOxgDiZ
-         0ujw==
-X-Gm-Message-State: ACgBeo22ijZlPLC2+HfeeZ07j4O64iLjPS4P9At603uUxIDeNa2rZ85c
-	6TLjyC4q3iXagEHYO3TKXUTvBg==
-X-Google-Smtp-Source: AA6agR4tz09nxCgU4KECChD6CEX8ta0EVwvv34zu7NRW9WZuo44ysLqMs2v/JFtkNU1OgDp8eiWwiw==
-X-Received: by 2002:a2e:9d06:0:b0:261:d208:7475 with SMTP id t6-20020a2e9d06000000b00261d2087475mr1683044lji.113.1661243791045;
-        Tue, 23 Aug 2022 01:36:31 -0700 (PDT)
-Received: from [192.168.0.11] (89-27-92-210.bb.dnainternet.fi. [89.27.92.210])
-        by smtp.gmail.com with ESMTPSA id p18-20020a2eb992000000b00261ca006158sm1243319ljp.54.2022.08.23.01.36.30
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 23 Aug 2022 01:36:30 -0700 (PDT)
-Message-ID: <ee93aa8a-d704-9d67-ad33-c81654c90ca2@linaro.org>
-Date: Tue, 23 Aug 2022 11:36:29 +0300
+	id 1oQQCr-004Tdq-Sa
+	for linux-phy@lists.infradead.org; Tue, 23 Aug 2022 09:28:32 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+	by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 27N9RwWQ080103;
+	Tue, 23 Aug 2022 04:27:58 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+	s=ti-com-17Q1; t=1661246878;
+	bh=xd4qm/j7upLytEKeiy06TJdA6DbvK6VC227evNzbywg=;
+	h=Date:CC:Subject:To:References:From:In-Reply-To;
+	b=MmhNIicLemZVBqA7iUZ+/2S9/VTqObVudRkclB6P03U/ynv1XIahQKCKFvLQL5mlE
+	 l7SrT3cog495av+XnkJFY5VoOaCPtzsEC9AMOTPKdLFeIZhIi47KkYu9K5bsxyFbaP
+	 ehswb6ecd5j3bxcZMf2/9FPNewy6Z1pJleyqVxq8=
+Received: from DFLE102.ent.ti.com (dfle102.ent.ti.com [10.64.6.23])
+	by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 27N9RwZc068060
+	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+	Tue, 23 Aug 2022 04:27:58 -0500
+Received: from DFLE115.ent.ti.com (10.64.6.36) by DFLE102.ent.ti.com
+ (10.64.6.23) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.6; Tue, 23
+ Aug 2022 04:27:58 -0500
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE115.ent.ti.com
+ (10.64.6.36) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.6 via
+ Frontend Transport; Tue, 23 Aug 2022 04:27:58 -0500
+Received: from [10.24.69.241] (ileax41-snat.itg.ti.com [10.172.224.153])
+	by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 27N9RsMR112681;
+	Tue, 23 Aug 2022 04:27:55 -0500
+Message-ID: <7cd7e745-11d1-476b-a7f6-3131a4ad2bd3@ti.com>
+Date: Tue, 23 Aug 2022 14:57:53 +0530
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.12.0
-Subject: Re: [PATCH v1 1/1] dt-bindings: phy: ocelot-serdes: convert to YAML
+ Thunderbird/91.11.0
+CC: <lee.jones@linaro.org>, <krzysztof.kozlowski@linaro.org>,
+        <krzysztof.kozlowski+dt@linaro.org>, <kishon@ti.com>,
+        <vkoul@kernel.org>, <dan.carpenter@oracle.com>,
+        <grygorii.strashko@ti.com>, <rogerq@kernel.org>,
+        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+        <linux-phy@lists.infradead.org>, <s-vadapalli@ti.com>
+Subject: Re: [PATCH v3 1/2] dt-bindings: phy: ti: phy-gmii-sel: Add bindings
+ for J7200
 Content-Language: en-US
-To: Colin Foster <colin.foster@in-advantage.com>, linux-mips@vger.kernel.org,
- linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
- linux-phy@lists.infradead.org
-Cc: UNGLinuxDriver@microchip.com,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Rob Herring <robh+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@ti.com>
-References: <20220823060052.3921849-1-colin.foster@in-advantage.com>
- <20220823060052.3921849-2-colin.foster@in-advantage.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20220823060052.3921849-2-colin.foster@in-advantage.com>
+To: Rob Herring <robh@kernel.org>
+References: <20220822065631.27933-1-s-vadapalli@ti.com>
+ <20220822065631.27933-2-s-vadapalli@ti.com>
+ <20220822214126.GA896562-robh@kernel.org>
+From: Siddharth Vadapalli <s-vadapalli@ti.com>
+In-Reply-To: <20220822214126.GA896562-robh@kernel.org>
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220823_013635_278229_62D9236A 
-X-CRM114-Status: GOOD (  25.56  )
+X-CRM114-CacheID: sfid-20220823_022827_746669_D500D3C8 
+X-CRM114-Status: GOOD (  20.47  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,134 +90,105 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 23/08/2022 09:00, Colin Foster wrote:
-> Convert the phy-ocelot-serdes device tree binding to the new YAML format.
+Hello Rob,
+
+On 23/08/22 03:11, Rob Herring wrote:
+> On Mon, Aug 22, 2022 at 12:26:30PM +0530, Siddharth Vadapalli wrote:
+>> TI's J7200 SoC supports additional PHY modes like QSGMII and SGMII
+>> that are not supported on earlier SoCs. Add a compatible for it.
+>>
+>> Signed-off-by: Siddharth Vadapalli <s-vadapalli@ti.com>
+>> ---
+>>  .../mfd/ti,j721e-system-controller.yaml       |  6 ++++
+>>  .../bindings/phy/ti,phy-gmii-sel.yaml         | 30 ++++++++++++++++++-
+>>  2 files changed, 35 insertions(+), 1 deletion(-)
+>>
+>> diff --git a/Documentation/devicetree/bindings/mfd/ti,j721e-system-controller.yaml b/Documentation/devicetree/bindings/mfd/ti,j721e-system-controller.yaml
+>> index 73cffc45e056..466724cb4157 100644
+>> --- a/Documentation/devicetree/bindings/mfd/ti,j721e-system-controller.yaml
+>> +++ b/Documentation/devicetree/bindings/mfd/ti,j721e-system-controller.yaml
+>> @@ -54,6 +54,12 @@ patternProperties:
+>>      description:
+>>        Clock provider for TI EHRPWM nodes.
+>>  
+>> +  "phy@[0-9a-f]+$":
+>> +    type: object
+>> +    $ref: ../phy/ti,phy-gmii-sel.yaml
 > 
-> Additionally, add the file to MAINTAINERS since the original file didn't
-> exist.
-> 
-> Signed-off-by: Colin Foster <colin.foster@in-advantage.com>
-> ---
->  .../bindings/phy/phy-ocelot-serdes.txt        | 43 -------------
->  .../bindings/phy/phy-ocelot-serdes.yaml       | 61 +++++++++++++++++++
->  MAINTAINERS                                   |  1 +
->  3 files changed, 62 insertions(+), 43 deletions(-)
->  delete mode 100644 Documentation/devicetree/bindings/phy/phy-ocelot-serdes.txt
->  create mode 100644 Documentation/devicetree/bindings/phy/phy-ocelot-serdes.yaml
+> /schemas/phy/...
 
-Filename based on compatible, so
-mscc,vsc7514-serdes.yaml
+Thank you for reviewing the patch. I will update $ref to
+/schemas/phy/phy-provider.yaml.
 
 > 
+>> +    description:
+>> +      This is the register to set phy mode through phy-gmii-sel driver.
+>> +
+>>  required:
+>>    - compatible
+>>    - reg
+>> diff --git a/Documentation/devicetree/bindings/phy/ti,phy-gmii-sel.yaml b/Documentation/devicetree/bindings/phy/ti,phy-gmii-sel.yaml
+>> index ff8a6d9eb153..0ffb97f1a77c 100644
+>> --- a/Documentation/devicetree/bindings/phy/ti,phy-gmii-sel.yaml
+>> +++ b/Documentation/devicetree/bindings/phy/ti,phy-gmii-sel.yaml
+>> @@ -53,12 +53,24 @@ properties:
+>>        - ti,am43xx-phy-gmii-sel
+>>        - ti,dm814-phy-gmii-sel
+>>        - ti,am654-phy-gmii-sel
+>> +      - ti,j7200-cpsw5g-phy-gmii-sel
+>>  
+>>    reg:
+>>      maxItems: 1
+>>  
+>>    '#phy-cells': true
+>>  
+>> +  ti,qsgmii-main-ports:
+>> +    $ref: /schemas/types.yaml#/definitions/uint32-array
+>> +    description: |
+>> +      Required only for QSGMII mode. Array to select the port for
+>> +      QSGMII main mode. Rest of the ports are selected as QSGMII_SUB
+>> +      ports automatically. Any one of the 4 CPSW5G ports can act as the
+>> +      main port with the rest of them being the QSGMII_SUB ports.
+>> +    items:
+>> +      minimum: 1
+>> +      maximum: 4
+>> +
+>>  allOf:
+>>    - if:
+>>        properties:
+>> @@ -73,6 +85,22 @@ allOf:
+>>          '#phy-cells':
+>>            const: 1
+>>            description: CPSW port number (starting from 1)
+>> +  - if:
+>> +      properties:
+>> +        compatible:
+>> +          contains:
+>> +            enum:
+>> +              - ti,j7200-cpsw5g-phy-gmii-sel
+>> +    then:
+>> +      properties:
+>> +        '#phy-cells':
+>> +          const: 1
+>> +          description: CPSW port number (starting from 1)
+>> +        ti,qsgmii-main-ports:
+>> +          maxItems: 1
+> 
+> If the array size can only ever be 1, then it's a uint32, not a 
+> uint32-array.
 
+For the current device, there can be only one QSGMII main port and
+uint32 will be sufficient. However, I plan to send patches for TI's
+J721e device which supports up to 2 QSGMII main ports. I wish to
+implement the property such that it can be reused by J721e. For this
+reason, I am defining the property as a uint32-array. With this
+implementation, J7200 will use the property as an array with one
+element, while J721e will use the property as an array with two
+elements. This is being done to avoid adding a new property in the
+future just for J721e. Please let me know if this is fine.
 
-> diff --git a/Documentation/devicetree/bindings/phy/phy-ocelot-serdes.yaml b/Documentation/devicetree/bindings/phy/phy-ocelot-serdes.yaml
-> new file mode 100644
-> index 000000000000..0666974d886a
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/phy-ocelot-serdes.yaml
-> @@ -0,0 +1,61 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/phy-ocelot-serdes.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Microsemi Ocelot SerDes muxing driver
-
-s/driver//
-
-Bindings are for hardware, not for Linux drivers.
-
-> +
-> +maintainers:
-> +  - Alexandre Belloni <alexandre.belloni@bootlin.com>
-> +  - UNGLinuxDriver@microchip.com
-> +
-> +description: |
-> +  On Microsemi Ocelot, there is a handful of registers in HSIO address
-> +  space for setting up the SerDes to switch port muxing.
-> +
-> +  A SerDes X can be "muxed" to work with switch port Y or Z for example.
-> +  One specific SerDes can also be used as a PCIe interface.
-> +
-> +  Hence, a SerDes represents an interface, be it an Ethernet or a PCIe one.
-> +
-> +  There are two kinds of SerDes: SERDES1G supports 10/100Mbps in
-> +  half/full-duplex and 1000Mbps in full-duplex mode while SERDES6G supports
-> +  10/100Mbps in half/full-duplex and 1000/2500Mbps in full-duplex mode.
-> +
-> +  Also, SERDES6G number (aka "macro") 0 is the only interface supporting
-> +  QSGMII.
-> +
-> +  This is a child of the HSIO syscon ("mscc,ocelot-hsio", see
-> +  Documentation/devicetree/bindings/mips/mscc.txt) on the Microsemi Ocelot.
-> +
-> +properties:
-> +  compatible:
-> +    enum:
-> +      - mscc,vsc7514-serdes
-
-Missing blank line
-
-> +  "#phy-cells":
-> +    const: 2
-> +    description: |
-> +      from the generic phy bindings, must be 2. 
-
-Skip first sentence, it's obvious.
-
-The first number
-> +      defines the input port to use for a given SerDes macro. The
-> +      second defines the macro to use. They are defined in
-> +      dt-bindings/phy/phy-ocelot-serdes.h
-> +
-> +required:
-> +  - compatible
-> +  - "#phy-cells"
-
-Missing additionalProperties: false
-
-Base your YAML on example-schema.
-
-> +
-> +examlpes:
-
-Typo.
-
-
-> +  - |
-> +    serdes: serdes {
-> +      compatible = "mscc,vsc7514-serdes";
-> +      #phy-cells = <2>;
-> +    };
-> +
-> +    ethernet {
-> +      port1 {
-> +        phy-handle = <&phy_foo>;
-> +        /* Link SERDES1G_5 to port1 */
-> +        phys = <&serdes 1 SERDES1G_5>;
-> +      };
-> +    };
-
-Skip consumer examples in provider bindings. They're obvious.
-
-> diff --git a/MAINTAINERS b/MAINTAINERS
-> index 714fd8b45e5a..10dd3c6ad6ad 100644
-> --- a/MAINTAINERS
-> +++ b/MAINTAINERS
-> @@ -13481,6 +13481,7 @@ M:	UNGLinuxDriver@microchip.com
->  L:	linux-mips@vger.kernel.org
->  S:	Supported
->  F:	Documentation/devicetree/bindings/mips/mscc.txt
-> +F:	Documentation/devicetree/bindings/phy/phy-ocelot-serdes.yaml
->  F:	Documentation/devicetree/bindings/pinctrl/mscc,ocelot-pinctrl.yaml
->  F:	Documentation/devicetree/bindings/power/reset/ocelot-reset.txt
->  F:	arch/mips/boot/dts/mscc/
-
-
-Best regards,
-Krzysztof
+Regards,
+Siddharth.
 
 -- 
 linux-phy mailing list
