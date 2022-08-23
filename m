@@ -4,62 +4,43 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C1458C32772
-	for <linux-phy@archiver.kernel.org>; Tue, 23 Aug 2022 18:47:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0B256C32772
+	for <linux-phy@archiver.kernel.org>; Tue, 23 Aug 2022 18:49:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:
-	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7NapxWENXtPej3y935l7kBLVgtjxCS9e1Lfs0s9fjSg=; b=RWuZ5AQQEOPjuH
-	V62GDaBSMY3Iu17PCKEKdgaD5G1YJQ2lF7ZWkKobNLllUgxb5da6Tplv2KbGRGLVnuYQvNfYWI4qS
-	M7yJsS5sFuYSnMCQytlllvUH9XBa4Fks409HJOipfMHfv4Cou1ANl6XTMvv44MWtTGIhmi6LeqQGP
-	EGD+G/1BNFlFmaCaY7DI3+cbdEpWOOZSQpbr8LPZ81/9D9DCBYo0tDR5K3TVZQimSFDn+MxByCJ3g
-	nCiLXLB393OVbYFuLh6P8xjQ1vKPuEDF2pPizUPKGNljB11nOiID6AqO0hY05b0mlw4NMHJ07QlSh
-	+GHSqjuQDtebyyYydP0w==;
+	List-Owner; bh=W6WtBsPRXBAk9Cqxq5s19Tp+4sFOZMXkodBZWWTi/FU=; b=BCsU+TSSdKRoem
+	klu74HnwYaNidYk4P7P2MwILtrHk8Ddm9gKFrrbb1Tb+t4FSBmnB40SbkfKwUGKOq7lS+RvkB/4gC
+	wXQzdkQCEB/+llH+5GGJhC1DyhSZ9sH4KMa9OKyMUbxBm1ZmZrrF25P/wyOD7Oyj3y8XNs2F5F9Oc
+	SvkI/IjuUT35e9UD/4uCVh7X18z9+Lb+fd4iTApKwGz6+aCaeXAsQwbnm8sda0GCl+CeiSsPfE8FA
+	dQmC8CCzcvLvmGa7lkAlvT754JsJbYNF7c1TGi8XmXioWx/2+yVI1VylmVcpyPjKwyquWxj1ZauEH
+	SV8YmDbJKTXhYP7o82pg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oQYvk-008DRd-4l; Tue, 23 Aug 2022 18:47:16 +0000
-Received: from mail-oo1-f42.google.com ([209.85.161.42])
+	id 1oQYxY-008FZC-G3; Tue, 23 Aug 2022 18:49:08 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oQYvh-008DOr-3N
-	for linux-phy@lists.infradead.org; Tue, 23 Aug 2022 18:47:14 +0000
-Received: by mail-oo1-f42.google.com with SMTP id c17-20020a4a8ed1000000b004452faec26dso2579736ool.5
-        for <linux-phy@lists.infradead.org>; Tue, 23 Aug 2022 11:47:09 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=message-id:date:subject:references:in-reply-to:cc:to:from
-         :x-gm-message-state:from:to:cc;
-        bh=tHYjnzkUc2Gvy/va2RI2R+NsJzI7m0zroWi8SmJXJGE=;
-        b=FQEmgutiWhqxyQdZaqAc1A1uWhFxaBP85zwgz6TWHhUC7+jliAu3xmG8yuJrn53fOG
-         OcEJjMfKFqszhqSIDyxu63k3s2Z9vI7n/TVLAlFvsg/d6llyzLjaqjHltigszS9UIQf/
-         b0qd9I144z6Vl1b233XsGg2I53jKbk7gjy4W//qmCcZ3o25VgUEImg6w3E/mieIEts9k
-         iJLfQ839uv4BO2cgf4+TMG8t0DLvxtvPKeH46HspjuXSkXyQKIDG/S9ibdEXP9QcHzlp
-         Xrn8AQUf4zsxrjKVKgLh/H+YmvgyTcvjULfMX9yQcttws282E15alPHPjEiSNg2SzvIy
-         Y+Rg==
-X-Gm-Message-State: ACgBeo1CT4YGznlSsqGLJY95ZEouldYWqAYILBPO97a+aAYW8faD66Ue
-	hjfkcROZThhBdo6FlhgTjw==
-X-Google-Smtp-Source: AA6agR7MkfBFGnMVdJ7ZdvTTyviNRzCXNrqYz7IHn6hyMrk7BM/gV7icm1f6LC3vQCNiknGqYTbZwg==
-X-Received: by 2002:a4a:abcf:0:b0:428:47bc:4bc0 with SMTP id o15-20020a4aabcf000000b0042847bc4bc0mr8511436oon.15.1661280428885;
-        Tue, 23 Aug 2022 11:47:08 -0700 (PDT)
-Received: from robh.at.kernel.org (66-90-144-107.dyn.grandenetworks.net. [66.90.144.107])
-        by smtp.gmail.com with ESMTPSA id u15-20020a056870d58f00b0010e046491f8sm3980600oao.57.2022.08.23.11.47.08
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 23 Aug 2022 11:47:08 -0700 (PDT)
-Received: (nullmailer pid 3761037 invoked by uid 1000);
-	Tue, 23 Aug 2022 18:47:07 -0000
-From: Rob Herring <robh@kernel.org>
-To: Colin Foster <colin.foster@in-advantage.com>
-Cc: linux-phy@lists.infradead.org, Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, UNGLinuxDriver@microchip.com, Rob Herring <robh+dt@kernel.org>, Alexandre Belloni <alexandre.belloni@bootlin.com>, linux-kernel@vger.kernel.org, linux-mips@vger.kernel.org, devicetree@vger.kernel.org, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
-In-Reply-To: <20220823060052.3921849-2-colin.foster@in-advantage.com>
-References: <20220823060052.3921849-1-colin.foster@in-advantage.com> <20220823060052.3921849-2-colin.foster@in-advantage.com>
-Subject: Re: [PATCH v1 1/1] dt-bindings: phy: ocelot-serdes: convert to YAML
-Date: Tue, 23 Aug 2022 13:47:07 -0500
-Message-Id: <1661280427.824099.3761036.nullmailer@robh.at.kernel.org>
+	id 1oQYxV-008FV8-7L; Tue, 23 Aug 2022 18:49:06 +0000
+Received: from ip5b412258.dynamic.kabel-deutschland.de ([91.65.34.88] helo=diego.localnet)
+	by gloria.sntech.de with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.94.2)
+	(envelope-from <heiko@sntech.de>)
+	id 1oQYxM-0006cy-NL; Tue, 23 Aug 2022 20:48:56 +0200
+From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
+To: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, Peter Geis <pgwipeout@gmail.com>, Samuel Holland <samuel@sholland.org>, Peter Geis <pgwipeout@gmail.com>
+Cc: Markus Reichl <m.reichl@fivetechno.de>, Michael Riesch <michael.riesch@wolfvision.net>, linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v2] phy: rockchip-inno-usb2: Return zero after otg sync
+Date: Tue, 23 Aug 2022 20:48:55 +0200
+Message-ID: <2872516.OBFZWjSADL@diego>
+In-Reply-To: <20220823144728.47068-1-pgwipeout@gmail.com>
+References: <20220823144728.47068-1-pgwipeout@gmail.com>
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220823_114713_158053_2753625C 
-X-CRM114-Status: GOOD (  12.20  )
+X-CRM114-CacheID: sfid-20220823_114905_294766_DD653FA2 
+X-CRM114-Status: GOOD (  18.84  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,57 +52,65 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, 22 Aug 2022 23:00:52 -0700, Colin Foster wrote:
-> Convert the phy-ocelot-serdes device tree binding to the new YAML format.
+Am Dienstag, 23. August 2022, 16:47:28 CEST schrieb Peter Geis:
+> The otg sync state patch reuses the ret variable, but fails to set it to
+> zero after use. This leads to a situation when the otg port is in
+> peripheral mode where the otg phy aborts halfway through setup.  It also
+> fails to account for a failure to register the extcon notifier. Fix this
+> by using our own variable and skipping otg sync in case of failure.
 > 
-> Additionally, add the file to MAINTAINERS since the original file didn't
-> exist.
+> Fixes: 8dc60f8da22f ("phy: rockchip-inno-usb2: Sync initial otg state")
 > 
-> Signed-off-by: Colin Foster <colin.foster@in-advantage.com>
+> Reported-by: Markus Reichl <m.reichl@fivetechno.de>
+> Reported-by: Michael Riesch <michael.riesch@wolfvision.net>
+> Signed-off-by: Peter Geis <pgwipeout@gmail.com>
+> Tested-by: Michael Riesch <michael.riesch@wolfvision.net>
+> Tested-by: Markus Reichl <m.reichl@fivetechno.de>
+
+Reviewed-by: Heiko Stuebner <heiko@sntech.de>
+Tested-by: Heiko Stuebner <heiko@sntech.de>
+
 > ---
->  .../bindings/phy/phy-ocelot-serdes.txt        | 43 -------------
->  .../bindings/phy/phy-ocelot-serdes.yaml       | 61 +++++++++++++++++++
->  MAINTAINERS                                   |  1 +
->  3 files changed, 62 insertions(+), 43 deletions(-)
->  delete mode 100644 Documentation/devicetree/bindings/phy/phy-ocelot-serdes.txt
->  create mode 100644 Documentation/devicetree/bindings/phy/phy-ocelot-serdes.yaml
+>  drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 7 ++++---
+>  1 file changed, 4 insertions(+), 3 deletions(-)
+> 
+> diff --git a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
+> index 0b1e9337ee8e..d579a22c61df 100644
+> --- a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
+> +++ b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
+> @@ -1124,7 +1124,7 @@ static int rockchip_usb2phy_otg_port_init(struct rockchip_usb2phy *rphy,
+>  					  struct rockchip_usb2phy_port *rport,
+>  					  struct device_node *child_np)
+>  {
+> -	int ret;
+> +	int ret, id;
+>  
+>  	rport->port_id = USB2PHY_PORT_OTG;
+>  	rport->port_cfg = &rphy->phy_cfg->port_cfgs[USB2PHY_PORT_OTG];
+> @@ -1164,11 +1164,12 @@ static int rockchip_usb2phy_otg_port_init(struct rockchip_usb2phy *rphy,
+>  					EXTCON_USB_HOST, &rport->event_nb);
+>  		if (ret)
+>  			dev_err(rphy->dev, "register USB HOST notifier failed\n");
+> +			goto out;
+>  
+>  		if (!of_property_read_bool(rphy->dev->of_node, "extcon")) {
+>  			/* do initial sync of usb state */
+> -			ret = property_enabled(rphy->grf, &rport->port_cfg->utmi_id);
+> -			extcon_set_state_sync(rphy->edev, EXTCON_USB_HOST, !ret);
+> +			id = property_enabled(rphy->grf, &rport->port_cfg->utmi_id);
+> +			extcon_set_state_sync(rphy->edev, EXTCON_USB_HOST, !id);
+>  		}
+>  	}
+>  
 > 
 
-My bot found errors running 'make DT_CHECKER_FLAGS=-m dt_binding_check'
-on your patch (DT_CHECKER_FLAGS is new in v5.13):
 
-yamllint warnings/errors:
 
-dtschema/dtc warnings/errors:
-/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/phy/phy-ocelot-serdes.yaml: 'examlpes' is not one of ['$id', '$schema', 'title', 'description', 'examples', 'required', 'allOf', 'anyOf', 'oneOf', 'definitions', '$defs', 'additionalProperties', 'dependencies', 'dependentRequired', 'dependentSchemas', 'patternProperties', 'properties', 'if', 'then', 'else', 'unevaluatedProperties', 'deprecated', 'maintainers', 'select', '$ref']
-	from schema $id: http://devicetree.org/meta-schemas/base.yaml#
-/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/phy/phy-ocelot-serdes.yaml: 'oneOf' conditional failed, one must be fixed:
-	'unevaluatedProperties' is a required property
-	'additionalProperties' is a required property
-	hint: Either unevaluatedProperties or additionalProperties must be present
-	from schema $id: http://devicetree.org/meta-schemas/core.yaml#
-/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/phy/phy-ocelot-serdes.yaml: ignoring, error in schema: 
-
-doc reference errors (make refcheckdocs):
-
-See https://patchwork.ozlabs.org/patch/
-
-This check can fail if there are any dependencies. The base for a patch
-series is generally the most recent rc1.
-
-If you already ran 'make dt_binding_check' and didn't see the above
-error(s), then make sure 'yamllint' is installed and dt-schema is up to
-date:
-
-pip3 install dtschema --upgrade
-
-Please check and re-submit.
 
 
 -- 
