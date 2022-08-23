@@ -4,43 +4,125 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0B256C32772
-	for <linux-phy@archiver.kernel.org>; Tue, 23 Aug 2022 18:49:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 75DE2C32772
+	for <linux-phy@archiver.kernel.org>; Tue, 23 Aug 2022 18:52:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=W6WtBsPRXBAk9Cqxq5s19Tp+4sFOZMXkodBZWWTi/FU=; b=BCsU+TSSdKRoem
-	klu74HnwYaNidYk4P7P2MwILtrHk8Ddm9gKFrrbb1Tb+t4FSBmnB40SbkfKwUGKOq7lS+RvkB/4gC
-	wXQzdkQCEB/+llH+5GGJhC1DyhSZ9sH4KMa9OKyMUbxBm1ZmZrrF25P/wyOD7Oyj3y8XNs2F5F9Oc
-	SvkI/IjuUT35e9UD/4uCVh7X18z9+Lb+fd4iTApKwGz6+aCaeXAsQwbnm8sda0GCl+CeiSsPfE8FA
-	dQmC8CCzcvLvmGa7lkAlvT754JsJbYNF7c1TGi8XmXioWx/2+yVI1VylmVcpyPjKwyquWxj1ZauEH
-	SV8YmDbJKTXhYP7o82pg==;
+	List-Owner; bh=DvDWepkaqEFsH3195TravbeKjThICP+MjqoXHncG2+g=; b=SNhyq9aDGbMjPQ
+	jq6ltph8cqgLCHsdHoMrDtVPtg/H9kIpP7gjTCwJ0sIFGE3IlUiRT+Pah5gsE3mIRiGfnM6KPjtqs
+	lSXOorq+efoPLo+YwKUI1IJhcr1GZvTZl/uLWesycBchWWBUYZ5zGMoAg0GyvotbaAhaec0SBIiK9
+	fMXgrYhi23K3+If6pe6LPZEoo4ivsKl+GNCNbyWtOcJmYtROogc+f+pfxV8kViSXc01o6xIwCtQOZ
+	raTzEvC0e2fsP+RypTiY0/Q6bKFcslSjYuKVOdVxCFvkTmdE71z+nRqDvPVAwhIT4lFY1QGPEjRVt
+	MqoYPSJZ8lR9C+fBNiiA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oQYxY-008FZC-G3; Tue, 23 Aug 2022 18:49:08 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1oQZ0L-008JtE-L0; Tue, 23 Aug 2022 18:52:01 +0000
+Received: from mail-dm6nam10on2114.outbound.protection.outlook.com ([40.107.93.114] helo=NAM10-DM6-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oQYxV-008FV8-7L; Tue, 23 Aug 2022 18:49:06 +0000
-Received: from ip5b412258.dynamic.kabel-deutschland.de ([91.65.34.88] helo=diego.localnet)
-	by gloria.sntech.de with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.94.2)
-	(envelope-from <heiko@sntech.de>)
-	id 1oQYxM-0006cy-NL; Tue, 23 Aug 2022 20:48:56 +0200
-From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
-To: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, Peter Geis <pgwipeout@gmail.com>, Samuel Holland <samuel@sholland.org>, Peter Geis <pgwipeout@gmail.com>
-Cc: Markus Reichl <m.reichl@fivetechno.de>, Michael Riesch <michael.riesch@wolfvision.net>, linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v2] phy: rockchip-inno-usb2: Return zero after otg sync
-Date: Tue, 23 Aug 2022 20:48:55 +0200
-Message-ID: <2872516.OBFZWjSADL@diego>
-In-Reply-To: <20220823144728.47068-1-pgwipeout@gmail.com>
-References: <20220823144728.47068-1-pgwipeout@gmail.com>
+	id 1oQYz2-008I19-J4
+	for linux-phy@lists.infradead.org; Tue, 23 Aug 2022 18:50:42 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=ahtOnDhWimCab4FpvkhsWT0cZviSmP0CIDFgO5Hc3PoMRgVfxWKPj5N9aKohnEo82pz5GgC9RhCa3V/9pqup9xH/kKijGGu6NxeSbjR3GcJcnbQgZGRAhpes+SB7Htdq9dcxiggVDYlSfNLN43JxPNOtEV1RRC90FEz/Y3ClT2GZtOcGwUbUE4qLZod5m+KLO2O0CnrLmsE1lm9bUoflIJu5rI2Brbo5a/jIGWy7ZS8l/amJtQX5QkckLFH9nRSVf49cXDYLzaNj5OVykmgRY/t7b4q8hKKojspQHIA8+K6wkkQQnjjLAc611PrJjuNyo3qnVPqa1/BQ0KLCrF2XjQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=S3MxHS9V7qKpBqLz3vTgInNDax0zdqf1Q2RMjo7MOWs=;
+ b=LtFeDvLWe9GQZUKpr/PSJYwqF/QWsZqNw+UtcenPO8Nu/kYFx2viZ0goDYSyYrlrcPFRjfxrsF+4w+b3bqFUDM/giWsSAH6HJ6hImz9cI7DOyTpnW2FJ4rrXNE8b8OMO53YvkkEf8UI3JEQk5m9ut5rbPYe/J1xu9tebeBUo7+/SSE3jGV9U8E0XidKMEzUVU0/UfAzPlUkt2pKUhMIFjwK64IYerJnpROJpSD2ZRiAs1JZv7H7D58Fvuvztkl+A3+kq3jE2vFsn+94qOXBoxBF0zEl0T1Xq/u9F0fjb4QBQihMQbm/JpXzcxIkb7P9OcOIqQJHWSxE2t4PterI4Fw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=in-advantage.com; dmarc=pass action=none
+ header.from=in-advantage.com; dkim=pass header.d=in-advantage.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=inadvantage.onmicrosoft.com; s=selector2-inadvantage-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=S3MxHS9V7qKpBqLz3vTgInNDax0zdqf1Q2RMjo7MOWs=;
+ b=E/vWaUteZJpE7qK1hYcOmcl0ZRA41m0/QQVJWaHTz9vcbV9sF9aavO9n9CdrSCMT+sFSOKI/5cL319E/0dwgvcA8YqakI5GJqB04sDsgQbcfrWKQxjvDUxGHQwiiqqy1bPToUIaYWpzh7wEBqVcl6h+nuGRGE0k8NAI8Ea+Gnc4=
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=in-advantage.com;
+Received: from MWHPR1001MB2351.namprd10.prod.outlook.com
+ (2603:10b6:301:35::37) by BY5PR10MB4228.namprd10.prod.outlook.com
+ (2603:10b6:a03:200::17) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5546.16; Tue, 23 Aug
+ 2022 18:50:34 +0000
+Received: from MWHPR1001MB2351.namprd10.prod.outlook.com
+ ([fe80::b869:6c52:7a8d:ddee]) by MWHPR1001MB2351.namprd10.prod.outlook.com
+ ([fe80::b869:6c52:7a8d:ddee%4]) with mapi id 15.20.5504.028; Tue, 23 Aug 2022
+ 18:50:34 +0000
+Date: Tue, 23 Aug 2022 11:50:30 -0700
+From: Colin Foster <colin.foster@in-advantage.com>
+To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Cc: linux-mips@vger.kernel.org, linux-kernel@vger.kernel.org,
+	devicetree@vger.kernel.org, linux-phy@lists.infradead.org,
+	UNGLinuxDriver@microchip.com,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Rob Herring <robh+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@ti.com>
+Subject: Re: [PATCH v1 1/1] dt-bindings: phy: ocelot-serdes: convert to YAML
+Message-ID: <YwUhdsROCGWLlHLA@colin-ia-desktop>
+References: <20220823060052.3921849-1-colin.foster@in-advantage.com>
+ <20220823060052.3921849-2-colin.foster@in-advantage.com>
+ <ee93aa8a-d704-9d67-ad33-c81654c90ca2@linaro.org>
+Content-Disposition: inline
+In-Reply-To: <ee93aa8a-d704-9d67-ad33-c81654c90ca2@linaro.org>
+X-ClientProxiedBy: SJ0PR13CA0193.namprd13.prod.outlook.com
+ (2603:10b6:a03:2c3::18) To MWHPR1001MB2351.namprd10.prod.outlook.com
+ (2603:10b6:301:35::37)
 MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 52e609b5-8600-4bc9-4dc5-08da85385c83
+X-MS-TrafficTypeDiagnostic: BY5PR10MB4228:EE_
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: 	UzymYpldN4D5OGtkNdhb5EgA6/Y0RL+YspfPB9wKSj0LaiTRTY3oAL+iTvzXCYyctCq72Nqzj+d5CAaVY5e62ZWZ1gzeun6z0Q1xVNF+kDFSsVSsx2RRarQnXPvGCqC8HyCOVI4G7bx2hgKJuBGvTiBNudUNrkBbrjYp6Vw+CWgsjMcI20oxelAhyU3fYqpb7ZxC3zxnf/tHw1eUQEK+RvqQ58tgq9X7SKFAbAz0P3i6lBvz/6fQ2dfDWuV1EvVzWjp1fCSpJoc6aqVpUm3jLo3US+KLZPW+7QLwhAXYRloQXlPuHpR/wOSCQpPNA1aXHT9owEFvGD4h33jo4qYbdDLWtEn6DuEEAv5wbyWmZcaDZooVdjCpF+djjjCFg2CQSfnihURTlp0Z3tQmsrViPWY2E3T0wCNNuotEsjsMN5MbIjmvhv+gc3RJ0dxzrc570UzJeK4FSxO8QqZaH58gEDno7o8H7XHADvHUyqcoOlU8ZzN1v/vfTw8JK0lJ0Yrw7+tQ50bktjTbS0D7zqsVOorGAwmiYLPFikSr4Kqq3mj1YQT8ZN7lxpcyOLwhLunW9CnwBKdq+6d55I1Mft3ZCDzbT4Qq8f4rfBc3DY0/R3A34tkqYNUNcausMG6S82kTDFzv6GfNR9+NCBy0JA72M3NUbq2E/Fozww6ByQoi0XZD7ikMo5Gsjt2aWsJAhblVdLLQCeuM60CxHM/cVKlQsy3HnYZ6zjXL3N7W0RRniI4=
+X-Forefront-Antispam-Report: 	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:MWHPR1001MB2351.namprd10.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230016)(7916004)(136003)(376002)(366004)(396003)(39830400003)(346002)(6666004)(33716001)(478600001)(2906002)(53546011)(966005)(6486002)(6512007)(66476007)(5660300002)(4326008)(7416002)(9686003)(66556008)(38100700002)(26005)(66946007)(8676002)(316002)(6916009)(83380400001)(41300700001)(44832011)(86362001)(186003)(6506007)(8936002)(54906003);DIR:OUT;SFP:1102;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: 	=?us-ascii?Q?QncPyAe/oDfPfxwAuAJo9rmtF0BJSt8dImyt32tAWKyyxlK2wqMYLMfDu+k8?=
+ =?us-ascii?Q?yDg2VebyUdF6AGsMz1lYdl28FeK78Gs/ELrkm60SDUZzIX7uYGURZGGf7hsq?=
+ =?us-ascii?Q?QStig7+OkPnZiHxLmNWzFCXPsp8xdaogz/hVfvG4rIg7IsEmsjNTONDH+K6s?=
+ =?us-ascii?Q?crjg5QNOi1OWv0AHFzQigVe4QQR3YT3EBYew69LZwpqzxjdWGXEr/yS3ceds?=
+ =?us-ascii?Q?RQKt2j6qsi7MkSHE9exvQidlt/Ml3mUfC3kJe5ek1eIlWaAyF7Lyp8dMNfyl?=
+ =?us-ascii?Q?om+VUp7tdcKJUILI3uL6J2XiIpiihdz5iYfGShle8tswREDedxnxC72g4eEN?=
+ =?us-ascii?Q?cgGJ7W7Ibb02XWlWnWn0MYiTKoTuCmkg7e75FZSJ+Xl702UJwIUy8K7ayVzX?=
+ =?us-ascii?Q?bFBkkiVbDq6XTeNcv6TcnW6vYGr9Hlcw4LAwJpH+m0tWhTSFYBu1xgB4GfDM?=
+ =?us-ascii?Q?erku7XDkHdjbY/XY7BJeX9iDM+JjvE7CaVg9mo4UHSevIHotFnmOkfxUd+ZA?=
+ =?us-ascii?Q?sYMidsyI5nl9Ams6bXvtFuv5nHMMemRF7NwXZPTJL/Dzw8swLf+sGN4tLaKa?=
+ =?us-ascii?Q?1yOeldhPEhZnnIm+Qg1shNATRH4gn3dyFsILFdQmga7wQufp/vftBecDS6Q7?=
+ =?us-ascii?Q?2JJYB1vrmYwIZeJ8p3PCSouw/+8BnPlY2Sg4uAb7UcoJiJRfNJXeJb95JNvc?=
+ =?us-ascii?Q?Epg00ycxPn/DrWR5PBj37aLo5yghcBFc/d7KahEOgAYGNp+tNOY+jeMxKPdD?=
+ =?us-ascii?Q?+cQPrGh5iwq28FjTUuKBJnMOvh+MJ6YWW4EULNVrb9H3UaJ5f2LoUHB2NfOP?=
+ =?us-ascii?Q?IB2xHrR1WwBrlXRkZoQgx2FlQt5nKV4cqBi1B/ydTcE0RVag9+/Z00OPi6SY?=
+ =?us-ascii?Q?7lbLCwQB8u2vT3sjtDwSLbk0kTMfrvcGZ1VwZCJzRKYhC3yjNiEwnU6zbiJu?=
+ =?us-ascii?Q?LrwiothD4594pd7VM1qfVaBYqqOYyuRCTIJhw4dbnGxzHn82KMxrAAc3WhiA?=
+ =?us-ascii?Q?g2kbvbuF5liRtjHPjkc2+aN17DNTLRmudfCD09wgw1IVInt75BjyiZqMU4qM?=
+ =?us-ascii?Q?lo7pQStKbM7FgR0vtLv48SoG1w2IhIVm4xFV4Wp5gF6xjVTfaxctmwQnzFm4?=
+ =?us-ascii?Q?jxlzVQsCOaZkNbyMqsTYe1IzwlyXfmCJADK1owpgEFG4+XmOiPjjrefWLfks?=
+ =?us-ascii?Q?KenCb/kBpvDDUwk47APeYvQqRPZwQnOT/WyvGlCRprDGUnftxY4isK1Hibdl?=
+ =?us-ascii?Q?QZH++VtNLM8IptCrutZTL3OBDEwdCG5HDBnPJC3pWtptIICAEew9issNwQGd?=
+ =?us-ascii?Q?kAris7xbW4bq9aVqppjClqB05SIyua80RAEXEcTs2JVOZc5x1fXnMy5AVV8h?=
+ =?us-ascii?Q?Lk7/ySqQR/hMS2egsvSG9CZQ5yqxZVRvrCOJJ9gKArNlv0ABY33RTKVqQ6z3?=
+ =?us-ascii?Q?VM5psGFccHZv1hhhIJ2ZjaUFzepgCTtYe9lbHEkXMx0NhVjWPvMh9gWyVhsl?=
+ =?us-ascii?Q?y6/SoWNbkuKwgj4iCxFwoMd0VfpMhMuNT5Cot4gp69irqFvDLdZOUQ4XAtND?=
+ =?us-ascii?Q?W2FlyJtyDm/z4/AFAavuU244hg5jL4pKhUc8JfEv/4yZPia3OeGyf3MsD1qo?=
+ =?us-ascii?Q?JQ=3D=3D?=
+X-OriginatorOrg: in-advantage.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 52e609b5-8600-4bc9-4dc5-08da85385c83
+X-MS-Exchange-CrossTenant-AuthSource: MWHPR1001MB2351.namprd10.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 23 Aug 2022 18:50:34.5149
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 48e842ca-fbd8-4633-a79d-0c955a7d3aae
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: pmzWjP9pT2hGDPrv6OEx4PeXQt1fMLiD1kicxYal8x68Vp75HZSw2rJ93512n9kNtUqxD5gxrrTU7Rkhvenz0IRr2SQir40UEBa4ZHfBRbA=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BY5PR10MB4228
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220823_114905_294766_DD653FA2 
-X-CRM114-Status: GOOD (  18.84  )
+X-CRM114-CacheID: sfid-20220823_115040_857384_AF21DBEF 
+X-CRM114-Status: GOOD (  30.28  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -57,61 +139,141 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Am Dienstag, 23. August 2022, 16:47:28 CEST schrieb Peter Geis:
-> The otg sync state patch reuses the ret variable, but fails to set it to
-> zero after use. This leads to a situation when the otg port is in
-> peripheral mode where the otg phy aborts halfway through setup.  It also
-> fails to account for a failure to register the extcon notifier. Fix this
-> by using our own variable and skipping otg sync in case of failure.
+Hi Krzysztof,
+
+Thanks for the feedback! I'll make these changes for v2. I'm out next
+week and don't want to send-and-run, so it might be the following week
+when I get around to it.
+
+On Tue, Aug 23, 2022 at 11:36:29AM +0300, Krzysztof Kozlowski wrote:
+> On 23/08/2022 09:00, Colin Foster wrote:
+> > Convert the phy-ocelot-serdes device tree binding to the new YAML format.
+> > 
+> > Additionally, add the file to MAINTAINERS since the original file didn't
+> > exist.
+> > 
+> > Signed-off-by: Colin Foster <colin.foster@in-advantage.com>
+> > ---
+> >  .../bindings/phy/phy-ocelot-serdes.txt        | 43 -------------
+> >  .../bindings/phy/phy-ocelot-serdes.yaml       | 61 +++++++++++++++++++
+> >  MAINTAINERS                                   |  1 +
+> >  3 files changed, 62 insertions(+), 43 deletions(-)
+> >  delete mode 100644 Documentation/devicetree/bindings/phy/phy-ocelot-serdes.txt
+> >  create mode 100644 Documentation/devicetree/bindings/phy/phy-ocelot-serdes.yaml
 > 
-> Fixes: 8dc60f8da22f ("phy: rockchip-inno-usb2: Sync initial otg state")
+> Filename based on compatible, so
+> mscc,vsc7514-serdes.yaml
 > 
-> Reported-by: Markus Reichl <m.reichl@fivetechno.de>
-> Reported-by: Michael Riesch <michael.riesch@wolfvision.net>
-> Signed-off-by: Peter Geis <pgwipeout@gmail.com>
-> Tested-by: Michael Riesch <michael.riesch@wolfvision.net>
-> Tested-by: Markus Reichl <m.reichl@fivetechno.de>
-
-Reviewed-by: Heiko Stuebner <heiko@sntech.de>
-Tested-by: Heiko Stuebner <heiko@sntech.de>
-
-> ---
->  drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 7 ++++---
->  1 file changed, 4 insertions(+), 3 deletions(-)
+> > 
 > 
-> diff --git a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-> index 0b1e9337ee8e..d579a22c61df 100644
-> --- a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-> +++ b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-> @@ -1124,7 +1124,7 @@ static int rockchip_usb2phy_otg_port_init(struct rockchip_usb2phy *rphy,
->  					  struct rockchip_usb2phy_port *rport,
->  					  struct device_node *child_np)
->  {
-> -	int ret;
-> +	int ret, id;
->  
->  	rport->port_id = USB2PHY_PORT_OTG;
->  	rport->port_cfg = &rphy->phy_cfg->port_cfgs[USB2PHY_PORT_OTG];
-> @@ -1164,11 +1164,12 @@ static int rockchip_usb2phy_otg_port_init(struct rockchip_usb2phy *rphy,
->  					EXTCON_USB_HOST, &rport->event_nb);
->  		if (ret)
->  			dev_err(rphy->dev, "register USB HOST notifier failed\n");
-> +			goto out;
->  
->  		if (!of_property_read_bool(rphy->dev->of_node, "extcon")) {
->  			/* do initial sync of usb state */
-> -			ret = property_enabled(rphy->grf, &rport->port_cfg->utmi_id);
-> -			extcon_set_state_sync(rphy->edev, EXTCON_USB_HOST, !ret);
-> +			id = property_enabled(rphy->grf, &rport->port_cfg->utmi_id);
-> +			extcon_set_state_sync(rphy->edev, EXTCON_USB_HOST, !id);
->  		}
->  	}
->  
 > 
-
-
-
-
+> > diff --git a/Documentation/devicetree/bindings/phy/phy-ocelot-serdes.yaml b/Documentation/devicetree/bindings/phy/phy-ocelot-serdes.yaml
+> > new file mode 100644
+> > index 000000000000..0666974d886a
+> > --- /dev/null
+> > +++ b/Documentation/devicetree/bindings/phy/phy-ocelot-serdes.yaml
+> > @@ -0,0 +1,61 @@
+> > +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> > +%YAML 1.2
+> > +---
+> > +$id: http://devicetree.org/schemas/phy/phy-ocelot-serdes.yaml#
+> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> > +
+> > +title: Microsemi Ocelot SerDes muxing driver
+> 
+> s/driver//
+> 
+> Bindings are for hardware, not for Linux drivers.
+> 
+> > +
+> > +maintainers:
+> > +  - Alexandre Belloni <alexandre.belloni@bootlin.com>
+> > +  - UNGLinuxDriver@microchip.com
+> > +
+> > +description: |
+> > +  On Microsemi Ocelot, there is a handful of registers in HSIO address
+> > +  space for setting up the SerDes to switch port muxing.
+> > +
+> > +  A SerDes X can be "muxed" to work with switch port Y or Z for example.
+> > +  One specific SerDes can also be used as a PCIe interface.
+> > +
+> > +  Hence, a SerDes represents an interface, be it an Ethernet or a PCIe one.
+> > +
+> > +  There are two kinds of SerDes: SERDES1G supports 10/100Mbps in
+> > +  half/full-duplex and 1000Mbps in full-duplex mode while SERDES6G supports
+> > +  10/100Mbps in half/full-duplex and 1000/2500Mbps in full-duplex mode.
+> > +
+> > +  Also, SERDES6G number (aka "macro") 0 is the only interface supporting
+> > +  QSGMII.
+> > +
+> > +  This is a child of the HSIO syscon ("mscc,ocelot-hsio", see
+> > +  Documentation/devicetree/bindings/mips/mscc.txt) on the Microsemi Ocelot.
+> > +
+> > +properties:
+> > +  compatible:
+> > +    enum:
+> > +      - mscc,vsc7514-serdes
+> 
+> Missing blank line
+> 
+> > +  "#phy-cells":
+> > +    const: 2
+> > +    description: |
+> > +      from the generic phy bindings, must be 2. 
+> 
+> Skip first sentence, it's obvious.
+> 
+> The first number
+> > +      defines the input port to use for a given SerDes macro. The
+> > +      second defines the macro to use. They are defined in
+> > +      dt-bindings/phy/phy-ocelot-serdes.h
+> > +
+> > +required:
+> > +  - compatible
+> > +  - "#phy-cells"
+> 
+> Missing additionalProperties: false
+> 
+> Base your YAML on example-schema.
+> 
+> > +
+> > +examlpes:
+> 
+> Typo.
+> 
+> 
+> > +  - |
+> > +    serdes: serdes {
+> > +      compatible = "mscc,vsc7514-serdes";
+> > +      #phy-cells = <2>;
+> > +    };
+> > +
+> > +    ethernet {
+> > +      port1 {
+> > +        phy-handle = <&phy_foo>;
+> > +        /* Link SERDES1G_5 to port1 */
+> > +        phys = <&serdes 1 SERDES1G_5>;
+> > +      };
+> > +    };
+> 
+> Skip consumer examples in provider bindings. They're obvious.
+> 
+> > diff --git a/MAINTAINERS b/MAINTAINERS
+> > index 714fd8b45e5a..10dd3c6ad6ad 100644
+> > --- a/MAINTAINERS
+> > +++ b/MAINTAINERS
+> > @@ -13481,6 +13481,7 @@ M:	UNGLinuxDriver@microchip.com
+> >  L:	linux-mips@vger.kernel.org
+> >  S:	Supported
+> >  F:	Documentation/devicetree/bindings/mips/mscc.txt
+> > +F:	Documentation/devicetree/bindings/phy/phy-ocelot-serdes.yaml
+> >  F:	Documentation/devicetree/bindings/pinctrl/mscc,ocelot-pinctrl.yaml
+> >  F:	Documentation/devicetree/bindings/power/reset/ocelot-reset.txt
+> >  F:	arch/mips/boot/dts/mscc/
+> 
+> 
+> Best regards,
+> Krzysztof
 
 -- 
 linux-phy mailing list
