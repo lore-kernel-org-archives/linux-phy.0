@@ -4,73 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 19F11C32793
-	for <linux-phy@archiver.kernel.org>; Wed, 24 Aug 2022 10:17:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 26191C32793
+	for <linux-phy@archiver.kernel.org>; Wed, 24 Aug 2022 12:25:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JBft5nfmL5QDxujiA7bnhey5ppN6A47RH3lMaivG65A=; b=lDDF79KJ9h8yo/
-	daUW4yj+1WgeRUsSEhxAfZaSrAQkQkwAah+Mj00ZtMC5siXIHjTEy4aL9kqgclJrvNxU1JIqofkw7
-	ttAcs5dtgqTQnX84YAqRiYZZCtBM4XDnd65TFdQ1Bp3kN6KqrJUBn8qMLH8/1X+uN7s2ojiUL8lhE
-	T1/YKn+prIWh6IEMKwCVLCxGmR5pKy7h6XsL1h0xWuiA1DFHm4pA5qHNcmAIxPJhRMC4UKF0VYEQd
-	L5MkpFYuRccmi9cvF2MmI6/N3e8EYAq7F81i/SQRwE0hNxPCzcI3eRTlLYJEYZW3UjKBAJ70JBtj/
-	DE1BM23cbo9LUu12D+vg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=2XKbEY2m+xdoOF5EKa/Gyu0fKG3Zir36kZp5LpANciI=; b=M2/UxqZn4LJvVn
+	hStm0KRVuUGvAXNl2U5SulWVMzBWD4bRCc4s6HXH9NIgI5GEPvlz81rkSUEppMMXUXFq1yjl2ywHS
+	orVB15gMLcEbsZKIt5E5Yo4MpT03b80ux3+Qz8K3w3m8a3ivylq+c19/9TcXFfWCDB3owDXudIHsu
+	9t5U1QwW0bTY6U6vF1z7SXixqRIb/BapITqb7bKCXZdEbmmkE/hpBZR6CpVyKaqyc4u5lBj2+nquT
+	WhuRmtnje6Ef2C0JxHThH5wqMFhwNwI647Cq8w+eG0fn1TZBoYx2bhi8k+LDYr2L8oyZKCkMskB6Z
+	u3TDyMmfR/7molSpJmJg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oQnSR-00C09q-A2; Wed, 24 Aug 2022 10:17:59 +0000
-Received: from mail-wr1-x42b.google.com ([2a00:1450:4864:20::42b])
+	id 1oQpSH-00CnpG-JM; Wed, 24 Aug 2022 12:25:57 +0000
+Received: from mail-qk1-x735.google.com ([2607:f8b0:4864:20::735])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oQnSO-00C07i-Na; Wed, 24 Aug 2022 10:17:58 +0000
-Received: by mail-wr1-x42b.google.com with SMTP id z16so1365378wrh.10;
-        Wed, 24 Aug 2022 03:17:54 -0700 (PDT)
+	id 1oQpSE-00CnnP-Kc; Wed, 24 Aug 2022 12:25:56 +0000
+Received: by mail-qk1-x735.google.com with SMTP id m5so12487971qkk.1;
+        Wed, 24 Aug 2022 05:25:52 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=gmail.com; s=20210112;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc;
-        bh=2rEDI8nneWR8uBhC0k6la2EvHD4yLzs+a+6fUoYoKU4=;
-        b=VFeU530PAmK3n65fcXn1z65tSUzwYLn85+ojxSycSOPVQcheykt616CE28AJr0U3SN
-         WEwvG4O8Wn+wPOXom3oZdoxlCbYU0rvZSTXRgr8Xn9jVyIc4dbpJrVE9sn2c0xkg9yE4
-         m72FqQyOrhyqyoY4JiFaZOhyOJH095QKXbX/jwHZzpMMGl23vDec+NOLToJ5lkCCTcbQ
-         bxnb/saWP3f2H5q2mDOY6tovIJc4bFcZ/u4UvTf4DiCXiun4CiMT1fB5sEI1EJA/tHxQ
-         ZONjdcHmDa3AnyGz3zLzKDdBmv85QfIdlr9xdYrPKcWJs4/KcjrejIuyx+1R33YoBCYm
-         vAOA==
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc;
+        bh=9U7sd7xcwxQ9yB0a4u1XKB3ZhZTZ5GAHw7+laA2TH8E=;
+        b=LjZ/wqTVS/JtUiGast16cN6CBPLVniH3ADtIKMaZV3hsURfGFmIVil4M9bR1pUK1cP
+         5tryb/YT3bfxcJ0PBCLAPl3WwAh9VUvYho/AZKWRcrmZ3Y7xFCHaAajSpBgNH7ulvt94
+         wX5VFkW4VamGTzkPGKsRgQJ0yf5Kn8P1U5pZVDA2hT53DzSSoh1ublVCpKpmisncGAbc
+         nVsKvJjlU2KY485A5+04/lwhJuhe3GaqC3zNnhNQ9G3p2EZ2lICUJcSuZjQ3mk2wKHhb
+         UxhEJctSDH3OtYnt4itJaUvYQM08qJ8Z3WRIzNGDSC9ci6loz3ufJqV+oiTHY8e3CkI2
+         g11A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc;
-        bh=2rEDI8nneWR8uBhC0k6la2EvHD4yLzs+a+6fUoYoKU4=;
-        b=wEiShzAEfaRos//VUea+KvL/uOsYV1wftGjLt757pDnOvbMDkLVH03a5wxnIH7Qy98
-         eCTSElv6CanLEAE2ENvV9YFGoffVhFBfaEELWErrW/DPtxjEFjL2zxk2SE2fuzmZ/ycZ
-         BYmJLcKYt1SHuRo2CnYFGhHYM9B3fMm3cCicv6orOPFpFw0YOHJ3GRNu95O+gAP2jDuj
-         CZVKhxnJrh2o09pH3dI0JAEGtI/yNhGlM1Ta9ek9yxaC5nPprvi8a4lSfTQDJsvrjPy8
-         I66TQbelarvTHxu3KX2ZoW4NeVh+gz+8xMFuW9x5XjTEhOUlRw0by5gj8U+5BgDv7tOJ
-         h4fQ==
-X-Gm-Message-State: ACgBeo1H901NcAMkIX06Thd/6t0DC+JqYDf4k9YYoADu+Ts1+LZsb2sG
-	HNwSofaWlgip2XzqkiSzeBixrmBIYMi94M25bbc=
-X-Google-Smtp-Source: AA6agR7sQ+Joxq+aq8uIl+CNG/GIrqr+nGL3cJhEBxurQU45bDdJBx8cY5FhIPu5261Cv1lHhcYULOg7B0jFQMr9xIA=
-X-Received: by 2002:a5d:45c1:0:b0:225:2803:e791 with SMTP id
- b1-20020a5d45c1000000b002252803e791mr15643183wrs.539.1661336270818; Wed, 24
- Aug 2022 03:17:50 -0700 (PDT)
-MIME-Version: 1.0
-References: <20220823144728.47068-1-pgwipeout@gmail.com> <86198a8a-96d4-5856-bc2d-44bf352c82fe@wolfvision.net>
-In-Reply-To: <86198a8a-96d4-5856-bc2d-44bf352c82fe@wolfvision.net>
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc;
+        bh=9U7sd7xcwxQ9yB0a4u1XKB3ZhZTZ5GAHw7+laA2TH8E=;
+        b=ocdw0JDyOl1pKxvQeRfiMjDz4acUTDPQzjOMGwzl1A48nubU0+59DODt9jw4ugfqq9
+         qcF+nPB3B3ogm/TsNAJF9o1yNUajARihLsvXTx7Lv/PNf5sAA0rRl//8uL5oo5JXQLEl
+         nMUUzYGgEI2uZxELEhuPQAsO26gvUooOsb56O3XOu/DjYqsm0J/uY3wJVTAdT537yYs6
+         +j3blsqs5acyHIU5jNTu4CdVeqAdwoGiwv9toOaO3jtXlP6/Ce1MxxyQqjhDSk3zfvsB
+         tI+IXo6IHnfb+qdWanf2MrFWM2VN10yLC39uURgXqLr4jDVZHpiVE2s+E7L46tfcYCq6
+         HYpg==
+X-Gm-Message-State: ACgBeo1l9c2yxRT8qqEjpCTxgy8h88qYaWeJHiZ039g9e6Nw8KXv8P7v
+	keD25lVzYAaMYTHLsYv4tzVybslXjjxG/w==
+X-Google-Smtp-Source: AA6agR4Yz5+Wne0chNlUFuKSXicK3OSjoAb8O4xJVr0Zj7ULRZu0USsPGwNhON/AKZbWM9PE2KkVAg==
+X-Received: by 2002:ae9:e104:0:b0:6bb:fb42:1e93 with SMTP id g4-20020ae9e104000000b006bbfb421e93mr12431015qkm.693.1661343951372;
+        Wed, 24 Aug 2022 05:25:51 -0700 (PDT)
+Received: from master-x64.sparksnet ([2601:153:901:9131::10])
+        by smtp.gmail.com with ESMTPSA id x30-20020a05620a0b5e00b006b872b606b1sm14548248qkg.128.2022.08.24.05.25.50
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 24 Aug 2022 05:25:50 -0700 (PDT)
 From: Peter Geis <pgwipeout@gmail.com>
-Date: Wed, 24 Aug 2022 12:17:39 +0200
-Message-ID: <CAMdYzYopzOJ2RtWtYgP3G4ESVMFhCqU3fOQq_kCc1g51ZDZ=bA@mail.gmail.com>
-Subject: Re: [PATCH v2] phy: rockchip-inno-usb2: Return zero after otg sync
-To: Michael Riesch <michael.riesch@wolfvision.net>
-Cc: Heiko Stuebner <heiko@sntech.de>, Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, 
-	Samuel Holland <samuel@sholland.org>, Markus Reichl <m.reichl@fivetechno.de>, 
-	"open list:GENERIC PHY FRAMEWORK" <linux-phy@lists.infradead.org>, 
-	arm-mail-list <linux-arm-kernel@lists.infradead.org>, 
-	"open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>, 
-	Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
+To: Heiko Stuebner <heiko@sntech.de>,
+	Kishon Vijay Abraham I <kishon@ti.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Peter Geis <pgwipeout@gmail.com>,
+	Samuel Holland <samuel@sholland.org>
+Cc: Markus Reichl <m.reichl@fivetechno.de>,
+	Michael Riesch <michael.riesch@wolfvision.net>,
+	linux-phy@lists.infradead.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH v3] phy: rockchip-inno-usb2: Return zero after otg sync
+Date: Wed, 24 Aug 2022 08:25:43 -0400
+Message-Id: <20220824122543.174730-1-pgwipeout@gmail.com>
+X-Mailer: git-send-email 2.25.1
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220824_031756_790638_8EFE37FD 
-X-CRM114-Status: GOOD (  23.83  )
+X-CRM114-CacheID: sfid-20220824_052554_717953_9DD5BDD9 
+X-CRM114-Status: GOOD (  12.44  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,72 +93,64 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Aug 24, 2022 at 7:33 AM Michael Riesch
-<michael.riesch@wolfvision.net> wrote:
->
-> Hi Peter,
->
-> On 8/23/22 16:47, Peter Geis wrote:
-> > The otg sync state patch reuses the ret variable, but fails to set it to
-> > zero after use. This leads to a situation when the otg port is in
-> > peripheral mode where the otg phy aborts halfway through setup.  It also
-> > fails to account for a failure to register the extcon notifier. Fix this
-> > by using our own variable and skipping otg sync in case of failure.
-> >
-> > Fixes: 8dc60f8da22f ("phy: rockchip-inno-usb2: Sync initial otg state")
-> >
-> > Reported-by: Markus Reichl <m.reichl@fivetechno.de>
-> > Reported-by: Michael Riesch <michael.riesch@wolfvision.net>
-> > Signed-off-by: Peter Geis <pgwipeout@gmail.com>
-> > Tested-by: Michael Riesch <michael.riesch@wolfvision.net>
-> > Tested-by: Markus Reichl <m.reichl@fivetechno.de>
-> > ---
-> >  drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 7 ++++---
-> >  1 file changed, 4 insertions(+), 3 deletions(-)
-> >
-> > diff --git a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-> > index 0b1e9337ee8e..d579a22c61df 100644
-> > --- a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-> > +++ b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-> > @@ -1124,7 +1124,7 @@ static int rockchip_usb2phy_otg_port_init(struct rockchip_usb2phy *rphy,
-> >                                         struct rockchip_usb2phy_port *rport,
-> >                                         struct device_node *child_np)
-> >  {
-> > -     int ret;
-> > +     int ret, id;
-> >
-> >       rport->port_id = USB2PHY_PORT_OTG;
-> >       rport->port_cfg = &rphy->phy_cfg->port_cfgs[USB2PHY_PORT_OTG];
-> > @@ -1164,11 +1164,12 @@ static int rockchip_usb2phy_otg_port_init(struct rockchip_usb2phy *rphy,
-> >                                       EXTCON_USB_HOST, &rport->event_nb);
-> >               if (ret)
->
-> This needs braces, right?
->
->         if (ret) {
-> >                       dev_err(rphy->dev, "register USB HOST notifier failed\n");
-> > +                     goto out;
->
->         }
->
-> With the braces the patch works as expected.
+The otg sync state patch reuses the ret variable, but fails to set it to
+zero after use. This leads to a situation when the otg port is in
+peripheral mode where the otg phy aborts halfway through setup.  It also
+fails to account for a failure to register the extcon notifier. Fix this
+by using our own variable and skipping otg sync in case of failure.
 
-Yup, thanks for that. I hate working without access to my hardware.
+Fixes: 8dc60f8da22f ("phy: rockchip-inno-usb2: Sync initial otg state")
 
->
-> Thanks and best regards,
-> Michael
->
-> >
-> >               if (!of_property_read_bool(rphy->dev->of_node, "extcon")) {
-> >                       /* do initial sync of usb state */
-> > -                     ret = property_enabled(rphy->grf, &rport->port_cfg->utmi_id);
-> > -                     extcon_set_state_sync(rphy->edev, EXTCON_USB_HOST, !ret);
-> > +                     id = property_enabled(rphy->grf, &rport->port_cfg->utmi_id);
-> > +                     extcon_set_state_sync(rphy->edev, EXTCON_USB_HOST, !id);
-> >               }
-> >       }
-> >
+Reported-by: Markus Reichl <m.reichl@fivetechno.de>
+Reported-by: Michael Riesch <michael.riesch@wolfvision.net>
+Signed-off-by: Peter Geis <pgwipeout@gmail.com>
+Tested-by: Michael Riesch <michael.riesch@wolfvision.net>
+Tested-by: Markus Reichl <m.reichl@fivetechno.de>
+---
+Changelog:
+v3
+- add missing brackets around new goto
+v2
+- switch to using our own variable
+- add missing goto to skip sync in case of registration failure
+---
+ drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 9 ++++++---
+ 1 file changed, 6 insertions(+), 3 deletions(-)
+
+diff --git a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
+index 0b1e9337ee8e..27da5ba379c4 100644
+--- a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
++++ b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
+@@ -1124,7 +1124,7 @@ static int rockchip_usb2phy_otg_port_init(struct rockchip_usb2phy *rphy,
+ 					  struct rockchip_usb2phy_port *rport,
+ 					  struct device_node *child_np)
+ {
+-	int ret;
++	int ret, id;
+ 
+ 	rport->port_id = USB2PHY_PORT_OTG;
+ 	rport->port_cfg = &rphy->phy_cfg->port_cfgs[USB2PHY_PORT_OTG];
+@@ -1163,12 +1163,15 @@ static int rockchip_usb2phy_otg_port_init(struct rockchip_usb2phy *rphy,
+ 		ret = devm_extcon_register_notifier(rphy->dev, rphy->edev,
+ 					EXTCON_USB_HOST, &rport->event_nb);
+ 		if (ret)
++		{
+ 			dev_err(rphy->dev, "register USB HOST notifier failed\n");
++			goto out;
++		}
+ 
+ 		if (!of_property_read_bool(rphy->dev->of_node, "extcon")) {
+ 			/* do initial sync of usb state */
+-			ret = property_enabled(rphy->grf, &rport->port_cfg->utmi_id);
+-			extcon_set_state_sync(rphy->edev, EXTCON_USB_HOST, !ret);
++			id = property_enabled(rphy->grf, &rport->port_cfg->utmi_id);
++			extcon_set_state_sync(rphy->edev, EXTCON_USB_HOST, !id);
+ 		}
+ 	}
+ 
+-- 
+2.25.1
+
 
 -- 
 linux-phy mailing list
