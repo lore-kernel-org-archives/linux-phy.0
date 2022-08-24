@@ -4,95 +4,133 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 64410C32793
-	for <linux-phy@archiver.kernel.org>; Wed, 24 Aug 2022 01:08:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AEF04C32793
+	for <linux-phy@archiver.kernel.org>; Wed, 24 Aug 2022 05:33:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OYk+xN9son0rGCLUWmE2vxdCd4neyLSQFdb7rFcI5dE=; b=yfe0SeFZosyNIx
-	93gYIEmKkOVEoaGL/hPV3k01xUMK+dLZYgq1XA5H+0eab3jStjWAl9SdF0r9bkI2Kkbcsv8wTNiae
-	+e9JOfzoLH9r52zQTz1pBm1hj7uN2obnX2f6OTimvAW9bwQrJ27roRA5hAVgSp0G0UCeO4g0R5vyA
-	VEIzR7dZkaGPS1FxjE0Emb1AqclPd/KU/Kv1+6kz+CH/A4wsd2MLlvVCEdVkdXk5oqCkkr8/Dd0aU
-	YvbZIZGLXbrn7hFHo+qS61xE6ZGR/HC4cHczh277JgzVot67FrMB7B0jeI4cop7ZSy46SboXPiDr0
-	rRpNE5MLHb5fX3XguUtA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:
+	References:Cc:To:Subject:Date:Message-ID:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=h60qUzS/NYauQZ9yiKWM530jevbeE4kDcFmlU+/JON0=; b=Sh65J/GuVWi1iFp7rUnRhDQ8OH
+	Sa+fr5Skx9oEENeef/+xNQYitrCzbQuiiJIUXExSlrw1bI7W3QlZaAKb6Xk2sEbjWs28jQI/VSYdO
+	fQchgu2FcQQDpZu8yM/0EO3HC/R4bvlRJYyjGc0pMDfKdRx5om4hK75gm2oNt0rOJruNL48SkChWg
+	RMdRE/BK5IeTm9VlKovMeICX/oRd5xsIclxZ8sue3ZZ8u6hvknP/KiQcnEKvz/rUmSRuPq/TzSqRg
+	7nzvyccYAfo0iKRp9dZa2Vk+TYcLw9lB4CpAeBgJSh9iuYyKDzR4bDfa6gClA4EBTMa6QgPYSRopx
+	wn62Lp2w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oQesx-009iIx-Kh; Wed, 24 Aug 2022 01:08:47 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1oQj10-00AfGB-3x; Wed, 24 Aug 2022 05:33:22 +0000
+Received: from mail-db8eur05on2086.outbound.protection.outlook.com ([40.107.20.86] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oQesv-009iHg-64
-	for linux-phy@lists.infradead.org; Wed, 24 Aug 2022 01:08:46 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.5/8.17.1.5) with ESMTP id 27NNMrgB012726;
-	Wed, 24 Aug 2022 01:08:29 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
- mime-version : subject : to : cc : references : from : in-reply-to :
- content-type : content-transfer-encoding; s=qcppdkim1;
- bh=ju8dreiFKv/nF4Pg7D54M/P9AU5w7rPzGS86cxTfih8=;
- b=aEQSPedbk/cpZ2HypBdJ4M9AXlc/MITgp5nZfOxIHRKrjvwbpZqEwYIIElELUHDCETp9
- 6mUtcrJJp66hK3OdLaPXKissmS6V23b+viHRdZHrKmmF+FRf4ByYv+xPSdLZmiVEMiGo
- gjJX87xbE3pHsXwqq2njUjScNvtSLxSREsjmF9ZrgA+aEDPWI80TbpPzJlVjMbTNVVQG
- F+9BS9esPfK1ZPkPJ1F8MkeRpZ0OWLF2pp0kFSevHb/wRpgFz9/3PbYkqvMVSackiHQg
- w41BEj9nh3e2rFiVI8Y0KUMnfpKaq1w9m/ZnL8HYzPEeT49VvkocEAihnNTJ/VcsmCw8 9w== 
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3j52pk9ck8-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 24 Aug 2022 01:08:28 +0000
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 27O18SKM000468
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 24 Aug 2022 01:08:28 GMT
-Received: from [10.111.161.24] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.986.29; Tue, 23 Aug
- 2022 18:08:25 -0700
-Message-ID: <31faa17e-b521-9f83-2701-12bf8fd76e4b@quicinc.com>
-Date: Tue, 23 Aug 2022 18:08:23 -0700
-MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) Gecko/20100101
- Thunderbird/91.6.2
-Subject: Re: [PATCH v3 2/3] drm/msm/hdmi: make hdmi_phy_8996 OF clk provider
+	id 1oQj0x-00AfEs-5q; Wed, 24 Aug 2022 05:33:20 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=Ai4zb0CIE0iH9MvU3gQZ9hXSOdN69rDHoNtPbdNjegppUNLYmAuSvr2hvr/8hYP5Sr/S26Dl1TN1e/wJrY086L4q2Bd99ApGrLA3A3en76bo/DeeYf68hWjKzNpb+/fFBIuAW1pbwU+lILnZL2DYBqsbyDKOjf7ruTeLjzUccYmBYPHQRbGXdtTSAmbKwHw+BdBsZLx64XHftXDHqtrCB6YCsdIUGESEQjO09qyXvKCfQEJSf3ZBjIOQWNpCVHUfws4Rt4ZbhqquegmGa/u+aCoiClk6bbX1a1+0nQqR3kF8cE8F398l3+c0Nz8D27jAA6R8wQABdjBvIIzGG+6j8A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=HCi5KwrZ3sNC8e2iARBN63lWxqe+kjMkg9Jd3/8tfCE=;
+ b=aBQcygmxSnk5WRtxbBGuBIv61NESpzDzanO2Buv3gMncJ6BEyOecemVWgezukxR8K0lu5OvpzrGUXTSKsb/7WVtNybMF1QyF8tBDqMAIiADZO2glNIMNjvmkfpCQMrLwiQ+VhXe/9EKRS2ya2AbiG54e7mx7wenYK2WmB1tnFn2WI3L0hWpQhCq5aSVpgmgHuQDOyL9yy/3CxpOnJ2qEPq1csTOUHB1gRq+/K5tcTQ0fFzwYUxEhI99u7fbdibC8yGQ1Dwm9QE7xv8wOeqrkKHHfJXDLgHmPLtd1MLfRWlsQDKhpVzx3GdpEf/ftMxCegcAvah3rkjEbuzaYtVXeoA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=wolfvision.net; dmarc=pass action=none
+ header.from=wolfvision.net; dkim=pass header.d=wolfvision.net; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=wolfvision.net;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=HCi5KwrZ3sNC8e2iARBN63lWxqe+kjMkg9Jd3/8tfCE=;
+ b=MxWNUOo1qmm4Z7KqyCvj97yvUK+bmQf/sUpvdcLhaFnl+4KP0+ShzORM+TYd6FIMLHo9125lJnF8NEofbAdWfJHfI8vDNawLLml8nNukxwPAnq9JadHhF2wDOYY0bYoZ+5V95X+AEXqbexy41s8St7QAPqduadU1GhcNU+GsKHs=
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=wolfvision.net;
+Received: from AM4PR0802MB2131.eurprd08.prod.outlook.com
+ (2603:10a6:200:5c::22) by VI1PR0801MB1711.eurprd08.prod.outlook.com
+ (2603:10a6:800:4e::8) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5566.14; Wed, 24 Aug
+ 2022 05:33:13 +0000
+Received: from AM4PR0802MB2131.eurprd08.prod.outlook.com
+ ([fe80::2c84:f6b5:8727:b073]) by AM4PR0802MB2131.eurprd08.prod.outlook.com
+ ([fe80::2c84:f6b5:8727:b073%11]) with mapi id 15.20.5546.024; Wed, 24 Aug
+ 2022 05:33:13 +0000
+Message-ID: <86198a8a-96d4-5856-bc2d-44bf352c82fe@wolfvision.net>
+Date: Wed, 24 Aug 2022 07:33:10 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
+ Thunderbird/91.12.0
+Subject: Re: [PATCH v2] phy: rockchip-inno-usb2: Return zero after otg sync
 Content-Language: en-US
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
-        Andy Gross
-	<agross@kernel.org>,
-        Bjorn Andersson <bjorn.andersson@linaro.org>,
-        Rob Clark
-	<robdclark@gmail.com>, Sean Paul <sean@poorly.run>,
-        Rob Herring
-	<robh+dt@kernel.org>,
-        Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
-CC: Stephen Boyd <swboyd@chromium.org>, David Airlie <airlied@linux.ie>,
-        Daniel Vetter <daniel@ffwll.ch>, <linux-arm-msm@vger.kernel.org>,
-        <devicetree@vger.kernel.org>, <dri-devel@lists.freedesktop.org>,
-        <freedreno@lists.freedesktop.org>,
-        Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
-        <linux-phy@lists.infradead.org>
-References: <20220704161148.814510-1-dmitry.baryshkov@linaro.org>
- <20220704161148.814510-3-dmitry.baryshkov@linaro.org>
-From: Abhinav Kumar <quic_abhinavk@quicinc.com>
-In-Reply-To: <20220704161148.814510-3-dmitry.baryshkov@linaro.org>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: VdkGr2Ow7ViAMVnUT2LLdGJVNYnO4IOO
-X-Proofpoint-ORIG-GUID: VdkGr2Ow7ViAMVnUT2LLdGJVNYnO4IOO
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.205,Aquarius:18.0.895,Hydra:6.0.517,FMLib:17.11.122.1
- definitions=2022-08-23_10,2022-08-22_02,2022-06-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1011
- lowpriorityscore=0 adultscore=0 priorityscore=1501 malwarescore=0
- bulkscore=0 phishscore=0 impostorscore=0 mlxlogscore=999 spamscore=0
- suspectscore=0 mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2207270000 definitions=main-2208240001
+To: Peter Geis <pgwipeout@gmail.com>, Heiko Stuebner <heiko@sntech.de>,
+ Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Samuel Holland <samuel@sholland.org>
+Cc: Markus Reichl <m.reichl@fivetechno.de>, linux-phy@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+References: <20220823144728.47068-1-pgwipeout@gmail.com>
+From: Michael Riesch <michael.riesch@wolfvision.net>
+In-Reply-To: <20220823144728.47068-1-pgwipeout@gmail.com>
+X-ClientProxiedBy: ZR0P278CA0067.CHEP278.PROD.OUTLOOK.COM
+ (2603:10a6:910:21::18) To AM4PR0802MB2131.eurprd08.prod.outlook.com
+ (2603:10a6:200:5c::22)
+MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: f58654e8-5a52-4c3f-584f-08da85922354
+X-MS-TrafficTypeDiagnostic: VI1PR0801MB1711:EE_
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: 	9bveGBtZeMJwdwLS1oEJV1Ir9N7+wOrhtSijw0N8dcBuwr2u0/Es7VX+I+SU45GMn3lrMZIwnfMx3oIwzKNzlYh5Q474qqHuStvSQ5v7XQM2NT/1cLr4BbHeQrJc2H5HJ+Pa+uRAoMS5F7Ej0AS+5QvvGYJ/pmRGmJVGNTf5peDi9LZ52MzEOfCrur5ThrbIiEGOAQmCyQ9iHmaMUcUiYGiAnmQkzTpU+OkaEYpsBZ+aXFvauOj5Q7pS4Yg1S4lFWk3m7Z2fkcbJCulG0gJI6FM59g3X8FoVIcou+yCTZYBWviDrIhJAU3Zqm+kXR9RG6IjkWSV05snVVAdMDK9okBxNb50nSw13Zb5VPVWdb1kYjpik7q4V3oEdEKcn0epCvhZ1A0Bt7T0XDtnZFk9aSlH47qMH61l3UQpp0vM20NMA8qejOOILZ8oMjcClm88Km6kuc00FCjcjHFpLaPTIWbwC3p44/AZKAh6P0GFIV+/dkiMz+jF677sWmthoKL8/bM0DuoHo95Y2qDyEii+ji7qnw/z3io0brW9nc3p26PxzEp82+MOAPTksvo0rUBF4bCuv54cMHYWMgHNAT3TjiLJouGY67i8kniN7+nKqh8cg2HBUCUvrAFedCgF9qCsSsduFMxt1wsJxXJU1WZSLdUIRrARlZfTk7jo2S8RgBtmOeAjUye1/B2KJa+D7T9AyokbwUx0iBjKFlWOS4OMGTxE0wMknBy9KNn8ryeS6AZ1G89wUDR0ib63uAoKVWbhyT66gD/buNan8UZK7ATP/b2Md3VBOoB2AVJAJvpdOmVk=
+X-Forefront-Antispam-Report: 	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM4PR0802MB2131.eurprd08.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230016)(4636009)(396003)(366004)(39840400004)(346002)(136003)(376002)(66476007)(66946007)(4326008)(8676002)(66556008)(316002)(6486002)(83380400001)(31696002)(86362001)(6512007)(8936002)(41300700001)(7416002)(44832011)(5660300002)(6506007)(38100700002)(478600001)(52116002)(53546011)(2906002)(110136005)(2616005)(36756003)(186003)(31686004)(45980500001)(43740500002);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: 	=?utf-8?B?WlRqcVQwWHJrcmRkSWExQWFvb0U3WlpsN3RScGtSQkZ1YlpJWEhUM1FGeDVD?=
+ =?utf-8?B?eUVSb2xkVjZKZGRYVXhXNW15TG1OUStmNmhEZXJscWN0TS9LMFlkYkNnRGYw?=
+ =?utf-8?B?eHRaL0xUUFJFenBrOTMxOWVTaXJhbTZoV09Nd09VNktWM1IwOVN5Sm9vUWor?=
+ =?utf-8?B?bnF6Z05xejA2TFJ4cFkvZXJmMEpiOUhOSnhRQXlhaVFLMGxnSWU1dUpoUDlZ?=
+ =?utf-8?B?WTh5eitSV1VJbGE5OE9uQWtLMWZqZGE5eTVvZ0pXd1dBQTdkd1hITUdWK2w2?=
+ =?utf-8?B?RWhjSE5yUGVucHo0ZThhaG45UjZGdHE5RSsxY0h1RnhxekhIOXBUN3l1OTB4?=
+ =?utf-8?B?RFNVbEw2UzZ1RDlZdmZpSjFOSitvNGdZbSsrRmlSRzMwdWc3M1JWd2pqOWFU?=
+ =?utf-8?B?dWtLR2pQZ3RaM092NU95UFUzS2loWmNhU1BWaFM2S24rNXNMa1B2K0VwWDhU?=
+ =?utf-8?B?Zk9jT2oxUXFGWDljVWVSVnlsMVBqYlNCckJIdGIyS1RucXBQZDdUc3phaUli?=
+ =?utf-8?B?aUQrQWdWaXBIQzdCTm1iOWd6T21CMkJjbXRROUx1RmV3UGpvRXJzSmdPek9D?=
+ =?utf-8?B?NTB0S3orZTI4eWZ0UVZCZXo2NXVRMXhHckJyUUkxbm9hdWx3RHM5T012Y2Rn?=
+ =?utf-8?B?SlF5NThqdDBhOTdsOTRZQnF4SlROYUU0TzBBclFkc0ZJelhKcU9OSS8yNjk4?=
+ =?utf-8?B?SjFHei9vMFM5SmVvT0xEWG50Z29NUTFsczJ6STlDZ2U5eGJDQ29GNW42MEJF?=
+ =?utf-8?B?Z0xtajVlS0MrRGQwRnlaQ0JSRVlsQkpVRDZMRVVMSUowNE1CcXo3Y0RocDBn?=
+ =?utf-8?B?bzBOcURPSGJNc1l4M3hYU2FjNDlaSnhCK3lpdnR3RDFJcFJHQi9oSHd0Z3RJ?=
+ =?utf-8?B?dllybnlqT3ArOHFSeTNQVVcxN3RpU3NkWDg1Q2lSZFBqKzFlQ0ZxUk40MGtp?=
+ =?utf-8?B?clp2NW0yZ04wUXd2SHVFaXdFVkNtY1hTNERLVUtUdnVyTkFpSmdoT0YyNEx2?=
+ =?utf-8?B?aytpdXdjRC93VVo4bWNodkFiS0JWU3VpNCtHemo1L3llT2UrL1JuQXY2cVIz?=
+ =?utf-8?B?bU9tL1VxRzJxQU9JNHI5MEpKUXhveE1oeXJrQ0lJTDNJWVRML1V5aXhId25S?=
+ =?utf-8?B?WnVkdXZFamhkbzRiUWtPOUxYQ2tuTUxWcFp3NUpSdVdudnVtQVB1THV2dzlF?=
+ =?utf-8?B?bFhMMFlKYldoMWFabytNcEwvMzJlS3M1TWtOUFZkTUs0RUZFTktnYmlLaFE1?=
+ =?utf-8?B?dWhDVENHTk5IWHVIS1Yvamd1WjBwak8vWmFsbkt4VUJWUXpIeFB4Z1FueHJw?=
+ =?utf-8?B?UDgvZ2hEcTBIMzFCVkVoVTZIb3JkOG02V1lSR2F3RXBtRmZkSVIvb3E0OGx1?=
+ =?utf-8?B?NmtHSDk5WWRsb0ZNU1hZQU5paysvdzBrdFhGVnpJaHg4NDdiYjhnb0RrSTFk?=
+ =?utf-8?B?Yk9OZlNpelEwUTVBRDEwcXZNU3d5UnVLMzUvOUdpa2lPanFpQVVPSUdsSFcy?=
+ =?utf-8?B?cW1MNzFzRnA4ZDNmRFFVN3cwUVNmNDJYYUxWd2IwTjR5eWRaSWd2VXlnYXNP?=
+ =?utf-8?B?VXBoQnNTWS9jREsrWVBvcUV5UGpUT08zbkhSUTZkbUdKeG9PSnRKbTQzMmwv?=
+ =?utf-8?B?aGhOdTN2a2dLWWtwN0NZQk5hbDVzcmUvMzQ5dEVVNFJsbm9iVUxkOE5jdmFH?=
+ =?utf-8?B?RzZSVkhhQ3lFVk92cTJPSDlIU3NFcXB5ejgvcjNQbzl2V2hhVHU0UmpHYTNs?=
+ =?utf-8?B?a2pna0R0T09QV0lBbHpuUzJaMVFxUHBvbzQrTDBhU2lYVkgvcmxMMTVnbktF?=
+ =?utf-8?B?NTJicUZ0RTB6Qnk5b0VyNE1yTEsvTTFsSFBaMzZUNDlSL3o1cFR2d2pCUllH?=
+ =?utf-8?B?TmZ0a1YzLzU0TzdDNWVYL3ViQnFpMlpqV1FqY0xBNTluSTAvQndZUTZxTzR6?=
+ =?utf-8?B?TWszdTFLN3Nzc1ZUemdYODRYbWR6TXVKNnhsQ1AvNWIrTVg3Y2NHaWJESEhW?=
+ =?utf-8?B?Z2o5UWE4NUJVVjFlVmNuQ1ZQYm1xY09KTHdxUWFMVCtxRmxwSDNIanRDSVJa?=
+ =?utf-8?B?N2J5OWxFQXo4Z3lpeVNOM0tBc2RWazd6cGlTeldYdVR5ZWJWV1EzR3M1dVoz?=
+ =?utf-8?B?VHBoWVdBR2QvMXdYcEdkcElxbFE3bnN6RHRFTFpKVUVZQXorSTlZaU5PbHNy?=
+ =?utf-8?B?SklDZDlnQ04raExMTXVWSEdIbWJ1OWhZMzdwN3pOOE5tWUtIT3ZRdmY0WlVq?=
+ =?utf-8?B?SVF3eGp6b0xwb1ptZ3l5b0ZaM3pnPT0=?=
+X-OriginatorOrg: wolfvision.net
+X-MS-Exchange-CrossTenant-Network-Message-Id: f58654e8-5a52-4c3f-584f-08da85922354
+X-MS-Exchange-CrossTenant-AuthSource: AM4PR0802MB2131.eurprd08.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 24 Aug 2022 05:33:13.2514
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: e94ec9da-9183-471e-83b3-51baa8eb804f
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: 4XkpVmSZ1joAUBzK9LkkVoNwBhz59k6ltFs4HAX5ZL/zyODQT/qhMQrbqXbbDQby4bcKj8nP0TbuzUCzSLSgSbWaldCSl7Zr3A39NBi/QIs=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR0801MB1711
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220823_180845_288694_ACA6E713 
-X-CRM114-Status: GOOD (  24.38  )
+X-CRM114-CacheID: sfid-20220823_223319_507855_0746457A 
+X-CRM114-Status: GOOD (  18.73  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,81 +142,71 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Hi Peter,
 
-
-On 7/4/2022 9:11 AM, Dmitry Baryshkov wrote:
-> On MSM8996 the HDMI PHY provides the PLL clock to the MMCC. As we are
-> preparing to convert the MSM8996 to use DT clocks properties (rather
-> than global clock names), register the OF clock provider.
+On 8/23/22 16:47, Peter Geis wrote:
+> The otg sync state patch reuses the ret variable, but fails to set it to
+> zero after use. This leads to a situation when the otg port is in
+> peripheral mode where the otg phy aborts halfway through setup.  It also
+> fails to account for a failure to register the extcon notifier. Fix this
+> by using our own variable and skipping otg sync in case of failure.
 > 
-> While we are at it, also change the driver to use clk_parent_data rather
-> parent_names to setup a link to the XO clock.
+> Fixes: 8dc60f8da22f ("phy: rockchip-inno-usb2: Sync initial otg state")
 > 
-> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Reviewed-by: Abhinav Kumar <quic_abhinavk@quicinc.com>
+> Reported-by: Markus Reichl <m.reichl@fivetechno.de>
+> Reported-by: Michael Riesch <michael.riesch@wolfvision.net>
+> Signed-off-by: Peter Geis <pgwipeout@gmail.com>
+> Tested-by: Michael Riesch <michael.riesch@wolfvision.net>
+> Tested-by: Markus Reichl <m.reichl@fivetechno.de>
 > ---
->   drivers/gpu/drm/msm/hdmi/hdmi_phy_8996.c | 25 +++++++++++++-----------
->   1 file changed, 14 insertions(+), 11 deletions(-)
+>  drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 7 ++++---
+>  1 file changed, 4 insertions(+), 3 deletions(-)
 > 
-> diff --git a/drivers/gpu/drm/msm/hdmi/hdmi_phy_8996.c b/drivers/gpu/drm/msm/hdmi/hdmi_phy_8996.c
-> index b06d9d25a189..4dd055416620 100644
-> --- a/drivers/gpu/drm/msm/hdmi/hdmi_phy_8996.c
-> +++ b/drivers/gpu/drm/msm/hdmi/hdmi_phy_8996.c
-> @@ -691,15 +691,13 @@ static const struct clk_ops hdmi_8996_pll_ops = {
->   	.is_enabled = hdmi_8996_pll_is_enabled,
->   };
->   
-> -static const char * const hdmi_pll_parents[] = {
-> -	"xo",
-> -};
-> -
->   static const struct clk_init_data pll_init = {
->   	.name = "hdmipll",
->   	.ops = &hdmi_8996_pll_ops,
-> -	.parent_names = hdmi_pll_parents,
-> -	.num_parents = ARRAY_SIZE(hdmi_pll_parents),
-> +	.parent_data = (const struct clk_parent_data[]){
-> +		{ .fw_name = "xo", .name = "xo_board" },
-> +	},
-> +	.num_parents = 1,
->   	.flags = CLK_IGNORE_UNUSED,
->   };
->   
-> @@ -707,8 +705,7 @@ int msm_hdmi_pll_8996_init(struct platform_device *pdev)
->   {
->   	struct device *dev = &pdev->dev;
->   	struct hdmi_pll_8996 *pll;
-> -	struct clk *clk;
-> -	int i;
-> +	int i, ret;
->   
->   	pll = devm_kzalloc(dev, sizeof(*pll), GFP_KERNEL);
->   	if (!pll)
-> @@ -735,10 +732,16 @@ int msm_hdmi_pll_8996_init(struct platform_device *pdev)
->   	}
->   	pll->clk_hw.init = &pll_init;
->   
-> -	clk = devm_clk_register(dev, &pll->clk_hw);
-> -	if (IS_ERR(clk)) {
-> +	ret = devm_clk_hw_register(dev, &pll->clk_hw);
-> +	if (ret) {
->   		DRM_DEV_ERROR(dev, "failed to register pll clock\n");
-> -		return -EINVAL;
-> +		return ret;
-> +	}
-> +
-> +	ret = devm_of_clk_add_hw_provider(dev, of_clk_hw_simple_get, &pll->clk_hw);
-> +	if (ret) {
-> +		DRM_DEV_ERROR(dev, "%s: failed to register clk provider: %d\n", __func__, ret);
-> +		return ret;
->   	}
->   
->   	return 0;
+> diff --git a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
+> index 0b1e9337ee8e..d579a22c61df 100644
+> --- a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
+> +++ b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
+> @@ -1124,7 +1124,7 @@ static int rockchip_usb2phy_otg_port_init(struct rockchip_usb2phy *rphy,
+>  					  struct rockchip_usb2phy_port *rport,
+>  					  struct device_node *child_np)
+>  {
+> -	int ret;
+> +	int ret, id;
+>  
+>  	rport->port_id = USB2PHY_PORT_OTG;
+>  	rport->port_cfg = &rphy->phy_cfg->port_cfgs[USB2PHY_PORT_OTG];
+> @@ -1164,11 +1164,12 @@ static int rockchip_usb2phy_otg_port_init(struct rockchip_usb2phy *rphy,
+>  					EXTCON_USB_HOST, &rport->event_nb);
+>  		if (ret)
+
+This needs braces, right?
+
+	if (ret) {
+>  			dev_err(rphy->dev, "register USB HOST notifier failed\n");
+> +			goto out;
+
+	}
+
+With the braces the patch works as expected.
+
+Thanks and best regards,
+Michael
+
+>  
+>  		if (!of_property_read_bool(rphy->dev->of_node, "extcon")) {
+>  			/* do initial sync of usb state */
+> -			ret = property_enabled(rphy->grf, &rport->port_cfg->utmi_id);
+> -			extcon_set_state_sync(rphy->edev, EXTCON_USB_HOST, !ret);
+> +			id = property_enabled(rphy->grf, &rport->port_cfg->utmi_id);
+> +			extcon_set_state_sync(rphy->edev, EXTCON_USB_HOST, !id);
+>  		}
+>  	}
+>  
 
 -- 
 linux-phy mailing list
