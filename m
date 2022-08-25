@@ -4,42 +4,42 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3A608ECAA27
-	for <linux-phy@archiver.kernel.org>; Thu, 25 Aug 2022 19:39:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 49953ECAA27
+	for <linux-phy@archiver.kernel.org>; Thu, 25 Aug 2022 19:39:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LppaaSdyKyNvKLQMbGwYMRysENrIOyg6OAio0r7UesA=; b=o3JhMMUXrEn78s
-	aRMoqYA/OcAFEZqbfUYnintdF2/pEKHkH8k6Zf1GvmhNUg4CHhgHh9yHzxaspq6b2cdHiCHaOvULd
-	TXWJwQK8hIXIv43jCm5RayybR/SQhuRotAhI9y9KLgEjtUi58oSV7PpXEythdLym/Ekn4YMJNsgLp
-	Lj4O4eAsxqLuizsRbcAMWmrPTI9V7MMcLvCScyYBqCWuyWhRrssuaieOyYNfD1QmZIrTT7mk9vCGA
-	b6CpwTNzQIq/aj7J9eCkK7f9esvjIeCpPmSOEzsJELxypzCKVEIAW92OkZfZirx0efqu6BZzBn2Nk
-	J3BZ4VioDScCvE1ClR0w==;
+	List-Owner; bh=wyDWDU91P5qrYfqsavC/hF7FswH15O+syjo1D6FgEnw=; b=Ecvyr+6gpn00XV
+	Yy9r0hrsdh8KaqduWl9yG7raHIXYziJgYNW1MWos+VV6ehnRdZFvKy+phPpNNhXlTbkbiFmS7vFIA
+	K8q6cFK7oG2txhWmwLbHXTuQJMyg7LDjjB3xo0rmZrOGJFsrJWCooUXANbYKwXgf8qAq2whxnDJWN
+	fUxQjHlCBq4jcsL3ZR5jtQXOp/UQhOdAyLrziNZA0znwaHgqUHO9e/UMWm37ucja8R19MutuWYvHN
+	gynWp8J4baNNzqm369RrERHEU6womIMQ1yEV61ken8U3gWCzlp+2NsCnCBKONwtA92fI8leNfr6M6
+	ZGbpqJ7Va68PmhKl/e7w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oRIhN-002mUP-I4; Thu, 25 Aug 2022 19:39:29 +0000
-Received: from mxout4.routing.net ([2a03:2900:1:a::9])
+	id 1oRIhe-002mdW-8N; Thu, 25 Aug 2022 19:39:46 +0000
+Received: from mxout3.routing.net ([2a03:2900:1:a::8])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oRIgw-002mFq-Fc; Thu, 25 Aug 2022 19:39:05 +0000
+	id 1oRIgw-002mGE-Q2; Thu, 25 Aug 2022 19:39:06 +0000
 Received: from mxbox1.masterlogin.de (unknown [192.168.10.88])
-	by mxout4.routing.net (Postfix) with ESMTP id 437601006F8;
-	Thu, 25 Aug 2022 19:38:57 +0000 (UTC)
+	by mxout3.routing.net (Postfix) with ESMTP id 3994562609;
+	Thu, 25 Aug 2022 19:38:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mailerdienst.de;
-	s=20200217; t=1661456337;
+	s=20200217; t=1661456338;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:
 	 content-transfer-encoding:content-transfer-encoding:
 	 in-reply-to:in-reply-to:references:references;
-	bh=bITi9lO2I76P8aD+0Omkl/P9r5wyPjywtsDJ5kt5xZA=;
-	b=C6enBtk2jTTUsrXZCG5nIncxahKMN4gNp9fpZSTjSrj0n7hQc6OoF2KmnkzZlP3lY9EUo5
-	kS7o612ev8E3/PeBogtD0mlxcVh3BEFjquu9eaZmzmPSAm0CBunxIUfiOYr/Z+L0SjsXLa
-	ITv1zH/FcBLIE4A4CI74ptgJ475CrM0=
+	bh=MgcSu/bZTjky7t6qN/ZaauuAgwOYV51FTF/OPnptHgI=;
+	b=jYt0p6YiDaKIttQprEbS1otzhWqkqO8umXCWQbA6JufyQmnEilFfNwzPB1arUS/o51VBEF
+	uVy43ChlnTfgGY7AF6tY6/Ddn4vFI3PIa567Ix81UHDn2jiJKDw8jBYFn/lLW8YdJ9bin8
+	xCLlrb6ahzJPPPmOCsFIEiyqSrkLswE=
 Received: from frank-G5.. (fttx-pool-80.245.75.185.bambit.de [80.245.75.185])
-	by mxbox1.masterlogin.de (Postfix) with ESMTPSA id 4DADA40353;
-	Thu, 25 Aug 2022 19:38:56 +0000 (UTC)
+	by mxbox1.masterlogin.de (Postfix) with ESMTPSA id 35964403A9;
+	Thu, 25 Aug 2022 19:38:57 +0000 (UTC)
 From: Frank Wunderlich <linux@fw-web.de>
 To: linux-rockchip@lists.infradead.org
 Cc: Frank Wunderlich <frank-w@public-files.de>,
@@ -60,17 +60,18 @@ Cc: Frank Wunderlich <frank-w@public-files.de>,
 	linux-arm-kernel@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
 	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Subject: [PATCH v5 1/5] dt-bindings: phy: rockchip: add PCIe v3 phy
-Date: Thu, 25 Aug 2022 21:38:32 +0200
-Message-Id: <20220825193836.54262-2-linux@fw-web.de>
+Subject: [PATCH v5 2/5] dt-bindings: soc: grf: add pcie30-{phy,pipe}-grf
+Date: Thu, 25 Aug 2022 21:38:33 +0200
+Message-Id: <20220825193836.54262-3-linux@fw-web.de>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20220825193836.54262-1-linux@fw-web.de>
 References: <20220825193836.54262-1-linux@fw-web.de>
 MIME-Version: 1.0
-X-Mail-ID: 428698de-88f0-4e9f-9155-37f1cf7a80cf
+X-Mail-ID: e5256ec2-ce2c-440b-aae2-e2bd8ca539c4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220825_123903_705369_4F61D9E8 
-X-CRM114-Status: GOOD (  15.22  )
+X-CRM114-CacheID: sfid-20220825_123903_705866_3868FB0B 
+X-CRM114-Status: UNSURE (   8.16  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,131 +90,41 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Frank Wunderlich <frank-w@public-files.de>
 
-Add a new binding file for Rockchip PCIe v3 phy driver.
+Add compatibles for PCIe v3 General Register Files.
 
 Signed-off-by: Frank Wunderlich <frank-w@public-files.de>
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 ---
 v4:
-- add reviewed-by
-- remove minitems for clock-names as i have static list to fix error
-- fix reg error by using 32-bit adressing in binding example
-- change lane-map to u32 data-lanes
-- tried to move data-lanes to phy-provider
-  https://github.com/frank-w/dt-schema/blob/main/dtschema/schemas/phy/phy-provider.yaml#L17
-  cloned and installed via pip install -e <local path>
-  verified with pip show, but phy-privider seems not to be applied
+- rebase on 5.19-rc1
+- add acked-by
 
 v3:
-- drop quotes
-- drop rk3588
-- make clockcount fixed to 3
-- full path for binding header file
-- drop phy-mode and its header and add lane-map
+- fix order of grf-bindings
 
 v2:
-dt-bindings: rename yaml for PCIe v3
-rockchip-pcie3-phy.yaml => rockchip,pcie3-phy.yaml
-
-changes in pcie3 phy yaml
-- change clock names to ordered const list
-- extend pcie30-phymode description
-- add phy-cells to required properties
-- drop unevaluatedProperties
-- example with 1 clock each line
-- use default property instead of text describing it
-- update license
+- add soc-part to pcie3-phy-grf
 ---
- .../bindings/phy/rockchip,pcie3-phy.yaml      | 80 +++++++++++++++++++
- 1 file changed, 80 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/phy/rockchip,pcie3-phy.yaml
+ Documentation/devicetree/bindings/soc/rockchip/grf.yaml | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/phy/rockchip,pcie3-phy.yaml b/Documentation/devicetree/bindings/phy/rockchip,pcie3-phy.yaml
-new file mode 100644
-index 000000000000..9f2d8d2cc7a5
---- /dev/null
-+++ b/Documentation/devicetree/bindings/phy/rockchip,pcie3-phy.yaml
-@@ -0,0 +1,80 @@
-+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/phy/rockchip,pcie3-phy.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Rockchip PCIe v3 phy
-+
-+maintainers:
-+  - Heiko Stuebner <heiko@sntech.de>
-+
-+properties:
-+  compatible:
-+    enum:
-+      - rockchip,rk3568-pcie3-phy
-+
-+  reg:
-+    maxItems: 1
-+
-+  clocks:
-+    minItems: 3
-+    maxItems: 3
-+
-+  clock-names:
-+    items:
-+      - const: refclk_m
-+      - const: refclk_n
-+      - const: pclk
-+
-+  data-lanes:
-+    description: which lanes (by position) should be mapped to which
-+      controller (value). 0 means lane disabled, higher value means used.
-+      (controller-number +1 )
-+    $ref: /schemas/types.yaml#/definitions/uint32-array
-+    minItems: 2
-+    maxItems: 16
-+    items:
-+      minimum: 0
-+      maximum: 16
-+
-+  "#phy-cells":
-+    const: 0
-+
-+  resets:
-+    maxItems: 1
-+
-+  reset-names:
-+    const: phy
-+
-+  rockchip,phy-grf:
-+    $ref: /schemas/types.yaml#/definitions/phandle
-+    description: phandle to the syscon managing the phy "general register files"
-+
-+  rockchip,pipe-grf:
-+    $ref: /schemas/types.yaml#/definitions/phandle
-+    description: phandle to the syscon managing the pipe "general register files"
-+
-+required:
-+  - compatible
-+  - reg
-+  - rockchip,phy-grf
-+  - "#phy-cells"
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    #include <dt-bindings/clock/rk3568-cru.h>
-+    pcie30phy: phy@fe8c0000 {
-+      compatible = "rockchip,rk3568-pcie3-phy";
-+      reg = <0xfe8c0000 0x20000>;
-+      #phy-cells = <0>;
-+      clocks = <&pmucru CLK_PCIE30PHY_REF_M>,
-+               <&pmucru CLK_PCIE30PHY_REF_N>,
-+               <&cru PCLK_PCIE30PHY>;
-+      clock-names = "refclk_m", "refclk_n", "pclk";
-+      resets = <&cru SRST_PCIE30PHY>;
-+      reset-names = "phy";
-+      rockchip,phy-grf = <&pcie30_phy_grf>;
-+    };
+diff --git a/Documentation/devicetree/bindings/soc/rockchip/grf.yaml b/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
+index 75a2b8bb25fb..97301c470173 100644
+--- a/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
++++ b/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
+@@ -16,9 +16,12 @@ properties:
+           - enum:
+               - rockchip,rk3288-sgrf
+               - rockchip,rk3566-pipe-grf
++              - rockchip,rk3568-pcie3-phy-grf
+               - rockchip,rk3568-pipe-grf
+               - rockchip,rk3568-pipe-phy-grf
+               - rockchip,rk3568-usb2phy-grf
++              - rockchip,rk3588-pcie3-phy-grf
++              - rockchip,rk3588-pcie3-pipe-grf
+               - rockchip,rv1108-usbgrf
+           - const: syscon
+       - items:
 -- 
 2.34.1
 
