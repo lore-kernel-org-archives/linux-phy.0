@@ -4,94 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AE2DEC04AA5
-	for <linux-phy@archiver.kernel.org>; Thu, 25 Aug 2022 08:22:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CBDF9C04AA5
+	for <linux-phy@archiver.kernel.org>; Thu, 25 Aug 2022 10:28:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PGu+wGdkIX61tFMVcWo6qEAPPq/z7wiw0WA5Mrbee+E=; b=QlKNLpZ3+R49xt
-	P3WMjQXbwde2efnGGedIWm3pdHKoWfwaiV61oTKRkvC2QXQ+xy9Tws3IoUZn7noNAVHtVS89qj56G
-	03ivpZrFH6FETxtW8/T4iLqrtL89IpFG3kVRz7ULvXiWGrNUnopyavbRFpcq9tBfwIxb3h4geVEiz
-	iJ2lTSBtBiT7x05duU66Z1DN3iHX678ur3CfpYtv80/UOIjZyC6F/Ojf2vOEYKtmbZRVeFQn2gKpM
-	24fgjRptz1HyCfzyDE+BhTT6CN5tMbK9MBJOT2ZAULke5KZ2AeI5FN8xn70TRuDmerXGo/OtV5y8w
-	rVFAArLzOKfXqv/9iZog==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=d6FWrjbH2voAujuBZ7hFVk5GEo7EY4poZQWQUyaXLX4=; b=UE22bvTOrTkUfXvYa2tnkHraav
+	3odHVjqH8qafrUXR4DrY5BaNd1xDulZXLwHeZZNB30V0h8Q9DHs+IUbt9a63h85oiYQsUGrPUMVuc
+	W1UsqHj4ut4uuXM4dXCbmeAmUyj7/w74knma4aZ00bLvNTvIbQ78yrvFyb8s8lDAKOzLkxTtvkYfr
+	FhMhwThLyTkpEw/7eUt2UXGIx4a6fVKMkPTPhWuvY9WIwjR6pwle4NdIGXp/07kjVOjS47wqgTshT
+	pvvnalsq3kP5n7fB/mq8omr8oHMe1G3M1NfrmgoU2+/NAPNmI4SlF7QCgE31sahsmflr9oksDP1mc
+	0G57teew==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oR87m-009ztP-0K; Thu, 25 Aug 2022 08:22:02 +0000
-Received: from mail-lj1-x22e.google.com ([2a00:1450:4864:20::22e])
+	id 1oRA6E-00BtC5-05; Thu, 25 Aug 2022 10:28:34 +0000
+Received: from relay12.mail.gandi.net ([2001:4b98:dc4:8::232])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oR87j-009zpo-0c
-	for linux-phy@lists.infradead.org; Thu, 25 Aug 2022 08:22:00 +0000
-Received: by mail-lj1-x22e.google.com with SMTP id bn9so11141991ljb.6
-        for <linux-phy@lists.infradead.org>; Thu, 25 Aug 2022 01:21:53 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc;
-        bh=5ngialnJweWTxFhnpS3C9ddQCugujDSZYGR0J8FTnHk=;
-        b=rvGQEUqW0aqnj4g1kHRRzHHqlMVtjORIUuoL99n5tztXvYQ1FqengLIcpF/CE4LkYd
-         /A5dX+AuvNVj8NyUiyA2ObQuqaIAMikguTsvB8dSlUfAgfn8Qazy6/bZhVRzYztl0mjk
-         1nKb9AL+hyG+fw23Mvb7zVRRIPqXyLfzRe7zMmBA84NtTJPPyxxUtB+rln+3F9Wl3STt
-         5mgv0hUK58wVfIIOQ/A+aVWceH58Egv8idp/ywj1Vd6nErZhjHleuGjunZr9IxMauUVU
-         5P5nJj1ul2KKrW33/ZNCihGHkEqz/L8qRjj4knDNA9l+4TYNeqMFWvV+Wg9103Mqrmg3
-         Ez8w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc;
-        bh=5ngialnJweWTxFhnpS3C9ddQCugujDSZYGR0J8FTnHk=;
-        b=FZOsA1E7b/ACbTKUqIf3cezpxzgooAhR0nLiiLkE+/iv0oaHgXIpOUN5FVvBc0C7p2
-         5yfzv/uDF8EEa9hQchWyd5kTNfCBDEn8b3Q1LHuEEZo0abmBTJPn/ZN578LUCmm7TZxM
-         5vHYiVxsliiMoqPpH3ZiceAJ58hzYMQJHMB5FRr+lST38TErYhptJT8llc4fegturP3O
-         B1cpIrP3FWBy8QErAjOJbgcAX7Q0Q84X7Ip0jdjA0m2UFX1r9nVmDpaO173qAjCtEE7m
-         2f3r02L22LrKh8JVjatXtTYVI5aaW/8AIKEaafc+WTfNYnPAB4SoooPlfXYBK9EKk4IM
-         G4Cw==
-X-Gm-Message-State: ACgBeo2quSRGrwcWQC5fEa3bMAvri2LPCmVOejkIL+p1W81cAKDfteY+
-	4l/5LWN5BRFFMN1/myC38x0DIw==
-X-Google-Smtp-Source: AA6agR7uT7Su4lHGAOiQyY9ljhllP8dx9Y2jhf2/BSPJmxMpA6d0kWUyMQOHjKrcw3F7GMJy7Oyt4g==
-X-Received: by 2002:a05:651c:a04:b0:25e:753b:db42 with SMTP id k4-20020a05651c0a0400b0025e753bdb42mr737611ljq.529.1661415712008;
-        Thu, 25 Aug 2022 01:21:52 -0700 (PDT)
-Received: from [192.168.0.71] (82.131.98.15.cable.starman.ee. [82.131.98.15])
-        by smtp.gmail.com with ESMTPSA id o18-20020a05651205d200b0048afe02c925sm363108lfo.219.2022.08.25.01.21.50
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 25 Aug 2022 01:21:51 -0700 (PDT)
-Message-ID: <022a60e0-17a4-cf13-d8d6-af342468acab@linaro.org>
-Date: Thu, 25 Aug 2022 11:21:49 +0300
+	id 1oRA46-00Bs3A-LT; Thu, 25 Aug 2022 10:26:25 +0000
+Received: (Authenticated sender: paul.kocialkowski@bootlin.com)
+	by mail.gandi.net (Postfix) with ESMTPSA id C669D200006;
+	Thu, 25 Aug 2022 10:26:15 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
+	t=1661423178;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 in-reply-to:in-reply-to:references:references;
+	bh=nZkhegChjWaWBJwEW1/N43DiTL0N1XMc1RWqnxCrZsk=;
+	b=YOt1JWVSh6Ki9doHJpzHkp8QI3qfB0CD0Yw8z3OZnBSeV9pHJH5bXqq12+5xPfisKbFKjx
+	xkqK4rV8cjhXwxS5ErtrHnmmyIJ7QO1P9MjuI807pqx7ST9YhvP/m7mzybTbVJ/NNXGd6F
+	bOmwy/kqH04s05mQFdUJTvfacBl6CDe6xMsbPK319NkiE7vTXTw8litr1xld7l8Yrhlmoh
+	F0q43cEYW18F7zIqO8qTRLUgbpy35YXscqwpqWuxxC5uvBPSIVaCW9lYCgFS3AfU2U1bJE
+	1JDOrYAuWLHL3TD784m5DleTImOLUksX2+uO66TBtWXdl09A/KYoPfVKRZdyhQ==
+Date: Thu, 25 Aug 2022 12:26:15 +0200
+From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+To: Samuel Holland <samuel@sholland.org>
+Cc: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+	Chen-Yu Tsai <wens@csie.org>,
+	Jernej Skrabec <jernej.skrabec@gmail.com>,
+	Maxime Ripard <mripard@kernel.org>,
+	Jagan Teki <jagan@amarulasolutions.com>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Maxime Ripard <maxime@cerno.tech>, Rob Herring <robh+dt@kernel.org>,
+	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-sunxi@lists.linux.dev
+Subject: Re: [PATCH 6/8] phy: allwinner: phy-sun6i-mipi-dphy: Set enable bit
+ last
+Message-ID: <YwdORxO4K8mV5Hc9@aptenodytes>
+References: <20220812075603.59375-1-samuel@sholland.org>
+ <20220812075603.59375-7-samuel@sholland.org>
+ <YvZBmZ+SfrJuAzAs@aptenodytes>
+ <b3a2dc61-7384-17f7-2f4f-4b6bb86bcced@sholland.org>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.13.0
-Subject: Re: [PATCH] dt-bindings: phy: Add missing
- (unevaluated|additional)Properties on child nodes
-Content-Language: en-US
-To: Rob Herring <robh@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
- Vinod Koul <vkoul@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Ray Jui <rjui@broadcom.com>, Scott Branden <sbranden@broadcom.com>,
- Broadcom internal kernel review list
- <bcm-kernel-feedback-list@broadcom.com>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Alexandre Torgue <alexandre.torgue@foss.st.com>,
- Andy Gross <agross@kernel.org>, Bjorn Andersson
- <bjorn.andersson@linaro.org>, Konrad Dybcio <konrad.dybcio@somainline.org>,
- Amelie Delaunay <amelie.delaunay@foss.st.com>,
- Wesley Cheng <quic_wcheng@quicinc.com>
-Cc: Ray Jui <ray.jui@broadcom.com>, Scott Branden
- <scott.branden@broadcom.com>, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-msm@vger.kernel.org
-References: <20220823145649.3118479-14-robh@kernel.org>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20220823145649.3118479-14-robh@kernel.org>
+In-Reply-To: <b3a2dc61-7384-17f7-2f4f-4b6bb86bcced@sholland.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220825_012159_083506_DFB610A6 
-X-CRM114-Status: UNSURE (   6.29  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220825_032623_593807_E864DED4 
+X-CRM114-Status: GOOD (  29.07  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,24 +74,153 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============4736325637831351660=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 23/08/2022 17:56, Rob Herring wrote:
-> In order to ensure only documented properties are present, node schemas
-> must have unevaluatedProperties or additionalProperties set to false
-> (typically).
+
+--===============4736325637831351660==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="fO1GowFtZadczY0o"
+Content-Disposition: inline
 
 
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+--fO1GowFtZadczY0o
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+Hi Samuel,
+
+On Fri 12 Aug 22, 17:31, Samuel Holland wrote:
+> Hi Paul,
+>=20
+> On 8/12/22 7:03 AM, Paul Kocialkowski wrote:
+> > On Fri 12 Aug 22, 02:56, Samuel Holland wrote:
+> >> The A100 variant of the DPHY requires configuring the analog registers
+> >> before setting the global enable bit. Since this order also works on t=
+he
+> >> other variants, always use it, to minimize the differences between the=
+m.
+> >=20
+> > Did you get a chance to actually test this with either DSI/CSI-2 hardwa=
+re?
+>=20
+> I have tested DSI output with the Clockwork DevTerm (D1 SoC) and Pine64
+> PinePhone (A64 SoC). I do not have any MIPI CSI hardware to test with.
+
+Sounds good to me then!
+
+> > I vaguely remember that the order mattered. Do you have an idea of what=
+ the
+> > Allwinner BSP does too?
+>=20
+> The Allwinner BSP makes the same change as this commit in its "lowlevel_v=
+2x"
+> copy of the code, which is used for R40 and T7 (original DPHY) and A100 a=
+nd D1
+> (updated DPHY). It does not make the change in "lowlevel_sun50iw1" (A64 S=
+oC,
+> original DPHY), but I tested A64 with this change, and it works fine.
+
+Great, thanks for details.
+
+> > Otherwise I could give it a try, at least with my MIPI CSI-2 setup
+> > that uses the driver.
+>=20
+> This commit only changes sun6i_dphy_tx_power_on(). The code for RX is unc=
+hanged
+> -- in fact, it already sets SUN6I_DPHY_GCTL_REG last.
+
+Ah yes you're right, actually I remember being tempted to change this too w=
+hen
+adding the rx path, but didn't have hardware to easily test.
+
+Thanks for the details, this is:
+
+Reviewed-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+
+Cheers,
+
+Paul
+
+> Regards,
+> Samuel
+>=20
+> >> Signed-off-by: Samuel Holland <samuel@sholland.org>
+> >> ---
+> >>
+> >>  drivers/phy/allwinner/phy-sun6i-mipi-dphy.c | 8 ++++----
+> >>  1 file changed, 4 insertions(+), 4 deletions(-)
+> >>
+> >> diff --git a/drivers/phy/allwinner/phy-sun6i-mipi-dphy.c b/drivers/phy=
+/allwinner/phy-sun6i-mipi-dphy.c
+> >> index 625c6e1e9990..9698d68d0db7 100644
+> >> --- a/drivers/phy/allwinner/phy-sun6i-mipi-dphy.c
+> >> +++ b/drivers/phy/allwinner/phy-sun6i-mipi-dphy.c
+> >> @@ -183,10 +183,6 @@ static int sun6i_dphy_tx_power_on(struct sun6i_dp=
+hy *dphy)
+> >>  		     SUN6I_DPHY_TX_TIME4_HS_TX_ANA0(3) |
+> >>  		     SUN6I_DPHY_TX_TIME4_HS_TX_ANA1(3));
+> >> =20
+> >> -	regmap_write(dphy->regs, SUN6I_DPHY_GCTL_REG,
+> >> -		     SUN6I_DPHY_GCTL_LANE_NUM(dphy->config.lanes) |
+> >> -		     SUN6I_DPHY_GCTL_EN);
+> >> -
+> >>  	regmap_write(dphy->regs, SUN6I_DPHY_ANA0_REG,
+> >>  		     SUN6I_DPHY_ANA0_REG_PWS |
+> >>  		     SUN6I_DPHY_ANA0_REG_DMPC |
+> >> @@ -244,6 +240,10 @@ static int sun6i_dphy_tx_power_on(struct sun6i_dp=
+hy *dphy)
+> >>  			   SUN6I_DPHY_ANA2_EN_P2S_CPU_MASK,
+> >>  			   SUN6I_DPHY_ANA2_EN_P2S_CPU(lanes_mask));
+> >> =20
+> >> +	regmap_write(dphy->regs, SUN6I_DPHY_GCTL_REG,
+> >> +		     SUN6I_DPHY_GCTL_LANE_NUM(dphy->config.lanes) |
+> >> +		     SUN6I_DPHY_GCTL_EN);
+> >> +
+> >>  	return 0;
+> >>  }
+> >> =20
+> >> --=20
+> >> 2.35.1
+> >>
+> >=20
+>=20
+
+--=20
+Paul Kocialkowski, Bootlin
+Embedded Linux and kernel engineering
+https://bootlin.com
+
+--fO1GowFtZadczY0o
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAEBCAAdFiEEJZpWjZeIetVBefti3cLmz3+fv9EFAmMHTkcACgkQ3cLmz3+f
+v9ET3gf+Ijb5TZR/JJTlXSoSHvPCNhJtFL0m999ze+30++wX0mEhS3H8StSKy/C1
+I2AsGVYGmUzuOru1lsIKl0Z5snU4tf0TxasrHk902JIWQ77vCuNWnKlXVYDwvDdz
+7P19vaDeMhTGePAPvoubS4g9pPsmCNwixL5Roe5mCrDK0ZLu/LWTYHydcSLqKu/Q
+x/LuE2wRx4RRFwNXuz0NXmwOZdIq41Gi2S0kx6fkbw/uHzKA30koHoy+M0Wb7vVK
+H9Ypu69YUgz8twTsvDRbid/ctfIb3wPQegbRO+S80Irf8owgD9qU6MKXIjK30qT7
++KZHOywGvjsZtMZepWV6+VqCGgugaw==
+=xe8Q
+-----END PGP SIGNATURE-----
+
+--fO1GowFtZadczY0o--
 
 
-Best regards,
-Krzysztof
+--===============4736325637831351660==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============4736325637831351660==--
+
