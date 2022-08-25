@@ -4,65 +4,94 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id ED69DC28D13
-	for <linux-phy@archiver.kernel.org>; Thu, 25 Aug 2022 07:41:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AE2DEC04AA5
+	for <linux-phy@archiver.kernel.org>; Thu, 25 Aug 2022 08:22:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HPIeknDIlIYS1rv30kb+tpU/paA+GfwPDIKWJWHP9Z4=; b=J0f7glZRgL2GIS
-	WbqdBB0y4BJLmf0fXkMkAlhaZCzzQC/5clCVnU5Ech9AhPJlaQqJ47ZZzia+2nxdQTHS3Wzv/hziI
-	uYAp9nbhJcgTTst8t3y44wedfL+kcxTTcySxXtqfKOPmBWUVhKa8m6jiGEsYU+mXaHKXAObO4D68V
-	th+ZjgllbQpfT1QxIPfTWAv4W9hJTGt2aMYtGUzj6mquNNhCOrwi5ljHMdjXyxRDTdJMFXKHWk5FC
-	DwogX1cnMiY7zNUxFBQHiaGhbKI9rj4cRxPslj+cL64at3v1NT6L4QsW+HmcCYmog2Lm2yBK2P6kN
-	OFDjLKsdSO2mEGaOXQUg==;
+	List-Owner; bh=PGu+wGdkIX61tFMVcWo6qEAPPq/z7wiw0WA5Mrbee+E=; b=QlKNLpZ3+R49xt
+	P3WMjQXbwde2efnGGedIWm3pdHKoWfwaiV61oTKRkvC2QXQ+xy9Tws3IoUZn7noNAVHtVS89qj56G
+	03ivpZrFH6FETxtW8/T4iLqrtL89IpFG3kVRz7ULvXiWGrNUnopyavbRFpcq9tBfwIxb3h4geVEiz
+	iJ2lTSBtBiT7x05duU66Z1DN3iHX678ur3CfpYtv80/UOIjZyC6F/Ojf2vOEYKtmbZRVeFQn2gKpM
+	24fgjRptz1HyCfzyDE+BhTT6CN5tMbK9MBJOT2ZAULke5KZ2AeI5FN8xn70TRuDmerXGo/OtV5y8w
+	rVFAArLzOKfXqv/9iZog==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oR7UR-009SxO-9K; Thu, 25 Aug 2022 07:41:23 +0000
-Received: from ams.source.kernel.org ([145.40.68.75])
+	id 1oR87m-009ztP-0K; Thu, 25 Aug 2022 08:22:02 +0000
+Received: from mail-lj1-x22e.google.com ([2a00:1450:4864:20::22e])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oR7UL-009Sl5-4P
-	for linux-phy@lists.infradead.org; Thu, 25 Aug 2022 07:41:22 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id 22E0AB8275B;
-	Thu, 25 Aug 2022 07:41:15 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2C68DC433D6;
-	Thu, 25 Aug 2022 07:41:10 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1661413273;
-	bh=EwLtF7Ll569WJXe3QBAw8qXcrqcWWwzmCYQVUys5f3g=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=i9S9a14wLF2qoPD/dIYJPxZQm7g2DqB/1vkxonc6Rd01ZBezywZG8CuD2QbcVU6al
-	 hfT5Y9e2dOu4d7eiuXoR4YlpL5D6ojTCeTQjGBqF206ENQ8+2iS/sk74GAFqub7sz/
-	 GGihpewv2YDpsDPxJgGddO48v7okxn2UgPG0hB5L6GndJw4E81OM9irLpGN00plWyH
-	 ye4qO94ouEDEcfnEVQmStI2fjRe0KxwCM1HoFtacerZ4LfT+65Vklzvr3YTeaNhcAy
-	 mx/QrARj9F8rZ2QFV+a+tncyo6rQSThipu/bq9MuRQwS698VMFHFtHuvtKR5qA7WPo
-	 8p+OAHe+HrzjA==
-Message-ID: <655c39a3-cf5f-6dd7-3c1a-61ebeae915bd@kernel.org>
-Date: Thu, 25 Aug 2022 10:41:08 +0300
+	id 1oR87j-009zpo-0c
+	for linux-phy@lists.infradead.org; Thu, 25 Aug 2022 08:22:00 +0000
+Received: by mail-lj1-x22e.google.com with SMTP id bn9so11141991ljb.6
+        for <linux-phy@lists.infradead.org>; Thu, 25 Aug 2022 01:21:53 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc;
+        bh=5ngialnJweWTxFhnpS3C9ddQCugujDSZYGR0J8FTnHk=;
+        b=rvGQEUqW0aqnj4g1kHRRzHHqlMVtjORIUuoL99n5tztXvYQ1FqengLIcpF/CE4LkYd
+         /A5dX+AuvNVj8NyUiyA2ObQuqaIAMikguTsvB8dSlUfAgfn8Qazy6/bZhVRzYztl0mjk
+         1nKb9AL+hyG+fw23Mvb7zVRRIPqXyLfzRe7zMmBA84NtTJPPyxxUtB+rln+3F9Wl3STt
+         5mgv0hUK58wVfIIOQ/A+aVWceH58Egv8idp/ywj1Vd6nErZhjHleuGjunZr9IxMauUVU
+         5P5nJj1ul2KKrW33/ZNCihGHkEqz/L8qRjj4knDNA9l+4TYNeqMFWvV+Wg9103Mqrmg3
+         Ez8w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc;
+        bh=5ngialnJweWTxFhnpS3C9ddQCugujDSZYGR0J8FTnHk=;
+        b=FZOsA1E7b/ACbTKUqIf3cezpxzgooAhR0nLiiLkE+/iv0oaHgXIpOUN5FVvBc0C7p2
+         5yfzv/uDF8EEa9hQchWyd5kTNfCBDEn8b3Q1LHuEEZo0abmBTJPn/ZN578LUCmm7TZxM
+         5vHYiVxsliiMoqPpH3ZiceAJ58hzYMQJHMB5FRr+lST38TErYhptJT8llc4fegturP3O
+         B1cpIrP3FWBy8QErAjOJbgcAX7Q0Q84X7Ip0jdjA0m2UFX1r9nVmDpaO173qAjCtEE7m
+         2f3r02L22LrKh8JVjatXtTYVI5aaW/8AIKEaafc+WTfNYnPAB4SoooPlfXYBK9EKk4IM
+         G4Cw==
+X-Gm-Message-State: ACgBeo2quSRGrwcWQC5fEa3bMAvri2LPCmVOejkIL+p1W81cAKDfteY+
+	4l/5LWN5BRFFMN1/myC38x0DIw==
+X-Google-Smtp-Source: AA6agR7uT7Su4lHGAOiQyY9ljhllP8dx9Y2jhf2/BSPJmxMpA6d0kWUyMQOHjKrcw3F7GMJy7Oyt4g==
+X-Received: by 2002:a05:651c:a04:b0:25e:753b:db42 with SMTP id k4-20020a05651c0a0400b0025e753bdb42mr737611ljq.529.1661415712008;
+        Thu, 25 Aug 2022 01:21:52 -0700 (PDT)
+Received: from [192.168.0.71] (82.131.98.15.cable.starman.ee. [82.131.98.15])
+        by smtp.gmail.com with ESMTPSA id o18-20020a05651205d200b0048afe02c925sm363108lfo.219.2022.08.25.01.21.50
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 25 Aug 2022 01:21:51 -0700 (PDT)
+Message-ID: <022a60e0-17a4-cf13-d8d6-af342468acab@linaro.org>
+Date: Thu, 25 Aug 2022 11:21:49 +0300
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.9.1
-Subject: Re: [PATCH v3 2/2] phy: ti: gmii-sel: Add support for CPSW5G GMII SEL
- in J7200
+ Thunderbird/91.13.0
+Subject: Re: [PATCH] dt-bindings: phy: Add missing
+ (unevaluated|additional)Properties on child nodes
 Content-Language: en-US
-To: Siddharth Vadapalli <s-vadapalli@ti.com>, robh+dt@kernel.org,
- lee.jones@linaro.org, krzysztof.kozlowski@linaro.org,
- krzysztof.kozlowski+dt@linaro.org, kishon@ti.com, vkoul@kernel.org,
- dan.carpenter@oracle.com, grygorii.strashko@ti.com
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org
-References: <20220822065631.27933-1-s-vadapalli@ti.com>
- <20220822065631.27933-3-s-vadapalli@ti.com>
-From: Roger Quadros <rogerq@kernel.org>
-In-Reply-To: <20220822065631.27933-3-s-vadapalli@ti.com>
+To: Rob Herring <robh@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
+ Vinod Koul <vkoul@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Ray Jui <rjui@broadcom.com>, Scott Branden <sbranden@broadcom.com>,
+ Broadcom internal kernel review list
+ <bcm-kernel-feedback-list@broadcom.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Alexandre Torgue <alexandre.torgue@foss.st.com>,
+ Andy Gross <agross@kernel.org>, Bjorn Andersson
+ <bjorn.andersson@linaro.org>, Konrad Dybcio <konrad.dybcio@somainline.org>,
+ Amelie Delaunay <amelie.delaunay@foss.st.com>,
+ Wesley Cheng <quic_wcheng@quicinc.com>
+Cc: Ray Jui <ray.jui@broadcom.com>, Scott Branden
+ <scott.branden@broadcom.com>, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-msm@vger.kernel.org
+References: <20220823145649.3118479-14-robh@kernel.org>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <20220823145649.3118479-14-robh@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220825_004117_585046_FB2237CB 
-X-CRM114-Status: GOOD (  30.42  )
+X-CRM114-CacheID: sfid-20220825_012159_083506_DFB610A6 
+X-CRM114-Status: UNSURE (   6.29  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,152 +108,17 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Siddharth,
+On 23/08/2022 17:56, Rob Herring wrote:
+> In order to ensure only documented properties are present, node schemas
+> must have unevaluatedProperties or additionalProperties set to false
+> (typically).
 
-On 22/08/2022 09:56, Siddharth Vadapalli wrote:
-> Each of the CPSW5G ports in J7200 support additional modes like QSGMII.
-> Add a new compatible for J7200 to support the additional modes.
-> 
-> In TI's J7200, each of the CPSW5G ethernet interfaces can act as a
-> QSGMII or QSGMII-SUB port. The QSGMII interface is responsible for
-> performing auto-negotiation between the MAC and the PHY while the rest of
-> the interfaces are designated as QSGMII-SUB interfaces, indicating that
-> they will not be taking part in the auto-negotiation process.
-> 
-> To indicate the interface which will serve as the main QSGMII interface,
-> add a property "ti,qsgmii-main-ports", whose value indicates the
-> port number of the interface which shall serve as the main QSGMII
-> interface. The rest of the interfaces are then assigned QSGMII-SUB mode by
-> default.
 
-Can you please describe here why you are using "ti,qsgmii-main-ports" instead
-of "ti,qsgmii-main-port" as there can be only one main port per PHY instance?
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
-> 
-> Signed-off-by: Siddharth Vadapalli <s-vadapalli@ti.com>
-> ---
->  drivers/phy/ti/phy-gmii-sel.c | 40 ++++++++++++++++++++++++++++++++---
->  1 file changed, 37 insertions(+), 3 deletions(-)
-> 
-> diff --git a/drivers/phy/ti/phy-gmii-sel.c b/drivers/phy/ti/phy-gmii-sel.c
-> index d0ab69750c6b..270083606b14 100644
-> --- a/drivers/phy/ti/phy-gmii-sel.c
-> +++ b/drivers/phy/ti/phy-gmii-sel.c
-> @@ -22,6 +22,12 @@
->  #define AM33XX_GMII_SEL_MODE_RMII	1
->  #define AM33XX_GMII_SEL_MODE_RGMII	2
->  
-> +/* J72xx SoC specific definitions for the CONTROL port */
-> +#define J72XX_GMII_SEL_MODE_QSGMII	4
-> +#define J72XX_GMII_SEL_MODE_QSGMII_SUB	6
-> +
-> +#define PHY_GMII_PORT(n)	BIT((n) - 1)
-> +
->  enum {
->  	PHY_GMII_SEL_PORT_MODE = 0,
->  	PHY_GMII_SEL_RGMII_ID_MODE,
-> @@ -43,6 +49,7 @@ struct phy_gmii_sel_soc_data {
->  	u32 features;
->  	const struct reg_field (*regfields)[PHY_GMII_SEL_LAST];
->  	bool use_of_data;
-> +	u64 extra_modes;
->  };
->  
->  struct phy_gmii_sel_priv {
-> @@ -53,6 +60,7 @@ struct phy_gmii_sel_priv {
->  	struct phy_gmii_sel_phy_priv *if_phys;
->  	u32 num_ports;
->  	u32 reg_offset;
-> +	u32 qsgmii_main_ports;
->  };
->  
->  static int phy_gmii_sel_mode(struct phy *phy, enum phy_mode mode, int submode)
-> @@ -88,10 +96,17 @@ static int phy_gmii_sel_mode(struct phy *phy, enum phy_mode mode, int submode)
->  		gmii_sel_mode = AM33XX_GMII_SEL_MODE_MII;
->  		break;
->  
-> +	case PHY_INTERFACE_MODE_QSGMII:
-> +		if (!(soc_data->extra_modes & BIT(PHY_INTERFACE_MODE_QSGMII)))
-> +			goto unsupported;
-> +		if (if_phy->priv->qsgmii_main_ports & BIT(if_phy->id - 1))
-> +			gmii_sel_mode = J72XX_GMII_SEL_MODE_QSGMII;
-> +		else
-> +			gmii_sel_mode = J72XX_GMII_SEL_MODE_QSGMII_SUB;
-> +		break;
-> +
->  	default:
-> -		dev_warn(dev, "port%u: unsupported mode: \"%s\"\n",
-> -			 if_phy->id, phy_modes(submode));
-> -		return -EINVAL;
-> +		goto unsupported;
->  	}
->  
->  	if_phy->phy_if_mode = submode;
-> @@ -123,6 +138,11 @@ static int phy_gmii_sel_mode(struct phy *phy, enum phy_mode mode, int submode)
->  	}
->  
->  	return 0;
-> +
-> +unsupported:
-> +	dev_warn(dev, "port%u: unsupported mode: \"%s\"\n",
-> +		 if_phy->id, phy_modes(submode));
-> +	return -EINVAL;
->  }
->  
->  static const
-> @@ -188,6 +208,13 @@ struct phy_gmii_sel_soc_data phy_gmii_sel_soc_am654 = {
->  	.regfields = phy_gmii_sel_fields_am654,
->  };
->  
-> +static const
-> +struct phy_gmii_sel_soc_data phy_gmii_sel_cpsw5g_soc_j7200 = {
-> +	.use_of_data = true,
-> +	.regfields = phy_gmii_sel_fields_am654,
-> +	.extra_modes = BIT(PHY_INTERFACE_MODE_QSGMII),
-> +};
-> +
->  static const struct of_device_id phy_gmii_sel_id_table[] = {
->  	{
->  		.compatible	= "ti,am3352-phy-gmii-sel",
-> @@ -209,6 +236,10 @@ static const struct of_device_id phy_gmii_sel_id_table[] = {
->  		.compatible	= "ti,am654-phy-gmii-sel",
->  		.data		= &phy_gmii_sel_soc_am654,
->  	},
-> +	{
-> +		.compatible	= "ti,j7200-cpsw5g-phy-gmii-sel",
-> +		.data		= &phy_gmii_sel_cpsw5g_soc_j7200,
-> +	},
->  	{}
->  };
->  MODULE_DEVICE_TABLE(of, phy_gmii_sel_id_table);
-> @@ -350,6 +381,7 @@ static int phy_gmii_sel_probe(struct platform_device *pdev)
->  	struct device_node *node = dev->of_node;
->  	const struct of_device_id *of_id;
->  	struct phy_gmii_sel_priv *priv;
-> +	u32 main_ports = 1;
->  	int ret;
->  
->  	of_id = of_match_node(phy_gmii_sel_id_table, pdev->dev.of_node);
-> @@ -363,6 +395,8 @@ static int phy_gmii_sel_probe(struct platform_device *pdev)
->  	priv->dev = &pdev->dev;
->  	priv->soc_data = of_id->data;
->  	priv->num_ports = priv->soc_data->num_ports;
-> +	of_property_read_u32_array(node, "ti,qsgmii-main-ports", &main_ports, 1);
 
-of_property_read_u32_array can return error and you are not doing any sanity checks.
-This should fail if "ti,qsgmii-main-ports" is not present or out of bounds if port mode is QSGMII.
-
-How is this going to scale if you are going to have multiple main ports?
-Let's say you increase it to 2 in the future. won't this break with -EOVERFLOW for older
-DTs where you had only 1 u32.
-
-> +	priv->qsgmii_main_ports = PHY_GMII_PORT(main_ports);
->  
->  	priv->regmap = syscon_node_to_regmap(node->parent);
->  	if (IS_ERR(priv->regmap)) {
-
-cheers,
--roger
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
