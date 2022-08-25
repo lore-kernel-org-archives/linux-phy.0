@@ -4,60 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3E621C48BE4
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 687D6C64992
 	for <linux-phy@archiver.kernel.org>; Thu, 25 Aug 2022 10:50:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KQpj8+CWw8KeHAxQCCEDDtap+4kVjpMxWennuXyLUjQ=; b=4V1E1o8Q1WHN3C
-	fAkCGgMbOpZfjz+wm9FjzazpZHvDKmidU68BuLn4KjMhxZatVvqsaztl9bb6ZeEDirgsgQpMQ7v3U
-	nLQ9OeV9b8FPxKv7Kvbq2OF1bfqzVFK5jHN2gFcFDHlGS0cJaYiQ3VW93ZiDNe4OzTwBgp2icXbAc
-	AkpOOEUn8gjaMhXzAHzxctycsyA9vwVqSS0nEx+RNkeJUY5+au9e8uxLcB6aOE6YHRHio9X1pgNAT
-	8H+Ep9BNeofCmSm1GsPDItoTIYlS1jlq0pBsJWeLCyzY05DNWXtSEkcA+9G7AUO6wKvBFFdlZYQww
-	lRhJGUEUgNy2FCvEPfUA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=w1BRgK9rcaMcpbKQIu+yEY12dnzWOpFRIEXTwW83EuY=; b=g/SeILwg9RB44j
+	P3sCDnzz9q9a66BjDXFSawA8oYnXuMocT17dpZJZHVN7MEYkLL9BrZeTaSstEsw+lq0iasgBvlzFL
+	Gxmup7AQDQK+GW8gEbQ6JmRsYroOXoJcaN2tWU+4jY8AoDAJ27AKr18hgSYF2EdZBXMdNSoIGxHkk
+	ySZKQ1NfSQqdlG+PN+keYuakzfoGsQGpEVS7jiAhWuIF7+zxYuez6EmCXDagzgAEejuVAbouGUOJC
+	+0cGlTur2mNLDVQ4nqgHuGF7/q8G5WTFEiqSYMBSzDx0jqdB9AqiKJry6vU/uS5jefU77QtFEJpoL
+	vDNBHBI8ut4KRxzM5Mmg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oRARo-00C450-KU; Thu, 25 Aug 2022 10:50:52 +0000
-Received: from mail-lf1-x12c.google.com ([2a00:1450:4864:20::12c])
+	id 1oRARo-00C455-N2; Thu, 25 Aug 2022 10:50:52 +0000
+Received: from mail-lj1-x22c.google.com ([2a00:1450:4864:20::22c])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oRARl-00C43B-Ft
-	for linux-phy@lists.infradead.org; Thu, 25 Aug 2022 10:50:50 +0000
-Received: by mail-lf1-x12c.google.com with SMTP id q7so23994472lfu.5
-        for <linux-phy@lists.infradead.org>; Thu, 25 Aug 2022 03:50:48 -0700 (PDT)
+	id 1oRARl-00C42r-TJ
+	for linux-phy@lists.infradead.org; Thu, 25 Aug 2022 10:50:51 +0000
+Received: by mail-lj1-x22c.google.com with SMTP id q18so18022378ljg.12
+        for <linux-phy@lists.infradead.org>; Thu, 25 Aug 2022 03:50:47 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc;
-        bh=+tlaOVQg+3piNlGJMYKBMRzblnUx75It//2apLVPW8A=;
-        b=uz0Cj6v/dHD3yZX7z5Vy1Vl8Kpsgx4qmfq2lzB5nSS6oNF7fvmU0uXo6wjBdtXr0Yy
-         mqqtJeOGERhtdOz594iA0MfyHQ8hSwU60ZSp77WIXRRCWcQ7rEtaWWL6TCtOxwoTyov/
-         hcMp7/9zAhzFU9P/X31MeKGK5HFYe50UsROM087KBnGKpfJHLHgi9by+MxIbrZObP4oO
-         m8sOKeVv8qfcqj/KfB5SR3zOb4LAII6+l+RY6sgPWQ7/CH06fiLc5AgGK5/uq6lK4IvQ
-         AEtaDSVg0S7vluf+92TllGs398fQD4I7jo448mrO+j9sGhUeSsUTBdn7Pk05Cl0QRXKg
-         SFnQ==
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc;
+        bh=10qWqNWwct0k03IB/GKclWJkUQlncNZrJzbA4LyiZJo=;
+        b=Rstp6Iplj0RUiP/cB/ximuaHD1evEKfdPdHQkicXj3MPSbqhrBRv2D7etIgt3YPnnR
+         6YHOnOchsQi3PcKsSeUwC0pO3BNNdfY6YlqxXCwtVpVKtnPZPjN/pNfylmTQAoeUah8o
+         KsYu2aXULW/3JEvcWYNXmEtuzKNLQ39AdSFcPZvOshEn8bzmvcHb/HRENy1f/+fxWLoj
+         kDM0NNDn/FSXlKpsE7+Um8oHkROoEotPCO1u3boahatoQ8sLLAcxDE6bhoK9sACuEOuD
+         sRiMnyMPdxCOFNgDgoyZfvJ/69juFN8OrxNxLdjbljPxCLnS5Tklqar4hoIYsEx6+fUY
+         J2KQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc;
-        bh=+tlaOVQg+3piNlGJMYKBMRzblnUx75It//2apLVPW8A=;
-        b=ABqhyvZmax6b+KJErlDkIfvpEoOyfyc2UD45dAP4rAFZ60p03hLIXYwpyQZpaj2j7+
-         2u357m6DjOUQnvW3nkLeL+YMjXXe+qQznJx95rwxCD4sNF0dZlnZp1iLTsY1sK7IOuxS
-         DyTkwlZ68iqdmuEg+ICtdpePaZh8WqJ5sCCy4iydbgIn0jiz3iTGhNliiKBjpeLwNXiQ
-         ++cvQrv8qITSaBBv9Yq+srmz+HjXmstWitCjl1ctIoHr1hFn3PUNaKMaJXd0UAo27n+7
-         UOtc7SWPiMBVOzODfWW4ch6Sh0p5kfOHkB3uVcXVc1m+xV5+3kQa5dFuFxM7yl3szKLJ
-         gOjQ==
-X-Gm-Message-State: ACgBeo0EwMQd/XHmB6nWd9ENAxaJRs2CN0YIa/I5gWTwBgzoWiO2IQu0
-	65GvRyvvMF11gTZ2OsXNzZmiYQ==
-X-Google-Smtp-Source: AA6agR6Wabloawy6Mhw54B9pbWQ0G+jlluNvISwNPiQ/uPL4k1chNCISuXhFZ+dgLihz/AiYstDDAA==
-X-Received: by 2002:a05:6512:3e05:b0:492:e04d:8c8c with SMTP id i5-20020a0565123e0500b00492e04d8c8cmr1093741lfv.638.1661424647150;
-        Thu, 25 Aug 2022 03:50:47 -0700 (PDT)
-Received: from eriador.lan ([37.153.55.125])
-        by smtp.gmail.com with ESMTPSA id u14-20020ac258ce000000b00492f49037dfsm429609lfo.152.2022.08.25.03.50.46
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc;
+        bh=10qWqNWwct0k03IB/GKclWJkUQlncNZrJzbA4LyiZJo=;
+        b=7D+p7udqNzHZ467UKpnwr2TxLtf8D5cT5P0BaSEsJT1aQzray736P9FDgm3fkILozQ
+         MxBNlV8Vt0VXB1fdMlcsVYePeEToHvXOkI2t03Edi2hUZ4GpVNvBwTAOqnQEaqx3lnuu
+         iWIsgWjuueNcNZCo+Ww9hBumwQoPcRcWsi5GivcKWvFcv3khtpGT8mVAinQFzGvigA8h
+         vZeTQJoJ/7I2tjsfIYGqNj/b4L5eLYYIPAF73ccAlATKCl44Q+GMvIPlEdCGk8DeEGSR
+         U1YxxR3iLtvSKk/NbT7koucSSJxx491QT/jF/1bXibftoxZ8Zj/TIHjdSdtMNaZYcmY+
+         5kEg==
+X-Gm-Message-State: ACgBeo1SxtY8/qSHQOW5zTQwNUm8bNMiSVcdCSJ2Frk+Un7iqQ1/YMbl
+	iCoXK2VVn7AdRxYnl7yykPcfGQ==
+X-Google-Smtp-Source: AA6agR6/3sRBbr7+OueBdJ0egxRoqKNqNFMwj7yOhEJNlfmxYJEbkyeM29cHOZvlUABzy3PXyDWOxA==
+X-Received: by 2002:a05:651c:1025:b0:261:c071:c473 with SMTP id w5-20020a05651c102500b00261c071c473mr926266ljm.71.1661424646349;
         Thu, 25 Aug 2022 03:50:46 -0700 (PDT)
+Received: from eriador.lan ([37.153.55.125])
+        by smtp.gmail.com with ESMTPSA id u14-20020ac258ce000000b00492f49037dfsm429609lfo.152.2022.08.25.03.50.44
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 25 Aug 2022 03:50:45 -0700 (PDT)
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 To: Andy Gross <agross@kernel.org>,
 	Bjorn Andersson <bjorn@kryo.se>,
@@ -75,17 +75,14 @@ Cc: Philipp Zabel <p.zabel@pengutronix.de>,
 	linux-arm-msm@vger.kernel.org,
 	linux-pci@vger.kernel.org,
 	linux-phy@lists.infradead.org
-Subject: [PATCH v2 1/6] phy: qcom-qmp-pcie: drop if (table) conditions
-Date: Thu, 25 Aug 2022 13:50:39 +0300
-Message-Id: <20220825105044.636209-2-dmitry.baryshkov@linaro.org>
+Subject: [PATCH v2 0/6] PCI: qcom: Support using the same PHY for both RC and EP
+Date: Thu, 25 Aug 2022 13:50:38 +0300
+Message-Id: <20220825105044.636209-1-dmitry.baryshkov@linaro.org>
 X-Mailer: git-send-email 2.35.1
-In-Reply-To: <20220825105044.636209-1-dmitry.baryshkov@linaro.org>
-References: <20220825105044.636209-1-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220825_035049_554379_560E9363 
-X-CRM114-Status: UNSURE (   9.19  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220825_035049_970634_62E2CC91 
+X-CRM114-Status: GOOD (  14.74  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,79 +99,58 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Drop unused if (table) conditions, since the function
-qcom_qmp_phy_pcie_configure_lane() has this check anyway.
+Programming of QMP PCIe PHYs slightly differs between RC and EP modes.
 
-Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
----
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 21 +++++++--------------
- 1 file changed, 7 insertions(+), 14 deletions(-)
+Currently both qcom and qcom-ep PCIe controllers setup the PHY in the
+default mode, making it impossible to select at runtime whether the PHY
+should be running in RC or in EP modes. Usually this is not an issue,
+since for most devices only the RC mode is used. Some devices (SDX55)
+currently support only the EP mode without supporting the RC mode (at
+this moment).
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-index 2d65e1f56bfc..c84846020272 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-@@ -1930,8 +1930,7 @@ static int qcom_qmp_phy_pcie_serdes_init(struct qmp_phy *qphy)
- 	int serdes_tbl_num = cfg->serdes_tbl_num;
- 
- 	qcom_qmp_phy_pcie_configure(serdes, cfg->regs, serdes_tbl, serdes_tbl_num);
--	if (cfg->serdes_tbl_sec)
--		qcom_qmp_phy_pcie_configure(serdes, cfg->regs, cfg->serdes_tbl_sec,
-+	qcom_qmp_phy_pcie_configure(serdes, cfg->regs, cfg->serdes_tbl_sec,
- 				       cfg->serdes_tbl_num_sec);
- 
- 	return 0;
-@@ -2037,44 +2036,38 @@ static int qcom_qmp_phy_pcie_power_on(struct phy *phy)
- 	/* Tx, Rx, and PCS configurations */
- 	qcom_qmp_phy_pcie_configure_lane(tx, cfg->regs,
- 				    cfg->tx_tbl, cfg->tx_tbl_num, 1);
--	if (cfg->tx_tbl_sec)
--		qcom_qmp_phy_pcie_configure_lane(tx, cfg->regs, cfg->tx_tbl_sec,
-+	qcom_qmp_phy_pcie_configure_lane(tx, cfg->regs, cfg->tx_tbl_sec,
- 					    cfg->tx_tbl_num_sec, 1);
- 
- 	/* Configuration for other LANE for USB-DP combo PHY */
- 	if (cfg->is_dual_lane_phy) {
- 		qcom_qmp_phy_pcie_configure_lane(qphy->tx2, cfg->regs,
- 					    cfg->tx_tbl, cfg->tx_tbl_num, 2);
--		if (cfg->tx_tbl_sec)
--			qcom_qmp_phy_pcie_configure_lane(qphy->tx2, cfg->regs,
-+		qcom_qmp_phy_pcie_configure_lane(qphy->tx2, cfg->regs,
- 						    cfg->tx_tbl_sec,
- 						    cfg->tx_tbl_num_sec, 2);
- 	}
- 
- 	qcom_qmp_phy_pcie_configure_lane(rx, cfg->regs,
- 				    cfg->rx_tbl, cfg->rx_tbl_num, 1);
--	if (cfg->rx_tbl_sec)
--		qcom_qmp_phy_pcie_configure_lane(rx, cfg->regs,
-+	qcom_qmp_phy_pcie_configure_lane(rx, cfg->regs,
- 					    cfg->rx_tbl_sec, cfg->rx_tbl_num_sec, 1);
- 
- 	if (cfg->is_dual_lane_phy) {
- 		qcom_qmp_phy_pcie_configure_lane(qphy->rx2, cfg->regs,
- 					    cfg->rx_tbl, cfg->rx_tbl_num, 2);
--		if (cfg->rx_tbl_sec)
--			qcom_qmp_phy_pcie_configure_lane(qphy->rx2, cfg->regs,
-+		qcom_qmp_phy_pcie_configure_lane(qphy->rx2, cfg->regs,
- 						    cfg->rx_tbl_sec,
- 						    cfg->rx_tbl_num_sec, 2);
- 	}
- 
- 	qcom_qmp_phy_pcie_configure(pcs, cfg->regs, cfg->pcs_tbl, cfg->pcs_tbl_num);
--	if (cfg->pcs_tbl_sec)
--		qcom_qmp_phy_pcie_configure(pcs, cfg->regs, cfg->pcs_tbl_sec,
-+	qcom_qmp_phy_pcie_configure(pcs, cfg->regs, cfg->pcs_tbl_sec,
- 				       cfg->pcs_tbl_num_sec);
- 
- 	qcom_qmp_phy_pcie_configure(pcs_misc, cfg->regs, cfg->pcs_misc_tbl,
- 			       cfg->pcs_misc_tbl_num);
--	if (cfg->pcs_misc_tbl_sec)
--		qcom_qmp_phy_pcie_configure(pcs_misc, cfg->regs, cfg->pcs_misc_tbl_sec,
-+	qcom_qmp_phy_pcie_configure(pcs_misc, cfg->regs, cfg->pcs_misc_tbl_sec,
- 				       cfg->pcs_misc_tbl_num_sec);
- 
- 	/*
+Nevertheless some of the Qualcomm platforms (e.g. the aforementioned
+SDX55) would still benefit from being able to switch between RC and EP
+depending on the driver being used. While it is possible to use
+different compat strings for the PHY depending on the mode, it seems
+like an incorrect approach, since the PHY doesn't differ between
+usecases. It's the PCIe controller, who should decide how to configure
+the PHY.
+
+This patch series implements the ability to select between RC and EP
+modes, by allowing the PCIe QMP PHY driver to switch between
+programming tables.
+
+Note, there is no direct dependency between PCIe and PHY parts of these
+series, so these patches can be merged into respective subsystem trees
+separately.
+
+Changes since v1:
+- Split the if(table) removal to the separate patch
+- Expanded commit messages and comments to provide additional details
+- Fixed build error on pcie-qcom.c
+- Added support for EP mode on sm8450 to demonstrate the usage of this
+  patchset
+
+Changes since RFC:
+- Fixed the compilation of PCIe EP driver,
+- Changed pri/sec names to primary and secondary,
+- Added comments regarding usage of secondary_rc/_ep fields.
+
+Dmitry Baryshkov (6):
+  phy: qcom-qmp-pcie: drop if (table) conditions
+  phy: qcom-qmp-pcie: split register tables into primary and secondary
+    part
+  phy: qcom-qmp-pcie: support separate tables for EP mode
+  PCI: qcom: Setup PHY to work in RC mode
+  PCI: qcom-ep: Setup PHY to work in EP mode
+  phy: qcom-qmp-pcie: Support SM8450 PCIe1 PHY in EP mode
+
+ drivers/pci/controller/dwc/pcie-qcom-ep.c     |   4 +
+ drivers/pci/controller/dwc/pcie-qcom.c        |   4 +
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c      | 261 ++++++++++++------
+ .../qualcomm/phy-qcom-qmp-pcs-pcie-v5_20.h    |   1 +
+ 4 files changed, 188 insertions(+), 82 deletions(-)
+
 -- 
 2.35.1
 
