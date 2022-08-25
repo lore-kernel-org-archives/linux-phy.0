@@ -4,100 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 43112C28D13
-	for <linux-phy@archiver.kernel.org>; Thu, 25 Aug 2022 14:38:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9F45AECAA27
+	for <linux-phy@archiver.kernel.org>; Thu, 25 Aug 2022 19:39:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:Cc:To:Subject:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=CgFqrUEN+kfWI3hbia1Tpcj84Sk1uErq0teZnJXcFyQ=; b=CGRZHu/AiUZ4io83JkTvkXwa9l
-	avrrDHcMjSJ9tuHa6AFMHZqyOvOHy9Mxt5EF+zPw3iiGwStT4LFfzqseZK0IpaYMEs/NLcy/Vg3vJ
-	UBQX52+o+/53lWON32RWnv6+sfdtc4wukcHT/vdTArppap1YhTpEL1vP0uLJj5Buk0cJML6nOHxzE
-	oL8GdxHuxJUt5KqwR69UKI7eiS7tAkxiUew88REhafK917MA4nO5nA3JIOOuEIEKhzl0Tj7t4lBEr
-	F5zHVd0z5N2kxULBDtav9yOQqfSGwk8tBa5Eb2BFpF0TZ13CxqjcJBoKa/Sj1BRjtCO5T/bSMh8hR
-	tgoiVdIw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=E7qXOozlCU6bCZOfUT3q+r9XBpb2vR2DQiwjc/ZszzE=; b=2uxqw036qnzaiL
+	u4bNrudzRPr3qAPUof0sPeeomlMHy9GyyGf7ncHzu4vtkz3t47CF31p03C9hX5FEDHYGiW45Ujrx3
+	PIElcFpCE3zuHbNaPmolmk8dSih13Gbi+z0csDniqzoCKJx1KyV5DPoFanri7nsxuNKhc82yS3/4l
+	5780XSWX52zG8z5SYQRofR+NWVi/caOvhVpuTLFYA6S6Vq8ZQ9yLDN6tHqoEOJY4O1OKkX+Xj2rv7
+	ROE11jJDf4JIxXW9f4sweeSzV8OKMMqaq2voJiStrpvcYDeBsmFDVZJdg2K3+x6Zw3X1N+n7RiLI8
+	dIGmTrdbzp/Iwj4WLJRw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oRDzb-00FKUL-Ea; Thu, 25 Aug 2022 14:37:59 +0000
-Received: from out4-smtp.messagingengine.com ([66.111.4.28])
+	id 1oRIhA-002mOv-Ub; Thu, 25 Aug 2022 19:39:16 +0000
+Received: from mxout1.routing.net ([2a03:2900:1:a::a])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oRDzN-00FKNb-4A; Thu, 25 Aug 2022 14:37:46 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
-	by mailout.nyi.internal (Postfix) with ESMTP id 7C17F5C00A6;
-	Thu, 25 Aug 2022 10:37:39 -0400 (EDT)
-Received: from mailfrontend2 ([10.202.2.163])
-  by compute4.internal (MEProxy); Thu, 25 Aug 2022 10:37:39 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sholland.org; h=
-	cc:cc:content-transfer-encoding:content-type:date:date:from:from
-	:in-reply-to:in-reply-to:message-id:mime-version:references
-	:reply-to:sender:subject:subject:to:to; s=fm2; t=1661438259; x=
-	1661524659; bh=uQZAkfIx3BtXGm6NsJ9y2axRk4c1HylK1+1Iy6cM5qM=; b=c
-	bRaru4GC2gO7/NsJgLNSC7kPw5lEOXfQhCBenCG+ykPTz9ye7y+CqCzJeq8AEqE0
-	GYLg0SLqCPcq17RFjk5QaFP0VPCTsADN7gpBatGAmwILkg4QDrZbnHTKc25eDmMY
-	jsUnjB1v2uKCWO3ppIr30qA0OKt7rqs0bCPSJ6QJQ2ujYz4o8Sun54+WoFh8xEsi
-	EBiQGvVjObDvfYaRGOWOnALcoOqMCkz1BIZ8z6sxITr46WG/nBNyw1DI166mCG3a
-	ucYdoLpAsHrAEhrLD8o7f7O6j+q10F1VjAffT7hrkG8lGgDsubFhOa8PlTL4jgG5
-	N3JuEtdTy3g4lZj4i1tGA==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
-	messagingengine.com; h=cc:cc:content-transfer-encoding
-	:content-type:date:date:feedback-id:feedback-id:from:from
-	:in-reply-to:in-reply-to:message-id:mime-version:references
-	:reply-to:sender:subject:subject:to:to:x-me-proxy:x-me-proxy
-	:x-me-sender:x-me-sender:x-sasl-enc; s=fm1; t=1661438259; x=
-	1661524659; bh=uQZAkfIx3BtXGm6NsJ9y2axRk4c1HylK1+1Iy6cM5qM=; b=d
-	zCzKqjhUGuHGxMq8DZxIHFgJIN0+PZFEen85/okLW7fnVb9RtTB/XzO/S8XTSVH5
-	SDaV4pK3xNTdFVObfPjh/OMsOg+7za5EaZNcnc2GFgktGGR/R8xSc+5miOkLp7c+
-	7MjQn/M4WkhWUCWJdFM2SM2HyGikqt7vGiQaGKKh9800dlQeuZ7ej2rzFKITfVQS
-	VVM4ek89oEIDz6wlFhiR9Zd7QDH9abVd/Xnf6KKwnZWzYjIuwdjX4LXta+KWrosS
-	cujV9P1xiV8P+MVXcCo3n1+wCqt/ZaPv46gV4iBAH5s4duWayYiduDY2+ZYxxiCn
-	QrBY1Zcz9Hi6ZV7kx3nuw==
-X-ME-Sender: <xms:MokHY9ytPkTelAYkCj0iAzVWDqlrgLIGuw0E_hxgdx2iyzD0l8oFrA>
-    <xme:MokHY9TKqbXS0yMdtPT3tS84Lb1DwPQqoF7k8cZgsWUnLSCMRLnfCZEZLjKiKiE7s
-    8jhHZ6JJdcCWH3ikA>
-X-ME-Received: <xmr:MokHY3UsVrDjl35b9s1YJpNcsdIjn0VHXocn46bjZw51AuAt7y4dqAmZy99kkEWAH4NeC2d2MFdZPNToC6_Vnkt01oSEy9cndwzwnxlAME8Yn75E2j_0Q4yelQ>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvfedrvdejfedgjeekucetufdoteggodetrfdotf
-    fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
-    uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
-    cujfgurhepuffvvehfhffkffgfgggjtgfgsehtjeertddtfeejnecuhfhrohhmpefurghm
-    uhgvlhcujfholhhlrghnugcuoehsrghmuhgvlhesshhhohhllhgrnhgurdhorhhgqeenuc
-    ggtffrrghtthgvrhhnpeeitedvhfejhfdvjefggeeutdegteejfffgvedtjedukefgueek
-    tddtvdegfedtgfenucffohhmrghinhepghhithhhuhgsrdgtohhmnecuvehluhhsthgvrh
-    fuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomhepshgrmhhuvghlsehshhholhhl
-    rghnugdrohhrgh
-X-ME-Proxy: <xmx:MokHY_h3YTcDjZq0MRYPBf26oIlQvEjMzMId5yc-Ay03yFu7MNu2qQ>
-    <xmx:MokHY_CoLAv5UX4krtnT5UK1jnBH7SrUcBfwqNTlOYvd21H11pHC9Q>
-    <xmx:MokHY4Iq8j-Jkd-3UOB6BRLmn4qtxtYRxkv46gHUHCLyDlnJso79wA>
-    <xmx:M4kHY_wMZpDE9efVbs_vbH2-tFpL-K1rK9zFl-k-J0r4XT05Xy_C4w>
-Feedback-ID: i0ad843c9:Fastmail
-Received: by mail.messagingengine.com (Postfix) with ESMTPA; Thu,
- 25 Aug 2022 10:37:38 -0400 (EDT)
-Subject: Re: [PATCH 4/8] dt-bindings: sun6i-a31-mipi-dphy: Add the A100 DPHY
- variant
-To: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-Cc: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- Chen-Yu Tsai <wens@csie.org>, Jernej Skrabec <jernej.skrabec@gmail.com>,
- Maxime Ripard <mripard@kernel.org>, Jagan Teki <jagan@amarulasolutions.com>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Maxime Ripard <maxime@cerno.tech>, Rob Herring <robh+dt@kernel.org>,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-sunxi@lists.linux.dev
-References: <20220812075603.59375-1-samuel@sholland.org>
- <20220812075603.59375-5-samuel@sholland.org> <YwdRvBSGDNIUOMnH@aptenodytes>
-From: Samuel Holland <samuel@sholland.org>
-Message-ID: <95464d37-6da5-1f63-8f21-93ede5666312@sholland.org>
-Date: Thu, 25 Aug 2022 09:37:37 -0500
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
+	id 1oRIgw-002mFc-KL; Thu, 25 Aug 2022 19:39:04 +0000
+Received: from mxbox1.masterlogin.de (unknown [192.168.10.88])
+	by mxout1.routing.net (Postfix) with ESMTP id 6516B40666;
+	Thu, 25 Aug 2022 19:38:56 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mailerdienst.de;
+	s=20200217; t=1661456336;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:
+	 content-transfer-encoding:content-transfer-encoding;
+	bh=BjCaPS3Ls4OcThfe6JXlBlmUcyFt3U2x6sPSAzYayAE=;
+	b=RZHrhso7bq5krHTSILI+Du8+jJ4NY2btosRsojMruDhy8p3HV9L4CrZKxe5FdB54E8t4EP
+	57d/mZgmm2+oY2EoIZB7Xay7O2Oqen4mLCuwN+1+pZipAE7funuSgJQYuyjyFM6f0EsIjl
+	41i3HdpbyI5buN2CNR1NRTRKMAT0sAM=
+Received: from frank-G5.. (fttx-pool-80.245.75.185.bambit.de [80.245.75.185])
+	by mxbox1.masterlogin.de (Postfix) with ESMTPSA id 3206B402A9;
+	Thu, 25 Aug 2022 19:38:55 +0000 (UTC)
+From: Frank Wunderlich <linux@fw-web.de>
+To: linux-rockchip@lists.infradead.org
+Cc: Frank Wunderlich <frank-w@public-files.de>,
+	Kishon Vijay Abraham I <kishon@ti.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Heiko Stuebner <heiko@sntech.de>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Yifeng Zhao <yifeng.zhao@rock-chips.com>,
+	Johan Jonker <jbx6244@gmail.com>,
+	Peter Geis <pgwipeout@gmail.com>,
+	Simon Xue <xxm@rock-chips.com>,
+	Liang Chen <cl@rock-chips.com>,
+	Shawn Lin <shawn.lin@rock-chips.com>,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH v5 0/5] RK3568 PCIe V3 support
+Date: Thu, 25 Aug 2022 21:38:31 +0200
+Message-Id: <20220825193836.54262-1-linux@fw-web.de>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-In-Reply-To: <YwdRvBSGDNIUOMnH@aptenodytes>
-Content-Language: en-US
+X-Mail-ID: ec59aa3d-efac-4485-ba71-0bdc305891d2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220825_073745_477925_03B3F5A4 
-X-CRM114-Status: GOOD (  19.75  )
+X-CRM114-CacheID: sfid-20220825_123903_693174_E35D5D54 
+X-CRM114-Status: UNSURE (   9.34  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -114,68 +84,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 8/25/22 5:41 AM, Paul Kocialkowski wrote:
-> Hi Samuel,
-> 
-> On Fri 12 Aug 22, 02:55, Samuel Holland wrote:
->> A100 features an updated DPHY, which moves PLL control inside the DPHY
->> register space. (Previously PLL-MIPI was controlled from the CCU. This
->> does not affect the "clocks" property because the link between PLL-MIPI
->> and the DPHY was never represented in the devicetree.) It also requires
->> a modified analog power-on sequence. Finally, the new DPHY adds support
->> for operating as an LVDS PHY. D1 uses this same variant.
-> 
-> Do you have some pointers about that? I'd be surprised that this PHY is now
-> used for "traditional" LVDS display output, which is usually done with a simpler
-> LVDS phy attached to the display controller.
+From: Frank Wunderlich <frank-w@public-files.de>
 
-Yes, this is documented in the A133 User Manual. As for the BSP code, see:
+This series adds Rockchip PCIe V3 support found on rk3568 SOC.
 
-https://github.com/Tina-Linux/tina-d1x-linux-5.4/blob/master/drivers/video/fbdev/sunxi/disp2/disp/de/lowlevel_v2x/de_dsi.c#L773
-https://github.com/Tina-Linux/tina-d1x-linux-5.4/blob/master/drivers/video/fbdev/sunxi/disp2/disp/de/lowlevel_v2x/de_lcd_sun50iw10.c#L390
-https://github.com/Tina-Linux/tina-d1x-linux-5.4/blob/master/drivers/video/fbdev/sunxi/disp2/disp/de/disp_lcd.c#L786
+Compared to PCIeV2 which uses the Naneng combphy, PCIe v3 uses a dedicated
+PCI-phy.
 
-Regards,
-Samuel
+Frank Wunderlich (4):
+  dt-bindings: phy: rockchip: add PCIe v3 phy
+  dt-bindings: soc: grf: add pcie30-{phy,pipe}-grf
+  arm64: dts: rockchip: rk3568: Add PCIe v3 nodes
+  arm64: dts: rockchip: Add PCIe v3 nodes to BPI-R2-Pro
 
-> However I've seen that some new Allwinner SoCs come with sub-LVDS camera input,
-> which typically requires a more complex PHY due to the high number of lanes.
-> 
-> Anyway for now this is:
-> Reviewed-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-> 
-> Cheers,
-> 
-> Paul
-> 
->> Signed-off-by: Samuel Holland <samuel@sholland.org>
->> ---
->>
->>  .../bindings/phy/allwinner,sun6i-a31-mipi-dphy.yaml           | 4 ++++
->>  1 file changed, 4 insertions(+)
->>
->> diff --git a/Documentation/devicetree/bindings/phy/allwinner,sun6i-a31-mipi-dphy.yaml b/Documentation/devicetree/bindings/phy/allwinner,sun6i-a31-mipi-dphy.yaml
->> index cf49bd99b3e2..b88c4b52af7d 100644
->> --- a/Documentation/devicetree/bindings/phy/allwinner,sun6i-a31-mipi-dphy.yaml
->> +++ b/Documentation/devicetree/bindings/phy/allwinner,sun6i-a31-mipi-dphy.yaml
->> @@ -17,9 +17,13 @@ properties:
->>    compatible:
->>      oneOf:
->>        - const: allwinner,sun6i-a31-mipi-dphy
->> +      - const: allwinner,sun50i-a100-mipi-dphy
->>        - items:
->>            - const: allwinner,sun50i-a64-mipi-dphy
->>            - const: allwinner,sun6i-a31-mipi-dphy
->> +      - items:
->> +          - const: allwinner,sun20i-d1-mipi-dphy
->> +          - const: allwinner,sun50i-a100-mipi-dphy
->>  
->>    reg:
->>      maxItems: 1
->> -- 
->> 2.35.1
->>
-> 
+Shawn Lin (1):
+  phy: rockchip: Support PCIe v3
+
+ .../bindings/phy/rockchip,pcie3-phy.yaml      |  80 +++++
+ .../devicetree/bindings/soc/rockchip/grf.yaml |   3 +
+ .../boot/dts/rockchip/rk3568-bpi-r2-pro.dts   | 117 +++++++
+ arch/arm64/boot/dts/rockchip/rk3568.dtsi      | 122 +++++++
+ drivers/phy/rockchip/Kconfig                  |   9 +
+ drivers/phy/rockchip/Makefile                 |   1 +
+ .../phy/rockchip/phy-rockchip-snps-pcie3.c    | 319 ++++++++++++++++++
+ include/linux/phy/pcie.h                      |  12 +
+ 8 files changed, 663 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/rockchip,pcie3-phy.yaml
+ create mode 100644 drivers/phy/rockchip/phy-rockchip-snps-pcie3.c
+ create mode 100644 include/linux/phy/pcie.h
+
+-- 
+2.34.1
 
 
 -- 
