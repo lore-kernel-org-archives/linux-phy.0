@@ -4,57 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C0EB9C3F6B0
-	for <linux-phy@archiver.kernel.org>; Thu, 25 Aug 2022 12:23:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DAB14C28D13
+	for <linux-phy@archiver.kernel.org>; Thu, 25 Aug 2022 13:01:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dxtxgNRaFkehtziVZuFRdsHTk1Q2lyAdvT5bKH1kcTU=; b=Lgu4c0ji/e2Gz5
-	BuP8/hFoB93y5NpdJpTWWsPcb03P6mRt7eDrrnMkqzaAuERhPYUO/QBjatqnzlqBJvnrfLtI0W68q
-	F1zTWZ4qHlvBatPTRMhgzIPmdqHYl6nGlFeLwrNVaI4SpHZEBdvwgDxw3sq0phU7fyqdq011ac9rs
-	BlWoq5TdpKRrZijdWehDZUpbMeIkspx6Kq3TIK0M02PMJM3BDjNUvPAnY3fwkgTsDhefbQb6QfbRE
-	JWUfGXhiIT9bHRuA4NkQuwow8IvFrparKkS8NfxDHHVMm3cuABr4zfMjTs8yxJPVNwRmKa3XkRl+1
-	z++SSqQPVz4qPVoDoQjQ==;
+	List-Owner; bh=m5SxcwP3FgKGlX7DjC4TIwyBkIJMoRql6bVJbXaafsA=; b=tHlYnz4/Tuiz+B
+	SsAyrvvxLVn2GDZaDWqF4UHTG8RXf8vbuRWXRd6ECJVkXv2o6QpPRhTe0HnvNBowWT3XmUCkJyC1j
+	B/6RQR0FtH6f9kuyV2QlUPymHEcMz3UrlhphhCp6od4+mPf9e+m5iQOoqji3fZZv4UuYF8O15mA6q
+	h5zieqS20TiNJJCkDAIq1Xed7ZcB7jKs2qHZ7gc/cCMZbcP/HdrrhcuRL2L9wbW/3Nlq1YCqZ4dTS
+	4ZVH0tDfJqAeQgpupqboho0UnZvrisJKGv3UcoYyg5vkKEHUruJ1j+ZErcfJ+YIejuOAsnlhbOO1Z
+	epoKdZgNTHznyfBXkVhA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oRBtQ-00DeLL-70; Thu, 25 Aug 2022 12:23:28 +0000
-Received: from out2.migadu.com ([188.165.223.204])
+	id 1oRCTt-00EGRZ-A0; Thu, 25 Aug 2022 13:01:09 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oRBtD-00DeEp-FO; Thu, 25 Aug 2022 12:23:18 +0000
-Date: Thu, 25 Aug 2022 14:23:02 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linux.dev; s=key1;
-	t=1661430184;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 in-reply-to:in-reply-to:references:references;
-	bh=TArGzTdThvhYzdQovAUE+8bQSNufrXIWdNrfxHDA2tc=;
-	b=hk4vCoyD497ddsP26DG6/KNanWkk6tEZq04o+hfYJI5e5Z5F5uix7gwjVe6TGkVMNfGQLi
-	Msx8gXHnifznr9DWJ0ToR1pGPV4r2LZ0ZMOPfEu2KFZIgs5GJu7ToRxls2QMm2vpCDy9o7
-	5TF6d4p8U1LhXJGkHsYi/Vn1RCGB4Ks=
-X-Report-Abuse: Please report any abuse attempt to abuse@migadu.com and include these headers.
-From: Richard Leitner <richard.leitner@linux.dev>
-To: Richard Zhu <hongxing.zhu@nxp.com>
-Cc: p.zabel@pengutronix.de, l.stach@pengutronix.de, bhelgaas@google.com,
-	lorenzo.pieralisi@arm.com, robh@kernel.org, shawnguo@kernel.org,
-	vkoul@kernel.org, alexander.stein@ew.tq-group.com, marex@denx.de,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-pci@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org, kernel@pengutronix.de,
-	linux-imx@nxp.com
-Subject: Re: [PATCH v3 0/6] Add the iMX8MP PCIe support
-Message-ID: <Ywdpps9B3PCno6wK@skidata.com>
-References: <1660806153-29001-1-git-send-email-hongxing.zhu@nxp.com>
+	id 1oRCTn-00EGJz-TS
+	for linux-phy@lists.infradead.org; Thu, 25 Aug 2022 13:01:08 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 4B8EB61C33;
+	Thu, 25 Aug 2022 13:01:03 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5DAC9C433D6;
+	Thu, 25 Aug 2022 13:01:02 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1661432462;
+	bh=/TLJq1woRZKbNETnbEiMUveyIZ16XgR/Z39AFzBEgno=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=I2qhRTpWYNnAclCoROANEx2L4DQDYjEtMHbg0TdQeh2q1lZPLIhvd45dGICUez4eM
+	 ssUB5eusnSnXb1Hibj2shUv4kl8eAJGI6zTd5ATqAqyDaCUeELDe2PSPVkTZh6wOZA
+	 WgmSB9vQDbTewMi5wvlwWcivAyReLjF4ZRkU05RieZaeX9+CwinfCfgdTPch6cWTJg
+	 lYu1g0G+eaoM6dWwnHntHvirfXSJAR0ZuIc8qY9+ziDWFgDxzZdnLwwK4xybYMlFc2
+	 XWLFHySKaFkUm874GhD8TtB06RNVy0oxeaFW4IW8TQ3MI1cGwa5gi/V3gk77guiiVQ
+	 +htQbbGH7Kyeg==
+Received: by pali.im (Postfix)
+	id 6C7E0742; Thu, 25 Aug 2022 15:00:59 +0200 (CEST)
+Date: Thu, 25 Aug 2022 15:00:59 +0200
+From: Pali =?utf-8?B?Um9ow6Fy?= <pali@kernel.org>
+To: Shinichiro Kawasaki <shinichiro.kawasaki@wdc.com>,
+	Marek =?utf-8?B?QmVow7pu?= <kabel@kernel.org>
+Cc: "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
+	Damien Le Moal <Damien.LeMoal@wdc.com>
+Subject: Re: ARMADA espressobin SATA drive detection failure
+Message-ID: <20220825130059.5kat4fhddwj2nf4r@pali>
+References: <20220813010033.erkdwf24arlz7zer@shindev>
+ <20220813010351.fauxwpi6w4d4shmn@pali>
+ <20220813013534.l5hzxv7mc5fylx7m@shindev>
+ <20220813093214.6ved4ka3l2thkn2n@pali>
+ <20220813115338.uq4xbznngjradzi6@shindev>
+ <20220813120108.vaiwnzhofz6hy5kc@pali>
+ <20220813124729.qondfc7z5eoeoq7p@shindev>
+ <20220813125052.hjd6lhh4fcc7jl5u@pali>
+ <20220813230233.3hyvkoexqitfnlte@shindev>
+ <20220813231050.l5xadzdpavmmtdbq@pali>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1660806153-29001-1-git-send-email-hongxing.zhu@nxp.com>
-X-Migadu-Flow: FLOW_OUT
-X-Migadu-Auth-User: linux.dev
+In-Reply-To: <20220813231050.l5xadzdpavmmtdbq@pali>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220825_052316_632008_FB196040 
-X-CRM114-Status: GOOD (  19.68  )
+X-CRM114-CacheID: sfid-20220825_060104_051283_1C0930AD 
+X-CRM114-Status: GOOD (  35.57  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -66,167 +80,97 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Richard,
-
-On Thu, Aug 18, 2022 at 03:02:27PM +0800, Richard Zhu wrote:
-> Based on the 6.0-rc1 of the pci/next branch. 
-> This series adds the i.MX8MP PCIe support and had been tested on i.MX8MP
-> EVK board when one PCIe NVME device is used.
-> 
-> - i.MX8MP PCIe has reversed initial PERST bit value refer to i.MX8MQ/i.MX8MM.
->   Add the PHY PERST explicitly for i.MX8MP PCIe PHY.
-> - Add the i.MX8MP PCIe PHY support in the i.MX8M PCIe PHY driver.
->   And share as much as possible codes with i.MX8MM PCIe PHY.
-> - Add the i.MX8MP PCIe support in binding document, DTS files, and PCIe
->   driver.
-> 
-> Main changes v2-->v3:
-> - Fix the schema checking error in the PHY dt-binding patch.
-> - Inspired by Lucas, the PLL configurations might not required when
->   external OSC is used as PCIe referrence clock. It's true. Remove all
->   the HSIO PLL bit manipulations, and PCIe works fine on i.MX8MP EVK board
->   with one NVME device is used.
-> - Drop the #4 patch of v2, since it had been applied by Rob.
-> 
-> Main changes v1-->v2:
-> - It's my fault forget including Vinod, re-send v2 after include Vinod
->   and linux-phy@lists.infradead.org.
-> - List the basements of this patch-set. The branch, codes changes and so on.
-> - Clean up some useless register and bit definitions in #3 patch.
-> 
-> Documentation/devicetree/bindings/phy/fsl,imx8-pcie-phy.yaml |  16 +++++++--
-> arch/arm64/boot/dts/freescale/imx8mp-evk.dts                 |  53 +++++++++++++++++++++++++++++
-> arch/arm64/boot/dts/freescale/imx8mp.dtsi                    |  46 ++++++++++++++++++++++++-
-> drivers/pci/controller/dwc/pci-imx6.c                        |  17 +++++++++-
-> drivers/phy/freescale/phy-fsl-imx8m-pcie.c                   | 150 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------
-> drivers/reset/reset-imx7.c                                   |   1 +
-> 6 files changed, 232 insertions(+), 51 deletions(-)
-> 
->  [PATCH v3 1/6] reset: imx7: Add the iMX8MP PCIe PHY PERST support
->  [PATCH v3 2/6] dt-binding: phy: Add iMX8MP PCIe PHY binding
->  [PATCH v3 3/6] phy: freescale: imx8m-pcie: Add iMX8MP PCIe PHY
->  [PATCH v3 4/6] arm64: dts: imx8mp: add the iMX8MP PCIe support
->  [PATCH v3 5/6] arm64: dts: imx8mp-evk: Add PCIe support
->  [PATCH v3 6/6] PCI: imx6: Add the iMX8MP PCIe support
-
-Thanks for this series!
-I've just tested this on our custom i.MX8MP based board with an M.2 SSD
-and it seems to work!
-
-Therefore please feel free to add:
-
-Tested-by: Richard Leitner <richard.leitner@skidata.com>
-
-I don't know if it's interesting to you, but here's the dmesg output:
-
-[    0.060405] PCI: CLS 0 bytes, default 64
-[    1.252523] ehci-pci: EHCI PCI platform driver
-[    1.268608] ohci-pci: OHCI PCI platform driver
-[    1.750913] imx6q-pcie 33800000.pcie: host bridge /soc@0/pcie@33800000 ranges:
-[    1.758221] imx6q-pcie 33800000.pcie: Parsing ranges property...
-[    1.765479] imx6q-pcie 33800000.pcie:       IO 0x001ff80000..0x001ff8ffff -> 0x0000000000
-[    1.773695] imx6q-pcie 33800000.pcie:      MEM 0x0018000000..0x001fefffff -> 0x0018000000
-[    1.999331] phy phy-32f00000.pcie-phy.1: phy_power_on was called before phy_init
-[    2.007562] imx6q-pcie 33800000.pcie: Using 32 MSI vectors
-[    2.007626] imx6q-pcie 33800000.pcie: iATU unroll: enabled
-[    2.013124] imx6q-pcie 33800000.pcie: iATU regions: 4 ob, 4 ib, align 64K, limit 16G
-[    2.120921] imx6q-pcie 33800000.pcie: PCIe Gen.1 x1 link up
-[    2.226533] imx6q-pcie 33800000.pcie: PCIe Gen.3 x1 link up
-[    2.235492] imx6q-pcie 33800000.pcie: Link up, Gen3
-[    2.240380] imx6q-pcie 33800000.pcie: PCIe Gen.3 x1 link up
-[    2.246066] imx6q-pcie 33800000.pcie: PCI host bridge to bus 0000:00
-[    2.252437] pci_bus 0000:00: root bus resource [bus 00-ff]
-[    2.257937] pci_bus 0000:00: root bus resource [io  0x0000-0xffff]
-[    2.264134] pci_bus 0000:00: root bus resource [mem 0x18000000-0x1fefffff]
-[    2.271019] pci_bus 0000:00: scanning bus
-[    2.271045] pci 0000:00:00.0: [16c3:abcd] type 01 class 0x060400
-[    2.277070] pci 0000:00:00.0: reg 0x10: [mem 0x00000000-0x000fffff]
-[    2.283349] pci 0000:00:00.0: reg 0x38: [mem 0x00000000-0x0000ffff pref]
-[    2.293834] pci 0000:00:00.0: supports D1
-[    2.301828] pci 0000:00:00.0: PME# supported from D0 D1 D3hot D3cold
-[    2.308195] pci 0000:00:00.0: PME# disabled
-[    2.308348] pci 0000:00:00.0: vgaarb: pci_notify
-[    2.310109] pci_bus 0000:00: fixups for bus
-[    2.310117] pci 0000:00:00.0: scanning [bus 01-ff] behind bridge, pass 0
-[    2.310178] pci_bus 0000:01: scanning bus
-[    2.310244] pci 0000:01:00.0: [126f:2263] type 00 class 0x010802
-[    2.316325] pci 0000:01:00.0: reg 0x10: [mem 0x00000000-0x00003fff 64bit]
-[    2.323535] pci 0000:01:00.0: 7.876 Gb/s available PCIe bandwidth, limited by 8.0 GT/s PCIe x1 link at 0000:00:00.0 (capable of 31.504 Gb/s with 8.0 GT/s PCIe x4 link)
-[    2.338620] pci 0000:01:00.0: vgaarb: pci_notify
-[    2.347400] pci_bus 0000:01: fixups for bus
-[    2.347411] pci_bus 0000:01: bus scan returning with max=01
-[    2.347422] pci 0000:00:00.0: scanning [bus 01-ff] behind bridge, pass 1
-[    2.347435] pci_bus 0000:00: bus scan returning with max=ff
-[    2.347455] pci 0000:00:00.0: BAR 0: assigned [mem 0x18000000-0x180fffff]
-[    2.354259] pci 0000:00:00.0: BAR 14: assigned [mem 0x18100000-0x181fffff]
-[    2.361146] pci 0000:00:00.0: BAR 6: assigned [mem 0x18200000-0x1820ffff pref]
-[    2.368383] pci 0000:01:00.0: BAR 0: assigned [mem 0x18100000-0x18103fff 64bit]
-[    2.375728] pci 0000:00:00.0: PCI bridge to [bus 01-ff]
-[    2.380965] pci 0000:00:00.0:   bridge window [mem 0x18100000-0x181fffff]
-[    2.387853] pcieport 0000:00:00.0: vgaarb: pci_notify
-[    2.387921] pcieport 0000:00:00.0: assign IRQ: got 206
-[    2.387984] imx6q-pcie 33800000.pcie: msi#0 address_hi 0x0 address_lo 0x42587000
-[    2.388095] pcieport 0000:00:00.0: PME: Signaling with IRQ 207
-[    2.394218] pcieport 0000:00:00.0: AER: enabled with IRQ 207
-[    2.399963] pcieport 0000:00:00.0: saving config space at offset 0x0 (reading 0xabcd16c3)
-[    2.399972] pcieport 0000:00:00.0: saving config space at offset 0x4 (reading 0x100507)
-[    2.399979] pcieport 0000:00:00.0: saving config space at offset 0x8 (reading 0x6040001)
-[    2.399985] pcieport 0000:00:00.0: saving config space at offset 0xc (reading 0x10000)
-[    2.399992] pcieport 0000:00:00.0: saving config space at offset 0x10 (reading 0x18000000)
-[    2.399998] pcieport 0000:00:00.0: saving config space at offset 0x14 (reading 0x0)
-[    2.400005] pcieport 0000:00:00.0: saving config space at offset 0x18 (reading 0xff0100)
-[    2.400011] pcieport 0000:00:00.0: saving config space at offset 0x1c (reading 0xf0)
-[    2.400018] pcieport 0000:00:00.0: saving config space at offset 0x20 (reading 0x18101810)
-[    2.400024] pcieport 0000:00:00.0: saving config space at offset 0x24 (reading 0xfff0)
-[    2.400031] pcieport 0000:00:00.0: saving config space at offset 0x28 (reading 0x0)
-[    2.400037] pcieport 0000:00:00.0: saving config space at offset 0x2c (reading 0x0)
-[    2.400043] pcieport 0000:00:00.0: saving config space at offset 0x30 (reading 0x0)
-[    2.400049] pcieport 0000:00:00.0: saving config space at offset 0x34 (reading 0x40)
-[    2.400056] pcieport 0000:00:00.0: saving config space at offset 0x38 (reading 0x0)
-[    2.400062] pcieport 0000:00:00.0: saving config space at offset 0x3c (reading 0x201ce)
-[    2.400091] pcieport 0000:00:00.0: vgaarb: pci_notify
-[    2.400192] nvme 0000:01:00.0: vgaarb: pci_notify
-[    2.400230] nvme 0000:01:00.0: assign IRQ: got 206
-[    2.400431] nvme nvme0: pci function 0000:01:00.0
-[    2.405166] nvme 0000:01:00.0: vgaarb: pci_notify
-[    2.405178] nvme 0000:01:00.0: enabling device (0000 -> 0002)
-[    2.410959] nvme 0000:01:00.0: enabling bus mastering
-[    2.411068] imx6q-pcie 33800000.pcie: msi#1 address_hi 0x0 address_lo 0x42587000
-[    2.411132] nvme 0000:01:00.0: saving config space at offset 0x0 (reading 0x2263126f)
-[    2.411142] nvme 0000:01:00.0: saving config space at offset 0x4 (reading 0x100406)
-[    2.411151] nvme 0000:01:00.0: saving config space at offset 0x8 (reading 0x1080203)
-[    2.411162] nvme 0000:01:00.0: saving config space at offset 0xc (reading 0x0)
-[    2.411172] nvme 0000:01:00.0: saving config space at offset 0x10 (reading 0x18100004)
-[    2.411184] nvme 0000:01:00.0: saving config space at offset 0x14 (reading 0x0)
-[    2.411194] nvme 0000:01:00.0: saving config space at offset 0x18 (reading 0x0)
-[    2.411205] nvme 0000:01:00.0: saving config space at offset 0x1c (reading 0x0)
-[    2.411216] nvme 0000:01:00.0: saving config space at offset 0x20 (reading 0x0)
-[    2.411226] nvme 0000:01:00.0: saving config space at offset 0x24 (reading 0x0)
-[    2.411237] nvme 0000:01:00.0: saving config space at offset 0x28 (reading 0x0)
-[    2.411247] nvme 0000:01:00.0: saving config space at offset 0x2c (reading 0x22631dee)
-[    2.411258] nvme 0000:01:00.0: saving config space at offset 0x30 (reading 0x0)
-[    2.411269] nvme 0000:01:00.0: saving config space at offset 0x34 (reading 0x40)
-[    2.411280] nvme 0000:01:00.0: saving config space at offset 0x38 (reading 0x0)
-[    2.411290] nvme 0000:01:00.0: saving config space at offset 0x3c (reading 0x1ce)
-[    2.415562] nvme nvme0: missing or invalid SUBNQN field.
-[    2.428381] nvme nvme0: allocated 64 MiB host memory buffer.
-[    2.436360] imx6q-pcie 33800000.pcie: msi#1 address_hi 0x0 address_lo 0x42587000
-[    2.436415] imx6q-pcie 33800000.pcie: msi#2 address_hi 0x0 address_lo 0x42587000
-[    2.436453] imx6q-pcie 33800000.pcie: msi#3 address_hi 0x0 address_lo 0x42587000
-[    2.436491] imx6q-pcie 33800000.pcie: msi#4 address_hi 0x0 address_lo 0x42587000
-[    2.436529] imx6q-pcie 33800000.pcie: msi#5 address_hi 0x0 address_lo 0x42587000
-[    2.442960] nvme nvme0: 4/0/0 default/read/poll queues
-[    2.452699] nvme nvme0: Ignoring bogus Namespace Identifiers
-[    2.459882]  nvme0n1: p1
-
-regards;rl
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gU3VuZGF5IDE0IEF1Z3VzdCAyMDIyIDAxOjEwOjUwIFBhbGkgUm9ow6FyIHdyb3RlOgo+IE9u
+IFNhdHVyZGF5IDEzIEF1Z3VzdCAyMDIyIDIzOjAyOjM0IFNoaW5pY2hpcm8gS2F3YXNha2kgd3Jv
+dGU6Cj4gPiBPbiBBdWcgMTMsIDIwMjIgLyAxNDo1MCwgUGFsaSBSb2jDoXIgd3JvdGU6Cj4gPiA+
+IE9uIFNhdHVyZGF5IDEzIEF1Z3VzdCAyMDIyIDEyOjQ3OjMwIFNoaW5pY2hpcm8gS2F3YXNha2kg
+d3JvdGU6Cj4gPiA+ID4gT24gQXVnIDEzLCAyMDIyIC8gMTQ6MDEsIFBhbGkgUm9ow6FyIHdyb3Rl
+Ogo+ID4gPiA+ID4gT24gU2F0dXJkYXkgMTMgQXVndXN0IDIwMjIgMTE6NTM6MzkgU2hpbmljaGly
+byBLYXdhc2FraSB3cm90ZToKPiA+ID4gPiA+ID4gT24gQXVnIDEzLCAyMDIyIC8gMTE6MzIsIFBh
+bGkgUm9ow6FyIHdyb3RlOgo+ID4gPiA+ID4gPiA+IE9uIFNhdHVyZGF5IDEzIEF1Z3VzdCAyMDIy
+IDAxOjM1OjM1IFNoaW5pY2hpcm8gS2F3YXNha2kgd3JvdGU6Cj4gPiA+ID4gPiA+IAo+ID4gPiA+
+ID4gPiBbLi4uXQo+ID4gPiA+ID4gPiAKPiA+ID4gPiA+ID4gPiBPaywgdGhhbmtzIGZvciB0ZXN0
+aW5nLiBJdCBsb29rcyBsaWtlIHRoYXQgcmVzZXQgY29kZSBoYXMgc29tZSBpc3N1ZXMuCj4gPiA+
+ID4gPiA+ID4gCj4gPiA+ID4gPiA+ID4gQ291bGQgeW91IHBsZWFzZSB0ZXN0IHRoaXMgY2hhbmdl
+Pwo+ID4gPiA+ID4gPiA+IAo+ID4gPiA+ID4gPiA+IEBAIC0xMzkzLDcgKzE0MzYsOCBAQCBzdGF0
+aWMgaW50IG12ZWJ1X2EzNzAwX2NvbXBoeV9wcm9iZShzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNlICpw
+ZGV2KQo+ID4gPiA+ID4gPiA+ICAJCSAqIFRvIGF2b2lkIHJlbHlpbmcgb24gdGhlIGJvb3Rsb2Fk
+ZXIvZmlybXdhcmUgY29uZmlndXJhdGlvbiwKPiA+ID4gPiA+ID4gPiAgCQkgKiBwb3dlciBvZmYg
+YWxsIGNvbXBoeXMuCj4gPiA+ID4gPiA+ID4gIAkJICovCj4gPiA+ID4gPiA+ID4gLQkJbXZlYnVf
+YTM3MDBfY29tcGh5X3Jlc2V0KHBoeSk7Cj4gPiA+ID4gPiA+ID4gKy8vCQltdmVidV9hMzcwMF9j
+b21waHlfcmVzZXQocGh5KTsKPiA+ID4gPiA+ID4gPiArCQltdmVidV9hMzcwMF9jb21waHlfcG93
+ZXJfb2ZmKHBoeSk7Cj4gPiA+ID4gPiA+ID4gIAkJbGFuZS0+bmVlZHNfcmVzZXQgPSBmYWxzZTsK
+PiA+ID4gPiA+ID4gPiAgCX0KPiA+ID4gPiA+ID4gPiAgCj4gPiA+ID4gPiA+ID4gCj4gPiA+ID4g
+PiA+ID4gSXQgc2hvdWxkIHJlcGxhY2UgcmVzZXQgY29kZSBieSBwb3dlciBvZmYgYXQgYmVnaW5u
+aW5nIC8gcHJvYmUgdGltZS4KPiA+ID4gPiA+ID4gCj4gPiA+ID4gPiA+IFRoaXMgY2hhbmdlIGFs
+c28gYXZvaWRlZCB0aGUgImF0YTE6IFNBVEEgbGluayBkb3duIChTU3RhdHVzIDAgU0NvbnRyb2wg
+MzAwKSIKPiA+ID4gPiA+ID4gbWVzc2FnZSwgYW5kIG15IFNTRCB3YXMgZGV0ZWN0ZWQgYXMgL2Rl
+di9zZGEuIEdvb2Qgc3ltcHRvbXMgZm9yIG1lLiBGWUksIEkKPiA+ID4gPiA+ID4gYXR0YWNoIHRo
+ZSBjb25zb2xlIGxvZyB3aXRoIHRoaXMgY2hhbmdlLiAoVGhpcyB0aW1lLCBmb2xsb3dpbmcgbWVz
+c2FnZXMgd2VyZQo+ID4gPiA+ID4gPiBwcmludGVkLiBOb3Qgc3VyZSBpZiB0aGV5IGFyZSBpbXBv
+cnRhbnQgb3Igbm90LikKPiA+ID4gPiA+ID4gCj4gPiA+ID4gPiA+IFsgICAgMi45MzczNzZdIG12
+ZWJ1LWEzNzAwLWNvbXBoeSBkMDAxODMwMC5waHk6IGludmFsaWQgQ09NUEhZIG1vZGUKPiA+ID4g
+PiA+ID4gWyAgICAyLjk0MzU4MV0gbXZlYnUtYTM3MDAtY29tcGh5IGQwMDE4MzAwLnBoeTogaW52
+YWxpZCBDT01QSFkgbW9kZQo+ID4gPiA+ID4gPiBbICAgIDIuOTQ5Njc5XSBtdmVidS1hMzcwMC1j
+b21waHkgZDAwMTgzMDAucGh5OiBpbnZhbGlkIENPTVBIWSBtb2RlCj4gPiA+ID4gPiAKPiA+ID4g
+PiA+IFRob3NlIGVycm9ycyBhcmUgaW1wb3J0YW50LCBpdCBtZWFucyB0aGF0IHBvd2VyX29mZiBk
+aWQgbm90aGluZyBhbmQgd2FzCj4gPiA+ID4gPiBza2lwcGVkLiBTbyB0ZXN0IGRpZCBub3RoaW5n
+Lgo+ID4gPiA+ID4gCj4gPiA+ID4gPiBDb3VsZCB5b3UgcGxlYXNlIHJlcGxhY2UgbXZlYnVfYTM3
+MDBfY29tcGh5X3Bvd2VyX29mZiBpbXBsZW1lbnRhdGlvbgo+ID4gPiA+ID4gd2l0aCB0aGlzIG9u
+ZSBhbmQgdHJ5IGl0IGFnYWluPwo+ID4gPiA+ID4gCj4gPiA+ID4gPiBzdGF0aWMgaW50IG12ZWJ1
+X2EzNzAwX2NvbXBoeV9wb3dlcl9vZmYoc3RydWN0IHBoeSAqcGh5KQo+ID4gPiA+ID4gewo+ID4g
+PiA+ID4gCXN0cnVjdCBtdmVidV9hMzcwMF9jb21waHlfbGFuZSAqbGFuZSA9IHBoeV9nZXRfZHJ2
+ZGF0YShwaHkpOwo+ID4gPiA+ID4gCj4gPiA+ID4gPiAJc3dpdGNoIChsYW5lLT5pZCkgewo+ID4g
+PiA+ID4gCWNhc2UgMDoKPiA+ID4gPiA+IAkJbXZlYnVfYTM3MDBfY29tcGh5X3VzYjNfcG93ZXJf
+b2ZmKGxhbmUpOwo+ID4gPiA+ID4gCQltdmVidV9hMzcwMF9jb21waHlfZXRoZXJuZXRfcG93ZXJf
+b2ZmKGxhbmUpOwo+ID4gPiA+ID4gCQlyZXR1cm4gMDsKPiA+ID4gPiA+IAljYXNlIDE6Cj4gPiA+
+ID4gPiAJCW12ZWJ1X2EzNzAwX2NvbXBoeV9wY2llX3Bvd2VyX29mZihsYW5lKTsKPiA+ID4gPiA+
+IAkJbXZlYnVfYTM3MDBfY29tcGh5X2V0aGVybmV0X3Bvd2VyX29mZihsYW5lKTsKPiA+ID4gPiA+
+IAkJcmV0dXJuIDA7Cj4gPiA+ID4gPiAJY2FzZSAyOgo+ID4gPiA+ID4gCQltdmVidV9hMzcwMF9j
+b21waHlfdXNiM19wb3dlcl9vZmYobGFuZSk7Cj4gPiA+ID4gPiAJCW12ZWJ1X2EzNzAwX2NvbXBo
+eV9zYXRhX3Bvd2VyX29mZihsYW5lKTsKPiA+ID4gPiA+IAkJcmV0dXJuIDA7Cj4gPiA+ID4gPiAJ
+ZGVmYXVsdDoKPiA+ID4gPiA+IAkJZGV2X2VycihsYW5lLT5kZXYsICJpbnZhbGlkIENPTVBIWSBt
+b2RlXG4iKTsKPiA+ID4gPiA+IAkJcmV0dXJuIC1FSU5WQUw7Cj4gPiA+ID4gPiAJfQo+ID4gPiA+
+ID4gfQo+ID4gPiA+IAo+ID4gPiA+IFRoYW5rcywgYnV0IHRoaXMgaHVuayBmYWlsZWQgdG8gY29t
+cGlsZSB3aXRoIHRoZSBlcnJvciBiZWxvdy4KPiA+ID4gPiAKPiA+ID4gPiByaXZlcnMvcGh5L21h
+cnZlbGwvcGh5LW12ZWJ1LWEzNzAwLWNvbXBoeS5jOiBJbiBmdW5jdGlvbiAnbXZlYnVfYTM3MDBf
+Y29tcGh5X3Bvd2VyX29mZic6Cj4gPiA+ID4gZHJpdmVycy9waHkvbWFydmVsbC9waHktbXZlYnUt
+YTM3MDAtY29tcGh5LmM6MTIyOToxNzogZXJyb3I6IGltcGxpY2l0IGRlY2xhcmF0aW9uIG9mIGZ1
+bmN0aW9uICdtdmVidV9hMzcwMF9jb21waHlfdXNiM19wb3dlcl9vZmYnOyBkaWQgeW91IG1lYW4g
+J212ZWJ1X2EzNzAwX2NvbXBoeV91c2IzX3Bvd2VyX29uJz8gWy1XZXJyb3I9aW1wbGljaXQtZnVu
+Y3Rpb24tZGVjbGFyYXRpb25dCj4gPiA+ID4gIDEyMjkgfCAgICAgICAgICAgICAgICAgbXZlYnVf
+YTM3MDBfY29tcGh5X3VzYjNfcG93ZXJfb2ZmKGxhbmUpOwo+ID4gPiA+ICAgICAgIHwgICAgICAg
+ICAgICAgICAgIF5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fgo+ID4gPiA+ICAgICAg
+IHwgICAgICAgICAgICAgICAgIG12ZWJ1X2EzNzAwX2NvbXBoeV91c2IzX3Bvd2VyX29uCj4gPiA+
+ID4gY2MxOiBzb21lIHdhcm5pbmdzIGJlaW5nIHRyZWF0ZWQgYXMgZXJyb3JzCj4gPiA+ID4gCj4g
+PiA+ID4gRG8gSSBuZWVkIHRvIGFkZCBtdmVidV9hMzcwMF9jb21waHlfdXNiM19wb3dlcl9vZmYo
+KSBmdW5jdGlvbj8KPiA+ID4gCj4gPiA+IEluIG15IG9yaWdpbmFsIHZlcnNpb24gb2YgdGhpcyBk
+cml2ZXIgSSBoYXZlOgo+ID4gPiAKPiA+ID4gc3RhdGljIHZvaWQgbXZlYnVfYTM3MDBfY29tcGh5
+X3VzYjNfcG93ZXJfb2ZmKHN0cnVjdCBtdmVidV9hMzcwMF9jb21waHlfbGFuZSAqbGFuZSkKPiA+
+ID4gewo+ID4gPiAJLyoKPiA+ID4gCSAqIEN1cnJlbnRseSB0aGUgVVNCMyBNQUMgd2lsbCBjb250
+cm9sIHRoZSBVU0IzIFBIWSB0byBzZXQgaXQgdG8gbG93Cj4gPiA+IAkgKiBzdGF0ZSwgdGh1cyBk
+byBub3QgbmVlZCB0byBwb3dlciBvZmYgVVNCMyBQSFkgYWdhaW4uCj4gPiA+IAkgKi8KPiA+ID4g
+fQo+ID4gPiAKPiA+ID4gU28gcGxlYXNlIHJlbW92ZSBtdmVidV9hMzcwMF9jb21waHlfdXNiM19w
+b3dlcl9vZmYoKSBjYWxscyBhcyBpdCBkb2VzCj4gPiA+IG5vdGhpbmcuCj4gPiAKPiA+IE9rYXks
+IEkgdHJpZWQgd2l0aCB0aGUgZWRpdCBhbmQgcmVzdWx0IGxvb2tzIHBvc2l0aXZlOgo+ID4gCj4g
+PiAtICJpbnZhbGlkIENPTVBIWSBtb2RlIiBtZXNzYWdlcyBkaXNhcHBlcGFyZWQKPiA+IC0gTm8g
+ImF0YTE6IFNBVEEgbGluayBkb3duIChTU3RhdHVzIDAgU0NvbnRyb2wgMzAwKSIgbWVzc2FnZQo+
+ID4gLSBNeSBTU0Qgd2FzIGRldGVjdGVkIGFzIC9kZXYvc2RhCj4gPiAKPiA+IEZZSSwgSSBhdHRh
+Y2ggY29uc29sZSBsb2cgYW5kIHRoZSBwYXRjaCBJIHVzZWQuCj4gPiAKPiA+IC0tIAo+ID4gU2hp
+bidpY2hpcm8gS2F3YXNha2kKPiAKPiBQZXJmZWN0ISBTbyB0aGUgaXNzdWUgaXMgd2l0aCBtdmVi
+dV9hMzcwMF9jb21waHlfcmVzZXQoKSBmdW5jdGlvbi4KPiAKPiBUaGlzIGZ1bmN0aW9uIGlzIG5v
+dCBpbiBURi1BIGNvZGUgYW5kIG5laXRoZXIgaW4gbXkgb3JpZ2luYWwga2VybmVsCj4gZHJpdmVy
+IGltcGxlbWVudGF0aW9uIChzdGlsbCBhdmFpbGFibGUgaGVyZSk6Cj4gaHR0cHM6Ly9naXQua2Vy
+bmVsLm9yZy9wdWIvc2NtL2xpbnV4L2tlcm5lbC9naXQvcGFsaS9saW51eC5naXQvY29tbWl0Lz9o
+PXBoeS1tdmVidS1hMzcwMC1jb21waHkmaWQ9NDU4ODkwMmEzNTI4MTk1YmNmZGRhOWY5ZTFlMTQy
+NjJhMTk1NWRmMQo+IAo+IE1hcmVrLCB0aGlzIGZ1bmN0aW9uIG12ZWJ1X2EzNzAwX2NvbXBoeV9y
+ZXNldCgpIHdhcyBpbXBsZW1lbnRlZCBieSB5b3UuCj4gQ291bGQgeW91IHBsZWFzZSBsb29rIGF0
+IGl0LCB3aHkgeW91IGFkZGVkIHRoaXMgZnVuY3Rpb24gYW5kIHRyeSB0byBmaXgKPiBpdD8gSXMg
+dGhpcyBmdW5jdGlvbiBuZWVkZWQgYXQgYWxsPwoKUElORz8gQW55IHByb2dyZXNzIGhlcmU/Cgot
+LSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpo
+dHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
