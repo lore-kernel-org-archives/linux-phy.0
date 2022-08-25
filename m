@@ -4,88 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6DC7EC00140
-	for <linux-phy@archiver.kernel.org>; Wed, 24 Aug 2022 15:07:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id ED69DC28D13
+	for <linux-phy@archiver.kernel.org>; Thu, 25 Aug 2022 07:41:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=L6yTEEk1JDcSFho6tHjHz2p9zIthx+Z7Xe6YlQVPUwc=; b=WBJdfKyd9HnRkv
-	37lo43CP3wpAbOQo/P3EyRDw+vnfBvFo838sPZCreyoRijcA3divs/ixLRO7oVtngO9i4cFgbFrMj
-	3LmzjE0nvwJyQEtdB8UJpOmjdS0snfSmW9Y6UZEKsFdgz3v89cw4pIiLhTyy82r2A5KwWg1UMifhl
-	CAXaOX9JCPfFuKdGMXtwRIboMDb1CKxxOUDFXygB2TF3RQynDZTprmS4T1bWb1xYUjN1gtJ6CiRmr
-	2zWM14lnWAvDi6gJH/xquPGOXPiKqlK1MqAg9PoEsBu25L5+/Ys0kLDzYpw26GydBRRbBr3iescyc
-	InisSG33P4FAYIKzHK+w==;
+	List-Owner; bh=HPIeknDIlIYS1rv30kb+tpU/paA+GfwPDIKWJWHP9Z4=; b=J0f7glZRgL2GIS
+	WbqdBB0y4BJLmf0fXkMkAlhaZCzzQC/5clCVnU5Ech9AhPJlaQqJ47ZZzia+2nxdQTHS3Wzv/hziI
+	uYAp9nbhJcgTTst8t3y44wedfL+kcxTTcySxXtqfKOPmBWUVhKa8m6jiGEsYU+mXaHKXAObO4D68V
+	th+ZjgllbQpfT1QxIPfTWAv4W9hJTGt2aMYtGUzj6mquNNhCOrwi5ljHMdjXyxRDTdJMFXKHWk5FC
+	DwogX1cnMiY7zNUxFBQHiaGhbKI9rj4cRxPslj+cL64at3v1NT6L4QsW+HmcCYmog2Lm2yBK2P6kN
+	OFDjLKsdSO2mEGaOXQUg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oQryO-00DtZw-Mh; Wed, 24 Aug 2022 15:07:16 +0000
-Received: from mail-pg1-x530.google.com ([2607:f8b0:4864:20::530])
+	id 1oR7UR-009SxO-9K; Thu, 25 Aug 2022 07:41:23 +0000
+Received: from ams.source.kernel.org ([145.40.68.75])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oQryL-00DtWC-Oh
-	for linux-phy@lists.infradead.org; Wed, 24 Aug 2022 15:07:15 +0000
-Received: by mail-pg1-x530.google.com with SMTP id r69so15284639pgr.2
-        for <linux-phy@lists.infradead.org>; Wed, 24 Aug 2022 08:07:08 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=in-reply-to:content-transfer-encoding:content-disposition
-         :mime-version:references:message-id:subject:cc:to:from:date:from:to
-         :cc;
-        bh=en5fJioWb1/tYEyOYyeymC+F2mSt5gCOg/3YQO22W/s=;
-        b=kmCU1wRgOodNOCpDQZjRxGbuZn9IFI1hLbQdaa4sSq5wQ9RROkfwkRrG/Rp/8n83lb
-         rc00wtM8LXLy9/SA2AIkJwV5ORHesIwyVxoK5HRzXziJETcKR23ORwxKipF1UGglYVpm
-         mL1HEdU4h9uiX6F5dhtaz1Ni7e2FB/ZzORfCWPJKyrp4dlBaRfG4dXQdoEmS0VxSicRm
-         Yyzdmn3iMplldGN2NooCN8di1J1LMBoBfuwEf+bmtdbZiXqgiGqWVkxSVAUzfVINE4z9
-         /T6JsvjbjCVTszRlwuHZnaLWOX0s1uxD2ksoNU5+bez5Utccbtx+QyHUtlnMZq1tMbx7
-         OLkQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=in-reply-to:content-transfer-encoding:content-disposition
-         :mime-version:references:message-id:subject:cc:to:from:date
-         :x-gm-message-state:from:to:cc;
-        bh=en5fJioWb1/tYEyOYyeymC+F2mSt5gCOg/3YQO22W/s=;
-        b=Iduh5iBPgb+77aDv/uu7If7+5pSqJlSNlW38UDZhlGMZ7BFA0YaKjVUNPwhLrA5quE
-         rto3Z8WQzitVX2FaTqWI9KmbUIBd9VQo8N7R9nJWbF3yp6Ps9v92y4nVc0b5xbXE9cmu
-         qBE+DOMa3Plz07nRmZzSSEkRYpFChkTalsNvEw5o6bf9Q1B7b4jDnsFjotd0AblTsHQT
-         wlO9Ie7sCRFKc6By6kkZKl/5ajgka3ttiFF/Nfv1gFSSxoXcve9fdMn5NGmpI8sq9oKu
-         j1rYfJGPVcay93BKpJwwv9dTG+KZGuYm/nqhfrmuAcWqe6nW7H5uuET42NB1ydZ8FwDr
-         l7mQ==
-X-Gm-Message-State: ACgBeo1ky1rhsf/drL5SIQ2rUYQhwvDb8teWCO+GpA3fwlT6ooywScfj
-	LIMaa1049o7jRW5/T3GzVT7F
-X-Google-Smtp-Source: AA6agR4I9qbzYAiGbI+cKiSPz6vV8dLS8BKWrwUL0WyVPYcNCgprOjlUILqDhdnHLbLF43532+mQ7w==
-X-Received: by 2002:a65:6cc7:0:b0:42a:4d40:8dc1 with SMTP id g7-20020a656cc7000000b0042a4d408dc1mr19894592pgw.321.1661353628331;
-        Wed, 24 Aug 2022 08:07:08 -0700 (PDT)
-Received: from thinkpad ([117.207.24.28])
-        by smtp.gmail.com with ESMTPSA id q4-20020aa79604000000b005367a03d566sm7673082pfg.112.2022.08.24.08.07.02
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 24 Aug 2022 08:07:07 -0700 (PDT)
-Date: Wed, 24 Aug 2022 20:36:58 +0530
-From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Cc: Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <bjorn.andersson@linaro.org>,
-	Konrad Dybcio <konrad.dybcio@somainline.org>,
-	Rob Herring <robh+dt@kernel.org>, Jingoo Han <jingoohan1@gmail.com>,
-	Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
-	Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
-	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
-	Bjorn Helgaas <bhelgaas@google.com>, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@ti.com>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Johan Hovold <johan@kernel.org>, linux-arm-msm@vger.kernel.org,
-	linux-pci@vger.kernel.org, linux-phy@lists.infradead.org
-Subject: Re: [PATCH v1 3/4] PCI: qcom: Setup PHY to work in RC mode
-Message-ID: <20220824150658.GG4767@thinkpad>
-References: <20220726203401.595934-1-dmitry.baryshkov@linaro.org>
- <20220726203401.595934-4-dmitry.baryshkov@linaro.org>
- <20220824145748.GF4767@thinkpad>
+	id 1oR7UL-009Sl5-4P
+	for linux-phy@lists.infradead.org; Thu, 25 Aug 2022 07:41:22 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by ams.source.kernel.org (Postfix) with ESMTPS id 22E0AB8275B;
+	Thu, 25 Aug 2022 07:41:15 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2C68DC433D6;
+	Thu, 25 Aug 2022 07:41:10 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1661413273;
+	bh=EwLtF7Ll569WJXe3QBAw8qXcrqcWWwzmCYQVUys5f3g=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=i9S9a14wLF2qoPD/dIYJPxZQm7g2DqB/1vkxonc6Rd01ZBezywZG8CuD2QbcVU6al
+	 hfT5Y9e2dOu4d7eiuXoR4YlpL5D6ojTCeTQjGBqF206ENQ8+2iS/sk74GAFqub7sz/
+	 GGihpewv2YDpsDPxJgGddO48v7okxn2UgPG0hB5L6GndJw4E81OM9irLpGN00plWyH
+	 ye4qO94ouEDEcfnEVQmStI2fjRe0KxwCM1HoFtacerZ4LfT+65Vklzvr3YTeaNhcAy
+	 mx/QrARj9F8rZ2QFV+a+tncyo6rQSThipu/bq9MuRQwS698VMFHFtHuvtKR5qA7WPo
+	 8p+OAHe+HrzjA==
+Message-ID: <655c39a3-cf5f-6dd7-3c1a-61ebeae915bd@kernel.org>
+Date: Thu, 25 Aug 2022 10:41:08 +0300
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20220824145748.GF4767@thinkpad>
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
+ Thunderbird/91.9.1
+Subject: Re: [PATCH v3 2/2] phy: ti: gmii-sel: Add support for CPSW5G GMII SEL
+ in J7200
+Content-Language: en-US
+To: Siddharth Vadapalli <s-vadapalli@ti.com>, robh+dt@kernel.org,
+ lee.jones@linaro.org, krzysztof.kozlowski@linaro.org,
+ krzysztof.kozlowski+dt@linaro.org, kishon@ti.com, vkoul@kernel.org,
+ dan.carpenter@oracle.com, grygorii.strashko@ti.com
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org
+References: <20220822065631.27933-1-s-vadapalli@ti.com>
+ <20220822065631.27933-3-s-vadapalli@ti.com>
+From: Roger Quadros <rogerq@kernel.org>
+In-Reply-To: <20220822065631.27933-3-s-vadapalli@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220824_080713_827627_0B2A67F2 
-X-CRM114-Status: GOOD (  18.40  )
+X-CRM114-CacheID: sfid-20220825_004117_585046_FB2237CB 
+X-CRM114-Status: GOOD (  30.42  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,33 +74,159 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gV2VkLCBBdWcgMjQsIDIwMjIgYXQgMDg6Mjc6NThQTSArMDUzMCwgTWFuaXZhbm5hbiBTYWRo
-YXNpdmFtIHdyb3RlOgo+IE9uIFR1ZSwgSnVsIDI2LCAyMDIyIGF0IDExOjM0OjAwUE0gKzAzMDAs
-IERtaXRyeSBCYXJ5c2hrb3Ygd3JvdGU6Cj4gPiBDYWxsIHBoeV9zZXRfbW9kZV9leHQoKSB0byBu
-b3RpZnkgdGhlIFBIWSBkcml2ZXIgdGhhdCB0aGUgUEhZIGlzIGJlaW5nCj4gPiB1c2VkIGluIHRo
-ZSBSQyBtb2RlLgo+ID4gCj4gPiBTaWduZWQtb2ZmLWJ5OiBEbWl0cnkgQmFyeXNoa292IDxkbWl0
-cnkuYmFyeXNoa292QGxpbmFyby5vcmc+Cj4gCj4gUmV2aWV3ZWQtYnk6IE1hbml2YW5uYW4gU2Fk
-aGFzaXZhbSA8bWFuaXZhbm5hbi5zYWRoYXNpdmFtQGxpbmFyby5vcmc+Cj4gCj4gVGhhbmtzLAo+
-IE1hbmkKPiAKPiA+IC0tLQo+ID4gIGRyaXZlcnMvcGNpL2NvbnRyb2xsZXIvZHdjL3BjaWUtcWNv
-bS5jIHwgNCArKysrCj4gPiAgMSBmaWxlIGNoYW5nZWQsIDQgaW5zZXJ0aW9ucygrKQo+ID4gCj4g
-PiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9wY2kvY29udHJvbGxlci9kd2MvcGNpZS1xY29tLmMgYi9k
-cml2ZXJzL3BjaS9jb250cm9sbGVyL2R3Yy9wY2llLXFjb20uYwo+ID4gaW5kZXggOTNkNzVjZGE0
-YjA0Li5mODVmMjU3OWMwODcgMTAwNjQ0Cj4gPiAtLS0gYS9kcml2ZXJzL3BjaS9jb250cm9sbGVy
-L2R3Yy9wY2llLXFjb20uYwo+ID4gKysrIGIvZHJpdmVycy9wY2kvY29udHJvbGxlci9kd2MvcGNp
-ZS1xY29tLmMKPiA+IEBAIC0xNDg1LDYgKzE0ODUsMTAgQEAgc3RhdGljIGludCBxY29tX3BjaWVf
-aG9zdF9pbml0KHN0cnVjdCBkd19wY2llX3JwICpwcCkKPiA+ICAJaWYgKHJldCkKPiA+ICAJCXJl
-dHVybiByZXQ7Cj4gPiAgCj4gPiArCXJldCA9IHBoeV9zZXRfbW9kZV9leHQocGNpZS0+cGh5LCBQ
-SFlfTU9ERV9QQ0lFLCAwKTsKPiA+ICsJaWYgKHJldCkKPiA+ICsJCXJldHVybiBlcnJfZGVpbml0
-OwoKT29wcy4uLiBNaXNzZWQgdGhpcyBvbmUuIFNob3VsZCBiZSBnb3RvIGVycl9kZWluaXQ7CgpU
-aGFua3MsCk1hbmkKCj4gPiArCj4gPiAgCXJldCA9IHBoeV9wb3dlcl9vbihwY2llLT5waHkpOwo+
-ID4gIAlpZiAocmV0KQo+ID4gIAkJZ290byBlcnJfZGVpbml0Owo+ID4gLS0gCj4gPiAyLjM1LjEK
-PiA+IAo+IAo+IC0tIAo+IOCuruCuo+Cuv+CuteCuo+CvjeCuo+CuqeCvjSDgrprgrqTgrr7grprg
-rr/grrXgrq7gr40KCi0tIArgrq7grqPgrr/grrXgrqPgr43grqPgrqngr40g4K6a4K6k4K6+4K6a
-4K6/4K614K6u4K+NCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMu
-aW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5m
-by9saW51eC1waHkK
+Hi Siddharth,
+
+On 22/08/2022 09:56, Siddharth Vadapalli wrote:
+> Each of the CPSW5G ports in J7200 support additional modes like QSGMII.
+> Add a new compatible for J7200 to support the additional modes.
+> 
+> In TI's J7200, each of the CPSW5G ethernet interfaces can act as a
+> QSGMII or QSGMII-SUB port. The QSGMII interface is responsible for
+> performing auto-negotiation between the MAC and the PHY while the rest of
+> the interfaces are designated as QSGMII-SUB interfaces, indicating that
+> they will not be taking part in the auto-negotiation process.
+> 
+> To indicate the interface which will serve as the main QSGMII interface,
+> add a property "ti,qsgmii-main-ports", whose value indicates the
+> port number of the interface which shall serve as the main QSGMII
+> interface. The rest of the interfaces are then assigned QSGMII-SUB mode by
+> default.
+
+Can you please describe here why you are using "ti,qsgmii-main-ports" instead
+of "ti,qsgmii-main-port" as there can be only one main port per PHY instance?
+
+> 
+> Signed-off-by: Siddharth Vadapalli <s-vadapalli@ti.com>
+> ---
+>  drivers/phy/ti/phy-gmii-sel.c | 40 ++++++++++++++++++++++++++++++++---
+>  1 file changed, 37 insertions(+), 3 deletions(-)
+> 
+> diff --git a/drivers/phy/ti/phy-gmii-sel.c b/drivers/phy/ti/phy-gmii-sel.c
+> index d0ab69750c6b..270083606b14 100644
+> --- a/drivers/phy/ti/phy-gmii-sel.c
+> +++ b/drivers/phy/ti/phy-gmii-sel.c
+> @@ -22,6 +22,12 @@
+>  #define AM33XX_GMII_SEL_MODE_RMII	1
+>  #define AM33XX_GMII_SEL_MODE_RGMII	2
+>  
+> +/* J72xx SoC specific definitions for the CONTROL port */
+> +#define J72XX_GMII_SEL_MODE_QSGMII	4
+> +#define J72XX_GMII_SEL_MODE_QSGMII_SUB	6
+> +
+> +#define PHY_GMII_PORT(n)	BIT((n) - 1)
+> +
+>  enum {
+>  	PHY_GMII_SEL_PORT_MODE = 0,
+>  	PHY_GMII_SEL_RGMII_ID_MODE,
+> @@ -43,6 +49,7 @@ struct phy_gmii_sel_soc_data {
+>  	u32 features;
+>  	const struct reg_field (*regfields)[PHY_GMII_SEL_LAST];
+>  	bool use_of_data;
+> +	u64 extra_modes;
+>  };
+>  
+>  struct phy_gmii_sel_priv {
+> @@ -53,6 +60,7 @@ struct phy_gmii_sel_priv {
+>  	struct phy_gmii_sel_phy_priv *if_phys;
+>  	u32 num_ports;
+>  	u32 reg_offset;
+> +	u32 qsgmii_main_ports;
+>  };
+>  
+>  static int phy_gmii_sel_mode(struct phy *phy, enum phy_mode mode, int submode)
+> @@ -88,10 +96,17 @@ static int phy_gmii_sel_mode(struct phy *phy, enum phy_mode mode, int submode)
+>  		gmii_sel_mode = AM33XX_GMII_SEL_MODE_MII;
+>  		break;
+>  
+> +	case PHY_INTERFACE_MODE_QSGMII:
+> +		if (!(soc_data->extra_modes & BIT(PHY_INTERFACE_MODE_QSGMII)))
+> +			goto unsupported;
+> +		if (if_phy->priv->qsgmii_main_ports & BIT(if_phy->id - 1))
+> +			gmii_sel_mode = J72XX_GMII_SEL_MODE_QSGMII;
+> +		else
+> +			gmii_sel_mode = J72XX_GMII_SEL_MODE_QSGMII_SUB;
+> +		break;
+> +
+>  	default:
+> -		dev_warn(dev, "port%u: unsupported mode: \"%s\"\n",
+> -			 if_phy->id, phy_modes(submode));
+> -		return -EINVAL;
+> +		goto unsupported;
+>  	}
+>  
+>  	if_phy->phy_if_mode = submode;
+> @@ -123,6 +138,11 @@ static int phy_gmii_sel_mode(struct phy *phy, enum phy_mode mode, int submode)
+>  	}
+>  
+>  	return 0;
+> +
+> +unsupported:
+> +	dev_warn(dev, "port%u: unsupported mode: \"%s\"\n",
+> +		 if_phy->id, phy_modes(submode));
+> +	return -EINVAL;
+>  }
+>  
+>  static const
+> @@ -188,6 +208,13 @@ struct phy_gmii_sel_soc_data phy_gmii_sel_soc_am654 = {
+>  	.regfields = phy_gmii_sel_fields_am654,
+>  };
+>  
+> +static const
+> +struct phy_gmii_sel_soc_data phy_gmii_sel_cpsw5g_soc_j7200 = {
+> +	.use_of_data = true,
+> +	.regfields = phy_gmii_sel_fields_am654,
+> +	.extra_modes = BIT(PHY_INTERFACE_MODE_QSGMII),
+> +};
+> +
+>  static const struct of_device_id phy_gmii_sel_id_table[] = {
+>  	{
+>  		.compatible	= "ti,am3352-phy-gmii-sel",
+> @@ -209,6 +236,10 @@ static const struct of_device_id phy_gmii_sel_id_table[] = {
+>  		.compatible	= "ti,am654-phy-gmii-sel",
+>  		.data		= &phy_gmii_sel_soc_am654,
+>  	},
+> +	{
+> +		.compatible	= "ti,j7200-cpsw5g-phy-gmii-sel",
+> +		.data		= &phy_gmii_sel_cpsw5g_soc_j7200,
+> +	},
+>  	{}
+>  };
+>  MODULE_DEVICE_TABLE(of, phy_gmii_sel_id_table);
+> @@ -350,6 +381,7 @@ static int phy_gmii_sel_probe(struct platform_device *pdev)
+>  	struct device_node *node = dev->of_node;
+>  	const struct of_device_id *of_id;
+>  	struct phy_gmii_sel_priv *priv;
+> +	u32 main_ports = 1;
+>  	int ret;
+>  
+>  	of_id = of_match_node(phy_gmii_sel_id_table, pdev->dev.of_node);
+> @@ -363,6 +395,8 @@ static int phy_gmii_sel_probe(struct platform_device *pdev)
+>  	priv->dev = &pdev->dev;
+>  	priv->soc_data = of_id->data;
+>  	priv->num_ports = priv->soc_data->num_ports;
+> +	of_property_read_u32_array(node, "ti,qsgmii-main-ports", &main_ports, 1);
+
+of_property_read_u32_array can return error and you are not doing any sanity checks.
+This should fail if "ti,qsgmii-main-ports" is not present or out of bounds if port mode is QSGMII.
+
+How is this going to scale if you are going to have multiple main ports?
+Let's say you increase it to 2 in the future. won't this break with -EOVERFLOW for older
+DTs where you had only 1 u32.
+
+> +	priv->qsgmii_main_ports = PHY_GMII_PORT(main_ports);
+>  
+>  	priv->regmap = syscon_node_to_regmap(node->parent);
+>  	if (IS_ERR(priv->regmap)) {
+
+cheers,
+-roger
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
