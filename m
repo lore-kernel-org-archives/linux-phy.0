@@ -4,71 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 186A5ECAAA3
-	for <linux-phy@archiver.kernel.org>; Thu, 25 Aug 2022 21:34:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 88ECBECAAA3
+	for <linux-phy@archiver.kernel.org>; Thu, 25 Aug 2022 22:16:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wbJJ/z79SkfY9mLkRShq1UaxA5EdLXiZkY86Zna1uK4=; b=v837pzBvSjI0T0
-	O2E8U+8lwzY5JSkE9DVxha8HStWXfUw49zsRHk6kGgglmnQBsK06dcRCZTq/esJ0OcyTfyNGEq8M2
-	qxvDAWZMcZCaQlKUtHGMo1Cze8QxPoUdtBrz6ApAXPxm0CbxK39hU+aGJC64MNE05ejk7z0ELcuXk
-	f+1uyvoEUjG3BEwnTNCNSzmn7Oj9J3J8XuB9mwhEod2xvvVFAH60KE2fttcyqi3IOcBxrH26tCrow
-	ikDUumUtNA9bOr+ZxGF+7cT0s/S6a0MnQ+3BjqMkYCUebzctgHnKD3fc2VXILNbzDWUBMk/ozjFuj
-	8xxQhOPNyY5lL5UX+0VQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
+	References:In-Reply-To:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=gzo/K2frU0Yeglq5oXDnPEGkTKkXxXS46Gou+2SnXKE=; b=PMdwO61Tnnmbkp7MLDSrnNzsEj
+	5ry0ri/roDx6rMKahuZkzqt1JMVteLmNIlLFDTKJdoe6wqiaUxbjUrz2mi7GgJNTGNi9t3vQiF7H7
+	zFC3vcIroL3+qQPQIPcrOLEyq7nr0MiZmKd0ocOCT+dpEtoYgSAtiZZ3sBkhVURKJL1rDlLaArqTm
+	hFdq2Q1gIhmBenjTh5DGdE4BZzftz10Z6F7dHGVk7tlyoUT51Srw0n00cjRKse6Az6wI5w3KTfyH8
+	VNcZQLWyN1S6x7+Q9N3Ole2fsxUyQgum2WK4+oS1phIr2cI38vqiPI7NSL1gutJ5EsIiFY2ccyH24
+	0D0gRTng==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oRKUg-003U4h-Ux; Thu, 25 Aug 2022 21:34:31 +0000
-Received: from mail-wr1-x430.google.com ([2a00:1450:4864:20::430])
+	id 1oRL8z-003mzT-WB; Thu, 25 Aug 2022 22:16:10 +0000
+Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oRKUe-003U3U-0g; Thu, 25 Aug 2022 21:34:29 +0000
-Received: by mail-wr1-x430.google.com with SMTP id t12so853093wrm.8;
-        Thu, 25 Aug 2022 14:34:27 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20210112;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc;
-        bh=vkI7j/ybscYbFRd8z0ozi0Hl64XiOOmBLsjf3EBHwN0=;
-        b=AzUrQhd7gjCn9B5gg5Fzzp909mgOT7in/GTCOa43Oq8F2ADQF2/cUTj2DciK1myF+2
-         OFfdLxqbfVj0DgOa+iPD/g3Qjrd3oFPzrqMb0dsUBvI1YxqMikW7DV6KflDzIoLGxaF2
-         LQmDWSdkeTRk7uIu+MEhVLz2MlMwEjTuxGs3QPJTaDK5EkTZYFhxJ2fPERhilErN5sUT
-         iatRgY63/M5emjQI8Y0usejKpU+NYYDmxLYouEd27eB3M/mMLknzvGn83AE+lFvp3P27
-         f36/AQ3gWDsBB9gCbPE/9jWu6W4oLhZODI2nJPh+fdc332B79F9aooHZY+TFu+sL85nf
-         dpTQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc;
-        bh=vkI7j/ybscYbFRd8z0ozi0Hl64XiOOmBLsjf3EBHwN0=;
-        b=iwyj655Zbe8MbucXuclE2uVAXFJc+7J2UmaBBWGvMR+4jeFhZLt3eHfb/QhBB/wC/Z
-         aFDToxr1ng/Gfwmug9bsPEm/MqgRbTPCfgC6YkmCR31UaIvWa50X0l64XQJUAbhedilm
-         l3/sbxgH9ObxsymcsD1KkqepdkB69Vv6+VyEQKG0rVsriyEr3V/Z64Z+sT2qri/kWnqb
-         C9UrT2hmvyDVTtAf9ZJAieLxE/lBT5QiFA/H+JDr6ecSBCF03KaMLA5EijZpKlAS3Y6J
-         dxQp3JkVbmAxeNYlLuye6WHsOlvm6bXpN/LC7PUDlJpx8hfoWa/9vImE9xtqQLJpylqP
-         NR0A==
-X-Gm-Message-State: ACgBeo0sRYCUqPWJbPI3RLJ9X2lNir8qQ3pYPl8d/mRSwdPEaBJJvpR1
-	ib2xXhIqCVFhwtZW15+WMOw=
-X-Google-Smtp-Source: AA6agR5tcJzT/e7p2SOGm8CTPB07sBJctMX85e0eAMx5SoKKJFF38Q2F4xb6D3PqMa00NCibDLvLfg==
-X-Received: by 2002:adf:f001:0:b0:225:3a99:3938 with SMTP id j1-20020adff001000000b002253a993938mr3199074wro.111.1661463266826;
-        Thu, 25 Aug 2022 14:34:26 -0700 (PDT)
-Received: from kista.localnet (82-149-1-172.dynamic.telemach.net. [82.149.1.172])
-        by smtp.gmail.com with ESMTPSA id b3-20020a5d40c3000000b0022533c4fa48sm258839wrq.55.2022.08.25.14.34.26
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 25 Aug 2022 14:34:26 -0700 (PDT)
-From: Jernej =?utf-8?B?xaBrcmFiZWM=?= <jernej.skrabec@gmail.com>
-To: linux-kernel@vger.kernel.org, Wolfram Sang <wsa+renesas@sang-engineering.com>
-Cc: Wolfram Sang <wsa+renesas@sang-engineering.com>, Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, Chen-Yu Tsai <wens@csie.org>, Samuel Holland <samuel@sholland.org>, linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev
-Subject: Re: [PATCH] phy: move from strlcpy with unused retval to strscpy
-Date: Thu, 25 Aug 2022 23:34:25 +0200
-Message-ID: <3506634.R56niFO833@kista>
-In-Reply-To: <20220818210056.7205-1-wsa+renesas@sang-engineering.com>
-References: <20220818210056.7205-1-wsa+renesas@sang-engineering.com>
+	id 1oRL8w-003mxf-AB
+	for linux-phy@lists.infradead.org; Thu, 25 Aug 2022 22:16:09 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by ams.source.kernel.org (Postfix) with ESMTPS id 211B8B82ACE;
+	Thu, 25 Aug 2022 22:16:04 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C98C7C433D6;
+	Thu, 25 Aug 2022 22:16:01 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1661465762;
+	bh=oMO0r2PGZ5pvJlh8sDqdmhevcoM4UATKWh0arxsvz5I=;
+	h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+	b=JGpRYIIoGqGS+HVVZc4CYzKeMYw5XMgwZIhD8VGy0ijnDBtpyHOKqHgkRRhZVF5aA
+	 AG35HURhnk5mPPRo4n4r2USLHtHOPB0lpjJNKpIgUIj5H9Jv6hQzr7yfuzyBe6vNsp
+	 N5t7RKi0WSoa7tksX+KQdMCyvqN9nEOqJ+LGzqsakNvlWv+NUJKCOHuKgoPi/oe1JU
+	 CTCL2Y+ogG/6sOWE7pLe40ljjVCzTInkAMT0NdyaYhsSxnwuBDR1Ori/xqOCdgOCog
+	 QDlFfYTm5u8qS9Dzp6ThQp4aqiX1HD4pDATx1SYnHeZCKezevWpns7XVCqJHHKIwh8
+	 +Sh8G60/woACQ==
+Date: Fri, 26 Aug 2022 00:15:58 +0200
+From: Marek =?UTF-8?B?QmVow7pu?= <kabel@kernel.org>
+To: Pali =?UTF-8?B?Um9ow6Fy?= <pali@kernel.org>
+Cc: Shinichiro Kawasaki <shinichiro.kawasaki@wdc.com>,
+ "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>, Damien Le
+ Moal <Damien.LeMoal@wdc.com>
+Subject: Re: ARMADA espressobin SATA drive detection failure
+Message-ID: <20220826001558.5cf887a5@thinkpad>
+In-Reply-To: <20220825130059.5kat4fhddwj2nf4r@pali>
+References: <20220813010033.erkdwf24arlz7zer@shindev>
+	<20220813010351.fauxwpi6w4d4shmn@pali>
+	<20220813013534.l5hzxv7mc5fylx7m@shindev>
+	<20220813093214.6ved4ka3l2thkn2n@pali>
+	<20220813115338.uq4xbznngjradzi6@shindev>
+	<20220813120108.vaiwnzhofz6hy5kc@pali>
+	<20220813124729.qondfc7z5eoeoq7p@shindev>
+	<20220813125052.hjd6lhh4fcc7jl5u@pali>
+	<20220813230233.3hyvkoexqitfnlte@shindev>
+	<20220813231050.l5xadzdpavmmtdbq@pali>
+	<20220825130059.5kat4fhddwj2nf4r@pali>
+X-Mailer: Claws Mail 3.19.0 (GTK+ 2.24.33; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="MP_/VdXuc1zjTY6G+or8E6gZaUA"
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220825_143428_079340_C8AE8EAD 
-X-CRM114-Status: GOOD (  13.90  )
+X-CRM114-CacheID: sfid-20220825_151606_726178_BF8B630E 
+X-CRM114-Status: GOOD (  41.00  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,31 +79,208 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-RG5lIMSNZXRydGVrLCAxOC4gYXZndXN0IDIwMjIgb2IgMjM6MDA6NTYgQ0VTVCBqZSBXb2xmcmFt
-IFNhbmcgbmFwaXNhbChhKToKPiBGb2xsb3cgdGhlIGFkdmljZSBvZiB0aGUgYmVsb3cgbGluayBh
-bmQgcHJlZmVyICdzdHJzY3B5JyBpbiB0aGlzCj4gc3Vic3lzdGVtLiBDb252ZXJzaW9uIGlzIDE6
-MSBiZWNhdXNlIHRoZSByZXR1cm4gdmFsdWUgaXMgbm90IHVzZWQuCj4gR2VuZXJhdGVkIGJ5IGEg
-Y29jY2luZWxsZSBzY3JpcHQuCj4gCj4gTGluazoKPiBodHRwczovL2xvcmUua2VybmVsLm9yZy9y
-L0NBSGstPXdnZlJuWHowVzNEMzdkMDFxM0pGa3JfaV91VEw9VjZBNkcxb1VaY3BybWsKPiBud0Bt
-YWlsLmdtYWlsLmNvbS8gU2lnbmVkLW9mZi1ieTogV29sZnJhbSBTYW5nCj4gPHdzYStyZW5lc2Fz
-QHNhbmctZW5naW5lZXJpbmcuY29tPgoKQWNrZWQtYnk6IEplcm5laiBTa3JhYmVjIDxqZXJuZWou
-c2tyYWJlY0BnbWFpbC5jb20+CgpCZXN0IHJlZ2FyZHMsCkplcm5lagoKPiAtLS0KPiAgZHJpdmVy
-cy9waHkvYWxsd2lubmVyL3BoeS1zdW40aS11c2IuYyB8IDIgKy0KPiAgMSBmaWxlIGNoYW5nZWQs
-IDEgaW5zZXJ0aW9uKCspLCAxIGRlbGV0aW9uKC0pCj4gCj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMv
-cGh5L2FsbHdpbm5lci9waHktc3VuNGktdXNiLmMKPiBiL2RyaXZlcnMvcGh5L2FsbHdpbm5lci9w
-aHktc3VuNGktdXNiLmMgaW5kZXggZDVmM2I0MmViOGNlLi4zYTM4MzFmNjA1OWEKPiAxMDA2NDQK
-PiAtLS0gYS9kcml2ZXJzL3BoeS9hbGx3aW5uZXIvcGh5LXN1bjRpLXVzYi5jCj4gKysrIGIvZHJp
-dmVycy9waHkvYWxsd2lubmVyL3BoeS1zdW40aS11c2IuYwo+IEBAIC03NjgsNyArNzY4LDcgQEAg
-c3RhdGljIGludCBzdW40aV91c2JfcGh5X3Byb2JlKHN0cnVjdCBwbGF0Zm9ybV9kZXZpY2UKPiAq
-cGRldikgaWYgKGRhdGEtPmNmZy0+ZGVkaWNhdGVkX2Nsb2NrcykKPiAgCQkJc25wcmludGYobmFt
-ZSwgc2l6ZW9mKG5hbWUpLCAidXNiJWRfcGh5IiwgCmkpOwo+ICAJCWVsc2UKPiAtCQkJc3RybGNw
-eShuYW1lLCAidXNiX3BoeSIsIHNpemVvZihuYW1lKSk7Cj4gKwkJCXN0cnNjcHkobmFtZSwgInVz
-Yl9waHkiLCBzaXplb2YobmFtZSkpOwo+IAo+ICAJCXBoeS0+Y2xrID0gZGV2bV9jbGtfZ2V0KGRl
-diwgbmFtZSk7Cj4gIAkJaWYgKElTX0VSUihwaHktPmNsaykpIHsKPiAtLQo+IDIuMzUuMQoKCgot
-LSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpo
-dHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+--MP_/VdXuc1zjTY6G+or8E6gZaUA
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Content-Disposition: inline
+
+On Thu, 25 Aug 2022 15:00:59 +0200
+Pali Roh=C3=A1r <pali@kernel.org> wrote:
+
+> On Sunday 14 August 2022 01:10:50 Pali Roh=C3=A1r wrote:
+> > On Saturday 13 August 2022 23:02:34 Shinichiro Kawasaki wrote: =20
+> > > On Aug 13, 2022 / 14:50, Pali Roh=C3=A1r wrote: =20
+> > > > On Saturday 13 August 2022 12:47:30 Shinichiro Kawasaki wrote: =20
+> > > > > On Aug 13, 2022 / 14:01, Pali Roh=C3=A1r wrote: =20
+> > > > > > On Saturday 13 August 2022 11:53:39 Shinichiro Kawasaki wrote: =
+=20
+> > > > > > > On Aug 13, 2022 / 11:32, Pali Roh=C3=A1r wrote: =20
+> > > > > > > > On Saturday 13 August 2022 01:35:35 Shinichiro Kawasaki wro=
+te: =20
+> > > > > > >=20
+> > > > > > > [...]
+> > > > > > >  =20
+> > > > > > > > Ok, thanks for testing. It looks like that reset code has s=
+ome issues.
+> > > > > > > >=20
+> > > > > > > > Could you please test this change?
+> > > > > > > >=20
+> > > > > > > > @@ -1393,7 +1436,8 @@ static int mvebu_a3700_comphy_probe(s=
+truct platform_device *pdev)
+> > > > > > > >  		 * To avoid relying on the bootloader/firmware configura=
+tion,
+> > > > > > > >  		 * power off all comphys.
+> > > > > > > >  		 */
+> > > > > > > > -		mvebu_a3700_comphy_reset(phy);
+> > > > > > > > +//		mvebu_a3700_comphy_reset(phy);
+> > > > > > > > +		mvebu_a3700_comphy_power_off(phy);
+> > > > > > > >  		lane->needs_reset =3D false;
+> > > > > > > >  	}
+> > > > > > > > =20
+> > > > > > > >=20
+> > > > > > > > It should replace reset code by power off at beginning / pr=
+obe time. =20
+> > > > > > >=20
+> > > > > > > This change also avoided the "ata1: SATA link down (SStatus 0=
+ SControl 300)"
+> > > > > > > message, and my SSD was detected as /dev/sda. Good symptoms f=
+or me. FYI, I
+> > > > > > > attach the console log with this change. (This time, followin=
+g messages were
+> > > > > > > printed. Not sure if they are important or not.)
+> > > > > > >=20
+> > > > > > > [    2.937376] mvebu-a3700-comphy d0018300.phy: invalid COMPH=
+Y mode
+> > > > > > > [    2.943581] mvebu-a3700-comphy d0018300.phy: invalid COMPH=
+Y mode
+> > > > > > > [    2.949679] mvebu-a3700-comphy d0018300.phy: invalid COMPH=
+Y mode =20
+> > > > > >=20
+> > > > > > Those errors are important, it means that power_off did nothing=
+ and was
+> > > > > > skipped. So test did nothing.
+> > > > > >=20
+> > > > > > Could you please replace mvebu_a3700_comphy_power_off implement=
+ation
+> > > > > > with this one and try it again?
+> > > > > >=20
+> > > > > > static int mvebu_a3700_comphy_power_off(struct phy *phy)
+> > > > > > {
+> > > > > > 	struct mvebu_a3700_comphy_lane *lane =3D phy_get_drvdata(phy);
+> > > > > >=20
+> > > > > > 	switch (lane->id) {
+> > > > > > 	case 0:
+> > > > > > 		mvebu_a3700_comphy_usb3_power_off(lane);
+> > > > > > 		mvebu_a3700_comphy_ethernet_power_off(lane);
+> > > > > > 		return 0;
+> > > > > > 	case 1:
+> > > > > > 		mvebu_a3700_comphy_pcie_power_off(lane);
+> > > > > > 		mvebu_a3700_comphy_ethernet_power_off(lane);
+> > > > > > 		return 0;
+> > > > > > 	case 2:
+> > > > > > 		mvebu_a3700_comphy_usb3_power_off(lane);
+> > > > > > 		mvebu_a3700_comphy_sata_power_off(lane);
+> > > > > > 		return 0;
+> > > > > > 	default:
+> > > > > > 		dev_err(lane->dev, "invalid COMPHY mode\n");
+> > > > > > 		return -EINVAL;
+> > > > > > 	}
+> > > > > > } =20
+> > > > >=20
+> > > > > Thanks, but this hunk failed to compile with the error below.
+> > > > >=20
+> > > > > rivers/phy/marvell/phy-mvebu-a3700-comphy.c: In function 'mvebu_a=
+3700_comphy_power_off':
+> > > > > drivers/phy/marvell/phy-mvebu-a3700-comphy.c:1229:17: error: impl=
+icit declaration of function 'mvebu_a3700_comphy_usb3_power_off'; did you m=
+ean 'mvebu_a3700_comphy_usb3_power_on'? [-Werror=3Dimplicit-function-declar=
+ation]
+> > > > >  1229 |                 mvebu_a3700_comphy_usb3_power_off(lane);
+> > > > >       |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+> > > > >       |                 mvebu_a3700_comphy_usb3_power_on
+> > > > > cc1: some warnings being treated as errors
+> > > > >=20
+> > > > > Do I need to add mvebu_a3700_comphy_usb3_power_off() function? =20
+> > > >=20
+> > > > In my original version of this driver I have:
+> > > >=20
+> > > > static void mvebu_a3700_comphy_usb3_power_off(struct mvebu_a3700_co=
+mphy_lane *lane)
+> > > > {
+> > > > 	/*
+> > > > 	 * Currently the USB3 MAC will control the USB3 PHY to set it to l=
+ow
+> > > > 	 * state, thus do not need to power off USB3 PHY again.
+> > > > 	 */
+> > > > }
+> > > >=20
+> > > > So please remove mvebu_a3700_comphy_usb3_power_off() calls as it do=
+es
+> > > > nothing. =20
+> > >=20
+> > > Okay, I tried with the edit and result looks positive:
+> > >=20
+> > > - "invalid COMPHY mode" messages disappepared
+> > > - No "ata1: SATA link down (SStatus 0 SControl 300)" message
+> > > - My SSD was detected as /dev/sda
+> > >=20
+> > > FYI, I attach console log and the patch I used.
+> > >=20
+> > > --=20
+> > > Shin'ichiro Kawasaki =20
+> >=20
+> > Perfect! So the issue is with mvebu_a3700_comphy_reset() function.
+> >=20
+> > This function is not in TF-A code and neither in my original kernel
+> > driver implementation (still available here):
+> > https://git.kernel.org/pub/scm/linux/kernel/git/pali/linux.git/commit/?=
+h=3Dphy-mvebu-a3700-comphy&id=3D4588902a3528195bcfdda9f9e1e14262a1955df1
+> >=20
+> > Marek, this function mvebu_a3700_comphy_reset() was implemented by you.
+> > Could you please look at it, why you added this function and try to fix
+> > it? Is this function needed at all? =20
+>=20
+> PING? Any progress here?
+
+Not yet, sorry. Maybe we could do something like I am attaching, until
+I have time to play with it?
+
+See attached file.
+
+Marek
+
+--MP_/VdXuc1zjTY6G+or8E6gZaUA
+Content-Type: text/x-patch
+Content-Transfer-Encoding: 7bit
+Content-Disposition: attachment; filename=a3720-comphy-sata.patch
+
+diff --git a/drivers/phy/marvell/phy-mvebu-a3700-comphy.c b/drivers/phy/marvell/phy-mvebu-a3700-comphy.c
+index a4d7d9bd100d..064be967a58b 100644
+--- a/drivers/phy/marvell/phy-mvebu-a3700-comphy.c
++++ b/drivers/phy/marvell/phy-mvebu-a3700-comphy.c
+@@ -1171,8 +1171,12 @@ static int mvebu_a3700_comphy_set_mode(struct phy *phy, enum phy_mode mode,
+ 	    (lane->mode != mode || lane->submode != submode))
+ 		return -EBUSY;
+ 
+-	/* If changing mode, ensure reset is called */
+-	if (lane->mode != PHY_MODE_INVALID && lane->mode != mode)
++	/* If changing mode, ensure reset is called.
++	 * Reset can currently break support for some SATA disks, so don't do it
++	 * for PHY_MODE_SATA.
++	 */
++	if (lane->mode != PHY_MODE_INVALID && lane->mode != mode &&
++	    mode != PHY_MODE_SATA)
+ 		lane->needs_reset = true;
+ 
+ 	/* Just remember the mode, ->power_on() will do the real setup */
+@@ -1388,13 +1392,6 @@ static int mvebu_a3700_comphy_probe(struct platform_device *pdev)
+ 		lane->invert_tx = false;
+ 		lane->invert_rx = false;
+ 		phy_set_drvdata(phy, lane);
+-
+-		/*
+-		 * To avoid relying on the bootloader/firmware configuration,
+-		 * power off all comphys.
+-		 */
+-		mvebu_a3700_comphy_reset(phy);
+-		lane->needs_reset = false;
+ 	}
+ 
+ 	provider = devm_of_phy_provider_register(&pdev->dev,
+
+--MP_/VdXuc1zjTY6G+or8E6gZaUA
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--MP_/VdXuc1zjTY6G+or8E6gZaUA--
+
