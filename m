@@ -4,74 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 31B52ECAAA3
-	for <linux-phy@archiver.kernel.org>; Fri, 26 Aug 2022 05:57:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A7B7EECAAA3
+	for <linux-phy@archiver.kernel.org>; Fri, 26 Aug 2022 06:22:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:CC:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wUYO9/kSxeeGjAhIiL2UebYtbaeeL1CG74PXtPlOLIo=; b=ZP/1ylyu6oTCMZ
-	YscfPW/wt0yExt+ukbZP1h5Uqg0IjBD8beY5uMiCh5G71bAnnG7rRPGDsgai7VSkTHATBbvDbzkPZ
-	cQ8aYqQi1uawtiPqc5pEa0EMEQ1pf8qADHOLKpJAJjmuc5lukosIXuB10LppC1CC2c++C5PLCdwXF
-	mZ2PMOYtQVCO4B9cd92K3YLBnxk8vl2PaQ0RHSdBKe4H+8C/vwVz/YX0WnAKKxxhybEoavPUZ3jC0
-	wf66qQKLXI49sZI/IhnyRwrp1Iw+MIzkkMBASPXBKRFTgXvvTWamx7wLIZ14BioX7fLYZq91jFJbE
-	ADSt3XPABNXfFw2kBn0w==;
+	List-Owner; bh=VWlUnYkEaZ7PGH7WH+N8wOILkchzhGR0lY3OcarAjQI=; b=DMmg3vTaxP4rnR
+	MBlDDaMblpnM1G7h6J+b8C4fHQgnpNPMIUitf9IjAbr1pl26wD3131g2zsfUjlhHMc07uXh/Jy7i/
+	+bV5n6MPLDfqincvqRjhy6BAWCx9A7dFtVlVcqbvKA/44PMCV+ycIJTbLSy9Q7Or6agHMYp+9RXTK
+	TKdfHp6P5ym6WuuGMGoSk4LI3w50GupPWki+pSlmhPMRZo5M+RmCogcFs6WB1TpJeXvmf69Iti2Xk
+	5UtmVl4s7X6NieZbB339qcwEsTk8t21c0i3hZ7o7KJAXcN1QkGdeYkRGcA5klMDKsLyEffPoVhmnu
+	cM56DfOXxxI1wIvQ5nUg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oRSLX-00ESiA-LP; Fri, 26 Aug 2022 05:57:35 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1oRSjq-00Ec0q-2x; Fri, 26 Aug 2022 06:22:42 +0000
+Received: from mx1.tq-group.com ([93.104.207.81])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oRSLQ-00ESYl-Gg; Fri, 26 Aug 2022 05:57:34 +0000
-X-UUID: f64dafc6684a4e8aacd8f0fd2b341816-20220825
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
-	h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID; bh=vr+SHYsQa0ePNCtafTguBsuC9if01uyMQhqyKREu3S8=;
-	b=RfUeec6gH6goFXeLfeBg1LHOrv+jbDkOZm5vi8EqcwGjwI/xhLV897O6OMOMuwuPT9xieKqnQdDyq4+kQPTvoRzH5OGH+V2z2nfGGkMW2lNbv3Z+7rcaylkMyRosdssX56wrK+37GpBBO6ys6KDwOxcegmJXHXtHjCVLGgg57qM=;
-X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.1.10,REQID:9dd82e6c-67a2-46f8-9ec9-0069de3b941d,OB:0,L
-	OB:0,IP:0,URL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_
-	Ham,ACTION:release,TS:0
-X-CID-META: VersionHash:84eae18,CLOUDID:c9d2adcf-20bd-4e5e-ace8-00692b7ab380,C
-	OID:IGNORED,Recheck:0,SF:nil,TC:nil,Content:0,EDM:-3,IP:nil,URL:11|1,File:
-	nil,Bulk:nil,QS:nil,BEC:nil,COL:0
-X-UUID: f64dafc6684a4e8aacd8f0fd2b341816-20220825
-Received: from mtkmbs11n1.mediatek.inc [(172.21.101.185)] by mailgw01.mediatek.com
-	(envelope-from <chunfeng.yun@mediatek.com>)
-	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
-	with ESMTP id 501786694; Thu, 25 Aug 2022 22:57:19 -0700
-Received: from mtkcas10.mediatek.inc (172.21.101.39) by
- mtkmbs10n1.mediatek.inc (172.21.101.34) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id
- 15.2.792.15; Fri, 26 Aug 2022 13:36:44 +0800
-Received: from mhfsdcap04 (10.17.3.154) by mtkcas10.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Fri, 26 Aug 2022 13:36:44 +0800
-Message-ID: <1a16cce9fe164bafc06ae193310be71c6f645d75.camel@mediatek.com>
-Subject: Re: [PATCH 2/7] dt-bindings: phy: mediatek,tphy: add property to
- set pre-emphasis
-From: Chunfeng Yun <chunfeng.yun@mediatek.com>
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, Vinod Koul
-	<vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>
-CC: Kishon Vijay Abraham I <kishon@ti.com>, Krzysztof Kozlowski
-	<krzysztof.kozlowski+dt@linaro.org>, Matthias Brugger
-	<matthias.bgg@gmail.com>, <linux-arm-kernel@lists.infradead.org>,
-	<linux-mediatek@lists.infradead.org>, <linux-phy@lists.infradead.org>,
-	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>, Eddie Hung
-	<eddie.hung@mediatek.com>
-Date: Fri, 26 Aug 2022 13:36:43 +0800
-In-Reply-To: <bee8abe5-0299-d05e-643c-4810aa33f978@linaro.org>
-References: <20220819091344.2274-1-chunfeng.yun@mediatek.com>
-	 <20220819091344.2274-2-chunfeng.yun@mediatek.com>
-	 <438da392-f419-ad76-7e91-aa4aab36e12c@linaro.org>
-	 <816ecf6287533137b750c8bde9de5830e4229c56.camel@mediatek.com>
-	 <bee8abe5-0299-d05e-643c-4810aa33f978@linaro.org>
-X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
+	id 1oRSje-00Ebx4-H5; Fri, 26 Aug 2022 06:22:32 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+  d=tq-group.com; i=@tq-group.com; q=dns/txt; s=key1;
+  t=1661494950; x=1693030950;
+  h=from:to:cc:subject:date:message-id:in-reply-to:
+   references:mime-version:content-transfer-encoding;
+  bh=rBBrCz8xicVM3MADWVv4mCLziAZaOXVUZJrEM2LrFxU=;
+  b=CK6dv/n5USqr7nroISveGYk2sP5MRPh8RgXDIZwPHQq8tnq8gzm49lr/
+   SFwKMk7qgwUwH5iB/cc2wo678PC2tewQkY2sgkjt/2FRAAVU8+oXxxlL8
+   yaJD+DJqYIozUGZVejPV/JfN5YshXaVhWxVmqcR3C7eZlYHCuPSLSSNwL
+   9/Ncfi4ookG0kBmq5vOHsjD6tAFr/ncId5OwZLzCANuU2KajSld0zZl6S
+   oU8oxKL5F3gb4fvN8UKSa8uJyceyDMctBt20SuSDy1pUb58yUQmmpfku4
+   xZvA6h7jIJaeZjQYDioFjEQlnf3ZPDpPlSSxjy3cnKqw74WHKN8i36Lz5
+   w==;
+X-IronPort-AV: E=Sophos;i="5.93,264,1654552800"; 
+   d="scan'208";a="25817750"
+Received: from unknown (HELO tq-pgp-pr1.tq-net.de) ([192.168.6.15])
+  by mx1-pgp.tq-group.com with ESMTP; 26 Aug 2022 08:22:28 +0200
+Received: from mx1.tq-group.com ([192.168.6.7])
+  by tq-pgp-pr1.tq-net.de (PGP Universal service);
+  Fri, 26 Aug 2022 08:22:28 +0200
+X-PGP-Universal: processed;
+	by tq-pgp-pr1.tq-net.de on Fri, 26 Aug 2022 08:22:28 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+  d=tq-group.com; i=@tq-group.com; q=dns/txt; s=key1;
+  t=1661494948; x=1693030948;
+  h=from:to:cc:subject:date:message-id:in-reply-to:
+   references:mime-version:content-transfer-encoding;
+  bh=rBBrCz8xicVM3MADWVv4mCLziAZaOXVUZJrEM2LrFxU=;
+  b=I4mhAXZo/hlLyy8nA6ygIFW2lVoTfaf0Ek8oRCN5sZGonHScggVH8X2Z
+   7pQUFU3SVa2kXgpgMruqVXEbtdP3l6+AFmdrC9ZmJ4UCY5kNE1Q0iVc6A
+   DK8YVDirOkm2c7afsayhS32dx1aFr6h6JqGRimd0FC1mMMnQkDM6pj1Rs
+   oeWDtgYQtV+A2BYH1QtpXwNTZjYIN/o5ctgbO9eIv+xOIhJd8yHadygSq
+   25Yi5n42BakjrYhF4/OU7PSEc9AcixdDvEXHES/3Hq4nbW2dddyRel34Z
+   n6eAk/1O7TuE/+BzVXQa/Ss1RyvuO1Mw1AiHThvFN9xlEHBCDRx48Epji
+   w==;
+X-IronPort-AV: E=Sophos;i="5.93,264,1654552800"; 
+   d="scan'208";a="25817749"
+Received: from vtuxmail01.tq-net.de ([10.115.0.20])
+  by mx1.tq-group.com with ESMTP; 26 Aug 2022 08:22:28 +0200
+Received: from steina-w.localnet (unknown [10.123.49.11])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+	(No client certificate requested)
+	by vtuxmail01.tq-net.de (Postfix) with ESMTPSA id CDCBD280056;
+	Fri, 26 Aug 2022 08:22:27 +0200 (CEST)
+From: Alexander Stein <alexander.stein@ew.tq-group.com>
+To: Richard Zhu <hongxing.zhu@nxp.com>
+Cc: p.zabel@pengutronix.de, l.stach@pengutronix.de, bhelgaas@google.com, lorenzo.pieralisi@arm.com, robh@kernel.org, shawnguo@kernel.org, vkoul@kernel.org, marex@denx.de, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, linux-pci@vger.kernel.org, linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, kernel@pengutronix.de, linux-imx@nxp.com
+Subject: Re: [PATCH v3 0/6] Add the iMX8MP PCIe support
+Date: Fri, 26 Aug 2022 08:22:25 +0200
+Message-ID: <4384717.iIbC2pHGDl@steina-w>
+Organization: TQ-Systems GmbH
+In-Reply-To: <1660806153-29001-1-git-send-email-hongxing.zhu@nxp.com>
+References: <1660806153-29001-1-git-send-email-hongxing.zhu@nxp.com>
 MIME-Version: 1.0
-X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220825_225729_800790_023C414C 
-X-CRM114-Status: GOOD (  20.31  )
+X-CRM114-CacheID: sfid-20220825_232230_981987_6F1FABB9 
+X-CRM114-Status: GOOD (  18.90  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,57 +97,54 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, 2022-08-23 at 13:24 +0300, Krzysztof Kozlowski wrote:
-> On 22/08/2022 10:07, Chunfeng Yun wrote:
-> > On Fri, 2022-08-19 at 15:15 +0300, Krzysztof Kozlowski wrote:
-> > > On 19/08/2022 12:13, Chunfeng Yun wrote:
-> > > > Add a property to set usb2 phy's pre-emphasis.
-> > > > 
-> > > > Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
-> > > > ---
-> > > >  Documentation/devicetree/bindings/phy/mediatek,tphy.yaml | 7
-> > > > +++++++
-> > > >  1 file changed, 7 insertions(+)
-> > > > 
-> > > > diff --git
-> > > > a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
-> > > > b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
-> > > > index 848edfb1f677..aee2f3027371 100644
-> > > > --- a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
-> > > > +++ b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
-> > > > @@ -219,6 +219,13 @@ patternProperties:
-> > > >          minimum: 1
-> > > >          maximum: 15
-> > > >  
-> > > > +      mediatek,pre-emphasis:
-> > > > +        description:
-> > > > +          The selection of pre-emphasis (U2 phy)
-> > > > +        $ref: /schemas/types.yaml#/definitions/uint32
-> > > > +        minimum: 1
-> > > > +        maximum: 3
-> > > 
-> > > Instead of hard-coding register values in bindings, you should
-> > > rather
-> > > describe here feature/effect. If it is in units, use unit
-> > > suffixes.
-> > > If
-> > > it is some choice, usually string enum is appropriate.
-> > 
-> > How about changing description as bellow:
-> > 
-> > "The level of pre-emphasis, increases one level, boosts the
-> > relative
-> > amplitudes of signal's higher frequencies components about 4.16%
-> > (U2
-> > phy)"
-> > 
+Am Donnerstag, 18. August 2022, 09:02:27 CEST schrieb Richard Zhu:
+> Based on the 6.0-rc1 of the pci/next branch.
+> This series adds the i.MX8MP PCIe support and had been tested on i.MX8MP
+> EVK board when one PCIe NVME device is used.
 > 
-> Still the question is what is the unit. 4.16%?
-No unit, it's a level value, like an index of array.
+> - i.MX8MP PCIe has reversed initial PERST bit value refer to
+> i.MX8MQ/i.MX8MM. Add the PHY PERST explicitly for i.MX8MP PCIe PHY.
+> - Add the i.MX8MP PCIe PHY support in the i.MX8M PCIe PHY driver.
+>   And share as much as possible codes with i.MX8MM PCIe PHY.
+> - Add the i.MX8MP PCIe support in binding document, DTS files, and PCIe
+>   driver.
+> 
+> Main changes v2-->v3:
+> - Fix the schema checking error in the PHY dt-binding patch.
+> - Inspired by Lucas, the PLL configurations might not required when
+>   external OSC is used as PCIe referrence clock. It's true. Remove all
+>   the HSIO PLL bit manipulations, and PCIe works fine on i.MX8MP EVK board
+>   with one NVME device is used.
+> - Drop the #4 patch of v2, since it had been applied by Rob.
+> 
+> Main changes v1-->v2:
+> - It's my fault forget including Vinod, re-send v2 after include Vinod
+>   and linux-phy@lists.infradead.org.
+> - List the basements of this patch-set. The branch, codes changes and so on.
+> - Clean up some useless register and bit definitions in #3 patch.
+> 
+> Documentation/devicetree/bindings/phy/fsl,imx8-pcie-phy.yaml |  16 +++++++--
+> arch/arm64/boot/dts/freescale/imx8mp-evk.dts                 |  53
+> +++++++++++++++++++++++++++++ arch/arm64/boot/dts/freescale/imx8mp.dtsi    
+>                |  46 ++++++++++++++++++++++++-
+> drivers/pci/controller/dwc/pci-imx6.c                        |  17
+> +++++++++- drivers/phy/freescale/phy-fsl-imx8m-pcie.c                   |
+> 150
+> +++++++++++++++++++++++++++++++++++++++++++++++++++++++++------------------
+> ------- drivers/reset/reset-imx7.c                                   |   1 +
+> 6 files changed, 232 insertions(+), 51 deletions(-)
+> 
+>  [PATCH v3 1/6] reset: imx7: Add the iMX8MP PCIe PHY PERST support
+>  [PATCH v3 2/6] dt-binding: phy: Add iMX8MP PCIe PHY binding
+>  [PATCH v3 3/6] phy: freescale: imx8m-pcie: Add iMX8MP PCIe PHY
+>  [PATCH v3 4/6] arm64: dts: imx8mp: add the iMX8MP PCIe support
+>  [PATCH v3 5/6] arm64: dts: imx8mp-evk: Add PCIe support
+>  [PATCH v3 6/6] PCI: imx6: Add the iMX8MP PCIe support
 
-> 
-> Best regards,
-> Krzysztof
+On TQMa8MPxl + MBa8MPxL:
+Tested-by: Alexander Stein <alexander.stein@ew.tq-group.com>
+
+
 
 
 -- 
