@@ -4,89 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 174E2ECAAD7
-	for <linux-phy@archiver.kernel.org>; Fri, 26 Aug 2022 06:37:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 12C3DECAAA3
+	for <linux-phy@archiver.kernel.org>; Fri, 26 Aug 2022 06:51:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7JyZvjBsjYts+hiG80RUgljGbfv82i0tk2lPQQc/cyQ=; b=4ozw061z2E3Ywp
-	hhaR0+EZd2MoXfLzAHBq0r/MAwPnSutFa9EdOwIJ9ePoBHVCAXiwz5Y1VFDs80RfNM8GIwVucXb5/
-	lFz7kSoVPbazYCkOiZ5+OtfED6K86PhWw8fd8zMKvGqESGDJjp6B9xG7oNRf/icy9kGEEnVNq6+kj
-	U5zhqo/DIBdKGQfX3Yib2y39Eka7+z9xyWFaX7l7eacGanp9xXmToMNmghTJEGZm4K1AX1YGww6Jv
-	FQibHvbvEyOkHlI99Tca15OFPNOmXv6IAZUEtrObW5wqq/a1mlbpwARcv9l3Pn4lhc6MuMPq88iiB
-	MJq20Qa7MixB2fA4ZD9Q==;
+	List-Owner; bh=3MSBKlg9wnOsXZNYSBEKitR7DUUj7yG2r60+Wu4AvZQ=; b=SmzTVzlC/TwK8B
+	WClJUj3X3hTxpw08foWpSLQGwRppNGC0DPzoBV0F/a2MDY8CzSSlVCfiBD1XW5H9/gKDbn2obHofk
+	5x7576ItgERURfZtranPxpwORoXr+yv5uoh1eSwZSx7lAPfABgtUjYeinQSItkvMsEjt1IFUqgmPV
+	zyXMC2BLJCQ3qBqnOP0Uj43XusasL3cTz0wVBEzlSatLYPbdDWt5vsaxt+VsRQBoQgX/Zkg257dz8
+	/i63P5bQXeIv+DMa90+ZWMCHaYzJMttjkvc38LXya+kfysUcs10jNto2GZA1CpxGPaoaCa8kCEK1D
+	CYXXLt4KQJ2qf9PWloog==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oRSxl-00EkRG-H3; Fri, 26 Aug 2022 06:37:05 +0000
-Received: from mail-lf1-x136.google.com ([2a00:1450:4864:20::136])
+	id 1oRTBF-00EvWL-AO; Fri, 26 Aug 2022 06:51:01 +0000
+Received: from mail-lj1-x234.google.com ([2a00:1450:4864:20::234])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oRSxi-00EkIb-DA
-	for linux-phy@lists.infradead.org; Fri, 26 Aug 2022 06:37:04 +0000
-Received: by mail-lf1-x136.google.com with SMTP id d8so826532lfq.0
-        for <linux-phy@lists.infradead.org>; Thu, 25 Aug 2022 23:37:00 -0700 (PDT)
+	id 1oRTAt-00Ev2Z-Dm
+	for linux-phy@lists.infradead.org; Fri, 26 Aug 2022 06:50:40 +0000
+Received: by mail-lj1-x234.google.com with SMTP id w22so701067ljg.7
+        for <linux-phy@lists.infradead.org>; Thu, 25 Aug 2022 23:50:38 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc;
-        bh=QAX1Plu+eXlOZCcV0dheQHJM314EyoqCLQ+tuSBSA+c=;
-        b=f2f+68BXq0Gr6vOQ54HOvpIHVEwfm/lw1PPIdnzcW3YuRvpawn0tR5O0ZLtYd9XHbr
-         zW4sTu8j9uqTFmyieo0baRdk7Vexx7AKqiInoLzSXG+WmFdu9aFOFvyOr+RaUWsaAZJ+
-         RTqKuu2bwnKlCgR9+h/AdfcyPipUO/fFgxvZFTID19J3+yfuNGTlFdXwkMmyLoX4IHgq
-         Hwcrmi2ui/D+/p7WzlRpp0kFm/t/CMA7wKQaG9F2ZFVdHSIsVmVipZq+C5x6VMhjhRH1
-         BOt0xCsHXpWy7cEOWfqFB9JZ39NALmwzb5LWjgYZRHI3qxOiaGPaq/ePP0RK6x0G19LS
-         zXJA==
+        bh=7ucuTjvwcIeRgdHUmyQVPcOH0rtFIB9s92k3HvPl+Lg=;
+        b=UYyICR8Kxwxx3N+l7H9vpwbhmxjQgKuED9l4C3BW8de56rIH6/rCSVoGsirsqC/mlY
+         HrUIIH136YrjQQs+UW8+I8ekNgXkQSZCQF4jkpaO7nwf98t8ccK4S7wUh9dHlDIR8eve
+         UMSCAYrj8MenS4A6DSa5fgg//e/PFeYV6tXhiwRgfQLwWI1gPaITe3lGvI4a/TKiuIj1
+         7kfY1ByEIJDuPuNsOGqZWdmgqY2brrV/nGQoHVebnrKB1m5aAB5i65lTaPXnziflxP7D
+         bzOrlMOKv8+8alYcPSRsVmz+amuXm6ReASHU/u+5nq7OTJtARrH2ICC/kvxGZWE9LJPL
+         rLnw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc;
-        bh=QAX1Plu+eXlOZCcV0dheQHJM314EyoqCLQ+tuSBSA+c=;
-        b=tWOaQbn4BsgswPkh0dKDMK1a+mv0S7tzFuBYUVftXBxQrT0g/mR3hu1dByNPNIufAN
-         i3zB4YAVkgEQ4Z2koXHdpUxwA4EDD9uGpNjPefhqboMj/5C5HpNnnlwtOvQh5UefDQZK
-         aLWDu8tj9sjElswayNDG1XDjHquLNnOxra56ANbz+X1BjMYgoAVZPHo0zFEnB8UjkQcR
-         XRDif/AkayLRXXdLopZo7F/ENyjkpdSsVow3ttOkH75ztNZ3V9gg8M6u/yHCClXh5MuE
-         +gvgdaMZ9mk/Gf+H7WZ+QfvAJdB4TJihxLVe9YoNtvjAfekYUorwuWhiDbsRmodmD9BS
-         asTQ==
-X-Gm-Message-State: ACgBeo1N6BD2ojbW+Kcfi/jc/2/ok5DQ7scphnNqtkJ6YvAhASLL7zpP
-	xZQUvsyMzh2wB73ihY2+TvZZWQ==
-X-Google-Smtp-Source: AA6agR4/bfI8tZVB387LlEzAXYTw1Qp2U7iaA4G1tOeXj1Eyy7DeWyKpBFjDmrpzK6EB3X5U1lCMEA==
-X-Received: by 2002:a05:6512:4004:b0:492:c4f2:9451 with SMTP id br4-20020a056512400400b00492c4f29451mr1949002lfb.666.1661495819119;
-        Thu, 25 Aug 2022 23:36:59 -0700 (PDT)
+        bh=7ucuTjvwcIeRgdHUmyQVPcOH0rtFIB9s92k3HvPl+Lg=;
+        b=33A0FpsGq5NZxRAZ6Clpo4CwjfgAOoK7hpnarGetOROSPZmYedmC9QCDy8bH7DAiNh
+         by8isJzHedHWnDoGwOr1EM2j8Dvcqmq+og63wYHSP620DTjBVm+55ju5uNKmGy1Yl8j9
+         W8FCTkh9rTSbFetnaCOjf82WStTbhD3ihiUIaITvFbleYUqE34AIRyAFVRdHgHjqyntX
+         gielxdFnobCZ/qYMxVo2X8l2jRwaDE9dwwzuAZPB3SiUvuEYpuPZJciJTXgK71x7PHF9
+         xiuBDumxmNDYt89UX6/ShQtE6esSxNVSKG1E760GRR3gom0O2QZZZTJSv00/4NtvqVnd
+         PUCQ==
+X-Gm-Message-State: ACgBeo2oGA3iMPybva34zJLR7eLjoCharjz1PTZzHz3hZp7Ol7wVYfX4
+	bG+OCVWGFJHRwwljuiaH9INZzg==
+X-Google-Smtp-Source: AA6agR55muQUl0EGQptKMs7t57bYTpy+EF08JVpOQGsnvB+PmIqzUrrBi05Mcf4CLakmC5vokewSKg==
+X-Received: by 2002:a2e:54d:0:b0:261:bbfc:23f8 with SMTP id 74-20020a2e054d000000b00261bbfc23f8mr1743546ljf.145.1661496636932;
+        Thu, 25 Aug 2022 23:50:36 -0700 (PDT)
 Received: from [192.168.0.71] (82.131.98.15.cable.starman.ee. [82.131.98.15])
-        by smtp.gmail.com with ESMTPSA id p16-20020ac24ed0000000b00492b1ee7489sm246608lfr.300.2022.08.25.23.36.58
+        by smtp.gmail.com with ESMTPSA id w27-20020ac2443b000000b00492faa68260sm258539lfl.229.2022.08.25.23.50.35
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 25 Aug 2022 23:36:58 -0700 (PDT)
-Message-ID: <000babd8-5980-3d77-f156-324b3442cbe7@linaro.org>
-Date: Fri, 26 Aug 2022 09:36:57 +0300
+        Thu, 25 Aug 2022 23:50:36 -0700 (PDT)
+Message-ID: <cae915f6-c951-ba97-346d-00922c85067d@linaro.org>
+Date: Fri, 26 Aug 2022 09:50:34 +0300
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
  Thunderbird/91.13.0
-Subject: Re: [PATCH 2/7] dt-bindings: phy: mediatek,tphy: add property to set
- pre-emphasis
+Subject: Re: [PATCH v5 5/5] arm64: dts: rockchip: Add PCIe v3 nodes to
+ BPI-R2-Pro
 Content-Language: en-US
-To: Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>,
- Rob Herring <robh+dt@kernel.org>
-Cc: Kishon Vijay Abraham I <kishon@ti.com>,
+To: Frank Wunderlich <linux@fw-web.de>, linux-rockchip@lists.infradead.org
+Cc: Frank Wunderlich <frank-w@public-files.de>,
+ Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
  Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
+ Heiko Stuebner <heiko@sntech.de>, Philipp Zabel <p.zabel@pengutronix.de>,
+ Yifeng Zhao <yifeng.zhao@rock-chips.com>, Johan Jonker <jbx6244@gmail.com>,
+ Peter Geis <pgwipeout@gmail.com>, Simon Xue <xxm@rock-chips.com>,
+ Liang Chen <cl@rock-chips.com>, Shawn Lin <shawn.lin@rock-chips.com>,
  linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, Eddie Hung <eddie.hung@mediatek.com>
-References: <20220819091344.2274-1-chunfeng.yun@mediatek.com>
- <20220819091344.2274-2-chunfeng.yun@mediatek.com>
- <438da392-f419-ad76-7e91-aa4aab36e12c@linaro.org>
- <816ecf6287533137b750c8bde9de5830e4229c56.camel@mediatek.com>
- <bee8abe5-0299-d05e-643c-4810aa33f978@linaro.org>
- <1a16cce9fe164bafc06ae193310be71c6f645d75.camel@mediatek.com>
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+References: <20220825193836.54262-1-linux@fw-web.de>
+ <20220825193836.54262-6-linux@fw-web.de>
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <1a16cce9fe164bafc06ae193310be71c6f645d75.camel@mediatek.com>
+In-Reply-To: <20220825193836.54262-6-linux@fw-web.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220825_233702_550098_4159A5DA 
-X-CRM114-Status: GOOD (  11.63  )
+X-CRM114-CacheID: sfid-20220825_235039_498526_0E815F9B 
+X-CRM114-Status: GOOD (  20.19  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,59 +102,90 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 26/08/2022 08:36, Chunfeng Yun wrote:
-> On Tue, 2022-08-23 at 13:24 +0300, Krzysztof Kozlowski wrote:
->> On 22/08/2022 10:07, Chunfeng Yun wrote:
->>> On Fri, 2022-08-19 at 15:15 +0300, Krzysztof Kozlowski wrote:
->>>> On 19/08/2022 12:13, Chunfeng Yun wrote:
->>>>> Add a property to set usb2 phy's pre-emphasis.
->>>>>
->>>>> Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
->>>>> ---
->>>>>  Documentation/devicetree/bindings/phy/mediatek,tphy.yaml | 7
->>>>> +++++++
->>>>>  1 file changed, 7 insertions(+)
->>>>>
->>>>> diff --git
->>>>> a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
->>>>> b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
->>>>> index 848edfb1f677..aee2f3027371 100644
->>>>> --- a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
->>>>> +++ b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
->>>>> @@ -219,6 +219,13 @@ patternProperties:
->>>>>          minimum: 1
->>>>>          maximum: 15
->>>>>  
->>>>> +      mediatek,pre-emphasis:
->>>>> +        description:
->>>>> +          The selection of pre-emphasis (U2 phy)
->>>>> +        $ref: /schemas/types.yaml#/definitions/uint32
->>>>> +        minimum: 1
->>>>> +        maximum: 3
->>>>
->>>> Instead of hard-coding register values in bindings, you should
->>>> rather
->>>> describe here feature/effect. If it is in units, use unit
->>>> suffixes.
->>>> If
->>>> it is some choice, usually string enum is appropriate.
->>>
->>> How about changing description as bellow:
->>>
->>> "The level of pre-emphasis, increases one level, boosts the
->>> relative
->>> amplitudes of signal's higher frequencies components about 4.16%
->>> (U2
->>> phy)"
->>>
->>
->> Still the question is what is the unit. 4.16%?
-> No unit, it's a level value, like an index of array.
+On 25/08/2022 22:38, Frank Wunderlich wrote:
+> From: Frank Wunderlich <frank-w@public-files.de>
 > 
+> Add Nodes to Bananapi-R2-Pro board to support PCIe v3 and
+> set PCIe related regulators to always on.
+> 
+> Suggested-by: Peter Geis <pgwipeout@gmail.com>
+> Signed-off-by: Frank Wunderlich <frank-w@public-files.de>
+> ---
+> v5:
+> - rebase on 6.0-rc1
+> - add pinctrl for pcie
+> - fix ngff pwr_en_h gpio for hw ref 1.1
+> 
+> v4:
+> - change u8 lane-map to u32 data-lanes
+> 
+> v3:
+> - squash lane-map over bifurcation property
+> - add comment which slot is M2 and which one if mPCIe
+> - fixes from Peter:
+>   - drop regulator-always-on/regulator-boot-on from regulators
+>   - increase startup-delay-us for regulators
+>   - set phy-mode on PCIe3-phy
+>   - add num-lanes to PCIe overrides
+>   - add usb node for to PCIe/m2
+>   - move lane-map from PCIe controller to PCIe-phy
+> 
+> v2:
+> - underscores in nodenames
+> - rockchip,bifurcation to vendor unspecific bifurcation
+> - fix trailing space
+> ---
+>  .../boot/dts/rockchip/rk3568-bpi-r2-pro.dts   | 117 ++++++++++++++++++
+>  1 file changed, 117 insertions(+)
+> 
+> diff --git a/arch/arm64/boot/dts/rockchip/rk3568-bpi-r2-pro.dts b/arch/arm64/boot/dts/rockchip/rk3568-bpi-r2-pro.dts
+> index 93d383b8be87..40b90c052634 100644
+> --- a/arch/arm64/boot/dts/rockchip/rk3568-bpi-r2-pro.dts
+> +++ b/arch/arm64/boot/dts/rockchip/rk3568-bpi-r2-pro.dts
+> @@ -86,6 +86,66 @@ vcc5v0_sys: vcc5v0-sys {
+>  		vin-supply = <&dc_12v>;
+>  	};
+>  
+> +	pcie30_avdd0v9: pcie30-avdd0v9 {
 
-So a value from register/device programming? Rather a regular units
-should be used if that's possible. If not, this should be clearly
-described here, not some magical number which you encode into DTS...
+Use consistent naming, so if other nodes have "regulator" suffix, use it
+here as well.
+
+> +		compatible = "regulator-fixed";
+> +		regulator-name = "pcie30_avdd0v9";
+> +		regulator-always-on;
+> +		regulator-boot-on;
+> +		regulator-min-microvolt = <900000>;
+> +		regulator-max-microvolt = <900000>;
+> +		vin-supply = <&vcc3v3_sys>;
+> +	};
+> +
+> +	pcie30_avdd1v8: pcie30-avdd1v8 {
+
+Ditto.
+
+
+> +		compatible = "regulator-fixed";
+> +		regulator-name = "pcie30_avdd1v8";
+> +		regulator-always-on;
+> +		regulator-boot-on;
+> +		regulator-min-microvolt = <1800000>;
+> +		regulator-max-microvolt = <1800000>;
+> +		vin-supply = <&vcc3v3_sys>;
+> +	};
+> +
+> +	/* pi6c pcie clock generator feeds both ports */
+> +	vcc3v3_pi6c_05: vcc3v3-pi6c-05-regulator {
+> +		compatible = "regulator-fixed";
+> +		regulator-name = "vcc3v3_pcie";
+> +		regulator-min-microvolt = <3300000>;
+> +		regulator-max-microvolt = <3300000>;
+> +		enable-active-high;
+> +		gpios = <&gpio0 RK_PD4 GPIO_ACTIVE_HIGH>;
+> +		startup-delay-us = <200000>;
+> +		vin-supply = <&vcc5v0_sys>;
+> +	};
+> +
 
 Best regards,
 Krzysztof
