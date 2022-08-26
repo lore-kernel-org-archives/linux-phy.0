@@ -4,83 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 82154ECAAD2
-	for <linux-phy@archiver.kernel.org>; Fri, 26 Aug 2022 06:26:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 174E2ECAAD7
+	for <linux-phy@archiver.kernel.org>; Fri, 26 Aug 2022 06:37:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Cc:To:From:Subject:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Nxxta1kA6QZTNRkTmD0yAiZYS5aOAf1Bl9rCIPhVHFg=; b=VU4kFNeCKFttNp
-	R/+hH0+jaH64Y9oKWhWYP0bpTar7QRWN1f4JU3RyYBABcE2YQ4LyxJgz+pvLRA2QzfMAB8jvZQfjo
-	kgXrGVXm6C6NvNatb6jJOpXt8+HXX+HCimed/HcpCm0oUjgtZLz1RYW9QEC7RzhWRNEaNnzap9Gp2
-	Pj3YtQqzmQxgkcNpDGyxlXH/IV8Gw53J5ltf41qqO1+Z0oPAdSctuUMZdhGi/0euTKcu8IbTUbmGs
-	r00WGhq+uwZkHKKAD0kypk+M9EU7uKYlIBEOs9ssLAUkimaSTkY9wb/k4u3hxNjl2i80PeJs4dgvv
-	ninyBQmrWvvGOVdipKCQ==;
+	List-Owner; bh=7JyZvjBsjYts+hiG80RUgljGbfv82i0tk2lPQQc/cyQ=; b=4ozw061z2E3Ywp
+	hhaR0+EZd2MoXfLzAHBq0r/MAwPnSutFa9EdOwIJ9ePoBHVCAXiwz5Y1VFDs80RfNM8GIwVucXb5/
+	lFz7kSoVPbazYCkOiZ5+OtfED6K86PhWw8fd8zMKvGqESGDJjp6B9xG7oNRf/icy9kGEEnVNq6+kj
+	U5zhqo/DIBdKGQfX3Yib2y39Eka7+z9xyWFaX7l7eacGanp9xXmToMNmghTJEGZm4K1AX1YGww6Jv
+	FQibHvbvEyOkHlI99Tca15OFPNOmXv6IAZUEtrObW5wqq/a1mlbpwARcv9l3Pn4lhc6MuMPq88iiB
+	MJq20Qa7MixB2fA4ZD9Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oRSnN-00EdR9-Uf; Fri, 26 Aug 2022 06:26:21 +0000
-Received: from mx1.tq-group.com ([93.104.207.81])
+	id 1oRSxl-00EkRG-H3; Fri, 26 Aug 2022 06:37:05 +0000
+Received: from mail-lf1-x136.google.com ([2a00:1450:4864:20::136])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oRSnB-00EdKa-R3; Fri, 26 Aug 2022 06:26:11 +0000
+	id 1oRSxi-00EkIb-DA
+	for linux-phy@lists.infradead.org; Fri, 26 Aug 2022 06:37:04 +0000
+Received: by mail-lf1-x136.google.com with SMTP id d8so826532lfq.0
+        for <linux-phy@lists.infradead.org>; Thu, 25 Aug 2022 23:37:00 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-  d=tq-group.com; i=@tq-group.com; q=dns/txt; s=key1;
-  t=1661495169; x=1693031169;
-  h=subject:from:to:cc:date:message-id:in-reply-to:
-   references:mime-version:content-transfer-encoding;
-  bh=Ru/eWDImchhw6Kz9v2fJ5UGl0jpVy/CFCbFYw8iOmFs=;
-  b=g2wVjwKDywR5wUjU+WpROA4mswRyDGjrdlnyUWAB4WtNohrPLIxM1rfm
-   i8hHrlHOn8ru3vTH1xkTwa/yOCErRUQNdk0nxoDnulCe5l1TV9tZS7jke
-   fHPbrG+hc3t4eO21/9Ndhd2glWyhyar8+/9CSOTHajRR/zA1YedX6yCQj
-   uhctC/i6qj5xvtNwGGW7Vfd5xHdvsiZ84tw3rRTY8yIwA0CZTx3GSLPtp
-   xzorXS1qhltGQXD/qCHKCoXmQPLNcm7OYK8noM3HVbq5cfkBZHM9iNuDF
-   RMuWCv0l8Fen9aQP5xWdyL0hqQUyTg45kzYvpVn73ejKeqDAqtvqtBWdM
-   A==;
-X-IronPort-AV: E=Sophos;i="5.93,264,1654552800"; 
-   d="scan'208";a="25817877"
-Received: from unknown (HELO tq-pgp-pr1.tq-net.de) ([192.168.6.15])
-  by mx1-pgp.tq-group.com with ESMTP; 26 Aug 2022 08:26:08 +0200
-Received: from mx1.tq-group.com ([192.168.6.7])
-  by tq-pgp-pr1.tq-net.de (PGP Universal service);
-  Fri, 26 Aug 2022 08:26:08 +0200
-X-PGP-Universal: processed;
-	by tq-pgp-pr1.tq-net.de on Fri, 26 Aug 2022 08:26:08 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-  d=tq-group.com; i=@tq-group.com; q=dns/txt; s=key1;
-  t=1661495168; x=1693031168;
-  h=from:to:cc:date:message-id:in-reply-to:references:
-   mime-version:content-transfer-encoding:subject;
-  bh=Ru/eWDImchhw6Kz9v2fJ5UGl0jpVy/CFCbFYw8iOmFs=;
-  b=GZlq0KSirEFrHnj29JRewBtdV51m86yAQ2aYucZ1AyNT5t+C/WnS0w0l
-   2KjJwivgu3XTmqwC6UdW4OGXj2gyb+R+GCCm4H1yGqXWuyg9hDY40VAkv
-   3BCMWM3gJQ3ASR7r89Em8RWLBrx3YxrAdbcCilr4DcqKWKUhw3XwxZXKX
-   VgopHAhotboPVEi01OdZ1/GtodJp9uLvhJBYsx/F2r+jjbE8dwU1NpBX/
-   5eIV4t+eSQCqLpj+mZ7a6JpDG5cPF/f4mfLfQh5vt6dQCuMDp5RKnKgI9
-   N/mmD1BD4fT6Ehqnz/ZLFTgKHJBHEMQPmnhfkcQCPBHfp1birUz7aXObO
-   w==;
-X-IronPort-AV: E=Sophos;i="5.93,264,1654552800"; 
-   d="scan'208";a="25817876"
-Subject: Re: [PATCH v1 0/2] Fix the wrong order of phy callbacks
-Received: from vtuxmail01.tq-net.de ([10.115.0.20])
-  by mx1.tq-group.com with ESMTP; 26 Aug 2022 08:26:07 +0200
-Received: from steina-w.localnet (unknown [10.123.49.11])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
-	(No client certificate requested)
-	by vtuxmail01.tq-net.de (Postfix) with ESMTPSA id 9E1C8280056;
-	Fri, 26 Aug 2022 08:26:07 +0200 (CEST)
-From: Alexander Stein <alexander.stein@ew.tq-group.com>
-To: Richard Zhu <hongxing.zhu@nxp.com>
-Cc: l.stach@pengutronix.de, bhelgaas@google.com, lorenzo.pieralisi@arm.com, vkoul@kernel.org, marcel.ziswiler@toradex.com, kishon@ti.com, linux-arm-kernel@lists.infradead.org, hongxing.zhu@nxp.com, linux-phy@lists.infradead.org, linux-pci@vger.kernel.org, linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, kernel@pengutronix.de, linux-imx@nxp.com
-Date: Fri, 26 Aug 2022 08:26:05 +0200
-Message-ID: <4054884.5fSG56mABF@steina-w>
-Organization: TQ-Systems GmbH
-In-Reply-To: <1661173856-1192-1-git-send-email-hongxing.zhu@nxp.com>
-References: <1661173856-1192-1-git-send-email-hongxing.zhu@nxp.com>
+        d=linaro.org; s=google;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc;
+        bh=QAX1Plu+eXlOZCcV0dheQHJM314EyoqCLQ+tuSBSA+c=;
+        b=f2f+68BXq0Gr6vOQ54HOvpIHVEwfm/lw1PPIdnzcW3YuRvpawn0tR5O0ZLtYd9XHbr
+         zW4sTu8j9uqTFmyieo0baRdk7Vexx7AKqiInoLzSXG+WmFdu9aFOFvyOr+RaUWsaAZJ+
+         RTqKuu2bwnKlCgR9+h/AdfcyPipUO/fFgxvZFTID19J3+yfuNGTlFdXwkMmyLoX4IHgq
+         Hwcrmi2ui/D+/p7WzlRpp0kFm/t/CMA7wKQaG9F2ZFVdHSIsVmVipZq+C5x6VMhjhRH1
+         BOt0xCsHXpWy7cEOWfqFB9JZ39NALmwzb5LWjgYZRHI3qxOiaGPaq/ePP0RK6x0G19LS
+         zXJA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc;
+        bh=QAX1Plu+eXlOZCcV0dheQHJM314EyoqCLQ+tuSBSA+c=;
+        b=tWOaQbn4BsgswPkh0dKDMK1a+mv0S7tzFuBYUVftXBxQrT0g/mR3hu1dByNPNIufAN
+         i3zB4YAVkgEQ4Z2koXHdpUxwA4EDD9uGpNjPefhqboMj/5C5HpNnnlwtOvQh5UefDQZK
+         aLWDu8tj9sjElswayNDG1XDjHquLNnOxra56ANbz+X1BjMYgoAVZPHo0zFEnB8UjkQcR
+         XRDif/AkayLRXXdLopZo7F/ENyjkpdSsVow3ttOkH75ztNZ3V9gg8M6u/yHCClXh5MuE
+         +gvgdaMZ9mk/Gf+H7WZ+QfvAJdB4TJihxLVe9YoNtvjAfekYUorwuWhiDbsRmodmD9BS
+         asTQ==
+X-Gm-Message-State: ACgBeo1N6BD2ojbW+Kcfi/jc/2/ok5DQ7scphnNqtkJ6YvAhASLL7zpP
+	xZQUvsyMzh2wB73ihY2+TvZZWQ==
+X-Google-Smtp-Source: AA6agR4/bfI8tZVB387LlEzAXYTw1Qp2U7iaA4G1tOeXj1Eyy7DeWyKpBFjDmrpzK6EB3X5U1lCMEA==
+X-Received: by 2002:a05:6512:4004:b0:492:c4f2:9451 with SMTP id br4-20020a056512400400b00492c4f29451mr1949002lfb.666.1661495819119;
+        Thu, 25 Aug 2022 23:36:59 -0700 (PDT)
+Received: from [192.168.0.71] (82.131.98.15.cable.starman.ee. [82.131.98.15])
+        by smtp.gmail.com with ESMTPSA id p16-20020ac24ed0000000b00492b1ee7489sm246608lfr.300.2022.08.25.23.36.58
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 25 Aug 2022 23:36:58 -0700 (PDT)
+Message-ID: <000babd8-5980-3d77-f156-324b3442cbe7@linaro.org>
+Date: Fri, 26 Aug 2022 09:36:57 +0300
 MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
+ Thunderbird/91.13.0
+Subject: Re: [PATCH 2/7] dt-bindings: phy: mediatek,tphy: add property to set
+ pre-emphasis
+Content-Language: en-US
+To: Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>
+Cc: Kishon Vijay Abraham I <kishon@ti.com>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Eddie Hung <eddie.hung@mediatek.com>
+References: <20220819091344.2274-1-chunfeng.yun@mediatek.com>
+ <20220819091344.2274-2-chunfeng.yun@mediatek.com>
+ <438da392-f419-ad76-7e91-aa4aab36e12c@linaro.org>
+ <816ecf6287533137b750c8bde9de5830e4229c56.camel@mediatek.com>
+ <bee8abe5-0299-d05e-643c-4810aa33f978@linaro.org>
+ <1a16cce9fe164bafc06ae193310be71c6f645d75.camel@mediatek.com>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <1a16cce9fe164bafc06ae193310be71c6f645d75.camel@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220825_232610_225063_A15751FF 
-X-CRM114-Status: GOOD (  10.06  )
+X-CRM114-CacheID: sfid-20220825_233702_550098_4159A5DA 
+X-CRM114-Status: GOOD (  11.63  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,29 +103,62 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hello Richard,
-
-Am Montag, 22. August 2022, 15:10:54 CEST schrieb Richard Zhu:
-> Refer [1], phy_init() must be called before phy_power_on().
-> This series used to fix the wrong order of the phy_init() and
-> phy_power_on(), introduced by commit 1aa97b002258 ("phy: freescale: pcie:
-> Initialize the imx8 pcie standalone phy driver") Tested on i.MX8MM EVK
-> board when one NVME device is used.
+On 26/08/2022 08:36, Chunfeng Yun wrote:
+> On Tue, 2022-08-23 at 13:24 +0300, Krzysztof Kozlowski wrote:
+>> On 22/08/2022 10:07, Chunfeng Yun wrote:
+>>> On Fri, 2022-08-19 at 15:15 +0300, Krzysztof Kozlowski wrote:
+>>>> On 19/08/2022 12:13, Chunfeng Yun wrote:
+>>>>> Add a property to set usb2 phy's pre-emphasis.
+>>>>>
+>>>>> Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+>>>>> ---
+>>>>>  Documentation/devicetree/bindings/phy/mediatek,tphy.yaml | 7
+>>>>> +++++++
+>>>>>  1 file changed, 7 insertions(+)
+>>>>>
+>>>>> diff --git
+>>>>> a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
+>>>>> b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
+>>>>> index 848edfb1f677..aee2f3027371 100644
+>>>>> --- a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
+>>>>> +++ b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
+>>>>> @@ -219,6 +219,13 @@ patternProperties:
+>>>>>          minimum: 1
+>>>>>          maximum: 15
+>>>>>  
+>>>>> +      mediatek,pre-emphasis:
+>>>>> +        description:
+>>>>> +          The selection of pre-emphasis (U2 phy)
+>>>>> +        $ref: /schemas/types.yaml#/definitions/uint32
+>>>>> +        minimum: 1
+>>>>> +        maximum: 3
+>>>>
+>>>> Instead of hard-coding register values in bindings, you should
+>>>> rather
+>>>> describe here feature/effect. If it is in units, use unit
+>>>> suffixes.
+>>>> If
+>>>> it is some choice, usually string enum is appropriate.
+>>>
+>>> How about changing description as bellow:
+>>>
+>>> "The level of pre-emphasis, increases one level, boosts the
+>>> relative
+>>> amplitudes of signal's higher frequencies components about 4.16%
+>>> (U2
+>>> phy)"
+>>>
+>>
+>> Still the question is what is the unit. 4.16%?
+> No unit, it's a level value, like an index of array.
 > 
-> [1]https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/d
-> rivers/phy/phy-core.c?id=v5.19-rc1#n233
-> 
-> [PATCH v1 1/2] PCI: imx6: Fix the wrong order of phy_init() and
-> [PATCH v1 2/2] phy: freescale: imx8m-pcie: Fix the wrong order of
 
-Together with your imx8mp patch series on TQMa8MPxl + MBa8MPxL:
-Tested-by: Alexander Stein <alexander.stein@ew.tq-group.com>
+So a value from register/device programming? Rather a regular units
+should be used if that's possible. If not, this should be clearly
+described here, not some magical number which you encode into DTS...
 
-Thanks again!
-Alexander
-
-
-
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
