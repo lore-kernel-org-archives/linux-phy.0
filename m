@@ -4,55 +4,128 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7A2A3ECAAD2
-	for <linux-phy@archiver.kernel.org>; Mon, 29 Aug 2022 15:23:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 061C2ECAAD2
+	for <linux-phy@archiver.kernel.org>; Mon, 29 Aug 2022 15:31:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MEFPPByDv13w3O01+DXhljRI3UNH1gGSe7J6N0nNSHE=; b=MP56DmXa1m0dVC
-	Y16H7kEDvoCgosdAj+PAmA8n0trFgUN8g8BroNkc/byLJ6mGQgRnwDqQ3Fry/Xiw4TRq2xEowbMS8
-	YaoT9aSdDW18Ity5QihdUAEoHN9r6EYT9a+U5M+Ceu38C++UrGDeT2HhLIE0iKNMN+JulxNrrhwYD
-	pgwdjdyuqLJ43z79H1aIftgtIPNKfu9+XxkS5j1zsJFJ8KVEPq2JulXtQmI70QuhRUwn8+FuLEqje
-	ddPOX/MqNDpopEq4nNBEcw28nLIsBrn9DheHwn3Qjw3sca73vBfSvBkUuznWnOi1Oqq6gIQZOaw2W
-	zdEGRCoP56LBy23j+eoQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=RuGYQBgIsjVQiSZ9ueTwoYsSf94XXTRRo30BOFL0XmE=; b=JQh8bRxTywCNIZ
+	j3YriQZ91qfVS60S8dplhK0QT7fWNYuGRoJ1kg1Xqlj1/3mjz1vgFGEP0s5Iu01yVz5KauCYpB6X+
+	FGUVOOmoMofzNb8fdsL8/jFlwyEk2fY65fvFBUYOSlpDpAEJgxWs/0YPh0lhcPtMsgi+gi3pUt7bY
+	EFNGcUzJnOkIIvuRyKzwiv5L/Q75GIFeL+VJkhKN7cG6zYp/kbssnX4eRXOcfBLXAXXx7bEmxet3A
+	7CoEcBhh21rWGp6F2W4qUzcbOEK3sK/fY2n3AzBc1854lYZk62cG39b1xIg5gTK5ze1OV0zlWHqyq
+	r84JKGB/YR7l57pffMzA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oSgbx-00BL5c-UR; Mon, 29 Aug 2022 15:23:37 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1oSgjx-00BNHX-9u; Mon, 29 Aug 2022 15:31:53 +0000
+Received: from mail-am6eur05on2088.outbound.protection.outlook.com ([40.107.22.88] helo=EUR05-AM6-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oSgbv-00BL4R-9s
-	for linux-phy@lists.infradead.org; Mon, 29 Aug 2022 15:23:36 +0000
-Received: from gallifrey.ext.pengutronix.de ([2001:67c:670:201:5054:ff:fe8d:eefb] helo=[IPv6:::1])
-	by metis.ext.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
-	(Exim 4.92)
-	(envelope-from <l.stach@pengutronix.de>)
-	id 1oSgbl-0007eP-Sn; Mon, 29 Aug 2022 17:23:25 +0200
-Message-ID: <9b2eba50b41e19d3f71a08416b295ba2e7bcc1ee.camel@pengutronix.de>
-Subject: Re: [PATCH v4 4/6] arm64: dts: imx8mp: Add iMX8MP PCIe support
-From: Lucas Stach <l.stach@pengutronix.de>
-To: Richard Zhu <hongxing.zhu@nxp.com>, p.zabel@pengutronix.de, 
-	bhelgaas@google.com, lorenzo.pieralisi@arm.com, robh@kernel.org, 
-	shawnguo@kernel.org, vkoul@kernel.org, alexander.stein@ew.tq-group.com, 
-	marex@denx.de, richard.leitner@linux.dev
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
-	linux-pci@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
-	linux-kernel@vger.kernel.org, kernel@pengutronix.de, linux-imx@nxp.com
-Date: Mon, 29 Aug 2022 17:23:23 +0200
-In-Reply-To: <1661760917-9558-5-git-send-email-hongxing.zhu@nxp.com>
-References: <1661760917-9558-1-git-send-email-hongxing.zhu@nxp.com>
-	 <1661760917-9558-5-git-send-email-hongxing.zhu@nxp.com>
-User-Agent: Evolution 3.40.4 (3.40.4-1.fc34) 
+	id 1oSgju-00BNFq-5Y; Mon, 29 Aug 2022 15:31:51 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=dZhwsZ30ehhb5CNTV0FxaYamNRxBTWWRupoKgyxD8nOC7javg9AuvdVZjxbHbJ0VJfRnMAHInW5mwrhY+H5PBeCizOiGeBsSph35/bYgf0Qc6jOlRNzzpcpjmrBq8cPbqRSyQNfOOJYg7p9ijlTpImAMXod7t/nNthyJhjviJfWx2mvl+eTSpxiEr44WLoo85+MytbAHsfdAliPCwcAHS9s1scdflRdzIAYVwcaER9PfTHRWyA2xzdUcUSXfXPa9fHIZqF4ug7dIsdQScVAIbtczho8wxJLMKljX4IR09s5RLmZRXc9wyY8cGFxWRn/xdWS9PbiQ/WlFJJN9MM5k/A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=KHCcbLF7ljyGSz3LvogawONE8Ntjl1UJICGxSYAtZl0=;
+ b=jGB121ZlBrgVp/eJ1Par7QU2mwUU2eTxOjC93rCEmZ3VTS4Sf6GOdiuYTxwmTlBW9EjBh+odpX8M0XhkbfDafBhs9bVeB6LnAjk8NSCyrZzyj+GHmgNVex+tLS27sgF53vX/1z7GFo4NpA4SUbZdE86/VM4j1wyLw+fxQyTTnqtIB7ln0L/VVqIfvCzekvQ9ZiTOoDNupRdSkl0oU14XfGlBPfNcrzPWHQpDcFkCDzhBI6/taTS2xu6xObyX0gOsYTxXFKhx4efrmrS/0rUR/J41hb+Iy1PBHSx2LJew8rJtEZemdOFUituzX7nGT+shzLz1d/q5yiZGWJtan/tToQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=KHCcbLF7ljyGSz3LvogawONE8Ntjl1UJICGxSYAtZl0=;
+ b=ReUn6F0YRi/L7HDSRSY2HfzsULUDWWxjSmCoeRwCIFSvqRsujgJelO+KRzgFU5tQfYqRWjxxphHYskOXIGuAdTKXfDMwUgfJaOGH5If/TYRqAuGEUtHa6rSMR5NwgVQuk3a/VCW+HU3frxLiagrU/HsnecKPEB3qMDTqhoPbpLM=
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from PAXPR04MB9186.eurprd04.prod.outlook.com (2603:10a6:102:232::18)
+ by DB7PR04MB4313.eurprd04.prod.outlook.com (2603:10a6:5:28::15) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5566.21; Mon, 29 Aug
+ 2022 15:31:43 +0000
+Received: from PAXPR04MB9186.eurprd04.prod.outlook.com
+ ([fe80::85cb:614b:9f52:2dba]) by PAXPR04MB9186.eurprd04.prod.outlook.com
+ ([fe80::85cb:614b:9f52:2dba%5]) with mapi id 15.20.5566.021; Mon, 29 Aug 2022
+ 15:31:43 +0000
+From: Frank Li <Frank.Li@nxp.com>
+To: kishon@ti.com,
+	vkoul@kernel.org,
+	robh+dt@kernel.org,
+	krzysztof.kozlowski+dt@linaro.org,
+	shawnguo@kernel.org,
+	s.hauer@pengutronix.de,
+	kernel@pengutronix.de,
+	festevam@gmail.com,
+	linux-imx@nxp.com,
+	balbi@kernel.org,
+	gregkh@linuxfoundation.org,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	linux-usb@vger.kernel.org,
+	imx@lists.linux.dev
+Subject: [PATCH v1 1/2] doc: dt-binding: mxs-usb-phy: fix fsl,tx-cal-45-dn-ohms max and min value
+Date: Mon, 29 Aug 2022 10:31:23 -0500
+Message-Id: <20220829153124.2791210-1-Frank.Li@nxp.com>
+X-Mailer: git-send-email 2.35.1
+X-ClientProxiedBy: SJ0PR13CA0180.namprd13.prod.outlook.com
+ (2603:10b6:a03:2c7::35) To PAXPR04MB9186.eurprd04.prod.outlook.com
+ (2603:10a6:102:232::18)
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 2001:67c:670:201:5054:ff:fe8d:eefb
-X-SA-Exim-Mail-From: l.stach@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de); SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-phy@lists.infradead.org
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: e58c14e1-9e6b-47bb-1008-08da89d39378
+X-MS-TrafficTypeDiagnostic: DB7PR04MB4313:EE_
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: 	fMmaeU3mevw9HGvVoVMgK96US2V+koUBkfhdBmkJ/ljJkGvX1i242IEi0h8ac0lYK4ZmgBTNZXtg0srS/+4L+TV7PUzOkk+fBfWQhSrCLed98nj6G/SFZgvJyKq5t/YcChyRsgO3D/+PHKnSqxm4BdwXNtsN/4WaEyY+nBzb0vTBarC2Q6dL0ekXEb9KfrvruyyUXt2ncnJl4abF0FpwMGWnZWrwWb6e0HGXOO1Qxrhc2tYVLSDAzw1LPp/rBQaQsH+JVcBiDw1xNrH0ecU6sqh92bSWrWKMEUMOR5ljm6KJ4jvSTuKE+aTBDOyubJ68xAc1z4t/Ptw6OjUrmAnRaQnw/3GqnlFMgQYNHiAmS3pSPAzJa6PA9gP8nmF3JfLr1mMI5ipEn/IEBUwgW4HOAyl2xU1iLlH6OO6Dq/cBgSK9V4ZyVAOBXEjTGjt+Fss+heTGhC4Gtfmc5auioGFGBmjmhsIN46SRu1ZEo6d3HU6RtEmLnZUicHQwK5zlhq0Ot3TUmE7//N7Flrz7ZD3k2LKUaSn2GfKdWSi1BcBhVi9PfsJRSd0VOnI0hBHWDYLgbHiLgTvxURJIEUGDgimERv7jxFL3FVMa1N8Dl07SbbIGKNEPn0A8x6fhtHIKInT5kPexFhAlESAoGSTmHnRlxvd/P1yoe+Sd15T10Fp7b7FCSogBpinrf1a2LWjkn4xdGtyTfRfF9faFNEOh/AOVaKTzywXKMp/NA1JBGrVfcwdEeBoCwpNbOCnqi4t0qtIqVwrbX7JlkXk6xl+e9H3BkqJD1zytaCNNgaxkNLquyDo=
+X-Forefront-Antispam-Report: 	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB9186.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230016)(4636009)(346002)(136003)(376002)(39860400002)(396003)(366004)(26005)(86362001)(52116002)(6512007)(6666004)(478600001)(6506007)(41300700001)(6486002)(186003)(38350700002)(38100700002)(921005)(83380400001)(1076003)(2906002)(66476007)(66946007)(5660300002)(66556008)(8676002)(8936002)(316002)(36756003)(2616005)(7416002);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: 	=?us-ascii?Q?xEuAgmoLxOb1vw2nGKDCLkuNO+ehhVOmcCUA12tMzcimQps/JFvYCkEQII2O?=
+ =?us-ascii?Q?yOXvRpQeiTe+bqF3HzJMOBP+AxRENw1QHI/S+8GJ+2lLk8FxunXinF3X3Aar?=
+ =?us-ascii?Q?76jfIko6rUgWGSUglshbAP2oX9Vy8RXdAb46LfYvHtwZ6vm2MKRn5RF1xsQ2?=
+ =?us-ascii?Q?rsbQbgyqlUcOktbVo7Et+oSs4TxnrLIyweZfFhD0WMRdhw1PVmqrryhKnN8l?=
+ =?us-ascii?Q?5IBH8iaGyzXShoVWeWFaCp3EhfRqncZH8rrsENLVoRpMye7noiK1nkgeVp4P?=
+ =?us-ascii?Q?jQGrhtjwCUcSE16fex6YoUWIwT2f4F+kkisEKtiSw4k+0vYFZiGeUpVmkoem?=
+ =?us-ascii?Q?Zc01/VVmwkWBYHlIJSOyF/e7vbFAqFPjY3ROYk0FxxNGeWGID3DZEZcyroDZ?=
+ =?us-ascii?Q?q8WFoQLxzzEgJW+tbq/EqPfS0rlo+lgUxpma4Wz0sicZYEzGQfuzxnmEgOd1?=
+ =?us-ascii?Q?ko9oyTC7d1vPiqvhDJ29G/WcLaVHk9ExcFOURtwsOfd2NqH5OHOQiDH/HfD7?=
+ =?us-ascii?Q?km8tSiim4FZG7R4maZgQRgnTKY08bFPH5VdmuclXip+JUPy6VacmSZ2UKM/e?=
+ =?us-ascii?Q?0dTlPjk0q6oLuaGbYyZ6vkhtAs4Qw58SX6SjLbo/fNlsqoITqJavh0nrqh4D?=
+ =?us-ascii?Q?y5hGUyejC8v0F5YPgSh33rTEldjhR2CJ75J6rL91+CSlpo3VUTKawrglQ5Bs?=
+ =?us-ascii?Q?xr3fUQmneJSVaLG4zjnvcEC7FH0AsWMUhCfWaZS+0OErUquLr6uWrpNGu+RD?=
+ =?us-ascii?Q?QRpgqvJHUy9RofakUqtFmFFGQ+J286nw+yANkGvZ/3dCLLEC4jCM0aMO0P64?=
+ =?us-ascii?Q?zNinkKjiZQNCGSgUuUu9MMoSjth95N40rqxt20vZC4KK7mvF9uYj+Fg2uKHP?=
+ =?us-ascii?Q?fm2UeoPRdvN58KgyadlEJSvS4CyGj+6F4Pu+Uqg3YJuZFhF+zAHQjhFwrtP8?=
+ =?us-ascii?Q?euuzGn27+v9fU38AYhv4L4KctKbqqsqeiyM/RQJawTatDKOwdo5wwSFfqghr?=
+ =?us-ascii?Q?xNLE9EaNX1H3v0cZySf4S2OZkbS++jz2GBU9NOiNL+jJLmzt/tW+cqzRiKI4?=
+ =?us-ascii?Q?WNurJ17h4mfzvrkpx20RHiqXC+YUemF1z08NG4HBQ8inoRMn8rvWq1xflnDL?=
+ =?us-ascii?Q?LVaCndn0hsmG32qSv+aXQx/jyw2mHgRaxpi1aUQj5AvmlBxnwrCckiUdpi91?=
+ =?us-ascii?Q?sQJpAqWvbAz1ShTIO2D+KxM14xePyGX7c2oTcRSr+a5PeHXrGyMOnLPS4yMf?=
+ =?us-ascii?Q?61WOHHmxEAU+LX8l37sVUcGqut0OgY7Rw71q++w8fav0Clo8fu1X9LlqKarG?=
+ =?us-ascii?Q?uL1BzUfiWumDGLkBvfHvDLiKOztpfEa1ICPFGYQhfcttDJIl+SjN80/fAFOv?=
+ =?us-ascii?Q?+MIw+3TpZ2wDn4ge8cdU2n2u38J8prYrWfo5n8ek8vhBoSXhgrWvxQxXzMMh?=
+ =?us-ascii?Q?3cgLzi1tys3JxebrUEoSNrmCSte/m6Lx+cDwio9AhWaWrVQdfmwTTdtSe6CG?=
+ =?us-ascii?Q?BaVFnMe38LKj/rh6N97TImorZ0ukHTktlk1/s+XgCOZXD0zJ6MbrcpdGHZRo?=
+ =?us-ascii?Q?s/dQyjDiSb+inNmCy08w/TIvTsPO49VhK4L/cqa1?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: e58c14e1-9e6b-47bb-1008-08da89d39378
+X-MS-Exchange-CrossTenant-AuthSource: PAXPR04MB9186.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 29 Aug 2022 15:31:43.5788
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: hqrUEQhk3UzgTs5o1wVcQMmFDoVpmiwekwzFnyKNLqaGM7Kyru38hTkfdbBY30+CIq1PpDvAsZsAqaltJIFGyA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB7PR04MB4313
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220829_082335_451595_D0A6778A 
-X-CRM114-Status: GOOD (  17.61  )
+X-CRM114-CacheID: sfid-20220829_083150_233073_0B919D16 
+X-CRM114-Status: UNSURE (   9.40  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -69,106 +142,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Am Montag, dem 29.08.2022 um 16:15 +0800 schrieb Richard Zhu:
-> Add i.MX8MP PCIe support.
-> 
-> Signed-off-by: Richard Zhu <hongxing.zhu@nxp.com>
-> Tested-by: Marek Vasut <marex@denx.de>
-> Tested-by: Richard Leitner <richard.leitner@skidata.com>
-> Tested-by: Alexander Stein <alexander.stein@ew.tq-group.com>
-> ---
->  arch/arm64/boot/dts/freescale/imx8mp.dtsi | 46 ++++++++++++++++++++++-
->  1 file changed, 45 insertions(+), 1 deletion(-)
-> 
-> diff --git a/arch/arm64/boot/dts/freescale/imx8mp.dtsi b/arch/arm64/boot/dts/freescale/imx8mp.dtsi
-> index fe178b7d063c..d11f079fd1f3 100644
-> --- a/arch/arm64/boot/dts/freescale/imx8mp.dtsi
-> +++ b/arch/arm64/boot/dts/freescale/imx8mp.dtsi
-> @@ -5,6 +5,7 @@
->  
->  #include <dt-bindings/clock/imx8mp-clock.h>
->  #include <dt-bindings/power/imx8mp-power.h>
-> +#include <dt-bindings/reset/imx8mp-reset.h>
->  #include <dt-bindings/gpio/gpio.h>
->  #include <dt-bindings/input/input.h>
->  #include <dt-bindings/interrupt-controller/arm-gic.h>
-> @@ -410,7 +411,8 @@ iomuxc: pinctrl@30330000 {
->  			};
->  
->  			gpr: iomuxc-gpr@30340000 {
-> -				compatible = "fsl,imx8mp-iomuxc-gpr", "syscon";
-> +				compatible = "fsl,imx8mp-iomuxc-gpr",
-> +					     "fsl,imx6q-iomuxc-gpr", "syscon";
+According to spec:
+	0000 +19.95%
+	....
+	1111 -21.68%
 
-I don't like this part. The iomux GPR in the i.MX8M* is not really
-compatible with the i.MX6Q, so I think it's a pretty bad idea to claim
-it is. Why can't we have this syscon looked up by phandle, like we
-discussed in some early version of the i.MX8MM patchset? Sorry, for not
-catching this on the 8MM submission, I was pretty busy back then.
+45 * (1 + 19.95%) = 53.9775
+45 * (1 - 21.68%) = 35.244
 
-Regards,
-Lucas
+Chanege fsl,tx-cal-45-dn-ohms and fsl,tx-cal-45-dp-ohms range to [35-54]
+from [30-55]
 
->  				reg = <0x30340000 0x10000>;
->  			};
->  
-> @@ -1084,6 +1086,17 @@ media_blk_ctrl: blk-ctrl@32ec0000 {
->  				#power-domain-cells = <1>;
->  			};
->  
-> +			pcie_phy: pcie-phy@32f00000 {
-> +				compatible = "fsl,imx8mp-pcie-phy";
-> +				reg = <0x32f00000 0x10000>;
-> +				resets = <&src IMX8MP_RESET_PCIEPHY>,
-> +					 <&src IMX8MP_RESET_PCIEPHY_PERST>;
-> +				reset-names = "pciephy", "perst";
-> +				power-domains = <&hsio_blk_ctrl IMX8MP_HSIOBLK_PD_PCIE_PHY>;
-> +				#phy-cells = <0>;
-> +				status = "disabled";
-> +			};
-> +
->  			hsio_blk_ctrl: blk-ctrl@32f10000 {
->  				compatible = "fsl,imx8mp-hsio-blk-ctrl", "syscon";
->  				reg = <0x32f10000 0x24>;
-> @@ -1099,6 +1112,37 @@ hsio_blk_ctrl: blk-ctrl@32f10000 {
->  			};
->  		};
->  
-> +		pcie: pcie@33800000 {
-> +			compatible = "fsl,imx8mp-pcie";
-> +			reg = <0x33800000 0x400000>, <0x1ff00000 0x80000>;
-> +			reg-names = "dbi", "config";
-> +			#address-cells = <3>;
-> +			#size-cells = <2>;
-> +			device_type = "pci";
-> +			bus-range = <0x00 0xff>;
-> +			ranges =  <0x81000000 0 0x00000000 0x1ff80000 0 0x00010000>, /* downstream I/O 64KB */
-> +				  <0x82000000 0 0x18000000 0x18000000 0 0x07f00000>; /* non-prefetchable memory */
-> +			num-lanes = <1>;
-> +			num-viewport = <4>;
-> +			interrupts = <GIC_SPI 140 IRQ_TYPE_LEVEL_HIGH>;
-> +			interrupt-names = "msi";
-> +			#interrupt-cells = <1>;
-> +			interrupt-map-mask = <0 0 0 0x7>;
-> +			interrupt-map = <0 0 0 1 &gic GIC_SPI 126 IRQ_TYPE_LEVEL_HIGH>,
-> +					<0 0 0 2 &gic GIC_SPI 125 IRQ_TYPE_LEVEL_HIGH>,
-> +					<0 0 0 3 &gic GIC_SPI 124 IRQ_TYPE_LEVEL_HIGH>,
-> +					<0 0 0 4 &gic GIC_SPI 123 IRQ_TYPE_LEVEL_HIGH>;
-> +			fsl,max-link-speed = <3>;
-> +			linux,pci-domain = <0>;
-> +			power-domains = <&hsio_blk_ctrl IMX8MP_HSIOBLK_PD_PCIE>;
-> +			resets = <&src IMX8MP_RESET_PCIE_CTRL_APPS_EN>,
-> +				 <&src IMX8MP_RESET_PCIE_CTRL_APPS_TURNOFF>;
-> +			reset-names = "apps", "turnoff";
-> +			phys = <&pcie_phy>;
-> +			phy-names = "pcie-phy";
-> +			status = "disabled";
-> +		};
-> +
->  		gpu3d: gpu@38000000 {
->  			compatible = "vivante,gc";
->  			reg = <0x38000000 0x8000>;
+Signed-off-by: Frank Li <Frank.Li@nxp.com>
+---
+ Documentation/devicetree/bindings/phy/mxs-usb-phy.txt | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
+diff --git a/Documentation/devicetree/bindings/phy/mxs-usb-phy.txt b/Documentation/devicetree/bindings/phy/mxs-usb-phy.txt
+index c9f5c0caf8a9c..111d446b5f986 100644
+--- a/Documentation/devicetree/bindings/phy/mxs-usb-phy.txt
++++ b/Documentation/devicetree/bindings/phy/mxs-usb-phy.txt
+@@ -14,10 +14,10 @@ Required properties:
+ - fsl,anatop: phandle for anatop register, it is only for imx6 SoC series
+ 
+ Optional properties:
+-- fsl,tx-cal-45-dn-ohms: Integer [30-55]. Resistance (in ohms) of switchable
++- fsl,tx-cal-45-dn-ohms: Integer [35-54]. Resistance (in ohms) of switchable
+   high-speed trimming resistor connected in parallel with the 45 ohm resistor
+   that terminates the DN output signal. Default: 45
+-- fsl,tx-cal-45-dp-ohms: Integer [30-55]. Resistance (in ohms) of switchable
++- fsl,tx-cal-45-dp-ohms: Integer [35-54]. Resistance (in ohms) of switchable
+   high-speed trimming resistor connected in parallel with the 45 ohm resistor
+   that terminates the DP output signal. Default: 45
+ - fsl,tx-d-cal: Integer [79-119]. Current trimming value (as a percentage) of
+-- 
+2.35.1
 
 
 -- 
