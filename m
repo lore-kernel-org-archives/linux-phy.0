@@ -4,76 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B08A1ECAAD4
-	for <linux-phy@archiver.kernel.org>; Mon, 29 Aug 2022 04:53:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C5962ECAAD2
+	for <linux-phy@archiver.kernel.org>; Mon, 29 Aug 2022 06:30:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
-	CC:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:CC:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Jzh/AmFkl0aRi48DSIeQH2RU+YE+Xau4z/+zpDeVkRM=; b=jpiasg1cDhUBda
-	FvPW4dnkSjHLp2/6rgutyfzHfbfPl6cZ1rRiLyiV0L6qfgb/FJSTCAwHB3r02J/p0/PbK4O5C0JsJ
-	rvqBFttxdLaCthypMeuew8rK6nS64zvno7yIVZR8/RbcUGEUX+MWlKnCMu085ex+Vg72J7tLbY8Oa
-	/CV62TcYAPsgbKgLR3pFQEdVHYoLsCiEwMVZHXBdUTRGrQwTaYgk8A1yJDmHSM8C+xj8CX5tiUN+c
-	mgbjtEusS2nuU27XGAbayC6L3M8Ro/CiFX4ImvJmveOq/ROmuqdYU7N0rglmv6GxY9KLZg2mO9y7J
-	Ri+p8RKuAqHtzh02CazQ==;
+	List-Owner; bh=2wOmbrC6H+2uMSPyaeqEulcdHCljXH0EyTczfzj7QZI=; b=ZdHxNq+uVSTVKB
+	nQucrTcEfQ9kRb5XwU8/IcZUBZNBNWHOttYEfYcEa+RQRNHARLjdYiVyRL8756xOUeVLRuqSZJomz
+	bWLVyxCZCtrEbgrmwRCUimK9bXn+x22/DUh8Pa0sz/CTrowAM6MQzIHjkcbh+jk4evnayjSuhqNZK
+	1zmAds37yO/w48bLiM5PhELjegIrkLnqrnToTukUB1CYovYW+WRbpO4EVzDFaQI5PE/W2JFKxmfy5
+	Ze1ychBFOqLVz52ALPRWMvzUkdM4j5Qn5/ZJVzYvgwaAX3Y/ReGeE1Gz1OGoRnMO8ireFuuFMUFK5
+	VrV3/7AjOMgOYEJSXJkg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oSWmC-004dp1-UC; Mon, 29 Aug 2022 04:53:33 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1oSYIV-005I8N-5g; Mon, 29 Aug 2022 06:30:59 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oSWm8-004dkL-Ve
-	for linux-phy@lists.infradead.org; Mon, 29 Aug 2022 04:53:31 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
-	by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 27T4rAhd113455;
-	Sun, 28 Aug 2022 23:53:10 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
-	s=ti-com-17Q1; t=1661748790;
-	bh=5REThBssrdL70H+YLA9i7BFwEn2j7ABpqPJ71PW428Y=;
-	h=Date:CC:Subject:To:References:From:In-Reply-To;
-	b=PVfwtIQgduOv66BfZRu4hjNr8kbnG/fwVTlP0PKgJDiQq6oFuwum+TXxpW7u27Mnm
-	 d5ci40jH1zvmnLfHgQC/KlE/Ag1AY4opEVQlJnUa/D9i7ahEWIKveehAZZ4AOeSBAr
-	 OYRHFL0ZJkoQnaEixQX4UBIz+hhY4La5fVi8AwFw=
-Received: from DLEE106.ent.ti.com (dlee106.ent.ti.com [157.170.170.36])
-	by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 27T4rAVB006607
-	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Sun, 28 Aug 2022 23:53:10 -0500
-Received: from DLEE113.ent.ti.com (157.170.170.24) by DLEE106.ent.ti.com
- (157.170.170.36) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.6; Sun, 28
- Aug 2022 23:53:09 -0500
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE113.ent.ti.com
- (157.170.170.24) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.6 via
- Frontend Transport; Sun, 28 Aug 2022 23:53:09 -0500
-Received: from [10.24.69.241] (ileax41-snat.itg.ti.com [10.172.224.153])
-	by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id 27T4r5eV129004;
-	Sun, 28 Aug 2022 23:53:06 -0500
-Message-ID: <7dd27795-11d0-3147-ed86-959ff3e89df4@ti.com>
-Date: Mon, 29 Aug 2022 10:23:04 +0530
+	id 1oSYIR-005I5I-Od; Mon, 29 Aug 2022 06:30:57 +0000
+X-UUID: e45d5f7ec6d84d04a72d4eae33501f43-20220828
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
+	h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID; bh=JhK6lBBOqVRT4kKbaoyybEn8XZO56uWakDHEHA5gZEY=;
+	b=tlvp4EdRygJ8nib9eAkt+X7PZnGMMb5FHXot/ZrrnCVtTvWGLR/sdt7TOR3hb1I5zk+5BRV3KtK1g8QOTeIwciohXiQ/6dJk1R+E8foIYsBhRxw33d6mWlAG6yDvz25dCLLZXc1BM6aJgKAz84ApROT8Fu+p2Kbf/YDWiGp0HpM=;
+X-CID-P-RULE: Release_Ham
+X-CID-O-INFO: VERSION:1.1.10,REQID:8106a99c-da16-4ed3-b628-b1b7edc87344,OB:0,L
+	OB:0,IP:0,URL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_
+	Ham,ACTION:release,TS:0
+X-CID-META: VersionHash:84eae18,CLOUDID:8207dc55-e800-47dc-8adf-0c936acf4f1b,C
+	OID:IGNORED,Recheck:0,SF:nil,TC:nil,Content:0,EDM:-3,IP:nil,URL:11|1,File:
+	nil,Bulk:nil,QS:nil,BEC:nil,COL:0
+X-UUID: e45d5f7ec6d84d04a72d4eae33501f43-20220828
+Received: from mtkmbs11n1.mediatek.inc [(172.21.101.185)] by mailgw01.mediatek.com
+	(envelope-from <chunfeng.yun@mediatek.com>)
+	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
+	with ESMTP id 1742371385; Sun, 28 Aug 2022 23:30:50 -0700
+Received: from mtkmbs11n1.mediatek.inc (172.21.101.186) by
+ mtkmbs10n1.mediatek.inc (172.21.101.34) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.792.15; Mon, 29 Aug 2022 14:30:13 +0800
+Received: from mhfsdcap04 (10.17.3.154) by mtkmbs11n1.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.2.792.15 via Frontend
+ Transport; Mon, 29 Aug 2022 14:30:12 +0800
+Message-ID: <a95c06a3f40683cd6a645d7a064de6d4e53c9182.camel@mediatek.com>
+Subject: Re: [PATCH 1/7] dt-bindings: phy: mediatek,tphy: add support type
+ of SGMII
+From: Chunfeng Yun <chunfeng.yun@mediatek.com>
+To: "=?ISO-8859-1?Q?N=EDcolas?= F. R. A. Prado" <nfraprado@collabora.com>
+CC: Vinod Koul <vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>, "Kishon
+ Vijay Abraham I" <kishon@ti.com>, Krzysztof Kozlowski
+	<krzysztof.kozlowski+dt@linaro.org>, Matthias Brugger
+	<matthias.bgg@gmail.com>, <linux-arm-kernel@lists.infradead.org>,
+	<linux-mediatek@lists.infradead.org>, <linux-phy@lists.infradead.org>,
+	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>, Eddie Hung
+	<eddie.hung@mediatek.com>
+Date: Mon, 29 Aug 2022 14:30:12 +0800
+In-Reply-To: <20220823204432.ugfs7k3dn4ibbcky@notapiano>
+References: <20220819091344.2274-1-chunfeng.yun@mediatek.com>
+	 <20220823204432.ugfs7k3dn4ibbcky@notapiano>
+X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.11.0
-CC: <robh+dt@kernel.org>, <lee.jones@linaro.org>,
-        <krzysztof.kozlowski@linaro.org>, <krzysztof.kozlowski+dt@linaro.org>,
-        <kishon@ti.com>, <vkoul@kernel.org>, <dan.carpenter@oracle.com>,
-        <grygorii.strashko@ti.com>, <devicetree@vger.kernel.org>,
-        <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-        <s-vadapalli@ti.com>
-Subject: Re: [PATCH v3 2/2] phy: ti: gmii-sel: Add support for CPSW5G GMII SEL
- in J7200
-Content-Language: en-US
-To: Roger Quadros <rogerq@kernel.org>
-References: <20220822065631.27933-1-s-vadapalli@ti.com>
- <20220822065631.27933-3-s-vadapalli@ti.com>
- <655c39a3-cf5f-6dd7-3c1a-61ebeae915bd@kernel.org>
-From: Siddharth Vadapalli <s-vadapalli@ti.com>
-In-Reply-To: <655c39a3-cf5f-6dd7-3c1a-61ebeae915bd@kernel.org>
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220828_215329_247011_40EE677F 
-X-CRM114-Status: GOOD (  41.11  )
+X-CRM114-CacheID: sfid-20220828_233056_438829_7D5C64AC 
+X-CRM114-Status: GOOD (  13.89  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,205 +80,26 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hello Roger,
-
-On 25/08/22 13:11, Roger Quadros wrote:
-> Hi Siddharth,
-> 
-> On 22/08/2022 09:56, Siddharth Vadapalli wrote:
->> Each of the CPSW5G ports in J7200 support additional modes like QSGMII.
->> Add a new compatible for J7200 to support the additional modes.
->>
->> In TI's J7200, each of the CPSW5G ethernet interfaces can act as a
->> QSGMII or QSGMII-SUB port. The QSGMII interface is responsible for
->> performing auto-negotiation between the MAC and the PHY while the rest of
->> the interfaces are designated as QSGMII-SUB interfaces, indicating that
->> they will not be taking part in the auto-negotiation process.
->>
->> To indicate the interface which will serve as the main QSGMII interface,
->> add a property "ti,qsgmii-main-ports", whose value indicates the
->> port number of the interface which shall serve as the main QSGMII
->> interface. The rest of the interfaces are then assigned QSGMII-SUB mode by
->> default.
-> 
-> Can you please describe here why you are using "ti,qsgmii-main-ports" instead
-> of "ti,qsgmii-main-port" as there can be only one main port per PHY instance?
-
-Thank you for reviewing the patch. I am using "ports" instead of "port"
-because I plan to add support for CPSW9G on TI's J721e device in the
-future patches. CPSW9G (8 external ports) supports up to two QSGMII main
-ports. For CPSW9G, by specifying the two main ports in the device tree,
-it is possible to configure the CTRLMMR_ENETx_CTRL register for each of
-the 8 ports, with the two QSGMII main ports being configured as main
-ports in the CTRLMMR_ENETx_CTRL register and the rest of them being
-configured as sub ports. Since I will be using the same property
-"ti,qsgmii-main-ports" for CPSW9G as well, the property will be an array
-of 2 values for CPSW9G. Therefore, I am using "ports" instead of "port".
-Please let me know if this is fine.
-
-> 
->>
->> Signed-off-by: Siddharth Vadapalli <s-vadapalli@ti.com>
->> ---
->>  drivers/phy/ti/phy-gmii-sel.c | 40 ++++++++++++++++++++++++++++++++---
->>  1 file changed, 37 insertions(+), 3 deletions(-)
->>
->> diff --git a/drivers/phy/ti/phy-gmii-sel.c b/drivers/phy/ti/phy-gmii-sel.c
->> index d0ab69750c6b..270083606b14 100644
->> --- a/drivers/phy/ti/phy-gmii-sel.c
->> +++ b/drivers/phy/ti/phy-gmii-sel.c
->> @@ -22,6 +22,12 @@
->>  #define AM33XX_GMII_SEL_MODE_RMII	1
->>  #define AM33XX_GMII_SEL_MODE_RGMII	2
->>  
->> +/* J72xx SoC specific definitions for the CONTROL port */
->> +#define J72XX_GMII_SEL_MODE_QSGMII	4
->> +#define J72XX_GMII_SEL_MODE_QSGMII_SUB	6
->> +
->> +#define PHY_GMII_PORT(n)	BIT((n) - 1)
->> +
->>  enum {
->>  	PHY_GMII_SEL_PORT_MODE = 0,
->>  	PHY_GMII_SEL_RGMII_ID_MODE,
->> @@ -43,6 +49,7 @@ struct phy_gmii_sel_soc_data {
->>  	u32 features;
->>  	const struct reg_field (*regfields)[PHY_GMII_SEL_LAST];
->>  	bool use_of_data;
->> +	u64 extra_modes;
->>  };
->>  
->>  struct phy_gmii_sel_priv {
->> @@ -53,6 +60,7 @@ struct phy_gmii_sel_priv {
->>  	struct phy_gmii_sel_phy_priv *if_phys;
->>  	u32 num_ports;
->>  	u32 reg_offset;
->> +	u32 qsgmii_main_ports;
->>  };
->>  
->>  static int phy_gmii_sel_mode(struct phy *phy, enum phy_mode mode, int submode)
->> @@ -88,10 +96,17 @@ static int phy_gmii_sel_mode(struct phy *phy, enum phy_mode mode, int submode)
->>  		gmii_sel_mode = AM33XX_GMII_SEL_MODE_MII;
->>  		break;
->>  
->> +	case PHY_INTERFACE_MODE_QSGMII:
->> +		if (!(soc_data->extra_modes & BIT(PHY_INTERFACE_MODE_QSGMII)))
->> +			goto unsupported;
->> +		if (if_phy->priv->qsgmii_main_ports & BIT(if_phy->id - 1))
->> +			gmii_sel_mode = J72XX_GMII_SEL_MODE_QSGMII;
->> +		else
->> +			gmii_sel_mode = J72XX_GMII_SEL_MODE_QSGMII_SUB;
->> +		break;
->> +
->>  	default:
->> -		dev_warn(dev, "port%u: unsupported mode: \"%s\"\n",
->> -			 if_phy->id, phy_modes(submode));
->> -		return -EINVAL;
->> +		goto unsupported;
->>  	}
->>  
->>  	if_phy->phy_if_mode = submode;
->> @@ -123,6 +138,11 @@ static int phy_gmii_sel_mode(struct phy *phy, enum phy_mode mode, int submode)
->>  	}
->>  
->>  	return 0;
->> +
->> +unsupported:
->> +	dev_warn(dev, "port%u: unsupported mode: \"%s\"\n",
->> +		 if_phy->id, phy_modes(submode));
->> +	return -EINVAL;
->>  }
->>  
->>  static const
->> @@ -188,6 +208,13 @@ struct phy_gmii_sel_soc_data phy_gmii_sel_soc_am654 = {
->>  	.regfields = phy_gmii_sel_fields_am654,
->>  };
->>  
->> +static const
->> +struct phy_gmii_sel_soc_data phy_gmii_sel_cpsw5g_soc_j7200 = {
->> +	.use_of_data = true,
->> +	.regfields = phy_gmii_sel_fields_am654,
->> +	.extra_modes = BIT(PHY_INTERFACE_MODE_QSGMII),
->> +};
->> +
->>  static const struct of_device_id phy_gmii_sel_id_table[] = {
->>  	{
->>  		.compatible	= "ti,am3352-phy-gmii-sel",
->> @@ -209,6 +236,10 @@ static const struct of_device_id phy_gmii_sel_id_table[] = {
->>  		.compatible	= "ti,am654-phy-gmii-sel",
->>  		.data		= &phy_gmii_sel_soc_am654,
->>  	},
->> +	{
->> +		.compatible	= "ti,j7200-cpsw5g-phy-gmii-sel",
->> +		.data		= &phy_gmii_sel_cpsw5g_soc_j7200,
->> +	},
->>  	{}
->>  };
->>  MODULE_DEVICE_TABLE(of, phy_gmii_sel_id_table);
->> @@ -350,6 +381,7 @@ static int phy_gmii_sel_probe(struct platform_device *pdev)
->>  	struct device_node *node = dev->of_node;
->>  	const struct of_device_id *of_id;
->>  	struct phy_gmii_sel_priv *priv;
->> +	u32 main_ports = 1;
->>  	int ret;
->>  
->>  	of_id = of_match_node(phy_gmii_sel_id_table, pdev->dev.of_node);
->> @@ -363,6 +395,8 @@ static int phy_gmii_sel_probe(struct platform_device *pdev)
->>  	priv->dev = &pdev->dev;
->>  	priv->soc_data = of_id->data;
->>  	priv->num_ports = priv->soc_data->num_ports;
->> +	of_property_read_u32_array(node, "ti,qsgmii-main-ports", &main_ports, 1);
-> 
-> of_property_read_u32_array can return error and you are not doing any sanity checks.
-> This should fail if "ti,qsgmii-main-ports" is not present or out of bounds if port mode is QSGMII.
-
-In the scenario that the user doesn't want to use QSGMII mode, the
-property will not be mentioned in the device tree. In the phy-gmii-sel
-driver, the call to of_property_read_u32_array() will return an error
-since the optional ti,qsgmii-main-ports property doesn't exist in the
-device tree. However, the main_ports variable has already been
-initialized to 1 and in case of Non-QSGMII modes, the main_ports
-variable will not even be used. If the mode is QSGMII and the user
-forgets to mention the ti,qsgmii-main-ports property in the device tree,
-then the default value of 1 is used.
-
-Since the of_property_read_u32_array() function doesn't overwrite
-main_ports variable if the ti,qsgmii-main-ports property is not present
-in the device tree, the value of main_ports will continue to remain 1
-even in the case where of_property_read_u32_array() errors out.
-
-In the other scenario where the user mentions a value that is smaller or
-greater than the allowed value for "ti,qsgmii-main-ports" property, I
-have added bindings to ensure that make dtbs_check fails. This will
-enforce the bounds on the property.
-
-For the above reasons, I think that the return value of the call to
-of_property_read_u32_array() can be safely ignored, and the value of
-main_ports doesn't need to be validated within the driver as it is being
-enforced in the bindings.
-
-> 
-> How is this going to scale if you are going to have multiple main ports?
-> Let's say you increase it to 2 in the future. won't this break with -EOVERFLOW for older
-> DTs where you had only 1 u32.
-
-For multiple main ports (like CPSW9G for example), I had planned to add
-an IF-ELSE condition to check the compatible (I plan to add a new
-compatible for J721e which uses CPSW9G) and then call
-of_property_read_u32_array() with either 1 or 2 values to be read based
-on the compatible.
-
-Please let me know if you have a suggestion for a better way to
-implement this.
-
-Regards,
-Siddharth.
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gVHVlLCAyMDIyLTA4LTIzIGF0IDE2OjQ0IC0wNDAwLCBOw61jb2xhcyBGLiBSLiBBLiBQcmFk
+byB3cm90ZToKPiBPbiBGcmksIEF1ZyAxOSwgMjAyMiBhdCAwNToxMzozOFBNICswODAwLCBDaHVu
+ZmVuZyBZdW4gd3JvdGU6Cj4gPiBBZGQgc3VwcG9ydCBldGhlcm5ldCBTR01JSSwgZm9yZ290IHRv
+IHVwZGF0ZSB0eXBlIHN1cHBvcnRlZC4KPiA+IAo+ID4gRml4ZXM6IGMwMTYwOGIzYjQ2YiAoImR0
+LWJpbmRpbmdzOiBwaHk6IG1lZGlhdGVrOiB0cGh5OiBzdXBwb3J0Cj4gPiB0eXBlIHN3aXRjaCBi
+eSBwZXJpY2ZnIikKPiA+IFNpZ25lZC1vZmYtYnk6IENodW5mZW5nIFl1biA8Y2h1bmZlbmcueXVu
+QG1lZGlhdGVrLmNvbT4KPiAKPiBIaSBDaHVuZmVuZywKPiAKPiB3aGVuIHNlbmRpbmcgYSBwYXRj
+aCBzZXJpZXMgb2YgbW9yZSB0aGFuIDEgcGF0Y2gsIHBsZWFzZSBhZGQgYSBjb3Zlcgo+IGxldHRl
+cgo+IGRlc2NyaWJpbmcgYSBoaWdoZXIgbGV2ZWwgb3ZlcnZpZXcgb2YgdGhlIGNoYW5nZXMgZG9u
+ZSBpbiB0aGUKPiBwYXRjaGVzLiBFeGFtcGxlOgo+IFsxXQpGb3IgdGhlc2Ugc21hbGwgYW5kIGlu
+ZGVwZW5kZW50IGNoYW5nZXMsIGl0J3MgZGlmZmljdWx0IHRvIGdpdmUgYSBicmllZgpkZXNjcmlw
+dGlvbiBvbiBhIGhpZ2hlciBsZXZlbCBvdmVydmlldywgSSBwcmVmZXIgdG8gYWRkIGEgY292ZXIg
+bGV0dGVyCndoZW4gdGhlIHNlcmllcyBhcmUgYXNzb2NpYXRlZCBvciBkZXBlbmRlbnQuCgpUaGFu
+a3MgYSBsb3QKCj4gCj4gVGhhbmtzLAo+IE7DrWNvbGFzCj4gCj4gWzFdIAo+IGh0dHBzOi8vbG9y
+ZS5rZXJuZWwub3JnL2FsbC8yMDIyMDYyOTE1NTk1Ni4xMTM4OTU1LTEtbmZyYXByYWRvQGNvbGxh
+Ym9yYS5jb20vCgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmlu
+ZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8v
+bGludXgtcGh5Cg==
