@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 99E3DECAAD4
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DC772ECAAD2
 	for <linux-phy@archiver.kernel.org>; Mon, 29 Aug 2022 08:13:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,41 +12,41 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4pjUIUtiIaGn8Gg6SSUi/QTTeSJNjwml5MecLcdMj1M=; b=fWOms37YpiXGA5
-	4geG8wNewhnKEiUqwP7vLCavCPF+1UcQDSHUeFmxyeadAKOAbYa7VKZOEShQ/cmYCYePkZ7zju0C0
-	+bxfdYX1bZWq0RqAed7O8Nb5PnhKFHODGsNEMSYER0+ZMgtyvrLFzHZqxcm7Kznv7WwFlajTlQ/Ku
-	ku4/fvCeJIXT5BxjJ7x7rPH8nLJ7+oE910V0uvSvnr7iJIyx54t+dWul8UZnqe7w/NQVen0tWrtJ3
-	dflt+LEwam5DI88ED1NizWpn43maF++sm/ImAitdtITD7tVj+XsFjpkg4iw6oDs9bDml0Kd5qnnzb
-	sovLoCIRuKbywyUDyabA==;
+	List-Owner; bh=w4iAvAVgic+AKT1b5b31mCGiOPXBpNKhPUDorDu/1P4=; b=JNaJD5U66QWeGV
+	KZVnYDg9soaPZfoGr6hEzjGe6d3aaUwE89eB+MfgucBmMEJ/w4bCttthsA0DIK9IjmY1jq6mNhPjz
+	nqWtU5PYeF2nsg07oZTQHGw9HAAgoH4bA3bFTCLynRWu3MuVnBYSXyZpJrTVgW7Gt9wf9FO4ATJME
+	87qa3iBHLt9pqWA65OKzYY8sNCvFnDe+WuEIZwLJTqahZSPZFUyjmVKyqwXntY1coEa/RYCMy6FRa
+	xkVsAWV3WtLWEZNapIRWFobJWiwPjw/kH12K1NYbJws3MA1G0WaYljTB8FSR/KCVtvKEMJ41yoZCq
+	o6G+YpPUpxyJWhu9TowA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oSZth-00638l-Vb; Mon, 29 Aug 2022 08:13:29 +0000
+	id 1oSZti-006395-5s; Mon, 29 Aug 2022 08:13:30 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oSZtJ-0062pc-7K; Mon, 29 Aug 2022 08:13:06 +0000
-X-UUID: 4d37d295bff641e89b4899c890fe896c-20220829
+	id 1oSZtJ-0062q7-7H; Mon, 29 Aug 2022 08:13:06 +0000
+X-UUID: ccf6cb4f11a44c54b3de035f3a908b4d-20220829
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
-	h=Content-Type:Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From; bh=ByurP8LTCvZUKtx+bAbwVCfLZuY+QlHIJXELPrb1i/w=;
-	b=m/dzneuCjOlwophhS0OC5+Loj/f7ZOsy5NQQrrImbfJLEo2w9QQDNojUOCtekWzdXnUM68C1Tj+tT/gbRY4W81vDjpzCkN5ng2V5+toLxcBXzr+TXbQzZ6KPMKNiTT3TDlUzXRuGT8bY5RE7TdPtKcOLhhWTd3kBBKBMzqe0LYA=;
+	h=Content-Type:Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From; bh=oP+DoSEHJ8aCKJInjM1WgQQRX8nSJsLCLFjtbhxzYdk=;
+	b=QyJ5t0glEvNTbv4INSFLEsNO71TjxGzvv2e2XJisRgemTPpByFDbeWlVOLUx5xK2rb/kd0NeXcLQVr5I+o209+92M9OCpkCtssfqs+BdCUIqKGIGu4lL4mlwfxYpxit96giAbBMB0MD2WROA3S29npbSTo91QsADVA/S6SEQ5nA=;
 X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.1.10,REQID:5fb04775-de0f-4c49-bdad-35b98c1b275f,OB:0,L
+X-CID-O-INFO: VERSION:1.1.10,REQID:24abbcf6-ce19-4169-bbed-2f16100959cf,OB:0,L
 	OB:0,IP:0,URL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_
 	Ham,ACTION:release,TS:0
-X-CID-META: VersionHash:84eae18,CLOUDID:92946820-1c20-48a5-82a0-25f9c331906d,C
+X-CID-META: VersionHash:84eae18,CLOUDID:a66be9cf-20bd-4e5e-ace8-00692b7ab380,C
 	OID:IGNORED,Recheck:0,SF:nil,TC:nil,Content:0,EDM:-3,IP:nil,URL:11|1,File:
 	nil,Bulk:nil,QS:nil,BEC:nil,COL:0
-X-UUID: 4d37d295bff641e89b4899c890fe896c-20220829
+X-UUID: ccf6cb4f11a44c54b3de035f3a908b4d-20220829
 Received: from mtkmbs11n2.mediatek.inc [(172.21.101.187)] by mailgw01.mediatek.com
 	(envelope-from <chunfeng.yun@mediatek.com>)
 	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
-	with ESMTP id 842509644; Mon, 29 Aug 2022 01:10:05 -0700
+	with ESMTP id 1537210243; Mon, 29 Aug 2022 01:10:06 -0700
 Received: from mtkcas10.mediatek.inc (172.21.101.39) by
  mtkmbs10n1.mediatek.inc (172.21.101.34) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id
- 15.2.792.15; Mon, 29 Aug 2022 16:08:35 +0800
+ 15.2.792.15; Mon, 29 Aug 2022 16:08:37 +0800
 Received: from localhost.localdomain (10.17.3.154) by mtkcas10.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Mon, 29 Aug 2022 16:08:34 +0800
+ Transport; Mon, 29 Aug 2022 16:08:36 +0800
 From: Chunfeng Yun <chunfeng.yun@mediatek.com>
 To: Vinod Koul <vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>
 CC: Chunfeng Yun <chunfeng.yun@mediatek.com>, Kishon Vijay Abraham I
@@ -56,17 +56,17 @@ CC: Chunfeng Yun <chunfeng.yun@mediatek.com>, Kishon Vijay Abraham I
 	<linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
 	<linux-kernel@vger.kernel.org>, Krzysztof Kozlowski
 	<krzysztof.kozlowski@canonical.com>, Eddie Hung <eddie.hung@mediatek.com>
-Subject: [PATCH v2 5/7] phy: phy-mtk-tphy: disable gpio mode for all usb2 phys
-Date: Mon, 29 Aug 2022 16:08:28 +0800
-Message-ID: <20220829080830.5378-5-chunfeng.yun@mediatek.com>
+Subject: [PATCH v2 7/7] phy: phy-mtk-tphy: fix the phy type setting issue
+Date: Mon, 29 Aug 2022 16:08:30 +0800
+Message-ID: <20220829080830.5378-7-chunfeng.yun@mediatek.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20220829080830.5378-1-chunfeng.yun@mediatek.com>
 References: <20220829080830.5378-1-chunfeng.yun@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220829_011305_487134_00CBF134 
-X-CRM114-Status: UNSURE (   9.73  )
+X-CRM114-CacheID: sfid-20220829_011305_471383_CC29EBED 
+X-CRM114-Status: UNSURE (   9.44  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -84,30 +84,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Disable DP/DM's GPIO mode for all usb2 phy, not only for the first
-usb2 phy which usually supports dual-role mode.
+The PHY type is not set if the index is non zero, prepare type
+value according to the index, like as mask value.
 
 Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
 ---
 v2: no changes
 ---
- drivers/phy/mediatek/phy-mtk-tphy.c | 3 +--
- 1 file changed, 1 insertion(+), 2 deletions(-)
+ drivers/phy/mediatek/phy-mtk-tphy.c | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
 
 diff --git a/drivers/phy/mediatek/phy-mtk-tphy.c b/drivers/phy/mediatek/phy-mtk-tphy.c
-index 7f40b8b052bd..79920c066e59 100644
+index e0f227a0d3cc..cc10298bc70d 100644
 --- a/drivers/phy/mediatek/phy-mtk-tphy.c
 +++ b/drivers/phy/mediatek/phy-mtk-tphy.c
-@@ -532,8 +532,7 @@ static void u2_phy_instance_init(struct mtk_tphy *tphy,
- 	/* disable switch 100uA current to SSUSB */
- 	mtk_phy_clear_bits(com + U3P_USBPHYACR5, PA5_RG_U2_HS_100U_U3_EN);
+@@ -915,7 +915,7 @@ static int phy_type_syscon_get(struct mtk_phy_instance *instance,
+ static int phy_type_set(struct mtk_phy_instance *instance)
+ {
+ 	int type;
+-	u32 mask;
++	u32 offset;
  
--	if (!index)
--		mtk_phy_clear_bits(com + U3P_U2PHYACR4, P2C_U2_GPIO_CTR_MSK);
-+	mtk_phy_clear_bits(com + U3P_U2PHYACR4, P2C_U2_GPIO_CTR_MSK);
+ 	if (!instance->type_sw)
+ 		return 0;
+@@ -938,8 +938,9 @@ static int phy_type_set(struct mtk_phy_instance *instance)
+ 		return 0;
+ 	}
  
- 	if (tphy->pdata->avoid_rx_sen_degradation) {
- 		if (!index) {
+-	mask = RG_PHY_SW_TYPE << (instance->type_sw_index * BITS_PER_BYTE);
+-	regmap_update_bits(instance->type_sw, instance->type_sw_reg, mask, type);
++	offset = instance->type_sw_index * BITS_PER_BYTE;
++	regmap_update_bits(instance->type_sw, instance->type_sw_reg,
++			   RG_PHY_SW_TYPE << offset, type << offset);
+ 
+ 	return 0;
+ }
 -- 
 2.18.0
 
