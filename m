@@ -4,89 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0B133ECAAA1
-	for <linux-phy@archiver.kernel.org>; Tue, 30 Aug 2022 09:30:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8DF37C0502A
+	for <linux-phy@archiver.kernel.org>; Tue, 30 Aug 2022 09:32:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=B6HXb702MxUaIULGuPO51wpJ2UGcjrNbe0w+tZ+INJQ=; b=LvgXfmfIlBKf4M
-	z+V3xx0Jfl1aW0wYINE9CVSgSbukyAUQUjFdXxaC186yV5Ot5aLhhV9wn5FqBnNVzDQbKL+HqSBMQ
-	5vhAdTmhOL+09OKAz+iXgnNauduuuv8A3304yaJPsJ4YUBIAm0eoBmufm+DN9apgCduZVAbn5Pd+e
-	7msF7BM/r+qgaC9Vqjb68YfgeLzL9Rpz8qQZ2e9UD1Cyc1o/38uxB0IdR05fSyV2IR+JemS6PO1k6
-	ph0MbZwiieF3Wkq4xOWmmyFLLrVdBppAp8Uy2EYIMP9m9qdAVLb/ft8kRAHxLlGUMjLPPB+XIarOM
-	galwpgluC011RfdQA01w==;
+	List-Owner; bh=R7nIQG/GVvbMQ/RjooJFkBV9+L4qWg4ZvJe9IUvlV4c=; b=bdUGa7w+ahJsZd
+	tpQLJHpJZlkASlwIKiIBfmTC7LL3fVW9PKnQdIxqEAWYU0N8dLXEa2lA6+y0wbaoijjKO6TLuBRdz
+	z+WqYcMVi8dHJhVIyO95nxNqaWurKQN2GzLhmVhWQjlCRsEguCUwHNj0n+Dn4pyRxWTOEnSUTIDdA
+	F2XwetZx7X85vm+zCOMHfOZagWukzDhtii4e6/mO9no51s+eCYqo2RS/csYEE3zKnVBX/wi2UF8E+
+	7qfcCwU8x+8PU71m1HXfyg+GRWcapIE/VP7vWy10S6cEVQ4hj2cY0LfsWqsGWi54QxyGbf/OHy5sx
+	YXBRIN6r4CqfacdQK+8Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oSxZY-00Few9-76; Tue, 30 Aug 2022 09:30:16 +0000
-Received: from mail-lf1-x131.google.com ([2a00:1450:4864:20::131])
+	id 1oSxbV-00Fg1Q-1V; Tue, 30 Aug 2022 09:32:17 +0000
+Received: from mail-lf1-x12c.google.com ([2a00:1450:4864:20::12c])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oSxZ3-00FeZl-IA
-	for linux-phy@lists.infradead.org; Tue, 30 Aug 2022 09:29:50 +0000
-Received: by mail-lf1-x131.google.com with SMTP id bq23so14699202lfb.7
-        for <linux-phy@lists.infradead.org>; Tue, 30 Aug 2022 02:29:44 -0700 (PDT)
+	id 1oSxbO-00FfwJ-6f
+	for linux-phy@lists.infradead.org; Tue, 30 Aug 2022 09:32:14 +0000
+Received: by mail-lf1-x12c.google.com with SMTP id p7so3565715lfu.3
+        for <linux-phy@lists.infradead.org>; Tue, 30 Aug 2022 02:32:07 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc;
-        bh=RGUqkEAMYcKdlxASVSFfqtFS0Ow4eDh7fj2KOS3N7cc=;
-        b=duvxjG2yG05W77RsYVgchCQxXXuysvwY/I0a7Tn/GslnycXVvQ6AQfWnIgUgZZ+K4g
-         SKJ+DurBhGQtpKl7C47uXbeGI0houeGHpZTzGBNEMxd+C4S/rXJF6j/d+Dt+X+VeOFsV
-         b1JWw6wOTkiq8uik9ki4DPVID9S5KN/yQg+ZFDFZtAIEQ9r0/F24+HbSlL7wf4oSZkOS
-         u1xsyVXESvALtYKjXf9Knooh+Jk5++CWWFb5AisvpI489RNNA6CiS8tNvh+Y49FA3Mgm
-         9PnCPfKhswxcvTLwYAO6Qr7CxJ6Rdcng0kFWBRfcJmVSSwA1pI/BXB1JYmw3Zl/n020f
-         jXqQ==
+        bh=DI8R5uBfUCPdaITMxiTJ7CTu8pb9+geNomuQXiCpnr0=;
+        b=EI+kX0MIh7dM75jIWk5kzV+psrJX2vqVdAV3nYBd368tgD9H4/7BQNqg/NqSfxwQWw
+         NO52QwNk1KHMnuXWgM0aY13g4hlfug1T2ig/krnVYsA0T66MxhlBMCvkhCqUvOw0ywqG
+         bDzuxncaHbd25Zpu1lkX5ZY4cnBXfS++ss7GhLx+Op2yAf+vBD2s+ol8DTusmln4r+mu
+         NrxlZ0tW6emLdtJPTFReevrJghIz6LpvusVer4pP5dZAaQMXsRtDPa7KmmUjle9Dp0l+
+         MpNw5gCu8Qp2Ygqg1i+tGXvAizICUojIuJyW0lNihDW/8Yv7cNv0W5UqnwtWTZDkuaSl
+         BCPw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc;
-        bh=RGUqkEAMYcKdlxASVSFfqtFS0Ow4eDh7fj2KOS3N7cc=;
-        b=NBC3274BQ7iO/nePIegSNQO+U/J8R1LQ8RU1aUH241G6T3BeD4atYo/QK+t+5LVdv6
-         QHZ7GoSkwVU0+Mhu10lYLBtgX+rlat+QI0hQhQHAXbOk2I6kp38BFU2qQRU+kzDWepNN
-         SMITo9WdJlEVLW3l2o7JHgHhH5Zpdt//AnwOIzqI7eWwVGXL/zuPviiqrkhr57ITgMdC
-         92ZHB2P/Rx6p70WcuxleMGcSaQgmR3o8rjaG+sSUQZL149d3HsOanpZx/3T+K6f9lN2Q
-         jdKS6WRn20gfzq9HkAYobqvRV3IJz77WUTLkWbIy1S1ogsBM3sknUKCGgRFh/bZjuMa1
-         KXcw==
-X-Gm-Message-State: ACgBeo2QUydJl0HRhW/M/+SjEKnivvkXKo1bK1lNnFxxln6uNq7IKzeL
-	PpMTiWnPILAv1sm6Vk340myENA==
-X-Google-Smtp-Source: AA6agR4IWI7kP1cAa/pXkx98zqiF1r1A2zAWpv5R30sR9R2HKmZsVBdBLuRtOqzeUM+4p3ajRxdqLA==
-X-Received: by 2002:a05:6512:1527:b0:48b:99:f3ff with SMTP id bq39-20020a056512152700b0048b0099f3ffmr7439961lfb.81.1661851783238;
-        Tue, 30 Aug 2022 02:29:43 -0700 (PDT)
+        bh=DI8R5uBfUCPdaITMxiTJ7CTu8pb9+geNomuQXiCpnr0=;
+        b=NU1HNCAO91sitYzlUbuJZYAP4lwYgBy8JzeQFEz8T0PV6mCPtvAoi7n847Yy00qhD8
+         1LuJV2W2QoDp0tc80JCPaVOYDKW2ee50u+Nrf8UwSQSscAYP7ck+zTsai1KL+DBoqIAV
+         jW9VExDLo1MvVfpl25Ynj4GDpwo/0U0vZEpnEOp3lHS4ZJes/jikbn0DyQCJCCYfzAZ7
+         Qi4hb5x2ACq2DHTaH89LtF3wGKDzV0KrLYfRUhfzRJKQr12j1HWQdGP3o/gBCRdP0Yj4
+         LJ6ta/iUmk7LmMMRc2jDQFNAYAohRmTJy4fXoucNpqJW2JvYMPbjyz0j4W7SDfc6DKgN
+         hIdg==
+X-Gm-Message-State: ACgBeo0zMmXDlv0xyRk68tsIni9gultxZtnJihSsT7dINBcgCaqaE3R5
+	1HbQ5xYuBBdSsKrSK6yz7gJpUg==
+X-Google-Smtp-Source: AA6agR5pvdm6ppGDodlxvczV0eI5jT2RR3G29/7S9uRukhMpYXw8vrXirlsmxe2a8LQqnM76clooew==
+X-Received: by 2002:a05:6512:261b:b0:492:cd8a:e1c with SMTP id bt27-20020a056512261b00b00492cd8a0e1cmr7173154lfb.528.1661851925857;
+        Tue, 30 Aug 2022 02:32:05 -0700 (PDT)
 Received: from [192.168.1.211] ([37.153.55.125])
-        by smtp.gmail.com with ESMTPSA id v11-20020a2ea60b000000b0025e00e0116esm1697453ljp.128.2022.08.30.02.29.42
+        by smtp.gmail.com with ESMTPSA id a28-20020a2eb55c000000b0025e2c5a12b6sm828961ljn.129.2022.08.30.02.32.05
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 30 Aug 2022 02:29:42 -0700 (PDT)
-Message-ID: <9e428ef0-509c-eb09-0d4c-13cdd74fad8f@linaro.org>
-Date: Tue, 30 Aug 2022 12:29:41 +0300
+        Tue, 30 Aug 2022 02:32:05 -0700 (PDT)
+Message-ID: <aeec2729-e610-f266-f336-847675cf85ec@linaro.org>
+Date: Tue, 30 Aug 2022 12:32:04 +0300
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.1.2
-Subject: Re: [PATCH v2 2/6] phy: qcom-qmp-pcie: split register tables into
- primary and secondary part
+Subject: Re: [PATCH v3 00/30] phy: qcom,qmp: fix dt-bindings and deprecate
+ lane suffix
 Content-Language: en-GB
-To: Johan Hovold <johan@kernel.org>
-Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <bjorn@kryo.se>,
- Konrad Dybcio <konrad.dybcio@somainline.org>,
- Rob Herring <robh+dt@kernel.org>, Jingoo Han <jingoohan1@gmail.com>,
- Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- =?UTF-8?Q?Krzysztof_Wilczy=c5=84ski?= <kw@linux.com>,
- Bjorn Helgaas <bhelgaas@google.com>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@ti.com>,
- Philipp Zabel <p.zabel@pengutronix.de>, linux-arm-msm@vger.kernel.org,
- linux-pci@vger.kernel.org, linux-phy@lists.infradead.org
-References: <20220825105044.636209-1-dmitry.baryshkov@linaro.org>
- <20220825105044.636209-3-dmitry.baryshkov@linaro.org>
- <Yw2+aVbqBfMSUcWq@hovoldconsulting.com>
+To: Johan Hovold <johan@kernel.org>, Vinod Koul <vkoul@kernel.org>
+Cc: Johan Hovold <johan+linaro@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Andy Gross <agross@kernel.org>, Bjorn Andersson
+ <bjorn.andersson@linaro.org>, Konrad Dybcio <konrad.dybcio@somainline.org>,
+ Kishon Vijay Abraham I <kishon@ti.com>, linux-arm-msm@vger.kernel.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org
+References: <20220714124333.27643-1-johan+linaro@kernel.org>
+ <Yw2a44l9a6zz5qTJ@matsya> <Yw21t1SUGjCcUuuw@hovoldconsulting.com>
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-In-Reply-To: <Yw2+aVbqBfMSUcWq@hovoldconsulting.com>
+In-Reply-To: <Yw21t1SUGjCcUuuw@hovoldconsulting.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220830_022948_621579_857F0EBE 
-X-CRM114-Status: GOOD (  26.34  )
+X-CRM114-CacheID: sfid-20220830_023212_464506_9C6A27D4 
+X-CRM114-Status: GOOD (  16.02  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,114 +99,29 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 30/08/2022 10:38, Johan Hovold wrote:
-> On Thu, Aug 25, 2022 at 01:50:40PM +0300, Dmitry Baryshkov wrote:
->> SM8250 configuration tables are split into two parts: the common one and
->> the PHY-specific tables. Make this split more formal. Rather than having
->> a blind renamed copy of all QMP table fields, add separate struct
->> qmp_phy_cfg_tables and add two instances of this structure to the struct
->> qmp_phy_cfg. Later on this will be used to support different PHY modes
->> (RC vs EP).
+On 30/08/2022 10:01, Johan Hovold wrote:
+> On Tue, Aug 30, 2022 at 10:36:43AM +0530, Vinod Koul wrote:
+>> On 14-07-22, 14:43, Johan Hovold wrote:
+
+[skipped]
+
+>>> The final patches add support for the updated binding to the (recently
+>>> split up) PHY drivers. Included is also a related combo PHY cleanup.
 >>
->> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
->> ---
->>   drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 141 +++++++++++++----------
->>   1 file changed, 83 insertions(+), 58 deletions(-)
->>
->> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
->> index c84846020272..60cbd2eae346 100644
->> --- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
->> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
->> @@ -1346,34 +1346,33 @@ static const struct qmp_phy_init_tbl sm8450_qmp_gen4x2_pcie_pcs_misc_tbl[] = {
->>   
->>   struct qmp_phy;
->>   
->> -/* struct qmp_phy_cfg - per-PHY initialization config */
->> -struct qmp_phy_cfg {
->> -	/* phy-type - PCIE/UFS/USB */
->> -	unsigned int type;
->> -	/* number of lanes provided by phy */
->> -	int nlanes;
->> -
->> -	/* Init sequence for PHY blocks - serdes, tx, rx, pcs */
->> +struct qmp_phy_cfg_tables {
->>   	const struct qmp_phy_init_tbl *serdes_tbl;
->>   	int serdes_tbl_num;
->> -	const struct qmp_phy_init_tbl *serdes_tbl_sec;
->> -	int serdes_tbl_num_sec;
->>   	const struct qmp_phy_init_tbl *tx_tbl;
->>   	int tx_tbl_num;
->> -	const struct qmp_phy_init_tbl *tx_tbl_sec;
->> -	int tx_tbl_num_sec;
->>   	const struct qmp_phy_init_tbl *rx_tbl;
->>   	int rx_tbl_num;
->> -	const struct qmp_phy_init_tbl *rx_tbl_sec;
->> -	int rx_tbl_num_sec;
->>   	const struct qmp_phy_init_tbl *pcs_tbl;
->>   	int pcs_tbl_num;
->> -	const struct qmp_phy_init_tbl *pcs_tbl_sec;
->> -	int pcs_tbl_num_sec;
->>   	const struct qmp_phy_init_tbl *pcs_misc_tbl;
->>   	int pcs_misc_tbl_num;
->> -	const struct qmp_phy_init_tbl *pcs_misc_tbl_sec;
->> -	int pcs_misc_tbl_num_sec;
->> +};
->> +
->> +/* struct qmp_phy_cfg - per-PHY initialization config */
->> +struct qmp_phy_cfg {
->> +	/* phy-type - PCIE/UFS/USB */
->> +	unsigned int type;
->> +	/* number of lanes provided by phy */
->> +	int nlanes;
->> +
->> +	/* Init sequence for PHY blocks - serdes, tx, rx, pcs */
->> +	struct qmp_phy_cfg_tables primary;
->> +	/*
->> +	 * Init sequence for PHY blocks, providing additional register
->> +	 * programming. Unless required it can be left omitted.
->> +	 */
->> +	struct qmp_phy_cfg_tables secondary;
+>> This fails at patch 2 for me on v6.0-rc1, please rebase and resend
 > 
-> I haven't really had time to look at this series yet, but it seems the
-> way these structures are named and organised could be improved.
-> 
-> First, "primary" and "secondary" says nothing about what these
-> structures are and the names are also unnecessarily long.
+> Are you sure you haven't applied anything to your local tree that causes
+> this?
 
-I started with 'pri'/'sec', but was asked to improve them. Any sensible 
-suggestion is welcomed here. 'main'/'aux'?
+When doing the QMP split, we ended up in a similar situation if I 
+remember correctly. Most probably the easiest way is to provide a branch 
+for Vinod to pull in addition to the patches being sent to ML.
 
-Regarding 'saying nothing'. It's true, initially it just followed the 
-existing split for the sm8250. Then I added the `secondary_ep` table.
-
+> I just tried fetching the v3 series from lore and it applies just fine
+> on top of 6.0-rc1.
 > 
-> Second, once you add a containing structure, the "_tbl" suffixes could
-> be removed (e.g. in "pcs_misc_tbl").
-> 
-> Doing something like below should make the code cleaner:
-> 
-> 	struct qmp_phy_cfg_tables {
-> 		const struct qmp_phy_init_tbl *serdes;
-> 		const struct qmp_phy_init_tbl *tx;
-> 		...
-> 	};
-> 
-> 	struct qmp_phy_cfg {
-> 		struct qmp_phy_cfg_tables tbls1;
-> 		struct qmp_phy_cfg_tables tbls2;
-> 		...
-> 	};
-> 	
-> as the tables can be referred to as
-> 
-> 	cfg.tbls2.serdes
-> 
-> instead of
-> 	
-> 	cfg.secondary.serdes_tbl;
-
-Nice suggestion, I'll implement it for v3 if Vinod doesn't object.
-
+> Note that if you've added a new compatible string locally, the second
+> patch which sorts the compatible strings is likely to fail to apply.
 > 
 > Johan
 
