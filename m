@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7D132C0502E
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C2F0EC6FA82
 	for <linux-phy@archiver.kernel.org>; Tue, 30 Aug 2022 11:30:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,39 +12,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VXZFdXo1uaFhhOqvW4pqfXiNZk88LsQ3TIwEDPtbFeY=; b=LMbMjfBsbV+sGV
-	hUa3PNVxPy4hd9iUAu7NAvag8UoGtgc9H8C/yVm0FeUGelApbz3UX1vq1VpaYLaidt+yJ+eKHuyU9
-	/p8BeScQgcp86nmG59Kwa+xclasVQZBx2eyeEQU6BXm3Cmhpq0tb1An6QvI2OGmNIxPtYeF+5Otvp
-	j1ACOe0MU1jseixR/9f5FM1MC3SlCluhP43XsMSYR1R/niOBJknj6CRxzhHkjQD5gEQmuKQ++eMEP
-	UJUOEXHiVkCx1YXNQUnMEbjczYGNpF526fOE5d4tB+Rg/r81a0XLv77pOSeEw0LvxHA1eyZJkxd9J
-	RBVfUCUoit67WOdR7qkA==;
+	List-Owner; bh=TwecJiQIwzFDEB6e7uyvu9KjEHWLRuI7zJLgB9hc9hI=; b=RHVt3/0nRPq8cP
+	yCYoQtuTLCFfXWkEt/ur+zt80lAwseaFXMgZLHfGCW1ccOoOX20AqnG9pYDhUi9T2DoDY6/2paTY3
+	AJHru/ICJiv3YwuVBAlqHITvzXdPFw4RBp/4iUnnmYBkrldtn6xg2Fdl3RNkHnWxE+kFbaQvDeRij
+	oXFWcgqvgPB3QYshBGYVttpDfYh58VQUuQfoczQejVpZPtqEO2fMkYF9tkNnWIYREMD//2jWzf6nH
+	MG1EElmjRMXkDi4ROz2fKIbkdIM7wGLYsxCrOjKfCfieUH7STapEqEHNcIfjscqZRWTKzKM+YT0mP
+	XoAxDzXIqYgUC5spH2QQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oSzRo-00GZkp-NJ; Tue, 30 Aug 2022 11:30:24 +0000
-Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
+	id 1oSzRp-00GZlF-5L; Tue, 30 Aug 2022 11:30:25 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oSzRW-00GZXu-KG
+	id 1oSzRX-00GZXt-2N
 	for linux-phy@lists.infradead.org; Tue, 30 Aug 2022 11:30:10 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id 62D08B81A6D;
+	by dfw.source.kernel.org (Postfix) with ESMTPS id DEA036154F;
 	Tue, 30 Aug 2022 11:30:04 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 42E6EC43470;
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id D7AB4C50001;
 	Tue, 30 Aug 2022 11:30:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1661859001;
-	bh=yWn0mchADNb4i5UW1sCKqU+i2ZXlFqRzep42z3Q8y7g=;
+	bh=n7oevCsJiM3+P/j5DFo0XgY4G7Bn2vNQPrFCIQg+vT0=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=RuiSR07ow1+wX+R9+72Uf6S+Sp3GOR5GCPBx5PRbUKcScjo8Nu2iG6K1v/nARvoEQ
-	 JN5lam3e3XRDaSYTfmFNlRGYQZY7plhvx/1HqewWE3Azi9412RlSYBKnqxC8jdvyLO
-	 f1zCLZZcRidAdE9ELwLPMm0HTDLewrHscsCx4xu9M9WzjRi6HVitnmy/CNobpvMSKJ
-	 E0DrIWJr8SDGDAvem6Ou/6OuZG6MiTRneNWu9N5fJY/b+/cR/dsJ8skhjvATG/Rkbj
-	 BA3iM6jgvLfPFwoz6haD2wk5vpZRDklwBFvIYhHoKIMa8N0w8f63J5tcdjVyyrqIgl
-	 YIB8zss16h8eg==
+	b=bNXRLM5oMPNWPrkS7vCalNu7VmiGGZvPxLlr8H2WLgBkYPWQjtvNHyRWfCJANyug5
+	 kc78JtCEOCQaU0En/ETuTk2VMWHvXfhXGxPzGpQUiG95fEPQsaGrpQW0Z0lr58mdHq
+	 QAJ6nY4x9uJUBZtEgDOGKMgYtP441wG3fCEGwm/3w9nJ38/hAzRLJFtZLzklOUnuXI
+	 8s8gwcoFCYvY/hemBKwkml5l1sAQ3qLT7vT7UdrQjInRSXG4b5CcO1UYyrGBjKF54x
+	 YfAtzljIAaL43Nq9cpgbFjQzky1wlzd+UVx1fUydy0J3f/W7GuxA1hPYsiMrkdFQmi
+	 LsvVB8kE8Jepw==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1oSzRO-00010v-Sk; Tue, 30 Aug 2022 13:29:58 +0200
+	id 1oSzRP-00011G-GU; Tue, 30 Aug 2022 13:29:59 +0200
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>,
 	Rob Herring <robh+dt@kernel.org>,
@@ -60,17 +60,16 @@ Cc: Andy Gross <agross@kernel.org>,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>,
 	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Subject: [PATCH v4 23/30] dt-bindings: phy: qcom,qmp-usb3-dp: fix bogus clock-cells property
-Date: Tue, 30 Aug 2022 13:29:16 +0200
-Message-Id: <20220830112923.3725-24-johan+linaro@kernel.org>
+Subject: [PATCH v4 30/30] phy: qcom-qmp-usb: drop pipe clock lane suffix
+Date: Tue, 30 Aug 2022 13:29:23 +0200
+Message-Id: <20220830112923.3725-31-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.35.1
 In-Reply-To: <20220830112923.3725-1-johan+linaro@kernel.org>
 References: <20220830112923.3725-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220830_043006_836383_DCB3244F 
-X-CRM114-Status: UNSURE (   9.29  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220830_043007_208407_1F8B08AE 
+X-CRM114-Status: GOOD (  12.80  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,46 +86,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The QMP PHY wrapper node is not a clock provider so drop the bogus
-'#clock-cells' property that was added when converting to DT schema.
+The pipe clock is defined in the "lane" node so there's no need to keep
+adding a redundant lane-number suffix to the clock name.
 
-Fixes: 59351049ad15 ("dt-bindings: phy: qcom,qmp-usb3-dp: Add dt bindings for USB3 DP PHY")
+Update driver to support the new binding where the pipe clock name has
+been deprecated by instead requesting the clock by index.
+
 Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- .../devicetree/bindings/phy/qcom,qmp-usb3-dp-phy.yaml        | 5 -----
- 1 file changed, 5 deletions(-)
+ drivers/phy/qualcomm/phy-qcom-qmp-usb.c | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/phy/qcom,qmp-usb3-dp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,qmp-usb3-dp-phy.yaml
-index 31f3ad2ee683..da7d8dfc631c 100644
---- a/Documentation/devicetree/bindings/phy/qcom,qmp-usb3-dp-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/qcom,qmp-usb3-dp-phy.yaml
-@@ -31,9 +31,6 @@ properties:
-       - const: dp_com
-       - const: dp
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
+index ce0e2acb7094..59ed6c89979d 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
+@@ -2630,7 +2630,6 @@ int qcom_qmp_phy_usb_create(struct device *dev, struct device_node *np, int id,
+ 	struct qcom_qmp *qmp = dev_get_drvdata(dev);
+ 	struct phy *generic_phy;
+ 	struct qmp_phy *qphy;
+-	char prop_name[MAX_PROP_NAME];
+ 	int ret;
  
--  "#clock-cells":
--    enum: [ 1, 2 ]
--
-   "#address-cells":
-     enum: [ 1, 2 ]
+ 	qphy = devm_kzalloc(dev, sizeof(*qphy), GFP_KERNEL);
+@@ -2689,8 +2688,7 @@ int qcom_qmp_phy_usb_create(struct device *dev, struct device_node *np, int id,
+ 	if (!qphy->pcs_misc)
+ 		dev_vdbg(dev, "PHY pcs_misc-reg not used\n");
  
-@@ -150,7 +147,6 @@ patternProperties:
- required:
-   - compatible
-   - reg
--  - "#clock-cells"
-   - "#address-cells"
-   - "#size-cells"
-   - ranges
-@@ -172,7 +168,6 @@ examples:
-               <0x088e8000 0x10>,
-               <0x088ea000 0x40>;
-         reg-names = "usb", "dp_com", "dp";
--        #clock-cells = <1>;
-         #address-cells = <1>;
-         #size-cells = <1>;
-         ranges = <0x0 0x088e9000 0x2000>;
+-	snprintf(prop_name, sizeof(prop_name), "pipe%d", id);
+-	qphy->pipe_clk = devm_get_clk_from_child(dev, np, prop_name);
++	qphy->pipe_clk = devm_get_clk_from_child(dev, np, NULL);
+ 	if (IS_ERR(qphy->pipe_clk)) {
+ 		return dev_err_probe(dev, PTR_ERR(qphy->pipe_clk),
+ 				     "failed to get lane%d pipe clock\n", id);
 -- 
 2.35.1
 
