@@ -4,59 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7C670ECAAD5
-	for <linux-phy@archiver.kernel.org>; Tue, 30 Aug 2022 05:13:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4A179ECAAD1
+	for <linux-phy@archiver.kernel.org>; Tue, 30 Aug 2022 05:25:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZMPVmWemRmh6SC4M/LlUnNuaGntf88kU1a603oIyylk=; b=VT/9Tg+RF7lPTk
-	ZeBKrdWkjUoxQ0ImxOxVrpi4DdIHFeo93SHGRMPnNddC3o/HC/ax17ULCxCYMP5q55SAPA9YmrpW2
-	jFYE/GipEKtvXuCN7RJHpMJO8p2881VoNnIgVfgMp1AND+1enrhS1gAsVE3WUW3QRlrczksxFbYiK
-	lSNuhL/bfojzn11Wyp0KHVFsbFdEB0K/v5dPPXYVo7SMz4le6zMVzBDEoIljHpblLntDPzfjk9bDU
-	yFjetL6307qhUBGoUZo9PcD4RQGlRKmxgxWRyswVIB/4jRPTu6DsE8OthFznb1qULoLQrYdQfUqhL
-	irmqo2h7cF4PEToGm44g==;
+	List-Owner; bh=kNLtE3P91U1VP9E5u8KA007vjpi3qyx7SNxornd1zjQ=; b=VTWeYIgDayzbTc
+	DxYs6Jf3U+j53VgZgVHp04Lv3Q6rP+7gHeEyBs5gaSIke89utDKJmX4rz3FXNKk5quI3wRltMu1bx
+	3HYLvxZS3J4Mn8JO+Tbj+7dYcn+fOuVVNrwCksDyhvdEUTLszNCXWTWSbHWCO/HHRViPy71f8pfwM
+	NnziapR/8L+80mD/H5KGV9TzMZIm2fozCVTLEhzMcQGy8prUxajKt3pdM44SG7/cdQBQwEI2xPY6e
+	RK8TYYpp6+ddsttjxtgFaOKlydRy9XPUwjmmCIuzM0IVe3ced6OOGeofRB1UFF1DRDfHhWL+iXRa6
+	rvxcOz+i2/EH5RZIiQqQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oStZN-00E8ov-RK; Tue, 30 Aug 2022 05:13:58 +0000
+	id 1oStkt-00EAzb-ID; Tue, 30 Aug 2022 05:25:43 +0000
 Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oStZJ-00E8o9-Iv
-	for linux-phy@lists.infradead.org; Tue, 30 Aug 2022 05:13:46 +0000
+	id 1oStkj-00EAy2-KZ
+	for linux-phy@lists.infradead.org; Tue, 30 Aug 2022 05:25:42 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id 0A95BB811B2;
-	Tue, 30 Aug 2022 05:13:44 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id ECA73C433D6;
-	Tue, 30 Aug 2022 05:13:41 +0000 (UTC)
+	by ams.source.kernel.org (Postfix) with ESMTPS id 0E0D6B8162D;
+	Tue, 30 Aug 2022 05:25:32 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9B15AC433C1;
+	Tue, 30 Aug 2022 05:25:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1661836422;
-	bh=75LehKyfg/TMPpwAfNi4DyQ4TNo6iyN0d+FUfBzGa+c=;
+	s=k20201202; t=1661837130;
+	bh=Hh7bnQCDCSt3C486NoFQsf6r4Qajsoy/eBJ7UtkwRks=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=qMzo0MkmqRBfQPGtXsosqLcP7p5VHih/9Q3XnhajUMs0P0JizUEv5OmJ0eWmdjF15
-	 hyGw76aYuNqtaVvcdFjZLKsWbWqMOdQyGD49gQ2z+ikm9taaT65meDox687jjcfixG
-	 d8TPr/NFWJ/qjG8Oe47Nf5pzKo2rPlgpB6ofZ1K2WWslIoPWnjGnBNNdArg1EWqQ3h
-	 WdMjC4GHZnc3cimpMGwPAI/vX8joJIR3b21/GzDMgH8v3qHJaJ9HlLhMA9UrYRfkLX
-	 MqBCXyUaEBzXjz1PwbNWAe78yMQ3LBSIIQNUDOd+2vkhVWmebUcVqozNYD3dWagvW0
-	 PUtGIAOpCjg+w==
-Date: Tue, 30 Aug 2022 10:43:38 +0530
+	b=YNjQjEGEtHM2qpGA60LXoviJw2eA21I3I0I3IFRxGEJ+HJjBDIMAyxdNb3ORcHKti
+	 IKZzUubUKT5V29hXFm6xVIpsX0fThNaXjtGRXtlRCRKZLaY4eP4c332iyEvL0jd1qu
+	 KnAcJJPso3THYXjMzvpvniqLZauuJ3U3NbZ+8yw3ngeA/kjNa/eoqw8O23GBk982Sz
+	 AiW+ua20YzlKDT27RW3NshTLut7938c5Jy4ew3Qk72UbzkUqX2gNtvwa6/QEp+AtvH
+	 Au/JZ3YmMSKowQJSwV8j2ZTmRnrgt5kPVPNocUHHv+lw+CeI2wGvLMZDsM+0e0I74e
+	 f9WPLWbFXe/lw==
+Date: Tue, 30 Aug 2022 10:55:25 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Roger Quadros <rogerq@kernel.org>
-Cc: kishon@ti.com, vigneshr@ti.com, t-patil@ti.com, sjakhade@cadence.com,
-	s-vadapalli@ti.com, linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org, devicetree@vger.kernel.org
-Subject: Re: [PATCH 0/7] phy: ti: phy-j721e-wiz: Add support for j7200-wiz-10g
-Message-ID: <Yw2cgthIiLONb/+Y@matsya>
-References: <20220628122255.24265-1-rogerq@kernel.org>
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Cc: Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <bjorn.andersson@linaro.org>,
+	Konrad Dybcio <konrad.dybcio@somainline.org>,
+	Stephen Boyd <sboyd@kernel.org>,
+	Michael Turquette <mturquette@baylibre.com>,
+	Taniya Das <quic_tdas@quicinc.com>,
+	Kishon Vijay Abraham I <kishon@ti.com>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	linux-arm-msm@vger.kernel.org, linux-clk@vger.kernel.org,
+	linux-phy@lists.infradead.org, Johan Hovold <johan@kernel.org>
+Subject: Re: [PATCH v3 1/3] clk: asm9260: use new helper for fixed rate clock
+ creation
+Message-ID: <Yw2fRVsnkHYhcmSy@matsya>
+References: <20220708135450.2845810-1-dmitry.baryshkov@linaro.org>
+ <20220708135450.2845810-2-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20220628122255.24265-1-rogerq@kernel.org>
+In-Reply-To: <20220708135450.2845810-2-dmitry.baryshkov@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220829_221345_782584_22B8DFDA 
-X-CRM114-Status: GOOD (  10.68  )
+X-CRM114-CacheID: sfid-20220829_222540_661316_C81946E2 
+X-CRM114-Status: GOOD (  19.38  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,21 +82,64 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 28-06-22, 15:22, Roger Quadros wrote:
-> Hi,
+On 08-07-22, 16:54, Dmitry Baryshkov wrote:
+> The __clk_hw_register_fixed_rate() is an internal API, which is better
+> not to be called directly. Add new helper to create fixed rate clocks
+> using parent clock accuracy.
 > 
-> The SERDES in J7200 SR2.0 supports 2 reference clocks.
-> The second reference clock (core_ref1_clk) is hardwired to
-> MAIN_PLL3_HSDIV4_CLKOUT (100/125/156.25 MHz).
+> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+> ---
+>  drivers/clk/clk-asm9260.c    |  6 ++----
+>  include/linux/clk-provider.h | 14 ++++++++++++++
+>  2 files changed, 16 insertions(+), 4 deletions(-)
 > 
-> Add a new compatible "j7200-wiz-10g" for this device.
-> 
-> The external clocks to SERDES PLL refclock mapping is now
-> controlled by a special register in System Control Module
-> (SCM) space. Add a property "ti,scm" to reference it and
-> configure it in the driver.
+> diff --git a/drivers/clk/clk-asm9260.c b/drivers/clk/clk-asm9260.c
+> index bacebd457e6f..0609b661ff5a 100644
+> --- a/drivers/clk/clk-asm9260.c
+> +++ b/drivers/clk/clk-asm9260.c
+> @@ -276,10 +276,8 @@ static void __init asm9260_acc_init(struct device_node *np)
+>  
+>  	/* TODO: Convert to DT parent scheme */
+>  	ref_clk = of_clk_get_parent_name(np, 0);
+> -	hw = __clk_hw_register_fixed_rate(NULL, NULL, pll_clk,
+> -			ref_clk, NULL, NULL, 0, rate, 0,
+> -			CLK_FIXED_RATE_PARENT_ACCURACY);
+> -
+> +	hw = clk_hw_register_fixed_rate_parent_accuracy(NULL, pll_clk, ref_clk,
+> +							0, rate);
 
-Applied, thanks
+Should this not be described in DT instead, resolve the todo :-)
+
+>  	if (IS_ERR(hw))
+>  		panic("%pOFn: can't register REFCLK. Check DT!", np);
+>  
+> diff --git a/include/linux/clk-provider.h b/include/linux/clk-provider.h
+> index 72d937c03a3e..659ef5a77246 100644
+> --- a/include/linux/clk-provider.h
+> +++ b/include/linux/clk-provider.h
+> @@ -439,6 +439,20 @@ struct clk *clk_register_fixed_rate(struct device *dev, const char *name,
+>  	__clk_hw_register_fixed_rate((dev), NULL, (name), NULL, NULL,	      \
+>  				     (parent_data), NULL, (flags),	      \
+>  				     (fixed_rate), (fixed_accuracy), 0)
+> +/**
+> + * clk_hw_register_fixed_rate_parent_accuracy - register fixed-rate clock with
+> + * the clock framework
+> + * @dev: device that is registering this clock
+> + * @name: name of this clock
+> + * @parent_name: name of clock's parent
+> + * @flags: framework-specific flags
+> + * @fixed_rate: non-adjustable clock rate
+> + */
+> +#define clk_hw_register_fixed_rate_parent_accuracy(dev, name, parent_name,    \
+> +						   flags, fixed_rate)	      \
+> +	__clk_hw_register_fixed_rate((dev), NULL, (name), (parent_name),      \
+> +				     NULL, NULL, (flags), (fixed_rate), 0,    \
+> +				     CLK_FIXED_RATE_PARENT_ACCURACY)
+>  
+>  void clk_unregister_fixed_rate(struct clk *clk);
+>  void clk_hw_unregister_fixed_rate(struct clk_hw *hw);
+> -- 
+> 2.35.1
 
 -- 
 ~Vinod
