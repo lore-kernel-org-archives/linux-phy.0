@@ -4,135 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 422D8ECAAD5
-	for <linux-phy@archiver.kernel.org>; Tue, 30 Aug 2022 03:49:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 85314ECAAD1
+	for <linux-phy@archiver.kernel.org>; Tue, 30 Aug 2022 04:32:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
+	CC:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=R1sqJFOTk0K+WfqheNZMIurs2wS5SiLveNfpHdLKGxc=; b=Ng8VeQ5CpHSK3Q
-	o+LXcJwY+dm3Pkz93hPg7HeeW/HgI5dtjbPwDwL1fJxyYujwNBc98Ei3K30y8DSgfu/XQXwILAeU+
-	bqmVW0ldUbknP3iIQ+zyK04OzAh4cFqPv5D4av/ug6s62FM+P3omrhKFgD39ykaZFNLeJAKFwA3aO
-	Ze09LshCb1M9d7KSx5fJ+y0wOPL76GN2/6KTws6DbEKs7oq6h70+F8Xkz1dQiqbUONJTFDtH0agMy
-	IGPdWoHBozXWpJCBExDvHobjPyVVJAuQBVnvl9mNXAtkFcPnpF6dNh0N83SJ7dbhjpAJfOqU1k30m
-	SKWK/7U7h/FqNENrtTiA==;
+	List-Owner; bh=S09cUtfywj+c872yyEzIXbpxme4/+iLiFGaOzQJzca4=; b=UmTmHsTtCQpnQ9
+	La8gRpBQj1ZqdbT+BxvqIFfE7i8szyfCbtcdk2Q6twB6umVYFUqMkouJd8DShWTU7lYPIUrXuoxJQ
+	RFsM7f9HjtqakuLI0EZVyCkuhuEa/n+jfjjfdwKaj15Pie8tkCJraejnzQ7IA9ECz8MkOMrCB6RE/
+	pO/3B4J503UCwq7GBYQl2WEmRERj14w+xyRsEiYYKguhe+IjQV9XjD2X52Ogux33WU7xPPj2D97Ra
+	WJbr+1zpXSdyc4cryp43f47RCjcC0m1oXgp//4KxNALikEcPeg7PSiXRxy/TVt1RDDuwCpljLA5xc
+	gQq6Pe3cDzXU9tAxw+TQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oSsGC-00Dt77-4r; Tue, 30 Aug 2022 03:49:56 +0000
-Received: from mail-eopbgr00087.outbound.protection.outlook.com ([40.107.0.87] helo=EUR02-AM5-obe.outbound.protection.outlook.com)
+	id 1oSsv8-00E0fz-Qm; Tue, 30 Aug 2022 04:32:14 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oSsE7-00Dron-LC; Tue, 30 Aug 2022 03:47:49 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=QYOkEPRe68hdeaC38f9zSwnuYusaO0518R+6Y+IK26HkpINt9WbnSpBw09mdcMXI9PBIEjXxk3LkYZs6WmTUkX+mQGjWg546ADAwk3tuQ6r4kz7L9h5yfETAvYdcOCRD4RgJ5BZp1+kFj+kfM0xsiHJ/ZDcWD6zFKRi9yU/uo6OHGS+SiBLpvfKR17zgW70j1JwNH2b1pWdLpaeIAd1A0wyuXqgjxir/hwqCwa7/UIRSBkw+f5qleRnCGdzQophxQAf7mH+lldbF9U2d67ODMuO2Wt0UYRcouQHo8KbJETHtv4kd/QA4RSp1DArez+eDkBmv/5CASbcRxnzUIlMVJg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=LzLTJLwJS9Ro7Cnzg2J0qyFVCTSfU4utBO0jpWJL5Jw=;
- b=QsdSJ/Wmp/L1MuUMN0BBDHH3UEwqh1UOQw2/UBfp+YUy6XJ5ELMsgRWm4to9I//uHnDVLJsQby1wL6VqZ169PI9RcgLhyKnMKDLQ2zzszF1bOUX+zB4CCgSkj3FQLx89sciOaDg93P3yPNmFeecvXRPsN+3eJjI2OzXmueE4QNm7Tkeb48oKFflvUhYjB8J5eChDly43LIflBn0ahsmAjkxM30HTF/riLLnIrmvAnz9Do05siZvlck9ugysWGYwldSDeB87O5BebeWJwprX9JQeo38vKXerNxzZrZmI5Dbvkbxbh5PJXceGWVJeLYxRpzs61YaSB+NHimB7IkYQSig==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=LzLTJLwJS9Ro7Cnzg2J0qyFVCTSfU4utBO0jpWJL5Jw=;
- b=B6d93+xAKp+0ImyxYt1Da/RcXsKZS8E1o5NcimJQZ9of+ssr817S081Nn+vQB+kdMN97zZ2Sek/CGCb2Gk9ixcNrfB/gGCU1wj21BzYKkEjm+flYEjEZCQBCO8f2D5Sb5MCwDKwa9JKP0vKPAxUp8qA082n2Qfq+BAjAKcoXY18=
-Received: from AS8PR04MB8676.eurprd04.prod.outlook.com (2603:10a6:20b:42b::10)
- by DB9PR04MB9497.eurprd04.prod.outlook.com (2603:10a6:10:361::10) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5566.15; Tue, 30 Aug
- 2022 03:47:42 +0000
-Received: from AS8PR04MB8676.eurprd04.prod.outlook.com
- ([fe80::13c:5622:af8a:b2da]) by AS8PR04MB8676.eurprd04.prod.outlook.com
- ([fe80::13c:5622:af8a:b2da%9]) with mapi id 15.20.5566.021; Tue, 30 Aug 2022
- 03:47:42 +0000
-From: Hongxing Zhu <hongxing.zhu@nxp.com>
-To: Ahmad Fatoum <a.fatoum@pengutronix.de>, "l.stach@pengutronix.de"
-	<l.stach@pengutronix.de>, "bhelgaas@google.com" <bhelgaas@google.com>,
-	"lorenzo.pieralisi@arm.com" <lorenzo.pieralisi@arm.com>, "vkoul@kernel.org"
-	<vkoul@kernel.org>, Marcel Ziswiler <marcel.ziswiler@toradex.com>,
-	"kishon@ti.com" <kishon@ti.com>
-CC: "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
-	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>, dl-linux-imx
-	<linux-imx@nxp.com>, "kernel@pengutronix.de" <kernel@pengutronix.de>,
-	"linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
-	"linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Subject: RE: [PATCH v1 0/2] Fix the wrong order of phy callbacks
-Thread-Topic: [PATCH v1 0/2] Fix the wrong order of phy callbacks
-Thread-Index: AQHYtisJvWRatmeqJkC37ps54LPbAa3FdjaAgAFfrrA=
-Date: Tue, 30 Aug 2022 03:47:42 +0000
-Message-ID:  <AS8PR04MB86767CFA73F8C639EDD16A298C799@AS8PR04MB8676.eurprd04.prod.outlook.com>
-References: <1661173856-1192-1-git-send-email-hongxing.zhu@nxp.com>
- <e6d5f688-f4c3-6094-91f6-a160b601c07d@pengutronix.de>
-In-Reply-To: <e6d5f688-f4c3-6094-91f6-a160b601c07d@pengutronix.de>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 7b3718b3-72b4-4439-1214-08da8a3a64b1
-x-ms-traffictypediagnostic: DB9PR04MB9497:EE_
-x-ld-processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info:  kV4lkFE0TRJbTM+6q9cwWQzfJa4RyDVOJIx44o/tWr1sArGvIQBjOf0QuVj3r/UZWGQma/5to8jyyLAofXL9l0p0pKPXzYOC651a04S0cJ1bZLmpQ1KEqNOnj/Bdj0pFJ0kTHuMACixQKVuIMbkv1jNSoOzmiRqum6WKxn1cOQkrZypwT8UPXqUNNMDBnFBN9FTas4YUIrVMALnE2523GIFRamkf/ytR163iBb4C4cuFp/EYg2lpjlkMYgCFeVa8+nKs9HdJiYIkXV43Y2KJ7wJgiAtJLAU8QkUpYrrh87vbtFFzhuqwgcE9Tr4/4xKQ3H4MZOV7ZtIX2sI3mD+I2Z4+YaHjQJqrZ3HncShTZuja8x6dRW54x6YA+GYDybrsNcaGf5uLY3h7CyRbm93s6qdvUmSytm7zqW5kx2/cpi7pym2dSwyT78D9e07AMJdbeSNVAHq2DzUxS98pgXdLlibx48oE/dHGO0ntJM+TphIHaAmIWAdcxfzCih7XJ+Bhqn1+FTJDBY9os2mK6sA+qqCAJ5aqJtVDVyIsEsxVtpaTPzP+TRHMOa9Urt9WmDGlaCDY02Y1EdpJIb31v51S6goPsL7X3XBxkb2NK3j8UMgL5eismGNCDcIkQfPwnexddCe+5wwyUMyAUhPHNkXInyiyGotKxHIrOUiMr2yyQH7/pk1Ma7t6P5IIy02BnvKzTMIxBOvXptVBbxvm6v1v1HkUpxLQy/E8YGAB4BzH7O88+v5SXysCN8J0VzWd+EAJyzVNfC8N6OGqeJIQRmTT4jFnsHInNgujuWHVu/SUiPg=
-x-forefront-antispam-report:  CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AS8PR04MB8676.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230016)(4636009)(346002)(136003)(39860400002)(376002)(366004)(396003)(4326008)(66946007)(5660300002)(41300700001)(316002)(110136005)(54906003)(478600001)(7416002)(8676002)(66556008)(66446008)(64756008)(52536014)(966005)(76116006)(66476007)(45080400002)(86362001)(71200400001)(38070700005)(55016003)(8936002)(6506007)(26005)(53546011)(186003)(33656002)(7696005)(38100700002)(9686003)(44832011)(2906002)(122000001)(83380400001);DIR:OUT;SFP:1101;
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0:  =?gb2312?B?ZEhzbWU2dXhUejBYRVUzSVhOZ0JaNGprbEE5NDBhZWMzcEtrd1lTZm9ZT01q?=
- =?gb2312?B?OERIWUswbjE2Z3JSL1hOMEtmRUg1dG5sakU3Z2wrL2xTaFc2UElHdFFLcVB0?=
- =?gb2312?B?ZUtjbytzQmJQQmV6eWhTK2dQTStHTVNWdmM4RWJtRTE2NXBXVklKSG9xRi9w?=
- =?gb2312?B?MDl4RkhRajZlNjI3QlRkUm1QYzNPTFp1TGtUKzR3S2dKY0QyamhNMU5FdVlo?=
- =?gb2312?B?UEJkWHBVRHl4Slg0b3ljNGNzcWtscldXMHRwd0QrLy95dzgvQUxyMExDUkgy?=
- =?gb2312?B?RWpmWEhJcXlncFkyekJhck1KKzRmdXBRWnNkOW5sc0RnYmNqOWs2cXRRcERo?=
- =?gb2312?B?SjVkQVYxOE9pMnR3Qnd2YUlZM20vSm5VT0Y2VCtSczBjZGV1VDdTNko5Zmdn?=
- =?gb2312?B?T2NvZ0Z2NUp6R1dtaDZCR0JHVDZWeXg3eGlkM0R5d1ZhTFJHR1k4eGlyUlpX?=
- =?gb2312?B?eS9JY3NUc1J4QkJBaktpY3RrN2luVng5Zmpma3hBRklYWmwyMFFlcFR1UWs5?=
- =?gb2312?B?SmhmcUFXOXE0cy9qeG5BOTJjN3FiQlhEdVNqM3ZkVVdUQ1J0VEd1Njhqc2ha?=
- =?gb2312?B?U0ozWGh5dTdoT2ZIeHVwblMvdUxibld0WWNzZHhvK00yRVBRZVREcTczZVpL?=
- =?gb2312?B?MzdaT2pwamtmNUZnRElmbVFZd2Z2bGFaNUtLNWZZYUw0OEFkdUcydkI3MVlr?=
- =?gb2312?B?Z3FwOTgrbWZrUVZKZ0lvUWttZXVCQldhMzgxODNyZUdoSU14cnpJT1FodzBI?=
- =?gb2312?B?eGQ0U0tUWG44bWlBY05PS1ZmcGZKZytmMit3YXZlb1p6d0RkckdVYXpuQ0Jl?=
- =?gb2312?B?Z24yWmtmaUl0b3ozbnBnK2pnNDc3THU4ZlorajlocWUzK2N0Q29NSHVtZWhl?=
- =?gb2312?B?dmFCdFFaVkptaHNQN3BjUWhVR3FLVmxjaytieVhlUUVSQmZjWmpIRTFHRFBB?=
- =?gb2312?B?aEVHQ2tucnROeHNhcFVzcTB1YlA1ekVWZmdSQUVzWnFET1MvV3RHWFkvTU5O?=
- =?gb2312?B?aGpWNzJnYTMxSXdGaWpOdElTaXVVa1oxTlI4dFJrSWpMZVdRY3R6WHZMcGRi?=
- =?gb2312?B?SjVOeTRkRlpXaU5aZG42akU2K3VDbEI5Y0lCL0VZZTFiWU9nTnN6S3pOSW4r?=
- =?gb2312?B?YmJuMFh6T0xJcnFDNjR4VkthaFZGWnN0M0Rzd09oSjF1T0JTMkxXdXE3WERo?=
- =?gb2312?B?NkFRQ0ZzRXk5N2tKRXJDa0lVbm1LTnNyZXk4bng0YUdYVXBSWWFNR3lCZGZw?=
- =?gb2312?B?eWlaWTZSMi9zZDgwNWhoaUVOeFBURWxidXlqYXkzcjliS3JwaG9xdWYxTGgv?=
- =?gb2312?B?MHM5Y3BHQ2NJS2tBRjFNKzI1bTJ3TDlVdG1iTDhnbXpmNXN5Z2xDYVlFWS9u?=
- =?gb2312?B?R21BTlhiVHJsL1A3NGVKTmZyWHVrV2ladkcyMHh3emhNajRFaDVnQm5RaDR0?=
- =?gb2312?B?bTJ6MWtqSGR4R2QvK0xnMU1taGVQalVZYUNiN2JUNjlkYXdtenVpVncvRDUv?=
- =?gb2312?B?aTI3d3c3NUdoK1BpWWNGZTNDSDlCanlzTi9oc1pIajFpcVl5RUQwOWdDQlV4?=
- =?gb2312?B?dndIZXdEb0NkY1NxUGJQdm1WcWJDcUdBMGkzSnlDdGh5cGJaUzB3Y2E1NTE4?=
- =?gb2312?B?LzN2Wk5jQUo1NmZEdThJcmRkZ2pLekhjQUJUVDBJNVZEcm55R29helN6OEd3?=
- =?gb2312?B?ekx0WWNBdUs0cm96RHJEWTJVbkphcFI1WUh5UEZWbG5USktoWnBEWmtPSlRt?=
- =?gb2312?B?Rnhzd3BVbEV1TzY0TkpOS0NVekk4aUlFcFk5Mjd1Umx0NkNFSHd4eGNycTdZ?=
- =?gb2312?B?aDdHVnBtSzBBVUpISkhWRGdCL2tSUE1NTzJ2V0RDdGl1cnVSSWxCRVQ5MlF6?=
- =?gb2312?B?WXlMeWc3anpRNFNiL0grTnNYTHl1aWdSbzBxeXJJckJIc3dHR0VFTURxMkJx?=
- =?gb2312?B?ZzdVSVNqN1YvUExGZERZanB6OUpodEtQTTFRQnhDVDVNNkFyTnFGazRjQy81?=
- =?gb2312?B?UGIrdHJoSGpZZUxLbityU25qNVZYRGlTeUhiWDRPK29hd3BSUU9rVVcvdXFT?=
- =?gb2312?B?Q2YrZmtGTHJjcDJVb0V6OFRCQjJWOUdVRENsaXFVeldTOHpvMndtZDlEcFpL?=
- =?gb2312?Q?ju8uUbuiHOgRpg47A3Ni9ZT1d?=
+	id 1oSsv5-00E0d5-FL
+	for linux-phy@lists.infradead.org; Tue, 30 Aug 2022 04:32:13 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+	by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 27U4VvBY037487;
+	Mon, 29 Aug 2022 23:31:57 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+	s=ti-com-17Q1; t=1661833917;
+	bh=9j/HRj1Q1IgYRTogG7mi/ufdMf2truZfzuvnA3Ze6Ag=;
+	h=Date:CC:Subject:To:References:From:In-Reply-To;
+	b=SyzpHtcnyhOwqdeML/0eju1hkB+g8+LHE3jZBLBKu+GPBJSUa+k8wWlzJX0wqs//T
+	 YbDPKb1lkuRoKZfoX9xGbCVHjmfg7sYzxUdrRCSHwSYNfGKMy2FQw6p7+YZ5xCneBD
+	 5MK7L0tauBuaK847vrKLo+cpYIRGuteFGTHc/xsc=
+Received: from DLEE108.ent.ti.com (dlee108.ent.ti.com [157.170.170.38])
+	by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 27U4VvN2108195
+	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+	Mon, 29 Aug 2022 23:31:57 -0500
+Received: from DLEE101.ent.ti.com (157.170.170.31) by DLEE108.ent.ti.com
+ (157.170.170.38) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.6; Mon, 29
+ Aug 2022 23:31:56 -0500
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE101.ent.ti.com
+ (157.170.170.31) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.6 via
+ Frontend Transport; Mon, 29 Aug 2022 23:31:56 -0500
+Received: from [10.24.69.241] (ileax41-snat.itg.ti.com [10.172.224.153])
+	by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id 27U4Vqpj036934;
+	Mon, 29 Aug 2022 23:31:53 -0500
+Message-ID: <533a4186-62b1-ce7b-e097-9fb04be8f018@ti.com>
+Date: Tue, 30 Aug 2022 10:01:52 +0530
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: AS8PR04MB8676.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 7b3718b3-72b4-4439-1214-08da8a3a64b1
-X-MS-Exchange-CrossTenant-originalarrivaltime: 30 Aug 2022 03:47:42.8253
- (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: SZ7JInxdwUnAsNun6HdFvN+1XMgznu31UsxSgkWsV/VgwUMQn1e4paZLlFM0aqk347Lx3RJMUbXWW3AHXNaKWg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB9PR04MB9497
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
+ Thunderbird/91.11.0
+CC: <robh+dt@kernel.org>, <lee.jones@linaro.org>,
+        <krzysztof.kozlowski@linaro.org>, <krzysztof.kozlowski+dt@linaro.org>,
+        <kishon@ti.com>, <vkoul@kernel.org>, <dan.carpenter@oracle.com>,
+        <grygorii.strashko@ti.com>, <devicetree@vger.kernel.org>,
+        <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+        <s-vadapalli@ti.com>
+Subject: Re: [PATCH v3 2/2] phy: ti: gmii-sel: Add support for CPSW5G GMII SEL
+ in J7200
+Content-Language: en-US
+To: Roger Quadros <rogerq@kernel.org>
+References: <20220822065631.27933-1-s-vadapalli@ti.com>
+ <20220822065631.27933-3-s-vadapalli@ti.com>
+ <655c39a3-cf5f-6dd7-3c1a-61ebeae915bd@kernel.org>
+ <7dd27795-11d0-3147-ed86-959ff3e89df4@ti.com>
+ <8ef8b2f8-a1c1-b277-22b1-6e951e8dfc72@kernel.org>
+From: Siddharth Vadapalli <s-vadapalli@ti.com>
+In-Reply-To: <8ef8b2f8-a1c1-b277-22b1-6e951e8dfc72@kernel.org>
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220829_204747_768434_51A8F9E1 
-X-CRM114-Status: GOOD (  17.72  )
+X-CRM114-CacheID: sfid-20220829_213211_654173_EFB5DEC0 
+X-CRM114-Status: GOOD (  44.95  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -144,60 +87,232 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="gb2312"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-DQo+IC0tLS0tT3JpZ2luYWwgTWVzc2FnZS0tLS0tDQo+IEZyb206IEFobWFkIEZhdG91bSA8YS5m
-YXRvdW1AcGVuZ3V0cm9uaXguZGU+DQo+IFNlbnQ6IDIwMjLE6jjUwjI5yNUgMTQ6MzQNCj4gVG86
-IEhvbmd4aW5nIFpodSA8aG9uZ3hpbmcuemh1QG54cC5jb20+OyBsLnN0YWNoQHBlbmd1dHJvbml4
-LmRlOw0KPiBiaGVsZ2Fhc0Bnb29nbGUuY29tOyBsb3JlbnpvLnBpZXJhbGlzaUBhcm0uY29tOyB2
-a291bEBrZXJuZWwub3JnOyBNYXJjZWwNCj4gWmlzd2lsZXIgPG1hcmNlbC56aXN3aWxlckB0b3Jh
-ZGV4LmNvbT47IGtpc2hvbkB0aS5jb20NCj4gQ2M6IGxpbnV4LXBjaUB2Z2VyLmtlcm5lbC5vcmc7
-IGxpbnV4LWtlcm5lbEB2Z2VyLmtlcm5lbC5vcmc7IGRsLWxpbnV4LWlteA0KPiA8bGludXgtaW14
-QG54cC5jb20+OyBrZXJuZWxAcGVuZ3V0cm9uaXguZGU7IGxpbnV4LXBoeUBsaXN0cy5pbmZyYWRl
-YWQub3JnOw0KPiBsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcNCj4gU3ViamVj
-dDogUmU6IFtQQVRDSCB2MSAwLzJdIEZpeCB0aGUgd3Jvbmcgb3JkZXIgb2YgcGh5IGNhbGxiYWNr
-cw0KPiANCj4gSGksDQo+IA0KPiBPbiAyMi4wOC4yMiAxNToxMCwgUmljaGFyZCBaaHUgd3JvdGU6
-DQo+ID4gUmVmZXIgWzFdLCBwaHlfaW5pdCgpIG11c3QgYmUgY2FsbGVkIGJlZm9yZSBwaHlfcG93
-ZXJfb24oKS4NCj4gPiBUaGlzIHNlcmllcyB1c2VkIHRvIGZpeCB0aGUgd3Jvbmcgb3JkZXIgb2Yg
-dGhlIHBoeV9pbml0KCkgYW5kDQo+ID4gcGh5X3Bvd2VyX29uKCksIGludHJvZHVjZWQgYnkgY29t
-bWl0IDFhYTk3YjAwMjI1OCAoInBoeTogZnJlZXNjYWxlOg0KPiA+IHBjaWU6IEluaXRpYWxpemUg
-dGhlIGlteDggcGNpZSBzdGFuZGFsb25lIHBoeSBkcml2ZXIiKSBUZXN0ZWQgb24gaS5NWDhNTSBF
-VksNCj4gYm9hcmQgd2hlbiBvbmUgTlZNRSBkZXZpY2UgaXMgdXNlZC4NCj4gPg0KPiA+IFsxXWh0
-dHBzOi8vZXVyMDEuc2FmZWxpbmtzLnByb3RlY3Rpb24ub3V0bG9vay5jb20vP3VybD1odHRwcyUz
-QSUyRiUyRmcNCj4gPg0KPiBpdC5rZXJuZWwub3JnJTJGcHViJTJGc2NtJTJGbGludXglMkZrZXJu
-ZWwlMkZnaXQlMkZ0b3J2YWxkcyUyRmxpbnV4LmdpDQo+ID4NCj4gdCUyRnRyZWUlMkZkcml2ZXJz
-JTJGcGh5JTJGcGh5LWNvcmUuYyUzRmlkJTNEdjUuMTktcmMxJTIzbjIzMyZhbXA7DQo+IGRhdGEN
-Cj4gPg0KPiA9MDUlN0MwMSU3Q2hvbmd4aW5nLnpodSU0MG54cC5jb20lN0MzMjc3NjFiYWM1Yjk0
-MDdkOTc3MDA4ZGE4OQ0KPiA4ODZiMTUlNw0KPiA+DQo+IEM2ODZlYTFkM2JjMmI0YzZmYTkyY2Q5
-OWM1YzMwMTYzNSU3QzAlN0MwJTdDNjM3OTczNTE2MjU0NjU2OTgNCj4gNSU3Q1Vua25vDQo+ID4N
-Cj4gd24lN0NUV0ZwYkdac2IzZDhleUpXSWpvaU1DNHdMakF3TURBaUxDSlFJam9pVjJsdU16SWlM
-Q0pCVGlJNklrMWhhDQo+IFd3aUwNCj4gPg0KPiBDSlhWQ0k2TW4wJTNEJTdDMzAwMCU3QyU3QyU3
-QyZhbXA7c2RhdGE9NlNua1JkTEFYMnRMcDFpR2dFNzhkDQo+IEpBbSUyQkxPZg0KPiA+IExMcEFO
-ZlIxZTR4SVlGWSUzRCZhbXA7cmVzZXJ2ZWQ9MA0KPiA+DQo+ID4gW1BBVENIIHYxIDEvMl0gUENJ
-OiBpbXg2OiBGaXggdGhlIHdyb25nIG9yZGVyIG9mIHBoeV9pbml0KCkgYW5kIFtQQVRDSA0KPiA+
-IHYxIDIvMl0gcGh5OiBmcmVlc2NhbGU6IGlteDhtLXBjaWU6IEZpeCB0aGUgd3Jvbmcgb3JkZXIg
-b2YNCj4gDQo+IFRoaXMgaW50cm9kdWNlcyBhbiBpbnRlcm1pdHRlbnQgYnJlYWthZ2UuIENhbiB5
-b3Ugc3F1YXNoPw0KDQpIaSBBaG1hZDoNClRoYW5rcyBmb3IgeW91ciBjb21tZW50cy4NCkRvIHlv
-dSBtZWFuIHRvIHNxdWFzaCB0aGlzIGZpeCB0byB0aGUgcHJldmlldyBzZXJpZXM/DQpJJ20gYWZy
-YWlkIHRoYXQgaXQncyBub3QgZWFzeSB0byBkbyB0aGF0Lg0KQmVjYXVzZSB0aGVyZSBhcmUgYSBs
-b3Qgb2YgcGNpLWlteDYgY29kZSBjaGFuZ2VzIGFmdGVyIA0KY29tbWl0OiAxYWE5N2IwMDIyNTgg
-KCJwaHk6IGZyZWVzY2FsZTogcGNpZTogSW5pdGlhbGl6ZSB0aGUgaW14OCBwY2llIHN0YW5kYWxv
-bmUgcGh5IGRyaXZlciIpLg0KDQpCZXN0IFJlZ2FyZHMNClJpY2hhcmQgWmh1DQo+IA0KPiA+DQo+
-ID4NCj4gDQo+IA0KPiAtLQ0KPiBQZW5ndXRyb25peCBlLksuICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgfA0KPiB8DQo+IFN0ZXVlcndhbGRlciBTdHIuIDIxICAgICAgICAgICAgICAgICAgICAg
-ICB8DQo+IGh0dHBzOi8vZXVyMDEuc2FmZWxpbmtzLnByb3RlY3Rpb24ub3V0bG9vay5jb20vP3Vy
-bD1odHRwJTNBJTJGJTJGd3d3LnBlDQo+IG5ndXRyb25peC5kZSUyRiZhbXA7ZGF0YT0wNSU3QzAx
-JTdDaG9uZ3hpbmcuemh1JTQwbnhwLmNvbSU3QzMyNzcNCj4gNjFiYWM1Yjk0MDdkOTc3MDA4ZGE4
-OTg4NmIxNSU3QzY4NmVhMWQzYmMyYjRjNmZhOTJjZDk5YzVjMzAxNjMNCj4gNSU3QzAlN0MwJTdD
-NjM3OTczNTE2MjU0NjU2OTg1JTdDVW5rbm93biU3Q1RXRnBiR1pzYjNkOGV5Sg0KPiBXSWpvaU1D
-NHdMakF3TURBaUxDSlFJam9pVjJsdU16SWlMQ0pCVGlJNklrMWhhV3dpTENKWFZDSTZNbjAlM0Ql
-Nw0KPiBDMzAwMCU3QyU3QyU3QyZhbXA7c2RhdGE9aGFzT3RYNzclMkZlYTV5TGJWOEM3d09mZFpT
-dEY1ZXJIT0w1OA0KPiBaZjZaWmJvNCUzRCZhbXA7cmVzZXJ2ZWQ9MCAgfA0KPiAzMTEzNyBIaWxk
-ZXNoZWltLCBHZXJtYW55ICAgICAgICAgICAgICAgICAgfCBQaG9uZToNCj4gKzQ5LTUxMjEtMjA2
-OTE3LTAgICAgfA0KPiBBbXRzZ2VyaWNodCBIaWxkZXNoZWltLCBIUkEgMjY4NiAgICAgICAgICAg
-fCBGYXg6DQo+ICs0OS01MTIxLTIwNjkxNy01NTU1IHwNCi0tIApsaW51eC1waHkgbWFpbGluZyBs
-aXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFk
-Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+Hello Roger,
+
+On 29/08/22 18:13, Roger Quadros wrote:
+> Siddharth,
+> 
+> On 29/08/2022 07:53, Siddharth Vadapalli wrote:
+>> Hello Roger,
+>>
+>> On 25/08/22 13:11, Roger Quadros wrote:
+>>> Hi Siddharth,
+>>>
+>>> On 22/08/2022 09:56, Siddharth Vadapalli wrote:
+>>>> Each of the CPSW5G ports in J7200 support additional modes like QSGMII.
+>>>> Add a new compatible for J7200 to support the additional modes.
+>>>>
+>>>> In TI's J7200, each of the CPSW5G ethernet interfaces can act as a
+>>>> QSGMII or QSGMII-SUB port. The QSGMII interface is responsible for
+>>>> performing auto-negotiation between the MAC and the PHY while the rest of
+>>>> the interfaces are designated as QSGMII-SUB interfaces, indicating that
+>>>> they will not be taking part in the auto-negotiation process.
+>>>>
+>>>> To indicate the interface which will serve as the main QSGMII interface,
+>>>> add a property "ti,qsgmii-main-ports", whose value indicates the
+>>>> port number of the interface which shall serve as the main QSGMII
+>>>> interface. The rest of the interfaces are then assigned QSGMII-SUB mode by
+>>>> default.
+>>>
+>>> Can you please describe here why you are using "ti,qsgmii-main-ports" instead
+>>> of "ti,qsgmii-main-port" as there can be only one main port per PHY instance?
+>>
+>> Thank you for reviewing the patch. I am using "ports" instead of "port"
+>> because I plan to add support for CPSW9G on TI's J721e device in the
+>> future patches. CPSW9G (8 external ports) supports up to two QSGMII main
+>> ports. For CPSW9G, by specifying the two main ports in the device tree,
+>> it is possible to configure the CTRLMMR_ENETx_CTRL register for each of
+>> the 8 ports, with the two QSGMII main ports being configured as main
+>> ports in the CTRLMMR_ENETx_CTRL register and the rest of them being
+>> configured as sub ports. Since I will be using the same property
+>> "ti,qsgmii-main-ports" for CPSW9G as well, the property will be an array
+>> of 2 values for CPSW9G. Therefore, I am using "ports" instead of "port".
+>> Please let me know if this is fine.
+>>
+> 
+> OK. Please mention this in commit message.
+
+I will mention that the property ti,qsgmii-main-ports is used to
+configure the CTRLMMR_ENETx_CTRL register and that it is possible
+depending on the device for there to be more than one main port which is
+why the property is an array of values.
+
+Would it be sufficient to mention the above in the commit message?
+Please let me know.
+
+> 
+>>>
+>>>>
+>>>> Signed-off-by: Siddharth Vadapalli <s-vadapalli@ti.com>
+>>>> ---
+>>>>  drivers/phy/ti/phy-gmii-sel.c | 40 ++++++++++++++++++++++++++++++++---
+>>>>  1 file changed, 37 insertions(+), 3 deletions(-)
+>>>>
+>>>> diff --git a/drivers/phy/ti/phy-gmii-sel.c b/drivers/phy/ti/phy-gmii-sel.c
+>>>> index d0ab69750c6b..270083606b14 100644
+>>>> --- a/drivers/phy/ti/phy-gmii-sel.c
+>>>> +++ b/drivers/phy/ti/phy-gmii-sel.c
+>>>> @@ -22,6 +22,12 @@
+>>>>  #define AM33XX_GMII_SEL_MODE_RMII	1
+>>>>  #define AM33XX_GMII_SEL_MODE_RGMII	2
+>>>>  
+>>>> +/* J72xx SoC specific definitions for the CONTROL port */
+>>>> +#define J72XX_GMII_SEL_MODE_QSGMII	4
+>>>> +#define J72XX_GMII_SEL_MODE_QSGMII_SUB	6
+>>>> +
+>>>> +#define PHY_GMII_PORT(n)	BIT((n) - 1)
+>>>> +
+>>>>  enum {
+>>>>  	PHY_GMII_SEL_PORT_MODE = 0,
+>>>>  	PHY_GMII_SEL_RGMII_ID_MODE,
+>>>> @@ -43,6 +49,7 @@ struct phy_gmii_sel_soc_data {
+>>>>  	u32 features;
+>>>>  	const struct reg_field (*regfields)[PHY_GMII_SEL_LAST];
+>>>>  	bool use_of_data;
+>>>> +	u64 extra_modes;
+>>>>  };
+>>>>  
+>>>>  struct phy_gmii_sel_priv {
+>>>> @@ -53,6 +60,7 @@ struct phy_gmii_sel_priv {
+>>>>  	struct phy_gmii_sel_phy_priv *if_phys;
+>>>>  	u32 num_ports;
+>>>>  	u32 reg_offset;
+>>>> +	u32 qsgmii_main_ports;
+>>>>  };
+>>>>  
+>>>>  static int phy_gmii_sel_mode(struct phy *phy, enum phy_mode mode, int submode)
+>>>> @@ -88,10 +96,17 @@ static int phy_gmii_sel_mode(struct phy *phy, enum phy_mode mode, int submode)
+>>>>  		gmii_sel_mode = AM33XX_GMII_SEL_MODE_MII;
+>>>>  		break;
+>>>>  
+>>>> +	case PHY_INTERFACE_MODE_QSGMII:
+>>>> +		if (!(soc_data->extra_modes & BIT(PHY_INTERFACE_MODE_QSGMII)))
+>>>> +			goto unsupported;
+>>>> +		if (if_phy->priv->qsgmii_main_ports & BIT(if_phy->id - 1))
+>>>> +			gmii_sel_mode = J72XX_GMII_SEL_MODE_QSGMII;
+>>>> +		else
+>>>> +			gmii_sel_mode = J72XX_GMII_SEL_MODE_QSGMII_SUB;
+>>>> +		break;
+>>>> +
+>>>>  	default:
+>>>> -		dev_warn(dev, "port%u: unsupported mode: \"%s\"\n",
+>>>> -			 if_phy->id, phy_modes(submode));
+>>>> -		return -EINVAL;
+>>>> +		goto unsupported;
+>>>>  	}
+>>>>  
+>>>>  	if_phy->phy_if_mode = submode;
+>>>> @@ -123,6 +138,11 @@ static int phy_gmii_sel_mode(struct phy *phy, enum phy_mode mode, int submode)
+>>>>  	}
+>>>>  
+>>>>  	return 0;
+>>>> +
+>>>> +unsupported:
+>>>> +	dev_warn(dev, "port%u: unsupported mode: \"%s\"\n",
+>>>> +		 if_phy->id, phy_modes(submode));
+>>>> +	return -EINVAL;
+>>>>  }
+>>>>  
+>>>>  static const
+>>>> @@ -188,6 +208,13 @@ struct phy_gmii_sel_soc_data phy_gmii_sel_soc_am654 = {
+>>>>  	.regfields = phy_gmii_sel_fields_am654,
+>>>>  };
+>>>>  
+>>>> +static const
+>>>> +struct phy_gmii_sel_soc_data phy_gmii_sel_cpsw5g_soc_j7200 = {
+>>>> +	.use_of_data = true,
+>>>> +	.regfields = phy_gmii_sel_fields_am654,
+>>>> +	.extra_modes = BIT(PHY_INTERFACE_MODE_QSGMII),
+>>>> +};
+>>>> +
+>>>>  static const struct of_device_id phy_gmii_sel_id_table[] = {
+>>>>  	{
+>>>>  		.compatible	= "ti,am3352-phy-gmii-sel",
+>>>> @@ -209,6 +236,10 @@ static const struct of_device_id phy_gmii_sel_id_table[] = {
+>>>>  		.compatible	= "ti,am654-phy-gmii-sel",
+>>>>  		.data		= &phy_gmii_sel_soc_am654,
+>>>>  	},
+>>>> +	{
+>>>> +		.compatible	= "ti,j7200-cpsw5g-phy-gmii-sel",
+>>>> +		.data		= &phy_gmii_sel_cpsw5g_soc_j7200,
+>>>> +	},
+>>>>  	{}
+>>>>  };
+>>>>  MODULE_DEVICE_TABLE(of, phy_gmii_sel_id_table);
+>>>> @@ -350,6 +381,7 @@ static int phy_gmii_sel_probe(struct platform_device *pdev)
+>>>>  	struct device_node *node = dev->of_node;
+>>>>  	const struct of_device_id *of_id;
+>>>>  	struct phy_gmii_sel_priv *priv;
+>>>> +	u32 main_ports = 1;
+>>>>  	int ret;
+>>>>  
+>>>>  	of_id = of_match_node(phy_gmii_sel_id_table, pdev->dev.of_node);
+>>>> @@ -363,6 +395,8 @@ static int phy_gmii_sel_probe(struct platform_device *pdev)
+>>>>  	priv->dev = &pdev->dev;
+>>>>  	priv->soc_data = of_id->data;
+>>>>  	priv->num_ports = priv->soc_data->num_ports;
+>>>> +	of_property_read_u32_array(node, "ti,qsgmii-main-ports", &main_ports, 1);
+>>>
+>>> of_property_read_u32_array can return error and you are not doing any sanity checks.
+>>> This should fail if "ti,qsgmii-main-ports" is not present or out of bounds if port mode is QSGMII.
+>>
+>> In the scenario that the user doesn't want to use QSGMII mode, the
+>> property will not be mentioned in the device tree. In the phy-gmii-sel
+>> driver, the call to of_property_read_u32_array() will return an error
+>> since the optional ti,qsgmii-main-ports property doesn't exist in the
+>> device tree. However, the main_ports variable has already been
+>> initialized to 1 and in case of Non-QSGMII modes, the main_ports
+>> variable will not even be used. If the mode is QSGMII and the user
+>> forgets to mention the ti,qsgmii-main-ports property in the device tree,
+>> then the default value of 1 is used.
+>>
+>> Since the of_property_read_u32_array() function doesn't overwrite
+>> main_ports variable if the ti,qsgmii-main-ports property is not present
+>> in the device tree, the value of main_ports will continue to remain 1
+>> even in the case where of_property_read_u32_array() errors out.
+>>
+>> In the other scenario where the user mentions a value that is smaller or
+>> greater than the allowed value for "ti,qsgmii-main-ports" property, I
+>> have added bindings to ensure that make dtbs_check fails. This will
+>> enforce the bounds on the property.
+> 
+> This I'm not sure about. dtbs_check is not always run at build time and we cannot
+> depend on that.
+
+If that's the case, then I will enforce a check in the phy-gmii-sel
+driver as well. Thank you for letting me know.
+
+> 
+>>
+>> For the above reasons, I think that the return value of the call to
+>> of_property_read_u32_array() can be safely ignored, and the value of
+>> main_ports doesn't need to be validated within the driver as it is being
+>> enforced in the bindings.
+>>
+>>>
+>>> How is this going to scale if you are going to have multiple main ports?
+>>> Let's say you increase it to 2 in the future. won't this break with -EOVERFLOW for older
+>>> DTs where you had only 1 u32.
+>>
+>> For multiple main ports (like CPSW9G for example), I had planned to add
+>> an IF-ELSE condition to check the compatible (I plan to add a new
+>> compatible for J721e which uses CPSW9G) and then call
+>> of_property_read_u32_array() with either 1 or 2 values to be read based
+>> on the compatible.
+> 
+> In that case please use of_property_read_u32 for the case where you know only there is only 1 value.
+
+Yes I will do that. Thank you for reviewing the patch.
+
+Regards,
+Siddharth.
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
