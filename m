@@ -4,63 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5949EECAAD1
-	for <linux-phy@archiver.kernel.org>; Tue, 30 Aug 2022 16:46:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CDAE8ECAAA1
+	for <linux-phy@archiver.kernel.org>; Tue, 30 Aug 2022 17:16:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QoYKyXpD9TOKmbv9BSTdHST6MIgK359uVy1P3/aZcas=; b=Zd97COYtT9hFz4
-	NtS8rHU0HVIYr0FbfpOJ53MuUd+EoHjDHBolG4QqFI3zo+14oBjwmCeXngP+RsB3r5YHqupP7gX1K
-	xazMg5jYi3uDhyCudSkucWE/qB38WJ/rtr9uRt9GhtfWKqXMWJduXOQb/gMBVIFeW6+432ulEn8+g
-	oOTXVNcDfaPdiZb7cylFZh1sy4Dh+aY2xx6sUW9gjAnYyM/VyRFmlBQZJVB7jBZqic7tmAPokzEnA
-	gauzk8qudALUNhSiLGgKX7wpBJ4Bfj37pf/Z5nabaGGL+v6g5G/49cW+bztkL/+R/RSIHMPzmGYSJ
-	rmgV6Ff0Q+2qjfUbQMXA==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:From:Cc:To:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=hnAo1RiLRNwRiArVjuU79ZcaNEcxeUQ30jKmkR2QNTk=; b=mh6CG5igDf3DbO
+	HN6VIyQZS2ORT3VjRVWMK0arGrwCZcOI3I2vg6Q/pxSvbpk81Xw+ex54NWujug0foouP8k6r++5oR
+	YbuhzOpQ8QKS8i1fMwyZD7xJe8fkZH2U+JnorV7+E/p8l5SCrjPMBes2UuZsfgMyG3/seN92NqQ4O
+	cCB9kNOFCG33jT5oB9FqlenD5ufGo7vN0n4bjrGIe7IP8xLnkZj4LQQzychXtmh4wMiWgrtqfIL1Y
+	L0Enx3mdbeTY2FiQEm7Ggt31UBkhWBUF+eXyKzyhIF8JX/DvnRnsw8k4B5te6CvTJBCr29WdAVplo
+	kiNZ0gVawMNZcKpyskbw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oT4Nw-000c36-Ph; Tue, 30 Aug 2022 16:46:44 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1oT4qd-000kdb-8M; Tue, 30 Aug 2022 17:16:23 +0000
+Received: from mail-wr1-x432.google.com ([2a00:1450:4864:20::432])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oT4Nu-000c16-EI
-	for linux-phy@lists.infradead.org; Tue, 30 Aug 2022 16:46:43 +0000
-Received: from drehscheibe.grey.stw.pengutronix.de ([2a0a:edc0:0:c01:1d::a2])
-	by metis.ext.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
-	(Exim 4.92)
-	(envelope-from <p.zabel@pengutronix.de>)
-	id 1oT4Nf-0002qT-EK; Tue, 30 Aug 2022 18:46:27 +0200
-Received: from [2a0a:edc0:0:900:1d::4e] (helo=lupine)
-	by drehscheibe.grey.stw.pengutronix.de with esmtp (Exim 4.94.2)
-	(envelope-from <p.zabel@pengutronix.de>)
-	id 1oT4Nd-002uAy-VN; Tue, 30 Aug 2022 18:46:25 +0200
-Received: from pza by lupine with local (Exim 4.94.2)
-	(envelope-from <p.zabel@pengutronix.de>)
-	id 1oT4Nd-000CJM-4G; Tue, 30 Aug 2022 18:46:25 +0200
-Message-ID: <569a5d63af850d4180546c2c25220cbb988846eb.camel@pengutronix.de>
-Subject: Re: [PATCH v5 4/7] reset: imx7: Fix the iMX8MP PCIe PHY PERST
- support
-From: Philipp Zabel <p.zabel@pengutronix.de>
-To: Richard Zhu <hongxing.zhu@nxp.com>, l.stach@pengutronix.de, 
-	bhelgaas@google.com, lorenzo.pieralisi@arm.com, robh@kernel.org, 
-	shawnguo@kernel.org, vkoul@kernel.org, alexander.stein@ew.tq-group.com, 
-	marex@denx.de, richard.leitner@linux.dev
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
-	linux-pci@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
-	linux-kernel@vger.kernel.org, kernel@pengutronix.de, linux-imx@nxp.com
-Date: Tue, 30 Aug 2022 18:46:25 +0200
-In-Reply-To: <1661845564-11373-5-git-send-email-hongxing.zhu@nxp.com>
-References: <1661845564-11373-1-git-send-email-hongxing.zhu@nxp.com>
-	 <1661845564-11373-5-git-send-email-hongxing.zhu@nxp.com>
-User-Agent: Evolution 3.38.3-1 
+	id 1oT4qa-000kaU-Gu; Tue, 30 Aug 2022 17:16:21 +0000
+Received: by mail-wr1-x432.google.com with SMTP id s7so221308wro.2;
+        Tue, 30 Aug 2022 10:16:19 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20210112;
+        h=content-transfer-encoding:subject:from:cc:to:content-language
+         :user-agent:mime-version:date:message-id:from:to:cc;
+        bh=aYslhMiebwj7+4K29cnHKNgB9pRwPd88BFhx8bY7ouM=;
+        b=QclIAbxg3S4UhOG46RtLaDjvT59WEIZr//Zghr1EHfcBN/aRLlnISCNhVjMJQW7PfI
+         9L+CnEdbVkf9c5jm8bDnwVxX+ku9D9HvbFjgzT/XfehjSCkUtR6ByNphMoiEXjWfcAMF
+         umLSP8zeW9Rm1tfjKLBhj4DDSGGPEnLi9tmTfQfNvVpV4qwmsrQ6GS57FhU+duRjTbWJ
+         Wda8DarGYonTi6v0XWlL1idY8otPBBSqtM9mIjknjqhyaywWE3C+aIidxN5yzy23KrnY
+         XRckdEAaKCxqz6azufVCUlztbKNUhkU0UOqaz5EPkhMDDZpFkOup7x+NUyRCYZzmXOA4
+         N6Wg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=content-transfer-encoding:subject:from:cc:to:content-language
+         :user-agent:mime-version:date:message-id:x-gm-message-state:from:to
+         :cc;
+        bh=aYslhMiebwj7+4K29cnHKNgB9pRwPd88BFhx8bY7ouM=;
+        b=vsvdI0/cjtDUvtamGi6kkmKo3P4uQSrjlbGy7lQmIURrqW/Ugcdun5OMPQAjKPBfjc
+         BhVABCAD/wmRdLXwP9UF6Myb+5GQ6H6AQ6FQnBhl5UDtsBJwH/lgrB/QStcAarTDsZGr
+         JYs8uDy0wLW5nuUZE0fI+cA5PuHtwwC81HGQPT0eAKeWBKyyxb0B8aRZU/LR6pUJr20a
+         tyeVfDQYF7LwrvIRCzORij61hMW2bViPZgwp0bK/BtIbUe7gFCVki3OOSZO8i9TgGoHX
+         bv3S/FOEK2U1N7drjD4F4gX7DP8UY6xGChUH0Huskp7+YE7wJWP8xuZLBAbz/66admE0
+         a2TQ==
+X-Gm-Message-State: ACgBeo3YGCSm0qn6nWsCmXYb8yFYroajrI65xjOXZp4RrUjEobhbxzi0
+	Ik0KRKcltM3UKGWOdYYxVKw=
+X-Google-Smtp-Source: AA6agR7yhSuJYjzN6H3sQo9VVl3vOnuDoEKHCd3iysGHC95CwGJ/+8NKMi2iGatotF3XCNwDqvbtYA==
+X-Received: by 2002:a05:6000:258:b0:226:dc6e:9ef8 with SMTP id m24-20020a056000025800b00226dc6e9ef8mr5167855wrz.215.1661879778047;
+        Tue, 30 Aug 2022 10:16:18 -0700 (PDT)
+Received: from ?IPV6:2a01:c23:c143:e900:5d45:6499:bc12:87fc? (dynamic-2a01-0c23-c143-e900-5d45-6499-bc12-87fc.c23.pool.telefonica.de. [2a01:c23:c143:e900:5d45:6499:bc12:87fc])
+        by smtp.googlemail.com with ESMTPSA id u1-20020a05600c440100b003a31ca9dfb6sm13463745wmn.32.2022.08.30.10.16.17
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 30 Aug 2022 10:16:17 -0700 (PDT)
+Message-ID: <9308a2a3-e828-bd9d-ab83-a68376aab5c3@gmail.com>
+Date: Tue, 30 Aug 2022 19:16:07 +0200
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 2a0a:edc0:0:c01:1d::a2
-X-SA-Exim-Mail-From: p.zabel@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de); SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-phy@lists.infradead.org
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) Gecko/20100101
+ Thunderbird/91.13.0
+Content-Language: en-US
+To: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Neil Armstrong <narmstrong@baylibre.com>, Kevin Hilman
+ <khilman@baylibre.com>, Jerome Brunet <jbrunet@baylibre.com>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Cc: linux-phy@lists.infradead.org,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>,
+ "open list:ARM/Amlogic Meson..." <linux-amlogic@lists.infradead.org>
+From: Heiner Kallweit <hkallweit1@gmail.com>
+Subject: [PATCH] phy: amlogic: use devm_clk_get_enabled() to simplify the code
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220830_094642_481766_BBCD7567 
-X-CRM114-Status: UNSURE (   9.44  )
+X-CRM114-CacheID: sfid-20220830_101620_595240_9EF2D960 
+X-CRM114-Status: UNSURE (   9.71  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -78,27 +94,78 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi,
+Simplify the code by using devm_clk_get_enabled().
 
-On Di, 2022-08-30 at 15:46 +0800, Richard Zhu wrote:
-> On i.MX7/iMX8MM/iMX8MQ, the initialized default value of PERST bit(BIT3)
-> of SRC_PCIEPHY_RCR is 1b'1.
-> But i.MX8MP has one inversed default value 1b'0 of PERST bit.
-> 
-> And the PERST bit should be kept 1b'1 after power and clocks are stable.
-> So fix the i.MX8MP PCIe PHY PERST support here.
-> 
-> Fixes: e08672c03981 ("reset: imx7: Add support for i.MX8MP SoC")
-> Signed-off-by: Richard Zhu <hongxing.zhu@nxp.com>
-> Reviewed-by: Philipp Zabel <p.zabel@pengutronix.de>
-> Tested-by: Marek Vasut <marex@denx.de>
-> Tested-by: Richard Leitner <richard.leitner@skidata.com>
-> Tested-by: Alexander Stein <alexander.stein@ew.tq-group.com>
+Signed-off-by: Heiner Kallweit <hkallweit1@gmail.com>
+---
+ .../phy/amlogic/phy-meson-g12a-usb3-pcie.c    | 32 ++++---------------
+ 1 file changed, 6 insertions(+), 26 deletions(-)
 
-I've applied this patch to the reset/fixes branch.
+diff --git a/drivers/phy/amlogic/phy-meson-g12a-usb3-pcie.c b/drivers/phy/amlogic/phy-meson-g12a-usb3-pcie.c
+index 54d65a6f0..d2a1da8d9 100644
+--- a/drivers/phy/amlogic/phy-meson-g12a-usb3-pcie.c
++++ b/drivers/phy/amlogic/phy-meson-g12a-usb3-pcie.c
+@@ -388,7 +388,6 @@ static int phy_g12a_usb3_pcie_probe(struct platform_device *pdev)
+ 	struct phy_g12a_usb3_pcie_priv *priv;
+ 	struct phy_provider *phy_provider;
+ 	void __iomem *base;
+-	int ret;
+ 
+ 	priv = devm_kzalloc(dev, sizeof(*priv), GFP_KERNEL);
+ 	if (!priv)
+@@ -408,43 +407,24 @@ static int phy_g12a_usb3_pcie_probe(struct platform_device *pdev)
+ 	if (IS_ERR(priv->regmap_cr))
+ 		return PTR_ERR(priv->regmap_cr);
+ 
+-	priv->clk_ref = devm_clk_get(dev, "ref_clk");
++	priv->clk_ref = devm_clk_get_enabled(dev, "ref_clk");
+ 	if (IS_ERR(priv->clk_ref))
+ 		return PTR_ERR(priv->clk_ref);
+ 
+-	ret = clk_prepare_enable(priv->clk_ref);
+-	if (ret)
+-		return ret;
+-
+ 	priv->reset = devm_reset_control_array_get_exclusive(dev);
+-	if (IS_ERR(priv->reset)) {
+-		ret = PTR_ERR(priv->reset);
+-		goto err_disable_clk_ref;
+-	}
++	if (IS_ERR(priv->reset))
++		return PTR_ERR(priv->reset);
+ 
+ 	priv->phy = devm_phy_create(dev, np, &phy_g12a_usb3_pcie_ops);
+-	if (IS_ERR(priv->phy)) {
+-		ret = PTR_ERR(priv->phy);
+-		dev_err_probe(dev, ret, "failed to create PHY\n");
+-		goto err_disable_clk_ref;
+-	}
++	if (IS_ERR(priv->phy))
++		return dev_err_probe(dev, PTR_ERR(priv->phy), "failed to create PHY\n");
+ 
+ 	phy_set_drvdata(priv->phy, priv);
+ 	dev_set_drvdata(dev, priv);
+ 
+ 	phy_provider = devm_of_phy_provider_register(dev,
+ 						     phy_g12a_usb3_pcie_xlate);
+-	if (IS_ERR(phy_provider)) {
+-		ret = PTR_ERR(phy_provider);
+-		goto err_disable_clk_ref;
+-	}
+-
+-	return 0;
+-
+-err_disable_clk_ref:
+-	clk_disable_unprepare(priv->clk_ref);
+-
+-	return ret;
++	return PTR_ERR_OR_ZERO(phy_provider);
+ }
+ 
+ static const struct of_device_id phy_g12a_usb3_pcie_of_match[] = {
+-- 
+2.37.2
 
-regards
-Philipp
 
 -- 
 linux-phy mailing list
