@@ -4,74 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3C0B4ECAAD8
-	for <linux-phy@archiver.kernel.org>; Tue, 30 Aug 2022 07:07:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5CF2BC0502C
+	for <linux-phy@archiver.kernel.org>; Tue, 30 Aug 2022 07:14:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Odh6YgD0nCUvzhsHE2rYJGAYFEVG7v3ZmjaYXzDcHcI=; b=q/N8GceMT61ucq
-	yDS04FADtJQMwIqj45MDxY7cs/dUjUoRectp8lkNoJDFb6n/6tzd3umy5hpCFiZAUgwPqGnbosbCk
-	Ykxc7n52RxghwyjkuZ57vpUwMyVRC+jBlbzWo8xKHYA3m6mclSbB+tG8WQBHzo57Z0RaCwD3qYyDs
-	5KfqyHuO3x/pJGlXa4ZQ1GWbg7EjadoSZ/mH3dbNXWtY7MFgTWv7x52UDrgNUtkwUmsL+bi4IdYi0
-	igwsZOMqL8KxIIc0vqQmmrAHlm4WW7RBfUpMZIBCvKLhxCtCTzgd5svFLxvts1ee0h8QESflPDIp0
-	Z7QE1p76OkDHv+OFotJQ==;
+	List-Owner; bh=0VLXx+6tKQqbh3DF9Er5guoT6uIrazbvtO4kymLTVok=; b=KM01jv2/lJ1j6g
+	0cIeY1Fvk1UA3p0GA8cmUsZ+CEhCEzVw2CA1AZUk03CEuKSJkvvUPWOf56eDQuHg7XhVMrD4dPk7/
+	TzRUtEsG1ATE/qekpZJvfPQgHPJSPPj/fhKiGMJzEi04/ET3sfVvcusORtKr+2CRFNfSNLvZPyc4Q
+	zxd7/Shr+fshcstOMenzIKPrs2waJ/HQLIjyPhwtaEEt0fKbGajyYrsE8e9jqpv12E0YwyJsEzB6e
+	u+XdyShtW61jTiy0NFA0PFa+GdUMXqfcidAQbflFZ1SnM14nVdlTtJZwsRJnqnEJbSQUy6aw+5pW3
+	Vw0oBcjdsfY3xB0g3pgw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oSvLG-00EfYd-4T; Tue, 30 Aug 2022 07:07:22 +0000
-Received: from ams.source.kernel.org ([145.40.68.75])
+	id 1oSvRn-00EiBs-Lh; Tue, 30 Aug 2022 07:14:07 +0000
+Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oSvL2-00EfPI-4M; Tue, 30 Aug 2022 07:07:09 +0000
+	id 1oSvRi-00Ei8y-BO
+	for linux-phy@lists.infradead.org; Tue, 30 Aug 2022 07:14:06 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id 757E9B815D2;
-	Tue, 30 Aug 2022 07:07:03 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7672EC433C1;
-	Tue, 30 Aug 2022 07:07:01 +0000 (UTC)
+	by ams.source.kernel.org (Postfix) with ESMTPS id BBDB4B816A3;
+	Tue, 30 Aug 2022 07:14:00 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9EAB7C433C1;
+	Tue, 30 Aug 2022 07:13:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1661843222;
-	bh=FMfNnM+I09AoWhN6ovBiEHCCKZyla04MjnYb5+HBX/w=;
+	s=k20201202; t=1661843639;
+	bh=N85wQvT76zz3IeyCl0LFoWyoONSRnwCg16u5Giob5IM=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=lYYXLxk559HkJfjNSMlOUQiSfxmgGkTvUoP5TmcQofe4V8571S7IOiT3f1TjQqmVC
-	 Ku6V/1aJq5Hc5UCnmkQD37kIleKUeuZVmTXaSJ+CpT2Ri/M0wF1arbetLW//AJL+ZI
-	 pFOtnDyS+pmha2UuFVX7wxLKtGZTGAKvrE7UB1GeDwO6/GA90m1TBYdZWL6S/kWoea
-	 DUXujmq8LXDmAhBjOvP3HQxYaF9o33MXsZ7Fbu9KItTzPmO3ATd69PiZkwnIxNO3r8
-	 RfyPzFfNgvGHBWVmJijLNoKyd5ygV+WwE/vH3xwWducmXNQsex03NR0OA/+4Vlx/7H
-	 vVG9imQyidGnQ==
-Date: Tue, 30 Aug 2022 12:36:58 +0530
+	b=Ljuu/lqVPmhIsQODLZgymO4xqsRnujIozpGfe+s6+cV+brJoAdMKZRymPpsOGWZ8+
+	 mH0/vmiD4szFDaMsDqO4cPQqu9YxHJM5aZ9CoggjWln8ZB90w+LO1iYxzrkaJqjQDB
+	 tvkU5iPUdiJyJyniax6oury3naT5kv4uJByTHNLVKp3hDgrcom5DOxNwA6Hd9BieJa
+	 ewUG4ValKx27i0hYI/8dLhLneKnXJ8mJngM8nKB0vLzk8d2J2kydUSQKbBd9j8O7nv
+	 jmEEOFJ0wD32AXH3Bv1mDSenEQ9PC41fHOCxR8WJ2VJ7XdTiYffciMVHvQNYnsjf8V
+	 EDn3H0kYVlycw==
+Date: Tue, 30 Aug 2022 12:43:54 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Rob Herring <robh@kernel.org>
-Cc: Kishon Vijay Abraham I <kishon@ti.com>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Ray Jui <rjui@broadcom.com>, Scott Branden <sbranden@broadcom.com>,
-	Broadcom internal kernel review list <bcm-kernel-feedback-list@broadcom.com>,
-	Maxime Coquelin <mcoquelin.stm32@gmail.com>,
-	Alexandre Torgue <alexandre.torgue@foss.st.com>,
-	Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <bjorn.andersson@linaro.org>,
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <bjorn@kryo.se>,
 	Konrad Dybcio <konrad.dybcio@somainline.org>,
-	Amelie Delaunay <amelie.delaunay@foss.st.com>,
-	Wesley Cheng <quic_wcheng@quicinc.com>,
-	Ray Jui <ray.jui@broadcom.com>,
-	Scott Branden <scott.branden@broadcom.com>,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
-	linux-stm32@st-md-mailman.stormreply.com,
-	linux-arm-msm@vger.kernel.org
-Subject: Re: [PATCH] dt-bindings: phy: Add missing
- (unevaluated|additional)Properties on child nodes
-Message-ID: <Yw23EkV/P3fuNI4C@matsya>
-References: <20220823145649.3118479-14-robh@kernel.org>
+	Rob Herring <robh+dt@kernel.org>, Jingoo Han <jingoohan1@gmail.com>,
+	Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
+	Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
+	Bjorn Helgaas <bhelgaas@google.com>,
+	Kishon Vijay Abraham I <kishon@ti.com>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Johan Hovold <johan@kernel.org>, linux-arm-msm@vger.kernel.org,
+	linux-pci@vger.kernel.org, linux-phy@lists.infradead.org
+Subject: Re: [PATCH v2 2/6] phy: qcom-qmp-pcie: split register tables into
+ primary and secondary part
+Message-ID: <Yw24sgVksGzvgr8Q@matsya>
+References: <20220825105044.636209-1-dmitry.baryshkov@linaro.org>
+ <20220825105044.636209-3-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20220823145649.3118479-14-robh@kernel.org>
+In-Reply-To: <20220825105044.636209-3-dmitry.baryshkov@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220830_000708_472736_9426F23A 
-X-CRM114-Status: UNSURE (   7.22  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220830_001402_785007_95550CF7 
+X-CRM114-Status: GOOD (  20.21  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,12 +83,79 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 23-08-22, 09:56, Rob Herring wrote:
-> In order to ensure only documented properties are present, node schemas
-> must have unevaluatedProperties or additionalProperties set to false
-> (typically).
+On 25-08-22, 13:50, Dmitry Baryshkov wrote:
+> SM8250 configuration tables are split into two parts: the common one and
+> the PHY-specific tables. Make this split more formal. Rather than having
+> a blind renamed copy of all QMP table fields, add separate struct
+> qmp_phy_cfg_tables and add two instances of this structure to the struct
+> qmp_phy_cfg. Later on this will be used to support different PHY modes
+> (RC vs EP).
 
-Applied, thanks
+This lgtm with once nit
+
+> 
+> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+> ---
+>  drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 141 +++++++++++++----------
+>  1 file changed, 83 insertions(+), 58 deletions(-)
+> 
+> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+> index c84846020272..60cbd2eae346 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+> @@ -1346,34 +1346,33 @@ static const struct qmp_phy_init_tbl sm8450_qmp_gen4x2_pcie_pcs_misc_tbl[] = {
+>  
+>  struct qmp_phy;
+>  
+> -/* struct qmp_phy_cfg - per-PHY initialization config */
+> -struct qmp_phy_cfg {
+> -	/* phy-type - PCIE/UFS/USB */
+> -	unsigned int type;
+> -	/* number of lanes provided by phy */
+> -	int nlanes;
+> -
+> -	/* Init sequence for PHY blocks - serdes, tx, rx, pcs */
+> +struct qmp_phy_cfg_tables {
+>  	const struct qmp_phy_init_tbl *serdes_tbl;
+>  	int serdes_tbl_num;
+> -	const struct qmp_phy_init_tbl *serdes_tbl_sec;
+> -	int serdes_tbl_num_sec;
+>  	const struct qmp_phy_init_tbl *tx_tbl;
+>  	int tx_tbl_num;
+> -	const struct qmp_phy_init_tbl *tx_tbl_sec;
+> -	int tx_tbl_num_sec;
+>  	const struct qmp_phy_init_tbl *rx_tbl;
+>  	int rx_tbl_num;
+> -	const struct qmp_phy_init_tbl *rx_tbl_sec;
+> -	int rx_tbl_num_sec;
+>  	const struct qmp_phy_init_tbl *pcs_tbl;
+>  	int pcs_tbl_num;
+> -	const struct qmp_phy_init_tbl *pcs_tbl_sec;
+> -	int pcs_tbl_num_sec;
+>  	const struct qmp_phy_init_tbl *pcs_misc_tbl;
+>  	int pcs_misc_tbl_num;
+> -	const struct qmp_phy_init_tbl *pcs_misc_tbl_sec;
+> -	int pcs_misc_tbl_num_sec;
+> +};
+> +
+> +/* struct qmp_phy_cfg - per-PHY initialization config */
+> +struct qmp_phy_cfg {
+> +	/* phy-type - PCIE/UFS/USB */
+> +	unsigned int type;
+> +	/* number of lanes provided by phy */
+> +	int nlanes;
+> +
+> +	/* Init sequence for PHY blocks - serdes, tx, rx, pcs */
+> +	struct qmp_phy_cfg_tables primary;
+> +	/*
+> +	 * Init sequence for PHY blocks, providing additional register
+> +	 * programming. Unless required it can be left omitted.
+> +	 */
+> +	struct qmp_phy_cfg_tables secondary;
+
+since this is optional but always defined, we would waste memory here,
+can we make this a pointer and initialize to null when secondary is not
+present
 
 -- 
 ~Vinod
