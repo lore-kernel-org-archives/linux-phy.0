@@ -4,85 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8DF37C0502A
-	for <linux-phy@archiver.kernel.org>; Tue, 30 Aug 2022 09:32:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 65550ECAAA1
+	for <linux-phy@archiver.kernel.org>; Tue, 30 Aug 2022 09:45:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=R7nIQG/GVvbMQ/RjooJFkBV9+L4qWg4ZvJe9IUvlV4c=; b=bdUGa7w+ahJsZd
-	tpQLJHpJZlkASlwIKiIBfmTC7LL3fVW9PKnQdIxqEAWYU0N8dLXEa2lA6+y0wbaoijjKO6TLuBRdz
-	z+WqYcMVi8dHJhVIyO95nxNqaWurKQN2GzLhmVhWQjlCRsEguCUwHNj0n+Dn4pyRxWTOEnSUTIDdA
-	F2XwetZx7X85vm+zCOMHfOZagWukzDhtii4e6/mO9no51s+eCYqo2RS/csYEE3zKnVBX/wi2UF8E+
-	7qfcCwU8x+8PU71m1HXfyg+GRWcapIE/VP7vWy10S6cEVQ4hj2cY0LfsWqsGWi54QxyGbf/OHy5sx
-	YXBRIN6r4CqfacdQK+8Q==;
+	List-Owner; bh=8OYRnp/AZDWKqv7eElLTQqDHqrWC2krotgTSSOawONg=; b=wLPFhwA+7om9sM
+	agkzIx7aAp+gsNAxZ94ZssH/D/GNsa6EHE0ASVCwdFE05jM8inVs01iERQT8YCdt7yoA+Hd678DO5
+	RHrNXwHqzgA5cMbypvXaTBifQPtGARVuB+aFXlvx90rh0wd7hrOzDC/69k3loLI2qQJGCINyuJpza
+	Eh1Q6Y1ltF4YS1602f7xhaJ+4d6Wi13kH04bsqNndgHq7lNtAAkv3t1v5M2+SCB3Zw8tpYZxND/PC
+	ODrrJ+aeLG02d8Gb+tptP/Dm4EWvwLJngckVBxj90v3gaawL4TAD5RUAgf0gYFBmU7Aia/W0jIenR
+	uSCIVlOFxaCYbGM12Jew==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oSxbV-00Fg1Q-1V; Tue, 30 Aug 2022 09:32:17 +0000
-Received: from mail-lf1-x12c.google.com ([2a00:1450:4864:20::12c])
+	id 1oSxo6-00FoNl-L2; Tue, 30 Aug 2022 09:45:18 +0000
+Received: from mail-lj1-x22f.google.com ([2a00:1450:4864:20::22f])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oSxbO-00FfwJ-6f
-	for linux-phy@lists.infradead.org; Tue, 30 Aug 2022 09:32:14 +0000
-Received: by mail-lf1-x12c.google.com with SMTP id p7so3565715lfu.3
-        for <linux-phy@lists.infradead.org>; Tue, 30 Aug 2022 02:32:07 -0700 (PDT)
+	id 1oSxnt-00FoFW-Nm
+	for linux-phy@lists.infradead.org; Tue, 30 Aug 2022 09:45:07 +0000
+Received: by mail-lj1-x22f.google.com with SMTP id z20so10766330ljq.3
+        for <linux-phy@lists.infradead.org>; Tue, 30 Aug 2022 02:45:03 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+        h=content-transfer-encoding:in-reply-to:from:references:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc;
-        bh=DI8R5uBfUCPdaITMxiTJ7CTu8pb9+geNomuQXiCpnr0=;
-        b=EI+kX0MIh7dM75jIWk5kzV+psrJX2vqVdAV3nYBd368tgD9H4/7BQNqg/NqSfxwQWw
-         NO52QwNk1KHMnuXWgM0aY13g4hlfug1T2ig/krnVYsA0T66MxhlBMCvkhCqUvOw0ywqG
-         bDzuxncaHbd25Zpu1lkX5ZY4cnBXfS++ss7GhLx+Op2yAf+vBD2s+ol8DTusmln4r+mu
-         NrxlZ0tW6emLdtJPTFReevrJghIz6LpvusVer4pP5dZAaQMXsRtDPa7KmmUjle9Dp0l+
-         MpNw5gCu8Qp2Ygqg1i+tGXvAizICUojIuJyW0lNihDW/8Yv7cNv0W5UqnwtWTZDkuaSl
-         BCPw==
+        bh=N4LheGfogZwAoz4Rv/ngvYZ5qgXotWdDTgd++DbmjE4=;
+        b=yMR844Oy9Ze/yRFGOhG2S6WZEqMvDZZHFlHeR7wdxfjeHJF+5QfyF0dGuHL6yp4fOv
+         rdvMTpaNfQOfuWbxl/n8XZtzDwbHrmQL4gAMgF5UsOQAskIfHOw20OGjIwCE9Fa+DlHK
+         DeKJg7zSZ220l4BZbyyAbdYz/9b/pIjRCMPTRWI0NHt9eTAOlnRwcf52BjFzEi6noU2L
+         9cF1NkvS72kEfqAO9URotrJ4ea9X7yvpIEzevtnnb0t0h+vMwo6wSKE8uw8s5BLFUCEn
+         p91Bb0oubgM6vyWgbqwV1uY9oeSlN2se9vAVKn5rjiFcdjWyRWsxxsNLQKnutsIFuPBI
+         qewQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+        h=content-transfer-encoding:in-reply-to:from:references:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc;
-        bh=DI8R5uBfUCPdaITMxiTJ7CTu8pb9+geNomuQXiCpnr0=;
-        b=NU1HNCAO91sitYzlUbuJZYAP4lwYgBy8JzeQFEz8T0PV6mCPtvAoi7n847Yy00qhD8
-         1LuJV2W2QoDp0tc80JCPaVOYDKW2ee50u+Nrf8UwSQSscAYP7ck+zTsai1KL+DBoqIAV
-         jW9VExDLo1MvVfpl25Ynj4GDpwo/0U0vZEpnEOp3lHS4ZJes/jikbn0DyQCJCCYfzAZ7
-         Qi4hb5x2ACq2DHTaH89LtF3wGKDzV0KrLYfRUhfzRJKQr12j1HWQdGP3o/gBCRdP0Yj4
-         LJ6ta/iUmk7LmMMRc2jDQFNAYAohRmTJy4fXoucNpqJW2JvYMPbjyz0j4W7SDfc6DKgN
-         hIdg==
-X-Gm-Message-State: ACgBeo0zMmXDlv0xyRk68tsIni9gultxZtnJihSsT7dINBcgCaqaE3R5
-	1HbQ5xYuBBdSsKrSK6yz7gJpUg==
-X-Google-Smtp-Source: AA6agR5pvdm6ppGDodlxvczV0eI5jT2RR3G29/7S9uRukhMpYXw8vrXirlsmxe2a8LQqnM76clooew==
-X-Received: by 2002:a05:6512:261b:b0:492:cd8a:e1c with SMTP id bt27-20020a056512261b00b00492cd8a0e1cmr7173154lfb.528.1661851925857;
-        Tue, 30 Aug 2022 02:32:05 -0700 (PDT)
-Received: from [192.168.1.211] ([37.153.55.125])
-        by smtp.gmail.com with ESMTPSA id a28-20020a2eb55c000000b0025e2c5a12b6sm828961ljn.129.2022.08.30.02.32.05
+        bh=N4LheGfogZwAoz4Rv/ngvYZ5qgXotWdDTgd++DbmjE4=;
+        b=TDUUt6sAXBCZt1ZDPJkzkMFcQ/e88Wo0YzjLbTaSCRuj/57AtS8iF4ygZ/6viXd+2P
+         +8SpUIA4pUxcuX41PO3FD2JIkWxpJ5aB2cqZ7K87W0USd08iob1eTf2ZMyfF062neYBi
+         lb/eXc2GnPjSjIIMojqzJK761t+bMm3WKvpUYTy5l9a9b4js9ILVfSQ10GgoiyDWENfT
+         48wYpNkWxyHGQzHxYGuTeAMdmaXwlTfrcjaPef1Hw9C89KYpcWXeWAvmloVAleoh9sKs
+         hS4E6/RCQP1Kf5fFJyntBnZh7xwwZcEL+9tKGpwSEuxHWUqmT1Ue73SEuI8DqryS7UqD
+         wwxA==
+X-Gm-Message-State: ACgBeo2QZdzRIK8flXy1+jSF2sztFRrmq+u7Pbc80k6c1vxDVZVtnmj6
+	UWzIi8QHSqqKNebblcOixtKO8Q==
+X-Google-Smtp-Source: AA6agR4jn6kVx3JsJKuIGOtqSpsDxFV6XeVfQe6nNwKELDQnsJHDnsIDeT+6VZnDMYThKJJoXi2+FA==
+X-Received: by 2002:a05:651c:88e:b0:261:b5e5:8622 with SMTP id d14-20020a05651c088e00b00261b5e58622mr6375100ljq.99.1661852701925;
+        Tue, 30 Aug 2022 02:45:01 -0700 (PDT)
+Received: from [192.168.28.124] (balticom-73-99-134.balticom.lv. [109.73.99.134])
+        by smtp.gmail.com with ESMTPSA id f10-20020a056512360a00b004946e72711bsm552290lfs.76.2022.08.30.02.44.59
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 30 Aug 2022 02:32:05 -0700 (PDT)
-Message-ID: <aeec2729-e610-f266-f336-847675cf85ec@linaro.org>
-Date: Tue, 30 Aug 2022 12:32:04 +0300
+        Tue, 30 Aug 2022 02:45:00 -0700 (PDT)
+Message-ID: <9bbce65a-b955-cc76-ebba-266675c95964@linaro.org>
+Date: Tue, 30 Aug 2022 12:44:59 +0300
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.1.2
-Subject: Re: [PATCH v3 00/30] phy: qcom,qmp: fix dt-bindings and deprecate
- lane suffix
-Content-Language: en-GB
-To: Johan Hovold <johan@kernel.org>, Vinod Koul <vkoul@kernel.org>
-Cc: Johan Hovold <johan+linaro@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Andy Gross <agross@kernel.org>, Bjorn Andersson
- <bjorn.andersson@linaro.org>, Konrad Dybcio <konrad.dybcio@somainline.org>,
- Kishon Vijay Abraham I <kishon@ti.com>, linux-arm-msm@vger.kernel.org,
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
+ Thunderbird/91.13.0
+Subject: Re: [PATCH v1 1/2] doc: dt-binding: mxs-usb-phy: fix
+ fsl,tx-cal-45-dn-ohms max and min value
+Content-Language: en-US
+To: Frank Li <Frank.Li@nxp.com>, kishon@ti.com, vkoul@kernel.org,
+ robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org, shawnguo@kernel.org,
+ s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
+ linux-imx@nxp.com, balbi@kernel.org, gregkh@linuxfoundation.org,
  linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org
-References: <20220714124333.27643-1-johan+linaro@kernel.org>
- <Yw2a44l9a6zz5qTJ@matsya> <Yw21t1SUGjCcUuuw@hovoldconsulting.com>
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-In-Reply-To: <Yw21t1SUGjCcUuuw@hovoldconsulting.com>
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-usb@vger.kernel.org, imx@lists.linux.dev
+References: <20220829153124.2791210-1-Frank.Li@nxp.com>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <20220829153124.2791210-1-Frank.Li@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220830_023212_464506_9C6A27D4 
-X-CRM114-Status: GOOD (  16.02  )
+X-CRM114-CacheID: sfid-20220830_024505_873701_A6CE3E3B 
+X-CRM114-Status: UNSURE (   7.20  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,41 +93,31 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 30/08/2022 10:01, Johan Hovold wrote:
-> On Tue, Aug 30, 2022 at 10:36:43AM +0530, Vinod Koul wrote:
->> On 14-07-22, 14:43, Johan Hovold wrote:
-
-[skipped]
-
->>> The final patches add support for the updated binding to the (recently
->>> split up) PHY drivers. Included is also a related combo PHY cleanup.
->>
->> This fails at patch 2 for me on v6.0-rc1, please rebase and resend
+On 29/08/2022 18:31, Frank Li wrote:
+> According to spec:
+> 	0000 +19.95%
+> 	....
+> 	1111 -21.68%
 > 
-> Are you sure you haven't applied anything to your local tree that causes
-> this?
-
-When doing the QMP split, we ended up in a similar situation if I 
-remember correctly. Most probably the easiest way is to provide a branch 
-for Vinod to pull in addition to the patches being sent to ML.
-
-> I just tried fetching the v3 series from lore and it applies just fine
-> on top of 6.0-rc1.
+> 45 * (1 + 19.95%) = 53.9775
+> 45 * (1 - 21.68%) = 35.244
 > 
-> Note that if you've added a new compatible string locally, the second
-> patch which sorts the compatible strings is likely to fail to apply.
+> Chanege fsl,tx-cal-45-dn-ohms and fsl,tx-cal-45-dp-ohms range to [35-54]
+> from [30-55]
 > 
-> Johan
+> Signed-off-by: Frank Li <Frank.Li@nxp.com>
 
--- 
-With best wishes
-Dmitry
 
+Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+
+
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
