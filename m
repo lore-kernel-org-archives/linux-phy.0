@@ -4,47 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B7D5BC6FA96
-	for <linux-phy@archiver.kernel.org>; Tue, 30 Aug 2022 11:30:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 07133C6FA85
+	for <linux-phy@archiver.kernel.org>; Tue, 30 Aug 2022 11:30:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=S0xb1vJ0YiMuNnl9nYcSu1krq6ohqQHR+NcLWbyWGR0=; b=vXtW5bUt3qxoQ2
-	QI8ATMFZuTqk3tcml557pECcLI2wXrFGKTSdIqyITHKsfmQDKjDA6iX0ceMJ364T7ICkte7nXnfmJ
-	6wGRtzafTu4SamxCwnz/+WdETSmK1DdiDz1E0YuLs4sHxz7Zmbwo14QWh0l98ZCyiylx1YuoJ4jpR
-	ky43ed7KUgrhr3XOEiir8dZHYlBTdIdQFlGNRuq7s1B+Wx9aaVRxDDHw8vA1LePQ8shy1DVYSilWC
-	cJ7zbqFtzac+byN+K8N8RdL1nZJsnblLB+PcYVB0ezANKkBmQbeHEndXm1apgOtRoZwrz7pNdFrQ4
-	NwTr4dOvZ7YWuu+dQw1w==;
+	List-Owner; bh=Ok8f4abRDTlIMP+vEl7gOAKhEBwGGDQq8LD7wTcMKt8=; b=glKFXfrAokj/ly
+	Lti8Z0oL2u7MPW9rmreS1n0jpVU5c6ewXLn45B5O+ZAGeO16Y4nQiFpeCze/dSY5G3pEqX6+XTz85
+	TYJWcCORAVxujKnLrYcWtLkygy3oEHV6dlSOaS6bDmWZ/GBzKR/mtWvuh+PjnfNXNeiCndrk4N15c
+	giJSzYHh7TS8wbQpmIdboZ0bpVE7wWQ1pJOlNWFgcAcLNjRqm8oh5HovqTOi/evXvo7nsoWEA292y
+	epkum4KYYnCIqQ1b3NbCk1/4Eolqu++b66fLeQJp5qg2CT2zEts1aNbWw1L6l5UD+nKhGw721u616
+	3LyKZ9HgUN9nP5Z+pOGw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oSzRq-00GZm4-1f; Tue, 30 Aug 2022 11:30:26 +0000
-Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
+	id 1oSzRq-00GZmG-87; Tue, 30 Aug 2022 11:30:26 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oSzRb-00GZeZ-Cf
-	for linux-phy@lists.infradead.org; Tue, 30 Aug 2022 11:30:14 +0000
+	id 1oSzRd-00GZfk-Qj
+	for linux-phy@bombadil.infradead.org; Tue, 30 Aug 2022 11:30:14 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
+	:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
+	Content-Type:Content-ID:Content-Description;
+	bh=OQrjISGuDbFopAVj07Ec356ykyfqmHIvQnViKNgnFp8=; b=Ob/UltogWR+CW+hB8gB1EyKBby
+	z/HBxvtm2WJiPKtDm0fI4oxxbwrWLXETAPscpOvf3CKkwfvU0KdQBlEVCh82dYlQoVI+SVZT7LrbN
+	iTXhgR0EDnuROLONUAAqi4YkQbaSEz4Sr2eRDiLCzwsA/TniKM9/UMe35nziwc4dmSSryX+hTNZ7i
+	S+ZtGbwXl2CBhXv8bqp6KmL03b+wOxOlb/suV5fVRtZ/QO2UwbQwJzjR5kGiThBQuo+YdmbwbAOqG
+	DWtsyLRGYkyDI4cs7byBtMsbCXXTJzrbwdkggj4zZ1GWwbJLYv6h04xJOeH5H1Omr9TDzxBJSZthM
+	+KJgmVhg==;
+Received: from dfw.source.kernel.org ([139.178.84.217])
+	by desiato.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
+	id 1oSzRa-007ozi-6L
+	for linux-phy@lists.infradead.org; Tue, 30 Aug 2022 11:30:12 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id BB381B81A68;
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 813256158D;
 	Tue, 30 Aug 2022 11:30:04 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 722C5C433C1;
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 68032C4FF99;
 	Tue, 30 Aug 2022 11:30:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1661859001;
-	bh=UQQZwGZMsAgB6wntjPMvyAwdQR7zbV03fNjOm2r8HlU=;
+	bh=0TMEX2sIYulgXflGHjy1lg+hNS213AhvGg7gZvdhdK0=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=st9qQ5KvmdF62rXhskVV3dkakgNz8dtSIhCAltnPj9MW+DQPoW/tWOW2nRvVP2Vcx
-	 3ZrtXos7R/zzQV/eHTQMlQ693gX7ufLkdDxCZfqT9qMHn3Jc1r7VH3fhhE0MzxnoNc
-	 D7h9Mqkx7Fr8vH4CHSYUexGFon/1JBhR5QvXXNteNpHagF7SXr/Kf0U+yjtioBJjEq
-	 g6sPBZLRQ6TQRSI9q2FNRrA4gmkH2CeZgXouoBNaYRkz+vDWKirIuvBHEWZ/N1HQHI
-	 Q86cPk+OMMO1kuR8g0f/itUx4+awbuDcuLUR/TYsf3LSu2dr7/jsuZTIrZCe7p5WMX
-	 V20WWcmZ3VGFA==
+	b=QlwwcZvbzSnHPt5GLaveoqgzXQdIKx7CjUo8RT+d6EpG+pzGxYOC39c4E6sUDoXS1
+	 p7osxszfyApQhQZd2RHPcaH+Lu1rsPFiNjFu0/ncMMTrsbDGhaL1zsMNP15xsvKOIb
+	 fNRHORX40QmGtKtQnkbB/i0vpcnAP4FSL/iPMyVoV6X3yNF9kqun36K/IW2TJhLtNZ
+	 9Q1Lwz9jUyQ3isuj5H7Yd7eDbxyhmtmND4Sl3meggsAoKhRQ8Vpgu9n5iO8NnJKaEU
+	 6flzShnanw6M6LsI3KQNB6KgwtfPVnNzHi7vGe27GfpADHSVH6xuuaefDwuP7/JNDQ
+	 7bQgd2LhihkkA==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1oSzRP-000117-82; Tue, 30 Aug 2022 13:29:59 +0200
+	id 1oSzRP-000114-5g; Tue, 30 Aug 2022 13:29:59 +0200
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>,
 	Rob Herring <robh+dt@kernel.org>,
@@ -60,16 +74,16 @@ Cc: Andy Gross <agross@kernel.org>,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>,
 	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Subject: [PATCH v4 27/30] phy: qcom-qmp-combo: drop pipe clock lane suffix
-Date: Tue, 30 Aug 2022 13:29:20 +0200
-Message-Id: <20220830112923.3725-28-johan+linaro@kernel.org>
+Subject: [PATCH v4 26/30] phy: qcom-qmp-combo: drop unused lane reset
+Date: Tue, 30 Aug 2022 13:29:19 +0200
+Message-Id: <20220830112923.3725-27-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.35.1
 In-Reply-To: <20220830112923.3725-1-johan+linaro@kernel.org>
 References: <20220830112923.3725-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220830_043012_321065_EE72B8A1 
-X-CRM114-Status: GOOD (  13.86  )
+X-CRM114-CacheID: sfid-20220830_123010_529750_6993A685 
+X-CRM114-Status: GOOD (  10.57  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,41 +100,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The pipe clock is defined in the "lane" node so there's no need to keep
-adding a redundant lane-number suffix to the clock name.
+Drop the unused lane reset pointer which isn't used by any combo PHY.
 
-Update driver to support the new binding where the pipe clock name has
-been deprecated by instead requesting the clock by index.
-
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 4 +---
- 1 file changed, 1 insertion(+), 3 deletions(-)
+ drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 2 --
+ 1 file changed, 2 deletions(-)
 
 diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-index 41e7548ef0b5..d200cd5ca4fa 100644
+index d01053c64d82..41e7548ef0b5 100644
 --- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
 +++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-@@ -2723,7 +2723,6 @@ int qcom_qmp_phy_combo_create(struct device *dev, struct device_node *np, int id
- 	struct phy *generic_phy;
- 	struct qmp_phy *qphy;
- 	const struct phy_ops *ops;
--	char prop_name[MAX_PROP_NAME];
- 	int ret;
- 
- 	qphy = devm_kzalloc(dev, sizeof(*qphy), GFP_KERNEL);
-@@ -2789,8 +2788,7 @@ int qcom_qmp_phy_combo_create(struct device *dev, struct device_node *np, int id
- 	 * Otherwise, we initialize pipe clock to NULL for
- 	 * all phys that don't need this.
- 	 */
--	snprintf(prop_name, sizeof(prop_name), "pipe%d", id);
--	qphy->pipe_clk = devm_get_clk_from_child(dev, np, prop_name);
-+	qphy->pipe_clk = devm_get_clk_from_child(dev, np, NULL);
- 	if (IS_ERR(qphy->pipe_clk)) {
- 		if (cfg->type == PHY_TYPE_USB3) {
- 			ret = PTR_ERR(qphy->pipe_clk);
+@@ -926,7 +926,6 @@ struct qmp_phy_combo_cfg {
+  * @pipe_clk: pipe clock
+  * @index: lane index
+  * @qmp: QMP phy to which this lane belongs
+- * @lane_rst: lane's reset controller
+  * @mode: current PHY mode
+  * @dp_aux_cfg: Display port aux config
+  * @dp_opts: Display port optional config
+@@ -946,7 +945,6 @@ struct qmp_phy {
+ 	struct clk *pipe_clk;
+ 	unsigned int index;
+ 	struct qcom_qmp *qmp;
+-	struct reset_control *lane_rst;
+ 	enum phy_mode mode;
+ 	unsigned int dp_aux_cfg;
+ 	struct phy_configure_opts_dp dp_opts;
 -- 
 2.35.1
 
