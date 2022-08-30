@@ -4,61 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 14906ECAAA1
-	for <linux-phy@archiver.kernel.org>; Tue, 30 Aug 2022 07:51:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D0FCBECAAA1
+	for <linux-phy@archiver.kernel.org>; Tue, 30 Aug 2022 07:51:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=06kfH/kATwxBbw+7rpXV7o/IyCyFHeNASTuRYkyL2YQ=; b=T3zw1SOgKdOy9p
-	5xIPcog9I1eRoofzcp/7Y6/P5FGBgZPqNPa/cqLGqQ8FWHF8EKkASCV0LW9sSHr+X0/fgRwLHi/jz
-	bje08nP5IDCK/jhsM2UNKzGeJfk6Lzn5pD/melQLncKW+hfXkL3URavooVEOTkOexwmr27TZ0XWWi
-	J/mMn4B72Wx2OjhPP/psc1tHhLdFXgp+38gIG3BxT21/2ZpmtNc9Nq0gR+gLPOIiL9CLIm+hmPpVh
-	nCJ1UdsEYzwDA4PfQE0pJF6Nqe3xpNeEXLp1EXcXQ5wa5ttEN8SuYFarsHaEnSAAUpgENaj2OcfFP
-	BGcHWUimBBL5rPkooymA==;
+	List-Owner; bh=J3yRQIORtmB8iOvjsU9f4wNLhvbvtSFWvq/EDuFpFmE=; b=UiW8dbo6cdSNJi
+	8rLntWfJu7VUaJcSe5rxtfF0P7sAUz0ACvP5Vm1R8+AnRYnVcAdnY+IXSfAQLp3fWgVI4pMYeDIji
+	aDvhl3oj8vomwc2ZAyWX7TWeDvJ28mg/9HAyb1Rr3QZw1Clze1w+G0Q6ieKT0Ddx9ITibOcOEEg5e
+	pqu08suVPa+l2bsE0FzEDXNQTgtJ7urw1kPuNWYFnNmiFIXOkchKdNd+uKO1sbCPPYb/glHFpe0Js
+	wIvMaw92Gr/WTemFc3qhH1ISYxT99FWAeJWHKIJvHiQkEDcFfaCka95wj90lVhrrIQuoPOn+ZF01D
+	M67aF/W7kNxUD0Yw8UDg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oSw1p-00EvMQ-A5; Tue, 30 Aug 2022 07:51:21 +0000
-Received: from ams.source.kernel.org ([145.40.68.75])
+	id 1oSw1v-00EvOl-Jo; Tue, 30 Aug 2022 07:51:27 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oSvtc-00ErDW-CS; Tue, 30 Aug 2022 07:42:53 +0000
+	id 1oSvuN-00Erad-LL
+	for linux-phy@lists.infradead.org; Tue, 30 Aug 2022 07:43:43 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id B8BFFB8168C;
-	Tue, 30 Aug 2022 07:42:50 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id F19A7C433D7;
-	Tue, 30 Aug 2022 07:42:48 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 3F467614E2;
+	Tue, 30 Aug 2022 07:43:38 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A02A0C433D6;
+	Tue, 30 Aug 2022 07:43:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1661845369;
-	bh=BMBvko2lfLuUynD6bKyHh16ykDyUWP4kyBVHqHXPTXY=;
+	s=k20201202; t=1661845417;
+	bh=t7gu4/oIPvmcwrAV72F7qnFd+HBxiVGcKDkFtwBuVDo=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=j3zOlu2wS/PddnNL68ktDmKe6mgTXTWbgzIVh0uC8sOeSMrfvmtx81RJzCzGzr6a6
-	 V1lpNp92M/7Zf/AloaTsp718XvDrg02V9Oh/feWSqq0LnaSpkkOV7swpamjNOpuAzU
-	 IsMLvMAvsTabOfWM6tLPBu8a7TvcAAdYIbGArIyHnKxpWAuRNpv+d60BKWrLWZ9/o8
-	 04aiw8qEUq93XRfi4b6h8HDOwTNbsLl0E4J1bvpfFMO0PBA3zUzVG/1xEfQ0E0MzIQ
-	 9HiwtxNs4Q2Lb6Jl9wB2xnHKpN/0t8Ui6n38Fc1Ylq394dD9Dm+yYAOE5084RwQ2oJ
-	 LTvQxoMTws5Mw==
-Date: Tue, 30 Aug 2022 13:12:44 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Wolfram Sang <wsa+renesas@sang-engineering.com>
-Cc: linux-kernel@vger.kernel.org, Kishon Vijay Abraham I <kishon@ti.com>,
-	Chen-Yu Tsai <wens@csie.org>,
-	Jernej Skrabec <jernej.skrabec@gmail.com>,
-	Samuel Holland <samuel@sholland.org>, linux-phy@lists.infradead.org,
-	linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev
-Subject: Re: [PATCH] phy: move from strlcpy with unused retval to strscpy
-Message-ID: <Yw2/dETpIoeSE8iR@matsya>
-References: <20220818210056.7205-1-wsa+renesas@sang-engineering.com>
+	b=thQHoVSONnZuZqFphh5UfEv6fq0LbvdpM0wlnA16jPxre778Ix64aZDhHUWh6MP7G
+	 x+uAbOO6/NSspnCZpYq2fVsMO7EuCGfGpeD6aNTZg748eCpkUMW8UgFr3QMp5C2g5U
+	 ZHB6U/QGda9ybpgAaT/tIDxvb6XfyShoLlf19FHqifQTRXB0ARDPlI9PjepKlto/7H
+	 mKy1iiq44FGkoG54EvFe3Ga93pu5r5C21+t4SUFuTFR2pIZTIZsDPfKBh78VPCpCee
+	 4KOPxs3fJ5vDYxFTIsusq/mSLqHT3gHXMnd84hfIc0Fd+RD9B2csoI9qR0A3ZrOyOS
+	 3ptOhmOFvzl1w==
+Received: from johan by xi.lan with local (Exim 4.94.2)
+	(envelope-from <johan@kernel.org>)
+	id 1oSvuT-0002u7-De; Tue, 30 Aug 2022 09:43:46 +0200
+Date: Tue, 30 Aug 2022 09:43:45 +0200
+From: Johan Hovold <johan@kernel.org>
+To: Vinod Koul <vkoul@kernel.org>
+Cc: Johan Hovold <johan+linaro@kernel.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <bjorn.andersson@linaro.org>,
+	Konrad Dybcio <konrad.dybcio@somainline.org>,
+	Kishon Vijay Abraham I <kishon@ti.com>,
+	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v3 00/30] phy: qcom,qmp: fix dt-bindings and deprecate
+ lane suffix
+Message-ID: <Yw2/sVyjofEM+61o@hovoldconsulting.com>
+References: <20220714124333.27643-1-johan+linaro@kernel.org>
+ <Yw2a44l9a6zz5qTJ@matsya>
+ <Yw21t1SUGjCcUuuw@hovoldconsulting.com>
+ <Yw28FdhYSv4x0a6B@matsya>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20220818210056.7205-1-wsa+renesas@sang-engineering.com>
+In-Reply-To: <Yw28FdhYSv4x0a6B@matsya>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220830_004252_671669_49935CC9 
-X-CRM114-Status: UNSURE (   8.73  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220830_004339_831741_DE0ED7F8 
+X-CRM114-Status: GOOD (  30.11  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,15 +87,63 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 18-08-22, 23:00, Wolfram Sang wrote:
-> Follow the advice of the below link and prefer 'strscpy' in this
-> subsystem. Conversion is 1:1 because the return value is not used.
-> Generated by a coccinelle script.
+On Tue, Aug 30, 2022 at 12:58:21PM +0530, Vinod Koul wrote:
+> On 30-08-22, 09:01, Johan Hovold wrote:
+> > On Tue, Aug 30, 2022 at 10:36:43AM +0530, Vinod Koul wrote:
+> > > On 14-07-22, 14:43, Johan Hovold wrote:
+> > > > When adding support for SC8280XP to the QMP PHY driver I noticed that
+> > > > the PHY provider child node was not described by the current DT schema.
+> > > > 
+> > > > The SC8280XP PHYs also need a second fixed-divider PIPE clock
+> > > > ("pipediv2") and I didn't want to have to add a bogus "lane" suffix to
+> > > > the clock name just to match the current "pipe0" name so I decided to
+> > > > deprecate the unnecessary suffix in the current binding instead.
+> > > > 
+> > > > To be able to add the missing child-node schema and handle device
+> > > > specifics like additional PIPE clocks, it quickly became obvious that
+> > > > the binding needs to be split up.
+> > > > 
+> > > > This series clean up and fixes some issue with the current schema before
+> > > > splitting it up in separate schemas for PCIe, UFS and USB and adding
+> > > > missing parts like the child PHY provider nodes.
+> > > > 
+> > > > The MSM8996 PCIe PHY gets its own schema as this is the only non-combo
+> > > > PHY that actually provides more than one PHY per IP block. Note that the
+> > > > "lane" suffix is still unnecessary and misleading.
+> > > > 
+> > > > The final patches add support for the updated binding to the (recently
+> > > > split up) PHY drivers. Included is also a related combo PHY cleanup.
+> > > 
+> > > This fails at patch 2 for me on v6.0-rc1, please rebase and resend
+> > 
+> > Are you sure you haven't applied anything to your local tree that causes
+> > this?
+> 
+> Pretty sure :-)
 
-Applied, thanks
+Hmm. But nothing had changed in 6.0-rc1 and it still applies on a clean
+6.0-rc1 as expected here.
 
--- 
-~Vinod
+Would you mind trying again?
+
+	git checkout -b tmp-branch v6.0-rc1
+	b4 am 20220714124333.27643-1-johan+linaro@kernel.org
+	git am ./v3_20220714_johan_linaro_phy_qcom_qmp_fix_dt_bindings_and_deprecate_lane_suffix.mbx
+
+> > I just tried fetching the v3 series from lore and it applies just fine
+> > on top of 6.0-rc1.
+> > 
+> > Note that if you've added a new compatible string locally, the second
+> > patch which sorts the compatible strings is likely to fail to apply.
+> 
+> At that time no, now I think I have patch or so ... Tree should be
+> pushed in a bit, you can check
+
+Which tree would that be? The linux-phy tree next branch is still at -rc1:
+
+	https://git.kernel.org/pub/scm/linux/kernel/git/phy/linux-phy.git/
+
+Johan
 
 -- 
 linux-phy mailing list
