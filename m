@@ -4,62 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6D41AECAAA1
-	for <linux-phy@archiver.kernel.org>; Tue, 30 Aug 2022 07:39:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 14906ECAAA1
+	for <linux-phy@archiver.kernel.org>; Tue, 30 Aug 2022 07:51:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mNEvNU5qnaKb5Nk38zr3G684jy9/bqKq7SYtXotNfsg=; b=Tr6Rr5Lut8Xs2r
-	xJgEKVj0U+9DwUduKPHj0w592R3HcdHFGVAGgCbzsFZ8Wg2bBSjrVzvDusavlrUqHUklkv5EBDV9n
-	jDVnP9vkmNY/UlszY0w9mER8qzflVyZuG2IyxLuQdFKYFSJmBNVJ5CHJ9YO7zfDwreyhcWAdDc0Jc
-	3L/dT2Te1m1Dfy9da2NBxVZFScNYeVw1gA42teuj0H9SEeNcwXMOFCcO7VHAtNzrXJadD1sa2pZX3
-	ZnDE6yVFMu4QIBN7Gqw5XlcM7Ee9GlVAZM0egCRl04sFNDafMLeE+/f9inmKCXhOm6vTCj2c1VAAs
-	0k+oP0bqf65EpC6D14Bw==;
+	List-Owner; bh=06kfH/kATwxBbw+7rpXV7o/IyCyFHeNASTuRYkyL2YQ=; b=T3zw1SOgKdOy9p
+	5xIPcog9I1eRoofzcp/7Y6/P5FGBgZPqNPa/cqLGqQ8FWHF8EKkASCV0LW9sSHr+X0/fgRwLHi/jz
+	bje08nP5IDCK/jhsM2UNKzGeJfk6Lzn5pD/melQLncKW+hfXkL3URavooVEOTkOexwmr27TZ0XWWi
+	J/mMn4B72Wx2OjhPP/psc1tHhLdFXgp+38gIG3BxT21/2ZpmtNc9Nq0gR+gLPOIiL9CLIm+hmPpVh
+	nCJ1UdsEYzwDA4PfQE0pJF6Nqe3xpNeEXLp1EXcXQ5wa5ttEN8SuYFarsHaEnSAAUpgENaj2OcfFP
+	BGcHWUimBBL5rPkooymA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oSvqJ-00EpTw-Io; Tue, 30 Aug 2022 07:39:27 +0000
-Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
+	id 1oSw1p-00EvMQ-A5; Tue, 30 Aug 2022 07:51:21 +0000
+Received: from ams.source.kernel.org ([145.40.68.75])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oSvpD-00EovI-SY
-	for linux-phy@lists.infradead.org; Tue, 30 Aug 2022 07:38:21 +0000
+	id 1oSvtc-00ErDW-CS; Tue, 30 Aug 2022 07:42:53 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id 76383B815D2;
-	Tue, 30 Aug 2022 07:38:18 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id AAAB4C433C1;
-	Tue, 30 Aug 2022 07:38:16 +0000 (UTC)
+	by ams.source.kernel.org (Postfix) with ESMTPS id B8BFFB8168C;
+	Tue, 30 Aug 2022 07:42:50 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id F19A7C433D7;
+	Tue, 30 Aug 2022 07:42:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1661845097;
-	bh=a1VeHRSBHSS7rf/yq2/xorcuUbYUfWNTRpIjfM6yn6s=;
+	s=k20201202; t=1661845369;
+	bh=BMBvko2lfLuUynD6bKyHh16ykDyUWP4kyBVHqHXPTXY=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=QJyPkXExYyaudVb9dm57jlNwJ0zKgPgZH1qqEsZ26rmO/2cpripu2PwNJynB5YSYr
-	 +B7KMyPLpRNq4/yt084OgOWDVxCYZ82nGQj7rMbSfycZLMC8ew8sYBj9YmupQ/c2l6
-	 9MCKE/Mv3dH5Kk3Nu9Fh+HyONkMBn/TtDUSg7dzvazwH+/ZbZhNs6XZSp0XOY2N8fm
-	 Egn38A0QmhUOxaNhJigLcZlHndouJKUzawQcJulHywgPxrDIRNl9PnTGDE6v6c3UxK
-	 ToF7yGsea1p4I3xp+0+Lwj5phUq0z9/5VGRNObbgJTDG34958MT9UHrqwWo3gfQ+iR
-	 j57Z5CmjVwcCw==
-Date: Tue, 30 Aug 2022 13:08:12 +0530
+	b=j3zOlu2wS/PddnNL68ktDmKe6mgTXTWbgzIVh0uC8sOeSMrfvmtx81RJzCzGzr6a6
+	 V1lpNp92M/7Zf/AloaTsp718XvDrg02V9Oh/feWSqq0LnaSpkkOV7swpamjNOpuAzU
+	 IsMLvMAvsTabOfWM6tLPBu8a7TvcAAdYIbGArIyHnKxpWAuRNpv+d60BKWrLWZ9/o8
+	 04aiw8qEUq93XRfi4b6h8HDOwTNbsLl0E4J1bvpfFMO0PBA3zUzVG/1xEfQ0E0MzIQ
+	 9HiwtxNs4Q2Lb6Jl9wB2xnHKpN/0t8Ui6n38Fc1Ylq394dD9Dm+yYAOE5084RwQ2oJ
+	 LTvQxoMTws5Mw==
+Date: Tue, 30 Aug 2022 13:12:44 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Bjorn Andersson <bjorn.andersson@linaro.org>
-Cc: Kishon Vijay Abraham I <kishon@ti.com>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Wesley Cheng <quic_wcheng@quicinc.com>,
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v2 0/4] phy: qcom-qmp: Add SC8280XP USB PHYs
-Message-ID: <Yw2+ZOn6pVN37NyO@matsya>
-References: <20220810042303.3583194-1-bjorn.andersson@linaro.org>
+To: Wolfram Sang <wsa+renesas@sang-engineering.com>
+Cc: linux-kernel@vger.kernel.org, Kishon Vijay Abraham I <kishon@ti.com>,
+	Chen-Yu Tsai <wens@csie.org>,
+	Jernej Skrabec <jernej.skrabec@gmail.com>,
+	Samuel Holland <samuel@sholland.org>, linux-phy@lists.infradead.org,
+	linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev
+Subject: Re: [PATCH] phy: move from strlcpy with unused retval to strscpy
+Message-ID: <Yw2/dETpIoeSE8iR@matsya>
+References: <20220818210056.7205-1-wsa+renesas@sang-engineering.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20220810042303.3583194-1-bjorn.andersson@linaro.org>
+In-Reply-To: <20220818210056.7205-1-wsa+renesas@sang-engineering.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220830_003820_327395_84B0D139 
-X-CRM114-Status: UNSURE (   6.60  )
+X-CRM114-CacheID: sfid-20220830_004252_671669_49935CC9 
+X-CRM114-Status: UNSURE (   8.73  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -77,8 +75,10 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 09-08-22, 21:22, Bjorn Andersson wrote:
-> Introduce UNI and combo USB PHYs for the Qualcomm SC8280XP platform.
+On 18-08-22, 23:00, Wolfram Sang wrote:
+> Follow the advice of the below link and prefer 'strscpy' in this
+> subsystem. Conversion is 1:1 because the return value is not used.
+> Generated by a coccinelle script.
 
 Applied, thanks
 
