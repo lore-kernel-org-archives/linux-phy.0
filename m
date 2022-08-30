@@ -4,68 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4A179ECAAD1
-	for <linux-phy@archiver.kernel.org>; Tue, 30 Aug 2022 05:25:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 782FAECAAD5
+	for <linux-phy@archiver.kernel.org>; Tue, 30 Aug 2022 05:31:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kNLtE3P91U1VP9E5u8KA007vjpi3qyx7SNxornd1zjQ=; b=VTWeYIgDayzbTc
-	DxYs6Jf3U+j53VgZgVHp04Lv3Q6rP+7gHeEyBs5gaSIke89utDKJmX4rz3FXNKk5quI3wRltMu1bx
-	3HYLvxZS3J4Mn8JO+Tbj+7dYcn+fOuVVNrwCksDyhvdEUTLszNCXWTWSbHWCO/HHRViPy71f8pfwM
-	NnziapR/8L+80mD/H5KGV9TzMZIm2fozCVTLEhzMcQGy8prUxajKt3pdM44SG7/cdQBQwEI2xPY6e
-	RK8TYYpp6+ddsttjxtgFaOKlydRy9XPUwjmmCIuzM0IVe3ced6OOGeofRB1UFF1DRDfHhWL+iXRa6
-	rvxcOz+i2/EH5RZIiQqQ==;
+	List-Owner; bh=z4vnRbAA08i4aF24Cp8Na0Pw86HCDs+FznxJOsjOCrQ=; b=T6YuQuZhtia3QE
+	AgrBz/LvcSh7NNkx1DF4qOPqIUAiUunVeUoWRDfFmeJzW0w24twsl8Mxl5WwmBD2ldx2ZfvE8d1S2
+	iZBYId6Z3ZWBF1kfpH8/ePEpa1suc3XJmrVQtWNZ35C+lyCrz5YMLpOF5bIYdg8FwRvp7FEkMtTJQ
+	VUns/zMfhNUMjnUx3Lq4gHNshwWA7Tabi1ejPvwHk0r08Ab6zafeJzuSNYJa8taxhWlOKSpMBpf+p
+	f+RO3UlBQUs5W8TNZt1QgpklUg6BKW8aIyx2IsDFKvOcp7R0jIlcmKqOrfyKbMovpBpbJ+WxsGCEV
+	0aX8ivtKNpG/lhfHne9Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oStkt-00EAzb-ID; Tue, 30 Aug 2022 05:25:43 +0000
-Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
+	id 1oStqj-00EBk1-RV; Tue, 30 Aug 2022 05:31:45 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oStkj-00EAy2-KZ
-	for linux-phy@lists.infradead.org; Tue, 30 Aug 2022 05:25:42 +0000
+	id 1oStqh-00EBjP-TE
+	for linux-phy@lists.infradead.org; Tue, 30 Aug 2022 05:31:45 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id 0E0D6B8162D;
-	Tue, 30 Aug 2022 05:25:32 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9B15AC433C1;
-	Tue, 30 Aug 2022 05:25:29 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 452BD61272;
+	Tue, 30 Aug 2022 05:31:43 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E8E09C433D7;
+	Tue, 30 Aug 2022 05:31:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1661837130;
-	bh=Hh7bnQCDCSt3C486NoFQsf6r4Qajsoy/eBJ7UtkwRks=;
+	s=k20201202; t=1661837502;
+	bh=Cx//WqmvDiWDeKFb5xhwU9eZb4oNMLT8lWSoQd+h7DM=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=YNjQjEGEtHM2qpGA60LXoviJw2eA21I3I0I3IFRxGEJ+HJjBDIMAyxdNb3ORcHKti
-	 IKZzUubUKT5V29hXFm6xVIpsX0fThNaXjtGRXtlRCRKZLaY4eP4c332iyEvL0jd1qu
-	 KnAcJJPso3THYXjMzvpvniqLZauuJ3U3NbZ+8yw3ngeA/kjNa/eoqw8O23GBk982Sz
-	 AiW+ua20YzlKDT27RW3NshTLut7938c5Jy4ew3Qk72UbzkUqX2gNtvwa6/QEp+AtvH
-	 Au/JZ3YmMSKowQJSwV8j2ZTmRnrgt5kPVPNocUHHv+lw+CeI2wGvLMZDsM+0e0I74e
-	 f9WPLWbFXe/lw==
-Date: Tue, 30 Aug 2022 10:55:25 +0530
+	b=qG2/my20lNiK0+vesCAaDiUl1ZWIEc8nF3w9EzgBlBb1bqT7gEQ6csv+MVKxwdsz5
+	 1yMAgeKOR794G8nxXrWuTKzfxwjR7KZjd4d+qNm7TRDEYkpHiOp+W38Pi/rCKUOGdn
+	 X/2octNE70WxoSymCj/fU2N9KJGcjn+ie1IDSD1OAogTVYHkvsYPl4leUgux3eBroR
+	 AzReZNWsan1phPkH4czWlm6bLV/j0c+DyiMMqYVn+9xwHal67rRmviO84+d4/pEylh
+	 ewazfk/vauHRP2AuCFkE1TOmlMgU+Z1xhoZQkm41VVqwnuDKWWWBG1KhpaW1cxM7m2
+	 Ww8iwP33iP96g==
+Date: Tue, 30 Aug 2022 11:01:38 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Cc: Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <bjorn.andersson@linaro.org>,
-	Konrad Dybcio <konrad.dybcio@somainline.org>,
-	Stephen Boyd <sboyd@kernel.org>,
-	Michael Turquette <mturquette@baylibre.com>,
-	Taniya Das <quic_tdas@quicinc.com>,
-	Kishon Vijay Abraham I <kishon@ti.com>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	linux-arm-msm@vger.kernel.org, linux-clk@vger.kernel.org,
-	linux-phy@lists.infradead.org, Johan Hovold <johan@kernel.org>
-Subject: Re: [PATCH v3 1/3] clk: asm9260: use new helper for fixed rate clock
- creation
-Message-ID: <Yw2fRVsnkHYhcmSy@matsya>
-References: <20220708135450.2845810-1-dmitry.baryshkov@linaro.org>
- <20220708135450.2845810-2-dmitry.baryshkov@linaro.org>
+To: Bjorn Andersson <bjorn.andersson@linaro.org>
+Cc: Kishon Vijay Abraham I <kishon@ti.com>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 0/5] phy: qcom: edp: Introduce SC8280XP support
+Message-ID: <Yw2gut71lb8h2lLb@matsya>
+References: <20220810040745.3582985-1-bjorn.andersson@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20220708135450.2845810-2-dmitry.baryshkov@linaro.org>
+In-Reply-To: <20220810040745.3582985-1-bjorn.andersson@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220829_222540_661316_C81946E2 
-X-CRM114-Status: GOOD (  19.38  )
+X-CRM114-CacheID: sfid-20220829_223143_998718_2CD2EF30 
+X-CRM114-Status: UNSURE (   6.42  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,64 +76,13 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 08-07-22, 16:54, Dmitry Baryshkov wrote:
-> The __clk_hw_register_fixed_rate() is an internal API, which is better
-> not to be called directly. Add new helper to create fixed rate clocks
-> using parent clock accuracy.
-> 
-> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-> ---
->  drivers/clk/clk-asm9260.c    |  6 ++----
->  include/linux/clk-provider.h | 14 ++++++++++++++
->  2 files changed, 16 insertions(+), 4 deletions(-)
-> 
-> diff --git a/drivers/clk/clk-asm9260.c b/drivers/clk/clk-asm9260.c
-> index bacebd457e6f..0609b661ff5a 100644
-> --- a/drivers/clk/clk-asm9260.c
-> +++ b/drivers/clk/clk-asm9260.c
-> @@ -276,10 +276,8 @@ static void __init asm9260_acc_init(struct device_node *np)
->  
->  	/* TODO: Convert to DT parent scheme */
->  	ref_clk = of_clk_get_parent_name(np, 0);
-> -	hw = __clk_hw_register_fixed_rate(NULL, NULL, pll_clk,
-> -			ref_clk, NULL, NULL, 0, rate, 0,
-> -			CLK_FIXED_RATE_PARENT_ACCURACY);
-> -
-> +	hw = clk_hw_register_fixed_rate_parent_accuracy(NULL, pll_clk, ref_clk,
-> +							0, rate);
+On 09-08-22, 21:07, Bjorn Andersson wrote:
+> What the subject says.
 
-Should this not be described in DT instead, resolve the todo :-)
+:-)
 
->  	if (IS_ERR(hw))
->  		panic("%pOFn: can't register REFCLK. Check DT!", np);
->  
-> diff --git a/include/linux/clk-provider.h b/include/linux/clk-provider.h
-> index 72d937c03a3e..659ef5a77246 100644
-> --- a/include/linux/clk-provider.h
-> +++ b/include/linux/clk-provider.h
-> @@ -439,6 +439,20 @@ struct clk *clk_register_fixed_rate(struct device *dev, const char *name,
->  	__clk_hw_register_fixed_rate((dev), NULL, (name), NULL, NULL,	      \
->  				     (parent_data), NULL, (flags),	      \
->  				     (fixed_rate), (fixed_accuracy), 0)
-> +/**
-> + * clk_hw_register_fixed_rate_parent_accuracy - register fixed-rate clock with
-> + * the clock framework
-> + * @dev: device that is registering this clock
-> + * @name: name of this clock
-> + * @parent_name: name of clock's parent
-> + * @flags: framework-specific flags
-> + * @fixed_rate: non-adjustable clock rate
-> + */
-> +#define clk_hw_register_fixed_rate_parent_accuracy(dev, name, parent_name,    \
-> +						   flags, fixed_rate)	      \
-> +	__clk_hw_register_fixed_rate((dev), NULL, (name), (parent_name),      \
-> +				     NULL, NULL, (flags), (fixed_rate), 0,    \
-> +				     CLK_FIXED_RATE_PARENT_ACCURACY)
->  
->  void clk_unregister_fixed_rate(struct clk *clk);
->  void clk_hw_unregister_fixed_rate(struct clk_hw *hw);
-> -- 
-> 2.35.1
+
+Applied, thanks
 
 -- 
 ~Vinod
