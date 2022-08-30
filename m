@@ -4,91 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B6566ECAAD4
-	for <linux-phy@archiver.kernel.org>; Tue, 30 Aug 2022 10:17:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C867CECAAA1
+	for <linux-phy@archiver.kernel.org>; Tue, 30 Aug 2022 11:13:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=90pU3f6c6SuIdY+LIGsMF6U4SrnFhUKuaqT2ieD7tQw=; b=uPNzt2ACamoCZ1
-	qwx4yTMpOCheoF7tTj/3qje0A3K0URXFJl3vuFHplT4eVe+9tEoBatZ+jln5NhQWcqZWSe4QsJx8D
-	lYfPipzEB8OzfQtX3V854iDKDAdPt+GcK5ZKqlpUOv35zAvZPS7L8nT3ZDdI7oeUFqQly/Lbm3AMF
-	c2acf8EDbv6BF7dWR2dRHyu7Y4jt9YXa7W6UGVXl1V2WzvL5YPx+5GqD/33OvxhHU5UDjnZqtsAct
-	PODsPJpu9Z8E7XKFDtV/1Q7F8qiABNZV4RVSeGoVQ/kTIeCu/Muy7RUqXznKJFpPI2Nuty/QxA5E4
-	saYiqO1lizJx15eA2I/g==;
+	List-Owner; bh=I9c7M3szhjN1CUcIht7lmTz0Kkv/frEoyvrK/IIFEio=; b=iZazramI2OgNjT
+	TkBalsqzJo1t96dZzZDUs5eCC1lwgBp9ieAJ05Kr5sh5Nb43VOrMtmiO1u32TBFg8LHI4phpc2D3e
+	DoubJZAhVFxGXdZIWOLaZxksTRaR4LlmBZ/ajyfR8q93oDIND+EqIHRpvLe12YgeQECntgaNbh/GK
+	n+gMo8rNSF8wx2rno52QO+O5YGRskd3LsbjjdwkCiJYHanlNzYwePMO6GjMgtLd80uq03u79tBIgY
+	cehYQXEbTQFcy1AxAsMChRrVBHe6b2cQudcQ0Eai/NhHYMd9IU3q7lWiBFbOSfvPiTtH6EEBZx7Dc
+	SbX+IbSweTjqpUDYEsnw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oSyJe-00G5qX-Oq; Tue, 30 Aug 2022 10:17:54 +0000
-Received: from mail-lj1-x22b.google.com ([2a00:1450:4864:20::22b])
+	id 1oSzBW-00GTv0-Bx; Tue, 30 Aug 2022 11:13:34 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oSyAm-00G2NW-DW
-	for linux-phy@lists.infradead.org; Tue, 30 Aug 2022 10:08:46 +0000
-Received: by mail-lj1-x22b.google.com with SMTP id k22so10800861ljg.2
-        for <linux-phy@lists.infradead.org>; Tue, 30 Aug 2022 03:08:43 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc;
-        bh=N19Eu9EqzaEkmTOBC0jt5FngYVfZh2rgh5ndZ/dTCTc=;
-        b=fxY1lsTV62zsGEKiAo+a4wIiGAnUlTtBgxmUiOIuraruijHHX7JxfwK8AruouU3V5z
-         yNpy8yVxgX3UDYVfwzyZj20vPm5C7xx4nPAfFuRt43/IOWKZGZdVUv71gtAdIbzzUZBZ
-         VCcrn2jz89xJ08pbAyuP8RA4dnznTXQZOnfYeGtwyAuXEhdEwebJBgb+EqIYAcYBpCuI
-         /lQVHLNw7lohBvkP4omqr7WVq2uvD9ZwzsD/VoENpxWfP30ewIFUplgygxOOYamixiVl
-         nRB0ruMGSAxpswVujcDIhQNNjlCc6JAoG95gt/1cD+8mWNbKMnIxx3tHBeu9ezRh4OXZ
-         qAXg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc;
-        bh=N19Eu9EqzaEkmTOBC0jt5FngYVfZh2rgh5ndZ/dTCTc=;
-        b=7to3ce5WtUBa8T8zMVQSS0Yu2KDe0CiW8dSB5FRfYdxf9CnKprziX9WtdT+N8qBRZy
-         4rUcJe4u6sXbNCrRUDORvVg2n38b9i7DRYfDvyafobM2sDA/g4Q67mCmAwSWUEfuPEyr
-         j7RD5qalDGlwuU8ggSwvbmeFW4BOrgFNOXcXRtqtujoB7fSrV7b60k45Tzl/bHgI6ECH
-         A6oUr6GfoZuXSelIPgGTzVeIqgReae4rWzeqneuwxApP7MBN8iWnf42/cd4OxCRuBLjb
-         asSIZhv8RbH9rllP0BsfzV3WSnyxZjSwxqE/2deXLqU9hS+vpDA/91t1gPZ8HlwnW3PG
-         7EAQ==
-X-Gm-Message-State: ACgBeo1WZV4JFDfX/WRZmwmDYHdel5VAeT/ZV96TRjvkjyEh1L0sg2sF
-	50PhgKp1QbR2lnbqklym0ztAZw==
-X-Google-Smtp-Source: AA6agR62Niuw49b9olkAq7JO7drsxcXqoumzcv5joCz4jLIeKX8wzpv7EC+9+YmDlwyXzeP004eSEw==
-X-Received: by 2002:a2e:93d0:0:b0:266:9e7b:9748 with SMTP id p16-20020a2e93d0000000b002669e7b9748mr1517754ljh.441.1661854122525;
-        Tue, 30 Aug 2022 03:08:42 -0700 (PDT)
-Received: from [192.168.28.124] (balticom-73-99-134.balticom.lv. [109.73.99.134])
-        by smtp.gmail.com with ESMTPSA id z24-20020a2eb538000000b00261b58cbf03sm947843ljm.87.2022.08.30.03.08.41
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 30 Aug 2022 03:08:42 -0700 (PDT)
-Message-ID: <0a82842d-283c-e266-84f4-6306f29b61da@linaro.org>
-Date: Tue, 30 Aug 2022 13:08:40 +0300
+	id 1oSzBP-00GTo8-Eq
+	for linux-phy@lists.infradead.org; Tue, 30 Aug 2022 11:13:29 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 92CB56142C;
+	Tue, 30 Aug 2022 11:13:26 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5A89BC433C1;
+	Tue, 30 Aug 2022 11:13:23 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1661858006;
+	bh=jNG2gCWSllTupgHvGrYYT7PSUlHkq8MWcYG0y8EZTnE=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=VR/Gg2PqVwxfODQVdOPHed+GMSCt5kWnEOktkTVShuBRbNw4+W2AdvwACXwYlXtUy
+	 yKhhnDH3iUR4R1Ln8FBX9pW+2qIRzQHA0XTmbVvAPvLIhc3wzYt2gdqh96O2M5JwDP
+	 bq2j+W2pWJ9ThC8IhytZUcY53oBRlq4qlQB0FJ+YAAvesw8IGKKRWs/NBWtFwqg69K
+	 5adafvTT6LbEuBFaPXC7M4edfbdCHQUDkl85dfEAWvSvUMVDdWB0fcqIF8lqmcX9PJ
+	 oGSeUx41CIJ9ldgBbO0fx8ms722Axin+RFflkcu1yWi8YGc0VxkgQU//oGEpNJVYW/
+	 wkH91MtjMrKwQ==
+Message-ID: <7dff961e-908d-48de-fff1-8b6029d28eed@kernel.org>
+Date: Tue, 30 Aug 2022 14:13:20 +0300
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.13.0
-Subject: Re: [PATCH 2/7] dt-bindings: phy: mediatek,tphy: add property to set
- pre-emphasis
+ Thunderbird/91.9.1
+Subject: Re: [PATCH v3 2/2] phy: ti: gmii-sel: Add support for CPSW5G GMII SEL
+ in J7200
 Content-Language: en-US
-To: Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>,
- Rob Herring <robh+dt@kernel.org>
-Cc: Kishon Vijay Abraham I <kishon@ti.com>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, Eddie Hung <eddie.hung@mediatek.com>
-References: <20220819091344.2274-1-chunfeng.yun@mediatek.com>
- <20220819091344.2274-2-chunfeng.yun@mediatek.com>
- <438da392-f419-ad76-7e91-aa4aab36e12c@linaro.org>
- <816ecf6287533137b750c8bde9de5830e4229c56.camel@mediatek.com>
- <bee8abe5-0299-d05e-643c-4810aa33f978@linaro.org>
- <1a16cce9fe164bafc06ae193310be71c6f645d75.camel@mediatek.com>
- <000babd8-5980-3d77-f156-324b3442cbe7@linaro.org>
- <114c357f8d7f049d21ede789a292a8e2d45f4c61.camel@mediatek.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <114c357f8d7f049d21ede789a292a8e2d45f4c61.camel@mediatek.com>
+To: Siddharth Vadapalli <s-vadapalli@ti.com>
+Cc: robh+dt@kernel.org, lee.jones@linaro.org, krzysztof.kozlowski@linaro.org,
+ krzysztof.kozlowski+dt@linaro.org, kishon@ti.com, vkoul@kernel.org,
+ dan.carpenter@oracle.com, grygorii.strashko@ti.com,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org
+References: <20220822065631.27933-1-s-vadapalli@ti.com>
+ <20220822065631.27933-3-s-vadapalli@ti.com>
+ <655c39a3-cf5f-6dd7-3c1a-61ebeae915bd@kernel.org>
+ <7dd27795-11d0-3147-ed86-959ff3e89df4@ti.com>
+ <8ef8b2f8-a1c1-b277-22b1-6e951e8dfc72@kernel.org>
+ <533a4186-62b1-ce7b-e097-9fb04be8f018@ti.com>
+From: Roger Quadros <rogerq@kernel.org>
+In-Reply-To: <533a4186-62b1-ce7b-e097-9fb04be8f018@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220830_030844_486763_C38791F6 
-X-CRM114-Status: GOOD (  11.57  )
+X-CRM114-CacheID: sfid-20220830_041327_780374_35B01EE5 
+X-CRM114-Status: GOOD (  20.43  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,76 +83,66 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 29/08/2022 05:37, Chunfeng Yun wrote:
-> On Fri, 2022-08-26 at 09:36 +0300, Krzysztof Kozlowski wrote:
->> On 26/08/2022 08:36, Chunfeng Yun wrote:
->>> On Tue, 2022-08-23 at 13:24 +0300, Krzysztof Kozlowski wrote:
->>>> On 22/08/2022 10:07, Chunfeng Yun wrote:
->>>>> On Fri, 2022-08-19 at 15:15 +0300, Krzysztof Kozlowski wrote:
->>>>>> On 19/08/2022 12:13, Chunfeng Yun wrote:
->>>>>>> Add a property to set usb2 phy's pre-emphasis.
->>>>>>>
->>>>>>> Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
->>>>>>> ---
->>>>>>>  Documentation/devicetree/bindings/phy/mediatek,tphy.yaml |
->>>>>>> 7
->>>>>>> +++++++
->>>>>>>  1 file changed, 7 insertions(+)
->>>>>>>
->>>>>>> diff --git
->>>>>>> a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
->>>>>>> b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
->>>>>>> index 848edfb1f677..aee2f3027371 100644
->>>>>>> ---
->>>>>>> a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
->>>>>>> +++
->>>>>>> b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
->>>>>>> @@ -219,6 +219,13 @@ patternProperties:
->>>>>>>          minimum: 1
->>>>>>>          maximum: 15
->>>>>>>  
->>>>>>> +      mediatek,pre-emphasis:
->>>>>>> +        description:
->>>>>>> +          The selection of pre-emphasis (U2 phy)
->>>>>>> +        $ref: /schemas/types.yaml#/definitions/uint32
->>>>>>> +        minimum: 1
->>>>>>> +        maximum: 3
->>>>>>
->>>>>> Instead of hard-coding register values in bindings, you
->>>>>> should
->>>>>> rather
->>>>>> describe here feature/effect. If it is in units, use unit
->>>>>> suffixes.
->>>>>> If
->>>>>> it is some choice, usually string enum is appropriate.
->>>>>
->>>>> How about changing description as bellow:
->>>>>
->>>>> "The level of pre-emphasis, increases one level, boosts the
->>>>> relative
->>>>> amplitudes of signal's higher frequencies components about
->>>>> 4.16%
->>>>> (U2
->>>>> phy)"
->>>>>
->>>>
->>>> Still the question is what is the unit. 4.16%?
+Siddharth,
+
+On 30/08/2022 07:31, Siddharth Vadapalli wrote:
+> Hello Roger,
+> 
+> On 29/08/22 18:13, Roger Quadros wrote:
+>> Siddharth,
+>>
+>> On 29/08/2022 07:53, Siddharth Vadapalli wrote:
+>>> Hello Roger,
 >>>
->>> No unit, it's a level value, like an index of array.
+>>> On 25/08/22 13:11, Roger Quadros wrote:
+>>>> Hi Siddharth,
+>>>>
+>>>> On 22/08/2022 09:56, Siddharth Vadapalli wrote:
+>>>>> Each of the CPSW5G ports in J7200 support additional modes like QSGMII.
+>>>>> Add a new compatible for J7200 to support the additional modes.
+>>>>>
+>>>>> In TI's J7200, each of the CPSW5G ethernet interfaces can act as a
+>>>>> QSGMII or QSGMII-SUB port. The QSGMII interface is responsible for
+>>>>> performing auto-negotiation between the MAC and the PHY while the rest of
+>>>>> the interfaces are designated as QSGMII-SUB interfaces, indicating that
+>>>>> they will not be taking part in the auto-negotiation process.
+>>>>>
+>>>>> To indicate the interface which will serve as the main QSGMII interface,
+>>>>> add a property "ti,qsgmii-main-ports", whose value indicates the
+>>>>> port number of the interface which shall serve as the main QSGMII
+>>>>> interface. The rest of the interfaces are then assigned QSGMII-SUB mode by
+>>>>> default.
+>>>>
+>>>> Can you please describe here why you are using "ti,qsgmii-main-ports" instead
+>>>> of "ti,qsgmii-main-port" as there can be only one main port per PHY instance?
+>>>
+>>> Thank you for reviewing the patch. I am using "ports" instead of "port"
+>>> because I plan to add support for CPSW9G on TI's J721e device in the
+>>> future patches. CPSW9G (8 external ports) supports up to two QSGMII main
+>>> ports. For CPSW9G, by specifying the two main ports in the device tree,
+>>> it is possible to configure the CTRLMMR_ENETx_CTRL register for each of
+>>> the 8 ports, with the two QSGMII main ports being configured as main
+>>> ports in the CTRLMMR_ENETx_CTRL register and the rest of them being
+>>> configured as sub ports. Since I will be using the same property
+>>> "ti,qsgmii-main-ports" for CPSW9G as well, the property will be an array
+>>> of 2 values for CPSW9G. Therefore, I am using "ports" instead of "port".
+>>> Please let me know if this is fine.
 >>>
 >>
->> So a value from register/device programming? 
-> Yes
->> Rather a regular units
->> should be used if that's possible. If not, this should be clearly
->> described here, not some magical number which you encode into DTS...
-> Ok, I'll add more descriptions.
+>> OK. Please mention this in commit message.
+> 
+> I will mention that the property ti,qsgmii-main-ports is used to
+> configure the CTRLMMR_ENETx_CTRL register and that it is possible
+> depending on the device for there to be more than one main port which is
+> why the property is an array of values.
+> 
+> Would it be sufficient to mention the above in the commit message?
+> Please let me know.
 
-Better use logical value, e.g.
-https://github.com/devicetree-org/dt-schema/blob/main/dtschema/schemas/property-units.yaml#L38
+This is fine. Thanks.
 
-Best regards,
-Krzysztof
+cheers,
+-roger
 
 -- 
 linux-phy mailing list
