@@ -4,69 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B68C0C0502C
-	for <linux-phy@archiver.kernel.org>; Tue, 30 Aug 2022 12:35:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 89A0CECAAD4
+	for <linux-phy@archiver.kernel.org>; Tue, 30 Aug 2022 13:07:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=9FFkxZ3VK6pzCb+3Ok9wXchLv/AohDZoWaKT7z4lmD0=; b=s+1kjFHi6Cx6mG
-	9nF2lIi2pzWZZb4IhWbA2DEwL7w0Cgw7eIz9X2haD5sI7eydk7rdXVNKbhawGoamfi+1PdwP1ccri
-	75+sKxgX4/h83l4XWxK7anA7fxD/B1OcTTeVAKGSl9uwBgZEkJl5O1ls0cBzFsdlD1TumOHjmEKF6
-	6dY2S1SnMG0syJgUqk6YoUFdkXoBeH5ZBZSnXxZO7sE/zKXNBfAbvTRuSN/fCE3SnSy8qR6cw/7YX
-	8tpGMiAw3S1mBhzV/OyMVOGibhi1TzT41j+5AmBisChw7RR7+ndsvwClx3rynBvZRsO2qFGI7NWIU
-	Xl4NHdu1sSJAH1WgOw5g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=KbuQO12Ryw75TtOydVWknUN8rqIqLR+GimM/j4B3OL0=; b=qlAyJcPrpUgSVA
+	5tpKP961kYCUtstPpyFsTFjMyw8SwDZcDuO0o+thdx6fXEa+cqwG0mf2x6zTwKwzXo4j06UmZ50oJ
+	wXNL+9AMSipbVXEi3xXRHnGMj7eVth2ftee0RaI5EyMeuS+mpZV37FBNZOthoCayTP5n6tUGA1TOq
+	fTrZMsl3IfhwtkE/kgEPTl+wzyjGKjyWtzgjmI7eDoikKLYN9gTg37YGw2w/nHQI9dewPk0zlIhc/
+	P7JPqX1fT1vv7nQHPnGDkThAgbnc22O5CjGQTwaCmkESk8jOqL/shS+a0NT0QWWxOzyZPXpUFwO8m
+	pUgf27cuvsaKcL85aDCA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oT0SR-00GrId-1y; Tue, 30 Aug 2022 12:35:07 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1oT0xt-00HJjK-VH; Tue, 30 Aug 2022 13:07:37 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oSzRS-00GZVC-5E
-	for linux-phy@lists.infradead.org; Tue, 30 Aug 2022 11:30:05 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 8AA636155D;
-	Tue, 30 Aug 2022 11:30:01 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C941CC4347C;
-	Tue, 30 Aug 2022 11:29:59 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1661858999;
-	bh=1xLqX4IZAgNYnC4h10WjJw6PlukikNFYKog3HwdWdDM=;
-	h=From:To:Cc:Subject:Date:From;
-	b=RAo042DFSY5REyFDd6pGeOPdJAPUXxbTgfnMCpejt+lV5oKgFcPTfrgyP/yI8eNkv
-	 FW3lPw+jvjEWDyiIUwXliYqmH7ZPTSi4GF45lXUloWfhAZzXGol+/9A2dBKfuOSjiX
-	 38YlKJu9t8SjzxQMpwLo9+WMbcTzF/CLUNECEPk299TLZh0VfB3xwb16J9OiRUaO5o
-	 df40iErnbvip+clMNIE12Vmjs8K/qlhJjKgh0I4/R3wDrZ6elLrr9LfZD2dggsSpfJ
-	 nWb9oiZ1euphycUvxzprcAyehDXLvgFmwL8RD1hLdm9ZgftlcmnGl3f1y+qIW4LIa6
-	 B97R9LCXNy4wg==
-Received: from johan by xi.lan with local (Exim 4.94.2)
-	(envelope-from <johan+linaro@kernel.org>)
-	id 1oSzRM-0000zn-47; Tue, 30 Aug 2022 13:29:56 +0200
-From: Johan Hovold <johan+linaro@kernel.org>
-To: Vinod Koul <vkoul@kernel.org>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
-Cc: Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@somainline.org>,
-	Kishon Vijay Abraham I <kishon@ti.com>,
-	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
-	linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH v4 00/30] phy: qcom,qmp: fix dt-bindings and deprecate lane suffix
-Date: Tue, 30 Aug 2022 13:28:53 +0200
-Message-Id: <20220830112923.3725-1-johan+linaro@kernel.org>
-X-Mailer: git-send-email 2.35.1
+	id 1oT0xm-00HJi5-QA
+	for linux-phy@lists.infradead.org; Tue, 30 Aug 2022 13:07:35 +0000
+Received: from gallifrey.ext.pengutronix.de ([2001:67c:670:201:5054:ff:fe8d:eefb] helo=[IPv6:::1])
+	by metis.ext.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
+	(Exim 4.92)
+	(envelope-from <l.stach@pengutronix.de>)
+	id 1oT0xX-00081U-Ii; Tue, 30 Aug 2022 15:07:15 +0200
+Message-ID: <06d256719a2ac5bf22ce80bb30b8320eec8fc1d9.camel@pengutronix.de>
+Subject: Re: [PATCH v5 6/7] phy: freescale: imx8m-pcie: Add iMX8MP PCIe PHY
+ support
+From: Lucas Stach <l.stach@pengutronix.de>
+To: Richard Zhu <hongxing.zhu@nxp.com>, p.zabel@pengutronix.de, 
+	bhelgaas@google.com, lorenzo.pieralisi@arm.com, robh@kernel.org, 
+	shawnguo@kernel.org, vkoul@kernel.org, alexander.stein@ew.tq-group.com, 
+	marex@denx.de, richard.leitner@linux.dev
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+	linux-pci@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+	linux-kernel@vger.kernel.org, kernel@pengutronix.de, linux-imx@nxp.com
+Date: Tue, 30 Aug 2022 15:07:13 +0200
+In-Reply-To: <1661845564-11373-7-git-send-email-hongxing.zhu@nxp.com>
+References: <1661845564-11373-1-git-send-email-hongxing.zhu@nxp.com>
+	 <1661845564-11373-7-git-send-email-hongxing.zhu@nxp.com>
+User-Agent: Evolution 3.40.4 (3.40.4-1.fc34) 
 MIME-Version: 1.0
+X-SA-Exim-Connect-IP: 2001:67c:670:201:5054:ff:fe8d:eefb
+X-SA-Exim-Mail-From: l.stach@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de); SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220830_043002_389146_8E80C61F 
-X-CRM114-Status: GOOD (  17.80  )
+X-CRM114-CacheID: sfid-20220830_060731_044029_949C123F 
+X-CRM114-Status: GOOD (  25.61  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,115 +70,258 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-When adding support for SC8280XP to the QMP PHY driver I noticed that
-the PHY provider child node was not described by the current DT schema.
+Am Dienstag, dem 30.08.2022 um 15:46 +0800 schrieb Richard Zhu:
+> Add i.MX8MP PCIe PHY support.
+> 
+> Signed-off-by: Richard Zhu <hongxing.zhu@nxp.com>
+> Signed-off-by: Lucas Stach <l.stach@pengutronix.de>
+> Tested-by: Marek Vasut <marex@denx.de>
+> Tested-by: Richard Leitner <richard.leitner@skidata.com>
+> Tested-by: Alexander Stein <alexander.stein@ew.tq-group.com>
+> ---
+>  drivers/phy/freescale/phy-fsl-imx8m-pcie.c | 137 +++++++++++++--------
+>  1 file changed, 89 insertions(+), 48 deletions(-)
+> 
+> diff --git a/drivers/phy/freescale/phy-fsl-imx8m-pcie.c b/drivers/phy/freescale/phy-fsl-imx8m-pcie.c
+> index ad7d2edfc414..c76e3a1a5f51 100644
+> --- a/drivers/phy/freescale/phy-fsl-imx8m-pcie.c
+> +++ b/drivers/phy/freescale/phy-fsl-imx8m-pcie.c
+> @@ -11,6 +11,9 @@
+>  #include <linux/mfd/syscon.h>
+>  #include <linux/mfd/syscon/imx7-iomuxc-gpr.h>
+>  #include <linux/module.h>
+> +#include <linux/of_address.h>
+> +#include <linux/of_device.h>
+> +#include <linux/of_device.h>
+>  #include <linux/phy/phy.h>
+>  #include <linux/platform_device.h>
+>  #include <linux/regmap.h>
+> @@ -31,12 +34,10 @@
+>  #define IMX8MM_PCIE_PHY_CMN_REG065	0x194
+>  #define  ANA_AUX_RX_TERM		(BIT(7) | BIT(4))
+>  #define  ANA_AUX_TX_LVL			GENMASK(3, 0)
+> -#define IMX8MM_PCIE_PHY_CMN_REG75	0x1D4
+> -#define  PCIE_PHY_CMN_REG75_PLL_DONE	0x3
+> +#define IMX8MM_PCIE_PHY_CMN_REG075	0x1D4
+> +#define  ANA_PLL_DONE			0x3
+>  #define PCIE_PHY_TRSV_REG5		0x414
+> -#define  PCIE_PHY_TRSV_REG5_GEN1_DEEMP	0x2D
+>  #define PCIE_PHY_TRSV_REG6		0x418
+> -#define  PCIE_PHY_TRSV_REG6_GEN2_DEEMP	0xF
+>  
+>  #define IMX8MM_GPR_PCIE_REF_CLK_SEL	GENMASK(25, 24)
+>  #define IMX8MM_GPR_PCIE_REF_CLK_PLL	FIELD_PREP(IMX8MM_GPR_PCIE_REF_CLK_SEL, 0x3)
+> @@ -47,16 +48,23 @@
+>  #define IMX8MM_GPR_PCIE_SSC_EN		BIT(16)
+>  #define IMX8MM_GPR_PCIE_AUX_EN_OVERRIDE	BIT(9)
+>  
+> +enum imx8_pcie_phy_type {
+> +	IMX8MM,
+> +	IMX8MP,
+> +};
+> +
+>  struct imx8_pcie_phy {
+>  	void __iomem		*base;
+>  	struct clk		*clk;
+>  	struct phy		*phy;
+>  	struct regmap		*iomuxc_gpr;
+>  	struct reset_control	*reset;
+> +	struct reset_control	*perst;
+>  	u32			refclk_pad_mode;
+>  	u32			tx_deemph_gen1;
+>  	u32			tx_deemph_gen2;
+>  	bool			clkreq_unused;
+> +	enum imx8_pcie_phy_type	variant;
+>  };
+>  
+>  static int imx8_pcie_phy_init(struct phy *phy)
+> @@ -68,31 +76,20 @@ static int imx8_pcie_phy_init(struct phy *phy)
+>  	reset_control_assert(imx8_phy->reset);
+>  
+>  	pad_mode = imx8_phy->refclk_pad_mode;
+> -	/* Set AUX_EN_OVERRIDE 1'b0, when the CLKREQ# isn't hooked */
+> -	regmap_update_bits(imx8_phy->iomuxc_gpr, IOMUXC_GPR14,
+> -			   IMX8MM_GPR_PCIE_AUX_EN_OVERRIDE,
+> -			   imx8_phy->clkreq_unused ?
+> -			   0 : IMX8MM_GPR_PCIE_AUX_EN_OVERRIDE);
+> -	regmap_update_bits(imx8_phy->iomuxc_gpr, IOMUXC_GPR14,
+> -			   IMX8MM_GPR_PCIE_AUX_EN,
+> -			   IMX8MM_GPR_PCIE_AUX_EN);
+> -	regmap_update_bits(imx8_phy->iomuxc_gpr, IOMUXC_GPR14,
+> -			   IMX8MM_GPR_PCIE_POWER_OFF, 0);
+> -	regmap_update_bits(imx8_phy->iomuxc_gpr, IOMUXC_GPR14,
+> -			   IMX8MM_GPR_PCIE_SSC_EN, 0);
+> -
+> -	regmap_update_bits(imx8_phy->iomuxc_gpr, IOMUXC_GPR14,
+> -			   IMX8MM_GPR_PCIE_REF_CLK_SEL,
+> -			   pad_mode == IMX8_PCIE_REFCLK_PAD_INPUT ?
+> -			   IMX8MM_GPR_PCIE_REF_CLK_EXT :
+> -			   IMX8MM_GPR_PCIE_REF_CLK_PLL);
+> -	usleep_range(100, 200);
+> -
+> -	/* Do the PHY common block reset */
+> -	regmap_update_bits(imx8_phy->iomuxc_gpr, IOMUXC_GPR14,
+> -			   IMX8MM_GPR_PCIE_CMN_RST,
+> -			   IMX8MM_GPR_PCIE_CMN_RST);
+> -	usleep_range(200, 500);
+> +	switch (imx8_phy->variant) {
+> +	case IMX8MM:
+> +		/* Tune PHY de-emphasis setting to pass PCIe compliance. */
+> +		if (imx8_phy->tx_deemph_gen1)
+> +			writel(imx8_phy->tx_deemph_gen1,
+> +			       imx8_phy->base + PCIE_PHY_TRSV_REG5);
+> +		if (imx8_phy->tx_deemph_gen2)
+> +			writel(imx8_phy->tx_deemph_gen2,
+> +			       imx8_phy->base + PCIE_PHY_TRSV_REG6);
+> +		break;
+> +	case IMX8MP:
+> +		reset_control_assert(imx8_phy->perst);
+> +		break;
+> +	}
+>  
+>  	if (pad_mode == IMX8_PCIE_REFCLK_PAD_INPUT ||
+>  	    pad_mode == IMX8_PCIE_REFCLK_PAD_UNUSED) {
+> @@ -120,20 +117,44 @@ static int imx8_pcie_phy_init(struct phy *phy)
+>  		       imx8_phy->base + IMX8MM_PCIE_PHY_CMN_REG065);
+>  	}
+>  
+> -	/* Tune PHY de-emphasis setting to pass PCIe compliance. */
+> -	if (imx8_phy->tx_deemph_gen1)
+> -		writel(imx8_phy->tx_deemph_gen1,
+> -		       imx8_phy->base + PCIE_PHY_TRSV_REG5);
+> -	if (imx8_phy->tx_deemph_gen2)
+> -		writel(imx8_phy->tx_deemph_gen2,
+> -		       imx8_phy->base + PCIE_PHY_TRSV_REG6);
+> +	/* Set AUX_EN_OVERRIDE 1'b0, when the CLKREQ# isn't hooked */
+> +	regmap_update_bits(imx8_phy->iomuxc_gpr, IOMUXC_GPR14,
+> +			   IMX8MM_GPR_PCIE_AUX_EN_OVERRIDE,
+> +			   imx8_phy->clkreq_unused ?
+> +			   0 : IMX8MM_GPR_PCIE_AUX_EN_OVERRIDE);
+> +	regmap_update_bits(imx8_phy->iomuxc_gpr, IOMUXC_GPR14,
+> +			   IMX8MM_GPR_PCIE_AUX_EN,
+> +			   IMX8MM_GPR_PCIE_AUX_EN);
+> +	regmap_update_bits(imx8_phy->iomuxc_gpr, IOMUXC_GPR14,
+> +			   IMX8MM_GPR_PCIE_POWER_OFF, 0);
+> +	regmap_update_bits(imx8_phy->iomuxc_gpr, IOMUXC_GPR14,
+> +			   IMX8MM_GPR_PCIE_SSC_EN, 0);
+> +
+> +	regmap_update_bits(imx8_phy->iomuxc_gpr, IOMUXC_GPR14,
+> +			   IMX8MM_GPR_PCIE_REF_CLK_SEL,
+> +			   pad_mode == IMX8_PCIE_REFCLK_PAD_INPUT ?
+> +			   IMX8MM_GPR_PCIE_REF_CLK_EXT :
+> +			   IMX8MM_GPR_PCIE_REF_CLK_PLL);
+> +	usleep_range(100, 200);
+> +
+> +	/* Do the PHY common block reset */
+> +	regmap_update_bits(imx8_phy->iomuxc_gpr, IOMUXC_GPR14,
+> +			   IMX8MM_GPR_PCIE_CMN_RST,
+> +			   IMX8MM_GPR_PCIE_CMN_RST);
+>  
+> -	reset_control_deassert(imx8_phy->reset);
+> +	switch (imx8_phy->variant) {
+> +	case IMX8MP:
+> +		reset_control_deassert(imx8_phy->perst);
+> +		fallthrough;
+> +	case IMX8MM:
+> +		reset_control_deassert(imx8_phy->reset);
+> +		usleep_range(200, 500);
+> +		break;
+> +	}
+>  
+>  	/* Polling to check the phy is ready or not. */
+> -	ret = readl_poll_timeout(imx8_phy->base + IMX8MM_PCIE_PHY_CMN_REG75,
+> -				 val, val == PCIE_PHY_CMN_REG75_PLL_DONE,
+> -				 10, 20000);
+> +	ret = readl_poll_timeout(imx8_phy->base + IMX8MM_PCIE_PHY_CMN_REG075,
+> +				 val, val == ANA_PLL_DONE, 10, 20000);
+>  	return ret;
+>  }
+>  
+> @@ -160,6 +181,13 @@ static const struct phy_ops imx8_pcie_phy_ops = {
+>  	.owner		= THIS_MODULE,
+>  };
+>  
+> +static const struct of_device_id imx8_pcie_phy_of_match[] = {
+> +	{.compatible = "fsl,imx8mm-pcie-phy", .data = (void *)IMX8MM},
+> +	{.compatible = "fsl,imx8mp-pcie-phy", .data = (void *)IMX8MP},
+> +	{ },
+> +};
+> +MODULE_DEVICE_TABLE(of, imx8_pcie_phy_of_match);
+> +
+>  static int imx8_pcie_phy_probe(struct platform_device *pdev)
+>  {
+>  	struct phy_provider *phy_provider;
+> @@ -172,6 +200,9 @@ static int imx8_pcie_phy_probe(struct platform_device *pdev)
+>  	if (!imx8_phy)
+>  		return -ENOMEM;
+>  
+> +	imx8_phy->variant =
+> +		(enum imx8_pcie_phy_type)of_device_get_match_data(dev);
+> +
+>  	/* get PHY refclk pad mode */
+>  	of_property_read_u32(np, "fsl,refclk-pad-mode",
+>  			     &imx8_phy->refclk_pad_mode);
+> @@ -196,8 +227,16 @@ static int imx8_pcie_phy_probe(struct platform_device *pdev)
+>  	}
+>  
+>  	/* Grab GPR config register range */
+> -	imx8_phy->iomuxc_gpr =
+> -		 syscon_regmap_lookup_by_compatible("fsl,imx6q-iomuxc-gpr");
+> +	switch (imx8_phy->variant) {
+> +	case IMX8MM:
+> +		imx8_phy->iomuxc_gpr =
+> +			 syscon_regmap_lookup_by_compatible("fsl,imx8mm-iomuxc-gpr");
+> +		break;
+> +	case IMX8MP:
+> +		imx8_phy->iomuxc_gpr =
+> +			 syscon_regmap_lookup_by_compatible("fsl,imx8mp-iomuxc-gpr");
+> +		break;
+> +	}
 
-The SC8280XP PHYs also need a second fixed-divider PIPE clock
-("pipediv2") and I didn't want to have to add a bogus "lane" suffix to
-the clock name just to match the current "pipe0" name so I decided to
-deprecate the unnecessary suffix in the current binding instead.
+Oh, I had a real phandle in DT in mind for this, but I see how this
+would be hard to introduce in a backward compatible manner for the 8MM.
+At least this way it is fully contained in the driver and doesn't leak
+into DT compatibles.
 
-To be able to add the missing child-node schema and handle device
-specifics like additional PIPE clocks, it quickly became obvious that
-the binding needs to be split up.
+Maybe we could make this a little nicer by just having an const array
+of iomux syscon compatibles indexed by imx8_phy->variant, to avoid the
+switch and the resulting code (almost-)duplication.
 
-This series clean up and fixes some issue with the current schema before
-splitting it up in separate schemas for PCIe, UFS and USB and adding
-missing parts like the child PHY provider nodes.
+Regards,
+Lucas
 
-The MSM8996 PCIe PHY gets its own schema as this is the only non-combo
-PHY that actually provides more than one PHY per IP block. Note that the
-"lane" suffix is still unnecessary and misleading.
+>  	if (IS_ERR(imx8_phy->iomuxc_gpr)) {
+>  		dev_err(dev, "unable to find iomuxc registers\n");
+>  		return PTR_ERR(imx8_phy->iomuxc_gpr);
+> @@ -208,6 +247,14 @@ static int imx8_pcie_phy_probe(struct platform_device *pdev)
+>  		dev_err(dev, "Failed to get PCIEPHY reset control\n");
+>  		return PTR_ERR(imx8_phy->reset);
+>  	}
+> +	if (imx8_phy->variant == IMX8MP) {
+> +		imx8_phy->perst =
+> +			devm_reset_control_get_exclusive(dev, "perst");
+> +		if (IS_ERR(imx8_phy->perst)) {
+> +			dev_err(dev, "Failed to get PCIE PHY PERST control\n");
+> +			return PTR_ERR(imx8_phy->perst);
+> +		}
+> +	}
+>  
+>  	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+>  	imx8_phy->base = devm_ioremap_resource(dev, res);
+> @@ -225,12 +272,6 @@ static int imx8_pcie_phy_probe(struct platform_device *pdev)
+>  	return PTR_ERR_OR_ZERO(phy_provider);
+>  }
+>  
+> -static const struct of_device_id imx8_pcie_phy_of_match[] = {
+> -	{.compatible = "fsl,imx8mm-pcie-phy",},
+> -	{ },
+> -};
+> -MODULE_DEVICE_TABLE(of, imx8_pcie_phy_of_match);
+> -
+>  static struct platform_driver imx8_pcie_phy_driver = {
+>  	.probe	= imx8_pcie_phy_probe,
+>  	.driver = {
 
-The final patches add support for the updated binding to the (recently
-split up) PHY drivers. Included is also a related combo PHY cleanup.
-
-Johan
-
-
-Changes in v4
- - rebase on phy/next from 2022-08-30 (71351b0e5646 ("phy: move from
-   strlcpy with unused retval to strscpy")) which included a new
-   sc8280xp USB PHY binding
- - add more tags from Krzysztof and Dmitry
-
-Changes in v3
- - rebase on linux-next which has a new binding for IPQ8074
- - fix git-bisect breakage due to removal of an unused variable one
-   patch too soon (Krzysztof)
- - replace one Fixes tag with reference in commit message (Krzysztof)
- - drop two redundant minItems (Krzysztof)
- - fix two Fixes tags that lacked the actual tag
- - add more ack and review tags from Krzysztof
-
-Changes in v2
- - squash split + cleanup + example patches (Krzysztof)
- - deprecate clock-names instead of dropping suffix (Krzysztof)
- - deprecate reset-names instead of dropping suffix (Krzysztof)
- - flatten child reg if/then schemas (Krzysztof)
- - add back optional vddp-ref-clk to all bindings even though it likely
-   only applies to MSM8996/98 UFS (Krzysztof)
- - add missing sc7180 schema to USB binding
- - misc clean ups
-   - shorten or drop descriptions
-   - drop quotes around $id and $schema (Krzysztof)
-   - use maxItems with clock-output-names
-   - combine two USB clock+reset schemas
- - add Reviewed-by/Acked-by tags
-
-
-Johan Hovold (30):
-  dt-bindings: phy: qcom,qmp: fix bogus clock-cells property
-  dt-bindings: phy: qcom,qmp: sort compatible strings
-  dt-bindings: phy: qcom,qmp: drop redundant descriptions
-  dt-bindings: phy: qcom,qmp: fix child node description
-  dt-bindings: phy: qcom,qmp: clean up descriptions
-  dt-bindings: phy: qcom,qmp: clean up example
-  dt-bindings: phy: qcom,qmp: drop child-node comment
-  dt-bindings: phy: add qcom,msm8996-qmp-pcie-phy schema
-  dt-bindings: phy: qcom,msm8996-qmp-pcie: add missing child node schema
-  dt-bindings: phy: qcom,msm8996-qmp-pcie: deprecate PIPE clock names
-  dt-bindings: phy: qcom,msm8996-qmp-pcie: deprecate reset names
-  dt-bindings: phy: add QMP PCIe PHY schema
-  dt-bindings: phy: qcom,qmp-pcie: add missing child node schema
-  dt-bindings: phy: qcom,qmp-pcie: deprecate PIPE clock name
-  dt-bindings: phy: add QMP UFS PHY schema
-  dt-bindings: phy: qcom,qmp-ufs: add missing SM8450 clock
-  dt-bindings: phy: qcom,qmp-ufs: add missing SM8150 power domain
-  dt-bindings: phy: qcom,qmp-ufs: add missing child node schema
-  dt-bindings: phy: add QMP USB PHY schema
-  dt-bindings: phy: qcom,qmp-usb: add missing child node schema
-  dt-bindings: phy: qcom,qmp-usb: deprecate PIPE clock name
-  dt-bindings: phy: qcom,qmp-usb: add missing qcom,sc7180-qmp-usb3-phy
-    schema
-  dt-bindings: phy: qcom,qmp-usb3-dp: fix bogus clock-cells property
-  dt-bindings: phy: qcom,qmp-usb3-dp: deprecate USB PIPE clock name
-  phy: qcom-qmp-pcie: drop pipe clock lane suffix
-  phy: qcom-qmp-combo: drop unused lane reset
-  phy: qcom-qmp-combo: drop pipe clock lane suffix
-  phy: qcom-qmp-pcie-msm8996: drop pipe clock lane suffix
-  phy: qcom-qmp-pcie-msm8996: drop reset lane suffix
-  phy: qcom-qmp-usb: drop pipe clock lane suffix
-
- .../phy/qcom,msm8996-qmp-pcie-phy.yaml        | 189 +++++++
- .../bindings/phy/qcom,qmp-pcie-phy.yaml       | 296 ++++++++++
- .../devicetree/bindings/phy/qcom,qmp-phy.yaml | 504 ------------------
- .../bindings/phy/qcom,qmp-ufs-phy.yaml        | 239 +++++++++
- .../bindings/phy/qcom,qmp-usb-phy.yaml        | 388 ++++++++++++++
- .../bindings/phy/qcom,qmp-usb3-dp-phy.yaml    |   8 +-
- drivers/phy/qualcomm/phy-qcom-qmp-combo.c     |   6 +-
- .../phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c  |   8 +-
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c      |   4 +-
- drivers/phy/qualcomm/phy-qcom-qmp-usb.c       |   4 +-
- 10 files changed, 1118 insertions(+), 528 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-pcie-phy.yaml
- create mode 100644 Documentation/devicetree/bindings/phy/qcom,qmp-pcie-phy.yaml
- delete mode 100644 Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
- create mode 100644 Documentation/devicetree/bindings/phy/qcom,qmp-ufs-phy.yaml
- create mode 100644 Documentation/devicetree/bindings/phy/qcom,qmp-usb-phy.yaml
-
--- 
-2.35.1
 
 
 -- 
