@@ -4,62 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 782FAECAAD5
-	for <linux-phy@archiver.kernel.org>; Tue, 30 Aug 2022 05:31:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8977CECAAA1
+	for <linux-phy@archiver.kernel.org>; Tue, 30 Aug 2022 07:01:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=z4vnRbAA08i4aF24Cp8Na0Pw86HCDs+FznxJOsjOCrQ=; b=T6YuQuZhtia3QE
-	AgrBz/LvcSh7NNkx1DF4qOPqIUAiUunVeUoWRDfFmeJzW0w24twsl8Mxl5WwmBD2ldx2ZfvE8d1S2
-	iZBYId6Z3ZWBF1kfpH8/ePEpa1suc3XJmrVQtWNZ35C+lyCrz5YMLpOF5bIYdg8FwRvp7FEkMtTJQ
-	VUns/zMfhNUMjnUx3Lq4gHNshwWA7Tabi1ejPvwHk0r08Ab6zafeJzuSNYJa8taxhWlOKSpMBpf+p
-	f+RO3UlBQUs5W8TNZt1QgpklUg6BKW8aIyx2IsDFKvOcp7R0jIlcmKqOrfyKbMovpBpbJ+WxsGCEV
-	0aX8ivtKNpG/lhfHne9Q==;
+	List-Owner; bh=dMBLqSz0hRBGcBGRlvUx8dIZ5iW44K/bMnV8I7od5BE=; b=hlmo9TPJu/QIkL
+	mDrv/LEBv3K3Kx9U1pm2aZZqx2SfHLVPaglw8GxEYYwxYpP/vR8vF0A69Dt3FHAeWYDTcG+41Y9E4
+	2Ryy9RbSNv1KsuKiiidtReOG+JnJOkPNXGJ0/jDPsY50eeJIQY/+i/mwK7gj/gaASRRRlsxSjUojG
+	lVeaNb9NV8DKK32SRz6MtDH7dpuwm3owhgb/Ns6W7BMVcBNIk2ml9PKIGidE/LgRqMWtxsS5B/rXH
+	1ayRvU7CiBw8B1ZITUsQ2m4Rd+b09khhPp6mlD22y3Bt8/WinrXMPZlSekx2bJPL5j6bjBowWZDyc
+	MyaUjx/EXlfU/sPBTjtw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oStqj-00EBk1-RV; Tue, 30 Aug 2022 05:31:45 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1oSvFI-00Ecrs-Ou; Tue, 30 Aug 2022 07:01:12 +0000
+Received: from ams.source.kernel.org ([145.40.68.75])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oStqh-00EBjP-TE
-	for linux-phy@lists.infradead.org; Tue, 30 Aug 2022 05:31:45 +0000
+	id 1oSvFD-00EcoZ-E1
+	for linux-phy@lists.infradead.org; Tue, 30 Aug 2022 07:01:10 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 452BD61272;
-	Tue, 30 Aug 2022 05:31:43 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E8E09C433D7;
-	Tue, 30 Aug 2022 05:31:41 +0000 (UTC)
+	by ams.source.kernel.org (Postfix) with ESMTPS id E99E6B815D1;
+	Tue, 30 Aug 2022 07:01:04 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 46FD5C433D6;
+	Tue, 30 Aug 2022 07:01:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1661837502;
-	bh=Cx//WqmvDiWDeKFb5xhwU9eZb4oNMLT8lWSoQd+h7DM=;
+	s=k20201202; t=1661842863;
+	bh=1m8t3XQYq2uVxf9hIZZQ7ueuqje2AiVRqFHNHbPJSVE=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=qG2/my20lNiK0+vesCAaDiUl1ZWIEc8nF3w9EzgBlBb1bqT7gEQ6csv+MVKxwdsz5
-	 1yMAgeKOR794G8nxXrWuTKzfxwjR7KZjd4d+qNm7TRDEYkpHiOp+W38Pi/rCKUOGdn
-	 X/2octNE70WxoSymCj/fU2N9KJGcjn+ie1IDSD1OAogTVYHkvsYPl4leUgux3eBroR
-	 AzReZNWsan1phPkH4czWlm6bLV/j0c+DyiMMqYVn+9xwHal67rRmviO84+d4/pEylh
-	 ewazfk/vauHRP2AuCFkE1TOmlMgU+Z1xhoZQkm41VVqwnuDKWWWBG1KhpaW1cxM7m2
-	 Ww8iwP33iP96g==
-Date: Tue, 30 Aug 2022 11:01:38 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Bjorn Andersson <bjorn.andersson@linaro.org>
-Cc: Kishon Vijay Abraham I <kishon@ti.com>,
+	b=JbQLeUv1wrIEeCeDusHAqgn20ilbVFg38RzUBjY3XCBvhC7gvFbpdxoOB1daufk3q
+	 uWiLWIjwoMw5re0DiTvYJElcLl/Tq2jgmmIwne4LMNkqmRNwIqvR0CfX11Vbp+DtO+
+	 n/dGxrL7CYGzi1hxsF2YQFAzBm/2cEHKFgzeDY+udVqelXAa90GLI6WK6Pao9enHyg
+	 JiyNBB3Qv7gYobpGlyp1QhiE0W6d//d72v4rrFve6f8vhqauChOjMarwFgLgWKIZbz
+	 G6u7ZkAPWmC0AqblXc7DydMfWDwJoleW6cN0QFHVZsnz+ZLe4LSItDdgPL6fJyH1zf
+	 jFZ5BbFTn4ocg==
+Received: from johan by xi.lan with local (Exim 4.94.2)
+	(envelope-from <johan@kernel.org>)
+	id 1oSvFH-0007Sc-Ga; Tue, 30 Aug 2022 09:01:11 +0200
+Date: Tue, 30 Aug 2022 09:01:11 +0200
+From: Johan Hovold <johan@kernel.org>
+To: Vinod Koul <vkoul@kernel.org>
+Cc: Johan Hovold <johan+linaro@kernel.org>,
 	Rob Herring <robh+dt@kernel.org>,
 	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <bjorn.andersson@linaro.org>,
+	Konrad Dybcio <konrad.dybcio@somainline.org>,
+	Kishon Vijay Abraham I <kishon@ti.com>,
+	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
 	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
 	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 0/5] phy: qcom: edp: Introduce SC8280XP support
-Message-ID: <Yw2gut71lb8h2lLb@matsya>
-References: <20220810040745.3582985-1-bjorn.andersson@linaro.org>
+Subject: Re: [PATCH v3 00/30] phy: qcom,qmp: fix dt-bindings and deprecate
+ lane suffix
+Message-ID: <Yw21t1SUGjCcUuuw@hovoldconsulting.com>
+References: <20220714124333.27643-1-johan+linaro@kernel.org>
+ <Yw2a44l9a6zz5qTJ@matsya>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20220810040745.3582985-1-bjorn.andersson@linaro.org>
+In-Reply-To: <Yw2a44l9a6zz5qTJ@matsya>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220829_223143_998718_2CD2EF30 
-X-CRM114-Status: UNSURE (   6.42  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220830_000109_159622_B1529DAA 
+X-CRM114-Status: GOOD (  22.76  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,16 +85,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 09-08-22, 21:07, Bjorn Andersson wrote:
-> What the subject says.
+On Tue, Aug 30, 2022 at 10:36:43AM +0530, Vinod Koul wrote:
+> On 14-07-22, 14:43, Johan Hovold wrote:
+> > When adding support for SC8280XP to the QMP PHY driver I noticed that
+> > the PHY provider child node was not described by the current DT schema.
+> > 
+> > The SC8280XP PHYs also need a second fixed-divider PIPE clock
+> > ("pipediv2") and I didn't want to have to add a bogus "lane" suffix to
+> > the clock name just to match the current "pipe0" name so I decided to
+> > deprecate the unnecessary suffix in the current binding instead.
+> > 
+> > To be able to add the missing child-node schema and handle device
+> > specifics like additional PIPE clocks, it quickly became obvious that
+> > the binding needs to be split up.
+> > 
+> > This series clean up and fixes some issue with the current schema before
+> > splitting it up in separate schemas for PCIe, UFS and USB and adding
+> > missing parts like the child PHY provider nodes.
+> > 
+> > The MSM8996 PCIe PHY gets its own schema as this is the only non-combo
+> > PHY that actually provides more than one PHY per IP block. Note that the
+> > "lane" suffix is still unnecessary and misleading.
+> > 
+> > The final patches add support for the updated binding to the (recently
+> > split up) PHY drivers. Included is also a related combo PHY cleanup.
+> 
+> This fails at patch 2 for me on v6.0-rc1, please rebase and resend
 
-:-)
+Are you sure you haven't applied anything to your local tree that causes
+this?
 
+I just tried fetching the v3 series from lore and it applies just fine
+on top of 6.0-rc1.
 
-Applied, thanks
+Note that if you've added a new compatible string locally, the second
+patch which sorts the compatible strings is likely to fail to apply.
 
--- 
-~Vinod
+Johan
 
 -- 
 linux-phy mailing list
