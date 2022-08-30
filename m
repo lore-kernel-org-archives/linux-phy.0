@@ -4,66 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AC5D5C0502C
-	for <linux-phy@archiver.kernel.org>; Tue, 30 Aug 2022 05:06:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7C670ECAAD5
+	for <linux-phy@archiver.kernel.org>; Tue, 30 Aug 2022 05:13:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=axWZX+omSKFJvBD852cT4DF0pD0wo6X3SZ4h7tf4MsI=; b=lrTz7imRzGr0ai
-	80Z0QYgwUERqSg2sHu3VckDILCfa9GxlMmv3wjianqoOjJuEDJl5+Vi2Hw+71h+X/53k8nCDDZ7BP
-	aULwg5HMuQEC4IyxAb+h1ol/zFOKs7zIGmDQ7hC1qWOhQUGTLtYy2vRDJ0OXrN4JdkkLC+t0+WDJF
-	QpoHXf/onnc9z/CL5yVG0p7JgrT8TYKATWXiK2BKUG26zqt+HjaP2t/7OUk2FowSiu3bX4Slj+EPG
-	SLkw5PZfDPYidLnuk39wN3qVWXqkxGXXVX79NNogQMdqmFX1IQN/uW+htSax7XjsFpLE38PqlestA
-	DDbPMUcaG+VD/7xEIC+w==;
+	List-Owner; bh=ZMPVmWemRmh6SC4M/LlUnNuaGntf88kU1a603oIyylk=; b=VT/9Tg+RF7lPTk
+	ZeBKrdWkjUoxQ0ImxOxVrpi4DdIHFeo93SHGRMPnNddC3o/HC/ax17ULCxCYMP5q55SAPA9YmrpW2
+	jFYE/GipEKtvXuCN7RJHpMJO8p2881VoNnIgVfgMp1AND+1enrhS1gAsVE3WUW3QRlrczksxFbYiK
+	lSNuhL/bfojzn11Wyp0KHVFsbFdEB0K/v5dPPXYVo7SMz4le6zMVzBDEoIljHpblLntDPzfjk9bDU
+	yFjetL6307qhUBGoUZo9PcD4RQGlRKmxgxWRyswVIB/4jRPTu6DsE8OthFznb1qULoLQrYdQfUqhL
+	irmqo2h7cF4PEToGm44g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oStSf-00E8JX-3K; Tue, 30 Aug 2022 05:06:53 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1oStZN-00E8ov-RK; Tue, 30 Aug 2022 05:13:58 +0000
+Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oStSc-00E8IK-BF
-	for linux-phy@lists.infradead.org; Tue, 30 Aug 2022 05:06:52 +0000
+	id 1oStZJ-00E8o9-Iv
+	for linux-phy@lists.infradead.org; Tue, 30 Aug 2022 05:13:46 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 86569612A5;
-	Tue, 30 Aug 2022 05:06:47 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6312AC433C1;
-	Tue, 30 Aug 2022 05:06:46 +0000 (UTC)
+	by ams.source.kernel.org (Postfix) with ESMTPS id 0A95BB811B2;
+	Tue, 30 Aug 2022 05:13:44 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id ECA73C433D6;
+	Tue, 30 Aug 2022 05:13:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1661836006;
-	bh=ASOn7IQszNk+VN/K8F4lja21kCAiyz6HLrdzvHYkXRU=;
+	s=k20201202; t=1661836422;
+	bh=75LehKyfg/TMPpwAfNi4DyQ4TNo6iyN0d+FUfBzGa+c=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=aSpMOTAF50Jycfw9ef+jyokGRBpmTKhDyuHeLrDoh3zBwoALkUoMMBJxIq0mqlc0U
-	 zjmFO96lUoFAP1sC2wN3pFKnmP3JJ47QbNaLuwrnTzd/N5cZ8GmPl9VfDyLmsZ/mnp
-	 LUX/3xoCdvltbTsT7oM2Lpg8aAEiagvkCW7EU3Lhysj+gM0L0Y3XGIPQlLDCZRwcAm
-	 g6jfuf51gR48rOu0dU31K65mYNo4kzi82NwjnlerErNO+KT5PKiVAfaY4YnC6MeXtP
-	 B6YJYWzVZ0xqPklWnO+8cGrVHDJISzg6zcMVebBt4x2bfODyem6SjlD4uL1aWAXtEH
-	 pHtKdL+YzS6ug==
-Date: Tue, 30 Aug 2022 10:36:43 +0530
+	b=qMzo0MkmqRBfQPGtXsosqLcP7p5VHih/9Q3XnhajUMs0P0JizUEv5OmJ0eWmdjF15
+	 hyGw76aYuNqtaVvcdFjZLKsWbWqMOdQyGD49gQ2z+ikm9taaT65meDox687jjcfixG
+	 d8TPr/NFWJ/qjG8Oe47Nf5pzKo2rPlgpB6ofZ1K2WWslIoPWnjGnBNNdArg1EWqQ3h
+	 WdMjC4GHZnc3cimpMGwPAI/vX8joJIR3b21/GzDMgH8v3qHJaJ9HlLhMA9UrYRfkLX
+	 MqBCXyUaEBzXjz1PwbNWAe78yMQ3LBSIIQNUDOd+2vkhVWmebUcVqozNYD3dWagvW0
+	 PUtGIAOpCjg+w==
+Date: Tue, 30 Aug 2022 10:43:38 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Johan Hovold <johan+linaro@kernel.org>
-Cc: Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <bjorn.andersson@linaro.org>,
-	Konrad Dybcio <konrad.dybcio@somainline.org>,
-	Kishon Vijay Abraham I <kishon@ti.com>,
-	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v3 00/30] phy: qcom,qmp: fix dt-bindings and deprecate
- lane suffix
-Message-ID: <Yw2a44l9a6zz5qTJ@matsya>
-References: <20220714124333.27643-1-johan+linaro@kernel.org>
+To: Roger Quadros <rogerq@kernel.org>
+Cc: kishon@ti.com, vigneshr@ti.com, t-patil@ti.com, sjakhade@cadence.com,
+	s-vadapalli@ti.com, linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org, devicetree@vger.kernel.org
+Subject: Re: [PATCH 0/7] phy: ti: phy-j721e-wiz: Add support for j7200-wiz-10g
+Message-ID: <Yw2cgthIiLONb/+Y@matsya>
+References: <20220628122255.24265-1-rogerq@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20220714124333.27643-1-johan+linaro@kernel.org>
+In-Reply-To: <20220628122255.24265-1-rogerq@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220829_220650_492928_0244EFE3 
-X-CRM114-Status: GOOD (  16.27  )
+X-CRM114-CacheID: sfid-20220829_221345_782584_22B8DFDA 
+X-CRM114-Status: GOOD (  10.68  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,33 +73,22 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 14-07-22, 14:43, Johan Hovold wrote:
-> When adding support for SC8280XP to the QMP PHY driver I noticed that
-> the PHY provider child node was not described by the current DT schema.
+On 28-06-22, 15:22, Roger Quadros wrote:
+> Hi,
 > 
-> The SC8280XP PHYs also need a second fixed-divider PIPE clock
-> ("pipediv2") and I didn't want to have to add a bogus "lane" suffix to
-> the clock name just to match the current "pipe0" name so I decided to
-> deprecate the unnecessary suffix in the current binding instead.
+> The SERDES in J7200 SR2.0 supports 2 reference clocks.
+> The second reference clock (core_ref1_clk) is hardwired to
+> MAIN_PLL3_HSDIV4_CLKOUT (100/125/156.25 MHz).
 > 
-> To be able to add the missing child-node schema and handle device
-> specifics like additional PIPE clocks, it quickly became obvious that
-> the binding needs to be split up.
+> Add a new compatible "j7200-wiz-10g" for this device.
 > 
-> This series clean up and fixes some issue with the current schema before
-> splitting it up in separate schemas for PCIe, UFS and USB and adding
-> missing parts like the child PHY provider nodes.
-> 
-> The MSM8996 PCIe PHY gets its own schema as this is the only non-combo
-> PHY that actually provides more than one PHY per IP block. Note that the
-> "lane" suffix is still unnecessary and misleading.
-> 
-> The final patches add support for the updated binding to the (recently
-> split up) PHY drivers. Included is also a related combo PHY cleanup.
+> The external clocks to SERDES PLL refclock mapping is now
+> controlled by a special register in System Control Module
+> (SCM) space. Add a property "ti,scm" to reference it and
+> configure it in the driver.
 
-This fails at patch 2 for me on v6.0-rc1, please rebase and resend
+Applied, thanks
 
-Thanks
 -- 
 ~Vinod
 
