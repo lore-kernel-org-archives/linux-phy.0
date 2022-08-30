@@ -4,69 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C867CECAAA1
-	for <linux-phy@archiver.kernel.org>; Tue, 30 Aug 2022 11:13:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A1FCDECAAA1
+	for <linux-phy@archiver.kernel.org>; Tue, 30 Aug 2022 11:30:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=I9c7M3szhjN1CUcIht7lmTz0Kkv/frEoyvrK/IIFEio=; b=iZazramI2OgNjT
-	TkBalsqzJo1t96dZzZDUs5eCC1lwgBp9ieAJ05Kr5sh5Nb43VOrMtmiO1u32TBFg8LHI4phpc2D3e
-	DoubJZAhVFxGXdZIWOLaZxksTRaR4LlmBZ/ajyfR8q93oDIND+EqIHRpvLe12YgeQECntgaNbh/GK
-	n+gMo8rNSF8wx2rno52QO+O5YGRskd3LsbjjdwkCiJYHanlNzYwePMO6GjMgtLd80uq03u79tBIgY
-	cehYQXEbTQFcy1AxAsMChRrVBHe6b2cQudcQ0Eai/NhHYMd9IU3q7lWiBFbOSfvPiTtH6EEBZx7Dc
-	SbX+IbSweTjqpUDYEsnw==;
+	List-Owner; bh=3PnSZQEKgsax94BV6+n+7N9nYD0ML91Ym/Kuc6R3yUU=; b=Zl2B+yOkSe1LIR
+	HL+ohvSAEK2ua2ps4WXOKXkwyEVp7Mz6wmPm1xL+yOrlcL0yvEWjmwHKst1rGhBYITuJbu/13Q6bX
+	se5OboEoKTK+p/it6cdll0twR63eAxVohJmhw12oOitXp+aIdi/2aCFwpFguv7xyHVSGcp7VLnqWl
+	+m6zmsJ5+oBeFVa4Lvexh8EgCUlzH1Y9HjRUHzFi2nwxs0L7GT73qftwXrxAbsIr2/CwU2hBZ02zB
+	mEtjAlIzX4K97AKkZBQTLoBmz/r+N8GB2RMz2a5QzAYG+J5uIQnb/zwr5GLFprwoKlbvgNGo86Y8N
+	3ZoD539q1L7I5fFVrS0A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oSzBW-00GTv0-Bx; Tue, 30 Aug 2022 11:13:34 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1oSzRU-00GZXx-RG; Tue, 30 Aug 2022 11:30:04 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oSzBP-00GTo8-Eq
-	for linux-phy@lists.infradead.org; Tue, 30 Aug 2022 11:13:29 +0000
+	id 1oSzRR-00GZUw-Qb
+	for linux-phy@lists.infradead.org; Tue, 30 Aug 2022 11:30:03 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 92CB56142C;
-	Tue, 30 Aug 2022 11:13:26 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5A89BC433C1;
-	Tue, 30 Aug 2022 11:13:23 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 63D056154C;
+	Tue, 30 Aug 2022 11:30:00 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id BE5D0C433D6;
+	Tue, 30 Aug 2022 11:29:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1661858006;
-	bh=jNG2gCWSllTupgHvGrYYT7PSUlHkq8MWcYG0y8EZTnE=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=VR/Gg2PqVwxfODQVdOPHed+GMSCt5kWnEOktkTVShuBRbNw4+W2AdvwACXwYlXtUy
-	 yKhhnDH3iUR4R1Ln8FBX9pW+2qIRzQHA0XTmbVvAPvLIhc3wzYt2gdqh96O2M5JwDP
-	 bq2j+W2pWJ9ThC8IhytZUcY53oBRlq4qlQB0FJ+YAAvesw8IGKKRWs/NBWtFwqg69K
-	 5adafvTT6LbEuBFaPXC7M4edfbdCHQUDkl85dfEAWvSvUMVDdWB0fcqIF8lqmcX9PJ
-	 oGSeUx41CIJ9ldgBbO0fx8ms722Axin+RFflkcu1yWi8YGc0VxkgQU//oGEpNJVYW/
-	 wkH91MtjMrKwQ==
-Message-ID: <7dff961e-908d-48de-fff1-8b6029d28eed@kernel.org>
-Date: Tue, 30 Aug 2022 14:13:20 +0300
+	s=k20201202; t=1661858999;
+	bh=dcH24rq3fWIG9NT0rAyGvQ9ewBW5xky0rFZzKzDMh3A=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=HgjT2DF6oKx7s040ndeCTkNyZB4XXzQWsiDeuV0cats3XeH6h08ImTlBj8m49KT1D
+	 oPp2PH58adQkwyXbswCTJy7mAZLEyxBaQAdRL2yBNuVL3FzPUHUUUyLxi2ivNjFh93
+	 ILJqRK9B8zycFOF9SGADoAyUGegLTwu+YhddnxAHzNOmylVuoQ0dOgebvjDbiZrrcB
+	 c3EZCK++uNT2H9fPAQwdPqaw3d0/n9Icw2NDiNuZH5hBgDT8J/x8wGxektLzWlzP93
+	 3FqcBJ82nOA9XMAK0VNqblOaNkTbEn4Ok5N+Nn3iNUqtMy+bW05joGMKPyRZbdrGwB
+	 17I/417oiMnHA==
+Received: from johan by xi.lan with local (Exim 4.94.2)
+	(envelope-from <johan+linaro@kernel.org>)
+	id 1oSzRM-0000zp-V1; Tue, 30 Aug 2022 13:29:56 +0200
+From: Johan Hovold <johan+linaro@kernel.org>
+To: Vinod Koul <vkoul@kernel.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
+Cc: Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@somainline.org>,
+	Kishon Vijay Abraham I <kishon@ti.com>,
+	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+	linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	Johan Hovold <johan+linaro@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Subject: [PATCH v4 01/30] dt-bindings: phy: qcom,qmp: fix bogus clock-cells property
+Date: Tue, 30 Aug 2022 13:28:54 +0200
+Message-Id: <20220830112923.3725-2-johan+linaro@kernel.org>
+X-Mailer: git-send-email 2.35.1
+In-Reply-To: <20220830112923.3725-1-johan+linaro@kernel.org>
+References: <20220830112923.3725-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.9.1
-Subject: Re: [PATCH v3 2/2] phy: ti: gmii-sel: Add support for CPSW5G GMII SEL
- in J7200
-Content-Language: en-US
-To: Siddharth Vadapalli <s-vadapalli@ti.com>
-Cc: robh+dt@kernel.org, lee.jones@linaro.org, krzysztof.kozlowski@linaro.org,
- krzysztof.kozlowski+dt@linaro.org, kishon@ti.com, vkoul@kernel.org,
- dan.carpenter@oracle.com, grygorii.strashko@ti.com,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org
-References: <20220822065631.27933-1-s-vadapalli@ti.com>
- <20220822065631.27933-3-s-vadapalli@ti.com>
- <655c39a3-cf5f-6dd7-3c1a-61ebeae915bd@kernel.org>
- <7dd27795-11d0-3147-ed86-959ff3e89df4@ti.com>
- <8ef8b2f8-a1c1-b277-22b1-6e951e8dfc72@kernel.org>
- <533a4186-62b1-ce7b-e097-9fb04be8f018@ti.com>
-From: Roger Quadros <rogerq@kernel.org>
-In-Reply-To: <533a4186-62b1-ce7b-e097-9fb04be8f018@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220830_041327_780374_35B01EE5 
-X-CRM114-Status: GOOD (  20.43  )
+X-CRM114-CacheID: sfid-20220830_043001_942640_C44E316E 
+X-CRM114-Status: UNSURE (   9.52  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,66 +87,49 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Siddharth,
+The QMP PHY wrapper node is not a clock provider so drop the bogus
+'#clock-cells' property that was added when converting to DT schema.
 
-On 30/08/2022 07:31, Siddharth Vadapalli wrote:
-> Hello Roger,
-> 
-> On 29/08/22 18:13, Roger Quadros wrote:
->> Siddharth,
->>
->> On 29/08/2022 07:53, Siddharth Vadapalli wrote:
->>> Hello Roger,
->>>
->>> On 25/08/22 13:11, Roger Quadros wrote:
->>>> Hi Siddharth,
->>>>
->>>> On 22/08/2022 09:56, Siddharth Vadapalli wrote:
->>>>> Each of the CPSW5G ports in J7200 support additional modes like QSGMII.
->>>>> Add a new compatible for J7200 to support the additional modes.
->>>>>
->>>>> In TI's J7200, each of the CPSW5G ethernet interfaces can act as a
->>>>> QSGMII or QSGMII-SUB port. The QSGMII interface is responsible for
->>>>> performing auto-negotiation between the MAC and the PHY while the rest of
->>>>> the interfaces are designated as QSGMII-SUB interfaces, indicating that
->>>>> they will not be taking part in the auto-negotiation process.
->>>>>
->>>>> To indicate the interface which will serve as the main QSGMII interface,
->>>>> add a property "ti,qsgmii-main-ports", whose value indicates the
->>>>> port number of the interface which shall serve as the main QSGMII
->>>>> interface. The rest of the interfaces are then assigned QSGMII-SUB mode by
->>>>> default.
->>>>
->>>> Can you please describe here why you are using "ti,qsgmii-main-ports" instead
->>>> of "ti,qsgmii-main-port" as there can be only one main port per PHY instance?
->>>
->>> Thank you for reviewing the patch. I am using "ports" instead of "port"
->>> because I plan to add support for CPSW9G on TI's J721e device in the
->>> future patches. CPSW9G (8 external ports) supports up to two QSGMII main
->>> ports. For CPSW9G, by specifying the two main ports in the device tree,
->>> it is possible to configure the CTRLMMR_ENETx_CTRL register for each of
->>> the 8 ports, with the two QSGMII main ports being configured as main
->>> ports in the CTRLMMR_ENETx_CTRL register and the rest of them being
->>> configured as sub ports. Since I will be using the same property
->>> "ti,qsgmii-main-ports" for CPSW9G as well, the property will be an array
->>> of 2 values for CPSW9G. Therefore, I am using "ports" instead of "port".
->>> Please let me know if this is fine.
->>>
->>
->> OK. Please mention this in commit message.
-> 
-> I will mention that the property ti,qsgmii-main-ports is used to
-> configure the CTRLMMR_ENETx_CTRL register and that it is possible
-> depending on the device for there to be more than one main port which is
-> why the property is an array of values.
-> 
-> Would it be sufficient to mention the above in the commit message?
-> Please let me know.
+Fixes: ccf51c1cedfd ("dt-bindings: phy: qcom,qmp: Convert QMP PHY bindings to yaml")
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
+---
+ Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml | 5 -----
+ 1 file changed, 5 deletions(-)
 
-This is fine. Thanks.
+diff --git a/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
+index d8a9c205f039..edb53576fc0d 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
+@@ -68,9 +68,6 @@ properties:
+       - description: Address and length of PHY's common serdes block.
+       - description: Address and length of PHY's DP_COM control block.
+ 
+-  "#clock-cells":
+-    enum: [ 1, 2 ]
+-
+   "#address-cells":
+     enum: [ 1, 2 ]
+ 
+@@ -118,7 +115,6 @@ patternProperties:
+ required:
+   - compatible
+   - reg
+-  - "#clock-cells"
+   - "#address-cells"
+   - "#size-cells"
+   - ranges
+@@ -472,7 +468,6 @@ examples:
+     usb_2_qmpphy: phy-wrapper@88eb000 {
+         compatible = "qcom,sdm845-qmp-usb3-uni-phy";
+         reg = <0x088eb000 0x18c>;
+-        #clock-cells = <1>;
+         #address-cells = <1>;
+         #size-cells = <1>;
+         ranges = <0x0 0x088eb000 0x2000>;
+-- 
+2.35.1
 
-cheers,
--roger
 
 -- 
 linux-phy mailing list
