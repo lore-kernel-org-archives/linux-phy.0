@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C2F0EC6FA82
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 47A8EC6FA8F
 	for <linux-phy@archiver.kernel.org>; Tue, 30 Aug 2022 11:30:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,39 +12,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TwecJiQIwzFDEB6e7uyvu9KjEHWLRuI7zJLgB9hc9hI=; b=RHVt3/0nRPq8cP
-	yCYoQtuTLCFfXWkEt/ur+zt80lAwseaFXMgZLHfGCW1ccOoOX20AqnG9pYDhUi9T2DoDY6/2paTY3
-	AJHru/ICJiv3YwuVBAlqHITvzXdPFw4RBp/4iUnnmYBkrldtn6xg2Fdl3RNkHnWxE+kFbaQvDeRij
-	oXFWcgqvgPB3QYshBGYVttpDfYh58VQUuQfoczQejVpZPtqEO2fMkYF9tkNnWIYREMD//2jWzf6nH
-	MG1EElmjRMXkDi4ROz2fKIbkdIM7wGLYsxCrOjKfCfieUH7STapEqEHNcIfjscqZRWTKzKM+YT0mP
-	XoAxDzXIqYgUC5spH2QQ==;
+	List-Owner; bh=fErfJLHbXUnDI2LqmWLtRXoMjjzM20BZNiuFA3Z9/Rk=; b=m+Ivtl5rQmeo0G
+	+riW8LMKHZqmDZFPkrH3dOzHQQYKMqOYWfHD7aN5lMZCPafbNE71TxlQLd3gsOZO7TeJ2JjUZ+ECd
+	9V1PnT85N8Q0hox/aqLySpp5vKXhmYe74njjpSbNNHTnmtimbo4Qz55//R1qu4DuBwLPkh+5aussk
+	JMuQMVGOGfWn7/V4UuVV08L6EcCK++XEPMrZNOC9PcDfcHhT4E1+u/3sMJwWrrWoIfyc5G/B2VCp3
+	ejXvqAeawc8/5VDVyxrsuUyGaMGsQwE4IZo3OZ3oze+6+tFp24hMB+dAjlHXVi88hY2+OeGprMc6h
+	Bh7RHT25acCbhrYP18Yg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oSzRp-00GZlF-5L; Tue, 30 Aug 2022 11:30:25 +0000
+	id 1oSzRo-00GZke-Jk; Tue, 30 Aug 2022 11:30:24 +0000
 Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oSzRX-00GZXt-2N
-	for linux-phy@lists.infradead.org; Tue, 30 Aug 2022 11:30:10 +0000
+	id 1oSzRW-00GZWo-3R
+	for linux-phy@lists.infradead.org; Tue, 30 Aug 2022 11:30:09 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id DEA036154F;
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 71B676154C;
 	Tue, 30 Aug 2022 11:30:04 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D7AB4C50001;
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4CEA3C4FF86;
 	Tue, 30 Aug 2022 11:30:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1661859001;
-	bh=n7oevCsJiM3+P/j5DFo0XgY4G7Bn2vNQPrFCIQg+vT0=;
+	bh=Pv8Z5nFehfkYoWXpSKjausYgRFbe7Dy5KlCi2l4pu0M=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=bNXRLM5oMPNWPrkS7vCalNu7VmiGGZvPxLlr8H2WLgBkYPWQjtvNHyRWfCJANyug5
-	 kc78JtCEOCQaU0En/ETuTk2VMWHvXfhXGxPzGpQUiG95fEPQsaGrpQW0Z0lr58mdHq
-	 QAJ6nY4x9uJUBZtEgDOGKMgYtP441wG3fCEGwm/3w9nJ38/hAzRLJFtZLzklOUnuXI
-	 8s8gwcoFCYvY/hemBKwkml5l1sAQ3qLT7vT7UdrQjInRSXG4b5CcO1UYyrGBjKF54x
-	 YfAtzljIAaL43Nq9cpgbFjQzky1wlzd+UVx1fUydy0J3f/W7GuxA1hPYsiMrkdFQmi
-	 LsvVB8kE8Jepw==
+	b=YDIpwEQXpU77+4zVabPJ0+ZbOss1edC7/3iVDntN+h9tLX955hIBMIx7CMx2SfiHS
+	 Tcj8sCdJ6tSnRDjOI4cWhlMJ+Whx34h6SeegKCl2VWlS1INaRHqZmgpzqlX0Us3d0k
+	 MSeXy8t/e0J7x7IAJ2v2YkN0c3xcQQjG4xsXtC5xYUIQ3Nyulu8hoHqSrEq0q8/UbO
+	 d/jqxtzCcEr9l+7EUvayabrX+hxZcH1VZ3WJDg0F86npuDXqoH2Ezkekn/lqS8mdU8
+	 fVR80IRnPrQt1G0J+QUrIICfx/m58CCkLaqpPu1cabwNKEOXWLXJSZjXvt6LIpNLm9
+	 cZ9rmcR1M+cEw==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1oSzRP-00011G-GU; Tue, 30 Aug 2022 13:29:59 +0200
+	id 1oSzRO-00010y-WB; Tue, 30 Aug 2022 13:29:59 +0200
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>,
 	Rob Herring <robh+dt@kernel.org>,
@@ -60,16 +60,16 @@ Cc: Andy Gross <agross@kernel.org>,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>,
 	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Subject: [PATCH v4 30/30] phy: qcom-qmp-usb: drop pipe clock lane suffix
-Date: Tue, 30 Aug 2022 13:29:23 +0200
-Message-Id: <20220830112923.3725-31-johan+linaro@kernel.org>
+Subject: [PATCH v4 24/30] dt-bindings: phy: qcom,qmp-usb3-dp: deprecate USB PIPE clock name
+Date: Tue, 30 Aug 2022 13:29:17 +0200
+Message-Id: <20220830112923.3725-25-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.35.1
 In-Reply-To: <20220830112923.3725-1-johan+linaro@kernel.org>
 References: <20220830112923.3725-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220830_043007_208407_1F8B08AE 
-X-CRM114-Status: GOOD (  12.80  )
+X-CRM114-CacheID: sfid-20220830_043006_293238_80BE5336 
+X-CRM114-Status: GOOD (  10.60  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,41 +86,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The pipe clock is defined in the "lane" node so there's no need to keep
-adding a redundant lane-number suffix to the clock name.
-
-Update driver to support the new binding where the pipe clock name has
-been deprecated by instead requesting the clock by index.
+Deprecate the USB PHY node 'clock-names' property which specified that
+the PIPE clock name should have a bogus "lane" suffix.
 
 Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-usb.c | 4 +---
- 1 file changed, 1 insertion(+), 3 deletions(-)
+ .../devicetree/bindings/phy/qcom,qmp-usb3-dp-phy.yaml          | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-index ce0e2acb7094..59ed6c89979d 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-@@ -2630,7 +2630,6 @@ int qcom_qmp_phy_usb_create(struct device *dev, struct device_node *np, int id,
- 	struct qcom_qmp *qmp = dev_get_drvdata(dev);
- 	struct phy *generic_phy;
- 	struct qmp_phy *qphy;
--	char prop_name[MAX_PROP_NAME];
- 	int ret;
+diff --git a/Documentation/devicetree/bindings/phy/qcom,qmp-usb3-dp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,qmp-usb3-dp-phy.yaml
+index da7d8dfc631c..abc29686dff6 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,qmp-usb3-dp-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,qmp-usb3-dp-phy.yaml
+@@ -98,6 +98,7 @@ patternProperties:
+           - description: pipe clock
  
- 	qphy = devm_kzalloc(dev, sizeof(*qphy), GFP_KERNEL);
-@@ -2689,8 +2688,7 @@ int qcom_qmp_phy_usb_create(struct device *dev, struct device_node *np, int id,
- 	if (!qphy->pcs_misc)
- 		dev_vdbg(dev, "PHY pcs_misc-reg not used\n");
+       clock-names:
++        deprecated: true
+         items:
+           - const: pipe0
  
--	snprintf(prop_name, sizeof(prop_name), "pipe%d", id);
--	qphy->pipe_clk = devm_get_clk_from_child(dev, np, prop_name);
-+	qphy->pipe_clk = devm_get_clk_from_child(dev, np, NULL);
- 	if (IS_ERR(qphy->pipe_clk)) {
- 		return dev_err_probe(dev, PTR_ERR(qphy->pipe_clk),
- 				     "failed to get lane%d pipe clock\n", id);
+@@ -114,7 +115,6 @@ patternProperties:
+     required:
+       - reg
+       - clocks
+-      - clock-names
+       - '#clock-cells'
+       - '#phy-cells'
+ 
+@@ -195,7 +195,6 @@ examples:
+             #clock-cells = <0>;
+             #phy-cells = <0>;
+             clocks = <&gcc GCC_USB3_PRIM_PHY_PIPE_CLK>;
+-            clock-names = "pipe0";
+             clock-output-names = "usb3_phy_pipe_clk_src";
+         };
+ 
 -- 
 2.35.1
 
