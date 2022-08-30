@@ -4,80 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CDAE8ECAAA1
-	for <linux-phy@archiver.kernel.org>; Tue, 30 Aug 2022 17:16:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 474F8ECAAD1
+	for <linux-phy@archiver.kernel.org>; Tue, 30 Aug 2022 17:35:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:From:Cc:To:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=hnAo1RiLRNwRiArVjuU79ZcaNEcxeUQ30jKmkR2QNTk=; b=mh6CG5igDf3DbO
-	HN6VIyQZS2ORT3VjRVWMK0arGrwCZcOI3I2vg6Q/pxSvbpk81Xw+ex54NWujug0foouP8k6r++5oR
-	YbuhzOpQ8QKS8i1fMwyZD7xJe8fkZH2U+JnorV7+E/p8l5SCrjPMBes2UuZsfgMyG3/seN92NqQ4O
-	cCB9kNOFCG33jT5oB9FqlenD5ufGo7vN0n4bjrGIe7IP8xLnkZj4LQQzychXtmh4wMiWgrtqfIL1Y
-	L0Enx3mdbeTY2FiQEm7Ggt31UBkhWBUF+eXyKzyhIF8JX/DvnRnsw8k4B5te6CvTJBCr29WdAVplo
-	kiNZ0gVawMNZcKpyskbw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=lD+hL8Q8quIii81TzjrMwYF8txBo+dg3LUUiM/D5bRI=; b=EmU9zehDE28CT5
+	kZN2NR/q3oY3fg8RLtE90h4TgY8nFCjL2XuQhd3YBd0H76hwwC67TLRotcHiHZgLOnrxGyKqNdWxR
+	lVCxpLDKXMnXxYCjZTfRq3HettZOYolZhyB7hcSx6JpwR8etJZBGckKZBuGr/A3vs06l25JH1mES3
+	QA0pB3WgfDbX+WH+AIzoqXp8V7mIvkMHECe/c1m9eswuYbzBVkqDB6yMihlk2UObpmgaRRAmHOUbL
+	l4ztDMXarrKqOzaNrobuK/fZ8+nMqfN2rGa5r1FgKCAb9HFy7fyDrnMpB42AO5Ajl7W2pb10E676a
+	RBNb4IQJtjf/8uiH6AmQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oT4qd-000kdb-8M; Tue, 30 Aug 2022 17:16:23 +0000
-Received: from mail-wr1-x432.google.com ([2a00:1450:4864:20::432])
+	id 1oT597-000twp-9U; Tue, 30 Aug 2022 17:35:29 +0000
+Received: from mail-lf1-x134.google.com ([2a00:1450:4864:20::134])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oT4qa-000kaU-Gu; Tue, 30 Aug 2022 17:16:21 +0000
-Received: by mail-wr1-x432.google.com with SMTP id s7so221308wro.2;
-        Tue, 30 Aug 2022 10:16:19 -0700 (PDT)
+	id 1oT56V-000scP-NM
+	for linux-phy@lists.infradead.org; Tue, 30 Aug 2022 17:32:52 +0000
+Received: by mail-lf1-x134.google.com with SMTP id j14so6165103lfu.4
+        for <linux-phy@lists.infradead.org>; Tue, 30 Aug 2022 10:32:46 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20210112;
-        h=content-transfer-encoding:subject:from:cc:to:content-language
-         :user-agent:mime-version:date:message-id:from:to:cc;
-        bh=aYslhMiebwj7+4K29cnHKNgB9pRwPd88BFhx8bY7ouM=;
-        b=QclIAbxg3S4UhOG46RtLaDjvT59WEIZr//Zghr1EHfcBN/aRLlnISCNhVjMJQW7PfI
-         9L+CnEdbVkf9c5jm8bDnwVxX+ku9D9HvbFjgzT/XfehjSCkUtR6ByNphMoiEXjWfcAMF
-         umLSP8zeW9Rm1tfjKLBhj4DDSGGPEnLi9tmTfQfNvVpV4qwmsrQ6GS57FhU+duRjTbWJ
-         Wda8DarGYonTi6v0XWlL1idY8otPBBSqtM9mIjknjqhyaywWE3C+aIidxN5yzy23KrnY
-         XRckdEAaKCxqz6azufVCUlztbKNUhkU0UOqaz5EPkhMDDZpFkOup7x+NUyRCYZzmXOA4
-         N6Wg==
+        d=linaro.org; s=google;
+        h=content-transfer-encoding:in-reply-to:from:references:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc;
+        bh=e7JEKYuofd3ohVuN0wQat/Bd3pvagzYZJuquu9YnaTc=;
+        b=sccqeAOnaZ63YsK2QiDUkPx1XiQueuhmVcEyY7D1/T3NLqy3NAh1+Rn5w6JOBChXhu
+         ofeHiBKfVgGiNTBIcjYbaWG0bevSh3X+fk5q7sb5LCLRS+4DyYSJ+uG/vBOBiWAMmKDW
+         jyvx+aaIJMt2iCgo44tfCGHh4nDVa8QMUy6otmtxcqjNbWx6q/0MDzbY2s7hU9faiC5X
+         cdgbRrNnmv9X+w1NVtP+ut5y/2I9SI0LdciIfqtNo7Eop8so4Is9jCUG+1q2fBdQQcD0
+         D4DjZbo9t1yznxP0R1uwKzA4EyA2VIJBZJdJZy4sYf9PIhWN6ow3ixkbKogA3GvRC2QN
+         MhHw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=content-transfer-encoding:subject:from:cc:to:content-language
-         :user-agent:mime-version:date:message-id:x-gm-message-state:from:to
-         :cc;
-        bh=aYslhMiebwj7+4K29cnHKNgB9pRwPd88BFhx8bY7ouM=;
-        b=vsvdI0/cjtDUvtamGi6kkmKo3P4uQSrjlbGy7lQmIURrqW/Ugcdun5OMPQAjKPBfjc
-         BhVABCAD/wmRdLXwP9UF6Myb+5GQ6H6AQ6FQnBhl5UDtsBJwH/lgrB/QStcAarTDsZGr
-         JYs8uDy0wLW5nuUZE0fI+cA5PuHtwwC81HGQPT0eAKeWBKyyxb0B8aRZU/LR6pUJr20a
-         tyeVfDQYF7LwrvIRCzORij61hMW2bViPZgwp0bK/BtIbUe7gFCVki3OOSZO8i9TgGoHX
-         bv3S/FOEK2U1N7drjD4F4gX7DP8UY6xGChUH0Huskp7+YE7wJWP8xuZLBAbz/66admE0
-         a2TQ==
-X-Gm-Message-State: ACgBeo3YGCSm0qn6nWsCmXYb8yFYroajrI65xjOXZp4RrUjEobhbxzi0
-	Ik0KRKcltM3UKGWOdYYxVKw=
-X-Google-Smtp-Source: AA6agR7yhSuJYjzN6H3sQo9VVl3vOnuDoEKHCd3iysGHC95CwGJ/+8NKMi2iGatotF3XCNwDqvbtYA==
-X-Received: by 2002:a05:6000:258:b0:226:dc6e:9ef8 with SMTP id m24-20020a056000025800b00226dc6e9ef8mr5167855wrz.215.1661879778047;
-        Tue, 30 Aug 2022 10:16:18 -0700 (PDT)
-Received: from ?IPV6:2a01:c23:c143:e900:5d45:6499:bc12:87fc? (dynamic-2a01-0c23-c143-e900-5d45-6499-bc12-87fc.c23.pool.telefonica.de. [2a01:c23:c143:e900:5d45:6499:bc12:87fc])
-        by smtp.googlemail.com with ESMTPSA id u1-20020a05600c440100b003a31ca9dfb6sm13463745wmn.32.2022.08.30.10.16.17
+        h=content-transfer-encoding:in-reply-to:from:references:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc;
+        bh=e7JEKYuofd3ohVuN0wQat/Bd3pvagzYZJuquu9YnaTc=;
+        b=iL8AVPoQVO9Er9A6PCCaXi3Im81BjbONpDIAlFlczo0ifUic3Fr70a5bm0ti8L4uW7
+         xAdFanMioukRZGy52CEo/EIBoZGOsWUBV5dJFKHg7H7rSkg4D46YVJMVtPqORAww7uPQ
+         YPjc+41lNpuO2/SmosLc/8EiNxTZe2uVqJ3kp8Eoxs9kUkstP+4fkNT2+/k5wAwM297R
+         O9c/hvZ5XvHKrL5M2xidpLnFNDaXXlDlAHP2cTbn0F0f657Suca5iYLj9ZZ1gXBf9+M6
+         4sjcFVN2YaNysMG9vlfH/XVLTGw66Vs5N31FjJGoDWT0S6gSqo/2YERlzbOGDiNs0erf
+         lTbg==
+X-Gm-Message-State: ACgBeo2IZVMT2+eUhZxv4ur7gNkFAMN1I/bSEeE4TWi4GT055CXxaSiJ
+	xrjm/EGxqYOG1apMieyG2VcWQw==
+X-Google-Smtp-Source: AA6agR71Ri1C6ITQXhDL5pZbp01DKxvtr8nIL2S4m+SgX2lfZcjbi0Z3IVSXrgmMwJay7vslWOAXeg==
+X-Received: by 2002:a05:6512:3d1e:b0:48b:3f76:eff with SMTP id d30-20020a0565123d1e00b0048b3f760effmr8545084lfv.312.1661880765623;
+        Tue, 30 Aug 2022 10:32:45 -0700 (PDT)
+Received: from [192.168.28.124] (balticom-73-99-134.balticom.lv. [109.73.99.134])
+        by smtp.gmail.com with ESMTPSA id q7-20020a2eb4a7000000b00263d44b079bsm1166844ljm.99.2022.08.30.10.32.44
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 30 Aug 2022 10:16:17 -0700 (PDT)
-Message-ID: <9308a2a3-e828-bd9d-ab83-a68376aab5c3@gmail.com>
-Date: Tue, 30 Aug 2022 19:16:07 +0200
+        Tue, 30 Aug 2022 10:32:44 -0700 (PDT)
+Message-ID: <af1dd205-149b-034e-5f35-727ac1d151f2@linaro.org>
+Date: Tue, 30 Aug 2022 20:32:43 +0300
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) Gecko/20100101
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
  Thunderbird/91.13.0
+Subject: Re: [PATCH v1 1/1] usb: phy: mxs: apply board calibration value base
+ on chip trim value
 Content-Language: en-US
-To: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- Neil Armstrong <narmstrong@baylibre.com>, Kevin Hilman
- <khilman@baylibre.com>, Jerome Brunet <jbrunet@baylibre.com>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Cc: linux-phy@lists.infradead.org,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>,
- "open list:ARM/Amlogic Meson..." <linux-amlogic@lists.infradead.org>
-From: Heiner Kallweit <hkallweit1@gmail.com>
-Subject: [PATCH] phy: amlogic: use devm_clk_get_enabled() to simplify the code
+To: Frank Li <Frank.Li@nxp.com>, kishon@ti.com, vkoul@kernel.org,
+ robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org, shawnguo@kernel.org,
+ s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
+ linux-imx@nxp.com, balbi@kernel.org, gregkh@linuxfoundation.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-usb@vger.kernel.org, imx@lists.linux.dev
+References: <20220830162538.2845274-1-Frank.Li@nxp.com>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <20220830162538.2845274-1-Frank.Li@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220830_101620_595240_9EF2D960 
-X-CRM114-Status: UNSURE (   9.71  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220830_103247_811222_6C0465F8 
+X-CRM114-Status: GOOD (  11.53  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,78 +97,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Simplify the code by using devm_clk_get_enabled().
+On 30/08/2022 19:25, Frank Li wrote:
+> USBPHY_TRIM_OVERRIDE provide chip trim value. DTS provide board level
+> calibration data. Board level calibration data should be base on chip
+> trim value.
+> 
+> For example, TXCAL45DP board level hope add +2.85% register base on
+> standard 45ohm. But chip trim value is -5.25% to get 45ohm output.
+> Actually finial TXCAL45DP should be -5.25% + 2.85% = -2.4%.
+> 
+> If chip have not trim value at USBPHY_TRIM_OVERRIDE, No behavior change.
+> board level calibration will be applied.
+> 
+> If chip have trim value at USBPHY_TRIM_OVERRIDE and no DTS board level
+> data, chip trim value will be applied.
+> 
+> Signed-off-by: Frank Li <Frank.Li@nxp.com>
+> ---
+>  drivers/usb/phy/phy-mxs-usb.c | 40 ++++++++++++++++++++++++++++++++---
+>  1 file changed, 37 insertions(+), 3 deletions(-)
 
-Signed-off-by: Heiner Kallweit <hkallweit1@gmail.com>
----
- .../phy/amlogic/phy-meson-g12a-usb3-pcie.c    | 32 ++++---------------
- 1 file changed, 6 insertions(+), 26 deletions(-)
+Use scripts/get_maintainers.pl to CC all maintainers and relevant
+mailing lists.... and do not Cc unrelated folks.
 
-diff --git a/drivers/phy/amlogic/phy-meson-g12a-usb3-pcie.c b/drivers/phy/amlogic/phy-meson-g12a-usb3-pcie.c
-index 54d65a6f0..d2a1da8d9 100644
---- a/drivers/phy/amlogic/phy-meson-g12a-usb3-pcie.c
-+++ b/drivers/phy/amlogic/phy-meson-g12a-usb3-pcie.c
-@@ -388,7 +388,6 @@ static int phy_g12a_usb3_pcie_probe(struct platform_device *pdev)
- 	struct phy_g12a_usb3_pcie_priv *priv;
- 	struct phy_provider *phy_provider;
- 	void __iomem *base;
--	int ret;
- 
- 	priv = devm_kzalloc(dev, sizeof(*priv), GFP_KERNEL);
- 	if (!priv)
-@@ -408,43 +407,24 @@ static int phy_g12a_usb3_pcie_probe(struct platform_device *pdev)
- 	if (IS_ERR(priv->regmap_cr))
- 		return PTR_ERR(priv->regmap_cr);
- 
--	priv->clk_ref = devm_clk_get(dev, "ref_clk");
-+	priv->clk_ref = devm_clk_get_enabled(dev, "ref_clk");
- 	if (IS_ERR(priv->clk_ref))
- 		return PTR_ERR(priv->clk_ref);
- 
--	ret = clk_prepare_enable(priv->clk_ref);
--	if (ret)
--		return ret;
--
- 	priv->reset = devm_reset_control_array_get_exclusive(dev);
--	if (IS_ERR(priv->reset)) {
--		ret = PTR_ERR(priv->reset);
--		goto err_disable_clk_ref;
--	}
-+	if (IS_ERR(priv->reset))
-+		return PTR_ERR(priv->reset);
- 
- 	priv->phy = devm_phy_create(dev, np, &phy_g12a_usb3_pcie_ops);
--	if (IS_ERR(priv->phy)) {
--		ret = PTR_ERR(priv->phy);
--		dev_err_probe(dev, ret, "failed to create PHY\n");
--		goto err_disable_clk_ref;
--	}
-+	if (IS_ERR(priv->phy))
-+		return dev_err_probe(dev, PTR_ERR(priv->phy), "failed to create PHY\n");
- 
- 	phy_set_drvdata(priv->phy, priv);
- 	dev_set_drvdata(dev, priv);
- 
- 	phy_provider = devm_of_phy_provider_register(dev,
- 						     phy_g12a_usb3_pcie_xlate);
--	if (IS_ERR(phy_provider)) {
--		ret = PTR_ERR(phy_provider);
--		goto err_disable_clk_ref;
--	}
--
--	return 0;
--
--err_disable_clk_ref:
--	clk_disable_unprepare(priv->clk_ref);
--
--	return ret;
-+	return PTR_ERR_OR_ZERO(phy_provider);
- }
- 
- static const struct of_device_id phy_g12a_usb3_pcie_of_match[] = {
--- 
-2.37.2
-
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
