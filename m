@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6C99CECAAA1
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C71BBC0502A
 	for <linux-phy@archiver.kernel.org>; Tue, 30 Aug 2022 12:35:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,39 +12,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MJrbrvbH6qh5PNXQcsoyKlxXgT9tgHjI7m7yRp8Sz7A=; b=HelqjZ/88Zkj3x
-	wZA9UgaCEYM8cNKo8BgMzG0g64BXyXFC4mCEHg4VsHVMo70OYKlrLaU+BzBrYO4A4j6sIHYhioPTZ
-	BVO/tHorHDgSvwj1KUP9vMI+Mc0C7XziKVM8UVUJhuHtawSl87Of1O1Q63epN8+M5Mvi25iVlJJE2
-	+9kw7TYNT6RJHTx25Xa6gDONq2qIJKC+56bMPVo9aXVdvpHZNgYSIPK41VZ0C9MRPxdiExR5CNZBF
-	8oR3wZGrYJrSZJj3YBqMqFPR8zOKI5SyGiNzqowUM0bKjUSY8nKuoHGUVxbwfw0R+JJOtjPJTo3+j
-	GmuVVqQLB40Zf98AApBg==;
+	List-Owner; bh=fTpa+nl6bfuPWPJecKMW54Q1gymv0hGeHTb8+hEu0KQ=; b=sK5cfwBxvu9ehp
+	otAnAGxup+khIJwK4H933DaM62yFRcJ683qk/SLnh9hh0gGevjXHIwdRhRsyRnfigyRFzzl+1Evd4
+	8R922Mt2U4BdU22AMnnymJVbWa+9k7tegIDekx1CrzIOHgo01ZQh6XpoHteYLEOjnz6crwC16sXih
+	Ed0QVQUkL8JgZLjbGtn5i5dOhmHwqWAXffp/UHk5YsB+rIXT02gnmq0tGDPmlifryS4G2cSP7QXR7
+	UQfiv68YastaAKmyI4Y9vf8Hx9B6jUFI2IIo1U+MuSaSNHJlB8X4DMxxgayHqmeyZQJKQ3E0/BFpt
+	/rT01yWlikFHDc1U5OCA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oT0SQ-00GrIM-Rr; Tue, 30 Aug 2022 12:35:06 +0000
+	id 1oT0SR-00GrIk-5R; Tue, 30 Aug 2022 12:35:07 +0000
 Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oSzRS-00GZUz-4m
-	for linux-phy@lists.infradead.org; Tue, 30 Aug 2022 11:30:04 +0000
+	id 1oSzRT-00GZWn-Hg
+	for linux-phy@lists.infradead.org; Tue, 30 Aug 2022 11:30:05 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 2A4F761552;
-	Tue, 30 Aug 2022 11:30:01 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C7089C43470;
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 991F16156B;
+	Tue, 30 Aug 2022 11:30:02 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id EB063C43159;
 	Tue, 30 Aug 2022 11:29:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1661858999;
-	bh=3bust5oGCUM98lVWUkt9/98KJ0oRTfGrzsfR30oP7CA=;
+	s=k20201202; t=1661859000;
+	bh=/G961bIHsqvM18T2+pLeKjiHascL9V+Rmbh5mQi0vu8=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=NwLOBtheWTqVahLo2LLhcsEO5gPHe2M4RSEFtybb/IylL5ZeVVqHtaDNmHjxG4rBu
-	 nn2U2iuzagfyIaUfHle4HXV7vkZIeDmXUoIaJcUzPbMNaDfxc2JcB7ADXMY3NP8066
-	 g1X+hFb17qpWl/x/I5RPmZWlJ8NWlTtRaDWd2nmWFRE6MDEKZZm9lqg98oo+uLQdui
-	 VRRMaOQBdbiZxFVQuj5D3hO2wVAWLRrAalrTeztsbz85oVOc1KzxwNsAHYuHuBvKg4
-	 wxppSptdytIzhLIVvIbbZ4+6jPIyMz10ixtJcENFAC1brnLVc0ZrQiQCbmRGEZ7Raf
-	 c6mD0qVshP+9Q==
+	b=cz8Uak87fR9DUX4SSFN053x/3PrgN0zfIsWOvj1PZfMxOWsavDRvM+L7oiX5zgd9k
+	 yQgC6+WEee6LSVGr6NQaRSr2I2/EDtRMjIDEmg4HOd4IALFOUQDNIgXP1Tps0w3abQ
+	 v+fwOpowppItH4lLVSb7MmHxLAD9sKoU9bditM8tYZgHxzYuQWDxAU/LKX1SGisJc4
+	 BSRteXTk5yX/hE6OLEi/NvHUbEvBVl09KFdOpbHK1Yw3RbxOxTAAGYOwRi6ix0COdH
+	 nMmBl+4lSrP+Pgmfg0cHiw1lMSslePE41FKZEcc2Kkbk4YzWoCa7cByunQXJqpKQms
+	 Vq0hCBZODzBTg==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1oSzRN-0000zr-1N; Tue, 30 Aug 2022 13:29:57 +0200
+	id 1oSzRN-000109-JR; Tue, 30 Aug 2022 13:29:57 +0200
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>,
 	Rob Herring <robh+dt@kernel.org>,
@@ -60,16 +60,16 @@ Cc: Andy Gross <agross@kernel.org>,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>,
 	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Subject: [PATCH v4 02/30] dt-bindings: phy: qcom,qmp: sort compatible strings
-Date: Tue, 30 Aug 2022 13:28:55 +0200
-Message-Id: <20220830112923.3725-3-johan+linaro@kernel.org>
+Subject: [PATCH v4 09/30] dt-bindings: phy: qcom,msm8996-qmp-pcie: add missing child node schema
+Date: Tue, 30 Aug 2022 13:29:02 +0200
+Message-Id: <20220830112923.3725-10-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.35.1
 In-Reply-To: <20220830112923.3725-1-johan+linaro@kernel.org>
 References: <20220830112923.3725-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220830_043002_352534_B5F84EB4 
-X-CRM114-Status: UNSURE (   9.36  )
+X-CRM114-CacheID: sfid-20220830_043003_672085_9976510D 
+X-CRM114-Status: UNSURE (   9.37  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -87,77 +87,76 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Sort the compatible strings alphabetically to make it easier to look up
-entries and add new ones.
+Add the missing the description of the PHY-provider child nodes which
+were ignored when converting to DT schema.
 
-Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Fixes: ccf51c1cedfd ("dt-bindings: phy: qcom,qmp: Convert QMP PHY bindings to yaml")
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- .../devicetree/bindings/phy/qcom,qmp-phy.yaml      | 14 +++++++-------
- 1 file changed, 7 insertions(+), 7 deletions(-)
+ .../phy/qcom,msm8996-qmp-pcie-phy.yaml        | 49 +++++++++++++++++++
+ 1 file changed, 49 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
-index edb53576fc0d..f3976b1585b5 100644
---- a/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
-@@ -40,15 +40,18 @@ properties:
-       - qcom,sdm845-qmp-ufs-phy
-       - qcom,sdm845-qmp-usb3-phy
-       - qcom,sdm845-qmp-usb3-uni-phy
-+      - qcom,sdx55-qmp-pcie-phy
-+      - qcom,sdx55-qmp-usb3-uni-phy
-+      - qcom,sdx65-qmp-usb3-uni-phy
-       - qcom,sm6115-qmp-ufs-phy
-       - qcom,sm6350-qmp-ufs-phy
-       - qcom,sm8150-qmp-ufs-phy
-       - qcom,sm8150-qmp-usb3-phy
-       - qcom,sm8150-qmp-usb3-uni-phy
--      - qcom,sm8250-qmp-ufs-phy
-       - qcom,sm8250-qmp-gen3x1-pcie-phy
-       - qcom,sm8250-qmp-gen3x2-pcie-phy
-       - qcom,sm8250-qmp-modem-pcie-phy
-+      - qcom,sm8250-qmp-ufs-phy
-       - qcom,sm8250-qmp-usb3-phy
-       - qcom,sm8250-qmp-usb3-uni-phy
-       - qcom,sm8350-qmp-ufs-phy
-@@ -58,9 +61,6 @@ properties:
-       - qcom,sm8450-qmp-gen4x2-pcie-phy
-       - qcom,sm8450-qmp-ufs-phy
-       - qcom,sm8450-qmp-usb3-phy
--      - qcom,sdx55-qmp-pcie-phy
--      - qcom,sdx55-qmp-usb3-uni-phy
--      - qcom,sdx65-qmp-usb3-uni-phy
+diff --git a/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-pcie-phy.yaml
+index accbcb8b5c6f..8125a91a3591 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-pcie-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-pcie-phy.yaml
+@@ -57,6 +57,55 @@ patternProperties:
+   "^phy@[0-9a-f]+$":
+     type: object
+     description: one child node per PHY provided by this block
++    properties:
++      reg:
++        items:
++          - description: TX
++          - description: RX
++          - description: PCS
++
++      clocks:
++        items:
++          - description: PIPE clock
++
++      clock-names:
++        items:
++          - enum:
++              - pipe0
++              - pipe1
++              - pipe2
++
++      resets:
++        items:
++          - description: PHY (lane) reset
++
++      reset-names:
++        items:
++          - enum:
++              - lane0
++              - lane1
++              - lane2
++
++      "#clock-cells":
++        const: 0
++
++      clock-output-names:
++        maxItems: 1
++
++      "#phy-cells":
++        const: 0
++
++    required:
++      - reg
++      - clocks
++      - clock-names
++      - resets
++      - reset-names
++      - "#clock-cells"
++      - clock-output-names
++      - "#phy-cells"
++
++    additionalProperties: false
  
-   reg:
-     minItems: 1
-@@ -279,12 +279,12 @@ allOf:
-           contains:
-             enum:
-               - qcom,msm8998-qmp-ufs-phy
-+              - qcom,sc8180x-qmp-ufs-phy
-+              - qcom,sc8280xp-qmp-ufs-phy
-               - qcom,sdm845-qmp-ufs-phy
-               - qcom,sm6350-qmp-ufs-phy
-               - qcom,sm8150-qmp-ufs-phy
-               - qcom,sm8250-qmp-ufs-phy
--              - qcom,sc8180x-qmp-ufs-phy
--              - qcom,sc8280xp-qmp-ufs-phy
-     then:
-       properties:
-         clocks:
-@@ -372,11 +372,11 @@ allOf:
-         compatible:
-           contains:
-             enum:
-+              - qcom,sc8280xp-qmp-usb3-uni-phy
-               - qcom,sm8150-qmp-usb3-phy
-               - qcom,sm8150-qmp-usb3-uni-phy
-               - qcom,sm8250-qmp-usb3-uni-phy
-               - qcom,sm8350-qmp-usb3-uni-phy
--              - qcom,sc8280xp-qmp-usb3-uni-phy
-     then:
-       properties:
-         clocks:
+ required:
+   - compatible
 -- 
 2.35.1
 
