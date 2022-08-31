@@ -4,68 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6F28FECAAD1
-	for <linux-phy@archiver.kernel.org>; Wed, 31 Aug 2022 08:23:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D50BDECAAD1
+	for <linux-phy@archiver.kernel.org>; Wed, 31 Aug 2022 08:24:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tK5eCjyKTHofcklN/ypEmdMvh33boA4jSumP5hIFWK0=; b=LQN140XI9tc/yT
-	fFVsGHNPREokN4tWkDaqn3LhitFSeSEM1tXFOyil8LvFM8EVEj2SNJcCHpw4zHeL6x4c+ac/pIuqs
-	4bhoEcn/7EkGSLLJLIMHnwZPU3MwWQ0RGmwSSaW/H8JIILbski5mInQngNO8AvY8R9Ez/EOzmCQNE
-	N5hz6J4LlJMmce51k3n/9MJaRw81hH0YGTRDh8Am+WRCbhN70fOAwLqnSszf+g/pX4PDmB3bZC1Ok
-	NqZvMromlfoVFh75mCxWE+1HaYJabn23FeOu3RpE6ONyTgukAEmJA9N6NJymUMc159H+YSKjTIIku
-	IE+hYFc+/kEn11q/DRHg==;
+	List-Owner; bh=WyyZZdNvjJNvo0sLRTYcr05WxzwHKt3bbIib2WWK1kQ=; b=WRYUfrASiLC+Bn
+	R7nHmdKCoG+k0iC73xHj1TRd2J6KID7q6CqVPeHcIyNbjPrQXkc1BtHNepPiVSLBmaHo0OqRs+t5T
+	JdYhpP9ngAejhNG8OW4f8q2doFp43hyG17MgvK6Nsg60xYmxrwcDU9Zt4YQWTkNwoOARhlGN+Asmu
+	kMs6uXfkI9gmU+JlNxNOEdDY5yrdFn9nrXTtipD1d0rR11brGFwm3mS7Ms+ZMcFkzjwLbPaDxqR9Q
+	YIwypdIx6GrgOjXcLm5G3N9oMX5SMwTWL2nG77cNq1s1NhAF/xSUwr3KZ+xBRE7EtGjIgJEBCkvlU
+	VpwkhPmF9D8Mx419ngDA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oTJ0g-004ug6-DB; Wed, 31 Aug 2022 08:23:42 +0000
-Received: from madras.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e5ab])
+	id 1oTJ1Y-004v3w-4x; Wed, 31 Aug 2022 08:24:36 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oTIrm-004qpD-0G; Wed, 31 Aug 2022 08:14:31 +0000
-Received: from [192.168.1.100] (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
-	(No client certificate requested)
-	(Authenticated sender: kholk11)
-	by madras.collabora.co.uk (Postfix) with ESMTPSA id B6F8F6601A13;
-	Wed, 31 Aug 2022 09:14:27 +0100 (BST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1661933668;
-	bh=MxOD5M65W1GJcNc0Z8B2s/tYrrWG9J/LN9h5lRW6bSU=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=iaGCilpQKPcvOdreLUtUnyAO/H8KlaMdDQY5OwiupI4t3Ruht7gtwqhUgexUB9SPV
-	 p4okatpOHehg5tuz60UsjxuUuTKp07/aH9d94kH53QPMA/Bkeg0z8oxof/I1XPKUgw
-	 J/P5qqUYbelSw0cQUg2qqwljDtPkXqieT86jRDFdBkFhCycZOXOaTKBebwT8PpF6h5
-	 AxxrV3K60UmDTdA9mzSlWdXHYBCBmFS6MOSp2IkWcskFS6tinz73Y1ioLbE8Ic3edB
-	 oqooAJiBqGuoYJww0T4/ga0JmNHLFLVEJNhReQmRIMCpVvuhpRff8IDuIbN6o6LyiR
-	 X8CTpZsWeNlnw==
-Message-ID: <219aef5a-af2a-6873-f682-cb6aef862425@collabora.com>
-Date: Wed, 31 Aug 2022 10:14:25 +0200
+	id 1oTIsJ-004r16-9y
+	for linux-phy@lists.infradead.org; Wed, 31 Aug 2022 08:15:05 +0000
+Received: from ptx.hi.pengutronix.de ([2001:67c:670:100:1d::c0])
+	by metis.ext.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
+	(Exim 4.92)
+	(envelope-from <mfe@pengutronix.de>)
+	id 1oTIs1-0004bv-Ab; Wed, 31 Aug 2022 10:14:45 +0200
+Received: from mfe by ptx.hi.pengutronix.de with local (Exim 4.92)
+	(envelope-from <mfe@pengutronix.de>)
+	id 1oTIs0-0002sI-CE; Wed, 31 Aug 2022 10:14:44 +0200
+Date: Wed, 31 Aug 2022 10:14:44 +0200
+From: Marco Felsch <m.felsch@pengutronix.de>
+To: mchehab@kernel.org, robh+dt@kernel.org,
+	krzysztof.kozlowski+dt@linaro.org, vkoul@kernel.org, kishon@ti.com,
+	sakari.ailus@linux.intel.com, hverkuil@xs4all.nl, jacopo@jmondi.org,
+	laurent.pinchart+renesas@ideasonboard.com
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, kernel@pengutronix.de,
+	linux-media@vger.kernel.org
+Subject: Re: [PATCH 0/4] Add support for Toshiba TC358746
+Message-ID: <20220831081444.foupf6nfhqrk63ej@pengutronix.de>
+References: <20220818143307.967150-1-m.felsch@pengutronix.de>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.2.0
-Subject: Re: [PATCH v2 3/7] phy: phy-mtk-tphy: add property to set
- pre-emphasis
-Content-Language: en-US
-To: Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>,
- Rob Herring <robh+dt@kernel.org>
-Cc: Kishon Vijay Abraham I <kishon@ti.com>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org,
- Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>,
- Eddie Hung <eddie.hung@mediatek.com>
-References: <20220829080830.5378-1-chunfeng.yun@mediatek.com>
- <20220829080830.5378-3-chunfeng.yun@mediatek.com>
-From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-In-Reply-To: <20220829080830.5378-3-chunfeng.yun@mediatek.com>
+Content-Disposition: inline
+In-Reply-To: <20220818143307.967150-1-m.felsch@pengutronix.de>
+User-Agent: NeoMutt/20180716
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c0
+X-SA-Exim-Mail-From: mfe@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de); SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220831_011430_229594_A5EA73AC 
-X-CRM114-Status: GOOD (  15.51  )
+X-CRM114-CacheID: sfid-20220831_011503_369771_75C12207 
+X-CRM114-Status: GOOD (  14.58  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,45 +67,50 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Il 29/08/22 10:08, Chunfeng Yun ha scritto:
-> Add a property to set usb2 phy's pre-emphasis, it's disabled by default
-> on some SoCs.
+Hi,
+
+gentle ping on this series.
+
+On 22-08-18, Marco Felsch wrote:
+> Hi,
 > 
-> Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
-> ---
-> v2: no changes
-> ---
->   drivers/phy/mediatek/phy-mtk-tphy.c | 10 ++++++++++
->   1 file changed, 10 insertions(+)
+> this small series adds the support for the Toshiba TC358746 MIPI-CSI to
+> Parallel converter chip. After a long period I finally had the time to
+> include Sakaris points made on my v2 [1]. Since [1] is long time ago
+> and I reworked the driver a lot, I don't add a v3 on this series. Also
+> all already provided RB tags are dropped.
 > 
-> diff --git a/drivers/phy/mediatek/phy-mtk-tphy.c b/drivers/phy/mediatek/phy-mtk-tphy.c
-> index 8ee7682b8e93..986fde0f63a0 100644
-> --- a/drivers/phy/mediatek/phy-mtk-tphy.c
-> +++ b/drivers/phy/mediatek/phy-mtk-tphy.c
-> @@ -72,6 +72,8 @@
->   #define PA5_RG_U2_HS_100U_U3_EN	BIT(11)
->   
->   #define U3P_USBPHYACR6		0x018
-> +#define PA6_RG_U2_PRE_EMP		GENMASK(31, 30)
-> +#define PA6_RG_U2_PRE_EMP_VAL(x)	((0x3 & (x)) << 30)
-
-Hello Chunfeng,
-
-can you please clarify which SoC is this change referred to?
-
-If I'm not missing anything, there may be a register layout conflict between
-one version and the other for T-PHYs, for which, it may be a good idea to add
-a PHY version check before allowing to write settings that are supported only
-on a specific IP...
-
-Regards,
-Angelo
-
+> Regards,
+>   Marco
+> 
+> [1] https://www.mail-archive.com/linux-media@vger.kernel.org/msg147901.html
+> 
+> Marco Felsch (4):
+>   phy: dphy: refactor get_default_config
+>   phy: dphy: add support to calculate the timing based on hs_clk_rate
+>   media: dt-bindings: add bindings for Toshiba TC358746
+>   media: tc358746: add Toshiba TC358746 Parallel to CSI-2 bridge driver
+> 
+>  .../bindings/media/i2c/toshiba,tc358746.yaml  |  157 ++
+>  drivers/media/i2c/Kconfig                     |   17 +
+>  drivers/media/i2c/Makefile                    |    1 +
+>  drivers/media/i2c/tc358746.c                  | 1645 +++++++++++++++++
+>  drivers/phy/phy-core-mipi-dphy.c              |   31 +-
+>  include/linux/phy/phy-mipi-dphy.h             |    3 +
+>  6 files changed, 1850 insertions(+), 4 deletions(-)
+>  create mode 100644 Documentation/devicetree/bindings/media/i2c/toshiba,tc358746.yaml
+>  create mode 100644 drivers/media/i2c/tc358746.c
+> 
+> -- 
+> 2.30.2
+> 
+> 
+> 
 
 -- 
 linux-phy mailing list
