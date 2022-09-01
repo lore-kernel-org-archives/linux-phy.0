@@ -4,70 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 16424ECAAD5
-	for <linux-phy@archiver.kernel.org>; Thu,  1 Sep 2022 08:55:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7A45DECAAD1
+	for <linux-phy@archiver.kernel.org>; Thu,  1 Sep 2022 12:10:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=S/+PKHL6e7tHZZjIv3aKssBSvoNOw3eKJIA7fKBBwYY=; b=e+db8S05Y4AtqJ
-	nMTJe2nxg0ScaLAyZ3eU+mfE2GwbwFHJ25wdkQeJP96sSqsu5fVGXhS40a0XQ6qefPqmJswocDzIJ
-	3WnAQ9IhDXn9pgb6eXkiBJDemuEkvIkb16vPle9dlnK7B3Hg67GF/b6teqkBZ6eviOusIBWZ2DNhb
-	m7QnZxOCgTnCedqpcuCVQ5wxcq6jU90kTY2Y3TMM+Cm/AO0oP7d+IU+V6oafLw0GFPtd1VH0CXxnj
-	UH6LT5xGFcl+TAvDJmT4mRpp/AzE0KDVBfmpVQpxcxs1Sx4FyECg61/zqjncqr0sSNcS4MyHJ0QH8
-	U1S+szJrbkt8y/TAojOw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=QG+SGapdc2bSmLlvtFwP8JhH6OixS73dB4Q7dzKLqEY=; b=gC5ugjUgn9gAbm
+	4ttgAUku5r1tt6yvX21MthYaM5VVDJVOC3ik7cq1HGtHTuYc1Wit/pf3FzkWWDvciD7lIKHXWYLqx
+	14PhtMz2ZoabAsSwjnAZyzZInQSR+pXih3yXNu437nwKqMxSmIt478gYklnk7zxdlKbuM2+cho6TH
+	Leuqaqnpq5W3P8BdMR8AmkuUtg6IfRrjgDD6noofAtn4T+HjFeavu5H66Y2laAlsOwxnejyQ8NqaA
+	BHuv8xrU7rXvu657flFRpb76dyWZrsrIEL4HdX2bAHb8VT0LZuFqRTRAWLWNHppsbbuUKyyatme3B
+	i2bCgONCeaxU9ytlwK5Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oTfyw-00Ag3n-Gh; Thu, 01 Sep 2022 08:55:26 +0000
-Received: from lelv0143.ext.ti.com ([198.47.23.248])
+	id 1oTj25-00BehS-Rs; Thu, 01 Sep 2022 12:10:53 +0000
+Received: from esa.microchip.iphmx.com ([68.232.153.233])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oTfyt-00Ag2n-1R
-	for linux-phy@lists.infradead.org; Thu, 01 Sep 2022 08:55:24 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
-	by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 2818tKt1071417;
-	Thu, 1 Sep 2022 03:55:20 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
-	s=ti-com-17Q1; t=1662022520;
-	bh=acFE7U4SCLkZaqwno3QJ6Kxih9diQctIL1Ztjs2RjO8=;
-	h=From:To:CC:Subject:Date:In-Reply-To:References;
-	b=wOHRh5IQGd4RtvTSZqxgh7Kd5mtHtKzxTuHJdEp+YcHcKZr2QGL4chSlLan85PxVr
-	 ZKeKC+XlbbJW1KsHK9DgS74/Fqp9VwAAQRMCMOGdvYzCUElF4AMW8z1qLrO/GfMT6r
-	 zBqenmKnN7GJY0V82ukvgJagpGOzH3xIV6L2qbBM=
-Received: from DFLE109.ent.ti.com (dfle109.ent.ti.com [10.64.6.30])
-	by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 2818tKYx118540
-	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Thu, 1 Sep 2022 03:55:20 -0500
-Received: from DFLE108.ent.ti.com (10.64.6.29) by DFLE109.ent.ti.com
- (10.64.6.30) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.6; Thu, 1 Sep
- 2022 03:55:20 -0500
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DFLE108.ent.ti.com
- (10.64.6.29) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.6 via
- Frontend Transport; Thu, 1 Sep 2022 03:55:20 -0500
-Received: from uda0492258.dhcp.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
-	by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id 2818t7Tc061466;
-	Thu, 1 Sep 2022 03:55:16 -0500
-From: Siddharth Vadapalli <s-vadapalli@ti.com>
-To: <robh+dt@kernel.org>, <lee.jones@linaro.org>,
-        <krzysztof.kozlowski@linaro.org>, <krzysztof.kozlowski+dt@linaro.org>,
-        <kishon@ti.com>, <vkoul@kernel.org>, <dan.carpenter@oracle.com>,
-        <grygorii.strashko@ti.com>, <rogerq@kernel.org>
-CC: <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-        <linux-phy@lists.infradead.org>, <s-vadapalli@ti.com>
-Subject: [PATCH v4 2/2] phy: ti: gmii-sel: Add support for CPSW5G GMII SEL in J7200
-Date: Thu, 1 Sep 2022 14:25:06 +0530
-Message-ID: <20220901085506.138633-3-s-vadapalli@ti.com>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20220901085506.138633-1-s-vadapalli@ti.com>
-References: <20220901085506.138633-1-s-vadapalli@ti.com>
+	id 1oTj22-00BefN-D8
+	for linux-phy@lists.infradead.org; Thu, 01 Sep 2022 12:10:52 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
+  t=1662034250; x=1693570250;
+  h=from:to:cc:subject:date:message-id:mime-version:
+   content-transfer-encoding;
+  bh=RIo2pBaslBQzwR75AbcPm8a1ycfCen3KShSxpD0kInc=;
+  b=Xg/TdPWN/qYMg/DkS+CXj5KJA8dcAL4EezhLED4DkzunSHkg65TLiQBg
+   wQMG8IKUh1RbbNPbM1ca2dyTArOTE6pk+GzYE7RG9YjbdBV7Fxveb3h5p
+   8lrA1qM/2KMIunG1OEDFuf/aq9cgzJVAjBXh0Zj79uhmCParXKuzjzFD/
+   AkWhI2xQMHsPHDHUXi5GMiK4fZsuPPcro/RyXml1XNzhddbmNO7nbqydb
+   ORuuTBuIuvS0idQWMjsP5u1G8ATmX14ACtXQ4zk510tJpEOC/5sGv/dhh
+   de/1LAymrb9H61XD9/7P3kxXF62F6S3UWfV6XgnFD/VckJYxDt6ldPOiw
+   Q==;
+X-IronPort-AV: E=Sophos;i="5.93,280,1654585200"; 
+   d="scan'208";a="188977520"
+Received: from unknown (HELO email.microchip.com) ([170.129.1.10])
+  by esa1.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256; 01 Sep 2022 05:10:43 -0700
+Received: from chn-vm-ex02.mchp-main.com (10.10.85.144) by
+ chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.2507.12; Thu, 1 Sep 2022 05:10:41 -0700
+Received: from soft-dev3-1.microsemi.net (10.10.115.15) by
+ chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server id
+ 15.1.2507.12 via Frontend Transport; Thu, 1 Sep 2022 05:10:40 -0700
+From: Horatiu Vultur <horatiu.vultur@microchip.com>
+To: <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>
+CC: <kishon@ti.com>, <vkoul@kernel.org>, <rmk+kernel@armlinux.org.uk>,
+	<UNGLinuxDriver@microchip.com>, Horatiu Vultur <horatiu.vultur@microchip.com>
+Subject: [PATCH] phy: Add RGMII support on lan966x
+Date: Thu, 1 Sep 2022 14:14:55 +0200
+Message-ID: <20220901121455.245103-1-horatiu.vultur@microchip.com>
+X-Mailer: git-send-email 2.33.0
 MIME-Version: 1.0
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220901_015523_184387_B9ABA6A0 
-X-CRM114-Status: GOOD (  21.06  )
+X-CRM114-CacheID: sfid-20220901_051050_480165_A6F64970 
+X-CRM114-Status: GOOD (  14.30  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,148 +77,215 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Each of the CPSW5G ports in J7200 support additional modes like QSGMII.
-Add a new compatible for J7200 to support the additional modes.
+The serdes driver contains also a mux to decide which interface type to
+use. Currently the driver supports GMII/SGMII/QSGMII and partially RGMII.
+As it doesn't support all the other RGMII interfaces like
+RGMII_TXID/RXID/ID and it could run only at 1G.
+Therefore extend this for all the other speeds(10/100) and also allow
+the other interfaces.
 
-In TI's J7200, each of the CPSW5G ethernet interfaces can act as a
-QSGMII or QSGMII-SUB port. The QSGMII interface is responsible for
-performing auto-negotiation between the MAC and the PHY while the rest of
-the interfaces are designated as QSGMII-SUB interfaces, indicating that
-they will not be taking part in the auto-negotiation process.
-
-To indicate the interface which will serve as the main QSGMII interface,
-add a property "ti,qsgmii-main-ports", whose value indicates the
-port number of the interface which shall serve as the main QSGMII
-interface. The rest of the interfaces are then assigned QSGMII-SUB mode by
-default. The property "ti,qsgmii-main-ports" is used to configure the
-CTRLMMR_ENETx_CTRL register.
-
-Depending on the device, it is possible for more than one QSGMII main port
-to exist. Thus, the property "ti,qsgmii-main-ports" is defined as an array
-of values in order to reuse the property for other devices.
-
-Signed-off-by: Siddharth Vadapalli <s-vadapalli@ti.com>
+Signed-off-by: Horatiu Vultur <horatiu.vultur@microchip.com>
 ---
- drivers/phy/ti/phy-gmii-sel.c | 47 ++++++++++++++++++++++++++++++++---
- 1 file changed, 44 insertions(+), 3 deletions(-)
+ drivers/phy/microchip/lan966x_serdes.c      | 99 ++++++++++++++++++---
+ drivers/phy/microchip/lan966x_serdes_regs.h | 42 +++++++++
+ 2 files changed, 129 insertions(+), 12 deletions(-)
 
-diff --git a/drivers/phy/ti/phy-gmii-sel.c b/drivers/phy/ti/phy-gmii-sel.c
-index d0ab69750c6b..0bcfd6d96b4d 100644
---- a/drivers/phy/ti/phy-gmii-sel.c
-+++ b/drivers/phy/ti/phy-gmii-sel.c
-@@ -22,6 +22,12 @@
- #define AM33XX_GMII_SEL_MODE_RMII	1
- #define AM33XX_GMII_SEL_MODE_RGMII	2
+diff --git a/drivers/phy/microchip/lan966x_serdes.c b/drivers/phy/microchip/lan966x_serdes.c
+index e86a879b92b5..fbc725ffa4ab 100644
+--- a/drivers/phy/microchip/lan966x_serdes.c
++++ b/drivers/phy/microchip/lan966x_serdes.c
+@@ -42,7 +42,10 @@
+ #define SERDES_MUX_QSGMII(i, p, m, c) \
+ 	SERDES_MUX(i, p, PHY_MODE_ETHERNET, PHY_INTERFACE_MODE_QSGMII, m, c)
+ #define SERDES_MUX_RGMII(i, p, m, c) \
+-	SERDES_MUX(i, p, PHY_MODE_ETHERNET, PHY_INTERFACE_MODE_RGMII, m, c)
++	SERDES_MUX(i, p, PHY_MODE_ETHERNET, PHY_INTERFACE_MODE_RGMII, m, c), \
++	SERDES_MUX(i, p, PHY_MODE_ETHERNET, PHY_INTERFACE_MODE_RGMII_TXID, m, c), \
++	SERDES_MUX(i, p, PHY_MODE_ETHERNET, PHY_INTERFACE_MODE_RGMII_RXID, m, c), \
++	SERDES_MUX(i, p, PHY_MODE_ETHERNET, PHY_INTERFACE_MODE_RGMII_ID, m, c)
  
-+/* J72xx SoC specific definitions for the CONTROL port */
-+#define J72XX_GMII_SEL_MODE_QSGMII	4
-+#define J72XX_GMII_SEL_MODE_QSGMII_SUB	6
-+
-+#define PHY_GMII_PORT(n)	BIT((n) - 1)
-+
- enum {
- 	PHY_GMII_SEL_PORT_MODE = 0,
- 	PHY_GMII_SEL_RGMII_ID_MODE,
-@@ -43,6 +49,7 @@ struct phy_gmii_sel_soc_data {
- 	u32 features;
- 	const struct reg_field (*regfields)[PHY_GMII_SEL_LAST];
- 	bool use_of_data;
-+	u64 extra_modes;
+ static void lan_rmw_(u32 val, u32 mask, void __iomem *mem, u32 offset)
+ {
+@@ -94,21 +97,29 @@ static const struct serdes_mux lan966x_serdes_muxes[] = {
+ 			 HSIO_HW_CFG_SD6G_1_CFG_SET(1)),
+ 
+ 	SERDES_MUX_RGMII(RGMII(0), 2, HSIO_HW_CFG_RGMII_0_CFG |
+-			 HSIO_HW_CFG_RGMII_ENA,
+-			 HSIO_HW_CFG_RGMII_0_CFG_SET(BIT(0)) |
+-			 HSIO_HW_CFG_RGMII_ENA_SET(BIT(0))),
++			 HSIO_HW_CFG_RGMII_ENA |
++			 HSIO_HW_CFG_GMII_ENA,
++			 HSIO_HW_CFG_RGMII_0_CFG_SET(0) |
++			 HSIO_HW_CFG_RGMII_ENA_SET(BIT(0)) |
++			 HSIO_HW_CFG_GMII_ENA_SET(BIT(2))),
+ 	SERDES_MUX_RGMII(RGMII(1), 3, HSIO_HW_CFG_RGMII_1_CFG |
+-			 HSIO_HW_CFG_RGMII_ENA,
+-			 HSIO_HW_CFG_RGMII_1_CFG_SET(BIT(0)) |
+-			 HSIO_HW_CFG_RGMII_ENA_SET(BIT(1))),
++			 HSIO_HW_CFG_RGMII_ENA |
++			 HSIO_HW_CFG_GMII_ENA,
++			 HSIO_HW_CFG_RGMII_1_CFG_SET(0) |
++			 HSIO_HW_CFG_RGMII_ENA_SET(BIT(1)) |
++			 HSIO_HW_CFG_GMII_ENA_SET(BIT(3))),
+ 	SERDES_MUX_RGMII(RGMII(0), 5, HSIO_HW_CFG_RGMII_0_CFG |
+-			 HSIO_HW_CFG_RGMII_ENA,
++			 HSIO_HW_CFG_RGMII_ENA |
++			 HSIO_HW_CFG_GMII_ENA,
+ 			 HSIO_HW_CFG_RGMII_0_CFG_SET(BIT(0)) |
+-			 HSIO_HW_CFG_RGMII_ENA_SET(BIT(0))),
++			 HSIO_HW_CFG_RGMII_ENA_SET(BIT(0)) |
++			 HSIO_HW_CFG_GMII_ENA_SET(BIT(5))),
+ 	SERDES_MUX_RGMII(RGMII(1), 6, HSIO_HW_CFG_RGMII_1_CFG |
+-			 HSIO_HW_CFG_RGMII_ENA,
++			 HSIO_HW_CFG_RGMII_ENA |
++			 HSIO_HW_CFG_GMII_ENA,
+ 			 HSIO_HW_CFG_RGMII_1_CFG_SET(BIT(0)) |
+-			 HSIO_HW_CFG_RGMII_ENA_SET(BIT(1))),
++			 HSIO_HW_CFG_RGMII_ENA_SET(BIT(1)) |
++			 HSIO_HW_CFG_GMII_ENA_SET(BIT(6))),
  };
  
- struct phy_gmii_sel_priv {
-@@ -53,6 +60,7 @@ struct phy_gmii_sel_priv {
- 	struct phy_gmii_sel_phy_priv *if_phys;
- 	u32 num_ports;
- 	u32 reg_offset;
-+	u32 qsgmii_main_ports;
- };
- 
- static int phy_gmii_sel_mode(struct phy *phy, enum phy_mode mode, int submode)
-@@ -88,10 +96,17 @@ static int phy_gmii_sel_mode(struct phy *phy, enum phy_mode mode, int submode)
- 		gmii_sel_mode = AM33XX_GMII_SEL_MODE_MII;
- 		break;
- 
-+	case PHY_INTERFACE_MODE_QSGMII:
-+		if (!(soc_data->extra_modes & BIT(PHY_INTERFACE_MODE_QSGMII)))
-+			goto unsupported;
-+		if (if_phy->priv->qsgmii_main_ports & BIT(if_phy->id - 1))
-+			gmii_sel_mode = J72XX_GMII_SEL_MODE_QSGMII;
-+		else
-+			gmii_sel_mode = J72XX_GMII_SEL_MODE_QSGMII_SUB;
-+		break;
-+
- 	default:
--		dev_warn(dev, "port%u: unsupported mode: \"%s\"\n",
--			 if_phy->id, phy_modes(submode));
--		return -EINVAL;
-+		goto unsupported;
- 	}
- 
- 	if_phy->phy_if_mode = submode;
-@@ -123,6 +138,11 @@ static int phy_gmii_sel_mode(struct phy *phy, enum phy_mode mode, int submode)
- 	}
- 
- 	return 0;
-+
-+unsupported:
-+	dev_warn(dev, "port%u: unsupported mode: \"%s\"\n",
-+		 if_phy->id, phy_modes(submode));
-+	return -EINVAL;
+ struct serdes_ctrl {
+@@ -382,6 +393,67 @@ static int lan966x_sd6g40_setup(struct serdes_macro *macro, u32 idx, int mode)
+ 	return lan966x_sd6g40_setup_lane(macro, conf, idx);
  }
  
- static const
-@@ -188,6 +208,13 @@ struct phy_gmii_sel_soc_data phy_gmii_sel_soc_am654 = {
- 	.regfields = phy_gmii_sel_fields_am654,
- };
- 
-+static const
-+struct phy_gmii_sel_soc_data phy_gmii_sel_cpsw5g_soc_j7200 = {
-+	.use_of_data = true,
-+	.regfields = phy_gmii_sel_fields_am654,
-+	.extra_modes = BIT(PHY_INTERFACE_MODE_QSGMII),
-+};
++static int lan966x_rgmii_setup(struct serdes_macro *macro, u32 idx, int mode)
++{
++	bool tx_delay = false;
++	bool rx_delay = false;
 +
- static const struct of_device_id phy_gmii_sel_id_table[] = {
- 	{
- 		.compatible	= "ti,am3352-phy-gmii-sel",
-@@ -209,6 +236,10 @@ static const struct of_device_id phy_gmii_sel_id_table[] = {
- 		.compatible	= "ti,am654-phy-gmii-sel",
- 		.data		= &phy_gmii_sel_soc_am654,
- 	},
-+	{
-+		.compatible	= "ti,j7200-cpsw5g-phy-gmii-sel",
-+		.data		= &phy_gmii_sel_cpsw5g_soc_j7200,
-+	},
- 	{}
++	/* Configure RGMII */
++	lan_rmw(HSIO_RGMII_CFG_RGMII_RX_RST_SET(0) |
++		HSIO_RGMII_CFG_RGMII_TX_RST_SET(0) |
++		HSIO_RGMII_CFG_TX_CLK_CFG_SET(macro->speed == SPEED_1000 ? 1 :
++					      macro->speed == SPEED_100 ? 2 :
++					      macro->speed == SPEED_10 ? 3 : 0),
++		HSIO_RGMII_CFG_RGMII_RX_RST |
++		HSIO_RGMII_CFG_RGMII_TX_RST |
++		HSIO_RGMII_CFG_TX_CLK_CFG,
++		macro->ctrl->regs, HSIO_RGMII_CFG(idx));
++
++	if (mode == PHY_INTERFACE_MODE_RGMII ||
++	    mode == PHY_INTERFACE_MODE_RGMII_TXID)
++		rx_delay = true;
++
++	if (mode == PHY_INTERFACE_MODE_RGMII ||
++	    mode == PHY_INTERFACE_MODE_RGMII_RXID)
++		tx_delay = true;
++
++	/* Setup DLL configuration */
++	lan_rmw(HSIO_DLL_CFG_DLL_RST_SET(0) |
++		HSIO_DLL_CFG_DLL_ENA_SET(rx_delay),
++		HSIO_DLL_CFG_DLL_RST |
++		HSIO_DLL_CFG_DLL_ENA,
++		macro->ctrl->regs, HSIO_DLL_CFG(idx == 0 ? 0x0 : 0x2));
++
++	lan_rmw(HSIO_DLL_CFG_DELAY_ENA_SET(rx_delay),
++		HSIO_DLL_CFG_DELAY_ENA,
++		macro->ctrl->regs, HSIO_DLL_CFG(idx == 0 ? 0x0 : 0x2));
++
++	lan_rmw(HSIO_DLL_CFG_DLL_RST_SET(0) |
++		HSIO_DLL_CFG_DLL_ENA_SET(tx_delay),
++		HSIO_DLL_CFG_DLL_RST |
++		HSIO_DLL_CFG_DLL_ENA,
++		macro->ctrl->regs, HSIO_DLL_CFG(idx == 0 ? 0x1 : 0x3));
++
++	lan_rmw(HSIO_DLL_CFG_DELAY_ENA_SET(tx_delay),
++		HSIO_DLL_CFG_DELAY_ENA,
++		macro->ctrl->regs, HSIO_DLL_CFG(idx == 0 ? 0x1 : 0x3));
++
++	return 0;
++}
++
++static int serdes_set_speed(struct phy *phy, int speed)
++{
++	struct serdes_macro *macro = phy_get_drvdata(phy);
++
++	if (!phy_interface_mode_is_rgmii(macro->mode))
++		return 0;
++
++	macro->speed = speed;
++	lan966x_rgmii_setup(macro, macro->idx - (SERDES6G_MAX + 1), macro->mode);
++
++	return 0;
++}
++
+ static int serdes_set_mode(struct phy *phy, enum phy_mode mode, int submode)
+ {
+ 	struct serdes_macro *macro = phy_get_drvdata(phy);
+@@ -424,7 +496,9 @@ static int serdes_set_mode(struct phy *phy, enum phy_mode mode, int submode)
+ 						    macro->mode);
+ 
+ 		if (macro->idx < RGMII_MAX)
+-			return 0;
++			return lan966x_rgmii_setup(macro,
++						   macro->idx - (SERDES6G_MAX + 1),
++						   macro->mode);
+ 
+ 		return -EOPNOTSUPP;
+ 	}
+@@ -434,6 +508,7 @@ static int serdes_set_mode(struct phy *phy, enum phy_mode mode, int submode)
+ 
+ static const struct phy_ops serdes_ops = {
+ 	.set_mode	= serdes_set_mode,
++	.set_speed	= serdes_set_speed,
+ 	.owner		= THIS_MODULE,
  };
- MODULE_DEVICE_TABLE(of, phy_gmii_sel_id_table);
-@@ -350,6 +381,7 @@ static int phy_gmii_sel_probe(struct platform_device *pdev)
- 	struct device_node *node = dev->of_node;
- 	const struct of_device_id *of_id;
- 	struct phy_gmii_sel_priv *priv;
-+	u32 main_ports = 1;
- 	int ret;
  
- 	of_id = of_match_node(phy_gmii_sel_id_table, pdev->dev.of_node);
-@@ -363,6 +395,15 @@ static int phy_gmii_sel_probe(struct platform_device *pdev)
- 	priv->dev = &pdev->dev;
- 	priv->soc_data = of_id->data;
- 	priv->num_ports = priv->soc_data->num_ports;
-+	of_property_read_u32(node, "ti,qsgmii-main-ports", &main_ports);
-+	/*
-+	 * Ensure that main_ports is within bounds. If the property
-+	 * ti,qsgmii-main-ports is not mentioned, or the value mentioned
-+	 * is out of bounds, default to 1.
-+	 */
-+	if (main_ports < 1 || main_ports > 4)
-+		main_ports = 1;
-+	priv->qsgmii_main_ports = PHY_GMII_PORT(main_ports);
+diff --git a/drivers/phy/microchip/lan966x_serdes_regs.h b/drivers/phy/microchip/lan966x_serdes_regs.h
+index ea30f64ffd5c..ac54cd01fea6 100644
+--- a/drivers/phy/microchip/lan966x_serdes_regs.h
++++ b/drivers/phy/microchip/lan966x_serdes_regs.h
+@@ -206,4 +206,46 @@ enum lan966x_target {
+ #define HSIO_HW_CFG_QSGMII_ENA_GET(x)\
+ 	FIELD_GET(HSIO_HW_CFG_QSGMII_ENA, x)
  
- 	priv->regmap = syscon_node_to_regmap(node->parent);
- 	if (IS_ERR(priv->regmap)) {
++/*      HSIO:HW_CFGSTAT:RGMII_CFG */
++#define HSIO_RGMII_CFG(r)         __REG(TARGET_HSIO, 0, 1, 104, 0, 1, 52, 20, r, 2, 4)
++
++#define HSIO_RGMII_CFG_TX_CLK_CFG                GENMASK(4, 2)
++#define HSIO_RGMII_CFG_TX_CLK_CFG_SET(x)\
++	FIELD_PREP(HSIO_RGMII_CFG_TX_CLK_CFG, x)
++#define HSIO_RGMII_CFG_TX_CLK_CFG_GET(x)\
++	FIELD_GET(HSIO_RGMII_CFG_TX_CLK_CFG, x)
++
++#define HSIO_RGMII_CFG_RGMII_TX_RST              BIT(1)
++#define HSIO_RGMII_CFG_RGMII_TX_RST_SET(x)\
++	FIELD_PREP(HSIO_RGMII_CFG_RGMII_TX_RST, x)
++#define HSIO_RGMII_CFG_RGMII_TX_RST_GET(x)\
++	FIELD_GET(HSIO_RGMII_CFG_RGMII_TX_RST, x)
++
++#define HSIO_RGMII_CFG_RGMII_RX_RST              BIT(0)
++#define HSIO_RGMII_CFG_RGMII_RX_RST_SET(x)\
++	FIELD_PREP(HSIO_RGMII_CFG_RGMII_RX_RST, x)
++#define HSIO_RGMII_CFG_RGMII_RX_RST_GET(x)\
++	FIELD_GET(HSIO_RGMII_CFG_RGMII_RX_RST, x)
++
++/*      HSIO:HW_CFGSTAT:DLL_CFG */
++#define HSIO_DLL_CFG(r)           __REG(TARGET_HSIO, 0, 1, 104, 0, 1, 52, 36, r, 4, 4)
++
++#define HSIO_DLL_CFG_DELAY_ENA                   BIT(2)
++#define HSIO_DLL_CFG_DELAY_ENA_SET(x)\
++	FIELD_PREP(HSIO_DLL_CFG_DELAY_ENA, x)
++#define HSIO_DLL_CFG_DELAY_ENA_GET(x)\
++	FIELD_GET(HSIO_DLL_CFG_DELAY_ENA, x)
++
++#define HSIO_DLL_CFG_DLL_ENA                     BIT(1)
++#define HSIO_DLL_CFG_DLL_ENA_SET(x)\
++	FIELD_PREP(HSIO_DLL_CFG_DLL_ENA, x)
++#define HSIO_DLL_CFG_DLL_ENA_GET(x)\
++	FIELD_GET(HSIO_DLL_CFG_DLL_ENA, x)
++
++#define HSIO_DLL_CFG_DLL_RST                     BIT(0)
++#define HSIO_DLL_CFG_DLL_RST_SET(x)\
++	FIELD_PREP(HSIO_DLL_CFG_DLL_RST, x)
++#define HSIO_DLL_CFG_DLL_RST_GET(x)\
++	FIELD_GET(HSIO_DLL_CFG_DLL_RST, x)
++
+ #endif /* _LAN966X_HSIO_REGS_H_ */
 -- 
-2.25.1
+2.33.0
 
 
 -- 
