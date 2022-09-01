@@ -4,35 +4,35 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 81713ECAAD2
-	for <linux-phy@archiver.kernel.org>; Thu,  1 Sep 2022 04:21:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 12CC6ECAAD1
+	for <linux-phy@archiver.kernel.org>; Thu,  1 Sep 2022 04:21:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
 	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=V9duhINkMRUEXSo+rmbs7FfuJQuyuAz9C6mjGIbFHQc=; b=EMi2ZilYRzYlk1
-	fll+AYRq40A0JXFgVQ0x7wKEjmzBx8XiRCQU7Ev/mD0AYGqIjNAYjNN4JKh9f+h/dvIj5bRa+CtIq
-	/AwI00rDYmkCPLbV8rDLF1D+ntJ/8hBXlXnAe3DFACaANZOrqjJa8+KtzOzLHGHyMIvV2CUYEquwv
-	oziTS7rY/Yq8BbafHq00qfutgjhVCGi0fykJcxulMAqaQjBzoM8vEaYhHNGmx8xE40Z7iWk/4N+h8
-	4ilpCjByHZvmziNltiJGrbQLoCFkXDfi7BmUDp50q2oUU5yn0uRweBqT+BfvWQdnDVwKiOQrj5Kn5
-	QjJi5LRIUUGnZSvSjWaw==;
+	List-Owner; bh=tLG5wiKQd8Bbr5LPyBM9x4WvZ1o/LxTcVVTy/jLTLtA=; b=HyJYmxVWMvzOH8
+	br2ewnpvqIvUfZLRI+G316/34JuMEQtAl0wRBW6uVFMHAdzFJsK4d7XKTX90OiAeMvDAbE2+TenzU
+	nyYjg8oGbHWyoY/GqP8U6vjXCfGK6iMrEwR5GmcS59YANgXELxxo9cTAIyz8IE232fDtk/bBOWegj
+	Yju1sbGOYtSMj6BaMIzJnXX6vQg2bML100ri4CdtzSZCSIuGdO1yDe/zyJojK6pUfn5SDfvdj3xhO
+	Y+FHdIvL5/3gkCOxMA+UGhR57x3eYbwfjfukkAv5UXaWlHpBFKOmA2fL0ojWf0p8CIZlgJTNYzcPA
+	gD1EKs8VEtZBxmiynZ+g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oTbht-009UPd-U4; Thu, 01 Sep 2022 04:21:33 +0000
+	id 1oTbi7-009UY0-F8; Thu, 01 Sep 2022 04:21:47 +0000
 Received: from inva021.nxp.com ([92.121.34.21])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oTbgy-009Tz8-Lv; Thu, 01 Sep 2022 04:20:38 +0000
+	id 1oTbgy-009TzG-Lt; Thu, 01 Sep 2022 04:20:38 +0000
 Received: from inva021.nxp.com (localhost [127.0.0.1])
-	by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 874A82026AF;
-	Thu,  1 Sep 2022 06:20:32 +0200 (CEST)
+	by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 961712026AC;
+	Thu,  1 Sep 2022 06:20:28 +0200 (CEST)
 Received: from aprdc01srsp001v.ap-rdc01.nxp.com (aprdc01srsp001v.ap-rdc01.nxp.com [165.114.16.16])
-	by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 508AE2026AE;
-	Thu,  1 Sep 2022 06:20:32 +0200 (CEST)
+	by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 5F8E62026A0;
+	Thu,  1 Sep 2022 06:20:28 +0200 (CEST)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net [10.192.224.44])
-	by aprdc01srsp001v.ap-rdc01.nxp.com (Postfix) with ESMTP id DA5A6180222C;
-	Thu,  1 Sep 2022 12:20:29 +0800 (+08)
+	by aprdc01srsp001v.ap-rdc01.nxp.com (Postfix) with ESMTP id 62854180222C;
+	Thu,  1 Sep 2022 12:20:26 +0800 (+08)
 From: Richard Zhu <hongxing.zhu@nxp.com>
 To: p.zabel@pengutronix.de,
 	l.stach@pengutronix.de,
@@ -52,16 +52,16 @@ Cc: linux-phy@lists.infradead.org,
 	kernel@pengutronix.de,
 	linux-imx@nxp.com,
 	Richard Zhu <hongxing.zhu@nxp.com>
-Subject: [PATCH v6 5/7] soc: imx: imx8mp-blk-ctrl: handle PCIe PHY resets
-Date: Thu,  1 Sep 2022 12:02:38 +0800
-Message-Id: <1662004960-14071-6-git-send-email-hongxing.zhu@nxp.com>
+Subject: [PATCH v6 3/7] arm64: dts: imx8mp-evk: Add PCIe support
+Date: Thu,  1 Sep 2022 12:02:36 +0800
+Message-Id: <1662004960-14071-4-git-send-email-hongxing.zhu@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1662004960-14071-1-git-send-email-hongxing.zhu@nxp.com>
 References: <1662004960-14071-1-git-send-email-hongxing.zhu@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220831_212036_898327_ED4F23A7 
-X-CRM114-Status: UNSURE (   8.36  )
+X-CRM114-CacheID: sfid-20220831_212037_091267_B99687C3 
+X-CRM114-Status: UNSURE (   8.81  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -80,52 +80,108 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Lucas Stach <l.stach@pengutronix.de>
+Add PCIe support on i.MX8MP EVK board.
 
-Dessert the PHY reset when powering up the domain and put it back
-into reset when the domain is powered down.
-
-Signed-off-by: Lucas Stach <l.stach@pengutronix.de>
 Signed-off-by: Richard Zhu <hongxing.zhu@nxp.com>
+Tested-by: Marek Vasut <marex@denx.de>
+Tested-by: Richard Leitner <richard.leitner@skidata.com>
+Tested-by: Alexander Stein <alexander.stein@ew.tq-group.com>
 ---
- drivers/soc/imx/imx8mp-blk-ctrl.c | 10 ++++++++++
- 1 file changed, 10 insertions(+)
+ arch/arm64/boot/dts/freescale/imx8mp-evk.dts | 53 ++++++++++++++++++++
+ 1 file changed, 53 insertions(+)
 
-diff --git a/drivers/soc/imx/imx8mp-blk-ctrl.c b/drivers/soc/imx/imx8mp-blk-ctrl.c
-index 4ca2ede6871b..6c939d68ba9a 100644
---- a/drivers/soc/imx/imx8mp-blk-ctrl.c
-+++ b/drivers/soc/imx/imx8mp-blk-ctrl.c
-@@ -18,6 +18,8 @@
- #define GPR_REG0		0x0
- #define  PCIE_CLOCK_MODULE_EN	BIT(0)
- #define  USB_CLOCK_MODULE_EN	BIT(1)
-+#define  PCIE_PHY_APB_RST	BIT(4)
-+#define  PCIE_PHY_INIT_RST	BIT(5)
+diff --git a/arch/arm64/boot/dts/freescale/imx8mp-evk.dts b/arch/arm64/boot/dts/freescale/imx8mp-evk.dts
+index f6b017ab5f53..9f1469db554d 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mp-evk.dts
++++ b/arch/arm64/boot/dts/freescale/imx8mp-evk.dts
+@@ -5,6 +5,7 @@
  
- struct imx8mp_blk_ctrl_domain;
+ /dts-v1/;
  
-@@ -75,6 +77,10 @@ static void imx8mp_hsio_blk_ctrl_power_on(struct imx8mp_blk_ctrl *bc,
- 	case IMX8MP_HSIOBLK_PD_PCIE:
- 		regmap_set_bits(bc->regmap, GPR_REG0, PCIE_CLOCK_MODULE_EN);
- 		break;
-+	case IMX8MP_HSIOBLK_PD_PCIE_PHY:
-+		regmap_set_bits(bc->regmap, GPR_REG0,
-+				PCIE_PHY_APB_RST | PCIE_PHY_INIT_RST);
-+		break;
- 	default:
- 		break;
- 	}
-@@ -90,6 +96,10 @@ static void imx8mp_hsio_blk_ctrl_power_off(struct imx8mp_blk_ctrl *bc,
- 	case IMX8MP_HSIOBLK_PD_PCIE:
- 		regmap_clear_bits(bc->regmap, GPR_REG0, PCIE_CLOCK_MODULE_EN);
- 		break;
-+	case IMX8MP_HSIOBLK_PD_PCIE_PHY:
-+		regmap_clear_bits(bc->regmap, GPR_REG0,
-+				  PCIE_PHY_APB_RST | PCIE_PHY_INIT_RST);
-+		break;
- 	default:
- 		break;
- 	}
++#include <dt-bindings/phy/phy-imx8-pcie.h>
+ #include "imx8mp.dtsi"
+ 
+ / {
+@@ -33,6 +34,12 @@ memory@40000000 {
+ 		      <0x1 0x00000000 0 0xc0000000>;
+ 	};
+ 
++	pcie0_refclk: pcie0-refclk {
++		compatible = "fixed-clock";
++			#clock-cells = <0>;
++			clock-frequency = <100000000>;
++	};
++
+ 	reg_can1_stby: regulator-can1-stby {
+ 		compatible = "regulator-fixed";
+ 		regulator-name = "can1-stby";
+@@ -55,6 +62,17 @@ reg_can2_stby: regulator-can2-stby {
+ 		enable-active-high;
+ 	};
+ 
++	reg_pcie0: regulator-pcie {
++		compatible = "regulator-fixed";
++		pinctrl-names = "default";
++		pinctrl-0 = <&pinctrl_pcie0_reg>;
++		regulator-name = "MPCIE_3V3";
++		regulator-min-microvolt = <3300000>;
++		regulator-max-microvolt = <3300000>;
++		gpio = <&gpio2 6 GPIO_ACTIVE_HIGH>;
++		enable-active-high;
++	};
++
+ 	reg_usdhc2_vmmc: regulator-usdhc2 {
+ 		compatible = "regulator-fixed";
+ 		pinctrl-names = "default";
+@@ -350,6 +368,28 @@ &i2c5 {
+ 	 */
+ };
+ 
++&pcie_phy {
++	fsl,refclk-pad-mode = <IMX8_PCIE_REFCLK_PAD_INPUT>;
++	clocks = <&pcie0_refclk>;
++	clock-names = "ref";
++	status = "okay";
++};
++
++&pcie {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_pcie0>;
++	reset-gpio = <&gpio2 7 GPIO_ACTIVE_LOW>;
++	clocks = <&clk IMX8MP_CLK_HSIO_ROOT>,
++		 <&clk IMX8MP_CLK_PCIE_ROOT>,
++		 <&clk IMX8MP_CLK_HSIO_AXI>;
++	clock-names = "pcie", "pcie_aux", "pcie_bus";
++	assigned-clocks = <&clk IMX8MP_CLK_PCIE_AUX>;
++	assigned-clock-rates = <10000000>;
++	assigned-clock-parents = <&clk IMX8MP_SYS_PLL2_50M>;
++	vpcie-supply = <&reg_pcie0>;
++	status = "okay";
++};
++
+ &snvs_pwrkey {
+ 	status = "okay";
+ };
+@@ -502,6 +542,19 @@ MX8MP_IOMUXC_SPDIF_TX__I2C5_SCL         0x400001c2
+ 		>;
+ 	};
+ 
++	pinctrl_pcie0: pcie0grp {
++		fsl,pins = <
++			MX8MP_IOMUXC_I2C4_SCL__PCIE_CLKREQ_B	0x61 /* open drain, pull up */
++			MX8MP_IOMUXC_SD1_DATA5__GPIO2_IO07	0x41
++		>;
++	};
++
++	pinctrl_pcie0_reg: pcie0reggrp {
++		fsl,pins = <
++			MX8MP_IOMUXC_SD1_DATA4__GPIO2_IO06	0x41
++		>;
++	};
++
+ 	pinctrl_pmic: pmicgrp {
+ 		fsl,pins = <
+ 			MX8MP_IOMUXC_GPIO1_IO03__GPIO1_IO03	0x000001c0
 -- 
 2.25.1
 
