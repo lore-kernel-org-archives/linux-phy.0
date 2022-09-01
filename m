@@ -4,35 +4,35 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D15CCECAAD1
-	for <linux-phy@archiver.kernel.org>; Thu,  1 Sep 2022 04:20:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 76FECECAAD1
+	for <linux-phy@archiver.kernel.org>; Thu,  1 Sep 2022 04:20:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
 	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NgQGHdckZS3Gp0wuDUu3w0RKjLwXxYosbbgUIgwnLUo=; b=1yd/hOn3paagpu
-	LWY7HQTKbl3V6pxOtlFKVJWB5D5gooXkjUwNidPLRvQ8qhrzftFV098x6HdMO4t76Wg+pJViPOjDv
-	VUlIzaDYt4yc9CKbDtMmEiPseFAi+O3aNzcE3Eucm12ln2U/dsnnLF5gHuuyn5cs0ahIRvaZ6XMNN
-	k9yb1LO8ks60aIqLXTDttcTximkvvhZ2DdvhzAvAlfciJguyUHIb3AuH7ybp5g5xvZPbhgdoEBxyr
-	DMctvi34ar+0TaydXu8+stWPmUE3EPbi5Zpm/TRe+oItta9ocLSlVENRzToOE7d9/4S6WTJDUDRpH
-	JH+gI5s+2N1HBwOrtvrA==;
+	List-Owner; bh=1o/OSh+nmqAuXmbKZv9Ox8tTYZwgcInIeGjUS6GsuXU=; b=rW5BTYhPqcYNFa
+	mjaQPk0kKJwT4l0LNERn0KayW49mQE6C0mJRX68d7waK0Rac73YjhPwFETZU5zyTAJSXXyItG6Q3o
+	S1uXkGM5X3OyC0wwTfR9xi9icEa/2Spuq8w3I05yall++UUeYa6n3Gc6I87ZsA4ebR1QmGn5xscEZ
+	4YF0tXhuyfPzNCw+kuuZhmzPhxWXtcjyZKQo+z/u+VyHp9magJqgWubs5e+KWTqfuqiQl3tDz5PO0
+	r9yuOWBVfv/scJyhU+5zb/MQLi0xiAJsKQdKw10mJaJRbGYgz7lfSyq7UadXssBaOCbQciDDiXTAk
+	sULWze5vE/K9s1zJ3uUQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oTbh2-009U2a-TX; Thu, 01 Sep 2022 04:20:40 +0000
+	id 1oTbhB-009U5R-RA; Thu, 01 Sep 2022 04:20:49 +0000
 Received: from inva020.nxp.com ([92.121.34.13])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oTbgq-009TvC-0V; Thu, 01 Sep 2022 04:20:29 +0000
+	id 1oTbgq-009TwA-0X; Thu, 01 Sep 2022 04:20:29 +0000
 Received: from inva020.nxp.com (localhost [127.0.0.1])
-	by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 625321A4384;
-	Thu,  1 Sep 2022 06:20:25 +0200 (CEST)
+	by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id B442E1A438E;
+	Thu,  1 Sep 2022 06:20:26 +0200 (CEST)
 Received: from aprdc01srsp001v.ap-rdc01.nxp.com (aprdc01srsp001v.ap-rdc01.nxp.com [165.114.16.16])
-	by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 2BD521A4387;
-	Thu,  1 Sep 2022 06:20:25 +0200 (CEST)
+	by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 7D4311A4387;
+	Thu,  1 Sep 2022 06:20:26 +0200 (CEST)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net [10.192.224.44])
-	by aprdc01srsp001v.ap-rdc01.nxp.com (Postfix) with ESMTP id 00F711820F56;
-	Thu,  1 Sep 2022 12:20:22 +0800 (+08)
+	by aprdc01srsp001v.ap-rdc01.nxp.com (Postfix) with ESMTP id DAE30181D0CA;
+	Thu,  1 Sep 2022 12:20:24 +0800 (+08)
 From: Richard Zhu <hongxing.zhu@nxp.com>
 To: p.zabel@pengutronix.de,
 	l.stach@pengutronix.de,
@@ -52,16 +52,16 @@ Cc: linux-phy@lists.infradead.org,
 	kernel@pengutronix.de,
 	linux-imx@nxp.com,
 	Richard Zhu <hongxing.zhu@nxp.com>
-Subject: [PATCH v6 1/7] dt-binding: phy: Add iMX8MP PCIe PHY binding
-Date: Thu,  1 Sep 2022 12:02:34 +0800
-Message-Id: <1662004960-14071-2-git-send-email-hongxing.zhu@nxp.com>
+Subject: [PATCH v6 2/7] arm64: dts: imx8mp: Add iMX8MP PCIe support
+Date: Thu,  1 Sep 2022 12:02:35 +0800
+Message-Id: <1662004960-14071-3-git-send-email-hongxing.zhu@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1662004960-14071-1-git-send-email-hongxing.zhu@nxp.com>
 References: <1662004960-14071-1-git-send-email-hongxing.zhu@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220831_212028_211073_F1215C82 
-X-CRM114-Status: UNSURE (   8.56  )
+X-CRM114-CacheID: sfid-20220831_212028_343165_B4F479F1 
+X-CRM114-Status: UNSURE (   8.74  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -80,65 +80,84 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add i.MX8MP PCIe PHY binding.
-On iMX8MM, the initialized default value of PERST bit(BIT3) of
-SRC_PCIEPHY_RCR is 1b'1.
-But i.MX8MP has one inversed default value 1b'0 of PERST bit.
-
-And the PERST bit should be kept 1b'1 after power and clocks are stable.
-So add one more PERST explicitly for i.MX8MP PCIe PHY.
+Add i.MX8MP PCIe support.
 
 Signed-off-by: Richard Zhu <hongxing.zhu@nxp.com>
 Tested-by: Marek Vasut <marex@denx.de>
 Tested-by: Richard Leitner <richard.leitner@skidata.com>
 Tested-by: Alexander Stein <alexander.stein@ew.tq-group.com>
 ---
- .../bindings/phy/fsl,imx8-pcie-phy.yaml          | 16 +++++++++++++---
- 1 file changed, 13 insertions(+), 3 deletions(-)
+ arch/arm64/boot/dts/freescale/imx8mp.dtsi | 43 +++++++++++++++++++++++
+ 1 file changed, 43 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/phy/fsl,imx8-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/fsl,imx8-pcie-phy.yaml
-index b6421eedece3..692783c7fd69 100644
---- a/Documentation/devicetree/bindings/phy/fsl,imx8-pcie-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/fsl,imx8-pcie-phy.yaml
-@@ -16,6 +16,7 @@ properties:
-   compatible:
-     enum:
-       - fsl,imx8mm-pcie-phy
-+      - fsl,imx8mp-pcie-phy
+diff --git a/arch/arm64/boot/dts/freescale/imx8mp.dtsi b/arch/arm64/boot/dts/freescale/imx8mp.dtsi
+index fe178b7d063c..21a4cc417c81 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mp.dtsi
++++ b/arch/arm64/boot/dts/freescale/imx8mp.dtsi
+@@ -5,6 +5,7 @@
  
-   reg:
-     maxItems: 1
-@@ -28,11 +29,16 @@ properties:
-       - const: ref
+ #include <dt-bindings/clock/imx8mp-clock.h>
+ #include <dt-bindings/power/imx8mp-power.h>
++#include <dt-bindings/reset/imx8mp-reset.h>
+ #include <dt-bindings/gpio/gpio.h>
+ #include <dt-bindings/input/input.h>
+ #include <dt-bindings/interrupt-controller/arm-gic.h>
+@@ -1084,6 +1085,17 @@ media_blk_ctrl: blk-ctrl@32ec0000 {
+ 				#power-domain-cells = <1>;
+ 			};
  
-   resets:
--    maxItems: 1
-+    minItems: 1
-+    maxItems: 2
- 
-   reset-names:
--    items:
--      - const: pciephy
-+    oneOf:
-+      - items:          # for iMX8MM
-+          - const: pciephy
-+      - items:          # for IMX8MP
-+          - const: pciephy
-+          - const: perst
- 
-   fsl,refclk-pad-mode:
-     description: |
-@@ -60,6 +66,10 @@ properties:
-     description: A boolean property indicating the CLKREQ# signal is
-       not supported in the board design (optional)
- 
-+  power-domains:
-+    description: PCIe PHY  power domain (optional).
-+    maxItems: 1
++			pcie_phy: pcie-phy@32f00000 {
++				compatible = "fsl,imx8mp-pcie-phy";
++				reg = <0x32f00000 0x10000>;
++				resets = <&src IMX8MP_RESET_PCIEPHY>,
++					 <&src IMX8MP_RESET_PCIEPHY_PERST>;
++				reset-names = "pciephy", "perst";
++				power-domains = <&hsio_blk_ctrl IMX8MP_HSIOBLK_PD_PCIE_PHY>;
++				#phy-cells = <0>;
++				status = "disabled";
++			};
 +
- required:
-   - "#phy-cells"
-   - compatible
+ 			hsio_blk_ctrl: blk-ctrl@32f10000 {
+ 				compatible = "fsl,imx8mp-hsio-blk-ctrl", "syscon";
+ 				reg = <0x32f10000 0x24>;
+@@ -1099,6 +1111,37 @@ hsio_blk_ctrl: blk-ctrl@32f10000 {
+ 			};
+ 		};
+ 
++		pcie: pcie@33800000 {
++			compatible = "fsl,imx8mp-pcie";
++			reg = <0x33800000 0x400000>, <0x1ff00000 0x80000>;
++			reg-names = "dbi", "config";
++			#address-cells = <3>;
++			#size-cells = <2>;
++			device_type = "pci";
++			bus-range = <0x00 0xff>;
++			ranges =  <0x81000000 0 0x00000000 0x1ff80000 0 0x00010000>, /* downstream I/O 64KB */
++				  <0x82000000 0 0x18000000 0x18000000 0 0x07f00000>; /* non-prefetchable memory */
++			num-lanes = <1>;
++			num-viewport = <4>;
++			interrupts = <GIC_SPI 140 IRQ_TYPE_LEVEL_HIGH>;
++			interrupt-names = "msi";
++			#interrupt-cells = <1>;
++			interrupt-map-mask = <0 0 0 0x7>;
++			interrupt-map = <0 0 0 1 &gic GIC_SPI 126 IRQ_TYPE_LEVEL_HIGH>,
++					<0 0 0 2 &gic GIC_SPI 125 IRQ_TYPE_LEVEL_HIGH>,
++					<0 0 0 3 &gic GIC_SPI 124 IRQ_TYPE_LEVEL_HIGH>,
++					<0 0 0 4 &gic GIC_SPI 123 IRQ_TYPE_LEVEL_HIGH>;
++			fsl,max-link-speed = <3>;
++			linux,pci-domain = <0>;
++			power-domains = <&hsio_blk_ctrl IMX8MP_HSIOBLK_PD_PCIE>;
++			resets = <&src IMX8MP_RESET_PCIE_CTRL_APPS_EN>,
++				 <&src IMX8MP_RESET_PCIE_CTRL_APPS_TURNOFF>;
++			reset-names = "apps", "turnoff";
++			phys = <&pcie_phy>;
++			phy-names = "pcie-phy";
++			status = "disabled";
++		};
++
+ 		gpu3d: gpu@38000000 {
+ 			compatible = "vivante,gc";
+ 			reg = <0x38000000 0x8000>;
 -- 
 2.25.1
 
