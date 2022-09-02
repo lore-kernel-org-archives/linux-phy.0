@@ -4,45 +4,45 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EE28AC001B5
-	for <linux-phy@archiver.kernel.org>; Fri,  2 Sep 2022 17:45:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 97738ECAAD5
+	for <linux-phy@archiver.kernel.org>; Fri,  2 Sep 2022 17:46:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uFcbE0asblZcoHQKZWw8PeelyZ0/FeBl2nWQzmlYZFc=; b=sod5DejY4SCLAi
-	a12WCcPfF3le93ir7/QAglUGzcZESdt2qRuMvgiojVknEHOhP01ELbpfeBNzuaxmcfJ2YqSFXrKJr
-	FfwXfNi4YCxt86m320z/PU8EBDJW0Xvg3QHvsl10w+7DQDkFFUq+GFxRDdf2mxgmXXZXjPNq2QbJT
-	aF4tDs+GaNKIPYNBS4I7omYs/vGDnbGP8LmXAYVk0+9GRXqNcj3V4K/zso1XwZxDH5bsu47CERu3G
-	Egx/0IGJ1J6JROGTReYo6mJWV5BOE26UMkbdiAj4i1cfmalW/xZMXTEUSvI19Vzwul+TyDUrM0041
-	uyz6cOt392BTzgl3UtaA==;
+	List-Owner; bh=KzIUdGnKXnTjs1lfbBNJONFbJm2Wvm5JLgU2Hs7saa0=; b=RIrIUONof7suBX
+	WFx4Gl+v6UnrWU/Td9dTfPpI3JslhS1Y1g9ouvT35IfCmD7Z9Iz0s4ug5ZFTRkY/XOjoctXgXS6Wq
+	Zn9aRU4FEg4McLjIrFJ1VLkeEpwMO43aaW7LQbd6vHhElr+D3GYCsNLmSF6u9/wxkfLn0Fjc/jrDG
+	fOJRWv1WpKHqevnSHu0egGmDHSZry8MSvWA/E3fsy+sb/1EuyFWZ8Nu2/yPO/lyJJX6wsZ1LN3vNC
+	3XQrcZ4K0HPP913fC4irpcieH/TzfAn34FUIr0EXh4FZd7uk5K+vtGLY9rUGQmSkP6CF42504mSqj
+	U59f/zy/+AL/AdgpXMvQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oUAjm-008O4e-8U; Fri, 02 Sep 2022 17:45:50 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1oUAk1-008Osf-09; Fri, 02 Sep 2022 17:46:05 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oUAjj-008NwF-5S
-	for linux-phy@lists.infradead.org; Fri, 02 Sep 2022 17:45:48 +0000
+	id 1oUAjx-008OiY-V2
+	for linux-phy@lists.infradead.org; Fri, 02 Sep 2022 17:46:03 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 74FD962214;
-	Fri,  2 Sep 2022 17:45:45 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 08C9BC433D6;
-	Fri,  2 Sep 2022 17:45:43 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 837F462211;
+	Fri,  2 Sep 2022 17:46:01 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0A9F1C433C1;
+	Fri,  2 Sep 2022 17:45:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1662140744;
-	bh=IAX/zbZD+Vj6cEmd6Mj31B+0iUEHFKmq5HZH2ntSm9k=;
+	s=k20201202; t=1662140760;
+	bh=fTXcf2TIdAF6mJdGL4ZlTKOAGo0bqmITSBW1GWDdEIw=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=BFpYYFpS7E6zXL2r+ybhCdFPf+ESX9GfBgobUjrFUW6TdCQCvIs+wEW00xIRUOAxW
-	 /LXZABLpGh5p5rredDWN/3h9FYjoyKpiAwb3YcaAricxURN67CcIPJKmcU6M1Wwqn3
-	 6j4iTOB1csYzMve5Dvm2qyG0AlGtjMgokJC8Dd8hTFQWx3jow5DRMu+Q2v86AMMFJY
-	 DZNIye6lNJz+iy9Ef9A71cNMSJ5HAfNfS0ZUJJCfUoRNrzGRttrTJAn8jo2/OwTTMB
-	 jf6+vMZ9SD47eZ6v7PIK9469L5P3azPRKV+vkahq7nKOuN8NfX/PB/yf7mq/5phVxR
-	 5KfzeSQd0IQ2Q==
-Date: Fri, 2 Sep 2022 23:15:40 +0530
+	b=X7vTjxLCFl7Pw7/RP0dWQRvBqb8JHaI2uU2PjN7SjdbeACyAPxlBHowD1bShJJYEu
+	 t1UTxEaa4t4nPDNc/QFWPp9FD6gctQfc5aImkGlPvyHkJgGuGqf8+LEeTke8mptJx8
+	 GnV5yiitAafCjQjoAaaFHQ6KRKlkbVvayzyhQj9gWxh0kLwYQjrKupTnfslSo8UiEy
+	 aMV8rg/EHlieYb98VbBFY6EgOHh43OXOg8tpGpwXIKFSJ1/ihyNsJGl1O3zQJ4EYRu
+	 IzSI1/q1mbVdjFQjkhsoyUCt97Yg9i2xjqz1TYa8N3QmeLoXpb3XpYgbscViVecra5
+	 ixaDE1a8GxVAg==
+Date: Fri, 2 Sep 2022 23:15:56 +0530
 From: Vinod Koul <vkoul@kernel.org>
 To: Marco Felsch <m.felsch@pengutronix.de>
 Cc: mchehab@kernel.org, robh+dt@kernel.org,
@@ -52,17 +52,17 @@ Cc: mchehab@kernel.org, robh+dt@kernel.org,
 	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
 	devicetree@vger.kernel.org, linux-media@vger.kernel.org,
 	kernel@pengutronix.de
-Subject: Re: [PATCH 1/4] phy: dphy: refactor get_default_config
-Message-ID: <YxJBRNk8bqs6QmQ3@matsya>
+Subject: Re: [PATCH 2/4] phy: dphy: add support to calculate the timing based
+ on hs_clk_rate
+Message-ID: <YxJBVHJPo+J6EsDD@matsya>
 References: <20220818143307.967150-1-m.felsch@pengutronix.de>
- <20220818143307.967150-2-m.felsch@pengutronix.de>
+ <20220818143307.967150-3-m.felsch@pengutronix.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20220818143307.967150-2-m.felsch@pengutronix.de>
+In-Reply-To: <20220818143307.967150-3-m.felsch@pengutronix.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220902_104547_251428_E8098DB6 
-X-CRM114-Status: UNSURE (   8.43  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220902_104602_056243_1AF16EEA 
+X-CRM114-Status: GOOD (  10.48  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,9 +80,13 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 18-08-22, 16:33, Marco Felsch wrote:
-> Factor out the calculation into phy_mipi_dphy_calc_config(). This is
-> needed for the follow up patch which adds the support to calculate the
-> timings based on a given hs clock. No functional changes are done.
+> For MIPI-CSI sender use-case it is common to specify the allowed
+> link-frequencies which should be used for the MIPI link and is
+> half the hs-clock rate.
+> 
+> This commit adds a helper to calculate the D-PHY timing based on the
+> hs-clock rate so we don't need to calculate the timings within the
+> driver.
 
 Acked-By: Vinod Koul <vkoul@kernel.org>
 
