@@ -4,35 +4,35 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 97993C54EE9
-	for <linux-phy@archiver.kernel.org>; Fri,  2 Sep 2022 09:14:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7CDBAC54EE9
+	for <linux-phy@archiver.kernel.org>; Fri,  2 Sep 2022 09:14:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
 	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NgQGHdckZS3Gp0wuDUu3w0RKjLwXxYosbbgUIgwnLUo=; b=2aAIPWHkFEZ1s0
-	MfidkN2TtCVmZ2v3mgryVBlWrvMTjB9zDxh/P6pDRZtSqE3JeEITdEvLogJG7ZjJhAjMjYE0auU6L
-	XWvpXnMRh+jljhiF8SRbuGPUIou9F6lSdTDFo4OLKUDF61gi7yJNKV7hHHymCHLkHp9vvhfOJ5tZQ
-	0A9wDkwHx2teO5zU790QbUhkmS4I5ONIU+IuBG0/8QB9z/MXtzbQ/6SNxAKTrFlKWHOv7TnAriFPl
-	QamY7TGl5pBD6mly4mdU/RtPXpOwjG+RbGHKLdqCMnrYT4eEMPB9XUISbKvSFBVJvgJGOygAm8jA+
-	WmGAXcj1LdqerPPaLTQw==;
+	List-Owner; bh=rw+1RJT/meF4CoKzhVcDNQrUgQoF3k8jReL5/nIXCTk=; b=wZevxHlLPOjRPu
+	JlH+A7k7em1BuPVhJkeWZ7zk3Q7+/1+qpSTfb0yZHlcggZUMU32nDUcIKSH4ITYje/HDP78+R4U4w
+	QFzsxX4Kn2XS0oNuYTvhHSH7ZeB6THlkmutPQ49ZdvVkKDrkY/V+y2Rcd7d69XDqgRIUIqA0s2bnS
+	iihU/O2TQ+IDeEIXFZ08+ZATeLCpAXwbbRyReculHkTYILs6bClYenXEOj4D7Jyt/DO82maDdcvL5
+	8Q2Nqdmou8d71I66eH6AaPjFn3UOPipw4DUkD/9CD7hc2KWo0Ei/kexUIVRdsQZA0aY28taUY0rYh
+	Dq/EpYR8BRi9kDnnBJXA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oU2kn-002Ocw-Va; Fri, 02 Sep 2022 09:14:21 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1oU2l0-002Ojb-U3; Fri, 02 Sep 2022 09:14:34 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oU2kL-002OF9-In; Fri, 02 Sep 2022 09:13:55 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
-	by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 2C1F41A067F;
-	Fri,  2 Sep 2022 11:13:47 +0200 (CEST)
+	id 1oU2kL-002OHq-Is; Fri, 02 Sep 2022 09:13:55 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+	by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 9CA37200697;
+	Fri,  2 Sep 2022 11:13:51 +0200 (CEST)
 Received: from aprdc01srsp001v.ap-rdc01.nxp.com (aprdc01srsp001v.ap-rdc01.nxp.com [165.114.16.16])
-	by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id E564B1A0654;
-	Fri,  2 Sep 2022 11:13:46 +0200 (CEST)
+	by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 615CF200694;
+	Fri,  2 Sep 2022 11:13:51 +0200 (CEST)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net [10.192.224.44])
-	by aprdc01srsp001v.ap-rdc01.nxp.com (Postfix) with ESMTP id EB5511820F5D;
-	Fri,  2 Sep 2022 17:13:44 +0800 (+08)
+	by aprdc01srsp001v.ap-rdc01.nxp.com (Postfix) with ESMTP id 5C2BB1820F5D;
+	Fri,  2 Sep 2022 17:13:49 +0800 (+08)
 From: Richard Zhu <hongxing.zhu@nxp.com>
 To: p.zabel@pengutronix.de,
 	l.stach@pengutronix.de,
@@ -52,16 +52,16 @@ Cc: linux-phy@lists.infradead.org,
 	kernel@pengutronix.de,
 	linux-imx@nxp.com,
 	Richard Zhu <hongxing.zhu@nxp.com>
-Subject: [PATCH v6 1/7] dt-binding: phy: Add iMX8MP PCIe PHY binding
-Date: Fri,  2 Sep 2022 16:55:52 +0800
-Message-Id: <1662108958-15800-2-git-send-email-hongxing.zhu@nxp.com>
+Subject: [PATCH v6 4/7] reset: imx7: Fix the iMX8MP PCIe PHY PERST support
+Date: Fri,  2 Sep 2022 16:55:55 +0800
+Message-Id: <1662108958-15800-5-git-send-email-hongxing.zhu@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1662108958-15800-1-git-send-email-hongxing.zhu@nxp.com>
 References: <1662108958-15800-1-git-send-email-hongxing.zhu@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220902_021353_793805_7250BB90 
-X-CRM114-Status: UNSURE (   8.57  )
+X-CRM114-CacheID: sfid-20220902_021353_786453_3C9A73C9 
+X-CRM114-Status: UNSURE (   8.63  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -80,65 +80,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add i.MX8MP PCIe PHY binding.
-On iMX8MM, the initialized default value of PERST bit(BIT3) of
-SRC_PCIEPHY_RCR is 1b'1.
+On i.MX7/iMX8MM/iMX8MQ, the initialized default value of PERST bit(BIT3)
+of SRC_PCIEPHY_RCR is 1b'1.
 But i.MX8MP has one inversed default value 1b'0 of PERST bit.
 
 And the PERST bit should be kept 1b'1 after power and clocks are stable.
-So add one more PERST explicitly for i.MX8MP PCIe PHY.
+So fix the i.MX8MP PCIe PHY PERST support here.
 
+Fixes: e08672c03981 ("reset: imx7: Add support for i.MX8MP SoC")
 Signed-off-by: Richard Zhu <hongxing.zhu@nxp.com>
+Reviewed-by: Philipp Zabel <p.zabel@pengutronix.de>
 Tested-by: Marek Vasut <marex@denx.de>
 Tested-by: Richard Leitner <richard.leitner@skidata.com>
 Tested-by: Alexander Stein <alexander.stein@ew.tq-group.com>
 ---
- .../bindings/phy/fsl,imx8-pcie-phy.yaml          | 16 +++++++++++++---
- 1 file changed, 13 insertions(+), 3 deletions(-)
+ drivers/reset/reset-imx7.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/Documentation/devicetree/bindings/phy/fsl,imx8-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/fsl,imx8-pcie-phy.yaml
-index b6421eedece3..692783c7fd69 100644
---- a/Documentation/devicetree/bindings/phy/fsl,imx8-pcie-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/fsl,imx8-pcie-phy.yaml
-@@ -16,6 +16,7 @@ properties:
-   compatible:
-     enum:
-       - fsl,imx8mm-pcie-phy
-+      - fsl,imx8mp-pcie-phy
+diff --git a/drivers/reset/reset-imx7.c b/drivers/reset/reset-imx7.c
+index 185a333df66c..d2408725eb2c 100644
+--- a/drivers/reset/reset-imx7.c
++++ b/drivers/reset/reset-imx7.c
+@@ -329,6 +329,7 @@ static int imx8mp_reset_set(struct reset_controller_dev *rcdev,
+ 		break;
  
-   reg:
-     maxItems: 1
-@@ -28,11 +29,16 @@ properties:
-       - const: ref
- 
-   resets:
--    maxItems: 1
-+    minItems: 1
-+    maxItems: 2
- 
-   reset-names:
--    items:
--      - const: pciephy
-+    oneOf:
-+      - items:          # for iMX8MM
-+          - const: pciephy
-+      - items:          # for IMX8MP
-+          - const: pciephy
-+          - const: perst
- 
-   fsl,refclk-pad-mode:
-     description: |
-@@ -60,6 +66,10 @@ properties:
-     description: A boolean property indicating the CLKREQ# signal is
-       not supported in the board design (optional)
- 
-+  power-domains:
-+    description: PCIe PHY  power domain (optional).
-+    maxItems: 1
-+
- required:
-   - "#phy-cells"
-   - compatible
+ 	case IMX8MP_RESET_PCIE_CTRL_APPS_EN:
++	case IMX8MP_RESET_PCIEPHY_PERST:
+ 		value = assert ? 0 : bit;
+ 		break;
+ 	}
 -- 
 2.25.1
 
