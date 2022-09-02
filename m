@@ -4,63 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EBD03C001B5
-	for <linux-phy@archiver.kernel.org>; Fri,  2 Sep 2022 17:29:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 08637ECAAD5
+	for <linux-phy@archiver.kernel.org>; Fri,  2 Sep 2022 17:31:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GoeCcVe4XQB6By7NNa7YRMgamGGKwNTv4GslCoDcL8Q=; b=URlz7bJgH4rJs0
-	lTUl3wreuWv6F39fXg34mvid8knYC8aPcIAlTrNAYzJ4gBwREsNMJCcW/tcHui5A3jSAFpFVbB8yT
-	xVwZLzLRpP4x3FXqIMQT+UEXR6GvJ6BSclppjsV4ved0iI+8a5h5bRC/35ZLJFND9ZuDbDqI2INtC
-	TrRYpaCFVbixifx2p1WBeHAF84FvxrW45fx5JOTOHYk2SE3zhjpJotPhljZ5JVEiFUoN0tUBsDWHQ
-	p69+Caj9jPfht40+bB3n7ei1dlbGX/aa740qDkQhpE3f5lPaXmknChmqGJWyew4tjNT9IQod+WBX+
-	SQqNtzjZ7rULmRBfEdmQ==;
+	List-Owner; bh=9J5Yw+4/ydfCL83B9VGh1LMhGtG8xJnX1/Yeq7+NLUI=; b=JHnz2NdpOwIyv4
+	e0X1qed7JvamzjygPrfjAuJPk9Ahwyi9wnPLfmMFLzHEU9OtnRW5wUxMDBNImBNeNCc/UEAig51n5
+	OqA6eQoX/v/aKfmVPDivxp9NR2ub0xJiueMkTElbqkRiGWkxPb9radsxno9qxmsK2zSm+KPvHtLOH
+	55ug8+M4RFD1HZCCDNYqV/gScLRcdXoLu27RI4Xm17uoWFC0sN7fUEgjWTU6ZxU/DZDlk4vQXShVb
+	nYfl40XJjSfQV2+bxG/L6pGKx/VWaKX6onfPGi2oShDXoCHD5jMbMXRCXoB1S9FZIZgHDOQGMCYaZ
+	jpmpR39WYe6SM2ZngOAg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oUATW-0087Z8-DE; Fri, 02 Sep 2022 17:29:02 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1oUAVj-0089K4-Ex; Fri, 02 Sep 2022 17:31:19 +0000
+Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oUATU-0087Xh-LA
-	for linux-phy@lists.infradead.org; Fri, 02 Sep 2022 17:29:01 +0000
+	id 1oUAVX-0089Ae-WC; Fri, 02 Sep 2022 17:31:09 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 043DC621E8;
-	Fri,  2 Sep 2022 17:29:00 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8B2AAC433D7;
-	Fri,  2 Sep 2022 17:28:58 +0000 (UTC)
+	by ams.source.kernel.org (Postfix) with ESMTPS id 7BCBBB82CE6;
+	Fri,  2 Sep 2022 17:31:06 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 48667C433D6;
+	Fri,  2 Sep 2022 17:31:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1662139739;
-	bh=Y4zv07NX7Af0mypsr8VN1DC6DfzrXJ+O+npkp3h71Ho=;
+	s=k20201202; t=1662139865;
+	bh=xEjU6ABREWMOVvsUbeCrVUhQ+TEkw5DfKozvpaZ2bQU=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=LSfjiyiqimzqCPXlykQvTii1/uNQQ7Sc0nX4lQOUJU8+WlKZvMf2cZq3MHoxgmq4r
-	 /K1JSGy9NAlDgdvENO7vywavNy1sThPLkMDY0O33LoRCQd2yS04ulV1t3oT3p1HYIm
-	 +8TOCMrfp83kQ+MXFmmfUwdty9RwrS0gv7qK06wtQCmyJVL8rdGLpx3jUIQLs7PZxT
-	 9WgArCKNopqdnvzfzMKgQ2ResayQKDFrdfQx1K5hVeAwvuLjylq8zDOQ0RFjalhr1E
-	 oUpsKbS7BFfUo8tYKv0kASHqEfH1F6CvDgtVHp1Lm+/CwX5nS0WKKLrwb1s0v513QH
-	 Wa+1dC8/Inehg==
-Date: Fri, 2 Sep 2022 22:58:54 +0530
+	b=lProDyoBo3NGRmpi1Fpxj5p6lnNPV9AgAPut4N3CeswqR3mFMfFxG2Nffr1aTTcQc
+	 ybQJx70pYYiM67AlHvWDRUMjXcqea6We00/KpGQVsBdM/EpXcWgkdr5RlEaRywwP4e
+	 dIR28dJNCKDTlyMhkf0J4382RU/CAqcBgRc2iXquSgzniu7yvfHnQYk+JtImRco3Ua
+	 Vs6rGkXMGGHPx8SZkXB3qeaz+Vns+UEp7xb/h0ZW9U5yYR2i5WXwoarJkwpvt9H4zw
+	 NAHHcp87zGCeqIDYtfo4um3Fpl4DGx/riPL2J+J9j/dUt7/YD1+Y4Z+YxgSzx8W1QH
+	 uIg+SYAEwLy1Q==
+Date: Fri, 2 Sep 2022 23:01:00 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Cc: Kishon Vijay Abraham I <kishon@ti.com>,
+To: Michael Riesch <michael.riesch@wolfvision.net>
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
+	Kishon Vijay Abraham I <kishon@ti.com>,
 	Rob Herring <robh+dt@kernel.org>,
 	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Pratyush Yadav <pratyush@kernel.org>, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH v2] dt-bindings: phy: Update Pratyush Yadav's email
-Message-ID: <YxI9ViXF7gMc5KcM@matsya>
-References: <20220816132131.75591-1-krzysztof.kozlowski@linaro.org>
+	Heiko Stuebner <heiko@sntech.de>, Peter Geis <pgwipeout@gmail.com>,
+	Sascha Hauer <s.hauer@pengutronix.de>,
+	Nicolas Frattaroli <frattaroli.nicolas@gmail.com>,
+	Liang Chen <cl@rock-chips.com>
+Subject: Re: [PATCH 0/3] Add support for the RK356x variant of the Inno CSI
+ DPHY
+Message-ID: <YxI91NRExHFQP5FM@matsya>
+References: <20220720091527.1270365-1-michael.riesch@wolfvision.net>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20220816132131.75591-1-krzysztof.kozlowski@linaro.org>
+In-Reply-To: <20220720091527.1270365-1-michael.riesch@wolfvision.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220902_102900_763968_F3D76487 
-X-CRM114-Status: UNSURE (   7.56  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220902_103108_198539_CF177BE6 
+X-CRM114-Status: GOOD (  15.52  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,13 +80,21 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 16-08-22, 16:21, Krzysztof Kozlowski wrote:
-> Emails to Pratyush Yadav bounce ("550 Invalid recipient"), so update to
-> match one in commit 92714596cdbe ("MAINTAINERS: Use my kernel.org
-> email").
+On 20-07-22, 11:15, Michael Riesch wrote:
+> Hi all,
+> 
+> This series adds support for the variant of the Innosilicon MIPI CSI DPHY that
+> can be found in Rockchip RK356x SoCs.
+> 
+> Please note that only the basic operating mode is supported, in which all four
+> CSI lanes are controlled by the Rockchip ISP. Split lane operation (e.g., two
+> lanes to ISP and two lanes to VICAP) is not supported.
+> 
+> This has been tested on a Radxa ROCK3 Model A board together with an IMX219
+> camera sensor and a patched version of the rkisp1 driver (with support for the
+> RK356x variant V2.1 added in a very crude way).
 
-Applied, thanks
-
+Applied 1-2, thanks
 -- 
 ~Vinod
 
