@@ -4,62 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D9B28ECAAD5
-	for <linux-phy@archiver.kernel.org>; Fri,  2 Sep 2022 17:35:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CAD63ECAAD5
+	for <linux-phy@archiver.kernel.org>; Fri,  2 Sep 2022 17:41:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RJtyTiKqndMR5IfZajWgpCjAHyRo7nT5AkjrAnDffhE=; b=xASYRWpwl135D0
-	BtL6Jzux6lj7T7cbyfcgOYYP5ajncy4BuwRxQ339arQhvhrK3jaSMOFMQiidYzvLNLuNNdebW9o80
-	sKLPPGzuuiiGej9uxNSZeXlysZdHZOWfN5oDe9J8+B1EFrvybWLm3zWX6HeWUjx+h22KMVv0PrRaS
-	SnS6xYZsM7V/GRU39xdCr7ZmRal9UDelqp5yEMdv9wcEz4K7JT0qNR81MoM8f+v5ITGUiry8GMh9e
-	dGxckErq8Aclh8fnRdK+Xk0q8QVbRgXmEG8D5jHD+AaLxO+JjgPriIjV3ylaEpYNqXT1IvpOp6xOn
-	SJp7fiMv4IHfKz+O3Edg==;
+	List-Owner; bh=Wx1ob2AU50sXkC6DQHrLEJ8zp7OGj4bdn/UHMgXMiSE=; b=1wYJthXgH0CmS9
+	vCYL2wxJoAxvdLJtfasdjrNPoH6uNup0kvTZ0KV4/xYe2BoA9nqMjSFrxLG6ohXzrAerel7XXjUXq
+	YMIhkDQw3xHE6sImZg8t/VoXLZcSXoMK70HzRfmk1tcOUv8w0bzoLtjWW2pmWRwoiXMeLfedQlqwc
+	Jw0OFyserX1NhVpMyFG8cboom0ATdchBxfTkpf4qjnRy2My5crNKb6PulzIjIGdU1usj6EYL/j6RO
+	e23r3EwIuTCZE8U5Bsy0Eo85R4YwHl5I3lXG5QJyPhSwij39KMQmIa10lhlHTj/eOTtX9rXGEnKKu
+	0WDqEcxc2XAtAkMOeTlQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oUAa5-008DOI-A0; Fri, 02 Sep 2022 17:35:49 +0000
-Received: from ams.source.kernel.org ([145.40.68.75])
+	id 1oUAfh-008HQ1-6S; Fri, 02 Sep 2022 17:41:37 +0000
+Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oUAZt-008D3N-9t; Fri, 02 Sep 2022 17:35:38 +0000
+	id 1oUAfV-008HH2-CO; Fri, 02 Sep 2022 17:41:26 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id 90DF2B82CCC;
-	Fri,  2 Sep 2022 17:35:35 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id BE56BC433C1;
-	Fri,  2 Sep 2022 17:35:33 +0000 (UTC)
+	by ams.source.kernel.org (Postfix) with ESMTPS id DEAABB82CD1;
+	Fri,  2 Sep 2022 17:41:23 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id DA429C433D6;
+	Fri,  2 Sep 2022 17:41:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1662140134;
-	bh=Yg/1HfkU9lTB+P/qKj15r6DxFkOzWEP0cv8ZznfLd0o=;
+	s=k20201202; t=1662140482;
+	bh=Fhpz1/e1H4HMa8Jtwgh0t8VzDicCBOWzSpuCa2Lmwbo=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=qZxiakJ5v/5PYKfFDMFamky9atKexvD/yePMGz3Ag/XpcZ8kKGCr5qC75qRBLtQd1
-	 OiJ9qTQ/YJ5nKVQLIFb/266WnWI0bk2/hXdT/8kLh0rhd0EJhQCXsH/fREQpKqMJij
-	 l8pVFKgT2A2652IoIgDqX36xZLwenuXvAAAW1Mg6MdG9hY9hisKe114VsW08JnqgPa
-	 VgefgZvKqlS5n8AacSxxP/M2cCexCLX3OCPG3ZaDz8X1Y1O0KPfwYeYkBqdw9z4Rkn
-	 jPoNkYCZNilYT1hlW8HTK1MJMLwnedCHbrY8i5A7IhGvfeRr0YqiWelyFAhRNpCjNU
-	 Oze8aDlwQnVAA==
-Date: Fri, 2 Sep 2022 23:05:30 +0530
+	b=gFBRhA2BOL7MvGuouJRoyb3fUbvKNAtmooGPN+NY6lYQwKCWYUiVKqhmMGr1JJ7BC
+	 KqMafQu/Vw8/9bCWvPOnB9H1oN/sJflozPajNK7ujhSWPHfyp8CwbZ8QisTz/3qJGT
+	 tL6tdsfQZhbV0pEF05vlIQi8kFS93RdBj+GFQDTS9Q3hQgN4RocJelo1+EIuXH0wpj
+	 6dKpnCSnz8P+osDbw3jxnHdFHLjnYLcWLDIdIaMXa7yjhOhP+QGev9O6YZVMi0VSHy
+	 3MivnCmDTGiqZh2ZazTkJseGCB8J1Hqi4qpKpWr5PWZtqki0NGeaTXYsiBUnd7fPDE
+	 YYguD0oecoW9Q==
+Date: Fri, 2 Sep 2022 23:11:17 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Peter Geis <pgwipeout@gmail.com>
-Cc: Heiko Stuebner <heiko@sntech.de>,
-	Kishon Vijay Abraham I <kishon@ti.com>,
-	Samuel Holland <samuel@sholland.org>,
-	Markus Reichl <m.reichl@fivetechno.de>,
-	Michael Riesch <michael.riesch@wolfvision.net>,
-	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v3] phy: rockchip-inno-usb2: Return zero after otg sync
-Message-ID: <YxI+4t3fecbIYC07@matsya>
-References: <20220824122543.174730-1-pgwipeout@gmail.com>
+To: Sean Anderson <sean.anderson@seco.com>
+Cc: Kishon Vijay Abraham I <kishon@ti.com>, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, Madalin Bucur <madalin.bucur@nxp.com>,
+	Camelia Alexandra Groza <camelia.groza@nxp.com>,
+	linuxppc-dev@lists.ozlabs.org, Rob Herring <robh+dt@kernel.org>,
+	linux-arm-kernel@lists.infradead.org,
+	Ioana Ciornei <ioana.ciornei@nxp.com>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Jonathan Corbet <corbet@lwn.net>, Li Yang <leoyang.li@nxp.com>,
+	Michael Turquette <mturquette@baylibre.com>,
+	Shawn Guo <shawnguo@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
+	linux-clk@vger.kernel.org, linux-doc@vger.kernel.org
+Subject: Re: [PATCH v4 0/8] phy: Add support for Lynx 10G SerDes
+Message-ID: <YxJAPbfBpUpHeiqX@matsya>
+References: <20220804220602.477589-1-sean.anderson@seco.com>
+ <6d312336-4bfc-a8d4-783c-116a21284edf@seco.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20220824122543.174730-1-pgwipeout@gmail.com>
+In-Reply-To: <6d312336-4bfc-a8d4-783c-116a21284edf@seco.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220902_103537_672591_DA8B16F1 
-X-CRM114-Status: GOOD (  22.80  )
+X-CRM114-CacheID: sfid-20220902_104125_575282_FC0221F9 
+X-CRM114-Status: GOOD (  10.17  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,74 +81,17 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 24-08-22, 08:25, Peter Geis wrote:
-> The otg sync state patch reuses the ret variable, but fails to set it to
-> zero after use. This leads to a situation when the otg port is in
-> peripheral mode where the otg phy aborts halfway through setup.  It also
-> fails to account for a failure to register the extcon notifier. Fix this
-> by using our own variable and skipping otg sync in case of failure.
+On 30-08-22, 17:44, Sean Anderson wrote:
+
 > 
-> Fixes: 8dc60f8da22f ("phy: rockchip-inno-usb2: Sync initial otg state")
+> ping?
 > 
+> Vinod/Kishon: any comments on the driver itself?
 
-No blank here please
+Not sure why this is not in my queue or pw, can you please rebase and
+resend
 
-> Reported-by: Markus Reichl <m.reichl@fivetechno.de>
-> Reported-by: Michael Riesch <michael.riesch@wolfvision.net>
-> Signed-off-by: Peter Geis <pgwipeout@gmail.com>
-> Tested-by: Michael Riesch <michael.riesch@wolfvision.net>
-> Tested-by: Markus Reichl <m.reichl@fivetechno.de>
-> ---
-> Changelog:
-> v3
-> - add missing brackets around new goto
-> v2
-> - switch to using our own variable
-> - add missing goto to skip sync in case of registration failure
-> ---
->  drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 9 ++++++---
->  1 file changed, 6 insertions(+), 3 deletions(-)
-> 
-> diff --git a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-> index 0b1e9337ee8e..27da5ba379c4 100644
-> --- a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-> +++ b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-> @@ -1124,7 +1124,7 @@ static int rockchip_usb2phy_otg_port_init(struct rockchip_usb2phy *rphy,
->  					  struct rockchip_usb2phy_port *rport,
->  					  struct device_node *child_np)
->  {
-> -	int ret;
-> +	int ret, id;
->  
->  	rport->port_id = USB2PHY_PORT_OTG;
->  	rport->port_cfg = &rphy->phy_cfg->port_cfgs[USB2PHY_PORT_OTG];
-> @@ -1163,12 +1163,15 @@ static int rockchip_usb2phy_otg_port_init(struct rockchip_usb2phy *rphy,
->  		ret = devm_extcon_register_notifier(rphy->dev, rphy->edev,
->  					EXTCON_USB_HOST, &rport->event_nb);
->  		if (ret)
-> +		{
-
-:-(
-
-this is _not_ linux kernel code style!
-
-Reminder: it always helps to run checkpatch 
-
->  			dev_err(rphy->dev, "register USB HOST notifier failed\n");
-> +			goto out;
-> +		}
->  
->  		if (!of_property_read_bool(rphy->dev->of_node, "extcon")) {
->  			/* do initial sync of usb state */
-> -			ret = property_enabled(rphy->grf, &rport->port_cfg->utmi_id);
-> -			extcon_set_state_sync(rphy->edev, EXTCON_USB_HOST, !ret);
-> +			id = property_enabled(rphy->grf, &rport->port_cfg->utmi_id);
-> +			extcon_set_state_sync(rphy->edev, EXTCON_USB_HOST, !id);
->  		}
->  	}
->  
-> -- 
-> 2.25.1
+Thanks
 
 -- 
 ~Vinod
