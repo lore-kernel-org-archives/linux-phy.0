@@ -4,127 +4,126 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 73ECEECAAA1
-	for <linux-phy@archiver.kernel.org>; Fri,  2 Sep 2022 21:42:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5FA9AECAAA1
+	for <linux-phy@archiver.kernel.org>; Fri,  2 Sep 2022 22:13:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hARiBaCe2iR0uWcwasYExNNHH7PK+8X2L0NKGxpckYs=; b=tWkfINCiXhcSSg
-	qjEGVcrNYWXSUOCMq6k88ELl3pugc5WI+RybGJSAos/dmRsVC+bd7drXs9zBkpLr4n7MLcuV9l7Zg
-	Tk7heeT6qby6Mi7HkX4b9xC7LhCSr/PVMSOELazSWOT5SOWdONEVRx6yxcrYoYu34H+GgO/LyPlx6
-	oAzGAGaZ2bAy73IBGRONP6y6PR1qbmKX5HYRkayy9inLAx2H2onHuRHZGUYN1av8trF8M0js+rbj2
-	olaBFY1imQNLwokbNNJlE2TSgOCOmw5i4mrur9DK+GRWH5IW9fFe+dAKbr/Yjmq059F0wXXV5G11p
-	jD8naij6MoR8yzXV7NIw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=EAbW/rXi/onUMlqRlzF6aqpUPe4HaWuaJEaNNq8BZCw=; b=ecZG9t4QDffvt3
+	gVbkdLyEbItc5zHaXSH5WibSwTLbscoH7H4DqkebA0s2DzXu7qGiDwYM+INA9u8Dk0rxCAOy9GCIJ
+	pE8HzOHwCm5zEH+NVosYYrXZcjl4mKDR3FhM5qyVDFlk/otBysWmfA4a2gFgsg1fLDyngMK1cN3+z
+	nw5zy8Dzpgkc2kim85uMMaVnUTvCdBRDTaXX70h57oXEmOgbocnQo+3G7Hp1gKsUZvkIw3gLXW7pF
+	upgJATv1poyqdF424CtNxRjYt61VHT6xF2/oUJ2m9ZAFJNXETKwgTrBLx+1xpPyGfLv3gdxL1kIEj
+	i9snaLOtSyyzExZkZE9g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oUER1-00BTF7-Ls; Fri, 02 Sep 2022 21:42:43 +0000
-Received: from mail-vi1eur05on2043.outbound.protection.outlook.com ([40.107.21.43] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
+	id 1oUEuS-00BunK-IO; Fri, 02 Sep 2022 22:13:08 +0000
+Received: from mail-am6eur05on2058.outbound.protection.outlook.com ([40.107.22.58] helo=EUR05-AM6-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oUEMY-00BMKq-KD; Fri, 02 Sep 2022 21:38:08 +0000
+	id 1oUEkZ-00BjW0-Ia
+	for linux-phy@lists.infradead.org; Fri, 02 Sep 2022 22:02:57 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=GhMi0Gh8UKhgduShWjmKTEjqp48r6DCIoizRkLLmt7AITkbcpiRweWb9PZqOvk6Tu60poBK0PCNsW/KcEtvyZenqFwpcGKWpn1v5oxijz+sNA8hQsuVDtvwZM2IxYB008Ra3xwtUwTXn+zXr7zdwHCqRX7hlb9XxyOyFttZqAxcj/66NsG7o1xCJnbwU6FE9LohihJkcuy+UgkgC8UaZ9Mt4KtQPwfIXT5p3A5B6PpQNCBQDC0x+uOSCesgdcnW2S23zfxjzx8I3RsSoskYFgY5olkbCYgIZLl0JbClBC8xaSF1ZP7fXrfl5HSLjs3nNPXJEJ0H/xHHl6tuyWmzRNw==
+ b=AmZ86MgE9dF63+paFnZFKKUwGrQBjUt3ezVhIlHoJ5Dvz3iCdUv0kL8QVPeq43trACidMsWAALOd3tyI4xFFKv1Ir+nnALkdMbO2mCQmESLiMiI9U17GfeOmnD/lkUZU25aBPCZuPP05cMr8rmpyiMTbk3nxrfEC/BCuOJvMTlm0rHBhd6zWxRISLyA7DfXNTFgxdJQqmNgAl+tVyqzRy0I8kPhtXNxezimHIPz2sS90gOoyd4UpAeZDicG3belesb4MRGqckGFc4fnUoY2RKqtehjkSoPgkgF+2Faw96C+4MehNPOue4tw7cQ5cpa57r2aMBRJrq+pKwImLYqTUNQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=HJcGuRDLXkpqwjovwzHU15ijeVXmDmxdQjfWw+v/3fs=;
- b=hbzd07/ZNwJbOTKqsxeKPHn4KQHjh1tKlGnVKJMbOz+mqWqRvMkpn92Avfa59JgyST/gC8GGFH+aSM5X7IB+vMIisPFX5sSOZbMn4yrpjDJdi3eSqtEuTDE7UjwtlOx7dXZtl5T3MV5KJTg53oixsqSyM7B5fOTmtKzoq9ZcO1sp+uUhFPU9GgomimecQXPHDoa1H1Y9bdBQ2sjId0hTr9RhToJiVBKRGuE/Okee9yccp5DBPlJKIx9MGRNmHdWGK2YB9AWuJNV/gfEDfjc/E8jcNCjmzrQwf8u2PNsYETN9Ol3KolKwi/AkKN84jSZ1esXKwZqQuCcXBp921TvFUw==
+ bh=lecyqEEJuZAqMbTypG/HNB9hpnpKr0dh8L/PGCVxwBg=;
+ b=kV/mjFjSqQl9RKBbO5rRPsK41P5CIjinHjFu/hEbpR29ydQtZbucJG74797qJmWrW1GBs+/awa+r+Pk7NQL3ATPUeAqFlmDHYZbGtEgvwGxeBKEWWsUvkMZ+2dOBNE2n/cjRojOsuQfngcb7xwnUyzBf/6rgvU25whSbuxz0ihPHmR+kfzGlRKEe2/zQJZMWUYSVWge/7ZXlcstN6LAMH3wc5Gi8Q9SODNtdXC+rd96mFZRC3RsnqymZc9rvh42ngnarnXxPiXBGdv82dTTrTor5r0DTRsDuZ9CMtr3fID8xFtgAVXpevxsVrdHDcMggoeOqYzb//wXfg+PrLoYucw==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=seco.com; dmarc=pass action=none header.from=seco.com;
  dkim=pass header.d=seco.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=seco.com; s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=HJcGuRDLXkpqwjovwzHU15ijeVXmDmxdQjfWw+v/3fs=;
- b=HChhU5pgOje4NrBdeL8txOej09ntd37Cd+T5J56H9ncZaorPEZwN7J/4msjHkw9PDLAbwF6KI54nO41LcAhUpy+KIVQaoSeqcUGaizOmMxR1XOaYTyvcAdBTjpXlO+f+lxQ00PNeLV8qyh3TycGY6aeFyvO+Oj1YczV6Vpw7wTPRlZnl6OI3JRWAiHJAry8+Z9ABDysQv9fiHlg8dwt18CQ5TZHKdonp+C1yB6hHTkXTo2npGTZBofHWesJGMrUQT9ZjH3EWr48m445oyOhuymu3CAJEli6BUtGv/n3vRNhBp24hitYox5mGJhnhaPaf8eeB+v1Jtz6j3KPZ5IFosA==
+ bh=lecyqEEJuZAqMbTypG/HNB9hpnpKr0dh8L/PGCVxwBg=;
+ b=i4Xsh1HuS4K6A+25mo7K2t4Mnrf0NyFFZshWSt3KOvMa71HNv2FfEooMWGNR3JfD8Tsr9CRA1NhQ6tO9YLDgIY6dBsbFVku+5/y3lNRkpDctL+VFwrKIBSda6Q4T+Rsp8VKN+QmrKmxhbwMSa356MjAvBZH31ZlK0YdxFpbE92LcmCUrcX8z9yIRenlm77c6p1k9g6iWnmrBwE7EOYgsjtLBoWf0fADDUpmAv5kvYc/TGR36VytJntT0/xs58hxl/NuNmE2Q/ZYaE91O96rrvDEca0JYsOYhoEUwWzfyDJhaCuV9Z6uL5WQf7vwDewNwJJqVxemQ7NeWXm/qlsTciw==
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=seco.com;
 Received: from DB7PR03MB4972.eurprd03.prod.outlook.com (2603:10a6:10:7d::22)
- by PAXPR03MB7886.eurprd03.prod.outlook.com (2603:10a6:102:215::14) with
+ by AM6PR03MB4085.eurprd03.prod.outlook.com (2603:10a6:20b:1b::10) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5588.15; Fri, 2 Sep
- 2022 21:37:52 +0000
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5588.14; Fri, 2 Sep
+ 2022 22:02:50 +0000
 Received: from DB7PR03MB4972.eurprd03.prod.outlook.com
  ([fe80::ecaa:a5a9:f0d5:27a2]) by DB7PR03MB4972.eurprd03.prod.outlook.com
  ([fe80::ecaa:a5a9:f0d5:27a2%4]) with mapi id 15.20.5566.019; Fri, 2 Sep 2022
- 21:37:52 +0000
+ 22:02:49 +0000
 From: Sean Anderson <sean.anderson@seco.com>
-To: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@ti.com>,
-	linux-phy@lists.infradead.org
-Cc: devicetree@vger.kernel.org,
-	Ioana Ciornei <ioana.ciornei@nxp.com>,
-	linux-arm-kernel@lists.infradead.org,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Madalin Bucur <madalin.bucur@nxp.com>,
-	Camelia Alexandra Groza <camelia.groza@nxp.com>,
-	linuxppc-dev@lists.ozlabs.org,
-	Rob Herring <robh+dt@kernel.org>,
-	Sean Anderson <sean.anderson@seco.com>,
-	Li Yang <leoyang.li@nxp.com>,
-	Shawn Guo <shawnguo@kernel.org>
-Subject: [PATCH v5 8/8] [WIP] arm64: dts: ls1088ardb: Add serdes bindings
-Date: Fri,  2 Sep 2022 17:37:21 -0400
-Message-Id: <20220902213721.946138-9-sean.anderson@seco.com>
+To: Andrew Lunn <andrew@lunn.ch>,
+	Heiner Kallweit <hkallweit1@gmail.com>,
+	Russell King <linux@armlinux.org.uk>,
+	netdev@vger.kernel.org
+Cc: Jakub Kicinski <kuba@kernel.org>,
+	Jonathan Corbet <corbet@lwn.net>,
+	Paolo Abeni <pabeni@redhat.com>,
+	Vladimir Oltean <olteanv@gmail.com>,
+	linux-doc@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	Eric Dumazet <edumazet@google.com>,
+	"David S . Miller" <davem@davemloft.net>,
+	linux-phy@lists.infradead.org,
+	Sean Anderson <sean.anderson@seco.com>
+Subject: [net-next PATCH v3] net: phy: Add 1000BASE-KX interface mode
+Date: Fri,  2 Sep 2022 18:02:39 -0400
+Message-Id: <20220902220240.996257-1-sean.anderson@seco.com>
 X-Mailer: git-send-email 2.35.1.1320.gc452695387.dirty
-In-Reply-To: <20220902213721.946138-1-sean.anderson@seco.com>
-References: <20220902213721.946138-1-sean.anderson@seco.com>
-X-ClientProxiedBy: MN2PR08CA0008.namprd08.prod.outlook.com
- (2603:10b6:208:239::13) To DB7PR03MB4972.eurprd03.prod.outlook.com
+X-ClientProxiedBy: BL1P223CA0011.NAMP223.PROD.OUTLOOK.COM
+ (2603:10b6:208:2c4::16) To DB7PR03MB4972.eurprd03.prod.outlook.com
  (2603:10a6:10:7d::22)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 1cf90d08-7ca9-454a-7109-08da8d2b6371
-X-MS-TrafficTypeDiagnostic: PAXPR03MB7886:EE_
+X-MS-Office365-Filtering-Correlation-Id: ca2a82b4-7bff-4422-230e-08da8d2ee037
+X-MS-TrafficTypeDiagnostic: AM6PR03MB4085:EE_
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 	cCBUJWznz3dVvFfgTYxjLdFA7LqNh9o2DhhGO035PwJCYPztgD4FNzggnYdy64UJb7DHdL1cYQY2dBuBta6prhVGrqhwZdHhTZtrNDcXNlZ/0OD53cxooV5FVDFhM8nqNj5ih17iVFntiEOcTiOg2rkjwZ+90MMSiAhxSQAhkCUhGDZvYYnz2UOEqEp0Od3XIqAVBT92OLkxSHCwCJJg9kWhvPeZS1ljtMeRnvXJ39TwPrc0KsnUxy33G1BmiIrG4hRX1t5so0iHN/LpQja2Tsi7C1bpu1h1RkHy4YQ6pqPTWsqEqZa8G0spMueP8H9euYDmBzTo5zPkLSehecMvMh2Vnpa56p9+cXQ6jNdk6j7tVT9O3cg+aPvDmULo+mhY/qy7HWTFUAIpvmXHG1Y2k88jbW1vQPGCF+O3M1TrQ4MzHjbn1zDrUy3tkdZtNhlfue1L5ZUQ9srQqvuSFfZQclZefx61bCeXT0TRkEaiJTTuVTmtoPVtbma6MgeNdKaVcEHEVjzabWKQuBwi1HrPHPzS8NluKmFGR/YxbqIkC6tPGIRIkKxPt9N31xrrWCqmAeiIOJc8d9IGl17/JJe+TsKnX0w2xt5BGzaJw1YerS0HLA8suSfMM90jt2W3DBwvmmZWstWrV4tkUMWr8EGADtzmeXAkTr/tkgoshc/L5hdoBsA2yN40UA3AZRtRFpEzw4uxhdzTPMK6uOR2DBX90VbuomMsDVynGjTeYEX3plwmaOzlgN+PwXxVMBtWtZag
-X-Forefront-Antispam-Report: 	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DB7PR03MB4972.eurprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230016)(136003)(346002)(396003)(366004)(376002)(39850400004)(110136005)(54906003)(38100700002)(316002)(36756003)(186003)(1076003)(38350700002)(2616005)(86362001)(6486002)(8676002)(4326008)(66946007)(66556008)(83380400001)(66476007)(2906002)(52116002)(6506007)(6512007)(26005)(8936002)(5660300002)(478600001)(6666004)(7416002)(41300700001)(44832011);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam-Message-Info: 	jRUkgv7TqvHCOgVxEG7rgZBXqlBn+qW6W+dXBfx9QD/j4GJnr7qnf04TQbWnyr05WElDZk3b6P08WakY9s5XDZq7339orL2peLKfDowQYcN4ev9C0kFtzd76nlDfeY9YKb8dkwMbmuZLRDySLc0Q5RuqH+ceNiYPqI1xmu39KX5MwVXkxTFOZ/ZoaWHtU4Sjie//B766u2evqlGR/PYCfdZ1vBn2JS6/Z6C3tP6JJZm9D4kw3e/G/LH975afdjJdCVrqB9ncUnEN6dro7VVOurU5Dv+SngpoMNRLaVqYhjuj0lgiFrMCNbgU3Z9t8MFmSEW6ssUG5iJPTlxxBxJ+PkR91oQ+YFh5lP3HJrg7rD8bi1WjhRKd8icrLlQjpi0s4FHojSV/QpeZ29Tzt/zyOYw2HU7skMuMg+NNTnYzhJ2dfuUPBozLX9RzIiLPPvXyfOQYVSyD6dFG6ZT1xHpBdtHcJxnOqc02cdlPLU8UOoorWalrr2HSbMI9vgCBRRUjpb+FiV3f5U5kl+SNMRQPLlsEV4dNzbhxuoMPCyr9l6BM6xym3cRwXAOe+9yWXGTtngVNtpr3BnKKqiSeCV4/bLvFYO4+jZMBHqFYF6HAy3BErCc27yH0vLzWHSOV6tmm76VkSAJnSiOe6i4h6dnVeiflZ+yXKkQBE0Pv85Jwy90Le8LRqpqGQ0RJlFgoybmEoG87sZ1aF1CABuHiuMntpQ6DhkuNFI7kFRAfDKsXC6yowhLnQZxtRFlf+ki+ishyIZKIhmnha14ZB9vJnp+RceT21mzTNGorIkvP7ReWZwc=
+X-Forefront-Antispam-Report: 	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DB7PR03MB4972.eurprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230016)(396003)(366004)(346002)(136003)(39850400004)(376002)(2906002)(36756003)(83380400001)(54906003)(38100700002)(66476007)(38350700002)(66556008)(66946007)(8676002)(4326008)(110136005)(316002)(7416002)(52116002)(8936002)(5660300002)(44832011)(26005)(6512007)(6506007)(1076003)(186003)(2616005)(6666004)(966005)(41300700001)(6486002)(107886003)(478600001)(86362001);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: 	=?us-ascii?Q?6zCutHWbZlv4tUjh0kkUy2cGFhtil1bkaQoMfgWuWA4w2dKODrew/eQPYzny?=
- =?us-ascii?Q?3G5c7yKXfNgKNzVGh6v90FMrpon/BGewubGSKzKXRZHzt/LWWUMfg5QdxnGS?=
- =?us-ascii?Q?9f//99z9h45iROhfchfoIWHltWl0mI/p1vX08J5Cww9ZloKG4SFRGFPSOVNq?=
- =?us-ascii?Q?Tp2/CFNVuql4OKv7jdSvGRqh77PgWtv8TLgQkbTv2eLRj41rCoDwOdgLjiyM?=
- =?us-ascii?Q?gS8ltZNePus+8BU9QRPNn152MAXHonlsRLj5Rg8hzlqsgyJa07LFK/kCMbmE?=
- =?us-ascii?Q?h4yRYgfSZfbrMBYb4vusZ2LInWnGAzx2CPYH6W/3D7zxHnc0NJqB2JgiqSCj?=
- =?us-ascii?Q?fnaT7reWlHqM8rxerk5UgHeDzAn2ZcdporhvEd21lT9FaKYfHL6KqnTyuiTO?=
- =?us-ascii?Q?Hk6cbXyQBROILKc1nBhsH5hGv8Qwa91adEpwtvut+YDpXyzPcPtbs2QqTjpZ?=
- =?us-ascii?Q?IrmyxBqp5qB7Tbi4MFq1kfO1o6XShvDBhhOoifNAW7AkPh8Uukvma9uAYIJQ?=
- =?us-ascii?Q?1doYD4ZBE7xyLFB7TTVtIR4UECRLQXBWugDiltlG2RIB5e4hO7bt/aKhEZeV?=
- =?us-ascii?Q?60dMpx2QlBl+dVsw3E1WGuN5a4oK0By5ETa0o6SSqblTE9kwF81YY6sYFl4D?=
- =?us-ascii?Q?NsEt0GW0PkWSOzmj/LfUoPlSX13KCUM+bfRSJ7aTEIGOJhQzD3lauKk941jM?=
- =?us-ascii?Q?S3XY93P78zGWxtY7590vWBmlDr/V7/2BzvNBjc96VlswOiRDjJ9s0ftYBJOg?=
- =?us-ascii?Q?C4Lj88C/dUrkccZcXsXcbMKQzF1AbL1I//Jp8O0UXsxe0U2gHOCM+aClS7HX?=
- =?us-ascii?Q?66mWg8fWPU6s++I86T9YJCdTDdghJeak0HhFuXxRK5rwvamXuHatXoNP5dK8?=
- =?us-ascii?Q?GYLj370e0Wc653LtXqutG4479ZE8k3GZqkdlBjjRlZoE4ToCLouKc7CjW5Ld?=
- =?us-ascii?Q?74/2Ac+gBHMXg+S4XE4LFvqSpzBIlCwJmpqXI5BOWKuEmj/xjanDKmAeYkEY?=
- =?us-ascii?Q?7VgDUs7WphVwVk7yw5MK9CZsOBg0+ge28eH0v8j5a4M2fMmI//VwLEYjE4GJ?=
- =?us-ascii?Q?Ksijul1HXE/lXn/VkI0XlTO8dA4hIiv+LGVb6npfMOegjodXv03jtI4V1Wah?=
- =?us-ascii?Q?PhmnPZSLW4/5d1QK2DdZqZVT/aHxmHfCStY+PIgl6/KtZskT7twm1Uoumko1?=
- =?us-ascii?Q?xcGLV+qj+cXAvaaL8F9TjYtKMlj6kdV3v0J/i+TfYJA6UcnqzyR6vWcrIQnv?=
- =?us-ascii?Q?d+qX3vJfIdrxKicJdmvWShr4hssJxFzyYEip4hublMFE72fSDjKdoz6GtAdz?=
- =?us-ascii?Q?R53Zx+Twal008UG9QSRBupASxOkHedNasT3dXQUUfFj+Ko2Mrgfzy+t13CtA?=
- =?us-ascii?Q?Q+UJeCytIdpMM/tQr9GgayXuZswqAnE1Enlsb98MO7uvMXpuWmNJ/s3QvKNZ?=
- =?us-ascii?Q?sbdgpabAL3wI7Sv7di8AmK+hBGIOR724dZC7RPUGIdHZ4WWbE+u3l+6FKPGK?=
- =?us-ascii?Q?WtScKY/eoXaMQdtMqlJD6GiLcqMUNLAASaHHb9gdaIQWnAZJz9JJBbaUUUhv?=
- =?us-ascii?Q?nLJcrSLG57BZY01uSGmLnzOfiSKKTq8eEIyvSbuI/cDtiHARex1ibp3Ub8IN?=
- =?us-ascii?Q?LA=3D=3D?=
+X-MS-Exchange-AntiSpam-MessageData-0: 	=?us-ascii?Q?+7iesahF9wcadaOeWbHtlL/xpU4XA7q4JRglPoukQJPt+Spk0WmL9cytz0EJ?=
+ =?us-ascii?Q?IWoXH3DrS34HMwbRG4ulq0NK9rkpnm5JHLcZM14GNu4+k6ZJgfF7BU2PHKCw?=
+ =?us-ascii?Q?fCwv9lyn1tSZEyRymKQQ5XwPyiYzZAU4N4mnI/iFa4h+h7PhEeA5L3tk12fK?=
+ =?us-ascii?Q?hUfrukA7I7AXJsC6Ib+E4v5dBGPmYoPJP017SWaUcnPX3Nc3woR8CCDRHs/C?=
+ =?us-ascii?Q?mgcl4LdnWTaydYNs6YqlnMcCJEQiX09T+UlyS0UxdcLt6acIdQZgFSMb8KZG?=
+ =?us-ascii?Q?nZKjl1kxP6o4x4hkpMmxFZPHb3l+y/D7ekidTIORqy7i/OmyY5oe5DNJIf8e?=
+ =?us-ascii?Q?WqvVEn4k9zwbCQ/wBYB8w43Hw3snt3RXYhDNAFiorHiEk0cg011L6+3YVmSO?=
+ =?us-ascii?Q?bMqnEi7PcJawbc86Si2WclBDW2+GQSSR36vbrpW60oPPVOgUaZCcSSJ6mOQr?=
+ =?us-ascii?Q?ygOD8PtoJQop4pEUvSj7UKCfcpiiB6vKmJGQB1dP/ep/euAf1B/c5/2fw9qJ?=
+ =?us-ascii?Q?kU3Ol2tD6N5ln6EuWENZ4bDbYqq1ZJLc31FbpXv+obyxTTIVyO55Hta/t9wt?=
+ =?us-ascii?Q?Ylq7tMrQKiTRk3OaAmrAtdu49MdjurH+yI9OXlFwTwlr85P+gg34umZWW9Qq?=
+ =?us-ascii?Q?NjSQ9ssJrDBTiSWSl4+TKjNzecxnZhKe08C9JcJ+lj3IHYz7ovmyHElSb82j?=
+ =?us-ascii?Q?tl7MnqAdiEaFvMDX+3uMwOe+oslWcLYTHBuNwnN77M+Li9bONAJqdZfb63xh?=
+ =?us-ascii?Q?KPHMOmnMsU7zYKuCjyZi8HjBaQD6lCC9a5+EfpQD64dzPzSG3G3UjklM7OWh?=
+ =?us-ascii?Q?Fg+kq1JetyBq+b/ESsoZ0Y6efCm9Q1dPav0/rbx7XIXDjqbSPoAAd1COPXzQ?=
+ =?us-ascii?Q?YwUIRExJ3GnQGdzx9iixUo3c6vUok3Kzn0xHepNkLAAZ+iywYlBQGmRhfOIY?=
+ =?us-ascii?Q?lDXGqA1u85JtJH9gkcTAJZYcyvzdUK1nzZdHkBZCiGtDk8DdZ+O+FAyqFxFx?=
+ =?us-ascii?Q?Er5o5yDiYWMxIoMaqdj8TXt/QSOpK2OE1RS65AKTeZ5pvjfhh2PltOqQi1M3?=
+ =?us-ascii?Q?bcKsBJ8032/MBSqfweUpEcBXcXPnYswD2m9rJ5SE6BEgltuX3E8it4oIHVBY?=
+ =?us-ascii?Q?VF0FHC/QkiCJF4fFpZ2fc9Npn8hzPUZsg3u8qhrssKlPmB72Q5GaI8q1t1gL?=
+ =?us-ascii?Q?7SaF0nGMLQKlfo6nqv1v82Hn88G4WI8qglfi2H2lpJQUWAiJyjca93bfDoa0?=
+ =?us-ascii?Q?D6JDzrKyO7ZpjOm7Phpc24E/P47Z7I5oilZcebmaFAl2U58rszx2BODjJFZ+?=
+ =?us-ascii?Q?ex2/oYybd3IWvG95cmP46A6QmFyNgNZbxb1J0hZUd2nkESZySinneDftuxAV?=
+ =?us-ascii?Q?2iMiY7pNQWn8G8Gxar9/jo9O5+9Un25TvjweZJ30+2SRFGPZdHlqC8xKaoJ2?=
+ =?us-ascii?Q?clGBBhQFv/GVeujtQufV5EwauQWRLk0CQy5lA81qQ25jRJGbl2MoONzb2N2M?=
+ =?us-ascii?Q?KfLVWgRLaRmQf3DUnuJeFV4N6HC7gOqBuLDfwH+GVvc3m2j5aM6Ip2wm1/Pt?=
+ =?us-ascii?Q?xNJqJcpdzE/TebIhUScIHiWZYdKwlvkStgpwnHX84ziSLRTNmhLerPdqyDPW?=
+ =?us-ascii?Q?Bw=3D=3D?=
 X-OriginatorOrg: seco.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 1cf90d08-7ca9-454a-7109-08da8d2b6371
+X-MS-Exchange-CrossTenant-Network-Message-Id: ca2a82b4-7bff-4422-230e-08da8d2ee037
 X-MS-Exchange-CrossTenant-AuthSource: DB7PR03MB4972.eurprd03.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 02 Sep 2022 21:37:52.0179
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 02 Sep 2022 22:02:49.7943
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: bebe97c3-6438-442e-ade3-ff17aa50e733
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: ga1zyeyPfyJOSowdPCvlpwqjdDokShfe31P4mJ7lzzym1wLB3SCIb6wTwimWSQ8qRmKQ31FrIz92tH4EBy6dUw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PAXPR03MB7886
+X-MS-Exchange-CrossTenant-UserPrincipalName: XZMcTsRbARgD41+PQt5BwJnylU6WZbVGoe9Cr4WN6WIW4dBOSbYofHghxNOHk7toS4GDliMSIdpo1JsN5iph4A==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR03MB4085
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220902_143806_721573_3D483D5A 
-X-CRM114-Status: GOOD (  13.23  )
+X-CRM114-CacheID: sfid-20220902_150255_728302_95F38D42 
+X-CRM114-Status: GOOD (  12.64  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -141,272 +140,115 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This is a first stab at adding serdes support on the LS1088A. Linux
-hangs around when the serdes is initialized if the si5341 is enabled, so
-it's commented out. The MC firmware needs to be fairly new (it must
-support DPAA2_MAC_FEATURE_PROTOCOL_CHANGE), and the DPC needs to set the
-macs to MAC_LINK_TYPE_BACKPLANE. For this reason, I think this will be
-difficult to do in a backwards-compatible manner. I have not really
-tested this, but hopefully it can be a good starting point.
+Add 1000BASE-KX interface mode. This 1G backplane ethernet as described in
+clause 70. Clause 73 autonegotiation is mandatory, and only full duplex
+operation is supported.
+
+Although at the PMA level this interface mode is identical to
+1000BASE-X, it uses a different form of in-band autonegation. This
+justifies a separate interface mode, since the interface mode (along
+with the MLO_AN_* autonegotiation mode) sets the type of autonegotiation
+which will be used on a link. This results in more than just electrical
+differences between the link modes.
+
+With regard to 1000BASE-X, 1000BASE-KX holds a similar position to
+SGMII: same signaling, but different autonegotiation. PCS drivers
+(which typically handle in-band autonegotiation) may only support
+1000BASE-X, and not 1000BASE-KX. Similarly, the phy mode is used to
+configure serdes phys with phy_set_mode_ext. Due to the different
+electrical standards (SFI or XFI vs Clause 70), they will likely want to
+use different configuration. Adding a phy interface mode for
+1000BASE-KX helps simplify configuration in these areas.
 
 Signed-off-by: Sean Anderson <sean.anderson@seco.com>
-
 ---
+This was previously submitted as [1], but has been broken off per
+request. As it was not modified before this, I have started at v2.
 
-(no changes since v4)
+[1] https://lore.kernel.org/netdev/20220725153730.2604096-3-sean.anderson@seco.com/
 
-Changes in v4:
-- Convert to new bindings
+Changes in v3:
+- Add mode to phy_interface_num_ports
 
- .../boot/dts/freescale/fsl-ls1088a-rdb.dts    | 161 ++++++++++++++++++
- 1 file changed, 161 insertions(+)
+Changes in v2:
+- Document interface mode in phy.rst
 
-diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1088a-rdb.dts b/arch/arm64/boot/dts/freescale/fsl-ls1088a-rdb.dts
-index 1bfbce69cc8b..7279d914843c 100644
---- a/arch/arm64/boot/dts/freescale/fsl-ls1088a-rdb.dts
-+++ b/arch/arm64/boot/dts/freescale/fsl-ls1088a-rdb.dts
-@@ -10,17 +10,138 @@
+ Documentation/networking/phy.rst | 6 ++++++
+ drivers/net/phy/phy-core.c       | 1 +
+ drivers/net/phy/phylink.c        | 1 +
+ include/linux/phy.h              | 4 ++++
+ 4 files changed, 12 insertions(+)
+
+diff --git a/Documentation/networking/phy.rst b/Documentation/networking/phy.rst
+index 712e44caebd0..06f4fcdb58b6 100644
+--- a/Documentation/networking/phy.rst
++++ b/Documentation/networking/phy.rst
+@@ -317,6 +317,12 @@ Some of the interface modes are described below:
+     PTP-enabled PHYs. This mode isn't compatible with QSGMII, but offers the
+     same capabilities in terms of link speed and negociation.
  
- /dts-v1/;
++``PHY_INTERFACE_MODE_1000BASEKX``
++    This is 1000BASE-X as defined by IEEE 802.3 Clause 36 with Clause 73
++    autonegotiation. Generally, it will be used with a Clause 70 PMD. To
++    contrast with the 1000BASE-X phy mode used for Clause 38 and 39 PMDs, this
++    interface mode has different autonegotiation and only supports full duplex.
++
+ Pause frames / flow control
+ ===========================
  
-+#include <dt-bindings/phy/phy.h>
-+
- #include "fsl-ls1088a.dtsi"
+diff --git a/drivers/net/phy/phy-core.c b/drivers/net/phy/phy-core.c
+index f8ec12d3d6ae..2a2924bc8f76 100644
+--- a/drivers/net/phy/phy-core.c
++++ b/drivers/net/phy/phy-core.c
+@@ -114,6 +114,7 @@ int phy_interface_num_ports(phy_interface_t interface)
+ 	case PHY_INTERFACE_MODE_100BASEX:
+ 	case PHY_INTERFACE_MODE_RXAUI:
+ 	case PHY_INTERFACE_MODE_XAUI:
++	case PHY_INTERFACE_MODE_1000BASEKX:
+ 		return 1;
+ 	case PHY_INTERFACE_MODE_QSGMII:
+ 	case PHY_INTERFACE_MODE_QUSGMII:
+diff --git a/drivers/net/phy/phylink.c b/drivers/net/phy/phylink.c
+index e487bdea9b47..e9d62f9598f9 100644
+--- a/drivers/net/phy/phylink.c
++++ b/drivers/net/phy/phylink.c
+@@ -345,6 +345,7 @@ void phylink_get_linkmodes(unsigned long *linkmodes, phy_interface_t interface,
+ 	case PHY_INTERFACE_MODE_1000BASEX:
+ 		caps |= MAC_1000HD;
+ 		fallthrough;
++	case PHY_INTERFACE_MODE_1000BASEKX:
+ 	case PHY_INTERFACE_MODE_TRGMII:
+ 		caps |= MAC_1000FD;
+ 		break;
+diff --git a/include/linux/phy.h b/include/linux/phy.h
+index 7c49ab95441b..337230c135f7 100644
+--- a/include/linux/phy.h
++++ b/include/linux/phy.h
+@@ -116,6 +116,7 @@ extern const int phy_10gbit_features_array[1];
+  * @PHY_INTERFACE_MODE_USXGMII:  Universal Serial 10GE MII
+  * @PHY_INTERFACE_MODE_10GKR: 10GBASE-KR - with Clause 73 AN
+  * @PHY_INTERFACE_MODE_QUSGMII: Quad Universal SGMII
++ * @PHY_INTERFACE_MODE_1000BASEKX: 1000Base-KX - with Clause 73 AN
+  * @PHY_INTERFACE_MODE_MAX: Book keeping
+  *
+  * Describes the interface between the MAC and PHY.
+@@ -154,6 +155,7 @@ typedef enum {
+ 	/* 10GBASE-KR - with Clause 73 AN */
+ 	PHY_INTERFACE_MODE_10GKR,
+ 	PHY_INTERFACE_MODE_QUSGMII,
++	PHY_INTERFACE_MODE_1000BASEKX,
+ 	PHY_INTERFACE_MODE_MAX,
+ } phy_interface_t;
  
- / {
- 	model = "LS1088A RDB Board";
- 	compatible = "fsl,ls1088a-rdb", "fsl,ls1088a";
-+
-+	clocks {
-+		si5341_xtal: clock-48mhz {
-+			compatible = "fixed-clock";
-+			#clock-cells = <0>;
-+			clock-frequency = <48000000>;
-+		};
-+
-+		clk_100mhz: clock-100mhz {
-+			compatible = "fixed-clock";
-+			#clock-cells = <0>;
-+			clock-frequency = <100000000>;
-+		};
-+
-+		clk_156mhz: clock-156mhz {
-+			compatible = "fixed-clock";
-+			#clock-cells = <0>;
-+			clock-frequency = <156250000>;
-+		};
-+	};
-+
-+	ovdd: regulator-1v8 {
-+		compatible = "regulator-fixed";
-+		regulator-name = "ovdd";
-+		regulator-min-microvolt = <1800000>;
-+		regulator-max-microvolt = <1800000>;
-+	};
-+
-+	dvdd: regulator-3v3 {
-+		compatible = "regulator-fixed";
-+		regulator-name = "dvdd";
-+		regulator-min-microvolt = <3300000>;
-+		regulator-max-microvolt = <3300000>;
-+	};
-+
-+};
-+
-+&serdes1 {
-+	//clocks = <&si5341 0 8>, <&si5341 0 9>;
-+	clocks = <&clk_100mhz>, <&clk_156mhz>;
-+	clock-names = "ref0", "ref1";
-+	status = "okay";
-+
-+	serdes1_0: phy@0 {
-+		#phy-cells = <0>;
-+		reg = <0>;
-+
-+		/* SG2 */
-+		sgmii-3 {
-+			fsl,pccr = <0x8>;
-+			fsl,index = <3>;
-+			fsl,cfg = <0x1>;
-+			fsl,type = <PHY_TYPE_2500BASEX>;
-+		};
-+
-+		/* XFI2 */
-+		xfi-1 {
-+			fsl,pccr = <0xb>;
-+			fsl,index = <1>;
-+			fsl,cfg = <0x1>;
-+			fsl,type = <PHY_TYPE_10GBASER>;
-+		};
-+	};
-+
-+	serdes1_1: phy@1 {
-+		#phy-cells = <0>;
-+		reg = <1>;
-+
-+		/* SG1 */
-+		sgmii-2 {
-+			fsl,pccr = <0x8>;
-+			fsl,index = <2>;
-+			fsl,cfg = <0x1>;
-+			fsl,type = <PHY_TYPE_2500BASEX>;
-+		};
-+
-+		/*
-+		 * XFI2
-+		 * Table 23-1 and section 23.5.16.4 disagree; this reflects the
-+		 * table.
-+		 */
-+		xfi-0 {
-+			fsl,pccr = <0xb>;
-+			fsl,index = <0>;
-+			fsl,cfg = <0x1>;
-+			fsl,type = <PHY_TYPE_10GBASER>;
-+		};
-+	};
-+
-+	serdes1_2: phy@2 {
-+		#phy-cells = <0>;
-+		reg = <2>;
-+
-+		/* QSGb */
-+		qsgmii-1 {
-+			fsl,pccr = <0x9>;
-+			fsl,index = <1>;
-+			fsl,cfg = <0x1>;
-+			fsl,type = <PHY_TYPE_QSGMII>;
-+		};
-+	};
-+
-+	serdes1_3: phy@2 {
-+		#phy-cells = <0>;
-+		reg = <2>;
-+
-+		/* QSGa */
-+		qsgmii-0 {
-+			fsl,pccr = <0x9>;
-+			fsl,index = <0>;
-+			fsl,cfg = <0x1>;
-+			fsl,type = <PHY_TYPE_QSGMII>;
-+		};
-+	};
-+};
-+
-+&dpmac1 {
-+	phys = <&serdes1_1>;
- };
- 
- &dpmac2 {
- 	phy-handle = <&mdio2_aquantia_phy>;
- 	phy-connection-type = "10gbase-r";
- 	pcs-handle = <&pcs2>;
-+	phys = <&serdes1_0>;
- };
- 
- &dpmac3 {
-@@ -28,6 +149,7 @@ &dpmac3 {
- 	phy-connection-type = "qsgmii";
- 	managed = "in-band-status";
- 	pcs-handle = <&pcs3_0>;
-+	phys = <&serdes1_3>;
- };
- 
- &dpmac4 {
-@@ -35,6 +157,7 @@ &dpmac4 {
- 	phy-connection-type = "qsgmii";
- 	managed = "in-band-status";
- 	pcs-handle = <&pcs3_1>;
-+	phys = <&serdes1_3>;
- };
- 
- &dpmac5 {
-@@ -42,6 +165,7 @@ &dpmac5 {
- 	phy-connection-type = "qsgmii";
- 	managed = "in-band-status";
- 	pcs-handle = <&pcs3_2>;
-+	phys = <&serdes1_3>;
- };
- 
- &dpmac6 {
-@@ -49,6 +173,7 @@ &dpmac6 {
- 	phy-connection-type = "qsgmii";
- 	managed = "in-band-status";
- 	pcs-handle = <&pcs3_3>;
-+	phys = <&serdes1_3>;
- };
- 
- &dpmac7 {
-@@ -56,6 +181,7 @@ &dpmac7 {
- 	phy-connection-type = "qsgmii";
- 	managed = "in-band-status";
- 	pcs-handle = <&pcs7_0>;
-+	phys = <&serdes1_2>;
- };
- 
- &dpmac8 {
-@@ -63,6 +189,7 @@ &dpmac8 {
- 	phy-connection-type = "qsgmii";
- 	managed = "in-band-status";
- 	pcs-handle = <&pcs7_1>;
-+	phys = <&serdes1_2>;
- };
- 
- &dpmac9 {
-@@ -70,6 +197,7 @@ &dpmac9 {
- 	phy-connection-type = "qsgmii";
- 	managed = "in-band-status";
- 	pcs-handle = <&pcs7_2>;
-+	phys = <&serdes1_2>;
- };
- 
- &dpmac10 {
-@@ -77,6 +205,7 @@ &dpmac10 {
- 	phy-connection-type = "qsgmii";
- 	managed = "in-band-status";
- 	pcs-handle = <&pcs7_3>;
-+	phys = <&serdes1_2>;
- };
- 
- &emdio1 {
-@@ -142,6 +271,38 @@ i2c-switch@77 {
- 		#address-cells = <1>;
- 		#size-cells = <0>;
- 
-+		i2c@1 {
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+			reg = <0x1>;
-+
-+			si5341: clock-generator@74 {
-+				#address-cells = <1>;
-+				#clock-cells = <2>;
-+				#size-cells = <0>;
-+				compatible = "silabs,si5341";
-+				reg = <0x74>;
-+				clocks = <&si5341_xtal>;
-+				clock-names = "xtal";
-+				vdd-supply = <&ovdd>;
-+				vdda-supply = <&dvdd>;
-+				vddo8-supply = <&ovdd>;
-+				vddo9-supply = <&ovdd>;
-+				silabs,iovdd-33;
-+				status = "disabled";
-+
-+				out@8 {
-+					reg = <8>;
-+					silabs,format = <1>;
-+				};
-+
-+				out@9 {
-+					reg = <9>;
-+					silabs,format = <1>;
-+				};
-+			};
-+		};
-+
- 		i2c@2 {
- 			#address-cells = <1>;
- 			#size-cells = <0>;
+@@ -251,6 +253,8 @@ static inline const char *phy_modes(phy_interface_t interface)
+ 		return "trgmii";
+ 	case PHY_INTERFACE_MODE_1000BASEX:
+ 		return "1000base-x";
++	case PHY_INTERFACE_MODE_1000BASEKX:
++		return "1000base-kx";
+ 	case PHY_INTERFACE_MODE_2500BASEX:
+ 		return "2500base-x";
+ 	case PHY_INTERFACE_MODE_5GBASER:
 -- 
 2.35.1.1320.gc452695387.dirty
 
