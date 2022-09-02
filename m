@@ -4,79 +4,137 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0FF57ECAAD5
-	for <linux-phy@archiver.kernel.org>; Fri,  2 Sep 2022 18:45:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DBB09ECAAA1
+	for <linux-phy@archiver.kernel.org>; Fri,  2 Sep 2022 21:10:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=WDY98kc//+vmog+jvEWwf21eTflaUzOY2VYrHM2xvVM=; b=Wo8Fbm9i7lW0K7
-	amjWl58cjyWYPUYi0HPlGUsPWlZnUjSKXqwmFzpch9xSVmPy6G+LqYdECUBUgaLcFfASoSgnKD6ig
-	f16dGU5Ew88V96sAgua4Rej4UQGHEfjcrk+EnbjaOKGNovr+tPhMA3tlHIyV/oYH4jo7aj8hNbrsy
-	8kFG3KR0gH6s1pta5NKu+yj4+NEb4hiG87cEANR/BFhtDpXL5mP979ZfXEZJxttqIJ7aRDPoe075p
-	qdqEmzH+s3T/GoIQqfi7qxnR/HDeTpkSkl+Kgy0Gb9tq0HR4mcFYg9aLhKJ/RGjwntDVUyotS/nhu
-	j1gcLADq0ppfCORE5Dvg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:Date:
+	Message-ID:From:References:Cc:To:Subject:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=Du4+bfbxgc30qNDC1P24UDIYtgW7Di7uSpX5YMW4ltU=; b=OezfuQ6UQ5wJbo0/Wv8VDVphq3
+	9JYYRoChaZ4G1gVzX9WLNxKq4OBP76oLMnTLkZuv07yxU/b6oK7fhl5BrccyGOHH4aFbvb0yCpqmw
+	BmSztyzo8cWFTfzyrmI9uzzA842R1YBz1IXFobXL8GwcB9vLOdyIwddS7b/3dLfEYTH3TcPdM+LZC
+	nEXo5W6oXQj6Xny4WqyoY65wxvjB1PaiTfp05/bbIe4whhQyzaUbn8sKBCtyLmzttUndMoHBdkj64
+	4wD0+xcL02ZgUexUaOJC4z/kztAi5mN/8iYCvfdiZGFxaKUrdjRFsIzqB3PngLMKdrjcr7vhxW+T/
+	kr4iL7lQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oUBfs-009j1R-Ft; Fri, 02 Sep 2022 18:45:52 +0000
-Received: from mail-qv1-xf30.google.com ([2607:f8b0:4864:20::f30])
+	id 1oUDw5-00B2Ng-Aj; Fri, 02 Sep 2022 21:10:45 +0000
+Received: from mail-vi1eur05on2059.outbound.protection.outlook.com ([40.107.21.59] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oUBfq-009ivL-6C; Fri, 02 Sep 2022 18:45:51 +0000
-Received: by mail-qv1-xf30.google.com with SMTP id y17so2093435qvr.5;
-        Fri, 02 Sep 2022 11:45:49 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20210112;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date;
-        bh=l8lXRjJOTwa1pdbI6AHOCcVerD9joOqdaqD9HG8JOnk=;
-        b=JT/5wswXZeLkBTP7NJmehoUSznJrZkjGyuGX1VZeMQR87I5/I/NvC9NhtkHkHevMSL
-         5paJSt0K5hZEpDRgeCxtFxnTKXpFoCEV5uLmC/RZa8nU/JMLoii/ODoudvh4JSNPln9r
-         flyLLR6wueAYBsGUk77HDDs8p+nAmTgUWFfhoFCyFIqr7XLImMfoEFRtCs1YTxbSlbin
-         TMdomDl3vxaGu21qX/p1bUgflUS3QboZZAC8Zyc6O/qyjTSOXXu1b7Z73pYtVziaRZxz
-         ZZJyGa4LwaeeHT8W4jwcUJgY238hFy1EK660+OjBPTyX+qcLKcGymUVM2WQSDdOVKze8
-         BBNQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date;
-        bh=l8lXRjJOTwa1pdbI6AHOCcVerD9joOqdaqD9HG8JOnk=;
-        b=n256435TY9Pmn1rSaIF+RR1W+7kdDzKoajDYgnYOb9SliO3lYLAYxlkp1jINlOFIy9
-         FdvGeNS07lPRAc7QzqwIErUKqbH8Hy1CL3qqxU0iKORmV/pcoXRip+xlMWsLNADNbKU0
-         23Z0paZgt/qJZLPgLzruObv+Ja6n7QLRPoPg9T/oDBGlWUoF6Dbq+C6Gqd2vT3QmOw+h
-         LG+jvno/oPApdTQlfrnHVL9HGJyZQAN51eIiwNCQrsjA/sdJ90NcBP278qFcOLnCvubF
-         pMrl9k1vUeCxGcpYhFDYaKyVXWR9+mp5PeU6h2VV4yN5rltvUjrxt6XSRtbGYgbXCCAf
-         1fWw==
-X-Gm-Message-State: ACgBeo3eCnF0QJhIoLLwcDhwQmTC3lAge4bxOJG4CNh04chpAViiNl7P
-	8BeTs+Me1/JZ1pWLvXXkuFYYPq/Gqx0PZw==
-X-Google-Smtp-Source: AA6agR7rAtz5HXoZEwSh+DlfA67M7HYVo7709S81K0h8mjg1oqA4O4cUjrdXJOOpwysFE1THXuW/zg==
-X-Received: by 2002:a05:6214:1a43:b0:49a:f1ea:d8e1 with SMTP id fi3-20020a0562141a4300b0049af1ead8e1mr2795452qvb.103.1662144348356;
-        Fri, 02 Sep 2022 11:45:48 -0700 (PDT)
-Received: from master-x64.sparksnet ([2601:153:901:9131::10])
-        by smtp.gmail.com with ESMTPSA id a2-20020a05622a02c200b003447ee0a6bfsm884723qtx.17.2022.09.02.11.45.47
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 02 Sep 2022 11:45:47 -0700 (PDT)
-From: Peter Geis <pgwipeout@gmail.com>
-To: Heiko Stuebner <heiko@sntech.de>,
-	Kishon Vijay Abraham I <kishon@ti.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Samuel Holland <samuel@sholland.org>,
-	Peter Geis <pgwipeout@gmail.com>
-Cc: Markus Reichl <m.reichl@fivetechno.de>,
-	Michael Riesch <michael.riesch@wolfvision.net>,
-	linux-phy@lists.infradead.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: [PATCH v4] phy: rockchip-inno-usb2: Return zero after otg sync
-Date: Fri,  2 Sep 2022 14:45:42 -0400
-Message-Id: <20220902184543.1234835-1-pgwipeout@gmail.com>
-X-Mailer: git-send-email 2.25.1
+	id 1oUDw2-00B2Iq-0y; Fri, 02 Sep 2022 21:10:44 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=OEnsO7cax1GNg7tKOT3em+kae2ZsL4vTN6ByIubAVsFcoCJhnBH+OoBK2KOSuCqPqt18Gd7SHaBkcNQW2xuDnRmdcDuZPtaF0lAaLzARHVnqsQohFzmvkGAAfG9QQirNvxYj+ajfoExN7s/aFZHD1I8k6oLUSanz9sUw+IeaQawXIZb88EjNtWMP2kfSNahi8PAhJ1ev5o6wdBKjWS28VBf8lMcZpDEn03xTH+qJNppJVl8v+6NV2qGC5m5635vU5lSbkau/bry8N+Zo2eEifa2cQWwG3xEo7MbPtdFbPqJRZ7eLGFW00R4gftaZ8S9KQb7++XXp1uFGRGVan+uS7w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=+8WHVNRIr0UswDVKSJoYH47c3nH5pleGc0jcHb3nRPE=;
+ b=KvC/KPqHkM7TXwptMIYl+Wjzoq9kMzOdK87CeMmbhRyrA2DTu2XGgmXxOgs+lzDyBsPQjBWEYwtKnHOSRAEey6GFIVCHi6T4aJpLy4LZLR4IZOl7gBcND9ChxM9oqsb5FgYnfit5lhvEl+uxGd1kedBz0plX2zvi2v8l0tnGsUxCXDtdpRa4s3K0z3SOJ2+4wJ27VttuD0x/rmKS4KgS6RP3LU5I+y6eTX1Y+Q7JVpTGRHzx4VVIx8a8CXvcd6zXbWFgH6jT9ctv0JZ5E3fL1C1IDxtW5PuAmfEc/uFdGNr8xjrxusEx47J7rp+3RWwxx7mPm53OMHcQvNItXiaDGg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=seco.com; dmarc=pass action=none header.from=seco.com;
+ dkim=pass header.d=seco.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=seco.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=+8WHVNRIr0UswDVKSJoYH47c3nH5pleGc0jcHb3nRPE=;
+ b=x9XqzsRnlJl5qP8lMT1Gom5Rm7yRz9xx+oIGMHpl1ZIAfPiRHb44ZQzy45jWItg4Enmzh0uF66gAcz42AzUOKweitg2DdTqrZmKUHwxhDIJZbw462AI48GT6QatlS8QDiu9DkZe9fXncIioYBBz9XjhpJSQebzlBKMbYn+/WKno7kdClNhia/kzGPc4GVVwjPpovkPC61qKsXzGcFGnmgVUS/YYSF34tOY90tttpSruLTh5pQk9O2YQKSZLyum1SfHqjk86Jxm03lAnD5+cYGdeU/7w4o962yE7Uh/142ok3fMHjwPvcSz/C3NiprsQxMsCDed6eCB9xRfZpkO0sVg==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=seco.com;
+Received: from DB7PR03MB4972.eurprd03.prod.outlook.com (2603:10a6:10:7d::22)
+ by AM6PR03MB5078.eurprd03.prod.outlook.com (2603:10a6:20b:8d::27) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5588.14; Fri, 2 Sep
+ 2022 21:10:36 +0000
+Received: from DB7PR03MB4972.eurprd03.prod.outlook.com
+ ([fe80::ecaa:a5a9:f0d5:27a2]) by DB7PR03MB4972.eurprd03.prod.outlook.com
+ ([fe80::ecaa:a5a9:f0d5:27a2%4]) with mapi id 15.20.5566.019; Fri, 2 Sep 2022
+ 21:10:36 +0000
+Subject: Re: [PATCH v4 0/8] phy: Add support for Lynx 10G SerDes
+To: Vinod Koul <vkoul@kernel.org>
+Cc: Kishon Vijay Abraham I <kishon@ti.com>, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, Madalin Bucur <madalin.bucur@nxp.com>,
+ Camelia Alexandra Groza <camelia.groza@nxp.com>,
+ linuxppc-dev@lists.ozlabs.org, Rob Herring <robh+dt@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Ioana Ciornei <ioana.ciornei@nxp.com>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Jonathan Corbet <corbet@lwn.net>, Li Yang <leoyang.li@nxp.com>,
+ Michael Turquette <mturquette@baylibre.com>, Shawn Guo
+ <shawnguo@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
+ linux-clk@vger.kernel.org, linux-doc@vger.kernel.org
+References: <20220804220602.477589-1-sean.anderson@seco.com>
+ <6d312336-4bfc-a8d4-783c-116a21284edf@seco.com> <YxJAPbfBpUpHeiqX@matsya>
+From: Sean Anderson <sean.anderson@seco.com>
+Message-ID: <4aba6730-dae8-f11f-8ad8-18dc1f1d6e45@seco.com>
+Date: Fri, 2 Sep 2022 17:10:30 -0400
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.10.0
+In-Reply-To: <YxJAPbfBpUpHeiqX@matsya>
+Content-Language: en-US
+X-ClientProxiedBy: CH0PR03CA0079.namprd03.prod.outlook.com
+ (2603:10b6:610:cc::24) To DB7PR03MB4972.eurprd03.prod.outlook.com
+ (2603:10a6:10:7d::22)
 MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 49a96e6d-0a82-4b15-3c1d-08da8d279448
+X-MS-TrafficTypeDiagnostic: AM6PR03MB5078:EE_
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: 	k4a8P/uAJAPI/C6cc/s90t1F+Lh0YLk8BT3PvzrEHhAAuQ2qZEBeKnIrVGpkiFQ3GIoaXMe882irLE4pjJhZPcpcRcvC+PcboPT7j5YFMVxgEVIqVU6KParikxMKJ9jHTfpSps8DwX2JpOhaOwNkCqbFsrwcMZNqNbiz5zCA2i8i1lXPDBsPYYZpK8t8xU2xGkMPjR8MwRV8/Eh/8lvX/LwyNtFttB5aWabGiyBFrOFLIjybNv87QsLQBcOkGZFVUjOKf70OlD7aVh8xXhCZePUXBlD+sLKI2CUWNEUpAyzIelUk86ZWMigYaY+Ud6XdL17OnBl++9z+2EXZc/l7TXL/Qr7zIJXjM1MIf2uS8SeUDkU8mUa1TfoPjKTNTTJVCL3m2WeJt7bESQWuzSPkdYA/lg68st7mxUk9JBj/a3+rit7OcglTpgmpikGCKi29cx37qBjgabWNaa2HAgLLwT/SnIwPyLmIBdslTVG1aHcsnuUOb0XaRWqWp///dkj+vk8ca9Z6KaL8Gq2xyBoGMdGFo9NtzlHnAF/ep6gB1kgYyYLFMH/E3QuGAbs5TyJyNBj84qeh1YoSw93N02CmUSwyQsWmI0G6jl7u87boLS80I+Z8VtbJeibRwE5Rt/G70B9zkN2/W0tWKn8d/Pmf/w8rktQ9Dx8vLkFJD0PJv1VYEp4GaoAFqCISYXDf9poa7I+q5p59zpUk2MNQBbhHh36HgYNZ++n6tugt9NEKrWmmM75fU+hNuEHFN2EdeIhHB12SvoI7zFHA/Ir+18NQzT4nArdhy/5CvFHmE80iSqPBmd0S4TUHfMSOsHXeuKlquCIIAvDe4Ej6o1CGWc/o9a/QcYqX3khkxxumKv0z+H4=
+X-Forefront-Antispam-Report: 	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DB7PR03MB4972.eurprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230016)(366004)(396003)(376002)(136003)(346002)(39850400004)(4326008)(86362001)(83380400001)(31696002)(38100700002)(38350700002)(31686004)(66476007)(478600001)(66556008)(66946007)(5660300002)(6666004)(7416002)(8936002)(41300700001)(6916009)(54906003)(6486002)(966005)(316002)(2906002)(6512007)(26005)(2616005)(186003)(36756003)(8676002)(4744005)(53546011)(52116002)(44832011)(6506007)(43740500002)(45980500001);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: 	=?utf-8?B?d215andnWnk4R2xXU3J0WmFvZEc4eWZBU3FkZUZKTUtpZ0JIRWg0ankxVDdP?=
+ =?utf-8?B?SmpROFJGejZBc3QwWi94NHIvVVc0NTZmdUZtY2htSFVZeXJCVVZJTGhYanVD?=
+ =?utf-8?B?cld3ci9hTW9pZ3RnTE1LdUxqSk52TDhkZU5uUGw0YTYxckxqUGhyL0QxRG9h?=
+ =?utf-8?B?dUtYazEwNFhhVjVOL0Zaek5rTzdObjk3bVZFVnVUcFhYRUFNd21ReFRmbHRu?=
+ =?utf-8?B?VmFLUlJLbWhLdGpxbjM5bVU1S0xzZnNQWnRncStGTHBtOFJoUXhFUzF3RW42?=
+ =?utf-8?B?ZkorSHo0L2pLR3N2bEFxR09XM1RXWnNTczJjeGdNL0llUDlNUWVudG1Xem1u?=
+ =?utf-8?B?V0J1UFNnTmNteTRzOWNEWnV3RWNEWHpNQWcvb0JwR1pmSlVPczViNkk0ejFt?=
+ =?utf-8?B?YkNCdGRmVTJlZmJxZFM3cSsyK05HRDJSTUd6RXR5bzJmdDdOWWpEVDhYZVdM?=
+ =?utf-8?B?Wmw3bkhkWEVleVFCVFpPdjFueXdQVFp4d1k2M3VEOWFoTXNkSUlDbDV2N3Vh?=
+ =?utf-8?B?SVhwbGFMaDJENWwrbUM4dGx1aDFVWWxZdlE1V0haOFo3TUEwUGF0ZVM0VTYx?=
+ =?utf-8?B?Tjgrb0E4VlJrRGV3d1dYQTFLeitPaFBzWEtXcWtIR3F1VTkwWG9NbEgyOGo5?=
+ =?utf-8?B?a3VkelJ0aDJxaEt2OTRoNk11WGN4aWJiblh2MDJPbU5pSVlWVFJuUDg1MFpl?=
+ =?utf-8?B?YWtsNDhmd0I2alBkVHFQSDUwUlgzT1p4MmhpMURCRmxYUmtwakVhZHVYOE1u?=
+ =?utf-8?B?THhIcWtPUlU5dm8vcmkxV2pYUjhqQnlRQUNualYvaTlUam9FUWF2VkVHcTNM?=
+ =?utf-8?B?ZnN5dGwwV1FUdEw5cW9BUjhaekxmbW4yZDdVOGNuNUhUQ2lsN3owdmdzejdW?=
+ =?utf-8?B?a2NCcXMybzQvK1hXS3piblU2QjNlbENIOW1EOTMwT2FZcEFyVkdWYXVnOHQy?=
+ =?utf-8?B?UGlmTWZIUEJGUWdKcVcrTjJMdXpTcjJWaXRURjFxRU5nd0FMRTRiUktOM3d1?=
+ =?utf-8?B?a0RKNHR2UHNkbWVBa2VaQlNsWVVEQzBxZjM4VlV2R1V3L3lFZTBYMzNXN0Jx?=
+ =?utf-8?B?L2M5dEI5bkV3aTBreW1RZ25tS3pKK003eU1lQ3gzOTJsL3BBVWtIUUVJcFVR?=
+ =?utf-8?B?RjZFQjN6YUdSYVkvWCt1bnNUSmNEYVlnTWJIajhldGZOUksvN1ZCeFl6WVFy?=
+ =?utf-8?B?dEVwTVNwTDE3d0ZpU1MyK1JoSmh4TVhpVVNBM0djOVlCN3VhUTZsb0V5S3lz?=
+ =?utf-8?B?R2Q0dDZrUW9GTFV5MUZjVXdhMHdueFpaVUMrQnlKdXVId2FzZFdoUzRiS0dF?=
+ =?utf-8?B?Yk9zaTBGYkNVVW1BS0xGZUV2QkdRUDVydUtMeXF1aHRSSENva0hxa1BwQnZh?=
+ =?utf-8?B?cjYwSEtlZ0w2VXpuWm1oOWhmZWJuQTlKdjNvRzhMNFFvZ0N6TG56S0R0dHh0?=
+ =?utf-8?B?UlBKa3hFVG90VWt6VE1YQ2R0dmxZVDZ3NXdrd3dOVDBvM0JqMkhCV2JFaUVi?=
+ =?utf-8?B?NVFnRkR6NnNmdXQzcS9DTWh4RDhYQ3gwZ0YvaUNTQkR5VWN2a0VHUHpVN0pr?=
+ =?utf-8?B?amFzaU1rdzJDbzZiNERxbTRjdTZGbjhnTXA3Tk5Wai9ya1A3RHQxUTlQTDUz?=
+ =?utf-8?B?WE92QkdIOGsyNjBLRVJhMndkZnpDQTZWUEVvbHZQdGF4UHVzY3ovd1BNSzZp?=
+ =?utf-8?B?QUJNQ2FGK2ljYXJJQWx2MTVyV2dTemxjYzF2TUJhLzIrY2tDNll6K1pRZU9F?=
+ =?utf-8?B?bTNkWGRGS011REIyTDhGazA2ZEFhTHdHMGR0TzJQOEtUengxZ3o3bjhjOFRy?=
+ =?utf-8?B?UWw3RXRlZ1JnVXZCZVF0aEVMTnZKVXBESWRnWFNSb0luVGRldFRRYlgyT0tz?=
+ =?utf-8?B?RzlEOWQzMzFZL1djbE5Ecm5ZTUdUNmtiekxCUWxCdGo3eGdGSkpocFhqaE1Z?=
+ =?utf-8?B?eHJUT2RhNHB3NnVrZ1hPbzZBYVBrOVRtRjcwdndkYmtiS3Q3eW1lUkJWZjJ2?=
+ =?utf-8?B?UFNQdVlGL3dORWpWeTMyZDhLbVBZQWc1ZWloZFgyTWovQ1IrZHc0MklOQzdp?=
+ =?utf-8?B?SjVRYXN2ZTZ3NlVHMmQzU0hvSCt5a3ZiaDNTZGRacTJsUVpYOHh2WnRoQWp0?=
+ =?utf-8?B?eWxOdTdUNmpLaUZYQjNML3Y0Q1BrbmxQTXZkS1d6aFBlN04ybkhuZGtlWDlQ?=
+ =?utf-8?B?V0E9PQ==?=
+X-OriginatorOrg: seco.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 49a96e6d-0a82-4b15-3c1d-08da8d279448
+X-MS-Exchange-CrossTenant-AuthSource: DB7PR03MB4972.eurprd03.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 02 Sep 2022 21:10:35.9536
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: bebe97c3-6438-442e-ade3-ff17aa50e733
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: c6KUjpG7hZ3DsSA9KDpjaiK+Uw7NhMttAlsk3ybuFxbAPSqBxedyB0YNo+aR5HszL6Aho11Vl3mG8G7xWw8QEQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR03MB5078
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220902_114550_252901_AE11859D 
-X-CRM114-Status: GOOD (  13.64  )
+X-CRM114-CacheID: sfid-20220902_141042_650014_06B3A29D 
+X-CRM114-Status: GOOD (  11.12  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,66 +151,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The otg sync state patch reuses the ret variable, but fails to set it to
-zero after use. This leads to a situation when the otg port is in
-peripheral mode where the otg phy aborts halfway through setup.  It also
-fails to account for a failure to register the extcon notifier. Fix this
-by using our own variable and skipping otg sync in case of failure.
+Hi Vinod,
 
-Fixes: 8dc60f8da22f ("phy: rockchip-inno-usb2: Sync initial otg state")
-Reported-by: Markus Reichl <m.reichl@fivetechno.de>
-Reported-by: Michael Riesch <michael.riesch@wolfvision.net>
-Signed-off-by: Peter Geis <pgwipeout@gmail.com>
-Tested-by: Michael Riesch <michael.riesch@wolfvision.net>
-Tested-by: Markus Reichl <m.reichl@fivetechno.de>
----
-Changelog:
-v4
-- fix a checkpatch style error (thanks Vinod)
-v3
-- add missing brackets around new goto
-v2
-- switch to using our own variable
-- add missing goto to skip sync in case of registration failure
----
- drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 10 ++++++----
- 1 file changed, 6 insertions(+), 4 deletions(-)
+On 9/2/22 1:41 PM, Vinod Koul wrote:
+> On 30-08-22, 17:44, Sean Anderson wrote:
+> 
+>> 
+>> ping?
+>> 
+>> Vinod/Kishon: any comments on the driver itself?
+> 
+> Not sure why this is not in my queue or pw, can you please rebase and
+> resend
 
-diff --git a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-index 0b1e9337ee8e..e6ededc51523 100644
---- a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-+++ b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-@@ -1124,7 +1124,7 @@ static int rockchip_usb2phy_otg_port_init(struct rockchip_usb2phy *rphy,
- 					  struct rockchip_usb2phy_port *rport,
- 					  struct device_node *child_np)
- {
--	int ret;
-+	int ret, id;
- 
- 	rport->port_id = USB2PHY_PORT_OTG;
- 	rport->port_cfg = &rphy->phy_cfg->port_cfgs[USB2PHY_PORT_OTG];
-@@ -1162,13 +1162,15 @@ static int rockchip_usb2phy_otg_port_init(struct rockchip_usb2phy *rphy,
- 
- 		ret = devm_extcon_register_notifier(rphy->dev, rphy->edev,
- 					EXTCON_USB_HOST, &rport->event_nb);
--		if (ret)
-+		if (ret) {
- 			dev_err(rphy->dev, "register USB HOST notifier failed\n");
-+			goto out;
-+		}
- 
- 		if (!of_property_read_bool(rphy->dev->of_node, "extcon")) {
- 			/* do initial sync of usb state */
--			ret = property_enabled(rphy->grf, &rport->port_cfg->utmi_id);
--			extcon_set_state_sync(rphy->edev, EXTCON_USB_HOST, !ret);
-+			id = property_enabled(rphy->grf, &rport->port_cfg->utmi_id);
-+			extcon_set_state_sync(rphy->edev, EXTCON_USB_HOST, !id);
- 		}
- 	}
- 
--- 
-2.25.1
+It's marked as "changes requested" [1]. However, I am not aware of any
+requested changes other than Krzysztof's request to dual license the id
+header. Nevertheless, I will resend as you requested.
 
+--Sean
+
+[1] https://patchwork.kernel.org/project/linux-phy/list/?series=665484
 
 -- 
 linux-phy mailing list
