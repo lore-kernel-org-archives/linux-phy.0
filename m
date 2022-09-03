@@ -4,95 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CFEDBECAAD4
-	for <linux-phy@archiver.kernel.org>; Sat,  3 Sep 2022 13:39:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6EEC9ECAAD4
+	for <linux-phy@archiver.kernel.org>; Sat,  3 Sep 2022 15:24:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:Cc:To:Subject:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=z0BdM7Dhh0SRatT0dytsqM0qCPHX1IQJ7ahMjWThKXE=; b=KpeDZB32DqZgeKPPGYPKX6rf13
-	VuK7MqK+xG/Nx284cCrfp3Mfpzk29/mrJiP+hjw7+4g4ivTwGB7Prb9mqfJFrxnEM/u81DbipU5p+
-	UlfC1BXpNrQamDz8CCKzKJRTwqJ4wOSX4wt9Gstw6sNMWh0+DaR3yuDM77WdQhzOacYnRuX9hepig
-	qAZfrAGuWP+4LtLYICafNdjdtC4/MGSTp+naJ9RDTIlBAcUYzj2KE7IB9TlXuotNQRxbbb9Mowj7S
-	tKR8yJlff/3H9O2sQLWx5nv0MevwW7LjS4B4iYxJsnSOXTzABsExW9fLVYU+UkD+3Y0M1l5NK86WP
-	zQ0mthng==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=CFDi3M8fWWnYixhMvbLHdbCJqKcYC/C5qVdv0ZqVK8M=; b=C+vvRfmF7iOcGH
+	iLRG3uontunUDWduGkir5qpV3xyeddYbNSrkeUZFnzHPFKaNAwkAP8P5ngDYQM118oKNg3dU+wBm5
+	+7GbkM85bTrm40F0ztkgoulrOqxyflOc+w7TXEG8rNh7BY44L3GbsuTQloe9CvlGL8vFcZG+NA7v2
+	aVzt1Ec8fCIYYnzw33YgqOJR4gv5MCR5iiBSGLSrKBTp/M+W6pga6x5V1r9swfL0dIz1YOIhHexRs
+	60okztFIau/+0omWzU5jaAz8bBioSFSyI3dZZiO9PbKKq6lAhjNa85jn/7PVoAgnbMKry5VXFyKn9
+	8ga+9XI1nbXmXmn1Zx/Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oUTMU-00BqfX-54; Sat, 03 Sep 2022 13:39:02 +0000
-Received: from wout1-smtp.messagingengine.com ([64.147.123.24])
+	id 1oUV0v-00Ctk2-Lv; Sat, 03 Sep 2022 15:24:53 +0000
+Received: from mga11.intel.com ([192.55.52.93])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oUTMI-00BqK9-V9; Sat, 03 Sep 2022 13:38:52 +0000
-Received: from compute5.internal (compute5.nyi.internal [10.202.2.45])
-	by mailout.west.internal (Postfix) with ESMTP id E78FE3200564;
-	Sat,  3 Sep 2022 09:38:38 -0400 (EDT)
-Received: from mailfrontend2 ([10.202.2.163])
-  by compute5.internal (MEProxy); Sat, 03 Sep 2022 09:38:39 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sholland.org; h=
-	cc:cc:content-transfer-encoding:content-type:date:date:from:from
-	:in-reply-to:in-reply-to:message-id:mime-version:references
-	:reply-to:sender:subject:subject:to:to; s=fm2; t=1662212318; x=
-	1662298718; bh=Tw9iM29JVXAAF7Othcl+TL+b6fxAKApvQt80+NZTFOE=; b=L
-	SP//Dm7OEHbO67NnFPFM+vC3oGQcVlOvTBoh+HsPJoSyQYR4S4FYAdnQMJTzjVtS
-	z8bk3w0B6yqAOIFh7j1wMl2kCg7fz8arDnKot3xg9VNOuk0OAWSjMEj8EjhH03N0
-	mZXWve7OJ7LHYE5vy3L/1prNgZ94KiKOX2WpB4Ebeh642RUVvfuScdakjXpE+OxN
-	pzwkhZgDpqS1c73iZPWL4dXl3v9iCKAZreg35e3fzhAmjM1xu79Vq8FZGYRRZERe
-	QjLGSF91SmFnCt4LhgBQOQKjz9bvP3e2vOUTzkbN34gUkso4V+gtDtJtbj8Uravu
-	yn5Ahif1HeBVbMuavt4dw==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
-	messagingengine.com; h=cc:cc:content-transfer-encoding
-	:content-type:date:date:feedback-id:feedback-id:from:from
-	:in-reply-to:in-reply-to:message-id:mime-version:references
-	:reply-to:sender:subject:subject:to:to:x-me-proxy:x-me-proxy
-	:x-me-sender:x-me-sender:x-sasl-enc; s=fm1; t=1662212318; x=
-	1662298718; bh=Tw9iM29JVXAAF7Othcl+TL+b6fxAKApvQt80+NZTFOE=; b=A
-	EIAesrryWEGyHobgL255e5n+z6GRTEogqcn+7R1sQiKES2fINewK+OhTDuUGYUVH
-	sbNBbG57NxDPUCxvm09360HTO+PnxrtAbqWxvImf0XYSeXRst1aQad7XoyROtIDa
-	2SADG4Fj+2E+C5CATDaywTvcMFQJs5mJr9i+ozMtP6k1WyD8AFZvN68YPpUS2i3X
-	Y9pVwsa+WbFNvU5ih+hZjV+7B5IQmTApFj6VEqSdAhCeGrBtY/8kkou9j8sWIxMJ
-	5Mu25Qwkv4xyIZZ4+wGBgE2lc362Zk4WQXKZnxbgvjsxvYRSGgWseOnSL7YWiht9
-	j9o8N4MZyIz5dbjPLs/rA==
-X-ME-Sender: <xms:3VgTYzv7p9jY5z0Xu7Ua707s367WXjOaG38VPxMUC4owOpFs0YTQSw>
-    <xme:3VgTY0cWlzcu8cYJDG8YzsvwJ6qMuAac691f6LWzoqajrosHQFOUQUKgG_8ak3OLt
-    LVdHl7PiDOHTkr1jg>
-X-ME-Received: <xmr:3VgTY2yeLHytvSNAGgoBVyCDbXkay1pIyCTCHYZYhBa4H_m7UrhesdNOzjmSC7_1ZvVz-QWWI7L2JBopFXj01L8kJCRCum4B3LdBqQkhP9N100ju7hfg83xTbQ>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvfedrvdelvddgieelucetufdoteggodetrfdotf
-    fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
-    uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
-    cujfgurhepuffvvehfhffkffgfgggjtgfgsehtjeertddtfeejnecuhfhrohhmpefurghm
-    uhgvlhcujfholhhlrghnugcuoehsrghmuhgvlhesshhhohhllhgrnhgurdhorhhgqeenuc
-    ggtffrrghtthgvrhhnpefftdevkedvgeekueeutefgteffieelvedukeeuhfehledvhfei
-    tdehudfhudehhfenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfh
-    hrohhmpehsrghmuhgvlhesshhhohhllhgrnhgurdhorhhg
-X-ME-Proxy: <xmx:3VgTYyPox-38QOvAU_iNQ_5Yi1rMUOQ9KVZgBTa33_ukSGmTRJNGVQ>
-    <xmx:3VgTYz8NNW-_uV12sYVjWlseiicqq6CtxTOXl_QGBu8J1wOKatII5A>
-    <xmx:3VgTYyXad1x6MUa25zBTWT3_IiGkxKGPpIaKeoUAo98O5p6FDhEHZA>
-    <xmx:3lgTY_T5L2HxBVCZ3BSZP1GX9lMCpJyTVj7-kwixdl28PIIU8cUX0g>
-Feedback-ID: i0ad843c9:Fastmail
-Received: by mail.messagingengine.com (Postfix) with ESMTPA; Sat,
- 3 Sep 2022 09:38:37 -0400 (EDT)
-Subject: Re: [PATCH v4] phy: rockchip-inno-usb2: Return zero after otg sync
-To: Peter Geis <pgwipeout@gmail.com>, Heiko Stuebner <heiko@sntech.de>,
- Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>
-Cc: Markus Reichl <m.reichl@fivetechno.de>,
- Michael Riesch <michael.riesch@wolfvision.net>,
- linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
-References: <20220902184543.1234835-1-pgwipeout@gmail.com>
-From: Samuel Holland <samuel@sholland.org>
-Message-ID: <9a2d493f-d4af-0880-d593-50120cfd3328@sholland.org>
-Date: Sat, 3 Sep 2022 08:38:36 -0500
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
+	id 1oUV0s-00CthM-Bf; Sat, 03 Sep 2022 15:24:52 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1662218690; x=1693754690;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=OUU011FZbdLoXmMTaSzRBkmckoLbRAk09nLoSqxKOnY=;
+  b=B+R5Vy2TpXXhRyWifa/Xk7lrdY88wuU7sj+IHrpS4OIAhpGgvEXXe5tk
+   hKdNa7GK8tx9mDejQJeNkV8B70H4BhuJETKO/ADDuU6nXvAl+ZVkr0g//
+   BK90Dc/MaKX7xt3MFrwwT1Fyn8T5nK+GNzG3gMtPNGxV0txPLSDi6LVU8
+   fUcGnBCq4DLLBL/KnVgTMavdZEvA2Nn8n02XwRXDemMGp6EI78rQXwyb4
+   C0B2J7P38NCjLjbAuHpi4nvVJavaA4YFyYjl+7wiMp452BS7nPyx7kbFD
+   l+YasfQWkmIXA7hiwB1C7v9hTGoI7S3R2O2c1V+7UAYNz/3gUJJgJ8K+u
+   g==;
+X-IronPort-AV: E=McAfee;i="6500,9779,10459"; a="293753298"
+X-IronPort-AV: E=Sophos;i="5.93,287,1654585200"; 
+   d="scan'208";a="293753298"
+Received: from orsmga007.jf.intel.com ([10.7.209.58])
+  by fmsmga102.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 03 Sep 2022 08:24:48 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.93,287,1654585200"; 
+   d="scan'208";a="609267503"
+Received: from lkp-server02.sh.intel.com (HELO 95dfd251caa2) ([10.239.97.151])
+  by orsmga007.jf.intel.com with ESMTP; 03 Sep 2022 08:24:43 -0700
+Received: from kbuild by 95dfd251caa2 with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1oUV0l-0001p9-0u;
+	Sat, 03 Sep 2022 15:24:43 +0000
+Date: Sat, 3 Sep 2022 23:23:44 +0800
+From: kernel test robot <lkp@intel.com>
+To: Sean Anderson <sean.anderson@seco.com>, Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@ti.com>,
+	linux-phy@lists.infradead.org
+Cc: kbuild-all@lists.01.org, devicetree@vger.kernel.org,
+	Ioana Ciornei <ioana.ciornei@nxp.com>,
+	linux-arm-kernel@lists.infradead.org,
+	Krzysztof Kozlowski <krzk@kernel.org>,
+	Madalin Bucur <madalin.bucur@nxp.com>,
+	Camelia Alexandra Groza <camelia.groza@nxp.com>,
+	linuxppc-dev@lists.ozlabs.org, Rob Herring <robh+dt@kernel.org>,
+	Sean Anderson <sean.anderson@seco.com>,
+	Jonathan Corbet <corbet@lwn.net>,
+	Michael Turquette <mturquette@baylibre.com>,
+	Stephen Boyd <sboyd@kernel.org>, linux-clk@vger.kernel.org,
+	linux-doc@vger.kernel.org
+Subject: Re: [PATCH v5 4/8] phy: fsl: Add Lynx 10G SerDes driver
+Message-ID: <202209032301.fWPibuKq-lkp@intel.com>
+References: <20220902213721.946138-5-sean.anderson@seco.com>
 MIME-Version: 1.0
-In-Reply-To: <20220902184543.1234835-1-pgwipeout@gmail.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20220902213721.946138-5-sean.anderson@seco.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220903_063851_627735_BC5A00E3 
-X-CRM114-Status: UNSURE (   9.17  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220903_082450_474578_D1FE273E 
+X-CRM114-Status: GOOD (  16.36  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -109,21 +93,159 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 9/2/22 1:45 PM, Peter Geis wrote:
-> The otg sync state patch reuses the ret variable, but fails to set it to
-> zero after use. This leads to a situation when the otg port is in
-> peripheral mode where the otg phy aborts halfway through setup.  It also
-> fails to account for a failure to register the extcon notifier. Fix this
-> by using our own variable and skipping otg sync in case of failure.
-> 
-> Fixes: 8dc60f8da22f ("phy: rockchip-inno-usb2: Sync initial otg state")
-> Reported-by: Markus Reichl <m.reichl@fivetechno.de>
-> Reported-by: Michael Riesch <michael.riesch@wolfvision.net>
-> Signed-off-by: Peter Geis <pgwipeout@gmail.com>
-> Tested-by: Michael Riesch <michael.riesch@wolfvision.net>
-> Tested-by: Markus Reichl <m.reichl@fivetechno.de>
+Hi Sean,
 
-Reviewed-by: Samuel Holland <samuel@sholland.org>
+I love your patch! Yet something to improve:
+
+[auto build test ERROR on shawnguo/for-next]
+[also build test ERROR on robh/for-next clk/clk-next arm/for-next arm64/for-next/core rockchip/for-next soc/for-next linus/master v6.0-rc3]
+[cannot apply to xilinx-xlnx/master next-20220901]
+[If your patch is applied to the wrong git tree, kindly drop us a note.
+And when submitting patch, we suggest to use '--base' as documented in
+https://git-scm.com/docs/git-format-patch#_base_tree_information]
+
+url:    https://github.com/intel-lab-lkp/linux/commits/Sean-Anderson/phy-Add-support-for-Lynx-10G-SerDes/20220903-053840
+base:   https://git.kernel.org/pub/scm/linux/kernel/git/shawnguo/linux.git for-next
+config: arc-allyesconfig (https://download.01.org/0day-ci/archive/20220903/202209032301.fWPibuKq-lkp@intel.com/config)
+compiler: arceb-elf-gcc (GCC) 12.1.0
+reproduce (this is a W=1 build):
+        wget https://raw.githubusercontent.com/intel/lkp-tests/master/sbin/make.cross -O ~/bin/make.cross
+        chmod +x ~/bin/make.cross
+        # https://github.com/intel-lab-lkp/linux/commit/cbfe9294ef583cc8dffd9cebf9ff325bbcdb4cef
+        git remote add linux-review https://github.com/intel-lab-lkp/linux
+        git fetch --no-tags linux-review Sean-Anderson/phy-Add-support-for-Lynx-10G-SerDes/20220903-053840
+        git checkout cbfe9294ef583cc8dffd9cebf9ff325bbcdb4cef
+        # save the config file
+        mkdir build_dir && cp config build_dir/.config
+        COMPILER_INSTALL_PATH=$HOME/0day COMPILER=gcc-12.1.0 make.cross W=1 O=build_dir ARCH=arc SHELL=/bin/bash
+
+If you fix the issue, kindly add following tag where applicable
+Reported-by: kernel test robot <lkp@intel.com>
+
+All errors (new ones prefixed by >>):
+
+   drivers/phy/freescale/phy-fsl-lynx-10g-clk.c: In function 'lynx_pll_recalc_rate':
+>> drivers/phy/freescale/phy-fsl-lynx-10g-clk.c:255:25: error: implicit declaration of function 'FIELD_GET' [-Werror=implicit-function-declaration]
+     255 |         u32 frate_sel = FIELD_GET(PLLaCR0_FRATE_SEL, cr0);
+         |                         ^~~~~~~~~
+   drivers/phy/freescale/phy-fsl-lynx-10g-clk.c: In function 'lynx_pll_set_rate':
+>> drivers/phy/freescale/phy-fsl-lynx-10g-clk.c:340:16: error: implicit declaration of function 'FIELD_PREP' [-Werror=implicit-function-declaration]
+     340 |         cr0 |= FIELD_PREP(PLLaCR0_RFCLK_SEL, rfclk_sel);
+         |                ^~~~~~~~~~
+   drivers/phy/freescale/phy-fsl-lynx-10g-clk.c: In function 'lynx_clk_init':
+>> drivers/phy/freescale/phy-fsl-lynx-10g-clk.c:466:9: error: implicit declaration of function 'kfree'; did you mean 'vfree'? [-Werror=implicit-function-declaration]
+     466 |         kfree(ref_name);
+         |         ^~~~~
+         |         vfree
+   cc1: some warnings being treated as errors
+
+
+vim +/FIELD_GET +255 drivers/phy/freescale/phy-fsl-lynx-10g-clk.c
+
+   249	
+   250	static unsigned long lynx_pll_recalc_rate(struct clk_hw *hw,
+   251						  unsigned long parent_rate)
+   252	{
+   253		struct lynx_clk *clk = lynx_pll_to_clk(hw);
+   254		u32 cr0 = lynx_read(clk, PLLaCR0(clk->idx));
+ > 255		u32 frate_sel = FIELD_GET(PLLaCR0_FRATE_SEL, cr0);
+   256		u32 rfclk_sel = FIELD_GET(PLLaCR0_RFCLK_SEL, cr0);
+   257		u32 ratio = lynx_pll_ratio(frate_sel, rfclk_sel);
+   258		unsigned long ret;
+   259	
+   260		/* Ensure that the parent matches our rfclk selector */
+   261		if (rfclk_sel == lynx_rfclk_to_sel(parent_rate))
+   262			ret = mult_frac(parent_rate, ratio, HZ_PER_KHZ);
+   263		else
+   264			ret = 0;
+   265	
+   266		dev_dbg(clk->dev, "recalc pll%d new=%llu parent=%lu\n", clk->idx,
+   267			(u64)ret * HZ_PER_KHZ, parent_rate);
+   268		return ret;
+   269	}
+   270	
+   271	static long lynx_pll_round_rate(struct clk_hw *hw, unsigned long rate_khz,
+   272					unsigned long *parent_rate)
+   273	{
+   274		int frate_sel, rfclk_sel;
+   275		struct lynx_clk *clk = lynx_pll_to_clk(hw);
+   276		u32 ratio;
+   277	
+   278		dev_dbg(clk->dev, "round pll%d new=%llu parent=%lu\n", clk->idx,
+   279			(u64)rate_khz * HZ_PER_KHZ, *parent_rate);
+   280	
+   281		frate_sel = lynx_frate_to_sel(rate_khz);
+   282		if (frate_sel < 0)
+   283			return frate_sel;
+   284	
+   285		/* Try the current parent rate */
+   286		rfclk_sel = lynx_rfclk_to_sel(*parent_rate);
+   287		if (rfclk_sel >= 0) {
+   288			ratio = lynx_pll_ratio(frate_sel, rfclk_sel);
+   289			if (ratio)
+   290				return mult_frac(*parent_rate, ratio, HZ_PER_KHZ);
+   291		}
+   292	
+   293		/* Try all possible parent rates */
+   294		for (rfclk_sel = 0;
+   295		     rfclk_sel < ARRAY_SIZE(rfclk_sel_map);
+   296		     rfclk_sel++) {
+   297			unsigned long new_parent_rate;
+   298	
+   299			ratio = lynx_pll_ratio(frate_sel, rfclk_sel);
+   300			if (!ratio)
+   301				continue;
+   302	
+   303			/* Ensure the reference clock can produce this rate */
+   304			new_parent_rate = rfclk_sel_map[rfclk_sel];
+   305			new_parent_rate = clk_hw_round_rate(clk->ref, new_parent_rate);
+   306			if (rfclk_sel != lynx_rfclk_to_sel(new_parent_rate))
+   307				continue;
+   308	
+   309			*parent_rate = new_parent_rate;
+   310			return mult_frac(new_parent_rate, ratio, HZ_PER_KHZ);
+   311		}
+   312	
+   313		return -EINVAL;
+   314	}
+   315	
+   316	static int lynx_pll_set_rate(struct clk_hw *hw, unsigned long rate_khz,
+   317				   unsigned long parent_rate)
+   318	{
+   319		int frate_sel, rfclk_sel;
+   320		struct lynx_clk *clk = lynx_pll_to_clk(hw);
+   321		u32 ratio, cr0 = lynx_read(clk, PLLaCR0(clk->idx));
+   322	
+   323		dev_dbg(clk->dev, "set rate pll%d new=%llu parent=%lu\n", clk->idx,
+   324			(u64)rate_khz * HZ_PER_KHZ, parent_rate);
+   325	
+   326		frate_sel = lynx_frate_to_sel(rate_khz);
+   327		if (frate_sel < 0)
+   328			return frate_sel;
+   329	
+   330		rfclk_sel = lynx_rfclk_to_sel(parent_rate);
+   331		if (rfclk_sel < 0)
+   332			return rfclk_sel;
+   333	
+   334		ratio = lynx_pll_ratio(frate_sel, rfclk_sel);
+   335		if (!ratio)
+   336			return -EINVAL;
+   337	
+   338		lynx_pll_stop(clk);
+   339		cr0 &= ~(PLLaCR0_RFCLK_SEL | PLLaCR0_FRATE_SEL);
+ > 340		cr0 |= FIELD_PREP(PLLaCR0_RFCLK_SEL, rfclk_sel);
+   341		cr0 |= FIELD_PREP(PLLaCR0_FRATE_SEL, frate_sel);
+   342		lynx_write(clk, cr0, PLLaCR0(clk->idx));
+   343		/* Don't bother resetting if it's off */
+   344		if (cr0 & PLLaCR0_POFF)
+   345			return 0;
+   346		return lynx_pll_reset(clk);
+   347	}
+   348	
+
+-- 
+0-DAY CI Kernel Test Service
+https://01.org/lkp
 
 -- 
 linux-phy mailing list
