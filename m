@@ -4,61 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0E052ECAAD4
-	for <linux-phy@archiver.kernel.org>; Sun,  4 Sep 2022 14:45:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 53521ECAAD3
+	for <linux-phy@archiver.kernel.org>; Sun,  4 Sep 2022 15:06:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iVKKTiJxJ/QHE3vdTgj/Ecbxgn7+m1p303tNiNNw+rU=; b=I8IJx0gLyoBaSy
-	0AAtPSOTXJGUPGAQ3+eoxy/BRLVS2Nwqfk9h3GLgj9/ECY1tBmDJo2+QeyAFZHimwxlNOZ9sc4IA2
-	ORjJb8AwRPtLC3GuJEdbVuwpPxMejC1BQOIMiaj2o9gGh8YDAS5JbZXV7d++F/nCm1DLXsv/iUU6B
-	kaJgEEf+8QWzqRydI4EwQ3eACnFlaqACLqE1/T9cS7SuGVQExn/7WC5SM8C2osL4pKe+9Cfv8j/EF
-	VC1ELRTNmEAGx/EJo4JdXo0tz67yGdk4O5E/7Ot/mNSLzJb+ctSGyw0Ra5zVXF97iRtgGVjx0Ukng
-	WkiTim+CLBH8jAihmSHQ==;
+	List-Owner; bh=/fE6oBx38JTjLJ7jlElCSSIK0l/wMcGsRxWYCMpzdwU=; b=zqg4IWfHdo9avW
+	8QQNR6moF/K2HonDA4cUZEP1I8AB2sKdtQh7s6rBmVlYJsue+pjT4HCAOdlC9Hqqx6Rq4QrpLMCKd
+	5APJn+ATjYSS6l6doNH26Csxq91hPfmKtBBiUikpIx2tNcGDFNlOzH69/Jkq8ZLqwQwGELIIBXoYQ
+	Qp6Y5esAtMz4gLf1/15u0bXXo7XnKUoE5U6OMkkBC6RGAal3o52lPoKDGNiajbE53912/j/m3VEpf
+	5a7vdaLFyEGGUAn9p2zWtXTlPipFBH/JqlGuZyZlwK00FMsAiA5WbsRCYOQ+TOJyHh40psRetE7JG
+	EIKvcq0Q4Pm+vsTB+1iA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oUqsl-0077Qx-B2; Sun, 04 Sep 2022 14:45:55 +0000
-Received: from ams.source.kernel.org ([145.40.68.75])
+	id 1oUrCb-007MJQ-Lj; Sun, 04 Sep 2022 15:06:25 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oUqsi-0077L0-Jy
-	for linux-phy@lists.infradead.org; Sun, 04 Sep 2022 14:45:54 +0000
+	id 1oUrCL-007M52-GY; Sun, 04 Sep 2022 15:06:10 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id BB89CB80D89;
-	Sun,  4 Sep 2022 14:45:46 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 96037C433D6;
-	Sun,  4 Sep 2022 14:45:44 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 6E50B60F12;
+	Sun,  4 Sep 2022 15:06:07 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id ECDB6C433D6;
+	Sun,  4 Sep 2022 15:06:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1662302745;
-	bh=lRnCSu1PcWRi1dcwd3ZSbkYCjHJYOQ7jhl/iMlUpALI=;
+	s=k20201202; t=1662303966;
+	bh=Niy0Q405M64kGkzlMoXuNafwYqKU9in/fxE/E9TXjCs=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=dDQQJkIEw9Ne28COBtbnCJVSxB2/WS/tiPua3lQ97NQ2GDC6/njoTDxDozzF05SxW
-	 gtf6nC7ZTCOEsKChsHqmacSQ6e+i1rMoQtFBnKeICfohnOSNSQl68mym0XfoOVMvf8
-	 NiteCsplLZm5VRif9Nz6hnaBe5IHPI7Qthd+/wGzB4tS1zA2tDj+BG3OjF5liZ+8oz
-	 HnRmNvg4uvG+fVYDXVWhNFuc0FDtsqo2QXZXHfJ6n0559ATh5gtbg2ljubMxgJb2iu
-	 WqFy8mgtYNkh5sw2J3MIYEKVoSnQ/Jbrzhccxg0x4airiDWbUd9lVEsG8ZetwvMuhw
-	 2Cs8PuMhiYdGA==
-Date: Sun, 4 Sep 2022 20:15:40 +0530
+	b=MuHX8nXoPTcXqNje6icDT3+v6Z8P6msI4k5g5Uu4iWcrk3fayI+DKy882c3RHx27z
+	 +WFVdzmBo1I9I2EPOftl2qVeJt2QYXFL94olfsV16x2A/tNSAZ8S4VvHiEtcurY5n1
+	 hSCm2lsVQJ+cxMXLD8YRSr2zEYKXm87LUs1PF078SmVtxhW8ToJBpRnWjRdyOUWwFo
+	 ijuqJtXH99ID0QlNUTQye/0PvWnnmLiq0fbw6IPJY6gS2dVEE1K9G9GprzM5dZvIeU
+	 uIcW47yAqv3j4auV3DDjwIwFfU9xuGwlZwkhD6FmZPT6Z2Z/DMJ+iWdQuFWC+0cokk
+	 EhYMYIAnRFeAw==
+Date: Sun, 4 Sep 2022 20:36:02 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Jim Lin <jilin@nvidia.com>
-Cc: jckuo@nvidia.com, thierry.reding@gmail.com, jonathanh@nvidia.com,
-	balbi@kernel.org, gregkh@linuxfoundation.org, bhsieh@nvidia.com,
-	linux-phy@lists.infradead.org, linux-tegra@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org
-Subject: Re: [PATCH v2 1/2] phy: tegra: xusb: add utmi pad power on/down ops
-Message-ID: <YxS6FBeyS1Cs7xhI@matsya>
-References: <20220816082353.13390-1-jilin@nvidia.com>
- <20220816082353.13390-2-jilin@nvidia.com>
+To: Frank Wunderlich <linux@fw-web.de>
+Cc: linux-rockchip@lists.infradead.org,
+	Frank Wunderlich <frank-w@public-files.de>,
+	Kishon Vijay Abraham I <kishon@ti.com>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Heiko Stuebner <heiko@sntech.de>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Yifeng Zhao <yifeng.zhao@rock-chips.com>,
+	Johan Jonker <jbx6244@gmail.com>, Peter Geis <pgwipeout@gmail.com>,
+	Simon Xue <xxm@rock-chips.com>, Liang Chen <cl@rock-chips.com>,
+	Shawn Lin <shawn.lin@rock-chips.com>, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Subject: Re: [PATCH v5 1/5] dt-bindings: phy: rockchip: add PCIe v3 phy
+Message-ID: <YxS+2gh8mCtevz1H@matsya>
+References: <20220825193836.54262-1-linux@fw-web.de>
+ <20220825193836.54262-2-linux@fw-web.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20220816082353.13390-2-jilin@nvidia.com>
+In-Reply-To: <20220825193836.54262-2-linux@fw-web.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220904_074552_971958_EFAC7B98 
-X-CRM114-Status: GOOD (  21.53  )
+X-CRM114-CacheID: sfid-20220904_080609_604515_BC9D36AE 
+X-CRM114-Status: UNSURE (   7.74  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,184 +85,12 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 16-08-22, 16:23, Jim Lin wrote:
-> Add utmi_pad_power_on/down ops for each SOC instead of exporting
-> tegra_phy_xusb_utmi_pad_power_on/down directly for Tegra186 chip.
+On 25-08-22, 21:38, Frank Wunderlich wrote:
+> From: Frank Wunderlich <frank-w@public-files.de>
+> 
+> Add a new binding file for Rockchip PCIe v3 phy driver.
 
-Can you please help me understand why do we need to utmi power_on/down
-exported and cant be handled thry phy-ops..
-
-> 
-> Signed-off-by: BH Hsieh <bhsieh@nvidia.com>
-> Signed-off-by: Jim Lin <jilin@nvidia.com>
-> ---
-> v2: update copyright year 
-> 
->  drivers/phy/tegra/xusb-tegra186.c | 19 ++++++++++++-------
->  drivers/phy/tegra/xusb.c          | 22 +++++++++++++++++++++-
->  drivers/phy/tegra/xusb.h          |  4 +++-
->  include/linux/phy/tegra/xusb.h    |  4 +++-
->  4 files changed, 39 insertions(+), 10 deletions(-)
-> 
-> diff --git a/drivers/phy/tegra/xusb-tegra186.c b/drivers/phy/tegra/xusb-tegra186.c
-> index ae3915ed9fef..5abdf81aa143 100644
-> --- a/drivers/phy/tegra/xusb-tegra186.c
-> +++ b/drivers/phy/tegra/xusb-tegra186.c
-> @@ -1,6 +1,6 @@
->  // SPDX-License-Identifier: GPL-2.0
->  /*
-> - * Copyright (c) 2016-2020, NVIDIA CORPORATION.  All rights reserved.
-> + * Copyright (c) 2016-2022, NVIDIA CORPORATION.  All rights reserved.
->   */
->  
->  #include <linux/delay.h>
-> @@ -638,7 +638,7 @@ static void tegra186_utmi_bias_pad_power_off(struct tegra_xusb_padctl *padctl)
->  	mutex_unlock(&padctl->lock);
->  }
->  
-> -static void tegra_phy_xusb_utmi_pad_power_on(struct phy *phy)
-> +static void tegra186_utmi_pad_power_on(struct phy *phy)
->  {
->  	struct tegra_xusb_lane *lane = phy_get_drvdata(phy);
->  	struct tegra_xusb_padctl *padctl = lane->pad->padctl;
-> @@ -656,6 +656,8 @@ static void tegra_phy_xusb_utmi_pad_power_on(struct phy *phy)
->  		return;
->  	}
->  
-> +	dev_dbg(dev, "power on UTMI pad %u\n", index);
-> +
->  	tegra186_utmi_bias_pad_power_on(padctl);
->  
->  	udelay(2);
-> @@ -669,7 +671,7 @@ static void tegra_phy_xusb_utmi_pad_power_on(struct phy *phy)
->  	padctl_writel(padctl, value, XUSB_PADCTL_USB2_OTG_PADX_CTL1(index));
->  }
->  
-> -static void tegra_phy_xusb_utmi_pad_power_down(struct phy *phy)
-> +static void tegra186_utmi_pad_power_down(struct phy *phy)
->  {
->  	struct tegra_xusb_lane *lane = phy_get_drvdata(phy);
->  	struct tegra_xusb_padctl *padctl = lane->pad->padctl;
-> @@ -679,6 +681,8 @@ static void tegra_phy_xusb_utmi_pad_power_down(struct phy *phy)
->  	if (!phy)
->  		return;
->  
-> +	dev_dbg(padctl->dev, "power down UTMI pad %u\n", index);
-> +
->  	value = padctl_readl(padctl, XUSB_PADCTL_USB2_OTG_PADX_CTL0(index));
->  	value |= USB2_OTG_PD;
->  	padctl_writel(padctl, value, XUSB_PADCTL_USB2_OTG_PADX_CTL0(index));
-> @@ -849,15 +853,14 @@ static int tegra186_utmi_phy_power_on(struct phy *phy)
->  	value |= RPD_CTRL(priv->calib.rpd_ctrl);
->  	padctl_writel(padctl, value, XUSB_PADCTL_USB2_OTG_PADX_CTL1(index));
->  
-> -	/* TODO: pad power saving */
-> -	tegra_phy_xusb_utmi_pad_power_on(phy);
-> +	tegra186_utmi_pad_power_on(phy);
-> +
->  	return 0;
->  }
->  
->  static int tegra186_utmi_phy_power_off(struct phy *phy)
->  {
-> -	/* TODO: pad power saving */
-> -	tegra_phy_xusb_utmi_pad_power_down(phy);
-> +	tegra186_utmi_pad_power_down(phy);
->  
->  	return 0;
->  }
-> @@ -1486,6 +1489,8 @@ static const struct tegra_xusb_padctl_ops tegra186_xusb_padctl_ops = {
->  	.suspend_noirq = tegra186_xusb_padctl_suspend_noirq,
->  	.resume_noirq = tegra186_xusb_padctl_resume_noirq,
->  	.vbus_override = tegra186_xusb_padctl_vbus_override,
-> +	.utmi_pad_power_on = tegra186_utmi_pad_power_on,
-> +	.utmi_pad_power_down = tegra186_utmi_pad_power_down,
->  };
->  
->  #if IS_ENABLED(CONFIG_ARCH_TEGRA_186_SOC)
-> diff --git a/drivers/phy/tegra/xusb.c b/drivers/phy/tegra/xusb.c
-> index 963de5913e50..49873718d54a 100644
-> --- a/drivers/phy/tegra/xusb.c
-> +++ b/drivers/phy/tegra/xusb.c
-> @@ -1,6 +1,6 @@
->  // SPDX-License-Identifier: GPL-2.0-only
->  /*
-> - * Copyright (c) 2014-2020, NVIDIA CORPORATION.  All rights reserved.
-> + * Copyright (c) 2014-2022, NVIDIA CORPORATION.  All rights reserved.
->   */
->  
->  #include <linux/delay.h>
-> @@ -1458,6 +1458,26 @@ int tegra_phy_xusb_utmi_port_reset(struct phy *phy)
->  }
->  EXPORT_SYMBOL_GPL(tegra_phy_xusb_utmi_port_reset);
->  
-> +void tegra_phy_xusb_utmi_pad_power_on(struct phy *phy)
-> +{
-> +	struct tegra_xusb_lane *lane = phy_get_drvdata(phy);
-> +	struct tegra_xusb_padctl *padctl = lane->pad->padctl;
-> +
-> +	if (padctl->soc->ops->utmi_pad_power_on)
-> +		padctl->soc->ops->utmi_pad_power_on(phy);
-> +}
-> +EXPORT_SYMBOL_GPL(tegra_phy_xusb_utmi_pad_power_on);
-> +
-> +void tegra_phy_xusb_utmi_pad_power_down(struct phy *phy)
-> +{
-> +	struct tegra_xusb_lane *lane = phy_get_drvdata(phy);
-> +	struct tegra_xusb_padctl *padctl = lane->pad->padctl;
-> +
-> +	if (padctl->soc->ops->utmi_pad_power_down)
-> +		padctl->soc->ops->utmi_pad_power_down(phy);
-> +}
-> +EXPORT_SYMBOL_GPL(tegra_phy_xusb_utmi_pad_power_down);
-> +
->  int tegra_xusb_padctl_get_usb3_companion(struct tegra_xusb_padctl *padctl,
->  				    unsigned int port)
->  {
-> diff --git a/drivers/phy/tegra/xusb.h b/drivers/phy/tegra/xusb.h
-> index 034f7a2c28d6..8cfbbdbd6e0c 100644
-> --- a/drivers/phy/tegra/xusb.h
-> +++ b/drivers/phy/tegra/xusb.h
-> @@ -1,6 +1,6 @@
->  /* SPDX-License-Identifier: GPL-2.0-only */
->  /*
-> - * Copyright (c) 2014-2020, NVIDIA CORPORATION.  All rights reserved.
-> + * Copyright (c) 2014-2022, NVIDIA CORPORATION.  All rights reserved.
->   * Copyright (c) 2015, Google Inc.
->   */
->  
-> @@ -412,6 +412,8 @@ struct tegra_xusb_padctl_ops {
->  				    unsigned int index, bool enable);
->  	int (*vbus_override)(struct tegra_xusb_padctl *padctl, bool set);
->  	int (*utmi_port_reset)(struct phy *phy);
-> +	void (*utmi_pad_power_on)(struct phy *phy);
-> +	void (*utmi_pad_power_down)(struct phy *phy);
->  };
->  
->  struct tegra_xusb_padctl_soc {
-> diff --git a/include/linux/phy/tegra/xusb.h b/include/linux/phy/tegra/xusb.h
-> index 3a35e74cdc61..70998e6dd6fd 100644
-> --- a/include/linux/phy/tegra/xusb.h
-> +++ b/include/linux/phy/tegra/xusb.h
-> @@ -1,6 +1,6 @@
->  /* SPDX-License-Identifier: GPL-2.0-only */
->  /*
-> - * Copyright (c) 2016-2020, NVIDIA CORPORATION.  All rights reserved.
-> + * Copyright (c) 2016-2022, NVIDIA CORPORATION.  All rights reserved.
->   */
->  
->  #ifndef PHY_TEGRA_XUSB_H
-> @@ -21,6 +21,8 @@ int tegra_xusb_padctl_usb3_set_lfps_detect(struct tegra_xusb_padctl *padctl,
->  					   unsigned int port, bool enable);
->  int tegra_xusb_padctl_set_vbus_override(struct tegra_xusb_padctl *padctl,
->  					bool val);
-> +void tegra_phy_xusb_utmi_pad_power_on(struct phy *phy);
-> +void tegra_phy_xusb_utmi_pad_power_down(struct phy *phy);
->  int tegra_phy_xusb_utmi_port_reset(struct phy *phy);
->  int tegra_xusb_padctl_get_usb3_companion(struct tegra_xusb_padctl *padctl,
->  					 unsigned int port);
-> -- 
-> 2.17.1
+Applied, thanks
 
 -- 
 ~Vinod
