@@ -4,58 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 91BF8C6FA82
-	for <linux-phy@archiver.kernel.org>; Mon,  5 Sep 2022 03:12:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9D914ECAAD5
+	for <linux-phy@archiver.kernel.org>; Mon,  5 Sep 2022 06:22:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=TzOy4brVXz71Ja3FzPtDjM+k9UQhOYGzaFdkhTsqwRc=; b=c6ZiMc7ErZpPzj
-	9NpnsyYGVVLn5zgUTXRAaKUglCuPz83SEyeEIX21wZuePjyNYhtJAAoiqEdAlHa0LZSeZ3+ZLLKgF
-	RW0cm3YYGZRjK7tXDSRN7ioNAH1fHfCvGUWf95/g83S6OMsMFQ6gtJlp5QcsGUIS/tSgVmF+oHcG4
-	krKI3UxHzDv3/aLbwipD0DZtjpkNjNeJ4kkN4/gR8/C5Y++JA4ZpAjdHHZF1CaML9c1E1vO9c/Q53
-	fvsSUco4v/nr76bmm2I26sZRQfKtjjagOCX4TaMsxupYtcyrmwWYOgrU2plDjFCbcwcZIs5Kj2bV6
-	qV8U7A5MmESzmVLaEOqA==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=MItwikg/SlfciKjg6w3x2kEjWeHHPftvK1h0VduB8CA=; b=CwJxtcRuDFf7p5
+	6E5ReG8U5gfI4bjNO4m8PGIduc8BkVpjaAGDHOguWIiFrK9r95p7kvFM90GnpktNrZLK9JLFfiip/
+	pnod3aRkqkgs1sngYJ1DQSaS7/BWNbJM8GWZy4zRihZY4bddHp3CEdtmvh9jw/agYvwrqQkM1TxkC
+	SqjfiYHxCcoXoxiODsCKp2BOgFKRL74GKLLYnE8ye2oni1kdFwiK5g1bH7Sh8RJLYIY12lrt1xR1v
+	ItzBc2EDK8mIEz07p1L/jIDrO1atmZHS6qWn3tXWTuf7mlwRYHeWigkJnYFLYqM1Go/LZugpsvN0E
+	Rcpr+uPaQKluk4HDZa1w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oV2XZ-006hf3-JA; Mon, 05 Sep 2022 03:12:49 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1oV5V2-00C6Q2-AS; Mon, 05 Sep 2022 06:22:24 +0000
+Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oV22p-005yGT-On; Mon, 05 Sep 2022 02:41:09 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
-	by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 0FBDC1A1CE4;
-	Mon,  5 Sep 2022 04:40:59 +0200 (CEST)
-Received: from aprdc01srsp001v.ap-rdc01.nxp.com (aprdc01srsp001v.ap-rdc01.nxp.com [165.114.16.16])
-	by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id CDF841A1CDF;
-	Mon,  5 Sep 2022 04:40:58 +0200 (CEST)
-Received: from localhost.localdomain (shlinux2.ap.freescale.net [10.192.224.44])
-	by aprdc01srsp001v.ap-rdc01.nxp.com (Postfix) with ESMTP id 2D67D1820F5B;
-	Mon,  5 Sep 2022 10:40:57 +0800 (+08)
-From: Richard Zhu <hongxing.zhu@nxp.com>
-To: a.fatoum@pengutronix.de,
-	l.stach@pengutronix.de,
-	bhelgaas@google.com,
-	lorenzo.pieralisi@arm.com,
-	vkoul@kernel.org,
-	marcel.ziswiler@toradex.com,
-	kishon@ti.com
-Cc: hongxing.zhu@nxp.com,
-	linux-phy@lists.infradead.org,
-	linux-pci@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	kernel@pengutronix.de,
-	linux-imx@nxp.com
-Subject: [PATCH v3] phy: freescale: imx8m-pcie: Fix the wrong order of phy_init() and phy_power_on()
-Date: Mon,  5 Sep 2022 10:23:03 +0800
-Message-Id: <1662344583-18874-1-git-send-email-hongxing.zhu@nxp.com>
-X-Mailer: git-send-email 2.7.4
-X-Virus-Scanned: ClamAV using ClamSMTP
+	id 1oV5Sb-00C42h-Us
+	for linux-phy@lists.infradead.org; Mon, 05 Sep 2022 06:19:56 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by ams.source.kernel.org (Postfix) with ESMTPS id 067FBB80ECE;
+	Mon,  5 Sep 2022 06:19:51 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id F10C8C433C1;
+	Mon,  5 Sep 2022 06:19:45 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1662358789;
+	bh=qoVU5IEku9HQk6piaO1ti5LKrgIU0qiuy5TONVv+YGc=;
+	h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+	b=WbhpBa4oNYu4pybWN/GNkcg1rjEJJ+uhDKXay5P/yQJeLJV4wLgeSqCTVtiIRmz8V
+	 Pa+ZY0Jlkd4Ff4r0jLNjQ2LHpW/C1hzwMiyG7Uv4vh3o1k+slIPLHPfsx2lS/FOOB6
+	 N2sCxUcJ1pFszykKb6oxm1dANWozR/VDC4N7cbRpQcMcaY0L3ZqjhSty1UNQFz/CTQ
+	 6zNXoqb/8yHHD3sgo4+A2cYXOwVSMq3mhf0Q/BmSK3mXmH1enarW+Co2KUVLd4Va6M
+	 q4n2erohl8dtqCR4qkCkBYogNfc4CxtfgJuAkeWY2PT+s61G+xJUXWjCqD3qx8irGh
+	 k0mZ6YBwujkRA==
+Date: Mon, 5 Sep 2022 08:19:42 +0200
+From: Mauro Carvalho Chehab <mchehab@kernel.org>
+To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Cc: Lee Jones <lee@kernel.org>, Rob Herring <robh+dt@kernel.org>, Krzysztof
+ Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Yu Chen
+ <chenyu56@huawei.com>, Binghui Wang <wangbinghui@hisilicon.com>, Kishon
+ Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, Andy Gross
+ <agross@kernel.org>, Bjorn Andersson <bjorn.andersson@linaro.org>, Konrad
+ Dybcio <konrad.dybcio@somainline.org>, Mathieu Poirier
+ <mathieu.poirier@linaro.org>, Carvalho Chehab <mchehab+huawei@kernel.org>,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-usb@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-arm-msm@vger.kernel.org, linux-remoteproc@vger.kernel.org
+Subject: Re: [PATCH 2/4] dt-bindings: phy: hisilicon,hi3670-usb3: simplify
+ example
+Message-ID: <20220905081942.4cd47318@coco.lan>
+In-Reply-To: <20220817142246.828762-3-krzysztof.kozlowski@linaro.org>
+References: <20220817142246.828762-1-krzysztof.kozlowski@linaro.org>
+	<20220817142246.828762-3-krzysztof.kozlowski@linaro.org>
+X-Mailer: Claws Mail 4.1.0 (GTK 3.24.34; x86_64-redhat-linux-gnu)
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220904_194105_423041_618F2C89 
-X-CRM114-Status: GOOD (  10.16  )
+X-CRM114-CacheID: sfid-20220904_231954_493647_776EAC98 
+X-CRM114-Status: GOOD (  14.00  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -67,98 +77,62 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Refer to phy_core driver, phy_init() must be called before phy_power_on().
-Fix the wrong order of phy_init() and phy_power_on() here.
+Em Wed, 17 Aug 2022 17:22:44 +0300
+Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org> escreveu:
 
-Fixes: 1aa97b002258 ("phy: freescale: pcie: Initialize the imx8 pcie standalone phy driver")
-Signed-off-by: Richard Zhu <hongxing.zhu@nxp.com>
-Tested-by: Alexander Stein <alexander.stein@ew.tq-group.com>
-Acked-by: Vinod Koul <vkoul@kernel.org>
----
- drivers/pci/controller/dwc/pci-imx6.c      | 6 +++---
- drivers/phy/freescale/phy-fsl-imx8m-pcie.c | 8 ++++----
- 2 files changed, 7 insertions(+), 7 deletions(-)
+> syscon and simple-mfd cannot be used without device specific compatible,
+> so simplify the example to fix this.
+> 
+> Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+> ---
+>  .../bindings/phy/hisilicon,hi3670-usb3.yaml   | 26 ++++++-------------
+>  1 file changed, 8 insertions(+), 18 deletions(-)
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/hisilicon,hi3670-usb3.yaml b/Documentation/devicetree/bindings/phy/hisilicon,hi3670-usb3.yaml
+> index ebd78acfe2de..1cb00dbcd4c5 100644
+> --- a/Documentation/devicetree/bindings/phy/hisilicon,hi3670-usb3.yaml
+> +++ b/Documentation/devicetree/bindings/phy/hisilicon,hi3670-usb3.yaml
+> @@ -52,22 +52,12 @@ additionalProperties: false
+>  
+>  examples:
+>    - |
+> -    bus {
+> -      #address-cells = <2>;
+> -      #size-cells = <2>;
+> -
+> -      usb3_otg_bc: usb3_otg_bc@ff200000 {
+> -        compatible = "syscon", "simple-mfd";
+> -        reg = <0x0 0xff200000 0x0 0x1000>;
+> -
+> -        usb_phy {
+> -          compatible = "hisilicon,hi3670-usb-phy";
+> -          #phy-cells = <0>;
+> -          hisilicon,pericrg-syscon = <&crg_ctrl>;
+> -          hisilicon,pctrl-syscon = <&pctrl>;
+> -          hisilicon,sctrl-syscon = <&sctrl>;
+> -          hisilicon,eye-diagram-param = <0xfdfee4>;
+> -          hisilicon,tx-vboost-lvl = <0x5>;
+> -        };
+> -      };
+> +    usb-phy {
+> +        compatible = "hisilicon,hi3670-usb-phy";
+> +        #phy-cells = <0>;
+> +        hisilicon,pericrg-syscon = <&crg_ctrl>;
+> +        hisilicon,pctrl-syscon = <&pctrl>;
+> +        hisilicon,sctrl-syscon = <&sctrl>;
+> +        hisilicon,eye-diagram-param = <0xfdfee4>;
+> +        hisilicon,tx-vboost-lvl = <0x5>;
+>      };
 
-diff --git a/drivers/pci/controller/dwc/pci-imx6.c b/drivers/pci/controller/dwc/pci-imx6.c
-index 6e5debdbc55b..b5f0de455a7b 100644
---- a/drivers/pci/controller/dwc/pci-imx6.c
-+++ b/drivers/pci/controller/dwc/pci-imx6.c
-@@ -935,7 +935,7 @@ static int imx6_pcie_host_init(struct dw_pcie_rp *pp)
- 	}
- 
- 	if (imx6_pcie->phy) {
--		ret = phy_power_on(imx6_pcie->phy);
-+		ret = phy_init(imx6_pcie->phy);
- 		if (ret) {
- 			dev_err(dev, "pcie PHY power up failed\n");
- 			goto err_clk_disable;
-@@ -949,7 +949,7 @@ static int imx6_pcie_host_init(struct dw_pcie_rp *pp)
- 	}
- 
- 	if (imx6_pcie->phy) {
--		ret = phy_init(imx6_pcie->phy);
-+		ret = phy_power_on(imx6_pcie->phy);
- 		if (ret) {
- 			dev_err(dev, "waiting for PHY ready timeout!\n");
- 			goto err_phy_off;
-@@ -961,7 +961,7 @@ static int imx6_pcie_host_init(struct dw_pcie_rp *pp)
- 
- err_phy_off:
- 	if (imx6_pcie->phy)
--		phy_power_off(imx6_pcie->phy);
-+		phy_exit(imx6_pcie->phy);
- err_clk_disable:
- 	imx6_pcie_clk_disable(imx6_pcie);
- err_reg_disable:
-diff --git a/drivers/phy/freescale/phy-fsl-imx8m-pcie.c b/drivers/phy/freescale/phy-fsl-imx8m-pcie.c
-index ad7d2edfc414..c93286483b42 100644
---- a/drivers/phy/freescale/phy-fsl-imx8m-pcie.c
-+++ b/drivers/phy/freescale/phy-fsl-imx8m-pcie.c
-@@ -59,7 +59,7 @@ struct imx8_pcie_phy {
- 	bool			clkreq_unused;
- };
- 
--static int imx8_pcie_phy_init(struct phy *phy)
-+static int imx8_pcie_phy_power_on(struct phy *phy)
- {
- 	int ret;
- 	u32 val, pad_mode;
-@@ -137,14 +137,14 @@ static int imx8_pcie_phy_init(struct phy *phy)
- 	return ret;
- }
- 
--static int imx8_pcie_phy_power_on(struct phy *phy)
-+static int imx8_pcie_phy_init(struct phy *phy)
- {
- 	struct imx8_pcie_phy *imx8_phy = phy_get_drvdata(phy);
- 
- 	return clk_prepare_enable(imx8_phy->clk);
- }
- 
--static int imx8_pcie_phy_power_off(struct phy *phy)
-+static int imx8_pcie_phy_exit(struct phy *phy)
- {
- 	struct imx8_pcie_phy *imx8_phy = phy_get_drvdata(phy);
- 
-@@ -155,8 +155,8 @@ static int imx8_pcie_phy_power_off(struct phy *phy)
- 
- static const struct phy_ops imx8_pcie_phy_ops = {
- 	.init		= imx8_pcie_phy_init,
-+	.exit		= imx8_pcie_phy_exit,
- 	.power_on	= imx8_pcie_phy_power_on,
--	.power_off	= imx8_pcie_phy_power_off,
- 	.owner		= THIS_MODULE,
- };
- 
--- 
-2.25.1
+Acked-by: Mauro Carvalho Chehab <mchehab@kernel.org>
 
+Thanks,
+Mauro
 
 -- 
 linux-phy mailing list
