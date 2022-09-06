@@ -4,59 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D9D26C38145
-	for <linux-phy@archiver.kernel.org>; Tue,  6 Sep 2022 17:51:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9BECAECAAA1
+	for <linux-phy@archiver.kernel.org>; Tue,  6 Sep 2022 17:51:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=24+M3cIGZr/nrFCE7tN0nTrt6pmkWxgpMJXgBb8kIHI=; b=EcqipulYxUT9EF
-	XGqaumNqmTzJp6u2T6WD6Asbu+jib+3Goehlxr181Z6NHJih/9GeUDVvXYVZhFSR9afFWPnVrvXKV
-	yEb9Dy+7YBUToiaUok/UT7D+xSxuuIj/0tgP7TXqF4NvsKs4IFmUj80i2T07qy8h98ijwTpXj/oK+
-	uHF4wJ7bn1gF2/oMiWFaTUQKTk4F6/i3Rel9OIjkiRm+07YWkZyH7el902n0oNt7NSGnSYU9OICkv
-	tZXvTdJa6XL308aKTRypvoc4ceYATfRLc3vl3H17+SGkLeddLgysbIhN8LcZlJRksrXdiFtAo0Mde
-	M9rmkcoucDB3fRBSGsiw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=LAjabNM3yIT+xIlJtOXi7haxm0/+Pkyp13suzmGmtRQ=; b=sYD+r9y35BVKzr
+	sOOHZ8Zkq4Er+Vo6C13DS/rVmEltdOOL8ISeZqNFfir6K1d3R3A+ODfnRWJ5fzuEuGdN5LgPbKmp4
+	OBEoOmARxfrch6hzba6wC88wp0F49lEwEuXcdDY8GumGn1cQlau8QUCgsBfNEFAhfNRkT4wQdAYzW
+	o1uBg6mRM0Z2TaXytW5dvy5kRpnJgagDT5dZjLJy6irYy+NwX3Etr1JxEgbKmMlyNielX3fbSDHdb
+	FHe6EXH73+F2Bts4eYA0yZs2bvjVDsD/iApVg9l50CjQ+U0TujfjHUQ02C+XaKyxbGQJCg9t5t3KQ
+	ZyyFpcXJxvPh2dp5Cxtg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oVcjM-00G7t5-QI; Tue, 06 Sep 2022 17:51:24 +0000
-Received: from mail-oa1-x34.google.com ([2001:4860:4864:20::34])
+	id 1oVcji-00G83V-PK; Tue, 06 Sep 2022 17:51:46 +0000
+Received: from mail-oa1-x36.google.com ([2001:4860:4864:20::36])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oVcgZ-00G6AI-HG; Tue, 06 Sep 2022 17:48:33 +0000
-Received: by mail-oa1-x34.google.com with SMTP id 586e51a60fabf-1278a61bd57so11485207fac.7;
-        Tue, 06 Sep 2022 10:48:29 -0700 (PDT)
+	id 1oVcge-00G6Da-B7; Tue, 06 Sep 2022 17:48:39 +0000
+Received: by mail-oa1-x36.google.com with SMTP id 586e51a60fabf-1279948d93dso10206859fac.10;
+        Tue, 06 Sep 2022 10:48:34 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=gmail.com; s=20210112;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date;
-        bh=V+Mmbr5yPt+hzlxY76gjjX8n/7WZsL2sfwWOuEEeXvE=;
-        b=QqhEVMt8kblJwysbyUcRBMnek45NF0eS6ZcED+xizTm/mIQ4SMEdit2M7Wm9C6ek0q
-         LM1rMLUak2/pOfeVfHYsEGe68lV++x9DJL6IUQLKoVflrokh+91pnBXt5s1Gbi8sjdvJ
-         +NCwvh+mfWPIOiR4XlhhTRxduBER5LYDLsoYzqfj+FPTQt2T4o9M6DAqyDCKPOaZe8z3
-         E41w2F+iySUatH36XEBYA004nEmRUumvQqRvaMQyWdytpcO4iHxNeCqQohWZN8JT9YqR
-         qgo30y8D0nvNd0YkezKUmHLDjkD10TcMjNp1Rjw1IvZleYn7cShcN5dTOqL+jPi8kvOI
-         QGOg==
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date;
+        bh=sWRT5BEhVQS6Pr9dXQ62RZ1oRnXZDfj0TarvCCPaFKc=;
+        b=bWRIf7+vrCgw7Hi6rPLpo976LR+CnntWyAQ933h2ln/uxNTYxyDX9wQI1ba1Hu4vRC
+         01aflH0cSU1gbCItvjxMIp231+l8//1Itmew0zbTVulu7ibsxVGdyJPan03HhRqTtRa9
+         RjZl+gPqGgl5IUgvv4tUw7s9btr8heTMuJabPKosT0EPs6QGpgq7TdXKXeGzswMvv+lL
+         RAf2o3B8062JS4tmREybuT24yBb7hOKGiZZFfuuirENqsyUdsQqVA2has3YTlK7AyD6H
+         ZefnhdccvYKnONb2W47HUkOGfWpnXooxSzJwHADw4F7iMoYH7wLSYcHUldEI/E8b8Lok
+         qSZg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date;
-        bh=V+Mmbr5yPt+hzlxY76gjjX8n/7WZsL2sfwWOuEEeXvE=;
-        b=pU07fR2yKse4W9G82mPq7JpudoYx2SaxszUxvuhdJmB4SJ08r7cgDtqJ06BRyQy3Ma
-         ZOx0k+h83qPx4Y6mHZ6be8RLcAZ69NwAluchDhcumb5Y9QUx8z4oJDBT2it9CqfYSK8l
-         psTbH49BwQGQRc290N51lyGz3XUVuUtMjAFArSE7HP3maOoN1dCPT7BewKNmgwnsreYq
-         bDzJl5qDnC0MNhUtnPrHOBYFPhZeq7mHkMZJssihVdadRYlBgmNR8/1i3K921NW6DH+t
-         VhWU8x3hu9OI8LBmbz82Od/mMCpIUd7uPZLpsZlG9v4ZEFOMopOA/O9tp7yAClEM38aq
-         tCvQ==
-X-Gm-Message-State: ACgBeo3Te/QRLvs0Sd0F4Vg4mOwxVs0kGMN2p64xMGm5XMdMJE5wuzMo
-	q7UTCxaONfnr/yi/F27kNpErx3lPjBk=
-X-Google-Smtp-Source: AA6agR6HtjFhOOV4l9cuIu//XrbRVuTn//iCK4t2CYBvn25ACKq2aILTOYUKNNymd0pNMDltxtxwnw==
-X-Received: by 2002:a05:6870:89a1:b0:10e:4357:45b3 with SMTP id f33-20020a05687089a100b0010e435745b3mr12123039oaq.127.1662486508233;
-        Tue, 06 Sep 2022 10:48:28 -0700 (PDT)
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date;
+        bh=sWRT5BEhVQS6Pr9dXQ62RZ1oRnXZDfj0TarvCCPaFKc=;
+        b=Ifag8WuEp3YdfqqcocfFlSktTTNyBYWyPCdxEvS9WsIWHEfuG28SKA6Kf90I6x1e7l
+         knbTAuzybEPkfcIBrovImfGYo32qRCeIWyvXIMfURNri8gE15528te7sZJsj7GvLwn9f
+         MwZ4C18Nqwchg02cDl1CX0SXw+UFX2tAtBo9bYhayoxXt45+Y5H59nROBFUhhdxjNN2n
+         CebkcGor8ZgQVTKS1aBBEhJjGcxLD7g6rKesRghl/Qq3hHAB409XdNuHZUfSgJf4E9x9
+         zJMlGCuf/68/UV5fKp5Ht0yB9OFVIBp9WM4qaocZfZgq0VGEInIn1oxup6G+AP3GoiFx
+         bS4w==
+X-Gm-Message-State: ACgBeo2R2tPmstjGX/H5LXgw6KskN/csU8cuHfaQkLYRRNpJf2OzwJxz
+	jNo+nnGYup0gR2VVLFuebHHKyic3jCY=
+X-Google-Smtp-Source: AA6agR54mQEhVuh4IwsAy1uuYpGPrkNC/wN76hmiGBP+wIhQiytZlMxIv3W0PDUpIqJw2LEFJ/vhzg==
+X-Received: by 2002:aca:6546:0:b0:343:4701:7e13 with SMTP id j6-20020aca6546000000b0034347017e13mr9978759oiw.12.1662486513930;
+        Tue, 06 Sep 2022 10:48:33 -0700 (PDT)
 Received: from wintermute.localdomain (cpe-76-183-134-35.tx.res.rr.com. [76.183.134.35])
-        by smtp.gmail.com with ESMTPSA id o186-20020aca41c3000000b00344afa2b08bsm5568065oia.26.2022.09.06.10.48.26
+        by smtp.gmail.com with ESMTPSA id o186-20020aca41c3000000b00344afa2b08bsm5568065oia.26.2022.09.06.10.48.32
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 06 Sep 2022 10:48:27 -0700 (PDT)
+        Tue, 06 Sep 2022 10:48:33 -0700 (PDT)
 From: Chris Morgan <macroalpha82@gmail.com>
 To: linux-rockchip@lists.infradead.org
 Cc: linux-phy@lists.infradead.org,
@@ -74,14 +75,17 @@ Cc: linux-phy@lists.infradead.org,
 	heiko@sntech.de,
 	hjc@rock-chips.com,
 	Chris Morgan <macromorgan@hotmail.com>
-Subject: [PATCH v2 0/5] rockchip-dsi for rk3568
-Date: Tue,  6 Sep 2022 12:48:18 -0500
-Message-Id: <20220906174823.28561-1-macroalpha82@gmail.com>
+Subject: [PATCH v2 5/5] arm64: dts: rockchip: Add DSI and DSI-DPHY nodes to rk356x
+Date: Tue,  6 Sep 2022 12:48:23 -0500
+Message-Id: <20220906174823.28561-6-macroalpha82@gmail.com>
 X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20220906174823.28561-1-macroalpha82@gmail.com>
+References: <20220906174823.28561-1-macroalpha82@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220906_104831_629833_9C602604 
-X-CRM114-Status: GOOD (  11.85  )
+X-CRM114-CacheID: sfid-20220906_104837_079913_6BE72B33 
+X-CRM114-Status: UNSURE (   8.99  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,38 +104,104 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Chris Morgan <macromorgan@hotmail.com>
 
-This series adds support for the dsi and dphy controllers on the
-Rockchip RK3568. I can confirm that for the Rockchip RK3568 this
-current series DOES WORK now, but it requires rolling back clk changes
-made for the HDMI driver. If the clock changes are not rolled back, the
-image on the screen is shifted about 100 pixels to the right.
+This adds the DSI controller nodes and DSI-DPHY controller nodes to the
+rk356x device tree.
 
-Clk changes in question:
-https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/drivers/clk/rockchip/clk-rk3568.c?id=ff3187eabb5ce478d15b6ed62eb286756adefac3
-https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/drivers/clk/rockchip/clk-rk3568.c?id=6e69052f01d9131388cfcfaee929120118a267f4
+Signed-off-by: Chris Morgan <macromorgan@hotmail.com>
+---
+ arch/arm64/boot/dts/rockchip/rk356x.dtsi | 72 ++++++++++++++++++++++++
+ 1 file changed, 72 insertions(+)
 
-Tested on an Anbernic RG503 and RG353P with clock changes rolled back,
-the hardware works correctly on both devices.
-
-Changes since RFCv1:
- - Identified cause of image shift (clock changes).
- - Noted that driver works now.
- - Added devicetree nodes for rk356x.dtsi.
-
-Chris Morgan (5):
-  dt-bindings: display: rockchip-dsi: add rk3568 compatible
-  dt-bindings: phy-rockchip-inno-dsidphy: add compatible for rk3568
-  drm/rockchip: dsi: add rk3568 support
-  phy/rockchip: inno-dsidphy: Add support for rk3568
-  arm64: dts: rockchip: Add DSI and DSI-DPHY nodes to rk356x
-
- .../display/rockchip/dw_mipi_dsi_rockchip.txt |   1 +
- .../bindings/phy/rockchip,px30-dsi-dphy.yaml  |   1 +
- arch/arm64/boot/dts/rockchip/rk356x.dtsi      |  72 +++++++
- .../gpu/drm/rockchip/dw-mipi-dsi-rockchip.c   |  51 ++++-
- .../phy/rockchip/phy-rockchip-inno-dsidphy.c  | 204 ++++++++++++++----
- 5 files changed, 281 insertions(+), 48 deletions(-)
-
+diff --git a/arch/arm64/boot/dts/rockchip/rk356x.dtsi b/arch/arm64/boot/dts/rockchip/rk356x.dtsi
+index 319981c3e9f7..d150568fde82 100644
+--- a/arch/arm64/boot/dts/rockchip/rk356x.dtsi
++++ b/arch/arm64/boot/dts/rockchip/rk356x.dtsi
+@@ -699,6 +699,54 @@ vop_mmu: iommu@fe043e00 {
+ 		status = "disabled";
+ 	};
+ 
++	dsi0: dsi@fe060000 {
++		compatible = "rockchip,rk3568-mipi-dsi", "snps,dw-mipi-dsi";
++		reg = <0x00 0xfe060000 0x00 0x10000>;
++		interrupts = <GIC_SPI 68 IRQ_TYPE_LEVEL_HIGH>;
++		clock-names = "pclk", "hclk";
++		clocks = <&cru PCLK_DSITX_0>, <&cru HCLK_VO>;
++		phy-names = "dphy";
++		phys = <&mipi_dphy0>;
++		power-domains = <&power RK3568_PD_VO>;
++		reset-names = "apb";
++		resets = <&cru SRST_P_DSITX_0>;
++		rockchip,grf = <&grf>;
++		status = "disabled";
++
++		ports {
++			#address-cells = <1>;
++			#size-cells = <0>;
++
++			port@0 {
++				reg = <0>;
++			};
++		};
++	};
++
++	dsi1: dsi@fe070000 {
++		compatible = "rockchip,rk3568-mipi-dsi", "snps,dw-mipi-dsi";
++		reg = <0x0 0xfe070000 0x0 0x10000>;
++		interrupts = <GIC_SPI 69 IRQ_TYPE_LEVEL_HIGH>;
++		clock-names = "pclk", "hclk";
++		clocks = <&cru PCLK_DSITX_1>, <&cru HCLK_VO>;
++		phy-names = "dphy";
++		phys = <&mipi_dphy1>;
++		power-domains = <&power RK3568_PD_VO>;
++		reset-names = "apb";
++		resets = <&cru SRST_P_DSITX_1>;
++		rockchip,grf = <&grf>;
++		status = "disabled";
++
++		ports {
++			#address-cells = <1>;
++			#size-cells = <0>;
++
++			port@0 {
++				reg = <0>;
++			};
++		};
++	};
++
+ 	hdmi: hdmi@fe0a0000 {
+ 		compatible = "rockchip,rk3568-dw-hdmi";
+ 		reg = <0x0 0xfe0a0000 0x0 0x20000>;
+@@ -1594,6 +1642,30 @@ combphy2: phy@fe840000 {
+ 		status = "disabled";
+ 	};
+ 
++	mipi_dphy0: mipi-dphy@fe850000 {
++		compatible = "rockchip,rk3568-dsi-dphy";
++		reg = <0x0 0xfe850000 0x0 0x10000>;
++		clock-names = "ref", "pclk";
++		clocks = <&pmucru CLK_MIPIDSIPHY0_REF>, <&cru PCLK_MIPIDSIPHY0>;
++		#phy-cells = <0>;
++		power-domains = <&power RK3568_PD_VO>;
++		reset-names = "apb";
++		resets = <&cru SRST_P_MIPIDSIPHY0>;
++		status = "disabled";
++	};
++
++	mipi_dphy1: mipi-dphy@fe860000 {
++		compatible = "rockchip,rk3568-dsi-dphy";
++		reg = <0x0 0xfe860000 0x0 0x10000>;
++		clock-names = "ref", "pclk";
++		clocks = <&pmucru CLK_MIPIDSIPHY1_REF>, <&cru PCLK_MIPIDSIPHY1>;
++		#phy-cells = <0>;
++		power-domains = <&power RK3568_PD_VO>;
++		reset-names = "apb";
++		resets = <&cru SRST_P_MIPIDSIPHY1>;
++		status = "disabled";
++	};
++
+ 	usb2phy0: usb2phy@fe8a0000 {
+ 		compatible = "rockchip,rk3568-usb2phy";
+ 		reg = <0x0 0xfe8a0000 0x0 0x10000>;
 -- 
 2.25.1
 
