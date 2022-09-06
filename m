@@ -4,87 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3E469ECAAA1
-	for <linux-phy@archiver.kernel.org>; Tue,  6 Sep 2022 07:03:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A3BBFECAAA1
+	for <linux-phy@archiver.kernel.org>; Tue,  6 Sep 2022 07:46:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=a+FvHyaFgWSbKkgDumvOTQ7pOe9EjaKovtmx7PqXKdM=; b=YoWv4WFt9JRkAP
-	NeNE6wKf1oqmtSWjM+e6/uLJ0VpsEPejpuUeYrY7E/4b3sV5rfhnbfJ4GPD6+ai31mPBI2khP4Gng
-	0KOMDbhZ8zQRrSEt6j5vRsgLf304KVbulWFhaqeXsKLSFZu2sGc4sL6O/5vBONvK9Am0viDZe+6QX
-	Obk8xSsusq41Pdvjm8Q96jKEuyrFaFqP7W5GfCqNn/77xsvn7SzkUN7aBnzY9BUd3u49nujNus61N
-	dkOYYvFTz9G5h0EYjpCm3Qe7PwJz/ERS8CEVTTWwt+Uc7qmRwzG5qbwWOr6//M4aioJcAeoyeG+xc
-	H412V49pOxWwqLZhHJuQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=4bPiH4cMgdTWv9Q/k5CTmV26EyZ8Q50Hnk+u/quwAzM=; b=b4TTxEszoI16HA
+	ihL1UU+Yf249BKKGMoZ9VSAyc9Umd7tUyRHrDH84GJUcdsV9YWPirzYdb7++bvSeZNutSNdicD+fT
+	YFe7M4CjHXhqlJhJExcqi1wiobxl3KiXzdkkLji5EmZFyQOqORi+CaQSx+FfiNX2luxK33tblC5IQ
+	bELusIlsFsGCnNT94DInn6GvH30SOP/sph1jtjovDR/49dHh3ge++6/ee26xA1dFkHLx2OqSkzQqw
+	wBH7FfUTKC/vz+b73zzBQiByXAGFAz+3evRmAbxT07+SIuHtPfxRdGRyT3MCmCxh1Zunqy9hXI3sj
+	0jSGVN2SjoMlkmSB/Dzw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oVSc7-00Adii-Gd; Tue, 06 Sep 2022 07:03:15 +0000
-Received: from mail-lf1-x132.google.com ([2a00:1450:4864:20::132])
+	id 1oVTHo-00AuTq-1H; Tue, 06 Sep 2022 07:46:20 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oVSc4-00Addr-Qs
-	for linux-phy@lists.infradead.org; Tue, 06 Sep 2022 07:03:14 +0000
-Received: by mail-lf1-x132.google.com with SMTP id z25so15984683lfr.2
-        for <linux-phy@lists.infradead.org>; Tue, 06 Sep 2022 00:03:10 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date;
-        bh=Vh5dKJp8XgybaVsAxsDRTMhVft4uU9zUN/Q42DYvyOQ=;
-        b=K0mgYUOSou8QTlHcWhgwVshbgWLtJ1Eab3Sx8oxOBkZ35lLxyfk1myRr+wT9OIrm1f
-         SvN4RyuEgytQQ0ubS/YvvQIU1TqX6GeWdCuiwYLZ4LanwnEOqBaL77rIgB27zfnCRjDQ
-         8SA8G3pploFaxzyEC+vZEb02+7lIrGH6Cpx6Wt2kdNtIxceT4pFXZ6pwL1MBYFVOCxeY
-         9VpZqwwbyDjHLawD5I74XsZSkBrtABF5/TdSBkiYhpl3Bo8ER7bi6kZt7tiURx3NQR9a
-         +hfPVuGG9n25leSTr+lhBXP7Q20h/5chBiiuXWsIoyZr3YKP4nL60Zc/nczXceCMgAh5
-         xjcA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date;
-        bh=Vh5dKJp8XgybaVsAxsDRTMhVft4uU9zUN/Q42DYvyOQ=;
-        b=5EMbDiZ81Dz4MZ9jxpY7xs8gFim06742qTC4NgyCh0+Pc3xrjJPly206MC2+Dq0H9f
-         slzbvVd/ZEDF4mgj77XHtFILQ8tJ1sDAuadxwDWfe7GFYi+8sDFU6jVy9nNFKUr0jya0
-         MDj7Tq2z5q5jNkXByIR/GavRdvIoy/6e49oO6Fr/YmVdGM2HanV8WXfGnz9at37CCMI2
-         manYbYDBfhvU3+gQmIqxYyZcYXzAg5nmzhQgFISnVN2/Ydbo2Mo+F2sNs8Oq6hjJ1SdL
-         LGVOaz/SkGFOqwP1I47Rfif5RLw9NzqxFyoUtQNKgMKajCkGNXzzEXMhpCw6yhRts628
-         xIpQ==
-X-Gm-Message-State: ACgBeo3beF/gEcq99/EbpvYuKgEmW7sevFlWz0tFv11G1RgNIiaCWcKU
-	vQIDth8ULsUfrJW80odQg55nAA==
-X-Google-Smtp-Source: AA6agR7mE1s888VxyPAUOKHJ7M6JWPPOgX1u4M252CbSe02wYFJxALmb9mClXYAbaayos/k2RVPNPQ==
-X-Received: by 2002:ac2:4e15:0:b0:48b:7a5f:923c with SMTP id e21-20020ac24e15000000b0048b7a5f923cmr18784649lfr.134.1662447789099;
-        Tue, 06 Sep 2022 00:03:09 -0700 (PDT)
-Received: from [192.168.0.21] (78-11-189-27.static.ip.netia.com.pl. [78.11.189.27])
-        by smtp.gmail.com with ESMTPSA id v7-20020a2ea447000000b002648152512asm1716340ljn.90.2022.09.06.00.03.07
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 06 Sep 2022 00:03:08 -0700 (PDT)
-Message-ID: <93600263-0211-9286-9043-fae5b017d15b@linaro.org>
-Date: Tue, 6 Sep 2022 09:03:02 +0200
+	id 1oVTHk-00AuQf-Vb
+	for linux-phy@lists.infradead.org; Tue, 06 Sep 2022 07:46:18 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 8CBC260ADA;
+	Tue,  6 Sep 2022 07:46:15 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id EE923C433B5;
+	Tue,  6 Sep 2022 07:46:14 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1662450375;
+	bh=1INHvqeK85ps1g5DBBfkxSa6I7TVe6Yq7FvQSkqeHNE=;
+	h=From:To:Cc:Subject:Date:From;
+	b=j8ziZAD18HgYhQJDmuhOF9Cu8b0atn5J21dxWYEBSf9uh7Gs1B2KkUmKAcztHqFPO
+	 cGC1GtLnU4XwoMhwGa0V5hGteXxGUrUzoGl7jAOGYjL5LgplYkMQpZ7sNCT5pkdHZo
+	 d5JC9Vwt9T246ppqyF5dANCH+XphH1UZNcKV5KiJ8QgVWKwOw2+cArI03+HPlnGCVk
+	 RL/HbzyJVWsSTozDdUo3ZDnd+a3ytbnhnn8CVdJmVnKRwalAQSCuJ1Zwz0hJN3m9Cs
+	 VEpengbIBTrO8Oo4WHOWL/ZPM/JMlWMc/CyaOTawyQRO7tZPQVDiQxR6aygRPoObrm
+	 HcM2EhlxP5cyQ==
+Received: from johan by xi.lan with local (Exim 4.94.2)
+	(envelope-from <johan+linaro@kernel.org>)
+	id 1oVTHl-00019E-PA; Tue, 06 Sep 2022 09:46:18 +0200
+From: Johan Hovold <johan+linaro@kernel.org>
+To: Vinod Koul <vkoul@kernel.org>
+Cc: Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@somainline.org>,
+	Kishon Vijay Abraham I <kishon@ti.com>,
+	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+	linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	Johan Hovold <johan+linaro@kernel.org>
+Subject: [PATCH 0/3] phy: qcom-qmp-pcie: shorten function prefixes
+Date: Tue,  6 Sep 2022 09:45:47 +0200
+Message-Id: <20220906074550.4383-1-johan+linaro@kernel.org>
+X-Mailer: git-send-email 2.35.1
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.13.0
-Subject: Re: [PATCH v4 1/2] dt-bindings: phy: ti: phy-gmii-sel: Add bindings
- for J7200
-Content-Language: en-US
-To: Siddharth Vadapalli <s-vadapalli@ti.com>,
- krzysztof.kozlowski+dt@linaro.org
-Cc: robh+dt@kernel.org, lee.jones@linaro.org, kishon@ti.com,
- vkoul@kernel.org, dan.carpenter@oracle.com, grygorii.strashko@ti.com,
- rogerq@kernel.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org
-References: <20220901085506.138633-1-s-vadapalli@ti.com>
- <20220901085506.138633-2-s-vadapalli@ti.com>
- <4b681c03-7f5a-0234-2276-316e0bad1de5@linaro.org>
- <44339382-c4e2-26db-de5d-263ae5a585b8@ti.com>
- <4e61b63b-74ac-1682-968f-17e5d8db7ce6@linaro.org>
- <dfa9e613-054e-cffc-747f-27842e825cc8@ti.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <dfa9e613-054e-cffc-747f-27842e825cc8@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220906_000312_898688_DA4A4B62 
-X-CRM114-Status: GOOD (  11.44  )
+X-CRM114-CacheID: sfid-20220906_004617_093868_3E0C6BF0 
+X-CRM114-Status: UNSURE (   8.86  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,26 +81,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 06/09/2022 07:02, Siddharth Vadapalli wrote:
->>>
->>> Please let me know if the above description is fine.
->>
->> Hm, but that's a phy node, not address of register... Isn't this a phy
->> node representing the phy of the CPSW MAC ports?
-> 
-> Despite it being a phy node, the phy-gmii-sel driver actually uses this
-> node to obtain the address of the CTRLMMR_ENETx_CTRL registers which
-> correspond to the CPSW MAC configuration and are therefore unrelated to
-> the PHY. Please let me know if my suggested description would be fine.
+The QMP PHY driver function prefixes have become unnecessarily long
+(e.g. after the recent driver split) and hurt readability.
 
-Either I miss some more pieces or this is wrong design. The phy node
-should not be used to pass some addresses somewhere. It is used to
-define a device which will be instantiated (as parent is simple-mfd). If
-you use it only to obtain some address, not to describe child device,
-then this is wrong property type.
+This series shortens the "qcom_qmp_phy_pcie" prefix to "qmp_pcie" (QMP
+likely stands for "Qualcomm Multi PHY" or similar anyway) and clean up
+the code somewhat.
 
-Best regards,
-Krzysztof
+Once merged I can do the same conversion of the other four QMP drivers.
+
+Johan
+
+
+
+Dmitry Baryshkov (1):
+  phy: qcom-qmp-pcie: drop if (table) conditions
+
+Johan Hovold (2):
+  phy: qcom-qmp-pcie: shorten function prefixes
+  phy: qcom-qmp: drop dual-lane comments
+
+ drivers/phy/qualcomm/phy-qcom-qmp-combo.c |   1 -
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c  | 145 ++++++++++------------
+ drivers/phy/qualcomm/phy-qcom-qmp-ufs.c   |   1 -
+ drivers/phy/qualcomm/phy-qcom-qmp-usb.c   |   1 -
+ 4 files changed, 63 insertions(+), 85 deletions(-)
+
+-- 
+2.35.1
+
 
 -- 
 linux-phy mailing list
