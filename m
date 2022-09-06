@@ -4,78 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 40BC2C38145
-	for <linux-phy@archiver.kernel.org>; Tue,  6 Sep 2022 05:03:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2D9FDC6FA83
+	for <linux-phy@archiver.kernel.org>; Tue,  6 Sep 2022 06:24:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
-	CC:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3tpgdgGq7TubF3WmZ+lHMmOTAfu6N/nvu+2UwJJEl5Q=; b=DLQBe6dhMxS1RE
-	ir9/wDFRv2Vq/Vep+PUNNP8ekWxXE6bZbHIJvppJx4QfIkjVHhSJHhmaP5O2YjsCfDcDNn5g87Bzh
-	QDSqAFPvJwngoXqU6FyszjGBnQH7UaK9eIhL6TN5FeRmYkaojyn7sTHQHqphwNbYjdMJB4snNJupu
-	x5xpQi+4tQwz1orlInYRpVb8R7vSsCJXQNIQQCnt1Ui+9VUZKGmfgO9JV4blQfoVqTBE5eaOATNdy
-	rfTpGYaczyjzByHC/rZVcAkIJOQfs5SA9pdxaXnIC2nJ4K9JDTM+x54lUYF6oiy+KsuUhkgj1rDyx
-	KRtaj3sDk/69SOhB+e5A==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ZU83YJ1/Ue936f09f5qYIMK1eJPUKJ+Td0mExXtpgUQ=; b=NB90TSuWB26Zwm
+	Slv3gIZgdBXdyOn5fWvaGoruoMvCTqoF66wFAXd29UEXljkP2dmbFQglvLXFOp2/GzeKU1e1NQHSI
+	jlYEk5v2h9MegLiIU1gQMUq72/3d23ndcRrDUi32/d7/5aGHmK2g157qhzpsVLy7ClBrQisd6Ms9E
+	Ny6jjaZpPqhOzAqGIsQ2cbQnwUFkMCQXH4ODM7E7SJJDCk/fHyvX1uBUcnBSvz/oajd1G/RWhZVLF
+	1ZLV22NVzQKHbwOFicFSY8U7NdA9lUkGQCQ9cxEqt+g4KFeHRyFDpzEv/DZ1Livr7jWzM8zcRWUac
+	cvXPQYZF4R9UXwUw9NLw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oVQjx-009WKK-Bc; Tue, 06 Sep 2022 05:03:13 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1oVS04-00ANGo-JH; Tue, 06 Sep 2022 06:23:59 +0000
+Received: from mail-pj1-x1031.google.com ([2607:f8b0:4864:20::1031])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oVQjs-009WCV-MT
-	for linux-phy@lists.infradead.org; Tue, 06 Sep 2022 05:03:11 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
-	by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 28652scP115894;
-	Tue, 6 Sep 2022 00:02:54 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
-	s=ti-com-17Q1; t=1662440574;
-	bh=lad9PYHCFTX9rpN54N6reSxPPXK1wvxB4OEOct3iU9E=;
-	h=Date:CC:Subject:To:References:From:In-Reply-To;
-	b=nFLOhv+cqgOi8Yh/EkUDnSumBp3Kot3PMmMDZRrklHKUjJct+tWsLl5Rj4T/OqeUe
-	 GK8I1aI0kM7ebRr7nb9bw2TRNDoVC2jPYZnJtU9tQTIn/9xma+6nryfmnOG6T1iaEd
-	 vsVS6io10zD7zltTKaF2m0YhWCXxr0oGd9WD6pRc=
-Received: from DLEE104.ent.ti.com (dlee104.ent.ti.com [157.170.170.34])
-	by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 28652sCw125777
-	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Tue, 6 Sep 2022 00:02:54 -0500
-Received: from DLEE110.ent.ti.com (157.170.170.21) by DLEE104.ent.ti.com
- (157.170.170.34) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.6; Tue, 6 Sep
- 2022 00:02:54 -0500
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE110.ent.ti.com
- (157.170.170.21) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.6 via
- Frontend Transport; Tue, 6 Sep 2022 00:02:54 -0500
-Received: from [10.24.69.241] (ileax41-snat.itg.ti.com [10.172.224.153])
-	by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 28652n2V028471;
-	Tue, 6 Sep 2022 00:02:50 -0500
-Message-ID: <dfa9e613-054e-cffc-747f-27842e825cc8@ti.com>
-Date: Tue, 6 Sep 2022 10:32:49 +0530
-MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.11.0
-CC: <robh+dt@kernel.org>, <lee.jones@linaro.org>, <kishon@ti.com>,
-        <vkoul@kernel.org>, <dan.carpenter@oracle.com>,
-        <grygorii.strashko@ti.com>, <rogerq@kernel.org>,
-        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-        <linux-phy@lists.infradead.org>, <s-vadapalli@ti.com>
-Subject: Re: [PATCH v4 1/2] dt-bindings: phy: ti: phy-gmii-sel: Add bindings
- for J7200
-Content-Language: en-US
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
-        <krzysztof.kozlowski+dt@linaro.org>
-References: <20220901085506.138633-1-s-vadapalli@ti.com>
- <20220901085506.138633-2-s-vadapalli@ti.com>
- <4b681c03-7f5a-0234-2276-316e0bad1de5@linaro.org>
- <44339382-c4e2-26db-de5d-263ae5a585b8@ti.com>
- <4e61b63b-74ac-1682-968f-17e5d8db7ce6@linaro.org>
-From: Siddharth Vadapalli <s-vadapalli@ti.com>
-In-Reply-To: <4e61b63b-74ac-1682-968f-17e5d8db7ce6@linaro.org>
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+	id 1oVRzy-00ANDe-Mx
+	for linux-phy@lists.infradead.org; Tue, 06 Sep 2022 06:23:52 +0000
+Received: by mail-pj1-x1031.google.com with SMTP id mj6so10259031pjb.1
+        for <linux-phy@lists.infradead.org>; Mon, 05 Sep 2022 23:23:48 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20210112;
+        h=message-id:date:subject:cc:to:from:from:to:cc:subject:date;
+        bh=OjOO2eTxjzUgiDmCCyRIaBy3rv+D3YVNkyt3aCr9uz4=;
+        b=CAlmmmdLxymOcqdT4s8jUfswfQ8/xKoClYmcg7f1QXN5jMkUuoMI1OkN5Ymf1tKjfF
+         PpmRGH1b8Zqre5hBIiK+4FKLLfsv8sb7IiuzoXN8vGKErYsMrueGIDmoJ2f8k7u0NADu
+         2SbhXSLsl/b7odYPc4NXcbcFNWE9hMGrYNgF2E/i2Wg0YQOD9A0qE0+vrZUzJI1ELf1O
+         SuC9v8p1sQR2thBYp9pZQLHoP1jSK8vIAG/Y7CuFpTfvNSNj90L/I6hbjIGQWbUmj5V3
+         68BXNc6xdj+zwsHzWG3V7BoJdn2XfnhWfAK/HifsnJa4iqEbsfLIsesAlRI0jvh40KUY
+         ozAg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date;
+        bh=OjOO2eTxjzUgiDmCCyRIaBy3rv+D3YVNkyt3aCr9uz4=;
+        b=jgrNp2svQCRJ6NhJ63vhkhgbS5NLFZjuiEXDgi8gOgXe9JbpAz0aCw5h4qU3RdnRtk
+         BixfXyXBZqAVJWW9XDAiaVFTBoYTEAGOJ4srmYW3Cxb6s+o1xrhxVlYjBa/VpJh4IqFT
+         pV304jhIsY6YKvhIrjIxIkXCKYRRaS94/kibx8vN13KSPrT3Qe31arLRKTuH5Mcs/OLr
+         +rD/KEQ0BuJYBSbEze4bDmOMwPowTZy4w3w5taQ9BcgxC2kRVqLHgTOFRGKNK/1QJE1M
+         URgOaLHqQVYP6Y4hyeqr9+wqET4S98Ro3c64LwwYTPsaDuipMxA+L6IyO5fT9Ix4hQXN
+         cXKw==
+X-Gm-Message-State: ACgBeo21znkFJ1Xw3WOgS60Sr07Nv/Q2XxrKbQPoUtUNJ+PB5T+E4280
+	mY658bXiT32ELaQPJrZssg4=
+X-Google-Smtp-Source: AA6agR75et+nHC4NSvO2cAENtR680aqE+PjQF1X4ZsAZGVwMuNgnB4w1YlXRbCXU3pk8Z61IHgODLw==
+X-Received: by 2002:a17:902:7204:b0:172:663f:80b7 with SMTP id ba4-20020a170902720400b00172663f80b7mr53258432plb.115.1662445428175;
+        Mon, 05 Sep 2022 23:23:48 -0700 (PDT)
+Received: from scdiu3.sunplus.com ([113.196.136.192])
+        by smtp.googlemail.com with ESMTPSA id c16-20020a17090ab29000b002000d577cc3sm6154952pjr.55.2022.09.05.23.23.46
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 05 Sep 2022 23:23:47 -0700 (PDT)
+From: Vincent Shih <vincent.sunplus@gmail.com>
+To: kishon@ti.com,
+	vkoul@kernel.org,
+	linux-usb@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	wells.lu@sunplus.com
+Cc: Vincent Shih <vincent.sunplus@gmail.com>
+Subject: [PATCH] phy: usb: free the buffer after reading a given nvmem cell
+Date: Tue,  6 Sep 2022 14:23:02 +0800
+Message-Id: <1662445382-29879-1-git-send-email-vincent.sunplus@gmail.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220905_220308_973151_F36B389F 
-X-CRM114-Status: GOOD (  28.28  )
+X-CRM114-CacheID: sfid-20220905_232350_884229_70829463 
+X-CRM114-Status: GOOD (  11.37  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,160 +83,60 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hello Krzysztof,
+Use kfree() to free the buffer after calling nvmem_cell_read() to
+read a given nvmem cell.
 
-On 05/09/22 18:39, Krzysztof Kozlowski wrote:
-> On 02/09/2022 08:09, Siddharth Vadapalli wrote:
->> Hello Krzysztof,
->>
->> On 01/09/22 20:51, Krzysztof Kozlowski wrote:
->>> On 01/09/2022 11:55, Siddharth Vadapalli wrote:
->>>> TI's J7200 SoC supports additional PHY modes like QSGMII and SGMII
->>>> that are not supported on earlier SoCs. Add a compatible for it.
->>>>
->>>> Signed-off-by: Siddharth Vadapalli <s-vadapalli@ti.com>
->>>> ---
->>>>  .../mfd/ti,j721e-system-controller.yaml       |  6 ++++
->>>>  .../bindings/phy/ti,phy-gmii-sel.yaml         | 30 ++++++++++++++++++-
->>>>  2 files changed, 35 insertions(+), 1 deletion(-)
->>>>
->>>> diff --git a/Documentation/devicetree/bindings/mfd/ti,j721e-system-controller.yaml b/Documentation/devicetree/bindings/mfd/ti,j721e-system-controller.yaml
->>>> index 1aeac43cad92..802374e7645f 100644
->>>> --- a/Documentation/devicetree/bindings/mfd/ti,j721e-system-controller.yaml
->>>> +++ b/Documentation/devicetree/bindings/mfd/ti,j721e-system-controller.yaml
->>>> @@ -54,6 +54,12 @@ patternProperties:
->>>>      description:
->>>>        Clock provider for TI EHRPWM nodes.
->>>>  
->>>> +  "phy@[0-9a-f]+$":
->>>> +    type: object
->>>> +    $ref: /schemas/phy/phy-provider.yaml
->>>
->>> You need instead ref to specific device bindings/schema. Probably to
->>> /schemas/phy/ti,phy-gmii-sel.yaml#
->>
->> Thank you for the clarification. I will update $ref to
->> "/schemas/phy/ti,phy-gmii-sel.yaml#" in the v5 series.
->>
->>>
->>> This was entirely different in v3, so your change is very confusing.
->>
->> I had misunderstood Rob's comment in the v3 patch. I had initially
->> provided the relative path to the bindings file ti,phy-gmii-sel.yaml in
->> the v3 patch. When Rob commented "/schemas/phy/..", I misunderstood and
->> thought that I had to point $ref to a generic phy-provider schema
->> present in the dt-schema repo and thus, in this v4 patch, I had updated
->> $ref accordingly.
->>
->>>
->>>> +    description:
->>>> +      This is the register to set phy mode through phy-gmii-sel driver.
->>>
->>> I don't understand the description. Please focus on the hardware not
->>> some drivers - what is here? Phy for something?
->>
->> I will fix the description, updating it to the following:
->> "Address of the CTRLMMR_ENETx_CTRL registers which are used to configure
->> the phy-mode of the CPSW MAC ports."
->>
->> Please let me know if the above description is fine.
-> 
-> Hm, but that's a phy node, not address of register... Isn't this a phy
-> node representing the phy of the CPSW MAC ports?
+Fixes:99d9ccd97385("phy: usb: Add USB2.0 phy driver for Sunplus SP7021")
+Signed-off-by: Vincent Shih <vincent.sunplus@gmail.com>
+---
+ drivers/phy/sunplus/phy-sunplus-usb2.c | 10 +++++++---
+ 1 file changed, 7 insertions(+), 3 deletions(-)
 
-Despite it being a phy node, the phy-gmii-sel driver actually uses this
-node to obtain the address of the CTRLMMR_ENETx_CTRL registers which
-correspond to the CPSW MAC configuration and are therefore unrelated to
-the PHY. Please let me know if my suggested description would be fine.
+diff --git a/drivers/phy/sunplus/phy-sunplus-usb2.c b/drivers/phy/sunplus/phy-sunplus-usb2.c
+index 5269968..c8540e1 100644
+--- a/drivers/phy/sunplus/phy-sunplus-usb2.c
++++ b/drivers/phy/sunplus/phy-sunplus-usb2.c
+@@ -13,6 +13,7 @@
+ #include <linux/bitfield.h>
+ #include <linux/clk.h>
+ #include <linux/delay.h>
++#include <linux/err.h>
+ #include <linux/io.h>
+ #include <linux/module.h>
+ #include <linux/nvmem-consumer.h>
+@@ -92,13 +93,15 @@ static int update_disc_vol(struct sp_usbphy *usbphy)
+ 	otp_v = nvmem_cell_read(cell, &otp_l);
+ 	nvmem_cell_put(cell);
+ 
+-	if (otp_v) {
++	if (!IS_ERR(otp_v)) {
+ 		set = *(otp_v + 1);
+ 		set = (set << (sizeof(char) * 8)) | *otp_v;
+ 		set = (set >> usbphy->disc_vol_addr_off) & J_DISC;
++		
++		kfree(otp_v);
+ 	}
+-
+-	if (!otp_v || set == 0)
++	
++	if (IS_ERR(otp_v) || (set == 0))
+ 		set = OTP_DISC_LEVEL_DEFAULT;
+ 
+ 	val = readl(usbphy->phy_regs + CONFIG7);
+@@ -294,3 +297,4 @@ module_platform_driver(sunplus_usb_phy_driver);
+ MODULE_AUTHOR("Vincent Shih <vincent.shih@sunplus.com>");
+ MODULE_DESCRIPTION("Sunplus USB 2.0 phy driver");
+ MODULE_LICENSE("GPL");
++
+-- 
+2.7.4
 
-> 
->>
->>>
->>>> +
->>>>  required:
->>>>    - compatible
->>>>    - reg
->>>> diff --git a/Documentation/devicetree/bindings/phy/ti,phy-gmii-sel.yaml b/Documentation/devicetree/bindings/phy/ti,phy-gmii-sel.yaml
->>>> index ff8a6d9eb153..0ffb97f1a77c 100644
->>>> --- a/Documentation/devicetree/bindings/phy/ti,phy-gmii-sel.yaml
->>>> +++ b/Documentation/devicetree/bindings/phy/ti,phy-gmii-sel.yaml
->>>> @@ -53,12 +53,24 @@ properties:
->>>>        - ti,am43xx-phy-gmii-sel
->>>>        - ti,dm814-phy-gmii-sel
->>>>        - ti,am654-phy-gmii-sel
->>>> +      - ti,j7200-cpsw5g-phy-gmii-sel
->>>>  
->>>>    reg:
->>>>      maxItems: 1
->>>>  
->>>>    '#phy-cells': true
->>>>  
->>>> +  ti,qsgmii-main-ports:
->>>> +    $ref: /schemas/types.yaml#/definitions/uint32-array
->>>> +    description: |
->>>> +      Required only for QSGMII mode. Array to select the port for
->>>> +      QSGMII main mode. Rest of the ports are selected as QSGMII_SUB
->>>> +      ports automatically. Any one of the 4 CPSW5G ports can act as the
->>>> +      main port with the rest of them being the QSGMII_SUB ports.
->>>> +    items:
->>>> +      minimum: 1
->>>> +      maximum: 4
->>>> +
->>>>  allOf:
->>>>    - if:
->>>>        properties:
->>>> @@ -73,6 +85,22 @@ allOf:
->>>>          '#phy-cells':
->>>>            const: 1
->>>>            description: CPSW port number (starting from 1)
->>>
->>> Blank line
->>
->> I will fix this in the v5 series.
->>
->>>
->>>
->>>> +  - if:
->>>> +      properties:
->>>> +        compatible:
->>>> +          contains:
->>>> +            enum:
->>>> +              - ti,j7200-cpsw5g-phy-gmii-sel
->>>> +    then:
->>>> +      properties:
->>>> +        '#phy-cells':
->>>> +          const: 1
->>>> +          description: CPSW port number (starting from 1)
->>>> +        ti,qsgmii-main-ports:
->>>> +          maxItems: 1
->>>
->>> It does not really make sense to limit items here, in the context of
->>> this patch. You got a comment for it already. Your patch should make
->>> sense on its own.
->>
->> I had defined the property as an array because there are more than one
->> QSGMII main ports for other devices for which I will be posting the
->> patches. I had planned to reuse this property, with "maxItems: 2" in the
->> future patches for other compatibles. However, as suggested by you, I
->> will change the property to a uint32 instead of uint32-array in this
->> series. Later, in my future patches for other devices, I will change it
->> back to a uint32-array when I reuse the property.
-> 
-> Wait, no. You should not change the property. This should be
-> uint32-array, because you will extend it soon, just maxItems must be
-> defined in top-level place.
-
-Thank you for clarifying. I will move "maxItems: 1" to the top where
-"ti,qsgmii-main-ports" property is first defined, and continue using the
-property as a uint32-array.
-
-Regards,
-Siddharth.
 
 -- 
 linux-phy mailing list
