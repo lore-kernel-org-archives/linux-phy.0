@@ -4,58 +4,52 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 44512ECAAD5
-	for <linux-phy@archiver.kernel.org>; Tue,  6 Sep 2022 16:31:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 80908ECAAA1
+	for <linux-phy@archiver.kernel.org>; Tue,  6 Sep 2022 16:40:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wKruYdDnFV8LmLnrUTwgQPEVcEjDnuCILo3L8gqxnLo=; b=tTv2RvfJGO+2KB
-	PvRPsnUJVW2gtCisJfhk//pPEDxx5n9LZYJ7G6TR1UNWWcUzOpIqkygYynMf2nJZLIQki9+dH2t7D
-	a6+ktHhcMKO2AvnscU+/Hk3h9PoyyN7K80eg7Usw6+7852UEv+GvM1YiAwazj6ULQhZGyY65cXoSo
-	3SzrLuzPl+59wmlZm8T8KEU6XKOqVO5csrtBiPLg09fnYJsYvsaygkXngSbdc+aSqhjVupkdpGuBb
-	cqO2K+ubIqEwsriQ1clw3y84t03XKjH9GCVH2NNs6Wkc9perRFhXr5D83dr5vKJcOEu/VfLecCdvo
-	5/yxawlRSUriJD3EwUqw==;
+	List-Owner; bh=2/hJ1mS3DA0pot5SoAMDvTW2dmQ+5+U3GlL9Qgwd2Ls=; b=CFU2tldoSykooL
+	2lz2li0WfSub7G+G8jNQ1YOOGdLi055+JXPFZT+ZySUl8ZW8cb5NU0EEX+Z+LfuXonmwa2qIeYdcT
+	tn82iDqf5Zel3zEtyVQHZAQSfQQmE9ExGGEtZUxPsHTsaiWKZONkFzP//GuMTQBOW18HnUGj99pTx
+	sZghX4BfB9NcDTrksLe5jsRzxqPeLSuX0fVBKiAMbvxvD2vF3HcP9yYtNiv7PPjwXSmYL2CH3E7mz
+	w9qhQcjMSVoszr7O4siLiZMkf/lK5wFk6uxZ/VZQi5lRVwuj6AWPSKXZ1hekgHBdUERoX2F0pVzqj
+	HBYSE29jSaw7YF82GwnQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oVbU7-00FRky-T6; Tue, 06 Sep 2022 16:31:35 +0000
+	id 1oVbd4-00FVmK-IJ; Tue, 06 Sep 2022 16:40:50 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oVbDc-00FGr0-D5
-	for linux-phy@lists.infradead.org; Tue, 06 Sep 2022 16:14:33 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.5/8.17.1.5) with ESMTP id 286CWWUb026293;
-	Tue, 6 Sep 2022 16:14:28 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
- mime-version : subject : to : cc : references : from : in-reply-to :
- content-type : content-transfer-encoding; s=qcppdkim1;
- bh=h5BgBKL+F8wAqWSvAJ0pDMx/YCeZeVPg3n3Av6WFlcs=;
- b=eUp0Rr4sZXWW6JYC7UA8x+MfLtNMmJkOoU6N83vDH8rU7PCuA/71S2zpInvVlDDOKagB
- KakyrFxCSaBuph6TZfZW5j0/abmUP/L1ld4hSSe+07kpnjQcb0L5JcrczLz1MmYPFC7m
- fg83nDu0H2luP4lz7WOA/X2nscsBY9O1FyMDTEfROx/KG6W1RFu85A+0F34KRTtoC2Jc
- UpaLDcIJJEN2YJqvg1aFjvjMbbDzJsn5rx/c0tzGiRyszQ/6HXS0Imesns9UuJw4Cwqa
- lRnkVUuAASRgEcXlJxVfF7oZBoYz0/zayD0wFkKe54bC6l7e5IDH8fSPkWlu0KIPw8A2 lg== 
+	id 1oVbF8-00FHmv-Re
+	for linux-phy@lists.infradead.org; Tue, 06 Sep 2022 16:16:09 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.5/8.17.1.5) with ESMTP id 286FevMQ014734;
+	Tue, 6 Sep 2022 16:15:59 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
+ subject : date : message-id : in-reply-to : references : mime-version :
+ content-type; s=qcppdkim1;
+ bh=P0K08AFvD58uttl34t52wGuR0uk8Z3yySfEkPsT7dOk=;
+ b=Av6CRy359OfL2g9JuRh7NI8TWPri69bYsYkzAbsELFjmvjCBiEbiUs8thqlf+TRtOfXw
+ flJEdo3EgQ+1FEbxZDTYmj2zkjkFXfvyFBcNEfxCBygr0XlYFqFJKwC7SFYNFXTc/ew0
+ +opSH15n4cHADlVcdD/HCmLbPWPav4GeJ9lTkEgWbwjqI2vsYs5wIxl/85oLhbfd6T/l
+ ZSSKUQk5JYjvK3EPZl/L2uMcw9LUm8fn3LvWd+HWG9q/3G0bF8BYUDDNseoB2FMLN9Ku
+ 3eaL+CzFDsPvIkWE21c/6ECLZIdvAlniyWuMgqNez+OI3uCwtO1b3pkBf9sAIz+7oBHa +Q== 
 Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3jdusrjr36-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3je0mft7en-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 06 Sep 2022 16:14:28 +0000
+	Tue, 06 Sep 2022 16:15:59 +0000
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 286GERi1002600
+	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 286GFwvd004108
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 6 Sep 2022 16:14:27 GMT
-Received: from [10.216.11.219] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.986.29; Tue, 6 Sep 2022
- 09:14:21 -0700
-Message-ID: <e61dc3f2-7c56-2474-fdaf-f0ad0337d67a@quicinc.com>
-Date: Tue, 6 Sep 2022 21:44:17 +0530
-MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) Gecko/20100101
- Thunderbird/91.12.0
-Subject: Re: [PATCH v12 0/3] Add QCOM SNPS PHY overriding params support
-Content-Language: en-US
+	Tue, 6 Sep 2022 16:15:58 GMT
+Received: from hu-kriskura-hyd.qualcomm.com (10.80.80.8) by
+ nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.986.29; Tue, 6 Sep 2022 09:15:52 -0700
+From: Krishna Kurapati <quic_kriskura@quicinc.com>
 To: Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
         Rob Herring
 	<robh+dt@kernel.org>, Andy Gross <agross@kernel.org>,
@@ -73,28 +67,34 @@ To: Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
 CC: <devicetree@vger.kernel.org>, <linux-arm-msm@vger.kernel.org>,
         <linux-usb@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
         <linux-phy@lists.infradead.org>, <quic_pkondeti@quicinc.com>,
-        <quic_ppratap@quicinc.com>, <quic_vpulyala@quicinc.com>
-References: <1662480729-10187-1-git-send-email-quic_kriskura@quicinc.com>
-From: Krishna Kurapati PSSNV <quic_kriskura@quicinc.com>
-In-Reply-To: <1662480729-10187-1-git-send-email-quic_kriskura@quicinc.com>
+        <quic_ppratap@quicinc.com>, <quic_vpulyala@quicinc.com>,
+        Krishna Kurapati
+	<quic_kriskura@quicinc.com>
+Subject: [PATCH v13 2/3] phy: qcom-snps: Add support for overriding phy tuning parameters
+Date: Tue, 6 Sep 2022 21:45:32 +0530
+Message-ID: <1662480933-12326-3-git-send-email-quic_kriskura@quicinc.com>
+X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1662480933-12326-1-git-send-email-quic_kriskura@quicinc.com>
+References: <1662480933-12326-1-git-send-email-quic_kriskura@quicinc.com>
+MIME-Version: 1.0
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: y9mUZDpt0vE_JVAKigAvO8uCIXkGj54w
-X-Proofpoint-ORIG-GUID: y9mUZDpt0vE_JVAKigAvO8uCIXkGj54w
+X-Proofpoint-GUID: FaaMQWIw7Iz60FB2SDQtrLE8OjGMLVjO
+X-Proofpoint-ORIG-GUID: FaaMQWIw7Iz60FB2SDQtrLE8OjGMLVjO
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.205,Aquarius:18.0.895,Hydra:6.0.528,FMLib:17.11.122.1
  definitions=2022-09-06_09,2022-09-06_02,2022-06-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 spamscore=0
- bulkscore=0 lowpriorityscore=0 phishscore=0 impostorscore=0
- priorityscore=1501 mlxlogscore=769 malwarescore=0 suspectscore=0
- clxscore=1015 adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 spamscore=0
+ malwarescore=0 mlxlogscore=999 clxscore=1015 lowpriorityscore=0
+ bulkscore=0 priorityscore=1501 impostorscore=0 mlxscore=0 adultscore=0
+ suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.12.0-2207270000 definitions=main-2209060076
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220906_091432_519680_FEC4598D 
-X-CRM114-Status: GOOD (  19.35  )
+X-CRM114-CacheID: sfid-20220906_091607_089529_428BDB78 
+X-CRM114-Status: GOOD (  25.34  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,81 +106,346 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Add support for overriding electrical signal tuning parameters for
+SNPS HS Phy.
 
+Signed-off-by: Krishna Kurapati <quic_kriskura@quicinc.com>
+---
+ drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c | 255 +++++++++++++++++++++++++-
+ 1 file changed, 253 insertions(+), 2 deletions(-)
 
-On 9/6/2022 9:42 PM, Krishna Kurapati wrote:
-> Added support for overriding tuning parameters in QCOM SNPS PHY
-> from device tree. This parameter tuning is required to tune the
-> hs signal on dp/dm lines for electrical compliance to be successful.
-> 
-> Changes in v12:
-> Fixed nitpicks in driver code.
-> 
-> Changes in v11:
-> Made changes to logs added in phy driver.
-> Fixed nitpicks in code.
-> 
-> Changes in v10:
-> Fixed patch headers.
-> 
-> changes in v9:
-> Fixed nitpick in driver code.
-> 
-> changes in v8:
-> Fixed nitpick in driver code.
-> 
-> changes in v7:
-> Fixed nitpick in driver code and dtsi file.
-> 
-> changes in v6:
-> Fixed errors in dt-bindings.
-> Fixed nitpick in driver code.
-> 
-> changes in v5:
-> Fixed nitpicks in code.
-> Added minimum and maximum for each parameter added in dt-bindings.
-> Added proper suffixes to each parameter as per dtschema.
-> 
-> changes in v4:
-> Fixed nitpicks in code.
-> Initial compliance test results showed overshoot in the middle of eye
-> diagram. The current dt values were put in place to correct it and fix
-> overshoot issue.
-> 
-> changes in v3:
-> Added support for phy tuning parameters to be represented in bps and
-> corresponding register values to be written are obtained by traversing
-> through data map declared in the driver.
-> 
-> changes in v2:
-> Reading the individual fields in each overriding register from
-> device tree.
-> 
-> Krishna Kurapati (2):
->    phy: qcom-snps: Add support for overriding phy tuning parameters
->    arm64: dts: qcom: sc7280: Update SNPS Phy params for SC7280 IDP device
-> 
-> Sandeep Maheswaram (1):
->    dt-bindings: phy: qcom,usb-snps-femto-v2: Add phy override params
->      bindings
-> 
->   .../bindings/phy/qcom,usb-snps-femto-v2.yaml       |  88 +++++++
->   arch/arm64/boot/dts/qcom/sc7280-idp.dtsi           |   6 +
->   drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c      | 252 ++++++++++++++++++++-
->   3 files changed, 344 insertions(+), 2 deletions(-)
-> 
-Hi All,
+diff --git a/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c b/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
+index 5d20378..2502294 100644
+--- a/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
++++ b/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
+@@ -52,6 +52,12 @@
+ #define USB2_SUSPEND_N				BIT(2)
+ #define USB2_SUSPEND_N_SEL			BIT(3)
+ 
++#define USB2_PHY_USB_PHY_HS_PHY_OVERRIDE_X0		(0x6c)
++#define USB2_PHY_USB_PHY_HS_PHY_OVERRIDE_X1		(0x70)
++#define USB2_PHY_USB_PHY_HS_PHY_OVERRIDE_X2		(0x74)
++#define USB2_PHY_USB_PHY_HS_PHY_OVERRIDE_X3		(0x78)
++#define PARAM_OVRD_MASK				0xFF
++
+ #define USB2_PHY_USB_PHY_CFG0			(0x94)
+ #define UTMI_PHY_DATAPATH_CTRL_OVERRIDE_EN	BIT(0)
+ #define UTMI_PHY_CMN_CTRL_OVERRIDE_EN		BIT(1)
+@@ -60,12 +66,47 @@
+ #define REFCLK_SEL_MASK				GENMASK(1, 0)
+ #define REFCLK_SEL_DEFAULT			(0x2 << 0)
+ 
++#define HS_DISCONNECT_MASK			GENMASK(2, 0)
++#define SQUELCH_DETECTOR_MASK			GENMASK(7, 5)
++
++#define HS_AMPLITUDE_MASK			GENMASK(3, 0)
++#define PREEMPHASIS_DURATION_MASK		BIT(5)
++#define PREEMPHASIS_AMPLITUDE_MASK		GENMASK(7, 6)
++
++#define HS_RISE_FALL_MASK			GENMASK(1, 0)
++#define HS_CROSSOVER_VOLTAGE_MASK		GENMASK(3, 2)
++#define HS_OUTPUT_IMPEDANCE_MASK		GENMASK(5, 4)
++
++#define LS_FS_OUTPUT_IMPEDANCE_MASK		GENMASK(3, 0)
++
+ static const char * const qcom_snps_hsphy_vreg_names[] = {
+ 	"vdda-pll", "vdda33", "vdda18",
+ };
+ 
+ #define SNPS_HS_NUM_VREGS		ARRAY_SIZE(qcom_snps_hsphy_vreg_names)
+ 
++struct override_param {
++	s32	value;
++	u8	reg_val;
++};
++
++struct override_param_map {
++	const char *prop_name;
++	const struct override_param *param_table;
++	u8 table_size;
++	u8 reg_offset;
++	u8 param_mask;
++};
++
++struct phy_override_seq {
++	bool	need_update;
++	u8	offset;
++	u8	value;
++	u8	mask;
++};
++
++#define NUM_HSPHY_TUNING_PARAMS	(9)
++
+ /**
+  * struct qcom_snps_hsphy - snps hs phy attributes
+  *
+@@ -91,6 +132,7 @@ struct qcom_snps_hsphy {
+ 
+ 	bool phy_initialized;
+ 	enum phy_mode mode;
++	struct phy_override_seq update_seq_cfg[NUM_HSPHY_TUNING_PARAMS];
+ };
+ 
+ static inline void qcom_snps_hsphy_write_mask(void __iomem *base, u32 offset,
+@@ -173,10 +215,158 @@ static int qcom_snps_hsphy_set_mode(struct phy *phy, enum phy_mode mode,
+ 	return 0;
+ }
+ 
++static const struct override_param hs_disconnect_sc7280[] = {
++	{ -272, 0 },
++	{ 0, 1 },
++	{ 317, 2 },
++	{ 630, 3 },
++	{ 973, 4 },
++	{ 1332, 5 },
++	{ 1743, 6 },
++	{ 2156, 7 },
++};
++
++static const struct override_param squelch_det_threshold_sc7280[] = {
++	{ -2090, 7 },
++	{ -1560, 6 },
++	{ -1030, 5 },
++	{ -530, 4 },
++	{ 0, 3 },
++	{ 530, 2 },
++	{ 1060, 1 },
++	{ 1590, 0 },
++};
++
++static const struct override_param hs_amplitude_sc7280[] = {
++	{ -660, 0 },
++	{ -440, 1 },
++	{ -220, 2 },
++	{ 0, 3 },
++	{ 230, 4 },
++	{ 440, 5 },
++	{ 650, 6 },
++	{ 890, 7 },
++	{ 1110, 8 },
++	{ 1330, 9 },
++	{ 1560, 10 },
++	{ 1780, 11 },
++	{ 2000, 12 },
++	{ 2220, 13 },
++	{ 2430, 14 },
++	{ 2670, 15 },
++};
++
++static const struct override_param preemphasis_duration_sc7280[] = {
++	{ 10000, 1 },
++	{ 20000, 0 },
++};
++
++static const struct override_param preemphasis_amplitude_sc7280[] = {
++	{ 10000, 1 },
++	{ 20000, 2 },
++	{ 30000, 3 },
++	{ 40000, 0 },
++};
++
++static const struct override_param hs_rise_fall_time_sc7280[] = {
++	{ -4100, 3 },
++	{ 0, 2 },
++	{ 2810, 1 },
++	{ 5430, 0 },
++};
++
++static const struct override_param hs_crossover_voltage_sc7280[] = {
++	{ -31000, 1 },
++	{ 0, 3 },
++	{ 28000, 2 },
++};
++
++static const struct override_param hs_output_impedance_sc7280[] = {
++	{ -2300000, 3 },
++	{ 0, 2 },
++	{ 2600000, 1 },
++	{ 6100000, 0 },
++};
++
++static const struct override_param ls_fs_output_impedance_sc7280[] = {
++	{ -1053, 15 },
++	{ -557, 7 },
++	{ 0, 3 },
++	{ 612, 1 },
++	{ 1310, 0 },
++};
++
++static const struct override_param_map sc7280_snps_7nm_phy[] = {
++	{
++		"qcom,hs-disconnect-bp",
++		hs_disconnect_sc7280,
++		ARRAY_SIZE(hs_disconnect_sc7280),
++		USB2_PHY_USB_PHY_HS_PHY_OVERRIDE_X0,
++		HS_DISCONNECT_MASK
++	},
++	{
++		"qcom,squelch-detector-bp",
++		squelch_det_threshold_sc7280,
++		ARRAY_SIZE(squelch_det_threshold_sc7280),
++		USB2_PHY_USB_PHY_HS_PHY_OVERRIDE_X0,
++		SQUELCH_DETECTOR_MASK
++	},
++	{
++		"qcom,hs-amplitude-bp",
++		hs_amplitude_sc7280,
++		ARRAY_SIZE(hs_amplitude_sc7280),
++		USB2_PHY_USB_PHY_HS_PHY_OVERRIDE_X1,
++		HS_AMPLITUDE_MASK
++	},
++	{
++		"qcom,pre-emphasis-duration-bp",
++		preemphasis_duration_sc7280,
++		ARRAY_SIZE(preemphasis_duration_sc7280),
++		USB2_PHY_USB_PHY_HS_PHY_OVERRIDE_X1,
++		PREEMPHASIS_DURATION_MASK,
++	},
++	{
++		"qcom,pre-emphasis-amplitude-bp",
++		preemphasis_amplitude_sc7280,
++		ARRAY_SIZE(preemphasis_amplitude_sc7280),
++		USB2_PHY_USB_PHY_HS_PHY_OVERRIDE_X1,
++		PREEMPHASIS_AMPLITUDE_MASK,
++	},
++	{
++		"qcom,hs-rise-fall-time-bp",
++		hs_rise_fall_time_sc7280,
++		ARRAY_SIZE(hs_rise_fall_time_sc7280),
++		USB2_PHY_USB_PHY_HS_PHY_OVERRIDE_X2,
++		HS_RISE_FALL_MASK
++	},
++	{
++		"qcom,hs-crossover-voltage-microvolt",
++		hs_crossover_voltage_sc7280,
++		ARRAY_SIZE(hs_crossover_voltage_sc7280),
++		USB2_PHY_USB_PHY_HS_PHY_OVERRIDE_X2,
++		HS_CROSSOVER_VOLTAGE_MASK
++	},
++	{
++		"qcom,hs-output-impedance-micro-ohms",
++		hs_output_impedance_sc7280,
++		ARRAY_SIZE(hs_output_impedance_sc7280),
++		USB2_PHY_USB_PHY_HS_PHY_OVERRIDE_X2,
++		HS_OUTPUT_IMPEDANCE_MASK,
++	},
++	{
++		"qcom,ls-fs-output-impedance-bp",
++		ls_fs_output_impedance_sc7280,
++		ARRAY_SIZE(ls_fs_output_impedance_sc7280),
++		USB2_PHY_USB_PHY_HS_PHY_OVERRIDE_X3,
++		LS_FS_OUTPUT_IMPEDANCE_MASK,
++	},
++	{},
++};
++
+ static int qcom_snps_hsphy_init(struct phy *phy)
+ {
+ 	struct qcom_snps_hsphy *hsphy = phy_get_drvdata(phy);
+-	int ret;
++	int ret, i;
+ 
+ 	dev_vdbg(&phy->dev, "%s(): Initializing SNPS HS phy\n", __func__);
+ 
+@@ -223,6 +413,14 @@ static int qcom_snps_hsphy_init(struct phy *phy)
+ 	qcom_snps_hsphy_write_mask(hsphy->base, USB2_PHY_USB_PHY_HS_PHY_CTRL1,
+ 					VBUSVLDEXT0, VBUSVLDEXT0);
+ 
++	for (i = 0; i < ARRAY_SIZE(hsphy->update_seq_cfg); i++) {
++		if (hsphy->update_seq_cfg[i].need_update)
++			qcom_snps_hsphy_write_mask(hsphy->base,
++					hsphy->update_seq_cfg[i].offset,
++					hsphy->update_seq_cfg[i].mask,
++					hsphy->update_seq_cfg[i].value);
++	}
++
+ 	qcom_snps_hsphy_write_mask(hsphy->base,
+ 					USB2_PHY_USB_PHY_HS_PHY_CTRL_COMMON2,
+ 					VREGBYPASS, VREGBYPASS);
+@@ -280,7 +478,10 @@ static const struct phy_ops qcom_snps_hsphy_gen_ops = {
+ static const struct of_device_id qcom_snps_hsphy_of_match_table[] = {
+ 	{ .compatible	= "qcom,sm8150-usb-hs-phy", },
+ 	{ .compatible	= "qcom,usb-snps-hs-5nm-phy", },
+-	{ .compatible	= "qcom,usb-snps-hs-7nm-phy", },
++	{
++		.compatible	= "qcom,usb-snps-hs-7nm-phy",
++		.data		= &sc7280_snps_7nm_phy,
++	},
+ 	{ .compatible	= "qcom,usb-snps-femto-v2-phy",	},
+ 	{ }
+ };
+@@ -291,6 +492,55 @@ static const struct dev_pm_ops qcom_snps_hsphy_pm_ops = {
+ 			   qcom_snps_hsphy_runtime_resume, NULL)
+ };
+ 
++static void qcom_snps_hsphy_override_param_update_val(
++			const struct override_param_map map,
++			s32 dt_val, struct phy_override_seq *seq_entry)
++{
++	int i;
++
++	/*
++	 * Param table for each param is in increasing order
++	 * of dt values. We need to iterate over the list to
++	 * select the entry that matches the dt value and pick
++	 * up the corresponding register value.
++	 */
++	for (i = 0; i < map.table_size - 1; i++) {
++		if (map.param_table[i].value == dt_val)
++			break;
++	}
++
++	seq_entry->need_update = true;
++	seq_entry->offset = map.reg_offset;
++	seq_entry->mask = map.param_mask;
++	seq_entry->value = map.param_table[i].reg_val << __ffs(map.param_mask);
++}
++
++static void qcom_snps_hsphy_read_override_param_seq(struct device *dev)
++{
++	struct device_node *node = dev->of_node;
++	s32 val;
++	int ret, i;
++	struct qcom_snps_hsphy *hsphy;
++	const struct override_param_map *cfg = of_device_get_match_data(dev);
++
++	if (!cfg)
++		return;
++
++	hsphy = dev_get_drvdata(dev);
++
++	for (i = 0; cfg[i].prop_name != NULL; i++) {
++		ret = of_property_read_s32(node, cfg[i].prop_name, &val);
++		if (ret)
++			continue;
++
++		qcom_snps_hsphy_override_param_update_val(cfg[i], val,
++					&hsphy->update_seq_cfg[i]);
++		dev_dbg(&hsphy->phy->dev, "Read param: %s dt_val: %d reg_val: 0x%x\n",
++			cfg[i].prop_name, val, hsphy->update_seq_cfg[i].value);
++
++	}
++}
++
+ static int qcom_snps_hsphy_probe(struct platform_device *pdev)
+ {
+ 	struct device *dev = &pdev->dev;
+@@ -352,6 +602,7 @@ static int qcom_snps_hsphy_probe(struct platform_device *pdev)
+ 
+ 	dev_set_drvdata(dev, hsphy);
+ 	phy_set_drvdata(generic_phy, hsphy);
++	qcom_snps_hsphy_read_override_param_seq(dev);
+ 
+ 	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
+ 	if (!IS_ERR(phy_provider))
+-- 
+2.7.4
 
-  Please ignore this series. Re-sent v12 instead of v13.
-Sorry for the inconvenience.
-
-Regards,
-Krishna,
 
 -- 
 linux-phy mailing list
