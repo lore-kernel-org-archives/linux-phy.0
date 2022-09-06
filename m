@@ -4,87 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 02CF7C38145
-	for <linux-phy@archiver.kernel.org>; Tue,  6 Sep 2022 17:51:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7A80EC38145
+	for <linux-phy@archiver.kernel.org>; Tue,  6 Sep 2022 17:58:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=C2EZ7yDP3Kux3WC0IsvpnLBxLRZxHboSj17lyTy3th0=; b=Fty+G0nppIXJY2
-	0VrcuO44jWypakFYbdYrTRPuCnHiQsDz82mFz9PQxdnGt5yL+jXxRCzvBz5vOy13vrbTAduWisVTe
-	5oNIXdczmzVrAE9jphKPRLgvw8w7TPtx+jiVJZwojg1NqZfOeipsRlT0FLgNtqf52h8lxp4rFUDXy
-	ShGgDdi8rVhX2lLfWqn31pvskzow5RjGVuzHvG1fM83Ll55lmWtDGBt/yzrmypKTP9g8bfj7ozu8+
-	Xmv7dFDoSzDDp7CGTlgsYyWXyiDBM8bjEVjJj4tQ9w2+LA4YgEAPOvT2VdcQbwAdtzOYyiQTuIbGS
-	wnyW+XcwwY98H4ecQO8w==;
+	List-Owner; bh=kc4EVb4BUujya4f/ka+OVnbmyXdPZKtZSGgH6ZDMdKk=; b=W+ZnEFNhHtj4Yd
+	RnQJq9zb14EgCfE0tb+DC9abSz/VqgID2n+E5/z9qjTecRrnlLc/zKPOF47EzypzziE7dHj0kL6Lg
+	0s8nBVmeknZIpunkExDZGZVBIoFI4P6PdXQyGlg2ojTTFl4AruNhu3L+SiCGqRMnxse5M6UUxiZoP
+	k4frY/O5weM877U3FemiozNcUzbZoS9dCVGPewcBbKYPUG/Ybs6CcGU5Dghy3XyKfahKQRWUwHfGX
+	EAc6DX4i+Ic7TfpKzYbRhblASqwSHbWVK1XwO2oUKd/qhr+dCjB3sxxk7W35Qy1OzGX7MbZaFXSH9
+	JhQUTmB2qc+dE04rolvg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oVcjm-00G86l-9S; Tue, 06 Sep 2022 17:51:50 +0000
-Received: from mail-oo1-xc29.google.com ([2607:f8b0:4864:20::c29])
+	id 1oVcpy-00GBk5-Mo; Tue, 06 Sep 2022 17:58:14 +0000
+Received: from mail-lf1-x134.google.com ([2a00:1450:4864:20::134])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oVcgc-00G6Cd-8s; Tue, 06 Sep 2022 17:48:40 +0000
-Received: by mail-oo1-xc29.google.com with SMTP id q6-20020a4aa886000000b0044b06d0c453so2044357oom.11;
-        Tue, 06 Sep 2022 10:48:32 -0700 (PDT)
+	id 1oVcps-00GBen-NO; Tue, 06 Sep 2022 17:58:11 +0000
+Received: by mail-lf1-x134.google.com with SMTP id z25so18598930lfr.2;
+        Tue, 06 Sep 2022 10:58:06 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=gmail.com; s=20210112;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date;
-        bh=Z861jG7BMhx/UqAm+BGR/UQTJzU7P1PboLjcZWY5WRs=;
-        b=LqcTc00u+oeRZejpL1N3HqNcfAJDrWhIBRQ2xgjGMPx6CmMtjgbLbbeJm+Pj/0lqWa
-         1bm/L8YEZdDIKdB2QCxPD8HzVkB8cD687s8croIEOkwnf2VonIynKgO2BTriZsqRWeUv
-         FhvbQnrSLzRnjH68kAiZRHm0h3tkV+E0niHAQYWwWt79ukPNrTRsZv66suR5DCrRB6p0
-         YVkFfeB/tcmYUMgz7UCb9ukJsFrCg8LZeSq/ulRBC/VZlKQdYVjPHkP6+nrUTVrh8Fxz
-         Ah7tTNV2DV6FFVqz59tjTeDQTz2QHHDMcdn0MsFBSjEPpSot4DlokBofMQNW/LBLgSn7
-         GT8Q==
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:from:to:cc:subject:date;
+        bh=ZTVrtBjQcjDz2HXOGZHir7kyjFYYhDnVRv7D7CHaO+8=;
+        b=KK7KHRMtwl9+8HYywuHrGYpuJRzYwogYCmFt11etZs1KJ9SU9xCFEX2Dd3uE+lgIZp
+         Q9ubct+zSFOd8O+jiZT7A1AiRpnzCnhgmiJ6EiDql57zRJDjvpG/ekbVso1zPLzrHrmV
+         cddZOHdxFPyQB/Xm7KuY5iN4AqkUXfcNe+Hv9xhyB2IdXvK03qUATSyemy5eZ0LyVIar
+         Mx12NCKgBNN8CPX2tOllFh1edhngP+27yZMPATW594l4ADyts39mr/v1nNa5HdpWoD7s
+         iRlyA+UJM8rAhYb+HdRZBz05aGZfbv/jXahYATpFM42RN4NFiscIHN4dZxnOX+YQYbkf
+         /yWA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
          :subject:date;
-        bh=Z861jG7BMhx/UqAm+BGR/UQTJzU7P1PboLjcZWY5WRs=;
-        b=YlrfsGYfMjXi4V63lIA9f23rvnM35Tv/ET73UiYao+5WA1zPzpLLUcBxv1FeivQb+/
-         tScwI148K1O6yURWRhhr9+AORBIanmBhm0YUf7/WyHRRWpouuxhodFLri+betckqvt63
-         RNgbq4SZ7BtzJ7d/1aqL94v38UNN0dOF0mPWH2F83SfCMFWwYA8IHlneJ9VdrydLNaLn
-         KguTykyqYFaM8n28mVjWsoDDBX5O7dmvaTr4sI9GaSB5cWk30Y4rksG5SedtWBSVkVNh
-         M38EoKdZVYw55uSb0ewqKdPB4Bc3tmJt2RmSLu/LqsSINvHTgGuTRzJnc0t7jFCuEALy
-         cMew==
-X-Gm-Message-State: ACgBeo0WIlDE7pKEiwU2EjUTg8uqXbipMOV0sNvQ2LO1p14c5YB2lu2X
-	OZEQ3KHa86BU1t2eY9S7AzZcR9mbCMU=
-X-Google-Smtp-Source: AA6agR5s+SV66YlDAHlmbOWm3Y9nLF+z1E5cig2we8mv7ZwsFpF1I68ZOTDKjho4zGBrFodk5eHsMw==
-X-Received: by 2002:a4a:dcc2:0:b0:449:129e:17cd with SMTP id h2-20020a4adcc2000000b00449129e17cdmr18648183oou.98.1662486511693;
-        Tue, 06 Sep 2022 10:48:31 -0700 (PDT)
-Received: from wintermute.localdomain (cpe-76-183-134-35.tx.res.rr.com. [76.183.134.35])
-        by smtp.gmail.com with ESMTPSA id o186-20020aca41c3000000b00344afa2b08bsm5568065oia.26.2022.09.06.10.48.30
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 06 Sep 2022 10:48:31 -0700 (PDT)
-From: Chris Morgan <macroalpha82@gmail.com>
-To: linux-rockchip@lists.infradead.org
-Cc: linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	dri-devel@lists.freedesktop.org,
-	cl@rock-chips.com,
-	s.hauer@pengutronix.de,
-	pgwipeout@gmail.com,
-	vkoul@kernel.org,
-	kishon@ti.com,
-	krzysztof.kozlowski+dt@linaro.org,
-	robh+dt@kernel.org,
-	daniel@ffwll.ch,
-	airlied@linux.ie,
-	heiko@sntech.de,
-	hjc@rock-chips.com,
-	Chris Morgan <macromorgan@hotmail.com>
-Subject: [PATCH v2 3/5] drm/rockchip: dsi: add rk3568 support
-Date: Tue,  6 Sep 2022 12:48:21 -0500
-Message-Id: <20220906174823.28561-4-macroalpha82@gmail.com>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20220906174823.28561-1-macroalpha82@gmail.com>
-References: <20220906174823.28561-1-macroalpha82@gmail.com>
+        bh=ZTVrtBjQcjDz2HXOGZHir7kyjFYYhDnVRv7D7CHaO+8=;
+        b=2eMcyYBlTkwSfnepQXJGDV9WlzgE02lsStLmo1R+t5BwUEWMLs0+z+EXFBXSXRv64z
+         zSpVHV0ay52JrOaLeRqGOQuA+IkeznATeWtRxNzAfXHuAiBJsLg6aCcF+QJfDMZG2fLv
+         U4UlffP17PCl7M1hSqvXyD2WhF2wV3njo+LwUzWXPgizvFXcTZlP1EUZtMab0bg4NDw0
+         HxkkZjf7CERyugiu9ELmw2rusJFymFHcd3H7vT2XsyGtfmz2cll4zTHYfWReoUDmnTvj
+         fsysBvYQmcIeSIBKompHbcYrhZOhS4zO+FdOz05nHTWyMP3P1By3ikdIR0LhH6U/9l8L
+         VwgQ==
+X-Gm-Message-State: ACgBeo04W8b/iC+mjAjdvYNJIUNQN9Q0tM/D08u0hViTD00ExfuqMxug
+	JHQ/jUKSJ8T+OEKMgVn+pWoZ5++uB2CjHIUEP+Y=
+X-Google-Smtp-Source: AA6agR6JaySd7fHnpjySEXtyO5OIRPGjYFXIHEOWdxj6R0A4R9Jb3TlvKFf1KOTkbV0TvdpzisNEqC4cOUxAPw3EmF0=
+X-Received: by 2002:a05:6512:2083:b0:496:272:627d with SMTP id
+ t3-20020a056512208300b004960272627dmr5417670lfr.115.1662487084959; Tue, 06
+ Sep 2022 10:58:04 -0700 (PDT)
 MIME-Version: 1.0
+References: <20220906174823.28561-1-macroalpha82@gmail.com>
+In-Reply-To: <20220906174823.28561-1-macroalpha82@gmail.com>
+From: Maya Matuszczyk <maccraft123mc@gmail.com>
+Date: Tue, 6 Sep 2022 19:57:28 +0200
+Message-ID: <CAO_MupLcjY=3mWA7_RN4AAPir1Gu_GR4q1=5_9wdSEi-qcHKSQ@mail.gmail.com>
+Subject: Re: [PATCH v2 0/5] rockchip-dsi for rk3568
+To: Chris Morgan <macroalpha82@gmail.com>
+Cc: "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>, linux-phy@lists.infradead.org, 
+	devicetree <devicetree@vger.kernel.org>, dri-devel@lists.freedesktop.org, 
+	cl@rock-chips.com, Sascha Hauer <s.hauer@pengutronix.de>, 
+	Peter Geis <pgwipeout@gmail.com>, vkoul@kernel.org, kishon@ti.com, 
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Rob Herring <robh+dt@kernel.org>, 
+	Daniel Vetter <daniel@ffwll.ch>, David Airlie <airlied@linux.ie>, Heiko Stuebner <heiko@sntech.de>, 
+	Sandy Huang <hjc@rock-chips.com>, Chris Morgan <macromorgan@hotmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220906_104837_127298_5AEFF9CD 
-X-CRM114-Status: GOOD (  15.32  )
+X-CRM114-CacheID: sfid-20220906_105808_864001_D5A43A3C 
+X-CRM114-Status: GOOD (  20.32  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,115 +84,47 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Chris Morgan <macromorgan@hotmail.com>
-
-Add the compatible and GRF definitions for the RK3568 soc.
-
-Signed-off-by: Chris Morgan <macromorgan@hotmail.com>
----
- .../gpu/drm/rockchip/dw-mipi-dsi-rockchip.c   | 51 ++++++++++++++++++-
- 1 file changed, 49 insertions(+), 2 deletions(-)
-
-diff --git a/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c b/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c
-index 110e83aad9bb..bf6948125b84 100644
---- a/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c
-+++ b/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c
-@@ -179,6 +179,23 @@
- #define RK3399_TXRX_SRC_SEL_ISP0	BIT(4)
- #define RK3399_TXRX_TURNREQUEST		GENMASK(3, 0)
- 
-+#define RK3568_GRF_VO_CON2		0x0368
-+#define RK3568_DSI0_SKEWCALHS		(0x1f << 11)
-+#define RK3568_DSI0_FORCETXSTOPMODE	(0xf << 4)
-+#define RK3568_DSI0_TURNDISABLE		BIT(2)
-+#define RK3568_DSI0_FORCERXMODE		BIT(0)
-+
-+/*
-+ * Note these registers do not appear in the datasheet, they are
-+ * however present in the BSP driver which is where these values
-+ * come from. Name GRF_VO_CON3 is assumed.
-+ */
-+#define RK3568_GRF_VO_CON3		0x36c
-+#define RK3568_DSI1_SKEWCALHS		(0x1f << 11)
-+#define RK3568_DSI1_FORCETXSTOPMODE	(0xf << 4)
-+#define RK3568_DSI1_TURNDISABLE		BIT(2)
-+#define RK3568_DSI1_FORCERXMODE		BIT(0)
-+
- #define HIWORD_UPDATE(val, mask)	(val | (mask) << 16)
- 
- enum {
-@@ -735,8 +752,9 @@ static void dw_mipi_dsi_rockchip_config(struct dw_mipi_dsi_rockchip *dsi)
- static void dw_mipi_dsi_rockchip_set_lcdsel(struct dw_mipi_dsi_rockchip *dsi,
- 					    int mux)
- {
--	regmap_write(dsi->grf_regmap, dsi->cdata->lcdsel_grf_reg,
--		mux ? dsi->cdata->lcdsel_lit : dsi->cdata->lcdsel_big);
-+	if (dsi->cdata->lcdsel_grf_reg < 0)
-+		regmap_write(dsi->grf_regmap, dsi->cdata->lcdsel_grf_reg,
-+			mux ? dsi->cdata->lcdsel_lit : dsi->cdata->lcdsel_big);
- }
- 
- static int
-@@ -963,6 +981,8 @@ static int dw_mipi_dsi_rockchip_bind(struct device *dev,
- 		DRM_DEV_ERROR(dev, "Failed to create drm encoder\n");
- 		goto out_pll_clk;
- 	}
-+	rockchip_drm_encoder_set_crtc_endpoint_id(&dsi->encoder,
-+						  dev->of_node, 0, 0);
- 
- 	ret = dw_mipi_dsi_bind(dsi->dmd, &dsi->encoder.encoder);
- 	if (ret) {
-@@ -1612,6 +1632,30 @@ static const struct rockchip_dw_dsi_chip_data rk3399_chip_data[] = {
- 	{ /* sentinel */ }
- };
- 
-+static const struct rockchip_dw_dsi_chip_data rk3568_chip_data[] = {
-+	{
-+		.reg = 0xfe060000,
-+		.lcdsel_grf_reg = -1,
-+		.lanecfg1_grf_reg = RK3568_GRF_VO_CON2,
-+		.lanecfg1 = HIWORD_UPDATE(0, RK3568_DSI0_SKEWCALHS |
-+					  RK3568_DSI0_FORCETXSTOPMODE |
-+					  RK3568_DSI0_TURNDISABLE |
-+					  RK3568_DSI0_FORCERXMODE),
-+		.max_data_lanes = 4,
-+	},
-+	{
-+		.reg = 0xfe070000,
-+		.lcdsel_grf_reg = -1,
-+		.lanecfg1_grf_reg = RK3568_GRF_VO_CON3,
-+		.lanecfg1 = HIWORD_UPDATE(0, RK3568_DSI1_SKEWCALHS |
-+					  RK3568_DSI1_FORCETXSTOPMODE |
-+					  RK3568_DSI1_TURNDISABLE |
-+					  RK3568_DSI1_FORCERXMODE),
-+		.max_data_lanes = 4,
-+	},
-+	{ /* sentinel */ }
-+};
-+
- static const struct of_device_id dw_mipi_dsi_rockchip_dt_ids[] = {
- 	{
- 	 .compatible = "rockchip,px30-mipi-dsi",
-@@ -1622,6 +1666,9 @@ static const struct of_device_id dw_mipi_dsi_rockchip_dt_ids[] = {
- 	}, {
- 	 .compatible = "rockchip,rk3399-mipi-dsi",
- 	 .data = &rk3399_chip_data,
-+	}, {
-+	 .compatible = "rockchip,rk3568-mipi-dsi",
-+	 .data = &rk3568_chip_data,
- 	},
- 	{ /* sentinel */ }
- };
--- 
-2.25.1
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+SGVsbG8sCldoYXQgb3RoZXIgcGF0Y2hlcyB3b3VsZCBJIG5lZWQgdG8gYXBwbHkgdG8gdGVzdCB0
+aGlzIHNlcmllcwpvbiBBbmJlcm5pYyBSRzUwMz8KCkJlc3QgUmVnYXJkcywKTWF5YSBNYXR1c3pj
+enlrCgoKd3QuLCA2IHdyeiAyMDIyIG8gMTk6NTIgQ2hyaXMgTW9yZ2FuIDxtYWNyb2FscGhhODJA
+Z21haWwuY29tPiBuYXBpc2HFgihhKToKPgo+IEZyb206IENocmlzIE1vcmdhbiA8bWFjcm9tb3Jn
+YW5AaG90bWFpbC5jb20+Cj4KPiBUaGlzIHNlcmllcyBhZGRzIHN1cHBvcnQgZm9yIHRoZSBkc2kg
+YW5kIGRwaHkgY29udHJvbGxlcnMgb24gdGhlCj4gUm9ja2NoaXAgUkszNTY4LiBJIGNhbiBjb25m
+aXJtIHRoYXQgZm9yIHRoZSBSb2NrY2hpcCBSSzM1NjggdGhpcwo+IGN1cnJlbnQgc2VyaWVzIERP
+RVMgV09SSyBub3csIGJ1dCBpdCByZXF1aXJlcyByb2xsaW5nIGJhY2sgY2xrIGNoYW5nZXMKPiBt
+YWRlIGZvciB0aGUgSERNSSBkcml2ZXIuIElmIHRoZSBjbG9jayBjaGFuZ2VzIGFyZSBub3Qgcm9s
+bGVkIGJhY2ssIHRoZQo+IGltYWdlIG9uIHRoZSBzY3JlZW4gaXMgc2hpZnRlZCBhYm91dCAxMDAg
+cGl4ZWxzIHRvIHRoZSByaWdodC4KPgo+IENsayBjaGFuZ2VzIGluIHF1ZXN0aW9uOgo+IGh0dHBz
+Oi8vZ2l0Lmtlcm5lbC5vcmcvcHViL3NjbS9saW51eC9rZXJuZWwvZ2l0L3RvcnZhbGRzL2xpbnV4
+LmdpdC9jb21taXQvZHJpdmVycy9jbGsvcm9ja2NoaXAvY2xrLXJrMzU2OC5jP2lkPWZmMzE4N2Vh
+YmI1Y2U0NzhkMTViNmVkNjJlYjI4Njc1NmFkZWZhYzMKPiBodHRwczovL2dpdC5rZXJuZWwub3Jn
+L3B1Yi9zY20vbGludXgva2VybmVsL2dpdC90b3J2YWxkcy9saW51eC5naXQvY29tbWl0L2RyaXZl
+cnMvY2xrL3JvY2tjaGlwL2Nsay1yazM1NjguYz9pZD02ZTY5MDUyZjAxZDkxMzEzODhjZmNmYWVl
+OTI5MTIwMTE4YTI2N2Y0Cj4KPiBUZXN0ZWQgb24gYW4gQW5iZXJuaWMgUkc1MDMgYW5kIFJHMzUz
+UCB3aXRoIGNsb2NrIGNoYW5nZXMgcm9sbGVkIGJhY2ssCj4gdGhlIGhhcmR3YXJlIHdvcmtzIGNv
+cnJlY3RseSBvbiBib3RoIGRldmljZXMuCj4KPiBDaGFuZ2VzIHNpbmNlIFJGQ3YxOgo+ICAtIElk
+ZW50aWZpZWQgY2F1c2Ugb2YgaW1hZ2Ugc2hpZnQgKGNsb2NrIGNoYW5nZXMpLgo+ICAtIE5vdGVk
+IHRoYXQgZHJpdmVyIHdvcmtzIG5vdy4KPiAgLSBBZGRlZCBkZXZpY2V0cmVlIG5vZGVzIGZvciBy
+azM1NnguZHRzaS4KPgo+IENocmlzIE1vcmdhbiAoNSk6Cj4gICBkdC1iaW5kaW5nczogZGlzcGxh
+eTogcm9ja2NoaXAtZHNpOiBhZGQgcmszNTY4IGNvbXBhdGlibGUKPiAgIGR0LWJpbmRpbmdzOiBw
+aHktcm9ja2NoaXAtaW5uby1kc2lkcGh5OiBhZGQgY29tcGF0aWJsZSBmb3IgcmszNTY4Cj4gICBk
+cm0vcm9ja2NoaXA6IGRzaTogYWRkIHJrMzU2OCBzdXBwb3J0Cj4gICBwaHkvcm9ja2NoaXA6IGlu
+bm8tZHNpZHBoeTogQWRkIHN1cHBvcnQgZm9yIHJrMzU2OAo+ICAgYXJtNjQ6IGR0czogcm9ja2No
+aXA6IEFkZCBEU0kgYW5kIERTSS1EUEhZIG5vZGVzIHRvIHJrMzU2eAo+Cj4gIC4uLi9kaXNwbGF5
+L3JvY2tjaGlwL2R3X21pcGlfZHNpX3JvY2tjaGlwLnR4dCB8ICAgMSArCj4gIC4uLi9iaW5kaW5n
+cy9waHkvcm9ja2NoaXAscHgzMC1kc2ktZHBoeS55YW1sICB8ICAgMSArCj4gIGFyY2gvYXJtNjQv
+Ym9vdC9kdHMvcm9ja2NoaXAvcmszNTZ4LmR0c2kgICAgICB8ICA3MiArKysrKysrCj4gIC4uLi9n
+cHUvZHJtL3JvY2tjaGlwL2R3LW1pcGktZHNpLXJvY2tjaGlwLmMgICB8ICA1MSArKysrLQo+ICAu
+Li4vcGh5L3JvY2tjaGlwL3BoeS1yb2NrY2hpcC1pbm5vLWRzaWRwaHkuYyAgfCAyMDQgKysrKysr
+KysrKysrKystLS0tCj4gIDUgZmlsZXMgY2hhbmdlZCwgMjgxIGluc2VydGlvbnMoKyksIDQ4IGRl
+bGV0aW9ucygtKQo+Cj4gLS0KPiAyLjI1LjEKPgo+Cj4gX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX18KPiBMaW51eC1yb2NrY2hpcCBtYWlsaW5nIGxpc3QKPiBM
+aW51eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQub3JnCj4gaHR0cDovL2xpc3RzLmluZnJhZGVh
+ZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1yb2NrY2hpcAoKLS0gCmxpbnV4LXBoeSBtYWls
+aW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZy
+YWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
