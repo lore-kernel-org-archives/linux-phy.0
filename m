@@ -4,68 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 119B9C38145
-	for <linux-phy@archiver.kernel.org>; Tue,  6 Sep 2022 07:46:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3E5B9C38145
+	for <linux-phy@archiver.kernel.org>; Tue,  6 Sep 2022 08:27:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fdv2C11ex0viZATfA2yDrn7enIUoT5kTXuzdKmpzV0w=; b=USd4hIjTxZTiOt
-	kCpHqb/GNJ01BF2qBcOzdSw0j/8RXxBaoTqvtUzRb/Au9SogH4wRV1uIGCrwUp88V4+Rlu8Iitw+h
-	2yeERJtU85cOu6siGQ7RoMKCTypQxBt6XhJF7+hdArYpuWOJR+cvJZmWstRNwf8igCrsTzreIcGAK
-	8JM8kNz2R7KTe+crRRscjH4jgyw3pCBuEBfTTqLxqTpgKXJ3m0jas77tslBS4o7hkumCMCjlqq5ij
-	GDRxXx+RWLMCb8dt7YqXssrlolK0oDhEstJeG71rjnsssgdWaWFKzPqfOXhT4bDwUHKOMu4/wI9CQ
-	fnTXrFGO1OA9/rTiRoNQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=pOdOr42x3T6LwkhWg9tKwCDWXYjx5xXtpaB1sKY5urc=; b=B6UG5EWk9X/DCmT5XaK3xNYv8B
+	GaY12JebilUCuIx6WFv26nfNQPqtjOOvGIkDbRzdep8KzAJFgcwLk5SCI06Du20J+NQYvJ9bARRrs
+	By3q/wcvXoEIEqUv0UNtuI6VkGZ3/52kDxsZ0x26NAFYE/zfPfq+wk8LtAlipy70Vy3P2CbODRYU8
+	pF75FMTsIJxsuZVhBSmLVcRc2fBsRfhFi4qFVJFifNcKxdU9tOom0ZYAUlIeDMLgZiT7zMDAAzDqp
+	JZMLOTct3secnfu1H/BWMdkgGPRJ5ta4SjEa62yW3rWfXV0muTLgtiJ5k25SzNv05wv6I9Sr6e3tJ
+	rVQ0Loaw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oVTHx-00Auas-Fy; Tue, 06 Sep 2022 07:46:29 +0000
-Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
+	id 1oVTw0-00BFzv-KV; Tue, 06 Sep 2022 08:27:52 +0000
+Received: from mx01.omp.ru ([90.154.21.10])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oVTHs-00AuSO-Ns
-	for linux-phy@lists.infradead.org; Tue, 06 Sep 2022 07:46:27 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by sin.source.kernel.org (Postfix) with ESMTPS id 47AF4CE1411;
-	Tue,  6 Sep 2022 07:46:17 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 86F56C43143;
-	Tue,  6 Sep 2022 07:46:15 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1662450375;
-	bh=stv2KodLgeKaNZa5CAyIDorCb1OmM6jfahmuccdBINU=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=sS4scs//uRVMm3xxTvr2jEEcMp0+xBk3LJctdshNhtNddZNa1lH5ZeJFXNQqU6GdC
-	 V/Xdg/MEEoDJQ4FyISI2bpVppaL+vbQlsSEs2DCBazdva9EDQDTYQYXnEzCBvenW71
-	 hLbE8D+rnETGTZU8YNGokSvSIHKEc0gPfj3Lk77R55XrpMfpGyyjQxg3nnqP6JIrYO
-	 I7NDVdyE6hVpKzM3d+TSCKEI7zUjQQy009Eq0reHXnE0X8DmDWhoxKTtJFsdZgGWKX
-	 9uEC2KW94LN/ypzt/bfgXCZD32JbuAAYaWUClmvqP5Mg9l6I+fcWzkAwPvINli0PWi
-	 zRwOymG7BBR/A==
-Received: from johan by xi.lan with local (Exim 4.94.2)
-	(envelope-from <johan+linaro@kernel.org>)
-	id 1oVTHm-00019K-OA; Tue, 06 Sep 2022 09:46:18 +0200
-From: Johan Hovold <johan+linaro@kernel.org>
-To: Vinod Koul <vkoul@kernel.org>
-Cc: Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@somainline.org>,
-	Kishon Vijay Abraham I <kishon@ti.com>,
-	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
-	linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH 3/3] phy: qcom-qmp: drop dual-lane comments
-Date: Tue,  6 Sep 2022 09:45:50 +0200
-Message-Id: <20220906074550.4383-4-johan+linaro@kernel.org>
-X-Mailer: git-send-email 2.35.1
-In-Reply-To: <20220906074550.4383-1-johan+linaro@kernel.org>
-References: <20220906074550.4383-1-johan+linaro@kernel.org>
+	id 1oVTvw-00BFuD-VE
+	for linux-phy@lists.infradead.org; Tue, 06 Sep 2022 08:27:51 +0000
+Received: from [192.168.1.103] (31.173.80.140) by msexch01.omp.ru
+ (10.188.4.12) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.2.986.14; Tue, 6 Sep 2022
+ 11:27:32 +0300
+Subject: Re: [PATCH] phy: usb: free the buffer after reading a given nvmem
+ cell
+To: Vincent Shih <vincent.sunplus@gmail.com>, <kishon@ti.com>,
+	<vkoul@kernel.org>, <linux-usb@vger.kernel.org>,
+	<linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+	<wells.lu@sunplus.com>
+References: <1662445382-29879-1-git-send-email-vincent.sunplus@gmail.com>
+From: Sergey Shtylyov <s.shtylyov@omp.ru>
+Organization: Open Mobile Platform
+Message-ID: <9d396131-72da-772b-3027-89d390cad1fa@omp.ru>
+Date: Tue, 6 Sep 2022 11:27:32 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
+ Thunderbird/78.10.1
 MIME-Version: 1.0
+In-Reply-To: <1662445382-29879-1-git-send-email-vincent.sunplus@gmail.com>
+Content-Language: en-US
+X-Originating-IP: [31.173.80.140]
+X-ClientProxiedBy: msexch01.omp.ru (10.188.4.12) To msexch01.omp.ru
+ (10.188.4.12)
+X-KSE-ServerInfo: msexch01.omp.ru, 9
+X-KSE-AntiSpam-Interceptor-Info: scan successful
+X-KSE-AntiSpam-Version: 5.9.20, Database issued on: 09/06/2022 07:30:13
+X-KSE-AntiSpam-Status: KAS_STATUS_NOT_DETECTED
+X-KSE-AntiSpam-Method: none
+X-KSE-AntiSpam-Rate: 59
+X-KSE-AntiSpam-Info: Lua profiles 172591 [Sep 06 2022]
+X-KSE-AntiSpam-Info: Version: 5.9.20.0
+X-KSE-AntiSpam-Info: Envelope from: s.shtylyov@omp.ru
+X-KSE-AntiSpam-Info: LuaCore: 498 498 840112829f78e8dd3e3ddbbff8b15d552f4973a3
+X-KSE-AntiSpam-Info: {rep_avail}
+X-KSE-AntiSpam-Info: {Tracking_from_domain_doesnt_match_to}
+X-KSE-AntiSpam-Info: {relay has no DNS name}
+X-KSE-AntiSpam-Info: {SMTP from is not routable}
+X-KSE-AntiSpam-Info: {Found in DNSBL: 31.173.80.140 in (user)
+ b.barracudacentral.org}
+X-KSE-AntiSpam-Info: 	127.0.0.199:7.1.2;omp.ru:7.1.1;d41d8cd98f00b204e9800998ecf8427e.com:7.1.1
+X-KSE-AntiSpam-Info: ApMailHostAddress: 31.173.80.140
+X-KSE-AntiSpam-Info: {DNS response errors}
+X-KSE-AntiSpam-Info: Rate: 59
+X-KSE-AntiSpam-Info: Status: not_detected
+X-KSE-AntiSpam-Info: Method: none
+X-KSE-AntiSpam-Info: Auth:dmarc=temperror header.from=omp.ru;spf=temperror
+ smtp.mailfrom=omp.ru;dkim=none
+X-KSE-Antiphishing-Info: Clean
+X-KSE-Antiphishing-ScanningType: Heuristic
+X-KSE-Antiphishing-Method: None
+X-KSE-Antiphishing-Bases: 09/06/2022 07:34:00
+X-KSE-AttachmentFiltering-Interceptor-Info: protection disabled
+X-KSE-Antivirus-Interceptor-Info: scan successful
+X-KSE-Antivirus-Info: Clean, bases: 9/6/2022 6:35:00 AM
+X-KSE-BulkMessagesFiltering-Scan-Result: InTheLimit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220906_004625_226331_EDF6EBDA 
-X-CRM114-Status: GOOD (  10.82  )
+X-CRM114-CacheID: sfid-20220906_012749_209440_231BBC85 
+X-CRM114-Status: GOOD (  16.01  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,68 +100,60 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Drop the obsolete and misleading dual-lane comments which gave the
-impression that only combo PHYs have a second lane.
+Hello!
 
-Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
----
- drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 1 -
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c  | 1 -
- drivers/phy/qualcomm/phy-qcom-qmp-ufs.c   | 1 -
- drivers/phy/qualcomm/phy-qcom-qmp-usb.c   | 1 -
- 4 files changed, 4 deletions(-)
+On 9/6/22 9:23 AM, Vincent Shih wrote:
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-index d200cd5ca4fa..af608c4dc869 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-@@ -2139,7 +2139,6 @@ static int qcom_qmp_phy_combo_power_on(struct phy *phy)
- 	qcom_qmp_phy_combo_configure_lane(tx, cfg->regs,
- 				    cfg->tx_tbl, cfg->tx_tbl_num, 1);
- 
--	/* Configuration for other LANE for USB-DP combo PHY */
- 	if (cfg->is_dual_lane_phy) {
- 		qcom_qmp_phy_combo_configure_lane(qphy->tx2, cfg->regs,
- 					    cfg->tx_tbl, cfg->tx_tbl_num, 2);
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-index 3766a6d44e87..2923977b205a 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-@@ -2036,7 +2036,6 @@ static int qmp_pcie_power_on(struct phy *phy)
- 	qmp_pcie_configure_lane(tx, cfg->regs, cfg->tx_tbl, cfg->tx_tbl_num, 1);
- 	qmp_pcie_configure_lane(tx, cfg->regs, cfg->tx_tbl_sec, cfg->tx_tbl_num_sec, 1);
- 
--	/* Configuration for other LANE for USB-DP combo PHY */
- 	if (cfg->is_dual_lane_phy) {
- 		qmp_pcie_configure_lane(qphy->tx2, cfg->regs, cfg->tx_tbl,
- 					cfg->tx_tbl_num, 2);
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-index c8583f5a54bd..01a99a06fd4f 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-@@ -1020,7 +1020,6 @@ static int qcom_qmp_phy_ufs_power_on(struct phy *phy)
- 	qcom_qmp_phy_ufs_configure_lane(tx, cfg->regs,
- 				    cfg->tx_tbl, cfg->tx_tbl_num, 1);
- 
--	/* Configuration for other LANE for USB-DP combo PHY */
- 	if (cfg->is_dual_lane_phy) {
- 		qcom_qmp_phy_ufs_configure_lane(qphy->tx2, cfg->regs,
- 					    cfg->tx_tbl, cfg->tx_tbl_num, 2);
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-index 59ed6c89979d..fba8e40441cb 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-@@ -2283,7 +2283,6 @@ static int qcom_qmp_phy_usb_power_on(struct phy *phy)
- 	qcom_qmp_phy_usb_configure_lane(tx, cfg->regs,
- 				    cfg->tx_tbl, cfg->tx_tbl_num, 1);
- 
--	/* Configuration for other LANE for USB-DP combo PHY */
- 	if (cfg->is_dual_lane_phy) {
- 		qcom_qmp_phy_usb_configure_lane(qphy->tx2, cfg->regs,
- 					    cfg->tx_tbl, cfg->tx_tbl_num, 2);
--- 
-2.35.1
+> Use kfree() to free the buffer after calling nvmem_cell_read() to
+> read a given nvmem cell.
 
+   Your patch does more than just that. It looks like we need 2 patches here...
+
+> Fixes:99d9ccd97385("phy: usb: Add USB2.0 phy driver for Sunplus SP7021")
+
+   Need spaces after : and before (.
+
+> Signed-off-by: Vincent Shih <vincent.sunplus@gmail.com>
+> ---
+>  drivers/phy/sunplus/phy-sunplus-usb2.c | 10 +++++++---
+>  1 file changed, 7 insertions(+), 3 deletions(-)
+> 
+> diff --git a/drivers/phy/sunplus/phy-sunplus-usb2.c b/drivers/phy/sunplus/phy-sunplus-usb2.c
+> index 5269968..c8540e1 100644
+> --- a/drivers/phy/sunplus/phy-sunplus-usb2.c
+> +++ b/drivers/phy/sunplus/phy-sunplus-usb2.c
+[...]
+> @@ -92,13 +93,15 @@ static int update_disc_vol(struct sp_usbphy *usbphy)
+>  	otp_v = nvmem_cell_read(cell, &otp_l);
+>  	nvmem_cell_put(cell);
+>  
+> -	if (otp_v) {
+> +	if (!IS_ERR(otp_v)) {
+
+   This needs a separate patch, I think...
+
+>  		set = *(otp_v + 1);
+>  		set = (set << (sizeof(char) * 8)) | *otp_v;
+>  		set = (set >> usbphy->disc_vol_addr_off) & J_DISC;
+> +		
+> +		kfree(otp_v);
+>  	}
+> -
+> -	if (!otp_v || set == 0)
+> +	
+> +	if (IS_ERR(otp_v) || (set == 0))
+>  		set = OTP_DISC_LEVEL_DEFAULT;
+>  
+>  	val = readl(usbphy->phy_regs + CONFIG7);
+> @@ -294,3 +297,4 @@ module_platform_driver(sunplus_usb_phy_driver);
+>  MODULE_AUTHOR("Vincent Shih <vincent.shih@sunplus.com>");
+>  MODULE_DESCRIPTION("Sunplus USB 2.0 phy driver");
+>  MODULE_LICENSE("GPL");
+> +
+
+   Huh? :-)
+
+MBR, Sergey
 
 -- 
 linux-phy mailing list
