@@ -4,57 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5116DC6FA83
-	for <linux-phy@archiver.kernel.org>; Tue,  6 Sep 2022 06:38:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3E469ECAAA1
+	for <linux-phy@archiver.kernel.org>; Tue,  6 Sep 2022 07:03:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OK6kU6CKYDAteica9Vvo943W+87XeGoDq0EzvykeCkk=; b=wc1UZTWxwzlaVr
-	iF4P26hOAH048anFj/d50ii3wPLRUKM2qgvbSGgj8VqKUhCpUYorLsw7nNl7m0FVOadohmUkxfDmB
-	9XDoHwwS2I99pkxB+/18cYavvQ8gXNYH4jJMe9uhGzjIWTF3EZ+Alh5M49fHqjq68Dy5/WD5cDB/L
-	MbCXl4fjlAF5VNCWvyFJVv33g5/E07rdMUivPQjq9zscMLG1wXUcYu0X5dDJVdgl3O4q6+hZtIaB/
-	zzgbn+jhhUqeC3vvZTEFvGUOaTknJbv/w1FfWsReTWb4oKs4zhzOAunMEcupSRDsgkjZL71oIKSnJ
-	Yifxwi5PSczPPhQxbgrQ==;
+	List-Owner; bh=a+FvHyaFgWSbKkgDumvOTQ7pOe9EjaKovtmx7PqXKdM=; b=YoWv4WFt9JRkAP
+	NeNE6wKf1oqmtSWjM+e6/uLJ0VpsEPejpuUeYrY7E/4b3sV5rfhnbfJ4GPD6+ai31mPBI2khP4Gng
+	0KOMDbhZ8zQRrSEt6j5vRsgLf304KVbulWFhaqeXsKLSFZu2sGc4sL6O/5vBONvK9Am0viDZe+6QX
+	Obk8xSsusq41Pdvjm8Q96jKEuyrFaFqP7W5GfCqNn/77xsvn7SzkUN7aBnzY9BUd3u49nujNus61N
+	dkOYYvFTz9G5h0EYjpCm3Qe7PwJz/ERS8CEVTTWwt+Uc7qmRwzG5qbwWOr6//M4aioJcAeoyeG+xc
+	H412V49pOxWwqLZhHJuQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oVSE1-00ATWr-Dw; Tue, 06 Sep 2022 06:38:21 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1oVSc7-00Adii-Gd; Tue, 06 Sep 2022 07:03:15 +0000
+Received: from mail-lf1-x132.google.com ([2a00:1450:4864:20::132])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oVSDv-00ATRL-HD
-	for linux-phy@lists.infradead.org; Tue, 06 Sep 2022 06:38:17 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id BF70561315;
-	Tue,  6 Sep 2022 06:38:14 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A81FAC433D6;
-	Tue,  6 Sep 2022 06:38:13 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=linuxfoundation.org;
-	s=korg; t=1662446294;
-	bh=QsCDlqO4tjSBHwaY1BpaR2HUe1nmWPIOovcOuwER1F0=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=YBSs4dEHzflv4FTctNetNLXgdPKv5Hqe+R/BB1M9gAM5+84WiarO4LPC+Ya3Zn9JM
-	 GwjUeuXMi/iCXJYbX0JLzs6ebCB6XxE+nWEJARGKdcy+dBWfOqGiTXED+cTPQ6gZ7v
-	 Q8DmXDYsuVmPfRNQuJAdaysTt583Ugr2z7WxUd8s=
-Date: Tue, 6 Sep 2022 08:38:11 +0200
-From: Greg KH <gregkh@linuxfoundation.org>
-To: Vincent Shih <vincent.sunplus@gmail.com>
-Cc: kishon@ti.com, vkoul@kernel.org, linux-usb@vger.kernel.org,
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
-	wells.lu@sunplus.com
-Subject: Re: [PATCH] phy: usb: free the buffer after reading a given nvmem
- cell
-Message-ID: <Yxbq0ynfdsKNAySv@kroah.com>
-References: <1662445382-29879-1-git-send-email-vincent.sunplus@gmail.com>
+	id 1oVSc4-00Addr-Qs
+	for linux-phy@lists.infradead.org; Tue, 06 Sep 2022 07:03:14 +0000
+Received: by mail-lf1-x132.google.com with SMTP id z25so15984683lfr.2
+        for <linux-phy@lists.infradead.org>; Tue, 06 Sep 2022 00:03:10 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date;
+        bh=Vh5dKJp8XgybaVsAxsDRTMhVft4uU9zUN/Q42DYvyOQ=;
+        b=K0mgYUOSou8QTlHcWhgwVshbgWLtJ1Eab3Sx8oxOBkZ35lLxyfk1myRr+wT9OIrm1f
+         SvN4RyuEgytQQ0ubS/YvvQIU1TqX6GeWdCuiwYLZ4LanwnEOqBaL77rIgB27zfnCRjDQ
+         8SA8G3pploFaxzyEC+vZEb02+7lIrGH6Cpx6Wt2kdNtIxceT4pFXZ6pwL1MBYFVOCxeY
+         9VpZqwwbyDjHLawD5I74XsZSkBrtABF5/TdSBkiYhpl3Bo8ER7bi6kZt7tiURx3NQR9a
+         +hfPVuGG9n25leSTr+lhBXP7Q20h/5chBiiuXWsIoyZr3YKP4nL60Zc/nczXceCMgAh5
+         xjcA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date;
+        bh=Vh5dKJp8XgybaVsAxsDRTMhVft4uU9zUN/Q42DYvyOQ=;
+        b=5EMbDiZ81Dz4MZ9jxpY7xs8gFim06742qTC4NgyCh0+Pc3xrjJPly206MC2+Dq0H9f
+         slzbvVd/ZEDF4mgj77XHtFILQ8tJ1sDAuadxwDWfe7GFYi+8sDFU6jVy9nNFKUr0jya0
+         MDj7Tq2z5q5jNkXByIR/GavRdvIoy/6e49oO6Fr/YmVdGM2HanV8WXfGnz9at37CCMI2
+         manYbYDBfhvU3+gQmIqxYyZcYXzAg5nmzhQgFISnVN2/Ydbo2Mo+F2sNs8Oq6hjJ1SdL
+         LGVOaz/SkGFOqwP1I47Rfif5RLw9NzqxFyoUtQNKgMKajCkGNXzzEXMhpCw6yhRts628
+         xIpQ==
+X-Gm-Message-State: ACgBeo3beF/gEcq99/EbpvYuKgEmW7sevFlWz0tFv11G1RgNIiaCWcKU
+	vQIDth8ULsUfrJW80odQg55nAA==
+X-Google-Smtp-Source: AA6agR7mE1s888VxyPAUOKHJ7M6JWPPOgX1u4M252CbSe02wYFJxALmb9mClXYAbaayos/k2RVPNPQ==
+X-Received: by 2002:ac2:4e15:0:b0:48b:7a5f:923c with SMTP id e21-20020ac24e15000000b0048b7a5f923cmr18784649lfr.134.1662447789099;
+        Tue, 06 Sep 2022 00:03:09 -0700 (PDT)
+Received: from [192.168.0.21] (78-11-189-27.static.ip.netia.com.pl. [78.11.189.27])
+        by smtp.gmail.com with ESMTPSA id v7-20020a2ea447000000b002648152512asm1716340ljn.90.2022.09.06.00.03.07
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 06 Sep 2022 00:03:08 -0700 (PDT)
+Message-ID: <93600263-0211-9286-9043-fae5b017d15b@linaro.org>
+Date: Tue, 6 Sep 2022 09:03:02 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1662445382-29879-1-git-send-email-vincent.sunplus@gmail.com>
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
+ Thunderbird/91.13.0
+Subject: Re: [PATCH v4 1/2] dt-bindings: phy: ti: phy-gmii-sel: Add bindings
+ for J7200
+Content-Language: en-US
+To: Siddharth Vadapalli <s-vadapalli@ti.com>,
+ krzysztof.kozlowski+dt@linaro.org
+Cc: robh+dt@kernel.org, lee.jones@linaro.org, kishon@ti.com,
+ vkoul@kernel.org, dan.carpenter@oracle.com, grygorii.strashko@ti.com,
+ rogerq@kernel.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org
+References: <20220901085506.138633-1-s-vadapalli@ti.com>
+ <20220901085506.138633-2-s-vadapalli@ti.com>
+ <4b681c03-7f5a-0234-2276-316e0bad1de5@linaro.org>
+ <44339382-c4e2-26db-de5d-263ae5a585b8@ti.com>
+ <4e61b63b-74ac-1682-968f-17e5d8db7ce6@linaro.org>
+ <dfa9e613-054e-cffc-747f-27842e825cc8@ti.com>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <dfa9e613-054e-cffc-747f-27842e825cc8@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220905_233815_728748_9854AD51 
-X-CRM114-Status: GOOD (  18.80  )
+X-CRM114-CacheID: sfid-20220906_000312_898688_DA4A4B62 
+X-CRM114-Status: GOOD (  11.44  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,63 +101,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Sep 06, 2022 at 02:23:02PM +0800, Vincent Shih wrote:
-> Use kfree() to free the buffer after calling nvmem_cell_read() to
-> read a given nvmem cell.
+On 06/09/2022 07:02, Siddharth Vadapalli wrote:
+>>>
+>>> Please let me know if the above description is fine.
+>>
+>> Hm, but that's a phy node, not address of register... Isn't this a phy
+>> node representing the phy of the CPSW MAC ports?
 > 
-> Fixes:99d9ccd97385("phy: usb: Add USB2.0 phy driver for Sunplus SP7021")
+> Despite it being a phy node, the phy-gmii-sel driver actually uses this
+> node to obtain the address of the CTRLMMR_ENETx_CTRL registers which
+> correspond to the CPSW MAC configuration and are therefore unrelated to
+> the PHY. Please let me know if my suggested description would be fine.
 
-This is not a commit in Linus's tree, are you sure it is right?
+Either I miss some more pieces or this is wrong design. The phy node
+should not be used to pass some addresses somewhere. It is used to
+define a device which will be instantiated (as parent is simple-mfd). If
+you use it only to obtain some address, not to describe child device,
+then this is wrong property type.
 
-And the format is not quite correct, you need some spaces in the line.
-
-> Signed-off-by: Vincent Shih <vincent.sunplus@gmail.com>
-> ---
->  drivers/phy/sunplus/phy-sunplus-usb2.c | 10 +++++++---
->  1 file changed, 7 insertions(+), 3 deletions(-)
-> 
-> diff --git a/drivers/phy/sunplus/phy-sunplus-usb2.c b/drivers/phy/sunplus/phy-sunplus-usb2.c
-> index 5269968..c8540e1 100644
-> --- a/drivers/phy/sunplus/phy-sunplus-usb2.c
-> +++ b/drivers/phy/sunplus/phy-sunplus-usb2.c
-> @@ -13,6 +13,7 @@
->  #include <linux/bitfield.h>
->  #include <linux/clk.h>
->  #include <linux/delay.h>
-> +#include <linux/err.h>
->  #include <linux/io.h>
->  #include <linux/module.h>
->  #include <linux/nvmem-consumer.h>
-> @@ -92,13 +93,15 @@ static int update_disc_vol(struct sp_usbphy *usbphy)
->  	otp_v = nvmem_cell_read(cell, &otp_l);
->  	nvmem_cell_put(cell);
->  
-> -	if (otp_v) {
-> +	if (!IS_ERR(otp_v)) {
->  		set = *(otp_v + 1);
->  		set = (set << (sizeof(char) * 8)) | *otp_v;
->  		set = (set >> usbphy->disc_vol_addr_off) & J_DISC;
-> +		
-> +		kfree(otp_v);
->  	}
-> -
-> -	if (!otp_v || set == 0)
-> +	
-> +	if (IS_ERR(otp_v) || (set == 0))
->  		set = OTP_DISC_LEVEL_DEFAULT;
->  
->  	val = readl(usbphy->phy_regs + CONFIG7);
-> @@ -294,3 +297,4 @@ module_platform_driver(sunplus_usb_phy_driver);
->  MODULE_AUTHOR("Vincent Shih <vincent.shih@sunplus.com>");
->  MODULE_DESCRIPTION("Sunplus USB 2.0 phy driver");
->  MODULE_LICENSE("GPL");
-> +
-
-Why the extra blank line?
-
-thanks,
-
-greg k-h
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
