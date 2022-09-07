@@ -4,47 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BD16BC6FA8C
-	for <linux-phy@archiver.kernel.org>; Wed,  7 Sep 2022 11:08:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5377CC6FA8D
+	for <linux-phy@archiver.kernel.org>; Wed,  7 Sep 2022 11:08:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Rx7MqXtdSXvSRVh53HZlq1RqC7ErPv4oZcW6IgjBTvw=; b=H6njDyk7rho0Yr
-	l/OwzAyoM38UxD6SAi/26vMAjmv672OlMfMfLgbPG1m1l5BpolxWBvE9PX1RiPYwNL63yCgmDbz/q
-	+qW2bSnVom6Xo54IMpt4iUPtaXiLfIeKBRFT7pcFurLTcEFMTH7ynSQ384a+uoSfmhxcxVODBkCYm
-	cN+iUZpdhMqbYp+y3h1JfLX6B8fyK4UL2YOR4CZPaahkK9KqtmwD7G481gYNASgNeYT+PIpKgZfgz
-	bHr0k2ewZuN5h4JPez6peyJGnkOiUeVV6JoliAVJXmnZalBda7FEl6cm0xqXA5OEQS68ZFJUUXveV
-	8r9UOd7NiLvzVmn8PjhQ==;
+	List-Owner; bh=vGOlf4e4eKZHZoBxa+uhhpzbUDCiNOLlTu+1oDl8HIg=; b=aAOUwGSOtBHYGR
+	KCB3cWrvfw4u4xGnhf2Hni/nH+OMJ1KlztTAdkCQyfowgCG4LUYl0LaM/yilUYlOSAOKGuH1byRLq
+	NtgZijA0uIgNBkrT/uGNkjFdF/vx0ImBMPToUZAs0d87Txa7pdapzM92NhuDQ8caxRSOod34stfn3
+	+bTpT3NuvbJMsduhDhQIZq8LZVSzEja9iZwq4htgADPqDaD9mDSnpHXC0pSu3H7XkHhTuQ7bzLUt1
+	udlFOdGqKSTVQ2Uvi0oCBRpFmP8ESRx9CDrfPcgDyEnHZZJMem0FWNNH6GSB6Ezc3OMI+IytyE0pK
+	P0sFKE8ay8nd4Q612j5w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oVsuh-005XNq-5E; Wed, 07 Sep 2022 11:08:11 +0000
-Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
+	id 1oVsuh-005XO7-Cn; Wed, 07 Sep 2022 11:08:11 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oVsuO-005X70-Rp
-	for linux-phy@lists.infradead.org; Wed, 07 Sep 2022 11:08:00 +0000
+	id 1oVsuO-005X7B-Vx
+	for linux-phy@lists.infradead.org; Wed, 07 Sep 2022 11:07:59 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id 44F01B81C56;
-	Wed,  7 Sep 2022 11:07:51 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B0026C433B5;
-	Wed,  7 Sep 2022 11:07:49 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 5C39E6189A;
+	Wed,  7 Sep 2022 11:07:50 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B8CB2C43157;
+	Wed,  7 Sep 2022 11:07:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1662548870;
-	bh=T+vMxwzOKGdlpKV409GAlvmkfwnGI1IpIha1ZJEqg0s=;
+	s=k20201202; t=1662548868;
+	bh=i3GLcfaQY/Hs2uoFIcfYbMIocl+SKu8NmymrisvBoJE=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=qLThVnAyu/xzum2+82yE2LHapbasJSEzpSNEBhZO240HImNPXSsqHqjYeA0Fdo9y0
-	 r6Mxj4SxoqQsu1wMV5+3LHtOpxBXkgTpzhN/KJqGsqyhPyrRgDxRp4v006ij6JVCQk
-	 1LBF92RyeL1+SuiS4bPNGNT/D1ODW7ZtafDSFVRWyrAUB0apdAYC983OwRVE+ZU7Rb
-	 hrUF6+u8+HJF5L/pEKZHcvXFBGRsyOK4qz/qCZ9YPUH8NYlnSxWIV7MNB620yzjStS
-	 saf78y1/eQZpLzmWCVKqYhW2sWN8x8mNbyhmlZmL3U+mPDfrsSlFrcANKaKqC0QSHR
-	 pN2j+Itc5B/TA==
+	b=a+zrzw1YXiOpepM3+BAZ2EmZPlpjFk+KLLIph2DIIkGgAL6vp3L8XaXMio034gh2U
+	 ZPWyt66FkaowG+/7Hd6xU4rJatvFtjPbm6XLANtkw/8xxGXSAVyVtF42vzyZahed9n
+	 gpg3tb0CiOBQUBe00AA4X9aghF/++b+b6dLS3IezgFTDg17EMcBrq82PvfR1KHehVl
+	 6LZ9CCufcm6LEh6JaINbq7ywmMQnYBed94Qzau8pkz4XAFv6N6vXkyuGEgo/zoQAoM
+	 FOEiHbfMVQHO/FAwMYYNieopjDB2xI0iMjLZFZnC5kEIpmWDzmNDZ0RelqBT9mlAvQ
+	 TTua3Wtx6KGqg==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1oVsuP-0004zU-Cv; Wed, 07 Sep 2022 13:07:53 +0200
+	id 1oVsuO-0004yy-Fh; Wed, 07 Sep 2022 13:07:52 +0200
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>
 Cc: Andy Gross <agross@kernel.org>,
@@ -56,16 +56,16 @@ Cc: Andy Gross <agross@kernel.org>,
 	linux-phy@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH 15/16] phy: qcom-qmp-ufs: shorten function prefixes
-Date: Wed,  7 Sep 2022 13:07:27 +0200
-Message-Id: <20220907110728.19092-16-johan+linaro@kernel.org>
+Subject: [PATCH 05/16] phy: qcom-qmp-pcie-msm8996: drop unused runtime PM implementation
+Date: Wed,  7 Sep 2022 13:07:17 +0200
+Message-Id: <20220907110728.19092-6-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.35.1
 In-Reply-To: <20220907110728.19092-1-johan+linaro@kernel.org>
 References: <20220907110728.19092-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220907_040753_348659_C11428EE 
-X-CRM114-Status: GOOD (  17.47  )
+X-CRM114-CacheID: sfid-20220907_040753_286908_2683EF11 
+X-CRM114-Status: GOOD (  15.16  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,284 +82,114 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The driver function prefix has gotten unnecessarily long and hurts
-readability.
+Drop the unused and incomplete runtime PM implementation, which was
+only used by USB PHYs before splitting the QMP driver.
 
-Shorten "qcom_qmp_phy_" to "qmp_" (which likely stands for "Qualcomm
-Multi PHY" or similar anyway).
+Note that the runtime PM was never disabled (and state restored) on
+driver unbind.
+
+This effectively reverts commit ac0d239936bd ("phy: qcom-qmp: Add
+support for runtime PM").
 
 Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 88 ++++++++++++-------------
- 1 file changed, 43 insertions(+), 45 deletions(-)
+ .../phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c  | 37 -------------------
+ 1 file changed, 37 deletions(-)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-index 28b75772cd0f..b020409b92e0 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-@@ -821,7 +821,7 @@ static const struct qmp_phy_cfg sm8450_ufsphy_cfg = {
- 	.is_dual_lane_phy	= true,
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c
+index a4ff15b289cd..a5b9a81541c4 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c
+@@ -53,17 +53,6 @@
+ #define USB3_MODE				BIT(0) /* enables USB3 mode */
+ #define DP_MODE					BIT(1) /* enables DP mode */
+ 
+-/* QPHY_PCS_AUTONOMOUS_MODE_CTRL register bits */
+-#define ARCVR_DTCT_EN				BIT(0)
+-#define ALFPS_DTCT_EN				BIT(1)
+-#define ARCVR_DTCT_EVENT_SEL			BIT(4)
+-
+-/* QPHY_PCS_LFPS_RXTERM_IRQ_CLEAR register bits */
+-#define IRQ_CLEAR				BIT(0)
+-
+-/* QPHY_PCS_LFPS_RXTERM_IRQ_STATUS register bits */
+-#define RCVR_DETECT				BIT(0)
+-
+ /* QPHY_V3_PCS_MISC_CLAMP_ENABLE register bits */
+ #define CLAMP_EN				BIT(0) /* enables i/o clamp_n */
+ 
+@@ -125,9 +114,6 @@ enum qphy_reg_layout {
+ 	QPHY_START_CTRL,
+ 	QPHY_PCS_READY_STATUS,
+ 	QPHY_PCS_STATUS,
+-	QPHY_PCS_AUTONOMOUS_MODE_CTRL,
+-	QPHY_PCS_LFPS_RXTERM_IRQ_CLEAR,
+-	QPHY_PCS_LFPS_RXTERM_IRQ_STATUS,
+ 	QPHY_PCS_POWER_DOWN_CONTROL,
+ 	/* PCS_MISC registers */
+ 	QPHY_PCS_MISC_TYPEC_CTRL,
+@@ -308,7 +294,6 @@ struct qmp_phy {
+ 	unsigned int index;
+ 	struct qcom_qmp *qmp;
+ 	struct reset_control *lane_rst;
+-	enum phy_mode mode;
  };
  
--static void qcom_qmp_phy_ufs_configure_lane(void __iomem *base,
-+static void qmp_ufs_configure_lane(void __iomem *base,
- 					const unsigned int *regs,
- 					const struct qmp_phy_init_tbl tbl[],
- 					int num,
-@@ -844,27 +844,27 @@ static void qcom_qmp_phy_ufs_configure_lane(void __iomem *base,
- 	}
+ /**
+@@ -718,16 +703,6 @@ static int qcom_qmp_phy_pcie_msm8996_disable(struct phy *phy)
+ 	return qcom_qmp_phy_pcie_msm8996_exit(phy);
  }
  
--static void qcom_qmp_phy_ufs_configure(void __iomem *base,
-+static void qmp_ufs_configure(void __iomem *base,
- 				   const unsigned int *regs,
- 				   const struct qmp_phy_init_tbl tbl[],
- 				   int num)
- {
--	qcom_qmp_phy_ufs_configure_lane(base, regs, tbl, num, 0xff);
-+	qmp_ufs_configure_lane(base, regs, tbl, num, 0xff);
- }
- 
--static int qcom_qmp_phy_ufs_serdes_init(struct qmp_phy *qphy)
-+static int qmp_ufs_serdes_init(struct qmp_phy *qphy)
- {
- 	const struct qmp_phy_cfg *cfg = qphy->cfg;
- 	void __iomem *serdes = qphy->serdes;
- 	const struct qmp_phy_init_tbl *serdes_tbl = cfg->serdes_tbl;
- 	int serdes_tbl_num = cfg->serdes_tbl_num;
- 
--	qcom_qmp_phy_ufs_configure(serdes, cfg->regs, serdes_tbl, serdes_tbl_num);
-+	qmp_ufs_configure(serdes, cfg->regs, serdes_tbl, serdes_tbl_num);
- 
- 	return 0;
- }
- 
--static int qcom_qmp_phy_ufs_com_init(struct qmp_phy *qphy)
-+static int qmp_ufs_com_init(struct qmp_phy *qphy)
- {
- 	struct qcom_qmp *qmp = qphy->qmp;
- 	const struct qmp_phy_cfg *cfg = qphy->cfg;
-@@ -898,7 +898,7 @@ static int qcom_qmp_phy_ufs_com_init(struct qmp_phy *qphy)
- 	return ret;
- }
- 
--static int qcom_qmp_phy_ufs_com_exit(struct qmp_phy *qphy)
-+static int qmp_ufs_com_exit(struct qmp_phy *qphy)
- {
- 	struct qcom_qmp *qmp = qphy->qmp;
- 	const struct qmp_phy_cfg *cfg = qphy->cfg;
-@@ -912,7 +912,7 @@ static int qcom_qmp_phy_ufs_com_exit(struct qmp_phy *qphy)
- 	return 0;
- }
- 
--static int qcom_qmp_phy_ufs_init(struct phy *phy)
-+static int qmp_ufs_init(struct phy *phy)
- {
- 	struct qmp_phy *qphy = phy_get_drvdata(phy);
- 	struct qcom_qmp *qmp = qphy->qmp;
-@@ -947,14 +947,14 @@ static int qcom_qmp_phy_ufs_init(struct phy *phy)
- 			return ret;
- 	}
- 
--	ret = qcom_qmp_phy_ufs_com_init(qphy);
-+	ret = qmp_ufs_com_init(qphy);
- 	if (ret)
- 		return ret;
- 
- 	return 0;
- }
- 
--static int qcom_qmp_phy_ufs_power_on(struct phy *phy)
-+static int qmp_ufs_power_on(struct phy *phy)
- {
- 	struct qmp_phy *qphy = phy_get_drvdata(phy);
- 	struct qcom_qmp *qmp = qphy->qmp;
-@@ -966,26 +966,24 @@ static int qcom_qmp_phy_ufs_power_on(struct phy *phy)
- 	unsigned int mask, val, ready;
- 	int ret;
- 
--	qcom_qmp_phy_ufs_serdes_init(qphy);
-+	qmp_ufs_serdes_init(qphy);
- 
- 	/* Tx, Rx, and PCS configurations */
--	qcom_qmp_phy_ufs_configure_lane(tx, cfg->regs,
--				    cfg->tx_tbl, cfg->tx_tbl_num, 1);
-+	qmp_ufs_configure_lane(tx, cfg->regs, cfg->tx_tbl, cfg->tx_tbl_num, 1);
- 
- 	if (cfg->is_dual_lane_phy) {
--		qcom_qmp_phy_ufs_configure_lane(qphy->tx2, cfg->regs,
--					    cfg->tx_tbl, cfg->tx_tbl_num, 2);
-+		qmp_ufs_configure_lane(qphy->tx2, cfg->regs,
-+					cfg->tx_tbl, cfg->tx_tbl_num, 2);
- 	}
- 
--	qcom_qmp_phy_ufs_configure_lane(rx, cfg->regs,
--				    cfg->rx_tbl, cfg->rx_tbl_num, 1);
-+	qmp_ufs_configure_lane(rx, cfg->regs, cfg->rx_tbl, cfg->rx_tbl_num, 1);
- 
- 	if (cfg->is_dual_lane_phy) {
--		qcom_qmp_phy_ufs_configure_lane(qphy->rx2, cfg->regs,
--					    cfg->rx_tbl, cfg->rx_tbl_num, 2);
-+		qmp_ufs_configure_lane(qphy->rx2, cfg->regs,
-+					cfg->rx_tbl, cfg->rx_tbl_num, 2);
- 	}
- 
--	qcom_qmp_phy_ufs_configure(pcs, cfg->regs, cfg->pcs_tbl, cfg->pcs_tbl_num);
-+	qmp_ufs_configure(pcs, cfg->regs, cfg->pcs_tbl, cfg->pcs_tbl_num);
- 
- 	ret = reset_control_deassert(qmp->ufs_reset);
- 	if (ret)
-@@ -1011,7 +1009,7 @@ static int qcom_qmp_phy_ufs_power_on(struct phy *phy)
- 	return 0;
- }
- 
--static int qcom_qmp_phy_ufs_power_off(struct phy *phy)
-+static int qmp_ufs_power_off(struct phy *phy)
- {
- 	struct qmp_phy *qphy = phy_get_drvdata(phy);
- 	const struct qmp_phy_cfg *cfg = qphy->cfg;
-@@ -1035,41 +1033,41 @@ static int qcom_qmp_phy_ufs_power_off(struct phy *phy)
- 	return 0;
- }
- 
--static int qcom_qmp_phy_ufs_exit(struct phy *phy)
-+static int qmp_ufs_exit(struct phy *phy)
- {
- 	struct qmp_phy *qphy = phy_get_drvdata(phy);
- 
--	qcom_qmp_phy_ufs_com_exit(qphy);
-+	qmp_ufs_com_exit(qphy);
- 
- 	return 0;
- }
- 
--static int qcom_qmp_phy_ufs_enable(struct phy *phy)
-+static int qmp_ufs_enable(struct phy *phy)
- {
- 	int ret;
- 
--	ret = qcom_qmp_phy_ufs_init(phy);
-+	ret = qmp_ufs_init(phy);
- 	if (ret)
- 		return ret;
- 
--	ret = qcom_qmp_phy_ufs_power_on(phy);
-+	ret = qmp_ufs_power_on(phy);
- 	if (ret)
--		qcom_qmp_phy_ufs_exit(phy);
-+		qmp_ufs_exit(phy);
- 
- 	return ret;
- }
- 
--static int qcom_qmp_phy_ufs_disable(struct phy *phy)
-+static int qmp_ufs_disable(struct phy *phy)
- {
- 	int ret;
- 
--	ret = qcom_qmp_phy_ufs_power_off(phy);
-+	ret = qmp_ufs_power_off(phy);
- 	if (ret)
- 		return ret;
--	return qcom_qmp_phy_ufs_exit(phy);
-+	return qmp_ufs_exit(phy);
- }
- 
--static int qcom_qmp_phy_ufs_vreg_init(struct device *dev, const struct qmp_phy_cfg *cfg)
-+static int qmp_ufs_vreg_init(struct device *dev, const struct qmp_phy_cfg *cfg)
+-static int qcom_qmp_phy_pcie_msm8996_set_mode(struct phy *phy,
+-				 enum phy_mode mode, int submode)
+-{
+-	struct qmp_phy *qphy = phy_get_drvdata(phy);
+-
+-	qphy->mode = mode;
+-
+-	return 0;
+-}
+-
+ static int qcom_qmp_phy_pcie_msm8996_vreg_init(struct device *dev, const struct qmp_phy_cfg *cfg)
  {
  	struct qcom_qmp *qmp = dev_get_drvdata(dev);
- 	int num = cfg->num_vregs;
-@@ -1085,7 +1083,7 @@ static int qcom_qmp_phy_ufs_vreg_init(struct device *dev, const struct qmp_phy_c
- 	return devm_regulator_bulk_get(dev, num, qmp->vregs);
- }
- 
--static int qcom_qmp_phy_ufs_clk_init(struct device *dev, const struct qmp_phy_cfg *cfg)
-+static int qmp_ufs_clk_init(struct device *dev, const struct qmp_phy_cfg *cfg)
- {
- 	struct qcom_qmp *qmp = dev_get_drvdata(dev);
- 	int num = cfg->num_clks;
-@@ -1102,13 +1100,13 @@ static int qcom_qmp_phy_ufs_clk_init(struct device *dev, const struct qmp_phy_cf
- }
- 
- static const struct phy_ops qcom_qmp_ufs_ops = {
--	.power_on	= qcom_qmp_phy_ufs_enable,
--	.power_off	= qcom_qmp_phy_ufs_disable,
-+	.power_on	= qmp_ufs_enable,
-+	.power_off	= qmp_ufs_disable,
+@@ -844,7 +819,6 @@ static int phy_pipe_clk_register(struct qcom_qmp *qmp, struct device_node *np)
+ static const struct phy_ops qcom_qmp_phy_pcie_msm8996_ops = {
+ 	.power_on	= qcom_qmp_phy_pcie_msm8996_enable,
+ 	.power_off	= qcom_qmp_phy_pcie_msm8996_disable,
+-	.set_mode	= qcom_qmp_phy_pcie_msm8996_set_mode,
  	.owner		= THIS_MODULE,
  };
  
- static
--int qcom_qmp_phy_ufs_create(struct device *dev, struct device_node *np, int id,
-+int qmp_ufs_create(struct device *dev, struct device_node *np, int id,
- 			void __iomem *serdes, const struct qmp_phy_cfg *cfg)
- {
- 	struct qcom_qmp *qmp = dev_get_drvdata(dev);
-@@ -1185,7 +1183,7 @@ int qcom_qmp_phy_ufs_create(struct device *dev, struct device_node *np, int id,
- 	return 0;
- }
+@@ -989,14 +963,6 @@ static int qcom_qmp_phy_pcie_msm8996_probe(struct platform_device *pdev)
+ 	if (!qmp->phys)
+ 		return -ENOMEM;
  
--static const struct of_device_id qcom_qmp_phy_ufs_of_match_table[] = {
-+static const struct of_device_id qmp_ufs_of_match_table[] = {
- 	{
- 		.compatible = "qcom,msm8996-qmp-ufs-phy",
- 		.data = &msm8996_ufs_cfg,
-@@ -1222,9 +1220,9 @@ static const struct of_device_id qcom_qmp_phy_ufs_of_match_table[] = {
- 	},
- 	{ },
- };
--MODULE_DEVICE_TABLE(of, qcom_qmp_phy_ufs_of_match_table);
-+MODULE_DEVICE_TABLE(of, qmp_ufs_of_match_table);
- 
--static int qcom_qmp_phy_ufs_probe(struct platform_device *pdev)
-+static int qmp_ufs_probe(struct platform_device *pdev)
- {
- 	struct qcom_qmp *qmp;
- 	struct device *dev = &pdev->dev;
-@@ -1252,11 +1250,11 @@ static int qcom_qmp_phy_ufs_probe(struct platform_device *pdev)
- 	if (IS_ERR(serdes))
- 		return PTR_ERR(serdes);
- 
--	ret = qcom_qmp_phy_ufs_clk_init(dev, cfg);
-+	ret = qmp_ufs_clk_init(dev, cfg);
- 	if (ret)
- 		return ret;
- 
--	ret = qcom_qmp_phy_ufs_vreg_init(dev, cfg);
-+	ret = qmp_ufs_vreg_init(dev, cfg);
- 	if (ret) {
- 		if (ret != -EPROBE_DEFER)
- 			dev_err(dev, "failed to get regulator supplies: %d\n",
-@@ -1276,7 +1274,7 @@ static int qcom_qmp_phy_ufs_probe(struct platform_device *pdev)
+-	pm_runtime_set_active(dev);
+-	pm_runtime_enable(dev);
+-	/*
+-	 * Prevent runtime pm from being ON by default. Users can enable
+-	 * it using power/control in sysfs.
+-	 */
+-	pm_runtime_forbid(dev);
+-
  	id = 0;
  	for_each_available_child_of_node(dev->of_node, child) {
  		/* Create per-lane phy */
--		ret = qcom_qmp_phy_ufs_create(dev, child, id, serdes, cfg);
-+		ret = qmp_ufs_create(dev, child, id, serdes, cfg);
- 		if (ret) {
- 			dev_err(dev, "failed to create lane%d phy, %d\n",
- 				id, ret);
-@@ -1295,15 +1293,15 @@ static int qcom_qmp_phy_ufs_probe(struct platform_device *pdev)
+@@ -1024,13 +990,10 @@ static int qcom_qmp_phy_pcie_msm8996_probe(struct platform_device *pdev)
+ 	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
+ 	if (!IS_ERR(phy_provider))
+ 		dev_info(dev, "Registered Qcom-QMP phy\n");
+-	else
+-		pm_runtime_disable(dev);
+ 
+ 	return PTR_ERR_OR_ZERO(phy_provider);
+ 
+ err_node_put:
+-	pm_runtime_disable(dev);
+ 	of_node_put(child);
  	return ret;
  }
- 
--static struct platform_driver qcom_qmp_phy_ufs_driver = {
--	.probe		= qcom_qmp_phy_ufs_probe,
-+static struct platform_driver qmp_ufs_driver = {
-+	.probe		= qmp_ufs_probe,
- 	.driver = {
- 		.name	= "qcom-qmp-ufs-phy",
--		.of_match_table = qcom_qmp_phy_ufs_of_match_table,
-+		.of_match_table = qmp_ufs_of_match_table,
- 	},
- };
- 
--module_platform_driver(qcom_qmp_phy_ufs_driver);
-+module_platform_driver(qmp_ufs_driver);
- 
- MODULE_AUTHOR("Vivek Gautam <vivek.gautam@codeaurora.org>");
- MODULE_DESCRIPTION("Qualcomm QMP UFS PHY driver");
 -- 
 2.35.1
 
