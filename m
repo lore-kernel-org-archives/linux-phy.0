@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5377CC6FA8D
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 948A4C54EE9
 	for <linux-phy@archiver.kernel.org>; Wed,  7 Sep 2022 11:08:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,39 +12,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vGOlf4e4eKZHZoBxa+uhhpzbUDCiNOLlTu+1oDl8HIg=; b=aAOUwGSOtBHYGR
-	KCB3cWrvfw4u4xGnhf2Hni/nH+OMJ1KlztTAdkCQyfowgCG4LUYl0LaM/yilUYlOSAOKGuH1byRLq
-	NtgZijA0uIgNBkrT/uGNkjFdF/vx0ImBMPToUZAs0d87Txa7pdapzM92NhuDQ8caxRSOod34stfn3
-	+bTpT3NuvbJMsduhDhQIZq8LZVSzEja9iZwq4htgADPqDaD9mDSnpHXC0pSu3H7XkHhTuQ7bzLUt1
-	udlFOdGqKSTVQ2Uvi0oCBRpFmP8ESRx9CDrfPcgDyEnHZZJMem0FWNNH6GSB6Ezc3OMI+IytyE0pK
-	P0sFKE8ay8nd4Q612j5w==;
+	List-Owner; bh=kUWAu3p1ZOESuPYDKYTcllY5Tzvfp6w0wklN0LyloI0=; b=fWpxsBw3qAWO72
+	XkNVy74zOeVqcSoewhK6YgNZSL1SHUYlo1ntxURgHO72BqUDxV2vixdtEwZ/UTeZfv/p2+D6NKbbR
+	jYJMtf7TJlMx06ZBMargtybH0UcWP5XqT43sHlHTK9yIvGY4S2l7HfxOYjpVGA+5TD4IYCaZtkgMV
+	k/DNjyXMJRac9nPYYeR6d5dXae7subX04LP2OG2EZ2Y6cwvSrBjsFpWIXbui4d1D79mg0LnSrGnyI
+	pYKxc1UqNYsigBrvdUdZxZdxGM0kJ9D4LYL4RuEHkur5zgXq1pqHqhVXoKzfEIR9njI65DnzCktu7
+	hKLY+ZTD3FU/ihR1zJJA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oVsuh-005XO7-Cn; Wed, 07 Sep 2022 11:08:11 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1oVsuh-005XOq-Ny; Wed, 07 Sep 2022 11:08:11 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oVsuO-005X7B-Vx
-	for linux-phy@lists.infradead.org; Wed, 07 Sep 2022 11:07:59 +0000
+	id 1oVsuS-005X9u-6v
+	for linux-phy@lists.infradead.org; Wed, 07 Sep 2022 11:08:02 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 5C39E6189A;
+	by dfw.source.kernel.org (Postfix) with ESMTPS id BDA6A6187C;
 	Wed,  7 Sep 2022 11:07:50 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B8CB2C43157;
-	Wed,  7 Sep 2022 11:07:48 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 11227C4FEB9;
+	Wed,  7 Sep 2022 11:07:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1662548868;
-	bh=i3GLcfaQY/Hs2uoFIcfYbMIocl+SKu8NmymrisvBoJE=;
+	s=k20201202; t=1662548869;
+	bh=gug41xRcI/OiU0Kz768lHWGKBf59p8scVt7WnDhxAEE=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=a+zrzw1YXiOpepM3+BAZ2EmZPlpjFk+KLLIph2DIIkGgAL6vp3L8XaXMio034gh2U
-	 ZPWyt66FkaowG+/7Hd6xU4rJatvFtjPbm6XLANtkw/8xxGXSAVyVtF42vzyZahed9n
-	 gpg3tb0CiOBQUBe00AA4X9aghF/++b+b6dLS3IezgFTDg17EMcBrq82PvfR1KHehVl
-	 6LZ9CCufcm6LEh6JaINbq7ywmMQnYBed94Qzau8pkz4XAFv6N6vXkyuGEgo/zoQAoM
-	 FOEiHbfMVQHO/FAwMYYNieopjDB2xI0iMjLZFZnC5kEIpmWDzmNDZ0RelqBT9mlAvQ
-	 TTua3Wtx6KGqg==
+	b=tpFKflMGympRJ0MouYO9A8Nyca2JWXCiq1eWWsKcIh5Wk8CeNjXf36ZrIafdzhdLo
+	 Bgzi/6Q31PBc9Ag5Y6UMT+ZUSUSuv/sWadX0b5h+je1yDo68KTjEGKmFacRXOcyemA
+	 wDdyw8PYi8lNOwOkzJiXGS1GgNh5xXltG87WcUn5ZK9NdlxyMzllmiIav9eOsKx8zI
+	 lVC9Eo5ybX2imfWxY5UcmtFbK1NjiajyalL5TfXf+f66OXKdWAe+cs/TSUp+2WV+GW
+	 urOBn4LSegtCWt8bPzDbRcnvX08F3E/OdfM5r1GlxEz+CQXrukc/DBT916Vyqra/zM
+	 XozlOly6kHtsQ==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1oVsuO-0004yy-Fh; Wed, 07 Sep 2022 13:07:52 +0200
+	id 1oVsuO-0004z9-PF; Wed, 07 Sep 2022 13:07:52 +0200
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>
 Cc: Andy Gross <agross@kernel.org>,
@@ -56,16 +56,16 @@ Cc: Andy Gross <agross@kernel.org>,
 	linux-phy@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH 05/16] phy: qcom-qmp-pcie-msm8996: drop unused runtime PM implementation
-Date: Wed,  7 Sep 2022 13:07:17 +0200
-Message-Id: <20220907110728.19092-6-johan+linaro@kernel.org>
+Subject: [PATCH 08/16] phy: qcom-qmp-ufs: drop unused defines
+Date: Wed,  7 Sep 2022 13:07:20 +0200
+Message-Id: <20220907110728.19092-9-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.35.1
 In-Reply-To: <20220907110728.19092-1-johan+linaro@kernel.org>
 References: <20220907110728.19092-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220907_040753_286908_2683EF11 
-X-CRM114-Status: GOOD (  15.16  )
+X-CRM114-CacheID: sfid-20220907_040756_449311_E11630F3 
+X-CRM114-Status: GOOD (  12.02  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,114 +82,78 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Drop the unused and incomplete runtime PM implementation, which was
-only used by USB PHYs before splitting the QMP driver.
-
-Note that the runtime PM was never disabled (and state restored) on
-driver unbind.
-
-This effectively reverts commit ac0d239936bd ("phy: qcom-qmp: Add
-support for runtime PM").
+Drop defines and enums that are unused since the QMP driver split.
 
 Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- .../phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c  | 37 -------------------
- 1 file changed, 37 deletions(-)
+ drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 34 +------------------------
+ 1 file changed, 1 insertion(+), 33 deletions(-)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c
-index a4ff15b289cd..a5b9a81541c4 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c
-@@ -53,17 +53,6 @@
- #define USB3_MODE				BIT(0) /* enables USB3 mode */
- #define DP_MODE					BIT(1) /* enables DP mode */
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+index 7bd3c992b841..62e9007137c9 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+@@ -28,39 +28,15 @@
+ #define SW_RESET				BIT(0)
+ /* QPHY_POWER_DOWN_CONTROL */
+ #define SW_PWRDN				BIT(0)
+-#define REFCLK_DRV_DSBL				BIT(1)
+ /* QPHY_START_CONTROL bits */
+ #define SERDES_START				BIT(0)
+ #define PCS_START				BIT(1)
+-#define PLL_READY_GATE_EN			BIT(3)
+ /* QPHY_PCS_STATUS bit */
+ #define PHYSTATUS				BIT(6)
+-#define PHYSTATUS_4_20				BIT(7)
+-/* QPHY_PCS_READY_STATUS & QPHY_COM_PCS_READY_STATUS bit */
++/* QPHY_PCS_READY_STATUS bit */
+ #define PCS_READY				BIT(0)
  
--/* QPHY_PCS_AUTONOMOUS_MODE_CTRL register bits */
--#define ARCVR_DTCT_EN				BIT(0)
--#define ALFPS_DTCT_EN				BIT(1)
--#define ARCVR_DTCT_EVENT_SEL			BIT(4)
+-/* QPHY_V3_DP_COM_RESET_OVRD_CTRL register bits */
+-/* DP PHY soft reset */
+-#define SW_DPPHY_RESET				BIT(0)
+-/* mux to select DP PHY reset control, 0:HW control, 1: software reset */
+-#define SW_DPPHY_RESET_MUX			BIT(1)
+-/* USB3 PHY soft reset */
+-#define SW_USB3PHY_RESET			BIT(2)
+-/* mux to select USB3 PHY reset control, 0:HW control, 1: software reset */
+-#define SW_USB3PHY_RESET_MUX			BIT(3)
 -
--/* QPHY_PCS_LFPS_RXTERM_IRQ_CLEAR register bits */
--#define IRQ_CLEAR				BIT(0)
+-/* QPHY_V3_DP_COM_PHY_MODE_CTRL register bits */
+-#define USB3_MODE				BIT(0) /* enables USB3 mode */
+-#define DP_MODE					BIT(1) /* enables DP mode */
 -
--/* QPHY_PCS_LFPS_RXTERM_IRQ_STATUS register bits */
--#define RCVR_DETECT				BIT(0)
+-/* QPHY_V3_PCS_MISC_CLAMP_ENABLE register bits */
+-#define CLAMP_EN				BIT(0) /* enables i/o clamp_n */
 -
- /* QPHY_V3_PCS_MISC_CLAMP_ENABLE register bits */
- #define CLAMP_EN				BIT(0) /* enables i/o clamp_n */
+ #define PHY_INIT_COMPLETE_TIMEOUT		10000
+-#define POWER_DOWN_DELAY_US_MIN			10
+-#define POWER_DOWN_DELAY_US_MAX			11
+-
+-#define MAX_PROP_NAME				32
  
-@@ -125,9 +114,6 @@ enum qphy_reg_layout {
+ /* Define the assumed distance between lanes for underspecified device trees. */
+ #define QMP_PHY_LEGACY_LANE_STRIDE		0x400
+@@ -104,19 +80,11 @@ struct qmp_phy_init_tbl {
+ 
+ /* set of registers with offsets different per-PHY */
+ enum qphy_reg_layout {
+-	/* Common block control registers */
+-	QPHY_COM_SW_RESET,
+-	QPHY_COM_POWER_DOWN_CONTROL,
+-	QPHY_COM_START_CONTROL,
+-	QPHY_COM_PCS_READY_STATUS,
+ 	/* PCS registers */
+ 	QPHY_SW_RESET,
  	QPHY_START_CTRL,
  	QPHY_PCS_READY_STATUS,
- 	QPHY_PCS_STATUS,
--	QPHY_PCS_AUTONOMOUS_MODE_CTRL,
--	QPHY_PCS_LFPS_RXTERM_IRQ_CLEAR,
--	QPHY_PCS_LFPS_RXTERM_IRQ_STATUS,
+-	QPHY_PCS_STATUS,
  	QPHY_PCS_POWER_DOWN_CONTROL,
- 	/* PCS_MISC registers */
- 	QPHY_PCS_MISC_TYPEC_CTRL,
-@@ -308,7 +294,6 @@ struct qmp_phy {
- 	unsigned int index;
- 	struct qcom_qmp *qmp;
- 	struct reset_control *lane_rst;
--	enum phy_mode mode;
+-	/* PCS_MISC registers */
+-	QPHY_PCS_MISC_TYPEC_CTRL,
+ 	/* Keep last to ensure regs_layout arrays are properly initialized */
+ 	QPHY_LAYOUT_SIZE
  };
- 
- /**
-@@ -718,16 +703,6 @@ static int qcom_qmp_phy_pcie_msm8996_disable(struct phy *phy)
- 	return qcom_qmp_phy_pcie_msm8996_exit(phy);
- }
- 
--static int qcom_qmp_phy_pcie_msm8996_set_mode(struct phy *phy,
--				 enum phy_mode mode, int submode)
--{
--	struct qmp_phy *qphy = phy_get_drvdata(phy);
--
--	qphy->mode = mode;
--
--	return 0;
--}
--
- static int qcom_qmp_phy_pcie_msm8996_vreg_init(struct device *dev, const struct qmp_phy_cfg *cfg)
- {
- 	struct qcom_qmp *qmp = dev_get_drvdata(dev);
-@@ -844,7 +819,6 @@ static int phy_pipe_clk_register(struct qcom_qmp *qmp, struct device_node *np)
- static const struct phy_ops qcom_qmp_phy_pcie_msm8996_ops = {
- 	.power_on	= qcom_qmp_phy_pcie_msm8996_enable,
- 	.power_off	= qcom_qmp_phy_pcie_msm8996_disable,
--	.set_mode	= qcom_qmp_phy_pcie_msm8996_set_mode,
- 	.owner		= THIS_MODULE,
- };
- 
-@@ -989,14 +963,6 @@ static int qcom_qmp_phy_pcie_msm8996_probe(struct platform_device *pdev)
- 	if (!qmp->phys)
- 		return -ENOMEM;
- 
--	pm_runtime_set_active(dev);
--	pm_runtime_enable(dev);
--	/*
--	 * Prevent runtime pm from being ON by default. Users can enable
--	 * it using power/control in sysfs.
--	 */
--	pm_runtime_forbid(dev);
--
- 	id = 0;
- 	for_each_available_child_of_node(dev->of_node, child) {
- 		/* Create per-lane phy */
-@@ -1024,13 +990,10 @@ static int qcom_qmp_phy_pcie_msm8996_probe(struct platform_device *pdev)
- 	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
- 	if (!IS_ERR(phy_provider))
- 		dev_info(dev, "Registered Qcom-QMP phy\n");
--	else
--		pm_runtime_disable(dev);
- 
- 	return PTR_ERR_OR_ZERO(phy_provider);
- 
- err_node_put:
--	pm_runtime_disable(dev);
- 	of_node_put(child);
- 	return ret;
- }
 -- 
 2.35.1
 
