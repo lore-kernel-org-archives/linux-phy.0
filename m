@@ -4,67 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id ABF76C54EE9
-	for <linux-phy@archiver.kernel.org>; Wed,  7 Sep 2022 21:04:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A2BA6C38145
+	for <linux-phy@archiver.kernel.org>; Thu,  8 Sep 2022 01:40:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:CC:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VxMLWW42rCLaFScV/8SnRVz1OVOXkhsOwDvl4Xt4C6E=; b=ZrceRha2BF6UX4
-	R9i2G4gwx7UeWe6NVwFfLWsGQpLHknksR8alCSlchOkLV7piv9nJn+B8FjeyLMEeyUXqw5tRcfzxn
-	RB5ioVqKXCTsFF885s87Kd9mDifQMePfzbq4W4KKkv3Z3tqu3LDRj94tFNb2NOqBmdcaIn4XBZ8xS
-	NYUf25hyRcQUWP2OBZtGzNm0s/DlH+Rekpdm3kwL2kUDJjzuIqiEm6is3+W8wpi9pnDt3NPzsg5LM
-	FFuZrhtsrtiWTmeWusURZ+HEjLiB9xq+Geb4vCT5afq21dOSvlNvKzcELwkVoJzNWtYu2nKh+Omsj
-	B7rnoI7QK4ihCYrgsb4A==;
+	List-Owner; bh=MO9SqWNJRKJxkrmPlRIg91gGAz1FnxCEpYXFAWmc8tE=; b=FU+ToYGnH4njCL
+	BQFLajAIkoBTcjlXIqpTEKiX3577nQry+40m2rYvz1D28FsEM3FzCQmdZ4Nj7wsZadez+zGXAuVjV
+	2jf5sMPszGzZzq3xYfXvmw7rVGuNs+X4B38E7NM9c4O4Ks611HvHqeHmDXC9o2Vsqunz6CQi/D+rI
+	7ykAHN65unmsvK/LbKSs3QRfGRSB3vnafaKKO/u4ttLQFb5ON2kXeAUX9+6+kFqpXBtsxvUgOb5ik
+	UjD4TRWUmnkwxTgFA7+9qDrLXlH/NViRSMXaaCAIXL1in56v4efQeR/xv8uYBknHgWgavZg4BTLvb
+	zdXym7irw1jMvp4pcvSQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oW2DU-009tna-2I; Wed, 07 Sep 2022 21:04:12 +0000
-Received: from mail-oa1-f41.google.com ([209.85.160.41])
+	id 1oW6WW-00ENaY-3T; Thu, 08 Sep 2022 01:40:08 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oW2DR-009tih-LC
-	for linux-phy@lists.infradead.org; Wed, 07 Sep 2022 21:04:10 +0000
-Received: by mail-oa1-f41.google.com with SMTP id 586e51a60fabf-127dca21a7dso11847886fac.12
-        for <linux-phy@lists.infradead.org>; Wed, 07 Sep 2022 14:04:06 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date;
-        bh=aQSKe2CH6b9g5mXBEzOcX3asnf3UcbDFBQH+uLWaqLQ=;
-        b=t6FWnBkL88CWBJ4QvS/9cXubXjK01pPlDvN3aeDzdSB9AHwQmpSd+DIEaNpYAyUvtd
-         RrZYN3XClwlYe42wIAMbr1dJS8d7GvAy67whIMGk/BUhAL9W41gdQu/l0Y42gDlofma3
-         J6Kl7KEFFfU24Lc6qtVvHyaY/ORM09t/RyLqVLhxPuSE7nxXVAMmvU0wWHMI4xPW198I
-         92pQU2MKLyZ4W5Ob1Q0h0Wr8twbk/VYqVJvgsPXruSYmL3dotAfZiWBAXcjYOFugPLNV
-         rWmqsmmJA2Dr/DMNAUCIQQEZaQi/YVUQ/r3yjMSEGzinYO2+VKM8G1g38IrJHQGBenRt
-         hvqw==
-X-Gm-Message-State: ACgBeo3dx6q+yBz2kJ/b0D90I2Cr8ZeEkhF9XGlruju5tEY0L8URKJ9T
-	qyJBke0acatcnhnftGWYL5j2KhBphQ==
-X-Google-Smtp-Source: AA6agR532XhH323tj7DaASBATDK/KgBu30H+uIFV8zPVW0kuu7V5FaKTfxRVXm0TEjBc7Q3+xeDuQw==
-X-Received: by 2002:aca:b01:0:b0:345:4295:e9b2 with SMTP id 1-20020aca0b01000000b003454295e9b2mr158556oil.28.1662584646172;
-        Wed, 07 Sep 2022 14:04:06 -0700 (PDT)
-Received: from robh.at.kernel.org (66-90-144-107.dyn.grandenetworks.net. [66.90.144.107])
-        by smtp.gmail.com with ESMTPSA id l3-20020a056870f14300b0012752d3212fsm5165992oac.53.2022.09.07.14.04.04
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 07 Sep 2022 14:04:05 -0700 (PDT)
-Received: (nullmailer pid 342769 invoked by uid 1000);
-	Wed, 07 Sep 2022 21:04:03 -0000
-Date: Wed, 7 Sep 2022 16:04:03 -0500
-From: Rob Herring <robh@kernel.org>
-To: Johan Hovold <johan+linaro@kernel.org>
-Cc: Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Bjorn Andersson <andersson@kernel.org>, devicetree@vger.kernel.org, Vinod Koul <vkoul@kernel.org>, Konrad Dybcio <konrad.dybcio@somainline.org>, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>, Andy Gross <agross@kernel.org>, Wesley Cheng <quic_wcheng@quicinc.com>, Kishon Vijay Abraham I <kishon@ti.com>
-Subject: Re: [PATCH 2/2] dt-bindings: phy: qcom,qmp-usb3-dp: add missing
- power-domains property
-Message-ID: <20220907210403.GA342688-robh@kernel.org>
-References: <20220902080705.12050-1-johan+linaro@kernel.org>
- <20220902080705.12050-3-johan+linaro@kernel.org>
+	id 1oW6WS-00ENY7-Jw; Thu, 08 Sep 2022 01:40:05 +0000
+X-UUID: ea58f5b749384a4388d4d8a91aa58bee-20220907
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
+	h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID; bh=/RTSQNPPLI/qYLfJwsavfRsg22Jon9x2KTHWb9ohw8I=;
+	b=GtdW4CffqRbxg5U7Nfv9mcBUHLxZJk3KmTayNak0uNe8nT1P7jBvlvQ0/cs+8/eTsZ9HVXs4pM0Om+wEfqvURzmXbaS055d9Gi1V7TltK92UO33VQYdLysHunu0hdtrKelaDmTKxIct+X43h3Li7ldBuCtLDUJxLcgFCld44iAc=;
+X-CID-P-RULE: Release_Ham
+X-CID-O-INFO: VERSION:1.1.10,REQID:3411d269-9cc3-44f5-8c63-0c0237d25aed,OB:0,L
+	OB:0,IP:0,URL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_
+	Ham,ACTION:release,TS:0
+X-CID-META: VersionHash:84eae18,CLOUDID:e6780857-e800-47dc-8adf-0c936acf4f1b,C
+	OID:IGNORED,Recheck:0,SF:nil,TC:nil,Content:0,EDM:-3,IP:nil,URL:11|1,File:
+	nil,Bulk:nil,QS:nil,BEC:nil,COL:0
+X-UUID: ea58f5b749384a4388d4d8a91aa58bee-20220907
+Received: from mtkmbs11n1.mediatek.inc [(172.21.101.185)] by mailgw02.mediatek.com
+	(envelope-from <chunfeng.yun@mediatek.com>)
+	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
+	with ESMTP id 1730347178; Wed, 07 Sep 2022 18:39:49 -0700
+Received: from mtkmbs11n1.mediatek.inc (172.21.101.185) by
+ mtkmbs11n1.mediatek.inc (172.21.101.185) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.792.15; Thu, 8 Sep 2022 09:39:23 +0800
+Received: from mhfsdcap04 (10.17.3.154) by mtkmbs11n1.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.2.792.15 via Frontend
+ Transport; Thu, 8 Sep 2022 09:39:22 +0800
+Message-ID: <a4e5f9e360a3fc6d094bc719aa4523a4886cae93.camel@mediatek.com>
+Subject: Re: [PATCH v2 3/7] phy: phy-mtk-tphy: add property to set
+ pre-emphasis
+From: Chunfeng Yun <chunfeng.yun@mediatek.com>
+To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	Vinod Koul <vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>
+CC: Kishon Vijay Abraham I <kishon@ti.com>, Krzysztof Kozlowski
+	<krzysztof.kozlowski+dt@linaro.org>, Matthias Brugger
+	<matthias.bgg@gmail.com>, <linux-arm-kernel@lists.infradead.org>,
+	<linux-mediatek@lists.infradead.org>, <linux-phy@lists.infradead.org>,
+	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>, "Krzysztof
+ Kozlowski" <krzysztof.kozlowski@canonical.com>, Eddie Hung
+	<eddie.hung@mediatek.com>
+Date: Thu, 8 Sep 2022 09:39:22 +0800
+In-Reply-To: <219aef5a-af2a-6873-f682-cb6aef862425@collabora.com>
+References: <20220829080830.5378-1-chunfeng.yun@mediatek.com>
+	 <20220829080830.5378-3-chunfeng.yun@mediatek.com>
+	 <219aef5a-af2a-6873-f682-cb6aef862425@collabora.com>
+X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20220902080705.12050-3-johan+linaro@kernel.org>
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220907_140409_790780_4D40C26D 
-X-CRM114-Status: UNSURE (   9.17  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220907_184004_690770_8173979E 
+X-CRM114-Status: GOOD (  22.34  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,18 +87,56 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, 02 Sep 2022 10:07:05 +0200, Johan Hovold wrote:
-> At least the "qcom,sc8280xp-qmp-usb43dp-phy" binding requires a power
-> domain to be specified.
+On Wed, 2022-08-31 at 10:14 +0200, AngeloGioacchino Del Regno wrote:
+> Il 29/08/22 10:08, Chunfeng Yun ha scritto:
+> > Add a property to set usb2 phy's pre-emphasis, it's disabled by
+> > default
+> > on some SoCs.
+> > 
+> > Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+> > ---
+> > v2: no changes
+> > ---
+> >   drivers/phy/mediatek/phy-mtk-tphy.c | 10 ++++++++++
+> >   1 file changed, 10 insertions(+)
+> > 
+> > diff --git a/drivers/phy/mediatek/phy-mtk-tphy.c
+> > b/drivers/phy/mediatek/phy-mtk-tphy.c
+> > index 8ee7682b8e93..986fde0f63a0 100644
+> > --- a/drivers/phy/mediatek/phy-mtk-tphy.c
+> > +++ b/drivers/phy/mediatek/phy-mtk-tphy.c
+> > @@ -72,6 +72,8 @@
+> >   #define PA5_RG_U2_HS_100U_U3_EN	BIT(11)
+> >   
+> >   #define U3P_USBPHYACR6		0x018
+> > +#define PA6_RG_U2_PRE_EMP		GENMASK(31, 30)
+> > +#define PA6_RG_U2_PRE_EMP_VAL(x)	((0x3 & (x)) << 30)
 > 
-> Fixes: aa27597e594c ("dt-bindings: phy: qcom,qmp: Add compatible for SC8280XP USB phys")
-> Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
-> ---
->  .../bindings/phy/qcom,qmp-usb3-dp-phy.yaml         | 14 ++++++++++++++
->  1 file changed, 14 insertions(+)
+> Hello Chunfeng,
+> 
+> can you please clarify which SoC is this change referred to?
+These bits are reserved before using 12nm process.
+
+> 
+> If I'm not missing anything, there may be a register layout conflict 
+As I know these reserved bits are not used before, but now used to tune
+pre-emphasis after supporting 12nm or 5nm process.
+
+> between
+> one version and the other for T-PHYs, for which, it may be a good
+> idea to add
+> a PHY version check before allowing to write settings that are
+> supported only
+> on a specific IP...
+Do you know which SoC used bits, I can confirm it with our DE.
+
+Thanks a lot
+
+> 
+> Regards,
+> Angelo
 > 
 
-Reviewed-by: Rob Herring <robh@kernel.org>
 
 -- 
 linux-phy mailing list
