@@ -4,72 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id ADABAC38145
-	for <linux-phy@archiver.kernel.org>; Thu,  8 Sep 2022 01:57:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3177DC38145
+	for <linux-phy@archiver.kernel.org>; Thu,  8 Sep 2022 02:16:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Date:CC:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uuWhBPS8RsQEgHhWJT0ksZMK2nG8cF7zF++N3Wo3hns=; b=wsjHQBFtLJJYHt
-	HO22GmCiyccuwCQQD3H95/mLUchlIRgKjl7lMKsC+XQzZ+Ke2kNqBVIoByszc5uu4Om3izbhrfz/3
-	Bd9mqVSU62Meesinp7+7GSpPqi04WbyYyhNf4fPnGkkuizTXoo5mpqyqIDJkVuvDSr3B4AnC8LDZa
-	KwZixtdhbni8BPbV0+v7/NFJCoQbVdaXeHFvArpvu66+O4ku1M5zaNNetSJ4jPChzPObsw6JMCf9v
-	Tbpo67nb813xEGxvupoh/FA0YCLQmr+7o1/0Cb8uwvUZBU9y9IOhgYKjy6oRrNtSBPdaWE+NKNuok
-	EAH5AlVDc7apRtQeRygA==;
+	List-Owner; bh=TOpWNt8bWUtOHDGoWDpv9klG5LmEYSYNdwCxzvL/iCQ=; b=DT1+rVf5uLMBWu
+	tHbN9ok26i6zjfloReKU5qbnJ1hwVNdT7Mlt26nXR4cSUIiyv2m5rb3N00N70F2AQ7P12BEhfMnZU
+	h1CAfGpPJl8iPCWwPdYvz1oSmnjaBRUafIjEccblS4RNpWW2dqo+xWXv6dnSbb0x4f9xchxSse49j
+	GI4evUp5hA5xe8MOAPrN7M3u9pHrBlcAbilFWhjYJ4A+1Akh0SzS+nGVHohLyxzrH4SFp8B2vqKlr
+	YbynJwwdgzz1fKe/9eAcv/LOcLu9O9LnWdBIepFBNOUbADUoJjNhP2FjQ09GWW1tk8pz9OKfL8x1I
+	thRJ3ne3w9BS8m7Did9A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oW6ng-00ETCD-16; Thu, 08 Sep 2022 01:57:52 +0000
+	id 1oW75H-00EYpw-Im; Thu, 08 Sep 2022 02:16:03 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oW6nd-00ETAp-2N; Thu, 08 Sep 2022 01:57:51 +0000
-X-UUID: aaed807704354aa19b5fd8227ca927a4-20220907
+	id 1oW75D-00EYlh-U5; Thu, 08 Sep 2022 02:16:01 +0000
+X-UUID: e15096d2f5be422687ed820145f26c6b-20220907
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
-	h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID; bh=Jxm4Q2hjq51exmAQAAZplPtyEj8SEXfXis2YBGKt1cc=;
-	b=cT8deU1OrEnLsdPHGk6Gwo9e0L2itARCNUwgnMnf80crObpD2K2MYnpNZUjQughHsrHSeWJwl/AG5eC5+/cIMrUT5HSqOc6JYpHLuJRLPudwZv76zKSufRVljfq+Fp51u4Hs29k3VhNyNii5oac13iacBqCcr72AVTus4dknm7M=;
+	h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID; bh=zJZpNd7wA1azkWH0Uh0mIjkhwb9raFmXUm6FG4E/jUk=;
+	b=VYQTIQZz2G1en/RBcqg3UqLfE1lQRMRNUho5h7V2KEd4N2GHyz+JxONOOqZTCJjLBibxjp8uhFcfNfcPhIZLKtanLw4YmX+K5ENir6CP+oVA4860mu1R7v6PZSIivO0v0nfLNeGI2R6/lyEPjCxCJebvQg+iqU2hLfrXOgsGykc=;
 X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.1.10,REQID:77016815-d3b6-46ff-b0b0-9e880ada6a6d,OB:0,L
+X-CID-O-INFO: VERSION:1.1.10,REQID:68ba9972-9b4b-4c24-9c23-3e4bbc3a9de0,OB:0,L
 	OB:0,IP:0,URL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_
 	Ham,ACTION:release,TS:0
-X-CID-META: VersionHash:84eae18,CLOUDID:da089221-1c20-48a5-82a0-25f9c331906d,C
+X-CID-META: VersionHash:84eae18,CLOUDID:2bd69221-1c20-48a5-82a0-25f9c331906d,C
 	OID:IGNORED,Recheck:0,SF:nil,TC:nil,Content:0,EDM:-3,IP:nil,URL:11|1,File:
 	nil,Bulk:nil,QS:nil,BEC:nil,COL:0
-X-UUID: aaed807704354aa19b5fd8227ca927a4-20220907
+X-UUID: e15096d2f5be422687ed820145f26c6b-20220907
 Received: from mtkmbs11n1.mediatek.inc [(172.21.101.185)] by mailgw02.mediatek.com
 	(envelope-from <chunfeng.yun@mediatek.com>)
 	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
-	with ESMTP id 293078089; Wed, 07 Sep 2022 18:57:40 -0700
-Received: from mtkcas11.mediatek.inc (172.21.101.40) by
- mtkmbs11n1.mediatek.inc (172.21.101.185) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id
- 15.2.792.15; Thu, 8 Sep 2022 09:27:03 +0800
-Received: from mhfsdcap04 (10.17.3.154) by mtkcas11.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Thu, 8 Sep 2022 09:27:00 +0800
-Message-ID: <696a84dbd54a5c591b78a6c7e043aedb2db85d9b.camel@mediatek.com>
-Subject: Re: [PATCH v2 7/7] phy: phy-mtk-tphy: fix the phy type setting issue
+	with ESMTP id 398502900; Wed, 07 Sep 2022 19:15:56 -0700
+Received: from mtkmbs11n1.mediatek.inc (172.21.101.185) by
+ mtkmbs11n2.mediatek.inc (172.21.101.187) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.792.15; Thu, 8 Sep 2022 09:45:23 +0800
+Received: from mhfsdcap04 (10.17.3.154) by mtkmbs11n1.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.2.792.15 via Frontend
+ Transport; Thu, 8 Sep 2022 09:45:22 +0800
+Message-ID: <291874b3c17e4456bb6fdbef68b68bdc78c11321.camel@mediatek.com>
+Subject: Re: [PATCH 2/7] dt-bindings: phy: mediatek,tphy: add property to
+ set pre-emphasis
 From: Chunfeng Yun <chunfeng.yun@mediatek.com>
-To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	Vinod Koul <vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>
+To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, Vinod Koul
+	<vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>
 CC: Kishon Vijay Abraham I <kishon@ti.com>, Krzysztof Kozlowski
 	<krzysztof.kozlowski+dt@linaro.org>, Matthias Brugger
 	<matthias.bgg@gmail.com>, <linux-arm-kernel@lists.infradead.org>,
 	<linux-mediatek@lists.infradead.org>, <linux-phy@lists.infradead.org>,
-	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>, "Krzysztof
- Kozlowski" <krzysztof.kozlowski@canonical.com>, Eddie Hung
+	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>, Eddie Hung
 	<eddie.hung@mediatek.com>
-Date: Thu, 8 Sep 2022 09:27:00 +0800
-In-Reply-To: <9a7abae0-e31e-6beb-74ce-96462d847a88@collabora.com>
-References: <20220829080830.5378-1-chunfeng.yun@mediatek.com>
-	 <20220829080830.5378-7-chunfeng.yun@mediatek.com>
-	 <9a7abae0-e31e-6beb-74ce-96462d847a88@collabora.com>
+Date: Thu, 8 Sep 2022 09:45:22 +0800
+In-Reply-To: <3c180570-ecf9-3db4-c698-39c1b4679c6e@linaro.org>
+References: <20220819091344.2274-1-chunfeng.yun@mediatek.com>
+	 <20220819091344.2274-2-chunfeng.yun@mediatek.com>
+	 <438da392-f419-ad76-7e91-aa4aab36e12c@linaro.org>
+	 <816ecf6287533137b750c8bde9de5830e4229c56.camel@mediatek.com>
+	 <bee8abe5-0299-d05e-643c-4810aa33f978@linaro.org>
+	 <1a16cce9fe164bafc06ae193310be71c6f645d75.camel@mediatek.com>
+	 <000babd8-5980-3d77-f156-324b3442cbe7@linaro.org>
+	 <114c357f8d7f049d21ede789a292a8e2d45f4c61.camel@mediatek.com>
+	 <0a82842d-283c-e266-84f4-6306f29b61da@linaro.org>
+	 <8dcb4de53a52ab44d40f490099b6ed13e5ef7fe0.camel@mediatek.com>
+	 <3c180570-ecf9-3db4-c698-39c1b4679c6e@linaro.org>
 X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220907_185749_407027_C782AF13 
-X-CRM114-Status: GOOD (  20.06  )
+X-CRM114-CacheID: sfid-20220907_191600_011319_7FDB419F 
+X-CRM114-Status: GOOD (  28.97  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,62 +94,118 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, 2022-08-31 at 10:31 +0200, AngeloGioacchino Del Regno wrote:
-> Il 29/08/22 10:08, Chunfeng Yun ha scritto:
-> > The PHY type is not set if the index is non zero, prepare type
-> > value according to the index, like as mask value.
+On Wed, 2022-08-31 at 09:03 +0300, Krzysztof Kozlowski wrote:
+> On 31/08/2022 06:00, Chunfeng Yun wrote:
+> > On Tue, 2022-08-30 at 13:08 +0300, Krzysztof Kozlowski wrote:
+> > > On 29/08/2022 05:37, Chunfeng Yun wrote:
+> > > > On Fri, 2022-08-26 at 09:36 +0300, Krzysztof Kozlowski wrote:
+> > > > > On 26/08/2022 08:36, Chunfeng Yun wrote:
+> > > > > > On Tue, 2022-08-23 at 13:24 +0300, Krzysztof Kozlowski
+> > > > > > wrote:
+> > > > > > > On 22/08/2022 10:07, Chunfeng Yun wrote:
+> > > > > > > > On Fri, 2022-08-19 at 15:15 +0300, Krzysztof Kozlowski
+> > > > > > > > wrote:
+> > > > > > > > > On 19/08/2022 12:13, Chunfeng Yun wrote:
+> > > > > > > > > > Add a property to set usb2 phy's pre-emphasis.
+> > > > > > > > > > 
+> > > > > > > > > > Signed-off-by: Chunfeng Yun <
+> > > > > > > > > > chunfeng.yun@mediatek.com>
+> > > > > > > > > > ---
+> > > > > > > > > >  Documentation/devicetree/bindings/phy/mediatek,tph
+> > > > > > > > > > y.ya
+> > > > > > > > > > ml |
+> > > > > > > > > > 7
+> > > > > > > > > > +++++++
+> > > > > > > > > >  1 file changed, 7 insertions(+)
+> > > > > > > > > > 
+> > > > > > > > > > diff --git
+> > > > > > > > > > a/Documentation/devicetree/bindings/phy/mediatek,tp
+> > > > > > > > > > hy.y
+> > > > > > > > > > aml
+> > > > > > > > > > b/Documentation/devicetree/bindings/phy/mediatek,tp
+> > > > > > > > > > hy.y
+> > > > > > > > > > aml
+> > > > > > > > > > index 848edfb1f677..aee2f3027371 100644
+> > > > > > > > > > ---
+> > > > > > > > > > a/Documentation/devicetree/bindings/phy/mediatek,tp
+> > > > > > > > > > hy.y
+> > > > > > > > > > aml
+> > > > > > > > > > +++
+> > > > > > > > > > b/Documentation/devicetree/bindings/phy/mediatek,tp
+> > > > > > > > > > hy.y
+> > > > > > > > > > aml
+> > > > > > > > > > @@ -219,6 +219,13 @@ patternProperties:
+> > > > > > > > > >          minimum: 1
+> > > > > > > > > >          maximum: 15
+> > > > > > > > > >  
+> > > > > > > > > > +      mediatek,pre-emphasis:
+> > > > > > > > > > +        description:
+> > > > > > > > > > +          The selection of pre-emphasis (U2 phy)
+> > > > > > > > > > +        $ref:
+> > > > > > > > > > /schemas/types.yaml#/definitions/uint32
+> > > > > > > > > > +        minimum: 1
+> > > > > > > > > > +        maximum: 3
+> > > > > > > > > 
+> > > > > > > > > Instead of hard-coding register values in bindings,
+> > > > > > > > > you
+> > > > > > > > > should
+> > > > > > > > > rather
+> > > > > > > > > describe here feature/effect. If it is in units, use
+> > > > > > > > > unit
+> > > > > > > > > suffixes.
+> > > > > > > > > If
+> > > > > > > > > it is some choice, usually string enum is
+> > > > > > > > > appropriate.
+> > > > > > > > 
+> > > > > > > > How about changing description as bellow:
+> > > > > > > > 
+> > > > > > > > "The level of pre-emphasis, increases one level, boosts
+> > > > > > > > the
+> > > > > > > > relative
+> > > > > > > > amplitudes of signal's higher frequencies components
+> > > > > > > > about
+> > > > > > > > 4.16%
+> > > > > > > > (U2
+> > > > > > > > phy)"
+> > > > > > > > 
+> > > > > > > 
+> > > > > > > Still the question is what is the unit. 4.16%?
+> > > > > > 
+> > > > > > No unit, it's a level value, like an index of array.
+> > > > > > 
+> > > > > 
+> > > > > So a value from register/device programming? 
+> > > > 
+> > > > Yes
+> > > > > Rather a regular units
+> > > > > should be used if that's possible. If not, this should be
+> > > > > clearly
+> > > > > described here, not some magical number which you encode into
+> > > > > DTS...
+> > > > 
+> > > > Ok, I'll add more descriptions.
+> > > 
+> > > Better use logical value, e.g.
+> > > 
 > > 
-> > Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+> > 
+https://urldefense.com/v3/__https://github.com/devicetree-org/dt-schema/blob/main/dtschema/schemas/property-units.yaml*L38__;Iw!!CTRNKA9wMg0ARbw!1e-h0R_uwcaHKfKC9qYfaRWYeuWRq1sLCGy3yupNmkFyuW5s1nmRotL7Y0vFG9ETLLTA$
+> > >  
+> > 
+> > Optional unit may be -percent or -bp, but the value 4.16% * X
+> > (X=1,2,3...)is not an exact value, they are variable in a range and
+> > dependent more factors.
+> > So I think use level value is simple enough.
 > 
-> I agree with this change and I'd be happy to give you my R-b tag, but
-> this
-> commit clearly needs to be backported, so you need a Fixes tag, or a
-> Cc to stable.
-A good point, will add it in next version, thanks a lot
+> Then again explain exactly what are the levels. 
+Ok, I've asked help from our DE to get more information and reply
+later, thanks a lot
 
+> How you wrote it last
+> time, -bp would do the trick.
 > 
-> Thanks,
-> Angelo
-> 
-> > ---
-> > v2: no changes
-> > ---
-> >   drivers/phy/mediatek/phy-mtk-tphy.c | 7 ++++---
-> >   1 file changed, 4 insertions(+), 3 deletions(-)
-> > 
-> > diff --git a/drivers/phy/mediatek/phy-mtk-tphy.c
-> > b/drivers/phy/mediatek/phy-mtk-tphy.c
-> > index e0f227a0d3cc..cc10298bc70d 100644
-> > --- a/drivers/phy/mediatek/phy-mtk-tphy.c
-> > +++ b/drivers/phy/mediatek/phy-mtk-tphy.c
-> > @@ -915,7 +915,7 @@ static int phy_type_syscon_get(struct
-> > mtk_phy_instance *instance,
-> >   static int phy_type_set(struct mtk_phy_instance *instance)
-> >   {
-> >   	int type;
-> > -	u32 mask;
-> > +	u32 offset;
-> >   
-> >   	if (!instance->type_sw)
-> >   		return 0;
-> > @@ -938,8 +938,9 @@ static int phy_type_set(struct mtk_phy_instance
-> > *instance)
-> >   		return 0;
-> >   	}
-> >   
-> > -	mask = RG_PHY_SW_TYPE << (instance->type_sw_index *
-> > BITS_PER_BYTE);
-> > -	regmap_update_bits(instance->type_sw, instance->type_sw_reg,
-> > mask, type);
-> > +	offset = instance->type_sw_index * BITS_PER_BYTE;
-> > +	regmap_update_bits(instance->type_sw, instance->type_sw_reg,
-> > +			   RG_PHY_SW_TYPE << offset, type << offset);
-> >   
-> >   	return 0;
-> >   }
-> > 
-> 
-> 
+> Best regards,
+> Krzysztof
 
 
 -- 
