@@ -4,88 +4,91 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1A336ECAAD3
-	for <linux-phy@archiver.kernel.org>; Fri,  9 Sep 2022 08:28:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2A4B1ECAAD3
+	for <linux-phy@archiver.kernel.org>; Fri,  9 Sep 2022 08:45:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Sl/DdDm8P7cVktCmPLOja7/604aSTilC5g8Ba5QWUM8=; b=4y9vL0nX8orSmm
-	aRd7lncFHnAxPor2DROpnAxSoiptSsmYebWbfTqWcs0wPUeKhdNVvbIpKWD64l+AqDIgHLewKgHsd
-	KJ4XnmrCjn8GFaoaDSJJ7CdRq5LfOIz9tk8+hEfqkZ2AKIXC8jLr+pzJfa8sbKI5H+/vkKc6sMlUs
-	w32cQdISeIvb3K7ELDIbSYqdrSwMT+ksUaRnTOxZRvHdjiLaFNiYC5l04qJi3t0wPeSHdJN4ULW8p
-	z/8fBr4y9A1p1DQR1EoetiPMM4nSqy/U89kBHbHAEnWR5vjeBwHrzOJisrJFqvS2Z2RXGg9B8zg3V
-	gCd35jqV0MIJYvnvLp5w==;
+	List-Owner; bh=aRCivwhC83e2jI+iZgTG5eOM7b0O/2lkXDqdB9qK+Zw=; b=L6s2+5RWJtjL/a
+	AM372/TgJunnArLgSsWGoS3YpkNa344RoI9pDM5Vdy7WH7NhegxorkxDIcAf7nd3xlj7P1IpOgPjK
+	q/prgAgfVZiLZRtGVBozN+RtydTNxIysBStfhEMwymo6WiIW5135cDjONYNgfzbRQHY7KkAJk8ya+
+	cb1MoYR9kwF9fmGsH0GqCKWdQL5M/Yz2pLUlxJSGCGTTdwXl9SvvQlkY8Nveno0WMg/Vbsn+OrmUp
+	ttnTi43civPnQwHwj4BUHOOKwKqasq3szzLFUZmokNmQx++ADfLBSHhut8gxUY8Tt06U1uxjiDYZ4
+	iE6TWzpYsOqyDD42FK7Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oWZMu-00EalV-GE; Fri, 09 Sep 2022 08:28:08 +0000
-Received: from mail-lf1-x12e.google.com ([2a00:1450:4864:20::12e])
+	id 1oWZdV-00EknC-FS; Fri, 09 Sep 2022 08:45:17 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oWZMk-00Eahx-VA
-	for linux-phy@lists.infradead.org; Fri, 09 Sep 2022 08:28:00 +0000
-Received: by mail-lf1-x12e.google.com with SMTP id q21so1530807lfo.0
-        for <linux-phy@lists.infradead.org>; Fri, 09 Sep 2022 01:27:57 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date;
-        bh=aaJgQP6mmOZSBtHCI9caEKhaJVZ90AwBEM8xc756oKU=;
-        b=PkfSceaEsCN3DpwzT8WAOBHdhnr+T+3XRaGeaR7p49jx4tBR9Qj413xsXGQanqhfoU
-         uue3QFM5syxSdoOsUTd+FPVTJejwBpH6Xy4kpd6YjS7OIjzBn1gW91Iu4lgohO+zUpes
-         NVjdNvCCKSZKyCmQcZnvVzlqFNuZgZZgU++IpRQNCp22jAqHqRacoEip4/LRefcJkcfP
-         1wdzAxA2JOc/DW5m9xTso4VANt357kwefrfBgAG8RvRoPoLd27pvP3A7qVhYEEevdzLG
-         I43EfJlJeuTCZewT8kop0fv+dBAta9ME61DIoPj6MZTtfNdEF1ZnNfMYXbZlGXO+PiIR
-         k/NQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date;
-        bh=aaJgQP6mmOZSBtHCI9caEKhaJVZ90AwBEM8xc756oKU=;
-        b=a6hRxMFJ20PGKY2LVFf0rDYptgGxHTKOXr7e4iRDgeHVxAkOC/H1v7xXFJAi41dafq
-         wJ0lLSMocZVj0o8pWXdr5rjTYLIJDK1ekMWuNSNQ5R/SrLdPH0jh6ytpY6qAQX1wB0Ru
-         LjLIwvDMtvCwqxRmq8ALygKMQgF3IAW1TjVJeamu6RKgpYjB5jAclhNEfKWDl+tNRL+X
-         Gh5pKL528JRYJra14h/QJRCWXb6CP4Bfv8ac3R1Z2sGLb/Oprn9KRGPwg7+Ih9wXCpu2
-         fClNQcjPf9WKd/Kk6EY7rqzHMZvRIkEnq7tUAgQKtYYyhhYIuf5ieOIohX/Tfj7yI5iR
-         Y0YA==
-X-Gm-Message-State: ACgBeo3y40gg/c+xC+Gr5kJLm5FjTU5T7jz2PqoALtF74zTyHMYTZXsA
-	1vXqO8bFCXrlF1ETd2CuxjJqog==
-X-Google-Smtp-Source: AA6agR6q6dm061SxXLm4iCirWAM8P1i+n441YDphCVJBfNX6AwWGizOpXP2cFam8rCAb/gLNemJBIw==
-X-Received: by 2002:a19:9157:0:b0:496:8bd6:a594 with SMTP id y23-20020a199157000000b004968bd6a594mr4174662lfj.314.1662712076092;
-        Fri, 09 Sep 2022 01:27:56 -0700 (PDT)
-Received: from [192.168.0.21] (78-11-189-27.static.ip.netia.com.pl. [78.11.189.27])
-        by smtp.gmail.com with ESMTPSA id l6-20020ac24a86000000b00497fed6cbb1sm188710lfp.71.2022.09.09.01.27.55
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 09 Sep 2022 01:27:55 -0700 (PDT)
-Message-ID: <36f9ed08-169b-dc92-2df0-842de4116d49@linaro.org>
-Date: Fri, 9 Sep 2022 10:27:54 +0200
-MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.13.0
-Subject: Re: [PATCH v2 2/7] dt-bindings: phy: mediatek,tphy: add property to
- set pre-emphasis
-Content-Language: en-US
-To: Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>,
- Rob Herring <robh+dt@kernel.org>
-Cc: Kishon Vijay Abraham I <kishon@ti.com>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org,
- Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>,
- Eddie Hung <eddie.hung@mediatek.com>
-References: <20220829080830.5378-1-chunfeng.yun@mediatek.com>
- <20220829080830.5378-2-chunfeng.yun@mediatek.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20220829080830.5378-2-chunfeng.yun@mediatek.com>
+	id 1oWZdS-00Ekl6-9B
+	for linux-phy@lists.infradead.org; Fri, 09 Sep 2022 08:45:16 +0000
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.5/8.17.1.5) with ESMTP id 2898ZYsg028862;
+	Fri, 9 Sep 2022 08:45:09 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
+ subject : date : message-id : in-reply-to : references; s=qcppdkim1;
+ bh=h5AqmaynuKLrTLKn7227K3Xg6788QCt7Btwh+N/PpcM=;
+ b=Nt5JCnvYndxJby43+gdspaACzJOBNDItr3RWz9PQORF86sWqFmUTgDliJmR8sFdgTvXM
+ 2BLXAziIvVKCj582aAg7ZgsZNDNjlz4mlogtBaHO4X0NhCF0rAv5SX6Vhy2oENWUVWCl
+ 7g79yvjDlkjlWcivIVox3+iCa2AwN6ZEQmH7omZzG6JgcgbIMIBnIrFtvtbdMvxUziWG
+ PibTmYW9MpKKz5GGpAoE0E1HxCBqOoNwctlag6Xe2T5fubUcdGnFT3tSESbzoX6UiLen
+ zkSN5IeE80reFm8bZ92XvZcgRfdzSOYXoudfFDcq1hyMqnm5Z1NSjeR56xIlL24NHJdq aQ== 
+Received: from apblrppmta02.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3jfupq9e90-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 09 Sep 2022 08:45:08 +0000
+Received: from pps.filterd (APBLRPPMTA02.qualcomm.com [127.0.0.1])
+	by APBLRPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTP id 2898j5I3014248;
+	Fri, 9 Sep 2022 08:45:05 GMT
+Received: from pps.reinject (localhost [127.0.0.1])
+	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTPS id 3jc00m8vq7-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
+	Fri, 09 Sep 2022 08:45:05 +0000
+Received: from APBLRPPMTA02.qualcomm.com (APBLRPPMTA02.qualcomm.com [127.0.0.1])
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 2898j42Q014222;
+	Fri, 9 Sep 2022 08:45:04 GMT
+Received: from hu-sgudaval-hyd.qualcomm.com (hu-krichai-hyd.qualcomm.com [10.213.110.37])
+	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTP id 2898j4LL014214;
+	Fri, 09 Sep 2022 08:45:04 +0000
+Received: by hu-sgudaval-hyd.qualcomm.com (Postfix, from userid 4058933)
+	id 0302544AC; Fri,  9 Sep 2022 14:15:04 +0530 (+0530)
+From: Krishna chaitanya chundru <quic_krichai@quicinc.com>
+To: helgaas@kernel.org
+Cc: linux-pci@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+        linux-kernel@vger.kernel.org, mka@chromium.org,
+        quic_vbadigan@quicinc.com, quic_hemantk@quicinc.com,
+        quic_nitegupt@quicinc.com, quic_skananth@quicinc.com,
+        quic_ramkri@quicinc.com, manivannan.sadhasivam@linaro.org,
+        swboyd@chromium.org, dmitry.baryshkov@linaro.org,
+        Krishna chaitanya chundru <quic_krichai@quicinc.com>,
+        Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+        linux-phy@lists.infradead.org (open list:GENERIC PHY FRAMEWORK)
+Subject: [PATCH v6 3/5] phy: core: Add support for phy power down & power up
+Date: Fri,  9 Sep 2022 14:14:42 +0530
+Message-Id: <1662713084-8106-4-git-send-email-quic_krichai@quicinc.com>
+X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1662713084-8106-1-git-send-email-quic_krichai@quicinc.com>
+References: <1662713084-8106-1-git-send-email-quic_krichai@quicinc.com>
+X-QCInternal: smtphost
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: __Wr50mEm9u1Riga9jMsOS-WY3lYLWLn
+X-Proofpoint-ORIG-GUID: __Wr50mEm9u1Riga9jMsOS-WY3lYLWLn
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.205,Aquarius:18.0.895,Hydra:6.0.528,FMLib:17.11.122.1
+ definitions=2022-09-09_04,2022-09-09_01,2022-06-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 adultscore=0 impostorscore=0
+ suspectscore=0 bulkscore=0 malwarescore=0 mlxlogscore=841
+ lowpriorityscore=0 spamscore=0 clxscore=1011 priorityscore=1501 mlxscore=0
+ phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2207270000 definitions=main-2209090029
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220909_012759_021857_9992E939 
-X-CRM114-Status: UNSURE (   9.23  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220909_014514_492510_5621DE5F 
+X-CRM114-Status: GOOD (  15.38  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,28 +100,118 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 29/08/2022 10:08, Chunfeng Yun wrote:
-> Add a property to set usb2 phy's pre-emphasis, which used to widen eye
-> opening and boost eye swing.
-> 
-> Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
-> ---
-> v2: Add more description suggested by Krzysztof
-> ---
->  .../devicetree/bindings/phy/mediatek,tphy.yaml         | 10 ++++++++++
->  1 file changed, 10 insertions(+)
-> 
+Introducing phy power down/up callbacks for allowing to park the
+link-state in L1ss without holding any PCIe resources during
+system suspend.
 
-Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Signed-off-by: Krishna chaitanya chundru <quic_krichai@quicinc.com>
+---
+ drivers/phy/phy-core.c  | 30 ++++++++++++++++++++++++++++++
+ include/linux/phy/phy.h | 20 ++++++++++++++++++++
+ 2 files changed, 50 insertions(+)
 
+diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
+index d93ddf1..1b0b757 100644
+--- a/drivers/phy/phy-core.c
++++ b/drivers/phy/phy-core.c
+@@ -441,6 +441,36 @@ int phy_set_speed(struct phy *phy, int speed)
+ }
+ EXPORT_SYMBOL_GPL(phy_set_speed);
+ 
++int phy_power_down(struct phy *phy)
++{
++	int ret;
++
++	if (!phy || !phy->ops->power_down)
++		return 0;
++
++	mutex_lock(&phy->mutex);
++	ret = phy->ops->power_down(phy);
++	mutex_unlock(&phy->mutex);
++
++	return ret;
++}
++EXPORT_SYMBOL_GPL(phy_power_down);
++
++int phy_power_up(struct phy *phy)
++{
++	int ret;
++
++	if (!phy || !phy->ops->power_up)
++		return 0;
++
++	mutex_lock(&phy->mutex);
++	ret = phy->ops->power_up(phy);
++	mutex_unlock(&phy->mutex);
++
++	return ret;
++}
++EXPORT_SYMBOL_GPL(phy_power_up);
++
+ int phy_reset(struct phy *phy)
+ {
+ 	int ret;
+diff --git a/include/linux/phy/phy.h b/include/linux/phy/phy.h
+index b141375..3a45f4d 100644
+--- a/include/linux/phy/phy.h
++++ b/include/linux/phy/phy.h
+@@ -76,6 +76,8 @@ union phy_configure_opts {
+  * @set_mode: set the mode of the phy
+  * @set_media: set the media type of the phy (optional)
+  * @set_speed: set the speed of the phy (optional)
++ * @power_down: parking the phy in power down state
++ * @power_up: pulling back the phy from power down
+  * @reset: resetting the phy
+  * @calibrate: calibrate the phy
+  * @release: ops to be performed while the consumer relinquishes the PHY
+@@ -89,6 +91,8 @@ struct phy_ops {
+ 	int	(*set_mode)(struct phy *phy, enum phy_mode mode, int submode);
+ 	int	(*set_media)(struct phy *phy, enum phy_media media);
+ 	int	(*set_speed)(struct phy *phy, int speed);
++	int	(*power_down)(struct phy *phy);
++	int	(*power_up)(struct phy *phy);
+ 
+ 	/**
+ 	 * @configure:
+@@ -226,6 +230,8 @@ int phy_init(struct phy *phy);
+ int phy_exit(struct phy *phy);
+ int phy_power_on(struct phy *phy);
+ int phy_power_off(struct phy *phy);
++int phy_power_down(struct phy *phy);
++int phy_power_up(struct phy *phy);
+ int phy_set_mode_ext(struct phy *phy, enum phy_mode mode, int submode);
+ #define phy_set_mode(phy, mode) \
+ 	phy_set_mode_ext(phy, mode, 0)
+@@ -349,6 +355,20 @@ static inline int phy_power_off(struct phy *phy)
+ 	return -ENOSYS;
+ }
+ 
++static inline int phy_power_down(struct phy *phy)
++{
++	if (!phy)
++		return 0;
++	return -ENOSYS;
++}
++
++static inline int phy_power_up(struct phy *phy)
++{
++	if (!phy)
++		return 0;
++	return -ENOSYS;
++}
++
+ static inline int phy_set_mode_ext(struct phy *phy, enum phy_mode mode,
+ 				   int submode)
+ {
+-- 
+2.7.4
 
-Best regards,
-Krzysztof
 
 -- 
 linux-phy mailing list
