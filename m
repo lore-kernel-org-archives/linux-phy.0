@@ -4,82 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B28CAECAAA1
-	for <linux-phy@archiver.kernel.org>; Fri,  9 Sep 2022 09:18:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 21B2CC6FA82
+	for <linux-phy@archiver.kernel.org>; Fri,  9 Sep 2022 09:21:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PpH5Q2kA9rAL+Ed/iG5lVEhPA0UeDSykb4UG8hGlL2k=; b=fOYWDlFkBVCyVO
-	rXllQ8xf+xKtTiZCF6HcgIpw7XZowFLO2HbEWbPROWhrEdCJXR5faC5k69GD2IcJFzbb0d44e/cE4
-	lOOQiybS2IKgO+LJMlokIlLPLm38SVM9NlAwYgOiZQnhqkJ5hps01uV4prZA609fRrCebcbcyuriI
-	YYoYT2Ob95M9PCInRt310gsB5Vd5hUu0ycuZ15IPa+Vux6u6P1WwAQlGGAA+jjDmPzhn5QgIJylLG
-	fpNNxIvje4e2s2AsSycYks5DCvL3GAp4DoxRE2UkexYUT+MdZ464sYjsMaevLta2ycuTHzIj99fOv
-	O2RwRCskZRtpzyQWblTg==;
+	List-Owner; bh=WVEn3vqMKc7BdHRXXyQUXuRxgWGk3JWkZ/LENawHpDM=; b=0CZp47Pp/jRk6y
+	9qNBsD3A7LuJ88zyh2BpO0Q5GGdBf30JVOhNC/Gy4/A5ozVANkH1doqT5N3SGtXTNOWEUTkCgDAaC
+	wncZGBLcOlT6I3fx8uYQ461/uJAvtyfi0lKts8lAxf6odGUt5FaLGKqfgMYuUQXgoC0lcdeKqJykz
+	7Sged9U77xOxfd/4KBQ+Rm4ReDg/dUDN0NFSpFj6t02B9iyIS2eW+GzHVBpNxGBUTEvKUGNO8LkFH
+	O2NpD3d7EL6d9pCv5Y3uSQd+1h9rPFbWJ3ZdU5/Q0klpjbwpWW6xQjXysOhkg4xypekai40zzzWs2
+	ouKY3mV3Uvvru2ImR4Zg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oWaA6-00Ezov-5Y; Fri, 09 Sep 2022 09:18:58 +0000
-Received: from mail-lj1-x229.google.com ([2a00:1450:4864:20::229])
+	id 1oWaCO-00F1KG-GP; Fri, 09 Sep 2022 09:21:20 +0000
+Received: from mail-lf1-x12b.google.com ([2a00:1450:4864:20::12b])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oWaA3-00Eznq-Ts
-	for linux-phy@lists.infradead.org; Fri, 09 Sep 2022 09:18:57 +0000
-Received: by mail-lj1-x229.google.com with SMTP id bx38so1073875ljb.10
-        for <linux-phy@lists.infradead.org>; Fri, 09 Sep 2022 02:18:53 -0700 (PDT)
+	id 1oWaCJ-00F1Hk-QF
+	for linux-phy@lists.infradead.org; Fri, 09 Sep 2022 09:21:19 +0000
+Received: by mail-lf1-x12b.google.com with SMTP id k10so1680873lfm.4
+        for <linux-phy@lists.infradead.org>; Fri, 09 Sep 2022 02:21:14 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date;
-        bh=kuIhzSkq3fDg9/NxRNM5sLOQILPo0CbgosVBQmELZ3s=;
-        b=Q5xo/72AqUs037hXFiKMXBWP9qQ0QCQQ5+liSy7CDb+vWuxmBFg9ZenRUPHYDJ+3LS
-         jZpyw2Fta5BxclW0Wr0sNrNL7aBK4EPIICj1rbzZ22Akx+mgm+/mPR31xaIzWWvSuf3y
-         gDfn1rzYrs+7VJeFQjypK4x+vyzr8nhRtQrxMZQeu2Ng8GjE3uBZgWOFxRUruFl7kuPc
-         Sr15nYY4iSg64vSH6bSSLtMdCU8zDYONnPixDlkpaSPJXabM+vWDe8y83SQaFavRO823
-         bHshACNkpvcKdHJ42YyFwZnX/UZQj04vtCy8/cGvMyEuwCOv8l/rR87/x5jwUQ+G6+RX
-         8mCg==
+        bh=5C5lLPWXo2PEugtUTd2/amAX/cOIrsmkGvZKcxLNXv8=;
+        b=FjVvfjC4Qeanl9HJy1Wx0CDHchT64ls67ctXS3tW53xX37jJcTi0bJ0T8efnLOgred
+         dC15271al2nKmj0OGleXVqNIEwnGhWfh7YLZYvONOCHBX1yTnlntuymCC/6jd6WcSYtc
+         FHMsbFGKU/mpAINtvgEPyY++uCrQW47hJ75Sgl206LvZPHbtsmqhOONUoqZmOcE2Cqgk
+         8/C28GxQMxs7S3CMX8zSlWeADy5SNwGkiMMLfHB51glfXKmoL0UDtXw5njLAS/qJWBGG
+         iBCZxpw1Gwf4/zv5RK90wWztLUuvjKfdRwEWLde6spzua/n3Eqz2e6VwAhPmupfNSC8R
+         UL9g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date;
-        bh=kuIhzSkq3fDg9/NxRNM5sLOQILPo0CbgosVBQmELZ3s=;
-        b=KE1MKXXLu5tsqJ5qn/2kV9jRb6zXN9KVZ8vX+z7NYKne4tTjrrqb1SU/MVIpFm/TKv
-         UQ5bAMUbgus2D9lZj0XrrNRL6RU4SDnftoSPJfNoufi5/0LxRtD5jMk02w7LPEo5dglR
-         F7dDPSGp321zqIZai+raj48F0Hhl/JWCOr1Gdm8A/5MhdMficE+g4BAvIsxkBkd79eWp
-         gqWNM7gnStPF6sQEzZ7mpak8ATePwfKRl+a6XL2Ynp2oSEvVyBKNIT1zHVTQJ4yfWe8Z
-         Nd/qos0mTq6JGEbbk6XhmkFCK5fAwzaHV1c1+ixkT2NOwqt3h3ai4cRws0dXOZTTplGq
-         HlFA==
-X-Gm-Message-State: ACgBeo1Lfw65WVAdz/X7n/qSf4mGNiehZVrc8djDd2FenquswD0FG5QS
-	jN+mvdB5IYwdVJXJO4lwcLa0gg==
-X-Google-Smtp-Source: AA6agR4dZ40n+zYZc3ZCFRVBIqM5e2s9DGInqydOWBOPLjVazMP238WR4ZOgRpQsHcPHjYnMs4DiRA==
-X-Received: by 2002:a2e:50b:0:b0:26a:b7ec:59ea with SMTP id 11-20020a2e050b000000b0026ab7ec59eamr3860803ljf.312.1662715132031;
-        Fri, 09 Sep 2022 02:18:52 -0700 (PDT)
+        bh=5C5lLPWXo2PEugtUTd2/amAX/cOIrsmkGvZKcxLNXv8=;
+        b=QOCtDEJ7ooPoZgu8irkvlAxaQSzCWanmEWiAL+qYjVOMqiJpc7/fQE020v3y4c4ceI
+         HSgQPmIQei6D+abKjdEJl279iNdv4+T0CQg3u8ou7KhnRqX7HB/21k9InKAv7/svhz3+
+         d0MzTKHmpVWgoee0J0RE0QOcuuy9NXq/cqmTrSqgpCX7N/TVnNqi2nx/X+ljOE/tedtZ
+         UIuDgWAPg/AtUkey1KZ/elDsqVskxCTsPd1+PIhXz/fLo4qoqv6SobJOE+DB0wUJ6JlM
+         B5tHJ+ZGNAwiqkbypW2SH4lbBjOcIlJUldnBDeA+OCrfaH+5cSr05kM5SvdIEAeX+wqZ
+         BHTQ==
+X-Gm-Message-State: ACgBeo03W4D48TJWtJZSkh/OEsE3Nz9/Pf1ke5Hxd4iyN6Wg737I65RQ
+	ExB0ogWkLH8U/WsWK9uDnmSQxA==
+X-Google-Smtp-Source: AA6agR4yyCDK3ccYh+WDpIf9g7K8b0E/jVJyesR/aOpi2YHy8mnAnvD5r6xvAlgzq4ZTZOOdwrtHWQ==
+X-Received: by 2002:a05:6512:1694:b0:48a:9d45:763f with SMTP id bu20-20020a056512169400b0048a9d45763fmr3886463lfb.662.1662715273122;
+        Fri, 09 Sep 2022 02:21:13 -0700 (PDT)
 Received: from [192.168.1.211] ([37.153.55.125])
-        by smtp.gmail.com with ESMTPSA id r24-20020ac24d18000000b004949f7cbb6esm6928lfi.79.2022.09.09.02.18.51
+        by smtp.gmail.com with ESMTPSA id u23-20020a05651c131700b0026ac8c94022sm207044lja.119.2022.09.09.02.21.12
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 09 Sep 2022 02:18:51 -0700 (PDT)
-Message-ID: <9a6c7419-a636-4af3-b4fc-d33b06c89505@linaro.org>
-Date: Fri, 9 Sep 2022 12:18:51 +0300
+        Fri, 09 Sep 2022 02:21:12 -0700 (PDT)
+Message-ID: <7370ba1d-472c-b036-4155-f86ca13f9824@linaro.org>
+Date: Fri, 9 Sep 2022 12:21:12 +0300
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.1.2
-Subject: Re: [PATCH 3/3] phy: qcom-qmp: drop dual-lane comments
+Subject: Re: [PATCH 02/16] phy: qcom-qmp-combo: drop unused defines
 Content-Language: en-GB
 To: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>
 Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
  Konrad Dybcio <konrad.dybcio@somainline.org>,
  Kishon Vijay Abraham I <kishon@ti.com>, linux-arm-msm@vger.kernel.org,
  linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
-References: <20220906074550.4383-1-johan+linaro@kernel.org>
- <20220906074550.4383-4-johan+linaro@kernel.org>
+References: <20220907110728.19092-1-johan+linaro@kernel.org>
+ <20220907110728.19092-3-johan+linaro@kernel.org>
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-In-Reply-To: <20220906074550.4383-4-johan+linaro@kernel.org>
+In-Reply-To: <20220907110728.19092-3-johan+linaro@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220909_021856_009919_A7F43474 
-X-CRM114-Status: UNSURE (   9.16  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220909_022115_885260_9969BCD8 
+X-CRM114-Status: GOOD (  15.78  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,20 +95,75 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 06/09/2022 10:45, Johan Hovold wrote:
-> Drop the obsolete and misleading dual-lane comments which gave the
-> impression that only combo PHYs have a second lane.
+On 07/09/2022 14:07, Johan Hovold wrote:
+> Drop defines and enums that are unused since the QMP driver split.
 > 
 > Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
+> ---
+>   drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 15 ---------------
+>   1 file changed, 15 deletions(-)
+> 
+> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+> index 9ce2ab56be4c..838f7e328b55 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+> @@ -28,16 +28,11 @@
+>   #define SW_RESET				BIT(0)
+>   /* QPHY_POWER_DOWN_CONTROL */
+>   #define SW_PWRDN				BIT(0)
+> -#define REFCLK_DRV_DSBL				BIT(1)
+>   /* QPHY_START_CONTROL bits */
+>   #define SERDES_START				BIT(0)
+>   #define PCS_START				BIT(1)
+> -#define PLL_READY_GATE_EN			BIT(3)
+>   /* QPHY_PCS_STATUS bit */
+>   #define PHYSTATUS				BIT(6)
+> -#define PHYSTATUS_4_20				BIT(7)
+> -/* QPHY_PCS_READY_STATUS & QPHY_COM_PCS_READY_STATUS bit */
+> -#define PCS_READY				BIT(0)
+
+I think these defines, describing registers and bits, can go to the 
+common header instead.
+
+For the rest of the patch:
 
 Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 
-> ---
->   drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 1 -
->   drivers/phy/qualcomm/phy-qcom-qmp-pcie.c  | 1 -
->   drivers/phy/qualcomm/phy-qcom-qmp-ufs.c   | 1 -
->   drivers/phy/qualcomm/phy-qcom-qmp-usb.c   | 1 -
->   4 files changed, 4 deletions(-)
+>   
+>   /* QPHY_V3_DP_COM_RESET_OVRD_CTRL register bits */
+>   /* DP PHY soft reset */
+> @@ -71,8 +66,6 @@
+>   #define POWER_DOWN_DELAY_US_MIN			10
+>   #define POWER_DOWN_DELAY_US_MAX			11
+>   
+> -#define MAX_PROP_NAME				32
+> -
+>   /* Define the assumed distance between lanes for underspecified device trees. */
+>   #define QMP_PHY_LEGACY_LANE_STRIDE		0x400
+>   
+> @@ -115,22 +108,14 @@ struct qmp_phy_init_tbl {
+>   
+>   /* set of registers with offsets different per-PHY */
+>   enum qphy_reg_layout {
+> -	/* Common block control registers */
+> -	QPHY_COM_SW_RESET,
+> -	QPHY_COM_POWER_DOWN_CONTROL,
+> -	QPHY_COM_START_CONTROL,
+> -	QPHY_COM_PCS_READY_STATUS,
+>   	/* PCS registers */
+>   	QPHY_SW_RESET,
+>   	QPHY_START_CTRL,
+> -	QPHY_PCS_READY_STATUS,
+>   	QPHY_PCS_STATUS,
+>   	QPHY_PCS_AUTONOMOUS_MODE_CTRL,
+>   	QPHY_PCS_LFPS_RXTERM_IRQ_CLEAR,
+>   	QPHY_PCS_LFPS_RXTERM_IRQ_STATUS,
+>   	QPHY_PCS_POWER_DOWN_CONTROL,
+> -	/* PCS_MISC registers */
+> -	QPHY_PCS_MISC_TYPEC_CTRL,
+>   	/* Keep last to ensure regs_layout arrays are properly initialized */
+>   	QPHY_LAYOUT_SIZE
+>   };
 
 -- 
 With best wishes
