@@ -4,88 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 25043C6FA9A
-	for <linux-phy@archiver.kernel.org>; Fri,  9 Sep 2022 09:14:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4CD85ECAAD3
+	for <linux-phy@archiver.kernel.org>; Fri,  9 Sep 2022 09:17:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3mrX4LHcftHI3B+X9OopZCet7RGQ68MhSCzRowZOLjc=; b=g++SSanOzNbeQh
-	PbV9qML9f5nlLCUGljYvrdWyqzl7ng3B9/d0LY73W2QxQUVDIXFBw7SA74cvz6YMvz0xU5p8RkHTh
-	5FoLy1btYy+fcF7jTVCPJ8MIqwjlrS7ZPpvywlIn6o7E2wHoaASj+GUlNdEi9maPmy784zVBO0TvJ
-	VRWTWj5adiunYbAk8e1oMQijns2muNtplKvTqHuJV9xJBCVDTzkkIchX58EiXHPNkayCzaro3E0eG
-	HznwYk4A3F6yePrxQfwWDTrRxHZh24exDlY2+yzudS72bfHgKv8jD6O+qPlQKEGGL+0fWPAyZwDpU
-	kxjbqizfg2rtKqZh8NJg==;
+	List-Owner; bh=uT807Ge2yEWdOIAS5oeUVQKlsihI3iskYCAdaG0Xkk8=; b=SN14rjY9wVR/Br
+	hqXwHmLOw96+yftsARKKLvAoH8lQRzcbaPWKEV6Uhlk3EWNzWvaaa1MhIADiz2hw4afQ8iJBCU52b
+	d/ejSqtUuK3RDueYGTLIwu/qjdxkEllEhbQz3lg0CWkRI7OqXkSUCAotdesHRKscjRVT/3n21klq5
+	Hv8mbxlNl+CoqgT1UwRzO4iyPbDmOZ6oMJGP0h2LL0ptp2cR/sxxZYEnspnBYE6HJLQVQIfkYh9uK
+	b1x/trC8tBd8m+cHkmS5+61GMA471evDG8yTAYDSSGqDSq6yuVHrm7z8ciGuNpvhwJ+z9xmFYg8KY
+	1qCbZMfxrFvW17fvnCoQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oWa66-00Exhd-Jq; Fri, 09 Sep 2022 09:14:50 +0000
-Received: from mail-lj1-x22f.google.com ([2a00:1450:4864:20::22f])
+	id 1oWa8E-00EzDF-LA; Fri, 09 Sep 2022 09:17:02 +0000
+Received: from mail-lj1-x22e.google.com ([2a00:1450:4864:20::22e])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oWa62-00Exbr-JI
-	for linux-phy@lists.infradead.org; Fri, 09 Sep 2022 09:14:47 +0000
-Received: by mail-lj1-x22f.google.com with SMTP id y18so1055938ljh.12
-        for <linux-phy@lists.infradead.org>; Fri, 09 Sep 2022 02:14:44 -0700 (PDT)
+	id 1oWa8A-00Ez4k-2p
+	for linux-phy@lists.infradead.org; Fri, 09 Sep 2022 09:17:00 +0000
+Received: by mail-lj1-x22e.google.com with SMTP id z20so1099131ljq.3
+        for <linux-phy@lists.infradead.org>; Fri, 09 Sep 2022 02:16:56 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date;
-        bh=PvsPfs87gAZRtOiASIB84lPgqC16e4BE5MitB4Ro4vE=;
-        b=qov3whUhdo38OXpooMvsX1Qs5OGgXc9voMg70wTfWwKAeYXuMOzVJP59tls7WUZT4o
-         yNSY/b3JCkFuDLjapEA04zIKStUHyTIQXFNjaGPqNKtHHXhy7RdVYK9Z2cAY8kQ8uAWC
-         S+Jfq5n+9ITLUFWupmSGndRDue4k7EAxgzaLgkL3G7EzsvrawncdOlACledd5DPz0GR9
-         yuyyG57PV/vmJcWrt0xIOGXYLvUoDK+/q0oi9JeqhscmZQykY6wF461SvOGzT6NGrhay
-         byEpztXMfnAZXAXa0spWJQXc/Tu5cYU+EoMiv/FkGMciNZabMc5R2OKAk8C0NSAeu1A+
-         Buzg==
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date;
+        bh=HwSPkOLsB3PaeJ/979fVd6W4oSX7MjdZh6/4vBoMvj8=;
+        b=fLLK6hOWnY1NKt2/9ajJcBXVBawXcP/rjqy5sIzCV2fC6BSP2GyZMCrq/Oe2XtVHHc
+         0UdYW+rQP1P51uENHMtg4PZ45PX+IlMOYfA9fn2iRzihWA1IyM0UxzL3xT7TZsikSicy
+         RVAz8bl5sLqfVAHDPBGjvlsyo61vlc+3OOHFW+UTEaLIzbr8md3sxfF3hRIZWe1cKYg9
+         85mdXqUmtYGjcNBYCt4gW4MfB8J3awgA2aY1Oz0EWC/Awy40MCebQDkPhLypHjCOc/LN
+         lVKIaazrD26h2zV4qxX7aL/CXHhME8xJOekIwykOKFW2Gj5OKG7b9Xscwv8MLskBvm4O
+         AWZg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date;
-        bh=PvsPfs87gAZRtOiASIB84lPgqC16e4BE5MitB4Ro4vE=;
-        b=i4+Uk2UGoyKMbA09uMArfg4wjs784L/dAzCGwANibE+h7gXOZDh3EySM0+gvodjXPW
-         JEjMzlmwDrBvTvVLp8ZFnkTnKLlT19/59rjz+IbkLg8KTesm9m06WatNWMBXbAlu77dy
-         UXWvA22VgJ1y9etJDm0wxqrlbDkNyy5YGRSHXRbIjRwEzfqtJzSSgkwni0zIEGpMqhRt
-         E8lg0y6h/Cjv/S7wE46lXYPKMBPdSWpgVvk92X+G8TPAzX1Umrd8QOgpdw+fIP0Q+a3m
-         FniNOj2Qtm8gg/GPl+e/i/KKx+lIUj3F0k8NoIS0yBYq4+ZCZefx924zGbaOl5PXDFJS
-         unGA==
-X-Gm-Message-State: ACgBeo3t6lZwoXZtLAeFR27GiymPAOP4M5RMF4hipnaMkQeN4Dk4wuv1
-	LufUrbjnpz+3MfPLoRP/N6Zu+g==
-X-Google-Smtp-Source: AA6agR75S6PFVot6XvjnyH/8hBrHN0ULhCBT2BAci0nWMcNKGTb/tnio5QwNlbUYevghrsdy1lQOBA==
-X-Received: by 2002:a05:651c:1cd:b0:261:bef9:ada8 with SMTP id d13-20020a05651c01cd00b00261bef9ada8mr3560707ljn.387.1662714883259;
-        Fri, 09 Sep 2022 02:14:43 -0700 (PDT)
-Received: from eriador.lan ([37.153.55.125])
-        by smtp.gmail.com with ESMTPSA id z26-20020a2e4c1a000000b0026acbb6ed1asm201615lja.66.2022.09.09.02.14.41
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 09 Sep 2022 02:14:42 -0700 (PDT)
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-To: Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@somainline.org>,
-	Rob Herring <robh+dt@kernel.org>,
-	Jingoo Han <jingoohan1@gmail.com>,
-	Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
-	Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
-	=?UTF-8?q?Krzysztof=20Wilczy=C5=84ski?= <kw@linux.com>,
-	Bjorn Helgaas <bhelgaas@google.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@ti.com>
-Cc: Philipp Zabel <p.zabel@pengutronix.de>,
-	Johan Hovold <johan@kernel.org>,
-	linux-arm-msm@vger.kernel.org,
-	linux-pci@vger.kernel.org,
-	linux-phy@lists.infradead.org
-Subject: [PATCH v3 8/9] PCI: qcom: Setup PHY to work in RC mode
-Date: Fri,  9 Sep 2022 12:14:32 +0300
-Message-Id: <20220909091433.3715981-9-dmitry.baryshkov@linaro.org>
-X-Mailer: git-send-email 2.35.1
-In-Reply-To: <20220909091433.3715981-1-dmitry.baryshkov@linaro.org>
-References: <20220909091433.3715981-1-dmitry.baryshkov@linaro.org>
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date;
+        bh=HwSPkOLsB3PaeJ/979fVd6W4oSX7MjdZh6/4vBoMvj8=;
+        b=ZcAMRnZJA0L8l+0pPUxLHwYsYZSVLoEhEs26SpsatM6ZAjqNcMMoQ/EXifvJI7YOqE
+         B2d6s56TyqsCLhtFdADoVzzGb3Jf8pn7CqqWrqjNMPjrFzmZlibAbsTeQRKs/D7FOjyA
+         x8MoxmL9R2+q5mtqFBPJo6B8y5bQJj23T7mhQuarC6I83RUv9ef4ovxqg/KtEJfHgr3S
+         NVP7JEiqnNKrhn3GFP8UpDPWzkd0LXMdaPN19zhkG/igHvcP83a3oyscCZtoiPXSUUSd
+         RFKShStqJjEnEZquGIzApuMIYULY3JwCavz8I8F/SUZrIfLI5uzYQWTUF2y7oKtwZ7WX
+         xwFQ==
+X-Gm-Message-State: ACgBeo033IJhLD8fFwMmqNQNJ7NiMWY62L53yXUsZJqZq/D3+TFGbVuM
+	cH5wDqyEI7V5aQaSMT4sdW7rbQ==
+X-Google-Smtp-Source: AA6agR5tI6dxeZKZCdHy9EBG+L1v4GYsDaaX6M/D1VJQjaAot1Jq+s3AYRya/65TCVY4znvdNajeOQ==
+X-Received: by 2002:a2e:804a:0:b0:26b:66d3:4d51 with SMTP id p10-20020a2e804a000000b0026b66d34d51mr2396991ljg.293.1662715014841;
+        Fri, 09 Sep 2022 02:16:54 -0700 (PDT)
+Received: from [192.168.1.211] ([37.153.55.125])
+        by smtp.gmail.com with ESMTPSA id v9-20020a05651203a900b0049476261c30sm3305lfp.113.2022.09.09.02.16.53
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 09 Sep 2022 02:16:54 -0700 (PDT)
+Message-ID: <47066467-bab6-2f68-2924-cc93cf0c803f@linaro.org>
+Date: Fri, 9 Sep 2022 12:16:53 +0300
 MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.1.2
+Subject: Re: [PATCH 2/3] phy: qcom-qmp-pcie: shorten function prefixes
+Content-Language: en-GB
+To: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>
+Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
+ Konrad Dybcio <konrad.dybcio@somainline.org>,
+ Kishon Vijay Abraham I <kishon@ti.com>, linux-arm-msm@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
+References: <20220906074550.4383-1-johan+linaro@kernel.org>
+ <20220906074550.4383-3-johan+linaro@kernel.org>
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+In-Reply-To: <20220906074550.4383-3-johan+linaro@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220909_021446_712652_6404F271 
-X-CRM114-Status: GOOD (  10.27  )
+X-CRM114-CacheID: sfid-20220909_021658_164666_E50AD4E8 
+X-CRM114-Status: UNSURE (   8.59  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,36 +91,28 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Call phy_set_mode_ext() to notify the PHY driver that the PHY is being
-used in the RC mode.
+On 06/09/2022 10:45, Johan Hovold wrote:
+> The driver function prefix has gotten unnecessarily long and hurts
+> readability.
+> 
+> Shorten "qcom_qmp_phy_" to "qmp_" (which likely stands for "Qualcomm
+> Multi PHY" or similar anyway).
+> 
+> Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 
-Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
----
- drivers/pci/controller/dwc/pcie-qcom.c | 4 ++++
- 1 file changed, 4 insertions(+)
+Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 
-diff --git a/drivers/pci/controller/dwc/pcie-qcom.c b/drivers/pci/controller/dwc/pcie-qcom.c
-index 66886dc6e777..32d58282bed0 100644
---- a/drivers/pci/controller/dwc/pcie-qcom.c
-+++ b/drivers/pci/controller/dwc/pcie-qcom.c
-@@ -1494,6 +1494,10 @@ static int qcom_pcie_host_init(struct dw_pcie_rp *pp)
- 	if (ret)
- 		return ret;
- 
-+	ret = phy_set_mode_ext(pcie->phy, PHY_MODE_PCIE, PHY_SUBMODE_PCIE_RC);
-+	if (ret)
-+		goto err_deinit;
-+
- 	ret = phy_power_on(pcie->phy);
- 	if (ret)
- 		goto err_deinit;
--- 
-2.35.1
+> ---
+>   drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 137 +++++++++++------------
+>   1 file changed, 63 insertions(+), 74 deletions(-)
+> -- 
+With best wishes
+Dmitry
 
 
 -- 
