@@ -4,68 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 45068ECAAA1
-	for <linux-phy@archiver.kernel.org>; Fri,  9 Sep 2022 09:29:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 46391ECAAA1
+	for <linux-phy@archiver.kernel.org>; Fri,  9 Sep 2022 09:37:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Suy8s9EJpss0GeKquYSzfVwmz1+Hn4MJbKJgWI+fV1I=; b=uKpgvMIY3nnAjZ
-	dq8YeNow8HIndN6eRgjGc+RbrVeRcvo5c/JqrQPWY7at0Do2zhvZPZwakv1TIQzSQ57cwpR2sR/tP
-	w/36he01Q5sX5KOgZRRU8h8tnZA4J3J8BcU1Ghwcec1XGbvHXEyNetuSNX06wgopQZ/LQvoEBw9BA
-	MZuxQ0ww6n4+Kq6griY8NOwoqUtEuNu/0fu8lcnCgYoQy8T+1vjenIBly+K8Mj0fhH5wTY+g+FXzP
-	Y17cJjCAV4kR+OoyL17BLUEbg2gVmT4zWCBpxHlYdG6XqYkEIrAd7642XZEQOZfjOgFcJAHbvzKK5
-	GO+X3lRICkf+oUCk+AoQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=0SVaps0zYw6S/7SSkVq2Dwd0cJZwEC+b1dMwNzFlcMs=; b=stXMGXMZVCX7qo
+	mMrg6pdJaRoLjxX+yyisXCt061Dom3VXRKev3PRW4AKWOcR855k1gMHN8K2j9EI5iqdBCB9xRXuyr
+	sWxvo2Y/pBnlXCMCjGbFY3rIrJBYgXCWo53LqWu2ExiaIB5gHYipanuqTADesAcBF22aTs5b29fQ2
+	IuTaxgDXF6uYA1F9vm/jYtCOarlgtAYueMnHPcNQoslxyHBFRkUF0WjlXaG9WqMGhzsN8H+PjHiR7
+	B6OngFP/1NMODAStYxyQXsfDrLWQz0wusHyVDL3y99O/TI5J6jApCN95MxSsc5bfkVrucpkLIVS/5
+	A7m0S6RQTeyVWvwYMNjA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oWaKg-00F4Bm-FC; Fri, 09 Sep 2022 09:29:54 +0000
-Received: from dggsgout12.his.huawei.com ([45.249.212.56])
+	id 1oWaRe-00F5ff-FL; Fri, 09 Sep 2022 09:37:06 +0000
+Received: from mail-lj1-x230.google.com ([2a00:1450:4864:20::230])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oWaKc-00F4Aa-IX
-	for linux-phy@lists.infradead.org; Fri, 09 Sep 2022 09:29:52 +0000
-Received: from mail02.huawei.com (unknown [172.30.67.143])
-	by dggsgout12.his.huawei.com (SkyGuard) with ESMTP id 4MP9dL5TM8z6PmS5
-	for <linux-phy@lists.infradead.org>; Fri,  9 Sep 2022 17:27:50 +0800 (CST)
-Received: from huaweicloud.com (unknown [10.175.102.38])
-	by APP2 (Coremail) with SMTP id Syh0CgA3inOBBxtjV_RbAg--.16776S4;
-	Fri, 09 Sep 2022 17:29:38 +0800 (CST)
-From: Wei Yongjun <weiyongjun@huaweicloud.com>
-To: Vincent Shih <vincent.sunplus@gmail.com>,
-	Kishon Vijay Abraham I <kishon@ti.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>
-Cc: Wei Yongjun <weiyongjun1@huawei.com>,
-	linux-usb@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	kernel-janitors@vger.kernel.org
-Subject: [PATCH -next] phy: usb: sunplus: Fix return value check in update_disc_vol()
-Date: Fri,  9 Sep 2022 09:47:09 +0000
-Message-Id: <20220909094709.1790970-1-weiyongjun@huaweicloud.com>
-X-Mailer: git-send-email 2.34.1
+	id 1oWaRc-00F5eA-FH
+	for linux-phy@lists.infradead.org; Fri, 09 Sep 2022 09:37:05 +0000
+Received: by mail-lj1-x230.google.com with SMTP id by6so1119324ljb.11
+        for <linux-phy@lists.infradead.org>; Fri, 09 Sep 2022 02:37:01 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date;
+        bh=jJHZh3XOc0dD8msZ4f9CzmXSU1jFvF34HN6njLtaCUI=;
+        b=fn5vyPQIwEzVacy8ihq1WYzE4mGJbBxwXPqAaJW1j0oEYUG0RHS+BK23giYaTgXKOW
+         d3qEI7aCH5SQVntmQiMZV+JAl5xpgBA8nRg2NX3/LPxwLoFahmPgm5kNu1PetJrdq6Hb
+         8dNbHvWvFkVI2OXQHmyWSx2P2Z+mOl/SbLfku0ZjEUnMYaU4tJ23fNJu9awue06bdZN7
+         g7rba1E81GFYD25q/g973heKK+2qnFjppuJdTwBNqsiOBJDW12E9rihay0gNsf8a7Xys
+         I19bgGqN5F1Qh2hPRVDe/1b1NGV7g9h57Ft3ZFRnXf32+xltowN816qusWPU6HNC2h+J
+         vR7Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date;
+        bh=jJHZh3XOc0dD8msZ4f9CzmXSU1jFvF34HN6njLtaCUI=;
+        b=Ob8DB4Ov9AcWWa/bKdulkf+rX1Dku0WjCvbZ9jcsfY4jF62ULVLA2RqzzB7YNg+6Cm
+         w7LNDNzBWp7hRByGPGy1+xAfhKWoZLKbIzjLgy4ked5eEZx35SzrCRtCQa52bx3LcAHJ
+         FbTWQIhLj1pf0E9p4dUE1RUz+z9B/l9AcC7IMdNBApm2s/k0jvcJP0CN3yjxAHq5O8Ww
+         VhXKfTcHlhDEs3+/Wv98CqHfQZkgnsvf7c35xZSdWcOQveAv3GNfhscBce79cwVdM6pQ
+         k2DXTXtbVrJAZ+cZrc2s7k+5b59zxrn49+/tQBLo8K05me4zouQ2NTL5nWdGLiIOUN4T
+         2L/g==
+X-Gm-Message-State: ACgBeo1C4KdI0rI3/FwVjp8hoD6d5TV2jZYhml+7mM9ShDQMVoYPeGKO
+	jXvbehMF1pcSaFAkangn9r1BKgi4dsBsnA==
+X-Google-Smtp-Source: AA6agR4ce1I8gV2VI14mW0UHj3BF7vtBvvaXsUhX5rocfFkNQz4SoWCWb//HltaeKRppDFlBoR3bpA==
+X-Received: by 2002:a2e:bc20:0:b0:26a:b0b1:85b6 with SMTP id b32-20020a2ebc20000000b0026ab0b185b6mr3855069ljf.118.1662716219768;
+        Fri, 09 Sep 2022 02:36:59 -0700 (PDT)
+Received: from [192.168.1.211] ([37.153.55.125])
+        by smtp.gmail.com with ESMTPSA id bd23-20020a05651c169700b0026be7a4fa49sm655ljb.99.2022.09.09.02.36.59
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 09 Sep 2022 02:36:59 -0700 (PDT)
+Message-ID: <1a083979-c92e-3b32-fa2f-606359b93ac0@linaro.org>
+Date: Fri, 9 Sep 2022 12:36:58 +0300
 MIME-Version: 1.0
-X-CM-TRANSID: Syh0CgA3inOBBxtjV_RbAg--.16776S4
-X-Coremail-Antispam: 1UD129KBjvdXoW7Gw4DXF1ktF1xWFWDWF4fuFg_yoWkAFb_ur
-	yfKr17Jw4DKFnFvrWDAw4IvryIvFs8XFyFgw40qFy5AFyUtrnay3Z7uFyfuF1fZ3yUCr92
-	k3ZrZ343A34xWjkaLaAFLSUrUUUUUb8apTn2vfkv8UJUUUU8Yxn0WfASr-VFAUDa7-sFnT
-	9fnUUIcSsGvfJTRUUUbokYFVCjjxCrM7AC8VAFwI0_Gr0_Xr1l1xkIjI8I6I8E6xAIw20E
-	Y4v20xvaj40_JrC_JFWl1IIY67AEw4v_Jr0_Jr4l8cAvFVAK0II2c7xJM28CjxkF64kEwV
-	A0rcxSw2x7M28EF7xvwVC0I7IYx2IY67AKxVWDJVCq3wA2z4x0Y4vE2Ix0cI8IcVCY1x02
-	67AKxVW8Jr0_Cr1UM28EF7xvwVC2z280aVAFwI0_GcCE3s1l84ACjcxK6I8E87Iv6xkF7I
-	0E14v26rxl6s0DM2AIxVAIcxkEcVAq07x20xvEncxIr21l5I8CrVACY4xI64kE6c02F40E
-	x7xfMcIj6xIIjxv20xvE14v26r1j6r18McIj6I8E87Iv67AKxVWUJVW8JwAm72CE4IkC6x
-	0Yz7v_Jr0_Gr1lF7xvr2IYc2Ij64vIr41l42xK82IYc2Ij64vIr41l4I8I3I0E4IkC6x0Y
-	z7v_Jr0_Gr1lx2IqxVAqx4xG67AKxVWUJVWUGwC20s026x8GjcxK67AKxVWUGVWUWwC2zV
-	AF1VAY17CE14v26r1q6r43MIIYrxkI7VAKI48JMIIF0xvE2Ix0cI8IcVAFwI0_Jr0_JF4l
-	IxAIcVC0I7IYx2IY6xkF7I0E14v26r1j6r4UMIIF0xvE42xK8VAvwI8IcIk0rVWrZr1j6s
-	0DMIIF0xvEx4A2jsIE14v26r1j6r4UMIIF0xvEx4A2jsIEc7CjxVAFwI0_Jr0_GrUvcSsG
-	vfC2KfnxnUUI43ZEXa7IU1zuWJUUUUU==
-X-CM-SenderInfo: 5zhl50pqjm3046kxt4xhlfz01xgou0bp/
-X-CFilter-Loop: Reflected
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.1.2
+Subject: Re: [PATCH 03/16] phy: qcom-qmp-pcie: drop unused runtime PM
+ implementation
+Content-Language: en-GB
+To: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>
+Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
+ Konrad Dybcio <konrad.dybcio@somainline.org>,
+ Kishon Vijay Abraham I <kishon@ti.com>, linux-arm-msm@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
+References: <20220907110728.19092-1-johan+linaro@kernel.org>
+ <20220907110728.19092-4-johan+linaro@kernel.org>
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+In-Reply-To: <20220907110728.19092-4-johan+linaro@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220909_022950_802028_D750C9C5 
-X-CRM114-Status: GOOD (  10.06  )
+X-CRM114-CacheID: sfid-20220909_023704_538894_CE76F1DA 
+X-CRM114-Status: GOOD (  10.59  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,43 +91,33 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Wei Yongjun <weiyongjun1@huawei.com>
+On 07/09/2022 14:07, Johan Hovold wrote:
+> Drop the unused and incomplete runtime PM implementation, which was
+> only used by USB PHYs before splitting the QMP driver.
+> 
+> Note that the runtime PM was never disabled (and state restored) on
+> driver unbind.
+> 
+> This effectively reverts commit ac0d239936bd ("phy: qcom-qmp: Add
+> support for runtime PM").
+> 
+> Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 
-In case of error, the function nvmem_cell_read() returns ERR_PTR()
-and never returns NULL. The NULL test in the return value check
-should be replaced with IS_ERR().
+Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 
-Fixes: 99d9ccd97385 ("phy: usb: Add USB2.0 phy driver for Sunplus SP7021")
-Signed-off-by: Wei Yongjun <weiyongjun1@huawei.com>
----
- drivers/phy/sunplus/phy-sunplus-usb2.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/phy/sunplus/phy-sunplus-usb2.c b/drivers/phy/sunplus/phy-sunplus-usb2.c
-index 5269968b3060..b932087c55b2 100644
---- a/drivers/phy/sunplus/phy-sunplus-usb2.c
-+++ b/drivers/phy/sunplus/phy-sunplus-usb2.c
-@@ -92,13 +92,13 @@ static int update_disc_vol(struct sp_usbphy *usbphy)
- 	otp_v = nvmem_cell_read(cell, &otp_l);
- 	nvmem_cell_put(cell);
- 
--	if (otp_v) {
-+	if (!IS_ERR(otp_v)) {
- 		set = *(otp_v + 1);
- 		set = (set << (sizeof(char) * 8)) | *otp_v;
- 		set = (set >> usbphy->disc_vol_addr_off) & J_DISC;
- 	}
- 
--	if (!otp_v || set == 0)
-+	if (IS_ERR(otp_v) || set == 0)
- 		set = OTP_DISC_LEVEL_DEFAULT;
- 
- 	val = readl(usbphy->phy_regs + CONFIG7);
+> ---
+>   drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 38 ------------------------
+>   1 file changed, 38 deletions(-)
+> 
+-- 
+With best wishes
+Dmitry
 
 
 -- 
