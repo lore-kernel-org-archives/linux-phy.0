@@ -4,58 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5D516ECAAD3
-	for <linux-phy@archiver.kernel.org>; Fri,  9 Sep 2022 15:30:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B33DAECAAD5
+	for <linux-phy@archiver.kernel.org>; Fri,  9 Sep 2022 16:44:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LCflIEkoXJXETh9AzigvK6ljK2uyBeM5OiEBAlDOHV0=; b=grRnpUMNRMeoq+
-	i0fOVKYo1B7Edkorcp8UIY+xwLyPBXkV+sMBYm/UXRgmKagl3U0zvTmkulJSpmjnq2RuMBbzkYS+g
-	Z7fPflEE4jop+TT57NdZAfZNHP7rIhMdO7b3s7jFNNBz8U4NE+JTppEfowAG1kWWHiL4pBuTWLegj
-	EX79dyQDNGOam2MtZV24V7QgOw8TOGSYLfrwStSijLOrx7gLoXVud92CLdmYIOdMpYnrfLbIi7kz/
-	OLFs6wqyyTtH3Zsu5XKS2p7R/mbGXHcgRRV9X5U2AWNjW9w9B6QeY2nMdWF1zUTozOLNGVx0kj/5P
-	6JtzIN50UfBqeFWka8UQ==;
+	List-Owner; bh=l0yyqL7YijPGtkLMiT5uKte7ujQPpCyoZmsdKftyD40=; b=j4q0n8V6IePysL
+	m6I0n2DcRvw3TiJLfd2wiplV0+HEpU3h1+uAvbr+FcFlp6Toup+LA+3fb4oa+WBsCad87KEW4+wgj
+	sFZDZ0bHTQ+7ge0d6mXaiNRRyxkC3E9EK/dm9yFN62u0ogI/ErMURGaKsOKPBrSC/qdGYVpfDmDlL
+	z/AyccYIH/M+V9kkCnUOglP4Qz+ZG6oBplXcIXn4gTSwRE2QUJnioVnsitThkS+R8w5yFryt/3eip
+	+TWlLbQAwxhrkXzrUuVwTVcPSz+bJQOHl32Bb8zahYR0XeGUrTsHtANL20f4dFsNFDlGfeBxw0rpu
+	hFTNLMHX0kKkEEUDEixQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oWfxU-00HS8R-LE; Fri, 09 Sep 2022 15:30:20 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1oWh76-000R6B-0F; Fri, 09 Sep 2022 16:44:20 +0000
+Received: from mail-lf1-x132.google.com ([2a00:1450:4864:20::132])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oWfxO-00HS5A-FP; Fri, 09 Sep 2022 15:30:15 +0000
-Received: from ip5b412258.dynamic.kabel-deutschland.de ([91.65.34.88] helo=phil.lan)
-	by gloria.sntech.de with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.94.2)
-	(envelope-from <heiko@sntech.de>)
-	id 1oWfxD-0006GD-6x; Fri, 09 Sep 2022 17:30:03 +0200
-From: Heiko Stuebner <heiko@sntech.de>
-To: Chris Morgan <macroalpha82@gmail.com>,
-	linux-rockchip@lists.infradead.org
-Cc: Heiko Stuebner <heiko@sntech.de>,
-	pgwipeout@gmail.com,
-	vkoul@kernel.org,
-	Chris Morgan <macromorgan@hotmail.com>,
-	cl@rock-chips.com,
-	s.hauer@pengutronix.de,
-	hjc@rock-chips.com,
-	dri-devel@lists.freedesktop.org,
-	kishon@ti.com,
-	airlied@linux.ie,
-	krzysztof.kozlowski+dt@linaro.org,
-	linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	robh+dt@kernel.org
-Subject: Re: (subset) [PATCH v2 0/5] rockchip-dsi for rk3568
-Date: Fri,  9 Sep 2022 17:30:00 +0200
-Message-Id: <166273738605.3499664.11822406703030868338.b4-ty@sntech.de>
-X-Mailer: git-send-email 2.35.1
-In-Reply-To: <20220906174823.28561-1-macroalpha82@gmail.com>
-References: <20220906174823.28561-1-macroalpha82@gmail.com>
+	id 1oWh73-000R3e-IC
+	for linux-phy@lists.infradead.org; Fri, 09 Sep 2022 16:44:18 +0000
+Received: by mail-lf1-x132.google.com with SMTP id k10so3681735lfm.4
+        for <linux-phy@lists.infradead.org>; Fri, 09 Sep 2022 09:44:15 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date;
+        bh=U7UrK1+HGzEIxbJhZktE8rdEJk1xuFEQXHSaI9c28OU=;
+        b=g3YFVfIz6AsEqhLdHS5c+6sx9LmlotKHb6suIWJTk5XVoKnJXFupiMRBQEvWWBVzHL
+         A97E2s1bR+qGYNbKuEMDZZgTQ6vTIhQ726EATEtOJJC1ZgtgKgaSgPvLXEuMzsL7fi9s
+         IiuVe3iJ5F238GblBqj5uLyrCEKECAIhxDEDzPCUoxiQk8vmWt76TqIzj/dDDKTaw6ec
+         jNjFH/DUAylAYvg9rzRT3sluzv7AEaDN+ynShKj7WGBYrpJfbmESdslaJ6pPbJ0kNfTe
+         i70dTxafUbhOe0oN6FMlKekK8PP9NwrdEPJZQcthWTsVM73Lv5clJfXzfTbyYQiX69nP
+         9QZg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date;
+        bh=U7UrK1+HGzEIxbJhZktE8rdEJk1xuFEQXHSaI9c28OU=;
+        b=iPQPbOqNTOC+xkutVPiVo/yIvb4DsDWWli9R0mLKIZqusd/6ULl21BhqEyyS3oNxts
+         p0S9fYsMleFpkt8Pckm8DE7Im9TxGSXzJX9xOySy3W1jiXMsx+in9GmxgzxMKwvWLxSw
+         2LypIbFug654G7IGY+Q1n/vagUhN/9P8xFJKD0yNHuzI3Q4mF64zzMz0GAUrf8EkwTn1
+         Xdp4OgJGDcBAlC7P5zKgs4Nh3i142gHFeoGFp4aMo92zNIsVp44K8gZeOq4tguKcJKwY
+         jFglTJqFUfDz+357von/xn+VzOsPufkoudKk6QW34h3WFnC1h8/2v1N7USpqScjrE7CB
+         fUuQ==
+X-Gm-Message-State: ACgBeo31+Iio4VwbeqcaKIWCEp7qREnioXolNawWEczLKr5uDcXp7xYF
+	zUaAHGeUCe8aWEFeBf9ClSX8Cw==
+X-Google-Smtp-Source: AA6agR4agaDUB6B07saXimeKTtI4I8JOYnVnquMHco4KrFonNA0i9ora3u5f5ZpLA6c8Tyh0QPv04w==
+X-Received: by 2002:a05:6512:10cd:b0:498:fe5b:8ab3 with SMTP id k13-20020a05651210cd00b00498fe5b8ab3mr1099189lfg.613.1662741853756;
+        Fri, 09 Sep 2022 09:44:13 -0700 (PDT)
+Received: from [192.168.0.21] (78-11-189-27.static.ip.netia.com.pl. [78.11.189.27])
+        by smtp.gmail.com with ESMTPSA id w13-20020ac254ad000000b00492c017de43sm144013lfk.127.2022.09.09.09.44.12
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 09 Sep 2022 09:44:13 -0700 (PDT)
+Message-ID: <c3b4638e-05f7-cc73-b893-422f92909f6e@linaro.org>
+Date: Fri, 9 Sep 2022 18:44:11 +0200
 MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
+ Thunderbird/91.13.0
+Subject: Re: [PATCH 1/6] dt-bindings: phy: qcom,hdmi-phy-other: use pxo clock
+Content-Language: en-US
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+ Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
+ Konrad Dybcio <konrad.dybcio@somainline.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
+Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
+ Vinod Koul <vkoul@kernel.org>, linux-phy@lists.infradead.org,
+ Kishon Vijay Abraham I <kishon@ti.com>
+References: <20220909132010.3814817-1-dmitry.baryshkov@linaro.org>
+ <20220909132010.3814817-2-dmitry.baryshkov@linaro.org>
+ <d72fc00c-85ba-8b48-1fcf-42fe9e8daeee@linaro.org>
+ <59242592-4e3d-b7c2-e0bb-b39df780c26b@linaro.org>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <59242592-4e3d-b7c2-e0bb-b39df780c26b@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220909_083014_549481_FE743436 
-X-CRM114-Status: GOOD (  12.63  )
+X-CRM114-CacheID: sfid-20220909_094417_635046_08823BAD 
+X-CRM114-Status: GOOD (  11.91  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,29 +100,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, 6 Sep 2022 12:48:18 -0500, Chris Morgan wrote:
-> This series adds support for the dsi and dphy controllers on the
-> Rockchip RK3568. I can confirm that for the Rockchip RK3568 this
-> current series DOES WORK now, but it requires rolling back clk changes
-> made for the HDMI driver. If the clock changes are not rolled back, the
-> image on the screen is shifted about 100 pixels to the right.
+On 09/09/2022 17:03, Dmitry Baryshkov wrote:
+>>> +    then:
+>>> +      properties:
+>>> +        clocks:
+>>> +          minItems: 1
+>>> +          maxItems: 2
+>>> +        clock-names:
+>>> +          minItems: 1
+>>> +          items:
+>>> +            - const: slave_iface
+>>> +            - const: pxo
+>>
+>> Why pxo is optional? Commit msg does not say much here.
 > 
-> Clk changes in question:
-> https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/drivers/clk/rockchip/clk-rk3568.c?id=ff3187eabb5ce478d15b6ed62eb286756adefac3
-> https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/drivers/clk/rockchip/clk-rk3568.c?id=6e69052f01d9131388cfcfaee929120118a267f4
+> It's optional as it is not present in current DT files. The driver will 
+> fallback to 'pxo_board' if the clock is not present.
 > 
-> [...]
+>> It seems you also miss the DTS change adding the clock.
+> 
+> Oh, I'll add it to v2.
 
-Applied, thanks!
+How about adding it to DTS and making it required in the bindings? I did
+not check the driver, but isn't the driver fail if clock is missing thus
+the clock is really required?
 
-[1/5] dt-bindings: display: rockchip-dsi: add rk3568 compatible
-      commit: 1c3b502e4327e8e24e617a6f922df72870c0cb5f
-[3/5] drm/rockchip: dsi: add rk3568 support
-      commit: f3aaa6125b6f1532d3276d705b1a3791f18a872a
 
 Best regards,
--- 
-Heiko Stuebner <heiko@sntech.de>
+Krzysztof
 
 -- 
 linux-phy mailing list
