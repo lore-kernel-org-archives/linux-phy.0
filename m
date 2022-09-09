@@ -4,69 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 54D3AECAAA1
-	for <linux-phy@archiver.kernel.org>; Fri,  9 Sep 2022 13:31:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A25DDC6FA86
+	for <linux-phy@archiver.kernel.org>; Fri,  9 Sep 2022 13:31:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PEG/sXnxmE2X/flPo9knHzlmP2GDX8YsgMalMSxb+1A=; b=yZYqNOn1jljU73
-	QLhkqvlwQ9Or7KCxscsg08IUlK9fZxSLDWdLy1gMoX4HyyFblw4fwUfqO1SIfcl4Qt4vrtrgVWh1V
-	6LN3SiIUQpVOW6ebR2eZOXgKfA+WUuhNTgJ6UopS9vg1J/wREmnNezPKwcJN7bztagml5iodKVpl2
-	E14GlC5immuQr6JDr4/Czej+kNsrpjiDmbPiYSwM1uzFVVM+F6BPZL6h686wRh1BleS1rSfJ94MZP
-	Hvxb+jp54Df4eVR0npRFGqirrt7J3pxzVze7icQAofXR+AoYcZ2EolglDPU/9JsZlzjPggyeUycUL
-	Fxr1k4MlwZoxOwN5t1aw==;
+	List-Owner; bh=zmgXZRtQg569fcai6/QueDk0468fuVxLorXQke9+KjI=; b=bzZLQ4Q6A1FhPV
+	Z56NaapgX7skyeZmk+d6h7VYu4P0IpFrKGGjgZR2HX/SbhNfZZ5NFNDylUbJWQ7HwJ9kRC1MYTND5
+	Tqds6n6IQADlQqqrXEF6joT4dGdwh1xsIyAIQ3JLxi3xrk6PkPJ+5GOgkJkIV3j8+vlfPxuBn6EA+
+	D6zzjTLLXUxngCITWJkTx6/qojxHU0E9P/vNEZuacLWk2uJiT3yif7yd/1liEi2p+Ra+hIZl15c+9
+	rCoVPDUooEUwkRexopU32CeCCP6u5GGWV00yH7KQR33Go8Uvpsxa8GIFKlzc2b8rxJtV1zVnBCbyP
+	6hQu6hAHVH/JsIkOIHjg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oWe67-00GKmm-Py; Fri, 09 Sep 2022 13:31:07 +0000
-Received: from mail-lj1-x232.google.com ([2a00:1450:4864:20::232])
+	id 1oWe6S-00GKsV-3L; Fri, 09 Sep 2022 13:31:28 +0000
+Received: from mail-lf1-x135.google.com ([2a00:1450:4864:20::135])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oWe64-00GKld-PC
-	for linux-phy@lists.infradead.org; Fri, 09 Sep 2022 13:31:05 +0000
-Received: by mail-lj1-x232.google.com with SMTP id p5so1806933ljc.13
-        for <linux-phy@lists.infradead.org>; Fri, 09 Sep 2022 06:31:03 -0700 (PDT)
+	id 1oWe6P-00GKrI-LD
+	for linux-phy@lists.infradead.org; Fri, 09 Sep 2022 13:31:26 +0000
+Received: by mail-lf1-x135.google.com with SMTP id o2so537317lfc.10
+        for <linux-phy@lists.infradead.org>; Fri, 09 Sep 2022 06:31:23 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date;
-        bh=8fE1xHhj1rx7cmMJremD4HsnXubaysHbogPQ0gvVKrs=;
-        b=laeCQogBil0kNKmOq4YbG5bMScPrE3bPhL5U9Hk+ak1VKEstHONjqMLZ7sG5gCRu9S
-         PmEUz+SuAvmiodyr6GKez9ANBSXpiTtMq/586ziSa0OBTLP2pgWotP5nY0Hlku7LJmOm
-         cnM3ILo+9G+0be+meMd0kWxxkoHZq/H54ra2gt2GyZ2IGU8x+SRX0JUN3m0DQo7f0QmI
-         gfpQhNqBvZ34qnAtbvruTDiKChRAxP1Qjad6xdUTR9TynGOXLor6bDbk7tLvJUltuMG4
-         ate1ouOW8xMUzKNV+uB3hoOnM/2NnPrCj9xjPMw6AMBiFXKEtkki/CIjXiQ4HVFBQtxd
-         5jTw==
+        bh=QATEerfWdeHtuk2b8IdfnxtgvdbCuFkN8Fhc02s3dYc=;
+        b=kGfLhczz0jiwGyvxrgGKB+yOGyxagqjLSeXcWNvr5CCOQX73IsQxxBKyNRT8QKUulj
+         mEUKnS2LyCpuZS7VN9WNSswO2YFm9QpHpE6BMaegYn1MxlPQk4AuAoTgm5lKC5hNsZ/g
+         d7aYZiovU0RNAVgHUb3/IaYxIXatlxCMzUKZcJ6bDaCXYkDZ5UhgMQtcfkLFUMHZPpDg
+         i4yH8cm1FjDFd25quyConnC4nYcAL1mAuX5VERjrSv0qV5ob/vadOPP1JSJNOv8YA7Ep
+         ZGamSjpMOV2qQBbaCqnOXNgIA2xvIF9tc2+Gg477MlikoPXWZeq2LgI4+M1H17T5aiUT
+         uNLQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date;
-        bh=8fE1xHhj1rx7cmMJremD4HsnXubaysHbogPQ0gvVKrs=;
-        b=ADB0BW975kAOKIQBMNKFkh8nvvkbHBWfVkiiEEfuT+zdj5v9AMM90Hpc2S1fDplaga
-         uXyEVAHotJp53DJKOC6mqN29wfPH+B4Xs2zcRZc8pu/DhDf1ZSG2QkydCbxDNrkaOscO
-         13++ocBBD6CTU1t6BOj2jh9dHNd5hMLWg3z9O10MZXWzM3wNRIlJlHVoUaXzFOqbtjnt
-         GV5YT2eRTf9jhehrDUk7rKucwV/YanfP+YPIQNCZ/wqO73sbDVwT9j6ISzgpeGp087vZ
-         jGVYloQwGe2Jc4ATT3NJh/ZkNkoRBFH1M28NkUri4zSFQngqygPAr1RSd9apeimmTl4H
-         +PlQ==
-X-Gm-Message-State: ACgBeo0o92OwmUu8BnHUj1LuNJi/j6fBpGJBBW8GTfBwTQnUjdXSqLrC
-	j5IZtkiUV2hxWf04395CplbdGg==
-X-Google-Smtp-Source: AA6agR4qK78Xi8NqPtj6vXo5jScWYdrp/+Se2i5pDNRdMOUUycdnrpLChWBksA67m61uFhum4k72VA==
-X-Received: by 2002:a2e:a28e:0:b0:25e:734f:38fa with SMTP id k14-20020a2ea28e000000b0025e734f38famr4025040lja.446.1662730262156;
-        Fri, 09 Sep 2022 06:31:02 -0700 (PDT)
+        bh=QATEerfWdeHtuk2b8IdfnxtgvdbCuFkN8Fhc02s3dYc=;
+        b=rrTIzrS13lSb4TAObx5y02NmkV/lZukZjCiuvBQ6JWwIZHe4WVsADrylseFPQlQrNF
+         pcrKHrGY4zlyv31jOC54LxjGRRw2rjg81Eb8XBCAFWK1PW7ECVBvI8mMrwtOpRnDp2Cn
+         uHWHYSb4ite+piE5i9hlDGNLUUIyBZyI95LVSkjTHVSKkOfdJ3o5KrNseBeksGxgDugu
+         IN/adBnrlf/IQVxYpoUCHFtGqsOzAeQszwjq5avf7vE/rJ66vexCBKzMAiJwvhPqVaP+
+         5/FUx/8k5rj78Vtyg1OcLpuwe32kmAsi5le/qfiLfnNu7/vUYZ0O1ohCKehMy8+zOKbU
+         e6wg==
+X-Gm-Message-State: ACgBeo2Xz6zSF7qyjtH6flzOgYdHcKUBNA+wHcR66sHelFLWKU39/kmt
+	Ac+Lczla8SkRx4BNVIFvc5j2xw==
+X-Google-Smtp-Source: AA6agR7fIDxNSncdSg5suv4FMCPLL82wx2WduXPJ0SVVApKFUTY4GtAX+mJVL1Oi9vqtyY1r/6MJ/w==
+X-Received: by 2002:a05:6512:3e10:b0:498:f317:e57e with SMTP id i16-20020a0565123e1000b00498f317e57emr2202136lfv.328.1662730281949;
+        Fri, 09 Sep 2022 06:31:21 -0700 (PDT)
 Received: from [192.168.0.21] (78-11-189-27.static.ip.netia.com.pl. [78.11.189.27])
-        by smtp.gmail.com with ESMTPSA id m5-20020a056512114500b0048af3c090f8sm92057lfg.13.2022.09.09.06.31.01
+        by smtp.gmail.com with ESMTPSA id x10-20020ac259ca000000b00492e570e036sm90633lfn.54.2022.09.09.06.31.20
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 09 Sep 2022 06:31:01 -0700 (PDT)
-Message-ID: <fbc3f608-4686-6d06-c679-8f51dc5a0240@linaro.org>
-Date: Fri, 9 Sep 2022 15:31:00 +0200
+        Fri, 09 Sep 2022 06:31:21 -0700 (PDT)
+Message-ID: <9aa9828b-ecc1-0783-4dde-1af81bd54c19@linaro.org>
+Date: Fri, 9 Sep 2022 15:31:20 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
  Thunderbird/91.13.0
-Subject: Re: [PATCH 2/6] dt-bindings: phy: qcom,hdmi-phy-other: mark it as
- clock provider
+Subject: Re: [PATCH 5/6] ARM: dts: qcom: apq8064: add #clock-cells to the HDMI
+ PHY node
 Content-Language: en-US
 To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
  Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
@@ -77,12 +77,12 @@ Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
  Vinod Koul <vkoul@kernel.org>, linux-phy@lists.infradead.org,
  Kishon Vijay Abraham I <kishon@ti.com>
 References: <20220909132010.3814817-1-dmitry.baryshkov@linaro.org>
- <20220909132010.3814817-3-dmitry.baryshkov@linaro.org>
+ <20220909132010.3814817-6-dmitry.baryshkov@linaro.org>
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20220909132010.3814817-3-dmitry.baryshkov@linaro.org>
+In-Reply-To: <20220909132010.3814817-6-dmitry.baryshkov@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220909_063104_844991_EBCA69A2 
-X-CRM114-Status: UNSURE (   7.52  )
+X-CRM114-CacheID: sfid-20220909_063125_724325_07CF63F5 
+X-CRM114-Status: UNSURE (   7.33  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -101,9 +101,8 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 09/09/2022 15:20, Dmitry Baryshkov wrote:
-> Eventually all HDMI PHYs are going to provide the HDMI PLL clock to the
-> MMCC. Add #clock-cells property required to provide the HDMI PLL clock to
-> other devices.
+> Add #clock-cells property to the HDMI PHY device node to let other nodes
+> resolve the hdmipll clock.
 > 
 > Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 
