@@ -4,68 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B664CECAAD3
-	for <linux-phy@archiver.kernel.org>; Fri,  9 Sep 2022 13:27:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 06FB3ECAAA1
+	for <linux-phy@archiver.kernel.org>; Fri,  9 Sep 2022 13:30:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aYj1Ngd2YQ9i1rJa3A3vZ7sqGQYHVzMILWd6Ffmwezo=; b=IX/iBaDcJexFnY
-	aq7kmcj3RX16ZbRiRCh/ExPz+pNwSRNUOfIEh1tn7UV81m0+spec6NLDRdtst4iEMjmXHFaS1KVpa
-	+JhtYp344hw7XvMoDq++6DhLKV/RHOYxHj2DTgEasvuEOgMQy1+a47z7Bv9obNBDwrDZ0qYZrT5kF
-	h/10vh+ZtGP+h9Vc1EDB1NiCLcScFvdgHpnpNIcKw+eHYpMtpiHFss9rkTUROIwVJjp06ymLux9fa
-	nZU5BDnBYzpfsW/GccHYorewCnEOOXadGxngH7hRLyq5ONCMLBLbuVVU8vApj7MKAwLug/QmXFfBg
-	1xXU/0DQy55Babom+2WA==;
+	List-Owner; bh=3a5wjkV3DA0aFW3pfkYZTzkn9n2brmrgn3LqXSI8+Zs=; b=opmVGASZhZtAUM
+	d4uU7fkvI0R7HclOyusba9VyZCSpj7zlLVrLLVAKs4i1dAawAfccqU/kei4i/NEWj2ZVNh2upSdJT
+	eOM1LGi5PJ1+gd3tEAv1In+WLxrGP5UwCzMzfw/TyUGDp3n2isouVoL26IFu+YugvIvWuftDy8Nas
+	WXgf4WXijpmOdA69fUNUK+4xk9PqMcD1BvAD/d33X1tiyQzcfyVaTT5kKRw7qemteE24dSUpiA8u1
+	os/F/l6pBZH+MK4b/bCGTSlcRsl0kv67yAfK7aRLmpvc4idHRzg55OVyNYd7/mGGCcsc1lKP0HlHM
+	qr7hgEJUjJmUN3xo0fSA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oWe2p-00GK4F-1l; Fri, 09 Sep 2022 13:27:43 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1oWe5i-00GKid-DQ; Fri, 09 Sep 2022 13:30:42 +0000
+Received: from mail-lf1-x133.google.com ([2a00:1450:4864:20::133])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oWe2m-00GK2b-D4
-	for linux-phy@lists.infradead.org; Fri, 09 Sep 2022 13:27:42 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id EE63C61FDF;
-	Fri,  9 Sep 2022 13:27:39 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5455BC433C1;
-	Fri,  9 Sep 2022 13:27:39 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1662730059;
-	bh=BC1gUHMq3BJSSWU6Z/Gzv92Q+wtt2zl6xCAHE1m3n6Q=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=dzX5zbtFXtywmMx/k332HuAqr4nvqBF8nnZDcOTQBMXOF8TuOsNPGEvu3pgsdrVZc
-	 aua3n0pENO0oMK5mi9IE43DFFckhtg5j5qDDGA70Q72C/fO7YKz9oNG+KyfBnguqbc
-	 nAthRg9yfy2448byq13FMIbuwKIUii/LfnMspkyRyY3nFP8q3YfmlixFRHlvzNaztN
-	 MfwKNlbtg/1TVfftGgzWyPr7v0XYzCZOUzIDV6pKE6TPIbt6mixeEvZp3KvYMAH46E
-	 KL5xfqySXgXfDttHs0R8QKfyZifkckgE7Q/+AMbmXcp94Xwyt5jfx8S4vxwvJh5e2d
-	 9Epf//aEDg2Pg==
-Received: from johan by xi.lan with local (Exim 4.94.2)
-	(envelope-from <johan@kernel.org>)
-	id 1oWe2v-00027A-Dm; Fri, 09 Sep 2022 15:27:49 +0200
-Date: Fri, 9 Sep 2022 15:27:49 +0200
-From: Johan Hovold <johan@kernel.org>
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Cc: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-	Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@somainline.org>,
-	Kishon Vijay Abraham I <kishon@ti.com>,
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 16/16] phy: qcom-qmp-usb: shorten function prefixes
-Message-ID: <Yxs/VZawxRYsGwtB@hovoldconsulting.com>
-References: <20220907110728.19092-1-johan+linaro@kernel.org>
- <20220907110728.19092-17-johan+linaro@kernel.org>
- <03814cce-4b48-0570-7638-a84bd84c6f7a@linaro.org>
+	id 1oWe5f-00GKhc-Lk
+	for linux-phy@lists.infradead.org; Fri, 09 Sep 2022 13:30:40 +0000
+Received: by mail-lf1-x133.google.com with SMTP id f9so1960703lfr.3
+        for <linux-phy@lists.infradead.org>; Fri, 09 Sep 2022 06:30:38 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date;
+        bh=0iwWRUH0uVdaXEkP4fyReHjF9IcUCpvLt0X1N7qJbAU=;
+        b=me7zJxjXe/dbRZGdMGLErW1K64o934AvJ0TcqsZytC6byxtY9fKM0CfQk0CsZnxy0I
+         hygm0lYum5+lK4wNVmlkCjLgLui4+DqqRStO/AxBerJdRjy2Ti31JDHxj4TMLPqcdDCq
+         +dlv3xeQxd36c+lItopodK6Qbh2+WiAi9/TpPPFRE8lq2dMxpncIl2ZezoaSqzCy6ovf
+         GJr5KbBhe6Sx89Js6Y5Ezy+5nfgGD+iq/88eqmdVXmfSmdirvdfPOHrm35XpPUZEX+BL
+         R0Fs5511uvb1tGFlWcEB6W7l4zwWCK+5AT8wRAjsRbwBW4+hxuIO9YFLq4QCP5u1j8qc
+         N2Bg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date;
+        bh=0iwWRUH0uVdaXEkP4fyReHjF9IcUCpvLt0X1N7qJbAU=;
+        b=K00N5lX9jwOjOyBvdvIWSvNhb76t3Qtz7td2E8FmaKEfRjyQLY1m8DI03kQcGM7/NT
+         oOGme+4/FNhkD9DZP9LwwlGXCqrFMquu59PUT0Wv2wdNwGlP6LCXabZPOl6eU6qIvo8q
+         Xtx+asfr0PK62bBKgebbi+tGmeVqT7X7dU2JE8/vyqd1mMDbKXzR4J5Z2DFA8UQ1IFLc
+         riDg488SLcih8T3ppSxfXaurx9i3damIxAKNo9rbpucR3w8RKOoAeE4AfnJqANGIZsiC
+         gDK/Z8AXi/i2RZSFON82bE5pVv0O6GWbxlJ5ED1h0tfY3nw15JM91KjWr57MYz8rRkYv
+         AmZw==
+X-Gm-Message-State: ACgBeo0b/31coxEXSSJCKHiLev/BYH5ddN0+AEkSucS7ceCQuQKib9ME
+	wFvZtM7Xmp6dnhIqOOi4+z1x7LGc75vafg==
+X-Google-Smtp-Source: AA6agR7vnlhxULbMqWjy339Ll2KHSeX5XyixafcQzw/B5BqiTWG7Qjf+aajlF8XgVHs00A+7ADOxqw==
+X-Received: by 2002:a05:6512:1188:b0:494:b306:c80 with SMTP id g8-20020a056512118800b00494b3060c80mr4802792lfr.390.1662730237402;
+        Fri, 09 Sep 2022 06:30:37 -0700 (PDT)
+Received: from [192.168.0.21] (78-11-189-27.static.ip.netia.com.pl. [78.11.189.27])
+        by smtp.gmail.com with ESMTPSA id o17-20020ac25b91000000b00492f294f06bsm86512lfn.110.2022.09.09.06.30.36
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 09 Sep 2022 06:30:36 -0700 (PDT)
+Message-ID: <d72fc00c-85ba-8b48-1fcf-42fe9e8daeee@linaro.org>
+Date: Fri, 9 Sep 2022 15:30:35 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <03814cce-4b48-0570-7638-a84bd84c6f7a@linaro.org>
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
+ Thunderbird/91.13.0
+Subject: Re: [PATCH 1/6] dt-bindings: phy: qcom,hdmi-phy-other: use pxo clock
+Content-Language: en-US
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+ Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
+ Konrad Dybcio <konrad.dybcio@somainline.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
+Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
+ Vinod Koul <vkoul@kernel.org>, linux-phy@lists.infradead.org,
+ Kishon Vijay Abraham I <kishon@ti.com>
+References: <20220909132010.3814817-1-dmitry.baryshkov@linaro.org>
+ <20220909132010.3814817-2-dmitry.baryshkov@linaro.org>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <20220909132010.3814817-2-dmitry.baryshkov@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220909_062740_513858_439079E7 
-X-CRM114-Status: GOOD (  17.23  )
+X-CRM114-CacheID: sfid-20220909_063039_761426_7E479950 
+X-CRM114-Status: GOOD (  13.21  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,46 +98,53 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Sep 09, 2022 at 12:48:48PM +0300, Dmitry Baryshkov wrote:
-> On 07/09/2022 14:07, Johan Hovold wrote:
-> > The driver function prefix has gotten unnecessarily long and hurts
-> > readability.
-> > 
-> > Shorten "qcom_qmp_phy_" to "qmp_" (which likely stands for "Qualcomm
-> > Multi PHY" or similar anyway).
-> > 
-> > Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
-> > ---
-> >   drivers/phy/qualcomm/phy-qcom-qmp-ufs.c |   3 +-
-> >   drivers/phy/qualcomm/phy-qcom-qmp-usb.c | 121 ++++++++++++------------
-> >   2 files changed, 60 insertions(+), 64 deletions(-)
-> > 
-> > diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-> > index b020409b92e0..4d0eee620f37 100644
-> > --- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-> > +++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-> > @@ -1105,8 +1105,7 @@ static const struct phy_ops qcom_qmp_ufs_ops = {
-> >   	.owner		= THIS_MODULE,
-> >   };
-> >   
-> > -static
-> > -int qmp_ufs_create(struct device *dev, struct device_node *np, int id,
-> > +static int qmp_ufs_create(struct device *dev, struct device_node *np, int id,
-> >   			void __iomem *serdes, const struct qmp_phy_cfg *cfg)
+On 09/09/2022 15:20, Dmitry Baryshkov wrote:
+> Add pxo clock to the 8960 bindings (used by the HDMI PLL)
 > 
-> This likely should go to the previous patch.
-
-Ah, must have amended the wrong commit. Thanks for catching that.
-
-Not sure its worth resending the series for though.
-
-Vinod, could you fix it up or do you prefer I respin?
-
-> Otherwise:
+> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+> ---
+>  .../bindings/phy/qcom,hdmi-phy-other.yaml     | 23 ++++++++++++++++---
+>  1 file changed, 20 insertions(+), 3 deletions(-)
 > 
-> Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+> diff --git a/Documentation/devicetree/bindings/phy/qcom,hdmi-phy-other.yaml b/Documentation/devicetree/bindings/phy/qcom,hdmi-phy-other.yaml
+> index fdb277edebeb..2c21e120ff8d 100644
+> --- a/Documentation/devicetree/bindings/phy/qcom,hdmi-phy-other.yaml
+> +++ b/Documentation/devicetree/bindings/phy/qcom,hdmi-phy-other.yaml
+> @@ -53,7 +53,6 @@ allOf:
+>            contains:
+>              enum:
+>                - qcom,hdmi-phy-8660
+> -              - qcom,hdmi-phy-8960
+>      then:
+>        properties:
+>          clocks:
+> @@ -63,6 +62,24 @@ allOf:
+>              - const: slave_iface
+>          vddio-supply: false
+>  
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            enum:
+> +              - qcom,hdmi-phy-8960
+> +    then:
+> +      properties:
+> +        clocks:
+> +          minItems: 1
+> +          maxItems: 2
+> +        clock-names:
+> +          minItems: 1
+> +          items:
+> +            - const: slave_iface
+> +            - const: pxo
 
-Johan
+Why pxo is optional? Commit msg does not say much here.
+
+It seems you also miss the DTS change adding the clock.
+
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
