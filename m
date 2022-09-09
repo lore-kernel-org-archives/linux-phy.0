@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E6DB7C6FA91
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DD7C0C6FA92
 	for <linux-phy@archiver.kernel.org>; Fri,  9 Sep 2022 09:14:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,53 +12,53 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zO6j0WcbdrMdzT5UoKmd8hzXRf6s1qGNIIOP/GRQbCc=; b=Tf4nKu6p590Tjr
-	dTubWhFkNWv3TB+YlGFItMtklQony80cAQ4lpB+cOJ+lUGxjg+xLXc1wNuVK/hPIHL3624h366Bh6
-	gERv54Es0bKUYEd/5OdZn98m3vkQAXv8f0MFmkq7lMfYY7R6oXLKkMk3ugxbdeqssQIrEB5tKqiWl
-	+hAYMGk/eSpV3qJlZ+aVpb3yKwiMlFSlilmycFW/J9sfbsSb0MA5c3KmNuM7De64Pfb0YuOLhuYdP
-	tRVJzst7jBQBiK6c5nxEG/+fzMeiXDGxrWbPnQug+/bPlO4NSVTGMhe/YnvycESrt0I+vjES7yShp
-	d72muZQX5Kvqxy7e29DQ==;
+	List-Owner; bh=toF3tscs+Pas/042/NuQ97ICWGRTTcPp0Xa91FSscx0=; b=fESSYXIsWHbzh1
+	HxvC+YfhsPal1eqLeX2gBoj6jLLSaIrJSWVwLAKONFC9lDkMJ/t0urSGUl6ElmEsSHU6Jc5MHvBpL
+	szPzlz5aiLkqmPP3T3jdmbR9oWj9uVrPUgX8Q3xqjezJYN0SU3pb1KwPH6PdJVZ2cPPO22s9PbBiB
+	y9HqlwwrjYHsDdzTyOdW6lnx66FdP9hF9rYU9AYJ1nvE1qatX8BhKz9PqIBRR+m/EBMpP0nH9gY4V
+	meRMlzx2fSIUiXmvhAMEFZcStvumA0Lcm6YkLMbNwpIfiI53hM3nD7M/ihonc6Y2zlKHE2sebBXSw
+	TA9KwmJ1c04K9V7bl+Kw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oWa64-00ExgA-DU; Fri, 09 Sep 2022 09:14:48 +0000
-Received: from mail-lj1-x231.google.com ([2a00:1450:4864:20::231])
+	id 1oWa64-00Exg3-BY; Fri, 09 Sep 2022 09:14:48 +0000
+Received: from mail-lj1-x22d.google.com ([2a00:1450:4864:20::22d])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oWa61-00ExYk-3s
+	id 1oWa5z-00ExZS-Lz
 	for linux-phy@lists.infradead.org; Fri, 09 Sep 2022 09:14:46 +0000
-Received: by mail-lj1-x231.google.com with SMTP id z20so1092878ljq.3
-        for <linux-phy@lists.infradead.org>; Fri, 09 Sep 2022 02:14:45 -0700 (PDT)
+Received: by mail-lj1-x22d.google.com with SMTP id by6so1056848ljb.11
+        for <linux-phy@lists.infradead.org>; Fri, 09 Sep 2022 02:14:41 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date;
-        bh=5MyxjEhSqcQYv9oqAAjUG7kWOklie0I2GmKRB8jIEeU=;
-        b=fJYTUukRypDeg6Hp0oxgJLj2ZwZGJi7eAzLJWAyo5M2SyhpbAofQcr9qpuhGESurzs
-         ujsll6x9ELeV0mJ/z9bnvRQ03rG9v+KG95DbMWRqiWX4nzJLAS2zScSx1lEhwRjbbHUW
-         yCo36lQdjM1VkoWECRHA/WBfNN4NqUYpFOGmJB0LqjnfqdLEZdt8Yu4xz4WPaGqYsvnu
-         0VTx15WkH2hzvyjeaW19+6ju7AtRimGbXfhXugavEgAZgQR9IxI7fW1cLRG2Le4uNsWW
-         DfxjV652kquTDWxXw2aFZODIFqq1xLX1lLUSjYhlbIyXLQVUOAHtLX1Y7XB8BJC8IpO+
-         JnAA==
+        bh=HU2fqxeSVcRcvbRyBLFrKxTAT+0TWkjgqZ5eADgSGgk=;
+        b=We02NjLi51MFUWy5j1PR8dUf3JOzbFBji89SbW0N7UHRaMvU9ck3wtDBMKOr6ehWlv
+         X3LMeztDf03ajQKIDHby2nMLUKvO5NURFs/c2mpdvGfKq3Z6qroVZ/xOpiyMbaCVxySR
+         rMoKbGSv2zX8RbxTgBAnI7MEq5X4P0pA7somHl2KjGMsONaQ7QVQD4LIXuVPBFVuUtQh
+         CJrw007ZrePCg/xSFhMKjSzJ2VyXac8RnNc3hkuuZBdXAtCQNgKwctNnVfIG1ijeH/gb
+         PQzYJyh0UliLlDYFISOnNJgFRg6iuEd6zKoR93/f1lLV9oTH8BmTqWAVzFI+r93qO06j
+         3x4g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date;
-        bh=5MyxjEhSqcQYv9oqAAjUG7kWOklie0I2GmKRB8jIEeU=;
-        b=CM0KXz542Cwg+Dx6iKvfPvDlkPdBatlfD2oekYx8iQssffIRqzzCH1mjrt5DEqZ9j3
-         LeAWZI8hAUNiTqWiWl4U9C2C2BtCfaTzDGBL61eh/EM57dELsnTnIgka47DqX9gH+Bi1
-         jCh7vlAqocEjpM/YAKKT5+gtIfRy4BtypfziSPoUIdHQoXBdoQivEdXpPsPh1j2zMGEZ
-         +6DxUBZlN1oCHjNMzBRPvD957dPjUtBuqqVII42strSNf6hWZpu+Yink8NxfCGTjCe0v
-         w7OwRKJIvfqc/DPfp7OzBWev8vtu5po8VtNf5cFr2sES5rlkT6CLE43GeIBOuBw2UDwy
-         j/6Q==
-X-Gm-Message-State: ACgBeo24M3lo67TxSFK38gBegilHHFM4PJq1T5pMc0R09r30a8OrRRvo
-	J9z6QwozB1XxgFhVvMZ4hxwHXA==
-X-Google-Smtp-Source: AA6agR6xzToALUoWmSk6vOlrNi+UWb5/PMWZz2w0OYejPJNkD1XLY3D6JlDolP1r0m7jkF5+Aqp1bA==
-X-Received: by 2002:a2e:be9e:0:b0:261:b228:ed8b with SMTP id a30-20020a2ebe9e000000b00261b228ed8bmr3635536ljr.226.1662714884653;
-        Fri, 09 Sep 2022 02:14:44 -0700 (PDT)
+        bh=HU2fqxeSVcRcvbRyBLFrKxTAT+0TWkjgqZ5eADgSGgk=;
+        b=11JvQrD9qjBWc5ibbalJub1MnsAf+3otHcjB1EKyBj6NRQ8oAguIRZHOhvXUtRzsio
+         FxcKZ4D1ss+b2KkJMWj8mm0tC5h6bN3h3tZxAgYgBzn3uXJ3CqGsglFiKSaDOEKCRZhC
+         s6KhGg/pmiOlVa8OL+pYtZCI2pQwc5PI87gebxHh9NFQgqiKk+LenaI5qqAGREObfD5g
+         oNeLMPsHKbm7zBOotMtjc7yyN57JpyU1GQMVDvCp3XboaZEjMAJsO2bPXjBlIgBEyIXN
+         +av3VWNTBhXYHd++ZRpddVKu8nAZYCFxppUrjs/RsaPK2ni1hsM4Hk+DSoqWTMTy2xCf
+         vWpg==
+X-Gm-Message-State: ACgBeo0BTYm9m/NwKyHb8o33mgqd+fiwNiuAytbP3NN1aFxivjVnp2Aw
+	C7hkwL8bFbJs9zEQXg1J+4g8gg==
+X-Google-Smtp-Source: AA6agR5lcebEObTLYz0gr98T0UKvJvrLyaTqdW8FhnL3PFen7y0ov8oPxNjx1i1523hBzHR2rn0ygg==
+X-Received: by 2002:a05:651c:12ca:b0:261:df67:b76f with SMTP id 10-20020a05651c12ca00b00261df67b76fmr3384572lje.421.1662714879840;
+        Fri, 09 Sep 2022 02:14:39 -0700 (PDT)
 Received: from eriador.lan ([37.153.55.125])
-        by smtp.gmail.com with ESMTPSA id z26-20020a2e4c1a000000b0026acbb6ed1asm201615lja.66.2022.09.09.02.14.43
+        by smtp.gmail.com with ESMTPSA id z26-20020a2e4c1a000000b0026acbb6ed1asm201615lja.66.2022.09.09.02.14.38
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 09 Sep 2022 02:14:43 -0700 (PDT)
+        Fri, 09 Sep 2022 02:14:39 -0700 (PDT)
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 To: Andy Gross <agross@kernel.org>,
 	Bjorn Andersson <andersson@kernel.org>,
@@ -75,18 +75,17 @@ Cc: Philipp Zabel <p.zabel@pengutronix.de>,
 	Johan Hovold <johan@kernel.org>,
 	linux-arm-msm@vger.kernel.org,
 	linux-pci@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Subject: [PATCH v3 9/9] PCI: qcom-ep: Setup PHY to work in EP mode
-Date: Fri,  9 Sep 2022 12:14:33 +0300
-Message-Id: <20220909091433.3715981-10-dmitry.baryshkov@linaro.org>
+	linux-phy@lists.infradead.org
+Subject: [PATCH v3 5/9] phy: qcom-qmp-pcie: turn secondary programming table into a pointer
+Date: Fri,  9 Sep 2022 12:14:29 +0300
+Message-Id: <20220909091433.3715981-6-dmitry.baryshkov@linaro.org>
 X-Mailer: git-send-email 2.35.1
 In-Reply-To: <20220909091433.3715981-1-dmitry.baryshkov@linaro.org>
 References: <20220909091433.3715981-1-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220909_021445_231801_98B611E1 
-X-CRM114-Status: GOOD (  10.06  )
+X-CRM114-CacheID: sfid-20220909_021443_764157_FDE6D834 
+X-CRM114-Status: GOOD (  12.84  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,30 +102,69 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Call phy_set_mode_ext() to notify the PHY driver that the PHY is being
-used in the EP mode.
+Having a complete struct qmp_phy_cfg_tables as a secondary field in the
+struct qmp_phy_cfg wastes memory, since most of the PHY configuration
+tables do not have the secondary table. Change it to be a pointer to
+lower the amount of wasted memory.
 
-Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 ---
- drivers/pci/controller/dwc/pcie-qcom-ep.c | 4 ++++
- 1 file changed, 4 insertions(+)
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
 
-diff --git a/drivers/pci/controller/dwc/pcie-qcom-ep.c b/drivers/pci/controller/dwc/pcie-qcom-ep.c
-index ec99116ad05c..e2a1c3c7f599 100644
---- a/drivers/pci/controller/dwc/pcie-qcom-ep.c
-+++ b/drivers/pci/controller/dwc/pcie-qcom-ep.c
-@@ -240,6 +240,10 @@ static int qcom_pcie_enable_resources(struct qcom_pcie_ep *pcie_ep)
- 	if (ret)
- 		goto err_disable_clk;
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+index 5250c3f06c89..d115f7ef3901 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+@@ -1372,7 +1372,7 @@ struct qmp_phy_cfg {
+ 	 * Additional init sequence for PHY blocks, providing additional
+ 	 * register programming. Unless required it can be left omitted.
+ 	 */
+-	struct qmp_phy_cfg_tables secondary;
++	struct qmp_phy_cfg_tables *secondary;
  
-+	ret = phy_set_mode_ext(pcie_ep->phy, PHY_MODE_PCIE, PHY_SUBMODE_PCIE_EP);
-+	if (ret)
-+		goto err_phy_exit;
-+
- 	ret = phy_power_on(pcie_ep->phy);
- 	if (ret)
- 		goto err_phy_exit;
+ 	/* clock ids to be requested */
+ 	const char * const *clk_list;
+@@ -1687,7 +1687,7 @@ static const struct qmp_phy_cfg sm8250_qmp_gen3x1_pciephy_cfg = {
+ 	.pcs_misc_tbl		= sm8250_qmp_pcie_pcs_misc_tbl,
+ 	.pcs_misc_tbl_num	= ARRAY_SIZE(sm8250_qmp_pcie_pcs_misc_tbl),
+ 	},
+-	.secondary = {
++	.secondary = &(struct qmp_phy_cfg_tables) {
+ 	.serdes_tbl		= sm8250_qmp_gen3x1_pcie_serdes_tbl,
+ 	.serdes_tbl_num		= ARRAY_SIZE(sm8250_qmp_gen3x1_pcie_serdes_tbl),
+ 	.rx_tbl			= sm8250_qmp_gen3x1_pcie_rx_tbl,
+@@ -1730,7 +1730,7 @@ static const struct qmp_phy_cfg sm8250_qmp_gen3x2_pciephy_cfg = {
+ 	.pcs_misc_tbl		= sm8250_qmp_pcie_pcs_misc_tbl,
+ 	.pcs_misc_tbl_num	= ARRAY_SIZE(sm8250_qmp_pcie_pcs_misc_tbl),
+ 	},
+-	.secondary = {
++	.secondary = &(struct qmp_phy_cfg_tables) {
+ 	.tx_tbl			= sm8250_qmp_gen3x2_pcie_tx_tbl,
+ 	.tx_tbl_num		= ARRAY_SIZE(sm8250_qmp_gen3x2_pcie_tx_tbl),
+ 	.rx_tbl			= sm8250_qmp_gen3x2_pcie_rx_tbl,
+@@ -2086,7 +2086,7 @@ static int qcom_qmp_phy_pcie_power_on(struct phy *phy)
+ 	int ret;
+ 
+ 	qcom_qmp_phy_pcie_serdes_init(qphy, &cfg->main);
+-	qcom_qmp_phy_pcie_serdes_init(qphy, &cfg->secondary);
++	qcom_qmp_phy_pcie_serdes_init(qphy, cfg->secondary);
+ 
+ 	ret = clk_prepare_enable(qphy->pipe_clk);
+ 	if (ret) {
+@@ -2096,10 +2096,10 @@ static int qcom_qmp_phy_pcie_power_on(struct phy *phy)
+ 
+ 	/* Tx, Rx, and PCS configurations */
+ 	qcom_qmp_phy_pcie_lanes_init(qphy, &cfg->main);
+-	qcom_qmp_phy_pcie_lanes_init(qphy, &cfg->secondary);
++	qcom_qmp_phy_pcie_lanes_init(qphy, cfg->secondary);
+ 
+ 	qcom_qmp_phy_pcie_pcs_init(qphy, &cfg->main);
+-	qcom_qmp_phy_pcie_pcs_init(qphy, &cfg->secondary);
++	qcom_qmp_phy_pcie_pcs_init(qphy, cfg->secondary);
+ 
+ 	/*
+ 	 * Pull out PHY from POWER DOWN state.
 -- 
 2.35.1
 
