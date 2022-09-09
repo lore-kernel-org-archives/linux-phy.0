@@ -4,83 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DEA2CC6FA82
-	for <linux-phy@archiver.kernel.org>; Fri,  9 Sep 2022 13:20:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 210F0ECAAA1
+	for <linux-phy@archiver.kernel.org>; Fri,  9 Sep 2022 13:20:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=o+lrGyeDTJjZJk6GvzUD4vMFp4vlZjobxFvL7muE3tM=; b=QfGBIyQ++QBUaW
-	FjtGPY38T6Sdwecp+Fp9Nw8Ydtk6eaDHH0O66uqhWXDjfrN5EEARY2oE0cX2xJVj47sBnQ6K8MUHZ
-	dXDWV8VgLs+WQeEmSGLBS9FHK/3bEj2rctzOj8l6QJlI4ORGFdwh2n8JNFZSAU6NqMze7OfKJb0aI
-	KZSRfna5vbG4pYjdUUYa9hslWJzbLzuH5vHXGVmdXTM7rqRxn8PbrJ8Xc+L7mP/73/3VE+OB3rFLA
-	aKLpz3MGWnpYBT+8v1p81mBMwxni+ka35QWSJ782FbQsXOEHqdsympLzlt7EDAvz5qrUqXJovGoNc
-	DkApSEQxuMhUoeSL2trg==;
+	List-Owner; bh=Cdhn96xFshLEJ8+3+R7r4njJJy0Vlr3lSlXf9zg0JWA=; b=rKd233EeOYWnUB
+	nq/wIsfeYclJssKtILABw3vQSeVh6w8my3E7ILPFYz8gFOflhXHfD9CV9rwh86Snnf/3oAKtoRFgB
+	68mp2Ydq4JNiLiHpHW0Uq+TiqWX7+atgz7YNQo57aaQ6P11TsgZdp+Wzfd62bzNHzYBcSn7ezFvr1
+	srMEnQqb7g0AoROmEbu83yEz7h42fHV4DEi28Dwl1jKu/LMjezF4NAWXacSKWe+9c44k2KBmFeWld
+	I0s5W/rk/ERTSk54lHeFDaSle+akeFAVqr7qEApVvWgsMONB+BTF412TcYbDp7h4VyR6GXlVAZ7U2
+	TmR6aBtm8klwktAX99GA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oWdvi-00GICI-B2; Fri, 09 Sep 2022 13:20:22 +0000
-Received: from mail-lf1-x136.google.com ([2a00:1450:4864:20::136])
+	id 1oWdvy-00GIF4-Iz; Fri, 09 Sep 2022 13:20:38 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oWdve-00GI91-Td
-	for linux-phy@lists.infradead.org; Fri, 09 Sep 2022 13:20:20 +0000
-Received: by mail-lf1-x136.google.com with SMTP id a8so2604590lff.13
-        for <linux-phy@lists.infradead.org>; Fri, 09 Sep 2022 06:20:17 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date;
-        bh=7eIAPqI4VKtQ+SccbuIlWbbRD/2RqIpw8CuTR3vK6To=;
-        b=DkafrE+hVIylqFypeq2N34GUMha4gRCZ4CoqpO7BiMR6ZvxNagiRFX46HvXyhEf7lw
-         IvSTni9o3GjK59yKJUxcQ2Guhm6mFlHWJhDvDSbBe1zb4WRyqMa+dBJtPhzQ6hiDV82a
-         H2YPcvg9c9ZswqAjLELPR9Jz8wXPbOtjPzO8ukWnSG1vq/JYdjtwsFUFqNO2Pu6U7Yed
-         h3zb3PFiUrn1D+vMIBKu9a2UWSRJ2e+8q4/SVbB8U03Y0xu13mS66QKccCqSp9sMolje
-         kjPqZucqnL3xhLOCpi+94Ql8MqHR0jhpDDO10QehYpIvP/UWlqVNEOoatxkrWJDDw9um
-         raMA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date;
-        bh=7eIAPqI4VKtQ+SccbuIlWbbRD/2RqIpw8CuTR3vK6To=;
-        b=BqwZNHsSwpIAZUqZWPKHgP0KgYbQIhTVs2VGPcFM8w5qmU3ptOI+Ozyf0jJPsoU9J2
-         6Gr8qYsm2nN8cXT69jtAwaPyVfYskLdfjmdK9wSBywyqahH7ShKMjMpvPPTxfDWQJjnr
-         xVvwYfRQdCmqIFQW8iADhSvLOcN+9bfWTWfxU6rYSZkdO9nZyShN23tNEIkoHj0hisf0
-         QsfdtgbfiSMM2uv7PF87L9mAK3aHers/AULaiNEivRSr+SJSMW0ju25m3GxGDM+0keHF
-         TPg7sGbstL/kI2JUL013JHdKihQwgyCNrmRAZ6c6+v1K4wptb7ONLE1q/rR0fIYNrQLj
-         MSJw==
-X-Gm-Message-State: ACgBeo0oxhKYM61EWrI7OklEC4OJQGCvZWQBTtH+e6KZXDBLsRRaUh01
-	YTrTbevdORJr+N5hLKbdqCzkQQ==
-X-Google-Smtp-Source: AA6agR7UPYJj5t4SVndDP80FGNT9+vOtzry4SSeHaFI9K61PnoqWOvZadl4SMBPIiX69d75+SIvmCA==
-X-Received: by 2002:a05:6512:1087:b0:494:a011:2752 with SMTP id j7-20020a056512108700b00494a0112752mr4888907lfg.2.1662729616645;
-        Fri, 09 Sep 2022 06:20:16 -0700 (PDT)
-Received: from eriador.lan ([37.153.55.125])
-        by smtp.gmail.com with ESMTPSA id v10-20020a056512348a00b00498ff4ae746sm71729lfr.294.2022.09.09.06.20.15
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 09 Sep 2022 06:20:16 -0700 (PDT)
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-To: Andy Gross <agross@kernel.org>,
+	id 1oWdvw-00GIEj-O7
+	for linux-phy@lists.infradead.org; Fri, 09 Sep 2022 13:20:37 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 5A2BB61D13;
+	Fri,  9 Sep 2022 13:20:36 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B68F5C433C1;
+	Fri,  9 Sep 2022 13:20:35 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1662729635;
+	bh=OPjDbxZoA9mO4XMuKYHJGa1f/L+5w3XwGd4XzkJ8R0A=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=CIvWAb/OYnRpDiKTv5aVChkLKNie0kPXsvHHNwV/FfS7fsToT+t6T5RkUO0x/0TVF
+	 NZHl4pS7j7yNoV68SCyHxKl9ScvedeLhXWT7Xj/ZkdTBjxCQBvs7vOEO8l+4oVA3ho
+	 tZFqvkEV/x7ZP9P8lDuh7gEr/xXZ1JnPTG055hJR8c4lpuletoPgsDDur4VnblQdau
+	 5lb79mIkMay7/+T0CKxQCyuDUAmXRp+B3DdDXguce+Z65soRm1LlG7JzMqkUJpxtd4
+	 FeJ6yrHb/ctsktHWVtVCxPTxSXMLLSzvbW1tXnxHB+PnTt6tu1ClvL3hbsKYYdvA44
+	 g+zQsEAdgSplQ==
+Received: from johan by xi.lan with local (Exim 4.94.2)
+	(envelope-from <johan@kernel.org>)
+	id 1oWdw4-00024Y-En; Fri, 09 Sep 2022 15:20:45 +0200
+Date: Fri, 9 Sep 2022 15:20:44 +0200
+From: Johan Hovold <johan@kernel.org>
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Cc: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+	Andy Gross <agross@kernel.org>,
 	Bjorn Andersson <andersson@kernel.org>,
 	Konrad Dybcio <konrad.dybcio@somainline.org>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
-Cc: linux-arm-msm@vger.kernel.org,
-	devicetree@vger.kernel.org,
-	Vinod Koul <vkoul@kernel.org>,
-	linux-phy@lists.infradead.org,
-	Kishon Vijay Abraham I <kishon@ti.com>
-Subject: [PATCH 6/6] ARM: dts: qcom: apq8064: use hdmi_phy for the MMCC's hdmipll clock
-Date: Fri,  9 Sep 2022 16:20:10 +0300
-Message-Id: <20220909132010.3814817-7-dmitry.baryshkov@linaro.org>
-X-Mailer: git-send-email 2.35.1
-In-Reply-To: <20220909132010.3814817-1-dmitry.baryshkov@linaro.org>
-References: <20220909132010.3814817-1-dmitry.baryshkov@linaro.org>
+	Kishon Vijay Abraham I <kishon@ti.com>,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 02/16] phy: qcom-qmp-combo: drop unused defines
+Message-ID: <Yxs9rCf/JTL5BA1S@hovoldconsulting.com>
+References: <20220907110728.19092-1-johan+linaro@kernel.org>
+ <20220907110728.19092-3-johan+linaro@kernel.org>
+ <7370ba1d-472c-b036-4155-f86ca13f9824@linaro.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <7370ba1d-472c-b036-4155-f86ca13f9824@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220909_062018_990621_8B9F479D 
-X-CRM114-Status: UNSURE (   9.56  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220909_062036_839313_C7FA413C 
+X-CRM114-Status: GOOD (  16.69  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,29 +82,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Link hdmi_phy as a clock provider of "hdmipll" clock to the MMCC.
+On Fri, Sep 09, 2022 at 12:21:12PM +0300, Dmitry Baryshkov wrote:
+> On 07/09/2022 14:07, Johan Hovold wrote:
+> > Drop defines and enums that are unused since the QMP driver split.
+> > 
+> > Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
+> > ---
+> >   drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 15 ---------------
+> >   1 file changed, 15 deletions(-)
+> > 
+> > diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+> > index 9ce2ab56be4c..838f7e328b55 100644
+> > --- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+> > +++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+> > @@ -28,16 +28,11 @@
+> >   #define SW_RESET				BIT(0)
+> >   /* QPHY_POWER_DOWN_CONTROL */
+> >   #define SW_PWRDN				BIT(0)
+> > -#define REFCLK_DRV_DSBL				BIT(1)
+> >   /* QPHY_START_CONTROL bits */
+> >   #define SERDES_START				BIT(0)
+> >   #define PCS_START				BIT(1)
+> > -#define PLL_READY_GATE_EN			BIT(3)
+> >   /* QPHY_PCS_STATUS bit */
+> >   #define PHYSTATUS				BIT(6)
+> > -#define PHYSTATUS_4_20				BIT(7)
+> > -/* QPHY_PCS_READY_STATUS & QPHY_COM_PCS_READY_STATUS bit */
+> > -#define PCS_READY				BIT(0)
+> 
+> I think these defines, describing registers and bits, can go to the 
+> common header instead.
 
-Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
----
- arch/arm/boot/dts/qcom-apq8064.dtsi | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+Adding those to a common header can be done later if needed at all (and
+would include adding a proper prefix etc).
 
-diff --git a/arch/arm/boot/dts/qcom-apq8064.dtsi b/arch/arm/boot/dts/qcom-apq8064.dtsi
-index decd18217523..28a0e2a4a254 100644
---- a/arch/arm/boot/dts/qcom-apq8064.dtsi
-+++ b/arch/arm/boot/dts/qcom-apq8064.dtsi
-@@ -868,7 +868,7 @@ mmcc: clock-controller@4000000 {
- 				 <&dsi0_phy 0>,
- 				 <0>,
- 				 <0>,
--				 <0>;
-+				 <&hdmi_phy>;
- 			clock-names = "pxo",
- 				      "pll3",
- 				      "pll8_vote",
--- 
-2.35.1
+> For the rest of the patch:
+> 
+> Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 
+Johan
 
 -- 
 linux-phy mailing list
