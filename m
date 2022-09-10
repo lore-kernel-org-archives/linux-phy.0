@@ -4,89 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DEA77C6FA82
-	for <linux-phy@archiver.kernel.org>; Sat, 10 Sep 2022 14:30:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7E661C6FA86
+	for <linux-phy@archiver.kernel.org>; Sat, 10 Sep 2022 14:32:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8XIfCpJhiICX9hOrmgJmn8FgPNQe6hqY+uvBnXhTGUU=; b=xesiAdSiSXXpAs
-	H79FOXRC+pB75eIajgatqhTsHJzDbr2bfHH/6VUGFwqzq9dFLF39xrDaOEP/b3jaRc2meo59cvRJm
-	WQbK7CKNSUEf15ZurUW0/R7VxUn0CsWq+yNmTWF1vSNSbT5Dr/QYxt/cph4jpjKAXMtDzMz9ZwnaV
-	Whv+Q5RYw8Rje7fb9jv+O29OHZHPKTvvyM2Fm2V3riM+kkGxeUP/HniW2xgMOSAmuX1edjMGFJAsV
-	M12fHvZ7kk43eaaqgV5omvQGKtrgCYzhb5eeE4fDe0t2dIeFSBCBhs4j4xdBsj9DzFLTLNYD7tvrh
-	ckgHAfQca+StBBaAJTyQ==;
+	List-Owner; bh=TTktrTcYTg+t6nnV5quB4ix992V7nTHp/skiZuTcFLM=; b=3mBKajyl4CQllc
+	QHift7bofFgmtq9f+D0BZExUC1HorY59pg/H+vEsJqD9PqGfnJWtQHXbiRvrNhd3DliCNTPH5VG5m
+	ORAJ66K/A2YcwfPBrlmXkHeRw6vCwUutrmQ6hn0uxPTsP/V2lY+q4ZwnBIXHH6VZF3nyOPtpWQgc3
+	I5lDAsba3e4ZIrphI57LbJt3eS9TrKfN1L7bGhs21edy+GgYkq1T0niy/V1VTrUpTU8qzKMqskOFg
+	p5WfH8HVE8Juw2pFFt6gRsKRdIAzEGBttVKYzn0hLLuxLq6Qdzf2k99Ckox9SjrVGwU0JElzcsw//
+	v63FKHKeXT89K0mWbKnw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oX1VQ-00Arlp-92; Sat, 10 Sep 2022 14:30:48 +0000
-Received: from mail-pj1-x102b.google.com ([2607:f8b0:4864:20::102b])
+	id 1oX1X6-00AsGP-St; Sat, 10 Sep 2022 14:32:32 +0000
+Received: from mail-wr1-x432.google.com ([2a00:1450:4864:20::432])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oX1VA-00AriD-IV; Sat, 10 Sep 2022 14:30:33 +0000
-Received: by mail-pj1-x102b.google.com with SMTP id q15-20020a17090a304f00b002002ac83485so4206253pjl.0;
-        Sat, 10 Sep 2022 07:30:31 -0700 (PDT)
+	id 1oX1X4-00AsEQ-8V
+	for linux-phy@lists.infradead.org; Sat, 10 Sep 2022 14:32:31 +0000
+Received: by mail-wr1-x432.google.com with SMTP id e20so7824392wri.13
+        for <linux-phy@lists.infradead.org>; Sat, 10 Sep 2022 07:32:28 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=gmail.com; s=20210112;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :sender:from:to:cc:subject:date;
-        bh=NfxfbFr6yb0xol1xxFYNDP3VjWYzuHsl9L6WlI3ZH0I=;
-        b=o8CJbWXfF7dDOkG/l5CIf/K/X51rljLp3Su1VTY6THuSv7r6HBvEecHssTHM10MXAz
-         SMIRv61RSwPsKDY0NpAu1a/8WXreef5wZy9lzEa1Tlvzo4qiIgqLpSckinSbLPpGmKsL
-         EwiXyjllU2nMgctHnqy9HkEHRPMBH784+q8IR7VxWoXuT+KHOceyVlmeYRVkvTcZHD7S
-         0F7WE+CRClm3Sg58TTzZkougAJkCokbofBPu9qntooE6rBkvjc7aWuKjmWes01f5kgM8
-         Rp0+peZSiyk8AqeSLwgtvnpxW87q7bi+pu+E+/OA5O0tWmP/AQCv+NXZVw9MjXpYLlCz
-         nUMg==
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date;
+        bh=sFfHW+tcAhvs1gk4X+D31/A9ude4NOf/1K3FvL8qEzA=;
+        b=XR47zE4K7cWZFBXkzpXSOtjKt00IluqDVpNbPoWXAiA9FzwYaHmKI/UwUkW/7ZfC/Q
+         6ibL6zfpG8YN8sj0UZSo8P7oJiXwSHxcyPrfAQRvNgOmHvdexByYpJbcrqMfrfXbkjmV
+         gwyXed9rd6l6RrllgkyAJfbA7kkX9MbuMt8w2UouO1jnJkvzhYebIVlbCx/rZKmEUmgR
+         EoujilmO/NRyIpgj3Tpk8pazfbMOQ+JQA9Hg4jOdbYKCf+iuISzR7A4r7TXkxbAuLUg2
+         x+xpYBAG+KYGzFuFMA+RWVt4nVEJhN+KIe58q+G35O7oHVfmzeZX+/nbwTckbq+QP5wt
+         6Fnw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :sender:x-gm-message-state:from:to:cc:subject:date;
-        bh=NfxfbFr6yb0xol1xxFYNDP3VjWYzuHsl9L6WlI3ZH0I=;
-        b=dSwWmDijn6o6ALjM5mDB/Pt/X6Us1kkAvSTDPsVDNEhnza+R1HAuBy+R8DCK4doV2d
-         qB2zYQykPzT7mLuGlSjZMNlgoM8yWdtrsnvTl3tUZZvUK+EWgmkKH1ZsTrfpLho2EyCi
-         Q/a7nmV3tt1l+P7xftiMJ2vM/1UaF3DwLQo7UN/KO/saVhoctZHgF7gVzrYs1dQq9OgD
-         UAzy/lRNHlyYK7GtBl56H5ejbJVplZBB0UHRywVpdohTB9dWcd1b9ZGO/0iyCxjeP48H
-         357d4m/oLGZ5ymxeNGbKIhUZCWsTMZx+La6UOAdycEkHR7DzPsHDgAWkj1971CcESEAw
-         2gJA==
-X-Gm-Message-State: ACgBeo2Pre/P3HYVVKtIrrLPKul1MF4T4KH+dTZcuukzw3mFkLmgDYwX
-	hSA5btQZiiOx67UnOv4QGkA=
-X-Google-Smtp-Source: AA6agR45j1E2oUagm+srWFqub3Qu6YOOhrbPdG8/lVANoSphqwJKLExI6LaQWXuJkmIkirNUxO79XA==
-X-Received: by 2002:a17:90a:a60b:b0:200:919a:55a1 with SMTP id c11-20020a17090aa60b00b00200919a55a1mr14980138pjq.194.1662820230702;
-        Sat, 10 Sep 2022 07:30:30 -0700 (PDT)
-Received: from ?IPV6:2600:1700:e321:62f0:329c:23ff:fee3:9d7c? ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
-        by smtp.gmail.com with ESMTPSA id n2-20020a170902d2c200b00176b63535adsm2328040plc.260.2022.09.10.07.30.28
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date;
+        bh=sFfHW+tcAhvs1gk4X+D31/A9ude4NOf/1K3FvL8qEzA=;
+        b=bom8TXFzfSh7UFWD7UpvFwgiqXW3rZl07sW4daUTooodbCSDth+6AJiJPeY63Q9ju7
+         vjLZLay08W65yKGwPRLLAAEcQPMj3SUPw7IaQCP+OfJXjymYfxdl3tYhmEnNYUfA1AaB
+         oyNTd7YA7TA+ZCEbGYITjMBKXstpRYUV5Aa89oGcyhjX7+pLvcKQNCNOO9kkUD+V5A3F
+         /AIWi71hfW9zmTGKbxYzTy95Awy8Wj7PJrsF7KuNIefnysffR1LsYf0HKRZTjFC4Y8NG
+         2rKQspFDR2fUDA8XGCUi84rVLGHuLr6+c8WijnDz1lshiB0JKYoYHGnfGY8nldkWt2X8
+         gVhA==
+X-Gm-Message-State: ACgBeo1SKuBwwRCUoc9U6tmEgFrbahYPTyiSAn1lS33H6UqYONRfmOSE
+	pKtoo2s7Fyy7x9C5ayPuBbY=
+X-Google-Smtp-Source: AA6agR7AyRP0gNt/nRJaEgmEQXnNoSL7mRSyLOVn8mdCAISjbd70lfGcxObe5S1PdqnLi6V3opWN9g==
+X-Received: by 2002:a5d:47aa:0:b0:226:dbf6:680c with SMTP id 10-20020a5d47aa000000b00226dbf6680cmr10604031wrb.581.1662820347641;
+        Sat, 10 Sep 2022 07:32:27 -0700 (PDT)
+Received: from localhost ([77.78.20.135])
+        by smtp.gmail.com with ESMTPSA id m36-20020a05600c3b2400b003b46d9c3709sm2255106wms.48.2022.09.10.07.32.26
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sat, 10 Sep 2022 07:30:29 -0700 (PDT)
-Message-ID: <0dab9988-3a7e-77f2-de71-58e67cc79663@roeck-us.net>
-Date: Sat, 10 Sep 2022 07:30:27 -0700
+        Sat, 10 Sep 2022 07:32:27 -0700 (PDT)
+From: Iskren Chernev <iskren.chernev@gmail.com>
+To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Rob Herring <robh+dt@kernel.org>
+Cc: phone-devel@vger.kernel.org,
+	~postmarketos/upstreaming@lists.sr.ht,
+	linux-arm-msm@vger.kernel.org,
+	devicetree@vger.kernel.org,
+	Iskren Chernev <iskren.chernev@gmail.com>,
+	Andy Gross <agross@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@somainline.org>,
+	Kishon Vijay Abraham I <kishon@ti.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH v3 6/9] dt-bindings: phy: qcom,qmp-ufs: Fix SM6115 clocks, regs
+Date: Sat, 10 Sep 2022 17:32:10 +0300
+Message-Id: <20220910143213.477261-7-iskren.chernev@gmail.com>
+X-Mailer: git-send-email 2.37.2
+In-Reply-To: <20220910143213.477261-1-iskren.chernev@gmail.com>
+References: <20220910143213.477261-1-iskren.chernev@gmail.com>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.11.0
-Subject: Re: [PATCH v1 07/11] dt-bindings: watchdog: rockchip: add
- rockchip,rk3128-wdt
-Content-Language: en-US
-To: Johan Jonker <jbx6244@gmail.com>, kever.yang@rock-chips.com
-Cc: sjg@chromium.org, philipp.tomsich@vrull.eu, robh+dt@kernel.org,
- krzysztof.kozlowski+dt@linaro.org, heiko@sntech.de, ulf.hansson@linaro.org,
- miquel.raynal@bootlin.com, richard@nod.at, vigneshr@ti.com, kishon@ti.com,
- vkoul@kernel.org, thierry.reding@gmail.com, u.kleine-koenig@pengutronix.de,
- gregkh@linuxfoundation.org, broonie@kernel.org, wim@linux-watchdog.org,
- zhangqing@rock-chips.com, jamie@jamieiles.com, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-i2c@vger.kernel.org,
- linux-mmc@vger.kernel.org, linux-mtd@lists.infradead.org,
- linux-phy@lists.infradead.org, linux-pwm@vger.kernel.org,
- linux-serial@vger.kernel.org, linux-spi@vger.kernel.org,
- linux-usb@vger.kernel.org, linux-watchdog@vger.kernel.org
-References: <20220909212543.17428-1-jbx6244@gmail.com>
- <a4da79fe-3449-6538-742f-790835ffe43a@gmail.com>
-From: Guenter Roeck <linux@roeck-us.net>
-In-Reply-To: <a4da79fe-3449-6538-742f-790835ffe43a@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220910_073032_637004_059C46E8 
-X-CRM114-Status: GOOD (  10.56  )
+X-CRM114-CacheID: sfid-20220910_073230_321229_C9A58627 
+X-CRM114-Status: UNSURE (   8.73  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,34 +97,48 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 9/9/22 15:01, Johan Jonker wrote:
-> Add rockchip,rk3128-wdt compatible string.
-> 
-> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+The Sm6115 UFS PHY has 2 clocks and 3 regs.
 
-Reviewed-by: Guenter Roeck <linux@roeck-us.net>
+Signed-off-by: Iskren Chernev <iskren.chernev@gmail.com>
+---
+ Documentation/devicetree/bindings/phy/qcom,qmp-ufs-phy.yaml | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-> ---
->   Documentation/devicetree/bindings/watchdog/snps,dw-wdt.yaml | 1 +
->   1 file changed, 1 insertion(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/watchdog/snps,dw-wdt.yaml b/Documentation/devicetree/bindings/watchdog/snps,dw-wdt.yaml
-> index 6461eb4f4..92df6e453 100644
-> --- a/Documentation/devicetree/bindings/watchdog/snps,dw-wdt.yaml
-> +++ b/Documentation/devicetree/bindings/watchdog/snps,dw-wdt.yaml
-> @@ -20,6 +20,7 @@ properties:
->             - enum:
->                 - rockchip,px30-wdt
->                 - rockchip,rk3066-wdt
-> +              - rockchip,rk3128-wdt
->                 - rockchip,rk3188-wdt
->                 - rockchip,rk3228-wdt
->                 - rockchip,rk3288-wdt
+diff --git a/Documentation/devicetree/bindings/phy/qcom,qmp-ufs-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,qmp-ufs-phy.yaml
+index 6e3c186b9972..815c375d0f7b 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,qmp-ufs-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,qmp-ufs-phy.yaml
+@@ -121,6 +121,7 @@ allOf:
+               - qcom,sc8180x-qmp-ufs-phy
+               - qcom,sc8280xp-qmp-ufs-phy
+               - qcom,sdm845-qmp-ufs-phy
++              - qcom,sm6115-qmp-ufs-phy
+               - qcom,sm6350-qmp-ufs-phy
+               - qcom,sm8150-qmp-ufs-phy
+               - qcom,sm8250-qmp-ufs-phy
+@@ -180,7 +181,6 @@ allOf:
+           contains:
+             enum:
+               - qcom,sc8180x-qmp-ufs-phy
+-              - qcom,sm6115-qmp-ufs-phy
+     then:
+       patternProperties:
+         "^phy@[0-9a-f]+$":
+@@ -198,6 +198,7 @@ allOf:
+           contains:
+             enum:
+               - qcom,msm8996-qmp-ufs-phy
++              - qcom,sm6115-qmp-ufs-phy
+     then:
+       patternProperties:
+         "^phy@[0-9a-f]+$":
+-- 
+2.37.2
 
 
 -- 
