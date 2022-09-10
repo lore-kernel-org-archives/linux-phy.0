@@ -4,88 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A0CC7ECAAD5
-	for <linux-phy@archiver.kernel.org>; Sat, 10 Sep 2022 07:53:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DEA77C6FA82
+	for <linux-phy@archiver.kernel.org>; Sat, 10 Sep 2022 14:30:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Wf8iGlp7OkBh6AguX9DDIWWBzUO/GRJRMR8FJW1JmyY=; b=yRVIbrOWgd89fh
-	GX8ZIiVJwUKhpp5boM5gHEaxKT7uM7NBkTz0zYprx/KF3x5GNYLqLmzh+hmMjzSINsY9nY2NN4ez5
-	wQ4fXZDaHH4NaUqLY8wESOmNIKVVAYhxigbV6SZ1mGHeG6MeBb9Kf97ObHWZjyojn/XcJIgA0ypGN
-	7HqV9c7fh+x52yXubDtH+Clz9jhajUKxliJKFQbLJ9/xh9bA9EgFtnhKU+IylE098lOpHumCUktSr
-	dY71ltbnAmOOqXNYJ6v1fm7XS8hDgnvoN0akRHAmf5wBMPGCnSCTQmZKRZtkSqy3KMJprJRLc892w
-	1TIpgrq/Mmh8lEj+kI+A==;
+	List-Owner; bh=8XIfCpJhiICX9hOrmgJmn8FgPNQe6hqY+uvBnXhTGUU=; b=xesiAdSiSXXpAs
+	H79FOXRC+pB75eIajgatqhTsHJzDbr2bfHH/6VUGFwqzq9dFLF39xrDaOEP/b3jaRc2meo59cvRJm
+	WQbK7CKNSUEf15ZurUW0/R7VxUn0CsWq+yNmTWF1vSNSbT5Dr/QYxt/cph4jpjKAXMtDzMz9ZwnaV
+	Whv+Q5RYw8Rje7fb9jv+O29OHZHPKTvvyM2Fm2V3riM+kkGxeUP/HniW2xgMOSAmuX1edjMGFJAsV
+	M12fHvZ7kk43eaaqgV5omvQGKtrgCYzhb5eeE4fDe0t2dIeFSBCBhs4j4xdBsj9DzFLTLNYD7tvrh
+	ckgHAfQca+StBBaAJTyQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oWvIe-008GvS-2Q; Sat, 10 Sep 2022 07:53:12 +0000
-Received: from mail-lf1-x130.google.com ([2a00:1450:4864:20::130])
+	id 1oX1VQ-00Arlp-92; Sat, 10 Sep 2022 14:30:48 +0000
+Received: from mail-pj1-x102b.google.com ([2607:f8b0:4864:20::102b])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oWvIa-008Gul-SF
-	for linux-phy@lists.infradead.org; Sat, 10 Sep 2022 07:53:10 +0000
-Received: by mail-lf1-x130.google.com with SMTP id f9so5777853lfr.3
-        for <linux-phy@lists.infradead.org>; Sat, 10 Sep 2022 00:53:08 -0700 (PDT)
+	id 1oX1VA-00AriD-IV; Sat, 10 Sep 2022 14:30:33 +0000
+Received: by mail-pj1-x102b.google.com with SMTP id q15-20020a17090a304f00b002002ac83485so4206253pjl.0;
+        Sat, 10 Sep 2022 07:30:31 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
+        d=gmail.com; s=20210112;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date;
-        bh=yVGqcrQFlEfjiFrysCCuP1o3U/tDjW1TRB9WhX0ej9Q=;
-        b=JPf/YnnEqNe3FWESlm9wT9UUkd3umwAOkaJvFRXlQo/NwqhtPwkpuVeL0oA8O4ZKhC
-         cHmzIYl7KXQTxdrjLTJGjlbqy+TxY+hpZcbktnN3URurR+gOWNfrIJD/RjwTKvUijJKf
-         +dtWKjBgYg641Er13Te752MPSxox5XlvHXGjyU+isOyCVrKOQ7K2dNI+PeQHWMF3AXVa
-         Yn8ieU1uvVp2MyoQl4CT+T1S8OH0n68ocjlMcU4r2iuqNMhE7EJNfNSkVwHTpewA461i
-         3TTrGUmCW9JwGy0InxricQRCWoYRIRun+otEofpumxkW+o3AyPq9Y9rAmn+mfW6iDlem
-         AeIg==
+         :sender:from:to:cc:subject:date;
+        bh=NfxfbFr6yb0xol1xxFYNDP3VjWYzuHsl9L6WlI3ZH0I=;
+        b=o8CJbWXfF7dDOkG/l5CIf/K/X51rljLp3Su1VTY6THuSv7r6HBvEecHssTHM10MXAz
+         SMIRv61RSwPsKDY0NpAu1a/8WXreef5wZy9lzEa1Tlvzo4qiIgqLpSckinSbLPpGmKsL
+         EwiXyjllU2nMgctHnqy9HkEHRPMBH784+q8IR7VxWoXuT+KHOceyVlmeYRVkvTcZHD7S
+         0F7WE+CRClm3Sg58TTzZkougAJkCokbofBPu9qntooE6rBkvjc7aWuKjmWes01f5kgM8
+         Rp0+peZSiyk8AqeSLwgtvnpxW87q7bi+pu+E+/OA5O0tWmP/AQCv+NXZVw9MjXpYLlCz
+         nUMg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date;
-        bh=yVGqcrQFlEfjiFrysCCuP1o3U/tDjW1TRB9WhX0ej9Q=;
-        b=FL8X+w2wT1vi9y2kZOBb7YOGq1pMRujo0cmoShKh5HSihpqU1Hjse34oYkstCRSDGw
-         dNVbMhhMbzDT3ksJ+EjloWucCMApGmodSw6RuC28OvUM4ESAFUjG/dGeh8BmObkEcFqR
-         CmlzFRkK9H3GtyvlrT0CJpCIwj0wzExB2KkcKpO1PiQPykhBWi++NGGLax2asEL8tjy8
-         c9vUNbAZgRTotIWqBnq+z9554JVUAOTecF19U79ipNlvA+pbioeuSmQeH/TA59eMN+Uz
-         cbdY2xhleNzAN8OXyvZE+YI0mzTEsT2JFEmM/9jtHZYfCQ9UoFEO/EVe5JMU0Sn+iTHC
-         QmyQ==
-X-Gm-Message-State: ACgBeo1qr0ZqxwUOx6kTSJL2pBy/hwullJ1BpdpyoHfzTuC2/6h39ZO5
-	LmW8/UsdvlBjvk9f+eE52CrzYA==
-X-Google-Smtp-Source: AA6agR5z6dihRJApOItR5UtJniejPzRs3cFc63NZvF0V+Ks5bCh8ylcbXyse+Ha2Mfbj443WIRaClQ==
-X-Received: by 2002:a05:6512:2248:b0:48a:f36a:2e63 with SMTP id i8-20020a056512224800b0048af36a2e63mr5750327lfu.485.1662796387080;
-        Sat, 10 Sep 2022 00:53:07 -0700 (PDT)
-Received: from [192.168.0.21] (78-11-189-27.static.ip.netia.com.pl. [78.11.189.27])
-        by smtp.gmail.com with ESMTPSA id e6-20020a05651236c600b00499aefcf68esm114188lfs.292.2022.09.10.00.53.06
+         :sender:x-gm-message-state:from:to:cc:subject:date;
+        bh=NfxfbFr6yb0xol1xxFYNDP3VjWYzuHsl9L6WlI3ZH0I=;
+        b=dSwWmDijn6o6ALjM5mDB/Pt/X6Us1kkAvSTDPsVDNEhnza+R1HAuBy+R8DCK4doV2d
+         qB2zYQykPzT7mLuGlSjZMNlgoM8yWdtrsnvTl3tUZZvUK+EWgmkKH1ZsTrfpLho2EyCi
+         Q/a7nmV3tt1l+P7xftiMJ2vM/1UaF3DwLQo7UN/KO/saVhoctZHgF7gVzrYs1dQq9OgD
+         UAzy/lRNHlyYK7GtBl56H5ejbJVplZBB0UHRywVpdohTB9dWcd1b9ZGO/0iyCxjeP48H
+         357d4m/oLGZ5ymxeNGbKIhUZCWsTMZx+La6UOAdycEkHR7DzPsHDgAWkj1971CcESEAw
+         2gJA==
+X-Gm-Message-State: ACgBeo2Pre/P3HYVVKtIrrLPKul1MF4T4KH+dTZcuukzw3mFkLmgDYwX
+	hSA5btQZiiOx67UnOv4QGkA=
+X-Google-Smtp-Source: AA6agR45j1E2oUagm+srWFqub3Qu6YOOhrbPdG8/lVANoSphqwJKLExI6LaQWXuJkmIkirNUxO79XA==
+X-Received: by 2002:a17:90a:a60b:b0:200:919a:55a1 with SMTP id c11-20020a17090aa60b00b00200919a55a1mr14980138pjq.194.1662820230702;
+        Sat, 10 Sep 2022 07:30:30 -0700 (PDT)
+Received: from ?IPV6:2600:1700:e321:62f0:329c:23ff:fee3:9d7c? ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
+        by smtp.gmail.com with ESMTPSA id n2-20020a170902d2c200b00176b63535adsm2328040plc.260.2022.09.10.07.30.28
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sat, 10 Sep 2022 00:53:06 -0700 (PDT)
-Message-ID: <c3dd211c-658d-7c4d-8be4-71d8ae117493@linaro.org>
-Date: Sat, 10 Sep 2022 09:53:05 +0200
+        Sat, 10 Sep 2022 07:30:29 -0700 (PDT)
+Message-ID: <0dab9988-3a7e-77f2-de71-58e67cc79663@roeck-us.net>
+Date: Sat, 10 Sep 2022 07:30:27 -0700
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.13.0
-Subject: Re: [PATCH 1/6] dt-bindings: phy: qcom,hdmi-phy-other: use pxo clock
+ Thunderbird/91.11.0
+Subject: Re: [PATCH v1 07/11] dt-bindings: watchdog: rockchip: add
+ rockchip,rk3128-wdt
 Content-Language: en-US
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
- Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konrad.dybcio@somainline.org>,
- Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
-Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
- Vinod Koul <vkoul@kernel.org>, linux-phy@lists.infradead.org,
- Kishon Vijay Abraham I <kishon@ti.com>
-References: <20220909132010.3814817-1-dmitry.baryshkov@linaro.org>
- <20220909132010.3814817-2-dmitry.baryshkov@linaro.org>
- <d72fc00c-85ba-8b48-1fcf-42fe9e8daeee@linaro.org>
- <59242592-4e3d-b7c2-e0bb-b39df780c26b@linaro.org>
- <c3b4638e-05f7-cc73-b893-422f92909f6e@linaro.org>
- <3ED996B7-F1BE-4AF0-AD95-500DA0B202FB@linaro.org>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <3ED996B7-F1BE-4AF0-AD95-500DA0B202FB@linaro.org>
+To: Johan Jonker <jbx6244@gmail.com>, kever.yang@rock-chips.com
+Cc: sjg@chromium.org, philipp.tomsich@vrull.eu, robh+dt@kernel.org,
+ krzysztof.kozlowski+dt@linaro.org, heiko@sntech.de, ulf.hansson@linaro.org,
+ miquel.raynal@bootlin.com, richard@nod.at, vigneshr@ti.com, kishon@ti.com,
+ vkoul@kernel.org, thierry.reding@gmail.com, u.kleine-koenig@pengutronix.de,
+ gregkh@linuxfoundation.org, broonie@kernel.org, wim@linux-watchdog.org,
+ zhangqing@rock-chips.com, jamie@jamieiles.com, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-i2c@vger.kernel.org,
+ linux-mmc@vger.kernel.org, linux-mtd@lists.infradead.org,
+ linux-phy@lists.infradead.org, linux-pwm@vger.kernel.org,
+ linux-serial@vger.kernel.org, linux-spi@vger.kernel.org,
+ linux-usb@vger.kernel.org, linux-watchdog@vger.kernel.org
+References: <20220909212543.17428-1-jbx6244@gmail.com>
+ <a4da79fe-3449-6538-742f-790835ffe43a@gmail.com>
+From: Guenter Roeck <linux@roeck-us.net>
+In-Reply-To: <a4da79fe-3449-6538-742f-790835ffe43a@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220910_005308_947659_3CE61B3D 
-X-CRM114-Status: GOOD (  16.36  )
+X-CRM114-CacheID: sfid-20220910_073032_637004_059C46E8 
+X-CRM114-Status: GOOD (  10.56  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,56 +98,35 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 09/09/2022 22:29, Dmitry Baryshkov wrote:
+On 9/9/22 15:01, Johan Jonker wrote:
+> Add rockchip,rk3128-wdt compatible string.
 > 
+> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+
+Reviewed-by: Guenter Roeck <linux@roeck-us.net>
+
+> ---
+>   Documentation/devicetree/bindings/watchdog/snps,dw-wdt.yaml | 1 +
+>   1 file changed, 1 insertion(+)
 > 
-> On 9 September 2022 19:44:11 GMT+03:00, Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org> wrote:
->> On 09/09/2022 17:03, Dmitry Baryshkov wrote:
->>>>> +    then:
->>>>> +      properties:
->>>>> +        clocks:
->>>>> +          minItems: 1
->>>>> +          maxItems: 2
->>>>> +        clock-names:
->>>>> +          minItems: 1
->>>>> +          items:
->>>>> +            - const: slave_iface
->>>>> +            - const: pxo
->>>>
->>>> Why pxo is optional? Commit msg does not say much here.
->>>
->>> It's optional as it is not present in current DT files. The driver will 
->>> fallback to 'pxo_board' if the clock is not present.
->>>
->>>> It seems you also miss the DTS change adding the clock.
->>>
->>> Oh, I'll add it to v2.
->>
->> How about adding it to DTS and making it required in the bindings? I did
->> not check the driver, but isn't the driver fail if clock is missing thus
->> the clock is really required?
-> 
-> I had the impression that we cannot make a clock mandatory of it wasn't present before. Please correct me if I'm wrong.
+> diff --git a/Documentation/devicetree/bindings/watchdog/snps,dw-wdt.yaml b/Documentation/devicetree/bindings/watchdog/snps,dw-wdt.yaml
+> index 6461eb4f4..92df6e453 100644
+> --- a/Documentation/devicetree/bindings/watchdog/snps,dw-wdt.yaml
+> +++ b/Documentation/devicetree/bindings/watchdog/snps,dw-wdt.yaml
+> @@ -20,6 +20,7 @@ properties:
+>             - enum:
+>                 - rockchip,px30-wdt
+>                 - rockchip,rk3066-wdt
+> +              - rockchip,rk3128-wdt
+>                 - rockchip,rk3188-wdt
+>                 - rockchip,rk3228-wdt
+>                 - rockchip,rk3288-wdt
 
-We cannot break the ABI which means implementation must accept old DTS.
-As you wrote below, the implementation will handle this case. Whether we
-can require new DTS properties (if implementation respects ABI) is a
-different problem and I believe that we can. Bindings can grow, even
-with necessary changes, because no ABI is actually broken here.
-
-> 
-> No, the driver will not fail. It will fallback to the lookup of the `pxo_board' clock from the system clock list.
-
-Ah, good!
-
-
-Best regards,
-Krzysztof
 
 -- 
 linux-phy mailing list
