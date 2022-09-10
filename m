@@ -4,76 +4,92 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B342BECAAD5
-	for <linux-phy@archiver.kernel.org>; Sat, 10 Sep 2022 06:39:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A8FDBC6FA89
+	for <linux-phy@archiver.kernel.org>; Sat, 10 Sep 2022 07:46:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=7QPHGVl5qCQBjhaX2Gx5U21SSejlIzVtP/znZB7R5QU=; b=0YhO4LvJXdhKfF
-	QFYVoOpodY9x2zJ9eCM/ZRQxreSwnxko60sgI9Y8Jc33JE0aDGCSmBbBIRqYRMTIfgNri9tDBofF3
-	welpt7Dd6D9xJlHcKzS2gY4AvIrQFbt2QXpPilZMTCtiJmrL1SapGMxixdzhEOM3FJMXRp84QT8HQ
-	RU46s6KL+rUB5dhu3A/lIQTEaotJvKRqwPTDxUxYvo8QipA9pav7Mg7inKVVlXnaIrTdexWeFzDbC
-	rVr0V67+rpwe5AD/A+rSox7n+mQdcdj5LVnYvW71i+exGIUVgvj1zH1B2udvjZOHeNcGWfjFIyrjf
-	zoj43uiljQvJhmEvBT/Q==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ww8Zq4wrZz6a/VmzfVLrZGnWFIIZX43RMNJClQyxVT0=; b=Kfv1g5sJKdcJMc
+	ED+ZnUtH/eW89L/O6Wjn4TfZZXZ1jebeCqLTCkRlOs9MZxRnNMGCGQHDFRn6Us9Ni4m2rFd17VwRs
+	6Co0Nl2aqYy96pk1Yi6HtaJGnsuFIe87RRtcRtxDuI7WSUrCShY2gBFZ9kPcLqnox3dx6gxKXcGSh
+	fTlnHguuLXoOvNmZUW1g2FTFBGBpizmzhUZ873Vh7i+z5KcdEjzuAv+mJihdZIXRFp2UuU52nytVl
+	2zjP8bbZkg02ZeA4953ZQcOVRS/vTMKFW5awbkpA2pt2zI7TfF3+m7lrNla5NT+fR+uuZ9cyY92kY
+	Wi5yS/Rm6vXPNh6DO1TA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oWu95-006lwA-WE; Sat, 10 Sep 2022 06:39:16 +0000
-Received: from mail-wr1-x430.google.com ([2a00:1450:4864:20::430])
+	id 1oWvCA-008FcG-PB; Sat, 10 Sep 2022 07:46:30 +0000
+Received: from mail-lf1-x130.google.com ([2a00:1450:4864:20::130])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oWu92-006lus-QP
-	for linux-phy@lists.infradead.org; Sat, 10 Sep 2022 06:39:14 +0000
-Received: by mail-wr1-x430.google.com with SMTP id k9so6664546wri.0
-        for <linux-phy@lists.infradead.org>; Fri, 09 Sep 2022 23:39:11 -0700 (PDT)
+	id 1oWvC8-008FIM-9u
+	for linux-phy@lists.infradead.org; Sat, 10 Sep 2022 07:46:29 +0000
+Received: by mail-lf1-x130.google.com with SMTP id bt10so6533561lfb.1
+        for <linux-phy@lists.infradead.org>; Sat, 10 Sep 2022 00:46:27 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date;
-        bh=K+R864MMNrO2cPNjMkmAS7jKfMoXiY8NdWAl+fB+eGQ=;
-        b=Ta3M7TMOo18hZLLz/HdVlxCgCxesGB8wcCY8DDlufzHFedqX/LO2nYzWP5u3dSndfm
-         HAouPQ+uhreEbDJ+WuRgjLGibnDOye6fDRdrESgZj5UpQyiFd/eG1Y6vNwSb1Si31F5O
-         YOJSXAly6uf9L9RdWBaFJM0ilJQPbMllyDJ7Ocq2s3KW0pic/qqudNO6HYb9i2GPaEVa
-         tU6/aXPukfVPHjJjYsPWDWRkIttshBgw8kCfVUactwXUco0AaTRqfhEzE8KIDgzsrKlI
-         P/RVQNNW3Czzi0Y2t8dBgSUp+0mZJaBsTZ98lnIIrDBjRUnE2MCd48AblL1MXQRlA8AI
-         PKGw==
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date;
+        bh=Xc325GZc+vxzGRAdvA0vChIvJkypnglJvofgNCbWMR4=;
+        b=CPmvcoQIYyMAF4zt3FXqNSoDD7DiPiOGlYdVcymhCh+IKdlIs7rTLSuAVlx/fnmLcu
+         96NZnumm1CF84Z+2pYGPbjiWAkif5ly3iN0Kwrq0KeWNsLda90xz+GV8V1yK9ItJ4vG2
+         B1EJuY2n5/0kLF9US3rV3/w1AZwY4XPQxshrXFoNm8pI/hSdNgeek9/L11NVXvSYTWgU
+         2fK6mTHrRrlrabBghWT0dudUvkei0lR0po0ax3jU4MditiLLlY72FydbDtgkVbMNSil7
+         27Nm3kr9NLe4oefhueLn2QCXYfMY0dphxyDHblNj7RHUwh5Jd3gLvlwaOrkHot8uTUZQ
+         Yt0w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date;
-        bh=K+R864MMNrO2cPNjMkmAS7jKfMoXiY8NdWAl+fB+eGQ=;
-        b=IkZCMYABQ7mp/Im1QmO1aryORCMclELsOMAD3M7UX8vbi2SBmvXFaeLvyu2Rz++Nfs
-         De0U4tQv7LpOEHdH7cK7mCH80aMkRCfzuiqAWE3ZgWZI9uGkEWI8AEkSH3S732WTVdTt
-         bhpZlE6I7dCRTBxIE0lJ0t3c3ZTAzTztBRJszB5vEYp3bhpegpmjTXzwyqN1RjtF5cpj
-         MnbSMrBlhnu0xGm9b2eVQA847vNj9cnmW99JSEGUkk9mZbmR1Gq1BOQr0YyZGx9Qr/tY
-         UWjia1acBAu7zKcw35kjukgLzdfwOzfZyk9YkqHH+SBdkNdYyNHjAs+9wQmTzX9zGBo3
-         WIIA==
-X-Gm-Message-State: ACgBeo09wBLwzcM5A9OFzdBc38WRYCNY9utQlc0fxvwZqjSxjWEUwxL9
-	5rUxguHWtD14X8891Ka3D6kw
-X-Google-Smtp-Source: AA6agR6QAj/SfJNU9CxBdKX4kBZXqHVDvjDJBdHU1uD66ll37WGHTQO4n1qpphh1QfGPqgefg9npmQ==
-X-Received: by 2002:adf:e4ca:0:b0:228:d8b7:48a7 with SMTP id v10-20020adfe4ca000000b00228d8b748a7mr9426556wrm.300.1662791949868;
-        Fri, 09 Sep 2022 23:39:09 -0700 (PDT)
-Received: from localhost.localdomain ([117.217.182.47])
-        by smtp.gmail.com with ESMTPSA id c17-20020a05600c4a1100b003a61306d79dsm2825371wmp.41.2022.09.09.23.39.05
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 09 Sep 2022 23:39:09 -0700 (PDT)
-From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-To: vkoul@kernel.org,
-	andersson@kernel.org
-Cc: kishon@ti.com,
-	linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Subject: [PATCH] phy: qcom-qmp-pcie: Fix the SM8450 PCS registers
-Date: Sat, 10 Sep 2022 12:08:57 +0530
-Message-Id: <20220910063857.17372-1-manivannan.sadhasivam@linaro.org>
-X-Mailer: git-send-email 2.25.1
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date;
+        bh=Xc325GZc+vxzGRAdvA0vChIvJkypnglJvofgNCbWMR4=;
+        b=xmCiXSm7qgs/Awrqg3ycpt6TX6oQ0o5tiZfWM6OoS0dkQ4XMA782t88VNPSUjbQ4HT
+         71yzHWKxTGWHJuv8IhmjeojZl1CsfeU4wq25QDT6gAnS1KehXG4aPys5n0YiNMPLwjTg
+         bPJG2Nf9B7kgq+sI5SrJ554wvvKkZIZhM6w96NbpIQNAK5YdJ+Yhi/lzLN6QL+WLMlqG
+         kpq+SM9LTO2+sEYx9RNbY3xohdgtuDWDp56ltXjh0mP2/z9Hc+cmftKkJYt2f9W8T2FA
+         w3vvk/DUXYchcfKtd+8Yf06P4uc/GZWUbBShJYz04ZCC1i0g63VhfMVJN9gmsfCnTJbR
+         ME7g==
+X-Gm-Message-State: ACgBeo1d1/Xj005q35wUg/+yke8VKhO6Wkm4nzXzKXILUTALT66IDD7i
+	swrkqWrXpN47dpFbl7V28fClAA==
+X-Google-Smtp-Source: AA6agR75ZEPrL/yKL8ezMsVKnuKBIXSz81lwLCFZHWoLKO6Bsf7yB53ADVYs4VBVxujyrIqJgj0K/g==
+X-Received: by 2002:ac2:4f03:0:b0:496:272:625d with SMTP id k3-20020ac24f03000000b004960272625dmr5369172lfr.303.1662795983686;
+        Sat, 10 Sep 2022 00:46:23 -0700 (PDT)
+Received: from [192.168.0.21] (78-11-189-27.static.ip.netia.com.pl. [78.11.189.27])
+        by smtp.gmail.com with ESMTPSA id h12-20020a05651c124c00b0026bda31c10fsm201998ljh.61.2022.09.10.00.46.21
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 10 Sep 2022 00:46:23 -0700 (PDT)
+Message-ID: <e8b33710-db07-bde4-e1d1-d42c05b87d6b@linaro.org>
+Date: Sat, 10 Sep 2022 09:46:21 +0200
 MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
+ Thunderbird/91.13.0
+Subject: Re: [PATCH v1 11/11] dt-bindings: mtd: rockchip: add
+ rockchip,rk3128-nfc
+Content-Language: en-US
+To: Johan Jonker <jbx6244@gmail.com>, kever.yang@rock-chips.com
+Cc: sjg@chromium.org, philipp.tomsich@vrull.eu, robh+dt@kernel.org,
+ krzysztof.kozlowski+dt@linaro.org, heiko@sntech.de, ulf.hansson@linaro.org,
+ miquel.raynal@bootlin.com, richard@nod.at, vigneshr@ti.com, kishon@ti.com,
+ vkoul@kernel.org, thierry.reding@gmail.com, u.kleine-koenig@pengutronix.de,
+ gregkh@linuxfoundation.org, broonie@kernel.org, wim@linux-watchdog.org,
+ linux@roeck-us.net, zhangqing@rock-chips.com, jamie@jamieiles.com,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-i2c@vger.kernel.org, linux-mmc@vger.kernel.org,
+ linux-mtd@lists.infradead.org, linux-phy@lists.infradead.org,
+ linux-pwm@vger.kernel.org, linux-serial@vger.kernel.org,
+ linux-spi@vger.kernel.org, linux-usb@vger.kernel.org,
+ linux-watchdog@vger.kernel.org
+References: <20220909212543.17428-1-jbx6244@gmail.com>
+ <f09665c1-9938-38c1-9a31-f196a3ef9cf0@gmail.com>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <f09665c1-9938-38c1-9a31-f196a3ef9cf0@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220909_233912_883635_11A782CA 
-X-CRM114-Status: GOOD (  10.48  )
+X-CRM114-CacheID: sfid-20220910_004628_356204_15D42BAD 
+X-CRM114-Status: UNSURE (   5.57  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,51 +106,17 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-In the PCS region, registers QPHY_V5_PCS_EQ_CONFIG4 and
-QPHY_V5_PCS_EQ_CONFIG5 should be used instead of QPHY_V5_PCS_EQ_CONFIG2
-and QPHY_V5_PCS_EQ_CONFIG3.
+On 10/09/2022 00:01, Johan Jonker wrote:
+> Add rockchip,rk3128-nfc compatible string.
+> 
+> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 
-This causes high latency when ASPM is enabled, so fix it!
 
-Fixes: 2c91bf6bf290 ("phy: qcom-qmp: Add SM8450 PCIe1 PHY support")
-Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
----
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c   | 4 ++--
- drivers/phy/qualcomm/phy-qcom-qmp-pcs-v5.h | 4 ++--
- 2 files changed, 4 insertions(+), 4 deletions(-)
+Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-index 4648467d5cac..b508903d77d0 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-@@ -1332,8 +1332,8 @@ static const struct qmp_phy_init_tbl sm8450_qmp_gen4x2_pcie_rx_tbl[] = {
- };
- 
- static const struct qmp_phy_init_tbl sm8450_qmp_gen4x2_pcie_pcs_tbl[] = {
--	QMP_PHY_INIT_CFG(QPHY_V5_PCS_EQ_CONFIG2, 0x16),
--	QMP_PHY_INIT_CFG(QPHY_V5_PCS_EQ_CONFIG3, 0x22),
-+	QMP_PHY_INIT_CFG(QPHY_V5_PCS_EQ_CONFIG4, 0x16),
-+	QMP_PHY_INIT_CFG(QPHY_V5_PCS_EQ_CONFIG5, 0x22),
- 	QMP_PHY_INIT_CFG(QPHY_V5_PCS_G3S2_PRE_GAIN, 0x2e),
- 	QMP_PHY_INIT_CFG(QPHY_V5_PCS_RX_SIGDET_LVL, 0x99),
- };
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-v5.h b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-v5.h
-index 61a44519f969..cca6455ec98c 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-v5.h
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-v5.h
-@@ -11,7 +11,7 @@
- #define QPHY_V5_PCS_G3S2_PRE_GAIN			0x170
- #define QPHY_V5_PCS_RX_SIGDET_LVL			0x188
- #define QPHY_V5_PCS_RATE_SLEW_CNTRL1			0x198
--#define QPHY_V5_PCS_EQ_CONFIG2				0x1e0
--#define QPHY_V5_PCS_EQ_CONFIG3				0x1e4
-+#define QPHY_V5_PCS_EQ_CONFIG4				0x2e0
-+#define QPHY_V5_PCS_EQ_CONFIG5				0x2e4
- 
- #endif
--- 
-2.25.1
 
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
