@@ -4,32 +4,32 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 60D79ECAAD3
-	for <linux-phy@archiver.kernel.org>; Mon, 12 Sep 2022 00:02:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4AA67C6FA83
+	for <linux-phy@archiver.kernel.org>; Mon, 12 Sep 2022 00:02:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vNQpiwN9Ba01gMwOJJg/2T5av9ZQkK16+yGKquyC+hY=; b=Mz/WUVFXxWX3GN
-	8nFoIJ+HMmUjjY3etFsrowPegqAqnemr380wc9xXiHYuoqnhxsMoQzHY+7zUmRarTvDwSwmIdOxcA
-	4Jme2QUAKfu++A3RS1D2yIZnx/W/gYMPmqC2G+K4rUJr3Td5l1Rjoi1BbfRBl32cBzTunia057H2z
-	AXdLbFa8pGBGNTjKmUPPrkWPh6Dz/g34FnpQIiN/zsmIcDL25AOUl/vta06MF3PCiHdtDdChA6Slt
-	DofL+bqR4clzvIGNXksuiVIIxSD8104NRC2pA8W32cLd/v2KUPSpwiHZfOVMXNa9X2ZtSppv+lSp7
-	8aFUsY3vr7ZcAIuCKtdQ==;
+	List-Owner; bh=MuB8sr/bnrosOBRshKCvQrSNfL0kvbQzmLS/0XK4whI=; b=O+MbdD96ViutBn
+	niKMAO8RaIV78gT2QDHB7iAiYx1UWYBDVONVuQhvOGEsCgLSmhhOti/zs/BYB44UkNTTKFnVvZIl8
+	s6kz4lJScOz5DjkzlrR+XQBMTPbhfT8VQqCKDh5LneUaSw9dw+n/SUluOge5lVY1SPGwxX0BvA0Eb
+	/5vvCsAmdI0duzRxSKQsc99HfAPyCk0zs81DVyd48c+NHVhMBElHaAdP86hzXvFFic9BCMk9j5MlI
+	aH1/FxreXbOD28KQ9s/oz+AaBqfk+MoOgUch0rfuXSm6MA6o3HcdR97AgS3qkp371KuQWyk9o5XSJ
+	ebQcsxdoxdvQ57jPkOPA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oXWu1-005PQw-5M; Mon, 12 Sep 2022 00:02:17 +0000
+	id 1oXWuI-005PW8-Kf; Mon, 12 Sep 2022 00:02:34 +0000
 Received: from foss.arm.com ([217.140.110.172])
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oXWtg-005PHE-3M; Mon, 12 Sep 2022 00:01:57 +0000
+	id 1oXWti-005PK0-0V; Mon, 12 Sep 2022 00:01:59 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
-	by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A8A8816F8;
-	Sun, 11 Sep 2022 17:01:55 -0700 (PDT)
+	by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9CFE61713;
+	Sun, 11 Sep 2022 17:01:58 -0700 (PDT)
 Received: from slackpad.fritz.box (unknown [172.31.20.19])
-	by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 9AFF03F73B;
-	Sun, 11 Sep 2022 17:01:46 -0700 (PDT)
+	by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 958043F73B;
+	Sun, 11 Sep 2022 17:01:49 -0700 (PDT)
 From: Andre Przywara <andre.przywara@arm.com>
 To: Jernej Skrabec <jernej.skrabec@gmail.com>,
 	Samuel Holland <samuel@sholland.org>,
@@ -46,17 +46,16 @@ Cc: Rob Herring <robh+dt@kernel.org>,
 	linux-sunxi@lists.linux.dev,
 	Karl Kurbjun <karl.os@veroson.com>,
 	Icenowy Zheng <icenowy@aosc.io>
-Subject: [PATCH 2/7] dt-bindings: usb: Add special clock for Allwinner H616 PHY
-Date: Mon, 12 Sep 2022 00:59:40 +0100
-Message-Id: <20220911235945.6635-3-andre.przywara@arm.com>
+Subject: [PATCH 3/7] phy: sun4i-usb: Introduce port2 SIDDQ quirk
+Date: Mon, 12 Sep 2022 00:59:41 +0100
+Message-Id: <20220911235945.6635-4-andre.przywara@arm.com>
 X-Mailer: git-send-email 2.35.3
 In-Reply-To: <20220911235945.6635-1-andre.przywara@arm.com>
 References: <20220911235945.6635-1-andre.przywara@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220911_170156_230363_FDE8AB37 
-X-CRM114-Status: UNSURE (   9.67  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220911_170158_200190_6BF60841 
+X-CRM114-Status: GOOD (  15.22  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,72 +72,115 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The USB PHY IP in the Allwinner H616 SoC requires a quirk that involves
-some resources from port 2's PHY and HCI IP. In particular the PMU clock
-for port 2 must be surely ungated before accessing the REG_HCI_PHY_CTL
-register of port 2. To allow each USB port to be controlled
-independently of port 2, we need a handle to that particular PMU clock
-in the *PHY* node, as the HCI and PHY part might be handled by separate
-drivers.
+At least the Allwinner H616 SoC requires a weird quirk to make most
+USB PHYs work: Only port2 works out of the box, but all other ports
+need some help from this port2 to work correctly: The CLK_BUS_PHY2 and
+RST_USB_PHY2 clock and reset need to be enabled, and the SIDDQ bit in
+the PMU PHY control register needs to be cleared. For this register to
+be accessible, CLK_BUS_ECHI2 needs to be ungated. Don't ask ....
 
-Add that clock to the requirements of the H616 PHY binding, so that a
-PHY driver can apply the quirk in isolation, without requiring help from
-port 2's HCI driver.
+Instead of disguising this as some generic feature, treat it more like
+a quirk (what it really is):
+If the quirk bit is set, and we initialise a PHY other than PHY2, ungate
+this one special clock, and clear the SIDDQ bit. We also pick the clock
+and reset from PHY2 and enable them as well.
 
 Signed-off-by: Andre Przywara <andre.przywara@arm.com>
 ---
- .../phy/allwinner,sun8i-h3-usb-phy.yaml       | 19 +++++++++++++++++++
- 1 file changed, 19 insertions(+)
+ drivers/phy/allwinner/phy-sun4i-usb.c | 59 +++++++++++++++++++++++++++
+ 1 file changed, 59 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/phy/allwinner,sun8i-h3-usb-phy.yaml b/Documentation/devicetree/bindings/phy/allwinner,sun8i-h3-usb-phy.yaml
-index e288450e0844..3a3168392597 100644
---- a/Documentation/devicetree/bindings/phy/allwinner,sun8i-h3-usb-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/allwinner,sun8i-h3-usb-phy.yaml
-@@ -36,18 +36,22 @@ properties:
-       - const: pmu3
+diff --git a/drivers/phy/allwinner/phy-sun4i-usb.c b/drivers/phy/allwinner/phy-sun4i-usb.c
+index d5f3b42eb8ce..f094a4cd7cbc 100644
+--- a/drivers/phy/allwinner/phy-sun4i-usb.c
++++ b/drivers/phy/allwinner/phy-sun4i-usb.c
+@@ -120,6 +120,7 @@ struct sun4i_usb_phy_cfg {
+ 	u8 phyctl_offset;
+ 	bool dedicated_clocks;
+ 	bool phy0_dual_route;
++	bool needs_phy2_siddq;
+ 	int missing_phys;
+ };
  
-   clocks:
-+    minItems: 4
-     items:
-       - description: USB OTG PHY bus clock
-       - description: USB Host 0 PHY bus clock
-       - description: USB Host 1 PHY bus clock
-       - description: USB Host 2 PHY bus clock
-+      - description: PMU clock for host port 2
+@@ -289,6 +290,50 @@ static int sun4i_usb_phy_init(struct phy *_phy)
+ 		return ret;
+ 	}
  
-   clock-names:
-+    minItems: 4
-     items:
-       - const: usb0_phy
-       - const: usb1_phy
-       - const: usb2_phy
-       - const: usb3_phy
-+      - const: pmu2_clk
- 
-   resets:
-     items:
-@@ -98,6 +102,21 @@ required:
- 
- additionalProperties: false
- 
-+if:
-+  properties:
-+    compatible:
-+      contains:
-+        enum:
-+          - sun50i-h616-usb-phy
++	/* Some PHYs on some SoCs need the help of PHY2 to work. */
++	if (data->cfg->needs_phy2_siddq && phy->index != 2) {
++		struct sun4i_usb_phy *phy2 = &data->phys[2];
 +
-+then:
-+  properties:
-+    clocks:
-+      minItems: 5
++		ret = clk_prepare_enable(phy2->clk);
++		if (ret) {
++			reset_control_assert(phy->reset);
++			clk_disable_unprepare(phy->clk2);
++			clk_disable_unprepare(phy->clk);
++			return ret;
++		}
 +
-+    clock-names:
-+      minItems: 5
++		ret = reset_control_deassert(phy2->reset);
++		if (ret) {
++			clk_disable_unprepare(phy2->clk);
++			reset_control_assert(phy->reset);
++			clk_disable_unprepare(phy->clk2);
++			clk_disable_unprepare(phy->clk);
++			return ret;
++		}
 +
- examples:
-   - |
-     #include <dt-bindings/gpio/gpio.h>
++		/*
++		 * This extra clock is just needed to access the
++		 * REG_HCI_PHY_CTL PMU register for PHY2.
++		 */
++		ret = clk_prepare_enable(phy2->clk2);
++		if (ret) {
++			reset_control_assert(phy2->reset);
++			clk_disable_unprepare(phy2->clk);
++			reset_control_assert(phy->reset);
++			clk_disable_unprepare(phy->clk2);
++			clk_disable_unprepare(phy->clk);
++			return ret;
++		}
++
++		if (phy2->pmu && data->cfg->hci_phy_ctl_clear) {
++			val = readl(phy2->pmu + REG_HCI_PHY_CTL);
++			val &= ~data->cfg->hci_phy_ctl_clear;
++			writel(val, phy2->pmu + REG_HCI_PHY_CTL);
++		}
++
++		clk_disable_unprepare(phy->clk2);
++	}
++
+ 	if (phy->pmu && data->cfg->hci_phy_ctl_clear) {
+ 		val = readl(phy->pmu + REG_HCI_PHY_CTL);
+ 		val &= ~data->cfg->hci_phy_ctl_clear;
+@@ -354,6 +399,13 @@ static int sun4i_usb_phy_exit(struct phy *_phy)
+ 		data->phy0_init = false;
+ 	}
+ 
++	if (data->cfg->needs_phy2_siddq && phy->index != 2) {
++		struct sun4i_usb_phy *phy2 = &data->phys[2];
++
++		clk_disable_unprepare(phy2->clk);
++		reset_control_assert(phy2->reset);
++	}
++
+ 	sun4i_usb_phy_passby(phy, 0);
+ 	reset_control_assert(phy->reset);
+ 	clk_disable_unprepare(phy->clk2);
+@@ -785,6 +837,13 @@ static int sun4i_usb_phy_probe(struct platform_device *pdev)
+ 				dev_err(dev, "failed to get clock %s\n", name);
+ 				return PTR_ERR(phy->clk2);
+ 			}
++		} else {
++			snprintf(name, sizeof(name), "pmu%d_clk", i);
++			phy->clk2 = devm_clk_get_optional(dev, name);
++			if (IS_ERR(phy->clk2)) {
++				dev_err(dev, "failed to get clock %s\n", name);
++				return PTR_ERR(phy->clk2);
++			}
+ 		}
+ 
+ 		snprintf(name, sizeof(name), "usb%d_reset", i);
 -- 
 2.35.3
 
