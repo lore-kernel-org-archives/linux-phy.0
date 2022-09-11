@@ -4,63 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 60636C6FA82
-	for <linux-phy@archiver.kernel.org>; Sat, 10 Sep 2022 15:42:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D4829C54EE9
+	for <linux-phy@archiver.kernel.org>; Sun, 11 Sep 2022 13:31:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
-	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5JAUnt0xgthS9a3oNRb45ult8ZYTu/Uuf+FM88+M5hg=; b=xJC2uy8XM3cX7w
-	ZVoaY0ynTV+vm64T8c/MjvnWxYaLaDhvj15qpT9CxzA0oi1sjA88wH8FQGfgsSqyP0Io6nn/JrqNq
-	5V9/z8RyZQTJs8O2rx67ozQFlxqSNwW2OD1KChQrGG4/kIcBg07rjUhQPKDM2DefYsLhGTyE+2OZ/
-	7rjVsqk2O6ruwmoisrXmXPq3xWbLkiD3nUwl5ZAArYhltsiDlxoce1RwZwNDow8aFfPehTZlgCN9R
-	ZAxLUTpVFYDN4qfn+o1Ce3+LaoWbL2Pre9mMNf8Bc3e7A+9vyAbW80yPIX7dyGrt2Nt1seTWJEhWO
-	5FZdID6UeVkSeDHPT/8g==;
+	List-Owner; bh=UvcbI+Qx4wT2+lESc0u0MLrZzsgXsp27jLN8aPD9Yh8=; b=N5dz/BOgoPX+Mm
+	2iGL+o+Khq0UsV1R/IqxSK8xvvGzpuz9Qcs8Q8s/LLKIq55/EYdzyCF6hqFy5pwgAv0ieZ1lnadXo
+	hv9ZNYTCETvF6SDEMruWHk+JMsmdzyl7EBMzzroEZBxX0MLaxttB4dvJ2VO3XeGvlR0CvALcczp3h
+	YNANoKj+F6ZjHjEdRBbdWrlUZvAZQ0pe+K4RNHWOo1R00lF29HFy4c1agKWpivTn1ZZ0sOLnuF2e+
+	1ZSIjJKNvLgTLOwx82FJSbv/BHq6rVjWO+qV4wwoV85d0HPiY3qMmxwXU4TH9R4SdNupX7WjCVHEN
+	/nigfsM5D8GRL5nOZvEQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oX2dE-00BJB3-Ho; Sat, 10 Sep 2022 15:42:56 +0000
-Received: from ams.source.kernel.org ([145.40.68.75])
+	id 1oXN3W-0025iF-1Z; Sun, 11 Sep 2022 13:31:26 +0000
+Received: from mail-lj1-x22b.google.com ([2a00:1450:4864:20::22b])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oX2d1-00BJ8N-9l; Sat, 10 Sep 2022 15:42:44 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id A84B1B8006F;
-	Sat, 10 Sep 2022 15:42:41 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 49F99C433C1;
-	Sat, 10 Sep 2022 15:42:34 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1662824560;
-	bh=luECLScAoXW4trye3u3QR5BAVG50o9WKq4LURxl0cWE=;
-	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=OglzfM37e36vzr8RIz38aKNhfmFgibKtibSrXPxPXQxdygFx+atkOZh3JNt71PUY6
-	 2S0Eip2IqnsZuGY7oggCvdwm42lV9aRNn7Dn9nUzGuh/E4BcZYjwkAAn+a+jtNxp+8
-	 FOXE46EQA4dSN2Km2LXB6ukzhgc7QWaVgmbUb4i2klVbVrzmJNvLapw+jTc4WgP8Sn
-	 gT6sTIx/QE1RnpSC++ABbUzSwSDvU1GBgjd7UB997SV46FyILWCbmjKFFIh1JSPvq0
-	 8RJ0TU+fU8kaAQVZSguBGoaIlIokY7BL2FEZpfhephsISRy9GGuv5q5iKanIgYycUH
-	 ILd1FW78uL9qw==
-From: Mark Brown <broonie@kernel.org>
-To: Johan Jonker <jbx6244@gmail.com>, kever.yang@rock-chips.com
-Cc: linux@roeck-us.net, vigneshr@ti.com, sjg@chromium.org, miquel.raynal@bootlin.com, gregkh@linuxfoundation.org,
- linux-pwm@vger.kernel.org, richard@nod.at, heiko@sntech.de, robh+dt@kernel.org, jamie@jamieiles.com,
- u.kleine-koenig@pengutronix.de, linux-mtd@lists.infradead.org, philipp.tomsich@vrull.eu, ulf.hansson@linaro.org,
- linux-kernel@vger.kernel.org, wim@linux-watchdog.org, thierry.reding@gmail.com, linux-arm-kernel@lists.infradead.org,
- linux-usb@vger.kernel.org, devicetree@vger.kernel.org, linux-mmc@vger.kernel.org, linux-serial@vger.kernel.org,
- vkoul@kernel.org, zhangqing@rock-chips.com, linux-rockchip@lists.infradead.org, linux-phy@lists.infradead.org,
- krzysztof.kozlowski+dt@linaro.org, kishon@ti.com, linux-watchdog@vger.kernel.org, linux-spi@vger.kernel.org,
- linux-i2c@vger.kernel.org
-In-Reply-To: <4f283231-2ed4-202b-0c23-157bce0841ee@gmail.com>
-References: <20220909212543.17428-1-jbx6244@gmail.com> <4f283231-2ed4-202b-0c23-157bce0841ee@gmail.com>
-Subject: Re: (subset) [PATCH v1 01/11] dt-bindings: serial: rockchip: add rockchip,rk3128-uart
-Message-Id: <166282455399.474671.11726724099870642599.b4-ty@kernel.org>
-Date: Sat, 10 Sep 2022 16:42:33 +0100
+	id 1oXN3R-0025Ut-W2
+	for linux-phy@lists.infradead.org; Sun, 11 Sep 2022 13:31:23 +0000
+Received: by mail-lj1-x22b.google.com with SMTP id x10so7616523ljq.4
+        for <linux-phy@lists.infradead.org>; Sun, 11 Sep 2022 06:30:59 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date;
+        bh=ZjdYZup4hi3M7uU6008ZlQ2fxrTrRXAq7VJNcgGePcM=;
+        b=sbJ7wXb5kTSc8AAFdwvRQdd+PVXXYYQOnf/uBCOShZwedclF4AwzdIFIog8PtnkmlH
+         cnmdNrRjTGPeo+/vPq4V9tM7FVdq3NpnHOEd6fWimIGo4hnVrhERhZL3Gzu/Rx2/gNAo
+         vz+EP9657hFzpw//HTZMTpFPtqPLVMvD9250KCt87T/kQaHGzoZgfZ0GqZJuYbye6rRV
+         pp7AORI020E2kyjPQIGd+862yBbsPzRx3yBg1waPVLxnvPMRdSxeJoX35U2iJtjz+RMS
+         59Yzdmy9joveJyylXQkKfMveGjxW9hsQ/ExZN+Lx/ffHUXY1+Aoh8InWLkR0Vy0lVhXT
+         lY2w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date;
+        bh=ZjdYZup4hi3M7uU6008ZlQ2fxrTrRXAq7VJNcgGePcM=;
+        b=UkkTFbQvjqr2Kk3KdKZJxSi0WGdP6zD5Lwvl2DEcGuoIjpI5BaEhQuCQtZNPNL7fhZ
+         OpVL87/W3IfJOL7vYWY1/7hpm2ywSf+1xkM4CvaYhaZ9jGmQ6GDxvUZ3icHhXi2idfiD
+         GSy2cV9RkfDCfnuFXaZoDm+djaviMl6VL06K74W/DRLKeGKvBn4GXTg0XTGiF7e0hkyK
+         00ZAC+ErPQncnq9XgkwpL4CKdi5dtcRqkTjvgAxN8kRZ8wGSzkEKQW3HOJfd6PKOFfFy
+         7IPKfFHqVEp2EXCgQLNISVgg1ReIEDTP1on9kAK4Nk26ym8eIPdBPy7Q+LcOtrfT80+A
+         Y4wg==
+X-Gm-Message-State: ACgBeo0yMbMHa76ODrQdxL0EXT9XyW1y5lYL1XfRZ6s7Nf0OvHMAfHNI
+	hFA1+7nXNWJfoqkPweVTbz6NIA==
+X-Google-Smtp-Source: AA6agR407SxA2qhyTMLTWVfeK2LQFV3uqfjQbJ8mN8zjxZfMzZjW5772CX7prkwwVBFrUiWkXnsfkg==
+X-Received: by 2002:a2e:808f:0:b0:26a:b498:2c87 with SMTP id i15-20020a2e808f000000b0026ab4982c87mr6723966ljg.279.1662903058171;
+        Sun, 11 Sep 2022 06:30:58 -0700 (PDT)
+Received: from [192.168.0.21] (78-11-189-27.static.ip.netia.com.pl. [78.11.189.27])
+        by smtp.gmail.com with ESMTPSA id w18-20020a05651234d200b0049a3f2b1193sm233621lfr.154.2022.09.11.06.30.57
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sun, 11 Sep 2022 06:30:57 -0700 (PDT)
+Message-ID: <5b8e8da6-0bd6-cf26-5c2b-887cd1d4475e@linaro.org>
+Date: Sun, 11 Sep 2022 15:30:56 +0200
 MIME-Version: 1.0
-X-Mailer: b4 0.10.0-dev-fc921
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
+ Thunderbird/91.13.0
+Subject: Re: [PATCH v3 6/9] dt-bindings: phy: qcom,qmp-ufs: Fix SM6115 clocks,
+ regs
+Content-Language: en-US
+To: Iskren Chernev <iskren.chernev@gmail.com>,
+ Bjorn Andersson <andersson@kernel.org>, Rob Herring <robh+dt@kernel.org>
+Cc: phone-devel@vger.kernel.org, ~postmarketos/upstreaming@lists.sr.ht,
+ linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
+ Andy Gross <agross@kernel.org>, Konrad Dybcio
+ <konrad.dybcio@somainline.org>, Kishon Vijay Abraham I <kishon@ti.com>,
+ Vinod Koul <vkoul@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
+References: <20220910143213.477261-1-iskren.chernev@gmail.com>
+ <20220910143213.477261-7-iskren.chernev@gmail.com>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <20220910143213.477261-7-iskren.chernev@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220910_084243_513714_74D5A4FD 
-X-CRM114-Status: GOOD (  10.03  )
+X-CRM114-CacheID: sfid-20220911_063122_060369_0E1F023C 
+X-CRM114-Status: UNSURE (   5.47  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,38 +101,15 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sat, 10 Sep 2022 00:01:28 +0200, Johan Jonker wrote:
-> Add rockchip,rk3128-uart compatible string.
-> 
-> 
+On 10/09/2022 16:32, Iskren Chernev wrote:
+> The Sm6115 UFS PHY has 2 clocks and 3 regs.
 
-Applied to
 
-   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/spi.git for-next
+Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
-Thanks!
 
-[05/11] dt-bindings: spi: rockchip: add rockchip,rk3128-spi
-        commit: 14c3ffd7947ef3623682148be07b9c0bb8737f37
-
-All being well this means that it will be integrated into the linux-next
-tree (usually sometime in the next 24 hours) and sent to Linus during
-the next merge window (or sooner if it is a bug fix), however if
-problems are discovered then the patch may be dropped or reverted.
-
-You may get further e-mails resulting from automated or manual testing
-and review of the tree, please engage with people reporting problems and
-send followup patches addressing any issues that are reported if needed.
-
-If any updates are required or you are submitting further changes they
-should be sent as incremental updates against current git, existing
-patches will not be replaced.
-
-Please add any relevant lists and maintainers to the CCs when replying
-to this mail.
-
-Thanks,
-Mark
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
