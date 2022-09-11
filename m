@@ -4,32 +4,32 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DEE27ECAAD3
-	for <linux-phy@archiver.kernel.org>; Mon, 12 Sep 2022 00:02:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9E4B6ECAAD3
+	for <linux-phy@archiver.kernel.org>; Mon, 12 Sep 2022 00:03:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xkGWeuauXBJSvGa4H7Kqju9loTWjvsqYj4fPXicrs5s=; b=RK7opdCpjBFgPj
-	Iu9xNE9XR5luiPUUETuXYYNqdDfd3KhT4DUU9oTU+AHLwjDqjRtkfPIWcb7rGH6C0nuF0/yUr46nv
-	kS7ZtLxN7Hn0dbSGDqltus/LzuXd4C0sIahmNgaEXswRpK5+JE3bAb2H/48xdujwszgXvlJI083mv
-	SDZVoWw8MTN+R1QngGiM6MTCkkBWdXjjjnhqLNL3DLyr64DpK55YEjMk3ZCx7z+B3QLIUuI2JquJM
-	S6K3B0FSTqQQBhqJ3D8KrFAfqMzcNYtm4FtmAmxgcrjzvCRMV2ylJ3Sc6DaQPhyddS+2T2Nm/NK6R
-	NJXv4/rx5/4pWF34HFWw==;
+	List-Owner; bh=C3mfzdJnogPcm/mx0lIWGPOlCEdHoHrUeFA6evIOkuU=; b=mKUW0o+v1Zext2
+	2uKl18arejUTAxlFdtcfhI93EdEh433219ytf+zRgj+WN/RKKsGPGO56sIiTKcl62ZLacX6hYDsWh
+	X6Xa5hDsMquATY3ELoFMmx6GBQy85Jks2zzZSDGl7sVBC9/7eud7I1lX/ZaYqUQ7CxvIdGjprBJdK
+	tmwE4O+2GI05l329EIzGRghyfuURYYjrbSEdlSE9HaC/B5ECidmokiBQNO6Fk79J5Yzhu+ihjLn1z
+	Xr2wwzShaALM6TS3xG8yWiPDGlzM8yPlzWVUsV2GTclZ33OF65bDA6KUg3SIMqgeZckxxUJylWitd
+	tzUqmXFVtPAKEDZCC3Uw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oXWub-005PdX-BH; Mon, 12 Sep 2022 00:02:53 +0000
+	id 1oXWup-005PlS-0q; Mon, 12 Sep 2022 00:03:07 +0000
 Received: from foss.arm.com ([217.140.110.172])
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oXWtk-005PLg-TL; Mon, 12 Sep 2022 00:02:02 +0000
+	id 1oXWtp-005PNH-TE; Mon, 12 Sep 2022 00:02:07 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
-	by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id F383316A3;
-	Sun, 11 Sep 2022 17:02:05 -0700 (PDT)
+	by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E8C9B113E;
+	Sun, 11 Sep 2022 17:02:08 -0700 (PDT)
 Received: from slackpad.fritz.box (unknown [172.31.20.19])
-	by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8047F3F73B;
-	Sun, 11 Sep 2022 17:01:55 -0700 (PDT)
+	by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E06B13F73B;
+	Sun, 11 Sep 2022 17:01:59 -0700 (PDT)
 From: Andre Przywara <andre.przywara@arm.com>
 To: Jernej Skrabec <jernej.skrabec@gmail.com>,
 	Samuel Holland <samuel@sholland.org>,
@@ -46,17 +46,16 @@ Cc: Rob Herring <robh+dt@kernel.org>,
 	linux-sunxi@lists.linux.dev,
 	Karl Kurbjun <karl.os@veroson.com>,
 	Icenowy Zheng <icenowy@aosc.io>
-Subject: [PATCH 5/7] arm64: dts: allwinner: h616: Add USB nodes
-Date: Mon, 12 Sep 2022 00:59:43 +0100
-Message-Id: <20220911235945.6635-6-andre.przywara@arm.com>
+Subject: [PATCH 6/7] arm64: dts: allwinner: h616: OrangePi Zero 2: Add USB nodes
+Date: Mon, 12 Sep 2022 00:59:44 +0100
+Message-Id: <20220911235945.6635-7-andre.przywara@arm.com>
 X-Mailer: git-send-email 2.35.3
 In-Reply-To: <20220911235945.6635-1-andre.przywara@arm.com>
 References: <20220911235945.6635-1-andre.przywara@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220911_170201_065301_16D89435 
-X-CRM114-Status: UNSURE (   9.98  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220911_170206_217039_58C88722 
+X-CRM114-Status: GOOD (  13.19  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,188 +72,82 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add the nodes for the MUSB and the four USB host controllers to the SoC
-.dtsi, along with the PHY node needed to bind all of them together.
-
-EHCI/OHCI and MUSB are compatible to previous SoCs, but the PHY requires
-some quirks (handled in the driver).
+The OrangePi Zero 2 has one USB-A host port, VBUS is provided by
+a GPIO controlled regulator.
+The USB-C port is meant to power the board, but is also connected to
+the USB 0 port, which we configure as an MUSB peripheral.
 
 Signed-off-by: Andre Przywara <andre.przywara@arm.com>
 ---
- .../arm64/boot/dts/allwinner/sun50i-h616.dtsi | 160 ++++++++++++++++++
- 1 file changed, 160 insertions(+)
+ .../allwinner/sun50i-h616-orangepi-zero2.dts  | 42 +++++++++++++++++++
+ 1 file changed, 42 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h616.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-h616.dtsi
-index 622a1f7d1641..74aed0d232a9 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-h616.dtsi
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-h616.dtsi
-@@ -504,6 +504,166 @@ mdio0: mdio {
- 			};
- 		};
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h616-orangepi-zero2.dts b/arch/arm64/boot/dts/allwinner/sun50i-h616-orangepi-zero2.dts
+index 02893f3ac99d..3197dc43397b 100644
+--- a/arch/arm64/boot/dts/allwinner/sun50i-h616-orangepi-zero2.dts
++++ b/arch/arm64/boot/dts/allwinner/sun50i-h616-orangepi-zero2.dts
+@@ -49,8 +49,25 @@ reg_vcc5v: vcc5v {
+ 		regulator-max-microvolt = <5000000>;
+ 		regulator-always-on;
+ 	};
++
++	reg_usb1_vbus: usb1-vbus {
++		compatible = "regulator-fixed";
++		regulator-name = "usb1-vbus";
++		regulator-min-microvolt = <5000000>;
++		regulator-max-microvolt = <5000000>;
++		vin-supply = <&reg_vcc5v>;
++		enable-active-high;
++		gpio = <&pio 2 16 GPIO_ACTIVE_HIGH>; /* PC16 */
++		status = "okay";
++	};
+ };
  
-+		usbotg: usb@5100000 {
-+			compatible = "allwinner,sun50i-h616-musb",
-+				     "allwinner,sun8i-h3-musb";
-+			reg = <0x05100000 0x0400>;
-+			clocks = <&ccu CLK_BUS_OTG>;
-+			resets = <&ccu RST_BUS_OTG>;
-+			interrupts = <GIC_SPI 25 IRQ_TYPE_LEVEL_HIGH>;
-+			interrupt-names = "mc";
-+			phys = <&usbphy 0>;
-+			phy-names = "usb";
-+			extcon = <&usbphy 0>;
-+			status = "disabled";
-+		};
++&ehci1 {
++	status = "okay";
++};
 +
-+		usbphy: phy@5100400 {
-+			compatible = "allwinner,sun50i-h616-usb-phy";
-+			reg = <0x05100400 0x24>,
-+			      <0x05101800 0x14>,
-+			      <0x05200800 0x14>,
-+			      <0x05310800 0x14>,
-+			      <0x05311800 0x14>;
-+			reg-names = "phy_ctrl",
-+				    "pmu0",
-+				    "pmu1",
-+				    "pmu2",
-+				    "pmu3";
-+			clocks = <&ccu CLK_USB_PHY0>,
-+				 <&ccu CLK_USB_PHY1>,
-+				 <&ccu CLK_USB_PHY2>,
-+				 <&ccu CLK_USB_PHY3>,
-+				 <&ccu CLK_BUS_EHCI2>;
-+			clock-names = "usb0_phy",
-+				      "usb1_phy",
-+				      "usb2_phy",
-+				      "usb3_phy",
-+				      "pmu2_clk";
-+			resets = <&ccu RST_USB_PHY0>,
-+				 <&ccu RST_USB_PHY1>,
-+				 <&ccu RST_USB_PHY2>,
-+				 <&ccu RST_USB_PHY3>;
-+			reset-names = "usb0_reset",
-+				      "usb1_reset",
-+				      "usb2_reset",
-+				      "usb3_reset";
-+			status = "disabled";
-+			#phy-cells = <1>;
-+		};
++/* USB 2 & 3 are on headers only. */
 +
-+		ehci0: usb@5101000 {
-+			compatible = "allwinner,sun50i-h616-ehci",
-+				     "generic-ehci";
-+			reg = <0x05101000 0x100>;
-+			interrupts = <GIC_SPI 26 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&ccu CLK_BUS_OHCI0>,
-+				 <&ccu CLK_BUS_EHCI0>,
-+				 <&ccu CLK_USB_OHCI0>;
-+			resets = <&ccu RST_BUS_OHCI0>,
-+				 <&ccu RST_BUS_EHCI0>;
-+			phys = <&usbphy 0>;
-+			phy-names = "usb";
-+			status = "disabled";
-+		};
+ &emac0 {
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&ext_rgmii_pins>;
+@@ -76,6 +93,10 @@ &mmc0 {
+ 	status = "okay";
+ };
+ 
++&ohci1 {
++	status = "okay";
++};
 +
-+		ohci0: usb@5101400 {
-+			compatible = "allwinner,sun50i-h616-ohci",
-+				     "generic-ohci";
-+			reg = <0x05101400 0x100>;
-+			interrupts = <GIC_SPI 27 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&ccu CLK_BUS_OHCI0>,
-+				 <&ccu CLK_USB_OHCI0>;
-+			resets = <&ccu RST_BUS_OHCI0>;
-+			phys = <&usbphy 0>;
-+			phy-names = "usb";
-+			status = "disabled";
-+		};
+ &r_rsb {
+ 	status = "okay";
+ 
+@@ -211,3 +232,24 @@ &uart0 {
+ 	pinctrl-0 = <&uart0_ph_pins>;
+ 	status = "okay";
+ };
 +
-+		ehci1: usb@5200000 {
-+			compatible = "allwinner,sun50i-h616-ehci",
-+				     "generic-ehci";
-+			reg = <0x05200000 0x100>;
-+			interrupts = <GIC_SPI 28 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&ccu CLK_BUS_OHCI1>,
-+				 <&ccu CLK_BUS_EHCI1>,
-+				 <&ccu CLK_USB_OHCI1>;
-+			resets = <&ccu RST_BUS_OHCI1>,
-+				 <&ccu RST_BUS_EHCI1>;
-+			phys = <&usbphy 1>;
-+			phy-names = "usb";
-+			status = "disabled";
-+		};
++&usbotg {
++	/*
++	 * PHY0 pins are connected to a USB-C socket, but a role switch
++	 * is not implemented: both CC pins are pulled to GND.
++	 * The VBUS pins power the device, so a fixed peripheral mode
++	 * is the best choice.
++	 * The board can be powered via GPIOs, in this case port0 *can*
++	 * act as a host (with a cable/adapter ignoring CC), as VBUS is
++	 * then provided by the GPIOs. Any user of this setup would
++	 * need to adjust the DT accordingly: dr_mode set to "host",
++	 * enabling OHCI0 and EHCI0.
++	 */
++	dr_mode = "peripheral";
++	status = "okay";
++};
 +
-+		ohci1: usb@5200400 {
-+			compatible = "allwinner,sun50i-h616-ohci",
-+				     "generic-ohci";
-+			reg = <0x05200400 0x100>;
-+			interrupts = <GIC_SPI 29 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&ccu CLK_BUS_OHCI1>,
-+				 <&ccu CLK_USB_OHCI1>;
-+			resets = <&ccu RST_BUS_OHCI1>;
-+			phys = <&usbphy 1>;
-+			phy-names = "usb";
-+			status = "disabled";
-+		};
-+
-+		ehci2: usb@5310000 {
-+			compatible = "allwinner,sun50i-h616-ehci",
-+				     "generic-ehci";
-+			reg = <0x05310000 0x100>;
-+			interrupts = <GIC_SPI 30 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&ccu CLK_BUS_OHCI2>,
-+				 <&ccu CLK_BUS_EHCI2>,
-+				 <&ccu CLK_USB_OHCI2>;
-+			resets = <&ccu RST_BUS_OHCI2>,
-+				 <&ccu RST_BUS_EHCI2>;
-+			phys = <&usbphy 2>;
-+			phy-names = "usb";
-+			status = "disabled";
-+		};
-+
-+		ohci2: usb@5310400 {
-+			compatible = "allwinner,sun50i-h616-ohci",
-+				     "generic-ohci";
-+			reg = <0x05310400 0x100>;
-+			interrupts = <GIC_SPI 31 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&ccu CLK_BUS_OHCI2>,
-+				 <&ccu CLK_USB_OHCI2>;
-+			resets = <&ccu RST_BUS_OHCI2>;
-+			phys = <&usbphy 2>;
-+			phy-names = "usb";
-+			status = "disabled";
-+		};
-+
-+		ehci3: usb@5311000 {
-+			compatible = "allwinner,sun50i-h616-ehci",
-+				     "generic-ehci";
-+			reg = <0x05311000 0x100>;
-+			interrupts = <GIC_SPI 32 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&ccu CLK_BUS_OHCI3>,
-+				 <&ccu CLK_BUS_EHCI3>,
-+				 <&ccu CLK_USB_OHCI3>;
-+			resets = <&ccu RST_BUS_OHCI3>,
-+				 <&ccu RST_BUS_EHCI3>;
-+			phys = <&usbphy 3>;
-+			phy-names = "usb";
-+			status = "disabled";
-+		};
-+
-+		ohci3: usb@5311400 {
-+			compatible = "allwinner,sun50i-h616-ohci",
-+				     "generic-ohci";
-+			reg = <0x05311400 0x100>;
-+			interrupts = <GIC_SPI 33 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&ccu CLK_BUS_OHCI3>,
-+				 <&ccu CLK_USB_OHCI3>;
-+			resets = <&ccu RST_BUS_OHCI3>;
-+			phys = <&usbphy 3>;
-+			phy-names = "usb";
-+			status = "disabled";
-+		};
-+
- 		rtc: rtc@7000000 {
- 			compatible = "allwinner,sun50i-h616-rtc";
- 			reg = <0x07000000 0x400>;
++&usbphy {
++	usb1_vbus-supply = <&reg_usb1_vbus>;
++	status = "okay";
++};
 -- 
 2.35.3
 
