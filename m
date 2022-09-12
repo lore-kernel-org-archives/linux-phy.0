@@ -4,51 +4,51 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 521BAECAAA1
-	for <linux-phy@archiver.kernel.org>; Mon, 12 Sep 2022 08:59:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5B5E5ECAAD5
+	for <linux-phy@archiver.kernel.org>; Mon, 12 Sep 2022 08:59:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=S/+PKHL6e7tHZZjIv3aKssBSvoNOw3eKJIA7fKBBwYY=; b=f6/Lc6MOG2fX3m
-	iPY904muaNwjhG73MGshhCG4By1gzUrTG+oRJ/KSn+uDdKjpF6g0Mxjj0kOd1UvMgxqgueWDtoVmX
-	h7T005haH7opeK/Y0AueiY9VISrJwu3+dvn7gnjc/GcJC8G+igUORE502eqIeeYoXgvt2elZYakjt
-	jseDGvey6f8J2VK2jXHdFyMcTep+QgxRGbq7o4bW3NlMmArbjevHampYWSZEzeK3oi95dFHpVbSoQ
-	Hw+Z2A0e3qY0AOX4cSxWP3oNTP5xTyGTt2UycAEc773tHaHoMjRdlzZYkg5trBhQ1nAsVB843wD74
-	ODfXsS7artUs5Wo/tWZQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=qgHOl6QGz5O7A8Iwhr5H3A+MnFEHD36lPXyW7ELDWso=; b=1WFpwcmDsfrOLa
+	VqZrfFhKHy77u2nIi2sYEExcT2aGWSBKMF33j9gecAz0aW3gQhdZqY00zk5o29da7abVX8ejJIOAo
+	yM78DFFQAodfMswEBkwy8xKke19OIqmbJuE7RLTwelW7KWj0x7OUsA7ilu1x4TtVsSIeFy3MvoRt3
+	t9L6kNd2aJYb6pCJK7z62XShLrNGuBKjm4libPnHiv0lbyqJd4WcrgeNowM35KrIOP+IsvupH12CF
+	5+IMBdF9KM5y61Ao75P2mU2tDycWmif8FOewPnNtpwldrifgxpIaMrMIBuJVO/Tk7JVvAkvzk1mPM
+	QrN0+o0FhU998ylv7D0w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oXfHP-0082pJ-Fk; Mon, 12 Sep 2022 08:58:59 +0000
+	id 1oXfHQ-0082pw-DU; Mon, 12 Sep 2022 08:59:00 +0000
 Received: from fllv0016.ext.ti.com ([198.47.19.142])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oXfFj-0081uK-4F; Mon, 12 Sep 2022 08:57:20 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
-	by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 28C8v8wF009452;
-	Mon, 12 Sep 2022 03:57:08 -0500
+	id 1oXfFh-0081qh-SH; Mon, 12 Sep 2022 08:57:20 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+	by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 28C8utVu009416;
+	Mon, 12 Sep 2022 03:56:55 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
-	s=ti-com-17Q1; t=1662973028;
-	bh=acFE7U4SCLkZaqwno3QJ6Kxih9diQctIL1Ztjs2RjO8=;
-	h=From:To:CC:Subject:Date:In-Reply-To:References;
-	b=xZEV6+qq1gs3EmGHHfMPoouPYvJb2XC+YjkSIlPEUwdOAToS5VIIghqxK2KBXgYPO
-	 JQoLdm30Puc7zU+V8/AF5PVY2CZwfFPeAp7z0jar0h3fjnCu7sdeAl72AA2tCX779O
-	 tdeFhqLzYhCi6lKLbn3o9s3q6FC6lb/glVB864wQ=
-Received: from DLEE106.ent.ti.com (dlee106.ent.ti.com [157.170.170.36])
-	by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 28C8v82p073062
+	s=ti-com-17Q1; t=1662973015;
+	bh=sRvNlBh/Ss9x2rZ28t0BBU8aqg7AeYRUVbKpiLO9SGY=;
+	h=From:To:CC:Subject:Date;
+	b=oEOhWi7mwHVhN5SzOVGqyKqfb4/6G7BggJGPNeb2MXz/WaLD74CgkPCzPrjmSCMZF
+	 LEACfUC03ZwiLK0xP1ppai7mVglbyRdjN0AZLCeLw8ukqOdwyndQJMEdPlEVESLhoJ
+	 9IwJgeRdT+FZO8s2zE6xDy+S/l1jZ3WkDmftWwPE=
+Received: from DFLE107.ent.ti.com (dfle107.ent.ti.com [10.64.6.28])
+	by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 28C8utm7015771
 	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Mon, 12 Sep 2022 03:57:08 -0500
-Received: from DLEE107.ent.ti.com (157.170.170.37) by DLEE106.ent.ti.com
- (157.170.170.36) with Microsoft SMTP Server (version=TLS1_2,
+	Mon, 12 Sep 2022 03:56:55 -0500
+Received: from DFLE109.ent.ti.com (10.64.6.30) by DFLE107.ent.ti.com
+ (10.64.6.28) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.6; Mon, 12
- Sep 2022 03:57:08 -0500
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE107.ent.ti.com
- (157.170.170.37) with Microsoft SMTP Server (version=TLS1_2,
+ Sep 2022 03:56:55 -0500
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE109.ent.ti.com
+ (10.64.6.30) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.6 via
- Frontend Transport; Mon, 12 Sep 2022 03:57:08 -0500
+ Frontend Transport; Mon, 12 Sep 2022 03:56:55 -0500
 Received: from uda0492258.dhcp.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
-	by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 28C8up6x104303;
-	Mon, 12 Sep 2022 03:57:04 -0500
+	by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 28C8up6u104303;
+	Mon, 12 Sep 2022 03:56:51 -0500
 From: Siddharth Vadapalli <s-vadapalli@ti.com>
 To: <robh+dt@kernel.org>, <lee.jones@linaro.org>,
         <krzysztof.kozlowski@linaro.org>, <krzysztof.kozlowski+dt@linaro.org>,
@@ -57,17 +57,15 @@ To: <robh+dt@kernel.org>, <lee.jones@linaro.org>,
 CC: <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
         <linux-phy@lists.infradead.org>,
         <linux-arm-kernel@lists.infradead.org>, <s-vadapalli@ti.com>
-Subject: [PATCH v5 3/3] phy: ti: gmii-sel: Add support for CPSW5G GMII SEL in J7200
-Date: Mon, 12 Sep 2022 14:26:50 +0530
-Message-ID: <20220912085650.83263-4-s-vadapalli@ti.com>
+Subject: [PATCH v5 0/3] Add support for QSGMII mode
+Date: Mon, 12 Sep 2022 14:26:47 +0530
+Message-ID: <20220912085650.83263-1-s-vadapalli@ti.com>
 X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20220912085650.83263-1-s-vadapalli@ti.com>
-References: <20220912085650.83263-1-s-vadapalli@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220912_015715_308956_9AAE0C57 
-X-CRM114-Status: GOOD (  21.46  )
+X-CRM114-CacheID: sfid-20220912_015714_223347_F1CE007B 
+X-CRM114-Status: GOOD (  13.24  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,146 +82,74 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Each of the CPSW5G ports in J7200 support additional modes like QSGMII.
-Add a new compatible for J7200 to support the additional modes.
+Add compatible for J7200 CPSW5G.
 
-In TI's J7200, each of the CPSW5G ethernet interfaces can act as a
-QSGMII or QSGMII-SUB port. The QSGMII interface is responsible for
-performing auto-negotiation between the MAC and the PHY while the rest of
-the interfaces are designated as QSGMII-SUB interfaces, indicating that
-they will not be taking part in the auto-negotiation process.
+Add support for QSGMII mode in phy-gmii-sel driver for CPSW5G in J7200.
 
-To indicate the interface which will serve as the main QSGMII interface,
-add a property "ti,qsgmii-main-ports", whose value indicates the
-port number of the interface which shall serve as the main QSGMII
-interface. The rest of the interfaces are then assigned QSGMII-SUB mode by
-default. The property "ti,qsgmii-main-ports" is used to configure the
-CTRLMMR_ENETx_CTRL register.
+Change log:
 
-Depending on the device, it is possible for more than one QSGMII main port
-to exist. Thus, the property "ti,qsgmii-main-ports" is defined as an array
-of values in order to reuse the property for other devices.
+v4 -> v5:
+1. Undo cleanup changes in the example in:
+   Documentation/devicetree/bindings/phy/ti,phy-gmii-sel.yaml, moving it
+   to a separate patch in the same series. The cleanup patch is the first
+   patch in this series, with the other patches from previous versions
+   following it in the same order.
+2. Update $ref to "/schemas/phy/ti,phy-gmii-sel.yaml#" in:
+   Documentation/devicetree/bindings/mfd/ti,j721e-system-controller.yaml.
+3. Update description for the "phy@[0-9a-f]+$" pattern property.
+4. Add blank lines in between IF/THEN statements in:
+   Documentation/devicetree/bindings/phy/ti,phy-gmii-sel.yaml.
+5. Update the IF/THEN statement corresponding to the property
+   "ti,qsgmii-main-ports", disallowing the property for all compatibles
+   except "ti,j7200-cpsw5g-phy-gmii-sel" in:
+   Documentation/devicetree/bindings/phy/ti,phy-gmii-sel.yaml.
+6. Move "maxItems: 1" to the top where "ti,qsgmii-main-ports" property is
+   first defined, in:
+   Documentation/devicetree/bindings/phy/ti,phy-gmii-sel.yaml.
 
-Signed-off-by: Siddharth Vadapalli <s-vadapalli@ti.com>
----
- drivers/phy/ti/phy-gmii-sel.c | 47 ++++++++++++++++++++++++++++++++---
- 1 file changed, 44 insertions(+), 3 deletions(-)
+v3 -> v4:
+1. Update $ref to /schemas/phy/phy-provider.yaml in
+   Documentation/devicetree/bindings/mfd/ti,j721e-system-controller.yaml.
+2. Update commit message for the "phy: ti: gmii-sel: Add support for
+   CPSW5G GMII SEL in J7200" patch, describing the reason for defining the
+   property "ti,qsgmii-main-ports" as an array.
+3. Add a check in drivers/phy/ti/phy-gmii-sel.c to ensure that the value
+   of the variable "main_ports" is within bounds. If the property
+   "ti,qsgmii-main-ports" is either not mentioned in the devicetree or the
+   value of the property is out of bounds, in both these cases,
+   "main_ports" defaults to 1.
+4. Use the function "of_property_read_u32()" instead of the function
+   "of_property_read_u32_array()" in drivers/phy/ti/phy-gmii-sel.c.
 
-diff --git a/drivers/phy/ti/phy-gmii-sel.c b/drivers/phy/ti/phy-gmii-sel.c
-index d0ab69750c6b..0bcfd6d96b4d 100644
---- a/drivers/phy/ti/phy-gmii-sel.c
-+++ b/drivers/phy/ti/phy-gmii-sel.c
-@@ -22,6 +22,12 @@
- #define AM33XX_GMII_SEL_MODE_RMII	1
- #define AM33XX_GMII_SEL_MODE_RGMII	2
- 
-+/* J72xx SoC specific definitions for the CONTROL port */
-+#define J72XX_GMII_SEL_MODE_QSGMII	4
-+#define J72XX_GMII_SEL_MODE_QSGMII_SUB	6
-+
-+#define PHY_GMII_PORT(n)	BIT((n) - 1)
-+
- enum {
- 	PHY_GMII_SEL_PORT_MODE = 0,
- 	PHY_GMII_SEL_RGMII_ID_MODE,
-@@ -43,6 +49,7 @@ struct phy_gmii_sel_soc_data {
- 	u32 features;
- 	const struct reg_field (*regfields)[PHY_GMII_SEL_LAST];
- 	bool use_of_data;
-+	u64 extra_modes;
- };
- 
- struct phy_gmii_sel_priv {
-@@ -53,6 +60,7 @@ struct phy_gmii_sel_priv {
- 	struct phy_gmii_sel_phy_priv *if_phys;
- 	u32 num_ports;
- 	u32 reg_offset;
-+	u32 qsgmii_main_ports;
- };
- 
- static int phy_gmii_sel_mode(struct phy *phy, enum phy_mode mode, int submode)
-@@ -88,10 +96,17 @@ static int phy_gmii_sel_mode(struct phy *phy, enum phy_mode mode, int submode)
- 		gmii_sel_mode = AM33XX_GMII_SEL_MODE_MII;
- 		break;
- 
-+	case PHY_INTERFACE_MODE_QSGMII:
-+		if (!(soc_data->extra_modes & BIT(PHY_INTERFACE_MODE_QSGMII)))
-+			goto unsupported;
-+		if (if_phy->priv->qsgmii_main_ports & BIT(if_phy->id - 1))
-+			gmii_sel_mode = J72XX_GMII_SEL_MODE_QSGMII;
-+		else
-+			gmii_sel_mode = J72XX_GMII_SEL_MODE_QSGMII_SUB;
-+		break;
-+
- 	default:
--		dev_warn(dev, "port%u: unsupported mode: \"%s\"\n",
--			 if_phy->id, phy_modes(submode));
--		return -EINVAL;
-+		goto unsupported;
- 	}
- 
- 	if_phy->phy_if_mode = submode;
-@@ -123,6 +138,11 @@ static int phy_gmii_sel_mode(struct phy *phy, enum phy_mode mode, int submode)
- 	}
- 
- 	return 0;
-+
-+unsupported:
-+	dev_warn(dev, "port%u: unsupported mode: \"%s\"\n",
-+		 if_phy->id, phy_modes(submode));
-+	return -EINVAL;
- }
- 
- static const
-@@ -188,6 +208,13 @@ struct phy_gmii_sel_soc_data phy_gmii_sel_soc_am654 = {
- 	.regfields = phy_gmii_sel_fields_am654,
- };
- 
-+static const
-+struct phy_gmii_sel_soc_data phy_gmii_sel_cpsw5g_soc_j7200 = {
-+	.use_of_data = true,
-+	.regfields = phy_gmii_sel_fields_am654,
-+	.extra_modes = BIT(PHY_INTERFACE_MODE_QSGMII),
-+};
-+
- static const struct of_device_id phy_gmii_sel_id_table[] = {
- 	{
- 		.compatible	= "ti,am3352-phy-gmii-sel",
-@@ -209,6 +236,10 @@ static const struct of_device_id phy_gmii_sel_id_table[] = {
- 		.compatible	= "ti,am654-phy-gmii-sel",
- 		.data		= &phy_gmii_sel_soc_am654,
- 	},
-+	{
-+		.compatible	= "ti,j7200-cpsw5g-phy-gmii-sel",
-+		.data		= &phy_gmii_sel_cpsw5g_soc_j7200,
-+	},
- 	{}
- };
- MODULE_DEVICE_TABLE(of, phy_gmii_sel_id_table);
-@@ -350,6 +381,7 @@ static int phy_gmii_sel_probe(struct platform_device *pdev)
- 	struct device_node *node = dev->of_node;
- 	const struct of_device_id *of_id;
- 	struct phy_gmii_sel_priv *priv;
-+	u32 main_ports = 1;
- 	int ret;
- 
- 	of_id = of_match_node(phy_gmii_sel_id_table, pdev->dev.of_node);
-@@ -363,6 +395,15 @@ static int phy_gmii_sel_probe(struct platform_device *pdev)
- 	priv->dev = &pdev->dev;
- 	priv->soc_data = of_id->data;
- 	priv->num_ports = priv->soc_data->num_ports;
-+	of_property_read_u32(node, "ti,qsgmii-main-ports", &main_ports);
-+	/*
-+	 * Ensure that main_ports is within bounds. If the property
-+	 * ti,qsgmii-main-ports is not mentioned, or the value mentioned
-+	 * is out of bounds, default to 1.
-+	 */
-+	if (main_ports < 1 || main_ports > 4)
-+		main_ports = 1;
-+	priv->qsgmii_main_ports = PHY_GMII_PORT(main_ports);
- 
- 	priv->regmap = syscon_node_to_regmap(node->parent);
- 	if (IS_ERR(priv->regmap)) {
+v2 -> v3:
+1. Add $ref to "phy@[0-9a-f]+$" pattern property in
+   Documentation/devicetree/bindings/mfd/ti,j721e-system-controller.yaml.
+2. Restrict the optional ti,qsgmii-main-ports property to
+   ti,j7200-cpsw5g-phy-gmii-sel property by adding an else statement and
+   disallowing it for other compatibles.
+3. Move the "items" constraint for the ti,qsgmii-main-ports property to
+   the place the property is defined.
+
+v1 -> v2:
+1. Rename ti,enet-ctrl-qsgmii as ti,qsgmii-main-ports.
+2. Change ti,qsgmii-main-ports property from bitmask to integer.
+3. Update commit message with property name as ti,qsgmii-main-ports.
+
+v4: https://lore.kernel.org/r/20220901085506.138633-1-s-vadapalli@ti.com/
+v3: https://lore.kernel.org/r/20220822065631.27933-1-s-vadapalli@ti.com/
+v2: https://lore.kernel.org/r/20220816055848.111482-1-s-vadapalli@ti.com/
+v1: https://lore.kernel.org/r/20220531111221.22963-1-s-vadapalli@ti.com/
+
+Siddharth Vadapalli (3):
+  dt-bindings: phy: ti: phy-gmii-sel: Cleanup example
+  dt-bindings: phy: ti: phy-gmii-sel: Add bindings for J7200
+  phy: ti: gmii-sel: Add support for CPSW5G GMII SEL in J7200
+
+ .../mfd/ti,j721e-system-controller.yaml       |  6 +++
+ .../bindings/phy/ti,phy-gmii-sel.yaml         | 27 ++++++++++-
+ drivers/phy/ti/phy-gmii-sel.c                 | 47 +++++++++++++++++--
+ 3 files changed, 76 insertions(+), 4 deletions(-)
+
 -- 
 2.25.1
 
