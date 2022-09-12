@@ -4,88 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E3761ECAAA1
-	for <linux-phy@archiver.kernel.org>; Mon, 12 Sep 2022 11:09:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2CB6BC6FA83
+	for <linux-phy@archiver.kernel.org>; Mon, 12 Sep 2022 18:29:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CuTXw6/PZfX2Nfwjeea4bBzE0fuv/C57yib38RHUD+Y=; b=jhWt9X4cydtnQv
-	/s0cKPezBXsjii5R6d8qSKV3E84SJytpU0qc74N50iflVhEhB/vqzTAGoR73OW1sZTcXeGkFbrzwK
-	hUdtywEosgVAzn4foXxLdiyhuF40efAGZ2Ick/4UWp78XgxOImbzVMGA3RnEe5UOCkN/Gmfh+BZi2
-	y3wqMQ1xq2vO8iIg5Cpd4Y0lqMdhxMFsx1R8edxzg68jrsH3UM05P51jI1UQVngagmcmu1gcJUuk2
-	SxDj195Mz//d0bI3sWTg7pA1hbMm7ja2c/p//yjF6+aO8cOx8nGKqrMbJ6I4b5Vl8TMdifCZX+75d
-	thtfuGWgKALSdtmuSsHw==;
+	List-Owner; bh=0nfBNO3WIrGez0JrkFj0vgPQRt13B0tgpnacwuWGjAQ=; b=WO1DVbzVadqpbi
+	EUpJafi4g/XrQ1D7SP+9qcDcGXmBPkRoB5SdSvUzZhKaqRV3e/aBV8VKvWUGKaH9w5CsTwJtPVWQi
+	hBbOiOLZZKCWOvyFfSuYvO1BYqU19EF059N/oYWJlz8VVqL/OIhwijB3EVnT3S5ToSbsPvvXU2LZQ
+	krOOdVkaZlcJP8KjNewom3WMhhyf9zwC1RiIVaZ9S99BrwEQ8xnBXEkkp2z/QLoErP/rgJ8diZnwG
+	iRQDCH5oyz7xza/fYuhMblEk52GyJyXaMhVFR+u/Od9PXhQ4EZ1p3r+mr/daqYdk9frenNwwIC3BZ
+	aKwtYObc+c0fkYAsFGMA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oXhJx-009AQx-Hs; Mon, 12 Sep 2022 11:09:45 +0000
-Received: from mail-lj1-x229.google.com ([2a00:1450:4864:20::229])
+	id 1oXoBm-00CWRx-G8; Mon, 12 Sep 2022 18:29:46 +0000
+Received: from mail-oa1-f45.google.com ([209.85.160.45])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oXhBS-0095sK-MU
-	for linux-phy@lists.infradead.org; Mon, 12 Sep 2022 11:01:01 +0000
-Received: by mail-lj1-x229.google.com with SMTP id bn9so10074370ljb.6
-        for <linux-phy@lists.infradead.org>; Mon, 12 Sep 2022 04:00:56 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date;
-        bh=VNRLB5dMr8KxcMuJauPpZNtGEDYIcFeLhKYuKfQ2WK4=;
-        b=Wr271pDa4rYLOMj1WYVJWc+MhXbFaiyoYNkavxMyqSK0firTu7PnHjPX39Rgx7kg6O
-         stiKUajPEgJzCGa8pAk3WO8Qc91CsGQGrOY8LJ9j52EVVd1MgNPN3WaVUuEJnJN11u4b
-         Qpg5WIoDM7DlRIOn4EJIs4ZEtbl9xc8upENfntB+G01YNTtdBEv/YwlO25SJuNNc/nL6
-         a3+S9EEJWQBLPyv5sAJ4LR/Wj54TYjrFhtt0kPua0B2frGbW9lGlwZ1V6Oqz7i7sx03d
-         yGtQxThRzGLvFRlb8Np9yms1PBoIZPkKtHK6nE3JHQPr1W9wN+R147UYGbkNUD7oxVWm
-         S0PA==
+	id 1oXoBk-00CWPU-0e
+	for linux-phy@lists.infradead.org; Mon, 12 Sep 2022 18:29:45 +0000
+Received: by mail-oa1-f45.google.com with SMTP id 586e51a60fabf-12b542cb1d3so15914158fac.13
+        for <linux-phy@lists.infradead.org>; Mon, 12 Sep 2022 11:29:43 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date;
-        bh=VNRLB5dMr8KxcMuJauPpZNtGEDYIcFeLhKYuKfQ2WK4=;
-        b=XxqNN3D9vXlNSKAa/x1wRTb+sgI1NKSLsoVeeNlU/zjzaj+/mEGmYGTlelhp+Fm2U5
-         kXPlNe90KC2qbaXX1ziV/IyTDFQom4hajVFWf4adJ1XmgorUW0v9ae0AoCn7OzCOJBr9
-         KHVCkP+eZOhUvWCU+qxE5e+ZpM4+7vtrC66PwRwn8bmEAM+4SoVTVsVYcgRJQ0cMwXpY
-         IloBdy8Fea4FN+ntRg9qdnkg9jgdQUywQ3YXTgBt3Xm4ochzWphCmvB+XiJNpS6C9Dma
-         c2gtd5m0rWLkzJweFN/GIn7ITQO+mCGDQDU4y3SN1zAl/2q72HMRRwCmaz/M02KhDvw4
-         4Yyg==
-X-Gm-Message-State: ACgBeo3psWiffj0Htj1ZkLJanMlzEwyxUDjktSv3Taumin70rS/nRg/s
-	QnLUXS2hhBGmj6JkhAXEMnVsKg==
-X-Google-Smtp-Source: AA6agR5qUmM2ZmB3u+ceQgLmGH1b3qt0oNh2whK2G3kPo3FfMoZ57icsO07DBG7SNBSMhG5XpY/UNg==
-X-Received: by 2002:a2e:9801:0:b0:25e:45ed:edc5 with SMTP id a1-20020a2e9801000000b0025e45ededc5mr7229723ljj.467.1662980454897;
-        Mon, 12 Sep 2022 04:00:54 -0700 (PDT)
-Received: from [10.129.96.84] ([109.232.243.34])
-        by smtp.gmail.com with ESMTPSA id v6-20020a197406000000b004979df1c1fasm1010823lfe.61.2022.09.12.04.00.53
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 12 Sep 2022 04:00:54 -0700 (PDT)
-Message-ID: <15b65ac4-6656-dec5-80fd-e3c29b226a25@linaro.org>
-Date: Mon, 12 Sep 2022 13:00:51 +0200
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date;
+        bh=qOuXJYWFlhMBv+hJob6UqyVwr1Eq15fJbMnFTSXIcyw=;
+        b=uSyUD/rdmZuE94qFQl4P8UGqBLQw3JeMIUF2OHyl9VVogv4d4qDDMtSeUou4H7fOaU
+         D0c1VhJjPMlhrh9QyOC+SFf2CfiYmOsu1U6M6U6cVEfNPo+i2giyMzENiA7caspd1D0P
+         RufpIiOmPdqP5lFIWoib3Lj0Y7Ar2WBzgdCrI+jETvhsCrTFXaBOOgn01BUAZsZRdDFy
+         8X1XXrhP1FAgRqWg5r+Bx9flItkUm2h8tfIneYlmDZg9DRt31tGo4wyar94UBdpidw8Q
+         RY5g1PqBBxG/sfQcBCmEs2baQq5GEnUaGAN5sF9n3r1l594NObV4xcfC/IA1v3oGCCHs
+         QqzQ==
+X-Gm-Message-State: ACgBeo3RPvPv/tKgwscE2ZDNzPt4E2EnuJpDkIieysLM8XLmWPLo3u6i
+	NIN+Gz1zTFl8wBupiUVvsNq8voahYg==
+X-Google-Smtp-Source: AA6agR6sMx7mHoUriHC8Kh+qkq1RuDkElTwvjx7a2+2WT/6UEwW/82ho+p19Lacr5xK7BwDhHvQUvA==
+X-Received: by 2002:a05:6808:9b2:b0:34f:61af:fea7 with SMTP id e18-20020a05680809b200b0034f61affea7mr6381201oig.133.1663007382484;
+        Mon, 12 Sep 2022 11:29:42 -0700 (PDT)
+Received: from robh.at.kernel.org (66-90-144-107.dyn.grandenetworks.net. [66.90.144.107])
+        by smtp.gmail.com with ESMTPSA id f11-20020a056830056b00b00636eeba9209sm4996703otc.52.2022.09.12.11.29.41
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 12 Sep 2022 11:29:42 -0700 (PDT)
+Received: (nullmailer pid 1600984 invoked by uid 1000);
+	Mon, 12 Sep 2022 18:29:41 -0000
+Date: Mon, 12 Sep 2022 13:29:41 -0500
+From: Rob Herring <robh@kernel.org>
+To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Cc: Konrad Dybcio <konrad.dybcio@somainline.org>, Kishon Vijay Abraham I <kishon@ti.com>, linux-remoteproc@vger.kernel.org, Mathieu Poirier <mathieu.poirier@linaro.org>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, linux-arm-msm@vger.kernel.org, linux-usb@vger.kernel.org, devicetree@vger.kernel.org, Yu Chen <chenyu56@huawei.com>, Vinod Koul <vkoul@kernel.org>, Andy Gross <agross@kernel.org>, Rob Herring <robh+dt@kernel.org>, Mauro Carvalho Chehab <mchehab@kernel.org>, Binghui Wang <wangbinghui@hisilicon.com>, linux-phy@lists.infradead.org, Bjorn Andersson <bjorn.andersson@linaro.org>, Carvalho Chehab <mchehab+huawei@kernel.org>, Lee Jones <lee@kernel.org>, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 0/4] mfd/phy/remoteproc: dt-bindings: syscon: be specific
+Message-ID: <20220912182941.GA1596070-robh@kernel.org>
+References: <20220817142246.828762-1-krzysztof.kozlowski@linaro.org>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.13.0
-Subject: Re: [PATCH 6/7] arm64: dts: allwinner: h616: OrangePi Zero 2: Add USB
- nodes
-Content-Language: en-US
-To: Andre Przywara <andre.przywara@arm.com>,
- Jernej Skrabec <jernej.skrabec@gmail.com>,
- Samuel Holland <samuel@sholland.org>, Chen-Yu Tsai <wens@csie.org>,
- Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>
-Cc: Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- linux-phy@lists.infradead.org, linux-usb@vger.kernel.org,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-sunxi@lists.linux.dev, Karl Kurbjun <karl.os@veroson.com>,
- Icenowy Zheng <icenowy@aosc.io>
-References: <20220911235945.6635-1-andre.przywara@arm.com>
- <20220911235945.6635-7-andre.przywara@arm.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20220911235945.6635-7-andre.przywara@arm.com>
+Content-Disposition: inline
+In-Reply-To: <20220817142246.828762-1-krzysztof.kozlowski@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220912_040058_797021_CD908749 
-X-CRM114-Status: GOOD (  14.98  )
+X-CRM114-CacheID: sfid-20220912_112944_093304_C33CA0DF 
+X-CRM114-Status: GOOD (  10.64  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,44 +78,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 12/09/2022 01:59, Andre Przywara wrote:
-> The OrangePi Zero 2 has one USB-A host port, VBUS is provided by
-> a GPIO controlled regulator.
-> The USB-C port is meant to power the board, but is also connected to
-> the USB 0 port, which we configure as an MUSB peripheral.
+On Wed, 17 Aug 2022 17:22:42 +0300, Krzysztof Kozlowski wrote:
+> Hi,
 > 
-> Signed-off-by: Andre Przywara <andre.przywara@arm.com>
-> ---
->  .../allwinner/sun50i-h616-orangepi-zero2.dts  | 42 +++++++++++++++++++
->  1 file changed, 42 insertions(+)
+> The last MFD/syscon patch depends on the previous ones to avoid
+> dt_binding_check warnings.
 > 
-> diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h616-orangepi-zero2.dts b/arch/arm64/boot/dts/allwinner/sun50i-h616-orangepi-zero2.dts
-> index 02893f3ac99d..3197dc43397b 100644
-> --- a/arch/arm64/boot/dts/allwinner/sun50i-h616-orangepi-zero2.dts
-> +++ b/arch/arm64/boot/dts/allwinner/sun50i-h616-orangepi-zero2.dts
-> @@ -49,8 +49,25 @@ reg_vcc5v: vcc5v {
->  		regulator-max-microvolt = <5000000>;
->  		regulator-always-on;
->  	};
-> +
-> +	reg_usb1_vbus: usb1-vbus {
+> I propose to take entire set via Rob's DT tree.
 
-Generic node names, so at least generic prefix/suffix (regulator-usb1-vbus)
+This may have been in the window where PW server moved and stopped 
+getting patches, so I missed it until patch 4 got applied and broke 
+linux-next...
 
-> +		compatible = "regulator-fixed";
-> +		regulator-name = "usb1-vbus";
-> +		regulator-min-microvolt = <5000000>;
-> +		regulator-max-microvolt = <5000000>;
-> +		vin-supply = <&reg_vcc5v>;
-> +		enable-active-high;
-> +		gpio = <&pio 2 16 GPIO_ACTIVE_HIGH>; /* PC16 */
-> +		status = "okay";
+> 
+> Best regards,
+> Krzysztof
+> 
+> Krzysztof Kozlowski (4):
+>   dt-bindings: phy: hisilicon,hi3660-usb3: simplify example
+>   dt-bindings: phy: hisilicon,hi3670-usb3: simplify example
+>   dt-bindings: remoteproc: qcom,pil-info: add missing imem compatible
+>   dt-bindings: mfd: syscon: require specific compatible also for
+>     simple-mfd
 
-No need for status.
+I applied patches 1-3, thanks!
 
-
-Best regards,
-Krzysztof
+Rob
 
 -- 
 linux-phy mailing list
