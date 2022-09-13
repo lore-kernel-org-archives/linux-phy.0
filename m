@@ -4,59 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1D8E2C6FA82
-	for <linux-phy@archiver.kernel.org>; Tue, 13 Sep 2022 13:45:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 77769C54EE9
+	for <linux-phy@archiver.kernel.org>; Tue, 13 Sep 2022 13:56:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sttzOheM+WJQ0jfECueGUw0QZkKW6YY5Y5D0ew9g1E8=; b=Nyh08bTmSMVZ0B
-	+SJ1T3jXlHjJOLCEmn2ZtrWGaH1C29iRkOycuGFkuuIhVCWTGCohq4G136gTALfhrL9d5H27ugWg3
-	etXJvyX5lMQmswfxNLqCQp3CbMoNUBZ7I2r/yTgOvZE25hhDGph8fw7DSnMJp/n+U1qjquncjfeiH
-	1NWJYmvV6WqiDyiUfJLvJJTLO8LjzwGxVmUFw/oHEwnrqlF/8+Noal9encXqP0qHZJ1Kls+pK506s
-	IxzfNsUjUenLny+IymuXrU16Z/Lsq90wcKs1Ca/iv4OACMJXdUDK8c1+mhPU/JEAWPNhxkE622+hw
-	g3ikE+jZhorsYtVlsUFQ==;
+	List-Owner; bh=gUqErQRsPjgq+/c9u2gYFMpGcIuM0rx+ROW5CHSW8gQ=; b=EGrAsVKTZo1Vge
+	fDBZOpoaFqLp1csG7HbemTu3FALqMHUXkGY2Nbvu/BvrtdnC3j7aLFeESF0Eqq8imnO6r4bgUsVTd
+	p0FY/SOY8NK3BNQ4fxUsokTCXZ8m53tFqookJ5VsuRGmG8ryqSys/t+EWxxeYkTLtqo7oMk5aUppH
+	8xgg7/lbF6A1ACOQiaHZTw8mN64hGc8aWH8hwBkKnGBwQOYJLHk2oqvLSvPNDVMdIW49UGhxn2dUq
+	mxLEVZpcwgYPPEFo9+cSiAU7C6WxXgvDD5IYoF8LQKxcOywrp5jG4rMPEDzHhE01QU7l/wvBLU6Pr
+	FsnSKXdTBIMt3QK+G/pQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oY6EF-00Aw0A-I4; Tue, 13 Sep 2022 13:45:31 +0000
+	id 1oY6OO-00B3kz-To; Tue, 13 Sep 2022 13:56:00 +0000
 Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oY6E8-00Avtv-Vd
-	for linux-phy@lists.infradead.org; Tue, 13 Sep 2022 13:45:30 +0000
+	id 1oY6OM-00B3Yp-Pb
+	for linux-phy@lists.infradead.org; Tue, 13 Sep 2022 13:56:00 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 0F7836124C;
-	Tue, 13 Sep 2022 13:45:23 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D4085C433D6;
-	Tue, 13 Sep 2022 13:45:21 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 2B3E661451;
+	Tue, 13 Sep 2022 13:55:58 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E301BC433C1;
+	Tue, 13 Sep 2022 13:55:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1663076722;
-	bh=b/fFdAc6KX6iXrK+9WU8aWlQUsipUh4/HMKK7rL4cio=;
+	s=k20201202; t=1663077357;
+	bh=TAj//RYZI7UUscP5Cjl+wNFayZlSt0ot2cODGmmAMAg=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=IwkPuyM73vsstlr5/lAcEwr3Xsspp/ARuSDnqJBJ9VIBYFYV48WVxbLuaHNKGjs53
-	 HeBEubc8sQOq+EtVubzFX7qcHzVRRBT9jt5LUI3TgtZpDuk/LvAxbWF35QCZAdtvD0
-	 3mGc4MvUOyqtWGjrMPs5O6xjABPRz/uXjX+zta1GuG29FxkH9Wk7T3uLlzmB3fpMhH
-	 sH589CqwAnjKRYrf7XtNYsXM8uYmK+7AE+QLDwtYzcdZUMXdOccT0JJKMOq5jda3Hu
-	 USiM4ypeBvZppPx7fliWH7esbdFIZlp0mAiy2hNJ6tU62soQznjaNBbflyQzfOkx+K
-	 EVwiD/Vqh5Yaw==
-Date: Tue, 13 Sep 2022 19:15:18 +0530
+	b=stHlzwgtG7ynxu1zAlluKYeyQJoZik8BTEiKRH2ZteJlUMg6sq6LJefRxQZqDVXGT
+	 lOg2655f/rNhT9OwO/U/bhvTNgrDXmMq/epgDb5LxfeLT9nB/6DrqSCxKWNWY50TPn
+	 FdAVEeUigOT7FuJ2TQ4PLsMzXukNGrYIc6J25/ETsGBULMPAkzCeUgy4B0/r+TUNlo
+	 5CZ57x9M9Ov1xg3iLfqRQjp2n+pB6hFgFly1pKaomnl4WW30x6EOwfhkmjDimwgTvp
+	 EliuMAJeUwFqsx+5e0FQ+lv9TCRvzV2u0PrSjxCYs5CEr2qezJdRArK7epVDXmA4SN
+	 uMTp0BlzxRcgw==
+Date: Tue, 13 Sep 2022 19:25:53 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Horatiu Vultur <horatiu.vultur@microchip.com>
-Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
-	kishon@ti.com, rmk+kernel@armlinux.org.uk,
-	UNGLinuxDriver@microchip.com
-Subject: Re: [PATCH] phy: Add RGMII support on lan966x
-Message-ID: <YyCJbj2lRWa0h7jV@matsya>
-References: <20220901121455.245103-1-horatiu.vultur@microchip.com>
+To: Liang He <windhl@126.com>
+Cc: kishon@ti.com, narmstrong@baylibre.com, khilman@baylibre.com,
+	jbrunet@baylibre.com, martin.blumenstingl@googlemail.com,
+	linux-phy@lists.infradead.org
+Subject: Re: Re: [PATCH] phy: amlogic: phy-meson-axg-mipi-pcie-analog: Hold
+ reference returned by of_get_parent()
+Message-ID: <YyCL6ajchUlX8q/x@matsya>
+References: <20220705021526.281441-1-windhl@126.com>
+ <YxIkGocG/WuwtI7d@matsya>
+ <6e6f3989.4cf5.1830c86ff8b.Coremail.windhl@126.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20220901121455.245103-1-horatiu.vultur@microchip.com>
+In-Reply-To: <6e6f3989.4cf5.1830c86ff8b.Coremail.windhl@126.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220913_064525_118839_2BF83E8A 
-X-CRM114-Status: GOOD (  10.47  )
+X-CRM114-CacheID: sfid-20220913_065558_885521_E87D6348 
+X-CRM114-Status: GOOD (  15.84  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,15 +76,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 01-09-22, 14:14, Horatiu Vultur wrote:
-> The serdes driver contains also a mux to decide which interface type to
-> use. Currently the driver supports GMII/SGMII/QSGMII and partially RGMII.
-> As it doesn't support all the other RGMII interfaces like
-> RGMII_TXID/RXID/ID and it could run only at 1G.
-> Therefore extend this for all the other speeds(10/100) and also allow
-> the other interfaces.
+On 05-09-22, 15:21, Liang He wrote:
+> 
+> 
+> 
+> At 2022-09-02 23:41:14, "Vinod Koul" <vkoul@kernel.org> wrote:
+> >On 05-07-22, 10:15, Liang He wrote:
+> >> We should hold the reference returned by of_get_parent() and use it
+> >> to call of_node_put() for reference balance.
+> >
+> >And why should we hold and drop reference?
+> 
+> >
+> Hi, Vinod Koul,
+> 
+> 
+> Thanks very much for your review.
+> 
+> 
+> As the of_get_parent() will increase the refcount of the node->parent  and the reference will be discarded 
+> so we should hold the reference , with which we can decrease the refcount.
 
-Applied, thanks
+Right, that is correct explanation
+> 
+> 
+> If there is any misunderstanding about the of_get_parent() API, please correct me.
+
+Nope, just that this explanation is missing from the log...
+
+Please add...
 
 -- 
 ~Vinod
