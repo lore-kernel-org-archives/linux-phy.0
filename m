@@ -4,89 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 29330C6FA8B
-	for <linux-phy@archiver.kernel.org>; Tue, 13 Sep 2022 15:03:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D4A4FC54EE9
+	for <linux-phy@archiver.kernel.org>; Tue, 13 Sep 2022 15:13:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=F+tIT62OUxrAH6sUBjxr+JsQ29YU5ZlCPOK3Qnx5Up8=; b=NmESxbjeab7JX7
-	3sF1lwnyMpKgtjds4472FaBCd6vyW3aB5dPSVDYEayQC9NWKGJMfZQtVNp8jr+7zQbNpquKR6gRIs
-	vNBRQm5dwQaU3VMnUiwVd1j4YM3116nmDrrDMcz/DyWPoT6tSjpXKrOIv8/UQ/qOv57/V9K/gLL+3
-	YDAvNKCZeMui8B3fOtOSGmxCEW+3531cM58WA15nKoNuFdAyFcDkXgf6aXALPArVmu2PsNNML0BkQ
-	QzEN01WvVRr4O56nRU4jq+jmVAVPcY1N4xbmsDFiIHfSV2iUHslWFGfSGnP2oLB3p+X4R/UmxRchd
-	dAhKg09uRSpaR9zIgbmA==;
+	List-Owner; bh=icb+hGpphM7XKnzHuAgpH64Tb5W/LICfSQKAHcuGgA0=; b=gkiXWRy+BGOu+I
+	/GmOv2R/mGcOWkAMwJGcS6Am6YACSpngSxto3ljw4/OrXzDvm5V/zfhE4lXj5JjY3i77NgoHY7b2B
+	9ZRoWtElymyo2fAjz/YN2wlxsXTKHDmXTbxGKdvupLv0SL4MW/Xl7aPN06K9aRJiV0XsiIvllac/2
+	rPFhteWXlmmN5lnLPwYLNrrSesjFr21Y4bXUDDm/HCOv/8bKY/k78mZZwf2M/OioT1EZ5IK0zN8q5
+	ZlKmfUACm8TUvmNHiBh7FAZEKa3x8E2P1qhMRw8BuM8AHWiK38POi4RXYysBigokXLUOaHC352SXR
+	UlvvgTfc6K1QGTuab3CQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oY7RX-00C7Wu-58; Tue, 13 Sep 2022 15:03:19 +0000
-Received: from mail-wr1-x42a.google.com ([2a00:1450:4864:20::42a])
+	id 1oY7b3-00CGrP-MA; Tue, 13 Sep 2022 15:13:09 +0000
+Received: from ams.source.kernel.org ([145.40.68.75])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oY72X-00Biy5-N4
-	for linux-phy@lists.infradead.org; Tue, 13 Sep 2022 14:37:32 +0000
-Received: by mail-wr1-x42a.google.com with SMTP id bo13so4614788wrb.1
-        for <linux-phy@lists.infradead.org>; Tue, 13 Sep 2022 07:37:27 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=jamieiles.com; s=google;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date;
-        bh=PSryuLt8d2S5NOnFQYaRkPd+ewmY9YOJjJlVlykIIBw=;
-        b=PL6KQK4WAvTjNL4+2racF+mN5DenWrVgvTfKHYOm+TdmcOdBXajJDYGu389LYMga76
-         oUHxjWLeSy9pbqbs2NWCLbFwPpAHiVTXhrc7QPnxKyrDCjUyqL35opweViGReRMLNghi
-         Bw+KX6HO1tj+6pGtABPL2WSs7vcJaJ5qWQbQU2xeGWHyAh7PIxvR+zlDuuZzT8W3+srE
-         hdboMRmbejnhTl8Nl6xaQsK3sWD2coMQIkTLhV6pGOgxuzJOoJ1v7luzQZSpvE6cT8DT
-         gXMklK1wStxJaSEE95t3niygm91XlGX6v5/n0WFrglI0LZZnC3voDzTUaFlGqjPIVS8e
-         twBA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date;
-        bh=PSryuLt8d2S5NOnFQYaRkPd+ewmY9YOJjJlVlykIIBw=;
-        b=l6A0wHOKY4dOARBYEBmUWRurT+/FLHcKiKnp+/5MbOIl21kXhYd3sPZPfKAkv6TO1X
-         3IKSsqnyG6bHgWE/+Y5owvkRXfxo7o/GLqcLnnBehCIcKOxv+gI3CrMbm+M+1nF/sfyT
-         t83Yt4gjN5VG3gc8XSP/QLSZ2EEUOockWDi6qoTSAMzssW5YYDF0fY7BmayxYdkDi1B9
-         LKGvv5cApyoviSjijTj0DERZAyOv60p65l3GCKmDSaiwhJUoW1ugXQmaZq0jhCWWKWWJ
-         6zm6hgqmLgutuEhbzPRmtl2NbAhxyjoZboOCRVUZrSlTGqmGErRRIXNs4s/bzL/miczj
-         hIlQ==
-X-Gm-Message-State: ACgBeo3F/os0uE5nmMY9GUfYdyrE2Ep3059GYW3gn/WUXywvXzYssN+I
-	aK6jEqbjLE8jxAcndYNZm2LTlg==
-X-Google-Smtp-Source: AA6agR4xan9LcIemBd+CCIzPWBfolAoJH5FobI9T3VFcNGbSV5nwx/8YASJdkNc6pzosk4RDb4XfCw==
-X-Received: by 2002:adf:e10c:0:b0:225:3168:c261 with SMTP id t12-20020adfe10c000000b002253168c261mr18279435wrz.159.1663079845811;
-        Tue, 13 Sep 2022 07:37:25 -0700 (PDT)
-Received: from localhost ([5.181.106.148])
-        by smtp.gmail.com with ESMTPSA id e11-20020adffd0b000000b00228da845d4dsm10633337wrr.94.2022.09.13.07.37.24
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 13 Sep 2022 07:37:24 -0700 (PDT)
-Date: Tue, 13 Sep 2022 15:37:23 +0100
-From: Jamie Iles <jamie@jamieiles.com>
-To: Johan Jonker <jbx6244@gmail.com>
-Cc: kever.yang@rock-chips.com, sjg@chromium.org, philipp.tomsich@vrull.eu,
-	robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
-	heiko@sntech.de, ulf.hansson@linaro.org, miquel.raynal@bootlin.com,
-	richard@nod.at, vigneshr@ti.com, kishon@ti.com, vkoul@kernel.org,
-	thierry.reding@gmail.com, u.kleine-koenig@pengutronix.de,
-	gregkh@linuxfoundation.org, broonie@kernel.org,
-	wim@linux-watchdog.org, linux@roeck-us.net,
-	zhangqing@rock-chips.com, jamie@jamieiles.com,
-	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
-	linux-i2c@vger.kernel.org, linux-mmc@vger.kernel.org,
-	linux-mtd@lists.infradead.org, linux-phy@lists.infradead.org,
-	linux-pwm@vger.kernel.org, linux-serial@vger.kernel.org,
-	linux-spi@vger.kernel.org, linux-usb@vger.kernel.org,
-	linux-watchdog@vger.kernel.org
-Subject: Re: [PATCH v1 01/11] dt-bindings: serial: rockchip: add
- rockchip,rk3128-uart
-Message-ID: <YyCVo/kHpWTbGpvx@elm>
-References: <20220909212543.17428-1-jbx6244@gmail.com>
- <4f283231-2ed4-202b-0c23-157bce0841ee@gmail.com>
+	id 1oY7IV-00ByWk-9l
+	for linux-phy@lists.infradead.org; Tue, 13 Sep 2022 14:54:05 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by ams.source.kernel.org (Postfix) with ESMTPS id 96F19B80F02;
+	Tue, 13 Sep 2022 14:53:57 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6D273C433C1;
+	Tue, 13 Sep 2022 14:53:55 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1663080836;
+	bh=zd5RQfhiDzh7kjG/uuLjr8XNlVS9sWYPTYLzY0MfS/0=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=i7DTEmcNaDYGVj42mt6D4YfGWi4pd2+N8SKaiXzmSjR7q9ST9O2qQKeS4chgEwqCc
+	 yIMBN044B1rTe0MiLz+c5/JCja0AqNFZ7iWAYA1JfOeKPpQt71Uk4dFWZlbdwe7Kn6
+	 sGdh7EDxAn3XQ+d2pMMl4Su4B+/iali245EfdOhJcAsWxavptAr/lxzQaOim03BZ3g
+	 Un7E9ly9Ndiao3f9tTQ62VPlwvAJC/ZZZlhuA4SssVCmSKZ1oWwZaboGZG6qh3YGHo
+	 9MUmHzvkstTYj/ehITJN6Pxl84xhK2lBbQozXnt4MjjrW2WQdBXL2j/mlQn/GKO6A+
+	 exUSLn3XSWlFQ==
+Date: Tue, 13 Sep 2022 20:23:52 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Johan Hovold <johan+linaro@kernel.org>
+Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@somainline.org>,
+	Kishon Vijay Abraham I <kishon@ti.com>,
+	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 0/3] phy: qcom-qmp-pcie: shorten function prefixes
+Message-ID: <YyCZgHx66V3rhv7u@matsya>
+References: <20220906074550.4383-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <4f283231-2ed4-202b-0c23-157bce0841ee@gmail.com>
+In-Reply-To: <20220906074550.4383-1-johan+linaro@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220913_073729_823571_9B2A42B6 
-X-CRM114-Status: UNSURE (   6.62  )
+X-CRM114-CacheID: sfid-20220913_075403_779477_CB7434C6 
+X-CRM114-Status: UNSURE (   9.68  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -104,12 +77,23 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sat, Sep 10, 2022 at 12:01:28AM +0200, Johan Jonker wrote:
-> Add rockchip,rk3128-uart compatible string.
+On 06-09-22, 09:45, Johan Hovold wrote:
+> The QMP PHY driver function prefixes have become unnecessarily long
+> (e.g. after the recent driver split) and hurt readability.
 > 
-> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+> This series shortens the "qcom_qmp_phy_pcie" prefix to "qmp_pcie" (QMP
+> likely stands for "Qualcomm Multi PHY" or similar anyway) and clean up
+> the code somewhat.
 
-Acked-by: Jamie Iles <jamie@jamieiles.com>
+Applied, thanks
+
+> 
+> Once merged I can do the same conversion of the other four QMP drivers.
+
+Patches welcome!
+
+-- 
+~Vinod
 
 -- 
 linux-phy mailing list
