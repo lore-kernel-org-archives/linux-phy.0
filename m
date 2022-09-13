@@ -4,65 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C99BBECAAD8
-	for <linux-phy@archiver.kernel.org>; Tue, 13 Sep 2022 16:46:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 26A31C54EE9
+	for <linux-phy@archiver.kernel.org>; Tue, 13 Sep 2022 16:48:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
-	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=ISfEfQiD+zESAvtNCyus5bFhH8BK798Pqg3rceSXFQo=; b=geiZX1DAsFkigW
-	Kf/Iumkbx6BnWOnh/B4sgOlhU3JTkQhmvoLLPApp6fRbVJzOoYe3bvr+MparyqM8pqBwofHHM+hoE
-	ltMW/vVMSGboDgpnvIDD8jeMDX3+0l4+nFMoNf1QmReL99zcSM3PJ3shysSDVh87KkIFQ6g1FEARm
-	szyvkqmurkAEijwZbzqG/DevtM2tLnSu7Mn69TK/Fnt1dZ4c5Uixld1ST7xT/2AkQkt/LOgCiINBG
-	Q5pvDF5gacWGcLeJGBuHS97qVtx39q/SNPffQipzv4K4siONupUYlNSLj7WBPZ63Vy8OCyRJCkznW
-	75p3A+vbNxC/J57DgmmA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6ANxQvh0wnFQu4okxaCJ/jDu+9oZInAOhGnEI+wQmmw=; b=00v1N+X3jBBkEy
+	kakiro2crXQTT1TRVLHFQCggaVzoih7ohWINZsq/UqD8LHbJDeNJEvnI6UFZVBDDdv88FOLlkWqX/
+	b36Hk3wU3yDQyL8zTzqtG4xsetC18iN87zp4Jx5gUHdHXEEXhY+JWXQ3UQzp7JBLMI47e3BEOFtQd
+	wn6jIUznAO6mNKjxVrOnadz9OT0Kwd8Yu3+EJvr4ObqmAPHSYU8yPV91ez/TXda8vsoXcUcPr0LCq
+	V1f/iJc2n+9E12pk7y8zJTlZVQoFOusuDY3Svwy8D2w/3zGy1Rg5L/hLAPPIXnST9FyzeodAq/4gI
+	G1gz0x2R0rqS+GysCzEg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oY93U-00DXce-0n; Tue, 13 Sep 2022 16:46:36 +0000
+	id 1oY95f-00DYnl-BM; Tue, 13 Sep 2022 16:48:51 +0000
 Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oY8yN-00DU81-Ag
-	for linux-phy@lists.infradead.org; Tue, 13 Sep 2022 16:41:20 +0000
+	id 1oY8zU-00DUld-7I; Tue, 13 Sep 2022 16:42:29 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 18176614F9;
-	Tue, 13 Sep 2022 16:41:18 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 51134C433C1;
-	Tue, 13 Sep 2022 16:41:17 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 99A6F6151C;
+	Tue, 13 Sep 2022 16:42:27 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2AC96C433C1;
+	Tue, 13 Sep 2022 16:42:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1663087277;
-	bh=zbv4EwTaP7rUkUEvFc0RdqraUvYNfEaRoM8zAcgBhuk=;
-	h=Date:From:To:Cc:Subject:In-Reply-To:From;
-	b=pRweID/xbMDKa46YcOEacdA2JxVlxKekXd0bNpQGONzRzVTSM/ooW4cMQNrdO0AlV
-	 G4FPiNAc9Uab/ewSkNMRbzO0kMfN4ly/+AzHlzSEZ3extX8VHzzsSBNtiCo78yWin/
-	 32VcE3QYY22/a2s7VwqmgkK3Sun8cg8wg/tpZUYQqu/NYW8meeeu6ylxIi8zur3vjN
-	 Z8d5mu/VaZputxRt9QOnh8024aU7m2o0eevjYtdIKouhmHzOFwregHfmliUq15UtIE
-	 5AXH6at/lGGxfSVLt3POxlUuWM5mdD4X9SFK1Hh8yXPMFKHCauimcnNvi4fjwlICQy
-	 VyyCFAfSamlCA==
-Date: Tue, 13 Sep 2022 11:41:15 -0500
-From: Bjorn Helgaas <helgaas@kernel.org>
-To: Vinod Koul <vkoul@kernel.org>
-Cc: Krishna chaitanya chundru <quic_krichai@quicinc.com>,
-	linux-pci@vger.kernel.org, linux-arm-msm@vger.kernel.org,
-	linux-kernel@vger.kernel.org, mka@chromium.org,
-	quic_vbadigan@quicinc.com, quic_hemantk@quicinc.com,
-	quic_nitegupt@quicinc.com, quic_skananth@quicinc.com,
-	quic_ramkri@quicinc.com, manivannan.sadhasivam@linaro.org,
-	swboyd@chromium.org, dmitry.baryshkov@linaro.org,
-	Kishon Vijay Abraham I <kishon@ti.com>,
-	"open list:GENERIC PHY FRAMEWORK" <linux-phy@lists.infradead.org>
-Subject: Re: [PATCH v6 3/5] phy: core: Add support for phy power down & power
- up
-Message-ID: <20220913164115.GA603018@bhelgaas>
+	s=k20201202; t=1663087347;
+	bh=3Q42QFQ/ngGZQQeyp7QhP6eTWM1+zQJpWZ4yQpNfCck=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=CxcOkubrZXQn2EQ474gG4UJo8mQX4nMBEhGTo20JqjXQk8APbj4ESssFffXLIIrHe
+	 EkQekGPKV6oi28uzSCB2vMMBMNbL4MG/Y5Jqo/Ck6PRg6Gf6/9R/4ETjb53/y1bDmI
+	 ER8i6KF9wD8A2E87VuxXZrTmY3TJJvX2uADpxHUwm4/hxI6WH3ha1O7+/zCtIQmadL
+	 tSaG76vGXeo3tTYJOqbp4CDh6cL8oz16K6lPvZscMq0aHIQ5cAbdBIkL0kaQ1BFzBj
+	 ZnFYabEV5yARdpuFbCj0JK78O4TM5SxigD6MRnGzfigOv/gp8fXAhW6xuuCQGo/mmn
+	 t/XgkL+PxS2DQ==
+Date: Tue, 13 Sep 2022 22:12:23 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Johan Jonker <jbx6244@gmail.com>
+Cc: kever.yang@rock-chips.com, sjg@chromium.org, philipp.tomsich@vrull.eu,
+	robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
+	heiko@sntech.de, ulf.hansson@linaro.org, miquel.raynal@bootlin.com,
+	richard@nod.at, vigneshr@ti.com, kishon@ti.com,
+	thierry.reding@gmail.com, u.kleine-koenig@pengutronix.de,
+	gregkh@linuxfoundation.org, broonie@kernel.org,
+	wim@linux-watchdog.org, linux@roeck-us.net,
+	zhangqing@rock-chips.com, jamie@jamieiles.com,
+	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
+	linux-i2c@vger.kernel.org, linux-mmc@vger.kernel.org,
+	linux-mtd@lists.infradead.org, linux-phy@lists.infradead.org,
+	linux-pwm@vger.kernel.org, linux-serial@vger.kernel.org,
+	linux-spi@vger.kernel.org, linux-usb@vger.kernel.org,
+	linux-watchdog@vger.kernel.org
+Subject: Re: [PATCH v1 09/11] dt-bindings: phy: phy-rockchip-inno-usb2: add
+ rockchip,rk3128-usb2phy
+Message-ID: <YyCy7838UGnV2qcR@matsya>
+References: <20220909212543.17428-1-jbx6244@gmail.com>
+ <d477a077-a68f-e752-5192-807db80a9e68@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <YyCahxV+315zoSQG@matsya>
+In-Reply-To: <d477a077-a68f-e752-5192-807db80a9e68@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220913_094119_457967_72E865B9 
-X-CRM114-Status: GOOD (  10.22  )
+X-CRM114-CacheID: sfid-20220913_094228_365061_D13A84B3 
+X-CRM114-Status: UNSURE (   5.90  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,30 +87,13 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Sep 13, 2022 at 08:28:15PM +0530, Vinod Koul wrote:
-> On 09-09-22, 14:14, Krishna chaitanya chundru wrote:
-> > Introducing phy power down/up callbacks for allowing to park the
-> > link-state in L1ss without holding any PCIe resources during
-> > system suspend.
-> 
-> where is the rest of the series, pls cc relevant folks on cover at
-> least!
+On 10-09-22, 00:01, Johan Jonker wrote:
+> Add rockchip,rk3128-usb2phy compatible string.
 
-Would be best to cc relevant folks, but in the meantime, it's easy to
-find via lore, e.g., 3/5 has:
+Applied, thanks
 
-  Message-Id: <1662713084-8106-4-git-send-email-quic_krichai@quicinc.com>
-
-so the lore URL is:
-
-  https://lore.kernel.org/r/1662713084-8106-4-git-send-email-quic_krichai@quicinc.com
-
-and the thread overview is at the bottom.
-
-I use this incredibly handy mutt hook that adds lore URLs to emails
-directly when viewing them: https://github.com/danrue/lorifier
-
-Bjorn
+-- 
+~Vinod
 
 -- 
 linux-phy mailing list
