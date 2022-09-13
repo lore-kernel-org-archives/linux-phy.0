@@ -4,64 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C5A2FC6FA8E
-	for <linux-phy@archiver.kernel.org>; Tue, 13 Sep 2022 15:00:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9149CC6FA82
+	for <linux-phy@archiver.kernel.org>; Tue, 13 Sep 2022 15:00:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=c4LbsojfajWnh2JJ69Fzerzgw6zBh2uFn/EWAkmEgWE=; b=0t5syYRUeB0p8Y
-	e6eVdpOYoanc2PfdJMYk/hrL/im1Ti09QPxSU3iIu/hoN1/rJkpo41o9ZQLu/gH5NVPEyR5vOi8i5
-	ZOS2hUo4sqrnyEto0ovnFTsXcmiibJwC/aRc1mri/5T7O9/U2erJ/xPDnEyDroMXKdrpzuXtw4zOj
-	8LmzqotlgGKiYd81Gw7TmrbdOZd0U/6nmhWIb59mt/viMynZ4GSXEwJkSXsHvCF66vFd+L6hw1kW2
-	h/Qbrk+7aaDLTwH9UyFNKrmB3kAaY0k0mLyAujQMP8SXiQGVb4b7AQf7wSIg0Cm20N5lUstF1J7gK
-	j4dRCPTlhxrxWzN6YcAg==;
+	List-Owner; bh=pClfjwRdCVWVWPapykdTpY6z7PklpASaKgQtLVOsz6M=; b=2bZ7OfpwYpUkaL
+	Co12JFOYEgcSTgwNq08lV6Lqba34t/0rQbt27GkkZGx2YHVTVwKr323QvUoVGll8wjfhZSXdINr5N
+	10oCDQSoNAhpOf04fOfO+kGC4ONTTybNrAD1QJG0yBiid1WrYPisd5NYT7s2Zm/7UqFiqRFheCvJ9
+	C5irF7YuAVIF6cYBJ4ESkGKqjmkqcMajWnQuw9SibrkF5a+dfWthb49GqnP+DaIcgrZ3t8WL7QBH5
+	Kkp3afiHE33R37X8I+0H+QYZOVvCSVnM+Sp/bNMxfPce63SOvb8JwwePUioEsD5zwR2ROlvIWhHZU
+	fM4+d+4Mqbu0keckSj1Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oY7OP-00C4hR-Tt; Tue, 13 Sep 2022 15:00:05 +0000
-Received: from ams.source.kernel.org ([145.40.68.75])
+	id 1oY7PE-00C5N7-Bz; Tue, 13 Sep 2022 15:00:56 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oY700-00Bgz3-IQ
-	for linux-phy@lists.infradead.org; Tue, 13 Sep 2022 14:34:58 +0000
+	id 1oY70m-00BhXM-HS
+	for linux-phy@lists.infradead.org; Tue, 13 Sep 2022 14:35:41 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id BFBB4B80FE7;
-	Tue, 13 Sep 2022 14:34:50 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id EDD1AC433D7;
-	Tue, 13 Sep 2022 14:34:48 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 12EAD614AA;
+	Tue, 13 Sep 2022 14:35:40 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id DB0E4C433C1;
+	Tue, 13 Sep 2022 14:35:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1663079689;
-	bh=2d3LptxMXzkoXlaSrt8wY8ciXTV2Oe42v3GLdwXwVcE=;
+	s=k20201202; t=1663079739;
+	bh=gHtSpBRJsCnESx+CayMi4+wi3MLvP1nBbt0jgudGcb0=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=ZaqTmJaZMYrzJfEi29ZmYp5VDETIcvvBqZ9RjH1YLAAOQMHf5ZKGZRTZTu686eKcM
-	 cZtYuRBnpXSH+GdBt5+1WA/QNOiM3M9VWjZRnF2RZXZJPJonS4qWVKqgMdTXxsV/kO
-	 1TVKdRWUFT7DaGBSnZpFHPyBxYrdt0S+qp7WOlHCT6s23QyC8AEoJCzVeT7PSyijbs
-	 xlraAbJRvJEO7ztier6w12vRxQf+Pv92Hw8SoMDdwe+ZR2PhWundTwwR/9nKKaZISe
-	 US7cj5Jzsekz008xBpbHPgzlZQ0qn/3KUxFrBnLEVYHatT2h0ETJDBwq5suG2rs/1e
-	 +pNvPFYj7dsWg==
-Date: Tue, 13 Sep 2022 20:04:45 +0530
+	b=KT7JJaXONwENE/J0cMDX8w8EzH5DVOKvDagK9zNtJy7siD6i42v0Utw/L9SaMiO+B
+	 qyRcrmL4U+5O//MWQ3mqRYGDEht5qCz/jrDrn0NvYrx66WMiSgOmTvFu9SnSBWjb3u
+	 7N9KQ/K8NjktevfXodVY9aTsf43LwiGnuHNGVxjtlxIS3yxgT8jJ1HaMpC1o9UY4lK
+	 Wzn3aTo5zesxswtXiZpndF59fjAfmiDPS22q1p63LLgJQAnZyJCB4x39QPbcucTN2O
+	 o8QzMgBgaS1e7OA8Lx3V6dIrBTjOqhcHdT1tWiEyOWaQHWqMFD4YLm1C9ejojTEia5
+	 TYI0l9Uu5qjww==
+Date: Tue, 13 Sep 2022 20:05:35 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: JC Kuo <jckuo@nvidia.com>
-Cc: Jim Lin <jilin@nvidia.com>, thierry.reding@gmail.com,
-	jonathanh@nvidia.com, balbi@kernel.org, gregkh@linuxfoundation.org,
-	bhsieh@nvidia.com, linux-phy@lists.infradead.org,
-	linux-tegra@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-usb@vger.kernel.org
-Subject: Re: [PATCH v2 1/2] phy: tegra: xusb: add utmi pad power on/down ops
-Message-ID: <YyCVBVRQo+qPo5vH@matsya>
-References: <20220816082353.13390-1-jilin@nvidia.com>
- <20220816082353.13390-2-jilin@nvidia.com>
- <YxS6FBeyS1Cs7xhI@matsya>
- <8d33abb0-51ab-67c4-50b3-ae95a5d9fb55@nvidia.com>
+To: Johan Hovold <johan+linaro@kernel.org>
+Cc: Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@somainline.org>,
+	Kishon Vijay Abraham I <kishon@ti.com>,
+	Wesley Cheng <quic_wcheng@quicinc.com>,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 0/2] dt-bindings: phy: qcom,qmp: add missing
+ power-domains properties
+Message-ID: <YyCVN2W/98FKi5ew@matsya>
+References: <20220902080705.12050-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <8d33abb0-51ab-67c4-50b3-ae95a5d9fb55@nvidia.com>
+In-Reply-To: <20220902080705.12050-1-johan+linaro@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220913_073452_880996_60951D76 
-X-CRM114-Status: GOOD (  10.39  )
+X-CRM114-CacheID: sfid-20220913_073540_647860_415AF7C3 
+X-CRM114-Status: UNSURE (   7.61  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,23 +81,11 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 06-09-22, 10:43, JC Kuo wrote:
-> Hi Vinod,
+On 02-09-22, 10:07, Johan Hovold wrote:
+> The new SC8280XP USB PHYs require a power domain to be specified so
+> amend the bindings.
 
-Please _do_ _not_ _top_ _post_
-
-> Before the device or host is being attached, we can keep most of the
-> transceivers powered down (PD=1/PD_DR=1) to minimize power consumption. At this
-> stage, in .phy_power_on(), we enable only the single-ended receiver (PD_ZI=0)
-> for detecting connection. Upon detecting device's or host's connection, host or
-> controller driver will invoke tegra_phy_xusb_utmi_pad_power_on() to power on all
-> of the transceivers (PD=0/PD_DR=0) to equip full link functionality.
-
-Thanks for this explanation... It helps!
-
-Just a suggestion, can this be moved into phy_init() you have detected
-connection in phy_power_on(), the transceiver can be enabled in
-phy_int... Would that work?
+Applied, thanks
 
 -- 
 ~Vinod
