@@ -4,66 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9149CC6FA82
-	for <linux-phy@archiver.kernel.org>; Tue, 13 Sep 2022 15:00:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 29330C6FA8B
+	for <linux-phy@archiver.kernel.org>; Tue, 13 Sep 2022 15:03:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pClfjwRdCVWVWPapykdTpY6z7PklpASaKgQtLVOsz6M=; b=2bZ7OfpwYpUkaL
-	Co12JFOYEgcSTgwNq08lV6Lqba34t/0rQbt27GkkZGx2YHVTVwKr323QvUoVGll8wjfhZSXdINr5N
-	10oCDQSoNAhpOf04fOfO+kGC4ONTTybNrAD1QJG0yBiid1WrYPisd5NYT7s2Zm/7UqFiqRFheCvJ9
-	C5irF7YuAVIF6cYBJ4ESkGKqjmkqcMajWnQuw9SibrkF5a+dfWthb49GqnP+DaIcgrZ3t8WL7QBH5
-	Kkp3afiHE33R37X8I+0H+QYZOVvCSVnM+Sp/bNMxfPce63SOvb8JwwePUioEsD5zwR2ROlvIWhHZU
-	fM4+d+4Mqbu0keckSj1Q==;
+	List-Owner; bh=F+tIT62OUxrAH6sUBjxr+JsQ29YU5ZlCPOK3Qnx5Up8=; b=NmESxbjeab7JX7
+	3sF1lwnyMpKgtjds4472FaBCd6vyW3aB5dPSVDYEayQC9NWKGJMfZQtVNp8jr+7zQbNpquKR6gRIs
+	vNBRQm5dwQaU3VMnUiwVd1j4YM3116nmDrrDMcz/DyWPoT6tSjpXKrOIv8/UQ/qOv57/V9K/gLL+3
+	YDAvNKCZeMui8B3fOtOSGmxCEW+3531cM58WA15nKoNuFdAyFcDkXgf6aXALPArVmu2PsNNML0BkQ
+	QzEN01WvVRr4O56nRU4jq+jmVAVPcY1N4xbmsDFiIHfSV2iUHslWFGfSGnP2oLB3p+X4R/UmxRchd
+	dAhKg09uRSpaR9zIgbmA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oY7PE-00C5N7-Bz; Tue, 13 Sep 2022 15:00:56 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1oY7RX-00C7Wu-58; Tue, 13 Sep 2022 15:03:19 +0000
+Received: from mail-wr1-x42a.google.com ([2a00:1450:4864:20::42a])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oY70m-00BhXM-HS
-	for linux-phy@lists.infradead.org; Tue, 13 Sep 2022 14:35:41 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 12EAD614AA;
-	Tue, 13 Sep 2022 14:35:40 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id DB0E4C433C1;
-	Tue, 13 Sep 2022 14:35:38 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1663079739;
-	bh=gHtSpBRJsCnESx+CayMi4+wi3MLvP1nBbt0jgudGcb0=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=KT7JJaXONwENE/J0cMDX8w8EzH5DVOKvDagK9zNtJy7siD6i42v0Utw/L9SaMiO+B
-	 qyRcrmL4U+5O//MWQ3mqRYGDEht5qCz/jrDrn0NvYrx66WMiSgOmTvFu9SnSBWjb3u
-	 7N9KQ/K8NjktevfXodVY9aTsf43LwiGnuHNGVxjtlxIS3yxgT8jJ1HaMpC1o9UY4lK
-	 Wzn3aTo5zesxswtXiZpndF59fjAfmiDPS22q1p63LLgJQAnZyJCB4x39QPbcucTN2O
-	 o8QzMgBgaS1e7OA8Lx3V6dIrBTjOqhcHdT1tWiEyOWaQHWqMFD4YLm1C9ejojTEia5
-	 TYI0l9Uu5qjww==
-Date: Tue, 13 Sep 2022 20:05:35 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Johan Hovold <johan+linaro@kernel.org>
-Cc: Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@somainline.org>,
-	Kishon Vijay Abraham I <kishon@ti.com>,
-	Wesley Cheng <quic_wcheng@quicinc.com>,
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 0/2] dt-bindings: phy: qcom,qmp: add missing
- power-domains properties
-Message-ID: <YyCVN2W/98FKi5ew@matsya>
-References: <20220902080705.12050-1-johan+linaro@kernel.org>
+	id 1oY72X-00Biy5-N4
+	for linux-phy@lists.infradead.org; Tue, 13 Sep 2022 14:37:32 +0000
+Received: by mail-wr1-x42a.google.com with SMTP id bo13so4614788wrb.1
+        for <linux-phy@lists.infradead.org>; Tue, 13 Sep 2022 07:37:27 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=jamieiles.com; s=google;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date;
+        bh=PSryuLt8d2S5NOnFQYaRkPd+ewmY9YOJjJlVlykIIBw=;
+        b=PL6KQK4WAvTjNL4+2racF+mN5DenWrVgvTfKHYOm+TdmcOdBXajJDYGu389LYMga76
+         oUHxjWLeSy9pbqbs2NWCLbFwPpAHiVTXhrc7QPnxKyrDCjUyqL35opweViGReRMLNghi
+         Bw+KX6HO1tj+6pGtABPL2WSs7vcJaJ5qWQbQU2xeGWHyAh7PIxvR+zlDuuZzT8W3+srE
+         hdboMRmbejnhTl8Nl6xaQsK3sWD2coMQIkTLhV6pGOgxuzJOoJ1v7luzQZSpvE6cT8DT
+         gXMklK1wStxJaSEE95t3niygm91XlGX6v5/n0WFrglI0LZZnC3voDzTUaFlGqjPIVS8e
+         twBA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date;
+        bh=PSryuLt8d2S5NOnFQYaRkPd+ewmY9YOJjJlVlykIIBw=;
+        b=l6A0wHOKY4dOARBYEBmUWRurT+/FLHcKiKnp+/5MbOIl21kXhYd3sPZPfKAkv6TO1X
+         3IKSsqnyG6bHgWE/+Y5owvkRXfxo7o/GLqcLnnBehCIcKOxv+gI3CrMbm+M+1nF/sfyT
+         t83Yt4gjN5VG3gc8XSP/QLSZ2EEUOockWDi6qoTSAMzssW5YYDF0fY7BmayxYdkDi1B9
+         LKGvv5cApyoviSjijTj0DERZAyOv60p65l3GCKmDSaiwhJUoW1ugXQmaZq0jhCWWKWWJ
+         6zm6hgqmLgutuEhbzPRmtl2NbAhxyjoZboOCRVUZrSlTGqmGErRRIXNs4s/bzL/miczj
+         hIlQ==
+X-Gm-Message-State: ACgBeo3F/os0uE5nmMY9GUfYdyrE2Ep3059GYW3gn/WUXywvXzYssN+I
+	aK6jEqbjLE8jxAcndYNZm2LTlg==
+X-Google-Smtp-Source: AA6agR4xan9LcIemBd+CCIzPWBfolAoJH5FobI9T3VFcNGbSV5nwx/8YASJdkNc6pzosk4RDb4XfCw==
+X-Received: by 2002:adf:e10c:0:b0:225:3168:c261 with SMTP id t12-20020adfe10c000000b002253168c261mr18279435wrz.159.1663079845811;
+        Tue, 13 Sep 2022 07:37:25 -0700 (PDT)
+Received: from localhost ([5.181.106.148])
+        by smtp.gmail.com with ESMTPSA id e11-20020adffd0b000000b00228da845d4dsm10633337wrr.94.2022.09.13.07.37.24
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 13 Sep 2022 07:37:24 -0700 (PDT)
+Date: Tue, 13 Sep 2022 15:37:23 +0100
+From: Jamie Iles <jamie@jamieiles.com>
+To: Johan Jonker <jbx6244@gmail.com>
+Cc: kever.yang@rock-chips.com, sjg@chromium.org, philipp.tomsich@vrull.eu,
+	robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
+	heiko@sntech.de, ulf.hansson@linaro.org, miquel.raynal@bootlin.com,
+	richard@nod.at, vigneshr@ti.com, kishon@ti.com, vkoul@kernel.org,
+	thierry.reding@gmail.com, u.kleine-koenig@pengutronix.de,
+	gregkh@linuxfoundation.org, broonie@kernel.org,
+	wim@linux-watchdog.org, linux@roeck-us.net,
+	zhangqing@rock-chips.com, jamie@jamieiles.com,
+	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
+	linux-i2c@vger.kernel.org, linux-mmc@vger.kernel.org,
+	linux-mtd@lists.infradead.org, linux-phy@lists.infradead.org,
+	linux-pwm@vger.kernel.org, linux-serial@vger.kernel.org,
+	linux-spi@vger.kernel.org, linux-usb@vger.kernel.org,
+	linux-watchdog@vger.kernel.org
+Subject: Re: [PATCH v1 01/11] dt-bindings: serial: rockchip: add
+ rockchip,rk3128-uart
+Message-ID: <YyCVo/kHpWTbGpvx@elm>
+References: <20220909212543.17428-1-jbx6244@gmail.com>
+ <4f283231-2ed4-202b-0c23-157bce0841ee@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20220902080705.12050-1-johan+linaro@kernel.org>
+In-Reply-To: <4f283231-2ed4-202b-0c23-157bce0841ee@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220913_073540_647860_415AF7C3 
-X-CRM114-Status: UNSURE (   7.61  )
+X-CRM114-CacheID: sfid-20220913_073729_823571_9B2A42B6 
+X-CRM114-Status: UNSURE (   6.62  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -81,14 +104,12 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 02-09-22, 10:07, Johan Hovold wrote:
-> The new SC8280XP USB PHYs require a power domain to be specified so
-> amend the bindings.
+On Sat, Sep 10, 2022 at 12:01:28AM +0200, Johan Jonker wrote:
+> Add rockchip,rk3128-uart compatible string.
+> 
+> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 
-Applied, thanks
-
--- 
-~Vinod
+Acked-by: Jamie Iles <jamie@jamieiles.com>
 
 -- 
 linux-phy mailing list
