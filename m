@@ -4,65 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 129F1ECAAD3
-	for <linux-phy@archiver.kernel.org>; Wed, 14 Sep 2022 16:15:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5F10CECAAD3
+	for <linux-phy@archiver.kernel.org>; Wed, 14 Sep 2022 16:26:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AQuEctIll0ZEKOiVDNq1IYYxqe+OK7K/MZgWr7jUiIE=; b=mqmBlbOnPTK00Y
-	ksZ3LOWITBoXpG4ZPYexlSLW4sZnVbv98NScp4vAiPvHVT2gVaG3ASZWGd25SkjYunRBMmylsjczp
-	usAl/OnTATmv4l/2j7tD1t596M+OKZTyQ5tW27mO/f+6HNIkPGQBAFsA0qDmnRZPl6s2pvE2YYJjU
-	whFX/gBDMesiiN45HbTOOzRoi9jAwMMWwmmXOpIv37Uqy15bgFMfbjr4y5XoQb1bXguxo17e7/DJs
-	Ul2kjC5npys5bReEf/SoVhxs0gxlM8CqmUST2Wk+jP0FaL7ng3TCG1tjmVwKrRyVY4xAqLHrV0jVF
-	6Al6IiV/qyvbrAwSunOQ==;
+	List-Owner; bh=7cWTUW6xBKo33nR1l/rzNOJhLFlEK90ma1FgHTpIscI=; b=aWHggXMhjdVcYd
+	46piUZfmBleCKkTGhHWzrBzLvlmV4VTb1EB1K2yGzpbXCrqKL2BuuoHApnMWyy/Y8kigXLFj9Swpb
+	B8jhBX8uo9kjl7bGBCytmB0jdvYd+rDZMQKd94iImAgrRyo9aJOxcc0MG7pvYbXCILqysD7BJ3svF
+	aDDJxMoCKG5IXLTmBf8r8Q+CEQrcdqkumelR93TM5n+P8rtYXpAe8DRq37xw9tFDCbUY2b70wo+uL
+	ZPeu0ZSLZ1pIZZV0qcUD0TLmnrX0Yo6a5mCsZGd8UfV4ilS4z0cVqfxtPcOCahjQqxZHWzDpHgbi1
+	Z+rduaER5clC8bx13/ig==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oYV3N-004px6-AT; Wed, 14 Sep 2022 16:15:57 +0000
-Received: from mail-oa1-f48.google.com ([209.85.160.48])
+	id 1oYVDp-0054ZA-CO; Wed, 14 Sep 2022 16:26:45 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oYV2x-004pX1-SI; Wed, 14 Sep 2022 16:15:33 +0000
-Received: by mail-oa1-f48.google.com with SMTP id 586e51a60fabf-127f5411b9cso42322248fac.4;
-        Wed, 14 Sep 2022 09:15:29 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date;
-        bh=6ZS3O41WakCAg7A83Ssmx3qQNeeXktonoJ6955W0xIg=;
-        b=3DeKBWgWhXF0sjFY9o2bNRgRws6ZyIurpP0Duo8jHywPip5SIPxXWCrpXX93q5XflE
-         DBW51Y75cfed2AFnbjBZ7FkT3+SQQs1hv/L6VrRUCwM0Tx6qUBXhUkc0eVIPQG7b+suv
-         tAfyDrYZEo/U7ea9uAwsO6/Sy1fsK3NpwTbjyZRFTzNd4PHuLj8nZuhG/+3pCSQ9TQtG
-         MTAtWsHlPHxC/ouhBSQE1e5wnHB71dCkulenNAxM/psm9ks+nyXqk3uPIcCN33Bv5zb5
-         6neNkdIfljbEPaVRwizrTta6Ed6X/A7OSfF7PNORuDDmsqVxi/+WC7vhAsSG3R1Rm3Jr
-         dV0Q==
-X-Gm-Message-State: ACgBeo0nJDuvn2+IvoGQyh3OO6qHlPEg7cgZnZIW/1o1Yzff04ZWHTyD
-	gR4Vyr7Jse6FcZ8PhoKMlg==
-X-Google-Smtp-Source: AA6agR7eE4RGdOkzrwE3tE0oSwAJSDx7z/Kjsb8i8BiUwnqTltFKiXCpj47h0kL8M/lJlOw9Az9wSA==
-X-Received: by 2002:a05:6808:d50:b0:344:f3b4:2a3d with SMTP id w16-20020a0568080d5000b00344f3b42a3dmr2369699oik.76.1663172128320;
-        Wed, 14 Sep 2022 09:15:28 -0700 (PDT)
-Received: from robh.at.kernel.org (66-90-144-107.dyn.grandenetworks.net. [66.90.144.107])
-        by smtp.gmail.com with ESMTPSA id n9-20020a056870970900b00127a91041a9sm8804959oaq.38.2022.09.14.09.15.27
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 14 Sep 2022 09:15:28 -0700 (PDT)
-Received: (nullmailer pid 2432288 invoked by uid 1000);
-	Wed, 14 Sep 2022 16:15:27 -0000
-Date: Wed, 14 Sep 2022 11:15:27 -0500
-From: Rob Herring <robh@kernel.org>
-To: Siddharth Vadapalli <s-vadapalli@ti.com>
-Cc: lee.jones@linaro.org, krzysztof.kozlowski@linaro.org, krzysztof.kozlowski+dt@linaro.org, kishon@ti.com, vkoul@kernel.org, dan.carpenter@oracle.com, grygorii.strashko@ti.com, rogerq@kernel.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, sjakhade@cadence.com
-Subject: Re: [PATCH 1/6] dt-bindings: phy: ti: phy-gmii-sel: Add bindings for
- J721e
-Message-ID: <20220914161527.GA2269201-robh@kernel.org>
-References: <20220914093911.187764-1-s-vadapalli@ti.com>
- <20220914093911.187764-2-s-vadapalli@ti.com>
+	id 1oYVDk-0054St-OK
+	for linux-phy@lists.infradead.org; Wed, 14 Sep 2022 16:26:42 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id C4FBF619D0;
+	Wed, 14 Sep 2022 16:26:38 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 27086C433B5;
+	Wed, 14 Sep 2022 16:26:38 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1663172798;
+	bh=zQhu727GEw7VP8DXjQJ7IHMfWXIoD2D5Lvjr3Ra5m70=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=FlqogLJMiKH6gHVSNtLG9/H54hHUmc6DlGHQGeNfrCz43i0W4hlmtA6ZSDSNF2Tfg
+	 xo1E9iGzs8oBzgGJknhGoS7BraViS/Ur9BG0GJBx7XUlw/N6XvmTDzAn9bZmqq37o5
+	 Fm9YvQo8472FWH2W5iL1F4oVuhdsOCt8NIBUo7jvpe99DrnhAjJO1jfaqhtaw7cWYB
+	 4HSnEG60AqaqnIlnCCdLz0wXQaM2fAS9acDkVIl2G4DJjMfXQIzl0bZkD1dV8SFkew
+	 qlOj/k4pH2Ph5gsaJPVT0khCs3+L6ZeGotiubNVXfRs+Uzu5+DGUYFuHbppmRc8inZ
+	 7YgTVDuSIxxsA==
+Received: from johan by xi.lan with local (Exim 4.94.2)
+	(envelope-from <johan+linaro@kernel.org>)
+	id 1oYVDj-0001ej-Ts; Wed, 14 Sep 2022 18:26:39 +0200
+From: Johan Hovold <johan+linaro@kernel.org>
+To: Vinod Koul <vkoul@kernel.org>
+Cc: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+	Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@somainline.org>,
+	Kishon Vijay Abraham I <kishon@ti.com>,
+	linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	Johan Hovold <johan+linaro@kernel.org>
+Subject: [PATCH 06/11] phy: qcom-qmp-usb: fix memleak on probe deferral
+Date: Wed, 14 Sep 2022 18:25:40 +0200
+Message-Id: <20220914162545.6289-7-johan+linaro@kernel.org>
+X-Mailer: git-send-email 2.35.1
+In-Reply-To: <20220914162545.6289-1-johan+linaro@kernel.org>
+References: <20220914162545.6289-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20220914093911.187764-2-s-vadapalli@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220914_091531_948575_8C5E6E22 
-X-CRM114-Status: GOOD (  20.33  )
+X-CRM114-CacheID: sfid-20220914_092640_950752_967112DC 
+X-CRM114-Status: GOOD (  12.70  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,58 +82,86 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Sep 14, 2022 at 03:09:06PM +0530, Siddharth Vadapalli wrote:
-> TI's J721e SoC supports additional PHY modes like QSGMII and SGMII
-> that are not supported on earlier SoCs. Add a compatible for it.
-> 
-> Extend ti,qsgmii-main-ports property to support selection of upto
-> two main ports at once across the two QSGMII interfaces.
-> 
-> Signed-off-by: Siddharth Vadapalli <s-vadapalli@ti.com>
-> ---
->  .../bindings/phy/ti,phy-gmii-sel.yaml         | 52 ++++++++++++++++---
->  1 file changed, 46 insertions(+), 6 deletions(-)
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/ti,phy-gmii-sel.yaml b/Documentation/devicetree/bindings/phy/ti,phy-gmii-sel.yaml
-> index da7cac537e15..1e19efab018b 100644
-> --- a/Documentation/devicetree/bindings/phy/ti,phy-gmii-sel.yaml
-> +++ b/Documentation/devicetree/bindings/phy/ti,phy-gmii-sel.yaml
-> @@ -54,6 +54,7 @@ properties:
->        - ti,dm814-phy-gmii-sel
->        - ti,am654-phy-gmii-sel
->        - ti,j7200-cpsw5g-phy-gmii-sel
-> +      - ti,j721e-cpsw9g-phy-gmii-sel
->  
->    reg:
->      maxItems: 1
-> @@ -65,12 +66,19 @@ properties:
->      description: |
->        Required only for QSGMII mode. Array to select the port for
->        QSGMII main mode. Rest of the ports are selected as QSGMII_SUB
-> -      ports automatically. Any one of the 4 CPSW5G ports can act as the
-> -      main port with the rest of them being the QSGMII_SUB ports.
-> -    maxItems: 1
-> -    items:
-> -      minimum: 1
-> -      maximum: 4
-> +      ports automatically. For J7200 CPSW5G with the compatible:
-> +      ti,j7200-cpsw5g-phy-gmii-sel, ti,qsgmii-main-ports is an
-> +      array of only one element, which is the port number ranging from
-> +      1 to 4. For J721e CPSW9G with the compatible:
-> +      ti,j721e-cpsw9g-phy-gmii-sel, ti,qsgmii-main-ports is an array
-> +      of two elements, which corresponds to two potential QSGMII main
-> +      ports. The first element and second element of the array can both
-> +      range from 1 to 8 each, corresponding to two QSGMII main ports.
-> +      For J721e CPSW9G, to configure port 2 as the first QSGMII main
-> +      port and port 7 as the second QSGMII main port, we specify:
-> +      ti,qsgmii-main-ports = <2>, <7>;
-> +      If only one QSGMII main port is desired, mention the same main
-> +      port twice.
+Switch to using the device-managed of_iomap helper to avoid leaking
+memory on probe deferral and driver unbind.
 
-Two different forms for the same property name is not great. Just make a 
-new property if you need something different.
+Note that this helper checks for already reserved regions and may fail
+if there are multiple devices claiming the same memory.
 
-Rob
+Fixes: e78f3d15e115 ("phy: qcom-qmp: new qmp phy driver for qcom-chipsets")
+Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
+---
+ drivers/phy/qualcomm/phy-qcom-qmp-usb.c | 32 +++++++++++++------------
+ 1 file changed, 17 insertions(+), 15 deletions(-)
+
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
+index 41635c21e3ca..768ece8e9076 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
+@@ -2627,17 +2627,17 @@ int qmp_usb_create(struct device *dev, struct device_node *np, int id,
+ 	 * For dual lane PHYs: tx2 -> 3, rx2 -> 4, pcs_misc (optional) -> 5
+ 	 * For single lane PHYs: pcs_misc (optional) -> 3.
+ 	 */
+-	qphy->tx = of_iomap(np, 0);
+-	if (!qphy->tx)
+-		return -ENOMEM;
++	qphy->tx = devm_of_iomap(dev, np, 0, NULL);
++	if (IS_ERR(qphy->tx))
++		return PTR_ERR(qphy->tx);
+ 
+-	qphy->rx = of_iomap(np, 1);
+-	if (!qphy->rx)
+-		return -ENOMEM;
++	qphy->rx = devm_of_iomap(dev, np, 1, NULL);
++	if (IS_ERR(qphy->rx))
++		return PTR_ERR(qphy->rx);
+ 
+-	qphy->pcs = of_iomap(np, 2);
+-	if (!qphy->pcs)
+-		return -ENOMEM;
++	qphy->pcs = devm_of_iomap(dev, np, 2, NULL);
++	if (IS_ERR(qphy->pcs))
++		return PTR_ERR(qphy->pcs);
+ 
+ 	if (cfg->pcs_usb_offset)
+ 		qphy->pcs_usb = qphy->pcs + cfg->pcs_usb_offset;
+@@ -2649,9 +2649,9 @@ int qmp_usb_create(struct device *dev, struct device_node *np, int id,
+ 	 * offset from the first lane.
+ 	 */
+ 	if (cfg->is_dual_lane_phy) {
+-		qphy->tx2 = of_iomap(np, 3);
+-		qphy->rx2 = of_iomap(np, 4);
+-		if (!qphy->tx2 || !qphy->rx2) {
++		qphy->tx2 = devm_of_iomap(dev, np, 3, NULL);
++		qphy->rx2 = devm_of_iomap(dev, np, 4, NULL);
++		if (IS_ERR(qphy->tx2) || IS_ERR(qphy->rx2)) {
+ 			dev_warn(dev,
+ 				 "Underspecified device tree, falling back to legacy register regions\n");
+ 
+@@ -2661,15 +2661,17 @@ int qmp_usb_create(struct device *dev, struct device_node *np, int id,
+ 			qphy->rx2 = qphy->rx + QMP_PHY_LEGACY_LANE_STRIDE;
+ 
+ 		} else {
+-			qphy->pcs_misc = of_iomap(np, 5);
++			qphy->pcs_misc = devm_of_iomap(dev, np, 5, NULL);
+ 		}
+ 
+ 	} else {
+-		qphy->pcs_misc = of_iomap(np, 3);
++		qphy->pcs_misc = devm_of_iomap(dev, np, 3, NULL);
+ 	}
+ 
+-	if (!qphy->pcs_misc)
++	if (IS_ERR(qphy->pcs_misc)) {
+ 		dev_vdbg(dev, "PHY pcs_misc-reg not used\n");
++		qphy->pcs_misc = NULL;
++	}
+ 
+ 	qphy->pipe_clk = devm_get_clk_from_child(dev, np, NULL);
+ 	if (IS_ERR(qphy->pipe_clk)) {
+-- 
+2.35.1
+
 
 -- 
 linux-phy mailing list
