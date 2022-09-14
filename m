@@ -4,70 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 384FAECAAD3
-	for <linux-phy@archiver.kernel.org>; Wed, 14 Sep 2022 07:09:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 47D1AECAAD3
+	for <linux-phy@archiver.kernel.org>; Wed, 14 Sep 2022 07:51:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=S4IINBDCRfzxbTOd7wcfqT6RU81gpaFA+Ia8nhXiDA4=; b=p2kKzHnIBFzqp4
-	8daUM7e+ozqj7vUDx4WSJyuPWOr4mIKILcwPovezGyhNuHwI6AIK/cYtyI5M/KLzvN8+ZPa985yby
-	iS0lnR4Oi4KNNylMAFIFZwVvxE5KKqeYo0LMakSHah22D2mE9cFG7vQSOUNJqRwVd1w1e+/t7bzO8
-	n25mRIMvGejIOkQRx+RxcjcZ/MM70+briUEqcNis92RoJHaxYNnURFZFFj6KrQFYKe6nZbBMUa0lR
-	QWFXGhPBNwyTugOl+J6Ko1ulAlsdSMu6vmzpRt+0SytG3a1jt/pMcmYDnOrVGQIvX+B+ANJW8rR4e
-	AT+l38yXLgRzqerQsoSQ==;
+	List-Owner; bh=azWX8flM1hhET4oyUrk7eJ+B9SgyI8qiRh2bjutC5PA=; b=hhJLXV/tseYC5G
+	p/nHYunevt1+la4s9kM87xGFdJhR4INOdU0maMcXswCuRCW+WeboMpx5nqN/7jwPb5jchPkYt5Roc
+	dFGf1UL2TFX2tMWiPD2oUeEfLSQYxvpuCe6uTFTyBMyuy9ftI65DDfwPe/EdqQVptbD19WcXkKcm4
+	MBa/ZKUnHTZj1jJ+wPcktFyPI9+ctDD2gTye8VvFoipBUhK74SXa2jBZ4UstoaFWrzYw3BLUIL6CK
+	TroGRkWDVLhLkyFYOVc9WojqLYuNzAW6KaWkNfDwRIuOw439xaUGY7EQbz68uVdW8a55VDMvRt71u
+	B0GjI9zZiKOGERNgzlVw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oYMW7-009Gbp-Kw; Wed, 14 Sep 2022 07:09:03 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1oYNB3-00Bm9P-Jx; Wed, 14 Sep 2022 07:51:21 +0000
+Received: from madras.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e5ab])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oYMW5-009GYM-D1; Wed, 14 Sep 2022 07:09:02 +0000
-X-UUID: 5bbfbd0e0b894b439ffe1e0330d15ec5-20220914
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
-	h=Content-Type:Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From; bh=6CC1heQJ2agAwz4rIPE+SNjcROSN6ODN9feKQXo2URA=;
-	b=Kao/kMQNr1mot/Z6kWW1iJj/SXz8cHNp80hLragLvU+yC91+A3bxZAYbpkmTasvlAr91+NskYUiBr7CR0obNtABZb6/I4L/k25/OfUrHcmkar5hpeSCA9L9qFNQZ5YFYFHbuI96WnoSqQ1X3KEtYBepgzI/R9d7zVE+Fe5ZbzSo=;
-X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.1.11,REQID:5ce9a92f-81db-425b-85b9-7bc448ecce48,IP:0,U
-	RL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:
-	release,TS:0
-X-CID-META: VersionHash:39a5ff1,CLOUDID:250561ec-2856-4fce-b125-09d4c7ebe045,B
-	ulkID:nil,BulkQuantity:0,Recheck:0,SF:nil,TC:nil,Content:0,EDM:-3,IP:nil,U
-	RL:11|1,File:nil,Bulk:nil,QS:nil,BEC:nil,COL:0
-X-UUID: 5bbfbd0e0b894b439ffe1e0330d15ec5-20220914
-Received: from mtkmbs11n1.mediatek.inc [(172.21.101.185)] by mailgw02.mediatek.com
-	(envelope-from <chunfeng.yun@mediatek.com>)
-	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
-	with ESMTP id 1915621699; Wed, 14 Sep 2022 00:08:56 -0700
-Received: from mtkmbs11n1.mediatek.inc (172.21.101.185) by
- mtkmbs11n2.mediatek.inc (172.21.101.187) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.792.15; Wed, 14 Sep 2022 14:07:51 +0800
-Received: from localhost.localdomain (10.17.3.154) by mtkmbs11n1.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.2.792.15 via Frontend
- Transport; Wed, 14 Sep 2022 14:07:50 +0800
-From: Chunfeng Yun <chunfeng.yun@mediatek.com>
-To: Vinod Koul <vkoul@kernel.org>
-CC: Chunfeng Yun <chunfeng.yun@mediatek.com>, Kishon Vijay Abraham I
-	<kishon@ti.com>, Rob Herring <robh+dt@kernel.org>, Krzysztof Kozlowski
-	<krzysztof.kozlowski+dt@linaro.org>, Matthias Brugger
-	<matthias.bgg@gmail.com>, <linux-arm-kernel@lists.infradead.org>,
-	<linux-mediatek@lists.infradead.org>, <linux-phy@lists.infradead.org>,
-	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>, Eddie Hung
-	<eddie.hung@mediatek.com>, AngeloGioacchino Del Regno
-	<angelogioacchino.delregno@collabora.com>
-Subject: [PATCH v3 4/7] phy: phy-mtk-tphy: disable hardware efuse when set INTR
-Date: Wed, 14 Sep 2022 14:07:43 +0800
-Message-ID: <20220914060746.10004-4-chunfeng.yun@mediatek.com>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20220914060746.10004-1-chunfeng.yun@mediatek.com>
-References: <20220914060746.10004-1-chunfeng.yun@mediatek.com>
+	id 1oYNAh-00Bikw-0Z; Wed, 14 Sep 2022 07:51:00 +0000
+Received: from [192.168.1.100] (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: kholk11)
+	by madras.collabora.co.uk (Postfix) with ESMTPSA id 7A0526601F99;
+	Wed, 14 Sep 2022 08:50:53 +0100 (BST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1663141854;
+	bh=Hym1WPnQu+rJ0jePjiNMfQK8daaeMyb7rYGk5n5O/g0=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=ggQVBOHgbv+NxebDh3BTpsvKZhJcZ7O0tLF0ERDgZTt8gV4LjNmXR8MU2r0Fgsr3e
+	 s9vOhlqStzlzBTxG0/dnXTVyLu/royUM9Rz3v25wsvBULrSPNrflOnvJ2Lv8dZaiUg
+	 PQrnm1ZP/fhNValzboM6nXEanDAKBp93u/kOIkvQ4J56CXsW+uBToQGAZPuQ7lcayP
+	 oVsHLdSkPjS57zfcnAA4vhjh/hggt8WMQPkHrmTQkbWaVO9Rjokx6oXmOY7TwSKu+Q
+	 MV/65EYZlDCMF0OPDM6BSjQM0NqiZcuOAZRVtrHJ8d8OKIC+otG14JD3Ip//gLnKGm
+	 ygKuL+XyjonLg==
+Message-ID: <739426eb-7381-d9e2-62e5-bdaf41d13821@collabora.com>
+Date: Wed, 14 Sep 2022 09:50:50 +0200
 MIME-Version: 1.0
-X-MTK: N
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.2.0
+Subject: Re: [PATCH v3 7/7] phy: phy-mtk-tphy: fix the phy type setting issue
+Content-Language: en-US
+To: Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>
+Cc: Kishon Vijay Abraham I <kishon@ti.com>, Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Eddie Hung <eddie.hung@mediatek.com>
+References: <20220914060746.10004-1-chunfeng.yun@mediatek.com>
+ <20220914060746.10004-7-chunfeng.yun@mediatek.com>
+From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+In-Reply-To: <20220914060746.10004-7-chunfeng.yun@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220914_000901_544788_FDA6D787 
-X-CRM114-Status: GOOD (  11.92  )
+X-CRM114-CacheID: sfid-20220914_005059_315747_6331377A 
+X-CRM114-Status: UNSURE (   8.02  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,46 +74,20 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-INTR's value is able autoload from hardware efuse by default, when
-software tries to update its value, should disable hardware efuse
-firstly.
+Il 14/09/22 08:07, Chunfeng Yun ha scritto:
+> The PHY type is not set if the index is non zero, prepare type
+> value according to the index, like as mask value.
+> 
+> Fixes: 39099a443358 ("phy: phy-mtk-tphy: support type switch by pericfg")
+> Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
 
 Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
----
-v3: add reviewed-by: AngeloGioacchino
-v2: no changes
----
- drivers/phy/mediatek/phy-mtk-tphy.c | 7 ++++++-
- 1 file changed, 6 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/phy/mediatek/phy-mtk-tphy.c b/drivers/phy/mediatek/phy-mtk-tphy.c
-index 986fde0f63a0..7f40b8b052bd 100644
---- a/drivers/phy/mediatek/phy-mtk-tphy.c
-+++ b/drivers/phy/mediatek/phy-mtk-tphy.c
-@@ -874,9 +874,14 @@ static void u2_phy_props_set(struct mtk_tphy *tphy,
- 		mtk_phy_update_bits(com + U3P_USBPHYACR1, PA1_RG_TERM_SEL,
- 				    PA1_RG_TERM_SEL_VAL(instance->eye_term));
- 
--	if (instance->intr)
-+	if (instance->intr) {
-+		if (u2_banks->misc)
-+			mtk_phy_set_bits(u2_banks->misc + U3P_MISC_REG1,
-+					 MR1_EFUSE_AUTO_LOAD_DIS);
-+
- 		mtk_phy_update_bits(com + U3P_USBPHYACR1, PA1_RG_INTR_CAL,
- 				    PA1_RG_INTR_CAL_VAL(instance->intr));
-+	}
- 
- 	if (instance->discth)
- 		mtk_phy_update_bits(com + U3P_USBPHYACR6, PA6_RG_U2_DISCTH,
--- 
-2.18.0
 
 
 -- 
