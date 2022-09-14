@@ -4,56 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EABB0ECAAD3
-	for <linux-phy@archiver.kernel.org>; Wed, 14 Sep 2022 14:34:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7473CECAAD3
+	for <linux-phy@archiver.kernel.org>; Wed, 14 Sep 2022 14:50:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=hA1jixPuene2GqbVRKAwJPrd73s//yHKQEjImuRC/wM=; b=3TgVOy1rt8HidD
-	JzpgbBd6yWq6XNIi2jCuvE3fpKz9MNl7FpXJz5T0tCX7oCe+mqLXP/x+WcZQIlgyg3zaMU6uwHlML
-	xGl51Gxe+w9dx/MQjWzmmrivdp4HaZJo19ztZ8COrXzKOU6Ac7Nbq1jujgfHmBEdcUaO945h62+A0
-	Isdpc8dTrcKbv6UAegaYKSaPwOX7O4jAKqjFmbLPyLEOjVNNmcSDuzmHsx5ig/JFg5IY4C7byN2bF
-	9+3Ibj4yLjQdymeH1Fyl6yV9HjVubQdvbYej3cBvnsACBosAr3UZR2zZBZuhLmLb0zoaBojuQSv1o
-	88vCPB3k/Y3mEhbvW2Hw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=bdOfTKCIbnkj2/SbWCJ2DHLPE3gZwGtUANd7yz/FX2I=; b=pUu4+7uwVA8TQk
+	FFPUYY45dedf9u1F9P2QmvBN3sU38if1siZJx6Z7jpfBjCTdmCIbPWK02fZVimF0dQQkLP/3VuB6P
+	cJFF+bg34RXHekEcGtPCQjJcr4vKM7vjJqavmiue0jKbgKsoJovtKHXehLqbI/LxjJCLXa//9yoDO
+	K259HOEjQxFsGmoq+nyaXP/QsrWGEk2WvXZy3O2plG/yRR6iLF8SnXWmosEbcsTPAt4YQ9uoFlamM
+	XJNUeYK2qZNkzP69Vj1vBfUl1y6jmAdivGPD1OTmnHUAexORfvAM93xE5pxZCP4Kb85ZBWDzj8dsJ
+	04B+XMB6+c8w98LlvO0w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oYTTS-002OAw-Bp; Wed, 14 Sep 2022 14:34:46 +0000
-Received: from andre.telenet-ops.be ([2a02:1800:120:4::f00:15])
+	id 1oYTio-002njx-LT; Wed, 14 Sep 2022 14:50:38 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oYTSW-002MYb-W8
-	for linux-phy@lists.infradead.org; Wed, 14 Sep 2022 14:33:52 +0000
-Received: from ramsan.of.borg ([IPv6:2a02:1810:ac12:ed50:e925:8cbe:2e99:b03b])
-	by andre.telenet-ops.be with bizsmtp
-	id KqZi2800x3vs4GX01qZilT; Wed, 14 Sep 2022 16:33:43 +0200
-Received: from rox.of.borg ([192.168.97.57])
-	by ramsan.of.borg with esmtps  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.93)
-	(envelope-from <geert@linux-m68k.org>)
-	id 1oYTSQ-005B5L-8B; Wed, 14 Sep 2022 16:33:42 +0200
-Received: from geert by rox.of.borg with local (Exim 4.93)
-	(envelope-from <geert@linux-m68k.org>)
-	id 1oYTD1-000z8A-UK; Wed, 14 Sep 2022 16:17:47 +0200
-From: Geert Uytterhoeven <geert+renesas@glider.be>
-To: Kishon Vijay Abraham I <kishon@ti.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
-Cc: linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-renesas-soc@vger.kernel.org,
-	Geert Uytterhoeven <geert+renesas@glider.be>
-Subject: [PATCH v2] dt-bindings: phy: renesas,rcar-gen2-usb-phy: Convert to json-schema
-Date: Wed, 14 Sep 2022 16:17:37 +0200
-Message-Id: <dbdcffd009302734fe2fb895ce04b72fa1ea4355.1663165000.git.geert+renesas@glider.be>
-X-Mailer: git-send-email 2.25.1
+	id 1oYTim-002nfg-2W
+	for linux-phy@lists.infradead.org; Wed, 14 Sep 2022 14:50:37 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.5/8.17.1.5) with ESMTP id 28EEH6KY003237;
+	Wed, 14 Sep 2022 14:50:25 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
+ mime-version : subject : to : cc : references : from : in-reply-to :
+ content-type : content-transfer-encoding; s=qcppdkim1;
+ bh=OTY8GuPkdqdk8EUNrFn83pUuir/JISykGcAd92LluLU=;
+ b=ZgqFrSOyeyafAKKJaxkUO0G0rd1BuwpZHgTjwNsIyQtfT31waUuVjql+Q/fFuUdKrgP8
+ nlTgi7coDbrtKB43GU4JOHlSVRUTecjcjsYhubS7z8qYDAg/JZLTNH6HWL/Ijv/EfJDU
+ RisOl2t0JhVAMDUmiAqF33x6eaR0WFLt1X3ywbIFosueIyVvpei/LoOs0k78Y77ihbZP
+ KAi1YAAtopNDYWSWOY7n2Tiy/xhieBYF3kikdny/FF6IvLsJK76QTocjOwhaRmt+m2v5
+ HE/COrUeoyzxm5MsduQETvOelocutOFztqCjW/TNhLzxsBFlaTvFqTEpnlXVpeIAIGGJ mg== 
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3jjy0gje8s-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 14 Sep 2022 14:50:24 +0000
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 28EEoNc7025556
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 14 Sep 2022 14:50:23 GMT
+Received: from [10.216.1.65] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.986.29; Wed, 14 Sep
+ 2022 07:50:18 -0700
+Message-ID: <87138bc9-2fc0-39fb-89c1-d3826e28594e@quicinc.com>
+Date: Wed, 14 Sep 2022 20:20:14 +0530
 MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) Gecko/20100101
+ Thunderbird/91.9.1
+Subject: Re: [PATCH v6 3/5] phy: core: Add support for phy power down & power
+ up
+Content-Language: en-US
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+CC: <helgaas@kernel.org>, <linux-pci@vger.kernel.org>,
+        <linux-arm-msm@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+        <mka@chromium.org>, <quic_vbadigan@quicinc.com>,
+        <quic_hemantk@quicinc.com>, <quic_nitegupt@quicinc.com>,
+        <quic_skananth@quicinc.com>, <quic_ramkri@quicinc.com>,
+        <manivannan.sadhasivam@linaro.org>, <swboyd@chromium.org>,
+        Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul
+	<vkoul@kernel.org>,
+        "open list:GENERIC PHY FRAMEWORK"
+	<linux-phy@lists.infradead.org>
+References: <1662713084-8106-1-git-send-email-quic_krichai@quicinc.com>
+ <1662713084-8106-4-git-send-email-quic_krichai@quicinc.com>
+ <CAA8EJppgaAuEDU44ePOt+ZWK0_rNsXHnE3WOEc9F-n=VE=3aVQ@mail.gmail.com>
+From: Krishna Chaitanya Chundru <quic_krichai@quicinc.com>
+In-Reply-To: <CAA8EJppgaAuEDU44ePOt+ZWK0_rNsXHnE3WOEc9F-n=VE=3aVQ@mail.gmail.com>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: TU-05IkEFPn5b2aXCDOWOP7oMH83nch1
+X-Proofpoint-GUID: TU-05IkEFPn5b2aXCDOWOP7oMH83nch1
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.205,Aquarius:18.0.895,Hydra:6.0.528,FMLib:17.11.122.1
+ definitions=2022-09-14_06,2022-09-14_04,2022-06-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
+ priorityscore=1501 bulkscore=0 impostorscore=0 mlxlogscore=999 spamscore=0
+ malwarescore=0 suspectscore=0 clxscore=1015 adultscore=0 phishscore=0
+ mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2208220000 definitions=main-2209140071
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220914_073349_242537_3F798D6E 
-X-CRM114-Status: GOOD (  20.69  )
+X-CRM114-CacheID: sfid-20220914_075036_272059_6F51F518 
+X-CRM114-Status: GOOD (  19.90  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -65,289 +102,133 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Convert the Renesas R-Car Gen2 USB PHY Device Tree binding documentation
-to json-schema.
 
-Add missing properties.
-Rename the device node from "usb-phy" to "usb-phy-controller", as it
-does not represent a USB PHY itself, and thus does not have a
-"#phy-cells" property.
-Rename the child nodes from "usb-channel" to "usb-phy", as these do
-represent USB PHYs.
-Drop the second example, as it doesn't add any value.
+On 9/9/2022 2:34 PM, Dmitry Baryshkov wrote:
+> On Fri, 9 Sept 2022 at 11:45, Krishna chaitanya chundru
+> <quic_krichai@quicinc.com> wrote:
+>> Introducing phy power down/up callbacks for allowing to park the
+>> link-state in L1ss without holding any PCIe resources during
+>> system suspend.
+>>
+>> Signed-off-by: Krishna chaitanya chundru <quic_krichai@quicinc.com>
+>> ---
+>>   drivers/phy/phy-core.c  | 30 ++++++++++++++++++++++++++++++
+>>   include/linux/phy/phy.h | 20 ++++++++++++++++++++
+>>   2 files changed, 50 insertions(+)
+>>
+>> diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
+>> index d93ddf1..1b0b757 100644
+>> --- a/drivers/phy/phy-core.c
+>> +++ b/drivers/phy/phy-core.c
+>> @@ -441,6 +441,36 @@ int phy_set_speed(struct phy *phy, int speed)
+>>   }
+>>   EXPORT_SYMBOL_GPL(phy_set_speed);
+>>
+>> +int phy_power_down(struct phy *phy)
+>> +{
+>> +       int ret;
+>> +
+>> +       if (!phy || !phy->ops->power_down)
+>> +               return 0;
+>> +
+>> +       mutex_lock(&phy->mutex);
+>> +       ret = phy->ops->power_down(phy);
+>> +       mutex_unlock(&phy->mutex);
+>> +
+>> +       return ret;
+>> +}
+>> +EXPORT_SYMBOL_GPL(phy_power_down);
+>> +
+>> +int phy_power_up(struct phy *phy)
+>> +{
+>> +       int ret;
+>> +
+>> +       if (!phy || !phy->ops->power_up)
+>> +               return 0;
+>> +
+>> +       mutex_lock(&phy->mutex);
+>> +       ret = phy->ops->power_up(phy);
+>> +       mutex_unlock(&phy->mutex);
+>> +
+>> +       return ret;
+>> +}
+> As it can be seen from the phy_power_off(), the PHY can be a shared
+> resource, with the power_count counting the number of users that
+> requested the PHY to be powered up. By introducing suc calls you break
+> directly into this by allowing a single user to power down the PHY, no
+> matter how many other users have requested the PHY to stay alive.
 
-Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
----
-v2:
-  - Rename nodes to fix "'#phy-cells' is a required property".
+can we use same power_count in this function also here and restrict the 
+single user to
 
-This is the final conversion to json-schema of DT bindings for Renesas
-ARM SoCs, hurray!
+power down the PHY same like phy_power_off?.
 
-Note that there are still a few plain text bindings left for Renesas IP
-cores that are present on non-Renesas SoCs (nbpfaxi and usdhi6rol0).
----
- .../devicetree/bindings/phy/rcar-gen2-phy.txt | 112 ----------------
- .../phy/renesas,rcar-gen2-usb-phy.yaml        | 123 ++++++++++++++++++
- 2 files changed, 123 insertions(+), 112 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/phy/rcar-gen2-phy.txt
- create mode 100644 Documentation/devicetree/bindings/phy/renesas,rcar-gen2-usb-phy.yaml
-
-diff --git a/Documentation/devicetree/bindings/phy/rcar-gen2-phy.txt b/Documentation/devicetree/bindings/phy/rcar-gen2-phy.txt
-deleted file mode 100644
-index a3bd1c4499b75bdb..0000000000000000
---- a/Documentation/devicetree/bindings/phy/rcar-gen2-phy.txt
-+++ /dev/null
-@@ -1,112 +0,0 @@
--* Renesas R-Car generation 2 USB PHY
--
--This file provides information on what the device node for the R-Car generation
--2 USB PHY contains.
--
--Required properties:
--- compatible: "renesas,usb-phy-r8a7742" if the device is a part of R8A7742 SoC.
--	      "renesas,usb-phy-r8a7743" if the device is a part of R8A7743 SoC.
--	      "renesas,usb-phy-r8a7744" if the device is a part of R8A7744 SoC.
--	      "renesas,usb-phy-r8a7745" if the device is a part of R8A7745 SoC.
--	      "renesas,usb-phy-r8a77470" if the device is a part of R8A77470 SoC.
--	      "renesas,usb-phy-r8a7790" if the device is a part of R8A7790 SoC.
--	      "renesas,usb-phy-r8a7791" if the device is a part of R8A7791 SoC.
--	      "renesas,usb-phy-r8a7794" if the device is a part of R8A7794 SoC.
--	      "renesas,rcar-gen2-usb-phy" for a generic R-Car Gen2 or
--					  RZ/G1 compatible device.
--
--	      When compatible with the generic version, nodes must list the
--	      SoC-specific version corresponding to the platform first
--	      followed by the generic version.
--
--- reg: offset and length of the register block.
--- #address-cells: number of address cells for the USB channel subnodes, must
--		  be <1>.
--- #size-cells: number of size cells for the USB channel subnodes, must be <0>.
--- clocks: clock phandle and specifier pair.
--- clock-names: string, clock input name, must be "usbhs".
--
--The USB PHY device tree node should have the subnodes corresponding to the USB
--channels. These subnodes must contain the following properties:
--- reg: the USB controller selector; see the table below for the values.
--- #phy-cells: see phy-bindings.txt in the same directory, must be <1>.
--
--The phandle's argument in the PHY specifier is the USB controller selector for
--the USB channel other than r8a77470 SoC; see the selector meanings below:
--
--+-----------+---------------+---------------+
--|\ Selector |               |               |
--+ --------- +       0       |       1       |
--| Channel  \|               |               |
--+-----------+---------------+---------------+
--| 0         | PCI EHCI/OHCI | HS-USB        |
--| 2         | PCI EHCI/OHCI | xHCI          |
--+-----------+---------------+---------------+
--
--For r8a77470 SoC;see the selector meaning below:
--
--+-----------+---------------+---------------+
--|\ Selector |               |               |
--+ --------- +       0       |       1       |
--| Channel  \|               |               |
--+-----------+---------------+---------------+
--| 0         | EHCI/OHCI     | HS-USB        |
--+-----------+---------------+---------------+
--
--Example (Lager board):
--
--	usb-phy@e6590100 {
--		compatible = "renesas,usb-phy-r8a7790", "renesas,rcar-gen2-usb-phy";
--		reg = <0 0xe6590100 0 0x100>;
--		#address-cells = <1>;
--		#size-cells = <0>;
--		clocks = <&cpg CPG_MOD 704>;
--		clock-names = "usbhs";
--		power-domains = <&sysc R8A7790_PD_ALWAYS_ON>;
--		resets = <&cpg 704>;
--
--		usb0: usb-channel@0 {
--			reg = <0>;
--			#phy-cells = <1>;
--		};
--		usb2: usb-channel@2 {
--			reg = <2>;
--			#phy-cells = <1>;
--		};
--	};
--
--Example (iWave RZ/G1C sbc):
--
--	usbphy0: usb-phy0@e6590100 {
--		compatible = "renesas,usb-phy-r8a77470",
--			     "renesas,rcar-gen2-usb-phy";
--		reg = <0 0xe6590100 0 0x100>;
--		#address-cells = <1>;
--		#size-cells = <0>;
--		clocks = <&cpg CPG_MOD 704>;
--		clock-names = "usbhs";
--		power-domains = <&sysc R8A77470_PD_ALWAYS_ON>;
--		resets = <&cpg 704>;
--
--		usb0: usb-channel@0 {
--			reg = <0>;
--			#phy-cells = <1>;
--		};
--	};
--
--	usbphy1: usb-phy@e6598100 {
--		compatible = "renesas,usb-phy-r8a77470",
--			     "renesas,rcar-gen2-usb-phy";
--		reg = <0 0xe6598100 0 0x100>;
--		#address-cells = <1>;
--		#size-cells = <0>;
--		clocks = <&cpg CPG_MOD 706>;
--		clock-names = "usbhs";
--		power-domains = <&sysc R8A77470_PD_ALWAYS_ON>;
--		resets = <&cpg 706>;
--
--		usb1: usb-channel@0 {
--			reg = <0>;
--			#phy-cells = <1>;
--		};
--	};
-diff --git a/Documentation/devicetree/bindings/phy/renesas,rcar-gen2-usb-phy.yaml b/Documentation/devicetree/bindings/phy/renesas,rcar-gen2-usb-phy.yaml
-new file mode 100644
-index 0000000000000000..afc09f39b02bd2c4
---- /dev/null
-+++ b/Documentation/devicetree/bindings/phy/renesas,rcar-gen2-usb-phy.yaml
-@@ -0,0 +1,123 @@
-+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/phy/renesas,rcar-gen2-usb-phy.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Renesas R-Car Gen2 USB PHY
-+
-+maintainers:
-+  - Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
-+
-+properties:
-+  compatible:
-+    items:
-+      - enum:
-+          - renesas,usb-phy-r8a7742      # RZ/G1H
-+          - renesas,usb-phy-r8a7743      # RZ/G1M
-+          - renesas,usb-phy-r8a7744      # RZ/G1N
-+          - renesas,usb-phy-r8a7745      # RZ/G1E
-+          - renesas,usb-phy-r8a77470     # RZ/G1C
-+          - renesas,usb-phy-r8a7790      # R-Car H2
-+          - renesas,usb-phy-r8a7791      # R-Car M2-W
-+          - renesas,usb-phy-r8a7794      # R-Car E2
-+      - const: renesas,rcar-gen2-usb-phy # R-Car Gen2 or RZ/G1
-+
-+  reg:
-+    maxItems: 1
-+
-+  '#address-cells':
-+    const: 1
-+
-+  '#size-cells':
-+    const: 0
-+
-+  clocks:
-+    maxItems: 1
-+
-+  clock-names:
-+    items:
-+      - const: usbhs
-+
-+  power-domains:
-+    maxItems: 1
-+
-+  resets:
-+    maxItems: 1
-+
-+patternProperties:
-+  "^usb-phy@[02]$":
-+    type: object
-+    description: Subnode corresponding to a USB channel.
-+
-+    properties:
-+      reg:
-+        description: FIXME RZ/G1C supports channel 0 only
-+        enum: [0, 2]
-+
-+      '#phy-cells':
-+        description: |
-+          The phandle's argument in the PHY specifier is the USB controller
-+          selector for the USB channel.
-+          For RZ/G1C:
-+            - 0 for EHCI/OHCI
-+            - 1 for HS-USB
-+          For all other SoCS:
-+            - 0 for PCI EHCI/OHCI
-+            - 1 for HS-USB (channel 0) or xHCI (channel 2)
-+        const: 1
-+
-+    required:
-+      - reg
-+      - '#phy-cells'
-+
-+    additionalProperties: false
-+
-+required:
-+  - compatible
-+  - reg
-+  - '#address-cells'
-+  - '#size-cells'
-+  - clocks
-+  - clock-names
-+  - resets
-+  - power-domains
-+  - usb-phy@0
-+
-+if:
-+  properties:
-+    compatible:
-+      contains:
-+        const: renesas,usb-phy-r8a77470
-+then:
-+  properties:
-+    usb-phy@2: false
-+else:
-+  required:
-+    - usb-phy@2
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    #include <dt-bindings/clock/r8a7790-cpg-mssr.h>
-+    #include <dt-bindings/power/r8a7790-sysc.h>
-+    usb-phy-controller@e6590100 {
-+        compatible = "renesas,usb-phy-r8a7790", "renesas,rcar-gen2-usb-phy";
-+        reg = <0xe6590100 0x100>;
-+        #address-cells = <1>;
-+        #size-cells = <0>;
-+        clocks = <&cpg CPG_MOD 704>;
-+        clock-names = "usbhs";
-+        power-domains = <&sysc R8A7790_PD_ALWAYS_ON>;
-+        resets = <&cpg 704>;
-+
-+        usb0: usb-phy@0 {
-+            reg = <0>;
-+            #phy-cells = <1>;
-+        };
-+        usb2: usb-phy@2 {
-+            reg = <2>;
-+            #phy-cells = <1>;
-+        };
-+    };
--- 
-2.25.1
-
+>> +EXPORT_SYMBOL_GPL(phy_power_up);
+>> +
+>>   int phy_reset(struct phy *phy)
+>>   {
+>>          int ret;
+>> diff --git a/include/linux/phy/phy.h b/include/linux/phy/phy.h
+>> index b141375..3a45f4d 100644
+>> --- a/include/linux/phy/phy.h
+>> +++ b/include/linux/phy/phy.h
+>> @@ -76,6 +76,8 @@ union phy_configure_opts {
+>>    * @set_mode: set the mode of the phy
+>>    * @set_media: set the media type of the phy (optional)
+>>    * @set_speed: set the speed of the phy (optional)
+>> + * @power_down: parking the phy in power down state
+>> + * @power_up: pulling back the phy from power down
+>>    * @reset: resetting the phy
+>>    * @calibrate: calibrate the phy
+>>    * @release: ops to be performed while the consumer relinquishes the PHY
+>> @@ -89,6 +91,8 @@ struct phy_ops {
+>>          int     (*set_mode)(struct phy *phy, enum phy_mode mode, int submode);
+>>          int     (*set_media)(struct phy *phy, enum phy_media media);
+>>          int     (*set_speed)(struct phy *phy, int speed);
+>> +       int     (*power_down)(struct phy *phy);
+>> +       int     (*power_up)(struct phy *phy);
+>>
+>>          /**
+>>           * @configure:
+>> @@ -226,6 +230,8 @@ int phy_init(struct phy *phy);
+>>   int phy_exit(struct phy *phy);
+>>   int phy_power_on(struct phy *phy);
+>>   int phy_power_off(struct phy *phy);
+>> +int phy_power_down(struct phy *phy);
+>> +int phy_power_up(struct phy *phy);
+>>   int phy_set_mode_ext(struct phy *phy, enum phy_mode mode, int submode);
+>>   #define phy_set_mode(phy, mode) \
+>>          phy_set_mode_ext(phy, mode, 0)
+>> @@ -349,6 +355,20 @@ static inline int phy_power_off(struct phy *phy)
+>>          return -ENOSYS;
+>>   }
+>>
+>> +static inline int phy_power_down(struct phy *phy)
+>> +{
+>> +       if (!phy)
+>> +               return 0;
+>> +       return -ENOSYS;
+>> +}
+>> +
+>> +static inline int phy_power_up(struct phy *phy)
+>> +{
+>> +       if (!phy)
+>> +               return 0;
+>> +       return -ENOSYS;
+>> +}
+>> +
+>>   static inline int phy_set_mode_ext(struct phy *phy, enum phy_mode mode,
+>>                                     int submode)
+>>   {
+>> --
+>> 2.7.4
+>>
+>
 
 -- 
 linux-phy mailing list
