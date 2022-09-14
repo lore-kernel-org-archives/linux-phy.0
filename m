@@ -4,51 +4,51 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 69B63ECAAD3
-	for <linux-phy@archiver.kernel.org>; Wed, 14 Sep 2022 09:48:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0E05CECAAD8
+	for <linux-phy@archiver.kernel.org>; Wed, 14 Sep 2022 09:50:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RTPGi6IhzdBgWWF6W57zhtJ1yVU0s7nLJPj4uRRsTjI=; b=YDAeC5rFhr/+Fk
-	Wlm0Qm6fukUBQZcdqWy56X8x6ztUYAQeY3lfJkAy1k6mU7N9aFZMEXofjNB3kKg44e+caEIF2biio
-	8pPdfQB05VtYYau9PHkHf9FxKXcUVgGIpjJGDabErMbvB/BCMGu8kjsA07mcl2lV2GRIO5hpFJbSm
-	UQ0UpFORgdf61ImBhn+b4z84oawoU1BGOVJ9QylgPHHC2JR7STGoCxu1KhtrpDKdKzvIr/L0x0d5f
-	F/2TN44aG73rvyTA9qx/m1XCRCbpRaRN9EA2s9K2fC4v5FPRIRwS10VVAXdqUSLN/if7hOkG/bRRj
-	/og9OAqTaFkC2RTzcUiQ==;
+	List-Owner; bh=efE1BIoUAXFXklvABKB7Mf0Gqxr63y80oLnwz2k0VuA=; b=ccMvkb5fKQQ5VT
+	Xxz3ZqcnyR026lqICV2l5zAXf2joIl93Ks7gMGEHt9SpUJcTbmFlSID3Yw2cMTBgRud6BuBf7Mt0r
+	MznBB4jjbmr1oa5z9+7o2dlyA7dvssO81fsypQqDZx6phTnhRBbAx7P7JS9R0ZQirV/EbDWsNgXBI
+	fzzd5eMw8g8/WnsgwvVa3OIq6HkcKya4R+abEDq3LoVXakHMFdrVqrwNfOO/IRKPakcnksPPLQ6Y3
+	cJxxfOU2Dh7iArVF8PxsZOHCkP1lLOvGluHceBv9YNLR8aIoK+KGivINlt69PZuy5MP2nZD3RZa4A
+	i3XfUmyhD7fQIr/4b+6g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oYP0k-00ETKD-Jt; Wed, 14 Sep 2022 09:48:50 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1oYP2H-00EUZF-9V; Wed, 14 Sep 2022 09:50:25 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oYOrz-00EMqG-QK; Wed, 14 Sep 2022 09:39:49 +0000
+	id 1oYOs5-00EMuJ-9T; Wed, 14 Sep 2022 09:39:55 +0000
 Received: from fllv0034.itg.ti.com ([10.64.40.246])
-	by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 28E9deER073476;
-	Wed, 14 Sep 2022 04:39:40 -0500
+	by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 28E9djTO113572;
+	Wed, 14 Sep 2022 04:39:45 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
-	s=ti-com-17Q1; t=1663148380;
-	bh=irLXL59E4mT6LrYt3YZ8LsCgwANIbUY0MO6/Z2yRp4M=;
+	s=ti-com-17Q1; t=1663148385;
+	bh=oVGNjubgA1LuX49FyuBwm5DlshfpTfeRSSrz1PSeRUU=;
 	h=From:To:CC:Subject:Date:In-Reply-To:References;
-	b=DCZ6b7CvUAnKL/gymxoPBepTdO7zKaw+RUZGUvlOKvHCmc2f0bwXTmS8MmL/ANZTy
-	 +N7gzF1GXfsCztfLXz180wNrDRrRaiakgmabDMlCkRD6wWABsdqB5kQeRxlL8rYBl7
-	 /bcd9G9omH5692uhH93hdPfzhbKPM7NhZxGl76ws=
-Received: from DFLE103.ent.ti.com (dfle103.ent.ti.com [10.64.6.24])
-	by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 28E9de4P014867
+	b=L+6xwiaW222+H0ApV1nLDa+7lwNK1h8mVPL+/lwde7okpPmwdYqK0G0oTssGARPWA
+	 I1WWo0oQ7hxple8hGpLBxpnk9nbiaNQSMItRqwTm7yVmTUyxN+91tqQ/kzQh6GRItI
+	 wi9CVgFH62G0yPJJthoYNscXxOMLQqVEby/xhiSY=
+Received: from DFLE109.ent.ti.com (dfle109.ent.ti.com [10.64.6.30])
+	by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 28E9djFh014883
 	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Wed, 14 Sep 2022 04:39:40 -0500
-Received: from DFLE103.ent.ti.com (10.64.6.24) by DFLE103.ent.ti.com
- (10.64.6.24) with Microsoft SMTP Server (version=TLS1_2,
+	Wed, 14 Sep 2022 04:39:45 -0500
+Received: from DFLE114.ent.ti.com (10.64.6.35) by DFLE109.ent.ti.com
+ (10.64.6.30) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.6; Wed, 14
- Sep 2022 04:39:40 -0500
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE103.ent.ti.com
- (10.64.6.24) with Microsoft SMTP Server (version=TLS1_2,
+ Sep 2022 04:39:45 -0500
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE114.ent.ti.com
+ (10.64.6.35) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.6 via
- Frontend Transport; Wed, 14 Sep 2022 04:39:40 -0500
+ Frontend Transport; Wed, 14 Sep 2022 04:39:45 -0500
 Received: from uda0492258.dhcp.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
-	by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 28E9dBHI111966;
-	Wed, 14 Sep 2022 04:39:36 -0500
+	by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 28E9dBHJ111966;
+	Wed, 14 Sep 2022 04:39:40 -0500
 From: Siddharth Vadapalli <s-vadapalli@ti.com>
 To: <robh+dt@kernel.org>, <lee.jones@linaro.org>,
         <krzysztof.kozlowski@linaro.org>, <krzysztof.kozlowski+dt@linaro.org>,
@@ -58,18 +58,17 @@ CC: <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
         <linux-phy@lists.infradead.org>,
         <linux-arm-kernel@lists.infradead.org>, <sjakhade@cadence.com>,
         <s-vadapalli@ti.com>
-Subject: [PATCH 5/6] phy: ti: phy-j721e-wiz: Add SGMII support in wiz driver for J721E
-Date: Wed, 14 Sep 2022 15:09:10 +0530
-Message-ID: <20220914093911.187764-6-s-vadapalli@ti.com>
+Subject: [PATCH 6/6] phy: cadence: Sierra: Add PCIe + SGMII PHY multilink configuration
+Date: Wed, 14 Sep 2022 15:09:11 +0530
+Message-ID: <20220914093911.187764-7-s-vadapalli@ti.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20220914093911.187764-1-s-vadapalli@ti.com>
 References: <20220914093911.187764-1-s-vadapalli@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220914_023947_983097_E1DE0039 
-X-CRM114-Status: UNSURE (   9.92  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220914_023953_482742_9E02C1F1 
+X-CRM114-Status: GOOD (  14.70  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,26 +85,288 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Enable full rate divider configuration support for J721E_WIZ_16G for
-SGMII.
+From: Swapnil Jakhade <sjakhade@cadence.com>
 
+Add register sequences for PCIe + SGMII PHY multilink configuration.
+
+Signed-off-by: Swapnil Jakhade <sjakhade@cadence.com>
 Signed-off-by: Siddharth Vadapalli <s-vadapalli@ti.com>
 ---
- drivers/phy/ti/phy-j721e-wiz.c | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/phy/cadence/phy-cadence-sierra.c | 141 ++++++++++++++++++++++-
+ 1 file changed, 139 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/phy/ti/phy-j721e-wiz.c b/drivers/phy/ti/phy-j721e-wiz.c
-index 20af142580ad..9a33aebdcbe5 100644
---- a/drivers/phy/ti/phy-j721e-wiz.c
-+++ b/drivers/phy/ti/phy-j721e-wiz.c
-@@ -1191,6 +1191,7 @@ static int wiz_phy_fullrt_div(struct wiz *wiz, int lane)
- 			return regmap_field_write(wiz->p0_fullrt_div[lane], 0x1);
+diff --git a/drivers/phy/cadence/phy-cadence-sierra.c b/drivers/phy/cadence/phy-cadence-sierra.c
+index 6e86a6517f37..7c0daf3e8880 100644
+--- a/drivers/phy/cadence/phy-cadence-sierra.c
++++ b/drivers/phy/cadence/phy-cadence-sierra.c
+@@ -24,7 +24,7 @@
+ #include <dt-bindings/phy/phy-cadence.h>
+ 
+ #define NUM_SSC_MODE		3
+-#define NUM_PHY_TYPE		4
++#define NUM_PHY_TYPE		5
+ 
+ /* PHY register offsets */
+ #define SIERRA_COMMON_CDB_OFFSET			0x0
+@@ -46,7 +46,9 @@
+ #define SIERRA_CMN_REFRCV_PREG				0x98
+ #define SIERRA_CMN_REFRCV1_PREG				0xB8
+ #define SIERRA_CMN_PLLLC1_GEN_PREG			0xC2
++#define SIERRA_CMN_PLLLC1_FBDIV_INT_PREG		0xC3
+ #define SIERRA_CMN_PLLLC1_LF_COEFF_MODE0_PREG		0xCA
++#define SIERRA_CMN_PLLLC1_CLK0_PREG			0xCE
+ #define SIERRA_CMN_PLLLC1_BWCAL_MODE0_PREG		0xD0
+ #define SIERRA_CMN_PLLLC1_SS_TIME_STEPSIZE_MODE_PREG	0xE2
+ 
+@@ -74,6 +76,7 @@
+ #define SIERRA_PSC_RX_A1_PREG				0x031
+ #define SIERRA_PSC_RX_A2_PREG				0x032
+ #define SIERRA_PSC_RX_A3_PREG				0x033
++#define SIERRA_PLLCTRL_FBDIV_MODE01_PREG		0x039
+ #define SIERRA_PLLCTRL_SUBRATE_PREG			0x03A
+ #define SIERRA_PLLCTRL_GEN_A_PREG			0x03B
+ #define SIERRA_PLLCTRL_GEN_D_PREG			0x03E
+@@ -298,6 +301,7 @@ enum cdns_sierra_phy_type {
+ 	TYPE_NONE,
+ 	TYPE_PCIE,
+ 	TYPE_USB,
++	TYPE_SGMII,
+ 	TYPE_QSGMII
+ };
+ 
+@@ -936,6 +940,9 @@ static int cdns_sierra_get_optional(struct cdns_sierra_inst *inst,
+ 	case PHY_TYPE_USB3:
+ 		inst->phy_type = TYPE_USB;
  		break;
- 	case J721E_WIZ_10G:
-+	case J721E_WIZ_16G:
- 	case J7200_WIZ_10G:
- 		if (wiz->lane_phy_type[lane] == PHY_TYPE_SGMII)
- 			return regmap_field_write(wiz->p0_fullrt_div[lane], 0x2);
++	case PHY_TYPE_SGMII:
++		inst->phy_type = TYPE_SGMII;
++		break;
+ 	case PHY_TYPE_QSGMII:
+ 		inst->phy_type = TYPE_QSGMII;
+ 		break;
+@@ -1339,7 +1346,7 @@ static int cdns_sierra_phy_configure_multilink(struct cdns_sierra_phy *sp)
+ 			}
+ 		}
+ 
+-		if (phy_t1 == TYPE_QSGMII)
++		if (phy_t1 == TYPE_SGMII || phy_t1 == TYPE_QSGMII)
+ 			reset_control_deassert(sp->phys[node].lnk_rst);
+ 	}
+ 
+@@ -1537,6 +1544,71 @@ static int cdns_sierra_phy_remove(struct platform_device *pdev)
+ 	return 0;
+ }
+ 
++/* SGMII PHY PMA lane configuration */
++static struct cdns_reg_pairs sgmii_phy_pma_ln_regs[] = {
++	{0x9010, SIERRA_PHY_PMA_XCVR_CTRL}
++};
++
++static struct cdns_sierra_vals sgmii_phy_pma_ln_vals = {
++	.reg_pairs = sgmii_phy_pma_ln_regs,
++	.num_regs = ARRAY_SIZE(sgmii_phy_pma_ln_regs),
++};
++
++/* SGMII refclk 100MHz, no ssc, opt3 and GE1 links using PLL LC1 */
++static const struct cdns_reg_pairs sgmii_100_no_ssc_plllc1_opt3_cmn_regs[] = {
++	{0x002D, SIERRA_CMN_PLLLC1_FBDIV_INT_PREG},
++	{0x2085, SIERRA_CMN_PLLLC1_LF_COEFF_MODE0_PREG},
++	{0x1005, SIERRA_CMN_PLLLC1_CLK0_PREG},
++	{0x0000, SIERRA_CMN_PLLLC1_BWCAL_MODE0_PREG},
++	{0x0800, SIERRA_CMN_PLLLC1_SS_TIME_STEPSIZE_MODE_PREG}
++};
++
++static const struct cdns_reg_pairs sgmii_100_no_ssc_plllc1_opt3_ln_regs[] = {
++	{0x688E, SIERRA_DET_STANDEC_D_PREG},
++	{0x0004, SIERRA_PSC_LN_IDLE_PREG},
++	{0x0FFE, SIERRA_PSC_RX_A0_PREG},
++	{0x0106, SIERRA_PLLCTRL_FBDIV_MODE01_PREG},
++	{0x0013, SIERRA_PLLCTRL_SUBRATE_PREG},
++	{0x0003, SIERRA_PLLCTRL_GEN_A_PREG},
++	{0x0106, SIERRA_PLLCTRL_GEN_D_PREG},
++	{0x5231, SIERRA_PLLCTRL_CPGAIN_MODE_PREG },
++	{0x0000, SIERRA_DRVCTRL_ATTEN_PREG},
++	{0x9702, SIERRA_DRVCTRL_BOOST_PREG},
++	{0x0051, SIERRA_RX_CREQ_FLTR_A_MODE0_PREG},
++	{0x3C0E, SIERRA_CREQ_CCLKDET_MODE01_PREG},
++	{0x3220, SIERRA_CREQ_FSMCLK_SEL_PREG},
++	{0x0000, SIERRA_CREQ_EQ_CTRL_PREG},
++	{0x0002, SIERRA_DEQ_PHALIGN_CTRL},
++	{0x0186, SIERRA_DEQ_GLUT0},
++	{0x0186, SIERRA_DEQ_GLUT1},
++	{0x0186, SIERRA_DEQ_GLUT2},
++	{0x0186, SIERRA_DEQ_GLUT3},
++	{0x0186, SIERRA_DEQ_GLUT4},
++	{0x0861, SIERRA_DEQ_ALUT0},
++	{0x07E0, SIERRA_DEQ_ALUT1},
++	{0x079E, SIERRA_DEQ_ALUT2},
++	{0x071D, SIERRA_DEQ_ALUT3},
++	{0x03F5, SIERRA_DEQ_DFETAP_CTRL_PREG},
++	{0x0C01, SIERRA_DEQ_TAU_CTRL1_FAST_MAINT_PREG},
++	{0x3C40, SIERRA_DEQ_TAU_CTRL1_SLOW_MAINT_PREG},
++	{0x1C04, SIERRA_DEQ_TAU_CTRL2_PREG},
++	{0x0033, SIERRA_DEQ_PICTRL_PREG},
++	{0x0000, SIERRA_CPI_OUTBUF_RATESEL_PREG},
++	{0x0B6D, SIERRA_CPI_RESBIAS_BIN_PREG},
++	{0x0102, SIERRA_RXBUFFER_CTLECTRL_PREG},
++	{0x0002, SIERRA_RXBUFFER_RCDFECTRL_PREG}
++};
++
++static struct cdns_sierra_vals sgmii_100_no_ssc_plllc1_opt3_cmn_vals = {
++	.reg_pairs = sgmii_100_no_ssc_plllc1_opt3_cmn_regs,
++	.num_regs = ARRAY_SIZE(sgmii_100_no_ssc_plllc1_opt3_cmn_regs),
++};
++
++static struct cdns_sierra_vals sgmii_100_no_ssc_plllc1_opt3_ln_vals = {
++	.reg_pairs = sgmii_100_no_ssc_plllc1_opt3_ln_regs,
++	.num_regs = ARRAY_SIZE(sgmii_100_no_ssc_plllc1_opt3_ln_regs),
++};
++
+ /* QSGMII PHY PMA lane configuration */
+ static struct cdns_reg_pairs qsgmii_phy_pma_ln_regs[] = {
+ 	{0x9010, SIERRA_PHY_PMA_XCVR_CTRL}
+@@ -2363,6 +2435,11 @@ static const struct cdns_sierra_data cdns_map_sierra = {
+ 				[EXTERNAL_SSC] = &pcie_phy_pcs_cmn_vals,
+ 				[INTERNAL_SSC] = &pcie_phy_pcs_cmn_vals,
+ 			},
++			[TYPE_SGMII] = {
++				[NO_SSC] = &pcie_phy_pcs_cmn_vals,
++				[EXTERNAL_SSC] = &pcie_phy_pcs_cmn_vals,
++				[INTERNAL_SSC] = &pcie_phy_pcs_cmn_vals,
++			},
+ 			[TYPE_QSGMII] = {
+ 				[NO_SSC] = &pcie_phy_pcs_cmn_vals,
+ 				[EXTERNAL_SSC] = &pcie_phy_pcs_cmn_vals,
+@@ -2377,6 +2454,11 @@ static const struct cdns_sierra_data cdns_map_sierra = {
+ 				[EXTERNAL_SSC] = &pcie_100_ext_ssc_cmn_vals,
+ 				[INTERNAL_SSC] = &pcie_100_int_ssc_cmn_vals,
+ 			},
++			[TYPE_SGMII] = {
++				[NO_SSC] = &pcie_100_no_ssc_plllc_cmn_vals,
++				[EXTERNAL_SSC] = &pcie_100_ext_ssc_plllc_cmn_vals,
++				[INTERNAL_SSC] = &pcie_100_int_ssc_plllc_cmn_vals,
++			},
+ 			[TYPE_QSGMII] = {
+ 				[NO_SSC] = &pcie_100_no_ssc_plllc_cmn_vals,
+ 				[EXTERNAL_SSC] = &pcie_100_ext_ssc_plllc_cmn_vals,
+@@ -2388,6 +2470,13 @@ static const struct cdns_sierra_data cdns_map_sierra = {
+ 				[EXTERNAL_SSC] = &usb_100_ext_ssc_cmn_vals,
+ 			},
+ 		},
++		[TYPE_SGMII] = {
++			[TYPE_PCIE] = {
++				[NO_SSC] = &sgmii_100_no_ssc_plllc1_opt3_cmn_vals,
++				[EXTERNAL_SSC] = &sgmii_100_no_ssc_plllc1_opt3_cmn_vals,
++				[INTERNAL_SSC] = &sgmii_100_no_ssc_plllc1_opt3_cmn_vals,
++			},
++		},
+ 		[TYPE_QSGMII] = {
+ 			[TYPE_PCIE] = {
+ 				[NO_SSC] = &qsgmii_100_no_ssc_plllc1_cmn_vals,
+@@ -2403,6 +2492,11 @@ static const struct cdns_sierra_data cdns_map_sierra = {
+ 				[EXTERNAL_SSC] = &pcie_100_ext_ssc_ln_vals,
+ 				[INTERNAL_SSC] = &pcie_100_int_ssc_ln_vals,
+ 			},
++			[TYPE_SGMII] = {
++				[NO_SSC] = &ml_pcie_100_no_ssc_ln_vals,
++				[EXTERNAL_SSC] = &ml_pcie_100_ext_ssc_ln_vals,
++				[INTERNAL_SSC] = &ml_pcie_100_int_ssc_ln_vals,
++			},
+ 			[TYPE_QSGMII] = {
+ 				[NO_SSC] = &ml_pcie_100_no_ssc_ln_vals,
+ 				[EXTERNAL_SSC] = &ml_pcie_100_ext_ssc_ln_vals,
+@@ -2414,6 +2508,13 @@ static const struct cdns_sierra_data cdns_map_sierra = {
+ 				[EXTERNAL_SSC] = &usb_100_ext_ssc_ln_vals,
+ 			},
+ 		},
++		[TYPE_SGMII] = {
++			[TYPE_PCIE] = {
++				[NO_SSC] = &sgmii_100_no_ssc_plllc1_opt3_ln_vals,
++				[EXTERNAL_SSC] = &sgmii_100_no_ssc_plllc1_opt3_ln_vals,
++				[INTERNAL_SSC] = &sgmii_100_no_ssc_plllc1_opt3_ln_vals,
++			},
++		},
+ 		[TYPE_QSGMII] = {
+ 			[TYPE_PCIE] = {
+ 				[NO_SSC] = &qsgmii_100_no_ssc_plllc1_ln_vals,
+@@ -2435,6 +2536,11 @@ static const struct cdns_sierra_data cdns_ti_map_sierra = {
+ 				[EXTERNAL_SSC] = &pcie_phy_pcs_cmn_vals,
+ 				[INTERNAL_SSC] = &pcie_phy_pcs_cmn_vals,
+ 			},
++			[TYPE_SGMII] = {
++				[NO_SSC] = &pcie_phy_pcs_cmn_vals,
++				[EXTERNAL_SSC] = &pcie_phy_pcs_cmn_vals,
++				[INTERNAL_SSC] = &pcie_phy_pcs_cmn_vals,
++			},
+ 			[TYPE_QSGMII] = {
+ 				[NO_SSC] = &pcie_phy_pcs_cmn_vals,
+ 				[EXTERNAL_SSC] = &pcie_phy_pcs_cmn_vals,
+@@ -2443,6 +2549,13 @@ static const struct cdns_sierra_data cdns_ti_map_sierra = {
+ 		},
+ 	},
+ 	.phy_pma_ln_vals = {
++		[TYPE_SGMII] = {
++			[TYPE_PCIE] = {
++				[NO_SSC] = &sgmii_phy_pma_ln_vals,
++				[EXTERNAL_SSC] = &sgmii_phy_pma_ln_vals,
++				[INTERNAL_SSC] = &sgmii_phy_pma_ln_vals,
++			},
++		},
+ 		[TYPE_QSGMII] = {
+ 			[TYPE_PCIE] = {
+ 				[NO_SSC] = &qsgmii_phy_pma_ln_vals,
+@@ -2458,6 +2571,11 @@ static const struct cdns_sierra_data cdns_ti_map_sierra = {
+ 				[EXTERNAL_SSC] = &pcie_100_ext_ssc_cmn_vals,
+ 				[INTERNAL_SSC] = &pcie_100_int_ssc_cmn_vals,
+ 			},
++			[TYPE_SGMII] = {
++				[NO_SSC] = &pcie_100_no_ssc_plllc_cmn_vals,
++				[EXTERNAL_SSC] = &pcie_100_ext_ssc_plllc_cmn_vals,
++				[INTERNAL_SSC] = &pcie_100_int_ssc_plllc_cmn_vals,
++			},
+ 			[TYPE_QSGMII] = {
+ 				[NO_SSC] = &pcie_100_no_ssc_plllc_cmn_vals,
+ 				[EXTERNAL_SSC] = &pcie_100_ext_ssc_plllc_cmn_vals,
+@@ -2469,6 +2587,13 @@ static const struct cdns_sierra_data cdns_ti_map_sierra = {
+ 				[EXTERNAL_SSC] = &usb_100_ext_ssc_cmn_vals,
+ 			},
+ 		},
++		[TYPE_SGMII] = {
++			[TYPE_PCIE] = {
++				[NO_SSC] = &sgmii_100_no_ssc_plllc1_opt3_cmn_vals,
++				[EXTERNAL_SSC] = &sgmii_100_no_ssc_plllc1_opt3_cmn_vals,
++				[INTERNAL_SSC] = &sgmii_100_no_ssc_plllc1_opt3_cmn_vals,
++			},
++		},
+ 		[TYPE_QSGMII] = {
+ 			[TYPE_PCIE] = {
+ 				[NO_SSC] = &qsgmii_100_no_ssc_plllc1_cmn_vals,
+@@ -2484,6 +2609,11 @@ static const struct cdns_sierra_data cdns_ti_map_sierra = {
+ 				[EXTERNAL_SSC] = &pcie_100_ext_ssc_ln_vals,
+ 				[INTERNAL_SSC] = &pcie_100_int_ssc_ln_vals,
+ 			},
++			[TYPE_SGMII] = {
++				[NO_SSC] = &ti_ml_pcie_100_no_ssc_ln_vals,
++				[EXTERNAL_SSC] = &ti_ml_pcie_100_ext_ssc_ln_vals,
++				[INTERNAL_SSC] = &ti_ml_pcie_100_int_ssc_ln_vals,
++			},
+ 			[TYPE_QSGMII] = {
+ 				[NO_SSC] = &ti_ml_pcie_100_no_ssc_ln_vals,
+ 				[EXTERNAL_SSC] = &ti_ml_pcie_100_ext_ssc_ln_vals,
+@@ -2495,6 +2625,13 @@ static const struct cdns_sierra_data cdns_ti_map_sierra = {
+ 				[EXTERNAL_SSC] = &usb_100_ext_ssc_ln_vals,
+ 			},
+ 		},
++		[TYPE_SGMII] = {
++			[TYPE_PCIE] = {
++				[NO_SSC] = &sgmii_100_no_ssc_plllc1_opt3_ln_vals,
++				[EXTERNAL_SSC] = &sgmii_100_no_ssc_plllc1_opt3_ln_vals,
++				[INTERNAL_SSC] = &sgmii_100_no_ssc_plllc1_opt3_ln_vals,
++			},
++		},
+ 		[TYPE_QSGMII] = {
+ 			[TYPE_PCIE] = {
+ 				[NO_SSC] = &qsgmii_100_no_ssc_plllc1_ln_vals,
 -- 
 2.25.1
 
