@@ -4,136 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D809CECAAD8
-	for <linux-phy@archiver.kernel.org>; Wed, 14 Sep 2022 03:00:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9550FECAAD3
+	for <linux-phy@archiver.kernel.org>; Wed, 14 Sep 2022 03:33:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:
-	References:Cc:To:Subject:Date:Message-ID:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=jP610AORUe7WMvbMDyf2YVlfrRjEvQYUAoghEem94M4=; b=oXXcVFkHMywhakGUow8vTeyTRH
-	jPv8i63T6UYfldbFq/VVKQa9vF6R3cg1eOClBMDrNtLdJ2lHbhjL6sQpdQTDdwl3MIn6lZtkfQA3/
-	yPVRYpIesOBaXsyUfbuSvOtapaB3Y8TKoeTUApq0kICxMT/30IVXsmrVjqITxeXbn5IbTNv8STIrH
-	GNwXUvKonGYmhWt7pkxa+nnofHEbjZPIl7S+xwon2bhUxTa91Ne/XezhfLXEz+0LgFsZ4YmcNxZ22
-	ogXZ0yclq1hrlbgwBEYyNd+BaEjDTt7/o+KiltO1PnGbqTq29IslEsWPeK3qxRKz6nuVKXQZxT77B
-	fkJNXzyA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:CC:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=dc0HPesLfedwyKrnVc4i8csmQyaunJ26KOswhq0ONNU=; b=wogVVU5aI3B/IG
+	zOgxVdDyp17LUU/eja3sp+4ley6UccNAA8qEYoGHrHHKFk0eyA0GFwO+Pn+DuohiuFpqu4sMC0scq
+	ac8VxWnhXyNZdUFebJRTQtII1Xt8zivY47zL/eKLAg2u2Xmaf0rB/aSG7ygWwkKpJ5ZT4jZBujOZL
+	YUzx2d2OqL2/RD6s5RFFRMTNgMniT3SFQFBy4G9ldPYmCLv29RMGXpj3RKyJNqfdEg5vRjqpZRNhT
+	urNNNGZFTeeCdrrjgDvcF8qZn4WaNWs/tgLQnynuhhFlpbFHQ03aOu4Kieg6l8X84h1KXg5eCxurD
+	IbQ7SSZGRHdbY3zgpTnA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oYIdG-0055XZ-Hu; Wed, 14 Sep 2022 03:00:10 +0000
-Received: from mail-sn1anam02on2085.outbound.protection.outlook.com ([40.107.96.85] helo=NAM02-SN1-obe.outbound.protection.outlook.com)
+	id 1oYJ9S-005bNX-Qw; Wed, 14 Sep 2022 03:33:26 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oYIdD-0055PP-8O
-	for linux-phy@lists.infradead.org; Wed, 14 Sep 2022 03:00:08 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=K9yakpVmH0o26RnSpZQfK7RaNMvDAGFmiCx/9slb8Lheav0oqCzMbxO1YWyUdTbkdIZu8N5mlsKbxiVTGXJWhIElRtO/q9mIfJuy5bDaEqXiGTk/CWQlBFwzHX9NilMO9Y2rKYXVFdcd+Ai4M7nNWltsx6fE75yfi1bbO8EcRMLiKVAdo1NwMmhWaGooorShgDqlGLesTpIjRPz1O1NKGWhL1a/olx2g9uOW2bYThIlqwwYN7o04SEeoc8vJbbejIszCRwA40YMOqVKoU/x8GJKrTfz163tVLe6la9QtWTDBHUXRuJjLBFEYhBXlftt4dl/Pen3C48Xt55S9ysFR1Q==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=o2UJIM9a1QZ58RWkHm029OD7UjYp8ZjsNQ1jnCk/d4k=;
- b=MDwSy+ul2R5U9shGu5P4FQr+1KuoyhybnLGl81GrGyHuDuzdzIQqC+dUdGumRimpSQTFC86ATQ83nF9WrDanTUNTU5RJX3pZuhkBqnIMgJBbM03Hro7Ys/fnSV0bmoLjcu3en8kO4J1fuJnfQsqOa9vjPu9nHCyICkGIdjwvUmgn2pwghNZRZM0XPfC0NDJ5HqqaSJwcRgWDtufrULx9fUyjME28N4rjza3odVnZpor5mbhHCBjQ+k7EMUFFDnQaeMLhQFiLWUhEeqekrE8aXYnRhFi6GvcIgE3yO/DOJDLg9tczT32CZ7PTMGflQlTuQUHohIRekeDwGxJrhA+w7Q==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nvidia.com; dmarc=pass action=none header.from=nvidia.com;
- dkim=pass header.d=nvidia.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=o2UJIM9a1QZ58RWkHm029OD7UjYp8ZjsNQ1jnCk/d4k=;
- b=tX2b1/jksXZkodeTEA+UDstQNABEOTRI5s3NeZzniyNB1rJHnj1YFZUkngL5EFv9IaFYfvmFt0V20sx5iGdpWLpcq5LEmCDA4T0R+lbKH7tyhD+pDTcO8fMbRqzZZOi5VRXkLiJZ+Lbf1zR4+56/n3qjdQauqcvnV8PLl68ReTMkznndauldgJ2AM1e29X/bXuZWaX4eWyboAH/8dcM8da/gZ7G17k/4cKv/Tmuv8oiM63wMbnWff2nS04XEYcMwYZWfk5jZJjqACZMpHWxbCwGujP3qePF4UN/1+G6I90mavv6JK1icTm1hKNvPjixHcHXlzEUXsEkjNyvbYiOUMQ==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nvidia.com;
-Received: from CH0PR12MB5188.namprd12.prod.outlook.com (2603:10b6:610:bb::13)
- by CY5PR12MB6204.namprd12.prod.outlook.com (2603:10b6:930:23::19) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5612.22; Wed, 14 Sep
- 2022 02:59:56 +0000
-Received: from CH0PR12MB5188.namprd12.prod.outlook.com
- ([fe80::4de6:2119:9e85:e101]) by CH0PR12MB5188.namprd12.prod.outlook.com
- ([fe80::4de6:2119:9e85:e101%6]) with mapi id 15.20.5612.022; Wed, 14 Sep 2022
- 02:59:56 +0000
-Message-ID: <42ae1deb-bbdd-2a16-c671-0bc17d3e2647@nvidia.com>
-Date: Wed, 14 Sep 2022 10:59:45 +0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.11.0
-Subject: Re: [PATCH v2 1/2] phy: tegra: xusb: add utmi pad power on/down ops
-Content-Language: en-US
-To: Vinod Koul <vkoul@kernel.org>
-Cc: Jim Lin <jilin@nvidia.com>, thierry.reding@gmail.com,
- jonathanh@nvidia.com, balbi@kernel.org, gregkh@linuxfoundation.org,
- bhsieh@nvidia.com, linux-phy@lists.infradead.org,
- linux-tegra@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-usb@vger.kernel.org
-References: <20220816082353.13390-1-jilin@nvidia.com>
- <20220816082353.13390-2-jilin@nvidia.com> <YxS6FBeyS1Cs7xhI@matsya>
- <8d33abb0-51ab-67c4-50b3-ae95a5d9fb55@nvidia.com> <YyCVBVRQo+qPo5vH@matsya>
-X-Nvconfidentiality: public
-From: JC Kuo <jckuo@nvidia.com>
-Organization: NVIDIA
-In-Reply-To: <YyCVBVRQo+qPo5vH@matsya>
-X-ClientProxiedBy: KL1PR0401CA0030.apcprd04.prod.outlook.com
- (2603:1096:820:e::17) To CH0PR12MB5188.namprd12.prod.outlook.com
- (2603:10b6:610:bb::13)
+	id 1oYJ9Q-005bLX-Iy; Wed, 14 Sep 2022 03:33:25 +0000
+X-UUID: 3084ef220f1e403e81691d3e05fc55c5-20220913
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
+	h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID; bh=z0hG9e5cIO4JQKh77lE8O4zk6wqfd2mkb/w/afP1iZo=;
+	b=e5cDAMp7m8lv+E9JTmU7/+l/mPrqAVhXAmaSndPNvqvN/x7dtpyayP3UpICJzqZUhvrwYsb9e2LyQSNirgNEYY9RRpIxfKL4ihl2NsKTR3vn+SCZE2BI5+meBQi2CN1HNKqIaoMNOzM7dR47qbrNIpjMU+7MqXfeDlut3E4dHhQ=;
+X-CID-P-RULE: Release_Ham
+X-CID-O-INFO: VERSION:1.1.11,REQID:01719974-cd07-4445-bb0d-56bda8e95a15,IP:0,U
+	RL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:
+	release,TS:0
+X-CID-META: VersionHash:39a5ff1,CLOUDID:945251f6-6e85-48d9-afd8-0504bbfe04cb,B
+	ulkID:nil,BulkQuantity:0,Recheck:0,SF:nil,TC:nil,Content:0,EDM:-3,IP:nil,U
+	RL:11|1,File:nil,Bulk:nil,QS:nil,BEC:nil,COL:0
+X-UUID: 3084ef220f1e403e81691d3e05fc55c5-20220913
+Received: from mtkmbs11n1.mediatek.inc [(172.21.101.185)] by mailgw02.mediatek.com
+	(envelope-from <chunfeng.yun@mediatek.com>)
+	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
+	with ESMTP id 495311570; Tue, 13 Sep 2022 20:33:12 -0700
+Received: from mtkcas11.mediatek.inc (172.21.101.40) by
+ mtkmbs11n1.mediatek.inc (172.21.101.185) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id
+ 15.2.792.15; Wed, 14 Sep 2022 11:22:37 +0800
+Received: from mhfsdcap04 (10.17.3.154) by mtkcas11.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Wed, 14 Sep 2022 11:22:34 +0800
+Message-ID: <390ecdbfc19d40c89c327e504cac4a9e5a031cd4.camel@mediatek.com>
+Subject: Re: [PATCH v2 3/7] phy: phy-mtk-tphy: add property to set
+ pre-emphasis
+From: Chunfeng Yun <chunfeng.yun@mediatek.com>
+To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	Vinod Koul <vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>
+CC: Kishon Vijay Abraham I <kishon@ti.com>, Krzysztof Kozlowski
+	<krzysztof.kozlowski+dt@linaro.org>, Matthias Brugger
+	<matthias.bgg@gmail.com>, <linux-arm-kernel@lists.infradead.org>,
+	<linux-mediatek@lists.infradead.org>, <linux-phy@lists.infradead.org>,
+	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>, "Krzysztof
+ Kozlowski" <krzysztof.kozlowski@canonical.com>, Eddie Hung
+	<eddie.hung@mediatek.com>
+Date: Wed, 14 Sep 2022 11:22:34 +0800
+In-Reply-To: <60b79718-3a33-1bc5-b271-012d94c86491@collabora.com>
+References: <20220829080830.5378-1-chunfeng.yun@mediatek.com>
+	 <20220829080830.5378-3-chunfeng.yun@mediatek.com>
+	 <219aef5a-af2a-6873-f682-cb6aef862425@collabora.com>
+	 <a4e5f9e360a3fc6d094bc719aa4523a4886cae93.camel@mediatek.com>
+	 <60b79718-3a33-1bc5-b271-012d94c86491@collabora.com>
+X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: CH0PR12MB5188:EE_|CY5PR12MB6204:EE_
-X-MS-Office365-Filtering-Correlation-Id: 48d0a3f3-3f3e-4847-0fa6-08da95fd3452
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 	2Zj0hrojgGuyFUSrozI+UvMfXzzLGFctOGBVWvSZhOjGxc6X3Sbk/39b4ix0OUXzyWcajsJerqDWM6BpDDnZTZn01SELxJKEU7G1PX4fTi+4ZVfoi9bc0709hX0FQWZSiKB2IcqhfYK0Ymjv2jT74TD6uPJu5Fq2dy5ngdyXVRRKzC2efUm/qzJMvYccMqHhCvqvjPNCfdAY5rMwMm20CxKQhLXSneC7lPMWZWUlOw5WXOlqzrH1r3KssMZgQF1Mp34llHw6nSjJcTR/IcmTOJV2VllnIVrVLSF/uAb5/T6l5McNUAeCaolDDpAyllBXs53b7iLtqTDlYEvD+S+cZ3bbwhffSZhvhvo+04rn9GBCR7JW39UPedddQA6wMdDDqj5itEHDqFcDOCc3MZ1pQOP31w+0zASAzZMtFrrz/YWbY6WYbByCnE9lw+VnYUmNFeIGvtwp+0B3HPXQkXI5fRA7+6iK+8JiPuNqlwr+PUTjO904wylYfLJ6DVhobFz0vpMmkSdsNenbF4NfEs2HQWD12LvKs0ELpiz3TZAjfiUyyIC/fx1hXV9wqdkrYWo1wDaypiZ98ZxJ7B8+CH7zkREAoU5/sDgtr2MRzb/8Q86UwfTvdS06qSJaZBBm69e3bZ3gJmqqnRlmCDZXmOInCOVa5OIeaWHWsIIMtKRMSDfUIJNCVhOx3vAFIfn2ZRCEhqGvb/H7EpcC4z542VAokGzX4j9NxtZo3G5D2TvQ7U+6PWMD3poJPa1n/lrjL24v4oW6xQTDQJgJIR6mFPoSqhF40l0Sz1CbFYNUusHyiJM=
-X-Forefront-Antispam-Report: 	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:CH0PR12MB5188.namprd12.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230022)(4636009)(39860400002)(366004)(136003)(376002)(346002)(396003)(451199015)(31696002)(86362001)(8936002)(31686004)(2906002)(5660300002)(4326008)(8676002)(66946007)(66476007)(66556008)(186003)(36916002)(26005)(36756003)(41300700001)(53546011)(2616005)(6512007)(6506007)(316002)(38100700002)(6666004)(6916009)(83380400001)(478600001)(6486002)(43740500002)(45980500001);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: 	=?utf-8?B?Ujc2di96bGkya095RnJMa3NYY3gwQUErQlJ3Q3JqK2Z5RmlQL1czMDFGSHpP?=
- =?utf-8?B?NG1YRTZEbDVPa2VodHM5ei9KTGF2NDRLRGs3OFFka3ZUYm5tVFJVdE1nUldk?=
- =?utf-8?B?cHBLbElmanlEaHNYa1ptVGVvUE0zN2JXQ3B5WklkZTgrMVgvUm5wOWl4VVRN?=
- =?utf-8?B?MVFhbXo2Ui9pTk9HL0V6QXlPbnBWOXBUZlVhNmpobDBHUS9KR3BqMThDV25B?=
- =?utf-8?B?NUY0bURoMzdWYlRWZmNqR3ZGb3daS0NXWjRVZU9FU0tkOUtHWlZJaGIzczdO?=
- =?utf-8?B?S1JWb2t0ZVg1OG1EKzZuakJqdVNiRGZCUGtvMnhOQ2Y1Smo1UG1oUEVkMjBi?=
- =?utf-8?B?YXdCWmRFYzhkTXE5NjNZOVdGb3ZSS05kOUo4WUorMkNCUk1rbysvYkc5cXNC?=
- =?utf-8?B?NVQ2aEJudnNhUnI0WUxnUWlma0lZODZrcVNlcHBaVDUxdVV0ZWZkdmNUbGZ1?=
- =?utf-8?B?elRacTgvdDVQOEdVSllUR1Z4d2NndjlDYWFReElkcDhwbFN5Z0R0RUZaeXVR?=
- =?utf-8?B?L0twZHd1YWhyMi9NWEhwQ0J6RTNzMmlhQnI0aVlDOWZRWTIrNkdqVUJ3eWxz?=
- =?utf-8?B?OUhmSlRRSW50aXM3TktOSHVFU2lFVHJtMktDYlp3ZlVjWWFiMUdhVUVoTlFj?=
- =?utf-8?B?a3g1YnVIOVVKVnh3WmVrM0RMZFRrM0lSOHdHcmc1MVdXVWI1MEhFYkpBR3ov?=
- =?utf-8?B?d0lxSlhkYTBvUjBnSGJsWXZJcnVqTVlraWl4ZVhuYUIyWGtPdmR5elc2OG1X?=
- =?utf-8?B?UDZLdmYxRkZrQ0w3TmwremZDK1pvU2dvVzdGclM2TUxzOVh4Mk1RcU9QTy9F?=
- =?utf-8?B?OVhaUGdpdkhJdTFGL2UyaThkSFFBUUhjR1Jha0w5aEk1aGpHcWZ6WUlaYmpm?=
- =?utf-8?B?bWVZTFQvU3FVcHRaQ3YraFh4WmJLK1NSZEV1VDNWREFaNUlmem5IQ2FzTTV5?=
- =?utf-8?B?RHptblZOb1JleHBveWx4ZkZqMFlMeUVhdVhrVGxUNExjdk0zVHZuQmlBTm9S?=
- =?utf-8?B?M2NWMkJYODd5ZXhJaXcvbUVybnFZSit1TGZxTGF1MkF4cXR5Mk1ZZjRaQU5l?=
- =?utf-8?B?SjFnVldRckQ5ejAvZGhaWkhaRE5zQThzQXJLVzBQL0JXa25OT3BJcWRyNlQ1?=
- =?utf-8?B?R3BKZEVrQ3VqV1ZZbE53MjQ0Vmc2ZmkwdE54WDBqSEFkaHpWaTJnM2NOSWRv?=
- =?utf-8?B?NHEyd1FSMU9uV05pQ0xwMStRVC93UUd4anMyNTlndDVwNWgvVlZBczIrMnFL?=
- =?utf-8?B?SEVMZW5QMGlHUW9XL0xiT1lVWTlFbzV4OUNONG1FK2p4bEVpRXVEVlM0bkpP?=
- =?utf-8?B?bkVxQm1ROTgrc3FrcXBBaGxXOGk2dmJXSTRKWlpySzBjNGx2VHd1Y01ESzZw?=
- =?utf-8?B?ZnQ4NlZKL205cVR1UDhkVkJnT2R1OXNoT3NtQlVFbGMvd251RThoRDFZelZI?=
- =?utf-8?B?eVFIa1hGdHNhSnV2SXlHa2pUekVuUzJIbXZDSzdiTUh0a3Buc3hhSkI4aWZv?=
- =?utf-8?B?SlJYR20yV2hHVWRENUh3UnNmdktuQnoxUmppemptdHkrNnBjaE9TWHc1QXZv?=
- =?utf-8?B?UFprR2d0aElxajRLTmJvdHRJV21NZkdhTy9CdnBVdEJCTEhVUStMNE1XZG91?=
- =?utf-8?B?WjBWVjVBdnZWVDIzMzluV081UkdJdGdyZFRKU3JHSDN1Q3dpYzl6c2NBbEto?=
- =?utf-8?B?WEZwM2wzclQ2d1pkUzlMSVhtZUlyY2o1ODd2alBzSXFJanlQYld4VEZVOVhq?=
- =?utf-8?B?cHJpVUk0WTQ2cTJRcXBwV2EyRU5KdkRxdVVDekt2azRFMkcxbFhHTTBqRTJm?=
- =?utf-8?B?bEdQZUorQXlKWUZHRWRIUFkrSGlkbi80NVFtSWxJODN1dE03ek9nSnFwYnFU?=
- =?utf-8?B?d21KaFFuZWVqMHc3T3BOVHhuQzFvSmFNUlZudEt0NzVWWlExU1ZqR0JyRGFh?=
- =?utf-8?B?Qm1oRXJZZ2Z6UVhXd3J5NWkzOHFDZU4rTEdHeXZXblRnT0Rpc0RXS2wzRTRG?=
- =?utf-8?B?a2JwWlhOaFRSVDJGak1PbXhoRWJmQWxMU29SU092cU5UNDBWSGFDSFdLbW1U?=
- =?utf-8?B?LzRETktrdGx4SVdGc3lMZ3F3TTBTbkxXUFZFOU1OZEdoMjFVc0hUUjRTL1J3?=
- =?utf-8?Q?szZj8T98//jINhXwHe5szgwet?=
-X-OriginatorOrg: Nvidia.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 48d0a3f3-3f3e-4847-0fa6-08da95fd3452
-X-MS-Exchange-CrossTenant-AuthSource: CH0PR12MB5188.namprd12.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 14 Sep 2022 02:59:56.4653
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: L7j7f6uTxezq6J+icRWuTKtwxL0n5MeC13HexCgLa/GIkdVdxKcsOHcpFG1rR3gU0RAcJweq5v8UY1h1rJ3uLQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CY5PR12MB6204
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220913_200007_432963_93B71F35 
-X-CRM114-Status: GOOD (  14.10  )
+X-CRM114-CacheID: sfid-20220913_203324_689083_81AF76FC 
+X-CRM114-Status: GOOD (  29.14  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -150,46 +89,66 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 9/13/22 22:34, Vinod Koul wrote:
-> On 06-09-22, 10:43, JC Kuo wrote:
->> Hi Vinod,
+On Thu, 2022-09-08 at 10:05 +0200, AngeloGioacchino Del Regno wrote:
+> Il 08/09/22 03:39, Chunfeng Yun ha scritto:
+> > On Wed, 2022-08-31 at 10:14 +0200, AngeloGioacchino Del Regno
+> > wrote:
+> > > Il 29/08/22 10:08, Chunfeng Yun ha scritto:
+> > > > Add a property to set usb2 phy's pre-emphasis, it's disabled by
+> > > > default
+> > > > on some SoCs.
+> > > > 
+> > > > Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+> > > > ---
+> > > > v2: no changes
+> > > > ---
+> > > >    drivers/phy/mediatek/phy-mtk-tphy.c | 10 ++++++++++
+> > > >    1 file changed, 10 insertions(+)
+> > > > 
+> > > > diff --git a/drivers/phy/mediatek/phy-mtk-tphy.c
+> > > > b/drivers/phy/mediatek/phy-mtk-tphy.c
+> > > > index 8ee7682b8e93..986fde0f63a0 100644
+> > > > --- a/drivers/phy/mediatek/phy-mtk-tphy.c
+> > > > +++ b/drivers/phy/mediatek/phy-mtk-tphy.c
+> > > > @@ -72,6 +72,8 @@
+> > > >    #define PA5_RG_U2_HS_100U_U3_EN	BIT(11)
+> > > >    
+> > > >    #define U3P_USBPHYACR6		0x018
+> > > > +#define PA6_RG_U2_PRE_EMP		GENMASK(31, 30)
+> > > > +#define PA6_RG_U2_PRE_EMP_VAL(x)	((0x3 & (x)) << 30)
+> > > 
+> > > Hello Chunfeng,
+> > > 
+> > > can you please clarify which SoC is this change referred to?
+> > 
+> > These bits are reserved before using 12nm process.
+> > 
+> > > 
+> > > If I'm not missing anything, there may be a register layout
+> > > conflict
+> > 
+> > As I know these reserved bits are not used before, but now used to
+> > tune
+> > pre-emphasis after supporting 12nm or 5nm process.
+> > 
+> > > between
+> > > one version and the other for T-PHYs, for which, it may be a good
+> > > idea to add
+> > > a PHY version check before allowing to write settings that are
+> > > supported only
+> > > on a specific IP...
+> > 
+> > Do you know which SoC used bits, I can confirm it with our DE.
+> > 
 > 
-> Please _do_ _not_ _top_ _post_
+> MT8195, MT8186 (and others), RG_USB20_PHY_REV is marked as bit 31:24.
+Sorry, there is something wrong, the register map is not updated;
+
 > 
->> Before the device or host is being attached, we can keep most of the
->> transceivers powered down (PD=1/PD_DR=1) to minimize power consumption. At this
->> stage, in .phy_power_on(), we enable only the single-ended receiver (PD_ZI=0)
->> for detecting connection. Upon detecting device's or host's connection, host or
->> controller driver will invoke tegra_phy_xusb_utmi_pad_power_on() to power on all
->> of the transceivers (PD=0/PD_DR=0) to equip full link functionality.
+> Regards,
+> Angelo
 > 
-> Thanks for this explanation... It helps!
-> 
-> Just a suggestion, can this be moved into phy_init() you have detected
-> connection in phy_power_on(), the transceiver can be enabled in
-> phy_int... Would that work?
-> That would work, too. However, because Tegra USB has separate phys for USB3 SS
-and USB2, I'd like to keep the USB2 phy operations as they are now, so that USB
-host and device controller drivers do not have to distinguish the phy type and
-invoke different phy stubs. Furthermore, PD_ZI=0 does really power on the USB2
-phy, partially.
 
-For example:
-1. in .probe(),
-    for_each_usb_phy {
-         phy_init(phy);
-    }
-
-    for_each_usb3_phy {
-         phy_power_on(phy);
-    };
-
-2. upon detecting connection,
-
-    phy_power_on(the_target_usb2_phy);
-
-Thanks,
-JC
 
 -- 
 linux-phy mailing list
