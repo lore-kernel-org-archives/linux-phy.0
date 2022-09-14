@@ -4,67 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8CC24ECAAD3
-	for <linux-phy@archiver.kernel.org>; Wed, 14 Sep 2022 06:11:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C85B5ECAAD8
+	for <linux-phy@archiver.kernel.org>; Wed, 14 Sep 2022 06:18:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+RjkmFwk3VARq03J/YgWaEqwgvMzyd9oaMoynEGWYec=; b=RZMHkfqmok9o+7
-	B0LmTjbz3yyYrhlsYUrXW9NZG2kVShr7hYKGQgvfJkIsu/y1H1rIpF6lF2k4dOfe4GQcX2q2P3xP/
-	3LG4apukQRDmtniphberlE/ELn9saL6pxfgHvLUqiZGA+JRd7jJAQXXscaf0vN8RH5tpZChfEazwZ
-	hVA8JINsWEzsx+v2iwFsj7TKC3YAVwV2GqrL69Stellcy+3wcq1h+F72HT/cJgGla/bQvGjjrAI3a
-	gAS4stV+Z3KyR228ByZBOA9rmf7f8fuqKKuBlHPHg31q5XjzuopFZf7eOv3v4dLT34+fdobA3ZVPq
-	DvH6CxPujsnpGghAvaAA==;
+	List-Owner; bh=COCaep4PtUwd7dwS+rYzFIUpnKuddiPzsoDogd9P4hs=; b=weQW4LeUBGC85g
+	pQX3cg7B+CHZN6iQIdttizkdc0ghWk+ZLsrdHs1NWVS4UBgMn6GwdbwXUNPJ8cB7SkRj9csdHX9Ky
+	tHXl1KQYRYUqYFynr1ZDFLUposYS62PQyCj7M+acMtpoTpBf5XJ+g5RYNRjUFOjZgVn/FnejcvCcB
+	KWmKQZCtTZN7anlZMtkIIr8saBgBka6scG9eC/X6oI3uQGiOjiAOZ6oNtcInzV2vn+gRcuC365J5r
+	1L8yTP4ZVsE6RQko+08cvIs/59r6xlYR8F/87oB+yg9Hur7gxWgshCXSN4p22xrNTPjJEUbwdCWwz
+	PmMUbFy6ejLu7u233anA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oYLc9-008GDs-01; Wed, 14 Sep 2022 06:11:13 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1oYLjH-008PoG-1r; Wed, 14 Sep 2022 06:18:35 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oYLc6-008G8u-FR
-	for linux-phy@lists.infradead.org; Wed, 14 Sep 2022 06:11:11 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 33F9161825;
-	Wed, 14 Sep 2022 06:11:09 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 92EBCC433D6;
-	Wed, 14 Sep 2022 06:11:08 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1663135868;
-	bh=l3POCh1A9WRyNC+xgdmasXmOBVuTlOUtQ6gCZgppjmY=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=UTFKiq4gC6Wld5PnTagomHBJJmaEoqtyNTAP0e8AjU7WLIrb6JbxSsWOjrso7saci
-	 gqOVZUAsQpriepShunlr8lT3WVwAfg2AayLxRtZgEkW0Bptg4r7XlLemomUEtIjzUs
-	 oshbG0yd3Jx+M8CGMZ9g8FFA0/h01thZywo47+rPPY7ArpRLI1mPyc7BBBMMzz4BNF
-	 9SftonXp4rk5k5MmBVfezAFqf+wkO0mOw/GUMvPxJqlRDd4Chg82rWFkdST7Q9a6fu
-	 qSpVo9USz3aRSOAfOEx1otSqMkGrqAIeQYs7O9ykfcOocxhOa5p8pPOunHy5rH7Cmx
-	 YcoanQEuRhNDA==
-Received: from johan by xi.lan with local (Exim 4.94.2)
-	(envelope-from <johan@kernel.org>)
-	id 1oYLc4-0002vg-Nt; Wed, 14 Sep 2022 08:11:09 +0200
-Date: Wed, 14 Sep 2022 08:11:08 +0200
-From: Johan Hovold <johan@kernel.org>
+	id 1oYLjE-008PmS-CR; Wed, 14 Sep 2022 06:18:33 +0000
+X-UUID: 031713acdf1049179cbf646b2870e62a-20220913
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
+	h=Content-Type:Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From; bh=1OAmeDA6ar/po8UT6QCtGaslauKiW3mbQc6OuQ6RaAY=;
+	b=noAtErndxSVSIHaIg27pDYUFGGSWV5cOcToFuraIULssJZWSkyj3UzozT9kYuMmEVHQKWkz4UBrKBEQyfyEOVSZVdw4nLXV5uR0AQTfBajwGD3xezWtj48UpvL8r1mUpcUcAmpaOBn5NyCzk0uiOOoPG80QWLnxZnZopEb0lEEE=;
+X-CID-P-RULE: Release_Ham
+X-CID-O-INFO: VERSION:1.1.11,REQID:d899ddf2-789d-48c8-b69b-75503ed0b725,IP:0,U
+	RL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:
+	release,TS:0
+X-CID-META: VersionHash:39a5ff1,CLOUDID:67125fec-2856-4fce-b125-09d4c7ebe045,B
+	ulkID:nil,BulkQuantity:0,Recheck:0,SF:nil,TC:nil,Content:0,EDM:-3,IP:nil,U
+	RL:11|1,File:nil,Bulk:nil,QS:nil,BEC:nil,COL:0
+X-UUID: 031713acdf1049179cbf646b2870e62a-20220913
+Received: from mtkmbs11n1.mediatek.inc [(172.21.101.185)] by mailgw02.mediatek.com
+	(envelope-from <chunfeng.yun@mediatek.com>)
+	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
+	with ESMTP id 773015791; Tue, 13 Sep 2022 23:18:28 -0700
+Received: from mtkmbs11n1.mediatek.inc (172.21.101.185) by
+ mtkmbs10n2.mediatek.inc (172.21.101.183) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.792.3;
+ Wed, 14 Sep 2022 14:07:50 +0800
+Received: from localhost.localdomain (10.17.3.154) by mtkmbs11n1.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.2.792.15 via Frontend
+ Transport; Wed, 14 Sep 2022 14:07:49 +0800
+From: Chunfeng Yun <chunfeng.yun@mediatek.com>
 To: Vinod Koul <vkoul@kernel.org>
-Cc: Johan Hovold <johan+linaro@kernel.org>, Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@somainline.org>,
-	Kishon Vijay Abraham I <kishon@ti.com>,
-	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 0/3] phy: qcom-qmp-pcie: shorten function prefixes
-Message-ID: <YyFwfBkS9sbGtDtY@hovoldconsulting.com>
-References: <20220906074550.4383-1-johan+linaro@kernel.org>
- <YyCZgHx66V3rhv7u@matsya>
+CC: Chunfeng Yun <chunfeng.yun@mediatek.com>, Kishon Vijay Abraham I
+	<kishon@ti.com>, Rob Herring <robh+dt@kernel.org>, Krzysztof Kozlowski
+	<krzysztof.kozlowski+dt@linaro.org>, Matthias Brugger
+	<matthias.bgg@gmail.com>, <linux-arm-kernel@lists.infradead.org>,
+	<linux-mediatek@lists.infradead.org>, <linux-phy@lists.infradead.org>,
+	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>, Eddie Hung
+	<eddie.hung@mediatek.com>, AngeloGioacchino Del Regno
+	<angelogioacchino.delregno@collabora.com>
+Subject: [PATCH v3 3/7] phy: phy-mtk-tphy: add property to set pre-emphasis
+Date: Wed, 14 Sep 2022 14:07:42 +0800
+Message-ID: <20220914060746.10004-3-chunfeng.yun@mediatek.com>
+X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20220914060746.10004-1-chunfeng.yun@mediatek.com>
+References: <20220914060746.10004-1-chunfeng.yun@mediatek.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <YyCZgHx66V3rhv7u@matsya>
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220913_231110_586654_D48C365C 
-X-CRM114-Status: GOOD (  12.83  )
+X-CRM114-CacheID: sfid-20220913_231832_458597_6D700147 
+X-CRM114-Status: GOOD (  11.74  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,25 +84,65 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Sep 13, 2022 at 08:23:52PM +0530, Vinod Koul wrote:
-> On 06-09-22, 09:45, Johan Hovold wrote:
-> > The QMP PHY driver function prefixes have become unnecessarily long
-> > (e.g. after the recent driver split) and hurt readability.
-> > 
-> > This series shortens the "qcom_qmp_phy_pcie" prefix to "qmp_pcie" (QMP
-> > likely stands for "Qualcomm Multi PHY" or similar anyway) and clean up
-> > the code somewhat.
+Add a property to set usb2 phy's pre-emphasis, it's disabled by default
+on some SoCs.
 
-> > Once merged I can do the same conversion of the other four QMP drivers.
-> 
-> Patches welcome!
+Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+---
+v2~v3: no changes
+---
+ drivers/phy/mediatek/phy-mtk-tphy.c | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
 
-I went ahead and did the corresponding changes to the rest of the QMP
-drivers so the result should already be in you inbox:
+diff --git a/drivers/phy/mediatek/phy-mtk-tphy.c b/drivers/phy/mediatek/phy-mtk-tphy.c
+index 8ee7682b8e93..986fde0f63a0 100644
+--- a/drivers/phy/mediatek/phy-mtk-tphy.c
++++ b/drivers/phy/mediatek/phy-mtk-tphy.c
+@@ -72,6 +72,8 @@
+ #define PA5_RG_U2_HS_100U_U3_EN	BIT(11)
+ 
+ #define U3P_USBPHYACR6		0x018
++#define PA6_RG_U2_PRE_EMP		GENMASK(31, 30)
++#define PA6_RG_U2_PRE_EMP_VAL(x)	((0x3 & (x)) << 30)
+ #define PA6_RG_U2_BC11_SW_EN		BIT(23)
+ #define PA6_RG_U2_OTG_VBUSCMP_EN	BIT(20)
+ #define PA6_RG_U2_DISCTH		GENMASK(7, 4)
+@@ -370,6 +372,7 @@ struct mtk_phy_instance {
+ 	int eye_term;
+ 	int intr;
+ 	int discth;
++	int pre_emphasis;
+ 	bool bc12_en;
+ };
+ 
+@@ -841,10 +844,13 @@ static void phy_parse_property(struct mtk_tphy *tphy,
+ 				 &instance->intr);
+ 	device_property_read_u32(dev, "mediatek,discth",
+ 				 &instance->discth);
++	device_property_read_u32(dev, "mediatek,pre-emphasis",
++				 &instance->pre_emphasis);
+ 	dev_dbg(dev, "bc12:%d, src:%d, vrt:%d, term:%d, intr:%d, disc:%d\n",
+ 		instance->bc12_en, instance->eye_src,
+ 		instance->eye_vrt, instance->eye_term,
+ 		instance->intr, instance->discth);
++	dev_dbg(dev, "pre-emp:%d\n", instance->pre_emphasis);
+ }
+ 
+ static void u2_phy_props_set(struct mtk_tphy *tphy,
+@@ -875,6 +881,10 @@ static void u2_phy_props_set(struct mtk_tphy *tphy,
+ 	if (instance->discth)
+ 		mtk_phy_update_bits(com + U3P_USBPHYACR6, PA6_RG_U2_DISCTH,
+ 				    PA6_RG_U2_DISCTH_VAL(instance->discth));
++
++	if (instance->pre_emphasis)
++		mtk_phy_update_bits(com + U3P_USBPHYACR6, PA6_RG_U2_PRE_EMP,
++				    PA6_RG_U2_PRE_EMP_VAL(instance->pre_emphasis));
+ }
+ 
+ /* type switch for usb3/pcie/sgmii/sata */
+-- 
+2.18.0
 
-	https://lore.kernel.org/lkml/20220907110728.19092-1-johan+linaro@kernel.org/
-
-Johan
 
 -- 
 linux-phy mailing list
