@@ -4,70 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 86FACECAAD3
-	for <linux-phy@archiver.kernel.org>; Wed, 14 Sep 2022 06:09:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8CC24ECAAD3
+	for <linux-phy@archiver.kernel.org>; Wed, 14 Sep 2022 06:11:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Oemt8ZklM8oZ3Jmn7OAYHf6JBXcZc5XsWebDlqSHaFA=; b=rXjD1y9AOuFEK8
-	EWDBMc1zIQeyrsb2WxIRbgtYos8jg0YlSqrBkGxebnDs88IXPle8rYOtrDSCGQPOaWYTF8Bkd4diB
-	Y6terxLcSMvYpvnuHT/hz4qi+nkhL/rjMZIYcpLaTPwqNfwkREo/XyVf9ShZWTSrRIYoJj5FXt+JP
-	B0d5x6rQewlzHUtcAHcW/GGbJiWW2Zw3ExOLUj+gJzVt/1LmizQirr/LWbl1zJ9MBsyPd0k7N7ZtW
-	Djm5ghOFQG69IneiBwjM8JJrmgAfXOJMx08Gg0n7JmIo8BeoclgkOcCygbHDPByHEQrEghiOmI5rV
-	knVGMAMCjX1fQkHi4O+Q==;
+	List-Owner; bh=+RjkmFwk3VARq03J/YgWaEqwgvMzyd9oaMoynEGWYec=; b=RZMHkfqmok9o+7
+	B0LmTjbz3yyYrhlsYUrXW9NZG2kVShr7hYKGQgvfJkIsu/y1H1rIpF6lF2k4dOfe4GQcX2q2P3xP/
+	3LG4apukQRDmtniphberlE/ELn9saL6pxfgHvLUqiZGA+JRd7jJAQXXscaf0vN8RH5tpZChfEazwZ
+	hVA8JINsWEzsx+v2iwFsj7TKC3YAVwV2GqrL69Stellcy+3wcq1h+F72HT/cJgGla/bQvGjjrAI3a
+	gAS4stV+Z3KyR228ByZBOA9rmf7f8fuqKKuBlHPHg31q5XjzuopFZf7eOv3v4dLT34+fdobA3ZVPq
+	DvH6CxPujsnpGghAvaAA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oYLaf-008EQM-J3; Wed, 14 Sep 2022 06:09:41 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1oYLc9-008GDs-01; Wed, 14 Sep 2022 06:11:13 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oYLab-008EFK-T4; Wed, 14 Sep 2022 06:09:39 +0000
-X-UUID: a0bc4ab9e784498ea6c20716ddddfe5e-20220913
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
-	h=Content-Type:Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From; bh=6+oGyl9dP8hxzdhVR6EPUTnIGGLS5/EJMLDztRGSB5o=;
-	b=su4E6TP7sY1RovXT6HpexwllXcw0wMfTfv6Clj0Bh68PsM96YIEuqYyjtdrVLwVS5KXhPhBHLjeGNTq11EEDGRxs/FT9v7/1xanEpVJxjUKETqtw5nH+yESCF5hUXdA1YQyvqQK7HoUUlmYZ7XXMD1FcOVuG2tN8T925P5pkiUw=;
-X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.1.11,REQID:bcd5518b-4f24-4b17-8224-8ef39a04d4f0,IP:0,U
-	RL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:
-	release,TS:0
-X-CID-META: VersionHash:39a5ff1,CLOUDID:e3b456f6-6e85-48d9-afd8-0504bbfe04cb,B
-	ulkID:nil,BulkQuantity:0,Recheck:0,SF:nil,TC:nil,Content:0,EDM:-3,IP:nil,U
-	RL:11|1,File:nil,Bulk:nil,QS:nil,BEC:nil,COL:0
-X-UUID: a0bc4ab9e784498ea6c20716ddddfe5e-20220913
-Received: from mtkmbs11n1.mediatek.inc [(172.21.101.185)] by mailgw02.mediatek.com
-	(envelope-from <chunfeng.yun@mediatek.com>)
-	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
-	with ESMTP id 2128097698; Tue, 13 Sep 2022 23:09:27 -0700
-Received: from mtkmbs11n1.mediatek.inc (172.21.101.185) by
- mtkmbs10n2.mediatek.inc (172.21.101.183) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.792.3;
- Wed, 14 Sep 2022 14:07:52 +0800
-Received: from localhost.localdomain (10.17.3.154) by mtkmbs11n1.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.2.792.15 via Frontend
- Transport; Wed, 14 Sep 2022 14:07:51 +0800
-From: Chunfeng Yun <chunfeng.yun@mediatek.com>
+	id 1oYLc6-008G8u-FR
+	for linux-phy@lists.infradead.org; Wed, 14 Sep 2022 06:11:11 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 33F9161825;
+	Wed, 14 Sep 2022 06:11:09 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 92EBCC433D6;
+	Wed, 14 Sep 2022 06:11:08 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1663135868;
+	bh=l3POCh1A9WRyNC+xgdmasXmOBVuTlOUtQ6gCZgppjmY=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=UTFKiq4gC6Wld5PnTagomHBJJmaEoqtyNTAP0e8AjU7WLIrb6JbxSsWOjrso7saci
+	 gqOVZUAsQpriepShunlr8lT3WVwAfg2AayLxRtZgEkW0Bptg4r7XlLemomUEtIjzUs
+	 oshbG0yd3Jx+M8CGMZ9g8FFA0/h01thZywo47+rPPY7ArpRLI1mPyc7BBBMMzz4BNF
+	 9SftonXp4rk5k5MmBVfezAFqf+wkO0mOw/GUMvPxJqlRDd4Chg82rWFkdST7Q9a6fu
+	 qSpVo9USz3aRSOAfOEx1otSqMkGrqAIeQYs7O9ykfcOocxhOa5p8pPOunHy5rH7Cmx
+	 YcoanQEuRhNDA==
+Received: from johan by xi.lan with local (Exim 4.94.2)
+	(envelope-from <johan@kernel.org>)
+	id 1oYLc4-0002vg-Nt; Wed, 14 Sep 2022 08:11:09 +0200
+Date: Wed, 14 Sep 2022 08:11:08 +0200
+From: Johan Hovold <johan@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>
-CC: Chunfeng Yun <chunfeng.yun@mediatek.com>, Kishon Vijay Abraham I
-	<kishon@ti.com>, Rob Herring <robh+dt@kernel.org>, Krzysztof Kozlowski
-	<krzysztof.kozlowski+dt@linaro.org>, Matthias Brugger
-	<matthias.bgg@gmail.com>, <linux-arm-kernel@lists.infradead.org>,
-	<linux-mediatek@lists.infradead.org>, <linux-phy@lists.infradead.org>,
-	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>, Eddie Hung
-	<eddie.hung@mediatek.com>, AngeloGioacchino Del Regno
-	<angelogioacchino.delregno@collabora.com>
-Subject: [PATCH v3 5/7] phy: phy-mtk-tphy: disable gpio mode for all usb2 phys
-Date: Wed, 14 Sep 2022 14:07:44 +0800
-Message-ID: <20220914060746.10004-5-chunfeng.yun@mediatek.com>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20220914060746.10004-1-chunfeng.yun@mediatek.com>
-References: <20220914060746.10004-1-chunfeng.yun@mediatek.com>
+Cc: Johan Hovold <johan+linaro@kernel.org>, Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@somainline.org>,
+	Kishon Vijay Abraham I <kishon@ti.com>,
+	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 0/3] phy: qcom-qmp-pcie: shorten function prefixes
+Message-ID: <YyFwfBkS9sbGtDtY@hovoldconsulting.com>
+References: <20220906074550.4383-1-johan+linaro@kernel.org>
+ <YyCZgHx66V3rhv7u@matsya>
 MIME-Version: 1.0
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <YyCZgHx66V3rhv7u@matsya>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220913_230937_975051_3CF4F33C 
-X-CRM114-Status: GOOD (  11.56  )
+X-CRM114-CacheID: sfid-20220913_231110_586654_D48C365C 
+X-CRM114-Status: GOOD (  12.83  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,33 +81,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Disable DP/DM's GPIO mode for all usb2 phy, not only for the first
-usb2 phy which usually supports dual-role mode.
+On Tue, Sep 13, 2022 at 08:23:52PM +0530, Vinod Koul wrote:
+> On 06-09-22, 09:45, Johan Hovold wrote:
+> > The QMP PHY driver function prefixes have become unnecessarily long
+> > (e.g. after the recent driver split) and hurt readability.
+> > 
+> > This series shortens the "qcom_qmp_phy_pcie" prefix to "qmp_pcie" (QMP
+> > likely stands for "Qualcomm Multi PHY" or similar anyway) and clean up
+> > the code somewhat.
 
-Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
----
-v2~v3: no changes
----
- drivers/phy/mediatek/phy-mtk-tphy.c | 3 +--
- 1 file changed, 1 insertion(+), 2 deletions(-)
+> > Once merged I can do the same conversion of the other four QMP drivers.
+> 
+> Patches welcome!
 
-diff --git a/drivers/phy/mediatek/phy-mtk-tphy.c b/drivers/phy/mediatek/phy-mtk-tphy.c
-index 7f40b8b052bd..79920c066e59 100644
---- a/drivers/phy/mediatek/phy-mtk-tphy.c
-+++ b/drivers/phy/mediatek/phy-mtk-tphy.c
-@@ -532,8 +532,7 @@ static void u2_phy_instance_init(struct mtk_tphy *tphy,
- 	/* disable switch 100uA current to SSUSB */
- 	mtk_phy_clear_bits(com + U3P_USBPHYACR5, PA5_RG_U2_HS_100U_U3_EN);
- 
--	if (!index)
--		mtk_phy_clear_bits(com + U3P_U2PHYACR4, P2C_U2_GPIO_CTR_MSK);
-+	mtk_phy_clear_bits(com + U3P_U2PHYACR4, P2C_U2_GPIO_CTR_MSK);
- 
- 	if (tphy->pdata->avoid_rx_sen_degradation) {
- 		if (!index) {
--- 
-2.18.0
+I went ahead and did the corresponding changes to the rest of the QMP
+drivers so the result should already be in you inbox:
 
+	https://lore.kernel.org/lkml/20220907110728.19092-1-johan+linaro@kernel.org/
+
+Johan
 
 -- 
 linux-phy mailing list
