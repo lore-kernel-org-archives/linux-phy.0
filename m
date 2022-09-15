@@ -4,74 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CF398C6FA8A
-	for <linux-phy@archiver.kernel.org>; Thu, 15 Sep 2022 03:37:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 45C15C6FA89
+	for <linux-phy@archiver.kernel.org>; Thu, 15 Sep 2022 05:29:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
+	CC:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QTIimYOVFIwspynn9mpOHdncFv/q2YtGV16oIQdnHbM=; b=rPB00TuTNPzlu0
-	yhz6sczmBpajwB1T/p4eOyaYkOoFCUp70xwrqoInPf3os67ukmjJGxLp6sFs4em6Smeuv1QLjUye6
-	nS4qN5yWtISWqFarLDTBmNWT9Y1GyOSauu4K89JRS/O1m7AdUXt0OIUB6MfBcRX6PsiQI9MCtC3Hh
-	51H/O+UMLTbp+oSMILt+L6sFlzjlKgBJ1qkzMz1n+s7dDydm//CPxxnRSiGIvenFZ+y3W5g7wgk3v
-	+uOhcl+OxcgJZnzx7yuhTTfFkgvBMuIby6fkmmJp3yZho5aaZFUBmoSkUuRBUth90F/X2drsQmsoJ
-	0jtTMM1e5EQrmL3sylVQ==;
+	List-Owner; bh=9GmvtH2APvzVwgnP7JjNObj/mK9olTs1TSjY01uryWk=; b=VbrdbY7PUtCKS/
+	bk3z2wvcRu+VM1TLjxOLqzLXeb2jEpQQ6xt3P1UxbfeT+Uf/oM7bljGnqfUeuNyt4ZxLPs+FMYY2m
+	nbaQ0FL7+eC2CBFTVbSJdZ5BibSfHVpxyGREa7nw0fGYZc/e4BjWZye+bsaqdQxdbJV9En4JH+qgq
+	3Ts9LaRlymoMQKWXYGC4Ko8xzqZtaZazfBxE07tNw3WBAP1dbGp9q03efAZrkRD2CqkhqsDS0aoGw
+	dTgg39+ry2tPmz6A6ZWGvKOjlWOit0cnEqxtYDR6xLLAWRBpQtsT1OjeerY1BdOTaa7gQdNbJXbtC
+	vPHBvtKzG1dIiHFegObg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oYfgi-00GvYt-8H; Thu, 15 Sep 2022 03:37:16 +0000
-Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
+	id 1oYhR1-000a0K-Lh; Thu, 15 Sep 2022 05:29:11 +0000
+Received: from lelv0142.ext.ti.com ([198.47.23.249])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oYfgf-00GvRo-5I
-	for linux-phy@lists.infradead.org; Thu, 15 Sep 2022 03:37:14 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id 8B4C4B81D86;
-	Thu, 15 Sep 2022 03:37:11 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id EF13EC4347C;
-	Thu, 15 Sep 2022 03:37:09 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1663213031;
-	bh=KxdZUKe1FhFDeqYOXN6BYRfxXZGj21xAg5hE3J+Cd5k=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=kWKUEfmG+e/tYxbHra/T7k7GOJ/jZCv4yTs8pwDMCc2cibgNiws5zwPshLWp3CQF1
-	 DL6zmPDYq/RtwvemGwmWY9EoHq7DySOQaBpOOMWpHSnhTWH9QpWx3Zj2oNa8fllGBU
-	 mYO3fslzKWCE2akRA45YWXL6Z4xDBngzO/tvyniiE7iQFkwSm/3C9CLmUnURbN7kJx
-	 KxPNrLv9ynMVsDDNUVEunM3SnqTOBEakbcBw6vvhSLKm1eB6vY8T77zhoUL7+OaKis
-	 X/ESlHNH1+bFH6WcjtVHyjPm09L3F7vPLSzJ3gxjOSPF1AVXU8TnN/9XvIg426mOVI
-	 ZOp1J9HTH6qQA==
-From: Bjorn Andersson <andersson@kernel.org>
-To: agross@kernel.org,
-	Bjorn Andersson <andersson@kernel.org>,
-	dmitry.baryshkov@linaro.org,
-	robh+dt@kernel.org,
-	robdclark@gmail.com,
-	quic_abhinavk@quicinc.com,
-	sean@poorly.run,
-	krzysztof.kozlowski+dt@linaro.org
-Cc: linux-phy@lists.infradead.org,
-	dri-devel@lists.freedesktop.org,
-	swboyd@chromium.org,
-	airlied@linux.ie,
-	vkoul@kernel.org,
-	freedreno@lists.freedesktop.org,
-	devicetree@vger.kernel.org,
-	daniel@ffwll.ch,
-	kishon@ti.com,
-	linux-arm-msm@vger.kernel.org
-Subject: Re: (subset) [PATCH v3 0/3] drm/msm/hdmi: turn MSM8996 HDMI PHY into OF clock provider
-Date: Wed, 14 Sep 2022 22:36:53 -0500
-Message-Id: <166321302054.788007.13905269452519533105.b4-ty@kernel.org>
-X-Mailer: git-send-email 2.37.1
-In-Reply-To: <20220704161148.814510-1-dmitry.baryshkov@linaro.org>
-References: <20220704161148.814510-1-dmitry.baryshkov@linaro.org>
+	id 1oYhQp-000ZkU-Rn; Thu, 15 Sep 2022 05:29:01 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+	by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 28F5SiwT069455;
+	Thu, 15 Sep 2022 00:28:44 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+	s=ti-com-17Q1; t=1663219724;
+	bh=K0Smy6+dcZ3+jbrkiTBsT2EN7qk27a0ML3lu4mrkYSk=;
+	h=Date:CC:Subject:To:References:From:In-Reply-To;
+	b=a3JK2oAeIy2caPv/gh4aon6eVcU+f6SrFLgeWaAmOlV3fyvyvKJWofaVs+c6B8teG
+	 JzRHatAadZUsNxmc2Nc2GksFLbAwxZ2RR2kmxbC59V6IO8tkkd76Eu81MYDhnuuiM/
+	 CtBCZKdOvHbw4rLG2twIHiQxiGjnziJMJ24eCWvI=
+Received: from DFLE102.ent.ti.com (dfle102.ent.ti.com [10.64.6.23])
+	by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 28F5Siuo009104
+	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+	Thu, 15 Sep 2022 00:28:44 -0500
+Received: from DFLE105.ent.ti.com (10.64.6.26) by DFLE102.ent.ti.com
+ (10.64.6.23) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.6; Thu, 15
+ Sep 2022 00:28:44 -0500
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE105.ent.ti.com
+ (10.64.6.26) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.6 via
+ Frontend Transport; Thu, 15 Sep 2022 00:28:44 -0500
+Received: from [10.24.69.241] (ileaxei01-snat.itg.ti.com [10.180.69.5])
+	by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 28F5Sdbe001244;
+	Thu, 15 Sep 2022 00:28:40 -0500
+Message-ID: <d48e5ef4-6d5b-0977-ed45-de810e42356c@ti.com>
+Date: Thu, 15 Sep 2022 10:58:39 +0530
 MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
+ Thunderbird/91.11.0
+CC: <lee.jones@linaro.org>, <krzysztof.kozlowski@linaro.org>,
+        <krzysztof.kozlowski+dt@linaro.org>, <kishon@ti.com>,
+        <vkoul@kernel.org>, <dan.carpenter@oracle.com>,
+        <grygorii.strashko@ti.com>, <rogerq@kernel.org>,
+        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+        <linux-phy@lists.infradead.org>,
+        <linux-arm-kernel@lists.infradead.org>, <sjakhade@cadence.com>,
+        <s-vadapalli@ti.com>
+Subject: Re: [PATCH 1/6] dt-bindings: phy: ti: phy-gmii-sel: Add bindings for
+ J721e
+Content-Language: en-US
+To: Rob Herring <robh@kernel.org>
+References: <20220914093911.187764-1-s-vadapalli@ti.com>
+ <20220914093911.187764-2-s-vadapalli@ti.com>
+ <20220914161527.GA2269201-robh@kernel.org>
+From: Siddharth Vadapalli <s-vadapalli@ti.com>
+In-Reply-To: <20220914161527.GA2269201-robh@kernel.org>
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220914_203713_364654_0AE35D17 
-X-CRM114-Status: UNSURE (   9.94  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220914_222900_086416_CD7F871A 
+X-CRM114-Status: GOOD (  19.58  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,25 +91,74 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, 4 Jul 2022 19:11:45 +0300, Dmitry Baryshkov wrote:
-> On MSM8996 the HDMI PHY is the QMP PHY, it provides an HDMI PLL clock
-> used by the MMCC. Add support for providing this clock to the OF
-> framework by registerding the clock provider and adding #clock-cells
-> property to the DT node.
+Hello Rob,
+
+On 14/09/22 21:45, Rob Herring wrote:
+> On Wed, Sep 14, 2022 at 03:09:06PM +0530, Siddharth Vadapalli wrote:
+>> TI's J721e SoC supports additional PHY modes like QSGMII and SGMII
+>> that are not supported on earlier SoCs. Add a compatible for it.
+>>
+>> Extend ti,qsgmii-main-ports property to support selection of upto
+>> two main ports at once across the two QSGMII interfaces.
+>>
+>> Signed-off-by: Siddharth Vadapalli <s-vadapalli@ti.com>
+>> ---
+>>  .../bindings/phy/ti,phy-gmii-sel.yaml         | 52 ++++++++++++++++---
+>>  1 file changed, 46 insertions(+), 6 deletions(-)
+>>
+>> diff --git a/Documentation/devicetree/bindings/phy/ti,phy-gmii-sel.yaml b/Documentation/devicetree/bindings/phy/ti,phy-gmii-sel.yaml
+>> index da7cac537e15..1e19efab018b 100644
+>> --- a/Documentation/devicetree/bindings/phy/ti,phy-gmii-sel.yaml
+>> +++ b/Documentation/devicetree/bindings/phy/ti,phy-gmii-sel.yaml
+>> @@ -54,6 +54,7 @@ properties:
+>>        - ti,dm814-phy-gmii-sel
+>>        - ti,am654-phy-gmii-sel
+>>        - ti,j7200-cpsw5g-phy-gmii-sel
+>> +      - ti,j721e-cpsw9g-phy-gmii-sel
+>>  
+>>    reg:
+>>      maxItems: 1
+>> @@ -65,12 +66,19 @@ properties:
+>>      description: |
+>>        Required only for QSGMII mode. Array to select the port for
+>>        QSGMII main mode. Rest of the ports are selected as QSGMII_SUB
+>> -      ports automatically. Any one of the 4 CPSW5G ports can act as the
+>> -      main port with the rest of them being the QSGMII_SUB ports.
+>> -    maxItems: 1
+>> -    items:
+>> -      minimum: 1
+>> -      maximum: 4
+>> +      ports automatically. For J7200 CPSW5G with the compatible:
+>> +      ti,j7200-cpsw5g-phy-gmii-sel, ti,qsgmii-main-ports is an
+>> +      array of only one element, which is the port number ranging from
+>> +      1 to 4. For J721e CPSW9G with the compatible:
+>> +      ti,j721e-cpsw9g-phy-gmii-sel, ti,qsgmii-main-ports is an array
+>> +      of two elements, which corresponds to two potential QSGMII main
+>> +      ports. The first element and second element of the array can both
+>> +      range from 1 to 8 each, corresponding to two QSGMII main ports.
+>> +      For J721e CPSW9G, to configure port 2 as the first QSGMII main
+>> +      port and port 7 as the second QSGMII main port, we specify:
+>> +      ti,qsgmii-main-ports = <2>, <7>;
+>> +      If only one QSGMII main port is desired, mention the same main
+>> +      port twice.
 > 
-> The dt-bindings from this series depends on changes from [1] (part of
-> linux-next, but not of the msm-next yet).
-> 
-> [...]
+> Two different forms for the same property name is not great. Just make a 
+> new property if you need something different.
 
-Applied, thanks!
+Thank you for reviewing the patch. Based on the discussion for the
+previous series at [1], I had planned to reuse the same property
+"ti,qsgmii-main-ports" for TI's J721e device too. The reason for this is
+that the property represents the same feature on both devices which is
+that of the QSGMII main port. The only difference between the two of
+them is that J7200's CPSW5G has 4 external ports while J721e's CPSW9G
+has 8 external ports. Thus, J7200 can have at most one QSGMII main port
+while J721e can have up to two. Adding a new property which describes
+the same feature appears to be redundant to me. Please let me know.
 
-[3/3] arm64: dts: qcom: msm8996: add #clock-cells and XO clock to the HDMI PHY node
-      commit: 157b615066288f84e1812964a439603cfe8c1a19
+[1]-> https://lore.kernel.org/r/48080f45-ea9d-e8dc-7720-ef82fc84e3b3@linaro.org/
 
-Best regards,
--- 
-Bjorn Andersson <andersson@kernel.org>
+Regards,
+Siddharth.
 
 -- 
 linux-phy mailing list
