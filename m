@@ -4,60 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 24CCDECAAA1
-	for <linux-phy@archiver.kernel.org>; Thu, 15 Sep 2022 13:19:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0264BECAAA1
+	for <linux-phy@archiver.kernel.org>; Thu, 15 Sep 2022 14:31:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1Gn8do6yFyx5imd/vN8ts3IFf7jP0siyE0W2Zx8h23o=; b=WATBAUAXIVk33n
-	5h+SF2PXTMqPGwWQujmObBvQ82tK4hhUO8gV3xjcYmQMCl5QGePvLvmiMuOsFWNlnJe5287dRXCPV
-	Ic4SgdZcLNnqK5ZxgPEd2W5hj9mEZwPCNQ2qtepC3sD2pTjvoOBMFvE4QKJ5qBHjLtldGJJrCzr/m
-	xdnWrJSPyYQ+jN2TcLSQUJ2NhiS5H8o+4cshNROHpCqRpIwQxJbq6HSaLnJohOfSxE2C2B7uMyAbX
-	Nsk0wFgVy7PNmE6cdHuYmKlJ0Xhr28HHWGQeXWsXck//CydHHVPjXW8DprwvnebYKdiVvc9e8nVwy
-	miJfmsdmDuSc1Y2R7R2w==;
+	List-Owner; bh=iLOGs1DbC8uz7udtmhfiSrDZl8tPJkhi2X9OveugPVg=; b=Jh3U+sprjQuTR+
+	bIKoJiLyKvBMklZ67Gjn4P1P80xRGDcy4ZOxLS9u+H8S+DCq35Qm6kmAz0RytZtzjurYfh4Y00p+3
+	ynr38I/IxYYEnlYCXHZhkvTr9D9DKHFqE5+m0QMepmX4odJulQuHzFMSXJMUyIV2MhxRZKB2Dt5zx
+	gPOPeLbCPEy9rDV6zARrEELKc+uBWPaNkHqGuuZjK5zdU3StuSuTxdyfwyqnQLqTDmGbog7RHax58
+	1bAMqthUFQztVWv02u3Gvqjn2o3PfSE/9b4XKnrCRJqhCR9oQK25dP5VuDHPhrey6pGEPcJ5QDWgB
+	6U8qQ9lN6Ze0Ms+fTkwA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oYomc-009FCn-DV; Thu, 15 Sep 2022 13:19:58 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1oYptf-00AzYH-AT; Thu, 15 Sep 2022 14:31:19 +0000
+Received: from mail-wm1-x32c.google.com ([2a00:1450:4864:20::32c])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oYomY-009F4U-5C
-	for linux-phy@lists.infradead.org; Thu, 15 Sep 2022 13:19:56 +0000
-Received: from ptx.hi.pengutronix.de ([2001:67c:670:100:1d::c0])
-	by metis.ext.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
-	(Exim 4.92)
-	(envelope-from <mfe@pengutronix.de>)
-	id 1oYomF-0002mZ-Jn; Thu, 15 Sep 2022 15:19:35 +0200
-Received: from mfe by ptx.hi.pengutronix.de with local (Exim 4.92)
-	(envelope-from <mfe@pengutronix.de>)
-	id 1oYomD-0007z0-RR; Thu, 15 Sep 2022 15:19:33 +0200
-Date: Thu, 15 Sep 2022 15:19:33 +0200
-From: Marco Felsch <m.felsch@pengutronix.de>
-To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-Cc: mchehab@kernel.org, robh+dt@kernel.org,
-	krzysztof.kozlowski+dt@linaro.org, vkoul@kernel.org, kishon@ti.com,
-	sakari.ailus@linux.intel.com, hverkuil@xs4all.nl, jacopo@jmondi.org,
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-media@vger.kernel.org,
-	kernel@pengutronix.de
-Subject: Re: [PATCH 3/4] media: dt-bindings: add bindings for Toshiba TC358746
-Message-ID: <20220915131933.wclmhtliji5wz35t@pengutronix.de>
-References: <20220818143307.967150-1-m.felsch@pengutronix.de>
- <20220818143307.967150-4-m.felsch@pengutronix.de>
- <YxUoSfbrPPPT5nz6@pendragon.ideasonboard.com>
+	id 1oYptc-00AzWo-Hn
+	for linux-phy@lists.infradead.org; Thu, 15 Sep 2022 14:31:18 +0000
+Received: by mail-wm1-x32c.google.com with SMTP id n8so6493281wmr.5
+        for <linux-phy@lists.infradead.org>; Thu, 15 Sep 2022 07:31:12 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date;
+        bh=jzN+RkL3+HYpV5uaSocPVjuz6+/WusIjt5gu3LU+tH4=;
+        b=C9xrr9CBZ+W1kBMx3LJmipKqrsAdXyqlDLrSqQ58gEM4pdV9C35qA3iQK2ah9iiJ/R
+         6IolHtEk4LRhX+my19Hj2nWS0mJTxD//2s9FdO+I+qCjzXdn/GNlTZKEaiAJFop0V82v
+         OC/ZfF7LsCi52BDe6v1yyjYkmtRNVZH7v12y5uTPeXaAfsYX+m5avpNKSkgwpL6ALSbO
+         jlD29ZaWkuKT+tuMfxxWO3ytHyVbPx9aTniAQ9ILOMaVL0oVq7VmyBOUhszLnLVteXYm
+         5WmYpgZLaJ27S9EeSbpM0Cx0Ah2+1F5JGFfzZ5q10RP8ElhQtAsqZ5D9AZThrKcCNmAd
+         4GMQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date;
+        bh=jzN+RkL3+HYpV5uaSocPVjuz6+/WusIjt5gu3LU+tH4=;
+        b=TJ+a4BHWmzOICLP810Yi4+L4bD8oQIdFhD7eA7+kwqOUqjtSZXCBhBp7N80MTPb4LU
+         2j4gUpVrKzhOOms74hCE9bErfhOQmTKuf4ugHqO8SQ9kd+DtsobhpL8saImLYBwCwZ/s
+         c9aieTQMxDWoMUknbvAVB2E7h+T402Uskmmyoo6Zu50o4GYTZv3LC4GGJf7G1GRdx4ko
+         He3FeDPolyEZlWAKb8xEKCyLshfM2BL+qwZmOT+SFRxY4pqLGi1lCEfQ9rusxowm61Eh
+         ijI2oPUr0Bs2CfngdF+Yhp2vLdKMBEYkuBPW7/wwkneuztRcEO+oQEwhi4RbM8AmQLVt
+         9cjw==
+X-Gm-Message-State: ACgBeo0l7cAKYnT+I322YcidFFtCyWH4qi1ZM1eW6KjDYXcEEjjQmvL4
+	bcmTgHdraZTvsOyAp1408DFhrg==
+X-Google-Smtp-Source: AA6agR4zYPtswUxwv+bjjArjupfpo//XBQX8ZJCy1hTwWvbz611yPtorduCPyU7dIWhfCy3kzRoqqA==
+X-Received: by 2002:a1c:7905:0:b0:3b3:3fa9:4c3a with SMTP id l5-20020a1c7905000000b003b33fa94c3amr7148909wme.55.1663252271795;
+        Thu, 15 Sep 2022 07:31:11 -0700 (PDT)
+Received: from [10.119.22.201] ([89.101.193.72])
+        by smtp.gmail.com with ESMTPSA id q17-20020adff951000000b00228dff8d975sm2762250wrr.109.2022.09.15.07.31.10
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 15 Sep 2022 07:31:11 -0700 (PDT)
+Message-ID: <dd95a178-8d5b-ecc9-9ec9-6988ab1dcf31@linaro.org>
+Date: Thu, 15 Sep 2022 15:31:10 +0100
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <YxUoSfbrPPPT5nz6@pendragon.ideasonboard.com>
-User-Agent: NeoMutt/20180716
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c0
-X-SA-Exim-Mail-From: mfe@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de); SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-phy@lists.infradead.org
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
+ Thunderbird/91.13.0
+Subject: Re: [PATCH v2] dt-bindings: phy: renesas,rcar-gen2-usb-phy: Convert
+ to json-schema
+Content-Language: en-US
+To: Geert Uytterhoeven <geert@linux-m68k.org>
+Cc: Geert Uytterhoeven <geert+renesas@glider.be>,
+ Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+ linux-phy@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
+ Vinod Koul <vkoul@kernel.org>, devicetree@vger.kernel.org,
+ linux-renesas-soc@vger.kernel.org,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Kishon Vijay Abraham I <kishon@ti.com>
+References: <dbdcffd009302734fe2fb895ce04b72fa1ea4355.1663165000.git.geert+renesas@glider.be>
+ <20220915093537.qqddtqx2lr5ttuck@krzk-bin>
+ <CAMuHMdV9dv8j34bXBiussjM3f6+nW2aJ-S2drU-MF4q_aB8trg@mail.gmail.com>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <CAMuHMdV9dv8j34bXBiussjM3f6+nW2aJ-S2drU-MF4q_aB8trg@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220915_061954_384637_2B5C7689 
-X-CRM114-Status: GOOD (  37.30  )
+X-CRM114-CacheID: sfid-20220915_073116_669823_D22DEF16 
+X-CRM114-Status: GOOD (  19.69  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -69,268 +95,64 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Laurent,
+On 15/09/2022 12:12, Geert Uytterhoeven wrote:
+> Hi Krzysztof,
+> 
+> On Thu, Sep 15, 2022 at 10:35 AM Krzysztof Kozlowski
+> <krzysztof.kozlowski@linaro.org> wrote:>
+>> On Wed, 14 Sep 2022 16:17:37 +0200, Geert Uytterhoeven wrote:
+>>> Convert the Renesas R-Car Gen2 USB PHY Device Tree binding documentation
+>>> to json-schema.
+>>>
+>>> Add missing properties.
+>>> Rename the device node from "usb-phy" to "usb-phy-controller", as it
+>>> does not represent a USB PHY itself, and thus does not have a
+>>> "#phy-cells" property.
+>>> Rename the child nodes from "usb-channel" to "usb-phy", as these do
+>>> represent USB PHYs.
+>>> Drop the second example, as it doesn't add any value.
+>>>
+>>> Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
+>>> ---
+>>> v2:
+>>>   - Rename nodes to fix "'#phy-cells' is a required property".
+>>>
+>>> This is the final conversion to json-schema of DT bindings for Renesas
+>>> ARM SoCs, hurray!
+>>>
+>>> Note that there are still a few plain text bindings left for Renesas IP
+>>> cores that are present on non-Renesas SoCs (nbpfaxi and usdhi6rol0).
+>>> ---
+>>>  .../devicetree/bindings/phy/rcar-gen2-phy.txt | 112 ----------------
+>>>  .../phy/renesas,rcar-gen2-usb-phy.yaml        | 123 ++++++++++++++++++
+>>>  2 files changed, 123 insertions(+), 112 deletions(-)
+>>>  delete mode 100644 Documentation/devicetree/bindings/phy/rcar-gen2-phy.txt
+>>>  create mode 100644 Documentation/devicetree/bindings/phy/renesas,rcar-gen2-usb-phy.yaml
+>>>
+>>
+>> Running 'make dtbs_check' with the schema in this patch gives the
+>> following warnings. Consider if they are expected or the schema is
+>> incorrect. These may not be new warnings.
+> 
+> These should be fixed by the DTS counterpart
+> "[PATCH] ARM: dts: renesas: Fix USB PHY device and child node names"
+> https://lore.kernel.org/all/6442b4042e26537abc8632c4772f8201685f1f1f.1663165098.git.geert+renesas@glider.be/>
+> 
+> In hindsight, I should have cross-linked the patches in both
+> directions, not just in one direction. Sorry for that.
 
-On 22-09-05, Laurent Pinchart wrote:
-> Hi Marco,
-> =
-
-> Thank you for the patch.
-> =
-
-> On Thu, Aug 18, 2022 at 04:33:06PM +0200, Marco Felsch wrote:
-> > Add the bindings for the Toshiba TC358746 Parallel <-> MIPI-CSI bridge
-> > driver.
-> > =
-
-> > Signed-off-by: Marco Felsch <m.felsch@pengutronix.de>
-> > ---
-> >  .../bindings/media/i2c/toshiba,tc358746.yaml  | 157 ++++++++++++++++++
-> >  1 file changed, 157 insertions(+)
-> >  create mode 100644 Documentation/devicetree/bindings/media/i2c/toshiba=
-,tc358746.yaml
-> > =
-
-> > diff --git a/Documentation/devicetree/bindings/media/i2c/toshiba,tc3587=
-46.yaml b/Documentation/devicetree/bindings/media/i2c/toshiba,tc358746.yaml
-> > new file mode 100644
-> > index 000000000000..9783cca363c6
-> > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/media/i2c/toshiba,tc358746.yaml
-> > @@ -0,0 +1,157 @@
-> > +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> > +%YAML 1.2
-> > +---
-> > +$id: http://devicetree.org/schemas/media/i2c/toshiba,tc358746.yaml#
-> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > +
-> > +title: Toshiba TC358746 Parallel to MIPI CSI2 Bridge
-> > +
-> > +maintainers:
-> > +  - Marco Felsch <kernel@pengutronix.de>
-> > +
-> > +description: |-
-> > +  The Toshiba TC358746 converts a parallel video stream into a MIPI CS=
-I-2
-> > +  stream. The direction can be either parallel-in -> csi-out or csi-in=
- ->
-> > +  parallel-out The chip is programmable trough I2C and SPI but the SPI
-> > +  interface is only supported in parallel-in -> csi-out mode.
-> > +
-> > +  Note that the current device tree bindings only support the
-> > +  parallel-in -> csi-out path.
-> > +
-> > +properties:
-> > +  compatible:
-> > +    const: toshiba,tc358746
-> > +
-> > +  reg:
-> > +    maxItems: 1
-> > +
-> > +  clocks:
-> > +    description:
-> > +      The phandle to the reference clock source. This corresponds to t=
-he
-> > +      hardware pin REFCLK.
-> > +    maxItems: 1
-> > +
-> > +  clock-names:
-> > +    const: refclk
-> =
-
-> As there's a single clock, should we omit the clock name ?
-
-Don't know, I would rather keep it to make it explicite. Many other go
-that way too.
-
-> > +# The bridge can act as clock provider for the sensor. To enable this =
-support
-> > +# #clock-cells must be specified. Attention if this feature is used th=
-an the
-> =
-
-> s/than/then/
-
-Sure, thanks.
-
-> =
-
-> > +# mclk rate must be at least: (2 * link-frequency) / 8
-> > +#                             `------------------=B4   ^
-> > +#                             internal PLL rate   smallest possible mc=
-lk-div
-> =
-
-> Could this be captured in the description of the property instead of a
-> comment ?
-
-Hm.. a few (1,2) bindings using comments like this but I'm not against
-it. If it belongs to the description, which property should I use? Since
-there is no: clock-controller property like gpio-controller or
-interrupt-controller. The clock provider will be activated based on the
-#clock-cells property. But this property has nothing to with the
-description since this property specifies the cell size.
-
-> > +  "#clock-cells":
-> > +    const: 0
-> > +
-> > +  clock-output-names:
-> > +    description:
-> > +      The clock name of the MCLK output, the default name is tc358746-=
-mclk.
-> > +    maxItems: 1
-> > +
-> > +  vddc-supply:
-> > +    description: Digital core voltage supply, 1.2 volts
-> > +
-> > +  vddio-supply:
-> > +    description: Digital I/O voltage supply, 1.8 volts
-> > +
-> > +  vddmipi-supply:
-> > +    description: MIPI CSI phy voltage supply, 1.2 volts
-> > +
-> > +  reset-gpios:
-> > +    description:
-> > +      The phandle and specifier for the GPIO that controls the chip re=
-set.
-> > +      This corresponds to the hardware pin RESX which is physically ac=
-tive low.
-> > +    maxItems: 1
-> > +
-> > +  ports:
-> > +    $ref: /schemas/graph.yaml#/properties/ports
-> > +    properties:
-> > +      port@0:
-> > +        $ref: /schemas/graph.yaml#/properties/port
-> > +        description: Input port
-> =
-
-> Are the H/V sync signal polarities fixed, or should they be specified
-> here ?
-
-At the moment they are fixed. I can describe it if you want.
-
-> Does the chip support external sync only, or also BT.656 ? In the
-> latter case this needs a bus-type.
-
-Yes, the chip also supports BT.656 but the driver doesn't support it
-yet. You're right, that we should make it explicite albeit it would a
-bit overhead yet since the only mode is: parallel-in with externa syncs.
-
-> > +
-> > +      port@1:
-> > +        $ref: /schemas/graph.yaml#/$defs/port-base
-> > +        description: Output port
-> > +
-> > +        properties:
-> > +          endpoint:
-> > +            $ref: /schemas/media/video-interfaces.yaml#
-> > +            unevaluatedProperties: false
-> > +
-> > +            properties:
-> > +              data-lanes:
-> > +                minItems: 1
-> > +                maxItems: 4
-> > +
-> > +              clock-noncontinuous: true
-> > +              link-frequencies: true
-> > +
-> > +            required:
-> > +              - data-lanes
-> > +              - link-frequencies
-> > +
-> > +    required:
-> > +      - port@0
-> > +      - port@1
-> > +
-> > +required:
-> > +  - compatible
-> > +  - reg
-> > +  - clocks
-> > +  - clock-names
-> > +  - vddc-supply
-> > +  - vddio-supply
-> > +  - vddmipi-supply
-> > +  - ports
-> > +
-> > +additionalProperties: false
-> > +
-> > +examples:
-> > +  - |
-> > +    #include <dt-bindings/gpio/gpio.h>
-> > +
-> > +    i2c {
-> > +      #address-cells =3D <1>;
-> > +      #size-cells =3D <0>;
-> > +
-> > +      csi-bridge@e {
-> > +        compatible =3D "toshiba,tc358746";
-> > +        reg =3D <0xe>;
-> > +
-> > +        clocks =3D <&refclk>;
-> > +        clock-names =3D "refclk";
-> > +
-> > +        reset-gpios =3D <&gpio 2 GPIO_ACTIVE_LOW>;
-> > +
-> > +        vddc-supply =3D <&v1_2d>;
-> > +        vddio-supply =3D <&v1_8d>;
-> > +        vddmipi-supply =3D <&v1_2d>;
-> > +
-> > +        /* sensor mclk provider */
-> > +        #clock-cells =3D <0>;
-> > +
-> > +        ports {
-> > +          #address-cells =3D <1>;
-> > +          #size-cells =3D <0>;
-> > +
-> > +          /* Input */
-> > +          port@0 {
-> > +            reg =3D <0>;
-> > +            tc358746_in: endpoint {
-> > +              remote-endpoint =3D <&sensor_out>;
-> > +              };
-> =
-
-> Wrong indentation here.
-
-Yes, thanks.
-
-Regards,
-  Marco
-
-> > +          };
-> > +
-> > +          /* Output */
-> > +          port@1 {
-> > +            reg =3D <1>;
-> > +            tc358746_out: endpoint {
-> > +              remote-endpoint =3D <&mipi_csi2_in>;
-> > +              data-lanes =3D <1 2>;
-> > +              clock-noncontinuous;
-> > +              link-frequencies =3D /bits/ 64 <216000000>;
-> > +            };
-> > +          };
-> > +        };
-> > +      };
-> > +    };
-> =
-
-> -- =
-
-> Regards,
-> =
-
-> Laurent Pinchart
-> =
+No worries. Thanks for fixing it and error can be ignored.
 
 
--- =
+Best regards,
+Krzysztof
 
+-- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
