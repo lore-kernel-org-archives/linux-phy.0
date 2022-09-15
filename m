@@ -4,115 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1BC3FC6FA89
-	for <linux-phy@archiver.kernel.org>; Thu, 15 Sep 2022 14:47:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 73499C6FA89
+	for <linux-phy@archiver.kernel.org>; Thu, 15 Sep 2022 16:54:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5Dnz6ZGwKxz9Iv1pbGMv0XVLjecwgM+Fvl6xt/Li9Jw=; b=ZNK4xDnadQCu6w
-	VoqR7f8tofvSpp6PtOvx9MmPTI5JBZlc4fpcxsoCN8VqtG3xpdQlwOelD8UiXOYSWv/MfEuamJzm8
-	Z9Wc4yy6i12xtJFIiCQSglU1FKL1BGYw6fX6R+CYBP++Pe2kI82u52bK/xO3gycR90eTRF64VMI3X
-	ZUAOnEcd7sU65Sg9B6FKTVlodvLOS37jP2BNggZ5CTydz4KQlxd0d7GYE8f3HxsNTMYzA+twDtVZ4
-	hVIHzMdaA6rMFd7G5nAgcEcq9QZKcIHNrBDaSBYno/UGvZ3+z6gv1WYRlnRCv1T5RUCRfb1u8uz24
-	7IFA1RHZXbJ4h2KHwPQA==;
+	List-Owner; bh=Fq1qKiuBa2TS0zr+wrh7CpopuXZ/tLUbIw7BuNb1HDs=; b=yi1mZ7yZ264J5m
+	F7LP6piGA9XQp5NdGIk2S6yQVc9jA4/0JwOP+14r+c9EZob2Dut5/68yH6raF2uDqJOakpd6mgcQ8
+	1Aga3JQpBgwvgP2BOv2EyI2IIsXGiTEYdOYk2ycXdUTEPYVW43AxcMTvl0Yk5i1h8Uail4TEPpW5Y
+	Ii5R2jnMtF/lHekMcAYe9WEPVl7tg9F2b8olZqfCIn7F+MmCysscF6jQzAErGTpdatEVqHOBcr2Fl
+	Twhlmud0TUVyCkNJMoTNEy6a254X4SHbMoR22dKbBi6yH9/Y6wPfumOZeMOshJLnFdweKl00zmpkk
+	Sf+m9vda0phefRdJI9dg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oYq9d-00BRRH-Ae; Thu, 15 Sep 2022 14:47:49 +0000
-Received: from mail-dm6nam10olkn2012.outbound.protection.outlook.com ([40.92.41.12] helo=NAM10-DM6-obe.outbound.protection.outlook.com)
+	id 1oYs8I-00DgYA-QM; Thu, 15 Sep 2022 16:54:34 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oYq9Z-00BQks-TY; Thu, 15 Sep 2022 14:47:47 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=anQWWv8cRoBGGzkLn1Sc9uqz32id6i+zIAFMoiR9IEulnvL7gVAXYpqPJVZfYUhHmA53qMaELCAjuG+PVedMjK/CwnA6X/H+KdTQqCcIbRMk5shJEnnZHe6BF7zC+wXti2b111Z5rX4aQPzOj4nmEy1Ia1mu7v0sLXBorlNU0vmfKnyjmxzULShWEsbOvL4917ZvQ2+SJc2aLPuqbSvIqzKZsPKePEaS84fHEzyRFae1lzWGYcPO83WA4ydTHNb3LbO7E3JdhWJrz2R9WFhhjUoYqF9NLMTH/qQAfYV8ALVXEzKBcvhxbPHQfQbqC/24Knm/DUhQLJvuNn62+mDT2g==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=q9OaK/5Nm/wE0jknN7oS+nKGw2CXSfoQ9rfkimpPpyY=;
- b=ZzN+ldk+3OQW0TDroJ0x4XF+GDnMx6pCta80MPdRj0K1c0h0CPNxNyHYpoVnhGgPH/Bts4o95qdpTeUy9EOv91S0z6Hzm8YtdDGQ4R3IZf1gQojXeScBWYU345svOQJs1oBKo3XOEv7vUYXlRN2rjPpVX5Q6PLHHM0yxESTIjZ4pR1Kw1wfENnBeYU7UEalyVtbAhTomIFtBu+BdwF1qP2y9Ui8opa6OQufVAhdEEnXxHykSmDTa82yqH3ykY7qItmJKYlfi2/6sNKW46IOQW7/wCpXxUFuHeXiYiAj/H+Ymf+jxgon5tG+dslyI+J9QZ/IrchrICHNjdbxPhXAr+Q==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=none;
- dkim=none; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=hotmail.com;
- s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=q9OaK/5Nm/wE0jknN7oS+nKGw2CXSfoQ9rfkimpPpyY=;
- b=HUB94L/3wxKoxWNQTKJOamHFC+jMOUaGXzLvOQd7X+eVyeNS3VfZo0m47Ezd8/jdVQYU/U0tgJrCSutZ39VJPkV3BvNCXzLu8aXNxuXy78a5jp5zBRnaRwy07riOvLWU14yiwa0NGIZ2NXgsYFN6AVuzsTSX2up4tgKpCN8DzaWWAxCYxmWURnKGJt0R5IjVvy3/QJN6F1RJ44FvCkYp5azvcwVU4SXWxDNZ7i2uoFP+4rrNY5D6uVfE+WWWt0ZcVcHmx7p0c6cjctYyd1ciYBWPvHkS659aL9zSSn5vCXR/kZ/OakqycWb7R1GOh46eroks41jNhB/MDhkd/rvdIA==
-Received: from SN6PR06MB5342.namprd06.prod.outlook.com (2603:10b6:805:f9::31)
- by DM6PR06MB6314.namprd06.prod.outlook.com (2603:10b6:5:131::14) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5612.22; Thu, 15 Sep
- 2022 14:47:39 +0000
-Received: from SN6PR06MB5342.namprd06.prod.outlook.com
- ([fe80::433a:1493:6a39:ee43]) by SN6PR06MB5342.namprd06.prod.outlook.com
- ([fe80::433a:1493:6a39:ee43%5]) with mapi id 15.20.5612.022; Thu, 15 Sep 2022
- 14:47:38 +0000
-Date: Thu, 15 Sep 2022 09:47:34 -0500
-From: Chris Morgan <macromorgan@hotmail.com>
-To: Michael Riesch <michael.riesch@wolfvision.net>
-Cc: Chris Morgan <macroalpha82@gmail.com>,
-	linux-rockchip@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-phy@lists.infradead.org, cl@rock-chips.com,
-	s.hauer@pengutronix.de, frattaroli.nicolas@gmail.com,
-	pgwipeout@gmail.com, heiko@sntech.de,
-	krzysztof.kozlowski+dt@linaro.org, robh+dt@kernel.org,
-	vkoul@kernel.org, kishon@ti.com
-Subject: Re: [PATCH v3 0/3] rockchip-dsi for rk3568
-Message-ID:  <SN6PR06MB5342CDE25078215CBA6CA339A5499@SN6PR06MB5342.namprd06.prod.outlook.com>
-References: <20220912205607.5969-1-macroalpha82@gmail.com>
- <1d98ce70-81d5-df92-c881-1d9611042401@wolfvision.net>
- <SN6PR06MB5342040C7772D95351DFD22FA5469@SN6PR06MB5342.namprd06.prod.outlook.com>
- <a49e5a9b-7b11-934a-8a98-577f2ba1a4b0@wolfvision.net>
-Content-Disposition: inline
-In-Reply-To: <a49e5a9b-7b11-934a-8a98-577f2ba1a4b0@wolfvision.net>
-X-TMN: [uOi57VLQyQZHGJfhTLUVIG69Sr8YkFBH]
-X-ClientProxiedBy: SA0PR11CA0054.namprd11.prod.outlook.com
- (2603:10b6:806:d0::29) To SN6PR06MB5342.namprd06.prod.outlook.com
- (2603:10b6:805:f9::31)
-X-Microsoft-Original-Message-ID:  <20220915144734.GA24036@wintermute.localdomain>
+	id 1oYs8B-00DgSP-Pe
+	for linux-phy@lists.infradead.org; Thu, 15 Sep 2022 16:54:33 +0000
+Received: from ptx.hi.pengutronix.de ([2001:67c:670:100:1d::c0])
+	by metis.ext.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
+	(Exim 4.92)
+	(envelope-from <mfe@pengutronix.de>)
+	id 1oYs7q-0006KU-As; Thu, 15 Sep 2022 18:54:06 +0200
+Received: from mfe by ptx.hi.pengutronix.de with local (Exim 4.92)
+	(envelope-from <mfe@pengutronix.de>)
+	id 1oYs7o-0001uA-L5; Thu, 15 Sep 2022 18:54:04 +0200
+Date: Thu, 15 Sep 2022 18:54:04 +0200
+From: Marco Felsch <m.felsch@pengutronix.de>
+To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+Cc: mchehab@kernel.org, robh+dt@kernel.org,
+	krzysztof.kozlowski+dt@linaro.org, vkoul@kernel.org, kishon@ti.com,
+	sakari.ailus@linux.intel.com, hverkuil@xs4all.nl, jacopo@jmondi.org,
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-media@vger.kernel.org,
+	kernel@pengutronix.de
+Subject: Re: [PATCH 4/4] media: tc358746: add Toshiba TC358746 Parallel to
+ CSI-2 bridge driver
+Message-ID: <20220915165404.ghcjntxom7kzqyuy@pengutronix.de>
+References: <20220818143307.967150-1-m.felsch@pengutronix.de>
+ <20220818143307.967150-5-m.felsch@pengutronix.de>
+ <YxZWB3mE1Mk4JV/c@pendragon.ideasonboard.com>
 MIME-Version: 1.0
-X-MS-Exchange-MessageSentRepresentingType: 1
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: SN6PR06MB5342:EE_|DM6PR06MB6314:EE_
-X-MS-Office365-Filtering-Correlation-Id: acbf8f82-b778-441c-3a30-08da97293bb8
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 	3GiwRAMpW7W72oaQx+FBtuwMgGIpboDnY8Ku8MC8asAgCrH1P5NdKgoU8sJ/m8+RhmZ7EZyiofjG4aeQF/VIwyrO+60eWDypv04faK8s3xqwPwaMz1IaVRJuPFl4Dy++3fuZA1ueWrf4nlWHhSJ3roT5VIatrDu5ILNiHl+TZagpwpuAgE5e3T411EcTyeWoYGOgzV2hPf2XJz4Id6pQz30WC+izZouAMLeLuOUyQxl73DaA/o0FjK3fsmmUDnMwUyxheKG9T9MiC8nMyZXvZyf3mAOYgJ9S8qLOosZaNcQnc9aSeu6hF2snMrTpYmm9qvE+EtcVdenb1cJ1CMK2qrJoDh2gapxmXzPrWADerx0VkXxu4j1vpR5ss8Nk5dSTPECNNPwbbqdB3ZW/f225iktBPllwz+0LH93c2L/kvTh0NwUtqPQHBx9rzFPm9sAkBO0PW8r3hFzh9WtZD5JMxsIUmS3NRAbbgalyKTogjk8557AqwiyMq9sSVttGCVw0nyrixRjwbtsAdIrkgwzNNSzVl1/yZOUe2aOWmDJzRTJX6hd75X/eU/qO7WwqkSM/aeJfT9bUAwYmf8wGPBqCknL5w4vmTLtUjq6aQ8rMIeicWnh9hsYsgCq76Hhv5YmjrzwAqSwfV4Otv1O686synAMHyhiU/4GQ6dnvtGG4euDoDwspAa7ssJm8BJzjbfrp
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: 	=?us-ascii?Q?nn4V5sXGepgBFwO2F//ypoRwoztLvOZREwiAHKAGr4bigSppe3gyxz+zyh+V?=
- =?us-ascii?Q?Aso921MEtfLrZ9wjfwrayE62wu/m+AdmDBMSJgxpANBqKT4hPWtpyWvyueOJ?=
- =?us-ascii?Q?RD9CIs3Sry+dZEIYHN9C1PFbYw7Hd9YVD5va+prZy6XWSCMtJPmBPRkjJLrP?=
- =?us-ascii?Q?piAF5GWR4PU8ObQkCOQPB6c9f4fxv8FKRMW2QWWrCPLNBppjuhC6vt1glsxo?=
- =?us-ascii?Q?TVM5vgh3Kb52ptvr5JCYG3H4/dedRabW7flFV6aSwm8viSfO3EkypTAX6FjT?=
- =?us-ascii?Q?4SweNxQJCuZohD1tp0BTVmqiDpq39y6ka+aqOUaRUtE2pTkBmhIXo5gbc3z7?=
- =?us-ascii?Q?s3wQQdyl+WXVVOZqoL8yVBwmJfzqtdN4KgoOi2PIv2FaIhnxLLfwC9W+/8WC?=
- =?us-ascii?Q?Ol004oH+jODZrAyQgU5ieV5LtYBEorvmbgNhNyewy9LN26UY5QTPs1kx68aZ?=
- =?us-ascii?Q?V24UsmLMfNQtSWkz4w3ir3uFxfaW7UJIzsf9DD7ru2jJCBIn5HRf3GYNdLJM?=
- =?us-ascii?Q?SMT14nsL9qWNw5mhTEjaT40p1bQTJTgHGGaE7Jqb9HnHRQXJQIIoWB0+qEi6?=
- =?us-ascii?Q?Oyq50rTgwaf/GF62s3hHmO6EegssmE+ip4ycHK0GWUNgwRLW5TGJAQNfR0Hz?=
- =?us-ascii?Q?QztEBMOejnkjD6zKeN8B861P+2LEFDWgVjK8O/Z8fpaAHfDvY41aoeyCOD0y?=
- =?us-ascii?Q?39LCpdn3tBkpZrnEBfOEResYyi4rSxeJ9C8FDZ7rc91fIRmHLe6of/PSysAM?=
- =?us-ascii?Q?8TxRyIbwaSCzSf89lz5kTKDgEIAqZxomejJaG5e7Ph4gBq0GzaW2vIj/WxPu?=
- =?us-ascii?Q?CHRfZMxiCopwTj6jgHpEeW7I41aNy4QipzstBHsSJHevjt6rRO+bzICrvaiV?=
- =?us-ascii?Q?SQlDUt4RJU7kdwZ8Ct41YxH5aMCaXhM7RwpvuXE+NYN7RPLM5cAZCujf3B8Q?=
- =?us-ascii?Q?NNAw4wm//mQzXOeagdsMWPUE5ZGsFzhVQjFShY4yPqWznG7YcszYYLDq8JZX?=
- =?us-ascii?Q?ATTdf1r23klxWyEpg7VLpBro+zLjoyA2FJaqKoKVrdUKS4ZPKjoRvkpAPJmb?=
- =?us-ascii?Q?ZarvOuyerf9qS+ILc67gDkP6rh7fY5K54IovGx9EaoVU9Giyu0yKr00NW99O?=
- =?us-ascii?Q?dEtFwDEzVZ7eh/fEJuygRaraH20/jzOx8pCLCVT5bB8c0LslZ8+FnUOl8BoB?=
- =?us-ascii?Q?pg1Toz4VJHM65n1f5ucPXWD4Fj43FszAPIqYcTVkvU4SrOPDOvBFBWcJuiT/?=
- =?us-ascii?Q?kt3SIbch9A5SHD7KRBEQwoio+DatOt8jI8s6GwpWhA=3D=3D?=
-X-OriginatorOrg: sct-15-20-4755-11-msonline-outlook-89723.templateTenant
-X-MS-Exchange-CrossTenant-Network-Message-Id: acbf8f82-b778-441c-3a30-08da97293bb8
-X-MS-Exchange-CrossTenant-AuthSource: SN6PR06MB5342.namprd06.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 15 Sep 2022 14:47:38.8665
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
-X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 	00000000-0000-0000-0000-000000000000
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR06MB6314
+Content-Disposition: inline
+In-Reply-To: <YxZWB3mE1Mk4JV/c@pendragon.ideasonboard.com>
+User-Agent: NeoMutt/20180716
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c0
+X-SA-Exim-Mail-From: mfe@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de); SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220915_074746_015364_781FED3B 
-X-CRM114-Status: GOOD (  60.17  )
+X-CRM114-CacheID: sfid-20220915_095428_354672_46AFA91C 
+X-CRM114-Status: GOOD (  47.75  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -124,175 +70,1926 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Sep 15, 2022 at 09:16:47AM +0200, Michael Riesch wrote:
-> Hi Chris,
-> 
-> On 9/14/22 14:50, Chris Morgan wrote:
-> > On Wed, Sep 14, 2022 at 07:46:41AM +0200, Michael Riesch wrote:
-> >> Hi Chris,
-> >>
-> >> On 9/12/22 22:56, Chris Morgan wrote:
-> >>> From: Chris Morgan <macromorgan@hotmail.com>
-> >>>
-> >>> This series adds support for the dsi and dphy controllers on the
-> >>> Rockchip RK3568.
-> >>>
-> >>> Tested on an Anbernic RG503, Anbernic RG353P, and Odroid Go Advance.
-> >>>
-> >>> Changes since V2:
-> >>>  - Removed dsi controller patches, as those have been merged upstream.
-> >>>  - Removed notes about rolling back clock drivers. If I set the parent
-> >>>    clock of the VOP port I'm using to VPLL and set the clock rate of
-> >>>    PLL_VPLL to 500MHz this series works correctly for my panels without
-> >>>    rolling anything back (per Heiko this is the correct way).
-> >>
-> >> I tried this but it didn't help (neither did reverting ff3187eabb5c
-> >> "clk: rockchip: drop CLK_SET_RATE_PARENT from dclk_vop* on rk3568"). On
-> >> my display the content is shifted horizontally and the colors are often
-> >> wrong.
-> > 
-> > There's still something wrong with the VOP2 driver, and I'm trying to
-> > get to the bottom of it. Are you by chance enabling HDMI? Can you check
-> > the clock for the dclk_vopx (where x is the port) that you are using?
-> > It should be very close or the same as the pixel clock of your panel.
-> 
-> Yes, HDMI is enabled (on VP0) and works fine. MIPI DSI is enabled on
-> VP1. The clocks dclk_vopx are:
-> 
->     pll_hpll                          1        1        0   148500000
->        0     0  50000         Y
->        hpll                           3        3        0   148500000
->        0     0  50000         Y
->           dclk_vop2                   1        1        0    37125000
->        0     0  50000         Y
->           dclk_vop0                   2        2        0   148500000
->        0     0  50000         Y
->           clk_hdmi_ref                1        1        0   148500000
->        0     0  50000         Y
->           hpll_ph0                    0        0        0    74250000
->        0     0  50000         Y
-> 
->     pll_vpll                          1        1        0   500000000
->        0     0  50000         Y
->        vpll                           1        1        0   500000000
->        0     0  50000         Y
->           dclk_vop1                   2        2        0   125000000
->        0     0  50000         Y
-> 
-> The pixel clock of my panel is 132 MHz (1080x1920@60). Could this
-> discrepancy be the cause?
+Hi Laurent,
 
-It's too low which likely could be the cause, (honestly not sure) but
-otherwise everything looks correct. Maybe try setting the PLL_VPLL
-rate to 135000000 to force the panel to go faster (135MHz instead of
-125MHz)?
+On 22-09-05, Laurent Pinchart wrote:
+> Hi Marco,
+> =
 
-I know for one of my examples the panel's pixel clock is 33500000
-and I'm running it at 33333333 and it seems to be okay. The other I
-am testing with runs either at 25000000 or 50000000 which evenly
-divides with the 500000000, which is why I use it.
+> Thank you for the patch.
+> =
 
-You can also experiment with different rates, any rate defined in
-rk3568_pll_rates[] should work (though the datasheet says for VOP1
-don't run the parent clock over 500000000, and then in the BSP kernel
-I see the parent clock in my example it running at 503000000 so who
-knows). If need be you can also define a new rate and add it there,
-but you'll have to consult the datasheet for which rates are supported
-and at which dividers (and also the VPLL and NPLLs don't support frac
-rate setting).
+> On Thu, Aug 18, 2022 at 04:33:07PM +0200, Marco Felsch wrote:
+> > Adding support for the TC358746 parallel <-> MIPI CSI bridge. This chip
+> > supports two operating modes:
+> >   1st) parallel-in -> mipi-csi out
+> >   2nd) mipi-csi in -> parallel out
+> > =
 
-Thank you.
+> > This patch only adds the support for the 1st mode.
+> > =
 
-> 
-> > I noticed on mine that the HDMI was interfering with it. For now not
-> > only have I disabled the HDMI but also put it on VP0 while my DSI is
-> > on VP1 (note that if both are active you'll get a null pointer
-> > dereference from the vop2 driver which is another thing I'm chasing
-> > down). I think this is because the hdmi_ref is allowed to set its
-> > parent clock (which is the PLL_HPLL), so it does to 24000000.
-> > 
-> > Basically here's what I've done to overcome the VOP2 issues and get
-> > DSI working with this patch series.
-> > 1) Disabled HDMI (with it on VP0).
-> > 2) Enabled DSI and the DSI-DPHY (with it on VP1).
-> > 3) Set the parent clock of DCLK_VOP0 to PLL_HPLL.
-> > 4) Set the parent clock of DCLK_VOP1 to PLL_VPLL.
-> > 5) Set the clock rate for PLL_VPLL to 500000000.
-> 
-> I tried to reproduce this. When I disabled HDMI I realized that the
-> regulators that produce the 0v9/1v8 image voltages are not turned on.
-> They are required for the MIPI DSI TX block, though. Could you take this
-> requirement into account and model it in the device tree?
-> 
-> After setting the voltages to always-on as a hack the result was pretty
-> much the same: the clock tree is the same as in the case with HDMI and
-> also matches your description.
-> 
-> > Doing this allows the DCLK_VOP1 to run at the correct speed for my
-> > panel instead of 24000000 like it would otherwise. When this occurs
-> > I get a correct image. If for whatever reason the DCLK_VOPx of the
-> > port I'm trying to run the panel on is at 24000000 is when I get
-> > the shifted image.
-> > 
-> > The long term fix I'm trying to work on is to figure out how to
-> > successfully get the VOP2 driver to not crash when VP0 and VP1
-> > are both used for the RK3566 (note this actually should work for
-> > you on an RK3568 board though), so that whole bit about disabling
-> > HDMI might not apply to you if it's enabled.
-> > 
-> > In summary, check the DCLK_VOPx where x is the port you are using.
-> > If it's not at or very close to your pixel clock that's probably
-> > why your image is shifted, at least it was for me.
-> 
-> OK... I am starting to think that I experience a different bug here.
-> I'll clean up my patches and will try again.
-> 
-> Thanks and regards,
-> Michael
-> 
-> > 
-> > Thank you.
-> > 
-> >>
-> >>>  - Added additional details about refactoring DPHY driver to add
-> >>>    2.5GHz for rk356x. All other devices still have a max speed of 1GHz.
-> >>>  - Notified Heiko that the BIT(5) for both PLL_POST_DIV_ENABLE and
-> >>>    PLL_POST_DIV_ENABLE_MASK is deliberate, because of how the
-> >>>    phy_update_bits() works.
-> >>>
-> >>> Changes since RFCv1:
-> >>>  - Identified cause of image shift (clock changes).
-> >>>  - Noted that driver works now.
-> >>>  - Added devicetree nodes for rk356x.dtsi.
-> >>>
-> >>> Chris Morgan (3):
-> >>>   dt-bindings: phy-rockchip-inno-dsidphy: add compatible  for rk3568
-> >>>   phy/rockchip: inno-dsidphy: Add support for rk3568
-> >>>   arm64: dts: rockchip: Add DSI and DSI-DPHY nodes to rk356x
-> >>
-> >> I am testing this on a RK3568 EVB1, which has a display mounted on the
-> >> PCB. I'll submit the patches that add support for this setup soon. For
-> >> the time being a preliminary
-> >>
-> >> Tested-by: Michael Riesch <michael.riesch@wolfvision.net>
-> >>
-> >> Thanks for your work!
-> >> Best regards,
-> >> Michael
-> >>
-> >>>
-> >>>  .../bindings/phy/rockchip,px30-dsi-dphy.yaml  |   1 +
-> >>>  arch/arm64/boot/dts/rockchip/rk356x.dtsi      |  72 +++++++
-> >>>  .../phy/rockchip/phy-rockchip-inno-dsidphy.c  | 204 ++++++++++++++----
-> >>>  3 files changed, 231 insertions(+), 46 deletions(-)
-> >>>
+> > Signed-off-by: Marco Felsch <m.felsch@pengutronix.de>
+> > ---
+> >  drivers/media/i2c/Kconfig    |   17 +
+> >  drivers/media/i2c/Makefile   |    1 +
+> >  drivers/media/i2c/tc358746.c | 1645 ++++++++++++++++++++++++++++++++++
+> >  3 files changed, 1663 insertions(+)
+> >  create mode 100644 drivers/media/i2c/tc358746.c
+> > =
 
--- 
+> > diff --git a/drivers/media/i2c/Kconfig b/drivers/media/i2c/Kconfig
+> > index 7806d4b81716..aefb9c9e0c08 100644
+> > --- a/drivers/media/i2c/Kconfig
+> > +++ b/drivers/media/i2c/Kconfig
+> > @@ -1272,6 +1272,23 @@ config VIDEO_TC358743_CEC
+> >  	  When selected the tc358743 will support the optional
+> >  	  HDMI CEC feature.
+> >  =
+
+> > +config VIDEO_TC358746
+> > +	tristate "Toshiba TC358746 parallel-CSI2 bridge"
+> > +	depends on VIDEO_DEV && I2C
+> > +	select VIDEO_V4L2_SUBDEV_API
+> > +	select MEDIA_CONTROLLER
+> > +	select V4L2_FWNODE
+> > +	select GENERIC_PHY_MIPI_DPHY
+> > +	select REGMAP_I2C
+> > +	select COMMON_CLK
+> > +	help
+> > +	  Support for the Toshiba TC358746 parallel to MIPI CSI-2 bridge.
+> > +	  The bridge can work in both directions but currently only the
+> > +	  parallel-in / csi-out path is supported.
+> > +
+> > +	  To compile this driver as a module, choose M here: the
+> > +	  module will be called tc358746.
+> > +
+> >  config VIDEO_TVP514X
+> >  	tristate "Texas Instruments TVP514x video decoder"
+> >  	depends on VIDEO_DEV && I2C
+> > diff --git a/drivers/media/i2c/Makefile b/drivers/media/i2c/Makefile
+> > index 0a2933103dd9..d1096c2ab480 100644
+> > --- a/drivers/media/i2c/Makefile
+> > +++ b/drivers/media/i2c/Makefile
+> > @@ -118,6 +118,7 @@ obj-$(CONFIG_VIDEO_SONY_BTF_MPX) +=3D sony-btf-mpx.o
+> >  obj-$(CONFIG_VIDEO_SR030PC30) +=3D sr030pc30.o
+> >  obj-$(CONFIG_VIDEO_ST_MIPID02) +=3D st-mipid02.o
+> >  obj-$(CONFIG_VIDEO_TC358743) +=3D tc358743.o
+> > +obj-$(CONFIG_VIDEO_TC358746) +=3D tc358746.o
+> >  obj-$(CONFIG_VIDEO_TDA1997X) +=3D tda1997x.o
+> >  obj-$(CONFIG_VIDEO_TDA7432) +=3D tda7432.o
+> >  obj-$(CONFIG_VIDEO_TDA9840) +=3D tda9840.o
+> > diff --git a/drivers/media/i2c/tc358746.c b/drivers/media/i2c/tc358746.c
+> > new file mode 100644
+> > index 000000000000..7b71d0cf72a9
+> > --- /dev/null
+> > +++ b/drivers/media/i2c/tc358746.c
+> > @@ -0,0 +1,1645 @@
+> > +// SPDX-License-Identifier: GPL-2.0-only
+> > +/*
+> > + * TC358746 - Parallel <-> CSI-2 Bridge
+> > + *
+> > + * Copyright 2022 Marco Felsch <kernel@pengutronix.de>
+> > + *
+> > + * Notes:
+> > + *  - Currently only 'Parallel-in -> CSI-out' mode is supported!
+> > + */
+> > +
+> > +#include <linux/bitfield.h>
+> > +#include <linux/clk.h>
+> > +#include <linux/clk-provider.h>
+> > +#include <linux/delay.h>
+> > +#include <linux/i2c.h>
+> > +#include <linux/interrupt.h>
+> > +#include <linux/kernel.h>
+> > +#include <linux/module.h>
+> > +#include <linux/phy/phy-mipi-dphy.h>
+> > +#include <linux/property.h>
+> > +#include <linux/pm_runtime.h>
+> > +#include <linux/regmap.h>
+> > +#include <media/v4l2-ctrls.h>
+> > +#include <media/v4l2-device.h>
+> > +#include <media/v4l2-fwnode.h>
+> > +#include <media/v4l2-mc.h>
+> > +
+> > +/* 16-bit registers */
+> > +#define CHIPID_REG			0x0000
+> > +#define		CHIPID			GENMASK(15, 8)
+> > +
+> > +#define SYSCTL_REG			0x0002
+> > +#define		SRESET			BIT(0)
+> > +
+> > +#define CONFCTL_REG			0x0004
+> > +#define		PDATAF_MASK		GENMASK(9, 8)
+> > +#define		PDATAF_MODE0		0
+> > +#define		PDATAF_MODE1		1
+> > +#define		PDATAF_MODE2		2
+> > +#define		PDATAF(val)		FIELD_PREP(PDATAF_MASK, (val))
+> > +#define		PPEN			BIT(6)
+> > +#define		DATALANE_MASK		GENMASK(1, 0)
+> > +
+> > +#define FIFOCTL_REG			0x0006
+> > +#define DATAFMT_REG			0x0008
+> > +#define		PDFMT(val)		FIELD_PREP(GENMASK(7, 4), (val))
+> > +
+> > +#define MCLKCTL_REG			0x000c
+> > +#define		MCLK_HIGH_MASK		GENMASK(15, 8)
+> > +#define		MCLK_LOW_MASK		GENMASK(7, 0)
+> > +#define		MCLK_HIGH(val)		FIELD_PREP(MCLK_HIGH_MASK, (val))
+> > +#define		MCLK_LOW(val)		FIELD_PREP(MCLK_LOW_MASK, (val))
+> > +
+> > +#define PLLCTL0_REG			0x0016
+> > +#define		PLL_PRD_MASK		GENMASK(15, 12)
+> > +#define		PLL_PRD(val)		FIELD_PREP(PLL_PRD_MASK, (val))
+> > +#define		PLL_FBD_MASK		GENMASK(8, 0)
+> > +#define		PLL_FBD(val)		FIELD_PREP(PLL_FBD_MASK, (val))
+> > +
+> > +#define PLLCTL1_REG			0x0018
+> > +#define		PLL_FRS_MASK		GENMASK(11, 10)
+> > +#define		PLL_FRS(val)		FIELD_PREP(PLL_FRS_MASK, (val))
+> > +#define		CKEN			BIT(4)
+> > +#define		RESETB			BIT(1)
+> > +#define		PLL_EN			BIT(0)
+> > +
+> > +#define CLKCTL_REG			0x0020
+> > +#define		MCLKDIV_MASK		GENMASK(3, 2)
+> > +#define		MCLKDIV(val)		FIELD_PREP(MCLKDIV_MASK, (val))
+> > +#define		MCLKDIV_8		0
+> > +#define		MCLKDIV_4		1
+> > +#define		MCLKDIV_2		2
+> > +
+> > +#define WORDCNT_REG			0x0022
+> > +#define PP_MISC_REG			0x0032
+> > +#define		FRMSTOP			BIT(15)
+> > +#define		RSTPTR			BIT(14)
+> > +
+> > +/* 32-bit registers */
+> > +#define CLW_DPHYCONTTX_REG		0x0100
+> > +#define CLW_CNTRL_REG			0x0140
+> > +#define D0W_CNTRL_REG			0x0144
+> > +#define		LANEDISABLE		BIT(0)
+> > +
+> > +#define STARTCNTRL_REG			0x0204
+> > +#define		START			BIT(0)
+> > +
+> > +#define LINEINITCNT_REG			0x0210
+> > +#define LPTXTIMECNT_REG			0x0214
+> > +#define TCLK_HEADERCNT_REG		0x0218
+> > +#define		TCLK_ZEROCNT(val)	FIELD_PREP(GENMASK(15, 8), (val))
+> > +#define		TCLK_PREPARECNT(val)	FIELD_PREP(GENMASK(6, 0), (val))
+> > +
+> > +#define TCLK_TRAILCNT_REG		0x021C
+> > +#define THS_HEADERCNT_REG		0x0220
+> > +#define		THS_ZEROCNT(val)	FIELD_PREP(GENMASK(14, 8), (val))
+> > +#define		THS_PREPARECNT(val)	FIELD_PREP(GENMASK(6, 0), (val))
+> > +
+> > +#define TWAKEUP_REG			0x0224
+> > +#define TCLK_POSTCNT_REG		0x0228
+> > +#define THS_TRAILCNT_REG		0x022C
+> > +#define HSTXVREGEN_REG			0x0234
+> > +#define TXOPTIONCNTRL_REG		0x0238
+> > +#define CSI_CONTROL_REG			0x040C
+> > +#define		CSI_MODE		BIT(15)
+> > +#define		TXHSMD			BIT(7)
+> > +#define		NOL(val)		FIELD_PREP(GENMASK(2, 1), (val))
+> > +
+> > +#define CSI_CONFW_REG			0x0500
+> > +#define		MODE(val)		FIELD_PREP(GENMASK(31, 29), (val))
+> > +#define		MODE_SET		0x5
+> > +#define		ADDRESS(val)		FIELD_PREP(GENMASK(28, 24), (val))
+> > +#define		CSI_CONTROL_ADDRESS	0x3
+> > +#define		DATA(val)		FIELD_PREP(GENMASK(15, 0), (val))
+> > +
+> > +#define CSI_START_REG			0x0518
+> > +#define		STRT			BIT(0)
+> > +
+> > +static const struct v4l2_mbus_framefmt tc358746_def_fmt =3D {
+> > +	.width		=3D 640,
+> > +	.height		=3D 480,
+> > +	.code		=3D MEDIA_BUS_FMT_UYVY8_2X8,
+> > +	.field		=3D V4L2_FIELD_NONE,
+> > +	.colorspace	=3D V4L2_COLORSPACE_DEFAULT,
+> > +	.ycbcr_enc	=3D V4L2_YCBCR_ENC_DEFAULT,
+> > +	.quantization	=3D V4L2_QUANTIZATION_DEFAULT,
+> > +	.xfer_func	=3D V4L2_XFER_FUNC_DEFAULT,
+> > +};
+> > +
+> > +static const char * const tc358746_supplies[] =3D {
+> > +	"vddc", "vddio", "vddmipi"
+> > +};
+> > +
+> > +enum {
+> > +	TC358746_SINK,
+> > +	TC358746_SOURCE,
+> > +	TC358746_NR_PADS
+> > +};
+> > +
+> > +struct tc358746 {
+> > +	struct v4l2_subdev		sd;
+> > +	struct media_pad		pads[TC358746_NR_PADS];
+> > +	struct v4l2_async_notifier	notifier;
+> > +	struct v4l2_mbus_framefmt	mbusfmt;
+> =
+
+> Could you use the active state API instead of manually storing mbusfmt
+> here ? It involves
+
+I will do that, thanks for the hint and it also elimates a few basic
+checks like the pad-num check.
+
+> - Implementing the .init_cfg() operation
+> - Calling v4l2_subdev_init_finalize() in probe
+> - Replacing calls to __tc358746_get_pad_format() with
+>   v4l2_subdev_get_pad_format()
+> - Propagating the format from sink to source in tc358746_set_fmt()
+> - Dropping tc358746_src_mbus_code() from tc358746_get_fmt() and simply
+>   retrieving the format using v4l2_subdev_get_pad_format() there
+> - Dropping this field
+> =
+
+> The formats for both the ACTIVE and TRY states will then be stored in
+> the subdev state, unconditionally. You can retrieve the active state
+> with v4l2_subdev_get_locked_active_state() in tc358746_s_stream().
+> =
+
+> > +	struct v4l2_fwnode_endpoint	csi_vep;
+> > +
+> > +	struct v4l2_ctrl_handler	ctrl_hdl;
+> > +
+> > +	struct regmap			*regmap;
+> > +	struct clk			*refclk;
+> > +	struct gpio_desc		*reset_gpio;
+> > +	struct regulator_bulk_data	supplies[ARRAY_SIZE(tc358746_supplies)];
+> > +
+> > +	struct clk_hw			mclk_hw;
+> > +	unsigned long			mclk_rate;
+> > +	u8				mclk_prediv;
+> > +	u16				mclk_postdiv;
+> > +
+> > +	unsigned long			pll_rate;
+> > +	u8				pll_post_div;
+> > +	u16				pll_pre_div;
+> > +	u16				pll_mul;
+> > +
+> > +	struct v4l2_ctrl		*sensor_pclk_ctrl;
+> > +
+> > +#define TC358746_VB_MAX_SIZE		(511 * 32)
+> > +#define TC358746_VB_DEFAULT_SIZE	  (1 * 32)
+> > +	unsigned int			vb_size; /* Video buffer size in bits */
+> > +
+> > +	struct phy_configure_opts_mipi_dphy dphy_cfg;
+> > +};
+> > +
+> > +static inline struct tc358746 *to_tc358746(struct v4l2_subdev *sd)
+> > +{
+> > +	return container_of(sd, struct tc358746, sd);
+> > +}
+> > +
+> > +static inline struct tc358746 *clk_hw_to_tc358746(struct clk_hw *hw)
+> > +{
+> > +	return container_of(hw, struct tc358746, mclk_hw);
+> > +}
+> > +
+> > +struct tc358746_format {
+> > +	u32		code;
+> > +	bool		csi_format;
+> > +	unsigned char	bus_width;
+> > +	unsigned char	bpp;
+> > +	/* Register values */
+> > +	u8		pdformat; /* Peripheral Data Format */
+> > +	u8		pdataf;   /* Parallel Data Format Option */
+> > +};
+> > +
+> > +enum {
+> > +	PDFORMAT_RAW8 =3D 0,
+> > +	PDFORMAT_RAW10,
+> > +	PDFORMAT_RAW12,
+> > +	PDFORMAT_RGB888,
+> > +	PDFORMAT_RGB666,
+> > +	PDFORMAT_RGB565,
+> > +	PDFORMAT_YUV422_8BIT,
+> > +	/* RESERVED =3D 7 */
+> > +	PDFORMAT_RAW14 =3D 8,
+> > +	PDFORMAT_YUV422_10BIT,
+> > +	PDFORMAT_YUV444,
+> > +};
+> > +
+> > +/* Check tc358746_src_mbus_code() if you add new formats */
+> > +static const struct tc358746_format tc358746_formats[] =3D {
+> > +	{
+> > +		.code =3D MEDIA_BUS_FMT_UYVY8_2X8,
+> > +		.bus_width =3D 8,
+> > +		.bpp =3D 16,
+> > +		.pdformat =3D PDFORMAT_YUV422_8BIT,
+> > +		.pdataf =3D PDATAF_MODE0,
+> > +	}, {
+> > +		.code =3D MEDIA_BUS_FMT_UYVY8_1X16,
+> > +		.csi_format =3D true,
+> > +		.bus_width =3D 16,
+> > +		.bpp =3D 16,
+> > +		.pdformat =3D PDFORMAT_YUV422_8BIT,
+> > +		.pdataf =3D PDATAF_MODE1,
+> > +	}, {
+> > +		.code =3D MEDIA_BUS_FMT_YUYV8_1X16,
+> > +		.csi_format =3D true,
+> > +		.bus_width =3D 16,
+> > +		.bpp =3D 16,
+> > +		.pdformat =3D PDFORMAT_YUV422_8BIT,
+> > +		.pdataf =3D PDATAF_MODE2,
+> > +	}, {
+> > +		.code =3D MEDIA_BUS_FMT_UYVY10_2X10,
+> > +		.bus_width =3D 10,
+> > +		.bpp =3D 20,
+> > +		.pdformat =3D PDFORMAT_YUV422_10BIT,
+> > +		.pdataf =3D PDATAF_MODE0, /* don't care */
+> > +	}, {
+> > +		/* in datasheet listed as YUV444 */
+> > +		.code =3D MEDIA_BUS_FMT_GBR888_1X24,
+> > +		.csi_format =3D true,
+> > +		.bus_width =3D 24,
+> > +		.bpp =3D 24,
+> > +		.pdformat =3D PDFORMAT_YUV444,
+> =
+
+> This looks quite weird, does 24-bit RGB really map to the CSI-2 YUV444
+> data type ?
+
+It is written in the comments.. but I can drop for now since I don't
+have a device to ensure it.
+
+> > +		.pdataf =3D PDATAF_MODE0, /* don't care */
+> > +	},
+> > +};
+> > +
+> > +/* Get n-th format for pad */
+> > +static const struct tc358746_format *
+> > +tc358746_get_format_by_idx(unsigned int pad, unsigned int index)
+> > +{
+> > +	unsigned int idx =3D 0;
+> > +	unsigned int i;
+> > +
+> > +	if (pad >=3D TC358746_NR_PADS)
+> > +		return ERR_PTR(-EINVAL);
+> =
+
+> That should be tested by the subdev core, I think you can drop the
+> check. Same below.
+
+Yes, thanks :)
+
+> > +
+> > +	for (i =3D 0; i < ARRAY_SIZE(tc358746_formats); i++) {
+> > +		const struct tc358746_format *fmt =3D &tc358746_formats[i];
+> > +
+> > +		if ((pad =3D=3D TC358746_SOURCE && fmt->csi_format) ||
+> > +		    (pad =3D=3D TC358746_SINK)) {
+> > +			if (idx =3D=3D index)
+> > +				return fmt;
+> > +			idx++;
+> > +		}
+> > +	}
+> > +
+> > +	return ERR_PTR(-EINVAL);
+> > +}
+> > +
+> > +static const struct tc358746_format *
+> > +tc358746_get_format_by_code(unsigned int pad, u32 code)
+> > +{
+> > +	unsigned int i;
+> > +
+> > +	if (pad >=3D TC358746_NR_PADS)
+> > +		return ERR_PTR(-EINVAL);
+> > +
+> > +	for (i =3D 0; i < ARRAY_SIZE(tc358746_formats); i++) {
+> > +		const struct tc358746_format *fmt =3D &tc358746_formats[i];
+> > +
+> > +		if (pad =3D=3D TC358746_SINK && fmt->code =3D=3D code)
+> > +			return fmt;
+> > +
+> > +		if (pad =3D=3D TC358746_SOURCE && fmt->csi_format &&
+> > +		    fmt->code =3D=3D code)
+> > +			return fmt;
+> =
+
+> You could also write
+> =
+
+> 		if (pad =3D=3D TC358746_SOURCE && !fmt->csi_format)
+> 			continue;
+> =
+
+> 		if (fmt->code =3D=3D code)
+> 			return fmt;
+> =
+
+> Up to you.
+
+Okay, I will do that.
+
+> > +	}
+> > +
+> > +	return ERR_PTR(-EINVAL);
+> > +}
+> > +
+> > +static u32 tc358746_src_mbus_code(u32 code)
+> > +{
+> > +	switch (code) {
+> > +	case MEDIA_BUS_FMT_UYVY8_2X8:
+> > +		return MEDIA_BUS_FMT_UYVY8_1X16;
+> > +	case MEDIA_BUS_FMT_UYVY10_2X10:
+> > +		return MEDIA_BUS_FMT_UYVY10_1X20;
+> > +	default:
+> > +		return code;
+> > +	}
+> > +}
+> > +
+> > +static bool tc358746_writeable_reg(struct device *dev, unsigned int re=
+g)
+> > +{
+> > +	switch (reg) {
+> > +	case SYSCTL_REG ... CSI_START_REG:
+> > +		return true;
+> > +	default:
+> > +		return false;
+> > +	}
+> > +}
+> > +
+> > +static bool tc358746_readable_reg(struct device *dev, unsigned int reg)
+> > +{
+> > +	switch (reg) {
+> > +	case CHIPID_REG ... CSI_START_REG:
+> > +		return true;
+> > +	default:
+> > +		return false;
+> > +	}
+> > +}
+> > +
+> > +static const struct regmap_config tc358746_regmap_config =3D {
+> > +	.name =3D "tc358746",
+> > +	.reg_bits =3D 16,
+> > +	.val_bits =3D 16,
+> > +	.max_register =3D CSI_START_REG,
+> > +	.writeable_reg =3D tc358746_writeable_reg,
+> > +	.readable_reg =3D tc358746_readable_reg,
+> > +	.reg_format_endian =3D REGMAP_ENDIAN_BIG,
+> > +	.val_format_endian =3D REGMAP_ENDIAN_BIG,
+> > +};
+> > +
+> > +static int tc358746_write(struct tc358746 *tc358746, u32 reg, u32 val)
+> > +{
+> > +	size_t count;
+> > +
+> > +	/* 32-bit registers starting from CLW_DPHYCONTTX */
+> > +	count =3D reg < CLW_DPHYCONTTX_REG ? 1 : 2;
+> > +
+> > +	return regmap_bulk_write(tc358746->regmap, reg, &val, count);
+> > +}
+> > +
+> > +static int tc358746_read(struct tc358746 *tc358746, u32 reg, u32 *val)
+> > +{
+> > +	size_t count;
+> > +
+> > +	/* 32-bit registers starting from CLW_DPHYCONTTX */
+> > +	count =3D reg < CLW_DPHYCONTTX_REG ? 1 : 2;
+> > +	*val =3D 0;
+> > +
+> > +	return regmap_bulk_read(tc358746->regmap, reg, val, count);
+> > +}
+> > +
+> > +static int
+> > +tc358746_update_bits(struct tc358746 *tc358746, u32 reg, u32 mask, u32=
+ val)
+> > +{
+> > +	u32 tmp, orig;
+> > +	int err;
+> > +
+> > +	err =3D tc358746_read(tc358746, reg, &orig);
+> > +	if (err)
+> > +		return err;
+> > +
+> > +	tmp =3D orig & ~mask;
+> > +	tmp |=3D val & mask;
+> > +
+> > +	return tc358746_write(tc358746, reg, tmp);
+> > +}
+> > +
+> > +static int tc358746_set_bits(struct tc358746 *tc358746, u32 reg, u32 b=
+its)
+> > +{
+> > +	return tc358746_update_bits(tc358746, reg, bits, bits);
+> > +}
+> > +
+> > +static int tc358746_clear_bits(struct tc358746 *tc358746, u32 reg, u32=
+ bits)
+> > +{
+> > +	return tc358746_update_bits(tc358746, reg, bits, 0);
+> > +}
+> > +
+> > +static int tc358746_sw_reset(struct tc358746 *tc358746)
+> > +{
+> > +	int err;
+> > +
+> > +	err =3D tc358746_set_bits(tc358746, SYSCTL_REG, SRESET);
+> > +	if (err)
+> > +		return err;
+> > +
+> > +	udelay(10);
+> > +
+> > +	return tc358746_clear_bits(tc358746, SYSCTL_REG, SRESET);
+> > +}
+> > +
+> > +static int
+> > +tc358746_apply_pll_config(struct tc358746 *tc358746)
+> > +{
+> > +	u8 post =3D tc358746->pll_post_div;
+> > +	u16 pre =3D tc358746->pll_pre_div;
+> > +	u16 mul =3D tc358746->pll_mul;
+> > +	u32 val, mask;
+> > +	int err;
+> > +
+> > +	err =3D tc358746_read(tc358746, PLLCTL1_REG, &val);
+> > +	if (err)
+> > +		return err;
+> > +
+> > +	/* Don't touch the PLL if running */
+> > +	if (FIELD_GET(PLL_EN, val) =3D=3D 1)
+> > +		return 0;
+> > +
+> > +	/* Pre-div and Multiplicator have a internal +1 logic */
+> > +	val =3D PLL_PRD(pre - 1) | PLL_FBD(mul - 1);
+> > +	mask =3D PLL_PRD_MASK | PLL_FBD_MASK;
+> > +	err =3D tc358746_update_bits(tc358746, PLLCTL0_REG, mask, val);
+> > +	if (err)
+> > +		return err;
+> > +
+> > +	val =3D PLL_FRS(ilog2(post)) | RESETB | PLL_EN;
+> > +	mask =3D PLL_FRS_MASK | RESETB | PLL_EN;
+> > +	tc358746_update_bits(tc358746, PLLCTL1_REG, mask, val);
+> > +	if (err)
+> > +		return err;
+> > +
+> > +	udelay(1000);
+> > +
+> > +	return tc358746_set_bits(tc358746, PLLCTL1_REG, CKEN);
+> > +}
+> > +
+> > +static int tc358746_apply_misc_config(struct tc358746 *tc358746)
+> > +{
+> > +	struct device *dev =3D tc358746->sd.dev;
+> > +	const struct tc358746_format *fmt;
+> > +	u32 val;
+> > +	int err;
+> > +
+> > +	fmt =3D tc358746_get_format_by_code(TC358746_SINK, tc358746->mbusfmt.=
+code);
+> > +	if (IS_ERR(fmt))
+> > +		return PTR_ERR(fmt);
+> =
+
+> mbusfmt.code is supposed to have been validated, so you can drop the
+> error check here.
+
+Yes.
+
+> > +
+> > +	/* Self defined CSI user data type id's are not supported yet */
+> > +	val =3D PDFMT(fmt->pdformat);
+> > +	dev_dbg(dev, "DATAFMT: 0x%x\n", val);
+> > +	err =3D tc358746_write(tc358746, DATAFMT_REG, val);
+> > +	if (err)
+> > +		return err;
+> > +
+> > +	val =3D PDATAF(fmt->pdataf);
+> > +	dev_dbg(dev, "CONFCTL[PDATAF]: 0x%x\n", fmt->pdataf);
+> > +	err =3D tc358746_update_bits(tc358746, CONFCTL_REG, PDATAF_MASK, val);
+> > +	if (err)
+> > +		return err;
+> > +
+> > +	val =3D tc358746->vb_size / 32;
+> > +	dev_dbg(dev, "FIFOCTL: %u (0x%x)\n", val, val);
+> > +	err =3D tc358746_write(tc358746, FIFOCTL_REG, val);
+> > +	if (err)
+> > +		return err;
+> > +
+> > +	/* Total number of bytes for each line/width */
+> > +	val =3D tc358746->mbusfmt.width * fmt->bpp / 8;
+> > +	dev_dbg(dev, "WORDCNT: %u (0x%x)\n", val, val);
+> > +	return tc358746_write(tc358746, WORDCNT_REG, val);
+> > +}
+> > +
+> > +#ifndef MHZ
+> =
+
+> Where would it be previously defined ? This sounds like asking for
+> trouble later.
+
+Sorry I don't get that, do you mean that I should define it at the very
+beginning?
+
+> > +#define MHZ		(1000 * 1000)
+> > +#endif
+> > +
+> > +/* Use MHz as base so the div needs no u64 */
+> > +static u32 tc358746_cfg_to_cnt(unsigned int cfg_val,
+> > +			       unsigned int clk_mhz,
+> > +			       unsigned int time_base)
+> > +{
+> > +	return DIV_ROUND_UP(cfg_val * clk_mhz, time_base);
+> > +}
+> > +
+> > +static u32 tc358746_ps_to_cnt(unsigned int cfg_val,
+> > +			      unsigned int clk_mhz)
+> > +{
+> > +	return tc358746_cfg_to_cnt(cfg_val, clk_mhz, USEC_PER_SEC);
+> > +}
+> > +
+> > +static u32 tc358746_us_to_cnt(unsigned int cfg_val,
+> > +			      unsigned int clk_mhz)
+> > +{
+> > +	return tc358746_cfg_to_cnt(cfg_val, clk_mhz, 1);
+> > +}
+> > +
+> > +static int tc358746_apply_dphy_config(struct tc358746 *tc358746)
+> > +{
+> > +	struct phy_configure_opts_mipi_dphy *cfg =3D &tc358746->dphy_cfg;
+> > +	bool non_cont_clk =3D !!(tc358746->csi_vep.bus.mipi_csi2.flags &
+> > +			       V4L2_MBUS_CSI2_NONCONTINUOUS_CLOCK);
+> > +	struct device *dev =3D tc358746->sd.dev;
+> > +	unsigned long hs_byte_clk, hf_clk;
+> > +	u32 val, val2, lptxcnt;
+> > +	int err;
+> > +
+> > +	/* The hs_byte_clk is also called SYSCLK in the excel sheet */
+> > +	hs_byte_clk =3D cfg->hs_clk_rate / 8;
+> > +	hs_byte_clk /=3D MHZ;
+> > +	hf_clk =3D hs_byte_clk / 2;
+> > +
+> > +	val =3D tc358746_us_to_cnt(cfg->init, hf_clk) - 1;
+> > +	dev_dbg(dev, "LINEINITCNT: %u (0x%x)\n", val, val);
+> > +	err =3D tc358746_write(tc358746, LINEINITCNT_REG, val);
+> > +	if (err)
+> > +		return err;
+> > +
+> > +	val =3D tc358746_ps_to_cnt(cfg->lpx, hs_byte_clk) - 1;
+> > +	lptxcnt =3D val;
+> > +	dev_dbg(dev, "LPTXTIMECNT: %u (0x%x)\n", val, val);
+> > +	err =3D tc358746_write(tc358746, LPTXTIMECNT_REG, val);
+> > +	if (err)
+> > +		return err;
+> > +
+> > +	val =3D tc358746_ps_to_cnt(cfg->clk_prepare, hs_byte_clk) - 1;
+> > +	val2 =3D tc358746_ps_to_cnt(cfg->clk_zero, hs_byte_clk) - 1;
+> > +	dev_dbg(dev, "TCLK_PREPARECNT: %u (0x%x)\n", val, val);
+> > +	dev_dbg(dev, "TCLK_ZEROCNT: %u (0x%x)\n", val2, val2);
+> > +	dev_dbg(dev, "TCLK_HEADERCNT: 0x%x\n",
+> > +		(u32)(TCLK_PREPARECNT(val) | TCLK_ZEROCNT(val2)));
+> > +	err =3D tc358746_write(tc358746, TCLK_HEADERCNT_REG,
+> > +			     TCLK_PREPARECNT(val) | TCLK_ZEROCNT(val2));
+> > +	if (err)
+> > +		return err;
+> > +
+> > +	val =3D tc358746_ps_to_cnt(cfg->clk_trail, hs_byte_clk);
+> > +	dev_dbg(dev, "TCLK_TRAILCNT: %u (0x%x)\n", val, val);
+> > +	err =3D tc358746_write(tc358746, TCLK_TRAILCNT_REG, val);
+> > +	if (err)
+> > +		return err;
+> > +
+> > +	val =3D tc358746_ps_to_cnt(cfg->hs_prepare, hs_byte_clk) - 1;
+> > +	val2 =3D tc358746_ps_to_cnt(cfg->hs_zero, hs_byte_clk) - 1;
+> > +	dev_dbg(dev, "THS_PREPARECNT: %u (0x%x)\n", val, val);
+> > +	dev_dbg(dev, "THS_ZEROCNT: %u (0x%x)\n", val2, val2);
+> > +	dev_dbg(dev, "THS_HEADERCNT: 0x%x\n",
+> > +		(u32)(THS_PREPARECNT(val) | THS_ZEROCNT(val2)));
+> > +	err =3D tc358746_write(tc358746, THS_HEADERCNT_REG,
+> > +			     THS_PREPARECNT(val) | THS_ZEROCNT(val2));
+> > +	if (err)
+> > +		return err;
+> > +
+> > +	/* TWAKEUP > 1ms in lptxcnt steps */
+> > +	val =3D tc358746_us_to_cnt(cfg->wakeup, hs_byte_clk);
+> > +	val =3D val / (lptxcnt + 1) - 1;
+> > +	dev_dbg(dev, "TWAKEUP: %u (0x%x)\n", val, val);
+> > +	err =3D tc358746_write(tc358746, TWAKEUP_REG, val);
+> > +	if (err)
+> > +		return err;
+> > +
+> > +	val =3D tc358746_ps_to_cnt(cfg->clk_post, hs_byte_clk);
+> > +	dev_dbg(dev, "TCLK_POSTCNT: %u (0x%x)\n", val, val);
+> > +	err =3D tc358746_write(tc358746, TCLK_POSTCNT_REG, val);
+> > +	if (err)
+> > +		return err;
+> > +
+> > +	val =3D tc358746_ps_to_cnt(cfg->hs_trail, hs_byte_clk);
+> > +	dev_dbg(dev, "THS_TRAILCNT: %u (0x%x)\n", val, val);
+> > +	err =3D tc358746_write(tc358746, THS_TRAILCNT_REG, val);
+> > +	if (err)
+> > +		return err;
+> > +
+> > +	dev_dbg(dev, "CONTCLKMODE: %u", non_cont_clk ? 0 : 1);
+> > +	return  tc358746_write(tc358746, TXOPTIONCNTRL_REG, non_cont_clk ? 0 =
+: 1);
+> > +}
+> > +
+> > +#define MAX_DATA_LANES 4
+> > +
+> > +static int tc358746_enable_csi_lanes(struct tc358746 *tc358746, int en=
+able)
+> > +{
+> > +	unsigned int lanes =3D tc358746->dphy_cfg.lanes;
+> > +	unsigned int lane;
+> > +	u32 reg, val;
+> > +	int err;
+> > +
+> > +	err =3D tc358746_update_bits(tc358746, CONFCTL_REG, DATALANE_MASK,
+> > +				   lanes - 1);
+> > +	if (err)
+> > +		return err;
+> > +
+> > +	/* Clock lane */
+> > +	val =3D enable ? 0 : LANEDISABLE;
+> > +	dev_dbg(tc358746->sd.dev, "CLW_CNTRL: 0x%x\n", val);
+> > +	err =3D tc358746_write(tc358746, CLW_CNTRL_REG, val);
+> > +	if (err)
+> > +		return err;
+> > +
+> > +	for (lane =3D 0; lane < MAX_DATA_LANES; lane++) {
+> > +		/* Data lanes */
+> > +		reg =3D D0W_CNTRL_REG + lane * 0x4;
+> > +		val =3D (enable && lane < lanes) ? 0 : LANEDISABLE;
+> > +
+> > +		dev_dbg(tc358746->sd.dev, "D%uW_CNTRL: 0x%x\n", lane, val);
+> > +		err =3D tc358746_write(tc358746, reg, val);
+> > +		if (err)
+> > +			return err;
+> > +	}
+> > +
+> > +	val =3D 0;
+> > +	if (enable) {
+> > +		/* Clock lane */
+> > +		val |=3D BIT(0);
+> > +
+> > +		/* Data lanes */
+> > +		for (lane =3D 1; lane <=3D lanes; lane++)
+> > +			val |=3D BIT(lane);
+> > +	}
+> > +
+> > +	dev_dbg(tc358746->sd.dev, "HSTXVREGEN: 0x%x\n", val);
+> > +	return tc358746_write(tc358746, HSTXVREGEN_REG, val);
+> > +}
+> > +
+> > +static int tc358746_enable_csi_module(struct tc358746 *tc358746, int e=
+nable)
+> > +{
+> > +	unsigned int lanes =3D tc358746->dphy_cfg.lanes;
+> > +	int err;
+> > +
+> > +	/*
+> > +	 * START and STRT are only reseted/disabled by sw reset. This is
+> > +	 * required to put the lane state back into LP-11 state. The sw reset
+> > +	 * don't reset register values.
+> > +	 */
+> > +	if (!enable)
+> > +		return tc358746_sw_reset(tc358746);
+> > +
+> > +	err =3D tc358746_write(tc358746, STARTCNTRL_REG, START);
+> > +	if (err)
+> > +		return err;
+> > +
+> > +	err =3D tc358746_write(tc358746, CSI_START_REG, STRT);
+> > +	if (err)
+> > +		return err;
+> > +
+> > +	/* CSI_CONTROL_REG is only indirect accessible */
+> > +	return tc358746_write(tc358746, CSI_CONFW_REG,
+> > +			      MODE(MODE_SET) |
+> > +			      ADDRESS(CSI_CONTROL_ADDRESS) |
+> > +			      DATA(CSI_MODE | TXHSMD | NOL(lanes - 1)));
+> > +}
+> > +
+> > +static int tc358746_enable_parallel_port(struct tc358746 *tc358746, in=
+t enable)
+> > +{
+> > +	int err;
+> > +
+> > +	if (enable) {
+> > +		err =3D tc358746_write(tc358746, PP_MISC_REG, 0);
+> > +		if (err)
+> > +			return err;
+> > +
+> > +		return tc358746_set_bits(tc358746, CONFCTL_REG, PPEN);
+> > +	}
+> > +
+> > +	err =3D tc358746_set_bits(tc358746, PP_MISC_REG, FRMSTOP);
+> > +	if (err)
+> > +		return err;
+> > +
+> > +	err =3D tc358746_clear_bits(tc358746, CONFCTL_REG, PPEN);
+> > +	if (err)
+> > +		return err;
+> > +
+> > +	return tc358746_set_bits(tc358746, PP_MISC_REG, RSTPTR);
+> > +}
+> > +
+> > +static inline struct v4l2_subdev *tc358746_get_remote_sd(struct media_=
+pad *pad)
+> > +{
+> > +	pad =3D media_pad_remote_pad_first(pad);
+> > +	if (!pad)
+> > +		return NULL;
+> > +
+> > +	return media_entity_to_v4l2_subdev(pad->entity);
+> > +}
+> > +
+> > +static int tc358746_s_stream(struct v4l2_subdev *sd, int enable)
+> > +{
+> > +	struct tc358746 *tc358746 =3D to_tc358746(sd);
+> > +	struct v4l2_subdev *src;
+> > +	int err;
+> > +
+> > +	dev_dbg(sd->dev, "%sable\n", enable ? "en" : "dis");
+> > +
+> > +	src =3D tc358746_get_remote_sd(&tc358746->pads[TC358746_SINK]);
+> > +	if (!src)
+> > +		return -EPIPE;
+> > +
+> > +	if (enable) {
+> > +		err =3D pm_runtime_resume_and_get(sd->dev);
+> > +		if (err)
+> > +			return err;
+> > +
+> > +		err =3D tc358746_enable_csi_lanes(tc358746, 1);
+> > +		if (err) {
+> > +			pm_runtime_mark_last_busy(sd->dev);
+> > +			pm_runtime_put_sync_autosuspend(sd->dev);
+> > +			return err;
+> =
+
+> Looks like a candidate for a goto statement.
+
+Thought about it too but than I thought about the placement of the
+label and I went this way. I can change it. Should the label placed at
+the end of the function or at the end of this block.
+
+> > +		}
+> > +
+> > +		err =3D tc358746_enable_csi_module(tc358746, 1);
+> > +		if (err) {
+> > +			pm_runtime_mark_last_busy(sd->dev);
+> > +			pm_runtime_put_sync_autosuspend(sd->dev);
+> > +			return err;
+> > +		}
+> > +
+> > +		err =3D tc358746_enable_parallel_port(tc358746, 1);
+> > +		if (err) {
+> > +			pm_runtime_mark_last_busy(sd->dev);
+> > +			pm_runtime_put_sync_autosuspend(sd->dev);
+> > +			return err;
+> > +		}
+> > +
+> > +		err =3D v4l2_subdev_call(src, video, s_stream, 1);
+> > +		if (err) {
+> > +			pm_runtime_mark_last_busy(sd->dev);
+> > +			pm_runtime_put_sync_autosuspend(sd->dev);
+> > +		}
+> > +
+> > +		return err;
+> > +	}
+> > +
+> > +	/*
+> > +	 * Lane disable trigger state change from LP-11 to LP-00
+> > +	 * therefore it must happen before the CSI modile is disabled.
+> > +	 */
+> > +	err =3D tc358746_enable_csi_lanes(tc358746, 0);
+> > +	if (err)
+> > +		return err;
+> > +
+> > +	err =3D tc358746_enable_csi_module(tc358746, 0);
+> > +	if (err)
+> > +		return err;
+> > +
+> > +	err =3D tc358746_enable_parallel_port(tc358746, 0);
+> > +	if (err)
+> > +		return err;
+> > +
+> > +	pm_runtime_mark_last_busy(sd->dev);
+> > +	pm_runtime_put_sync_autosuspend(sd->dev);
+> > +
+> > +	return v4l2_subdev_call(src, video, s_stream, 0);
+> > +}
+> > +
+> > +static int tc358746_enum_mbus_code(struct v4l2_subdev *sd,
+> > +				   struct v4l2_subdev_state *sd_state,
+> > +				   struct v4l2_subdev_mbus_code_enum *code)
+> > +{
+> > +	const struct tc358746_format *fmt;
+> > +
+> > +	fmt =3D tc358746_get_format_by_idx(code->pad, code->index);
+> > +	if (IS_ERR(fmt))
+> > +		return PTR_ERR(fmt);
+> > +
+> > +	code->code =3D fmt->code;
+> > +
+> > +	return 0;
+> > +}
+> > +
+> > +static struct v4l2_mbus_framefmt *
+> > +__tc358746_get_pad_format(struct v4l2_subdev *sd,
+> > +			  struct v4l2_subdev_state *sd_state,
+> > +			  unsigned int pad, u32 which)
+> > +{
+> > +	struct tc358746 *tc358746 =3D to_tc358746(sd);
+> > +
+> > +	switch (which) {
+> > +	case V4L2_SUBDEV_FORMAT_TRY:
+> > +		return v4l2_subdev_get_try_format(sd, sd_state, pad);
+> > +	case V4L2_SUBDEV_FORMAT_ACTIVE:
+> > +		return &tc358746->mbusfmt;
+> > +	default:
+> > +		return NULL;
+> > +	}
+> > +}
+> > +
+> > +static int tc358746_get_fmt(struct v4l2_subdev *sd,
+> > +			    struct v4l2_subdev_state *sd_state,
+> > +			    struct v4l2_subdev_format *format)
+> > +{
+> > +	struct tc358746 *tc358746 =3D to_tc358746(sd);
+> > +
+> > +	if (format->pad >=3D TC358746_NR_PADS)
+> > +		return -EINVAL;
+> > +
+> > +	format->format =3D tc358746->mbusfmt;
+> > +	if (format->pad =3D=3D TC358746_SOURCE)
+> > +		format->format.code =3D tc358746_src_mbus_code(tc358746->mbusfmt.cod=
+e);
+> > +
+> > +	return 0;
+> > +}
+> > +
+> > +static int tc358746_set_fmt(struct v4l2_subdev *sd,
+> > +			    struct v4l2_subdev_state *sd_state,
+> > +			    struct v4l2_subdev_format *format)
+> > +{
+> > +	struct v4l2_mbus_framefmt *mbusformat;
+> > +	const struct tc358746_format *fmt;
+> > +
+> > +	if (format->pad >=3D TC358746_NR_PADS)
+> > +		return -EINVAL;
+> > +
+> > +	/* The src follows the properties from the sink */
+> > +	if (format->pad =3D=3D TC358746_SOURCE)
+> > +		return tc358746_get_fmt(sd, sd_state, format);
+> > +
+> > +	mbusformat =3D __tc358746_get_pad_format(sd, sd_state, format->pad,
+> > +					       format->which);
+> > +	if (!mbusformat)
+> > +		return -EINVAL;
+> > +
+> > +	fmt =3D tc358746_get_format_by_code(format->pad, format->format.code);
+> > +	if (IS_ERR(fmt))
+> > +		fmt =3D tc358746_get_format_by_code(format->pad, tc358746_def_fmt.co=
+de);
+> > +
+> > +	format->format.code =3D fmt->code;
+> > +	format->format.field =3D V4L2_FIELD_NONE;
+> > +
+> > +	dev_dbg(sd->dev, "Update format: %ux%u code:0x%x -> %ux%u code:0x%x",
+> > +		mbusformat->width, mbusformat->height, mbusformat->code,
+> > +		format->format.width, format->format.height, format->format.code);
+> > +
+> > +	*mbusformat =3D format->format;
+> > +
+> > +	return 0;
+> > +}
+> > +
+> > +static unsigned long tc358746_find_pll_settings(struct tc358746 *tc358=
+746,
+> > +						unsigned long refclk,
+> > +						unsigned long fout)
+> > +
+> > +{
+> > +	struct device *dev =3D tc358746->sd.dev;
+> > +	unsigned long best_freq =3D 0;
+> > +	u32 min_delta =3D 0xffffffff;
+> > +	u16 prediv_max =3D 17;
+> > +	u16 prediv_min =3D 1;
+> > +	u16 m_best, mul;
+> > +	u16 p_best, p;
+> > +	u8 postdiv;
+> > +
+> > +	if (fout > 1000 * MHZ) {
+> > +		dev_err(dev, "HS-Clock above 1 Ghz are not supported\n");
+> > +		return 0;
+> > +	} else if (fout >=3D 500 * MHZ)
+> > +		postdiv =3D 1;
+> > +	else if (fout >=3D 250 * MHZ)
+> > +		postdiv =3D 2;
+> > +	else if (fout >=3D 125 * MHZ)
+> > +		postdiv =3D 4;
+> > +	else
+> > +		postdiv =3D 8;
+> > +
+> > +	for (p =3D prediv_min; p <=3D prediv_max; p++) {
+> > +		unsigned long delta, fin;
+> > +		u64 tmp;
+> > +
+> > +		fin =3D DIV_ROUND_CLOSEST(refclk, p);
+> > +		if (fin < 4 * MHZ || fin > 40 * MHZ)
+> > +			continue;
+> > +
+> > +		tmp =3D fout * p * postdiv;
+> > +		do_div(tmp, fin);
+> > +		mul =3D tmp;
+> > +		if (mul > 511)
+> > +			continue;
+> > +
+> > +		tmp =3D mul * fin;
+> > +		do_div(tmp, p * postdiv);
+> > +
+> > +		delta =3D abs(fout - tmp);
+> > +		if (delta < min_delta) {
+> > +			p_best =3D p;
+> > +			m_best =3D mul;
+> > +			min_delta =3D delta;
+> > +			best_freq =3D tmp;
+> > +		};
+> > +
+> > +		if (delta =3D=3D 0)
+> > +			break;
+> > +	};
+> > +
+> > +	if (!best_freq) {
+> > +		dev_err(dev, "Failed find PLL frequency\n");
+> > +		return 0;
+> > +	}
+> > +
+> > +	tc358746->pll_post_div =3D postdiv;
+> > +	tc358746->pll_pre_div =3D p_best;
+> > +	tc358746->pll_mul =3D m_best;
+> > +
+> > +	if (best_freq !=3D fout)
+> > +		dev_warn(dev, "Request PLL freq:%lu, found PLL freq:%lu\n",
+> > +			 fout, best_freq);
+> > +
+> > +	dev_dbg(dev, "Found PLL settings: freq:%lu prediv:%u multi:%u postdiv=
+:%u\n",
+> > +		best_freq, p_best, m_best, postdiv);
+> > +
+> > +	return best_freq;
+> > +}
+> > +
+> > +#define TC358746_PRECISION 10
+> > +
+> > +static int
+> > +tc358746_link_validate(struct v4l2_subdev *sd, struct media_link *link,
+> > +		       struct v4l2_subdev_format *source_fmt,
+> > +		       struct v4l2_subdev_format *sink_fmt)
+> > +{
+> > +	struct tc358746 *tc358746 =3D to_tc358746(sd);
+> > +	unsigned long csi_bitrate, sensor_bitrate;
+> > +	const struct tc358746_format *fmt;
+> > +	unsigned int fifo_sz, tmp, n;
+> > +	s64 sensor_pclk_rate;
+> > +
+> > +	/* Check the FIFO settings */
+> > +	fmt =3D tc358746_get_format_by_code(TC358746_SINK, tc358746->mbusfmt.=
+code);
+> > +	if (IS_ERR(fmt))
+> > +		return PTR_ERR(fmt);
+> > +
+> > +	sensor_pclk_rate =3D v4l2_ctrl_g_ctrl_int64(tc358746->sensor_pclk_ctr=
+l);
+> > +	sensor_bitrate =3D sensor_pclk_rate * fmt->bus_width;
+> > +
+> > +	csi_bitrate =3D tc358746->dphy_cfg.lanes * tc358746->pll_rate;
+> > +
+> > +	dev_dbg(tc358746->sd.dev,
+> > +		"Fifo settings params: sensor-bitrate:%lu csi-bitrate:%lu",
+> > +		sensor_bitrate, csi_bitrate);
+> > +
+> > +	/* Avoid possible FIFO overflows */
+> > +	if (csi_bitrate < sensor_bitrate) {
+> > +		dev_err(sd->dev,
+> > +			"Link validation failed csi-bitrate:%lu < sensor-bitrate:%lu\n",
+> > +			csi_bitrate, sensor_bitrate);
+> > +		return -EINVAL;
+> > +	}
+> > +
+> > +	/* Best case */
+> > +	if (csi_bitrate =3D=3D sensor_bitrate) {
+> > +		tc358746->vb_size =3D TC358746_VB_DEFAULT_SIZE;
+> > +		goto out;
+> > +	}
+> > +
+> > +	/*
+> > +	 * Avoid possible FIFO underflow in case of
+> > +	 * csi_bitrate > sensor_bitrate. For such case the chip has a internal
+> > +	 * fifo which can be used to delay the line output.
+> > +	 *
+> > +	 * Fifo size calculation:
+> > +	 *
+> > +	 * fifo-sz, image-width - in bits
+> > +	 * sbr                  - sensor_bitrate in bits/s
+> > +	 * csir                 - csi_bitrate in bits/s
+> > +	 *
+> > +	 *                1             1      1
+> > +	 * image-width * --- + fifo-sz --- >=3D ---- * image-width
+> > +	 *               sbr           sbr    csir
+> > +	 *
+> > +	 * fifo-sz >=3D abs(sbr/csir * image-width - image-width)
+> > +	 *                `-----=B4
+> > +	 *                   n
+> > +	 *
+> > +	 */
+> > +
+> > +	sensor_bitrate /=3D TC358746_PRECISION;
+> > +	n =3D csi_bitrate / sensor_bitrate;
+> > +	tmp =3D (tc358746->mbusfmt.width * TC358746_PRECISION) / n;
+> > +	fifo_sz =3D tc358746->mbusfmt.width - tmp;
+> > +	fifo_sz *=3D fmt->bpp;
+> > +	tc358746->vb_size =3D round_up(fifo_sz, 32);
+> > +
+> =
+
+> Please also call v4l2_subdev_link_validate_default() here.
+
+Did it in my internal prepared v2 ^^ I call it now at the very
+beginning of this function.
+
+> I wonder if the above calculation wouldn't be better performed in
+> .s_stream() (or rather in a function being called by .s_stream()) when
+> enabling streaming.
+
+No I wouldn't shift that, since the link validation is in IMHO the
+correct place to inform the user that the pipeline can't negotiate if
+the fifo can't be configured correctly. Therefore I placed it here.
+
+> > +out:
+> > +	dev_dbg(tc358746->sd.dev,
+> > +		"Found FIFO size[bits]:%u -> aligned to size[bits]:%u\n",
+> > +		fifo_sz, tc358746->vb_size);
+> > +
+> > +	return tc358746->vb_size > TC358746_VB_MAX_SIZE ? -EINVAL : 0;
+> > +}
+> > +
+> > +static int tc358746_get_mbus_config(struct v4l2_subdev *sd, unsigned i=
+nt pad,
+> > +				    struct v4l2_mbus_config *config)
+> > +{
+> > +	struct tc358746 *tc358746 =3D to_tc358746(sd);
+> > +
+> > +	if (pad !=3D TC358746_SOURCE)
+> > +		return -EINVAL;
+> > +
+> > +	config->type =3D V4L2_MBUS_CSI2_DPHY;
+> > +	config->bus.mipi_csi2 =3D tc358746->csi_vep.bus.mipi_csi2;
+> > +
+> > +	return 0;
+> > +}
+> > +
+> > +static int tc358746_link_setup(struct media_entity *entity,
+> > +			       const struct media_pad *local,
+> > +			       const struct media_pad *remote, u32 flags)
+> > +{
+> > +	struct v4l2_subdev *sd =3D media_entity_to_v4l2_subdev(entity);
+> > +	struct v4l2_subdev *sensor_sd =3D
+> > +		media_entity_to_v4l2_subdev(remote->entity);
+> > +	struct tc358746 *tc358746 =3D to_tc358746(sd);
+> > +	struct device *dev =3D sd->dev;
+> > +	struct v4l2_ctrl *ctrl;
+> > +
+> > +	/* no special requirements on source pads */
+> > +	if (local->flags & MEDIA_PAD_FL_SOURCE)
+> > +		return 0;
+> > +
+> > +	dev_dbg(dev, "link setup '%s':%d->'%s':%d[%d]",
+> > +		remote->entity->name, remote->index, local->entity->name,
+> > +		local->index, flags & MEDIA_LNK_FL_ENABLED);
+> > +
+> > +	/* Required for the fifo calculation */
+> > +	ctrl =3D v4l2_ctrl_find(sensor_sd->ctrl_handler, V4L2_CID_PIXEL_RATE);
+> > +	if (!ctrl) {
+> > +		dev_err(dev, "Subdev [%s] must support V4L2_CID_PIXEL_RATE\n",
+> > +			sensor_sd->name);
+> > +		return -EINVAL;
+> > +	}
+> > +	tc358746->sensor_pclk_ctrl =3D ctrl;
+> > +
+> > +	return 0;
+> > +}
+> > +
+> > +int __maybe_unused
+> > +tc358746_g_register(struct v4l2_subdev *sd, struct v4l2_dbg_register *=
+reg)
+> > +{
+> > +	struct tc358746 *tc358746 =3D to_tc358746(sd);
+> > +
+> > +	/* 32-bit registers starting from CLW_DPHYCONTTX */
+> > +	reg->size =3D reg->reg < CLW_DPHYCONTTX_REG ? 2 : 4;
+> > +
+> > +	if (pm_runtime_resume_and_get(sd->dev)) {
+> > +		dev_err(sd->dev, "Failed to resume the device\n");
+> > +		return 0;
+> > +	}
+> > +
+> > +	tc358746_read(tc358746, reg->reg, (u32 *)&reg->val);
+> > +
+> > +	pm_runtime_mark_last_busy(sd->dev);
+> > +	pm_runtime_put_sync_autosuspend(sd->dev);
+> > +
+> > +	return 0;
+> > +}
+> > +
+> > +int __maybe_unused
+> > +tc358746_s_register(struct v4l2_subdev *sd, const struct v4l2_dbg_regi=
+ster *reg)
+> > +{
+> > +	struct tc358746 *tc358746 =3D to_tc358746(sd);
+> > +
+> > +	if (pm_runtime_resume_and_get(sd->dev)) {
+> > +		dev_err(sd->dev, "Failed to resume the device\n");
+> > +		return 0;
+> > +	}
+> > +
+> > +	tc358746_write(tc358746, (u32)reg->reg, (u32)reg->val);
+> > +
+> > +	pm_runtime_mark_last_busy(sd->dev);
+> > +	pm_runtime_put_sync_autosuspend(sd->dev);
+> > +
+> > +	return 0;
+> > +}
+> > +
+> > +static const struct v4l2_subdev_core_ops tc358746_core_ops =3D {
+> > +#ifdef CONFIG_VIDEO_ADV_DEBUG
+> > +	.g_register =3D tc358746_g_register,
+> > +	.s_register =3D tc358746_s_register,
+> > +#endif
+> =
+
+> Have you found this to be useful ?
+
+It's useful since the regmap usage, because some registers are 32bit
+wide and some 16bit wide... Those functions abstract it and I can set
+values :) which is not allowed by the regmap debug interface. So yes,
+it's not that bad..
+
+> > +};
+> > +
+> > +static const struct v4l2_subdev_video_ops tc358746_video_ops =3D {
+> > +	.s_stream =3D tc358746_s_stream,
+> > +};
+> > +
+> > +static const struct v4l2_subdev_pad_ops tc358746_pad_ops =3D {
+> > +	.enum_mbus_code =3D tc358746_enum_mbus_code,
+> > +	.set_fmt =3D tc358746_set_fmt,
+> > +	.get_fmt =3D tc358746_get_fmt,
+> > +	.link_validate =3D tc358746_link_validate,
+> > +	.get_mbus_config =3D tc358746_get_mbus_config,
+> > +};
+> > +
+> > +static const struct v4l2_subdev_ops tc358746_ops =3D {
+> > +	.core =3D &tc358746_core_ops,
+> > +	.video =3D &tc358746_video_ops,
+> > +	.pad =3D &tc358746_pad_ops,
+> > +};
+> > +
+> > +static const struct media_entity_operations tc358746_entity_ops =3D {
+> > +	.get_fwnode_pad =3D v4l2_subdev_get_fwnode_pad_1_to_1,
+> > +	.link_setup =3D tc358746_link_setup,
+> > +	.link_validate =3D v4l2_subdev_link_validate,
+> > +};
+> > +
+> > +static int tc358746_mclk_enable(struct clk_hw *hw)
+> > +{
+> > +	struct tc358746 *tc358746 =3D clk_hw_to_tc358746(hw);
+> > +	unsigned int div;
+> > +	u32 val;
+> > +	int err;
+> > +
+> > +	div =3D tc358746->mclk_postdiv / 2;
+> > +	val =3D MCLK_HIGH(div - 1) | MCLK_LOW(div - 1);
+> > +	dev_dbg(tc358746->sd.dev, "MCLKCTL: %u (0x%x)\n", val, val);
+> > +	err =3D tc358746_write(tc358746, MCLKCTL_REG, val);
+> > +	if (err)
+> > +		return err;
+> > +
+> > +	if (tc358746->mclk_prediv =3D=3D 8)
+> > +		val =3D MCLKDIV(MCLKDIV_8);
+> > +	else if (tc358746->mclk_prediv =3D=3D 4)
+> > +		val =3D MCLKDIV(MCLKDIV_4);
+> > +	else
+> > +		val =3D MCLKDIV(MCLKDIV_2);
+> > +
+> > +	dev_dbg(tc358746->sd.dev, "CLKCTL[MCLKDIV]: %u (0x%x)\n", val, val);
+> > +	return tc358746_update_bits(tc358746, CLKCTL_REG, MCLKDIV_MASK, val);
+> > +}
+> > +
+> > +static void tc358746_mclk_disable(struct clk_hw *hw)
+> > +{
+> > +	struct tc358746 *tc358746 =3D clk_hw_to_tc358746(hw);
+> > +
+> > +	tc358746_write(tc358746, MCLKCTL_REG, 0);
+> > +}
+> > +
+> > +static long
+> > +tc358746_find_mclk_settings(struct tc358746 *tc358746, unsigned long m=
+clk_rate)
+> > +{
+> > +	unsigned long pll_rate =3D tc358746->pll_rate;
+> > +	const unsigned char prediv[] =3D { 2, 4, 8 };
+> > +	unsigned int mclk_prediv, mclk_postdiv;
+> > +	struct device *dev =3D tc358746->sd.dev;
+> > +	unsigned int postdiv, mclkdiv;
+> > +	unsigned long best_mclk_rate;
+> > +	unsigned int i;
+> > +
+> > +	/*
+> > +	 *                          MCLK-Div
+> > +	 *           -------------------=B4`---------------------
+> > +	 *          =B4                                          `
+> > +	 *         +-------------+     +------------------------+
+> > +	 *         | MCLK-PreDiv |     |       MCLK-PostDiv     |
+> > +	 * PLL --> |   (2/4/8)   | --> | (mclk_low + mclk_high) | --> MCLK
+> > +	 *         +-------------+     +------------------------+
+> > +	 *
+> > +	 * The register value of mclk_low/high is mclk_low/high+1, i.e.:
+> > +	 *   mclk_low/high =3D 1   --> 2 MCLK-Ref Counts
+> > +	 *   mclk_low/high =3D 255 --> 256 MCLK-Ref Counts =3D=3D max.
+> > +	 * If mclk_low and mclk_high are 0 then MCLK is disabled.
+> > +	 *
+> > +	 * Keep it simple and support 50/50 duty cycles only for now,
+> > +	 * so the calc will be:
+> > +	 *
+> > +	 *   MCLK =3D PLL / (MCLK-PreDiv * 2 * MCLK-PostDiv)
+> > +	 */
+> > +
+> > +	if (mclk_rate =3D=3D tc358746->mclk_rate)
+> > +		return mclk_rate;
+> > +
+> > +	/* Highest possible rate */
+> > +	mclkdiv =3D pll_rate / mclk_rate;
+> > +	if (mclkdiv <=3D 8) {
+> > +		mclk_prediv =3D 2;
+> > +		mclk_postdiv =3D 4;
+> > +		best_mclk_rate =3D pll_rate / (2 * 4);
+> > +		goto out;
+> > +	}
+> > +
+> > +	/* First check the prediv */
+> > +	for (i =3D 0; i < ARRAY_SIZE(prediv); i++) {
+> > +		postdiv =3D mclkdiv / prediv[i];
+> > +
+> > +		if (postdiv % 2)
+> > +			continue;
+> > +
+> > +		if (postdiv >=3D 4 && postdiv <=3D 512) {
+> > +			mclk_prediv =3D prediv[i];
+> > +			mclk_postdiv =3D postdiv;
+> > +			best_mclk_rate =3D pll_rate / (prediv[i] * postdiv);
+> > +			goto out;
+> > +		}
+> > +	}
+> > +
+> > +	/* No suitable prediv found, so try to adjust the postdiv */
+> > +	for (postdiv =3D 4; postdiv <=3D 512; postdiv +=3D 2) {
+> > +		unsigned int pre;
+> > +
+> > +		pre =3D mclkdiv / postdiv;
+> > +		if (pre =3D=3D 2 || pre =3D=3D 4 || pre =3D=3D 8) {
+> > +			mclk_prediv =3D pre;
+> > +			mclk_postdiv =3D postdiv;
+> > +			best_mclk_rate =3D pll_rate / (pre * postdiv);
+> > +			goto out;
+> > +		}
+> > +	}
+> > +
+> > +	/* The MCLK <-> PLL gap is to high -> use largest possible div */
+> > +	mclk_prediv =3D 8;
+> > +	mclk_postdiv =3D 512;
+> > +	best_mclk_rate =3D pll_rate / (8 * 512);
+> > +
+> > +out:
+> > +	tc358746->mclk_prediv =3D mclk_prediv;
+> > +	tc358746->mclk_postdiv =3D mclk_postdiv;
+> > +	tc358746->mclk_rate =3D best_mclk_rate;
+> > +
+> > +	if (best_mclk_rate !=3D mclk_rate)
+> > +		dev_warn(dev, "Request MCLK freq:%lu, found MCLK freq:%lu\n",
+> > +			 mclk_rate, best_mclk_rate);
+> > +
+> > +	dev_dbg(dev, "Found MCLK settings: freq:%lu prediv:%u postdiv:%u\n",
+> > +		best_mclk_rate, mclk_prediv, mclk_postdiv);
+> > +
+> > +	return best_mclk_rate;
+> > +}
+> > +
+> > +unsigned long tc358746_recalc_rate(struct clk_hw *hw, unsigned long pa=
+rent_rate)
+> > +{
+> > +	struct tc358746 *tc358746 =3D clk_hw_to_tc358746(hw);
+> > +	unsigned int prediv, postdiv;
+> > +	u32 val;
+> > +	int err;
+> > +
+> > +	err =3D tc358746_read(tc358746, MCLKCTL_REG, &val);
+> > +	if (err)
+> > +		return 0;
+> > +
+> > +	postdiv =3D FIELD_GET(MCLK_LOW_MASK, val) + 1;
+> > +	postdiv +=3D FIELD_GET(MCLK_HIGH_MASK, val) + 1;
+> > +
+> > +	err =3D tc358746_read(tc358746, CLKCTL_REG, &val);
+> > +	if (err)
+> > +		return 0;
+> > +
+> > +	prediv =3D FIELD_GET(MCLKDIV_MASK, val);
+> > +	if (prediv =3D=3D MCLKDIV_8)
+> > +		prediv =3D 8;
+> > +	else if (prediv =3D=3D MCLKDIV_4)
+> > +		prediv =3D 4;
+> > +	else
+> > +		prediv =3D 2;
+> > +
+> > +	return tc358746->pll_rate / (prediv * postdiv);
+> > +}
+> > +
+> > +static long tc358746_mclk_round_rate(struct clk_hw *hw, unsigned long =
+rate,
+> > +				     unsigned long *parent_rate)
+> > +{
+> > +	struct tc358746 *tc358746 =3D clk_hw_to_tc358746(hw);
+> > +
+> > +	*parent_rate =3D tc358746->pll_rate;
+> > +
+> > +	return tc358746_find_mclk_settings(tc358746, rate);
+> > +}
+> > +
+> > +static int tc358746_mclk_set_rate(struct clk_hw *hw, unsigned long rat=
+e,
+> > +				  unsigned long parent_rate)
+> > +{
+> > +	struct tc358746 *tc358746 =3D clk_hw_to_tc358746(hw);
+> > +
+> > +	tc358746_find_mclk_settings(tc358746, rate);
+> > +
+> > +	return tc358746_mclk_enable(hw);
+> > +}
+> > +
+> > +static const struct clk_ops tc358746_mclk_ops =3D {
+> > +	.enable =3D tc358746_mclk_enable,
+> > +	.disable =3D tc358746_mclk_disable,
+> > +	.recalc_rate =3D tc358746_recalc_rate,
+> > +	.round_rate =3D tc358746_mclk_round_rate,
+> > +	.set_rate =3D tc358746_mclk_set_rate,
+> > +};
+> > +
+> > +static int tc358746_notify_bound(struct v4l2_async_notifier *notifier,
+> > +				 struct v4l2_subdev *sd,
+> > +				 struct v4l2_async_subdev *asd)
+> > +{
+> > +	struct tc358746 *tc358746 =3D
+> > +		container_of(notifier, struct tc358746, notifier);
+> > +	struct media_pad *sink =3D &tc358746->pads[TC358746_SINK];
+> > +
+> > +	return v4l2_create_fwnode_links_to_pad(sd, sink, MEDIA_LNK_FL_ENABLED=
+);
+> > +}
+> > +
+> > +static const struct v4l2_async_notifier_operations tc358746_notify_ops=
+ =3D {
+> > +	.bound =3D tc358746_notify_bound,
+> > +};
+> > +
+> > +static int tc358746_async_register(struct tc358746 *tc358746)
+> > +{
+> > +	struct v4l2_fwnode_endpoint vep =3D {
+> > +		.bus_type =3D V4L2_MBUS_PARALLEL,
+> > +	};
+> > +	struct v4l2_async_subdev *asd;
+> > +	struct fwnode_handle *ep;
+> > +	int err;
+> > +
+> > +	ep =3D fwnode_graph_get_endpoint_by_id(dev_fwnode(tc358746->sd.dev),
+> > +					     TC358746_SINK, 0, 0);
+> > +	if (!ep)
+> > +		return -ENOTCONN;
+> > +
+> > +	err =3D v4l2_fwnode_endpoint_parse(ep, &vep);
+> > +	if (err) {
+> > +		fwnode_handle_put(ep);
+> > +		return err;
+> > +	}
+> > +
+> > +	v4l2_async_nf_init(&tc358746->notifier);
+> > +	asd =3D v4l2_async_nf_add_fwnode_remote(&tc358746->notifier, ep,
+> > +					      struct v4l2_async_subdev);
+> > +	if (IS_ERR(asd)) {
+> > +		fwnode_handle_put(ep);
+> > +		return PTR_ERR(asd);
+> > +	}
+> > +
+> > +	fwnode_handle_put(ep);
+> > +
+> > +	tc358746->notifier.ops =3D &tc358746_notify_ops;
+> > +
+> > +	err =3D v4l2_async_subdev_nf_register(&tc358746->sd, &tc358746->notif=
+ier);
+> > +	if (err) {
+> > +		v4l2_async_nf_cleanup(&tc358746->notifier);
+> > +		return err;
+> > +	}
+> > +
+> > +	tc358746->sd.fwnode =3D fwnode_graph_get_endpoint_by_id(
+> > +		dev_fwnode(tc358746->sd.dev), TC358746_SOURCE, 0, 0);
+> > +
+> > +	err =3D v4l2_async_register_subdev(&tc358746->sd);
+> > +	if (err) {
+> > +		v4l2_async_nf_unregister(&tc358746->notifier);
+> > +		v4l2_async_nf_cleanup(&tc358746->notifier);
+> > +	}
+> > +
+> > +	return err;
+> > +}
+> > +
+> > +static int tc358746_probe(struct i2c_client *client)
+> > +{
+> > +	struct clk_init_data mclk_initdata =3D { };
+> > +	struct device *dev =3D &client->dev;
+> > +	struct v4l2_fwnode_endpoint *vep;
+> > +	unsigned long csi_link_rate;
+> > +	struct tc358746 *tc358746;
+> > +	struct fwnode_handle *ep;
+> > +	unsigned char csi_lanes;
+> > +	struct v4l2_subdev *sd;
+> > +	struct v4l2_ctrl *ctrl;
+> > +	unsigned long refclk;
+> > +	unsigned int i;
+> > +	int err;
+> > +	u32 val;
+> > +
+> > +	tc358746 =3D devm_kzalloc(&client->dev, sizeof(*tc358746), GFP_KERNEL=
+);
+> > +	if (!tc358746)
+> > +		return -ENOMEM;
+> > +
+> > +	tc358746->regmap =3D devm_regmap_init_i2c(client, &tc358746_regmap_co=
+nfig);
+> > +	if (IS_ERR(tc358746->regmap))
+> > +		return dev_err_probe(dev, PTR_ERR(tc358746->regmap),
+> > +				     "Failed to init regmap\n");
+> > +
+> > +	tc358746->refclk =3D devm_clk_get(dev, "refclk");
+> > +	if (IS_ERR(tc358746->refclk))
+> > +		return dev_err_probe(dev, PTR_ERR(tc358746->refclk),
+> > +				     "Failed to get refclk\n");
+> > +
+> > +	err =3D clk_prepare_enable(tc358746->refclk);
+> > +	if (err)
+> > +		return dev_err_probe(dev, err,
+> > +				     "Failed to enable refclk\n");
+> > +
+> > +	refclk =3D clk_get_rate(tc358746->refclk);
+> > +	clk_disable_unprepare(tc358746->refclk);
+> > +
+> > +	if (refclk < 6 * MHZ || refclk > 40 * MHZ)
+> > +		return dev_err_probe(dev, -EINVAL, "Invalid refclk range\n");
+> > +
+> > +	for (i =3D 0; i < ARRAY_SIZE(tc358746_supplies); i++)
+> > +		tc358746->supplies[i].supply =3D tc358746_supplies[i];
+> > +
+> > +	err =3D devm_regulator_bulk_get(dev, ARRAY_SIZE(tc358746_supplies),
+> > +				      tc358746->supplies);
+> > +	if (err)
+> > +		return dev_err_probe(dev, err, "Failed to get supplies\n");
+> > +
+> > +	tc358746->reset_gpio =3D devm_gpiod_get_optional(dev, "reset",
+> > +						       GPIOD_OUT_HIGH);
+> > +	if (IS_ERR(tc358746->reset_gpio))
+> > +		return dev_err_probe(dev, PTR_ERR(tc358746->reset_gpio),
+> > +				     "Failed to get reset-gpios\n");
+> > +
+> > +	sd =3D &tc358746->sd;
+> > +	v4l2_i2c_subdev_init(sd, client, &tc358746_ops);
+> > +	sd->flags |=3D V4L2_SUBDEV_FL_HAS_DEVNODE;
+> > +	sd->entity.function =3D MEDIA_ENT_F_VID_IF_BRIDGE;
+> > +	sd->entity.ops =3D &tc358746_entity_ops;
+> > +
+> > +	tc358746->pads[TC358746_SINK].flags =3D MEDIA_PAD_FL_SINK;
+> > +	tc358746->pads[TC358746_SOURCE].flags =3D MEDIA_PAD_FL_SOURCE;
+> > +	err =3D media_entity_pads_init(&sd->entity, TC358746_NR_PADS,
+> > +				     tc358746->pads);
+> > +	if (err)
+> > +		return dev_err_probe(dev, err,
+> > +				     "Failed to setup media-entity pads\n");
+> > +
+> > +	ep =3D fwnode_graph_get_endpoint_by_id(dev_fwnode(dev), TC358746_SOUR=
+CE,
+> > +					     0, 0);
+> > +	if (!ep) {
+> > +		dev_err(dev, "Missing endpoint node\n");
+> > +		err =3D -EINVAL;
+> > +		goto err_mc;
+> > +	}
+> > +
+> > +	/* Currently we only support 'parallel in' -> 'csi out' */
+> > +	vep =3D &tc358746->csi_vep;
+> > +	vep->bus_type =3D V4L2_MBUS_CSI2_DPHY;
+> > +	err =3D v4l2_fwnode_endpoint_alloc_parse(ep, vep);
+> > +	fwnode_handle_put(ep);
+> > +	if (err) {
+> > +		dev_err(dev, "Failed to parse source endpoint\n");
+> > +		goto err_mc;
+> > +	}
+> > +
+> > +	csi_lanes =3D vep->bus.mipi_csi2.num_data_lanes;
+> > +	if (csi_lanes =3D=3D 0 || csi_lanes > 4 ||
+> > +	    vep->nr_of_link_frequencies =3D=3D 0) {
+> > +		dev_err(dev, "error: Invalid CSI-2 settings\n");
+> > +		err =3D -EINVAL;
+> > +		goto err_vep;
+> > +	}
+> > +
+> > +	/* TODO: Add support to handle multiple link frequencies */
+> > +	csi_link_rate =3D (unsigned long)vep->link_frequencies[0];
+> > +	tc358746->pll_rate =3D tc358746_find_pll_settings(tc358746, refclk,
+> > +							csi_link_rate * 2);
+> > +	if (!tc358746->pll_rate) {
+> > +		err =3D -EINVAL;
+> > +		goto err_vep;
+> > +	}
+> > +
+> > +	err =3D phy_mipi_dphy_get_default_config_for_hsclk(tc358746->pll_rate,
+> > +							 csi_lanes,
+> > +							 &tc358746->dphy_cfg);
+> > +	if (err)
+> > +		goto err_vep;
+> > +
+> > +	tc358746->mbusfmt =3D tc358746_def_fmt;
+> > +	tc358746->vb_size =3D TC358746_VB_DEFAULT_SIZE;
+> > +
+> > +	dev_set_drvdata(dev, tc358746);
+> > +	pm_runtime_set_autosuspend_delay(dev, 200);
+> > +	pm_runtime_use_autosuspend(dev);
+> > +	pm_runtime_enable(dev);
+> > +
+> > +	err =3D pm_runtime_resume_and_get(dev);
+> > +	if (err < 0) {
+> > +		dev_err(dev, "Failed to resume the device\n");
+> > +		goto err_vep;
+> > +	}
+> > +
+> > +	 /* Ensure that CSI interface is put into LP-11 state */
+> > +	err =3D tc358746_sw_reset(tc358746);
+> > +	if (err) {
+> > +		pm_runtime_put_noidle(dev);
+> > +		dev_err(dev, "Failed to reset the device\n");
+> > +		goto err_pm;
+> > +	}
+> > +
+> > +	err =3D tc358746_read(tc358746, CHIPID_REG, &val);
+> > +	pm_runtime_mark_last_busy(dev);
+> > +	pm_runtime_put_sync_autosuspend(dev);
+> > +	if (err) {
+> > +		dev_err(dev, "Failed to read chipid\n");
+> > +		err =3D -ENODEV;
+> > +		goto err_pm;
+> > +	}
+> > +
+> > +	if (FIELD_GET(CHIPID, val) !=3D 0x44) {
+> > +		dev_err(dev, "Invalid chipid 0x%02x\n",
+> > +			(u32)FIELD_GET(CHIPID, val));
+> > +		err =3D -ENODEV;
+> > +		goto err_pm;
+> > +	}
+> > +
+> > +	/* Optional MCLK provider support */
+> > +	if (device_property_present(dev, "#clock-cells")) {
+> > +		const char *mclk_name;
+> > +
+> > +		/* Init to highest possibel MCLK */
+> > +		tc358746->mclk_postdiv =3D 512;
+> > +		tc358746->mclk_prediv =3D 8;
+> > +
+> > +		mclk_name =3D "tc358746-mclk";
+> > +		device_property_read_string(dev, "clock-output-names",
+> > +					    &mclk_name);
+> > +
+> > +		mclk_initdata.name =3D mclk_name;
+> > +		mclk_initdata.ops =3D &tc358746_mclk_ops;
+> > +		tc358746->mclk_hw.init =3D &mclk_initdata;
+> > +
+> > +		err =3D devm_clk_hw_register(dev, &tc358746->mclk_hw);
+> > +		if (err) {
+> > +			dev_err(dev, "Failed to register mclk provider\n");
+> > +			goto err_pm;
+> > +		}
+> > +
+> > +		err =3D devm_of_clk_add_hw_provider(dev, of_clk_hw_simple_get,
+> > +						  &tc358746->mclk_hw);
+> > +		if (err) {
+> > +			dev_err(dev, "Failed to add mclk provider\n");
+> > +			goto err_pm;
+> > +		}
+> > +	}
+> > +
+> > +	v4l2_ctrl_handler_init(&tc358746->ctrl_hdl, 1);
+> > +
+> > +	ctrl =3D v4l2_ctrl_new_int_menu(&tc358746->ctrl_hdl, NULL,
+> > +				      V4L2_CID_LINK_FREQ, 0, 0,
+> > +				      vep->link_frequencies);
+> > +	if (ctrl)
+> > +		ctrl->flags |=3D V4L2_CTRL_FLAG_READ_ONLY;
+> > +
+> > +	tc358746->sd.ctrl_handler =3D &tc358746->ctrl_hdl;
+> > +	if (tc358746->ctrl_hdl.error) {
+> > +		err =3D tc358746->ctrl_hdl.error;
+> > +		goto err_pm;
+> > +	}
+> > +
+> > +	v4l2_ctrl_handler_setup(&tc358746->ctrl_hdl);
+> > +
+> > +	err =3D tc358746_async_register(tc358746);
+> > +	if (err < 0)
+> > +		goto err_ctrl;
+> > +
+> > +	dev_info(dev, "%s found @ 0x%x (%s)\n", client->name,
+> > +		  client->addr, client->adapter->name);
+> =
+
+> I'd skip this to avoid adding noise to the kernel log at boot time. I
+> would also probably split some of the code out of the probe function as
+> it's fairly large. Up to you.
+
+Yes it is large but most of it is just requesting stuff and so..
+Therefore I kept it here since I don't need it elsewhere. What about
+setting it to dev_dbg()? Sometimes it can be useful e.g. to find the
+problem why /dev/media is not comming up..
+
+> > +
+> > +	return 0;
+> > +
+> > +err_ctrl:
+> > +	v4l2_ctrl_handler_free(&tc358746->ctrl_hdl);
+> > +err_pm:
+> > +	pm_runtime_disable(dev);
+> > +	pm_runtime_set_suspended(dev);
+> > +	pm_runtime_dont_use_autosuspend(dev);
+> > +err_vep:
+> > +	v4l2_fwnode_endpoint_free(vep);
+> > +err_mc:
+> > +	media_entity_cleanup(&sd->entity);
+> > +
+> > +	return err;
+> > +}
+> > +
+> > +static int tc358746_remove(struct i2c_client *client)
+> > +{
+> > +	struct v4l2_subdev *sd =3D i2c_get_clientdata(client);
+> > +	struct tc358746 *tc358746 =3D to_tc358746(sd);
+> > +
+> > +	v4l2_ctrl_handler_free(&tc358746->ctrl_hdl);
+> > +	v4l2_fwnode_endpoint_free(&tc358746->csi_vep);
+> > +	v4l2_async_nf_unregister(&tc358746->notifier);
+> > +	v4l2_async_nf_cleanup(&tc358746->notifier);
+> > +	v4l2_async_unregister_subdev(sd);
+> > +	v4l2_device_unregister_subdev(sd);
+> =
+
+> This shouldn't be needed v4l2_async_unregister_subdev() should be
+> enough.
+
+Okay, thanks. There are a lot of unregister helpers in the v4l2 space..
+
+> =
+
+> > +	media_entity_cleanup(&sd->entity);
+> > +
+> > +	pm_runtime_disable(sd->dev);
+> > +	pm_runtime_set_suspended(sd->dev);
+> > +	pm_runtime_dont_use_autosuspend(sd->dev);
+> > +
+> > +	return 0;
+> > +}
+> > +
+> > +static int tc358746_suspend(struct device *dev)
+> > +{
+> > +	struct tc358746 *tc358746 =3D dev_get_drvdata(dev);
+> > +
+> > +	clk_disable_unprepare(tc358746->refclk);
+> > +
+> > +	return regulator_bulk_disable(ARRAY_SIZE(tc358746_supplies),
+> > +				      tc358746->supplies);
+> =
+
+> Shouldn't you reenable the clock if this fails ?
+
+Hm.. if this fails I could end in a undefined chip state. But I got the
+point that the framework would be in a bad state if it tries again to
+suspend the device.
+
+> > +}
+> > +
+> > +static int tc358746_resume(struct device *dev)
+> > +{
+> > +	struct tc358746 *tc358746 =3D dev_get_drvdata(dev);
+> > +	int err;
+> > +
+> > +	gpiod_set_value(tc358746->reset_gpio, 1);
+> > +
+> > +	err =3D regulator_bulk_enable(ARRAY_SIZE(tc358746_supplies),
+> > +				    tc358746->supplies);
+> > +	if (err)
+> > +		return err;
+> > +
+> > +	/* min. 200ns */
+> > +	usleep_range(10, 20);
+> > +
+> > +	gpiod_set_value(tc358746->reset_gpio, 0);
+> > +
+> > +	err =3D clk_prepare_enable(tc358746->refclk);
+> > +	if (err)
+> > +		return err;
+> =
+
+> The regulators need to be disabled in case of failure here and below
+> (and so does the clock below).
+
+Yes, you're right.
+
+> > +
+> > +	/* min. 700us ... 1ms */
+> > +	usleep_range(1000, 1500);
+> > +
+> > +	/* Sync state */
+> > +	err =3D tc358746_apply_pll_config(tc358746);
+> > +	if (err)
+> > +		return err;
+> > +
+> > +	err =3D tc358746_apply_dphy_config(tc358746);
+> > +	if (err)
+> > +		return err;
+> > +
+> > +	return tc358746_apply_misc_config(tc358746);
+> =
+
+> Does all this belong to the PM resume handler ? It seems configuration
+> could be handled in .s_stream() instead.
+
+This gets called by the s_stream() during getting the power state but I
+can move the dphy/misc_config to the .s_stream() of course. The pll
+needs to be there since the device can be a clock provider e.g. for the
+sensor.
+
+Thanks for the review :)
+
+Regards,
+  Marco
+
+> > +}
+> > +
+> > +DEFINE_RUNTIME_DEV_PM_OPS(tc358746_pm_ops, tc358746_suspend,
+> > +			  tc358746_resume, NULL);
+> > +
+> > +static const struct of_device_id __maybe_unused tc358746_of_match[] =
+=3D {
+> > +	{ .compatible =3D "toshiba,tc358746" },
+> > +	{ },
+> > +};
+> > +MODULE_DEVICE_TABLE(of, tc358746_of_match);
+> > +
+> > +static struct i2c_driver tc358746_driver =3D {
+> > +	.driver =3D {
+> > +		.name =3D "tc358746",
+> > +		.pm =3D pm_ptr(&tc358746_pm_ops),
+> > +		.of_match_table =3D tc358746_of_match,
+> > +	},
+> > +	.probe_new =3D tc358746_probe,
+> > +	.remove =3D tc358746_remove,
+> > +};
+> > +
+> > +module_i2c_driver(tc358746_driver);
+> > +
+> > +MODULE_DESCRIPTION("Toshiba TC358746 Parallel to CSI-2 bridge driver");
+> > +MODULE_AUTHOR("Marco Felsch <kernel@pengutronix.de>");
+> > +MODULE_LICENSE("GPL");
+> =
+
+> -- =
+
+> Regards,
+> =
+
+> Laurent Pinchart
+> =
+
+
+-- =
+
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
