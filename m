@@ -4,86 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0264BECAAA1
-	for <linux-phy@archiver.kernel.org>; Thu, 15 Sep 2022 14:31:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 624E1C6FA89
+	for <linux-phy@archiver.kernel.org>; Thu, 15 Sep 2022 14:33:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iLOGs1DbC8uz7udtmhfiSrDZl8tPJkhi2X9OveugPVg=; b=Jh3U+sprjQuTR+
-	bIKoJiLyKvBMklZ67Gjn4P1P80xRGDcy4ZOxLS9u+H8S+DCq35Qm6kmAz0RytZtzjurYfh4Y00p+3
-	ynr38I/IxYYEnlYCXHZhkvTr9D9DKHFqE5+m0QMepmX4odJulQuHzFMSXJMUyIV2MhxRZKB2Dt5zx
-	gPOPeLbCPEy9rDV6zARrEELKc+uBWPaNkHqGuuZjK5zdU3StuSuTxdyfwyqnQLqTDmGbog7RHax58
-	1bAMqthUFQztVWv02u3Gvqjn2o3PfSE/9b4XKnrCRJqhCR9oQK25dP5VuDHPhrey6pGEPcJ5QDWgB
-	6U8qQ9lN6Ze0Ms+fTkwA==;
+	List-Owner; bh=u6PUBu5rqRv9il9umP+138iOqLlj8eR1/U+AoSkgoVM=; b=hbVO7zHx/Vi6M1
+	zsqNasu1gMTBHCzfy/9pTzjr0TjWgKolhGuHBh0cp/Coj5WoykcyaQVIcL421AP1aznv4MkQJ4vTR
+	BKqWAoMacqYrM5QnYoJ0Mhb7P1MmGGXU1i0IQokcZ/Zm2TdG76NSw6W7Px0dw9tVHPj4I3klxrXM7
+	G/Cj9T0qwLbn4hFhaudJevBGqcW4Z5XMA4gJlfqyDHZDoDfNjcbjmWz/Ts1YbB4ybWQHBpRnWCcQ7
+	C1R+4lby6S7GsQ75MnM9nqqsKmjjhhzWp1ycO+tzpTThvgAWzdh9lC3f3kvf6UfGmJxUUQzEywC76
+	U5u9VxYA9+mU3fVXQH0w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oYptf-00AzYH-AT; Thu, 15 Sep 2022 14:31:19 +0000
-Received: from mail-wm1-x32c.google.com ([2a00:1450:4864:20::32c])
+	id 1oYpvR-00B4rY-QZ; Thu, 15 Sep 2022 14:33:09 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oYptc-00AzWo-Hn
-	for linux-phy@lists.infradead.org; Thu, 15 Sep 2022 14:31:18 +0000
-Received: by mail-wm1-x32c.google.com with SMTP id n8so6493281wmr.5
-        for <linux-phy@lists.infradead.org>; Thu, 15 Sep 2022 07:31:12 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date;
-        bh=jzN+RkL3+HYpV5uaSocPVjuz6+/WusIjt5gu3LU+tH4=;
-        b=C9xrr9CBZ+W1kBMx3LJmipKqrsAdXyqlDLrSqQ58gEM4pdV9C35qA3iQK2ah9iiJ/R
-         6IolHtEk4LRhX+my19Hj2nWS0mJTxD//2s9FdO+I+qCjzXdn/GNlTZKEaiAJFop0V82v
-         OC/ZfF7LsCi52BDe6v1yyjYkmtRNVZH7v12y5uTPeXaAfsYX+m5avpNKSkgwpL6ALSbO
-         jlD29ZaWkuKT+tuMfxxWO3ytHyVbPx9aTniAQ9ILOMaVL0oVq7VmyBOUhszLnLVteXYm
-         5WmYpgZLaJ27S9EeSbpM0Cx0Ah2+1F5JGFfzZ5q10RP8ElhQtAsqZ5D9AZThrKcCNmAd
-         4GMQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date;
-        bh=jzN+RkL3+HYpV5uaSocPVjuz6+/WusIjt5gu3LU+tH4=;
-        b=TJ+a4BHWmzOICLP810Yi4+L4bD8oQIdFhD7eA7+kwqOUqjtSZXCBhBp7N80MTPb4LU
-         2j4gUpVrKzhOOms74hCE9bErfhOQmTKuf4ugHqO8SQ9kd+DtsobhpL8saImLYBwCwZ/s
-         c9aieTQMxDWoMUknbvAVB2E7h+T402Uskmmyoo6Zu50o4GYTZv3LC4GGJf7G1GRdx4ko
-         He3FeDPolyEZlWAKb8xEKCyLshfM2BL+qwZmOT+SFRxY4pqLGi1lCEfQ9rusxowm61Eh
-         ijI2oPUr0Bs2CfngdF+Yhp2vLdKMBEYkuBPW7/wwkneuztRcEO+oQEwhi4RbM8AmQLVt
-         9cjw==
-X-Gm-Message-State: ACgBeo0l7cAKYnT+I322YcidFFtCyWH4qi1ZM1eW6KjDYXcEEjjQmvL4
-	bcmTgHdraZTvsOyAp1408DFhrg==
-X-Google-Smtp-Source: AA6agR4zYPtswUxwv+bjjArjupfpo//XBQX8ZJCy1hTwWvbz611yPtorduCPyU7dIWhfCy3kzRoqqA==
-X-Received: by 2002:a1c:7905:0:b0:3b3:3fa9:4c3a with SMTP id l5-20020a1c7905000000b003b33fa94c3amr7148909wme.55.1663252271795;
-        Thu, 15 Sep 2022 07:31:11 -0700 (PDT)
-Received: from [10.119.22.201] ([89.101.193.72])
-        by smtp.gmail.com with ESMTPSA id q17-20020adff951000000b00228dff8d975sm2762250wrr.109.2022.09.15.07.31.10
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 15 Sep 2022 07:31:11 -0700 (PDT)
-Message-ID: <dd95a178-8d5b-ecc9-9ec9-6988ab1dcf31@linaro.org>
-Date: Thu, 15 Sep 2022 15:31:10 +0100
+	id 1oYpvO-00B4m9-Sm
+	for linux-phy@lists.infradead.org; Thu, 15 Sep 2022 14:33:08 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 888996243E;
+	Thu, 15 Sep 2022 14:33:05 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E978EC433D6;
+	Thu, 15 Sep 2022 14:33:04 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1663252385;
+	bh=m6FgdNZfe9kL5wW8u/LqxPTIJ7S228NcqIqaAQZSBQM=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=qzdbBwE275PV3GRN2MXYT+x30wDawVP6L2Vo7svd//3xVjfpkp+PI8vlzBBsCIcdj
+	 wTi2cpTEl2BIPGuComqYBBFOFIUSHD3VttWn18HhWTMMiPO1lrqWHzLXXWQINnjyDF
+	 NP9NARS2q/dOv56T3OojTTHuqxcNxRgIsdgqSHAQSk8GdC1FKQ7JVqMNdKZfFo459C
+	 suB0p/MRRZlQjJlaAlZ8R+JcIhl0979XTcd3ettlaxOay+/hRRiH3oHLteZAwArctr
+	 xNsxmVqa8QVtqYimS3WyPctYQc6dNi/tcg/wy86IsyFddvlWQwkZUpX5mdlGA0jMhS
+	 y4lSIG3j4gr6Q==
+Received: from johan by xi.lan with local (Exim 4.94.2)
+	(envelope-from <johan@kernel.org>)
+	id 1oYpvP-00058t-Dw; Thu, 15 Sep 2022 16:33:08 +0200
+Date: Thu, 15 Sep 2022 16:33:07 +0200
+From: Johan Hovold <johan@kernel.org>
+To: Johan Hovold <johan+linaro@kernel.org>
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+	Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@somainline.org>,
+	Kishon Vijay Abraham I <kishon@ti.com>,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 00/11] phy: qcom-qmp: more fixes and cleanups
+Message-ID: <YyM3o6aSwt0zM0t4@hovoldconsulting.com>
+References: <20220914162545.6289-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.13.0
-Subject: Re: [PATCH v2] dt-bindings: phy: renesas,rcar-gen2-usb-phy: Convert
- to json-schema
-Content-Language: en-US
-To: Geert Uytterhoeven <geert@linux-m68k.org>
-Cc: Geert Uytterhoeven <geert+renesas@glider.be>,
- Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
- linux-phy@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
- Vinod Koul <vkoul@kernel.org>, devicetree@vger.kernel.org,
- linux-renesas-soc@vger.kernel.org,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Kishon Vijay Abraham I <kishon@ti.com>
-References: <dbdcffd009302734fe2fb895ce04b72fa1ea4355.1663165000.git.geert+renesas@glider.be>
- <20220915093537.qqddtqx2lr5ttuck@krzk-bin>
- <CAMuHMdV9dv8j34bXBiussjM3f6+nW2aJ-S2drU-MF4q_aB8trg@mail.gmail.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <CAMuHMdV9dv8j34bXBiussjM3f6+nW2aJ-S2drU-MF4q_aB8trg@mail.gmail.com>
+Content-Disposition: inline
+In-Reply-To: <20220914162545.6289-1-johan+linaro@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220915_073116_669823_D22DEF16 
-X-CRM114-Status: GOOD (  19.69  )
+X-CRM114-CacheID: sfid-20220915_073306_993260_E823A6F5 
+X-CRM114-Status: GOOD (  10.95  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,57 +81,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 15/09/2022 12:12, Geert Uytterhoeven wrote:
-> Hi Krzysztof,
-> 
-> On Thu, Sep 15, 2022 at 10:35 AM Krzysztof Kozlowski
-> <krzysztof.kozlowski@linaro.org> wrote:>
->> On Wed, 14 Sep 2022 16:17:37 +0200, Geert Uytterhoeven wrote:
->>> Convert the Renesas R-Car Gen2 USB PHY Device Tree binding documentation
->>> to json-schema.
->>>
->>> Add missing properties.
->>> Rename the device node from "usb-phy" to "usb-phy-controller", as it
->>> does not represent a USB PHY itself, and thus does not have a
->>> "#phy-cells" property.
->>> Rename the child nodes from "usb-channel" to "usb-phy", as these do
->>> represent USB PHYs.
->>> Drop the second example, as it doesn't add any value.
->>>
->>> Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
->>> ---
->>> v2:
->>>   - Rename nodes to fix "'#phy-cells' is a required property".
->>>
->>> This is the final conversion to json-schema of DT bindings for Renesas
->>> ARM SoCs, hurray!
->>>
->>> Note that there are still a few plain text bindings left for Renesas IP
->>> cores that are present on non-Renesas SoCs (nbpfaxi and usdhi6rol0).
->>> ---
->>>  .../devicetree/bindings/phy/rcar-gen2-phy.txt | 112 ----------------
->>>  .../phy/renesas,rcar-gen2-usb-phy.yaml        | 123 ++++++++++++++++++
->>>  2 files changed, 123 insertions(+), 112 deletions(-)
->>>  delete mode 100644 Documentation/devicetree/bindings/phy/rcar-gen2-phy.txt
->>>  create mode 100644 Documentation/devicetree/bindings/phy/renesas,rcar-gen2-usb-phy.yaml
->>>
->>
->> Running 'make dtbs_check' with the schema in this patch gives the
->> following warnings. Consider if they are expected or the schema is
->> incorrect. These may not be new warnings.
-> 
-> These should be fixed by the DTS counterpart
-> "[PATCH] ARM: dts: renesas: Fix USB PHY device and child node names"
-> https://lore.kernel.org/all/6442b4042e26537abc8632c4772f8201685f1f1f.1663165098.git.geert+renesas@glider.be/>
-> 
-> In hindsight, I should have cross-linked the patches in both
-> directions, not just in one direction. Sorry for that.
+On Wed, Sep 14, 2022 at 06:25:34PM +0200, Johan Hovold wrote:
+> Here's the next set of QMP PHY cleanups including some non-critical
+> fixes of tiny memory leaks on probe deferral (I didn't add a stable tag
+> for any of them on purpose).
 
-No worries. Thanks for fixing it and error can be ignored.
+> Johan Hovold (11):
+>   phy: qcom-qmp-pcie: add pcs_misc sanity check
+>   phy: qcom-qmp-pcie: fix memleak on probe deferral
+>   phy: qcom-qmp-pcie-msm8996: fix memleak on probe deferral
+>   phy: qcom-qmp-combo: fix memleak on probe deferral
+>   phy: qcom-qmp-ufs: fix memleak on probe deferral
+>   phy: qcom-qmp-usb: fix memleak on probe deferral
+>   phy: qcom-qmp-pcie-msm8996: drop unused pcs_misc handling
+>   phy: qcom-qmp-pcie: drop unused legacy DT workaround
+>   phy: qcom-qmp-combo: drop unused legacy DT workaround
+>   phy: qcom-qmp-ufs: drop legacy DT workaround
+>   phy: qcom-qmp-usb: drop legacy DT workaround
 
+Please hold off with applying this series. I realised that we have a
+couple devicetrees in mainline with overlapping register regions for
+which the drivers would fail to bind if we start checking checking for
+that.
 
-Best regards,
-Krzysztof
+I'll see to fixing those up and look into how to handle backward
+compatibility first.
+
+Johan
 
 -- 
 linux-phy mailing list
