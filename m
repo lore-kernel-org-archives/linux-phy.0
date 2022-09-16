@@ -4,60 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 47051C6FA82
-	for <linux-phy@archiver.kernel.org>; Fri, 16 Sep 2022 06:17:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2BD69ECAAD8
+	for <linux-phy@archiver.kernel.org>; Fri, 16 Sep 2022 06:17:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=2bgNA37+OZwJZWn//t3On7MoMpakYsIper0pquuaTSw=; b=ncoCJYvZ/s0gzP
-	CWP2STGryYlILclE3i809Mt+LSweLZ3mMtHem3AV6QK5MUMcrDk+RWad/PWPhna/s+mljQ+Oewb5F
-	317QIF7wZQn6W2kxLQNAim61MYIGtiRbuFZ0JyXGrwbnxiyp96B7opuhwjglrh2W5XO1sY44/jkZH
-	TZ9Zg/fYXtUTIMsUTkLJp6Hc9rTBes4rkZIGDXSTFMxM9orsJ/jta+hbuh0HWUWLuM5zwSVlic4K+
-	EvH49iNqZDjPgQVzqGGRB2XOvP79UWM2hCumkA9qWrLbx06K4CGPyJZCzubZB7/68YVUFRBQLnqGd
-	NOmLwa80mOJ7JVxQQjgg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=l+T6oEHGlecj6smBesiCa/pxG7i0zT5vZCOkEwOEiy4=; b=un0GfLnvjkx/Bs
+	aWYuPKOjpVPgoxKCpJrurM1gj/K2IdpFIgy3M32QhVb7z+ZXxGI/7YRde70Dxw+ilIivGs1tsMs0Z
+	XZd2YTVJGHaUc/4N7imrCvVz/5Ev2dQeVDVyv8nX4Dx5pFrdI/jPurxFsJrvJIu9F901rKQhXQFst
+	Cq54467gvSab0LaTFaORWlEkZDaNQkLRvwH9+PQO/JLfk4KngDFNOyv4fb0kg7K6vmfzxi3m8joy7
+	vsJGEvjzj5RyAGF/hT5h2aotT23fanoG0sqwZf53uNZAhEd3GW7TsIa0d952b0xaNFkheMFZRc8Oj
+	ocH7ZJqk5uUy1wOtkZug==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oZ4fa-0095yB-De; Fri, 16 Sep 2022 06:17:46 +0000
-Received: from mail-lf1-x12b.google.com ([2a00:1450:4864:20::12b])
+	id 1oZ4fd-0095zH-JZ; Fri, 16 Sep 2022 06:17:49 +0000
+Received: from mail-lf1-x12d.google.com ([2a00:1450:4864:20::12d])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oZ4fY-0095kN-6A
-	for linux-phy@lists.infradead.org; Fri, 16 Sep 2022 06:17:45 +0000
-Received: by mail-lf1-x12b.google.com with SMTP id w8so33929601lft.12
-        for <linux-phy@lists.infradead.org>; Thu, 15 Sep 2022 23:17:42 -0700 (PDT)
+	id 1oZ4fa-0095kU-4P
+	for linux-phy@lists.infradead.org; Fri, 16 Sep 2022 06:17:48 +0000
+Received: by mail-lf1-x12d.google.com with SMTP id w8so33929639lft.12
+        for <linux-phy@lists.infradead.org>; Thu, 15 Sep 2022 23:17:43 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date;
-        bh=IGJdO2o9W+EN9QbSgrXXc87YNjS5Imv5FNNu7TSke8M=;
-        b=ediOniOvKQsnu4ipXEdJ5RnQ3r0QzOmyZDnEkpC1CrOtZBCl7KfHzXi/AJWbcHuyHT
-         h7fxsdnHxyR3pCtQ7s528qKw7XPVRrcdvDelAzB2BSh7GeIz9uXcRKXfPwN70Tml48ox
-         sutHHaZ0NRAMc0ki5J9OTB2T2fGMWEJqhqOfVkhLR2uFYo2NIflwPYXPhB/RZxQkkpNK
-         IKvUUgV9ZerqwxG4Yrte23h+YgFcK96eY6+4z3lsAJf3rrgE280RgZKDmaD9UNsV6NzL
-         eAu5G/jVG6cEwCaBB5lToVx09WqXDnhnFt8TOg5/skwTyW4N10wRkDosSlEmYqwYz5rt
-         nvgg==
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date;
+        bh=bdT4oIVJBpS3aTEX0D4eG2/56m0Eb1XqFrZYqvu24hE=;
+        b=kLA6yliXqa3vH95OMYFBnZ38qBzZMRv6s8v2K3jzz5X/jKrnZ/O6n8a363/NOd5cZN
+         t5Rggk+RgniwlRjU6vnR4ykFMdC+TnyV35/QiFSx+7/VHMCzPHR6yfzl9Jcl6mvinE/f
+         WKn3k4jSO4Bl4wcFGNtM5j7R2ivuDydnX+EG2/abrX56SFH6D53LH1aKW9M1a2LEmaWq
+         72Ff45ffQJOeVP7jb3W27pEf1XIQIJ92c1gZthLzE4J6XlUsbxyomuJTWeewEROLq1Eo
+         BIklVqeH63Kr5YyIMHa4EM7ljWDMjWrT9Cq37iglvw5x8wi/8/8MSqLlP+zzZqR/I9Pe
+         2W5Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date;
-        bh=IGJdO2o9W+EN9QbSgrXXc87YNjS5Imv5FNNu7TSke8M=;
-        b=x3bF4Ljk97TJTi500Dlpb072nqmBqjblUFdcjATkaYHvGHEZoEman65vciXbmgtmKQ
-         93gR7TGwKYmPMbSI433H3hGDwfg1ENSmyDxBG4406hXRdX8VdtpGpjUfYyWNUzrqOF5J
-         Kiv4Ajk6oBpACIE4LggMMjkSCrRxj5tRddfHKNx1Ws8jWjWAVlsVEMoSZBqlAHhsknLv
-         X/KrDDC9AS2Hk3GiFZIxmnSrMmFng4gV8PwBqqxSn4gIX3xCeAkZ1gBOH0QA8jWwiMjL
-         dfRuW2yAlCBICu3Gfw0F2CGR97yyLODzGqAuhjb344Vhj64+YzO+RzVD2xuW7fLMPu+O
-         A7dQ==
-X-Gm-Message-State: ACrzQf3MJ1QO3605hNCFElqb06MW4xJoyT3lKlTGPcsClf0Lm1eMhCXs
-	wdn5IRKaewO8Cc4Fhhdxjcd3GA==
-X-Google-Smtp-Source: AMsMyM6PIkWlCjzFPaXY8+6RRN4/pzBptHKoG2rk9EfbxoDRJtBRoHvHNGcRABuG92wKdtplYTFrrQ==
-X-Received: by 2002:a05:6512:3da1:b0:49f:1b3d:88b9 with SMTP id k33-20020a0565123da100b0049f1b3d88b9mr1057157lfv.67.1663309061446;
-        Thu, 15 Sep 2022 23:17:41 -0700 (PDT)
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date;
+        bh=bdT4oIVJBpS3aTEX0D4eG2/56m0Eb1XqFrZYqvu24hE=;
+        b=qf93esjkcXqkYgu8K8RhpOe19EooksGcCMBD11xKfMKMfXRxpDLVYJFTMFjQdQKU8X
+         nsSCTOUG4vSI/M0p+KncVDyC19wuP9eBbxKDUYyuMuRuu46CW1LIgqs4ERAPpCeoZn4R
+         AZeIEBCnjxvxIDNNxtM/zXLX7T0Nndnja4dSRaqoRkKyMGwyq+GOm94Q+340UsubATnL
+         mPtEmN7EsDZ7PfNoBVyDNJJ42/kJ9gAFRJf7PM7MMv0g9rI8uKxPFeycHII843bBqsfI
+         RjjNoV1725158x64X0O8kPZChNamexzM1klWEmwfvTqSh6QpuWP2NWf7LSorCRczssQZ
+         2i+g==
+X-Gm-Message-State: ACrzQf32pDYfyk6Mvb4ifXnI3Dj9iiRSWWkBn6+KAqc7lFINEYdIXhxk
+	Sc8IRPXox9QDkIRmotk+dETPOw==
+X-Google-Smtp-Source: AMsMyM4ePNt3gfx9GsjpKPkGMFhNmnqa/lpONYwb0Lw01rfMtUeHdIhevXBn23eyag1V/Sy/P9o74A==
+X-Received: by 2002:a05:6512:3f1d:b0:492:e175:402a with SMTP id y29-20020a0565123f1d00b00492e175402amr1115487lfa.384.1663309062310;
+        Thu, 15 Sep 2022 23:17:42 -0700 (PDT)
 Received: from eriador.lan ([37.153.55.125])
-        by smtp.gmail.com with ESMTPSA id b15-20020a2eb90f000000b00261eaa819b7sm3529383ljb.30.2022.09.15.23.17.40
+        by smtp.gmail.com with ESMTPSA id b15-20020a2eb90f000000b00261eaa819b7sm3529383ljb.30.2022.09.15.23.17.41
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 15 Sep 2022 23:17:40 -0700 (PDT)
+        Thu, 15 Sep 2022 23:17:41 -0700 (PDT)
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 To: Andy Gross <agross@kernel.org>,
 	Bjorn Andersson <andersson@kernel.org>,
@@ -71,15 +72,16 @@ Cc: Philipp Zabel <p.zabel@pengutronix.de>,
 	linux-arm-msm@vger.kernel.org,
 	linux-clk@vger.kernel.org,
 	linux-phy@lists.infradead.org
-Subject: [PATCH v4 0/3] phy: qcom-qmp-ufs: add symbol clocks support
-Date: Fri, 16 Sep 2022 09:17:37 +0300
-Message-Id: <20220916061740.87167-1-dmitry.baryshkov@linaro.org>
+Subject: [PATCH v4 1/3] clk: asm9260: use parent index to link the reference clock
+Date: Fri, 16 Sep 2022 09:17:38 +0300
+Message-Id: <20220916061740.87167-2-dmitry.baryshkov@linaro.org>
 X-Mailer: git-send-email 2.35.1
+In-Reply-To: <20220916061740.87167-1-dmitry.baryshkov@linaro.org>
+References: <20220916061740.87167-1-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220915_231744_245777_E6038E13 
-X-CRM114-Status: UNSURE (   7.29  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220915_231746_194209_20AEC703 
+X-CRM114-Status: GOOD (  17.63  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,35 +98,129 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Register UFS symbol clocks in the Qualcomm QMP PHY driver. Some of the
-platforms (msm8996, sc7280, sm8350/sm8450) expect them to be defined (to
-be used as GCC clock parents).
+Rewrite clk-asm9260 to use parent index to use the reference clock.
+During this rework two helpers are added:
 
-Changes since v3:
-- Rewrote asm9260 clk driver to fix the TODO item by using parent index
-  rather than calling of_clk_get_parent_name().
+- clk_hw_register_mux_table_parent_data() to supplement
+  clk_hw_register_mux_table() but using parent_data instead of
+  parent_names
 
-Changes since v2:
-- Added error handling to phy_symbols_clk_register() (requested by
-  Johan).
+- clk_hw_register_fixed_rate_parent_accuracy() to be used instead of
+  directly calling __clk_hw_register_fixed_rate(). The later function is
+  an internal API, which is better not to be called directly.
 
-Changes since v1:
-- Added a macro used by clk-asm9260, so that the clk-fixed-rate changes
-  do not affect the driver
-- Changed registered clock names to be unique (as e.g. SC8280XP will
-  have two UFS PHYs).
+Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+---
+ drivers/clk/clk-asm9260.c    | 29 ++++++++++++-----------------
+ include/linux/clk-provider.h | 21 +++++++++++++++++++++
+ 2 files changed, 33 insertions(+), 17 deletions(-)
 
-Dmitry Baryshkov (3):
-  clk: asm9260: use parent index to link the reference clock
-  clk: fixed-rate: add devm_clk_hw_register_fixed_rate
-  phy: qcom-qmp-ufs: provide symbol clocks
-
- drivers/clk/clk-asm9260.c               | 29 +++++-------
- drivers/clk/clk-fixed-rate.c            | 28 ++++++++++--
- drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 59 +++++++++++++++++++++++++
- include/linux/clk-provider.h            | 48 +++++++++++++++++---
- 4 files changed, 136 insertions(+), 28 deletions(-)
-
+diff --git a/drivers/clk/clk-asm9260.c b/drivers/clk/clk-asm9260.c
+index bacebd457e6f..8b3c059e19a1 100644
+--- a/drivers/clk/clk-asm9260.c
++++ b/drivers/clk/clk-asm9260.c
+@@ -80,7 +80,7 @@ struct asm9260_mux_clock {
+ 	u8			mask;
+ 	u32			*table;
+ 	const char		*name;
+-	const char		**parent_names;
++	const struct clk_parent_data *parent_data;
+ 	u8			num_parents;
+ 	unsigned long		offset;
+ 	unsigned long		flags;
+@@ -232,10 +232,10 @@ static const struct asm9260_gate_data asm9260_ahb_gates[] __initconst = {
+ 		HW_AHBCLKCTRL1,	16 },
+ };
+ 
+-static const char __initdata *main_mux_p[] =   { NULL, NULL };
+-static const char __initdata *i2s0_mux_p[] =   { NULL, NULL, "i2s0m_div"};
+-static const char __initdata *i2s1_mux_p[] =   { NULL, NULL, "i2s1m_div"};
+-static const char __initdata *clkout_mux_p[] = { NULL, NULL, "rtc"};
++static struct clk_parent_data __initdata main_mux_p[] =   { { .index = 0, }, { .name = "pll" } };
++static struct clk_parent_data __initdata i2s0_mux_p[] =   { { .index = 0, }, { .name = "pll" }, { .name = "i2s0m_div"} };
++static struct clk_parent_data __initdata i2s1_mux_p[] =   { { .index = 0, }, { .name = "pll" }, { .name = "i2s1m_div"} };
++static struct clk_parent_data __initdata clkout_mux_p[] = { { .index = 0, }, { .name = "pll" }, { .name = "rtc"} };
+ static u32 three_mux_table[] = {0, 1, 3};
+ 
+ static struct asm9260_mux_clock asm9260_mux_clks[] __initdata = {
+@@ -255,9 +255,10 @@ static struct asm9260_mux_clock asm9260_mux_clks[] __initdata = {
+ 
+ static void __init asm9260_acc_init(struct device_node *np)
+ {
+-	struct clk_hw *hw;
++	struct clk_hw *hw, *pll_hw;
+ 	struct clk_hw **hws;
+-	const char *ref_clk, *pll_clk = "pll";
++	const char *pll_clk = "pll";
++	struct clk_parent_data pll_parent_data = { .index = 0 };
+ 	u32 rate;
+ 	int n;
+ 
+@@ -274,21 +275,15 @@ static void __init asm9260_acc_init(struct device_node *np)
+ 	/* register pll */
+ 	rate = (ioread32(base + HW_SYSPLLCTRL) & 0xffff) * 1000000;
+ 
+-	/* TODO: Convert to DT parent scheme */
+-	ref_clk = of_clk_get_parent_name(np, 0);
+-	hw = __clk_hw_register_fixed_rate(NULL, NULL, pll_clk,
+-			ref_clk, NULL, NULL, 0, rate, 0,
+-			CLK_FIXED_RATE_PARENT_ACCURACY);
+-
+-	if (IS_ERR(hw))
++	pll_hw = clk_hw_register_fixed_rate_parent_accuracy(NULL, pll_clk, &pll_parent_data,
++							0, rate);
++	if (IS_ERR(pll_hw))
+ 		panic("%pOFn: can't register REFCLK. Check DT!", np);
+ 
+ 	for (n = 0; n < ARRAY_SIZE(asm9260_mux_clks); n++) {
+ 		const struct asm9260_mux_clock *mc = &asm9260_mux_clks[n];
+ 
+-		mc->parent_names[0] = ref_clk;
+-		mc->parent_names[1] = pll_clk;
+-		hw = clk_hw_register_mux_table(NULL, mc->name, mc->parent_names,
++		hw = clk_hw_register_mux_table_parent_data(NULL, mc->name, mc->parent_data,
+ 				mc->num_parents, mc->flags, base + mc->offset,
+ 				0, mc->mask, 0, mc->table, &asm9260_clk_lock);
+ 	}
+diff --git a/include/linux/clk-provider.h b/include/linux/clk-provider.h
+index 1615010aa0ec..86140ac2f9a5 100644
+--- a/include/linux/clk-provider.h
++++ b/include/linux/clk-provider.h
+@@ -439,6 +439,20 @@ struct clk *clk_register_fixed_rate(struct device *dev, const char *name,
+ 	__clk_hw_register_fixed_rate((dev), NULL, (name), NULL, NULL,	      \
+ 				     (parent_data), NULL, (flags),	      \
+ 				     (fixed_rate), (fixed_accuracy), 0)
++/**
++ * clk_hw_register_fixed_rate_parent_accuracy - register fixed-rate clock with
++ * the clock framework
++ * @dev: device that is registering this clock
++ * @name: name of this clock
++ * @parent_name: name of clock's parent
++ * @flags: framework-specific flags
++ * @fixed_rate: non-adjustable clock rate
++ */
++#define clk_hw_register_fixed_rate_parent_accuracy(dev, name, parent_data,    \
++						   flags, fixed_rate)	      \
++	__clk_hw_register_fixed_rate((dev), NULL, (name), NULL, NULL,      \
++				     (parent_data), (flags), (fixed_rate), 0,    \
++				     CLK_FIXED_RATE_PARENT_ACCURACY)
+ 
+ void clk_unregister_fixed_rate(struct clk *clk);
+ void clk_hw_unregister_fixed_rate(struct clk_hw *hw);
+@@ -957,6 +971,13 @@ struct clk *clk_register_mux_table(struct device *dev, const char *name,
+ 			      (parent_names), NULL, NULL, (flags), (reg),     \
+ 			      (shift), (mask), (clk_mux_flags), (table),      \
+ 			      (lock))
++#define clk_hw_register_mux_table_parent_data(dev, name, parent_data,	      \
++				  num_parents, flags, reg, shift, mask,	      \
++				  clk_mux_flags, table, lock)		      \
++	__clk_hw_register_mux((dev), NULL, (name), (num_parents),	      \
++			      NULL, NULL, (parent_data), (flags), (reg),      \
++			      (shift), (mask), (clk_mux_flags), (table),      \
++			      (lock))
+ #define clk_hw_register_mux(dev, name, parent_names, num_parents, flags, reg, \
+ 			    shift, width, clk_mux_flags, lock)		      \
+ 	__clk_hw_register_mux((dev), NULL, (name), (num_parents),	      \
 -- 
 2.35.1
 
