@@ -4,47 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C1102C54EE9
-	for <linux-phy@archiver.kernel.org>; Fri, 16 Sep 2022 10:26:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E114EC6FA90
+	for <linux-phy@archiver.kernel.org>; Fri, 16 Sep 2022 10:26:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6KEmm/S7TEu5TBs8ifT4GuByaKntimTLzcxB8kKXm7A=; b=JmbtGNa+BebpId
-	33LOM+lBhBGscdcCWNUA17O3pRBwYgmC5IaE6QHo9zY04t9Z18ZQscyjLrYzdnalzAcjuEpLkaebW
-	Uyh7hL3Dc+uZfYcSNSBv8oIZtzYoXqlMuj1cZSAN/pagE7zh/OiJtXRdI0d6Rx5/K3h4uivIYN2KD
-	20mBfOHTVMZQaPsR0bjrAcAPpI6VjY9WNdXaHz+Tf2Pj3VGLQ7X3O2WqZxzfBTOnv9v9b9Vo32gZm
-	2AR6u9ZmSIILmlzVA1PxwPDK/9Rf6QSqSG5RIWmxNe6LtOf82DWrVRfIf69tz7eJnnuDDJARZ4G0V
-	y8hJS7ou8PgWkJhePZFQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=SlFkinlotwWiSHgIvA/m9MMvEdHGhkOM5Eet74NpdQE=; b=iehdHeoM3fAIpC
+	IgjvJmCzvZY+5hl4jTxGq1POWwZPzKJx8/VAWRmXGwAKML5gY7b/e54wEyAnYbPIxgkOzivFZWL/j
+	XKlM9qpurUbGK+wBkIdPgYAmrsZVE0KmVnh0eLsyUkT0TTSjxv/83MpSvHcuNQ5QR3N/cKsuEnPKO
+	somEfncwKbzqE5s5lrFLlzy5Jf8DBXoDzHjrzPc68d88fob621Rlriprm9YOmuEs1j/m6uvaDJoxf
+	reJf97YcLTRk8LQ9KcvVz9OgL1pulRRDyRz25/P79BswYe+7fhtvTCHB0dxz37HgNOWeYCTVIhFhb
+	yuOSU4XIxhTrsa7wpNUQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oZ8Y4-00C9la-9N; Fri, 16 Sep 2022 10:26:16 +0000
+	id 1oZ8Y5-00C9mj-Ma; Fri, 16 Sep 2022 10:26:17 +0000
 Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oZ8Vf-00C8Pz-IL
+	id 1oZ8Vf-00C8Pe-IK
 	for linux-phy@lists.infradead.org; Fri, 16 Sep 2022 10:23:51 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 0AC0162A9A;
-	Fri, 16 Sep 2022 10:23:47 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1E57BC433D7;
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 434BD62A8B;
+	Fri, 16 Sep 2022 10:23:46 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1B59AC433B5;
 	Fri, 16 Sep 2022 10:23:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1663323825;
-	bh=PcROEtjraoCeHz2QhulSw6cJnaFIKwnuW0ytQUgMqgg=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=LKgxznGRtWzydtRQejI+/Uv1h1EGNrKruic3MNixFSjSjCy3v3I+SYsV1gaPnDMpB
-	 TzXCabvy/ZnLXs2oew4W09jVf63BYukUQgoAwgJ5kASq3Wx3pY4Rmz9i3UKsTNyNYk
-	 RSOdpspS+AyyBSlx7N1xUT56ifSVMga359JXezIgPreK3HPMEBmeu9Dac4Mk7j/sFi
-	 rCaO1zA1U++dCyTNFrPb2zUHfkmGLrOqq2wzKD7F5+Zm6w+Alms+O8O1AqjRt37PQT
-	 +l3e8Sydf30PNOw84n+KCjo8QGgnf9eCQJpxe4lXiwF3hXo+VUnSzET1o4p09mOeRc
-	 icpCPabuy6FEA==
+	bh=ir7H0gZFvFgZNHyj7dRRRxwrCHWMLr07c5X1mE03c7s=;
+	h=From:To:Cc:Subject:Date:From;
+	b=IZzcj5R12OziQR5GgV4ebTz73/lF+Z55vsEIp8ULDxt5DMv7uDGMOGYKsQgZ2Gh3+
+	 ZTQOCzuW6k/uSMmlUDiicWmXQ43xsxvPSu7xlmME6xMSNlZexJ+/CJGxZjAqwpqqST
+	 yZna0gdrctLO2T4z0mVfcMrmDc5b+eSSlbgU+lSkGFcTo7wO+vZLC8LcWSs4oAeiu0
+	 W8gSFoB8cLeNKdm/dsuNbMEILcLG03Xf3GmxSAt9TlDTSWGzSxO83MsNAohG9H6yo+
+	 vRJC8rzIn49F5gGY4838MH6y37BdXUO20MSQ5Eu7wZzTXHLnx42ghMuEK86VFUyKpD
+	 WqvDVWm16NBYQ==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1oZ8Vi-00030P-BW; Fri, 16 Sep 2022 12:23:50 +0200
+	id 1oZ8Vh-00030L-EZ; Fri, 16 Sep 2022 12:23:50 +0200
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>
 Cc: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
@@ -56,16 +56,14 @@ Cc: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
 	linux-phy@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH v2 02/11] phy: qcom-qmp-pcie: fix memleak on probe deferral
-Date: Fri, 16 Sep 2022 12:23:31 +0200
-Message-Id: <20220916102340.11520-3-johan+linaro@kernel.org>
+Subject: [PATCH v2 00/11] phy: qcom-qmp: more fixes and cleanups
+Date: Fri, 16 Sep 2022 12:23:29 +0200
+Message-Id: <20220916102340.11520-1-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.35.1
-In-Reply-To: <20220916102340.11520-1-johan+linaro@kernel.org>
-References: <20220916102340.11520-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220916_032347_768632_73BD5160 
-X-CRM114-Status: GOOD (  15.34  )
+X-CRM114-CacheID: sfid-20220916_032347_776060_CA4739FC 
+X-CRM114-Status: GOOD (  16.04  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,88 +80,73 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Switch to using the device-managed of_iomap helper to avoid leaking
-memory on probe deferral and driver unbind.
+Here's the next set of QMP PHY cleanups including some non-critical
+fixes of tiny memory leaks on probe deferral (I didn't add a stable tag
+for any of them on purpose).
 
-Note that this helper checks for already reserved regions and may fail
-if there are multiple devices claiming the same memory.
+Note that the UFS PHY driver does not use the pcs_misc region either
+currently, but I decided to leave the register mapping code in as,
+unlike for msm8996, the bindings do include this region.
 
-Fixes: e78f3d15e115 ("phy: qcom-qmp: new qmp phy driver for qcom-chipsets")
-Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
----
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 34 ++++++++++++------------
- 1 file changed, 17 insertions(+), 17 deletions(-)
+These apply on top of the previous clean up series, which has been
+reviewed by Dmitry and is ready to be merged (apart from possibly a tiny
+fixup of the last patch):
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-index 05e73625a619..e6636700871c 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-@@ -2258,17 +2258,17 @@ static int qmp_pcie_create(struct device *dev, struct device_node *np, int id,
- 	 * For dual lane PHYs: tx2 -> 3, rx2 -> 4, pcs_misc (optional) -> 5
- 	 * For single lane PHYs: pcs_misc (optional) -> 3.
- 	 */
--	qphy->tx = of_iomap(np, 0);
--	if (!qphy->tx)
--		return -ENOMEM;
-+	qphy->tx = devm_of_iomap(dev, np, 0, NULL);
-+	if (IS_ERR(qphy->tx))
-+		return PTR_ERR(qphy->tx);
- 
--	qphy->rx = of_iomap(np, 1);
--	if (!qphy->rx)
--		return -ENOMEM;
-+	qphy->rx = devm_of_iomap(dev, np, 1, NULL);
-+	if (IS_ERR(qphy->rx))
-+		return PTR_ERR(qphy->rx);
- 
--	qphy->pcs = of_iomap(np, 2);
--	if (!qphy->pcs)
--		return -ENOMEM;
-+	qphy->pcs = devm_of_iomap(dev, np, 2, NULL);
-+	if (IS_ERR(qphy->pcs))
-+		return PTR_ERR(qphy->pcs);
- 
- 	/*
- 	 * If this is a dual-lane PHY, then there should be registers for the
-@@ -2277,9 +2277,9 @@ static int qmp_pcie_create(struct device *dev, struct device_node *np, int id,
- 	 * offset from the first lane.
- 	 */
- 	if (cfg->is_dual_lane_phy) {
--		qphy->tx2 = of_iomap(np, 3);
--		qphy->rx2 = of_iomap(np, 4);
--		if (!qphy->tx2 || !qphy->rx2) {
-+		qphy->tx2 = devm_of_iomap(dev, np, 3, NULL);
-+		qphy->rx2 = devm_of_iomap(dev, np, 4, NULL);
-+		if (IS_ERR(qphy->tx2) || IS_ERR(qphy->rx2)) {
- 			dev_warn(dev,
- 				 "Underspecified device tree, falling back to legacy register regions\n");
- 
-@@ -2289,20 +2289,20 @@ static int qmp_pcie_create(struct device *dev, struct device_node *np, int id,
- 			qphy->rx2 = qphy->rx + QMP_PHY_LEGACY_LANE_STRIDE;
- 
- 		} else {
--			qphy->pcs_misc = of_iomap(np, 5);
-+			qphy->pcs_misc = devm_of_iomap(dev, np, 5, NULL);
- 		}
- 
- 	} else {
--		qphy->pcs_misc = of_iomap(np, 3);
-+		qphy->pcs_misc = devm_of_iomap(dev, np, 3, NULL);
- 	}
- 
--	if (!qphy->pcs_misc &&
-+	if (IS_ERR(qphy->pcs_misc) &&
- 	    of_device_is_compatible(dev->of_node, "qcom,ipq6018-qmp-pcie-phy"))
- 		qphy->pcs_misc = qphy->pcs + 0x400;
- 
--	if (!qphy->pcs_misc) {
-+	if (IS_ERR(qphy->pcs_misc)) {
- 		if (cfg->pcs_misc_tbl || cfg->pcs_misc_tbl_sec)
--			return -EINVAL;
-+			return PTR_ERR(qphy->pcs_misc);
- 	}
- 
- 	qphy->pipe_clk = devm_get_clk_from_child(dev, np, NULL);
+	https://lore.kernel.org/all/20220907110728.19092-1-johan+linaro@kernel.org/
+
+As mentioned in the individual commit messages, the memleak fixes
+switches to using exclusive mappings for the device registers. When
+reviewing the mainline devicetree I found four instances of incorrect
+serdes region sizes which I've now fixed up. I don't think we need to
+add workarounds for booting older malformed dtbs in this case, at least
+not until someone complains.
+
+As I also reported in a reply to v1:
+
+	https://lore.kernel.org/lkml/YyRJuCnuUE+bF7RP@hovoldconsulting.com/
+
+we do however have two USB PHY bindings that currently rely on
+overlapping regions which would require some more work to be fixed up.
+
+Specifically, the USB PHY driver uses two separate PCS regions but the
+binding treats them as one and the driver ends up mapping everything in
+between. This sort of works on all platforms but two where the TX and RX
+regions lie in between.
+
+The binding and driver should probably be fixed up to define this
+PCS_USB region explicitly, but that work is left for another day.
+
+Meanwhile, I've implemented a workaround that fall back to using
+non-exclusive mappings for these platforms.
+
+Johan
+
+
+Changes in v2
+ - fallback to non-exclusive mappings for the two USB bindings that
+   currently rely on it (patch 6/11)
+
+
+Johan Hovold (11):
+  phy: qcom-qmp-pcie: add pcs_misc sanity check
+  phy: qcom-qmp-pcie: fix memleak on probe deferral
+  phy: qcom-qmp-pcie-msm8996: fix memleak on probe deferral
+  phy: qcom-qmp-combo: fix memleak on probe deferral
+  phy: qcom-qmp-ufs: fix memleak on probe deferral
+  phy: qcom-qmp-usb: fix memleak on probe deferral
+  phy: qcom-qmp-pcie-msm8996: drop unused pcs_misc handling
+  phy: qcom-qmp-pcie: drop unused legacy DT workaround
+  phy: qcom-qmp-combo: drop unused legacy DT workaround
+  phy: qcom-qmp-ufs: drop legacy DT workaround
+  phy: qcom-qmp-usb: drop legacy DT workaround
+
+ drivers/phy/qualcomm/phy-qcom-qmp-combo.c     | 53 +++++-------
+ .../phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c  | 33 +++-----
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c      | 59 ++++++--------
+ drivers/phy/qualcomm/phy-qcom-qmp-ufs.c       | 53 +++++-------
+ drivers/phy/qualcomm/phy-qcom-qmp-usb.c       | 80 +++++++++++--------
+ 5 files changed, 117 insertions(+), 161 deletions(-)
+
 -- 
 2.35.1
 
