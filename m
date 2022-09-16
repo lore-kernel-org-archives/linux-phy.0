@@ -4,47 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DDA46C6FA90
-	for <linux-phy@archiver.kernel.org>; Fri, 16 Sep 2022 10:26:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EB9B3C54EE9
+	for <linux-phy@archiver.kernel.org>; Fri, 16 Sep 2022 10:26:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CgrR/0nLd5sYlLwy6A8w6tCcC8RVJB1xn+kxJBC+8Fg=; b=RtMz5iBMN7yKSH
-	uAjrZFyKgtA/zmcf8L1mpT21Klw/wbtwhk5/4Poip7Rtms73ZL+5jmRZgkU51x2qN5Tx6TvgUvcaj
-	9rkjvzHVwmWcOAl4SgFthcCcnblA9DAviQlHyGhxLSahLi8weBZGKwQ20mbiLV7I1pTmCnGD/cLmr
-	52V27ra2oCibavCA60aKUWupxZymt5aaGSwQz681iExA9LgewD+DRRiDxU9mzKAwGNISPLVsGzhF/
-	sGLUHPPFawVzhf3vVbQ+imy6xdvQmc+2EVluFs8mAHwumIyklabxWa0RDiKT4yxUZS/EjyloueRpA
-	v7pqdta3DkFfJ1Ja5Wzg==;
+	List-Owner; bh=wZVuk8FGJ1jGbcdlqBf3dZTI7wt1LM4G8lO19GAoznY=; b=sPh+K5IBCME749
+	7tTkD5oW21uRBMTW6q44oGZ2Ai0PtWsPpN5ujnlVHyisOGDoVK8jU9zNqMW89rVNYFDtyxKPDAaX8
+	MBnJbcnAyYRGBJ4gM0uijxTcLJiy0KNE77xEOloHCJ/rD0Jin+8+GAQMMNCn+NKThhUAGERGZsK8Q
+	wOR7xkFpmOC9IAEOVQBZPTMLYok4zuEnnN75FnlOUGioq4Mdt1yNtjQreNwKmNwFWoeIMcF1OHCqE
+	5eXi1W/Q70oh2BGlqSpycbg66O3yaVQ/QSQBUkzZ8dQJc0U2ATMAOQohawWPmPA7hRXsElqSkE/vI
+	ImhRPjLuAlD5/HR+2MaQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oZ8YD-00C9tY-Rs; Fri, 16 Sep 2022 10:26:25 +0000
-Received: from ams.source.kernel.org ([145.40.68.75])
+	id 1oZ8YH-00C9xj-HB; Fri, 16 Sep 2022 10:26:29 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oZ8Vg-00C8Pw-8N
-	for linux-phy@lists.infradead.org; Fri, 16 Sep 2022 10:23:54 +0000
+	id 1oZ8Vk-00C8TG-M3
+	for linux-phy@lists.infradead.org; Fri, 16 Sep 2022 10:23:58 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id 5C298B825CA;
-	Fri, 16 Sep 2022 10:23:46 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 17CDCC433D6;
+	by dfw.source.kernel.org (Postfix) with ESMTPS id C6EC062AB3;
+	Fri, 16 Sep 2022 10:23:47 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 79B45C43160;
 	Fri, 16 Sep 2022 10:23:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1663323825;
-	bh=wHuXE3fdczCWj5LpXAeiEbdmEi4v580F7vtElZE9XhA=;
+	bh=paVqUMRBQw9kTTDsBjch9ckYDPbckCXhP60LUyZoBiE=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=PN9WSIgjdRVyExpTLH2SmiVu22qRWdsqGOGOys9lQzIX/E5wNDWgopEpig7FLPVh4
-	 a3XD0dSw7EweVLBQ6TFpGcPbxkWUWNL1AvP5uWz94GTeMjfjfo9nw4b6eBVtFpqO7h
-	 vbfjyqsGFpcqY+a9QDzAal3D3roVN3UCND+EvT7QCeuNmp1crNZ3E2Y8XDmtNdzp8G
-	 FrhVgUnzyxqnyFoJ9TmdfJAtGnuFMRU4EBzoP91Zs/1dJkGfW46vXjooJ1AHitmAz8
-	 n8ZP7dNjeYM+y28FBLkdfFgSMy1KlQQPm9Z66s7SyhGChqG3l+nwOqM8uLLVqXlrQS
-	 OXDX4iXCtyA1Q==
+	b=tbt5qrJsNaMxjj76auHwYjtGB4UboPNfT478sSRb8D+DoEBoU1R7PvplU818kUnSO
+	 mcW8QYq4iPx/R4mg6foRsOodkS8T9+Wj/jzaibV1yRHFKNVJu/wGh9aVxMQwsmIPYe
+	 0UNvCT5Kxx3/xHSbdRR1xHwPpAVQFLcyh2WTr5LboLptAEhyAoy36Y5NcdpAKP7Ghe
+	 pcqzLztVJVILMZoGUB7YQtqF7UbgJ4ZGlJN9b+iqqeUtUdtrfKBlvA96WIE4y3MCVt
+	 J9inhrpTZ5D1PY0rTfVvVut/aI0BZ3MeCgJmSiWvxJflnQ4XdCeQUbw4F8HWEMeV4Y
+	 BYu7D/sLwqJeQ==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1oZ8Vi-00030N-8F; Fri, 16 Sep 2022 12:23:50 +0200
+	id 1oZ8Vi-00030g-T7; Fri, 16 Sep 2022 12:23:50 +0200
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>
 Cc: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
@@ -56,16 +56,16 @@ Cc: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
 	linux-phy@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH v2 01/11] phy: qcom-qmp-pcie: add pcs_misc sanity check
-Date: Fri, 16 Sep 2022 12:23:30 +0200
-Message-Id: <20220916102340.11520-2-johan+linaro@kernel.org>
+Subject: [PATCH v2 08/11] phy: qcom-qmp-pcie: drop unused legacy DT workaround
+Date: Fri, 16 Sep 2022 12:23:37 +0200
+Message-Id: <20220916102340.11520-9-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.35.1
 In-Reply-To: <20220916102340.11520-1-johan+linaro@kernel.org>
 References: <20220916102340.11520-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220916_032348_507662_AF289148 
-X-CRM114-Status: GOOD (  13.54  )
+X-CRM114-CacheID: sfid-20220916_032352_852971_022E841E 
+X-CRM114-Status: GOOD (  16.96  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,36 +82,71 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Make sure that the (otherwise) optional pcs_misc IO region has been
-provided in case the configuration specifies a corresponding
-initialisation table to avoid crashing with malformed device trees.
+Commit 5e17b95d9893 ("phy: qcom-qmp: Utilize fully-specified DT
+registers") added a workaround for legacy devicetrees which did not
+specify register regions for the second lane of some dual-lane PHYs.
 
-Note that the related debug message is now superfluous as the region is
-only used when the configuration has a pcs_misc table.
+At the time, the only two dual-lane PHYs supported by mainline were
+"qcom,sdm845-qmp-usb3-phy" and "qcom,sdm845-qmp-ufs-phy", neither
+of which is a PCIe PHY.
 
-Fixes: 421c9a0e9731 ("phy: qcom: qmp: Add SDM845 PCIe QMP PHY support")
+Drop the workaround for malformed devicetrees, which should no longer be
+needed since the QMP driver split.
+
 Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 6 ++++--
- 1 file changed, 4 insertions(+), 2 deletions(-)
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 27 ++++++------------------
+ 1 file changed, 6 insertions(+), 21 deletions(-)
 
 diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-index e6bffb0e2da3..05e73625a619 100644
+index e6636700871c..4939edcd8cb1 100644
 --- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
 +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-@@ -2300,8 +2300,10 @@ static int qmp_pcie_create(struct device *dev, struct device_node *np, int id,
- 	    of_device_is_compatible(dev->of_node, "qcom,ipq6018-qmp-pcie-phy"))
- 		qphy->pcs_misc = qphy->pcs + 0x400;
+@@ -38,9 +38,6 @@
  
--	if (!qphy->pcs_misc)
--		dev_vdbg(dev, "PHY pcs_misc-reg not used\n");
-+	if (!qphy->pcs_misc) {
-+		if (cfg->pcs_misc_tbl || cfg->pcs_misc_tbl_sec)
-+			return -EINVAL;
-+	}
+ #define PHY_INIT_COMPLETE_TIMEOUT		10000
  
- 	qphy->pipe_clk = devm_get_clk_from_child(dev, np, NULL);
- 	if (IS_ERR(qphy->pipe_clk)) {
+-/* Define the assumed distance between lanes for underspecified device trees. */
+-#define QMP_PHY_LEGACY_LANE_STRIDE		0x400
+-
+ struct qmp_phy_init_tbl {
+ 	unsigned int offset;
+ 	unsigned int val;
+@@ -2270,28 +2267,16 @@ static int qmp_pcie_create(struct device *dev, struct device_node *np, int id,
+ 	if (IS_ERR(qphy->pcs))
+ 		return PTR_ERR(qphy->pcs);
+ 
+-	/*
+-	 * If this is a dual-lane PHY, then there should be registers for the
+-	 * second lane. Some old device trees did not specify this, so fall
+-	 * back to old legacy behavior of assuming they can be reached at an
+-	 * offset from the first lane.
+-	 */
+ 	if (cfg->is_dual_lane_phy) {
+ 		qphy->tx2 = devm_of_iomap(dev, np, 3, NULL);
+-		qphy->rx2 = devm_of_iomap(dev, np, 4, NULL);
+-		if (IS_ERR(qphy->tx2) || IS_ERR(qphy->rx2)) {
+-			dev_warn(dev,
+-				 "Underspecified device tree, falling back to legacy register regions\n");
++		if (IS_ERR(qphy->tx2))
++			return PTR_ERR(qphy->tx2);
+ 
+-			/* In the old version, pcs_misc is at index 3. */
+-			qphy->pcs_misc = qphy->tx2;
+-			qphy->tx2 = qphy->tx + QMP_PHY_LEGACY_LANE_STRIDE;
+-			qphy->rx2 = qphy->rx + QMP_PHY_LEGACY_LANE_STRIDE;
+-
+-		} else {
+-			qphy->pcs_misc = devm_of_iomap(dev, np, 5, NULL);
+-		}
++		qphy->rx2 = devm_of_iomap(dev, np, 4, NULL);
++		if (IS_ERR(qphy->rx2))
++			return PTR_ERR(qphy->rx2);
+ 
++		qphy->pcs_misc = devm_of_iomap(dev, np, 5, NULL);
+ 	} else {
+ 		qphy->pcs_misc = devm_of_iomap(dev, np, 3, NULL);
+ 	}
 -- 
 2.35.1
 
