@@ -4,77 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0EB97C54EE9
-	for <linux-phy@archiver.kernel.org>; Fri, 16 Sep 2022 06:22:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3DB69C54EE9
+	for <linux-phy@archiver.kernel.org>; Fri, 16 Sep 2022 08:22:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=v4g9ZjWJD+E++cLOW3I30+FNVWDJXjwiyi4sa3UT6r0=; b=IaK5ZcGmDabMwg
-	4iylgxGc7awxEKVrEV9PcEvg3L9zfvPx5D8mzPD7lWQqec44Ff2Byep4RXqR+PhZFx+j4kKr+J7//
-	/a6zdfnKrLElX8A9UMlraS5wVLc3dxS6sDf3li70Xw5/7WidP1tuT3pvnNVJGvMgex6PtIvQJZBcD
-	iwLL/CRA0RJwNUqaVjj1huWxy48BIzohGnMiAOKPdXmfHCnCg5wYHv+3VcKmWJzNTNJJjxVqfZrW8
-	Kf6djzJQ/l1ZJ6qoDsNoCTMRX9n/gC77KKYtzFStdpS4I+ifgRLeloICoornatzE/s+ZjHFXq4DtD
-	ELvfjibrYD+qwn40+ZXw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=1oQK+beof1d/az1iPdqG2boE67lOv+ew9JrFonfR9pA=; b=z8Q64B3RKI3FoO
+	O8+H9AAltANKIQnDQFJwrpPQQSpvP3asidqI1ar3KSFWP9E2rxHfzx7GuW1BTa5931kslm1CXjLLa
+	m/MYuK2YhSd/8NixlLXPGjADweq5KiPQiutxi1GAD9AqmZ8v3+/5R5uNcAJEyEQJU4NeNbHbwpjau
+	mrJfp6O1NWp4w/+osK5NlV2GRcKSpdsDLHKmDnKtQB+OuMjecxVJydidwoMMBmdxMzDoW9MIiscLc
+	U8VTqsqxXbylKcRRgVs+05Sa28s0OXUSdtFgSOl7JjUCu/QZDbrMeDw9fviS/ldv1MudNLPNNWvkh
+	gt22LCqy963lNhS74V4A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oZ4jf-0097yr-Fe; Fri, 16 Sep 2022 06:21:59 +0000
-Received: from mail-pf1-x42e.google.com ([2607:f8b0:4864:20::42e])
+	id 1oZ6bv-00Az6X-Hr; Fri, 16 Sep 2022 08:22:07 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oZ4jd-0097xZ-PP
-	for linux-phy@lists.infradead.org; Fri, 16 Sep 2022 06:21:59 +0000
-Received: by mail-pf1-x42e.google.com with SMTP id c198so20281889pfc.13
-        for <linux-phy@lists.infradead.org>; Thu, 15 Sep 2022 23:21:53 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20210112;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date;
-        bh=Jj7/OL2eAqo8lI0rpxiTJPMY8c9JRtqqMwO4KPdPLeU=;
-        b=nal/o+O3eJncjRsZGGpMQv+2GWSnSNTfo2mqaEFt2WZQFfUVjftZl0aYv70EGSlvqd
-         espf7tC8p47zmJtrJhK9uXL7WlKXedffzsUjhKve3/7NSyOaXOlTenmBmG/z3Nrp4Rij
-         FELLoQT5RFnJ/bAQvKJsAJbNHademq3eV8ufZ4TBvgyt8AavJjwLyZA+jj7y9OHr2Dw4
-         WyZZbLyn1YxVQr6A5aL64XCByooz6xdR4LJzrJ2OQuQX1ZCEr15ruNToE6Oz1lvhi6Xm
-         DDgEtrAKDJN1+oQtLDCCY/kJ8aQjHSqXRKap6OqqIeL+kn+aRvgGqm1S1sUDRCJym7bq
-         H73w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date;
-        bh=Jj7/OL2eAqo8lI0rpxiTJPMY8c9JRtqqMwO4KPdPLeU=;
-        b=ZuxmsFZsxE4Y2w7O2JCdYHp72KcNsjV8XifJ852PW3L6fIPxYyffuC4JwbzxSpLWsG
-         7fzMUROqTeELZy99Z+ksr4ZuYjmECyQ6qO4hUDToGUJfFh2uNhvvJ4GsTAPzA5WJ7gI3
-         r4TfDdfZpDqS9qgHFzE7mzCsNsX9vcOneilDUqUh6QCVdKsS9S4zFgCEsMT4pTZf6tt3
-         AuHFgl07k6KkkSKAvmvI7fFBhKL/szOG8oIS05d1O5UGodP3fs/Nyhs1kxc7XqyC6BDB
-         ND9I/RDz24z8OaRFyKP4Wiu4+K24Gxpp+QVZdBzo/wSk1pYqIp3S0yAF4Pql8w4nSrvD
-         DfOA==
-X-Gm-Message-State: ACrzQf2BRDZfKZZ7qTxVMXq0puMIk1QZtM35RGuF7qriqo41wiQnOaAv
-	CXjSMxIcE5sTQt5WTfJdr+4=
-X-Google-Smtp-Source: AMsMyM5QO7rfjdJwjmcPfcEly/IZWfWK9JNGayYfv+GpRNG27/ZOH+GqVUsicuohhMFhgkfwtH4HUw==
-X-Received: by 2002:a65:4941:0:b0:42a:8c1b:6b6c with SMTP id q1-20020a654941000000b0042a8c1b6b6cmr3164083pgs.375.1663309313479;
-        Thu, 15 Sep 2022 23:21:53 -0700 (PDT)
-Received: from localhost.localdomain ([193.203.214.57])
-        by smtp.gmail.com with ESMTPSA id a12-20020a170902eccc00b00168dadc7354sm14177639plh.78.2022.09.15.23.21.52
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 15 Sep 2022 23:21:53 -0700 (PDT)
-From: cgel.zte@gmail.com
-X-Google-Original-From: ye.xingchen@zte.com.cn
-To: vkoul@kernel.org
-Cc: kishon@ti.com,
+	id 1oZ6bE-00AyVK-Ly; Fri, 16 Sep 2022 08:21:26 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 642CE62906;
+	Fri, 16 Sep 2022 08:21:23 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8E61FC433D6;
+	Fri, 16 Sep 2022 08:21:18 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1663316482;
+	bh=dbtg1VkYcSH98eH1LXp4FuBWlKs7YoXiI6XVpWr2rB0=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=XOUxzKdEU7rgW5SA8OJPqpfk5OrodzUAUZnhGWz2y1KMZ7sCOWyb4z0hS+v/s7srn
+	 LMsOIbz2q/H7B8DPlHJXuN4xr90c4MyJvlUiOb8vsece1wHk4u/ugO6KEr0VkMAdJD
+	 /4g82w9BJSUyFZVnGqzWg9OWihMCOq8OAGEo2Tg9FSSLPEM69RQdQoYfpB9v6RZHIO
+	 SES1uxqcIh/oFb86GFEmccsFOVZQ0NlPRmA0lWkxha7JYjSSrb4Qg0wngTM6DVaDqk
+	 J9BDcZ+ww2+qC9qJRJsDHJlcLf6ZYgLBMH2IdBDqgiM4G2jGUiShURs8MMG6d5GhRD
+	 xcgOLFO82asvg==
+From: Lorenzo Pieralisi <lpieralisi@kernel.org>
+To: Lorenzo Pieralisi <lpieralisi@kernel.org>,
+	l.stach@pengutronix.de,
+	Richard Zhu <hongxing.zhu@nxp.com>,
+	vkoul@kernel.org,
+	p.zabel@pengutronix.de,
+	bhelgaas@google.com,
+	marex@denx.de,
+	alexander.stein@ew.tq-group.com,
+	richard.leitner@linux.dev,
+	shawnguo@kernel.org,
+	robh@kernel.org
+Cc: linux-kernel@vger.kernel.org,
+	devicetree@vger.kernel.org,
+	linux-pci@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
 	linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	ye xingchen <ye.xingchen@zte.com.cn>,
-	Zeal Robot <zealci@zte.com.cn>
-Subject: [PATCH linux-next] phy: broadcom: use function devm_kcalloc() instead of devm_kzalloc()
-Date: Fri, 16 Sep 2022 06:21:50 +0000
-Message-Id: <20220916062150.153104-1-ye.xingchen@zte.com.cn>
-X-Mailer: git-send-email 2.25.1
+	linux-imx@nxp.com,
+	kernel@pengutronix.de
+Subject: Re: (subset) [PATCH v7 0/7] Add the iMX8MP PCIe support
+Date: Fri, 16 Sep 2022 10:21:14 +0200
+Message-Id: <166331646343.2896318.11776848065564134926.b4-ty@kernel.org>
+X-Mailer: git-send-email 2.34.1
+In-Reply-To: <1662109086-15881-1-git-send-email-hongxing.zhu@nxp.com>
+References: <1662109086-15881-1-git-send-email-hongxing.zhu@nxp.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220915_232157_848387_203F3F83 
-X-CRM114-Status: UNSURE (   9.85  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220916_012124_817586_06BF862E 
+X-CRM114-Status: GOOD (  12.39  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,32 +86,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: ye xingchen <ye.xingchen@zte.com.cn>
+On Fri, 2 Sep 2022 16:57:59 +0800, Richard Zhu wrote:
+> Based on the 6.0-rc1 of the pci/next branch.
+> This series adds the i.MX8MP PCIe support and tested on i.MX8MP
+> EVK board when one PCIe NVME device is used.
+> 
+> - i.MX8MP PCIe has reversed initial PERST bit value refer to i.MX8MQ/i.MX8MM.
+>   Add the PHY PERST explicitly for i.MX8MP PCIe PHY.
+> - Add the i.MX8MP PCIe PHY support in the i.MX8M PCIe PHY driver.
+>   And share as much as possible codes with i.MX8MM PCIe PHY.
+> - Add the i.MX8MP PCIe support in binding document, DTS files, and PCIe
+>   driver.
+> 
+> [...]
 
-Use 2-factor multiplication argument form devm_kcalloc() instead
-of devm_kzalloc().
+Applied to pci/dwc, thanks!
 
-Reported-by: Zeal Robot <zealci@zte.com.cn>
-Signed-off-by: ye xingchen <ye.xingchen@zte.com.cn>
----
- drivers/phy/broadcom/phy-bcm-sr-usb.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+[7/7] PCI: imx6: Add i.MX8MP PCIe support
+      https://git.kernel.org/lpieralisi/pci/c/81f66385ea1e
 
-diff --git a/drivers/phy/broadcom/phy-bcm-sr-usb.c b/drivers/phy/broadcom/phy-bcm-sr-usb.c
-index 0002da3b5b5d..0d393e0cc7bb 100644
---- a/drivers/phy/broadcom/phy-bcm-sr-usb.c
-+++ b/drivers/phy/broadcom/phy-bcm-sr-usb.c
-@@ -236,7 +236,7 @@ static int bcm_usb_phy_create(struct device *dev, struct device_node *node,
- 	int idx;
- 
- 	if (version == BCM_SR_USB_COMBO_PHY) {
--		phy_cfg = devm_kzalloc(dev, NUM_BCM_SR_USB_COMBO_PHYS *
-+		phy_cfg = devm_kcalloc(dev, NUM_BCM_SR_USB_COMBO_PHYS,
- 				       sizeof(struct bcm_usb_phy_cfg),
- 				       GFP_KERNEL);
- 		if (!phy_cfg)
--- 
-2.25.1
+Thanks,
+Lorenzo
 
 -- 
 linux-phy mailing list
