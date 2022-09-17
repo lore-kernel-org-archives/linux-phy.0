@@ -4,92 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9687DECAAD3
-	for <linux-phy@archiver.kernel.org>; Sat, 17 Sep 2022 17:12:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 55753C54EE9
+	for <linux-phy@archiver.kernel.org>; Sat, 17 Sep 2022 23:07:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:Subject:From:References:Cc:To:MIME-Version:Date:Message-ID:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=j/v5MA/Hpe9yo3YiVmCkiGekxXKUPXNQDxDuYioBCW8=; b=dONwoaDyK1PFuS8+P4g0/c1XX/
-	Q3yukTX31yH/5znnA7uevmGgx/3FuRlmnMAGCiK3CE+TDrbIqBYkufYqi5Ra45s1uTW2M/C1gWVSl
-	Df+b5gWUbWu9Dcgkibw/BFyS2FuIK00boPjakUx0oBkQX654QpnUopq5OeWkaCEux1OCCIKJWRN3X
-	EHHT1geSgNAs1QfhvMTLvBMnE4amVrhqzJ26rjoL1eXLaF9lFK1vVBWmxHtzIa+5Nu7DEQgUIeo/d
-	BNyZFyNVcf2A3Q10R69o6IF6E9L0fyocuIocRyKjbOO9/CUQmwPrscvAaRh8SCjGlA7OsTTo+U/qW
-	JzgrnJyg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=08xTfhSjxK8GPBCaZP0pH/pmFDwBg+U1pdxhe18823k=; b=z0l9VtnsfZhRXR
+	iEMQCsSyERWaUy4h1ngWlc63k6NG7fCoZ2ojNbeEgN/XWfjxNg1WIxRJzwslGCiCVmh8m63v3Jllo
+	PoQXlR3WR0XR7DH3EWjgYNS77fFBiv+Ibd1v/9euAO4MW/N1dgoZzBEqeebMBx80Uk5eHzf/s2RXr
+	aVWReGejMYO4ZI72PlYBgY92BwkkFnGSQ7TfCLYBvaHAFSKm7CMNlGiWAqk8qFY96dkq2th8j+BgH
+	ZJsRxVi8RLF3Y8ciSkVRnxBHJLlgdffLqGqHED7tWDA10h4seVzOuywNyKaIwDVIH1XEYPoglN9lq
+	MSyH0jJ25xm9r973L7DQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oZbMq-007WRK-1i; Sat, 17 Sep 2022 17:12:36 +0000
-Received: from wout3-smtp.messagingengine.com ([64.147.123.19])
+	id 1oZgtz-00AVn3-EU; Sat, 17 Sep 2022 23:07:11 +0000
+Received: from perceval.ideasonboard.com ([213.167.242.64])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oZbMc-007WGz-JN; Sat, 17 Sep 2022 17:12:24 +0000
-Received: from compute1.internal (compute1.nyi.internal [10.202.2.41])
-	by mailout.west.internal (Postfix) with ESMTP id F2C1732009E6;
-	Sat, 17 Sep 2022 13:12:15 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
-  by compute1.internal (MEProxy); Sat, 17 Sep 2022 13:12:16 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sholland.org; h=
-	cc:cc:content-type:date:date:from:from:in-reply-to:in-reply-to
-	:message-id:mime-version:references:reply-to:sender:subject
-	:subject:to:to; s=fm3; t=1663434735; x=1663521135; bh=bArj9BjU9M
-	rWjWVcoZXDDd7XqFxEELIP2Z5TIthfYVk=; b=SVGA9qYmWZbvg6SUImGujYkUDc
-	xnKDdzssqV1lEo+Vv3k1w06oU+RrET8ycLGUot7lBJVmHrBZKGxb3MmJ82/Anw88
-	AJb1NAnf4CU2KSzGSIuKpDYpIfSueYA7lpcUvuo+Ofi/1ZUQDCk32eRYlfWl0PgN
-	AHfaecunke3hHsRJ/3Dys0lWJXCdKbI09kOKszbXZgoPwwRu4FG6SSGSoZHMMHcu
-	UZz+8xCP4ZE7I1RBBSUCRSu1MSXRyVsR2iPzfOfzbgO30b3xcQhQyGhAJ4mV3ylU
-	HJWTYmJtH1cGvX6jBUTlZl75KtC2ORHAiwB3l+LHj9U+tSb3VfzyA0qZ9YEw==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
-	messagingengine.com; h=cc:cc:content-type:date:date:feedback-id
-	:feedback-id:from:from:in-reply-to:in-reply-to:message-id
-	:mime-version:references:reply-to:sender:subject:subject:to:to
-	:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
-	fm2; t=1663434735; x=1663521135; bh=bArj9BjU9MrWjWVcoZXDDd7XqFxE
-	ELIP2Z5TIthfYVk=; b=BJhLKL6NlxKbNVJxypIbE3jKTF7sfLW56JLUJFeSnFDr
-	fRUzuxJUXoQraEHKuT7ErRqq5Q8dQp8C5vyBnRb5/8KLvcXvQU4h/0pSrIOj4OjA
-	0AkTCUljOMov1uS+4lhmDtz0Wv2YqxxsBW9B6PYv8DgkNM5WSlKxLwPfFGpHqJPZ
-	rUiz8sm+tkMpD6z3mZqT2s5B3zSlEFJ3Nj65Swm3KoTO3ToDZDCif+n3WQhPaGj5
-	VnoTZsg/aqVuWtcjF/85IxPGdijHWC6S9DodVhsHDGlVJM0C/EoDyTWF58zFtiDy
-	UW0VJ87HV9GT1iEpJpuqkF1nsnPPLUWpOLC8QfDW9Q==
-X-ME-Sender: <xms:7_8lY-MX254mTeZTPWhIxRp7v_MFTrEIUMxioNRczaqxUrlR0PYcQQ>
-    <xme:7_8lY885-aEo8IOMt9ray5X1Kn2W4cPIczz3APS-jkLzRvg_c4Mpo7xCL049MCGLp
-    lQSoB_C-bGFNBHDyA>
-X-ME-Received: <xmr:7_8lY1TvQaWlqQo9_gKZAnrsZ_xjSC3brIeR-ybeg6bqOm0HQKmRTeJFYSpA8rOdOJPv0FkBkhVwe5Vx8pdCyovc90CkujtrzIpKbcmrH8SH8b__Xxoc2_TwVw>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvfedrfedvvddgudduvdcutefuodetggdotefrod
-    ftvfcurfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfgh
-    necuuegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmd
-    enucfjughrpefkffggfgfvvehfhffujggtsehgtderredtfeejnecuhfhrohhmpefurghm
-    uhgvlhcujfholhhlrghnugcuoehsrghmuhgvlhesshhhohhllhgrnhgurdhorhhgqeenuc
-    ggtffrrghtthgvrhhnpeffjedtgedvtefgfeffhfekffffueeuudeltdehtdfguefggfet
-    leffteeiueeuueenucffohhmrghinhepkhgvrhhnvghlrdhorhhgnecuvehluhhsthgvrh
-    fuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomhepshgrmhhuvghlsehshhholhhl
-    rghnugdrohhrgh
-X-ME-Proxy: <xmx:7_8lY-vKa1g8ro9PZg1AG1EkpjfUHwJzpD3CES2nxQqNwOPpk2Cudg>
-    <xmx:7_8lY2dMHJX7WKShJVCTt-NL3QmcbmGV1QB8WD91vk3wnEIc6-Y3Fg>
-    <xmx:7_8lYy2uiytYWNn-BOnqlyWSW7C9aSWOiQMGqjQV9VzmUalH7jK2Sg>
-    <xmx:7_8lY9xUW6M35mv7pLTaPShGomL97Ksfy5nNtzihtrzotmx7EOlp3w>
-Feedback-ID: i0ad843c9:Fastmail
-Received: by mail.messagingengine.com (Postfix) with ESMTPA; Sat,
- 17 Sep 2022 13:12:14 -0400 (EDT)
-Message-ID: <6779635c-a162-0b7e-d124-d88d1ed9e162@sholland.org>
-Date: Sat, 17 Sep 2022 12:12:13 -0500
+	id 1oZgtw-00AVlT-Ib
+	for linux-phy@lists.infradead.org; Sat, 17 Sep 2022 23:07:10 +0000
+Received: from pendragon.ideasonboard.com (62-78-145-57.bb.dnainternet.fi [62.78.145.57])
+	by perceval.ideasonboard.com (Postfix) with ESMTPSA id B672E415;
+	Sun, 18 Sep 2022 01:07:03 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
+	s=mail; t=1663456023;
+	bh=xXOC9Hvy+1yChMtVh2/44Mg49dOFOxxcHPt9npGQ08M=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=Soo4FPc3wECDlBOI8P2GWP5sLnVRSoZKcZFGcYc1W3wgr0v/Za9x49js23N3dSnCq
+	 UhjDRIAS5/4460a59oHrFkdK7EBaclAxJD+FWP+B+zQHI1lSsuuU57NdOdW6d1oXBd
+	 3Y85dlhnTC6vRbL7xGAgSl8nX1FVc4IdoIBugSMM=
+Date: Sun, 18 Sep 2022 02:06:50 +0300
+From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+To: Marco Felsch <m.felsch@pengutronix.de>
+Cc: mchehab@kernel.org, robh+dt@kernel.org,
+	krzysztof.kozlowski+dt@linaro.org, kishon@ti.com, vkoul@kernel.org,
+	sakari.ailus@linux.intel.com, hverkuil@xs4all.nl, jacopo@jmondi.org,
+	kieran.bingham+renesas@ideasonboard.com,
+	linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+	kernel@pengutronix.de
+Subject: Re: [PATCH v2 3/4] media: dt-bindings: add bindings for Toshiba
+ TC358746
+Message-ID: <YyZTCsflWtUbo2ld@pendragon.ideasonboard.com>
+References: <20220916134535.128131-1-m.felsch@pengutronix.de>
+ <20220916134535.128131-4-m.felsch@pengutronix.de>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux ppc64le; rv:102.0) Gecko/20100101
- Thunderbird/102.2.2
-Content-Language: en-US
-To: Mikhail Rudenko <mike.rudenko@gmail.com>
-Cc: stable@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
- linux-kernel@vger.kernel.org, Kishon Vijay Abraham I <kishon@ti.com>,
- Vinod Koul <vkoul@kernel.org>, Heiko Stuebner <heiko@sntech.de>,
- Peter Geis <pgwipeout@gmail.com>
-References: <20220917165820.2304306-1-mike.rudenko@gmail.com>
-From: Samuel Holland <samuel@sholland.org>
-Subject: Re: [PATCH] phy: rockchip-inno-usb2: Fix otg port initialization
-In-Reply-To: <20220917165820.2304306-1-mike.rudenko@gmail.com>
+Content-Disposition: inline
+In-Reply-To: <20220916134535.128131-4-m.felsch@pengutronix.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220917_101223_113134_E27099BC 
-X-CRM114-Status: GOOD (  27.33  )
+X-CRM114-CacheID: sfid-20220917_160708_808558_554D4834 
+X-CRM114-Status: GOOD (  21.36  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,208 +67,117 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============4251701600907146525=="
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============4251701600907146525==
-Content-Language: en-US
-Content-Type: multipart/signed; micalg=pgp-sha256;
- protocol="application/pgp-signature";
- boundary="------------K0GA3G7afvU1bjxDRtbK6COJ"
-
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---------------K0GA3G7afvU1bjxDRtbK6COJ
-Content-Type: multipart/mixed; boundary="------------wRWlrcMGJnKXP60IyA87aQ0o";
- protected-headers="v1"
-From: Samuel Holland <samuel@sholland.org>
-To: Mikhail Rudenko <mike.rudenko@gmail.com>
-Cc: stable@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
- linux-kernel@vger.kernel.org, Kishon Vijay Abraham I <kishon@ti.com>,
- Vinod Koul <vkoul@kernel.org>, Heiko Stuebner <heiko@sntech.de>,
- Peter Geis <pgwipeout@gmail.com>
-Message-ID: <6779635c-a162-0b7e-d124-d88d1ed9e162@sholland.org>
-Subject: Re: [PATCH] phy: rockchip-inno-usb2: Fix otg port initialization
-References: <20220917165820.2304306-1-mike.rudenko@gmail.com>
-In-Reply-To: <20220917165820.2304306-1-mike.rudenko@gmail.com>
-
---------------wRWlrcMGJnKXP60IyA87aQ0o
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: quoted-printable
-
-On 9/17/22 11:58, Mikhail Rudenko wrote:
-> There are two issues in rockchip_usb2phy_otg_port_init(): (1) even if
-> devm_extcon_register_notifier() returns error, the code proceeds to
-> the next if statement and (2) if no extcon is defined in of_node, the
-> return value of property_enabled() is reused as the return value of
-> the whole function. If the return value of property_enable() is
-> nonzero, (2) results in an unexpected probe failure and kernel panic
-> in delayed work:
-
-This should be fixed by the following patch which is accepted already:
-
-https://lore.kernel.org/lkml/20220902184543.1234835-1-pgwipeout@gmail.com=
-/
-
->=20
->     Unable to handle kernel NULL pointer dereference at virtual address=
- 00000000
->     Mem abort info:
->       ESR =3D 0x0000000086000006
->       EC =3D 0x21: IABT (current EL), IL =3D 32 bits
->       SET =3D 0, FnV =3D 0
->       EA =3D 0, S1PTW =3D 0
->       FSC =3D 0x06: level 2 translation fault
->     user pgtable: 4k pages, 48-bit VAs, pgdp=3D00000000019dc000
->     [0000000000000000] pgd=3D080000000131a003, p4d=3D080000000131a003, =
-pud=3D080000000
->     Internal error: Oops: 86000006 [#1] PREEMPT SMP
->     Modules linked in: ipv6
->     CPU: 1 PID: 0 Comm: swapper/1 Not tainted 6.0.0-rc5 #114
->     Hardware name: FriendlyElec NanoPi M4 (DT)
->     pstate: 20000005 (nzCv daif -PAN -UAO -TCO -DIT -SSBS BTYPE=3D--)
->     pc : 0x0
->     lr : call_timer_fn.constprop.0+0x24/0x80
->     sp : ffff80000a40ba40
->     x29: ffff80000a40ba40 x28: 0000000000000000 x27: ffff80000a40baf0
->     x26: ffff800009e779c0 x25: ffff00007fb28070 x24: ffff00007fb28028
->     x23: ffff80000a40baf0 x22: 0000000000000000 x21: 0000000000000101
->     x20: ffff0000006ad880 x19: 0000000000000000 x18: 0000000000000006
->     x17: ffff8000761af000 x16: ffff80000800c000 x15: 0000000000004000
->     x14: ffff0000006ad880 x13: 000000000000030a x12: 0000000000000000
->     x11: ffff8000761af000 x10: ffff80000800bf40 x9 : ffff00007fb2d038
->     x8 : 0000000000000001 x7 : 0000000000000009 x6 : 0000000000000240
->     x5 : 0000000000000000 x4 : 0000000000000000 x3 : 0000000000000200
->     x2 : 000000003fffffff x1 : 0000000000000000 x0 : ffff0000016c9710
->     Call trace:
->      0x0
->      __run_timers+0x220/0x264
->      run_timer_softirq+0x20/0x40
->      __do_softirq+0x10c/0x298
->      __irq_exit_rcu+0xec/0xf4
->      irq_exit_rcu+0x10/0x1c
->      el1_interrupt+0x38/0x70
->      el1h_64_irq_handler+0x18/0x24
->      el1h_64_irq+0x64/0x68
->      cpuidle_enter_state+0x130/0x2fc
->      cpuidle_enter+0x38/0x50
->      do_idle+0x22c/0x2c0
->      cpu_startup_entry+0x24/0x30
->      secondary_start_kernel+0x130/0x14c
->      __secondary_switched+0xb0/0xb4
->     Code: bad PC value
->     ---[ end trace 0000000000000000 ]---
->     Kernel panic - not syncing: Oops: Fatal exception in interrupt
->     SMP: stopping secondary CPUs
->     Kernel Offset: disabled
->     CPU features: 0x4000,0820b021,00001086
->     Memory Limit: none
->     ---[ end Kernel panic - not syncing: Oops: Fatal exception in inter=
-rupt ]---
->=20
-> Refactor the control flow to avoid both issues. Since the code below
-> out: label does no cleanup, return error codes immediately instead of
-> using gotos and return success at the end of the function.
->=20
-> Cc: stable@vger.kernel.org
-> Fixes: 8dc60f8da22f ("phy: rockchip-inno-usb2: Sync initial otg state")=
-
-> Signed-off-by: Mikhail Rudenko <mike.rudenko@gmail.com>
-> ---
->  drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 12 ++++++------
->  1 file changed, 6 insertions(+), 6 deletions(-)
->=20
-> diff --git a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c b/drivers/ph=
-y/rockchip/phy-rockchip-inno-usb2.c
-> index 0b1e9337ee8e..d31b35d55927 100644
-> --- a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-> +++ b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-> @@ -1144,8 +1144,7 @@ static int rockchip_usb2phy_otg_port_init(struct =
-rockchip_usb2phy *rphy,
->  	rport->mode =3D of_usb_get_dr_mode_by_phy(child_np, -1);
->  	if (rport->mode =3D=3D USB_DR_MODE_HOST ||
->  	    rport->mode =3D=3D USB_DR_MODE_UNKNOWN) {
-> -		ret =3D 0;
-> -		goto out;
-> +		return 0;
->  	}
-> =20
->  	INIT_DELAYED_WORK(&rport->chg_work, rockchip_chg_detect_work);
-> @@ -1154,7 +1153,7 @@ static int rockchip_usb2phy_otg_port_init(struct =
-rockchip_usb2phy *rphy,
->  	ret =3D rockchip_usb2phy_port_irq_init(rphy, rport, child_np);
->  	if (ret) {
->  		dev_err(rphy->dev, "failed to init irq for host port\n");
-> -		goto out;
-> +		return ret;
->  	}
-> =20
->  	if (!IS_ERR(rphy->edev)) {
-> @@ -1162,8 +1161,10 @@ static int rockchip_usb2phy_otg_port_init(struct=
- rockchip_usb2phy *rphy,
-> =20
->  		ret =3D devm_extcon_register_notifier(rphy->dev, rphy->edev,
->  					EXTCON_USB_HOST, &rport->event_nb);
-> -		if (ret)
-> +		if (ret) {
->  			dev_err(rphy->dev, "register USB HOST notifier failed\n");
-> +			return ret;
-> +		}
-> =20
->  		if (!of_property_read_bool(rphy->dev->of_node, "extcon")) {
->  			/* do initial sync of usb state */
-> @@ -1172,8 +1173,7 @@ static int rockchip_usb2phy_otg_port_init(struct =
-rockchip_usb2phy *rphy,
->  		}
->  	}
-> =20
-> -out:
-> -	return ret;
-> +	return 0;
->  }
-> =20
->  static int rockchip_usb2phy_probe(struct platform_device *pdev)
-
-
---------------wRWlrcMGJnKXP60IyA87aQ0o--
-
---------------K0GA3G7afvU1bjxDRtbK6COJ
-Content-Type: application/pgp-signature; name="OpenPGP_signature.asc"
-Content-Description: OpenPGP digital signature
-Content-Disposition: attachment; filename="OpenPGP_signature"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCAAdFiEE239ji78XkgB1UE6WE858W20av4sFAmMl/+0ACgkQE858W20a
-v4trmRAAjRhkWM61wmmM8tkmQuQfmQKYSxd5s0MqBALmXZnXsW449QkhSP27DZk9
-hN013x3eHaWfIwjm7jIf1kLgEL2etLkpD+5Fa/Hc7TgQ68hKUkGBAE1UPsTtGmNn
-b7hyLbzVu1K1Uv/jHcgFZ1nxQ6QecGukvU+T7HTMCQ+v2dpxy5VfZyaANrUv1jxI
-2vpsGXYXUr7iH0zGBmpwhNJvR1rA1kzO79q+ovcIWefuJgI2MkmMmeRZYpzWwCjm
-a70nSW7O70XJZFFMiHWasKsw0P7Zin/rDShKea3x7tKpukFzOx4c6BwSOKm9N6JH
-Cl5EQvSgPpiW5YO317TmOLrIXt3fqbtRsFRE6IDCsO+4vOdvVcB7/drghZqjmTmk
-N8J99QcJfQfeMk+CRRHD+aCTic7URa3IhxLs63Ny5Iv8WnuNyFQg2fo+CRnvOipp
-436T9wgICVNHiugpTTY8LOdbYTRd2FnppWORS65wyACqUzUhDPiFKUSKfEc2wPAc
-fQ6R8pBgggculq9YjPzAuHbOWXaUzHDBLP6KdEcZN3XBk1z1LbrjsgEQmf8msUES
-C6Lm7ioUVXAUY2/Pys4oq+R27pRXq8wfgFMRhS+bmkBEoYtsOj63GNbrGSy6nvCA
-1Pgtm9A7OOwBgZvZZI+FJEirbUFD3BJ3PceApBlUo9MZcqBqz+A=
-=5Ert
------END PGP SIGNATURE-----
-
---------------K0GA3G7afvU1bjxDRtbK6COJ--
-
-
---===============4251701600907146525==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============4251701600907146525==--
-
+SGkgTWFyY28sCgpUaGFuayB5b3UgZm9yIHRoZSBwYXRjaC4KCk9uIEZyaSwgU2VwIDE2LCAyMDIy
+IGF0IDAzOjQ1OjM0UE0gKzAyMDAsIE1hcmNvIEZlbHNjaCB3cm90ZToKPiBBZGQgdGhlIGJpbmRp
+bmdzIGZvciB0aGUgVG9zaGliYSBUQzM1ODc0NiBQYXJhbGxlbCA8LT4gTUlQSS1DU0kgYnJpZGdl
+Cj4gZHJpdmVyLgo+IAo+IFNpZ25lZC1vZmYtYnk6IE1hcmNvIEZlbHNjaCA8bS5mZWxzY2hAcGVu
+Z3V0cm9uaXguZGU+Cj4gUmV2aWV3ZWQtYnk6IFJvYiBIZXJyaW5nIDxyb2JoQGtlcm5lbC5vcmc+
+Cj4gLS0tCj4gQ2hhbmdlbG9nOgo+IAo+IHYyOgo+IC0gYWRkZGVkIFJvYnMgci1iCj4gLSBzL3Ro
+YW4vdGhlbi8KPiAtIGFkZGVkIGhzeW5jL3ZzeW5jL2J1cy10eXBlLCBtYWtlIGhzeW5jL3ZzeW5j
+IHJlcXVpcmVkCj4gLSBmaXggZXhhbXBsZSBpbmRlbnQKPiAKPiAgLi4uL2JpbmRpbmdzL21lZGlh
+L2kyYy90b3NoaWJhLHRjMzU4NzQ2LnlhbWwgIHwgMTc5ICsrKysrKysrKysrKysrKysrKwo+ICAx
+IGZpbGUgY2hhbmdlZCwgMTc5IGluc2VydGlvbnMoKykKPiAgY3JlYXRlIG1vZGUgMTAwNjQ0IERv
+Y3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9tZWRpYS9pMmMvdG9zaGliYSx0YzM1ODc0
+Ni55YW1sCj4gCj4gZGlmZiAtLWdpdCBhL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5n
+cy9tZWRpYS9pMmMvdG9zaGliYSx0YzM1ODc0Ni55YW1sIGIvRG9jdW1lbnRhdGlvbi9kZXZpY2V0
+cmVlL2JpbmRpbmdzL21lZGlhL2kyYy90b3NoaWJhLHRjMzU4NzQ2LnlhbWwKPiBuZXcgZmlsZSBt
+b2RlIDEwMDY0NAo+IGluZGV4IDAwMDAwMDAwMDAwMC4uMWZhNTc0NDAwYmMyCj4gLS0tIC9kZXYv
+bnVsbAo+ICsrKyBiL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9tZWRpYS9pMmMv
+dG9zaGliYSx0YzM1ODc0Ni55YW1sCj4gQEAgLTAsMCArMSwxNzkgQEAKPiArIyBTUERYLUxpY2Vu
+c2UtSWRlbnRpZmllcjogKEdQTC0yLjAtb25seSBPUiBCU0QtMi1DbGF1c2UpCj4gKyVZQU1MIDEu
+Mgo+ICstLS0KPiArJGlkOiBodHRwOi8vZGV2aWNldHJlZS5vcmcvc2NoZW1hcy9tZWRpYS9pMmMv
+dG9zaGliYSx0YzM1ODc0Ni55YW1sIwo+ICskc2NoZW1hOiBodHRwOi8vZGV2aWNldHJlZS5vcmcv
+bWV0YS1zY2hlbWFzL2NvcmUueWFtbCMKPiArCj4gK3RpdGxlOiBUb3NoaWJhIFRDMzU4NzQ2IFBh
+cmFsbGVsIHRvIE1JUEkgQ1NJMiBCcmlkZ2UKPiArCj4gK21haW50YWluZXJzOgo+ICsgIC0gTWFy
+Y28gRmVsc2NoIDxrZXJuZWxAcGVuZ3V0cm9uaXguZGU+Cj4gKwo+ICtkZXNjcmlwdGlvbjogfC0K
+PiArICBUaGUgVG9zaGliYSBUQzM1ODc0NiBjb252ZXJ0cyBhIHBhcmFsbGVsIHZpZGVvIHN0cmVh
+bSBpbnRvIGEgTUlQSSBDU0ktMgo+ICsgIHN0cmVhbS4gVGhlIGRpcmVjdGlvbiBjYW4gYmUgZWl0
+aGVyIHBhcmFsbGVsLWluIC0+IGNzaS1vdXQgb3IgY3NpLWluIC0+Cj4gKyAgcGFyYWxsZWwtb3V0
+IFRoZSBjaGlwIGlzIHByb2dyYW1tYWJsZSB0cm91Z2ggSTJDIGFuZCBTUEkgYnV0IHRoZSBTUEkK
+PiArICBpbnRlcmZhY2UgaXMgb25seSBzdXBwb3J0ZWQgaW4gcGFyYWxsZWwtaW4gLT4gY3NpLW91
+dCBtb2RlLgo+ICsKPiArICBOb3RlIHRoYXQgdGhlIGN1cnJlbnQgZGV2aWNlIHRyZWUgYmluZGlu
+Z3Mgb25seSBzdXBwb3J0IHRoZQo+ICsgIHBhcmFsbGVsLWluIC0+IGNzaS1vdXQgcGF0aC4KPiAr
+Cj4gK3Byb3BlcnRpZXM6Cj4gKyAgY29tcGF0aWJsZToKPiArICAgIGNvbnN0OiB0b3NoaWJhLHRj
+MzU4NzQ2Cj4gKwo+ICsgIHJlZzoKPiArICAgIG1heEl0ZW1zOiAxCj4gKwo+ICsgIGNsb2NrczoK
+PiArICAgIGRlc2NyaXB0aW9uOgo+ICsgICAgICBUaGUgcGhhbmRsZSB0byB0aGUgcmVmZXJlbmNl
+IGNsb2NrIHNvdXJjZS4gVGhpcyBjb3JyZXNwb25kcyB0byB0aGUKPiArICAgICAgaGFyZHdhcmUg
+cGluIFJFRkNMSy4KPiArICAgIG1heEl0ZW1zOiAxCj4gKwo+ICsgIGNsb2NrLW5hbWVzOgo+ICsg
+ICAgY29uc3Q6IHJlZmNsawo+ICsKPiArIyBUaGUgYnJpZGdlIGNhbiBhY3QgYXMgY2xvY2sgcHJv
+dmlkZXIgZm9yIHRoZSBzZW5zb3IuIFRvIGVuYWJsZSB0aGlzIHN1cHBvcnQKPiArIyAjY2xvY2st
+Y2VsbHMgbXVzdCBiZSBzcGVjaWZpZWQuIEF0dGVudGlvbiBpZiB0aGlzIGZlYXR1cmUgaXMgdXNl
+ZCB0aGVuIHRoZQo+ICsjIG1jbGsgcmF0ZSBtdXN0IGJlIGF0IGxlYXN0OiAoMiAqIGxpbmstZnJl
+cXVlbmN5KSAvIDgKPiArIyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgYC0tLS0tLS0tLS0t
+LS0tLS0tLcK0ICAgXgo+ICsjICAgICAgICAgICAgICAgICAgICAgICAgICAgICBpbnRlcm5hbCBQ
+TEwgcmF0ZSAgIHNtYWxsZXN0IHBvc3NpYmxlIG1jbGstZGl2Cj4gKyAgIiNjbG9jay1jZWxscyI6
+Cj4gKyAgICBjb25zdDogMAo+ICsKPiArICBjbG9jay1vdXRwdXQtbmFtZXM6Cj4gKyAgICBkZXNj
+cmlwdGlvbjoKPiArICAgICAgVGhlIGNsb2NrIG5hbWUgb2YgdGhlIE1DTEsgb3V0cHV0LCB0aGUg
+ZGVmYXVsdCBuYW1lIGlzIHRjMzU4NzQ2LW1jbGsuCj4gKyAgICBtYXhJdGVtczogMQo+ICsKPiAr
+ICB2ZGRjLXN1cHBseToKPiArICAgIGRlc2NyaXB0aW9uOiBEaWdpdGFsIGNvcmUgdm9sdGFnZSBz
+dXBwbHksIDEuMiB2b2x0cwo+ICsKPiArICB2ZGRpby1zdXBwbHk6Cj4gKyAgICBkZXNjcmlwdGlv
+bjogRGlnaXRhbCBJL08gdm9sdGFnZSBzdXBwbHksIDEuOCB2b2x0cwo+ICsKPiArICB2ZGRtaXBp
+LXN1cHBseToKPiArICAgIGRlc2NyaXB0aW9uOiBNSVBJIENTSSBwaHkgdm9sdGFnZSBzdXBwbHks
+IDEuMiB2b2x0cwo+ICsKPiArICByZXNldC1ncGlvczoKPiArICAgIGRlc2NyaXB0aW9uOgo+ICsg
+ICAgICBUaGUgcGhhbmRsZSBhbmQgc3BlY2lmaWVyIGZvciB0aGUgR1BJTyB0aGF0IGNvbnRyb2xz
+IHRoZSBjaGlwIHJlc2V0Lgo+ICsgICAgICBUaGlzIGNvcnJlc3BvbmRzIHRvIHRoZSBoYXJkd2Fy
+ZSBwaW4gUkVTWCB3aGljaCBpcyBwaHlzaWNhbGx5IGFjdGl2ZSBsb3cuCj4gKyAgICBtYXhJdGVt
+czogMQo+ICsKPiArICBwb3J0czoKPiArICAgICRyZWY6IC9zY2hlbWFzL2dyYXBoLnlhbWwjL3By
+b3BlcnRpZXMvcG9ydHMKPiArICAgIHByb3BlcnRpZXM6Cj4gKyAgICAgIHBvcnRAMDoKPiArICAg
+ICAgICAkcmVmOiAvc2NoZW1hcy9ncmFwaC55YW1sIy8kZGVmcy9wb3J0LWJhc2UKPiArICAgICAg
+ICBkZXNjcmlwdGlvbjogSW5wdXQgcG9ydAo+ICsKPiArICAgICAgICBwcm9wZXJ0aWVzOgo+ICsg
+ICAgICAgICAgZW5kcG9pbnQ6Cj4gKyAgICAgICAgICAgICRyZWY6IC9zY2hlbWFzL21lZGlhL3Zp
+ZGVvLWludGVyZmFjZXMueWFtbCMKPiArICAgICAgICAgICAgdW5ldmFsdWF0ZWRQcm9wZXJ0aWVz
+OiBmYWxzZQo+ICsKPiArICAgICAgICAgICAgcHJvcGVydGllczoKPiArICAgICAgICAgICAgICBo
+c3luYy1hY3RpdmU6Cj4gKyAgICAgICAgICAgICAgICBlbnVtOgo+ICsgICAgICAgICAgICAgICAg
+ICAtIDAgIyBIdmFsaWQgYWN0aXZlIGhpZ2gKPiArICAgICAgICAgICAgICB2c3luYy1hY3RpdmU6
+Cj4gKyAgICAgICAgICAgICAgICBlbnVtOgo+ICsgICAgICAgICAgICAgICAgICAtIDAgIyBWdmFs
+aWQgYWN0aXZlIGhpZ2gKPiArICAgICAgICAgICAgICBidXMtdHlwZToKPiArICAgICAgICAgICAg
+ICAgIGVudW06Cj4gKyAgICAgICAgICAgICAgICAgIC0gNSAjIFBhcmFsbGVsCj4gKwo+ICsgICAg
+ICAgICAgICByZXF1aXJlZDoKPiArICAgICAgICAgICAgICAtIGhzeW5jLWFjdGl2ZQo+ICsgICAg
+ICAgICAgICAgIC0gdnN5bmMtYWN0aXZlCgpMZXQncyBtYWtlIGJ1cy10eXBlIHJlcXVpcmVkIHRv
+bywgdG8gcHJlcGFyZSBmb3IgQlQuNjU2IHN1cHBvcnQuCgpSZXZpZXdlZC1ieTogTGF1cmVudCBQ
+aW5jaGFydCA8bGF1cmVudC5waW5jaGFydEBpZGVhc29uYm9hcmQuY29tPgoKPiArCj4gKyAgICAg
+IHBvcnRAMToKPiArICAgICAgICAkcmVmOiAvc2NoZW1hcy9ncmFwaC55YW1sIy8kZGVmcy9wb3J0
+LWJhc2UKPiArICAgICAgICBkZXNjcmlwdGlvbjogT3V0cHV0IHBvcnQKPiArCj4gKyAgICAgICAg
+cHJvcGVydGllczoKPiArICAgICAgICAgIGVuZHBvaW50Ogo+ICsgICAgICAgICAgICAkcmVmOiAv
+c2NoZW1hcy9tZWRpYS92aWRlby1pbnRlcmZhY2VzLnlhbWwjCj4gKyAgICAgICAgICAgIHVuZXZh
+bHVhdGVkUHJvcGVydGllczogZmFsc2UKPiArCj4gKyAgICAgICAgICAgIHByb3BlcnRpZXM6Cj4g
+KyAgICAgICAgICAgICAgZGF0YS1sYW5lczoKPiArICAgICAgICAgICAgICAgIG1pbkl0ZW1zOiAx
+Cj4gKyAgICAgICAgICAgICAgICBtYXhJdGVtczogNAo+ICsKPiArICAgICAgICAgICAgICBjbG9j
+ay1ub25jb250aW51b3VzOiB0cnVlCj4gKyAgICAgICAgICAgICAgbGluay1mcmVxdWVuY2llczog
+dHJ1ZQo+ICsKPiArICAgICAgICAgICAgcmVxdWlyZWQ6Cj4gKyAgICAgICAgICAgICAgLSBkYXRh
+LWxhbmVzCj4gKyAgICAgICAgICAgICAgLSBsaW5rLWZyZXF1ZW5jaWVzCj4gKwo+ICsgICAgcmVx
+dWlyZWQ6Cj4gKyAgICAgIC0gcG9ydEAwCj4gKyAgICAgIC0gcG9ydEAxCj4gKwo+ICtyZXF1aXJl
+ZDoKPiArICAtIGNvbXBhdGlibGUKPiArICAtIHJlZwo+ICsgIC0gY2xvY2tzCj4gKyAgLSBjbG9j
+ay1uYW1lcwo+ICsgIC0gdmRkYy1zdXBwbHkKPiArICAtIHZkZGlvLXN1cHBseQo+ICsgIC0gdmRk
+bWlwaS1zdXBwbHkKPiArICAtIHBvcnRzCj4gKwo+ICthZGRpdGlvbmFsUHJvcGVydGllczogZmFs
+c2UKPiArCj4gK2V4YW1wbGVzOgo+ICsgIC0gfAo+ICsgICAgI2luY2x1ZGUgPGR0LWJpbmRpbmdz
+L2dwaW8vZ3Bpby5oPgo+ICsKPiArICAgIGkyYyB7Cj4gKyAgICAgICNhZGRyZXNzLWNlbGxzID0g
+PDE+Owo+ICsgICAgICAjc2l6ZS1jZWxscyA9IDwwPjsKPiArCj4gKyAgICAgIGNzaS1icmlkZ2VA
+ZSB7Cj4gKyAgICAgICAgY29tcGF0aWJsZSA9ICJ0b3NoaWJhLHRjMzU4NzQ2IjsKPiArICAgICAg
+ICByZWcgPSA8MHhlPjsKPiArCj4gKyAgICAgICAgY2xvY2tzID0gPCZyZWZjbGs+Owo+ICsgICAg
+ICAgIGNsb2NrLW5hbWVzID0gInJlZmNsayI7Cj4gKwo+ICsgICAgICAgIHJlc2V0LWdwaW9zID0g
+PCZncGlvIDIgR1BJT19BQ1RJVkVfTE9XPjsKPiArCj4gKyAgICAgICAgdmRkYy1zdXBwbHkgPSA8
+JnYxXzJkPjsKPiArICAgICAgICB2ZGRpby1zdXBwbHkgPSA8JnYxXzhkPjsKPiArICAgICAgICB2
+ZGRtaXBpLXN1cHBseSA9IDwmdjFfMmQ+Owo+ICsKPiArICAgICAgICAvKiBzZW5zb3IgbWNsayBw
+cm92aWRlciAqLwo+ICsgICAgICAgICNjbG9jay1jZWxscyA9IDwwPjsKPiArCj4gKyAgICAgICAg
+cG9ydHMgewo+ICsgICAgICAgICAgI2FkZHJlc3MtY2VsbHMgPSA8MT47Cj4gKyAgICAgICAgICAj
+c2l6ZS1jZWxscyA9IDwwPjsKPiArCj4gKyAgICAgICAgICAvKiBJbnB1dCAqLwo+ICsgICAgICAg
+ICAgcG9ydEAwIHsKPiArICAgICAgICAgICAgcmVnID0gPDA+Owo+ICsgICAgICAgICAgICB0YzM1
+ODc0Nl9pbjogZW5kcG9pbnQgewo+ICsgICAgICAgICAgICAgIHJlbW90ZS1lbmRwb2ludCA9IDwm
+c2Vuc29yX291dD47Cj4gKyAgICAgICAgICAgICAgaHN5bmMtYWN0aXZlID0gPDA+Owo+ICsgICAg
+ICAgICAgICAgIHZzeW5jLWFjdGl2ZSA9IDwwPjsKPiArICAgICAgICAgICAgfTsKPiArICAgICAg
+ICAgIH07Cj4gKwo+ICsgICAgICAgICAgLyogT3V0cHV0ICovCj4gKyAgICAgICAgICBwb3J0QDEg
+ewo+ICsgICAgICAgICAgICByZWcgPSA8MT47Cj4gKyAgICAgICAgICAgIHRjMzU4NzQ2X291dDog
+ZW5kcG9pbnQgewo+ICsgICAgICAgICAgICAgIHJlbW90ZS1lbmRwb2ludCA9IDwmbWlwaV9jc2ky
+X2luPjsKPiArICAgICAgICAgICAgICBkYXRhLWxhbmVzID0gPDEgMj47Cj4gKyAgICAgICAgICAg
+ICAgY2xvY2stbm9uY29udGludW91czsKPiArICAgICAgICAgICAgICBsaW5rLWZyZXF1ZW5jaWVz
+ID0gL2JpdHMvIDY0IDwyMTYwMDAwMDA+Owo+ICsgICAgICAgICAgICB9Owo+ICsgICAgICAgICAg
+fTsKPiArICAgICAgICB9Owo+ICsgICAgICB9Owo+ICsgICAgfTsKCi0tIApSZWdhcmRzLAoKTGF1
+cmVudCBQaW5jaGFydAoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3Rz
+LmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGlu
+Zm8vbGludXgtcGh5Cg==
