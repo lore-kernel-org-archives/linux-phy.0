@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 25836ECAAD3
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DF55FECAAA1
 	for <linux-phy@archiver.kernel.org>; Mon, 19 Sep 2022 18:00:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,58 +12,58 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=d+4NgFNtYZ7KusNSn/MCRWdTbhc3uhJCsFwfB21QW2A=; b=BHJ7Sf2SScLbYL
-	kyxjtCkseAZloeQIv1BSyKRiuyvNE6hi3gPgGkxCt2iaThGoP3n0lZ6/xqkFpFNFqLVKDj1lP3IpA
-	s7rCSwYrYLXILts8mxAaujtUdg4atzx5JqU7+XEwCghp5PXlnqIuQspnFRyGW6RGXEmYT466bis/f
-	hUQdq27bZYFvK8/HRHHPStlLuoK5O7fRWBwgK8vKHrImRZngrpBnzPDj23fxVzsYKpB8a4221cfRt
-	GhNOrA32yLJFXdTFLCYaf0dZc/rnWUrBslA9OPiZ3P8dJax2RDmWS22NS3ME2FJlCgu8amjNiF3Gr
-	BZduz0W1CMMibYXUrLOA==;
+	List-Owner; bh=0C4+r6IubYoLCt0YcjK5lvciKhc0s1owpXfbsZDabAg=; b=KNBwLDNSsg+C69
+	nx2lqzodmCFWQkIje8RAskpAu/CXyeT5+d3RATI2enubcy1NPvTbP2Ag7/k9PsiNVWYyHA+oguSaR
+	aXXfFkbAfVXexrXuHl3nHDckbuli6RP99oen+r1Zwq0Hr+gOx2QdSY8/PBu7UnCGMEhGigYqpzYbi
+	R/4M386zKJ4IBXUluei0n9dBFYWfJqu2mxUB5OnrOJgwWliz1UXEH6QK0mfstWnSUtL/YMwyxEPeR
+	jCHhRXq2YgiWFaFtxH/q771J2lAgZikR0Pwv+tbyiNcs9kJkSVH/0hjlA0tvwq1DV9IP6ssB5urep
+	wppCFvehXAxJKJpq0qPw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oaL4e-00DUDg-Ei; Mon, 19 Sep 2022 18:00:52 +0000
-Received: from mail-ed1-x529.google.com ([2a00:1450:4864:20::529])
+	id 1oaL4f-00DUEa-A8; Mon, 19 Sep 2022 18:00:53 +0000
+Received: from mail-ed1-x52e.google.com ([2a00:1450:4864:20::52e])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oaK7a-00D4JK-PN
-	for linux-phy@lists.infradead.org; Mon, 19 Sep 2022 16:59:54 +0000
-Received: by mail-ed1-x529.google.com with SMTP id w28so121764edi.7
-        for <linux-phy@lists.infradead.org>; Mon, 19 Sep 2022 09:59:48 -0700 (PDT)
+	id 1oaK7d-00D4LG-NQ
+	for linux-phy@lists.infradead.org; Mon, 19 Sep 2022 16:59:55 +0000
+Received: by mail-ed1-x52e.google.com with SMTP id e17so136582edc.5
+        for <linux-phy@lists.infradead.org>; Mon, 19 Sep 2022 09:59:50 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=baylibre-com.20210112.gappssmtp.com; s=20210112;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:from:to:cc:subject:date;
-        bh=pe51xvlTzoxvP1PkLEmQi5YJGHaBQkqHjYX/h+KRrX4=;
-        b=B+X1p1fH4JpGs34rfSwYzzSHzwu5qnL83GcremhYxa34LPTfzyuT54Qx4NkUrP80pu
-         pQuuF2QUVoy7vzZV3h6TrERow//gfDL5XfrnuPPuhc+B4RHI2qc+3ex/jWKQ63RA0DfF
-         hBB0zWcx0Lk6XvWHsF7Jch4RHJgIiSY2LK6gxuWKN/rgLWdkiQ6mLPjpWh4cz4AHHPtT
-         pC4zGQhthMR+WPSyxbXBMc3qQw3YfboFI7Q7Yy9Bgo6ddHWkCSfutvSn4/NE2FUgXx1e
-         NM29wYa2a+PX3vs2XgVJk1y+K5rnO2tGCxRjBGuogh3F3cFoZXeNpiG1Tcq1hcgaNJxd
-         w1+w==
+        bh=7xDk5BrXibXgfT99ckwNvMekh76xOPeNv/4FsaCfh58=;
+        b=CEZJ9TEVferg0ulxXwdUEbWib2zYhw9Tir5LaamEXUe9UQabtpHUZ7t39RbS4S85HC
+         x9PFzpX7wALrVEGjd5qyae6tIH2bK+BZxA3AsOGG5SLe8GtLeXrWR5PdxeYfhkGL8zz6
+         4aQbHNr7a6hYGMtek5NqaK1fsiK/TphfUjeSfIXBdpM51CKKKEWyLmeQpmyv0FJfOOKB
+         18XYmYWBK0IEwGn7H7CTG9n/4b/wl9y9Ex4FAUHaHxrhTxfMVImS7y1QRGtXw5/va7SX
+         FYVEq7OHlcwL2JOG2/A0K17XMaMH2dmNtlQw3PM5ptekzTUaKbzqovvSlmYzThYg57/r
+         AsXA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:x-gm-message-state:from:to:cc
          :subject:date;
-        bh=pe51xvlTzoxvP1PkLEmQi5YJGHaBQkqHjYX/h+KRrX4=;
-        b=J0AmrBjERvOHYGGkbPPu9cYnRNaPQcDJ2vUljEoJ4cPTCom7m+J9jOHVVFq1cyYPeC
-         Z0tHIDoYLcMau+3H8hQBhx9xZhfzrT39/iAvuDRAPkHExecImj/n/SiyOxZk+oz0r1hG
-         orlTe0wx2fNf+Q/uxsiJzWlhqM8eK7RH4d7Ia623nutg4/V6DsNPmrNmGUac4idZyvFp
-         zbs04Bw7cGMxo30NtsAiEKezADxZ6HGWMi5GkT1xn8pn0svwIMsa0+EsyzsBUq0/+aXa
-         OQPJE+H4ihwE4acQ5PzwKOelSlFBiGzcJU4cgy3o+N6PUZO7t+jGjcEuNC+AzBuMjog/
-         lkXw==
-X-Gm-Message-State: ACrzQf1assT9xXYKE1xsY4wikvGDKNtuTTs0IUsUgqCMIi6gpgC5vlo9
-	oVYJPcltfpgy/8xadykuzgZkjw==
-X-Google-Smtp-Source: AMsMyM4Kcqj7iaeTFSgnPboPDJcmYDvSGBzBAfopbwGlsGHAlwhMCX86GfBtADSsZGEx5aSm5j7eEQ==
-X-Received: by 2002:a05:6402:2b8b:b0:43a:5475:f1ae with SMTP id fj11-20020a0564022b8b00b0043a5475f1aemr16246555edb.363.1663606787204;
-        Mon, 19 Sep 2022 09:59:47 -0700 (PDT)
+        bh=7xDk5BrXibXgfT99ckwNvMekh76xOPeNv/4FsaCfh58=;
+        b=jC/WgJF2zdDYx2IVlL4xeMAAGMU7SvUT+XOP3S7v/HPChuAIGcDKtb7uQZlj4lHdDp
+         H/EQ3TLRo/8nw1sBpO693wyLN1CA2UBwXSQw/9pdnflPEIL+vGnLBjoJSvk9JU9Df87Q
+         HsmT3mEklljDO/5SGK2I9t/EsNpBgK+s994d59rO7I42RdpIUgYthSfjJBgXxOMvTM9i
+         Eu3JU1vYqU04SCQ2N3Hd5QVBBKDrYV57Qql2RHM1Es+PIPpbNrylMDbv/5ooJ/cf1ATm
+         1UJzdPxEPEQGx6M8Bkq3880WD85WZN3dpXdWxlBsxoc1NEQomQVpKnFjYiuFdG2WTIvh
+         Ey9A==
+X-Gm-Message-State: ACrzQf0wLYcSWC+uyhS3X9ETqk8DSTJw9NuLHdWmpXZc07O1VARSeLNQ
+	CCFJQusqp5Fuo8+SMdWdzlJqCg==
+X-Google-Smtp-Source: AMsMyM5gxGj7vc60+sBilG3OlczkPRO2uGjBc+la49BQKMmf9aIyceQBVlL/fz7uc0yOaSZjotbdPQ==
+X-Received: by 2002:a05:6402:493:b0:445:b5f0:7a0f with SMTP id k19-20020a056402049300b00445b5f07a0fmr16348159edv.120.1663606789339;
+        Mon, 19 Sep 2022 09:59:49 -0700 (PDT)
 Received: from [127.0.0.1] (2a02-8440-6340-f287-3074-96af-9642-0003.rev.sfr.net. [2a02:8440:6340:f287:3074:96af:9642:3])
-        by smtp.gmail.com with ESMTPSA id cf16-20020a0564020b9000b0044fc3c0930csm20424246edb.16.2022.09.19.09.59.45
+        by smtp.gmail.com with ESMTPSA id cf16-20020a0564020b9000b0044fc3c0930csm20424246edb.16.2022.09.19.09.59.47
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 19 Sep 2022 09:59:46 -0700 (PDT)
+        Mon, 19 Sep 2022 09:59:49 -0700 (PDT)
 From: Guillaume Ranquet <granquet@baylibre.com>
-Date: Mon, 19 Sep 2022 18:56:00 +0200
-Subject: [PATCH v1 02/17] clk: mediatek: add VDOSYS1 clock
+Date: Mon, 19 Sep 2022 18:56:01 +0200
+Subject: [PATCH v1 03/17] dt-bindings: phy: mediatek: hdmi-phy: Add mt8195 compatible
 MIME-Version: 1.0
-Message-Id: <20220919-v1-2-4844816c9808@baylibre.com>
+Message-Id: <20220919-v1-3-4844816c9808@baylibre.com>
 References: <20220919-v1-0-4844816c9808@baylibre.com>
 In-Reply-To: <20220919-v1-0-4844816c9808@baylibre.com>
 To: Vinod Koul <vkoul@kernel.org>, Stephen Boyd <sboyd@kernel.org>, David Airlie <airlied@linux.ie>,
@@ -78,8 +78,8 @@ Cc: linux-mediatek@lists.infradead.org, dri-devel@lists.freedesktop.org, Pablo S
  devicetree@vger.kernel.org
 X-Mailer: b4 0.10.0-dev
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220919_095950_868143_298741E2 
-X-CRM114-Status: UNSURE (   8.73  )
+X-CRM114-CacheID: sfid-20220919_095953_805620_8D29220F 
+X-CRM114-Status: UNSURE (   6.38  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -97,53 +97,22 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Pablo Sun <pablo.sun@mediatek.com>
+Add a compatible for the HDMI PHY on MT8195
 
-Add the clock gate definition for the DPI1 hardware
-in VDOSYS1.
-
-The parent clock "hdmi_txpll" is already defined in
-`mt8195.dtsi`.
-
-Signed-off-by: Pablo Sun <pablo.sun@mediatek.com>
 Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
 
-diff --git a/drivers/clk/mediatek/clk-mt8195-vdo1.c b/drivers/clk/mediatek/clk-mt8195-vdo1.c
-index d54d7726d186..835335b9d87b 100644
---- a/drivers/clk/mediatek/clk-mt8195-vdo1.c
-+++ b/drivers/clk/mediatek/clk-mt8195-vdo1.c
-@@ -34,6 +34,12 @@ static const struct mtk_gate_regs vdo1_3_cg_regs = {
- 	.sta_ofs = 0x140,
- };
+diff --git a/Documentation/devicetree/bindings/phy/mediatek,hdmi-phy.yaml b/Documentation/devicetree/bindings/phy/mediatek,hdmi-phy.yaml
+index 0d94950b84ca..71c75a11e189 100644
+--- a/Documentation/devicetree/bindings/phy/mediatek,hdmi-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/mediatek,hdmi-phy.yaml
+@@ -28,6 +28,7 @@ properties:
+           - const: mediatek,mt2701-hdmi-phy
+       - const: mediatek,mt2701-hdmi-phy
+       - const: mediatek,mt8173-hdmi-phy
++      - const: mediatek,mt8195-hdmi-phy
  
-+static const struct mtk_gate_regs vdo1_4_cg_regs = {
-+	.set_ofs = 0x400,
-+	.clr_ofs = 0x400,
-+	.sta_ofs = 0x400,
-+};
-+
- #define GATE_VDO1_0(_id, _name, _parent, _shift)			\
- 	GATE_MTK(_id, _name, _parent, &vdo1_0_cg_regs, _shift, &mtk_clk_gate_ops_setclr)
- 
-@@ -50,6 +56,9 @@ static const struct mtk_gate_regs vdo1_3_cg_regs = {
- #define GATE_VDO1_3(_id, _name, _parent, _shift)			\
- 	GATE_MTK(_id, _name, _parent, &vdo1_3_cg_regs, _shift, &mtk_clk_gate_ops_setclr)
- 
-+#define GATE_VDO1_4(_id, _name, _parent, _shift)			\
-+	GATE_MTK(_id, _name, _parent, &vdo1_4_cg_regs, _shift, &mtk_clk_gate_ops_no_setclr_inv)
-+
- static const struct mtk_gate vdo1_clks[] = {
- 	/* VDO1_0 */
- 	GATE_VDO1_0(CLK_VDO1_SMI_LARB2, "vdo1_smi_larb2", "top_vpp", 0),
-@@ -107,6 +116,8 @@ static const struct mtk_gate vdo1_clks[] = {
- 	GATE_VDO1_2(CLK_VDO1_DISP_MONITOR_DPINTF, "vdo1_disp_monitor_dpintf", "top_vpp", 17),
- 	/* VDO1_3 */
- 	GATE_VDO1_3(CLK_VDO1_26M_SLOW, "vdo1_26m_slow", "clk26m", 8),
-+	/* VDO1_4 */
-+	GATE_VDO1_4(CLK_VDO1_DPI1_HDMI, "vdo1_dpi1_hdmi", "hdmi_txpll", 0),
- };
- 
- static int clk_mt8195_vdo1_probe(struct platform_device *pdev)
+   reg:
+     maxItems: 1
 
 -- 
 b4 0.10.0-dev
