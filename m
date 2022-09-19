@@ -4,76 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1D974ECAAA1
-	for <linux-phy@archiver.kernel.org>; Mon, 19 Sep 2022 19:54:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 99B21ECAAD3
+	for <linux-phy@archiver.kernel.org>; Mon, 19 Sep 2022 21:34:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dyF/v2mEnkVUIja8rYoFFqv6Z8pIQSnlMKgWAcvsvfs=; b=Bzz+4U7vJfVlVc
-	oWhK9H+XocuWsGIkl5tTX+EF5w79+1cgVmsszf6VidD4U2ZY2Yg5UkbZavk1ggmvZKUaTlzcuxIyo
-	KgsWM1b2aKnBqqlNoyKiLOtnZf40pPgFACFovZ0Gx6eXgpJsevTvQtV/HR53Kt3w0lRFEg8mMq5vf
-	mwhyqTKwZBQLJ+tDsKUgnUEEXSGOf9Tj3AX62tagHqOZ5G+4bJDrtlQDOASTjwh2PGswKrLRSrNZF
-	lBRYzs/VsZZJztBD2ejwzp7Rb0MmyKwBNtwd6xEvEzORHVx8iklbeiV3KYMvx3iRoyuaHg84d5Amc
-	5qkn7a08HC4Nfpb4o0PA==;
+	List-Owner; bh=E3ZcS3PZTNOrKEFtTz/7k2vmTuGgnrVRaUFKuOpi5AM=; b=wBscOrMB+j+Q5m
+	rslchPg9aEpWJ+Ei10XpZzpXqZcBSBYH3REREcIikjHD+99w0pGy2G49AMvpp1/AP8SJ7j6AcLQ4O
+	aHuTdoLbjz+e1Pp3KUR49Mm/ebt/5x2C9nVpjk+BpE2XJLKeCC5M4RSLepYWo6Rq2wviW0S4GNN8Z
+	RG/FQHXd9xEWAndhpVXeNpCZDtDi3NDrEfDFdNCuvBMFI/m5pBZyNs8JXK3LyuwPaEqGAUXcJOL45
+	95wK6rao2Sduec4vMUPh+a8Yyd2D506w1/GkpQnQNHjXU8wGzEm5V2S3cfgBb0WwBcFn5bC1kdaRm
+	2uTmJZG2tCntg5wPChbA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oaMqw-00Excn-El; Mon, 19 Sep 2022 19:54:50 +0000
-Received: from mga01.intel.com ([192.55.52.88])
+	id 1oaOPY-00Fcvy-QN; Mon, 19 Sep 2022 21:34:40 +0000
+Received: from mail-ot1-x32d.google.com ([2607:f8b0:4864:20::32d])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oaMqt-00ExNB-Vt
-	for linux-phy@lists.infradead.org; Mon, 19 Sep 2022 19:54:49 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1663617287; x=1695153287;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=TFylzeOIAdoKTrYXFOCkIxj91jitXePjqSvx77D6gYQ=;
-  b=bsaYZNYwjlJYX1vs76O2VO+cI+nGrScvydENS56e4V11/tms1U51i3hz
-   eFdv7iGrDPWet7ZqRZ72Q/5eD3IoL9HflagXggSrSuF+CySdKSRWofRob
-   T5lH5IS6x0bBm3TVQjeyE62Rz0+kEmTOSV5LE3T/8tPd5jeaMSJ/H6ePf
-   mUYfSNjsaacWchM0c25RCUGcVNp+R0xSZrj+UWkQzRnDC4Ak6FqT7ADhm
-   dedLfzhwTH+/ncIDyvKl5QfNVG5qCdwmXSFuFkI4IppjgDR9lOIc12EjJ
-   Uj731fU8lU8yjQ3k2kRZO3TY4qjjdEb5YUf+Frqic4yGq9VAHrBVPX68m
-   Q==;
-X-IronPort-AV: E=McAfee;i="6500,9779,10475"; a="325802780"
-X-IronPort-AV: E=Sophos;i="5.93,328,1654585200"; 
-   d="scan'208";a="325802780"
-Received: from fmsmga002.fm.intel.com ([10.253.24.26])
-  by fmsmga101.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 19 Sep 2022 12:54:41 -0700
-X-IronPort-AV: E=Sophos;i="5.93,328,1654585200"; 
-   d="scan'208";a="722439432"
-Received: from punajuuri.fi.intel.com (HELO paasikivi.fi.intel.com) ([10.237.72.43])
-  by fmsmga002-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 19 Sep 2022 12:54:38 -0700
-Received: from paasikivi.fi.intel.com (localhost [127.0.0.1])
-	by paasikivi.fi.intel.com (Postfix) with SMTP id 0EF4020238;
-	Mon, 19 Sep 2022 22:54:36 +0300 (EEST)
-Date: Mon, 19 Sep 2022 19:54:36 +0000
-From: Sakari Ailus <sakari.ailus@linux.intel.com>
-To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-Cc: Marco Felsch <m.felsch@pengutronix.de>, mchehab@kernel.org,
-	robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
-	kishon@ti.com, vkoul@kernel.org, hverkuil@xs4all.nl,
-	jacopo@jmondi.org, kieran.bingham+renesas@ideasonboard.com,
-	linux-media@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
-	kernel@pengutronix.de
-Subject: Re: [PATCH v2 4/4] media: tc358746: add Toshiba TC358746 Parallel to
- CSI-2 bridge driver
-Message-ID: <YyjI/JOcryD8yKzT@paasikivi.fi.intel.com>
-References: <20220916134535.128131-1-m.felsch@pengutronix.de>
- <20220916134535.128131-5-m.felsch@pengutronix.de>
- <YyhktzmcgXKnrMFU@pendragon.ideasonboard.com>
- <20220919171142.6av6ap5gwweldado@pengutronix.de>
- <Yyio06jhK13BiNiP@pendragon.ideasonboard.com>
+	id 1oaOPV-00FcuK-Vm
+	for linux-phy@lists.infradead.org; Mon, 19 Sep 2022 21:34:39 +0000
+Received: by mail-ot1-x32d.google.com with SMTP id 102-20020a9d0bef000000b0065a08449ab3so478016oth.2
+        for <linux-phy@lists.infradead.org>; Mon, 19 Sep 2022 14:34:36 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gateworks-com.20210112.gappssmtp.com; s=20210112;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date;
+        bh=GhlGF570/fMNse4ofDbeyEClP1h1fR6cANBtjl25epI=;
+        b=8GxuPNefYMuf0/s1o3Lvazl4obZV+mdgoLuUVPHKSFPb5+OMNRtsRkh8UKu7v3hfKz
+         92F8kDyd6gXFmQB7CeE2mSO2fV9poOXWrqAhsXrCxjSAQI08c2E9A+h0RcJhAjihLtg5
+         J4aH5ChFDHac+oIGo3rN3TS58JT5MfEhiFho41BHoL2BdvZ288OEJRaZl+R4VoCFCU74
+         gCM7/82clFkHSI0t4ZmGqs7c6loI2O2jpigZxDpMXTQ0vN1o1mfxG6fkM1g44StZq1yW
+         tYgGrKZ8vppf09969n4WSgt/WTGWmpoBEyDXmGuLX/6IDsFytV9IKnJJuNI7U5f6OYww
+         SE2w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date;
+        bh=GhlGF570/fMNse4ofDbeyEClP1h1fR6cANBtjl25epI=;
+        b=O8DcRimAF2IDc8t9U9Y9gztHuN7O7mePXWiZwaCX8wrYfy4HJhwhUMTJbtbMIhGpA4
+         8ziv7k5BdZ9Rtp+e6mk1Y5hWEBJltWUFhz1B9WVssMehwXrR629AHirdT6diOAIr8Sek
+         g0eBQGHJv6+buPR7QYcgWU9dNcoFiF0jVIY9sgE6TT9XGaNVW6HIzbnMZifbJ3XcnxfW
+         m94Hh0IQF79zcZflqpBwP/2+Qx6T/zDpba7PU93LOn6x4jj+roGsu+k82jJWg6EVLrE0
+         RGbLzpSApxJdeyPMSQxVI8RXlpMvRJTS4BDOwciQ3G8N9fqwjd0MtUb8uBxCHuxDUIqS
+         557A==
+X-Gm-Message-State: ACrzQf2pias/M2uIbHTOV8ki4Y+tJ8J4UKbWAmeigS2bajpLsReXUiZC
+	N+HmaFrboV10kUtFBGFM9ziwqSj+Mw1W/DTRYVZElQ==
+X-Google-Smtp-Source: AMsMyM42FduJa4ir+xXvwJjSd6HCgTrvxI4AfniM3y4TROVlTPge2JWGcA4981o487r0XCFOOeFWnYrBwJu2uVReeLk=
+X-Received: by 2002:a9d:12a1:0:b0:658:5c77:d547 with SMTP id
+ g30-20020a9d12a1000000b006585c77d547mr9105264otg.48.1663623275484; Mon, 19
+ Sep 2022 14:34:35 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <Yyio06jhK13BiNiP@pendragon.ideasonboard.com>
+References: <1662109086-15881-1-git-send-email-hongxing.zhu@nxp.com>
+ <1662109086-15881-4-git-send-email-hongxing.zhu@nxp.com> <ec59c235f11664a0a90f14b86bd63f74fb7f6d27.camel@toradex.com>
+In-Reply-To: <ec59c235f11664a0a90f14b86bd63f74fb7f6d27.camel@toradex.com>
+From: Tim Harvey <tharvey@gateworks.com>
+Date: Mon, 19 Sep 2022 14:34:23 -0700
+Message-ID: <CAJ+vNU3tV1NSNT8R-QNTxEhe+oxR=Fz9zHKGbf_MSBgr9dQ10g@mail.gmail.com>
+Subject: Re: [PATCH v7 3/7] arm64: dts: imx8mp-evk: Add PCIe support
+To: Marcel Ziswiler <marcel.ziswiler@toradex.com>
+Cc: "vkoul@kernel.org" <vkoul@kernel.org>, 
+	"richard.leitner@linux.dev" <richard.leitner@linux.dev>, 
+	"alexander.stein@ew.tq-group.com" <alexander.stein@ew.tq-group.com>, "robh@kernel.org" <robh@kernel.org>, 
+	"l.stach@pengutronix.de" <l.stach@pengutronix.de>, "shawnguo@kernel.org" <shawnguo@kernel.org>, 
+	"lorenzo.pieralisi@arm.com" <lorenzo.pieralisi@arm.com>, 
+	"p.zabel@pengutronix.de" <p.zabel@pengutronix.de>, "hongxing.zhu@nxp.com" <hongxing.zhu@nxp.com>, 
+	"bhelgaas@google.com" <bhelgaas@google.com>, "marex@denx.de" <marex@denx.de>, 
+	"linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>, 
+	"linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>, "kernel@pengutronix.de" <kernel@pengutronix.de>, 
+	"devicetree@vger.kernel.org" <devicetree@vger.kernel.org>, 
+	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>, "linux-imx@nxp.com" <linux-imx@nxp.com>, 
+	"linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220919_125448_065056_E333DAFD 
-X-CRM114-Status: GOOD (  18.82  )
+X-CRM114-CacheID: sfid-20220919_143438_030108_D3F47335 
+X-CRM114-Status: GOOD (  25.82  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,32 +95,98 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Sep 19, 2022 at 08:37:23PM +0300, Laurent Pinchart wrote:
-> > > > +	ctrl = v4l2_ctrl_new_int_menu(&tc358746->ctrl_hdl, NULL,
-> > > > +				      V4L2_CID_LINK_FREQ, 0, 0,
-> > > 
-> > > Shouldn't the max argument be set to the number of items minus 1 ?
-> > 
-> > Right now I would keep it that way since the driver only supports one
-> > link-frequencies setting. So the ctrl don't let the userspace assume
-> > that there are more than one link-frequency.
-> 
-> Good point. Can you add a short comment above the call to explain this ?
+On Mon, Sep 19, 2022 at 8:22 AM Marcel Ziswiler
+<marcel.ziswiler@toradex.com> wrote:
+>
+> Hi Richard et. al.
+>
+> Thank you very much for the i.MX 8MP PCIe support work.
+>
+> On Fri, 2022-09-02 at 16:58 +0800, Richard Zhu wrote:
+> > Add PCIe support on i.MX8MP EVK board.
+> >
+> > Signed-off-by: Richard Zhu <hongxing.zhu-3arQi8VN3Tc@public.gmane.org>
+> > Tested-by: Marek Vasut <marex-ynQEQJNshbs@public.gmane.org>
+> > Tested-by: Richard Leitner <richard.leitner-WcANXNA0UjBBDgjK7y7TUQ@public.gmane.org>
+> > Tested-by: Alexander Stein <alexander.stein-W3o+9BuWjQaZox4op4iWzw@public.gmane.org>
+> > Reviewed-by: Lucas Stach <l.stach-bIcnvbaLZ9MEGnE8C9+IrQ@public.gmane.org>
+> > ---
+> >  arch/arm64/boot/dts/freescale/imx8mp-evk.dts | 53 ++++++++++++++++++++
+> >  1 file changed, 53 insertions(+)
+> >
+> > diff --git a/arch/arm64/boot/dts/freescale/imx8mp-evk.dts b/arch/arm64/boot/dts/freescale/imx8mp-evk.dts
+> > index f6b017ab5f53..9f1469db554d 100644
+> > --- a/arch/arm64/boot/dts/freescale/imx8mp-evk.dts
+> > +++ b/arch/arm64/boot/dts/freescale/imx8mp-evk.dts
+> > @@ -5,6 +5,7 @@
+> >
+> >  /dts-v1/;
+> >
+> > +#include <dt-bindings/phy/phy-imx8-pcie.h>
+> >  #include "imx8mp.dtsi"
+> >
+> >  / {
+> > @@ -33,6 +34,12 @@ memory@40000000 {
+> >                       <0x1 0x00000000 0 0xc0000000>;
+> >         };
+> >
+> > +       pcie0_refclk: pcie0-refclk {
+> > +               compatible = "fixed-clock";
+> > +                       #clock-cells = <0>;
+> > +                       clock-frequency = <100000000>;
+> > +       };
+> > +
+> >         reg_can1_stby: regulator-can1-stby {
+> >                 compatible = "regulator-fixed";
+> >                 regulator-name = "can1-stby";
+> > @@ -55,6 +62,17 @@ reg_can2_stby: regulator-can2-stby {
+> >                 enable-active-high;
+> >         };
+> >
+> > +       reg_pcie0: regulator-pcie {
+> > +               compatible = "regulator-fixed";
+> > +               pinctrl-names = "default";
+> > +               pinctrl-0 = <&pinctrl_pcie0_reg>;
+> > +               regulator-name = "MPCIE_3V3";
+> > +               regulator-min-microvolt = <3300000>;
+> > +               regulator-max-microvolt = <3300000>;
+> > +               gpio = <&gpio2 6 GPIO_ACTIVE_HIGH>;
+> > +               enable-active-high;
+> > +       };
+> > +
+> >         reg_usdhc2_vmmc: regulator-usdhc2 {
+> >                 compatible = "regulator-fixed";
+> >                 pinctrl-names = "default";
+> > @@ -350,6 +368,28 @@ &i2c5 {
+> >          */
+> >  };
+> >
+> > +&pcie_phy {
+> > +       fsl,refclk-pad-mode = <IMX8_PCIE_REFCLK_PAD_INPUT>;
+>
+> While this indeed works on the EVK so far I failed to get this to work on our Verdin iMX8M Plus which requires
+> the fsl,refclk-pad-mode to be IMX8_PCIE_REFCLK_PAD_OUTPUT. It is not quite clear to me what kind of clocks I
+> would need specifying in that case.
+>
+> Has anybody by any chance tried on any such HW design?
+>
+> For reference [1] on the Verdin iMX8M Mini the same works very well but the clocking seems rather different.
+>
 
-Wouldn't it be just easier to do what Laurent suggested originally? The end
-result is the same, isn't it, and no comment needed?
+Marcel,
 
-> 
-> > > > +				      link_frequencies);
-> > > > +	if (ctrl)
-> > > > +		ctrl->flags |= V4L2_CTRL_FLAG_READ_ONLY;
+Do you have all the patches in Richard's series applied [1]? They got
+picked up in different trees so make sure you have them all. I just
+tested this series on top of 6.0-rc6 with imx8mp-venice-gw74xx and it
+works fine. This board however does have IMX8_PCIE_REFCLK_PAD_INPUT.
 
-Now that this is a bridge, this value presumably doesn't need to change.
-There will just be more blanking if the source sub-device pixel rate is
-slower, right?
+Do you by chance have CLKREQ not hooked up? If so make sure you add a
+'fsl,clkreq-unsupported' probe to pcie_phy.
 
--- 
-Sakari Ailus
+Best Regards,
+
+Tim
+[1] https://patchwork.kernel.org/project/linux-pci/list/?series=673548&state=*
 
 -- 
 linux-phy mailing list
