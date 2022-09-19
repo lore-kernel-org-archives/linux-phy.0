@@ -4,34 +4,34 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 39E99C6FA90
-	for <linux-phy@archiver.kernel.org>; Mon, 19 Sep 2022 14:37:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 96EDCC6FA86
+	for <linux-phy@archiver.kernel.org>; Mon, 19 Sep 2022 14:37:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FbrlUxAduDvsSFou+ZuYRMRjhGXeQ1JRL1sIa/qvhgY=; b=N43RLHFkf6u6sl
-	3pkkIgi/72u2cMJaAJ/ePTRxeSk9OyP3YY9QhpGWt1NAmdBT9VVSjOhnt6aO98nEY1g/pQZn/cjjn
-	F38upBGs5U8o+ac3vOOOdCTMcbUGKrVjuwwKQZ1CA6pAReFLDBp7KYCgX9pZtqAP1WlXw4j9DyFRs
-	m1Rrou77NIpP+AVeUAWulnokFqMNUXB9bEL96HGjYivJR8+uW+QnrTmtGAEuBPGyCILNCugOujD9c
-	BOg1ORAZy1xG3HwF3Qce9DL/ONB1JeSrSfsjmt+6YMtGDrIeGtIhCRE5V5edxwJxZISXCP93ZZOQA
-	BPN22UOSnCsu9fmzxSmQ==;
+	List-Owner; bh=/NZhVjFPtny1A8uPKjSjpYZ6AYsFYXHbJ9nnSE4dFe8=; b=LbJ6BQoqC3S6Y/
+	I1tuW60brbABpiSoWZUoUCnLbFslG6VOHkngZ9SVkV4Hw35rfLjfg8Tt8PeGHSpVUST13+xD/a+OX
+	XF8x1+L0G11l919ZkDqzEZqYwichn2DdXUmfjD/kNvZxULhNqUa78gCbGcKBj5hnWopPxLmpoADoa
+	hfLKPsrOc8CYohwy3GfbqYQEl0rqjkaj7ypHo1Zuk80RDdCvy8uGMo5SaJ8g7xJRKTKqTDlxL2JGg
+	yvDjaBxhKMvup7Y/CyHMvgR6yO4/i1MImwdxb9EKTfnpEEzdKS1/q1Ecn55G9RVsKL/pEk2vx/nlj
+	Pvcy3LQmzbQfUjRdHfMw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oaHtp-00C81j-GS; Mon, 19 Sep 2022 14:37:29 +0000
-Received: from mail-dm6nam10on2044.outbound.protection.outlook.com ([40.107.93.44] helo=NAM10-DM6-obe.outbound.protection.outlook.com)
+	id 1oaHty-00C85x-1w; Mon, 19 Sep 2022 14:37:38 +0000
+Received: from mail-co1nam11on2056.outbound.protection.outlook.com ([40.107.220.56] helo=NAM11-CO1-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oaHtn-00C803-8C
-	for linux-phy@lists.infradead.org; Mon, 19 Sep 2022 14:37:28 +0000
+	id 1oaHtu-00C83o-VT
+	for linux-phy@lists.infradead.org; Mon, 19 Sep 2022 14:37:36 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=lIe6LZlb/9CMLBzu6GDaoYtPqQDF1/3dhjZ1lG1mNka2TFYg+u0AZrdbXr2LlOkD0nT7gbEkiLEeZMxBb9iVW9Tiid2rsqSo7F1IX+1bS7bYOG0QWeQ7bfET86wwMN60W5bfj3kz/xev4fQBlP5wcJ7htp23PqbBONfDpmnKRYhjI8ek4NOaoJoIXqtP1OrEShWQwTeblpOl5lSs/qDyqvc2OD2YEs6pEf4LBbujKBy4pL3q+A5orMENJEZLQ/cGvvtb8mHUq7RoOIC2zXQm76G+B9d9jb7yB/EcxHThjLJu9xRNjhWncApDfZBayx0tLzbaRtnsczClDC4uKAacBg==
+ b=SJLhNzUmT8WPoZa1nxiNgCE3OgZNWTthmrpVb2DvgtkxKsRKJruYAqaqAUJ5tbv8kT9JMtYyyFec+VOLOlb1mvSGUcGPYTy06OR9xR4WRlAFnSSsCdUS188AAazquSLz/3MY9pLp4lrJs91hnLe9b9NZPv479VIFmbyyARNXrm3cT1XnETLbD0Q43dnWN6+uv70O7sUYFcuqAIEbeeQ1/86+ZNOCd0cRqIrj0IZ1UnPMKI0+fl/XOK4dxnvQqqJ3clFI28YMWWuqQjN1+ePRnAHPjVTxeNAwyDiVnL5dc7up4PWRzGXG/8zeYr2My6O0ZoWVYRAjeAzau0zEUAJTIQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=zaUGzJWgxubPULxhpKeOFhUJ/BBEMitqnXBEZaI8gY4=;
- b=Lmjt+fguCwRGyFky9P2L1QRcNyv09Ffg5M3cawyhcQqTmzQZxGLwrj+FdGZvJP+sCY8FZBxQ7K5dC3hrb8wsW6zxG2S5Mmakq3qHggxMdGjBgTSpfPjTNXOwiIaVHVY1ta8jcTpjHp6MuNftypbCMaYJL6iy47K4+7UR9JPWLvnWe2S0X7u5SnFOMrpLwc4N6ob+IY3weQaq6iaT9Ll+dl+17l4gl28ql30p4J4KHUveEw/Vt5FPniBzitDv8poSP6ErtK/I/ntpp3S3wqc9jtdhfOyN9nEUi7gNSTwWX3m56ay9d1ZC8yJfJsqjstuiYWcEJPaBoG56cSliZ3553w==
+ bh=TFlWkTNu9V41TXZGNNEmku00Z68ht2wRGvk+UbdMVbg=;
+ b=cMAvZACL0yAkw1u8yDCNQLnArnLRkaOCVg4VRKttOPrWJUy+SbqzfH+6gu1roO+JFM7pRZrv5mJi2/xXKx37g20sgMqrfTBCnkpZXXkN2XWezCB4+kPqTAu1T7oQ2qDT/8xzZbzplKwhr4ktmq6l9EybnrrM66D+SMjr4b5QymHwtDl14AJIzU8qT7yuhaw16/yO8tSjCjAEXp4tGx3ZIm1TUpUWuHeXEg2OZg/3cOCbm0Fz3ig5D4Em6+3as81dYOrUZPTB+y45jpCrv4QosiVePc20knoKcr9AafCYexI9kIn73guAEPUGljvpBt/q/aV7VINeGPqrpQyQUet8dw==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
  216.228.117.161) smtp.rcpttodomain=kernel.org smtp.mailfrom=nvidia.com;
  dmarc=pass (p=reject sp=reject pct=100) action=none header.from=nvidia.com;
@@ -39,18 +39,18 @@ ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
  s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=zaUGzJWgxubPULxhpKeOFhUJ/BBEMitqnXBEZaI8gY4=;
- b=Z5GpNZY8p5WqzdNiPkVjBSUc0nDv3WcPHqARBziWS6Rkg7pZYEQlvBqFKfItGuq7EPHmZoiX6Di8tfdThV47/YjNXw+jdud28MCepTygNtpsNx966Nq9EUl1oF4OoGElvlHG22IHCaAydqKtFSuEB2jSj5g6zyUFCmYAXIPcS+uXntCO9mvyra8znlHqW9msHEJDf6UUsSnpt2zXTyRvu7Tr5u3lE/OIzxYwyyfEJjoRWolikW3HCNKX6qzxnvNKVnnQLgebQTzCOiTykUm0kfyS+MV8naZLGOqQvkjyBHBBwmvWsPZUli37FrZY6xJ+BgL2xQY7S1TataR6BRhARw==
-Received: from MW4PR04CA0341.namprd04.prod.outlook.com (2603:10b6:303:8a::16)
- by DS0PR12MB7581.namprd12.prod.outlook.com (2603:10b6:8:13d::21) with
+ bh=TFlWkTNu9V41TXZGNNEmku00Z68ht2wRGvk+UbdMVbg=;
+ b=YJQZmKqB/i+W2Ij/QrHAaOTHCt7AG2YWfRbeiNUsRG6GbFR7Etr/EPKEFp9ohBH0PZOCL5NNwPp+l/4WEXSsDV4fHRGdIsLDG5lhFuJlh7qkQ5Skviom19rI8C7lqYgL3e4DwMWFtfoH45S4nmoqJ/X2+dWhQ/Bk761i549a7FB9Mz5vTs5SSRNI/kXrRJk4SM2JD2C37Y3eCYwa6B16lZCNTWkaQ/ThOOa/J+USjiEqYH83EsDW1z1DfVSPdTD5rwCy/uXncWHIRlr9AAdQN1+HdSkKV2BlsrvF7Y6kP7J95rgZDktvKlCQeNYVUCffpQ4YLqpNWKnAlJ89YXGzjA==
+Received: from MW4PR04CA0116.namprd04.prod.outlook.com (2603:10b6:303:83::31)
+ by DS0PR12MB7679.namprd12.prod.outlook.com (2603:10b6:8:134::5) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5632.18; Mon, 19 Sep
- 2022 14:37:24 +0000
-Received: from CO1NAM11FT009.eop-nam11.prod.protection.outlook.com
- (2603:10b6:303:8a:cafe::f7) by MW4PR04CA0341.outlook.office365.com
- (2603:10b6:303:8a::16) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5632.19; Mon, 19 Sep
+ 2022 14:37:30 +0000
+Received: from CO1NAM11FT092.eop-nam11.prod.protection.outlook.com
+ (2603:10b6:303:83:cafe::ec) by MW4PR04CA0116.outlook.office365.com
+ (2603:10b6:303:83::31) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5632.21 via Frontend
- Transport; Mon, 19 Sep 2022 14:37:24 +0000
+ Transport; Mon, 19 Sep 2022 14:37:30 +0000
 X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 216.228.117.161)
  smtp.mailfrom=nvidia.com; dkim=none (message not signed)
  header.d=none;dmarc=pass action=none header.from=nvidia.com;
@@ -58,20 +58,20 @@ Received-SPF: Pass (protection.outlook.com: domain of nvidia.com designates
  216.228.117.161 as permitted sender) receiver=protection.outlook.com;
  client-ip=216.228.117.161; helo=mail.nvidia.com; pr=C
 Received: from mail.nvidia.com (216.228.117.161) by
- CO1NAM11FT009.mail.protection.outlook.com (10.13.175.61) with Microsoft SMTP
+ CO1NAM11FT092.mail.protection.outlook.com (10.13.175.225) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.5632.12 via Frontend Transport; Mon, 19 Sep 2022 14:37:24 +0000
+ 15.20.5632.12 via Frontend Transport; Mon, 19 Sep 2022 14:37:30 +0000
 Received: from rnnvmail201.nvidia.com (10.129.68.8) by mail.nvidia.com
  (10.129.200.67) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.986.26; Mon, 19 Sep
- 2022 07:37:12 -0700
+ 2022 07:37:18 -0700
 Received: from rnnvmail205.nvidia.com (10.129.68.10) by rnnvmail201.nvidia.com
  (10.129.68.8) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.986.29; Mon, 19 Sep
- 2022 07:37:11 -0700
+ 2022 07:37:18 -0700
 Received: from vidyas-desktop.nvidia.com (10.127.8.9) by mail.nvidia.com
  (10.129.68.10) with Microsoft SMTP Server id 15.2.986.29 via Frontend
- Transport; Mon, 19 Sep 2022 07:37:07 -0700
+ Transport; Mon, 19 Sep 2022 07:37:13 -0700
 From: Vidya Sagar <vidyas@nvidia.com>
 To: <lpieralisi@kernel.org>, <robh@kernel.org>, <kw@linux.com>,
 	<bhelgaas@google.com>, <thierry.reding@gmail.com>, <jonathanh@nvidia.com>,
@@ -81,9 +81,9 @@ CC: <linux-pci@vger.kernel.org>, <linux-tegra@vger.kernel.org>,
 	<linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>,
 	<kthota@nvidia.com>, <mmaddireddy@nvidia.com>, <vidyas@nvidia.com>,
 	<sagar.tv@gmail.com>
-Subject: [PATCH V1 5/9] PCI: tegra194: Apply pinctrl settings for both PCIe RP and EP
-Date: Mon, 19 Sep 2022 20:06:23 +0530
-Message-ID: <20220919143627.13803-6-vidyas@nvidia.com>
+Subject: [PATCH V1 6/9] PCI: tegra194: Refactor LTSSM state polling on surprise down
+Date: Mon, 19 Sep 2022 20:06:24 +0530
+Message-ID: <20220919143627.13803-7-vidyas@nvidia.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20220919143627.13803-1-vidyas@nvidia.com>
 References: <20220919143627.13803-1-vidyas@nvidia.com>
@@ -91,26 +91,26 @@ X-NVConfidentiality: public
 MIME-Version: 1.0
 X-EOPAttributedMessage: 0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: CO1NAM11FT009:EE_|DS0PR12MB7581:EE_
-X-MS-Office365-Filtering-Correlation-Id: 36ab88e3-1230-4084-8fa1-08da9a4c77b1
+X-MS-TrafficTypeDiagnostic: CO1NAM11FT092:EE_|DS0PR12MB7679:EE_
+X-MS-Office365-Filtering-Correlation-Id: db22cfc1-12ed-457b-fc71-08da9a4c7b95
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 	8D2ZhjBCQWnJ7g9ixtsGae2XObhcqG5SsqBP0byfrpBrtl1M5jYHhQgsWx2DT5bwIY6tCKsewor21GfmZek2w7m7/yo8wXrqsmDV0XH9j9tixaj+LmbhBi3/+RhVAxmrKUbxxjZovlMwWIAlAQxWksh+cwxXMig19C3sKMxVG7eajglhhpfLZY70cPoMFJ4ygCFaMRHkDhCDUXAjfAdK3QHjbt0S3Z1QshU5zENvjMIJhVw0IHBFSaO5pWg2zctAclZ+mb+U3rMFj5ATRsISkYQ112yevoBCVIynJhPoVlbfG5KOHWKOwhuvBrv5/gOo58/1PmM8ysfWlMBGnc4EeT57uHpjzJiFzqbJQOTrBcHQC9pmdj4SpWhg6dUguKg3y2V5OUMsR+T4xYzfScNiF1cVYM4AuReFTRwTyNZ6tYqVaerDWUx/DHv5jebnxnFDEQ8BPSdhNfsL8WmHqJ298cNh0CbRJELjV17meOfgZUhT8dTAHIpwRub8Vk2rx2xhdefS005kc/Lzi/y8Fn9EKhWa8NWR5XY5JhTCo9YsjS4WMz/i4nRq8A9YVqt0VXYPSoqiX2EtY/t/6Jh9LKC+oO/hwKxU6Miv5JkqXqRYMxsU5XrWpePG2eKNzK9lqXJ4l0+f2rN8tR57dlLbg7lTkDNxKpC+IhWXn/P4kEOZCm3ssER2t7qfC77Bzg8liywy6wtnYU0tS5PnmB7ubGY4rpcWdF9jTnNkeTBmKakqhNtOeJr3wtAvw+iucoicjQ8ze0RG8st5YyZCi825AUOGC8nX7xaHSYRtiXjTQkQ2koo=
-X-Forefront-Antispam-Report: 	CIP:216.228.117.161;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc6edge2.nvidia.com;CAT:NONE;SFS:(13230022)(4636009)(346002)(39860400002)(376002)(136003)(396003)(451199015)(40470700004)(46966006)(36840700001)(36860700001)(4326008)(36756003)(478600001)(110136005)(70206006)(70586007)(54906003)(41300700001)(7696005)(6666004)(86362001)(2616005)(7636003)(8936002)(921005)(82310400005)(26005)(356005)(336012)(40460700003)(83380400001)(7416002)(5660300002)(40480700001)(82740400003)(8676002)(316002)(186003)(1076003)(47076005)(426003)(2906002);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam-Message-Info: 	0lnD+J89fOYwm8nCFylnp3HS4WAt3mP1safN9DqYW22gA/i3XHdAPprCurx6xqHjFfGKn1KoIUi9MWwEj8xN+PKAnpFtPWtF1Ucpa5Km94YorQVBhKmNnwAKBl4DKBkNAnjA8/9YCYLN+su2+CjnM4+iaOAm1F8Q5Bb1AdwwPmqz3fiwFHYC/GLFDNF7Qk+o3ylo51BRLVy+VT7IBRt0fbh7x0voOvpnDnHG3OYKZEiotiWhzb8R6nupqb1npbyCaqnF2SHwDBlBVKH7eCG1J1WL5pUxUeo41ogg8G31zjjVQXdzOzoqkzIpk1EKTeKjlHEMlmIfDz1GYQV3TkhCPZvIFeFWUlDTIUSBGFK6M54ydrbBV4DldthGzwJVl4KDIYD/NB4t/tK/NcrxbTQ6u9joI2rDxmg12ZYta5e3VMJbvvlWwme4BYixGhfOneU0sa/lD6aJqGhsclLlGw4Gyik3aCAw1bwS0beb7O6uIGIhYgD4QLXapHMrzgoM0Z3Lk771ujRfblEwoNQT4+f4o/3yw/T/vAOPIGPmuuS6kcHnbCKyLDuh+u0RqiyFvSo+0GHJx6pzJd3fKg0DtmhhxlgA6KIphNb23KfkRDRIS9cECYk3/CMzB4M2WIhM9RMZv7iar/9fFeHbttDwzCphkQS6k0EjVyJv/bf6G/ZhYc8XjE3Pu9MOe4okbQaEewaMm8aazAQcE/ajXhboPDbR0+wXDXUz+IgawwJPaZWxDj5+clLp6/F8gmQ78Ge3SJcpbblwGlKCTpXh2QkKSvaRzUnzrMFBxdgRbeKvvamCJnU=
+X-Forefront-Antispam-Report: 	CIP:216.228.117.161;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc6edge2.nvidia.com;CAT:NONE;SFS:(13230022)(4636009)(39860400002)(376002)(136003)(396003)(346002)(451199015)(36840700001)(46966006)(40470700004)(4326008)(7696005)(921005)(2906002)(36860700001)(36756003)(40480700001)(86362001)(8936002)(26005)(356005)(70586007)(70206006)(8676002)(41300700001)(7636003)(6666004)(478600001)(82740400003)(110136005)(83380400001)(426003)(2616005)(82310400005)(1076003)(336012)(40460700003)(186003)(5660300002)(54906003)(7416002)(316002)(47076005);DIR:OUT;SFP:1101;
 X-OriginatorOrg: Nvidia.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 19 Sep 2022 14:37:24.0788
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 19 Sep 2022 14:37:30.6403
  (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 36ab88e3-1230-4084-8fa1-08da9a4c77b1
+X-MS-Exchange-CrossTenant-Network-Message-Id: db22cfc1-12ed-457b-fc71-08da9a4c7b95
 X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
 X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[216.228.117.161];Helo=[mail.nvidia.com]
-X-MS-Exchange-CrossTenant-AuthSource: 	CO1NAM11FT009.eop-nam11.prod.protection.outlook.com
+X-MS-Exchange-CrossTenant-AuthSource: 	CO1NAM11FT092.eop-nam11.prod.protection.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Anonymous
 X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DS0PR12MB7581
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DS0PR12MB7679
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220919_073727_458501_50E5AF4D 
-X-CRM114-Status: GOOD (  11.29  )
+X-CRM114-CacheID: sfid-20220919_073735_061677_88EF210C 
+X-CRM114-Status: GOOD (  12.40  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -127,52 +127,128 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-PERST# and CLKREQ# pinctrl settings should be applied for both root port
-and endpoint mode. Move pinctrl_pm_select_default_state() function call
-from root port specific configuration function to probe().
+On surprise down LTSSM state transisition from L0 -> Recovery.RcvrLock ->
+Recovery.RcvrSpeed -> Gen1 Recovery.RcvrLock -> Detect.
+Recovery.RcvrLock and Recovery.RcvrSpeed time is 24 msec and 48 msec
+respectively. It takes ~96 msec to move from L0 to detect state, hence,
+increase the poll time to 120 msec. Disable the LTSSM state after it moves
+to detect to avoid LTSSM toggle between polling and detect.
 
 Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
 ---
- drivers/pci/controller/dwc/pcie-tegra194.c | 19 +++++++++++++------
- 1 file changed, 13 insertions(+), 6 deletions(-)
+ drivers/pci/controller/dwc/pcie-tegra194.c | 69 ++++++++++++++--------
+ 1 file changed, 46 insertions(+), 23 deletions(-)
 
 diff --git a/drivers/pci/controller/dwc/pcie-tegra194.c b/drivers/pci/controller/dwc/pcie-tegra194.c
-index 65c2c689fcd5..f96f60c49dcb 100644
+index f96f60c49dcb..e38fedd42034 100644
 --- a/drivers/pci/controller/dwc/pcie-tegra194.c
 +++ b/drivers/pci/controller/dwc/pcie-tegra194.c
-@@ -1659,12 +1659,6 @@ static int tegra_pcie_config_rp(struct tegra_pcie_dw *pcie)
- 		goto fail_pm_get_sync;
- 	}
+@@ -140,7 +140,11 @@
+ #define APPL_DEBUG_PM_LINKST_IN_L0		0x11
+ #define APPL_DEBUG_LTSSM_STATE_MASK		GENMASK(8, 3)
+ #define APPL_DEBUG_LTSSM_STATE_SHIFT		3
+-#define LTSSM_STATE_PRE_DETECT			5
++#define LTSSM_STATE_DETECT_QUIET		0x00
++#define LTSSM_STATE_DETECT_ACT			0x08
++#define LTSSM_STATE_PRE_DETECT_QUIET		0x28
++#define LTSSM_STATE_DETECT_WAIT			0x30
++#define LTSSM_STATE_L2_IDLE			0xa8
  
--	ret = pinctrl_pm_select_default_state(dev);
--	if (ret < 0) {
--		dev_err(dev, "Failed to configure sideband pins: %d\n", ret);
--		goto fail_pm_get_sync;
--	}
+ #define APPL_RADM_STATUS			0xE4
+ #define APPL_PM_XMT_TURNOFF_STATE		BIT(0)
+@@ -209,7 +213,8 @@
+ #define PME_ACK_DELAY		100   /* 100 us */
+ #define PME_ACK_TIMEOUT		10000 /* 10 ms */
+ 
+-#define LTSSM_TIMEOUT 50000	/* 50ms */
++#define LTSSM_DELAY		10000	/* 10 ms */
++#define LTSSM_TIMEOUT		120000	/* 120 ms */
+ 
+ #define GEN3_GEN4_EQ_PRESET_INIT	5
+ 
+@@ -1606,23 +1611,31 @@ static void tegra_pcie_dw_pme_turnoff(struct tegra_pcie_dw *pcie)
+ 		data &= ~APPL_PINMUX_PEX_RST;
+ 		appl_writel(pcie, data, APPL_PINMUX);
+ 
+-		/*
+-		 * Some cards do not go to detect state even after de-asserting
+-		 * PERST#. So, de-assert LTSSM to bring link to detect state.
+-		 */
+-		data = readl(pcie->appl_base + APPL_CTRL);
+-		data &= ~APPL_CTRL_LTSSM_EN;
+-		writel(data, pcie->appl_base + APPL_CTRL);
 -
- 	ret = tegra_pcie_init_controller(pcie);
- 	if (ret < 0) {
- 		dev_err(dev, "Failed to initialize controller: %d\n", ret);
-@@ -2122,6 +2116,19 @@ static int tegra_pcie_dw_probe(struct platform_device *pdev)
- 	pp = &pci->pp;
- 	pp->num_vectors = MAX_MSI_IRQS;
+ 		err = readl_poll_timeout_atomic(pcie->appl_base + APPL_DEBUG,
+ 						data,
+ 						((data &
+-						APPL_DEBUG_LTSSM_STATE_MASK) >>
+-						APPL_DEBUG_LTSSM_STATE_SHIFT) ==
+-						LTSSM_STATE_PRE_DETECT,
+-						1, LTSSM_TIMEOUT);
++						APPL_DEBUG_LTSSM_STATE_MASK) ==
++						LTSSM_STATE_DETECT_QUIET) ||
++						((data &
++						APPL_DEBUG_LTSSM_STATE_MASK) ==
++						LTSSM_STATE_DETECT_ACT) ||
++						((data &
++						APPL_DEBUG_LTSSM_STATE_MASK) ==
++						LTSSM_STATE_PRE_DETECT_QUIET) ||
++						((data &
++						APPL_DEBUG_LTSSM_STATE_MASK) ==
++						LTSSM_STATE_DETECT_WAIT),
++						LTSSM_DELAY, LTSSM_TIMEOUT);
+ 		if (err)
+ 			dev_info(pcie->dev, "Link didn't go to detect state\n");
++
++		/*
++		 * Deassert LTSSM state to stop the state toggling between
++		 * polling and detect.
++		 */
++		data = readl(pcie->appl_base + APPL_CTRL);
++		data &= ~APPL_CTRL_LTSSM_EN;
++		writel(data, pcie->appl_base + APPL_CTRL);
+ 	}
+ 	/*
+ 	 * DBI registers may not be accessible after this as PLL-E would be
+@@ -1698,19 +1711,29 @@ static void pex_ep_event_pex_rst_assert(struct tegra_pcie_dw *pcie)
+ 	if (pcie->ep_state == EP_STATE_DISABLED)
+ 		return;
  
-+	ret = pinctrl_pm_select_default_state(dev);
-+	if (ret < 0) {
-+		const char *level = KERN_ERR;
+-	/* Disable LTSSM */
++	ret = readl_poll_timeout(pcie->appl_base + APPL_DEBUG, val,
++				 ((val & APPL_DEBUG_LTSSM_STATE_MASK) ==
++				 LTSSM_STATE_DETECT_QUIET) ||
++				 ((val & APPL_DEBUG_LTSSM_STATE_MASK) ==
++				 LTSSM_STATE_DETECT_ACT) ||
++				 ((val & APPL_DEBUG_LTSSM_STATE_MASK) ==
++				 LTSSM_STATE_PRE_DETECT_QUIET) ||
++				 ((val & APPL_DEBUG_LTSSM_STATE_MASK) ==
++				 LTSSM_STATE_DETECT_WAIT) ||
++				 ((val & APPL_DEBUG_LTSSM_STATE_MASK) ==
++				 LTSSM_STATE_L2_IDLE),
++				 LTSSM_DELAY, LTSSM_TIMEOUT);
++	if (ret)
++		dev_err(pcie->dev, "LTSSM state: 0x%x timeout: %d\n", val, ret);
 +
-+		if (ret == -EPROBE_DEFER)
-+			level = KERN_DEBUG;
-+
-+		dev_printk(level, dev,
-+			   "Failed to configure sideband pins: %d\n",
-+			   ret);
-+		return ret;
-+	}
-+
- 	ret = tegra_pcie_dw_parse_dt(pcie);
- 	if (ret < 0) {
- 		const char *level = KERN_ERR;
++	/*
++	 * Deassert LTSSM state to stop the state toggling between
++	 * polling and detect.
++	 */
+ 	val = appl_readl(pcie, APPL_CTRL);
+ 	val &= ~APPL_CTRL_LTSSM_EN;
+ 	appl_writel(pcie, val, APPL_CTRL);
+ 
+-	ret = readl_poll_timeout(pcie->appl_base + APPL_DEBUG, val,
+-				 ((val & APPL_DEBUG_LTSSM_STATE_MASK) >>
+-				 APPL_DEBUG_LTSSM_STATE_SHIFT) ==
+-				 LTSSM_STATE_PRE_DETECT,
+-				 1, LTSSM_TIMEOUT);
+-	if (ret)
+-		dev_err(pcie->dev, "Failed to go Detect state: %d\n", ret);
+-
+ 	reset_control_assert(pcie->core_rst);
+ 
+ 	tegra_pcie_disable_phy(pcie);
 -- 
 2.17.1
 
