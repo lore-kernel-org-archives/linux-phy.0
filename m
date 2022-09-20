@@ -4,35 +4,35 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E1ADAC54EE9
-	for <linux-phy@archiver.kernel.org>; Tue, 20 Sep 2022 07:57:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 51B45ECAAD8
+	for <linux-phy@archiver.kernel.org>; Tue, 20 Sep 2022 07:57:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=M7NVydcFwiDngZBcK/r/D8jkKj6lZ0rz9onbRt+uUm4=; b=pGUEdhkPzjvlpD
-	par/xuwS3Ew3aFPqu5JUszwr5Exqwaqo1PzK7tBFohxgpUCzKbbSYVk7y8NBhui9g1BrZ2MC/28Wz
-	zo/1QjpO5GfLMltz2Zzg6eqadseVrPALEAJayYlESUVfTfHHMZXe1aCirN5w0mKGqz7iyqgC75H2h
-	FqAex/xvrYHgsFZDYXpoStNs1iNhX48eZZoTRM6f+WfyTB2HhACJkL54XyS+mePfdaYkUa9IixXPT
-	J+dbgjg+94DhwIV6rjZPJXqWpx5GAGM0XDqvjciUYZlf9nf5anMobPZRuo2WJYxdXgA8oWp4Rao1s
-	r8hj7s515tWRwcCJ9TDw==;
+	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=pahfyV4PQSw/VxOzYHZGb+z4WK5aoiWFQqirr7HCZ/0=; b=d6txaMhvM5jZmR
+	bvVfqZiCOWUAMnnM8kJPOD6VtEknP7lg2qdzxUgnlZcetmm0gKl3Xuox4OR6P0Eaht+teg2A6CsgX
+	EiBoDCtyJEXi74Dk47a9YRZdOgmeSVNmiMA85JkFZ2LWvTTFmZVhNErYC9o+lchV6AuFNpEMyJMT7
+	Rch3vZ6BGtWzKqAk9PQkxUdvxhP59VF44KSxMRtL7/mUOWfsweHf79IBxfQX8wvTRlky5mCEmpVkQ
+	RvoNiRZXh/S09dsHBVRMbfE630yyB75/puzz/DtSjwzqYjsKtxKl2ZAwIT7FHrU8ARO4MEkioNTVy
+	rClox/OkzoxU7dgqXgJQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oaY87-001X0l-9f; Tue, 20 Sep 2022 07:57:19 +0000
+	id 1oaY8K-001X6Y-MY; Tue, 20 Sep 2022 07:57:32 +0000
 Received: from inva021.nxp.com ([92.121.34.21])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oaY7t-001Wtd-Oe; Tue, 20 Sep 2022 07:57:07 +0000
+	id 1oaY7x-001WvE-Fn; Tue, 20 Sep 2022 07:57:10 +0000
 Received: from inva021.nxp.com (localhost [127.0.0.1])
-	by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 609ED225F6F;
-	Tue, 20 Sep 2022 09:57:03 +0200 (CEST)
+	by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 4BBED225F6C;
+	Tue, 20 Sep 2022 09:57:08 +0200 (CEST)
 Received: from aprdc01srsp001v.ap-rdc01.nxp.com (aprdc01srsp001v.ap-rdc01.nxp.com [165.114.16.16])
-	by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 15AA4225F6C;
-	Tue, 20 Sep 2022 09:57:03 +0200 (CEST)
+	by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 00147225F75;
+	Tue, 20 Sep 2022 09:57:07 +0200 (CEST)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net [10.192.224.44])
-	by aprdc01srsp001v.ap-rdc01.nxp.com (Postfix) with ESMTP id 5472B180222C;
-	Tue, 20 Sep 2022 15:56:58 +0800 (+08)
+	by aprdc01srsp001v.ap-rdc01.nxp.com (Postfix) with ESMTP id A00781802201;
+	Tue, 20 Sep 2022 15:57:02 +0800 (+08)
 From: Richard Zhu <hongxing.zhu@nxp.com>
 To: p.zabel@pengutronix.de,
 	l.stach@pengutronix.de,
@@ -50,15 +50,19 @@ Cc: linux-phy@lists.infradead.org,
 	linux-arm-kernel@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
 	kernel@pengutronix.de,
-	linux-imx@nxp.com
-Subject: [PATCH v8 0/2] Add the iMX8MP PCIe support
-Date: Tue, 20 Sep 2022 15:38:16 +0800
-Message-Id: <1663659498-5180-1-git-send-email-hongxing.zhu@nxp.com>
+	linux-imx@nxp.com,
+	Richard Zhu <hongxing.zhu@nxp.com>
+Subject: [PATCH v8 1/2] dt-binding: phy: Add iMX8MP PCIe PHY binding
+Date: Tue, 20 Sep 2022 15:38:17 +0800
+Message-Id: <1663659498-5180-2-git-send-email-hongxing.zhu@nxp.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1663659498-5180-1-git-send-email-hongxing.zhu@nxp.com>
+References: <1663659498-5180-1-git-send-email-hongxing.zhu@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220920_005705_971196_690F4DDC 
-X-CRM114-Status: GOOD (  11.19  )
+X-CRM114-CacheID: sfid-20220920_005709_689028_F83452D9 
+X-CRM114-Status: UNSURE (   8.48  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,58 +80,70 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Based on the 6.0-rc1 of the pci/next branch. 
-This series adds the i.MX8MP PCIe support and tested on i.MX8MP
-EVK board when one PCIe NVME device is used.
+Add i.MX8MP PCIe PHY binding.
+On iMX8MM, the initialized default value of PERST bit(BIT3) of
+SRC_PCIEPHY_RCR is 1b'1.
+But i.MX8MP has one inversed default value 1b'0 of PERST bit.
 
-- i.MX8MP PCIe has reversed initial PERST bit value refer to i.MX8MQ/i.MX8MM.
-  Add the PHY PERST explicitly for i.MX8MP PCIe PHY.
-- Add the i.MX8MP PCIe PHY support in the i.MX8M PCIe PHY driver.
-  And share as much as possible codes with i.MX8MM PCIe PHY.
-- Add the i.MX8MP PCIe support in binding document, DTS files, and PCIe
-  driver.
+And the PERST bit should be kept 1b'1 after power and clocks are stable.
+So add one more PERST explicitly for i.MX8MP PCIe PHY.
 
-Main changes v7-->v8:
-- Add the Reviewed-by tag, no other changes.
-  Only two patches in v8, Since the other patches had been merged by
-  Philipp/Shawn/Lorenzo.
+Signed-off-by: Richard Zhu <hongxing.zhu@nxp.com>
+Tested-by: Marek Vasut <marex@denx.de>
+Tested-by: Richard Leitner <richard.leitner@skidata.com>
+Tested-by: Alexander Stein <alexander.stein@ew.tq-group.com>
+Reviewed-by: Lucas Stach <l.stach@pengutronix.de>
+Reviewed-by: Rob Herring <robh@kernel.org>
+---
+ .../bindings/phy/fsl,imx8-pcie-phy.yaml          | 16 +++++++++++++---
+ 1 file changed, 13 insertions(+), 3 deletions(-)
 
-Main changes v6-->v7:
-- Add "Reviewed-by: Lucas Stach <l.stach@pengutronix.de>" into first three
-  patches.
-- Use "const *char" to replace the static allocation.
+diff --git a/Documentation/devicetree/bindings/phy/fsl,imx8-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/fsl,imx8-pcie-phy.yaml
+index b6421eedece3..692783c7fd69 100644
+--- a/Documentation/devicetree/bindings/phy/fsl,imx8-pcie-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/fsl,imx8-pcie-phy.yaml
+@@ -16,6 +16,7 @@ properties:
+   compatible:
+     enum:
+       - fsl,imx8mm-pcie-phy
++      - fsl,imx8mp-pcie-phy
+ 
+   reg:
+     maxItems: 1
+@@ -28,11 +29,16 @@ properties:
+       - const: ref
+ 
+   resets:
+-    maxItems: 1
++    minItems: 1
++    maxItems: 2
+ 
+   reset-names:
+-    items:
+-      - const: pciephy
++    oneOf:
++      - items:          # for iMX8MM
++          - const: pciephy
++      - items:          # for IMX8MP
++          - const: pciephy
++          - const: perst
+ 
+   fsl,refclk-pad-mode:
+     description: |
+@@ -60,6 +66,10 @@ properties:
+     description: A boolean property indicating the CLKREQ# signal is
+       not supported in the board design (optional)
+ 
++  power-domains:
++    description: PCIe PHY  power domain (optional).
++    maxItems: 1
++
+ required:
+   - "#phy-cells"
+   - compatible
+-- 
+2.25.1
 
-Main changes v5-->v6:
-- To avoid code duplication when find the gpr syscon regmap, add the
-  gpr compatible into the drvdata.
-- Add one missing space before one curly brace in 3/7 of v5 series.
-- 4/7 of v5 had been applied by Phillipp, thanks. For ease of tests, still
-  keep it in v6.
-
-Main changes v4-->v5:
-- Use Lucas' approach, let blk-ctrl driver do the hsio-mix resets.
-- Fetch the iomuxc-gpr regmap by the different phandles.
-
-Main changes v3-->v4:
-- Regarding Phillipp's suggestions, add fix tag into the first commit.
-- Add Reviewed and Tested tags.
-
-Main changes v2-->v3:
-- Fix the schema checking error in the PHY dt-binding patch.
-- Inspired by Lucas, the PLL configurations might not required when
-  external OSC is used as PCIe referrence clock. It's true. Remove all
-  the HSIO PLL bit manipulations, and PCIe works fine on i.MX8MP EVK board
-  with one NVME device is used.
-- Drop the #4 patch of v2, since it had been applied by Rob.
-
-Main changes v1-->v2:
-- It's my fault forget including Vinod, re-send v2 after include Vinod
-  and linux-phy@lists.infradead.org.
-- List the basements of this patch-set. The branch, codes changes and so on.
-- Clean up some useless register and bit definitions in #3 patch.
-
-[PATCH v8 1/2] dt-binding: phy: Add iMX8MP PCIe PHY binding
-[PATCH v8 2/2] phy: freescale: imx8m-pcie: Add i.MX8MP PCIe PHY
 
 -- 
 linux-phy mailing list
