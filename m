@@ -4,78 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7B75DC6FA8B
-	for <linux-phy@archiver.kernel.org>; Tue, 20 Sep 2022 12:02:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1BA08ECAAD8
+	for <linux-phy@archiver.kernel.org>; Tue, 20 Sep 2022 12:12:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=v1ZvJj8gf7hG9kd1idVhk5PLMitkegV1nOQ3aTpxFFE=; b=OcXC1vUA3x512B
-	ZqQCl2gVM/EOMM6yLVRtxjoFGw2qf6DZsTjxKTj04efV0NN3Y+TIR/EMCJYsYDkm464rh9GksApuW
-	+SC0dRNeBw8DEImL6sgU9Ygei0P0A8uOzHmNFKjN5TbPcIbxmrDEGT8TZDBCCurviVCUYFsz1a2ba
-	50N+q3Lv6MSLo9oZ30P2RpQp1fDxCqLvDSCX2F8+8IeGRip2Hlho0mlEOTjK+DNQFupLcDdKOFMK7
-	aOVPO+CJda2xcW/+5C6h5tlFdjN07SrNs0w2JGl+OXf9BKDmaSqZ3ye4orMyjgiSjQb9Y3PmOdON8
-	L4krDuw2tmVZEZ3Z8I9w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=sWFHid5IzipEmssUtYfGUuupRQjTlzqeo7yJwNaXaYg=; b=nnOgfDvLfL/Dbw
+	FmLjRM8PaxD/1zHGnKxBBqM3C13ExQepQW1IudIuzAkQHBY3COSjrLGW13k67enVxJ66GkCVLh0vp
+	7/aQD7PxQj4JLhpX4+wRT6U1ubsSPTtc00VOBb/CYhp/qu7+6P05zzKI/lmrkVXh1VKN0dTJauWMX
+	qSNV0CkKc4dAc/kYWfyp55ZaFIqnTw+E8R9012pKcDAuvx6lNAVDsgf7fgZL7RXVLsbQP5+KAK/4O
+	6lLiuzDcwUukz9f3+z49H9xaB5+Fc+efCsd6Dc19rRFyvMD7TcHb/44RRsq4jqs+8ugoNOhzQVMAy
+	EOUJjAtA1rE4sTLVKpug==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oabxi-003Z1y-PL; Tue, 20 Sep 2022 12:02:50 +0000
-Received: from mail-ej1-x632.google.com ([2a00:1450:4864:20::632])
+	id 1oac6o-003baf-I4; Tue, 20 Sep 2022 12:12:14 +0000
+Received: from ams.source.kernel.org ([145.40.68.75])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oabxf-003Z0B-LO
-	for linux-phy@lists.infradead.org; Tue, 20 Sep 2022 12:02:49 +0000
-Received: by mail-ej1-x632.google.com with SMTP id 13so5606424ejn.3
-        for <linux-phy@lists.infradead.org>; Tue, 20 Sep 2022 05:02:45 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=raspberrypi.com; s=google;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date;
-        bh=MkcK4zK+tjbZZvzTepuJ6OrH+0JrK/IcroIHFcHOeiA=;
-        b=TXzYpl61qpkkKwlh/oMApLrqEMNnGSWfkSHv0+InNoji1gpsl0gMOiAyhcKF0wFNmZ
-         RBgSEUTAByWFS9T4kYxCgIkEukPXPM9XZOobBUKmUZtZX8EdT/e7sTHvpNZfoZhvxAvt
-         Y55cPndWrEIw3sMeT5WGZi6Br2k4G4Lc0UwJ5PpND1kKQX5JLWCxUEDuIUsTnUhKMEzw
-         EJgejT77D02sRv/iH5WrOd0ua/D/eyzjD3Qt0Q/xNxo6cB+hTVrAixJNRP7HwS0I08bm
-         kU7+yRdQ67KXMx4iGioTpuIFMMjSZmKWEDz0DsMqM7ci10aCD3M1pmRahuFKVCPCc0sY
-         1f5w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date;
-        bh=MkcK4zK+tjbZZvzTepuJ6OrH+0JrK/IcroIHFcHOeiA=;
-        b=MuMHphvvm86GNOBQq/RIla/h1ql2VTf3lRmBgTirFbW7+4JFeN6H6836i4rlWwhtZd
-         guW1pZZK8OplVypuIS7SR5mVnCKsC3bqiOi27RVSMqLy2WC1oWOTfOVFtZ7jtXXIZ1w2
-         XwIYsGI3aYfaGuwNpKqRu6vp7k46Y/JLGO/7nCKdbrdSDQ3N66IvzWGPJHDpB+/QPMqR
-         cxE9sfBEPwcortGN+0UT9eaLk88yDiVeMz5bSAju66ZErgTskMKmWEjnaLoE1+czZUb8
-         7wwuHfI955bKATn4nP+YxSMRIgAOEv3klYdi7csd2BwT69xpNBSwQ0bFuO0OcdHGErTh
-         KG9Q==
-X-Gm-Message-State: ACrzQf0VdGbtBpJR2fGFmD2gU+DZq8Fb8+VyR4G+62fTPSQVCSWDDy4/
-	XbMF26uWPGkv37Ms7sh81Xj390WSUAntlriKTK5Xlg==
-X-Google-Smtp-Source: AMsMyM59qNJxAT+EW6Bax/KhZRBtSKiJwgOGBu9PBMmRtuF4aEP0GfsoYN425U/jmViNSEzZcZy6XkYdfSesv/S4VBY=
-X-Received: by 2002:a17:907:3da3:b0:780:3d46:cbe3 with SMTP id
- he35-20020a1709073da300b007803d46cbe3mr17063761ejc.175.1663675364874; Tue, 20
- Sep 2022 05:02:44 -0700 (PDT)
+	id 1oac6m-003bZA-63
+	for linux-phy@lists.infradead.org; Tue, 20 Sep 2022 12:12:13 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by ams.source.kernel.org (Postfix) with ESMTPS id 7D327B82007;
+	Tue, 20 Sep 2022 12:12:10 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 07C6FC433C1;
+	Tue, 20 Sep 2022 12:12:09 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1663675929;
+	bh=jvuFGIULX8oXMR4ltvFXg4hxYJPD0wE9EXhLXqHl1cs=;
+	h=From:To:Cc:Subject:Date:From;
+	b=KW14w/s6JVBGAwySzV0uhC5Hvn7Tx4NKADW5+4wEhiQyc22LyRuKfWOnXh6z+/wus
+	 YAmZtTLqQwxffoejMPq67n8n8TEkfOeEnEsHZRgHaYOy7kpfrwBlBFStx89x8qWoIz
+	 yL4KJJUPRB0iOUTDg19x6fnAy1renU0cgcKN+nBnvaYBjSLbnDetTdD0of/G9c4fyZ
+	 6SIGKS3qNUL3Wc2zp+hLQt6cjl0gdNa0PFzRNoLyvyHmj9jR4Zs/ZrzBEZTxn7YToE
+	 Y+J6UJ6th3fKK+nU7gzlyXA1c80yxo/qyK00qZn5Pw38VNUupGO/AW/sbailk68z78
+	 9IlJ/+RB+h4hw==
+Received: by pali.im (Postfix)
+	id 3ACDE97E; Tue, 20 Sep 2022 14:12:06 +0200 (CEST)
+From: =?UTF-8?q?Pali=20Roh=C3=A1r?= <pali@kernel.org>
+To: Miquel Raynal <miquel.raynal@bootlin.com>,
+	Kishon Vijay Abraham I <kishon@ti.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Shinichiro Kawasaki <shinichiro.kawasaki@wdc.com>
+Cc: linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH] phy: marvell: phy-mvebu-a3700-comphy: Reset COMPHY registers before USB 3.0 power on
+Date: Tue, 20 Sep 2022 14:11:54 +0200
+Message-Id: <20220920121154.30115-1-pali@kernel.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-References: <20220916134535.128131-1-m.felsch@pengutronix.de>
- <20220916134535.128131-5-m.felsch@pengutronix.de> <YyhktzmcgXKnrMFU@pendragon.ideasonboard.com>
- <20220919171142.6av6ap5gwweldado@pengutronix.de> <Yyio06jhK13BiNiP@pendragon.ideasonboard.com>
- <20220920104854.2wugqxffkf4qeib6@pengutronix.de> <Yymgr3pdbNWq6hn0@pendragon.ideasonboard.com>
-In-Reply-To: <Yymgr3pdbNWq6hn0@pendragon.ideasonboard.com>
-From: Dave Stevenson <dave.stevenson@raspberrypi.com>
-Date: Tue, 20 Sep 2022 13:02:30 +0100
-Message-ID: <CAPY8ntCde+0ib_T2XNfyZ4EG0-wAc_16HLEMmdCj=-M=hLVTaw@mail.gmail.com>
-Subject: Re: [PATCH v2 4/4] media: tc358746: add Toshiba TC358746 Parallel to
- CSI-2 bridge driver
-To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-Cc: Marco Felsch <m.felsch@pengutronix.de>, mchehab@kernel.org, robh+dt@kernel.org, 
-	krzysztof.kozlowski+dt@linaro.org, kishon@ti.com, vkoul@kernel.org, 
-	sakari.ailus@linux.intel.com, hverkuil@xs4all.nl, jacopo@jmondi.org, 
-	kieran.bingham+renesas@ideasonboard.com, linux-media@vger.kernel.org, 
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
-	linux-phy@lists.infradead.org, kernel@pengutronix.de
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220920_050247_848653_805BAF58 
-X-CRM114-Status: GOOD (  48.32  )
+X-CRM114-CacheID: sfid-20220920_051212_384474_837639E2 
+X-CRM114-Status: GOOD (  14.17  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,133 +70,45 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Laurent & Marco
-
-On Tue, 20 Sept 2022 at 12:15, Laurent Pinchart
-<laurent.pinchart@ideasonboard.com> wrote:
->
-> Hi Marco,
->
-> On Tue, Sep 20, 2022 at 12:48:54PM +0200, Marco Felsch wrote:
-> > On 22-09-19, Laurent Pinchart wrote:
-> > > On Mon, Sep 19, 2022 at 07:11:42PM +0200, Marco Felsch wrote:
-> > > > On 22-09-19, Laurent Pinchart wrote:
-> > > > > On Fri, Sep 16, 2022 at 03:45:35PM +0200, Marco Felsch wrote:
-> > > > > > Adding support for the TC358746 parallel <-> MIPI CSI bridge. This chip
-> > > > > > supports two operating modes:
-> > > > > >   1st) parallel-in -> mipi-csi out
-> > > > > >   2nd) mipi-csi in -> parallel out
-> > > > > >
-> > > > > > This patch only adds the support for the 1st mode.
-> > > > > >
-> > > > > > Signed-off-by: Marco Felsch <m.felsch@pengutronix.de>
-> > > > > > ---
-> > > > > > Changelog:
-> > > > > >
-> > > > > > v2:
-> > > > > > - use the correct CID_LINK_FREQ control to query the sensor_pclk_rate
-> > > > > > - remove now not needed tc358746_link_setup() and
-> > > > > >   struct v4l2_ctrl sensor_pclk_ctrl
-> > > > > > - call v4l2_subdev_link_validate_default() during link validation
-> > > > > > - remove MEDIA_BUS_FMT_GBR888_1X24/YUV444 format support
-> > > > > > - use subdev active_state API
-> > > > > > - replace own .get_fmt with v4l2_subdev_get_fmt
-> > > > > > - remove unnecessary pad checks
-> > > > > > - restructure tc358746_get_format_by_code() if-case
-> > > > > > - move apply_dphy_config|apply_misc_config from resume intos s_stream
-> > > > > > - use goto in s_stream enable case
-> > > > > > - fix error handling in suspend/resume
-> > > > > > - split probe() into more sub-functions
-> > > > > > - use dev_dbg() for printing successful probe
-> > > > > >
-> > > > > >  drivers/media/i2c/Kconfig    |   17 +
-> > > > > >  drivers/media/i2c/Makefile   |    1 +
-> > > > > >  drivers/media/i2c/tc358746.c | 1682 ++++++++++++++++++++++++++++++++++
-<snip>
-> > > > > > +
-> > > > > > +     sensor = media_entity_to_v4l2_subdev(link->source->entity);
-> > > > > > +     sensor_pclk_rate = v4l2_get_link_freq(sensor->ctrl_handler, 0, 0);
-> > > > >
-> > > > > Shouldn't you set the last two arguments to non-zero values, to support
-> > > > > sources that only implement the V4L2_CID_PIXEL_RATE control ?
-> > > >
-> > > > Nope, I don't wanna support PIXEL_RATE right now. This can be changed
-> > > > later I think.
-> > >
-> > > Would it be hard to support it already, given that the
-> > > v4l2_get_link_freq() should make it easier ? That would avoid having to
-> > > come back to this code later.
-> >
-> > I had the pixel-rate first, then Jacobo mentioned (correctly) that my
-> > usage of pixel-rate was wrong. Supporting PIXEL_RATE as well would add
-> > more complexity because we need to take core of the mbus format to get
-> > the correct mul/div settings.
->
-> That's right, but the required information could be stored in the
-> tc358746_format structure, can't it ?
->
-> > Also I think that only a few drivers
-> > implementing the PIXEL_RATE correctly in case of parallel sensors _and_
-> > this is just a fallback which will print a warning if triggered. All I
-> > want to do here is: "give me the link frequence" :) If there are drivers
-> > not supporting this but support PIXEL_RATE it shouldn't be that hard for
-> > those driver to add the LINK_FREQ ctrl. This would also improve the
-> > kernel quality since there are now heuristics and no warnings printed.
-> >
-> > Is it okay, to keep it simple and just go with LINK_FREQ. for now?
->
-> OK, I won't insist much.
->
-> > > > > I'd also name the variable source_link_freq, as it may not be a sensor,
-> > > > > and it's a link frequency, not a pixel clock rate.
-> > > >
-> > > > In parallel case (which is the only supported right now) the pclk is the
-> > > > link_freq. but I can change it of course.
-> > >
-> > > I read "pclk" as "pixel clock". That makes me think of
-> > > V4L2_CID_PIXEL_RATE, which indicates the number of pixels per second.
-> > > With YUV 4:2:2 2X8 media bus formats, the link frequency will be twice
-> > > the pixel rate.
-> >
-> > Hm.. the link frequency is the frequency on the physical parallel bus,
-> > as far as I understood the ctrl. In parallel use-case this is pixelclk.
-> >
-> > Also according PIXEL_RATE documentation, it is defined as
-> > pixel-per-second. For YUV 4:2:2 those this mean mean:
-> >  - y1 == 1st pixel,
-> >  - u1 == 2nd pixel,
-> >  - y2 == 3rd pixel,
-> >  - ...
->
-> YUYV8_2X8 transfers Y0, U0, Y1, V0, Y2, U2, Y3, V2, ... You need two
-> cycles per pixel. That's why sensor_pclk_rate can be misleading, as it
-> may refer to the sensor pixel sampling clock, or the parallel bus clock,
-> and those two are different. It's just a variable naming issue to avoid
-> confusion.
->
-> > All I want is to get the rate/frequency of the physical bus from the
-> > input device :) According my above explanation, could we please go with
-> > "the LINK_FREQ ctrl only" since this would avoid possible kernel
-> > warnings and is the most accurate one.
-
-This is a bridge, so surely PIXEL_RATE is a property and control on
-the source to the bridge, not on the bridge itself.
-PIXEL_RATE isn't going to tell you much without HBLANK and VBLANK as
-well, and those also belong to the source.
-
-LINK_FREQ is a property that is only relevant for the output of the
-bridge, and therefore it makes sense to be a control on the bridge (it
-can't be represented elsewhere).
-
-Just my 2p.
-  Dave
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VHVycmlzIE1PWCBib2FyZCB3aXRoIG9sZGVyIEFSTSBUcnVzdGVkIEZpcm13YXJlIHZlcnNpb24g
+djEuNSBpcyBub3QgYWJsZQp0byBkZXRlY3QgYW55IFVTQiAzLjAgZGV2aWNlIGNvbm5lY3RlZCB0
+byBVU0ItQSBwb3J0IG9uIE1veC1BIG1vZHVsZSBhZnRlcgpjb21taXQgMGE2ZmM3MGQ3NmJkICgi
+cGh5OiBtYXJ2ZWxsOiBwaHktbXZlYnUtYTM3MDAtY29tcGh5OiBSZW1vdmUgYnJva2VuCnJlc2V0
+IHN1cHBvcnQiKS4gT24gdGhlIG90aGVyIGhhbmQgVVNCIDIuMCBkZXZpY2VzIGNvbm5lY3RlZCB0
+byB0aGUgc2FtZQpVU0ItQSBwb3J0IGFyZSB3b3JraW5nIGZpbmUuCgpJdCBsb29rcyBhcyBpZiB0
+aGUgb2xkZXIgZmlybXdhcmUgY29uZmlndXJlcyBDT01QSFkgcmVnaXN0ZXJzIGZvciBVU0IgMy4w
+CnNvbWVob3cgaW5jb21wYXRpYmx5IGZvciBrZXJuZWwgZHJpdmVyLiBFeHBlcmltZW50cyBzaG93
+IHRoYXQgcmVzZXR0aW5nCkNPTVBIWSByZWdpc3RlcnMgdmlhIHNldHRpbmcgU0ZUX1JTVCBhdXRv
+LWNsZWFyaW5nIGJpdCBpbiBDT01QSFlfU0ZUX1JFU0VUCnJlZ2lzdGVyIGZpeGVzIHRoaXMgaXNz
+dWUuCgpSZXNldCB0aGUgQ09NUEhZIGluIG12ZWJ1X2EzNzAwX2NvbXBoeV91c2IzX3Bvd2VyX29u
+KCkgZnVuY3Rpb24gYXMgYSBmaXJzdApzdGVwIGFmdGVyIHNlbGVjdGluZyBDT01QSFkgbGFuZSBh
+bmQgVVNCIDMuMCBmdW5jdGlvbi4gV2l0aCB0aGlzIGNoYW5nZQpUdXJyaXMgTU9YIGJvYXJkIGNh
+biBzdWNjZXNzZnVsbHkgZGV0ZWN0IFVTQiAzLjAgZGV2aWNlcyBhZ2Fpbi4KCkJlZm9yZSB0aGUg
+YWJvdmUgbWVudGlvbmVkIGNvbW1pdCB0aGlzIHJlc2V0IHdhcyBpbXBsZW1lbnRlZCBpbiBQSFkg
+cmVzZXQKbWV0aG9kLCBzbyB0aGlzIGlzIHRoZSByZWFzb24gd2h5IHRoZXJlIHdhcyBubyBpc3N1
+ZSB3aXRoIG9sZGVyIGZpcm13YXJlCnZlcnNpb24gdGhlbi4KCkZpeGVzOiAwYTZmYzcwZDc2YmQg
+KCJwaHk6IG1hcnZlbGw6IHBoeS1tdmVidS1hMzcwMC1jb21waHk6IFJlbW92ZSBicm9rZW4gcmVz
+ZXQgc3VwcG9ydCIpClJlcG9ydGVkLWJ5OiBNYXJlayBCZWjDum4gPGthYmVsQGtlcm5lbC5vcmc+
+ClNpZ25lZC1vZmYtYnk6IFBhbGkgUm9ow6FyIDxwYWxpQGtlcm5lbC5vcmc+Ci0tLQpTaGluaWNo
+aXJvLCBjb3VsZCB5b3UgcGxlYXNlIGNoZWNrIHRoYXQgYWxsIFVTQiBmdW5jdGlvbmFsaXR5IHN0
+aWxsCndvcmtzIGNvcnJlY3RseSBvbiB5b3VyIGJvYXJkPwotLS0KIGRyaXZlcnMvcGh5L21hcnZl
+bGwvcGh5LW12ZWJ1LWEzNzAwLWNvbXBoeS5jIHwgMyArKysKIDEgZmlsZSBjaGFuZ2VkLCAzIGlu
+c2VydGlvbnMoKykKCmRpZmYgLS1naXQgYS9kcml2ZXJzL3BoeS9tYXJ2ZWxsL3BoeS1tdmVidS1h
+MzcwMC1jb21waHkuYyBiL2RyaXZlcnMvcGh5L21hcnZlbGwvcGh5LW12ZWJ1LWEzNzAwLWNvbXBo
+eS5jCmluZGV4IDY3NzEyYzc3ZDgwNi4uZDY0MWIzNDVhZmEzIDEwMDY0NAotLS0gYS9kcml2ZXJz
+L3BoeS9tYXJ2ZWxsL3BoeS1tdmVidS1hMzcwMC1jb21waHkuYworKysgYi9kcml2ZXJzL3BoeS9t
+YXJ2ZWxsL3BoeS1tdmVidS1hMzcwMC1jb21waHkuYwpAQCAtODI2LDYgKzgyNiw5IEBAIG12ZWJ1
+X2EzNzAwX2NvbXBoeV91c2IzX3Bvd2VyX29uKHN0cnVjdCBtdmVidV9hMzcwMF9jb21waHlfbGFu
+ZSAqbGFuZSkKIAlpZiAocmV0KQogCQlyZXR1cm4gcmV0OwogCisJLyogQ09NUEhZIHJlZ2lzdGVy
+IHJlc2V0IChjbGVhcmVkIGF1dG9tYXRpY2FsbHkpICovCisJY29tcGh5X2xhbmVfcmVnX3NldChs
+YW5lLCBDT01QSFlfU0ZUX1JFU0VULCBTRlRfUlNULCBTRlRfUlNUKTsKKwogCS8qCiAJICogMC4g
+U2V0IFBIWSBPVEcgQ29udHJvbCgweDVkMDM0KSwgYml0IDQsIFBvd2VyIHVwIE9URyBtb2R1bGUg
+VGhlCiAJICogcmVnaXN0ZXIgYmVsb25nIHRvIFVUTUkgbW9kdWxlLCBzbyBpdCBpcyBzZXQgaW4g
+VVRNSSBwaHkgZHJpdmVyLgotLSAKMi4yMC4xCgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QK
+bGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3Jn
+L21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
