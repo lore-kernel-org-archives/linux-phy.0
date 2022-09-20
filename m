@@ -4,38 +4,40 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0EB46ECAAD8
-	for <linux-phy@archiver.kernel.org>; Tue, 20 Sep 2022 15:27:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E5DE6C6FA82
+	for <linux-phy@archiver.kernel.org>; Tue, 20 Sep 2022 17:32:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GmyJ/oJ35/yzDkDZZj5mseB3+EkpmxdKNhsKYrEMvDU=; b=ldZjSnq6YRkPaU
-	+qljix3cKiP3jjh184XBmXaUP1XGh51BshOlir2XLzaJUDwT4LzU0qIdoIUC/R27/Su6dusA7ezVm
-	66uniZpchYz/AggYx9F35kBABJxMSp1EjQUqBYt/DPVJPLPcS044cFwUw1sMyF9UVyYkNjIhxN44f
-	5RrIOXqrPJI9iFauIoyTSX4HRa0SSrr+pOOEnVdkDmAHPZO8QnJuLSifYSOQFQlr62edIJ39CfFel
-	GhlmUZL1uvksVPDgMoKyr15scHNDzwwn1cCk0M5Y1JJJsljPqy1dnlglfeUbzIDNS1m7cpGJXrhfz
-	HNroy8KcFYjuYGFvTBMw==;
+	List-Owner; bh=mrp6hZqpOfRvbFVOSNsbVIFKcxodoY+ZVxOpPHkzQTc=; b=qNG/0PynVuZfvA
+	C9HpltQAlA3ULFAjCPnIvnepBF70hEGGI/AIVLtvmN3vG1Kths/8TwS8Im/4nOjDXcMm8amQKLkjO
+	Pr3S7pB/gCv9f+34WYc+Ki5v2/ZC0jHuhedtxAKpbzwPdRmVF+AL7huRCRs88WZdq7d3RthnA2U7g
+	7udFM7USZPbfTP16kCY0722dzoBkesKvVwJ1god0U+GXwdi4XikZfbkCvw0o9eme1L9dxsXwxyKRv
+	8Uc9PnnLmCX4p8tC/hh8YebivPX1+cwIqCi9Fr2O7Qwm6TQ4uRGezVT6b7m7mtS+qgAp1QT4n5AVt
+	AxXMlUBx8/cag8MbTZvw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oaf9N-004rii-6a; Tue, 20 Sep 2022 15:27:05 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1oah7C-005Uu5-Vj; Tue, 20 Sep 2022 17:32:59 +0000
+Received: from perceval.ideasonboard.com ([213.167.242.64])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oaf9C-004rdA-Cn
-	for linux-phy@lists.infradead.org; Tue, 20 Sep 2022 15:26:59 +0000
-Received: from ptx.hi.pengutronix.de ([2001:67c:670:100:1d::c0])
-	by metis.ext.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
-	(Exim 4.92)
-	(envelope-from <mfe@pengutronix.de>)
-	id 1oaf8q-0004iC-W9; Tue, 20 Sep 2022 17:26:33 +0200
-Received: from mfe by ptx.hi.pengutronix.de with local (Exim 4.92)
-	(envelope-from <mfe@pengutronix.de>)
-	id 1oaf8q-0007Cc-1J; Tue, 20 Sep 2022 17:26:32 +0200
-Date: Tue, 20 Sep 2022 17:26:32 +0200
-From: Marco Felsch <m.felsch@pengutronix.de>
-To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+	id 1oah77-005Upv-8C
+	for linux-phy@lists.infradead.org; Tue, 20 Sep 2022 17:32:57 +0000
+Received: from pendragon.ideasonboard.com (62-78-145-57.bb.dnainternet.fi [62.78.145.57])
+	by perceval.ideasonboard.com (Postfix) with ESMTPSA id 90D116BE;
+	Tue, 20 Sep 2022 19:32:48 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
+	s=mail; t=1663695168;
+	bh=GTSBmvXu6MwYsttsq8iSJ2hRGLX5hNS6AcRs9mwMNnQ=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=aGF0rI0/re7PVkN8L6mGbYwUb5hPJbNQun+MBOSaop4r6uUNUUloH4USbX4nklWj/
+	 MfwYq1ncq4CGokKu7gdR9p5DwDr2fM+PP3pO9ZAEiBaFs+je2VAcxtplaXEregSiCN
+	 y8HKHhDYjTAH5BMsNWszUHygM+up4iVo38gO5PbU=
+Date: Tue, 20 Sep 2022 20:32:34 +0300
+From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+To: Marco Felsch <m.felsch@pengutronix.de>
 Cc: Sakari Ailus <sakari.ailus@linux.intel.com>, mchehab@kernel.org,
 	robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
 	kishon@ti.com, vkoul@kernel.org, hverkuil@xs4all.nl,
@@ -45,24 +47,20 @@ Cc: Sakari Ailus <sakari.ailus@linux.intel.com>, mchehab@kernel.org,
 	kernel@pengutronix.de
 Subject: Re: [PATCH v2 3/4] media: dt-bindings: add bindings for Toshiba
  TC358746
-Message-ID: <20220920152632.mjpgpmelvx4ya4k7@pengutronix.de>
+Message-ID: <Yyn5MqqKYH7VpFhw@pendragon.ideasonboard.com>
 References: <20220916134535.128131-1-m.felsch@pengutronix.de>
  <20220916134535.128131-4-m.felsch@pengutronix.de>
  <YyZTCsflWtUbo2ld@pendragon.ideasonboard.com>
  <20220919100844.bb7tzbql2vpk76xz@pengutronix.de>
  <YyhDO4ohv47uIij2@paasikivi.fi.intel.com>
  <YyhKoDxFoobY9vBd@pendragon.ideasonboard.com>
+ <20220920152632.mjpgpmelvx4ya4k7@pengutronix.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <YyhKoDxFoobY9vBd@pendragon.ideasonboard.com>
-User-Agent: NeoMutt/20180716
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c0
-X-SA-Exim-Mail-From: mfe@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de); SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-phy@lists.infradead.org
+In-Reply-To: <20220920152632.mjpgpmelvx4ya4k7@pengutronix.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220920_082654_677260_CE4C7A97 
-X-CRM114-Status: GOOD (  35.96  )
+X-CRM114-CacheID: sfid-20220920_103255_282577_AAB7AE3B 
+X-CRM114-Status: GOOD (  38.70  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,194 +72,130 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Laurent, Sakari,
-
-On 22-09-19, Laurent Pinchart wrote:
-> On Mon, Sep 19, 2022 at 10:23:55AM +0000, Sakari Ailus wrote:
-> > On Mon, Sep 19, 2022 at 12:08:44PM +0200, Marco Felsch wrote:
-> > > On 22-09-18, Laurent Pinchart wrote:
-> > > > On Fri, Sep 16, 2022 at 03:45:34PM +0200, Marco Felsch wrote:
-> > > > > Add the bindings for the Toshiba TC358746 Parallel <-> MIPI-CSI b=
-ridge
-> > > > > driver.
-> > > > > =
-
-> > > > > Signed-off-by: Marco Felsch <m.felsch@pengutronix.de>
-> > > > > Reviewed-by: Rob Herring <robh@kernel.org>
-> > > > > ---
-> > > > > Changelog:
-> > > > > =
-
-> > > > > v2:
-> > > > > - addded Robs r-b
-> > > > > - s/than/then/
-> > > > > - added hsync/vsync/bus-type, make hsync/vsync required
-> > > > > - fix example indent
-> > > > > =
-
-> > > > >  .../bindings/media/i2c/toshiba,tc358746.yaml  | 179 ++++++++++++=
-++++++
-> > > > >  1 file changed, 179 insertions(+)
-> > > > >  create mode 100644 Documentation/devicetree/bindings/media/i2c/t=
-oshiba,tc358746.yaml
-> > > > > =
-
-> > > > > diff --git a/Documentation/devicetree/bindings/media/i2c/toshiba,=
-tc358746.yaml b/Documentation/devicetree/bindings/media/i2c/toshiba,tc35874=
-6.yaml
-> > > > > new file mode 100644
-> > > > > index 000000000000..1fa574400bc2
-> > > > > --- /dev/null
-> > > > > +++ b/Documentation/devicetree/bindings/media/i2c/toshiba,tc35874=
-6.yaml
-> > > > > @@ -0,0 +1,179 @@
-> > > > > +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> > > > > +%YAML 1.2
-> > > > > +---
-> > > > > +$id: http://devicetree.org/schemas/media/i2c/toshiba,tc358746.ya=
-ml#
-> > > > > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > > > > +
-> > > > > +title: Toshiba TC358746 Parallel to MIPI CSI2 Bridge
-> > > > > +
-> > > > > +maintainers:
-> > > > > +  - Marco Felsch <kernel@pengutronix.de>
-> > > > > +
-> > > > > +description: |-
-> > > > > +  The Toshiba TC358746 converts a parallel video stream into a M=
-IPI CSI-2
-> > > > > +  stream. The direction can be either parallel-in -> csi-out or =
-csi-in ->
-> > > > > +  parallel-out The chip is programmable trough I2C and SPI but t=
-he SPI
-> > > > > +  interface is only supported in parallel-in -> csi-out mode.
-> > > > > +
-> > > > > +  Note that the current device tree bindings only support the
-> > > > > +  parallel-in -> csi-out path.
-> > > > > +
-> > > > > +properties:
-> > > > > +  compatible:
-> > > > > +    const: toshiba,tc358746
-> > > > > +
-> > > > > +  reg:
-> > > > > +    maxItems: 1
-> > > > > +
-> > > > > +  clocks:
-> > > > > +    description:
-> > > > > +      The phandle to the reference clock source. This correspond=
-s to the
-> > > > > +      hardware pin REFCLK.
-> > > > > +    maxItems: 1
-> > > > > +
-> > > > > +  clock-names:
-> > > > > +    const: refclk
-> > > > > +
-> > > > > +# The bridge can act as clock provider for the sensor. To enable=
- this support
-> > > > > +# #clock-cells must be specified. Attention if this feature is u=
-sed then the
-> > > > > +# mclk rate must be at least: (2 * link-frequency) / 8
-> > > > > +#                             `------------------=B4   ^
-> > > > > +#                             internal PLL rate   smallest possi=
-ble mclk-div
-> > > > > +  "#clock-cells":
-> > > > > +    const: 0
-> > > > > +
-> > > > > +  clock-output-names:
-> > > > > +    description:
-> > > > > +      The clock name of the MCLK output, the default name is tc3=
-58746-mclk.
-> > > > > +    maxItems: 1
-> > > > > +
-> > > > > +  vddc-supply:
-> > > > > +    description: Digital core voltage supply, 1.2 volts
-> > > > > +
-> > > > > +  vddio-supply:
-> > > > > +    description: Digital I/O voltage supply, 1.8 volts
-> > > > > +
-> > > > > +  vddmipi-supply:
-> > > > > +    description: MIPI CSI phy voltage supply, 1.2 volts
-> > > > > +
-> > > > > +  reset-gpios:
-> > > > > +    description:
-> > > > > +      The phandle and specifier for the GPIO that controls the c=
-hip reset.
-> > > > > +      This corresponds to the hardware pin RESX which is physica=
-lly active low.
-> > > > > +    maxItems: 1
-> > > > > +
-> > > > > +  ports:
-> > > > > +    $ref: /schemas/graph.yaml#/properties/ports
-> > > > > +    properties:
-> > > > > +      port@0:
-> > > > > +        $ref: /schemas/graph.yaml#/$defs/port-base
-> > > > > +        description: Input port
-> > > > > +
-> > > > > +        properties:
-> > > > > +          endpoint:
-> > > > > +            $ref: /schemas/media/video-interfaces.yaml#
-> > > > > +            unevaluatedProperties: false
-> > > > > +
-> > > > > +            properties:
-> > > > > +              hsync-active:
-> > > > > +                enum:
-> > > > > +                  - 0 # Hvalid active high
-> > > > > +              vsync-active:
-> > > > > +                enum:
-> > > > > +                  - 0 # Vvalid active high
-> > > > > +              bus-type:
-> > > > > +                enum:
-> > > > > +                  - 5 # Parallel
-> > > > > +
-> > > > > +            required:
-> > > > > +              - hsync-active
-> > > > > +              - vsync-active
-> > > > =
-
-> > > > Let's make bus-type required too, to prepare for BT.656 support.
-> > > =
-
-> > > I would have done it when the BT.656 support is added. Since the BT.6=
-56
-> > > don't require the sync signals I would have made a descision:
-> > >  - either: hsync/vsync present -> parallel with external syncs, or
-> > >  - bus-type present -> parallel bus with embedded syncs.
-> > > =
-
-> > > So we don't bother the system-integrator with specifying unnecessary
-> > > properties. Also having v/hsync required in place with the bus-type (=
-set
-> > > to bt.656) can cause confusion about the final used mode.
-> > =
-
-> > The V4L2 fwnode framework can guess the type of the bus but it's not
-> > recommended to use the feature.
-> =
-
-> Explicit bus types in DT indeed makes it easier for drivers, so if a
-> device can support multiple bus types (even if not implemented yet in
-> the corresponding drivers), the property should be there.
-
-Okay, I will make it required.
-
-> > Why do you have hsync-active and vsync-active if both are always zero? =
-Can
-> > the hardware not support other configuration?
-
-Sure the device supports toggling the logic but it is not implemented.
-So the bindings needs to enforce it to 0 right now. As soon as it is
-implemented & tested, we can say that both is supported :)
-
-Regards,
-  Marco
-
--- =
-
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+SGkgTWFyY28sCgpPbiBUdWUsIFNlcCAyMCwgMjAyMiBhdCAwNToyNjozMlBNICswMjAwLCBNYXJj
+byBGZWxzY2ggd3JvdGU6Cj4gT24gMjItMDktMTksIExhdXJlbnQgUGluY2hhcnQgd3JvdGU6Cj4g
+PiBPbiBNb24sIFNlcCAxOSwgMjAyMiBhdCAxMDoyMzo1NUFNICswMDAwLCBTYWthcmkgQWlsdXMg
+d3JvdGU6Cj4gPiA+IE9uIE1vbiwgU2VwIDE5LCAyMDIyIGF0IDEyOjA4OjQ0UE0gKzAyMDAsIE1h
+cmNvIEZlbHNjaCB3cm90ZToKPiA+ID4gPiBPbiAyMi0wOS0xOCwgTGF1cmVudCBQaW5jaGFydCB3
+cm90ZToKPiA+ID4gPiA+IE9uIEZyaSwgU2VwIDE2LCAyMDIyIGF0IDAzOjQ1OjM0UE0gKzAyMDAs
+IE1hcmNvIEZlbHNjaCB3cm90ZToKPiA+ID4gPiA+ID4gQWRkIHRoZSBiaW5kaW5ncyBmb3IgdGhl
+IFRvc2hpYmEgVEMzNTg3NDYgUGFyYWxsZWwgPC0+IE1JUEktQ1NJIGJyaWRnZQo+ID4gPiA+ID4g
+PiBkcml2ZXIuCj4gPiA+ID4gPiA+IAo+ID4gPiA+ID4gPiBTaWduZWQtb2ZmLWJ5OiBNYXJjbyBG
+ZWxzY2ggPG0uZmVsc2NoQHBlbmd1dHJvbml4LmRlPgo+ID4gPiA+ID4gPiBSZXZpZXdlZC1ieTog
+Um9iIEhlcnJpbmcgPHJvYmhAa2VybmVsLm9yZz4KPiA+ID4gPiA+ID4gLS0tCj4gPiA+ID4gPiA+
+IENoYW5nZWxvZzoKPiA+ID4gPiA+ID4gCj4gPiA+ID4gPiA+IHYyOgo+ID4gPiA+ID4gPiAtIGFk
+ZGRlZCBSb2JzIHItYgo+ID4gPiA+ID4gPiAtIHMvdGhhbi90aGVuLwo+ID4gPiA+ID4gPiAtIGFk
+ZGVkIGhzeW5jL3ZzeW5jL2J1cy10eXBlLCBtYWtlIGhzeW5jL3ZzeW5jIHJlcXVpcmVkCj4gPiA+
+ID4gPiA+IC0gZml4IGV4YW1wbGUgaW5kZW50Cj4gPiA+ID4gPiA+IAo+ID4gPiA+ID4gPiAgLi4u
+L2JpbmRpbmdzL21lZGlhL2kyYy90b3NoaWJhLHRjMzU4NzQ2LnlhbWwgIHwgMTc5ICsrKysrKysr
+KysrKysrKysrKwo+ID4gPiA+ID4gPiAgMSBmaWxlIGNoYW5nZWQsIDE3OSBpbnNlcnRpb25zKCsp
+Cj4gPiA+ID4gPiA+ICBjcmVhdGUgbW9kZSAxMDA2NDQgRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVl
+L2JpbmRpbmdzL21lZGlhL2kyYy90b3NoaWJhLHRjMzU4NzQ2LnlhbWwKPiA+ID4gPiA+ID4gCj4g
+PiA+ID4gPiA+IGRpZmYgLS1naXQgYS9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3Mv
+bWVkaWEvaTJjL3Rvc2hpYmEsdGMzNTg3NDYueWFtbCBiL0RvY3VtZW50YXRpb24vZGV2aWNldHJl
+ZS9iaW5kaW5ncy9tZWRpYS9pMmMvdG9zaGliYSx0YzM1ODc0Ni55YW1sCj4gPiA+ID4gPiA+IG5l
+dyBmaWxlIG1vZGUgMTAwNjQ0Cj4gPiA+ID4gPiA+IGluZGV4IDAwMDAwMDAwMDAwMC4uMWZhNTc0
+NDAwYmMyCj4gPiA+ID4gPiA+IC0tLSAvZGV2L251bGwKPiA+ID4gPiA+ID4gKysrIGIvRG9jdW1l
+bnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL21lZGlhL2kyYy90b3NoaWJhLHRjMzU4NzQ2Lnlh
+bWwKPiA+ID4gPiA+ID4gQEAgLTAsMCArMSwxNzkgQEAKPiA+ID4gPiA+ID4gKyMgU1BEWC1MaWNl
+bnNlLUlkZW50aWZpZXI6IChHUEwtMi4wLW9ubHkgT1IgQlNELTItQ2xhdXNlKQo+ID4gPiA+ID4g
+PiArJVlBTUwgMS4yCj4gPiA+ID4gPiA+ICstLS0KPiA+ID4gPiA+ID4gKyRpZDogaHR0cDovL2Rl
+dmljZXRyZWUub3JnL3NjaGVtYXMvbWVkaWEvaTJjL3Rvc2hpYmEsdGMzNTg3NDYueWFtbCMKPiA+
+ID4gPiA+ID4gKyRzY2hlbWE6IGh0dHA6Ly9kZXZpY2V0cmVlLm9yZy9tZXRhLXNjaGVtYXMvY29y
+ZS55YW1sIwo+ID4gPiA+ID4gPiArCj4gPiA+ID4gPiA+ICt0aXRsZTogVG9zaGliYSBUQzM1ODc0
+NiBQYXJhbGxlbCB0byBNSVBJIENTSTIgQnJpZGdlCj4gPiA+ID4gPiA+ICsKPiA+ID4gPiA+ID4g
+K21haW50YWluZXJzOgo+ID4gPiA+ID4gPiArICAtIE1hcmNvIEZlbHNjaCA8a2VybmVsQHBlbmd1
+dHJvbml4LmRlPgo+ID4gPiA+ID4gPiArCj4gPiA+ID4gPiA+ICtkZXNjcmlwdGlvbjogfC0KPiA+
+ID4gPiA+ID4gKyAgVGhlIFRvc2hpYmEgVEMzNTg3NDYgY29udmVydHMgYSBwYXJhbGxlbCB2aWRl
+byBzdHJlYW0gaW50byBhIE1JUEkgQ1NJLTIKPiA+ID4gPiA+ID4gKyAgc3RyZWFtLiBUaGUgZGly
+ZWN0aW9uIGNhbiBiZSBlaXRoZXIgcGFyYWxsZWwtaW4gLT4gY3NpLW91dCBvciBjc2ktaW4gLT4K
+PiA+ID4gPiA+ID4gKyAgcGFyYWxsZWwtb3V0IFRoZSBjaGlwIGlzIHByb2dyYW1tYWJsZSB0cm91
+Z2ggSTJDIGFuZCBTUEkgYnV0IHRoZSBTUEkKPiA+ID4gPiA+ID4gKyAgaW50ZXJmYWNlIGlzIG9u
+bHkgc3VwcG9ydGVkIGluIHBhcmFsbGVsLWluIC0+IGNzaS1vdXQgbW9kZS4KPiA+ID4gPiA+ID4g
+Kwo+ID4gPiA+ID4gPiArICBOb3RlIHRoYXQgdGhlIGN1cnJlbnQgZGV2aWNlIHRyZWUgYmluZGlu
+Z3Mgb25seSBzdXBwb3J0IHRoZQo+ID4gPiA+ID4gPiArICBwYXJhbGxlbC1pbiAtPiBjc2ktb3V0
+IHBhdGguCj4gPiA+ID4gPiA+ICsKPiA+ID4gPiA+ID4gK3Byb3BlcnRpZXM6Cj4gPiA+ID4gPiA+
+ICsgIGNvbXBhdGlibGU6Cj4gPiA+ID4gPiA+ICsgICAgY29uc3Q6IHRvc2hpYmEsdGMzNTg3NDYK
+PiA+ID4gPiA+ID4gKwo+ID4gPiA+ID4gPiArICByZWc6Cj4gPiA+ID4gPiA+ICsgICAgbWF4SXRl
+bXM6IDEKPiA+ID4gPiA+ID4gKwo+ID4gPiA+ID4gPiArICBjbG9ja3M6Cj4gPiA+ID4gPiA+ICsg
+ICAgZGVzY3JpcHRpb246Cj4gPiA+ID4gPiA+ICsgICAgICBUaGUgcGhhbmRsZSB0byB0aGUgcmVm
+ZXJlbmNlIGNsb2NrIHNvdXJjZS4gVGhpcyBjb3JyZXNwb25kcyB0byB0aGUKPiA+ID4gPiA+ID4g
+KyAgICAgIGhhcmR3YXJlIHBpbiBSRUZDTEsuCj4gPiA+ID4gPiA+ICsgICAgbWF4SXRlbXM6IDEK
+PiA+ID4gPiA+ID4gKwo+ID4gPiA+ID4gPiArICBjbG9jay1uYW1lczoKPiA+ID4gPiA+ID4gKyAg
+ICBjb25zdDogcmVmY2xrCj4gPiA+ID4gPiA+ICsKPiA+ID4gPiA+ID4gKyMgVGhlIGJyaWRnZSBj
+YW4gYWN0IGFzIGNsb2NrIHByb3ZpZGVyIGZvciB0aGUgc2Vuc29yLiBUbyBlbmFibGUgdGhpcyBz
+dXBwb3J0Cj4gPiA+ID4gPiA+ICsjICNjbG9jay1jZWxscyBtdXN0IGJlIHNwZWNpZmllZC4gQXR0
+ZW50aW9uIGlmIHRoaXMgZmVhdHVyZSBpcyB1c2VkIHRoZW4gdGhlCj4gPiA+ID4gPiA+ICsjIG1j
+bGsgcmF0ZSBtdXN0IGJlIGF0IGxlYXN0OiAoMiAqIGxpbmstZnJlcXVlbmN5KSAvIDgKPiA+ID4g
+PiA+ID4gKyMgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGAtLS0tLS0tLS0tLS0tLS0tLS3C
+tCAgIF4KPiA+ID4gPiA+ID4gKyMgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGludGVybmFs
+IFBMTCByYXRlICAgc21hbGxlc3QgcG9zc2libGUgbWNsay1kaXYKPiA+ID4gPiA+ID4gKyAgIiNj
+bG9jay1jZWxscyI6Cj4gPiA+ID4gPiA+ICsgICAgY29uc3Q6IDAKPiA+ID4gPiA+ID4gKwo+ID4g
+PiA+ID4gPiArICBjbG9jay1vdXRwdXQtbmFtZXM6Cj4gPiA+ID4gPiA+ICsgICAgZGVzY3JpcHRp
+b246Cj4gPiA+ID4gPiA+ICsgICAgICBUaGUgY2xvY2sgbmFtZSBvZiB0aGUgTUNMSyBvdXRwdXQs
+IHRoZSBkZWZhdWx0IG5hbWUgaXMgdGMzNTg3NDYtbWNsay4KPiA+ID4gPiA+ID4gKyAgICBtYXhJ
+dGVtczogMQo+ID4gPiA+ID4gPiArCj4gPiA+ID4gPiA+ICsgIHZkZGMtc3VwcGx5Ogo+ID4gPiA+
+ID4gPiArICAgIGRlc2NyaXB0aW9uOiBEaWdpdGFsIGNvcmUgdm9sdGFnZSBzdXBwbHksIDEuMiB2
+b2x0cwo+ID4gPiA+ID4gPiArCj4gPiA+ID4gPiA+ICsgIHZkZGlvLXN1cHBseToKPiA+ID4gPiA+
+ID4gKyAgICBkZXNjcmlwdGlvbjogRGlnaXRhbCBJL08gdm9sdGFnZSBzdXBwbHksIDEuOCB2b2x0
+cwo+ID4gPiA+ID4gPiArCj4gPiA+ID4gPiA+ICsgIHZkZG1pcGktc3VwcGx5Ogo+ID4gPiA+ID4g
+PiArICAgIGRlc2NyaXB0aW9uOiBNSVBJIENTSSBwaHkgdm9sdGFnZSBzdXBwbHksIDEuMiB2b2x0
+cwo+ID4gPiA+ID4gPiArCj4gPiA+ID4gPiA+ICsgIHJlc2V0LWdwaW9zOgo+ID4gPiA+ID4gPiAr
+ICAgIGRlc2NyaXB0aW9uOgo+ID4gPiA+ID4gPiArICAgICAgVGhlIHBoYW5kbGUgYW5kIHNwZWNp
+ZmllciBmb3IgdGhlIEdQSU8gdGhhdCBjb250cm9scyB0aGUgY2hpcCByZXNldC4KPiA+ID4gPiA+
+ID4gKyAgICAgIFRoaXMgY29ycmVzcG9uZHMgdG8gdGhlIGhhcmR3YXJlIHBpbiBSRVNYIHdoaWNo
+IGlzIHBoeXNpY2FsbHkgYWN0aXZlIGxvdy4KPiA+ID4gPiA+ID4gKyAgICBtYXhJdGVtczogMQo+
+ID4gPiA+ID4gPiArCj4gPiA+ID4gPiA+ICsgIHBvcnRzOgo+ID4gPiA+ID4gPiArICAgICRyZWY6
+IC9zY2hlbWFzL2dyYXBoLnlhbWwjL3Byb3BlcnRpZXMvcG9ydHMKPiA+ID4gPiA+ID4gKyAgICBw
+cm9wZXJ0aWVzOgo+ID4gPiA+ID4gPiArICAgICAgcG9ydEAwOgo+ID4gPiA+ID4gPiArICAgICAg
+ICAkcmVmOiAvc2NoZW1hcy9ncmFwaC55YW1sIy8kZGVmcy9wb3J0LWJhc2UKPiA+ID4gPiA+ID4g
+KyAgICAgICAgZGVzY3JpcHRpb246IElucHV0IHBvcnQKPiA+ID4gPiA+ID4gKwo+ID4gPiA+ID4g
+PiArICAgICAgICBwcm9wZXJ0aWVzOgo+ID4gPiA+ID4gPiArICAgICAgICAgIGVuZHBvaW50Ogo+
+ID4gPiA+ID4gPiArICAgICAgICAgICAgJHJlZjogL3NjaGVtYXMvbWVkaWEvdmlkZW8taW50ZXJm
+YWNlcy55YW1sIwo+ID4gPiA+ID4gPiArICAgICAgICAgICAgdW5ldmFsdWF0ZWRQcm9wZXJ0aWVz
+OiBmYWxzZQo+ID4gPiA+ID4gPiArCj4gPiA+ID4gPiA+ICsgICAgICAgICAgICBwcm9wZXJ0aWVz
+Ogo+ID4gPiA+ID4gPiArICAgICAgICAgICAgICBoc3luYy1hY3RpdmU6Cj4gPiA+ID4gPiA+ICsg
+ICAgICAgICAgICAgICAgZW51bToKPiA+ID4gPiA+ID4gKyAgICAgICAgICAgICAgICAgIC0gMCAj
+IEh2YWxpZCBhY3RpdmUgaGlnaAo+ID4gPiA+ID4gPiArICAgICAgICAgICAgICB2c3luYy1hY3Rp
+dmU6Cj4gPiA+ID4gPiA+ICsgICAgICAgICAgICAgICAgZW51bToKPiA+ID4gPiA+ID4gKyAgICAg
+ICAgICAgICAgICAgIC0gMCAjIFZ2YWxpZCBhY3RpdmUgaGlnaAo+ID4gPiA+ID4gPiArICAgICAg
+ICAgICAgICBidXMtdHlwZToKPiA+ID4gPiA+ID4gKyAgICAgICAgICAgICAgICBlbnVtOgo+ID4g
+PiA+ID4gPiArICAgICAgICAgICAgICAgICAgLSA1ICMgUGFyYWxsZWwKPiA+ID4gPiA+ID4gKwo+
+ID4gPiA+ID4gPiArICAgICAgICAgICAgcmVxdWlyZWQ6Cj4gPiA+ID4gPiA+ICsgICAgICAgICAg
+ICAgIC0gaHN5bmMtYWN0aXZlCj4gPiA+ID4gPiA+ICsgICAgICAgICAgICAgIC0gdnN5bmMtYWN0
+aXZlCj4gPiA+ID4gPiAKPiA+ID4gPiA+IExldCdzIG1ha2UgYnVzLXR5cGUgcmVxdWlyZWQgdG9v
+LCB0byBwcmVwYXJlIGZvciBCVC42NTYgc3VwcG9ydC4KPiA+ID4gPiAKPiA+ID4gPiBJIHdvdWxk
+IGhhdmUgZG9uZSBpdCB3aGVuIHRoZSBCVC42NTYgc3VwcG9ydCBpcyBhZGRlZC4gU2luY2UgdGhl
+IEJULjY1Ngo+ID4gPiA+IGRvbid0IHJlcXVpcmUgdGhlIHN5bmMgc2lnbmFscyBJIHdvdWxkIGhh
+dmUgbWFkZSBhIGRlc2Npc2lvbjoKPiA+ID4gPiAgLSBlaXRoZXI6IGhzeW5jL3ZzeW5jIHByZXNl
+bnQgLT4gcGFyYWxsZWwgd2l0aCBleHRlcm5hbCBzeW5jcywgb3IKPiA+ID4gPiAgLSBidXMtdHlw
+ZSBwcmVzZW50IC0+IHBhcmFsbGVsIGJ1cyB3aXRoIGVtYmVkZGVkIHN5bmNzLgo+ID4gPiA+IAo+
+ID4gPiA+IFNvIHdlIGRvbid0IGJvdGhlciB0aGUgc3lzdGVtLWludGVncmF0b3Igd2l0aCBzcGVj
+aWZ5aW5nIHVubmVjZXNzYXJ5Cj4gPiA+ID4gcHJvcGVydGllcy4gQWxzbyBoYXZpbmcgdi9oc3lu
+YyByZXF1aXJlZCBpbiBwbGFjZSB3aXRoIHRoZSBidXMtdHlwZSAoc2V0Cj4gPiA+ID4gdG8gYnQu
+NjU2KSBjYW4gY2F1c2UgY29uZnVzaW9uIGFib3V0IHRoZSBmaW5hbCB1c2VkIG1vZGUuCj4gPiA+
+IAo+ID4gPiBUaGUgVjRMMiBmd25vZGUgZnJhbWV3b3JrIGNhbiBndWVzcyB0aGUgdHlwZSBvZiB0
+aGUgYnVzIGJ1dCBpdCdzIG5vdAo+ID4gPiByZWNvbW1lbmRlZCB0byB1c2UgdGhlIGZlYXR1cmUu
+Cj4gPiAKPiA+IEV4cGxpY2l0IGJ1cyB0eXBlcyBpbiBEVCBpbmRlZWQgbWFrZXMgaXQgZWFzaWVy
+IGZvciBkcml2ZXJzLCBzbyBpZiBhCj4gPiBkZXZpY2UgY2FuIHN1cHBvcnQgbXVsdGlwbGUgYnVz
+IHR5cGVzIChldmVuIGlmIG5vdCBpbXBsZW1lbnRlZCB5ZXQgaW4KPiA+IHRoZSBjb3JyZXNwb25k
+aW5nIGRyaXZlcnMpLCB0aGUgcHJvcGVydHkgc2hvdWxkIGJlIHRoZXJlLgo+IAo+IE9rYXksIEkg
+d2lsbCBtYWtlIGl0IHJlcXVpcmVkLgo+IAo+ID4gPiBXaHkgZG8geW91IGhhdmUgaHN5bmMtYWN0
+aXZlIGFuZCB2c3luYy1hY3RpdmUgaWYgYm90aCBhcmUgYWx3YXlzIHplcm8/IENhbgo+ID4gPiB0
+aGUgaGFyZHdhcmUgbm90IHN1cHBvcnQgb3RoZXIgY29uZmlndXJhdGlvbj8KPiAKPiBTdXJlIHRo
+ZSBkZXZpY2Ugc3VwcG9ydHMgdG9nZ2xpbmcgdGhlIGxvZ2ljIGJ1dCBpdCBpcyBub3QgaW1wbGVt
+ZW50ZWQuCj4gU28gdGhlIGJpbmRpbmdzIG5lZWRzIHRvIGVuZm9yY2UgaXQgdG8gMCByaWdodCBu
+b3cuIEFzIHNvb24gYXMgaXQgaXMKPiBpbXBsZW1lbnRlZCAmIHRlc3RlZCwgd2UgY2FuIHNheSB0
+aGF0IGJvdGggaXMgc3VwcG9ydGVkIDopCgpCaW5kaW5ncyBhcmUgbm90IHN1cHBvc2VkIHRvIGJl
+IGxpbWl0ZWQgYnkgdGhlIGV4aXN0aW5nIGRyaXZlcgppbXBsZW1lbnRhdGlvbiwgc28geW91IGNh
+biBhbHJlYWR5IGFsbG93IGJvdGggcG9sYXJpdGllcywgYW5kIGp1c3QKcmVqZWN0IHRoZSB1bnN1
+cHBvcnRlZCBvcHRpb25zIGluIHRoZSBkcml2ZXIgYXQgcHJvYmUgdGltZS4gRnV0dXJlCnVwZGF0
+ZXMgdG8gdGhlIGRyaXZlciB3b24ndCByZXF1aXJlIGEgYmluZGluZyBjaGFuZ2UuCgotLSAKUmVn
+YXJkcywKCkxhdXJlbnQgUGluY2hhcnQKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4
+LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWls
+bWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
