@@ -4,63 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B2A5AECAAD8
-	for <linux-phy@archiver.kernel.org>; Tue, 20 Sep 2022 06:01:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C0EAAC54EE9
+	for <linux-phy@archiver.kernel.org>; Tue, 20 Sep 2022 06:06:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=q+NmwbGRyVRa/80OZO4n9k6EtTyksPFrJdTcD/KZ0iQ=; b=B2opxJqPyJ3+ao
-	fjthmI8BQBvVGy7Q2/+BsdTJdtwjbZxPdsSoFewp79hnUIDjZlufZQbi9gRAMek/9QBXXHJqjPn/0
-	zm30Q8SA90Heob0wewtJlAU2C7Jx2GTnaWxrHLiw3Cg50KX3zf8yKTxR0T2/ZMEdwGGY20Io2lwJ/
-	xKjNRx7FZCM+xRnl6+A6Nq4klchKJlaCE/TxcXLjM0C4SrHC64GOXdNcV7doY7jD7I/ATbmM++w6D
-	zYjCyvHOlfin/e1S1VDGwvXg8MAy/bkWJh9ip8C8rbIfqXClZvXTiYI/X3ub/40YLoQoHT5lXlnGz
-	oCPfcfH9dN0tCy534GBg==;
+	List-Owner; bh=Dcqgv5VDTduS3mxaRkdK71MFi5MmY/S7fsSLODdv6YE=; b=gLCUqpuN/nSXYc
+	VvIJB9IollsnxZ27Xp62B3FK5jDcLNdK6KpptI3joAuXCWKCWzuekJxqXBLNpdpSyu1gOI1aKUIIT
+	MbXHg1RwS5fJsVOUme32M5EjeL4BeBdLyA9OqzYwgpi5n27BkNuDoYQt766Bh7zgrW0qDJeGRr0jl
+	FThou2DXSdtE3GzRH+exQrvfZbTKNlvD/Gs48HhSxPlaVHPbDetuc/c5Z2BpUL9XpeAgB9/eSq+1C
+	HHLQTH5o7DRE1EJfJkwwY2t2//uJNaiCZViDd+APiwJvs1PusC3R/W7RQoWW8VAR+jMJFETYsF7m7
+	K0WEaGFGpNeLV4TYYJ9Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oaWKI-000qFZ-9j; Tue, 20 Sep 2022 06:01:46 +0000
-Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
+	id 1oaWPK-000svP-3T; Tue, 20 Sep 2022 06:06:58 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oaWKE-000qBB-5m
-	for linux-phy@lists.infradead.org; Tue, 20 Sep 2022 06:01:43 +0000
+	id 1oaWPH-000ssl-5f
+	for linux-phy@lists.infradead.org; Tue, 20 Sep 2022 06:06:56 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id 70A35B824B5;
-	Tue, 20 Sep 2022 06:01:40 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 67C40C433C1;
-	Tue, 20 Sep 2022 06:01:38 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 820226237A;
+	Tue, 20 Sep 2022 06:06:54 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 24E7EC433B5;
+	Tue, 20 Sep 2022 06:06:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1663653699;
-	bh=WvR7It9VMuJcNob8/cw0k0P1gSUb9sVtuIxJNxL30tc=;
+	s=k20201202; t=1663654013;
+	bh=BQkXB+/vfTibc1u9AzBS7kbJyHVa3MoNygpirOCMwh8=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=je6NryNtkc/4bS3ORgiVNilAkLMKrVyDbeRpORrgwKlVwj9oP1PKIDqlaOvGNG3HQ
-	 Da3T6h1AvCv80hCUQjKFx+hgo+l6ttud3BqCQ9Cu/+t5gVSJhsDOSzNt1dKZiYf7um
-	 ReRmVdXb2c8FrLjw9+kkqFWNCuO+mUN7WqYB0pRRDLurMO9xfM+KQIYprEmZRXj8k7
-	 61dBecW9PNtuP+v0LH/Sws+KTdzMEwchurvua8va1ONvD0whBGfcf1gPC8M2iM9Jv2
-	 0yOul6pTNNgT1V+y1xA0J7QH1bkvbgViWc9IxALfFRNRIftYq0XTxPNkbKJos3D901
-	 aQAAxHg+OPoUg==
-Date: Tue, 20 Sep 2022 11:31:35 +0530
+	b=RLKAitcSJJ3Loce7lwGfQi+XlNqc3Ni8/E2G6Qg5KjZZ17v3XxjAzpUnl+ZsvXrY+
+	 +3vqhA1Oy+beEx5MgcYZkrB3iiP1GVLWqkrmiKtJJu1iPdEaUmdhzMmSdVLu7i/UOp
+	 6odFoI8NPDqFYlTe7zLCm2DckqdBX0irR12sM83lsb6/zc5IFxv2AlYrdC593nwCca
+	 9AOD1lwYHCfs3P4jHwM5eaM5Gqj6mgsfUZVwjQHKoWp7kls3BvJB/+mhrVxmrWiiSr
+	 f+6123a61H2NJVTfJha2wR2QTLTV+rgzdA2Z0CkWIBlvFuBSSCQE56uLAMnfy7NFat
+	 GojzHG7eAXqCw==
+Date: Tue, 20 Sep 2022 11:36:49 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Johan Hovold <johan+linaro@kernel.org>
-Cc: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
-	Andy Gross <agross@kernel.org>,
+To: Iskren Chernev <iskren.chernev@gmail.com>
+Cc: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
 	Bjorn Andersson <andersson@kernel.org>,
+	Rob Herring <robh+dt@kernel.org>, phone-devel@vger.kernel.org,
+	~postmarketos/upstreaming@lists.sr.ht,
+	linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
+	Andy Gross <agross@kernel.org>,
 	Konrad Dybcio <konrad.dybcio@somainline.org>,
 	Kishon Vijay Abraham I <kishon@ti.com>,
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v2 00/11] phy: qcom-qmp: more fixes and cleanups
-Message-ID: <YylXP5LSUxFKkimB@matsya>
-References: <20220916102340.11520-1-johan+linaro@kernel.org>
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v4 5/8] dt-bindings: phy: qcom,qmp-ufs: Fix SM6115
+ clocks, regs
+Message-ID: <YylYeSuX/99jcllf@matsya>
+References: <20220919180618.1840194-1-iskren.chernev@gmail.com>
+ <20220919180618.1840194-6-iskren.chernev@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20220916102340.11520-1-johan+linaro@kernel.org>
+In-Reply-To: <20220919180618.1840194-6-iskren.chernev@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220919_230142_396220_B89914C0 
-X-CRM114-Status: GOOD (  10.57  )
+X-CRM114-CacheID: sfid-20220919_230655_280887_7B6F351C 
+X-CRM114-Status: UNSURE (   6.98  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,14 +83,8 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 16-09-22, 12:23, Johan Hovold wrote:
-> Here's the next set of QMP PHY cleanups including some non-critical
-> fixes of tiny memory leaks on probe deferral (I didn't add a stable tag
-> for any of them on purpose).
-> 
-> Note that the UFS PHY driver does not use the pcs_misc region either
-> currently, but I decided to leave the register mapping code in as,
-> unlike for msm8996, the bindings do include this region.
+On 19-09-22, 21:06, Iskren Chernev wrote:
+> The Sm6115 UFS PHY has 2 clocks and 3 regs.
 
 Applied, thanks
 
