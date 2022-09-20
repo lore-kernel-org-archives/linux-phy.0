@@ -4,65 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 292D0C54EE9
-	for <linux-phy@archiver.kernel.org>; Tue, 20 Sep 2022 11:40:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BD7D8C54EE9
+	for <linux-phy@archiver.kernel.org>; Tue, 20 Sep 2022 11:42:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GmRBF9r/Ym+V2BdcMAXHUyp5S4vWTFA4K+wpNa6deF4=; b=lLJUKpT7BLm38L
-	DtYcrsxMHfU2rn1ndzcqS7c+Dmnnv2hDDw9sijcObAwbJi6v5UtjBMofbij6H/A1vBnnfijS8OXnv
-	HlnaW4UPOy1x91aw3JUDZ/7DCWiQwSZRlj2/t1gx/PZZ2SFjrG4LxX8l3wNcRGlyxDjWjgYCY8ImE
-	qixPJD4kG+XzqEt/T0c1/V83qrKBROfCN4IzoYcDJDBsPGcIfLgmejMrRveA7igtfk4hzHe6QwcMg
-	B3RQA/b5X3fK8Ou3O+R86xEMMhzARHlN7sRgfrzyuVnHjTUtF0x2akCww5AUSABqWwrg05sAral9n
-	4ucMxyauEb78z+aynHyQ==;
+	List-Owner; bh=f6jwfOrRbLPLw3gtoIBn0/zhUkGBUfZmp5XfjD9jXos=; b=1NHZesn8DvVit8
+	UC7iiy3LbpfOmQSZIp9YG82p0KIyu10JFAWRona1UluYSjgNGOh8VztYFLChL7be5zFoasQyLB0UI
+	CrbgyuaiSIBxDxGvjJowuuQs3Hj4YQUIOkdgC49s4IDmILl5rXViTtIk2tKn45amLJ8NT4ieAfQm0
+	77uzvfkXnNjBjjTEJH32404RHNkzoAXr5oYy+SWcBR9bRgC6rTRdIyHB5nMRfDgh2+be2bCcT4ldg
+	IgZV2lsQ+uxqu2KcRfpiE9n0s0mkDkrzzFENsej44IPxAlJCjD4mRuF5DH54aLn2NlThuxP1phBAg
+	25Zxh2JlD1yNerhCW0Ww==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oabcD-003Pen-Cu; Tue, 20 Sep 2022 11:40:37 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1oabeE-003QZc-SO; Tue, 20 Sep 2022 11:42:42 +0000
+Received: from madras.collabora.co.uk ([46.235.227.172])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oabXR-003N9X-N7
-	for linux-phy@lists.infradead.org; Tue, 20 Sep 2022 11:35:43 +0000
-Received: from ptx.hi.pengutronix.de ([2001:67c:670:100:1d::c0])
-	by metis.ext.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
-	(Exim 4.92)
-	(envelope-from <mfe@pengutronix.de>)
-	id 1oabXC-0008TL-5B; Tue, 20 Sep 2022 13:35:26 +0200
-Received: from mfe by ptx.hi.pengutronix.de with local (Exim 4.92)
-	(envelope-from <mfe@pengutronix.de>)
-	id 1oabXA-000335-Om; Tue, 20 Sep 2022 13:35:24 +0200
-Date: Tue, 20 Sep 2022 13:35:24 +0200
-From: Marco Felsch <m.felsch@pengutronix.de>
-To: Sakari Ailus <sakari.ailus@linux.intel.com>
-Cc: Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
-	mchehab@kernel.org, robh+dt@kernel.org,
-	krzysztof.kozlowski+dt@linaro.org, kishon@ti.com, vkoul@kernel.org,
-	hverkuil@xs4all.nl, jacopo@jmondi.org,
-	kieran.bingham+renesas@ideasonboard.com,
-	linux-media@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
-	kernel@pengutronix.de
-Subject: Re: [PATCH v2 4/4] media: tc358746: add Toshiba TC358746 Parallel to
- CSI-2 bridge driver
-Message-ID: <20220920113524.yq2abqbunvfipnb2@pengutronix.de>
-References: <20220916134535.128131-1-m.felsch@pengutronix.de>
- <20220916134535.128131-5-m.felsch@pengutronix.de>
- <YyhjB+RbLokmBKPx@paasikivi.fi.intel.com>
- <YyhlQPhezmLG8ZCn@pendragon.ideasonboard.com>
- <Yyhonw7SEjkAPivN@paasikivi.fi.intel.com>
+	id 1oabda-003QJw-6v; Tue, 20 Sep 2022 11:42:04 +0000
+Received: from [192.168.1.100] (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
+	(No client certificate requested)
+	(Authenticated sender: kholk11)
+	by madras.collabora.co.uk (Postfix) with ESMTPSA id 139D06601F88;
+	Tue, 20 Sep 2022 12:41:54 +0100 (BST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1663674116;
+	bh=A2riqMDL+e6uXEzLF8Z0oYqGsIpSvXIapKZhlgz+MLE=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=D1JPK3PB/rETwddxkJo+ir808mHSZkg1lQAK95Xn08P8K4jDZWkQ6+LJNYMLJmBgG
+	 cwxZUkGgM2dTL4OHRfY31FWcYMWq9MpEO5kkgwCoQMjY5NJaCxuwNO4QMahHdVn9MY
+	 6PJcJDRAutMYp+pLUhdp/gfHIgCWHytfIPfarSWnliBchAcyBJiTiNZlp4ITxk4OV+
+	 jWlmgmKgRSOTBw7La8G87wJibOJyInxdy5Rdww0e/HAowGr7ojq2gCCPtckQ0YfHJ5
+	 jbauLmui0LDUiy3c8heWBA4dGdh/36TvQhQDedU0UAaITF19fNe278Slsp/D2y7Xiv
+	 2M0Vo4ij7ontA==
+Message-ID: <ef56a05e-c575-2515-0e00-a22a854b52a0@collabora.com>
+Date: Tue, 20 Sep 2022 13:41:52 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <Yyhonw7SEjkAPivN@paasikivi.fi.intel.com>
-User-Agent: NeoMutt/20180716
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c0
-X-SA-Exim-Mail-From: mfe@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de); SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-phy@lists.infradead.org
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.2.0
+Subject: Re: [PATCH v1 13/17] phy: phy-mtk-hdmi: Add generic phy configure
+ callback
+Content-Language: en-US
+To: Guillaume Ranquet <granquet@baylibre.com>, Vinod Koul <vkoul@kernel.org>,
+ Stephen Boyd <sboyd@kernel.org>, David Airlie <airlied@linux.ie>,
+ Rob Herring <robh+dt@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Daniel Vetter <daniel@ffwll.ch>, Chunfeng Yun <chunfeng.yun@mediatek.com>,
+ CK Hu <ck.hu@mediatek.com>, Jitao shi <jitao.shi@mediatek.com>,
+ Chun-Kuang Hu <chunkuang.hu@kernel.org>,
+ Michael Turquette <mturquette@baylibre.com>,
+ Kishon Vijay Abraham I <kishon@ti.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>
+Cc: linux-mediatek@lists.infradead.org, dri-devel@lists.freedesktop.org,
+ Pablo Sun <pablo.sun@mediatek.com>, linux-clk@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Mattijs Korpershoek
+ <mkorpershoek@baylibre.com>, linux-arm-kernel@lists.infradead.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org
+References: <20220919-v1-0-4844816c9808@baylibre.com>
+ <20220919-v1-13-4844816c9808@baylibre.com>
+From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+In-Reply-To: <20220919-v1-13-4844816c9808@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220920_043541_786164_A4C23050 
-X-CRM114-Status: GOOD (  20.23  )
+X-CRM114-CacheID: sfid-20220920_044202_781071_8FDF2BE3 
+X-CRM114-Status: UNSURE (   6.65  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,47 +83,18 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 22-09-19, Sakari Ailus wrote:
-> On Mon, Sep 19, 2022 at 03:49:04PM +0300, Laurent Pinchart wrote:
-> > On Mon, Sep 19, 2022 at 12:39:35PM +0000, Sakari Ailus wrote:
-> > > > +	dev_set_drvdata(dev, tc358746);
-> > > > +	pm_runtime_set_autosuspend_delay(dev, 200);
-> > > > +	pm_runtime_use_autosuspend(dev);
-> > > > +	pm_runtime_enable(dev);
-> > > > +
-> > > > +	err = tc358746_init_hw(tc358746);
-> > > 
-> > > The driver depends on runtime PM being enabled but does not depend on
-> > > CONFIG_PM. I'd suggest to power the device on and only then enable runtime
-> > > PM. See
-> > > <URL:https://hverkuil.home.xs4all.nl/spec/driver-api/camera-sensor.html#power-management>.
-> > 
-> > Or simply depend on CONFIG_PM :-)
+Il 19/09/22 18:56, Guillaume Ranquet ha scritto:
+> Some phys, such as mt8195, needs to have a configure callback defined.
 > 
-> The user can still disable runtime PM.
+> Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
 
-You mean by user-space? If I read the runtime.c code correctly in such
-case the core handles this enabling if one forbid it by increasing the
-usage-counter and calling the resume callback. So it is powered as you
-want. To fix the PM Kconfig, I will add "depends on PM".
+Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 
-Regards,
-  Marco
-
-> I guess few do though. This should be addressed separately from this
-> driver, it'd be good to be able to deny that. In fact, no-one has ever
-> probably tested this for a large number of drivers and I guess it exists
-> just to have a way to disable runtime PM support in drivers that do not
-> work with it...
-> 
-> -- 
-> Sakari Ailus
-> 
 
 -- 
 linux-phy mailing list
