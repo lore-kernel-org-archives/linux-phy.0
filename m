@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A77B7C6FA92
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id ECC34C6FA93
 	for <linux-phy@archiver.kernel.org>; Tue, 20 Sep 2022 07:39:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,39 +12,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Der9FTJEK060GPiJxU1G2HQiIJSkEZG8wu6/6NMzGK4=; b=jOihq1WMXkehi1
-	0g93TCYQAxUFj+saRk3Gp7d/GRH4uXlGZEyxlVGV67DorpDfthkNP4xrm3f3zqvMm8DFFsHdhXMec
-	IakrKr9EzGN1vmKD/x5HmkZOhIRE4nTA4xbSDGBaYw08ltHhjYqyVryL9H8fC8gUrB0ybQI0D997L
-	AdkgHvgzdlPX4TGskxTGy34VNkwwKw6qgKwIUNJ1VgMkKO1oytimIy9y+Grva5rT+pPGZNrCvNSOe
-	PMJP3TgOkiLrSh1VXcZvOOYguhwtj160W9tEkJWCUml9YoRkvouL9mqyHH0zZC599QK5foVJG3Unh
-	42vh9mNLhU7JEYXpjukg==;
+	List-Owner; bh=6WsFyuhMEkgJnCxJ0noCfsLsUjWd/828W5npaGyhF7s=; b=j4yZCSYszZ+wkh
+	/uPsqR3Susku3dKmFrSDNFVMa0Z0AoT2Wx5j8Cs5SfYRJfVTSgYjRK58CfzjdlWM3SMBfxLqoC7X8
+	R67DixnG9Dz89FKuxaqWkF1SLzJcmkh0IgU1euKBphoCW9yp+oludimu5UX/TNpnSlXoO/Qpja884
+	DNJ+PSacpafmRJ9wqYXYhZbbmwFfcRSbeAKemq4RZnkV4hNM+7cQx3KS+M2WCzBgX5uhBXmvZdOFu
+	++kTgap4EsrPq8hrM3S86Sj+TzztUlRLG2L4dDPWPGdrDMHM77bEj/lKm/N8Iq9kLZ5Q1TNYPvyjd
+	R8Hw1p27rvLTvBeEeuiQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oaXqX-001QdZ-1p; Tue, 20 Sep 2022 07:39:09 +0000
-Received: from ams.source.kernel.org ([145.40.68.75])
+	id 1oaXqX-001Qdl-6q; Tue, 20 Sep 2022 07:39:09 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oaXqQ-001QTn-IS
-	for linux-phy@lists.infradead.org; Tue, 20 Sep 2022 07:39:05 +0000
+	id 1oaXqR-001QUY-8v
+	for linux-phy@lists.infradead.org; Tue, 20 Sep 2022 07:39:06 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id E46DAB82555;
-	Tue, 20 Sep 2022 07:39:00 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1191CC433C1;
+	by dfw.source.kernel.org (Postfix) with ESMTPS id F118A6250C;
+	Tue, 20 Sep 2022 07:39:01 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A2839C4FF07;
 	Tue, 20 Sep 2022 07:38:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1663659539;
-	bh=ZMg+DLlcdSNqveTVoiGMNLqinsWBf1qIoufFezsHv90=;
+	bh=eguzelNkWbY6y8/Ed+NE/WQQJvZhJ3BmpfHcj567dng=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=deUePSbjI1qt9UmHdaQMj3rR5fi8uXynqnSpclwKlorrntxIwYDNKY2m42uLA8qoq
-	 cuvOsseLwP5kucB25dI5Wtlsh3NqiyuuUm3ET9Huh1psKdattEn1gRXF/kvPQpfgPj
-	 9QGqa8ODqWetiq62ww9LQTLEB1UjPqeSeTUx41mmLDXwubw2lDObuCOlgp+ymbHOej
-	 q0g5KEiEQyQMUqjrLEED6b5ooMoNOKWWKgiLgv+u12FLnZOzCvB7L2omYme5xG2xdp
-	 wbyWsRZhUdfEdQywd/237/FPzDLz9ooD0aUnXdI4dViZbNtUtmTQwHfdPZafNM9Leb
-	 qFG1tWHmtDCYg==
+	b=cJ20mgbpoeS0rn4vbauimQ7nJ08aGNvp8BWyWzPC9yNEBwgqZ+yxZ7j631nMcAiKg
+	 +YSTzdDzdFeJJFe9R9Yvy4WmhB2AkXCTYGnV2H1rMgRqF2zTmEaIhvXBPjp8F/A826
+	 ukbDquJD+pawlGFuB0o7baz48X/n2iSGu0XDxn9vRT05wWPnaobvs+jC7Mn+Y2rCB2
+	 vxLw6G3v1Rq9YMdZRF3fcr58jQuB/9Coa09KrFZ8GPJkaOs2WnF7NVdp7hE+jtsmHU
+	 iBhMoX2pZDtYZJuK72vkRMaFW8UbFGe5yLqyMTY/7bcYe7obZr2zAj5JvhX0QRPdWz
+	 ltsc+W+bsCQUQ==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1oaXqP-0005Qr-Pe; Tue, 20 Sep 2022 09:39:01 +0200
+	id 1oaXqQ-0005RC-DW; Tue, 20 Sep 2022 09:39:02 +0200
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>
 Cc: Andy Gross <agross@kernel.org>,
@@ -56,16 +56,16 @@ Cc: Andy Gross <agross@kernel.org>,
 	linux-phy@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH 06/17] phy: qcom-qmp-usb: drop init and exit wrappers
-Date: Tue, 20 Sep 2022 09:38:15 +0200
-Message-Id: <20220920073826.20811-7-johan+linaro@kernel.org>
+Subject: [PATCH 13/17] phy: qcom-qmp-pcie-msm8996: rename nlanes config
+Date: Tue, 20 Sep 2022 09:38:22 +0200
+Message-Id: <20220920073826.20811-14-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.35.1
 In-Reply-To: <20220920073826.20811-1-johan+linaro@kernel.org>
 References: <20220920073826.20811-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220920_003902_824541_3AA2BCA0 
-X-CRM114-Status: GOOD (  11.38  )
+X-CRM114-CacheID: sfid-20220920_003903_519777_8F81AA0E 
+X-CRM114-Status: GOOD (  14.34  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,76 +82,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Drop the unnecessary PHY init and exit callback wrappers.
+The nlanes configuration parameter is really the number of PHYs provided
+by this QMP block on MSM8996. Rename it accordingly.
 
 Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-usb.c | 29 ++++---------------------
- 1 file changed, 4 insertions(+), 25 deletions(-)
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-index 03481b6f1c35..a42e13905c15 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-@@ -2125,8 +2125,9 @@ static int qmp_usb_serdes_init(struct qmp_phy *qphy)
- 	return 0;
- }
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c
+index e261837aee32..0f8e739936ab 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c
+@@ -186,8 +186,8 @@ static const struct qmp_phy_init_tbl msm8996_pcie_pcs_tbl[] = {
  
--static int qmp_usb_com_init(struct qmp_phy *qphy)
-+static int qmp_usb_init(struct phy *phy)
- {
-+	struct qmp_phy *qphy = phy_get_drvdata(phy);
- 	struct qcom_qmp *qmp = qphy->qmp;
- 	const struct qmp_phy_cfg *cfg = qphy->cfg;
- 	void __iomem *pcs = qphy->pcs;
-@@ -2197,8 +2198,9 @@ static int qmp_usb_com_init(struct qmp_phy *qphy)
- 	return ret;
- }
+ /* struct qmp_phy_cfg - per-PHY initialization config */
+ struct qmp_phy_cfg {
+-	/* number of lanes provided by phy */
+-	int nlanes;
++	/* number of PHYs provided by this block */
++	int num_phys;
  
--static int qmp_usb_com_exit(struct qmp_phy *qphy)
-+static int qmp_usb_exit(struct phy *phy)
- {
-+	struct qmp_phy *qphy = phy_get_drvdata(phy);
- 	struct qcom_qmp *qmp = qphy->qmp;
- 	const struct qmp_phy_cfg *cfg = qphy->cfg;
+ 	/* Init sequence for PHY blocks - serdes, tx, rx, pcs */
+ 	const struct qmp_phy_init_tbl *serdes_tbl;
+@@ -318,7 +318,7 @@ static const char * const qmp_phy_vreg_l[] = {
+ };
  
-@@ -2211,20 +2213,6 @@ static int qmp_usb_com_exit(struct qmp_phy *qphy)
- 	return 0;
- }
+ static const struct qmp_phy_cfg msm8996_pciephy_cfg = {
+-	.nlanes			= 3,
++	.num_phys		= 3,
  
--static int qmp_usb_init(struct phy *phy)
--{
--	struct qmp_phy *qphy = phy_get_drvdata(phy);
--	struct qcom_qmp *qmp = qphy->qmp;
--	int ret;
--	dev_vdbg(qmp->dev, "Initializing QMP phy\n");
--
--	ret = qmp_usb_com_init(qphy);
--	if (ret)
--		return ret;
--
--	return 0;
--}
--
- static int qmp_usb_power_on(struct phy *phy)
- {
- 	struct qmp_phy *qphy = phy_get_drvdata(phy);
-@@ -2316,15 +2304,6 @@ static int qmp_usb_power_off(struct phy *phy)
- 	return 0;
- }
+ 	.serdes_tbl		= msm8996_pcie_serdes_tbl,
+ 	.serdes_tbl_num		= ARRAY_SIZE(msm8996_pcie_serdes_tbl),
+@@ -861,7 +861,7 @@ static int qmp_pcie_msm8996_probe(struct platform_device *pdev)
+ 	if (IS_ERR(serdes))
+ 		return PTR_ERR(serdes);
  
--static int qmp_usb_exit(struct phy *phy)
--{
--	struct qmp_phy *qphy = phy_get_drvdata(phy);
--
--	qmp_usb_com_exit(qphy);
--
--	return 0;
--}
--
- static int qmp_usb_enable(struct phy *phy)
- {
- 	int ret;
+-	expected_phys = cfg->nlanes;
++	expected_phys = cfg->num_phys;
+ 
+ 	mutex_init(&qmp->phy_mutex);
+ 
 -- 
 2.35.1
 
