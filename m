@@ -4,58 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 02B9BECAAD8
-	for <linux-phy@archiver.kernel.org>; Tue, 20 Sep 2022 04:28:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F00C6C54EE9
+	for <linux-phy@archiver.kernel.org>; Tue, 20 Sep 2022 04:57:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
 	CC:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BW/5turXuMWHq2nyxIf/sbV8ZCy7QO0H6s7sKWLdiE4=; b=XiKPNEo0gjuCct
-	ICVwTqd6c3YXQndOivrVwllrf6D3pZcSjEGaUFohR2DZ2Z8G1S0vtg+Kv8+COyEWPA+U4zqvfGcD2
-	LU6uw6AdfUDQPHcCoZfF7MNlgPbN7BlOBtoUBRvLvvS/qnKnLQ6EtXetSX+9Ki4b5A93zk0Zx+xue
-	y817chidopLEjdn+lBUcUjVVD6qrGBQxiwWAdcienD++YjcKOh8aZK6gya1pyH4jvhGPwIsHnhILD
-	YEb/eXTla2NXkn6D4+9s+2yqbsFbNMDYTTA6MJVQMlnZRWJ3ekW/buWOfXYjprEDTLK4mP1M8ENrE
-	hrDIV+rAmA2zAb9yYWwg==;
+	List-Owner; bh=wuoQxLgIpYSKCN4vmze/qAM6ym6HoosqzoevxSXRogo=; b=VSqGq/G1boUdWb
+	x+8nDNecNPwF001j/GTP/zb3mSk++Ed/ww1WEMOhYvbo51KmX/FjrbOvBxis/gr+dvP2qjxUoJngm
+	+CaEmiRvg103HJ5KZmdmkCD8/egfK3grv13D113KfMSDWaWZuykXAfsWjzxZOGOUhpGzRCSTjsqju
+	W2iKn/k7R8+BE7+/urYAbRyXVGyam8ESDoelfZjM+MQyfXu5dwn0kkQyMDDCZvdMeVY+Kg4W914oE
+	u08pZdGLfbB6fREj2LAJrkG7T9i4VxySfpPSxtnczcxCQ30yT0GZz1Ym8BOxXO68UmrVdpkdS4X/Q
+	yvjMOhR/SHL6AH6vF/gg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oaUrf-000Npm-50; Tue, 20 Sep 2022 04:28:07 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1oaVJl-000YSD-59; Tue, 20 Sep 2022 04:57:09 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oaUrL-000Nep-JK; Tue, 20 Sep 2022 04:27:49 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
-	by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 28K4RZOw122334;
-	Mon, 19 Sep 2022 23:27:35 -0500
+	id 1oaVJa-000YOO-PG; Tue, 20 Sep 2022 04:57:00 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+	by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 28K4ufqe003851;
+	Mon, 19 Sep 2022 23:56:41 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
-	s=ti-com-17Q1; t=1663648055;
-	bh=rAOq7hsqSEamlac1gLlAoEPrKmraVO5yGCsSAtiqTog=;
+	s=ti-com-17Q1; t=1663649801;
+	bh=8KOilXQeO0JEZa4fCJ5Ej6qxCCZNlBHDegq2hXI2lMM=;
 	h=Date:CC:Subject:To:References:From:In-Reply-To;
-	b=L4Q+ooU5dJJT4L7O+LORB/CxpMqHS6zZNlCcSNR3EGGG+mpzzFSfvco5OPTeeIQDU
-	 KKT0wef2AvT02t/suBW2VVzA7kfifbKMzc7NjL5HKOHhC+R2UIM6uV/f0KgOZ7nZr8
-	 H6ZDvSjF1IAPIiv3ibwfQjbQGiPz8aVmdXX3sDUI=
-Received: from DLEE107.ent.ti.com (dlee107.ent.ti.com [157.170.170.37])
-	by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 28K4RZAa031823
+	b=lgHGL0PoyBAOscAKWonYb66zAR6WfTpF6PjNmVbU0Y1Swaf6bdxHCMmKLYXMw4g7q
+	 od+p3RW3XWkK4cs/94mD58EA8pff77fPdAKiLnKbiVOeyfZIYDmVfnW2w9W0PT1n/S
+	 jkAt8YqtQSdT3lp8GJFTCjEME3zDeOW/vcdAuab4=
+Received: from DFLE100.ent.ti.com (dfle100.ent.ti.com [10.64.6.21])
+	by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 28K4ufYW009288
 	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Mon, 19 Sep 2022 23:27:35 -0500
-Received: from DLEE104.ent.ti.com (157.170.170.34) by DLEE107.ent.ti.com
- (157.170.170.37) with Microsoft SMTP Server (version=TLS1_2,
+	Mon, 19 Sep 2022 23:56:41 -0500
+Received: from DFLE101.ent.ti.com (10.64.6.22) by DFLE100.ent.ti.com
+ (10.64.6.21) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.6; Mon, 19
- Sep 2022 23:27:34 -0500
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE104.ent.ti.com
- (157.170.170.34) with Microsoft SMTP Server (version=TLS1_2,
+ Sep 2022 23:56:41 -0500
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE101.ent.ti.com
+ (10.64.6.22) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.6 via
- Frontend Transport; Mon, 19 Sep 2022 23:27:34 -0500
+ Frontend Transport; Mon, 19 Sep 2022 23:56:41 -0500
 Received: from [10.24.69.241] (ileaxei01-snat.itg.ti.com [10.180.69.5])
-	by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 28K4RUik012556;
-	Mon, 19 Sep 2022 23:27:31 -0500
-Message-ID: <fdeb4f4f-2712-fe35-a5c2-935d3a4baf38@ti.com>
-Date: Tue, 20 Sep 2022 09:57:30 +0530
+	by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 28K4uaHc034689;
+	Mon, 19 Sep 2022 23:56:37 -0500
+Message-ID: <2f830a26-c9f0-2902-302c-371c59994a6f@ti.com>
+Date: Tue, 20 Sep 2022 10:26:36 +0530
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
  Thunderbird/91.11.0
-CC: <robh+dt@kernel.org>, <lee.jones@linaro.org>, <kishon@ti.com>,
-        <vkoul@kernel.org>, <dan.carpenter@oracle.com>, <rogerq@kernel.org>,
+CC: <lee.jones@linaro.org>, <kishon@ti.com>, <vkoul@kernel.org>,
+        <dan.carpenter@oracle.com>, <rogerq@kernel.org>,
         <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
         <linux-phy@lists.infradead.org>,
         <linux-arm-kernel@lists.infradead.org>, <sjakhade@cadence.com>,
@@ -64,16 +64,18 @@ Subject: Re: [PATCH 1/6] dt-bindings: phy: ti: phy-gmii-sel: Add bindings for
  J721e
 Content-Language: en-US
 To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
-        <krzysztof.kozlowski+dt@linaro.org>
+        <krzysztof.kozlowski+dt@linaro.org>, Rob Herring <robh@kernel.org>
 References: <20220914093911.187764-1-s-vadapalli@ti.com>
  <20220914093911.187764-2-s-vadapalli@ti.com>
- <2dfb57cd-d9d4-9a26-dd4c-f116894c9baf@linaro.org>
+ <20220914161527.GA2269201-robh@kernel.org>
+ <d48e5ef4-6d5b-0977-ed45-de810e42356c@ti.com>
+ <31028736-ba81-122e-b630-b66e9d9d491a@linaro.org>
 From: Siddharth Vadapalli <s-vadapalli@ti.com>
-In-Reply-To: <2dfb57cd-d9d4-9a26-dd4c-f116894c9baf@linaro.org>
+In-Reply-To: <31028736-ba81-122e-b630-b66e9d9d491a@linaro.org>
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220919_212747_895513_E802F837 
-X-CRM114-Status: GOOD (  18.90  )
+X-CRM114-CacheID: sfid-20220919_215658_954683_5A2795B9 
+X-CRM114-Status: GOOD (  20.07  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,133 +94,65 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 Hello Krzysztof,
 
-On 19/09/22 15:45, Krzysztof Kozlowski wrote:
-> On 14/09/2022 11:39, Siddharth Vadapalli wrote:
->> TI's J721e SoC supports additional PHY modes like QSGMII and SGMII
->> that are not supported on earlier SoCs. Add a compatible for it.
+On 19/09/22 15:47, Krzysztof Kozlowski wrote:
+> On 15/09/2022 07:28, Siddharth Vadapalli wrote:
+>>>> @@ -65,12 +66,19 @@ properties:
+>>>>      description: |
+>>>>        Required only for QSGMII mode. Array to select the port for
+>>>>        QSGMII main mode. Rest of the ports are selected as QSGMII_SUB
+>>>> -      ports automatically. Any one of the 4 CPSW5G ports can act as the
+>>>> -      main port with the rest of them being the QSGMII_SUB ports.
+>>>> -    maxItems: 1
+>>>> -    items:
+>>>> -      minimum: 1
+>>>> -      maximum: 4
+>>>> +      ports automatically. For J7200 CPSW5G with the compatible:
+>>>> +      ti,j7200-cpsw5g-phy-gmii-sel, ti,qsgmii-main-ports is an
+>>>> +      array of only one element, which is the port number ranging from
+>>>> +      1 to 4. For J721e CPSW9G with the compatible:
+>>>> +      ti,j721e-cpsw9g-phy-gmii-sel, ti,qsgmii-main-ports is an array
+>>>> +      of two elements, which corresponds to two potential QSGMII main
+>>>> +      ports. The first element and second element of the array can both
+>>>> +      range from 1 to 8 each, corresponding to two QSGMII main ports.
+>>>> +      For J721e CPSW9G, to configure port 2 as the first QSGMII main
+>>>> +      port and port 7 as the second QSGMII main port, we specify:
+>>>> +      ti,qsgmii-main-ports = <2>, <7>;
+>>>> +      If only one QSGMII main port is desired, mention the same main
+>>>> +      port twice.
+>>>
+>>> Two different forms for the same property name is not great. Just make a 
+>>> new property if you need something different.
 >>
->> Extend ti,qsgmii-main-ports property to support selection of upto
->> two main ports at once across the two QSGMII interfaces.
+>> Thank you for reviewing the patch. Based on the discussion for the
+>> previous series at [1], I had planned to reuse the same property
+>> "ti,qsgmii-main-ports" for TI's J721e device too. The reason for this is
+>> that the property represents the same feature on both devices which is
+>> that of the QSGMII main port. The only difference between the two of
+>> them is that J7200's CPSW5G has 4 external ports while J721e's CPSW9G
+>> has 8 external ports. Thus, J7200 can have at most one QSGMII main port
+>> while J721e can have up to two. Adding a new property which describes
+>> the same feature appears to be redundant to me. Please let me know.
 >>
->> Signed-off-by: Siddharth Vadapalli <s-vadapalli@ti.com>
->> ---
->>  .../bindings/phy/ti,phy-gmii-sel.yaml         | 52 ++++++++++++++++---
->>  1 file changed, 46 insertions(+), 6 deletions(-)
->>
->> diff --git a/Documentation/devicetree/bindings/phy/ti,phy-gmii-sel.yaml b/Documentation/devicetree/bindings/phy/ti,phy-gmii-sel.yaml
->> index da7cac537e15..1e19efab018b 100644
->> --- a/Documentation/devicetree/bindings/phy/ti,phy-gmii-sel.yaml
->> +++ b/Documentation/devicetree/bindings/phy/ti,phy-gmii-sel.yaml
->> @@ -54,6 +54,7 @@ properties:
->>        - ti,dm814-phy-gmii-sel
->>        - ti,am654-phy-gmii-sel
->>        - ti,j7200-cpsw5g-phy-gmii-sel
->> +      - ti,j721e-cpsw9g-phy-gmii-sel
->>  
->>    reg:
->>      maxItems: 1
->> @@ -65,12 +66,19 @@ properties:
->>      description: |
->>        Required only for QSGMII mode. Array to select the port for
->>        QSGMII main mode. Rest of the ports are selected as QSGMII_SUB
->> -      ports automatically. Any one of the 4 CPSW5G ports can act as the
->> -      main port with the rest of them being the QSGMII_SUB ports.
->> -    maxItems: 1
->> -    items:
->> -      minimum: 1
->> -      maximum: 4
 > 
-> minItems: 1
-> maxItems: 2
->   items:
->     minimum: 1
->     maximum: 8
+> The trouble is that you wrote the description like it were two different
+> properties (for xx this is one element, for yy this is something else).
+> You need to describe the property in unified way.
 
-Thank you for reviewing the patch. I assume that you want me to mention
-the values for "minItems", "maxItems", "minimum" and "maximum" here and
-modify them later based on the compatible where applicable. I will do so
-in the v2 series.
+Thank you for reviewing the patch. I plan to update the description to
+the following:
+"Required only for QSGMII mode. Array to select the port/s for QSGMII
+main mode. The size of the array corresponds to the number of QSGMII
+interfaces and thus, the number of distinct QSGMII main ports, supported
+by the device. If the device supports two QSGMII interfaces but only one
+QSGMII interface is desired, repeat the QSGMII main port value
+corresponding to the QSGMII interface in the array."
 
-> 
->> +      ports automatically. For J7200 CPSW5G with the compatible:
->> +      ti,j7200-cpsw5g-phy-gmii-sel, ti,qsgmii-main-ports is an
->> +      array of only one element, which is the port number ranging from
->> +      1 to 4. For J721e CPSW9G with the compatible:
->> +      ti,j721e-cpsw9g-phy-gmii-sel, ti,qsgmii-main-ports is an array
->> +      of two elements, which corresponds to two potential QSGMII main
->> +      ports. The first element and second element of the array can both
->> +      range from 1 to 8 each, corresponding to two QSGMII main ports.
->> +      For J721e CPSW9G, to configure port 2 as the first QSGMII main
->> +      port and port 7 as the second QSGMII main port, we specify:
->> +      ti,qsgmii-main-ports = <2>, <7>;
->> +      If only one QSGMII main port is desired, mention the same main
->> +      port twice.
->>  
->>  allOf:
->>    - if:
->> @@ -81,12 +89,43 @@ allOf:
->>                - ti,dra7xx-phy-gmii-sel
->>                - ti,dm814-phy-gmii-sel
->>                - ti,am654-phy-gmii-sel
->> +              - ti,j7200-cpsw5g-phy-gmii-sel
->> +              - ti,j721e-cpsw9g-phy-gmii-sel
->>      then:
->>        properties:
->>          '#phy-cells':
->>            const: 1
->>            description: CPSW port number (starting from 1)
->>  
->> +  - if:
->> +      properties:
->> +        compatible:
->> +          contains:
->> +            enum:
->> +              - ti,j7200-cpsw5g-phy-gmii-sel
->> +    then:
->> +      properties:
->> +        ti,qsgmii-main-ports:
->> +          maxItems: 1
->> +          items:
->> +            minimum: 1
->> +            maximum: 4
->> +
->> +  - if:
->> +      properties:
->> +        compatible:
->> +          contains:
->> +            enum:
->> +              - ti,j721e-cpsw9g-phy-gmii-sel
->> +    then:
->> +      properties:
->> +        ti,qsgmii-main-ports:
->> +          minItems: 2
->> +          maxItems: 2
->> +          items:
->> +            minimum: 1
->> +            maximum: 8
->> +
->>    - if:
->>        not:
->>          properties:
->> @@ -94,6 +133,7 @@ allOf:
->>              contains:
->>                enum:
->>                  - ti,j7200-cpsw5g-phy-gmii-sel
->> +                - ti,j721e-cpsw9g-phy-gmii-sel
->>      then:
->>        properties:
->>          ti,qsgmii-main-ports: false
-> 
-> This is interesting here... Did you test the bindings with your DTS?
-
-Yes, I tried it out with different compatibles in the DTS file for the
-node, making sure that the property "ti,qsgmii-main-ports" is allowed
-only for the "ti,j7200-cpsw5g-phy-gmii-sel" and the
-"ti,j721e-cpsw9g-phy-gmii-sel" compatibles. Additionally, I also tested
-that the "minItems", "maxItems", "minimum" and "maximum" checks apply.
-All of the rules within the "allOf", are enforced one after the other in
-sequence, based on my testing. Please let me know in case of any
-suggestions to implement it in a better way.
+I intend to describe the property in detail to help users understand the
+property and its usage better. In the process, I might have
+unintentionally made it appear as two different properties in the
+previous description. I hope the new description shows that the property
+describes the same feature across devices while making its usage clear
+to the users at the same time. Please let me know if this is fine.
 
 Regards,
 Siddharth.
