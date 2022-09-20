@@ -4,57 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id ACD41C6FA8B
-	for <linux-phy@archiver.kernel.org>; Tue, 20 Sep 2022 10:22:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C24CBC54EE9
+	for <linux-phy@archiver.kernel.org>; Tue, 20 Sep 2022 10:22:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
 	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CogTzaJym1Q52905nPf4YQ0g8oTSioILqtw+A0kVpG4=; b=uF7VLXX84oq/5c
-	9fOKjLA00fJk//wfAGQQd1bTQOZwf4UZZKkKVJJMEFUbKUert7kgo1Uv+M17Cbk/87jnyo+3gF6Kk
-	XfDj9/UJua3O2dRCTIvd3kXUU8VixcYXVcGbzfgqcd/8AwwyElo5KipdR+MbxJ/5XFM3B5ISsJYE3
-	TaELfrzXqKgxsL17KvR3ifwElZ2MufeEUSVR2S2SJdmv0yIV7OzD2yrolCAwPB24YhnuVWCKqQ6zz
-	A2QI3JIjEgAldHykrpdLBhSV8QPVKTQMuYAWotAOT7eZN35bdmEruygHvErlYk8nxfNx3D/njnzib
-	+TFdUV00NMonkgZtLZxA==;
+	List-Owner; bh=vTyYD8gmvOV8+Wo08U3MiVkDYp7p+wanqIvuaw8nDoY=; b=MgtfZpDaXOrAig
+	W8Bh5rxClXCmaoLxcfgn3xeDbN0+woKIILkdYsoXqdOweviwby8v0L/TruacnFvmj/RN1fq98aD3k
+	d0ckC/N1/CIwYJFcgGGl8jcvtEoev1giv1e+bpVOS5z61DsyNzIc2FjJxKGYb46aIl5x/DNWOvIel
+	TZqayGJ8MKN7GWndpWggaRzvDxfV3YxQ1asEZ582oqaO7z5VY3nI5v0XIgpjJg9uSv0thcEVkDl4A
+	drc1nseTPBbLF1GSY01w8RZr/66du8qDsuizqplfs5L7TpoYr7I8cZnMXBZcu1qN9MoFs0kmw4NT8
+	XoPHMFGbRQwt7ctXAJUQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oaaOw-002unZ-0k; Tue, 20 Sep 2022 10:22:50 +0000
+	id 1oaaOw-002uoJ-SS; Tue, 20 Sep 2022 10:22:50 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oaaOq-002uig-Oy
-	for linux-phy@lists.infradead.org; Tue, 20 Sep 2022 10:22:47 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.5/8.17.1.5) with ESMTP id 28K8SKwT018573;
-	Tue, 20 Sep 2022 10:22:34 GMT
+	id 1oaaOr-002uij-Jb
+	for linux-phy@lists.infradead.org; Tue, 20 Sep 2022 10:22:48 +0000
+Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.5/8.17.1.5) with ESMTP id 28K7xnQ8009265;
+	Tue, 20 Sep 2022 10:22:35 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
  subject : date : message-id : in-reply-to : references; s=qcppdkim1;
- bh=X3qxqlW+mUwvpjQqgoQXvawek5rXaIu94AJrsdYu/3E=;
- b=X+sYZ+vKnbiRTBGWvzXP1K2sbdLZS1/lBZ29t4RM6B8JavgIgE0SH7H4FVGI59PjS0gp
- EPzdPcW4IYfiu2XUT4dQFFAdU+RuliSQngqngfS+1vZzIGj0pvLXCu0mf1vzf175vJRe
- XBySWY7oqo19FGP/bc89vU08oiDVg9AqyBDka0NugILGQFRBy8kX3TlKVDog6hgY1xYL
- aUbQ7gwyRajwJtpHicFDTLCcAH1OCzz2z4tA7zRLwAW+daKrTOe3s+8/1ojwJBtyL1ex
- eAEC/7/uYtWIk+QZZ/4cUoZRzWTT7MhYVuzv8tSpIumrOvZJkr3UNCT7ZCeXZd5WDPNo dw== 
+ bh=bGJ+pKfcVqDIiOFQgrD1m3p0Qty8nksEq/klYn0BIPM=;
+ b=XAZsccVcSJYqkb7T+7aVnSfLKuG1feYZpSoA199uGAWHJnOIWgUVn6SyT8RMjIBm+YQn
+ 081+tZdpXSNRFVCCSrOJlYEDVlG5CNyryyT6J4S2oYYd/H36P7vyVJPSsjheC+B1UfKX
+ 9waKQ4hUrBR8qAqY5HwT8ddTnCHLZAxrqpaHM6OYtNVrV5+w0nBV+zfzwK1UzDhrC0Q4
+ mspw0ckWNanPQG8JfSkdExvKly91NcDFhR0vnzArmwefyA5uqXZgR6CFF/UqcBJVE5j9
+ WCabQqFVAhaJU2hM1w69hmRsA3YMFDnw5DhlrMQjglktALXxNRQiB0Nwv0vsk6NXf6dS Xw== 
 Received: from apblrppmta01.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3jqa1k8aqg-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3jptw33446-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
 	Tue, 20 Sep 2022 10:22:34 +0000
 Received: from pps.filterd (APBLRPPMTA01.qualcomm.com [127.0.0.1])
-	by APBLRPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTP id 28KAMUt6016176;
-	Tue, 20 Sep 2022 10:22:30 GMT
+	by APBLRPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTP id 28KAMVlW016209;
+	Tue, 20 Sep 2022 10:22:31 GMT
 Received: from pps.reinject (localhost [127.0.0.1])
-	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTPS id 3jnqrbnbqn-1
+	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTPS id 3jnqrbnbr6-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
-	Tue, 20 Sep 2022 10:22:30 +0000
+	Tue, 20 Sep 2022 10:22:31 +0000
 Received: from APBLRPPMTA01.qualcomm.com (APBLRPPMTA01.qualcomm.com [127.0.0.1])
-	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 28KAMUqc016154;
-	Tue, 20 Sep 2022 10:22:30 GMT
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 28KAJDH9014240;
+	Tue, 20 Sep 2022 10:22:31 GMT
 Received: from hu-sgudaval-hyd.qualcomm.com (hu-krichai-hyd.qualcomm.com [10.213.110.37])
-	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTP id 28KAMTpQ016148;
-	Tue, 20 Sep 2022 10:22:30 +0000
+	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTP id 28KAMUcX016193;
+	Tue, 20 Sep 2022 10:22:31 +0000
 Received: by hu-sgudaval-hyd.qualcomm.com (Postfix, from userid 4058933)
-	id 2CFEC19F8; Tue, 20 Sep 2022 15:52:29 +0530 (+0530)
+	id 18FE31A0A; Tue, 20 Sep 2022 15:52:30 +0530 (+0530)
 From: Krishna chaitanya chundru <quic_krichai@quicinc.com>
 To: helgaas@kernel.org
 Cc: linux-pci@vger.kernel.org, linux-arm-msm@vger.kernel.org,
@@ -68,10 +68,11 @@ Cc: linux-pci@vger.kernel.org, linux-arm-msm@vger.kernel.org,
         bhelgaas@google.com, linux-phy@lists.infradead.org, vkoul@kernel.org,
         kishon@ti.com, mturquette@baylibre.com, linux-clk@vger.kernel.org,
         Krishna chaitanya chundru <quic_krichai@quicinc.com>,
-        Bjorn Andersson <bjorn.andersson@linaro.org>
-Subject: [PATCH v7 1/5] PCI: qcom: Add system suspend and resume support
-Date: Tue, 20 Sep 2022 15:52:23 +0530
-Message-Id: <1663669347-29308-2-git-send-email-quic_krichai@quicinc.com>
+        Bjorn Andersson <bjorn.andersson@linaro.org>,
+        Stephen Boyd <sboyd@kernel.org>
+Subject: [PATCH v7 5/5] clk: qcom: gcc-sc7280: Update the .pwrsts for PCIe GDSC
+Date: Tue, 20 Sep 2022 15:52:27 +0530
+Message-Id: <1663669347-29308-6-git-send-email-quic_krichai@quicinc.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1663669347-29308-1-git-send-email-quic_krichai@quicinc.com>
 References: <1663669347-29308-1-git-send-email-quic_krichai@quicinc.com>
@@ -79,19 +80,19 @@ X-QCInternal: smtphost
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: iaPTJMpRgGCCFQQ5WkALV4p6-wWAKXRF
-X-Proofpoint-ORIG-GUID: iaPTJMpRgGCCFQQ5WkALV4p6-wWAKXRF
+X-Proofpoint-ORIG-GUID: i22Kw6cglr45nfDrZ8fX6cgxsUowuBmL
+X-Proofpoint-GUID: i22Kw6cglr45nfDrZ8fX6cgxsUowuBmL
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.205,Aquarius:18.0.895,Hydra:6.0.528,FMLib:17.11.122.1
  definitions=2022-09-20_02,2022-09-16_01,2022-06-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0 malwarescore=0
- adultscore=0 priorityscore=1501 suspectscore=0 bulkscore=0 phishscore=0
- mlxscore=0 impostorscore=0 clxscore=1015 mlxlogscore=999
- lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
+ clxscore=1015 impostorscore=0 phishscore=0 adultscore=0 mlxscore=0
+ bulkscore=0 malwarescore=0 priorityscore=1501 suspectscore=0 spamscore=0
+ mlxlogscore=802 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.12.0-2209130000 definitions=main-2209200062
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220920_032244_973445_D0212397 
-X-CRM114-Status: GOOD (  31.93  )
+X-CRM114-CacheID: sfid-20220920_032245_861230_557E7B54 
+X-CRM114-Status: GOOD (  16.51  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -109,291 +110,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add suspend and resume syscore ops.
-
-Few PCIe endpoints like NVMe and WLANs are always expecting the device
-to be in D0 state and the link to be active (or in l1ss) all the time
-(including in S3 state).
-
-In qcom platform PCIe resources( clocks, phy etc..) can released
-when the link is in L1ss to reduce the power consumption. So if the link
-is in L1ss, release the PCIe resources. And when the system resumes,
-enable the PCIe resources if they released in the suspend path.
-
-is_suspended flag indicates if the PCIe resources are released or not
-in the suspend path.
-
-Its observed that access to Ep PCIe space to mask MSI/MSIX is happening
-at the very late stage of suspend path (access by affinity changes while
-making CPUs offline during suspend, this will happen after devices are
-suspended (after all phases of suspend ops)). If we turn off clocks in
-any PM callback, afterwards running into crashes due to un-clocked access
-due to above mentioned MSI/MSIx access.
-So, we are making use of syscore framework to turn off the PCIe clocks
-which will be called after making CPUs offline.
+Enabling PCIe GDSC retention to ensure controller and its
+dependent clocks won't go down during system suspend.
+Update the .pwrsts for PCIe GDSC so it only transitions
+to RET in low power.
 
 Signed-off-by: Krishna chaitanya chundru <quic_krichai@quicinc.com>
 ---
 changes since v6:
-	- move the supports_system_suspend check to syscore ops.
-changes since v5:
-	- Rebasing the code and replaced pm ops with syscore ops as
-	  we are getting access to pci region after pm ops. syscore ops
-	  will called after disabling non boot cpus and there is no pci
-	  access after that.
-Changes since v4:
-	- Rebasing the code and removed the supports_system_suspend flag
-	- in the resume path as is_suspended will serve its purpose.
-Changes since v3:
-	- Powering down the phy in suspend and powering it on resume to
-	  achieve maximum power savings.
-Changes since v2:
-	- Replaced the enable, disable clks ops with suspend and resume
-	- Renamed support_pm_opsi flag  with supports_system_suspend.
-Changes since v1:
-	- Fixed compilation errors.
+	- Instead of marking as ALWAYS_ON setting .pwrsts to RET in low
+	  power.
 ---
- drivers/pci/controller/dwc/pcie-qcom.c | 139 ++++++++++++++++++++++++++++++++-
- 1 file changed, 138 insertions(+), 1 deletion(-)
+ drivers/clk/qcom/gcc-sc7280.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/pci/controller/dwc/pcie-qcom.c b/drivers/pci/controller/dwc/pcie-qcom.c
-index 39ca06f..3f5424a 100644
---- a/drivers/pci/controller/dwc/pcie-qcom.c
-+++ b/drivers/pci/controller/dwc/pcie-qcom.c
-@@ -27,6 +27,7 @@
- #include <linux/reset.h>
- #include <linux/slab.h>
- #include <linux/types.h>
-+#include <linux/syscore_ops.h>
- 
- #include "../../pci.h"
- #include "pcie-designware.h"
-@@ -44,6 +45,9 @@
- #define PCIE20_PARF_PM_CTRL			0x20
- #define REQ_NOT_ENTR_L1				BIT(5)
- 
-+#define PCIE20_PARF_PM_STTS			0x24
-+#define PCIE20_PARF_PM_STTS_LINKST_IN_L1SUB	BIT(8)
-+
- #define PCIE20_PARF_PHY_CTRL			0x40
- #define PHY_CTRL_PHY_TX0_TERM_OFFSET_MASK	GENMASK(20, 16)
- #define PHY_CTRL_PHY_TX0_TERM_OFFSET(x)		((x) << 16)
-@@ -122,6 +126,8 @@
- 
- #define QCOM_PCIE_CRC8_POLYNOMIAL (BIT(2) | BIT(1) | BIT(0))
- 
-+static LIST_HEAD(qcom_pcie_list);
-+
- struct qcom_pcie_resources_2_1_0 {
- 	struct clk_bulk_data clks[QCOM_PCIE_2_1_0_MAX_CLOCKS];
- 	struct reset_control *pci_reset;
-@@ -211,13 +217,21 @@ struct qcom_pcie_ops {
- 	void (*post_deinit)(struct qcom_pcie *pcie);
- 	void (*ltssm_enable)(struct qcom_pcie *pcie);
- 	int (*config_sid)(struct qcom_pcie *pcie);
-+	int (*suspend)(struct qcom_pcie *pcie);
-+	int (*resume)(struct qcom_pcie *pcie);
+diff --git a/drivers/clk/qcom/gcc-sc7280.c b/drivers/clk/qcom/gcc-sc7280.c
+index 7ff64d4..e66069c 100644
+--- a/drivers/clk/qcom/gcc-sc7280.c
++++ b/drivers/clk/qcom/gcc-sc7280.c
+@@ -3108,7 +3108,7 @@ static struct gdsc gcc_pcie_1_gdsc = {
+ 	.pd = {
+ 		.name = "gcc_pcie_1_gdsc",
+ 	},
+-	.pwrsts = PWRSTS_OFF_ON,
++	.pwrsts = PWRSTS_RET_ON,
+ 	.flags = VOTABLE,
  };
  
- struct qcom_pcie_cfg {
- 	const struct qcom_pcie_ops *ops;
-+	/*
-+	 * Flag ensures which devices will turn off clks, phy
-+	 * in system suspend.
-+	 */
-+	unsigned int supports_system_suspend:1;
- };
- 
- struct qcom_pcie {
-+	struct list_head list;	/* list to probed instances */
- 	struct dw_pcie *pci;
- 	void __iomem *parf;			/* DT parf */
- 	void __iomem *elbi;			/* DT elbi */
-@@ -225,10 +239,14 @@ struct qcom_pcie {
- 	struct phy *phy;
- 	struct gpio_desc *reset;
- 	const struct qcom_pcie_cfg *cfg;
-+	unsigned int is_suspended:1;
- };
- 
- #define to_qcom_pcie(x)		dev_get_drvdata((x)->dev)
- 
-+static int __maybe_unused qcom_pcie_syscore_op_suspend(void);
-+static void __maybe_unused qcom_pcie_syscore_op_resume(void);
-+
- static void qcom_ep_reset_assert(struct qcom_pcie *pcie)
- {
- 	gpiod_set_value_cansleep(pcie->reset, 1);
-@@ -1301,6 +1319,28 @@ static void qcom_pcie_deinit_2_7_0(struct qcom_pcie *pcie)
- 	regulator_bulk_disable(ARRAY_SIZE(res->supplies), res->supplies);
- }
- 
-+static int qcom_pcie_resume_2_7_0(struct qcom_pcie *pcie)
-+{
-+	struct qcom_pcie_resources_2_7_0 *res = &pcie->res.v2_7_0;
-+	int ret;
-+
-+	ret = clk_bulk_prepare_enable(res->num_clks, res->clks);
-+
-+	phy_power_on(pcie->phy);
-+
-+	return ret;
-+}
-+
-+static int qcom_pcie_suspend_2_7_0(struct qcom_pcie *pcie)
-+{
-+	struct qcom_pcie_resources_2_7_0 *res = &pcie->res.v2_7_0;
-+
-+	phy_power_off(pcie->phy);
-+
-+	clk_bulk_disable_unprepare(res->num_clks, res->clks);
-+	return 0;
-+}
-+
- static int qcom_pcie_get_resources_2_9_0(struct qcom_pcie *pcie)
- {
- 	struct qcom_pcie_resources_2_9_0 *res = &pcie->res.v2_9_0;
-@@ -1594,6 +1634,8 @@ static const struct qcom_pcie_ops ops_1_9_0 = {
- 	.deinit = qcom_pcie_deinit_2_7_0,
- 	.ltssm_enable = qcom_pcie_2_3_2_ltssm_enable,
- 	.config_sid = qcom_pcie_config_sid_sm8250,
-+	.suspend = qcom_pcie_suspend_2_7_0,
-+	.resume = qcom_pcie_resume_2_7_0,
- };
- 
- /* Qcom IP rev.: 2.9.0  Synopsys IP rev.: 5.00a */
-@@ -1613,6 +1655,11 @@ static const struct qcom_pcie_cfg cfg_1_9_0 = {
- 	.ops = &ops_1_9_0,
- };
- 
-+static const struct qcom_pcie_cfg sc7280_cfg = {
-+	.ops = &ops_1_9_0,
-+	.supports_system_suspend = true,
-+};
-+
- static const struct qcom_pcie_cfg cfg_2_1_0 = {
- 	.ops = &ops_2_1_0,
- };
-@@ -1642,6 +1689,23 @@ static const struct dw_pcie_ops dw_pcie_ops = {
- 	.start_link = qcom_pcie_start_link,
- };
- 
-+/*
-+ * There is access to Ep PCIe space to mask MSI/MSIX after pm suspend
-+ * ops.(getting hit by affinity changes while making CPUs offline during
-+ * suspend, this will happen after devices are suspended
-+ * (all phases of suspend ops)).
-+ *
-+ * When registered with pm ops there is a crash due to un-clocked access,
-+ * as in the pm suspend op clocks are disabled.
-+ *
-+ * So, registering with syscore ops which will called after making
-+ * CPU's offline.
-+ */
-+static struct syscore_ops qcom_pcie_syscore_ops = {
-+	.suspend = qcom_pcie_syscore_op_suspend,
-+	.resume = qcom_pcie_syscore_op_resume,
-+};
-+
- static int qcom_pcie_probe(struct platform_device *pdev)
- {
- 	struct device *dev = &pdev->dev;
-@@ -1720,6 +1784,17 @@ static int qcom_pcie_probe(struct platform_device *pdev)
- 		goto err_phy_exit;
- 	}
- 
-+	/* Register for syscore ops only when first instance probed */
-+	if (list_empty(&qcom_pcie_list))
-+		register_syscore_ops(&qcom_pcie_syscore_ops);
-+
-+	/*
-+	 * Add the qcom_pcie list of each PCIe instance probed to
-+	 * the global list so that we use it iterate through each PCIe
-+	 * instance in the syscore ops.
-+	 */
-+	list_add_tail(&pcie->list, &qcom_pcie_list);
-+
- 	return 0;
- 
- err_phy_exit:
-@@ -1731,6 +1806,68 @@ static int qcom_pcie_probe(struct platform_device *pdev)
- 	return ret;
- }
- 
-+static int __maybe_unused qcom_pcie_pm_suspend(struct qcom_pcie *pcie)
-+{
-+	u32 val;
-+	struct dw_pcie *pci = pcie->pci;
-+	struct device *dev = pci->dev;
-+
-+	/* if the link is not active turn off clocks */
-+	if (!dw_pcie_link_up(pci)) {
-+		dev_dbg(dev, "Link is not active\n");
-+		goto suspend;
-+	}
-+
-+	/* if the link is not in l1ss don't turn off clocks */
-+	val = readl(pcie->parf + PCIE20_PARF_PM_STTS);
-+	if (!(val & PCIE20_PARF_PM_STTS_LINKST_IN_L1SUB)) {
-+		dev_warn(dev, "Link is not in L1ss\n");
-+		return 0;
-+	}
-+
-+suspend:
-+	if (pcie->cfg->ops->suspend)
-+		pcie->cfg->ops->suspend(pcie);
-+
-+	pcie->is_suspended = true;
-+
-+	return 0;
-+}
-+
-+static int __maybe_unused qcom_pcie_pm_resume(struct qcom_pcie *pcie)
-+{
-+	if (!pcie->is_suspended)
-+		return 0;
-+
-+	if (pcie->cfg->ops->resume)
-+		pcie->cfg->ops->resume(pcie);
-+
-+	pcie->is_suspended = false;
-+
-+	return 0;
-+}
-+
-+static int __maybe_unused qcom_pcie_syscore_op_suspend(void)
-+{
-+	struct qcom_pcie *qcom_pcie;
-+
-+	list_for_each_entry(qcom_pcie, &qcom_pcie_list, list) {
-+
-+		if (qcom_pcie->cfg->supports_system_suspend)
-+			qcom_pcie_pm_suspend(qcom_pcie);
-+	}
-+	return 0;
-+}
-+
-+static void __maybe_unused qcom_pcie_syscore_op_resume(void)
-+{
-+	struct qcom_pcie *qcom_pcie;
-+
-+	list_for_each_entry(qcom_pcie, &qcom_pcie_list, list) {
-+		qcom_pcie_pm_resume(qcom_pcie);
-+	}
-+}
-+
- static const struct of_device_id qcom_pcie_match[] = {
- 	{ .compatible = "qcom,pcie-apq8064", .data = &cfg_2_1_0 },
- 	{ .compatible = "qcom,pcie-apq8084", .data = &cfg_1_0_0 },
-@@ -1742,7 +1879,7 @@ static const struct of_device_id qcom_pcie_match[] = {
- 	{ .compatible = "qcom,pcie-msm8996", .data = &cfg_2_3_2 },
- 	{ .compatible = "qcom,pcie-qcs404", .data = &cfg_2_4_0 },
- 	{ .compatible = "qcom,pcie-sa8540p", .data = &cfg_1_9_0 },
--	{ .compatible = "qcom,pcie-sc7280", .data = &cfg_1_9_0 },
-+	{ .compatible = "qcom,pcie-sc7280", .data = &sc7280_cfg },
- 	{ .compatible = "qcom,pcie-sc8180x", .data = &cfg_1_9_0 },
- 	{ .compatible = "qcom,pcie-sc8280xp", .data = &cfg_1_9_0 },
- 	{ .compatible = "qcom,pcie-sdm845", .data = &cfg_2_7_0 },
 -- 
 2.7.4
 
