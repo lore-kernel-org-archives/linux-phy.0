@@ -4,63 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D3A73ECAAD8
-	for <linux-phy@archiver.kernel.org>; Tue, 20 Sep 2022 06:22:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AAFF2C6FA82
+	for <linux-phy@archiver.kernel.org>; Tue, 20 Sep 2022 06:22:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tN8KYKpqkiEZlGOJAm7elXzbCvxTG4z2m/CNdGQ4eBk=; b=VP1RFBJMcTiLIw
-	ozCr6RX/PDvAAMxV5AFTbSjNZVW1wfJFPyE0J+QYN/f5fyb9I2D5Q90Uo9dDp/w5u3pN1S4376t38
-	bMNjXMdMlbu4hfQaesdLGckotgdkyxXvUNodVl+bW1r5vBKStf9Ch8Dt4VYls33g05F1DeeDKU4+u
-	1mfayi94894CtqsscyW15LXWkJ4luT1ctH6XUzbHho3CsaAB88OvAuESK4UwmBZWAmm9TdRkjiBYT
-	upN/9VTulOx/9H61ocQ8jTMpHQQ+CEA6a8s4iZsfRChO3aZl3Wd9FBZFmfOEzbXDvWqkJdPVtOLxN
-	qvF/7WskWpwVNU1nGvzg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=tZn9Lq9CNgm2Pt8ZXUr45b/zGA01EAsb5M9XyA3D/mI=; b=yr4F+rNJITqbeoO1VnpwCihIdf
+	X+tdNNxyDSi3o/pUksXUqwr+RV6OyU3CMJ358c9CatOokAQNHkFEeDaK0HqwKXs1TVqqVW9HPOU40
+	nT6wXTViOxXIu4k6M5PVRqclnrNuA2tPo6iDAZcCPBQ8rL10AjxF07WS+pVehSH6tf0GiVdcNEhR7
+	ask1eq6U3DCh4Ch2zzVYCb5Z2LUN05OylKXqgyctNoCBhHHpPKpnPLc9xfuRCPdMgAV0PADpbIXnV
+	nirLDVTBhW93jBcMZ6kKHgFr6+R3r8vzSILarp1NdbWX88LgnbwG7RW9A+cmsBW91mdtOK4VOTpgG
+	TKQ4IkRA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oaWdt-000wvX-84; Tue, 20 Sep 2022 06:22:01 +0000
-Received: from ams.source.kernel.org ([145.40.68.75])
+	id 1oaWeX-000x4o-2w; Tue, 20 Sep 2022 06:22:41 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oaWdq-000wts-Vd
-	for linux-phy@lists.infradead.org; Tue, 20 Sep 2022 06:22:00 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id 47F71B824F2;
-	Tue, 20 Sep 2022 06:21:55 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 69C5CC433D7;
-	Tue, 20 Sep 2022 06:21:53 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1663654914;
-	bh=3sJWRl+J/q3DcjQpY50g5O+wsnvw0WrYojCy/QlMC/s=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=q5Oa3UtXvwQ3ccq0WHQhH+aEBQeb89xFVX3L1vIFCRJPH5Pt0bhh68cCPQCE8Hyiw
-	 6SJmn/w4UYyS40I6oT9Ww+0pfZF9nhYlRRx5O6K2sfMMKy4pu7ImlUVG2wB6bm9M0Y
-	 iPCrxg0F072UaZf6S81Rl1BFCvG67Jg3Z6n69QDD6I/s+yK1fbxyI/ne1beNJPSYtL
-	 2bHUPxCkubzZAZlp0p3SsnEDHvxOYjio5Hf39VNNso1L32e3Zz1d0WG5ODVnPwjPKg
-	 XcuEwACe9ILriH8Th0K1SXJ09LUF6uOwr02m2ZYa2av/VTY2cDJich1w32F6ynpv0p
-	 EbO/A5k6EUD3g==
-Date: Tue, 20 Sep 2022 11:51:50 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Geert Uytterhoeven <geert+renesas@glider.be>
-Cc: Kishon Vijay Abraham I <kishon@ti.com>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-renesas-soc@vger.kernel.org
-Subject: Re: [PATCH v2] dt-bindings: phy: renesas,rcar-gen2-usb-phy: Convert
- to json-schema
-Message-ID: <Yylb/phqpn6TguUB@matsya>
-References: <dbdcffd009302734fe2fb895ce04b72fa1ea4355.1663165000.git.geert+renesas@glider.be>
+	id 1oaWeN-000x2g-WD
+	for linux-phy@lists.infradead.org; Tue, 20 Sep 2022 06:22:33 +0000
+Received: from drehscheibe.grey.stw.pengutronix.de ([2a0a:edc0:0:c01:1d::a2])
+	by metis.ext.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
+	(Exim 4.92)
+	(envelope-from <ukl@pengutronix.de>)
+	id 1oaWds-0002p0-9V; Tue, 20 Sep 2022 08:22:00 +0200
+Received: from [2a0a:edc0:0:900:1d::77] (helo=ptz.office.stw.pengutronix.de)
+	by drehscheibe.grey.stw.pengutronix.de with esmtp (Exim 4.94.2)
+	(envelope-from <ukl@pengutronix.de>)
+	id 1oaWdm-001o8d-IJ; Tue, 20 Sep 2022 08:21:53 +0200
+Received: from ukl by ptz.office.stw.pengutronix.de with local (Exim 4.94.2)
+	(envelope-from <ukl@pengutronix.de>)
+	id 1oaWdk-0028nS-97; Tue, 20 Sep 2022 08:21:52 +0200
+Date: Tue, 20 Sep 2022 08:21:49 +0200
+From: Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
+To: Johan Jonker <jbx6244@gmail.com>
+Cc: kever.yang@rock-chips.com, sjg@chromium.org, philipp.tomsich@vrull.eu,
+	robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
+	heiko@sntech.de, ulf.hansson@linaro.org, miquel.raynal@bootlin.com,
+	richard@nod.at, vigneshr@ti.com, kishon@ti.com, vkoul@kernel.org,
+	thierry.reding@gmail.com, gregkh@linuxfoundation.org,
+	broonie@kernel.org, wim@linux-watchdog.org, linux@roeck-us.net,
+	zhangqing@rock-chips.com, jamie@jamieiles.com,
+	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
+	linux-i2c@vger.kernel.org, linux-mmc@vger.kernel.org,
+	linux-mtd@lists.infradead.org, linux-phy@lists.infradead.org,
+	linux-pwm@vger.kernel.org, linux-serial@vger.kernel.org,
+	linux-spi@vger.kernel.org, linux-usb@vger.kernel.org,
+	linux-watchdog@vger.kernel.org
+Subject: Re: [PATCH v1 03/11] dt-bindings: pwm: rockchip: add
+ rockchip,rk3128-pwm
+Message-ID: <20220920062149.o6gdhsh7bk5rl4ah@pengutronix.de>
+References: <20220909212543.17428-1-jbx6244@gmail.com>
+ <f5dd0ee4-d97e-d878-ffde-c06e9b233e38@gmail.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <dbdcffd009302734fe2fb895ce04b72fa1ea4355.1663165000.git.geert+renesas@glider.be>
+In-Reply-To: <f5dd0ee4-d97e-d878-ffde-c06e9b233e38@gmail.com>
+X-SA-Exim-Connect-IP: 2a0a:edc0:0:c01:1d::a2
+X-SA-Exim-Mail-From: ukl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de); SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220919_232159_184457_E30E4F23 
-X-CRM114-Status: UNSURE (   7.90  )
+X-CRM114-CacheID: sfid-20220919_232232_192706_C1BDFEDA 
+X-CRM114-Status: UNSURE (   9.87  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -73,21 +80,69 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============4901631555703633458=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 14-09-22, 16:17, Geert Uytterhoeven wrote:
-> Convert the Renesas R-Car Gen2 USB PHY Device Tree binding documentation
-> to json-schema.
 
-Applied, thanks
+--===============4901631555703633458==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="kd7xret2mae2a4ju"
+Content-Disposition: inline
 
--- 
-~Vinod
+
+--kd7xret2mae2a4ju
+Content-Type: text/plain; charset=iso-8859-1
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+Hello,
+
+On Sat, Sep 10, 2022 at 12:02:22AM +0200, Johan Jonker wrote:
+> Add rockchip,rk3128-pwm compatible string.
+>=20
+> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+
+Acked-by: Uwe Kleine-K=F6nig <u.kleine-koenig@pengutronix.de>
+
+Is the expectation that this goes in via PWM, or together with the other
+patches via the rockchip maintainers?
+
+Best regards
+Uwe
+
+--=20
+Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
+Industrial Linux Solutions                 | https://www.pengutronix.de/ |
+
+--kd7xret2mae2a4ju
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEfnIqFpAYrP8+dKQLwfwUeK3K7AkFAmMpW/oACgkQwfwUeK3K
+7Ak6lQf+JJwJnr0ZyiY3Or6brzs797WF7GXUAFlXmkUFkhGzHm5kW2EBe5r0eYXK
+6JDJ9MIUXRJvfRMXB0q1REypyJTbfcS78DyhtcyYM89rpXqxBp76jgDUf9Rs2H+z
+fwUffgfMkkQk6ojMNmH6zeOALRizKrYFAmvWQAWndiOJLNeOAtcDF5PnfM+i2xer
+mPTOt7VjkfcG8CKYIp12F7V/aizP9olhrAvGVZKk+bkLNUfSGmkqQcYCaHr7xDaj
+aXtjRhrJzjBtQrq55OSMM5moBXnlWsTQGRxSeNpQO3wHAIbLadUooB4E717L9fut
+q4vUk4zN179x3cEVOMDAV6ZtGl0BIQ==
+=pI/x
+-----END PGP SIGNATURE-----
+
+--kd7xret2mae2a4ju--
+
+
+--===============4901631555703633458==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============4901631555703633458==--
+
