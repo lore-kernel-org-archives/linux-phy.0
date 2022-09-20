@@ -4,68 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 74DC5C54EE9
-	for <linux-phy@archiver.kernel.org>; Tue, 20 Sep 2022 10:01:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1F123C54EE9
+	for <linux-phy@archiver.kernel.org>; Tue, 20 Sep 2022 10:19:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=pF4PCB7Tjjl+oxU1Sgj+vL59nkI9rglqRQJxDBEgYbo=; b=pwx52NquhCHdYJ
-	2g5YvO/Qb/4EOPEpehOqrOTvIVJR6fRoWIFZF/kWSlcnwu2eYK7zvZNYqW1zHvN4cJFN7qaRlAOkp
-	4RPF2cDkrrJ8gFQ5n6XhjE3Yw0QJryQBDKp0p8XlKQDZt24qftsMi/ozk5JJ8XtANLJZJaMnCvxK7
-	L1FPNrzU3Xl6KoJKLsGlHsauA1b3k7paQC/RBxMgXMGf5U95ySlpHGv2VF4+X3HJRRVwNMk+HtB39
-	zjDeUfeDryZU2hW23LsZynq/I6B7/+JuGkx1iB6w+qkOrpbg78A6DGbEP+XmglHWTM1CL1lMpZDbq
-	cI9eWBmJptibROwOy02w==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=CrPaptnYjRbFeoLg+obKzGmyKnk5skmMLNC61/1FvGY=; b=GM8E7dHV3JPP9L
+	Hh7Dm9PtxUJTh/SAs8Q4xySiKfwZoQq0CdAqrF7e64DIbqGix9t93TJ0F9fG933EpXkrJN3XuQN46
+	ijh2crrdnQ2/a7u7ASEekxPZg5uEKWFJwto+mNTyc5FCv5XDGLEZn5ZZ30yf5HN6g/1b/Qt6ZyFFo
+	j2ywTd0x0fSBo+MdlP4slCZ8hTg9dGvINc8ECUVjJ9tS4wJGweDml0k79lVsb6diZhSNALEc2srA8
+	iUmJrASckN34bt1ZKl953hWVe2kQAcDX0wO5N2SfpPcT+cbqBw6AQxvAbvLQGUECjjmYD6HkAwait
+	/1Q8o66jRQhmlsuLJ23Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oaa49-002he0-MI; Tue, 20 Sep 2022 10:01:21 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1oaaLS-002tQo-Hx; Tue, 20 Sep 2022 10:19:14 +0000
+Received: from madras.collabora.co.uk ([46.235.227.172])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oaa47-002hd2-G9; Tue, 20 Sep 2022 10:01:20 +0000
-X-UUID: dd18122254004a2b847b2ec3403b1504-20220920
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
-	h=Content-Type:Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From; bh=xz74ODjKzLI1kd5AQq6NQuh8A0wWpa/ATv1pXW7SzHE=;
-	b=Gt2+gBF4epAPeHAoaGbP+IrpEeIcSy4WiAc3SRxP+srcYXIGvednipnlT0VWj/hXHUU4jqVcuBh8s7qBUD4IsBS9L3a09tY3qHS5zTGZr0o8yjtomGpfN33UxKSZVHdr7MijZxWpeVv1GRmDU0VevH39Ch1dGGdsMAVswF5fV+Q=;
-X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.1.11,REQID:2b52df96-1963-4df1-ad87-e760648014c5,IP:0,U
-	RL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:
-	release,TS:0
-X-CID-META: VersionHash:39a5ff1,CLOUDID:629c06f7-6e85-48d9-afd8-0504bbfe04cb,B
-	ulkID:nil,BulkQuantity:0,Recheck:0,SF:nil,TC:nil,Content:0,EDM:-3,IP:nil,U
-	RL:0,File:nil,Bulk:nil,QS:nil,BEC:nil,COL:0
-X-UUID: dd18122254004a2b847b2ec3403b1504-20220920
-Received: from mtkmbs11n1.mediatek.inc [(172.21.101.185)] by mailgw01.mediatek.com
-	(envelope-from <chunfeng.yun@mediatek.com>)
-	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
-	with ESMTP id 510962581; Tue, 20 Sep 2022 03:01:16 -0700
-Received: from mtkcas10.mediatek.inc (172.21.101.39) by
- mtkmbs10n1.mediatek.inc (172.21.101.34) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id
- 15.2.792.15; Tue, 20 Sep 2022 17:00:40 +0800
-Received: from localhost.localdomain (10.17.3.154) by mtkcas10.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Tue, 20 Sep 2022 17:00:39 +0800
-From: Chunfeng Yun <chunfeng.yun@mediatek.com>
-To: Chun-Kuang Hu <chunkuang.hu@kernel.org>, Vinod Koul <vkoul@kernel.org>
-CC: Philipp Zabel <p.zabel@pengutronix.de>, Chunfeng Yun
-	<chunfeng.yun@mediatek.com>, Kishon Vijay Abraham I <kishon@ti.com>,
-	"Matthias Brugger" <matthias.bgg@gmail.com>,
-	<dri-devel@lists.freedesktop.org>, <linux-mediatek@lists.infradead.org>,
-	<linux-arm-kernel@lists.infradead.org>, <linux-phy@lists.infradead.org>,
-	<linux-kernel@vger.kernel.org>, Jitao Shi <jitao.shi@mediatek.com>, Stanley
- Chu <stanley.chu@mediatek.com>
-Subject: [PATCH 00/18] unify register access and macros
-Date: Tue, 20 Sep 2022 17:00:20 +0800
-Message-ID: <20220920090038.15133-1-chunfeng.yun@mediatek.com>
-X-Mailer: git-send-email 2.25.1
+	id 1oaaL6-002tLU-A2; Tue, 20 Sep 2022 10:18:53 +0000
+Received: from [192.168.1.100] (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: kholk11)
+	by madras.collabora.co.uk (Postfix) with ESMTPSA id 1FA956600368;
+	Tue, 20 Sep 2022 11:18:47 +0100 (BST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1663669128;
+	bh=B7xp7LNcnfbdR5oIkfuWVwdzNL7IbuXIGjam7V0vK40=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=SaWh1AMtnitMfo9coVDZcsdbltKYBYXw1LJst710ha2g5XKkVzVvVVl3mkwpxxGgm
+	 FthnwnKgggKvZyl2L4nVuOYLOoub08A7CWFtDfYuO0n39YHGmR+N89bIZ9WBXTkFfh
+	 /z+1CbJhG5nCl6CQS318lSxAGSRxzRwG8pTE8k5bw0LHZhqk3cFrB59Skd3+l7bnlS
+	 Nmg6BNozuvtjwsD94fpJMY90oSG3pr5dVxXqS3/fzpUoNpBsct05N4mWFKrVqR51ab
+	 xaS5ot7qE+WxpH0LABFAaBp0eYFgvd3dJUPoITu1R6pvxN3hLVfvgDL+LXTZwwaZ4K
+	 ewVvTrcPWH7vw==
+Message-ID: <32c4822a-a094-5fa3-c2af-e515bf897937@collabora.com>
+Date: Tue, 20 Sep 2022 12:18:44 +0200
 MIME-Version: 1.0
-X-MTK: N
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.2.0
+Subject: Re: [PATCH v1 05/17] drm/mediatek: hdmi: use a syscon/regmap instead
+ of iomem
+Content-Language: en-US
+To: Guillaume Ranquet <granquet@baylibre.com>, Vinod Koul <vkoul@kernel.org>,
+ Stephen Boyd <sboyd@kernel.org>, David Airlie <airlied@linux.ie>,
+ Rob Herring <robh+dt@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Daniel Vetter <daniel@ffwll.ch>, Chunfeng Yun <chunfeng.yun@mediatek.com>,
+ CK Hu <ck.hu@mediatek.com>, Jitao shi <jitao.shi@mediatek.com>,
+ Chun-Kuang Hu <chunkuang.hu@kernel.org>,
+ Michael Turquette <mturquette@baylibre.com>,
+ Kishon Vijay Abraham I <kishon@ti.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>
+Cc: linux-mediatek@lists.infradead.org, dri-devel@lists.freedesktop.org,
+ Pablo Sun <pablo.sun@mediatek.com>, linux-clk@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Mattijs Korpershoek
+ <mkorpershoek@baylibre.com>, linux-arm-kernel@lists.infradead.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org
+References: <20220919-v1-0-4844816c9808@baylibre.com>
+ <20220919-v1-5-4844816c9808@baylibre.com>
+From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+In-Reply-To: <20220919-v1-5-4844816c9808@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220920_030119_567760_DEDCFE3D 
-X-CRM114-Status: UNSURE (   6.45  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220920_031852_595100_30416958 
+X-CRM114-Status: GOOD (  13.18  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,55 +82,52 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-No need to define new macros to generate bits, mask and bitfield, use
-common ones instead, e.g. BIT, GENMASK and FIELD_PREP etc.
-Due to common register access helpers are defined for MediaTek's phy
-drivers, the similar helpers defined by ufs, hdmi and mipi phy drivers
-can be removed.
+Il 19/09/22 18:56, Guillaume Ranquet ha scritto:
+> To prepare support for newer chips that need to share their address
+> range with a dedicated ddc driver, move to a syscon.
+> 
+> Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
+> 
+> diff --git a/drivers/gpu/drm/mediatek/mtk_hdmi.c b/drivers/gpu/drm/mediatek/mtk_hdmi.c
+> index 3196189429bc..5cd05d4fe1a9 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_hdmi.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_hdmi.c
 
-Chunfeng Yun (18):
-  phy: mediatek: add a new helper to update bitfield
-  phy: mediatek: tphy: remove macros to prepare bitfield value
-  phy: mediatek: xsphy: remove macros used to prepare bitfield value
-  phy: mediatek: ufs: use common register access helpers
-  phy: mediatek: pcie: use new helper to update register bits
-  phy: mediatek: hdmi: mt2701: use GENMASK and BIT to generate mask and
-    bits
-  phy: mediatek: hdmi: mt2701: use FIELD_PREP to prepare bits field
-  phy: mediatek: hdmi: mt2701: use common helper to access registers
-  phy: mediatek: hdmi: mt8173: use GENMASK to generate bits mask
-  phy: mediatek: hdmi: mt8173: use FIELD_PREP to prepare bits field
-  phy: mediatek: hdmi: mt8173: use common helper to access registers
-  phy: mediatek: hdmi: remove register access helpers
-  phy: mediatek: mipi: mt8173: use GENMASK to generate bits mask
-  phy: mediatek: mipi: mt8173: use FIELD_PREP to prepare bits field
-  phy: mediatek: mipi: mt8173: use common helper to access registers
-  phy: mediatek: mipi: mt8183: use GENMASK to generate bits mask
-  phy: mediatek: mipi: mt8183: use common helper to access registers
-  phy: mediatek: mipi: remove register access helpers
+..snip..
 
- drivers/phy/mediatek/phy-mtk-hdmi-mt2701.c    | 238 ++++++++---------
- drivers/phy/mediatek/phy-mtk-hdmi-mt8173.c    | 246 ++++++++----------
- drivers/phy/mediatek/phy-mtk-hdmi.c           |  33 ---
- drivers/phy/mediatek/phy-mtk-hdmi.h           |   7 -
- drivers/phy/mediatek/phy-mtk-io.h             |   7 +
- .../phy/mediatek/phy-mtk-mipi-dsi-mt8173.c    | 164 ++++++------
- .../phy/mediatek/phy-mtk-mipi-dsi-mt8183.c    |  74 +++---
- drivers/phy/mediatek/phy-mtk-mipi-dsi.c       |  24 --
- drivers/phy/mediatek/phy-mtk-mipi-dsi.h       |   5 -
- drivers/phy/mediatek/phy-mtk-pcie.c           |  17 +-
- drivers/phy/mediatek/phy-mtk-tphy.c           | 193 +++++---------
- drivers/phy/mediatek/phy-mtk-ufs.c            |  78 ++----
- drivers/phy/mediatek/phy-mtk-xsphy.c          |  46 ++--
- 13 files changed, 465 insertions(+), 667 deletions(-)
+> @@ -1428,7 +1413,6 @@ static int mtk_hdmi_dt_parse_pdata(struct mtk_hdmi *hdmi,
+>   	struct device_node *cec_np, *remote, *i2c_np;
+>   	struct platform_device *cec_pdev;
+>   	struct regmap *regmap;
+> -	struct resource *mem;
+>   	int ret;
+>   
+>   	ret = mtk_hdmi_get_all_clk(hdmi, np);
+> @@ -1474,8 +1458,7 @@ static int mtk_hdmi_dt_parse_pdata(struct mtk_hdmi *hdmi,
+>   	}
+>   	hdmi->sys_regmap = regmap;
+>   
+> -	mem = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+> -	hdmi->regs = devm_ioremap_resource(dev, mem);
+> +	hdmi->regs = syscon_node_to_regmap(dev->of_node);
 
--- 
-2.18.0
+Nack. You're breaking ABI, this will force everyone to add syscon to devicetree,
+hence this breaks retrocompatibility with old devicetrees.
+
+Hint: not here, device_node_to_regmap()
+
+Regards,
+Angelo
+
+>   	if (IS_ERR(hdmi->regs)) {
+>   		ret = PTR_ERR(hdmi->regs);
+>   		goto put_device;
+
 
 
 -- 
