@@ -4,68 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 47CD2ECAAD8
-	for <linux-phy@archiver.kernel.org>; Tue, 20 Sep 2022 13:51:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B943BC54EE9
+	for <linux-phy@archiver.kernel.org>; Tue, 20 Sep 2022 13:51:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=P8K2dLPas8SBvQDC0/DsrPIrDww7oE4MuE+vYKWkdSk=; b=oK+RCBFzxvnb1O
-	vE6JUVJzvepYZWSyM+/9pwBgR7kAThJ8WzJoYjn85UwHq0LWH9VV2Gap+V78nz9oF4gz2w4LOjqQ1
-	6DRqA+tSs3UYDNCZ4Ga67HtIgdLHnx8ndK4f3qUc3+BTBhrUmhS3igVXptQ93/F3RdVGguh7X1bCJ
-	iM9PtGLHhcXVyrA/KbPErmORnbT+jlDw4ULKuVceZL8hDnHrpHO50YzsFGa9gqj2pkwz32JQH7lXc
-	hOrcm/IyssASzafhPlz8H0x6sRP5l829/80w+fxUtgrRknaBvCvFYWQFA50GmfYrik1Ex0ljEph+W
-	CUSHDrw0Qac9VDE878VA==;
+	List-Owner; bh=BbQubmWYMHyOX0aNrmJTmDPubztvBWV0cTU7z4ZJA0M=; b=GGAF0Tq0C8tVB9
+	UEedbA3xoS0P2RnrhRWDAMXOk6s/cshviRX0GOBXemE1WoOJdFqtw4AwaaulkUHCtZakKEsuvAVqq
+	0LcFMsaNqiMONtJPmU+2600+cGCMoqOpn1uO+0Sepk6Rm3tmAp2HWcgdTY/cvzKTN2Ydfm+zO0Vog
+	tsUUj/PFU+2jQANkwpuBqW9QIHG6ZNzis0YotuwCR3DXRFowuBv40gIhmTOXDrJeftABoqM3g0S6j
+	xVGVYTOR3I3LdCA2FUp0ec4GIp8Vb4fWfpG80ysXen1Qbn+rx4954ual1JQTlIjDUtqRDmJt2JmJZ
+	yNnwpiARajhn2EwmSHtQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oadfB-004Ft5-Mn; Tue, 20 Sep 2022 13:51:49 +0000
-Received: from mail-wr1-x430.google.com ([2a00:1450:4864:20::430])
+	id 1oadfK-004Fwn-4i; Tue, 20 Sep 2022 13:51:58 +0000
+Received: from mail-wr1-x42d.google.com ([2a00:1450:4864:20::42d])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oadf8-004FqC-0a
-	for linux-phy@lists.infradead.org; Tue, 20 Sep 2022 13:51:47 +0000
-Received: by mail-wr1-x430.google.com with SMTP id s14so2460369wro.0
-        for <linux-phy@lists.infradead.org>; Tue, 20 Sep 2022 06:51:45 -0700 (PDT)
+	id 1oadfH-004Fub-Dr
+	for linux-phy@lists.infradead.org; Tue, 20 Sep 2022 13:51:57 +0000
+Received: by mail-wr1-x42d.google.com with SMTP id c11so4350419wrp.11
+        for <linux-phy@lists.infradead.org>; Tue, 20 Sep 2022 06:51:53 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=content-transfer-encoding:in-reply-to:organization:from:references
          :cc:to:content-language:subject:user-agent:mime-version:date
          :message-id:from:to:cc:subject:date;
-        bh=x+vE1v09uZ5F67MZ186nd9KS7D/kqnY9dzU3Sc2cm8c=;
-        b=XhvE8ANh8B5Dww2Wv/e97EJu2OELPLFbfmWOsT+jJ0iTHn7CaxSCCXpND4sW1wN9NX
-         +w/69DK8HL64oTUwlpj7gV1/li8qu2EBdKlgzxHLZz2KnJYzdSDi8NEqJqfyho8Nlm4p
-         uU9//viVQGl0ibAx9ZD6gJbZ+SXDNph5Y6svLHUMD3RUEImEiDe37SYuoeDaOuERd663
-         jiLVYkV485fK50EA60rcZ0aHHAhDBTsVZJEB3J0Z6Bq1XcocEuhfowgrHp3qIthpye64
-         ONPtAul7nePYiXfQUrzNwkSnqS00DwO9qoSxryRrF/pT3cf7G8ch6u+ISP1Or7A6vnG5
-         lK1A==
+        bh=G+ob9gslUEjTfn2CBImEFZYMaoKP4Rt8AUUITXFerD8=;
+        b=tg+D2tjd6jvRRlSzpJoFFTF6tp3n0TGMvUX2GCpiQvbixps9kCC7pVa/Sw5i50cHk1
+         /7xx32axnrRUDPcTWUXIub1cMhiskS5B0r6Z8yY5S6K/iPMhQaMI7IoYwgypEkLGOziK
+         4gjKAWxJWoSbdZhp7Qj2VdZGp4GWjI186EaNwdLgNc/qwCAaFZSPdJub3wi+iP1STrMH
+         YiHuV9RUtr/KCWn6kO7VAoPtpyIuA8W/ymB6zn/7wXONvkThZmjKSI7d75RkNba2YwsI
+         x4AJrsfrVhdc8JE9BbDEIuMhrhp+mT5MolF1I9v2PbXW0NiSb+UVU/zFVKVQteyExlvM
+         rIEA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-transfer-encoding:in-reply-to:organization:from:references
          :cc:to:content-language:subject:user-agent:mime-version:date
          :message-id:x-gm-message-state:from:to:cc:subject:date;
-        bh=x+vE1v09uZ5F67MZ186nd9KS7D/kqnY9dzU3Sc2cm8c=;
-        b=0P8ObIssJ8kxd6i0nRJXJJo+FzonxuRuNlo/jDoY0xpREMye+O1vxeih4lrg0TTai5
-         EIuOdvlYc4lIZKlB64QG7UafuddqEbogh/7mUGoQiuryILz/IHyyeu0I6l9evBu2kzhL
-         nC2M1ze6kxOpPVkY7fyOpNBzcrWkPgJSZjxBguyh63CTJDJnkRkYRUvDnIfN/lLceFqX
-         RYDiw4Ram2vK4sXkyK31hqRTfEtVJguxEtmclPEe3RaSQcojAUbArq2bQZAZsE/KxEsD
-         Um1ieegI6qbEP+9da0m7IOYSKrIZuFiPhXlL4hhEf1V6TONtS8z3AOtxhxIBC0Mz0lTW
-         MNJA==
-X-Gm-Message-State: ACrzQf0zerrzZ5Kk8qttmDh3iV8BzK14otV30VIWnOH6DKmEGGOLdwEO
-	MlcmdV7Q+qXpOFBKYQnsYA47ilnOkVR6jffV
-X-Google-Smtp-Source: AMsMyM4ZwPKKzmxB4U5B0iMQagpKk6Q0q0gf3Yiug7TATvkPxgEFQhhMD9HWIcyDrksD3KUBw3i7+A==
-X-Received: by 2002:a5d:65c2:0:b0:228:68b7:e7b2 with SMTP id e2-20020a5d65c2000000b0022868b7e7b2mr13898091wrw.440.1663681904821;
-        Tue, 20 Sep 2022 06:51:44 -0700 (PDT)
+        bh=G+ob9gslUEjTfn2CBImEFZYMaoKP4Rt8AUUITXFerD8=;
+        b=xZ8/23RYmBgpXneVAQMZmvfDdwCbw5MFNVq6OjN0Ilubh2HKkrQAEf6xvX/FzfhlGn
+         a39a6xNb+DcT5qf1ocx5PVI3YgjlRo7VB1E/hRRrK7dbXFYZmhklNaxHZZGjvXNJW4eM
+         RLx+2gBLA3HB8Ynryy7V+QTE6wZ9bqacCSrjmp57ERpoiA0JJJOP2A8nCHHFDBm6yAR2
+         HRoFGfJgvWnMtC9925aGP0vYZz+rf1cT5fFFQNimkPW2qp7sYxEw2YbyvS7Sf8Ne3jZq
+         yE50zFExZpPsPjjO5VNL0YLxAwuxn5MxX0w16tuG7NBhJM1DQSzxmh44VN3vlYDzSm1H
+         hyyA==
+X-Gm-Message-State: ACrzQf1e46sEV1PAhMKPjEd3nZLAor0IC4rJFXTGj6O4PvBZMRUQ07cP
+	86QDJD9WewaJgg4VH20GrnUUpA==
+X-Google-Smtp-Source: AMsMyM7XZy4WhMpqk0na5Pt3bcrSDcK8pGIRp2z+EFvw1MegtlqB2GXpg/ZB+oEFHUGgm1BUHjXaUw==
+X-Received: by 2002:a05:6000:1d8b:b0:22a:c046:946d with SMTP id bk11-20020a0560001d8b00b0022ac046946dmr13922372wrb.249.1663681911830;
+        Tue, 20 Sep 2022 06:51:51 -0700 (PDT)
 Received: from ?IPV6:2a01:e0a:982:cbb0:7e10:f0f:43b2:9b5e? ([2a01:e0a:982:cbb0:7e10:f0f:43b2:9b5e])
-        by smtp.gmail.com with ESMTPSA id i1-20020a1c5401000000b003b49bd61b19sm141483wmb.15.2022.09.20.06.51.43
+        by smtp.gmail.com with ESMTPSA id z26-20020a05600c221a00b003b4727d199asm115535wml.15.2022.09.20.06.51.50
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 20 Sep 2022 06:51:44 -0700 (PDT)
-Message-ID: <a5279480-dd66-7529-9632-08a63fa14ae6@linaro.org>
-Date: Tue, 20 Sep 2022 15:51:43 +0200
+        Tue, 20 Sep 2022 06:51:51 -0700 (PDT)
+Message-ID: <898e1495-81ba-c861-1eaa-91a29f8ee52b@linaro.org>
+Date: Tue, 20 Sep 2022 15:51:50 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
  Thunderbird/91.11.0
-Subject: Re: [PATCH 10/17] phy: qcom-qmp-pcie: drop unused config field
+Subject: Re: [PATCH 11/17] phy: qcom-qmp: drop unused index field
 Content-Language: en-US
 To: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>
 Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
@@ -75,13 +75,13 @@ Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
  linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
  linux-kernel@vger.kernel.org
 References: <20220920073826.20811-1-johan+linaro@kernel.org>
- <20220920073826.20811-11-johan+linaro@kernel.org>
+ <20220920073826.20811-12-johan+linaro@kernel.org>
 From: Neil Armstrong <neil.armstrong@linaro.org>
 Organization: Linaro
-In-Reply-To: <20220920073826.20811-11-johan+linaro@kernel.org>
+In-Reply-To: <20220920073826.20811-12-johan+linaro@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220920_065146_086905_A4CE5ACB 
-X-CRM114-Status: GOOD (  13.71  )
+X-CRM114-CacheID: sfid-20220920_065155_512971_DA3E7E80 
+X-CRM114-Status: GOOD (  15.44  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,25 +99,129 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 20/09/2022 09:38, Johan Hovold wrote:
-> Drop the unused mask_com_pcs_ready field from struct qmp_phy_cfg.
+> Only the MSM8996 PCIe QMP driver uses the index field so drop it from
+> the other drivers.
 > 
 > Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 > ---
->   drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 1 -
->   1 file changed, 1 deletion(-)
+>   drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 3 ---
+>   drivers/phy/qualcomm/phy-qcom-qmp-pcie.c  | 3 ---
+>   drivers/phy/qualcomm/phy-qcom-qmp-ufs.c   | 3 ---
+>   drivers/phy/qualcomm/phy-qcom-qmp-usb.c   | 3 ---
+>   4 files changed, 12 deletions(-)
 > 
+> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+> index 41f938126ff1..08e96e383a29 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+> @@ -906,7 +906,6 @@ struct qmp_phy_combo_cfg {
+>    * @pcs_misc: iomapped memory space for lane's pcs_misc
+>    * @pcs_usb: iomapped memory space for lane's pcs_usb
+>    * @pipe_clk: pipe clock
+> - * @index: lane index
+>    * @qmp: QMP phy to which this lane belongs
+>    * @mode: current PHY mode
+>    * @dp_aux_cfg: Display port aux config
+> @@ -925,7 +924,6 @@ struct qmp_phy {
+>   	void __iomem *pcs_misc;
+>   	void __iomem *pcs_usb;
+>   	struct clk *pipe_clk;
+> -	unsigned int index;
+>   	struct qcom_qmp *qmp;
+>   	enum phy_mode mode;
+>   	unsigned int dp_aux_cfg;
+> @@ -2779,7 +2777,6 @@ static int qmp_combo_create(struct device *dev, struct device_node *np, int id,
+>   	}
+>   
+>   	qphy->phy = generic_phy;
+> -	qphy->index = id;
+>   	qphy->qmp = qmp;
+>   	qmp->phys[id] = qphy;
+>   	phy_set_drvdata(generic_phy, qphy);
 > diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-> index 65825ca41e96..d22d2cf2fc18 100644
+> index d22d2cf2fc18..387abed33727 100644
 > --- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
 > +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-> @@ -1342,7 +1342,6 @@ struct qmp_phy_cfg {
+> @@ -1371,7 +1371,6 @@ struct qmp_phy_cfg {
+>    * @rx2: iomapped memory space for second lane's rx (in dual lane PHYs)
+>    * @pcs_misc: iomapped memory space for lane's pcs_misc
+>    * @pipe_clk: pipe clock
+> - * @index: lane index
+>    * @qmp: QMP phy to which this lane belongs
+>    */
+>   struct qmp_phy {
+> @@ -1385,7 +1384,6 @@ struct qmp_phy {
+>   	void __iomem *rx2;
+>   	void __iomem *pcs_misc;
+>   	struct clk *pipe_clk;
+> -	unsigned int index;
+>   	struct qcom_qmp *qmp;
+>   };
 >   
->   	unsigned int start_ctrl;
->   	unsigned int pwrdn_ctrl;
-> -	unsigned int mask_com_pcs_ready;
->   	/* bit offset of PHYSTATUS in QPHY_PCS_STATUS register */
->   	unsigned int phy_status;
+> @@ -2264,7 +2262,6 @@ static int qmp_pcie_create(struct device *dev, struct device_node *np, int id,
+>   	}
 >   
+>   	qphy->phy = generic_phy;
+> -	qphy->index = id;
+>   	qphy->qmp = qmp;
+>   	qmp->phys[id] = qphy;
+>   	phy_set_drvdata(generic_phy, qphy);
+> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+> index cc49dec46df4..ca9a42250556 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+> @@ -580,7 +580,6 @@ struct qmp_phy_cfg {
+>    * @tx2: iomapped memory space for second lane's tx (in dual lane PHYs)
+>    * @rx2: iomapped memory space for second lane's rx (in dual lane PHYs)
+>    * @pcs_misc: iomapped memory space for lane's pcs_misc
+> - * @index: lane index
+>    * @qmp: QMP phy to which this lane belongs
+>    */
+>   struct qmp_phy {
+> @@ -593,7 +592,6 @@ struct qmp_phy {
+>   	void __iomem *tx2;
+>   	void __iomem *rx2;
+>   	void __iomem *pcs_misc;
+> -	unsigned int index;
+>   	struct qcom_qmp *qmp;
+>   };
+>   
+> @@ -1149,7 +1147,6 @@ static int qmp_ufs_create(struct device *dev, struct device_node *np, int id,
+>   	}
+>   
+>   	qphy->phy = generic_phy;
+> -	qphy->index = id;
+>   	qphy->qmp = qmp;
+>   	qmp->phys[id] = qphy;
+>   	phy_set_drvdata(generic_phy, qphy);
+> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
+> index 820062a95211..a34320738f60 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
+> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
+> @@ -1491,7 +1491,6 @@ struct qmp_phy_cfg {
+>    * @pcs_misc: iomapped memory space for lane's pcs_misc
+>    * @pcs_usb: iomapped memory space for lane's pcs_usb
+>    * @pipe_clk: pipe clock
+> - * @index: lane index
+>    * @qmp: QMP phy to which this lane belongs
+>    * @mode: current PHY mode
+>    */
+> @@ -1507,7 +1506,6 @@ struct qmp_phy {
+>   	void __iomem *pcs_misc;
+>   	void __iomem *pcs_usb;
+>   	struct clk *pipe_clk;
+> -	unsigned int index;
+>   	struct qcom_qmp *qmp;
+>   	enum phy_mode mode;
+>   };
+> @@ -2648,7 +2646,6 @@ int qmp_usb_create(struct device *dev, struct device_node *np, int id,
+>   	}
+>   
+>   	qphy->phy = generic_phy;
+> -	qphy->index = id;
+>   	qphy->qmp = qmp;
+>   	qmp->phys[id] = qphy;
+>   	phy_set_drvdata(generic_phy, qphy);
 
 Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
 
