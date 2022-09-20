@@ -4,73 +4,94 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BDEC0ECAAD8
-	for <linux-phy@archiver.kernel.org>; Tue, 20 Sep 2022 10:20:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7CC48ECAAD8
+	for <linux-phy@archiver.kernel.org>; Tue, 20 Sep 2022 10:22:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LaSbAiIvqvq8vQ0u/iSS86o/VuutuDeDB5RPhlz+XAo=; b=TUp6+t13eqSghs
-	PNrocehwudkcchS3j2LDj1LyoSgekX5o7tD1uJTvj2VgVwQcOvmGhb9ZWymqpOiQTu2NUIsDBAmEm
-	4Ts6/k822e/iPt23RmagLhGYVKF95jv/VzQX28bAk23NTtHnWnAmDHI5RPZcCRS4tfREBM3/rrW/K
-	zcqvtRVX/jHNjIgvOcet4caBpfzYmbGyzfcpjDhUCgtgGc3BLuDuXaRHAOvkoqrxZ3hztyuVr3tvk
-	Kq7KFN91MsVfM0RguAK+meWZgolmBRWXhJhOHG+2cRnCE1v3P00WBi/WJfCbfof4rxC0fDsXiiwM+
-	KY6XE6tZQ5phGzvgG1Jg==;
+	List-Owner; bh=WakX486ssWh/rsGNipkpAEEh+LjUdLm/6hl5LTNYg3s=; b=2O4RVeqpdHPlRF
+	uYAb4BcMb47LbkkQtMcTJw/j0krQQaVEkgWoLuV8mINm9Xd1DvyMSYQ3VskkLPvWcAMbPa6FmT5bd
+	83I3E0pntWgGKdNM0R/ZKmLg9JZihZFJlQzZWEhumdQoLlxriskQzUjpKj42bxu+WdhJPG3f0ER9G
+	ldQohT5Mew6Ja8btICKFOvEDWSyb6QJGB3We+WICRyPij+doM4VXC6ickiuaVFm4XPM3xVdrYwg8D
+	dv20t9UvIQor1t1CDR/7QEgMqpW1ZCI4+eV6d/tsm8At3swvQHO9hw6YIOztuV/QXjzpL2fWqVOn5
+	8EuFC1DX+DjdpRNGVK9w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oaaMP-002tok-6n; Tue, 20 Sep 2022 10:20:13 +0000
-Received: from madras.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e5ab])
+	id 1oaaOv-002unR-UI; Tue, 20 Sep 2022 10:22:49 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oaaMB-002tgx-Ko; Tue, 20 Sep 2022 10:20:01 +0000
-Received: from [192.168.1.100] (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
-	(No client certificate requested)
-	(Authenticated sender: kholk11)
-	by madras.collabora.co.uk (Postfix) with ESMTPSA id B68D56600368;
-	Tue, 20 Sep 2022 11:19:54 +0100 (BST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1663669195;
-	bh=iUq+6SOQiYHg6R9Dqd5eD1XyHyTrpOd2jfDvPJ7B3OE=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=oXSviiEBnEb3mN3mSMGpsPl5quu0E8RjJ8pK+7UR4nmiguSAC3BKIxhr4B0r7G7m/
-	 gxrjVyyCLhyOVvWAYc7mxNppd2ejo3UTlHSYgyX3q35Lz1AqTkSFhkYgOppJBUp6TD
-	 sd/fccKGgLgRZ+4/BDTBH+UlMHnJmlUd24csAq+M2FOWrbUh1NMgpybwVHNvFe0vy+
-	 BkGSpxH1eutjiyi9sFAPUN8ede0nPu5WZY/hQVw5wQIb7ohatSElbpcyA8xXL/vlOU
-	 4tbm9gxUcce6pYYgCpKeGLnqqotChSWHRn5jwuXQUhpa+5b/o95AeWBVHQLW4C7v6H
-	 iWaZykJzDms6w==
-Message-ID: <5071cc60-313e-bd01-228f-f0a0f2ce99a8@collabora.com>
-Date: Tue, 20 Sep 2022 12:19:52 +0200
-MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.2.0
-Subject: Re: [PATCH v1 06/17] dt-bindings: mediatek: set the hdmi to be
- compatible with syscon
-Content-Language: en-US
-To: Guillaume Ranquet <granquet@baylibre.com>, Vinod Koul <vkoul@kernel.org>,
- Stephen Boyd <sboyd@kernel.org>, David Airlie <airlied@linux.ie>,
- Rob Herring <robh+dt@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Daniel Vetter <daniel@ffwll.ch>, Chunfeng Yun <chunfeng.yun@mediatek.com>,
- CK Hu <ck.hu@mediatek.com>, Jitao shi <jitao.shi@mediatek.com>,
- Chun-Kuang Hu <chunkuang.hu@kernel.org>,
- Michael Turquette <mturquette@baylibre.com>,
- Kishon Vijay Abraham I <kishon@ti.com>,
- Matthias Brugger <matthias.bgg@gmail.com>
-Cc: linux-mediatek@lists.infradead.org, dri-devel@lists.freedesktop.org,
- Pablo Sun <pablo.sun@mediatek.com>, linux-clk@vger.kernel.org,
- linux-kernel@vger.kernel.org, Mattijs Korpershoek
- <mkorpershoek@baylibre.com>, linux-arm-kernel@lists.infradead.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org
-References: <20220919-v1-0-4844816c9808@baylibre.com>
- <20220919-v1-6-4844816c9808@baylibre.com>
-From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-In-Reply-To: <20220919-v1-6-4844816c9808@baylibre.com>
+	id 1oaaOr-002ujH-0C
+	for linux-phy@lists.infradead.org; Tue, 20 Sep 2022 10:22:46 +0000
+Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.5/8.17.1.5) with ESMTP id 28K806Q0015789;
+	Tue, 20 Sep 2022 10:22:34 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
+ subject : date : message-id : in-reply-to : references; s=qcppdkim1;
+ bh=N/kqJ6hM+MKZcKVcVJSn5RZWT45C+Ed1GuSP75wY0sc=;
+ b=pMm79fqCw+8FgHk2eoJVCNq2kgiQETN/YFZ++WDGwFDe9q/xo+6+i1TvIZTBCozuOZdh
+ ZwX1476iWmOHn37Zl3Nq9TU7FQPqc69n2TB6e9QY2TQYnvEjcSjpsme5HCs654rXMPNg
+ LPVynA1z+kIQHqa030yXcyPXmInkU1Dj2jkhNLl1nUcUhmpMNQRpXWEHtqsn0HPf1cjt
+ SlF3LznCIbOnN5gutiyxeTpALZxc0YO3U8/v+7OpQ4ESBCtzH6wmkcx7WFpHNcsBPEM+
+ OBVZlW1kp17keoYFQX8kp+G25+7zG1MaRmHpJip4cPdMkVRFDf9mdlXxw+qP0+MFIUW5 rw== 
+Received: from apblrppmta01.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3jq4r09dbm-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 20 Sep 2022 10:22:34 +0000
+Received: from pps.filterd (APBLRPPMTA01.qualcomm.com [127.0.0.1])
+	by APBLRPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTP id 28KAMUpv016172;
+	Tue, 20 Sep 2022 10:22:31 GMT
+Received: from pps.reinject (localhost [127.0.0.1])
+	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTPS id 3jnqrbnbqy-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
+	Tue, 20 Sep 2022 10:22:31 +0000
+Received: from APBLRPPMTA01.qualcomm.com (APBLRPPMTA01.qualcomm.com [127.0.0.1])
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 28KAMUgh016182;
+	Tue, 20 Sep 2022 10:22:30 GMT
+Received: from hu-sgudaval-hyd.qualcomm.com (hu-krichai-hyd.qualcomm.com [10.213.110.37])
+	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTP id 28KAMUL2016169;
+	Tue, 20 Sep 2022 10:22:30 +0000
+Received: by hu-sgudaval-hyd.qualcomm.com (Postfix, from userid 4058933)
+	id DDF7E1A07; Tue, 20 Sep 2022 15:52:29 +0530 (+0530)
+From: Krishna chaitanya chundru <quic_krichai@quicinc.com>
+To: helgaas@kernel.org
+Cc: linux-pci@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+        linux-kernel@vger.kernel.org, mka@chromium.org,
+        quic_vbadigan@quicinc.com, quic_hemantk@quicinc.com,
+        quic_nitegupt@quicinc.com, quic_skananth@quicinc.com,
+        quic_ramkri@quicinc.com, manivannan.sadhasivam@linaro.org,
+        swboyd@chromium.org, dmitry.baryshkov@linaro.org, svarbanov@mm-sol.com,
+        agross@kernel.org, andersson@kernel.org, konrad.dybcio@somainline.org,
+        lpieralisi@kernel.org, robh@kernel.org, kw@linux.com,
+        bhelgaas@google.com, linux-phy@lists.infradead.org, vkoul@kernel.org,
+        kishon@ti.com, mturquette@baylibre.com, linux-clk@vger.kernel.org,
+        Krishna chaitanya chundru <quic_krichai@quicinc.com>,
+        Bjorn Andersson <bjorn.andersson@linaro.org>
+Subject: [PATCH v7 4/5] phy: qcom: Add power suspend & resume callbacks to PCIe phy
+Date: Tue, 20 Sep 2022 15:52:26 +0530
+Message-Id: <1663669347-29308-5-git-send-email-quic_krichai@quicinc.com>
+X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1663669347-29308-1-git-send-email-quic_krichai@quicinc.com>
+References: <1663669347-29308-1-git-send-email-quic_krichai@quicinc.com>
+X-QCInternal: smtphost
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: Sjn5LIsd3PAAGUkv95Ma8gS-WHXmhmjc
+X-Proofpoint-GUID: Sjn5LIsd3PAAGUkv95Ma8gS-WHXmhmjc
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.205,Aquarius:18.0.895,Hydra:6.0.528,FMLib:17.11.122.1
+ definitions=2022-09-20_02,2022-09-16_01,2022-06-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 mlxlogscore=693
+ malwarescore=0 suspectscore=0 spamscore=0 lowpriorityscore=0 clxscore=1015
+ impostorscore=0 mlxscore=0 bulkscore=0 priorityscore=1501 adultscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2209130000
+ definitions=main-2209200062
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220920_031959_851083_746156F7 
-X-CRM114-Status: GOOD (  12.18  )
+X-CRM114-CacheID: sfid-20220920_032245_200645_73627F60 
+X-CRM114-Status: GOOD (  18.63  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,44 +103,126 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Il 19/09/22 18:56, Guillaume Ranquet ha scritto:
-> In order to share register with a dedicated ddc driver, set the hdmi
-> compatible to syscon.
-> 
-> Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
-> 
-> diff --git a/Documentation/devicetree/bindings/display/mediatek/mediatek,hdmi.yaml b/Documentation/devicetree/bindings/display/mediatek/mediatek,hdmi.yaml
-> index abb231a0694b..86297b7eb7f7 100644
-> --- a/Documentation/devicetree/bindings/display/mediatek/mediatek,hdmi.yaml
-> +++ b/Documentation/devicetree/bindings/display/mediatek/mediatek,hdmi.yaml
-> @@ -16,12 +16,14 @@ description: |
->   
->   properties:
->     compatible:
-> -    enum:
-> -      - mediatek,mt2701-hdmi
-> -      - mediatek,mt7623-hdmi
-> -      - mediatek,mt8167-hdmi
-> -      - mediatek,mt8173-hdmi
-> -      - mediatek,mt8195-hdmi
-> +    items:
-> +      - enum:
-> +          - mediatek,mt2701-hdmi
-> +          - mediatek,mt7623-hdmi
-> +          - mediatek,mt8167-hdmi
-> +          - mediatek,mt8173-hdmi
-> +      - const: syscon
-> +
+Add phy power suspend & resume callbacks to PCIe phy. Using these
+callbacks we can release phy resources like phy specific clocks
+but continue maintain PCIe link in l1ss state.
 
-This is an ABI breakage, you can't do that.
+This can help in parking PCIe link in l1ss state during system
+suspend (S3).
 
-Regards,
-Angelo
+Instead of this if we add suspend & resume pm ops, phy will suspend
+first instead of PCIe driver, it will cause link down as phy will
+be down before controller goes down.
+
+Signed-off-by: Krishna chaitanya chundru <quic_krichai@quicinc.com>
+---
+changes since v6:
+	- Change names from phy_power_down and phy_power_up to
+	  phy_pm_suspend and phy_pm_resume respectively.
+---
+ drivers/pci/controller/dwc/pcie-qcom.c   |  4 +--
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 50 ++++++++++++++++++++++++++++++++
+ 2 files changed, 52 insertions(+), 2 deletions(-)
+
+diff --git a/drivers/pci/controller/dwc/pcie-qcom.c b/drivers/pci/controller/dwc/pcie-qcom.c
+index 7a6f69e..672a9be 100644
+--- a/drivers/pci/controller/dwc/pcie-qcom.c
++++ b/drivers/pci/controller/dwc/pcie-qcom.c
+@@ -1326,7 +1326,7 @@ static int qcom_pcie_resume_2_7_0(struct qcom_pcie *pcie)
+ 
+ 	ret = clk_bulk_prepare_enable(res->num_clks, res->clks);
+ 
+-	phy_power_on(pcie->phy);
++	phy_pm_resume(pcie->phy);
+ 
+ 	return ret;
+ }
+@@ -1335,7 +1335,7 @@ static int qcom_pcie_suspend_2_7_0(struct qcom_pcie *pcie)
+ {
+ 	struct qcom_pcie_resources_2_7_0 *res = &pcie->res.v2_7_0;
+ 
+-	phy_power_off(pcie->phy);
++	phy_pm_suspend(pcie->phy);
+ 
+ 	clk_bulk_disable_unprepare(res->num_clks, res->clks);
+ 	return 0;
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+index 2d65e1f..69220dd 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+@@ -2145,6 +2145,54 @@ static int qcom_qmp_phy_pcie_exit(struct phy *phy)
+ 	return 0;
+ }
+ 
++static int qcom_qmp_phy_pcie_resume(struct phy *phy)
++{
++	struct qmp_phy *qphy = phy_get_drvdata(phy);
++	struct qcom_qmp *qmp = qphy->qmp;
++	const struct qmp_phy_cfg *cfg = qphy->cfg;
++	int ret;
++
++	ret = clk_bulk_prepare_enable(cfg->num_clks, qmp->clks);
++	if (ret)
++		return ret;
++
++	ret = clk_prepare_enable(qphy->pipe_clk);
++	if (ret)
++		return ret;
++
++	/* Pull out PHY from POWER DOWN state */
++	if (cfg->regs[QPHY_PCS_POWER_DOWN_CONTROL]) {
++		qphy_setbits(qphy->pcs, cfg->regs[QPHY_PCS_POWER_DOWN_CONTROL],
++			     cfg->pwrdn_ctrl);
++	} else {
++		qphy_setbits(qphy->pcs, QPHY_V2_PCS_POWER_DOWN_CONTROL,
++				cfg->pwrdn_ctrl);
++	}
++
++	return 0;
++}
++
++static int qcom_qmp_phy_pcie_suspend(struct phy *phy)
++{
++	struct qmp_phy *qphy = phy_get_drvdata(phy);
++	struct qcom_qmp *qmp = qphy->qmp;
++	const struct qmp_phy_cfg *cfg = qphy->cfg;
++
++	clk_disable_unprepare(qphy->pipe_clk);
++	clk_bulk_disable_unprepare(cfg->num_clks, qmp->clks);
++
++	/* Put PHY into POWER DOWN state: active low */
++	if (cfg->regs[QPHY_PCS_POWER_DOWN_CONTROL]) {
++		qphy_clrbits(qphy->pcs, cfg->regs[QPHY_PCS_POWER_DOWN_CONTROL],
++			     cfg->pwrdn_ctrl);
++	} else {
++		qphy_clrbits(qphy->pcs, QPHY_V2_PCS_POWER_DOWN_CONTROL,
++				cfg->pwrdn_ctrl);
++	}
++
++	return 0;
++}
++
+ static int qcom_qmp_phy_pcie_enable(struct phy *phy)
+ {
+ 	int ret;
+@@ -2304,6 +2352,8 @@ static const struct phy_ops qcom_qmp_phy_pcie_ops = {
+ 	.power_on	= qcom_qmp_phy_pcie_enable,
+ 	.power_off	= qcom_qmp_phy_pcie_disable,
+ 	.set_mode	= qcom_qmp_phy_pcie_set_mode,
++	.suspend	= qcom_qmp_phy_pcie_suspend,
++	.resume		= qcom_qmp_phy_pcie_resume,
+ 	.owner		= THIS_MODULE,
+ };
+ 
+-- 
+2.7.4
+
 
 -- 
 linux-phy mailing list
