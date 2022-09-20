@@ -4,78 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F00C6C54EE9
-	for <linux-phy@archiver.kernel.org>; Tue, 20 Sep 2022 04:57:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4F282C54EE9
+	for <linux-phy@archiver.kernel.org>; Tue, 20 Sep 2022 06:00:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
-	CC:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wuoQxLgIpYSKCN4vmze/qAM6ym6HoosqzoevxSXRogo=; b=VSqGq/G1boUdWb
-	x+8nDNecNPwF001j/GTP/zb3mSk++Ed/ww1WEMOhYvbo51KmX/FjrbOvBxis/gr+dvP2qjxUoJngm
-	+CaEmiRvg103HJ5KZmdmkCD8/egfK3grv13D113KfMSDWaWZuykXAfsWjzxZOGOUhpGzRCSTjsqju
-	W2iKn/k7R8+BE7+/urYAbRyXVGyam8ESDoelfZjM+MQyfXu5dwn0kkQyMDDCZvdMeVY+Kg4W914oE
-	u08pZdGLfbB6fREj2LAJrkG7T9i4VxySfpPSxtnczcxCQ30yT0GZz1Ym8BOxXO68UmrVdpkdS4X/Q
-	yvjMOhR/SHL6AH6vF/gg==;
+	List-Owner; bh=yaM5KjAS+9rqCBZIah8exFnOkIVYVqvylixQ0dFES9A=; b=0UD2+OpuKxf/qt
+	3pMadJoSrVjhXC7LJbYOiUtwwlhbM42oRaxvKbBaI0K/V8Nc8Iq6nyFsiiwFvYquJWzuifaRBOg4d
+	IISHUsw5x9aWtnaGhLobpSu1VUt8F/bIMKg+SHzM/79I9ioDHxeYhmleY3SAXBK9nopZxUm8FoRPv
+	8ih3X49p4m5sWvjlj9VUSL/6CJgykrtxLVTIHOhCh/jQDj79G/Bhqie7d0BNVecbMQrBQDczsyS2X
+	Ta52Eh6j4J8OaWkpHHPCLkWMH6Ynq1dmG3F4CV3xGSmeh9zfLPVDoQjIXPiELL1VpckGe0K5TQLU1
+	E8PdQ8rHhiC3FZPZEsBQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oaVJl-000YSD-59; Tue, 20 Sep 2022 04:57:09 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1oaWIo-000pbZ-53; Tue, 20 Sep 2022 06:00:14 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oaVJa-000YOO-PG; Tue, 20 Sep 2022 04:57:00 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
-	by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 28K4ufqe003851;
-	Mon, 19 Sep 2022 23:56:41 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
-	s=ti-com-17Q1; t=1663649801;
-	bh=8KOilXQeO0JEZa4fCJ5Ej6qxCCZNlBHDegq2hXI2lMM=;
-	h=Date:CC:Subject:To:References:From:In-Reply-To;
-	b=lgHGL0PoyBAOscAKWonYb66zAR6WfTpF6PjNmVbU0Y1Swaf6bdxHCMmKLYXMw4g7q
-	 od+p3RW3XWkK4cs/94mD58EA8pff77fPdAKiLnKbiVOeyfZIYDmVfnW2w9W0PT1n/S
-	 jkAt8YqtQSdT3lp8GJFTCjEME3zDeOW/vcdAuab4=
-Received: from DFLE100.ent.ti.com (dfle100.ent.ti.com [10.64.6.21])
-	by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 28K4ufYW009288
-	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Mon, 19 Sep 2022 23:56:41 -0500
-Received: from DFLE101.ent.ti.com (10.64.6.22) by DFLE100.ent.ti.com
- (10.64.6.21) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.6; Mon, 19
- Sep 2022 23:56:41 -0500
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE101.ent.ti.com
- (10.64.6.22) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.6 via
- Frontend Transport; Mon, 19 Sep 2022 23:56:41 -0500
-Received: from [10.24.69.241] (ileaxei01-snat.itg.ti.com [10.180.69.5])
-	by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 28K4uaHc034689;
-	Mon, 19 Sep 2022 23:56:37 -0500
-Message-ID: <2f830a26-c9f0-2902-302c-371c59994a6f@ti.com>
-Date: Tue, 20 Sep 2022 10:26:36 +0530
+	id 1oaWHb-000p3t-Df
+	for linux-phy@lists.infradead.org; Tue, 20 Sep 2022 05:59:01 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id DCA3661C33;
+	Tue, 20 Sep 2022 05:58:56 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8B9F7C433C1;
+	Tue, 20 Sep 2022 05:58:55 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1663653536;
+	bh=l68gYqIECVHbcJW8Ghg4eOhz0XMjBPdI8w2LylAoy+g=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=XSmmjCBorN8pQSjiyCHVPLIggWZGW8w3F+d8IETIEvmuIrOViAkDTGMG/brTpCYGV
+	 g8Y7TbYs1rS34nP8SprVIsw+lecXlvdpuq38HblpPzAfu7kL7AcZb5roQ/FI72hmfO
+	 m/sl+vXrq8DIErYU5v1tLK61vf7M7zUSYh5Tilx8VkF7PSnSieiPHqlI2AovefcJok
+	 FoZOL66EAV4odwFF5u2hDf5TrncJM+XYsQOwDa+JT2vLElSAe+pzE5L3j4TGwLJgy6
+	 bJV73zHaOqM13TwNisYxGjiHzV7wCDX4V4nw/S7EVJawt3Cz1IE9uSAl6aPW8sejgV
+	 os95SqVb0ykNA==
+Date: Tue, 20 Sep 2022 11:28:52 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Johan Hovold <johan+linaro@kernel.org>
+Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@somainline.org>,
+	Kishon Vijay Abraham I <kishon@ti.com>,
+	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 00/16] phy: qcom-qmp: further clean ups
+Message-ID: <YylWnIc6RWfzaxM/@matsya>
+References: <20220907110728.19092-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.11.0
-CC: <lee.jones@linaro.org>, <kishon@ti.com>, <vkoul@kernel.org>,
-        <dan.carpenter@oracle.com>, <rogerq@kernel.org>,
-        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-        <linux-phy@lists.infradead.org>,
-        <linux-arm-kernel@lists.infradead.org>, <sjakhade@cadence.com>,
-        <s-vadapalli@ti.com>
-Subject: Re: [PATCH 1/6] dt-bindings: phy: ti: phy-gmii-sel: Add bindings for
- J721e
-Content-Language: en-US
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
-        <krzysztof.kozlowski+dt@linaro.org>, Rob Herring <robh@kernel.org>
-References: <20220914093911.187764-1-s-vadapalli@ti.com>
- <20220914093911.187764-2-s-vadapalli@ti.com>
- <20220914161527.GA2269201-robh@kernel.org>
- <d48e5ef4-6d5b-0977-ed45-de810e42356c@ti.com>
- <31028736-ba81-122e-b630-b66e9d9d491a@linaro.org>
-From: Siddharth Vadapalli <s-vadapalli@ti.com>
-In-Reply-To: <31028736-ba81-122e-b630-b66e9d9d491a@linaro.org>
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+Content-Disposition: inline
+In-Reply-To: <20220907110728.19092-1-johan+linaro@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220919_215658_954683_5A2795B9 
-X-CRM114-Status: GOOD (  20.07  )
+X-CRM114-CacheID: sfid-20220919_225859_589653_FE2512DA 
+X-CRM114-Status: UNSURE (   8.70  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,70 +77,17 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hello Krzysztof,
-
-On 19/09/22 15:47, Krzysztof Kozlowski wrote:
-> On 15/09/2022 07:28, Siddharth Vadapalli wrote:
->>>> @@ -65,12 +66,19 @@ properties:
->>>>      description: |
->>>>        Required only for QSGMII mode. Array to select the port for
->>>>        QSGMII main mode. Rest of the ports are selected as QSGMII_SUB
->>>> -      ports automatically. Any one of the 4 CPSW5G ports can act as the
->>>> -      main port with the rest of them being the QSGMII_SUB ports.
->>>> -    maxItems: 1
->>>> -    items:
->>>> -      minimum: 1
->>>> -      maximum: 4
->>>> +      ports automatically. For J7200 CPSW5G with the compatible:
->>>> +      ti,j7200-cpsw5g-phy-gmii-sel, ti,qsgmii-main-ports is an
->>>> +      array of only one element, which is the port number ranging from
->>>> +      1 to 4. For J721e CPSW9G with the compatible:
->>>> +      ti,j721e-cpsw9g-phy-gmii-sel, ti,qsgmii-main-ports is an array
->>>> +      of two elements, which corresponds to two potential QSGMII main
->>>> +      ports. The first element and second element of the array can both
->>>> +      range from 1 to 8 each, corresponding to two QSGMII main ports.
->>>> +      For J721e CPSW9G, to configure port 2 as the first QSGMII main
->>>> +      port and port 7 as the second QSGMII main port, we specify:
->>>> +      ti,qsgmii-main-ports = <2>, <7>;
->>>> +      If only one QSGMII main port is desired, mention the same main
->>>> +      port twice.
->>>
->>> Two different forms for the same property name is not great. Just make a 
->>> new property if you need something different.
->>
->> Thank you for reviewing the patch. Based on the discussion for the
->> previous series at [1], I had planned to reuse the same property
->> "ti,qsgmii-main-ports" for TI's J721e device too. The reason for this is
->> that the property represents the same feature on both devices which is
->> that of the QSGMII main port. The only difference between the two of
->> them is that J7200's CPSW5G has 4 external ports while J721e's CPSW9G
->> has 8 external ports. Thus, J7200 can have at most one QSGMII main port
->> while J721e can have up to two. Adding a new property which describes
->> the same feature appears to be redundant to me. Please let me know.
->>
+On 07-09-22, 13:07, Johan Hovold wrote:
+> This series clean up the QMP PHY drivers somewhat after the recent
+> driver split.
 > 
-> The trouble is that you wrote the description like it were two different
-> properties (for xx this is one element, for yy this is something else).
-> You need to describe the property in unified way.
+> Included are also some fixes for runtime PM not being disabled on driver
+> unbind.
 
-Thank you for reviewing the patch. I plan to update the description to
-the following:
-"Required only for QSGMII mode. Array to select the port/s for QSGMII
-main mode. The size of the array corresponds to the number of QSGMII
-interfaces and thus, the number of distinct QSGMII main ports, supported
-by the device. If the device supports two QSGMII interfaces but only one
-QSGMII interface is desired, repeat the QSGMII main port value
-corresponding to the QSGMII interface in the array."
+Applied, thanks
 
-I intend to describe the property in detail to help users understand the
-property and its usage better. In the process, I might have
-unintentionally made it appear as two different properties in the
-previous description. I hope the new description shows that the property
-describes the same feature across devices while making its usage clear
-to the users at the same time. Please let me know if this is fine.
-
-Regards,
-Siddharth.
+-- 
+~Vinod
 
 -- 
 linux-phy mailing list
