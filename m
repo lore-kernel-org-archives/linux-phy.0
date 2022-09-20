@@ -4,70 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AAFF2C6FA82
-	for <linux-phy@archiver.kernel.org>; Tue, 20 Sep 2022 06:22:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 37A5EC54EE9
+	for <linux-phy@archiver.kernel.org>; Tue, 20 Sep 2022 06:27:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=tZn9Lq9CNgm2Pt8ZXUr45b/zGA01EAsb5M9XyA3D/mI=; b=yr4F+rNJITqbeoO1VnpwCihIdf
-	X+tdNNxyDSi3o/pUksXUqwr+RV6OyU3CMJ358c9CatOokAQNHkFEeDaK0HqwKXs1TVqqVW9HPOU40
-	nT6wXTViOxXIu4k6M5PVRqclnrNuA2tPo6iDAZcCPBQ8rL10AjxF07WS+pVehSH6tf0GiVdcNEhR7
-	ask1eq6U3DCh4Ch2zzVYCb5Z2LUN05OylKXqgyctNoCBhHHpPKpnPLc9xfuRCPdMgAV0PADpbIXnV
-	nirLDVTBhW93jBcMZ6kKHgFr6+R3r8vzSILarp1NdbWX88LgnbwG7RW9A+cmsBW91mdtOK4VOTpgG
-	TKQ4IkRA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=mj5Bu3heXBVAbDCRBj7K8sXs/b5gm3MmBS2E2sEBDUg=; b=4th5W4XwyXB6pK
+	uvNKbwTqyuyZBuutX+VWKG2VSVxyr/gtytj4n8wwoxvuFdTBR1O40dGldqNufK94tUbJk5OlLl6yW
+	UUO0J2xt71rhDA1v1fqATuuUXrs8F0ZXToRXkkExqzHd0uTlB3RiSvySAmbfqI7ngXurwboSVzB3T
+	27bsXoOgTS9c9HaX0D7qrYbKVMVDaAWgAsfhU7Ab5PAx+VoDG7jbk8ACMtGSaU9Dsl/Wsn1T/uqfi
+	dRTs5/+4Vo8KyQCS+VVhw+AkFh1vYc5wXNwmiFmtaVswnJlMGE49PD+B/6zU4B2sit6cfV3j5ylNV
+	dJsGwCAFWPGbUjJCdlJg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oaWeX-000x4o-2w; Tue, 20 Sep 2022 06:22:41 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1oaWim-000yRs-JC; Tue, 20 Sep 2022 06:27:04 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oaWeN-000x2g-WD
-	for linux-phy@lists.infradead.org; Tue, 20 Sep 2022 06:22:33 +0000
-Received: from drehscheibe.grey.stw.pengutronix.de ([2a0a:edc0:0:c01:1d::a2])
-	by metis.ext.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
-	(Exim 4.92)
-	(envelope-from <ukl@pengutronix.de>)
-	id 1oaWds-0002p0-9V; Tue, 20 Sep 2022 08:22:00 +0200
-Received: from [2a0a:edc0:0:900:1d::77] (helo=ptz.office.stw.pengutronix.de)
-	by drehscheibe.grey.stw.pengutronix.de with esmtp (Exim 4.94.2)
-	(envelope-from <ukl@pengutronix.de>)
-	id 1oaWdm-001o8d-IJ; Tue, 20 Sep 2022 08:21:53 +0200
-Received: from ukl by ptz.office.stw.pengutronix.de with local (Exim 4.94.2)
-	(envelope-from <ukl@pengutronix.de>)
-	id 1oaWdk-0028nS-97; Tue, 20 Sep 2022 08:21:52 +0200
-Date: Tue, 20 Sep 2022 08:21:49 +0200
-From: Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
-To: Johan Jonker <jbx6244@gmail.com>
-Cc: kever.yang@rock-chips.com, sjg@chromium.org, philipp.tomsich@vrull.eu,
-	robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
-	heiko@sntech.de, ulf.hansson@linaro.org, miquel.raynal@bootlin.com,
-	richard@nod.at, vigneshr@ti.com, kishon@ti.com, vkoul@kernel.org,
-	thierry.reding@gmail.com, gregkh@linuxfoundation.org,
-	broonie@kernel.org, wim@linux-watchdog.org, linux@roeck-us.net,
-	zhangqing@rock-chips.com, jamie@jamieiles.com,
-	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
-	linux-i2c@vger.kernel.org, linux-mmc@vger.kernel.org,
-	linux-mtd@lists.infradead.org, linux-phy@lists.infradead.org,
-	linux-pwm@vger.kernel.org, linux-serial@vger.kernel.org,
-	linux-spi@vger.kernel.org, linux-usb@vger.kernel.org,
-	linux-watchdog@vger.kernel.org
-Subject: Re: [PATCH v1 03/11] dt-bindings: pwm: rockchip: add
- rockchip,rk3128-pwm
-Message-ID: <20220920062149.o6gdhsh7bk5rl4ah@pengutronix.de>
-References: <20220909212543.17428-1-jbx6244@gmail.com>
- <f5dd0ee4-d97e-d878-ffde-c06e9b233e38@gmail.com>
+	id 1oaWij-000yPT-My
+	for linux-phy@lists.infradead.org; Tue, 20 Sep 2022 06:27:02 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 43F0A61BC8;
+	Tue, 20 Sep 2022 06:26:59 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 32D50C433C1;
+	Tue, 20 Sep 2022 06:26:57 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1663655218;
+	bh=KtKLBoSfHYo9Sto2/wJYlheGj0VfgZsF5y5wlde5yoc=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=TD0LixtKSz1cPJICRDDAqbQEUFzQsBeXJ50uktH31O13APjqAjSlZsX9onJ6Kiti2
+	 7sGK3JyjJzTzEBaS+z4qAxj/LNJ+MU8i3rOj4lMsSoKgkzSz5kk80dDqySm9TiPB/Q
+	 PzZMoTOdyCt59BAgOP7Y0qELsCPhYW9QDr3QhupiGNGetac8UvH8tMUM1/0T0BcgSd
+	 pmf4VT4nxakUT2TiLs9LrZKBEHqLVjZ2tSPUDNr1DWeFDgSVn7TXmbQMHxHa15qCrz
+	 HU8hqnmQbH8yxxHRelyBYlVY9M1eW/z6AvyBWpVExON3KBMUhC/8qTUBLlUPlCNjLB
+	 kboq0+yv0K1bA==
+Date: Tue, 20 Sep 2022 11:56:53 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Liang He <windhl@126.com>
+Cc: kishon@ti.com, narmstrong@baylibre.com, khilman@baylibre.com,
+	linux-phy@lists.infradead.org
+Subject: Re: [PATCH v2] phy: amlogic: phy-meson-axg-mipi-pcie-analog: Hold
+ reference returned by of_get_parent()
+Message-ID: <YyldLYxso1rf6qoO@matsya>
+References: <20220915093506.4009456-1-windhl@126.com>
 MIME-Version: 1.0
-In-Reply-To: <f5dd0ee4-d97e-d878-ffde-c06e9b233e38@gmail.com>
-X-SA-Exim-Connect-IP: 2a0a:edc0:0:c01:1d::a2
-X-SA-Exim-Mail-From: ukl@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de); SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-phy@lists.infradead.org
+Content-Disposition: inline
+In-Reply-To: <20220915093506.4009456-1-windhl@126.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220919_232232_192706_C1BDFEDA 
-X-CRM114-Status: UNSURE (   9.87  )
+X-CRM114-CacheID: sfid-20220919_232701_803864_2079FBF1 
+X-CRM114-Status: UNSURE (   7.62  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -80,69 +69,22 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============4901631555703633458=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On 15-09-22, 17:35, Liang He wrote:
+> As the of_get_parent() will increase the refcount of the node->parent
+> and the reference will be discarded, so we should hold the reference
+> with which we can decrease the refcount when done.
 
---===============4901631555703633458==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="kd7xret2mae2a4ju"
-Content-Disposition: inline
+Applied, thanks
 
-
---kd7xret2mae2a4ju
-Content-Type: text/plain; charset=iso-8859-1
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-Hello,
-
-On Sat, Sep 10, 2022 at 12:02:22AM +0200, Johan Jonker wrote:
-> Add rockchip,rk3128-pwm compatible string.
->=20
-> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
-
-Acked-by: Uwe Kleine-K=F6nig <u.kleine-koenig@pengutronix.de>
-
-Is the expectation that this goes in via PWM, or together with the other
-patches via the rockchip maintainers?
-
-Best regards
-Uwe
-
---=20
-Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
-Industrial Linux Solutions                 | https://www.pengutronix.de/ |
-
---kd7xret2mae2a4ju
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEfnIqFpAYrP8+dKQLwfwUeK3K7AkFAmMpW/oACgkQwfwUeK3K
-7Ak6lQf+JJwJnr0ZyiY3Or6brzs797WF7GXUAFlXmkUFkhGzHm5kW2EBe5r0eYXK
-6JDJ9MIUXRJvfRMXB0q1REypyJTbfcS78DyhtcyYM89rpXqxBp76jgDUf9Rs2H+z
-fwUffgfMkkQk6ojMNmH6zeOALRizKrYFAmvWQAWndiOJLNeOAtcDF5PnfM+i2xer
-mPTOt7VjkfcG8CKYIp12F7V/aizP9olhrAvGVZKk+bkLNUfSGmkqQcYCaHr7xDaj
-aXtjRhrJzjBtQrq55OSMM5moBXnlWsTQGRxSeNpQO3wHAIbLadUooB4E717L9fut
-q4vUk4zN179x3cEVOMDAV6ZtGl0BIQ==
-=pI/x
------END PGP SIGNATURE-----
-
---kd7xret2mae2a4ju--
-
-
---===============4901631555703633458==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+-- 
+~Vinod
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============4901631555703633458==--
-
