@@ -4,72 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D0304C54EE9
-	for <linux-phy@archiver.kernel.org>; Tue, 20 Sep 2022 12:22:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id ADFD0C54EE9
+	for <linux-phy@archiver.kernel.org>; Tue, 20 Sep 2022 13:30:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Cb9ChS81DYD/261jZtIYcy5Q5onXs3LuIFURPxrCoDg=; b=zlGSS/GKyGV29F
-	OTwsjsfY7UnkK2NbCOs6Z8N3H/pt3aiIWb8QxO8tSwlYGocrIJ/wCEspo9tnpPLeLgE+aGI+AmT/h
-	rpSAH9o60vrSBhZl9MYRNFwr4vJ3jIuBObFXG+YuO9hcnKA+7lQQDEwAYppfSFI5O5TBDfhMlpOUf
-	OYKMOuewfzR/SdhP08MUADuZiOs7B3LehV21ZRXfvIjXaxPDApo3UvTv/q/AKlXWC9hW+zcsWGkUL
-	OY8PnqyWRxjpDeqyzaohAVsU8jA2oFRHPlnlX7TeBPIykRllhinL4jWv+vIPHlrj/uxtxuXK61MQ3
-	8bxpJdDVZIDolpDVmLfw==;
+	List-Owner; bh=BEEv3In05k3V3Aqkpb+pqQmpga5MvwDnR16el1WCwdk=; b=UjSg+AZA/kzlwC
+	ZwI/broP4TWjjZMB2p2MIORTbeN2PMaN5P5OakN+Sm/6+eugJLF+J9V0Yy+O2i12gWONuiKQ2p35h
+	BUgb8jtknAnJmsWYsNa8Rv7BlWF0jrk9jjKpJt7kDP/2pFAt0RPBxcIcnvYiORnk9C5Ehr4JHGqP4
+	0iio6/Jl8F8Ix0otGEO6+WiX85ebBQSd6uA1cyRZj3zOqkZThSLGlTMN1k87EbEa/JHhfh5DZzNAy
+	RxFaTOZ9gdgmQObQVWh2CLomQsuJcGMdR8GAHfI1AR5smIPZYJ0xUf7nIoCWBjrri53Q4u1MaewQy
+	cf30dGum5hWFSC/92SNA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oacGo-003esF-8f; Tue, 20 Sep 2022 12:22:34 +0000
-Received: from madras.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e5ab])
+	id 1oadKf-0046Fo-0f; Tue, 20 Sep 2022 13:30:37 +0000
+Received: from mail-wr1-x430.google.com ([2a00:1450:4864:20::430])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oacGb-003elr-Th; Tue, 20 Sep 2022 12:22:23 +0000
-Received: from [192.168.1.100] (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
-	(No client certificate requested)
-	(Authenticated sender: kholk11)
-	by madras.collabora.co.uk (Postfix) with ESMTPSA id 16E066601F6E;
-	Tue, 20 Sep 2022 13:22:19 +0100 (BST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1663676540;
-	bh=d5C1UKHSt0P8rgevUzVZlIrzp+iptSFeKnmBaNqfAx8=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=mF9gZIO1aOqTgoLykkQMAflYNNiPZ8Oi5tMxaUkgST6FrWwxKo0ySbVOkiqVJgwDf
-	 xxDg3pYhlMSk1qFHx8IKPXyLyLnZ+qSl/lQWWn/xlNa+WqGINMfEyTBURD3ElpMbPw
-	 YyaJth9oSYylURi12Sy9farhIOhhAoiP7dtbNBbhUDRJUYsVAsm3y/YbtOJLnppu6z
-	 v5IAbVSxy8GY3Mbl+d9K8AO1QP/tlIosQZSU0O2iJ47USgJqW0+YNST8sU/wXu54D4
-	 Otwcaxki2aVvSJaH2DVEowJaxn5Mw16sia808+hpc7ZBYIOdnbZ5F1zcBhmNPual0P
-	 uaDsHHZ0mDk5g==
-Message-ID: <812a5de2-dbe3-2f0d-492c-16ea004c996a@collabora.com>
-Date: Tue, 20 Sep 2022 14:22:16 +0200
+	id 1oadKc-0046CO-E5
+	for linux-phy@lists.infradead.org; Tue, 20 Sep 2022 13:30:35 +0000
+Received: by mail-wr1-x430.google.com with SMTP id t14so4284866wrx.8
+        for <linux-phy@lists.infradead.org>; Tue, 20 Sep 2022 06:30:32 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google;
+        h=content-transfer-encoding:in-reply-to:organization:from:references
+         :cc:to:content-language:subject:user-agent:mime-version:date
+         :message-id:from:to:cc:subject:date;
+        bh=XLxjCK1UrYCEX7pcRlMkQ0jqY8Ny3pjRnQ4MiYRMmGc=;
+        b=NK2Oy+tzNmW0Z0DQa5UKF/e2pj9fFX9OGHvrWk7x696wpkkn2l2T1KbCkWux41Zkco
+         GCKNjtyNmTq+jrWWpZ0+/nRAjHICJ/12WhhToJoctEKsZ8iRXz/SrOte8WIYZ9QV/OuV
+         RA2/XT85gYr0p89WonCHF1uuQoQd0iQFBD0/4Z71HFIx7baxKce+lVlxzF6MaajfTh/T
+         u53scWLTA9g1eAlhOl7Hf7dGqGE3TRTr3XiKLQ6QV5HPhKijceuzphGZZMHNaHpOuccL
+         wm6Q35jLqNE3vsLBOJCvmU0rClqWQMpDwUhmOT2C16rNsykgtZw0qwRehDDJ0mIUHw1b
+         MuGQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=content-transfer-encoding:in-reply-to:organization:from:references
+         :cc:to:content-language:subject:user-agent:mime-version:date
+         :message-id:x-gm-message-state:from:to:cc:subject:date;
+        bh=XLxjCK1UrYCEX7pcRlMkQ0jqY8Ny3pjRnQ4MiYRMmGc=;
+        b=X0SPNfV2D3zbi6oj7yRbNMZVXmA4faEDiOylwypawVK/GI+ww0esems7MOd7TONWPo
+         zdSge0+MkENSLDQJLXz7w2Di21PUdSkX+VbcCJMXYfPtxrivV27eLfiOW/IhmEUaIABV
+         cbNncsFfWZl12sbmWU4qoHxHwmiXuNMrpaVZVirRXzHPO1EkDvuKbzh42371pyY3oxsl
+         IbFDpguciZhV7Tgs35zstj54/+X6ENNZe1h+8mw/iDlunH+BeQ3hVLFYh5Y4qsi6Sywb
+         DC03I0PpHxPcPLWz6NVcIHR9t/4KjXZcqvJ4wMh59FJq6wgfAaEuH0E/tvJWWxikJ2yD
+         7k1g==
+X-Gm-Message-State: ACrzQf3gT03m2m9U5Yp8iTB9iRJhJu8C2ieOO/sw8xLJ9lX59e8cu8z9
+	9nY+IIBT9Z1ykBYL9Waug0riGg==
+X-Google-Smtp-Source: AMsMyM4rDJ9Ph6SYonLeoLqOVQkjtcIXLs9X97QpO0G9E4099LrQwE+woqtN527kN7WDVD9ZZDoZoA==
+X-Received: by 2002:a05:6000:982:b0:229:79e5:6a96 with SMTP id by2-20020a056000098200b0022979e56a96mr13814135wrb.469.1663680631063;
+        Tue, 20 Sep 2022 06:30:31 -0700 (PDT)
+Received: from ?IPV6:2a01:e0a:982:cbb0:7e10:f0f:43b2:9b5e? ([2a01:e0a:982:cbb0:7e10:f0f:43b2:9b5e])
+        by smtp.gmail.com with ESMTPSA id j26-20020adfa55a000000b0022afddab5dfsm70082wrb.7.2022.09.20.06.30.29
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 20 Sep 2022 06:30:30 -0700 (PDT)
+Message-ID: <5a10b8b7-3881-2f31-5a79-ddef9798184d@linaro.org>
+Date: Tue, 20 Sep 2022 15:30:28 +0200
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.2.0
-Subject: Re: [PATCH v1 16/17] drm/mediatek: dpi: Add mt8195 hdmi to DPI driver
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
+ Thunderbird/91.11.0
+Subject: Re: [PATCH] phy: qualcomm: call clk_disable_unprepare in the error
+ handling
 Content-Language: en-US
-To: Guillaume Ranquet <granquet@baylibre.com>, Vinod Koul <vkoul@kernel.org>,
- Stephen Boyd <sboyd@kernel.org>, David Airlie <airlied@linux.ie>,
- Rob Herring <robh+dt@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Daniel Vetter <daniel@ffwll.ch>, Chunfeng Yun <chunfeng.yun@mediatek.com>,
- CK Hu <ck.hu@mediatek.com>, Jitao shi <jitao.shi@mediatek.com>,
- Chun-Kuang Hu <chunkuang.hu@kernel.org>,
- Michael Turquette <mturquette@baylibre.com>,
- Kishon Vijay Abraham I <kishon@ti.com>,
- Matthias Brugger <matthias.bgg@gmail.com>
-Cc: linux-mediatek@lists.infradead.org, dri-devel@lists.freedesktop.org,
- Pablo Sun <pablo.sun@mediatek.com>, linux-clk@vger.kernel.org,
- linux-kernel@vger.kernel.org, Mattijs Korpershoek
- <mkorpershoek@baylibre.com>, linux-arm-kernel@lists.infradead.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org
-References: <20220919-v1-0-4844816c9808@baylibre.com>
- <20220919-v1-16-4844816c9808@baylibre.com>
-From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-In-Reply-To: <20220919-v1-16-4844816c9808@baylibre.com>
+To: Dongliang Mu <dzm91@hust.edu.cn>, Andy Gross <agross@kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Konrad Dybcio <konrad.dybcio@somainline.org>,
+ Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Heiko Stuebner <heiko@sntech.de>, Vivek Gautam
+ <vivek.gautam@codeaurora.org>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Jaehoon Chung <jh80.chung@samsung.com>
+Cc: Dongliang Mu <mudongliangabcd@gmail.com>,
+ Viresh Kumar <viresh.kumar@linaro.org>, linux-arm-msm@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
+References: <20220914051334.69282-1-dzm91@hust.edu.cn>
+From: Neil Armstrong <neil.armstrong@linaro.org>
+Organization: Linaro
+In-Reply-To: <20220914051334.69282-1-dzm91@hust.edu.cn>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220920_052222_115379_E6C3E772 
-X-CRM114-Status: GOOD (  12.87  )
+X-CRM114-CacheID: sfid-20220920_063034_529153_EF4EE219 
+X-CRM114-Status: GOOD (  17.46  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,51 +101,48 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Il 19/09/22 18:56, Guillaume Ranquet ha scritto:
-> Add the DPI1 hdmi path support in mtk dpi driver
+On 14/09/2022 07:13, Dongliang Mu wrote:
+> From: Dongliang Mu <mudongliangabcd@gmail.com>
 > 
-> Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
+> Smatch reports the following error:
 > 
-> diff --git a/drivers/gpu/drm/mediatek/mtk_dpi.c b/drivers/gpu/drm/mediatek/mtk_dpi.c
-> index 630a4e301ef6..91212b7610e8 100644
-> --- a/drivers/gpu/drm/mediatek/mtk_dpi.c
-> +++ b/drivers/gpu/drm/mediatek/mtk_dpi.c
-> @@ -15,7 +15,10 @@
->   #include <linux/of_graph.h>
->   #include <linux/pinctrl/consumer.h>
->   #include <linux/platform_device.h>
-> +#include <linux/reset.h>
->   #include <linux/types.h>
-> +#include <linux/regmap.h>
-> +#include <linux/mfd/syscon.h>
+> drivers/phy/qualcomm/phy-qcom-usb-hsic.c:82 qcom_usb_hsic_phy_power_on()
+> warn: 'uphy->cal_clk' from clk_prepare_enable() not released on lines:
+> 58.
+> drivers/phy/qualcomm/phy-qcom-usb-hsic.c:82 qcom_usb_hsic_phy_power_on()
+> warn: 'uphy->cal_sleep_clk' from clk_prepare_enable() not released on
+> lines: 58.
+> drivers/phy/qualcomm/phy-qcom-usb-hsic.c:82 qcom_usb_hsic_phy_power_on()
+> warn: 'uphy->phy_clk' from clk_prepare_enable() not released on lines:
+> 58.
+> 
+> Fix this by calling proper clk_disable_unprepare calls.
+> 
+> Fixes: 0b56e9a7e835 ("phy: Group vendor specific phy drivers")
+> Signed-off-by: Dongliang Mu <mudongliangabcd@gmail.com>
+> ---
+>   drivers/phy/qualcomm/phy-qcom-usb-hsic.c | 6 ++++--
+>   1 file changed, 4 insertions(+), 2 deletions(-)
+> 
+> diff --git a/drivers/phy/qualcomm/phy-qcom-usb-hsic.c b/drivers/phy/qualcomm/phy-qcom-usb-hsic.c
+> index 716a77748ed8..20f6dd37c7c1 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-usb-hsic.c
+> +++ b/drivers/phy/qualcomm/phy-qcom-usb-hsic.c
+> @@ -54,8 +54,10 @@ static int qcom_usb_hsic_phy_power_on(struct phy *phy)
 >   
->   #include <video/videomode.h>
+>   	/* Configure pins for HSIC functionality */
+>   	pins_default = pinctrl_lookup_state(uphy->pctl, PINCTRL_STATE_DEFAULT);
+> -	if (IS_ERR(pins_default))
+> -		return PTR_ERR(pins_default);
+> +	if (IS_ERR(pins_default)) {
+> +		ret = PTR_ERR(pins_default);
+> +		goto err_ulpi;
+> +	}
 >   
-> @@ -66,10 +69,14 @@ struct mtk_dpi {
->   	struct drm_bridge *next_bridge;
->   	struct drm_connector *connector;
->   	void __iomem *regs;
-> +	struct reset_control *reset_ctl;
->   	struct device *dev;
->   	struct clk *engine_clk;
-> +	struct clk *dpi_ck_cg;
->   	struct clk *pixel_clk;
-> +	struct clk *dpi_sel_clk;
->   	struct clk *tvd_clk;
-> +	struct clk *hdmi_cg;
+>   	ret = pinctrl_select_state(uphy->pctl, pins_default);
+>   	if (ret)
 
-
-You're adding new clocks and then you're making *all clocks*, including the
-already existing ones... optional.
-
-That looks seriously odd.... can you please give a devicetree example for
-MT8195 in the next version, perhaps in the cover letter?
-
-Would also make it easier to test this entire big series.
-
-Regards,
-Angelo
-
+Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
 
 -- 
 linux-phy mailing list
