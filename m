@@ -4,47 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B0F89C54EE9
-	for <linux-phy@archiver.kernel.org>; Tue, 20 Sep 2022 07:39:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 84F74ECAAD8
+	for <linux-phy@archiver.kernel.org>; Tue, 20 Sep 2022 07:39:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5L2LUFFHOLQwyBYhxcmbo/I85kja/+wHwBrZbrsAfek=; b=zXjP4u9scHVDkM
-	/65ODMUyZBVlri+mvRWFkMTDLKBYpafqra4TxrmARQddI1n8VjKrFbnmWCfYEHxkh6nStj70oimtl
-	uJE8p+J4W6paGE2azflX6U4eTeHGsXVbZnjcmPzkeFIfjTfwSHk9jQ9P4lNF4A4ZgVKyANxH1odCu
-	HO2t05CUBCZ1X89Ji5bsOObc+TPgBMZHEVQ2LqppHcoxlMEkdm1uJo/pm4wKDqPv2x4W3nkRZ9kuh
-	7wRmX9vGCcdabqLsV5iKHohCCRZQvkNwUVTYHOXIT+dEFRoFRjpCG21cLB6uMbAx6I8aQM5+VOuPp
-	lnphcpoRt6I2/XuC+PHA==;
+	List-Owner; bh=WlgJ/Y0T+6JIRjUfgrNeb0fNa1BUMWoiHZ7rl0xpo14=; b=L+x389lnkaZGJB
+	SLNqefOtpldkyi0Xc1wg8qilRUOJfgoCF/G72n858qinWSEbD4XdCIbWVqP/iv+mHbv+ObsPLcT8t
+	nmLTpYxGg0gm41g3CTjTKtr2n4A4bu3Ubh7rhinXgdLRoi83cVNdNSG7sEf6Gd9eM9Xvk1i/VahjS
+	6dV9G0uJH+u1r0RetAfy4qnqZsjmZ5aGw5xpiTQ9K02/ccX3catSH2NGv6E3rb6uyPCfji2jxiRC2
+	U17NJe0ldZYw+Bt3vuCBttquhUE8hJ2dp/I1JsdYExGEMY+Z+U7GSKHdQiCqTvJd0gWqqBPNgDfb/
+	iBRw0os+2G+BegbvWNNg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oaXqS-001QYo-TX; Tue, 20 Sep 2022 07:39:04 +0000
+	id 1oaXqV-001Qc6-PP; Tue, 20 Sep 2022 07:39:07 +0000
 Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oaXqO-001QTL-Oj
-	for linux-phy@lists.infradead.org; Tue, 20 Sep 2022 07:39:02 +0000
+	id 1oaXqQ-001QUH-6k
+	for linux-phy@lists.infradead.org; Tue, 20 Sep 2022 07:39:04 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 5E4F362126;
-	Tue, 20 Sep 2022 07:39:00 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 16D0EC433B5;
+	by dfw.source.kernel.org (Postfix) with ESMTPS id C7615624F8;
+	Tue, 20 Sep 2022 07:39:01 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 647D2C4167D;
 	Tue, 20 Sep 2022 07:38:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1663659539;
-	bh=ja9XqDAmZ5CFMR6H8RvNH8uNGTVJF/3Unra5I3v55cM=;
+	bh=zOdQjnl5TA8CaiEtXPoNIzijrF9o1v8X4pqZ69iwdbs=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=m8xgu2B74jte4blFCGoySWzInTORniHueikbkE1ZEsVPHkWmy9PgqFVJaZWG9V+dF
-	 Mru2NFKEw492A95chuuAje0n3VX9+dqrNefLk9fhxPUN9uvgH90KMTVEt/LykWiejf
-	 oyNcKcrIT9SUyxx7Vg+y86cs3K4VGGD/PLBsWE4EDAYBPSFl+u7lwNU1XYNdHtFdn8
-	 0ZpGiLaCA0S7qh+LYJ1WirYcVo4qkaLiBB4Z+VBO0Ply8WI2oX/Z4CMnc0o3kW0zzU
-	 Ill/8q4UB2syRmiI0wjz11wXJ9n4evrjpo8sh8iFvPJOxqmSwWEAVsjMQRaJnZ/HdD
-	 HYFaq5T6AYhhQ==
+	b=Lu75lqXnQabIcVhKwUHULYueqhIK64GVttShUA6aE8ytKLIfDKhSguBUjTLjotASE
+	 EACQWTsehJXqOJlOvuiNmvRmtoIepsGlRzejOQA5daoE/in2rXBLI5ToDFzPvknvuc
+	 I2WsI09JctKYRAfe74EcrJZd6M61dHW3c45+tedJ0OBnEaHIpbtx4QVl3TBfaDYgsZ
+	 9698U85pAaw0kLI5x8yH8TE6lfQG3jRNnDlcrMudMGUd030u+Jd1SiAKaHZWxap5nq
+	 cqK8VrgNGoZPRDYLt3yajf8a9c0mTaqNrvktZEuukifqwAS+sYmk11OPFpcdpmF4RG
+	 /BfcPEnIZNrXQ==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1oaXqP-0005Qi-Gc; Tue, 20 Sep 2022 09:39:01 +0200
+	id 1oaXqQ-0005R7-7l; Tue, 20 Sep 2022 09:39:02 +0200
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>
 Cc: Andy Gross <agross@kernel.org>,
@@ -56,16 +56,16 @@ Cc: Andy Gross <agross@kernel.org>,
 	linux-phy@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH 03/17] phy: qcom-qmp-ufs: drop unused type from config
-Date: Tue, 20 Sep 2022 09:38:12 +0200
-Message-Id: <20220920073826.20811-4-johan+linaro@kernel.org>
+Subject: [PATCH 11/17] phy: qcom-qmp: drop unused index field
+Date: Tue, 20 Sep 2022 09:38:20 +0200
+Message-Id: <20220920073826.20811-12-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.35.1
 In-Reply-To: <20220920073826.20811-1-johan+linaro@kernel.org>
 References: <20220920073826.20811-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220920_003900_877870_D3CF43F8 
-X-CRM114-Status: GOOD (  11.83  )
+X-CRM114-CacheID: sfid-20220920_003902_346611_C63EA405 
+X-CRM114-Status: GOOD (  11.49  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,75 +82,129 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The configuration PHY type is no longer used since the QMP driver split
-so drop it from the configuration.
+Only the MSM8996 PCIe QMP driver uses the index field so drop it from
+the other drivers.
 
 Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 8 --------
- 1 file changed, 8 deletions(-)
+ drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 3 ---
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c  | 3 ---
+ drivers/phy/qualcomm/phy-qcom-qmp-ufs.c   | 3 ---
+ drivers/phy/qualcomm/phy-qcom-qmp-usb.c   | 3 ---
+ 4 files changed, 12 deletions(-)
 
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+index 41f938126ff1..08e96e383a29 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+@@ -906,7 +906,6 @@ struct qmp_phy_combo_cfg {
+  * @pcs_misc: iomapped memory space for lane's pcs_misc
+  * @pcs_usb: iomapped memory space for lane's pcs_usb
+  * @pipe_clk: pipe clock
+- * @index: lane index
+  * @qmp: QMP phy to which this lane belongs
+  * @mode: current PHY mode
+  * @dp_aux_cfg: Display port aux config
+@@ -925,7 +924,6 @@ struct qmp_phy {
+ 	void __iomem *pcs_misc;
+ 	void __iomem *pcs_usb;
+ 	struct clk *pipe_clk;
+-	unsigned int index;
+ 	struct qcom_qmp *qmp;
+ 	enum phy_mode mode;
+ 	unsigned int dp_aux_cfg;
+@@ -2779,7 +2777,6 @@ static int qmp_combo_create(struct device *dev, struct device_node *np, int id,
+ 	}
+ 
+ 	qphy->phy = generic_phy;
+-	qphy->index = id;
+ 	qphy->qmp = qmp;
+ 	qmp->phys[id] = qphy;
+ 	phy_set_drvdata(generic_phy, qphy);
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+index d22d2cf2fc18..387abed33727 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+@@ -1371,7 +1371,6 @@ struct qmp_phy_cfg {
+  * @rx2: iomapped memory space for second lane's rx (in dual lane PHYs)
+  * @pcs_misc: iomapped memory space for lane's pcs_misc
+  * @pipe_clk: pipe clock
+- * @index: lane index
+  * @qmp: QMP phy to which this lane belongs
+  */
+ struct qmp_phy {
+@@ -1385,7 +1384,6 @@ struct qmp_phy {
+ 	void __iomem *rx2;
+ 	void __iomem *pcs_misc;
+ 	struct clk *pipe_clk;
+-	unsigned int index;
+ 	struct qcom_qmp *qmp;
+ };
+ 
+@@ -2264,7 +2262,6 @@ static int qmp_pcie_create(struct device *dev, struct device_node *np, int id,
+ 	}
+ 
+ 	qphy->phy = generic_phy;
+-	qphy->index = id;
+ 	qphy->qmp = qmp;
+ 	qmp->phys[id] = qphy;
+ 	phy_set_drvdata(generic_phy, qphy);
 diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-index 7b335b50b4a1..e5c8d3a4fdaa 100644
+index cc49dec46df4..ca9a42250556 100644
 --- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
 +++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-@@ -535,8 +535,6 @@ struct qmp_phy;
- 
- /* struct qmp_phy_cfg - per-PHY initialization config */
- struct qmp_phy_cfg {
--	/* phy-type - PCIE/UFS/USB */
--	unsigned int type;
- 	/* number of lanes provided by phy */
- 	int nlanes;
- 
-@@ -668,7 +666,6 @@ static const char * const qmp_phy_vreg_l[] = {
+@@ -580,7 +580,6 @@ struct qmp_phy_cfg {
+  * @tx2: iomapped memory space for second lane's tx (in dual lane PHYs)
+  * @rx2: iomapped memory space for second lane's rx (in dual lane PHYs)
+  * @pcs_misc: iomapped memory space for lane's pcs_misc
+- * @index: lane index
+  * @qmp: QMP phy to which this lane belongs
+  */
+ struct qmp_phy {
+@@ -593,7 +592,6 @@ struct qmp_phy {
+ 	void __iomem *tx2;
+ 	void __iomem *rx2;
+ 	void __iomem *pcs_misc;
+-	unsigned int index;
+ 	struct qcom_qmp *qmp;
  };
  
- static const struct qmp_phy_cfg msm8996_ufs_cfg = {
--	.type			= PHY_TYPE_UFS,
- 	.nlanes			= 1,
+@@ -1149,7 +1147,6 @@ static int qmp_ufs_create(struct device *dev, struct device_node *np, int id,
+ 	}
  
- 	.serdes_tbl		= msm8996_ufs_serdes_tbl,
-@@ -694,7 +691,6 @@ static const struct qmp_phy_cfg msm8996_ufs_cfg = {
+ 	qphy->phy = generic_phy;
+-	qphy->index = id;
+ 	qphy->qmp = qmp;
+ 	qmp->phys[id] = qphy;
+ 	phy_set_drvdata(generic_phy, qphy);
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
+index 820062a95211..a34320738f60 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
+@@ -1491,7 +1491,6 @@ struct qmp_phy_cfg {
+  * @pcs_misc: iomapped memory space for lane's pcs_misc
+  * @pcs_usb: iomapped memory space for lane's pcs_usb
+  * @pipe_clk: pipe clock
+- * @index: lane index
+  * @qmp: QMP phy to which this lane belongs
+  * @mode: current PHY mode
+  */
+@@ -1507,7 +1506,6 @@ struct qmp_phy {
+ 	void __iomem *pcs_misc;
+ 	void __iomem *pcs_usb;
+ 	struct clk *pipe_clk;
+-	unsigned int index;
+ 	struct qcom_qmp *qmp;
+ 	enum phy_mode mode;
  };
+@@ -2648,7 +2646,6 @@ int qmp_usb_create(struct device *dev, struct device_node *np, int id,
+ 	}
  
- static const struct qmp_phy_cfg sdm845_ufsphy_cfg = {
--	.type			= PHY_TYPE_UFS,
- 	.nlanes			= 2,
- 
- 	.serdes_tbl		= sdm845_ufsphy_serdes_tbl,
-@@ -720,7 +716,6 @@ static const struct qmp_phy_cfg sdm845_ufsphy_cfg = {
- };
- 
- static const struct qmp_phy_cfg sm6115_ufsphy_cfg = {
--	.type			= PHY_TYPE_UFS,
- 	.nlanes			= 1,
- 
- 	.serdes_tbl		= sm6115_ufsphy_serdes_tbl,
-@@ -744,7 +739,6 @@ static const struct qmp_phy_cfg sm6115_ufsphy_cfg = {
- };
- 
- static const struct qmp_phy_cfg sm8150_ufsphy_cfg = {
--	.type			= PHY_TYPE_UFS,
- 	.nlanes			= 2,
- 
- 	.serdes_tbl		= sm8150_ufsphy_serdes_tbl,
-@@ -769,7 +763,6 @@ static const struct qmp_phy_cfg sm8150_ufsphy_cfg = {
- };
- 
- static const struct qmp_phy_cfg sm8350_ufsphy_cfg = {
--	.type			= PHY_TYPE_UFS,
- 	.nlanes			= 2,
- 
- 	.serdes_tbl		= sm8350_ufsphy_serdes_tbl,
-@@ -794,7 +787,6 @@ static const struct qmp_phy_cfg sm8350_ufsphy_cfg = {
- };
- 
- static const struct qmp_phy_cfg sm8450_ufsphy_cfg = {
--	.type			= PHY_TYPE_UFS,
- 	.nlanes			= 2,
- 
- 	.serdes_tbl		= sm8350_ufsphy_serdes_tbl,
+ 	qphy->phy = generic_phy;
+-	qphy->index = id;
+ 	qphy->qmp = qmp;
+ 	qmp->phys[id] = qphy;
+ 	phy_set_drvdata(generic_phy, qphy);
 -- 
 2.35.1
 
