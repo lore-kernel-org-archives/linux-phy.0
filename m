@@ -4,69 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 49F44C54EE9
-	for <linux-phy@archiver.kernel.org>; Tue, 20 Sep 2022 09:36:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9E191ECAAD8
+	for <linux-phy@archiver.kernel.org>; Tue, 20 Sep 2022 09:44:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KPlRrHnMFOcGV+K9pVkwb+FCW0y5W5Qeca3vhbRPD8I=; b=cDmbEpjKfqIY5R
-	jVwHJFSWKiFSQv68fECseiFBwNdy6LR0yySlsMw5AGjXbAUKSxG9uWJyncq0Os2DFtlnqBX7UtxY2
-	vv1Wg5a0fuoM7pqs/uvHwUv0/uQYV+mzpNNyf/RUYNuo7z4DzbKT99GuKftT0cyQC26qiQ6n71HWW
-	xYTYbHoJoJ5qdAZm9jGSF0tPKNbRlmofJQ2JnPV+fPGNH9ux2B2VagM9Us5u9tqYmW9m2gmi253VC
-	BA0SjI9XM52glygPHOzEnsLqNySMf6x09rbw3dLWVi3tG9Nz5gHTHqi+r3xgCuuH1NIlOL9nwIW5c
-	3AWpyjwfL6387yhmPiMA==;
+	List-Owner; bh=9/QdsmotDhTSpqWxow7DM+gPxbKShAR1yEd0X7wLmxE=; b=ErO66qoRGIW2pt
+	oFpkhlWbU7VXLdGqeKnF3mtIiZIDa65C5ELDkkTsxrW1E63AANT2RmN1RKFj5WdA/X+zrJUoc8jPx
+	UZfEsjIWKPpnce1mkpFK95wKEPeq/fJghNfQQkbmMaQU2StNNltQRrT9vzf5gDYotn+qPDxdBO9ix
+	WFUYCxDi4Hxq21socdP8e3XPu+tU8Tu+ec7jy0I8TA4ub9xY313dby8cK19yUlJFVJcmlyhb/ADVy
+	dSoTy2WeZR7zEpjGcPlQZcfKXtyLOx3J354fldyaTbBkV6Ym+4zm5nAWIq0BIsuBJI4GK/gU8liem
+	5+WBF2leyIyIFbDJJMYA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oaZfz-002SxP-MO; Tue, 20 Sep 2022 09:36:23 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1oaZnk-002YOc-5z; Tue, 20 Sep 2022 09:44:24 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oaZb8-002Pzf-76; Tue, 20 Sep 2022 09:31:24 +0000
-X-UUID: 23bbfd01694943f496ad1cce54e86646-20220920
+	id 1oaZlt-002XNE-Ff; Tue, 20 Sep 2022 09:42:31 +0000
+X-UUID: 52bbe614437f40929c20514898321492-20220920
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
-	h=Content-Type:Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From; bh=VNtpF+pXlyEDUuZOw+4+I8vvd6HvIy7daYhRNlFOdz4=;
-	b=LMdEYKmS5sJdhigbz3/Sbd02kMQMbNs9f0Y6bqmwIWoTJHXFbi51vw0sQVNnmZW+9bKSb22Cff29hTS5XoM5ck8qdfVFO4TF0pFzlnP+jssJyezryy8Jd2j/qkiXw5jNQtSawT1KNOhFLyq1454c42sLTiyBwEu5e3x51/SyrFw=;
+	h=Content-Type:Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From; bh=QMYnV6qajs06lT5A7e84rHOCQRhaabyASh6VcPMFpDk=;
+	b=fvSQZBj1BGY9JYq9yc3SgGbl1sDfsoTJpyev+DALkZ3+53GzTZTc9scRWkx/tIAGBN7D9Fe0V8SfNIHiEdbjbQmlio+P98Odeezp2JPiQNjEelldo/VCeVa6Ai9FCelY2j/Q5NNtAoKVNbA4vuBoo+qjvA0uU3H2n5V7qurh7fA=;
 X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.1.11,REQID:bd3010cb-a36e-4a50-87f5-af6c764b5ebb,IP:0,U
-	RL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:
-	release,TS:0
-X-CID-META: VersionHash:39a5ff1,CLOUDID:6056455e-5ed4-4e28-8b00-66ed9f042fbd,B
-	ulkID:nil,BulkQuantity:0,Recheck:0,SF:nil,TC:nil,Content:0,EDM:-3,IP:nil,U
-	RL:11|1,File:nil,Bulk:nil,QS:nil,BEC:nil,COL:0
-X-UUID: 23bbfd01694943f496ad1cce54e86646-20220920
-Received: from mtkmbs11n1.mediatek.inc [(172.21.101.185)] by mailgw01.mediatek.com
+X-CID-O-INFO: VERSION:1.1.11,REQID:c03e0a11-2eec-4029-87a7-f565a388b48d,IP:0,U
+	RL:0,TC:0,Content:0,EDM:25,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION
+	:release,TS:25
+X-CID-META: VersionHash:39a5ff1,CLOUDID:1bcf05f7-6e85-48d9-afd8-0504bbfe04cb,B
+	ulkID:nil,BulkQuantity:0,Recheck:0,SF:nil,TC:nil,Content:0,EDM:5,IP:nil,UR
+	L:11|1,File:nil,Bulk:nil,QS:nil,BEC:nil,COL:0
+X-UUID: 52bbe614437f40929c20514898321492-20220920
+Received: from mtkmbs11n1.mediatek.inc [(172.21.101.185)] by mailgw02.mediatek.com
 	(envelope-from <chunfeng.yun@mediatek.com>)
 	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
-	with ESMTP id 1109363449; Tue, 20 Sep 2022 02:31:18 -0700
+	with ESMTP id 1530396899; Tue, 20 Sep 2022 02:42:20 -0700
 Received: from mtkcas10.mediatek.inc (172.21.101.39) by
- mtkmbs13n1.mediatek.inc (172.21.101.193) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id
- 15.2.792.15; Tue, 20 Sep 2022 17:00:44 +0800
+ mtkmbs10n2.mediatek.inc (172.21.101.183) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.2.792.3;
+ Tue, 20 Sep 2022 17:00:52 +0800
 Received: from localhost.localdomain (10.17.3.154) by mtkcas10.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Tue, 20 Sep 2022 17:00:43 +0800
+ Transport; Tue, 20 Sep 2022 17:00:51 +0800
 From: Chunfeng Yun <chunfeng.yun@mediatek.com>
 To: Chun-Kuang Hu <chunkuang.hu@kernel.org>, Vinod Koul <vkoul@kernel.org>
 CC: Philipp Zabel <p.zabel@pengutronix.de>, Chunfeng Yun
-	<chunfeng.yun@mediatek.com>, Kishon Vijay Abraham I <kishon@ti.com>, Matthias
- Brugger <matthias.bgg@gmail.com>, <dri-devel@lists.freedesktop.org>,
-	<linux-mediatek@lists.infradead.org>, <linux-arm-kernel@lists.infradead.org>,
-	<linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>, Jitao Shi
-	<jitao.shi@mediatek.com>, Stanley Chu <stanley.chu@mediatek.com>
-Subject: [PATCH 05/18] phy: mediatek: pcie: use new helper to update register bits
-Date: Tue, 20 Sep 2022 17:00:25 +0800
-Message-ID: <20220920090038.15133-6-chunfeng.yun@mediatek.com>
+	<chunfeng.yun@mediatek.com>, Kishon Vijay Abraham I <kishon@ti.com>,
+	"Matthias Brugger" <matthias.bgg@gmail.com>,
+	<dri-devel@lists.freedesktop.org>, <linux-mediatek@lists.infradead.org>,
+	<linux-arm-kernel@lists.infradead.org>, <linux-phy@lists.infradead.org>,
+	<linux-kernel@vger.kernel.org>, Jitao Shi <jitao.shi@mediatek.com>, Stanley
+ Chu <stanley.chu@mediatek.com>
+Subject: [PATCH 15/18] phy: mediatek: mipi: mt8173: use common helper to access registers
+Date: Tue, 20 Sep 2022 17:00:35 +0800
+Message-ID: <20220920090038.15133-16-chunfeng.yun@mediatek.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20220920090038.15133-1-chunfeng.yun@mediatek.com>
 References: <20220920090038.15133-1-chunfeng.yun@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220920_023122_954096_3C4384CB 
-X-CRM114-Status: UNSURE (   9.84  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220920_024229_600957_8C5F181B 
+X-CRM114-Status: GOOD (  11.19  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,51 +83,219 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The new helper will use FIELD_PREP() macro to prepare bits value
-according to mask, then we no need do it anymore.
+Use MediaTek phy's common helper to access registers, then we can remove
+mipi-dsi's I/O helpers.
 
 Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
 ---
- drivers/phy/mediatek/phy-mtk-pcie.c | 17 ++++++++---------
- 1 file changed, 8 insertions(+), 9 deletions(-)
+ .../phy/mediatek/phy-mtk-mipi-dsi-mt8173.c    | 117 ++++++++----------
+ 1 file changed, 55 insertions(+), 62 deletions(-)
 
-diff --git a/drivers/phy/mediatek/phy-mtk-pcie.c b/drivers/phy/mediatek/phy-mtk-pcie.c
-index 7f29d43442bf..25dbd6e35722 100644
---- a/drivers/phy/mediatek/phy-mtk-pcie.c
-+++ b/drivers/phy/mediatek/phy-mtk-pcie.c
-@@ -89,14 +89,14 @@ static void mtk_pcie_efuse_set_lane(struct mtk_pcie_phy *pcie_phy,
- 	addr = pcie_phy->sif_base + PEXTP_ANA_LN0_TRX_REG +
- 	       lane * PEXTP_ANA_LANE_OFFSET;
+diff --git a/drivers/phy/mediatek/phy-mtk-mipi-dsi-mt8173.c b/drivers/phy/mediatek/phy-mtk-mipi-dsi-mt8173.c
+index 1e2ad617e8e3..673cb0f08959 100644
+--- a/drivers/phy/mediatek/phy-mtk-mipi-dsi-mt8173.c
++++ b/drivers/phy/mediatek/phy-mtk-mipi-dsi-mt8173.c
+@@ -4,6 +4,7 @@
+  * Author: jitao.shi <jitao.shi@mediatek.com>
+  */
  
--	mtk_phy_update_bits(addr + PEXTP_ANA_TX_REG, EFUSE_LN_TX_PMOS_SEL,
--			    FIELD_PREP(EFUSE_LN_TX_PMOS_SEL, data->tx_pmos));
-+	mtk_phy_update_field(addr + PEXTP_ANA_TX_REG, EFUSE_LN_TX_PMOS_SEL,
-+			     data->tx_pmos);
++#include "phy-mtk-io.h"
+ #include "phy-mtk-mipi-dsi.h"
  
--	mtk_phy_update_bits(addr + PEXTP_ANA_TX_REG, EFUSE_LN_TX_NMOS_SEL,
--			    FIELD_PREP(EFUSE_LN_TX_NMOS_SEL, data->tx_nmos));
-+	mtk_phy_update_field(addr + PEXTP_ANA_TX_REG, EFUSE_LN_TX_NMOS_SEL,
-+			     data->tx_nmos);
+ #define MIPITX_DSI_CON		0x00
+@@ -121,6 +122,7 @@
+ static int mtk_mipi_tx_pll_prepare(struct clk_hw *hw)
+ {
+ 	struct mtk_mipi_tx *mipi_tx = mtk_mipi_tx_from_clk_hw(hw);
++	void __iomem *base = mipi_tx->regs;
+ 	u8 txdiv, txdiv0, txdiv1;
+ 	u64 pcw;
  
--	mtk_phy_update_bits(addr + PEXTP_ANA_RX_REG, EFUSE_LN_RX_SEL,
--			    FIELD_PREP(EFUSE_LN_RX_SEL, data->rx_data));
-+	mtk_phy_update_field(addr + PEXTP_ANA_RX_REG, EFUSE_LN_RX_SEL,
-+			     data->rx_data);
+@@ -150,40 +152,38 @@ static int mtk_mipi_tx_pll_prepare(struct clk_hw *hw)
+ 		return -EINVAL;
+ 	}
+ 
+-	mtk_mipi_tx_update_bits(mipi_tx, MIPITX_DSI_BG_CON,
+-				RG_DSI_VOUT_MSK |
+-				RG_DSI_BG_CKEN | RG_DSI_BG_CORE_EN,
+-				FIELD_PREP(RG_DSI_V02_SEL, 4) |
+-				FIELD_PREP(RG_DSI_V032_SEL, 4) |
+-				FIELD_PREP(RG_DSI_V04_SEL, 4) |
+-				FIELD_PREP(RG_DSI_V072_SEL, 4) |
+-				FIELD_PREP(RG_DSI_V10_SEL, 4) |
+-				FIELD_PREP(RG_DSI_V12_SEL, 4) |
+-				RG_DSI_BG_CKEN | RG_DSI_BG_CORE_EN);
++	mtk_phy_update_bits(base + MIPITX_DSI_BG_CON,
++			    RG_DSI_VOUT_MSK | RG_DSI_BG_CKEN |
++			    RG_DSI_BG_CORE_EN,
++			    FIELD_PREP(RG_DSI_V02_SEL, 4) |
++			    FIELD_PREP(RG_DSI_V032_SEL, 4) |
++			    FIELD_PREP(RG_DSI_V04_SEL, 4) |
++			    FIELD_PREP(RG_DSI_V072_SEL, 4) |
++			    FIELD_PREP(RG_DSI_V10_SEL, 4) |
++			    FIELD_PREP(RG_DSI_V12_SEL, 4) |
++			    RG_DSI_BG_CKEN | RG_DSI_BG_CORE_EN);
+ 
+ 	usleep_range(30, 100);
+ 
+-	mtk_mipi_tx_update_bits(mipi_tx, MIPITX_DSI_TOP_CON,
+-				RG_DSI_LNT_IMP_CAL_CODE | RG_DSI_LNT_HS_BIAS_EN,
+-				FIELD_PREP(RG_DSI_LNT_IMP_CAL_CODE, 8) |
+-				RG_DSI_LNT_HS_BIAS_EN);
++	mtk_phy_update_bits(base + MIPITX_DSI_TOP_CON,
++			    RG_DSI_LNT_IMP_CAL_CODE | RG_DSI_LNT_HS_BIAS_EN,
++			    FIELD_PREP(RG_DSI_LNT_IMP_CAL_CODE, 8) |
++			    RG_DSI_LNT_HS_BIAS_EN);
+ 
+-	mtk_mipi_tx_set_bits(mipi_tx, MIPITX_DSI_CON,
+-			     RG_DSI_CKG_LDOOUT_EN | RG_DSI_LDOCORE_EN);
++	mtk_phy_set_bits(base + MIPITX_DSI_CON,
++			 RG_DSI_CKG_LDOOUT_EN | RG_DSI_LDOCORE_EN);
+ 
+-	mtk_mipi_tx_update_bits(mipi_tx, MIPITX_DSI_PLL_PWR,
+-				RG_DSI_MPPLL_SDM_PWR_ON |
+-				RG_DSI_MPPLL_SDM_ISO_EN,
+-				RG_DSI_MPPLL_SDM_PWR_ON);
++	mtk_phy_update_bits(base + MIPITX_DSI_PLL_PWR,
++			    RG_DSI_MPPLL_SDM_PWR_ON | RG_DSI_MPPLL_SDM_ISO_EN,
++			    RG_DSI_MPPLL_SDM_PWR_ON);
+ 
+-	mtk_mipi_tx_clear_bits(mipi_tx, MIPITX_DSI_PLL_CON0,
+-			       RG_DSI_MPPLL_PLL_EN);
++	mtk_phy_clear_bits(base + MIPITX_DSI_PLL_CON0, RG_DSI_MPPLL_PLL_EN);
+ 
+-	mtk_mipi_tx_update_bits(mipi_tx, MIPITX_DSI_PLL_CON0,
+-				RG_DSI_MPPLL_TXDIV0 | RG_DSI_MPPLL_TXDIV1 |
+-				RG_DSI_MPPLL_PREDIV,
+-				FIELD_PREP(RG_DSI_MPPLL_TXDIV0, txdiv0) |
+-				FIELD_PREP(RG_DSI_MPPLL_TXDIV1, txdiv1));
++	mtk_phy_update_bits(base + MIPITX_DSI_PLL_CON0,
++			    RG_DSI_MPPLL_TXDIV0 | RG_DSI_MPPLL_TXDIV1 |
++			    RG_DSI_MPPLL_PREDIV,
++			    FIELD_PREP(RG_DSI_MPPLL_TXDIV0, txdiv0) |
++			    FIELD_PREP(RG_DSI_MPPLL_TXDIV1, txdiv1));
+ 
+ 	/*
+ 	 * PLL PCW config
+@@ -193,23 +193,20 @@ static int mtk_mipi_tx_pll_prepare(struct clk_hw *hw)
+ 	 * Post DIV =4, so need data_Rate*4
+ 	 * Ref_clk is 26MHz
+ 	 */
+-	pcw = div_u64(((u64)mipi_tx->data_rate * 2 * txdiv) << 24,
+-		      26000000);
+-	writel(pcw, mipi_tx->regs + MIPITX_DSI_PLL_CON2);
++	pcw = div_u64(((u64)mipi_tx->data_rate * 2 * txdiv) << 24, 26000000);
++	writel(pcw, base + MIPITX_DSI_PLL_CON2);
+ 
+-	mtk_mipi_tx_set_bits(mipi_tx, MIPITX_DSI_PLL_CON1,
+-			     RG_DSI_MPPLL_SDM_FRA_EN);
++	mtk_phy_set_bits(base + MIPITX_DSI_PLL_CON1, RG_DSI_MPPLL_SDM_FRA_EN);
+ 
+-	mtk_mipi_tx_set_bits(mipi_tx, MIPITX_DSI_PLL_CON0, RG_DSI_MPPLL_PLL_EN);
++	mtk_phy_set_bits(base + MIPITX_DSI_PLL_CON0, RG_DSI_MPPLL_PLL_EN);
+ 
+ 	usleep_range(20, 100);
+ 
+-	mtk_mipi_tx_clear_bits(mipi_tx, MIPITX_DSI_PLL_CON1,
+-			       RG_DSI_MPPLL_SDM_SSC_EN);
++	mtk_phy_clear_bits(base + MIPITX_DSI_PLL_CON1, RG_DSI_MPPLL_SDM_SSC_EN);
+ 
+-	mtk_mipi_tx_update_bits(mipi_tx, MIPITX_DSI_PLL_TOP,
+-				RG_DSI_MPPLL_PRESERVE,
+-				mipi_tx->driver_data->mppll_preserve);
++	mtk_phy_update_field(base + MIPITX_DSI_PLL_TOP,
++			     RG_DSI_MPPLL_PRESERVE,
++			     mipi_tx->driver_data->mppll_preserve);
+ 
+ 	return 0;
+ }
+@@ -217,31 +214,27 @@ static int mtk_mipi_tx_pll_prepare(struct clk_hw *hw)
+ static void mtk_mipi_tx_pll_unprepare(struct clk_hw *hw)
+ {
+ 	struct mtk_mipi_tx *mipi_tx = mtk_mipi_tx_from_clk_hw(hw);
++	void __iomem *base = mipi_tx->regs;
+ 
+ 	dev_dbg(mipi_tx->dev, "unprepare\n");
+ 
+-	mtk_mipi_tx_clear_bits(mipi_tx, MIPITX_DSI_PLL_CON0,
+-			       RG_DSI_MPPLL_PLL_EN);
++	mtk_phy_clear_bits(base + MIPITX_DSI_PLL_CON0, RG_DSI_MPPLL_PLL_EN);
+ 
+-	mtk_mipi_tx_update_bits(mipi_tx, MIPITX_DSI_PLL_TOP,
+-				RG_DSI_MPPLL_PRESERVE, 0);
++	mtk_phy_clear_bits(base + MIPITX_DSI_PLL_TOP, RG_DSI_MPPLL_PRESERVE);
+ 
+-	mtk_mipi_tx_update_bits(mipi_tx, MIPITX_DSI_PLL_PWR,
+-				RG_DSI_MPPLL_SDM_ISO_EN |
+-				RG_DSI_MPPLL_SDM_PWR_ON,
+-				RG_DSI_MPPLL_SDM_ISO_EN);
++	mtk_phy_update_bits(base + MIPITX_DSI_PLL_PWR,
++			    RG_DSI_MPPLL_SDM_ISO_EN | RG_DSI_MPPLL_SDM_PWR_ON,
++			    RG_DSI_MPPLL_SDM_ISO_EN);
+ 
+-	mtk_mipi_tx_clear_bits(mipi_tx, MIPITX_DSI_TOP_CON,
+-			       RG_DSI_LNT_HS_BIAS_EN);
++	mtk_phy_clear_bits(base + MIPITX_DSI_TOP_CON, RG_DSI_LNT_HS_BIAS_EN);
+ 
+-	mtk_mipi_tx_clear_bits(mipi_tx, MIPITX_DSI_CON,
+-			       RG_DSI_CKG_LDOOUT_EN | RG_DSI_LDOCORE_EN);
++	mtk_phy_clear_bits(base + MIPITX_DSI_CON,
++			   RG_DSI_CKG_LDOOUT_EN | RG_DSI_LDOCORE_EN);
+ 
+-	mtk_mipi_tx_clear_bits(mipi_tx, MIPITX_DSI_BG_CON,
+-			       RG_DSI_BG_CKEN | RG_DSI_BG_CORE_EN);
++	mtk_phy_clear_bits(base + MIPITX_DSI_BG_CON,
++			   RG_DSI_BG_CKEN | RG_DSI_BG_CORE_EN);
+ 
+-	mtk_mipi_tx_clear_bits(mipi_tx, MIPITX_DSI_PLL_CON0,
+-			       RG_DSI_MPPLL_DIV_MSK);
++	mtk_phy_clear_bits(base + MIPITX_DSI_PLL_CON0, RG_DSI_MPPLL_DIV_MSK);
  }
  
- /**
-@@ -116,9 +116,8 @@ static int mtk_pcie_phy_init(struct phy *phy)
- 		return 0;
+ static long mtk_mipi_tx_pll_round_rate(struct clk_hw *hw, unsigned long rate,
+@@ -265,10 +258,10 @@ static void mtk_mipi_tx_power_on_signal(struct phy *phy)
  
- 	/* Set global data */
--	mtk_phy_update_bits(pcie_phy->sif_base + PEXTP_ANA_GLB_00_REG,
--			    EFUSE_GLB_INTR_SEL,
--			    FIELD_PREP(EFUSE_GLB_INTR_SEL, pcie_phy->efuse_glb_intr));
-+	mtk_phy_update_field(pcie_phy->sif_base + PEXTP_ANA_GLB_00_REG,
-+			     EFUSE_GLB_INTR_SEL, pcie_phy->efuse_glb_intr);
+ 	for (reg = MIPITX_DSI_CLOCK_LANE;
+ 	     reg <= MIPITX_DSI_DATA_LANE3; reg += 4)
+-		mtk_mipi_tx_set_bits(mipi_tx, reg, RG_DSI_LNTx_LDOOUT_EN);
++		mtk_phy_set_bits(mipi_tx->regs + reg, RG_DSI_LNTx_LDOOUT_EN);
  
- 	for (i = 0; i < pcie_phy->data->num_lanes; i++)
- 		mtk_pcie_efuse_set_lane(pcie_phy, i);
+-	mtk_mipi_tx_clear_bits(mipi_tx, MIPITX_DSI_TOP_CON,
+-			       RG_DSI_PAD_TIE_LOW_EN);
++	mtk_phy_clear_bits(mipi_tx->regs + MIPITX_DSI_TOP_CON,
++			   RG_DSI_PAD_TIE_LOW_EN);
+ }
+ 
+ static void mtk_mipi_tx_power_off_signal(struct phy *phy)
+@@ -276,23 +269,23 @@ static void mtk_mipi_tx_power_off_signal(struct phy *phy)
+ 	struct mtk_mipi_tx *mipi_tx = phy_get_drvdata(phy);
+ 	u32 reg;
+ 
+-	mtk_mipi_tx_set_bits(mipi_tx, MIPITX_DSI_TOP_CON,
+-			     RG_DSI_PAD_TIE_LOW_EN);
++	mtk_phy_set_bits(mipi_tx->regs + MIPITX_DSI_TOP_CON,
++			 RG_DSI_PAD_TIE_LOW_EN);
+ 
+ 	for (reg = MIPITX_DSI_CLOCK_LANE;
+ 	     reg <= MIPITX_DSI_DATA_LANE3; reg += 4)
+-		mtk_mipi_tx_clear_bits(mipi_tx, reg, RG_DSI_LNTx_LDOOUT_EN);
++		mtk_phy_clear_bits(mipi_tx->regs + reg, RG_DSI_LNTx_LDOOUT_EN);
+ }
+ 
+ const struct mtk_mipitx_data mt2701_mipitx_data = {
+-	.mppll_preserve = (3 << 8),
++	.mppll_preserve = 3,
+ 	.mipi_tx_clk_ops = &mtk_mipi_tx_pll_ops,
+ 	.mipi_tx_enable_signal = mtk_mipi_tx_power_on_signal,
+ 	.mipi_tx_disable_signal = mtk_mipi_tx_power_off_signal,
+ };
+ 
+ const struct mtk_mipitx_data mt8173_mipitx_data = {
+-	.mppll_preserve = (0 << 8),
++	.mppll_preserve = 0,
+ 	.mipi_tx_clk_ops = &mtk_mipi_tx_pll_ops,
+ 	.mipi_tx_enable_signal = mtk_mipi_tx_power_on_signal,
+ 	.mipi_tx_disable_signal = mtk_mipi_tx_power_off_signal,
 -- 
 2.18.0
 
