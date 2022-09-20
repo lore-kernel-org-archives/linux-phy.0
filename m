@@ -4,64 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E855BECAAD8
-	for <linux-phy@archiver.kernel.org>; Tue, 20 Sep 2022 07:57:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id ED27CC54EE9
+	for <linux-phy@archiver.kernel.org>; Tue, 20 Sep 2022 08:41:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PAJ3LPhu4YRVPJjTxEp/QprcG+oZuJ26EKO5swBUhss=; b=dikNR5CU6fb3p4
-	/jii/rFE/I6S4B7zmZlSlAdrzoy4qbe3tO5I/8seuE53RuKIJJ1DYMVaCG8MH0s3TOcBRidR2i5Ma
-	/tu2uxO5yd4M0/LbHhStX2npF3FkNT0k1xXFIwYs3KJa3GlCYtbyfSp1DSSSDhZkpxALtUtQ2ArKt
-	K91LCVRL4EQzWuvdWAgpjerzUSBnnBSSg1s5NTSvj8KbMBvMl3JGsO7mSYBJ1enreyB0x54dg3tbx
-	c6XVgOfYV5jpq4kSW/Ive/V0QP7fpdnpcZWEMq+Rsl+GsRCycUvmPmmBUt8Xo2IZ0eQuOOXcDQDmw
-	oCIcvzW+SGE7eEhTUZDA==;
+	List-Owner; bh=Qa2UOLrx2vDAEXMsctLH6CnSy1eNfLoHEqp28ZgCGe8=; b=tSZf/lpuWkJEa4
+	EDyIyFCQwioqDxnByeYTxEzve/m2HoQxVYsK9L/I/trOuWFm/Izce1TEfRqhfUic8y5jFV+smpUwx
+	ZPPpRym1TwtILlZsJ1eS0/K/LVUrow7RyhQO1qYmvcyoAguIUjqdrkujnLmfIujQ6UXQUWER37yth
+	FEt9TgXNggVE//yVFmum2ixyw4o+y8RKUj0bGGFwMC/YziP72R5h0jKJPHpF3nzWhw8GJ+l748lul
+	IQmVzqRJ356Ns/pfXSh9xqaJMhYdwMP1MXTJRBEXOeL9KO9oZQVPHzPVBZ1HjIJ3L84mz+UoXGNI9
+	uyvJAyt3eQJxdMfvm73A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oaY8V-001XFm-9W; Tue, 20 Sep 2022 07:57:43 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1oaYpF-001xw6-UK; Tue, 20 Sep 2022 08:41:53 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oaY82-001WyS-GZ; Tue, 20 Sep 2022 07:57:16 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
-	by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 3D138225F70;
-	Tue, 20 Sep 2022 09:57:13 +0200 (CEST)
-Received: from aprdc01srsp001v.ap-rdc01.nxp.com (aprdc01srsp001v.ap-rdc01.nxp.com [165.114.16.16])
-	by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id A9CDE225F6A;
-	Tue, 20 Sep 2022 09:57:12 +0200 (CEST)
-Received: from localhost.localdomain (shlinux2.ap.freescale.net [10.192.224.44])
-	by aprdc01srsp001v.ap-rdc01.nxp.com (Postfix) with ESMTP id 8CD89181D0CB;
-	Tue, 20 Sep 2022 15:57:07 +0800 (+08)
-From: Richard Zhu <hongxing.zhu@nxp.com>
-To: p.zabel@pengutronix.de,
-	l.stach@pengutronix.de,
-	bhelgaas@google.com,
-	lorenzo.pieralisi@arm.com,
-	robh@kernel.org,
-	shawnguo@kernel.org,
-	vkoul@kernel.org,
-	alexander.stein@ew.tq-group.com,
-	marex@denx.de,
-	richard.leitner@linux.dev
-Cc: linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-pci@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	kernel@pengutronix.de,
-	linux-imx@nxp.com,
-	Richard Zhu <hongxing.zhu@nxp.com>
-Subject: [PATCH v8 2/2] phy: freescale: imx8m-pcie: Add i.MX8MP PCIe PHY support
-Date: Tue, 20 Sep 2022 15:38:18 +0800
-Message-Id: <1663659498-5180-3-git-send-email-hongxing.zhu@nxp.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1663659498-5180-1-git-send-email-hongxing.zhu@nxp.com>
-References: <1663659498-5180-1-git-send-email-hongxing.zhu@nxp.com>
-X-Virus-Scanned: ClamAV using ClamSMTP
+	id 1oaYn8-001w9H-Up
+	for linux-phy@lists.infradead.org; Tue, 20 Sep 2022 08:39:46 +0000
+Received: from ptx.hi.pengutronix.de ([2001:67c:670:100:1d::c0])
+	by metis.ext.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
+	(Exim 4.92)
+	(envelope-from <mfe@pengutronix.de>)
+	id 1oaYmb-0005c5-NA; Tue, 20 Sep 2022 10:39:09 +0200
+Received: from mfe by ptx.hi.pengutronix.de with local (Exim 4.92)
+	(envelope-from <mfe@pengutronix.de>)
+	id 1oaYma-0001Ji-JI; Tue, 20 Sep 2022 10:39:08 +0200
+Date: Tue, 20 Sep 2022 10:39:08 +0200
+From: Marco Felsch <m.felsch@pengutronix.de>
+To: Sakari Ailus <sakari.ailus@linux.intel.com>
+Cc: Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+	mchehab@kernel.org, robh+dt@kernel.org,
+	krzysztof.kozlowski+dt@linaro.org, kishon@ti.com, vkoul@kernel.org,
+	hverkuil@xs4all.nl, jacopo@jmondi.org,
+	kieran.bingham+renesas@ideasonboard.com,
+	linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+	kernel@pengutronix.de
+Subject: Re: [PATCH v2 4/4] media: tc358746: add Toshiba TC358746 Parallel to
+ CSI-2 bridge driver
+Message-ID: <20220920083908.st4h3pb6usn4zavu@pengutronix.de>
+References: <20220916134535.128131-1-m.felsch@pengutronix.de>
+ <20220916134535.128131-5-m.felsch@pengutronix.de>
+ <YyhktzmcgXKnrMFU@pendragon.ideasonboard.com>
+ <20220919171142.6av6ap5gwweldado@pengutronix.de>
+ <Yyio06jhK13BiNiP@pendragon.ideasonboard.com>
+ <YyjI/JOcryD8yKzT@paasikivi.fi.intel.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <YyjI/JOcryD8yKzT@paasikivi.fi.intel.com>
+User-Agent: NeoMutt/20180716
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c0
+X-SA-Exim-Mail-From: mfe@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de); SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220920_005714_849600_A5365763 
-X-CRM114-Status: GOOD (  16.84  )
+X-CRM114-CacheID: sfid-20220920_013943_020783_748BCCF9 
+X-CRM114-Status: GOOD (  22.78  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,260 +75,54 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add i.MX8MP PCIe PHY support.
+Hi Sakari,
 
-Signed-off-by: Richard Zhu <hongxing.zhu@nxp.com>
-Signed-off-by: Lucas Stach <l.stach@pengutronix.de>
-Tested-by: Marek Vasut <marex@denx.de>
-Tested-by: Richard Leitner <richard.leitner@skidata.com>
-Tested-by: Alexander Stein <alexander.stein@ew.tq-group.com>
-Reviewed-by: Lucas Stach <l.stach@pengutronix.de>
----
- drivers/phy/freescale/phy-fsl-imx8m-pcie.c | 144 ++++++++++++++-------
- 1 file changed, 97 insertions(+), 47 deletions(-)
+On 22-09-19, Sakari Ailus wrote:
+> On Mon, Sep 19, 2022 at 08:37:23PM +0300, Laurent Pinchart wrote:
+> > > > > +	ctrl = v4l2_ctrl_new_int_menu(&tc358746->ctrl_hdl, NULL,
+> > > > > +				      V4L2_CID_LINK_FREQ, 0, 0,
+> > > > 
+> > > > Shouldn't the max argument be set to the number of items minus 1 ?
+> > > 
+> > > Right now I would keep it that way since the driver only supports one
+> > > link-frequencies setting. So the ctrl don't let the userspace assume
+> > > that there are more than one link-frequency.
+> > 
+> > Good point. Can you add a short comment above the call to explain this ?
+> 
+> Wouldn't it be just easier to do what Laurent suggested originally? The end
+> result is the same, isn't it, and no comment needed?
 
-diff --git a/drivers/phy/freescale/phy-fsl-imx8m-pcie.c b/drivers/phy/freescale/phy-fsl-imx8m-pcie.c
-index ad7d2edfc414..bef0e9d64244 100644
---- a/drivers/phy/freescale/phy-fsl-imx8m-pcie.c
-+++ b/drivers/phy/freescale/phy-fsl-imx8m-pcie.c
-@@ -11,6 +11,9 @@
- #include <linux/mfd/syscon.h>
- #include <linux/mfd/syscon/imx7-iomuxc-gpr.h>
- #include <linux/module.h>
-+#include <linux/of_address.h>
-+#include <linux/of_device.h>
-+#include <linux/of_device.h>
- #include <linux/phy/phy.h>
- #include <linux/platform_device.h>
- #include <linux/regmap.h>
-@@ -31,12 +34,10 @@
- #define IMX8MM_PCIE_PHY_CMN_REG065	0x194
- #define  ANA_AUX_RX_TERM		(BIT(7) | BIT(4))
- #define  ANA_AUX_TX_LVL			GENMASK(3, 0)
--#define IMX8MM_PCIE_PHY_CMN_REG75	0x1D4
--#define  PCIE_PHY_CMN_REG75_PLL_DONE	0x3
-+#define IMX8MM_PCIE_PHY_CMN_REG075	0x1D4
-+#define  ANA_PLL_DONE			0x3
- #define PCIE_PHY_TRSV_REG5		0x414
--#define  PCIE_PHY_TRSV_REG5_GEN1_DEEMP	0x2D
- #define PCIE_PHY_TRSV_REG6		0x418
--#define  PCIE_PHY_TRSV_REG6_GEN2_DEEMP	0xF
- 
- #define IMX8MM_GPR_PCIE_REF_CLK_SEL	GENMASK(25, 24)
- #define IMX8MM_GPR_PCIE_REF_CLK_PLL	FIELD_PREP(IMX8MM_GPR_PCIE_REF_CLK_SEL, 0x3)
-@@ -47,16 +48,28 @@
- #define IMX8MM_GPR_PCIE_SSC_EN		BIT(16)
- #define IMX8MM_GPR_PCIE_AUX_EN_OVERRIDE	BIT(9)
- 
-+enum imx8_pcie_phy_type {
-+	IMX8MM,
-+	IMX8MP,
-+};
-+
-+struct imx8_pcie_phy_drvdata {
-+	enum		imx8_pcie_phy_type variant;
-+	const char	*gpr;
-+};
-+
- struct imx8_pcie_phy {
- 	void __iomem		*base;
- 	struct clk		*clk;
- 	struct phy		*phy;
- 	struct regmap		*iomuxc_gpr;
- 	struct reset_control	*reset;
-+	struct reset_control	*perst;
- 	u32			refclk_pad_mode;
- 	u32			tx_deemph_gen1;
- 	u32			tx_deemph_gen2;
- 	bool			clkreq_unused;
-+	const struct imx8_pcie_phy_drvdata	*drvdata;
- };
- 
- static int imx8_pcie_phy_init(struct phy *phy)
-@@ -68,31 +81,20 @@ static int imx8_pcie_phy_init(struct phy *phy)
- 	reset_control_assert(imx8_phy->reset);
- 
- 	pad_mode = imx8_phy->refclk_pad_mode;
--	/* Set AUX_EN_OVERRIDE 1'b0, when the CLKREQ# isn't hooked */
--	regmap_update_bits(imx8_phy->iomuxc_gpr, IOMUXC_GPR14,
--			   IMX8MM_GPR_PCIE_AUX_EN_OVERRIDE,
--			   imx8_phy->clkreq_unused ?
--			   0 : IMX8MM_GPR_PCIE_AUX_EN_OVERRIDE);
--	regmap_update_bits(imx8_phy->iomuxc_gpr, IOMUXC_GPR14,
--			   IMX8MM_GPR_PCIE_AUX_EN,
--			   IMX8MM_GPR_PCIE_AUX_EN);
--	regmap_update_bits(imx8_phy->iomuxc_gpr, IOMUXC_GPR14,
--			   IMX8MM_GPR_PCIE_POWER_OFF, 0);
--	regmap_update_bits(imx8_phy->iomuxc_gpr, IOMUXC_GPR14,
--			   IMX8MM_GPR_PCIE_SSC_EN, 0);
--
--	regmap_update_bits(imx8_phy->iomuxc_gpr, IOMUXC_GPR14,
--			   IMX8MM_GPR_PCIE_REF_CLK_SEL,
--			   pad_mode == IMX8_PCIE_REFCLK_PAD_INPUT ?
--			   IMX8MM_GPR_PCIE_REF_CLK_EXT :
--			   IMX8MM_GPR_PCIE_REF_CLK_PLL);
--	usleep_range(100, 200);
--
--	/* Do the PHY common block reset */
--	regmap_update_bits(imx8_phy->iomuxc_gpr, IOMUXC_GPR14,
--			   IMX8MM_GPR_PCIE_CMN_RST,
--			   IMX8MM_GPR_PCIE_CMN_RST);
--	usleep_range(200, 500);
-+	switch (imx8_phy->drvdata->variant) {
-+	case IMX8MM:
-+		/* Tune PHY de-emphasis setting to pass PCIe compliance. */
-+		if (imx8_phy->tx_deemph_gen1)
-+			writel(imx8_phy->tx_deemph_gen1,
-+			       imx8_phy->base + PCIE_PHY_TRSV_REG5);
-+		if (imx8_phy->tx_deemph_gen2)
-+			writel(imx8_phy->tx_deemph_gen2,
-+			       imx8_phy->base + PCIE_PHY_TRSV_REG6);
-+		break;
-+	case IMX8MP:
-+		reset_control_assert(imx8_phy->perst);
-+		break;
-+	}
- 
- 	if (pad_mode == IMX8_PCIE_REFCLK_PAD_INPUT ||
- 	    pad_mode == IMX8_PCIE_REFCLK_PAD_UNUSED) {
-@@ -120,20 +122,44 @@ static int imx8_pcie_phy_init(struct phy *phy)
- 		       imx8_phy->base + IMX8MM_PCIE_PHY_CMN_REG065);
- 	}
- 
--	/* Tune PHY de-emphasis setting to pass PCIe compliance. */
--	if (imx8_phy->tx_deemph_gen1)
--		writel(imx8_phy->tx_deemph_gen1,
--		       imx8_phy->base + PCIE_PHY_TRSV_REG5);
--	if (imx8_phy->tx_deemph_gen2)
--		writel(imx8_phy->tx_deemph_gen2,
--		       imx8_phy->base + PCIE_PHY_TRSV_REG6);
-+	/* Set AUX_EN_OVERRIDE 1'b0, when the CLKREQ# isn't hooked */
-+	regmap_update_bits(imx8_phy->iomuxc_gpr, IOMUXC_GPR14,
-+			   IMX8MM_GPR_PCIE_AUX_EN_OVERRIDE,
-+			   imx8_phy->clkreq_unused ?
-+			   0 : IMX8MM_GPR_PCIE_AUX_EN_OVERRIDE);
-+	regmap_update_bits(imx8_phy->iomuxc_gpr, IOMUXC_GPR14,
-+			   IMX8MM_GPR_PCIE_AUX_EN,
-+			   IMX8MM_GPR_PCIE_AUX_EN);
-+	regmap_update_bits(imx8_phy->iomuxc_gpr, IOMUXC_GPR14,
-+			   IMX8MM_GPR_PCIE_POWER_OFF, 0);
-+	regmap_update_bits(imx8_phy->iomuxc_gpr, IOMUXC_GPR14,
-+			   IMX8MM_GPR_PCIE_SSC_EN, 0);
-+
-+	regmap_update_bits(imx8_phy->iomuxc_gpr, IOMUXC_GPR14,
-+			   IMX8MM_GPR_PCIE_REF_CLK_SEL,
-+			   pad_mode == IMX8_PCIE_REFCLK_PAD_INPUT ?
-+			   IMX8MM_GPR_PCIE_REF_CLK_EXT :
-+			   IMX8MM_GPR_PCIE_REF_CLK_PLL);
-+	usleep_range(100, 200);
- 
--	reset_control_deassert(imx8_phy->reset);
-+	/* Do the PHY common block reset */
-+	regmap_update_bits(imx8_phy->iomuxc_gpr, IOMUXC_GPR14,
-+			   IMX8MM_GPR_PCIE_CMN_RST,
-+			   IMX8MM_GPR_PCIE_CMN_RST);
-+
-+	switch (imx8_phy->drvdata->variant) {
-+	case IMX8MP:
-+		reset_control_deassert(imx8_phy->perst);
-+		fallthrough;
-+	case IMX8MM:
-+		reset_control_deassert(imx8_phy->reset);
-+		usleep_range(200, 500);
-+		break;
-+	}
- 
- 	/* Polling to check the phy is ready or not. */
--	ret = readl_poll_timeout(imx8_phy->base + IMX8MM_PCIE_PHY_CMN_REG75,
--				 val, val == PCIE_PHY_CMN_REG75_PLL_DONE,
--				 10, 20000);
-+	ret = readl_poll_timeout(imx8_phy->base + IMX8MM_PCIE_PHY_CMN_REG075,
-+				 val, val == ANA_PLL_DONE, 10, 20000);
- 	return ret;
- }
- 
-@@ -160,6 +186,25 @@ static const struct phy_ops imx8_pcie_phy_ops = {
- 	.owner		= THIS_MODULE,
- };
- 
-+static const struct imx8_pcie_phy_drvdata drvdata[] = {
-+	[IMX8MM] = {
-+		.variant = IMX8MM,
-+		.gpr = "fsl,imx8mm-iomuxc-gpr",
-+	},
-+
-+	[IMX8MP] = {
-+		.variant = IMX8MP,
-+		.gpr = "fsl,imx8mp-iomuxc-gpr",
-+	},
-+};
-+
-+static const struct of_device_id imx8_pcie_phy_of_match[] = {
-+	{.compatible = "fsl,imx8mm-pcie-phy", .data = &drvdata[IMX8MM], },
-+	{.compatible = "fsl,imx8mp-pcie-phy", .data = &drvdata[IMX8MP], },
-+	{ },
-+};
-+MODULE_DEVICE_TABLE(of, imx8_pcie_phy_of_match);
-+
- static int imx8_pcie_phy_probe(struct platform_device *pdev)
- {
- 	struct phy_provider *phy_provider;
-@@ -172,6 +217,8 @@ static int imx8_pcie_phy_probe(struct platform_device *pdev)
- 	if (!imx8_phy)
- 		return -ENOMEM;
- 
-+	imx8_phy->drvdata = of_device_get_match_data(dev);
-+
- 	/* get PHY refclk pad mode */
- 	of_property_read_u32(np, "fsl,refclk-pad-mode",
- 			     &imx8_phy->refclk_pad_mode);
-@@ -197,7 +244,7 @@ static int imx8_pcie_phy_probe(struct platform_device *pdev)
- 
- 	/* Grab GPR config register range */
- 	imx8_phy->iomuxc_gpr =
--		 syscon_regmap_lookup_by_compatible("fsl,imx6q-iomuxc-gpr");
-+		 syscon_regmap_lookup_by_compatible(imx8_phy->drvdata->gpr);
- 	if (IS_ERR(imx8_phy->iomuxc_gpr)) {
- 		dev_err(dev, "unable to find iomuxc registers\n");
- 		return PTR_ERR(imx8_phy->iomuxc_gpr);
-@@ -209,6 +256,15 @@ static int imx8_pcie_phy_probe(struct platform_device *pdev)
- 		return PTR_ERR(imx8_phy->reset);
- 	}
- 
-+	if (imx8_phy->drvdata->variant == IMX8MP) {
-+		imx8_phy->perst =
-+			devm_reset_control_get_exclusive(dev, "perst");
-+		if (IS_ERR(imx8_phy->perst)) {
-+			dev_err(dev, "Failed to get PCIE PHY PERST control\n");
-+			return PTR_ERR(imx8_phy->perst);
-+		}
-+	}
-+
- 	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
- 	imx8_phy->base = devm_ioremap_resource(dev, res);
- 	if (IS_ERR(imx8_phy->base))
-@@ -225,12 +281,6 @@ static int imx8_pcie_phy_probe(struct platform_device *pdev)
- 	return PTR_ERR_OR_ZERO(phy_provider);
- }
- 
--static const struct of_device_id imx8_pcie_phy_of_match[] = {
--	{.compatible = "fsl,imx8mm-pcie-phy",},
--	{ },
--};
--MODULE_DEVICE_TABLE(of, imx8_pcie_phy_of_match);
--
- static struct platform_driver imx8_pcie_phy_driver = {
- 	.probe	= imx8_pcie_phy_probe,
- 	.driver = {
--- 
-2.25.1
+The end result depends on the device-tree given "link-frequencies"
+property. The driver currently takes only one frequency but the
+system-integrator of course can specify many more. In such case the 1st
+is used. If I go with Laurent's comment, all frequencies would be shown
+to the user-space but IMHO this shouldn't be the case since the driver
+supports only 1 frequency.
 
+> > 
+> > > > > +				      link_frequencies);
+> > > > > +	if (ctrl)
+> > > > > +		ctrl->flags |= V4L2_CTRL_FLAG_READ_ONLY;
+> 
+> Now that this is a bridge, this value presumably doesn't need to change.
+
+The value can change, e.g. if you have a few freq. to allow a wide range
+of frame sizes. This can be the case to conform the emv tests. So there
+can be a freq. for smaller frame sizes and one for larger frame sizes.
+
+> There will just be more blanking if the source sub-device pixel rate is
+> slower, right?
+
+Please see above.
+
+Regards,
+  Marco
 
 -- 
 linux-phy mailing list
