@@ -4,51 +4,51 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 046FCC6FA8B
-	for <linux-phy@archiver.kernel.org>; Tue, 20 Sep 2022 20:24:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CBA54C54EE9
+	for <linux-phy@archiver.kernel.org>; Tue, 20 Sep 2022 20:24:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=v4DX3D90qCb6TOZyMtY/l1t9gq8nLmIKEgxKk+AO4IA=; b=QZcXdfK4O2pfRS
-	hDYJPlvCgPMd8U47WEMw+us9XKvqFv01fVAgLGZh2YcpoimemwIQ2Q55zpprzpNg7Kt4U7tqfRFHf
-	+9hQ8H8YjFptT2qKoriC4gDoisowzadnZ7gBOvO5dDnMGzI6JRt8vlZJ6X61509qbptwi4Gqi9bYu
-	vxa+HXADaUCp6h3/n1GFmi25IHgqQarXvZ9ksvPfqF1DIIJJUlnONZJ2eh1z9NwTVa2nMaNvM+sng
-	wS2fuKhVMVRnQT7cBZwNzhFozP/OQCYt2wdHovZtfCPbnlBzF0xWfICjAzEi9Sc5pPQM7idGyCFh0
-	0uDC30AiY0nDGYn+NrcA==;
+	List-Owner; bh=qrfv+hEUo/ac/PiW8SPXO81lE0t4ibfFJNtjHd3cVXI=; b=ESvcAmysNoXEPs
+	bm0cNRiYEpk/BE+0B3O9ysxUj99u/uK/GpS1RnGko8JxbFevLtph7hNH59kc7gzqnM65mms7337PQ
+	Qm2CxZf+vOrhK6ANBnmZz8QeYVSRGSsBglNkn4hfc3o8bQstljUOMS4RT2NE0+AbcfH8pJFK1weU9
+	YTXgcrpjMUVvlvpdch/1UIpG+b2xIGQf11kMTmu4WSPX+ZQLUJCSLyyxNfJWa0rSkzXSlnzvAWKdL
+	UM8N6rvqPH3HbcRYWWTTIh2cGvOilA0xXppuar+9xp/4Np+uPt1iIW6/hOOtbJgLhqxIJ0XqU+QeG
+	XlOcJ9POvPp4OYsskSEw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oajnK-006Fxe-9X; Tue, 20 Sep 2022 20:24:38 +0000
+	id 1oajnY-006G6d-5w; Tue, 20 Sep 2022 20:24:52 +0000
 Received: from mail-db8eur05on2048.outbound.protection.outlook.com ([40.107.20.48] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oajn7-006FkY-EZ; Tue, 20 Sep 2022 20:24:26 +0000
+	id 1oajn9-006FkY-3e; Tue, 20 Sep 2022 20:24:28 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=VoBD016Xu0thCtCrdVmmNI815+NDw/leEX/xhRyAxKAbUGgge9gYAJbktMY4ZHe/ADqYo1oFgTW/lmKoWQEt0uQnHSrcDHgsALUPq4OS9QHwbNsrv5nwC/OQHo9F5lVAYjsxU4lfCEwhsOQaIaQvxPyhNJc2PhJcaGoD1caednaLNc3XUhU0w7AcCXHvhufBcr0HdJhaHLbOEQlJZIhaKZEKPizOXlOoi71oKVrYQh7I49YCBsQ9cgEeLnXQPQhLapFkyjPXqfVkiKm3D564Afyi8M0fUbKiHrIlQdV+Bi4OR0l2Pe3hisAIqfqTYhZFjNr/cAGU30UXX0NNwArJfg==
+ b=FiXiodg3cLBgZFFxZz+wYfvp1+rQHYr5epzvivS3bMy8s8r6EJkTgGigPodGxNmqF0Y2T302yl+mVTt02tOUDk+LmlXpYwFgYs3bkjPFubuyE7j2IG4r3aIc02WdhabS0RhelFwvphLwdANIF1KS7ha1wR4rDi623/oFYLtl0JobEXbGp4SyWJ2lOwAqiybtiiMnbw+29d7TBKmkYbNzBM2USmSm8cFGAEG+PlDm2F6pskYa7umMlxGMiWODAaEPIxb+v/aN7Z7YPg+3Cl6bOg94iSyrhSsK/JziU+jHRYRZyABlsxS59JajZqraKYuNlubdKoptgmNTq+Pc2vF/Jg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=evn3WeTmIRvwNry8piRdsza0wD35LCdeMNEPDP563h8=;
- b=cMxP0uj7I0ikS4gB7QkYtDupFUbTdKojrqXor7I3peoX7KNHeiw0PMY22SOCtaaaeFdWcAXkvk/5TKvV/iXPRzk6BRCcSx+BZSZKleu61hDQahsw2xs1XtQRTnTyUJaBYqpfmf5otYyuz6kDna/UoEwBiMoCx3JCG9kbtTGV9ybWy1+62BM37d2zOpDD1vr0X5WefZuwj+h+AFLwpU5ZifFkKqswbrkj9ROTuUxsnDtbIQr+Vc+ugc3URmHMTZcyT2rAR6tUgoBxzSAIJ5ai4JKZC1ENrS9AIKHbMSMAUlk0sPJAZgn1j50JNHIsH61MlmxlRYvmYsZ0QbbUVKkzCA==
+ bh=1WtGwjevVfbxmEGGZX6LO7AaucEsLp3A53hHvnUdJ1A=;
+ b=m7UkZcEgt98w6bD/i4yFtAsVvC6ZMg/I3DamnT0AAUb0s/mL9JsuppSSqXYYE6lx85sCkWWmWzpdTwXQKc6w1pxmFkn125J6f+y+hdAy+bTlG4owOqLjOltbWH1vX+c97TFK9pYfwjiDH0E9ACxGeccwEaj5XZKxD38HzLZfI7iaibsyHWW1CnhZ1AZEn6c4Qkz2ZGDKvGaEZOJIhEGtc5y+82nIuzUEsK+UKx8uMyYXf0qJAgWsEM6D/hl+kczam7PJPIzFKnBsk/ie9/v8Sj8hoXG0Cx0aKtkoiZKjVMR+zwwDN15Xe/Eoh3MGk3BLUVlUO7GPCDbJMYMsB1paYA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=seco.com; dmarc=pass action=none header.from=seco.com;
  dkim=pass header.d=seco.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=seco.com; s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=evn3WeTmIRvwNry8piRdsza0wD35LCdeMNEPDP563h8=;
- b=EhotxXxAwrmjql6OwtIM8ofdgQY9a+J9HB8vHxBQlLWtrFc3A/xWKyL6CH4ZoXNwdHRownt9TqQS2aH/KK9uSD2YTiHXnZr+9fa+W7BhSz0M53ANpIc0Lr+0QMQ9iLhXx5ULzT6pFverTN2ea8S03eGjuFVnTuswZoEwiWKPPg0H4dly8I6HLaqDnNKM5slID+G0HoaiHUMV0o34fRAK4BLpy2UsjTgKKGa70pC3Wz57gMSw/lsgTnydHiki3gCKo+Yyf8M0fkLduvN4TvSr6rZbAcgUKrX4pF1Hoq7NmjFymIiw6kUc04Ctx0jrRB5Igqo2Rl2IboDOnBwuMi8XKA==
+ bh=1WtGwjevVfbxmEGGZX6LO7AaucEsLp3A53hHvnUdJ1A=;
+ b=1RNk6iNSPXFqf5vmSkljboaW/mAmINB9mFkVC3DklK51UZk3dwfxzFlEOYw+Tb1vPlPUnyJKTvP38Tv+SJe3W899dvchmxI7PsGdp6VW7N3aoeSiv/3lFew032xYvq0DAXArbngYD4pRq74PAwQYpfOrlEYyW+02oz5K9w1GRITJGBpgXBEypByKKcRDigVgSbYIh3fBPxbCKxQY/JXt866hN8I1se9nS4DxFXBUx4mvJq5cG5Tn3SGGSA1SOtSEXBNcrRhMXGBlBKE8fEsfhObMMfc3sf1LJxWOCSTunYIcYfuolsOKJyorW8ef2nvBNEVcVA30DMncpM7QAdN8Rw==
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=seco.com;
 Received: from DB7PR03MB4972.eurprd03.prod.outlook.com (2603:10a6:10:7d::22)
  by DU0PR03MB9566.eurprd03.prod.outlook.com (2603:10a6:10:41e::16) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5632.21; Tue, 20 Sep
- 2022 20:24:15 +0000
+ 2022 20:24:18 +0000
 Received: from DB7PR03MB4972.eurprd03.prod.outlook.com
  ([fe80::204a:de22:b651:f86d]) by DB7PR03MB4972.eurprd03.prod.outlook.com
  ([fe80::204a:de22:b651:f86d%6]) with mapi id 15.20.5654.014; Tue, 20 Sep 2022
- 20:24:15 +0000
+ 20:24:18 +0000
 From: Sean Anderson <sean.anderson@seco.com>
 To: Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@ti.com>,
@@ -62,10 +62,13 @@ Cc: linuxppc-dev@lists.ozlabs.org,
 	Camelia Alexandra Groza <camelia.groza@nxp.com>,
 	Rob Herring <robh+dt@kernel.org>,
 	Sean Anderson <sean.anderson@seco.com>,
-	Rob Herring <robh@kernel.org>
-Subject: [PATCH v6 1/8] dt-bindings: phy: Add 2500BASE-X and 10GBASE-R
-Date: Tue, 20 Sep 2022 16:23:49 -0400
-Message-Id: <20220920202356.1451033-2-sean.anderson@seco.com>
+	Rob Herring <robh@kernel.org>,
+	Michael Turquette <mturquette@baylibre.com>,
+	Stephen Boyd <sboyd@kernel.org>,
+	linux-clk@vger.kernel.org
+Subject: [PATCH v6 3/8] dt-bindings: clock: Add ids for Lynx 10g PLLs
+Date: Tue, 20 Sep 2022 16:23:51 -0400
+Message-Id: <20220920202356.1451033-4-sean.anderson@seco.com>
 X-Mailer: git-send-email 2.35.1.1320.gc452695387.dirty
 In-Reply-To: <20220920202356.1451033-1-sean.anderson@seco.com>
 References: <20220920202356.1451033-1-sean.anderson@seco.com>
@@ -75,56 +78,55 @@ X-ClientProxiedBy: BL1P221CA0014.NAMP221.PROD.OUTLOOK.COM
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
 X-MS-TrafficTypeDiagnostic: DB7PR03MB4972:EE_|DU0PR03MB9566:EE_
-X-MS-Office365-Filtering-Correlation-Id: 6a8419d6-51ff-4048-bc5c-08da9b461658
+X-MS-Office365-Filtering-Correlation-Id: 8791c391-7af0-47c6-71f7-08da9b46187f
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 	78WVUx2eSpmsHUdiKJS2c9KlQCLAuE1I7aQ4VZ3WzbGzYXyPmrKyrERh9pGmk3rqqIaurQ6eWjWObyTxib3FLCLB8d3g7IQJxiccRzB0gZqziFIuHW1nN0prBJCwyoq/FicclBvkySSLhg9P8z03ezyqPi4SHkC+g8NSfS4+5FfMXl3QzI5kuYkbs6uoy1vodF5fu/KYuz3FYx3Ot2ELItImGtYEMrSp5VjFjAxud7Ax7grTbwJBGcyAunvZmdF6u5j9mDp1B9jhLbPCD1yKcc8XIIMK9Gi4e7Fq4I0xx+GPPIFAnbtP6XVXIkaytUn2mAhbO+KclRoKlURkc+EM8uTZ0baIJ2tOJ2TGAJMcvaRLLkASqL9tP66rExT3MIEpO5dPaxefH8qybtSsE9AwJ6ixcuFPqJgHnEOcVvZfrjrsGC1aeGv9EPECcSgGmeIDhq/qeY3GzEyRuHRus5g1mNKj/EWtOwCaJLY32TreRgOPC7GyQENWmtWo7+M2nD+taewWzxkECKALtL6mD84awzDGtCeZXRBsXBVebrdkQYNM82t3qf0h9kUq2IY91j2OcOpVjQ40agsLoQnq60ooo+qL0uhwH99buP3OkWTm/5OsZZFd6YJM52kML+ml0vqGDpQWp682wP/cDJZ1bdaLXBR9MEtFQzQV6WKLMNOG/MZME+RdWCmyZUw0sj+1HOX2Er2EmYIjjt4hi9NhYkpcikOmfxPqA6CXBhCC3boEWv29m8orIE1HeV9j+zhzK7+5m5nmWUgvRQ0twTWS7W+baUi6Ntcyfvl7A4vIkok/s38=
-X-Forefront-Antispam-Report: 	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DB7PR03MB4972.eurprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230022)(396003)(366004)(136003)(376002)(39850400004)(346002)(451199015)(41300700001)(38350700002)(7416002)(52116002)(6666004)(83380400001)(36756003)(6506007)(8936002)(5660300002)(110136005)(966005)(54906003)(44832011)(2906002)(86362001)(316002)(478600001)(6486002)(1076003)(38100700002)(186003)(66946007)(66556008)(66476007)(2616005)(26005)(6512007)(8676002)(4326008);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam-Message-Info: 	6pQ2Ckvjg6U5mepat4SVXo4pvaGd5WImdQXJg2pYJjd2PlDnpCF2mi9EMn1ssl96X9NaJ9BSj51XMaNRT++mUu3cDrQacebqKoPI+6ch3rc2S2ECLPhAK2lOAS9uz5vq0k6O2bEPNxuNQKIN3r4j1LZIAoiGrRU+wD7mYuaBvILkEQtYLqhFurmYnBAJ2pROhALpjsMrqsOu025SUCLrvc6k0RM19KqoSsgyfQoy1+ldZMp65I9g+8g/d+0sV/C6qziSnl0A5GjOSm2JJFXqqThrSkCkgFL73OlpnjcaViCYP7h4pzBh+XODhW6Bw5AmW0RNtp5Pz2o3l5PXG7FHgULovvVWjks6h5lKrwDQei+vGIHldbu2UtzjRy6hsjFTatvvoj0zIdBQjyLF5MiTdUHVo0Insb+jFihvAOIr78MPubPqlYSlltkaeEUXgLSM21ZZTLcaV4j7oFsvx4uq/1jh66zVuoPvsUIymQivCvcuh9ilbnKrnog9XNv9/A+cQqIn7L19bxeJ/bKrusd03cxJhKFj47KvBbhAF3LIdcQYSKHodIvQYP+UaFmtas4wYQDsWEMRsGfZsSCZTPR13Vb1Q60+Is1GYnWuntxempRwSVuZvBs3Q9cwIEPxdwFluvDgy8GJ5gKx6msFsSXBx5XZXor4IFsovrqxVf53Of1Pmw/s2/UPZqtIAtBiw0kz8K0NGpKPKTL21XheJ7vUPOyq2gsqklHCDcet0fHmu0RWyPyP0G87sUr2as7zUCNbwYu56r6TOG/50pygzKX9WQ==
+X-Forefront-Antispam-Report: 	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DB7PR03MB4972.eurprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230022)(396003)(366004)(136003)(376002)(39850400004)(346002)(451199015)(41300700001)(38350700002)(7416002)(52116002)(6666004)(83380400001)(36756003)(6506007)(8936002)(5660300002)(110136005)(54906003)(44832011)(2906002)(86362001)(316002)(478600001)(6486002)(1076003)(38100700002)(186003)(66946007)(66556008)(66476007)(2616005)(26005)(6512007)(8676002)(4326008);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: 	=?us-ascii?Q?3Vo47PgWF8igerGTq//Nan3FTmgnWL7OasFyfka2jo7Paq/On/YPXJFM4eYA?=
- =?us-ascii?Q?Is+MvDTyjx4h2ee5fcCRWWPvoFHTDfbQZgIF8Ck0IgQ4TbhioQon+4+IjaYv?=
- =?us-ascii?Q?wZBtw4ZRaGNHFL1No6h8FBBiVxQBrrOPbVw/LlHZ29n8IoGwfgYEt0sJzDpI?=
- =?us-ascii?Q?nMjLgcXOPLPziJBUWFfEi0ZzpalsNUMVTG/oPV7OGV5BCbpCrYkSWc6bi4bE?=
- =?us-ascii?Q?QPzcILGDJN5zkDmk2MwnnRxZbElLfYOiR9bXRiOa4R3GRNKnf1bpkySzMa6o?=
- =?us-ascii?Q?GOrm6k8A8NhbDQzL99mYg2r4nvGTFAFxJl6OJI3H2aTROnLm4InO5GG8ZCTE?=
- =?us-ascii?Q?HeqhyEtwQCvFlMAExiKOJST87VJGenaf1xJub9oisi9cMPVTqn5WUKoryz0S?=
- =?us-ascii?Q?2Lsf5i537+oJR4acySth76uc8rr2Y2gaH/UlZE7FJc4hwGG6O2JNAuZzck24?=
- =?us-ascii?Q?Vb+9vk7G0Gb2r9Yh6W7bhwrxWpjd37XTZA2wigWIS9RQN3q2r/1DPFyNsygX?=
- =?us-ascii?Q?WGMs0a2P7VRe355b6EzS1lE26MYr/XfLWAUIY83LGvESVKgiAcNTU0ycKFaI?=
- =?us-ascii?Q?apAZ+i6qAsxYSOA3Wa9trtTBFhfaJLPdFuDvi3pq1IjcP4QPWXBYXAEM6AIb?=
- =?us-ascii?Q?ciYyBfXivU5xIKZsWIxdCah/ag11Hnpyl5IFwFDmXBOJkvsocyOnmYnmRvww?=
- =?us-ascii?Q?hlEkDM4imA1eA3KxdOUPYVokI//n9buxzmLXXPscnafIWHNlGeonPtZrcNt5?=
- =?us-ascii?Q?Z1NAyOCdWP2N0p0g++1/tDrrTR5MtqGqMnvR8oJl+atKJvT8PrtFsXBGwB5h?=
- =?us-ascii?Q?L0122DctBhSu1pAfGiXYvMSK7vZkZuQWbr4a73LzSoBqfFRat8sBW2hpshwQ?=
- =?us-ascii?Q?31qhvXLTSL0r+NMWEHoFdk9A8z4ZfPRk5r951uZ6U+n6yhZ6B17uAmxveQP9?=
- =?us-ascii?Q?xEjSVPGBWpj3MMi+Q8dWLuPaJc8/KIdQqs0CPUPilJ6rIsF/JR/TwHqKxUNu?=
- =?us-ascii?Q?SNtQXSag+wiOxML5HKEcAimqv5RczslnYJKGGZ61AUfka9wP7EuCV42TTHma?=
- =?us-ascii?Q?YHUJ49DP74DWkNEncWldbIrpcF7xVp6HR7Dq14QUytMFAyqlekyOo5+206QO?=
- =?us-ascii?Q?SV1XRMT0j6fhuQMno0iIr+oFKawdMaWiOrw3buQXRbN+Fh0XyJXn7MY9xjcF?=
- =?us-ascii?Q?jbYsI/OGzh87sSxjWOMrudUrANOL6QMQJygHi7U2fbFJKeUh3aPS+IoJfa2s?=
- =?us-ascii?Q?9FKREh3ALsUbG/SCbhiEvK9qLsgdLgRRhyMNduvvzw/kjjmOxYS6nIhxS3u5?=
- =?us-ascii?Q?bg08YsvHSq8OAEPvNpfQR+FT0qUggV7KFJFZaCImC7jG9C8VTjzTKy4Z0r2H?=
- =?us-ascii?Q?gEmdRZGGYhAnvE86YgR281aiZS159rs11C+92q0V+ACiz6cmmZ0vsWX6TWkt?=
- =?us-ascii?Q?KAFXocyZC5kkuCN1PYvtQdWg4wUFwBn7vaxlMzzmf9ijONr3DWATo14+ZebN?=
- =?us-ascii?Q?q8MSOZLT95vHAxk12JxutEMsgoVjACTNyn9hb9f9oCapriKKl3E2GTfdT5Xb?=
- =?us-ascii?Q?bEY2y6HeEespmkZ/aM9odQiwKv0kfypggd14N9k2R3JKFJ5PAMHUKCaOQK8D?=
- =?us-ascii?Q?Hw=3D=3D?=
+X-MS-Exchange-AntiSpam-MessageData-0: 	=?us-ascii?Q?Vx4J1jzlq6nB7syO/Azft2S6pGC4coN2ykYmUDL2nrxlspZVgQJirdEN0Lnh?=
+ =?us-ascii?Q?63BGb6IgHlHYpG/XMrYtIithlEsmVm5LLMWQjHmxQygumbqGldCYhHvu6YTb?=
+ =?us-ascii?Q?ZOvJYpvF1gpZvViQUtlVlxTLwd1Bmn2cBh6ZA6X16SQ8Au9zmLsiOywxajlT?=
+ =?us-ascii?Q?dTWqz16gmeNoCcYBsbJyfWMBtSHnoH0tuopCbPwBNzz04ojYIZB0KPw1IntD?=
+ =?us-ascii?Q?cpm6xfAFFKF1KCdBr7FtkXjyeYR9l3Mj4xSSo/+t19xCNb4yDvPkhPq5oCSS?=
+ =?us-ascii?Q?xArCK6KTYho6JeDp24K3fOeieQeCj3y4qZA1OVprA0Wmv2MIdTRlQ24IwnS6?=
+ =?us-ascii?Q?QXyUGRrYNeYgVtQVSn8M4qAbnNhh68Vg/iXONJ+7ir7yUtN17w75LeKsFaiy?=
+ =?us-ascii?Q?OLl91h7TcDld4Iepv951tOj/FuQr+pDe3oMBu1QMFrnuRlhh6dWfWRHE11+C?=
+ =?us-ascii?Q?crHefX1PN1TOQPBYNY3qYHrptSZmJitAfda6G8z+AvkDgp/D2f/xREK5J/k3?=
+ =?us-ascii?Q?xp13HeVJVIRnxNs5nwJCl66FEKkBGScArc8SEEwkUYC/hcggLZYTQYWkJH8a?=
+ =?us-ascii?Q?5lxxKcifF93VT6u5jxS3vlrfoVWe0DUdQEIXR75WKfOD2+W6sFqPIoBp5rU8?=
+ =?us-ascii?Q?FhQedUh11MJMASIuaukgxx1d8hXUP9hMkILWnCvf+37zvsyPAG7lqahk99TH?=
+ =?us-ascii?Q?1NoSgFiIILma1+ASsd56QnsaueFBoOkBe68RTwWWXYhmKbMwO+LsAhvm88aF?=
+ =?us-ascii?Q?SiWwM3mJLG6r6BnCohFSQ250pj4CURrEWUTxs6JaVfYK7ytam9IT/GjTMLym?=
+ =?us-ascii?Q?6M4jBSwcyuJeXQGZwKYj+6fK1EbEtDOSJ1FyOrZcK9JqynLXuNhtHqrSWQxR?=
+ =?us-ascii?Q?0fEyAPIta7URumc/LD6zBP/cpM7M5Uz/j6+9408Q1rdzRjbXwz94BIPd2AGO?=
+ =?us-ascii?Q?xRqx1hBsK//exRF+TV1bC8KlReZ/9Nyk/OYcfbOJ94JOmetK9NlD20RWOh50?=
+ =?us-ascii?Q?dPx2dJk2EUpFaK/KU6BoV8IceCWwP3haKJuOY7t5jl7WP4fU1eYNbokJbPQ1?=
+ =?us-ascii?Q?fZDT8Vd8qW7KGeZAz9f3v+D+EGS6bHrMdDttnKVsECgifXZNP0fpv+J97Dn6?=
+ =?us-ascii?Q?28EP2xfkRBbLuHbH1ohZNIZzQfnXdXOcqepdU+jTpxVPYUZhbpimvJl4PuqI?=
+ =?us-ascii?Q?2nHgzrUfIsnwuaiJIGD/3VkBCQnIVEHEpaej3cRFwg6q0xb0thUk0raK3pj6?=
+ =?us-ascii?Q?ow/hklPH76NMC5UBGnQEcNG4WMSpJA3yc+hY/NV/1ODAMRbwIzTiroNhHM38?=
+ =?us-ascii?Q?CmQ+HLh4ncYPT5PLFPXQc5K4xM2AKk6kQCAi33qZ4IDsynCQV8AqWUhwyCxM?=
+ =?us-ascii?Q?TBkjF/wi8qIvE6EdAwEBm79ynbZP+y0kPo78GZC92CfrKS6bcz8ixstwUqSi?=
+ =?us-ascii?Q?XbvQs64krtNYT2X9Lpv6XNKYKGGoA1YX/bvnzW5KQpNP3Ms+DhuYHy+heBc1?=
+ =?us-ascii?Q?9WKcMF05b++9CSaPDrlMRgr5QpZdE6MLrw1bkgdeU534vz/MB1hvoidflun4?=
+ =?us-ascii?Q?ui5JI0gIuq+YG6N9YZ9TtIFIyqa68UTnA+SgQPx5kHfxE69GEzT0qOvVMeJy?=
+ =?us-ascii?Q?9A=3D=3D?=
 X-OriginatorOrg: seco.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 6a8419d6-51ff-4048-bc5c-08da9b461658
+X-MS-Exchange-CrossTenant-Network-Message-Id: 8791c391-7af0-47c6-71f7-08da9b46187f
 X-MS-Exchange-CrossTenant-AuthSource: DB7PR03MB4972.eurprd03.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 20 Sep 2022 20:24:15.3620
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 20 Sep 2022 20:24:18.8461
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: bebe97c3-6438-442e-ade3-ff17aa50e733
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: iWvksgXpw0tMf8iJ4m+w6Mw53T2CPTm6ybzTf7tae5fSjCZ7XqZmWVpH3Ofb6DL6RCMVvxHfyzf+wnHV/iAlZA==
+X-MS-Exchange-CrossTenant-UserPrincipalName: qnUnNWDieIsnGwyeb36YGs31VFlf+ww1neJFmWe/RWsqAKJA2wa6AT9F3PNff68KCpVRhin4vbulQjBxn3Mhcw==
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: DU0PR03MB9566
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220920_132425_517672_A27197E1 
-X-CRM114-Status: UNSURE (   9.52  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220920_132427_225683_F7774D35 
+X-CRM114-Status: GOOD (  13.88  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -141,46 +143,50 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This adds some modes necessary for Lynx 10G support. 2500BASE-X, also
-known as 2.5G SGMII, is 1000BASE-X/SGMII overclocked to 3.125 GHz, with
-autonegotiation disabled. 10GBASE-R, also known as XFI, is the protocol
-spoken between the PMA and PMD ethernet layers for 10GBASE-T and
-10GBASE-S/L/E. It is typically used to communicate directly with SFP+
-modules, or with 10GBASE-T phys.
+This adds ids for the Lynx 10g SerDes's internal PLLs. These may be used
+with assigned-clock* to specify a particular frequency to use. For
+example, to set the second PLL (at offset 0x20)'s frequency, use
+LYNX10G_PLLa(1). These are for use only in the device tree, and are not
+otherwise used by the driver.
 
 Signed-off-by: Sean Anderson <sean.anderson@seco.com>
 Acked-by: Rob Herring <robh@kernel.org>
 ---
-PR increasing phy-type maximum [1].
-
-If this commit could be applied sooner rather than later, I'd appreciate
-it. This should help avoid another respin if someone else adds another
-phy type.
-
-[1] https://github.com/devicetree-org/dt-schema/pull/85
 
 Changes in v6:
-- Bump PHY_TYPE_2500BASEX to 13, since PHY_TYPE_USXGMII was added in the
-  meantime
+- frequence -> frequency
+
+Changes in v5:
+- Update commit description
+- Dual id header
 
 Changes in v4:
 - New
 
- include/dt-bindings/phy/phy.h | 2 ++
- 1 file changed, 2 insertions(+)
+ include/dt-bindings/clock/fsl,lynx-10g.h | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
+ create mode 100644 include/dt-bindings/clock/fsl,lynx-10g.h
 
-diff --git a/include/dt-bindings/phy/phy.h b/include/dt-bindings/phy/phy.h
-index 6b901b342348..5b2b674d8d25 100644
---- a/include/dt-bindings/phy/phy.h
-+++ b/include/dt-bindings/phy/phy.h
-@@ -23,5 +23,7 @@
- #define PHY_TYPE_DPHY		10
- #define PHY_TYPE_CPHY		11
- #define PHY_TYPE_USXGMII	12
-+#define PHY_TYPE_2500BASEX	13
-+#define PHY_TYPE_10GBASER	14
- 
- #endif /* _DT_BINDINGS_PHY */
+diff --git a/include/dt-bindings/clock/fsl,lynx-10g.h b/include/dt-bindings/clock/fsl,lynx-10g.h
+new file mode 100644
+index 000000000000..15362ae85304
+--- /dev/null
++++ b/include/dt-bindings/clock/fsl,lynx-10g.h
+@@ -0,0 +1,14 @@
++/* SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause */
++/*
++ * Copyright (C) 2022 Sean Anderson <sean.anderson@seco.com>
++ */
++
++#ifndef __DT_BINDINGS_CLK_LYNX_10G_H
++#define __DT_BINDINGS_CLK_LYNX_10G_H
++
++#define LYNX10G_CLKS_PER_PLL 2
++
++#define LYNX10G_PLLa(a)		((a) * LYNX10G_CLKS_PER_PLL)
++#define LYNX10G_PLLa_EX_DLY(a)	((a) * LYNX10G_CLKS_PER_PLL + 1)
++
++#endif /* __DT_BINDINGS_CLK_LYNX_10G_H */
 -- 
 2.35.1.1320.gc452695387.dirty
 
