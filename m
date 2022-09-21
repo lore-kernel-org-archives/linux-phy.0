@@ -4,49 +4,49 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8A087C32771
-	for <linux-phy@archiver.kernel.org>; Wed, 21 Sep 2022 08:25:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F04DBECAAD8
+	for <linux-phy@archiver.kernel.org>; Wed, 21 Sep 2022 08:26:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=D0nGx92lmnKc6P5VhIcGsXmS2up9b9wpcCjXaAzLmGA=; b=1QKQyA15ks4CVL
-	7xmRTWFjvO6Qyv/ZFaoLNznrv1Hb8r0+N0zJDMR9eX01NYuJkuQaLZULrD2N7i8egNXy6XHmgpGdS
-	vDlVbJxC9aRXQ/2ERxdeFEK1KXyAc+PD4MkLnmxG8okcAOlHmgEYyBkhR2mkC5/VMOs/ds65BHEp/
-	kqvpgvgWL9w1j0y6+vvmmYi1G7EiZJW1OtdLVk7nIJTImm/IWdocLN0iZ91Lyw6brLDYt4HnZqNyv
-	I18ebhMmcZzy/VZrNOGc1EW4qRwXu7qygz0A0QVHSap+n7UJZ/DEV42SANZmDXiHhor0oyTjoeY3C
-	VcSxDKMx7tBPAjkUqNIQ==;
+	List-Owner; bh=Bf/AQ2EnRovHeivHm8Q6YWLFQNoTw61g2EdgSkjkzdE=; b=KtdkjfLLjGybAF
+	nXrEcqA9R22MUA4SmX3gn/JGgszgwszAjT7lOS/bgbtK/Mq72SzGBXh0LG+2nMTG3VxHLcuS1ilYy
+	3en8w8XKnwMTOH+sXyEr0gaFb/e2v3rOJ3+/aUHRArom/LmDTKHzJzcbC+j8o42b3udgXLi11xhl7
+	wnSoMqYNK66MOVspH3blEyZCPL2By1m4O94nSJwmhHXySHxitUhOUKbDc4nY82qTyFzTOS5rUh+Rw
+	djVBsLSsRTWzf/WtGxRzHMv5olhjYXtFQfrVeAUktu7R2G3Zs2JM118rVJNiZXegtjL302ucFpun4
+	rthBavNqd7R8e8TUz2+A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oav2n-009w1Y-8b; Wed, 21 Sep 2022 08:25:21 +0000
+	id 1oav3l-009wQZ-8C; Wed, 21 Sep 2022 08:26:21 +0000
 Received: from madras.collabora.co.uk ([46.235.227.172])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oautD-009rCI-SS; Wed, 21 Sep 2022 08:15:33 +0000
+	id 1oautU-009rJO-LI; Wed, 21 Sep 2022 08:15:46 +0000
 Received: from [192.168.1.100] (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
 	(No client certificate requested)
 	(Authenticated sender: kholk11)
-	by madras.collabora.co.uk (Postfix) with ESMTPSA id EBA786601F3F;
-	Wed, 21 Sep 2022 09:15:25 +0100 (BST)
+	by madras.collabora.co.uk (Postfix) with ESMTPSA id C3DC36601F3F;
+	Wed, 21 Sep 2022 09:15:42 +0100 (BST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1663748126;
-	bh=NNSx9hRJaoAMLI1n9AvUiccUA/Y2Upvxg5yv9gxOeYc=;
+	s=mail; t=1663748143;
+	bh=XH9jh6d/hbkh2EaYj2CvFnDhMpxuJds1twj/Gjm5QII=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=nS3pdU9XGCHiM4SODNkKdfIJIyYR/r64+mKBjsLYP8UALlnNYeaKSsmV5O2cDKktk
-	 dYu1pHLJ+DO7p41Mlclfd+n97TeTxxo/rIBTMP/m9ky/a6g9IZiRUzeuYMMRkhE09B
-	 iZORo3Yp+B0E6LoP5rA/6hOfL6JabzxGkVTfP4j9+f0MbUIwy8hzxaaQPmcFfwoX82
-	 04Esp+eZCBJW/dZKcv8i0+cDLGLb8Pcdx9P+RFIHGSO1LaNvj7rWNzRB3W/yExFtj7
-	 0KmtNi4HamtoWdv0lse8OhiJ4CgFtmk25/XeMztKxIuLCshSD3ahWZOKsGitlnaBvF
-	 ksKsrh9A2psfw==
-Message-ID: <826acb10-f2e4-6edd-4479-e71772787df4@collabora.com>
-Date: Wed, 21 Sep 2022 10:15:24 +0200
+	b=n6N75gL0cvd7s2ORUOI6HiDaAATa+J+CFW2qnVM07rXmVNZdqrxfaQ/SnVqiAR3Ui
+	 KrKJAZfDhqFDlTbrqYYMFygw5NGnBObQ6i57rbeTQxXi33u4qix6JWe3HPs+Q+OFv0
+	 9b2nJT8Hl0DQbgkhUEqhuMyPYbIYKK+xYr765lsey+cKk0LdXt9S6T10WcQrDDpqbE
+	 X2qV1/Mp5jC7hS3CdH/pfQMDVRPuINTxtihbx5kkezlXKdIBOWYPZdQ+pfHeDvYCdL
+	 iD+kdPhLt7PxdbkFAjdJ79s7ZhLFWQBgKv0Jk7+PP8LmRoJRr/Cne0Bx42srTYeoAk
+	 p2LYSYU+7SK8g==
+Message-ID: <2d13b383-7d25-240b-bdbb-e53848df4d47@collabora.com>
+Date: Wed, 21 Sep 2022 10:15:39 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.2.0
-Subject: Re: [PATCH 18/18] phy: mediatek: mipi: remove register access helpers
+Subject: Re: [PATCH 01/18] phy: mediatek: add a new helper to update bitfield
 Content-Language: en-US
 To: Chunfeng Yun <chunfeng.yun@mediatek.com>,
  Chun-Kuang Hu <chunkuang.hu@kernel.org>, Vinod Koul <vkoul@kernel.org>
@@ -57,13 +57,12 @@ Cc: Philipp Zabel <p.zabel@pengutronix.de>,
  linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
  Jitao Shi <jitao.shi@mediatek.com>, Stanley Chu <stanley.chu@mediatek.com>
 References: <20220920090038.15133-1-chunfeng.yun@mediatek.com>
- <20220920090038.15133-19-chunfeng.yun@mediatek.com>
+ <20220920090038.15133-2-chunfeng.yun@mediatek.com>
 From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-In-Reply-To: <20220920090038.15133-19-chunfeng.yun@mediatek.com>
+In-Reply-To: <20220920090038.15133-2-chunfeng.yun@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220921_011528_121909_3C21BFF7 
-X-CRM114-Status: UNSURE (   6.46  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220921_011544_893456_81B9D38D 
+X-CRM114-Status: GOOD (  14.75  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,12 +80,45 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 Il 20/09/22 11:00, Chunfeng Yun ha scritto:
-> Remove private register access helpers, use the common ones instead.
+> Due to FIELD_PREP() macro can be used to prepare a bitfield value,
+> local ones can be remove; add the new helper to make bitfield update
+> easier.
 > 
 > Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+> ---
+>   drivers/phy/mediatek/phy-mtk-io.h | 7 +++++++
+>   1 file changed, 7 insertions(+)
+> 
+> diff --git a/drivers/phy/mediatek/phy-mtk-io.h b/drivers/phy/mediatek/phy-mtk-io.h
+> index 500fcdab165d..a723d4afc9b4 100644
+> --- a/drivers/phy/mediatek/phy-mtk-io.h
+> +++ b/drivers/phy/mediatek/phy-mtk-io.h
+> @@ -8,6 +8,7 @@
+>   #ifndef __PHY_MTK_H__
+>   #define __PHY_MTK_H__
+>   
+> +#include <linux/bitfield.h>
+>   #include <linux/io.h>
+>   
+>   static inline void mtk_phy_clear_bits(void __iomem *reg, u32 bits)
+> @@ -35,4 +36,10 @@ static inline void mtk_phy_update_bits(void __iomem *reg, u32 mask, u32 val)
+>   	writel(tmp, reg);
+>   }
+>   
+> +/* field @mask should be constant and continuous */
 
-Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+"Field @mask shall be [...]"
+              ^^^^^
 
+> +static inline void mtk_phy_update_field(void __iomem *reg, u32 mask, u32 val)
+
+...so, (void __iomem *reg, const u32 mask, u32 val)
+
+> +{
+> +	mtk_phy_update_bits(reg, mask, FIELD_PREP(mask, val));
+> +}
+> +
+>   #endif
 
 
 
