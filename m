@@ -4,66 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5769EECAAD8
-	for <linux-phy@archiver.kernel.org>; Wed, 21 Sep 2022 08:06:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B1634C6FA8B
+	for <linux-phy@archiver.kernel.org>; Wed, 21 Sep 2022 08:14:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eCvLbWcmCncprz69wzp8kgFF0NbfllxGfmLLViJYAIo=; b=fq4bNHZWYFJdpp
-	b8bF8dCQg9eJimo/hEHuwBmSFapWGuPqkyTJ17GGRp/2cXXj62iBCT7LyLd5lzQoqk+ReKQFmlIe/
-	BAbQcw2G5DB/LSp4AadnEltPd/5Xi2BrNE95vO2SoVV4DohwhzmcUEfFTqSvawqKOP8vj+/wWhCqk
-	rV5j5irhyfts7A0OjGaCdc1O9acYvVKrvVK45gI89tCDW78aHIVFd52VfHo2Io/LCAhfzk1IMC2m+
-	j8h5zlrHkjtRHdDGDjbmDl9RKwBVJX93t2ceLU5vBXsyY2h84uhLxIdEVud4Cc+ReAd2Xj0r0qITh
-	93IetK8k5eFfSVYoQJyQ==;
+	List-Owner; bh=S9oB4ak87FNaowiy/ZN7+qR5U1aLOkbF1GTqQRhTzKA=; b=wPBBMVsNGNwkEu
+	QrBEC1vt0PrcUiHyGTvUk38jJ8LC9IquyAXS4h82gVa9aeZb2s1kgde7z5FLOzel72FDl8EQvC6mv
+	iSUz2jBSWR55HjYK03DVtyDE3O20Xrm7yqNc9uWaJgiwVSEw2123CojCMawIr57zbkKt07ZkTUZ+x
+	y1UxY5bQ8EtweEravFXBauVx6aw4rk+IsRzlnREATghlBPNbvOgy7Fp+82txsvJ1cx5rl/6hTQeYe
+	9NRx21+nzQGofnoYUldm0QjkrGECSqTB46XxTUrpJuIIBZzOUnQxPTMFJPiD05Uv04d4MmD3y5x37
+	+6ZGdXUP/zS7dOmaAotw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oaukF-009nIv-N1; Wed, 21 Sep 2022 08:06:11 +0000
-Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
+	id 1oaurv-009qWa-1D; Wed, 21 Sep 2022 08:14:07 +0000
+Received: from madras.collabora.co.uk ([46.235.227.172])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oaukB-009nG5-BO
-	for linux-phy@lists.infradead.org; Wed, 21 Sep 2022 08:06:09 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	id 1oaurU-009qHL-3j; Wed, 21 Sep 2022 08:13:41 +0000
+Received: from [192.168.1.100] (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
 	(No client certificate requested)
-	by sin.source.kernel.org (Postfix) with ESMTPS id B7B70CE1C4F;
-	Wed, 21 Sep 2022 08:06:02 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5AF84C433D6;
-	Wed, 21 Sep 2022 08:06:00 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1663747560;
-	bh=iiGgNNFdcLKteCa878KTXhVaJVoiH2Je1zOl3/yPFqU=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=M3WdeFWERpiU/U3gFJ1lwxlTQPCvouHm0KycEjUTajbzf8LUOHXD3tHyi+kkI0pBK
-	 qq3gyM2HFadro4Ms0dCA5mIJ33Tsx6Qg3v5DZkEoqX8lr4epcxjhgGPi4kZNL71kQI
-	 zv2wbOA6YujKG5HqS1N+m2MpNuJK3TOpV5s8yCcQ2smF5M0dK5PxCBXwOrl7pbtc+t
-	 9Xi18gN1tVp1SH/FPrl4WG/BTOIU+kxvn9r9Q0p57qVH29vbMblsHT5j2tuFEKgFJX
-	 cTm3+ymeRUVVhKFFA+ak4vLfcz3ZSkWtGx+6Lx+mXDMqCPw+/k3RaSslaYKib0cHnl
-	 Jl9VZXGJ+vnuA==
-Received: by pali.im (Postfix)
-	id 282D0789; Wed, 21 Sep 2022 10:05:57 +0200 (CEST)
-Date: Wed, 21 Sep 2022 10:05:57 +0200
-From: Pali =?utf-8?B?Um9ow6Fy?= <pali@kernel.org>
-To: Shinichiro Kawasaki <shinichiro.kawasaki@wdc.com>
-Cc: Miquel Raynal <miquel.raynal@bootlin.com>,
-	Kishon Vijay Abraham I <kishon@ti.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	"linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
-	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
-Subject: Re: [PATCH] phy: marvell: phy-mvebu-a3700-comphy: Reset COMPHY
- registers before USB 3.0 power on
-Message-ID: <20220921080557.jdg5wywpa5qxcyo2@pali>
-References: <20220920121154.30115-1-pali@kernel.org>
- <20220921050300.riwyofdncxscrwe3@shindev>
+	(Authenticated sender: kholk11)
+	by madras.collabora.co.uk (Postfix) with ESMTPSA id 8A7FD6601F3F;
+	Wed, 21 Sep 2022 09:13:35 +0100 (BST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1663748016;
+	bh=wBx7986mU+G+SugkswF8Z+6DJvj3z5+Hro9nOPhryCM=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=Dzcnoygl09pwDr0F5taS2UrE3awoptYPge6G0CfVcj59Mr/ngHJb1KfuaQ4rQkQa/
+	 oL16vza+M/IzfM4oPm7JJ9KbKQuLPyVmxn8pVaqsYbS/vwmrkx2aoaWqZrQR/QDoDm
+	 EAetPqludw89dLMn+uto2uz8jzqCL4LKWFUDp9AsQQGYD1upRSUdrbNyGqnM/FbmX7
+	 3goddrYE/tQMuVJW2ZZYaV7ljl8v/AIA8r9bcE/88SCyz81k1VLrlXDSq8i+e1hOp4
+	 uT5WQt5fwSGeg2gSlTmeDqeirtuMecM5rqM1HDR5Cv5zpDhvgOP8REvoqp7g/G7LIm
+	 ynICNLF/kanzA==
+Message-ID: <70e361c7-a4ef-076a-8817-7d13d9785c5e@collabora.com>
+Date: Wed, 21 Sep 2022 10:13:32 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20220921050300.riwyofdncxscrwe3@shindev>
-User-Agent: NeoMutt/20180716
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.2.0
+Subject: Re: [PATCH 04/18] phy: mediatek: ufs: use common register access
+ helpers
+Content-Language: en-US
+To: Chunfeng Yun <chunfeng.yun@mediatek.com>,
+ Chun-Kuang Hu <chunkuang.hu@kernel.org>, Vinod Koul <vkoul@kernel.org>
+Cc: Philipp Zabel <p.zabel@pengutronix.de>,
+ Kishon Vijay Abraham I <kishon@ti.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, dri-devel@lists.freedesktop.org,
+ linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
+ Jitao Shi <jitao.shi@mediatek.com>, Stanley Chu <stanley.chu@mediatek.com>
+References: <20220920090038.15133-1-chunfeng.yun@mediatek.com>
+ <20220920090038.15133-5-chunfeng.yun@mediatek.com>
+From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+In-Reply-To: <20220920090038.15133-5-chunfeng.yun@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220921_010608_473451_5D9E53CE 
-X-CRM114-Status: GOOD (  27.30  )
+X-CRM114-CacheID: sfid-20220921_011340_346160_C0B48865 
+X-CRM114-Status: UNSURE (   6.94  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,57 +76,22 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gV2VkbmVzZGF5IDIxIFNlcHRlbWJlciAyMDIyIDA1OjAzOjAxIFNoaW5pY2hpcm8gS2F3YXNh
-a2kgd3JvdGU6Cj4gT24gU2VwIDIwLCAyMDIyIC8gMTQ6MTEsIFBhbGkgUm9ow6FyIHdyb3RlOgo+
-ID4gVHVycmlzIE1PWCBib2FyZCB3aXRoIG9sZGVyIEFSTSBUcnVzdGVkIEZpcm13YXJlIHZlcnNp
-b24gdjEuNSBpcyBub3QgYWJsZQo+ID4gdG8gZGV0ZWN0IGFueSBVU0IgMy4wIGRldmljZSBjb25u
-ZWN0ZWQgdG8gVVNCLUEgcG9ydCBvbiBNb3gtQSBtb2R1bGUgYWZ0ZXIKPiA+IGNvbW1pdCAwYTZm
-YzcwZDc2YmQgKCJwaHk6IG1hcnZlbGw6IHBoeS1tdmVidS1hMzcwMC1jb21waHk6IFJlbW92ZSBi
-cm9rZW4KPiA+IHJlc2V0IHN1cHBvcnQiKS4gT24gdGhlIG90aGVyIGhhbmQgVVNCIDIuMCBkZXZp
-Y2VzIGNvbm5lY3RlZCB0byB0aGUgc2FtZQo+ID4gVVNCLUEgcG9ydCBhcmUgd29ya2luZyBmaW5l
-Lgo+ID4gCj4gPiBJdCBsb29rcyBhcyBpZiB0aGUgb2xkZXIgZmlybXdhcmUgY29uZmlndXJlcyBD
-T01QSFkgcmVnaXN0ZXJzIGZvciBVU0IgMy4wCj4gPiBzb21laG93IGluY29tcGF0aWJseSBmb3Ig
-a2VybmVsIGRyaXZlci4gRXhwZXJpbWVudHMgc2hvdyB0aGF0IHJlc2V0dGluZwo+ID4gQ09NUEhZ
-IHJlZ2lzdGVycyB2aWEgc2V0dGluZyBTRlRfUlNUIGF1dG8tY2xlYXJpbmcgYml0IGluIENPTVBI
-WV9TRlRfUkVTRVQKPiA+IHJlZ2lzdGVyIGZpeGVzIHRoaXMgaXNzdWUuCj4gPiAKPiA+IFJlc2V0
-IHRoZSBDT01QSFkgaW4gbXZlYnVfYTM3MDBfY29tcGh5X3VzYjNfcG93ZXJfb24oKSBmdW5jdGlv
-biBhcyBhIGZpcnN0Cj4gPiBzdGVwIGFmdGVyIHNlbGVjdGluZyBDT01QSFkgbGFuZSBhbmQgVVNC
-IDMuMCBmdW5jdGlvbi4gV2l0aCB0aGlzIGNoYW5nZQo+ID4gVHVycmlzIE1PWCBib2FyZCBjYW4g
-c3VjY2Vzc2Z1bGx5IGRldGVjdCBVU0IgMy4wIGRldmljZXMgYWdhaW4uCj4gPiAKPiA+IEJlZm9y
-ZSB0aGUgYWJvdmUgbWVudGlvbmVkIGNvbW1pdCB0aGlzIHJlc2V0IHdhcyBpbXBsZW1lbnRlZCBp
-biBQSFkgcmVzZXQKPiA+IG1ldGhvZCwgc28gdGhpcyBpcyB0aGUgcmVhc29uIHdoeSB0aGVyZSB3
-YXMgbm8gaXNzdWUgd2l0aCBvbGRlciBmaXJtd2FyZQo+ID4gdmVyc2lvbiB0aGVuLgo+ID4gCj4g
-PiBGaXhlczogMGE2ZmM3MGQ3NmJkICgicGh5OiBtYXJ2ZWxsOiBwaHktbXZlYnUtYTM3MDAtY29t
-cGh5OiBSZW1vdmUgYnJva2VuIHJlc2V0IHN1cHBvcnQiKQo+ID4gUmVwb3J0ZWQtYnk6IE1hcmVr
-IEJlaMO6biA8a2FiZWxAa2VybmVsLm9yZz4KPiA+IFNpZ25lZC1vZmYtYnk6IFBhbGkgUm9ow6Fy
-IDxwYWxpQGtlcm5lbC5vcmc+Cj4gPiAtLS0KPiA+IFNoaW5pY2hpcm8sIGNvdWxkIHlvdSBwbGVh
-c2UgY2hlY2sgdGhhdCBhbGwgVVNCIGZ1bmN0aW9uYWxpdHkgc3RpbGwKPiA+IHdvcmtzIGNvcnJl
-Y3RseSBvbiB5b3VyIGJvYXJkPwo+ID4gLS0tCj4gCj4gU3VyZS4gVEw7RFIsIHRoaXMgcGF0Y2gg
-d29ya3Mgb2sgZm9yIG15IGVzcHJlc3NvYmluIHY3IGJvYXJkLgo+IAo+IFRlc3RlZC1ieTogU2hp
-bidpY2hpcm8gS2F3YXNha2kgPHNoaW5pY2hpcm8ua2F3YXNha2lAd2RjLmNvbT4KPiAKPiBJIHBy
-ZXBhcmVkIGJhc2Uga2VybmVsIHY1LjE5LjEwIGFwcGx5aW5nIHRoZSBjb21taXQgMGE2ZmM3MGQ3
-NmJkLiBSZWdhcmRsZXNzCj4gd2hldGhlciB0aGlzIGZpeCBwYXRjaCBmb3IgVHVycml4IE1PWCBi
-b2FyZCBpcyBhcHBsaWVkIG9yIG5vdCwgdHdvIFVTQiBwb3J0cyBvbgo+IG15IGVzcHJzc29iaW4g
-djcgYm9hcmQgd29ya2VkIGFzIGV4cGVjdGVkLiBJIGNvbmZpcm1lZCBpdCBieSB1c2luZyBVU0Ig
-dGh1bWIKPiBkcml2ZS4gVGhlIGRyaXZlIHdhcyBkZXRlY3RlZCBhbmQgaXRzIHBhcnRpdGlvbiB3
-YXMgbW91bnRlZCBzdWNjZXNzZnVsbHkgdXNpbmcKPiBlaXRoZXIgb2YgdGhlIHR3byBVU0IgcG9y
-dHMuCgpUaGFuayB5b3UgZm9yIHRlc3RpbmchIEFueXdheSwgcGxlYXNlIGNoZWNrIHRoYXQgVVNC
-IDMuMCBkZXZpY2UgaXMKd29ya2luZyBmaW5lLiBCZWNhdXNlIGFzIEkgd3JvdGUgaW4gY29tbWl0
-IG1lc3NhZ2UsIG9uIFR1cnJpcyBNb3ggd2FzClVTQiAyLjAgZGV2aWNlIHdvcmtpbmcgZmluZSwg
-YnV0IFVTQiAzLjAgbm90LiBBbmQgbWF5YmUgY2hlY2sgaW4gc3lzdGVtCihsc3VzYikgdGhhdCBV
-U0IgMy4wIGRldmljZSB3YXMgcmVhbGx5IGRldGVjdGVkIGFzIFVTQiAzLjAgYmVjYXVzZSBVU0IK
-My4wIGRldmljZXMgaGF2ZSBzdXBwb3J0ZWQgYWxzbyBmYWxsYmFjayBVU0IgMi4wLzEueCBsZWdh
-Y3kgbW9kZS4KCj4gSSBhbHNvIGNvbmZpcm1lZCBTQVRBIHBvcnQgaXMgb2sgKG15IFNTRCBjYXJk
-IHdhcyBkZXRlY3RlZCB3aXRob3V0IGVycm9yCj4gbWVzc2FnZSkgYW5kIHRocmVlIG5ldHdvcmsg
-cG9ydHMgd29ya3Mgb2sgKCJMaW5rIGlzIFVwIiBtZXNzYWdlIG9uIG5ldHdvcmsgY2FibGUKPiBj
-b25uZWN0aW9uKS4gSSBkaWQgc2FtZSBjb25maXJtYXRpb25zIHdpdGggdGhlIGxhdGVzdCBmaXJt
-d2FyZSAoVEYtQSBhbmQgVS1ib290KQo+IGFuZCBvbGQgZmlybXdhcmUgKHdpdGggdmVyc2lvbiBk
-YXRlIGluIDIwMTcpLiBBbGwgbG9va3MgZ29vZCBmb3IgbWUuCj4gCj4gLS0gCj4gU2hpbidpY2hp
-cm8gS2F3YXNha2kKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5p
-bmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZv
-L2xpbnV4LXBoeQo=
+Il 20/09/22 11:00, Chunfeng Yun ha scritto:
+> No need define private register access helpers, use common ones defined
+> in phy-mtk-io.h
+> 
+> Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+
+Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
