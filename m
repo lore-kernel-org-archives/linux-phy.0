@@ -4,91 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 16B05C6FA82
-	for <linux-phy@archiver.kernel.org>; Wed, 21 Sep 2022 07:24:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3D6D2C6FA8B
+	for <linux-phy@archiver.kernel.org>; Wed, 21 Sep 2022 07:32:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=30sQ0C6zWCP1knPkwptcQZG1Q0wZ1yBbTm5SSTXp5LE=; b=VVtC6YiBNUiobl
-	uig7/L0cZeuPgyFy9s2P3U7iHV1FgBEzgDEoGqfp+idipeOOMxyY7juprcMHbIFZ6KiXMUdz1XSl2
-	fuMEmTyoUoxKX1Lzc0hzSV8SzDZCcKJ8nGHoV2C11huu8CizaD8q+VhCzyLMrjAgGDdjcOOAKTK9n
-	b2WNeJFSrLdz6CreKtlQZw786Qhm+/Jt6XHPO1t4uUA8qv3ZYk+srUueu4QkXgpyDVSs37G3tm6q7
-	uiIireiPWAvpHDwy8pwtJERTt5+HYwmgsS6gtfF8s4fkKCdJ27CJMxHvc9rWw24irh9mXHdBGW2IZ
-	Oe3zcTqzM3U4+rS29KdA==;
+	List-Owner; bh=gFT+5dun75tjVYlHkvWWXpzGSmviqwuCekBnYB9lYrc=; b=tdpjN2YB6tl/Mq
+	8wvu3ZAtCQE1zHze28ObaV+4wMxdf/OF9q4bZrUzvifW9jg8itVhjDCzsPXigTqSdkInQmDEr0Mt7
+	K9fpkJ81axKBfpXjQ6rUHTXw0NDLs5KD1v7AGhM59ddQXB5M2i2pHZcL+B759R/avbUfh+T4vVkQu
+	7K9mJLmzpgQQuSvEcM/VL/U2EekWE0TcoN23FLx6vaovS7VW4kEQDxAysdF072UkA9fRwgxVhbbSX
+	fDH9VMTPSXP91RAR1vRX1Jy70nIeT1rv9Y5a336/ehyGrNniyluUguUFEUJNx3CYLZ7ULTUryL8d8
+	6obeaHlZotHkcNaney6g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oau6M-009Zoc-EN; Wed, 21 Sep 2022 07:24:58 +0000
-Received: from mail-lf1-x132.google.com ([2a00:1450:4864:20::132])
+	id 1oauDQ-009cQM-Ej; Wed, 21 Sep 2022 07:32:16 +0000
+Received: from mail-lj1-x234.google.com ([2a00:1450:4864:20::234])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oau6J-009ZmE-QN
-	for linux-phy@lists.infradead.org; Wed, 21 Sep 2022 07:24:57 +0000
-Received: by mail-lf1-x132.google.com with SMTP id a3so7716662lfk.9
-        for <linux-phy@lists.infradead.org>; Wed, 21 Sep 2022 00:24:53 -0700 (PDT)
+	id 1oauDM-009cNT-AL
+	for linux-phy@lists.infradead.org; Wed, 21 Sep 2022 07:32:15 +0000
+Received: by mail-lj1-x234.google.com with SMTP id p5so5852066ljc.13
+        for <linux-phy@lists.infradead.org>; Wed, 21 Sep 2022 00:32:10 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date;
-        bh=bFJYG4PVqHBTVTlENsGYmbnITZO/CIPfqSC0ocjrjBw=;
-        b=PNb0mK3OrJ4YcwIRdrsHRakGLywEGmQt1IIEtdw52ex8fbqnxhkqjENdlaWJM9jnAL
-         Wq6+Eq9Wwmz5ff+1BAMBmEtyDqWUNl0D1gQO1C3OzBcx/jObUWy+owPth/8P3t4KX3li
-         D8VmSiMB4M1H4omLiPoYJ8K+IcdBklh41ZkiD/qcG7Ffy2dgJkUP5IxLjAWpHeuXBnQI
-         i2jLLmEWPfonwKnAc7XsMN30gKBDRr4K2gf8q+5YfanprtU/tDhI75Ga6zqkcM3FvZW3
-         FAOoXGhrYjkVs4QGRFhv5ijj82TJAhQJNhXLrBTfwXNGUZx9vHJIhk0AZFXGDGrciip2
-         e9ew==
+        bh=vm4eJTSpc6O1WAM7eQFYsV4Lw8COabTbtSgO8uczCo4=;
+        b=M4G26pUd7wx0NR7FjV1bgtfFDzbOixM/IK3O+a35xXVzku5pXuQKodHrD08QdE+qt8
+         MefOjT4B7Byct7QQEu2kDaIWU/JF3Vq+CqX+BqL2h2wyMP8XKG7mBbXM4z4ZJ4vUOzzt
+         p/n4FeNjUTN75bmjxVPfFznXAJmOQEuEr/1gAi1hZjlIwKoq9kEupmOHygSI4xb3txLN
+         qGhoKs4bOolDaIrymmn1EnZEye9HtczA9Xg0gDSwGYf4BZ+LLNZZFOgD6i6/n8Nh15z2
+         JHk9lWPPGYdYzfZ+v/eCd5cfhS2M09hdK655zayT2Mvfb7AnaxqmSP9hkZExle6E2kgh
+         pcTg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date;
-        bh=bFJYG4PVqHBTVTlENsGYmbnITZO/CIPfqSC0ocjrjBw=;
-        b=F3MuzQwUGKn0Cyix4J00G2Yu321jI2L1VWcU/1xLElIin7X6ZjJm5wiTzVrAVrtXIu
-         c72zVlNgQNu+7s1rXcITLMgnKlIMMmfwuteCHQXfgiWvrhZ+bE6WxwnAMSIWLY8Z111X
-         Yq8C+g0hfjmtreDilZq1s3+uB11sPSrHyLxkcDi7/Bd8opKN4oQb4ohoGkVMQRgRfSQC
-         mvOzN/HSuJ8z9KVyQdY2RMQyYiyRcreoj9vFjZULWuRhwlL5aYk0gSzEkwSpfEpH4YCs
-         RNs8G3jjocsBIu5DIi5RH8pZqmIcwjVS7zoYc2kG2+Zy6AGy9SDFPae/0ULfG8DP2KXG
-         RCTw==
-X-Gm-Message-State: ACrzQf35TMdcuy1svg6bRX1Vnnv94IheVIH4hJlyDN1RDxgFG/9dWOVe
-	V6fbaac6Kv5bwUUpUbSElll65A==
-X-Google-Smtp-Source: AMsMyM7AA/q1qWS+D/jrpdkjuMOdY9vnfSG/BqIGL59pYeC6eo/uWtVTrWMMF3B7MxVAzIFcpSwafw==
-X-Received: by 2002:a05:6512:13a1:b0:48d:f14:9059 with SMTP id p33-20020a05651213a100b0048d0f149059mr10599822lfa.110.1663745091970;
-        Wed, 21 Sep 2022 00:24:51 -0700 (PDT)
+        bh=vm4eJTSpc6O1WAM7eQFYsV4Lw8COabTbtSgO8uczCo4=;
+        b=fF9OTMN+axqVE7HbYcxaKMP8J0DKm7CH1hrYYSKojFs5iOn5VUffEe9GJ/CYLncxo2
+         snhk+cMcXwmmoQDfLMfx8VhUyLKK1uRD+1Vfa+KtylTyJZBqYYNHoCpBbK8OT0h+55oL
+         f8FMG9OA7pp2cUQY/8Ls9AAs2zlU9wAyHfIUV4oU5vshCj7vialr47O8Oj9Mv+Ie0izG
+         daAWi55dhY51ZQpptRh1w/iRK7vHnlyMQsNG4FiUpdry4WEFyx0AcN3RgzROx3cPg3o9
+         TzX6/4xlehRulGactYx0egIf3Ttq2uLCgKO3hHr4OwfvO1vxIFGUbNlC0Fv0XAuJB4/p
+         0Keg==
+X-Gm-Message-State: ACrzQf3+IAyqQfDCkP0TGXvOHfPYjqJR0FZm/ZdSM2N0bT53rWobFrCe
+	Icqszc1h5RPtdtxk5RnUFnEs+w==
+X-Google-Smtp-Source: AMsMyM5FCiOeqrMuyCbj+xsJx+1/Q42dDN95D8GEYUkaF0/eIOZxtFl7SILU6Gi4T7/nzrRRziwrnA==
+X-Received: by 2002:a2e:b8cb:0:b0:26c:47b1:211d with SMTP id s11-20020a2eb8cb000000b0026c47b1211dmr5464601ljp.95.1663745527584;
+        Wed, 21 Sep 2022 00:32:07 -0700 (PDT)
 Received: from [192.168.0.21] (78-11-189-27.static.ip.netia.com.pl. [78.11.189.27])
-        by smtp.gmail.com with ESMTPSA id p22-20020a2eb7d6000000b0025dfd2f66d6sm310330ljo.95.2022.09.21.00.24.50
+        by smtp.gmail.com with ESMTPSA id p9-20020a2eb989000000b0026bfc8d4bbbsm310139ljp.125.2022.09.21.00.32.06
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 21 Sep 2022 00:24:51 -0700 (PDT)
-Message-ID: <74b6b670-747a-f326-44ea-7588c3989b0e@linaro.org>
-Date: Wed, 21 Sep 2022 09:24:50 +0200
+        Wed, 21 Sep 2022 00:32:07 -0700 (PDT)
+Message-ID: <efa1b1c4-655c-ceb7-47e5-61f91d86dde5@linaro.org>
+Date: Wed, 21 Sep 2022 09:32:06 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
  Thunderbird/91.13.0
-Subject: Re: [PATCH v2 3/4] media: dt-bindings: add bindings for Toshiba
- TC358746
+Subject: Re: [PATCH 1/3] dt-bindings: phy: qcom,qusb2: document sdm670
+ compatible
 Content-Language: en-US
-To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Marco Felsch <m.felsch@pengutronix.de>
-Cc: Sakari Ailus <sakari.ailus@linux.intel.com>, mchehab@kernel.org,
- robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org, kishon@ti.com,
- vkoul@kernel.org, hverkuil@xs4all.nl, jacopo@jmondi.org,
- kieran.bingham+renesas@ideasonboard.com, linux-media@vger.kernel.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, kernel@pengutronix.de
-References: <20220916134535.128131-1-m.felsch@pengutronix.de>
- <20220916134535.128131-4-m.felsch@pengutronix.de>
- <YyZTCsflWtUbo2ld@pendragon.ideasonboard.com>
- <20220919100844.bb7tzbql2vpk76xz@pengutronix.de>
- <YyhDO4ohv47uIij2@paasikivi.fi.intel.com>
- <YyhKoDxFoobY9vBd@pendragon.ideasonboard.com>
- <20220920152632.mjpgpmelvx4ya4k7@pengutronix.de>
- <Yyn5MqqKYH7VpFhw@pendragon.ideasonboard.com>
+To: Richard Acayan <mailingradian@gmail.com>, linux-arm-msm@vger.kernel.org
+Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
+ Konrad Dybcio <konrad.dybcio@somainline.org>,
+ Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Felipe Balbi <balbi@kernel.org>, Wesley Cheng <quic_wcheng@quicinc.com>,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-usb@vger.kernel.org
+References: <20220920224320.152127-1-mailingradian@gmail.com>
+ <20220920224320.152127-2-mailingradian@gmail.com>
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <Yyn5MqqKYH7VpFhw@pendragon.ideasonboard.com>
+In-Reply-To: <20220920224320.152127-2-mailingradian@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220921_002455_932434_A5F95537 
-X-CRM114-Status: GOOD (  14.86  )
+X-CRM114-CacheID: sfid-20220921_003212_417843_89766238 
+X-CRM114-Status: UNSURE (   8.33  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,28 +102,15 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 20/09/2022 19:32, Laurent Pinchart wrote:
->>>
->>> Explicit bus types in DT indeed makes it easier for drivers, so if a
->>> device can support multiple bus types (even if not implemented yet in
->>> the corresponding drivers), the property should be there.
->>
->> Okay, I will make it required.
->>
->>>> Why do you have hsync-active and vsync-active if both are always zero? Can
->>>> the hardware not support other configuration?
->>
->> Sure the device supports toggling the logic but it is not implemented.
->> So the bindings needs to enforce it to 0 right now. As soon as it is
->> implemented & tested, we can say that both is supported :)
+On 21/09/2022 00:43, Richard Acayan wrote:
+> The Snapdragon 670 uses the QUSB driver for USB 2.0. Document the
+> compatible used in the device tree.
 > 
-> Bindings are not supposed to be limited by the existing driver
-> implementation, so you can already allow both polarities, and just
-> reject the unsupported options in the driver at probe time. Future
-> updates to the driver won't require a binding change.
-> 
+> Signed-off-by: Richard Acayan <mailingradian@gmail.com>
 
-+1
+
+Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+
 
 Best regards,
 Krzysztof
