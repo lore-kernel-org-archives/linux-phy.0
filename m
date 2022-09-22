@@ -4,50 +4,148 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2EEF7C6FA82
-	for <linux-phy@archiver.kernel.org>; Thu, 22 Sep 2022 11:18:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9805AC6FA82
+	for <linux-phy@archiver.kernel.org>; Thu, 22 Sep 2022 11:21:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:Cc:To:
+	From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ADc3/A5H9ggrcnOnFfRgTvywfzC6CKRjhcB/vvgTQTk=; b=bl/RgVRGAfgITx
-	D35JfXI5ztv7MUZxHETfqofYPEQD9IQEm1VGItVgrGs1+oxdIXd9QPPKO3X7l08ceqw3tzjtLM3HQ
-	WZwCh8AQjpw6vRwuSvaZsCA0pNXOaz3hJFFtWamNsqMnmtKCmalyo1ZqPnuuRKJb5HuOjoHb+pD/B
-	JoCOUpyUuRzUeLVXt8/0xTKoh4NPIxNDw7oGQsTr8hFSINuXWXHZc8fRNwYTqkwR9aGjFGtZrDutV
-	voMGLolaDZKL0HJkjRx3qirq8d4XaBIvuwSYD6kjxkUxF2xfmBecW2yg/ug+b35RnMvv+yCn5NVId
-	DgsOuEe0faEXEgfZE+HA==;
+	List-Owner; bh=DjYzJjGIK5Bq+4+bTzOUPXICmjR0Jo2mXBEXzsBgdm4=; b=QGp+vHaYy0UFeo
+	047z8GfQPz8LN4tAGRZ/Ts/pdlxDTQx19l+IPyztmG7WbwOn2xLhqtvdHqWLpcmiXvo6pa0Eh5Tmj
+	/sUSyJS/HAywQZ6G1Y9hvH7JsaghzkSfTWTIIYGtA8kac1BcDfvL3YlIUoZoRXGY7oLgRlF/8iej+
+	mksi5YEWnHqpeP8aBVRZ0s8PW9LRkyykIwZfCqy+YMdeVuSZz1J5PbG0fbdnkzyMnDu0Ib/DkLTt1
+	dfi2ZmJRBya9ZV3yHWWhM5eyZv711JHHl70PvR73yKgc/8mdb6AI0uSuSaEbFbdoQJnBib+btRQ+b
+	IiHymQ8EOwgo+FrALX1g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1obKDn-00F7jp-Kn; Thu, 22 Sep 2022 11:18:23 +0000
-Received: from szxga01-in.huawei.com ([45.249.212.187])
+	id 1obKGv-00F8Re-2m; Thu, 22 Sep 2022 11:21:37 +0000
+Received: from mx0b-00069f02.pphosted.com ([205.220.177.32])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1obKDl-00F7id-7V
-	for linux-phy@lists.infradead.org; Thu, 22 Sep 2022 11:18:22 +0000
-Received: from dggpeml500024.china.huawei.com (unknown [172.30.72.56])
-	by szxga01-in.huawei.com (SkyGuard) with ESMTP id 4MYCN30G5PzlWyS;
-	Thu, 22 Sep 2022 19:14:11 +0800 (CST)
-Received: from huawei.com (10.175.112.208) by dggpeml500024.china.huawei.com
- (7.185.36.10) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2375.31; Thu, 22 Sep
- 2022 19:18:19 +0800
-From: Yuan Can <yuancan@huawei.com>
-To: <kishon@ti.com>, <vkoul@kernel.org>, <linux-phy@lists.infradead.org>
-CC: <yuancan@huawei.com>
-Subject: [PATCH] phy: intel: Use dev_err_probe() to simplify code
-Date: Thu, 22 Sep 2022 11:15:51 +0000
-Message-ID: <20220922111551.37188-1-yuancan@huawei.com>
-X-Mailer: git-send-email 2.17.1
+	id 1obKGr-00F8Pp-Ae
+	for linux-phy@lists.infradead.org; Thu, 22 Sep 2022 11:21:35 +0000
+Received: from pps.filterd (m0246630.ppops.net [127.0.0.1])
+	by mx0b-00069f02.pphosted.com (8.17.1.5/8.17.1.5) with ESMTP id 28MAO2tm019801;
+	Thu, 22 Sep 2022 11:21:19 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com; h=date : from : to : cc
+ : subject : message-id : content-type : mime-version; s=corp-2022-7-12;
+ bh=3Fvz8RAsUdbigcTVPPS0xIu7xN8RoT7i217E/aWqaZY=;
+ b=ITwpbIxCAfk0ghlCwtaNxJkyBYKD5btgf889DdfZ2lTJMP0XziGetu9BThO4d5Ds5Ue3
+ l/2ma2cREnEK+OrDYl+VHk43+4Ik2jPcfucSg+VdfxhKxEJaXAlDnsopIhm4Kw1On3hH
+ 7QoF28B8S/PtFRPNvnmcgNGCh58igiyTeON8G1lj3KpuBiHYMmxvJSiRzXhxceeYL9qp
+ YE5N0DHvWUQxxonbXAjDHBIFjeUWgpXP4ozRqh8n69U1VBzYbCQl4OORtie0EGNC2Kch
+ ZCp8jRgYhtGWf83fp8UT02wGlDBHbTYb3h2WntFiyC9B7s7JBljwZuJLAgZMKcwvro5P og== 
+Received: from iadpaimrmta02.imrmtpd1.prodappiadaev1.oraclevcn.com (iadpaimrmta02.appoci.oracle.com [147.154.18.20])
+	by mx0b-00069f02.pphosted.com (PPS) with ESMTPS id 3jn688mnq1-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+	Thu, 22 Sep 2022 11:21:19 +0000
+Received: from pps.filterd (iadpaimrmta02.imrmtpd1.prodappiadaev1.oraclevcn.com [127.0.0.1])
+	by iadpaimrmta02.imrmtpd1.prodappiadaev1.oraclevcn.com (8.17.1.5/8.17.1.5) with ESMTP id 28MBKrNM005638;
+	Thu, 22 Sep 2022 11:21:18 GMT
+Received: from nam04-mw2-obe.outbound.protection.outlook.com (mail-mw2nam04lp2168.outbound.protection.outlook.com [104.47.73.168])
+	by iadpaimrmta02.imrmtpd1.prodappiadaev1.oraclevcn.com (PPS) with ESMTPS id 3jp3cqfxdr-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+	Thu, 22 Sep 2022 11:21:18 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=Pi8i2HM6U24BzCgYfETgThMe3SWAn1fMABotzruPp2xNdPWig75sIuO+BApWpm6Ouh2jql89n9l3v4HG6h31yk8Rr2nVQ6tv4dp1T+D1lwRshXedrKUhOUzbUE9Xt4l4oDUMSZgiu9cn+tuy+L0wlHFPJvZ/J5wT2c2pp9Gk6LoxIKaPyyJTmMpsZIwwoCKF4FkYLZsowvzNPJqgGU7OM2SaiuMFjWbWgUvZ2tIVRMREHTRXgU21U/TY5o4k+n3sjDlODBKg9Jaq2/NHf9VJiNz9y/vrwjLYjtJpOLPgncwqm9AZ3IamjRALZaWJih//Q/ExWTSiT5FYFA5ouCWr0Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=3Fvz8RAsUdbigcTVPPS0xIu7xN8RoT7i217E/aWqaZY=;
+ b=AQmNPt2uUp+FL4pxqA3QjTkKzVmiWiqRkkxB3CNia1/yE69BJ5aCiIFR9JFwxLBcAhBMM/tajrQZ281t9dVb1UgFsEEE6MsRtP6zdkFV1r54RUUhgdk9XJnpjwWXTBNvNcivXHwMJE/OdItEpT+65GSsM06Q782hHquqCF0wToMt+TPNx0vVmvuGFwcMeEM3JzRL4Iz3k4hYgmrCj1bl0RGiF0mk07SzfYs3yotV58B7mP99gXMcrW2GNXOmm0NLE0dPrqWuQStAfgzsmGPRmnekEiFgSqiUo7Qk4ejqTg2QSiaIRRCW5ZJqKh58Wrz8tpbN1WuzEFZ3JgukfbqSUQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=oracle.com; dmarc=pass action=none header.from=oracle.com;
+ dkim=pass header.d=oracle.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=oracle.onmicrosoft.com; s=selector2-oracle-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=3Fvz8RAsUdbigcTVPPS0xIu7xN8RoT7i217E/aWqaZY=;
+ b=vFlbzuxw09q0DaDzpbGP2C8EtdRuxMJW8LGHSavMUBFSCvfMZ9tKOO6BosrNve3a0SlZlEqKL/FH17f5lcyFbsxqxejNViPFuzVQlvYAtYIi1CoojfBD8CWxWvlRbuidQLw7GHWGDTqtk+FW/yYExfELwrIk5uDSz/adQXO1k+s=
+Received: from MWHPR1001MB2365.namprd10.prod.outlook.com
+ (2603:10b6:301:2d::28) by PH0PR10MB4741.namprd10.prod.outlook.com
+ (2603:10b6:510:3d::5) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5654.18; Thu, 22 Sep
+ 2022 11:21:16 +0000
+Received: from MWHPR1001MB2365.namprd10.prod.outlook.com
+ ([fe80::a493:38d9:86ee:73d6]) by MWHPR1001MB2365.namprd10.prod.outlook.com
+ ([fe80::a493:38d9:86ee:73d6%6]) with mapi id 15.20.5654.019; Thu, 22 Sep 2022
+ 11:21:16 +0000
+Date: Thu, 22 Sep 2022 14:21:07 +0300
+From: Dan Carpenter <dan.carpenter@oracle.com>
+To: Kishon Vijay Abraham I <kishon@ti.com>, Roger Quadros <rogerq@kernel.org>,
+        Jyri Sarha <jsarha@ti.com>
+Cc: Vinod Koul <vkoul@kernel.org>, Vignesh Raghavendra <vigneshr@ti.com>,
+        Siddharth Vadapalli <s-vadapalli@ti.com>,
+        Tanmay Patil <t-patil@ti.com>, linux-phy@lists.infradead.org,
+        kernel-janitors@vger.kernel.org
+Subject: [PATCH] phy: ti: phy-j721e-wiz: fix reference leaks in wiz_probe()
+Message-ID: <YyxFI8aW23IC/21U@kili>
+Content-Disposition: inline
+X-Mailer: git-send-email haha only kidding
+X-ClientProxiedBy: ZRAP278CA0002.CHEP278.PROD.OUTLOOK.COM
+ (2603:10a6:910:10::12) To MWHPR1001MB2365.namprd10.prod.outlook.com
+ (2603:10b6:301:2d::28)
 MIME-Version: 1.0
-X-Originating-IP: [10.175.112.208]
-X-ClientProxiedBy: dggems702-chm.china.huawei.com (10.3.19.179) To
- dggpeml500024.china.huawei.com (7.185.36.10)
-X-CFilter-Loop: Reflected
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: MWHPR1001MB2365:EE_|PH0PR10MB4741:EE_
+X-MS-Office365-Filtering-Correlation-Id: 7b019f27-a361-49a8-a89e-08da9c8c9033
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: 	qcIhlm52cjJ7HzWmsJoRXdzNqtY06teQmGs73KrBMBFQcZHCQv3KSdByaUNmMmUoGUDaUbyfAg8oeWfinFrmYERdEaYzyihPThR2swlybImacFv+5s79jg1N738+Ts2CMPO+kK1cUOhdspgKlZx9WGudle2q1xBGDBCM9ZHc821GHYr7GKwyuprcn8wD1hCPZNrAP+jNxwUuZOW7ISP0qDplvhr720Fy09iu2mHf9cjSodecYduLBUwC9Dh7lUirE6fxyNery0IcvmrbrDfq+TzRmMnoB8gmQNOmlOdUrPzenTE/mUn0m/NtjclsVJJUdV2lKbKwbZPtqQ0wlu8VViFfdAClDvhdpdy/heAIUXqNLpveoHwSHKxS5onYpitkNuocnw528JJW39mfFB4LqQgjDHpuxz7w0BB23ZrFG3oXMZpFGdrWcEEQ4gtlEpwbrY9XFpI3Kkn3kS/wWvCtADyaDa2Z/r4cB+8/CSkfx3i3i6KBb2vNy2bx5JuMg3QvzZx+/Nav87TkeBDZOISa4UiCnYx74Eaa8ufgNjoYCl2Gpfs2TCKGRUxpy1zGh5gugdcKqEGC/T6Q5fD+hEyQYlv5+7nRm5xGpILL1IccQqyRJlOPwfskPPTz2HZFaTBrfDKatYKNYsKG2XGM2YNy6CHOelMpPmQUPLpok3txdeViZmJdhne6hwB2Y/PrCCT3oSDowyYGec0aS6mYX/P9mA==
+X-Forefront-Antispam-Report: 	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:MWHPR1001MB2365.namprd10.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230022)(7916004)(136003)(396003)(39860400002)(376002)(346002)(366004)(451199015)(8676002)(186003)(41300700001)(86362001)(6486002)(2906002)(44832011)(38100700002)(478600001)(5660300002)(6666004)(9686003)(4326008)(26005)(66946007)(110136005)(33716001)(316002)(83380400001)(6512007)(6506007)(54906003)(66476007)(8936002)(66556008);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: 	=?us-ascii?Q?XdNXhWi9+4faENDKOI0mrvw2fDrOiKf4mcsPjOKwWQwWYUNiUB3anL3uC0FG?=
+ =?us-ascii?Q?0508ZmVXztFFWdoV4Jsv74pXzaogIiHmGfVSVds3TKk5M4JbOMDMLbvAnJQj?=
+ =?us-ascii?Q?Og5BCAaV4FNz3JM/rYvHjvvmgz7mOUlBcuTLGpIhYJZ308SPwz0Pagy7R/VO?=
+ =?us-ascii?Q?IdhmWAJmrLaJfSS8mNc9nU4G8F4e9dnGptEjCE04FzFZ5liorYz+Of29NeCZ?=
+ =?us-ascii?Q?EBlSX5i4bll5eRqZP8hbfos2/cm9NjCzs7jSG4DBfeHVF0hajIiXvUW07IZp?=
+ =?us-ascii?Q?AhVczx7baRtaBSCBOmtAsjtyaMwt/QVU7BRHZePEcqhV7hO67h9a5GZ+ea3q?=
+ =?us-ascii?Q?eTYckkqhs891lLS5/yFhJ6fqR/WSd75SJ82oelzPz4CACW/2gdGDTyYU0YE1?=
+ =?us-ascii?Q?nRwG4/6+5inG9C94/4LQJ5OdEQq3FHqEsVQ/H2B74aaZHUdzO0XXapah/8uE?=
+ =?us-ascii?Q?a5AwKDNIrLRBjbBvAoZtZJXfpRzmQlIFd/L4Gxl1JK989Ux++rVhMSIpTpg3?=
+ =?us-ascii?Q?YSHtGFn+wMgbA9mApJqoGyArvrXyd2ism5MWpC+qQPNqWGFTJ9hoOJ3nubgm?=
+ =?us-ascii?Q?xZWWfxLzS0SIcKLjH35BAzFgUyBUtkn6mVwEmfdpJhX5uKvohdt+SyGjDQ7B?=
+ =?us-ascii?Q?IuXf4/ARsy+9A15uA8VmYsuOzCJL2h4+FmmSY3/On8FM21tSoY8xzzT15/Xt?=
+ =?us-ascii?Q?bHCk2AsJTax7P61GoiXn0bbAh21DUYpDxUoEFxWDje5MEOyy5ZN/os5eGsDn?=
+ =?us-ascii?Q?IKfN4AlaC4HTO+bRPFVPtRAtA9BrkkwhhxOBiHwFJKKnaiRALBC8YPplQcFR?=
+ =?us-ascii?Q?hkszvQFjSm7Lz86VimdBFdIq300gLv1Fs0B045ngoWQXqi6ra7uBCmcFMXk6?=
+ =?us-ascii?Q?VpocWnNZ3Dhl7g2S4MgzseQOa8vbIm22w/RwuiP/yipxQl2W9CsXDjGxh0iu?=
+ =?us-ascii?Q?fcht3gr+e70W4657ySA+7QbwXh8DbBkhP8BPvdm1sXBr/2YUSvhR1srBP8LS?=
+ =?us-ascii?Q?8z873xQEv4HamK8+P2cm8ZNorRS/M7DuhAzapt+4+U1UUDQGF69A2BCOmLdU?=
+ =?us-ascii?Q?ESeOTxV+37PArQ8MUqZJ9WVQoR4fRTu5R1ANCa2CppDluHYpNxYWhSJ173Gg?=
+ =?us-ascii?Q?N3W/KS8NLwj0G5WSpgU/jBtA29nmoZUX2W4NoOiHK/jUWkxJ+LBSRzIQHvhk?=
+ =?us-ascii?Q?N8xEz7glQjFmI9kJap76Z4p7U4DXBRN1h1Af0kCcOuEUe7Cu45iU0eC+JRn3?=
+ =?us-ascii?Q?uJoCv0XYRY/O2vfbMD+Oa1GIThd9QP7pCaAJZSQxJMfAXKJs2sXhCiaSno4t?=
+ =?us-ascii?Q?LIzZaM8sWRFmQ46w1cLH37MNHakCWG/UAH+wUWAy6ggLX9JZizkif0mC0VjN?=
+ =?us-ascii?Q?rjVEgWWMSUg7qCCsSAYWCPdR5lcJ4g34vKQSE8RvPnBxJlpczuAKEmxGVhIW?=
+ =?us-ascii?Q?T9yxd/M8PWKGYRqgbjc3l/MUl60eETwh57wzvYth/psZRVWoBlWGZOCgTvqa?=
+ =?us-ascii?Q?Uco+vf7Lac9GkHYCe5bJFbANUyLAY/eCA+FXNrA91N/kN2EafA2F4zDfMEWZ?=
+ =?us-ascii?Q?tV8ElVaGrXbvDCcYL4WfblXMeE2vbFUqgY/RVUT8?=
+X-OriginatorOrg: oracle.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 7b019f27-a361-49a8-a89e-08da9c8c9033
+X-MS-Exchange-CrossTenant-AuthSource: MWHPR1001MB2365.namprd10.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 22 Sep 2022 11:21:15.9692
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 4e2c6054-71cb-48f1-bd6c-3a9705aca71b
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: g1930q9L/GA8ybg7i+9rZi12Z8O16E2vWqZ5X6WeixkeEDlAJc3PrTXR5x1umN/Xa+bElnVQBywVtovc7+4liaJEeoTQoUboM7L4OBI8CJ0=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PH0PR10MB4741
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.205,Aquarius:18.0.895,Hydra:6.0.528,FMLib:17.11.122.1
+ definitions=2022-09-22_07,2022-09-22_01,2022-06-22_01
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0 mlxlogscore=999
+ spamscore=0 adultscore=0 mlxscore=0 malwarescore=0 bulkscore=0
+ phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2209130000 definitions=main-2209220075
+X-Proofpoint-GUID: 4hkwZVIZvsL2IE4877iyPXwf3jWuOl7y
+X-Proofpoint-ORIG-GUID: 4hkwZVIZvsL2IE4877iyPXwf3jWuOl7y
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220922_041821_459222_800A844F 
-X-CRM114-Status: UNSURE (   8.76  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220922_042133_833030_14C1DD71 
+X-CRM114-Status: GOOD (  16.18  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -64,82 +162,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-In the probe path, dev_err() can be replaced with dev_err_probe()
-which will check if error code is -EPROBE_DEFER and prints the
-error name. It also sets the defer probe reason which can be
-checked later through debugfs.
+These two error paths need to call of_node_put(child_node) before
+returning.
 
-Signed-off-by: Yuan Can <yuancan@huawei.com>
+Fixes: edd473d4293a ("phy: ti: phy-j721e-wiz: add support for j7200-wiz-10g")
+Fixes: 7ae14cf581f2 ("phy: ti: j721e-wiz: Implement DisplayPort mode to the wiz driver")
+Signed-off-by: Dan Carpenter <dan.carpenter@oracle.com>
 ---
- drivers/phy/intel/phy-intel-lgm-combo.c | 45 +++++++++----------------
- 1 file changed, 15 insertions(+), 30 deletions(-)
+ drivers/phy/ti/phy-j721e-wiz.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/phy/intel/phy-intel-lgm-combo.c b/drivers/phy/intel/phy-intel-lgm-combo.c
-index 157683d10367..6010e246d52e 100644
---- a/drivers/phy/intel/phy-intel-lgm-combo.c
-+++ b/drivers/phy/intel/phy-intel-lgm-combo.c
-@@ -413,44 +413,29 @@ static int intel_cbphy_fwnode_parse(struct intel_combo_phy *cbphy)
- 	u32 val;
+diff --git a/drivers/phy/ti/phy-j721e-wiz.c b/drivers/phy/ti/phy-j721e-wiz.c
+index 20af142580ad..438ccce3d1bf 100644
+--- a/drivers/phy/ti/phy-j721e-wiz.c
++++ b/drivers/phy/ti/phy-j721e-wiz.c
+@@ -1400,7 +1400,8 @@ static int wiz_probe(struct platform_device *pdev)
+ 	if (IS_ERR(wiz->scm_regmap)) {
+ 		if (wiz->type == J7200_WIZ_10G) {
+ 			dev_err(dev, "Couldn't get ti,scm regmap\n");
+-			return -ENODEV;
++			ret = -ENODEV;
++			goto err_addr_to_resource;
+ 		}
  
- 	cbphy->core_clk = devm_clk_get(dev, NULL);
--	if (IS_ERR(cbphy->core_clk)) {
--		ret = PTR_ERR(cbphy->core_clk);
--		if (ret != -EPROBE_DEFER)
--			dev_err(dev, "Get clk failed:%d!\n", ret);
+ 		wiz->scm_regmap = NULL;
+@@ -1450,7 +1451,7 @@ static int wiz_probe(struct platform_device *pdev)
+ 
+ 	ret = wiz_get_lane_phy_types(dev, wiz);
+ 	if (ret)
 -		return ret;
--	}
-+	if (IS_ERR(cbphy->core_clk))
-+		return dev_err_probe(dev, PTR_ERR(cbphy->core_clk),
-+				     "Get clk failed!\n");
++		goto err_addr_to_resource;
  
- 	cbphy->core_rst = devm_reset_control_get_optional(dev, "core");
--	if (IS_ERR(cbphy->core_rst)) {
--		ret = PTR_ERR(cbphy->core_rst);
--		if (ret != -EPROBE_DEFER)
--			dev_err(dev, "Get core reset control err: %d!\n", ret);
--		return ret;
--	}
-+	if (IS_ERR(cbphy->core_rst))
-+		return dev_err_probe(dev, PTR_ERR(cbphy->core_rst),
-+				     "Get core reset control err!\n");
- 
- 	cbphy->phy_rst = devm_reset_control_get_optional(dev, "phy");
--	if (IS_ERR(cbphy->phy_rst)) {
--		ret = PTR_ERR(cbphy->phy_rst);
--		if (ret != -EPROBE_DEFER)
--			dev_err(dev, "Get PHY reset control err: %d!\n", ret);
--		return ret;
--	}
-+	if (IS_ERR(cbphy->phy_rst))
-+		return dev_err_probe(dev, PTR_ERR(cbphy->phy_rst),
-+				     "Get PHY reset control err!\n");
- 
- 	cbphy->iphy[0].app_rst = devm_reset_control_get_optional(dev, "iphy0");
--	if (IS_ERR(cbphy->iphy[0].app_rst)) {
--		ret = PTR_ERR(cbphy->iphy[0].app_rst);
--		if (ret != -EPROBE_DEFER)
--			dev_err(dev, "Get phy0 reset control err: %d!\n", ret);
--		return ret;
--	}
-+	if (IS_ERR(cbphy->iphy[0].app_rst))
-+		return dev_err_probe(dev, PTR_ERR(cbphy->iphy[0].app_rst),
-+				     "Get phy0 reset control err!\n");
- 
- 	cbphy->iphy[1].app_rst = devm_reset_control_get_optional(dev, "iphy1");
--	if (IS_ERR(cbphy->iphy[1].app_rst)) {
--		ret = PTR_ERR(cbphy->iphy[1].app_rst);
--		if (ret != -EPROBE_DEFER)
--			dev_err(dev, "Get phy1 reset control err: %d!\n", ret);
--		return ret;
--	}
-+	if (IS_ERR(cbphy->iphy[1].app_rst))
-+		return dev_err_probe(dev, PTR_ERR(cbphy->iphy[1].app_rst),
-+				     "Get phy1 reset control err!\n");
- 
- 	cbphy->app_base = devm_platform_ioremap_resource_byname(pdev, "app");
- 	if (IS_ERR(cbphy->app_base))
+ 	wiz->dev = dev;
+ 	wiz->regmap = regmap;
 -- 
-2.17.1
+2.35.1
 
 
 -- 
