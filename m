@@ -4,148 +4,94 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9805AC6FA82
-	for <linux-phy@archiver.kernel.org>; Thu, 22 Sep 2022 11:21:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8F720C54EE9
+	for <linux-phy@archiver.kernel.org>; Thu, 22 Sep 2022 12:09:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:Cc:To:
-	From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=DjYzJjGIK5Bq+4+bTzOUPXICmjR0Jo2mXBEXzsBgdm4=; b=QGp+vHaYy0UFeo
-	047z8GfQPz8LN4tAGRZ/Ts/pdlxDTQx19l+IPyztmG7WbwOn2xLhqtvdHqWLpcmiXvo6pa0Eh5Tmj
-	/sUSyJS/HAywQZ6G1Y9hvH7JsaghzkSfTWTIIYGtA8kac1BcDfvL3YlIUoZoRXGY7oLgRlF/8iej+
-	mksi5YEWnHqpeP8aBVRZ0s8PW9LRkyykIwZfCqy+YMdeVuSZz1J5PbG0fbdnkzyMnDu0Ib/DkLTt1
-	dfi2ZmJRBya9ZV3yHWWhM5eyZv711JHHl70PvR73yKgc/8mdb6AI0uSuSaEbFbdoQJnBib+btRQ+b
-	IiHymQ8EOwgo+FrALX1g==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=a8+y0oIFluP0Rx7fTYdhgxmVCltWCFOEjNIWDtiRzts=; b=C6N10sIYBiMfKH
+	766aXZ9r66KX3pcMZg6peELQ9uYqLycSJdbuggg1tybBc7okLBjM4cWOT8/p1+pvj0PV+uHTBUjVX
+	fjcYXVGWOHQBSAhpAu+VVZSDO393IyUX2Iva+tuC+UZi2lRam53uDSShH4r1bMPjhWq8xeJg9d9i9
+	2ui6I0farmNmsZZ17H+aqe5dHQI3c/FDMovhQ1ZsF8m6b32r7NW7qdQls/B8E+q1nlhjAfdhLOoCx
+	RK30PPsQaQDyaun9cZYU9ZgjsWLdU+AVarmQBOpDpBo0udOZyP8PTSEsreINAGUTW1KVRb/Xz+R7F
+	QJDYG1Atu11OjU2i/Luw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1obKGv-00F8Re-2m; Thu, 22 Sep 2022 11:21:37 +0000
-Received: from mx0b-00069f02.pphosted.com ([205.220.177.32])
+	id 1obL1Q-00FKVK-Vn; Thu, 22 Sep 2022 12:09:40 +0000
+Received: from mail-lj1-x230.google.com ([2a00:1450:4864:20::230])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1obKGr-00F8Pp-Ae
-	for linux-phy@lists.infradead.org; Thu, 22 Sep 2022 11:21:35 +0000
-Received: from pps.filterd (m0246630.ppops.net [127.0.0.1])
-	by mx0b-00069f02.pphosted.com (8.17.1.5/8.17.1.5) with ESMTP id 28MAO2tm019801;
-	Thu, 22 Sep 2022 11:21:19 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com; h=date : from : to : cc
- : subject : message-id : content-type : mime-version; s=corp-2022-7-12;
- bh=3Fvz8RAsUdbigcTVPPS0xIu7xN8RoT7i217E/aWqaZY=;
- b=ITwpbIxCAfk0ghlCwtaNxJkyBYKD5btgf889DdfZ2lTJMP0XziGetu9BThO4d5Ds5Ue3
- l/2ma2cREnEK+OrDYl+VHk43+4Ik2jPcfucSg+VdfxhKxEJaXAlDnsopIhm4Kw1On3hH
- 7QoF28B8S/PtFRPNvnmcgNGCh58igiyTeON8G1lj3KpuBiHYMmxvJSiRzXhxceeYL9qp
- YE5N0DHvWUQxxonbXAjDHBIFjeUWgpXP4ozRqh8n69U1VBzYbCQl4OORtie0EGNC2Kch
- ZCp8jRgYhtGWf83fp8UT02wGlDBHbTYb3h2WntFiyC9B7s7JBljwZuJLAgZMKcwvro5P og== 
-Received: from iadpaimrmta02.imrmtpd1.prodappiadaev1.oraclevcn.com (iadpaimrmta02.appoci.oracle.com [147.154.18.20])
-	by mx0b-00069f02.pphosted.com (PPS) with ESMTPS id 3jn688mnq1-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
-	Thu, 22 Sep 2022 11:21:19 +0000
-Received: from pps.filterd (iadpaimrmta02.imrmtpd1.prodappiadaev1.oraclevcn.com [127.0.0.1])
-	by iadpaimrmta02.imrmtpd1.prodappiadaev1.oraclevcn.com (8.17.1.5/8.17.1.5) with ESMTP id 28MBKrNM005638;
-	Thu, 22 Sep 2022 11:21:18 GMT
-Received: from nam04-mw2-obe.outbound.protection.outlook.com (mail-mw2nam04lp2168.outbound.protection.outlook.com [104.47.73.168])
-	by iadpaimrmta02.imrmtpd1.prodappiadaev1.oraclevcn.com (PPS) with ESMTPS id 3jp3cqfxdr-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
-	Thu, 22 Sep 2022 11:21:18 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Pi8i2HM6U24BzCgYfETgThMe3SWAn1fMABotzruPp2xNdPWig75sIuO+BApWpm6Ouh2jql89n9l3v4HG6h31yk8Rr2nVQ6tv4dp1T+D1lwRshXedrKUhOUzbUE9Xt4l4oDUMSZgiu9cn+tuy+L0wlHFPJvZ/J5wT2c2pp9Gk6LoxIKaPyyJTmMpsZIwwoCKF4FkYLZsowvzNPJqgGU7OM2SaiuMFjWbWgUvZ2tIVRMREHTRXgU21U/TY5o4k+n3sjDlODBKg9Jaq2/NHf9VJiNz9y/vrwjLYjtJpOLPgncwqm9AZ3IamjRALZaWJih//Q/ExWTSiT5FYFA5ouCWr0Q==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=3Fvz8RAsUdbigcTVPPS0xIu7xN8RoT7i217E/aWqaZY=;
- b=AQmNPt2uUp+FL4pxqA3QjTkKzVmiWiqRkkxB3CNia1/yE69BJ5aCiIFR9JFwxLBcAhBMM/tajrQZ281t9dVb1UgFsEEE6MsRtP6zdkFV1r54RUUhgdk9XJnpjwWXTBNvNcivXHwMJE/OdItEpT+65GSsM06Q782hHquqCF0wToMt+TPNx0vVmvuGFwcMeEM3JzRL4Iz3k4hYgmrCj1bl0RGiF0mk07SzfYs3yotV58B7mP99gXMcrW2GNXOmm0NLE0dPrqWuQStAfgzsmGPRmnekEiFgSqiUo7Qk4ejqTg2QSiaIRRCW5ZJqKh58Wrz8tpbN1WuzEFZ3JgukfbqSUQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=oracle.com; dmarc=pass action=none header.from=oracle.com;
- dkim=pass header.d=oracle.com; arc=none
+	id 1obL1O-00FKUI-22
+	for linux-phy@lists.infradead.org; Thu, 22 Sep 2022 12:09:39 +0000
+Received: by mail-lj1-x230.google.com with SMTP id l12so10713308ljg.9
+        for <linux-phy@lists.infradead.org>; Thu, 22 Sep 2022 05:09:35 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=oracle.onmicrosoft.com; s=selector2-oracle-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=3Fvz8RAsUdbigcTVPPS0xIu7xN8RoT7i217E/aWqaZY=;
- b=vFlbzuxw09q0DaDzpbGP2C8EtdRuxMJW8LGHSavMUBFSCvfMZ9tKOO6BosrNve3a0SlZlEqKL/FH17f5lcyFbsxqxejNViPFuzVQlvYAtYIi1CoojfBD8CWxWvlRbuidQLw7GHWGDTqtk+FW/yYExfELwrIk5uDSz/adQXO1k+s=
-Received: from MWHPR1001MB2365.namprd10.prod.outlook.com
- (2603:10b6:301:2d::28) by PH0PR10MB4741.namprd10.prod.outlook.com
- (2603:10b6:510:3d::5) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5654.18; Thu, 22 Sep
- 2022 11:21:16 +0000
-Received: from MWHPR1001MB2365.namprd10.prod.outlook.com
- ([fe80::a493:38d9:86ee:73d6]) by MWHPR1001MB2365.namprd10.prod.outlook.com
- ([fe80::a493:38d9:86ee:73d6%6]) with mapi id 15.20.5654.019; Thu, 22 Sep 2022
- 11:21:16 +0000
-Date: Thu, 22 Sep 2022 14:21:07 +0300
-From: Dan Carpenter <dan.carpenter@oracle.com>
-To: Kishon Vijay Abraham I <kishon@ti.com>, Roger Quadros <rogerq@kernel.org>,
-        Jyri Sarha <jsarha@ti.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Vignesh Raghavendra <vigneshr@ti.com>,
-        Siddharth Vadapalli <s-vadapalli@ti.com>,
-        Tanmay Patil <t-patil@ti.com>, linux-phy@lists.infradead.org,
-        kernel-janitors@vger.kernel.org
-Subject: [PATCH] phy: ti: phy-j721e-wiz: fix reference leaks in wiz_probe()
-Message-ID: <YyxFI8aW23IC/21U@kili>
-Content-Disposition: inline
-X-Mailer: git-send-email haha only kidding
-X-ClientProxiedBy: ZRAP278CA0002.CHEP278.PROD.OUTLOOK.COM
- (2603:10a6:910:10::12) To MWHPR1001MB2365.namprd10.prod.outlook.com
- (2603:10b6:301:2d::28)
+        d=linaro.org; s=google;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date;
+        bh=CVENwWVGXac1UFUJqQbFq5yXNrjbR21/6YF9T4kc5Wc=;
+        b=vPq+7BDrfqEBq8z8P89npQ4zMs5pP4bDn5VJTLabSIN4rKGFfdArIOwcugCxNPgEW7
+         634140eokdLaJsJ9MSgoLNtcYnSQJ5wN6lSzr22PtpF28T6GNTokKDwATj3xaXrwI7DT
+         Ex9AAaIE2TQIpPBHEjknXd6aZU7V+ElIlno5mm1WgwzHqC+65YLH+y9D1XlpLv5UhEkB
+         2LmRTqRr2ZF80XkW4HdcYqDem/l6eS1SvrRHWg1MSuol1hUYvbSPh2bmxHrhRkvC7hV5
+         cADbRjH7vIWUIJAeS6tDBq/8Sj29MWYm9vjZDVwmj21ZyQNRTxKFBK5kfp9anJeKRaxU
+         bO/w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date;
+        bh=CVENwWVGXac1UFUJqQbFq5yXNrjbR21/6YF9T4kc5Wc=;
+        b=5yUJFgdOaEXh5SOIIl33rdfpKsMZfYQtPMfEBJ5GJsRNAVzB55domxTcP5Fyd6neNw
+         iWFsnf3BG1nFbeqpSxsVeYA4I7a2iKjtYOQSE9Y3DE8nun+aGAi3VT0Au9reMKOQZB1+
+         tFq6GxYhTIZVN+Wt0jnvTk/qWMg6+dgKfkirMtkwdJjdSpPCgwS2aTM3kAlaPUQjsGff
+         VGhhC6UeKVZig61db4hAJ/XYg9sHeuqTxFO0s8x5gAgEZxN6D57DA6MVz8RK8QtqEKA7
+         bRLJlVI2wcpr/9jPPQTgsCXv/GVYO83VD5A5JVBkqgThDt7tVJavXI1y433c9GrLor0L
+         tcwA==
+X-Gm-Message-State: ACrzQf3Uiam8cH7a5npn4nM75tobQHDy/d1KPAHgAxOLDkGhc2O2XP+o
+	3n/5xIpTOZ1VfKpqow4kyEHOOQ==
+X-Google-Smtp-Source: AMsMyM57MJocOschZ+RfLFJ7K5wcdH1+W5eO/p/+h7FJNXUmunysPu2cqAPrfAlbHq+cLi/zhZhpGw==
+X-Received: by 2002:a2e:3809:0:b0:26b:e124:4d43 with SMTP id f9-20020a2e3809000000b0026be1244d43mr980317lja.398.1663848574194;
+        Thu, 22 Sep 2022 05:09:34 -0700 (PDT)
+Received: from [192.168.0.21] (78-11-189-27.static.ip.netia.com.pl. [78.11.189.27])
+        by smtp.gmail.com with ESMTPSA id b14-20020a056512070e00b004949f7cbb6esm914128lfs.79.2022.09.22.05.09.32
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 22 Sep 2022 05:09:33 -0700 (PDT)
+Message-ID: <54cb8024-b600-9c1d-a8b6-d56b534de5cf@linaro.org>
+Date: Thu, 22 Sep 2022 14:09:32 +0200
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: MWHPR1001MB2365:EE_|PH0PR10MB4741:EE_
-X-MS-Office365-Filtering-Correlation-Id: 7b019f27-a361-49a8-a89e-08da9c8c9033
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 	qcIhlm52cjJ7HzWmsJoRXdzNqtY06teQmGs73KrBMBFQcZHCQv3KSdByaUNmMmUoGUDaUbyfAg8oeWfinFrmYERdEaYzyihPThR2swlybImacFv+5s79jg1N738+Ts2CMPO+kK1cUOhdspgKlZx9WGudle2q1xBGDBCM9ZHc821GHYr7GKwyuprcn8wD1hCPZNrAP+jNxwUuZOW7ISP0qDplvhr720Fy09iu2mHf9cjSodecYduLBUwC9Dh7lUirE6fxyNery0IcvmrbrDfq+TzRmMnoB8gmQNOmlOdUrPzenTE/mUn0m/NtjclsVJJUdV2lKbKwbZPtqQ0wlu8VViFfdAClDvhdpdy/heAIUXqNLpveoHwSHKxS5onYpitkNuocnw528JJW39mfFB4LqQgjDHpuxz7w0BB23ZrFG3oXMZpFGdrWcEEQ4gtlEpwbrY9XFpI3Kkn3kS/wWvCtADyaDa2Z/r4cB+8/CSkfx3i3i6KBb2vNy2bx5JuMg3QvzZx+/Nav87TkeBDZOISa4UiCnYx74Eaa8ufgNjoYCl2Gpfs2TCKGRUxpy1zGh5gugdcKqEGC/T6Q5fD+hEyQYlv5+7nRm5xGpILL1IccQqyRJlOPwfskPPTz2HZFaTBrfDKatYKNYsKG2XGM2YNy6CHOelMpPmQUPLpok3txdeViZmJdhne6hwB2Y/PrCCT3oSDowyYGec0aS6mYX/P9mA==
-X-Forefront-Antispam-Report: 	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:MWHPR1001MB2365.namprd10.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230022)(7916004)(136003)(396003)(39860400002)(376002)(346002)(366004)(451199015)(8676002)(186003)(41300700001)(86362001)(6486002)(2906002)(44832011)(38100700002)(478600001)(5660300002)(6666004)(9686003)(4326008)(26005)(66946007)(110136005)(33716001)(316002)(83380400001)(6512007)(6506007)(54906003)(66476007)(8936002)(66556008);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: 	=?us-ascii?Q?XdNXhWi9+4faENDKOI0mrvw2fDrOiKf4mcsPjOKwWQwWYUNiUB3anL3uC0FG?=
- =?us-ascii?Q?0508ZmVXztFFWdoV4Jsv74pXzaogIiHmGfVSVds3TKk5M4JbOMDMLbvAnJQj?=
- =?us-ascii?Q?Og5BCAaV4FNz3JM/rYvHjvvmgz7mOUlBcuTLGpIhYJZ308SPwz0Pagy7R/VO?=
- =?us-ascii?Q?IdhmWAJmrLaJfSS8mNc9nU4G8F4e9dnGptEjCE04FzFZ5liorYz+Of29NeCZ?=
- =?us-ascii?Q?EBlSX5i4bll5eRqZP8hbfos2/cm9NjCzs7jSG4DBfeHVF0hajIiXvUW07IZp?=
- =?us-ascii?Q?AhVczx7baRtaBSCBOmtAsjtyaMwt/QVU7BRHZePEcqhV7hO67h9a5GZ+ea3q?=
- =?us-ascii?Q?eTYckkqhs891lLS5/yFhJ6fqR/WSd75SJ82oelzPz4CACW/2gdGDTyYU0YE1?=
- =?us-ascii?Q?nRwG4/6+5inG9C94/4LQJ5OdEQq3FHqEsVQ/H2B74aaZHUdzO0XXapah/8uE?=
- =?us-ascii?Q?a5AwKDNIrLRBjbBvAoZtZJXfpRzmQlIFd/L4Gxl1JK989Ux++rVhMSIpTpg3?=
- =?us-ascii?Q?YSHtGFn+wMgbA9mApJqoGyArvrXyd2ism5MWpC+qQPNqWGFTJ9hoOJ3nubgm?=
- =?us-ascii?Q?xZWWfxLzS0SIcKLjH35BAzFgUyBUtkn6mVwEmfdpJhX5uKvohdt+SyGjDQ7B?=
- =?us-ascii?Q?IuXf4/ARsy+9A15uA8VmYsuOzCJL2h4+FmmSY3/On8FM21tSoY8xzzT15/Xt?=
- =?us-ascii?Q?bHCk2AsJTax7P61GoiXn0bbAh21DUYpDxUoEFxWDje5MEOyy5ZN/os5eGsDn?=
- =?us-ascii?Q?IKfN4AlaC4HTO+bRPFVPtRAtA9BrkkwhhxOBiHwFJKKnaiRALBC8YPplQcFR?=
- =?us-ascii?Q?hkszvQFjSm7Lz86VimdBFdIq300gLv1Fs0B045ngoWQXqi6ra7uBCmcFMXk6?=
- =?us-ascii?Q?VpocWnNZ3Dhl7g2S4MgzseQOa8vbIm22w/RwuiP/yipxQl2W9CsXDjGxh0iu?=
- =?us-ascii?Q?fcht3gr+e70W4657ySA+7QbwXh8DbBkhP8BPvdm1sXBr/2YUSvhR1srBP8LS?=
- =?us-ascii?Q?8z873xQEv4HamK8+P2cm8ZNorRS/M7DuhAzapt+4+U1UUDQGF69A2BCOmLdU?=
- =?us-ascii?Q?ESeOTxV+37PArQ8MUqZJ9WVQoR4fRTu5R1ANCa2CppDluHYpNxYWhSJ173Gg?=
- =?us-ascii?Q?N3W/KS8NLwj0G5WSpgU/jBtA29nmoZUX2W4NoOiHK/jUWkxJ+LBSRzIQHvhk?=
- =?us-ascii?Q?N8xEz7glQjFmI9kJap76Z4p7U4DXBRN1h1Af0kCcOuEUe7Cu45iU0eC+JRn3?=
- =?us-ascii?Q?uJoCv0XYRY/O2vfbMD+Oa1GIThd9QP7pCaAJZSQxJMfAXKJs2sXhCiaSno4t?=
- =?us-ascii?Q?LIzZaM8sWRFmQ46w1cLH37MNHakCWG/UAH+wUWAy6ggLX9JZizkif0mC0VjN?=
- =?us-ascii?Q?rjVEgWWMSUg7qCCsSAYWCPdR5lcJ4g34vKQSE8RvPnBxJlpczuAKEmxGVhIW?=
- =?us-ascii?Q?T9yxd/M8PWKGYRqgbjc3l/MUl60eETwh57wzvYth/psZRVWoBlWGZOCgTvqa?=
- =?us-ascii?Q?Uco+vf7Lac9GkHYCe5bJFbANUyLAY/eCA+FXNrA91N/kN2EafA2F4zDfMEWZ?=
- =?us-ascii?Q?tV8ElVaGrXbvDCcYL4WfblXMeE2vbFUqgY/RVUT8?=
-X-OriginatorOrg: oracle.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 7b019f27-a361-49a8-a89e-08da9c8c9033
-X-MS-Exchange-CrossTenant-AuthSource: MWHPR1001MB2365.namprd10.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 22 Sep 2022 11:21:15.9692
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 4e2c6054-71cb-48f1-bd6c-3a9705aca71b
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: g1930q9L/GA8ybg7i+9rZi12Z8O16E2vWqZ5X6WeixkeEDlAJc3PrTXR5x1umN/Xa+bElnVQBywVtovc7+4liaJEeoTQoUboM7L4OBI8CJ0=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PH0PR10MB4741
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.205,Aquarius:18.0.895,Hydra:6.0.528,FMLib:17.11.122.1
- definitions=2022-09-22_07,2022-09-22_01,2022-06-22_01
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0 mlxlogscore=999
- spamscore=0 adultscore=0 mlxscore=0 malwarescore=0 bulkscore=0
- phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2209130000 definitions=main-2209220075
-X-Proofpoint-GUID: 4hkwZVIZvsL2IE4877iyPXwf3jWuOl7y
-X-Proofpoint-ORIG-GUID: 4hkwZVIZvsL2IE4877iyPXwf3jWuOl7y
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.2.2
+Subject: Re: [PATCH v2 3/4] media: dt-bindings: add bindings for Toshiba
+ TC358746
+Content-Language: en-US
+To: Marco Felsch <m.felsch@pengutronix.de>
+Cc: Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ devicetree@vger.kernel.org, jacopo@jmondi.org,
+ Sakari Ailus <sakari.ailus@linux.intel.com>,
+ kieran.bingham+renesas@ideasonboard.com, linux-kernel@vger.kernel.org,
+ kishon@ti.com, hverkuil@xs4all.nl, vkoul@kernel.org, robh+dt@kernel.org,
+ krzysztof.kozlowski+dt@linaro.org, linux-phy@lists.infradead.org,
+ mchehab@kernel.org, kernel@pengutronix.de, linux-media@vger.kernel.org
+References: <20220916134535.128131-4-m.felsch@pengutronix.de>
+ <YyZTCsflWtUbo2ld@pendragon.ideasonboard.com>
+ <20220919100844.bb7tzbql2vpk76xz@pengutronix.de>
+ <YyhDO4ohv47uIij2@paasikivi.fi.intel.com>
+ <YyhKoDxFoobY9vBd@pendragon.ideasonboard.com>
+ <20220920152632.mjpgpmelvx4ya4k7@pengutronix.de>
+ <Yyn5MqqKYH7VpFhw@pendragon.ideasonboard.com>
+ <74b6b670-747a-f326-44ea-7588c3989b0e@linaro.org>
+ <20220921083513.drt4rggqj7tpaygr@pengutronix.de>
+ <8e54e03e-105a-cf3e-242f-796bef77bfe1@linaro.org>
+ <20220922110142.qnx6w3qbb6h6grvh@pengutronix.de>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <20220922110142.qnx6w3qbb6h6grvh@pengutronix.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220922_042133_833030_14C1DD71 
-X-CRM114-Status: GOOD (  16.18  )
+X-CRM114-CacheID: sfid-20220922_050938_141648_E839304B 
+X-CRM114-Status: GOOD (  32.23  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -162,41 +108,96 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-These two error paths need to call of_node_put(child_node) before
-returning.
+On 22/09/2022 13:01, Marco Felsch wrote:
+> On 22-09-21, Krzysztof Kozlowski wrote:
+>> On 21/09/2022 10:35, Marco Felsch wrote:
+>>> On 22-09-21, Krzysztof Kozlowski wrote:
+>>>> On 20/09/2022 19:32, Laurent Pinchart wrote:
+>>>>>>>
+>>>>>>> Explicit bus types in DT indeed makes it easier for drivers, so if a
+>>>>>>> device can support multiple bus types (even if not implemented yet in
+>>>>>>> the corresponding drivers), the property should be there.
+>>>>>>
+>>>>>> Okay, I will make it required.
+>>>>>>
+>>>>>>>> Why do you have hsync-active and vsync-active if both are always zero? Can
+>>>>>>>> the hardware not support other configuration?
+>>>>>>
+>>>>>> Sure the device supports toggling the logic but it is not implemented.
+>>>>>> So the bindings needs to enforce it to 0 right now. As soon as it is
+>>>>>> implemented & tested, we can say that both is supported :)
+>>>>>
+>>>>> Bindings are not supposed to be limited by the existing driver
+>>>>> implementation, so you can already allow both polarities, and just
+>>>>> reject the unsupported options in the driver at probe time. Future
+>>>>> updates to the driver won't require a binding change.
+>>>>>
+>>>>
+>>>> +1
+>>>
+>>> I don't wanna do that because this let the binding user assume that
+>>> this mode is already supported. 
+>>
+>> What do you mean by "not supported"? By which system? By which firmware
+>> element? Bindings are used by several operating systems and several
+>> projects.
+> 
+> And they can use it and of course extend it, since the propery is
+> available.
+> 
+>> That's not the argument.
+>>
+>> Bindings should be complete. Lack of knowledge and datasheets is a good
+>> exception from this rule. Looking at Linux driver is not good exception.
+> 
+> So if I get you right, you are saying that the bindings should always be
+> complete and describe all ever possible combinations?
 
-Fixes: edd473d4293a ("phy: ti: phy-j721e-wiz: add support for j7200-wiz-10g")
-Fixes: 7ae14cf581f2 ("phy: ti: j721e-wiz: Implement DisplayPort mode to the wiz driver")
-Signed-off-by: Dan Carpenter <dan.carpenter@oracle.com>
----
- drivers/phy/ti/phy-j721e-wiz.c | 5 +++--
- 1 file changed, 3 insertions(+), 2 deletions(-)
+Not necessarily all combinations, but in general be complete as in
+describe entire device. Pretty often we skip describing full device
+because our job does not include it and we need to move on. Fine. But
+the argument is not really one Linux implementation.
 
-diff --git a/drivers/phy/ti/phy-j721e-wiz.c b/drivers/phy/ti/phy-j721e-wiz.c
-index 20af142580ad..438ccce3d1bf 100644
---- a/drivers/phy/ti/phy-j721e-wiz.c
-+++ b/drivers/phy/ti/phy-j721e-wiz.c
-@@ -1400,7 +1400,8 @@ static int wiz_probe(struct platform_device *pdev)
- 	if (IS_ERR(wiz->scm_regmap)) {
- 		if (wiz->type == J7200_WIZ_10G) {
- 			dev_err(dev, "Couldn't get ti,scm regmap\n");
--			return -ENODEV;
-+			ret = -ENODEV;
-+			goto err_addr_to_resource;
- 		}
- 
- 		wiz->scm_regmap = NULL;
-@@ -1450,7 +1451,7 @@ static int wiz_probe(struct platform_device *pdev)
- 
- 	ret = wiz_get_lane_phy_types(dev, wiz);
- 	if (ret)
--		return ret;
-+		goto err_addr_to_resource;
- 
- 	wiz->dev = dev;
- 	wiz->regmap = regmap;
--- 
-2.35.1
+Especially that limiting binding to some subset might make it later
+non-extendable. Not possible to grow, because author did not think about
+these other features.
+
+> I am on your side
+> that the properties should be there from day one. But listing all
+> possible values regardless of the support.. I don't know and yes, I know
+> that other projects using these bindings as well. But if those other
+> projects support more than now, they can extend it and send patches.
+> Since this is a new binding, the only user is Linux and listing all
+> possible values can lead into erroneous assumption. 
+
+So let me rephrase the case - there is no such assumption that one,
+particular driver supports entire set of bindings. If anyone makes it,
+without actually checking, then it is his/hers mistake.
+
+> No system-integrator
+> wants to check the driver why a listed property is not supported instead
+> most the time it is the other way. If it is listed, than it should be
+> supported.
+
+Bindings are also not the tool for system integrator to figure out these
+things.
+
+> 
+> Anyway I don't wanna make a big deal out of it. I will add all possible
+> values to the binding if that is what you want :)
+> 
+> Regards,
+>   Marco
+> 
+>>> Adapting a binding is just 1 commit and
+>>> since the property is already existing, there is no breaking change.
+>> Best regards,
+>> Krzysztof
+>>
+>>
+
+Best regards,
+Krzysztof
 
 
 -- 
