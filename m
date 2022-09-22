@@ -4,94 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8F720C54EE9
-	for <linux-phy@archiver.kernel.org>; Thu, 22 Sep 2022 12:09:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 61867C6FA82
+	for <linux-phy@archiver.kernel.org>; Thu, 22 Sep 2022 12:13:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=a8+y0oIFluP0Rx7fTYdhgxmVCltWCFOEjNIWDtiRzts=; b=C6N10sIYBiMfKH
-	766aXZ9r66KX3pcMZg6peELQ9uYqLycSJdbuggg1tybBc7okLBjM4cWOT8/p1+pvj0PV+uHTBUjVX
-	fjcYXVGWOHQBSAhpAu+VVZSDO393IyUX2Iva+tuC+UZi2lRam53uDSShH4r1bMPjhWq8xeJg9d9i9
-	2ui6I0farmNmsZZ17H+aqe5dHQI3c/FDMovhQ1ZsF8m6b32r7NW7qdQls/B8E+q1nlhjAfdhLOoCx
-	RK30PPsQaQDyaun9cZYU9ZgjsWLdU+AVarmQBOpDpBo0udOZyP8PTSEsreINAGUTW1KVRb/Xz+R7F
-	QJDYG1Atu11OjU2i/Luw==;
+	List-Owner; bh=12fPgRyE+jUxcC+adglUa8+EHqiwml6PEnnn/FU48Mk=; b=PcUs7ub7D4dRLt
+	cisakGQlGMNdOm9fd90ew0owuF/zqTvtH2Opnu87S7fAmpAEdbxw6+v42gC/ifidA049iJdXTyqNi
+	DxUqXgVb0pf+F3jDWYSkvAZxShlIMBYEEjKdf4rlPsQaL6Z/AzPi6KKCBVAipHng0a+L4FaW+jgin
+	NjGfZLLPIDRamcWT7Atty/5uPLpfCeXdXk5yGa4GFgi0WPDZvMCbClR7M9dFAvu68Ci1cfz3zqr2b
+	gaaVd5TDa5dY0Hp4VjlLCBmKimFTEmYnN+4eYqrEEekq+QyMNUha4ty18VNa6T86xwcCYFNO+nu7J
+	hNc3qFC+bP02+xTbszcw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1obL1Q-00FKVK-Vn; Thu, 22 Sep 2022 12:09:40 +0000
-Received: from mail-lj1-x230.google.com ([2a00:1450:4864:20::230])
+	id 1obL5X-00FLHe-Py; Thu, 22 Sep 2022 12:13:55 +0000
+Received: from vps0.lunn.ch ([185.16.172.187])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1obL1O-00FKUI-22
-	for linux-phy@lists.infradead.org; Thu, 22 Sep 2022 12:09:39 +0000
-Received: by mail-lj1-x230.google.com with SMTP id l12so10713308ljg.9
-        for <linux-phy@lists.infradead.org>; Thu, 22 Sep 2022 05:09:35 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date;
-        bh=CVENwWVGXac1UFUJqQbFq5yXNrjbR21/6YF9T4kc5Wc=;
-        b=vPq+7BDrfqEBq8z8P89npQ4zMs5pP4bDn5VJTLabSIN4rKGFfdArIOwcugCxNPgEW7
-         634140eokdLaJsJ9MSgoLNtcYnSQJ5wN6lSzr22PtpF28T6GNTokKDwATj3xaXrwI7DT
-         Ex9AAaIE2TQIpPBHEjknXd6aZU7V+ElIlno5mm1WgwzHqC+65YLH+y9D1XlpLv5UhEkB
-         2LmRTqRr2ZF80XkW4HdcYqDem/l6eS1SvrRHWg1MSuol1hUYvbSPh2bmxHrhRkvC7hV5
-         cADbRjH7vIWUIJAeS6tDBq/8Sj29MWYm9vjZDVwmj21ZyQNRTxKFBK5kfp9anJeKRaxU
-         bO/w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date;
-        bh=CVENwWVGXac1UFUJqQbFq5yXNrjbR21/6YF9T4kc5Wc=;
-        b=5yUJFgdOaEXh5SOIIl33rdfpKsMZfYQtPMfEBJ5GJsRNAVzB55domxTcP5Fyd6neNw
-         iWFsnf3BG1nFbeqpSxsVeYA4I7a2iKjtYOQSE9Y3DE8nun+aGAi3VT0Au9reMKOQZB1+
-         tFq6GxYhTIZVN+Wt0jnvTk/qWMg6+dgKfkirMtkwdJjdSpPCgwS2aTM3kAlaPUQjsGff
-         VGhhC6UeKVZig61db4hAJ/XYg9sHeuqTxFO0s8x5gAgEZxN6D57DA6MVz8RK8QtqEKA7
-         bRLJlVI2wcpr/9jPPQTgsCXv/GVYO83VD5A5JVBkqgThDt7tVJavXI1y433c9GrLor0L
-         tcwA==
-X-Gm-Message-State: ACrzQf3Uiam8cH7a5npn4nM75tobQHDy/d1KPAHgAxOLDkGhc2O2XP+o
-	3n/5xIpTOZ1VfKpqow4kyEHOOQ==
-X-Google-Smtp-Source: AMsMyM57MJocOschZ+RfLFJ7K5wcdH1+W5eO/p/+h7FJNXUmunysPu2cqAPrfAlbHq+cLi/zhZhpGw==
-X-Received: by 2002:a2e:3809:0:b0:26b:e124:4d43 with SMTP id f9-20020a2e3809000000b0026be1244d43mr980317lja.398.1663848574194;
-        Thu, 22 Sep 2022 05:09:34 -0700 (PDT)
-Received: from [192.168.0.21] (78-11-189-27.static.ip.netia.com.pl. [78.11.189.27])
-        by smtp.gmail.com with ESMTPSA id b14-20020a056512070e00b004949f7cbb6esm914128lfs.79.2022.09.22.05.09.32
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 22 Sep 2022 05:09:33 -0700 (PDT)
-Message-ID: <54cb8024-b600-9c1d-a8b6-d56b534de5cf@linaro.org>
-Date: Thu, 22 Sep 2022 14:09:32 +0200
+	id 1obL5V-00FLFY-EM
+	for linux-phy@lists.infradead.org; Thu, 22 Sep 2022 12:13:54 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
+	s=20171124; h=In-Reply-To:Content-Disposition:Content-Type:MIME-Version:
+	References:Message-ID:Subject:Cc:To:From:Date:From:Sender:Reply-To:Subject:
+	Date:Message-ID:To:Cc:MIME-Version:Content-Type:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Content-Disposition:In-Reply-To:References;
+	bh=aTzVrJjI9ejwxcCxS5DZxSJ5B/KvAH9Rb1NyhHF4XHw=; b=Qo1OQZ+qaf5FIk7J9JlqKwMbdD
+	kIhHM6T+9AZS4bt691O5YIZmH73WgmvPKnK9UWC5qmpqXsfyaG3ORCx0ylETx/YG1D5qltrd1cbvM
+	UKeZ3I9Kd5qFBZleBrxV7iEusMoWrnFxBnx7u1ChBCzG4R1221GG9qwW25XjfXflTlOs=;
+Received: from andrew by vps0.lunn.ch with local (Exim 4.94.2)
+	(envelope-from <andrew@lunn.ch>)
+	id 1obL5E-00HWsr-7a; Thu, 22 Sep 2022 14:13:36 +0200
+Date: Thu, 22 Sep 2022 14:13:36 +0200
+From: Andrew Lunn <andrew@lunn.ch>
+To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Cc: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>, kishon@ti.com,
+	vkoul@kernel.org, davem@davemloft.net, edumazet@google.com,
+	kuba@kernel.org, pabeni@redhat.com, richardcochran@gmail.com,
+	robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
+	geert+renesas@glider.be, linux-phy@lists.infradead.org,
+	netdev@vger.kernel.org, devicetree@vger.kernel.org,
+	linux-renesas-soc@vger.kernel.org
+Subject: Re: [PATCH v2 4/8] dt-bindings: net: renesas: Document Renesas
+ Ethernet Switch
+Message-ID: <YyxRcMdJ/AG0QtGB@lunn.ch>
+References: <20220921084745.3355107-1-yoshihiro.shimoda.uh@renesas.com>
+ <20220921084745.3355107-5-yoshihiro.shimoda.uh@renesas.com>
+ <1aebd827-3ff4-8d13-ca85-acf4d3a82592@linaro.org>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.2.2
-Subject: Re: [PATCH v2 3/4] media: dt-bindings: add bindings for Toshiba
- TC358746
-Content-Language: en-US
-To: Marco Felsch <m.felsch@pengutronix.de>
-Cc: Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- devicetree@vger.kernel.org, jacopo@jmondi.org,
- Sakari Ailus <sakari.ailus@linux.intel.com>,
- kieran.bingham+renesas@ideasonboard.com, linux-kernel@vger.kernel.org,
- kishon@ti.com, hverkuil@xs4all.nl, vkoul@kernel.org, robh+dt@kernel.org,
- krzysztof.kozlowski+dt@linaro.org, linux-phy@lists.infradead.org,
- mchehab@kernel.org, kernel@pengutronix.de, linux-media@vger.kernel.org
-References: <20220916134535.128131-4-m.felsch@pengutronix.de>
- <YyZTCsflWtUbo2ld@pendragon.ideasonboard.com>
- <20220919100844.bb7tzbql2vpk76xz@pengutronix.de>
- <YyhDO4ohv47uIij2@paasikivi.fi.intel.com>
- <YyhKoDxFoobY9vBd@pendragon.ideasonboard.com>
- <20220920152632.mjpgpmelvx4ya4k7@pengutronix.de>
- <Yyn5MqqKYH7VpFhw@pendragon.ideasonboard.com>
- <74b6b670-747a-f326-44ea-7588c3989b0e@linaro.org>
- <20220921083513.drt4rggqj7tpaygr@pengutronix.de>
- <8e54e03e-105a-cf3e-242f-796bef77bfe1@linaro.org>
- <20220922110142.qnx6w3qbb6h6grvh@pengutronix.de>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20220922110142.qnx6w3qbb6h6grvh@pengutronix.de>
+Content-Disposition: inline
+In-Reply-To: <1aebd827-3ff4-8d13-ca85-acf4d3a82592@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220922_050938_141648_E839304B 
-X-CRM114-Status: GOOD (  32.23  )
+X-CRM114-CacheID: sfid-20220922_051353_495850_F6A4C586 
+X-CRM114-Status: GOOD (  11.43  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -108,97 +74,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 22/09/2022 13:01, Marco Felsch wrote:
-> On 22-09-21, Krzysztof Kozlowski wrote:
->> On 21/09/2022 10:35, Marco Felsch wrote:
->>> On 22-09-21, Krzysztof Kozlowski wrote:
->>>> On 20/09/2022 19:32, Laurent Pinchart wrote:
->>>>>>>
->>>>>>> Explicit bus types in DT indeed makes it easier for drivers, so if a
->>>>>>> device can support multiple bus types (even if not implemented yet in
->>>>>>> the corresponding drivers), the property should be there.
->>>>>>
->>>>>> Okay, I will make it required.
->>>>>>
->>>>>>>> Why do you have hsync-active and vsync-active if both are always zero? Can
->>>>>>>> the hardware not support other configuration?
->>>>>>
->>>>>> Sure the device supports toggling the logic but it is not implemented.
->>>>>> So the bindings needs to enforce it to 0 right now. As soon as it is
->>>>>> implemented & tested, we can say that both is supported :)
->>>>>
->>>>> Bindings are not supposed to be limited by the existing driver
->>>>> implementation, so you can already allow both polarities, and just
->>>>> reject the unsupported options in the driver at probe time. Future
->>>>> updates to the driver won't require a binding change.
->>>>>
->>>>
->>>> +1
->>>
->>> I don't wanna do that because this let the binding user assume that
->>> this mode is already supported. 
->>
->> What do you mean by "not supported"? By which system? By which firmware
->> element? Bindings are used by several operating systems and several
->> projects.
+On Thu, Sep 22, 2022 at 09:37:28AM +0200, Krzysztof Kozlowski wrote:
+> On 21/09/2022 10:47, Yoshihiro Shimoda wrote:
+> > Document Renesas Etherent Switch for R-Car S4-8 (r8a779f0).
+> > 
+> > Signed-off-by: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
+> > ---
+> >  .../bindings/net/renesas,etherswitch.yaml     | 286 ++++++++++++++++++
+> >  1 file changed, 286 insertions(+)
+> >  create mode 100644 Documentation/devicetree/bindings/net/renesas,etherswitch.yaml
+> > 
+> > diff --git a/Documentation/devicetree/bindings/net/renesas,etherswitch.yaml b/Documentation/devicetree/bindings/net/renesas,etherswitch.yaml
+> > new file mode 100644
+> > index 000000000000..988d14f5c54e
+> > --- /dev/null
+> > +++ b/Documentation/devicetree/bindings/net/renesas,etherswitch.yaml
 > 
-> And they can use it and of course extend it, since the propery is
-> available.
-> 
->> That's not the argument.
->>
->> Bindings should be complete. Lack of knowledge and datasheets is a good
->> exception from this rule. Looking at Linux driver is not good exception.
-> 
-> So if I get you right, you are saying that the bindings should always be
-> complete and describe all ever possible combinations?
+> Isn't dsa directory for this?
 
-Not necessarily all combinations, but in general be complete as in
-describe entire device. Pretty often we skip describing full device
-because our job does not include it and we need to move on. Fine. But
-the argument is not really one Linux implementation.
+This is not a DSA driver, but a pure switchdev driver. It is similar
+to prestera, lan966x, sparx5, which put there binding in net.
 
-Especially that limiting binding to some subset might make it later
-non-extendable. Not possible to grow, because author did not think about
-these other features.
+   Andrew
 
-> I am on your side
-> that the properties should be there from day one. But listing all
-> possible values regardless of the support.. I don't know and yes, I know
-> that other projects using these bindings as well. But if those other
-> projects support more than now, they can extend it and send patches.
-> Since this is a new binding, the only user is Linux and listing all
-> possible values can lead into erroneous assumption. 
-
-So let me rephrase the case - there is no such assumption that one,
-particular driver supports entire set of bindings. If anyone makes it,
-without actually checking, then it is his/hers mistake.
-
-> No system-integrator
-> wants to check the driver why a listed property is not supported instead
-> most the time it is the other way. If it is listed, than it should be
-> supported.
-
-Bindings are also not the tool for system integrator to figure out these
-things.
-
-> 
-> Anyway I don't wanna make a big deal out of it. I will add all possible
-> values to the binding if that is what you want :)
-> 
-> Regards,
->   Marco
-> 
->>> Adapting a binding is just 1 commit and
->>> since the property is already existing, there is no breaking change.
->> Best regards,
->> Krzysztof
->>
->>
-
-Best regards,
-Krzysztof
-
+   
 
 -- 
 linux-phy mailing list
