@@ -4,68 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C67B8ECAAD8
-	for <linux-phy@archiver.kernel.org>; Thu, 22 Sep 2022 18:01:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8326EC54EE9
+	for <linux-phy@archiver.kernel.org>; Thu, 22 Sep 2022 18:01:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DuThmulUdSeB3ZfkgcBJZ1TN/JXcQxaGSetMK9Y7JVg=; b=ci86in+B1pCmmK
-	FuPqPGuyTNgvuKcfA6jXHyR2YGYiD3SvogKnXmG9yDt22KrvnUmq7o3M70lq+2NY2WgECvBpDkYuC
-	nzoyDTnUNS56DFLB0WR29oPqZD4X6LiS8O6770AUx1E6EKLHdhSUANV+ZzUE6zDlugwLjt+Py0DvG
-	lGbCnk5p75K117mTspzU/R4+YMpqnb7I4bRZbpmOMCzcNwb5BNME0GS5u46l6sJ8nlMNW68RbVT6p
-	Apt0Fi2pm2PubqjIH8MmsVATVlnCVT6x3bZZic2Wpd4A1IcL4VcsYzlwIO2aOTXyfCbJoC3jDYHPY
-	auhRm5OhzBCFpZRManxA==;
+	List-Owner; bh=R0NfS+qVE8pCknE4KCSuU7OMbVkmk7/5u/rLzPCiLfU=; b=mUQP1ypfXDl/Fu
+	kvjBiymjH1qjvtm+k9HkJ59QBGIn0F9a8w+KLGYI8wJ/rZSsFRuJSOGIrilPuzdfhK5Utt4wDHrSH
+	BpC27+mb1XKUq89YOT6sIAS+l3hiulgyUEnDaIdWhdeO+Lxr67rcfYr+KweX9JxGRTUY+ExPxOPpl
+	M5wVrT+pGxn0MVWgsUjLn7IDGKxK/tdFboyRr2WMYp9seGPK9L/8rwYGATOn9nudZKCgFOy9BRINU
+	3EjQvnbF1Bo9BUR+3RsMhOA9Fw+JoyrBZ2f8fnMMClWASGMz1YBWMFNm+N0n59h2Fh1RXANDmbX+b
+	IdTHrV1rZIGkLlOR9L0A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1obQVa-00HCOv-8M; Thu, 22 Sep 2022 18:01:10 +0000
-Received: from mail-lj1-x22e.google.com ([2a00:1450:4864:20::22e])
+	id 1obQWC-00HCdn-W7; Thu, 22 Sep 2022 18:01:49 +0000
+Received: from mail-lf1-x132.google.com ([2a00:1450:4864:20::132])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1obQVX-00HCN7-Qq
-	for linux-phy@lists.infradead.org; Thu, 22 Sep 2022 18:01:09 +0000
-Received: by mail-lj1-x22e.google.com with SMTP id g20so10718224ljg.7
-        for <linux-phy@lists.infradead.org>; Thu, 22 Sep 2022 11:01:06 -0700 (PDT)
+	id 1obQWA-00HCcP-8W
+	for linux-phy@lists.infradead.org; Thu, 22 Sep 2022 18:01:47 +0000
+Received: by mail-lf1-x132.google.com with SMTP id j16so16002798lfg.1
+        for <linux-phy@lists.infradead.org>; Thu, 22 Sep 2022 11:01:45 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date;
-        bh=il4FfHFNJa+SLUSzz+jH6qB0ObxCaIOW9FAiJRgPVms=;
-        b=BVX7HvSW5vdQ5GCnIRyIwEd8GUOCzggWCzjAvJC1ZhCXs2yCiVOLMW5sTX5pOrY1+9
-         ClN28BhPHYCSXvKV2oLkBCGqAa/rjpEWRYYtDZh0p9zqUv9o2rG2EdQbKaj5sbvgykVg
-         JIXYQfbTpF4s1OS5ihucm/dMyd+3wVl/TegnYBDeXk6vP2/Zy9jUzOtaLeXbqeRiet84
-         30woL2xWX20fsX5NgsDVAMnb07wf7VK7xB06f9/d3R1PKWANhEjXGtIAq/HLdzAhA1Ik
-         U4VPL0aAz68vSW4JzPNYzjmKdiFCvRhMx7yfP6XTjoqBSwRmt4v20ODImz4ARMXRyrjo
-         AM2g==
+        bh=SQsjptXiB4aAKkJGA4JvrvrTX5A+rS4iPy+kbkqaYt4=;
+        b=XNexgVzoKQbxs7f8mLd3aLWyn4yWulmIrPkdqsYfcXQhRKM+3KPd2Hdrq1WBR4R5Xg
+         zrlfzYXsc5zpTgV8qdqnP03YytaF+9awZtQpkUveHdEudjjSh4KXYJlIq8TmtHwmtOj8
+         ZnFeyBYZZumVdjDjHFk/cm33/2wsuGxULvDk7N84tbWtrfBqcZmQxek5eMBGVN9y3jjm
+         su/byh9DXtswkF8Rudt2mvX60To+c5cNzEnnuydDQhMk6lQ70c0PBiFfOLTCdTWaQPNC
+         xOI5DhRpPk/y8Evsp6owktq/uW1+DlKMNQpdvXjfiFni6EmvU2PXgfpo5r0DXkVB9Qwj
+         Gx6Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date;
-        bh=il4FfHFNJa+SLUSzz+jH6qB0ObxCaIOW9FAiJRgPVms=;
-        b=XkfqTwcRiQWl1HLuvLyWjTthdPWO9tnHbwh4tdMDudHAkheQ/PKfHFtopPHY9yQ8ef
-         f4qieHL1/r5Et6q+LTP++bCVUe8/DaUTRPfAz33HMvsX4FFAbhBRvnjOl3o+GeO6pCoX
-         qjHNbCePLnwSmfhDU7u6reLYwcoREVJo20rFulByl3Mzark2oRoruK38iwNJJknnoRn2
-         Q/q7JNIH4MlHZG5J7xgnqkgYpsfsIOF2NRgTKH6S6ekb85utxB8dhoQFeqP5Yrx7oOid
-         fwmBLha2kOMA1Cbfa8yE/5Ngl9bQ1XnuiIzW8K/imB4Mz/QjLYQKug+RyNSlzIzojOiY
-         rTGA==
-X-Gm-Message-State: ACrzQf2LubOdWMy3wqkhUqNj+fmv2wf5LxsrM5v3HK69xXmziFQ2Pleg
-	06AFQp5XY3HJpqxi5oJw3/u4aQ==
-X-Google-Smtp-Source: AMsMyM6olhD5+tQF0xGTyGy2dUnq+lf4MwtqPAqUGDRcGdJxgKtqE3F7nnCyqJtW9yR0x9Fm6Zreig==
-X-Received: by 2002:a2e:9602:0:b0:26a:9ca8:d6f9 with SMTP id v2-20020a2e9602000000b0026a9ca8d6f9mr1679181ljh.88.1663869665535;
-        Thu, 22 Sep 2022 11:01:05 -0700 (PDT)
+        bh=SQsjptXiB4aAKkJGA4JvrvrTX5A+rS4iPy+kbkqaYt4=;
+        b=MYgbbhiUJOn1W8kUVqhfPl2OT9Nr+9TTWksYv8l00CXBevzxIk9rAqqHzIgbHiFFl4
+         u39H+OZ3MwC6zAwoaNEnQZA0Z9gqtqU+m2gLc9DHsOvMs9AWXMKaRDRosUVkQ23rSwSJ
+         G5fumS+Ldk4kOiR6lU1KeFqDJaP3hIASKDmoTRwabui7ZWW3Zv2ekqB4q0sxM90vTyp2
+         qnLTI9qql8+5w2VcSVS7NM2gxjwqLzFt7St9Sgkw3T0eDlXDIYFl5650WPbbFzfAGaJq
+         oTQTD//O8PZN80r62fmUrwL0ERL85CSS1xwgTz3547qBk3ZLS8aiCpjEf6z/XAQKcglU
+         2SoA==
+X-Gm-Message-State: ACrzQf3ljXOg8kp+9TmWPlsYkLF5KQy4BRblDXGJRBiEhQxwxqFwiDfy
+	Dxst6fdYG8+hj7s+ztxBzLL3lnWQ2FMIDw==
+X-Google-Smtp-Source: AMsMyM45gElc+J2OV1D19Dbhnm6d1ds0hZYDuo51aqlKDBxYpL/dffzPv0H//JIBmrBjpa5Z0NG5Zg==
+X-Received: by 2002:a05:6512:31cf:b0:496:f023:5471 with SMTP id j15-20020a05651231cf00b00496f0235471mr1743445lfe.133.1663869704001;
+        Thu, 22 Sep 2022 11:01:44 -0700 (PDT)
 Received: from [192.168.1.211] ([37.153.55.125])
-        by smtp.gmail.com with ESMTPSA id g9-20020a19ac09000000b00497a0ea92desm1041587lfc.135.2022.09.22.11.01.04
+        by smtp.gmail.com with ESMTPSA id w20-20020a19c514000000b0048aee825e2esm1028756lfe.282.2022.09.22.11.01.43
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 22 Sep 2022 11:01:05 -0700 (PDT)
-Message-ID: <a69b82bd-2540-1953-4236-9e484928aaea@linaro.org>
-Date: Thu, 22 Sep 2022 21:01:04 +0300
+        Thu, 22 Sep 2022 11:01:43 -0700 (PDT)
+Message-ID: <943c53f7-fb06-4285-be39-658c0db403be@linaro.org>
+Date: Thu, 22 Sep 2022 21:01:43 +0300
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.2.2
-Subject: Re: [PATCH 13/17] phy: qcom-qmp-pcie-msm8996: rename nlanes config
+Subject: Re: [PATCH 14/17] phy: qcom-qmp-combo: consolidate lane config
 Content-Language: en-GB
 To: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>
 Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
@@ -73,12 +73,12 @@ Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
  Kishon Vijay Abraham I <kishon@ti.com>, linux-arm-msm@vger.kernel.org,
  linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
 References: <20220920073826.20811-1-johan+linaro@kernel.org>
- <20220920073826.20811-14-johan+linaro@kernel.org>
+ <20220920073826.20811-15-johan+linaro@kernel.org>
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-In-Reply-To: <20220920073826.20811-14-johan+linaro@kernel.org>
+In-Reply-To: <20220920073826.20811-15-johan+linaro@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220922_110107_893333_E3209578 
-X-CRM114-Status: UNSURE (   8.51  )
+X-CRM114-CacheID: sfid-20220922_110146_344150_081884B1 
+X-CRM114-Status: UNSURE (   9.89  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -97,13 +97,16 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 20/09/2022 10:38, Johan Hovold wrote:
-> The nlanes configuration parameter is really the number of PHYs provided
-> by this QMP block on MSM8996. Rename it accordingly.
+> For legacy reasons, there are two configuration parameters that appear
+> to describe the number of lanes a PHY has, even if "nlanes" was actually
+> used for a different purpose.
+> 
+> Replace them both with a new field simply named "lanes".
 > 
 > Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 > ---
->   drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c | 8 ++++----
->   1 file changed, 4 insertions(+), 4 deletions(-)
+>   drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 38 ++++++++---------------
+>   1 file changed, 13 insertions(+), 25 deletions(-)
 
 Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 
