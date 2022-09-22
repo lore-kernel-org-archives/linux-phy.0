@@ -4,88 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CC5ABC6FA8E
-	for <linux-phy@archiver.kernel.org>; Thu, 22 Sep 2022 02:47:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 396B7ECAAD8
+	for <linux-phy@archiver.kernel.org>; Thu, 22 Sep 2022 02:47:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Date:CC:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PYQSvBQXugAYs7z3bl/YAOlboK0/uKsUXR1rv8Zbo2E=; b=RbGdiHCvLVILqf
-	bOTPhA3vyXRF49RXCjAxoRr2fs1jtEPQo/7PMPaGrbGI4w88WW/dbIU4/Ndce0MNnivV8ZqmgzNS1
-	E0g8W/nwDRGyhQrWrQ3K2Ml2BLjgRzOTx6mJzyL3QF0XobWwlDbIpG0lcr+w98QTAU6qRf94sC9Ch
-	+Nn0k/2s6Xx6SpTAw6k7Zen+QKGqwUJCNVROlLUO54wadekR6x03ikGluThjw5EWE+BJK74D+ZvVx
-	p19miWD2n09SnKVPW0YXaucfmVZUCDZkdnEBljqjz1vTDkAeMbo4AFTEio8RQ85ZM2UB3evIalPjS
-	EaZBqiugxRgKmTBWrNUA==;
+	List-Owner; bh=3mmIjDVLVhflGMpr12XFkrvWAUOxLZhM9r7qbDP0Qlw=; b=N48NpvCnZBFiXq
+	UtRbIfjjHotF0y8vlZZFyZarUwiWM84CUGPOETwWHzxSGMYsAe7CzpB7Z42Omtgz9DRl/4uBvBmaW
+	4QQvBFTc/FDcX/F8Cg131xcN7dfwOdh0wfoU/fNCYhHSosfjGC6aAmZcRa/wpmgTd1bKv/fBbyT1Z
+	ZwT1+UlgTyJXqZqtzeAvHJYJKNYPgx35EDJR1/qp+QHv6rDdIOZbJmpP/RHgrimakSZMaimXaVhEh
+	w8l6lnq1ioPM19QnzDj6WiyD6TXmQWUqD8Onwf+eyyyyYrNFL7zwgvD7qJOXfBvXbdiNBUhHOvZXJ
+	JKXxKzSHsOwWnC58RdEA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1obCF3-00DBDn-A8; Thu, 22 Sep 2022 02:47:09 +0000
-Received: from mail-il1-x12d.google.com ([2607:f8b0:4864:20::12d])
+	id 1obCFU-00DBHX-LE; Thu, 22 Sep 2022 02:47:36 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1obCF0-00DBCL-FN
-	for linux-phy@lists.infradead.org; Thu, 22 Sep 2022 02:47:07 +0000
-Received: by mail-il1-x12d.google.com with SMTP id v1so2108716ilq.1
-        for <linux-phy@lists.infradead.org>; Wed, 21 Sep 2022 19:47:05 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20210112;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date;
-        bh=WoZ4RDOZgigudKSYtBcln06ePKoB/qb90ltGorNHgrA=;
-        b=C0mWmEF7enhCNnu0b6IXzGfZld2kFsyA9FpxZ8Nt4QMVxRvW7O/0zFJDyupmNegGF6
-         fIv+gHcY8ETuRfSirR/OeWLgRUXmMVBizLCZLjhocuN+fgXZwpTge+T/sG63BF+p/ukF
-         fvJPqiOwOfyBIouISgAxOJYroLCkX20SYtSZocslxiDjshy4Mm6rNNiLaRj40xmsS22B
-         L4k4vR+cbWzjtubky7SftsjZbkXzUHiFrrv/Sox5lThElbJvdzYwm2HqXDbd5DqERyXz
-         pgBuqgThN5XeHaBmE+MW8LPUWejovp2eLVGqUtcRNfdSrLB47fwycO74BgDVggoWhbRT
-         bb+A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date;
-        bh=WoZ4RDOZgigudKSYtBcln06ePKoB/qb90ltGorNHgrA=;
-        b=dvEc04ARIXCZ4hGt4AAXTeQWVV2KVEUBxBP0y7zYFJIPVnpyJasEVLDC97kAA7D6DV
-         5bs6Ng7zkztFBoyL4EjgjN8wuBV5FZZyTMOSDO3ChLDE4/slLO5UDxu5dWWYqpZujeWq
-         e5I8X/kPb3sn7/iEUeAc4O++RPueP9SiDyrsu/B99xqusGWeBg8+lik0ZuSGZDQb35OR
-         DFC0y7uHyljc9Cw2Rj1sVW37IqHimbMUl6ebYjbnt3HLN9qcFzt2b8QtIPld82gOYaP/
-         WAkoQiW0GMAdsjTm9M9+TMlqkqL2iEhhSrb+tcht/gD6HR8GzvnoPefz+yPptlNyTDsE
-         BNYg==
-X-Gm-Message-State: ACrzQf2E04VjaFPIFCnXEyyXiDRgr1KLaYJe1rQboFNnzcJ9nHdXoI8j
-	JP+u5ru7qXdUMesIs88Q8xA=
-X-Google-Smtp-Source: AMsMyM7tmXGbLK9y74NKX0eUYNRuAs11QWEVR9TseHgKDUbjdoCvt5Z1UZt0hXpFuLtK3fQhU2M0jw==
-X-Received: by 2002:a05:6e02:1a41:b0:2f1:cc2a:69d3 with SMTP id u1-20020a056e021a4100b002f1cc2a69d3mr612756ilv.46.1663814824862;
-        Wed, 21 Sep 2022 19:47:04 -0700 (PDT)
-Received: from localhost ([2607:fea8:a2e2:2d00::61a4])
-        by smtp.gmail.com with UTF8SMTPSA id l2-20020a056e020dc200b002f1a7929d67sm1575139ilj.72.2022.09.21.19.47.03
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 21 Sep 2022 19:47:04 -0700 (PDT)
-From: Richard Acayan <mailingradian@gmail.com>
-To: linux-arm-msm@vger.kernel.org
-Cc: Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@somainline.org>,
-	Kishon Vijay Abraham I <kishon@ti.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Felipe Balbi <balbi@kernel.org>,
-	Wesley Cheng <quic_wcheng@quicinc.com>,
-	linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-usb@vger.kernel.org,
-	Richard Acayan <mailingradian@gmail.com>
-Subject: [PATCH v2 1/2] dt-bindings: phy: qcom,qusb2: document sdm670 compatible
-Date: Wed, 21 Sep 2022 22:46:55 -0400
-Message-Id: <20220922024656.178529-2-mailingradian@gmail.com>
-X-Mailer: git-send-email 2.37.3
-In-Reply-To: <20220922024656.178529-1-mailingradian@gmail.com>
-References: <20220922024656.178529-1-mailingradian@gmail.com>
+	id 1obCFR-00DBGw-TH; Thu, 22 Sep 2022 02:47:35 +0000
+X-UUID: f4b226194853444598910141fda3b2f4-20220921
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
+	h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID; bh=FjK3+xpCe9u1MNFb+0HGnTV+whYp7DGiShsoGVeYjKA=;
+	b=cQNCiX/l0pmhvRPC7YkptnRyY+0hmrp62MXb6jHRBOBh1nH/dpVH8Gpq41xAW3SWV65rBm9GoBgrEJnIkizmkHD163oonOvwuDnV4Ok3rfCbyU8K8EJAF1xF8yCENtzwt3ivQzVRACW4+yYflf6wAB27SreCfOqtDTYOMXm8i3M=;
+X-CID-P-RULE: Release_Ham
+X-CID-O-INFO: VERSION:1.1.11,REQID:81a1b118-93e5-4b9d-977d-9fcfa6810efe,IP:0,U
+	RL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:
+	release,TS:0
+X-CID-META: VersionHash:39a5ff1,CLOUDID:5f833af7-6e85-48d9-afd8-0504bbfe04cb,B
+	ulkID:nil,BulkQuantity:0,Recheck:0,SF:nil,TC:nil,Content:0,EDM:-3,IP:nil,U
+	RL:11|1,File:nil,Bulk:nil,QS:nil,BEC:nil,COL:0
+X-UUID: f4b226194853444598910141fda3b2f4-20220921
+Received: from mtkmbs11n1.mediatek.inc [(172.21.101.185)] by mailgw01.mediatek.com
+	(envelope-from <chunfeng.yun@mediatek.com>)
+	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
+	with ESMTP id 1234755833; Wed, 21 Sep 2022 19:36:52 -0700
+Received: from mtkmbs11n2.mediatek.inc (172.21.101.187) by
+ mtkmbs10n1.mediatek.inc (172.21.101.34) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.792.15; Thu, 22 Sep 2022 10:36:17 +0800
+Received: from mhfsdcap04 (10.17.3.154) by mtkmbs11n2.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.2.792.15 via Frontend
+ Transport; Thu, 22 Sep 2022 10:36:17 +0800
+Message-ID: <a3f98aa1d3d10b76b1fb5e6c2e3d64cedd0bf127.camel@mediatek.com>
+Subject: Re: [PATCH 01/18] phy: mediatek: add a new helper to update bitfield
+From: Chunfeng Yun <chunfeng.yun@mediatek.com>
+To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	Chun-Kuang Hu <chunkuang.hu@kernel.org>, Vinod Koul <vkoul@kernel.org>
+CC: Philipp Zabel <p.zabel@pengutronix.de>, Kishon Vijay Abraham I
+	<kishon@ti.com>, Matthias Brugger <matthias.bgg@gmail.com>,
+	<dri-devel@lists.freedesktop.org>, <linux-mediatek@lists.infradead.org>,
+	<linux-arm-kernel@lists.infradead.org>, <linux-phy@lists.infradead.org>,
+	<linux-kernel@vger.kernel.org>, Jitao Shi <jitao.shi@mediatek.com>, "Stanley
+ Chu" <stanley.chu@mediatek.com>
+Date: Thu, 22 Sep 2022 10:36:17 +0800
+In-Reply-To: <2d13b383-7d25-240b-bdbb-e53848df4d47@collabora.com>
+References: <20220920090038.15133-1-chunfeng.yun@mediatek.com>
+	 <20220920090038.15133-2-chunfeng.yun@mediatek.com>
+	 <2d13b383-7d25-240b-bdbb-e53848df4d47@collabora.com>
+X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
 MIME-Version: 1.0
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220921_194706_528663_B2D0DF81 
-X-CRM114-Status: UNSURE (   9.17  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220921_194733_964593_ADCC394B 
+X-CRM114-Status: GOOD (  18.15  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,29 +85,61 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The Snapdragon 670 uses the QUSB driver for USB 2.0. Document the
-compatible used in the device tree.
+On Wed, 2022-09-21 at 10:15 +0200, AngeloGioacchino Del Regno wrote:
+> Il 20/09/22 11:00, Chunfeng Yun ha scritto:
+> > Due to FIELD_PREP() macro can be used to prepare a bitfield value,
+> > local ones can be remove; add the new helper to make bitfield
+> > update
+> > easier.
+> > 
+> > Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+> > ---
+> >   drivers/phy/mediatek/phy-mtk-io.h | 7 +++++++
+> >   1 file changed, 7 insertions(+)
+> > 
+> > diff --git a/drivers/phy/mediatek/phy-mtk-io.h
+> > b/drivers/phy/mediatek/phy-mtk-io.h
+> > index 500fcdab165d..a723d4afc9b4 100644
+> > --- a/drivers/phy/mediatek/phy-mtk-io.h
+> > +++ b/drivers/phy/mediatek/phy-mtk-io.h
+> > @@ -8,6 +8,7 @@
+> >   #ifndef __PHY_MTK_H__
+> >   #define __PHY_MTK_H__
+> >   
+> > +#include <linux/bitfield.h>
+> >   #include <linux/io.h>
+> >   
+> >   static inline void mtk_phy_clear_bits(void __iomem *reg, u32
+> > bits)
+> > @@ -35,4 +36,10 @@ static inline void mtk_phy_update_bits(void
+> > __iomem *reg, u32 mask, u32 val)
+> >   	writel(tmp, reg);
+> >   }
+> >   
+> > +/* field @mask should be constant and continuous */
+> 
+> "Field @mask shall be [...]"
+>               ^^^^^
+Ok, will modify it
 
-Signed-off-by: Richard Acayan <mailingradian@gmail.com>
-Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
----
- Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml | 1 +
- 1 file changed, 1 insertion(+)
+> 
+> > +static inline void mtk_phy_update_field(void __iomem *reg, u32
+> > mask, u32 val)
+> 
+> ...so, (void __iomem *reg, const u32 mask, u32 val)
+Maybe no need const, @mask will be checked it in compile time when
+use FIELD_PREP(), means @mask is a constant value, but not a variable.
 
-diff --git a/Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml
-index d68ab49345b8..636ea430fbff 100644
---- a/Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml
-@@ -30,6 +30,7 @@ properties:
-       - items:
-           - enum:
-               - qcom,sc7180-qusb2-phy
-+              - qcom,sdm670-qusb2-phy
-               - qcom,sdm845-qusb2-phy
-               - qcom,sm6350-qusb2-phy
-           - const: qcom,qusb2-v2-phy
--- 
-2.37.3
+Thanks
+
+> 
+> > +{
+> > +	mtk_phy_update_bits(reg, mask, FIELD_PREP(mask, val));
+> > +}
+> > +
+> >   #endif
+> 
+> 
 
 
 -- 
