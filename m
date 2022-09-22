@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7217FC6FA92
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 966B8C6FA86
 	for <linux-phy@archiver.kernel.org>; Thu, 22 Sep 2022 11:15:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,22 +12,22 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=k9er1lCyVS6l/W7zWVZlop6t03TD7/4Dqeq8YcNOxVM=; b=Pn8JX5expMWRJF
-	R1/e36UAWadG1nqbDwAllJNwNmZrXniaa024pQqjmV3+R9bRsMlRCG88xqD8ZzIVguIZcaWiyCTGd
-	vLGHtP9bl1NF2eA3sp8iuCmoDkfmC2D3admXiWi9ixs2BFQQY4JxIU+CIsq1rYap8PBSat5bmYvdB
-	dw1boaVYJbqYr4RM0wujm9rOllagkcuXWEZbvGG8nkwU2cvAGSbdgSOJHjQe45aFUYqW5IOXVIiH3
-	V5vP+W+nq2+wYoTx9de+HwNn6kchQGR6tdzJhE7eKxkmfUPUP3WSo6UONGIpDYpenE728w+HbLExK
-	s2rUFhIzVNS8szyT8qfA==;
+	List-Owner; bh=Srf0rH0jzmvZktDO+QM+GgCD88BZv4jWdWTGoDb8lKQ=; b=rso0YxyPy/nBJ2
+	QEzQ9ZRl7Mdesa5Scp7puexYmCGaGF3MuTwt/j7vedYppkILlSh+N9NQK8SlUKLrc01+jAR5KSTKG
+	AEYy9Q2dX2BohahS88uhjVup5lPS0yGBTAqvR+pcB0D1ym6kIOXZ+Mdsuvlc+Zo36FM4sH4lTEGA8
+	nH7T8CzLzvj2KYY6Ez78KS/gqHygIuOwavc/htqmfE6jn2UQ+oLqPHeHZ1RnXynzdlvzy7pf62gG3
+	+Z28N0AGYSvfV7HDN6sIm6i1vg7+Dz6NhO2cYPEoG+WTh1VdhpWFMPp95dsZ6L38K03fBkPtBC1NM
+	9bnYNBk/h+aZd7lPRRVA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1obKAZ-00F6ex-Sa; Thu, 22 Sep 2022 11:15:03 +0000
-Received: from szxga01-in.huawei.com ([45.249.212.187])
+	id 1obKAZ-00F6fG-Uk; Thu, 22 Sep 2022 11:15:03 +0000
+Received: from szxga03-in.huawei.com ([45.249.212.189])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1obKAW-00F6b1-FR
+	id 1obKAX-00F6bE-03
 	for linux-phy@lists.infradead.org; Thu, 22 Sep 2022 11:15:02 +0000
-Received: from dggpeml500024.china.huawei.com (unknown [172.30.72.53])
-	by szxga01-in.huawei.com (SkyGuard) with ESMTP id 4MYCKh6sJ9zpVNc;
-	Thu, 22 Sep 2022 19:12:08 +0800 (CST)
+Received: from dggpeml500024.china.huawei.com (unknown [172.30.72.57])
+	by szxga03-in.huawei.com (SkyGuard) with ESMTP id 4MYCLS4m6ZzHqKL;
+	Thu, 22 Sep 2022 19:12:48 +0800 (CST)
 Received: from huawei.com (10.175.112.208) by dggpeml500024.china.huawei.com
  (7.185.36.10) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2375.31; Thu, 22 Sep
@@ -37,9 +37,9 @@ To: <agross@kernel.org>, <andersson@kernel.org>,
 	<konrad.dybcio@somainline.org>, <kishon@ti.com>, <vkoul@kernel.org>,
 	<linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>
 CC: <yuancan@huawei.com>
-Subject: [PATCH 5/7] phy: qcom-qmp-usb: Use dev_err_probe() to simplify code
-Date: Thu, 22 Sep 2022 11:12:26 +0000
-Message-ID: <20220922111228.36355-6-yuancan@huawei.com>
+Subject: [PATCH 6/7] phy: qcom-qusb2: Use dev_err_probe() to simplify code
+Date: Thu, 22 Sep 2022 11:12:27 +0000
+Message-ID: <20220922111228.36355-7-yuancan@huawei.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20220922111228.36355-1-yuancan@huawei.com>
 References: <20220922111228.36355-1-yuancan@huawei.com>
@@ -49,8 +49,8 @@ X-ClientProxiedBy: dggems703-chm.china.huawei.com (10.3.19.180) To
  dggpeml500024.china.huawei.com (7.185.36.10)
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220922_041500_702339_F54BC23C 
-X-CRM114-Status: GOOD (  11.15  )
+X-CRM114-CacheID: sfid-20220922_041501_258083_74635BBC 
+X-CRM114-Status: GOOD (  10.27  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,17 +74,44 @@ checked later through debugfs.
 
 Signed-off-by: Yuan Can <yuancan@huawei.com>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-usb.c | 9 +++------
- 1 file changed, 3 insertions(+), 6 deletions(-)
+ drivers/phy/qualcomm/phy-qcom-qusb2.c | 27 +++++++++------------------
+ 1 file changed, 9 insertions(+), 18 deletions(-)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-index fba8e40441cb..41f91829af17 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-@@ -2821,12 +2821,9 @@ static int qcom_qmp_phy_usb_probe(struct platform_device *pdev)
- 		return ret;
+diff --git a/drivers/phy/qualcomm/phy-qcom-qusb2.c b/drivers/phy/qualcomm/phy-qcom-qusb2.c
+index 7529a7e6e5df..2ef638b32e8f 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qusb2.c
++++ b/drivers/phy/qualcomm/phy-qcom-qusb2.c
+@@ -973,20 +973,14 @@ static int qusb2_phy_probe(struct platform_device *pdev)
+ 		return PTR_ERR(qphy->base);
  
- 	ret = qcom_qmp_phy_usb_vreg_init(dev, cfg);
+ 	qphy->cfg_ahb_clk = devm_clk_get(dev, "cfg_ahb");
+-	if (IS_ERR(qphy->cfg_ahb_clk)) {
+-		ret = PTR_ERR(qphy->cfg_ahb_clk);
+-		if (ret != -EPROBE_DEFER)
+-			dev_err(dev, "failed to get cfg ahb clk, %d\n", ret);
+-		return ret;
+-	}
++	if (IS_ERR(qphy->cfg_ahb_clk))
++		return dev_err_probe(dev, PTR_ERR(qphy->cfg_ahb_clk),
++				     "failed to get cfg ahb clk\n");
+ 
+ 	qphy->ref_clk = devm_clk_get(dev, "ref");
+-	if (IS_ERR(qphy->ref_clk)) {
+-		ret = PTR_ERR(qphy->ref_clk);
+-		if (ret != -EPROBE_DEFER)
+-			dev_err(dev, "failed to get ref clk, %d\n", ret);
+-		return ret;
+-	}
++	if (IS_ERR(qphy->ref_clk))
++		return dev_err_probe(dev, PTR_ERR(qphy->ref_clk),
++				     "failed to get ref clk\n");
+ 
+ 	qphy->iface_clk = devm_clk_get_optional(dev, "iface");
+ 	if (IS_ERR(qphy->iface_clk))
+@@ -1003,12 +997,9 @@ static int qusb2_phy_probe(struct platform_device *pdev)
+ 		qphy->vregs[i].supply = qusb2_phy_vreg_names[i];
+ 
+ 	ret = devm_regulator_bulk_get(dev, num, qphy->vregs);
 -	if (ret) {
 -		if (ret != -EPROBE_DEFER)
 -			dev_err(dev, "failed to get regulator supplies: %d\n",
@@ -95,8 +122,8 @@ index fba8e40441cb..41f91829af17 100644
 +		return dev_err_probe(dev, ret,
 +				     "failed to get regulator supplies\n");
  
- 	num = of_get_available_child_count(dev->of_node);
- 	/* do we have a rogue child node ? */
+ 	/* Get the specific init parameters of QMP phy */
+ 	qphy->cfg = of_device_get_match_data(dev);
 -- 
 2.17.1
 
