@@ -4,93 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 89F4FC6FA92
-	for <linux-phy@archiver.kernel.org>; Thu, 22 Sep 2022 12:52:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 68379C6FA86
+	for <linux-phy@archiver.kernel.org>; Thu, 22 Sep 2022 13:49:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZjmQYXXVN+TN35O9j6BqyfuFv7AvCPMG56iZC13eZVg=; b=GY38TPxaIqu0yH
-	ply2wYgGelpa0qznJU4viweN9Ez8UtREAiajaj3SZIvtLs8KWsd2K4oh1emtKxzX0i4Oe5x47nGMv
-	brR2LqQ9q5PDmphcvtQ/rRzpK1wbigw92ToPHdE8KNgrQ9PGajIro6NEUZ/Lm1VkAvPQCAHjrcQfY
-	aSqFqxIiNaqLI9PdFI7nd/mdvwuNqql+ByBhs+VGx2bhDuHejW0Nnw1J07KMrJHnGIGaOIXnoCfab
-	Hb/Hr9inpIkxMKb2cGG1Dq8DBTaFWUDHjepwflv/Jl6RSiO0Rvcv3q7VmCN14JX0p4G+csPu5ekgC
-	p3Bb29ApLQDkTvZOEhbg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=tE5Y/6evC/yhYL49IN6VVrZL9KBCJ44XpFpb5E1wJBE=; b=aOrIyTw4h05oiY
+	Hyz0k9C/u+exdUBSEJSgXrH4osPl5kKa9ZODX2BPTtweudW2yjAV7yVRWw7KxW9sG/qzZt/tExsdl
+	Zu5KyT/OCvGGfpDS6bJS7wHWkUSdqx2DELoNOpo/jCbwllNlziL+q071DNq+c1+6i/7+dkaGgk/7M
+	aH2ulHHRL+Ta+0rpNimmBADTW8j5dUxVJci60Yj2WbfDf5+g/tewzPfYyMzko2fUouRv50ZnCOq8O
+	hhBwZmmE/GyESjyTk/bTjShbNXHhW5XveIDBkkNIH13u7ZhhmNjtViDpeI9pYBOzvHG7sJUWuGciy
+	fDOXdNvfaQymw6xFh75w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1obLgX-00FU4l-KE; Thu, 22 Sep 2022 12:52:09 +0000
-Received: from mail-lj1-x22b.google.com ([2a00:1450:4864:20::22b])
+	id 1obMZc-00FmUv-3L; Thu, 22 Sep 2022 13:49:04 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1obLgT-00FU2G-Tz
-	for linux-phy@lists.infradead.org; Thu, 22 Sep 2022 12:52:07 +0000
-Received: by mail-lj1-x22b.google.com with SMTP id a10so10944279ljq.0
-        for <linux-phy@lists.infradead.org>; Thu, 22 Sep 2022 05:52:05 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date;
-        bh=PNn1OQ2Plf4WVBh8wbrS607nOaHGst3TaPaRJYK7Aak=;
-        b=CVGA+9eYGLDgWkSPKlFtUYW7Io1/rFSCvwEMKB7Gs/8EG6JZbR6Klv1N/Ssdfs+JO6
-         3Kr1a01uH9k/kaacPBCO4DpAJ4HrfKFcCD7ZgKpoPkG6YHm7RaUDrQB1ciLK6fvi23F+
-         LAe8eD4drDrtN1FtQURTmtvpR2coeGjD+xWZt61UNnAOy4+gomuZPUYs+X0rgsqOlE89
-         1mk4T0wlxkGlScUZZk+4wtbPpL+LnUTrsbMSOGutcLpxe9NwTsPY9IopfBRrBg1XEaBZ
-         ML0D2CDd32mohuD8Xstavzd0cUwk3sfurhLWThgIctivIdhfRmfWDtlydGQS3DGOysSh
-         V8tA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date;
-        bh=PNn1OQ2Plf4WVBh8wbrS607nOaHGst3TaPaRJYK7Aak=;
-        b=MwVkLiIbO/wL764Z1jmfW/zbta8zRj/lhst/J0IgqBQx+WBDK2a7TowDJGaWWNTogR
-         EofKd0BSHl7zdTOAy3QGGWaEPvg0ZzgAhp60FfvrnscQkqRJomDd3vIQuzJ8Jgq00PSK
-         +QSsOTp87RSZeW07FLAHZLPN1XrnN2Ir51WxC99jw/xQgfdAbn2o+9LPXCo8XyAj2KPc
-         Vovc5zcyU5ajK4XNJ3Ul6+ZZjm5AB52RZBsUQX1t2BwryOxw+fNsdB2Oc93CDoJPnWDv
-         hDM98sQlNVkvyoUmaOdWPX2zg0ngcw0ggE04UkaVvX2fBZ1HHvA0RjIvlaYznXGVgiqP
-         3r4w==
-X-Gm-Message-State: ACrzQf3Xd1KZFG8gDVVz631a+gKeBWXRkE8y9o46CBv4L3/uxz6oym5B
-	F0zyl9rLgEbQf3BlK0DDP/ApqQ==
-X-Google-Smtp-Source: AMsMyM5673D4f9tuM/pxeZPs6CGF5k+tgPEYNZ/c3GXJJnsbfS77mWqxFlfpPqoIXPaNAY62naOkMg==
-X-Received: by 2002:a2e:b712:0:b0:26a:d1d9:f8d1 with SMTP id j18-20020a2eb712000000b0026ad1d9f8d1mr1100753ljo.271.1663851124500;
-        Thu, 22 Sep 2022 05:52:04 -0700 (PDT)
-Received: from [192.168.0.21] (78-11-189-27.static.ip.netia.com.pl. [78.11.189.27])
-        by smtp.gmail.com with ESMTPSA id t7-20020a05651c204700b0026acd11cd51sm904641ljo.59.2022.09.22.05.52.03
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 22 Sep 2022 05:52:04 -0700 (PDT)
-Message-ID: <179bc9a0-8d11-cc3e-80f6-25bb15325e35@linaro.org>
-Date: Thu, 22 Sep 2022 14:52:02 +0200
+	id 1obMZX-00FmR8-Mz
+	for linux-phy@lists.infradead.org; Thu, 22 Sep 2022 13:49:01 +0000
+Received: from drehscheibe.grey.stw.pengutronix.de ([2a0a:edc0:0:c01:1d::a2])
+	by metis.ext.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
+	(Exim 4.92)
+	(envelope-from <mfe@pengutronix.de>)
+	id 1obMZM-0008EZ-Fh; Thu, 22 Sep 2022 15:48:48 +0200
+Received: from [2a0a:edc0:0:1101:1d::28] (helo=dude02.red.stw.pengutronix.de)
+	by drehscheibe.grey.stw.pengutronix.de with esmtp (Exim 4.94.2)
+	(envelope-from <mfe@pengutronix.de>)
+	id 1obMZM-002GUf-48; Thu, 22 Sep 2022 15:48:46 +0200
+Received: from mfe by dude02.red.stw.pengutronix.de with local (Exim 4.94.2)
+	(envelope-from <mfe@pengutronix.de>)
+	id 1obMZJ-00D4D1-Ah; Thu, 22 Sep 2022 15:48:45 +0200
+From: Marco Felsch <m.felsch@pengutronix.de>
+To: mchehab@kernel.org,
+	robh+dt@kernel.org,
+	krzysztof.kozlowski+dt@linaro.org,
+	kishon@ti.com,
+	vkoul@kernel.org,
+	laurent.pinchart@ideasonboard.com,
+	sakari.ailus@linux.intel.com,
+	jacopo@jmondi.org,
+	hverkuil@xs4all.nl
+Cc: linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	devicetree@vger.kernel.org,
+	linux-media@vger.kernel.org,
+	kernel@pengutronix.de
+Subject: [PATCH v3 0/4] Add support for Toshiba TC358746
+Date: Thu, 22 Sep 2022 15:48:39 +0200
+Message-Id: <20220922134843.3108267-1-m.felsch@pengutronix.de>
+X-Mailer: git-send-email 2.30.2
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.2.2
-Subject: Re: [PATCH v1 03/17] dt-bindings: phy: mediatek: hdmi-phy: Add mt8195
- compatible
-Content-Language: en-US
-To: Guillaume Ranquet <granquet@baylibre.com>, Vinod Koul <vkoul@kernel.org>,
- Stephen Boyd <sboyd@kernel.org>, David Airlie <airlied@linux.ie>,
- Rob Herring <robh+dt@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Daniel Vetter <daniel@ffwll.ch>, Chunfeng Yun <chunfeng.yun@mediatek.com>,
- CK Hu <ck.hu@mediatek.com>, Jitao shi <jitao.shi@mediatek.com>,
- Chun-Kuang Hu <chunkuang.hu@kernel.org>,
- Michael Turquette <mturquette@baylibre.com>,
- Kishon Vijay Abraham I <kishon@ti.com>,
- Matthias Brugger <matthias.bgg@gmail.com>
-Cc: linux-mediatek@lists.infradead.org, dri-devel@lists.freedesktop.org,
- Pablo Sun <pablo.sun@mediatek.com>, linux-clk@vger.kernel.org,
- linux-kernel@vger.kernel.org, Mattijs Korpershoek
- <mkorpershoek@baylibre.com>, linux-arm-kernel@lists.infradead.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org
-References: <20220919-v1-0-4844816c9808@baylibre.com>
- <20220919-v1-3-4844816c9808@baylibre.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20220919-v1-3-4844816c9808@baylibre.com>
+X-SA-Exim-Connect-IP: 2a0a:edc0:0:c01:1d::a2
+X-SA-Exim-Mail-From: mfe@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de); SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220922_055206_009796_A1ED8869 
-X-CRM114-Status: UNSURE (   7.49  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220922_064859_763687_E85E82FE 
+X-CRM114-Status: GOOD (  12.04  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -107,17 +80,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 19/09/2022 18:56, Guillaume Ranquet wrote:
-> Add a compatible for the HDMI PHY on MT8195
-> 
-> Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
-> 
+Hi,
 
+this small series adds the support for the Toshiba TC358746 MIPI-CSI to
+Parallel converter chip. The different versions of this serie can be
+found here [1]. Thanks a lot for the review feedback from Laurent and
+Sakari, which was very helpful.
 
-Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+[1] https://lore.kernel.org/all/20220916134535.128131-1-m.felsch@pengutronix.de/
+    https://lore.kernel.org/all/20220818143307.967150-5-m.felsch@pengutronix.de/
 
-Best regards,
-Krzysztof
+Marco Felsch (4):
+  phy: dphy: refactor get_default_config
+  phy: dphy: add support to calculate the timing based on hs_clk_rate
+  media: dt-bindings: add bindings for Toshiba TC358746
+  media: tc358746: add Toshiba TC358746 Parallel to CSI-2 bridge driver
+
+ .../bindings/media/i2c/toshiba,tc358746.yaml  |  183 ++
+ drivers/media/i2c/Kconfig                     |   17 +
+ drivers/media/i2c/Makefile                    |    1 +
+ drivers/media/i2c/tc358746.c                  | 1692 +++++++++++++++++
+ drivers/phy/phy-core-mipi-dphy.c              |   31 +-
+ include/linux/phy/phy-mipi-dphy.h             |    3 +
+ 6 files changed, 1923 insertions(+), 4 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/media/i2c/toshiba,tc358746.yaml
+ create mode 100644 drivers/media/i2c/tc358746.c
+
+-- 
+2.30.2
 
 
 -- 
