@@ -4,91 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4DCF3C6FA82
-	for <linux-phy@archiver.kernel.org>; Thu, 22 Sep 2022 07:24:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 84411C6FA82
+	for <linux-phy@archiver.kernel.org>; Thu, 22 Sep 2022 07:29:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gGnXScDV8PB8TmLlu/Eu18FztTls32WxQhFehHLQQGg=; b=OyLS8rVO/deGFJ
-	eC+DoUP4Oc7LTAC0kv8MqoOZaOv3Q4g0/+0122PU/j0UC5PfMst8iR1q8Zl92OkyQKJclI13MOPlk
-	/Gex5vEBVvK2rullNYHBMaqzttOjIJdDwNbCVAfTHfO4gxw6FP55xsbF8l0velgWhpZleGl0aUAUQ
-	mcnla69ufEmlhWceY/vmXuTsIsVDK7CuruaFIKQK09NlekBGsOIZI3pQjnFtGm7lPgU5FJwUCotHi
-	BO7ntC39+AqkCS+CLltaU0/6PmPhpqHLZ5gr304jmdjsII4XSbL6+nSATgfQsrBY9bge0McKFT8uL
-	JVU62/8aG1mrI2tPWYtQ==;
+	List-Owner; bh=8jIRNQtRnsafQ6vEy97tLnVnXP9EkZ2/3pWFCogPduU=; b=xQvnmMxgvO+sX3
+	1ihMNNp0Xoipyac071zNRiGu4fZxjsbMJVh+Fnaz/8MT4c2tVy55p2M/HFKRR3g7nnH45YbekSEve
+	77mhdP5r1sBIiQwZQfbYqMIZlupFAXVlqCIf3FTDFh5J2cRr8RdQilaIu7Iv5PIT4cwzpaGMMfigo
+	6u2nBUA+tRZSl6C6L7Ge6vi4tiWPVKqZ+s/noLLJGuUVWCvoMOArwXUogZ/S8OOmEueOy/cQhZAKP
+	b9VY/UOFg10klvMRz6hXc+CxYgpRvczK7z4lk9inRKooZD5oiP2UJzxdt9Nr31sbbASd99En7DKIO
+	3vg+hy+Zv6l3i4naribg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1obGZU-00Doc7-KU; Thu, 22 Sep 2022 07:24:32 +0000
-Received: from mail-lf1-x12d.google.com ([2a00:1450:4864:20::12d])
+	id 1obGdu-00DqKb-VV; Thu, 22 Sep 2022 07:29:06 +0000
+Received: from mail-lf1-x130.google.com ([2a00:1450:4864:20::130])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1obGZR-00DoZq-Ty
-	for linux-phy@lists.infradead.org; Thu, 22 Sep 2022 07:24:31 +0000
-Received: by mail-lf1-x12d.google.com with SMTP id o2so13174042lfc.10
-        for <linux-phy@lists.infradead.org>; Thu, 22 Sep 2022 00:24:29 -0700 (PDT)
+	id 1obGdr-00DqId-3Z
+	for linux-phy@lists.infradead.org; Thu, 22 Sep 2022 07:29:04 +0000
+Received: by mail-lf1-x130.google.com with SMTP id i26so13169302lfp.11
+        for <linux-phy@lists.infradead.org>; Thu, 22 Sep 2022 00:29:02 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date;
-        bh=fVcE2reQEfaEop4WRxdK1mO72Ip3uJjJkJGgaluoDsM=;
-        b=MSlRGljboTuGCdg3YEgOuKZBwTHCYcmzhnbgNphcxRdZyyfnwC664T8n53L+7Kb5A1
-         cBjGVu/xWbq4oUq8SLl+K3rsUKIyb/pAPtYAe6Ak01fZY6SfyZEnTaLs/z3BMKPjkSgv
-         vjmGQIgs1lLjxNx/uTL+ut/giC8XhZcsQwMrTBvzpBex0lB1/0LvbylWJluy/Ic3INLQ
-         SjlutBZR81gnaEMn5Jc0oha2px1AkGagITF9BddZQkinMio1PuFwtZLaGSUmLItkLHzB
-         1LEDnf+uCMw/DTWJNW0akGZdDtngxnSDEMs68J10o1m+HzEjBBsp1pp6Xc4Uce8MuQ5O
-         YqVw==
+        bh=1507m4RgEB8G8apG9frqBRqsvM+IxF1zb1xDZKuTjik=;
+        b=C5nysh2zDZrg+jTjXaipq/RO2w0zQPTnCDjvCuDyJJ+rsaO+QfNTlyAIqLHWK9QVNh
+         jyGfsE8oMWxpqoeOcC4FmVpdgGrbbj8aSN80+1Z8Hi2XX8kvEShxE3V77B9k1aaEylKi
+         MWny/zmL5x8iUzR2/GYOwI5zsibW/S5TUw+A2HT6emYVJ/f12PnC4oQp5S7a2fj0M56F
+         GWmiqIInklUWbhinJRd9Wtg5vtvc0v5CpDefU7uxaXtEIEBFcyrUQlnUjSfW0tkUKmdu
+         R7ijOCMam3XdPHq96OFJMzeGjnYLprO3f28zHDCpq5EeuVTcpWrAc2pUoJjuw7LaELlK
+         iERQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date;
-        bh=fVcE2reQEfaEop4WRxdK1mO72Ip3uJjJkJGgaluoDsM=;
-        b=p8U+jVMGM5q/rlCIcFVaveTUmEXQRqPCcN1wo6GfaK56rUmlelSuaCGu31MmiqlRnj
-         kzTIMr9PjoDPSSPy1yeL6IIs6UkEuRKrtDeIGckZct1Uq+5ihywSVxrW7JzIWL1iTHJY
-         monT//R9I4uqn8tygo181A+8/1hSYdRZTIE8ZSAY/Bm0q9ZkhA8+krwMY9qqnF+gIE9y
-         AFSCOjFSVf9R1ZnU+lSSv7B483JuyhjP+jt5o/IAyx02gk+Ql6Hj5l+IDNKsodwELVpa
-         vgcXmS3GiasGPphOkrsM8Zd+ASzjIwosDrel69+8NgfPzUqrCoiVaXfZG2p/mxCJWlxk
-         KzNQ==
-X-Gm-Message-State: ACrzQf2XdVZUxiv4ufgyYyI8XS3dpbWalRHFroIrY9fwGfjU6uJr71RL
-	NNVOv2ASq+XnD9yVUfJqQKdPrw==
-X-Google-Smtp-Source: AMsMyM5zA8VBFZmHafhekY2Y0dpCwQNF2kNCm9Hgz6tvQd/1QC+mRy8x/sO+uaHu1Mn31n8rO9wtGA==
-X-Received: by 2002:a05:6512:370c:b0:49f:c4fb:8706 with SMTP id z12-20020a056512370c00b0049fc4fb8706mr723544lfr.635.1663831468306;
-        Thu, 22 Sep 2022 00:24:28 -0700 (PDT)
+        bh=1507m4RgEB8G8apG9frqBRqsvM+IxF1zb1xDZKuTjik=;
+        b=czxmg/ok8OG2jqxusTYYz2Wtzv1+EE9jgPDQ5LbztItH88dm50aPHcjrkQSTELaG0u
+         ALl+MjJ9RVIfX9uODqI07Ld63ODpZitqCyl4mX4FATQVocWNmEGXwtootyFQta8KgjfS
+         z4TwHyFF1EVzNE7YUzoYvrULv/5fgA4G2UEoWSSggueO5ZuWdQL5U1Nth6tkV/Tp8iag
+         uN/JM0IsZ8GY8zlbWFqJQFxHDRT8ImlkzpHPhZ79RiCjxJq60YLg/zhXHawVIaDRYL72
+         0dLHVTSZ/UU0HIKWMJNlQLOxUxu46JBUywUY/5KUt0HmGMhvUDSPsYhwXD1Rh/3NPe79
+         72Eg==
+X-Gm-Message-State: ACrzQf2GsHy68q5gh2h0eec/OKdctClRu6jxwNuX/4XG0MC3Z44VrGjm
+	QDkFn4sg6wIdCo/bQtDwRLkSlg==
+X-Google-Smtp-Source: AMsMyM7xYIDEG5UyAZ6DpX1g+zu6IgAcOFUXs7lxj4Ju3vGUs2aYZBGzxzwpgrLobKb6kp/wgJtMvg==
+X-Received: by 2002:ac2:4db1:0:b0:497:838b:15d9 with SMTP id h17-20020ac24db1000000b00497838b15d9mr682181lfe.644.1663831741353;
+        Thu, 22 Sep 2022 00:29:01 -0700 (PDT)
 Received: from [192.168.0.21] (78-11-189-27.static.ip.netia.com.pl. [78.11.189.27])
-        by smtp.gmail.com with ESMTPSA id j5-20020a2e6e05000000b0026c59d3f557sm769428ljc.33.2022.09.22.00.24.27
+        by smtp.gmail.com with ESMTPSA id q14-20020a056512210e00b004972b0bb426sm796625lfr.257.2022.09.22.00.28.59
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 22 Sep 2022 00:24:27 -0700 (PDT)
-Message-ID: <c74b4ab7-e307-482b-c4fc-0a7a1e39d6d1@linaro.org>
-Date: Thu, 22 Sep 2022 09:24:26 +0200
+        Thu, 22 Sep 2022 00:29:00 -0700 (PDT)
+Message-ID: <9b29ee3f-ed48-9d95-a262-7d9e23a20528@linaro.org>
+Date: Thu, 22 Sep 2022 09:28:59 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.2.2
-Subject: Re: [PATCH v1 11/17] drm/mediatek: hdmi: add mt8195 support
+Subject: Re: [PATCH v2 2/8] dt-bindings: phy: renesas: Document Renesas
+ Ethernet SERDES
 Content-Language: en-US
-To: Guillaume Ranquet <granquet@baylibre.com>, Vinod Koul <vkoul@kernel.org>,
- Stephen Boyd <sboyd@kernel.org>, David Airlie <airlied@linux.ie>,
- Rob Herring <robh+dt@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Daniel Vetter <daniel@ffwll.ch>, Chunfeng Yun <chunfeng.yun@mediatek.com>,
- CK Hu <ck.hu@mediatek.com>, Jitao shi <jitao.shi@mediatek.com>,
- Chun-Kuang Hu <chunkuang.hu@kernel.org>,
- Michael Turquette <mturquette@baylibre.com>,
- Kishon Vijay Abraham I <kishon@ti.com>,
- Matthias Brugger <matthias.bgg@gmail.com>
-Cc: linux-mediatek@lists.infradead.org, dri-devel@lists.freedesktop.org,
- Pablo Sun <pablo.sun@mediatek.com>, linux-clk@vger.kernel.org,
- linux-kernel@vger.kernel.org, Mattijs Korpershoek
- <mkorpershoek@baylibre.com>, linux-arm-kernel@lists.infradead.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org
-References: <20220919-v1-0-4844816c9808@baylibre.com>
- <20220919-v1-11-4844816c9808@baylibre.com>
+To: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>, kishon@ti.com,
+ vkoul@kernel.org, davem@davemloft.net, edumazet@google.com, kuba@kernel.org,
+ pabeni@redhat.com, richardcochran@gmail.com, robh+dt@kernel.org,
+ krzysztof.kozlowski+dt@linaro.org, geert+renesas@glider.be
+Cc: andrew@lunn.ch, linux-phy@lists.infradead.org, netdev@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-renesas-soc@vger.kernel.org
+References: <20220921084745.3355107-1-yoshihiro.shimoda.uh@renesas.com>
+ <20220921084745.3355107-3-yoshihiro.shimoda.uh@renesas.com>
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20220919-v1-11-4844816c9808@baylibre.com>
+In-Reply-To: <20220921084745.3355107-3-yoshihiro.shimoda.uh@renesas.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220922_002430_009566_CBE4BDA6 
-X-CRM114-Status: GOOD (  11.72  )
+X-CRM114-CacheID: sfid-20220922_002903_200211_1760616E 
+X-CRM114-Status: GOOD (  13.78  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,27 +97,81 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 19/09/2022 18:56, Guillaume Ranquet wrote:
-> Adds hdmi and hdmi-ddc support for mt8195.
+On 21/09/2022 10:47, Yoshihiro Shimoda wrote:
+> Document Renesas Etherent SERDES for R-Car S4-8 (r8a779f0).
 > 
-> Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
+> Signed-off-by: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
+> ---
+>  .../bindings/phy/renesas,ether-serdes.yaml    | 54 +++++++++++++++++++
+>  1 file changed, 54 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/renesas,ether-serdes.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/renesas,ether-serdes.yaml b/Documentation/devicetree/bindings/phy/renesas,ether-serdes.yaml
+> new file mode 100644
+> index 000000000000..04d650244a6a
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/phy/renesas,ether-serdes.yaml
 
+Filename based on compatible, so renesas,r8a779f0-ether-serdes.yaml
 
-> +static int mtk_hdmi_ddc_probe(struct platform_device *pdev)
-> +{
-> +	struct device *dev = &pdev->dev;
-> +	struct mtk_hdmi_ddc *ddc;
-> +	int ret;
+> @@ -0,0 +1,54 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/phy/renesas,ether-serdes.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
 > +
-> +	ddc = devm_kzalloc(dev, sizeof(struct mtk_hdmi_ddc), GFP_KERNEL);
-> +	if (!ddc)
-> +		return -ENOMEM;
+> +title: Renesas Ethernet SERDES
 > +
-> +	ddc->regs = syscon_regmap_lookup_by_compatible("mediatek,mt8195-hdmi");
+> +maintainers:
+> +  - Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
+> +
+> +properties:
+> +  compatible:
+> +    const: renesas,r8a779f0-ether-serdes
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    maxItems: 1
+> +
+> +  resets:
+> +    maxItems: 1
+> +
+> +  power-domains:
+> +    maxItems: 1
+> +
+> +  '#phy-cells':
+> +    description: Port number of SERDES.
+> +    const: 1
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - clocks
+> +  - resets
+> +  - power-domains
+> +  - '#phy-cells'
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/clock/r8a779f0-cpg-mssr.h>
+> +    #include <dt-bindings/power/r8a779f0-sysc.h>
+> +
+> +    ethernet@e6880000 {
 
-That's not how you get regmaps. If you the driver grows, are you going
-to grow the list to e.g. 10 syscon_regmap_lookup_by_compatible() calls?
-This has to be by phandle.
+Hm, isn't this a phy?
+
+> +            compatible = "renesas,r8a779f0-ether-serdes";
+> +            reg = <0xe6444000 0xc00>;
+> +            clocks = <&cpg CPG_MOD 1506>;
+> +            power-domains = <&sysc R8A779F0_PD_ALWAYS_ON>;
+> +            resets = <&cpg 1506>;
+> +            #phy-cells = <1>;
+> +    };
 
 Best regards,
 Krzysztof
