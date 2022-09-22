@@ -4,39 +4,39 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B1DD7C6FA82
-	for <linux-phy@archiver.kernel.org>; Thu, 22 Sep 2022 13:49:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 32CFDC6FA86
+	for <linux-phy@archiver.kernel.org>; Thu, 22 Sep 2022 13:49:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3H7nWoTuMbOnRG4kW/1HExcYYXa35PSprESwvfSAdow=; b=mckLDboZADGllN
-	Rla7SLYyDQVLlJH6fntkgLn3ZrNspJjMq/qzLlSE7LHu/bIY7giEr+UyLGBil7D6G9DaxC1qChXLw
-	b2dCp4ugY5ADiZjJzp26bkQ7K/+UzE0OFZ1ZUiBCcMH7BP6d7nxOE6VrUW5o+9J8cnIi8vqBh37z5
-	01x2SOW3Z1V/xkoPFemhQBYnJMCXJz+G7HY38h+QMy3t2oPPWCfLfhQS/8K0B5UFDxvAaN0lrk/Pd
-	YjdGHGe4+1IK6ViginWymIDPVNWcgFWuDdPd1soQjNxTM4XRAA0eFk7lhlCiUfocqUyDu3LN0eVBK
-	ggzqwhqn4lCKtYBysf7w==;
+	List-Owner; bh=MPsxVvj+HaTvQVELCv/mdg+2uZr8RV8kyzUt+uquhB0=; b=ED73G8IcyNPHo6
+	IxOjYKUq/bYQM/LEB5qb4vvov9uTq7glfGOYM7DPMcF7Kc7htYVOzbHzUrvFGnCNSh4cySUoKktO/
+	gczXqqAB1fsl+3MlRUAeeJxHh69Mbr8xxM6aJ0iICWh2tjmR5Z0WB/020KiDtcYTY+H/26ddq2P66
+	nCqbmyLX7/tCMgiazhwI/uk60Uy061KpfEWGxPq4S/TFlTM0CPqXz0Be9uhm7NO+rappvkOICASfT
+	gc1dvx/fxVqmPxJyhXzHYsbpi7VzGLaBrJU914D7JJjxQ/EyjAoesHvOTUZe08ZDDmTDQQjjy7M+F
+	aUjw6Rs2x5NhV4Ny0QOg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1obMZf-00FmXJ-OI; Thu, 22 Sep 2022 13:49:07 +0000
+	id 1obMZg-00FmXk-6Z; Thu, 22 Sep 2022 13:49:08 +0000
 Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1obMZY-00FmSD-JL
+	id 1obMZZ-00FmSl-8q
 	for linux-phy@lists.infradead.org; Thu, 22 Sep 2022 13:49:03 +0000
 Received: from drehscheibe.grey.stw.pengutronix.de ([2a0a:edc0:0:c01:1d::a2])
 	by metis.ext.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
 	(Exim 4.92)
 	(envelope-from <mfe@pengutronix.de>)
-	id 1obMZM-0008Ec-FZ; Thu, 22 Sep 2022 15:48:48 +0200
+	id 1obMZM-0008Eq-Fh; Thu, 22 Sep 2022 15:48:48 +0200
 Received: from [2a0a:edc0:0:1101:1d::28] (helo=dude02.red.stw.pengutronix.de)
 	by drehscheibe.grey.stw.pengutronix.de with esmtp (Exim 4.94.2)
 	(envelope-from <mfe@pengutronix.de>)
-	id 1obMZM-002GUl-8r; Thu, 22 Sep 2022 15:48:46 +0200
+	id 1obMZM-002GUo-Mv; Thu, 22 Sep 2022 15:48:47 +0200
 Received: from mfe by dude02.red.stw.pengutronix.de with local (Exim 4.94.2)
 	(envelope-from <mfe@pengutronix.de>)
-	id 1obMZJ-00D4DQ-Cw; Thu, 22 Sep 2022 15:48:45 +0200
+	id 1obMZJ-00D4DX-EH; Thu, 22 Sep 2022 15:48:45 +0200
 From: Marco Felsch <m.felsch@pengutronix.de>
 To: mchehab@kernel.org,
 	robh+dt@kernel.org,
@@ -52,9 +52,9 @@ Cc: linux-phy@lists.infradead.org,
 	devicetree@vger.kernel.org,
 	linux-media@vger.kernel.org,
 	kernel@pengutronix.de
-Subject: [PATCH v3 2/4] phy: dphy: add support to calculate the timing based on hs_clk_rate
-Date: Thu, 22 Sep 2022 15:48:41 +0200
-Message-Id: <20220922134843.3108267-3-m.felsch@pengutronix.de>
+Subject: [PATCH v3 3/4] media: dt-bindings: add bindings for Toshiba TC358746
+Date: Thu, 22 Sep 2022 15:48:42 +0200
+Message-Id: <20220922134843.3108267-4-m.felsch@pengutronix.de>
 X-Mailer: git-send-email 2.30.2
 In-Reply-To: <20220922134843.3108267-1-m.felsch@pengutronix.de>
 References: <20220922134843.3108267-1-m.felsch@pengutronix.de>
@@ -64,8 +64,8 @@ X-SA-Exim-Mail-From: mfe@pengutronix.de
 X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de); SAEximRunCond expanded to false
 X-PTX-Original-Recipient: linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220922_064900_688687_B40EBFC3 
-X-CRM114-Status: GOOD (  16.22  )
+X-CRM114-CacheID: sfid-20220922_064901_352293_4A5668B2 
+X-CRM114-Status: GOOD (  19.01  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,101 +77,110 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-For MIPI-CSI sender use-case it is common to specify the allowed
-link-frequencies which should be used for the MIPI link and is
-half the hs-clock rate.
-
-This commit adds a helper to calculate the D-PHY timing based on the
-hs-clock rate so we don't need to calculate the timings within the
-driver.
-
-Signed-off-by: Marco Felsch <m.felsch@pengutronix.de>
-Acked-by: Vinod Koul <vkoul@kernel.org>
----
-Changelog:
-
-v2:
-- added Vinod Koul a-b
----
- drivers/phy/phy-core-mipi-dphy.c  | 22 ++++++++++++++++++----
- include/linux/phy/phy-mipi-dphy.h |  3 +++
- 2 files changed, 21 insertions(+), 4 deletions(-)
-
-diff --git a/drivers/phy/phy-core-mipi-dphy.c b/drivers/phy/phy-core-mipi-dphy.c
-index ba365bc77407..f4956a417a47 100644
---- a/drivers/phy/phy-core-mipi-dphy.c
-+++ b/drivers/phy/phy-core-mipi-dphy.c
-@@ -20,16 +20,18 @@
- static int phy_mipi_dphy_calc_config(unsigned long pixel_clock,
- 				     unsigned int bpp,
- 				     unsigned int lanes,
-+				     unsigned long long hs_clk_rate,
- 				     struct phy_configure_opts_mipi_dphy *cfg)
- {
--	unsigned long long hs_clk_rate;
- 	unsigned long long ui;
- 
- 	if (!cfg)
- 		return -EINVAL;
- 
--	hs_clk_rate = pixel_clock * bpp;
--	do_div(hs_clk_rate, lanes);
-+	if (!hs_clk_rate) {
-+		hs_clk_rate = pixel_clock * bpp;
-+		do_div(hs_clk_rate, lanes);
-+	}
- 
- 	ui = ALIGN(PSEC_PER_SEC, hs_clk_rate);
- 	do_div(ui, hs_clk_rate);
-@@ -81,11 +83,23 @@ int phy_mipi_dphy_get_default_config(unsigned long pixel_clock,
- 				     unsigned int lanes,
- 				     struct phy_configure_opts_mipi_dphy *cfg)
- {
--	return phy_mipi_dphy_calc_config(pixel_clock, bpp, lanes, cfg);
-+	return phy_mipi_dphy_calc_config(pixel_clock, bpp, lanes, 0, cfg);
- 
- }
- EXPORT_SYMBOL(phy_mipi_dphy_get_default_config);
- 
-+int phy_mipi_dphy_get_default_config_for_hsclk(unsigned long long hs_clk_rate,
-+					       unsigned int lanes,
-+					       struct phy_configure_opts_mipi_dphy *cfg)
-+{
-+	if (!hs_clk_rate)
-+		return -EINVAL;
-+
-+	return phy_mipi_dphy_calc_config(0, 0, lanes, hs_clk_rate, cfg);
-+
-+}
-+EXPORT_SYMBOL(phy_mipi_dphy_get_default_config_for_hsclk);
-+
- /*
-  * Validate D-PHY configuration according to MIPI D-PHY specification
-  * (v1.2, Section Section 6.9 "Global Operation Timing Parameters").
-diff --git a/include/linux/phy/phy-mipi-dphy.h b/include/linux/phy/phy-mipi-dphy.h
-index a877ffee845d..1ac128d78dfe 100644
---- a/include/linux/phy/phy-mipi-dphy.h
-+++ b/include/linux/phy/phy-mipi-dphy.h
-@@ -279,6 +279,9 @@ int phy_mipi_dphy_get_default_config(unsigned long pixel_clock,
- 				     unsigned int bpp,
- 				     unsigned int lanes,
- 				     struct phy_configure_opts_mipi_dphy *cfg);
-+int phy_mipi_dphy_get_default_config_for_hsclk(unsigned long long hs_clk_rate,
-+					       unsigned int lanes,
-+					       struct phy_configure_opts_mipi_dphy *cfg);
- int phy_mipi_dphy_config_validate(struct phy_configure_opts_mipi_dphy *cfg);
- 
- #endif /* __PHY_MIPI_DPHY_H_ */
--- 
-2.30.2
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+QWRkIHRoZSBiaW5kaW5ncyBmb3IgdGhlIFRvc2hpYmEgVEMzNTg3NDYgUGFyYWxsZWwgPC0+IE1J
+UEktQ1NJIGJyaWRnZQpkcml2ZXIuCgpTaWduZWQtb2ZmLWJ5OiBNYXJjbyBGZWxzY2ggPG0uZmVs
+c2NoQHBlbmd1dHJvbml4LmRlPgpSZXZpZXdlZC1ieTogUm9iIEhlcnJpbmcgPHJvYmhAa2VybmVs
+Lm9yZz4KUmV2aWV3ZWQtYnk6IExhdXJlbnQgUGluY2hhcnQgPGxhdXJlbnQucGluY2hhcnRAaWRl
+YXNvbmJvYXJkLmNvbT4KLS0tCkNoYW5nZWxvZwoKdjM6Ci0gcHV0IHRoZSBtY2xrIGNvbW1lbnQg
+aW50byB0aGUgZGVzY3JpcHRpb24gb2YgI2Nsb2NrLWNlbGxzCi0gbWFrZSBidXMtdHlwZSByZXF1
+aXJlZAotIGFsbG93IGFsbCBzeW5jIHZhbHVlcwotIGFsbG93IGFsbCBwb3NzaWJsZSBwYXJhbGxl
+bCBidXMtdHlwZXMKLSBhZGRlZCBMYXVyZW50J3Mgci1iCgp2MjoKLSBhZGRkZWQgUm9icyByLWIK
+LSBzL3RoYW4vdGhlbi8KLSBhZGRlZCBoc3luYy92c3luYy9idXMtdHlwZSwgbWFrZSBoc3luYy92
+c3luYyByZXF1aXJlZAotIGZpeCBleGFtcGxlIGluZGVudAotLS0KIC4uLi9iaW5kaW5ncy9tZWRp
+YS9pMmMvdG9zaGliYSx0YzM1ODc0Ni55YW1sICB8IDE3OCArKysrKysrKysrKysrKysrKysKIDEg
+ZmlsZSBjaGFuZ2VkLCAxNzggaW5zZXJ0aW9ucygrKQogY3JlYXRlIG1vZGUgMTAwNjQ0IERvY3Vt
+ZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9tZWRpYS9pMmMvdG9zaGliYSx0YzM1ODc0Ni55
+YW1sCgpkaWZmIC0tZ2l0IGEvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL21lZGlh
+L2kyYy90b3NoaWJhLHRjMzU4NzQ2LnlhbWwgYi9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmlu
+ZGluZ3MvbWVkaWEvaTJjL3Rvc2hpYmEsdGMzNTg3NDYueWFtbApuZXcgZmlsZSBtb2RlIDEwMDY0
+NAppbmRleCAwMDAwMDAwMDAwMDAuLmI4YmE4NWEyNDE2YwotLS0gL2Rldi9udWxsCisrKyBiL0Rv
+Y3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9tZWRpYS9pMmMvdG9zaGliYSx0YzM1ODc0
+Ni55YW1sCkBAIC0wLDAgKzEsMTc4IEBACisjIFNQRFgtTGljZW5zZS1JZGVudGlmaWVyOiAoR1BM
+LTIuMC1vbmx5IE9SIEJTRC0yLUNsYXVzZSkKKyVZQU1MIDEuMgorLS0tCiskaWQ6IGh0dHA6Ly9k
+ZXZpY2V0cmVlLm9yZy9zY2hlbWFzL21lZGlhL2kyYy90b3NoaWJhLHRjMzU4NzQ2LnlhbWwjCisk
+c2NoZW1hOiBodHRwOi8vZGV2aWNldHJlZS5vcmcvbWV0YS1zY2hlbWFzL2NvcmUueWFtbCMKKwor
+dGl0bGU6IFRvc2hpYmEgVEMzNTg3NDYgUGFyYWxsZWwgdG8gTUlQSSBDU0kyIEJyaWRnZQorCitt
+YWludGFpbmVyczoKKyAgLSBNYXJjbyBGZWxzY2ggPGtlcm5lbEBwZW5ndXRyb25peC5kZT4KKwor
+ZGVzY3JpcHRpb246IHwtCisgIFRoZSBUb3NoaWJhIFRDMzU4NzQ2IGNvbnZlcnRzIGEgcGFyYWxs
+ZWwgdmlkZW8gc3RyZWFtIGludG8gYSBNSVBJIENTSS0yCisgIHN0cmVhbS4gVGhlIGRpcmVjdGlv
+biBjYW4gYmUgZWl0aGVyIHBhcmFsbGVsLWluIC0+IGNzaS1vdXQgb3IgY3NpLWluIC0+CisgIHBh
+cmFsbGVsLW91dCBUaGUgY2hpcCBpcyBwcm9ncmFtbWFibGUgdHJvdWdoIEkyQyBhbmQgU1BJIGJ1
+dCB0aGUgU1BJCisgIGludGVyZmFjZSBpcyBvbmx5IHN1cHBvcnRlZCBpbiBwYXJhbGxlbC1pbiAt
+PiBjc2ktb3V0IG1vZGUuCisKKyAgTm90ZSB0aGF0IHRoZSBjdXJyZW50IGRldmljZSB0cmVlIGJp
+bmRpbmdzIG9ubHkgc3VwcG9ydCB0aGUKKyAgcGFyYWxsZWwtaW4gLT4gY3NpLW91dCBwYXRoLgor
+Citwcm9wZXJ0aWVzOgorICBjb21wYXRpYmxlOgorICAgIGNvbnN0OiB0b3NoaWJhLHRjMzU4NzQ2
+CisKKyAgcmVnOgorICAgIG1heEl0ZW1zOiAxCisKKyAgY2xvY2tzOgorICAgIGRlc2NyaXB0aW9u
+OgorICAgICAgVGhlIHBoYW5kbGUgdG8gdGhlIHJlZmVyZW5jZSBjbG9jayBzb3VyY2UuIFRoaXMg
+Y29ycmVzcG9uZHMgdG8gdGhlCisgICAgICBoYXJkd2FyZSBwaW4gUkVGQ0xLLgorICAgIG1heEl0
+ZW1zOiAxCisKKyAgY2xvY2stbmFtZXM6CisgICAgY29uc3Q6IHJlZmNsaworCisgICIjY2xvY2st
+Y2VsbHMiOgorICAgIGRlc2NyaXB0aW9uOiB8CisgICAgICBUaGUgYnJpZGdlIGNhbiBhY3QgYXMg
+Y2xvY2sgcHJvdmlkZXIgZm9yIHRoZSBzZW5zb3IuIFRvIGVuYWJsZSB0aGlzCisgICAgICBzdXBw
+b3J0ICNjbG9jay1jZWxscyBtdXN0IGJlIHNwZWNpZmllZC4gQXR0ZW50aW9uIGlmIHRoaXMgZmVh
+dHVyZSBpcyB1c2VkCisgICAgICB0aGVuIHRoZSBtY2xrIHJhdGUgbXVzdCBiZSBhdCBsZWFzdDog
+KDIgKiBsaW5rLWZyZXF1ZW5jeSkgLyA4CisgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgYC0tLS0tLS0tLS0tLS0tLS0tLcK0ICAgXgorICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgIGludGVybmFsIFBMTCByYXRlICAgc21hbGxlc3QgcG9z
+c2libGUKKyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICBtY2xrLWRpdgorICAgIGNvbnN0OiAwCisKKyAgY2xvY2stb3V0cHV0
+LW5hbWVzOgorICAgIGRlc2NyaXB0aW9uOgorICAgICAgVGhlIGNsb2NrIG5hbWUgb2YgdGhlIE1D
+TEsgb3V0cHV0LCB0aGUgZGVmYXVsdCBuYW1lIGlzIHRjMzU4NzQ2LW1jbGsuCisgICAgbWF4SXRl
+bXM6IDEKKworICB2ZGRjLXN1cHBseToKKyAgICBkZXNjcmlwdGlvbjogRGlnaXRhbCBjb3JlIHZv
+bHRhZ2Ugc3VwcGx5LCAxLjIgdm9sdHMKKworICB2ZGRpby1zdXBwbHk6CisgICAgZGVzY3JpcHRp
+b246IERpZ2l0YWwgSS9PIHZvbHRhZ2Ugc3VwcGx5LCAxLjggdm9sdHMKKworICB2ZGRtaXBpLXN1
+cHBseToKKyAgICBkZXNjcmlwdGlvbjogTUlQSSBDU0kgcGh5IHZvbHRhZ2Ugc3VwcGx5LCAxLjIg
+dm9sdHMKKworICByZXNldC1ncGlvczoKKyAgICBkZXNjcmlwdGlvbjoKKyAgICAgIFRoZSBwaGFu
+ZGxlIGFuZCBzcGVjaWZpZXIgZm9yIHRoZSBHUElPIHRoYXQgY29udHJvbHMgdGhlIGNoaXAgcmVz
+ZXQuCisgICAgICBUaGlzIGNvcnJlc3BvbmRzIHRvIHRoZSBoYXJkd2FyZSBwaW4gUkVTWCB3aGlj
+aCBpcyBwaHlzaWNhbGx5IGFjdGl2ZSBsb3cuCisgICAgbWF4SXRlbXM6IDEKKworICBwb3J0czoK
+KyAgICAkcmVmOiAvc2NoZW1hcy9ncmFwaC55YW1sIy9wcm9wZXJ0aWVzL3BvcnRzCisgICAgcHJv
+cGVydGllczoKKyAgICAgIHBvcnRAMDoKKyAgICAgICAgJHJlZjogL3NjaGVtYXMvZ3JhcGgueWFt
+bCMvJGRlZnMvcG9ydC1iYXNlCisgICAgICAgIGRlc2NyaXB0aW9uOiBJbnB1dCBwb3J0CisKKyAg
+ICAgICAgcHJvcGVydGllczoKKyAgICAgICAgICBlbmRwb2ludDoKKyAgICAgICAgICAgICRyZWY6
+IC9zY2hlbWFzL21lZGlhL3ZpZGVvLWludGVyZmFjZXMueWFtbCMKKyAgICAgICAgICAgIHVuZXZh
+bHVhdGVkUHJvcGVydGllczogZmFsc2UKKworICAgICAgICAgICAgcHJvcGVydGllczoKKyAgICAg
+ICAgICAgICAgaHN5bmMtYWN0aXZlOiB0cnVlCisgICAgICAgICAgICAgIHZzeW5jLWFjdGl2ZTog
+dHJ1ZQorICAgICAgICAgICAgICBidXMtdHlwZToKKyAgICAgICAgICAgICAgICBlbnVtOiBbIDUs
+IDYgXQorCisgICAgICAgICAgICByZXF1aXJlZDoKKyAgICAgICAgICAgICAgLSBoc3luYy1hY3Rp
+dmUKKyAgICAgICAgICAgICAgLSB2c3luYy1hY3RpdmUKKyAgICAgICAgICAgICAgLSBidXMtdHlw
+ZQorCisgICAgICBwb3J0QDE6CisgICAgICAgICRyZWY6IC9zY2hlbWFzL2dyYXBoLnlhbWwjLyRk
+ZWZzL3BvcnQtYmFzZQorICAgICAgICBkZXNjcmlwdGlvbjogT3V0cHV0IHBvcnQKKworICAgICAg
+ICBwcm9wZXJ0aWVzOgorICAgICAgICAgIGVuZHBvaW50OgorICAgICAgICAgICAgJHJlZjogL3Nj
+aGVtYXMvbWVkaWEvdmlkZW8taW50ZXJmYWNlcy55YW1sIworICAgICAgICAgICAgdW5ldmFsdWF0
+ZWRQcm9wZXJ0aWVzOiBmYWxzZQorCisgICAgICAgICAgICBwcm9wZXJ0aWVzOgorICAgICAgICAg
+ICAgICBkYXRhLWxhbmVzOgorICAgICAgICAgICAgICAgIG1pbkl0ZW1zOiAxCisgICAgICAgICAg
+ICAgICAgbWF4SXRlbXM6IDQKKworICAgICAgICAgICAgICBjbG9jay1ub25jb250aW51b3VzOiB0
+cnVlCisgICAgICAgICAgICAgIGxpbmstZnJlcXVlbmNpZXM6IHRydWUKKworICAgICAgICAgICAg
+cmVxdWlyZWQ6CisgICAgICAgICAgICAgIC0gZGF0YS1sYW5lcworICAgICAgICAgICAgICAtIGxp
+bmstZnJlcXVlbmNpZXMKKworICAgIHJlcXVpcmVkOgorICAgICAgLSBwb3J0QDAKKyAgICAgIC0g
+cG9ydEAxCisKK3JlcXVpcmVkOgorICAtIGNvbXBhdGlibGUKKyAgLSByZWcKKyAgLSBjbG9ja3MK
+KyAgLSBjbG9jay1uYW1lcworICAtIHZkZGMtc3VwcGx5CisgIC0gdmRkaW8tc3VwcGx5CisgIC0g
+dmRkbWlwaS1zdXBwbHkKKyAgLSBwb3J0cworCithZGRpdGlvbmFsUHJvcGVydGllczogZmFsc2UK
+KworZXhhbXBsZXM6CisgIC0gfAorICAgICNpbmNsdWRlIDxkdC1iaW5kaW5ncy9ncGlvL2dwaW8u
+aD4KKworICAgIGkyYyB7CisgICAgICAjYWRkcmVzcy1jZWxscyA9IDwxPjsKKyAgICAgICNzaXpl
+LWNlbGxzID0gPDA+OworCisgICAgICBjc2ktYnJpZGdlQGUgeworICAgICAgICBjb21wYXRpYmxl
+ID0gInRvc2hpYmEsdGMzNTg3NDYiOworICAgICAgICByZWcgPSA8MHhlPjsKKworICAgICAgICBj
+bG9ja3MgPSA8JnJlZmNsaz47CisgICAgICAgIGNsb2NrLW5hbWVzID0gInJlZmNsayI7CisKKyAg
+ICAgICAgcmVzZXQtZ3Bpb3MgPSA8JmdwaW8gMiBHUElPX0FDVElWRV9MT1c+OworCisgICAgICAg
+IHZkZGMtc3VwcGx5ID0gPCZ2MV8yZD47CisgICAgICAgIHZkZGlvLXN1cHBseSA9IDwmdjFfOGQ+
+OworICAgICAgICB2ZGRtaXBpLXN1cHBseSA9IDwmdjFfMmQ+OworCisgICAgICAgIC8qIHNlbnNv
+ciBtY2xrIHByb3ZpZGVyICovCisgICAgICAgICNjbG9jay1jZWxscyA9IDwwPjsKKworICAgICAg
+ICBwb3J0cyB7CisgICAgICAgICAgI2FkZHJlc3MtY2VsbHMgPSA8MT47CisgICAgICAgICAgI3Np
+emUtY2VsbHMgPSA8MD47CisKKyAgICAgICAgICAvKiBJbnB1dCAqLworICAgICAgICAgIHBvcnRA
+MCB7CisgICAgICAgICAgICByZWcgPSA8MD47CisgICAgICAgICAgICB0YzM1ODc0Nl9pbjogZW5k
+cG9pbnQgeworICAgICAgICAgICAgICByZW1vdGUtZW5kcG9pbnQgPSA8JnNlbnNvcl9vdXQ+Owor
+ICAgICAgICAgICAgICBoc3luYy1hY3RpdmUgPSA8MD47CisgICAgICAgICAgICAgIHZzeW5jLWFj
+dGl2ZSA9IDwwPjsKKyAgICAgICAgICAgICAgYnVzLXR5cGUgPSA8NT47CisgICAgICAgICAgICB9
+OworICAgICAgICAgIH07CisKKyAgICAgICAgICAvKiBPdXRwdXQgKi8KKyAgICAgICAgICBwb3J0
+QDEgeworICAgICAgICAgICAgcmVnID0gPDE+OworICAgICAgICAgICAgdGMzNTg3NDZfb3V0OiBl
+bmRwb2ludCB7CisgICAgICAgICAgICAgIHJlbW90ZS1lbmRwb2ludCA9IDwmbWlwaV9jc2kyX2lu
+PjsKKyAgICAgICAgICAgICAgZGF0YS1sYW5lcyA9IDwxIDI+OworICAgICAgICAgICAgICBjbG9j
+ay1ub25jb250aW51b3VzOworICAgICAgICAgICAgICBsaW5rLWZyZXF1ZW5jaWVzID0gL2JpdHMv
+IDY0IDwyMTYwMDAwMDA+OworICAgICAgICAgICAgfTsKKyAgICAgICAgICB9OworICAgICAgICB9
+OworICAgICAgfTsKKyAgICB9OwotLSAKMi4zMC4yCgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxp
+c3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQu
+b3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
