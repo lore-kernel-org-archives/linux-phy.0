@@ -4,81 +4,145 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 667C7C6FA82
-	for <linux-phy@archiver.kernel.org>; Thu, 22 Sep 2022 07:56:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CF246C6FA90
+	for <linux-phy@archiver.kernel.org>; Thu, 22 Sep 2022 08:21:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7C4FkCt+i9Rs0y4X9A03YXyADxD+1aB16o2LZzkDCnQ=; b=pwepoX4oDRX8Y4
-	dWlMyUePIANEcb3U1b/42KPfmPTTW/WBVQzIMkiteUXwyKiM45gyimHEG4JEU2yt8UDqwV1wKO93D
-	tkRPEOcRxdzqGD+04zWSbUk4lpz0+TNA19zvGh2OblCESL222fBiouPzHgSC8HcU81u1YcvEWlk3f
-	/GTpG+cvXJe/CQEO3/F4bcBgXOrF+NjBDpNA97zpOWewhLX+kYeiFc2S6kNM8ogroLHPpOgAQl6Kh
-	GP3wXJaBCf/fwlPpdUeveAV/ZGmXPD9CV5cx57EyUYIYa8KS4MWCBbPpEnJV22DMX0OZ0Hk0F+3Ba
-	q3Krdoxrr7GLn/2+5Aew==;
+	List-Owner; bh=9vqiFVDyTfAZMH20DMFZC+GzoJClt8zYz06dkBpAF6Y=; b=G8ecNqnsQhMn3p
+	L1f4QQz1JoULIMVIOiWIy/CAGZMbEmnW6Vx5Gy5YLuVtPo7uxSDOmDIlJSGPs1Xh6mIFdbvlBPrdk
+	/ndoND2cs9cL5ceLMz5Yqhm3GTGgfvAczXtpmo82ePsS9nnLh8iFpTb3m5TACtY8DHRaCQTvUum8l
+	WMvcuowJI+JrP1zep1YiAUm5Ei7HEZSCUX+xPzgpam0isLZLfttCB9dYRMMhlWOyk17R37KWbwJw/
+	HOXiI+6r9kG64LRWcxGvlKt67IAZxsHhGMFOgjZbwqaj8U2JuJP7joxSAS1EDgEKHCDxxhI4bj9nT
+	pMdYfY8OG+EDWgPBXRWA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1obH4J-00Dyij-Rz; Thu, 22 Sep 2022 07:56:23 +0000
-Received: from mail-qk1-f178.google.com ([209.85.222.178])
+	id 1obHSi-00E70m-2W; Thu, 22 Sep 2022 08:21:36 +0000
+Received: from mail-os0jpn01on2093.outbound.protection.outlook.com ([40.107.113.93] helo=JPN01-OS0-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1obH4H-00Dyhc-A4
-	for linux-phy@lists.infradead.org; Thu, 22 Sep 2022 07:56:22 +0000
-Received: by mail-qk1-f178.google.com with SMTP id c19so5627531qkm.7
-        for <linux-phy@lists.infradead.org>; Thu, 22 Sep 2022 00:56:19 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date;
-        bh=V7WeZATWUx2tE4MxoHQwI+QugNIBy3AvjYpUsXK7axg=;
-        b=aaMXzXewQf2N7fcCo+ZnumA5wlIm7Qh1KSOwMGp18TGHiXC4NwS78oTog39Vie916v
-         r8KywVS2uc09H/vU2ZqZ6103CH2GvG6Cfc1HH8lizuxDgtXEqD086KfHONPdRZptJMGf
-         Ij62Zv8EQVRhZQePmmWf3LXL/Xe9RweBuF2a6QO/dJhL902QzOuFl1xpN/DxVWJe0vFe
-         xdK9HNZJ7NuHvUnzV6pqgy6jwDXqeHEEmRWcgofz7V8tyl9AbmTAqckDgMpWv26rvqWp
-         H/a2F6BGONgeiZYZT7krrL9ACd0qoUV9I3WEsJGSM7jczyH+MawjX/tLRE2CALNqwBUg
-         bn8w==
-X-Gm-Message-State: ACrzQf1RwecyCbDCiqY5yMNsz+QizQ/dcHS0xx4SDkL1dD3omwUnPd5Y
-	1Uz8Jfqu35thw2YM+MebDIlrhTdlGGLbTTxi
-X-Google-Smtp-Source: AMsMyM5K28AIluSbctLX4Xh5OlXvKErn+pvhYsSRWxrKrgFCKZyrNuaQ6Y5Wkzc0f9yKwzgJbn+Osg==
-X-Received: by 2002:ae9:e8d4:0:b0:6cb:c44f:6c42 with SMTP id a203-20020ae9e8d4000000b006cbc44f6c42mr1221608qkg.440.1663833378509;
-        Thu, 22 Sep 2022 00:56:18 -0700 (PDT)
-Received: from mail-yb1-f170.google.com (mail-yb1-f170.google.com. [209.85.219.170])
-        by smtp.gmail.com with ESMTPSA id r13-20020ac8794d000000b003438a8e842fsm3030132qtt.44.2022.09.22.00.56.17
-        for <linux-phy@lists.infradead.org>
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 22 Sep 2022 00:56:18 -0700 (PDT)
-Received: by mail-yb1-f170.google.com with SMTP id 125so11544088ybt.12
-        for <linux-phy@lists.infradead.org>; Thu, 22 Sep 2022 00:56:17 -0700 (PDT)
-X-Received: by 2002:a25:3851:0:b0:6ad:9cba:9708 with SMTP id
- f78-20020a253851000000b006ad9cba9708mr2393590yba.36.1663833377467; Thu, 22
- Sep 2022 00:56:17 -0700 (PDT)
-MIME-Version: 1.0
+	id 1obHRS-00E6PG-5g
+	for linux-phy@lists.infradead.org; Thu, 22 Sep 2022 08:20:20 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=kwtqTIpta/BfUDS/ZRQRQSmMSWEDn85sVvJ6DmxFcFjMRjj/yP0Lk0xvDpAWb0Hfmqs3zg2v7ifE2ypCCofr+71UNqMM8djq3K4hkxRV5iZPo6C3EbN/fS+jreuWv4qy0hu+F7I6sae1JlJbf4I2u/uC6Uq274oogZBf+oWvFTg8DXKVqCVl3yTrllBoc1JfwDx0w7wO4sDpzpeq93VdVCwt3Oeqh3s7mNT62N3o5gpkQQJvCrS6e9+4E5obojbzBkM5QjwER5Ykr8YmKKGH2+3A8D5I6tOz4z0La99kIfv1aVznSNy5UppW8w7pQTU5WNNJtJB0pk2GCSwhhVvr7Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=P18E5XwWG0BkKzp/6VjkPLlbQaW34ergQZUPyLnunWU=;
+ b=NuCJXpI/jILrUudf84SsPz3UaxzF+KdFl9ELjY35b70zPL7dqMGZPqWbx2+0dtqXP86hILW2etPmO5sohvUgPyq3+0YEYIPgn4sPx8gZSqD5+kARyeDqsOxLsTQ65kqjIjPlgzFvODBGCZzTLgR9ghktE3QaC/XQ6jhRrqGIxD4+d6L+jlV6Vxlo6VAUAHgiPj42ELTP7WApiltWGaLvVMjj6xpeOGkyesYl2wpsXBHd2hmn+ELmwW/Q6Q37zThnO6NU2jR6S3ij/j1W2uTo4p7xfkgjFMW3A/93lKF8q0gMvlnqlTILKCvS0Sdl9ZYATzMJl5DdpCo0mEJuF4i7CQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=renesas.com; dmarc=pass action=none header.from=renesas.com;
+ dkim=pass header.d=renesas.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=renesas.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=P18E5XwWG0BkKzp/6VjkPLlbQaW34ergQZUPyLnunWU=;
+ b=aEahvilmSsPiKBc3QwO72nvduklq+tvFmiO1khMqWt4Fk4KMJ3d0bxAscGRpy6/3yRxAY/3Q0dVIirRDsIIGWYHTkncNmFif9ZnxyY4wI0YRa1UYknFm2O1wKy0fn9q8rKSZrIwLAmX6/CylArkteQ+N67UGrrJO7q9EpYHV4zo=
+Received: from TYBPR01MB5341.jpnprd01.prod.outlook.com
+ (2603:1096:404:8028::13) by OS3PR01MB10359.jpnprd01.prod.outlook.com
+ (2603:1096:604:1fb::7) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5632.16; Thu, 22 Sep
+ 2022 08:20:11 +0000
+Received: from TYBPR01MB5341.jpnprd01.prod.outlook.com
+ ([fe80::2991:1e2d:e62c:37d0]) by TYBPR01MB5341.jpnprd01.prod.outlook.com
+ ([fe80::2991:1e2d:e62c:37d0%3]) with mapi id 15.20.5654.018; Thu, 22 Sep 2022
+ 08:20:11 +0000
+From: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
+To: Geert Uytterhoeven <geert@linux-m68k.org>
+CC: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, "kishon@ti.com"
+	<kishon@ti.com>, "vkoul@kernel.org" <vkoul@kernel.org>, "davem@davemloft.net"
+	<davem@davemloft.net>, "edumazet@google.com" <edumazet@google.com>,
+	"kuba@kernel.org" <kuba@kernel.org>, "pabeni@redhat.com" <pabeni@redhat.com>,
+	"richardcochran@gmail.com" <richardcochran@gmail.com>, "robh+dt@kernel.org"
+	<robh+dt@kernel.org>, "krzysztof.kozlowski+dt@linaro.org"
+	<krzysztof.kozlowski+dt@linaro.org>, "geert+renesas@glider.be"
+	<geert+renesas@glider.be>, "andrew@lunn.ch" <andrew@lunn.ch>,
+	"linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
+	"netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+	"devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+	"linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>
+Subject: RE: [PATCH v2 2/8] dt-bindings: phy: renesas: Document Renesas
+ Ethernet SERDES
+Thread-Topic: [PATCH v2 2/8] dt-bindings: phy: renesas: Document Renesas
+ Ethernet SERDES
+Thread-Index: AQHYzZbyAdB5zxMt9EG9rj3m+K4rGq3rDseAgAAB7gCAAAWmAIAABSWA
+Date: Thu, 22 Sep 2022 08:20:11 +0000
+Message-ID:  <TYBPR01MB534120E881FFA267A65E8B7CD84E9@TYBPR01MB5341.jpnprd01.prod.outlook.com>
 References: <20220921084745.3355107-1-yoshihiro.shimoda.uh@renesas.com>
  <20220921084745.3355107-3-yoshihiro.shimoda.uh@renesas.com>
- <9b29ee3f-ed48-9d95-a262-7d9e23a20528@linaro.org> <TYBPR01MB534100D42EC0202CA8BEF04CD84E9@TYBPR01MB5341.jpnprd01.prod.outlook.com>
-In-Reply-To: <TYBPR01MB534100D42EC0202CA8BEF04CD84E9@TYBPR01MB5341.jpnprd01.prod.outlook.com>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Thu, 22 Sep 2022 09:56:06 +0200
-X-Gmail-Original-Message-ID: <CAMuHMdV=HECSXtLi6BFRVFiYZvjJ_t5RDUY3DckbSB4ozEtOgg@mail.gmail.com>
-Message-ID: <CAMuHMdV=HECSXtLi6BFRVFiYZvjJ_t5RDUY3DckbSB4ozEtOgg@mail.gmail.com>
-Subject: Re: [PATCH v2 2/8] dt-bindings: phy: renesas: Document Renesas
- Ethernet SERDES
-To: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
-Cc: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, "kishon@ti.com" <kishon@ti.com>, 
-	"vkoul@kernel.org" <vkoul@kernel.org>, "davem@davemloft.net" <davem@davemloft.net>, 
-	"edumazet@google.com" <edumazet@google.com>, "kuba@kernel.org" <kuba@kernel.org>, 
-	"pabeni@redhat.com" <pabeni@redhat.com>, "richardcochran@gmail.com" <richardcochran@gmail.com>, 
-	"robh+dt@kernel.org" <robh+dt@kernel.org>, 
-	"krzysztof.kozlowski+dt@linaro.org" <krzysztof.kozlowski+dt@linaro.org>, 
-	"geert+renesas@glider.be" <geert+renesas@glider.be>, "andrew@lunn.ch" <andrew@lunn.ch>, 
-	"linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>, 
-	"netdev@vger.kernel.org" <netdev@vger.kernel.org>, 
-	"devicetree@vger.kernel.org" <devicetree@vger.kernel.org>, 
-	"linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>
+ <9b29ee3f-ed48-9d95-a262-7d9e23a20528@linaro.org>
+ <TYBPR01MB534100D42EC0202CA8BEF04CD84E9@TYBPR01MB5341.jpnprd01.prod.outlook.com>
+ <CAMuHMdV=HECSXtLi6BFRVFiYZvjJ_t5RDUY3DckbSB4ozEtOgg@mail.gmail.com>
+In-Reply-To:  <CAMuHMdV=HECSXtLi6BFRVFiYZvjJ_t5RDUY3DckbSB4ozEtOgg@mail.gmail.com>
+Accept-Language: ja-JP, en-US
+Content-Language: ja-JP
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=renesas.com;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: TYBPR01MB5341:EE_|OS3PR01MB10359:EE_
+x-ms-office365-filtering-correlation-id: 608f4dc0-d138-4e79-b3c7-08da9c7344e6
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info:  Kz1r79NFJnl7OhHqjlQJIXyVhrV5mCsgi98IZ8RGjktT3p0uy2K++NDK3Z3rlrFnUkOSTDyHynwVNjOjjFGfyCrHE+FWogoXt07COgyE6jWz6IlETnEeF7i3zjWiQf0/ctiXkOrhUjQitlQoUSVCixN2bLYPIxUvxQhf9BVH9fHTpEdTsdwFqQzcD671lR9qhrXDs6SHKEUt2vZQ8ru6tVeS3bBIir7BEfPxbghbpifRsXWHJ5eYxYuxUEM4FyGGcE8eFlZJ9XEjanmwIXN5YoBFtBOcpzi6CfqtzmxZJOM4W92FQ4+1k8Iiy7unWJpoNmZ8V1C4BI52BYoLud0ydy5KEVmTGlMscne8h8cJoiJ5dMSts0kkoqL/1HLzcXQhes+27AcYXBfWYv3XAOn/T4FPLF6Pfucq2JDmOXBcBH7IdVODucroPfVYuYId7fjGPlNWAcrweoveDYbdUwdXguzEQp3vNxkQVRduG8DSOtoH2Kfd7sIv402wvozPfTlgvc2LTxzvdVD3gPOZf8NNJK7nimyMA062RYMj8cqzyyUy+ZScXrT6/JHxMQvVxNimDVp9G1vFos26vZNcshtk0ZMshM61B4MmU65T6RqCqFAxm7dw6d8g1bAVOe7LoTXd5c+Yex0YEiAxz7f810NA1iHRcuCdHpA/CuTe3E+JfY9FjK393XbyDITJFrRHeoYmi7wSb3/BUO/ypeHusHs5M5n5w5pKlwTQ0LmnDD1JaEo8ZULHWx4fGT7HGScev12oHProCj//R19xdU2xjTqqhQ==
+x-forefront-antispam-report:  CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:TYBPR01MB5341.jpnprd01.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230022)(4636009)(376002)(136003)(346002)(366004)(396003)(39860400002)(451199015)(8676002)(2906002)(316002)(38100700002)(122000001)(8936002)(6506007)(9686003)(26005)(53546011)(7696005)(52536014)(7416002)(55016003)(41300700001)(186003)(478600001)(38070700005)(86362001)(5660300002)(66946007)(64756008)(66556008)(66476007)(54906003)(76116006)(33656002)(71200400001)(4326008)(66446008)(6916009);DIR:OUT;SFP:1102;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0:  =?utf-8?B?QzBuQk9BVUFKMWVqU04zV2tTakNzdE9mcXdZY3B3aWlVbnZQRDdzZzV5VXpR?=
+ =?utf-8?B?MTh0RFVsWmRpQmdhaFY2b2JKYktuK2d3S2huZFhQdkFvR21hOXJsTjdMTlJ4?=
+ =?utf-8?B?QmM0WEhHZTZwVWN1VzkySWY0Z0tRb21CcmRJZ0pQdko0RW0xNlN1SDNLRlZE?=
+ =?utf-8?B?Y3h2VS8rSndFOHZMaWw0cTlQdktkT01Lc0pXdklrVVRxU2xnOVVKU1JhNTF3?=
+ =?utf-8?B?S0loLytiL3dncXkwd25pckFwR1V2OTJZNUNJOFI4RFpjeHVHVmJYeFh3M2ZO?=
+ =?utf-8?B?L0ZDbnUxcklyR0JRL3Fka2tOWTB6MzlCMkQrS3BydHZFVkpVYUZETlFyaEVS?=
+ =?utf-8?B?RnJ4eDFMa3krYmc5VmZ0cHhLaWRmYnpIckxaT2FBZGx0OG9KQ0xaVG9mMy9x?=
+ =?utf-8?B?b3dYcnNpS24wak43OUhWa293VE1mVGhaSUs0eEcrenNSUDNUcEYvdmpNVUhI?=
+ =?utf-8?B?cmN5NkhyMS8rUDhBYkk0RWxhTXR0UnRuRitKWjNRU3NWL2VXaGh1dnh5TlBG?=
+ =?utf-8?B?cUZJTlo4T09BWUV0emVYc1VIUHMyRVVzZWloNHdSUjNZRTVVaXd5M2Fyd1lW?=
+ =?utf-8?B?THAxZnpJazc1YlBMSExudWZNOFhZYU85V0ZRcGNDcmNjZzZwMjZScHQyVGRG?=
+ =?utf-8?B?UjRXMWt6dnNMdm4rRXYxSkVEeUw2dXRtOTAweTQ0TFpDWDhnaTU5alB4MHYr?=
+ =?utf-8?B?R09UVXYwaTFrWUZjdFFJZmhMWUFOYnhoTkYzazFsK0R0dDdLSGl2a1RUSUJi?=
+ =?utf-8?B?eTZXRlVkYk9MRlJkakVnd2dxMGJuTUFJUVVMRDRDSHRWMGFTWDFqaCs4TDNy?=
+ =?utf-8?B?VUlRM1dCVWZLNkE2dUl1bG1rVFVzN0Jod2dTVDlib2U5a1lvdktvaUtYSHlY?=
+ =?utf-8?B?UjdpaWZYOHhGQlN0TzFSeENPRWxsT3dRbGNnbFp0bzV0bllEZ0UzU1dwYk1l?=
+ =?utf-8?B?VzZ0eitrTHR4UlVUNzJYVFFySjZnazIweFcwMVFpblREVGtTakdIV29SNTFu?=
+ =?utf-8?B?OGJyQkloTXpBQXRqbzJmWTQxVDJrWkprcFp5OW5reDlyMG1TaEZPanFpYmFZ?=
+ =?utf-8?B?bStQR2lXWXY4bjVFUE8xOUN2VGxSQXVxNG9mS2JMcXQvUFhiNS9CdkwzRDJ5?=
+ =?utf-8?B?VjVabFhqazNwb1dwaVliUDhjVUMrdHhJVll5OTRPc3F4SjdXcEZmaFV0blgr?=
+ =?utf-8?B?eUdNMVN2U0F6K0lYR1hEUjFyZFIxR2JyM3Jna2xkMm5hQkJZcTBpZmV5ajNk?=
+ =?utf-8?B?Vjk1L2krQUNQVmk0VHZQbVpXelhFVmVjNUJWVWdOWllvT0V6WUtnYkxEdTlM?=
+ =?utf-8?B?UU9XZ2xIS21sV0lIMEJrT2dsQ3B3UGkvRkt4Mmd5aGJ6bjBFNjNCbldjdkQw?=
+ =?utf-8?B?UWYzeitLcHpxK1l6ZHc2cjR5ZkNBcDlFamlWWDJzcGovdUZUcFVveG5jTFFW?=
+ =?utf-8?B?aFkva0pMMU5uOS9xSkE0T1ZSTzhPMEZ6bHU2U3VsSjlyUTlTaFN2Y2h3N0Qr?=
+ =?utf-8?B?cEtKOGlJZDNjbXVmdDNIOHU4V0N6dlpld3R6OTQ0L2pxVWY3SWZSVWxZU0hh?=
+ =?utf-8?B?am45Qy9tVXEvSWRBQnYyUEFvYnRVQmlvOUJVRzNUZHUwdEhjYW1NR0luY3dj?=
+ =?utf-8?B?QnpZLzlCcC9wSkVhRWwyTHlzNG14dG8wWUZKajZ5SlVkckdFN0NFbmI0UHNh?=
+ =?utf-8?B?ZFJsYVpiWkxSTmpNWkZUb05ZaFJTRWRxYU5pdFpWK25JMzZZRjN6Mmtad2d5?=
+ =?utf-8?B?M1h3YTIyT3QyeDFUT1JORGtVak1TWGpmUldMN2R4SCtSZ3BuTnVDVjl3eW8r?=
+ =?utf-8?B?aS82T1diUDdod05ZMzBRRWxzbTFzUHIzVjV4NEQxYVFlbnF3WVFpdXcwcVoy?=
+ =?utf-8?B?eUpoZjdhbVZvVVFhc3FqM1BYWXQvaVRpcGptZmZVN2IyRkFZa2ZtcThBcGRi?=
+ =?utf-8?B?VGxiV0NuaXNaNUMvQ2lwTG02OFB0dHh6ekRqMVUzY3hXV0NqVjNaT01haVV3?=
+ =?utf-8?B?bDU4NThCSFJRVHFNR2hQcjQ3Y0VKclkvMFpwU0NTSjliUE5CUFdMajB1bGVq?=
+ =?utf-8?B?cGlWblYxNHJQRnhLaEl1bFdwQURFWGZBVFBrclV2SVhsUFl0c3VueVNPZ3No?=
+ =?utf-8?B?dmJRNk5uc2NrMDZKck5qdWtRTDZJQlgvSkpUSVRoejZuMTE3OHJGbEJVbmtO?=
+ =?utf-8?B?eGc9PQ==?=
+MIME-Version: 1.0
+X-OriginatorOrg: renesas.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: TYBPR01MB5341.jpnprd01.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 608f4dc0-d138-4e79-b3c7-08da9c7344e6
+X-MS-Exchange-CrossTenant-originalarrivaltime: 22 Sep 2022 08:20:11.6864
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 53d82571-da19-47e4-9cb4-625a166a4a2a
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: Mr3ol4gEjVX1eU4AXVHoIzHIAziEIXhFI68+l+8L/z4JIBljWUlFvsDTJ1DdBhCs0PpFdCQqlown7OkRFIFu1YgUsAqvOgyBDkb1phLSKxJy5/+WHcipAeAx87oT3q6e
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: OS3PR01MB10359
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220922_005621_364367_4BD116CF 
-X-CRM114-Status: GOOD (  22.34  )
+X-CRM114-CacheID: sfid-20220922_012018_469169_C6F544B3 
+X-CRM114-Status: GOOD (  16.95  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,44 +159,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Shimoda-san,
+Hi Geert-san,
 
-On Thu, Sep 22, 2022 at 9:39 AM Yoshihiro Shimoda
-<yoshihiro.shimoda.uh@renesas.com> wrote:
-> > From: Krzysztof Kozlowski, Sent: Thursday, September 22, 2022 4:29 PM
-> > On 21/09/2022 10:47, Yoshihiro Shimoda wrote:
-> > > Document Renesas Etherent SERDES for R-Car S4-8 (r8a779f0).
+> From: Geert Uytterhoeven, Sent: Thursday, September 22, 2022 4:56 PM
+> 
+> Hi Shimoda-san,
+> 
+> On Thu, Sep 22, 2022 at 9:39 AM Yoshihiro Shimoda
+> <yoshihiro.shimoda.uh@renesas.com> wrote:
+> > > From: Krzysztof Kozlowski, Sent: Thursday, September 22, 2022 4:29 PM
+> > > On 21/09/2022 10:47, Yoshihiro Shimoda wrote:
+> > > > Document Renesas Etherent SERDES for R-Car S4-8 (r8a779f0).
+> > > >
+> > > > Signed-off-by: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
+> > > > ---
+> > > >  .../bindings/phy/renesas,ether-serdes.yaml    | 54 +++++++++++++++++++
+> > > >  1 file changed, 54 insertions(+)
+> > > >  create mode 100644 Documentation/devicetree/bindings/phy/renesas,ether-serdes.yaml
+> > > >
+> > > > diff --git a/Documentation/devicetree/bindings/phy/renesas,ether-serdes.yaml
+> > > b/Documentation/devicetree/bindings/phy/renesas,ether-serdes.yaml
+> > > > new file mode 100644
+> > > > index 000000000000..04d650244a6a
+> > > > --- /dev/null
+> > > > +++ b/Documentation/devicetree/bindings/phy/renesas,ether-serdes.yaml
 > > >
-> > > Signed-off-by: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
-> > > ---
-> > >  .../bindings/phy/renesas,ether-serdes.yaml    | 54 +++++++++++++++++++
-> > >  1 file changed, 54 insertions(+)
-> > >  create mode 100644 Documentation/devicetree/bindings/phy/renesas,ether-serdes.yaml
-> > >
-> > > diff --git a/Documentation/devicetree/bindings/phy/renesas,ether-serdes.yaml
-> > b/Documentation/devicetree/bindings/phy/renesas,ether-serdes.yaml
-> > > new file mode 100644
-> > > index 000000000000..04d650244a6a
-> > > --- /dev/null
-> > > +++ b/Documentation/devicetree/bindings/phy/renesas,ether-serdes.yaml
+> > > Filename based on compatible, so renesas,r8a779f0-ether-serdes.yaml
 > >
-> > Filename based on compatible, so renesas,r8a779f0-ether-serdes.yaml
->
-> I got it. I'll rename the file.
+> > I got it. I'll rename the file.
+> 
+> Is this serdes present on other R-Car Gen4 SoCs, or is it (so far) only
+> found on R-Car S4-8?
 
-Is this serdes present on other R-Car Gen4 SoCs, or is it (so far) only
-found on R-Car S4-8?
+So far it's only found on R-Car S4 series.
 
-Gr{oetje,eeting}s,
-
-                        Geert
-
---
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
-
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
+Best regards,
+Yoshihiro Shimoda
 
 -- 
 linux-phy mailing list
