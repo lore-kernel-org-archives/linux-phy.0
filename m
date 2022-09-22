@@ -4,81 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D1579C54EE9
-	for <linux-phy@archiver.kernel.org>; Thu, 22 Sep 2022 18:03:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1E1D9ECAAD8
+	for <linux-phy@archiver.kernel.org>; Thu, 22 Sep 2022 18:03:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:MIME-Version:
 	Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=FUmsEqeCtvJaHrYC9Y0tV9dzTzijzv6UzNkvGBNu3bs=; b=oNR0NNB5I3tpqXR9QTWdoEAaob
-	jX26bW27iLNe1A2MRjh934vLMgSg6mCk8IoSpRjrfZ4yaUqfxQsY3JLN/8cehQJcjxuU7xdJL2bKq
-	xg1Ab9AX/C81IRrw2qkGNI7WQH/eK26Fz8l2GvHgo2LJ/VV+PiMuymSx/N7dCUbUIrWEEriRPFaxp
-	1gBSTZFpuLwA5+GzKU8WuPm29enjhlwUfw3g+XL+gFGAGBzNof3DNLloLA4QkdOuqetZUvWbH7n/v
-	+WEvrn+sgEf4WjcGjuU7sqVpHEMeYA6b/xP3zD+HuMBdYPUCBLXbe9gLF0bCOZs6GWny1iJt8qVOP
-	SAAE4fYA==;
+	bh=UmvgQTEb/LmHfH9xSnexg6cdS6k5DSrtzrJFaNMrQp4=; b=Q6X9udUoIQELF8GVkqJKEEl042
+	b+11pxPj6biF7o5o7+KNcPfb7+CW6WCzzr0EAr5eiOJBVUSto1XGt3C7lc7UlXY2povGt0y9hWhH8
+	MoNSO2wP8lymJ6JC8CVMn/5A/CFvPksJrP0FraT/B6pRrErMiLJy2D+w73xuvterT/XTZLeOL1+hE
+	rsHoeke1eYj8q3jf8C+M3pmS3s+8kn3z4qhjlPMmvmpiemJxHw9awDOkps1AqXZVNAwJkTCiLgn+a
+	MUnyg3T1yuRR7/qnYtE83bGktAuZOk1fC5RhttPjbUZh9r73N6+tpxc5k2VFpEGbaJQ60g4LFsQuN
+	C6smVvxA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1obQXu-00HDIi-AM; Thu, 22 Sep 2022 18:03:34 +0000
-Received: from mail-lf1-x136.google.com ([2a00:1450:4864:20::136])
+	id 1obQY7-00HDNJ-IN; Thu, 22 Sep 2022 18:03:47 +0000
+Received: from mail-lf1-x12d.google.com ([2a00:1450:4864:20::12d])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1obQXr-00HDHM-JL
-	for linux-phy@lists.infradead.org; Thu, 22 Sep 2022 18:03:32 +0000
-Received: by mail-lf1-x136.google.com with SMTP id s6so15987809lfo.7
-        for <linux-phy@lists.infradead.org>; Thu, 22 Sep 2022 11:03:31 -0700 (PDT)
+	id 1obQY5-00HDKw-BW
+	for linux-phy@lists.infradead.org; Thu, 22 Sep 2022 18:03:46 +0000
+Received: by mail-lf1-x12d.google.com with SMTP id k10so15989722lfm.4
+        for <linux-phy@lists.infradead.org>; Thu, 22 Sep 2022 11:03:42 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=content-transfer-encoding:in-reply-to:from:references:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date;
-        bh=CBSm0+/j7g28NuQ+i5FWRy1En5Be0Ute8R2ym7b/IN8=;
-        b=AC1ntdkyYfo6RGC0/KHA08P8CowP0Bl9RAurLJoVBF8jtuklA4hjPkrGiXZKvo2UX+
-         FT9A9sgodrqR0MA1r5tGGIyp9TJAQ+zbbCNWJ6/97okVG8VGAnmcnz8AY8MZS4J/7Q+u
-         ObjuP0Y6u7kMqcQGirqyAaVaKepioo4cyq2kIgxj38cRjI394QjvPrCCYtjMtOt5Du0x
-         6iyCm1doAMZvyJmlJR/PejLGQrUFAa1rc/rtz9uv+0ea3AcdaLEZW/PzrSB8ofj2vmc5
-         A32dM/y/BFe3ErVPlg23ezelspAHaBopY3ii0NhAnftuPRQL8UpjCfQk/ZKMQu8pkv+g
-         Qt0g==
+        bh=tO2L89ScAtD8bTq4bm0kMbpJAPuelr5Yfp8Eooncy54=;
+        b=ZWmtI/f+y8gegorLV1xCahcE0zjrLPkXHvKc1lqdKOe9+7fcIjHroNjgzF4jXL9tja
+         cXxKCaMp8lltyz0CSyDoS/X82SQpfuQ1R4jqNs0P5ki0aSjbxXQ6OzmDgXKGUG09WiUu
+         dHfDN12QCVVA2x7cZ1Z8ibudeDu3gr6xIxgVxtffpavbMnkUwEGfSo+nBZFhrLmzwiGx
+         bw7xi0qI1GkFdA8XjnmlAU2xMnbKTyk5wzUxioQMwdgY6Qe7FPCGqGpKrBw0rx8CPOya
+         FxavIKhZrpW6JJ/tJRfTiiV+iILOPVrhU22a8JPGjfJI2l7rHys72CXrGXqw+gzG9abc
+         frCw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-transfer-encoding:in-reply-to:from:references:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date;
-        bh=CBSm0+/j7g28NuQ+i5FWRy1En5Be0Ute8R2ym7b/IN8=;
-        b=pt5EMmOl46ywW5MK7kFmoSXZ5/BeXROcqlBtaILqYvEGziZHuVKnhhKQBKgR9XaYFZ
-         uA/b8Y2FcfjXT1zBgTBkCpGeWtRoyq1ldeja2mdFNfdF9cydIXlFyCIW6QAXt3l79hbs
-         mo+21YA+uK5DK1awEkk4L6zSD0yKAS54zta+28nt7irYrQSlsa+QHljeu/bWHrSrVIt7
-         0qHmeRx8fW7km0rWJOEJ+aLB8uBmhLhxpvvNEy+XmITmeBS6hiDQtfnAYPzBjP1UjP1+
-         WRL4GEjZdz3m82fBSlUjA/WGS648wjvYSTha67dQZ8oYUODHTkCHuvzi2yIcOAMbmLdZ
-         F1Zw==
-X-Gm-Message-State: ACrzQf1FE4dioXydXhV2k2RZXTVgRz96sS4pmvRBO33LzHB5/x+MmW+x
-	/+2lkMIj1Rw0XupcDm4FkIr8Rw==
-X-Google-Smtp-Source: AMsMyM7sJ/AwoeK2356DER1DmoHFMGNT+ERKsIdp5mqRCRkO/8aAtHtGacciWfNgsAbR4D6zIsryog==
-X-Received: by 2002:a05:6512:3503:b0:496:517:5818 with SMTP id h3-20020a056512350300b0049605175818mr1651844lfs.186.1663869809950;
-        Thu, 22 Sep 2022 11:03:29 -0700 (PDT)
+        bh=tO2L89ScAtD8bTq4bm0kMbpJAPuelr5Yfp8Eooncy54=;
+        b=QuXa5e45Irji3bNAAgU4ejf+cZ0yeFyINJ0HR4IA5ikR6lOiVPfADBug2HjnWzx9zh
+         8c5mIaUuJg9qOJRJwKIUF855jn1jG1U0XO32YxoycGeqNRYhx+V7ojwyO70ZZI5oFZTV
+         HeasxbG77kjPXpjfIVo/wqhv2FWsWQX8DZ/APzGNk+zDxX0RkZ/gtMY13LUfzEq9SRPG
+         m4hDfmEyKFeInSth2flzYYmiMypROucc92gHW0GVRrdKbe42CuOAJyj0thOjwbPMuVIG
+         YlANp/0USZQRrDu7c/0W1EiZnPCVlNehFBoaIEPUOtS0xhrG2sCsRU2X5T3/NKyhGShW
+         +UOQ==
+X-Gm-Message-State: ACrzQf3xj6ICd4aBiItuBT7p3QzeeGruqsuaN4l/Zj55ZYi7fRmxDHVx
+	27Q5jkZWYW/wN1O7KK2obgXd+g==
+X-Google-Smtp-Source: AMsMyM43HA7Lbdg3eayYNayGa2gBj0dL6oO/DWBPg7VxdCCdsmm9X4at4UvPbn1UTgqEe/GQxnm05Q==
+X-Received: by 2002:ac2:559c:0:b0:497:a7eb:26a1 with SMTP id v28-20020ac2559c000000b00497a7eb26a1mr1663820lfg.49.1663869820742;
+        Thu, 22 Sep 2022 11:03:40 -0700 (PDT)
 Received: from [192.168.1.211] ([37.153.55.125])
-        by smtp.gmail.com with ESMTPSA id f8-20020a193808000000b0049473593f2csm1035030lfa.182.2022.09.22.11.03.29
+        by smtp.gmail.com with ESMTPSA id 11-20020a05651c128b00b0025fe7f33bc4sm1015741ljc.49.2022.09.22.11.03.40
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 22 Sep 2022 11:03:29 -0700 (PDT)
-Message-ID: <e99829fa-0dff-1304-c9a2-a93f8f62c43c@linaro.org>
-Date: Thu, 22 Sep 2022 21:03:28 +0300
+        Thu, 22 Sep 2022 11:03:40 -0700 (PDT)
+Message-ID: <6ccb9913-e802-9cd3-3c9f-66f5e605aca6@linaro.org>
+Date: Thu, 22 Sep 2022 21:03:39 +0300
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.2.2
-Subject: Re: [PATCH 1/7] phy: qcom-qmp-combo: Use dev_err_probe() to simplify
- code
+Subject: Re: [PATCH 2/7] phy: qcom-qmp-pcie-msm8996: Use dev_err_probe() to
+ simplify code
 Content-Language: en-GB
 To: Yuan Can <yuancan@huawei.com>, agross@kernel.org, andersson@kernel.org,
  konrad.dybcio@somainline.org, kishon@ti.com, vkoul@kernel.org,
  linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org
 References: <20220922111228.36355-1-yuancan@huawei.com>
- <20220922111228.36355-2-yuancan@huawei.com>
+ <20220922111228.36355-3-yuancan@huawei.com>
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-In-Reply-To: <20220922111228.36355-2-yuancan@huawei.com>
+In-Reply-To: <20220922111228.36355-3-yuancan@huawei.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220922_110331_669879_A55A5567 
-X-CRM114-Status: UNSURE (   9.99  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220922_110345_419360_B0C6726B 
+X-CRM114-Status: GOOD (  10.35  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,8 +102,8 @@ On 22/09/2022 14:12, Yuan Can wrote:
 > 
 > Signed-off-by: Yuan Can <yuancan@huawei.com>
 > ---
->   drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 21 +++++++--------------
->   1 file changed, 7 insertions(+), 14 deletions(-)
+>   drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c | 9 +++------
+>   1 file changed, 3 insertions(+), 6 deletions(-)
 
 Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 
