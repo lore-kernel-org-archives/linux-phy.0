@@ -4,68 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 25842ECAAD8
-	for <linux-phy@archiver.kernel.org>; Fri, 23 Sep 2022 06:14:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 24A24C6FA82
+	for <linux-phy@archiver.kernel.org>; Fri, 23 Sep 2022 06:37:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:CC:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2V2ml2dUfpW3To4WjWQL26OpJHVPQ0NKJ/B1zyiDXPg=; b=RbF6YmZOBy3ww2
-	buTgk77hGgd7uBmIkyK9Cx/izZUoFCkhgazcRsD1o7MT4tdZ0UEM7i2XMX4cCdLN685XlR4UMWm74
-	bfS3L47JaEX8w1z12Cm//Nw+q6BB7x2PqMN9hqTCqwV//hvxhFpycb3kqfGsiko0BRlKwYdj8vhKW
-	sigm12mjBqsKZDU4y4H9VR6y3usrHWgd2ZfgA5MZFSkBJKLy4SxB4KuB2quwZutQEFNDuP41eRrSu
-	iFfLQy/o6avSGQZjfXtPghq14dAsoJf431JhoZLNvxf85fmO5BeNZcKA6ggCDfSzrp0UZkQCm6qE1
-	D0iGyW/2rIMG2g/P862g==;
+	List-Owner; bh=XMexJZvIwf1tFS9ChKxUoit6Dv2pBQ3wAyAl3ecCTzs=; b=nnI6LMG3YjKspE
+	g50srbNkeJy2vveeV/rFBfrZkFSjNRvu9DoTM6fZAESO9qhPx1zduxKxmKC2BSHVrU+QII323kehJ
+	MbFkxO82EPUwMsaMuHc8V1ulVYi+RvSN19U8toNxGuU1sJw1Wq5C18RnGcD5SYtzI2K1nJ3ZeaBHR
+	EG7FeLxYCigL/acVKsB0qN47/dB+1QYi99S938D961jWv/23PRyCVadZOqytr2qq3IokuZ2y3MjX2
+	iz96pGrKd13UAp8YdBc8YC52gNMgwnqtULLoU27xh0lPtAKsqq6yIZtriYeRiFafDUYCExMFR6Jlj
+	AnXMEVkvzjN1d+xkSEHQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1obbxH-002Puo-FA; Fri, 23 Sep 2022 06:14:31 +0000
-Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
+	id 1obcJQ-002XEo-Tw; Fri, 23 Sep 2022 06:37:24 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1obbxE-002Pu3-So
-	for linux-phy@lists.infradead.org; Fri, 23 Sep 2022 06:14:30 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id 50FD9B8275A;
-	Fri, 23 Sep 2022 06:14:27 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E56E2C433C1;
-	Fri, 23 Sep 2022 06:14:25 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1663913666;
-	bh=OQTnh0dPbWoKamrOJwnvSKKtEfSByR/Nd0plk54BbF8=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=anA3Qp1vfNjYW6I4ZMEGlLc0jRC6MHrE/pVH9iLiRWvCrgk2G22gaCswcBU4G3YD1
-	 WyDat91xZKDrCIqAw8nevTkQggZWoWmli1UgsarsyinZXaU9hb0DX/Tnn4aSbc97ZW
-	 Qtr9HFXBLZ2hbGWSQzndvIKQmCMliu3d+FC9uIxjzHlRsD3UHvGKoWu35M9U1j9KFz
-	 HHkGKaFGHpna72haf4gwjpWmElvDCjP0/EcbEi4OaB/RgGeG+58+VoGF/yGZKtnXmv
-	 vurzvfEJF9s6LsSg3JkPym2qKjXm0RpoLZwxGihek0K4lSFtxm7VO62h1joMjyRgbv
-	 qR0qfMjgUvdOQ==
-Received: from johan by xi.lan with local (Exim 4.94.2)
-	(envelope-from <johan@kernel.org>)
-	id 1obbxF-0006Fp-1X; Fri, 23 Sep 2022 08:14:29 +0200
-Date: Fri, 23 Sep 2022 08:14:29 +0200
-From: Johan Hovold <johan@kernel.org>
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Cc: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-	Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@somainline.org>,
-	Kishon Vijay Abraham I <kishon@ti.com>,
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 17/17] phy: qcom-qmp-combo: drop redundant DP config flag
-Message-ID: <Yy1OxS7NjUmaV2Aw@hovoldconsulting.com>
-References: <20220920073826.20811-1-johan+linaro@kernel.org>
- <20220920073826.20811-18-johan+linaro@kernel.org>
- <8de63b63-f88a-7342-d286-8826a55e78ab@linaro.org>
+	id 1obcGS-002Vjc-Rd; Fri, 23 Sep 2022 06:34:22 +0000
+X-UUID: df9162e938de4efbac52a834b44b2004-20220922
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
+	h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID; bh=whEo3FlJzvrCgsZU2Vky7sq+5FTXkctNcdlBeQtXQAo=;
+	b=gSGirSlJfwnn1YUrcEkshxTt6ZFu6sBBZWKGmBhBlVUb3OznoLDEsrGzGI3mCqmYj2wUpZBB4EnlW62PY85dmLpf8b+Tu7WiEGYUvp5zyo6aCtd45sX2w5UygLeLlKRyC5MSP5lz2/ydVMWIbECot4evBKhxWh9RcdYCy+tEQtA=;
+X-CID-P-RULE: Release_Ham
+X-CID-O-INFO: VERSION:1.1.11,REQID:cd31a035-e039-4b26-bf6c-2429f83cc4c3,IP:0,U
+	RL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:
+	release,TS:0
+X-CID-META: VersionHash:39a5ff1,CLOUDID:fe7cfae3-87f9-4bb0-97b6-34957dc0fbbe,B
+	ulkID:nil,BulkQuantity:0,Recheck:0,SF:nil,TC:nil,Content:0,EDM:-3,IP:nil,U
+	RL:11|1,File:nil,Bulk:nil,QS:nil,BEC:nil,COL:0
+X-UUID: df9162e938de4efbac52a834b44b2004-20220922
+Received: from mtkmbs11n1.mediatek.inc [(172.21.101.185)] by mailgw02.mediatek.com
+	(envelope-from <chunfeng.yun@mediatek.com>)
+	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
+	with ESMTP id 1565659900; Thu, 22 Sep 2022 23:34:13 -0700
+Received: from mtkcas10.mediatek.inc (172.21.101.39) by
+ mtkmbs10n1.mediatek.inc (172.21.101.34) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id
+ 15.2.792.15; Fri, 23 Sep 2022 14:03:36 +0800
+Received: from mhfsdcap04 (10.17.3.154) by mtkcas10.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Fri, 23 Sep 2022 14:03:35 +0800
+Message-ID: <50c77b7b4854037f927880dc8775392a7b2e59fc.camel@mediatek.com>
+Subject: Re: [PATCH 01/18] phy: mediatek: add a new helper to update bitfield
+From: Chunfeng Yun <chunfeng.yun@mediatek.com>
+To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	Chun-Kuang Hu <chunkuang.hu@kernel.org>, Vinod Koul <vkoul@kernel.org>
+CC: Philipp Zabel <p.zabel@pengutronix.de>, Kishon Vijay Abraham I
+	<kishon@ti.com>, Matthias Brugger <matthias.bgg@gmail.com>,
+	<dri-devel@lists.freedesktop.org>, <linux-mediatek@lists.infradead.org>,
+	<linux-arm-kernel@lists.infradead.org>, <linux-phy@lists.infradead.org>,
+	<linux-kernel@vger.kernel.org>, Jitao Shi <jitao.shi@mediatek.com>, "Stanley
+ Chu" <stanley.chu@mediatek.com>
+Date: Fri, 23 Sep 2022 14:03:35 +0800
+In-Reply-To: <3d8fdcf5-c2cb-be63-48d5-d84d50aeace3@collabora.com>
+References: <20220920090038.15133-1-chunfeng.yun@mediatek.com>
+	 <20220920090038.15133-2-chunfeng.yun@mediatek.com>
+	 <2d13b383-7d25-240b-bdbb-e53848df4d47@collabora.com>
+	 <a3f98aa1d3d10b76b1fb5e6c2e3d64cedd0bf127.camel@mediatek.com>
+	 <3d8fdcf5-c2cb-be63-48d5-d84d50aeace3@collabora.com>
+X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <8de63b63-f88a-7342-d286-8826a55e78ab@linaro.org>
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220922_231429_084770_FC138714 
-X-CRM114-Status: GOOD (  12.20  )
+X-CRM114-CacheID: sfid-20220922_233420_944264_1BA8BB24 
+X-CRM114-Status: GOOD (  23.80  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,22 +87,83 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Sep 22, 2022 at 09:02:49PM +0300, Dmitry Baryshkov wrote:
-> On 20/09/2022 10:38, Johan Hovold wrote:
-> > Drop the DP_COM control block flag from the configuration data, which is
-> > set for all combo PHYs and hence no longer needed since the QMP driver
-> > split.
+On Thu, 2022-09-22 at 09:17 +0200, AngeloGioacchino Del Regno wrote:
+> Il 22/09/22 04:36, Chunfeng Yun ha scritto:
+> > On Wed, 2022-09-21 at 10:15 +0200, AngeloGioacchino Del Regno
+> > wrote:
+> > > Il 20/09/22 11:00, Chunfeng Yun ha scritto:
+> > > > Due to FIELD_PREP() macro can be used to prepare a bitfield
+> > > > value,
+> > > > local ones can be remove; add the new helper to make bitfield
+> > > > update
+> > > > easier.
+> > > > 
+> > > > Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+> > > > ---
+> > > >    drivers/phy/mediatek/phy-mtk-io.h | 7 +++++++
+> > > >    1 file changed, 7 insertions(+)
+> > > > 
+> > > > diff --git a/drivers/phy/mediatek/phy-mtk-io.h
+> > > > b/drivers/phy/mediatek/phy-mtk-io.h
+> > > > index 500fcdab165d..a723d4afc9b4 100644
+> > > > --- a/drivers/phy/mediatek/phy-mtk-io.h
+> > > > +++ b/drivers/phy/mediatek/phy-mtk-io.h
+> > > > @@ -8,6 +8,7 @@
+> > > >    #ifndef __PHY_MTK_H__
+> > > >    #define __PHY_MTK_H__
+> > > >    
+> > > > +#include <linux/bitfield.h>
+> > > >    #include <linux/io.h>
+> > > >    
+> > > >    static inline void mtk_phy_clear_bits(void __iomem *reg, u32
+> > > > bits)
+> > > > @@ -35,4 +36,10 @@ static inline void mtk_phy_update_bits(void
+> > > > __iomem *reg, u32 mask, u32 val)
+> > > >    	writel(tmp, reg);
+> > > >    }
+> > > >    
+> > > > +/* field @mask should be constant and continuous */
+> > > 
+> > > "Field @mask shall be [...]"
+> > >                ^^^^^
 > > 
-> > Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
-> > ---
-> >   drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 63 +++++++----------------
-> >   1 file changed, 18 insertions(+), 45 deletions(-)
+> > Ok, will modify it
+> > 
+> > > 
+> > > > +static inline void mtk_phy_update_field(void __iomem *reg, u32
+> > > > mask, u32 val)
+> > > 
+> > > ...so, (void __iomem *reg, const u32 mask, u32 val)
+> > 
+> > Maybe no need const, @mask will be checked it in compile time when
+> > use FIELD_PREP(), means @mask is a constant value, but not a
+> > variable.
+> > 
 > 
-> Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+> Adding const is not *required*, but `mask` is, effectively, a
+> constant, hence
+> it fully makes sense to add const.
+Prefer to leave it unchanged, there is no 'const' in
+function mtk_phy_update_bits(), if add 'const', will cause build
+warning. and FIELD_PREP() already do many checks in compile time.
 
-Thanks for the review, Dmitry.
+Thanks
 
-Johan
+> 
+> > Thanks
+> > 
+> > > 
+> > > > +{
+> > > > +	mtk_phy_update_bits(reg, mask, FIELD_PREP(mask, val));
+> > > > +}
+> > > > +
+> > > >    #endif
+> > > 
+> > > 
+> 
+> 
+> 
+
 
 -- 
 linux-phy mailing list
