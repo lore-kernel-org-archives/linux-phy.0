@@ -4,73 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 24A24C6FA82
-	for <linux-phy@archiver.kernel.org>; Fri, 23 Sep 2022 06:37:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0FC5AECAAD8
+	for <linux-phy@archiver.kernel.org>; Fri, 23 Sep 2022 08:58:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:CC:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XMexJZvIwf1tFS9ChKxUoit6Dv2pBQ3wAyAl3ecCTzs=; b=nnI6LMG3YjKspE
-	g50srbNkeJy2vveeV/rFBfrZkFSjNRvu9DoTM6fZAESO9qhPx1zduxKxmKC2BSHVrU+QII323kehJ
-	MbFkxO82EPUwMsaMuHc8V1ulVYi+RvSN19U8toNxGuU1sJw1Wq5C18RnGcD5SYtzI2K1nJ3ZeaBHR
-	EG7FeLxYCigL/acVKsB0qN47/dB+1QYi99S938D961jWv/23PRyCVadZOqytr2qq3IokuZ2y3MjX2
-	iz96pGrKd13UAp8YdBc8YC52gNMgwnqtULLoU27xh0lPtAKsqq6yIZtriYeRiFafDUYCExMFR6Jlj
-	AnXMEVkvzjN1d+xkSEHQ==;
+	List-Owner; bh=rl8CDMyNF0loA6tIy1mW0sc0+FZ4ItMcNAMkShHZCLQ=; b=HYJn4N7DmCHXED
+	Ls5/tbUChK2xayKIbdVSszvCYt2P0YO/6jj25l/eU7fjxywvtQNy5iuziZyWQpGKjVGgDrcBFsTV5
+	9dVRUoAJvzWumu0mwSyIuUvOXJzwILuwQKcxOezcyDyWWczEBzsRlEaZdAen4GUvtIfNwMY6RhKU3
+	KszHvuuhcKu/nrxqUwbcA/VmRgubLBgCT3aGwnyApWfC0h0Ugp0PN6EgLMlEAhop738RGM1MvbJWt
+	p/9PcIgrK+wIflaheI3W71wKHNDc9I1UiLsSfr9vNcipdQ153txpWoxa9qvS1cqbaXsnnpszayCHY
+	akrvAhaXVUhsaPhC3q1A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1obcJQ-002XEo-Tw; Fri, 23 Sep 2022 06:37:24 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1obeVg-0036lh-Ef; Fri, 23 Sep 2022 08:58:12 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1obcGS-002Vjc-Rd; Fri, 23 Sep 2022 06:34:22 +0000
-X-UUID: df9162e938de4efbac52a834b44b2004-20220922
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
-	h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID; bh=whEo3FlJzvrCgsZU2Vky7sq+5FTXkctNcdlBeQtXQAo=;
-	b=gSGirSlJfwnn1YUrcEkshxTt6ZFu6sBBZWKGmBhBlVUb3OznoLDEsrGzGI3mCqmYj2wUpZBB4EnlW62PY85dmLpf8b+Tu7WiEGYUvp5zyo6aCtd45sX2w5UygLeLlKRyC5MSP5lz2/ydVMWIbECot4evBKhxWh9RcdYCy+tEQtA=;
-X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.1.11,REQID:cd31a035-e039-4b26-bf6c-2429f83cc4c3,IP:0,U
-	RL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:
-	release,TS:0
-X-CID-META: VersionHash:39a5ff1,CLOUDID:fe7cfae3-87f9-4bb0-97b6-34957dc0fbbe,B
-	ulkID:nil,BulkQuantity:0,Recheck:0,SF:nil,TC:nil,Content:0,EDM:-3,IP:nil,U
-	RL:11|1,File:nil,Bulk:nil,QS:nil,BEC:nil,COL:0
-X-UUID: df9162e938de4efbac52a834b44b2004-20220922
-Received: from mtkmbs11n1.mediatek.inc [(172.21.101.185)] by mailgw02.mediatek.com
-	(envelope-from <chunfeng.yun@mediatek.com>)
-	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
-	with ESMTP id 1565659900; Thu, 22 Sep 2022 23:34:13 -0700
-Received: from mtkcas10.mediatek.inc (172.21.101.39) by
- mtkmbs10n1.mediatek.inc (172.21.101.34) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id
- 15.2.792.15; Fri, 23 Sep 2022 14:03:36 +0800
-Received: from mhfsdcap04 (10.17.3.154) by mtkcas10.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Fri, 23 Sep 2022 14:03:35 +0800
-Message-ID: <50c77b7b4854037f927880dc8775392a7b2e59fc.camel@mediatek.com>
-Subject: Re: [PATCH 01/18] phy: mediatek: add a new helper to update bitfield
-From: Chunfeng Yun <chunfeng.yun@mediatek.com>
-To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	Chun-Kuang Hu <chunkuang.hu@kernel.org>, Vinod Koul <vkoul@kernel.org>
-CC: Philipp Zabel <p.zabel@pengutronix.de>, Kishon Vijay Abraham I
-	<kishon@ti.com>, Matthias Brugger <matthias.bgg@gmail.com>,
-	<dri-devel@lists.freedesktop.org>, <linux-mediatek@lists.infradead.org>,
-	<linux-arm-kernel@lists.infradead.org>, <linux-phy@lists.infradead.org>,
-	<linux-kernel@vger.kernel.org>, Jitao Shi <jitao.shi@mediatek.com>, "Stanley
- Chu" <stanley.chu@mediatek.com>
-Date: Fri, 23 Sep 2022 14:03:35 +0800
-In-Reply-To: <3d8fdcf5-c2cb-be63-48d5-d84d50aeace3@collabora.com>
-References: <20220920090038.15133-1-chunfeng.yun@mediatek.com>
-	 <20220920090038.15133-2-chunfeng.yun@mediatek.com>
-	 <2d13b383-7d25-240b-bdbb-e53848df4d47@collabora.com>
-	 <a3f98aa1d3d10b76b1fb5e6c2e3d64cedd0bf127.camel@mediatek.com>
-	 <3d8fdcf5-c2cb-be63-48d5-d84d50aeace3@collabora.com>
-X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
+	id 1obeVd-0036jd-TP
+	for linux-phy@lists.infradead.org; Fri, 23 Sep 2022 08:58:11 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 79440611E3;
+	Fri, 23 Sep 2022 08:58:07 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id BEE95C433C1;
+	Fri, 23 Sep 2022 08:58:04 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1663923486;
+	bh=BgKVREHg5OpngvRNOlXi5PLKFAxqE0nOa1LwtGxKtOM=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=jbIsuQD8tcbhgx5o3LMD/9n5krtarNX2QFJ70ACjyF45Fe+N5gOA0mu/ysUjCKig+
+	 9HdoGdYgGKrv+WHn6NJ3A+cxGZrPTnyrs8VyMstdzJeoWnMp6WSfwKbKHnR09dq99S
+	 GAVQoI7+4yyts0eXfryhzdzU8FDGK3gblbm+TSTC/M9Ro5V2fUMFsTs40Yd7+06MxP
+	 C8PkF/jakJhB6o1i8vA1agXh2c5rWCHxz2c8YBK7DCE66dr2bOewNTbSSmPsp54SrG
+	 8hYwYQpaawW79BdzMetmx4o+8AGIn7Br2pKEGDkj/dgmfYkHakkRcF9WdcJMH4EN2j
+	 FCYX8hQGbe+FQ==
+Message-ID: <d3b8754e-f888-5bef-c6c3-16c42c598421@kernel.org>
+Date: Fri, 23 Sep 2022 11:58:01 +0300
 MIME-Version: 1.0
-X-MTK: N
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
+ Thunderbird/91.9.1
+Subject: Re: [PATCH] phy: ti: phy-j721e-wiz: fix reference leaks in
+ wiz_probe()
+Content-Language: en-US
+To: Dan Carpenter <dan.carpenter@oracle.com>,
+ Kishon Vijay Abraham I <kishon@ti.com>, Jyri Sarha <jsarha@ti.com>
+Cc: Vinod Koul <vkoul@kernel.org>, Vignesh Raghavendra <vigneshr@ti.com>,
+ Siddharth Vadapalli <s-vadapalli@ti.com>, Tanmay Patil <t-patil@ti.com>,
+ linux-phy@lists.infradead.org, kernel-janitors@vger.kernel.org
+References: <YyxFI8aW23IC/21U@kili>
+From: Roger Quadros <rogerq@kernel.org>
+In-Reply-To: <YyxFI8aW23IC/21U@kili>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220922_233420_944264_1BA8BB24 
-X-CRM114-Status: GOOD (  23.80  )
+X-CRM114-CacheID: sfid-20220923_015810_010946_C9471B87 
+X-CRM114-Status: GOOD (  15.87  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,83 +77,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, 2022-09-22 at 09:17 +0200, AngeloGioacchino Del Regno wrote:
-> Il 22/09/22 04:36, Chunfeng Yun ha scritto:
-> > On Wed, 2022-09-21 at 10:15 +0200, AngeloGioacchino Del Regno
-> > wrote:
-> > > Il 20/09/22 11:00, Chunfeng Yun ha scritto:
-> > > > Due to FIELD_PREP() macro can be used to prepare a bitfield
-> > > > value,
-> > > > local ones can be remove; add the new helper to make bitfield
-> > > > update
-> > > > easier.
-> > > > 
-> > > > Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
-> > > > ---
-> > > >    drivers/phy/mediatek/phy-mtk-io.h | 7 +++++++
-> > > >    1 file changed, 7 insertions(+)
-> > > > 
-> > > > diff --git a/drivers/phy/mediatek/phy-mtk-io.h
-> > > > b/drivers/phy/mediatek/phy-mtk-io.h
-> > > > index 500fcdab165d..a723d4afc9b4 100644
-> > > > --- a/drivers/phy/mediatek/phy-mtk-io.h
-> > > > +++ b/drivers/phy/mediatek/phy-mtk-io.h
-> > > > @@ -8,6 +8,7 @@
-> > > >    #ifndef __PHY_MTK_H__
-> > > >    #define __PHY_MTK_H__
-> > > >    
-> > > > +#include <linux/bitfield.h>
-> > > >    #include <linux/io.h>
-> > > >    
-> > > >    static inline void mtk_phy_clear_bits(void __iomem *reg, u32
-> > > > bits)
-> > > > @@ -35,4 +36,10 @@ static inline void mtk_phy_update_bits(void
-> > > > __iomem *reg, u32 mask, u32 val)
-> > > >    	writel(tmp, reg);
-> > > >    }
-> > > >    
-> > > > +/* field @mask should be constant and continuous */
-> > > 
-> > > "Field @mask shall be [...]"
-> > >                ^^^^^
-> > 
-> > Ok, will modify it
-> > 
-> > > 
-> > > > +static inline void mtk_phy_update_field(void __iomem *reg, u32
-> > > > mask, u32 val)
-> > > 
-> > > ...so, (void __iomem *reg, const u32 mask, u32 val)
-> > 
-> > Maybe no need const, @mask will be checked it in compile time when
-> > use FIELD_PREP(), means @mask is a constant value, but not a
-> > variable.
-> > 
-> 
-> Adding const is not *required*, but `mask` is, effectively, a
-> constant, hence
-> it fully makes sense to add const.
-Prefer to leave it unchanged, there is no 'const' in
-function mtk_phy_update_bits(), if add 'const', will cause build
-warning. and FIELD_PREP() already do many checks in compile time.
 
-Thanks
 
+On 22/09/2022 14:21, Dan Carpenter wrote:
+> These two error paths need to call of_node_put(child_node) before
+> returning.
 > 
-> > Thanks
-> > 
-> > > 
-> > > > +{
-> > > > +	mtk_phy_update_bits(reg, mask, FIELD_PREP(mask, val));
-> > > > +}
-> > > > +
-> > > >    #endif
-> > > 
-> > > 
-> 
-> 
-> 
+> Fixes: edd473d4293a ("phy: ti: phy-j721e-wiz: add support for j7200-wiz-10g")
+> Fixes: 7ae14cf581f2 ("phy: ti: j721e-wiz: Implement DisplayPort mode to the wiz driver")
+> Signed-off-by: Dan Carpenter <dan.carpenter@oracle.com>
 
+Reviewed-by: Roger Quadros <rogerq@kernel.org>
+
+> ---
+>  drivers/phy/ti/phy-j721e-wiz.c | 5 +++--
+>  1 file changed, 3 insertions(+), 2 deletions(-)
+> 
+> diff --git a/drivers/phy/ti/phy-j721e-wiz.c b/drivers/phy/ti/phy-j721e-wiz.c
+> index 20af142580ad..438ccce3d1bf 100644
+> --- a/drivers/phy/ti/phy-j721e-wiz.c
+> +++ b/drivers/phy/ti/phy-j721e-wiz.c
+> @@ -1400,7 +1400,8 @@ static int wiz_probe(struct platform_device *pdev)
+>  	if (IS_ERR(wiz->scm_regmap)) {
+>  		if (wiz->type == J7200_WIZ_10G) {
+>  			dev_err(dev, "Couldn't get ti,scm regmap\n");
+> -			return -ENODEV;
+> +			ret = -ENODEV;
+> +			goto err_addr_to_resource;
+>  		}
+>  
+>  		wiz->scm_regmap = NULL;
+> @@ -1450,7 +1451,7 @@ static int wiz_probe(struct platform_device *pdev)
+>  
+>  	ret = wiz_get_lane_phy_types(dev, wiz);
+>  	if (ret)
+> -		return ret;
+> +		goto err_addr_to_resource;
+>  
+>  	wiz->dev = dev;
+>  	wiz->regmap = regmap;
+
+cheers,
+-roger
 
 -- 
 linux-phy mailing list
