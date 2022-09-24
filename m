@@ -4,68 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A838DC07E9D
-	for <linux-phy@archiver.kernel.org>; Sat, 24 Sep 2022 06:18:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5E048C07E9D
+	for <linux-phy@archiver.kernel.org>; Sat, 24 Sep 2022 06:28:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TSBrpJYcLl37mZ+r6QmwkC59ZvlPOHmc2tKKexGJKng=; b=F/yUdoKV2glL5u
-	PNSzUG9oWsxg7TqeAzgq+++F0lqWhPf+N6anlrOnpDh4kQGd6/m8aMzWUQakT4dBXMEKjUly3Ecoa
-	miqKewK8rX4clsu5TMl0zTa/LrkI5LxXrR09QM3mEtJX3GZbmLIHlV3r67VFL9s6LWgrbKjIOR38J
-	ulCyRUbnDBQvmY7HcAWMjBp0BU14DI8lTTxQMnKbRSRUQwl96+91mJ6bAUhWx5KyvHygv6YOHGPKK
-	EhPPGS5NuLlzPG57Atgn0BDzJGxqA7qQNEMUHhA1iB2P50Znl2f+iBAd5W2pWgSwd7UjV7TVtRmXJ
-	oz174jarXDR6d9KFoUFA==;
+	List-Owner; bh=w5gKBF5S5neFP8gCcVnQ7KvWl/vZmztfj7V4o7HX2zE=; b=UIOPornDYuZRvl
+	m3fcEkhG6ftlPBXWmdiTkZ5M68sQzm2deP2B/UjsyKKDhRYUL8Mn1fGGX8z2H57KdJ6Ozmg/Yxifs
+	I6/c+flYrfu/rvBNIfzgGU6xDY6iJduBXNZfLFmjVSAi/U3zkV1NR9e53eAsivtOt4WtyCEFMQkTM
+	mp5aOt/Luyapo9tc1l0w2zX052tK81pOCZ4iG0YhK0TzfdpxYfPpe0SQLAYst/VSuNh9CpQV3CC2n
+	M6g0r+8Pj+zQD8jZmxsF1RHK7pcW1eeSc3st330vgL6QPNTle1DvSUO9phpqyK/JwWrgmYvV67vcA
+	bqlniqs06yAiE1VNNf3A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1obyUZ-006Uhs-W5; Sat, 24 Sep 2022 06:18:23 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1obyeW-006VEr-EK; Sat, 24 Sep 2022 06:28:40 +0000
+Received: from ams.source.kernel.org ([145.40.68.75])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1obyUX-006UhQ-QH
-	for linux-phy@lists.infradead.org; Sat, 24 Sep 2022 06:18:23 +0000
+	id 1obyeJ-006VCb-3Y; Sat, 24 Sep 2022 06:28:28 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 0D19760A67;
-	Sat, 24 Sep 2022 06:18:21 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 83236C433C1;
-	Sat, 24 Sep 2022 06:18:19 +0000 (UTC)
+	by ams.source.kernel.org (Postfix) with ESMTPS id F2A9FB80064;
+	Sat, 24 Sep 2022 06:28:22 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E408BC433C1;
+	Sat, 24 Sep 2022 06:28:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1664000300;
-	bh=N8A1EAkzo8qHknJSPdQjAbz2LO4T4wabU3U9XHAUm94=;
+	s=k20201202; t=1664000901;
+	bh=13hcAswE3/w5gxNu2/Ksn2qrnXkSsfzErgmHm7xxrQM=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=YJjfpE/Y1SKb1ltXgBy50w1iWKjSmQR5abyIDKiBPTsDX8m90GheUVBDEcZctHhmO
-	 GnNpWCwObfHMx+MpX6VZhrLKgjzKzRM60M8VxYUR7YoV+7bH7EGHLb7hkNlgu4rGff
-	 azj+Cx0OsUkhbmpA1ciGYZbH7QDKDroFZ1LWUrGqJkKxOKolHAYYlWSL+bSH8kN27l
-	 DafnX1ilRy0g1pxk2+1biSibaNcc1rK3APk0ayPfGI18QDFKyHa4n9FyNkaV0tC69j
-	 fWdROvPcH0AiLzvlBvOzMpholuiXqJHnCafaxap3291iu/sduU3JZzKDMc4NLYW4a1
-	 Iy4ffvonUeRuQ==
-Date: Sat, 24 Sep 2022 11:48:15 +0530
+	b=SGdBa86rzljLx7cjzepoilpeBg3XmKvRNAw28AALpCf6Qk/7FWeV3Nw9qlOBqHThk
+	 2Uii+Yu7WhDAoDKeVxYIObjTalaTstgk1Xdv26p8Y7NlSqimtN8paEyOuSbpDNGgpT
+	 veWfBuPHzR0m7KhFhjO8dTxVvyPdIRQ+cTFUQ6jQ/NEEV+8x1x83H7HFqst+Fi505/
+	 eaE0h824Xm2UaGMHjOXMvdaRTlafhEyvT6qotgokzmvekti0s0EsNUEG1xGbpMSrwJ
+	 zloX68w2JN2yOSm5+WQ597Ei+2SrgavhVTxQKmEYKINYo4QxLy0usY145FGO/rYMQn
+	 O/q7FzEa+tv6Q==
+Date: Sat, 24 Sep 2022 11:58:17 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@somainline.org>,
-	Rob Herring <robh+dt@kernel.org>, Jingoo Han <jingoohan1@gmail.com>,
-	Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
-	Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
-	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
-	Bjorn Helgaas <bhelgaas@google.com>,
-	Kishon Vijay Abraham I <kishon@ti.com>,
+To: Chunfeng Yun <chunfeng.yun@mediatek.com>
+Cc: Chun-Kuang Hu <chunkuang.hu@kernel.org>,
 	Philipp Zabel <p.zabel@pengutronix.de>,
-	Johan Hovold <johan@kernel.org>, linux-arm-msm@vger.kernel.org,
-	linux-pci@vger.kernel.org, linux-phy@lists.infradead.org
-Subject: Re: [PATCH v3 1/9] phy: define submodes for PCIe PHYs
-Message-ID: <Yy6hJyivbbQ+sI3n@matsya>
-References: <20220909091433.3715981-1-dmitry.baryshkov@linaro.org>
- <20220909091433.3715981-2-dmitry.baryshkov@linaro.org>
+	Kishon Vijay Abraham I <kishon@ti.com>,
+	Matthias Brugger <matthias.bgg@gmail.com>,
+	dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org,
+	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org, Jitao Shi <jitao.shi@mediatek.com>,
+	Stanley Chu <stanley.chu@mediatek.com>
+Subject: Re: [PATCH 00/18] unify register access and macros
+Message-ID: <Yy6jgYXSawkaAMxv@matsya>
+References: <20220920090038.15133-1-chunfeng.yun@mediatek.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20220909091433.3715981-2-dmitry.baryshkov@linaro.org>
+In-Reply-To: <20220920090038.15133-1-chunfeng.yun@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220923_231821_914002_F3D0EC2E 
-X-CRM114-Status: GOOD (  15.61  )
+X-CRM114-CacheID: sfid-20220923_232827_312447_04B16249 
+X-CRM114-Status: UNSURE (   7.62  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,40 +78,14 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 09-09-22, 12:14, Dmitry Baryshkov wrote:
-> Define two submodes to be used for the PCIe PHYs, where required.
-> 
-> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-> ---
->  include/linux/phy/phy.h | 9 +++++++++
->  1 file changed, 9 insertions(+)
-> 
-> diff --git a/include/linux/phy/phy.h b/include/linux/phy/phy.h
-> index b1413757fcc3..bd60c1a72988 100644
-> --- a/include/linux/phy/phy.h
-> +++ b/include/linux/phy/phy.h
-> @@ -45,6 +45,15 @@ enum phy_mode {
->  	PHY_MODE_DP
->  };
->  
-> +/*
-> + * Submodes for the PHY_MODE_PCIE, allowing the host to select between RC (Root
-> + * Complex) and EP (End Point) PHY modes.
-> + */
-> +enum {
-> +	PHY_SUBMODE_PCIE_RC,
-> +	PHY_SUBMODE_PCIE_EP,
-> +};
+On 20-09-22, 17:00, Chunfeng Yun wrote:
+> No need to define new macros to generate bits, mask and bitfield, use
+> common ones instead, e.g. BIT, GENMASK and FIELD_PREP etc.
+> Due to common register access helpers are defined for MediaTek's phy
+> drivers, the similar helpers defined by ufs, hdmi and mipi phy drivers
+> can be removed.
 
-This can be dropped see include/linux/phy/pcie.h
-
-
-> +
->  enum phy_media {
->  	PHY_MEDIA_DEFAULT,
->  	PHY_MEDIA_SR,
-> -- 
-> 2.35.1
+Applied, thanks
 
 -- 
 ~Vinod
