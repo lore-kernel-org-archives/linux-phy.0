@@ -4,72 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E6327C07E9D
-	for <linux-phy@archiver.kernel.org>; Mon, 26 Sep 2022 07:47:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 50971C32771
+	for <linux-phy@archiver.kernel.org>; Mon, 26 Sep 2022 08:30:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0RvbZK9z6pZaKmkLDgkshAX3dyNvXgeivZUX2tQEf6k=; b=qA/nvq6ibVvTnI
-	UlSvhNPah1HMtgXWIeP55pnzBQ43WWGhaDxMqK7uRR/TfixbEdiESJx+DbG7YSAqd+f+8Ywz8s4WL
-	Kvg1016hGRhIMlUsu3Fnv63H/83LaOcHGLYEr91RHiiEW3Lhh9t3SiHek1diuWU33V1uHq19q0Ox3
-	0Su+eJt76N168JcTbnAQM5/I3umkvPim4pvXiVAkRfnvaQXlBpWSE3P1m3lTjry3asmeb4WYQJCNN
-	HhLAhKBLGIgGL2YVEWJ9zejWm1wqkA72LDPZaJaqzM9WTKNhKNh6xmFBJklet4lFfIZv+VnPUzC7d
-	DbZc52j4Qn5tLk2qMUkA==;
+	List-Owner; bh=JgVOwPiBvcuum1mLbgY7A5n0+pFalPTNOvbn5OQfs1s=; b=NFmCfEMo9hxRNS
+	5ZX44BYNMIOixhor1F+KYSrVepEXAWtYsUqUPDz3PHFeNBHXRKa2uQUhF2xMzrrTZPrypRIEviRYn
+	GQstopsTsTUbyTtH6GNW3/yIvTYt7py/eA0WNDJaIGjHGLSVYp0hM+ZS9W7WPjRSmHvHUCoXfXUIT
+	gev+KsNpTJFKPZdK0lTfRaodAbfTY6EbLil3TkjjdYlPIm7I+9SxSSRNlkhcQsB0nilnHn8KiS/o/
+	2s+mmdf0iFYlnISf6bddJFDqHwTs0CZVIU61FW+9Y45PyXKJLt47elbrrBbiCkX6J1N/aoEaUongD
+	9zTVU3Jh4pmn0TJx0Jyg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ociqN-002rp1-7q; Mon, 26 Sep 2022 07:47:59 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1ocjVU-003BAT-Lw; Mon, 26 Sep 2022 08:30:28 +0000
+Received: from mail-lf1-x12b.google.com ([2a00:1450:4864:20::12b])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ociqK-002rnf-Ez
-	for linux-phy@lists.infradead.org; Mon, 26 Sep 2022 07:47:58 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id E39FD61851;
-	Mon, 26 Sep 2022 07:47:55 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 44EF0C433D6;
-	Mon, 26 Sep 2022 07:47:55 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1664178475;
-	bh=oMh3mRdeUJx5z+IufCR39aeOPCWTzVwWRyG9Z13I90Q=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=WvdJ6RkhF97tN5I5vj+NPXFnuOBY4JuqUmRkesoIqyV5anN51wmXsKiJDeSAuDvrR
-	 es5y/rjj3avpnhbGMA2LxiaVqFbFeDeMyWqsONONr+GqhnckDI2LI0b0uPv/mSuhQd
-	 J+8P/HaeRX+fj5PhZ0Ki4ZTGNaAdKGwUvnmeOEbIQnNui1kevYcW1DeW82cTWCIuzY
-	 aJPxm3T7bMz4XgMDWfBgdHFBf4CenJUlPIkv9IfEEI0DVehPBC8YbybbbmFQ/QpIG0
-	 0bEJ5Am845aj1uZlQ4nVHwRkqgdI+eFxP+p3QE3tDm90siFvgqlwsM2t0a333yZeW9
-	 Q289TwF24qHVA==
-Received: from johan by xi.lan with local (Exim 4.94.2)
-	(envelope-from <johan@kernel.org>)
-	id 1ociqO-0003qD-Jm; Mon, 26 Sep 2022 09:48:00 +0200
-Date: Mon, 26 Sep 2022 09:48:00 +0200
-From: Johan Hovold <johan@kernel.org>
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@somainline.org>,
-	Rob Herring <robh+dt@kernel.org>, Jingoo Han <jingoohan1@gmail.com>,
-	Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
-	Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
-	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
-	Bjorn Helgaas <bhelgaas@google.com>, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@ti.com>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
-	linux-phy@lists.infradead.org
-Subject: Re: [PATCH v4 3/6] phy: qcom-qmp-pcie: support separate tables for
- EP mode
-Message-ID: <YzFZMGezfg26T9r5@hovoldconsulting.com>
-References: <20220924160302.285875-1-dmitry.baryshkov@linaro.org>
- <20220924160302.285875-4-dmitry.baryshkov@linaro.org>
+	id 1ocjVN-003B6x-Es
+	for linux-phy@lists.infradead.org; Mon, 26 Sep 2022 08:30:27 +0000
+Received: by mail-lf1-x12b.google.com with SMTP id d42so9743461lfv.0
+        for <linux-phy@lists.infradead.org>; Mon, 26 Sep 2022 01:30:20 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date;
+        bh=yc8eh2ppDZZcDWiITniWISunAPkC/g7sS7I8UZwuluQ=;
+        b=zpbdWAHHJu56K2xc8KOgyLKSj8qOfxEsKQI+kac9U7+4w9tMwjeWo4o35q4Vk0jxWu
+         FbJYxVRWgJkVtwq7T9/9mqc1ibZvXSE1BL9vhvk5ihjtffFKmoXmuIqq/DlEBoAdq/39
+         +zsmubOMQvjhn0p6cN8frRKED8F5R883zIGZwHlfXZXzppVxgvS/L6PP1kj9bdCb53Nh
+         l39isR4HHmGCNScNZfJM62TvFV1TD4e3sbDCUruQ8nZWFIfbLRM+7U4L40mrwtkPAl6b
+         7qOuFZALtHXONa4Sa7O3R2cd/FPqeYwrv3nkNli9Y+F264fTFvWPpN+uGQ0xdh8ilANV
+         Bn6A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date;
+        bh=yc8eh2ppDZZcDWiITniWISunAPkC/g7sS7I8UZwuluQ=;
+        b=D/bMiJR4OR0EVdRD8FpSuETtTUTE2FcVUTGEgAhXByvNY34qAly+cp7pxsZ4iMMqf1
+         MFkwxiUXWWy9Q9ckl0gAWVcUaikGbSCzNTe7fTKBPV7KW7qvTArnmCaGA7W3HIzQtYL7
+         lZDhFWsVojYah412McB8O+y3RfMzNe/GFhaIEZok7Sk8bNp8rPkDRqhikJSTgbOlAOdN
+         5xyogqQlRUKvT4BlvdDj5GWgIIC1NrJ3XF74PWu0WEIe9kYdM0gOslc609caYpCgMxxo
+         X5/gyEmZFgZfrGybqxfmmyKzQC4boerD0UWuXJwftZ7AfzwIvfanQfD8JOznw7XBH1Kt
+         vlMQ==
+X-Gm-Message-State: ACrzQf3sXEfv++RdCijiACJB/RnKwKKxZK5FXYHXRenllNefQ2CnZHEH
+	u30gue6FfyDU4pMy9+bMgkCJqA==
+X-Google-Smtp-Source: AMsMyM4Lzz4cmKCm4wv5NBgqln7unwSID9Ng2e832jbMYlUh2kXSCavmOuKZy9aDB1F8rZiWx8s8sg==
+X-Received: by 2002:a05:6512:1315:b0:492:cbc8:e10d with SMTP id x21-20020a056512131500b00492cbc8e10dmr7972243lfu.41.1664181019045;
+        Mon, 26 Sep 2022 01:30:19 -0700 (PDT)
+Received: from [192.168.0.21] (78-11-189-27.static.ip.netia.com.pl. [78.11.189.27])
+        by smtp.gmail.com with ESMTPSA id y2-20020a2e5442000000b0026c41574790sm2292842ljd.30.2022.09.26.01.30.18
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 26 Sep 2022 01:30:18 -0700 (PDT)
+Message-ID: <263a2ca5-089e-3ca5-7eea-f09c542d0e7b@linaro.org>
+Date: Mon, 26 Sep 2022 10:30:17 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20220924160302.285875-4-dmitry.baryshkov@linaro.org>
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.3.0
+Subject: Re: [PATCH] dt-bindings: phy: Add compatible for Mediatek MT8188
+Content-Language: en-US
+To: xinlei.lee@mediatek.com, chunfeng.yun@mediatek.com, kishon@ti.com,
+ vkoul@kernel.org, robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
+ matthias.bgg@gmail.com, chunkuang.hu@kernel.org, p.zabel@pengutronix.de
+Cc: linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org,
+ Project_Global_Chrome_Upstream_Group@mediatek.com
+References: <1664180045-19095-1-git-send-email-xinlei.lee@mediatek.com>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <1664180045-19095-1-git-send-email-xinlei.lee@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220926_004756_631635_465F7A37 
-X-CRM114-Status: GOOD (  36.68  )
+X-CRM114-CacheID: sfid-20220926_013021_537501_9503A597 
+X-CRM114-Status: UNSURE (   7.24  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,169 +97,20 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sat, Sep 24, 2022 at 07:02:59PM +0300, Dmitry Baryshkov wrote:
-> The PCIe QMP PHY requires different programming sequences when being
-> used for the RC (Root Complex) or for the EP (End Point) modes. Allow
-> selecting the submode and thus selecting a set of PHY programming
-> tables.
+On 26/09/2022 10:14, xinlei.lee@mediatek.com wrote:
+> From: xinlei lee <xinlei.lee@mediatek.com>
 > 
-> Since the RC and EP modes share common some common init sequence, the
-> common sequence is kept in the main table and the sequence differences
-> are pushed to the extra tables.
+> Add dt-binding documentation of dsi-phy for MediaTek MT8188 SoC.
 > 
-> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+> Signed-off-by: xinlei lee <xinlei.lee@mediatek.com>
 > ---
->  drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 67 ++++++++++++++++++++----
->  1 file changed, 58 insertions(+), 9 deletions(-)
-> 
-> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-> index 6e8c74585670..1fc23df59454 100644
-> --- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-> @@ -1320,10 +1320,14 @@ struct qmp_phy_cfg {
->  	/* Main init sequence for PHY blocks - serdes, tx, rx, pcs */
->  	struct qmp_phy_cfg_tables common;
->  	/*
-> -	 * Additional init sequence for PHY blocks, providing additional
-> -	 * register programming. Unless required it can be left omitted.
-> +	 * Additional init sequences for PHY blocks, providing additional
-> +	 * register programming. They are used for providing separate sequences
-> +	 * for the Root Complex and for the End Point usecases.
-> +	 *
-> +	 * If EP mode is not supported, both tables can be left empty.
->  	 */
-> -	struct qmp_phy_cfg_tables *extra;
-> +	struct qmp_phy_cfg_tables *extra_rc; /* for the RC only */
-> +	struct qmp_phy_cfg_tables *extra_ep; /* for the EP only */
+>  Documentation/devicetree/bindings/phy/mediatek,dsi-phy.yaml | 1 +
 
-So with the additional "_rc" and "_ep" suffixes this would be more
-obvious as for example:
+Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
-	struct qmp_phy_cfg_tables tbls_common;
-	struct qmp_phy_cfg_tables tbls_rc;
-	struct qmp_phy_cfg_tables tbls_ep;
+Best regards,
+Krzysztof
 
-The "for the RC only" comments doesn't really add anything.
-
->  
->  	/* clock ids to be requested */
->  	const char * const *clk_list;
-> @@ -1367,6 +1371,7 @@ struct qmp_phy_cfg {
->   * @pcs_misc: iomapped memory space for lane's pcs_misc
->   * @pipe_clk: pipe clock
->   * @qmp: QMP phy to which this lane belongs
-> + * @extra: currently selected PHY extra init table set
-
-"extra" is not a descriptive name here either.
-
->   */
->  struct qmp_phy {
->  	struct phy *phy;
-> @@ -1379,6 +1384,7 @@ struct qmp_phy {
->  	void __iomem *rx2;
->  	void __iomem *pcs_misc;
->  	struct clk *pipe_clk;
-> +	const struct qmp_phy_cfg_tables *extra;
->  	struct qcom_qmp *qmp;
->  };
->  
-> @@ -1624,7 +1630,15 @@ static const struct qmp_phy_cfg sm8250_qmp_gen3x1_pciephy_cfg = {
->  	.pcs_misc_tbl		= sm8250_qmp_pcie_pcs_misc_tbl,
->  	.pcs_misc_tbl_num	= ARRAY_SIZE(sm8250_qmp_pcie_pcs_misc_tbl),
->  	},
-> -	.extra = &(struct qmp_phy_cfg_tables) {
-> +	/*
-> +	 * For sm8250 the split between the primary and extra_rc tables is
-> +	 * historical, it reflects the programming sequence common to all PCIe
-> +	 * PHYs on this platform and a sequence required for this particular
-> +	 * PHY type. If EP support for sm8250 is required, the
-> +	 * primary/extra_rc split is to be reconsidered and adjusted
-> +	 * according to EP programming sequence.
-> +	 */
-
-Not sure this is needed either. I'm currently using the "_sec" tables
-(future "extra") for sc8280xp as well to handle minor variations in init
-sequences between the different PHY types.
-
-> +	.extra_rc = &(struct qmp_phy_cfg_tables) {
->  	.serdes_tbl		= sm8250_qmp_gen3x1_pcie_serdes_tbl,
->  	.serdes_tbl_num		= ARRAY_SIZE(sm8250_qmp_gen3x1_pcie_serdes_tbl),
->  	.rx_tbl			= sm8250_qmp_gen3x1_pcie_rx_tbl,
-
-> @@ -2000,8 +2022,12 @@ static int qmp_pcie_power_on(struct phy *phy)
->  	unsigned int mask, val, ready;
->  	int ret;
->  
-> +	/* Default to RC mode if the mode was not selected using phy_set_mode_ext() */
-> +	if (!qphy->extra)
-> +		qphy->extra = cfg->extra_rc;
-
-It would probably be better to just store the submode in
-phy_set_mode_ext() and pick the right table here.
-
-That way you don't need to describe what's really going on in a comment
-as it would be apparent from the code.
-
-> +
->  	qmp_pcie_serdes_init(qphy, &cfg->common);
-> -	qmp_pcie_serdes_init(qphy, cfg->extra);
-> +	qmp_pcie_serdes_init(qphy, qphy->extra);
->  
->  	ret = clk_prepare_enable(qphy->pipe_clk);
->  	if (ret) {
- 
-> +static int qmp_pcie_set_mode(struct phy *phy,
-
-Do you really need a line break?
-
-> +				 enum phy_mode mode, int submode)
-> +{
-> +	struct qmp_phy *qphy = phy_get_drvdata(phy);
-> +
-> +	switch (submode) {
-> +	case PHY_MODE_PCIE_RC:
-> +		qphy->extra = qphy->cfg->extra_rc;
-> +		break;
-> +	case PHY_MODE_PCIE_EP:
-> +		qphy->extra = qphy->cfg->extra_ep;
-> +		break;
-> +	default:
-> +		dev_err(&phy->dev, "Unuspported submode %d\n", submode);
-
-Typo: unsupported
-
-> +		return -EINVAL;
-> +	}
-> +
-> +	return 0;
-> +}
-> +
->  static int qmp_pcie_vreg_init(struct device *dev, const struct qmp_phy_cfg *cfg)
->  {
->  	struct qcom_qmp *qmp = dev_get_drvdata(dev);
-> @@ -2224,6 +2270,7 @@ static int phy_pipe_clk_register(struct qcom_qmp *qmp, struct device_node *np)
->  static const struct phy_ops qmp_pcie_ops = {
->  	.power_on	= qmp_pcie_enable,
->  	.power_off	= qmp_pcie_disable,
-> +	.set_mode	= qmp_pcie_set_mode,
->  	.owner		= THIS_MODULE,
->  };
->  
-> @@ -2278,7 +2325,9 @@ static int qmp_pcie_create(struct device *dev, struct device_node *np, int id,
->  		qphy->pcs_misc = qphy->pcs + 0x400;
->  
->  	if (IS_ERR(qphy->pcs_misc)) {
-> -		if (cfg->common.pcs_misc_tbl || cfg->extra->pcs_misc_tbl)
-> +		if (cfg->common.pcs_misc_tbl ||
-> +		    cfg->extra_rc->pcs_misc_tbl ||
-> +		    cfg->extra_ep->pcs_misc_tbl)
-
-I already pointed out the NULL deref here.
-
->  			return PTR_ERR(qphy->pcs_misc);
->  	}
-
-Johan
 
 -- 
 linux-phy mailing list
