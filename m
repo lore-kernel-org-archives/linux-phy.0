@@ -4,83 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 58A5BC32771
-	for <linux-phy@archiver.kernel.org>; Mon, 26 Sep 2022 12:55:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A8F25C07E9D
+	for <linux-phy@archiver.kernel.org>; Mon, 26 Sep 2022 13:24:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:From:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=b0XJYq/yLfl/C0LJ9NvT3t2doXHtVQhmbmiZV4G+NPA=; b=BEccBhYV4hQc2Y
-	l+oaEO5zWsR9KWkEDlDenMGVBth1wTsRCeskMQ1JocXqvrfHE9q1EMtIMQDE2fQCtIlRPnYyk2gIW
-	V9khNOO/f8SZkPBPSQsCLTFiOg3lf+1nCCtOdsgE4ScWHnq7gkAXiBBuMcYZv9enybHbvCpSBSY6K
-	ZKhgRZgMDluHQ9qNyeu2nsli9mlS14JrJqLCRopWo19FOyzk793E4QBFPYfOhHxqQ9j9c45qPP35M
-	SlsBE4lATvelrpcQlOSgocOhEs6/I3w5y5TNykgSaokNWc2ue1OUlwVgGzDcIp7nod4szL5V6eT8h
-	DE21umR+BlkUObpMrQyg==;
+	List-Owner; bh=jxfSsbMGkZylHW7Yb+y7/ltCr2kz8y1f2v8FlRCXcPA=; b=mnkksF9Y3TiWBq
+	5/P21XjChpXlbrrmfsr60h6KGwpyV4xz3Yd+MSmXiMa404pdNEvAK3swQnivThRG/h15fWeZKiVtN
+	Jg7yibO5nFkdA3/5LzLTIIRUIuZ5owbyE3LQd5kyMeW+036+DGDo0KoYttJNJPQ2GYWOGDq9H28OH
+	lRg2K0oK2y8Q1Wukba/KxK/DRiNmobYLyu/6Ck+UmiwF8mObFijitJmrQO6LdsT47xPM3bczUVZsz
+	bFOyBudEAEyxt33wDW4ZAG0hsqbed9V0cRuY0SVZWDszBqrVXpUysOUZeQyoz4JsXVU/5d8UOseC/
+	JVuw6WHAptnlTH5WbdUw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ocndl-004zft-Ps; Mon, 26 Sep 2022 12:55:17 +0000
-Received: from mail-lf1-x12a.google.com ([2a00:1450:4864:20::12a])
+	id 1oco6Q-00548M-3q; Mon, 26 Sep 2022 13:24:54 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ocndb-004zbr-CW
-	for linux-phy@lists.infradead.org; Mon, 26 Sep 2022 12:55:08 +0000
-Received: by mail-lf1-x12a.google.com with SMTP id a8so10646156lff.13
-        for <linux-phy@lists.infradead.org>; Mon, 26 Sep 2022 05:55:05 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=content-transfer-encoding:in-reply-to:references:cc:to:from
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date;
-        bh=ONMXc2NYSKLU2aN6oTiPbh08PngY0fLPwitzKB3HkaM=;
-        b=RfL1gwFExuPHbjESlShA9UaN59Ajr+yNw/ArqU0Q3w7COwsv8TYAFlb9gocMXrHLxV
-         6Vr0mkcYl1s5UFFggXoqPfLFKnkdTjieyBcUJ5u3LiZoTx7YMTZL49ijRiYWLdp6Jm90
-         fB9Ok7+wqvW3ksYbhKwtKhBiACyS+aJ/lvIQTaOoF4xZjtC4p0rOwcHP/s9BxR8u38Zq
-         WQ35DR2GslSqk9E3Yv6/ytNKQSZ2kuvZSo/gL6RcWO6yxaPM1WvKdxtPHVAKrTZh4n2c
-         lGyPi9uMCul+LJt/7eenFVDgOCwFKLghNOBx+ZDoRG19njUOAAtw4nfjz3l7Avi0qkGU
-         Rglg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=content-transfer-encoding:in-reply-to:references:cc:to:from
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date;
-        bh=ONMXc2NYSKLU2aN6oTiPbh08PngY0fLPwitzKB3HkaM=;
-        b=f3opGXKu4F5+6dBDVI4ak7A9UxlPItEqlZwLe7+ePE9LkTaGJosHSUnoaicE5nqupW
-         mJh1hl6AecsMCLX5IiCznBRKS/eB5qDJeV5YpPk1cc03ZtDykjx4YjtAMDHmQoX/VxBr
-         5nZU7rYEx1Mdo6FAa9q1e8uX6/9If1mdPymmrjBbSFknkCjhcdQ5DjbS5WlhFoSrowtg
-         mKpF6d5KZ5/m2NbBWPzhGa22tsluLtkBqZ9RPXW56P2gh31wYIRqKqzyAPjYqEyIWVQ+
-         IYtVKJbB8YO0If3g47V/wRoNMVWHX1N+Tdk+f9BlQaPjg35kHq40qZ3O1Rh1nR/EsW/k
-         PQkA==
-X-Gm-Message-State: ACrzQf2IXCxy+8UyQA0PYrQ5pP0VVQRh/w2nWrUHkRdu00THWCWTtITB
-	UuYZmeZYJ1gjSQcBKSpgZ81q3A==
-X-Google-Smtp-Source: AMsMyM4YG0BwIDup3w8JQwlB0GXuUGwi3A9Ea2k/zd4CptpmUQB4VHq9/eJF7KAF8SVPfN/yl9PJiQ==
-X-Received: by 2002:a05:6512:3f8b:b0:492:d1ed:5587 with SMTP id x11-20020a0565123f8b00b00492d1ed5587mr9337981lfa.355.1664196903928;
-        Mon, 26 Sep 2022 05:55:03 -0700 (PDT)
-Received: from [192.168.0.21] (78-11-189-27.static.ip.netia.com.pl. [78.11.189.27])
-        by smtp.gmail.com with ESMTPSA id 9-20020ac25f09000000b00499f9ba6af0sm2523856lfq.207.2022.09.26.05.55.01
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 26 Sep 2022 05:55:02 -0700 (PDT)
-Message-ID: <0a6d3d14-33f0-92d2-b42f-e4d336c8cd91@linaro.org>
-Date: Mon, 26 Sep 2022 14:55:00 +0200
+	id 1oco6N-00547c-MX
+	for linux-phy@lists.infradead.org; Mon, 26 Sep 2022 13:24:53 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 0C8C760DCC;
+	Mon, 26 Sep 2022 13:24:51 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6A210C433D6;
+	Mon, 26 Sep 2022 13:24:50 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1664198690;
+	bh=fGPXY4HuQM7bSnJZnNLyetKPUunr5Gj4RA4VKZKar/A=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=hLOSBGewwfUS8IH4Q69aqseirmsf6IU5JuRtbN1SUEffmLfA1EnDAVWK78p9lD8sH
+	 b3hxQAnfHwU8p8wFK+8+mY449VwWN9s5GkiRl80o/7QCSHmuUJRLYoVmyRGiwj9P2P
+	 4t0X4h/GH4ftY1iCi+iZKB85T6BzA5nNzO8Sm4+8QXTD4EhWRf8ndQ95SqemlkkN02
+	 foNesIlwSjQDcGjjs1o8e9UppGYSEq38wFQ7DHK+TsdYItrhzoulAbBCOaQoDqm02n
+	 K5HoLUGP/hcF/VH9yHWvNZJJNkRLag6lzyZRDFdHT5yRlA6rJ/P8rV3zd1a9peJMsM
+	 6EAa+9xf8Yo2w==
+Received: from johan by xi.lan with local (Exim 4.94.2)
+	(envelope-from <johan@kernel.org>)
+	id 1oco6R-000279-I7; Mon, 26 Sep 2022 15:24:56 +0200
+Date: Mon, 26 Sep 2022 15:24:55 +0200
+From: Johan Hovold <johan@kernel.org>
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@somainline.org>,
+	Rob Herring <robh+dt@kernel.org>, Jingoo Han <jingoohan1@gmail.com>,
+	Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
+	Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
+	Bjorn Helgaas <bhelgaas@google.com>, Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@ti.com>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
+	linux-phy@lists.infradead.org
+Subject: Re: [PATCH v4 1/6] phy: qcom-qmp-pcie: split register tables into
+ common and extra parts
+Message-ID: <YzGoJx55sFdw40Td@hovoldconsulting.com>
+References: <20220924160302.285875-1-dmitry.baryshkov@linaro.org>
+ <20220924160302.285875-2-dmitry.baryshkov@linaro.org>
+ <YzFUcWSHkdSlIbHU@hovoldconsulting.com>
+ <5a93a4fc-b6a9-6371-84c1-ff39c60dbb5a@linaro.org>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.3.0
-Subject: Re: [PATCH v2] dt-bindings: phy: Add compatible for Mediatek MT8188
-Content-Language: en-US
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-To: xinlei.lee@mediatek.com, chunfeng.yun@mediatek.com, kishon@ti.com,
- vkoul@kernel.org, robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
- matthias.bgg@gmail.com, chunkuang.hu@kernel.org, p.zabel@pengutronix.de
-Cc: linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org,
- Project_Global_Chrome_Upstream_Group@mediatek.com
-References: <1664183509-29473-1-git-send-email-xinlei.lee@mediatek.com>
- <c5ee2888-dabf-e3a6-acca-517ede984002@linaro.org>
-In-Reply-To: <c5ee2888-dabf-e3a6-acca-517ede984002@linaro.org>
+Content-Disposition: inline
+In-Reply-To: <5a93a4fc-b6a9-6371-84c1-ff39c60dbb5a@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220926_055507_434352_63A9F54D 
-X-CRM114-Status: GOOD (  11.35  )
+X-CRM114-CacheID: sfid-20220926_062451_835067_B73CE58A 
+X-CRM114-Status: GOOD (  23.39  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,32 +88,82 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 26/09/2022 11:23, Krzysztof Kozlowski wrote:
-> On 26/09/2022 11:11, xinlei.lee@mediatek.com wrote:
->> From: xinlei lee <xinlei.lee@mediatek.com>
->>
->> Add dt-binding documentation of dsi-phy for MediaTek MT8188 SoC.
->>
->> Signed-off-by: xinlei lee <xinlei.lee@mediatek.com>
+On Mon, Sep 26, 2022 at 02:35:07PM +0300, Dmitry Baryshkov wrote:
+> On 26/09/2022 10:27, Johan Hovold wrote:
+> > On Sat, Sep 24, 2022 at 07:02:57PM +0300, Dmitry Baryshkov wrote:
+> >> SM8250 configuration tables are split into two parts: the common one and
+> >> the PHY-specific tables. Make this split more formal. Rather than having
+> >> a blind renamed copy of all QMP table fields, add separate struct
+> >> qmp_phy_cfg_tables and add two instances of this structure to the struct
+> >> qmp_phy_cfg. Later on this will be used to support different PHY modes
+> >> (RC vs EP).
+> >>
+> >> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+> >> ---
+> >>   drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 129 ++++++++++++++---------
+> >>   1 file changed, 77 insertions(+), 52 deletions(-)
+> >>
+> >> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+> >> index 7aff3f9940a5..30806816c8b0 100644
+> >> --- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+> >> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+> >> @@ -1300,31 +1300,30 @@ static const struct qmp_phy_init_tbl sm8450_qmp_gen4x2_pcie_pcs_misc_tbl[] = {
+> >>   	QMP_PHY_INIT_CFG(QPHY_V5_20_PCS_PCIE_G4_PRE_GAIN, 0x2e),
+> >>   };
+> >>   
+> >> -/* struct qmp_phy_cfg - per-PHY initialization config */
+> >> -struct qmp_phy_cfg {
+> >> -	int lanes;
+> >> -
+> >> -	/* Init sequence for PHY blocks - serdes, tx, rx, pcs */
+> >> +struct qmp_phy_cfg_tables {
+> >>   	const struct qmp_phy_init_tbl *serdes_tbl;
+> >>   	int serdes_tbl_num;
+> > 
+> > So I still think you should drop the now redundant "tbl" suffix and
+> > infix.
+> > 
+> >> -	const struct qmp_phy_init_tbl *serdes_tbl_sec;
+> >> -	int serdes_tbl_num_sec;
+> >>   	const struct qmp_phy_init_tbl *tx_tbl;
+> >>   	int tx_tbl_num;
+> >> -	const struct qmp_phy_init_tbl *tx_tbl_sec;
+> >> -	int tx_tbl_num_sec;
+> >>   	const struct qmp_phy_init_tbl *rx_tbl;
+> >>   	int rx_tbl_num;
+> >> -	const struct qmp_phy_init_tbl *rx_tbl_sec;
+> >> -	int rx_tbl_num_sec;
+> >>   	const struct qmp_phy_init_tbl *pcs_tbl;
+> >>   	int pcs_tbl_num;
+> >> -	const struct qmp_phy_init_tbl *pcs_tbl_sec;
+> >> -	int pcs_tbl_num_sec;
+> >>   	const struct qmp_phy_init_tbl *pcs_misc_tbl;
+> >>   	int pcs_misc_tbl_num;
+> >> -	const struct qmp_phy_init_tbl *pcs_misc_tbl_sec;
+> >> -	int pcs_misc_tbl_num_sec;
+> >> +};
+> >> +
+> >> +/* struct qmp_phy_cfg - per-PHY initialization config */
+> >> +struct qmp_phy_cfg {
+> >> +	int lanes;
+> >> +
+> >> +	/* Main init sequence for PHY blocks - serdes, tx, rx, pcs */
+> >> +	struct qmp_phy_cfg_tables common;
+> > 
+> > And this could be "tbls_common".
 > 
-> Please add Acked-by/Reviewed-by tags when posting new versions. However,
-> there's no need to repost patches *only* to add the tags. The upstream
-> maintainer will do that for acks received on the version they apply.
-> 
-> https://elixir.bootlin.com/linux/v5.17/source/Documentation/process/submitting-patches.rst#L540
-> 
-> If a tag was not added on purpose, please state why and what changed.
-> 
-> 
-> Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+> I'd go for common_tables, if you don't mind.
 
+Sure, if you prefer.
 
-As pointed out in other discussion - these bindings might not be
-correct. Please post DTS, so we can validate them.
+	struct qmp_phy_cfg_tables	tables;
+	struct qmp_phy_cfg_tables	tables_ep;
+	struct qmp_phy_cfg_tables	tables_rc;
 
-Best regards,
-Krzysztof
+Could also be an alternative. Not sure the "common" prefix/suffix really
+adds anything.
 
+Johan
 
 -- 
 linux-phy mailing list
