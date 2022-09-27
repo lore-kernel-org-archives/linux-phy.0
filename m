@@ -4,8 +4,8 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F33D6C54EE9
-	for <linux-phy@archiver.kernel.org>; Tue, 27 Sep 2022 13:04:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5E571C07E9D
+	for <linux-phy@archiver.kernel.org>; Tue, 27 Sep 2022 13:06:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -13,61 +13,62 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	MIME-Version:In-Reply-To:References:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=dtqcHPubvWldInFF33xtkmcWI/xj3L79AjNkGMZcmhM=; b=UIyau6tAyE+Rh/Vj+RuLcRacDW
-	NQ3/J4egPjiSySO/5PxNVpCnPMGInTPuTIz6Zatb5I7b1Hy4BfZFWjEzFzedW1kNXnvl8aJ03mkhb
-	f2dmEBVsPRN6HlnKsy3r32fP8jv6krX0gTvPO6M9/Z19+117P+zRHi3lJgRShRBzZmw1wlVSZ5HPp
-	ADutqfTnj3cliXBPHHV013rYPoWoq7O2YUBs5zLvw80aThcS+s6LnqI9YJytrtrIZdREFX4p9nv9S
-	tcCfVjGdMJxqcZq+L/O8oS4NmYsaTUy8EesLO4NKp5xqwVtcTF65DT2DVkNmtCdxOqXr3gSjba3nH
-	zSVV9Xbg==;
+	bh=j0y0993JlwVcsXpzImAbbH2R35Tkv1XoW+gVg5/2jM0=; b=MgZDY3lQyrklQ8H9dBEMXBg/+n
+	SD5LyYQXtqsJ/PpWE0HOZnujDZvpURkQrRNyNDhOvTHtc3UOl9r1A30cwhb2z+PkV5wHO3V8Kajfs
+	DqM+phTTEPR20Nro4bvyVxI8E2Iko4efUW//TaS0OPDs6FU12nlOToLzyKy4h9fBclX5UwRD6djp/
+	ZLybXJ2NyvnaeiiB0SgLT+cBt8/oF1/B3xw9GJ+q8Wzt3JRznflcjUIAbkxCffFFUVJ6l8e9kPL1k
+	d9bJP3uGO51oOdOAmRvhig4FzopClhifnTFaysbwK/+uA0mX2QHWIVKzDbwvgIWfj8tYYW2Xer1Kx
+	wRkwX0jQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1odAG5-00Afhb-Dx; Tue, 27 Sep 2022 13:04:21 +0000
-Received: from mail-pj1-x1036.google.com ([2607:f8b0:4864:20::1036])
+	id 1odAI2-00AgTS-Px; Tue, 27 Sep 2022 13:06:22 +0000
+Received: from mail-pl1-x635.google.com ([2607:f8b0:4864:20::635])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1odAG2-00Aff7-98
-	for linux-phy@lists.infradead.org; Tue, 27 Sep 2022 13:04:19 +0000
-Received: by mail-pj1-x1036.google.com with SMTP id q35-20020a17090a752600b002038d8a68fbso15546630pjk.0
-        for <linux-phy@lists.infradead.org>; Tue, 27 Sep 2022 06:04:13 -0700 (PDT)
+	id 1odAHp-00AgM4-TP
+	for linux-phy@lists.infradead.org; Tue, 27 Sep 2022 13:06:11 +0000
+Received: by mail-pl1-x635.google.com with SMTP id x1so9024477plv.5
+        for <linux-phy@lists.infradead.org>; Tue, 27 Sep 2022 06:06:07 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=baylibre-com.20210112.gappssmtp.com; s=20210112;
         h=cc:to:subject:message-id:date:mime-version:in-reply-to:references
          :user-agent:from:from:to:cc:subject:date;
-        bh=5A9tE5XjShKgk0dp4mGM6QaE+oB3gw3GtO9g42ZRvK8=;
-        b=K6t+GiDMxCE5PqXx9M7wnOxrmVe8RhMGvnDnBYG8NOKa2YssCusIkZAF4W4yvOQESA
-         grgJhoRBvxxax0+eCuPKh8p2W5rWUX6HXDrfWlnt3QOGcvz2Z0pKWEx5bc2keTzCKDPA
-         EFNonbeyTfJxCD6F40ovXsaSvZaA6ciUzimvjumUgzudbGcVF+jQjdL0HxEI5YO8kDxR
-         uaL+FNOyGJVlqjEpMvpc2MXt9w63j7o81b3Y3ky55r6MbLY0d+jh1dOdyFrtP5/68Jsh
-         ZON8Od6QdsueW9v6KQ7nfWtM/RdVCng56yDGIVeLLVpq3zbI72tvF/vuGVGpBIBmWRps
-         bqHw==
+        bh=tVImipPJ55LLlj3hxov+6J9Uas9BlzTbH/QBaoiYcnE=;
+        b=AeFiLZSELiOLu0C/WY7j3qNn2XbPtZX/1DfSK5wxjFb2rqwPO7CvvZtAFF5v6/7J26
+         ahCqqp2F9wNI5OYX7qy/ObhCyFoh9fcBwqqwDTOmQ3Szz628RGrS+W9AFjoVJocXlWki
+         VC0GYuee8hoFp6tnnZjb+BQvkFkX4acVrRZQaXEcy3Crna/0t54Jbazxa/CYEy/0/zFu
+         2lndzQwEpvpkb26lSSoBm5VVsMti9KIfqB8rnh9R4Sn70IUDgJCGjP5FzkG0xZM/8Ujz
+         ktOS6zIlcVHVVfda96Denge0ZrYEMhecJgtt3RQnWSFrUZInrw19D5HLdT/lXGWs6zAx
+         AlBg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=cc:to:subject:message-id:date:mime-version:in-reply-to:references
          :user-agent:from:x-gm-message-state:from:to:cc:subject:date;
-        bh=5A9tE5XjShKgk0dp4mGM6QaE+oB3gw3GtO9g42ZRvK8=;
-        b=2OKlj8jIi8obellvJY4g/Y3jzHd/nqMQUPIaDAH2AUP59rRBZw3nrlwvHQtCyOTftP
-         U8wip5tD4hHfpvIdb5XU079ztrJcwuq7hgTpnEZEGbFos6FWtA+Ph/xswrlobGkwfbjQ
-         VrhOoBaHYsYX4qJiIVeQ0rwPtO0mAIdlmC1s4aYRoACc6OPpjfB+CR2gkThGauxKnHQa
-         igeoNMbe7FwFsWo0kYfYyEGjB1hMrbkC4eGxadnZOKFYPRmbghf8PJ2Em5wyjtfeHmAk
-         m8ambj+aPgQ4H1ZNTy35T3v+DLZBR/2JMc1WZw6aG6hogf0zTazs9aLA2ACAue1/0pCQ
-         EQPA==
-X-Gm-Message-State: ACrzQf2Q3Ylo82aQRZNahAnDnsh80OhudC+G2x5x/mNyiI221gCmzIG7
-	HFGqGPkp7X+rnrCjFYkjSTdEUEqxLEnzNdAVh64LhQ==
-X-Google-Smtp-Source: AMsMyM5gawCoKKBTAHhXh48htU73+kqaFhoDJNb7qglhir+j3HxUZ0tCej0iXrKwzR9+MRTcHiP7gPgmwpcjXrYibm8=
-X-Received: by 2002:a17:90b:33c9:b0:200:a0ca:e6c8 with SMTP id
- lk9-20020a17090b33c900b00200a0cae6c8mr4481943pjb.147.1664283852916; Tue, 27
- Sep 2022 06:04:12 -0700 (PDT)
+        bh=tVImipPJ55LLlj3hxov+6J9Uas9BlzTbH/QBaoiYcnE=;
+        b=Pndeado6x8YGTXlaxrfKg7WyQnhRpw921tvIQ7xPXy18MCoPOhs60RSUfmBTXEA9Jb
+         /J3/XJcdl9ugOG96NHGLxszL5nB2Aq5YEd/G+dBPR7G0GwajInfSWG6kHyM017lwv2mV
+         2ghV7DdB988bqPqiwtgFTxiUH19UrWCCkBYlZSRoOuDQJUQ6x/EN8sIpZOYLg7RnjtFR
+         JAXgdG0TRmEs3JDR8c4CeXZj9ncS69wX1sRjSPFj8HUNGSZ3s+ZmAlquy4b15CQQRVRL
+         yiK9W9GaEQwSG1usfMjd/BnGJ1M1rD/xcwYQkhn/ERcseLpqQET7z/oATNM4QnAn0XIT
+         CJEQ==
+X-Gm-Message-State: ACrzQf2Z3HInP54ZQNLjVRVBX8LBBhfVKus1H6ytAzS+uTfl5rMnJ+S4
+	PlGmIhqLSgiSOcvjUI3E45TPDvYyvr2TZBEKx7lL3w==
+X-Google-Smtp-Source: AMsMyM6iYfFfRkY7ZCfN7iH6SfIok108DtV5xTUiUrfRhR4EUYS3wDXnryle8l6ZhFGMR+ScZmNr7PCxr1+tKvPRj2I=
+X-Received: by 2002:a17:90b:2643:b0:205:bd0d:bdff with SMTP id
+ pa3-20020a17090b264300b00205bd0dbdffmr4399905pjb.99.1664283966835; Tue, 27
+ Sep 2022 06:06:06 -0700 (PDT)
 Received: from 753933720722 named unknown by gmailapi.google.com with
- HTTPREST; Tue, 27 Sep 2022 06:04:12 -0700
+ HTTPREST; Tue, 27 Sep 2022 06:06:06 -0700
 From: Guillaume Ranquet <granquet@baylibre.com>
 User-Agent: meli 0.7.2
-References: <20220919-v1-0-4844816c9808@baylibre.com> <20220919-v1-17-4844816c9808@baylibre.com>
- <a0a3c427-c851-ae5d-4010-e94740bf9f6e@linaro.org>
-In-Reply-To: <a0a3c427-c851-ae5d-4010-e94740bf9f6e@linaro.org>
+References: <20220919-v1-0-4844816c9808@baylibre.com> <20220919-v1-5-4844816c9808@baylibre.com>
+ <32c4822a-a094-5fa3-c2af-e515bf897937@collabora.com>
+In-Reply-To: <32c4822a-a094-5fa3-c2af-e515bf897937@collabora.com>
 MIME-Version: 1.0
-Date: Tue, 27 Sep 2022 06:04:11 -0700
-Message-ID: <CABnWg9s3N_Ua9g0S3x0uj8PN4FtOX6DO+zQcBzGFqoLTL1J24A@mail.gmail.com>
-Subject: Re: [PATCH v1 17/17] drm/mediatek: Add mt8195-dpi support to drm_drv
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, 
+Date: Tue, 27 Sep 2022 06:06:06 -0700
+Message-ID: <CABnWg9vsd7Lk4kR4j-XrgJXAX+sEd3J+oz3hFc4sEuCGRRy8qw@mail.gmail.com>
+Subject: Re: [PATCH v1 05/17] drm/mediatek: hdmi: use a syscon/regmap instead
+ of iomem
+To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, 
 	Matthias Brugger <matthias.bgg@gmail.com>, Vinod Koul <vkoul@kernel.org>, 
 	Stephen Boyd <sboyd@kernel.org>, David Airlie <airlied@linux.ie>, Rob Herring <robh+dt@kernel.org>, 
 	Philipp Zabel <p.zabel@pengutronix.de>, 
@@ -81,9 +82,8 @@ Cc: linux-mediatek@lists.infradead.org, dri-devel@lists.freedesktop.org,
 	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org, 
 	devicetree@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220927_060418_326913_F5B2DA9E 
-X-CRM114-Status: UNSURE (   9.71  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220927_060609_990906_4B3787C5 
+X-CRM114-Status: GOOD (  10.10  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,40 +100,60 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, 22 Sep 2022 09:20, Krzysztof Kozlowski
-<krzysztof.kozlowski@linaro.org> wrote:
->On 19/09/2022 18:56, Guillaume Ranquet wrote:
->> Add dpi support to enable the HDMI path.
+On Tue, 20 Sep 2022 12:18, AngeloGioacchino Del Regno
+<angelogioacchino.delregno@collabora.com> wrote:
+>Il 19/09/22 18:56, Guillaume Ranquet ha scritto:
+>> To prepare support for newer chips that need to share their address
+>> range with a dedicated ddc driver, move to a syscon.
 >>
 >> Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
 >>
->> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_drv.c b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
->> index 72049a530ae1..27f029ca760b 100644
->> --- a/drivers/gpu/drm/mediatek/mtk_drm_drv.c
->> +++ b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
->> @@ -820,6 +820,8 @@ static const struct of_device_id mtk_ddp_comp_dt_ids[] = {
->>  	  .data = (void *)MTK_DPI },
->>  	{ .compatible = "mediatek,mt8192-dpi",
->>  	  .data = (void *)MTK_DPI },
->> +	{ .compatible = "mediatek,mt8195-dpi",
->> +	  .data = (void *)MTK_DPI },
+>> diff --git a/drivers/gpu/drm/mediatek/mtk_hdmi.c b/drivers/gpu/drm/mediatek/mtk_hdmi.c
+>> index 3196189429bc..5cd05d4fe1a9 100644
+>> --- a/drivers/gpu/drm/mediatek/mtk_hdmi.c
+>> +++ b/drivers/gpu/drm/mediatek/mtk_hdmi.c
 >
->It's compatible with the others. You don't need more compatibles.
+>..snip..
+>
+>> @@ -1428,7 +1413,6 @@ static int mtk_hdmi_dt_parse_pdata(struct mtk_hdmi *hdmi,
+>>   	struct device_node *cec_np, *remote, *i2c_np;
+>>   	struct platform_device *cec_pdev;
+>>   	struct regmap *regmap;
+>> -	struct resource *mem;
+>>   	int ret;
+>>
+>>   	ret = mtk_hdmi_get_all_clk(hdmi, np);
+>> @@ -1474,8 +1458,7 @@ static int mtk_hdmi_dt_parse_pdata(struct mtk_hdmi *hdmi,
+>>   	}
+>>   	hdmi->sys_regmap = regmap;
+>>
+>> -	mem = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+>> -	hdmi->regs = devm_ioremap_resource(dev, mem);
+>> +	hdmi->regs = syscon_node_to_regmap(dev->of_node);
+>
+>Nack. You're breaking ABI, this will force everyone to add syscon to devicetree,
+>hence this breaks retrocompatibility with old devicetrees.
+>
+>Hint: not here, device_node_to_regmap()
 
-Hi Krzysztof,
+Hi Angelo,
 
-It's a bit confusing, because this compatible is used in both
-mtk_drm_drv.c and in mtk_dpi.c
+I'm sorry, I didn't think device tree retro compatibility was a thing.
 
-Albeit it's entirely the same thing regarding the mtk_drm_drv module,
-it's pretty different
-regarding the mtk_dpi module.
+I'll drop the requirement for the module to be a syscon.
+Thx for the hint.
 
 Thx,
 Guillaume.
+
 >
->Best regards,
->Krzysztof
+>Regards,
+>Angelo
+>
+>>   	if (IS_ERR(hdmi->regs)) {
+>>   		ret = PTR_ERR(hdmi->regs);
+>>   		goto put_device;
+>
 >
 
 -- 
