@@ -4,49 +4,46 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BB59AC6FA83
-	for <linux-phy@archiver.kernel.org>; Tue, 27 Sep 2022 08:27:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4D23FC6FA83
+	for <linux-phy@archiver.kernel.org>; Tue, 27 Sep 2022 08:55:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5Jmz4+5zgyiSpkwK0D9im7At+eak376p1U8XiGNrjCw=; b=rdTKIVU35eeX56
-	gPbnKmJD3F7qLFez3MR5wZwFWMucLCWUi16OdjZ5hD4qqP6BWFG4ydSjPNjzdvpZN0EBkrveN8L//
-	b54JcDJiyUnBs3eJZ73cHJB6vx9nzInTgYaf/EINSMd2eaxwsX5A2t5OktyZWkaq9fRKy5+19t+pF
-	1+0IhC4cURL7q/0lAUSZfvuRMD014yyxmXPJZV5kO+2+78VUb7RwHx/NKKf8RSTDEOBrB5xNKMOE1
-	WQVtTEZFrLQa2zev6ToO7kFkTn4uo/alJCcIaaGTY0KcWGoGycDsSiaXBlpP6IcU+ZYdOy9bAOAaZ
-	opLlbEPGKaedsWZzZhTg==;
+	List-Owner; bh=jSyKqe86Bvw88tB/upOxqsTomBrxtWsSHya+SADCiXc=; b=v0tUUv9R7aHFWX
+	/yhCHAqaxBRXJiu2Pkn7Ly2OhUYYVEAz0XTg2EIcEEvj2HntOhwuGCqQLEZnYPKTKmd/+f7KQLTie
+	jM8mxc0+SVG1d0hup8Ib86V+oYWpUg0tOo+RsDATcnHTPVn34oXaChkaewQIiNQzrv4cfQBNZZlnz
+	cS3hXxriNdTaB4YPsJxCBEO5nMc/IRL0nKxRa4CSI3AT2iuczR3ZHsTmLcO9X3rAfVYtha/vBwlLg
+	gTCOFpzlw+cT/xacxiQ/53nGSAC3LOHSMtRBrr9r3ladwJnYJyQu/DCqZERrxMAbrlIyV4bfqZAio
+	5lxPOJ5boUOpsK6GDMxw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1od5vw-0098il-S1; Tue, 27 Sep 2022 08:27:16 +0000
+	id 1od6NS-009Kck-F8; Tue, 27 Sep 2022 08:55:42 +0000
 Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1od5lx-0094bA-0t
-	for linux-phy@lists.infradead.org; Tue, 27 Sep 2022 08:16:58 +0000
+	id 1od6NC-009KaB-6r
+	for linux-phy@lists.infradead.org; Tue, 27 Sep 2022 08:55:40 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id 3FC67B80AD9;
-	Tue, 27 Sep 2022 08:16:53 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id DEC51C433C1;
-	Tue, 27 Sep 2022 08:16:51 +0000 (UTC)
+	by ams.source.kernel.org (Postfix) with ESMTPS id 8CBD5B81A97;
+	Tue, 27 Sep 2022 08:55:24 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 517D0C433C1;
+	Tue, 27 Sep 2022 08:55:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1664266611;
-	bh=HFVQ3B2gRtZ+PI8s3sN7EZre2WiSSz8N337/Z29bmXQ=;
+	s=k20201202; t=1664268923;
+	bh=9CEZSGxZXu10IfLWzBonZeqKa3qHuekmxQGhNgMxu3o=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=nZDSXlVSOSDYtVCiOVrsqZQRb8nTuzM/0diml8OIQMwjayIbh+rDUA3UafAw89h0C
-	 1sln5Q8SKb02exiWI4+nD+oWc/d8lKFbRAwRjD92wJMHmmHZjyqW5zFOQ6ThJzR+GZ
-	 isefmAm3w+O8PiGeH183ATtyuoSm31jVcuo7n7NtDBJ+HaDJTgvp3Nr5Wr9/dCmiyf
-	 8St6Ndm8400PRZCu/01ME8tdlTLE9eeB92jYImdG7hhWcK1uyUl7DGDNjoKRP81Uh1
-	 jXEqe0heSGxtxcnDqVD4AFLc07rNf+gDg1GYrAoPs89uH8dfZ/Ksm5ZoSE0eRs22ct
-	 OJDopY4lMz8MA==
-Received: from johan by xi.lan with local (Exim 4.94.2)
-	(envelope-from <johan@kernel.org>)
-	id 1od5lx-0005WM-VP; Tue, 27 Sep 2022 10:16:58 +0200
-Date: Tue, 27 Sep 2022 10:16:57 +0200
-From: Johan Hovold <johan@kernel.org>
+	b=o54hJYec0DnzxPLdHbiag+mJdkcPVG/7Ra1RmjUyvX20WlL71ez6+wxlEL4dQ3X0o
+	 3sRaPcYTQqwLCw5IvwDCaJLgUWDC+dYP2kobN1zEBMGg7nS0M5JvNNRCrE9ZRB7iGE
+	 PZHH9fnNu/Z544Sv7ztMIVvGHRo3pyvg62yOuqdVSEUUPff+o+mWHL7A5gdpaTaCQj
+	 CAlb3w3Prul0PnD+Fkr2gsB0ehLEi0wuarXGzAtrJdIgqQ/4WlheuDmvw3pReUKGWB
+	 yh4XZXrx5+wMbb007pamlbittAT5vtUVZhWwZU9sYL5h6XDqERiAyyIXbpo0yqd0Ff
+	 EhjFM2rZAGLBg==
+Date: Tue, 27 Sep 2022 10:55:15 +0200
+From: Lorenzo Pieralisi <lpieralisi@kernel.org>
 To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
 	Konrad Dybcio <konrad.dybcio@somainline.org>,
@@ -57,20 +54,18 @@ Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
 	Bjorn Helgaas <bhelgaas@google.com>, Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@ti.com>,
 	Philipp Zabel <p.zabel@pengutronix.de>,
-	linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Subject: Re: [PATCH v5 5/5] PCI: qcom-ep: Setup PHY to work in EP mode
-Message-ID: <YzKxeWrhed20XLKj@hovoldconsulting.com>
+	Johan Hovold <johan@kernel.org>, linux-arm-msm@vger.kernel.org,
+	linux-pci@vger.kernel.org, linux-phy@lists.infradead.org
+Subject: Re: [PATCH v5 0/5] PCI: qcom: Support using the same PHY for both RC
+ and EP
+Message-ID: <YzK6c2g0bgwyvZ+O@lpieralisi>
 References: <20220926173435.881688-1-dmitry.baryshkov@linaro.org>
- <20220926173435.881688-6-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20220926173435.881688-6-dmitry.baryshkov@linaro.org>
+In-Reply-To: <20220926173435.881688-1-dmitry.baryshkov@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220927_011657_344346_C4119775 
-X-CRM114-Status: UNSURE (   9.83  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220927_015539_011579_D0DD54DF 
+X-CRM114-Status: GOOD (  30.69  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,18 +82,90 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Sep 26, 2022 at 08:34:35PM +0300, Dmitry Baryshkov wrote:
-> Call phy_set_mode_ext() to notify the PHY driver that the PHY is being
-> used in the EP mode.
+On Mon, Sep 26, 2022 at 08:34:30PM +0300, Dmitry Baryshkov wrote:
+> Programming of QMP PCIe PHYs slightly differs between RC and EP modes.
 > 
-> Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+> Currently both qcom and qcom-ep PCIe controllers setup the PHY in the
+> default mode, making it impossible to select at runtime whether the PHY
+> should be running in RC or in EP modes. Usually this is not an issue,
+> since for most devices only the RC mode is used. Some devices (SDX55)
+> currently support only the EP mode without supporting the RC mode (at
+> this moment).
+> 
+> Nevertheless some of the Qualcomm platforms (e.g. the aforementioned
+> SDX55) would still benefit from being able to switch between RC and EP
+> depending on the driver being used. While it is possible to use
+> different compat strings for the PHY depending on the mode, it seems
+> like an incorrect approach, since the PHY doesn't differ between
+> usecases. It's the PCIe controller, who should decide how to configure
+> the PHY.
+> 
+> This patch series implements the ability to select between RC and EP
+> modes, by allowing the PCIe QMP PHY driver to switch between
+> programming tables.
+> 
+> This patchseries depends on the header from the pre-6.1 phy/next. Thus
+> after the 6.1 the PCIe patches can be applied independently of the PHY
+> part.
 
-Reviewed-by: Johan Hovold <johan+linaro@kernel.org>
+I assume then it is better for me to ACK the PCI patches so
+that they can be pulled into the PHY tree, right ?
 
-You forgot Jingoo's tag here too.
+Lorenzo
 
-Johan
+> Changes since v4:
+> - Fixed the possible oops in probe (Johan)
+> - Renamed the tables struct and individual table fields (Johan)
+> - Squashed the 'separate funtions' patch to lower the possible
+>   confusion.
+> 
+> Changes since v3:
+> - Rebased on top of phy/next to pick in newly defined
+>   PHY_MODE_PCIE_RC/EP.
+> - Renamed 'main' to 'common' and 'secondary' to 'extra' to reflect the
+>   intention of the split (the 'common' tables and the 'extra for the ...
+>   mode' tables).
+> - Merged the 'pointer' patch into first and second patches to make them
+>   more obvious.
+> 
+> Changes since v2:
+> - Added PHY_SUBMODE_PCIE_RC/EP defines (Vinod),
+> - Changed `primary' table name to `main', added extra comments
+>   describing that `secondary' are the additional tables, not required in
+>   most of the cases (following the suggestion by Johan to rename
+>   `primary' table),
+> - Changed secondary tables into the pointers to stop wasting extra
+>   memory (Vinod),
+> - Split several functions for programming the PHY using these tables.
+> 
+> Changes since v1:
+> - Split the if(table) removal to the separate patch
+> - Expanded commit messages and comments to provide additional details
+> - Fixed build error on pcie-qcom.c
+> - Added support for EP mode on sm8450 to demonstrate the usage of this
+>   patchset
+> 
+> Changes since RFC:
+> - Fixed the compilation of PCIe EP driver,
+> - Changed pri/sec names to primary and secondary,
+> - Added comments regarding usage of secondary_rc/_ep fields.
+> 
+> Dmitry Baryshkov (5):
+>   phy: qcom-qmp-pcie: split register tables into common and extra parts
+>   phy: qcom-qmp-pcie: support separate tables for EP mode
+>   phy: qcom-qmp-pcie: Support SM8450 PCIe1 PHY in EP mode
+>   PCI: qcom: Setup PHY to work in RC mode
+>   PCI: qcom-ep: Setup PHY to work in EP mode
+> 
+>  drivers/pci/controller/dwc/pcie-qcom-ep.c     |   5 +
+>  drivers/pci/controller/dwc/pcie-qcom.c        |   5 +
+>  drivers/phy/qualcomm/phy-qcom-qmp-pcie.c      | 523 +++++++++++-------
+>  .../qualcomm/phy-qcom-qmp-pcs-pcie-v5_20.h    |   1 +
+>  4 files changed, 335 insertions(+), 199 deletions(-)
+> 
+> -- 
+> 2.35.1
+> 
 
 -- 
 linux-phy mailing list
