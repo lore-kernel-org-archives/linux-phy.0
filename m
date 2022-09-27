@@ -4,65 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6DF76C6FA83
-	for <linux-phy@archiver.kernel.org>; Tue, 27 Sep 2022 05:18:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4754CC54EE9
+	for <linux-phy@archiver.kernel.org>; Tue, 27 Sep 2022 06:53:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=+XLuy3be8VRMeLP5BbWCbtssf5+yuYeRePqvdVy3vhA=; b=JIzEAi4DnYYUvB
-	DdK4PKdh+1IehRmguVYKWzjGlsy+c6ptKkcwn7lCG1Li1f/K+BqzYwkKyewBR/xPfuwXhrbvXgVmT
-	9xajZrfjrJMOJrmP/lSwBiJJOUI+WmZJxpxwdT1+Zbo7voAlz5qLJPDgoSVOt9HFP+qRbtm3uhFvP
-	59hrI+2vFckGD++aa2Dz6bBoumRHfQpWO5BPUkPMeSrin5qEVmIsgnOczWvrlaPpD2zWo9cxwxXy6
-	uRZPIrXhEOGjqmFlURoRHMqd6G8pCqsF6fWgzmTKHXlmkxPrB1zd1ImnEj/2rrJ4nKoHk71iuPQwu
-	4drndb4EHJjIfXRRMWGQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=1nefPHC2goapiGcqTlc06MQKN95/LP5mykp0jjgzqLQ=; b=xlGeBlVvmUMrSd
+	fD/wL5qDTmIzuXox8sHvMWM2GcqkIY7Va8Ba58WzRoWnR/oGlAzg+4v6FopoY8DE+FINgCyb5JU9W
+	fwlcbQxa5Lg8Wa3AAfyTPsyqACw0GFhJm9JPGYNjunRxLKe2LnXebLpf+AYKAK5BCquojtYy6PCoc
+	ZqqXZXEx0NHH/OCRo1yUool4tz6FtQe90Y2A4evH6rgUw6vBLOF3/11L1Y6wHio9ppMYLO9C2RiXz
+	VzxmcpQJAjFyR3G1B1vBklYB0si8RaJvIa8SPFwThIrVEBSpV2Vflm9sX27vA17JbtC2G/xnmzOOR
+	vaYFgRkak+yeUKcpvHtg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1od2zC-008Ojs-QF; Tue, 27 Sep 2022 05:18:26 +0000
-Received: from hall.aurel32.net ([2001:bc8:30d7:100::1])
+	id 1od4So-008fKp-MO; Tue, 27 Sep 2022 06:53:06 +0000
+Received: from ams.source.kernel.org ([145.40.68.75])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1od2z9-008OiR-FB; Tue, 27 Sep 2022 05:18:25 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=aurel32.net
-	; s=202004.hall; h=Content-Transfer-Encoding:MIME-Version:Message-Id:Date:
-	Subject:Cc:To:From:Content-Type:From:Reply-To:Subject:Content-ID:
-	Content-Description:In-Reply-To:References:X-Debbugs-Cc;
-	bh=DsO5pFYkK1Xjq0k4TZbE63CczW4L418+61sZYoyHZ0A=; b=ZYWzLATh11Vhw8dI5JY+sxclR4
-	t9mzZ7yB4GDSEwIkS6EpkRp1dG8XH9E6RPR1qkObD7rwY5M7nMrh/9NZUUMydOQ3htnDyCh4CY+xQ
-	vYojP4GShxCLH3zwcKGfZOqqFwYALkS673E738Nvg6G6m2e2wpLBVj8636miZpxkM8qsJzaHC2vc/
-	m0G9MHNfjWcIs9zj3Ob0t0wSYM1o5f6devt2wg22+Wv5dCqmyjhrPkfHO59CBPweTOHhnTS6coOB2
-	csxR3EYrBC+BLpT3nS9ddPUFyhwsTCDLYzAYZvFHIjqFi+3DOa48992br4C/qk5EWlq8SxSvkQMWj
-	u4LX+rJg==;
-Received: from [2a01:e34:ec5d:a741:8a4c:7c4e:dc4c:1787] (helo=ohm.rr44.fr)
-	by hall.aurel32.net with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.94.2)
-	(envelope-from <aurelien@aurel32.net>)
-	id 1od2yv-00BU7b-AK; Tue, 27 Sep 2022 07:18:09 +0200
-Received: from aurel32 by ohm.rr44.fr with local (Exim 4.96)
-	(envelope-from <aurelien@aurel32.net>)
-	id 1od2yu-000Doj-1P;
-	Tue, 27 Sep 2022 07:18:08 +0200
-From: Aurelien Jarno <aurelien@aurel32.net>
-To: Kishon Vijay Abraham I <kishon@ti.com>,
+	id 1od4Sm-008fJr-0S
+	for linux-phy@lists.infradead.org; Tue, 27 Sep 2022 06:53:05 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by ams.source.kernel.org (Postfix) with ESMTPS id A9EABB80C6D;
+	Tue, 27 Sep 2022 06:52:57 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4BCEBC433C1;
+	Tue, 27 Sep 2022 06:52:56 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1664261576;
+	bh=mU9f9LoidskksX7PDIWPHuh8+QezhzFTM0/tR8Icdkk=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=qxBglPoVVeXt1IoW1KKQdwz0b0EcST7l27JJVnYPVGz4mhbyb2e4Zzeb8H69IlDxc
+	 rKS4ekkNMmrCwKCCs0caRmeWyP+Ym46KPtpjZhVyVPKbXPK1+FzxChJw1nkLeiQDfz
+	 gka7guPUPKRXGKalPYjlqmqXidA/LWimXSa7pu7bOCb1phWjOsEpoPMyarQirGAuMk
+	 RIXBDZ9ShVTVDmII1GL8hJk7B0Z6RwtsbhPNc6bz0lj4xT1Vg6Y1PclkM2WkBTWPlN
+	 YO40uefqy5NjE2yiJescyK+oZLmZG6AQA2gZgZ95zOQxoXVZae9r3ogBA3fkCyv5jD
+	 LECr4eO+pdGxQ==
+Received: from johan by xi.lan with local (Exim 4.94.2)
+	(envelope-from <johan@kernel.org>)
+	id 1od4Sj-0006aV-Gu; Tue, 27 Sep 2022 08:53:02 +0200
+Date: Tue, 27 Sep 2022 08:53:01 +0200
+From: Johan Hovold <johan@kernel.org>
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@somainline.org>,
 	Vinod Koul <vkoul@kernel.org>,
-	Heiko Stuebner <heiko@sntech.de>,
-	Shawn Lin <shawn.lin@rock-chips.com>,
-	Frank Wunderlich <frank-w@public-files.de>,
-	linux-phy@lists.infradead.org (open list:GENERIC PHY FRAMEWORK),
-	linux-arm-kernel@lists.infradead.org (moderated list:ARM/Rockchip SoC support),
-	linux-rockchip@lists.infradead.org (open list:ARM/Rockchip SoC support),
-	linux-kernel@vger.kernel.org (open list)
-Cc: Peter Geis <pgwipeout@gmail.com>,
-	Aurelien Jarno <aurelien@aurel32.net>
-Subject: [PATCH] phy: rockchip-snps-pcie3: only look for rockchip,pipe-grf on rk3588
-Date: Tue, 27 Sep 2022 07:17:52 +0200
-Message-Id: <20220927051752.53089-1-aurelien@aurel32.net>
-X-Mailer: git-send-email 2.35.1
+	Kishon Vijay Abraham I <kishon@ti.com>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org
+Subject: Re: [PATCH] phy: qcom-qmp-pcie: fix resource mapping for SDM845 QHP
+ PHY
+Message-ID: <YzKdzTfZXYz2mF4p@hovoldconsulting.com>
+References: <20220926172514.880776-1-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20220926172514.880776-1-dmitry.baryshkov@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220926_221823_947624_F19C939D 
-X-CRM114-Status: GOOD (  11.34  )
+X-CRM114-CacheID: sfid-20220926_235304_237346_2CA195C3 
+X-CRM114-Status: GOOD (  19.81  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,47 +80,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The rockchip,pipe-grf property is only used on rk3588, but not on
-rk3568. Therefore this property is not present on rk3568 devices,
-leading to the following message:
+On Mon, Sep 26, 2022 at 08:25:14PM +0300, Dmitry Baryshkov wrote:
+> On SDM845 one of PCIe PHYs (the QHP one) has the same region for TX and
+> RX registers. Since the commit 4be26f695ffa ("phy: qcom-qmp-pcie: fix
+> memleak on probe deferral") added checking that resources are not
+> allocated beforehand, this PHY can not be probed anymore. Fix this by
+> skipping the map of ->rx resource on the QHP PHY and assign it manually.
 
-  rockchip-snps-pcie3-phy fe8c0000.phy: failed to find rockchip,pipe_grf regmap
+Bah. Yet another QMP hack (the QHP support, not just this fix).
 
-Fix that by only looking for this property on rk3588.
+The binding should be fixed as this device does indeed not have separate
+TX and RX register blocks. Note that the rx table for this device is
+empty too so that repeated "TX" region is just a place holder.
 
-Fixes: 2e9bffc4f713d ("phy: rockchip: Support PCIe v3")
-Signed-off-by: Aurelien Jarno <aurelien@aurel32.net>
----
- drivers/phy/rockchip/phy-rockchip-snps-pcie3.c | 13 +++++++++----
- 1 file changed, 9 insertions(+), 4 deletions(-)
+> Fixes: 4be26f695ffa ("phy: qcom-qmp-pcie: fix memleak on probe deferral")
+> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+> ---
+>  drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 5 ++++-
+>  1 file changed, 4 insertions(+), 1 deletion(-)
+> 
+> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+> index 7aff3f9940a5..5be5348fbb26 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+> @@ -2210,7 +2210,10 @@ static int qmp_pcie_create(struct device *dev, struct device_node *np, int id,
+>  	if (IS_ERR(qphy->tx))
+>  		return PTR_ERR(qphy->tx);
+>  
+> -	qphy->rx = devm_of_iomap(dev, np, 1, NULL);
+> +	if (of_device_is_compatible(dev->of_node, "qcom,sdm845-qhp-pcie-phy"))
+> +		qphy->rx = qphy->tx;
+> +	else
+> +		qphy->rx = devm_of_iomap(dev, np, 1, NULL);
+>  	if (IS_ERR(qphy->rx))
+>  		return PTR_ERR(qphy->rx);
 
-diff --git a/drivers/phy/rockchip/phy-rockchip-snps-pcie3.c b/drivers/phy/rockchip/phy-rockchip-snps-pcie3.c
-index 1917edda6b47..1dc12eb8dfd3 100644
---- a/drivers/phy/rockchip/phy-rockchip-snps-pcie3.c
-+++ b/drivers/phy/rockchip/phy-rockchip-snps-pcie3.c
-@@ -257,10 +257,15 @@ static int rockchip_p3phy_probe(struct platform_device *pdev)
- 		return PTR_ERR(priv->phy_grf);
- 	}
- 
--	priv->pipe_grf = syscon_regmap_lookup_by_phandle(dev->of_node,
--							 "rockchip,pipe-grf");
--	if (IS_ERR(priv->pipe_grf))
--		dev_info(dev, "failed to find rockchip,pipe_grf regmap\n");
-+	if (of_device_is_compatible(np, "rockchip,rk3588-pcie3-phy")) {
-+		priv->pipe_grf =
-+			syscon_regmap_lookup_by_phandle(dev->of_node,
-+							"rockchip,pipe-grf");
-+		if (IS_ERR(priv->pipe_grf))
-+			dev_info(dev, "failed to find rockchip,pipe_grf regmap\n");
-+	} else {
-+		priv->pipe_grf = NULL;
-+	}
- 
- 	priv->num_lanes = of_property_read_variable_u32_array(dev->of_node, "data-lanes",
- 							     priv->lanes, 2,
--- 
-2.35.1
+But I guess this will do for now:
 
+Reviewed-by: Johan Hovold <johan+linaro@kernel.org>
+
+Johan
 
 -- 
 linux-phy mailing list
