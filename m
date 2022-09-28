@@ -4,81 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9CAD5C32771
-	for <linux-phy@archiver.kernel.org>; Wed, 28 Sep 2022 19:10:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5EAEFC04A95
+	for <linux-phy@archiver.kernel.org>; Wed, 28 Sep 2022 19:11:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oca8ZHzEttQg1CDptG8utxGPCNiWn2eqQMOzpvclpiY=; b=nfBpWw9TjDRYZs
-	Dh1IpSVeYpUiuYWUmMkw2B/8AOIMhyndq8mqnijLMq+y7CQo1B6vnBD2kbWk6Tmadk6YFTNV9VSRZ
-	lo+aoGDHyvhejWnZksYrNOx25FdKbu+DOeY3dMd7E6GoPFmV+ZCFhn9fLaFscPki0IdAwsm1jtFCV
-	689tdJAB6aHAtFhMEpyjTHFUdKwIfO7OtpixlZtfrx8n+L1LGimVi44wPe+aJLEgzh5pJiSnWJUJJ
-	PJnLbu4vs1D/1r2ddv3y+Mk9tmm+FRWTbeVoM4bP7j+wcEjiUWIFSkWMwQf6Dz/beXs1aDmOtfJLg
-	lTMa0Qiuz/Rkaxas/O4A==;
+	List-Owner; bh=2fN0Nybeqt/sqiYDzsRlRoJLKOIyuajvIGIaQZ6d6lY=; b=pWdE091itO1Ld3
+	S3Q0DK5/Ob2NnIS+4sdjooeQDs1uZ7vLWDvlhEBFqGcqnzedp8AyS9+BfzBFMAKLLzwxv2Ed9nOWF
+	YnvSr1B9F7WuaLlUAqZ+47b4vy/rtekTDVsxv/LKpgJsZKmh/rAysV+ciroZ7dQapJ91Qszmea6pC
+	0zzWIwYl+EFjsqApWHleiX6mHMP8ygVCscn7xmEnODghicB4rdH5srPcenvGU9aFaJQTHIc7TRflb
+	U6YzhKBCcV37B/jvKpkMrkmzUSpUo/aU5xI7xoEvso7bLwoybXLuTQBA1nFg4BmxmguhMRrjfnOEz
+	nXpkRqE4/C9VgzusyuMg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1odcRc-0006Ws-Po; Wed, 28 Sep 2022 19:10:08 +0000
-Received: from mail-lj1-x235.google.com ([2a00:1450:4864:20::235])
+	id 1odcSp-0006f5-PZ; Wed, 28 Sep 2022 19:11:23 +0000
+Received: from mail-lj1-x22d.google.com ([2a00:1450:4864:20::22d])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1odcRa-0006W8-LM
-	for linux-phy@lists.infradead.org; Wed, 28 Sep 2022 19:10:08 +0000
-Received: by mail-lj1-x235.google.com with SMTP id b24so15363640ljk.6
-        for <linux-phy@lists.infradead.org>; Wed, 28 Sep 2022 12:10:04 -0700 (PDT)
+	id 1odcSn-0006c0-HG
+	for linux-phy@lists.infradead.org; Wed, 28 Sep 2022 19:11:22 +0000
+Received: by mail-lj1-x22d.google.com with SMTP id q17so15368176lji.11
+        for <linux-phy@lists.infradead.org>; Wed, 28 Sep 2022 12:11:12 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date;
-        bh=cP+0I3mOs2L1eIjpsJ/L9c174FcHhto93z5jVh+tc0g=;
-        b=k0KtMBwhj90pHjs/axB9uH2GwSCWiySEVILQVZb+aLITWPo+4e/xOTrnXSeyfXhP8+
-         WUJpwSsQOcuDRr6LkhtREjRJmACOcjjQrZlhr4weZBBw98ujBEGcj+lSdo0NMjrMkuxE
-         HZ/oqxKHUxTjwxIXDKXmdwrwkFFfHllLa9roMLyXjF4eWU+PQVf0Sk0CyrgHM9J9qx1Q
-         nY4kSM8V5dV2LhaFiyvDSsED5X1XKIIip65LFJPfiHWE0QK5OnyIL+7G5NJzI5vzZKHf
-         /3Dtn5mAbjPjRGXd99wF3PMoxJO+/EBez63XhUA5eeBWm53U5DDhpmWPmYbYCdxGCgbU
-         M/GQ==
+        bh=/gZf36AfrA3hWD/0cvl58ifdsuky8QGAhYN3zOeCaIo=;
+        b=faHhIgC9G9GY47c9RFQEDUiqcP/c+1d82TnEsyyAkNe5jX9D+/0H8GnIHR1gVnNA4g
+         y10VJ0dfhTpOjl5GJVG5YGNLyWVhSkvLNhaDfy7oSmMH4SqMGho0Bynr9naJpviXydwC
+         BagBkj6Q5/PK4Vt4BBEXPdjrjLrJ/fJGs5r3QAMjs3Ka8GdR8F5Tbev7mKHvSobXewpg
+         lLyeVHJ1upWV/WQH3waU8jot0MvFviPHZzxbrIw722gRU9cdyR1y5iFtp3eM1eF4/UJc
+         tx+pG+YjWeNJ7ZJJMc1srLTbehQXLvTP4SM/h7mqWigx4DqgRq4q24mGj46oR0No6ENE
+         s3lA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date;
-        bh=cP+0I3mOs2L1eIjpsJ/L9c174FcHhto93z5jVh+tc0g=;
-        b=4G2ptJJs+QAcBMtCDr5JiBG70iuhH5lB5zgrRi3cuVy2bVq9pmRoW3OiJf5z1QML/4
-         ZwxFbUK8TVyWejEClMSLVEiBZERu1SIcHrzUxEIDzRLLi6A9YrQ4IrYnO2ZJnt8ENJ6Y
-         0bD1yRXfeTfI/pcfv5xlXMu3IMrNHPY0s0VKenFzuTtwxUV8SSuk1dmpyqpqrKf38a0D
-         UuN8lvLpxLlUEd2oxbu2+SECJksT3e80v0aN546Vc+mtX3R7Pg6S7pVhuDeMyHior4E5
-         JJLsvEDlf6eTnJQHDEY5wpf0vGOKNETw81YrOK5USi1qWuEmu5wyS1gtiqEjuYpWNjBy
-         qcWQ==
-X-Gm-Message-State: ACrzQf1rtYQ3mGDDQp6HI+z4YnUOsVBXKnLz/DVw1MNXth5aWxkQypHn
-	+rRgXNwTTrqsRhAhDLwsPxNuLw==
-X-Google-Smtp-Source: AMsMyM74hGFUFf9B9nArhWD7MayY4zuDeYdL2If2toJlhwy/g3tvy4kLs1xzd1Nf/dJDpKGQGSnxxw==
-X-Received: by 2002:a2e:91ca:0:b0:26b:efd1:112c with SMTP id u10-20020a2e91ca000000b0026befd1112cmr11777214ljg.26.1664392203203;
-        Wed, 28 Sep 2022 12:10:03 -0700 (PDT)
+        bh=/gZf36AfrA3hWD/0cvl58ifdsuky8QGAhYN3zOeCaIo=;
+        b=P/F0GN0bUePt19PzVXdSmdZNZNLvicJjg1H+4eYylESfknn2iUuT0zJ7v1Pka8E+ir
+         rH8tEwoyOP3KZeau/ZxdUhon1xvQYj+N4jgMhB53scKq+sw98fjCmMRhpC9PAikbqDrh
+         GViTj/JUx8HI9CO8lyY9o+rlrpruSLMFp+FqmksM3xCbqL55D5wM9g4uP+Cmtbi5RMfk
+         uJXYlRafYEw+3NIPJO4gC1VNwQK3LUCzgC88wFucp0rD8cvJGFj4dcTmXBuQx4iGO0ct
+         xB6vMJBRAj6dzCoF1pjskkqPk1OLBoLuUYCchtLJn238GzsjewxXlAz8ShyG1dCvjPDu
+         22VA==
+X-Gm-Message-State: ACrzQf0pmWVbRXGYk2ClGDoOX+rVjWWty5WPo8MLcYViD4s0sjiHjkWi
+	hLkxcL23BkF7HYw/rugPPT6KGg==
+X-Google-Smtp-Source: AMsMyM4hpI1q8lH1cn6x1gtWTCHIX/Bo1GOEPemGLdA43LovkM3rJ9HHWH/WhDDtIlyo2rvcBA6Etg==
+X-Received: by 2002:a2e:983:0:b0:26c:5b0e:f5e4 with SMTP id 125-20020a2e0983000000b0026c5b0ef5e4mr12162453ljj.502.1664392271455;
+        Wed, 28 Sep 2022 12:11:11 -0700 (PDT)
 Received: from [192.168.1.211] ([37.153.55.125])
-        by smtp.gmail.com with ESMTPSA id u11-20020ac243cb000000b00497ad8e6d07sm548957lfl.222.2022.09.28.12.10.02
+        by smtp.gmail.com with ESMTPSA id z24-20020a2e9b98000000b0026a92616cd2sm519306lji.35.2022.09.28.12.11.10
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 28 Sep 2022 12:10:02 -0700 (PDT)
-Message-ID: <2bc50ea4-ec29-cacc-216b-1c21d2d2f0bc@linaro.org>
-Date: Wed, 28 Sep 2022 22:10:02 +0300
+        Wed, 28 Sep 2022 12:11:11 -0700 (PDT)
+Message-ID: <f7c29d82-2972-6e42-8a74-ae93227331ae@linaro.org>
+Date: Wed, 28 Sep 2022 22:11:10 +0300
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.3.0
-Subject: Re: [PATCH 06/13] phy: qcom-qmp-pcie: drop bogus register update
+Subject: Re: [PATCH 05/13] phy: qcom-qmp-pcie: unify sdm845 registers
+Content-Language: en-GB
 To: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>
 Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
  Konrad Dybcio <konrad.dybcio@somainline.org>,
  Kishon Vijay Abraham I <kishon@ti.com>, linux-arm-msm@vger.kernel.org,
  linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
 References: <20220928152822.30687-1-johan+linaro@kernel.org>
- <20220928152822.30687-7-johan+linaro@kernel.org>
-Content-Language: en-GB
+ <20220928152822.30687-6-johan+linaro@kernel.org>
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-In-Reply-To: <20220928152822.30687-7-johan+linaro@kernel.org>
+In-Reply-To: <20220928152822.30687-6-johan+linaro@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220928_121006_774668_818943C5 
-X-CRM114-Status: GOOD (  19.15  )
+X-CRM114-CacheID: sfid-20220928_121121_604128_831477AE 
+X-CRM114-Status: GOOD (  14.79  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,49 +96,43 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 28/09/2022 18:28, Johan Hovold wrote:
-> Since commit 0d58280cf1e6 ("phy: Update PHY power control sequence") the
-> PHY is powered on before configuring the registers and only the MSM8996
-> PCIe PHY, which includes the POWER_DOWN_CONTROL register in its PCS
-> initialisation table, may possibly require a second update afterwards.
+> The SDM845 register array is identical to pciephy_regs_layout so drop
+> the former.
 > 
-> To make things worse, the POWER_DOWN_CONTROL register lies at a
-> different offset on more recent SoCs so that the second update, which
-> still used a hard-coded offset, would write to an unrelated register
-> (e.g. a revision-id register on SC8280XP).
-> 
-> As the MSM8996 PCIe PHY is now handled by a separate driver, simply drop
-> the bogus register update.
-> 
-> Fixes: e4d8b05ad5f9 ("phy: qcom-qmp: Use proper PWRDOWN offset for sm8150 USB") added support
-
-I'm not sure about the particular fixes tag. Backporting from the split 
-driver into old qmp driver would be a complete pain.
-
 > Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Same comment as for the patch 04/13.
 
 > ---
->   drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 6 ------
->   1 file changed, 6 deletions(-)
+>   drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 8 +-------
+>   1 file changed, 1 insertion(+), 7 deletions(-)
 > 
 > diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-> index 4146545fdf5f..eea66c24cf7e 100644
+> index 7b3f7e42edd5..4146545fdf5f 100644
 > --- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
 > +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-> @@ -1953,12 +1953,6 @@ static int qmp_pcie_power_on(struct phy *phy)
->   	qmp_pcie_configure(pcs_misc, cfg->regs, cfg->pcs_misc_tbl, cfg->pcs_misc_tbl_num);
->   	qmp_pcie_configure(pcs_misc, cfg->regs, cfg->pcs_misc_tbl_sec, cfg->pcs_misc_tbl_num_sec);
+> @@ -92,12 +92,6 @@ static const unsigned int pciephy_regs_layout[QPHY_LAYOUT_SIZE] = {
+>   	[QPHY_PCS_STATUS]		= 0x174,
+>   };
 >   
-> -	/*
-> -	 * Pull out PHY from POWER DOWN state.
-> -	 * This is active low enable signal to power-down PHY.
-> -	 */
-> -	qphy_setbits(pcs, QPHY_V2_PCS_POWER_DOWN_CONTROL, cfg->pwrdn_ctrl);
+> -static const unsigned int sdm845_qmp_pciephy_regs_layout[QPHY_LAYOUT_SIZE] = {
+> -	[QPHY_SW_RESET]			= 0x00,
+> -	[QPHY_START_CTRL]		= 0x08,
+> -	[QPHY_PCS_STATUS]		= 0x174,
+> -};
 > -
->   	if (cfg->has_pwrdn_delay)
->   		usleep_range(cfg->pwrdn_delay_min, cfg->pwrdn_delay_max);
+>   static const unsigned int sdm845_qhp_pciephy_regs_layout[QPHY_LAYOUT_SIZE] = {
+>   	[QPHY_SW_RESET]			= 0x00,
+>   	[QPHY_START_CTRL]		= 0x08,
+> @@ -1545,7 +1539,7 @@ static const struct qmp_phy_cfg sdm845_qmp_pciephy_cfg = {
+>   	.num_resets		= ARRAY_SIZE(sdm845_pciephy_reset_l),
+>   	.vreg_list		= qmp_phy_vreg_l,
+>   	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
+> -	.regs			= sdm845_qmp_pciephy_regs_layout,
+> +	.regs			= pciephy_regs_layout,
 >   
+>   	.start_ctrl		= PCS_START | SERDES_START,
+>   	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
 
 -- 
 With best wishes
