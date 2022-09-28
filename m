@@ -4,109 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 60E2AC04A95
-	for <linux-phy@archiver.kernel.org>; Wed, 28 Sep 2022 12:57:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B7E07C04A95
+	for <linux-phy@archiver.kernel.org>; Wed, 28 Sep 2022 13:09:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=22t8Pr5JRtFWjnTNTvJWgAKo1ZI+WK0c1mBSgGZjZVc=; b=BLzNxOyi88Ga/r
-	t4WvJalnJJEbIT1r6/2hYt2djVe8oAQC0W9oUg17PZKudaTi3V51GlEtRjGUsfqQxPjvZ4v/YypkL
-	PP7Ajnv8fGUK3O5XG7k+9k2U4tkqpfGjgsN/OGkx+FZ412Z54YVr/xfXkT+QZlk7LoF4MEAjXdhIA
-	1StvHTuEJTXKYkcVeEMKrN4V1abgUOFjCencREPDvl7/S8gD7CXs9pmWSne2vUNp5vb3xiRhsSXer
-	jz6cvm5kk8IlbVSeeiAQGy+hkuChnoBJCKEUVlGWYoNeRO4ivej66OJXmGxpzLZYIwPiUllRr2+Rl
-	fvJeAJfhnjMH3Kt+2CSg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=M8doV44SE91cFmSSJD8LCW6HIC42OG4VBZBE222f6HY=; b=iw4ybnpfmOdEUo
+	4Vb8Y24pvPBoXsroqfY894hmc2edjHO1ryA33YbZEXL1wztQYtLZsnM4hLT6OWPiFHFlvzNQ5egs6
+	ZUulVRRkyyJJRnhvmXray3qkAqBRCguMI0PxayGAOSzkamAi8B3XAYFgemeOsC8BLeS9NomDmXzTg
+	cyPbUV1KKfsXnxG1h0tBE2g4TjkQ4J2/oa93n2eNHCaMGeHMbasnE5Yb7CwSfNx67SiXqRwtHCgVo
+	BftbjDHM6F1xifVQYTFjmYsmOW8bglbwq6WL67iZb2fy0uKRAxIh88I97aKyd7CrOgGPsnfi6kC9g
+	M90ovMVEBgDMpFgR+02Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1odWdG-00GOSS-Qr; Wed, 28 Sep 2022 12:57:46 +0000
-Received: from mail-mw2nam10on2087.outbound.protection.outlook.com ([40.107.94.87] helo=NAM10-MW2-obe.outbound.protection.outlook.com)
+	id 1odWoU-00GR5i-3l; Wed, 28 Sep 2022 13:09:22 +0000
+Received: from madras.collabora.co.uk ([46.235.227.172])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1odWdE-00GOQx-Cb
-	for linux-phy@lists.infradead.org; Wed, 28 Sep 2022 12:57:45 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=S9QP4r9kg3VgMBmKeZIE0+/69V2PGSAuSUscyLJALN3BqvkS6wRN1itiXXwrSr3eiG6CuEZaTbFCOG58zao5Dx0K9un0XjTSCQnf4Omx+sAzdgAaWZb/RWz6B+5NbnNCAvgUZXnT6v6UUmdrsrW8CzsXN52naBroWtcoSmtViOyIWFbw58+aUEGDW2Z3IH4xqPcGK1DTenLVh1O+crPZ9L6x9bfaaYhL7E4qc7yE43XOrjnPkaYnOfmzEi5gxpQQM0o5qjUhjodmOPmfkrxpaxzLMrTPZOYcxuvzcCTlwm5als4/IUtTXeqm6WnI9XZ4DBslr1Q8pfjJohaBIBUzBw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=D5WpENSoHSkOvDmiB+hRbOCbAQuqu1C1wXckBlkOlow=;
- b=jdBldvIjomUpgPmrvzTa63knJzcRvmpR0//TLMMPlliwZUyZqhQs6Wi0/ZiYSBLTyJvrJP/t7WrHQTtlJucFGQeOBc4Ud+ZcYf5w45ej3btjdoSGHxpyubnHjyBNEiWPmlOvxiixG5rdxtLCBRWAjsSg0s2nr+kqOUFiricT5AMmqqBUkMIQfrneEOsuDc0w4oXouxZhkZsdLCI45AXGf6xSEvEGu+7ys17IqgOHEFz73RCaMNPt3cnsRQggmkYrBGkLgjGYqOblhjhgR7Ril/dz/yBF/HnOZfqJxPrQxj11LE3pZrwOMf/j/C5ZrhhMrL4wvjef9Gboe6ks2eBeTA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 216.228.117.160) smtp.rcpttodomain=pengutronix.de smtp.mailfrom=nvidia.com;
- dmarc=pass (p=reject sp=reject pct=100) action=none header.from=nvidia.com;
- dkim=none (message not signed); arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=D5WpENSoHSkOvDmiB+hRbOCbAQuqu1C1wXckBlkOlow=;
- b=O+IEz8IWZ0x/xQM/NRCjUOrKp9uGNMFFmoG//eCwSNyN+rzXSCHxp2qEmvMJfzmM9Pk0exh/UT8Ii+paTPIHQHIP6ag+IIoY30t9H1orwyFyyeW/6zVzLoyFc8DTMAIxMpb3j6W2PqKwID7ilHtdQjdwtnieYYdnnu3k/rP3+hrKgVQRmeYIH5SxweObJQR+8MMZcUfgTSllbkzYkAIk4sqzo9GQ71oqvj98jlhwuF4LxtnqQch7uFh6gwTymnV6GA2lYOTBcpqfviuOgGFqu7lMbTYMTKk8YQuWlA8+yFW6IykqTKIGNbJGgG+TinIbxqOBPs9XtnrL8PtZFWhgFA==
-Received: from MW4PR03CA0018.namprd03.prod.outlook.com (2603:10b6:303:8f::23)
- by CY8PR12MB7196.namprd12.prod.outlook.com (2603:10b6:930:58::12) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5654.20; Wed, 28 Sep
- 2022 12:57:40 +0000
-Received: from CO1NAM11FT093.eop-nam11.prod.protection.outlook.com
- (2603:10b6:303:8f:cafe::6d) by MW4PR03CA0018.outlook.office365.com
- (2603:10b6:303:8f::23) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5676.17 via Frontend
- Transport; Wed, 28 Sep 2022 12:57:40 +0000
-X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 216.228.117.160)
- smtp.mailfrom=nvidia.com; dkim=none (message not signed)
- header.d=none;dmarc=pass action=none header.from=nvidia.com;
-Received-SPF: Pass (protection.outlook.com: domain of nvidia.com designates
- 216.228.117.160 as permitted sender) receiver=protection.outlook.com;
- client-ip=216.228.117.160; helo=mail.nvidia.com; pr=C
-Received: from mail.nvidia.com (216.228.117.160) by
- CO1NAM11FT093.mail.protection.outlook.com (10.13.175.59) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.5676.17 via Frontend Transport; Wed, 28 Sep 2022 12:57:39 +0000
-Received: from rnnvmail201.nvidia.com (10.129.68.8) by mail.nvidia.com
- (10.129.200.66) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.986.26; Wed, 28 Sep
- 2022 05:57:24 -0700
-Received: from 74ef364-lcelt.vdiclient.nvidia.com (10.126.231.35) by
- rnnvmail201.nvidia.com (10.129.68.8) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.986.29; Wed, 28 Sep 2022 05:57:21 -0700
-From: Haotien Hsu <haotienh@nvidia.com>
-To: Philipp Zabel <p.zabel@pengutronix.de>
-CC: Haotien Hsu <haotienh@nvidia.com>, Wayne Chang <waynec@nvidia.com>, JC Kuo
-	<jckuo@nvidia.com>, Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul
-	<vkoul@kernel.org>, Thierry Reding <thierry.reding@gmail.com>, "Jonathan
- Hunter" <jonathanh@nvidia.com>, <linux-phy@lists.infradead.org>,
-	<linux-tegra@vger.kernel.org>, <linux-kernel@vger.kernel.org>
-Subject: [PATCH v2] phy: tegra: xusb: Enable usb role switch attribute
-Date: Wed, 28 Sep 2022 20:56:40 +0800
-Message-ID: <20220928125640.2219402-1-haotienh@nvidia.com>
-X-Mailer: git-send-email 2.25.1
+	id 1odWoD-00GR1D-Jn; Wed, 28 Sep 2022 13:09:07 +0000
+Received: from [192.168.1.100] (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
+	(No client certificate requested)
+	(Authenticated sender: kholk11)
+	by madras.collabora.co.uk (Postfix) with ESMTPSA id F250C6602292;
+	Wed, 28 Sep 2022 14:09:02 +0100 (BST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1664370544;
+	bh=Vf5x3tIxF1eH3jjuAIiQnki4BcokgilYkSxBESVxK/U=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=kT6WY2mznangZxCUy/BmfaTldXwdJgzvbVFsk9ylrGn9e4Gh96hhrrvCnbqvU5rVs
+	 oEMJsW7WhWyeNogyyqSpMaX1czDdmmLimDgmnPThszm8rXEpGKBYEUQdH5QdO6E/6G
+	 Y1xUk4/tDYpPxShkVQH0jVShB2O6j08d42mkpPazOCaDCe23grG2q5XTv+znFBpq7p
+	 M2YNsc04BZePUE4ywDfhEGH6WZEiGfYEhlvtNjh2rXz3hNdUWdJCnc8K0WdJpeBDK5
+	 4IY4lWnmzpaVgpBQ16mYqDFJQy5l8H5XqetGhEIY30PcLNAqPScTgojv4eAfQvStKd
+	 d25y2Gl2ezH8Q==
+Message-ID: <eae3cb46-d665-a8c9-f0f6-505680470e50@collabora.com>
+Date: Wed, 28 Sep 2022 15:09:00 +0200
 MIME-Version: 1.0
-X-Originating-IP: [10.126.231.35]
-X-ClientProxiedBy: rnnvmail201.nvidia.com (10.129.68.8) To
- rnnvmail201.nvidia.com (10.129.68.8)
-X-EOPAttributedMessage: 0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: CO1NAM11FT093:EE_|CY8PR12MB7196:EE_
-X-MS-Office365-Filtering-Correlation-Id: f0ef9de7-86d9-4d8a-77b1-08daa1510638
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 	X5S/jGDdic46SZTKAlTgt/EUNEVFQJyFho2odV9qeiBQA0k2Yd8XSw81V7uXz2ZJGLcCC45Yn6IlqAekIK/pOEb9CSYMOyMII/S2cjWHZKXreRHXDaecnh13MpUb77YO21nbe+DMdQWmPkh2h8Nx4NXO7wa23FOLkl7oL3vLjGTbtxuqOPfWqtFcXwNETXWscm4d4uCnwFqrrp/ytMbeyiebafrEXLVxAc0eNTBm3OR+X0Eox8MJQYioZD3mb0EvTo9cIFd3110ts+Zy38liESyVWUKY6eJCkcfrdgQyDfOhl6FWvmxCS6t4H+nvXsvxgSzRBTT3s6tNI6X/BEJnIcw4WeQJxLmBVdlKD9R80Tx+/sd6OKHt4gjIi/uILTeS2KF2rlV36/ZSlgdRsazgBgqshT/HluSMK4GHox23pjuZQn+2anM/nkor03a+QZQ12tc5rYjd2Ub1kgltzzwKwH9gB6cGhv0mVWeOQlKMpbU3qCEs/eSsvAkEZgT4Y6xIbHuGB6Abq8WXTVT75+5AM8jj8KOokRFbsIlvxdtf989Z9qxrjV8jhnUd0sQJ5b0EdWYmrO/aPr0JuV/yuwjxAvNpl1wUiBx0+Vrwj8jhG7cf1mah4AnKfLrDCfRgERezItSgSTXfOAoha0cPLtd1pm6JXTORrxDEEzhevcN2jhvTZF2mwVzADKIl1B0Fsxt1JG3A/b+dAdE5ldIDsKwQTxlvTOExKily6Ze1P3mCZNQp+CLXGnnY5mzmnJvJDZ2KoSTXd3e2d5WjwGPIP2vDvw==
-X-Forefront-Antispam-Report: 	CIP:216.228.117.160;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc6edge1.nvidia.com;CAT:NONE;SFS:(13230022)(4636009)(136003)(396003)(346002)(376002)(39860400002)(451199015)(46966006)(40470700004)(36840700001)(82310400005)(356005)(478600001)(36860700001)(7636003)(426003)(40480700001)(86362001)(4744005)(8936002)(36756003)(70206006)(16526019)(6666004)(70586007)(6916009)(47076005)(26005)(7696005)(54906003)(82740400003)(5660300002)(4326008)(8676002)(1076003)(316002)(41300700001)(2616005)(83380400001)(336012)(186003)(40460700003)(2906002);DIR:OUT;SFP:1101;
-X-OriginatorOrg: Nvidia.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 28 Sep 2022 12:57:39.4039
- (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: f0ef9de7-86d9-4d8a-77b1-08daa1510638
-X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[216.228.117.160];Helo=[mail.nvidia.com]
-X-MS-Exchange-CrossTenant-AuthSource: 	CO1NAM11FT093.eop-nam11.prod.protection.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Anonymous
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CY8PR12MB7196
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.2.0
+Subject: Re: [PATCH v1 16/17] drm/mediatek: dpi: Add mt8195 hdmi to DPI driver
+Content-Language: en-US
+To: Guillaume Ranquet <granquet@baylibre.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, Vinod Koul <vkoul@kernel.org>,
+ Stephen Boyd <sboyd@kernel.org>, David Airlie <airlied@linux.ie>,
+ Rob Herring <robh+dt@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Daniel Vetter <daniel@ffwll.ch>, Chunfeng Yun <chunfeng.yun@mediatek.com>,
+ CK Hu <ck.hu@mediatek.com>, Jitao shi <jitao.shi@mediatek.com>,
+ Chun-Kuang Hu <chunkuang.hu@kernel.org>,
+ Michael Turquette <mturquette@baylibre.com>,
+ Kishon Vijay Abraham I <kishon@ti.com>
+Cc: linux-mediatek@lists.infradead.org, dri-devel@lists.freedesktop.org,
+ Pablo Sun <pablo.sun@mediatek.com>, linux-clk@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Mattijs Korpershoek
+ <mkorpershoek@baylibre.com>, linux-arm-kernel@lists.infradead.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org
+References: <20220919-v1-0-4844816c9808@baylibre.com>
+ <20220919-v1-16-4844816c9808@baylibre.com>
+ <812a5de2-dbe3-2f0d-492c-16ea004c996a@collabora.com>
+ <CABnWg9sSbtXYLpcCoEts73CAsciKMEeMMRwfcfGng8H-rGYvkA@mail.gmail.com>
+From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+In-Reply-To: <CABnWg9sSbtXYLpcCoEts73CAsciKMEeMMRwfcfGng8H-rGYvkA@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220928_055744_472780_BFF86844 
-X-CRM114-Status: UNSURE (   9.48  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220928_060905_814895_06F10505 
+X-CRM114-Status: GOOD (  18.38  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -118,39 +83,78 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Wayne Chang <waynec@nvidia.com>
+Il 27/09/22 15:34, Guillaume Ranquet ha scritto:
+> On Tue, 20 Sep 2022 14:22, AngeloGioacchino Del Regno
+> <angelogioacchino.delregno@collabora.com> wrote:
+>> Il 19/09/22 18:56, Guillaume Ranquet ha scritto:
+>>> Add the DPI1 hdmi path support in mtk dpi driver
+>>>
+>>> Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
+>>>
+>>> diff --git a/drivers/gpu/drm/mediatek/mtk_dpi.c b/drivers/gpu/drm/mediatek/mtk_dpi.c
+>>> index 630a4e301ef6..91212b7610e8 100644
+>>> --- a/drivers/gpu/drm/mediatek/mtk_dpi.c
+>>> +++ b/drivers/gpu/drm/mediatek/mtk_dpi.c
+>>> @@ -15,7 +15,10 @@
+>>>    #include <linux/of_graph.h>
+>>>    #include <linux/pinctrl/consumer.h>
+>>>    #include <linux/platform_device.h>
+>>> +#include <linux/reset.h>
+>>>    #include <linux/types.h>
+>>> +#include <linux/regmap.h>
+>>> +#include <linux/mfd/syscon.h>
+>>>
+>>>    #include <video/videomode.h>
+>>>
+>>> @@ -66,10 +69,14 @@ struct mtk_dpi {
+>>>    	struct drm_bridge *next_bridge;
+>>>    	struct drm_connector *connector;
+>>>    	void __iomem *regs;
+>>> +	struct reset_control *reset_ctl;
+>>>    	struct device *dev;
+>>>    	struct clk *engine_clk;
+>>> +	struct clk *dpi_ck_cg;
+>>>    	struct clk *pixel_clk;
+>>> +	struct clk *dpi_sel_clk;
+>>>    	struct clk *tvd_clk;
+>>> +	struct clk *hdmi_cg;
+>>
+>>
+>> You're adding new clocks and then you're making *all clocks*, including the
+>> already existing ones... optional.
+>>
+>> That looks seriously odd.... can you please give a devicetree example for
+>> MT8195 in the next version, perhaps in the cover letter?
+>>
+>> Would also make it easier to test this entire big series.
+>>
+>> Regards,
+>> Angelo
+>>
+> 
+> The clock names are different for MT8195 HDMI than for the legacy DP.
+> Making everything optional might not have been a smart move.
+> I'll try to think of something else to make it look less odd.
+> 
+> The device tree I'm using to test things is rather "hackish" and has a bunch of
+> changes from what is found on linux-next.
+> I think Jason and Nancy are due to upstream those patches.
+> 
+> I'll try to include something minimal for you to test.
+> Otherwise would a public branch containing everything work for you?
+> 
 
-This patch enables the usb-role-switch attribute and lets users check
-the current device role of the otg capability ports
+Any reference would work for me, "something minimal" or a public branch, it
+doesn't really matter.
 
-Signed-off-by: Wayne Chang <waynec@nvidia.com>
-Signed-off-by: Haotien Hsu <haotienh@nvidia.com>
----
-V1->V2
-- Fix typo and changelog line limit
----
- drivers/phy/tegra/xusb.c | 1 +
- 1 file changed, 1 insertion(+)
+Thanks!
+Angelo
 
-diff --git a/drivers/phy/tegra/xusb.c b/drivers/phy/tegra/xusb.c
-index aa5237eacd29..220ab7719ade 100644
---- a/drivers/phy/tegra/xusb.c
-+++ b/drivers/phy/tegra/xusb.c
-@@ -656,6 +656,7 @@ static int tegra_xusb_setup_usb_role_switch(struct tegra_xusb_port *port)
- 	struct usb_role_switch_desc role_sx_desc = {
- 		.fwnode = dev_fwnode(&port->dev),
- 		.set = tegra_xusb_role_sw_set,
-+		.allow_userspace_control = true,
- 	};
- 	int err = 0;
- 
--- 
-2.25.1
 
 
 -- 
