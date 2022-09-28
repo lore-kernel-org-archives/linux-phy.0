@@ -4,65 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BA268C04A95
-	for <linux-phy@archiver.kernel.org>; Wed, 28 Sep 2022 09:31:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 35C17C54EE9
+	for <linux-phy@archiver.kernel.org>; Wed, 28 Sep 2022 12:23:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Cy0VKo6bgbjoX2juurpcezVss3IfPkl8tUyMRh5zrus=; b=lLoLd/rLkhHmvc
-	3ovvvu6D81BlKuHOHjfIT2vO1hvcm7pemWn4OLQi15rEbeh0ujIULJihbPO+41mRP8mvofqGB6k7A
-	kBTJglyrKDHSIMZcEmTnsoWCtcomtzMIiHMxDmr8sMxB7XMUTpQALnEC+ZcvmuvcmDZBoXeIiHT82
-	Yit5FYkEiPP8A+aP7aysMONQZ8/7ZsnZ2r9sg8L60litDCVaMWM1hwCRygjT385NY3IZysrBuiHuL
-	nAjucOa7SLbKLxaDBCzvbdlPENzn+apSzR6CnjCYGbFdBPoCrg32fvdfBRDl3uHLGHTnCQ0kPNU23
-	8HI2Sn5l41yUCprtYhAA==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:
+	MIME-Version:In-Reply-To:References:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=dNrXGNHcyo/tH5A9R8MarSzJgobeviqwqW+iNbmU28Q=; b=awrENo14Rb+BN6qRc+/PmFp/1E
+	NpMv1rtmTVhCBApc1/aMgEeMABVqvnMpH9jmf8ihJ/RDtIV0pEbY/Fd1laEyUVIO26aAXbsQzMk/L
+	g/xGl6YXivFDi1zlBdalWe6MNE5Vv0GKk4eDS0x+gtjFMj55f4CPGp190ktpvOF4GAMr9fselT6FF
+	XZI1C/gfhCTMVv3zY7nYyNAG+rIAHRlYRtwtmcXOg3FBrYwVEAyJSinqLCFwDOVXZyjeuraX2nV32
+	uzGQrjWwwS4cSgLUTjOnuZ4eAgjpkrBibweVCdOMY9Ckp7vuq6PJjgkLTjnPkBrky5UOMxMne6/JW
+	En3ymt0w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1odTPz-00FDZq-5C; Wed, 28 Sep 2022 09:31:51 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1odW6V-00GDXc-Iq; Wed, 28 Sep 2022 12:23:55 +0000
+Received: from mail-lf1-x132.google.com ([2a00:1450:4864:20::132])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1odTPo-00FDTH-0E; Wed, 28 Sep 2022 09:31:41 +0000
-X-UUID: 61fd55ac0221413887525191e6437dc1-20220928
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
-	h=Content-Type:Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From; bh=O8vIH2kadEUhPoMTZPZlhscWXQP7AB6L9rS3xyjI5Dk=;
-	b=qFl85M8eoOA9c9SPBIpIJf91m5m32kP8RTipfQXjAYlZ9dqOyS7mt9N2ZjEAfpNv/rrDWlMTlTo1bFgL+ToarKnT8DiwZC5rNkrSYNAnmgdnQvDRvJcR8x7IJa6B/zI5XMJJvTeqngfCedJF/25vo+3hHxSso95JNCYc/xI8cCE=;
-X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.1.11,REQID:0abcd77a-31f4-4567-af2c-cf3e911e69cb,IP:0,U
-	RL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:
-	release,TS:0
-X-CID-META: VersionHash:39a5ff1,CLOUDID:e2dc82e4-87f9-4bb0-97b6-34957dc0fbbe,B
-	ulkID:nil,BulkQuantity:0,Recheck:0,SF:102,TC:nil,Content:0,EDM:-3,IP:nil,U
-	RL:11|1,File:nil,Bulk:nil,QS:nil,BEC:nil,COL:0
-X-UUID: 61fd55ac0221413887525191e6437dc1-20220928
-Received: from mtkmbs11n2.mediatek.inc [(172.21.101.187)] by mailgw02.mediatek.com
-	(envelope-from <chunfeng.yun@mediatek.com>)
-	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
-	with ESMTP id 109418592; Wed, 28 Sep 2022 02:31:29 -0700
-Received: from mtkcas11.mediatek.inc (172.21.101.40) by
- mtkmbs10n1.mediatek.inc (172.21.101.34) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id
- 15.2.792.15; Wed, 28 Sep 2022 17:30:53 +0800
-Received: from localhost.localdomain (10.17.3.154) by mtkcas11.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Wed, 28 Sep 2022 17:30:52 +0800
-From: Chunfeng Yun <chunfeng.yun@mediatek.com>
-To: Vinod Koul <vkoul@kernel.org>
-CC: Chunfeng Yun <chunfeng.yun@mediatek.com>, Kishon Vijay Abraham I
-	<kishon@ti.com>, Matthias Brugger <matthias.bgg@gmail.com>,
-	<linux-arm-kernel@lists.infradead.org>, <linux-mediatek@lists.infradead.org>,
-	<linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>, Eddie Hung
-	<eddie.hung@mediatek.com>, Tianping Fang <tianping.fang@mediatek.com>
-Subject: [PATCH 1/2] phy: core: add debugfs root
-Date: Wed, 28 Sep 2022 17:30:40 +0800
-Message-ID: <20220928093041.31481-1-chunfeng.yun@mediatek.com>
-X-Mailer: git-send-email 2.25.1
+	id 1odW6Q-00GDVo-Rx
+	for linux-phy@lists.infradead.org; Wed, 28 Sep 2022 12:23:53 +0000
+Received: by mail-lf1-x132.google.com with SMTP id bu25so18210320lfb.3
+        for <linux-phy@lists.infradead.org>; Wed, 28 Sep 2022 05:23:48 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=baylibre-com.20210112.gappssmtp.com; s=20210112;
+        h=cc:to:subject:message-id:date:mime-version:in-reply-to:references
+         :user-agent:from:from:to:cc:subject:date;
+        bh=Swb7XVMS5l4jVs+taUaFHDZniMnQe0LrNo5JVaq+smE=;
+        b=c7CWUAsfmp+EUrBbsuVwHuXZYgfW2HVC0Li9FEyeBNVz54UBKlH/LwX+eoHjrw/RhN
+         HgS0dnWmAJwxifOaPqgR6tmTb84kzSWbrL9exeYtUY0fduYToLJfXsgj6MPghccx5j+M
+         455J5Z9jH0S3XuLMki862MI98Ona3zIEpM/bACfbyA19QAIoYxKwCSLRj+rD8+kAIr3o
+         7HxESQA5LojmCE8FnZPaLunR8pN4t1Txi2JgQDvgZFhWprO8gHUPQ4datyPbLQ9eBa35
+         gbCYiQHE5tolljp0ZvNeexs29IETA3U2U2YvnLz27nJDLCzvEV87zs2Bq8knrfW2sb7q
+         tZBw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=cc:to:subject:message-id:date:mime-version:in-reply-to:references
+         :user-agent:from:x-gm-message-state:from:to:cc:subject:date;
+        bh=Swb7XVMS5l4jVs+taUaFHDZniMnQe0LrNo5JVaq+smE=;
+        b=nksyByDm6grbs17VUZIGqNjDNz1+eMF9Qm5yXKIvYTzdUkrVp4A4ZUXtwRPB9u3gBv
+         mu44pvl/YGxUJcAGuBvR9AXZseFGvGv6tfUYEMCAAWqOgWRhMcbRptviu+ffvWISfK+u
+         FQd7JoqTgTMH4THeH9vLlfl5j2JUeAS+CvHspLOL9uIkLTADa7wWwOwkgt/7c2Cg2VXD
+         NSFVS56I1RxhhmJwVcRL8+BPun15RWXuE0sGWQKzKpXmJ40ocKOVlNCNNbyaLZWptyJe
+         s7xC7YiwvWFgwcBUg+B0alQuxRd2JoXch7Qp11Jmh4EnBEEwZuyBuyOBS/X/afMutdRI
+         XmMA==
+X-Gm-Message-State: ACrzQf3yBCIBoaklSyR93K9otRowAtnkrewGnoMR8KbS7LH+uo7F12/c
+	9bTspvGqxpEgCurj9nGMW5gqXHxbl6C19uea3Ae7yQ==
+X-Google-Smtp-Source: AMsMyM6y/zW9NWpjwXIpFeG7jR5sdtiQjNZFUTI8LJaS28E+8UxFW/BjROXWV6E4XvWqIlDYLzeduXvGYy1dfVvHhHk=
+X-Received: by 2002:a05:6512:5d7:b0:498:f521:e143 with SMTP id
+ o23-20020a05651205d700b00498f521e143mr12968086lfo.617.1664367826958; Wed, 28
+ Sep 2022 05:23:46 -0700 (PDT)
+Received: from 753933720722 named unknown by gmailapi.google.com with
+ HTTPREST; Wed, 28 Sep 2022 05:23:43 -0700
+From: Guillaume Ranquet <granquet@baylibre.com>
+User-Agent: meli 0.7.2
+References: <20220919-v1-0-4844816c9808@baylibre.com> <20220919-v1-14-4844816c9808@baylibre.com>
+ <d1346dcf6b6906d153c13c086bf963dc89c5549b.camel@mediatek.com>
+ <CABnWg9v4OuAU0x7n1q09gO7u3faOsmeq_4PFpw=_wAn1+erF8A@mail.gmail.com> <da5c39fb351a7ca5a9dfa1c938d2e3d914ecb0d2.camel@mediatek.com>
+In-Reply-To: <da5c39fb351a7ca5a9dfa1c938d2e3d914ecb0d2.camel@mediatek.com>
 MIME-Version: 1.0
-X-MTK: N
+Date: Wed, 28 Sep 2022 05:23:43 -0700
+Message-ID: <CABnWg9u5bJgfRqug3wFUOnFb3c7Fv_9YN2p8CXmhcnBrqa+pQA@mail.gmail.com>
+Subject: Re: [PATCH v1 14/17] phy: mediatek: add support for phy-mtk-hdmi-mt8195
+To: Chunfeng Yun <chunfeng.yun@mediatek.com>, Kishon Vijay Abraham I <kishon@ti.com>, 
+	Matthias Brugger <matthias.bgg@gmail.com>, Vinod Koul <vkoul@kernel.org>, 
+	Stephen Boyd <sboyd@kernel.org>, David Airlie <airlied@linux.ie>, Rob Herring <robh+dt@kernel.org>, 
+	Philipp Zabel <p.zabel@pengutronix.de>, 
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Daniel Vetter <daniel@ffwll.ch>, 
+	CK Hu <ck.hu@mediatek.com>, Jitao shi <jitao.shi@mediatek.com>, 
+	Chun-Kuang Hu <chunkuang.hu@kernel.org>, Michael Turquette <mturquette@baylibre.com>
+Cc: linux-mediatek@lists.infradead.org, dri-devel@lists.freedesktop.org, 
+	Pablo Sun <pablo.sun@mediatek.com>, linux-clk@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, Mattijs Korpershoek <mkorpershoek@baylibre.com>, 
+	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org, 
+	devicetree@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220928_023140_100549_D47EE61E 
-X-CRM114-Status: GOOD (  10.56  )
+X-CRM114-CacheID: sfid-20220928_052351_126955_3C2C7547 
+X-CRM114-Status: GOOD (  19.33  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,62 +99,115 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add a debugfs root for phy class, then phy drivers can add debugfs files
-under this folder.
+On Wed, 28 Sep 2022 04:40, Chunfeng Yun <chunfeng.yun@mediatek.com> wrote:
+>On Tue, 2022-09-27 at 06:23 -0700, Guillaume Ranquet wrote:
+>> On Tue, 20 Sep 2022 09:46, Chunfeng Yun <chunfeng.yun@mediatek.com>
+>> wrote:
+>> > On Mon, 2022-09-19 at 18:56 +0200, Guillaume Ranquet wrote:
+>> > > Add basic support for the mediatek hdmi phy on MT8195 SoC
+>> > >
+>> > > Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
+>> > >
+>> > > diff --git a/drivers/gpu/drm/mediatek/mtk_mt8195_hdmi.c
+>> > > b/drivers/gpu/drm/mediatek/mtk_mt8195_hdmi.c
+>> > > index bb7593ea4c86..0157acdce56c 100644
+>> > > --- a/drivers/gpu/drm/mediatek/mtk_mt8195_hdmi.c
+>> > > +++ b/drivers/gpu/drm/mediatek/mtk_mt8195_hdmi.c
+>> > > @@ -1344,6 +1344,8 @@ static void mtk_hdmi_bridge_disable(struct
+>> > > drm_bridge *bridge,
+>> > >  	mtk_hdmi_disable_hdcp_encrypt(hdmi);
+>> > >  	usleep_range(50000, 50050);
+>> > >
+>> > > +	phy_power_off(hdmi->phy);
+>> > > +
+>> > >  	hdmi->enabled = false;
+>> > >  }
+>> > >
+>> > > diff --git a/drivers/phy/mediatek/Makefile
+>> > > b/drivers/phy/mediatek/Makefile
+>> > > index fb1f8edaffa7..c9a50395533e 100644
+>> > > --- a/drivers/phy/mediatek/Makefile
+>> > > +++ b/drivers/phy/mediatek/Makefile
+>> > > @@ -12,6 +12,7 @@ obj-$(CONFIG_PHY_MTK_XSPHY)		+= phy-
+>> > > mtk-
+>> > > xsphy.o
+>> > >  phy-mtk-hdmi-drv-y			:= phy-mtk-hdmi.o
+>> > >  phy-mtk-hdmi-drv-y			+= phy-mtk-hdmi-
+>> > > mt2701.o
+>> > >  phy-mtk-hdmi-drv-y			+= phy-mtk-hdmi-
+>> > > mt8173.o
+>> > > +phy-mtk-hdmi-drv-y			+= phy-mtk-hdmi-
+>> > > mt8195.o
+>> > >  obj-$(CONFIG_PHY_MTK_HDMI)		+= phy-mtk-hdmi-drv.o
+>> > >
+>> > >  phy-mtk-mipi-dsi-drv-y			:= phy-mtk-mipi-dsi.o
+>> > > diff --git a/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c
+>> > > b/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c
+>> > > new file mode 100644
+>> > > index 000000000000..149015b64c02
+>> > > --- /dev/null
+>> > > +++ b/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c
+>> > > @@ -0,0 +1,673 @@
+>> > > +// SPDX-License-Identifier: GPL-2.0
+>> > > +/*
+>> > > + * Copyright (c) 2021 MediaTek Inc.
+>> > > + * Copyright (c) 2021 BayLibre, SAS
+>> > > + */
+>> > > +#include <linux/delay.h>
+>> > > +#include <linux/io.h>
+>> > > +#include <linux/mfd/syscon.h>
+>> > > +#include <linux/module.h>
+>> > > +#include <linux/phy/phy.h>
+>> > > +#include <linux/platform_device.h>
+>> > > +#include <linux/types.h>
+>> > > +#include <linux/nvmem-consumer.h>
+>> > > +
+>> > > +#include "phy-mtk-hdmi.h"
+>> > > +#include "phy-mtk-hdmi-mt8195.h"
+>> > > +
+>> > > +static void mtk_hdmi_ana_fifo_en(struct mtk_hdmi_phy *hdmi_phy)
+>> > > +{
+>> > > +	/* make data fifo writable for hdmi2.0 */
+>> > > +	mtk_hdmi_phy_mask(hdmi_phy, HDMI_ANA_CTL,
+>> > > REG_ANA_HDMI20_FIFO_EN,
+>> > > +			  REG_ANA_HDMI20_FIFO_EN);
+>> > > +}
+>> > > +
+>> > > +static void
+>> > > +mtk_mt8195_phy_tmds_high_bit_clk_ratio(struct mtk_hdmi_phy
+>> > > *hdmi_phy,
+>> > > +				       bool enable)
+>> > > +{
+>> > > +	mtk_hdmi_ana_fifo_en(hdmi_phy);
+>> > > +
+>> > > +	/* HDMI 2.0 specification, 3.4Gbps <= TMDS Bit Rate <= 6G,
+>> > > +	 * clock bit ratio 1:40, under 3.4Gbps, clock bit ratio 1:10
+>> > > +	 */
+>> > > +	if (enable)
+>> > > +		mtk_hdmi_phy_mask(hdmi_phy, HDMI20_CLK_CFG,
+>> > > +				  0x2 << REG_TXC_DIV_SHIFT,
+>> >
+>> > Use FIELD_PREP() macro, then no need define REG_TXC_DIV_SHIFT
+>> > anymore.
+>> >
+>>
+>> Didn't know about FIELD_* macros, will use them for V2.
+>>
+>> Thx for the suggestion.
+>Please use helpers defined in phy-mtk-io.h, the register access helpers
+>of mtk_hdmi_phy_* are already removed in phy next branch.
+>
+>Thanks a lot
+>
+>
+Hi,
 
-Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
----
- drivers/phy/phy-core.c  | 6 ++++++
- include/linux/phy/phy.h | 2 ++
- 2 files changed, 8 insertions(+)
+Thank you for the headsup, I've seen the change landed in
+next-20220927 on which I'm currently rebasing.
 
-diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
-index d93ddf1262c5..2f9f69190519 100644
---- a/drivers/phy/phy-core.c
-+++ b/drivers/phy/phy-core.c
-@@ -11,6 +11,7 @@
- #include <linux/export.h>
- #include <linux/module.h>
- #include <linux/err.h>
-+#include <linux/debugfs.h>
- #include <linux/device.h>
- #include <linux/slab.h>
- #include <linux/of.h>
-@@ -1204,6 +1205,9 @@ void devm_of_phy_provider_unregister(struct device *dev,
- }
- EXPORT_SYMBOL_GPL(devm_of_phy_provider_unregister);
- 
-+struct dentry *phy_debug_root;
-+EXPORT_SYMBOL_GPL(phy_debug_root);
-+
- /**
-  * phy_release() - release the phy
-  * @dev: the dev member within phy
-@@ -1233,6 +1237,8 @@ static int __init phy_core_init(void)
- 
- 	phy_class->dev_release = phy_release;
- 
-+	phy_debug_root = debugfs_create_dir("phy", NULL);
-+
- 	return 0;
- }
- device_initcall(phy_core_init);
-diff --git a/include/linux/phy/phy.h b/include/linux/phy/phy.h
-index b1413757fcc3..c398749d49b9 100644
---- a/include/linux/phy/phy.h
-+++ b/include/linux/phy/phy.h
-@@ -205,6 +205,8 @@ struct phy_lookup {
- #define devm_of_phy_provider_register_full(dev, children, xlate) \
- 	__devm_of_phy_provider_register(dev, children, THIS_MODULE, xlate)
- 
-+extern struct dentry *phy_debug_root;
-+
- static inline void phy_set_drvdata(struct phy *phy, void *data)
- {
- 	dev_set_drvdata(&phy->dev, data);
--- 
-2.18.0
 
+Thx,
+Guillaume.
 
 -- 
 linux-phy mailing list
