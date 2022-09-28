@@ -4,47 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DA266C32771
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DA2A3C6FA90
 	for <linux-phy@archiver.kernel.org>; Wed, 28 Sep 2022 15:28:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zR2iyQJ5lCsKK4xm5pEi0OaxB+xLNwUQGXqP4gO2SU4=; b=R5RlrZrguR+9/R
-	fxUhFI30RiCG3fdh+a12Q4g1VIj6ntbSx2JkWKT5DfrNY1iwrvC19cDTSSVN0yn25eyon9Jj/8YEG
-	bApUC0TbjUcKh06nD/68O3dPcWf3PnHh5bVSGlRQmOYkl8zZ7Dcs7LjRHU05X3R0q3mA1z9eGU3Ue
-	tJJOl5Sj+VPIyFyfumK+lg5cyyoksYjGGLV3uWu3AkQvUfGWMs8T/X8Qu90aQf5eb37yZfXG8ycvc
-	aV0cWq8P7DU3X1dL85zF/qK5EGNr/18tkiY0Mky151SoUsRYkF9d2G+3Ca7O74Jo8U9P5qgZMOaCB
-	bTMoFqTVYlVIi7vUds5w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=X3EJm/UZqI9Bw3j8tjxC0ZzVVp3gwJMnw0NVWqApfVw=; b=dbIsSjdFKRcP2G
+	GFzZDYX4jZG7bypb/KE5O/SFzn/eyu6LLotsIV7iFeKKeapucwfvlLSCFHFYSt0NO4yrKOCvoJspm
+	Yhv9FTCtu64FvnlWma6blUFuWRgM3iF+Daqtq8tcAttdinIuD+F3sSFnj12BU1VdXJu8HZtlKloh2
+	tyz/1Ci4m59aLrEM/pPkt5XABp2iqoYf0Lf758ZixVqJVzgWTiD1FDe43fjPe6B8Alg/srntjbY/J
+	mSoCr8pGc0qFac7GSuZ8SGXK2qGx30/8bBNq4HlRYnLegH6wNh/8s+h52sgdHydB6p0Bl8YkpvUuH
+	j8EG5B3J9I/VlHh+jIfQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1odYzL-00GtxS-Au; Wed, 28 Sep 2022 15:28:43 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1odYzL-00GtxE-83; Wed, 28 Sep 2022 15:28:43 +0000
+Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1odYzF-00Gtrn-Ro
+	id 1odYzG-00GtsT-Do
 	for linux-phy@lists.infradead.org; Wed, 28 Sep 2022 15:28:40 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id CC4F961EFB;
-	Wed, 28 Sep 2022 15:28:36 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0CA70C4314E;
-	Wed, 28 Sep 2022 15:28:36 +0000 (UTC)
+	by ams.source.kernel.org (Postfix) with ESMTPS id 1FEB3B820F7;
+	Wed, 28 Sep 2022 15:28:37 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id DAE8DC433B5;
+	Wed, 28 Sep 2022 15:28:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1664378916;
-	bh=VdNtcbkIBrH0/XFAgmUdLGbjMPGlcd+m+wkbNoNVMFg=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=dZzCP+vhXxPVwZlCcSMHJhjhHDkUCmKWk4naxdATyLqm/0RcoQSbdcBn1JuWnjDKY
-	 2duwCvwszRxzvRPTMDi+WspTqhKiOGqYuLbxp9HrjkNwR46/2ZODKA+09S8Ubw+jim
-	 kyE5xZxmPMBBRb9RWnssf7WHN/QwO2qUSgWzL1KI/ToUV3U32IEjToVbmevH02LBU1
-	 +IBGPC567wLdqfUczTBYv429ZmVJQKQepQegmzKhtLkwjUS5FSZaAxNFDRqFAOJvHW
-	 a0SEjVRSKmFojxldsFs8AidJJDMImGlMHfhrD/AjsMEDeRnrspE00PxfAISSr/Ge3o
-	 /2b46Qb2esGXQ==
+	s=k20201202; t=1664378915;
+	bh=mpt7Wt62/XLXSTtuLqLCkWtnDTklKqxsrGIGesPgzSY=;
+	h=From:To:Cc:Subject:Date:From;
+	b=gEyEUeBoQ+YktZsRsh1aS8RD+DjXy0gp5UoLVdGiwHhIYvLtTKEUuB4eddwBr+KK8
+	 O20Pqe1REMdRTYwZirSOParDIJvXUc+537WqWMOYjfyR14WY/Ey1MJY7gdGEYUMlWh
+	 JhmGwWF2/IpsII2OQTUP1mCNANT3QeIniMEWd3MKZHitVjfhddaayaYaVflOnn/k52
+	 ancsg2A70qx9lfwUvFmPOSnBgBd+Zs4QkvhLw1FmqFbSEKDM4zn1GW+ARQ9AmnOOMU
+	 LEqXHFxY3toOfZLcoayM+0hoVNX7kS5/w3Fqmu4tzj8xuYoH9PFB+RSbDgBOg7fm2b
+	 4jguI9lfBAqdA==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1odYzK-0007zg-Hg; Wed, 28 Sep 2022 17:28:42 +0200
+	id 1odYzJ-0007zY-EF; Wed, 28 Sep 2022 17:28:42 +0200
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>
 Cc: Andy Gross <agross@kernel.org>,
@@ -56,16 +56,15 @@ Cc: Andy Gross <agross@kernel.org>,
 	linux-phy@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH 04/13] phy: qcom-qmp-pcie: unify ipq registers
-Date: Wed, 28 Sep 2022 17:28:13 +0200
-Message-Id: <20220928152822.30687-5-johan+linaro@kernel.org>
+Subject: [PATCH 00/13] phy: qcom-qmp: more fixes and cleanups
+Date: Wed, 28 Sep 2022 17:28:09 +0200
+Message-Id: <20220928152822.30687-1-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.35.1
-In-Reply-To: <20220928152822.30687-1-johan+linaro@kernel.org>
-References: <20220928152822.30687-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220928_082837_953543_07300F36 
-X-CRM114-Status: GOOD (  11.07  )
+X-CRM114-CacheID: sfid-20220928_082838_665235_C5670863 
+X-CRM114-Status: UNSURE (   7.33  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,50 +81,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The IPQ register array is identical to sm8250_pcie_regs_layout so drop
-the former.
+Here's the next batch of QMP driver fixes and cleanups.
 
-Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
----
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 11 ++---------
- 1 file changed, 2 insertions(+), 9 deletions(-)
+Johan
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-index ec453f908f1d..7b3f7e42edd5 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-@@ -86,13 +86,6 @@ enum qphy_reg_layout {
- 	QPHY_LAYOUT_SIZE
- };
- 
--static const unsigned int ipq_pciephy_gen3_regs_layout[QPHY_LAYOUT_SIZE] = {
--	[QPHY_SW_RESET]				= 0x00,
--	[QPHY_START_CTRL]			= 0x44,
--	[QPHY_PCS_STATUS]			= 0x14,
--	[QPHY_PCS_POWER_DOWN_CONTROL]		= 0x40,
--};
--
- static const unsigned int pciephy_regs_layout[QPHY_LAYOUT_SIZE] = {
- 	[QPHY_SW_RESET]			= 0x00,
- 	[QPHY_START_CTRL]		= 0x08,
-@@ -1492,7 +1485,7 @@ static const struct qmp_phy_cfg ipq8074_pciephy_gen3_cfg = {
- 	.num_resets		= ARRAY_SIZE(ipq8074_pciephy_reset_l),
- 	.vreg_list		= NULL,
- 	.num_vregs		= 0,
--	.regs			= ipq_pciephy_gen3_regs_layout,
-+	.regs			= sm8250_pcie_regs_layout,
- 
- 	.start_ctrl		= SERDES_START | PCS_START,
- 	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
-@@ -1523,7 +1516,7 @@ static const struct qmp_phy_cfg ipq6018_pciephy_cfg = {
- 	.num_resets		= ARRAY_SIZE(ipq8074_pciephy_reset_l),
- 	.vreg_list		= NULL,
- 	.num_vregs		= 0,
--	.regs			= ipq_pciephy_gen3_regs_layout,
-+	.regs			= sm8250_pcie_regs_layout,
- 
- 	.start_ctrl		= SERDES_START | PCS_START,
- 	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
+
+Johan Hovold (13):
+  phy: qcom-qmp: fix obsolete lane comments
+  phy: qcom-qmp-combo: drop unused UFS reset
+  phy: qcom-qmp-pcie: drop unused common-block registers
+  phy: qcom-qmp-pcie: unify ipq registers
+  phy: qcom-qmp-pcie: unify sdm845 registers
+  phy: qcom-qmp-pcie: drop bogus register update
+  phy: qcom-qmp-pcie: clean up power-down handling
+  phy: qcom-qmp-pcie: move power-down update
+  phy: qcom-qmp-pcie-msm8996: clean up power-down handling
+  phy: qcom-qmp-combo: clean up power-down handling
+  phy: qcom-qmp-ufs: clean up power-down handling
+  phy: qcom-qmp-usb: clean up power-down handling
+  phy: qcom-qmp-pcie: clean up clock lists
+
+ drivers/phy/qualcomm/phy-qcom-qmp-combo.c     | 30 ++-------
+ .../phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c  | 12 +---
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c      | 67 +++++--------------
+ drivers/phy/qualcomm/phy-qcom-qmp-ufs.c       | 24 +++----
+ drivers/phy/qualcomm/phy-qcom-qmp-usb.c       | 22 ++----
+ 5 files changed, 40 insertions(+), 115 deletions(-)
+
 -- 
 2.35.1
 
