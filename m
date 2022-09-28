@@ -4,47 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 03352C6FA98
-	for <linux-phy@archiver.kernel.org>; Wed, 28 Sep 2022 15:28:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 37285C04A95
+	for <linux-phy@archiver.kernel.org>; Wed, 28 Sep 2022 15:28:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RM9c5ow8j7mVGMxPIb8VfYRIwjYIlH4jL0p3PgwLy7o=; b=JYTzv/ahbyuZNl
-	EHU6jh+t54WvicLvGlMYG2bqxo+Uvw+lEjkGESAuh107cbPqzIEwfuW4OpjwwJHmWl1IrSF8zP1Ui
-	JEYDx7C0G7hpnG42A8avfgXA3Mzm3GjvaJbt/3FveqCJn+7fw/xAvvNL3DPveOJN57kmb06NDliQU
-	mvOAjbuiq9cuMM3NZaefr/bSVrAon6XMdUg5Ueh6mBkWsehU3jL3LkJuMZIJSldEKFJAquYt9vx8g
-	VUgfq5FwXojRrhno3Ne0op6VFJzRgl2H98+reWODv1yuNRAOOZK+le/sfDKTcCSlMzA4AGEMRnUi5
-	xguhKLWoP7qpnv2C8vDA==;
+	List-Owner; bh=YDw8KpvV+jCoYiKOhhcLfhOy8qMBgzXL2BPUGuU2PHU=; b=Q2HDEBh/sEMsYQ
+	0M+QUndoFNfVTEtgHIbvZ4ZfRNKfr4k3l9h92nuoR5JYBKgoX3NlPLHsfBU5qIWa/5Ir/E6g0ffyc
+	gv44iDhFw3uWbZOHDq9GmhrwiNqM98QvPEJtPu4tKNoQ+I1MxUtkuAQlHKcJmJsuyFvjKlpb9cSC/
+	+tAWNQoA7ct7AAdVSPnfyx+HY0+qxPvwk4aEqq4yGPkcXrLDDmg8Lj6Z2fA4HOx+wE+prtUZvzMSy
+	3lJkh5xBC/FgT6MAsqETaSTyjVIoPLgNvAIId2vynXVB8o8Ln49dCWBhlgKXng3eiXJ6+/F3RcP9T
+	ga0j9dKof7OlAtNHUatg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1odYzM-00Gtz3-G6; Wed, 28 Sep 2022 15:28:44 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1odYzU-00Gu2C-Il; Wed, 28 Sep 2022 15:28:52 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1odYzH-00Gttg-11
-	for linux-phy@lists.infradead.org; Wed, 28 Sep 2022 15:28:42 +0000
+	id 1odYzI-00Gtv6-Mf
+	for linux-phy@lists.infradead.org; Wed, 28 Sep 2022 15:28:43 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 4800C61F15;
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 61BB561F0F;
 	Wed, 28 Sep 2022 15:28:37 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6580EC4314C;
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B167DC43470;
 	Wed, 28 Sep 2022 15:28:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1664378916;
-	bh=Vlk4gD9dG2K7feWuy/Wd6MSx9GjtDSoq6AEyp2Fhlbc=;
+	bh=WuJsAZUgyp0wCyNm2QoREGEP0a7ostaCyBNlvLxye4c=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=Bg3wZHyEcAxnzybQMhODvCGaixjYhYtKNCHB8P47GLbKDIMEtUC3L++xpv9ZU0mRM
-	 vkMxbWHFtABVnAAE9SmZtxZCalliwvprtT5c0rYd9hUtf35wf7t6pxOQlboIfePNLx
-	 xOMDkbaMLUkK4CB4WjmuV8nLoOIHZYxWeT4CrCFYyhDs4OhxmfDnABPXkyWp/4DPT0
-	 f9r3F3RT1FjmutfOLk+w4aB0tZrtzmWJD34g9XW66Wo7hTpQuOn/iNJGdRgBUnAdIu
-	 MAr5i0beopstgeFO7Q8mO8plSLhTzj8p8vHytaKLJV3JE6UsQQKgOiT1SPYMBnOUFK
-	 j1QoMsWTh+g3g==
+	b=dI3vxBoRIVJWSh9KYH7AefT5sTCrlge943wnpU6OD9Vh9r+JVkQsIhstHx5MNUSLU
+	 he+7owecqhJV86/4MxzSMFZXBfccrF8QudCjQgNKFKZDgK9gsDfl8kIr25JToyGX3p
+	 Vpnfc+VIwMrLzB1MNYOlMO1xDTsID7vk5fAFUac/AJ7cmZeRiBRfBUqHxGQBydIfV8
+	 2d88ee6SC6sx8G/MDm3QYTX2jOgTvKQsqprEkmSUJJLfoJWlUJ7w7viITZDek6u09M
+	 /3YaqN+uKSZSzxQrm6eQs1VYA1afrWJe/5rQ4WtpJ8UWcc7JfheoJ2DA+AtmfLR8UP
+	 QXC1jwafSrp3Q==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1odYzL-000806-9c; Wed, 28 Sep 2022 17:28:43 +0200
+	id 1odYzL-000802-6j; Wed, 28 Sep 2022 17:28:43 +0200
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>
 Cc: Andy Gross <agross@kernel.org>,
@@ -56,16 +56,16 @@ Cc: Andy Gross <agross@kernel.org>,
 	linux-phy@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH 12/13] phy: qcom-qmp-usb: clean up power-down handling
-Date: Wed, 28 Sep 2022 17:28:21 +0200
-Message-Id: <20220928152822.30687-13-johan+linaro@kernel.org>
+Subject: [PATCH 11/13] phy: qcom-qmp-ufs: clean up power-down handling
+Date: Wed, 28 Sep 2022 17:28:20 +0200
+Message-Id: <20220928152822.30687-12-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.35.1
 In-Reply-To: <20220928152822.30687-1-johan+linaro@kernel.org>
 References: <20220928152822.30687-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220928_082839_195107_42A94927 
-X-CRM114-Status: GOOD (  12.13  )
+X-CRM114-CacheID: sfid-20220928_082840_877552_F934BD5D 
+X-CRM114-Status: GOOD (  12.79  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,36 +83,47 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 Always define the POWER_DOWN_CONTROL register instead of falling back to
-the v2 (and v3) offset during power on and power off.
+the v2 (and v4) offset during power on and power off.
 
 Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-usb.c | 20 ++++++--------------
- 1 file changed, 6 insertions(+), 14 deletions(-)
+ drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 22 ++++++++--------------
+ 1 file changed, 8 insertions(+), 14 deletions(-)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-index f8685eddbf80..8acb5a3aeb95 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-@@ -126,6 +126,7 @@ static const unsigned int usb3phy_regs_layout[QPHY_LAYOUT_SIZE] = {
- 	[QPHY_PCS_AUTONOMOUS_MODE_CTRL]	= 0x0d4,
- 	[QPHY_PCS_LFPS_RXTERM_IRQ_CLEAR]  = 0x0d8,
- 	[QPHY_PCS_LFPS_RXTERM_IRQ_STATUS] = 0x178,
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+index d7b35b715b95..c8d86aecfe74 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+@@ -89,22 +89,26 @@ enum qphy_reg_layout {
+ static const unsigned int msm8996_ufsphy_regs_layout[QPHY_LAYOUT_SIZE] = {
+ 	[QPHY_START_CTRL]		= 0x00,
+ 	[QPHY_PCS_READY_STATUS]		= 0x168,
 +	[QPHY_PCS_POWER_DOWN_CONTROL]	= 0x04,
  };
  
- static const unsigned int qmp_v3_usb3phy_regs_layout[QPHY_LAYOUT_SIZE] = {
-@@ -135,6 +136,7 @@ static const unsigned int qmp_v3_usb3phy_regs_layout[QPHY_LAYOUT_SIZE] = {
- 	[QPHY_PCS_AUTONOMOUS_MODE_CTRL]	= 0x0d8,
- 	[QPHY_PCS_LFPS_RXTERM_IRQ_CLEAR]  = 0x0dc,
- 	[QPHY_PCS_LFPS_RXTERM_IRQ_STATUS] = 0x170,
+ static const unsigned int sdm845_ufsphy_regs_layout[QPHY_LAYOUT_SIZE] = {
+ 	[QPHY_START_CTRL]		= 0x00,
+ 	[QPHY_PCS_READY_STATUS]		= 0x160,
 +	[QPHY_PCS_POWER_DOWN_CONTROL]	= 0x04,
  };
  
- static const unsigned int qmp_v4_usb3phy_regs_layout[QPHY_LAYOUT_SIZE] = {
-@@ -2164,13 +2166,8 @@ static int qmp_usb_init(struct phy *phy)
- 		qphy_clrbits(dp_com, QPHY_V3_DP_COM_SW_RESET, SW_RESET);
- 	}
+ static const unsigned int sm6115_ufsphy_regs_layout[QPHY_LAYOUT_SIZE] = {
+ 	[QPHY_START_CTRL]		= 0x00,
+ 	[QPHY_PCS_READY_STATUS]		= 0x168,
++	[QPHY_PCS_POWER_DOWN_CONTROL]	= 0x04,
+ };
+ 
+ static const unsigned int sm8150_ufsphy_regs_layout[QPHY_LAYOUT_SIZE] = {
+ 	[QPHY_START_CTRL]		= QPHY_V4_PCS_UFS_PHY_START,
+ 	[QPHY_PCS_READY_STATUS]		= QPHY_V4_PCS_UFS_READY_STATUS,
+ 	[QPHY_SW_RESET]			= QPHY_V4_PCS_UFS_SW_RESET,
++	[QPHY_PCS_POWER_DOWN_CONTROL]	= QPHY_V4_PCS_UFS_POWER_DOWN_CONTROL,
+ };
+ 
+ static const struct qmp_phy_init_tbl msm8996_ufs_serdes_tbl[] = {
+@@ -856,13 +860,8 @@ static int qmp_ufs_com_init(struct qmp_phy *qphy)
+ 	if (ret)
+ 		goto err_disable_regulators;
  
 -	if (cfg->regs[QPHY_PCS_POWER_DOWN_CONTROL])
 -		qphy_setbits(pcs,
@@ -126,7 +137,7 @@ index f8685eddbf80..8acb5a3aeb95 100644
  
  	return 0;
  
-@@ -2277,13 +2274,8 @@ static int qmp_usb_power_off(struct phy *phy)
+@@ -996,13 +995,8 @@ static int qmp_ufs_power_off(struct phy *phy)
  	qphy_clrbits(qphy->pcs, cfg->regs[QPHY_START_CTRL], cfg->start_ctrl);
  
  	/* Put PHY into POWER DOWN state: active low */
