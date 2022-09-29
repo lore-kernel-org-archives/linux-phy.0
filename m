@@ -4,62 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 81485C07E9D
-	for <linux-phy@archiver.kernel.org>; Thu, 29 Sep 2022 08:57:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1BFF6C04A95
+	for <linux-phy@archiver.kernel.org>; Thu, 29 Sep 2022 09:02:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VKuLzUY8qotb3f0HH6bcHS4apROM+jbnS938mcGMErk=; b=eeo6VPaJQx5ghN
-	n04r4bt3dIxr0NCiv3BzzEbV/mpogr/tO6z+Z5PS0O5MGB7cJeEGLVEJb1aOeGEWVNlPWinZJNd86
-	Bzn/skIcP5Bymp6m8LvMqMdEXNVUl58HouRsIQfFG0nYqf+M1NFHnt+EkZWu1VhPQsU43sY9yo1PX
-	7+qPqsoRx7HFfumqgdKXuOXTvJlkZv4TMEo8e7WOExKFcoooLYW72E/NoTCtvvnL2ZfQaUb3PkjMw
-	7gokq2jYStkZERtCI0tAUw0hmWY/tBckIELpBuRMeL0PSDgBVDH8Xr+1IsS9kKjMPAw7GumyDtVi5
-	ugbL6vaYXE0NZebYbyLw==;
+	List-Owner; bh=FyL/JMizWV/ljGGRpPsGX1QT8M2cWcUsKXLsCmwHRgU=; b=wJMg7s4Rc6sodA
+	NAEbttgZXSKMHFcsIqgiGME10cYAdkr1MRxLU2X5Kl1dnoObofl6kUg2gkGoTRni9728rdHZZzQN+
+	gLa84/gNn0x88b4/Pug+1VIgg0HWHi74j5FZzG1/+yK4YWCI1M4fZy8mMlr27FP64sFh5JPwNdhAr
+	k7hxF7T1PFaa4wWBAZPL3DN3K5nmhLpExX1d4/CqZSoTKeAzuTUv6xnwUrnkGMSS0Et6ASVTkpw4p
+	esBVxCVqXMSjJAphwRzERjRY4xf+Rz/iCLH0LrPOfboAZodU8RtbUO62A8tqsX3l4wbU91qpXfJoL
+	SsK/KhtEEdSlwqUte2gA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1odpMU-001wHy-Tc; Thu, 29 Sep 2022 08:57:42 +0000
-Received: from ams.source.kernel.org ([145.40.68.75])
+	id 1odpRD-001xxz-E6; Thu, 29 Sep 2022 09:02:35 +0000
+Received: from madras.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e5ab])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1odpLx-001w2F-OT; Thu, 29 Sep 2022 08:57:11 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	id 1odpQy-001xtR-I7; Thu, 29 Sep 2022 09:02:22 +0000
+Received: from [192.168.1.100] (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id 16D47B823C1;
-	Thu, 29 Sep 2022 08:57:08 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 68BC2C433D6;
-	Thu, 29 Sep 2022 08:57:03 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1664441826;
-	bh=AB9OBY5Q/XflWMZEjGozmUCmyCSOHdzr9/Xwke2HRv4=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=dffSs2Rj/KWFa80GhJnSSBe+iznLMBr3NPAxLCx0A1gjoxQlImpAsZnx1j5w9b40F
-	 Eph18owQWi1Bxcge1T8ZNkpQphOqefizXcurvioFIbQH6Odqc9ggdpRUs57XcdtDb5
-	 aM6aNtHoASOVZPgz5/ZmXjtXTlH8VV/oUN+fyjtcNz8yGMfJG2m0lnPRyhzAwvfrd6
-	 Ez7/R1bUz+jaTTtueRhwBJRWoCa3MaAfedfpgyPdIEyShPScOTTBk4XPtnp3lUVjET
-	 dhgg388O4vhnFwSAIs8BeLkBgeQoMnUj4H0M8BxXkapEeRSEaSVcgGQg8cdIN125wW
-	 FL4gowVrJL4PA==
-Date: Thu, 29 Sep 2022 10:57:00 +0200
-From: Lorenzo Pieralisi <lpieralisi@kernel.org>
-To: Richard Zhu <hongxing.zhu@nxp.com>
-Cc: a.fatoum@pengutronix.de, l.stach@pengutronix.de, bhelgaas@google.com,
-	lorenzo.pieralisi@arm.com, vkoul@kernel.org,
-	marcel.ziswiler@toradex.com, kishon@ti.com,
-	linux-phy@lists.infradead.org, linux-pci@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
-	kernel@pengutronix.de, linux-imx@nxp.com
-Subject: Re: [PATCH v3] phy: freescale: imx8m-pcie: Fix the wrong order of
- phy_init() and phy_power_on()
-Message-ID: <YzVd3GAtpd0ipMAu@lpieralisi>
-References: <1662344583-18874-1-git-send-email-hongxing.zhu@nxp.com>
+	(Authenticated sender: kholk11)
+	by madras.collabora.co.uk (Postfix) with ESMTPSA id 40EAA660229F;
+	Thu, 29 Sep 2022 10:02:17 +0100 (BST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1664442137;
+	bh=N0m7GBoyHiib0OgCMmTseGmbEmSpvEwOlrrxgDsGcqw=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=oa2JJqk3rJEZ5c8IJ8fmkQp64qx1xIha2YVgIZrpoiu4eUhp62/3ettvq7GKxehUg
+	 3onKr6oRJ/XMv3S8+x38pZPW0EwOlav0y+bhJ14+ziSFPVplqa+lFD8ooJ1u+mHge9
+	 hsGYpcV5eEExNHrQ12eSL7g2nnUkuBCIhKT7+b3eMPMbMHcqXBQmnOLY28+MNUBo4E
+	 rjQzZJXD3SIj3IAuMGs3tve9iyuKXEM34DuXwUZGQsriiPtYeNo00Ms8XVVXT971xO
+	 MPZ7c4tL3myG/HL5RSDvC5n93u/kb4qzSqA/iVNc+hUaV9KvAktq6kpJfysuDSXL/6
+	 Bn8d4yjnatgcQ==
+Message-ID: <09bc1393-dd30-3c96-3309-f822994f4aab@collabora.com>
+Date: Thu, 29 Sep 2022 11:02:14 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1662344583-18874-1-git-send-email-hongxing.zhu@nxp.com>
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.2.0
+Subject: Re: [PATCH v2 2/2] phy: mediatek: tphy: add debugfs files
+Content-Language: en-US
+To: Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>
+Cc: Kishon Vijay Abraham I <kishon@ti.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
+ Eddie Hung <eddie.hung@mediatek.com>,
+ Tianping Fang <tianping.fang@mediatek.com>
+References: <20220929080926.1272-1-chunfeng.yun@mediatek.com>
+ <20220929080926.1272-2-chunfeng.yun@mediatek.com>
+From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+In-Reply-To: <20220929080926.1272-2-chunfeng.yun@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220929_015710_130280_D8733A39 
-X-CRM114-Status: GOOD (  20.57  )
+X-CRM114-CacheID: sfid-20220929_020220_753843_1EBCB92F 
+X-CRM114-Status: GOOD (  19.39  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,103 +73,97 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Sep 05, 2022 at 10:23:03AM +0800, Richard Zhu wrote:
-> Refer to phy_core driver, phy_init() must be called before phy_power_on().
-> Fix the wrong order of phy_init() and phy_power_on() here.
+Il 29/09/22 10:09, Chunfeng Yun ha scritto:
+> These debugfs files are mainly used to make eye diagram test easier,
+> especially helpful to do HQA test for a new IC without efuse enabled.
 > 
-> Fixes: 1aa97b002258 ("phy: freescale: pcie: Initialize the imx8 pcie standalone phy driver")
-> Signed-off-by: Richard Zhu <hongxing.zhu@nxp.com>
-> Tested-by: Alexander Stein <alexander.stein@ew.tq-group.com>
-> Acked-by: Vinod Koul <vkoul@kernel.org>
+> Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
 > ---
->  drivers/pci/controller/dwc/pci-imx6.c      | 6 +++---
->  drivers/phy/freescale/phy-fsl-imx8m-pcie.c | 8 ++++----
->  2 files changed, 7 insertions(+), 7 deletions(-)
-
-Who is picking this up ? I believe this is supposed to
-go via the PHY tree, so:
-
-Acked-by: Lorenzo Pieralisi <lpieralisi@kernel.org>
-
-> diff --git a/drivers/pci/controller/dwc/pci-imx6.c b/drivers/pci/controller/dwc/pci-imx6.c
-> index 6e5debdbc55b..b5f0de455a7b 100644
-> --- a/drivers/pci/controller/dwc/pci-imx6.c
-> +++ b/drivers/pci/controller/dwc/pci-imx6.c
-> @@ -935,7 +935,7 @@ static int imx6_pcie_host_init(struct dw_pcie_rp *pp)
->  	}
->  
->  	if (imx6_pcie->phy) {
-> -		ret = phy_power_on(imx6_pcie->phy);
-> +		ret = phy_init(imx6_pcie->phy);
->  		if (ret) {
->  			dev_err(dev, "pcie PHY power up failed\n");
->  			goto err_clk_disable;
-> @@ -949,7 +949,7 @@ static int imx6_pcie_host_init(struct dw_pcie_rp *pp)
->  	}
->  
->  	if (imx6_pcie->phy) {
-> -		ret = phy_init(imx6_pcie->phy);
-> +		ret = phy_power_on(imx6_pcie->phy);
->  		if (ret) {
->  			dev_err(dev, "waiting for PHY ready timeout!\n");
->  			goto err_phy_off;
-> @@ -961,7 +961,7 @@ static int imx6_pcie_host_init(struct dw_pcie_rp *pp)
->  
->  err_phy_off:
->  	if (imx6_pcie->phy)
-> -		phy_power_off(imx6_pcie->phy);
-> +		phy_exit(imx6_pcie->phy);
->  err_clk_disable:
->  	imx6_pcie_clk_disable(imx6_pcie);
->  err_reg_disable:
-> diff --git a/drivers/phy/freescale/phy-fsl-imx8m-pcie.c b/drivers/phy/freescale/phy-fsl-imx8m-pcie.c
-> index ad7d2edfc414..c93286483b42 100644
-> --- a/drivers/phy/freescale/phy-fsl-imx8m-pcie.c
-> +++ b/drivers/phy/freescale/phy-fsl-imx8m-pcie.c
-> @@ -59,7 +59,7 @@ struct imx8_pcie_phy {
->  	bool			clkreq_unused;
->  };
->  
-> -static int imx8_pcie_phy_init(struct phy *phy)
-> +static int imx8_pcie_phy_power_on(struct phy *phy)
->  {
->  	int ret;
->  	u32 val, pad_mode;
-> @@ -137,14 +137,14 @@ static int imx8_pcie_phy_init(struct phy *phy)
->  	return ret;
->  }
->  
-> -static int imx8_pcie_phy_power_on(struct phy *phy)
-> +static int imx8_pcie_phy_init(struct phy *phy)
->  {
->  	struct imx8_pcie_phy *imx8_phy = phy_get_drvdata(phy);
->  
->  	return clk_prepare_enable(imx8_phy->clk);
->  }
->  
-> -static int imx8_pcie_phy_power_off(struct phy *phy)
-> +static int imx8_pcie_phy_exit(struct phy *phy)
->  {
->  	struct imx8_pcie_phy *imx8_phy = phy_get_drvdata(phy);
->  
-> @@ -155,8 +155,8 @@ static int imx8_pcie_phy_power_off(struct phy *phy)
->  
->  static const struct phy_ops imx8_pcie_phy_ops = {
->  	.init		= imx8_pcie_phy_init,
-> +	.exit		= imx8_pcie_phy_exit,
->  	.power_on	= imx8_pcie_phy_power_on,
-> -	.power_off	= imx8_pcie_phy_power_off,
->  	.owner		= THIS_MODULE,
->  };
->  
-> -- 
-> 2.25.1
+> v2: add CONFIG_PHY_MTK_TPHY_DEBUGFS suggested by AngeloGioacchino
+> ---
+>   drivers/phy/mediatek/Kconfig        |   5 +
+>   drivers/phy/mediatek/phy-mtk-tphy.c | 403 +++++++++++++++++++++++++++-
+>   2 files changed, 407 insertions(+), 1 deletion(-)
 > 
+> diff --git a/drivers/phy/mediatek/Kconfig b/drivers/phy/mediatek/Kconfig
+> index 3125ecb5d119..e9fdfe9f519f 100644
+> --- a/drivers/phy/mediatek/Kconfig
+> +++ b/drivers/phy/mediatek/Kconfig
+> @@ -27,6 +27,11 @@ config PHY_MTK_TPHY
+>   	  multi-ports is first version, otherwise is second version,
+>   	  so you can easily distinguish them by banks layout.
+>   
+> +config PHY_MTK_TPHY_DEBUGFS
+> +	bool "Add T-PHY Debugfs Files"
+> +	help
+> +	  Say Y here to add debugfs files mainly for T-PHY HQA test.
+> +
+>   config PHY_MTK_UFS
+>   	tristate "MediaTek UFS M-PHY driver"
+>   	depends on ARCH_MEDIATEK || COMPILE_TEST
+> diff --git a/drivers/phy/mediatek/phy-mtk-tphy.c b/drivers/phy/mediatek/phy-mtk-tphy.c
+> index e906a82791bd..d9509e1314a4 100644
+> --- a/drivers/phy/mediatek/phy-mtk-tphy.c
+> +++ b/drivers/phy/mediatek/phy-mtk-tphy.c
+> @@ -7,6 +7,7 @@
+>   
+>   #include <dt-bindings/phy/phy.h>
+>   #include <linux/clk.h>
+> +#include <linux/debugfs.h>
+>   #include <linux/delay.h>
+>   #include <linux/iopoll.h>
+>   #include <linux/mfd/syscon.h>
+> @@ -264,6 +265,8 @@
+>   
+>   #define TPHY_CLKS_CNT	2
+>   
+> +#define USER_BUF_LEN(count) min_t(size_t, 8, (count))
+> +
+>   enum mtk_phy_version {
+>   	MTK_PHY_V1 = 1,
+>   	MTK_PHY_V2,
+> @@ -310,6 +313,7 @@ struct mtk_phy_instance {
+>   	struct clk_bulk_data clks[TPHY_CLKS_CNT];
+>   	u32 index;
+>   	u32 type;
+> +	struct dentry *dbgfs;
+
+Unused when !IS_ENABLED(CONFIG_PHY_MTK_TPHY_DEBUGFS)
+
+>   	struct regmap *type_sw;
+>   	u32 type_sw_reg;
+>   	u32 type_sw_index;
+> @@ -332,10 +336,389 @@ struct mtk_tphy {
+>   	const struct mtk_phy_pdata *pdata;
+>   	struct mtk_phy_instance **phys;
+>   	int nphys;
+> +	struct dentry *dbgfs_root;
+
+Same here
+
+>   	int src_ref_clk; /* MHZ, reference clock for slew rate calibrate */
+>   	int src_coef; /* coefficient for slew rate calibrate */
+>   };
+>   
+> +#if IS_ENABLED(CONFIG_PHY_MTK_TPHY_DEBUGFS)
+> +
+
+..snip..
+
+> +
+> +static void tphy_debufs_init(struct mtk_tphy *tphy, struct mtk_phy_instance *inst)
+
+Please fix typo "debufs" -> "debugfs", here and everywhere else.
+
+Apart from that, it looks good to me.
+
+Regards,
+Angelo
 
 -- 
 linux-phy mailing list
