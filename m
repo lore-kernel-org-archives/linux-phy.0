@@ -4,86 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F28EEC07E9D
-	for <linux-phy@archiver.kernel.org>; Thu, 29 Sep 2022 09:07:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 84305C04A95
+	for <linux-phy@archiver.kernel.org>; Thu, 29 Sep 2022 09:10:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VDBVsSouQxJRtSkqEm/lFeauHPbvmhRUrpzPWG+vrLs=; b=OQCLWGn8Yl8EaS
-	CHX0nSnGpqRRFX+D3JIU8dYSuEpfwPcGnvFHe+WVRXTqKEto9thhK4KuV0Vzdjj4tlJG1wEQL7JDd
-	cDN4LOmjCaIzLgve1zoTsshkpbF4VrXXBJ+L/vv7kjZt3Ij8ArysM13PQYev03PIWlH+KiB9d5ioe
-	yDlFPXGoZl6wG/GhrBCsn/VIOCmygbPjT1YXBFJUdGKqA/+FVG6J8Dx+JNweug+fqS0QpQ8euepyx
-	73DUlXyG/Cft5oJqoUXoj7deh5SINbKnr0vscH3qA2n1zus73Tw2UqreM8DNtxpvS6xtCYYVHXnHH
-	tgpb5cn5Ru9Z+WETxBgw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=wd/hbbVCuIyN3QGx5+qe1i14Zzb8TPHOW5f1NLChySo=; b=cKc9MWLgEIp6gY
+	S2/2WoHgx6mF61hXgLSmMaVnrXgDMU3UDAiVKWgD3bOyjTTzQPFG+Z0qpGKVoG3+nxV57LCjc0f6Z
+	B79G+z6HIt047K/XE87Wa7LZp+pnKbUYyLPiaD1y5EEUkIUkaeGJ1IQ4RFk+dO9s0jQonNNd8oFNC
+	npHHhLqEMmYbCRmuY2HzY89uhKzgX6q6eKHeUh7R6wGtjRS0/lXxLr0HZQmSiseap7Xni/PDvRjYp
+	xosf3xTbKhWwH4Aq9O5UF/QPJWYdQEUeVGvXBTYxhyKl0xaGh+OVaCDm6LWdkw1fimvtKUwn2ZLos
+	3DGa/YiL6zibJ0ruf9hw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1odpVj-001z6s-EI; Thu, 29 Sep 2022 09:07:15 +0000
-Received: from mail-lj1-x229.google.com ([2a00:1450:4864:20::229])
+	id 1odpYj-00203p-Fp; Thu, 29 Sep 2022 09:10:21 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1odpVg-001z5y-8r
-	for linux-phy@lists.infradead.org; Thu, 29 Sep 2022 09:07:13 +0000
-Received: by mail-lj1-x229.google.com with SMTP id q17so815497lji.11
-        for <linux-phy@lists.infradead.org>; Thu, 29 Sep 2022 02:07:09 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date;
-        bh=BgfSaXaz1zXc5P9tbbwdP68iTN9st+1bzf5UzrFtKn0=;
-        b=nHkoa1A8iH9uJHyJ4dbRA5NP2CALm3oT4F15UkFvprXThuucEVU2v7jne36IUoxzml
-         c1JwecdrA47q74SJ1zWo92K85uJTuItZKrJhTX2YR52x33hyT2eFD0DvrdrOzKzBkOfb
-         AAG5SDX6HWQhS5eM/JfjOZyyDdoS8G88OFbM44c6PpVb6LiMDFOe4IlrVU3L8msbFFUU
-         yv7U4VxRPAGiCWhB87m9U43l7iEZIBxzhCnsHMQL90R7sTawOCGoIRMByr1BGOVpsJWX
-         jczQZTGC9RLGCFWfKAxjS6UXbe1mORaIh0OHuaQ4tg2wJwUvee6xeAz3Z08RKAV+xOwi
-         YrqA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date;
-        bh=BgfSaXaz1zXc5P9tbbwdP68iTN9st+1bzf5UzrFtKn0=;
-        b=ihHPShRQkAiBnSuAkPodj/zG73P+9adECPdCIbcQ6on9uHTAG8qk43qO8jMG7S/Itl
-         pWECMJiKMBuTgaIUzfU3bfLA/mRzRmpRF0BLQjkAqYSmtHBo5qE9iPpSI1999IX7Pt/m
-         OhrTqI1OR8NwwtXyLaL6Cq9ZAE8Hb9Tg8sckae4tLbqpgZf+4knkebFSXbnfyqFJeM0M
-         AjdP/zA5bOED67ED5dbza2mkvoq/owu4USg3CCrKlyGK4p/J/BfZTCRWV/fpBWJWzJcT
-         NHg7/iN7RV2zh2dFY/ekYBANEgmlAtyV0edjst/0L3BwIY+rr9QiJ7G4+6ND4PTUs2pc
-         E/yQ==
-X-Gm-Message-State: ACrzQf2rv2+ueX738G/TlizaQjPD1ARcfXovjf881TdTfvN/UdBJ50jE
-	LameLO3ttgL8o2kvH9nO6kLFjg==
-X-Google-Smtp-Source: AMsMyM5t2Wq64cR0qdS2uRMZIEG/WamoxgBuWgMAQoKhLKt0VRuwaAA+wA1qvEmY4WqX2DIkQZRQYQ==
-X-Received: by 2002:a05:651c:a05:b0:26c:5010:39ce with SMTP id k5-20020a05651c0a0500b0026c501039cemr747965ljq.53.1664442428289;
-        Thu, 29 Sep 2022 02:07:08 -0700 (PDT)
-Received: from [192.168.1.211] ([37.153.55.125])
-        by smtp.gmail.com with ESMTPSA id bj39-20020a2eaaa7000000b0026ab0087ff3sm656057ljb.54.2022.09.29.02.07.07
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 29 Sep 2022 02:07:07 -0700 (PDT)
-Message-ID: <153ada3a-f24e-fef5-6343-dcc584fc0079@linaro.org>
-Date: Thu, 29 Sep 2022 12:07:07 +0300
+	id 1odpYh-00200m-I8; Thu, 29 Sep 2022 09:10:20 +0000
+X-UUID: df2e8d342a7846858a18d1266d44f567-20220929
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
+	h=Content-Type:Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From; bh=6/aL/tySIJ4vn6EYApzN8xabXPa2bykp5V8nuDfj/xU=;
+	b=VDn23JKkM9TjDfMmZsPFY296cNsJVuUqDt+DPbJ9MCh7/NeENa5qRuQrnxI1J09EzrsUiapJv6XQflaC7rYQt+E8dQuyGl4wvJilMa2kHQejYlx8nCIh1G5aPIJdszN7DkbJfTwnuzw/zQ3JWwx2zDfSDxlaU1Gkiv/XHy7mujg=;
+X-CID-P-RULE: Release_Ham
+X-CID-O-INFO: VERSION:1.1.11,REQID:f62900c8-9b2b-44b6-adcb-62c1967419f0,IP:0,U
+	RL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:
+	release,TS:0
+X-CID-META: VersionHash:39a5ff1,CLOUDID:237aa3e4-87f9-4bb0-97b6-34957dc0fbbe,B
+	ulkID:nil,BulkQuantity:0,Recheck:0,SF:102,TC:nil,Content:0,EDM:-3,IP:nil,U
+	RL:11|1,File:nil,Bulk:nil,QS:nil,BEC:nil,COL:0
+X-UUID: df2e8d342a7846858a18d1266d44f567-20220929
+Received: from mtkmbs11n1.mediatek.inc [(172.21.101.185)] by mailgw01.mediatek.com
+	(envelope-from <chunfeng.yun@mediatek.com>)
+	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
+	with ESMTP id 94840048; Thu, 29 Sep 2022 02:10:10 -0700
+Received: from mtkmbs11n1.mediatek.inc (172.21.101.185) by
+ mtkmbs10n2.mediatek.inc (172.21.101.183) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.792.3;
+ Thu, 29 Sep 2022 16:09:34 +0800
+Received: from localhost.localdomain (10.17.3.154) by mtkmbs11n1.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.2.792.15 via Frontend
+ Transport; Thu, 29 Sep 2022 16:09:33 +0800
+From: Chunfeng Yun <chunfeng.yun@mediatek.com>
+To: Vinod Koul <vkoul@kernel.org>
+CC: Chunfeng Yun <chunfeng.yun@mediatek.com>, Kishon Vijay Abraham I
+	<kishon@ti.com>, Matthias Brugger <matthias.bgg@gmail.com>,
+	<linux-arm-kernel@lists.infradead.org>, <linux-mediatek@lists.infradead.org>,
+	<linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>, Eddie Hung
+	<eddie.hung@mediatek.com>, Tianping Fang <tianping.fang@mediatek.com>,
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Subject: [PATCH v2 1/2] phy: core: add debugfs root
+Date: Thu, 29 Sep 2022 16:09:25 +0800
+Message-ID: <20220929080926.1272-1-chunfeng.yun@mediatek.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.3.0
-Subject: Re: [PATCH 07/13] phy: qcom-qmp-pcie: clean up power-down handling
-Content-Language: en-GB
-To: Johan Hovold <johan@kernel.org>
-Cc: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konrad.dybcio@somainline.org>,
- Kishon Vijay Abraham I <kishon@ti.com>, linux-arm-msm@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
-References: <20220928152822.30687-1-johan+linaro@kernel.org>
- <20220928152822.30687-8-johan+linaro@kernel.org>
- <c3d39c4e-2099-b09a-8486-8abae7336611@linaro.org>
- <YzVIhK5z3I6hjzLU@hovoldconsulting.com>
- <7f577974-7433-107a-a43a-4a3a5f999018@linaro.org>
- <YzVflom04uK0gojn@hovoldconsulting.com>
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-In-Reply-To: <YzVflom04uK0gojn@hovoldconsulting.com>
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220929_020712_345223_DD53D6CA 
-X-CRM114-Status: GOOD (  20.39  )
+X-CRM114-CacheID: sfid-20220929_021019_644363_712DB26C 
+X-CRM114-Status: GOOD (  10.48  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,63 +75,68 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 29/09/2022 12:04, Johan Hovold wrote:
-> On Thu, Sep 29, 2022 at 10:30:20AM +0300, Dmitry Baryshkov wrote:
->> On 29/09/2022 10:25, Johan Hovold wrote:
->>> On Wed, Sep 28, 2022 at 10:15:46PM +0300, Dmitry Baryshkov wrote:
->>>> On 28/09/2022 18:28, Johan Hovold wrote:
->>>>> Always define the POWER_DOWN_CONTROL register instead of falling back to
->>>>> the v2 offset during power on and power off.
->>>>>
->>>>> Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
->>>>> ---
->>>>>     drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 20 ++++++--------------
->>>>>     1 file changed, 6 insertions(+), 14 deletions(-)
->>>>>
->>>>> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
->>>>> index eea66c24cf7e..47cdb9ed80cd 100644
->>>>> --- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
->>>>> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
->>>>> @@ -90,12 +90,14 @@ static const unsigned int pciephy_regs_layout[QPHY_LAYOUT_SIZE] = {
->>>>>     	[QPHY_SW_RESET]			= 0x00,
->>>>>     	[QPHY_START_CTRL]		= 0x08,
->>>>>     	[QPHY_PCS_STATUS]		= 0x174,
->>>>> +	[QPHY_PCS_POWER_DOWN_CONTROL]	= 0x04,
->>>>>     };
->>>>
->>>> Without symbolic names it's not obvious that 0x04 (and thus this
->>>> regs_layout) can be used for v2 and v3, but not for v4.
->>>
->>> It's no less obvious than it was when we were falling back to the v2
->>> define when it wasn't in the table.
->>
->> Yes, that's without doubts. Anyway, I've sent my view on the regs
->> layouts standing on top of your six patches from this series. Could you
->> please take a glance?
-> 
-> Sure, but I don't think doing that separate change should be a blocker
-> for this series. Especially since you run into issues like it not
-> always being clear which version of the IP is being used (IPQ).
-> 
-> I'd rather respin this series and drop the two patches that merged the
-> two redundant layout structs.
+Add a debugfs root for phy class, then phy drivers can add debugfs files
+under this folder.
 
-I'm fine either way.
+Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+---
+v2: no changes
+---
+ drivers/phy/phy-core.c  | 6 ++++++
+ include/linux/phy/phy.h | 2 ++
+ 2 files changed, 8 insertions(+)
 
-> 
-> Then you can work on further clean ups on top for 6.2 since that's going
-> to require some more careful review and thought.
-> 
-> Johan
-
+diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
+index d93ddf1262c5..2f9f69190519 100644
+--- a/drivers/phy/phy-core.c
++++ b/drivers/phy/phy-core.c
+@@ -11,6 +11,7 @@
+ #include <linux/export.h>
+ #include <linux/module.h>
+ #include <linux/err.h>
++#include <linux/debugfs.h>
+ #include <linux/device.h>
+ #include <linux/slab.h>
+ #include <linux/of.h>
+@@ -1204,6 +1205,9 @@ void devm_of_phy_provider_unregister(struct device *dev,
+ }
+ EXPORT_SYMBOL_GPL(devm_of_phy_provider_unregister);
+ 
++struct dentry *phy_debug_root;
++EXPORT_SYMBOL_GPL(phy_debug_root);
++
+ /**
+  * phy_release() - release the phy
+  * @dev: the dev member within phy
+@@ -1233,6 +1237,8 @@ static int __init phy_core_init(void)
+ 
+ 	phy_class->dev_release = phy_release;
+ 
++	phy_debug_root = debugfs_create_dir("phy", NULL);
++
+ 	return 0;
+ }
+ device_initcall(phy_core_init);
+diff --git a/include/linux/phy/phy.h b/include/linux/phy/phy.h
+index b1413757fcc3..c398749d49b9 100644
+--- a/include/linux/phy/phy.h
++++ b/include/linux/phy/phy.h
+@@ -205,6 +205,8 @@ struct phy_lookup {
+ #define devm_of_phy_provider_register_full(dev, children, xlate) \
+ 	__devm_of_phy_provider_register(dev, children, THIS_MODULE, xlate)
+ 
++extern struct dentry *phy_debug_root;
++
+ static inline void phy_set_drvdata(struct phy *phy, void *data)
+ {
+ 	dev_set_drvdata(&phy->dev, data);
 -- 
-With best wishes
-Dmitry
+2.18.0
 
 
 -- 
