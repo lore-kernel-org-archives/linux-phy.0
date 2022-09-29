@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0585EC4167B
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1F31FC4332F
 	for <linux-phy@archiver.kernel.org>; Thu, 29 Sep 2022 09:29:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,39 +12,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yNot1Rs9nZVTZRVUBKFsTB3P5+InQ/bc5OktTc3NQcs=; b=hro11Z6IhSP5SV
-	fAGODUbPWr+SmqcCS9JDydjY6X9+bmYH8jbuQ0m2sA/Lps+5yS/fE9muNkKk3PdXuPm1wqLTiJbXt
-	aPnes0yKWxqenDW3/YA+ROTGbA6HkWbhip3rZ0b6PYCfoO14MDFRMF9aI4C4+J/QoFeSQN+knSeQS
-	RsdHkLiMnzfPF0OfbRHjKkfZjD9PBs3zN0VVaprTOEaxGBw/t99bJFdYIPnI3JDs5DdB85lneQHRS
-	msmJ+U3UT5GI6HbGs6pd6ZzWDomgb973QPr9u1ImS4gE+HvIpOFzeGAPt6GJXNRoJZNk8GfSiMgxy
-	ruHw3xem4+iIHzKxzfew==;
+	List-Owner; bh=6nP2FWZccbUcXaMMD4k9kcIt53cOuzbyKKxgtFpHckE=; b=njPG3ZiY9Mi9Mn
+	0KKAKDG12Hjo54zJJHrqGfyGhoc7shhaEEWGm/er0riy5SP3LC3qA/VcI21rJ1FUnaP1c2hytaM8y
+	3ZbrFIXPPTWH4teYAHJo8IpFCzLQDW0hzALjd/Qk8wQZtW70ZIsPTrFjAWXheRyoWqEHGU84htlol
+	/8/DI8j37CiUKhMYTDF/WrWuzhwy615Bi4eOg4Sb6AmFaVSRWFK55TycGLAdWGIv5Y6vIKQqCvtjr
+	w/lD+dE34snItj0FlIVcQEjO+ptSVOT+NRCtbgr09Cun0H/AXA8KifRXEjtyf3IuT/fTsv5DKuCnn
+	HEuT7oEfRtwldi352FjA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1odprI-0026sk-DS; Thu, 29 Sep 2022 09:29:32 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1odprI-0026sy-Hb; Thu, 29 Sep 2022 09:29:32 +0000
+Received: from ams.source.kernel.org ([145.40.68.75])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1odprD-0026o2-8o
-	for linux-phy@lists.infradead.org; Thu, 29 Sep 2022 09:29:29 +0000
+	id 1odprD-0026nj-7u
+	for linux-phy@lists.infradead.org; Thu, 29 Sep 2022 09:29:30 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 6E26860B79;
+	by ams.source.kernel.org (Postfix) with ESMTPS id E31F9B823EB;
 	Thu, 29 Sep 2022 09:29:25 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7AC96C43166;
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 51153C43151;
 	Thu, 29 Sep 2022 09:29:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1664443763;
-	bh=R4xR8htFlvg+i9bj6nnADR37svsXJfJy0YwnIkjUsvY=;
+	bh=RCDMsqIFvGXQJyg4OyLTudRn8PZLhfXKmmKAniUA9x0=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=k3yOrlFgBHBQ4TqvEFfZuVV+ZFRJA1DF9Q/rX7pyAPLwFJUnILVhpDwVWM4oga6kL
-	 ORcywXNxwhIMt+sQVWWkysp/I0Bsi8vANsES/6OrTYjNv8m8lrvmFtxLd7ZVuPWoFR
-	 vxW029xYpSj31UAH+3W5PJ2AIARYfx02kl6eunMdo+c06jvKA2CfcNxJfHyj2UQySd
-	 20dPYVf8Zl9Qz67+rft+56NnkWRTB6oD1HUs0BeqalQz8zlOS7uFLsB2o60WAKVb2Q
-	 3AlltEcjYT9l97xe1jDatrHGomoRgvLZ6J8rMKK/0vgrVS0uo59dLY99Rqv2H8Dlwx
-	 SnOVREgN/RzoA==
+	b=e0itfTuGMYmuiVFXNUGerLKOSIVpupFDHlT988AY5P0O+aLVwDbnar88/o9vDD1wK
+	 c/dejAnfVMQ99m2H4INqKmq3yz2X8+iAo4XpqHpHP5EdeSMNwApCKUAos5uH1fUUEQ
+	 PJYWpxUuNLMue7eghJyLJ/zG6j55w3S0i+hXp0MEYYkMlHXBQn2uZRM7uLJL4duT1k
+	 x5SgTVeI9ZCBGiqlWgWIkBT0kqaxfnUpVwa2iBTHoaIhr5W25atvJo47Qr0/QfueRs
+	 DXd+QYImGu8ASCPujwLsL4/8q+2uWAUJwFkFwRKbVUN3qZwme2WSbdYfuCZRtHoMfv
+	 OFSS2AY7CzTMg==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1odprG-00061g-CP; Thu, 29 Sep 2022 11:29:30 +0200
+	id 1odprF-00061T-Uc; Thu, 29 Sep 2022 11:29:29 +0200
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>
 Cc: Andy Gross <agross@kernel.org>,
@@ -57,16 +57,16 @@ Cc: Andy Gross <agross@kernel.org>,
 	linux-phy@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH v2 11/11] phy: qcom-qmp-pcie: drop bogus register update
-Date: Thu, 29 Sep 2022 11:29:16 +0200
-Message-Id: <20220929092916.23068-12-johan+linaro@kernel.org>
+Subject: [PATCH v2 06/11] phy: qcom-qmp-pcie-msm8996: clean up power-down handling
+Date: Thu, 29 Sep 2022 11:29:11 +0200
+Message-Id: <20220929092916.23068-7-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.35.1
 In-Reply-To: <20220929092916.23068-1-johan+linaro@kernel.org>
 References: <20220929092916.23068-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220929_022927_370238_6F8B6202 
-X-CRM114-Status: GOOD (  11.68  )
+X-CRM114-CacheID: sfid-20220929_022927_447472_E7DF8B81 
+X-CRM114-Status: GOOD (  12.02  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,42 +83,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Since commit 0d58280cf1e6 ("phy: Update PHY power control sequence") the
-PHY is powered on before configuring the registers and only the MSM8996
-PCIe PHY, which includes the POWER_DOWN_CONTROL register in its PCS
-initialisation table, may possibly require a second update afterwards.
+This driver uses v2 registers only so drop the unnecessary
+POWER_DOWN_CONTROL override.
 
-To make things worse, the POWER_DOWN_CONTROL register lies at a
-different offset on more recent SoCs so that the second update, which
-still used a hard-coded offset, would write to an unrelated register
-(e.g. a revision-id register on SC8280XP).
+Note that this register is already hard-coded when powering on the PHY.
 
-As the MSM8996 PCIe PHY is now handled by a separate driver, simply drop
-the bogus register update.
-
-Fixes: e4d8b05ad5f9 ("phy: qcom-qmp: Use proper PWRDOWN offset for sm8150 USB") added support
 Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 6 ------
- 1 file changed, 6 deletions(-)
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c | 10 ++--------
+ 1 file changed, 2 insertions(+), 8 deletions(-)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-index a0f62e9633d9..90bdbeee8372 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-@@ -1963,12 +1963,6 @@ static int qmp_pcie_power_on(struct phy *phy)
- 	qmp_pcie_configure(pcs_misc, cfg->regs, cfg->pcs_misc_tbl, cfg->pcs_misc_tbl_num);
- 	qmp_pcie_configure(pcs_misc, cfg->regs, cfg->pcs_misc_tbl_sec, cfg->pcs_misc_tbl_num_sec);
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c
+index d9646bf5dc91..1960bd0513e9 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c
+@@ -91,7 +91,6 @@ enum qphy_reg_layout {
+ 	QPHY_SW_RESET,
+ 	QPHY_START_CTRL,
+ 	QPHY_PCS_STATUS,
+-	QPHY_PCS_POWER_DOWN_CONTROL,
+ 	/* Keep last to ensure regs_layout arrays are properly initialized */
+ 	QPHY_LAYOUT_SIZE
+ };
+@@ -591,13 +590,8 @@ static int qmp_pcie_msm8996_power_off(struct phy *phy)
+ 	qphy_clrbits(qphy->pcs, cfg->regs[QPHY_START_CTRL], cfg->start_ctrl);
  
--	/*
--	 * Pull out PHY from POWER DOWN state.
--	 * This is active low enable signal to power-down PHY.
--	 */
--	qphy_setbits(pcs, QPHY_V2_PCS_POWER_DOWN_CONTROL, cfg->pwrdn_ctrl);
--
- 	if (cfg->has_pwrdn_delay)
- 		usleep_range(cfg->pwrdn_delay_min, cfg->pwrdn_delay_max);
+ 	/* Put PHY into POWER DOWN state: active low */
+-	if (cfg->regs[QPHY_PCS_POWER_DOWN_CONTROL]) {
+-		qphy_clrbits(qphy->pcs, cfg->regs[QPHY_PCS_POWER_DOWN_CONTROL],
+-			     cfg->pwrdn_ctrl);
+-	} else {
+-		qphy_clrbits(qphy->pcs, QPHY_V2_PCS_POWER_DOWN_CONTROL,
+-				cfg->pwrdn_ctrl);
+-	}
++	qphy_clrbits(qphy->pcs, QPHY_V2_PCS_POWER_DOWN_CONTROL,
++			cfg->pwrdn_ctrl);
  
+ 	return 0;
+ }
 -- 
 2.35.1
 
