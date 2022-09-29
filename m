@@ -4,65 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DB7ABC07E9D
-	for <linux-phy@archiver.kernel.org>; Thu, 29 Sep 2022 06:13:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8D5E8C04A95
+	for <linux-phy@archiver.kernel.org>; Thu, 29 Sep 2022 06:25:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/eDwI01RrLbeDaCL/dhPS89E5b1X2CI4kdb3NcDjzAE=; b=ZoInvKevf/U031
-	YEySEOd8/E1FIAoRsRW4NsR5lIG1h5kiXeBkJ0U00ePGLe80b4I2oua6ErMXVJsL5cTzwTtyxlm7H
-	GzK7zOVCK2BZQyq2MDB01mEBkjrwEZ14j87wlQ/Ce6Y/DcDF9ENbFq3FNDimWGLk3WCdMSsu8KeRa
-	zcZTF2K7IEIClwg0J2HV0G/ERftegmIGoPw3WcTLLxNVxgpaTSnsvg5tIvq/fJC0hawUAZ3k0JhOs
-	K30qSjGr7GerdYuXgjlBb0p6l++ubFGvzCokvciFBwKTJoUa5U4n5H6yYw9HnAbBec/xwQJkgOhfz
-	d3lCV87+YmmDWlh+rAlw==;
+	List-Owner; bh=f2asbrqGOB+cUZtyeCTukRwXw4cYhiWQZ5vMH9yo5O0=; b=kYE3NBTmxA/FFG
+	+3Sl5AA1WgEQ605VB4tScw4Ugtgxf8SGhEhs5CSKfr7UYrD6l1W6Mm4quOf4Lg8xjCvLA+UtNo6/h
+	bm5aiSY5DiPxfxXBKbz8PTkOjYyXiaWpOMbi9wW1jcy26B4uoZJ+BnpOku+/DfMToYSFFLcVcvQKQ
+	2qdpBJca+uLLdYT6NNO0F1b+7Vngo075TzHe7iBPrhPCiwKUyUqA6usSm5jgs/kbQYSWvOQDZmOZs
+	8FIhNdZL/7alz38fArlWCLy2tuea3iInF+3w+dlwKyNCzuR9hMsEwnc/k9kwX1oIwReMi7Qiyl1vU
+	y89wg9IG04kJJMxqIO+Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1odmnh-001LIR-AX; Thu, 29 Sep 2022 06:13:37 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1odmz1-001Os5-TN; Thu, 29 Sep 2022 06:25:19 +0000
+Received: from ams.source.kernel.org ([145.40.68.75])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1odmnO-001LE5-Kn; Thu, 29 Sep 2022 06:13:19 +0000
+	id 1odmyz-001OrC-6A
+	for linux-phy@lists.infradead.org; Thu, 29 Sep 2022 06:25:18 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 2950762030;
-	Thu, 29 Sep 2022 06:13:18 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 01035C433B5;
-	Thu, 29 Sep 2022 06:13:16 +0000 (UTC)
+	by ams.source.kernel.org (Postfix) with ESMTPS id 967F0B82365;
+	Thu, 29 Sep 2022 06:25:15 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C0AFFC433D7;
+	Thu, 29 Sep 2022 06:25:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1664431997;
-	bh=mptkJW/0D7J67zG5IWOS5/3OR8nh/364Sw8qadvLw8g=;
+	s=k20201202; t=1664432714;
+	bh=S54NO4ay7i8nZMBgBUU2qfynbjgCiZp4OdSSAkmIcR0=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=DuMZGNsY9JNwxVqBTv2Qkn8muzAHYMKKbbxpK1IVApLWICoOXYzqZNm4IvozgdTug
-	 pWqaMbMVCqB956gdbXAqYJ5xuDwFc9/nDzXBfzriQi+Qt2bRXyHdbzAkwHdo3Ps76m
-	 aIY4CJ/t9wx5LQkmL3iWD0R25kp9eh1xAsAH1OFceaoGsuQWAKfXRE1BJ7p/7y5K9F
-	 SlxF/SAqPWofOss6e/plGhOb5klg1oSQMqXTYvSpGHHcskKX02J0SjV6SC5XGJjhbY
-	 VsQ2dWU94e7LKwUcuYU7xRyKhmTNzzp8s22T5BFwfnmFp5pwY2kwnQgLbW6151osFL
-	 93YmbAbu6Z4hw==
-Date: Thu, 29 Sep 2022 11:43:12 +0530
+	b=PENLS4PousitN6sbiAbMWONHTvV2KMF7uCcfCEL6U8rvXB1ca9L8Kt75TLp2Fsa9g
+	 md0/cTFqdTqOyH6ETGIGPQksuiMXkoD9SkwbkU6HLTIO3cmOtEzWlVXpIazKYgt8/k
+	 7QJQl6cneowh1nn/r1NiftdrBs6NXxuemHGiqyJkeWrj4D7QWFeg8MBBjohqvC2aGl
+	 bdc7Vd3uUY0+BMD5M/OS7RCNNOk4wrktXnV/BrmhyBGnyIZGl0Zcq0QHTURHhNEhBj
+	 cKNy93RXv+j9/HnCtLaSnJbzEojFnfXCaRmfhxug2X9jlEqUA/cw1Ed8UYMf7b3KU9
+	 HyGE7ndBPVBpQ==
+Date: Thu, 29 Sep 2022 11:55:10 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Aurelien Jarno <aurelien@aurel32.net>
-Cc: Kishon Vijay Abraham I <kishon@ti.com>,
-	Heiko Stuebner <heiko@sntech.de>,
-	Shawn Lin <shawn.lin@rock-chips.com>,
-	Frank Wunderlich <frank-w@public-files.de>,
-	"open list:GENERIC PHY FRAMEWORK" <linux-phy@lists.infradead.org>,
-	"moderated list:ARM/Rockchip SoC support" <linux-arm-kernel@lists.infradead.org>,
-	"open list:ARM/Rockchip SoC support" <linux-rockchip@lists.infradead.org>,
-	open list <linux-kernel@vger.kernel.org>,
-	Peter Geis <pgwipeout@gmail.com>
-Subject: Re: [PATCH] phy: rockchip-snps-pcie3: only look for
- rockchip,pipe-grf on rk3588
-Message-ID: <YzU3eLRCMmogyypi@matsya>
-References: <20220927051752.53089-1-aurelien@aurel32.net>
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@somainline.org>,
+	Kishon Vijay Abraham I <kishon@ti.com>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	Johan Hovold <johan@kernel.org>
+Subject: Re: [PATCH] phy: qcom-qmp-pcie: fix resource mapping for SDM845 QHP
+ PHY
+Message-ID: <YzU6RhgdH4FnpEM+@matsya>
+References: <20220926172514.880776-1-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20220927051752.53089-1-aurelien@aurel32.net>
+In-Reply-To: <20220926172514.880776-1-dmitry.baryshkov@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220928_231318_733538_E5F94621 
-X-CRM114-Status: GOOD (  10.14  )
+X-CRM114-CacheID: sfid-20220928_232517_392599_C997F0D3 
+X-CRM114-Status: UNSURE (   8.24  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,14 +78,12 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 27-09-22, 07:17, Aurelien Jarno wrote:
-> The rockchip,pipe-grf property is only used on rk3588, but not on
-> rk3568. Therefore this property is not present on rk3568 devices,
-> leading to the following message:
-> 
->   rockchip-snps-pcie3-phy fe8c0000.phy: failed to find rockchip,pipe_grf regmap
-> 
-> Fix that by only looking for this property on rk3588.
+On 26-09-22, 20:25, Dmitry Baryshkov wrote:
+> On SDM845 one of PCIe PHYs (the QHP one) has the same region for TX and
+> RX registers. Since the commit 4be26f695ffa ("phy: qcom-qmp-pcie: fix
+> memleak on probe deferral") added checking that resources are not
+> allocated beforehand, this PHY can not be probed anymore. Fix this by
+> skipping the map of ->rx resource on the QHP PHY and assign it manually.
 
 Applied, thanks
 
