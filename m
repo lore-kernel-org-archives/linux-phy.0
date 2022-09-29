@@ -4,69 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 98C2AC352A1
-	for <linux-phy@archiver.kernel.org>; Thu, 29 Sep 2022 09:29:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DBD74C433FE
+	for <linux-phy@archiver.kernel.org>; Thu, 29 Sep 2022 09:44:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LTVDDCQ9c8Crh3ss8a7g3ps9U5dx0adhua9g+o45f8Q=; b=h6whulMbvMUKWP
-	zxhk4hMyjA7d2ql8DV2PceXm2rnDa1vr6rwJGJcMgyMqWlqcV5NjGLOOv49gdfUQ2O4HBai09Wu8P
-	JvpIkdMrhCMgtL+X4hXb+qc9A2gK0QOxiSw/ZJnf2eC2LwHeNqpsLprfNr4rbUJ707AxasN6kqLY9
-	0OvVvii5g27gY64eLhllo/TRW9gIZynm27qmCk87LeunqUXgZeL8A0d2xUoT/es1UatSpwWrbXGPO
-	G3hgvy0BsV9ZHhvQo5Zv+zcvG9eZdN2oeS7w9tU/1kSIazCR5dT+XanK/yFRXdgczRCVwVrFC7l2Z
-	C5cldSUSVFMEbgxobH+Q==;
+	List-Owner; bh=f5tW/PdUYMHUSPpl9fHngMOMynShs5mCH3XI3JJy6dc=; b=wNaWSQIo3nDu7z
+	GCD9McvoHpqj1f5z9af1l/+lra4AN5TH03tl8DDyLwQKnVEWCJxIM8G7T9xjBNrZ+3dj7gqxAK7Se
+	GGU2IudtpNSVfLYwObb3Sk15qx4HRXQ/R+KdHoUxdNSaQErOsr41LKqCNAr9gMkUy/q5sBsem3LWC
+	OQfeJ/mKX0BF6/hBhteTMzpb4ORZWJjCbNfNlhnSJXEx+54DMneZ+kFiwjJ0Is1K4NuOgbMjXBBhJ
+	/4fhWTRiDnCrC+6XRPjaQq6JB7vng8ilUegJfE9oPvU/gLPI9mFfalRmbjuXTEJjVFlfY0LF9mnB/
+	TxUrS4CT0jpIYGtMhqPA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1odprJ-0026tk-0D; Thu, 29 Sep 2022 09:29:33 +0000
-Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
+	id 1odq5p-002BXy-Bz; Thu, 29 Sep 2022 09:44:33 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1odprF-0026ni-2a
-	for linux-phy@lists.infradead.org; Thu, 29 Sep 2022 09:29:30 +0000
+	id 1odq5n-002BWO-27
+	for linux-phy@lists.infradead.org; Thu, 29 Sep 2022 09:44:32 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by sin.source.kernel.org (Postfix) with ESMTPS id 41B1CCE212B;
-	Thu, 29 Sep 2022 09:29:25 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 150D1C433B5;
-	Thu, 29 Sep 2022 09:29:23 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 948D760EC9;
+	Thu, 29 Sep 2022 09:44:30 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id EC76FC433D7;
+	Thu, 29 Sep 2022 09:44:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1664443763;
-	bh=vWpzBrV6j+ZnvnNGyI76CUcoYB8DWggjkaozF0vshM0=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=Uwjt1TuiQezkCfDppwRPRejaDnfAQDkXrTArR9R4eJd6fnLXt9nW0fAktE3oQLmPo
-	 e1HYY4bi946gzFuaBakPn3EgQTdWinkwrJ+tO0RgxlYHdgb9fg0TXDuD4hcqXH3nlx
-	 SfMsxLUmQuCZt+WPXT0I1Xm/RGocTmd3yqyfx8E69c43WExxUd3pF1PKcsfvPivB0k
-	 qIhi58CMD1yotag8FtPNfe1CUh/EfcUqOPD3XfZnvgECoLyDEjD6nApye82A/spsqO
-	 vT3woGJKAq5b1uCoHtS2AHpSEwZCGVbFCCCflx3Ait0OYAcLVxiK+nPm2CVpqevGfs
-	 pbiAzlSaY/YoA==
+	s=k20201202; t=1664444670;
+	bh=xbn9dftZ/gyraKhzcK3RKTlD6TEA2sJFAESzHYU82JA=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=fIyHytBDhyBAuoxlyZXXcMSvJhtFh3AJuComIttbuCCT+nuwwJ0CmZcBVKHm3iLH7
+	 lihhojL+IFZfc76O36c8a8Yh7w/TePsR59fmTcQHedb9VWSi1UkU3h1XLeIyP6DtWr
+	 e13wwc2ll809xAP35L7BzG/Y6KjjbN4h4zQ1g6cx13SKKfMvP+OupsWAZS1RRs21UB
+	 //rXYOfJViaerPMOqn/dINyqw7kdeAKWUQIA9BI/jFQ68nDq5IgOdntHYZipIblE1f
+	 NEcVex/2VyetBsp8+CfhrtLSuYVjmTwJVaR+24tgcZlx2PHUXplAnq4YywQWdl4A4R
+	 jqw+MnMydjE8w==
 Received: from johan by xi.lan with local (Exim 4.94.2)
-	(envelope-from <johan+linaro@kernel.org>)
-	id 1odprF-00061H-J6; Thu, 29 Sep 2022 11:29:29 +0200
-From: Johan Hovold <johan+linaro@kernel.org>
-To: Vinod Koul <vkoul@kernel.org>
-Cc: Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
+	(envelope-from <johan@kernel.org>)
+	id 1odq5r-0006Dt-Rx; Thu, 29 Sep 2022 11:44:36 +0200
+Date: Thu, 29 Sep 2022 11:44:35 +0200
+From: Johan Hovold <johan@kernel.org>
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
 	Konrad Dybcio <konrad.dybcio@somainline.org>,
+	Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@ti.com>,
-	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH v2 02/11] phy: qcom-qmp-combo: drop unused UFS reset
-Date: Thu, 29 Sep 2022 11:29:07 +0200
-Message-Id: <20220929092916.23068-3-johan+linaro@kernel.org>
-X-Mailer: git-send-email 2.35.1
-In-Reply-To: <20220929092916.23068-1-johan+linaro@kernel.org>
-References: <20220929092916.23068-1-johan+linaro@kernel.org>
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org
+Subject: Re: [PATCH 00/18] phy: qcom-qmp: rework register layout tables
+Message-ID: <YzVpA9zN9Fc45l7r@hovoldconsulting.com>
+References: <20220928231014.455201-1-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20220928231014.455201-1-dmitry.baryshkov@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220929_022929_652967_4AF7688F 
-X-CRM114-Status: GOOD (  10.71  )
+X-CRM114-CacheID: sfid-20220929_024431_201557_98F4B8C3 
+X-CRM114-Status: GOOD (  15.59  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,60 +79,56 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Drop the unused UFS reset code which isn't used since the QMP driver
-split.
+On Thu, Sep 29, 2022 at 02:09:56AM +0300, Dmitry Baryshkov wrote:
+> This is an alternative implementation of the QMP PHY driver cleanup
+> proposed by Johan at [1]. This patchset changes register layout tables
+> to use symbolic names instead of bare values and attempts to tie the reg
+> layout with the version of the QMP PHY.
 
-Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
----
- drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 9 ---------
- 1 file changed, 9 deletions(-)
+I wouldn't call this an alternative, but rather a separate change on
+top. Using separate per-IP version "register-layout" structs is in
+principle a good idea. It does require a bit of extra work though, as
+it's not always clear what version of the IP each platform is using (e.g.
+IPQ).
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-index 0cf1eb8a62f6..e618e675e8ec 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-@@ -944,7 +944,6 @@ struct qmp_phy_dp_clks {
-  * @phys: array of per-lane phy descriptors
-  * @phy_mutex: mutex lock for PHY common block initialization
-  * @init_count: phy common block initialization count
-- * @ufs_reset: optional UFS PHY reset handle
-  */
- struct qcom_qmp {
- 	struct device *dev;
-@@ -958,8 +957,6 @@ struct qcom_qmp {
- 
- 	struct mutex phy_mutex;
- 	int init_count;
--
--	struct reset_control *ufs_reset;
- };
- 
- static void qcom_qmp_v3_phy_dp_aux_init(struct qmp_phy *qphy);
-@@ -2027,8 +2024,6 @@ static int qmp_combo_com_exit(struct qmp_phy *qphy)
- 		return 0;
- 	}
- 
--	reset_control_assert(qmp->ufs_reset);
--
- 	reset_control_bulk_assert(cfg->num_resets, qmp->resets);
- 
- 	clk_bulk_disable_unprepare(cfg->num_clks, qmp->clks);
-@@ -2103,10 +2098,6 @@ static int qmp_combo_power_on(struct phy *phy)
- 	else
- 		qmp_combo_configure(pcs, cfg->regs, cfg->pcs_tbl, cfg->pcs_tbl_num);
- 
--	ret = reset_control_deassert(qmp->ufs_reset);
--	if (ret)
--		goto err_disable_pipe_clk;
--
- 	if (cfg->has_pwrdn_delay)
- 		usleep_range(cfg->pwrdn_delay_min, cfg->pwrdn_delay_max);
- 
--- 
-2.35.1
+I've respun the clean up series that triggered Dimitry to send this
+series:
 
+	https://lore.kernel.org/lkml/20220929092916.23068-1-johan+linaro@kernel.org/
+
+and dropped the two patches merging the IPQ and SDM845 structs.
+
+The register layout work can be rebased on top (trivially).
+
+I'm not so fond of the whole splitting of header files into atoms as you
+lose the overview. But I guess that's a separate discussion.
+
+> [1] https://lore.kernel.org/linux-phy/20220928152822.30687-1-johan+linaro@kernel.org
+
+> Dmitry Baryshkov (12):
+>   phy: qcom-qmp-pcie: rework regs layout arrays
+>   phy: qcom-qmp-pcie: rename regs layout arrays
+>   phy: qcom-qmp-ufs: split UFS-specific v2 PCS registers to a separate
+>     header
+>   phy: qcom-qmp-ufs: rework regs layout arrays
+>   phy: qcom-qmp-ufs: rename regs layout arrays
+>   phy: qcom-qmp-usb: remove QPHY_PCS_LFPS_RXTERM_IRQ_STATUS reg
+>   phy: qcom-qmp-usb: remove QPHY_PCS_MISC_TYPEC_CTRL reg
+>   phy: qcom-qmp-usb: rework regs layout arrays
+>   phy: qcom-qmp-pcie-msm8996: rework regs layout arrays
+>   phy: qcom-qmp-combo: remove QPHY_PCS_LFPS_RXTERM_IRQ_STATUS reg
+>   phy: qcom-qmp-usb: rework regs layout arrays
+>   phy: qcom-qmp: move type-specific headers to particular driver
+> 
+> Johan Hovold (6):
+>   phy: qcom-qmp-pcie: drop unused common-block registers
+>   phy: qcom-qmp-pcie: clean up power-down handling
+>   phy: qcom-qmp-pcie-msm8996: clean up power-down handling
+>   phy: qcom-qmp-combo: clean up power-down handling
+>   phy: qcom-qmp-ufs: clean up power-down handling
+>   phy: qcom-qmp-usb: clean up power-down handling
+
+Johan
 
 -- 
 linux-phy mailing list
