@@ -4,70 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DA208C6FA83
-	for <linux-phy@archiver.kernel.org>; Thu, 29 Sep 2022 06:13:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DB7ABC07E9D
+	for <linux-phy@archiver.kernel.org>; Thu, 29 Sep 2022 06:13:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:CC:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sX9vQAkFjbLeRfx9JyirhE0VPF78GClUMqGtrUb7SKk=; b=TmPvk/FWsEQgQ2
-	0oEb+ZyTaeTx4cNzlmCWiuP1wahsCqhRE88PnQbs1v94YtIDVc2mtH9RVBufv8DAEjUa4K5mOpTOE
-	1lTkxFjveb3rC8vCO7RV0u2gp3pCiKnFuKj7fN1Ppg+u3dbczqb3+jm7Xb8EKPKyX9zcrE7Evwt/3
-	qO/QzQ0mxQlD+Xyj+wZx0orozfI/mahRqdUk/AVevH9DmROq17LyX3vOVZcSDEKMq5yNrLqCyN68F
-	PZxJR3/Zbln1Xi/dwNvy6QiiNqLetOjlnLfq07TpngOf2Q4ML09gxy+r2858D40Ro2E2YO7gXHLQd
-	kd0V5BnPqIkeLVHL+fsg==;
+	List-Owner; bh=/eDwI01RrLbeDaCL/dhPS89E5b1X2CI4kdb3NcDjzAE=; b=ZoInvKevf/U031
+	YEySEOd8/E1FIAoRsRW4NsR5lIG1h5kiXeBkJ0U00ePGLe80b4I2oua6ErMXVJsL5cTzwTtyxlm7H
+	GzK7zOVCK2BZQyq2MDB01mEBkjrwEZ14j87wlQ/Ce6Y/DcDF9ENbFq3FNDimWGLk3WCdMSsu8KeRa
+	zcZTF2K7IEIClwg0J2HV0G/ERftegmIGoPw3WcTLLxNVxgpaTSnsvg5tIvq/fJC0hawUAZ3k0JhOs
+	K30qSjGr7GerdYuXgjlBb0p6l++ubFGvzCokvciFBwKTJoUa5U4n5H6yYw9HnAbBec/xwQJkgOhfz
+	d3lCV87+YmmDWlh+rAlw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1odmnP-001LEO-67; Thu, 29 Sep 2022 06:13:19 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1odmnh-001LIR-AX; Thu, 29 Sep 2022 06:13:37 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1odmnL-001LCA-JK; Thu, 29 Sep 2022 06:13:17 +0000
-X-UUID: 90fb21e42fef46bc9375e2e015097532-20220928
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
-	h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID; bh=YI1zZfxac4tCJibwnL4J9lXHvkx5ulDsGyMM0uD184w=;
-	b=VOZOFACEsHI49YLjAmOycGSVcBmtYtMfj+FRNvZ+XHlPiDpqBvgcXSVdu9N6uKuBxtTho+zx+wQ2VxlkqyoCE/sbDTH699aYBnrVm8CN6t0VHD0zl/haAGzNNlgLHAQjNv768V3LcTIITQmS6vIGUvAL1l3KrGRcy7HtsP5dylE=;
-X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.1.11,REQID:cb2c8ed2-6485-4d8a-9a71-57bff05983e8,IP:0,U
-	RL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:
-	release,TS:0
-X-CID-META: VersionHash:39a5ff1,CLOUDID:cbe275a3-dc04-435c-b19b-71e131a5fc35,B
-	ulkID:nil,BulkQuantity:0,Recheck:0,SF:102,TC:nil,Content:0,EDM:-3,IP:nil,U
-	RL:11|1,File:nil,Bulk:nil,QS:nil,BEC:nil,COL:0
-X-UUID: 90fb21e42fef46bc9375e2e015097532-20220928
-Received: from mtkmbs11n2.mediatek.inc [(172.21.101.187)] by mailgw01.mediatek.com
-	(envelope-from <chunfeng.yun@mediatek.com>)
-	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
-	with ESMTP id 510617501; Wed, 28 Sep 2022 23:13:00 -0700
-Received: from mtkmbs11n2.mediatek.inc (172.21.101.187) by
- mtkmbs10n1.mediatek.inc (172.21.101.34) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.792.15; Thu, 29 Sep 2022 14:12:24 +0800
-Received: from mhfsdcap04 (10.17.3.154) by mtkmbs11n2.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.2.792.15 via Frontend
- Transport; Thu, 29 Sep 2022 14:12:24 +0800
-Message-ID: <425623b6368ffb1193033cfbd6256d1eb77fec80.camel@mediatek.com>
-Subject: Re: [PATCH 2/2] phy: mediatek: tphy: add debugfs files
-From: Chunfeng Yun <chunfeng.yun@mediatek.com>
-To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	Vinod Koul <vkoul@kernel.org>
-CC: Kishon Vijay Abraham I <kishon@ti.com>, Matthias Brugger
-	<matthias.bgg@gmail.com>, <linux-arm-kernel@lists.infradead.org>,
-	<linux-mediatek@lists.infradead.org>, <linux-phy@lists.infradead.org>,
-	<linux-kernel@vger.kernel.org>, Eddie Hung <eddie.hung@mediatek.com>,
-	Tianping Fang <tianping.fang@mediatek.com>
-Date: Thu, 29 Sep 2022 14:12:23 +0800
-In-Reply-To: <6ae64f49-5ab9-0b37-ae2c-5519c21a5d73@collabora.com>
-References: <20220928093041.31481-1-chunfeng.yun@mediatek.com>
-	 <20220928093041.31481-2-chunfeng.yun@mediatek.com>
-	 <6ae64f49-5ab9-0b37-ae2c-5519c21a5d73@collabora.com>
-X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
+	id 1odmnO-001LE5-Kn; Thu, 29 Sep 2022 06:13:19 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 2950762030;
+	Thu, 29 Sep 2022 06:13:18 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 01035C433B5;
+	Thu, 29 Sep 2022 06:13:16 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1664431997;
+	bh=mptkJW/0D7J67zG5IWOS5/3OR8nh/364Sw8qadvLw8g=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=DuMZGNsY9JNwxVqBTv2Qkn8muzAHYMKKbbxpK1IVApLWICoOXYzqZNm4IvozgdTug
+	 pWqaMbMVCqB956gdbXAqYJ5xuDwFc9/nDzXBfzriQi+Qt2bRXyHdbzAkwHdo3Ps76m
+	 aIY4CJ/t9wx5LQkmL3iWD0R25kp9eh1xAsAH1OFceaoGsuQWAKfXRE1BJ7p/7y5K9F
+	 SlxF/SAqPWofOss6e/plGhOb5klg1oSQMqXTYvSpGHHcskKX02J0SjV6SC5XGJjhbY
+	 VsQ2dWU94e7LKwUcuYU7xRyKhmTNzzp8s22T5BFwfnmFp5pwY2kwnQgLbW6151osFL
+	 93YmbAbu6Z4hw==
+Date: Thu, 29 Sep 2022 11:43:12 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Aurelien Jarno <aurelien@aurel32.net>
+Cc: Kishon Vijay Abraham I <kishon@ti.com>,
+	Heiko Stuebner <heiko@sntech.de>,
+	Shawn Lin <shawn.lin@rock-chips.com>,
+	Frank Wunderlich <frank-w@public-files.de>,
+	"open list:GENERIC PHY FRAMEWORK" <linux-phy@lists.infradead.org>,
+	"moderated list:ARM/Rockchip SoC support" <linux-arm-kernel@lists.infradead.org>,
+	"open list:ARM/Rockchip SoC support" <linux-rockchip@lists.infradead.org>,
+	open list <linux-kernel@vger.kernel.org>,
+	Peter Geis <pgwipeout@gmail.com>
+Subject: Re: [PATCH] phy: rockchip-snps-pcie3: only look for
+ rockchip,pipe-grf on rk3588
+Message-ID: <YzU3eLRCMmogyypi@matsya>
+References: <20220927051752.53089-1-aurelien@aurel32.net>
 MIME-Version: 1.0
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <20220927051752.53089-1-aurelien@aurel32.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220928_231315_686950_71EEF143 
-X-CRM114-Status: GOOD (  16.17  )
+X-CRM114-CacheID: sfid-20220928_231318_733538_E5F94621 
+X-CRM114-Status: GOOD (  10.14  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,38 +79,19 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, 2022-09-28 at 15:35 +0200, AngeloGioacchino Del Regno wrote:
-> Il 28/09/22 11:30, Chunfeng Yun ha scritto:
-> > These debugfs files are mainly used to make eye diagram test
-> > easier,
-> > especially helpful to do HQA test for a new IC without efuse
-> > enabled.
-> > 
-> > Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+On 27-09-22, 07:17, Aurelien Jarno wrote:
+> The rockchip,pipe-grf property is only used on rk3588, but not on
+> rk3568. Therefore this property is not present on rk3568 devices,
+> leading to the following message:
 > 
-> Even though this won't be interesting for the vast majority of the
-> people
-> out there (the users!), it's still nice to have it for IC testing
-> performed
-> directly on upstream, as that opens new possibilities for you and
-> ODMs/OEMs,
-> so I agree on getting that code upstreamed.
+>   rockchip-snps-pcie3-phy fe8c0000.phy: failed to find rockchip,pipe_grf regmap
 > 
-> For that reason, I think that the best approach for this one would be
-> to
-> enclose it in a configuration option like CONFIG_PHY_MTK_TPHY_DEBUGFS
-> or
-> CONFIG_PHY_MTK_TPHY_DEBUG, so that this very low level debugging code
-> doesn't end up in end-user builds, as that may, in some cases, be
-> even
-> dangerous.
-Yes, It seems better, I'll modify it, thanks a lot
+> Fix that by only looking for this property on rk3588.
 
-> 
-> Regards,
-> Angelo
-> 
+Applied, thanks
 
+-- 
+~Vinod
 
 -- 
 linux-phy mailing list
