@@ -4,39 +4,39 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 652EEC4332F
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6BDB0C43217
 	for <linux-phy@archiver.kernel.org>; Fri, 30 Sep 2022 12:48:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=WMtFZ9kFUK4Cl/ZLtV9PnXxKnsRd0SSd5j5c+oWdGWQ=; b=ZVLnAv3LivOd+M
-	MwPZfvAdg9XmND6x9KXdMkJYXDwdMBwgoc5pLu7+Fv/2diAiSRAgSWeqbLfC6PZ6TumZgWG5e4Gfm
-	PDvV/G5wycgXCKU7XBduv/w47TfmDZNHiFj0qKQ2b2XdV3B5edkzzjtqbQbR+Oz1oNmQcq3VGgUnZ
-	3NNv2qsnzHTLtLS+n5AotqzbAGK2wawNZoBYojEBKmd8sLBlcCl+d19kLyE/Xz67zgMABHDBM4M+e
-	Rf5X/JalyYFpkVe62hjxXPX5vAKhn+Jy/qumE+xLpKDyLDgBNqr+d6g7WjcHy+h/oVR8AzIiw6a8N
-	uIxB5NWdAfexEMi6GOUA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=gOd1M3xv9HZRA800ruW8SNC6F8ByFgd3qMwN4rLqTtM=; b=FawNu2Iqlek0nv
+	p3PZDcVAJTtKdKGIb5j0RIqPNgoDmqQtBZUp0Pl95CCK8ZNDRIjeKv5XqKNlWX1PvJSJJWy67Eya3
+	xx4xck5Fsb2MF7B/7LtTC2fWiPgweAtTjI8WLl7D8LzatgsavBb9oDOvh2VXD9AOb9wCKtBUhHflu
+	kAgwDzw+R2fxEZWAWC8QiUD9Kq0EBd2Kl7QTI0ku1yRbbDRuU8otFs3Oiy75Wsg09VvoWU/TcyHyY
+	7eyGIwWjwi4QuZ5gr66yjar9MimNcUKNj1Ies5bsPNk4e6wn7ihQb2b0NV1xrOlI3IlJqjamvgZZG
+	QndNHwP1UDdt+qqXjj7g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oeFRY-009EUH-PZ; Fri, 30 Sep 2022 12:48:40 +0000
+	id 1oeFRY-009EUf-SJ; Fri, 30 Sep 2022 12:48:40 +0000
 Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oeFRV-009ES6-6C
+	id 1oeFRU-009ES4-PO
 	for linux-phy@lists.infradead.org; Fri, 30 Sep 2022 12:48:39 +0000
 Received: from drehscheibe.grey.stw.pengutronix.de ([2a0a:edc0:0:c01:1d::a2])
 	by metis.ext.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
 	(Exim 4.92)
 	(envelope-from <mfe@pengutronix.de>)
-	id 1oeFRI-0007Vz-Aw; Fri, 30 Sep 2022 14:48:24 +0200
+	id 1oeFRI-0007W1-Aw; Fri, 30 Sep 2022 14:48:24 +0200
 Received: from [2a0a:edc0:0:1101:1d::28] (helo=dude02.red.stw.pengutronix.de)
 	by drehscheibe.grey.stw.pengutronix.de with esmtp (Exim 4.94.2)
 	(envelope-from <mfe@pengutronix.de>)
-	id 1oeFRH-003nvU-35; Fri, 30 Sep 2022 14:48:21 +0200
+	id 1oeFRH-003nva-Fs; Fri, 30 Sep 2022 14:48:22 +0200
 Received: from mfe by dude02.red.stw.pengutronix.de with local (Exim 4.94.2)
 	(envelope-from <mfe@pengutronix.de>)
-	id 1oeFRE-001tpt-Ns; Fri, 30 Sep 2022 14:48:20 +0200
+	id 1oeFRE-001tq1-QE; Fri, 30 Sep 2022 14:48:20 +0200
 From: Marco Felsch <m.felsch@pengutronix.de>
 To: mchehab@kernel.org,
 	robh+dt@kernel.org,
@@ -52,18 +52,20 @@ Cc: linux-phy@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
 	kernel@pengutronix.de,
 	linux-media@vger.kernel.org
-Subject: [PATCH v4 0/4] Add support for Toshiba TC358746
-Date: Fri, 30 Sep 2022 14:48:08 +0200
-Message-Id: <20220930124812.450332-1-m.felsch@pengutronix.de>
+Subject: [PATCH v4 3/4] media: dt-bindings: add bindings for Toshiba TC358746
+Date: Fri, 30 Sep 2022 14:48:11 +0200
+Message-Id: <20220930124812.450332-4-m.felsch@pengutronix.de>
 X-Mailer: git-send-email 2.30.2
+In-Reply-To: <20220930124812.450332-1-m.felsch@pengutronix.de>
+References: <20220930124812.450332-1-m.felsch@pengutronix.de>
 MIME-Version: 1.0
 X-SA-Exim-Connect-IP: 2a0a:edc0:0:c01:1d::a2
 X-SA-Exim-Mail-From: mfe@pengutronix.de
 X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de); SAEximRunCond expanded to false
 X-PTX-Original-Recipient: linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220930_054837_230273_DD8A7F2E 
-X-CRM114-Status: GOOD (  11.67  )
+X-CRM114-CacheID: sfid-20220930_054836_846254_98BF775B 
+X-CRM114-Status: GOOD (  18.54  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,43 +77,110 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi,
-
-this small series adds the support for the Toshiba TC358746 MIPI-CSI to
-Parallel converter chip. The different versions of this serie can be
-found here [1]. Thanks a lot for the review feedback from Laurent and
-Sakari, which was very helpful.
-
-[1] https://lore.kernel.org/all/20220922134843.3108267-1-m.felsch@pengutronix.de/
-    https://lore.kernel.org/all/20220916134535.128131-1-m.felsch@pengutronix.de/
-    https://lore.kernel.org/all/20220818143307.967150-5-m.felsch@pengutronix.de/
-
-Marco Felsch (4):
-  phy: dphy: refactor get_default_config
-  phy: dphy: add support to calculate the timing based on hs_clk_rate
-  media: dt-bindings: add bindings for Toshiba TC358746
-  media: tc358746: add Toshiba TC358746 Parallel to CSI-2 bridge driver
-
- .../bindings/media/i2c/toshiba,tc358746.yaml  |  178 ++
- drivers/media/i2c/Kconfig                     |   17 +
- drivers/media/i2c/Makefile                    |    1 +
- drivers/media/i2c/tc358746.c                  | 1696 +++++++++++++++++
- drivers/phy/phy-core-mipi-dphy.c              |   31 +-
- include/linux/phy/phy-mipi-dphy.h             |    3 +
- 6 files changed, 1922 insertions(+), 4 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/media/i2c/toshiba,tc358746.yaml
- create mode 100644 drivers/media/i2c/tc358746.c
-
--- 
-2.30.2
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+QWRkIHRoZSBiaW5kaW5ncyBmb3IgdGhlIFRvc2hpYmEgVEMzNTg3NDYgUGFyYWxsZWwgPC0+IE1J
+UEktQ1NJIGJyaWRnZQpkcml2ZXIuCgpTaWduZWQtb2ZmLWJ5OiBNYXJjbyBGZWxzY2ggPG0uZmVs
+c2NoQHBlbmd1dHJvbml4LmRlPgpSZXZpZXdlZC1ieTogUm9iIEhlcnJpbmcgPHJvYmhAa2VybmVs
+Lm9yZz4KUmV2aWV3ZWQtYnk6IExhdXJlbnQgUGluY2hhcnQgPGxhdXJlbnQucGluY2hhcnRAaWRl
+YXNvbmJvYXJkLmNvbT4KLS0tCkNoYW5nZWxvZwoKdjM6Ci0gcHV0IHRoZSBtY2xrIGNvbW1lbnQg
+aW50byB0aGUgZGVzY3JpcHRpb24gb2YgI2Nsb2NrLWNlbGxzCi0gbWFrZSBidXMtdHlwZSByZXF1
+aXJlZAotIGFsbG93IGFsbCBzeW5jIHZhbHVlcwotIGFsbG93IGFsbCBwb3NzaWJsZSBwYXJhbGxl
+bCBidXMtdHlwZXMKLSBhZGRlZCBMYXVyZW50J3Mgci1iCgp2MjoKLSBhZGRkZWQgUm9icyByLWIK
+LSBzL3RoYW4vdGhlbi8KLSBhZGRlZCBoc3luYy92c3luYy9idXMtdHlwZSwgbWFrZSBoc3luYy92
+c3luYyByZXF1aXJlZAotIGZpeCBleGFtcGxlIGluZGVudAoKIC4uLi9iaW5kaW5ncy9tZWRpYS9p
+MmMvdG9zaGliYSx0YzM1ODc0Ni55YW1sICB8IDE3OCArKysrKysrKysrKysrKysrKysKIDEgZmls
+ZSBjaGFuZ2VkLCAxNzggaW5zZXJ0aW9ucygrKQogY3JlYXRlIG1vZGUgMTAwNjQ0IERvY3VtZW50
+YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9tZWRpYS9pMmMvdG9zaGliYSx0YzM1ODc0Ni55YW1s
+CgpkaWZmIC0tZ2l0IGEvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL21lZGlhL2ky
+Yy90b3NoaWJhLHRjMzU4NzQ2LnlhbWwgYi9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGlu
+Z3MvbWVkaWEvaTJjL3Rvc2hpYmEsdGMzNTg3NDYueWFtbApuZXcgZmlsZSBtb2RlIDEwMDY0NApp
+bmRleCAwMDAwMDAwMDAwMDAuLmI4YmE4NWEyNDE2YwotLS0gL2Rldi9udWxsCisrKyBiL0RvY3Vt
+ZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9tZWRpYS9pMmMvdG9zaGliYSx0YzM1ODc0Ni55
+YW1sCkBAIC0wLDAgKzEsMTc4IEBACisjIFNQRFgtTGljZW5zZS1JZGVudGlmaWVyOiAoR1BMLTIu
+MC1vbmx5IE9SIEJTRC0yLUNsYXVzZSkKKyVZQU1MIDEuMgorLS0tCiskaWQ6IGh0dHA6Ly9kZXZp
+Y2V0cmVlLm9yZy9zY2hlbWFzL21lZGlhL2kyYy90b3NoaWJhLHRjMzU4NzQ2LnlhbWwjCiskc2No
+ZW1hOiBodHRwOi8vZGV2aWNldHJlZS5vcmcvbWV0YS1zY2hlbWFzL2NvcmUueWFtbCMKKwordGl0
+bGU6IFRvc2hpYmEgVEMzNTg3NDYgUGFyYWxsZWwgdG8gTUlQSSBDU0kyIEJyaWRnZQorCittYWlu
+dGFpbmVyczoKKyAgLSBNYXJjbyBGZWxzY2ggPGtlcm5lbEBwZW5ndXRyb25peC5kZT4KKworZGVz
+Y3JpcHRpb246IHwtCisgIFRoZSBUb3NoaWJhIFRDMzU4NzQ2IGNvbnZlcnRzIGEgcGFyYWxsZWwg
+dmlkZW8gc3RyZWFtIGludG8gYSBNSVBJIENTSS0yCisgIHN0cmVhbS4gVGhlIGRpcmVjdGlvbiBj
+YW4gYmUgZWl0aGVyIHBhcmFsbGVsLWluIC0+IGNzaS1vdXQgb3IgY3NpLWluIC0+CisgIHBhcmFs
+bGVsLW91dCBUaGUgY2hpcCBpcyBwcm9ncmFtbWFibGUgdHJvdWdoIEkyQyBhbmQgU1BJIGJ1dCB0
+aGUgU1BJCisgIGludGVyZmFjZSBpcyBvbmx5IHN1cHBvcnRlZCBpbiBwYXJhbGxlbC1pbiAtPiBj
+c2ktb3V0IG1vZGUuCisKKyAgTm90ZSB0aGF0IHRoZSBjdXJyZW50IGRldmljZSB0cmVlIGJpbmRp
+bmdzIG9ubHkgc3VwcG9ydCB0aGUKKyAgcGFyYWxsZWwtaW4gLT4gY3NpLW91dCBwYXRoLgorCitw
+cm9wZXJ0aWVzOgorICBjb21wYXRpYmxlOgorICAgIGNvbnN0OiB0b3NoaWJhLHRjMzU4NzQ2CisK
+KyAgcmVnOgorICAgIG1heEl0ZW1zOiAxCisKKyAgY2xvY2tzOgorICAgIGRlc2NyaXB0aW9uOgor
+ICAgICAgVGhlIHBoYW5kbGUgdG8gdGhlIHJlZmVyZW5jZSBjbG9jayBzb3VyY2UuIFRoaXMgY29y
+cmVzcG9uZHMgdG8gdGhlCisgICAgICBoYXJkd2FyZSBwaW4gUkVGQ0xLLgorICAgIG1heEl0ZW1z
+OiAxCisKKyAgY2xvY2stbmFtZXM6CisgICAgY29uc3Q6IHJlZmNsaworCisgICIjY2xvY2stY2Vs
+bHMiOgorICAgIGRlc2NyaXB0aW9uOiB8CisgICAgICBUaGUgYnJpZGdlIGNhbiBhY3QgYXMgY2xv
+Y2sgcHJvdmlkZXIgZm9yIHRoZSBzZW5zb3IuIFRvIGVuYWJsZSB0aGlzCisgICAgICBzdXBwb3J0
+ICNjbG9jay1jZWxscyBtdXN0IGJlIHNwZWNpZmllZC4gQXR0ZW50aW9uIGlmIHRoaXMgZmVhdHVy
+ZSBpcyB1c2VkCisgICAgICB0aGVuIHRoZSBtY2xrIHJhdGUgbXVzdCBiZSBhdCBsZWFzdDogKDIg
+KiBsaW5rLWZyZXF1ZW5jeSkgLyA4CisgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgYC0tLS0tLS0tLS0tLS0tLS0tLcK0ICAgXgorICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgIGludGVybmFsIFBMTCByYXRlICAgc21hbGxlc3QgcG9zc2li
+bGUKKyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICBtY2xrLWRpdgorICAgIGNvbnN0OiAwCisKKyAgY2xvY2stb3V0cHV0LW5h
+bWVzOgorICAgIGRlc2NyaXB0aW9uOgorICAgICAgVGhlIGNsb2NrIG5hbWUgb2YgdGhlIE1DTEsg
+b3V0cHV0LCB0aGUgZGVmYXVsdCBuYW1lIGlzIHRjMzU4NzQ2LW1jbGsuCisgICAgbWF4SXRlbXM6
+IDEKKworICB2ZGRjLXN1cHBseToKKyAgICBkZXNjcmlwdGlvbjogRGlnaXRhbCBjb3JlIHZvbHRh
+Z2Ugc3VwcGx5LCAxLjIgdm9sdHMKKworICB2ZGRpby1zdXBwbHk6CisgICAgZGVzY3JpcHRpb246
+IERpZ2l0YWwgSS9PIHZvbHRhZ2Ugc3VwcGx5LCAxLjggdm9sdHMKKworICB2ZGRtaXBpLXN1cHBs
+eToKKyAgICBkZXNjcmlwdGlvbjogTUlQSSBDU0kgcGh5IHZvbHRhZ2Ugc3VwcGx5LCAxLjIgdm9s
+dHMKKworICByZXNldC1ncGlvczoKKyAgICBkZXNjcmlwdGlvbjoKKyAgICAgIFRoZSBwaGFuZGxl
+IGFuZCBzcGVjaWZpZXIgZm9yIHRoZSBHUElPIHRoYXQgY29udHJvbHMgdGhlIGNoaXAgcmVzZXQu
+CisgICAgICBUaGlzIGNvcnJlc3BvbmRzIHRvIHRoZSBoYXJkd2FyZSBwaW4gUkVTWCB3aGljaCBp
+cyBwaHlzaWNhbGx5IGFjdGl2ZSBsb3cuCisgICAgbWF4SXRlbXM6IDEKKworICBwb3J0czoKKyAg
+ICAkcmVmOiAvc2NoZW1hcy9ncmFwaC55YW1sIy9wcm9wZXJ0aWVzL3BvcnRzCisgICAgcHJvcGVy
+dGllczoKKyAgICAgIHBvcnRAMDoKKyAgICAgICAgJHJlZjogL3NjaGVtYXMvZ3JhcGgueWFtbCMv
+JGRlZnMvcG9ydC1iYXNlCisgICAgICAgIGRlc2NyaXB0aW9uOiBJbnB1dCBwb3J0CisKKyAgICAg
+ICAgcHJvcGVydGllczoKKyAgICAgICAgICBlbmRwb2ludDoKKyAgICAgICAgICAgICRyZWY6IC9z
+Y2hlbWFzL21lZGlhL3ZpZGVvLWludGVyZmFjZXMueWFtbCMKKyAgICAgICAgICAgIHVuZXZhbHVh
+dGVkUHJvcGVydGllczogZmFsc2UKKworICAgICAgICAgICAgcHJvcGVydGllczoKKyAgICAgICAg
+ICAgICAgaHN5bmMtYWN0aXZlOiB0cnVlCisgICAgICAgICAgICAgIHZzeW5jLWFjdGl2ZTogdHJ1
+ZQorICAgICAgICAgICAgICBidXMtdHlwZToKKyAgICAgICAgICAgICAgICBlbnVtOiBbIDUsIDYg
+XQorCisgICAgICAgICAgICByZXF1aXJlZDoKKyAgICAgICAgICAgICAgLSBoc3luYy1hY3RpdmUK
+KyAgICAgICAgICAgICAgLSB2c3luYy1hY3RpdmUKKyAgICAgICAgICAgICAgLSBidXMtdHlwZQor
+CisgICAgICBwb3J0QDE6CisgICAgICAgICRyZWY6IC9zY2hlbWFzL2dyYXBoLnlhbWwjLyRkZWZz
+L3BvcnQtYmFzZQorICAgICAgICBkZXNjcmlwdGlvbjogT3V0cHV0IHBvcnQKKworICAgICAgICBw
+cm9wZXJ0aWVzOgorICAgICAgICAgIGVuZHBvaW50OgorICAgICAgICAgICAgJHJlZjogL3NjaGVt
+YXMvbWVkaWEvdmlkZW8taW50ZXJmYWNlcy55YW1sIworICAgICAgICAgICAgdW5ldmFsdWF0ZWRQ
+cm9wZXJ0aWVzOiBmYWxzZQorCisgICAgICAgICAgICBwcm9wZXJ0aWVzOgorICAgICAgICAgICAg
+ICBkYXRhLWxhbmVzOgorICAgICAgICAgICAgICAgIG1pbkl0ZW1zOiAxCisgICAgICAgICAgICAg
+ICAgbWF4SXRlbXM6IDQKKworICAgICAgICAgICAgICBjbG9jay1ub25jb250aW51b3VzOiB0cnVl
+CisgICAgICAgICAgICAgIGxpbmstZnJlcXVlbmNpZXM6IHRydWUKKworICAgICAgICAgICAgcmVx
+dWlyZWQ6CisgICAgICAgICAgICAgIC0gZGF0YS1sYW5lcworICAgICAgICAgICAgICAtIGxpbmst
+ZnJlcXVlbmNpZXMKKworICAgIHJlcXVpcmVkOgorICAgICAgLSBwb3J0QDAKKyAgICAgIC0gcG9y
+dEAxCisKK3JlcXVpcmVkOgorICAtIGNvbXBhdGlibGUKKyAgLSByZWcKKyAgLSBjbG9ja3MKKyAg
+LSBjbG9jay1uYW1lcworICAtIHZkZGMtc3VwcGx5CisgIC0gdmRkaW8tc3VwcGx5CisgIC0gdmRk
+bWlwaS1zdXBwbHkKKyAgLSBwb3J0cworCithZGRpdGlvbmFsUHJvcGVydGllczogZmFsc2UKKwor
+ZXhhbXBsZXM6CisgIC0gfAorICAgICNpbmNsdWRlIDxkdC1iaW5kaW5ncy9ncGlvL2dwaW8uaD4K
+KworICAgIGkyYyB7CisgICAgICAjYWRkcmVzcy1jZWxscyA9IDwxPjsKKyAgICAgICNzaXplLWNl
+bGxzID0gPDA+OworCisgICAgICBjc2ktYnJpZGdlQGUgeworICAgICAgICBjb21wYXRpYmxlID0g
+InRvc2hpYmEsdGMzNTg3NDYiOworICAgICAgICByZWcgPSA8MHhlPjsKKworICAgICAgICBjbG9j
+a3MgPSA8JnJlZmNsaz47CisgICAgICAgIGNsb2NrLW5hbWVzID0gInJlZmNsayI7CisKKyAgICAg
+ICAgcmVzZXQtZ3Bpb3MgPSA8JmdwaW8gMiBHUElPX0FDVElWRV9MT1c+OworCisgICAgICAgIHZk
+ZGMtc3VwcGx5ID0gPCZ2MV8yZD47CisgICAgICAgIHZkZGlvLXN1cHBseSA9IDwmdjFfOGQ+Owor
+ICAgICAgICB2ZGRtaXBpLXN1cHBseSA9IDwmdjFfMmQ+OworCisgICAgICAgIC8qIHNlbnNvciBt
+Y2xrIHByb3ZpZGVyICovCisgICAgICAgICNjbG9jay1jZWxscyA9IDwwPjsKKworICAgICAgICBw
+b3J0cyB7CisgICAgICAgICAgI2FkZHJlc3MtY2VsbHMgPSA8MT47CisgICAgICAgICAgI3NpemUt
+Y2VsbHMgPSA8MD47CisKKyAgICAgICAgICAvKiBJbnB1dCAqLworICAgICAgICAgIHBvcnRAMCB7
+CisgICAgICAgICAgICByZWcgPSA8MD47CisgICAgICAgICAgICB0YzM1ODc0Nl9pbjogZW5kcG9p
+bnQgeworICAgICAgICAgICAgICByZW1vdGUtZW5kcG9pbnQgPSA8JnNlbnNvcl9vdXQ+OworICAg
+ICAgICAgICAgICBoc3luYy1hY3RpdmUgPSA8MD47CisgICAgICAgICAgICAgIHZzeW5jLWFjdGl2
+ZSA9IDwwPjsKKyAgICAgICAgICAgICAgYnVzLXR5cGUgPSA8NT47CisgICAgICAgICAgICB9Owor
+ICAgICAgICAgIH07CisKKyAgICAgICAgICAvKiBPdXRwdXQgKi8KKyAgICAgICAgICBwb3J0QDEg
+eworICAgICAgICAgICAgcmVnID0gPDE+OworICAgICAgICAgICAgdGMzNTg3NDZfb3V0OiBlbmRw
+b2ludCB7CisgICAgICAgICAgICAgIHJlbW90ZS1lbmRwb2ludCA9IDwmbWlwaV9jc2kyX2luPjsK
+KyAgICAgICAgICAgICAgZGF0YS1sYW5lcyA9IDwxIDI+OworICAgICAgICAgICAgICBjbG9jay1u
+b25jb250aW51b3VzOworICAgICAgICAgICAgICBsaW5rLWZyZXF1ZW5jaWVzID0gL2JpdHMvIDY0
+IDwyMTYwMDAwMDA+OworICAgICAgICAgICAgfTsKKyAgICAgICAgICB9OworICAgICAgICB9Owor
+ICAgICAgfTsKKyAgICB9OwotLSAKMi4zMC4yCgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QK
+bGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3Jn
+L21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
