@@ -4,61 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 01A34C4167B
-	for <linux-phy@archiver.kernel.org>; Fri, 30 Sep 2022 11:29:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0F0C7C43219
+	for <linux-phy@archiver.kernel.org>; Fri, 30 Sep 2022 11:29:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4s54sF1BT2F2pb6NSnnGVHtSZyCC0qnkQdwn7e6r+X8=; b=wfA1lWAHCcNUpq
-	fLERykIUk+gLyootJlsw8hdR+Jwx+LaAulGfDbSPfNb3X/ghdmztv4o+zZwBezNYYFpdjkaYYkyfT
-	sKs1ER65MMMxLYimt/YRZtv33tZ2TU+Dt/1t12WXvTpZ6d3Lq8LTw6c9B42Ipd+OFp/BYoUsGDsS2
-	Bwq6/+NgpwAzYt04YawY1a31ZdCrCpKoYKlgMB81pizX/07B+gtLmRuivbTHf4gR4OO8jxYkthpSJ
-	kERXn+gz9NAFQS2cllIl2oW8N9OkSgnwhOm7RIaxwqIIQ8HjN7ZjxTHOVWHZ9PTtz6VBG2AqOXDNW
-	ys/mFvEHdcHtRzZUXiBg==;
+	List-Owner; bh=ezf4+u26F8KWr/Bg+mNybOB+BpD7uiLnXUwMIMezttM=; b=FPPuY7OOfUGkJs
+	4JIS3rGlWGjjSkzciswjM+xbvdlObWN/PdIYEACisOeMsBz9hUHPySwEfmY6OMwp4B0qWqtNbEpoC
+	7coU+ui6jAsKWgI+rednLifdjgTINV9DGXQwscGqEFXLLAaCLSH2LNsNKbe38AMoECK367hQmT6NK
+	sYyapcdiBl600Dyxshw8bj3tI2iaUlElsVsQXGa6T2cKfORI45KDkjSXUS1VxUkGkzWIW+bfi3eSD
+	uU9pJiAFeWgR5ljT7OCzkFAEQJVvNTE6DBlngla7x7CAq3qBqrE3wG2T//O6AYc+NGKC9OyfmuD+3
+	2MDRDku2svgEI4k3S/IQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oeED8-008sYb-9D; Fri, 30 Sep 2022 11:29:42 +0000
-Received: from mail-lj1-x234.google.com ([2a00:1450:4864:20::234])
+	id 1oeED8-008sYz-Db; Fri, 30 Sep 2022 11:29:42 +0000
+Received: from mail-lj1-x22e.google.com ([2a00:1450:4864:20::22e])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oeED3-008sTQ-4S
+	id 1oeED4-008sVS-GH
 	for linux-phy@lists.infradead.org; Fri, 30 Sep 2022 11:29:40 +0000
-Received: by mail-lj1-x234.google.com with SMTP id a14so4471442ljj.8
-        for <linux-phy@lists.infradead.org>; Fri, 30 Sep 2022 04:29:36 -0700 (PDT)
+Received: by mail-lj1-x22e.google.com with SMTP id j24so4478243lja.4
+        for <linux-phy@lists.infradead.org>; Fri, 30 Sep 2022 04:29:38 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date;
-        bh=rY1dkWkbpUk5yxsY7viJALOltWHB3nciD/DTFAI20GY=;
-        b=fAJYjarC5kQ2fOgNSGcvoPbVEBrd+qTtXAcobYminPtONgIZ/MSGEz+lLfQkcmDzUR
-         M4iP7gQ8LQKxt1+XOiVDsZnPKs+5gmE23NKDG1ubTw7gt8C0bqfcWPxVIOn2g61jQiIe
-         m1n0BX3k1I55Zi48reRtvylYU6s+ZRAzZZtISnLETiKPgnbAfirrk3KEY1mp/NJPs/Aq
-         VZUnu8urAO1h9snrsnI8eL2lCkE7xQawyr5CKVTuKKn/AfK2SLnj8rfeDHG74Y0D8+qU
-         ReXBWNam1OD9j9sUew4x11BzSqgOTfIqUI3EtNTZ/aieI+SGxE6ilCvLuvRPuB0dLzwY
-         KvhQ==
+        bh=xzp1n+xXMR0oqgZ0eki3yQt/UeyORWIWI7FE7XVObuk=;
+        b=unFiefTZF8EyuLh50hARNTELze3wWqOL0aelmZMEzJEDQLjwMey7RO4IOi/BJeUT+S
+         /IwpbqtWujYeDC8HpL8DUpdOJxKkzo86nl17KYEZmwmr9kyhnAQ1HYnbB+ViWulhxD/0
+         ncCesPE9nGwuE2ewztzCUGkS1wlyu1cI07XnBnFlPTDPKx/IvjZvgDBOtpYKQU+0dCo1
+         k+ZgWqWt4QDohk9FQhrxHSTdTduOiuYMmvssiIWSRBmNkN4Ax7jnw8aHUVDgb7gGCQ7k
+         zuFagEDRIj1SxYZs0hQHxxET+chc/C9f1iKuCt3scxgbBJMVtLJuX7ckF7sAJHTKGN9t
+         Xirg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date;
-        bh=rY1dkWkbpUk5yxsY7viJALOltWHB3nciD/DTFAI20GY=;
-        b=m0YDGLTAMqf64NooAXPBDGYldBHrVKcvOrUO4uSa6wM1MGHbf6zHn7GkmIyfk+Lv7Y
-         0xV+rsj9XVHC0FqzlPP/CDn9933OyzI2QULEtDeUk7SjQmrHmjnIopUl69wn1IgtW/IH
-         emiI1yFHhK98Fwl18B1Vdevs31aUV3DiIkD2g6AenK6+6PkLNtnPqo3Jck+Xkdbzx/94
-         6Y5fqdLFk6Si1uP3LoXvPmVytwnPZmmLj35ycAJqGXfEfnm1UItoVaEsm9nl4KPexPia
-         NT26uhqO0AeegFvh49q8QsyibFZmM4+f/AaS0fbESLvjK6QrFImjVr14rAxPCz3Dgd6t
-         siAg==
-X-Gm-Message-State: ACrzQf2w/tL6xOXY05lQ2ktyj66K5t3kVBkH22vl46VNKX7EsnDtsVav
-	pFo8gpjog15b3dTcSCj1ECi3lSvHo+uBaA==
-X-Google-Smtp-Source: AMsMyM4HOU1A/bPL4JzGnSjhF5QZVnByaj+fftFp6vaCjNXBP0tTXxDH7dA46Q1rkbKkEtwXdneWEQ==
-X-Received: by 2002:a2e:8190:0:b0:26b:d94b:75e9 with SMTP id e16-20020a2e8190000000b0026bd94b75e9mr2891463ljg.379.1664537375463;
-        Fri, 30 Sep 2022 04:29:35 -0700 (PDT)
+        bh=xzp1n+xXMR0oqgZ0eki3yQt/UeyORWIWI7FE7XVObuk=;
+        b=XCImQ1DDNrIkFp+3ttG2wNfXudajCSrCCe/AqBqb/DVdS+HRM2BuAfG9/3nPb4hb8r
+         KNl46froWDrCEgCv9TyBk1n7eWQmD8p0ukbvRgeqjyVTN00iib/0aow+cJ8Yfy9sn21z
+         oc+aAB6hlVR5iUmz4jGw797npsYa5VAohcWAT3C7W7geWgUug+eSkol8jlHH7km7Vkdx
+         83f4wMvVsy/LaECyWzYWsGStxaYb7MmgQ57n2dSxdkuAq0G2iOU+mOjVR3E/HsP0rRoy
+         Xhx7aB4f0QuJLYZ3QzU8aMpj+F1Q5akdtB8iDF8/d1UnRIaz+BmyFEIt7thaTfIkcGJE
+         d3EQ==
+X-Gm-Message-State: ACrzQf33IMDXg6IA3f/Sb5sEV8GofuP2+30rcKt1vZ0HqyTGyvDemjO8
+	R0/X33ruViv7dX8GJTTheMkV0g==
+X-Google-Smtp-Source: AMsMyM49+iQJ0gqA9WGzZo6uAWGfSefawXObvTNZdHdC2UHVrLAqUuv+BtbQGFqM7lQeFRhUfMxXTg==
+X-Received: by 2002:a2e:b5d7:0:b0:26d:98c2:6ad2 with SMTP id g23-20020a2eb5d7000000b0026d98c26ad2mr2833581ljn.215.1664537376992;
+        Fri, 30 Sep 2022 04:29:36 -0700 (PDT)
 Received: from eriador.lan ([37.153.55.125])
-        by smtp.gmail.com with ESMTPSA id v18-20020a197412000000b0049493c14b17sm264672lfe.181.2022.09.30.04.29.34
+        by smtp.gmail.com with ESMTPSA id v18-20020a197412000000b0049493c14b17sm264672lfe.181.2022.09.30.04.29.36
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 30 Sep 2022 04:29:35 -0700 (PDT)
+        Fri, 30 Sep 2022 04:29:36 -0700 (PDT)
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 To: Andy Gross <agross@kernel.org>,
 	Bjorn Andersson <andersson@kernel.org>,
@@ -68,17 +68,16 @@ To: Andy Gross <agross@kernel.org>,
 Cc: Philipp Zabel <p.zabel@pengutronix.de>,
 	linux-arm-msm@vger.kernel.org,
 	linux-phy@lists.infradead.org
-Subject: [PATCH v2 10/12] phy: qcom-qmp-combo: remove QPHY_PCS_LFPS_RXTERM_IRQ_STATUS reg
-Date: Fri, 30 Sep 2022 14:29:24 +0300
-Message-Id: <20220930112926.638543-11-dmitry.baryshkov@linaro.org>
+Subject: [PATCH v2 12/12] phy: qcom-qmp: move type-specific headers to particular driver
+Date: Fri, 30 Sep 2022 14:29:26 +0300
+Message-Id: <20220930112926.638543-13-dmitry.baryshkov@linaro.org>
 X-Mailer: git-send-email 2.35.1
 In-Reply-To: <20220930112926.638543-1-dmitry.baryshkov@linaro.org>
 References: <20220930112926.638543-1-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220930_042937_277011_464EF49E 
-X-CRM114-Status: UNSURE (   9.01  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220930_042938_604806_8A380321 
+X-CRM114-Status: GOOD (  10.39  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,44 +94,112 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The QPHY_PCS_LFPS_RXTERM_IRQ_STATUS register is not used, remove it from
-register layout.
+Remove QMP PHY type-specific headers inclusion from the common header
+and move them to the specific PHY drivers to cleanup the namespaces used
+by different drivers.
 
 Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 5 -----
- 1 file changed, 5 deletions(-)
+ drivers/phy/qualcomm/phy-qcom-qmp-combo.c |  3 +++
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c  |  6 ++++++
+ drivers/phy/qualcomm/phy-qcom-qmp-ufs.c   |  4 ++++
+ drivers/phy/qualcomm/phy-qcom-qmp-usb.c   |  3 +++
+ drivers/phy/qualcomm/phy-qcom-qmp.h       | 14 --------------
+ 5 files changed, 16 insertions(+), 14 deletions(-)
 
 diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-index 7b434e2ee640..cf675a00e391 100644
+index 0561df216fb1..3ae02a2287fc 100644
 --- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
 +++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-@@ -56,9 +56,6 @@
- /* QPHY_PCS_LFPS_RXTERM_IRQ_CLEAR register bits */
- #define IRQ_CLEAR				BIT(0)
+@@ -23,6 +23,9 @@
+ #include <dt-bindings/phy/phy.h>
  
--/* QPHY_PCS_LFPS_RXTERM_IRQ_STATUS register bits */
--#define RCVR_DETECT				BIT(0)
+ #include "phy-qcom-qmp.h"
++#include "phy-qcom-qmp-pcs-misc-v3.h"
++#include "phy-qcom-qmp-pcs-usb-v4.h"
++#include "phy-qcom-qmp-pcs-usb-v5.h"
+ 
+ /* QPHY_SW_RESET bit */
+ #define SW_RESET				BIT(0)
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+index 48b49719b7a5..e73442174997 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+@@ -23,6 +23,12 @@
+ #include <dt-bindings/phy/phy.h>
+ 
+ #include "phy-qcom-qmp.h"
++#include "phy-qcom-qmp-pcs-misc-v3.h"
++#include "phy-qcom-qmp-pcs-pcie-v4.h"
++#include "phy-qcom-qmp-pcs-pcie-v4_20.h"
++#include "phy-qcom-qmp-pcs-pcie-v5.h"
++#include "phy-qcom-qmp-pcs-pcie-v5_20.h"
++#include "phy-qcom-qmp-pcie-qhp.h"
+ 
+ /* QPHY_SW_RESET bit */
+ #define SW_RESET				BIT(0)
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+index 064435c1b78d..9bfd5b473bfd 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+@@ -23,6 +23,10 @@
+ #include <dt-bindings/phy/phy.h>
+ 
+ #include "phy-qcom-qmp.h"
++#include "phy-qcom-qmp-pcs-ufs-v2.h"
++#include "phy-qcom-qmp-pcs-ufs-v3.h"
++#include "phy-qcom-qmp-pcs-ufs-v4.h"
++#include "phy-qcom-qmp-pcs-ufs-v5.h"
+ 
+ /* QPHY_SW_RESET bit */
+ #define SW_RESET				BIT(0)
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
+index 2e3ccf3da0e4..fa955c11a10f 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
+@@ -23,6 +23,9 @@
+ #include <dt-bindings/phy/phy.h>
+ 
+ #include "phy-qcom-qmp.h"
++#include "phy-qcom-qmp-pcs-misc-v3.h"
++#include "phy-qcom-qmp-pcs-usb-v4.h"
++#include "phy-qcom-qmp-pcs-usb-v5.h"
+ 
+ /* QPHY_SW_RESET bit */
+ #define SW_RESET				BIT(0)
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp.h b/drivers/phy/qualcomm/phy-qcom-qmp.h
+index e6f327acbf19..08a3eccaeadc 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp.h
++++ b/drivers/phy/qualcomm/phy-qcom-qmp.h
+@@ -24,28 +24,14 @@
+ #include "phy-qcom-qmp-qserdes-pll.h"
+ 
+ #include "phy-qcom-qmp-pcs-v2.h"
+-#include "phy-qcom-qmp-pcs-ufs-v2.h"
+ 
+ #include "phy-qcom-qmp-pcs-v3.h"
+-#include "phy-qcom-qmp-pcs-misc-v3.h"
+-#include "phy-qcom-qmp-pcs-ufs-v3.h"
+ 
+ #include "phy-qcom-qmp-pcs-v4.h"
+-#include "phy-qcom-qmp-pcs-pcie-v4.h"
+-#include "phy-qcom-qmp-pcs-usb-v4.h"
+-#include "phy-qcom-qmp-pcs-ufs-v4.h"
+ 
+ #include "phy-qcom-qmp-pcs-v4_20.h"
+-#include "phy-qcom-qmp-pcs-pcie-v4_20.h"
+ 
+ #include "phy-qcom-qmp-pcs-v5.h"
+-#include "phy-qcom-qmp-pcs-pcie-v5.h"
+-#include "phy-qcom-qmp-pcs-usb-v5.h"
+-#include "phy-qcom-qmp-pcs-ufs-v5.h"
 -
- /* QPHY_V3_PCS_MISC_CLAMP_ENABLE register bits */
- #define CLAMP_EN				BIT(0) /* enables i/o clamp_n */
+-#include "phy-qcom-qmp-pcs-pcie-v5_20.h"
+-
+-#include "phy-qcom-qmp-pcie-qhp.h"
  
-@@ -111,7 +108,6 @@ enum qphy_reg_layout {
- 	QPHY_PCS_STATUS,
- 	QPHY_PCS_AUTONOMOUS_MODE_CTRL,
- 	QPHY_PCS_LFPS_RXTERM_IRQ_CLEAR,
--	QPHY_PCS_LFPS_RXTERM_IRQ_STATUS,
- 	QPHY_PCS_POWER_DOWN_CONTROL,
- 	/* Keep last to ensure regs_layout arrays are properly initialized */
- 	QPHY_LAYOUT_SIZE
-@@ -124,7 +120,6 @@ static const unsigned int qmp_v3_usb3phy_regs_layout[QPHY_LAYOUT_SIZE] = {
- 	[QPHY_PCS_POWER_DOWN_CONTROL]	= 0x04,
- 	[QPHY_PCS_AUTONOMOUS_MODE_CTRL]	= 0x0d8,
- 	[QPHY_PCS_LFPS_RXTERM_IRQ_CLEAR]  = 0x0dc,
--	[QPHY_PCS_LFPS_RXTERM_IRQ_STATUS] = 0x170,
- };
- 
- static const unsigned int qmp_v4_usb3phy_regs_layout[QPHY_LAYOUT_SIZE] = {
+ /* Only for QMP V3 & V4 PHY - DP COM registers */
+ #define QPHY_V3_DP_COM_PHY_MODE_CTRL			0x00
 -- 
 2.35.1
 
