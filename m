@@ -4,97 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0ACCBC433FE
-	for <linux-phy@archiver.kernel.org>; Tue,  4 Oct 2022 15:05:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0B696C433FE
+	for <linux-phy@archiver.kernel.org>; Tue,  4 Oct 2022 15:09:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=upfsi5p3qnjZ+drdQWhYfPILzAbIjantcMludiYIbNU=; b=A3DqVWV76qbThU
-	yH7Irx+6Dsww4SzSjGkeplWWsDME1BS9vF8hpFroiYRR2XvJ/MK4hn2b8P5CoMG7QR4lSHcbV2+hJ
-	UpL7KYHP6zx8K1Mvk+1cOJNMoBut7PRO/OxGPbRjX/a28ACjIxRgjf0OgkC3F/GOjikc36ksfboL7
-	uIUMDQxHlXYg5+a4toTRGo8eenv214ftJ+R6AcmH5TYiAFVSZKZq99nN3qIRl2mKiNE7WbwiAmvbo
-	L7nCHxDZg2HI91VccZGb5nnom6WdRLwSZ1gPO9k5lr5H6dDPlHMiy/C0/g5+EyVUlB074NchZXsJL
-	lPqUoN2iLpS4MFhsdilg==;
+	List-Owner; bh=Mr8m3s3ASZbutUwVoztI0si+pIINeEodg+RjnNM/RRA=; b=rPNBFExxJLYyrz
+	sai51sAbhalcUxDGDtkuEEsmZ6V6VKzUIovgLR/BfZgBZIy2C6ve4CHtEDY9tYMJKziL8W5RfO3nJ
+	zlb5Won8mh6A8y0qcvXELCuWAg7lJnjlzy9mfYYRNESo75CX5r5t8vJ+P3Gc+hZ4bi0rcEO8CTnOT
+	Ml8RgddMBJfooPwCX6rQqpxQpnzUr5+k3BdprWqLV450OhP5uvnGW0vpfHT3NjLf+OlS+ZNVp4IpK
+	ed5OEmwzYads66330bfUcCCuohOMOlyWliTZBQaoKxeFlJkx4l2lZPfYcXvkIwO9XhKZHorutftZ/
+	v875jmu6Qvsx1sKwVZUw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ofjU7-009zZ6-7z; Tue, 04 Oct 2022 15:05:27 +0000
-Received: from mail-lf1-x12a.google.com ([2a00:1450:4864:20::12a])
+	id 1ofjYH-00A0bj-9q; Tue, 04 Oct 2022 15:09:45 +0000
+Received: from mail-oa1-f49.google.com ([209.85.160.49])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ofjTx-009zVY-Jp
-	for linux-phy@lists.infradead.org; Tue, 04 Oct 2022 15:05:18 +0000
-Received: by mail-lf1-x12a.google.com with SMTP id s20so5881555lfi.11
-        for <linux-phy@lists.infradead.org>; Tue, 04 Oct 2022 08:05:14 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date;
-        bh=CWdX4tvEDe9KXAQIvWXUpR26N6THyFmklq+pYn7/wck=;
-        b=v9qAcpY/EulrMR7IHMzcNeWHI6LbF7pg8NXAg+ErSDmILTlVv9VuATHeiDFUuS0GDk
-         fMPUpg+ZIm2fvpOjwhU0jNrO51zTdX5Wo89TE4EpRBM2U6EglD08H2D49MIHAr+WLhko
-         QutFGm6gKSaXJOgqQqp0VLMjpvhTVkSYKRXOY7lsbEpK7hpvEMVYv/IOjeuYVy2lpDuy
-         RIbwA4QZi5UsdDLDWczQYuAqCNJVPlYdCGswtZoaf03Nol5+mrQy953CxoP1IFoIOrTU
-         nFaOMmcYVh/vGEvNaZPxeKoSDLmFz2Hx+xOXxbVYjjLs1Y6XZTdt5PUigU9+DBfhOe6G
-         ScPQ==
+	id 1ofjYD-00A0Xm-4v; Tue, 04 Oct 2022 15:09:42 +0000
+Received: by mail-oa1-f49.google.com with SMTP id 586e51a60fabf-1322fa1cf6fso9528556fac.6;
+        Tue, 04 Oct 2022 08:09:32 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date;
-        bh=CWdX4tvEDe9KXAQIvWXUpR26N6THyFmklq+pYn7/wck=;
-        b=b6x/pj0kdj9Zm/TZLxhNL9pAyHwo4vqfjXIxa04+NHu+Bcqd1Dci+3wXj+oXT2l4kN
-         1CdVb0Z0ovVvKmiq/e6NyYEUdHavGoxuIIlmU/T6o5J8Xrua+D6ubKMbCfmXinN/DkTk
-         QpG1aqXajsDYswLqgGQJct1W5j4Ship86QK9M/uH5Zzjj73R993EJe95MrGbpyWnaRVI
-         fGhZOcmg/eki2mrjTgRmjp3x0BMMs4M7VZx1StOaTKpxZISkgAKttkQ61//U59VR6MTk
-         gfInItdG0I33o99uo61jYjiODOhwQjaHIPO0LLVdN3mD12PtwCs5TRDXmfBy0ngo4g8u
-         nmPg==
-X-Gm-Message-State: ACrzQf3a/O/0+0zQ6gVFkK9t7IWjZqTAAML9av3Tax5C1LfzbmTSFWSa
-	Yz66EjYcUwli+QnX0kQOxjT1cA==
-X-Google-Smtp-Source: AMsMyM4AtZAJOWtGqNYNncGG28gDj+M6F6V0yMuWIAJhpHtFLCOUuhev79xS5vLvDH12H9Ljm6wesQ==
-X-Received: by 2002:a19:6909:0:b0:4a2:5d5a:2f49 with SMTP id e9-20020a196909000000b004a25d5a2f49mr430421lfc.66.1664895912921;
-        Tue, 04 Oct 2022 08:05:12 -0700 (PDT)
-Received: from [192.168.0.21] (78-11-189-27.static.ip.netia.com.pl. [78.11.189.27])
-        by smtp.gmail.com with ESMTPSA id a16-20020a19f810000000b00494643db68fsm1952030lff.81.2022.10.04.08.05.11
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 04 Oct 2022 08:05:12 -0700 (PDT)
-Message-ID: <49daae86-e922-9a17-ebed-2a33a5eeb18e@linaro.org>
-Date: Tue, 4 Oct 2022 17:05:11 +0200
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date;
+        bh=1/SfhmEZO2JzUCSYSQdFtcYRPEgPC0CoBH/8raGMDh8=;
+        b=W/2rFfXUAPwOsykmbk8k1PDlFlIn3HF4/xaT5wVfHG8hb4W4BdM7EHfM86NLgqUpJ5
+         kDXfF+eGpI6l/ntFplJ5qPadtPoyXUZlnbPaHC6PkOJft0tbt+75Ou66HJz/4QJBnyUZ
+         jRR8jad7D8LWOc1IPIrZeWD5BSWENLJd8xEC4q/1Q+w5HjQdMwQr0UNCAaAMRROIrF8k
+         VmzTQLWZOek7mziuar+JJP/YLRipE0Be0h4wtqI05ot7jALsueVJq5DBHUjv3LVs7FK7
+         3eMUKHDG9aYd56dGDtAG53jj+1tUSnEt6oPkWr80sZeU9VSaIudjXyUuS4x98fLybI9c
+         Kh6w==
+X-Gm-Message-State: ACrzQf2OXi5k94ICejSKQYmzI7Q29fWmQS3HQqWpV6KCiDakuQysYA0f
+	bSni6umXxAOFo1DwToYPNg==
+X-Google-Smtp-Source: AMsMyM7jLjnl+O35aTbkfKDjVHvR3//Sg2sceoBCi4M/ndmVZF8lzWetnP5LNWSYt4i5fyF+WtyZkA==
+X-Received: by 2002:a05:6870:b39e:b0:10d:8d5d:a9b with SMTP id w30-20020a056870b39e00b0010d8d5d0a9bmr133280oap.144.1664896171203;
+        Tue, 04 Oct 2022 08:09:31 -0700 (PDT)
+Received: from robh_at_kernel.org (66-90-144-107.dyn.grandenetworks.net. [66.90.144.107])
+        by smtp.gmail.com with ESMTPSA id r35-20020a056870582300b0011f22e74d5fsm3756563oap.20.2022.10.04.08.09.28
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 04 Oct 2022 08:09:30 -0700 (PDT)
+Received: (nullmailer pid 1507385 invoked by uid 1000);
+	Tue, 04 Oct 2022 15:09:29 -0000
+Date: Tue, 4 Oct 2022 10:09:29 -0500
+From: Rob Herring <robh@kernel.org>
+To: Frank Wunderlich <linux@fw-web.de>
+Cc: linux-rockchip@lists.infradead.org, Frank Wunderlich <frank-w@public-files.de>, Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Heiko Stuebner <heiko@sntech.de>, Philipp Zabel <p.zabel@pengutronix.de>, Yifeng Zhao <yifeng.zhao@rock-chips.com>, Johan Jonker <jbx6244@gmail.com>, Peter Geis <pgwipeout@gmail.com>, Simon Xue <xxm@rock-chips.com>, Liang Chen <cl@rock-chips.com>, Shawn Lin <shawn.lin@rock-chips.com>, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Subject: Re: [PATCH v5 1/5] dt-bindings: phy: rockchip: add PCIe v3 phy
+Message-ID: <20221004150929.GA1506199-robh@kernel.org>
+References: <20220825193836.54262-1-linux@fw-web.de>
+ <20220825193836.54262-2-linux@fw-web.de>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.3.0
-Subject: Re: [PATCH v1 17/17] drm/mediatek: Add mt8195-dpi support to drm_drv
-Content-Language: en-US
-To: Guillaume Ranquet <granquet@baylibre.com>,
- Michael Turquette <mturquette@baylibre.com>,
- Kishon Vijay Abraham I <kishon@ti.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, Vinod Koul <vkoul@kernel.org>,
- Stephen Boyd <sboyd@kernel.org>, David Airlie <airlied@linux.ie>,
- Rob Herring <robh+dt@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Daniel Vetter <daniel@ffwll.ch>, Chunfeng Yun <chunfeng.yun@mediatek.com>,
- CK Hu <ck.hu@mediatek.com>, Jitao shi <jitao.shi@mediatek.com>,
- Chun-Kuang Hu <chunkuang.hu@kernel.org>
-Cc: linux-mediatek@lists.infradead.org, dri-devel@lists.freedesktop.org,
- Pablo Sun <pablo.sun@mediatek.com>, linux-clk@vger.kernel.org,
- linux-kernel@vger.kernel.org, Mattijs Korpershoek
- <mkorpershoek@baylibre.com>, linux-arm-kernel@lists.infradead.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org
-References: <20220919-v1-0-4844816c9808@baylibre.com>
- <20220919-v1-17-4844816c9808@baylibre.com>
- <a0a3c427-c851-ae5d-4010-e94740bf9f6e@linaro.org>
- <CABnWg9s3N_Ua9g0S3x0uj8PN4FtOX6DO+zQcBzGFqoLTL1J24A@mail.gmail.com>
- <bc64b69d-3d65-f5ca-a688-2ad1a055ba4b@linaro.org>
- <CABnWg9sJFBAXi1bu_yHDppFOmg=H=G7QTn9Bzqkr-t7qm5vUFw@mail.gmail.com>
- <db1abf9d-ba40-f71c-0d37-c3912ac1bd8e@linaro.org>
- <CABnWg9vOHWpdLPAFdXAG3GNgsxpbzgh2gTq_tm72Tk2uR54LaQ@mail.gmail.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <CABnWg9vOHWpdLPAFdXAG3GNgsxpbzgh2gTq_tm72Tk2uR54LaQ@mail.gmail.com>
+Content-Disposition: inline
+In-Reply-To: <20220825193836.54262-2-linux@fw-web.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221004_080517_660889_2EAE83A0 
-X-CRM114-Status: GOOD (  22.28  )
+X-CRM114-CacheID: sfid-20221004_080941_219668_93514473 
+X-CRM114-Status: GOOD (  22.69  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -111,70 +78,75 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 04/10/2022 13:55, Guillaume Ranquet wrote:
->> No. You said what the code is doing. I think I understand this. You
->> still do not need more compatibles. Your sentence did not clarify it
->> because it did not answer at all to question "why". Why do you need it?
->>
->> Sorry, the change looks not correct.
->>
->> Best regards,
->> Krzysztof
->>
+On Thu, Aug 25, 2022 at 09:38:32PM +0200, Frank Wunderlich wrote:
+> From: Frank Wunderlich <frank-w@public-files.de>
 > 
-> I need a new compatible to adress the specifics of mt8195 in the mtk_dpi driver,
-> the change is in this series with:
-> [PATCH v1 16/17] drm/mediatek: dpi: Add mt8195 hdmi to DPI driver [1]
-
-But you do not have specifics of mt8195. I wrote it in the beginning.
-
+> Add a new binding file for Rockchip PCIe v3 phy driver.
 > 
-> I then need to add that compatible to the "list" here in mtk_drm_drv.
-
-No, you do not... I checked the driver and there is no single need... or
-convince me you need.
-
-> I don't see a way around this unless I rewrite the way mtk_drm_drv works?
-
-Why rewrite? You have all compatibles in place.
-
+> Signed-off-by: Frank Wunderlich <frank-w@public-files.de>
+> Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+> ---
+> v4:
+> - add reviewed-by
+> - remove minitems for clock-names as i have static list to fix error
+> - fix reg error by using 32-bit adressing in binding example
+> - change lane-map to u32 data-lanes
+> - tried to move data-lanes to phy-provider
+>   https://github.com/frank-w/dt-schema/blob/main/dtschema/schemas/phy/phy-provider.yaml#L17
+>   cloned and installed via pip install -e <local path>
+>   verified with pip show, but phy-privider seems not to be applied
 > 
-> Maybe if I declare a new compatible that is generic to all mediatek
-> dpi variants?
-
-You were asked to use fallback. Don't create some fake fallbacks. Use
-existing ones.
-
-> and have all the dts specify the node with both the generic dpi and
-> the specific compatible?
+> v3:
+> - drop quotes
+> - drop rk3588
+> - make clockcount fixed to 3
+> - full path for binding header file
+> - drop phy-mode and its header and add lane-map
 > 
-> dpi@xxx {
-> 	compatible = "mediatek,dpi", "mediatek,mt8195-dpi";
-
-I don't know what's this but certainly looks odd. Some wild-card
-compatible in front (not fallback) and none are documented.
-
-> 	...
-> }
+> v2:
+> dt-bindings: rename yaml for PCIe v3
+> rockchip-pcie3-phy.yaml => rockchip,pcie3-phy.yaml
 > 
-> Then I can "collapse" all the dpi related nodes in mtk_drm_drv under
-> "mediatek,dpi" ?
+> changes in pcie3 phy yaml
+> - change clock names to ordered const list
+> - extend pcie30-phymode description
+> - add phy-cells to required properties
+> - drop unevaluatedProperties
+> - example with 1 clock each line
+> - use default property instead of text describing it
+> - update license
+> ---
+>  .../bindings/phy/rockchip,pcie3-phy.yaml      | 80 +++++++++++++++++++
+>  1 file changed, 80 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/rockchip,pcie3-phy.yaml
 > 
-> I guess would have to do the change for all other components that are needed in
-> mtk_drm_drv (mmsys, aal, ccor, color, dither, dsc, gamma, mutex...).
-> 
-> That's the only trivial way I can think of implementing this with the
-> current status
-> of the mtk_drm stack.
-> 
-> Do you have any other ideas in mind?
+> diff --git a/Documentation/devicetree/bindings/phy/rockchip,pcie3-phy.yaml b/Documentation/devicetree/bindings/phy/rockchip,pcie3-phy.yaml
+> new file mode 100644
+> index 000000000000..9f2d8d2cc7a5
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/phy/rockchip,pcie3-phy.yaml
+> @@ -0,0 +1,80 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/phy/rockchip,pcie3-phy.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Rockchip PCIe v3 phy
+> +
+> +maintainers:
+> +  - Heiko Stuebner <heiko@sntech.de>
+> +
+> +properties:
+> +  compatible:
+> +    enum:
+> +      - rockchip,rk3568-pcie3-phy
 
-Use fallback of compatible device. That's the common pattern.
-Everywhere, Mediatek as well.
+The driver also has 'rockchip,rk3588-pcie3-phy'. Please send a fix 
+adding it here or removing from the driver. Are they not compatible with 
+each other?
 
-Best regards,
-Krzysztof
-
+Rob
 
 -- 
 linux-phy mailing list
