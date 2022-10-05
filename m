@@ -4,60 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7F854C433F5
-	for <linux-phy@archiver.kernel.org>; Wed,  5 Oct 2022 21:30:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6E075C433FE
+	for <linux-phy@archiver.kernel.org>; Wed,  5 Oct 2022 21:30:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
 	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QfBUX7w6MR7OsrIncb72WJDnRWAA0P69WZ8JamNz7Sg=; b=C5RczUrOhS2oR8
-	DT5H25Xs/dFJb0+5dataJNgc+3Aie9S9DhTXm9+JFgFrMjC+ZNwU2opWLcYtvp9GmghtfniOQ9y03
-	hM+jisRpfDQWOaiXkUGl+uezU1R5mjV3O0cYreVmQ549S8kIDFRwnlCdK1mHK89RXLvXWafLnKe11
-	0QhMfj7xLp9ApvpzxkqeJ6fxLqWJusquOr1UT3DG1DWs14/lFbuNPNa9vwmH8HnSccu3j6TRYYlOJ
-	mVT08Y6Jbp6yEFE10fArD9sXqdXXdfFBTBZ8J+eDbIqFCarXbg596jB7HL+2p67x5vZedugTBN4rf
-	e4kW0vy++6gdl6OHQGTw==;
+	List-Owner; bh=V9xIvIqO7h9REUP2IchaBX2fHBP7hMcP4kMFoKx6mg8=; b=gZLkkoaSGJDAVa
+	u1R2GcBUXIbCNFeYRAoTZZjZk3BUIB0/8PY3e1KfNFsncR72pFyKokMjsKjXbuHzJ0EGERwJGoysB
+	jmM5x/ZX/DptsSe1e0pw/B/pmrE0vMtt9rA8LQaS0HiN2sGC6HIhiR1bzXl/VIqvWFDHqnqJJzrps
+	MMuy0tVYQ2YZ5L2w90+UxYpyf+in555cMg06+WjLrLRCiyF2kB4rX44ORqwV1Kn7aHNiVvYKiHsy3
+	SNGOII1kt0Khl7SBHE8ZkwQtC+DR1SOTfCzwUy6zm55mLZULygrsdJjkp8bG+bbCBcUPMbRIecxO7
+	hFODqeMOgOYScZuighRA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ogByN-00G9Ed-No; Wed, 05 Oct 2022 21:30:35 +0000
-Received: from mail-qk1-x734.google.com ([2607:f8b0:4864:20::734])
+	id 1ogByO-00G9F1-SG; Wed, 05 Oct 2022 21:30:36 +0000
+Received: from mail-qt1-x82d.google.com ([2607:f8b0:4864:20::82d])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ogByK-00G9Cb-Oq
-	for linux-phy@lists.infradead.org; Wed, 05 Oct 2022 21:30:34 +0000
-Received: by mail-qk1-x734.google.com with SMTP id z30so1083062qkz.13
-        for <linux-phy@lists.infradead.org>; Wed, 05 Oct 2022 14:30:31 -0700 (PDT)
+	id 1ogByM-00G9Ds-Da
+	for linux-phy@lists.infradead.org; Wed, 05 Oct 2022 21:30:35 +0000
+Received: by mail-qt1-x82d.google.com with SMTP id cj27so5109qtb.7
+        for <linux-phy@lists.infradead.org>; Wed, 05 Oct 2022 14:30:33 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=gmail.com; s=20210112;
         h=references:in-reply-to:message-id:date:subject:cc:to:from:from:to
          :cc:subject:date;
-        bh=R2ZKUrFXgP6240cfRnrcVHGBE6FyMef2CoJJC1TNRaY=;
-        b=WQ5VZvdty0IFh7yA88+NVxUJ8Ljlwz9CnK+JUAg7YJdg0YQ8w56hb+ds4g3yPZHDew
-         rW5i68QTtSjxacyd6AVvcF5m8pPHx4fJs5iS9x9Shmd2oJgoIcHPpsyIaeLiwItrrm9u
-         nw40667OLgEpCFXO1tUGEXvwoXyXhB9tgdSr8iTcqu8XcY4kX3T5SRxNeLBrb9CVOblw
-         DmZOkyz7hUeLTeDHrYJwA4KN4apuFjnzGz/bScgNVnPJwaoHWqAUfb3E9caaqVQri/aj
-         qKMwBdmiRQCHhl447vtFA6qEz5w6GTBnqTjk6utOfqGyRVANOIkCCQf9/JnTJJlPfdrj
-         15Dw==
+        bh=JMIcP68+Fkm6QiK7bn2NZQ+WwlSpELUW7JSzlcBQXcE=;
+        b=RdlMc163f0DwQiYc58pXZZHCtKq17vcinyVQ5I3n1gtbL9aZrGWogdk9LB0JeE5STV
+         2t1voGI1U8lB6aEImQ0agWciSFUb4QEImZ6vwSY2aXnqhcdClH6xbIjVKYFICbU1dbTB
+         RHnacX7eI3DZoWGYVRMTQ/6wUQJsRF2YBp1+Y6B76FpzVBSCbxqdlCIAgE9XrPBsiGoI
+         LBwqWMZB49pLzXTrkwYn02e3HrxVrEe8BkTcs1WIeocuKG9HjQ6VQuVXXxzTY4owMnKy
+         MuJOFHJ1QbUnz3OIge9Y7O2N+05h7s+wWQoaF+k2XReDSmH/WpZaZUIyJ8x5p10xEHwG
+         vBEQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=references:in-reply-to:message-id:date:subject:cc:to:from
          :x-gm-message-state:from:to:cc:subject:date;
-        bh=R2ZKUrFXgP6240cfRnrcVHGBE6FyMef2CoJJC1TNRaY=;
-        b=13BVKpVulHnQTzBf9e0IaVMek6UVnQMVSwAk6O5mogZpERYJBEoAkM4WYLQenk3F5R
-         vFoR1lvKoA8OvbqizbZbSnD1yB0ZDW9I5nUQuAZM5+oiZV9HletkqRnyNahsSA6QOYqT
-         gIRYCg2OExQs3cZOGTpdag0uXpbA5Gdd1tudNIsVWyObHrfm7qdTIm1MVBFtzi2efAuJ
-         oI9c5FxR1JwK8zuS4EMXOzILZ3UDhC46EtYyBIYuI5Shnkx/Zid0JGw/9zoL+3ayDikK
-         pPlIxMneNBZITVghH3lJGGwm0HqPKANfDJoL3jThO3t6s5gScl0QkTSDJtTJplGly2TT
-         /zsA==
-X-Gm-Message-State: ACrzQf2CwOzqD3HlXLBfddsEQ+vFledQbkKpfIVZHUA9rMStJ4IwJfDK
-	bySZ6VLarlRZu2i7Eddlbec=
-X-Google-Smtp-Source: AMsMyM6nSdy12cyHcn97o5dKTimboFCTm3ypGKBPAnCTOaztKz0d2e1saOFfBwI1swn8Q78Ic8BlHA==
-X-Received: by 2002:a37:5a04:0:b0:6e0:a338:5f12 with SMTP id o4-20020a375a04000000b006e0a3385f12mr1120701qkb.420.1665005430453;
-        Wed, 05 Oct 2022 14:30:30 -0700 (PDT)
+        bh=JMIcP68+Fkm6QiK7bn2NZQ+WwlSpELUW7JSzlcBQXcE=;
+        b=tu3JQeTarHsJB+JJVPeWWMPl9IyDDn1GBPGoQq1V8gJiO15dtV9Mx9mZSw4vezjeZd
+         vJvGcFrKCy+PYxqTXU0lbvJloOJlsoBNKg1e2Mo7paY5qqTBboU/JG1q1KbX3ESBSHU7
+         Ombxy+/ehWe+bI+WlmiiQ1yaQS6bAhEqpZxZQb0QfoR9sz5JQt9jPtgGJf5ZoIAIHaiG
+         P8Enz+jbeHZ9XeBA6WFkDhiVeUs0FbIRrxfpo9TPkrHMdRbPC6FzW77ygWWVjZ9zo07t
+         HMSo75ApO3afmtUH9vZj0k0YxZpJiW6dAWVgY26tsJ9GTtPhv55F4suRPgIDguGFlE2c
+         7IiQ==
+X-Gm-Message-State: ACrzQf2oBl36JgVULNAw+KJJjcrf/J0H+f3lV0aEtok97WohzHMytEip
+	tvtj+5Ct/0uWrIumKsI8Ojc=
+X-Google-Smtp-Source: AMsMyM7yBI/1soiutIAnpBUkd2ed6zqRgJOIjL8DjGpPDQ+u2ATre1Q0dxIKJX/13+4NsRLpTj30kg==
+X-Received: by 2002:a05:622a:248:b0:388:60a2:5eed with SMTP id c8-20020a05622a024800b0038860a25eedmr1200614qtx.296.1665005432904;
+        Wed, 05 Oct 2022 14:30:32 -0700 (PDT)
 Received: from stbirv-lnx-2.igp.broadcom.net ([192.19.223.252])
-        by smtp.gmail.com with ESMTPSA id s22-20020a05620a255600b006b929a56a2bsm20058566qko.3.2022.10.05.14.30.29
+        by smtp.gmail.com with ESMTPSA id s22-20020a05620a255600b006b929a56a2bsm20058566qko.3.2022.10.05.14.30.31
         (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
-        Wed, 05 Oct 2022 14:30:30 -0700 (PDT)
+        Wed, 05 Oct 2022 14:30:32 -0700 (PDT)
 From: justinpopo6@gmail.com
 To: alcooperx@gmail.com,
 	kishon@ti.com,
@@ -67,15 +67,15 @@ To: alcooperx@gmail.com,
 	linux-phy@lists.infradead.org
 Cc: bcm-kernel-feedback-list@broadcom.com,
 	Justin Chen <justinpopo6@gmail.com>
-Subject: [PATCH 3/6] phy: usb: Migrate to BIT and BITMASK macros
-Date: Wed,  5 Oct 2022 14:30:15 -0700
-Message-Id: <1665005418-15807-4-git-send-email-justinpopo6@gmail.com>
+Subject: [PATCH 4/6] phy: usb: Disable phy auto-suspend
+Date: Wed,  5 Oct 2022 14:30:16 -0700
+Message-Id: <1665005418-15807-5-git-send-email-justinpopo6@gmail.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1665005418-15807-1-git-send-email-justinpopo6@gmail.com>
 References: <1665005418-15807-1-git-send-email-justinpopo6@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221005_143032_839647_0F008F60 
-X-CRM114-Status: GOOD (  10.69  )
+X-CRM114-CacheID: sfid-20221005_143034_475021_879EEBEF 
+X-CRM114-Status: GOOD (  11.45  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,225 +95,41 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Justin Chen <justinpopo6@gmail.com>
 
-Using BIT and BITMASK macros makes it much easier to read and make
-modifications. Also reordered some constants to be in numerical order.
+The BDC block requires the PLL lock in order to grab the PLL clock.
+The phy auto-suspend feature turns off the phy when nothing is attached
+leading to the PLL to not lock. This leads the BDC block to grab the AUX
+clock instead of the PLL clock. This is not ideal, so lets turn this
+feature off.
 
 Signed-off-by: Justin Chen <justinpopo6@gmail.com>
 ---
- drivers/phy/broadcom/phy-brcm-usb-init-synopsys.c | 68 +++++++++----------
- drivers/phy/broadcom/phy-brcm-usb-init.c          | 80 +++++++++++------------
- 2 files changed, 74 insertions(+), 74 deletions(-)
+ drivers/phy/broadcom/phy-brcm-usb-init-synopsys.c | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
 diff --git a/drivers/phy/broadcom/phy-brcm-usb-init-synopsys.c b/drivers/phy/broadcom/phy-brcm-usb-init-synopsys.c
-index 430a8ae..26e9585e 100644
+index 26e9585e..6a4d478 100644
 --- a/drivers/phy/broadcom/phy-brcm-usb-init-synopsys.c
 +++ b/drivers/phy/broadcom/phy-brcm-usb-init-synopsys.c
-@@ -18,14 +18,14 @@
- #define PIARBCTL_CAM			0x00
- #define PIARBCTL_SPLITTER		0x04
- #define PIARBCTL_MISC			0x08
--#define   PIARBCTL_MISC_SECURE_MASK			0x80000000
--#define   PIARBCTL_MISC_USB_SELECT_MASK			0x40000000
--#define   PIARBCTL_MISC_USB_4G_SDRAM_MASK		0x20000000
--#define   PIARBCTL_MISC_USB_PRIORITY_MASK		0x000f0000
--#define   PIARBCTL_MISC_USB_MEM_PAGE_MASK		0x0000f000
--#define   PIARBCTL_MISC_CAM1_MEM_PAGE_MASK		0x00000f00
--#define   PIARBCTL_MISC_CAM0_MEM_PAGE_MASK		0x000000f0
--#define   PIARBCTL_MISC_SATA_PRIORITY_MASK		0x0000000f
-+#define   PIARBCTL_MISC_SATA_PRIORITY_MASK		GENMASK(3, 0)
-+#define   PIARBCTL_MISC_CAM0_MEM_PAGE_MASK		GENMASK(7, 4)
-+#define   PIARBCTL_MISC_CAM1_MEM_PAGE_MASK		GENMASK(11, 8)
-+#define   PIARBCTL_MISC_USB_MEM_PAGE_MASK		GENMASK(15, 12)
-+#define   PIARBCTL_MISC_USB_PRIORITY_MASK		GENMASK(19, 16)
-+#define   PIARBCTL_MISC_USB_4G_SDRAM_MASK		BIT(29)
-+#define   PIARBCTL_MISC_USB_SELECT_MASK			BIT(30)
-+#define   PIARBCTL_MISC_SECURE_MASK			BIT(31)
- 
- #define PIARBCTL_MISC_USB_ONLY_MASK		\
- 	(PIARBCTL_MISC_USB_SELECT_MASK |	\
-@@ -35,46 +35,46 @@
- 
- /* Register definitions for the USB CTRL block */
- #define USB_CTRL_SETUP			0x00
--#define   USB_CTRL_SETUP_STRAP_IPP_SEL_MASK		0x02000000
--#define   USB_CTRL_SETUP_SCB2_EN_MASK			0x00008000
--#define   USB_CTRL_SETUP_tca_drv_sel_MASK		0x01000000
--#define   USB_CTRL_SETUP_SCB1_EN_MASK			0x00004000
--#define   USB_CTRL_SETUP_SOFT_SHUTDOWN_MASK		0x00000200
--#define   USB_CTRL_SETUP_IPP_MASK			0x00000020
--#define   USB_CTRL_SETUP_IOC_MASK			0x00000010
-+#define   USB_CTRL_SETUP_IOC_MASK			BIT(4)
-+#define   USB_CTRL_SETUP_IPP_MASK			BIT(5)
-+#define   USB_CTRL_SETUP_SOFT_SHUTDOWN_MASK		BIT(9)
-+#define   USB_CTRL_SETUP_SCB1_EN_MASK			BIT(14)
-+#define   USB_CTRL_SETUP_SCB2_EN_MASK			BIT(15)
-+#define   USB_CTRL_SETUP_tca_drv_sel_MASK		BIT(24)
-+#define   USB_CTRL_SETUP_STRAP_IPP_SEL_MASK		BIT(25)
- #define USB_CTRL_USB_PM			0x04
--#define   USB_CTRL_USB_PM_USB_PWRDN_MASK		0x80000000
--#define   USB_CTRL_USB_PM_SOFT_RESET_MASK		0x40000000
--#define   USB_CTRL_USB_PM_BDC_SOFT_RESETB_MASK		0x00800000
--#define   USB_CTRL_USB_PM_XHC_SOFT_RESETB_MASK		0x00400000
--#define   USB_CTRL_USB_PM_XHC_PME_EN_MASK		0x00000010
--#define   USB_CTRL_USB_PM_XHC_S2_CLK_SWITCH_EN_MASK	0x00000008
-+#define   USB_CTRL_USB_PM_XHC_S2_CLK_SWITCH_EN_MASK	BIT(3)
-+#define   USB_CTRL_USB_PM_XHC_PME_EN_MASK		BIT(4)
-+#define   USB_CTRL_USB_PM_XHC_SOFT_RESETB_MASK		BIT(22)
-+#define   USB_CTRL_USB_PM_BDC_SOFT_RESETB_MASK		BIT(23)
-+#define   USB_CTRL_USB_PM_SOFT_RESET_MASK		BIT(30)
-+#define   USB_CTRL_USB_PM_USB_PWRDN_MASK		BIT(31)
- #define USB_CTRL_USB_PM_STATUS		0x08
- #define USB_CTRL_USB_DEVICE_CTL1	0x10
--#define   USB_CTRL_USB_DEVICE_CTL1_PORT_MODE_MASK	0x00000003
-+#define   USB_CTRL_USB_DEVICE_CTL1_PORT_MODE_MASK	GENMASK(1, 0)
- #define USB_CTRL_TEST_PORT_CTL		0x30
--#define   USB_CTRL_TEST_PORT_CTL_TPOUT_SEL_MASK	0x000000ff
-+#define   USB_CTRL_TEST_PORT_CTL_TPOUT_SEL_MASK		GENMASK(7, 0)
- #define   USB_CTRL_TEST_PORT_CTL_TPOUT_SEL_PME_GEN_MASK	0x0000002e
- #define USB_CTRL_TP_DIAG1		0x34
--#define   USB_CTLR_TP_DIAG1_wake_MASK	0x00000002
-+#define   USB_CTLR_TP_DIAG1_wake_MASK			BIT(1)
- #define USB_CTRL_CTLR_CSHCR		0x50
--#define   USB_CTRL_CTLR_CSHCR_ctl_pme_en_MASK	0x00040000
-+#define   USB_CTRL_CTLR_CSHCR_ctl_pme_en_MASK		BIT(18)
+@@ -62,6 +62,7 @@
  
  /* Register definitions for the USB_PHY block in 7211b0 */
  #define USB_PHY_PLL_CTL			0x00
--#define   USB_PHY_PLL_CTL_PLL_RESETB_MASK		0x40000000
-+#define   USB_PHY_PLL_CTL_PLL_RESETB_MASK		BIT(30)
++#define   USB_PHY_PLL_CTL_PLL_SUSPEND_MASK		BIT(27)
+ #define   USB_PHY_PLL_CTL_PLL_RESETB_MASK		BIT(30)
  #define USB_PHY_PLL_LDO_CTL		0x08
--#define   USB_PHY_PLL_LDO_CTL_AFE_CORERDY_MASK		0x00000004
--#define   USB_PHY_PLL_LDO_CTL_AFE_LDO_PWRDWNB_MASK	0x00000002
--#define   USB_PHY_PLL_LDO_CTL_AFE_BG_PWRDWNB_MASK	0x00000001
-+#define   USB_PHY_PLL_LDO_CTL_AFE_BG_PWRDWNB_MASK	BIT(0)
-+#define   USB_PHY_PLL_LDO_CTL_AFE_LDO_PWRDWNB_MASK	BIT(1)
-+#define   USB_PHY_PLL_LDO_CTL_AFE_CORERDY_MASK		BIT(2)
- #define USB_PHY_UTMI_CTL_1		0x04
--#define   USB_PHY_UTMI_CTL_1_POWER_UP_FSM_EN_MASK	0x00000800
--#define   USB_PHY_UTMI_CTL_1_PHY_MODE_MASK		0x0000000c
-+#define   USB_PHY_UTMI_CTL_1_PHY_MODE_MASK		GENMASK(3, 2)
- #define   USB_PHY_UTMI_CTL_1_PHY_MODE_SHIFT		2
-+#define   USB_PHY_UTMI_CTL_1_POWER_UP_FSM_EN_MASK	BIT(11)
- #define USB_PHY_IDDQ			0x1c
--#define   USB_PHY_IDDQ_phy_iddq_MASK			0x00000001
-+#define   USB_PHY_IDDQ_phy_iddq_MASK			BIT(0)
- #define USB_PHY_STATUS			0x20
--#define   USB_PHY_STATUS_pll_lock_MASK			0x00000001
-+#define   USB_PHY_STATUS_pll_lock_MASK			BIT(0)
+ #define   USB_PHY_PLL_LDO_CTL_AFE_BG_PWRDWNB_MASK	BIT(0)
+@@ -259,6 +260,11 @@ static void usb_init_common_7211b0(struct brcm_usb_init_params *params)
+ 		brcm_usb_writel(reg, usb_phy + USB_PHY_UTMI_CTL_1);
+ 	}
  
- /* Register definitions for the MDIO registers in the DWC2 block of
-  * the 7211b0.
-@@ -86,7 +86,7 @@
- 
- /* Register definitions for the BDC EC block in 7211b0 */
- #define BDC_EC_AXIRDA			0x0c
--#define   BDC_EC_AXIRDA_RTS_MASK			0xf0000000
-+#define   BDC_EC_AXIRDA_RTS_MASK			GENMASK(31, 28)
- #define   BDC_EC_AXIRDA_RTS_SHIFT			28
- 
- 
-diff --git a/drivers/phy/broadcom/phy-brcm-usb-init.c b/drivers/phy/broadcom/phy-brcm-usb-init.c
-index a7f8b3d..a1ca833 100644
---- a/drivers/phy/broadcom/phy-brcm-usb-init.c
-+++ b/drivers/phy/broadcom/phy-brcm-usb-init.c
-@@ -21,57 +21,57 @@
- 
- /* Register definitions for the USB CTRL block */
- #define USB_CTRL_SETUP			0x00
--#define   USB_CTRL_SETUP_IOC_MASK			0x00000010
--#define   USB_CTRL_SETUP_IPP_MASK			0x00000020
--#define   USB_CTRL_SETUP_BABO_MASK			0x00000001
--#define   USB_CTRL_SETUP_FNHW_MASK			0x00000002
--#define   USB_CTRL_SETUP_FNBO_MASK			0x00000004
--#define   USB_CTRL_SETUP_WABO_MASK			0x00000008
--#define   USB_CTRL_SETUP_SCB_CLIENT_SWAP_MASK		0x00002000 /* option */
--#define   USB_CTRL_SETUP_SCB1_EN_MASK			0x00004000 /* option */
--#define   USB_CTRL_SETUP_SCB2_EN_MASK			0x00008000 /* option */
--#define   USB_CTRL_SETUP_SS_EHCI64BIT_EN_MASK		0X00020000 /* option */
--#define   USB_CTRL_SETUP_SS_EHCI64BIT_EN_VAR_MASK	0x00010000 /* option */
--#define   USB_CTRL_SETUP_STRAP_IPP_SEL_MASK		0x02000000 /* option */
--#define   USB_CTRL_SETUP_CC_DRD_MODE_ENABLE_MASK	0x04000000 /* option */
--#define   USB_CTRL_SETUP_STRAP_CC_DRD_MODE_ENABLE_SEL_MASK 0x08000000 /* opt */
--#define   USB_CTRL_SETUP_OC3_DISABLE_MASK		0xc0000000 /* option */
-+#define   USB_CTRL_SETUP_BABO_MASK			BIT(0)
-+#define   USB_CTRL_SETUP_FNHW_MASK			BIT(1)
-+#define   USB_CTRL_SETUP_FNBO_MASK			BIT(2)
-+#define   USB_CTRL_SETUP_WABO_MASK			BIT(3)
-+#define   USB_CTRL_SETUP_IOC_MASK			BIT(4)
-+#define   USB_CTRL_SETUP_IPP_MASK			BIT(5)
-+#define   USB_CTRL_SETUP_SCB_CLIENT_SWAP_MASK		BIT(13) /* option */
-+#define   USB_CTRL_SETUP_SCB1_EN_MASK			BIT(14) /* option */
-+#define   USB_CTRL_SETUP_SCB2_EN_MASK			BIT(15) /* option */
-+#define   USB_CTRL_SETUP_SS_EHCI64BIT_EN_MASK		BIT(17) /* option */
-+#define   USB_CTRL_SETUP_SS_EHCI64BIT_EN_VAR_MASK	BIT(16) /* option */
-+#define   USB_CTRL_SETUP_STRAP_IPP_SEL_MASK		BIT(25) /* option */
-+#define   USB_CTRL_SETUP_CC_DRD_MODE_ENABLE_MASK	BIT(26) /* option */
-+#define   USB_CTRL_SETUP_STRAP_CC_DRD_MODE_ENABLE_SEL_MASK BIT(27) /* opt */
-+#define   USB_CTRL_SETUP_OC3_DISABLE_MASK		GENMASK(31, 30) /* option */
- #define USB_CTRL_PLL_CTL		0x04
--#define   USB_CTRL_PLL_CTL_PLL_SUSPEND_EN_MASK		0x08000000
--#define   USB_CTRL_PLL_CTL_PLL_RESETB_MASK		0x40000000
--#define   USB_CTRL_PLL_CTL_PLL_IDDQ_PWRDN_MASK		0x80000000 /* option */
-+#define   USB_CTRL_PLL_CTL_PLL_SUSPEND_EN_MASK		BIT(27)
-+#define   USB_CTRL_PLL_CTL_PLL_RESETB_MASK		BIT(30)
-+#define   USB_CTRL_PLL_CTL_PLL_IDDQ_PWRDN_MASK		BIT(31) /* option */
- #define USB_CTRL_EBRIDGE		0x0c
--#define   USB_CTRL_EBRIDGE_ESTOP_SCB_REQ_MASK		0x00020000 /* option */
--#define   USB_CTRL_EBRIDGE_EBR_SCB_SIZE_MASK		0x00000f80 /* option */
-+#define   USB_CTRL_EBRIDGE_EBR_SCB_SIZE_MASK		GENMASK(11, 7) /* option */
-+#define   USB_CTRL_EBRIDGE_ESTOP_SCB_REQ_MASK		BIT(17) /* option */
- #define USB_CTRL_OBRIDGE		0x10
--#define   USB_CTRL_OBRIDGE_LS_KEEP_ALIVE_MASK		0x08000000
-+#define   USB_CTRL_OBRIDGE_LS_KEEP_ALIVE_MASK		BIT(27)
- #define USB_CTRL_MDIO			0x14
- #define USB_CTRL_MDIO2			0x18
- #define USB_CTRL_UTMI_CTL_1		0x2c
--#define   USB_CTRL_UTMI_CTL_1_POWER_UP_FSM_EN_MASK	0x00000800
--#define   USB_CTRL_UTMI_CTL_1_POWER_UP_FSM_EN_P1_MASK	0x08000000
-+#define   USB_CTRL_UTMI_CTL_1_POWER_UP_FSM_EN_MASK	BIT(11)
-+#define   USB_CTRL_UTMI_CTL_1_POWER_UP_FSM_EN_P1_MASK	BIT(27)
- #define USB_CTRL_USB_PM			0x34
--#define   USB_CTRL_USB_PM_BDC_SOFT_RESETB_MASK		0x00800000 /* option */
--#define   USB_CTRL_USB_PM_XHC_SOFT_RESETB_MASK		0x00400000 /* option */
--#define   USB_CTRL_USB_PM_XHC_SOFT_RESETB_VAR_MASK	0x40000000 /* option */
--#define   USB_CTRL_USB_PM_USB_PWRDN_MASK		0x80000000 /* option */
--#define   USB_CTRL_USB_PM_SOFT_RESET_MASK		0x40000000 /* option */
--#define   USB_CTRL_USB_PM_USB20_HC_RESETB_MASK		0x30000000 /* option */
--#define   USB_CTRL_USB_PM_USB20_HC_RESETB_VAR_MASK	0x00300000 /* option */
--#define   USB_CTRL_USB_PM_RMTWKUP_EN_MASK		0x00000001
-+#define   USB_CTRL_USB_PM_RMTWKUP_EN_MASK		BIT(0)
-+#define   USB_CTRL_USB_PM_USB20_HC_RESETB_VAR_MASK	GENMASK(21, 20) /* option */
-+#define   USB_CTRL_USB_PM_XHC_SOFT_RESETB_MASK		BIT(22) /* option */
-+#define   USB_CTRL_USB_PM_BDC_SOFT_RESETB_MASK		BIT(23) /* option */
-+#define   USB_CTRL_USB_PM_USB20_HC_RESETB_MASK		GENMASK(29, 28) /* option */
-+#define   USB_CTRL_USB_PM_XHC_SOFT_RESETB_VAR_MASK	BIT(30) /* option */
-+#define   USB_CTRL_USB_PM_SOFT_RESET_MASK		BIT(30) /* option */
-+#define   USB_CTRL_USB_PM_USB_PWRDN_MASK		BIT(31) /* option */
- #define USB_CTRL_USB_PM_STATUS		0x38
- #define USB_CTRL_USB30_CTL1		0x60
--#define   USB_CTRL_USB30_CTL1_PHY3_PLL_SEQ_START_MASK	0x00000010
--#define   USB_CTRL_USB30_CTL1_PHY3_RESETB_MASK		0x00010000
--#define   USB_CTRL_USB30_CTL1_XHC_SOFT_RESETB_MASK	0x00020000 /* option */
--#define   USB_CTRL_USB30_CTL1_USB3_IOC_MASK		0x10000000 /* option */
--#define   USB_CTRL_USB30_CTL1_USB3_IPP_MASK		0x20000000 /* option */
-+#define   USB_CTRL_USB30_CTL1_PHY3_PLL_SEQ_START_MASK	BIT(4)
-+#define   USB_CTRL_USB30_CTL1_PHY3_RESETB_MASK		BIT(16)
-+#define   USB_CTRL_USB30_CTL1_XHC_SOFT_RESETB_MASK	BIT(17) /* option */
-+#define   USB_CTRL_USB30_CTL1_USB3_IOC_MASK		BIT(28) /* option */
-+#define   USB_CTRL_USB30_CTL1_USB3_IPP_MASK		BIT(29) /* option */
- #define USB_CTRL_USB30_PCTL		0x70
--#define   USB_CTRL_USB30_PCTL_PHY3_SOFT_RESETB_MASK	0x00000002
--#define   USB_CTRL_USB30_PCTL_PHY3_IDDQ_OVERRIDE_MASK	0x00008000
--#define   USB_CTRL_USB30_PCTL_PHY3_SOFT_RESETB_P1_MASK	0x00020000
-+#define   USB_CTRL_USB30_PCTL_PHY3_SOFT_RESETB_MASK	BIT(1)
-+#define   USB_CTRL_USB30_PCTL_PHY3_IDDQ_OVERRIDE_MASK	BIT(15)
-+#define   USB_CTRL_USB30_PCTL_PHY3_SOFT_RESETB_P1_MASK	BIT(17)
- #define USB_CTRL_USB_DEVICE_CTL1	0x90
--#define   USB_CTRL_USB_DEVICE_CTL1_PORT_MODE_MASK	0x00000003 /* option */
-+#define   USB_CTRL_USB_DEVICE_CTL1_PORT_MODE_MASK	GENMASK(1, 0) /* option */
- 
- /* Register definitions for the XHCI EC block */
- #define USB_XHCI_EC_IRAADR 0x658
++	/* Disable PLL auto suspend */
++	reg = brcm_usb_readl(usb_phy + USB_PHY_PLL_CTL);
++	reg |= USB_PHY_PLL_CTL_PLL_SUSPEND_MASK;
++	brcm_usb_writel(reg, usb_phy + USB_PHY_PLL_CTL);
++
+ 	/* Init the PHY */
+ 	reg = USB_PHY_PLL_LDO_CTL_AFE_CORERDY_MASK |
+ 		USB_PHY_PLL_LDO_CTL_AFE_LDO_PWRDWNB_MASK |
 -- 
 2.7.4
 
