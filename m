@@ -4,99 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 29D72C433F5
-	for <linux-phy@archiver.kernel.org>; Wed,  5 Oct 2022 14:53:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A54B0C433F5
+	for <linux-phy@archiver.kernel.org>; Wed,  5 Oct 2022 16:25:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date
+	:From:In-Reply-To:References:MIME-Version:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xuTRestvfCfSRwN+c3+7UZgZyGZoaoWKE8Ov+Y7xLzs=; b=XMA0wtrWYEdzxb
-	7fVaHYbY2DSXf2fCnK3xxx9v8N7UC12c6zeQcAd22iJZgVRL38PjkOgjxUSivGJnyKCjqomXfWt4B
-	W4MUM1ztmmrVdbvuPJkS8as7ZqIgnThU9wSEUSt3r2mDSqHzGdzigER5gQzQfDRIFe+zwA+hYg+W1
-	Rd6bHgAsdVn8dgDwwmwFfOmxcZ7CmZDy0i5VbVNm1UrpBtgxZDtUInlw7FNW6n27Ic2GmHs7N0OE+
-	QYZq/+AB3Hl+oX4l2Ng44m9erQQM1g0FYhje51twBlHEC65U9R0s6iRLzFvy/v6h0d4VcDZP5hg2o
-	yT251TUguF2QFnI/cqqA==;
+	List-Owner; bh=BiMb6M54Y21O2LEmZxTM7HqaUKpv4ZNdCMDqAtlAxhY=; b=Mb/VYQ0exzsVzp
+	U+dS/NZa4yhVrVPtkg6D9dzaKYQB7kB8Inus/3UQg3+fk231TTDVMK8UmjBKjHLPAfBqjQIIIVX46
+	GGXMRT3oxGtuw08HbvPdcilUyKoCS46DqUPmgWEa0+jc/YI/On2kv9wAZljqGbPpjl7cBRA5QT6YA
+	mXjtP1Yz2U+aOuf+KN670zNTEOQ62U9ixGtEvQn1n9dj/5IZDXXeDYNLehPCPG+hnqo/DZfQBmmOM
+	slmLrtrLSU62AUKzeph4d3cVPxD/XxMAu6aHAWi48L6dJL670yZZRz2/T/mh1JYQF+QeidXh54HcT
+	6yiyL3o7HYall4bxtVpg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1og5mW-00EgZG-Ia; Wed, 05 Oct 2022 14:53:56 +0000
-Received: from mail-lj1-x233.google.com ([2a00:1450:4864:20::233])
+	id 1og7DX-00F6yu-FZ; Wed, 05 Oct 2022 16:25:55 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1og5mT-00EgYC-TI
-	for linux-phy@lists.infradead.org; Wed, 05 Oct 2022 14:53:55 +0000
-Received: by mail-lj1-x233.google.com with SMTP id bs18so17406234ljb.1
-        for <linux-phy@lists.infradead.org>; Wed, 05 Oct 2022 07:53:52 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date;
-        bh=gRO3O8xi78oTZptPglDpaTcSvMIXolMC3hbGjTWLEkE=;
-        b=rkd0hforclQhcWpTHlD5y8YCglbsV1/nuc3zv9uCelABf1vBJ1LqFZ4I+qy4C98y/D
-         wYR5H7xXkWZjWIZFtIW0tlS0NDcrkm2c3kuUcNg0JXqBsjJ4CSDL8WijhX1lDrseh8i/
-         W9fWE4EsOuWnLondke0Ky8FJZCOoFu7LZCM7otnHxNRafjATWM8gGK4mqhPVuQoZnvgs
-         mq2nbNDqwHfdSaakOwFlKOdhqNx0X+4JzmoAeBZjE7fb0oITN3Z+TPhnozzalJTjHvYF
-         7qKGHcFjEAWhz3zaO2h80PDy4pTX1QoXrQdUodADI4fo0/KCLiHAybrIX10rDpQERn52
-         GGGg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date;
-        bh=gRO3O8xi78oTZptPglDpaTcSvMIXolMC3hbGjTWLEkE=;
-        b=iL8O5zRaz3j6eWtW+KNOdVKRR07CYnftFrSG5WthK4jgJqUvj+8WXZwERkQ05ocRSG
-         hMM+7+Oojjtgw8TlUfC3mZAZ2+MNe6ZG5ADfiYyjHxA1BOmtr7UjnEfj2PvrO+zNK0cn
-         bMt/Pf7ZtabgsQG7hcMt3K6Xao7Q9VMevhM7zAfpFrGYRbWhJVvjHjVKgChc4cG+Kz/N
-         BTe0oLFnTTgAtFvczJ2O7ho+3qYKvJNS+GN174x1ehW5+qXrgtPW0BBOdESTeEPMjJfK
-         h7BqZNWjEOCMtRjgjNCf3K/SlvgkP/rGqJMJKposMQG6mG6BwWtMSXNrfM4ZWuC/ZH+p
-         cR3Q==
-X-Gm-Message-State: ACrzQf27cSS3p5sBp0HJ1Vvr1SFtHQjbjcs3cwrUOFdZnKhbJQwqD7ih
-	IDO2XqmY+zuiWYDUpDGPskOplw==
-X-Google-Smtp-Source: AMsMyM60sctRdKk2qXd9pHiqWJZhc+vjTpzAps80DCC6YisbGJKbNLJWVROzlZaDH/ZO0THjDUZAjQ==
-X-Received: by 2002:a2e:9649:0:b0:26d:e740:ea5 with SMTP id z9-20020a2e9649000000b0026de7400ea5mr5117ljh.363.1664981631600;
-        Wed, 05 Oct 2022 07:53:51 -0700 (PDT)
-Received: from [192.168.0.21] (78-11-189-27.static.ip.netia.com.pl. [78.11.189.27])
-        by smtp.gmail.com with ESMTPSA id b24-20020a05651c033800b0026dce0a5ca9sm1333111ljp.70.2022.10.05.07.53.50
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 05 Oct 2022 07:53:51 -0700 (PDT)
-Message-ID: <b628a3de-98a0-fa55-57d1-cd375fc8d4e4@linaro.org>
-Date: Wed, 5 Oct 2022 16:53:50 +0200
+	id 1og6yw-00F2tT-Mf; Wed, 05 Oct 2022 16:10:52 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 80C4A6175A;
+	Wed,  5 Oct 2022 16:10:46 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 69966C43144;
+	Wed,  5 Oct 2022 16:10:45 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1664986245;
+	bh=2kAcxYh/aDNzXrxp4mtWajIo28uI6uHs4/Lk0YeAACs=;
+	h=References:In-Reply-To:Reply-To:From:Date:Subject:To:Cc:From;
+	b=oATKaZ93ZEoYuSpBeoQ4oPNBMYIVBiss066ImimQvT2C3chmDp1w8+KMhcesaONbF
+	 nsFGIxkTqHzGT3EsZTtwMg8DUnch7YUdgoOPYK/qj/+1qsj7IZg5JupsHJiXxJA5GK
+	 D+gyKwwFd5qKjVYoavo4bZz/IKHyTBXBNUfTQDvY0b9Om8JwFFf25OJmERaBk1jMXF
+	 gD5oacXpyogd0H8hyHKyMpbrpkA2QuQT1zSKW8jIocKLkImLkkpgedN7QwJ+yLsfOy
+	 KhpIWhssaQ/NCeiuQVpolxTvuUW9p8oGpSQ3+Vo982Mxm15wboxXO6h3da+i7wc2fW
+	 xmcAB1q5qDDHg==
+Received: by mail-wr1-f50.google.com with SMTP id u10so26544084wrq.2;
+        Wed, 05 Oct 2022 09:10:45 -0700 (PDT)
+X-Gm-Message-State: ACrzQf3KlK6X40spH9CnIetr3+W9yBnVef+LrvNuK+N+IJrkFH8uF3eR
+	zamd87hbmW2XIKeKBdeDmGTrmOhvyiM++8IJtJ0=
+X-Google-Smtp-Source: AMsMyM7uvd/Y7yJn8mca9vBdHt6k+1Qqil9T1D/MPy/es5QUUYqMnoFlEATJ/1BSFU9T8qfAdzLVLvWKR+5I+O6j2I8=
+X-Received: by 2002:a5d:59af:0:b0:22e:32be:60f1 with SMTP id
+ p15-20020a5d59af000000b0022e32be60f1mr310576wrr.81.1664986243596; Wed, 05 Oct
+ 2022 09:10:43 -0700 (PDT)
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.3.1
-Subject: Re: [PATCH v1 17/17] drm/mediatek: Add mt8195-dpi support to drm_drv
-Content-Language: en-US
-To: Guillaume Ranquet <granquet@baylibre.com>,
- Chun-Kuang Hu <chunkuang.hu@kernel.org>,
- Michael Turquette <mturquette@baylibre.com>,
- Kishon Vijay Abraham I <kishon@ti.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, Vinod Koul <vkoul@kernel.org>,
- Stephen Boyd <sboyd@kernel.org>, David Airlie <airlied@linux.ie>,
- Rob Herring <robh+dt@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Daniel Vetter <daniel@ffwll.ch>, Chunfeng Yun <chunfeng.yun@mediatek.com>,
- CK Hu <ck.hu@mediatek.com>, Jitao shi <jitao.shi@mediatek.com>
-Cc: linux-mediatek@lists.infradead.org, dri-devel@lists.freedesktop.org,
- Pablo Sun <pablo.sun@mediatek.com>, linux-clk@vger.kernel.org,
- linux-kernel@vger.kernel.org, Mattijs Korpershoek
- <mkorpershoek@baylibre.com>, linux-arm-kernel@lists.infradead.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org
-References: <20220919-v1-0-4844816c9808@baylibre.com>
- <20220919-v1-17-4844816c9808@baylibre.com>
- <a0a3c427-c851-ae5d-4010-e94740bf9f6e@linaro.org>
- <CABnWg9s3N_Ua9g0S3x0uj8PN4FtOX6DO+zQcBzGFqoLTL1J24A@mail.gmail.com>
- <bc64b69d-3d65-f5ca-a688-2ad1a055ba4b@linaro.org>
- <CABnWg9sJFBAXi1bu_yHDppFOmg=H=G7QTn9Bzqkr-t7qm5vUFw@mail.gmail.com>
- <db1abf9d-ba40-f71c-0d37-c3912ac1bd8e@linaro.org>
- <CABnWg9vOHWpdLPAFdXAG3GNgsxpbzgh2gTq_tm72Tk2uR54LaQ@mail.gmail.com>
- <49daae86-e922-9a17-ebed-2a33a5eeb18e@linaro.org>
- <CABnWg9sPuJQQOmLGDSgE86NCRh_3GqWZ0dFAs_J2PO9HCVbExQ@mail.gmail.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <CABnWg9sPuJQQOmLGDSgE86NCRh_3GqWZ0dFAs_J2PO9HCVbExQ@mail.gmail.com>
+References: <20220902184543.1234835-1-pgwipeout@gmail.com> <YxTDBpkllQjf0nIW@matsya>
+In-Reply-To: <YxTDBpkllQjf0nIW@matsya>
+From: Chen-Yu Tsai <wens@kernel.org>
+Date: Thu, 6 Oct 2022 00:10:31 +0800
+X-Gmail-Original-Message-ID: <CAGb2v664UnNC_UP-yFFLD9gCLnc989VAvUw1BghrctxdmLfVDA@mail.gmail.com>
+Message-ID: <CAGb2v664UnNC_UP-yFFLD9gCLnc989VAvUw1BghrctxdmLfVDA@mail.gmail.com>
+Subject: Re: [PATCH v4] phy: rockchip-inno-usb2: Return zero after otg sync
+To: Vinod Koul <vkoul@kernel.org>
+Cc: Peter Geis <pgwipeout@gmail.com>, Heiko Stuebner <heiko@sntech.de>, 
+	Kishon Vijay Abraham I <kishon@ti.com>, Samuel Holland <samuel@sholland.org>, 
+	Markus Reichl <m.reichl@fivetechno.de>, Michael Riesch <michael.riesch@wolfvision.net>, 
+	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
+	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221005_075353_979463_FA9AF1E4 
-X-CRM114-Status: GOOD (  23.90  )
+X-CRM114-CacheID: sfid-20221005_091050_833338_78B018C9 
+X-CRM114-Status: GOOD (  13.70  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -108,99 +77,27 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Reply-To: wens@kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 05/10/2022 11:34, Guillaume Ranquet wrote:
-> On Tue, 04 Oct 2022 17:05, Krzysztof Kozlowski
-> <krzysztof.kozlowski@linaro.org> wrote:
->> On 04/10/2022 13:55, Guillaume Ranquet wrote:
->>>> No. You said what the code is doing. I think I understand this. You
->>>> still do not need more compatibles. Your sentence did not clarify it
->>>> because it did not answer at all to question "why". Why do you need it?
->>>>
->>>> Sorry, the change looks not correct.
->>>>
->>>> Best regards,
->>>> Krzysztof
->>>>
->>>
->>> I need a new compatible to adress the specifics of mt8195 in the mtk_dpi driver,
->>> the change is in this series with:
->>> [PATCH v1 16/17] drm/mediatek: dpi: Add mt8195 hdmi to DPI driver [1]
->>
->> But you do not have specifics of mt8195. I wrote it in the beginning.
->>
->>>
->>> I then need to add that compatible to the "list" here in mtk_drm_drv.
->>
->> No, you do not... I checked the driver and there is no single need... or
->> convince me you need.
->>
->>> I don't see a way around this unless I rewrite the way mtk_drm_drv works?
->>
->> Why rewrite? You have all compatibles in place.
->>
->>>
->>> Maybe if I declare a new compatible that is generic to all mediatek
->>> dpi variants?
->>
->> You were asked to use fallback. Don't create some fake fallbacks. Use
->> existing ones.
->>
->>> and have all the dts specify the node with both the generic dpi and
->>> the specific compatible?
->>>
->>> dpi@xxx {
->>> 	compatible = "mediatek,dpi", "mediatek,mt8195-dpi";
->>
->> I don't know what's this but certainly looks odd. Some wild-card
->> compatible in front (not fallback) and none are documented.
->>
->>> 	...
->>> }
->>>
->>> Then I can "collapse" all the dpi related nodes in mtk_drm_drv under
->>> "mediatek,dpi" ?
->>>
->>> I guess would have to do the change for all other components that are needed in
->>> mtk_drm_drv (mmsys, aal, ccor, color, dither, dsc, gamma, mutex...).
->>>
->>> That's the only trivial way I can think of implementing this with the
->>> current status
->>> of the mtk_drm stack.
->>>
->>> Do you have any other ideas in mind?
->>
->> Use fallback of compatible device. That's the common pattern.
->> Everywhere, Mediatek as well.
->>
-> 
-> I'm unsure about what a "fallback of compatible device" is.
-> But from what I can gather, you'd have me write the dts as:
-> 
-> dpi@xxx {
-> 	compatible = "mediatek,mt8195-dpi", "mediatek,mt2701-dpi";
-> 	...
-> }
+On Sun, Sep 4, 2022 at 11:24 PM Vinod Koul <vkoul@kernel.org> wrote:
+>
+> On 02-09-22, 14:45, Peter Geis wrote:
+> > The otg sync state patch reuses the ret variable, but fails to set it to
+> > zero after use. This leads to a situation when the otg port is in
+> > peripheral mode where the otg phy aborts halfway through setup.  It also
+> > fails to account for a failure to register the extcon notifier. Fix this
+> > by using our own variable and skipping otg sync in case of failure.
+>
+> Applied, thanks
 
-Sounds reasonable. Just someone should check whether devices are
-actually compatible, because driver is just a hint.
+This should have been applied for v6.0-rc, not -next.
+We now have a v6.0 release that doesn't boot properly on RK3399.
 
-> 
-> so that the mtk_dpi driver will use the specific mt8195 dpi config and
-> the mtk_drm driver will fallback to mt2701 to find the compatible it needs.
-> 
-> Would you like me to use this pattern for all the other compatibles declared
-> in the mtk_ddp_comp_ids array in separate patches?
-
-Could be for consistency, but it is up to you.
-
-Best regards,
-Krzysztof
-
+ChenYu
 
 -- 
 linux-phy mailing list
