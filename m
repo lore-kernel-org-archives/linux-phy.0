@@ -4,68 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 940B6C433F5
-	for <linux-phy@archiver.kernel.org>; Wed,  5 Oct 2022 21:13:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 39E9FC433F5
+	for <linux-phy@archiver.kernel.org>; Wed,  5 Oct 2022 21:30:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
-	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=+pTNb5BLgmN8Jz0hJF4rTbM0Pm9aqaJ9q9H17IvjBR4=; b=D+nYM386dD+rl6
-	vNVdKD4L1qxzGhuK90/kHhSdAceHWkl4mbkWJJU/9O9jLaaWKE2zH/D3fXopFW01X9L4K4VIHtZ1f
-	K8fdy09fkMj4hzRelXmTENI3NYBe+xlSg/JJW5ruXkwUMYGVTGOnpvsPOndKPIagTBuKmGmVUL6uw
-	dUR72VYfu54dMpZG68s6W0SlxchMQ9RgIiA3ffN0AhYwaeAEBhNb1PDkGVfpA/mxhOuS0DWfdmSdL
-	srG5k+YH+a5tqURkQU5+M+hymXN2cPTx86hDCqGnG5K+uiYQqRQFK/a5bnziSHa2ymwOOlgEzEG2z
-	tDtMGta2I2ILycp2D0Mg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=IYjELd9E1WOf5Qw+gtzwzMmAGHdCXnbhUliDW9bEnYk=; b=4P5bL3TQpi/Ko+
+	gb508O3pWvewbMnlPM9dqXuVOGm74HSHY8/U60fR2V8FsBOZWDOarJOLNSPYoxgWFbzlrISqqQrS/
+	ns03yzyF4DJSYtAMncoSn9SIJM/sYJCEB5QRXW7fwSIp2TCmIWXNId7H9ioUc0sXZ9Nnmh88JBwCX
+	ukbaAF7vvhhyM4u7pAweM9GQLzN8wKxWr9IVd4hjd8weNj34Qbw8Vrwag+yLinxmY4l+sJOEvQKm/
+	xpQSDhz9Rzlo0oyvposkny8KJVW1USK/ur779eOJBdU/qLTz1Yu4pZjVGeTVkX4tQZi/HvXHQIurO
+	RwDyHgJeU+EmVZ9hscQA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ogBhp-00G8aa-W5; Wed, 05 Oct 2022 21:13:29 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1ogByJ-00G9Cv-Cp; Wed, 05 Oct 2022 21:30:31 +0000
+Received: from mail-qk1-x72f.google.com ([2607:f8b0:4864:20::72f])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ogBhn-00G8a1-7z
-	for linux-phy@lists.infradead.org; Wed, 05 Oct 2022 21:13:29 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id CD9D4617AC;
-	Wed,  5 Oct 2022 21:13:25 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id DD564C433C1;
-	Wed,  5 Oct 2022 21:13:24 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1665004405;
-	bh=OYbdBaX1BcxB2O2zUsHIfxOhRluCA5uxN6Qber1Zx6E=;
-	h=Date:From:To:Cc:Subject:In-Reply-To:From;
-	b=JXu5JYjHdsNUl1UmbwqZ6LvAvNT7z58Y6cDuydCMl9Bh/hUEJGMoAq87alB1iLftP
-	 EhYh465q8wRGyxhuzKjmR1OPgSr7pFegPbjhFiPLP+1LJQYYQ/adCfAP99aglyA7+p
-	 H7HpXZcPs5ja0w1Y+p4CKdOeiJQV6FXMQYxMMmTpVV7xTXP46u6yo7WrNiuB+OEacJ
-	 Zwr3vUqE4XDxMHHRb8N/noqVDd6p80/eSiNDtCEaDW2GeIIDWe+TWEnXQ86rCkKcTy
-	 kaZrHe8FUDzoLpNVUOg1i6kOVJpO+lrOevJQyzm6stgqLJ6Mg1cGoY/o8Bjn5sOPFM
-	 0lh66u68bh33A==
-Date: Wed, 5 Oct 2022 16:13:23 -0500
-From: Bjorn Helgaas <helgaas@kernel.org>
-To: Krishna Chaitanya Chundru <quic_krichai@quicinc.com>
-Cc: linux-pci@vger.kernel.org, linux-arm-msm@vger.kernel.org,
-	linux-kernel@vger.kernel.org, mka@chromium.org,
-	quic_vbadigan@quicinc.com, quic_hemantk@quicinc.com,
-	quic_nitegupt@quicinc.com, quic_skananth@quicinc.com,
-	quic_ramkri@quicinc.com, manivannan.sadhasivam@linaro.org,
-	swboyd@chromium.org, dmitry.baryshkov@linaro.org,
-	svarbanov@mm-sol.com, agross@kernel.org, andersson@kernel.org,
-	konrad.dybcio@somainline.org, lpieralisi@kernel.org,
-	robh@kernel.org, kw@linux.com, bhelgaas@google.com,
-	linux-phy@lists.infradead.org, vkoul@kernel.org, kishon@ti.com,
-	mturquette@baylibre.com, linux-clk@vger.kernel.org,
-	Bjorn Andersson <bjorn.andersson@linaro.org>,
-	"Rafael J. Wysocki" <rafael@kernel.org>, linux-pm@vger.kernel.org
-Subject: Re: [PATCH v7 1/5] PCI: qcom: Add system suspend and resume support
-Message-ID: <20221005211323.GA2390992@bhelgaas>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <f1b079c9-d0b8-6d4d-bf3d-dee45731ee88@quicinc.com>
+	id 1ogByH-00G9Bo-F8
+	for linux-phy@lists.infradead.org; Wed, 05 Oct 2022 21:30:30 +0000
+Received: by mail-qk1-x72f.google.com with SMTP id i3so11054755qkl.3
+        for <linux-phy@lists.infradead.org>; Wed, 05 Oct 2022 14:30:24 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20210112;
+        h=message-id:date:subject:cc:to:from:from:to:cc:subject:date;
+        bh=Umc2AzBtVa0Yu+kyLVbzBuuq520pxoL3Zl06uSBOSsM=;
+        b=e15TtvG4z6JHDqwRQTlJNmX9vatjzkGVYADyHnfOmobt7iqNwe5vTBG8egWnRnwwTl
+         6IN6qNHeT7TTA7HmOrJ5+FRcI+3hm1dKo43Y+ePzzVPP8ywJJsojLkkqSkQiiRzRq7zS
+         Q/nDNQptK6upowa6JBr2lXw1l9GGjGDojVbssOq8MN8nhovYSiazmp6Q0HkIK7U9YQ2S
+         Jdlb2OADxAlbUlbU54mLARYu9m2ZPJH7Gc429dv3TC2GGpt0Z5uwh4RQp3aEjRf5AJYV
+         ZCoEx4YQWuHEXTWF7Q7kTgGoTNpz0phy+4dabTOdi9vUSa+Rjz/OQ9E4ilSgL4IwwHIe
+         Pbfw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date;
+        bh=Umc2AzBtVa0Yu+kyLVbzBuuq520pxoL3Zl06uSBOSsM=;
+        b=h+OBpdpaoalb/3ewAHiMOtBLfhk/Y2wzNgnjEOcTaID1DJUeObClLDogg0I3KSYBSE
+         mIN1z9Feut8lLsgeVZnIMoRljrm2uWEl3Nvo/19hR8fZ2ba55SN2xc00+l4S5AYWVDp8
+         m7v7Zhbjg5yTTwZWyXsQ6xDh09HtongD57pqTq0BA5YC5jyEDO0+bIUZhw8gEtH+O31d
+         CLS8k9V3cC7N4fF9URnkAcqIH5aIsO1Hb8ecmgVwf9IZ41mf9tes87CoGaBSbxBGEGqp
+         QLJfRzXYLaP0+CpsQdkg1YaxUR96cTuBr/TtMbjTRwEr/RisXY2bYNdcAvaGIISx35sj
+         y4lg==
+X-Gm-Message-State: ACrzQf21DJ7O4KCTuipDrrvL7ORu8jyrLQwz0vbYNY6pj5fdwA2esjlv
+	9WgvmxGq+OCW0sdZcmojJCU=
+X-Google-Smtp-Source: AMsMyM7NTILp6/nyofRQs79VcscIWIBMYQfT86evZTY4FRzNuROCYdWeOlow4HQXtAWpwzpssoN2rw==
+X-Received: by 2002:a37:58f:0:b0:6e0:d52f:175c with SMTP id 137-20020a37058f000000b006e0d52f175cmr1110786qkf.13.1665005423338;
+        Wed, 05 Oct 2022 14:30:23 -0700 (PDT)
+Received: from stbirv-lnx-2.igp.broadcom.net ([192.19.223.252])
+        by smtp.gmail.com with ESMTPSA id s22-20020a05620a255600b006b929a56a2bsm20058566qko.3.2022.10.05.14.30.21
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Wed, 05 Oct 2022 14:30:22 -0700 (PDT)
+From: justinpopo6@gmail.com
+To: alcooperx@gmail.com,
+	kishon@ti.com,
+	vkoul@kernel.org,
+	f.fainelli@gmail.com,
+	linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org
+Cc: bcm-kernel-feedback-list@broadcom.com,
+	Justin Chen <justin.chen@broadcom.com>
+Subject: [PATCH 0/6] Various bug fixes/improvements for phy-brcm-usb driver
+Date: Wed,  5 Oct 2022 14:30:12 -0700
+Message-Id: <1665005418-15807-1-git-send-email-justinpopo6@gmail.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221005_141327_442218_9E149611 
-X-CRM114-Status: GOOD (  62.08  )
+X-CRM114-CacheID: sfid-20221005_143029_529390_80800C19 
+X-CRM114-Status: UNSURE (   5.96  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,162 +85,36 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Oct 03, 2022 at 05:40:21PM +0530, Krishna Chaitanya Chundru wrote:
-> On 9/30/2022 12:23 AM, Bjorn Helgaas wrote:
-> > On Mon, Sep 26, 2022 at 09:00:11PM +0530, Krishna Chaitanya Chundru wrote:
-> > > On 9/23/2022 7:56 PM, Bjorn Helgaas wrote:
-> > > > On Fri, Sep 23, 2022 at 07:29:31AM +0530, Krishna Chaitanya Chundru wrote:
-> > > > > On 9/23/2022 12:12 AM, Bjorn Helgaas wrote:
-> > > > > > On Thu, Sep 22, 2022 at 09:09:28PM +0530, Krishna Chaitanya Chundru wrote:
-> > > > > > > On 9/21/2022 10:26 PM, Bjorn Helgaas wrote:
-> > > > > > > > On Wed, Sep 21, 2022 at 03:23:35PM +0530, Krishna Chaitanya Chundru wrote:
-> > > > > > > > > On 9/20/2022 11:46 PM, Bjorn Helgaas wrote:
-> > > > > > > > > > On Tue, Sep 20, 2022 at 03:52:23PM +0530, Krishna chaitanya chundru wrote:
-> > > > > > > > > > > In qcom platform PCIe resources( clocks, phy
-> > > > > > > > > > > etc..) can released when the link is in L1ss to
-> > > > > > > > > > > reduce the power consumption. So if the link is
-> > > > > > > > > > > in L1ss, release the PCIe resources. And when
-> > > > > > > > > > > the system resumes, enable the PCIe resources if
-> > > > > > > > > > > they released in the suspend path.
+From: Justin Chen <justin.chen@broadcom.com>
 
-> > > > > > > > > > What's the connection with L1.x?  Links enter L1.x
-> > > > > > > > > > based on activity and timing.  That doesn't seem
-> > > > > > > > > > like a reliable indicator to turn PHYs off and
-> > > > > > > > > > disable clocks.
+A few suspend/resume bug fixes with clocks and wake counter. Also improve
+port mode selection.
 
-> > > > > > > > > This is a Qcom PHY-specific feature (retaining the
-> > > > > > > > > link state in L1.x with clocks turned off).  It is
-> > > > > > > > > possible only with the link being in l1.x. PHY can't
-> > > > > > > > > retain the link state in L0 with the clocks turned
-> > > > > > > > > off and we need to re-train the link if it's in L2
-> > > > > > > > > or L3. So we can support this feature only with
-> > > > > > > > > L1.x.  That is the reason we are taking l1.x as the
-> > > > > > > > > trigger to turn off clocks (in only suspend path).
+Al Cooper (1):
+  phy: usb: s2 WoL wakeup_count not incremented for USB->Eth devices
 
-> > > > > > > > This doesn't address my question.  L1.x is an ASPM
-> > > > > > > > feature, which means hardware may enter or leave L1.x
-> > > > > > > > autonomously at any time without software
-> > > > > > > > intervention.  Therefore, I don't think reading the
-> > > > > > > > current state is a reliable way to decide anything.
+Justin Chen (5):
+  phy: usb: Improve port mode selection
+  phy: usb: Migrate to BIT and BITMASK macros
+  phy: usb: Disable phy auto-suspend
+  phy: usb: Use slow clock for wake enabled suspend
+  phy: usb: Fix clock imbalance for suspend/resume
 
-> > > > > > > After the link enters the L1.x it will come out only if
-> > > > > > > there is some activity on the link.  As system is
-> > > > > > > suspended and NVMe driver is also suspended (queues
-> > > > > > > will freeze in suspend) who else can initiate any data.
+ drivers/phy/broadcom/phy-brcm-usb-init-synopsys.c | 95 ++++++++++++-----------
+ drivers/phy/broadcom/phy-brcm-usb-init.c          | 90 ++++++++++-----------
+ drivers/phy/broadcom/phy-brcm-usb-init.h          | 11 ++-
+ drivers/phy/broadcom/phy-brcm-usb.c               | 28 ++++---
+ 4 files changed, 116 insertions(+), 108 deletions(-)
 
-> > > > > > I don't think we can assume that nothing will happen to
-> > > > > > cause exit from L1.x.  For instance, PCIe Messages for
-> > > > > > INTx signaling, LTR, OBFF, PTM, etc., may be sent even
-> > > > > > though we think the device is idle and there should be no
-> > > > > > link activity.
+-- 
+2.7.4
 
-> > > > > I don't think after the link enters into L1.x there will
-> > > > > some activity on the link as you mentioned, except for PCIe
-> > > > > messages like INTx/MSI/MSIX. These messages also will not
-> > > > > come because the client drivers like NVMe will keep their
-> > > > > device in the lowest power mode.
-> > > > > 
-> > > > > The link will come out of L1.x only when there is config or
-> > > > > memory access or some messages to trigger the interrupts
-> > > > > from the devices.  We are already making sure this access
-> > > > > will not be there in S3.  If the link is in L0 or L0s what
-> > > > > you said is expected but not in L1.x
-
-> > > > Forgive me for being skeptical, but we just spent a few months
-> > > > untangling the fact that some switches send PTM request
-> > > > messages even when they're in a non-D0 state.  We expected
-> > > > that devices in D3hot would not send such messages because
-> > > > "why would they?"  But it turns out the spec allows that, and
-> > > > they actually *do*.
-> > > > 
-> > > > I don't think it's robust interoperable design for a PCI
-> > > > controller driver like qcom to assume anything about PCI
-> > > > devices unless it's required by the spec.
-
-> > >  From pci spec 4, in sec 5.5 "Ports that support L1 PM Substates
-> > >  must not require a reference clock while in L1 PM Substates
-> > >  other than L1.0".  If there is no reference clk we can say
-> > >  there is no activity on the link.  If anything needs to be sent
-> > >  (such as LTR, or some messages ), the link needs to be back in
-> > >  L0 before it sends the packet to the link partner.
-> > > 
-> > > To exit from L1.x clkreq pin should be asserted.
-> > > 
-> > > In suspend after turning off clocks and phy we can enable to
-> > > trigger an interrupt whenever the clk req pin asserts.  In that
-> > > interrupt handler, we can enable the pcie resources back.
-
-> > From the point of view of the endpoint driver, ASPM should be
-> > invisible -- no software intervention required.  I think you're
-> > suggesting that the PCIe controller driver could help exit L1.x by
-> > handling a clk req interrupt and enabling clock and PHY then.
-> > 
-> > But doesn't L1.x exit also have to happen within the time the
-> > endpoint can tolerate?  E.g., I think L1.2 exit has to happen
-> > within the LTR time advertised by the endpoint (PCIe r6.0, sec
-> > 5.5.5).  How can we guarantee that if software is involved?
-
-> It is true that it is difficult to guarantee those delays. On our
-> internal boards, we are able to achieve this but that is not with
-> linux kernel.
-> 
-> With NVMe attach we have connected the protocol analyzer and tried
-> to see if there are any transactions over the link. We found there
-> are no transactions on the link once the link enters L1.x till we
-> resume the system. As the NVMe is a passive system it is not
-> initiating any transactions.
-> 
-> This whole requirement came from the NVMe driver, it requires
-> keeping the link active state when the system is suspended.
-> 
-> There are only two things we can in do in PCIe suspend as we have to
-> turn off PCIe clocks to allow the system to the lowest possible
-> power state.
->
-> 1) Keep the device in D3 cold and turn off all the clocks and phy
-> etc. (It is not an ideal one as this decreases the NVMe lifetime
-> because link-down and link-up is treated as a power cycle by a few
-> NVMe devices).
->
-> 2) This is the one we are proposing where we turn off the clocks,
-> phy once the link enters L1ss.
-
-It sounds like both options turn off the clocks and PHY.  But
-apparently they do not look the same to the NVMe endpoint?  I guess
-NVMe is in D3cold for 1), but it's in D0 for 2), right?
-
-> Can you please suggest us any other possible solutions to meet NVMe
-> requirement (That is to keep the link active during suspend) and the
-> Qcom platform requirement (that is to turn off all the clocks to
-> allow a lower possible power state)? Qcom PCIe controller is
-> compatible with v3.1 specification only.
-
-The PCIe spec clearly envisions Refclk being turned off
-(sec 5.5.3.3.1) and PHYs being powered off (sec 5.5.3.2) while in
-L1.2.
-
-I've been assuming L1.2 exit (which includes Refclk being turned on
-and PHYs being powered up) is completely handled by hardware, but it
-sounds like the Qcom controller needs software assistance which fields
-an interrupt when CLKREQ# is asserted and turns on Refclk and the
-PHYs?
-
-5.5.3 does say "All Link and PHY state must be maintained during L1.2,
-or must be restored upon exit using implementation specific means",
-and maybe Qcom counts as using implementation specific means.
-
-I *am* concerned about whether software can do the L1.2 exit fast
-enough, but the biggest reason I'm struggling with this is because
-using the syscore framework to work around IRQ affinity changes that
-happen late in suspend just seems kind of kludgy and it doesn't seem
-like it fits cleanly in the power management model.
-
-Bjorn
 
 -- 
 linux-phy mailing list
