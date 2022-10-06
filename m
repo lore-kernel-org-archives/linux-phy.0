@@ -4,70 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 24401C433F5
-	for <linux-phy@archiver.kernel.org>; Thu,  6 Oct 2022 15:18:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 79B2BC433F5
+	for <linux-phy@archiver.kernel.org>; Thu,  6 Oct 2022 22:05:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:CC:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7Fgn4t7J7AeA9HCdAkwtHfx8MiwZNrRaymBEYlZNtxs=; b=b/+eT/MqS8T/N9
-	Kyvu2HWqisgOoFpnd7C/CegNKcwRjsqBMmrHTIk1WuX0WAR70zcSouji1lhGy/zA8H8v5GTHxu24I
-	5t/0+sRrAN9eDVk4mz9oq8xrMfS9AJedsO9Gx+S4p/ezTC045SJm+FembKOpOJDagQDUQoAxeWgbT
-	l4OCEK0zCizVK9W57UQYK/nrE8mdBYNrql6s1z/KdAMDpbGQylHy2NWh+TPaakxIJb9Q9OvNaA+7/
-	BEBY2lgn2VgegHgwDtEUU3bWZfqnr1PPOuO4gxlxdSaMYNpq7kGtoP8GaDOppCufEMvqu8Xuozz9R
-	1AUYKoNAydgPwqsijt+Q==;
+	List-Owner; bh=jGNU0hmp8iJS7vp1PQV9R78kI42nM2V1+lQpgMowj/4=; b=GM/ew3tQlln8h2
+	JUuE3srOkgVMViYqmKfz+cT1Uy3BVKZbCzTrIuHl5yFSVTq5LwNgTj7LLOwjPyhgw+ISigc4A86JX
+	E5TVvRKvpJMsLRi4Vf+EnC61/cK29fxWN9k9B9z+VCoU5kwA6GQR2q3G+gUEeIQJySVLHDAkXcEoQ
+	VSoSGO6tj4STTq0iTy/9gDBm41QpzbtPQVFveQGWKSEnUNutPoSerKaJODK4zXbKh3jA7Gmriarfa
+	4uOKIdeSmpr9H/djKfC2F66o5Lvjnnj7rw88PqBdN8wpQaGDakQaXMxLvIOrwCH5Kwx6nxjLYRn7D
+	Ftm9Mm+Zla5TQbgoAYuA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ogSeH-003JGf-F0; Thu, 06 Oct 2022 15:18:57 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1ogYzr-005Xe8-Tj; Thu, 06 Oct 2022 22:05:39 +0000
+Received: from mail-qt1-x836.google.com ([2607:f8b0:4864:20::836])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ogSY1-003FnS-9m; Thu, 06 Oct 2022 15:12:30 +0000
-X-UUID: fdf4571dc47c40c280a31926fbd02048-20221006
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
-	h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID; bh=mz8P8A145cMKwKse6W1eLLO9DhD8+e7R2Wf+MraeiEE=;
-	b=KWRGzHBcUbg5d5+3RgUKXtlLPpmUYHGwYnkHYKjAtmdRxtFnHjExFyrsNFkp7VcFVr32kwyvAkV6vyzZyHdkz4cEXJl8TDE2U6pNkTZbsl/wpYKrdWvF5LDEfMKnV2oeLLkc82Gfgo+dEUufv6FpUv1bOvUVHo1bqIzzAY2Hbis=;
-X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.1.11,REQID:b6c58b1c-86bc-4407-af83-f329c4490bb7,IP:0,U
-	RL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:
-	release,TS:0
-X-CID-META: VersionHash:39a5ff1,CLOUDID:5fc11ee1-2948-402a-a6e4-b5d31fe11eb7,B
-	ulkID:nil,BulkQuantity:0,Recheck:0,SF:102,TC:nil,Content:0,EDM:-3,IP:nil,U
-	RL:11|1,File:nil,Bulk:nil,QS:nil,BEC:nil,COL:0
-X-UUID: fdf4571dc47c40c280a31926fbd02048-20221006
-Received: from mtkmbs11n1.mediatek.inc [(172.21.101.185)] by mailgw01.mediatek.com
-	(envelope-from <chunfeng.yun@mediatek.com>)
-	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
-	with ESMTP id 2044255003; Thu, 06 Oct 2022 08:12:21 -0700
-Received: from mtkmbs11n1.mediatek.inc (172.21.101.185) by
- mtkmbs11n1.mediatek.inc (172.21.101.185) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.792.15; Thu, 6 Oct 2022 22:42:17 +0800
-Received: from mhfsdcap04 (10.17.3.154) by mtkmbs11n1.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.2.792.15 via Frontend
- Transport; Thu, 6 Oct 2022 22:42:15 +0800
-Message-ID: <6ca1eb83b7a776fd6b7e58e6940eab5ce5f7fb63.camel@mediatek.com>
-Subject: Re: [PATCH v2 2/2] phy: mediatek: tphy: add debugfs files
-From: Chunfeng Yun <chunfeng.yun@mediatek.com>
-To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	Vinod Koul <vkoul@kernel.org>
-CC: Kishon Vijay Abraham I <kishon@ti.com>, Matthias Brugger
-	<matthias.bgg@gmail.com>, <linux-arm-kernel@lists.infradead.org>,
-	<linux-mediatek@lists.infradead.org>, <linux-phy@lists.infradead.org>,
-	<linux-kernel@vger.kernel.org>, Eddie Hung <eddie.hung@mediatek.com>,
-	Tianping Fang <tianping.fang@mediatek.com>
-Date: Thu, 6 Oct 2022 22:42:15 +0800
-In-Reply-To: <09bc1393-dd30-3c96-3309-f822994f4aab@collabora.com>
-References: <20220929080926.1272-1-chunfeng.yun@mediatek.com>
-	 <20220929080926.1272-2-chunfeng.yun@mediatek.com>
-	 <09bc1393-dd30-3c96-3309-f822994f4aab@collabora.com>
-X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
+	id 1ogYzo-005Xb2-Mx
+	for linux-phy@lists.infradead.org; Thu, 06 Oct 2022 22:05:38 +0000
+Received: by mail-qt1-x836.google.com with SMTP id l27so1864289qtv.4
+        for <linux-phy@lists.infradead.org>; Thu, 06 Oct 2022 15:05:35 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20210112;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=FL68dpL42Mx7JqcV5yKNfqU/nz0e+Ht7vuoz3H5+fH8=;
+        b=CYw8nJyMYNGQx30NInvL0gFMxLXWLoeaO1xSfNo86ZXoBAd8FkIwCcpt2e7icOQm3v
+         brj2RADHXp81YIdXfuwtRmGARdrgxdKgCTnogfmLm/kGVuFxE6pTLO9lBLczflLpN1B9
+         yBh3CrXs3ulqbosnvtvGg3OApZNKqvSkDVXP+/DpvEoGh13DMQYx4ogAOsHMc29UoDA1
+         OIa7BXEqATaHH+wJZkvttMLiI5XFAqMn78S3iGgLvEc9AbsJtIzvxYCGTcv4spVA6Cn2
+         nMmbjcBxMKyfq2F7/HjsB0QIZ6dwBCBwEbYNd4uWNZpdo7JUqpt+DOp1TnJizi9Nzime
+         Tysw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=FL68dpL42Mx7JqcV5yKNfqU/nz0e+Ht7vuoz3H5+fH8=;
+        b=c8IBbEFxGNR9C/9kDAzHbVKoS3GaqqVMdg37sKRpwcoe6IJTd34bnfiwgP9jrUhL5I
+         V4/Cz5HcTjVGZdmk+3o6WCtOsKgAXKWqWAVNaIJB/NkabiAviVvfyLJ5YiB3M2jTF4X6
+         4sGNwZAvmzHfIhhYLgugfrdTtIQGHIrQyAGmcjCpDvqS8So3zQpBRO2bYnscLPTDHrDW
+         f+9DD1Vov4/2YEmrwqPhu68OltITpEp6f1gNIXKbJvvGE/PDqArF3UavL/+pNdBfCI8c
+         X6eQoMfZ/5tCZzO9Cul7XdxQEgk6mb4AaaCjMuHj0spCYh0dlaM/qLObksGoRhF+08E/
+         HOZA==
+X-Gm-Message-State: ACrzQf07j3c5aneKFCLM8w0mKBm8lB3Ob72TuSkdh2yEFeGM8yZhK6PB
+	O8Y0grKDghz9hlgr4CzMuuo=
+X-Google-Smtp-Source: AMsMyM4LZmjtm8c5rvioDH4agVn5OahC2HCCf4dpI0h6oKVKCT1q7YPRJYVvN3lM+JrH5CuqUo8cOw==
+X-Received: by 2002:ac8:58ce:0:b0:35c:d69a:9311 with SMTP id u14-20020ac858ce000000b0035cd69a9311mr2069612qta.367.1665093934301;
+        Thu, 06 Oct 2022 15:05:34 -0700 (PDT)
+Received: from [192.168.1.102] (ip72-194-116-95.oc.oc.cox.net. [72.194.116.95])
+        by smtp.gmail.com with ESMTPSA id i19-20020a05620a249300b006cf3592cc20sm309737qkn.55.2022.10.06.15.05.31
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 06 Oct 2022 15:05:32 -0700 (PDT)
+Message-ID: <29803905-d0e2-3efb-e249-fd745f9abcf0@gmail.com>
+Date: Thu, 6 Oct 2022 15:05:30 -0700
 MIME-Version: 1.0
-X-MTK: N
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.3.1
+Subject: Re: [PATCH 1/6] phy: usb: Improve port mode selection
+Content-Language: en-US
+To: justinpopo6@gmail.com, alcooperx@gmail.com, kishon@ti.com,
+ vkoul@kernel.org, f.fainelli@gmail.com, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org
+Cc: bcm-kernel-feedback-list@broadcom.com
+References: <1665005418-15807-1-git-send-email-justinpopo6@gmail.com>
+ <1665005418-15807-2-git-send-email-justinpopo6@gmail.com>
+From: Florian Fainelli <f.fainelli@gmail.com>
+In-Reply-To: <1665005418-15807-2-git-send-email-justinpopo6@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221006_081229_411963_4BDDC7B3 
-X-CRM114-Status: GOOD (  23.03  )
+X-CRM114-CacheID: sfid-20221006_150536_822439_BE4A676D 
+X-CRM114-Status: UNSURE (   9.00  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,111 +90,31 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, 2022-09-29 at 11:02 +0200, AngeloGioacchino Del Regno wrote:
-> Il 29/09/22 10:09, Chunfeng Yun ha scritto:
-> > These debugfs files are mainly used to make eye diagram test
-> > easier,
-> > especially helpful to do HQA test for a new IC without efuse
-> > enabled.
-> > 
-> > Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
-> > ---
-> > v2: add CONFIG_PHY_MTK_TPHY_DEBUGFS suggested by AngeloGioacchino
-> > ---
-> >   drivers/phy/mediatek/Kconfig        |   5 +
-> >   drivers/phy/mediatek/phy-mtk-tphy.c | 403
-> > +++++++++++++++++++++++++++-
-> >   2 files changed, 407 insertions(+), 1 deletion(-)
-> > 
-> > diff --git a/drivers/phy/mediatek/Kconfig
-> > b/drivers/phy/mediatek/Kconfig
-> > index 3125ecb5d119..e9fdfe9f519f 100644
-> > --- a/drivers/phy/mediatek/Kconfig
-> > +++ b/drivers/phy/mediatek/Kconfig
-> > @@ -27,6 +27,11 @@ config PHY_MTK_TPHY
-> >   	  multi-ports is first version, otherwise is second version,
-> >   	  so you can easily distinguish them by banks layout.
-> >   
-> > +config PHY_MTK_TPHY_DEBUGFS
-> > +	bool "Add T-PHY Debugfs Files"
-> > +	help
-> > +	  Say Y here to add debugfs files mainly for T-PHY HQA test.
-> > +
-> >   config PHY_MTK_UFS
-> >   	tristate "MediaTek UFS M-PHY driver"
-> >   	depends on ARCH_MEDIATEK || COMPILE_TEST
-> > diff --git a/drivers/phy/mediatek/phy-mtk-tphy.c
-> > b/drivers/phy/mediatek/phy-mtk-tphy.c
-> > index e906a82791bd..d9509e1314a4 100644
-> > --- a/drivers/phy/mediatek/phy-mtk-tphy.c
-> > +++ b/drivers/phy/mediatek/phy-mtk-tphy.c
-> > @@ -7,6 +7,7 @@
-> >   
-> >   #include <dt-bindings/phy/phy.h>
-> >   #include <linux/clk.h>
-> > +#include <linux/debugfs.h>
-> >   #include <linux/delay.h>
-> >   #include <linux/iopoll.h>
-> >   #include <linux/mfd/syscon.h>
-> > @@ -264,6 +265,8 @@
-> >   
-> >   #define TPHY_CLKS_CNT	2
-> >   
-> > +#define USER_BUF_LEN(count) min_t(size_t, 8, (count))
-> > +
-> >   enum mtk_phy_version {
-> >   	MTK_PHY_V1 = 1,
-> >   	MTK_PHY_V2,
-> > @@ -310,6 +313,7 @@ struct mtk_phy_instance {
-> >   	struct clk_bulk_data clks[TPHY_CLKS_CNT];
-> >   	u32 index;
-> >   	u32 type;
-> > +	struct dentry *dbgfs;
-> 
-> Unused when !IS_ENABLED(CONFIG_PHY_MTK_TPHY_DEBUGFS)
-Yes, it will be NULL.
 
-> 
-> >   	struct regmap *type_sw;
-> >   	u32 type_sw_reg;
-> >   	u32 type_sw_index;
-> > @@ -332,10 +336,389 @@ struct mtk_tphy {
-> >   	const struct mtk_phy_pdata *pdata;
-> >   	struct mtk_phy_instance **phys;
-> >   	int nphys;
-> > +	struct dentry *dbgfs_root;
-> 
-> Same here
-> 
-> >   	int src_ref_clk; /* MHZ, reference clock for slew rate
-> > calibrate */
-> >   	int src_coef; /* coefficient for slew rate calibrate */
-> >   };
-> >   
-> > +#if IS_ENABLED(CONFIG_PHY_MTK_TPHY_DEBUGFS)
-> > +
-> 
-> ..snip..
-> 
-> > +
-> > +static void tphy_debufs_init(struct mtk_tphy *tphy, struct
-> > mtk_phy_instance *inst)
-> 
-> Please fix typo "debufs" -> "debugfs", 
-Will fix it, thanks a lot
 
-> here and everywhere else.
+On 10/5/2022 2:30 PM, justinpopo6@gmail.com wrote:
+> From: Justin Chen <justinpopo6@gmail.com>
 > 
-> Apart from that, it looks good to me.
+> Split port modes into two different variables. Supported port modes
+> is what the hardware supports. While port mode is how the hardware
+> is currently configured and can be dynamically changed through the
+> sysfs. We initialize all supported port modes on init even though
+> the port mode may not be selected because we cannot guarantee the
+> downstream interface from the phy will be active or not.
 > 
-> Regards,
-> Angelo
+> This also fixes an issue where port modes selected via sysfs were
+> not being saved through suspend/resume.
+> 
+> Signed-off-by: Justin Chen <justinpopo6@gmail.com>
 
+Acked-by: Florian Fainelli <f.fainelli@gmail.com>
+-- 
+Florian
 
 -- 
 linux-phy mailing list
