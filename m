@@ -4,75 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9762DC433FE
-	for <linux-phy@archiver.kernel.org>; Thu,  6 Oct 2022 22:07:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3D357C433F5
+	for <linux-phy@archiver.kernel.org>; Thu,  6 Oct 2022 22:07:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:
 	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
 	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Dx3k6KAXlf8HPPJLDaSaeBUu+Fjxvl41LG3Vlk7+apc=; b=rmX6ra68Pw844g1WvTknb/3MXN
-	R3cZVG7I/gyPA1Iv1GvIMDmPKOpbpmDrZvyYhrS3ehGmh5//Bt+7sYF3KZul2AsXEYw2Jw/gsmqg6
-	3NiW+A0i2ndKR/npNdIEaHe0XygojeQPE74i7pWU0txW1cYe+XUiYJPkyDjbsQet6UEz3PWyewCMI
-	6UHMvmTQ1ZB12srMp5DYyW95+jXUaWUrhnK7RNaUSt4KxnNYoZlCwaBkhXin9LYbM7MZcw9pcMVzy
-	pHctaHiYir2PAVPhfbkzH6ARUYi/fLOAG5FlaMgNHSxVA2JJ4XpR/WnJN6Y60/zdnpziSozB6qf1m
-	4fLLVAyw==;
+	bh=nQ0WSPD079SwhpThkaAiyRRontihfjJ27N0yq1yieuU=; b=OWfriCClkajTRHoohsmE6lniNy
+	b4VImhWeK2cHQuZ2dVlxow5SLN+nAGVi3pabVkEs8LbNwwToVyn4mgYCmAsH3TdEDL84PIedqOOp2
+	PzB2E4O5wDzSj72oiAnXZkdARcfhAXrXDOyuvwug/EHhTaSKWMWw8lcEHTtoV58UZCWnHx7H+DcKK
+	7nlEG2Enp0Q73a2J9PKZhD9iva/f1anglwLfCzs1kMu3eMlDWvqY0vVJy8489HpDgN2l1wGSf3rho
+	Rm8KwkGMOqwJTrN/mc1YZa4e1rKNsJ1t+Ci0P2CWpIBF71gkWqVAgnc1sY6X/pG0eu6Xkw8MWl+sO
+	VwCFk4AA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ogZ1l-005Yh5-1x; Thu, 06 Oct 2022 22:07:37 +0000
-Received: from mail-qv1-xf36.google.com ([2607:f8b0:4864:20::f36])
+	id 1ogZ20-005YnT-Gg; Thu, 06 Oct 2022 22:07:52 +0000
+Received: from mail-qk1-x72a.google.com ([2607:f8b0:4864:20::72a])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ogZ1i-005YfW-OW
-	for linux-phy@lists.infradead.org; Thu, 06 Oct 2022 22:07:36 +0000
-Received: by mail-qv1-xf36.google.com with SMTP id i9so2083289qvo.0
-        for <linux-phy@lists.infradead.org>; Thu, 06 Oct 2022 15:07:33 -0700 (PDT)
+	id 1ogZ1x-005Ykp-5X
+	for linux-phy@lists.infradead.org; Thu, 06 Oct 2022 22:07:50 +0000
+Received: by mail-qk1-x72a.google.com with SMTP id oo23so1915734qkn.4
+        for <linux-phy@lists.infradead.org>; Thu, 06 Oct 2022 15:07:47 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=broadcom.com; s=google;
         h=in-reply-to:from:references:cc:to:subject:user-agent:mime-version
          :date:message-id:from:to:cc:subject:date:message-id:reply-to;
-        bh=SedNSDHbZ5BRC7PTMzFFKz2JkXDkU84j4rgj82/0vT0=;
-        b=UBitjfjMvv0asdEbzinVMe+aVtBCv2rrfxmqLmeizG+V67nLlGs8zi8nDTbgfqOnNH
-         DoFDFNHVl3KhGGV5ii25gDfxZwbKep74ErHjMQgGJGOnT3DHg/ZUDWCcl+wvRnl0FAU1
-         UUp2EcQL6+cFqrrWCJ2Qp4GyJ7JZg/GXNs/gc=
+        bh=szs6sQkAK7a9znl7M+y3ZCHXp+ugPSI42PaVyzyRgIU=;
+        b=Rzxo2tNBmouC2NmUMUJftAGrMotvHG/totIG6LJutmeFn10Jz1S88hpZXzKAN47weD
+         EV9tq+qkap1u1SAMy6tPwMjEOMMKsdhvR5y/ZikgA0oz6skVBF8vCG+H0mJuJGdGmFgB
+         YIQLd9pPs9rbd6ia6v1wXdH7+iMav6hqOwIWs=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=in-reply-to:from:references:cc:to:subject:user-agent:mime-version
          :date:message-id:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=SedNSDHbZ5BRC7PTMzFFKz2JkXDkU84j4rgj82/0vT0=;
-        b=8MCrUYmiDjn56jKODZwoS897ypfnLy82HzCpWumxKUjr47B4W+7i266PK/z0SpuZnq
-         SEv9Rl1ufTB8CpX82bCqfaKtMlh8l9CWIH3d/034kL+JafpnV42swpsTZnpUdQRZ2+gq
-         Fx90IzYaGGy7xZ/z3MCQDNSJ5kYnsgoySQs2x3U7MzECRiFOOUrlXKur6iPoHeXUxaJ3
-         sZrtyWtr+vcFNV61244clTspuVstGDH16OwoYEW71CdcnmUob1zgf3x4HkveZ0fNbTN8
-         +k8tAJTg3dm0I4vql0UcLfksl5RbjDA0gs3KP86vAl2BwB+T4KAs6CVNlGF9El/C95Zh
-         slFw==
-X-Gm-Message-State: ACrzQf3xFW8Rilks69dH66O0dv5YURTyOo/B+5XP5+Sn6lBR8JmhL0fY
-	DduhTfBiq/LkFZvgw0DVsOv7EA==
-X-Google-Smtp-Source: AMsMyM5IJHup4hKGzqU2qTaf8h5cW3I6zUr7PULln4ejO7SHEtg+n/50MKRpk/8iLt7xKirFHLBtoQ==
-X-Received: by 2002:ad4:5f8b:0:b0:4b1:8ab4:802 with SMTP id jp11-20020ad45f8b000000b004b18ab40802mr1750264qvb.1.1665094052645;
-        Thu, 06 Oct 2022 15:07:32 -0700 (PDT)
+        bh=szs6sQkAK7a9znl7M+y3ZCHXp+ugPSI42PaVyzyRgIU=;
+        b=V7NrfMQb3T2miaaVXBF/rlIcGrewltsIn4oUalLIOYC1O37I0+J3Bq/u7RaqmYwUMH
+         BK4gDYGIDyXTBq3mk3NX3br6hL0Uq4xn5SPms1wgYgvixabnt74flp4+wSFvb/2c47MD
+         0ZcM6o8VeZyRCSpoEtEq4oNfBrlLW28U8CR3XDlppKPuy652Ecuc03PR0VIrbWKJDF2L
+         vg8ttrwxkYO3LTXEuSvIseCyGOzoXJdGaJYCVwxYwGCldskrUaH3YjCxyL/SuhlH/2pf
+         cUHNPN6Et/qh1F+5nES4jM07avbVR5ABf5iyIGyOG8koy8XSLFH+AKMkudWRD2id+dgM
+         Rpqw==
+X-Gm-Message-State: ACrzQf2dTkkco3YvWxEtKv9pu0iNI1QsViocXWTXsjA/dLmTtZFco4bK
+	5pwDnsrkW2KPp7ZCTB7CkKqboQ==
+X-Google-Smtp-Source: AMsMyM4prEB0Gj7qs0wtpa6Tih1bbwFETRO8yKE+pPyD3dv7pBDV0MLvyFGdRFWU+3KWQQVpWWjtKw==
+X-Received: by 2002:a05:620a:4919:b0:6cf:5a4c:e3a3 with SMTP id ed25-20020a05620a491900b006cf5a4ce3a3mr1846886qkb.309.1665094067143;
+        Thu, 06 Oct 2022 15:07:47 -0700 (PDT)
 Received: from [192.168.1.102] (ip72-194-116-95.oc.oc.cox.net. [72.194.116.95])
-        by smtp.gmail.com with ESMTPSA id o19-20020a05620a2a1300b006cddf59a600sm304849qkp.34.2022.10.06.15.07.31
+        by smtp.gmail.com with ESMTPSA id l16-20020ac848d0000000b0035cf5edefa6sm613303qtr.56.2022.10.06.15.07.45
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 06 Oct 2022 15:07:32 -0700 (PDT)
-Message-ID: <b8d0b53f-df07-15be-aeeb-f5a9ee918bd7@broadcom.com>
-Date: Thu, 6 Oct 2022 15:07:30 -0700
+        Thu, 06 Oct 2022 15:07:46 -0700 (PDT)
+Message-ID: <58cd45fe-e5e8-da2a-9b55-cd98797f870c@broadcom.com>
+Date: Thu, 6 Oct 2022 15:07:44 -0700
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
  Thunderbird/102.3.1
-Subject: Re: [PATCH 3/6] phy: usb: Migrate to BIT and BITMASK macros
+Subject: Re: [PATCH 4/6] phy: usb: Disable phy auto-suspend
 To: justinpopo6@gmail.com, alcooperx@gmail.com, kishon@ti.com,
  vkoul@kernel.org, f.fainelli@gmail.com, linux-kernel@vger.kernel.org,
  linux-phy@lists.infradead.org
 Cc: bcm-kernel-feedback-list@broadcom.com
 References: <1665005418-15807-1-git-send-email-justinpopo6@gmail.com>
- <1665005418-15807-4-git-send-email-justinpopo6@gmail.com>
+ <1665005418-15807-5-git-send-email-justinpopo6@gmail.com>
 From: Florian Fainelli <florian.fainelli@broadcom.com>
-In-Reply-To: <1665005418-15807-4-git-send-email-justinpopo6@gmail.com>
+In-Reply-To: <1665005418-15807-5-git-send-email-justinpopo6@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221006_150734_828596_A8C8F0C1 
-X-CRM114-Status: UNSURE (   5.05  )
+X-CRM114-CacheID: sfid-20221006_150749_276259_1E888DCF 
+X-CRM114-Status: UNSURE (   7.54  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -85,15 +85,15 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============6218643274965511094=="
+Content-Type: multipart/mixed; boundary="===============3216562957947864404=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
---===============6218643274965511094==
+--===============3216562957947864404==
 Content-Type: multipart/signed; protocol="application/pkcs7-signature"; micalg=sha-256;
-	boundary="0000000000008ae82e05ea64ebb2"
+	boundary="00000000000067f98905ea64ec9c"
 
---0000000000008ae82e05ea64ebb2
+--00000000000067f98905ea64ec9c
 Content-Language: en-US
 Content-Type: text/plain; charset=UTF-8; format=flowed
 Content-Transfer-Encoding: 7bit
@@ -103,8 +103,11 @@ Content-Transfer-Encoding: 7bit
 On 10/5/2022 2:30 PM, justinpopo6@gmail.com wrote:
 > From: Justin Chen <justinpopo6@gmail.com>
 > 
-> Using BIT and BITMASK macros makes it much easier to read and make
-> modifications. Also reordered some constants to be in numerical order.
+> The BDC block requires the PLL lock in order to grab the PLL clock.
+> The phy auto-suspend feature turns off the phy when nothing is attached
+> leading to the PLL to not lock. This leads the BDC block to grab the AUX
+> clock instead of the PLL clock. This is not ideal, so lets turn this
+> feature off.
 > 
 > Signed-off-by: Justin Chen <justinpopo6@gmail.com>
 
@@ -112,7 +115,7 @@ Acked-by: Florian Fainelli <f.fainelli@gmail.com>
 -- 
 Florian
 
---0000000000008ae82e05ea64ebb2
+--00000000000067f98905ea64ec9c
 Content-Type: application/pkcs7-signature; name="smime.p7s"
 Content-Transfer-Encoding: base64
 Content-Disposition: attachment; filename="smime.p7s"
@@ -183,20 +186,20 @@ kNGap1mHJ+JngGzZCz+dDiHRQKGpXLxkHX0BvEDZLW6LGOJ83ImrW38YMOo3ZYnCYNHA9qDOakiw
 NxADYvcRBA0ySL6sZpj8BIIhWiXiuusuBmt2Mak2eEv0xDbovE6Z6hYyl/ZnRadbgK/ClgbY3w+O
 AfUXEZ0xggJtMIICaQIBATBrMFsxCzAJBgNVBAYTAkJFMRkwFwYDVQQKExBHbG9iYWxTaWduIG52
 LXNhMTEwLwYDVQQDEyhHbG9iYWxTaWduIEdDQyBSMyBQZXJzb25hbFNpZ24gMiBDQSAyMDIwAgwT
-/D/YSkVckoN0L+QwDQYJYIZIAWUDBAIBBQCggdQwLwYJKoZIhvcNAQkEMSIEIEOYVrf4PHmSJNxi
-R8nUTnwf0ZyPriDXpGfoNiyVV4voMBgGCSqGSIb3DQEJAzELBgkqhkiG9w0BBwEwHAYJKoZIhvcN
-AQkFMQ8XDTIyMTAwNjIyMDczMlowaQYJKoZIhvcNAQkPMVwwWjALBglghkgBZQMEASowCwYJYIZI
+/D/YSkVckoN0L+QwDQYJYIZIAWUDBAIBBQCggdQwLwYJKoZIhvcNAQkEMSIEIGdDonfPlK0KDPHu
+p30XX0iL2UzuospRL7sRbfTjU0CEMBgGCSqGSIb3DQEJAzELBgkqhkiG9w0BBwEwHAYJKoZIhvcN
+AQkFMQ8XDTIyMTAwNjIyMDc0N1owaQYJKoZIhvcNAQkPMVwwWjALBglghkgBZQMEASowCwYJYIZI
 AWUDBAEWMAsGCWCGSAFlAwQBAjAKBggqhkiG9w0DBzALBgkqhkiG9w0BAQowCwYJKoZIhvcNAQEH
-MAsGCWCGSAFlAwQCATANBgkqhkiG9w0BAQEFAASCAQAiTkmzbH23ORSlcQXPv8mC1wwtT6CrPETH
-E19gJvkKC8lJF9kJkOx4JqwEP/pee+cZ5ngpKdgS5rciy55l8t2NK4YM6foS4+z/L+hf7KEJIiBY
-YANGiCXDmdIAYKRDJ7cslz7pQM4Ye6zaujy8TZM974KwRKE9vA8vlAaBx8cB3JZL49GWp5q9tIda
-fDi9o35pKxho6wz51DGfT/StPf0K+zmay9pxMyZjwprEI8NoMxL2wHny91KRNObdUvmsNvyjJaiA
-oIBXY+0Vjq8mU2kbzAdvnjzpEej33mGLtCB/tBR5ueUhrXskLpM58EtjBEqhjlFs7oQmOccbsVNV
-aD6M
---0000000000008ae82e05ea64ebb2--
+MAsGCWCGSAFlAwQCATANBgkqhkiG9w0BAQEFAASCAQCw4LjSaLhUOiVApQ1va9g+kfH0+HB+dHQq
+ajhMGvDIqHSyW03uRHODeQzNSYMidIFVXKFp2WpvBKGSPTH4SHAeFk42KkwUEINvrIySryewFb55
+PYrsBz/So7YYc4FZlFEiKLGZCJMV8KGjy5hy4VbeNTUOXjT/jLmYEPmiT7Wo3SW9SHmzHn0FRRdA
+EKYxIKSqGoY+aThXZlUeFR2zjDWOemwuo/j8a18PARQdQ89nYHfqDhvZuNfUtLg8ZYZf0Beu8ykM
+FrQqtTcvUG6G99SPo4eZ0A3wepepXoyqHyU8ODGepDA65tbCBI1AckgNQknN1YF7A0jfHCv8ksti
+Svql
+--00000000000067f98905ea64ec9c--
 
 
---===============6218643274965511094==
+--===============3216562957947864404==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -207,5 +210,5 @@ linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
 
---===============6218643274965511094==--
+--===============3216562957947864404==--
 
