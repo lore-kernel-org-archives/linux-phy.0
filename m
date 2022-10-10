@@ -4,72 +4,107 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 37206C433F5
-	for <linux-phy@archiver.kernel.org>; Mon, 10 Oct 2022 09:02:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B6D02C433FE
+	for <linux-phy@archiver.kernel.org>; Mon, 10 Oct 2022 13:51:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:CC:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xJ6yRwBKXeXOCtpHPkfdJvCOV18VlFXBJQMhMWIp5a8=; b=Xn+HyG3m/VezRn
-	6h36P3hZG6OzhlquFA5QQ8U0RGs5t3mS/PKZMca6IgytZ/DNTI6bDKJ1YR3omFTeKBPjLp8Dv+cej
-	EbqyQsm4c8SMc5MAPeAGs06qUvD4/K2KV9xhfrNYVw7RrAhAO/y3f4OBruoL7tsf7kMM/yWhsUB/L
-	gkdawVUg87MsNBsf8F0LMk05xeMyssGdOYTIj//vmiUa/qXWA1xZzhRjkuzJXC98kKSLrFwHdyeXB
-	oFaSra6uTcaXb8UJuz6QAagmOKgZuDrsJrGCh7ca0P60ue8AeohYtMTMRccCf3xSSG19uJgCaCMt6
-	MsWci8+lHVSvCLU2B6Rg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=CYasB3sk7fxFtRa+lJ3liv4daqKilaBNhdxmxVOAWBw=; b=erFVv4pz3WYPD3
+	dpa8298YwFziweXK1Ox40+Ohu6XAMk0fsUZd9rkrj7wSoOe3doDhC8AiB4tu3FR7U4+HF/2TlVPT4
+	b5XlAMIRdSoKz4yVQH08olNrZ3pDznP6hS0X+zYf0YVtKsH37xngRi6wUakkSk0KxS5XJhomNFzE0
+	R6OfnFdbXNjuOsAT7/bYc9jGpE9gUAUcdahp5IYrxG33pCIQ6NO8/saBK5o6I/DwXoLpjL1d+zPf/
+	LA1xBxnrI2hf8wbJcAiNidJKnFhdqmOW046kyvWa9ay519jnwDPRYCBnzW37enwlapYV46VQy5vZT
+	bztK36JNIuZbfeHWwW3g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ohofp-0008AV-Ft; Mon, 10 Oct 2022 09:02:09 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1ohtCC-001609-54; Mon, 10 Oct 2022 13:51:52 +0000
+Received: from mail-dm6nam12on2082.outbound.protection.outlook.com ([40.107.243.82] helo=NAM12-DM6-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ohofm-00088h-2u; Mon, 10 Oct 2022 09:02:07 +0000
-X-UUID: 3489261efbe8459aab45554d55b5fea4-20221010
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
-	h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID; bh=/q651Gv19ju5ws8l4dkc83n5wn/z5DCbrzuyetVRLBI=;
-	b=J0Hs4o4sa/Df3ysEe0QAiw7Ut/Oi441C1QztUUetZw/xfHV/dLTjHdsSIMsfWchGHvYgpLKZSRJYZFJoIgqk7gOY78tlsRRrq1BHykP9A+a7ooZlBKsULVqsQrN4jjvRzs76su0DqRjdPX8/YY7dzwYpaMyP0m1pDcnOmcDczwY=;
-X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.1.11,REQID:ae5ebc4e-cf42-45b7-a934-48bc0c324dd8,IP:0,U
-	RL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:
-	release,TS:0
-X-CID-META: VersionHash:39a5ff1,CLOUDID:b05b6be1-2948-402a-a6e4-b5d31fe11eb7,B
-	ulkID:nil,BulkQuantity:0,Recheck:0,SF:102,TC:nil,Content:0,EDM:-3,IP:nil,U
-	RL:11|1,File:nil,Bulk:nil,QS:nil,BEC:nil,COL:0
-X-UUID: 3489261efbe8459aab45554d55b5fea4-20221010
-Received: from mtkmbs11n1.mediatek.inc [(172.21.101.185)] by mailgw02.mediatek.com
-	(envelope-from <chunfeng.yun@mediatek.com>)
-	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
-	with ESMTP id 1034270476; Mon, 10 Oct 2022 02:01:54 -0700
-Received: from mtkmbs11n1.mediatek.inc (172.21.101.185) by
- mtkmbs11n2.mediatek.inc (172.21.101.187) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.792.15; Mon, 10 Oct 2022 16:01:17 +0800
-Received: from mhfsdcap04 (10.17.3.154) by mtkmbs11n1.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.2.792.15 via Frontend
- Transport; Mon, 10 Oct 2022 16:01:17 +0800
-Message-ID: <b35143437ee159ae968fcd36bb3d15649ea2899c.camel@mediatek.com>
-Subject: Re: [PATCH v2 2/2] phy: mediatek: tphy: add debugfs files
-From: Chunfeng Yun <chunfeng.yun@mediatek.com>
-To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	Vinod Koul <vkoul@kernel.org>
-CC: Kishon Vijay Abraham I <kishon@ti.com>, Matthias Brugger
-	<matthias.bgg@gmail.com>, <linux-arm-kernel@lists.infradead.org>,
-	<linux-mediatek@lists.infradead.org>, <linux-phy@lists.infradead.org>,
-	<linux-kernel@vger.kernel.org>, Eddie Hung <eddie.hung@mediatek.com>,
-	Tianping Fang <tianping.fang@mediatek.com>
-Date: Mon, 10 Oct 2022 16:01:15 +0800
-In-Reply-To: <6dbfaee8-8c72-85b5-495d-dcb62f18c154@collabora.com>
-References: <20220929080926.1272-1-chunfeng.yun@mediatek.com>
-	 <20220929080926.1272-2-chunfeng.yun@mediatek.com>
-	 <09bc1393-dd30-3c96-3309-f822994f4aab@collabora.com>
-	 <6ca1eb83b7a776fd6b7e58e6940eab5ce5f7fb63.camel@mediatek.com>
-	 <6dbfaee8-8c72-85b5-495d-dcb62f18c154@collabora.com>
-X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
+	id 1ohtC9-0015yr-6G
+	for linux-phy@lists.infradead.org; Mon, 10 Oct 2022 13:51:50 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=hnaBrzU4iASuiaKzoKALOFvln3SUj8c/+vpMSiR2ZDaSYfIXobTxEY0+BaBcNm6LPUU4w4NuzD+gizCMJECjJJZRNJZis7eY1LK0wANcpiwFzIdBUPQ5li20buwkP32co4WiP4cxhWApzy1AQIpSC3JP6OZStyDBCzJx2R6vPdniLPluD3O8YXd62zc4kpfC/hv9LuwiKHZwbMJvRas02L57HT7XtkwkNnWtJ7wu7GITVr1+C6rl747wOpLHlQtS581pfNA108g7aRBGzp0Y5yATRDbsTRaARDwCZIml2dZddX21l3gZu1yM6CcIvtgjjFPJXMIIIRU7zOsjm0FkNg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=twytVrO3GlJ1UFKtuJo526kGbKOSMfmoLjErMTfKZ38=;
+ b=P2dMt4GV/FRraUGwTtF9RxEaxkOVOeJB8G6ZI1v9Ju1VidrzHuS3lCmR79tfKRiFlh8A3JpMQgfi0E2R1McPWbpWvbpVgowEYHu0QiQ6JcLa/TPbwwpYq/kp4P3NClzA/YbZYVx3Cn709Gi6ny4NfVc2dwA9k6FC/SI8yg3KRd8/KB2Ti9Clxm2eYLves4sppl78QYY9XsXYusXJOQ9BW/+6o8e9NuRSHYCU+M7JjHHvHlnbyjEI+02EUa0XTuzrB7Pyvm0AjbenuFkjn7KOdVXWw6rj7VpSRgl7tjwHcHsLCpeYeUkEyzmkdcIEQBJKzNMK59wa1vmxyw3n2sB8rg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 216.228.117.161) smtp.rcpttodomain=ti.com smtp.mailfrom=nvidia.com;
+ dmarc=pass (p=reject sp=reject pct=100) action=none header.from=nvidia.com;
+ dkim=none (message not signed); arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=twytVrO3GlJ1UFKtuJo526kGbKOSMfmoLjErMTfKZ38=;
+ b=KpAq4F7bDIxrNs6+PgSHX3ZU+k+QCKMXbCcnNjealhlWP95E1ICOwKpn4trjxEiD91FSjWI45IyogyOiukn9vWKHiSMmvSipE2SWttbwuxjQmqlFHwHeBiaJklra7cwipoqulWTH2OwBMlHqq4AImbGrSSasn05O5i5VQq+cP0+PdTjzi92m3kVK3NkKyUVlOJWwIOnqa1EyE3crf3HFWKfFoZZ8N6yJcmTHioNJ+6LQByd6OgwL/b/VotC6/9WnD2LpyVpkJzelurf3PJsvDGsFM9gtSO9VkXs31bgYQxL8m+EpU2fWknZd+5xpWCiNcyvLXDtn5dc8JASBHL0SGw==
+Received: from DS7PR06CA0052.namprd06.prod.outlook.com (2603:10b6:8:54::30) by
+ MN2PR12MB4111.namprd12.prod.outlook.com (2603:10b6:208:1de::22) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5709.15; Mon, 10 Oct
+ 2022 13:51:44 +0000
+Received: from DM6NAM11FT105.eop-nam11.prod.protection.outlook.com
+ (2603:10b6:8:54:cafe::74) by DS7PR06CA0052.outlook.office365.com
+ (2603:10b6:8:54::30) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5709.15 via Frontend
+ Transport; Mon, 10 Oct 2022 13:51:44 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 216.228.117.161)
+ smtp.mailfrom=nvidia.com; dkim=none (message not signed)
+ header.d=none;dmarc=pass action=none header.from=nvidia.com;
+Received-SPF: Pass (protection.outlook.com: domain of nvidia.com designates
+ 216.228.117.161 as permitted sender) receiver=protection.outlook.com;
+ client-ip=216.228.117.161; helo=mail.nvidia.com; pr=C
+Received: from mail.nvidia.com (216.228.117.161) by
+ DM6NAM11FT105.mail.protection.outlook.com (10.13.173.164) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.5709.10 via Frontend Transport; Mon, 10 Oct 2022 13:51:44 +0000
+Received: from rnnvmail202.nvidia.com (10.129.68.7) by mail.nvidia.com
+ (10.129.200.67) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.986.26; Mon, 10 Oct
+ 2022 06:51:36 -0700
+Received: from rnnvmail204.nvidia.com (10.129.68.6) by rnnvmail202.nvidia.com
+ (10.129.68.7) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.986.29; Mon, 10 Oct
+ 2022 06:51:35 -0700
+Received: from moonraker.nvidia.com (10.127.8.14) by mail.nvidia.com
+ (10.129.68.6) with Microsoft SMTP Server id 15.2.986.29 via Frontend
+ Transport; Mon, 10 Oct 2022 06:51:33 -0700
+From: Jon Hunter <jonathanh@nvidia.com>
+To: JC Kuo <jckuo@nvidia.com>, Kishon Vijay Abraham I <kishon@ti.com>, "Vinod
+ Koul" <vkoul@kernel.org>, Thierry Reding <thierry.reding@gmail.com>
+CC: <linux-phy@lists.infradead.org>, <linux-tegra@vger.kernel.org>, Jim Lin
+	<jilin@nvidia.com>, Jon Hunter <jonathanh@nvidia.com>
+Subject: [PATCH] phy: tegra: xusb: Fix crash during pad power on/down
+Date: Mon, 10 Oct 2022 14:51:32 +0100
+Message-ID: <20221010135132.30809-1-jonathanh@nvidia.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-X-MTK: N
+X-NVConfidentiality: public
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: DM6NAM11FT105:EE_|MN2PR12MB4111:EE_
+X-MS-Office365-Filtering-Correlation-Id: 8ade8a64-8c9a-4770-d8bd-08daaac6913a
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: 	2Lx4u+blEJIq2b0BAQ6VSMyMtdLvkN5dfrvaQy2TvubKykh20geBRX5l8dKtFop/lj1W4AdHDSqDjSg1+5dybpu6v0606SWo7fnPWZS7GEZsYVhDFSGWNpjhjNENaKUWB/lJ7zUeBHc3pYx91Ot/kRcpWAOntY5iOJU5E2Z0kxLp6mZTEcyyFVFkB378X5VCQ1Sy4cV7y82iXG8XFx1jOBap5ufrMYp2iqQmpbQrFD7o6LCvKOGX4cgMI5HnoI4FManfcoPlSbWHb4yOdF5moLqCPX0o/+YjVfnbRDU/R8BrcqNI6jtowaaLKPWf8IqmUc2wZnoC7S6FnbGnahhptayQpOPRXbdDFm3tVUs7MbStgp+MRcZUkoDLPyfadOlnNxsnfdZErwhz1ADicpg3yQftyi6PR5WlwUopQL2lEcasX7XVdaICexOgVY/ZYLZ0T4seuuBFlOfQXQWzqc2kGwF4Vb03LMC0nWeUeweou1Jx7p+I2j2zdrOSO4uC8pf7WSmtKGtRu8nqjnlwXsUQPCDis40WYIdDNCh+PyIzLv99+kXEg6SVLKfeyZB1AF8r3HYYGj1sW1hkvh+3t1fy4DFbVjC4q95Kbposbq/lXZ7mUgpxD2TwEhFoDvc26r6ZLuyWeN7Akh/ESyrIdP5Si4CkxPYAgX5C4/jzokj27Hv9BgN40t6xxvtJyw8sChmxCP8mHvrhyGU83cQkPgXDEjVFRM8ZT4hd1J0LNUiUQOOhPQM3mzSb7xf+qFrojQJQX6LMjS0E827ADRL2UrYrFg==
+X-Forefront-Antispam-Report: 	CIP:216.228.117.161;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc6edge2.nvidia.com;CAT:NONE;SFS:(13230022)(4636009)(396003)(39860400002)(136003)(346002)(376002)(451199015)(40470700004)(36840700001)(46966006)(40460700003)(40480700001)(36860700001)(8936002)(26005)(110136005)(7696005)(86362001)(5660300002)(54906003)(82310400005)(478600001)(107886003)(8676002)(70206006)(70586007)(4326008)(83380400001)(36756003)(41300700001)(316002)(1076003)(186003)(426003)(47076005)(336012)(2616005)(7636003)(356005)(2906002)(82740400003);DIR:OUT;SFP:1101;
+X-OriginatorOrg: Nvidia.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 10 Oct 2022 13:51:44.1271
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 8ade8a64-8c9a-4770-d8bd-08daaac6913a
+X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[216.228.117.161];Helo=[mail.nvidia.com]
+X-MS-Exchange-CrossTenant-AuthSource: 	DM6NAM11FT105.eop-nam11.prod.protection.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MN2PR12MB4111
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221010_020206_166579_EDC200FA 
-X-CRM114-Status: GOOD (  28.75  )
+X-CRM114-CacheID: sfid-20221010_065149_450408_BFD19F1C 
+X-CRM114-Status: GOOD (  12.44  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,124 +121,61 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, 2022-10-06 at 16:54 +0200, AngeloGioacchino Del Regno wrote:
-> Il 06/10/22 16:42, Chunfeng Yun ha scritto:
-> > On Thu, 2022-09-29 at 11:02 +0200, AngeloGioacchino Del Regno
-> > wrote:
-> > > Il 29/09/22 10:09, Chunfeng Yun ha scritto:
-> > > > These debugfs files are mainly used to make eye diagram test
-> > > > easier,
-> > > > especially helpful to do HQA test for a new IC without efuse
-> > > > enabled.
-> > > > 
-> > > > Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
-> > > > ---
-> > > > v2: add CONFIG_PHY_MTK_TPHY_DEBUGFS suggested by
-> > > > AngeloGioacchino
-> > > > ---
-> > > >    drivers/phy/mediatek/Kconfig        |   5 +
-> > > >    drivers/phy/mediatek/phy-mtk-tphy.c | 403
-> > > > +++++++++++++++++++++++++++-
-> > > >    2 files changed, 407 insertions(+), 1 deletion(-)
-> > > > 
-> > > > diff --git a/drivers/phy/mediatek/Kconfig
-> > > > b/drivers/phy/mediatek/Kconfig
-> > > > index 3125ecb5d119..e9fdfe9f519f 100644
-> > > > --- a/drivers/phy/mediatek/Kconfig
-> > > > +++ b/drivers/phy/mediatek/Kconfig
-> > > > @@ -27,6 +27,11 @@ config PHY_MTK_TPHY
-> > > >    	  multi-ports is first version, otherwise is second
-> > > > version,
-> > > >    	  so you can easily distinguish them by banks layout.
-> > > >    
-> > > > +config PHY_MTK_TPHY_DEBUGFS
-> > > > +	bool "Add T-PHY Debugfs Files"
-> > > > +	help
-> > > > +	  Say Y here to add debugfs files mainly for T-PHY HQA
-> > > > test.
-> > > > +
-> > > >    config PHY_MTK_UFS
-> > > >    	tristate "MediaTek UFS M-PHY driver"
-> > > >    	depends on ARCH_MEDIATEK || COMPILE_TEST
-> > > > diff --git a/drivers/phy/mediatek/phy-mtk-tphy.c
-> > > > b/drivers/phy/mediatek/phy-mtk-tphy.c
-> > > > index e906a82791bd..d9509e1314a4 100644
-> > > > --- a/drivers/phy/mediatek/phy-mtk-tphy.c
-> > > > +++ b/drivers/phy/mediatek/phy-mtk-tphy.c
-> > > > @@ -7,6 +7,7 @@
-> > > >    
-> > > >    #include <dt-bindings/phy/phy.h>
-> > > >    #include <linux/clk.h>
-> > > > +#include <linux/debugfs.h>
-> > > >    #include <linux/delay.h>
-> > > >    #include <linux/iopoll.h>
-> > > >    #include <linux/mfd/syscon.h>
-> > > > @@ -264,6 +265,8 @@
-> > > >    
-> > > >    #define TPHY_CLKS_CNT	2
-> > > >    
-> > > > +#define USER_BUF_LEN(count) min_t(size_t, 8, (count))
-> > > > +
-> > > >    enum mtk_phy_version {
-> > > >    	MTK_PHY_V1 = 1,
-> > > >    	MTK_PHY_V2,
-> > > > @@ -310,6 +313,7 @@ struct mtk_phy_instance {
-> > > >    	struct clk_bulk_data clks[TPHY_CLKS_CNT];
-> > > >    	u32 index;
-> > > >    	u32 type;
-> > > > +	struct dentry *dbgfs;
-> > > 
-> > > Unused when !IS_ENABLED(CONFIG_PHY_MTK_TPHY_DEBUGFS)
-> > 
-> > Yes, it will be NULL.
-> > 
-> 
-> I was meaning that you should ifdef that out...
-That's no side-effect, but just wastes some bytes, leave it unchanged
+Commit a88520bfc0ec ("usb: gadget: tegra: Reduce pad power") added calls
+to tegra_phy_xusb_utmi_pad_power_on/down in the Tegra XUDC driver to
+control the pad power. This change is causing a kernel panic when
+powering down the pads on entering suspend with the Jetson TX2 platform.
+The panic occurs because the 'xudc->curr_utmi_phy' is not configured on
+this platform and we do not check to see if the pointer is valid before
+attempting to deference the pointer. Fix this by checking to see if the
+'phy' pointer passed to tegra_phy_xusb_utmi_pad_power_on/down is valid.
 
+Fixes: a88520bfc0ec ("usb: gadget: tegra: Reduce pad power")
+Signed-off-by: Jon Hunter <jonathanh@nvidia.com>
+---
+ drivers/phy/tegra/xusb.c | 20 ++++++++++++++++----
+ 1 file changed, 16 insertions(+), 4 deletions(-)
 
-> 
-> Regards,
-> Angelo
-> 
-> > > 
-> > > >    	struct regmap *type_sw;
-> > > >    	u32 type_sw_reg;
-> > > >    	u32 type_sw_index;
-> > > > @@ -332,10 +336,389 @@ struct mtk_tphy {
-> > > >    	const struct mtk_phy_pdata *pdata;
-> > > >    	struct mtk_phy_instance **phys;
-> > > >    	int nphys;
-> > > > +	struct dentry *dbgfs_root;
-> > > 
-> > > Same here
-> > > 
-> > > >    	int src_ref_clk; /* MHZ, reference clock for slew rate
-> > > > calibrate */
-> > > >    	int src_coef; /* coefficient for slew rate calibrate */
-> > > >    };
-> > > >    
-> > > > +#if IS_ENABLED(CONFIG_PHY_MTK_TPHY_DEBUGFS)
-> > > > +
-> > > 
-> > > ..snip..
-> > > 
-> > > > +
-> > > > +static void tphy_debufs_init(struct mtk_tphy *tphy, struct
-> > > > mtk_phy_instance *inst)
-> > > 
-> > > Please fix typo "debufs" -> "debugfs",
-> > 
-> > Will fix it, thanks a lot
-> > 
-> > > here and everywhere else.
-> > > 
-> > > Apart from that, it looks good to me.
-> > > 
-> > > Regards,
-> > > Angelo
-> 
-> 
+diff --git a/drivers/phy/tegra/xusb.c b/drivers/phy/tegra/xusb.c
+index 95091876c422..dce45fbbd699 100644
+--- a/drivers/phy/tegra/xusb.c
++++ b/drivers/phy/tegra/xusb.c
+@@ -1461,8 +1461,14 @@ EXPORT_SYMBOL_GPL(tegra_phy_xusb_utmi_port_reset);
+ 
+ void tegra_phy_xusb_utmi_pad_power_on(struct phy *phy)
+ {
+-	struct tegra_xusb_lane *lane = phy_get_drvdata(phy);
+-	struct tegra_xusb_padctl *padctl = lane->pad->padctl;
++	struct tegra_xusb_lane *lane;
++	struct tegra_xusb_padctl *padctl;
++
++	if (!phy)
++		return;
++
++	lane = phy_get_drvdata(phy);
++	padctl = lane->pad->padctl;
+ 
+ 	if (padctl->soc->ops->utmi_pad_power_on)
+ 		padctl->soc->ops->utmi_pad_power_on(phy);
+@@ -1471,8 +1477,14 @@ EXPORT_SYMBOL_GPL(tegra_phy_xusb_utmi_pad_power_on);
+ 
+ void tegra_phy_xusb_utmi_pad_power_down(struct phy *phy)
+ {
+-	struct tegra_xusb_lane *lane = phy_get_drvdata(phy);
+-	struct tegra_xusb_padctl *padctl = lane->pad->padctl;
++	struct tegra_xusb_lane *lane;
++	struct tegra_xusb_padctl *padctl;
++
++	if (!phy)
++		return;
++
++	lane = phy_get_drvdata(phy);
++	padctl = lane->pad->padctl;
+ 
+ 	if (padctl->soc->ops->utmi_pad_power_down)
+ 		padctl->soc->ops->utmi_pad_power_down(phy);
+-- 
+2.7.4
 
 
 -- 
