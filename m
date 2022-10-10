@@ -4,35 +4,35 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 553D8C433FE
-	for <linux-phy@archiver.kernel.org>; Mon, 10 Oct 2022 08:06:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2AA9AC433FE
+	for <linux-phy@archiver.kernel.org>; Mon, 10 Oct 2022 08:06:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=JO6u28BHX2CSVzgHHDuVEq9gGRj5ucNCTAe4RRVDJNY=; b=J8TtEvb7093b2K
-	BP97wugv0vE35ewvm9l+Rtg6PaL2FW7v2MoOGj2u7yl4++6O+x7364bhW/12gCnB17J3h6gYh6ao+
-	ZArUn/h4Zv7R9919R6TD2PLYuf7SLlJ7Bb8x5ojNfrVolB1k//3jYH9jsu0iawThAmOCmdwbxCdxr
-	5+kOwEfAjZoUehy8JSzwY+9ktIdVSAVTbEY9ono7705vPb1n63MrZ6wRWPfkxf/8DyGGQB5qO8NGe
-	gWcj0E9szwOb+SwZ574Sujxt88FLEhHNsfynle+FHsM9t2HNqDvZqKN1xLSE80W6M21r0C58wP5Cf
-	9jDDo6g5QzVHDv546C/g==;
+	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=yRmzcNzm/sEPWpwN0fsj0sb95y2Flpi1ImabnHEYeF4=; b=fAAa0On/8SeHK8
+	UhSGJJiuALSBff4q/Vai01d0zvMc2i5plPzyApm8d/6+8gWNvTXpVCA3At8YIS1ampEbXAqyhOQya
+	2VbTTymbtuahAxfjQdp5EWItt5zUfP9xqZP3/7yOThroDJGcgYl2xZWYnoiVKaKtt57jJu9z1TJLY
+	5KEGFvz8mmdWfkpu0LTmfDRMZCk5z+GlLzxjR2jcqABylZ6GzQV5XlN1RcZXN1dHuN/HInipRVHnx
+	zCVK/UL1L7e6x6pKe9hxHdqt90yIube9WMRIZcvJ3w7LXTR+PDXo6F5bEEPpFlw5y0lkkKzeWDmUr
+	fU96v3VuJYXw8DIsMdlQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ohno0-00HU8A-Oe; Mon, 10 Oct 2022 08:06:32 +0000
+	id 1ohno9-00HUBo-IO; Mon, 10 Oct 2022 08:06:41 +0000
 Received: from inva021.nxp.com ([92.121.34.21])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ohnnS-00HTub-Ox; Mon, 10 Oct 2022 08:06:00 +0000
+	id 1ohnnT-00HTw9-9R; Mon, 10 Oct 2022 08:06:01 +0000
 Received: from inva021.nxp.com (localhost [127.0.0.1])
-	by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id CEBC7201E22;
-	Mon, 10 Oct 2022 10:05:51 +0200 (CEST)
+	by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 1A0EC21DE32;
+	Mon, 10 Oct 2022 10:05:58 +0200 (CEST)
 Received: from aprdc01srsp001v.ap-rdc01.nxp.com (aprdc01srsp001v.ap-rdc01.nxp.com [165.114.16.16])
-	by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 8A5AA201E43;
-	Mon, 10 Oct 2022 10:05:51 +0200 (CEST)
+	by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id AB8B121DE48;
+	Mon, 10 Oct 2022 10:05:57 +0200 (CEST)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net [10.192.224.44])
-	by aprdc01srsp001v.ap-rdc01.nxp.com (Postfix) with ESMTP id 519BE180222C;
-	Mon, 10 Oct 2022 16:05:49 +0800 (+08)
+	by aprdc01srsp001v.ap-rdc01.nxp.com (Postfix) with ESMTP id AAE5C1802201;
+	Mon, 10 Oct 2022 16:05:55 +0800 (+08)
 From: Richard Zhu <hongxing.zhu@nxp.com>
 To: vkoul@kernel.org,
 	a.fatoum@pengutronix.de,
@@ -51,16 +51,18 @@ Cc: linux-phy@lists.infradead.org,
 	linux-arm-kernel@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
 	kernel@pengutronix.de,
-	linux-imx@nxp.com
-Subject: [PATCH v12 0/4] Add the iMX8MP PCIe support
-Date: Mon, 10 Oct 2022 15:46:07 +0800
-Message-Id: <1665387971-17114-1-git-send-email-hongxing.zhu@nxp.com>
+	linux-imx@nxp.com,
+	Richard Zhu <hongxing.zhu@nxp.com>
+Subject: [PATCH v12 4/4] phy: freescale: imx8m-pcie: Add i.MX8MP PCIe PHY support
+Date: Mon, 10 Oct 2022 15:46:11 +0800
+Message-Id: <1665387971-17114-5-git-send-email-hongxing.zhu@nxp.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1665387971-17114-1-git-send-email-hongxing.zhu@nxp.com>
+References: <1665387971-17114-1-git-send-email-hongxing.zhu@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221010_010558_992777_97F9E93F 
-X-CRM114-Status: UNSURE (   9.19  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20221010_010559_640270_44355F30 
+X-CRM114-Status: GOOD (  11.95  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,58 +80,105 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Based on the 6.0-rc1 of the pci/next branch. 
-This series adds the i.MX8MP PCIe support and tested on i.MX8MP
-EVK board when one PCIe NVME device is used.
+Add i.MX8MP PCIe PHY support.
 
-- i.MX8MP PCIe has reversed initial PERST bit value refer to i.MX8MQ/i.MX8MM.
-  Add the PHY PERST explicitly for i.MX8MP PCIe PHY.
-- Add the i.MX8MP PCIe PHY support in the i.MX8M PCIe PHY driver.
-  And share as much as possible codes with i.MX8MM PCIe PHY.
-- Add the i.MX8MP PCIe support in binding document, DTS files, and PCIe
-  driver.
+Signed-off-by: Richard Zhu <hongxing.zhu@nxp.com>
+Signed-off-by: Lucas Stach <l.stach@pengutronix.de>
+Tested-by: Marek Vasut <marex@denx.de>
+Tested-by: Richard Leitner <richard.leitner@skidata.com>
+Tested-by: Alexander Stein <alexander.stein@ew.tq-group.com>
+Reviewed-by: Lucas Stach <l.stach@pengutronix.de>
+Reviewed-by: Ahmad Fatoum <a.fatoum@pengutronix.de>
+---
+ drivers/phy/freescale/phy-fsl-imx8m-pcie.c | 25 ++++++++++++++++++++--
+ 1 file changed, 23 insertions(+), 2 deletions(-)
 
-Main changes v11-->v12:
- - In the local down kernel(6.0-rc7 plus local codes) PM tests, i.MX8MP
-   PCIe encounters link failure during resume.
-   To resolve this failure, the resets of i.MX8MP PCIe PHY should be always
-   kept 1b'1. Merge the fix into v12 patches here.
+diff --git a/drivers/phy/freescale/phy-fsl-imx8m-pcie.c b/drivers/phy/freescale/phy-fsl-imx8m-pcie.c
+index ed8e0011d736..b58a255fa539 100644
+--- a/drivers/phy/freescale/phy-fsl-imx8m-pcie.c
++++ b/drivers/phy/freescale/phy-fsl-imx8m-pcie.c
+@@ -48,6 +48,7 @@
+ 
+ enum imx8_pcie_phy_type {
+ 	IMX8MM,
++	IMX8MP,
+ };
+ 
+ struct imx8_pcie_phy_drvdata {
+@@ -60,6 +61,7 @@ struct imx8_pcie_phy {
+ 	struct clk		*clk;
+ 	struct phy		*phy;
+ 	struct regmap		*iomuxc_gpr;
++	struct reset_control	*perst;
+ 	struct reset_control	*reset;
+ 	u32			refclk_pad_mode;
+ 	u32			tx_deemph_gen1;
+@@ -74,11 +76,11 @@ static int imx8_pcie_phy_init(struct phy *phy)
+ 	u32 val, pad_mode;
+ 	struct imx8_pcie_phy *imx8_phy = phy_get_drvdata(phy);
+ 
+-	reset_control_assert(imx8_phy->reset);
+-
+ 	pad_mode = imx8_phy->refclk_pad_mode;
+ 	switch (imx8_phy->drvdata->variant) {
+ 	case IMX8MM:
++		reset_control_assert(imx8_phy->reset);
++
+ 		/* Tune PHY de-emphasis setting to pass PCIe compliance. */
+ 		if (imx8_phy->tx_deemph_gen1)
+ 			writel(imx8_phy->tx_deemph_gen1,
+@@ -87,6 +89,8 @@ static int imx8_pcie_phy_init(struct phy *phy)
+ 			writel(imx8_phy->tx_deemph_gen2,
+ 			       imx8_phy->base + PCIE_PHY_TRSV_REG6);
+ 		break;
++	case IMX8MP: /* Do nothing. */
++		break;
+ 	}
+ 
+ 	if (pad_mode == IMX8_PCIE_REFCLK_PAD_INPUT ||
+@@ -141,6 +145,9 @@ static int imx8_pcie_phy_init(struct phy *phy)
+ 			   IMX8MM_GPR_PCIE_CMN_RST);
+ 
+ 	switch (imx8_phy->drvdata->variant) {
++	case IMX8MP:
++		reset_control_deassert(imx8_phy->perst);
++		fallthrough;
+ 	case IMX8MM:
+ 		reset_control_deassert(imx8_phy->reset);
+ 		usleep_range(200, 500);
+@@ -181,8 +188,14 @@ static const struct imx8_pcie_phy_drvdata imx8mm_drvdata = {
+ 	.variant = IMX8MM,
+ };
+ 
++static const struct imx8_pcie_phy_drvdata imx8mp_drvdata = {
++	.gpr = "fsl,imx8mp-iomuxc-gpr",
++	.variant = IMX8MP,
++};
++
+ static const struct of_device_id imx8_pcie_phy_of_match[] = {
+ 	{.compatible = "fsl,imx8mm-pcie-phy", .data = &imx8mm_drvdata, },
++	{.compatible = "fsl,imx8mp-pcie-phy", .data = &imx8mp_drvdata, },
+ 	{ },
+ };
+ MODULE_DEVICE_TABLE(of, imx8_pcie_phy_of_match);
+@@ -238,6 +251,14 @@ static int imx8_pcie_phy_probe(struct platform_device *pdev)
+ 		return PTR_ERR(imx8_phy->reset);
+ 	}
+ 
++	if (imx8_phy->drvdata->variant == IMX8MP) {
++		imx8_phy->perst =
++			devm_reset_control_get_exclusive(dev, "perst");
++		if (IS_ERR(imx8_phy->perst))
++			dev_err_probe(dev, PTR_ERR(imx8_phy->perst),
++				      "Failed to get PCIE PHY PERST control\n");
++	}
++
+ 	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+ 	imx8_phy->base = devm_ioremap_resource(dev, res);
+ 	if (IS_ERR(imx8_phy->base))
+-- 
+2.25.1
 
-Main changes v10-->v11:
-Refer to Ahmad's comments do the following changes;
- - Correct the spell mistake and refine the commit log.
- - Make codes indent by the member name
- - Use the dev_err_probe replace the dev_err.
-
-Main changes v9-->v10:
-- Refer to Vinod's review comments, drop the array, and use the static data
-  structure directly in the drvdata definition.
-
-Main changes v8-->v9:
-- Split the PHY driver changes into three patches.
-  - To keep the format consistent, re-define the PHY_CMN_REG75, and remove
-    two useless BIT definitions.
-  - Refine the i.MX8MM PCIe PHY driver, let it more reviewable, flexible,
-    and easy to expand.
-  - Add the i.MX8MP PCIe PHY support.
-- Only PHY related patches in v9, Since the others patches had been merged
-  by Phillipp/Shawn/Lorenzo.
-
-Main changes v7-->v8:
-- Add the Reviewed-by tag, no other changes.
-  Only two patches in v8, Since the others patches had been merged by
-  Phillipp/Shawn/Lorenzo.
-
-<snipped.>
-
-Documentation/devicetree/bindings/phy/fsl,imx8-pcie-phy.yaml |  16 ++++++++--
-drivers/phy/freescale/phy-fsl-imx8m-pcie.c                   | 142 ++++++++++++++++++++++++++++++++++++++++++++++++++++++----------------------------
-2 files changed, 106 insertions(+), 52 deletions(-)
-
-[PATCH v12 1/4] dt-binding: phy: Add i.MX8MP PCIe PHY binding
-[PATCH v12 2/4] phy: freescale: imx8m-pcie: Refine register
-[PATCH v12 3/4] phy: freescale: imx8m-pcie: Refine i.MX8MM PCIe PHY
-[PATCH v12 4/4] phy: freescale: imx8m-pcie: Add i.MX8MP PCIe PHY
 
 -- 
 linux-phy mailing list
