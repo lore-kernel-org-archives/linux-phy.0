@@ -4,65 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2AA9AC433FE
-	for <linux-phy@archiver.kernel.org>; Mon, 10 Oct 2022 08:06:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 37206C433F5
+	for <linux-phy@archiver.kernel.org>; Mon, 10 Oct 2022 09:02:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:CC:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yRmzcNzm/sEPWpwN0fsj0sb95y2Flpi1ImabnHEYeF4=; b=fAAa0On/8SeHK8
-	UhSGJJiuALSBff4q/Vai01d0zvMc2i5plPzyApm8d/6+8gWNvTXpVCA3At8YIS1ampEbXAqyhOQya
-	2VbTTymbtuahAxfjQdp5EWItt5zUfP9xqZP3/7yOThroDJGcgYl2xZWYnoiVKaKtt57jJu9z1TJLY
-	5KEGFvz8mmdWfkpu0LTmfDRMZCk5z+GlLzxjR2jcqABylZ6GzQV5XlN1RcZXN1dHuN/HInipRVHnx
-	zCVK/UL1L7e6x6pKe9hxHdqt90yIube9WMRIZcvJ3w7LXTR+PDXo6F5bEEPpFlw5y0lkkKzeWDmUr
-	fU96v3VuJYXw8DIsMdlQ==;
+	List-Owner; bh=xJ6yRwBKXeXOCtpHPkfdJvCOV18VlFXBJQMhMWIp5a8=; b=Xn+HyG3m/VezRn
+	6h36P3hZG6OzhlquFA5QQ8U0RGs5t3mS/PKZMca6IgytZ/DNTI6bDKJ1YR3omFTeKBPjLp8Dv+cej
+	EbqyQsm4c8SMc5MAPeAGs06qUvD4/K2KV9xhfrNYVw7RrAhAO/y3f4OBruoL7tsf7kMM/yWhsUB/L
+	gkdawVUg87MsNBsf8F0LMk05xeMyssGdOYTIj//vmiUa/qXWA1xZzhRjkuzJXC98kKSLrFwHdyeXB
+	oFaSra6uTcaXb8UJuz6QAagmOKgZuDrsJrGCh7ca0P60ue8AeohYtMTMRccCf3xSSG19uJgCaCMt6
+	MsWci8+lHVSvCLU2B6Rg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ohno9-00HUBo-IO; Mon, 10 Oct 2022 08:06:41 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1ohofp-0008AV-Ft; Mon, 10 Oct 2022 09:02:09 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ohnnT-00HTw9-9R; Mon, 10 Oct 2022 08:06:01 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
-	by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 1A0EC21DE32;
-	Mon, 10 Oct 2022 10:05:58 +0200 (CEST)
-Received: from aprdc01srsp001v.ap-rdc01.nxp.com (aprdc01srsp001v.ap-rdc01.nxp.com [165.114.16.16])
-	by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id AB8B121DE48;
-	Mon, 10 Oct 2022 10:05:57 +0200 (CEST)
-Received: from localhost.localdomain (shlinux2.ap.freescale.net [10.192.224.44])
-	by aprdc01srsp001v.ap-rdc01.nxp.com (Postfix) with ESMTP id AAE5C1802201;
-	Mon, 10 Oct 2022 16:05:55 +0800 (+08)
-From: Richard Zhu <hongxing.zhu@nxp.com>
-To: vkoul@kernel.org,
-	a.fatoum@pengutronix.de,
-	p.zabel@pengutronix.de,
-	l.stach@pengutronix.de,
-	bhelgaas@google.com,
-	lorenzo.pieralisi@arm.com,
-	robh@kernel.org,
-	shawnguo@kernel.org,
-	alexander.stein@ew.tq-group.com,
-	marex@denx.de,
-	richard.leitner@linux.dev
-Cc: linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-pci@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	kernel@pengutronix.de,
-	linux-imx@nxp.com,
-	Richard Zhu <hongxing.zhu@nxp.com>
-Subject: [PATCH v12 4/4] phy: freescale: imx8m-pcie: Add i.MX8MP PCIe PHY support
-Date: Mon, 10 Oct 2022 15:46:11 +0800
-Message-Id: <1665387971-17114-5-git-send-email-hongxing.zhu@nxp.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1665387971-17114-1-git-send-email-hongxing.zhu@nxp.com>
-References: <1665387971-17114-1-git-send-email-hongxing.zhu@nxp.com>
-X-Virus-Scanned: ClamAV using ClamSMTP
+	id 1ohofm-00088h-2u; Mon, 10 Oct 2022 09:02:07 +0000
+X-UUID: 3489261efbe8459aab45554d55b5fea4-20221010
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
+	h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID; bh=/q651Gv19ju5ws8l4dkc83n5wn/z5DCbrzuyetVRLBI=;
+	b=J0Hs4o4sa/Df3ysEe0QAiw7Ut/Oi441C1QztUUetZw/xfHV/dLTjHdsSIMsfWchGHvYgpLKZSRJYZFJoIgqk7gOY78tlsRRrq1BHykP9A+a7ooZlBKsULVqsQrN4jjvRzs76su0DqRjdPX8/YY7dzwYpaMyP0m1pDcnOmcDczwY=;
+X-CID-P-RULE: Release_Ham
+X-CID-O-INFO: VERSION:1.1.11,REQID:ae5ebc4e-cf42-45b7-a934-48bc0c324dd8,IP:0,U
+	RL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:
+	release,TS:0
+X-CID-META: VersionHash:39a5ff1,CLOUDID:b05b6be1-2948-402a-a6e4-b5d31fe11eb7,B
+	ulkID:nil,BulkQuantity:0,Recheck:0,SF:102,TC:nil,Content:0,EDM:-3,IP:nil,U
+	RL:11|1,File:nil,Bulk:nil,QS:nil,BEC:nil,COL:0
+X-UUID: 3489261efbe8459aab45554d55b5fea4-20221010
+Received: from mtkmbs11n1.mediatek.inc [(172.21.101.185)] by mailgw02.mediatek.com
+	(envelope-from <chunfeng.yun@mediatek.com>)
+	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
+	with ESMTP id 1034270476; Mon, 10 Oct 2022 02:01:54 -0700
+Received: from mtkmbs11n1.mediatek.inc (172.21.101.185) by
+ mtkmbs11n2.mediatek.inc (172.21.101.187) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.792.15; Mon, 10 Oct 2022 16:01:17 +0800
+Received: from mhfsdcap04 (10.17.3.154) by mtkmbs11n1.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.2.792.15 via Frontend
+ Transport; Mon, 10 Oct 2022 16:01:17 +0800
+Message-ID: <b35143437ee159ae968fcd36bb3d15649ea2899c.camel@mediatek.com>
+Subject: Re: [PATCH v2 2/2] phy: mediatek: tphy: add debugfs files
+From: Chunfeng Yun <chunfeng.yun@mediatek.com>
+To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	Vinod Koul <vkoul@kernel.org>
+CC: Kishon Vijay Abraham I <kishon@ti.com>, Matthias Brugger
+	<matthias.bgg@gmail.com>, <linux-arm-kernel@lists.infradead.org>,
+	<linux-mediatek@lists.infradead.org>, <linux-phy@lists.infradead.org>,
+	<linux-kernel@vger.kernel.org>, Eddie Hung <eddie.hung@mediatek.com>,
+	Tianping Fang <tianping.fang@mediatek.com>
+Date: Mon, 10 Oct 2022 16:01:15 +0800
+In-Reply-To: <6dbfaee8-8c72-85b5-495d-dcb62f18c154@collabora.com>
+References: <20220929080926.1272-1-chunfeng.yun@mediatek.com>
+	 <20220929080926.1272-2-chunfeng.yun@mediatek.com>
+	 <09bc1393-dd30-3c96-3309-f822994f4aab@collabora.com>
+	 <6ca1eb83b7a776fd6b7e58e6940eab5ce5f7fb63.camel@mediatek.com>
+	 <6dbfaee8-8c72-85b5-495d-dcb62f18c154@collabora.com>
+X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
+MIME-Version: 1.0
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221010_010559_640270_44355F30 
-X-CRM114-Status: GOOD (  11.95  )
+X-CRM114-CacheID: sfid-20221010_020206_166579_EDC200FA 
+X-CRM114-Status: GOOD (  28.75  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,110 +81,129 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add i.MX8MP PCIe PHY support.
+On Thu, 2022-10-06 at 16:54 +0200, AngeloGioacchino Del Regno wrote:
+> Il 06/10/22 16:42, Chunfeng Yun ha scritto:
+> > On Thu, 2022-09-29 at 11:02 +0200, AngeloGioacchino Del Regno
+> > wrote:
+> > > Il 29/09/22 10:09, Chunfeng Yun ha scritto:
+> > > > These debugfs files are mainly used to make eye diagram test
+> > > > easier,
+> > > > especially helpful to do HQA test for a new IC without efuse
+> > > > enabled.
+> > > > 
+> > > > Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+> > > > ---
+> > > > v2: add CONFIG_PHY_MTK_TPHY_DEBUGFS suggested by
+> > > > AngeloGioacchino
+> > > > ---
+> > > >    drivers/phy/mediatek/Kconfig        |   5 +
+> > > >    drivers/phy/mediatek/phy-mtk-tphy.c | 403
+> > > > +++++++++++++++++++++++++++-
+> > > >    2 files changed, 407 insertions(+), 1 deletion(-)
+> > > > 
+> > > > diff --git a/drivers/phy/mediatek/Kconfig
+> > > > b/drivers/phy/mediatek/Kconfig
+> > > > index 3125ecb5d119..e9fdfe9f519f 100644
+> > > > --- a/drivers/phy/mediatek/Kconfig
+> > > > +++ b/drivers/phy/mediatek/Kconfig
+> > > > @@ -27,6 +27,11 @@ config PHY_MTK_TPHY
+> > > >    	  multi-ports is first version, otherwise is second
+> > > > version,
+> > > >    	  so you can easily distinguish them by banks layout.
+> > > >    
+> > > > +config PHY_MTK_TPHY_DEBUGFS
+> > > > +	bool "Add T-PHY Debugfs Files"
+> > > > +	help
+> > > > +	  Say Y here to add debugfs files mainly for T-PHY HQA
+> > > > test.
+> > > > +
+> > > >    config PHY_MTK_UFS
+> > > >    	tristate "MediaTek UFS M-PHY driver"
+> > > >    	depends on ARCH_MEDIATEK || COMPILE_TEST
+> > > > diff --git a/drivers/phy/mediatek/phy-mtk-tphy.c
+> > > > b/drivers/phy/mediatek/phy-mtk-tphy.c
+> > > > index e906a82791bd..d9509e1314a4 100644
+> > > > --- a/drivers/phy/mediatek/phy-mtk-tphy.c
+> > > > +++ b/drivers/phy/mediatek/phy-mtk-tphy.c
+> > > > @@ -7,6 +7,7 @@
+> > > >    
+> > > >    #include <dt-bindings/phy/phy.h>
+> > > >    #include <linux/clk.h>
+> > > > +#include <linux/debugfs.h>
+> > > >    #include <linux/delay.h>
+> > > >    #include <linux/iopoll.h>
+> > > >    #include <linux/mfd/syscon.h>
+> > > > @@ -264,6 +265,8 @@
+> > > >    
+> > > >    #define TPHY_CLKS_CNT	2
+> > > >    
+> > > > +#define USER_BUF_LEN(count) min_t(size_t, 8, (count))
+> > > > +
+> > > >    enum mtk_phy_version {
+> > > >    	MTK_PHY_V1 = 1,
+> > > >    	MTK_PHY_V2,
+> > > > @@ -310,6 +313,7 @@ struct mtk_phy_instance {
+> > > >    	struct clk_bulk_data clks[TPHY_CLKS_CNT];
+> > > >    	u32 index;
+> > > >    	u32 type;
+> > > > +	struct dentry *dbgfs;
+> > > 
+> > > Unused when !IS_ENABLED(CONFIG_PHY_MTK_TPHY_DEBUGFS)
+> > 
+> > Yes, it will be NULL.
+> > 
+> 
+> I was meaning that you should ifdef that out...
+That's no side-effect, but just wastes some bytes, leave it unchanged
 
-Signed-off-by: Richard Zhu <hongxing.zhu@nxp.com>
-Signed-off-by: Lucas Stach <l.stach@pengutronix.de>
-Tested-by: Marek Vasut <marex@denx.de>
-Tested-by: Richard Leitner <richard.leitner@skidata.com>
-Tested-by: Alexander Stein <alexander.stein@ew.tq-group.com>
-Reviewed-by: Lucas Stach <l.stach@pengutronix.de>
-Reviewed-by: Ahmad Fatoum <a.fatoum@pengutronix.de>
----
- drivers/phy/freescale/phy-fsl-imx8m-pcie.c | 25 ++++++++++++++++++++--
- 1 file changed, 23 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/phy/freescale/phy-fsl-imx8m-pcie.c b/drivers/phy/freescale/phy-fsl-imx8m-pcie.c
-index ed8e0011d736..b58a255fa539 100644
---- a/drivers/phy/freescale/phy-fsl-imx8m-pcie.c
-+++ b/drivers/phy/freescale/phy-fsl-imx8m-pcie.c
-@@ -48,6 +48,7 @@
- 
- enum imx8_pcie_phy_type {
- 	IMX8MM,
-+	IMX8MP,
- };
- 
- struct imx8_pcie_phy_drvdata {
-@@ -60,6 +61,7 @@ struct imx8_pcie_phy {
- 	struct clk		*clk;
- 	struct phy		*phy;
- 	struct regmap		*iomuxc_gpr;
-+	struct reset_control	*perst;
- 	struct reset_control	*reset;
- 	u32			refclk_pad_mode;
- 	u32			tx_deemph_gen1;
-@@ -74,11 +76,11 @@ static int imx8_pcie_phy_init(struct phy *phy)
- 	u32 val, pad_mode;
- 	struct imx8_pcie_phy *imx8_phy = phy_get_drvdata(phy);
- 
--	reset_control_assert(imx8_phy->reset);
--
- 	pad_mode = imx8_phy->refclk_pad_mode;
- 	switch (imx8_phy->drvdata->variant) {
- 	case IMX8MM:
-+		reset_control_assert(imx8_phy->reset);
-+
- 		/* Tune PHY de-emphasis setting to pass PCIe compliance. */
- 		if (imx8_phy->tx_deemph_gen1)
- 			writel(imx8_phy->tx_deemph_gen1,
-@@ -87,6 +89,8 @@ static int imx8_pcie_phy_init(struct phy *phy)
- 			writel(imx8_phy->tx_deemph_gen2,
- 			       imx8_phy->base + PCIE_PHY_TRSV_REG6);
- 		break;
-+	case IMX8MP: /* Do nothing. */
-+		break;
- 	}
- 
- 	if (pad_mode == IMX8_PCIE_REFCLK_PAD_INPUT ||
-@@ -141,6 +145,9 @@ static int imx8_pcie_phy_init(struct phy *phy)
- 			   IMX8MM_GPR_PCIE_CMN_RST);
- 
- 	switch (imx8_phy->drvdata->variant) {
-+	case IMX8MP:
-+		reset_control_deassert(imx8_phy->perst);
-+		fallthrough;
- 	case IMX8MM:
- 		reset_control_deassert(imx8_phy->reset);
- 		usleep_range(200, 500);
-@@ -181,8 +188,14 @@ static const struct imx8_pcie_phy_drvdata imx8mm_drvdata = {
- 	.variant = IMX8MM,
- };
- 
-+static const struct imx8_pcie_phy_drvdata imx8mp_drvdata = {
-+	.gpr = "fsl,imx8mp-iomuxc-gpr",
-+	.variant = IMX8MP,
-+};
-+
- static const struct of_device_id imx8_pcie_phy_of_match[] = {
- 	{.compatible = "fsl,imx8mm-pcie-phy", .data = &imx8mm_drvdata, },
-+	{.compatible = "fsl,imx8mp-pcie-phy", .data = &imx8mp_drvdata, },
- 	{ },
- };
- MODULE_DEVICE_TABLE(of, imx8_pcie_phy_of_match);
-@@ -238,6 +251,14 @@ static int imx8_pcie_phy_probe(struct platform_device *pdev)
- 		return PTR_ERR(imx8_phy->reset);
- 	}
- 
-+	if (imx8_phy->drvdata->variant == IMX8MP) {
-+		imx8_phy->perst =
-+			devm_reset_control_get_exclusive(dev, "perst");
-+		if (IS_ERR(imx8_phy->perst))
-+			dev_err_probe(dev, PTR_ERR(imx8_phy->perst),
-+				      "Failed to get PCIE PHY PERST control\n");
-+	}
-+
- 	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
- 	imx8_phy->base = devm_ioremap_resource(dev, res);
- 	if (IS_ERR(imx8_phy->base))
--- 
-2.25.1
+> 
+> Regards,
+> Angelo
+> 
+> > > 
+> > > >    	struct regmap *type_sw;
+> > > >    	u32 type_sw_reg;
+> > > >    	u32 type_sw_index;
+> > > > @@ -332,10 +336,389 @@ struct mtk_tphy {
+> > > >    	const struct mtk_phy_pdata *pdata;
+> > > >    	struct mtk_phy_instance **phys;
+> > > >    	int nphys;
+> > > > +	struct dentry *dbgfs_root;
+> > > 
+> > > Same here
+> > > 
+> > > >    	int src_ref_clk; /* MHZ, reference clock for slew rate
+> > > > calibrate */
+> > > >    	int src_coef; /* coefficient for slew rate calibrate */
+> > > >    };
+> > > >    
+> > > > +#if IS_ENABLED(CONFIG_PHY_MTK_TPHY_DEBUGFS)
+> > > > +
+> > > 
+> > > ..snip..
+> > > 
+> > > > +
+> > > > +static void tphy_debufs_init(struct mtk_tphy *tphy, struct
+> > > > mtk_phy_instance *inst)
+> > > 
+> > > Please fix typo "debufs" -> "debugfs",
+> > 
+> > Will fix it, thanks a lot
+> > 
+> > > here and everywhere else.
+> > > 
+> > > Apart from that, it looks good to me.
+> > > 
+> > > Regards,
+> > > Angelo
+> 
+> 
 
 
 -- 
