@@ -4,68 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C2518C433FE
-	for <linux-phy@archiver.kernel.org>; Tue, 11 Oct 2022 13:49:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D5611C433FE
+	for <linux-phy@archiver.kernel.org>; Tue, 11 Oct 2022 13:51:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/f8LBFvt8s2nF9tdc6fNRk1GIMc67Rj79cqgGT+uHeE=; b=BFdhL8P2Sz4PEy
-	JJNCdmBir6D2/ZcsWmJ3ZADKQ34nj448T8XW868KXk+F4Rp3Fg6DO19Vpyf9w1QPHYnnjdcJHu+k9
-	hjn68kf9x8tHo77qa4DjU/P2zfq16jLAsdxPDM77UiUpTi43bE9Yn+tckERE6/WfZ2KvSNSJjkocO
-	g8fs7tvUTWE9nv2Yf3etUX6U5zcN09ttX1KKEgEt9sPFE3rn/cu6nIy82abDSM7Mb5+d2QCvL3jvQ
-	5Dib/aGcp/F+B2DtrxCEILkdmp4cNagak3F+iYTTubKD5LUMldCBfDshNsRPpE/V1hVz7eOucSwGd
-	jGmMcrtkR4at2DGK/fbg==;
+	List-Owner; bh=15YCz01PSWZGsgksEiZ24Ql3I+rewYzu+G4+zUhS9hg=; b=BGH2HbU9IcEDA/
+	IT5F4TVDZyc4g0yR4WQ/G4bwJUTGFma6cncrQlx2IAIdbOIwg8g7kdMxKDIg8MWtI0pVWPrJrqdK/
+	ZQbFbg0yulLRt5RZMt+ipDtMiErRvdzjwJOnRUO/uWG66ni7TFZcoTHpY7ViAHvdwW5og1onktFYu
+	rhsdIOKpWF9TwaLJqLg/cwgVoF8Hixxt7Tf3dnrSXharGHUWzhyO3hHkUJ1oSMQMLrZLB00bdTGCe
+	XN54cLj9/w0Jtw8Sumrhey47pdIoDdBq9mWPou1pIqS06duxdZozmASvEbZeebBOJSUz6EGqLkOnz
+	JI/+zMwALvGFnPHdujsg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oiFdp-004NvD-5Z; Tue, 11 Oct 2022 13:49:53 +0000
-Received: from mail-lf1-x131.google.com ([2a00:1450:4864:20::131])
+	id 1oiFfF-004OH8-A3; Tue, 11 Oct 2022 13:51:21 +0000
+Received: from mail-lj1-x234.google.com ([2a00:1450:4864:20::234])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oiFdm-004Nt8-1c
-	for linux-phy@lists.infradead.org; Tue, 11 Oct 2022 13:49:51 +0000
-Received: by mail-lf1-x131.google.com with SMTP id r14so21201011lfm.2
-        for <linux-phy@lists.infradead.org>; Tue, 11 Oct 2022 06:49:49 -0700 (PDT)
+	id 1oiFfB-004OD0-UX
+	for linux-phy@lists.infradead.org; Tue, 11 Oct 2022 13:51:20 +0000
+Received: by mail-lj1-x234.google.com with SMTP id x18so8337941ljm.1
+        for <linux-phy@lists.infradead.org>; Tue, 11 Oct 2022 06:51:12 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=1+BwPLVCEI9mF/rLBXMUzn2Ll2qqkV7d9SFJM7M3LtU=;
-        b=cWRJZzXau7Gnr/HVDe41secSzWglvGGkCNzljUdT1qmGb5dqLhqUsz6CyQTnBTJoIo
-         5FdkkBjLg4JYbrT+HMESTPjva2VooD+GBAJUXb4G+dM70goAhnK8K5FIXBU7qe0P8PvO
-         fThtwZYQlds8DHt4Z52jxuXjKb+dCo87KXb3fTozrCpECA8zJDDKM4cfSsn0ZjFZdFkK
-         15nSDj9sNuXfLvDRISt1BACNb6bzO+kSCIiwtJ16POnWF7BWABlyemehc1oZyM5vGyP1
-         2ItkwJQ6PM5KJppH1ZnC50xMAUIivtS3K+MUjrIWewacvSJsDnZl7xEqOqyBe81DmsL5
-         OqfQ==
+        bh=7C53GQvIdU9/jPt0DvQ7RGs3HsrImwAzRzdet7zBxdk=;
+        b=C0qShA64hgwnpZF9CF9ghDKd7XM5n8nD2Rw0ReoVo0NxmoK/laSJ7KpbN3S9FbmFN+
+         EdfYX8E7FI1st6TpffyR+0GVYXYZTX52j3MuR+fmP4kgU11Mni2rE4G3dCHAv3lvE4rc
+         L0Br4rdWBpTUuKTRZQeNmTPyinSt85eIg/MXT5Rp25H6rWdoFnm2LoFLqVMQoRFkvnPu
+         uAbPwuZytW7ZwGthddtPya0OBD+7GBa9wd2DFnB+ExggZ68JMwtePdByKxBwbjkR3Ihi
+         opIIN8cWm1AkRTRfHdJbRuqjlkAhhdPGD4jQ7YPVV3fj6YuIuVrk9arQ+xdMXdTKM+nx
+         VmTA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=1+BwPLVCEI9mF/rLBXMUzn2Ll2qqkV7d9SFJM7M3LtU=;
-        b=6F44eakAJq5/g9dyxqOM6MKihpSYobj9FEuTNlF6hLtcVNbvpK21qCfjGEThf6AJOt
-         xwR0maMKM4KIBwbgHgqPfQ01J36mFZmi+aC2BVJsVNoyHQWVj/PI1j7g59ZvKvWd57VB
-         GUcNyqD4rzHxrImxVqjrTOqZPJR/jGVHZEf19pXO25YPSgUOH4GVw3awq1bpaIjf8/Os
-         /NdyLh/bO0Xts/h0pSOT2+1eGg8raXZHHeiO4+lVNOhipQG/9bZ+//VZF3qRqb23MP37
-         S0kDiS+9GATPAwxyineo2uhvx6wiWKdsaCQPZSeCPZnCr39FUoMT2VqFbntVRfoLBB3M
-         9Exg==
-X-Gm-Message-State: ACrzQf1w5HBsLp0p5g9dV+Z/s1bPZLhafytoRnnpbr3sW2evITEADyji
-	yIy49ftOFtE0QqadXGeLOijnYCYz++ZwiQ==
-X-Google-Smtp-Source: AMsMyM6c8JfoAyStPDL8zU4aaz+c5a/daQc06oOoy04zGjW0JZLSAC+7zT1/DsnmTpJkOWK9Jq/jhQ==
-X-Received: by 2002:a19:915a:0:b0:4a2:458b:ffed with SMTP id y26-20020a19915a000000b004a2458bffedmr8263961lfj.181.1665496188628;
-        Tue, 11 Oct 2022 06:49:48 -0700 (PDT)
+        bh=7C53GQvIdU9/jPt0DvQ7RGs3HsrImwAzRzdet7zBxdk=;
+        b=NSoSjVWD08jynjR1XgjHKbWjKAqIs9Q5PQmW+cnyfzN5wHtZHun2eRwtbCkS+Bi4nl
+         Aduy6gCefMBtpWQnxYhbkJqeVIANP9SEAjySseAcrF9NP4Zs3ut2JOxOd+Ge0beQPO9G
+         egBRFsX043x52StOL5QRJGbxdfshOloCzvbtafnPoXQndCyT4L2xGaFKdWqM+PcVtqb2
+         Pf5cRNrouZRHjV5XLFWuvLCaynYolNT4jjIrycTjvUwmr13bA0wRl5b+cgegEd0usS2l
+         ZuzAvKSZL6IvTj1pkFjwNlBveNw4fXItBg6pF/b2F0OurXTgHkFTB7LxLrGeSuuIW9CP
+         r51w==
+X-Gm-Message-State: ACrzQf36wrs0SWFs9b2g3mCQ//kbjdkIKOWcL7zPTN5iXJ2tOr/XqFqk
+	kzwl2P6j6FiIisvMtkwpvpdrvg==
+X-Google-Smtp-Source: AMsMyM4vEHz4t5t74S777ZaRAebiTFBYZxtJzXJLzjMeSZG0u+PM1IllE4+HMCgb6gcSt/PruJIb1A==
+X-Received: by 2002:a05:651c:210:b0:26f:ab6a:87f5 with SMTP id y16-20020a05651c021000b0026fab6a87f5mr3256979ljn.506.1665496271444;
+        Tue, 11 Oct 2022 06:51:11 -0700 (PDT)
 Received: from [192.168.1.211] ([37.153.55.125])
-        by smtp.gmail.com with ESMTPSA id c22-20020a056512239600b00492e3c8a986sm1864356lfv.264.2022.10.11.06.49.48
+        by smtp.gmail.com with ESMTPSA id j15-20020a056512108f00b00498fc3d4cfdsm1868925lfg.189.2022.10.11.06.51.10
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 11 Oct 2022 06:49:48 -0700 (PDT)
-Message-ID: <777c54b0-7e38-3ce0-2dab-7754129fde94@linaro.org>
-Date: Tue, 11 Oct 2022 16:49:47 +0300
+        Tue, 11 Oct 2022 06:51:11 -0700 (PDT)
+Message-ID: <c483351b-0728-2084-59f3-ac31b255cce5@linaro.org>
+Date: Tue, 11 Oct 2022 16:51:10 +0300
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.3.1
-Subject: Re: [PATCH 08/13] phy: qcom-qmp-pcie: drop power-down delay config
+Subject: Re: [PATCH 04/13] phy: qcom-qmp-pcie: drop redundant ipq8074 power on
 Content-Language: en-GB
 To: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>
 Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
@@ -73,12 +73,12 @@ Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
  Kishon Vijay Abraham I <kishon@ti.com>, linux-arm-msm@vger.kernel.org,
  linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
 References: <20221011131416.2478-1-johan+linaro@kernel.org>
- <20221011131416.2478-9-johan+linaro@kernel.org>
+ <20221011131416.2478-5-johan+linaro@kernel.org>
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-In-Reply-To: <20221011131416.2478-9-johan+linaro@kernel.org>
+In-Reply-To: <20221011131416.2478-5-johan+linaro@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221011_064950_113110_3D7CEC1C 
-X-CRM114-Status: GOOD (  13.23  )
+X-CRM114-CacheID: sfid-20221011_065118_025695_370596B6 
+X-CRM114-Status: GOOD (  10.16  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,26 +96,18 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 11/10/2022 16:14, Johan Hovold wrote:
-> The power-down delay was included in the first version of the QMP driver
-> as an optional delay after powering on the PHY (using
-> POWER_DOWN_CONTROL) and just before starting it. Later changes modified
-> this sequence by powering on before initialising the PHY, but the
-> optional delay stayed where it was (i.e. before starting the PHY).
+> The PCS initialisation table for IPQ8074 includes updates of the reset
+> and start-control registers which is already handled explicitly by the
+> driver during power on.
 > 
-> The vendor driver does not use a delay before starting the PHY and this
-> is likely not needed on any platform unless there is a corresponding
-> delay in the vendor kernel init sequence tables (i.e. in devicetree).
-> 
-> Let's keep the delay for now, but drop the redundant delay period
-> configuration while increasing the unnecessarily low timer slack
-> somewhat.
+> Drop the redundant register write from the IPQ8074 configuration table
+> and along with it the now unused "in-layout" configuration macro and
+> code.
 > 
 > Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 > ---
->   drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 27 +-----------------------
->   1 file changed, 1 insertion(+), 26 deletions(-)
-> 
-Anyway, we can move the delay later.
+>   drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 42 +++++-------------------
+>   1 file changed, 9 insertions(+), 33 deletions(-)
 
 Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 
