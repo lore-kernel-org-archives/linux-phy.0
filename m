@@ -4,68 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3270AC433F5
-	for <linux-phy@archiver.kernel.org>; Tue, 11 Oct 2022 13:47:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 38E2CC433FE
+	for <linux-phy@archiver.kernel.org>; Tue, 11 Oct 2022 13:49:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cGVRLroLNGunLxFmDRKWh7Qo8aPDAEa305nox4NqK7Y=; b=pL4d6rntW836UN
-	x8wLBD2z0qg7h6/SFEiT+x8k9xyewp43n9dZOJyK7wL582shXh3pqiuccm+i3l3eD+Frq8g1fQ9hL
-	DvTMgjR3L760funqcMuSEd1jVv4WOzMAgu3+6OyM+4kH9T++qxLexkFTEu9j6mgbqT9YdCf7l2JWo
-	oz0sWAl8ZJa4ghnN5m5tJ12YAjoCfNC2bKilJnKgiy+lb3PTabQmMVX54hfVCEVRBPWUmU/AIUgb3
-	GqYdzSHK335+g6ZVD4eX+Z/iBbNtVgHnYb4H8zCVvphyxb7NQAngxrCKyTRILjJefFxWxJxkjs6+H
-	XXPuxsCSgW4GnliWlNtg==;
+	List-Owner; bh=sqnC8cAIOOXyuTdwEthvA+mHqwenP0eTVWq4AWLT2co=; b=Be7nXgKX5zuM3U
+	lrqiAd6HSV9rByJ7YSOG2brRop3K8OQ5HLzm/i07/CT3bvoQLTpq5VQlEYwfbeRMs6HsDpvdeFES/
+	1QUxIRNdZ2JrGC0H7kKU8KoVQl2TEXH7OiiqLtY91Jd8UKyZ77frcyS0Fot6vIKXjJVWHmjx0NW59
+	gYguFUTEnchbkFcWikJuJnfwLKL1Yr9fuZhw1ZeX+D88g52ZusG0xhwnDAOXX2NnyLGhtZJengkjE
+	MGwukUzJpc9ICGrVFUL4/R+XncFOmmocE5TVj5tS/lwawmRPOwmKpuDSKdx77mQHvMMiOojLS40+b
+	5LpQMKpS8HOFEIiX/NwQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oiFb3-004NKS-IU; Tue, 11 Oct 2022 13:47:01 +0000
-Received: from mail-lf1-x131.google.com ([2a00:1450:4864:20::131])
+	id 1oiFdK-004Nm9-LY; Tue, 11 Oct 2022 13:49:22 +0000
+Received: from mail-lj1-x233.google.com ([2a00:1450:4864:20::233])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oiFb0-004NJk-2f
-	for linux-phy@lists.infradead.org; Tue, 11 Oct 2022 13:46:59 +0000
-Received: by mail-lf1-x131.google.com with SMTP id y5so21189050lfl.4
-        for <linux-phy@lists.infradead.org>; Tue, 11 Oct 2022 06:46:55 -0700 (PDT)
+	id 1oiFdI-004Nkc-Ca
+	for linux-phy@lists.infradead.org; Tue, 11 Oct 2022 13:49:21 +0000
+Received: by mail-lj1-x233.google.com with SMTP id s10so16908641ljp.5
+        for <linux-phy@lists.infradead.org>; Tue, 11 Oct 2022 06:49:19 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=Br0NTj8ZuH0OMXFiG8Wg0lpHMqpiMdL9G9IUbDLd/Zs=;
-        b=RQSrGdfX0bpIJ+tAeoNzDiC1J6uuDKzs+4KorXjRVyWtREspgXAUskhA/H67L51QTc
-         VLbYqejgMfLEPc3Jdwl4hVyrgFyq6q+kwAAYqM3ojG+9BRx0MNlqlE2g1ym8KiTpBtsZ
-         LbJ15asNufiZcc1paa60exl/aSLvMaD6Yc6OVz+V8xs0bcUjMUo62qMzW/4QNCevKipm
-         hqO53NlKsBBtZnkfn90wERhPBaBP2Xf2rYSpLKZ9R/fuTX2V9yhevm88zjenHxnQDMNr
-         fSsY0WsL1yLowE7ChAilBqRR04wdAxOrINdDiAOL7TGC94mo4lvIxFYm8S+1f3sGm29A
-         iHqg==
+        bh=95e1zfa1PsPhtqKhEzjg0I/Nc68FTTy+m8Ct/8lpeQ8=;
+        b=dayUUKJSu+0Y7AuxMSsc0uU11Xur8HR4pNTBoupUJzfASm1iwkO3dzp/6mahuI3h4K
+         RIV4xSxwvZDB8nWv9Xz/6TGNmn4I3uDNqlRRh+VX1oGujKho9GBFNqhUv/yUbFNY5e0c
+         7rEYOs3Jm9/sGdkUPMncRp7iifYuddITKW3neMz55Isz6TBizUYBSx4g7LybLH6seQDQ
+         OMsie44JeTjdGI5cLGmFctMSjpLBmcLTRnpIxVjW3A3km06qFN5RqEetaHXPq9AgMvO/
+         ol6wFXxxGrx+H238aoX+G73q/eJ+5Y/+sBJeNH9m0Bagdd4WAEg4epqxcn8seC2nQKpG
+         MhHQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=Br0NTj8ZuH0OMXFiG8Wg0lpHMqpiMdL9G9IUbDLd/Zs=;
-        b=QwEmbw4CYXJ82oje9Oof1jn4Tis6MV7ypey9lof6v0IJ8J60twhtkKLJjv6mkjgMyo
-         Yd2jgK2s6SDdIZLd7B9IJbEciVKaaEy256DjuJH7kWaD22QOg+evGCeLZ9hbew5yXMGS
-         0xuob+HhKEiUVD0LxtdjlY1nXOLX42TT9zB7C8rMu3hNxGQw4eZoCkBml6h0dC7FqvR2
-         ZwTQi+I8zx3y7mHgJLqo9bs7zwF2I0eN+lRe37bSs4M/g+UkES+x5rzv4AOYAHX9dTw1
-         k72B68KhYPl56SYD6ycmxBv+BK33QUCUtvJQ6fjcJpczIeWU9qBrTMSATZqHNRYMrpal
-         1NZQ==
-X-Gm-Message-State: ACrzQf1Dd4nXPapCPsQurFmNxogNmKIL334Njyil4XBSdp9fSvQpZSF7
-	Vr0nc9wcHlzWedBNC/8pnJcu9A==
-X-Google-Smtp-Source: AMsMyM6dqVFivVBAfJnusOTTHFixr6ta36EYELj9FkxhYexenNncJW1G3ektGPum7oYy8DXfnSf/1w==
-X-Received: by 2002:a05:6512:3b13:b0:4a2:564e:6cea with SMTP id f19-20020a0565123b1300b004a2564e6ceamr8373899lfv.242.1665496014326;
-        Tue, 11 Oct 2022 06:46:54 -0700 (PDT)
+        bh=95e1zfa1PsPhtqKhEzjg0I/Nc68FTTy+m8Ct/8lpeQ8=;
+        b=UFDsfe0RbZVHQGqXKgbQ6se4T/B0CglcnFqpUKTWq8go6VC1lhRqKdMaVtQ7N7hLgL
+         prnOF5kBWsuFLpc8hVBxCj1BpQufxs+gvYYtGsM1w2l4+H0Rg7woznmTnH4PaRbyia3Q
+         Erkcez+JwZhFfKZdMYqq7JpaCEJOTcA9RsO5OH1+O0Rzkd9UJJxLo3QC5vZfzgKQB07v
+         Yk4xdMok/V9sJG78dkpALStlJivike7Qf/DG/SOXaLeJFFl3bCbJ4Vhp9EcrTSRnM9ok
+         LhQi6BAoOoyMDfEbLBedmR763F1QWcQqVnPKD8ov939TwkXgV857QlvuVbaV7dpxD5Oe
+         YNtw==
+X-Gm-Message-State: ACrzQf24Fb38qDn9njI2/Mc86IxNm+aBTY6kbsvXRYV6HoU91pi/kadS
+	yw02rD1NeTT/zT7Qq64PKBzUkg==
+X-Google-Smtp-Source: AMsMyM61FrMUAfb7Budd+1I+ins+sGxtHFRfmYTiHTZSNIURvWBPG4jjQ87/TLuylyi5cl/TEYalGA==
+X-Received: by 2002:a2e:8947:0:b0:26e:1a9:654c with SMTP id b7-20020a2e8947000000b0026e01a9654cmr8288677ljk.102.1665496158341;
+        Tue, 11 Oct 2022 06:49:18 -0700 (PDT)
 Received: from [192.168.1.211] ([37.153.55.125])
-        by smtp.gmail.com with ESMTPSA id z18-20020a056512371200b0049313f77755sm1858954lfr.213.2022.10.11.06.46.53
+        by smtp.gmail.com with ESMTPSA id j6-20020a2eb706000000b0026dcf81d804sm2154796ljo.31.2022.10.11.06.49.17
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 11 Oct 2022 06:46:53 -0700 (PDT)
-Message-ID: <66261491-530d-c368-6cc8-daeef74fcbda@linaro.org>
-Date: Tue, 11 Oct 2022 16:46:53 +0300
+        Tue, 11 Oct 2022 06:49:18 -0700 (PDT)
+Message-ID: <fa00a1c7-64b5-4c2c-8775-867c3a4f0a11@linaro.org>
+Date: Tue, 11 Oct 2022 16:49:17 +0300
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.3.1
-Subject: Re: [PATCH 08/13] phy: qcom-qmp-pcie: drop power-down delay config
+Subject: Re: [PATCH 09/13] phy: qcom-qmp-pcie-msm8996: drop power-down delay
+ config
 Content-Language: en-GB
 To: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>
 Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
@@ -73,12 +74,12 @@ Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
  Kishon Vijay Abraham I <kishon@ti.com>, linux-arm-msm@vger.kernel.org,
  linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
 References: <20221011131416.2478-1-johan+linaro@kernel.org>
- <20221011131416.2478-9-johan+linaro@kernel.org>
+ <20221011131416.2478-10-johan+linaro@kernel.org>
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-In-Reply-To: <20221011131416.2478-9-johan+linaro@kernel.org>
+In-Reply-To: <20221011131416.2478-10-johan+linaro@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221011_064658_174848_0180CECE 
-X-CRM114-Status: GOOD (  22.37  )
+X-CRM114-CacheID: sfid-20221011_064920_460618_E5FE2988 
+X-CRM114-Status: GOOD (  21.91  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,7 +98,7 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 11/10/2022 16:14, Johan Hovold wrote:
 > The power-down delay was included in the first version of the QMP driver
-> as an optional delay after powering on the PHY (using
+> for MSM8996 as an optional delay after powering on the PHY (using
 > POWER_DOWN_CONTROL) and just before starting it. Later changes modified
 > this sequence by powering on before initialising the PHY, but the
 > optional delay stayed where it was (i.e. before starting the PHY).
@@ -106,142 +107,63 @@ On 11/10/2022 16:14, Johan Hovold wrote:
 > is likely not needed on any platform unless there is a corresponding
 > delay in the vendor kernel init sequence tables (i.e. in devicetree).
 > 
-> Let's keep the delay for now, but drop the redundant delay period
-> configuration while increasing the unnecessarily low timer slack
-> somewhat.
-
-Actually, the vendor driver does this 995..1005 sleep. But contrary to 
-our driver it does that after programming whole PHY init sequence, which 
-includes SW_RESET / START_CTL, but before programming the pipe clocks.
-
-I think we can either drop this delay completely, or move it before 
-read_poll_timeout().
-
+> Let's keep the delay for now, but drop the redundant configuration
+> options while increasing the unnecessarily low timer slack somewhat.
 > 
 > Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
+
+Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+
+Note: the comment from the previous patch applies here too.
+
 > ---
->   drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 27 +-----------------------
->   1 file changed, 1 insertion(+), 26 deletions(-)
+>   drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c | 15 ++-------------
+>   1 file changed, 2 insertions(+), 13 deletions(-)
 > 
-> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-> index fa8bc6aeedf1..315de484f875 100644
-> --- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-> @@ -1362,9 +1362,6 @@ struct qmp_phy_cfg {
+> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c
+> index 31ac405d3785..899be7bd4d92 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c
+> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c
+> @@ -41,7 +41,7 @@
 >   
->   	/* true, if PHY needs delay after POWER_DOWN */
->   	bool has_pwrdn_delay;
+>   #define PHY_INIT_COMPLETE_TIMEOUT		10000
+>   #define POWER_DOWN_DELAY_US_MIN			10
+> -#define POWER_DOWN_DELAY_US_MAX			11
+> +#define POWER_DOWN_DELAY_US_MAX			20
+>   
+>   struct qmp_phy_init_tbl {
+>   	unsigned int offset;
+> @@ -203,12 +203,6 @@ struct qmp_phy_cfg {
+>   	unsigned int mask_com_pcs_ready;
+>   	/* bit offset of PHYSTATUS in QPHY_PCS_STATUS register */
+>   	unsigned int phy_status;
+> -
+> -	/* true, if PHY needs delay after POWER_DOWN */
+> -	bool has_pwrdn_delay;
 > -	/* power_down delay in usec */
 > -	int pwrdn_delay_min;
 > -	int pwrdn_delay_max;
->   
->   	/* QMP PHY pipe clock interface rate */
->   	unsigned long pipe_clock_rate;
-> @@ -1500,8 +1497,6 @@ static const struct qmp_phy_cfg ipq8074_pciephy_cfg = {
->   	.phy_status		= PHYSTATUS,
->   
->   	.has_pwrdn_delay	= true,
-> -	.pwrdn_delay_min	= 995,		/* us */
-> -	.pwrdn_delay_max	= 1005,		/* us */
 >   };
 >   
->   static const struct qmp_phy_cfg ipq8074_pciephy_gen3_cfg = {
-> @@ -1529,8 +1524,6 @@ static const struct qmp_phy_cfg ipq8074_pciephy_gen3_cfg = {
+>   /**
+> @@ -326,10 +320,6 @@ static const struct qmp_phy_cfg msm8996_pciephy_cfg = {
 >   	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
->   
->   	.has_pwrdn_delay	= true,
-> -	.pwrdn_delay_min	= 995,		/* us */
-> -	.pwrdn_delay_max	= 1005,		/* us */
->   
->   	.pipe_clock_rate	= 250000000,
->   };
-> @@ -1562,8 +1555,6 @@ static const struct qmp_phy_cfg ipq6018_pciephy_cfg = {
->   	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
->   
->   	.has_pwrdn_delay	= true,
-> -	.pwrdn_delay_min	= 995,		/* us */
-> -	.pwrdn_delay_max	= 1005,		/* us */
->   };
->   
->   static const struct qmp_phy_cfg sdm845_qmp_pciephy_cfg = {
-> @@ -1594,8 +1585,6 @@ static const struct qmp_phy_cfg sdm845_qmp_pciephy_cfg = {
+>   	.mask_com_pcs_ready	= PCS_READY,
 >   	.phy_status		= PHYSTATUS,
->   
->   	.has_pwrdn_delay	= true,
-> -	.pwrdn_delay_min	= 995,		/* us */
-> -	.pwrdn_delay_max	= 1005,		/* us */
+> -
+> -	.has_pwrdn_delay	= true,
+> -	.pwrdn_delay_min	= POWER_DOWN_DELAY_US_MIN,
+> -	.pwrdn_delay_max	= POWER_DOWN_DELAY_US_MAX,
 >   };
 >   
->   static const struct qmp_phy_cfg sdm845_qhp_pciephy_cfg = {
-> @@ -1624,8 +1613,6 @@ static const struct qmp_phy_cfg sdm845_qhp_pciephy_cfg = {
->   	.phy_status		= PHYSTATUS,
+>   static void qmp_pcie_msm8996_configure_lane(void __iomem *base,
+> @@ -523,8 +513,7 @@ static int qmp_pcie_msm8996_power_on(struct phy *phy)
+>   	 */
+>   	qphy_setbits(pcs, QPHY_V2_PCS_POWER_DOWN_CONTROL, cfg->pwrdn_ctrl);
 >   
->   	.has_pwrdn_delay	= true,
-> -	.pwrdn_delay_min	= 995,		/* us */
-> -	.pwrdn_delay_max	= 1005,		/* us */
->   };
->   
->   static const struct qmp_phy_cfg sm8250_qmp_gen3x1_pciephy_cfg = {
-> @@ -1666,8 +1653,6 @@ static const struct qmp_phy_cfg sm8250_qmp_gen3x1_pciephy_cfg = {
->   	.phy_status		= PHYSTATUS,
->   
->   	.has_pwrdn_delay	= true,
-> -	.pwrdn_delay_min	= 995,		/* us */
-> -	.pwrdn_delay_max	= 1005,		/* us */
->   };
->   
->   static const struct qmp_phy_cfg sm8250_qmp_gen3x2_pciephy_cfg = {
-> @@ -1708,8 +1693,6 @@ static const struct qmp_phy_cfg sm8250_qmp_gen3x2_pciephy_cfg = {
->   	.phy_status		= PHYSTATUS,
->   
->   	.has_pwrdn_delay	= true,
-> -	.pwrdn_delay_min	= 995,		/* us */
-> -	.pwrdn_delay_max	= 1005,		/* us */
->   };
->   
->   static const struct qmp_phy_cfg msm8998_pciephy_cfg = {
-> @@ -1765,8 +1748,6 @@ static const struct qmp_phy_cfg sc8180x_pciephy_cfg = {
->   	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
->   
->   	.has_pwrdn_delay	= true,
-> -	.pwrdn_delay_min	= 995,		/* us */
-> -	.pwrdn_delay_max	= 1005,		/* us */
->   };
->   
->   static const struct qmp_phy_cfg sdx55_qmp_pciephy_cfg = {
-> @@ -1797,8 +1778,6 @@ static const struct qmp_phy_cfg sdx55_qmp_pciephy_cfg = {
->   	.phy_status		= PHYSTATUS_4_20,
->   
->   	.has_pwrdn_delay	= true,
-> -	.pwrdn_delay_min	= 995,		/* us */
-> -	.pwrdn_delay_max	= 1005,		/* us */
->   };
->   
->   static const struct qmp_phy_cfg sm8450_qmp_gen3x1_pciephy_cfg = {
-> @@ -1829,8 +1808,6 @@ static const struct qmp_phy_cfg sm8450_qmp_gen3x1_pciephy_cfg = {
->   	.phy_status		= PHYSTATUS,
->   
->   	.has_pwrdn_delay	= true,
-> -	.pwrdn_delay_min	= 995,		/* us */
-> -	.pwrdn_delay_max	= 1005,		/* us */
->   };
->   
->   static const struct qmp_phy_cfg sm8450_qmp_gen4x2_pciephy_cfg = {
-> @@ -1876,8 +1853,6 @@ static const struct qmp_phy_cfg sm8450_qmp_gen4x2_pciephy_cfg = {
->   	.phy_status		= PHYSTATUS_4_20,
->   
->   	.has_pwrdn_delay	= true,
-> -	.pwrdn_delay_min	= 995,		/* us */
-> -	.pwrdn_delay_max	= 1005,		/* us */
->   };
->   
->   static void qmp_pcie_configure_lane(void __iomem *base,
-> @@ -2037,7 +2012,7 @@ static int qmp_pcie_power_on(struct phy *phy)
->   	qmp_pcie_pcs_init(qphy, mode_tables);
->   
->   	if (cfg->has_pwrdn_delay)
+> -	if (cfg->has_pwrdn_delay)
 > -		usleep_range(cfg->pwrdn_delay_min, cfg->pwrdn_delay_max);
-> +		usleep_range(1000, 1200);
+> +	usleep_range(POWER_DOWN_DELAY_US_MIN, POWER_DOWN_DELAY_US_MAX);
 >   
 >   	/* Pull PHY out of reset state */
 >   	qphy_clrbits(pcs, cfg->regs[QPHY_SW_RESET], SW_RESET);
