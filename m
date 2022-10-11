@@ -4,68 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 14762C433FE
-	for <linux-phy@archiver.kernel.org>; Tue, 11 Oct 2022 13:14:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3270AC433F5
+	for <linux-phy@archiver.kernel.org>; Tue, 11 Oct 2022 13:47:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xyt4Sl2h/Pw47kigmzHoZwKgms1YV4YyC+giZXYo7u8=; b=1z8nMj3nsLO6cL
-	wX8OGQWo1l3R4CFCholIwK/r90ypnB8gBAwd/V41gfVt4Jp5xXKw2huv6ypWJ8uw4YPpfkUfLh30d
-	C0XnT6ZL+cF0k0WZjKQ/TGcDQadksEStLSWrOdxiNZSpvb431wPXIPd9QPhlp+Gvxkf8tzGIG9oNX
-	v9xLPLyWvRYW8IVYm6PfIJCOthq9ZtcXMocALlxvpJTyFLtqQ9Nv6It8kiLew/SE+USDx8FJTHNzh
-	mBahMq//mzDVZs4eFkkgcWBFbC8g18V5UxT8h7L28992Pn0R5IDT4jySjXoiKUdh4qfaEuHNVzr/r
-	cocW9tvNkdsPwzsaJ/EA==;
+	List-Owner; bh=cGVRLroLNGunLxFmDRKWh7Qo8aPDAEa305nox4NqK7Y=; b=pL4d6rntW836UN
+	x8wLBD2z0qg7h6/SFEiT+x8k9xyewp43n9dZOJyK7wL582shXh3pqiuccm+i3l3eD+Frq8g1fQ9hL
+	DvTMgjR3L760funqcMuSEd1jVv4WOzMAgu3+6OyM+4kH9T++qxLexkFTEu9j6mgbqT9YdCf7l2JWo
+	oz0sWAl8ZJa4ghnN5m5tJ12YAjoCfNC2bKilJnKgiy+lb3PTabQmMVX54hfVCEVRBPWUmU/AIUgb3
+	GqYdzSHK335+g6ZVD4eX+Z/iBbNtVgHnYb4H8zCVvphyxb7NQAngxrCKyTRILjJefFxWxJxkjs6+H
+	XXPuxsCSgW4GnliWlNtg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oiF62-004JFn-G5; Tue, 11 Oct 2022 13:14:58 +0000
-Received: from sin.source.kernel.org ([145.40.73.55])
+	id 1oiFb3-004NKS-IU; Tue, 11 Oct 2022 13:47:01 +0000
+Received: from mail-lf1-x131.google.com ([2a00:1450:4864:20::131])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oiF5w-004JA7-Vt
-	for linux-phy@lists.infradead.org; Tue, 11 Oct 2022 13:14:55 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by sin.source.kernel.org (Postfix) with ESMTPS id BF765CE12AC;
-	Tue, 11 Oct 2022 13:14:49 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6698CC4347C;
-	Tue, 11 Oct 2022 13:14:47 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1665494087;
-	bh=RF58hFyL1MLDn0pyVsEIIt4x+LIAiys30BgnvGFyNsA=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=Vy/LpNYj58cXH/Sx9AJiZK7EXxTqi5B74AoX9xiThyXfFPUU6/Q9NCyJ4+5HcMODS
-	 V6/4m52RXpxf3gds0fFRE1U7aJ8Yb2kG2yByhKMRPS9gK42s6LUybtsahJC3r64vNI
-	 lDuqWvl5wSIHZk6AY43gjPzH73LZk3uRNkZySADIwvdIv3IVNJ+CEDuNpbjJBRoRHA
-	 3iGuYW0jzaisNMn/h7tmAa+O2BIPUfI4+3lHuQpxgoULtjCiyp8kd64NbPF93JY3fo
-	 0VsfnhkqQf9bb6XqiDjS0wlvSZqGHwIb3KkHnAOJJBcAlbwJ4CdDF+WtY7dPd3nE6C
-	 iqQIA68wgTiOA==
-Received: from johan by xi.lan with local (Exim 4.94.2)
-	(envelope-from <johan+linaro@kernel.org>)
-	id 1oiF5i-0000ej-FE; Tue, 11 Oct 2022 15:14:38 +0200
-From: Johan Hovold <johan+linaro@kernel.org>
-To: Vinod Koul <vkoul@kernel.org>
-Cc: Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@somainline.org>,
-	Kishon Vijay Abraham I <kishon@ti.com>,
-	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
-	linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH 04/13] phy: qcom-qmp-pcie: drop redundant ipq8074 power on
-Date: Tue, 11 Oct 2022 15:14:07 +0200
-Message-Id: <20221011131416.2478-5-johan+linaro@kernel.org>
-X-Mailer: git-send-email 2.35.1
-In-Reply-To: <20221011131416.2478-1-johan+linaro@kernel.org>
-References: <20221011131416.2478-1-johan+linaro@kernel.org>
+	id 1oiFb0-004NJk-2f
+	for linux-phy@lists.infradead.org; Tue, 11 Oct 2022 13:46:59 +0000
+Received: by mail-lf1-x131.google.com with SMTP id y5so21189050lfl.4
+        for <linux-phy@lists.infradead.org>; Tue, 11 Oct 2022 06:46:55 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=Br0NTj8ZuH0OMXFiG8Wg0lpHMqpiMdL9G9IUbDLd/Zs=;
+        b=RQSrGdfX0bpIJ+tAeoNzDiC1J6uuDKzs+4KorXjRVyWtREspgXAUskhA/H67L51QTc
+         VLbYqejgMfLEPc3Jdwl4hVyrgFyq6q+kwAAYqM3ojG+9BRx0MNlqlE2g1ym8KiTpBtsZ
+         LbJ15asNufiZcc1paa60exl/aSLvMaD6Yc6OVz+V8xs0bcUjMUo62qMzW/4QNCevKipm
+         hqO53NlKsBBtZnkfn90wERhPBaBP2Xf2rYSpLKZ9R/fuTX2V9yhevm88zjenHxnQDMNr
+         fSsY0WsL1yLowE7ChAilBqRR04wdAxOrINdDiAOL7TGC94mo4lvIxFYm8S+1f3sGm29A
+         iHqg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=Br0NTj8ZuH0OMXFiG8Wg0lpHMqpiMdL9G9IUbDLd/Zs=;
+        b=QwEmbw4CYXJ82oje9Oof1jn4Tis6MV7ypey9lof6v0IJ8J60twhtkKLJjv6mkjgMyo
+         Yd2jgK2s6SDdIZLd7B9IJbEciVKaaEy256DjuJH7kWaD22QOg+evGCeLZ9hbew5yXMGS
+         0xuob+HhKEiUVD0LxtdjlY1nXOLX42TT9zB7C8rMu3hNxGQw4eZoCkBml6h0dC7FqvR2
+         ZwTQi+I8zx3y7mHgJLqo9bs7zwF2I0eN+lRe37bSs4M/g+UkES+x5rzv4AOYAHX9dTw1
+         k72B68KhYPl56SYD6ycmxBv+BK33QUCUtvJQ6fjcJpczIeWU9qBrTMSATZqHNRYMrpal
+         1NZQ==
+X-Gm-Message-State: ACrzQf1Dd4nXPapCPsQurFmNxogNmKIL334Njyil4XBSdp9fSvQpZSF7
+	Vr0nc9wcHlzWedBNC/8pnJcu9A==
+X-Google-Smtp-Source: AMsMyM6dqVFivVBAfJnusOTTHFixr6ta36EYELj9FkxhYexenNncJW1G3ektGPum7oYy8DXfnSf/1w==
+X-Received: by 2002:a05:6512:3b13:b0:4a2:564e:6cea with SMTP id f19-20020a0565123b1300b004a2564e6ceamr8373899lfv.242.1665496014326;
+        Tue, 11 Oct 2022 06:46:54 -0700 (PDT)
+Received: from [192.168.1.211] ([37.153.55.125])
+        by smtp.gmail.com with ESMTPSA id z18-20020a056512371200b0049313f77755sm1858954lfr.213.2022.10.11.06.46.53
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 11 Oct 2022 06:46:53 -0700 (PDT)
+Message-ID: <66261491-530d-c368-6cc8-daeef74fcbda@linaro.org>
+Date: Tue, 11 Oct 2022 16:46:53 +0300
 MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.3.1
+Subject: Re: [PATCH 08/13] phy: qcom-qmp-pcie: drop power-down delay config
+Content-Language: en-GB
+To: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>
+Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
+ Konrad Dybcio <konrad.dybcio@somainline.org>,
+ Kishon Vijay Abraham I <kishon@ti.com>, linux-arm-msm@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
+References: <20221011131416.2478-1-johan+linaro@kernel.org>
+ <20221011131416.2478-9-johan+linaro@kernel.org>
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+In-Reply-To: <20221011131416.2478-9-johan+linaro@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221011_061453_456871_3FFA8AF0 
-X-CRM114-Status: GOOD (  14.80  )
+X-CRM114-CacheID: sfid-20221011_064658_174848_0180CECE 
+X-CRM114-Status: GOOD (  22.37  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,144 +90,165 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The PCS initialisation table for IPQ8074 includes updates of the reset
-and start-control registers which is already handled explicitly by the
-driver during power on.
+On 11/10/2022 16:14, Johan Hovold wrote:
+> The power-down delay was included in the first version of the QMP driver
+> as an optional delay after powering on the PHY (using
+> POWER_DOWN_CONTROL) and just before starting it. Later changes modified
+> this sequence by powering on before initialising the PHY, but the
+> optional delay stayed where it was (i.e. before starting the PHY).
+> 
+> The vendor driver does not use a delay before starting the PHY and this
+> is likely not needed on any platform unless there is a corresponding
+> delay in the vendor kernel init sequence tables (i.e. in devicetree).
+> 
+> Let's keep the delay for now, but drop the redundant delay period
+> configuration while increasing the unnecessarily low timer slack
+> somewhat.
 
-Drop the redundant register write from the IPQ8074 configuration table
-and along with it the now unused "in-layout" configuration macro and
-code.
+Actually, the vendor driver does this 995..1005 sleep. But contrary to 
+our driver it does that after programming whole PHY init sequence, which 
+includes SW_RESET / START_CTL, but before programming the pipe clocks.
 
-Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
----
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 42 +++++-------------------
- 1 file changed, 9 insertions(+), 33 deletions(-)
+I think we can either drop this delay completely, or move it before 
+read_poll_timeout().
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-index de04d8dd5350..fa8bc6aeedf1 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-@@ -42,11 +42,6 @@
- struct qmp_phy_init_tbl {
- 	unsigned int offset;
- 	unsigned int val;
--	/*
--	 * register part of layout ?
--	 * if yes, then offset gives index in the reg-layout
--	 */
--	bool in_layout;
- 	/*
- 	 * mask of lanes for which this register is written
- 	 * for cases when second lane needs different values
-@@ -61,14 +56,6 @@ struct qmp_phy_init_tbl {
- 		.lane_mask = 0xff,	\
- 	}
- 
--#define QMP_PHY_INIT_CFG_L(o, v)	\
--	{				\
--		.offset = o,		\
--		.val = v,		\
--		.in_layout = true,	\
--		.lane_mask = 0xff,	\
--	}
--
- #define QMP_PHY_INIT_CFG_LANE(o, v, l)	\
- 	{				\
- 		.offset = o,		\
-@@ -388,8 +375,6 @@ static const struct qmp_phy_init_tbl ipq8074_pcie_pcs_tbl[] = {
- 	QMP_PHY_INIT_CFG(QPHY_V2_PCS_RX_SIGDET_LVL, 0x99),
- 	QMP_PHY_INIT_CFG(QPHY_V2_PCS_TXDEEMPH_M6DB_V0, 0x15),
- 	QMP_PHY_INIT_CFG(QPHY_V2_PCS_TXDEEMPH_M3P5DB_V0, 0xe),
--	QMP_PHY_INIT_CFG_L(QPHY_SW_RESET, 0x0),
--	QMP_PHY_INIT_CFG_L(QPHY_START_CTRL, 0x3),
- };
- 
- static const struct qmp_phy_init_tbl ipq8074_pcie_gen3_serdes_tbl[] = {
-@@ -1896,7 +1881,6 @@ static const struct qmp_phy_cfg sm8450_qmp_gen4x2_pciephy_cfg = {
- };
- 
- static void qmp_pcie_configure_lane(void __iomem *base,
--					const unsigned int *regs,
- 					const struct qmp_phy_init_tbl tbl[],
- 					int num,
- 					u8 lane_mask)
-@@ -1911,30 +1895,25 @@ static void qmp_pcie_configure_lane(void __iomem *base,
- 		if (!(t->lane_mask & lane_mask))
- 			continue;
- 
--		if (t->in_layout)
--			writel(t->val, base + regs[t->offset]);
--		else
--			writel(t->val, base + t->offset);
-+		writel(t->val, base + t->offset);
- 	}
- }
- 
- static void qmp_pcie_configure(void __iomem *base,
--					const unsigned int *regs,
- 					const struct qmp_phy_init_tbl tbl[],
- 					int num)
- {
--	qmp_pcie_configure_lane(base, regs, tbl, num, 0xff);
-+	qmp_pcie_configure_lane(base, tbl, num, 0xff);
- }
- 
- static void qmp_pcie_serdes_init(struct qmp_phy *qphy, const struct qmp_phy_cfg_tables *tables)
- {
--	const struct qmp_phy_cfg *cfg = qphy->cfg;
- 	void __iomem *serdes = qphy->serdes;
- 
- 	if (!tables)
- 		return;
- 
--	qmp_pcie_configure(serdes, cfg->regs, tables->serdes, tables->serdes_num);
-+	qmp_pcie_configure(serdes, tables->serdes, tables->serdes_num);
- }
- 
- static void qmp_pcie_lanes_init(struct qmp_phy *qphy, const struct qmp_phy_cfg_tables *tables)
-@@ -1946,29 +1925,26 @@ static void qmp_pcie_lanes_init(struct qmp_phy *qphy, const struct qmp_phy_cfg_t
- 	if (!tables)
- 		return;
- 
--	qmp_pcie_configure_lane(tx, cfg->regs, tables->tx, tables->tx_num, 1);
-+	qmp_pcie_configure_lane(tx, tables->tx, tables->tx_num, 1);
- 
- 	if (cfg->lanes >= 2)
--		qmp_pcie_configure_lane(qphy->tx2, cfg->regs, tables->tx, tables->tx_num, 2);
-+		qmp_pcie_configure_lane(qphy->tx2, tables->tx, tables->tx_num, 2);
- 
--	qmp_pcie_configure_lane(rx, cfg->regs, tables->rx, tables->rx_num, 1);
-+	qmp_pcie_configure_lane(rx, tables->rx, tables->rx_num, 1);
- 	if (cfg->lanes >= 2)
--		qmp_pcie_configure_lane(qphy->rx2, cfg->regs, tables->rx, tables->rx_num, 2);
-+		qmp_pcie_configure_lane(qphy->rx2, tables->rx, tables->rx_num, 2);
- }
- 
- static void qmp_pcie_pcs_init(struct qmp_phy *qphy, const struct qmp_phy_cfg_tables *tables)
- {
--	const struct qmp_phy_cfg *cfg = qphy->cfg;
- 	void __iomem *pcs = qphy->pcs;
- 	void __iomem *pcs_misc = qphy->pcs_misc;
- 
- 	if (!tables)
- 		return;
- 
--	qmp_pcie_configure(pcs, cfg->regs,
--			   tables->pcs, tables->pcs_num);
--	qmp_pcie_configure(pcs_misc, cfg->regs,
--			   tables->pcs_misc, tables->pcs_misc_num);
-+	qmp_pcie_configure(pcs, tables->pcs, tables->pcs_num);
-+	qmp_pcie_configure(pcs_misc, tables->pcs_misc, tables->pcs_misc_num);
- }
- 
- static int qmp_pcie_init(struct phy *phy)
+> 
+> Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
+> ---
+>   drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 27 +-----------------------
+>   1 file changed, 1 insertion(+), 26 deletions(-)
+> 
+> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+> index fa8bc6aeedf1..315de484f875 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+> @@ -1362,9 +1362,6 @@ struct qmp_phy_cfg {
+>   
+>   	/* true, if PHY needs delay after POWER_DOWN */
+>   	bool has_pwrdn_delay;
+> -	/* power_down delay in usec */
+> -	int pwrdn_delay_min;
+> -	int pwrdn_delay_max;
+>   
+>   	/* QMP PHY pipe clock interface rate */
+>   	unsigned long pipe_clock_rate;
+> @@ -1500,8 +1497,6 @@ static const struct qmp_phy_cfg ipq8074_pciephy_cfg = {
+>   	.phy_status		= PHYSTATUS,
+>   
+>   	.has_pwrdn_delay	= true,
+> -	.pwrdn_delay_min	= 995,		/* us */
+> -	.pwrdn_delay_max	= 1005,		/* us */
+>   };
+>   
+>   static const struct qmp_phy_cfg ipq8074_pciephy_gen3_cfg = {
+> @@ -1529,8 +1524,6 @@ static const struct qmp_phy_cfg ipq8074_pciephy_gen3_cfg = {
+>   	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
+>   
+>   	.has_pwrdn_delay	= true,
+> -	.pwrdn_delay_min	= 995,		/* us */
+> -	.pwrdn_delay_max	= 1005,		/* us */
+>   
+>   	.pipe_clock_rate	= 250000000,
+>   };
+> @@ -1562,8 +1555,6 @@ static const struct qmp_phy_cfg ipq6018_pciephy_cfg = {
+>   	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
+>   
+>   	.has_pwrdn_delay	= true,
+> -	.pwrdn_delay_min	= 995,		/* us */
+> -	.pwrdn_delay_max	= 1005,		/* us */
+>   };
+>   
+>   static const struct qmp_phy_cfg sdm845_qmp_pciephy_cfg = {
+> @@ -1594,8 +1585,6 @@ static const struct qmp_phy_cfg sdm845_qmp_pciephy_cfg = {
+>   	.phy_status		= PHYSTATUS,
+>   
+>   	.has_pwrdn_delay	= true,
+> -	.pwrdn_delay_min	= 995,		/* us */
+> -	.pwrdn_delay_max	= 1005,		/* us */
+>   };
+>   
+>   static const struct qmp_phy_cfg sdm845_qhp_pciephy_cfg = {
+> @@ -1624,8 +1613,6 @@ static const struct qmp_phy_cfg sdm845_qhp_pciephy_cfg = {
+>   	.phy_status		= PHYSTATUS,
+>   
+>   	.has_pwrdn_delay	= true,
+> -	.pwrdn_delay_min	= 995,		/* us */
+> -	.pwrdn_delay_max	= 1005,		/* us */
+>   };
+>   
+>   static const struct qmp_phy_cfg sm8250_qmp_gen3x1_pciephy_cfg = {
+> @@ -1666,8 +1653,6 @@ static const struct qmp_phy_cfg sm8250_qmp_gen3x1_pciephy_cfg = {
+>   	.phy_status		= PHYSTATUS,
+>   
+>   	.has_pwrdn_delay	= true,
+> -	.pwrdn_delay_min	= 995,		/* us */
+> -	.pwrdn_delay_max	= 1005,		/* us */
+>   };
+>   
+>   static const struct qmp_phy_cfg sm8250_qmp_gen3x2_pciephy_cfg = {
+> @@ -1708,8 +1693,6 @@ static const struct qmp_phy_cfg sm8250_qmp_gen3x2_pciephy_cfg = {
+>   	.phy_status		= PHYSTATUS,
+>   
+>   	.has_pwrdn_delay	= true,
+> -	.pwrdn_delay_min	= 995,		/* us */
+> -	.pwrdn_delay_max	= 1005,		/* us */
+>   };
+>   
+>   static const struct qmp_phy_cfg msm8998_pciephy_cfg = {
+> @@ -1765,8 +1748,6 @@ static const struct qmp_phy_cfg sc8180x_pciephy_cfg = {
+>   	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
+>   
+>   	.has_pwrdn_delay	= true,
+> -	.pwrdn_delay_min	= 995,		/* us */
+> -	.pwrdn_delay_max	= 1005,		/* us */
+>   };
+>   
+>   static const struct qmp_phy_cfg sdx55_qmp_pciephy_cfg = {
+> @@ -1797,8 +1778,6 @@ static const struct qmp_phy_cfg sdx55_qmp_pciephy_cfg = {
+>   	.phy_status		= PHYSTATUS_4_20,
+>   
+>   	.has_pwrdn_delay	= true,
+> -	.pwrdn_delay_min	= 995,		/* us */
+> -	.pwrdn_delay_max	= 1005,		/* us */
+>   };
+>   
+>   static const struct qmp_phy_cfg sm8450_qmp_gen3x1_pciephy_cfg = {
+> @@ -1829,8 +1808,6 @@ static const struct qmp_phy_cfg sm8450_qmp_gen3x1_pciephy_cfg = {
+>   	.phy_status		= PHYSTATUS,
+>   
+>   	.has_pwrdn_delay	= true,
+> -	.pwrdn_delay_min	= 995,		/* us */
+> -	.pwrdn_delay_max	= 1005,		/* us */
+>   };
+>   
+>   static const struct qmp_phy_cfg sm8450_qmp_gen4x2_pciephy_cfg = {
+> @@ -1876,8 +1853,6 @@ static const struct qmp_phy_cfg sm8450_qmp_gen4x2_pciephy_cfg = {
+>   	.phy_status		= PHYSTATUS_4_20,
+>   
+>   	.has_pwrdn_delay	= true,
+> -	.pwrdn_delay_min	= 995,		/* us */
+> -	.pwrdn_delay_max	= 1005,		/* us */
+>   };
+>   
+>   static void qmp_pcie_configure_lane(void __iomem *base,
+> @@ -2037,7 +2012,7 @@ static int qmp_pcie_power_on(struct phy *phy)
+>   	qmp_pcie_pcs_init(qphy, mode_tables);
+>   
+>   	if (cfg->has_pwrdn_delay)
+> -		usleep_range(cfg->pwrdn_delay_min, cfg->pwrdn_delay_max);
+> +		usleep_range(1000, 1200);
+>   
+>   	/* Pull PHY out of reset state */
+>   	qphy_clrbits(pcs, cfg->regs[QPHY_SW_RESET], SW_RESET);
+
 -- 
-2.35.1
+With best wishes
+Dmitry
 
 
 -- 
