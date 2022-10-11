@@ -4,68 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F2A09C433FE
-	for <linux-phy@archiver.kernel.org>; Tue, 11 Oct 2022 14:05:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6A808C4332F
+	for <linux-phy@archiver.kernel.org>; Tue, 11 Oct 2022 14:07:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GLjwDizGwncrI42EUc03qZ9I0aW2v2alu/ijHCUWkc0=; b=oRUORBDwGgy1AE
-	HFPAocXf2YzH6MieczmN1M6y45A4lI1P2of5of3wsBBzDqFOpSNrQx5Pb8VHIXLjq6g0Uotu55543
-	odZGg5aFlvhY1ktf0D5UOdR4aVfYzffjK3LWqiQCFApAhOo2U9Lw5hwAvuv4Edo76uIKl1ksyUmuP
-	aFnRoWjMAWw32z1FGoEAFTR/hxffccEf9mU1N6CliBaJ4L6wrxZ3R36NdbKsgH/QXThufpDyFKMPc
-	KRhHP6v5Tyso5xYliUjX0k1hg4s0w4HAmaVJVA5xHYEqgJ0zX6kDmMferRUtZejd4Ts4ALn3ZpVY4
-	AXNY2rkOaO/c1Xb+3iSA==;
+	List-Owner; bh=db177EQYcGS2WR6fi88vLyozsr+MCDR0dH9aVTKcPKo=; b=HrgRtKmEGXE/87
+	ut8oFosYEfhqIQAMiuKV25W+LTNFfaokTLf/Zy18x1fT3PJzZMbeH+ZY6GR6++XLnkpGqGOn2pIxk
+	UjXj3N/YOuqimuLVurFm1bUYJLuAR1qlOu7Lsi7CsQA0DPvcvg6+7iSo9NdXleK/Dz2tpVZu9SYfT
+	Z33HX061qah/aZ+B81svB3/glbFmxN/SJQMkQ4EfP7Xv1RdtFxuD2agAX+T9YexXceSLd8M67qBdn
+	oncnoJgGBIsi5IVprMrEr4bep6pZeN8SSPAxFHw/BjigNx1VdIg6xsBF30+DZ5GQIOtf/bGSu9psL
+	uL+yjAEvh0vaYmNF4T8A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oiFtI-004QEv-Dm; Tue, 11 Oct 2022 14:05:52 +0000
-Received: from mail-lj1-x22a.google.com ([2a00:1450:4864:20::22a])
+	id 1oiFup-004Qqv-JA; Tue, 11 Oct 2022 14:07:27 +0000
+Received: from mail-lj1-x22f.google.com ([2a00:1450:4864:20::22f])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oiFtF-004QDr-HU
-	for linux-phy@lists.infradead.org; Tue, 11 Oct 2022 14:05:50 +0000
-Received: by mail-lj1-x22a.google.com with SMTP id s10so16971790ljp.5
-        for <linux-phy@lists.infradead.org>; Tue, 11 Oct 2022 07:05:49 -0700 (PDT)
+	id 1oiFuk-004QmU-JD
+	for linux-phy@lists.infradead.org; Tue, 11 Oct 2022 14:07:24 +0000
+Received: by mail-lj1-x22f.google.com with SMTP id bn8so16976207ljb.6
+        for <linux-phy@lists.infradead.org>; Tue, 11 Oct 2022 07:07:20 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=8vXGY2FQD0SmjquwVrvQMgguyJMrvlVrQ9GO3c0qOHM=;
-        b=HkGuYtt/EZyPyD9ckg/JYMMda1MAxj0DBMlo/GDBvLTh3AKZ7WW2AIkLAx0b+E/8br
-         zUila7U6c1voNoKmeB+k85RHDCck5geZ9Tx18LMvkMKwqQ2d0yvwogHPyM4IsUWYERAB
-         jcJNGedzyPu8tGWv0hhkQyEbWFM2k/yQY3H6bmvu7G3OGz5Gjl3f0Yo0R7J7HD4yOshm
-         BJ7alVpacFwCVTdysKBTTLNZ1XyeHKVd3TBn1Z9UudF2qMUguj75BP96/WL6Gfq8Y50j
-         PRgMY6eIhEnAl4qYHU1JPFFAH4JaXu3R3IJIySTW0XEgLI8M0JdCaBLYzzshr8rCAKd7
-         cVMA==
+        bh=4lMQAQ0osJVsDf4eu+zCeSxpXp3q9i6qM/ZobGYZDP0=;
+        b=CMKuwegLP2IA7nFX8CQItOqmeovyC55ikLhG6vNewqBfyGpkLghiTw4Zpt2ZQzWKXk
+         2ov0Gr9E1jePoUhXHcHg72SxmDcWwbTeZ5cu5G6bsHZZpmVhfmRRfqn+EhDjpAiASGsV
+         LnRr8QgZrU0kdvaoeK+P8kdCrwMqaxDf5QO3FN2L7p4RxdKy0w6XPqEg0CnQr63iuDo+
+         qasjXootYdCcXjYxyatIg/VhnDbpHmJNsfAMCyg+3/pc3GaHCkkzdLQdE56+zieuv2nm
+         FAMBtBaJPEPGvXy3a0VrHwdzvrFwEktESgWDtgbHhMznOZrCRGReKoCNvmIG1ZTpVyHG
+         GkrQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=8vXGY2FQD0SmjquwVrvQMgguyJMrvlVrQ9GO3c0qOHM=;
-        b=h37W7TplgBFKc5KuOlSDYQPzAa0BP0OXMp9zti1bn0ID92GF9XFaxA+DUX1zVRBn6j
-         Nri1Cbw3kjsD8IjXs4bc6MA9ReNSpYNKUvkAeNyWpZtfgItyeRuDL4ZtGqHhTUGJTQUo
-         jdUURSES/Rw94lt2PuRDsZpRcZgeTd/uhD6uLXDfKVzjE01OBgpK9FhDQZQ4iJdJJFx8
-         78zpMypZFha3WzcaBJrYulAX5j2VKago4b12xHWAtpbUTl5vDHXc8lqjhID7dN5z1HtV
-         2UriBBjGRw7G24JIkBj8HkQ633FDaUBpkFKSgw0f9M1l3MSQAQcDsg2cU1zIDKnWHDTO
-         QLHQ==
-X-Gm-Message-State: ACrzQf2F3eWr4xEe/1Dfng8pEKa0vcuuo8I0X+HKwhb7LQNKoyF7P2Pz
-	dfkf3UeS36zTrGvnLyKkChNguI4qho7etQ==
-X-Google-Smtp-Source: AMsMyM4oVTsQAm4QAWtn9JgMcWAYzDKMUyCQcIEkLooLNkHTIKRbbJ5kAke70XfECNOILD6oPqQJAQ==
-X-Received: by 2002:a05:651c:158e:b0:26b:46a6:bf63 with SMTP id h14-20020a05651c158e00b0026b46a6bf63mr8530052ljq.21.1665497147910;
-        Tue, 11 Oct 2022 07:05:47 -0700 (PDT)
+        bh=4lMQAQ0osJVsDf4eu+zCeSxpXp3q9i6qM/ZobGYZDP0=;
+        b=BDbd0HaLyUcYQZaJPc2pPYoanxGYSmGDCqHLUYwusrieSxa0EOZ6I9Qbtz55cgy/qk
+         Isfg1ObQLiyH2BKy4PIBuGhgwuIGmvCM32owXjnOLzX0iRboruBlk9xoCLs8A5bgw1Qd
+         9qMn81JSdkhpuk1+Sz37bWOpMixleAgp2+cpNU5pbgT17HQeMfqyMeRfpAtAXppt9H2E
+         nuCGfN0Fie0gW/bGULI/xUf5t3W8tn4fwDPYeWGMJWTRu2cRcsfoES8TguixtMLe3j7q
+         IiNMzTTLQ9xboP8PLZgeVPlOKY04KedOdYghlvBDfxwTJb/NqKYswHAFxSntDF1taIxm
+         I9JA==
+X-Gm-Message-State: ACrzQf31GUBXdqUZdCw2V00fipXp2LCv+dPQ/YnQaA31kSvDAG3k+KRd
+	zZIYsq/OQFdOClxZzUfT2iMQwAp1rpM/2A==
+X-Google-Smtp-Source: AMsMyM73osC13XrVnH4U0OrkJ1yeqkZxc8ODKwVb6djVqA3R/Dg/Nyb+bsUrwsVDf17kvXjOYK8CZQ==
+X-Received: by 2002:a2e:9819:0:b0:26e:916f:c49f with SMTP id a25-20020a2e9819000000b0026e916fc49fmr5984631ljj.294.1665497237367;
+        Tue, 11 Oct 2022 07:07:17 -0700 (PDT)
 Received: from [192.168.1.211] ([37.153.55.125])
-        by smtp.gmail.com with ESMTPSA id q11-20020ac2514b000000b0049f54c5f2a4sm1868188lfd.229.2022.10.11.07.05.47
+        by smtp.gmail.com with ESMTPSA id d16-20020a05651c089000b0026c5bc6ed1asm2071341ljq.69.2022.10.11.07.07.16
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 11 Oct 2022 07:05:47 -0700 (PDT)
-Message-ID: <236ee060-4001-992b-a1ee-b40c66fb94eb@linaro.org>
-Date: Tue, 11 Oct 2022 17:05:47 +0300
+        Tue, 11 Oct 2022 07:07:17 -0700 (PDT)
+Message-ID: <ce6370f9-962c-905b-5188-a9b6ff9e2fd3@linaro.org>
+Date: Tue, 11 Oct 2022 17:07:16 +0300
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.3.1
-Subject: Re: [PATCH 13/13] phy: qcom-qmp-usb: drop power-down delay config
+Subject: Re: [PATCH 10/13] phy: qcom-qmp-combo: drop sc8280xp power-down delay
 Content-Language: en-GB
 To: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>
 Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
@@ -73,12 +73,12 @@ Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
  Kishon Vijay Abraham I <kishon@ti.com>, linux-arm-msm@vger.kernel.org,
  linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
 References: <20221011131416.2478-1-johan+linaro@kernel.org>
- <20221011131416.2478-14-johan+linaro@kernel.org>
+ <20221011131416.2478-11-johan+linaro@kernel.org>
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-In-Reply-To: <20221011131416.2478-14-johan+linaro@kernel.org>
+In-Reply-To: <20221011131416.2478-11-johan+linaro@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221011_070549_610190_A58A669F 
-X-CRM114-Status: GOOD (  13.03  )
+X-CRM114-CacheID: sfid-20221011_070722_720354_3FF2BF6C 
+X-CRM114-Status: GOOD (  13.79  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,26 +96,34 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 11/10/2022 16:14, Johan Hovold wrote:
-> The power-down delay was included in the first version of the QMP driver
-> as an optional delay after powering on the PHY (using
-> POWER_DOWN_CONTROL) and just before starting it. Later changes modified
-> this sequence by powering on before initialising the PHY, but the
-> optional delay stayed where it was (i.e. before starting the PHY).
-> 
-> The vendor driver does not use a delay before starting the PHY and this
-> is likely not needed on any platform unless there is a corresponding
-> delay in the vendor kernel init sequence tables (i.e. in devicetree).
-> 
-> Let's keep the delay for now, but drop the redundant delay period
-> configuration while increasing the unnecessarily low timer slack
-> somewhat.
+> The SC8280XP combo PHY does not need a delay before starting the USB PHY
+> (which is what the has_pwrdn_delay config option really controls) so
+> drop the unnecessary delay.
 > 
 > Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 > ---
->   drivers/phy/qualcomm/phy-qcom-qmp-usb.c | 35 +------------------------
->   1 file changed, 1 insertion(+), 34 deletions(-)
+>   drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 4 ----
+>   1 file changed, 4 deletions(-)
 
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Just an obvious question: 'does not need a delay' comes from your 
+experience or from some vendor flag (in ACPI/DT/kernel/wherever)?
+
+> 
+> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+> index 84380852ba5b..a8e09333072e 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+> @@ -1210,10 +1210,6 @@ static const struct qmp_phy_cfg sc8280xp_usb43dp_usb_cfg = {
+>   	.start_ctrl		= SERDES_START | PCS_START,
+>   	.pwrdn_ctrl		= SW_PWRDN,
+>   	.phy_status		= PHYSTATUS,
+> -
+> -	.has_pwrdn_delay	= true,
+> -	.pwrdn_delay_min	= POWER_DOWN_DELAY_US_MIN,
+> -	.pwrdn_delay_max	= POWER_DOWN_DELAY_US_MAX,
+>   };
+>   
+>   static const struct qmp_phy_cfg sc8280xp_usb43dp_dp_cfg = {
 
 -- 
 With best wishes
