@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B2060C43217
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D8A43C4321E
 	for <linux-phy@archiver.kernel.org>; Tue, 11 Oct 2022 13:14:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,39 +12,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fC7fhOjQf88xOfYoQV5wQZ+c1OKXMJBgYDEABFuoHls=; b=L29Q+Qk8jrk0pi
-	OyvPJNha3OMBhImBKFZ9nNoBy2Y9AWKgpJRIsyN8wW7N0NsPnljar1VfIvR91E9TRnnXOOR0UuMeC
-	HXbP5AjXnpQ3Qjqo5lWXhe1+z0N7VB2q8/nUymXG4jyLUDLKxmeL9wtra3OdAh6zl7rRK9CYTIo20
-	TCyda7wi7zxcfzJLKpy+2MOvD856G59qlWcj1w9c1hZukUgyGfiSgvI4rqEuvBhoU2yQ+stehYNxw
-	Xu7niopm1u2AAKOG86CgmeyPwHfB/0NL8k3vhYk0aoQwDSul3pJxyRVEOJKdCv523NVax6J9r/Tpm
-	CERl5ClxPWRf0jk1JUsg==;
+	List-Owner; bh=CllIMilmlbrlR4QMqdSUlk+M5mHm4Mj6Qlxw9rI8hY8=; b=27VnnTmqrcQhqQ
+	Rv/Ru8t5CCbBRylg6z2/ipS+di324rV94lisI1kCQHtHrrDUC4yhDv99gVI8yjqvipCi+UDL3Z6Y0
+	y2W+X2pG3+mQ45QmMi4rhRhOtHzE/s6CoZZ3Sravy19vaFNzMXW6b6RJJngk0rgAe6O8AfxirwpL5
+	CZWNmQE+beGs6epSjKcoN3SYwdIv//8Kez8bYNIxmSpNyvcraXHU0dH5nJJ3PKvjqWqUXYf98EtNQ
+	CdbzJMhidLyurcNCELiNBIK+VGIBpMCiI2EVw08DhwOmYkUBuHMiP5cmFDgIKWiCG50IuxI9rSKIb
+	bypeebKVgxaEVK0shAkA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oiF60-004JE1-3A; Tue, 11 Oct 2022 13:14:56 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1oiF60-004JEX-A3; Tue, 11 Oct 2022 13:14:56 +0000
+Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oiF5v-004J9i-MA
-	for linux-phy@lists.infradead.org; Tue, 11 Oct 2022 13:14:54 +0000
+	id 1oiF5u-004J7Q-2x
+	for linux-phy@lists.infradead.org; Tue, 11 Oct 2022 13:14:55 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id E11F3611C5;
-	Tue, 11 Oct 2022 13:14:49 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id AA7CDC4FEBD;
+	by ams.source.kernel.org (Postfix) with ESMTPS id B2DA2B815A6;
+	Tue, 11 Oct 2022 13:14:48 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 61629C433B5;
 	Tue, 11 Oct 2022 13:14:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1665494087;
-	bh=6LPnTOPmrm6WAP21zsBwDA8LPMBHGL4PfRvd04Hgs1I=;
+	bh=9Th7Nfz2ReBgz20Zfc3/OmI33Ci/30X8tixms18O93k=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=UHxPiltV7DkGXTUiiaFJGscZtOFQXk9G15GjqkPPMlELzftBBSQ0gwa2xoYIPQDdp
-	 9DS6uFHio5fGdDq2hqPwfGMYWVlfo0TkCR44sTlsi4pMEIOrO9H5n3PUT7mbaiR/Xl
-	 w90QZXAUSwXEWc68zSGGJ06nC/ML3h5ejA5q6DfMkwRXN7Cvu8qIYM4/L7WbMVebE1
-	 Xk6vuzAadWgl6gFi7pYcrE3g5ClEfAK+HMfd/ep4u6cQIxUhLhkgX0H21YtqtOpDUs
-	 1AksnQ4xdHoLhv2DXdVQW/NTTsexAnhXQKmcqkJGF+jBJeay8vSN5zfWDBYkdnblIf
-	 b/0OX7OgYlnTg==
+	b=l2mM7v/d7j30lH45hYW3HS4fnxZmK1gdtZsLQr0gMUr508/kIYWMisx7q2wfxZW4J
+	 wBU4cElaXHI8Qztc74V8ZMqQ1L12D7H7KbZspb5Jd1v4n2nYAp81Q6j8ykGze0d2Fq
+	 XpIENo4SE8JZS4SRQkMODzFsHZWYrWFHMroDsmyj2ki8dU+G6/RZC9mPounxk1vxse
+	 28TRn1CgGle3cCQiiV7dBXgWlB0PBmcIvpn6Cp9SrolbmJNV/GNb8zHnwfowYhF3KS
+	 PcmtqVpScv/wgX5OyT81R4kSxUNMAUOhiPVbW36CamvHZbHgC5B79k2KWHeXVD4FUj
+	 h6FU32Mjb8ztw==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1oiF5j-0000fA-4O; Tue, 11 Oct 2022 15:14:39 +0200
+	id 1oiF5i-0000eq-O3; Tue, 11 Oct 2022 15:14:38 +0200
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>
 Cc: Andy Gross <agross@kernel.org>,
@@ -56,16 +56,16 @@ Cc: Andy Gross <agross@kernel.org>,
 	linux-phy@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH 11/13] phy: qcom-qmp-combo: drop power-down delay config
-Date: Tue, 11 Oct 2022 15:14:14 +0200
-Message-Id: <20221011131416.2478-12-johan+linaro@kernel.org>
+Subject: [PATCH 07/13] phy: qcom-qmp-usb: drop unused in-layout configuration
+Date: Tue, 11 Oct 2022 15:14:10 +0200
+Message-Id: <20221011131416.2478-8-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.35.1
 In-Reply-To: <20221011131416.2478-1-johan+linaro@kernel.org>
 References: <20221011131416.2478-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221011_061451_859903_7939CA69 
-X-CRM114-Status: GOOD (  14.89  )
+X-CRM114-CacheID: sfid-20221011_061450_447424_3FFBD87A 
+X-CRM114-Status: GOOD (  15.02  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,95 +82,114 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The power-down delay was included in the first version of the QMP driver
-as an optional delay after powering on the PHY (using
-POWER_DOWN_CONTROL) and just before starting it. Later changes modified
-this sequence by powering on before initialising the PHY, but the
-optional delay stayed where it was (i.e. before starting the PHY).
-
-The vendor driver does not use a delay before starting the PHY and this
-is likely not needed on any platform unless there is a corresponding
-delay in the vendor kernel init sequence tables (i.e. in devicetree).
-
-Let's keep the delay for now, but drop the redundant delay period
-configuration while increasing the unnecessarily low timer slack
-somewhat.
+The QMP USB PHY driver does not use the "in-layout" configuration macro
+to configure registers that are typically accessed using "regs_layout"
+arrays (e.g. QPHY_START_CTRL) so drop this unused feature.
 
 Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 16 +---------------
- 1 file changed, 1 insertion(+), 15 deletions(-)
+ drivers/phy/qualcomm/phy-qcom-qmp-usb.c | 42 ++++++-------------------
+ 1 file changed, 10 insertions(+), 32 deletions(-)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-index a8e09333072e..82055d3a3536 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-@@ -63,8 +63,6 @@
- #define CLAMP_EN				BIT(0) /* enables i/o clamp_n */
- 
- #define PHY_INIT_COMPLETE_TIMEOUT		10000
--#define POWER_DOWN_DELAY_US_MIN			10
--#define POWER_DOWN_DELAY_US_MAX			11
- 
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
+index 2c5e4041bcf9..3aab9ea90078 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
+@@ -69,11 +69,6 @@
  struct qmp_phy_init_tbl {
  	unsigned int offset;
-@@ -860,9 +858,6 @@ struct qmp_phy_cfg {
+ 	unsigned int val;
+-	/*
+-	 * register part of layout ?
+-	 * if yes, then offset gives index in the reg-layout
+-	 */
+-	bool in_layout;
+ 	/*
+ 	 * mask of lanes for which this register is written
+ 	 * for cases when second lane needs different values
+@@ -88,14 +83,6 @@ struct qmp_phy_init_tbl {
+ 		.lane_mask = 0xff,	\
+ 	}
  
- 	/* true, if PHY needs delay after POWER_DOWN */
- 	bool has_pwrdn_delay;
--	/* power_down delay in usec */
--	int pwrdn_delay_min;
--	int pwrdn_delay_max;
- 
- 	/* Offset from PCS to PCS_USB region */
- 	unsigned int pcs_usb_offset;
-@@ -1031,8 +1026,6 @@ static const struct qmp_phy_cfg sc7180_usb3phy_cfg = {
- 	.phy_status		= PHYSTATUS,
- 
- 	.has_pwrdn_delay	= true,
--	.pwrdn_delay_min	= POWER_DOWN_DELAY_US_MIN,
--	.pwrdn_delay_max	= POWER_DOWN_DELAY_US_MAX,
- };
- 
- static const struct qmp_phy_cfg sc7180_dpphy_cfg = {
-@@ -1102,8 +1095,6 @@ static const struct qmp_phy_cfg sdm845_usb3phy_cfg = {
- 	.phy_status		= PHYSTATUS,
- 
- 	.has_pwrdn_delay	= true,
--	.pwrdn_delay_min	= POWER_DOWN_DELAY_US_MIN,
--	.pwrdn_delay_max	= POWER_DOWN_DELAY_US_MAX,
- };
- 
- static const struct qmp_phy_combo_cfg sdm845_usb3dpphy_cfg = {
-@@ -1138,10 +1129,7 @@ static const struct qmp_phy_cfg sm8150_usb3phy_cfg = {
- 	.pwrdn_ctrl		= SW_PWRDN,
- 	.phy_status		= PHYSTATUS,
- 
+-#define QMP_PHY_INIT_CFG_L(o, v)	\
+-	{				\
+-		.offset = o,		\
+-		.val = v,		\
+-		.in_layout = true,	\
+-		.lane_mask = 0xff,	\
+-	}
 -
- 	.has_pwrdn_delay	= true,
--	.pwrdn_delay_min	= POWER_DOWN_DELAY_US_MIN,
--	.pwrdn_delay_max	= POWER_DOWN_DELAY_US_MAX,
+ #define QMP_PHY_INIT_CFG_LANE(o, v, l)	\
+ 	{				\
+ 		.offset = o,		\
+@@ -2069,7 +2056,6 @@ static const struct qmp_phy_cfg qcm2290_usb3phy_cfg = {
  };
  
- static const struct qmp_phy_cfg sc8180x_dpphy_cfg = {
-@@ -1282,8 +1270,6 @@ static const struct qmp_phy_cfg sm8250_usb3phy_cfg = {
- 	.phy_status		= PHYSTATUS,
+ static void qmp_usb_configure_lane(void __iomem *base,
+-					const unsigned int *regs,
+ 					const struct qmp_phy_init_tbl tbl[],
+ 					int num,
+ 					u8 lane_mask)
+@@ -2084,19 +2070,15 @@ static void qmp_usb_configure_lane(void __iomem *base,
+ 		if (!(t->lane_mask & lane_mask))
+ 			continue;
  
- 	.has_pwrdn_delay	= true,
--	.pwrdn_delay_min	= POWER_DOWN_DELAY_US_MIN,
--	.pwrdn_delay_max	= POWER_DOWN_DELAY_US_MAX,
- };
+-		if (t->in_layout)
+-			writel(t->val, base + regs[t->offset]);
+-		else
+-			writel(t->val, base + t->offset);
++		writel(t->val, base + t->offset);
+ 	}
+ }
  
- static const struct qmp_phy_cfg sm8250_dpphy_cfg = {
-@@ -2064,7 +2050,7 @@ static int qmp_combo_power_on(struct phy *phy)
- 		qmp_combo_configure(pcs, cfg->pcs_tbl, cfg->pcs_tbl_num);
+ static void qmp_usb_configure(void __iomem *base,
+-				   const unsigned int *regs,
+ 				   const struct qmp_phy_init_tbl tbl[],
+ 				   int num)
+ {
+-	qmp_usb_configure_lane(base, regs, tbl, num, 0xff);
++	qmp_usb_configure_lane(base, tbl, num, 0xff);
+ }
+ 
+ static int qmp_usb_serdes_init(struct qmp_phy *qphy)
+@@ -2106,7 +2088,7 @@ static int qmp_usb_serdes_init(struct qmp_phy *qphy)
+ 	const struct qmp_phy_init_tbl *serdes_tbl = cfg->serdes_tbl;
+ 	int serdes_tbl_num = cfg->serdes_tbl_num;
+ 
+-	qmp_usb_configure(serdes, cfg->regs, serdes_tbl, serdes_tbl_num);
++	qmp_usb_configure(serdes, serdes_tbl, serdes_tbl_num);
+ 
+ 	return 0;
+ }
+@@ -2214,21 +2196,17 @@ static int qmp_usb_power_on(struct phy *phy)
+ 	}
+ 
+ 	/* Tx, Rx, and PCS configurations */
+-	qmp_usb_configure_lane(tx, cfg->regs, cfg->tx_tbl, cfg->tx_tbl_num, 1);
++	qmp_usb_configure_lane(tx, cfg->tx_tbl, cfg->tx_tbl_num, 1);
+ 
+-	if (cfg->lanes >= 2) {
+-		qmp_usb_configure_lane(qphy->tx2, cfg->regs,
+-					cfg->tx_tbl, cfg->tx_tbl_num, 2);
+-	}
++	if (cfg->lanes >= 2)
++		qmp_usb_configure_lane(qphy->tx2, cfg->tx_tbl, cfg->tx_tbl_num, 2);
+ 
+-	qmp_usb_configure_lane(rx, cfg->regs, cfg->rx_tbl, cfg->rx_tbl_num, 1);
++	qmp_usb_configure_lane(rx, cfg->rx_tbl, cfg->rx_tbl_num, 1);
+ 
+-	if (cfg->lanes >= 2) {
+-		qmp_usb_configure_lane(qphy->rx2, cfg->regs,
+-					cfg->rx_tbl, cfg->rx_tbl_num, 2);
+-	}
++	if (cfg->lanes >= 2)
++		qmp_usb_configure_lane(qphy->rx2, cfg->rx_tbl, cfg->rx_tbl_num, 2);
+ 
+-	qmp_usb_configure(pcs, cfg->regs, cfg->pcs_tbl, cfg->pcs_tbl_num);
++	qmp_usb_configure(pcs, cfg->pcs_tbl, cfg->pcs_tbl_num);
  
  	if (cfg->has_pwrdn_delay)
--		usleep_range(cfg->pwrdn_delay_min, cfg->pwrdn_delay_max);
-+		usleep_range(10, 20);
- 
- 	if (cfg->type != PHY_TYPE_DP) {
- 		/* Pull PHY out of reset state */
+ 		usleep_range(cfg->pwrdn_delay_min, cfg->pwrdn_delay_max);
 -- 
 2.35.1
 
