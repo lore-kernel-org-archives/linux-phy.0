@@ -4,47 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CAA99C433FE
-	for <linux-phy@archiver.kernel.org>; Tue, 11 Oct 2022 13:14:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 33C18C43217
+	for <linux-phy@archiver.kernel.org>; Tue, 11 Oct 2022 13:14:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=osqZ+kB6Qmnvs4kbEZRAcH65un5xScSygd/1itbczUE=; b=EgBtggilxheTx+
-	QmqtDB9W2R9tQycT6J1FM+/8NoXxv4j8EysO2eaXRoJooEs/WyWL/zYEmE5u8ES1bezSRNKUikTHH
-	jbGe6CJobenaRO8Cv+PkC+GWfqoYN2L0QEfzSOnFojmEnVTMYjgl7EbZmuBJU0z6NxyPALghhMdz5
-	akYhICzCBWMIh+KKsdQrtp3gwOJsLt2zRTjdNcEGXk9aIj8ss/X1OZj4FS6WiVGOnZ0IKKl971e8r
-	k6IlP/cnL6IJCZ6k26UT3NLGIQKl2JHj2uSNz+Yx6gQa05EfUQbJh6combjb1AKQlXgy47UU5IdEH
-	a+/J/3cIym5jAAttA96w==;
+	List-Owner; bh=Gb80NfIx1X+Xfoc4G81Wm0DkrQTV1p+OEW98a4vT2Nk=; b=Bl2cEtyInIrk9P
+	QGKyEp3+GfMHXKE5QzEnU5icaJG+F8S8UdfjE7tXfR19TykODm8CvkE1l0ezAbr0Gu+NihBmA6+He
+	MObaFnfrpa5C/hs+wa0D6LH6tNyB0kt87kL2i7oHUmp4o0glVVGbpmbnqa+3mzXcGcJQYCeU710As
+	06JeZxwLUEKW1i/XLdwoLN4srSyl1D7vTlGg9RIiUWm6NUw6T/oNFGv75SK9Hb0W+BxzLEa3qgeMH
+	WVKc0VXfa3Pt75JuHW1aEoDUFdBD9OCViyqPGjNTrNQ2yCP6yi73IBpna1B4XE5UOiPjP+h9XIk4+
+	IoSjPYcgk/1QOK7MRwPg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oiF5w-004JAv-6J; Tue, 11 Oct 2022 13:14:52 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1oiF5x-004JBt-He; Tue, 11 Oct 2022 13:14:53 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oiF5t-004J7M-6W
+	id 1oiF5t-004J7U-GY
 	for linux-phy@lists.infradead.org; Tue, 11 Oct 2022 13:14:51 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id CA25B6119A;
-	Tue, 11 Oct 2022 13:14:48 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6C00FC43141;
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 053ED6119F;
+	Tue, 11 Oct 2022 13:14:49 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 71F5BC43145;
 	Tue, 11 Oct 2022 13:14:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1665494087;
-	bh=1+P6yo0W1ucxyznL6paoX+Shezy9L9z8yKXUSd66CkE=;
+	bh=QoK1eOJGYK/GWydTNlYAVeiMng7vXJDkaKJci2sXvgE=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=UR2+h5pv324uOPTvp2zNT9KScvCDUm8HM7dDVDnEgZ6Pl9NYnDzoFCJYUhqBSCw6Y
-	 g2SVOieBjVHcDgysQZgEWM/QK/4kPk4R2ZD1mP+vOukl7caTwLbPOaYRfUKuY2NNCt
-	 Qw7S0MJNO1SbZU+QDL70rl9CXUpVIrpN+6n+8cVNmfK36jmdOtZdqzPKw/5wY0L1Ux
-	 V+tpm4IUPqenKyYAxKIyEg+QrS3o8U5TyqZlT+gVi/yHsG0A5bKQ6227oKbbSkDPVR
-	 C3gEg1UEIYPFOMVz+XsI/mRtLF/x/bjGZHcHqZvTfxjaQOlk/zVpxqra5EY+9pWn/E
-	 TNUW29kdm4cyg==
+	b=QcjAl9TK+HzejlBjpm5YZDfm17N4A2Bt5f7Zv23AyJxLqIpzZ+xcI8TzPqKhvOEJS
+	 oGDo+oWc1GkY2Hc1A45t7h7wtxzflKs5o4uEfGXDzfJlpeNjk3okNB/+Kuh6kgWb0H
+	 //MyUkS1zZbnLbzonT3iRuKbPCvIGlubdaeMa6AE0sGiJKDlLYic2lUx8HTCKkJxBQ
+	 3mwe7guwHSGLEFS7Z2J/eV0JGl0qtw668HdIy2jAWA6Q/EQinv6DM6kknjk78VIJPB
+	 vn5+ZNkly2p1eFKVtX3AWLy1d+3cTKsiwA32bVs9fTJIWjcF3lB8Vr4wgISopc6V6I
+	 t8DfFiCqh6U+w==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1oiF5i-0000eh-Cg; Tue, 11 Oct 2022 15:14:38 +0200
+	id 1oiF5i-0000el-Hl; Tue, 11 Oct 2022 15:14:38 +0200
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>
 Cc: Andy Gross <agross@kernel.org>,
@@ -56,16 +56,16 @@ Cc: Andy Gross <agross@kernel.org>,
 	linux-phy@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH 03/13] phy: qcom-qmp-combo: drop unused in-layout configuration
-Date: Tue, 11 Oct 2022 15:14:06 +0200
-Message-Id: <20221011131416.2478-4-johan+linaro@kernel.org>
+Subject: [PATCH 05/13] phy: qcom-qmp-pcie-msm8996: drop unused in-layout configuration
+Date: Tue, 11 Oct 2022 15:14:08 +0200
+Message-Id: <20221011131416.2478-6-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.35.1
 In-Reply-To: <20221011131416.2478-1-johan+linaro@kernel.org>
 References: <20221011131416.2478-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221011_061449_330729_0C8EC78D 
-X-CRM114-Status: GOOD (  15.26  )
+X-CRM114-CacheID: sfid-20221011_061449_642263_728D04A9 
+X-CRM114-Status: GOOD (  14.24  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,21 +82,21 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The QMP combo PHY driver does not use the "in-layout" configuration
-macro to configure registers that are typically accessed using
-"regs_layout" arrays (e.g. QPHY_START_CTRL) so drop this unused
+The MSM8996 QMP PCIe PHY driver no longer uses the "in-layout"
+configuration macro to configure registers that are typically accessed
+using "regs_layout" arrays (e.g. QPHY_START_CTRL) so drop this unused
 feature.
 
 Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 54 ++++++-----------------
- 1 file changed, 14 insertions(+), 40 deletions(-)
+ .../phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c  | 34 ++++---------------
+ 1 file changed, 6 insertions(+), 28 deletions(-)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-index 3889dcf73c59..84380852ba5b 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-@@ -69,11 +69,6 @@
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c
+index 8b74948eb467..31ac405d3785 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c
+@@ -46,11 +46,6 @@
  struct qmp_phy_init_tbl {
  	unsigned int offset;
  	unsigned int val;
@@ -108,7 +108,7 @@ index 3889dcf73c59..84380852ba5b 100644
  	/*
  	 * mask of lanes for which this register is written
  	 * for cases when second lane needs different values
-@@ -88,14 +83,6 @@ struct qmp_phy_init_tbl {
+@@ -65,14 +60,6 @@ struct qmp_phy_init_tbl {
  		.lane_mask = 0xff,	\
  	}
  
@@ -123,15 +123,15 @@ index 3889dcf73c59..84380852ba5b 100644
  #define QMP_PHY_INIT_CFG_LANE(o, v, l)	\
  	{				\
  		.offset = o,		\
-@@ -1346,7 +1333,6 @@ static const struct qmp_phy_combo_cfg sm8250_usb3dpphy_cfg = {
+@@ -346,7 +333,6 @@ static const struct qmp_phy_cfg msm8996_pciephy_cfg = {
  };
  
- static void qmp_combo_configure_lane(void __iomem *base,
+ static void qmp_pcie_msm8996_configure_lane(void __iomem *base,
 -					const unsigned int *regs,
  					const struct qmp_phy_init_tbl tbl[],
  					int num,
  					u8 lane_mask)
-@@ -1361,19 +1347,15 @@ static void qmp_combo_configure_lane(void __iomem *base,
+@@ -361,19 +347,15 @@ static void qmp_pcie_msm8996_configure_lane(void __iomem *base,
  		if (!(t->lane_mask & lane_mask))
  			continue;
  
@@ -143,87 +143,42 @@ index 3889dcf73c59..84380852ba5b 100644
  	}
  }
  
- static void qmp_combo_configure(void __iomem *base,
+ static void qmp_pcie_msm8996_configure(void __iomem *base,
 -				   const unsigned int *regs,
  				   const struct qmp_phy_init_tbl tbl[],
  				   int num)
  {
--	qmp_combo_configure_lane(base, regs, tbl, num, 0xff);
-+	qmp_combo_configure_lane(base, tbl, num, 0xff);
+-	qmp_pcie_msm8996_configure_lane(base, regs, tbl, num, 0xff);
++	qmp_pcie_msm8996_configure_lane(base, tbl, num, 0xff);
  }
  
- static int qmp_combo_serdes_init(struct qmp_phy *qphy)
-@@ -1384,28 +1366,24 @@ static int qmp_combo_serdes_init(struct qmp_phy *qphy)
- 	const struct qmp_phy_init_tbl *serdes_tbl = cfg->serdes_tbl;
- 	int serdes_tbl_num = cfg->serdes_tbl_num;
+ static int qmp_pcie_msm8996_serdes_init(struct qmp_phy *qphy)
+@@ -387,7 +369,7 @@ static int qmp_pcie_msm8996_serdes_init(struct qmp_phy *qphy)
+ 	unsigned int mask, val;
+ 	int ret;
  
--	qmp_combo_configure(serdes, cfg->regs, serdes_tbl, serdes_tbl_num);
-+	qmp_combo_configure(serdes, serdes_tbl, serdes_tbl_num);
+-	qmp_pcie_msm8996_configure(serdes, cfg->regs, serdes_tbl, serdes_tbl_num);
++	qmp_pcie_msm8996_configure(serdes, serdes_tbl, serdes_tbl_num);
  
- 	if (cfg->type == PHY_TYPE_DP) {
- 		switch (dp_opts->link_rate) {
- 		case 1620:
--			qmp_combo_configure(serdes, cfg->regs,
--					       cfg->serdes_tbl_rbr,
-+			qmp_combo_configure(serdes, cfg->serdes_tbl_rbr,
- 					       cfg->serdes_tbl_rbr_num);
- 			break;
- 		case 2700:
--			qmp_combo_configure(serdes, cfg->regs,
--					       cfg->serdes_tbl_hbr,
-+			qmp_combo_configure(serdes, cfg->serdes_tbl_hbr,
- 					       cfg->serdes_tbl_hbr_num);
- 			break;
- 		case 5400:
--			qmp_combo_configure(serdes, cfg->regs,
--					       cfg->serdes_tbl_hbr2,
-+			qmp_combo_configure(serdes, cfg->serdes_tbl_hbr2,
- 					       cfg->serdes_tbl_hbr2_num);
- 			break;
- 		case 8100:
--			qmp_combo_configure(serdes, cfg->regs,
--					       cfg->serdes_tbl_hbr3,
-+			qmp_combo_configure(serdes, cfg->serdes_tbl_hbr3,
- 					       cfg->serdes_tbl_hbr3_num);
- 			break;
- 		default:
-@@ -2069,29 +2047,25 @@ static int qmp_combo_power_on(struct phy *phy)
+ 	qphy_clrbits(serdes, cfg->regs[QPHY_COM_SW_RESET], SW_RESET);
+ 	qphy_setbits(serdes, cfg->regs[QPHY_COM_START_CONTROL],
+@@ -531,13 +513,9 @@ static int qmp_pcie_msm8996_power_on(struct phy *phy)
  	}
  
  	/* Tx, Rx, and PCS configurations */
--	qmp_combo_configure_lane(tx, cfg->regs, cfg->tx_tbl, cfg->tx_tbl_num, 1);
-+	qmp_combo_configure_lane(tx, cfg->tx_tbl, cfg->tx_tbl_num, 1);
+-	qmp_pcie_msm8996_configure_lane(tx, cfg->regs, cfg->tx_tbl,
+-					cfg->tx_tbl_num, 1);
+-
+-	qmp_pcie_msm8996_configure_lane(rx, cfg->regs, cfg->rx_tbl,
+-					cfg->rx_tbl_num, 1);
+-
+-	qmp_pcie_msm8996_configure(pcs, cfg->regs, cfg->pcs_tbl, cfg->pcs_tbl_num);
++	qmp_pcie_msm8996_configure_lane(tx, cfg->tx_tbl, cfg->tx_tbl_num, 1);
++	qmp_pcie_msm8996_configure_lane(rx, cfg->rx_tbl, cfg->rx_tbl_num, 1);
++	qmp_pcie_msm8996_configure(pcs, cfg->pcs_tbl, cfg->pcs_tbl_num);
  
--	if (cfg->lanes >= 2) {
--		qmp_combo_configure_lane(qphy->tx2, cfg->regs, cfg->tx_tbl,
--					 cfg->tx_tbl_num, 2);
--	}
-+	if (cfg->lanes >= 2)
-+		qmp_combo_configure_lane(qphy->tx2, cfg->tx_tbl, cfg->tx_tbl_num, 2);
- 
- 	/* Configure special DP tx tunings */
- 	if (cfg->type == PHY_TYPE_DP)
- 		cfg->configure_dp_tx(qphy);
- 
--	qmp_combo_configure_lane(rx, cfg->regs, cfg->rx_tbl, cfg->rx_tbl_num, 1);
-+	qmp_combo_configure_lane(rx, cfg->rx_tbl, cfg->rx_tbl_num, 1);
- 
--	if (cfg->lanes >= 2) {
--		qmp_combo_configure_lane(qphy->rx2, cfg->regs, cfg->rx_tbl,
--					 cfg->rx_tbl_num, 2);
--	}
-+	if (cfg->lanes >= 2)
-+		qmp_combo_configure_lane(qphy->rx2, cfg->rx_tbl, cfg->rx_tbl_num, 2);
- 
- 	/* Configure link rate, swing, etc. */
- 	if (cfg->type == PHY_TYPE_DP)
- 		cfg->configure_dp_phy(qphy);
- 	else
--		qmp_combo_configure(pcs, cfg->regs, cfg->pcs_tbl, cfg->pcs_tbl_num);
-+		qmp_combo_configure(pcs, cfg->pcs_tbl, cfg->pcs_tbl_num);
- 
- 	if (cfg->has_pwrdn_delay)
- 		usleep_range(cfg->pwrdn_delay_min, cfg->pwrdn_delay_max);
+ 	/*
+ 	 * Pull out PHY from POWER DOWN state.
 -- 
 2.35.1
 
