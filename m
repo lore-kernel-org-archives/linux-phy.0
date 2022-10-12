@@ -4,47 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 78022C4332F
-	for <linux-phy@archiver.kernel.org>; Wed, 12 Oct 2022 08:50:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E1073C41535
+	for <linux-phy@archiver.kernel.org>; Wed, 12 Oct 2022 08:50:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wpPlnarW2HNGsaXmQba/0tHIBRM684Q0RQQGDY22UvY=; b=xeRSF+ovhE/zAH
-	YoU/BPFHtIgC7Jl8wt9GPF7NWVWGAZuy1fIVJokz1eYAlARVL9THKiBMh6l+v4mVMHOYw1ykAhc0r
-	S9unCc5fiNdHlC5YuP/5ndojlBPQgM2NGE31mgljZyYZKXM1XOWxQQr5zZ4rvcwPx7UhXUDEBA0AU
-	Z0nxKLw0Wbs3b0yETRFWgvHz9JYiY7vPiHo9qM2Xkjm4976GhX0HbjVQHBz+uW4wc0o4Ux5KjErai
-	t+s668l1yMYFIt1tGpdXFyoazoTrw02E8AYgaJ94Gybiy1vpjTZ+3iINZQ7f6CtMptaIfbR/fhBcm
-	9XbhElyWVxiH8aFUoU5w==;
+	List-Owner; bh=GgCHonzEEEODyQtv3FjH8cQEPrh6NmfoxZqtfzpFqGI=; b=hHzFVzLSrkBDvu
+	bPG98zZ+SkvwxvA5NPlOxje4wCTvQy1F6T0RAwRvbuUBK0kaKzbkQzDavtLZ0WNIr4VPw1xOoytJZ
+	jaESf3EuPTS53XJfb0CnDIkn/Z7hC2QgIOMi1K4Du1ct3wCA0qztpozL7hiGScSEkNHfGWNLA++Ls
+	4AZinEL/yPt6tO47jXKlNBzxZhs+iWFs3zIFlU+p5zawX4qpm98W+Hx+cpv6gM11bJQfYt1+6oFRc
+	R3OMa1s4a2SlocA7K77EiPPr6NBTcQzI2tZQfLRhQfpP0JMRCzhUdpvES4IGXix6o0uXuuV7wvVY+
+	RWM4arZkhEqURVessIcw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oiXS1-007QA7-A3; Wed, 12 Oct 2022 08:50:53 +0000
+	id 1oiXS4-007QBB-9L; Wed, 12 Oct 2022 08:50:56 +0000
 Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oiXRp-007Q23-US
-	for linux-phy@lists.infradead.org; Wed, 12 Oct 2022 08:50:44 +0000
+	id 1oiXRp-007Q24-R7
+	for linux-phy@lists.infradead.org; Wed, 12 Oct 2022 08:50:45 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id B40C8614A2;
+	by dfw.source.kernel.org (Postfix) with ESMTPS id E070F614AC;
 	Wed, 12 Oct 2022 08:50:40 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6CF1CC433D7;
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A1243C4FEBE;
 	Wed, 12 Oct 2022 08:50:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1665564639;
-	bh=grrQJRlOwTBUkzdoRWtUy3loadm28dQuP1YPgfYctaU=;
+	bh=tRjP5u7RXvVx5CXhSiYrPbB3bH4Ygd2LQWd5D6ziaHQ=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=HdlQZJIiK0xGzdnHR6Q5tG2ra70zyk7S5uNRSL/6FkPORm2U2iTv/hpTHvB/YkaMK
-	 yx8bWP8vzfZEFrnoNGyNlOIZha00NY7rWEn1b3Emjx29oF+BoAKkI0SGWB/VyNus8C
-	 LW51IRj8iNwHhTH6lw3LBNUoSJWc6PT3DA5DT1eMQACukBJfY3P2WmEd03JLD88yH7
-	 u2cCl/kuDblx9UKR+o8smVupgMKabscBvH5MMQb0gklVhQHjhEVz4hu9AO3B7/pUUc
-	 BITrKF551OLnRY1/RTNfI+jp0a+PAz7S8neHxcug6aYtPs4siHGwpMgnKfmI8+fNfh
-	 nHgBhCkMFwmCg==
+	b=nuPeP+ByMt80SLrrZ7IV3+Q3cK/xerwIrM6mzmxqiEpcqpXHVhY1HTOcY2DbKVVCk
+	 ZzGOVsdKCaBCGEdlK7uEEh4UTSQ5JuPOSJmndGSQZAdn7lPCgzZWp/C4m9Q1KM1DRg
+	 LmBPTj76SNF/s9sAWNDiPB42uYiG29wpqN8v/kUfzGUB46KZP1T1hP+kZgu4lvH+vc
+	 vUYImghw/BMl3hRJTfrelCZmKd2uL9/ib4skq9IkZvNy5aJYQG62Hm+ATMwaFve4M3
+	 UmYzpRduqgNDrAMv47OD/B94+0Lt4gp9d5/xvxuwabpWVeZSuOC3Dsf/nBuKzetZPK
+	 8XAO44ZxaVLSQ==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1oiXRf-0006I1-3Q; Wed, 12 Oct 2022 10:50:31 +0200
+	id 1oiXRf-0006I8-8s; Wed, 12 Oct 2022 10:50:31 +0200
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>
 Cc: Andy Gross <agross@kernel.org>,
@@ -56,16 +56,16 @@ Cc: Andy Gross <agross@kernel.org>,
 	linux-phy@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH 12/20] phy: qcom-qmp-ufs: increase ready polling period
-Date: Wed, 12 Oct 2022 10:49:54 +0200
-Message-Id: <20221012085002.24099-12-johan+linaro@kernel.org>
+Subject: [PATCH 14/20] phy: qcom-qmp-usb: increase status polling period
+Date: Wed, 12 Oct 2022 10:49:56 +0200
+Message-Id: <20221012085002.24099-14-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.35.1
 In-Reply-To: <20221012085002.24099-1-johan+linaro@kernel.org>
 References: <20221012084846.24003-1-johan+linaro@kernel.org>
  <20221012085002.24099-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221012_015042_073984_755D21AB 
+X-CRM114-CacheID: sfid-20221012_015042_137582_5A5F6D0C 
 X-CRM114-Status: GOOD (  10.94  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -89,19 +89,19 @@ period to the more reasonable 51--200 us.
 
 Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 2 +-
+ drivers/phy/qualcomm/phy-qcom-qmp-usb.c | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-index 8380904cf26c..1a51f803928b 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-@@ -937,7 +937,7 @@ static int qmp_ufs_power_on(struct phy *phy)
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
+index 840b67167581..0bd9291e6a7b 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
+@@ -2163,7 +2163,7 @@ static int qmp_usb_power_on(struct phy *phy)
  	qphy_setbits(pcs, cfg->regs[QPHY_START_CTRL], cfg->start_ctrl);
  
- 	status = pcs + cfg->regs[QPHY_PCS_READY_STATUS];
--	ret = readl_poll_timeout(status, val, (val & PCS_READY), 10,
-+	ret = readl_poll_timeout(status, val, (val & PCS_READY), 200,
+ 	status = pcs + cfg->regs[QPHY_PCS_STATUS];
+-	ret = readl_poll_timeout(status, val, !(val & PHYSTATUS), 10,
++	ret = readl_poll_timeout(status, val, !(val & PHYSTATUS), 200,
  				 PHY_INIT_COMPLETE_TIMEOUT);
  	if (ret) {
  		dev_err(qmp->dev, "phy initialization timed-out\n");
