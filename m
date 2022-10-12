@@ -4,46 +4,46 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9B908C4332F
-	for <linux-phy@archiver.kernel.org>; Wed, 12 Oct 2022 05:56:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3DFB0C433FE
+	for <linux-phy@archiver.kernel.org>; Wed, 12 Oct 2022 05:57:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Z6LeK6mBFQJEGpwmXc/0HJpmiZopGdVEPSViQtA8YFs=; b=HOvYzE5gxoW685
-	If8B4GOziOjcnEqoVYlomsd8xn5e2vAsSc4Rv9bauVvIpqMrhDp1hHSLlr+Ds2z86fa6EwaDan3Lt
-	wrDEkPAjErlEPxHuXzPaR8g7gu9q9tqUlvw5n0zlzw+OnKX9sIgIAeUIYPbJKbdlNBGcqsAcyPyZi
-	yDwzemPZxCLWNNMIoY9DWvwHmcSAM0YypxvcJwUJCxHvPdUkJA0yWCfCPxRI1H5dzOUVPYiW24MSk
-	BpE+tw+Hu4GAxpjTuEd964d3CpTTPDXtRGWIrOifkX/1Z3WQgDVKqMQRHBjjOQ9k8zEzuYCbFWWlj
-	tAKkSmtghSe9rqCGfZYw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=P1DvgW9hssifWSaRwJxhre/uJM+BLZzMrViUVzkfrM0=; b=iCzf2jZ+Ry/U06
+	eDAecm1bt9rPBuEcWCvWIpExbCTfpVHDIxnLVJ7mGZ3Wy30gy/kg8mMop/Vd1sSIRufN+eCveEALs
+	ZRhuycLwGBdyj2EgOr0ACxmGNzoa2bR3skpo9PZchI0YplDiktfwn9cTXo9fw5mC0AlRJ4OVmYspv
+	3RrqEa2m8OiCV92Uxr//Ypn53WqU162phDWzUwj0TlSFMy0nKwtMC3P+W1CjZoHrcG+H60zRcooum
+	UiSoiPLtYk7K9Gl6sfYKa/54Gop5F2RI0UE1ccE0mS9ImjoUgVyJcE8ajQ0OQ3SQOyuTLY7t4oV41
+	Wd0Zjs/MgCmP34bHs9eA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oiUjU-006ui1-Lb; Wed, 12 Oct 2022 05:56:44 +0000
+	id 1oiUjl-006umU-Ei; Wed, 12 Oct 2022 05:57:01 +0000
 Received: from sender4-op-o18.zoho.com ([136.143.188.18])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oiUjI-006udD-M1; Wed, 12 Oct 2022 05:56:34 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1665554179; cv=none; 
+	id 1oiUjM-006uf3-9g; Wed, 12 Oct 2022 05:56:37 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1665554190; cv=none; 
 	d=zohomail.com; s=zohoarc; 
-	b=WTV4I9AqtF8NEWKXiyfe37p9e+3uoQyKfYMMKC12oZwAqz4QMe1JsRy0FOu6vtNPkZZOx44lwIrjHLxj5Ft++yIKburl2OVO1e1Gfl66Iqdk79W7+QcsxShPpG3e7vSbUx8IITKC8jd69cc8e0offrgSAMPoQiOWjXJwYGLIAUs=
+	b=kHyfkaFSXKsIudi2PPUrBUlpRFpJt9ZBIp6EYH64gahYd1XqU2tCJZf+4ZNIT8Lb0O8uGjzo/P6RVl152jek0pC70dE5EkCAEDIH44QUV3mNI4hyGSTaF14eC5lQvrKJMLWAZ4OpDfXSDqPjNmlnlybo4VLtuoyI9sbKNOwvmRo=
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1665554179; h=Content-Transfer-Encoding:Cc:Date:From:MIME-Version:Message-ID:Subject:To; 
-	bh=KU9sLoTveoefxunUD/xdovaMeWXf7cwcD0GVI0joPoM=; 
-	b=b6n5b7nv2V1N5TSB4RwZK0omSrjLg+YImusPP3qRMMRygR1wb6J6JC4hb0aKS9iAi9CwS6g3H+CAMcUb707DHFxAIZzENW6shhWF7osZ1bLpQvAM3+h1XKSg1W0EqOaiC1pl+VWUlAwBbekhzptXkucPt54L3wTSDYDRd31Ecmo=
+	t=1665554190; h=Content-Transfer-Encoding:Cc:Date:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:To; 
+	bh=3OPT6La0yyILaQA8ZiMW97xZB2rAbOV4OPtV+1MiTW4=; 
+	b=njfa9XpGf9e1G28hMDxqsNWACJk3tx3++JtvlVOKmQ75QoGdh4tjPrTey/urCoyE+u0WhT5ohxetNm4cQDNc9oJSopmY4o8bBpPltqFeaGHp84ITUpRKxLnasla1h/RyakYO9dK8FP/uJ9MrvIGfHYZjlZyCfYjDzFUyCeBb7UI=
 ARC-Authentication-Results: i=1; mx.zohomail.com;
 	dkim=pass  header.i=icenowy.me;
 	spf=pass  smtp.mailfrom=uwu@icenowy.me;
 	dmarc=pass header.from=<uwu@icenowy.me>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1665554179;
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1665554190;
 	s=zmail; d=icenowy.me; i=uwu@icenowy.me;
-	h=From:From:To:To:Cc:Cc:Subject:Subject:Date:Date:Message-Id:Message-Id:MIME-Version:Content-Transfer-Encoding:Reply-To;
-	bh=KU9sLoTveoefxunUD/xdovaMeWXf7cwcD0GVI0joPoM=;
-	b=I0EvLcljuAF5RCf6YxJRtkrDKcdbE147s35vorQxWDUg3pV+1dbVCelleqy6AOkf
-	f3LXbzBFjoena2/XcwRiiz/RBkuQAZhEA1JosuPLeduMBqm0QEg33YBxS7A9blXtzWf
-	RfZTwSpNaVmwBaIZHIELyvyQrPAb1p5pZ/+9I7DQ=
+	h=From:From:To:To:Cc:Cc:Subject:Subject:Date:Date:Message-Id:Message-Id:In-Reply-To:References:MIME-Version:Content-Transfer-Encoding:Reply-To;
+	bh=3OPT6La0yyILaQA8ZiMW97xZB2rAbOV4OPtV+1MiTW4=;
+	b=hWtVFDuqhL8JStrPc9R/YcdW9F3/nTi3x1goeoutyVTNhgDfSgd/2a6ZyA0jgVCA
+	aVoBJPI5qXDme41nYxJquX7MB3meoxGpPlJWJKLtWtFsVKRWJ1jmvB0Aod8TPMXpkNy
+	soqsfCpdDWfJHNlTbZaAfv6z1S45QJ9ncVOTDQYY=
 Received: from edelgard.fodlan.icenowy.me (112.94.102.144 [112.94.102.144]) by mx.zohomail.com
-	with SMTPS id 1665554178267857.678933146887; Tue, 11 Oct 2022 22:56:18 -0700 (PDT)
+	with SMTPS id 1665554187702589.1497638513014; Tue, 11 Oct 2022 22:56:27 -0700 (PDT)
 From: Icenowy Zheng <uwu@icenowy.me>
 To: Rob Herring <robh+dt@kernel.org>,
 	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
@@ -60,15 +60,18 @@ Cc: soc@kernel.org,
 	linux-phy@lists.infradead.org,
 	linux-usb@vger.kernel.org,
 	Icenowy Zheng <uwu@icenowy.me>
-Subject: [PATCH v2 00/10] SUNIV USB and PopStick support (and updating mailmap)
-Date: Wed, 12 Oct 2022 13:55:52 +0800
-Message-Id: <20221012055602.1544944-1-uwu@icenowy.me>
+Subject: [PATCH v2 01/10] mailmap: update Icenowy Zheng's mail address
+Date: Wed, 12 Oct 2022 13:55:53 +0800
+Message-Id: <20221012055602.1544944-2-uwu@icenowy.me>
 X-Mailer: git-send-email 2.37.1
+In-Reply-To: <20221012055602.1544944-1-uwu@icenowy.me>
+References: <20221012055602.1544944-1-uwu@icenowy.me>
 MIME-Version: 1.0
 X-ZohoMailClient: External
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221011_225632_880383_1B53B1B0 
-X-CRM114-Status: GOOD (  12.83  )
+X-CRM114-CacheID: sfid-20221011_225636_429535_58BBE577 
+X-CRM114-Status: UNSURE (   8.53  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,43 +88,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This patchset introduces support for F1C100s' USB and SourceParts
-PopStick board.
+Due to the SMTP provider adopted by AOSC applied some more restricted
+rate limit that is not suitable for sending kernel patches, I switched
+to a mailbox hosted on my own domain name now. In addition, there's a
+single commit that is pushed to the mainline kernel tree during my
+internship at Sipeed the last year.
 
-As I switched to a new mail address, and this patchset contains patches
-authored before this change, a mailmap update is added.
+Map two AOSC mail addresses (both aosc.io and aosc.xyz domain names) and
+a defunct Sipeed mail address to the new mail address.
 
-The DT binding and driver support for SUNIV USB PHY/MUSB are added, in
-addition to DT changes to the DTSI and Lichee Nano DT. A new DT is added
-for SourceParts PopStick v1.1 board.
+Signed-off-by: Icenowy Zheng <uwu@icenowy.me>
+---
+No changes since v1.
 
-Icenowy Zheng (10):
-  mailmap: update Icenowy Zheng's mail address
-  dt-bindings: phy: add binding document for Allwinner F1C100s USB PHY
-  dt-bindings: usb: sunxi-musb: add F1C100s MUSB compatible string
-  phy: sun4i-usb: add support for the USB PHY on F1C100s SoC
-  musb: sunxi: add support for the F1C100s MUSB controller
-  ARM: suniv: add USB-related device nodes
-  ARM: suniv: f1c100s: enable USB on Lichee Pi Nano
-  dt-bindings: vendor-prefixes: add Source Parts
-  dt-binding: arm: sunxi: add compatible strings for PopStick v1.1
-  ARM: dts: suniv: add device tree for PopStick v1.1
+ .mailmap | 3 +++
+ 1 file changed, 3 insertions(+)
 
- .mailmap                                      |   3 +
- .../devicetree/bindings/arm/sunxi.yaml        |   7 ++
- .../phy/allwinner,suniv-f1c100s-usb-phy.yaml  |  83 ++++++++++++++
- .../usb/allwinner,sun4i-a10-musb.yaml         |   1 +
- .../devicetree/bindings/vendor-prefixes.yaml  |   2 +
- arch/arm/boot/dts/Makefile                    |   3 +-
- .../boot/dts/suniv-f1c100s-licheepi-nano.dts  |  16 +++
- arch/arm/boot/dts/suniv-f1c100s.dtsi          |  26 +++++
- .../boot/dts/suniv-f1c200s-popstick-v1.1.dts  | 101 ++++++++++++++++++
- drivers/phy/allwinner/phy-sun4i-usb.c         |  11 ++
- drivers/usb/musb/sunxi.c                      |   8 +-
- 11 files changed, 258 insertions(+), 3 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/phy/allwinner,suniv-f1c100s-usb-phy.yaml
- create mode 100644 arch/arm/boot/dts/suniv-f1c200s-popstick-v1.1.dts
-
+diff --git a/.mailmap b/.mailmap
+index 380378e2db36..59b7130c3d1b 100644
+--- a/.mailmap
++++ b/.mailmap
+@@ -168,6 +168,9 @@ Henrik Rydberg <rydberg@bitmath.org>
+ Herbert Xu <herbert@gondor.apana.org.au>
+ Huacai Chen <chenhuacai@kernel.org> <chenhc@lemote.com>
+ Huacai Chen <chenhuacai@kernel.org> <chenhuacai@loongson.cn>
++Icenowy Zheng <uwu@icenowy.me> <icenowy@aosc.io>
++Icenowy Zheng <uwu@icenowy.me> <icenowy@aosc.xyz>
++Icenowy Zheng <uwu@icenowy.me> <icenowy@sipeed.com>
+ Jacob Shin <Jacob.Shin@amd.com>
+ Jaegeuk Kim <jaegeuk@kernel.org> <jaegeuk@google.com>
+ Jaegeuk Kim <jaegeuk@kernel.org> <jaegeuk.kim@samsung.com>
 -- 
 2.37.1
 
