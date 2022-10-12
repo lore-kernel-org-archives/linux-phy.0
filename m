@@ -4,73 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 28569C433FE
-	for <linux-phy@archiver.kernel.org>; Wed, 12 Oct 2022 05:59:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 195D6C433FE
+	for <linux-phy@archiver.kernel.org>; Wed, 12 Oct 2022 06:39:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=g/2QJOdJIjUW0foWCeNdTyC0xj0TMpSQ2h1E67TvwWk=; b=WANvHF8Tw7/sfX
-	E6dwowWSLxeRQt3dw4jPtz3A1qr9Yf8vIAqQttptbCroL3zXfAeCNIz9KAyNnvceXNdAExU3q8Yil
-	5qq1xEVzD/e3a2pe8d8zwzr2a5ww78E4+5Paq3kIKnS1UfpD0yZxSbT7NK9kR64gdw0ohyQRpiwUn
-	ZwocUdaGno6PzENfgnyGkybEkG4LQ18LsMDQZvmtRXngcFr9xP7i3AfbSLV07omlTq424T2lK/T5q
-	OpQrUWF6NpC9XXf+D8mNGXUayCfk0W0mYLUEC+Dww39YDJ8i/IJGAe5tnd9JI6783BCscfmCYeLAv
-	YByAi/YDsiFpVC0vvMsA==;
+	List-Owner; bh=mM59r81KId1tQGwyWVNrdZc4xNIY6YKL/Yg9ETSc0rU=; b=1DIysIQzRr7fj1
+	6iCUyiYRGT8rz/7ckzOkVh56acqdEjHvu1uTLqivsIGQLZ6ViaxAXo3UAgAeBi6Re8AlLKnx9dLSd
+	XzDvdEUqnfwqgoO/97G1ZRp3/vq8hq8CEjjdfw//Qw4h7rQCfR0dlJm4KkTm7c2XeSfFA+zmP/vTX
+	vYMUvmYXzWAVZnEUoIP6hLgpUnM47CIdsPtRbAwHHxLMGZItXo6VabRdtT11JMmWthFGY49JTa6te
+	d0LVI1NHUVauY/1VzFGcMbGMZi8ItBh/pDMNxIFVkIRx6tN+NyePRMHF52QYGjcfkSye3Nls6mRP3
+	XNPjRpUWkHICkcSM8kWw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oiUmW-006wPQ-On; Wed, 12 Oct 2022 05:59:54 +0000
-Received: from sender4-op-o18.zoho.com ([136.143.188.18])
+	id 1oiVOu-0073SD-8M; Wed, 12 Oct 2022 06:39:32 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oiUkU-006v9p-1A; Wed, 12 Oct 2022 05:57:47 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1665554262; cv=none; 
-	d=zohomail.com; s=zohoarc; 
-	b=atvxzaSC6LFGcRfJpsJMIxtZIt352jx03gJSKk9uG2bkcg77Y15gkiUasLg3zDhLReHbGEjnx3tJ2gkVMUb3aK7fyFOk6f5pWP0PjglEZcMHnXpc8g3weSsl8It/gmsCOF/SoFoUsKAy8Jv6bkLp9jxZB+M2JOEP+t8kMvODrMk=
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1665554262; h=Content-Transfer-Encoding:Cc:Date:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:To; 
-	bh=UaXtIwhiAd0KbivjBK2cgrEAbkI3s44C7vM8EyFF4v0=; 
-	b=L6Lud2AdEMM5tJTi0UUUFx1GxiYaGqtDGvSfxIof0tDU+nBc3J11SgE1BeFJWySk25dxe0Luhy/MpsioQaqeTtXrpAL/E3ejaLqzRvo5h2+DPe2maA9043VnkaIONCT7dS1Tx+DtxTco4HTvzqUBOlOwwxBp/PUYzefz1NItZug=
-ARC-Authentication-Results: i=1; mx.zohomail.com;
-	dkim=pass  header.i=icenowy.me;
-	spf=pass  smtp.mailfrom=uwu@icenowy.me;
-	dmarc=pass header.from=<uwu@icenowy.me>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1665554262;
-	s=zmail; d=icenowy.me; i=uwu@icenowy.me;
-	h=From:From:To:To:Cc:Cc:Subject:Subject:Date:Date:Message-Id:Message-Id:In-Reply-To:References:MIME-Version:Content-Transfer-Encoding:Reply-To;
-	bh=UaXtIwhiAd0KbivjBK2cgrEAbkI3s44C7vM8EyFF4v0=;
-	b=hq5MQdXicXEsg+vm/uyU/1/Dn97R6FibHgNnj8zV92K4aKrpJK0iyObxJ+qLhApu
-	FtnxRSOc/uhim8UcT0Y3n078oC9JCn6qmecZx+NY0ivRckdEyTAFgMfoGoQmtXHEB1s
-	4X0J6n/Tr5Fgu4XjuDCktzCDKTT7RWyLWPbtfgTQ=
-Received: from edelgard.fodlan.icenowy.me (112.94.102.144 [112.94.102.144]) by mx.zohomail.com
-	with SMTPS id 1665554261224772.6070403474648; Tue, 11 Oct 2022 22:57:41 -0700 (PDT)
-From: Icenowy Zheng <uwu@icenowy.me>
-To: Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Chen-Yu Tsai <wens@csie.org>,
-	Jernej Skrabec <jernej.skrabec@gmail.com>,
-	Samuel Holland <samuel@sholland.org>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Andre Przywara <andre.przywara@arm.com>
-Cc: soc@kernel.org,
-	linux-kernel@vger.kernel.org,
-	devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-sunxi@lists.linux.dev,
-	linux-phy@lists.infradead.org,
-	linux-usb@vger.kernel.org,
-	Icenowy Zheng <uwu@icenowy.me>
-Subject: [PATCH v2 10/10] ARM: dts: suniv: add device tree for PopStick v1.1
-Date: Wed, 12 Oct 2022 13:56:02 +0800
-Message-Id: <20221012055602.1544944-11-uwu@icenowy.me>
-X-Mailer: git-send-email 2.37.1
-In-Reply-To: <20221012055602.1544944-1-uwu@icenowy.me>
-References: <20221012055602.1544944-1-uwu@icenowy.me>
+	id 1oiVOq-0073Qk-Vh
+	for linux-phy@lists.infradead.org; Wed, 12 Oct 2022 06:39:30 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 5B09561403;
+	Wed, 12 Oct 2022 06:39:18 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id BC41AC433C1;
+	Wed, 12 Oct 2022 06:39:17 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1665556757;
+	bh=B1ff8uHzFrPosXTXSv8vraozDbLxdmDekoGelWUPSek=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=SUgtgHCR+BXs1NX4KxvttGTrUGPZxsG4fIToaGlU4mZcGCNw3VYsy+Lf93UieiKMy
+	 Qt6b3qMC/+AQFAOyMJ0qe0xZd2ZNYusRevgylGZO9g3irg+AdBRUkGoVfZo210nQjj
+	 To774GG+Gv9hwX5PjzPn9kCeb5can2NJ93A3dXevJXMln0QgMz+L3DODLhDeDknOsA
+	 Nf50V1wyDmAi7UKChVOIDoZwsAMzP9rnhp+ku4eWB5splzA9eLI+ivP109uluFMo0q
+	 0P1zSLdkvxvoLzX6MJ7uCKZwZeAK4aoX5lC9aYG9jEZ1/Hyh90Kjn5gEBcUr4Ntw4/
+	 fuB0lDLq5GyCA==
+Received: from johan by xi.lan with local (Exim 4.94.2)
+	(envelope-from <johan@kernel.org>)
+	id 1oiVOV-0006Bh-R6; Wed, 12 Oct 2022 08:39:08 +0200
+Date: Wed, 12 Oct 2022 08:39:07 +0200
+From: Johan Hovold <johan@kernel.org>
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Cc: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+	Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@somainline.org>,
+	Kishon Vijay Abraham I <kishon@ti.com>,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 08/13] phy: qcom-qmp-pcie: drop power-down delay config
+Message-ID: <Y0ZhC0apqGoAyeII@hovoldconsulting.com>
+References: <20221011131416.2478-1-johan+linaro@kernel.org>
+ <20221011131416.2478-9-johan+linaro@kernel.org>
+ <66261491-530d-c368-6cc8-daeef74fcbda@linaro.org>
+ <Y0V1TIBySTPhYqX/@hovoldconsulting.com>
+ <ebe1e26a-7335-29ac-4990-6b8fdb02ba7c@linaro.org>
+ <Y0V66q53I4ivlXI+@hovoldconsulting.com>
+ <dbd85c78-86dc-8dd0-83d2-43af933e5a92@linaro.org>
 MIME-Version: 1.0
-X-ZohoMailClient: External
+Content-Disposition: inline
+In-Reply-To: <dbd85c78-86dc-8dd0-83d2-43af933e5a92@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221011_225746_134279_9A336DBE 
-X-CRM114-Status: GOOD (  15.10  )
+X-CRM114-CacheID: sfid-20221011_233929_274922_33DC96DD 
+X-CRM114-Status: GOOD (  33.86  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,149 +86,97 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-PopStick is a minimal Allwinner F1C200s dongle, with its USB controller
-wired to a USB Type-A port, a SD slot and a SPI NAND flash on board, and
-an on-board CH340 USB-UART converted connected to F1C200s's UART0.
+On Tue, Oct 11, 2022 at 05:41:28PM +0300, Dmitry Baryshkov wrote:
+> On 11/10/2022 17:17, Johan Hovold wrote:
 
-Add a device tree for it. As F1C200s is just F1C100s with a different
-DRAM chip co-packaged, directly use F1C100s DTSI here.
+> > Yeah, I noticed that ipq8074 was the first to abuse the prwdn_delay
+> > and possibly because of it starting the PHY already in its PCS table
+> > (which it never should have).
+> > 
+> > I'm talking about the intent of pwrdn_delay which was to add a delay
+> > after powering-on the phy and before starting it.
+> > 
+> > The vendor driver has a 1 ms delay after starting the PHY and before it
+> > starts polling as the PHY on newer SoC tend to take > 1 ms before they
+> > are ready.
+> > 
+> > So, I still claim that that delay in the vendor driver is a different
+> > one entirely.
+> > 
+> >> Thus, I'd say, the PCIe delay should be moved after the registers
+> >> programming.
+> > 
+> > No, not necessarily. Again, that's an optimisation in the vendor driver
+> > to avoid polling so many times. Since I can say for sure that there are
+> > no PHY that start in less than 1 ms, I wouldn't add it unconditionally.
+> 
+> I don't think it's an optimization. For me it looks like some kind of 
+> stabilization delay before touching pipe clocks.
 
-This commit covers the v1.1 version of this board, which is now shipped.
-v1.0 is some internal sample that have not been shipped at all.
+I meant that it's effectively an optimisation as the driver still works
+without that unconditional delay after starting the PHY and before
+polling its status. And the mainline poll-loop takes care of waiting
+also for that 1 ms of "stabilisation".
 
-Signed-off-by: Icenowy Zheng <uwu@icenowy.me>
----
-New patch introduced in v2.
+But I guess you could be right in that later contributors have seen that
+delay in the vendor driver and thought that prwdn_delay corresponds to
+it without noticing that they are not at all equivalent.
 
- arch/arm/boot/dts/Makefile                    |   3 +-
- .../boot/dts/suniv-f1c200s-popstick-v1.1.dts  | 101 ++++++++++++++++++
- 2 files changed, 103 insertions(+), 1 deletion(-)
- create mode 100644 arch/arm/boot/dts/suniv-f1c200s-popstick-v1.1.dts
+As the current delay is pretty much pointless (you can wait for 20 ms if
+you want, it doesn't matter as the PHY hasn't been started yet) I guess
+we can move it and avoid a few loops when polling for the status.
 
-diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
-index 6aa7dc4db2fc..0249c07bd8a6 100644
---- a/arch/arm/boot/dts/Makefile
-+++ b/arch/arm/boot/dts/Makefile
-@@ -1391,7 +1391,8 @@ dtb-$(CONFIG_MACH_SUN9I) += \
- 	sun9i-a80-optimus.dtb \
- 	sun9i-a80-cubieboard4.dtb
- dtb-$(CONFIG_MACH_SUNIV) += \
--	suniv-f1c100s-licheepi-nano.dtb
-+	suniv-f1c100s-licheepi-nano.dtb \
-+	suniv-f1c200s-popstick-v1.1.dtb
- dtb-$(CONFIG_ARCH_TEGRA_2x_SOC) += \
- 	tegra20-acer-a500-picasso.dtb \
- 	tegra20-asus-tf101.dtb \
-diff --git a/arch/arm/boot/dts/suniv-f1c200s-popstick-v1.1.dts b/arch/arm/boot/dts/suniv-f1c200s-popstick-v1.1.dts
-new file mode 100644
-index 000000000000..121dfc6f609d
---- /dev/null
-+++ b/arch/arm/boot/dts/suniv-f1c200s-popstick-v1.1.dts
-@@ -0,0 +1,101 @@
-+// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-+/*
-+ * Copyright 2022 Icenowy Zheng <uwu@icenowy.me>
-+ */
-+
-+/dts-v1/;
-+#include "suniv-f1c100s.dtsi"
-+
-+#include <dt-bindings/gpio/gpio.h>
-+#include <dt-bindings/leds/common.h>
-+
-+/ {
-+	model = "Popcorn Computer PopStick v1.1";
-+	compatible = "sourceparts,popstick-v1.1", "sourceparts,popstick",
-+		     "allwinner,suniv-f1c200s", "allwinner,suniv-f1c100s";
-+
-+	aliases {
-+		mmc0 = &mmc0;
-+		serial0 = &uart0;
-+		spi0 = &spi0;
-+	};
-+
-+	chosen {
-+		stdout-path = "serial0:115200n8";
-+	};
-+
-+	leds {
-+		compatible = "gpio-leds";
-+
-+		led {
-+			function = LED_FUNCTION_STATUS;
-+			color = <LED_COLOR_ID_GREEN>;
-+			gpios = <&pio 4 6 GPIO_ACTIVE_HIGH>; /* PE6 */
-+			linux,default-trigger = "heartbeat";
-+		};
-+	};
-+
-+	reg_vcc3v3: vcc3v3 {
-+		compatible = "regulator-fixed";
-+		regulator-name = "vcc3v3";
-+		regulator-min-microvolt = <3300000>;
-+		regulator-max-microvolt = <3300000>;
-+	};
-+};
-+
-+&mmc0 {
-+	cd-gpios = <&pio 4 3 GPIO_ACTIVE_LOW>; /* PE3 */
-+	bus-width = <4>;
-+	disable-wp;
-+	status = "okay";
-+	vmmc-supply = <&reg_vcc3v3>;
-+};
-+
-+&spi0 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&spi0_pc_pins>;
-+	status = "okay";
-+
-+	flash@0 {
-+		#address-cells = <1>;
-+		#size-cells = <1>;
-+		compatible = "spi-nand";
-+		reg = <0>;
-+		spi-max-frequency = <40000000>;
-+
-+		partitions {
-+			compatible = "fixed-partitions";
-+			#address-cells = <1>;
-+			#size-cells = <1>;
-+
-+			partition@0 {
-+				label = "u-boot-with-spl";
-+				reg = <0x0 0x100000>;
-+			};
-+
-+			ubi@100000 {
-+				label = "ubi";
-+				reg = <0x100000 0x7f00000>;
-+			};
-+		};
-+	};
-+};
-+
-+&otg_sram {
-+	status = "okay";
-+};
-+
-+&uart0 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&uart0_pe_pins>;
-+	status = "okay";
-+};
-+
-+&usb_otg {
-+	dr_mode = "peripheral";
-+	status = "okay";
-+};
-+
-+&usbphy {
-+	status = "okay";
-+};
--- 
-2.37.1
+[ The next batch of clean ups also increases that silly 10 us polling
+period. ]
 
+> > Either way, separate change.
+> >   
+> >>>> I think we can either drop this delay completely, or move it before
+> >>>> read_poll_timeout().
+> >>>
+> >>> It definitely shouldn't be used for any new platforms, but I opted for
+> >>> the conservative route of keeping it in case some of the older platforms
+> >>> actually do need it.
+> >>>
+> >>> My bet is that this is all copy-paste cruft that could be removed, but
+> >>> I'd rather do that as a separate follow-on change. Perhaps after testing
+> >>> some more SoC after removing the delay.
+> >>>
+> >>> SC8280XP certainly doesn't need it.
+> >>
+> >> I think in our case this delay just falls into status polling. We'd
+> >> probably need it, if we'd add the noretain handling.
+> > 
+> > I'm not sure I understand what you're referring to here ("noretain
+> > handling")?
+> 
+>  From what I see in the downstream (4.19 at hand), the sequence is the 
+> following:
+> 
+> program_phy_config() // including SW_RESET & START_CTRL
+> 
+> delay
+> 
+> for pipe clocks:
+> clk_set_flags(info->hdl, CLKFLAG_NORETAIN_MEM)
+> clk_set_flags(info->hdl, CLKFLAG_NORETAIN_PERIPH)
+
+Heh. Crazy vendor-kernel magic.
+
+> set clock rates, prepare & enable pipe clocks
+> 
+> wmb()
+> 
+> poll for the PHY STATUS
+
+But 5.4 has something similar:
+
+	program + start
+	delay
+	enable pipe clock
+	poll for status
+
+Johan
 
 -- 
 linux-phy mailing list
