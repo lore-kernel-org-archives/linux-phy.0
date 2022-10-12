@@ -4,93 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3E68DC433FE
-	for <linux-phy@archiver.kernel.org>; Wed, 12 Oct 2022 08:32:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D8F77C433FE
+	for <linux-phy@archiver.kernel.org>; Wed, 12 Oct 2022 08:36:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:Cc:To:From:Date:References:
-	In-Reply-To:Message-Id:Mime-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4uNegUHpdTgdZtfzUGdscrKCUIkI2e0omUd1IzRA5wA=; b=DRdIwo2f+54i5X
-	1tZBcLm/RVVNMA+rAZEAaJ75RrLta4VP/NiAloNijLrVYgxvER+13zfSw7ag5baJsu/daIZ73WYiX
-	0F0F+AshekRg8zjorokNF6o2dzn/z3DXz6qoIXSG7wBi1zg9uujMx2vfRMrPn1zIleYWICPgBbo6u
-	SmP37Smh2enI0Nbzr+yiZYqHaar7kl69AD83yLYPdSlVZNdTwsB0PpLL7OwLD/+aNFGOLbEr719/y
-	bPP91xItyQWGllbO5wX7IopNX5vf31Qw9emXVP60raKk5xVNwll8ctLzJlzAGXI79wSUezn9R0qBe
-	tUxDAdVqR1IUX9jnvCJw==;
+	List-Owner; bh=j4svkU+PTZcjpjvhfgMsPNnxWv2AlarGo4pVmoaSuL4=; b=1FDmlimgzlGc7A
+	dXxz3aac+jPiYmXpbz6b5CL+z2chsJC+j74/X5xWG94Sy2VRIf3/SBWIOhpGhYRpAVUVlxWkVW7XC
+	D03KbAXquZ6bRmWjuopQXcj6xt8VxVKHbrw6hrCrX182wetzf5PXTETn7Ukr5ku3y9I8etvCTES+q
+	MKS6K2khaJ2yNAWAD4lWmodnICdn2cvr+kksnCDAMGto4eKSjI59aeqh5CV2w73w8R9KpucqnujPa
+	K5f6lY5I5W9jRZqFv0uTaaOQD4fCmFP+kj02zHHwADYRDdy9pdaALTASj0LJfQCd4MkB8gEebpfGz
+	onJ9Zd0XC1d8ZxVZFkvA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oiXAU-007LlW-GL; Wed, 12 Oct 2022 08:32:46 +0000
-Received: from wout3-smtp.messagingengine.com ([64.147.123.19])
+	id 1oiXEC-007MVJ-5X; Wed, 12 Oct 2022 08:36:36 +0000
+Received: from sender4-op-o18.zoho.com ([136.143.188.18])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oiXAI-007Ljd-Ng; Wed, 12 Oct 2022 08:32:36 +0000
-Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
-	by mailout.west.internal (Postfix) with ESMTP id E4D293200ADD;
-	Wed, 12 Oct 2022 04:32:27 -0400 (EDT)
-Received: from imap51 ([10.202.2.101])
-  by compute3.internal (MEProxy); Wed, 12 Oct 2022 04:32:29 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=arndb.de; h=cc
-	:cc:content-type:date:date:from:from:in-reply-to:in-reply-to
-	:message-id:mime-version:references:reply-to:sender:subject
-	:subject:to:to; s=fm2; t=1665563547; x=1665649947; bh=drXjAnf5EG
-	6LY0d4rMqtLwe0Q0qL+1NyMM0xSAeom8o=; b=kvJMB0HKsf3T3tnF246Uu0lBHE
-	H5IxuchGk+SXM+cfd/bySjSbJZs9MezJPl/fUeyJID4HJnwUCK3rWOCSjabi3Jsx
-	42SqO07dJ/dpkHQPqpfM1ErVkE/WvTkB6C94v0uAgCSBI38PsGcpLtBjZBozWJJS
-	WqL9I8qAEUXnvsXAnKzvlsJX9BOdThWd5F9R/ISsWgutlnYG3HPjGRyUwjvUSTCm
-	K/bglNEfdJSKVoE82TNxrTptEDCEVh8hdEoXdNHZwUyVPKxdRUxdbKXigfIhE0ma
-	408PwV+rDTsc0Vy1hKf8arqh8Ey9i3VrOunCiZzd6x2ldwWWY5W8xdgvbz+w==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
-	messagingengine.com; h=cc:cc:content-type:date:date:feedback-id
-	:feedback-id:from:from:in-reply-to:in-reply-to:message-id
-	:mime-version:references:reply-to:sender:subject:subject:to:to
-	:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
-	fm3; t=1665563547; x=1665649947; bh=drXjAnf5EG6LY0d4rMqtLwe0Q0qL
-	+1NyMM0xSAeom8o=; b=VbWX1YJ1vJxQ7Vl4OkXAnG94vCvudl/0SQGVEcRxBN2F
-	6a1isiyHEYlQ6d8EwOpJOWkKYjGKeWE4l7rrqIWesJDuPKQa+Aj4y0p/JsTef9Y8
-	muu+cTLCM04OA/B3cnHdV/DWzX6l64HlwheLqg/TCu/MLSVFN33jBjgjFCA0w1aC
-	9fVunCz4SVEhHxpHjLZurj1qWw80dN6q4l2a9fIfnk+lEWg6ByFhk318uGSGuCYQ
-	tWGZpF54HXQ1OYsR4/kOwbY+kuek4wV7+COiMELxczUL6eS/hk4PpDWVJezrEtJl
-	fMMk3B0x4e3ujf+U+ahoYUUOuAV7l9gaXPuuA2iGNA==
-X-ME-Sender: <xms:mntGY397JwN9UJtXR7rce5mX1q2K94oRw56NbOOb3ULnQEo7IYtjbQ>
-    <xme:mntGYzvLzRPy0Nq4soBbNWdktCppbu0EjcuK5q3QM8q5Dc9LN1ZlzM9_0b8C30iZC
-    HW2VrLjDkZs7MaFa9E>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvfedrfeejkedgtdehucetufdoteggodetrfdotf
-    fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
-    uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
-    cujfgurhepofgfggfkjghffffhvfevufgtsehttdertderredtnecuhfhrohhmpedftehr
-    nhguuceuvghrghhmrghnnhdfuceorghrnhgusegrrhhnuggsrdguvgeqnecuggftrfgrth
-    htvghrnhepvefhffeltdegheeffffhtdegvdehjedtgfekueevgfduffettedtkeekueef
-    hedunecuffhomhgrihhnpehkvghrnhgvlhdrohhrghenucevlhhushhtvghrufhiiigvpe
-    dtnecurfgrrhgrmhepmhgrihhlfhhrohhmpegrrhhnugesrghrnhgusgdruggv
-X-ME-Proxy: <xmx:mntGY1Di-s4erkgfLTBZzFQM0wZ62J7JEhi5y2i6phuNL2VJjtSryw>
-    <xmx:mntGYzeoyc5jOjJu0VUYYNtSZ1m8gUXHuUUwm_CPBtnYOBjAxkkXQw>
-    <xmx:mntGY8PN9Tm5EZHYCK06K4rFExmFvoiJcj-aT5J0rUfpB0lcJjxXVQ>
-    <xmx:m3tGY4mATT-vASwsyhylUrfNYRngSDvk23n0imsjp7-fLYT-aHO4Pw>
-Feedback-ID: i56a14606:Fastmail
-Received: by mailuser.nyi.internal (Postfix, from userid 501)
-	id CBF50B60086; Wed, 12 Oct 2022 04:32:26 -0400 (EDT)
-X-Mailer: MessagingEngine.com Webmail Interface
-User-Agent: Cyrus-JMAP/3.7.0-alpha0-1047-g9e4af4ada4-fm-20221005.001-g9e4af4ad
-Mime-Version: 1.0
-Message-Id: <60a2cb70-bde4-4423-9a54-7abc1ba466f8@app.fastmail.com>
-In-Reply-To: <20221012055602.1544944-2-uwu@icenowy.me>
-References: <20221012055602.1544944-1-uwu@icenowy.me>
- <20221012055602.1544944-2-uwu@icenowy.me>
-Date: Wed, 12 Oct 2022 10:31:00 +0200
-From: "Arnd Bergmann" <arnd@arndb.de>
-To: "Icenowy Zheng" <uwu@icenowy.me>, "Rob Herring" <robh+dt@kernel.org>,
- "Krzysztof Kozlowski" <krzysztof.kozlowski+dt@linaro.org>,
- "Chen-Yu Tsai" <wens@csie.org>, "Jernej Skrabec" <jernej.skrabec@gmail.com>,
- "Samuel Holland" <samuel@sholland.org>,
- "Greg Kroah-Hartman" <gregkh@linuxfoundation.org>,
- "Andre Przywara" <andre.przywara@arm.com>
-Cc: soc@kernel.org, linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
- linux-phy@lists.infradead.org, linux-usb@vger.kernel.org
+	id 1oiXDq-007MS2-7Z; Wed, 12 Oct 2022 08:36:15 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1665563766; cv=none; 
+	d=zohomail.com; s=zohoarc; 
+	b=iTHb5+/Ton2ywbFeAnvcpWBaQqEtiYRUXopNwM3NU4LDYmlNiBucaN/rATHdzVmGSvyf0bJQG0KNtqjPDILtYTNbpVJt/IXWEFBJnSoe4RX/FMxNXTUaGjmAfmnoKszc+ppN7rg8thlcLQHN85gDV05u7jaOWUNS6/0lYkMToYM=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
+	t=1665563766; h=Content-Type:Content-Transfer-Encoding:Cc:Date:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:To; 
+	bh=hHLT6AQP2FgyeTao9iTLVODR/49BzpgkuGb3Oh6vHCM=; 
+	b=nUdhN6G6kJv9ZQ59wyEUpB5haqsvJfulLf/tMC/lxySpqIFS2G0blW406nirPEDoTNnVQwZoAb6LuMa8i4kl3I8qGenqIPQ+FQbITFgPjsSaiDpf0SMe7YLCSzujufaJoguuhVm7R94UMQBebkcSGbHNIsVhvFM61+R5DiDDZ+c=
+ARC-Authentication-Results: i=1; mx.zohomail.com;
+	dkim=pass  header.i=icenowy.me;
+	spf=pass  smtp.mailfrom=uwu@icenowy.me;
+	dmarc=pass header.from=<uwu@icenowy.me>
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1665563766;
+	s=zmail; d=icenowy.me; i=uwu@icenowy.me;
+	h=Message-ID:Subject:Subject:From:From:To:To:Cc:Cc:Date:Date:In-Reply-To:References:Content-Type:Content-Transfer-Encoding:MIME-Version:Message-Id:Reply-To;
+	bh=hHLT6AQP2FgyeTao9iTLVODR/49BzpgkuGb3Oh6vHCM=;
+	b=VGT2kSxjtpnSpo+OnFer4DKWLYk6K17O7ACmBc931GymGnKLRy8VHgmyiG7WAkXX
+	StBm47gXpGjXRyCEPVT7iIy6Va9Ggt/V3elUWSlfO3qoHj6x6HR9I/HeOwc7INMFI4V
+	xEsg9b/UkybWd3RpURW0vnL3B3zlBcCRCO81mAZ4=
+Received: from edelgard.fodlan.icenowy.me (112.94.102.144 [112.94.102.144]) by mx.zohomail.com
+	with SMTPS id 1665563765635216.59596370853365; Wed, 12 Oct 2022 01:36:05 -0700 (PDT)
+Message-ID: <695a13341db63965a22799dd78698751ed95448c.camel@icenowy.me>
 Subject: Re: [PATCH v2 01/10] mailmap: update Icenowy Zheng's mail address
+From: Icenowy Zheng <uwu@icenowy.me>
+To: Arnd Bergmann <arnd@arndb.de>, Rob Herring <robh+dt@kernel.org>, 
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Chen-Yu Tsai
+ <wens@csie.org>, Jernej Skrabec <jernej.skrabec@gmail.com>, Samuel Holland
+ <samuel@sholland.org>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Andre Przywara <andre.przywara@arm.com>
+Cc: soc@kernel.org, linux-kernel@vger.kernel.org,
+ devicetree@vger.kernel.org,  linux-arm-kernel@lists.infradead.org,
+ linux-sunxi@lists.linux.dev,  linux-phy@lists.infradead.org,
+ linux-usb@vger.kernel.org
+Date: Wed, 12 Oct 2022 16:35:59 +0800
+In-Reply-To: <60a2cb70-bde4-4423-9a54-7abc1ba466f8@app.fastmail.com>
+References: <20221012055602.1544944-1-uwu@icenowy.me>
+	 <20221012055602.1544944-2-uwu@icenowy.me>
+	 <60a2cb70-bde4-4423-9a54-7abc1ba466f8@app.fastmail.com>
+Organization: Anthon Open-Source Community
+User-Agent: Evolution 3.44.4 
+MIME-Version: 1.0
+X-ZohoMailClient: External
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221012_013234_830589_0447F1DF 
-X-CRM114-Status: GOOD (  11.25  )
+X-CRM114-CacheID: sfid-20221012_013614_348997_AA5FD790 
+X-CRM114-Status: GOOD (  16.88  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,34 +79,32 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Oct 12, 2022, at 7:55 AM, Icenowy Zheng wrote:
-> Due to the SMTP provider adopted by AOSC applied some more restricted
-> rate limit that is not suitable for sending kernel patches, I switched
-> to a mailbox hosted on my own domain name now. In addition, there's a
-> single commit that is pushed to the mainline kernel tree during my
-> internship at Sipeed the last year.
->
-> Map two AOSC mail addresses (both aosc.io and aosc.xyz domain names) and
-> a defunct Sipeed mail address to the new mail address.
->
-> Signed-off-by: Icenowy Zheng <uwu@icenowy.me>
-
-I don't see a patch for updating the MAINTAINERS file here, if you
-haven't already sent that another way, you should probably change
-both at the same time.
-
-As a driver maintainer, you can also apply for a kernel.org account
-[https://korg.docs.kernel.org/accounts.html] and use that for
-sending patches and forwarding to another address.
-
-     Arnd
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+5ZyoIDIwMjItMTAtMTLmmJ/mnJ/kuInnmoQgMTA6MzEgKzAyMDDvvIxBcm5kIEJlcmdtYW5u5YaZ
+6YGT77yaCj4gT24gV2VkLCBPY3QgMTIsIDIwMjIsIGF0IDc6NTUgQU0sIEljZW5vd3kgWmhlbmcg
+d3JvdGU6Cj4gPiBEdWUgdG8gdGhlIFNNVFAgcHJvdmlkZXIgYWRvcHRlZCBieSBBT1NDIGFwcGxp
+ZWQgc29tZSBtb3JlCj4gPiByZXN0cmljdGVkCj4gPiByYXRlIGxpbWl0IHRoYXQgaXMgbm90IHN1
+aXRhYmxlIGZvciBzZW5kaW5nIGtlcm5lbCBwYXRjaGVzLCBJCj4gPiBzd2l0Y2hlZAo+ID4gdG8g
+YSBtYWlsYm94IGhvc3RlZCBvbiBteSBvd24gZG9tYWluIG5hbWUgbm93LiBJbiBhZGRpdGlvbiwg
+dGhlcmUncwo+ID4gYQo+ID4gc2luZ2xlIGNvbW1pdCB0aGF0IGlzIHB1c2hlZCB0byB0aGUgbWFp
+bmxpbmUga2VybmVsIHRyZWUgZHVyaW5nIG15Cj4gPiBpbnRlcm5zaGlwIGF0IFNpcGVlZCB0aGUg
+bGFzdCB5ZWFyLgo+ID4gCj4gPiBNYXAgdHdvIEFPU0MgbWFpbCBhZGRyZXNzZXMgKGJvdGggYW9z
+Yy5pbyBhbmQgYW9zYy54eXogZG9tYWluCj4gPiBuYW1lcykgYW5kCj4gPiBhIGRlZnVuY3QgU2lw
+ZWVkIG1haWwgYWRkcmVzcyB0byB0aGUgbmV3IG1haWwgYWRkcmVzcy4KPiA+IAo+ID4gU2lnbmVk
+LW9mZi1ieTogSWNlbm93eSBaaGVuZyA8dXd1QGljZW5vd3kubWU+Cj4gCj4gSSBkb24ndCBzZWUg
+YSBwYXRjaCBmb3IgdXBkYXRpbmcgdGhlIE1BSU5UQUlORVJTIGZpbGUgaGVyZSwgaWYgeW91Cj4g
+aGF2ZW4ndCBhbHJlYWR5IHNlbnQgdGhhdCBhbm90aGVyIHdheSwgeW91IHNob3VsZCBwcm9iYWJs
+eSBjaGFuZ2UKPiBib3RoIGF0IHRoZSBzYW1lIHRpbWUuCgpHb29kIHBvaW50LiBJZiB0aGlzIHBh
+dGNoc2V0IGlzIGdvaW5nIHRvIGhhdmUgYSB2MywgSSB3aWxsIGNvbnRhaW4gaXQKdGhlcmU7IG90
+aGVyd2lzZSBJIHdpbGwgaW5kZXBlbmRlbnRseSBzZW5kIGl0LgoKPiAKPiBBcyBhIGRyaXZlciBt
+YWludGFpbmVyLCB5b3UgY2FuIGFsc28gYXBwbHkgZm9yIGEga2VybmVsLm9yZyBhY2NvdW50Cj4g
+W2h0dHBzOi8va29yZy5kb2NzLmtlcm5lbC5vcmcvYWNjb3VudHMuaHRtbF0gYW5kIHVzZSB0aGF0
+IGZvcgo+IHNlbmRpbmcgcGF0Y2hlcyBhbmQgZm9yd2FyZGluZyB0byBhbm90aGVyIGFkZHJlc3Mu
+CgpXZWxsIEkgYW0gaW4gQ2hpbmEgbm93IGFuZCBub3Qgc28gZWFzeSB0byBnZXQgbXkgUEdQIGtl
+eSBzaWduZWQuLi4KCj4gCj4gwqDCoMKgwqAgQXJuZAoKCi0tIApsaW51eC1waHkgbWFpbGluZyBs
+aXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFk
+Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
