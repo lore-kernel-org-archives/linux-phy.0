@@ -4,47 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C79C1C4332F
-	for <linux-phy@archiver.kernel.org>; Wed, 12 Oct 2022 08:50:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 350E5C433FE
+	for <linux-phy@archiver.kernel.org>; Wed, 12 Oct 2022 08:50:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4fAQYG29yJLJ/LRLyzBWpCFbTMbjT9bMFj+AT1fe4No=; b=ZKC7xGGZJGrFwR
-	5fd+NPat/sYT51kF5kI00gITO82ibA6xdzM+gZTDIsqxxMhADHe1gSV8TQhO7xgwBZr8wfJlWAJEX
-	YFXcWmtieSZjulaTRuMXewkrD+U14t0jInZOgBh+dXfV2N63tMTIFlFTmNvgA4ZQIt7o1aH/jp+cb
-	yVL8ZbsGOQK74Sz4yJJ4wHRty7X1PDXN47/9mVEIWDa7rOn31kjjIb39xJtzvPAkRRsjyKoYZClyk
-	+l4zvzfzFna03ZyVoB2ei7MVcq32EdkzD0vo3q1jJVjLlowtBPTUeYLkzWitDqO9CCOuYy4KlcSRV
-	R00MsEDcwW/BEyCEJcwg==;
+	List-Owner; bh=sxS7+LRVJx0u0BW2tej1SuVima9BX6ykSLlvIhgbyK0=; b=cb/e9dg9INit4Y
+	ZayV0Vp/gRyXzkJtcwPLsjhSxoiFMeK74Z+0BleRDScn8sacEHBSdy4/xS++TAgDCvJ12rrZ1Uz/i
+	ZvzMyqSpxfvs+MihgW2/ralMo6yTGnbSYwIpjagusHo/DRH/w1CrjFZb1C6P0/YZklHkJ8GHNpwrP
+	tM1gavGPwVOIF51Vj0ljQbB1IOCQwsKT41HceEmawnv8aX+W7gsYkEESDdht/wJJcBV829RmBjOi3
+	9JnJJJ2s/iw4vGn/7hQI3wMfooBUBCknsYgODZYgkW/54y/z9x9WiFKcmkVqDleLuLma/Ki9+r6Y+
+	NrGPBclIhep5OD6FPRtw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oiXRq-007Q32-71; Wed, 12 Oct 2022 08:50:42 +0000
+	id 1oiXRq-007Q3O-EX; Wed, 12 Oct 2022 08:50:42 +0000
 Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oiXRo-007Q0Z-52
+	id 1oiXRo-007Q0Y-53
 	for linux-phy@lists.infradead.org; Wed, 12 Oct 2022 08:50:41 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 5B02661485;
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 547C761348;
 	Wed, 12 Oct 2022 08:50:39 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B86FCC433D6;
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B4CB4C433C1;
 	Wed, 12 Oct 2022 08:50:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1665564638;
-	bh=7PZIvZJARdmCtef9Yrh3b79tw5ZWMrA9yRcUuFC5Uvg=;
+	bh=4zcfD+SOdj1jTusmyy93nYGG11E/Cu6TVyZ3c6eqJo8=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=EdV7Iw05dE5rDpyNdEr3NB0qjNnJLE3htrlqLGOeVpNnfvUtCPlvWwqOVFddbQ+YW
-	 iajx+O3zkB3UwgdRy3lkoVaE5QBJPRU1FPHTRDmSjiQ+yo+ii+RrxtaOaXzWLzvRXw
-	 6+NzNWa5RhewcBhAr/3QTKjDIHy4NgArV1OlTzZ+vFzUu1NojxmVMEwgx1cX4pdBer
-	 SI1AnKBMy9No2ZTVPKTNx1BgIEys6mXjDC9DXaK9mVdTNYm78XDxcyeiRa6xvZjeUK
-	 q3CSnWCGCGYww/CGiQ+d8jFkrLWHhOA6Xz4nbjap452A1o7nnsf/sLQk7zWiOwC60a
-	 wTFfbuL9kvgYA==
+	b=d+8dmTx06uiAAWt8FRYuylxgalDmWUacosmDx4KyZPm1T0J7JmtI7k9qyuH+/Ks3u
+	 btTjisHdbz0WQUgZA8zluTXZf96oiAjVDYN4vPQtAuHInQM5RgYv6jnTJ05MxoKPVE
+	 ZJ9LununZa87rmReVlnNINpTqRnyCyns4mPtgOvIocMnng35XNpERofpUxtu0zrVCU
+	 /iqNW0Q1UMTE5asXHGXUTwEi4dKheNkQS1ijIVWCmH5Ic90K1XULbVrTvy64Yn5VPh
+	 At+KiwQSP/jWSaUyYzyD9Pd9t71vuo8Sz9geSIbl7Y2NR6FXmdPLaqrmB0HSH0YVsj
+	 VdUsmgotRwK6w==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1oiXRe-0006HX-2X; Wed, 12 Oct 2022 10:50:30 +0200
+	id 1oiXRe-0006Hd-DJ; Wed, 12 Oct 2022 10:50:30 +0200
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>
 Cc: Andy Gross <agross@kernel.org>,
@@ -56,17 +56,17 @@ Cc: Andy Gross <agross@kernel.org>,
 	linux-phy@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH 01/20] phy: qcom-qmp-pcie: fix sc8180x initialisation
-Date: Wed, 12 Oct 2022 10:49:43 +0200
-Message-Id: <20221012085002.24099-1-johan+linaro@kernel.org>
+Subject: [PATCH 04/20] phy: qcom-qmp-pcie: clean up status polling
+Date: Wed, 12 Oct 2022 10:49:46 +0200
+Message-Id: <20221012085002.24099-4-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.35.1
-In-Reply-To: <20221012084846.24003-1-johan+linaro@kernel.org>
+In-Reply-To: <20221012085002.24099-1-johan+linaro@kernel.org>
 References: <20221012084846.24003-1-johan+linaro@kernel.org>
+ <20221012085002.24099-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221012_015040_262405_C73DF26E 
-X-CRM114-Status: UNSURE (   9.66  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20221012_015040_264544_3C9B8324 
+X-CRM114-Status: GOOD (  11.09  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,28 +83,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The phy_status mask was never set for SC8180X which meant that the
-driver would not wait for the PHY to be initialised during power-on and
-would never detect PHY initialisation timeouts.
+Clean up the status polling by dropping the ready bit mask which is no
+longer needed since the QMP driver split.
 
-Fixes: f839f14e24f2 ("phy: qcom-qmp: Add sc8180x PCIe support")
 Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 6 ++----
+ 1 file changed, 2 insertions(+), 4 deletions(-)
 
 diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-index 151baa63e8e8..a7677b61f96e 100644
+index 9b866ed19ddc..4af6b9e50d16 100644
 --- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
 +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-@@ -1733,6 +1733,7 @@ static const struct qmp_phy_cfg sc8180x_pciephy_cfg = {
+@@ -1966,7 +1966,7 @@ static int qmp_pcie_power_on(struct phy *phy)
+ 	const struct qmp_phy_cfg_tables *mode_tables;
+ 	void __iomem *pcs = qphy->pcs;
+ 	void __iomem *status;
+-	unsigned int mask, val, ready;
++	unsigned int mask, val;
+ 	int ret;
  
- 	.start_ctrl		= PCS_START | SERDES_START,
- 	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
-+	.phy_status		= PHYSTATUS,
- };
+ 	qphy_setbits(pcs, cfg->regs[QPHY_PCS_POWER_DOWN_CONTROL],
+@@ -2004,9 +2004,7 @@ static int qmp_pcie_power_on(struct phy *phy)
  
- static const struct qmp_phy_cfg sdx55_qmp_pciephy_cfg = {
+ 	status = pcs + cfg->regs[QPHY_PCS_STATUS];
+ 	mask = cfg->phy_status;
+-	ready = 0;
+-
+-	ret = readl_poll_timeout(status, val, (val & mask) == ready, 10,
++	ret = readl_poll_timeout(status, val, !(val & mask), 10,
+ 				 PHY_INIT_COMPLETE_TIMEOUT);
+ 	if (ret) {
+ 		dev_err(qmp->dev, "phy initialization timed-out\n");
 -- 
 2.35.1
 
