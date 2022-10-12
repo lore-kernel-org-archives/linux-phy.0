@@ -4,68 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 16156C4167B
-	for <linux-phy@archiver.kernel.org>; Wed, 12 Oct 2022 08:16:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3E68DC433FE
+	for <linux-phy@archiver.kernel.org>; Wed, 12 Oct 2022 08:32:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Subject:Cc:To:From:Date:References:
+	In-Reply-To:Message-Id:Mime-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7ukGxjJaIw9EPjG3Ut3jTwbc0kxx+I5Ro/K5kXjyQ1g=; b=2NQCNh+RzriodG
-	PJg1I/l7o2D+QeX25C90bQahJ2LFtmS9IpMWnS1iA2bQq0EWdj6AVq57fm4Sf/0aslKPEWZ+Ou1jP
-	LlHzl4UD49mQDVJR2Ol/vMAKPJX2IgYSmD+IKU/AAqzOPmLCTmB5Aw/3iDL+woHpBf37m1tiA+kV9
-	5y3X8N4L7gUUUCJpY6hePDOYBGQS60zBlmEKlyEHNsDqZcavUmdmKegVthQ2mklMrw0fyzu3A6Xhy
-	4mrDSw/uT7z5GLa27qw2eJ2Il6kVeR+Rnxl5ricXf223SHhdzSaizyMxJpILgOUoCUOiCGxM1r/gY
-	IfgxqchIxtWwW151UV8g==;
+	List-Owner; bh=4uNegUHpdTgdZtfzUGdscrKCUIkI2e0omUd1IzRA5wA=; b=DRdIwo2f+54i5X
+	1tZBcLm/RVVNMA+rAZEAaJ75RrLta4VP/NiAloNijLrVYgxvER+13zfSw7ag5baJsu/daIZ73WYiX
+	0F0F+AshekRg8zjorokNF6o2dzn/z3DXz6qoIXSG7wBi1zg9uujMx2vfRMrPn1zIleYWICPgBbo6u
+	SmP37Smh2enI0Nbzr+yiZYqHaar7kl69AD83yLYPdSlVZNdTwsB0PpLL7OwLD/+aNFGOLbEr719/y
+	bPP91xItyQWGllbO5wX7IopNX5vf31Qw9emXVP60raKk5xVNwll8ctLzJlzAGXI79wSUezn9R0qBe
+	tUxDAdVqR1IUX9jnvCJw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oiWuU-007If7-DC; Wed, 12 Oct 2022 08:16:14 +0000
-Received: from ams.source.kernel.org ([145.40.68.75])
+	id 1oiXAU-007LlW-GL; Wed, 12 Oct 2022 08:32:46 +0000
+Received: from wout3-smtp.messagingengine.com ([64.147.123.19])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oiWuN-007IYn-UN
-	for linux-phy@lists.infradead.org; Wed, 12 Oct 2022 08:16:09 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id 6F1B2B819C8;
-	Wed, 12 Oct 2022 08:15:59 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B5A69C4FF0B;
-	Wed, 12 Oct 2022 08:15:55 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1665562555;
-	bh=nTh2lwlRgXzKhugVBnE4PFdAg98XwlPj4nCwR3AOzzE=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=V26VyxmGvzJtCCfXWYvJQZ202ubdjNhF3A6hQUIgfrcSuYzCZXvUSWJrxWm7aTaqW
-	 jabUc3iCA1i31uOrLoAxVoOknyaKLEs3FiMzhqNPVpUASSNT9o+UUH46bwR4B/qqxL
-	 xbl8hasI32R4ncgkYzx8TZK20vSsmbS3Mt3yG330M9rv3TjVEuTY4V64fz3ygfjQtK
-	 NhAZGus73/H49RS3AD+foR+btnqcSbdoONdSxFaqFVFaVW4eZLwODWlhZ5yKJd8DmP
-	 Ten5QREBwpblP2wovvm14eK777eJiUn3I+J0ip0BPXez/0Q8KA1/HshxsshvBrMU5Z
-	 SR87MmT6vmktg==
-Received: from johan by xi.lan with local (Exim 4.94.2)
-	(envelope-from <johan+linaro@kernel.org>)
-	id 1oiWu3-0004ox-Cb; Wed, 12 Oct 2022 10:15:47 +0200
-From: Johan Hovold <johan+linaro@kernel.org>
-To: Vinod Koul <vkoul@kernel.org>
-Cc: Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@somainline.org>,
-	Kishon Vijay Abraham I <kishon@ti.com>,
-	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
-	linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH v2 14/14] phy: qcom-qmp-usb: drop power-down delay config
-Date: Wed, 12 Oct 2022 10:12:41 +0200
-Message-Id: <20221012081241.18273-15-johan+linaro@kernel.org>
-X-Mailer: git-send-email 2.35.1
-In-Reply-To: <20221012081241.18273-1-johan+linaro@kernel.org>
-References: <20221012081241.18273-1-johan+linaro@kernel.org>
-MIME-Version: 1.0
+	id 1oiXAI-007Ljd-Ng; Wed, 12 Oct 2022 08:32:36 +0000
+Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
+	by mailout.west.internal (Postfix) with ESMTP id E4D293200ADD;
+	Wed, 12 Oct 2022 04:32:27 -0400 (EDT)
+Received: from imap51 ([10.202.2.101])
+  by compute3.internal (MEProxy); Wed, 12 Oct 2022 04:32:29 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=arndb.de; h=cc
+	:cc:content-type:date:date:from:from:in-reply-to:in-reply-to
+	:message-id:mime-version:references:reply-to:sender:subject
+	:subject:to:to; s=fm2; t=1665563547; x=1665649947; bh=drXjAnf5EG
+	6LY0d4rMqtLwe0Q0qL+1NyMM0xSAeom8o=; b=kvJMB0HKsf3T3tnF246Uu0lBHE
+	H5IxuchGk+SXM+cfd/bySjSbJZs9MezJPl/fUeyJID4HJnwUCK3rWOCSjabi3Jsx
+	42SqO07dJ/dpkHQPqpfM1ErVkE/WvTkB6C94v0uAgCSBI38PsGcpLtBjZBozWJJS
+	WqL9I8qAEUXnvsXAnKzvlsJX9BOdThWd5F9R/ISsWgutlnYG3HPjGRyUwjvUSTCm
+	K/bglNEfdJSKVoE82TNxrTptEDCEVh8hdEoXdNHZwUyVPKxdRUxdbKXigfIhE0ma
+	408PwV+rDTsc0Vy1hKf8arqh8Ey9i3VrOunCiZzd6x2ldwWWY5W8xdgvbz+w==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	messagingengine.com; h=cc:cc:content-type:date:date:feedback-id
+	:feedback-id:from:from:in-reply-to:in-reply-to:message-id
+	:mime-version:references:reply-to:sender:subject:subject:to:to
+	:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
+	fm3; t=1665563547; x=1665649947; bh=drXjAnf5EG6LY0d4rMqtLwe0Q0qL
+	+1NyMM0xSAeom8o=; b=VbWX1YJ1vJxQ7Vl4OkXAnG94vCvudl/0SQGVEcRxBN2F
+	6a1isiyHEYlQ6d8EwOpJOWkKYjGKeWE4l7rrqIWesJDuPKQa+Aj4y0p/JsTef9Y8
+	muu+cTLCM04OA/B3cnHdV/DWzX6l64HlwheLqg/TCu/MLSVFN33jBjgjFCA0w1aC
+	9fVunCz4SVEhHxpHjLZurj1qWw80dN6q4l2a9fIfnk+lEWg6ByFhk318uGSGuCYQ
+	tWGZpF54HXQ1OYsR4/kOwbY+kuek4wV7+COiMELxczUL6eS/hk4PpDWVJezrEtJl
+	fMMk3B0x4e3ujf+U+ahoYUUOuAV7l9gaXPuuA2iGNA==
+X-ME-Sender: <xms:mntGY397JwN9UJtXR7rce5mX1q2K94oRw56NbOOb3ULnQEo7IYtjbQ>
+    <xme:mntGYzvLzRPy0Nq4soBbNWdktCppbu0EjcuK5q3QM8q5Dc9LN1ZlzM9_0b8C30iZC
+    HW2VrLjDkZs7MaFa9E>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvfedrfeejkedgtdehucetufdoteggodetrfdotf
+    fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+    uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
+    cujfgurhepofgfggfkjghffffhvfevufgtsehttdertderredtnecuhfhrohhmpedftehr
+    nhguuceuvghrghhmrghnnhdfuceorghrnhgusegrrhhnuggsrdguvgeqnecuggftrfgrth
+    htvghrnhepvefhffeltdegheeffffhtdegvdehjedtgfekueevgfduffettedtkeekueef
+    hedunecuffhomhgrihhnpehkvghrnhgvlhdrohhrghenucevlhhushhtvghrufhiiigvpe
+    dtnecurfgrrhgrmhepmhgrihhlfhhrohhmpegrrhhnugesrghrnhgusgdruggv
+X-ME-Proxy: <xmx:mntGY1Di-s4erkgfLTBZzFQM0wZ62J7JEhi5y2i6phuNL2VJjtSryw>
+    <xmx:mntGYzeoyc5jOjJu0VUYYNtSZ1m8gUXHuUUwm_CPBtnYOBjAxkkXQw>
+    <xmx:mntGY8PN9Tm5EZHYCK06K4rFExmFvoiJcj-aT5J0rUfpB0lcJjxXVQ>
+    <xmx:m3tGY4mATT-vASwsyhylUrfNYRngSDvk23n0imsjp7-fLYT-aHO4Pw>
+Feedback-ID: i56a14606:Fastmail
+Received: by mailuser.nyi.internal (Postfix, from userid 501)
+	id CBF50B60086; Wed, 12 Oct 2022 04:32:26 -0400 (EDT)
+X-Mailer: MessagingEngine.com Webmail Interface
+User-Agent: Cyrus-JMAP/3.7.0-alpha0-1047-g9e4af4ada4-fm-20221005.001-g9e4af4ad
+Mime-Version: 1.0
+Message-Id: <60a2cb70-bde4-4423-9a54-7abc1ba466f8@app.fastmail.com>
+In-Reply-To: <20221012055602.1544944-2-uwu@icenowy.me>
+References: <20221012055602.1544944-1-uwu@icenowy.me>
+ <20221012055602.1544944-2-uwu@icenowy.me>
+Date: Wed, 12 Oct 2022 10:31:00 +0200
+From: "Arnd Bergmann" <arnd@arndb.de>
+To: "Icenowy Zheng" <uwu@icenowy.me>, "Rob Herring" <robh+dt@kernel.org>,
+ "Krzysztof Kozlowski" <krzysztof.kozlowski+dt@linaro.org>,
+ "Chen-Yu Tsai" <wens@csie.org>, "Jernej Skrabec" <jernej.skrabec@gmail.com>,
+ "Samuel Holland" <samuel@sholland.org>,
+ "Greg Kroah-Hartman" <gregkh@linuxfoundation.org>,
+ "Andre Przywara" <andre.przywara@arm.com>
+Cc: soc@kernel.org, linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
+ linux-phy@lists.infradead.org, linux-usb@vger.kernel.org
+Subject: Re: [PATCH v2 01/10] mailmap: update Icenowy Zheng's mail address
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221012_011608_359730_890559B4 
-X-CRM114-Status: GOOD (  14.76  )
+X-CRM114-CacheID: sfid-20221012_013234_830589_0447F1DF 
+X-CRM114-Status: GOOD (  11.25  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,167 +107,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The power-down delay was included in the first version of the QMP driver
-as an optional delay after powering on the PHY (using
-POWER_DOWN_CONTROL) and just before starting it. Later changes modified
-this sequence by powering on before initialising the PHY, but the
-optional delay stayed where it was (i.e. before starting the PHY).
+On Wed, Oct 12, 2022, at 7:55 AM, Icenowy Zheng wrote:
+> Due to the SMTP provider adopted by AOSC applied some more restricted
+> rate limit that is not suitable for sending kernel patches, I switched
+> to a mailbox hosted on my own domain name now. In addition, there's a
+> single commit that is pushed to the mainline kernel tree during my
+> internship at Sipeed the last year.
+>
+> Map two AOSC mail addresses (both aosc.io and aosc.xyz domain names) and
+> a defunct Sipeed mail address to the new mail address.
+>
+> Signed-off-by: Icenowy Zheng <uwu@icenowy.me>
 
-The vendor driver does not use a delay before starting the PHY and this
-is likely not needed on any platform unless there is a corresponding
-delay in the vendor kernel init sequence tables (i.e. in devicetree).
+I don't see a patch for updating the MAINTAINERS file here, if you
+haven't already sent that another way, you should probably change
+both at the same time.
 
-Let's keep the delay for now, but drop the redundant delay period
-configuration while increasing the unnecessarily low timer slack
-somewhat.
+As a driver maintainer, you can also apply for a kernel.org account
+[https://korg.docs.kernel.org/accounts.html] and use that for
+sending patches and forwarding to another address.
 
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
----
- drivers/phy/qualcomm/phy-qcom-qmp-usb.c | 35 +------------------------
- 1 file changed, 1 insertion(+), 34 deletions(-)
-
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-index 57dda1ecefe6..751f628710eb 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-@@ -63,8 +63,6 @@
- #define CLAMP_EN				BIT(0) /* enables i/o clamp_n */
- 
- #define PHY_INIT_COMPLETE_TIMEOUT		10000
--#define POWER_DOWN_DELAY_US_MIN			10
--#define POWER_DOWN_DELAY_US_MAX			11
- 
- struct qmp_phy_init_tbl {
- 	unsigned int offset;
-@@ -1452,9 +1450,6 @@ struct qmp_phy_cfg {
- 
- 	/* true, if PHY needs delay after POWER_DOWN */
- 	bool has_pwrdn_delay;
--	/* power_down delay in usec */
--	int pwrdn_delay_min;
--	int pwrdn_delay_max;
- 
- 	/* true, if PHY has a separate DP_COM control block */
- 	bool has_phy_dp_com_ctrl;
-@@ -1660,9 +1655,6 @@ static const struct qmp_phy_cfg qmp_v3_usb3phy_cfg = {
- 	.phy_status		= PHYSTATUS,
- 
- 	.has_pwrdn_delay	= true,
--	.pwrdn_delay_min	= POWER_DOWN_DELAY_US_MIN,
--	.pwrdn_delay_max	= POWER_DOWN_DELAY_US_MAX,
--
- 	.has_phy_dp_com_ctrl	= true,
- };
- 
-@@ -1690,9 +1682,6 @@ static const struct qmp_phy_cfg sc7180_usb3phy_cfg = {
- 	.phy_status		= PHYSTATUS,
- 
- 	.has_pwrdn_delay	= true,
--	.pwrdn_delay_min	= POWER_DOWN_DELAY_US_MIN,
--	.pwrdn_delay_max	= POWER_DOWN_DELAY_US_MAX,
--
- 	.has_phy_dp_com_ctrl	= true,
- };
- 
-@@ -1744,8 +1733,6 @@ static const struct qmp_phy_cfg qmp_v3_usb3_uniphy_cfg = {
- 	.phy_status		= PHYSTATUS,
- 
- 	.has_pwrdn_delay	= true,
--	.pwrdn_delay_min	= POWER_DOWN_DELAY_US_MIN,
--	.pwrdn_delay_max	= POWER_DOWN_DELAY_US_MAX,
- };
- 
- static const struct qmp_phy_cfg msm8998_usb3phy_cfg = {
-@@ -1798,11 +1785,7 @@ static const struct qmp_phy_cfg sm8150_usb3phy_cfg = {
- 	.pwrdn_ctrl		= SW_PWRDN,
- 	.phy_status		= PHYSTATUS,
- 
--
- 	.has_pwrdn_delay	= true,
--	.pwrdn_delay_min	= POWER_DOWN_DELAY_US_MIN,
--	.pwrdn_delay_max	= POWER_DOWN_DELAY_US_MAX,
--
- 	.has_phy_dp_com_ctrl	= true,
- };
- 
-@@ -1833,8 +1816,6 @@ static const struct qmp_phy_cfg sm8150_usb3_uniphy_cfg = {
- 	.phy_status		= PHYSTATUS,
- 
- 	.has_pwrdn_delay	= true,
--	.pwrdn_delay_min	= POWER_DOWN_DELAY_US_MIN,
--	.pwrdn_delay_max	= POWER_DOWN_DELAY_US_MAX,
- };
- 
- static const struct qmp_phy_cfg sm8250_usb3phy_cfg = {
-@@ -1864,9 +1845,6 @@ static const struct qmp_phy_cfg sm8250_usb3phy_cfg = {
- 	.phy_status		= PHYSTATUS,
- 
- 	.has_pwrdn_delay	= true,
--	.pwrdn_delay_min	= POWER_DOWN_DELAY_US_MIN,
--	.pwrdn_delay_max	= POWER_DOWN_DELAY_US_MAX,
--
- 	.has_phy_dp_com_ctrl	= true,
- };
- 
-@@ -1897,8 +1875,6 @@ static const struct qmp_phy_cfg sm8250_usb3_uniphy_cfg = {
- 	.phy_status		= PHYSTATUS,
- 
- 	.has_pwrdn_delay	= true,
--	.pwrdn_delay_min	= POWER_DOWN_DELAY_US_MIN,
--	.pwrdn_delay_max	= POWER_DOWN_DELAY_US_MAX,
- };
- 
- static const struct qmp_phy_cfg sdx55_usb3_uniphy_cfg = {
-@@ -1928,8 +1904,6 @@ static const struct qmp_phy_cfg sdx55_usb3_uniphy_cfg = {
- 	.phy_status		= PHYSTATUS,
- 
- 	.has_pwrdn_delay	= true,
--	.pwrdn_delay_min	= POWER_DOWN_DELAY_US_MIN,
--	.pwrdn_delay_max	= POWER_DOWN_DELAY_US_MAX,
- };
- 
- static const struct qmp_phy_cfg sdx65_usb3_uniphy_cfg = {
-@@ -1959,8 +1933,6 @@ static const struct qmp_phy_cfg sdx65_usb3_uniphy_cfg = {
- 	.phy_status		= PHYSTATUS,
- 
- 	.has_pwrdn_delay	= true,
--	.pwrdn_delay_min	= POWER_DOWN_DELAY_US_MIN,
--	.pwrdn_delay_max	= POWER_DOWN_DELAY_US_MAX,
- };
- 
- static const struct qmp_phy_cfg sm8350_usb3phy_cfg = {
-@@ -1990,9 +1962,6 @@ static const struct qmp_phy_cfg sm8350_usb3phy_cfg = {
- 	.phy_status		= PHYSTATUS,
- 
- 	.has_pwrdn_delay	= true,
--	.pwrdn_delay_min	= POWER_DOWN_DELAY_US_MIN,
--	.pwrdn_delay_max	= POWER_DOWN_DELAY_US_MAX,
--
- 	.has_phy_dp_com_ctrl	= true,
- };
- 
-@@ -2023,8 +1992,6 @@ static const struct qmp_phy_cfg sm8350_usb3_uniphy_cfg = {
- 	.phy_status		= PHYSTATUS,
- 
- 	.has_pwrdn_delay	= true,
--	.pwrdn_delay_min	= POWER_DOWN_DELAY_US_MIN,
--	.pwrdn_delay_max	= POWER_DOWN_DELAY_US_MAX,
- };
- 
- static const struct qmp_phy_cfg qcm2290_usb3phy_cfg = {
-@@ -2205,7 +2172,7 @@ static int qmp_usb_power_on(struct phy *phy)
- 	qmp_usb_configure(pcs, cfg->pcs_tbl, cfg->pcs_tbl_num);
- 
- 	if (cfg->has_pwrdn_delay)
--		usleep_range(cfg->pwrdn_delay_min, cfg->pwrdn_delay_max);
-+		usleep_range(10, 20);
- 
- 	/* Pull PHY out of reset state */
- 	qphy_clrbits(pcs, cfg->regs[QPHY_SW_RESET], SW_RESET);
--- 
-2.35.1
-
+     Arnd
 
 -- 
 linux-phy mailing list
