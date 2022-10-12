@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 61670C4167B
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 489A7C32771
 	for <linux-phy@archiver.kernel.org>; Wed, 12 Oct 2022 08:16:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,39 +12,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gbbWV/FKdCO4+O/zxbJY4Tzy84vHYhllAHAeDF2L5MA=; b=JLcTeTaUGTDAAs
-	MlY1ZHrbrGDX+E6m7apCyNXLLqtviWXTp7AAF9NcE2dt/R7ElzX7IM9zPf9j6kRHR7EN95iIwgDD/
-	4nyd0wry/9++Vkna7zp3n4GtWUUhW/J1sakOffTN+Tth7em4ZmI3A1iCd6Dxy1cCPb/wKToPp/A7R
-	Bgg1DRUFP84MF0OYrgLerPNf3FlUyX4fXMSCiwW9unn8UlJdXzQZKqvQBUHs04JJflg8tOOiLnGHx
-	8bbZHOEozE96KCdDk5c8r9aQXOksM6kblYJ4pNFqrP2F1QEKmCJAFNsNRchfJUtNggvE8/RWJXPKB
-	/zPCH1yGEkD0Rb+n2tjQ==;
+	List-Owner; bh=cI1qcbcANW0WGXF9POl8ZNkssrNUcaCnwpypKrwNtlM=; b=3ZNywzyBZPviZp
+	VrmDokrVUQ0KaH8BOs2mQo58DFlx6BuE+F1ICeb5rImnN+USC12yuPVKS4AcIqEDdAIpjgNeibILZ
+	4JDX2FeifHfkhF58pfZG3gzHPXaoFstqQyi/DtqALwwTy6q1aBHtbZQbw1UppurmlrYee1JBnci+D
+	U8kliAZVYaPXfrrNsNVEOOFDD5sbLjqOgVexLX7FH/zz8teVn9EgcJlX4AiMQoLCNwO4HjbJJNznv
+	viS3GSp0lG+SX9mJ3LchQKrBUkQJ/UC4limEDZThDF5IpCxloC1O4NEswwma3ASvDfbaq9VaITFvl
+	LX71Xmp+WLorkn+4oxWw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oiWuP-007IbB-Gz; Wed, 12 Oct 2022 08:16:09 +0000
-Received: from ams.source.kernel.org ([145.40.68.75])
+	id 1oiWuP-007Ib4-Dv; Wed, 12 Oct 2022 08:16:09 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oiWuH-007ITS-TQ
-	for linux-phy@lists.infradead.org; Wed, 12 Oct 2022 08:16:06 +0000
+	id 1oiWuH-007ITW-TN
+	for linux-phy@lists.infradead.org; Wed, 12 Oct 2022 08:16:05 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id BB103B819B8;
-	Wed, 12 Oct 2022 08:15:57 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 186EAC433D7;
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 57B4961482;
+	Wed, 12 Oct 2022 08:15:58 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 24D7CC43470;
 	Wed, 12 Oct 2022 08:15:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1665562555;
-	bh=HNlikP9dVSVRk63ElYvGEtZ7q8+SwsvKpLRsfypMh6k=;
+	bh=ePkorG5FNkC6a6upNo+L63Iiyp3pAh4AuCKmPgyEhh4=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=EtEyJB1kYUoZH+An3WssbIKuJmVpPrS1mGFw/uxyo29A8IVm53+76abJq6lBhEn3+
-	 OOLVTie7EOypZ3VAHgJ8CMZdMf83Z+s4vgen0w+k4x7+Hq0/0+nKwHoziv4V+z4xbI
-	 +Tx/AzR0hNysyAJi6Fl5aZzVCKMatVKYBM/kVdRYZBZeVGE2Yzsyfdnm1Zalz/R+hJ
-	 akwr8O0rLmTG53LeiRBaUs1vpPOg9J75vXGWN85MhXbsFYyAF7Q/UJaMkrBAWvnpN4
-	 32wMuHMDS7QEd+t2jmihlf+J5UPVCunp9rec1+MJsV7/127CLsOWAPDyvIpZEy9W/m
-	 pRtB6DjLSFzkw==
+	b=bCq4QgvBVzumQa9j5OsEYWacvcmvCeSf64yM2TDUGGtthw6IrKnMAhV/YlWr6Xyuf
+	 36SYfe8gC+jM2iQQyJQD/DzGFunb0F2PSUxsobXTmlgdRTTHbIHpqBcL9+YyL2AKz5
+	 n++w3TKYidbBxJGtHpAtGyNNmCZ8nQedxF+2FxqA8bpc/vHBwf1DOdREk8BUVcBCqS
+	 8GmbB4/As+bk1vt0C5SHjR0b4uolDDc8W7/N0I1Jj7BxSXA4kbmhP/CQVrq0CoBCdc
+	 PeTcHJhzYcP9Sae59NhL9nll+sp3ml9iYDpazVFuxdHztkS+3cJZm+p9gl3lQ1A0eB
+	 IsAH/ZZAgdNHQ==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1oiWu2-0004oV-IL; Wed, 12 Oct 2022 10:15:46 +0200
+	id 1oiWu2-0004oO-Ak; Wed, 12 Oct 2022 10:15:46 +0200
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>
 Cc: Andy Gross <agross@kernel.org>,
@@ -56,16 +56,16 @@ Cc: Andy Gross <agross@kernel.org>,
 	linux-phy@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH v2 05/14] phy: qcom-qmp-pcie-msm8996: drop unused in-layout configuration
-Date: Wed, 12 Oct 2022 10:12:32 +0200
-Message-Id: <20221012081241.18273-6-johan+linaro@kernel.org>
+Subject: [PATCH v2 02/14] phy: qcom-qmp: drop superfluous comments
+Date: Wed, 12 Oct 2022 10:12:29 +0200
+Message-Id: <20221012081241.18273-3-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.35.1
 In-Reply-To: <20221012081241.18273-1-johan+linaro@kernel.org>
 References: <20221012081241.18273-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221012_011602_499558_A1F2277E 
-X-CRM114-Status: GOOD (  14.36  )
+X-CRM114-CacheID: sfid-20221012_011602_263543_D5C620A4 
+X-CRM114-Status: GOOD (  12.03  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,104 +82,167 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The MSM8996 QMP PCIe PHY driver no longer uses the "in-layout"
-configuration macro to configure registers that are typically accessed
-using "regs_layout" arrays (e.g. QPHY_START_CTRL) so drop this unused
-feature.
+Drop some unnecessary or incorrect comments.
 
 Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- .../phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c  | 34 ++++---------------
- 1 file changed, 6 insertions(+), 28 deletions(-)
+ drivers/phy/qualcomm/phy-qcom-qmp-combo.c        | 4 ----
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c | 3 ---
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c         | 3 ---
+ drivers/phy/qualcomm/phy-qcom-qmp-ufs.c          | 3 ---
+ drivers/phy/qualcomm/phy-qcom-qmp-usb.c          | 5 -----
+ 5 files changed, 18 deletions(-)
 
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+index 998c8f80ccd8..3889dcf73c59 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+@@ -1949,7 +1949,6 @@ static int qmp_combo_com_init(struct qmp_phy *qphy)
+ 		return 0;
+ 	}
+ 
+-	/* turn on regulator supplies */
+ 	ret = regulator_bulk_enable(cfg->num_vregs, qmp->vregs);
+ 	if (ret) {
+ 		dev_err(qmp->dev, "failed to enable regulators, err=%d\n", ret);
+@@ -2779,7 +2778,6 @@ static int qmp_combo_probe(struct platform_device *pdev)
+ 	qmp->dev = dev;
+ 	dev_set_drvdata(dev, qmp);
+ 
+-	/* Get the specific init parameters of QMP phy */
+ 	combo_cfg = of_device_get_match_data(dev);
+ 	if (!combo_cfg)
+ 		return -EINVAL;
+@@ -2787,7 +2785,6 @@ static int qmp_combo_probe(struct platform_device *pdev)
+ 	usb_cfg = combo_cfg->usb_cfg;
+ 	cfg = usb_cfg; /* Setup clks and regulators */
+ 
+-	/* per PHY serdes; usually located at base address */
+ 	usb_serdes = serdes = devm_platform_ioremap_resource(pdev, 0);
+ 	if (IS_ERR(serdes))
+ 		return PTR_ERR(serdes);
+@@ -2796,7 +2793,6 @@ static int qmp_combo_probe(struct platform_device *pdev)
+ 	if (IS_ERR(qmp->dp_com))
+ 		return PTR_ERR(qmp->dp_com);
+ 
+-	/* Only two serdes for combo PHY */
+ 	dp_serdes = devm_platform_ioremap_resource(pdev, 2);
+ 	if (IS_ERR(dp_serdes))
+ 		return PTR_ERR(dp_serdes);
 diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c
-index 8b74948eb467..31ac405d3785 100644
+index 45c0e2958bf6..8b74948eb467 100644
 --- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c
 +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c
-@@ -46,11 +46,6 @@
- struct qmp_phy_init_tbl {
- 	unsigned int offset;
- 	unsigned int val;
--	/*
--	 * register part of layout ?
--	 * if yes, then offset gives index in the reg-layout
--	 */
--	bool in_layout;
- 	/*
- 	 * mask of lanes for which this register is written
- 	 * for cases when second lane needs different values
-@@ -65,14 +60,6 @@ struct qmp_phy_init_tbl {
- 		.lane_mask = 0xff,	\
+@@ -420,7 +420,6 @@ static int qmp_pcie_msm8996_com_init(struct qmp_phy *qphy)
+ 		return 0;
  	}
  
--#define QMP_PHY_INIT_CFG_L(o, v)	\
--	{				\
--		.offset = o,		\
--		.val = v,		\
--		.in_layout = true,	\
--		.lane_mask = 0xff,	\
--	}
--
- #define QMP_PHY_INIT_CFG_LANE(o, v, l)	\
- 	{				\
- 		.offset = o,		\
-@@ -346,7 +333,6 @@ static const struct qmp_phy_cfg msm8996_pciephy_cfg = {
- };
+-	/* turn on regulator supplies */
+ 	ret = regulator_bulk_enable(cfg->num_vregs, qmp->vregs);
+ 	if (ret) {
+ 		dev_err(qmp->dev, "failed to enable regulators, err=%d\n", ret);
+@@ -845,12 +844,10 @@ static int qmp_pcie_msm8996_probe(struct platform_device *pdev)
+ 	qmp->dev = dev;
+ 	dev_set_drvdata(dev, qmp);
  
- static void qmp_pcie_msm8996_configure_lane(void __iomem *base,
--					const unsigned int *regs,
- 					const struct qmp_phy_init_tbl tbl[],
- 					int num,
- 					u8 lane_mask)
-@@ -361,19 +347,15 @@ static void qmp_pcie_msm8996_configure_lane(void __iomem *base,
- 		if (!(t->lane_mask & lane_mask))
- 			continue;
+-	/* Get the specific init parameters of QMP phy */
+ 	cfg = of_device_get_match_data(dev);
+ 	if (!cfg)
+ 		return -EINVAL;
  
--		if (t->in_layout)
--			writel(t->val, base + regs[t->offset]);
--		else
--			writel(t->val, base + t->offset);
-+		writel(t->val, base + t->offset);
- 	}
- }
- 
- static void qmp_pcie_msm8996_configure(void __iomem *base,
--				   const unsigned int *regs,
- 				   const struct qmp_phy_init_tbl tbl[],
- 				   int num)
- {
--	qmp_pcie_msm8996_configure_lane(base, regs, tbl, num, 0xff);
-+	qmp_pcie_msm8996_configure_lane(base, tbl, num, 0xff);
- }
- 
- static int qmp_pcie_msm8996_serdes_init(struct qmp_phy *qphy)
-@@ -387,7 +369,7 @@ static int qmp_pcie_msm8996_serdes_init(struct qmp_phy *qphy)
- 	unsigned int mask, val;
+-	/* per PHY serdes; usually located at base address */
+ 	serdes = devm_platform_ioremap_resource(pdev, 0);
+ 	if (IS_ERR(serdes))
+ 		return PTR_ERR(serdes);
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+index dc7f8ba413b9..de04d8dd5350 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+@@ -1978,7 +1978,6 @@ static int qmp_pcie_init(struct phy *phy)
+ 	const struct qmp_phy_cfg *cfg = qphy->cfg;
  	int ret;
  
--	qmp_pcie_msm8996_configure(serdes, cfg->regs, serdes_tbl, serdes_tbl_num);
-+	qmp_pcie_msm8996_configure(serdes, serdes_tbl, serdes_tbl_num);
+-	/* turn on regulator supplies */
+ 	ret = regulator_bulk_enable(cfg->num_vregs, qmp->vregs);
+ 	if (ret) {
+ 		dev_err(qmp->dev, "failed to enable regulators, err=%d\n", ret);
+@@ -2425,12 +2424,10 @@ static int qmp_pcie_probe(struct platform_device *pdev)
+ 	qmp->dev = dev;
+ 	dev_set_drvdata(dev, qmp);
  
- 	qphy_clrbits(serdes, cfg->regs[QPHY_COM_SW_RESET], SW_RESET);
- 	qphy_setbits(serdes, cfg->regs[QPHY_COM_START_CONTROL],
-@@ -531,13 +513,9 @@ static int qmp_pcie_msm8996_power_on(struct phy *phy)
+-	/* Get the specific init parameters of QMP phy */
+ 	cfg = of_device_get_match_data(dev);
+ 	if (!cfg)
+ 		return -EINVAL;
+ 
+-	/* per PHY serdes; usually located at base address */
+ 	serdes = devm_platform_ioremap_resource(pdev, 0);
+ 	if (IS_ERR(serdes))
+ 		return PTR_ERR(serdes);
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+index 566365fbfe1a..ab69f648ee38 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+@@ -849,7 +849,6 @@ static int qmp_ufs_com_init(struct qmp_phy *qphy)
+ 	void __iomem *pcs = qphy->pcs;
+ 	int ret;
+ 
+-	/* turn on regulator supplies */
+ 	ret = regulator_bulk_enable(cfg->num_vregs, qmp->vregs);
+ 	if (ret) {
+ 		dev_err(qmp->dev, "failed to enable regulators, err=%d\n", ret);
+@@ -1194,12 +1193,10 @@ static int qmp_ufs_probe(struct platform_device *pdev)
+ 	qmp->dev = dev;
+ 	dev_set_drvdata(dev, qmp);
+ 
+-	/* Get the specific init parameters of QMP phy */
+ 	cfg = of_device_get_match_data(dev);
+ 	if (!cfg)
+ 		return -EINVAL;
+ 
+-	/* per PHY serdes; usually located at base address */
+ 	serdes = devm_platform_ioremap_resource(pdev, 0);
+ 	if (IS_ERR(serdes))
+ 		return PTR_ERR(serdes);
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
+index a0b97fd5d0a5..2c5e4041bcf9 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
+@@ -2120,7 +2120,6 @@ static int qmp_usb_init(struct phy *phy)
+ 	void __iomem *dp_com = qmp->dp_com;
+ 	int ret;
+ 
+-	/* turn on regulator supplies */
+ 	ret = regulator_bulk_enable(cfg->num_vregs, qmp->vregs);
+ 	if (ret) {
+ 		dev_err(qmp->dev, "failed to enable regulators, err=%d\n", ret);
+@@ -2229,7 +2228,6 @@ static int qmp_usb_power_on(struct phy *phy)
+ 					cfg->rx_tbl, cfg->rx_tbl_num, 2);
  	}
  
- 	/* Tx, Rx, and PCS configurations */
--	qmp_pcie_msm8996_configure_lane(tx, cfg->regs, cfg->tx_tbl,
--					cfg->tx_tbl_num, 1);
--
--	qmp_pcie_msm8996_configure_lane(rx, cfg->regs, cfg->rx_tbl,
--					cfg->rx_tbl_num, 1);
--
--	qmp_pcie_msm8996_configure(pcs, cfg->regs, cfg->pcs_tbl, cfg->pcs_tbl_num);
-+	qmp_pcie_msm8996_configure_lane(tx, cfg->tx_tbl, cfg->tx_tbl_num, 1);
-+	qmp_pcie_msm8996_configure_lane(rx, cfg->rx_tbl, cfg->rx_tbl_num, 1);
-+	qmp_pcie_msm8996_configure(pcs, cfg->pcs_tbl, cfg->pcs_tbl_num);
+-	/* Configure link rate, swing, etc. */
+ 	qmp_usb_configure(pcs, cfg->regs, cfg->pcs_tbl, cfg->pcs_tbl_num);
  
- 	/*
- 	 * Pull out PHY from POWER DOWN state.
+ 	if (cfg->has_pwrdn_delay)
+@@ -2719,17 +2717,14 @@ static int qmp_usb_probe(struct platform_device *pdev)
+ 	qmp->dev = dev;
+ 	dev_set_drvdata(dev, qmp);
+ 
+-	/* Get the specific init parameters of QMP phy */
+ 	cfg = of_device_get_match_data(dev);
+ 	if (!cfg)
+ 		return -EINVAL;
+ 
+-	/* per PHY serdes; usually located at base address */
+ 	serdes = devm_platform_ioremap_resource(pdev, 0);
+ 	if (IS_ERR(serdes))
+ 		return PTR_ERR(serdes);
+ 
+-	/* per PHY dp_com; if PHY has dp_com control block */
+ 	if (cfg->has_phy_dp_com_ctrl) {
+ 		qmp->dp_com = devm_platform_ioremap_resource(pdev, 1);
+ 		if (IS_ERR(qmp->dp_com))
 -- 
 2.35.1
 
