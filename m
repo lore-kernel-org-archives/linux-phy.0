@@ -4,76 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6AD68C4321E
-	for <linux-phy@archiver.kernel.org>; Wed, 12 Oct 2022 18:31:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D1BE8C43217
+	for <linux-phy@archiver.kernel.org>; Wed, 12 Oct 2022 20:40:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LEHzG1sC88zOTMadsltKBR3opaJdYuSzu7PnxJyknb4=; b=L0vQtxwIrhYKXz
-	4v3pXvqJnFZkgqBLA1fqRUltgcTTgXDe40KYVYqjbihMvz/YCiJ0ldOnjIB2ZaQzLYUajSV6VdaBQ
-	hakoGqPlvPxg3rhTYXDaGp+dJuUUIZDiR9TqIqkcXzxnTg0ymZcfDFcZo00/MsyqRw/zQ9IFhx5Y/
-	VKqrw7Aw3f0FZujflrGxoh2NYKHVFDeKZ91b/4xUT77/Eh4e3lth2ZCe4SmqMKrjw0mvf6NaNbr3M
-	NWoIgfyX8QQW2rVCrf5XssKTseUihj0tOGx3R5TQz+nq6JZXjYi3Chymncnl8cKWfEpmEDVYwQcW9
-	0NMiUYNy5r+LkhkDTUOw==;
+	List-Owner; bh=V/JaOEvmZ5GZdfqjUcvAuWIjJ8lfXjloGFf/Tle5G9M=; b=vEsB+/89Bj/xaB
+	uSfkiPzFXszaVbX1F8RI3E9ZqynOs0B1HKA+Wg0mTE0AgnVB5g+ruYHRC/7RBXxlfc3uJftKSMaxL
+	tfVeOo9b9fdyq2zteNqS1bweyNVVEaGGdawKgstj5ffkMP3Ulm+uDM8U3crCb/HTlUe5rTRgQg9/I
+	85U6n+WkWWXgg61j1zPmffOI0d647flCoXFXaviWHbwpP56rWfKuY6Lye6sCSR2GjFYuZcJrmXpbR
+	HirdqwxzTMqejkCI8F/xm4CGjtl2cMx5RcHFKOnAvuK1vpHdD5ar4rGDEOxaoccaiYqjfXiDEKrBp
+	Mjn44ZxGJzXjiVOD/NYQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oigVp-008zac-Ku; Wed, 12 Oct 2022 18:31:25 +0000
-Received: from mail-pl1-x62f.google.com ([2607:f8b0:4864:20::62f])
+	id 1oiiWN-009Ihr-8n; Wed, 12 Oct 2022 20:40:07 +0000
+Received: from mail-lf1-x12a.google.com ([2a00:1450:4864:20::12a])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oigVn-008zZZ-CD
-	for linux-phy@lists.infradead.org; Wed, 12 Oct 2022 18:31:24 +0000
-Received: by mail-pl1-x62f.google.com with SMTP id l4so17018983plb.8
-        for <linux-phy@lists.infradead.org>; Wed, 12 Oct 2022 11:31:21 -0700 (PDT)
+	id 1oiiWK-009Iet-KK
+	for linux-phy@lists.infradead.org; Wed, 12 Oct 2022 20:40:06 +0000
+Received: by mail-lf1-x12a.google.com with SMTP id b1so22462731lfs.7
+        for <linux-phy@lists.infradead.org>; Wed, 12 Oct 2022 13:40:01 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gateworks-com.20210112.gappssmtp.com; s=20210112;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=5tAqUnu5h8rAVMtbB+FKyxeFkhIJL7VzFEtUmPpmJDA=;
-        b=mXjb+QXRlYo0akoSv3PaoWZ4NSgieFYMaHywaeMtJHKO2vY4zcNG1zl0Ox9HEh9uf7
-         9ITp+MI7Xd+rl5IrO/HGwjtCsbF3fs1diciltjVQTGrGemRVCl0W3bkbCGaW1Y4pP0yq
-         C+2Gc3R/j5LrXvvQ8aLtLF5LRyV9Em9QvfmsU4Mk/80jrdxDCu/wZLrU2Tq3IskMdgpZ
-         YwMiVw66u9oM0DbjxBYdNZ8S9WqtAnaUHo3DqFoM46g8lLTzWfhhGUtoUAoVhPUXyATj
-         bDBYAA3tSh6mh73MuMR12u/Mwt37tiFenzPQ6c2pDqUlgyeSddEp8mMbh0h4cOzHa8dM
-         ipWQ==
+        d=linaro.org; s=google;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=AxTkPgU3rNcIJM9AjTkJgUGwH+NeJHSORKyf6MDGTgQ=;
+        b=JTfgKXZ2+cY1aNINlKTeM7v8/Mui5ZYvMOpsHVPRBGgXrtYhDyDfLREgP8AJH7jZgL
+         bfxVtpy6Xb0Z9kqJXmEplRaOyP3Qgen746xU40JRJVoUPtEQ4BIg6/zs7iz3LZ+k7mi9
+         4QNrcP4CHo7HO56HQDdETRcaOLv2eHnSagkYH6x8kUYoL5i37ttmMEp4qURZ+EHZU0w9
+         7mSdQFb5Whs2FAPc3pmHWMoXyuJvrrnXBA9UgiWM58PokXKkz913TOTDTEa0srX/wP/n
+         r8ekR3HEBHSBq/Kdk40bXtmmJ0ivCDDvyKgRQCxLWzI6DVp/5vKU8CLaAJnuL8AoMdN6
+         hGdw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=5tAqUnu5h8rAVMtbB+FKyxeFkhIJL7VzFEtUmPpmJDA=;
-        b=LXyof7Ru1VnIXVKQmYaWaX3HfqIs58zr+NeS3BoN4WcTGE+d76q8gzTTPuQOqdio87
-         tPwReYGfcrguy0QJUdVtccDi8BqExyNMmoiERVqL+SEdNwXy2VL7KOYsrLnI77CXltuD
-         lQD8XO42B594uelGZCHFc+OclLySbRDJ9JF0wBreMj+YE2Z6PnYgkxDuNytioCOukH5n
-         zdhULdbVT3X9ln7vUnuIV+KSsH61TFekW9NBFvVgp0YfEUHu3PPlKzmi+WYdssSlkspw
-         /iYLpOkI7SY22jZVogqjTdg2e8JJEqTQjcpN7013XIp3LaR0gUYWFeJI+/s45e5b6bFQ
-         b6sA==
-X-Gm-Message-State: ACrzQf3itpB7h/aq6AObjKqAmCCsxOVkwd8mK0IiHl5KeV1tKB9fZoOH
-	yqUjUmmhLVqiNhymLVyEh3sly0KE0TSGMUJjVIc0cw==
-X-Google-Smtp-Source: AMsMyM6/I3x+f8jFzDA32M6v16hPvWIjQfqtnawjwThjPMRgAzjQ3h3WLO0YhkwAZ/q9coLz7eayocqj9uw5QftREgE=
-X-Received: by 2002:a17:90a:4607:b0:202:e22d:4892 with SMTP id
- w7-20020a17090a460700b00202e22d4892mr6402905pjg.220.1665599480880; Wed, 12
- Oct 2022 11:31:20 -0700 (PDT)
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=AxTkPgU3rNcIJM9AjTkJgUGwH+NeJHSORKyf6MDGTgQ=;
+        b=h0tkND3SbWVzRsBdyda4fnb4XJfKlelRkjnBxXy0k2r47ABwt8ELu0aA9abWEp9hFO
+         KLf83kyLhUF54+5nj4cX+u7g5YE4VaVKiAmoE8UHvdBjjAPPZq5kQ4hKS6CAwHTuQCT+
+         +rMS2Kk6idCYNLApnFa3+7i1jLBGSJ5nGQ0KVu62APdThtm3PS3AweoIcXo11fZlqfwj
+         peDWo3EazXTqfk0/PM/LuyalVeITjYwmtIQBgSjZnb4hWjSbSQ/biexVSkomeqtLkzTC
+         oye5hiKITv42t1N4S0YOe4gNFrdRrcgfo5GSmBRlSr9qHTzkdpt3Kz1+if6nSqY3r+eq
+         Kq2g==
+X-Gm-Message-State: ACrzQf2MOl5kEtzZ2e5aE2egiFFIeckNea8Mn8NpIOYsYR0tkYlPB05X
+	AqZIwrTvjHu3HWHq7YmW7ubiWA==
+X-Google-Smtp-Source: AMsMyM7oPM/M/LdynQa845+2bMvdd0uoPnJOPiwohfV0wcsBTu8zbX0XE7yWGi9/xIHzdyCH+jPdWg==
+X-Received: by 2002:ac2:4f03:0:b0:495:ec98:bcac with SMTP id k3-20020ac24f03000000b00495ec98bcacmr10574813lfr.339.1665607200092;
+        Wed, 12 Oct 2022 13:40:00 -0700 (PDT)
+Received: from [192.168.1.211] ([37.153.55.125])
+        by smtp.gmail.com with ESMTPSA id o18-20020a056512053200b004976809d6a7sm88787lfc.283.2022.10.12.13.39.59
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 12 Oct 2022 13:39:59 -0700 (PDT)
+Message-ID: <fb44197c-1128-ad7c-4f7d-6188b508038a@linaro.org>
+Date: Wed, 12 Oct 2022 23:39:59 +0300
 MIME-Version: 1.0
-References: <1665387971-17114-1-git-send-email-hongxing.zhu@nxp.com>
-In-Reply-To: <1665387971-17114-1-git-send-email-hongxing.zhu@nxp.com>
-From: Tim Harvey <tharvey@gateworks.com>
-Date: Wed, 12 Oct 2022 11:31:08 -0700
-Message-ID: <CAJ+vNU2G_zVcFBmS6cR-HQk0XKgx_KaXvwSNmCHRgDy69=J_4g@mail.gmail.com>
-Subject: Re: [PATCH v12 0/4] Add the iMX8MP PCIe support
-To: Richard Zhu <hongxing.zhu@nxp.com>
-Cc: vkoul@kernel.org, a.fatoum@pengutronix.de, p.zabel@pengutronix.de, 
-	l.stach@pengutronix.de, bhelgaas@google.com, lorenzo.pieralisi@arm.com, 
-	robh@kernel.org, shawnguo@kernel.org, alexander.stein@ew.tq-group.com, 
-	marex@denx.de, richard.leitner@linux.dev, linux-phy@lists.infradead.org, 
-	devicetree@vger.kernel.org, linux-pci@vger.kernel.org, 
-	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, 
-	kernel@pengutronix.de, linux-imx@nxp.com
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.3.1
+Subject: Re: [PATCH v2 07/14] phy: qcom-qmp-usb: drop unused in-layout
+ configuration
+Content-Language: en-GB
+To: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>
+Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
+ Konrad Dybcio <konrad.dybcio@somainline.org>,
+ Kishon Vijay Abraham I <kishon@ti.com>, linux-arm-msm@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
+References: <20221012081241.18273-1-johan+linaro@kernel.org>
+ <20221012081241.18273-8-johan+linaro@kernel.org>
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+In-Reply-To: <20221012081241.18273-8-johan+linaro@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221012_113123_650183_D7506CDA 
-X-CRM114-Status: GOOD (  10.99  )
+X-CRM114-CacheID: sfid-20221012_134004_774996_B49B5A9D 
+X-CRM114-Status: UNSURE (   7.52  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,31 +92,25 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Oct 10, 2022 at 1:07 AM Richard Zhu <hongxing.zhu@nxp.com> wrote:
->
-> Based on the 6.0-rc1 of the pci/next branch.
-> This series adds the i.MX8MP PCIe support and tested on i.MX8MP
-> EVK board when one PCIe NVME device is used.
->
+On 12/10/2022 11:12, Johan Hovold wrote:
+> The QMP USB PHY driver does not use the "in-layout" configuration macro
+> to configure registers that are typically accessed using "regs_layout"
+> arrays (e.g. QPHY_START_CTRL) so drop this unused feature.
+> 
+> Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
+> ---
 
-Richard,
+Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 
-This no longer applies to pci/next (pci-v6.1-changes) and needs to be
-rebased. It does apply on top of 6.0-rc1 but then the patches to
-pci-imx6.c and imx8mp.dtsi are missing so I'm not sure where to try to
-base this off of.
+-- 
+With best wishes
+Dmitry
 
-Do you have a repo for testing and have you been able to test a Gen3
-link with A1 silicon yet?
-
-Best Regards,
-
-Tim
 
 -- 
 linux-phy mailing list
