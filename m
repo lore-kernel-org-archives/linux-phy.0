@@ -4,67 +4,96 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AAC99C433FE
-	for <linux-phy@archiver.kernel.org>; Wed, 12 Oct 2022 12:36:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0C3DFC43219
+	for <linux-phy@archiver.kernel.org>; Wed, 12 Oct 2022 12:54:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AGomUwmEQ5MgXk1nVF67RdFRZv2VtvX5q9++R7OvIUE=; b=eizkqWMIsrIOoF
-	4Cq9XjGPsDbLMUihsk6tWIraTot1PS8HEbXjgalEKbkeuSjwD7EEV0v+Xf2xUXy1rhyVF8p+fxC/l
-	ehsuHp4m2UPxKfH+K+tXf5aZVFRiZr31SMQDx1Uz4A0tM1QeU3B5EW7pfcbHYB2EN3ruMABWHEIM5
-	cgbXosw3FhNeF/+ADwjSEq0W9enwi7TXGgYcwukSBaAWEB6eUqDBkfS9F88jgsblU/fplE8xfllsC
-	hrAy2B54LEmzUf0/ou1hrKg9C6XJluweW6EHvRwkx3JWXFwUu8d6fEC2b5FDNPUgYmjTWyZkWAqW+
-	IC91phg6rhm+zs2/9CsQ==;
+	List-Owner; bh=1/bDgaRJsggAA1ChQBOUvCtFWAOZ6CDgF/XISRhs2os=; b=zRhp0Wt661LMKV
+	BDRLXodxgVwWDIy10OLaQiZbP+5VVqqjX2HOfEFxMowgu0+0xy3IyWtWucp34WxbittaCG15nv1TF
+	zKZaBDy3LRREOevxmLbIiDUvzcoTlP7e9XFqLyEev2KRWb/ZeIVCvcVlsOjCveZRMJLAzvmkfoEpH
+	/rzaLBZ5tUo6wX8oYYm1KiwUWQwB6FQbCmBMiJoIhzJI0DxAkpXepSkk38ms8/L8JrPd+Q0EwB0Yy
+	moh6BfuUbYkj7G6J397sFOSiCq5k1tSNwcCas+OFQzaMJJ5RReHTifyFyOWU1bxWvOPrZBchH51ai
+	RFpTp8RF7jJ0tf4KSgPg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oiayU-007zlW-0d; Wed, 12 Oct 2022 12:36:38 +0000
-Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
+	id 1oibFt-0082SR-BC; Wed, 12 Oct 2022 12:54:37 +0000
+Received: from mail-qv1-xf2b.google.com ([2607:f8b0:4864:20::f2b])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oiayR-007zkI-5Z
-	for linux-phy@lists.infradead.org; Wed, 12 Oct 2022 12:36:36 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id B39E7B81A25;
-	Wed, 12 Oct 2022 12:36:33 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 74B50C433D6;
-	Wed, 12 Oct 2022 12:36:32 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1665578192;
-	bh=Db+uhFCwSlxVQ3TiIbRMEXABKltWPh+mXJQChhSYZlY=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=i84PNqzlzqRLLjJ2tzk5cG8lz6wp18yYayD0cYlcjx2alRv1ll5b5BRIsC9hJ7loG
-	 2+52jjuOS3CMxwVByoVhGcGa/rql8sbjR0dB7KTMmwGWIK8PBmX9frvgbfU9sMOyLA
-	 TTayfJWPW1iy2X1+Ai94/uT/02vD292ZkUR0Zw5696SQpiPshTbs87zCtQuvikhpCW
-	 dbWZ59uHRY6Pxu1BHUup7j5ny1bamYxxeh0a7zEA8/vyJWXbaEU0isDq3gZTeS/g4C
-	 zQGVO01Sq8FuoPOrrVZ5zqNSZ5bDqzah/hTTObC3AVH1tggNGEOySqlocpjUV7ykK6
-	 GFztbC0MZCzlA==
-Received: from johan by xi.lan with local (Exim 4.94.2)
-	(envelope-from <johan@kernel.org>)
-	id 1oiayA-0008G3-NF; Wed, 12 Oct 2022 14:36:18 +0200
-Date: Wed, 12 Oct 2022 14:36:18 +0200
-From: Johan Hovold <johan@kernel.org>
-To: Johan Hovold <johan+linaro@kernel.org>
-Cc: Vinod Koul <vkoul@kernel.org>, Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@somainline.org>,
-	Kishon Vijay Abraham I <kishon@ti.com>,
-	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 00/20] phy: qcom-qmp: further prep fixes and cleanups
- (set 3)
-Message-ID: <Y0a0wuhKieNLDamy@hovoldconsulting.com>
-References: <20221012084846.24003-1-johan+linaro@kernel.org>
+	id 1oibFq-0082Qn-BZ
+	for linux-phy@lists.infradead.org; Wed, 12 Oct 2022 12:54:35 +0000
+Received: by mail-qv1-xf2b.google.com with SMTP id o67so10370186qvo.13
+        for <linux-phy@lists.infradead.org>; Wed, 12 Oct 2022 05:54:31 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=dDmIyNGRZCjISh+av2/snzsmNkw+/RdEmnVjrV7qdwA=;
+        b=MPt8Sk/IUIwny690NdwVOgLL8ZVfyEMs5S7kASEpJ0In9Gdnbbx0jOOJYpZNLSHAJo
+         UfUkmaj53Nf+Im4E2ME/WdlgtJj3hBQQiX1OWtKYjjMfHkEESXqV/fgBr2Pl/3UFch3E
+         FWPUHJKNAHTaKUM/rSQUfbgkZyVa+Pf2oed3toInT74UiVbtnEtAoIpcG0UZc6DuRyG0
+         8EQdrRvfzf5oF6TLBX5zj4klmfrQJz/fEfbDmGQkVtynKSukdou7aaImPwkV96s/XUOe
+         WG1IPG/SElDMNwaLPKGtmKdCca1giXbgufzI6gGj7vKWPIyLCCZWmta3T67n56h31ChI
+         eb5A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=dDmIyNGRZCjISh+av2/snzsmNkw+/RdEmnVjrV7qdwA=;
+        b=u/vfWgHUvlpKAPo1NhrFx8BsJ6Qh9DFgulH5UHpekbPJu6SzfQ+jofGEz3+j3tyaPd
+         JpBq/5Z/cpijv/s+qiczWcS2bmncQ7CEb3lIdB7pnrAmcjJXN5y+8QPDm0LZ6qYx6jnh
+         I7qJumIDFc33NoLDqUO46MdTI844GcIX9ZyqXmfdBYR+NvgfE7+deYD6m9iXlv/4Xf+6
+         TZWqOZdA8JYiSsoz2GXF2cffbSbh3RAtSVgnyMC87xsSrTNXSDfQUZ32a2+rZFxWHJ2i
+         U1kD/9wImHKs+K1JVgBxnZM3fT3EqD1/NlbI7kEQOCT0ZTRrUnSZ+9OxxqOHF4bGQcar
+         yy2g==
+X-Gm-Message-State: ACrzQf3KB0AQShfnDHbE3xqUAiJoS8lzNA25x/6fw7emnRQ3npK50rfH
+	14kVN/PKFtC8mAgU6F7QjVyOpg==
+X-Google-Smtp-Source: AMsMyM6gdRPBXPqKgDCvHQLk4l/duVu5uvWiHfioon8NxNJCdExWX+lxL8+xLCfwXlLgSfX6NNfQHQ==
+X-Received: by 2002:a0c:b256:0:b0:4b1:9f77:91da with SMTP id k22-20020a0cb256000000b004b19f7791damr23055272qve.84.1665579270431;
+        Wed, 12 Oct 2022 05:54:30 -0700 (PDT)
+Received: from [192.168.1.57] (cpe-72-225-192-120.nyc.res.rr.com. [72.225.192.120])
+        by smtp.gmail.com with ESMTPSA id e18-20020ac84912000000b0039442ee69c5sm6103773qtq.91.2022.10.12.05.54.27
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 12 Oct 2022 05:54:29 -0700 (PDT)
+Message-ID: <35369a53-112d-8773-f612-a7d409f81b8c@linaro.org>
+Date: Wed, 12 Oct 2022 08:52:17 -0400
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20221012084846.24003-1-johan+linaro@kernel.org>
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.3.2
+Subject: Re: [PATCH v9 08/12] dt-bindings: phy: mxs-usb-phy: Add i.MX8DXL
+ compatible string
+To: Peng Fan <peng.fan@nxp.com>, Vinod Koul <vkoul@kernel.org>,
+ Abel Vesa <abel.vesa@nxp.com>
+Cc: Rob Herring <robh@kernel.org>, Joakim Zhang <qiangqing.zhang@nxp.com>,
+ "David S. Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>,
+ Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
+ Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>,
+ "linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Aisheng Dong <aisheng.dong@nxp.com>
+References: <20220607111625.1845393-1-abel.vesa@nxp.com>
+ <20220607111625.1845393-9-abel.vesa@nxp.com> <YqDM0umwk6QizT/b@matsya>
+ <DU0PR04MB9417A516C062EA7E40C9349888229@DU0PR04MB9417.eurprd04.prod.outlook.com>
+Content-Language: en-US
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <DU0PR04MB9417A516C062EA7E40C9349888229@DU0PR04MB9417.eurprd04.prod.outlook.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221012_053635_370809_1375D59B 
-X-CRM114-Status: GOOD (  10.87  )
+X-CRM114-CacheID: sfid-20221012_055434_518047_E1E98708 
+X-CRM114-Status: UNSURE (   9.85  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,24 +110,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Oct 12, 2022 at 10:48:46AM +0200, Johan Hovold wrote:
-> Here's the next batch of QMP fixes and cleanups in preparation for
-> adding support for SC8280XP and its four-lane PCIe PHYs.
+On 12/10/2022 07:45, Peng Fan wrote:
+> Hi Vinod, Rob, Krzysztof
 > 
-> Note that these apply on top of the following three series that have
-> been reviewed and should be ready to be merged when the PHY tree opens:
+>> Subject: Re: [PATCH v9 08/12] dt-bindings: phy: mxs-usb-phy: Add i.MX8DXL
+>> compatible string
+>>
+>> On 07-06-22, 14:16, Abel Vesa wrote:
+>>> Add compatible for i.MX8DXL USB PHY.
+>>
+>> Applied, thanks
+> 
+> I would like to know the rule that whether such new compatible string or new
+> property added to txt binding doc still is still ok to be accepted?
+> 
+> Or only fixes are accepted for txt binding?
 
-Same here; I forgot to mention this series:
+Adding only compatibles is .
 
-	https://lore.kernel.org/lkml/20220928152822.30687-1-johan+linaro@kernel.org/
+Best regards,
+Krzysztof
 
-which has also been reviewed but did not make it into 6.1.
-
-> 	https://lore.kernel.org/lkml/20220929092916.23068-1-johan+linaro@kernel.org/
-> 	https://lore.kernel.org/linux-phy/20220927092207.161501-1-dmitry.baryshkov@linaro.org/
-> 	https://lore.kernel.org/lkml/20221012081241.18273-1-johan+linaro@kernel.org/
-
-Johan
 
 -- 
 linux-phy mailing list
