@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 489A7C32771
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AC179C4167D
 	for <linux-phy@archiver.kernel.org>; Wed, 12 Oct 2022 08:16:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,39 +12,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cI1qcbcANW0WGXF9POl8ZNkssrNUcaCnwpypKrwNtlM=; b=3ZNywzyBZPviZp
-	VrmDokrVUQ0KaH8BOs2mQo58DFlx6BuE+F1ICeb5rImnN+USC12yuPVKS4AcIqEDdAIpjgNeibILZ
-	4JDX2FeifHfkhF58pfZG3gzHPXaoFstqQyi/DtqALwwTy6q1aBHtbZQbw1UppurmlrYee1JBnci+D
-	U8kliAZVYaPXfrrNsNVEOOFDD5sbLjqOgVexLX7FH/zz8teVn9EgcJlX4AiMQoLCNwO4HjbJJNznv
-	viS3GSp0lG+SX9mJ3LchQKrBUkQJ/UC4limEDZThDF5IpCxloC1O4NEswwma3ASvDfbaq9VaITFvl
-	LX71Xmp+WLorkn+4oxWw==;
+	List-Owner; bh=SzXp7MyyldHoT1udjsswHX6urzIInABUy5FdgfY4+Yo=; b=H2R2vpj1vpzjS/
+	/fmhpRlYhTCRHhOjZTK9x+ZT4muuxVQvAiPK1Mr/feHupE2wWPxxFhnuCwPMeQWXh7f43xXEKyVTc
+	jxPFubN8Ii6Yrtg4QXqyWDb37J6JFq9NGPYcFP8lKlLfHW/WfjYzpJEPef8dxZxD9QZFXIpkcwNd3
+	zsYIEE5toi7RYW+mNoFQ/HtHVOr9CGjXqfARy2fsFbDzxpgXFtNaPTzS/1QY0GDkx73aNDxKr8vWV
+	5TZENTXhPX06nG6Ri8KFrSzPaSGumbgUu10PMQAEaA1gEwwtT9nVopHgbqweEsMtzoBxLofrMXbE5
+	m1myRmjDc6UDd5OJMFzQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oiWuP-007Ib4-Dv; Wed, 12 Oct 2022 08:16:09 +0000
+	id 1oiWuP-007Ibb-Vf; Wed, 12 Oct 2022 08:16:10 +0000
 Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oiWuH-007ITW-TN
-	for linux-phy@lists.infradead.org; Wed, 12 Oct 2022 08:16:05 +0000
+	id 1oiWuH-007ITY-TS
+	for linux-phy@lists.infradead.org; Wed, 12 Oct 2022 08:16:07 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 57B4961482;
+	by dfw.source.kernel.org (Postfix) with ESMTPS id B8AEA61476;
 	Wed, 12 Oct 2022 08:15:58 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 24D7CC43470;
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6D079C4FEB8;
 	Wed, 12 Oct 2022 08:15:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1665562555;
-	bh=ePkorG5FNkC6a6upNo+L63Iiyp3pAh4AuCKmPgyEhh4=;
+	bh=zj2f+fEcuy4BNH83sVnT+5iGBlx2okQalx8OhQNynWo=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=bCq4QgvBVzumQa9j5OsEYWacvcmvCeSf64yM2TDUGGtthw6IrKnMAhV/YlWr6Xyuf
-	 36SYfe8gC+jM2iQQyJQD/DzGFunb0F2PSUxsobXTmlgdRTTHbIHpqBcL9+YyL2AKz5
-	 n++w3TKYidbBxJGtHpAtGyNNmCZ8nQedxF+2FxqA8bpc/vHBwf1DOdREk8BUVcBCqS
-	 8GmbB4/As+bk1vt0C5SHjR0b4uolDDc8W7/N0I1Jj7BxSXA4kbmhP/CQVrq0CoBCdc
-	 PeTcHJhzYcP9Sae59NhL9nll+sp3ml9iYDpazVFuxdHztkS+3cJZm+p9gl3lQ1A0eB
-	 IsAH/ZZAgdNHQ==
+	b=APeEtNn7vJKC8dYWsgC2KNtXwJlfJsHmg15yh0Z2Bn4rn+so4p8xN007l4D6AuDjL
+	 OWPrTsDZunxbLSSy7s0NDDljVwKqPWSvcAh+SkT2iRCnwxADSVscawZN7086Q2Jxbr
+	 AkLGnktALPsgF4v0lZdMRckFvDGsoriYMDNoSjTAn6bTF/krvnFdz7liKtlg2wvAZI
+	 sin46TCw82RKfnjJjCoYk6M7j9nlpEItUrLZYNtVy7noTpprNs0xNS0lcsnRLsK1S4
+	 ZOvUHQmFaIbzbfYqAPqhFB0x/Te9SWzRVQyvw+YWNHJYpDwR3WsLU7nfBM5MMDCjR8
+	 xomabSF5NF8tA==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1oiWu2-0004oO-Ak; Wed, 12 Oct 2022 10:15:46 +0200
+	id 1oiWu2-0004oj-Ty; Wed, 12 Oct 2022 10:15:46 +0200
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>
 Cc: Andy Gross <agross@kernel.org>,
@@ -56,16 +56,16 @@ Cc: Andy Gross <agross@kernel.org>,
 	linux-phy@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH v2 02/14] phy: qcom-qmp: drop superfluous comments
-Date: Wed, 12 Oct 2022 10:12:29 +0200
-Message-Id: <20221012081241.18273-3-johan+linaro@kernel.org>
+Subject: [PATCH v2 09/14] phy: qcom-qmp-pcie: replace power-down delay
+Date: Wed, 12 Oct 2022 10:12:36 +0200
+Message-Id: <20221012081241.18273-10-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.35.1
 In-Reply-To: <20221012081241.18273-1-johan+linaro@kernel.org>
 References: <20221012081241.18273-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221012_011602_263543_D5C620A4 
-X-CRM114-Status: GOOD (  12.03  )
+X-CRM114-CacheID: sfid-20221012_011602_466295_E64C275E 
+X-CRM114-Status: GOOD (  20.10  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,167 +82,176 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Drop some unnecessary or incorrect comments.
+The power-down delay was included in the first version of the QMP driver
+as an optional delay after powering on the PHY (using
+POWER_DOWN_CONTROL) and just before starting it. Later changes modified
+this sequence by powering on before initialising the PHY, but the
+optional delay stayed where it was (i.e. before starting the PHY).
 
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+The vendor driver does not use a delay before starting the PHY and this
+is likely not needed on any platform unless there is a corresponding
+delay in the vendor kernel init sequence tables (i.e. in devicetree).
+
+But as the vendor kernel do have a 1 ms delay *after* starting the PHY
+and before starting to poll the status it is possible that later
+contributors have simply not noticed that the mainline power-down delay
+is not equivalent.
+
+As the current delay before even starting the PHY is pretty much
+pointless and likely a mistake, move the delay after starting the PHY
+which avoids a few iterations of polling and speeds up startup by 1 ms
+(the poll loop otherwise takes about 1.8 ms).
+
+Note that MSM8998 has never used a power-down delay so add a flag to
+skip the delay in case starting the PHY is faster on MSM8998. This can
+be removed after someone takes a measurement.
+
 Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-combo.c        | 4 ----
- drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c | 3 ---
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c         | 3 ---
- drivers/phy/qualcomm/phy-qcom-qmp-ufs.c          | 3 ---
- drivers/phy/qualcomm/phy-qcom-qmp-usb.c          | 5 -----
- 5 files changed, 18 deletions(-)
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 33 +++++-------------------
+ 1 file changed, 6 insertions(+), 27 deletions(-)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-index 998c8f80ccd8..3889dcf73c59 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-@@ -1949,7 +1949,6 @@ static int qmp_combo_com_init(struct qmp_phy *qphy)
- 		return 0;
- 	}
- 
--	/* turn on regulator supplies */
- 	ret = regulator_bulk_enable(cfg->num_vregs, qmp->vregs);
- 	if (ret) {
- 		dev_err(qmp->dev, "failed to enable regulators, err=%d\n", ret);
-@@ -2779,7 +2778,6 @@ static int qmp_combo_probe(struct platform_device *pdev)
- 	qmp->dev = dev;
- 	dev_set_drvdata(dev, qmp);
- 
--	/* Get the specific init parameters of QMP phy */
- 	combo_cfg = of_device_get_match_data(dev);
- 	if (!combo_cfg)
- 		return -EINVAL;
-@@ -2787,7 +2785,6 @@ static int qmp_combo_probe(struct platform_device *pdev)
- 	usb_cfg = combo_cfg->usb_cfg;
- 	cfg = usb_cfg; /* Setup clks and regulators */
- 
--	/* per PHY serdes; usually located at base address */
- 	usb_serdes = serdes = devm_platform_ioremap_resource(pdev, 0);
- 	if (IS_ERR(serdes))
- 		return PTR_ERR(serdes);
-@@ -2796,7 +2793,6 @@ static int qmp_combo_probe(struct platform_device *pdev)
- 	if (IS_ERR(qmp->dp_com))
- 		return PTR_ERR(qmp->dp_com);
- 
--	/* Only two serdes for combo PHY */
- 	dp_serdes = devm_platform_ioremap_resource(pdev, 2);
- 	if (IS_ERR(dp_serdes))
- 		return PTR_ERR(dp_serdes);
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c
-index 45c0e2958bf6..8b74948eb467 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c
-@@ -420,7 +420,6 @@ static int qmp_pcie_msm8996_com_init(struct qmp_phy *qphy)
- 		return 0;
- 	}
- 
--	/* turn on regulator supplies */
- 	ret = regulator_bulk_enable(cfg->num_vregs, qmp->vregs);
- 	if (ret) {
- 		dev_err(qmp->dev, "failed to enable regulators, err=%d\n", ret);
-@@ -845,12 +844,10 @@ static int qmp_pcie_msm8996_probe(struct platform_device *pdev)
- 	qmp->dev = dev;
- 	dev_set_drvdata(dev, qmp);
- 
--	/* Get the specific init parameters of QMP phy */
- 	cfg = of_device_get_match_data(dev);
- 	if (!cfg)
- 		return -EINVAL;
- 
--	/* per PHY serdes; usually located at base address */
- 	serdes = devm_platform_ioremap_resource(pdev, 0);
- 	if (IS_ERR(serdes))
- 		return PTR_ERR(serdes);
 diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-index dc7f8ba413b9..de04d8dd5350 100644
+index 315de484f875..151baa63e8e8 100644
 --- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
 +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-@@ -1978,7 +1978,6 @@ static int qmp_pcie_init(struct phy *phy)
- 	const struct qmp_phy_cfg *cfg = qphy->cfg;
- 	int ret;
+@@ -1360,8 +1360,7 @@ struct qmp_phy_cfg {
+ 	/* bit offset of PHYSTATUS in QPHY_PCS_STATUS register */
+ 	unsigned int phy_status;
  
--	/* turn on regulator supplies */
- 	ret = regulator_bulk_enable(cfg->num_vregs, qmp->vregs);
- 	if (ret) {
- 		dev_err(qmp->dev, "failed to enable regulators, err=%d\n", ret);
-@@ -2425,12 +2424,10 @@ static int qmp_pcie_probe(struct platform_device *pdev)
- 	qmp->dev = dev;
- 	dev_set_drvdata(dev, qmp);
+-	/* true, if PHY needs delay after POWER_DOWN */
+-	bool has_pwrdn_delay;
++	bool skip_start_delay;
  
--	/* Get the specific init parameters of QMP phy */
- 	cfg = of_device_get_match_data(dev);
- 	if (!cfg)
- 		return -EINVAL;
+ 	/* QMP PHY pipe clock interface rate */
+ 	unsigned long pipe_clock_rate;
+@@ -1495,8 +1494,6 @@ static const struct qmp_phy_cfg ipq8074_pciephy_cfg = {
+ 	.start_ctrl		= SERDES_START | PCS_START,
+ 	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
+ 	.phy_status		= PHYSTATUS,
+-
+-	.has_pwrdn_delay	= true,
+ };
  
--	/* per PHY serdes; usually located at base address */
- 	serdes = devm_platform_ioremap_resource(pdev, 0);
- 	if (IS_ERR(serdes))
- 		return PTR_ERR(serdes);
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-index 566365fbfe1a..ab69f648ee38 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-@@ -849,7 +849,6 @@ static int qmp_ufs_com_init(struct qmp_phy *qphy)
- 	void __iomem *pcs = qphy->pcs;
- 	int ret;
+ static const struct qmp_phy_cfg ipq8074_pciephy_gen3_cfg = {
+@@ -1523,8 +1520,6 @@ static const struct qmp_phy_cfg ipq8074_pciephy_gen3_cfg = {
+ 	.start_ctrl		= SERDES_START | PCS_START,
+ 	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
  
--	/* turn on regulator supplies */
- 	ret = regulator_bulk_enable(cfg->num_vregs, qmp->vregs);
- 	if (ret) {
- 		dev_err(qmp->dev, "failed to enable regulators, err=%d\n", ret);
-@@ -1194,12 +1193,10 @@ static int qmp_ufs_probe(struct platform_device *pdev)
- 	qmp->dev = dev;
- 	dev_set_drvdata(dev, qmp);
+-	.has_pwrdn_delay	= true,
+-
+ 	.pipe_clock_rate	= 250000000,
+ };
  
--	/* Get the specific init parameters of QMP phy */
- 	cfg = of_device_get_match_data(dev);
- 	if (!cfg)
- 		return -EINVAL;
+@@ -1553,8 +1548,6 @@ static const struct qmp_phy_cfg ipq6018_pciephy_cfg = {
  
--	/* per PHY serdes; usually located at base address */
- 	serdes = devm_platform_ioremap_resource(pdev, 0);
- 	if (IS_ERR(serdes))
- 		return PTR_ERR(serdes);
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-index a0b97fd5d0a5..2c5e4041bcf9 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-@@ -2120,7 +2120,6 @@ static int qmp_usb_init(struct phy *phy)
- 	void __iomem *dp_com = qmp->dp_com;
- 	int ret;
+ 	.start_ctrl		= SERDES_START | PCS_START,
+ 	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
+-
+-	.has_pwrdn_delay	= true,
+ };
  
--	/* turn on regulator supplies */
- 	ret = regulator_bulk_enable(cfg->num_vregs, qmp->vregs);
- 	if (ret) {
- 		dev_err(qmp->dev, "failed to enable regulators, err=%d\n", ret);
-@@ -2229,7 +2228,6 @@ static int qmp_usb_power_on(struct phy *phy)
- 					cfg->rx_tbl, cfg->rx_tbl_num, 2);
- 	}
+ static const struct qmp_phy_cfg sdm845_qmp_pciephy_cfg = {
+@@ -1583,8 +1576,6 @@ static const struct qmp_phy_cfg sdm845_qmp_pciephy_cfg = {
+ 	.start_ctrl		= PCS_START | SERDES_START,
+ 	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
+ 	.phy_status		= PHYSTATUS,
+-
+-	.has_pwrdn_delay	= true,
+ };
  
--	/* Configure link rate, swing, etc. */
- 	qmp_usb_configure(pcs, cfg->regs, cfg->pcs_tbl, cfg->pcs_tbl_num);
+ static const struct qmp_phy_cfg sdm845_qhp_pciephy_cfg = {
+@@ -1611,8 +1602,6 @@ static const struct qmp_phy_cfg sdm845_qhp_pciephy_cfg = {
+ 	.start_ctrl		= PCS_START | SERDES_START,
+ 	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
+ 	.phy_status		= PHYSTATUS,
+-
+-	.has_pwrdn_delay	= true,
+ };
  
- 	if (cfg->has_pwrdn_delay)
-@@ -2719,17 +2717,14 @@ static int qmp_usb_probe(struct platform_device *pdev)
- 	qmp->dev = dev;
- 	dev_set_drvdata(dev, qmp);
+ static const struct qmp_phy_cfg sm8250_qmp_gen3x1_pciephy_cfg = {
+@@ -1651,8 +1640,6 @@ static const struct qmp_phy_cfg sm8250_qmp_gen3x1_pciephy_cfg = {
+ 	.start_ctrl		= PCS_START | SERDES_START,
+ 	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
+ 	.phy_status		= PHYSTATUS,
+-
+-	.has_pwrdn_delay	= true,
+ };
  
--	/* Get the specific init parameters of QMP phy */
- 	cfg = of_device_get_match_data(dev);
- 	if (!cfg)
- 		return -EINVAL;
+ static const struct qmp_phy_cfg sm8250_qmp_gen3x2_pciephy_cfg = {
+@@ -1691,8 +1678,6 @@ static const struct qmp_phy_cfg sm8250_qmp_gen3x2_pciephy_cfg = {
+ 	.start_ctrl		= PCS_START | SERDES_START,
+ 	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
+ 	.phy_status		= PHYSTATUS,
+-
+-	.has_pwrdn_delay	= true,
+ };
  
--	/* per PHY serdes; usually located at base address */
- 	serdes = devm_platform_ioremap_resource(pdev, 0);
- 	if (IS_ERR(serdes))
- 		return PTR_ERR(serdes);
+ static const struct qmp_phy_cfg msm8998_pciephy_cfg = {
+@@ -1719,6 +1704,8 @@ static const struct qmp_phy_cfg msm8998_pciephy_cfg = {
+ 	.start_ctrl             = SERDES_START | PCS_START,
+ 	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
+ 	.phy_status		= PHYSTATUS,
++
++	.skip_start_delay	= true,
+ };
  
--	/* per PHY dp_com; if PHY has dp_com control block */
- 	if (cfg->has_phy_dp_com_ctrl) {
- 		qmp->dp_com = devm_platform_ioremap_resource(pdev, 1);
- 		if (IS_ERR(qmp->dp_com))
+ static const struct qmp_phy_cfg sc8180x_pciephy_cfg = {
+@@ -1746,8 +1733,6 @@ static const struct qmp_phy_cfg sc8180x_pciephy_cfg = {
+ 
+ 	.start_ctrl		= PCS_START | SERDES_START,
+ 	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
+-
+-	.has_pwrdn_delay	= true,
+ };
+ 
+ static const struct qmp_phy_cfg sdx55_qmp_pciephy_cfg = {
+@@ -1776,8 +1761,6 @@ static const struct qmp_phy_cfg sdx55_qmp_pciephy_cfg = {
+ 	.start_ctrl		= PCS_START | SERDES_START,
+ 	.pwrdn_ctrl		= SW_PWRDN,
+ 	.phy_status		= PHYSTATUS_4_20,
+-
+-	.has_pwrdn_delay	= true,
+ };
+ 
+ static const struct qmp_phy_cfg sm8450_qmp_gen3x1_pciephy_cfg = {
+@@ -1806,8 +1789,6 @@ static const struct qmp_phy_cfg sm8450_qmp_gen3x1_pciephy_cfg = {
+ 	.start_ctrl             = SERDES_START | PCS_START,
+ 	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
+ 	.phy_status		= PHYSTATUS,
+-
+-	.has_pwrdn_delay	= true,
+ };
+ 
+ static const struct qmp_phy_cfg sm8450_qmp_gen4x2_pciephy_cfg = {
+@@ -1851,8 +1832,6 @@ static const struct qmp_phy_cfg sm8450_qmp_gen4x2_pciephy_cfg = {
+ 	.start_ctrl             = SERDES_START | PCS_START,
+ 	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
+ 	.phy_status		= PHYSTATUS_4_20,
+-
+-	.has_pwrdn_delay	= true,
+ };
+ 
+ static void qmp_pcie_configure_lane(void __iomem *base,
+@@ -2011,15 +1990,15 @@ static int qmp_pcie_power_on(struct phy *phy)
+ 	qmp_pcie_pcs_init(qphy, &cfg->tables);
+ 	qmp_pcie_pcs_init(qphy, mode_tables);
+ 
+-	if (cfg->has_pwrdn_delay)
+-		usleep_range(1000, 1200);
+-
+ 	/* Pull PHY out of reset state */
+ 	qphy_clrbits(pcs, cfg->regs[QPHY_SW_RESET], SW_RESET);
+ 
+ 	/* start SerDes and Phy-Coding-Sublayer */
+ 	qphy_setbits(pcs, cfg->regs[QPHY_START_CTRL], cfg->start_ctrl);
+ 
++	if (!cfg->skip_start_delay)
++		usleep_range(1000, 1200);
++
+ 	status = pcs + cfg->regs[QPHY_PCS_STATUS];
+ 	mask = cfg->phy_status;
+ 	ready = 0;
 -- 
 2.35.1
 
