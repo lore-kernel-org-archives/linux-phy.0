@@ -4,68 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 70D67C4332F
-	for <linux-phy@archiver.kernel.org>; Wed, 12 Oct 2022 13:11:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E7CCDC433FE
+	for <linux-phy@archiver.kernel.org>; Wed, 12 Oct 2022 13:11:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5aB5WJkHZ3QWudCiFyeNFzEB4gyU7T+H8gVpquV4Boo=; b=NIH+hyX0nqd6Xi
-	9sSu/vLMYOh01jHqNhrsnU4VFebBkYaofncdDo8Xcx8gIWdaYmBpKNT1nTgKeQ2uTwsc9sfhpvUyk
-	pdcP2KvgI7b1AsiJmwfB+STKXE6VVqaknoD2xwv4qhcI5jfAGIpEKPg766gVvesX246Q9O9xmmE/C
-	LC1bk98AacbqxUjq57XTkH9KxJrZJcJLm1BSutR5YKYrJ8PbkGH9aKFyExQ6WqTi01k+OjMrQVHId
-	3hQt1jM3saueoetPp3v7nIprvSOXQqrN7jS6jK+veMYYHDfwxFtzBdzqLGN39VN8Gpc6+A5XsUZkX
-	MCGbCz3LkWSueJUGXanQ==;
+	List-Owner; bh=jfkQ9SADY30hSGvhZR1bKFKTW6W6ua59U+s5YgNCLE8=; b=HFUYBQ45U8zbwM
+	Bgcrv8cQIbXYUOdQ1HWnNUDA7wuQAwJc4TEB/EMyicxgp0rq1pFHgz5xqc9Fs4EgvpF6Bnvv1+3pP
+	EFRGeJUPeNt1aKCVlNDxbs7OYe4zxl8QeQH9phjqaySRpJ3ztq1VU2j+eB8aCFsIek0E38Fe7344/
+	Dgoa5suSIE60twdpC+0I9swrihnzUr8DOEiRtr6QrmRgo+IiJKoBTZheSOU77dUGudPq+ZExWvIRL
+	cOcVgZaY6uhIEMbyANQPL9SgtPWjHJEGlVe1rGVS/S2LIfxceYNBLcQ9ihE7EvARRUPdNZ72byz0t
+	MN+LDxvxAsisw+qf4ZmQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oibW6-0085kU-PZ; Wed, 12 Oct 2022 13:11:22 +0000
-Received: from mail-qt1-x82d.google.com ([2607:f8b0:4864:20::82d])
+	id 1oibWH-0085oD-CP; Wed, 12 Oct 2022 13:11:33 +0000
+Received: from mail-qt1-x836.google.com ([2607:f8b0:4864:20::836])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oibVp-0085hq-Lm
-	for linux-phy@lists.infradead.org; Wed, 12 Oct 2022 13:11:09 +0000
-Received: by mail-qt1-x82d.google.com with SMTP id z8so5574284qtv.5
-        for <linux-phy@lists.infradead.org>; Wed, 12 Oct 2022 06:11:04 -0700 (PDT)
+	id 1oibW1-0085jF-B9
+	for linux-phy@lists.infradead.org; Wed, 12 Oct 2022 13:11:24 +0000
+Received: by mail-qt1-x836.google.com with SMTP id cj27so10092917qtb.7
+        for <linux-phy@lists.infradead.org>; Wed, 12 Oct 2022 06:11:15 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=UqyKv0XYLPEVdA5JJtsH2C4lrk87Khcgzczr+S4ad18=;
-        b=MqaobulmgicuadCCH89dsRp8x/x4N6tzQugx5DMzikid18PoYnadVJtRbEBLfCHQiI
-         5q+YNh97Jl0AMjtR+qF+0/0MmDwIbxcx1S/6I+1GpsBeZHziTyVpa+jCosnto1B/ZzaW
-         RFoGKMS96CNXAwFQiCMez3Qpfy54SL88JGWTHka3+pwu31uXlsyZazC3JBVQduXYWny0
-         +cd8wdxYySw2thR0pRlI0Q01XqY6a11wR9NiLT56MULAkxoPjvwS+RvdVsNEjWC2z9cp
-         VmOyZQ40hL7RToidel5+andZTNlrzWXP4ayK/4922wBQN8SABAYOAx9RC8Kw/lf0vHd3
-         DyBA==
+        bh=duZMII461PybSOKzGZSZqhJJ/qLu0MRfPY5z6dxigmI=;
+        b=a7bw5Q23wINBvoFwz/iFZmdlemcJRCm9fhL7eS0XFlNQBZ19p4im/mcGTwHU1NAtzD
+         jk6jZhamKzPFSoVWO4p59MOJu3n5voX+W74YhAqC7zhP2wesfnJPhWUO72deAIFWJSC7
+         1p84rOHvcqZr6MaJnxgvtHgl8Y7lZOjcflhrDrkG1Qpr8tBoWZAXn7m+cbyhPn418YZX
+         PzSlw2xNcMvMAr0PyXBqclS6lkLZ6DWGl3D4omft/y9F/Aic/TZwQ8Dz3yxFtaCJM/lm
+         JFVVbcwmfcVn4kc6k5L7cHk5gOn9ei/ckUCjW4d+no+hO8d6nJWpK6ew5z4KYzrgRvwn
+         V2UA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=UqyKv0XYLPEVdA5JJtsH2C4lrk87Khcgzczr+S4ad18=;
-        b=B0XsMZTUjSYFtRfFqiBwyHCatbX5dRq2dWW4n/gjDLmSpjQGhWCZYIpL1qJiEYeHMR
-         SU7ylfC3pwvulsN79URy2Iw2qI6QJ7nHlNmIoCiuM8xazvf3GavHNuUIT2XZmr0u6nyB
-         yTrZd7DNPbAWYOYnw5xKT2dzeZLFzYb9jzsJTkAwy0QrJErTrexAUvIAn6Ix+FBuFLY3
-         JDVif/2PDPVbmbOP572I/lIkiPnCi9urJhZGnMe73gnmJHNn4ix2oB6hWCU3/2QHDTMp
-         g9H8mwsgpTLMjqJ/eRAdowm01gCjpvRoWlrQXDgvMTe+3g+e5lcbjEFbEvxQJEj6SS3p
-         JbWg==
-X-Gm-Message-State: ACrzQf0TQJ8RAUVQCwDKj7Exb2o86O0yEFeV/SE+8WIjY0HvdMI9uQLD
-	MwRIYV7aXkOm2U3ZDbcL9fSRJw==
-X-Google-Smtp-Source: AMsMyM4tx+xcp7HZkRDiMRLGc4Qh39k6W10pp8XbW0JoxyTNqsJPbm86beuyuM1vWEooI9gyiiMTZw==
-X-Received: by 2002:a05:622a:2d0:b0:395:e96a:8eeb with SMTP id a16-20020a05622a02d000b00395e96a8eebmr21894460qtx.176.1665580263754;
-        Wed, 12 Oct 2022 06:11:03 -0700 (PDT)
+        bh=duZMII461PybSOKzGZSZqhJJ/qLu0MRfPY5z6dxigmI=;
+        b=Ln+6aifwXdLdgK8bmWcPLqOIklUp8eOpY+K5GR8dlMuykLirvCRdktGdhP8v99KQBt
+         ZW0IdjV+K/ebIGGWJHqLOMyCatXOPYU/6cv182Yq+OD40JWRkAPWII6TFCsmzHTF6XD7
+         4saQPrXK7sMHpN37PO/9ly4lgEn5y0ejCgZw15NRDJ45ZErdbqFWiZ7pxEtS2sCkNydz
+         EKobl4cJQ5pGNBfSQbSPq/0TaJWI8FoOFaPRPeWTsGt+ccnz8nXe64M/p71bknlFQVh5
+         oy5oj//vp2nM5rR7QzHkX7MYQ/KLWrNgiH5OCutYoBYfnmSHXwGLz/tTTBfR8Ut9xx2p
+         Avqw==
+X-Gm-Message-State: ACrzQf2z8Iogu6Bh79xpwml4PimDWlsHg0raP7/pfK+BE16fiYDGogxc
+	eWrPBWGh77eUr7IVzLdu0DidJQ==
+X-Google-Smtp-Source: AMsMyM5zJrz3dx98rqmztHfBVMqSLyUW8p6tkWsBylvPbfbtBcCaSwdh6OYo7aZ0HedmoRQQhkOkng==
+X-Received: by 2002:ac8:7fcc:0:b0:39c:bdf4:6323 with SMTP id b12-20020ac87fcc000000b0039cbdf46323mr2836670qtk.201.1665580274377;
+        Wed, 12 Oct 2022 06:11:14 -0700 (PDT)
 Received: from [192.168.1.57] (cpe-72-225-192-120.nyc.res.rr.com. [72.225.192.120])
-        by smtp.gmail.com with ESMTPSA id m8-20020ac84448000000b0039a1146e0e1sm6826054qtn.33.2022.10.12.06.11.01
+        by smtp.gmail.com with ESMTPSA id he35-20020a05622a602300b0039a55f78792sm6338703qtb.89.2022.10.12.06.11.12
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 12 Oct 2022 06:11:02 -0700 (PDT)
-Message-ID: <cdbcf5a3-3bb0-4270-1211-a45a0596224f@linaro.org>
-Date: Wed, 12 Oct 2022 09:08:49 -0400
+        Wed, 12 Oct 2022 06:11:13 -0700 (PDT)
+Message-ID: <12461098-aea7-e486-f303-ef2387a6ae1f@linaro.org>
+Date: Wed, 12 Oct 2022 09:11:12 -0400
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.3.2
-Subject: Re: [PATCH v2 08/10] dt-bindings: vendor-prefixes: add Source Parts
+Subject: Re: [PATCH v2 10/10] ARM: dts: suniv: add device tree for PopStick
+ v1.1
 Content-Language: en-US
 To: Icenowy Zheng <uwu@icenowy.me>, Rob Herring <robh+dt@kernel.org>,
  Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
@@ -77,13 +78,12 @@ Cc: soc@kernel.org, linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
  linux-phy@lists.infradead.org, linux-usb@vger.kernel.org
 References: <20221012055602.1544944-1-uwu@icenowy.me>
- <20221012055602.1544944-9-uwu@icenowy.me>
+ <20221012055602.1544944-11-uwu@icenowy.me>
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20221012055602.1544944-9-uwu@icenowy.me>
+In-Reply-To: <20221012055602.1544944-11-uwu@icenowy.me>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221012_061105_738089_0F270480 
-X-CRM114-Status: UNSURE (   7.68  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20221012_061122_314309_EF0FAC4E 
+X-CRM114-Status: GOOD (  10.98  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,13 +101,66 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 12/10/2022 01:56, Icenowy Zheng wrote:
-> Source Parts Inc. [1] is a company that makes a series of SBCs, SoMs,
-> etc under a brand called Popcorn Computer [2].
-> 
-> Add it to the vendor prefixes list.
+> PopStick is a minimal Allwinner F1C200s dongle, with its USB controller
+> wired to a USB Type-A port, a SD slot and a SPI NAND flash on board, and
+> an on-board CH340 USB-UART converted connected to F1C200s's UART0.
 
 
-Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+(...)
+
+> +
+> +	chosen {
+> +		stdout-path = "serial0:115200n8";
+> +	};
+> +
+> +	leds {
+> +		compatible = "gpio-leds";
+> +
+> +		led {
+> +			function = LED_FUNCTION_STATUS;
+> +			color = <LED_COLOR_ID_GREEN>;
+> +			gpios = <&pio 4 6 GPIO_ACTIVE_HIGH>; /* PE6 */
+> +			linux,default-trigger = "heartbeat";
+> +		};
+> +	};
+> +
+> +	reg_vcc3v3: vcc3v3 {
+
+Generic node names, so at least generic "regulator" prefix or suffix.
+
+> +		compatible = "regulator-fixed";
+> +		regulator-name = "vcc3v3";
+> +		regulator-min-microvolt = <3300000>;
+> +		regulator-max-microvolt = <3300000>;
+> +	};
+> +};
+> +
+> +&mmc0 {
+> +	cd-gpios = <&pio 4 3 GPIO_ACTIVE_LOW>; /* PE3 */
+> +	bus-width = <4>;
+> +	disable-wp;
+> +	status = "okay";
+
+Keep status as last property.
+
+> +	vmmc-supply = <&reg_vcc3v3>;
+> +};
+> +
+> +&spi0 {
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&spi0_pc_pins>;
+> +	status = "okay";
+> +
+> +	flash@0 {
+> +		#address-cells = <1>;
+> +		#size-cells = <1>;
+> +		compatible = "spi-nand";
+> +		reg = <0>;
+
+compatible and reg are by convention the first properties.
+
+> +		spi-max-frequency = <40000000>;
+> +
 
 Best regards,
 Krzysztof
