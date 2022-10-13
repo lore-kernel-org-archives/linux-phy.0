@@ -4,73 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 264E4C433FE
-	for <linux-phy@archiver.kernel.org>; Wed, 12 Oct 2022 21:24:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4D663C4332F
+	for <linux-phy@archiver.kernel.org>; Thu, 13 Oct 2022 00:48:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iUOlHufIcYS36IzMEOILHu9mLS4mLHZXILNjCDzBIsQ=; b=HMhIk86dvBJU4i
-	MZ2Ejxmhi+5kE4b1/okuXbsJMtIVvHXFb8zCtDYo8QWMagqdObd6RX0G2fU+hvIxWqFIDPjUY/lsl
-	HAdK0xK5FRINMxZDGwXHHSdguoAbpE64PmnITN5YDN5zqcsYkypJ1fcep7r3TCWJK6bcWP3cCSu29
-	RHJ5Ts/nSGNhnTQofC8PvOFMJt5+k88/lRclhieGxAha7E0FxnrSA9esHMEfW0Z72/TrDG2bFzYxv
-	DGn4qmFnn3at5gE208sejbztbATF8oUygu/VnFZeHlLuLH0HJ9PsP8gwCZm3xHLcXRN6FUJm3Zv2d
-	sStagha+5D3nW9PI7eoQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
+	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+	List-Owner; bh=6AHwSoEz+KI/p+JKvImIHY0Wv2d+9fzG21PJ5U6LbrY=; b=wuzRXvodaRx7sT
+	RDNSFvZ5gmkNNmt11nbAHAnCIsmh+hdIHt7iOtIufWcEK8a6SgVwMMPpLU2Mchbp+Xk0+79K4AuJX
+	P2oERk8FT4P43R82cTme06x3u+O9hOq8jy9tF33poyPIe7YDS55w2LIFGJtY7i4t4HXHCMo0+G6CH
+	j7bTXCQrgeo56ALBOxd5rhqh0FKcfxjF/Bi4cO64QViEjGncUGQwyf+XS5kb96PaG1i+5YX6tWkRD
+	z0HqpAkyXfYs4v/uqRN5/c2wIUwn5yBIJD/2dluMnsXPpwkmgvr/OEg2GMMvctgbMG7TNWBfKJCIC
+	K5vgehObddXd/Yi+msAg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oijDA-009NjD-Ih; Wed, 12 Oct 2022 21:24:20 +0000
-Received: from mail-ej1-x629.google.com ([2a00:1450:4864:20::629])
+	id 1oimOK-00A1G9-Sa; Thu, 13 Oct 2022 00:48:05 +0000
+Received: from ams.source.kernel.org ([145.40.68.75])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oijCz-009NgF-Hc; Wed, 12 Oct 2022 21:24:10 +0000
-Received: by mail-ej1-x629.google.com with SMTP id q9so47620ejd.0;
-        Wed, 12 Oct 2022 14:24:08 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20210112;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=AeJANbhYyBwy4ZbmnuIiUtzQb03C3ow/09NmLLrUl6A=;
-        b=JPL4aQt1cmlonH9wzqkdGwGX4yiWzBYuoNUgmryEg9d/JOfQlDrmkcICVOC/33yqcl
-         s0mTrzMYEWAgpf0uUa7YeZFD7CZ68ey2ehAGfeag4Z2kxjakghVUyBtUToFJmxKe+1wG
-         yJTCP2EuO/e6a8snlf+yd6pfpqoYRtMGSRyL3dmp7H0rzxos9JYoRmle2O3h9lHUA/DC
-         +K7hxS8Pn4f3tUSLLAPFIUxmVCpr/sSqr25uP6x3TlKVAwyzLB+POxUi2ZY8CECqmyKi
-         2HKXnaZIbOLLDoX2ntROXy4GRbnHUyek0QBvzOilU9uZ2dpSccEDOhCzPMmlsvSxPiLM
-         9ysg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=AeJANbhYyBwy4ZbmnuIiUtzQb03C3ow/09NmLLrUl6A=;
-        b=5z/HYF5i9cSEPNazCJaZjvhwyFhl6L4CCeYUV61OBzDbwTqeDNP75SdjoYNhCEIb4W
-         7DXG/fNerccSRA3nWD2uthRkQZYZi4CH5AqdZx4aa1N8BT7/1+jH06HTOdUiooDp87E+
-         ESMo+P8iIhbZ+D7AoQ9MKpJRNRLYF30uZx+WPb1I/o8J2SnbjI5oGRSBTrkMbG34scWg
-         VDkkl1Csqu/cl/2L7xxuhEHeoWy5b7hGojqJIBoxLDMYFLtLht3dMVDLMEoYJvVe2BIt
-         tVQrRo7Vz33t3O9TMxJoNyGwWoeARUjhdce0BX8N1z4e4LC4u9gxp98ZMNgVPZEQUlBl
-         RcFg==
-X-Gm-Message-State: ACrzQf09tYsaO79phkwYuqDUvavKYdamUyQC4ua0kW03fMHbxH4WBe1p
-	P7Ur9Yi4dejJgZEc4atNLxo=
-X-Google-Smtp-Source: AMsMyM7BxsquvcB3WVD34NXGQwFZsJW43aw77Eq7EcPTf+1OXMK4gIIlb5g5xCn3wdhAQzLGAw7V7w==
-X-Received: by 2002:a17:907:8688:b0:78b:eaa5:8a9d with SMTP id qa8-20020a170907868800b0078beaa58a9dmr24591147ejc.509.1665609846821;
-        Wed, 12 Oct 2022 14:24:06 -0700 (PDT)
-Received: from kista.localnet (82-149-19-102.dynamic.telemach.net. [82.149.19.102])
-        by smtp.gmail.com with ESMTPSA id kw24-20020a170907771800b0073d87068042sm1807772ejc.110.2022.10.12.14.24.05
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 12 Oct 2022 14:24:06 -0700 (PDT)
-From: Jernej =?utf-8?B?xaBrcmFiZWM=?= <jernej.skrabec@gmail.com>
-To: Rob Herring <robh+dt@kernel.org>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Chen-Yu Tsai <wens@csie.org>, Samuel Holland <samuel@sholland.org>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Andre Przywara <andre.przywara@arm.com>, Icenowy Zheng <uwu@icenowy.me>
-Cc: soc@kernel.org, linux-kernel@vger.kernel.org, devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev, linux-phy@lists.infradead.org, linux-usb@vger.kernel.org, Icenowy Zheng <uwu@icenowy.me>
-Subject: Re: [PATCH v2 05/10] musb: sunxi: add support for the F1C100s MUSB controller
-Date: Wed, 12 Oct 2022 23:24:04 +0200
-Message-ID: <3515217.R56niFO833@kista>
-In-Reply-To: <20221012055602.1544944-6-uwu@icenowy.me>
-References: <20221012055602.1544944-1-uwu@icenowy.me> <20221012055602.1544944-6-uwu@icenowy.me>
+	id 1oimLA-009zaG-SM
+	for linux-phy@lists.infradead.org; Thu, 13 Oct 2022 00:44:50 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by ams.source.kernel.org (Postfix) with ESMTPS id 7AE18B81C97;
+	Thu, 13 Oct 2022 00:44:47 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 03566C43470;
+	Thu, 13 Oct 2022 00:44:45 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1665621886;
+	bh=DKXGPgqaiPkIBCBB26ELdj+CVTTMyMJ9i/fnIjLcUSQ=;
+	h=Date:From:To:Cc:Subject:In-Reply-To:From;
+	b=Dd8sa6U0NOxibXKaQPEphZ/krmhRr7n/v6yTSTggiHzhkANlzBGhvELS7Lc0sh0xC
+	 QVq0tY3jJIkGA72yx9C//YeMqqngoNAyhC/IBtyDk9akrtRxupxyB6/3thQHA/ICRn
+	 mvll3qWTTRY9TXaUhroH0/6ctovHTbOsRPHqNdVTZhGHJygefMwtlstZQEp5XaqebW
+	 w9i5JInzE1jJx7D3ZXzvda+TPBDV85RLS3EJGfhe/K23HkKbQukeC0sQ30+segWurZ
+	 P1jXEFp17hWIh3cW2D8XmvBlSvrfAmpBeteq9pN1Ul4mFn4P2U3YkCsuAmmpOq0D8X
+	 D6CeUf8YcsmdA==
+Date: Wed, 12 Oct 2022 19:44:44 -0500
+From: Bjorn Helgaas <helgaas@kernel.org>
+To: Krishna Chaitanya Chundru <quic_krichai@quicinc.com>
+Cc: linux-pci@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+	linux-kernel@vger.kernel.org, mka@chromium.org,
+	quic_vbadigan@quicinc.com, quic_hemantk@quicinc.com,
+	quic_nitegupt@quicinc.com, quic_skananth@quicinc.com,
+	quic_ramkri@quicinc.com, manivannan.sadhasivam@linaro.org,
+	swboyd@chromium.org, dmitry.baryshkov@linaro.org,
+	svarbanov@mm-sol.com, agross@kernel.org, andersson@kernel.org,
+	konrad.dybcio@somainline.org, lpieralisi@kernel.org,
+	robh@kernel.org, kw@linux.com, bhelgaas@google.com,
+	linux-phy@lists.infradead.org, vkoul@kernel.org, kishon@ti.com,
+	mturquette@baylibre.com, linux-clk@vger.kernel.org,
+	Bjorn Andersson <bjorn.andersson@linaro.org>,
+	"Rafael J. Wysocki" <rafael@kernel.org>, linux-pm@vger.kernel.org,
+	Marc Zyngier <maz@kernel.org>,
+	Kevin Rowland <kevin.p.rowland@gmail.com>
+Subject: Re: [PATCH v7 1/5] PCI: qcom: Add system suspend and resume support
+Message-ID: <20221013004444.GA3135316@bhelgaas>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <04ace1ae-26d0-4157-b7eb-8dff29895180@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221012_142409_616268_3AD34806 
-X-CRM114-Status: GOOD (  19.13  )
+X-CRM114-CacheID: sfid-20221012_174449_247680_8D16D36C 
+X-CRM114-Status: GOOD (  19.53  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,64 +84,62 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Icenowy,
+[+cc Marc, Kevin]
 
-Dne sreda, 12. oktober 2022 ob 07:55:57 CEST je Icenowy Zheng napisal(a):
-> The suniv SoC has a MUSB controller like the one in A33, but with a SRAM
-> region to be claimed.
-> 
-> Add support for it.
-> 
-> Signed-off-by: Icenowy Zheng <uwu@icenowy.me>
-> ---
-> No changes since v1.
-> 
->  drivers/usb/musb/sunxi.c | 8 ++++++--
->  1 file changed, 6 insertions(+), 2 deletions(-)
-> 
-> diff --git a/drivers/usb/musb/sunxi.c b/drivers/usb/musb/sunxi.c
-> index 7f9a999cd5ff..4b368d16a73a 100644
-> --- a/drivers/usb/musb/sunxi.c
-> +++ b/drivers/usb/musb/sunxi.c
-> @@ -722,14 +722,17 @@ static int sunxi_musb_probe(struct platform_device
-> *pdev) INIT_WORK(&glue->work, sunxi_musb_work);
->  	glue->host_nb.notifier_call = sunxi_musb_host_notifier;
-> 
-> -	if (of_device_is_compatible(np, "allwinner,sun4i-a10-musb"))
-> +	if (of_device_is_compatible(np, "allwinner,sun4i-a10-musb") ||
-> +	    of_device_is_compatible(np, "allwinner,suniv-f1c100s-musb")) {
->  		set_bit(SUNXI_MUSB_FL_HAS_SRAM, &glue->flags);
-> +	}
-> 
->  	if (of_device_is_compatible(np, "allwinner,sun6i-a31-musb"))
->  		set_bit(SUNXI_MUSB_FL_HAS_RESET, &glue->flags);
-> 
->  	if (of_device_is_compatible(np, "allwinner,sun8i-a33-musb") ||
-> -	    of_device_is_compatible(np, "allwinner,sun8i-h3-musb")) {
-> +	    of_device_is_compatible(np, "allwinner,sun8i-h3-musb") ||
-> +	    of_device_is_compatible(np, "allwinner,suniv-f1c100s-musb")) {
+On Wed, Oct 12, 2022 at 07:36:52PM +0530, Krishna Chaitanya Chundru wrote:
+> On 10/6/2022 2:43 AM, Bjorn Helgaas wrote:
 
-All that should be eventually converted to quirks. But for now:
-Acked-by: Jernej Skrabec <jernej.skrabec@gmail.com>
+[I'm declaring quote text bankruptcy and dropping the huge wall of
+text.  The IRQ affinity change you mention seems to be the critical
+issue :)]
 
-Best regards,
-Jernej
+> > The PCIe spec clearly envisions Refclk being turned off
+> > (sec 5.5.3.3.1) and PHYs being powered off (sec 5.5.3.2) while in
+> > L1.2.
+> > 
+> > I've been assuming L1.2 exit (which includes Refclk being turned on
+> > and PHYs being powered up) is completely handled by hardware, but it
+> > sounds like the Qcom controller needs software assistance which fields
+> > an interrupt when CLKREQ# is asserted and turns on Refclk and the
+> > PHYs?
+> > 
+> > 5.5.3 does say "All Link and PHY state must be maintained during L1.2,
+> > or must be restored upon exit using implementation specific means",
+> > and maybe Qcom counts as using implementation specific means.
+> > 
+> > I *am* concerned about whether software can do the L1.2 exit fast
+> > enough, but the biggest reason I'm struggling with this is because
+> > using the syscore framework to work around IRQ affinity changes that
+> > happen late in suspend just seems kind of kludgy and it doesn't seem
+> > like it fits cleanly in the power management model.
+> 
+> Can you please suggest any another way to work around IRQ affinity
+> changes.
 
->  		set_bit(SUNXI_MUSB_FL_HAS_RESET, &glue->flags);
->  		set_bit(SUNXI_MUSB_FL_NO_CONFIGDATA, &glue->flags);
->  	}
-> @@ -815,6 +818,7 @@ static const struct of_device_id sunxi_musb_match[] = {
->  	{ .compatible = "allwinner,sun6i-a31-musb", },
->  	{ .compatible = "allwinner,sun8i-a33-musb", },
->  	{ .compatible = "allwinner,sun8i-h3-musb", },
-> +	{ .compatible = "allwinner,suniv-f1c100s-musb", },
->  	{}
->  };
->  MODULE_DEVICE_TABLE(of, sunxi_musb_match);
-> --
-> 2.37.1
+One of your earlier patches [1] made dw_msi_mask_irq() look like this:
 
+  static void dw_msi_mask_irq(struct irq_data *d)
+  {
+    struct pcie_port *pp = irq_data_get_irq_chip_data(d->parent_data);
+    struct dw_pcie *pci = to_dw_pcie_from_pp(pp);
 
+    if (dw_pcie_link_up(pci))
+	    pci_msi_mask_irq(d);
+
+    irq_chip_mask_parent(d);
+  }
+
+That was an awful lot like Marc's suggestion [2] that the
+pci_msi_mask_irq() should be redundant.
+
+If it's truly redundant, maybe pci_msi_mask_irq() can be removed
+from dw_msi_mask_irq() (and other similar *_mask_irq()
+implementations) completely?
+
+Bjorn
+
+[1] https://lore.kernel.org/r/1659526134-22978-3-git-send-email-quic_krichai@quicinc.com
+[2] https://lore.kernel.org/linux-pci/86k05m7dkr.wl-maz@kernel.org/
 
 -- 
 linux-phy mailing list
