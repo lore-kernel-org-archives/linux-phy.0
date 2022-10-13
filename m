@@ -4,73 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 12DDBC4332F
-	for <linux-phy@archiver.kernel.org>; Thu, 13 Oct 2022 18:41:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2AA3EC433FE
+	for <linux-phy@archiver.kernel.org>; Thu, 13 Oct 2022 18:41:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pZZCCVghPoujPxm9gTIn+TkoooVSddUMgYCbQPNRZaQ=; b=4jMQw2N/DdvkHF
-	R/pgAOsapc53LLPwRMAToZ0jzs8TJ7x0JUfMKJGF51s66gqrzUjnmmT9G9R+XQrCu1byYm88ds0AV
-	bs7utDyuvWQ4LD1VSIInenFNpDob1ElZhKr1VZh4MLtSKlqNLYWu4zfShmpnM2ODEK4w+81Yw5VUS
-	Rq5lUs8ZtEmKBpw9GMC54Md5yuqdxo4c+XQ7gJe5StxrRjP4nJth8dhXGJ/C6mzVejt7DrE0qjksd
-	OKzE2EPBltGAzrGZmaj3HRVArqnFLElqWs/20IVNMpDV7GLXUD89rMHrrNlHSiaPZJZm7g+2Jfvmq
-	XbOfGilhy377LqRgIFTA==;
+	List-Owner; bh=EJzi9aHHDS1qVXRBS6CKrZc9jqArV3jPrzLYJxz2p2c=; b=AXTy9yEilsnnJS
+	hVNZhn2EGEDxRz5zTHFr7mtIs9zvZ5Zqo7E305Gk/gF8FMDCxS0w1CLll//XLFX/ZS4qJ5ZUvqAhj
+	TTVfC5e/wEUZhjCfPTPr9iOH/tYWgBUbFqV9OWRIZzzHyK3JfxaYIG2Ah5hgUGsd+hTnz+eKQdyyY
+	S7EGGkeX+LDWc7ogayx2jcSLIzvFNj6oMpvQn4O7WRCyCmzUsBB0cAr9Z1Sqkz0IOukQkH6UIor75
+	DuaprOi3Zeisxb0EEoUZT4quzLshP7r15JHH02SS2A9daA+xeYWUBFVJTNrroScfjpXIHpkagCACV
+	M2caTtVviLZQS6B9hyQQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oj38i-00Cj62-G2; Thu, 13 Oct 2022 18:41:04 +0000
-Received: from mail-sn1anam02on2048.outbound.protection.outlook.com ([40.107.96.48] helo=NAM02-SN1-obe.outbound.protection.outlook.com)
+	id 1oj38n-00Cj7c-JV; Thu, 13 Oct 2022 18:41:09 +0000
+Received: from mail-bn8nam12on2071.outbound.protection.outlook.com ([40.107.237.71] helo=NAM12-BN8-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oj38f-00Cj4n-PQ
-	for linux-phy@lists.infradead.org; Thu, 13 Oct 2022 18:41:03 +0000
+	id 1oj38k-00Cj6T-UJ
+	for linux-phy@lists.infradead.org; Thu, 13 Oct 2022 18:41:08 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Y8epMa7xtCYI5wjfLUpvszLjo2LKUW8lZTWnxnZ9H3yg1hSLXvzzmW52Yi6lbfwlEgYNNfxTNzSXpXJEbhtmA8ouSc5UXAZwKFJb9G5FLAdq04xTby0RC3+V4D213bC3OBqMsVmuqkNE7RKc0yPjr9/toTnIeQW4T+6IqFEg64qL5CmPVqOSe9VzUSofFX5uHyfjzLaaEDzKHCA+2OQS06kuJxYvQQ5moJOkRkMLuZfmta3uH+Cjw/gi2mIYhUhLl9qChQ1ohJiE2QOsj+BhFrjEQ8jQigHm4CZ3YtKdLRfQhcHpsoFhTD8zY7GlJEM6XXrfgqMTyACqFmrVIKOvog==
+ b=n7hsZGoCFhZHxOkGh9UgTbVte0KdDd1fLuQOP5YbdWhrzZ9uGZxWlmILBfCMmNWe7eaK7BHkFx1w1dTOfHsVqlxBHXS9btMovU1TdX8abu+IfBK6mHbt80XLms/5s/XBUkO9DNDCniG3mTVxmyXUj5B6CAFCopGPZEnyYp0az8VxmG7R54b3gS2fe8M6zXsxqzFBDiTEjQayRQZlBspCAqsBb6AR75jryRLRHDB9qmyim8A+ilFnA2eL5oKI/V4FBnHQTOlOGizk2yyTG/i5poQyw66zTj6KAOcTcqUmbQ/mAkwUZJzOUvH/BDc82YGBrYKcIEUC9jwpd+ZxNouqSA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=do7jFBBJDjTpxwmlaFOhTACn7os+1N3Tp0MI+EIdnpo=;
- b=FcNgGsnoOElBsuktozZn9WaMuNZB8tUxiTmwe8CSYuDvklhtHbu+yXjRt0jcAUutF43hUVq6QT4SM6bJ+bfpLJ5w6IjZRhptp+0CsPKw02oJnOeQ0IG4bD+WFRyF8ITI08Vqngl5WYYhyI62IIteTY89ZR8LKL+4SCCef4xgww54B9naYzPwPRXdIawQMZEybQbhkVwDkETRLHnabfTDEpL1buB4vAOUiT8E9Abq/Wr8W1F5KKdbReZL9EfDzMRX63dN5pxUKnfmlT9vTnKXZDPfYGQCJOG/+Iuz+b4SnDBcvkjHXdpzCyF2LkvzfVyjtgurrHALu8ptEWG/dQbvvQ==
+ bh=aH5YgaTVUz7eF4RuTjJb3wToT5WFijNGSYa0v+Q8n9k=;
+ b=nvk3uAaS863txYtWBnBn5WEV+QagYKCxDprTnFmFUt+7ooOHw7zlyjUN+y7M+zRZLxG7tI+nVfwQQdKyLNBQ7quB0mx31RhEk+qgq8HrvOpNkJ/ETKoEMzlGBICQlHNVHbjUUMhMSzt60zlg9o44UvCktcPEutl49CtiPK+3oTwCY8901tRZAztqu6euwai6Opjz6CRlAPQ2TKPuB4yx081jr0BufBAFR0qQAKwehEpdCZZyNXThRR6QmiDW26UJ7G/GgqeDeHzRv/qEE5T9VUbOnnDDEVepOCxzkPok/JQe96g5mlk7rIsztZQ/2M2LA34o/ZZBlwqcCsmb3KWWjQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 216.228.118.233) smtp.rcpttodomain=kernel.org smtp.mailfrom=nvidia.com;
+ 216.228.118.232) smtp.rcpttodomain=kernel.org smtp.mailfrom=nvidia.com;
  dmarc=pass (p=reject sp=reject pct=100) action=none header.from=nvidia.com;
  dkim=none (message not signed); arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
  s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=do7jFBBJDjTpxwmlaFOhTACn7os+1N3Tp0MI+EIdnpo=;
- b=IHW+LJJLVCjvQKe8JJEuT9RIswgqedh3bLFqUUyV/5hrP85xdmvEhgE4ZD3/j1yPDEaYyVbfarFrzAkNrx7vnBaRsIddUJ0rF+EQhldQZHeyQ+v5Pb095QwNx7aAkkHh64XwBK9Gx+9N1qH+35xY7LontMBvaTcKg5z30m2AXyy+5sb7HNhAonNbZo/9wign74JQ5AiV0ABTG3+pOvsGbhKc+hNJpO/14i3YGm3AJcI+gj/rVVKYbKV5MdIgiaUK0xpgbW7kii1aKAr5BMuR43cUo/yp0tepkeweR9jFmdfxDuWtcKULbG5N4W0pSERcGWLuc7ryJSU+TP+C5u8gpg==
-Received: from DM6PR02CA0153.namprd02.prod.outlook.com (2603:10b6:5:332::20)
- by DM4PR12MB5892.namprd12.prod.outlook.com (2603:10b6:8:68::7) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.5723.26; Thu, 13 Oct 2022 18:40:58 +0000
-Received: from DM6NAM11FT064.eop-nam11.prod.protection.outlook.com
- (2603:10b6:5:332:cafe::68) by DM6PR02CA0153.outlook.office365.com
- (2603:10b6:5:332::20) with Microsoft SMTP Server (version=TLS1_2,
+ bh=aH5YgaTVUz7eF4RuTjJb3wToT5WFijNGSYa0v+Q8n9k=;
+ b=APXpY6AasBmOL/DLHFKhmRR1WNlgekBxuUgG9IIWNuE9yFU1u4YIy8Rb7Dv1eNtmQNfeExLIJ9TCiSd1geRu6vcktu1SJANBhy3z0jkNa/Tppf78xU+CzdacQvWX/mqe3e8djDjGQHb9b5XyGFiBSf9LXTLtXPz4ZbjGqw4Ulx3BqeO/JWi2UfQ79wdoTqerWh5/Q4/DIVDAzwqei3mzCwQNoBk4r5At1pw5BG9yCU69VJY/Wp0TSjpmpWmYi7XkkWqlrHG5rBr4KlKUD7UI3uccYcLX4hnm7PUp1CPp3FFXRd4e1zuKcH9bgv2/pveWsxblwxmkWULnOgaEYnmqrQ==
+Received: from BN7PR06CA0055.namprd06.prod.outlook.com (2603:10b6:408:34::32)
+ by SJ1PR12MB6123.namprd12.prod.outlook.com (2603:10b6:a03:45a::5) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5709.21; Thu, 13 Oct
+ 2022 18:41:02 +0000
+Received: from BN8NAM11FT106.eop-nam11.prod.protection.outlook.com
+ (2603:10b6:408:34:cafe::9f) by BN7PR06CA0055.outlook.office365.com
+ (2603:10b6:408:34::32) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5723.26 via Frontend
- Transport; Thu, 13 Oct 2022 18:40:58 +0000
-X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 216.228.118.233)
+ Transport; Thu, 13 Oct 2022 18:41:02 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 216.228.118.232)
  smtp.mailfrom=nvidia.com; dkim=none (message not signed)
  header.d=none;dmarc=pass action=none header.from=nvidia.com;
 Received-SPF: Pass (protection.outlook.com: domain of nvidia.com designates
- 216.228.118.233 as permitted sender) receiver=protection.outlook.com;
- client-ip=216.228.118.233; helo=mail.nvidia.com; pr=C
-Received: from mail.nvidia.com (216.228.118.233) by
- DM6NAM11FT064.mail.protection.outlook.com (10.13.172.234) with Microsoft SMTP
+ 216.228.118.232 as permitted sender) receiver=protection.outlook.com;
+ client-ip=216.228.118.232; helo=mail.nvidia.com; pr=C
+Received: from mail.nvidia.com (216.228.118.232) by
+ BN8NAM11FT106.mail.protection.outlook.com (10.13.177.7) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.5723.20 via Frontend Transport; Thu, 13 Oct 2022 18:40:58 +0000
+ 15.20.5723.20 via Frontend Transport; Thu, 13 Oct 2022 18:41:02 +0000
 Received: from drhqmail202.nvidia.com (10.126.190.181) by mail.nvidia.com
- (10.127.129.6) with Microsoft SMTP Server (version=TLS1_2,
+ (10.127.129.5) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.986.26; Thu, 13 Oct
- 2022 11:40:49 -0700
+ 2022 11:40:55 -0700
 Received: from drhqmail203.nvidia.com (10.126.190.182) by
  drhqmail202.nvidia.com (10.126.190.181) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.986.29; Thu, 13 Oct 2022 11:40:49 -0700
+ 15.2.986.29; Thu, 13 Oct 2022 11:40:55 -0700
 Received: from vidyas-desktop.nvidia.com (10.127.8.9) by mail.nvidia.com
  (10.126.190.182) with Microsoft SMTP Server id 15.2.986.29 via Frontend
- Transport; Thu, 13 Oct 2022 11:40:44 -0700
+ Transport; Thu, 13 Oct 2022 11:40:50 -0700
 From: Vidya Sagar <vidyas@nvidia.com>
 To: <lpieralisi@kernel.org>, <robh@kernel.org>, <kw@linux.com>,
 	<bhelgaas@google.com>, <thierry.reding@gmail.com>, <jonathanh@nvidia.com>,
@@ -80,9 +81,9 @@ CC: <linux-pci@vger.kernel.org>, <linux-tegra@vger.kernel.org>,
 	<linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>,
 	<kthota@nvidia.com>, <mmaddireddy@nvidia.com>, <vidyas@nvidia.com>,
 	<sagar.tv@gmail.com>
-Subject: [PATCH V3 16/21] PCI: tegra194: Set LTR message request before PCIe link up
-Date: Fri, 14 Oct 2022 00:08:49 +0530
-Message-ID: <20221013183854.21087-17-vidyas@nvidia.com>
+Subject: [PATCH V3 17/21] PCI: tegra194: Reduce AXI slave timeout value
+Date: Fri, 14 Oct 2022 00:08:50 +0530
+Message-ID: <20221013183854.21087-18-vidyas@nvidia.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20221013183854.21087-1-vidyas@nvidia.com>
 References: <20221013183854.21087-1-vidyas@nvidia.com>
@@ -90,26 +91,27 @@ X-NVConfidentiality: public
 MIME-Version: 1.0
 X-EOPAttributedMessage: 0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: DM6NAM11FT064:EE_|DM4PR12MB5892:EE_
-X-MS-Office365-Filtering-Correlation-Id: fe24e336-400c-4a5d-ee96-08daad4a7887
+X-MS-TrafficTypeDiagnostic: BN8NAM11FT106:EE_|SJ1PR12MB6123:EE_
+X-MS-Office365-Filtering-Correlation-Id: e6fd0f5b-70bc-41f4-0daf-08daad4a7adf
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 	8DypQODxzsh8gH4lH/AQurPZOJSxuF4+ATA7rs16tgQvmGWLnwNK3LgZrF7EQgOiSuMoL7eN6YXLhRt4RoGNig5RpO3TTxCaU/WAnYfsNbV33Iw7ex2jvhhi/33EWZx9lHNKjx85Tewl5ivDfANiPomOWb+JSjcGcjzS+Bs+UbfAeGAdW4hrNvI1ht8rw+kBErLrmInenCFkgIpw4wxTzYZ7jvABs1pqyKyMrUBsiQrfmiVecoSa/wYGnSlFH+cN4d+lfU3GCwTfCNyNF4a6lKjw52OOJPkAcI2aNrpEZ0qMPQsLbujSHfSJdFi2THi87UIBHeCNhk5b4Bffgeu97oPCe/UF6D5OcG3FX950Sfg3U25xkLc+RSHYci2LbBPm97WwO9yt4oE/e7nql9pzHeB2I/d5cg4b1cLnydat0q+Opei2B0MB46D/22RanzmrTCuogyqXbMDVcJv7DH/nWhTJPcOoc/SPQ9Y6ek8pvGu43Pl+HnqCIQ3ARLC3JT5cqBksZBlPWToXB3ih08uKqCxAgwqiIqyoEjCPwimmKvxXUuSSuNZPIQoKCbWx7JimreLyR6FYK+tNhGrJgi8BpMsv+UPpIH1X9mx2eaBevPe6eLSEKfmHuUVg/0riYIZ8rwuQtF+VT20r1LbiMQ840HjlmtywOlb5WTaG8N0tzt+itRKhHhIGV0ueXHBvEFkDcGox5AmazIGEiGIOv7uIyqMUtgmtsW98ptmYrECE0CbvjBRzSfWtYP+p1NOw8uv6UzA+FeR61Ll7VC5hqH4l2upokG/pxihf+CZPwcDOdLU=
-X-Forefront-Antispam-Report: 	CIP:216.228.118.233;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc7edge2.nvidia.com;CAT:NONE;SFS:(13230022)(4636009)(346002)(396003)(136003)(376002)(39860400002)(451199015)(40470700004)(46966006)(36840700001)(2616005)(86362001)(7416002)(41300700001)(7636003)(356005)(5660300002)(82740400003)(186003)(40480700001)(1076003)(478600001)(8936002)(36860700001)(8676002)(82310400005)(4326008)(70206006)(70586007)(36756003)(40460700003)(26005)(316002)(15650500001)(336012)(54906003)(110136005)(2906002)(426003)(47076005)(83380400001)(921005)(7696005);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam-Message-Info: 	AqkhDQWU91IyuBqSOIhiZWgwYxSxJ6W3X/j+wgcOP9uSXbyRqzoO7jqDyEFHy0kIVKGC83cgUex4XrbHyVQJrUKP3e8Los5RcWEOiC5KrW9AF4iFida17SgESkZ60msx8ZxCgKRACDj4npm8pvg4HuhSb0llGnukWvQFMwCqo/dOxv6WHmwATmsu6I0wRgSkbu2nlvlHZkUGuEX7bjX/0i50iwuemayd41oNFuZcThFotJ8UmRbnh+NoJPYow9eEMwAiDTxGGtVwhrMyFmPUJfO4gw+KsMXJFgFMopk7a3kTroGf9JTb4CqAvkpX9FB15Fod/WAea3H10K0RSzkz7mSzMhxx5XdfzuGcyP/nETQiZ1LOf+3fREdEID6XEM4LyEs/4daNv/IHA89iyxpf7t0+zRBF0lapvACLNCwdMwjyQs/V5N9HGnOvMa82aBAAaDLsWot2jI+C5MMf51F+iUSsJly+wloWioJxpvhYEeyNBRPc09c87awrNlOPp3QR7QSayEctbn7UM3GH1R0twiF9rmALfD284cuzJX4GlcJosmSG5lLLqRRHH4SnZWsc4uHhvyFXlpTc+gEosvlU3bDMMiX2AHEKPAXq9Pc2aH38CuJR/njne01siggBX/Uu0spQcQgBM0I8gVfi98iREb76DCv9YE+ivOSIaULrL4d2w5/tEVDHHihui9B2lN7l0nso/LIeuLafELuUZsT/8v7mRBwUUadtDJ2p8W0Zwz9E4M3D2nsW+UmLgfrAIlCY3oPQSJE7CvDRQ1k3FrCMykK2g+SsVmbUlOqZ/+u2QWU=
+X-Forefront-Antispam-Report: 	CIP:216.228.118.232;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc7edge1.nvidia.com;CAT:NONE;SFS:(13230022)(4636009)(346002)(376002)(136003)(396003)(39860400002)(451199015)(46966006)(40470700004)(36840700001)(54906003)(356005)(7416002)(921005)(70206006)(70586007)(82740400003)(7636003)(2906002)(5660300002)(40460700003)(8936002)(41300700001)(36860700001)(8676002)(26005)(4326008)(110136005)(2616005)(1076003)(336012)(478600001)(7696005)(316002)(186003)(83380400001)(47076005)(82310400005)(426003)(36756003)(40480700001)(86362001);DIR:OUT;SFP:1101;
 X-OriginatorOrg: Nvidia.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 13 Oct 2022 18:40:58.6299
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 13 Oct 2022 18:41:02.4938
  (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: fe24e336-400c-4a5d-ee96-08daad4a7887
+X-MS-Exchange-CrossTenant-Network-Message-Id: e6fd0f5b-70bc-41f4-0daf-08daad4a7adf
 X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[216.228.118.233];Helo=[mail.nvidia.com]
-X-MS-Exchange-CrossTenant-AuthSource: 	DM6NAM11FT064.eop-nam11.prod.protection.outlook.com
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[216.228.118.232];Helo=[mail.nvidia.com]
+X-MS-Exchange-CrossTenant-AuthSource: 	BN8NAM11FT106.eop-nam11.prod.protection.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Anonymous
 X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM4PR12MB5892
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SJ1PR12MB6123
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221013_114101_843233_D9FBFE53 
-X-CRM114-Status: GOOD (  10.08  )
+X-CRM114-CacheID: sfid-20221013_114106_995919_5658807D 
+X-CRM114-Status: UNSURE (   9.61  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -126,47 +128,69 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-LTR message should be sent as soon as the root port enables LTR in the
-endpoint. Set snoop & no snoop LTR timing and LTR message request before
-PCIe links up. This ensures that LTR message is sent upstream as soon as
-LTR is enabled.
+Reduce the AXI slave timeout value to 7ms to be in line with the CBB
+logic's timeout value and to avoid CBB reporting errors because of no
+response from the PCIe IPs AXI slave logic for configuration space accesses
+through ECAM when the PCIe link is down. Also, set the Completion Timeout
+value to Range-A: 1ms~10ms to be inline with the AXI timeout value.
 
 Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
 ---
 V3:
 * This is a new patch in this series
 
- drivers/pci/controller/dwc/pcie-tegra194.c | 10 +++++-----
- 1 file changed, 5 insertions(+), 5 deletions(-)
+ drivers/pci/controller/dwc/pcie-tegra194.c | 24 ++++++++++++++++++++++
+ 1 file changed, 24 insertions(+)
 
 diff --git a/drivers/pci/controller/dwc/pcie-tegra194.c b/drivers/pci/controller/dwc/pcie-tegra194.c
-index d592cf68b02c..23ca97401339 100644
+index 23ca97401339..7890e0c0c0d2 100644
 --- a/drivers/pci/controller/dwc/pcie-tegra194.c
 +++ b/drivers/pci/controller/dwc/pcie-tegra194.c
-@@ -493,11 +493,6 @@ static irqreturn_t tegra_pcie_ep_irq_thread(int irq, void *arg)
- 	if (val & PCI_COMMAND_MASTER) {
- 		ktime_t timeout;
+@@ -198,6 +198,12 @@
+ #define AMBA_ERROR_RESPONSE_CRS_OKAY_FFFFFFFF	1
+ #define AMBA_ERROR_RESPONSE_CRS_OKAY_FFFF0001	2
  
--		/* 110us for both snoop and no-snoop */
--		val = 110 | (2 << PCI_LTR_SCALE_SHIFT) | LTR_MSG_REQ;
--		val |= (val << LTR_MST_NO_SNOOP_SHIFT);
--		appl_writel(pcie, val, APPL_LTR_MSG_1);
--
- 		/* Send LTR upstream */
- 		val = appl_readl(pcie, APPL_LTR_MSG_2);
- 		val |= APPL_LTR_MSG_2_LTR_MSG_REQ_STATE;
-@@ -1951,6 +1946,11 @@ static void pex_ep_event_pex_rst_deassert(struct tegra_pcie_dw *pcie)
- 	val |= APPL_INTR_EN_L1_8_EDMA_INT_EN;
- 	appl_writel(pcie, val, APPL_INTR_EN_L1_8_0);
- 
-+	/* 110us for both snoop and no-snoop */
-+	val = 110 | (2 << PCI_LTR_SCALE_SHIFT) | LTR_MSG_REQ;
-+	val |= (val << LTR_MST_NO_SNOOP_SHIFT);
-+	appl_writel(pcie, val, APPL_LTR_MSG_1);
++#define PORT_LOGIC_AMBA_LINK_TIMEOUT		0x8D4
++#define AMBA_LINK_TIMEOUT_PERIOD_MASK		GENMASK(7, 0)
++#define AMBA_LINK_TIMEOUT_PERIOD_VAL		0x7
 +
- 	reset_control_deassert(pcie->core_rst);
++#define PCI_EXP_DEVCTL2_CPL_TO_VAL		0x2 /* Range-A: 1ms to 10ms */
++
+ #define MSIX_ADDR_MATCH_LOW_OFF			0x940
+ #define MSIX_ADDR_MATCH_LOW_OFF_EN		BIT(0)
+ #define MSIX_ADDR_MATCH_LOW_OFF_MASK		GENMASK(31, 2)
+@@ -922,6 +928,18 @@ static int tegra_pcie_dw_host_init(struct dw_pcie_rp *pp)
+ 		AMBA_ERROR_RESPONSE_CRS_SHIFT);
+ 	dw_pcie_writel_dbi(pci, PORT_LOGIC_AMBA_ERROR_RESPONSE_DEFAULT, val);
  
- 	val = dw_pcie_readl_dbi(pci, PCIE_LINK_WIDTH_SPEED_CONTROL);
++	/* Reduce the AXI slave Timeout value to 7ms */
++	val  = dw_pcie_readl_dbi(pci, PORT_LOGIC_AMBA_LINK_TIMEOUT);
++	val &= ~AMBA_LINK_TIMEOUT_PERIOD_MASK;
++	val |= AMBA_LINK_TIMEOUT_PERIOD_VAL;
++	dw_pcie_writel_dbi(pci, PORT_LOGIC_AMBA_LINK_TIMEOUT, val);
++
++	/* Set the Completion Timeout value in 1ms~10ms range */
++	val_16  = dw_pcie_readw_dbi(pci, pcie->pcie_cap_base + PCI_EXP_DEVCTL2);
++	val_16 &= ~PCI_EXP_DEVCTL2_COMP_TIMEOUT;
++	val_16 |= PCI_EXP_DEVCTL2_CPL_TO_VAL;
++	dw_pcie_writew_dbi(pci, pcie->pcie_cap_base + PCI_EXP_DEVCTL2, val_16);
++
+ 	/* Configure Max lane width from DT */
+ 	val = dw_pcie_readl_dbi(pci, pcie->pcie_cap_base + PCI_EXP_LNKCAP);
+ 	val &= ~PCI_EXP_LNKCAP_MLW;
+@@ -1988,6 +2006,12 @@ static void pex_ep_event_pex_rst_deassert(struct tegra_pcie_dw *pcie)
+ 	val_16 |= PCI_EXP_DEVCTL_PAYLOAD_256B;
+ 	dw_pcie_writew_dbi(pci, pcie->pcie_cap_base + PCI_EXP_DEVCTL, val_16);
+ 
++	/* Set the Completion Timeout value in 1ms~10ms range */
++	val_16  = dw_pcie_readw_dbi(pci, pcie->pcie_cap_base + PCI_EXP_DEVCTL2);
++	val_16 &= ~PCI_EXP_DEVCTL2_COMP_TIMEOUT;
++	val_16 |= PCI_EXP_DEVCTL2_CPL_TO_VAL;
++	dw_pcie_writew_dbi(pci, pcie->pcie_cap_base + PCI_EXP_DEVCTL2, val_16);
++
+ 	/* Clear Slot Clock Configuration bit if SRNS configuration */
+ 	if (pcie->enable_srns) {
+ 		val_16 = dw_pcie_readw_dbi(pci, pcie->pcie_cap_base +
 -- 
 2.17.1
 
