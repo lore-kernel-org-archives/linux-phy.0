@@ -4,73 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A9ACDC43217
-	for <linux-phy@archiver.kernel.org>; Thu, 13 Oct 2022 18:40:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A8229C433FE
+	for <linux-phy@archiver.kernel.org>; Thu, 13 Oct 2022 18:40:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1ysFbAAAtQCmOUKA27gVcXApS1SgBIe2eAqOWmhPJFo=; b=pTcUgFLc3Nirh+
-	YjupvQkQzsxE8VTMW0vn2jEAP/ETHsXgYYU++nIjr0EEGdB/tIKZxXioGvo3ZFy5KI/Jv3uM7QQ4i
-	BH3K1kEGODB4VuY8hYIAcFHpYZxyGXJKhFLzxejpIkfU0yqLQ1YmppPBNp4QGRDJ2xZ9ZPARIOaPn
-	/ljs2qDdZfM5FGT9KmxP59LCLCMIr/d3n+Tpq5MXliBTpFBDN0HD/y/mt9Fnhi1MDY4D4/KYJOb0Z
-	C3/BFSvn9drbBWZCmTmVo6/GtMlf+W4MB45VXlGLgz8iPj/wmKu7bak8KOTUtfYRvwY65ViPMbBt3
-	FqcqynPlIq65L70tHCJw==;
+	List-Owner; bh=WQXVrXagMZPtANl+ikO/78OXxk44DPHqZOiBq54OxNc=; b=gm3Ss1k4/5eJPj
+	xiRX+dpqzQYBhaleAVrrHnavnFTlhlK0pbSYtgXXKJ647Qp8q2Bw4B6DLfd6hzu3UbnuXwVY+leNZ
+	8DrSE39I+YnWCJp4SjV+garpU2O+E/SPCSZkQDga+AD/5etVhADJhd8GYNFWQJWU+nnmnitYN3lGI
+	rlbC4FY0V/eG7rn6+/pzWRBtlgWOqzcyEL2kC5wTGhuojMYlrK183LqbVVirnVbsD+kezC1qstymB
+	avjKrr/oJygNErYPzpwLmxWmc7Nhzstl3fyCr5GnXburP23y9hYKiqjjSLLOnp7Qyd+zqDU28wrxt
+	xrIpbfpKMmYFRGcGRO5A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oj38I-00Ciyd-Vu; Thu, 13 Oct 2022 18:40:39 +0000
-Received: from mail-co1nam11on2065.outbound.protection.outlook.com ([40.107.220.65] helo=NAM11-CO1-obe.outbound.protection.outlook.com)
+	id 1oj38X-00Cj2Q-4a; Thu, 13 Oct 2022 18:40:53 +0000
+Received: from mail-bn8nam12on2061.outbound.protection.outlook.com ([40.107.237.61] helo=NAM12-BN8-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oj38G-00CixE-Ny
-	for linux-phy@lists.infradead.org; Thu, 13 Oct 2022 18:40:38 +0000
+	id 1oj38V-00Cj21-96
+	for linux-phy@lists.infradead.org; Thu, 13 Oct 2022 18:40:52 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=GnhlqrVAgFO7eUZ7gpj33QLya7dylVDGiDLJ1m1VDMPUFFqO/JXdfwX2YUgf+uraRFoF83PyHqR7b34MTp+zj5moqxiHP5p3u6OO1zlRN/poMA8OEysDVvIowRUTkJcRX7cQGfl0ENPI5jDgsgKRXMFyHB5lJ/79oIVu/FlltusBTdCTU8Fu3/Id6+8GNxx5ujKkOcwDsz4JYL/Hw85EvCdY4jwo+X6lURhiipcsS3+c7WLxn0uG84Otre73t0Be/o4uxCkJGJ2bP3hvqGN9rYVLy7JN+QNjmHZhRj/6NQ2RsC1/Yts8Qi+9SGV1hq4Iy3WiCO1vufxp8HmR0GpE3g==
+ b=nnRMxG0PDaYWbOfkv4vwyDSfolXjkde25IyRFq2hL5+edRjQHvZf/RGOrnGtqy16mto52GXmjpCSEZIWJRLsw6DCpf/7CsLU4I/FSSRClU60CxK/1saptgai+/Il8v0xM1WBGVlgPUmm9c6JVsCf+CKCUdLWMe5FXSpxdQFrtRCvs7mOWEZM2WozVKvw3F8FmXG+zXBrASF1sInQIPdmlR6TALyBtslwD4QbrZVS3kWCf8h1CBLXPohK1B/Zh2+fcUd7vkqbrSRke1Y7BXcwDzUvfub7hMmT2LzUKWWlSpuDl01zsfomLuJoG/UZDT2e4nQHZNLJPu0HcaE5ArTBmw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=NVum5g4iSVlMg0X000qp1jZQMVyDsz0ZHu0LASebBOg=;
- b=T1F5QU3cB6tx44CTTVH3YIF4f/c+Vo0BoZKA1MR1mIT9W53hjHnSHi5ryMriQdwVpCbsKM2Zf0PZ0nfsj0NVpz+Ym2QuhNPyxiqz2nOaLz/njzM1IasTI07VLJIFDm92gqss0HKT2n7sBw0HOEb8rz5H9+I+8W9EAzZMXFwW8c07AuH4lIjjW/d81n3uhvZMFDZPOajFCugbMHOEoPe4380eby1Y7GNXm61z3fOegChI8f5KzyI0qfAIdppffxu0AfGzS/x12jma2rV6YcyXY27Jwnm6HSmRwyltbq4UUtbr2oqaP4USp9aD6RiJswQoqPndX02H0oi7FfLxDi3yqQ==
+ bh=+bXebElS7MWyWIU/lLGwPuIvaTTVF7LsfxdEit/+aa8=;
+ b=PgYsUmWEA2Byuf1tjTS+Wr6mU7MXtWDeFE/cABAm0LtHD/MHtgMgb9tc4M7+JtceJXo2BZ45tkTylpTrairTJCH2mwh46IvFuLg8FuJ6CV+QmmusEyjTsDei5NTVGlM7UxGQ/8opTbOgUiWupcJq4SngFjwDGsFbwhMAd+/kxsoScEQ5HtqRTfAQ6q4oesmHtHu75DS2UgGQbuODpn+tobAENO8sVAwpMqheSKruB3TeSEjNa4rR7pAb5RaHGqhcmaJ5V3lUOuRB93gy4/63HCB/h3cLp02IbIkX4jSlixt9xtnrW4HQimiZRd8cZFb74C4i727JcE7KnYYiItkIAw==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 216.228.118.233) smtp.rcpttodomain=kernel.org smtp.mailfrom=nvidia.com;
+ 216.228.118.232) smtp.rcpttodomain=kernel.org smtp.mailfrom=nvidia.com;
  dmarc=pass (p=reject sp=reject pct=100) action=none header.from=nvidia.com;
  dkim=none (message not signed); arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
  s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=NVum5g4iSVlMg0X000qp1jZQMVyDsz0ZHu0LASebBOg=;
- b=osA6MSIKsUfUXW1KKa9U0dlokNXFFzGQ6DLCDirz6R8v7S4m9ueDUNdixiNrcs1GBg+Qhd5+YnNKRvqDcm6cFJG1mlkbhB9SQNJkM3n4Dc7mp2RIbgSZiV3FGeLM9iNchA8lG2Jgvdsv5aa1aJEkgkClHa+Xfwhwh/SVJuQ3gpwlb+EzGWyWNsmuPSY9R1iruSagWARaSINvGnnS9LmjN+4loGWsj9LYlPxIX9N0dtOIEnwg7wr3A5uK42MGxSxCZEZWAD8f8OB362+OwrrJiZKC8lp6C2ZakCURWHEmrSdeoawF0Z2dEF9tGLrxUaGCDTdKPMYIxXbufPPGqX/egw==
-Received: from DM6PR10CA0017.namprd10.prod.outlook.com (2603:10b6:5:60::30) by
- DM6PR12MB4121.namprd12.prod.outlook.com (2603:10b6:5:220::14) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.5723.26; Thu, 13 Oct 2022 18:40:33 +0000
-Received: from DM6NAM11FT074.eop-nam11.prod.protection.outlook.com
- (2603:10b6:5:60:cafe::5e) by DM6PR10CA0017.outlook.office365.com
- (2603:10b6:5:60::30) with Microsoft SMTP Server (version=TLS1_2,
+ bh=+bXebElS7MWyWIU/lLGwPuIvaTTVF7LsfxdEit/+aa8=;
+ b=r0iHytgO5kyn1aAXoAdJH7zyH7la1i5PFjNIeBSU/b8p1knRsNW97E9NNbGjSkzB3bcVcluelcW/Ea052fQyEZLzE4vTHEYAA+oSfXEvAbREQg8IgGvJLZs4IRbV1iItMXeQr4OFX5gjPcAOWK9q161noAFNCIl03Qb+dlRZGpXx/AzMqVk3kRx6Wc7XxTtqVTBAMPcNbPuothwN854sYylY3t0xK0FH5IuNdYvXX86XeiGPdjxKfcCQ1dQRvAqbgTw0FzttZeVYSHX5jXByqbXQWN393u0hSuZpdbYrEVsJM0WL0rJ8oE/K0RJxJ2iLD8hLFJRjLBBv86JzMB537g==
+Received: from BN9PR03CA0943.namprd03.prod.outlook.com (2603:10b6:408:108::18)
+ by BN9PR12MB5147.namprd12.prod.outlook.com (2603:10b6:408:118::16) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5723.26; Thu, 13 Oct
+ 2022 18:40:47 +0000
+Received: from BN8NAM11FT027.eop-nam11.prod.protection.outlook.com
+ (2603:10b6:408:108:cafe::f5) by BN9PR03CA0943.outlook.office365.com
+ (2603:10b6:408:108::18) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5723.26 via Frontend
- Transport; Thu, 13 Oct 2022 18:40:33 +0000
-X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 216.228.118.233)
+ Transport; Thu, 13 Oct 2022 18:40:47 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 216.228.118.232)
  smtp.mailfrom=nvidia.com; dkim=none (message not signed)
  header.d=none;dmarc=pass action=none header.from=nvidia.com;
 Received-SPF: Pass (protection.outlook.com: domain of nvidia.com designates
- 216.228.118.233 as permitted sender) receiver=protection.outlook.com;
- client-ip=216.228.118.233; helo=mail.nvidia.com; pr=C
-Received: from mail.nvidia.com (216.228.118.233) by
- DM6NAM11FT074.mail.protection.outlook.com (10.13.173.203) with Microsoft SMTP
+ 216.228.118.232 as permitted sender) receiver=protection.outlook.com;
+ client-ip=216.228.118.232; helo=mail.nvidia.com; pr=C
+Received: from mail.nvidia.com (216.228.118.232) by
+ BN8NAM11FT027.mail.protection.outlook.com (10.13.177.96) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.5723.20 via Frontend Transport; Thu, 13 Oct 2022 18:40:33 +0000
-Received: from drhqmail202.nvidia.com (10.126.190.181) by mail.nvidia.com
- (10.127.129.6) with Microsoft SMTP Server (version=TLS1_2,
+ 15.20.5723.20 via Frontend Transport; Thu, 13 Oct 2022 18:40:46 +0000
+Received: from drhqmail203.nvidia.com (10.126.190.182) by mail.nvidia.com
+ (10.127.129.5) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.986.26; Thu, 13 Oct
- 2022 11:40:29 -0700
+ 2022 11:40:36 -0700
 Received: from drhqmail203.nvidia.com (10.126.190.182) by
- drhqmail202.nvidia.com (10.126.190.181) with Microsoft SMTP Server
+ drhqmail203.nvidia.com (10.126.190.182) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.986.29; Thu, 13 Oct 2022 11:40:29 -0700
+ 15.2.986.29; Thu, 13 Oct 2022 11:40:35 -0700
 Received: from vidyas-desktop.nvidia.com (10.127.8.9) by mail.nvidia.com
  (10.126.190.182) with Microsoft SMTP Server id 15.2.986.29 via Frontend
- Transport; Thu, 13 Oct 2022 11:40:24 -0700
+ Transport; Thu, 13 Oct 2022 11:40:31 -0700
 From: Vidya Sagar <vidyas@nvidia.com>
 To: <lpieralisi@kernel.org>, <robh@kernel.org>, <kw@linux.com>,
 	<bhelgaas@google.com>, <thierry.reding@gmail.com>, <jonathanh@nvidia.com>,
@@ -80,9 +81,9 @@ CC: <linux-pci@vger.kernel.org>, <linux-tegra@vger.kernel.org>,
 	<linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>,
 	<kthota@nvidia.com>, <mmaddireddy@nvidia.com>, <vidyas@nvidia.com>,
 	<sagar.tv@gmail.com>
-Subject: [PATCH V3 13/21] PCI: tegra194: Enable hardware hot reset mode in Endpoint
-Date: Fri, 14 Oct 2022 00:08:46 +0530
-Message-ID: <20221013183854.21087-14-vidyas@nvidia.com>
+Subject: [PATCH V3 14/21] PCI: tegra194: Allow system suspend when the Endpoint link is not up
+Date: Fri, 14 Oct 2022 00:08:47 +0530
+Message-ID: <20221013183854.21087-15-vidyas@nvidia.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20221013183854.21087-1-vidyas@nvidia.com>
 References: <20221013183854.21087-1-vidyas@nvidia.com>
@@ -90,27 +91,26 @@ X-NVConfidentiality: public
 MIME-Version: 1.0
 X-EOPAttributedMessage: 0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: DM6NAM11FT074:EE_|DM6PR12MB4121:EE_
-X-MS-Office365-Filtering-Correlation-Id: f45e2618-a5fa-4631-7afb-08daad4a697a
+X-MS-TrafficTypeDiagnostic: BN8NAM11FT027:EE_|BN9PR12MB5147:EE_
+X-MS-Office365-Filtering-Correlation-Id: f5492732-131d-41d9-da2f-08daad4a7193
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 	FYfU4cqeglcAzTBMKHF6GtTFLsGeS9geP0vK3PcpSJvvppBdNZFwT3HI3XEATJ9CsA1IVDWJ7KdmtjX8TYGYDyFEsVB74X4a+Yrg4ULWRwRiYe3P9pn7iWdvz8Ka18ngPGH5rREXKY/IGzTB6ULMf/uMi6l0bzbWUi2NmWeZkbOElUeqvVOuYSX+o6sMtNKiwiossFoYORybslTPBbutlSH6GNpXj73Hsqyr+LtzxXZpZddi7df8bz/0uvCRYBJMawUjnXBcM7oIC1XVA73g6njfaOT/rlfdfsUJe2S2Bcq0J2n7tx93h6L4gE//wyhruEy+6BmNhfKwOBr1CRrF3n0OKERAKXtmO33UiyDIXYy++VFBszscXzhKssbs8y2j4Z1POHZZ9kUITCJZqFa6plK0Bj/ZA3rrgvjOE7nstQ2ORFjo0+Ps/IpMxVu4Ue0QcBPV0PW8xq1fPkdLOH+is6rVq2LYq3rjMaPn/X+7Zax+YmmSM0wnCIiQhjVrJ0WzkjEkQV5BNKPjbllBPPiGa45596f0LRHmIWJzyfGaAirbd955lmcUrYXMDfo3bm6YIsjhhdiYU+9n2DqxSYRiSq3N5TckWd99VjjgyQLDoEC3Lok47ShhAEyHr6xmeOaPrBbHQ3NeVRSwqV7q/YKruSPgNPDXIxll7bco7ZZO1+uHdMrcPtRej2xSYylkTQQIj0l6/XCo5dm/9YvlG1/JTwRgJnTr8xr1QPeSNQQ/uoX6tMDQ/3ZViWxHT87t+oMZgj9TiaNSuPmGgvAT77joHvMGY3LkuAx96DbaLebZ/uI=
-X-Forefront-Antispam-Report: 	CIP:216.228.118.233;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc7edge2.nvidia.com;CAT:NONE;SFS:(13230022)(4636009)(376002)(39860400002)(346002)(396003)(136003)(451199015)(36840700001)(40470700004)(46966006)(47076005)(356005)(26005)(7636003)(36756003)(86362001)(54906003)(110136005)(7696005)(8676002)(70206006)(4326008)(7416002)(70586007)(2906002)(82740400003)(6666004)(2616005)(41300700001)(5660300002)(40480700001)(8936002)(1076003)(336012)(40460700003)(186003)(316002)(426003)(921005)(82310400005)(36860700001)(478600001);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam-Message-Info: 	weHfSMUYOIFpHsz2RS1b+Vy93QLGuPxdmvqhYqwO3qqyCkX4gyYQ0jMbeH+/c9FnOyqFhNelu57lSu4DdmHxYC5DTWWZgC4nFIswjRy7rewTUHADrHp4WW/p0eQ6UwaPDJqvs2yJcaprlrtCeRbSJ1Q3pt9GFWqIbeHi9Azfgm9xD2gmND8lFr15gFxjWpE7NLQmZbwLui6t8GIdD1AGnPrHMy+pAvvAse77xb8Zjp4wb1AcV11mcUVPoihWr1VRUBII965ay2UYPEz8RFElQlqSqanG7fHySyykmk+99YTPrfq8z8iPUMaBk/ToW/DiflADLIltUal21Ewh0EZVZYKTrHRXdAg5XFj0Al80pX2mB5GSPQVitDNRm3drehf9cGOTh1KWNcetDJJK8gNWwPGpLwm4d/ol6ZECydiabwL7GNoVoTNOO33sfiB1OTXvdNCzwQmy9/8wJoqoMpmPtbiq0Gxdd6AMYtPVw2QCj5ZspMFRLXtPlB8Fvk13ulo5MRjJtoFT61HA9Obt9HHnFfN6BtKFZtSLjiwpq/Vn7qg7RWjG0Thfkya9uFVZYzsUbUj1hBF8h7QpniDs+R940yKkeiezdcIDEemI+Ig2RFFFVDj3+kvhZdrLWzLGysFS/znMC7IAZkzVQvfkX9ZpbjQXsvyQ0SHYRgX5Yq69CYOqZNZkAb3HmAYFuzkbmrupX3OlwL7tdyWiEBAWyKnDFTCzL5Na/55Gmu7F62/7d0A87doHnQUWGuh4bQEDm9XewTlhDZuLfIcBlysC5IId0zl/lx/ik0EpWdksXK0lpTk=
+X-Forefront-Antispam-Report: 	CIP:216.228.118.232;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc7edge1.nvidia.com;CAT:NONE;SFS:(13230022)(4636009)(346002)(396003)(136003)(39860400002)(376002)(451199015)(40470700004)(36840700001)(46966006)(336012)(186003)(2616005)(47076005)(1076003)(83380400001)(7636003)(921005)(356005)(86362001)(7416002)(36860700001)(82740400003)(426003)(2906002)(5660300002)(41300700001)(40460700003)(4326008)(15650500001)(8936002)(40480700001)(82310400005)(110136005)(8676002)(6666004)(478600001)(26005)(7696005)(316002)(54906003)(70206006)(70586007)(36756003);DIR:OUT;SFP:1101;
 X-OriginatorOrg: Nvidia.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 13 Oct 2022 18:40:33.3760
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 13 Oct 2022 18:40:46.8859
  (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: f45e2618-a5fa-4631-7afb-08daad4a697a
+X-MS-Exchange-CrossTenant-Network-Message-Id: f5492732-131d-41d9-da2f-08daad4a7193
 X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[216.228.118.233];Helo=[mail.nvidia.com]
-X-MS-Exchange-CrossTenant-AuthSource: 	DM6NAM11FT074.eop-nam11.prod.protection.outlook.com
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[216.228.118.232];Helo=[mail.nvidia.com]
+X-MS-Exchange-CrossTenant-AuthSource: 	BN8NAM11FT027.eop-nam11.prod.protection.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Anonymous
 X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR12MB4121
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN9PR12MB5147
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221013_114036_799493_37DAAF17 
-X-CRM114-Status: UNSURE (   7.09  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20221013_114051_339383_137B4AED 
+X-CRM114-Status: GOOD (  13.27  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -127,31 +127,72 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-When PCIe link goes down, hardware can retrain the link and try to link up.
-To enable this feature, program the APPL_CTRL register with hardware hot
-reset with immediate LTSSM enable mode.
+Only a Root port initiates the L2 sequence. PCIe link is kept in L2 state
+during suspend. If Endpoint mode is enabled and the link is up, the
+software cannot proceed with suspend. However, when the PCIe Endpoint
+driver is probed, but the PCIe link is not up, Tegra can go into suspend
+state. So, allow system to suspend in this case.
 
 Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
 ---
 V3:
 * This is a new patch in this series
 
- drivers/pci/controller/dwc/pcie-tegra194.c | 2 ++
- 1 file changed, 2 insertions(+)
+ drivers/pci/controller/dwc/pcie-tegra194.c | 20 ++++++++++++++++----
+ 1 file changed, 16 insertions(+), 4 deletions(-)
 
 diff --git a/drivers/pci/controller/dwc/pcie-tegra194.c b/drivers/pci/controller/dwc/pcie-tegra194.c
-index a1c3481585c9..78ee0f713e71 100644
+index 78ee0f713e71..e6fd713e9868 100644
 --- a/drivers/pci/controller/dwc/pcie-tegra194.c
 +++ b/drivers/pci/controller/dwc/pcie-tegra194.c
-@@ -1913,6 +1913,8 @@ static void pex_ep_event_pex_rst_deassert(struct tegra_pcie_dw *pcie)
- 	val = appl_readl(pcie, APPL_CTRL);
- 	val |= APPL_CTRL_SYS_PRE_DET_STATE;
- 	val |= APPL_CTRL_HW_HOT_RST_EN;
-+	val &= ~(APPL_CTRL_HW_HOT_RST_MODE_MASK << APPL_CTRL_HW_HOT_RST_MODE_SHIFT);
-+	val |= (APPL_CTRL_HW_HOT_RST_MODE_IMDT_RST_LTSSM_EN << APPL_CTRL_HW_HOT_RST_MODE_SHIFT);
- 	appl_writel(pcie, val, APPL_CTRL);
+@@ -2425,8 +2425,14 @@ static int tegra_pcie_dw_suspend_late(struct device *dev)
+ 	u32 val;
  
- 	val = appl_readl(pcie, APPL_CFG_MISC);
+ 	if (pcie->of_data->mode == DW_PCIE_EP_TYPE) {
+-		dev_err(dev, "Failed to Suspend as Tegra PCIe is in EP mode\n");
+-		return -EPERM;
++		disable_irq(pcie->pex_rst_irq);
++
++		if (pcie->ep_state == EP_STATE_ENABLED) {
++			dev_err(dev, "Tegra PCIe is in EP mode, suspend not allowed");
++			return -EPERM;
++		} else {
++			return 0;
++		}
+ 	}
+ 
+ 	if (!pcie->link_state && !pcie->slot_pluggable)
+@@ -2448,6 +2454,9 @@ static int tegra_pcie_dw_suspend_noirq(struct device *dev)
+ {
+ 	struct tegra_pcie_dw *pcie = dev_get_drvdata(dev);
+ 
++	if (pcie->of_data->mode == DW_PCIE_EP_TYPE)
++		return 0;
++
+ 	if (!pcie->link_state && !pcie->slot_pluggable)
+ 		return 0;
+ 
+@@ -2463,6 +2472,9 @@ static int tegra_pcie_dw_resume_noirq(struct device *dev)
+ 	struct tegra_pcie_dw *pcie = dev_get_drvdata(dev);
+ 	int ret;
+ 
++	if (pcie->of_data->mode == DW_PCIE_EP_TYPE)
++		return 0;
++
+ 	if (!pcie->link_state && !pcie->slot_pluggable)
+ 		return 0;
+ 
+@@ -2495,8 +2507,8 @@ static int tegra_pcie_dw_resume_early(struct device *dev)
+ 	u32 val;
+ 
+ 	if (pcie->of_data->mode == DW_PCIE_EP_TYPE) {
+-		dev_err(dev, "Suspend is not supported in EP mode");
+-		return -ENOTSUPP;
++		enable_irq(pcie->pex_rst_irq);
++		return 0;
+ 	}
+ 
+ 	if (!pcie->link_state && !pcie->slot_pluggable)
 -- 
 2.17.1
 
