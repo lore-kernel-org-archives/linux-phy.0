@@ -4,113 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7B5E4C433FE
-	for <linux-phy@archiver.kernel.org>; Thu, 13 Oct 2022 18:41:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EFE62C4332F
+	for <linux-phy@archiver.kernel.org>; Fri, 14 Oct 2022 02:56:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=49eBZPCa+pkso0hNOhx4BBGW5NLEsIu/qgvvVYQJIYU=; b=G7IqUzUC05laOt
-	Bgb2ILQ+H1+Lh/tFu68GVURwqRoZZ89s1CzpFZk8h1sqFXi23/JNmC82t9DqJb41+axbYZVQTALDV
-	4+e4N86O9YwdolMVOHxhIb4vsOZ+qiJHbLL5Ij2kgKaBKjyoqY1bIKD+PVjACoavNMw22AuqfJqFD
-	V8YB2+fOR+B1fe4AtjoNEYOXVFNxOs/11hhNkNteG4qvQJ+0+7vIatDYumrx9tJrzqDO1it12qpC0
-	aKr3EKt3UtWoIxuuPWcfXP99wUMR0gzFPfcs/555/g5ct95FRB4+9vTKxSEaJzHcvElxmduF+0dlt
-	U6MrJVj0nq5+GyYZVLkA==;
+	List-Owner; bh=2ytls2ewWyZo6SVTnZRl7AkYzxHkVNCxWe5El6NSvd4=; b=Kp7GJLD03QhFr3
+	Q9z+pXn0qrl+6PZimQhJfbXeBqntaPvfJhci4M40U+amwFakVk+d3uMLfZ8G8tFaxKL2oRU2TZYLu
+	x8sgd+0/ZxzuaRKMX5UUAyeduc1+WRCODaMTodSuLMwCopPdxU8qYKn45ilA3kB+b6BP/fvPjz4pp
+	FeFWmJuaLe/oEEuYS9+YgL85NDigrORf0xX9nJe2OlvZeuKrzO7NqsDSZ/Ule0dLdk5LGKgPPMsUv
+	M1UHfn3vm6P/gOzBt19+iYQC3qmvqRiLG5CL2EDQwpK9auROqUAWFZQWeIC2+TPGtiwS1PRRuFZ2k
+	s0XIWG/6GszaP5Uv1kBw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oj39E-00CjFl-Uz; Thu, 13 Oct 2022 18:41:36 +0000
-Received: from mail-dm6nam10on2069.outbound.protection.outlook.com ([40.107.93.69] helo=NAM10-DM6-obe.outbound.protection.outlook.com)
+	id 1ojAsG-00DShy-62; Fri, 14 Oct 2022 02:56:36 +0000
+Received: from sender4-op-o18.zoho.com ([136.143.188.18])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oj39B-00CjEx-Lp
-	for linux-phy@lists.infradead.org; Thu, 13 Oct 2022 18:41:35 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=hXo/hf00aGwwT/Xa2J55uu8vmH5Nq6h1LowPjjdIhg7bXC9MCMN0aaVpMXAFtNz79FoQ1TrhKTQYbW0oFbJ/q5LZeCRmhUwJkhsx5c6V4EUI9rAnkVKNlSWbsGB26z3nE14xCEdZqLIiSAS8IP0Btsdjk8YuhmX7HWzVqafdIgzy8XOQ0hmGYcbjrHd5l4XUJGb7YHX6tCvJpdzoLVOCiS+xTeOllnxoRpMd8jQC48PkKlnVWJfLEoPuaa6mKdWAVrQSl9fPEXFY/Q1KHb2rJSXSf2DEXcWgNxZFJYursLaulnvt5bEtdrTJ7IbNf/JhyRQsJe2iGzMZNS1guVOl3g==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=bPsdh/LeAVLGI//ZKIOszKcbprG+fe9y5UUxgVPd5tM=;
- b=mX3zoyULhJQ1QFRaJynwn8cVZ1AVI8t+4zqMxR8hfU4RayrIsKFtg7Ghvw7V5Q1q5xYHT4nUHJp02Tj2HHDa2qVo+RsAFWH7mDsIvvghSas5H9aKi1P5K5DBjvgvwIP188g/X+EtHlCC3NGB4XztnbCkVMiRfFbpQWIF9FZTeMvwPEZ9JSHC22ECn8mUtN18754AkIVwFAJepXFh0gOYUSREkiggVKq961SoAPgnvbagO4jE/O2E3O59wTfKNV8VbKCrZX4b5sg/q9fO0mwvCnX3j/PjiyNPeuP0+CXif6FBkLcYDPq5o6X8Crpt+udOURhsiz0vga39wxFQVNgHsA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 216.228.118.232) smtp.rcpttodomain=kernel.org smtp.mailfrom=nvidia.com;
- dmarc=pass (p=reject sp=reject pct=100) action=none header.from=nvidia.com;
- dkim=none (message not signed); arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=bPsdh/LeAVLGI//ZKIOszKcbprG+fe9y5UUxgVPd5tM=;
- b=g0xuRTQ9RLoHjvaOwNF1THH5rm7SpONu5qfteCLqMbHOtRwUU+KQD72tlPm9rn9Sy2ElloDXlofXMBYiQyYdybNfBx+FOEgGjJwjqB5snFngCXAxGkVXKQFLqTm2jJYI2HtP4hOKbv5vItLHylo9tkQvHgEtzgBpn3Uyuyutwawn6tlQtfB88pYpIRaukaSi7OwIishyeimiaTi+XGB4ozpv5hBOVjdqffp1wPoegmdI9pxfrHXQGhZblxMDVh0tJuaFKvA/v94uLbnsT4NiA9moOLyKNB6wsHzCvhEL+s3TGgGHdvfTPmmGfUrIXn8pZraLAF7wLsFLYKwWXOtTpg==
-Received: from MW4PR04CA0122.namprd04.prod.outlook.com (2603:10b6:303:84::7)
- by SA1PR12MB6776.namprd12.prod.outlook.com (2603:10b6:806:25b::14) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5709.15; Thu, 13 Oct
- 2022 18:41:30 +0000
-Received: from CO1NAM11FT058.eop-nam11.prod.protection.outlook.com
- (2603:10b6:303:84:cafe::4) by MW4PR04CA0122.outlook.office365.com
- (2603:10b6:303:84::7) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5723.26 via Frontend
- Transport; Thu, 13 Oct 2022 18:41:30 +0000
-X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 216.228.118.232)
- smtp.mailfrom=nvidia.com; dkim=none (message not signed)
- header.d=none;dmarc=pass action=none header.from=nvidia.com;
-Received-SPF: Pass (protection.outlook.com: domain of nvidia.com designates
- 216.228.118.232 as permitted sender) receiver=protection.outlook.com;
- client-ip=216.228.118.232; helo=mail.nvidia.com; pr=C
-Received: from mail.nvidia.com (216.228.118.232) by
- CO1NAM11FT058.mail.protection.outlook.com (10.13.174.164) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.5723.20 via Frontend Transport; Thu, 13 Oct 2022 18:41:29 +0000
-Received: from drhqmail201.nvidia.com (10.126.190.180) by mail.nvidia.com
- (10.127.129.5) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.986.26; Thu, 13 Oct
- 2022 11:41:22 -0700
-Received: from drhqmail203.nvidia.com (10.126.190.182) by
- drhqmail201.nvidia.com (10.126.190.180) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.986.29; Thu, 13 Oct 2022 11:41:22 -0700
-Received: from vidyas-desktop.nvidia.com (10.127.8.9) by mail.nvidia.com
- (10.126.190.182) with Microsoft SMTP Server id 15.2.986.29 via Frontend
- Transport; Thu, 13 Oct 2022 11:41:18 -0700
-From: Vidya Sagar <vidyas@nvidia.com>
-To: <lpieralisi@kernel.org>, <robh@kernel.org>, <kw@linux.com>,
-	<bhelgaas@google.com>, <thierry.reding@gmail.com>, <jonathanh@nvidia.com>,
-	<kishon@ti.com>, <vkoul@kernel.org>, <mani@kernel.org>,
-	<Sergey.Semin@baikalelectronics.ru>, <ffclaire1224@gmail.com>
-CC: <linux-pci@vger.kernel.org>, <linux-tegra@vger.kernel.org>,
-	<linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-	<kthota@nvidia.com>, <mmaddireddy@nvidia.com>, <vidyas@nvidia.com>,
-	<sagar.tv@gmail.com>
-Subject: [PATCH V3 21/21] PCI: tegra194: Add core monitor clock support
-Date: Fri, 14 Oct 2022 00:08:54 +0530
-Message-ID: <20221013183854.21087-22-vidyas@nvidia.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20221013183854.21087-1-vidyas@nvidia.com>
-References: <20221013183854.21087-1-vidyas@nvidia.com>
-X-NVConfidentiality: public
+	id 1ojAs5-00DShI-Nh; Fri, 14 Oct 2022 02:56:27 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1665716176; cv=none; 
+	d=zohomail.com; s=zohoarc; 
+	b=B4NBc5U0vzrb2IVhCmCpkKbCP4qH6kmHNgQSDj+NtSA5jy6VPbXqQlkeejCusg+9/wBJgR5EcHRDsUQIz6pxypvy52qRI/6ulmI1R2lmS/J1ZbTfW2ty8iBUBjDXIRJtBm3J05o6IQYIqLeRxKLF810fC8/Zo61/3MdlzEANXIU=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
+	t=1665716176; h=Content-Type:Content-Transfer-Encoding:Cc:Date:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:To; 
+	bh=Xch6Ahc6mpKh0o//bMOoqcUw4dYUZ7qun8hT0y/mZyM=; 
+	b=lhkNZN9QvOxPKHYEAuGj43TIiyLsQArkOSH8XbnoRMmkzMai5z1JlRYDeabWrq0jqw7+Zr8J454IiHdmIx20AG9MjcdsP6eYC6493ZgZV6umO8OWa21GIFf6Ckz111JoJVLYt5fyNA/lsPGmVU3EMpDUHqoeX3R/w/EkUmcK4HU=
+ARC-Authentication-Results: i=1; mx.zohomail.com;
+	dkim=pass  header.i=icenowy.me;
+	spf=pass  smtp.mailfrom=uwu@icenowy.me;
+	dmarc=pass header.from=<uwu@icenowy.me>
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1665716176;
+	s=zmail; d=icenowy.me; i=uwu@icenowy.me;
+	h=Message-ID:Subject:Subject:From:From:To:To:Cc:Cc:Date:Date:In-Reply-To:References:Content-Type:Content-Transfer-Encoding:MIME-Version:Message-Id:Reply-To;
+	bh=Xch6Ahc6mpKh0o//bMOoqcUw4dYUZ7qun8hT0y/mZyM=;
+	b=BtjTPZBXxvbVdpOh5ub/SM0ayFIbV8M1wxZx54XiFfx8hRU/8tD6FLJhpUrxjMVN
+	jbv1ebptl52p5/ndZF3nTB0YRCeGVfQ+nM+bwk1H+3YZe5aShg4rznGSNsd3dq/9J1y
+	0M7HZZQzzgvtjqiwEyW6IkMxed3z6SKH5OPSXxhU=
+Received: from edelgard.fodlan.icenowy.me (112.94.102.144 [112.94.102.144]) by mx.zohomail.com
+	with SMTPS id 1665716174157848.8917127364606; Thu, 13 Oct 2022 19:56:14 -0700 (PDT)
+Message-ID: <fc626a1eacee3ff9e25d4ef71ecb153c1fa836eb.camel@icenowy.me>
+Subject: Re: Re: [PATCH v2 04/10] phy: sun4i-usb: add support for the USB
+ PHY on F1C100s SoC
+From: Icenowy Zheng <uwu@icenowy.me>
+To: Jernej =?gb2312?Q?=810=947krabec?= <jernej.skrabec@gmail.com>, Rob
+ Herring <robh+dt@kernel.org>, Krzysztof Kozlowski
+ <krzysztof.kozlowski+dt@linaro.org>, Chen-Yu Tsai <wens@csie.org>, Samuel
+ Holland <samuel@sholland.org>, Greg Kroah-Hartman
+ <gregkh@linuxfoundation.org>, Andre Przywara <andre.przywara@arm.com>
+Cc: soc@kernel.org, linux-kernel@vger.kernel.org,
+ devicetree@vger.kernel.org,  linux-arm-kernel@lists.infradead.org,
+ linux-sunxi@lists.linux.dev,  linux-phy@lists.infradead.org,
+ linux-usb@vger.kernel.org
+Date: Fri, 14 Oct 2022 10:56:08 +0800
+In-Reply-To: <3442772.V25eIC5XRa@kista>
+References: <20221012055602.1544944-1-uwu@icenowy.me>
+	 <4218006.ejJDZkT8p0@kista>
+	 <439b685e3aada19021d94669f6f855f1fc81d08e.camel@icenowy.me>
+	 <3442772.V25eIC5XRa@kista>
+Organization: Anthon Open-Source Community
+User-Agent: Evolution 3.44.4 
 MIME-Version: 1.0
-X-EOPAttributedMessage: 0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: CO1NAM11FT058:EE_|SA1PR12MB6776:EE_
-X-MS-Office365-Filtering-Correlation-Id: ca3fdb91-1640-4f59-1c4a-08daad4a8b1b
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 	X7H12q9TTDpRb4e38+BfnstadUJsOlIFVL4lxFJfxR6X81Vg3WgW5shUErmGjEca8x5QEn5BIWcI0CDVKRy1RWiFDqQNqOsCc9058BnjWx8E6FWT6Xk1SOnfYs2fbE1bme7TDthMQqrfZvWXJBtJghJw+yOHCne4KHXDmeDotNo4QunFCAgvmJbtjGT3UH9858K4JmkvOCTRowTuDmJrzMOT/p/wap2CRJFhdcr9R+q/0IwgPnA8OqwK3drkRMOO8bKA0O7+uRkX+SVjxpjVcfvCftVlqwlkyW3h4Aez67KTsx18CrOTiJmbGM/wOBPmOy6TVWOK2GHExdi4FvCf9+ltc2cdeagfU3CF9B074cpDvXumIkANHdvTHwmIbDz6hdt8v4zqPRgTeSvrqBj1wmtDN82fIINT5OsMpTZ6s6/fcGfoWkzjIAmpMR/s3tgT7c9+PA++GXhwgaNA9S2UySOVSdWwuFTQnOb+u1kdJkBAsuSbgbjX7XJlF4EZSTHVc+Zc3NjCNhaaGeHLU3G3r0ghD+GLrQZS3X62fCxBOJzEKJCQERip4RhbVfXnN5iRxR4dpzKxzMil6KpOXXSoumRndfrUTJU9/VhvxsKx4p3XBf7TBq0YkUSj9p+B5761potcWf3N+ZGRPhXsrCfP7pzWwNYPHcEPoUba0Rafjazmex2KJfOETAQnY+l5Q7+XkYUPPoEYhEkUstzKEaXypme7E4dBa0IQLA0ezM6Ve2M8suyVKZ0S5sdgXon8XWJPicn9U+6e9S3+0UzAHxVtbOqS9FKS5GndqztmlQz11i8=
-X-Forefront-Antispam-Report: 	CIP:216.228.118.232;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc7edge1.nvidia.com;CAT:NONE;SFS:(13230022)(4636009)(136003)(396003)(346002)(39860400002)(376002)(451199015)(36840700001)(46966006)(40470700004)(36756003)(40480700001)(70586007)(110136005)(7696005)(41300700001)(7636003)(921005)(8676002)(26005)(70206006)(4326008)(478600001)(82740400003)(2616005)(47076005)(86362001)(356005)(40460700003)(7416002)(83380400001)(186003)(8936002)(1076003)(82310400005)(2906002)(426003)(336012)(36860700001)(6666004)(316002)(5660300002)(54906003);DIR:OUT;SFP:1101;
-X-OriginatorOrg: Nvidia.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 13 Oct 2022 18:41:29.8247
- (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: ca3fdb91-1640-4f59-1c4a-08daad4a8b1b
-X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[216.228.118.232];Helo=[mail.nvidia.com]
-X-MS-Exchange-CrossTenant-AuthSource: 	CO1NAM11FT058.eop-nam11.prod.protection.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Anonymous
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SA1PR12MB6776
+X-ZohoMailClient: External
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221013_114133_735002_FB2FE2B0 
-X-CRM114-Status: GOOD (  14.08  )
+X-CRM114-CacheID: sfid-20221013_195625_828788_EC0A3176 
+X-CRM114-Status: GOOD (  26.13  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -122,104 +81,61 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Tegra supports PCIe core clock monitoring for any rate changes that may be
-happening because of the link speed changes. This is useful in tracking
-any changes in the core clock that are not initiated by the software. This
-patch adds support to parse the monitor clock info from device-tree and
-enable it if present.
-
-Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
----
-V3:
-* This is a new patch in this series
-
- drivers/pci/controller/dwc/pcie-tegra194.c | 21 ++++++++++++++++++++-
- 1 file changed, 20 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/pci/controller/dwc/pcie-tegra194.c b/drivers/pci/controller/dwc/pcie-tegra194.c
-index c88c36d85ee5..28512dc60172 100644
---- a/drivers/pci/controller/dwc/pcie-tegra194.c
-+++ b/drivers/pci/controller/dwc/pcie-tegra194.c
-@@ -265,6 +265,7 @@ struct tegra_pcie_dw {
- 	struct resource *atu_dma_res;
- 	void __iomem *appl_base;
- 	struct clk *core_clk;
-+	struct clk *core_clk_m;
- 	struct reset_control *core_apb_rst;
- 	struct reset_control *core_rst;
- 	struct dw_pcie pci;
-@@ -978,6 +979,8 @@ static int tegra_pcie_dw_host_init(struct dw_pcie_rp *pp)
- 	}
- 
- 	clk_set_rate(pcie->core_clk, GEN4_CORE_CLK_FREQ);
-+	if (clk_prepare_enable(pcie->core_clk_m))
-+		dev_err(pci->dev, "Failed to enable core monitor clock\n");
- 
- 	return 0;
- }
-@@ -1050,6 +1053,12 @@ static int tegra_pcie_dw_start_link(struct dw_pcie *pci)
- 		val &= ~PCI_DLF_EXCHANGE_ENABLE;
- 		dw_pcie_writel_dbi(pci, offset + PCI_DLF_CAP, val);
- 
-+		/*
-+		 * core_clk_m is enabled as part of host_init callback in
-+		 * dw_pcie_host_init(). Disable the clock since below
-+		 * tegra_pcie_dw_host_init() will enable it again.
-+		 */
-+		clk_disable_unprepare(pcie->core_clk_m);
- 		tegra_pcie_dw_host_init(pp);
- 		dw_pcie_setup_rc(pp);
- 
-@@ -1059,7 +1068,8 @@ static int tegra_pcie_dw_start_link(struct dw_pcie *pci)
- 
- 	speed = dw_pcie_readw_dbi(pci, pcie->pcie_cap_base + PCI_EXP_LNKSTA) &
- 		PCI_EXP_LNKSTA_CLS;
--	clk_set_rate(pcie->core_clk, pcie_gen_freq[speed - 1]);
-+	if (!pcie->core_clk_m)
-+		clk_set_rate(pcie->core_clk, pcie_gen_freq[speed - 1]);
- 
- 	tegra_pcie_enable_interrupts(pp);
- 
-@@ -1687,6 +1697,7 @@ static void tegra_pcie_dw_pme_turnoff(struct tegra_pcie_dw *pcie)
- 
- static void tegra_pcie_deinit_controller(struct tegra_pcie_dw *pcie)
- {
-+	clk_disable_unprepare(pcie->core_clk_m);
- 	dw_pcie_host_deinit(&pcie->pci.pp);
- 	tegra_pcie_dw_pme_turnoff(pcie);
- 	tegra_pcie_unconfig_controller(pcie);
-@@ -2266,6 +2277,13 @@ static int tegra_pcie_dw_probe(struct platform_device *pdev)
- 		return PTR_ERR(pcie->core_clk);
- 	}
- 
-+	pcie->core_clk_m = devm_clk_get_optional(dev, "core_m");
-+	if (IS_ERR(pcie->core_clk_m)) {
-+		dev_err(dev, "Failed to get monitor clock: %ld\n",
-+			PTR_ERR(pcie->core_clk_m));
-+		return PTR_ERR(pcie->core_clk_m);
-+	}
-+
- 	pcie->appl_res = platform_get_resource_byname(pdev, IORESOURCE_MEM,
- 						      "appl");
- 	if (!pcie->appl_res) {
-@@ -2449,6 +2467,7 @@ static int tegra_pcie_dw_suspend_noirq(struct device *dev)
- 	if (!pcie->link_state && !pcie->slot_pluggable)
- 		return 0;
- 
-+	clk_disable_unprepare(pcie->core_clk_m);
- 	tegra_pcie_dw_pme_turnoff(pcie);
- 	tegra_pcie_unconfig_controller(pcie);
- 
--- 
-2.17.1
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+5ZyoIDIwMjItMTAtMTPmmJ/mnJ/lm5vnmoQgMjA6MjUgKzAyMDDvvIxKZXJuZWogxaBrcmFiZWPl
+hpnpgZPvvJoKPiBEbmUgxI1ldHJ0ZWssIDEzLiBva3RvYmVyIDIwMjIgb2IgMTA6NDk6NTEgQ0VT
+VCBqZSBJY2Vub3d5IFpoZW5nCj4gbmFwaXNhbChhKToKPiA+IOWcqCAyMDIyLTEwLTEy5pif5pyf
+5LiJ55qEIDIzOjIxICswMjAw77yMSmVybmVqIMWga3JhYmVj5YaZ6YGT77yaCj4gPiAKPiA+ID4g
+SGkgSWNlbm93eSwKPiA+ID4gCj4gPiA+IERuZSBzcmVkYSwgMTIuIG9rdG9iZXIgMjAyMiBvYiAw
+Nzo1NTo1NiBDRVNUIGplIEljZW5vd3kgWmhlbmcKPiA+ID4gCj4gPiA+IG5hcGlzYWwoYSk6Cj4g
+PiA+ID4gVGhlIEYxQzEwMHMgU29DIGhhcyBvbmUgVVNCIE9URyBwb3J0IGNvbm5lY3RlZCB0byBh
+IE1VU0IKPiA+ID4gPiBjb250cm9sbGVyLgo+ID4gPiA+IAo+ID4gPiA+IEFkZCBzdXBwb3J0IGZv
+ciBpdHMgVVNCIFBIWS4KPiA+ID4gPiAKPiA+ID4gPiBTaWduZWQtb2ZmLWJ5OiBJY2Vub3d5IFpo
+ZW5nIDx1d3VAaWNlbm93eS5tZT4KPiA+ID4gPiAtLS0KPiA+ID4gPiBObyBjaGFuZ2VzIHNpbmNl
+IHYxLgo+ID4gPiA+IAo+ID4gPiA+IMKgZHJpdmVycy9waHkvYWxsd2lubmVyL3BoeS1zdW40aS11
+c2IuYyB8IDExICsrKysrKysrKysrCj4gPiA+ID4gwqAxIGZpbGUgY2hhbmdlZCwgMTEgaW5zZXJ0
+aW9ucygrKQo+ID4gPiA+IAo+ID4gPiA+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3BoeS9hbGx3aW5u
+ZXIvcGh5LXN1bjRpLXVzYi5jCj4gPiA+ID4gYi9kcml2ZXJzL3BoeS9hbGx3aW5uZXIvcGh5LXN1
+bjRpLXVzYi5jIGluZGV4Cj4gPiA+ID4gM2EzODMxZjYwNTlhLi4yZjk0Y2I3NzYzN2IKPiA+ID4g
+PiAxMDA2NDQKPiA+ID4gPiAtLS0gYS9kcml2ZXJzL3BoeS9hbGx3aW5uZXIvcGh5LXN1bjRpLXVz
+Yi5jCj4gPiA+ID4gKysrIGIvZHJpdmVycy9waHkvYWxsd2lubmVyL3BoeS1zdW40aS11c2IuYwo+
+ID4gPiA+IEBAIC0xMDksNiArMTA5LDcgQEAgZW51bSBzdW40aV91c2JfcGh5X3R5cGUgewo+ID4g
+PiA+IMKgwqDCoMKgwqDCoMKgIHN1bjhpX3Yzc19waHksCj4gPiA+ID4gwqDCoMKgwqDCoMKgwqAg
+c3VuNTBpX2E2NF9waHksCj4gPiA+ID4gwqDCoMKgwqDCoMKgwqAgc3VuNTBpX2g2X3BoeSwKPiA+
+ID4gPiArwqDCoMKgwqDCoMKgIHN1bml2X2YxYzEwMHNfcGh5LAo+ID4gPiA+IMKgfTsKPiA+ID4g
+PiAKPiA+ID4gPiDCoHN0cnVjdCBzdW40aV91c2JfcGh5X2NmZyB7Cj4gPiA+ID4gQEAgLTg1OSw2
+ICs4NjAsMTQgQEAgc3RhdGljIGludCBzdW40aV91c2JfcGh5X3Byb2JlKHN0cnVjdAo+ID4gPiA+
+IHBsYXRmb3JtX2RldmljZQo+ID4gPiA+ICpwZGV2KSByZXR1cm4gMDsKPiA+ID4gPiDCoH0KPiA+
+ID4gPiAKPiA+ID4gPiArc3RhdGljIGNvbnN0IHN0cnVjdCBzdW40aV91c2JfcGh5X2NmZyBzdW5p
+dl9mMWMxMDBzX2NmZyA9IHsKPiA+ID4gPiArwqDCoMKgwqDCoMKgIC5udW1fcGh5cyA9IDEsCj4g
+PiA+ID4gK8KgwqDCoMKgwqDCoCAudHlwZSA9IHN1bml2X2YxYzEwMHNfcGh5LAo+ID4gPiAKPiA+
+ID4gSSB0aGluayB5b3Ugc2hvdWxkIGp1c3QgdXNlIHN1bjRpX2ExMF9waHkuIEl0IGhhcyBubyBz
+cGVjaWFsCj4gPiA+IGhhbmRsaW5nLiBJIGRvbid0Cj4gPiA+IHNlZSBhIHBvaW50IGFkZGluZyBu
+ZXcgcGh5IHR5cGVzIGlmIHRoZXJlIGlzIG5vIHNwZWNpYWwgY2FzZXMgZm9yCj4gPiA+IGl0Lgo+
+ID4gCj4gPiBTb3VuZHMgcmVhc29uYWJsZSwgYWx0aG91Z2ggSSB0aGluayB3ZSBzaG91bGQgZmlu
+YWxseSBkcm9wIC50eXBlCj4gPiBhbmQKPiA+IHVzZSBvbmx5IGRlc2NyaWJpbmcgaXRlbXMuCj4g
+Cj4gVGhhdCB3b3VsZCBiZSBldmVuIGJldHRlci4gV2lsbCB5b3UgZG8gaXQ/CgpBdCBsZWFzdCBu
+b3Qgbm93LgoKQnV0IEkgd2lsbCBhdCBsZWFzdCBkcm9wIHN1bml2X2YxYzEwMHNfcGh5IGluIHRo
+ZSBuZXh0IHJldmlzaW9uLgoKPiAKPiA+IAo+ID4gPiBCZXN0IHJlZ2FyZHMsCj4gPiA+IEplcm5l
+ago+ID4gPiAKPiA+ID4gPiArwqDCoMKgwqDCoMKgIC5kaXNjX3RocmVzaCA9IDMsCj4gPiA+ID4g
+K8KgwqDCoMKgwqDCoCAucGh5Y3RsX29mZnNldCA9IFJFR19QSFlDVExfQTEwLAo+ID4gPiA+ICvC
+oMKgwqDCoMKgwqAgLmRlZGljYXRlZF9jbG9ja3MgPSB0cnVlLAo+ID4gPiA+ICt9Owo+ID4gPiA+
+ICsKPiA+ID4gPiDCoHN0YXRpYyBjb25zdCBzdHJ1Y3Qgc3VuNGlfdXNiX3BoeV9jZmcgc3VuNGlf
+YTEwX2NmZyA9IHsKPiA+ID4gPiDCoMKgwqDCoMKgwqDCoCAubnVtX3BoeXMgPSAzLAo+ID4gPiA+
+IMKgwqDCoMKgwqDCoMKgIC50eXBlID0gc3VuNGlfYTEwX3BoeSwKPiA+ID4gPiBAQCAtOTg4LDYg
+Kzk5Nyw4IEBAIHN0YXRpYyBjb25zdCBzdHJ1Y3Qgb2ZfZGV2aWNlX2lkCj4gPiA+ID4gc3VuNGlf
+dXNiX3BoeV9vZl9tYXRjaFtdID0geyB7IC5jb21wYXRpYmxlID0KPiA+ID4gPiAiYWxsd2lubmVy
+LHN1bjUwaS1hNjQtdXNiLXBoeSIsCj4gPiA+ID4gwqDCoMKgwqDCoMKgwqDCoMKgIC5kYXRhID0g
+JnN1bjUwaV9hNjRfY2ZnfSwKPiA+ID4gPiDCoMKgwqDCoMKgwqDCoCB7IC5jb21wYXRpYmxlID0g
+ImFsbHdpbm5lcixzdW41MGktaDYtdXNiLXBoeSIsIC5kYXRhID0KPiA+ID4gCj4gPiA+ICZzdW41
+MGlfaDZfY2ZnIH0sCj4gPiA+IAo+ID4gPiA+ICvCoMKgwqDCoMKgwqAgeyAuY29tcGF0aWJsZSA9
+ICJhbGx3aW5uZXIsc3VuaXYtZjFjMTAwcy11c2ItcGh5IiwKPiA+ID4gPiArwqDCoMKgwqDCoMKg
+wqDCoCAuZGF0YSA9ICZzdW5pdl9mMWMxMDBzX2NmZyB9LAo+ID4gPiA+IMKgwqDCoMKgwqDCoMKg
+IHsgfSwKPiA+ID4gPiDCoH07Cj4gPiA+ID4gwqBNT0RVTEVfREVWSUNFX1RBQkxFKG9mLCBzdW40
+aV91c2JfcGh5X29mX21hdGNoKTsKPiA+ID4gPiAtLQo+ID4gPiA+IDIuMzcuMQo+IAo+IAoKCi0t
+IApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0
+dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
