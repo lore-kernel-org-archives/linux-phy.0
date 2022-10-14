@@ -4,67 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D0EC1C4332F
-	for <linux-phy@archiver.kernel.org>; Fri, 14 Oct 2022 16:31:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7A8D4C4332F
+	for <linux-phy@archiver.kernel.org>; Fri, 14 Oct 2022 16:31:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uwfvFQHKGa62eRjp70p24UFxkPrBUR+rMtBHPWoBJWg=; b=Gd2ghSM8Kbw9w3
-	6xsaYHenZwqxvyU1Hg6sBSNet+EL5udTewvE1d6bpVfSr67X6ERy4bD/2H7wXgcJ2v73mU6mF7sd+
-	KuybR0mJsAySimcCx49MYbmnn5zeSsd1gkSaHdxQf0IJqVmnn+jm4SAYnQUZI/PWIMCp2K28JTLHA
-	W8R3LFLm7eCVkZQyIXwltwdM7tu3LHfQXmkFitXCI4+meO1ZXSlH2PFykP0KSkqG2vpVlJBv5Yuc8
-	AwBBjrv9CZXsr9UoOXUm7pxzLzsdgji6OBDwSRdHFa9uLpFCBJR1F8Ad6GCvg0TUnJjgDcQXSgxUw
-	ARh6z96NOdZ94/zVCSeg==;
+	List-Owner; bh=y2RDWl4po+K1vBNkNFmUkzejlIwOlMAoe7ZEenP8/HM=; b=0TEeVExXsr/HDP
+	nYEjcyJZfVQXtVV85vcLIPKly7klGbYu4/6CaaPUWIlkzxaiu40egh5AhgVeyvvTaKKgqtkh0zpfd
+	/SPAkByWeKYqfm+3MZwaiFSZmhS0w5dCq1mVI/raaZnI+PNUi6+x8NB3IYKYnLo0GNAcHKsZhPNsd
+	DhzLVE9cARDT/5YAiyKeNl05e/xvBWg31Lohp6ilqlVVX2MrwbjhIRyzXVh70e0Nnws7T7fNEn/KH
+	KpekifkfsiqjeDzntYVx763WQZlN2PErBxED3R2Y8XuEXYsm5/ikw9rFLPrzcIiDKjqwpR3ze43Q3
+	C2NFtCumrqNWn0yrAVwQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ojNaR-00FLlm-8K; Fri, 14 Oct 2022 16:31:03 +0000
-Received: from mail-wm1-x336.google.com ([2a00:1450:4864:20::336])
+	id 1ojNac-00FLqj-LD; Fri, 14 Oct 2022 16:31:14 +0000
+Received: from mail-wm1-x32e.google.com ([2a00:1450:4864:20::32e])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ojMTq-00F9eI-0N
-	for linux-phy@lists.infradead.org; Fri, 14 Oct 2022 15:20:12 +0000
-Received: by mail-wm1-x336.google.com with SMTP id c7-20020a05600c0ac700b003c6cad86f38so5589922wmr.2
-        for <linux-phy@lists.infradead.org>; Fri, 14 Oct 2022 08:20:08 -0700 (PDT)
+	id 1ojMTs-00F9gl-AD
+	for linux-phy@lists.infradead.org; Fri, 14 Oct 2022 15:20:15 +0000
+Received: by mail-wm1-x32e.google.com with SMTP id c7-20020a05600c0ac700b003c6cad86f38so5590065wmr.2
+        for <linux-phy@lists.infradead.org>; Fri, 14 Oct 2022 08:20:12 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=baylibre-com.20210112.gappssmtp.com; s=20210112;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=WD3SWI1ZQbB56NbLV6ErcIYLgxudB79QnGxHT/OO1/A=;
-        b=xvuyHsGSe72rLdUihhIBroS2wQfyS10y9SL3x7bwkMz7yNpMbKWFfQk4EJbX/Zo372
-         PwscucOiJJKImb6RHp2IR7put5ZYBb8UBgWTLnZ4JnhUxaO5x/c0uvLkidJ+dPGP+TPm
-         iaDvm1ZRslxLAS8nhDnYVmkYjvIjuvrkZPzZXqn4K8bWCGldqzeMX0SNR+uEL06+sPvE
-         Q8vIN7a9fiz+fqqONarnApyHicElt5yUzQMXVOtF0ydXRndURCyICzKHciuwELNEDhWE
-         l1/+Fsza7f6d+lB92wDKYxEkL4DbyK/62lJf1Z1GtjJW6HF5KCWym+cyOHtkmzmw9Ib9
-         BrSg==
+        bh=DSYD3hSXr5dSGBwwFhgmPY+Jg1epD5ze6gJ/T99kUGE=;
+        b=ekqWtXslf7At5Ea6OpJQLQVV7s78wmP9onNaVuxJ3jjwJzCyCK1WVwQ5H4sxdVKRDF
+         caFQ8kO3SYuJvxYea71BwUF6uYy8GYsWwLo/6mmQOWj2L+bsRz6k9mhvbPecYjOEA9Xg
+         Pq9zQD6J76O9oX1Pw2ataew4ZUnj8esopyd/vDEVfN0jR1eEoSo9fKGXw3kECjRy/Faj
+         k2oauWgT+j/8aus8zy2SCIULtrOHyTyhPjcrciYPHvwcEwKRfqlgETLUxd4WL1b9Ekba
+         J0lfgNFDLRqr7AEYqmLYEKfMn2uQBjD8b9kRQZY2umPihAuN1/jyhfN3HlR7sbyBNePz
+         KDJA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=WD3SWI1ZQbB56NbLV6ErcIYLgxudB79QnGxHT/OO1/A=;
-        b=DtC/44puMZPSpNsoG+s7ZfOilBaBsmV9u6QBOFTwoDSdI6dJ/etxW2AylYCzktzjvi
-         z7sMDKMrmrZhumNgvYhkixeKmxhHxS0RtPDo6liYp4mmRP1XeoYWuQoI/yXlcsq3iQEG
-         H+mUfB7CRnWgitfu+PNGdPqlfAc4XnM7wXLGImW/YbjqnwMP6aJY1VuHWY0p5Mxt9Nj+
-         ocUISNN6Uc6JuJn9SouZSShRVGaUf3q5tuVaNWXxKP704pcdVDmDjo/MZUeRbDwM7onP
-         XBT5Dp1ZQz9LJ33V0UEN8+V8Lja8ZWW0mD30vrTV/4dFUJdE9EL4oB4iJY2910ndz3Qk
-         9htQ==
-X-Gm-Message-State: ACrzQf1qvphzeNYkRw89DoZwaGFqsvLhfajDCeRQk8pDj85b+CkWFaPe
-	N5RnZjkTTzc5JzxIT0InCLLnrQ==
-X-Google-Smtp-Source: AMsMyM7f1Cxdv0i/Y3UH5OsNKg6jf7wGcVPESpSUScbeO0dlFszQv0PQ/gafOm4z2H3jH5fpfnYUnw==
-X-Received: by 2002:a05:600c:3d8e:b0:3c6:e58d:354f with SMTP id bi14-20020a05600c3d8e00b003c6e58d354fmr3131064wmb.176.1665760807236;
-        Fri, 14 Oct 2022 08:20:07 -0700 (PDT)
+        bh=DSYD3hSXr5dSGBwwFhgmPY+Jg1epD5ze6gJ/T99kUGE=;
+        b=J7/F+6d/FBwPeIe9h4e3hQGmY0vkoS39wILqqb3OVlHaN9jlJq5ODQM/W99cNAG+7S
+         O7hjpq2bpjEdI91pGEpTO/Ej9lM8RHlrL03Rw1Ukw5pnHfoiCE2uoJlYBwv/VrHL1t6V
+         +OPsRu5P8e8Z+sOdCZCJ21W3jhZOdmCl8orLZl2tQAeZNVfIGrYTlm3BusoeCh2j8KWw
+         JsV4ZB7cL/6cUglsPI/N4fV9B7EDpgi3qiJBMRcYW9yQN3/uKsX/iTXuEDS1LsjBr5Xm
+         iGmXEYX+LI6UCWdhyPClOQCD2El9q3UpN3w7gn3lQZHA0UlfFuNB74jX4Ir3isYpw2mu
+         H5QA==
+X-Gm-Message-State: ACrzQf01Bj5sCPVPFdPDCH38J4YJxlKs/U9IXjRQqgl7DVTbijCK4utr
+	MBnCzNvkkhIGSZOTmx0Izg47xg==
+X-Google-Smtp-Source: AMsMyM5XuHi7AW9wwUe6mQ82tH2bVQm0eF90ywEnv+rb0RPIPcUHbvH6OzD+beMuhBr2PVbLwyrZWw==
+X-Received: by 2002:a05:600c:4e01:b0:3c6:eba6:75a3 with SMTP id b1-20020a05600c4e0100b003c6eba675a3mr1574023wmq.4.1665760811060;
+        Fri, 14 Oct 2022 08:20:11 -0700 (PDT)
 Received: from [127.0.0.1] (2a02-8440-6241-7429-3074-96af-9642-0004.rev.sfr.net. [2a02:8440:6241:7429:3074:96af:9642:4])
-        by smtp.gmail.com with ESMTPSA id z11-20020a05600c0a0b00b003c6bd91caa5sm2818223wmp.17.2022.10.14.08.20.05
+        by smtp.gmail.com with ESMTPSA id z11-20020a05600c0a0b00b003c6bd91caa5sm2818223wmp.17.2022.10.14.08.20.09
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 14 Oct 2022 08:20:06 -0700 (PDT)
+        Fri, 14 Oct 2022 08:20:10 -0700 (PDT)
 From: Guillaume Ranquet <granquet@baylibre.com>
-Date: Fri, 14 Oct 2022 17:15:56 +0200
-Subject: [PATCH v2 03/12] drm/mediatek: hdmi: use a regmap instead of iomem
+Date: Fri, 14 Oct 2022 17:15:58 +0200
+Subject: [PATCH v2 05/12] drm/mediatek: hdmi: make the cec dev optional
 MIME-Version: 1.0
-Message-Id: <20220919-v2-3-8419dcf4f09d@baylibre.com>
+Message-Id: <20220919-v2-5-8419dcf4f09d@baylibre.com>
 References: <20220919-v2-0-8419dcf4f09d@baylibre.com>
 In-Reply-To: <20220919-v2-0-8419dcf4f09d@baylibre.com>
 To: Chunfeng Yun <chunfeng.yun@mediatek.com>, David Airlie <airlied@gmail.com>, Philipp Zabel <p.zabel@pengutronix.de>,
@@ -79,8 +79,8 @@ Cc: Guillaume Ranquet <granquet@baylibre.com>, stuart.lee@mediatek.com, linux-ph
  dri-devel@lists.freedesktop.org
 X-Mailer: b4 0.11.0-dev
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221014_082010_060559_BC630DB2 
-X-CRM114-Status: GOOD (  12.23  )
+X-CRM114-CacheID: sfid-20221014_082012_418128_45482192 
+X-CRM114-Status: GOOD (  17.73  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,141 +97,146 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-To prepare support for newer chips that need to share their address
-range with a dedicated ddc driver, use a regmap.
+Make cec device optional in order to support newer versions of the
+hdmi IP which doesn't require it
 
 Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
 ---
- drivers/gpu/drm/mediatek/mtk_hdmi.c | 43 +++++++++++--------------------------
- 1 file changed, 13 insertions(+), 30 deletions(-)
+ drivers/gpu/drm/mediatek/mtk_hdmi.c        |  8 +++--
+ drivers/gpu/drm/mediatek/mtk_hdmi_common.c | 54 ++++++++++++++++++++----------
+ drivers/gpu/drm/mediatek/mtk_hdmi_common.h |  1 +
+ 3 files changed, 42 insertions(+), 21 deletions(-)
 
 diff --git a/drivers/gpu/drm/mediatek/mtk_hdmi.c b/drivers/gpu/drm/mediatek/mtk_hdmi.c
-index 4c80b6896dc3..9b02b30a193a 100644
+index 73bda2849196..85c6ebca36dd 100644
 --- a/drivers/gpu/drm/mediatek/mtk_hdmi.c
 +++ b/drivers/gpu/drm/mediatek/mtk_hdmi.c
-@@ -171,7 +171,7 @@ struct mtk_hdmi {
- 	u32 ibias_up;
- 	struct regmap *sys_regmap;
- 	unsigned int sys_offset;
--	void __iomem *regs;
-+	struct regmap *regs;
- 	enum hdmi_colorspace csp;
- 	struct hdmi_audio_param aud_param;
- 	bool audio_enable;
-@@ -187,44 +187,29 @@ static inline struct mtk_hdmi *hdmi_ctx_from_bridge(struct drm_bridge *b)
- 	return container_of(b, struct mtk_hdmi, bridge);
+@@ -927,10 +927,11 @@ void mtk_hdmi_clk_disable_audio_mt8183(struct mtk_hdmi *hdmi)
+ static enum drm_connector_status
+ mtk_hdmi_update_plugged_status(struct mtk_hdmi *hdmi)
+ {
+-	bool connected;
++	bool connected = true;
+ 
+ 	mutex_lock(&hdmi->update_plugged_status_lock);
+-	connected = mtk_cec_hpd_high(hdmi->cec_dev);
++	if (hdmi->cec_dev)
++		connected = mtk_cec_hpd_high(hdmi->cec_dev);
+ 	if (hdmi->plugged_cb && hdmi->codec_dev)
+ 		hdmi->plugged_cb(hdmi->codec_dev, connected);
+ 	mutex_unlock(&hdmi->update_plugged_status_lock);
+@@ -1025,7 +1026,8 @@ static int mtk_hdmi_bridge_attach(struct drm_bridge *bridge,
+ 			return ret;
+ 	}
+ 
+-	mtk_cec_set_hpd_event(hdmi->cec_dev, mtk_hdmi_hpd_event, hdmi->dev);
++	if (hdmi->cec_dev)
++		mtk_cec_set_hpd_event(hdmi->cec_dev, mtk_hdmi_hpd_event, hdmi->dev);
+ 
+ 	return 0;
+ }
+diff --git a/drivers/gpu/drm/mediatek/mtk_hdmi_common.c b/drivers/gpu/drm/mediatek/mtk_hdmi_common.c
+index 3f08d37b1af0..3635ca66817b 100644
+--- a/drivers/gpu/drm/mediatek/mtk_hdmi_common.c
++++ b/drivers/gpu/drm/mediatek/mtk_hdmi_common.c
+@@ -137,28 +137,18 @@ void mtk_hdmi_send_infoframe(struct mtk_hdmi *hdmi, u8 *buffer_spd, size_t bufsz
+ 	mtk_hdmi_setup_spd_infoframe(hdmi, buffer_spd, bufsz_spd, "mediatek", "On-chip HDMI");
  }
  
--static u32 mtk_hdmi_read(struct mtk_hdmi *hdmi, u32 offset)
-+static int mtk_hdmi_read(struct mtk_hdmi *hdmi, u32 offset, u32 *val)
+-int mtk_hdmi_dt_parse_pdata(struct mtk_hdmi *hdmi, struct platform_device *pdev,
+-			    const char *const *clk_names, size_t num_clocks)
++static int mtk_hdmi_get_cec_dev(struct mtk_hdmi *hdmi, struct device *dev, struct device_node *np)
  {
--	return readl(hdmi->regs + offset);
-+	return regmap_read(hdmi->regs, offset, val);
- }
- 
- static void mtk_hdmi_write(struct mtk_hdmi *hdmi, u32 offset, u32 val)
- {
--	writel(val, hdmi->regs + offset);
-+	regmap_write(hdmi->regs, offset, val);
- }
- 
- static void mtk_hdmi_clear_bits(struct mtk_hdmi *hdmi, u32 offset, u32 bits)
- {
--	void __iomem *reg = hdmi->regs + offset;
--	u32 tmp;
--
--	tmp = readl(reg);
--	tmp &= ~bits;
--	writel(tmp, reg);
-+	regmap_clear_bits(hdmi->regs, offset, bits);
- }
- 
- static void mtk_hdmi_set_bits(struct mtk_hdmi *hdmi, u32 offset, u32 bits)
- {
--	void __iomem *reg = hdmi->regs + offset;
--	u32 tmp;
--
--	tmp = readl(reg);
--	tmp |= bits;
--	writel(tmp, reg);
-+	regmap_set_bits(hdmi->regs, offset, bits);
- }
- 
- static void mtk_hdmi_mask(struct mtk_hdmi *hdmi, u32 offset, u32 val, u32 mask)
- {
--	void __iomem *reg = hdmi->regs + offset;
--	u32 tmp;
--
--	tmp = readl(reg);
--	tmp = (tmp & ~mask) | (val & mask);
--	writel(tmp, reg);
-+	regmap_update_bits(hdmi->regs, offset, mask, val);
- }
- 
- static void mtk_hdmi_hw_vid_black(struct mtk_hdmi *hdmi, bool black)
-@@ -473,7 +458,7 @@ static void mtk_hdmi_hw_aud_set_i2s_fmt(struct mtk_hdmi *hdmi,
- {
- 	u32 val;
- 
--	val = mtk_hdmi_read(hdmi, GRL_CFG0);
-+	mtk_hdmi_read(hdmi, GRL_CFG0, &val);
- 	val &= ~(CFG0_W_LENGTH_MASK | CFG0_I2S_MODE_MASK);
- 
- 	switch (i2s_fmt) {
-@@ -565,7 +550,7 @@ static void mtk_hdmi_hw_aud_set_input_type(struct mtk_hdmi *hdmi,
- {
- 	u32 val;
- 
--	val = mtk_hdmi_read(hdmi, GRL_CFG1);
-+	mtk_hdmi_read(hdmi, GRL_CFG1, &val);
- 	if (input_type == HDMI_AUD_INPUT_I2S &&
- 	    (val & CFG1_SPDIF) == CFG1_SPDIF) {
- 		val &= ~CFG1_SPDIF;
-@@ -596,7 +581,7 @@ static void mtk_hdmi_hw_aud_src_reenable(struct mtk_hdmi *hdmi)
- {
- 	u32 val;
- 
--	val = mtk_hdmi_read(hdmi, GRL_MIX_CTRL);
-+	mtk_hdmi_read(hdmi, GRL_MIX_CTRL, &val);
- 	if (val & MIX_CTRL_SRC_EN) {
- 		val &= ~MIX_CTRL_SRC_EN;
- 		mtk_hdmi_write(hdmi, GRL_MIX_CTRL, val);
-@@ -610,7 +595,7 @@ static void mtk_hdmi_hw_aud_src_disable(struct mtk_hdmi *hdmi)
- {
- 	u32 val;
- 
--	val = mtk_hdmi_read(hdmi, GRL_MIX_CTRL);
-+	mtk_hdmi_read(hdmi, GRL_MIX_CTRL, &val);
- 	val &= ~MIX_CTRL_SRC_EN;
- 	mtk_hdmi_write(hdmi, GRL_MIX_CTRL, val);
- 	mtk_hdmi_write(hdmi, GRL_SHIFT_L1, 0x00);
-@@ -621,7 +606,7 @@ static void mtk_hdmi_hw_aud_set_mclk(struct mtk_hdmi *hdmi,
- {
- 	u32 val;
- 
--	val = mtk_hdmi_read(hdmi, GRL_CFG5);
-+	mtk_hdmi_read(hdmi, GRL_CFG5, &val);
- 	val &= CFG5_CD_RATIO_MASK;
- 
- 	switch (mclk) {
-@@ -1427,7 +1412,6 @@ static int mtk_hdmi_dt_parse_pdata(struct mtk_hdmi *hdmi,
- 	struct device_node *cec_np, *remote, *i2c_np;
+-	struct device *dev = &pdev->dev;
+-	struct device_node *np = dev->of_node;
+-	struct device_node *cec_np, *remote, *i2c_np;
++	int ret;
++	struct device_node *cec_np;
  	struct platform_device *cec_pdev;
  	struct regmap *regmap;
 -	struct resource *mem;
- 	int ret;
+-	int ret;
+-
+-	ret = mtk_hdmi_get_all_clk(hdmi, np, clk_names, num_clocks);
+-	if (ret) {
+-		dev_err(dev, "Failed to get all clks\n");
+-		return ret;
+-	}
  
- 	ret = mtk_hdmi_get_all_clk(hdmi, np);
-@@ -1473,8 +1457,7 @@ static int mtk_hdmi_dt_parse_pdata(struct mtk_hdmi *hdmi,
+ 	/* The CEC module handles HDMI hotplug detection */
+ 	cec_np = of_get_compatible_child(np->parent, "mediatek,mt8173-cec");
+ 	if (!cec_np) {
+ 		dev_err(dev, "Failed to find CEC node\n");
+-		return -EINVAL;
++		return -ENOTSUPP;
  	}
- 	hdmi->sys_regmap = regmap;
  
--	mem = platform_get_resource(pdev, IORESOURCE_MEM, 0);
--	hdmi->regs = devm_ioremap_resource(dev, mem);
-+	hdmi->regs = device_node_to_regmap(dev->of_node);
- 	if (IS_ERR(hdmi->regs)) {
- 		ret = PTR_ERR(hdmi->regs);
- 		goto put_device;
+ 	cec_pdev = of_find_device_by_node(cec_np);
+@@ -168,7 +158,6 @@ int mtk_hdmi_dt_parse_pdata(struct mtk_hdmi *hdmi, struct platform_device *pdev,
+ 		return -EPROBE_DEFER;
+ 	}
+ 	of_node_put(cec_np);
+-	hdmi->cec_dev = &cec_pdev->dev;
+ 	/*
+ 	 * The mediatek,syscon-hdmi property contains a phandle link to the
+ 	 * MMSYS_CONFIG device and the register offset of the HDMI_SYS_CFG
+@@ -177,12 +166,41 @@ int mtk_hdmi_dt_parse_pdata(struct mtk_hdmi *hdmi, struct platform_device *pdev,
+ 	regmap = syscon_regmap_lookup_by_phandle(np, "mediatek,syscon-hdmi");
+ 	ret = of_property_read_u32_index(np, "mediatek,syscon-hdmi", 1, &hdmi->sys_offset);
+ 	if (IS_ERR(regmap))
+-		ret = PTR_ERR(regmap);
++		return PTR_ERR(regmap);
+ 	if (ret) {
+-		dev_err(dev, "Failed to get system configuration registers: %d\n", ret);
+-		goto put_device;
++		dev_err(dev,
++				"Failed to get system configuration registers: %d\n", ret);
++		return ret;
+ 	}
++
+ 	hdmi->sys_regmap = regmap;
++	hdmi->cec_dev = &cec_pdev->dev;
++
++	return 0;
++}
++
++int mtk_hdmi_dt_parse_pdata(struct mtk_hdmi *hdmi, struct platform_device *pdev,
++			    const char *const *clk_names, size_t num_clocks)
++{
++	struct device *dev = &pdev->dev;
++	struct device_node *np = dev->of_node;
++	struct device_node *remote, *i2c_np;
++	struct resource *mem;
++	int ret;
++
++	ret = mtk_hdmi_get_all_clk(hdmi, np, clk_names, num_clocks);
++	if (ret) {
++		dev_err(dev, "Failed to get all clks\n");
++		return ret;
++	}
++
++	ret = mtk_hdmi_get_cec_dev(hdmi, dev, np);
++	if (ret) {
++		if (ret == -ENOTSUPP)
++			dev_info(dev, "No CEC node found, continuing without");
++		else
++			goto put_device;
++	}
+ 
+ 	mem = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+ 	if (!mem) {
+diff --git a/drivers/gpu/drm/mediatek/mtk_hdmi_common.h b/drivers/gpu/drm/mediatek/mtk_hdmi_common.h
+index 7452bea91f9e..921bde150e11 100644
+--- a/drivers/gpu/drm/mediatek/mtk_hdmi_common.h
++++ b/drivers/gpu/drm/mediatek/mtk_hdmi_common.h
+@@ -31,6 +31,7 @@
+ struct mtk_hdmi_conf {
+ 	bool tz_disabled;
+ 	bool cea_modes_only;
++	bool has_cec;
+ 	unsigned long max_mode_clock;
+ 	const struct drm_bridge_funcs *bridge_funcs;
+ 	void (*mtk_hdmi_output_init)(struct mtk_hdmi *hdmi);
 
 -- 
 b4 0.11.0-dev
