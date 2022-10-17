@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F03A1C38A2D
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C5707C41535
 	for <linux-phy@archiver.kernel.org>; Mon, 17 Oct 2022 14:54:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,39 +12,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QispYlrQ2KxRUl1wL7OTA6yb7ckQG/msJCUAL6w/nb4=; b=YJHwLOaNEBpRkz
-	Aku3BVeHccs0B0tKgJbVOexz7YHPduGDlmxhUX7oajbmpaqfGbNhCaE8yAxWPbu3awqC0QInZ0bYk
-	EKFod/hH1heLMpZrsJpBXbd7oaR9zxzFhzKKjX+MIo6pV7oJeqdoFeNJJOQIAU6cANn6IM3gjQK4j
-	YF5nUk81dr2x21dvs8AMYWNPt8FxeLbgOA+uxra/8WifuznuGkiXUJIVRxcg/X77DJIZwW6wzLRTm
-	Mx9K4mVPCygE7OhULJBFKjU4bYQ3qjJcrhlwRHow+iND7WG/8IQ6w0QWpcGoYjZPf4f7GecgHONJL
-	Dxa/t3GvusCsrbgmIWRQ==;
+	List-Owner; bh=+aOGA07Kch4GSwDOPs13tKity/kYgyMtY5rFgU95Z2I=; b=orkgcNqVqDlz4k
+	syKYOUUnazW16z76DdVgDUaUMTDnJzxrz7OBTh4BFMDB2D919m1mCaehBSgc48Lfp1+jw9d3WCDwY
+	BawhRLW1q8RwKkuLW04KvuAaT5dDKt/QMpV15XTCmKdosuyO9VBfP/ef9QwgOaFWFtpSoiCNe/9hG
+	nuexs5b9/v0IghUz4MrHAYfL8sxO8AutYsXWVNh5qTjbiX20GSn3wGCAzoFB4nqvERPbzf3vjOJ6U
+	t42EMUmflBrv2rtEw1N6prXFEmxHT9FQesz9SxeapSNvpdeE5Vlva8liodShobnC7QXaj+9E/aoYF
+	bvRmwb3GgilxOyC/oaLw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1okRVw-00D018-4c; Mon, 17 Oct 2022 14:54:48 +0000
-Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
+	id 1okRVw-00D00q-1f; Mon, 17 Oct 2022 14:54:48 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1okRVq-00CzsZ-Ca
+	id 1okRVq-00CztP-3J
 	for linux-phy@lists.infradead.org; Mon, 17 Oct 2022 14:54:45 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id 0C1CAB81906;
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 52E60611D9;
 	Mon, 17 Oct 2022 14:54:41 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id AE985C433D7;
-	Mon, 17 Oct 2022 14:54:38 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 12F91C4FF14;
+	Mon, 17 Oct 2022 14:54:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1666018478;
-	bh=uUpAhLHLLsqhHmSEEexr+AOFrWCWnZ7FhJh+GvHGDVQ=;
+	s=k20201202; t=1666018479;
+	bh=b6g3IRC2VLW8pGIqTKc6QbcYPDAMiTd4VIfKnkmOhF4=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=gf1e18cZXHTce/M3WMeNgU+RwOGYuaCnaFB0iQEQzAN4OLpl2sLosVi6B6ZilL+Sw
-	 3MFwzxOE/cLi3b1FlAWwDu1dPcosBoG+IJeqKXXzsSaa96YemRbD00dKA21DHLIE+s
-	 5zSJYACB3AOw025et8AjhS/zFQ+yO7DfLrPyWE+T/sA5Y//lUkpmXCN1zwqXyorzX7
-	 L7qJ9Y+TLpLW0iRquiyk5cxJfnQIySzgBtlOqC+XyowftjRQdxVfUtt5ZzJbqv9tkN
-	 k/HudRjG2zoH78Dndi1iZKvWiJNHfiM7IB/SWtZisYFZuRzvtd28sJt+DaoT/8H8+B
-	 rzWGG2zAYzP/g==
+	b=HsYjrlBYKvKthcfMQ67HXz4YWIbGrayzNQLCavxUdKyrI8tTAqRhYzow0SJdnQU+t
+	 J8gUyMZqCkG4XGjIj73LPuZ0BHW5JwE/0xT1ICdzYDUtR5lnSGzh7TvzoZntU43tp7
+	 vecdn1g+i1+JpIolVQ+N3QWjrU/aiq5M8rp9/LmzevP1+NlwyrKMJN0W3B3A8w1e3w
+	 dIo/dq2cpsDH/f+Zse+LrOv+7JsGg+ErF17RFOIEdV4Rs65vWAaVTCNqaOnBOTeyii
+	 AQQ7LZwN90+5yezf21s4n1MNUoXbrCVL/Kg9Cfu2bLnZcsaXlRDLt7Y87uVagpUKQb
+	 iBKZoNMH/g/CQ==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1okRVd-0005mD-26; Mon, 17 Oct 2022 16:54:29 +0200
+	id 1okRVd-0005mK-8D; Mon, 17 Oct 2022 16:54:29 +0200
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>
 Cc: Andy Gross <agross@kernel.org>,
@@ -58,16 +58,16 @@ Cc: Andy Gross <agross@kernel.org>,
 	devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH 07/15] phy: qcom-qmp-pcie: clean up PHY lane init
-Date: Mon, 17 Oct 2022 16:53:20 +0200
-Message-Id: <20221017145328.22090-8-johan+linaro@kernel.org>
+Subject: [PATCH 09/15] dt-bindings: phy: qcom,qmp-pcie: mark current bindings as legacy
+Date: Mon, 17 Oct 2022 16:53:22 +0200
+Message-Id: <20221017145328.22090-10-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.37.3
 In-Reply-To: <20221017145328.22090-1-johan+linaro@kernel.org>
 References: <20221017145328.22090-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221017_075442_593801_B0835F91 
-X-CRM114-Status: GOOD (  12.07  )
+X-CRM114-CacheID: sfid-20221017_075442_284227_C7D5E3BA 
+X-CRM114-Status: GOOD (  12.32  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,45 +84,53 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Clean up the PHY lane initialisation somewhat by adding further
-temporary variables and programming both tx and rx for the second lane
-after the first lane.
+The current QMP PCIe PHY bindings are based on the original MSM8996
+binding which provided multiple PHYs per IP block and these in turn were
+described by child nodes.
+
+Later QMP PCIe PHY blocks only provide a single PHY and the remnant
+child node does not really reflect the hardware.
+
+The original MSM8996 binding also ended up describing the individual
+register blocks as belonging to either the wrapper node or the PHY child
+nodes.
+
+This is an unnecessary level of detail which has lead to problems when
+later IP blocks using different register layouts have been forced to fit
+the original mould rather than updating the binding. The bindings are
+arguable also incomplete as they only the describe register blocks used
+by the current Linux drivers (e.g. does not include the per lane PCS
+registers).
+
+In preparation for adding new bindings for SC8280XP which further
+bindings can be based on, mark the current bindings as "legacy".
 
 Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 13 +++++++------
- 1 file changed, 7 insertions(+), 6 deletions(-)
+ .../{qcom,qmp-pcie-phy.yaml => qcom,qmp-pcie-phy-legacy.yaml} | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+ rename Documentation/devicetree/bindings/phy/{qcom,qmp-pcie-phy.yaml => qcom,qmp-pcie-phy-legacy.yaml} (98%)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-index bd946438e3c3..dd7e72424fc0 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-@@ -1835,18 +1835,19 @@ static void qmp_pcie_lanes_init(struct qmp_pcie *qmp, const struct qmp_phy_cfg_t
- 	const struct qmp_phy_cfg *cfg = qmp->cfg;
- 	void __iomem *tx = qmp->tx;
- 	void __iomem *rx = qmp->rx;
-+	void __iomem *tx2 = qmp->tx2;
-+	void __iomem *rx2 = qmp->rx2;
+diff --git a/Documentation/devicetree/bindings/phy/qcom,qmp-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,qmp-pcie-phy-legacy.yaml
+similarity index 98%
+rename from Documentation/devicetree/bindings/phy/qcom,qmp-pcie-phy.yaml
+rename to Documentation/devicetree/bindings/phy/qcom,qmp-pcie-phy-legacy.yaml
+index 324ad7d03a38..2ea880f8c099 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,qmp-pcie-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,qmp-pcie-phy-legacy.yaml
+@@ -1,10 +1,10 @@
+ # SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+ %YAML 1.2
+ ---
+-$id: http://devicetree.org/schemas/phy/qcom,qmp-pcie-phy.yaml#
++$id: http://devicetree.org/schemas/phy/qcom,qmp-pcie-phy-legacy.yaml#
+ $schema: http://devicetree.org/meta-schemas/core.yaml#
  
- 	if (!tables)
- 		return;
+-title: Qualcomm QMP PHY controller (PCIe)
++title: Qualcomm QMP PHY controller (PCIe legacy bindings)
  
- 	qmp_pcie_configure_lane(tx, tables->tx, tables->tx_num, 1);
--
--	if (cfg->lanes >= 2)
--		qmp_pcie_configure_lane(qmp->tx2, tables->tx, tables->tx_num, 2);
--
- 	qmp_pcie_configure_lane(rx, tables->rx, tables->rx_num, 1);
--	if (cfg->lanes >= 2)
--		qmp_pcie_configure_lane(qmp->rx2, tables->rx, tables->rx_num, 2);
-+
-+	if (cfg->lanes >= 2) {
-+		qmp_pcie_configure_lane(tx2, tables->tx, tables->tx_num, 2);
-+		qmp_pcie_configure_lane(rx2, tables->rx, tables->rx_num, 2);
-+	}
- }
- 
- static void qmp_pcie_pcs_init(struct qmp_pcie *qmp, const struct qmp_phy_cfg_tables *tables)
+ maintainers:
+   - Vinod Koul <vkoul@kernel.org>
 -- 
 2.37.3
 
