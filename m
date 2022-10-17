@@ -4,81 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7AEF0C4332F
-	for <linux-phy@archiver.kernel.org>; Sun, 16 Oct 2022 15:04:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4E6DBC433FE
+	for <linux-phy@archiver.kernel.org>; Mon, 17 Oct 2022 05:14:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NIvrzFVhJPPJq6ZEfam+TYPAK5GD/QXClbHrGy3F3qQ=; b=0hKgIm6sw/pJxA
-	H/dnaEk4G+kPMut8giepiXBYiokk/pyG/Ra2guKwnNdxOw3EeFowRBymfdcTSJQbzciqCrfusB1Y6
-	daM/RQWXXQH+h6WhTgXbntRjePfoU0l1uwJfaUaOrro6ktpWWXEjbWtJ8XxUbtcwkmh6+HDWK5wCJ
-	8yQ6tFhxMnaFVxHd8uRdnkQagXZL9Z1ZRhilPFDIfC9mw86OWSfOd1EiLKbDZ/ewreAgO13WJ99yU
-	hxPXTQIecXJkjYAn5EMHmNwpfGWeqrecSY1TypuCWLaG9e28c9m5zKaYg/GitWzzanZgN412O+CCQ
-	JwunlLJ4KXqP8cSq7Idg==;
+	List-Owner; bh=GLVf77uUDY8+MBGTjS4nYq7FMIZyQ4Ni1szVqE3GBMo=; b=e5YTUxVkUQ9xas
+	iQ0L7Fjpy5/xK/VrN5tw6aiZ4UCb5LU/T2T+DPyltC/xhjQD4D+d/y5W33Kgy6unqh586pWlwiGAO
+	RZEvNk5qa/9Oa+H2Ll3aA/xvXVp4zqM1nfrMwaGD5nEQGkejaZgbkdXiQV+C3fi2ZqcJ/FPKEZ73m
+	ZemQUSQR+CP1wkIgOmdDTTUH5rC9bT0mq8QZ43f69vE6M9QEataNSmZ0wEV614Dm8rQZnrr3+lGbt
+	AKZBYOF1RkT69biZG3ec+nNyssJXitXXLKWcp1gug9+9eB4s2072z6XJGNmLlQUBynsZzZp5KnfrF
+	SJ45Lj737NDrJnUj8l6Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ok5Bk-001tNn-Hp; Sun, 16 Oct 2022 15:04:28 +0000
-Received: from mail-qk1-x72b.google.com ([2607:f8b0:4864:20::72b])
+	id 1okISH-007NN8-Nd; Mon, 17 Oct 2022 05:14:25 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ok5Bh-001tMj-W1
-	for linux-phy@lists.infradead.org; Sun, 16 Oct 2022 15:04:27 +0000
-Received: by mail-qk1-x72b.google.com with SMTP id t25so5348224qkm.2
-        for <linux-phy@lists.infradead.org>; Sun, 16 Oct 2022 08:04:23 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=Fi70MGjSm9HkG/D1Y3M3ujYZ+UrZWCkBwt/32HJ7IXY=;
-        b=QIhhwBKZFq4fKIN1iEVInLMJ2WyXHfa1dMR39rqUuSExvwqRyXg6qbnY7aFnIPR7Ov
-         8jVpnfIuIANcwg9coiHCuhBqVqQiblvFxzLPCwAWdFsxqLTePRRvZ6FKuQeWjOCyKwBh
-         4D0KNFpfjLVL4NHm93Se2zeV6zA1IYHTEG9fXCEfPGB4erUpFrQAtjIowE5/5cKMF1aa
-         G74FrwI+fFs1BLIyOJPXyJKyHchohsRTmQ7IAIVEI9v760+2I4uKNt2GZXyKieGWyH19
-         b/DdCjo42yR+hDBAE5TS3e49CJZtOvQDdstE5ry2716Wo7LHt+Dpb8E7uagSGkw6QK04
-         itUw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=Fi70MGjSm9HkG/D1Y3M3ujYZ+UrZWCkBwt/32HJ7IXY=;
-        b=7mjzHRi0iIGw2DV9SY7Oebg0v02i4oEEVTycxToo/WcU8sACxZ49B573MAlo4tf1el
-         BfLF4a1CEK3XYkDSOTFDa5iBFrRIKYmFVtS2G0d/LkzkFuTWzVSbkBIK+R4CQgTcJVnE
-         qTuTGmlk4iJBIw0xhOpcBIb8Y7kFHxzKkucYD8cVU2zNuu75GoalhxZ4iGqVR+8Y0Cbv
-         g4QzNb9+F0gVUg5OTu2Q0fS9rJ2XRFgk3pXnyk4sIT3EB7nVh6OLYU17SJ39eHuSoKYR
-         uQ+CNMvm7S1rpPXSLIf8EsHgUPCu95J1ih5fA19206IHYCQBNbJ/gkfBsV+3L/q4sN+4
-         sztw==
-X-Gm-Message-State: ACrzQf1uzJDAI+zlnn3BExHkHf4LcuLhE9tqYqdfWkTgplInIepaeOVw
-	EAGZ4oP8rs9YUjTTP7Jxb8rKhA==
-X-Google-Smtp-Source: AMsMyM4b3Dd/FBVDNX+cMLBWiboLSdQHY41EG1+QT6MgFHT5ygsaVddMCxlnAswOrCiev1fRqn8FBA==
-X-Received: by 2002:a05:620a:bd4:b0:6cf:468e:e092 with SMTP id s20-20020a05620a0bd400b006cf468ee092mr4781145qki.583.1665932662312;
-        Sun, 16 Oct 2022 08:04:22 -0700 (PDT)
-Received: from ?IPV6:2601:42:0:3450:9b13:d679:7b5b:6921? ([2601:42:0:3450:9b13:d679:7b5b:6921])
-        by smtp.gmail.com with ESMTPSA id e14-20020ac8670e000000b0039a275607c3sm5908496qtp.55.2022.10.16.08.04.20
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sun, 16 Oct 2022 08:04:21 -0700 (PDT)
-Message-ID: <73c4c8b3-69ef-9679-84b9-1782162bf097@linaro.org>
-Date: Sun, 16 Oct 2022 11:04:20 -0400
+	id 1okIS6-007NKf-I5; Mon, 17 Oct 2022 05:14:15 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 91C7160DF2;
+	Mon, 17 Oct 2022 05:14:08 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id F411EC433C1;
+	Mon, 17 Oct 2022 05:14:06 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1665983648;
+	bh=CvDPdY6BUqMC/ABP5UUSw2rawQa77XBKRxF8x1A0uEI=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=a13SnGLbSkTnOHsyGECGNvQZ/G+mOGRjTXK6moIXVTQt8MgJZ+SdHKOn8XpVjIsuN
+	 ytWILzgsYKN08Z2LPfNs/Ar0fLuNxLSCJTD721GFU++Hl6XbaSqnolfr3Ftylf/jE0
+	 eNSJkavpxhuK2j6XbzAnmzBoOnhickL0LyYHLIy+Y+4/AndmaNnDIA7iN+tNvQMgtY
+	 stt3Br/L6GLXc0M5I5DcLqoh9msUifJ2tTuFN6pI5QiP7NhazWqm8kVI1oOJStcd2W
+	 fhc9MIWoIYa3afmE+nt3OvzB3BOdXF6WkkX0IKxMPiLzVAZSjbH4LQZFn5GNcT6a7t
+	 yoPJwMMpjHF5A==
+Date: Mon, 17 Oct 2022 10:44:03 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Rob Herring <robh@kernel.org>
+Cc: Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Thierry Reding <thierry.reding@gmail.com>,
+	Jonathan Hunter <jonathanh@nvidia.com>,
+	David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
+	Lars-Peter Clausen <lars@metafoo.de>,
+	Michael Hennerich <Michael.Hennerich@analog.com>,
+	Cosmin Tanislav <cosmin.tanislav@analog.com>,
+	Jonathan Cameron <jic23@kernel.org>,
+	"David S. Miller" <davem@davemloft.net>,
+	Eric Dumazet <edumazet@google.com>,
+	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
+	Shawn Guo <shawnguo@kernel.org>,
+	Sascha Hauer <s.hauer@pengutronix.de>,
+	Pengutronix Kernel Team <kernel@pengutronix.de>,
+	Fabio Estevam <festevam@gmail.com>,
+	NXP Linux Team <linux-imx@nxp.com>,
+	Nandhini Srikandan <nandhini.srikandan@intel.com>,
+	Rashmi A <rashmi.a@intel.com>,
+	Kishon Vijay Abraham I <kishon@ti.com>,
+	Sumit Gupta <sumitg@nvidia.com>,
+	Mikko Perttunen <mperttunen@nvidia.com>,
+	Nicolas Ferre <nicolas.ferre@microchip.com>,
+	Claudiu Beznea <claudiu.beznea@microchip.com>,
+	Joakim Zhang <qiangqing.zhang@nxp.com>, devicetree@vger.kernel.org,
+	linux-tegra@vger.kernel.org, linux-kernel@vger.kernel.org,
+	dri-devel@lists.freedesktop.org, linux-iio@vger.kernel.org,
+	netdev@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-phy@lists.infradead.org
+Subject: Re: [PATCH] dt-bindings: Remove "status" from schema examples, again
+Message-ID: <Y0zkmww1B974VhdO@matsya>
+References: <20221014205104.2822159-1-robh@kernel.org>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.3.2
-Subject: Re: [PATCH 1/2] dt-bindings: phy-j721e-wiz: add j784s4 compatible
- string
-Content-Language: en-US
-To: Matt Ranostay <mranostay@ti.com>, vkoul@kernel.org, robh+dt@kernel.org,
- krzysztof.kozlowski+dt@linaro.org, vigneshr@ti.com
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org
-References: <20221015201123.195477-1-mranostay@ti.com>
- <20221015201123.195477-2-mranostay@ti.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20221015201123.195477-2-mranostay@ti.com>
+Content-Disposition: inline
+In-Reply-To: <20221014205104.2822159-1-robh@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221016_080426_056749_0619B85E 
-X-CRM114-Status: UNSURE (   5.70  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20221016_221414_656204_91644B74 
+X-CRM114-Status: GOOD (  10.32  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,18 +97,20 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 15/10/2022 16:11, Matt Ranostay wrote:
-> Add ti,j784s4-wiz-10g compatible string to binding documentation.
+On 14-10-22, 15:51, Rob Herring wrote:
+> There's no reason to have "status" properties in examples. "okay" is the
+> default, and "disabled" turns off some schema checks ('required'
+> specifically).
 > 
-> Signed-off-by: Matt Ranostay <mranostay@ti.com>
-> ---
+> A meta-schema check for this is pending, so hopefully the last time to
+> fix these.
+> 
+> Fix the indentation in intel,phy-thunderbay-emmc while we're here.
 
+Acked-By: Vinod Koul <vkoul@kernel.org>
 
-Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-
-Best regards,
-Krzysztof
-
+-- 
+~Vinod
 
 -- 
 linux-phy mailing list
