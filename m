@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 53556C04A95
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 84EF1C352AA
 	for <linux-phy@archiver.kernel.org>; Mon, 17 Oct 2022 06:50:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,39 +12,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ybKL1lduUufwBJZS6BsuTro8vVNb11QdG5KUWSOGx78=; b=k+PAoEiddb+a6N
-	krxl2RGWEfNYarVbUIZ8W5EMMUIR/N4m45h7iz0t4SB6pjmhsjl/Ioxh73L1nlgx65YKcmykOpir2
-	u0zsXB5NEAMyUeA2MbSsJSyd/2XXdl2Lk7u46a0T2CacSs1t8XtunBWZt2sBeU3CqWfGmBvOLXP9m
-	hRaP8CP9jd1Av+wFCiAGh+wRvnqlQAX05UMtMaiyLAawqCk4bxiTTnXgE+OiiswZy2Kc2X3TiG3kf
-	lkhERZw8uVTgTTh9EWj0EekxsfJVQbDOfGxLgj8zRHUmFWY+LflP9XmLzT9fVvqDEqRyuazynf2zh
-	6ZLC/AT9mzOabHn1AoAQ==;
+	List-Owner; bh=QlpkIWCHVxaLM6cBJJHf83puSR3Y3N1Fwsf9tR5W6po=; b=hiziGXMwPOvwSS
+	dayM8VD+/18fMl4vYdSdECoQBO9kEVKtnwfwEgcuO3lgFKNS/N9ZfKZ3uR/PwKdmx1noAl+1dkHYu
+	BSI3jkdG8aro47D9I/MeLbbb8aCe+1d2yMh0n3z2+5hcELUIp3MANPOe8Tq9jNufpWNKTzsLF8Gzj
+	42SfPF/zmmk6+pimcA6MC2suOQU2Ryme3ZhHNwUfCnnPbG7pEPCDuOvtLu1joZWsmPzk+R5ktgIfM
+	0Vdj8RkbtputT4J7jEsDuiVXmxDhXOHk2yBwmMi8QVXV4oPM++9I39OQKQu+BlnPU+2QrwPFvJsQE
+	R09kY3uJ6ZBkoJN3Yu6A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1okJxX-00893H-MS; Mon, 17 Oct 2022 06:50:47 +0000
+	id 1okJxX-00893X-RD; Mon, 17 Oct 2022 06:50:47 +0000
 Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1okJxT-0088tl-6o
-	for linux-phy@lists.infradead.org; Mon, 17 Oct 2022 06:50:45 +0000
+	id 1okJxT-0088uN-8n
+	for linux-phy@lists.infradead.org; Mon, 17 Oct 2022 06:50:46 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 225D060F42;
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 4EE8260F4D;
 	Mon, 17 Oct 2022 06:50:42 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C65ECC433D6;
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id CAE62C43141;
 	Mon, 17 Oct 2022 06:50:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1665989440;
-	bh=1Ml4o6hzM/UjNafMnyQHCmRaP1JMAefAeOIQOOWCom8=;
+	bh=g1jmdm0unlBZmP5l4AoYhCIkJtzDq7YAxgLUFKF22RM=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=q+f6/BM7hPLGuxVQFzGXwAyOlPr/Mwcm4buGzbTg10H5LYWaDrD3RNH6MgJy33l1M
-	 UGPSHRJSYaJjDMNANjwbUnQYQ3qVtp9utGoipDLos27ODSOaeOu4IQ9ROEdRVE7tl3
-	 cVLufbVNzc3thEw84jRrgT5YIP20VdhDzh6/+8XL4M4Qirx2zzgB0TFWFCJAKXBJMs
-	 dPzijk+ZQQr8TV9r5lE4zx+MplbmfWip77y1OBLDvzbQf/4EG463IbQjrvp0GAaThd
-	 E6YHG8bkJP1J/qLqSH6TOWPli9vFJ4wX+YvtFFBADFFA0OtqO/oHYR2e1TXBScYqIs
-	 P82r0XZJHvnkA==
+	b=CK3DaE7tTE6RbNwiMYR/ibuVR13cCZ1AAGHRPMtipbMEzNPprWr/X/3PNXKEztwkY
+	 W3N16UoMbcXwBQM83Mj2o6Ii0bJZCarJvTIV4SvhON0HNlnNAdKywz5O9I12BnDQtu
+	 nzZzEUdekYaRgz7j8SLp4FDL9mWjCv+iTHoQzzMu8DkYY/8tlMerx8s7jmhRopSKz/
+	 2EZ/KOgjxD+gBW3on68xdQrWyef2SUYDDOqGOvB+BNbOR4FUTI4adkHZlok8jgud4x
+	 IwE5QgEXpsxtMJ917umy8BP3fG97sc/cua+meNPd6fEFROnXMNNNn4h/b7G9jJw9PS
+	 u2RVa52kYQebQ==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1okJxG-00057Z-Cu; Mon, 17 Oct 2022 08:50:30 +0200
+	id 1okJxG-00057c-Fm; Mon, 17 Oct 2022 08:50:30 +0200
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>
 Cc: Andy Gross <agross@kernel.org>,
@@ -54,18 +54,17 @@ Cc: Andy Gross <agross@kernel.org>,
 	linux-arm-msm@vger.kernel.org,
 	linux-phy@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
-	Johan Hovold <johan+linaro@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>
-Subject: [PATCH v3 03/11] phy: qcom-qmp-pcie: drop unused common-block registers
-Date: Mon, 17 Oct 2022 08:50:05 +0200
-Message-Id: <20221017065013.19647-4-johan+linaro@kernel.org>
+	Johan Hovold <johan+linaro@kernel.org>
+Subject: [PATCH v3 04/11] phy: qcom-qmp-pcie: clean up power-down handling
+Date: Mon, 17 Oct 2022 08:50:06 +0200
+Message-Id: <20221017065013.19647-5-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.37.3
 In-Reply-To: <20221017065013.19647-1-johan+linaro@kernel.org>
 References: <20221017065013.19647-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221016_235043_350713_A30AA940 
-X-CRM114-Status: GOOD (  10.51  )
+X-CRM114-CacheID: sfid-20221016_235043_476202_39187F6D 
+X-CRM114-Status: GOOD (  12.14  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,43 +81,73 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Drop the common-block register defines that are unused since the QMP
-driver split.
+Always define the POWER_DOWN_CONTROL register instead of falling back to
+the v2 offset during power on and power off.
 
-Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
 Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 9 ---------
- 1 file changed, 9 deletions(-)
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 21 +++++++--------------
+ 1 file changed, 7 insertions(+), 14 deletions(-)
 
 diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-index e0408c423ac6..bdbd18b89a8c 100644
+index bdbd18b89a8c..1105d439828c 100644
 --- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
 +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-@@ -78,11 +78,6 @@ struct qmp_phy_init_tbl {
- 
- /* set of registers with offsets different per-PHY */
- enum qphy_reg_layout {
--	/* Common block control registers */
--	QPHY_COM_SW_RESET,
--	QPHY_COM_POWER_DOWN_CONTROL,
--	QPHY_COM_START_CONTROL,
--	QPHY_COM_PCS_READY_STATUS,
- 	/* PCS registers */
- 	QPHY_SW_RESET,
- 	QPHY_START_CTRL,
-@@ -100,10 +95,6 @@ static const unsigned int ipq_pciephy_gen3_regs_layout[QPHY_LAYOUT_SIZE] = {
- };
- 
- static const unsigned int pciephy_regs_layout[QPHY_LAYOUT_SIZE] = {
--	[QPHY_COM_SW_RESET]		= 0x400,
--	[QPHY_COM_POWER_DOWN_CONTROL]	= 0x404,
--	[QPHY_COM_START_CONTROL]	= 0x408,
--	[QPHY_COM_PCS_READY_STATUS]	= 0x448,
+@@ -98,18 +98,21 @@ static const unsigned int pciephy_regs_layout[QPHY_LAYOUT_SIZE] = {
  	[QPHY_SW_RESET]			= 0x00,
  	[QPHY_START_CTRL]		= 0x08,
  	[QPHY_PCS_STATUS]		= 0x174,
++	[QPHY_PCS_POWER_DOWN_CONTROL]	= 0x04,
+ };
+ 
+ static const unsigned int sdm845_qmp_pciephy_regs_layout[QPHY_LAYOUT_SIZE] = {
+ 	[QPHY_SW_RESET]			= 0x00,
+ 	[QPHY_START_CTRL]		= 0x08,
+ 	[QPHY_PCS_STATUS]		= 0x174,
++	[QPHY_PCS_POWER_DOWN_CONTROL]	= 0x04,
+ };
+ 
+ static const unsigned int sdm845_qhp_pciephy_regs_layout[QPHY_LAYOUT_SIZE] = {
+ 	[QPHY_SW_RESET]			= 0x00,
+ 	[QPHY_START_CTRL]		= 0x08,
+ 	[QPHY_PCS_STATUS]		= 0x2ac,
++	[QPHY_PCS_POWER_DOWN_CONTROL]	= 0x04,
+ };
+ 
+ static const unsigned int sm8250_pcie_regs_layout[QPHY_LAYOUT_SIZE] = {
+@@ -1999,13 +2002,8 @@ static int qmp_pcie_init(struct phy *phy)
+ 	if (ret)
+ 		goto err_assert_reset;
+ 
+-	if (cfg->regs[QPHY_PCS_POWER_DOWN_CONTROL])
+-		qphy_setbits(pcs,
+-				cfg->regs[QPHY_PCS_POWER_DOWN_CONTROL],
+-				cfg->pwrdn_ctrl);
+-	else
+-		qphy_setbits(pcs, QPHY_V2_PCS_POWER_DOWN_CONTROL,
+-				cfg->pwrdn_ctrl);
++	qphy_setbits(pcs, cfg->regs[QPHY_PCS_POWER_DOWN_CONTROL],
++			cfg->pwrdn_ctrl);
+ 
+ 	return 0;
+ 
+@@ -2112,13 +2110,8 @@ static int qmp_pcie_power_off(struct phy *phy)
+ 	qphy_clrbits(qphy->pcs, cfg->regs[QPHY_START_CTRL], cfg->start_ctrl);
+ 
+ 	/* Put PHY into POWER DOWN state: active low */
+-	if (cfg->regs[QPHY_PCS_POWER_DOWN_CONTROL]) {
+-		qphy_clrbits(qphy->pcs, cfg->regs[QPHY_PCS_POWER_DOWN_CONTROL],
+-			     cfg->pwrdn_ctrl);
+-	} else {
+-		qphy_clrbits(qphy->pcs, QPHY_V2_PCS_POWER_DOWN_CONTROL,
+-				cfg->pwrdn_ctrl);
+-	}
++	qphy_clrbits(qphy->pcs, cfg->regs[QPHY_PCS_POWER_DOWN_CONTROL],
++			cfg->pwrdn_ctrl);
+ 
+ 	return 0;
+ }
 -- 
 2.37.3
 
