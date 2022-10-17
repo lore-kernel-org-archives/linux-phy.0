@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A773CC4167E
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6ECF8C4332F
 	for <linux-phy@archiver.kernel.org>; Mon, 17 Oct 2022 14:54:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,39 +12,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oVCmNJT+bMNEHz2ow+jrQqMRlXix04N29DuvZg3nrOc=; b=iRGJ2VMWfPIf/D
-	ZeFxCMwOWarYQTA5ABiVYRIKZLw2Vjg6cla+06f/mq9C6UtlnYus4kZ6eHdV9kpbeBh2otmdUlb15
-	uT5qfMuIRgVTOW8u1F/3S/izQuCHO883DdMT+5HFBg4E4rJH6NFt68b1luAwYjN47wQxGTl2TEqs0
-	GDcnpJTD0FQvBUwbEl02hL5HH9ZAmuegu6aOW1PIs8HwPytm+ZYbM057xaqILDm9Fb2gSe4M/4XOb
-	Xf8rA9eG9bQlggrV/zMqBfAjRDAH5B3PBmd0kmHUZvejIN3lzxOuzUM9netzGUdWIKKlMXheBYlXg
-	EfhH/oxhKrFuDWzFhBJg==;
+	List-Owner; bh=Qs2lSNutDFzcI7u9xJ8ixwv61eitgasxSUz9b7xLz1Q=; b=k2vF0hyhV4cRut
+	GZuvS6QJwPrTBnnG9DxSSyHtUopWy5/JSwwTLKmtHFF0M8NFzSzDwKJoh68AX4BhTIO2hFXi8HcXE
+	W4VTa1+7p23F6shdbPQbLGY/zUCN0CrrLz1M/dGcz6CfAdGlI8j9FJW+hWTRZLF1U9Tnse5sBQXTv
+	rZd7am4/1Zw6Wr93oNoHlk72Zm6oSy6cpxxbBgLttztiSiHRH0YhRFlBfoAbMzcFEDsvsPDk6/dcK
+	zG6+1H49NtGoTg327xxATokDSTnSh/3LLUPlvrGCgqEeDac7FM4El2Sa4EQ6W/cekX0sNNgDZ36Bx
+	pb5UFG83nUiatFBwT6SQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1okRVv-00D00P-UY; Mon, 17 Oct 2022 14:54:47 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1okRVv-00D00A-Qw; Mon, 17 Oct 2022 14:54:47 +0000
+Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1okRVr-00Czun-8I
-	for linux-phy@lists.infradead.org; Mon, 17 Oct 2022 14:54:45 +0000
+	id 1okRVp-00Czs7-OJ
+	for linux-phy@lists.infradead.org; Mon, 17 Oct 2022 14:54:44 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 728B8611CE;
-	Mon, 17 Oct 2022 14:54:41 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 19F10C4FF15;
-	Mon, 17 Oct 2022 14:54:39 +0000 (UTC)
+	by ams.source.kernel.org (Postfix) with ESMTPS id 5DF9AB81903;
+	Mon, 17 Oct 2022 14:54:40 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A05F5C433B5;
+	Mon, 17 Oct 2022 14:54:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1666018479;
-	bh=zIA+ml8wbUJ1pYtOiAw0rtWwlGesij42jZ74b5odlbA=;
+	s=k20201202; t=1666018478;
+	bh=PkjNR+pEzmOYfE2IfEfjNtpDBUAoZAWCYslxLltfZwY=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=m1fqAVB4HQfkmNYpScXt6Ppg3atb5I/79VRYDcdqH63Lsl7aL3NTLhvf0LD9nGIdm
-	 8d8zVzRxxo+39f2LqXdFJWN4RhhUoGr9uB0YpV795LwYYMFWQa1wwVZuxAnZs27Dmd
-	 tFQLZZ8StlDISMCxZZDGB44IirNOmkPeAL/7BrUc/qIpWEk+praY+Ih9k3uWxqD7iI
-	 ndrPPbzwcH4dMxgb73zqUlH4lpmv6dr5BtjE5sE54HWZMsLYEDuYwhvD7EV1taLJ6P
-	 nb03Vb9xwIY5kvx0dh9FbncoFyINbD9uDBRn9HJBlGvlT7Z5bdsJ6owk+TJ2+VJefX
-	 NdVmJ8MebVaFA==
+	b=gbpUfkDhdPnLEM+AVHTs1VWszP4cg4+cb2JQOO4bVXSYKKzlZqkAl133/5Wswei4l
+	 hdNC/nPErDGMOvTTfSnRocdS4r3fighVkvcah/gsq8FcRW+86fHiwq5Prk3GHzdgJE
+	 ixUpF4qRWFkPqUkAZHwJNa5uF7bIuKh2Uev/3pr/MwY8onmh6ib17u3I0H2Qab/759
+	 88WgZqXQ+31fyITyhZYuxTaNRvP2lwz4rz/Q01xX60pqSkqmM6BIup8skcirEER6GH
+	 g6cQP1kxLTMbjQ6SCQghbBS9vL1aOZ8lSNlnIdR0G7O9QTSProWp9TooYr9MTxhoZK
+	 +3Pf2Go+RutWg==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1okRVd-0005mT-GC; Mon, 17 Oct 2022 16:54:29 +0200
+	id 1okRVc-0005mA-VT; Mon, 17 Oct 2022 16:54:29 +0200
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>
 Cc: Andy Gross <agross@kernel.org>,
@@ -58,16 +58,16 @@ Cc: Andy Gross <agross@kernel.org>,
 	devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH 12/15] phy: qcom-qmp-pcie: fix initialisation reset
-Date: Mon, 17 Oct 2022 16:53:25 +0200
-Message-Id: <20221017145328.22090-13-johan+linaro@kernel.org>
+Subject: [PATCH 06/15] phy: qcom-qmp-pcie: rename PHY ops structure
+Date: Mon, 17 Oct 2022 16:53:19 +0200
+Message-Id: <20221017145328.22090-7-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.37.3
 In-Reply-To: <20221017145328.22090-1-johan+linaro@kernel.org>
 References: <20221017145328.22090-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221017_075443_390584_1214A82C 
-X-CRM114-Status: GOOD (  12.57  )
+X-CRM114-CacheID: sfid-20221017_075441_982628_78ED9635 
+X-CRM114-Status: GOOD (  12.10  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,32 +84,55 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add the missing delay after asserting reset. This is specifically needed
-for the reset to have any effect on SC8280XP.
-
-The vendor driver uses a 1 ms delay, but that seems a bit excessive.
-Instead use a 200 us delay which appears to be more than enough and also
-matches the UFS reset delay added by commit 870b1279c7a0 ("scsi:
-ufs-qcom: Add reset control support for host controller").
+Rename the PHY operation structure so that it has a "phy_ops" suffix and
+move it next to the implementation.
 
 Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 2 ++
- 1 file changed, 2 insertions(+)
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 16 ++++++++--------
+ 1 file changed, 8 insertions(+), 8 deletions(-)
 
 diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-index 2f4bdef73395..9c8e009033f1 100644
+index e30cbc94cbf6..bd946438e3c3 100644
 --- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
 +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-@@ -1866,6 +1866,8 @@ static int qmp_pcie_init(struct phy *phy)
- 		goto err_disable_regulators;
+@@ -2037,6 +2037,13 @@ static int qmp_pcie_set_mode(struct phy *phy, enum phy_mode mode, int submode)
+ 	return 0;
+ }
+ 
++static const struct phy_ops qmp_pcie_phy_ops = {
++	.power_on	= qmp_pcie_enable,
++	.power_off	= qmp_pcie_disable,
++	.set_mode	= qmp_pcie_set_mode,
++	.owner		= THIS_MODULE,
++};
++
+ static int qmp_pcie_vreg_init(struct qmp_pcie *qmp)
+ {
+ 	const struct qmp_phy_cfg *cfg = qmp->cfg;
+@@ -2160,13 +2167,6 @@ static int phy_pipe_clk_register(struct qmp_pcie *qmp, struct device_node *np)
+ 	return devm_add_action_or_reset(qmp->dev, phy_clk_release_provider, np);
+ }
+ 
+-static const struct phy_ops qmp_pcie_ops = {
+-	.power_on	= qmp_pcie_enable,
+-	.power_off	= qmp_pcie_disable,
+-	.set_mode	= qmp_pcie_set_mode,
+-	.owner		= THIS_MODULE,
+-};
+-
+ static int qmp_pcie_create(struct qmp_pcie *qmp, struct device_node *np)
+ {
+ 	const struct qmp_phy_cfg *cfg = qmp->cfg;
+@@ -2229,7 +2229,7 @@ static int qmp_pcie_create(struct qmp_pcie *qmp, struct device_node *np)
+ 				     "failed to get pipe clock\n");
  	}
  
-+	usleep_range(200, 300);
-+
- 	ret = reset_control_bulk_deassert(cfg->num_resets, qmp->resets);
- 	if (ret) {
- 		dev_err(qmp->dev, "reset deassert failed\n");
+-	generic_phy = devm_phy_create(dev, np, &qmp_pcie_ops);
++	generic_phy = devm_phy_create(dev, np, &qmp_pcie_phy_ops);
+ 	if (IS_ERR(generic_phy)) {
+ 		ret = PTR_ERR(generic_phy);
+ 		dev_err(dev, "failed to create PHY: %d\n", ret);
 -- 
 2.37.3
 
