@@ -4,69 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 706A1C433FE
-	for <linux-phy@archiver.kernel.org>; Mon, 17 Oct 2022 06:55:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5FDC7C4332F
+	for <linux-phy@archiver.kernel.org>; Mon, 17 Oct 2022 07:20:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JhSSsniuEm/hHELNK63fsSTJfZuFeMWF4HJkRy6UxaY=; b=xivqi66P7WFpSN
-	qpZKCndP2+/DrJp+a7ZX/GWtqC5vWzisGc600rkSoNCGOUca8bO4y0kYNsp4wfgLrZYVmWgYUU+Su
-	1Hm7VikDZd8C7r+xQF4mQcpj3FFfJRku5tZ6OSdwvLTOTLDgySdfcUVMztZMOlEROD70p9Mc1Akpp
-	i7mcQoVBAmeGfXH21xz9j3tujzYGfw3i8zEwHnu4Ie1YA4kBXQHa4zL6AdOetr8MQT3L46/dvxugl
-	fwh0wlOOUpetVB0MqQ0PaKllBy/I32g5xyPDIPKgFHO16VT+HKeixjfZZUZg++URgOxCUWRYHqSVz
-	24FSSDtEYc7recUgDorA==;
+	List-Owner; bh=3NY2WpnHdMtR2sngcuXSesknUbBd439IkeAWeIzhmD8=; b=R43m9rsN+3IhpR
+	clQQg/ie7PLSKoJgaeJz1a7BbRETK19DDknFOQrPTK6xn3T/S61LtQGI8p/NdCoz3XmCM8w+WxRAP
+	jWdS4IqqyPIvqkuKkrbDsEZOy0r+3LY7Is7kTVFS6C/5xQA7a1p2s0dPli3kHcHY3UqZlp0INafL6
+	T9XN+/4kF9WNQ6mlu3r9RgTSH5u7ansgpDXs7zOWrmvSo4kPeQ0MbiQWKHK9VZDV3QxKtj3HQgRfd
+	1HBzB3aUpMg8qxo0vAvGuNf/xl5kqPlAwztKvU1M4cKX0ukr/dnOpfbImGJ3G8RHOfGoCyKsXCnTV
+	pOCbUoUHLfMrhawy3isA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1okK20-008DsI-M0; Mon, 17 Oct 2022 06:55:24 +0000
-Received: from ams.source.kernel.org ([145.40.68.75])
+	id 1okKPq-008Pv0-Pb; Mon, 17 Oct 2022 07:20:02 +0000
+Received: from esa.microchip.iphmx.com ([68.232.154.123])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1okK1y-008Dqz-Ea
-	for linux-phy@lists.infradead.org; Mon, 17 Oct 2022 06:55:23 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id 1E5A9B80F4B;
-	Mon, 17 Oct 2022 06:55:21 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C1097C433D7;
-	Mon, 17 Oct 2022 06:55:19 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1665989719;
-	bh=PNnJGOyQxGlF6kxJP9vN4ecaF/KlHCOIeam3mAgZbNE=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=a3kxCqOZfArXCq6cer8xlXYc+oB2CcUQ71hSXKx4Osyc5icd+QXlsO4ZfjN7R/Zou
-	 yyfuY9PGYzZkuVlRYAy2PtPB+QmmxFsdRUFnaYo2XehR3DEzxddcOv1dH3DrINlz3G
-	 ZoRKWSEj+havq+Ohwxz/o5worCL8zUwy17vLKUY7S2ih0tcvQ5/Hn7+sDLv0i7iHhw
-	 sG6PgMzZy28BLPgnmDrcDZlzwLaeeFzUb9C/eMTMH+qKvsrAkBOFkBcmPRJz0VwOmF
-	 2nlx5b3sgXM7a4DmLlVhzZ3oIrs7PKA3vWDBaj1rJd1S9Jg3gWpyF2aps71l9ekWJh
-	 fMab9kAqwjTBA==
-Received: from johan by xi.lan with local (Exim 4.94.2)
-	(envelope-from <johan@kernel.org>)
-	id 1okK1l-0005CX-2V; Mon, 17 Oct 2022 08:55:09 +0200
-Date: Mon, 17 Oct 2022 08:55:09 +0200
-From: Johan Hovold <johan@kernel.org>
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Cc: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-	Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@somainline.org>,
-	Kishon Vijay Abraham I <kishon@ti.com>,
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 08/20] phy: qcom-qmp-combo: clean up status polling
-Message-ID: <Y0z8TWt/AA4Oh9ww@hovoldconsulting.com>
-References: <20221012084846.24003-1-johan+linaro@kernel.org>
- <20221012085002.24099-1-johan+linaro@kernel.org>
- <20221012085002.24099-8-johan+linaro@kernel.org>
- <ca4eef6a-dedd-1823-9525-67d695ac3e58@linaro.org>
+	id 1okKPS-008Pkr-Or; Mon, 17 Oct 2022 07:19:40 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
+  t=1665991178; x=1697527178;
+  h=message-id:date:mime-version:subject:to:cc:references:
+   from:in-reply-to:content-transfer-encoding;
+  bh=UBuvRDypJT++mgXI7DOwGnJFcpVZ/gzflYCezJdbRdo=;
+  b=JTcAAFeYTp52ynVXfEE5/J5c1K61VGNMUPsl7BIFKN0jhD2GcIyEMtCV
+   LpC7cX1XGgpUjLJSF+BSq9PFtfbA2EGo1ldvZVgeQSe9XLa72lVo5c98z
+   mUArjlWjGDpcr+QGBo553pwLrtbm+7QD9FxJeglEbpHRqBwN248O7Tf0g
+   gJO2AMilJFafN1Td/j41TBXh+0aBIqw/yaFZW5g9dTWxtysp5Oqj0uyGG
+   SYiz8maC0zJhOgzLOHZS4wODotjCDus4JHfInKdkE/RMqe18Q5ufN5OpV
+   vf+BtX8BF01LYMyNqOUlAW6OhRI+ZedjTQKP1AXrWcqYnMHAgKEj8/8AL
+   Q==;
+X-IronPort-AV: E=Sophos;i="5.95,190,1661842800"; 
+   d="scan'208";a="182465180"
+Received: from unknown (HELO email.microchip.com) ([170.129.1.10])
+  by esa2.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256; 17 Oct 2022 00:19:33 -0700
+Received: from chn-vm-ex03.mchp-main.com (10.10.85.151) by
+ chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.2507.12; Mon, 17 Oct 2022 00:19:33 -0700
+Received: from [10.159.245.112] (10.10.115.15) by chn-vm-ex03.mchp-main.com
+ (10.10.85.151) with Microsoft SMTP Server id 15.1.2507.12 via Frontend
+ Transport; Mon, 17 Oct 2022 00:19:26 -0700
+Message-ID: <91250148-67b9-d514-6af0-bfcd719fde53@microchip.com>
+Date: Mon, 17 Oct 2022 09:19:22 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <ca4eef6a-dedd-1823-9525-67d695ac3e58@linaro.org>
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
+ Thunderbird/91.11.0
+Subject: Re: [PATCH] dt-bindings: Remove "status" from schema examples, again
+Content-Language: en-US
+To: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski
+	<krzysztof.kozlowski+dt@linaro.org>, Thierry Reding
+	<thierry.reding@gmail.com>, Jonathan Hunter <jonathanh@nvidia.com>, "David
+ Airlie" <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>, "Lars-Peter
+ Clausen" <lars@metafoo.de>, Michael Hennerich <Michael.Hennerich@analog.com>,
+	Cosmin Tanislav <cosmin.tanislav@analog.com>, Jonathan Cameron
+	<jic23@kernel.org>, "David S. Miller" <davem@davemloft.net>, Eric Dumazet
+	<edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>, Paolo Abeni
+	<pabeni@redhat.com>, Shawn Guo <shawnguo@kernel.org>, Sascha Hauer
+	<s.hauer@pengutronix.de>, Pengutronix Kernel Team <kernel@pengutronix.de>,
+	Fabio Estevam <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
+	Nandhini Srikandan <nandhini.srikandan@intel.com>, Rashmi A
+	<rashmi.a@intel.com>, Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul
+	<vkoul@kernel.org>, Sumit Gupta <sumitg@nvidia.com>, Mikko Perttunen
+	<mperttunen@nvidia.com>, Claudiu Beznea <claudiu.beznea@microchip.com>,
+	Joakim Zhang <qiangqing.zhang@nxp.com>
+CC: <devicetree@vger.kernel.org>, <linux-tegra@vger.kernel.org>,
+	<linux-kernel@vger.kernel.org>, <dri-devel@lists.freedesktop.org>,
+	<linux-iio@vger.kernel.org>, <netdev@vger.kernel.org>,
+	<linux-arm-kernel@lists.infradead.org>, <linux-phy@lists.infradead.org>
+References: <20221014205104.2822159-1-robh@kernel.org>
+From: Nicolas Ferre <nicolas.ferre@microchip.com>
+Organization: microchip
+In-Reply-To: <20221014205104.2822159-1-robh@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221016_235522_652680_C574691D 
-X-CRM114-Status: GOOD (  16.52  )
+X-CRM114-CacheID: sfid-20221017_001938_967900_F1242862 
+X-CRM114-Status: GOOD (  13.58  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,33 +93,54 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Oct 13, 2022 at 12:14:17AM +0300, Dmitry Baryshkov wrote:
-> On 12/10/2022 11:49, Johan Hovold wrote:
-> > Clean up the PHY status polling by dropping the configuration mask which
-> > is no longer needed since the QMP driver split.
-> > 
-> > Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
+On 14/10/2022 at 22:51, Rob Herring wrote:
+> There's no reason to have "status" properties in examples. "okay" is the
+> default, and "disabled" turns off some schema checks ('required'
+> specifically).
 > 
-> This comes in expectation that 4.20 / 5.20 PHYs will be limited to PCIe. 
-> I'd add this to the commit message.
-
-I don't think that's needed. The commit message is correct as it stands,
-and the fact that we may need to change code in case we add support for
-new devices that may need it is quite natural.
-
-Also note that the vendor drivers (5.4) only have such a provision for
-PCIe PHYs and not for the combo and USB PHY drivers.
-
-> With that fixed:
+> A meta-schema check for this is pending, so hopefully the last time to
+> fix these.
 > 
-> Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+> Fix the indentation in intel,phy-thunderbay-emmc while we're here.
+> 
+> Signed-off-by: Rob Herring <robh@kernel.org>
+> ---
+>   .../arm/tegra/nvidia,tegra-ccplex-cluster.yaml    |  1 -
+>   .../display/tegra/nvidia,tegra124-dpaux.yaml      |  1 -
+>   .../display/tegra/nvidia,tegra186-display.yaml    |  2 --
+>   .../bindings/iio/addac/adi,ad74413r.yaml          |  1 -
+>   .../devicetree/bindings/net/cdns,macb.yaml        |  1 -
+>   .../devicetree/bindings/net/nxp,dwmac-imx.yaml    |  1 -
+>   .../bindings/phy/intel,phy-thunderbay-emmc.yaml   | 15 +++++++--------
+>   7 files changed, 7 insertions(+), 15 deletions(-)
 
-Johan
+[..]
+
+> diff --git a/Documentation/devicetree/bindings/net/cdns,macb.yaml b/Documentation/devicetree/bindings/net/cdns,macb.yaml
+> index 318f4efe7f6f..bef5e0f895be 100644
+> --- a/Documentation/devicetree/bindings/net/cdns,macb.yaml
+> +++ b/Documentation/devicetree/bindings/net/cdns,macb.yaml
+> @@ -203,7 +203,6 @@ examples:
+>                       power-domains = <&zynqmp_firmware PD_ETH_1>;
+>                       resets = <&zynqmp_reset ZYNQMP_RESET_GEM1>;
+>                       reset-names = "gem1_rst";
+> -                    status = "okay";
+>                       phy-mode = "sgmii";
+>                       phys = <&psgtr 1 PHY_TYPE_SGMII 1 1>;
+>                       fixed-link {
+
+
+Acked-by: Nicolas Ferre <nicolas.ferre@microchip.com>
+Thanks Rob. Best regards,
+   Nicolas
+
+-- 
+Nicolas Ferre
 
 -- 
 linux-phy mailing list
