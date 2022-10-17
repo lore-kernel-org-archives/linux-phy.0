@@ -4,47 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F0358C433FE
-	for <linux-phy@archiver.kernel.org>; Mon, 17 Oct 2022 14:54:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CE6CCC4332F
+	for <linux-phy@archiver.kernel.org>; Mon, 17 Oct 2022 14:54:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Lhxlz5hc6aote5BpXwWilViWGyR16hwYhL/TvBFaXgs=; b=Mrue6IRxIDA7wO
-	ejYu1HTl7VGFa/lj9ubyVDkeo0N0ogY5mHSVsmX5UrY1uNjuS/ZB/waruO3XRznxfvbdlwy9m06u6
-	0lNGXQt029lkPb6c4DN49BWeq1mfWbtDZy8dbrbZqEsgqSxVP3BXRJC6yotdAkjHo3jhsLw0ZTsHg
-	tpG5owi8rDBSjj3+nTdMtEN5u4JnIcz6l8aYo4XWv35LFVKTVn4TT5fEj4CBZSYBjMNmLZSGY4GPC
-	YugxLmFC+3k694Q52wREhnTA5r4FeGdsXZjMZN6H6nobbdIVZZh8KvrGwtemrbKQyKcib0tqxi9bR
-	QpqA5fXUI+/RlHbORMBg==;
+	List-Owner; bh=HMZCVwCctW0qJS5KePfOxk5Zhq443Yn1NHch17bqynE=; b=u/7qUeW1rdQUrp
+	l5l5R74dZObNG2fLhp37YxK0Bfsx2U9uCuEiDCDeMrA6v1gSRkTaMWWBUUwT+MVwnxNkK4E+RiL3p
+	qyayhfeVYHKYm9Bc++Qb+zSv1qyd8LB2SdkLvLd6+9tVzZh9meMOiwhLwJXnds2r6T448SaK/OVK4
+	0xt3Il3kdZxMun21xp/Kf9147YxWGWSesdgnJEkcFdjJMERZ4o16inIlBE5qvJ1VcWdVd/yVyAMX5
+	Qeb47IBevUD9AOHuhv3whvWvgOjIOl0NcK5IbKTKwy803X0Lmsrh5g1f8juEKAVY81SvO4HwOR6rS
+	OYTtyPxh/EEXJ9RLW92g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1okRVw-00D01U-8I; Mon, 17 Oct 2022 14:54:48 +0000
-Received: from ams.source.kernel.org ([145.40.68.75])
+	id 1okRVz-00D07I-9H; Mon, 17 Oct 2022 14:54:51 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1okRVr-00Cztq-3k
-	for linux-phy@lists.infradead.org; Mon, 17 Oct 2022 14:54:45 +0000
+	id 1okRVr-00Czum-A2
+	for linux-phy@lists.infradead.org; Mon, 17 Oct 2022 14:54:47 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id BD5DDB8190D;
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 8A044611D8;
 	Mon, 17 Oct 2022 14:54:41 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 42A89C43142;
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1C5CFC4FF16;
 	Mon, 17 Oct 2022 14:54:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1666018479;
-	bh=5U2mLRcMewZ/OXbcaeXyQCALagcvHGf09jg9Pu1Jzck=;
+	bh=m7ABfgp0wNANdsQqyZm3xycuklO+UK2KeAfAFvVYaxE=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=KSHL9PrRPjAqbjDjMFzJzqq+fxGXFq9dz+otGMV65LYtpvqxceXazsyzITOX/rviN
-	 WaYu6q9TScpcEmMA6E9/fuoqw6gpnaVnK5XuoRKlLajAmdAqpt6+DBIcizuMZ4tHPK
-	 UydCTFCbvaEm18+mUzZ5enbwEPTYxXVdPeVBwLxyivfEZHDfNBKPUd3q7poHfBFSgz
-	 /myluj2wWcO0yNVgLsgw/QXbt6BN15azMGcPq4wXTdHBGcBilD9iqCop3+/dFn2ayR
-	 IdYTSxK7LwdQLAWKCO86grM6lkN1jyTWF7G4jl2WuF2SoY1R95gUw1HM8fNuOnZeSD
-	 n5uf9WznNwX7g==
+	b=eZ2ybaX0smkjimuxg7c+id4rnmhrckUTB7bgEI3O4o9PlyLDjh9beVnOUngtFvncK
+	 ZpfnZdFISSXIiHrWIRJq1flxgcFHXZm5n86Sc897LGq/c5e9i7eU//VMSHsjEYdkaK
+	 De6YRWkmL4BE//vR7WerpxUItu/6UHsroGvmZBcDki+vLhpnrnIzj8Y+7nAOz2tTEO
+	 hrIo8gjVcUDAdq6MquKwScwlyIqIDCbcbBbFuZ9LIku5ImytbMFvMKD66tV9UvVc6U
+	 vwqhyqEpfEjt1mZKlloYKnyQQJTlmLmjCLJooKYefDnHkjrgusQsO1IJZ1zMRNBofu
+	 1PMBtzNO0VvjQ==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1okRVd-0005mW-J3; Mon, 17 Oct 2022 16:54:29 +0200
+	id 1okRVd-0005mQ-DI; Mon, 17 Oct 2022 16:54:29 +0200
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>
 Cc: Andy Gross <agross@kernel.org>,
@@ -58,16 +58,16 @@ Cc: Andy Gross <agross@kernel.org>,
 	devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH 13/15] phy: qcom-qmp-pcie: add support for pipediv2 clock
-Date: Mon, 17 Oct 2022 16:53:26 +0200
-Message-Id: <20221017145328.22090-14-johan+linaro@kernel.org>
+Subject: [PATCH 11/15] phy: qcom-qmp-pcie: restructure PHY creation
+Date: Mon, 17 Oct 2022 16:53:24 +0200
+Message-Id: <20221017145328.22090-12-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.37.3
 In-Reply-To: <20221017145328.22090-1-johan+linaro@kernel.org>
 References: <20221017145328.22090-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221017_075443_516835_D82909FF 
-X-CRM114-Status: GOOD (  15.86  )
+X-CRM114-CacheID: sfid-20221017_075443_499860_4C79FBAC 
+X-CRM114-Status: GOOD (  15.90  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,99 +84,94 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Some QMP PHYs have a second fixed-divider pipe clock that needs to be
-enabled along with the pipe clock.
-
-Add support for an optional "pipediv2" clock.
+In preparation for supporting devicetree bindings which do not use a
+child node, move the PHY creation to probe() proper and parse the serdes
+resource in what is now the legacy devicetree helper.
 
 Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 42 ++++++++++++++++++++----
- 1 file changed, 36 insertions(+), 6 deletions(-)
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 36 +++++++++++-------------
+ 1 file changed, 17 insertions(+), 19 deletions(-)
 
 diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-index 9c8e009033f1..c1d74c06fad1 100644
+index f57d10f20277..2f4bdef73395 100644
 --- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
 +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-@@ -1379,7 +1379,9 @@ struct qmp_pcie {
- 	void __iomem *rx2;
- 
- 	struct clk *pipe_clk;
-+	struct clk *pipediv2_clk;
- 	struct clk_bulk_data *clks;
-+
- 	struct reset_control_bulk_data *resets;
- 	struct regulator_bulk_data *vregs;
- 
-@@ -1902,6 +1904,36 @@ static int qmp_pcie_exit(struct phy *phy)
- 	return 0;
+@@ -2147,14 +2147,15 @@ static int phy_pipe_clk_register(struct qmp_pcie *qmp, struct device_node *np)
+ 	return devm_add_action_or_reset(qmp->dev, phy_clk_release_provider, np);
  }
  
-+static int pipe_clk_enable(struct qmp_pcie *qmp)
-+{
-+	int ret;
-+
-+	ret = clk_prepare_enable(qmp->pipe_clk);
-+	if (ret) {
-+		dev_err(qmp->dev, "failed to enable pipe clock: %d\n", ret);
-+		return ret;
-+	}
-+
-+	ret = clk_prepare_enable(qmp->pipediv2_clk);
-+	if (ret) {
-+		dev_err(qmp->dev, "failed to enable pipediv2 clock: %d\n", ret);
-+		goto err_disable_pipe_clk;
-+	}
-+
-+	return 0;
-+
-+err_disable_pipe_clk:
-+	clk_disable_unprepare(qmp->pipe_clk);
-+
-+	return ret;
-+}
-+
-+static void pipe_clk_disable(struct qmp_pcie *qmp)
-+{
-+	clk_disable_unprepare(qmp->pipediv2_clk);
-+	clk_disable_unprepare(qmp->pipe_clk);
-+}
-+
- static int qmp_pcie_power_on(struct phy *phy)
+-static int qmp_pcie_create(struct qmp_pcie *qmp, struct device_node *np)
++static int qmp_pcie_parse_dt_legacy(struct qmp_pcie *qmp, struct device_node *np)
  {
- 	struct qmp_pcie *qmp = phy_get_drvdata(phy);
-@@ -1923,11 +1955,9 @@ static int qmp_pcie_power_on(struct phy *phy)
- 	qmp_pcie_init_registers(qmp, &cfg->tables);
- 	qmp_pcie_init_registers(qmp, mode_tables);
- 
--	ret = clk_prepare_enable(qmp->pipe_clk);
--	if (ret) {
--		dev_err(qmp->dev, "pipe_clk enable failed err=%d\n", ret);
-+	ret = pipe_clk_enable(qmp);
-+	if (ret)
- 		return ret;
--	}
- 
- 	/* Pull PHY out of reset state */
- 	qphy_clrbits(pcs, cfg->regs[QPHY_SW_RESET], SW_RESET);
-@@ -1950,7 +1980,7 @@ static int qmp_pcie_power_on(struct phy *phy)
- 	return 0;
- 
- err_disable_pipe_clk:
--	clk_disable_unprepare(qmp->pipe_clk);
-+	pipe_clk_disable(qmp);
- 
- 	return ret;
- }
-@@ -1960,7 +1990,7 @@ static int qmp_pcie_power_off(struct phy *phy)
- 	struct qmp_pcie *qmp = phy_get_drvdata(phy);
++	struct platform_device *pdev = to_platform_device(qmp->dev);
  	const struct qmp_phy_cfg *cfg = qmp->cfg;
+ 	struct device *dev = qmp->dev;
+-	struct phy *generic_phy;
+-	int ret;
  
--	clk_disable_unprepare(qmp->pipe_clk);
-+	pipe_clk_disable(qmp);
+-	qmp->mode = PHY_MODE_PCIE_RC;
++	qmp->serdes = devm_platform_ioremap_resource(pdev, 0);
++	if (IS_ERR(qmp->serdes))
++		return PTR_ERR(qmp->serdes);
  
- 	/* PHY reset */
- 	qphy_setbits(qmp->pcs, cfg->regs[QPHY_SW_RESET], SW_RESET);
+ 	/*
+ 	 * Get memory resources for the PHY:
+@@ -2209,16 +2210,6 @@ static int qmp_pcie_create(struct qmp_pcie *qmp, struct device_node *np)
+ 				     "failed to get pipe clock\n");
+ 	}
+ 
+-	generic_phy = devm_phy_create(dev, np, &qmp_pcie_phy_ops);
+-	if (IS_ERR(generic_phy)) {
+-		ret = PTR_ERR(generic_phy);
+-		dev_err(dev, "failed to create PHY: %d\n", ret);
+-		return ret;
+-	}
+-
+-	qmp->phy = generic_phy;
+-	phy_set_drvdata(generic_phy, qmp);
+-
+ 	return 0;
+ }
+ 
+@@ -2243,10 +2234,6 @@ static int qmp_pcie_probe(struct platform_device *pdev)
+ 	WARN_ON_ONCE(!qmp->cfg->pwrdn_ctrl);
+ 	WARN_ON_ONCE(!qmp->cfg->phy_status);
+ 
+-	qmp->serdes = devm_platform_ioremap_resource(pdev, 0);
+-	if (IS_ERR(qmp->serdes))
+-		return PTR_ERR(qmp->serdes);
+-
+ 	ret = qmp_pcie_clk_init(qmp);
+ 	if (ret)
+ 		return ret;
+@@ -2263,7 +2250,7 @@ static int qmp_pcie_probe(struct platform_device *pdev)
+ 	if (!child)
+ 		return -EINVAL;
+ 
+-	ret = qmp_pcie_create(qmp, child);
++	ret = qmp_pcie_parse_dt_legacy(qmp, child);
+ 	if (ret)
+ 		goto err_node_put;
+ 
+@@ -2271,6 +2258,17 @@ static int qmp_pcie_probe(struct platform_device *pdev)
+ 	if (ret)
+ 		goto err_node_put;
+ 
++	qmp->mode = PHY_MODE_PCIE_RC;
++
++	qmp->phy = devm_phy_create(dev, child, &qmp_pcie_phy_ops);
++	if (IS_ERR(qmp->phy)) {
++		ret = PTR_ERR(qmp->phy);
++		dev_err(dev, "failed to create PHY: %d\n", ret);
++		goto err_node_put;
++	}
++
++	phy_set_drvdata(qmp->phy, qmp);
++
+ 	of_node_put(child);
+ 
+ 	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
 -- 
 2.37.3
 
