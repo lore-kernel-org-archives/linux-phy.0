@@ -4,77 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DD0AEC433FE
-	for <linux-phy@archiver.kernel.org>; Tue, 18 Oct 2022 03:14:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 02743C433FE
+	for <linux-phy@archiver.kernel.org>; Tue, 18 Oct 2022 07:06:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YMxU+g76jlcLNRWQW6d38Mqkf4PI7BEYlINqN2IF/W4=; b=sCS48sjTZGEueK
-	x4TkoeRW5ket2VPEgvuL78tfyPsnSin60Xy1Q4rqwOi3Gs9ai0tKtmWVSTOt2rEueAEsJBKUyEaEY
-	F0JMxhyOTgJ0NzvDvOI0JmZzJ4CIKQtpMfa7klbKLdcQ9M7J50PeeZaxzshBN0C+oGAvav9c42eKI
-	KyNIKF8ND5iAIDs9C3GwJhqO96IL58+pnfVPttlHkpBwHfdgLuv1yjqKBUIQF2y2YmPwiclq8WvVI
-	4uq19QYEiq1jfknQW2qmhjhRy/1wX0myV/IlkeDC6IpglG+A5eUd2AW/0JYpKXCHivzZuj1JT/zu0
-	eN7WSjdgJnTBJ5Iyiedg==;
+	List-Owner; bh=7JB08H9QrAAlcq8e8Lx1MzppPsvrsklEpRnvr5GW14c=; b=QLkx/lyj9PAahY
+	9VNhkHV1aqlIDHb0LcwUb8zX1CzJ4RPnkRpBISje/3WMM2DXCx1jlNQxqHdAcCE6yzmq7W0JuUPAl
+	wueiSPPo/s45wAHhbqDjLyqwzqZ6Pu/ss0rEXY518bLSKlHurQmrPoeqfdQIr7d2/5cemE1Mymnno
+	riKmkqJ8x1pL037YKzwE8vz+Y/TWSYhC2PDNY+U3qWy+EBmAqzGaPBScTsflNm52rO0X7Qhip/Mwo
+	Ajd4yNiocfIcfZALWgwJ/dlEj3ovTRUC2t3ZgTJ6ju3Bqhu7l/Fv4stw4OAq6TRYJORTG75zzcWCo
+	Xtp7i6lIwFsg0n5u+5iA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1okd3z-001qv5-BQ; Tue, 18 Oct 2022 03:14:43 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1okggi-003fu8-Bc; Tue, 18 Oct 2022 07:06:56 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1okd3x-001quU-Kn
-	for linux-phy@lists.infradead.org; Tue, 18 Oct 2022 03:14:42 +0000
+	id 1okggf-003fss-RG
+	for linux-phy@lists.infradead.org; Tue, 18 Oct 2022 07:06:55 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id DF4866140C;
-	Tue, 18 Oct 2022 03:14:40 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id CC55DC433D7;
-	Tue, 18 Oct 2022 03:14:38 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id A10FF6148A;
+	Tue, 18 Oct 2022 07:06:52 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 07F5DC433C1;
+	Tue, 18 Oct 2022 07:06:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1666062880;
-	bh=jrFTSkSw8/OLP0A8Fwb4P0GAlBszX3caoZ5KrK3ljEM=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=e1+t1IhIYwzgwbOkbSNMO/bNRkrBjYOYiNqurdi+LW8vyuZTF8jIPt5M/oVo5mSOR
-	 WkdS8gCf1OH/kk0yuvQmkT6YrkvpnqwMVVJfQT4aYAd6pO7US7MQnBKMU06yOBOckT
-	 9czBaAsTEHwTzewgU79gXPBG+s4Xt9Nht+kYlBOUBQQ5fEp8N5ih7Yx/nwwbTC0Ucq
-	 ckqMKYZhEaiHHB3bHdvu1HklqxMg11i7RqEk4IjPtqMmuhRu331GY0WHVwbpE5o8v5
-	 SrboLXhxOplLDqLMFpowRcVjxYXXO8kdN2CTgKPAVeSvdKqh8rkKdBfR75Pv7ITKTM
-	 u/AL20LuHTB4Q==
-From: Bjorn Andersson <andersson@kernel.org>
-To: Bjorn Andersson <andersson@kernel.org>,
-	p.zabel@pengutronix.de,
-	gregkh@linuxfoundation.org,
-	quic_wcheng@quicinc.com,
-	agross@kernel.org,
-	quic_kriskura@quicinc.com,
-	vkoul@kernel.org,
-	kishon@ti.com,
-	robh+dt@kernel.org,
-	Stephen Boyd <swboyd@chromium.org>,
+	s=k20201202; t=1666076812;
+	bh=J6RF9tAF1MFuLDPx06GDwAxd0NEPV+odgtOEQ0YfJ6o=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=TFlu84wEFmVYCt3vicjR1mwSQZMw6t4ueg5GUCGDs6IeJ9+DfDwF+d/o9dYGa0eJw
+	 iNhajrl0/Wt54Umujt/dQO38lbfpY+xvDC/kUC/udc/blXrTzryivgKN1CY2RZ04OW
+	 S5X2zeh+sqeiUaglZwEmezMumwDNgAmONTxVXwTOD1mEiC2WNZ4sQSmGE+tS3f8l8/
+	 9orcu7ygx23yqqKgAlWuZ+iDhO/UivnkVT19bV2mCVID7tmaKyFg+wgLFD7zLwGZJC
+	 5KUokhVirYgdHkG1e3xIr/MSTdA0UM7xhbf/K5/jgaI8arpzTV5jKtv7led7xjivMv
+	 th6urGmmC0jZA==
+Received: from johan by xi.lan with local (Exim 4.94.2)
+	(envelope-from <johan@kernel.org>)
+	id 1okggR-0007jp-1q; Tue, 18 Oct 2022 09:06:39 +0200
+Date: Tue, 18 Oct 2022 09:06:39 +0200
+From: Johan Hovold <johan@kernel.org>
+To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Cc: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+	Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@somainline.org>,
+	Rob Herring <robh+dt@kernel.org>,
 	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Doug Anderson <dianders@chromium.org>,
-	Konrad Dybcio <konrad.dybcio@somainline.org>
-Cc: quic_vpulyala@quicinc.com,
-	linux-usb@vger.kernel.org,
-	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-arm-msm@vger.kernel.org,
-	quic_pkondeti@quicinc.com,
-	quic_ppratap@quicinc.com
-Subject: Re: (subset) [PATCH v13 0/3] Add QCOM SNPS PHY overriding params support
-Date: Mon, 17 Oct 2022 22:14:30 -0500
-Message-Id: <166606235851.3553294.12620286711674222439.b4-ty@kernel.org>
-X-Mailer: git-send-email 2.37.1
-In-Reply-To: <1662480933-12326-1-git-send-email-quic_kriskura@quicinc.com>
-References: <1662480933-12326-1-git-send-email-quic_kriskura@quicinc.com>
+	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 09/15] dt-bindings: phy: qcom,qmp-pcie: mark current
+ bindings as legacy
+Message-ID: <Y05Qf2nDCIVg23Zh@hovoldconsulting.com>
+References: <20221017145328.22090-1-johan+linaro@kernel.org>
+ <20221017145328.22090-10-johan+linaro@kernel.org>
+ <5e153119-f853-ff57-8277-2d782e255be2@linaro.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <5e153119-f853-ff57-8277-2d782e255be2@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221017_201441_752031_5B54476B 
-X-CRM114-Status: UNSURE (   9.37  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20221018_000654_000777_D34C79F3 
+X-CRM114-Status: GOOD (  29.65  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,24 +85,78 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, 6 Sep 2022 21:45:30 +0530, Krishna Kurapati wrote:
-> Added support for overriding tuning parameters in QCOM SNPS PHY
-> from device tree. This parameter tuning is required to tune the
-> hs signal on dp/dm lines for electrical compliance to be successful.
+On Mon, Oct 17, 2022 at 01:15:45PM -0400, Krzysztof Kozlowski wrote:
+> On 17/10/2022 10:53, Johan Hovold wrote:
+> > The current QMP PCIe PHY bindings are based on the original MSM8996
+> > binding which provided multiple PHYs per IP block and these in turn were
+> > described by child nodes.
+> > 
+> > Later QMP PCIe PHY blocks only provide a single PHY and the remnant
+> > child node does not really reflect the hardware.
+> > 
+> > The original MSM8996 binding also ended up describing the individual
+> > register blocks as belonging to either the wrapper node or the PHY child
+> > nodes.
+> > 
+> > This is an unnecessary level of detail which has lead to problems when
+> > later IP blocks using different register layouts have been forced to fit
+> > the original mould rather than updating the binding. The bindings are
+> > arguable also incomplete as they only the describe register blocks used
+> > by the current Linux drivers (e.g. does not include the per lane PCS
+> > registers).
+> > 
+> > In preparation for adding new bindings for SC8280XP which further
+> > bindings can be based on, mark the current bindings as "legacy".
+> > 
+> > Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
+> > ---
+> >  .../{qcom,qmp-pcie-phy.yaml => qcom,qmp-pcie-phy-legacy.yaml} | 4 ++--
 > 
-> Changes in v13:
-> Fixed NULL pointer check in driver code.
-> 
-> [...]
+> I don't think we should rename anything as legacy. These are "normal"
+> platforms, not legacy ones. SM8450 is not even that old.
 
-Applied, thanks!
+I'm not really referring to the platforms as legacy, but the rather the
+format of the bindings. The intent is that by marking the current ones
+as such, people will not base new bindings on the old scheme.
 
-[3/3] arm64: dts: qcom: sc7280: Update SNPS Phy params for SC7280 IDP device
-      commit: 3b08e3fdf056cf30ecb1413d2bcb1353a333024b
+There's no problem supporting both schemes in the driver also for the
+current compatibles, but expressing such a deprecation in DT schema
+sounds like it would be painful. We instead decided to simple draw the
+line at SC8280XP and have future bindings be based on its binding.
 
-Best regards,
--- 
-Bjorn Andersson <andersson@kernel.org>
+> The recommendation is to keep names matching the compatibles, not adding
+> some legacy/newer/newest suffixes.
+
+Yeah, I know, but that's not what the current bindings do. And if we
+keep 
+
+	qcom,qmp-pcie-phy.yaml
+
+and add
+
+	qcom,sc8280xp-qmp-pcie-phy.yaml
+
+then I fear that people will base their bindings on the former rather
+than the latter.
+
+I guess I can just add a comment in the old schema file with a reference
+to the sc8280xp bindings to try to prevent people from adding new ones
+in the wrong place.
+
+If I understand you correctly this is what you are suggesting? And that
+the new file should still be named "qcom,sc8280xp-qmp-pcie-phy.yaml"
+also as new bindings are added to that file?
+
+I could also rename the old schema file after one of the old platforms
+platforms therein (e.g. qcom,msm8998-qmp-pcie-phy) to make it sounds
+less like a generic schema for new bindings.
+
+That is
+
+	qcom,msm8998-qmp-pcie-phy.yaml + comment (for current bindings)
+	qcom,sc8280xp-qmp-pcie-phy.yaml (for new bindings)
+
+Johan
 
 -- 
 linux-phy mailing list
