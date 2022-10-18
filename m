@@ -4,61 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 019C0C4332F
-	for <linux-phy@archiver.kernel.org>; Tue, 18 Oct 2022 13:32:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 14C48C4332F
+	for <linux-phy@archiver.kernel.org>; Tue, 18 Oct 2022 14:53:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Subject:Message-Id:
-	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=G336Vxiyr/TVV8qp90x0r9eyHBTGYfhrDa4sdGyWKYA=; b=1W/xrhfZXTwNKN
-	OkXyr2uoK6gBnp1n4F35sYIoxtKqxEsJqPPtmUHgGPZeUwLmY3v54012xz6NGSpp/LeHZgtIYXETy
-	zYk0KzHmkEvQCXWZz9iC17TACs9iinOB1NHyuCl2Se0rgXAUatkX74bzQsQ3zm8/bBi+wwfSPPZVv
-	3cjNNHZrGrpEPxeFTFNlgKM0MxkHuZQEkosclgUSjMjeymKLFXCt1FhFAhHuMIq6YkNkXeZbHm8j3
-	ZgIXRsUkJvlYGIl6kD8wf42Beh+JA/iAQCN8SZDQ12IUzrLUpWThYNJgvRDIU49dZmijlysQCaG00
-	6y2slY4EaMaQkhkjz28w==;
+	List-Owner; bh=ogZBUhNGFVgZ96K3qR93MoinHrYcxohX119jxqKEkn4=; b=r9t8/42tojLfhc
+	dqNGseH1eZpiKh2yYJiqmDjthOcA8ZPjzDP64xlbRnMfPSBfQRhue6CYjgu14jMpYBQpeZi8Cfbgi
+	a5kQoCfTPaLWSfGlQqXhebuuojOTZ74ekK3A8u29PwUEP5PdRX4vZcVsdgh4rtq9XLaszQZNCJQyb
+	3Fr1VthycX9DA6fUnKO29wqPLFYWXs312uCCaoAEMX51MU6+g5NepSkqWZ6gRQN+ImI71HItLlRrn
+	mZNYjcKhmMkWYkhfXb2BWU7d0xe/JN5ELY5QuKSdS4s3u7t4RH4rA8wGFsKWNEf0YUU8CTAW3ZPlO
+	sNLnbdX12HFwc9htq0zw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1okmhT-0075I1-CQ; Tue, 18 Oct 2022 13:32:07 +0000
-Received: from mail-oa1-f44.google.com ([209.85.160.44])
+	id 1oknyF-007OaZ-Go; Tue, 18 Oct 2022 14:53:31 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1okmhR-0075Gb-4m; Tue, 18 Oct 2022 13:32:06 +0000
-Received: by mail-oa1-f44.google.com with SMTP id 586e51a60fabf-1322fa1cf6fso16793582fac.6;
-        Tue, 18 Oct 2022 06:32:02 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=date:subject:message-id:references:in-reply-to:cc:to:from
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=gEJ3nN0wOjqyjek8ZcKMEHHdhLOGpeMQeNTSyKEyuvo=;
-        b=sy1XKMp69HETWGRAzthuTKyht4wu6WutROdgvpY4l8BF8wJ1IGc9OoarCkCx95X0Qw
-         mOStpPiNSDuCPeIFymNkJfhtd/EyzHoZPGEOS+kwIOWtJjrIwUjaAJxO4qcEIFx8w+4n
-         CFCN/KnAhpXHL8iNbqC2mRPaUX4tCKWt00Of1YQStlnJ2ihOiIsYtyEqb65R8g3tHqGJ
-         QawjywlkUFYmA41g1kMJyMwXX+wpVn8YaGoG8or2wqjkvoTl8KSiOpTJuTdwclPJosLW
-         151N//lp7GlNUPrJIHPMyTqbNwVroTCrAcpYtNwpx0Fx84d9Yo5Cp+VzIjKlX7JaU3sA
-         icKw==
-X-Gm-Message-State: ACrzQf1HpE56kZlXuzbepso7p9Rwkj6qJ3h9/MC7HlheZJkMwhjc1f7G
-	KlwjDA8MgGzliRWHoo77miuGNNKeZw==
-X-Google-Smtp-Source: AMsMyM4jST8n+8ZZo9uiDI29BwfZwbKZGPxkYGiRwMYca9UhzVLi1KxoUnPi4QS1AdrgrAKBc6liug==
-X-Received: by 2002:a05:6871:1d5:b0:12b:239:ef00 with SMTP id q21-20020a05687101d500b0012b0239ef00mr1561467oad.85.1666099922195;
-        Tue, 18 Oct 2022 06:32:02 -0700 (PDT)
-Received: from robh_at_kernel.org (66-90-144-107.dyn.grandenetworks.net. [66.90.144.107])
-        by smtp.gmail.com with ESMTPSA id e12-20020a9d63cc000000b0066102eb189fsm5926004otl.26.2022.10.18.06.32.01
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 18 Oct 2022 06:32:01 -0700 (PDT)
-Received: (nullmailer pid 180827 invoked by uid 1000);
-	Tue, 18 Oct 2022 13:32:01 -0000
-From: Rob Herring <robh@kernel.org>
-To: Siddharth Vadapalli <s-vadapalli@ti.com>
-Cc: rogerq@kernel.org, krzysztof.kozlowski@linaro.org, linux-kernel@vger.kernel.org, vkoul@kernel.org, kishon@kernel.org, robh+dt@kernel.org, devicetree@vger.kernel.org, lee@kernel.org, linux-phy@lists.infradead.org, dan.carpenter@oracle.com, krzysztof.kozlowski+dt@linaro.org, linux-arm-kernel@lists.infradead.org
-In-Reply-To: <20221018084333.149790-2-s-vadapalli@ti.com>
-References: <20221018084333.149790-1-s-vadapalli@ti.com> <20221018084333.149790-2-s-vadapalli@ti.com>
-Message-Id: <166609952062.171721.12955273990805791032.robh@kernel.org>
-Subject: Re: [PATCH v2 1/3] dt-bindings: phy: ti: phy-gmii-sel: Add bindings for J721e
-Date: Tue, 18 Oct 2022 08:32:01 -0500
+	id 1oknyC-007OZh-LV
+	for linux-phy@lists.infradead.org; Tue, 18 Oct 2022 14:53:30 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id DDFFE615A7;
+	Tue, 18 Oct 2022 14:53:27 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3A5D2C433C1;
+	Tue, 18 Oct 2022 14:53:27 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1666104807;
+	bh=xY5BiZ6ZbFe5aQcbT010/8Bqi/0eo2aMR4dgD1EpzfU=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=rUgMVV9DSN9+yoHM5MgMrkQQONs+hY1gEWW+7cJbZVyHPbjco8CWfe8vLRSgIsym4
+	 a2IV3Q21K/+ueczi8NKy1UBUcAgokU1o44xTHLOnPZyafZ3AZQhRTsB0QFPsQ7GVaa
+	 KVn0GVhCMNP1ZIPbxxJnrnoijMDzZprdTbx/X7Pfn1kziCLcpujms5VaARjvzxfbsJ
+	 uipcbXsvoXGjtb9SBhFmZ2hNFhnahe+sjrt5iVv80vd5xufA7VtUoSDiYtKgyTQz0b
+	 kdW0yEXO7xM4f83RI2UgmdXC2YtUii7fLBYfrFtZR3vHOTs/wUtL0NC8PSUcAjIDZ2
+	 VqsBvE1nLOF5w==
+Received: from johan by xi.lan with local (Exim 4.94.2)
+	(envelope-from <johan@kernel.org>)
+	id 1oknxy-0005SJ-PV; Tue, 18 Oct 2022 16:53:15 +0200
+Date: Tue, 18 Oct 2022 16:53:14 +0200
+From: Johan Hovold <johan@kernel.org>
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Cc: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+	Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@somainline.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 13/15] phy: qcom-qmp-pcie: add support for pipediv2 clock
+Message-ID: <Y0692mW6MJneljrP@hovoldconsulting.com>
+References: <20221017145328.22090-1-johan+linaro@kernel.org>
+ <20221017145328.22090-14-johan+linaro@kernel.org>
+ <2cf670a0-59bd-31b0-8816-496c1e13165d@linaro.org>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <2cf670a0-59bd-31b0-8816-496c1e13165d@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221018_063205_201174_6348FE71 
-X-CRM114-Status: GOOD (  13.21  )
+X-CRM114-CacheID: sfid-20221018_075328_805522_7DF3A34C 
+X-CRM114-Status: GOOD (  25.75  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -70,56 +78,71 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, 18 Oct 2022 14:13:31 +0530, Siddharth Vadapalli wrote:
-> TI's J721e SoC supports additional PHY modes like QSGMII and SGMII
-> that are not supported on earlier SoCs. Add a compatible for it.
+On Tue, Oct 18, 2022 at 04:05:29PM +0300, Dmitry Baryshkov wrote:
+> On 17/10/2022 17:53, Johan Hovold wrote:
+> > Some QMP PHYs have a second fixed-divider pipe clock that needs to be
+> > enabled along with the pipe clock.
+> > 
+> > Add support for an optional "pipediv2" clock.
+> > 
+> > Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
+> > ---
+> >   drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 42 ++++++++++++++++++++----
+> >   1 file changed, 36 insertions(+), 6 deletions(-)
+> > 
+> > diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+> > index 9c8e009033f1..c1d74c06fad1 100644
+> > --- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+> > +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+> > @@ -1379,7 +1379,9 @@ struct qmp_pcie {
+> >   	void __iomem *rx2;
+> >   
+> >   	struct clk *pipe_clk;
+> > +	struct clk *pipediv2_clk;
+> >   	struct clk_bulk_data *clks;
+> > +
+> >   	struct reset_control_bulk_data *resets;
+> >   	struct regulator_bulk_data *vregs;
+> >   
+> > @@ -1902,6 +1904,36 @@ static int qmp_pcie_exit(struct phy *phy)
+> >   	return 0;
+> >   }
+> >   
+> > +static int pipe_clk_enable(struct qmp_pcie *qmp)
+> > +{
+> > +	int ret;
+> > +
+> > +	ret = clk_prepare_enable(qmp->pipe_clk);
+> > +	if (ret) {
+> > +		dev_err(qmp->dev, "failed to enable pipe clock: %d\n", ret);
+> > +		return ret;
+> > +	}
+> > +
+> > +	ret = clk_prepare_enable(qmp->pipediv2_clk);
+> > +	if (ret) {
+> > +		dev_err(qmp->dev, "failed to enable pipediv2 clock: %d\n", ret);
+> > +		goto err_disable_pipe_clk;
+> > +	}
 > 
-> Extend ti,qsgmii-main-ports property to support selection of upto
-> two main ports at once across the two QSGMII interfaces.
-> 
-> Signed-off-by: Siddharth Vadapalli <s-vadapalli@ti.com>
-> ---
->  .../bindings/phy/ti,phy-gmii-sel.yaml         | 48 +++++++++++++++----
->  1 file changed, 40 insertions(+), 8 deletions(-)
-> 
+> Do they have to be enabled in sequence? If not, I'd use a bulk clocks 
+> here for the pipe clocks. While it can look like an overkill, it would 
+> be a safe net for the possible future changes, which might include 
+> additional clocks.
 
-My bot found errors running 'make DT_CHECKER_FLAGS=-m dt_binding_check'
-on your patch (DT_CHECKER_FLAGS is new in v5.13):
+I don't believe the bulk API is a good fit here as we need to support
+both the new and old bindings, and for the latter the pipe_clk is looked
+up by index rather than name (and that's from the child node too which
+limits which APIs you can use further).
 
-yamllint warnings/errors:
-./Documentation/devicetree/bindings/phy/ti,phy-gmii-sel.yaml:75:12: [error] syntax error: mapping values are not allowed here (syntax)
+The code is clear enough as it stands, and I don't think we need to take
+height for a hypothetical third pipe clock just yet.
 
-dtschema/dtc warnings/errors:
-make[1]: *** Deleting file 'Documentation/devicetree/bindings/phy/ti,phy-gmii-sel.example.dts'
-Documentation/devicetree/bindings/phy/ti,phy-gmii-sel.yaml:75:12: mapping values are not allowed in this context
-make[1]: *** [Documentation/devicetree/bindings/Makefile:26: Documentation/devicetree/bindings/phy/ti,phy-gmii-sel.example.dts] Error 1
-make[1]: *** Waiting for unfinished jobs....
-./Documentation/devicetree/bindings/phy/ti,phy-gmii-sel.yaml:75:12: mapping values are not allowed in this context
-./Documentation/devicetree/bindings/mfd/ti,j721e-system-controller.yaml: Unable to find schema file matching $id: http://devicetree.org/schemas/phy/ti,phy-gmii-sel.yaml
-/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/phy/ti,phy-gmii-sel.yaml: ignoring, error parsing file
-make: *** [Makefile:1492: dt_binding_check] Error 2
-
-doc reference errors (make refcheckdocs):
-
-See https://patchwork.ozlabs.org/patch/
-
-This check can fail if there are any dependencies. The base for a patch
-series is generally the most recent rc1.
-
-If you already ran 'make dt_binding_check' and didn't see the above
-error(s), then make sure 'yamllint' is installed and dt-schema is up to
-date:
-
-pip3 install dtschema --upgrade
-
-Please check and re-submit.
-
+Johan
 
 -- 
 linux-phy mailing list
