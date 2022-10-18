@@ -4,69 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 14C48C4332F
-	for <linux-phy@archiver.kernel.org>; Tue, 18 Oct 2022 14:53:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 33541C433FE
+	for <linux-phy@archiver.kernel.org>; Tue, 18 Oct 2022 15:23:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ogZBUhNGFVgZ96K3qR93MoinHrYcxohX119jxqKEkn4=; b=r9t8/42tojLfhc
-	dqNGseH1eZpiKh2yYJiqmDjthOcA8ZPjzDP64xlbRnMfPSBfQRhue6CYjgu14jMpYBQpeZi8Cfbgi
-	a5kQoCfTPaLWSfGlQqXhebuuojOTZ74ekK3A8u29PwUEP5PdRX4vZcVsdgh4rtq9XLaszQZNCJQyb
-	3Fr1VthycX9DA6fUnKO29wqPLFYWXs312uCCaoAEMX51MU6+g5NepSkqWZ6gRQN+ImI71HItLlRrn
-	mZNYjcKhmMkWYkhfXb2BWU7d0xe/JN5ELY5QuKSdS4s3u7t4RH4rA8wGFsKWNEf0YUU8CTAW3ZPlO
-	sNLnbdX12HFwc9htq0zw==;
+	List-Owner; bh=x+8t6lFer4ZHfy9G0ydBKD51u/G2bVYuadZRwvT7UM8=; b=gPv4iUYR8z+bFb
+	T4E5lu8aSnOtjiyuN6dcF3ioItyx4k5jLeyfM6lm5JvI82+ejsSR7W569X8UZLNnQdVkgiTIxp8if
+	UGMwEhtLQzv55mvRKH/4t5UzHPsZysDPADM7uPsjEVhdQATc65u4h4Z1KZp7vMPxrzpQhXDVCf5IW
+	edtGPeXJZPXlpqSGbvH7K2rBciOInU2kkUiPZ8GahlabpFwW2yd6uVUtjCwf76jqImtGndqO9ozGX
+	fPl9IO9SDV55gPjnlYpdB/6TxjT/TFL4C37/Y44OfzOVrF5QRGs6WXdWOwkIIj709xh3BLuUaPYZf
+	qQPGkXcTMLIigO3tkA/Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oknyF-007OaZ-Go; Tue, 18 Oct 2022 14:53:31 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1okoQv-007ZX4-IA; Tue, 18 Oct 2022 15:23:09 +0000
+Received: from mail-qv1-xf2b.google.com ([2607:f8b0:4864:20::f2b])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oknyC-007OZh-LV
-	for linux-phy@lists.infradead.org; Tue, 18 Oct 2022 14:53:30 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id DDFFE615A7;
-	Tue, 18 Oct 2022 14:53:27 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3A5D2C433C1;
-	Tue, 18 Oct 2022 14:53:27 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1666104807;
-	bh=xY5BiZ6ZbFe5aQcbT010/8Bqi/0eo2aMR4dgD1EpzfU=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=rUgMVV9DSN9+yoHM5MgMrkQQONs+hY1gEWW+7cJbZVyHPbjco8CWfe8vLRSgIsym4
-	 a2IV3Q21K/+ueczi8NKy1UBUcAgokU1o44xTHLOnPZyafZ3AZQhRTsB0QFPsQ7GVaa
-	 KVn0GVhCMNP1ZIPbxxJnrnoijMDzZprdTbx/X7Pfn1kziCLcpujms5VaARjvzxfbsJ
-	 uipcbXsvoXGjtb9SBhFmZ2hNFhnahe+sjrt5iVv80vd5xufA7VtUoSDiYtKgyTQz0b
-	 kdW0yEXO7xM4f83RI2UgmdXC2YtUii7fLBYfrFtZR3vHOTs/wUtL0NC8PSUcAjIDZ2
-	 VqsBvE1nLOF5w==
-Received: from johan by xi.lan with local (Exim 4.94.2)
-	(envelope-from <johan@kernel.org>)
-	id 1oknxy-0005SJ-PV; Tue, 18 Oct 2022 16:53:15 +0200
-Date: Tue, 18 Oct 2022 16:53:14 +0200
-From: Johan Hovold <johan@kernel.org>
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Cc: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-	Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@somainline.org>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 13/15] phy: qcom-qmp-pcie: add support for pipediv2 clock
-Message-ID: <Y0692mW6MJneljrP@hovoldconsulting.com>
-References: <20221017145328.22090-1-johan+linaro@kernel.org>
- <20221017145328.22090-14-johan+linaro@kernel.org>
- <2cf670a0-59bd-31b0-8816-496c1e13165d@linaro.org>
+	id 1okoQ5-007YtD-Nx
+	for linux-phy@lists.infradead.org; Tue, 18 Oct 2022 15:22:20 +0000
+Received: by mail-qv1-xf2b.google.com with SMTP id de14so9498934qvb.5
+        for <linux-phy@lists.infradead.org>; Tue, 18 Oct 2022 08:22:16 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=Lv8WBr1FNWwiPSantujB2q1YWU9vZjg1PUxZfiq8E+E=;
+        b=Y4jkCbYLflIwRtB6tQSvzHC9hCTgoxtJ9qJiwbAx+1BFzveaeElyQQRStj1+sBjMUr
+         95iwr/wsNZiECpU+Z0BtMlqxmtsPzdbArvYhUL891k1ejFLiOxwzH665e/lQMSU7EFmU
+         uwYdOQRX7sB6SP3nTlXYSEvouHzmG3fqV5SJ5YLKMnXrPcm/E06pbYp0Ym+mnP7t2WJ4
+         C+0fi+TvJhVKWk0K+8armXEBms1snrgCxDSlDgVneMJW3jqOEeUuXH8cTcmUii+Ig+jk
+         2GGUsgo0LUP8EmC+bVY/4hDrdyiFFEZnKrPWTn/GtX6ZfQneyebYwMxSoEXtU9p64d71
+         d6aw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=Lv8WBr1FNWwiPSantujB2q1YWU9vZjg1PUxZfiq8E+E=;
+        b=2DpBUhogoPTiZisRdnG8xa2nnzOGTPnjbvngbSHfxcnTB7fyufQJumlIHB7CXXbxWh
+         vJEgo/96XcqTQ+eEQcNm4Q3H7nXPemCthTdPTYZvn/IvfNV3W1Ay6dCkHo3Ita4XU8xO
+         rl0WKSlbebuesPjgWO6yWy6y4kBRGfj93lk6ObO+nzYYDbPDsmwoaw0c6Vm/jqaNQ1EK
+         DYESZ+Gl9tTReoypdR9/4spggQsnr4el3UuKrf5VGOM+AITqXxPpFeMwTPVDpHZ6lStD
+         srWlJtcD4N1AwD/FGX//Ry8/dnZmm8Nz+IkdkjpqrZpoY2Vq2poUbTc1x/4aCT7srz+l
+         awDQ==
+X-Gm-Message-State: ACrzQf3OdIOacUdTOqCxDlR73dZT4UobF+RuAf++E6cUqI59ZH8Mid/8
+	HMB2l/CSUeBHzvwVsv1LQCdgKA==
+X-Google-Smtp-Source: AMsMyM44obpzH0jsTyh/TW1xASYKTSf82eL3jRxtnD2rspTO5E09JiUI1qoHppormvOcoXFYQ9LJQQ==
+X-Received: by 2002:a05:6214:27c5:b0:4b1:7b3b:4098 with SMTP id ge5-20020a05621427c500b004b17b3b4098mr2568272qvb.27.1666106535182;
+        Tue, 18 Oct 2022 08:22:15 -0700 (PDT)
+Received: from [192.168.10.124] (pool-72-83-177-149.washdc.east.verizon.net. [72.83.177.149])
+        by smtp.gmail.com with ESMTPSA id p12-20020ae9f30c000000b006eec09eed39sm2524367qkg.40.2022.10.18.08.22.13
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 18 Oct 2022 08:22:14 -0700 (PDT)
+Message-ID: <7a2b1617-5e57-994e-a246-2e6f9fd69262@linaro.org>
+Date: Tue, 18 Oct 2022 11:22:13 -0400
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <2cf670a0-59bd-31b0-8816-496c1e13165d@linaro.org>
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.4.0
+Subject: Re: [PATCH 10/15] dt-bindings: phy: qcom,qmp-pcie: add sc8280xp
+ bindings
+To: Johan Hovold <johan@kernel.org>
+Cc: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+ Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
+ Konrad Dybcio <konrad.dybcio@somainline.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+References: <20221017145328.22090-1-johan+linaro@kernel.org>
+ <20221017145328.22090-11-johan+linaro@kernel.org>
+ <d6642028-3fb9-4e39-a349-666625dabb9d@linaro.org>
+ <Y050nxCaFXIgczrA@hovoldconsulting.com>
+Content-Language: en-US
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <Y050nxCaFXIgczrA@hovoldconsulting.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221018_075328_805522_7DF3A34C 
-X-CRM114-Status: GOOD (  25.75  )
+X-CRM114-CacheID: sfid-20221018_082217_861174_E2BA7166 
+X-CRM114-Status: GOOD (  20.78  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,66 +102,66 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Oct 18, 2022 at 04:05:29PM +0300, Dmitry Baryshkov wrote:
-> On 17/10/2022 17:53, Johan Hovold wrote:
-> > Some QMP PHYs have a second fixed-divider pipe clock that needs to be
-> > enabled along with the pipe clock.
-> > 
-> > Add support for an optional "pipediv2" clock.
-> > 
-> > Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
-> > ---
-> >   drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 42 ++++++++++++++++++++----
-> >   1 file changed, 36 insertions(+), 6 deletions(-)
-> > 
-> > diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-> > index 9c8e009033f1..c1d74c06fad1 100644
-> > --- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-> > +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-> > @@ -1379,7 +1379,9 @@ struct qmp_pcie {
-> >   	void __iomem *rx2;
-> >   
-> >   	struct clk *pipe_clk;
-> > +	struct clk *pipediv2_clk;
-> >   	struct clk_bulk_data *clks;
-> > +
-> >   	struct reset_control_bulk_data *resets;
-> >   	struct regulator_bulk_data *vregs;
-> >   
-> > @@ -1902,6 +1904,36 @@ static int qmp_pcie_exit(struct phy *phy)
-> >   	return 0;
-> >   }
-> >   
-> > +static int pipe_clk_enable(struct qmp_pcie *qmp)
-> > +{
-> > +	int ret;
-> > +
-> > +	ret = clk_prepare_enable(qmp->pipe_clk);
-> > +	if (ret) {
-> > +		dev_err(qmp->dev, "failed to enable pipe clock: %d\n", ret);
-> > +		return ret;
-> > +	}
-> > +
-> > +	ret = clk_prepare_enable(qmp->pipediv2_clk);
-> > +	if (ret) {
-> > +		dev_err(qmp->dev, "failed to enable pipediv2 clock: %d\n", ret);
-> > +		goto err_disable_pipe_clk;
-> > +	}
+On 18/10/2022 05:40, Johan Hovold wrote:
+> On Mon, Oct 17, 2022 at 01:20:49PM -0400, Krzysztof Kozlowski wrote:
+>> On 17/10/2022 10:53, Johan Hovold wrote:
+>>> Add bindings for the PCIe QMP PHYs found on SC8280XP.
+>>>
+>>> The PCIe2 and PCIe3 controllers and PHYs on SC8280XP can be used in
+>>> 4-lane mode or as separate controllers and PHYs in 2-lane mode (e.g. as
+>>> PCIe2A and PCIe2B).
+>>>
+>>> The configuration for a specific system can be read from a TCSR register.
+>>>
+>>> Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
+>>> ---
+>>>  .../bindings/phy/qcom,qmp-pcie-phy.yaml       | 163 ++++++++++++++++++
+>>>  1 file changed, 163 insertions(+)
+>>>  create mode 100644 Documentation/devicetree/bindings/phy/qcom,qmp-pcie-phy.yaml
+>>>
+>>> diff --git a/Documentation/devicetree/bindings/phy/qcom,qmp-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,qmp-pcie-phy.yaml
+>>> new file mode 100644
+>>> index 000000000000..82da95eaa9d6
+>>> --- /dev/null
+>>> +++ b/Documentation/devicetree/bindings/phy/qcom,qmp-pcie-phy.yaml
+>>
+>> Filename based on compatible, so for example:
+>>
+>> qcom,sc8280xp-qmp-pcie-phy.yaml
 > 
-> Do they have to be enabled in sequence? If not, I'd use a bulk clocks 
-> here for the pipe clocks. While it can look like an overkill, it would 
-> be a safe net for the possible future changes, which might include 
-> additional clocks.
+> Ok, but as I mentioned in my reply to the previous patch, this file is
+> the one that is expected to be extended with new bindings.
 
-I don't believe the bulk API is a good fit here as we need to support
-both the new and old bindings, and for the latter the pipe_clk is looked
-up by index rather than name (and that's from the child node too which
-limits which APIs you can use further).
+I would still propose to use compatible of this series and treat it as a
+family name of compatible or similar devices. What other choice we have?
 
-The code is clear enough as it stands, and I don't think we need to take
-height for a hypothetical third pipe clock just yet.
+If new (third) PHY bindings appear, then rename older to "-legacies" and
+this one to "-legacy"?
 
-Johan
+> 
+> I can't seem to find where this naming scheme is documented now even if
+> I'm quite sure I've seen it before. Do you have a pointer?
+
+If you need the source of authority, then:
+https://lore.kernel.org/linux-devicetree/YlhkwvGdcf4ozTzG@robh.at.kernel.org/
+
+If you need unofficial documentation, then slides here:
+https://osseu2022.sched.com/event/15z0W
+
+If you need something official, that's on TODO list. :)
+
+> 
+> And does this imply that the file name should also include the gen infix
+> of one of the original compatibles (e.g.
+> "qcom,sc8280xp-qmp-gen3x4-pcie-phy.yaml")?
+
+Since you already have here three compatibles, you cannot have one
+filename matching exactly all of them, so we already accept something
+generic. Therefore I proposed the common part - matching SoC component.
+
+Best regards,
+Krzysztof
+
 
 -- 
 linux-phy mailing list
