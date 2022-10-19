@@ -4,47 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EB3B0C433FE
-	for <linux-phy@archiver.kernel.org>; Wed, 19 Oct 2022 11:36:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 240BDC43219
+	for <linux-phy@archiver.kernel.org>; Wed, 19 Oct 2022 11:36:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NjneiAlTPw/IvT3S3K8YrgGRagf6/hUeXsmZ9xttddM=; b=ueC1qaWzfRkKin
-	PBQf5AI7i5yhZ8XZ09ARVVBOBDr6+vcvm/p4iGhxUu3zKv6AG5gbOwfbK0V2QhKRHkwsj1YGAqP/H
-	+FYAez8E7CoZ/z7qcV8jm2T6fkvV4sUMXCOygZRTIDYP40XmiZaCj28F8Dxbipe3dQzmfYigkmJoO
-	S707H77yl/0y6BG8kv6rGM8SiA1ZrMlNfo1EIiSFciBwvQCBWX5t1IPMkWgzYVfKJ7WKFMKVpgB/r
-	ZnXMFsZao0MS8drl5U8Nnre8FfVoRTo8UapQqyy8uxrxiPXGqfiBweUVZ8aa3hDYitz5FVcjs9jDG
-	VZQJFR11Cq8kzhwJd2Og==;
+	List-Owner; bh=oVCmNJT+bMNEHz2ow+jrQqMRlXix04N29DuvZg3nrOc=; b=A58wXRFysoiigv
+	RvMoUxanjOFXY6WuO9jI+3D/AG47SU0MPjiMjzkeuDwDA6hZoaNRlXoUYEIvv58wYNHqMbHelVd/M
+	w5/riW4XzGT+6Nq5HX5O6ISkf4af63cYq1xBIYhDDfJ83qtEKWSnuHvTsdlRjuP8bAZ+WzFzpuxBo
+	FnmwXhdhxQcRtByeUcZ5M215CqpINUMKAoCAkJB4ih++gAXknhorPlWyxKg5biLAJx7q8k9XRvMI8
+	Q04xD6EqcVeaTzJ5xSAP2U1Pa23lYEYCGcslea26JZff3h4BiPSOyLS6v1Eoj4DS7YLCTDreAWVn7
+	8dekLLCqhtcCjor5AYNg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ol7N8-000vDn-Cu; Wed, 19 Oct 2022 11:36:30 +0000
+	id 1ol7N8-000vE4-Gd; Wed, 19 Oct 2022 11:36:30 +0000
 Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ol7N1-000v6G-2G
-	for linux-phy@lists.infradead.org; Wed, 19 Oct 2022 11:36:26 +0000
+	id 1ol7N1-000v6M-Ax
+	for linux-phy@lists.infradead.org; Wed, 19 Oct 2022 11:36:27 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id BFB24B823A5;
-	Wed, 19 Oct 2022 11:36:21 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2D665C4314D;
+	by ams.source.kernel.org (Postfix) with ESMTPS id 00AB2B823AA;
+	Wed, 19 Oct 2022 11:36:22 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id AF12BC4347C;
 	Wed, 19 Oct 2022 11:36:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1666179379;
-	bh=X8dGKcEatEcWeJmdLOuulVQ9QOL8lBrkv9IoBNpoAeg=;
+	bh=zIA+ml8wbUJ1pYtOiAw0rtWwlGesij42jZ74b5odlbA=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=QV/242UqsWtXytsiPh0Qaz6UpnmMGjWlDm92Jt0omW20KUDqXAEMOpY7AtTbshfXw
-	 ll+w0PfLnp3P8DU4bq9FHAu2ugwfUPRWTjypgANgkllpDGlObMz0zWpqvqCz5c9xC/
-	 HarUHUF1PzcxwqNJnskXtu1if1lx+vwXGpkx5u7ppLkW4/kf2tCCjrCjpUrZGIlBo+
-	 MMvx1e8CrgN86YnPm2umgRgRCw/Afo8rN35+lvN34sVNqEgkKpkbRLb7HR8nF28h4F
-	 vfqJoRVTRFzhBcqm6F/ufDne7n8cPVVr+sOhz4OjcWjQO1TCsRidcp/zaJ8V2wh/vJ
-	 azaEjUGbKSU5Q==
+	b=OnfROS9pgtB+v2R+pRpamwuc5ZfGYmp8hTczSrF6h09gpiAZ/PA1Z0Xbqp0QBh46S
+	 EGCz/oppZ1IkL0Xwa6D6udZxbKcCKWaDetAWHO3swrwh/yqZZe0v1Wk1yKHuZ1TUOB
+	 eqj0e2n60OIZXQnPaQSgbklGG4T1ZCIjZPWgA/DBT8a2O+9ngHv08rAQNhhR5rp+ZY
+	 hgPKMoZJ/tU+VU5Db0V2rs+aWwm6lt4hp7FAToofhsG1qEOhyPOPWBqbNIk4veu8zo
+	 0ESO1sgYXpUofJridNFGr0ujQNQ8iOlEEPpgZriNDaikppkA4kKK4xt5xoQYh9mGmN
+	 67dypo7QXf4cQ==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1ol7Ml-0005pQ-Lx; Wed, 19 Oct 2022 13:36:07 +0200
+	id 1ol7Mm-0005pl-9a; Wed, 19 Oct 2022 13:36:08 +0200
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>
 Cc: Andy Gross <agross@kernel.org>,
@@ -58,16 +58,16 @@ Cc: Andy Gross <agross@kernel.org>,
 	devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH v2 05/15] phy: qcom-qmp-pcie: clean up probe initialisation
-Date: Wed, 19 Oct 2022 13:35:42 +0200
-Message-Id: <20221019113552.22353-6-johan+linaro@kernel.org>
+Subject: [PATCH v2 12/15] phy: qcom-qmp-pcie: fix initialisation reset
+Date: Wed, 19 Oct 2022 13:35:49 +0200
+Message-Id: <20221019113552.22353-13-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.37.3
 In-Reply-To: <20221019113552.22353-1-johan+linaro@kernel.org>
 References: <20221019113552.22353-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221019_043623_455157_347B8253 
-X-CRM114-Status: GOOD (  16.90  )
+X-CRM114-CacheID: sfid-20221019_043623_583886_7F4216B7 
+X-CRM114-Status: GOOD (  13.32  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,136 +84,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Stop abusing the driver data pointer and instead pass the driver state
-structure directly to the initialisation helpers during probe.
+Add the missing delay after asserting reset. This is specifically needed
+for the reset to have any effect on SC8280XP.
+
+The vendor driver uses a 1 ms delay, but that seems a bit excessive.
+Instead use a 200 us delay which appears to be more than enough and also
+matches the UFS reset delay added by commit 870b1279c7a0 ("scsi:
+ufs-qcom: Add reset control support for host controller").
 
 Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 49 +++++++++++-------------
- 1 file changed, 23 insertions(+), 26 deletions(-)
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
 diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-index bc96518ad6b0..e30cbc94cbf6 100644
+index 2f4bdef73395..9c8e009033f1 100644
 --- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
 +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-@@ -2037,9 +2037,10 @@ static int qmp_pcie_set_mode(struct phy *phy, enum phy_mode mode, int submode)
- 	return 0;
- }
+@@ -1866,6 +1866,8 @@ static int qmp_pcie_init(struct phy *phy)
+ 		goto err_disable_regulators;
+ 	}
  
--static int qmp_pcie_vreg_init(struct device *dev, const struct qmp_phy_cfg *cfg)
-+static int qmp_pcie_vreg_init(struct qmp_pcie *qmp)
- {
--	struct qmp_pcie *qmp = dev_get_drvdata(dev);
-+	const struct qmp_phy_cfg *cfg = qmp->cfg;
-+	struct device *dev = qmp->dev;
- 	int num = cfg->num_vregs;
- 	int i;
- 
-@@ -2053,9 +2054,10 @@ static int qmp_pcie_vreg_init(struct device *dev, const struct qmp_phy_cfg *cfg)
- 	return devm_regulator_bulk_get(dev, num, qmp->vregs);
- }
- 
--static int qmp_pcie_reset_init(struct device *dev, const struct qmp_phy_cfg *cfg)
-+static int qmp_pcie_reset_init(struct qmp_pcie *qmp)
- {
--	struct qmp_pcie *qmp = dev_get_drvdata(dev);
-+	const struct qmp_phy_cfg *cfg = qmp->cfg;
-+	struct device *dev = qmp->dev;
- 	int i;
- 	int ret;
- 
-@@ -2074,9 +2076,10 @@ static int qmp_pcie_reset_init(struct device *dev, const struct qmp_phy_cfg *cfg
- 	return 0;
- }
- 
--static int qmp_pcie_clk_init(struct device *dev, const struct qmp_phy_cfg *cfg)
-+static int qmp_pcie_clk_init(struct qmp_pcie *qmp)
- {
--	struct qmp_pcie *qmp = dev_get_drvdata(dev);
-+	const struct qmp_phy_cfg *cfg = qmp->cfg;
-+	struct device *dev = qmp->dev;
- 	int num = cfg->num_clks;
- 	int i;
- 
-@@ -2164,18 +2167,15 @@ static const struct phy_ops qmp_pcie_ops = {
- 	.owner		= THIS_MODULE,
- };
- 
--static int qmp_pcie_create(struct device *dev, struct device_node *np,
--			void __iomem *serdes, const struct qmp_phy_cfg *cfg)
-+static int qmp_pcie_create(struct qmp_pcie *qmp, struct device_node *np)
- {
--	struct qmp_pcie *qmp = dev_get_drvdata(dev);
-+	const struct qmp_phy_cfg *cfg = qmp->cfg;
-+	struct device *dev = qmp->dev;
- 	struct phy *generic_phy;
- 	int ret;
- 
- 	qmp->mode = PHY_MODE_PCIE_RC;
- 
--	qmp->cfg = cfg;
--	qmp->serdes = serdes;
--
- 	/*
- 	 * Get memory resources for the PHY:
- 	 * Resources are indexed as: tx -> 0; rx -> 1; pcs -> 2.
-@@ -2247,8 +2247,6 @@ static int qmp_pcie_probe(struct platform_device *pdev)
- 	struct device *dev = &pdev->dev;
- 	struct device_node *child;
- 	struct phy_provider *phy_provider;
--	void __iomem *serdes;
--	const struct qmp_phy_cfg *cfg = NULL;
- 	struct qmp_pcie *qmp;
- 	int ret;
- 
-@@ -2257,28 +2255,27 @@ static int qmp_pcie_probe(struct platform_device *pdev)
- 		return -ENOMEM;
- 
- 	qmp->dev = dev;
--	dev_set_drvdata(dev, qmp);
- 
--	cfg = of_device_get_match_data(dev);
--	if (!cfg)
-+	qmp->cfg = of_device_get_match_data(dev);
-+	if (!qmp->cfg)
- 		return -EINVAL;
- 
--	WARN_ON_ONCE(!cfg->pwrdn_ctrl);
--	WARN_ON_ONCE(!cfg->phy_status);
-+	WARN_ON_ONCE(!qmp->cfg->pwrdn_ctrl);
-+	WARN_ON_ONCE(!qmp->cfg->phy_status);
- 
--	serdes = devm_platform_ioremap_resource(pdev, 0);
--	if (IS_ERR(serdes))
--		return PTR_ERR(serdes);
-+	qmp->serdes = devm_platform_ioremap_resource(pdev, 0);
-+	if (IS_ERR(qmp->serdes))
-+		return PTR_ERR(qmp->serdes);
- 
--	ret = qmp_pcie_clk_init(dev, cfg);
-+	ret = qmp_pcie_clk_init(qmp);
- 	if (ret)
- 		return ret;
- 
--	ret = qmp_pcie_reset_init(dev, cfg);
-+	ret = qmp_pcie_reset_init(qmp);
- 	if (ret)
- 		return ret;
- 
--	ret = qmp_pcie_vreg_init(dev, cfg);
-+	ret = qmp_pcie_vreg_init(qmp);
- 	if (ret)
- 		return ret;
- 
-@@ -2286,7 +2283,7 @@ static int qmp_pcie_probe(struct platform_device *pdev)
- 	if (!child)
- 		return -EINVAL;
- 
--	ret = qmp_pcie_create(dev, child, serdes, cfg);
-+	ret = qmp_pcie_create(qmp, child);
- 	if (ret)
- 		goto err_node_put;
- 
++	usleep_range(200, 300);
++
+ 	ret = reset_control_bulk_deassert(cfg->num_resets, qmp->resets);
+ 	if (ret) {
+ 		dev_err(qmp->dev, "reset deassert failed\n");
 -- 
 2.37.3
 
