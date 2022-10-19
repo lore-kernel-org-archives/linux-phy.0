@@ -4,127 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9CD55C433FE
-	for <linux-phy@archiver.kernel.org>; Tue, 18 Oct 2022 23:15:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C80D5C433FE
+	for <linux-phy@archiver.kernel.org>; Wed, 19 Oct 2022 04:29:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
+	CC:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cZZSXDFuIQWgNwUpmRMT+GpKp4pdhKp3KwQbZ0tJ9ds=; b=31yUUb6b3pIF+b
-	x0mFarKCVOsPin+Chj6NioClXvEwN6KrcTpnMF3VTIMP46OvmcAjKc1VLN2a+Mm6C3iosf4wzR/u2
-	pdlE58oKKstqybX+GouNsme5F/q24mZ64LsEvSlSnHs9NEHxsQJKYuNM8jWC8jlxDG5fWmmaIG+YT
-	FAjvrS2FZjycKzLtoljOdCrG/pN5V5FqNQ/WfkchogdlupgpCHUpguAq0/RfelmJeY9lkB7fZ9+zI
-	THQMB8GhoAyzLxG3598u31mEWhKBCYMxodVd3SA0jGfi6KhZJFoAr7QuOD0w1hp29Hs7ZHWLShWoA
-	VT+UBdYojWyoxoJf5Fgw==;
+	List-Owner; bh=dWbRE04h0QrqbMTqCPacdA62uxg3X6hpWY95WWsAwtc=; b=lTSoYJyzHF0gn6
+	4k5ina1xnrvocZnB3pU0whqUMDmtwL50lwY6DegncuaLRzYBfSnvpDigY4YLGdHA/GYjiPqqu2V5i
+	fBzMzhOS3uX9Wm4EG/wLfCZOLOkWxadosjur1+nie1SXA6KlIm+VqeZTpthc9vJSNrCJuW1ezc2xh
+	Uk8R/tTTMM6xROcvIGGhwYP+3JbMrnjkExsCCI/WC7UXpkdewCNcZQg3Avfu9yRCDIpwlxHCewTmM
+	YfDLnFS5+zAWcOMtclIob9ZdQXYOknJJAP5qDzPq0M1VPQBO6BT5zWL7pOuqenxy5G6GRj3LGYe4X
+	vOWTgwkTcHu4qIAJ2D6Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1okvnj-00AsYK-Pl; Tue, 18 Oct 2022 23:15:11 +0000
-Received: from mail-eopbgr80081.outbound.protection.outlook.com ([40.107.8.81] helo=EUR04-VI1-obe.outbound.protection.outlook.com)
+	id 1ol0hc-00Eedy-Qc; Wed, 19 Oct 2022 04:29:12 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1okvkQ-00AqqD-SZ; Tue, 18 Oct 2022 23:11:48 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=a/yoBNuCdHKzCHftVbvxuLHPp84b8DgECp/gqlzhBIAAs0pN2V8Bs0XNX+RshH7WsI7+Twd3VfHuF4Bz0Pym4JGHHdK+AGarOmAhcPswf1iXWP0zB3zPGNGbu8/iN2FX0D3dAr/6Gf2Cd+N03F099FsoFQdB26jSY+slu8RTHdehBzY7H/zIBrFaPahVAjF4ca/5DdLPj/x30gtkGhS24HiPodSO6yyiFGtXwwAVHc6Lp+QoQgUEvbxYP/L2z/LCew13B+Nm4Kn0bxaiQ4W7rPAUAK9AKijE3iKZe3lmiRnxQPWLeepB23LwfEIje1pEZsVOAF5a8pLxlEJHBtkH7g==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=SkYKwvMqL99mlQrVS3hHZ3x4LOcthYYfh12oDwFTxYE=;
- b=fw/3x36FZ1vB1/flDcKNT6yJwRSXZ3R7LfB8PmJ+JUGV6Zjl7ZkY/ef+SIEc1MwQoNKd8syt2eNa6stOg7o2JBC6SaAbu2gcvqp2gry40okPHuCEv8tl+ytPZVjHlM57DeQ0qS5mNMAyPPOR7fu0nLLNRFaBxzRdINhx4SEFjfULATrejIIwYhldvl0UJEzJraqclCXORhaXCXVexUKimSGTFXj9eOHOrC8PDlGT7Fmb62QxLSXD7MqaZkvdDRjC3b/NWMNPGP4iTn0qAjGMeYeaOiRbcbLNX5w+tHRxoc1mOSCDl6sMRHZR7iCr9/xh7TNtgE6616IWw0/cvF0u5g==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=seco.com; dmarc=pass action=none header.from=seco.com;
- dkim=pass header.d=seco.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=seco.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=SkYKwvMqL99mlQrVS3hHZ3x4LOcthYYfh12oDwFTxYE=;
- b=qaw2t0wLbWj5Fsw8uBo9xrHwR8tdoMgUJX7wEnyAENvSKJfJcmiXv3Ra0JV8YghK4ZHptOU1gdrnnmn7u0fevmKw269UlllBZYqOzwFb8tDtqETTXpDoIQcH8UyFYiaQSTjlzXCLkusj4NCKCBs+B/7IvQOuysSYGUIEaOrFhHLkSHmOz3BF95RjjWRJajV8S6HnaQqJt5tHoQ2fEnnvG/JVEgczPQvXlpGAjFp80i0TmnuMPeVkYHJOH7bTY3tnNIiTrmhnlxJtk9dg57mbZ+6mXa4eVzb8zPeHpgVCeo2IebidPlQ1KrEuwznsIh4pH8Uw52VVpUZ5ZXgMKAR84Q==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=seco.com;
-Received: from DB7PR03MB4972.eurprd03.prod.outlook.com (2603:10a6:10:7d::22)
- by DBAPR03MB6421.eurprd03.prod.outlook.com (2603:10a6:10:198::16) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5723.26; Tue, 18 Oct
- 2022 23:11:37 +0000
-Received: from DB7PR03MB4972.eurprd03.prod.outlook.com
- ([fe80::204a:de22:b651:f86d]) by DB7PR03MB4972.eurprd03.prod.outlook.com
- ([fe80::204a:de22:b651:f86d%6]) with mapi id 15.20.5723.034; Tue, 18 Oct 2022
- 23:11:37 +0000
-From: Sean Anderson <sean.anderson@seco.com>
-To: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@ti.com>,
-	linux-phy@lists.infradead.org
-Cc: Camelia Alexandra Groza <camelia.groza@nxp.com>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	linuxppc-dev@lists.ozlabs.org,
-	linux-arm-kernel@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	Madalin Bucur <madalin.bucur@nxp.com>,
-	Rob Herring <robh+dt@kernel.org>,
-	Ioana Ciornei <ioana.ciornei@nxp.com>,
-	Sean Anderson <sean.anderson@seco.com>,
-	Li Yang <leoyang.li@nxp.com>,
-	Shawn Guo <shawnguo@kernel.org>
-Subject: [PATCH v7 8/8] [WIP] arm64: dts: ls1088ardb: Add serdes bindings
-Date: Tue, 18 Oct 2022 19:11:12 -0400
-Message-Id: <20221018231112.2142074-9-sean.anderson@seco.com>
-X-Mailer: git-send-email 2.35.1.1320.gc452695387.dirty
-In-Reply-To: <20221018231112.2142074-1-sean.anderson@seco.com>
-References: <20221018231112.2142074-1-sean.anderson@seco.com>
-X-ClientProxiedBy: MN2PR18CA0007.namprd18.prod.outlook.com
- (2603:10b6:208:23c::12) To DB7PR03MB4972.eurprd03.prod.outlook.com
- (2603:10a6:10:7d::22)
+	id 1ol0hS-00EeV3-4x; Wed, 19 Oct 2022 04:29:03 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+	by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 29J4SmTR062851;
+	Tue, 18 Oct 2022 23:28:48 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+	s=ti-com-17Q1; t=1666153728;
+	bh=eFh32FoTwp/oIkMmernvS0tQR2Uo417WxoSAXhgooHY=;
+	h=Date:CC:Subject:To:References:From:In-Reply-To;
+	b=P+YwybHtKLIKE9jyUkUr5b8L3KcIcOQ2xqP93/67wwgjbE25J9gGN1L+9X9IJr5fD
+	 EmRHE0GUIa2gimOnEHA9ycV2D4tpdrlnp8wwWhoFl8fAPbdPpsEOdU4ZaxhG+4a2AP
+	 UQh/gK3WYagSoASPR1GM9cFYpOXb0HGgY0xybOJM=
+Received: from DFLE102.ent.ti.com (dfle102.ent.ti.com [10.64.6.23])
+	by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 29J4SmQY116582
+	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+	Tue, 18 Oct 2022 23:28:48 -0500
+Received: from DFLE106.ent.ti.com (10.64.6.27) by DFLE102.ent.ti.com
+ (10.64.6.23) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.6; Tue, 18
+ Oct 2022 23:28:48 -0500
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE106.ent.ti.com
+ (10.64.6.27) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.6 via
+ Frontend Transport; Tue, 18 Oct 2022 23:28:48 -0500
+Received: from [172.24.145.87] (ileaxei01-snat2.itg.ti.com [10.180.69.6])
+	by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 29J4Shv6095798;
+	Tue, 18 Oct 2022 23:28:44 -0500
+Message-ID: <694b14c5-1d96-a305-99f0-c6be2248ea7b@ti.com>
+Date: Wed, 19 Oct 2022 09:58:43 +0530
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: DB7PR03MB4972:EE_|DBAPR03MB6421:EE_
-X-MS-Office365-Filtering-Correlation-Id: 6a2cd09a-579b-4e41-611d-08dab15e1b4b
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 	JaJ3M6FayGY9xZ77eh/rM/Y06uho5XRlyp+Qwtzkg3BaeCvXkX1iwgmByYBADYcS8hDLSzpAxsj3YS8c5G0dQhIlSHhVWbRjOsHalDKLCn3ZDPTAbk3RQBcLosIgOZNuuyX9AgkQbHJuwv44qYapTtNR+anWMpta4pDJ9nhdNeXzcNaimf7c2+XU4o4m8zRPYbzMTiiOZNOKh3VHRewyYc9smFHk7Je6sVYDSaupvmOaLja4T+1Ag09bFIOOeMDEO1Kp9rnHYKKAl0RTg4nTgZHXAZtU86cWwcDkqJH/8bY+cdP3eMaunJLww98gSBDQxQXKBNLrlVBe4vO1q+nEqTRhTgSg/Xm0iQhvqClhGsw1spF/p/9vhM3A3UVFl2QDwmxTDvCusNTT9UFZ/MtgWo2fWWQVuH/IOzuLD4UgqvUnQj3xMVOX+dqdm0Yc1eETodUHFlzhQknXhMAdiZspiPw4wtpovn0hGunPnYPxoH0AyOfutIdb3ln+xL5W4qg9oVMDdNdDZJqbReag+EQh6IJkbHL7rGV8naLI65bHdgAfOjgW5gPY0bjmFdRFILp12WDM9MTgcBIyjwmmfHbN7R3pQPKOOj0FonMWCFZvx5ImtuhxG35k7Vq658t6JEQg+M+AnyJ/GyM2FurzSooTZn2imY6iG5IMAkKsY6hPlQQ1j4U+DYPSG9BqoxQkzhz1XVMLzzu5KZtH4XUtYUVfgEOKxgwvutzF5r1oEBQl4R9zv5Pr/4sD5FRxA/oe4bkd
-X-Forefront-Antispam-Report: 	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DB7PR03MB4972.eurprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230022)(346002)(376002)(136003)(396003)(366004)(39840400004)(451199015)(6506007)(6512007)(110136005)(26005)(86362001)(66476007)(8676002)(38350700002)(7416002)(5660300002)(36756003)(44832011)(2906002)(8936002)(4326008)(66556008)(38100700002)(41300700001)(66946007)(83380400001)(316002)(1076003)(52116002)(6486002)(2616005)(186003)(478600001)(54906003)(6666004);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: 	=?us-ascii?Q?98trJZPTKZ3Dmcsu4HtT7uwnMdlrgCb+WZPLUJwgkHy5geKm7IUSe4WTw74A?=
- =?us-ascii?Q?Et2Esor6Gg19jL4EZQo5lncOZYGmly0MP8yHhSwir9jHK7farvJM7tmEe9kj?=
- =?us-ascii?Q?WVh7KV9gReByQqZB+o6xmQQBTF/vg+lmn1gXU3AHx/PuWqrvyHBdgkgUJ4yX?=
- =?us-ascii?Q?K8CSQTZErqpURcve50hVSeMIyfbl5aK1F2h12pmsebS0y6uAsDCk5Y/bk8ia?=
- =?us-ascii?Q?N2rxkxlyRxOoCvR7EwH3RFk1U89iGUm756HB4HOHdzgrh6uQM27NGcggZv+3?=
- =?us-ascii?Q?Lp0oQdu2v0H/DTjQ5EozGWfIcpiK0557ax0G/hoYRaq/b0cJTYq65E20T+qY?=
- =?us-ascii?Q?L0ZxoAI2+OIrxp8zLq7P7mtmKAe9BMiHIehrlCI3q3wTHO1a3TYjAO5NZD7u?=
- =?us-ascii?Q?Qi35RyMQptQzXM9cW0JWDNFU1LXcPAi/tIwD6SbwJ/JCZCS9hYzW9NGczDEB?=
- =?us-ascii?Q?83LXbWh2FBtB6aGaBBG5hVhFV8L/uMCUJ2smsjEnBmPZKjm0w/XRpNrDLtji?=
- =?us-ascii?Q?Vfczp9Avgd6v+u6OSEGYLZIjtjgQ730dlnIPahzQvqfdUuumqbGrY0obDhvP?=
- =?us-ascii?Q?VSpByL7EGbIXOBHKbgip4PYISTqOTalP35X6uIGP9QqWNhPKx429bja7U3U8?=
- =?us-ascii?Q?ucG55192xyy1gKQLOtQkLpQY9MJdV45GmC3WUanxqWnu8vLCL1W3QLxubj+D?=
- =?us-ascii?Q?PTPGSZtwMJ+9cqiUHSRmgsBw763nbmQECi4y3TmFAoh25TlWHedoZkrUy/dJ?=
- =?us-ascii?Q?BGkU0V9eqCX1UIne7Z8HuEwTxrIgwA1/JbLopAKgd6y2wrvA66tVs3w6ky6U?=
- =?us-ascii?Q?ARe2QDrUGJFl17hthUYr7fm3iHWeFj/0e4Xqjagalxccd5+xcJuRYxQCwDXz?=
- =?us-ascii?Q?BlBNibNBkC9UNpbLV18/n3qvcT1b5wS4Zbp1XDYn3HF0qdG4AUWlXNNW2Kff?=
- =?us-ascii?Q?8LBBT0LHk17FbdvCh9DYRXCMuO0g/bSS5cws8J9HWdoNris4+Vq3+n3SmvFk?=
- =?us-ascii?Q?GHw2wXexbhA9ljrO7CPKeB++cEuATxQWQfYo5wnNw6zCHwJF5Mku0a/h4dm5?=
- =?us-ascii?Q?o0w6sW9/Xj5rapLQs6n/o32hpiI0dnW/Xu7HxSRUKwHL+cjArGmWrRIIVUfs?=
- =?us-ascii?Q?KSxhnqXMoRuuWYyxR65jEuBMtmVKv1yo5ZozofWU/IIL2OVWzkdlwWEOpXj9?=
- =?us-ascii?Q?xBdh8Ha9DLuw3CIPI+myQBBbmjjZHUMfvFlbZmmvcQdw6l026Z+9pAZKO7bl?=
- =?us-ascii?Q?Ki8V5Jtvtl3qCcc+t/VTVT+xXcGd9vpzqsFWisTFfYUDgJuXVcZbeBzFlbLb?=
- =?us-ascii?Q?+fV9UTnx5+3nEWCMrOPjc5bIJhZdRTQ0gQl+q/qzuFkgDHzCAV7G57l0/Zdw?=
- =?us-ascii?Q?Tci8BxW0CH0T+kNi7DdZQJW1vC5pMrBqwa5FozV064CKuSNxeDMbU52xTcR8?=
- =?us-ascii?Q?1ocsR9Ac8FGxIPDORlSk7BI7GuXfY/SZbBEzRpPTIck59QTGlj5Ova+YaC7W?=
- =?us-ascii?Q?0Qwmaq6QMHo5zHh8dswmBeJnGYkW0PNhCm1akzuTnGPQtyoOv3S5tEiOGi1q?=
- =?us-ascii?Q?TDWOEUgJhKiGt6RehNiBYIfdY7GTnPjJm9hL2NV1KRm44tlCBm5c6KhVRLYs?=
- =?us-ascii?Q?mQ=3D=3D?=
-X-OriginatorOrg: seco.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 6a2cd09a-579b-4e41-611d-08dab15e1b4b
-X-MS-Exchange-CrossTenant-AuthSource: DB7PR03MB4972.eurprd03.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 18 Oct 2022 23:11:37.1032
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: bebe97c3-6438-442e-ade3-ff17aa50e733
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: 9AAmZlzBIr4fRD1u3LB8tcJcufu+kW0L2nsTozSc9YyWUiddYwxQBc8ypAkjn45sMi8OIiDIg3lzyrTHMcDDJw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DBAPR03MB6421
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.2.2
+CC: <rogerq@kernel.org>, <krzysztof.kozlowski@linaro.org>,
+        <linux-kernel@vger.kernel.org>, <vkoul@kernel.org>,
+        <kishon@kernel.org>, <robh+dt@kernel.org>,
+        <devicetree@vger.kernel.org>, <lee@kernel.org>,
+        <linux-phy@lists.infradead.org>, <dan.carpenter@oracle.com>,
+        <krzysztof.kozlowski+dt@linaro.org>,
+        <linux-arm-kernel@lists.infradead.org>, <s-vadapalli@ti.com>
+Subject: Re: [PATCH v2 1/3] dt-bindings: phy: ti: phy-gmii-sel: Add bindings
+ for J721e
+Content-Language: en-US
+To: Rob Herring <robh@kernel.org>
+References: <20221018084333.149790-1-s-vadapalli@ti.com>
+ <20221018084333.149790-2-s-vadapalli@ti.com>
+ <166609952062.171721.12955273990805791032.robh@kernel.org>
+From: Siddharth Vadapalli <s-vadapalli@ti.com>
+In-Reply-To: <166609952062.171721.12955273990805791032.robh@kernel.org>
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221018_161146_989537_341B13AA 
-X-CRM114-Status: GOOD (  12.75  )
+X-CRM114-CacheID: sfid-20221018_212902_494349_FF4A83AF 
+X-CRM114-Status: GOOD (  12.82  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -141,275 +90,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This is a first stab at adding serdes support on the LS1088A. Linux
-hangs around when the serdes is initialized if the si5341 is enabled, so
-it's commented out. The MC firmware needs to be fairly new (it must
-support DPAA2_MAC_FEATURE_PROTOCOL_CHANGE), and the DPC needs to set the
-macs to MAC_LINK_TYPE_BACKPLANE. For this reason, I think this will be
-difficult to do in a backwards-compatible manner. I have not finished
-testing this, but hopefully it can be a good starting point.
+Hello Rob,
 
-Signed-off-by: Sean Anderson <sean.anderson@seco.com>
+On 18/10/22 19:02, Rob Herring wrote:
+> On Tue, 18 Oct 2022 14:13:31 +0530, Siddharth Vadapalli wrote:
+>> TI's J721e SoC supports additional PHY modes like QSGMII and SGMII
+>> that are not supported on earlier SoCs. Add a compatible for it.
+>>
+>> Extend ti,qsgmii-main-ports property to support selection of upto
+>> two main ports at once across the two QSGMII interfaces.
+>>
+>> Signed-off-by: Siddharth Vadapalli <s-vadapalli@ti.com>
+>> ---
+>>  .../bindings/phy/ti,phy-gmii-sel.yaml         | 48 +++++++++++++++----
+>>  1 file changed, 40 insertions(+), 8 deletions(-)
+>>
+> 
+> My bot found errors running 'make DT_CHECKER_FLAGS=-m dt_binding_check'
+> on your patch (DT_CHECKER_FLAGS is new in v5.13):
+> 
+> yamllint warnings/errors:
+> ./Documentation/devicetree/bindings/phy/ti,phy-gmii-sel.yaml:75:12: [error] syntax error: mapping values are not allowed here (syntax)
 
----
+I will fix the errors in the v3 series and ensure that there are no
+errors or warnings with dt_binding_check, using the updated dt-schema
+and yamllint.
 
-(no changes since v4)
-
-Changes in v4:
-- Convert to new bindings
-
- .../boot/dts/freescale/fsl-ls1088a-rdb.dts    | 161 ++++++++++++++++++
- 1 file changed, 161 insertions(+)
-
-diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1088a-rdb.dts b/arch/arm64/boot/dts/freescale/fsl-ls1088a-rdb.dts
-index 1bfbce69cc8b..5c502048d887 100644
---- a/arch/arm64/boot/dts/freescale/fsl-ls1088a-rdb.dts
-+++ b/arch/arm64/boot/dts/freescale/fsl-ls1088a-rdb.dts
-@@ -10,17 +10,138 @@
- 
- /dts-v1/;
- 
-+#include <dt-bindings/phy/phy.h>
-+
- #include "fsl-ls1088a.dtsi"
- 
- / {
- 	model = "LS1088A RDB Board";
- 	compatible = "fsl,ls1088a-rdb", "fsl,ls1088a";
-+
-+	clocks {
-+		si5341_xtal: clock-48mhz {
-+			compatible = "fixed-clock";
-+			#clock-cells = <0>;
-+			clock-frequency = <48000000>;
-+		};
-+
-+		clk_100mhz: clock-100mhz {
-+			compatible = "fixed-clock";
-+			#clock-cells = <0>;
-+			clock-frequency = <100000000>;
-+		};
-+
-+		clk_156mhz: clock-156mhz {
-+			compatible = "fixed-clock";
-+			#clock-cells = <0>;
-+			clock-frequency = <156250000>;
-+		};
-+	};
-+
-+	ovdd: regulator-1v8 {
-+		compatible = "regulator-fixed";
-+		regulator-name = "ovdd";
-+		regulator-min-microvolt = <1800000>;
-+		regulator-max-microvolt = <1800000>;
-+	};
-+
-+	dvdd: regulator-3v3 {
-+		compatible = "regulator-fixed";
-+		regulator-name = "dvdd";
-+		regulator-min-microvolt = <3300000>;
-+		regulator-max-microvolt = <3300000>;
-+	};
-+
-+};
-+
-+&serdes1 {
-+	//clocks = <&si5341 0 8>, <&si5341 0 9>;
-+	clocks = <&clk_100mhz>, <&clk_156mhz>;
-+	clock-names = "ref0", "ref1";
-+	status = "okay";
-+
-+	serdes1_0: phy@0 {
-+		#phy-cells = <0>;
-+		reg = <0>;
-+
-+		/* SG2 */
-+		sgmii-3 {
-+			fsl,pccr = <0x8>;
-+			fsl,index = <3>;
-+			fsl,cfg = <0x1>;
-+			phy-type = <PHY_TYPE_2500BASEX>;
-+		};
-+
-+		/* XFI2 */
-+		xfi-1 {
-+			fsl,pccr = <0xb>;
-+			fsl,index = <1>;
-+			fsl,cfg = <0x1>;
-+			phy-type = <PHY_TYPE_10GBASER>;
-+		};
-+	};
-+
-+	serdes1_1: phy@1 {
-+		#phy-cells = <0>;
-+		reg = <1>;
-+
-+		/* SG1 */
-+		sgmii-2 {
-+			fsl,pccr = <0x8>;
-+			fsl,index = <2>;
-+			fsl,cfg = <0x1>;
-+			phy-type = <PHY_TYPE_2500BASEX>;
-+		};
-+
-+		/*
-+		 * XFI2
-+		 * Table 23-1 and section 23.5.16.4 disagree; this reflects the
-+		 * table.
-+		 */
-+		xfi-0 {
-+			fsl,pccr = <0xb>;
-+			fsl,index = <0>;
-+			fsl,cfg = <0x1>;
-+			phy-type = <PHY_TYPE_10GBASER>;
-+		};
-+	};
-+
-+	serdes1_2: phy@2 {
-+		#phy-cells = <0>;
-+		reg = <2>;
-+
-+		/* QSGb */
-+		qsgmii-1 {
-+			fsl,pccr = <0x9>;
-+			fsl,index = <1>;
-+			fsl,cfg = <0x1>;
-+			phy-type = <PHY_TYPE_QSGMII>;
-+		};
-+	};
-+
-+	serdes1_3: phy@2 {
-+		#phy-cells = <0>;
-+		reg = <2>;
-+
-+		/* QSGa */
-+		qsgmii-0 {
-+			fsl,pccr = <0x9>;
-+			fsl,index = <0>;
-+			fsl,cfg = <0x1>;
-+			phy-type = <PHY_TYPE_QSGMII>;
-+		};
-+	};
-+};
-+
-+&dpmac1 {
-+	phys = <&serdes1_1>;
- };
- 
- &dpmac2 {
- 	phy-handle = <&mdio2_aquantia_phy>;
- 	phy-connection-type = "10gbase-r";
- 	pcs-handle = <&pcs2>;
-+	phys = <&serdes1_0>;
- };
- 
- &dpmac3 {
-@@ -28,6 +149,7 @@ &dpmac3 {
- 	phy-connection-type = "qsgmii";
- 	managed = "in-band-status";
- 	pcs-handle = <&pcs3_0>;
-+	phys = <&serdes1_3>;
- };
- 
- &dpmac4 {
-@@ -35,6 +157,7 @@ &dpmac4 {
- 	phy-connection-type = "qsgmii";
- 	managed = "in-band-status";
- 	pcs-handle = <&pcs3_1>;
-+	phys = <&serdes1_3>;
- };
- 
- &dpmac5 {
-@@ -42,6 +165,7 @@ &dpmac5 {
- 	phy-connection-type = "qsgmii";
- 	managed = "in-band-status";
- 	pcs-handle = <&pcs3_2>;
-+	phys = <&serdes1_3>;
- };
- 
- &dpmac6 {
-@@ -49,6 +173,7 @@ &dpmac6 {
- 	phy-connection-type = "qsgmii";
- 	managed = "in-band-status";
- 	pcs-handle = <&pcs3_3>;
-+	phys = <&serdes1_3>;
- };
- 
- &dpmac7 {
-@@ -56,6 +181,7 @@ &dpmac7 {
- 	phy-connection-type = "qsgmii";
- 	managed = "in-band-status";
- 	pcs-handle = <&pcs7_0>;
-+	phys = <&serdes1_2>;
- };
- 
- &dpmac8 {
-@@ -63,6 +189,7 @@ &dpmac8 {
- 	phy-connection-type = "qsgmii";
- 	managed = "in-band-status";
- 	pcs-handle = <&pcs7_1>;
-+	phys = <&serdes1_2>;
- };
- 
- &dpmac9 {
-@@ -70,6 +197,7 @@ &dpmac9 {
- 	phy-connection-type = "qsgmii";
- 	managed = "in-band-status";
- 	pcs-handle = <&pcs7_2>;
-+	phys = <&serdes1_2>;
- };
- 
- &dpmac10 {
-@@ -77,6 +205,7 @@ &dpmac10 {
- 	phy-connection-type = "qsgmii";
- 	managed = "in-band-status";
- 	pcs-handle = <&pcs7_3>;
-+	phys = <&serdes1_2>;
- };
- 
- &emdio1 {
-@@ -142,6 +271,38 @@ i2c-switch@77 {
- 		#address-cells = <1>;
- 		#size-cells = <0>;
- 
-+		i2c@1 {
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+			reg = <0x1>;
-+
-+			si5341: clock-generator@74 {
-+				#address-cells = <1>;
-+				#clock-cells = <2>;
-+				#size-cells = <0>;
-+				compatible = "silabs,si5341";
-+				reg = <0x74>;
-+				clocks = <&si5341_xtal>;
-+				clock-names = "xtal";
-+				vdd-supply = <&ovdd>;
-+				vdda-supply = <&dvdd>;
-+				vddo8-supply = <&ovdd>;
-+				vddo9-supply = <&ovdd>;
-+				silabs,iovdd-33;
-+				status = "disabled";
-+
-+				out@8 {
-+					reg = <8>;
-+					silabs,format = <1>;
-+				};
-+
-+				out@9 {
-+					reg = <9>;
-+					silabs,format = <1>;
-+				};
-+			};
-+		};
-+
- 		i2c@2 {
- 			#address-cells = <1>;
- 			#size-cells = <0>;
--- 
-2.35.1.1320.gc452695387.dirty
-
+Regards,
+Siddharth.
 
 -- 
 linux-phy mailing list
