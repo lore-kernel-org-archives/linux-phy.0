@@ -4,47 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D4F32C4167D
-	for <linux-phy@archiver.kernel.org>; Wed, 19 Oct 2022 11:36:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EFE4FC43217
+	for <linux-phy@archiver.kernel.org>; Wed, 19 Oct 2022 11:36:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Lhxlz5hc6aote5BpXwWilViWGyR16hwYhL/TvBFaXgs=; b=Q3rq4c0fCfT7MZ
-	OUJEaaXi6t2Io9h2yaNOtjVeahBbcIW5+8wlG/XhlFuNdNv2ZKtMgL60H9H/tje6yHcyZWcWnkF/X
-	0UfmeKv/KAUFmpe3TOw9hpfMHxMbnR7rV/8jDdKcrUxqpUZNpksXtwel/thgEZuTyB5YypodnUvh2
-	2o4692TgmnTir40PL2CfKCOM0zNjoL0Tej55NikH9G0hfydfAG6Q8Fz36mEC1tfbiakQPCIYXZYLX
-	HnBk5qzmRoepbc2jIRMiRTQ5NOlOaDfUpnNh82yC1B5DnxJAB6UYCKc3ay8cWqSTvfybBp2KTqjZ0
-	tb8V1kQXsZBP1SIpgcPw==;
+	List-Owner; bh=hGUaOpPAMGWsqH2mjHohXQkb71FAlta2XYUrApe1h/I=; b=IGRkvGhW3ksflz
+	1v+KwgmOgh0yfVjWJtXf+r7vWZnYiBU9HbVbli+DHJmo8YGV2+jKcWXr0xhIMF+70pRf1qh++Hgls
+	jk47NgNtLydqqpmwUF/bKTGW76Aan+HaLZqJxDg1Ci6Vso+GmD4gdTSE6nfl/sOmgfYxolxQglpR7
+	G1MNBb8KKZA6A0BLcUB9wY+Wfwa5SiR843jaddZJJOMTm7wp09ktVke5JehMqI695jgNo6cRvImIR
+	zbDtowaUGD2wOWm6edentAVHC9L5Px1ylANLd0ZuMunytTziNqnFJcpnpH5QIuYxf++GwiZmelPkR
+	EDhPBBWx/b9/Zd7dgA7A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ol7N6-000vC8-25; Wed, 19 Oct 2022 11:36:28 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1ol7N4-000vBC-Va; Wed, 19 Oct 2022 11:36:26 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ol7N1-000v72-6F
-	for linux-phy@lists.infradead.org; Wed, 19 Oct 2022 11:36:25 +0000
+	id 1ol7N0-000v6Q-Ll
+	for linux-phy@lists.infradead.org; Wed, 19 Oct 2022 11:36:24 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id E73256183D;
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 87BD861799;
 	Wed, 19 Oct 2022 11:36:21 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B16C0C4FF11;
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 63E7CC4FEBF;
 	Wed, 19 Oct 2022 11:36:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1666179379;
-	bh=5U2mLRcMewZ/OXbcaeXyQCALagcvHGf09jg9Pu1Jzck=;
+	bh=7bElN7jWzc7ST44Vh0KRkRoEA8fJ7KJeEsFLot/gNc8=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=e4lz3FXVHtouVjpeHJ/MP5Ed7MbLAkAa3aBzd9bHam99R89pARdz5WQhbm9ca8VM+
-	 L+hDbbrbh1Tbqs/5QrVZ2YMT/pu4Iuj3/KQwE2r0NgnigEoVYvwBuUAjSTmSs4GeIV
-	 A3MdMpHIA1jGL2OyDfjGyGK/9fm8vxA+N2aRkjCigjCQokIhCF/pfjpFOvGHy7umcz
-	 FnCh8o0ky/xApZzu+KCZggWIxGmnIiaOHHM6ywyzLKmHJlbPVsloqkjo8Ws890Y267
-	 wvkuHxlML8F7IVTvI9eRG1OU3RQL4kR+SvnQ1Pgmxc3W4CCX3CiwJHNSknu+3abbMl
-	 srCUtCOd/YwkQ==
+	b=ooC4+mk1rne4l06pxtYmcLGxiaUS3z4ZWFTVbLvQw/ejzONwX0xt0Oo8VZnzKExpQ
+	 EtS7rwNFMseCU4sss23ZYP5qi9ToaIZL8vFsGzkBP4k30FiA2xC5Fg6Cc9QJOeXeNb
+	 /YdLude/STXF9+iYJBFiQqoMK+dXIjvZOMWCLLIuxYJCvO9XKfAM3UFGgrdtJ7qfvl
+	 vJVLqVLsPqedfbeA7abgwSW41+0IYNOoVoCJzFmdDM0kiUdImfNq4C5bqUb5RurBeP
+	 /d4kPop8B0uQVARK7f7sx7JS9vkfb2XBY5hYNNBwVwX+nj8ZJIyGtOxbTnjXgz2cPt
+	 xe1HmuoxncMDQ==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1ol7Mm-0005po-CU; Wed, 19 Oct 2022 13:36:08 +0200
+	id 1ol7Mm-0005pc-0V; Wed, 19 Oct 2022 13:36:08 +0200
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>
 Cc: Andy Gross <agross@kernel.org>,
@@ -58,16 +58,16 @@ Cc: Andy Gross <agross@kernel.org>,
 	devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH v2 13/15] phy: qcom-qmp-pcie: add support for pipediv2 clock
-Date: Wed, 19 Oct 2022 13:35:50 +0200
-Message-Id: <20221019113552.22353-14-johan+linaro@kernel.org>
+Subject: [PATCH v2 09/15] dt-bindings: phy: qcom,qmp-pcie: rename current bindings
+Date: Wed, 19 Oct 2022 13:35:46 +0200
+Message-Id: <20221019113552.22353-10-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.37.3
 In-Reply-To: <20221019113552.22353-1-johan+linaro@kernel.org>
 References: <20221019113552.22353-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221019_043623_414935_4C08FA6B 
-X-CRM114-Status: GOOD (  16.64  )
+X-CRM114-CacheID: sfid-20221019_043622_807352_C8220C69 
+X-CRM114-Status: GOOD (  13.87  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,99 +84,65 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Some QMP PHYs have a second fixed-divider pipe clock that needs to be
-enabled along with the pipe clock.
+The current QMP PCIe PHY bindings are based on the original MSM8996
+binding which provided multiple PHYs per IP block and these in turn were
+described by child nodes.
 
-Add support for an optional "pipediv2" clock.
+Later QMP PCIe PHY blocks only provide a single PHY and the remnant
+child node does not really reflect the hardware.
+
+The original MSM8996 binding also ended up describing the individual
+register blocks as belonging to either the wrapper node or the PHY child
+nodes.
+
+This is an unnecessary level of detail which has lead to problems when
+later IP blocks using different register layouts have been forced to fit
+the original mould rather than updating the binding. The bindings are
+arguable also incomplete as they only the describe register blocks used
+by the current Linux drivers (e.g. does not include the per lane PCS
+registers).
+
+In preparation for adding new bindings for SC8280XP which further
+bindings can be based on, rename the current schema file after IPQ8074,
+which was the first SoC added to the bindings after MSM8996 (which has
+already been split out), and add a reference to the SC8280XP bindings.
 
 Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 42 ++++++++++++++++++++----
- 1 file changed, 36 insertions(+), 6 deletions(-)
+ ...om,qmp-pcie-phy.yaml => qcom,ipq8074-qmp-pcie-phy.yaml} | 7 +++++--
+ 1 file changed, 5 insertions(+), 2 deletions(-)
+ rename Documentation/devicetree/bindings/phy/{qcom,qmp-pcie-phy.yaml => qcom,ipq8074-qmp-pcie-phy.yaml} (96%)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-index 9c8e009033f1..c1d74c06fad1 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-@@ -1379,7 +1379,9 @@ struct qmp_pcie {
- 	void __iomem *rx2;
+diff --git a/Documentation/devicetree/bindings/phy/qcom,qmp-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,ipq8074-qmp-pcie-phy.yaml
+similarity index 96%
+rename from Documentation/devicetree/bindings/phy/qcom,qmp-pcie-phy.yaml
+rename to Documentation/devicetree/bindings/phy/qcom,ipq8074-qmp-pcie-phy.yaml
+index 324ad7d03a38..62045dcfb20c 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,qmp-pcie-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,ipq8074-qmp-pcie-phy.yaml
+@@ -1,10 +1,10 @@
+ # SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+ %YAML 1.2
+ ---
+-$id: http://devicetree.org/schemas/phy/qcom,qmp-pcie-phy.yaml#
++$id: http://devicetree.org/schemas/phy/qcom,ipq8074-qmp-pcie-phy.yaml#
+ $schema: http://devicetree.org/meta-schemas/core.yaml#
  
- 	struct clk *pipe_clk;
-+	struct clk *pipediv2_clk;
- 	struct clk_bulk_data *clks;
+-title: Qualcomm QMP PHY controller (PCIe)
++title: Qualcomm QMP PHY controller (PCIe, IPQ8074)
+ 
+ maintainers:
+   - Vinod Koul <vkoul@kernel.org>
+@@ -13,6 +13,9 @@ description:
+   QMP PHY controller supports physical layer functionality for a number of
+   controllers on Qualcomm chipsets, such as, PCIe, UFS, and USB.
+ 
++  Note that these bindings are for SoCs up to SC8180X. For newer SoCs, see
++  qcom,sc8280xp-qmp-pcie-phy.yaml.
 +
- 	struct reset_control_bulk_data *resets;
- 	struct regulator_bulk_data *vregs;
- 
-@@ -1902,6 +1904,36 @@ static int qmp_pcie_exit(struct phy *phy)
- 	return 0;
- }
- 
-+static int pipe_clk_enable(struct qmp_pcie *qmp)
-+{
-+	int ret;
-+
-+	ret = clk_prepare_enable(qmp->pipe_clk);
-+	if (ret) {
-+		dev_err(qmp->dev, "failed to enable pipe clock: %d\n", ret);
-+		return ret;
-+	}
-+
-+	ret = clk_prepare_enable(qmp->pipediv2_clk);
-+	if (ret) {
-+		dev_err(qmp->dev, "failed to enable pipediv2 clock: %d\n", ret);
-+		goto err_disable_pipe_clk;
-+	}
-+
-+	return 0;
-+
-+err_disable_pipe_clk:
-+	clk_disable_unprepare(qmp->pipe_clk);
-+
-+	return ret;
-+}
-+
-+static void pipe_clk_disable(struct qmp_pcie *qmp)
-+{
-+	clk_disable_unprepare(qmp->pipediv2_clk);
-+	clk_disable_unprepare(qmp->pipe_clk);
-+}
-+
- static int qmp_pcie_power_on(struct phy *phy)
- {
- 	struct qmp_pcie *qmp = phy_get_drvdata(phy);
-@@ -1923,11 +1955,9 @@ static int qmp_pcie_power_on(struct phy *phy)
- 	qmp_pcie_init_registers(qmp, &cfg->tables);
- 	qmp_pcie_init_registers(qmp, mode_tables);
- 
--	ret = clk_prepare_enable(qmp->pipe_clk);
--	if (ret) {
--		dev_err(qmp->dev, "pipe_clk enable failed err=%d\n", ret);
-+	ret = pipe_clk_enable(qmp);
-+	if (ret)
- 		return ret;
--	}
- 
- 	/* Pull PHY out of reset state */
- 	qphy_clrbits(pcs, cfg->regs[QPHY_SW_RESET], SW_RESET);
-@@ -1950,7 +1980,7 @@ static int qmp_pcie_power_on(struct phy *phy)
- 	return 0;
- 
- err_disable_pipe_clk:
--	clk_disable_unprepare(qmp->pipe_clk);
-+	pipe_clk_disable(qmp);
- 
- 	return ret;
- }
-@@ -1960,7 +1990,7 @@ static int qmp_pcie_power_off(struct phy *phy)
- 	struct qmp_pcie *qmp = phy_get_drvdata(phy);
- 	const struct qmp_phy_cfg *cfg = qmp->cfg;
- 
--	clk_disable_unprepare(qmp->pipe_clk);
-+	pipe_clk_disable(qmp);
- 
- 	/* PHY reset */
- 	qphy_setbits(qmp->pcs, cfg->regs[QPHY_SW_RESET], SW_RESET);
+ properties:
+   compatible:
+     enum:
 -- 
 2.37.3
 
