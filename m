@@ -4,76 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9DD82C4332F
-	for <linux-phy@archiver.kernel.org>; Wed, 19 Oct 2022 09:34:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0B482C433FE
+	for <linux-phy@archiver.kernel.org>; Wed, 19 Oct 2022 11:36:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bFXwSruTwCdkYpqhBHAxJUFtX6SU4ELnM07UQd2lSbM=; b=oE45tRO86JjROR
-	K5Ea32uUaxIMaJ2V3u6r4/hEUlSF7mrhqXFGngujYRiPkWfMqToTdNdKK+gH8Lh/JwxCAIbaO90LU
-	JhpS5nLUdn9WvE4VBovqHaMq4UstpzuTXUFeIqMDlx5xbmP9NtVHRSmPXePu+pjxrOZNXWj6Af7Nz
-	ixHq+82a8yeZycO3zVNl2ouzMif3ZWqxUqP9kCXVPJXZpt45GCQQ/4KxzBi0jz3UYZ7DelKS7WqXq
-	moPYxhKVmUcaXp7kcEJXjPdmp0RdrATuiWo+I6hr2r0gdgHuQltWgiepiqa/wfWDAf1DwFCJgq3Ek
-	p0zaNcLtDfkiiuRXK2yg==;
+	List-Owner; bh=4zKiXiy99dYfVY3qv6CmjuaL4X9jmoT7f7mcM11Psao=; b=mdRW/CecG+Imjq
+	+c/oldm2M1cHItuqdbMPQDqaR7/eA8ojRQq1xOEwKjRAcLNAFVh+5R+xCbS2z96G1HFYzfr9o19XY
+	8oDnLa9iVTdyTaYLvbPfrLEw0LDl2NvPvFrdHd0gVYeytNZ8TiG6jAMK0YsAt1MECE11izQGf3Dr8
+	+hfLiNdd2/eKusF+lO4ePcHt87XgA8vIkgFj+bJVOhQ4Ry+imDk2UguOzmG0nk6GjsZfEJuXvLtnw
+	yHO9UiUrWrtGs+I6NFwl6Y4DzN/aTSRgA7wmorfIlVciFv+IwRwlxyZLJhCL5iCy6/B0drq0cMP7L
+	hbx7nK9O2BV9seuUpPvg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ol5Sj-00HO1y-0p; Wed, 19 Oct 2022 09:34:09 +0000
+	id 1ol7N1-000v7D-B6; Wed, 19 Oct 2022 11:36:23 +0000
 Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ol5Sg-00HO0g-GD
-	for linux-phy@lists.infradead.org; Wed, 19 Oct 2022 09:34:07 +0000
+	id 1ol7My-000v4i-Vn
+	for linux-phy@lists.infradead.org; Wed, 19 Oct 2022 11:36:22 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 70D3E617E3;
-	Wed, 19 Oct 2022 09:34:05 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C98CDC433D7;
-	Wed, 19 Oct 2022 09:34:04 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 9592D60A65;
+	Wed, 19 Oct 2022 11:36:19 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id F3F8EC433D6;
+	Wed, 19 Oct 2022 11:36:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1666172044;
-	bh=+XJ4KA8dllr0ByMjgUh1Y3S/fQ8SIHjq3TDCIyLLrNo=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=T7Uch+ZhgMxzh633BHSOdQxgxOqQowc35/YWFAWeeU2s0E+SioG0sAWiRyAQRnsGN
-	 0mXBcQtpiF2kOYrwuWgc4SJnQZsDBoFGsW8JvtPwpY6O8uiibCtq3L726zsubk+UWG
-	 8j9rsryp/cG7gZydanqhizZLgUtQQ5H0t7mYjnPlKn62L/KB5r3+p3esvvbTejHnNz
-	 8oH+xKXDWfh0w5qUuu+S9D7Z7ggNqLH+rGfZpwZXQjZ03Ssa2uO/EhPzBD2hPHkSF2
-	 uX0uoTZbcVItVSQjtyPhNnndaLD6L9gEP95UYVf3GiCDPHFzNRKGwjsnOw0aNaVVXs
-	 pYOkC+u9eiivA==
+	s=k20201202; t=1666179379;
+	bh=OAHvQPsmhoyvpGDhBc9HWxp3abjp8PyJCASV///rrLA=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=I2iMKyeyUreKZCvmlXBIRBMF+zMqkJEu5OjmxYzl8inlaEF7pBm+tqHn6JmijlxIa
+	 FeWsnjXCrWGjwqKlSEn9YsCyU/kB0IL+p3rPeLnUXEXHqWsbRSKlQxkTzOKqKpEdDl
+	 Lt3U8Mi7icR+lXAH4d+7DmEcPZiJDdU4Mc23xEQkWsNdwMwv4m2JpCNYx/7yLiYSCb
+	 5+fQka816LMqUqZsc4onX4cgtMtmlKp9Opbl2QdJHMp+7vcknpMBKZ1kYhrbFzp15+
+	 IHq6mdq+1bJIypz3XQxswPRV+ehBwihUd5pK0cKyBCPr8CBmuE2uoj/JumGDpGrMQv
+	 B65pZTVJADCOg==
 Received: from johan by xi.lan with local (Exim 4.94.2)
-	(envelope-from <johan@kernel.org>)
-	id 1ol5SS-0005JG-2I; Wed, 19 Oct 2022 11:33:52 +0200
-Date: Wed, 19 Oct 2022 11:33:52 +0200
-From: Johan Hovold <johan@kernel.org>
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Cc: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
-	Johan Hovold <johan+linaro@kernel.org>,
-	Vinod Koul <vkoul@kernel.org>, Andy Gross <agross@kernel.org>,
+	(envelope-from <johan+linaro@kernel.org>)
+	id 1ol7Ml-0005pG-A2; Wed, 19 Oct 2022 13:36:07 +0200
+From: Johan Hovold <johan+linaro@kernel.org>
+To: Vinod Koul <vkoul@kernel.org>
+Cc: Andy Gross <agross@kernel.org>,
 	Bjorn Andersson <andersson@kernel.org>,
 	Konrad Dybcio <konrad.dybcio@somainline.org>,
 	Rob Herring <robh+dt@kernel.org>,
 	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 09/15] dt-bindings: phy: qcom,qmp-pcie: mark current
- bindings as legacy
-Message-ID: <Y0/EgN78YdQ9Mg23@hovoldconsulting.com>
-References: <20221017145328.22090-1-johan+linaro@kernel.org>
- <20221017145328.22090-10-johan+linaro@kernel.org>
- <CAA8EJpqSWmy5Z4cmJnsdjMjkmACW7HSi-k5JxZ0gLCeUAWEnxQ@mail.gmail.com>
- <Y05+E90tmlq2tNFa@hovoldconsulting.com>
- <CAA8EJprwhEvUfUr-zDir4zFh_NAyr0qPbrHi6Hf8=2HC1dAhaw@mail.gmail.com>
- <b0c1bdfb-4a31-9deb-1f0a-0ed813707464@linaro.org>
- <Y07OfmfQgQWFzHZY@hovoldconsulting.com>
- <e334e265-fde0-29df-d905-c3ec4941f152@linaro.org>
+	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+	linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	Johan Hovold <johan+linaro@kernel.org>
+Subject: [PATCH v2 01/15] phy: qcom-qmp-pcie: sort device-id table
+Date: Wed, 19 Oct 2022 13:35:38 +0200
+Message-Id: <20221019113552.22353-2-johan+linaro@kernel.org>
+X-Mailer: git-send-email 2.37.3
+In-Reply-To: <20221019113552.22353-1-johan+linaro@kernel.org>
+References: <20221019113552.22353-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <e334e265-fde0-29df-d905-c3ec4941f152@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221019_023406_640712_E3FA27CD 
-X-CRM114-Status: GOOD (  35.02  )
+X-CRM114-CacheID: sfid-20221019_043621_139498_D79B9688 
+X-CRM114-Status: GOOD (  12.57  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,65 +84,66 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Oct 18, 2022 at 12:44:22PM -0400, Krzysztof Kozlowski wrote:
-> On 18/10/2022 12:04, Johan Hovold wrote:
+Sort the device-id table by compatible string to make it easier to find
+and add new entries.
 
-> > The question is whether to convert also the current bindings and DTS to
-> > the new (sc8280xp) scheme (e.g. drop the child nodes and register
-> > subregions).
-> > 
-> > The driver can support both binding schemes using the same compatible
-> > strings for a transition period (or in theory forever) by checking for
-> > the existence of a child node.
-> > 
-> > Converting the DTS to use the new bindings would obviously prevent using
-> > them with an old kernel (i.e. 2 above), but I don't think that's a
-> > problem (unlike backward compatibility during at least a transition
-> > period).
-> 
-> It is still not nice towards any other users of DTS, because this will
-> break all of them. I agree this won't be ABI type of break. It is
-> discouraged though, unless there are clear benefits from this or one
-> totally does not care about other DTS users...
-> 
-> As I said it is up to platform maintainer.
+Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
+---
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 20 ++++++++++----------
+ 1 file changed, 10 insertions(+), 10 deletions(-)
 
-Yeah. When time I spoke to Bjorn about this, we agreed to draw the line
-at SC8280XP.
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+index 7c81667dd968..4e5111d19692 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+@@ -2282,17 +2282,17 @@ static int qmp_pcie_create(struct device *dev, struct device_node *np, int id,
+ 
+ static const struct of_device_id qmp_pcie_of_match_table[] = {
+ 	{
+-		.compatible = "qcom,msm8998-qmp-pcie-phy",
+-		.data = &msm8998_pciephy_cfg,
+-	}, {
+-		.compatible = "qcom,ipq8074-qmp-pcie-phy",
+-		.data = &ipq8074_pciephy_cfg,
++		.compatible = "qcom,ipq6018-qmp-pcie-phy",
++		.data = &ipq6018_pciephy_cfg,
+ 	}, {
+ 		.compatible = "qcom,ipq8074-qmp-gen3-pcie-phy",
+ 		.data = &ipq8074_pciephy_gen3_cfg,
+ 	}, {
+-		.compatible = "qcom,ipq6018-qmp-pcie-phy",
+-		.data = &ipq6018_pciephy_cfg,
++		.compatible = "qcom,ipq8074-qmp-pcie-phy",
++		.data = &ipq8074_pciephy_cfg,
++	}, {
++		.compatible = "qcom,msm8998-qmp-pcie-phy",
++		.data = &msm8998_pciephy_cfg,
+ 	}, {
+ 		.compatible = "qcom,sc8180x-qmp-pcie-phy",
+ 		.data = &sc8180x_pciephy_cfg,
+@@ -2302,6 +2302,9 @@ static const struct of_device_id qmp_pcie_of_match_table[] = {
+ 	}, {
+ 		.compatible = "qcom,sdm845-qmp-pcie-phy",
+ 		.data = &sdm845_qmp_pciephy_cfg,
++	}, {
++		.compatible = "qcom,sdx55-qmp-pcie-phy",
++		.data = &sdx55_qmp_pciephy_cfg,
+ 	}, {
+ 		.compatible = "qcom,sm8250-qmp-gen3x1-pcie-phy",
+ 		.data = &sm8250_qmp_gen3x1_pciephy_cfg,
+@@ -2311,9 +2314,6 @@ static const struct of_device_id qmp_pcie_of_match_table[] = {
+ 	}, {
+ 		.compatible = "qcom,sm8250-qmp-modem-pcie-phy",
+ 		.data = &sm8250_qmp_gen3x2_pciephy_cfg,
+-	}, {
+-		.compatible = "qcom,sdx55-qmp-pcie-phy",
+-		.data = &sdx55_qmp_pciephy_cfg,
+ 	}, {
+ 		.compatible = "qcom,sm8450-qmp-gen3x1-pcie-phy",
+ 		.data = &sm8450_qmp_gen3x1_pciephy_cfg,
+-- 
+2.37.3
 
-But if it turns out converting older platforms is needed to fix bugs or
-add features (e.g. due to the incomplete register descriptions), we may
-later have to reconsider this.
-
-> > My concern was how to describe the deprecation in DT schema if we were
-> > convert them. By instead just keeping the old bindings as-is in a
-> > separate file and continuing to support them in the driver we can have a
-> > nice and clean description of the new bindings (sc8280xp) without the
-> > legacy cruft.
-> 
-> You cannot have one compatible in two schemas, so for old bindings (and
-> DTS):
-> 1. Don't convert them,
-> 2. Convert with keeping old properties - as you pointed this might be
-> full of conditionals/allOf, so difficult to maintain and read,
-> 3. Convert dropping old stuff.
-> 
-> For the option 3. for sure Rob will ask why. :)
-
-Thanks for confirming.
-
-So I guess we start with keeping the old bindings as they are (1) and if
-later needed (or desired) we should simply drop the old bindings (3)
-from the schema (we can still have the driver support the old bindings
-during a transition period).
-
-> > If we were to start introducing conditionals on existence of child
-> > nodes, and marking the old bindings as deprecated in one large schema,
-> > then that sounds like it would be very messy and hard to read and
-> > maintain. But perhaps there is some way to do this without such
-> > downsides that I'm not aware of.
-
-Johan
 
 -- 
 linux-phy mailing list
