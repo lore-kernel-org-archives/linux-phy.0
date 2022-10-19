@@ -4,83 +4,46 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3AFF5C4332F
-	for <linux-phy@archiver.kernel.org>; Wed, 19 Oct 2022 13:52:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 40C63C433FE
+	for <linux-phy@archiver.kernel.org>; Wed, 19 Oct 2022 15:58:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1rDmeAslyRJSOMt01gHGP7DCLma7Gs85GLNjVVbaFPo=; b=XDMenHVWVInPaR
-	oRl1GJeI6tFSMdLKWTSHdWfCQv7OEpQYxyWzIeG7oW5XcA04+3SGkESobfVF5AQK5o/1h4x8x00ny
-	TSnaeWbWrdFJJgeNuArLpAdqqvRn2Ia3wMUG+5d4BOgX63ybKewyImryVAIe3Gyc00I9oCO80HKq6
-	7qt6NGHPX95cdvo9goLCBZSW1ofq1uWeXSF3dMBOXp8FMzpQL+jquo4Muq4XK9ImUMLLgz3ZPQjyw
-	QMdUy1YiX5U/Aj5sOEakHDuqg1aXetPDSc69bl1N+XM+bIIN77C08dyVx1Wx4/9DuqNxVDgh75Xa4
-	kQFGJmRdxtqv3XFseczg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:Cc:To:
+	From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=XF0JJjlR9m5HdtRwusZy4N195xqHOPMOe6DWqsGWdg0=; b=HuZbsYR1+PgXWU
+	UnypLsX1M9iBVnr99pRG8j6S/xOq8w5ErS6F7mIT4k9yjAP52fHt5XCtfL9SVZs6+1gMuHo6S8ZZR
+	h5pQ0hf7vWGf3bH0G9Ml3DEzYInel8tUTDh9F16xOc+lqmT5RxuRnoMjqZeqtxGFaVAMUXtGh/GXL
+	wMxudPAz+IDDuQr9MOxcx5sXEgKt04OFYCw2xD+F+ZjBQ10AY9PTyOVVC4f/9J9Je+6sTN5gE7V0V
+	T7chGcI8uMepXvcDDWn12pK9fDLsBhz9XrLr9ehxCDIlO7FcWuiUjs45g9HLDqI+andysuqCiFyhE
+	cu3qUWUT8lag9uIIhhMQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ol9Uq-002Km9-Md; Wed, 19 Oct 2022 13:52:36 +0000
-Received: from mail-lj1-x234.google.com ([2a00:1450:4864:20::234])
+	id 1olBSb-003ap9-IH; Wed, 19 Oct 2022 15:58:25 +0000
+Received: from fudo.makrotopia.org ([2a07:2ec0:3002::71])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ol9Un-002KcP-M4
-	for linux-phy@lists.infradead.org; Wed, 19 Oct 2022 13:52:34 +0000
-Received: by mail-lj1-x234.google.com with SMTP id c20so22270193ljj.7
-        for <linux-phy@lists.infradead.org>; Wed, 19 Oct 2022 06:52:31 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=RknYa2NABgYYHyJknMjUhYiHTu2aqnADkUkC2x00Z/k=;
-        b=yVyYhg2zBMm+7w3lS+wQf7QQB6OxkvKhhDBuAPYoaZ7jD0KpwgQm287TcPFHMwTTkE
-         jryok8brz3+crpof1k38RGlYAy8EknTf68wgzwJcnn3FBydmHK77NIq8gst0QpljcDnr
-         lEQvShh77tEZtVCe8fl0GZnP2mCH81by5zLhTlqbuLfUx0UpnWcovEmz96yWNOv810Mr
-         lQfdoKcRbsxklj6SU8zBtJVkDk9ttPpnKVB3WgOpCeAy6PAWmY19KZnVd68/6dOt51tZ
-         ZrVbOIMPqosRKsDK0eA3b5vgFTfilJ2lUvoaaulDneOt2wSZ4l6ggS6O4BHZOrnDLQIo
-         1jyQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=RknYa2NABgYYHyJknMjUhYiHTu2aqnADkUkC2x00Z/k=;
-        b=Vrk1rHWnDLg5zSEs1jvWEGofqNF/PsD7PD9n85W8CI5GnAXOvtNdPAxkW0pjqYQKCr
-         Cg/4PUUEvLdbL3U/nNPgaYsuiWptipfPQrpKNhVFFg4CAh7NodWZVi9GpVT14+qXK7Ks
-         rnQEJ3+0f3GJF2lmzkGDkooZSTrSvB1sL7EbLhoy1QP/LINP5hF0GiqC2e7Wp9FDJcdT
-         9waCDANPqes3SdZDFCaDeK3RJTNFVJ9xh3f4bqqRgKsJoJRHela9NVg5ZHwuq7WUSJBp
-         K42xq8f+pNNKd2lRYNCP3lJm0j5kLF/4vemKBEjc84SwRmoL/EmDKkxwajaMNolpKHBR
-         4mbw==
-X-Gm-Message-State: ACrzQf3OEiR85PuY3vgVEBQ56NALBt+FTOfGoJmo4bPryd8jy7M99SOj
-	kQkp9B7P57TU2doOIWmHI7Fp1w==
-X-Google-Smtp-Source: AMsMyM7XIZU0I24cerZGyqqlXQ/1nBl3l4sFmHTpzgGVDmR0GJjUQ91snFjYNIxrUZWHEFwuHqEW5w==
-X-Received: by 2002:a2e:bc0f:0:b0:26e:15f:51dd with SMTP id b15-20020a2ebc0f000000b0026e015f51ddmr3021059ljf.118.1666187550011;
-        Wed, 19 Oct 2022 06:52:30 -0700 (PDT)
-Received: from [10.10.15.130] ([192.130.178.91])
-        by smtp.gmail.com with ESMTPSA id t17-20020a056512209100b004996fbfd75esm2298842lfr.71.2022.10.19.06.52.29
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 19 Oct 2022 06:52:29 -0700 (PDT)
-Message-ID: <02a879d4-cc7a-ca8e-7334-755873baa3e7@linaro.org>
-Date: Wed, 19 Oct 2022 16:52:29 +0300
+	id 1olB8p-003LqV-3r; Wed, 19 Oct 2022 15:38:00 +0000
+Received: from local
+	by fudo.makrotopia.org with esmtpsa (TLS1.3:TLS_AES_256_GCM_SHA384:256)
+	 (Exim 4.94.2)
+	(envelope-from <daniel@makrotopia.org>)
+	id 1olB8j-00015j-Gi; Wed, 19 Oct 2022 17:37:53 +0200
+Date: Wed, 19 Oct 2022 16:37:44 +0100
+From: Daniel Golle <daniel@makrotopia.org>
+To: linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
+	Chunfeng Yun <chunfeng.yun@mediatek.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Matthias Brugger <matthias.bgg@gmail.com>
+Cc: linux-mediatek@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: [PATCH 1/2] phy: phy-mtk-tphy: Add PCIe 2 lane efuse support
+Message-ID: <df51b63add2830d91b527db64fba6ffdb7765f5d.1666193782.git.daniel@makrotopia.org>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.3.3
-Subject: Re: [PATCH v2 12/15] phy: qcom-qmp-pcie: fix initialisation reset
-Content-Language: en-GB
-To: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>
-Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konrad.dybcio@somainline.org>,
- Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-References: <20221019113552.22353-1-johan+linaro@kernel.org>
- <20221019113552.22353-13-johan+linaro@kernel.org>
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-In-Reply-To: <20221019113552.22353-13-johan+linaro@kernel.org>
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221019_065233_758826_693A55A9 
-X-CRM114-Status: GOOD (  19.01  )
+X-CRM114-CacheID: sfid-20221019_083759_242877_BAB3FBB4 
+X-CRM114-Status: GOOD (  16.23  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,46 +55,203 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 19/10/2022 14:35, Johan Hovold wrote:
-> Add the missing delay after asserting reset. This is specifically needed
-> for the reset to have any effect on SC8280XP.
-> 
-> The vendor driver uses a 1 ms delay, but that seems a bit excessive.
-> Instead use a 200 us delay which appears to be more than enough and also
-> matches the UFS reset delay added by commit 870b1279c7a0 ("scsi:
-> ufs-qcom: Add reset control support for host controller").
-> 
-> Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
-> ---
->   drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 2 ++
->   1 file changed, 2 insertions(+)
-> 
-> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-> index 2f4bdef73395..9c8e009033f1 100644
-> --- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-> @@ -1866,6 +1866,8 @@ static int qmp_pcie_init(struct phy *phy)
->   		goto err_disable_regulators;
->   	}
->   
-> +	usleep_range(200, 300);
-> +
+From: Zhanyong Wang <zhanyong.wang@mediatek.com>
 
-If there is a v3, I'd kindly ask to add a comment about vendor using 1ms 
-here.
+Add PCIe 2 lane efuse support in tphy driver.
 
->   	ret = reset_control_bulk_deassert(cfg->num_resets, qmp->resets);
->   	if (ret) {
->   		dev_err(qmp->dev, "reset deassert failed\n");
+Signed-off-by: Jie Yang <jieyy.yang@mediatek.com>
+Signed-off-by: Zhanyong Wang <zhanyong.wang@mediatek.com>
+Signed-off-by: Daniel Golle <daniel@makrotopia.org>
+---
+ drivers/phy/mediatek/phy-mtk-tphy.c | 112 ++++++++++++++++++++++++++++
+ 1 file changed, 112 insertions(+)
 
+diff --git a/drivers/phy/mediatek/phy-mtk-tphy.c b/drivers/phy/mediatek/phy-mtk-tphy.c
+index e906a82791bdaa..b0c9834efec7ef 100644
+--- a/drivers/phy/mediatek/phy-mtk-tphy.c
++++ b/drivers/phy/mediatek/phy-mtk-tphy.c
+@@ -43,6 +43,15 @@
+ #define SSUSB_SIFSLV_V2_U3PHYD		0x200
+ #define SSUSB_SIFSLV_V2_U3PHYA		0x400
+ 
++/* version V4 sub-banks offset base address */
++/* pcie phy banks */
++#define SSUSB_SIFSLV_V4_SPLLC		0x000
++#define SSUSB_SIFSLV_V4_CHIP		0x100
++#define SSUSB_SIFSLV_V4_U3PHYD		0x900
++#define SSUSB_SIFSLV_V4_U3PHYA		0xb00
++
++#define SSUSB_LN1_OFFSET		0x10000
++
+ #define U3P_MISC_REG1		0x04
+ #define MR1_EFUSE_AUTO_LOAD_DIS		BIT(6)
+ 
+@@ -268,6 +277,7 @@ enum mtk_phy_version {
+ 	MTK_PHY_V1 = 1,
+ 	MTK_PHY_V2,
+ 	MTK_PHY_V3,
++	MTK_PHY_V4,
+ };
+ 
+ struct mtk_phy_pdata {
+@@ -317,6 +327,9 @@ struct mtk_phy_instance {
+ 	u32 efuse_intr;
+ 	u32 efuse_tx_imp;
+ 	u32 efuse_rx_imp;
++	u32 efuse_intr_ln1;
++	u32 efuse_tx_imp_ln1;
++	u32 efuse_rx_imp_ln1;
+ 	int eye_src;
+ 	int eye_vrt;
+ 	int eye_term;
+@@ -760,6 +773,36 @@ static void phy_v2_banks_init(struct mtk_tphy *tphy,
+ 	}
+ }
+ 
++static void phy_v4_banks_init(struct mtk_tphy *tphy,
++			      struct mtk_phy_instance *instance)
++{
++	struct u2phy_banks *u2_banks = &instance->u2_banks;
++	struct u3phy_banks *u3_banks = &instance->u3_banks;
++
++	switch (instance->type) {
++	case PHY_TYPE_USB2:
++		u2_banks->misc = instance->port_base + SSUSB_SIFSLV_V2_MISC;
++		u2_banks->fmreg = instance->port_base + SSUSB_SIFSLV_V2_U2FREQ;
++		u2_banks->com = instance->port_base + SSUSB_SIFSLV_V2_U2PHY_COM;
++		break;
++	case PHY_TYPE_USB3:
++		u3_banks->spllc = instance->port_base + SSUSB_SIFSLV_V2_SPLLC;
++		u3_banks->chip = instance->port_base + SSUSB_SIFSLV_V2_CHIP;
++		u3_banks->phyd = instance->port_base + SSUSB_SIFSLV_V2_U3PHYD;
++		u3_banks->phya = instance->port_base + SSUSB_SIFSLV_V2_U3PHYA;
++		break;
++	case PHY_TYPE_PCIE:
++		u3_banks->spllc = instance->port_base + SSUSB_SIFSLV_V4_SPLLC;
++		u3_banks->chip = instance->port_base + SSUSB_SIFSLV_V4_CHIP;
++		u3_banks->phyd = instance->port_base + SSUSB_SIFSLV_V4_U3PHYD;
++		u3_banks->phya = instance->port_base + SSUSB_SIFSLV_V4_U3PHYA;
++		break;
++	default:
++		dev_err(tphy->dev, "incompatible PHY type\n");
++		return;
++	}
++}
++
+ static void phy_parse_property(struct mtk_tphy *tphy,
+ 				struct mtk_phy_instance *instance)
+ {
+@@ -951,6 +994,40 @@ static int phy_efuse_get(struct mtk_tphy *tphy, struct mtk_phy_instance *instanc
+ 
+ 		dev_dbg(dev, "u3 efuse - intr %x, rx_imp %x, tx_imp %x\n",
+ 			instance->efuse_intr, instance->efuse_rx_imp,instance->efuse_tx_imp);
++
++		if (tphy->pdata->version != MTK_PHY_V4)
++			break;
++
++		ret = nvmem_cell_read_variable_le_u32(dev, "intr_ln1", &instance->efuse_intr_ln1);
++		if (ret) {
++			dev_err(dev, "fail to get u3 lane1 intr efuse, %d\n", ret);
++			break;
++		}
++
++		ret = nvmem_cell_read_variable_le_u32(dev, "rx_imp_ln1", &instance->efuse_rx_imp_ln1);
++		if (ret) {
++			dev_err(dev, "fail to get u3 lane1 rx_imp efuse, %d\n", ret);
++			break;
++		}
++
++		ret = nvmem_cell_read_variable_le_u32(dev, "tx_imp_ln1", &instance->efuse_tx_imp_ln1);
++		if (ret) {
++			dev_err(dev, "fail to get u3 lane1 tx_imp efuse, %d\n", ret);
++			break;
++		}
++
++		/* no efuse, ignore it */
++		if (!instance->efuse_intr_ln1 &&
++		    !instance->efuse_rx_imp_ln1 &&
++		    !instance->efuse_tx_imp_ln1) {
++			dev_warn(dev, "no u3 lane1 efuse, but dts enable it\n");
++			instance->efuse_sw_en = 0;
++			break;
++		}
++
++		dev_info(dev, "u3 lane1 efuse - intr %x, rx_imp %x, tx_imp %x\n",
++			 instance->efuse_intr_ln1, instance->efuse_rx_imp_ln1,
++			 instance->efuse_tx_imp_ln1);
+ 		break;
+ 	default:
+ 		dev_err(dev, "no sw efuse for type %d\n", instance->type);
+@@ -990,6 +1067,31 @@ static void phy_efuse_set(struct mtk_phy_instance *instance)
+ 
+ 		mtk_phy_update_field(u3_banks->phya + U3P_U3_PHYA_REG0, P3A_RG_IEXT_INTR,
+ 				    instance->efuse_intr);
++		if (instance->type == PHY_TYPE_USB3 || (
++		    !instance->efuse_intr_ln1 &&
++		    !instance->efuse_rx_imp_ln1 &&
++		    !instance->efuse_tx_imp_ln1))
++			break;
++
++		mtk_phy_set_bits(u3_banks->phyd + SSUSB_LN1_OFFSET + U3P_U3_PHYD_RSV,
++				 P3D_RG_EFUSE_AUTO_LOAD_DIS);
++
++		mtk_phy_update_field(u3_banks->phyd + SSUSB_LN1_OFFSET + U3P_U3_PHYD_IMPCAL0,
++				     P3D_RG_TX_IMPEL, instance->efuse_tx_imp_ln1);
++		mtk_phy_set_bits(u3_banks->phyd + SSUSB_LN1_OFFSET + U3P_U3_PHYD_IMPCAL0,
++				 P3D_RG_FORCE_TX_IMPEL);
++
++		mtk_phy_update_field(u3_banks->phyd + SSUSB_LN1_OFFSET + U3P_U3_PHYD_IMPCAL1,
++				     P3D_RG_RX_IMPEL, instance->efuse_rx_imp_ln1);
++		mtk_phy_set_bits(u3_banks->phyd + SSUSB_LN1_OFFSET + U3P_U3_PHYD_IMPCAL1,
++				 P3D_RG_FORCE_RX_IMPEL);
++
++		mtk_phy_update_field(u3_banks->phya + SSUSB_LN1_OFFSET + U3P_U3_PHYA_REG0,
++				     P3A_RG_IEXT_INTR, instance->efuse_intr_ln1);
++
++		dev_info(dev, "%s set LN1 efuse, tx_imp %x, rx_imp %x intr %x\n",
++			 __func__, instance->efuse_tx_imp_ln1,
++			 instance->efuse_rx_imp_ln1, instance->efuse_intr_ln1);
+ 		break;
+ 	default:
+ 		dev_warn(dev, "no sw efuse for type %d\n", instance->type);
+@@ -1129,6 +1231,9 @@ static struct phy *mtk_phy_xlate(struct device *dev,
+ 	case MTK_PHY_V3:
+ 		phy_v2_banks_init(tphy, instance);
+ 		break;
++	case MTK_PHY_V4:
++		phy_v4_banks_init(tphy, instance);
++		break;
+ 	default:
+ 		dev_err(dev, "phy version is not supported\n");
+ 		return ERR_PTR(-EINVAL);
+@@ -1169,6 +1274,12 @@ static const struct mtk_phy_pdata tphy_v3_pdata = {
+ 	.version = MTK_PHY_V3,
+ };
+ 
++static const struct mtk_phy_pdata tphy_v4_pdata = {
++	.avoid_rx_sen_degradation = false,
++	.sw_efuse_supported = true,
++	.version = MTK_PHY_V4,
++};
++
+ static const struct mtk_phy_pdata mt8173_pdata = {
+ 	.avoid_rx_sen_degradation = true,
+ 	.version = MTK_PHY_V1,
+@@ -1188,6 +1299,7 @@ static const struct of_device_id mtk_tphy_id_table[] = {
+ 	{ .compatible = "mediatek,generic-tphy-v1", .data = &tphy_v1_pdata },
+ 	{ .compatible = "mediatek,generic-tphy-v2", .data = &tphy_v2_pdata },
+ 	{ .compatible = "mediatek,generic-tphy-v3", .data = &tphy_v3_pdata },
++	{ .compatible = "mediatek,generic-tphy-v4", .data = &tphy_v4_pdata },
+ 	{ },
+ };
+ MODULE_DEVICE_TABLE(of, mtk_tphy_id_table);
 -- 
-With best wishes
-Dmitry
+2.37.3
 
 
 -- 
