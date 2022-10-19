@@ -4,68 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C549EC433FE
-	for <linux-phy@archiver.kernel.org>; Wed, 19 Oct 2022 12:39:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 14190C4332F
+	for <linux-phy@archiver.kernel.org>; Wed, 19 Oct 2022 12:41:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Zy43Xnp79I9MyrhYzs5FvX8fojhwBEbk+ZVizEeW4r0=; b=rlOwhrJaw8CiYh
-	ir01BDqoG/EITJ2uP2rCUeWhOdees4C6HAW6/N+1ZoNC/pm17jD2ujqRtrEZsdXkBHsZR9IEFSPcs
-	1ijqWxU0KatNCUrl7M70N9g/i/4eKR+h8qqEtvC6rTOjh97vTOWqiZlvMjEu2gXe3RxsBG79PlUHZ
-	57H5hg5ys7o+ex1QCKQcul+krHI8Ft/7P5IwGGsTYTtzzDK2T5ntIBHSy1Wb7cRzgHXGl09AuaNLb
-	2nkGWlXM3sUWNyRZqlonrjKLV9P5qvNOyrkRJWWZ3AdN0qcIm7kWAi6GdnJgxJDgVZ1mrdmX1fIsY
-	l5CtE3/bnW9eLl6XnN6w==;
+	List-Owner; bh=E4nGXX7DivYlmwgcbVxajIENmnNd4tBYXqBFhhjamHI=; b=NCf7cBaPwqoi1y
+	Db3iDsZj808tn4VgPvzGfS0sHds5XRTIAxrrhe2Lp1rwhPKpGtEU1+iqGw5zOR0LxQCt5G9B+/k/5
+	bEKpNSAIaF46gtqmzOOuWUyeSHY1jND/1f0OTm5lHFdth8+dOJnv9lDZ3Nq0uxd8OChggaFQNgYzO
+	XqkTw6p6ZRaXqT9EH4jYck6AyFC3B6fEC6ZKOA0K7MwMzSdoXCqsInXX8yR2ZWqDmk6qHfvqFjowk
+	G/SJWjD5yoxPhHYY8PPidgEjsXu9Ex9yThsl/eXoYocZzlAjiCj8sUQfXJa1pXIU8jeYk3yJyKf2c
+	PsI34mqdyVkv3nHYFT/w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ol8Lw-001Y8J-8S; Wed, 19 Oct 2022 12:39:20 +0000
-Received: from mail-qv1-xf2c.google.com ([2607:f8b0:4864:20::f2c])
+	id 1ol8Nx-001ZSX-D8; Wed, 19 Oct 2022 12:41:25 +0000
+Received: from mail-qk1-x736.google.com ([2607:f8b0:4864:20::736])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ol8Lt-001Y6A-Ee
-	for linux-phy@lists.infradead.org; Wed, 19 Oct 2022 12:39:18 +0000
-Received: by mail-qv1-xf2c.google.com with SMTP id y10so11226623qvo.11
-        for <linux-phy@lists.infradead.org>; Wed, 19 Oct 2022 05:39:15 -0700 (PDT)
+	id 1ol8Ns-001ZLe-B3
+	for linux-phy@lists.infradead.org; Wed, 19 Oct 2022 12:41:23 +0000
+Received: by mail-qk1-x736.google.com with SMTP id a5so10553418qkl.6
+        for <linux-phy@lists.infradead.org>; Wed, 19 Oct 2022 05:41:17 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=l6HYyoIjnUvMwU0yHagIn4/18iAr7NA//UMNayfCA+Y=;
-        b=dOvlTzjU6BuP1xy7GcxjujxEOKHwCReRbfOLizRueBfSY4FEnUFZnc3MJQBdxAonYR
-         cFVPgQVYkTHgCCNXwvCeexr31HkXl9SQl7x9T+RPUCiaxG4tSM/1uequdCROWB2egGVa
-         LQmlcU/YaL1ZgPxRckvGKI33MT6lTRwcQyJuVL3tAwN7qdwIaNZUH5Jnd0ytgV6ZEbIi
-         uEuncEuR5nDSN6XWNGqB5FbAzAfD+aapeTrfyZxkCFoqakaA5beR1rNpNBLKCa50gZnU
-         aJcxDzxDJJpSQ6eLxBLX8JAU4NGfAMKodKevmuEHWebdpwQzz7riEHaZnRPp1/ibRyUo
-         4tYw==
+        bh=APY6XkBoiH+8MYx94R2gCE5tsyBBjocoJUqhpNcG1uo=;
+        b=t0jva4wVew3s5XSwsmG9/vKT92stEy73Mz1sWf3wiZStx2UYRLlL+2Ue1tYnQID5Qm
+         FB272FCC/NGWhCI7C4XfeKTRYdFEaVGCI7MtWoYoacYNprbMXX0MTZNpbzEAn2j2Nha0
+         jCz+tqfS6oNV1e1ELhtj/YUlwJ03+DjRsJakr2AirJJHw93lXnKErJh0nQodWQwP0kB9
+         gVH4UJsXrMmeAVaX89fRORuta/K3zrt+niaVSaDqY7KOl9wH9CJADKSNSU78yNRzsk9t
+         sg9gG2NNMfC4oCxff1qbWIGj1imxFQf129rR5HfMwuhlb3wBihKWdrIGbDSa6d++OrvO
+         c/tw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=l6HYyoIjnUvMwU0yHagIn4/18iAr7NA//UMNayfCA+Y=;
-        b=SPFEMEVcEIktzpmgE6wNSuztyMUiporIENNOJOr/CuqBxEMVhLT7UTuU5ZnoVuiRtF
-         qwGqZzHYzKfyhbuUm5m5tFcTwJk7TgyBfwerWjedDdwFGhQIumrc8crS7dTWo/DAaE8n
-         k1vT5slU/JjdRjFSacw5GOMpYZ5qz1zlXWrjh/LDFL4li2dZ0eogtQlHAIjXcmd+EeTf
-         V5ijdxnCFj9y/5jRmG3GZO8/fTs1WFLgCDoLuiUmvx4OCnv/zg/B1qm26CnhEwps6eif
-         5qKtJLzEo+I/RJeNapUbNdas6fsiorrg8LImsHmKKbOq2DHs/4PeGFWoAoObYUBgEXC9
-         2onQ==
-X-Gm-Message-State: ACrzQf2WZFmC6RlwX2BhDksPJTN/DsKpCPC0F09o2wVQv+zZr0Z//Slm
-	lvzE6bLjBrIwPfBHW8BPaSKaNZsGNlWPHg==
-X-Google-Smtp-Source: AMsMyM6sbGZb7PJUgIQ1RnhFxi87WWEJX86EP7sxBpspPM4u/LORyoNprWbrcZrCBb0JQauxsamnLg==
-X-Received: by 2002:a05:6214:d4b:b0:4b1:80eb:64e2 with SMTP id 11-20020a0562140d4b00b004b180eb64e2mr6312320qvr.123.1666183154441;
-        Wed, 19 Oct 2022 05:39:14 -0700 (PDT)
+        bh=APY6XkBoiH+8MYx94R2gCE5tsyBBjocoJUqhpNcG1uo=;
+        b=ASrttp2/QwNXbfDRjho1BGt8xH5axphpVxOOlqFtt8clMxc3zCVhzWf+nS4kmLkOt/
+         T/2LMupYRKRAIp4AC5TwYvUiWuGZpqmQYlCTllnqmX0I7216fjpbdZicEKPdNGpeKTeF
+         XDSblkWYXo6dNtcG/9FePThKvbi8OMjfFLpbbrhbM6ylmB13pIYgBJiuHo1cKjSIqsX4
+         PCHIcLJIzNRMbVIvmqPcrID2L6AyxKS70niyr16fAEiTN5T589Ynq3gQCkvz9F3/UypH
+         9tmkiEQx2B6w1ZtmIKar9MaB5SMAnZpmZVs5MZzc7v0A9HXJJSWmOdgmsLwKT1jf88aE
+         ZbJw==
+X-Gm-Message-State: ACrzQf1PMYun8nde8+mYr+vGINi23YtA8yWYnqYeciTDWZ4aoFCm1ZF7
+	qUGFA2YsXLuR4n824u+eYdZ4Uw==
+X-Google-Smtp-Source: AMsMyM4mg+k/dzvcqomBH9qc5f5xm21maADpMizbJY1M4DfSbN0jD6paa3IvF7n7dlHO8kOeeH6YfA==
+X-Received: by 2002:a05:620a:2809:b0:6bc:5e0d:d7b1 with SMTP id f9-20020a05620a280900b006bc5e0dd7b1mr5230359qkp.545.1666183277044;
+        Wed, 19 Oct 2022 05:41:17 -0700 (PDT)
 Received: from [192.168.10.124] (pool-72-83-177-149.washdc.east.verizon.net. [72.83.177.149])
-        by smtp.gmail.com with ESMTPSA id s15-20020a05622a178f00b0035d432f5ba3sm4043604qtk.17.2022.10.19.05.39.13
+        by smtp.gmail.com with ESMTPSA id y2-20020a05620a0e0200b006ee8874f5d8sm4708919qkm.28.2022.10.19.05.41.15
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 19 Oct 2022 05:39:13 -0700 (PDT)
-Message-ID: <c6cc4363-2004-a3e8-97cb-d6eb2b8c8704@linaro.org>
-Date: Wed, 19 Oct 2022 08:39:12 -0400
+        Wed, 19 Oct 2022 05:41:16 -0700 (PDT)
+Message-ID: <1847fa0b-7b1b-13f2-6667-0b9003ae58ac@linaro.org>
+Date: Wed, 19 Oct 2022 08:41:13 -0400
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.4.0
-Subject: Re: [PATCH v2 09/15] dt-bindings: phy: qcom,qmp-pcie: rename current
+Subject: Re: [PATCH v2 10/15] dt-bindings: phy: qcom,qmp-pcie: add sc8280xp
  bindings
 Content-Language: en-US
 To: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>
@@ -77,12 +77,12 @@ Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
  linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
 References: <20221019113552.22353-1-johan+linaro@kernel.org>
- <20221019113552.22353-10-johan+linaro@kernel.org>
+ <20221019113552.22353-11-johan+linaro@kernel.org>
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20221019113552.22353-10-johan+linaro@kernel.org>
+In-Reply-To: <20221019113552.22353-11-johan+linaro@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221019_053917_528892_64383E67 
-X-CRM114-Status: GOOD (  16.10  )
+X-CRM114-CacheID: sfid-20221019_054120_462086_5E95F4D9 
+X-CRM114-Status: GOOD (  10.68  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,35 +100,21 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 19/10/2022 07:35, Johan Hovold wrote:
-> The current QMP PCIe PHY bindings are based on the original MSM8996
-> binding which provided multiple PHYs per IP block and these in turn were
-> described by child nodes.
+> Add bindings for the PCIe QMP PHYs found on SC8280XP.
 > 
-> Later QMP PCIe PHY blocks only provide a single PHY and the remnant
-> child node does not really reflect the hardware.
+> The PCIe2 and PCIe3 controllers and PHYs on SC8280XP can be used in
+> 4-lane mode or as separate controllers and PHYs in 2-lane mode (e.g. as
+> PCIe2A and PCIe2B).
 > 
-> The original MSM8996 binding also ended up describing the individual
-> register blocks as belonging to either the wrapper node or the PHY child
-> nodes.
-> 
-> This is an unnecessary level of detail which has lead to problems when
-> later IP blocks using different register layouts have been forced to fit
-> the original mould rather than updating the binding. The bindings are
-> arguable also incomplete as they only the describe register blocks used
-> by the current Linux drivers (e.g. does not include the per lane PCS
-> registers).
-> 
-> In preparation for adding new bindings for SC8280XP which further
-> bindings can be based on, rename the current schema file after IPQ8074,
-> which was the first SoC added to the bindings after MSM8996 (which has
-> already been split out), and add a reference to the SC8280XP bindings.
+> The configuration for a specific system can be read from a TCSR register.
 > 
 > Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
-> ---
->  ...om,qmp-pcie-phy.yaml => qcom,ipq8074-qmp-pcie-phy.yaml} | 7 +++++--
 
 
 Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+
+But please wait with applying this patch for Rob's bot:
+https://patchwork.ozlabs.org/project/devicetree-bindings/patch/20221019113552.22353-11-johan+linaro@kernel.org/
 
 Best regards,
 Krzysztof
