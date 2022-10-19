@@ -4,64 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A3BE3C4332F
-	for <linux-phy@archiver.kernel.org>; Wed, 19 Oct 2022 13:51:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3AFF5C4332F
+	for <linux-phy@archiver.kernel.org>; Wed, 19 Oct 2022 13:52:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nXOunaHumylVJDPiAFjhre8Vo4d5K09vQd+cKhTVE2w=; b=FHo6DPyW0NIrJI
-	r0BV5XTaAeG9VcNLP/it/2L9IxA39vmLo717kAS44d/GKg2wQxD6TAiX3EjAmfW9/WfTSS/JUx7Zy
-	CtfW7uSpUqM10w84jkIv4hSSMZk8bEfUxp0mVl0WqZxyXiP5mwZxLHboo54jJMie2sMjR1XrCF5x4
-	QhZyro8htUxQEQ1EpE8g5r784Ka0zYwhzAz1QYNipRG8ia5NDg7zZ8u3Eh6PTbV7XbdB4IktWkn6z
-	6EFZafwBMnxlQhQ9BkWDSmln0PGGIYPC6qGXh7nMRivWaeoDO8oedHQFylxBKbJCJMSnpFLkE+M0h
-	qnKiG4xL81NjRyQeHK7Q==;
+	List-Owner; bh=1rDmeAslyRJSOMt01gHGP7DCLma7Gs85GLNjVVbaFPo=; b=XDMenHVWVInPaR
+	oRl1GJeI6tFSMdLKWTSHdWfCQv7OEpQYxyWzIeG7oW5XcA04+3SGkESobfVF5AQK5o/1h4x8x00ny
+	TSnaeWbWrdFJJgeNuArLpAdqqvRn2Ia3wMUG+5d4BOgX63ybKewyImryVAIe3Gyc00I9oCO80HKq6
+	7qt6NGHPX95cdvo9goLCBZSW1ofq1uWeXSF3dMBOXp8FMzpQL+jquo4Muq4XK9ImUMLLgz3ZPQjyw
+	QMdUy1YiX5U/Aj5sOEakHDuqg1aXetPDSc69bl1N+XM+bIIN77C08dyVx1Wx4/9DuqNxVDgh75Xa4
+	kQFGJmRdxtqv3XFseczg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ol9UE-002Jtr-Ti; Wed, 19 Oct 2022 13:51:58 +0000
-Received: from mail-lj1-x22a.google.com ([2a00:1450:4864:20::22a])
+	id 1ol9Uq-002Km9-Md; Wed, 19 Oct 2022 13:52:36 +0000
+Received: from mail-lj1-x234.google.com ([2a00:1450:4864:20::234])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ol9UC-002Jp6-5B
-	for linux-phy@lists.infradead.org; Wed, 19 Oct 2022 13:51:57 +0000
-Received: by mail-lj1-x22a.google.com with SMTP id x18so22281244ljm.1
-        for <linux-phy@lists.infradead.org>; Wed, 19 Oct 2022 06:51:54 -0700 (PDT)
+	id 1ol9Un-002KcP-M4
+	for linux-phy@lists.infradead.org; Wed, 19 Oct 2022 13:52:34 +0000
+Received: by mail-lj1-x234.google.com with SMTP id c20so22270193ljj.7
+        for <linux-phy@lists.infradead.org>; Wed, 19 Oct 2022 06:52:31 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=w5+gyODwoHFKNypGT6uh/ysXTrRRHFbyILu1kotDzM4=;
-        b=ZZrpWJr0JokM3BK2PpwWz7MaqS/A7K1EC66XS8ZizSz4zzmpa+PCvXIKtltBzs/reZ
-         sVxov/MPI1hg5hu1I4N3B7mre2Ac8Q65gCcYCGT1pjRRu6G/5ULnx1msljvsp4+Ui4Va
-         ZVumpBC5+ZAtg7DpovO1Xs7RCRcOqeiqxmPcYyZ8QhxOPZRmH8N99FG3CiaHbdyc/SkX
-         ENnedz5T0tuARHVKT4qND9XHLrMMVz5tWH1u+WMU4PmQn2oWZT9AkgcMSZvPRbR9VQtq
-         44rvFZk4AlKfaijtdvuEfVmcMJm21smZqNUbFbmDOisSk33aNfDbqzvOQyLVfEgwLSmK
-         aZYw==
+        bh=RknYa2NABgYYHyJknMjUhYiHTu2aqnADkUkC2x00Z/k=;
+        b=yVyYhg2zBMm+7w3lS+wQf7QQB6OxkvKhhDBuAPYoaZ7jD0KpwgQm287TcPFHMwTTkE
+         jryok8brz3+crpof1k38RGlYAy8EknTf68wgzwJcnn3FBydmHK77NIq8gst0QpljcDnr
+         lEQvShh77tEZtVCe8fl0GZnP2mCH81by5zLhTlqbuLfUx0UpnWcovEmz96yWNOv810Mr
+         lQfdoKcRbsxklj6SU8zBtJVkDk9ttPpnKVB3WgOpCeAy6PAWmY19KZnVd68/6dOt51tZ
+         ZrVbOIMPqosRKsDK0eA3b5vgFTfilJ2lUvoaaulDneOt2wSZ4l6ggS6O4BHZOrnDLQIo
+         1jyQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=w5+gyODwoHFKNypGT6uh/ysXTrRRHFbyILu1kotDzM4=;
-        b=WihOlJXfy0bpOfP27zjEK26bH5kYdnKhZFUF39noPfu48HlzpjuWdzaR78Kz5hF9bw
-         65hDtJe6BC4x9fm6buCLNEewqQMAz7pLo7HhveTrOU5suFQTJwB6VIZQK2pD10xDU4eY
-         0zJqtlJV+yb/eOp8tnpEDd78m377yH85y9Wxbn2x/3UohNv+dEGPr/T7/EdoQdJ+FMfJ
-         71DNL5C/WXwiTAJpbpfAEaD5MI0xzZs4woNbeYoxUfZdu4P0dbZ//d7n/JDA90a7sqKb
-         4Zdgn3byTDl2sVy6H3Q/cLyM6FLEnvypn49YQdTyXRybw72v/zOoFNOhnY1hQr2NWyP+
-         NFPg==
-X-Gm-Message-State: ACrzQf20IVi/ZDy7ZqVNehfSKLJYF/lq/IU2dXy+THHW9NwjaSOJC07Q
-	y/R7CTHd76CL3BGjSG2QWRWUhg==
-X-Google-Smtp-Source: AMsMyM6Wz4e6pH5YTXalvM3jqNkmWpZ+07QEhZ29oRNNSkpxIXajymXLgZHoHSMNHYwLDMt5DvO4bQ==
-X-Received: by 2002:a2e:a602:0:b0:264:5132:f59 with SMTP id v2-20020a2ea602000000b0026451320f59mr3065213ljp.0.1666187513443;
-        Wed, 19 Oct 2022 06:51:53 -0700 (PDT)
+        bh=RknYa2NABgYYHyJknMjUhYiHTu2aqnADkUkC2x00Z/k=;
+        b=Vrk1rHWnDLg5zSEs1jvWEGofqNF/PsD7PD9n85W8CI5GnAXOvtNdPAxkW0pjqYQKCr
+         Cg/4PUUEvLdbL3U/nNPgaYsuiWptipfPQrpKNhVFFg4CAh7NodWZVi9GpVT14+qXK7Ks
+         rnQEJ3+0f3GJF2lmzkGDkooZSTrSvB1sL7EbLhoy1QP/LINP5hF0GiqC2e7Wp9FDJcdT
+         9waCDANPqes3SdZDFCaDeK3RJTNFVJ9xh3f4bqqRgKsJoJRHela9NVg5ZHwuq7WUSJBp
+         K42xq8f+pNNKd2lRYNCP3lJm0j5kLF/4vemKBEjc84SwRmoL/EmDKkxwajaMNolpKHBR
+         4mbw==
+X-Gm-Message-State: ACrzQf3OEiR85PuY3vgVEBQ56NALBt+FTOfGoJmo4bPryd8jy7M99SOj
+	kQkp9B7P57TU2doOIWmHI7Fp1w==
+X-Google-Smtp-Source: AMsMyM7XIZU0I24cerZGyqqlXQ/1nBl3l4sFmHTpzgGVDmR0GJjUQ91snFjYNIxrUZWHEFwuHqEW5w==
+X-Received: by 2002:a2e:bc0f:0:b0:26e:15f:51dd with SMTP id b15-20020a2ebc0f000000b0026e015f51ddmr3021059ljf.118.1666187550011;
+        Wed, 19 Oct 2022 06:52:30 -0700 (PDT)
 Received: from [10.10.15.130] ([192.130.178.91])
-        by smtp.gmail.com with ESMTPSA id l29-20020ac2555d000000b00498fd423cc3sm2288264lfk.295.2022.10.19.06.51.52
+        by smtp.gmail.com with ESMTPSA id t17-20020a056512209100b004996fbfd75esm2298842lfr.71.2022.10.19.06.52.29
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 19 Oct 2022 06:51:53 -0700 (PDT)
-Message-ID: <22640161-0b28-d91c-5af8-ca9fa36954f1@linaro.org>
-Date: Wed, 19 Oct 2022 16:51:52 +0300
+        Wed, 19 Oct 2022 06:52:29 -0700 (PDT)
+Message-ID: <02a879d4-cc7a-ca8e-7334-755873baa3e7@linaro.org>
+Date: Wed, 19 Oct 2022 16:52:29 +0300
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.3.3
@@ -79,8 +79,8 @@ References: <20221019113552.22353-1-johan+linaro@kernel.org>
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 In-Reply-To: <20221019113552.22353-13-johan+linaro@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221019_065156_229229_C28DF855 
-X-CRM114-Status: GOOD (  12.94  )
+X-CRM114-CacheID: sfid-20221019_065233_758826_693A55A9 
+X-CRM114-Status: GOOD (  19.01  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -110,8 +110,24 @@ On 19/10/2022 14:35, Johan Hovold wrote:
 > ---
 >   drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 2 ++
 >   1 file changed, 2 insertions(+)
+> 
+> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+> index 2f4bdef73395..9c8e009033f1 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+> @@ -1866,6 +1866,8 @@ static int qmp_pcie_init(struct phy *phy)
+>   		goto err_disable_regulators;
+>   	}
+>   
+> +	usleep_range(200, 300);
+> +
 
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+If there is a v3, I'd kindly ask to add a comment about vendor using 1ms 
+here.
+
+>   	ret = reset_control_bulk_deassert(cfg->num_resets, qmp->resets);
+>   	if (ret) {
+>   		dev_err(qmp->dev, "reset deassert failed\n");
 
 -- 
 With best wishes
