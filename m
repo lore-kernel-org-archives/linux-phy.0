@@ -4,83 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D2E22C4332F
-	for <linux-phy@archiver.kernel.org>; Wed, 19 Oct 2022 13:51:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 10A4CC4332F
+	for <linux-phy@archiver.kernel.org>; Wed, 19 Oct 2022 13:51:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LszCnSCe5LH455ob4+qW2mJJdiCvV8J8VDl1bMjMxFg=; b=PFpI/PBOPZttFU
-	HayRNCRdB6QdYbFSsUDjhxtDaWqnsHph+1IoWpzhWgH/VTVZm+yKtDQ4LoB0hZ+qDUkUKvk1ogtRx
-	q843jLJy18jo3xppMns2CBGvgKYCn9ji1vJoMBmZDqX/kVvH0+Wuf/PtXoyT/oBu5IX8RFTvIprNt
-	LEyvw69OSUEmOkB/ISBnp6RC3e8fw21cnFCgOzeNsuuG8H5K2kHsPT3kBjTgdiMiDIt5qXSLHYOrL
-	TOJU+KSkvrlwRIGmK3EX3QCqEc4kxLxsdVsYLpx4iYeCPqK8B9j25S7IPaTGoKzW9AcLwjatkfj1F
-	JXIJJqmyJ1FtYYWCveiA==;
+	List-Owner; bh=UI2Hv7x1IxSPJgNf0lCOkJSIVRWos6qBjGVkXuTyjng=; b=R2poegIo5ueJej
+	cYNARpyf8INNcovtxXJCZ3oy3WpfDX4tet3zVHEFM+j6HENU2GDlbn3HT3pbi269W3U2zm0GI1v8v
+	M6byXv7Wc5H5md2pIVNIff6OwULs+UVmLN6kMmnf4F6Xm4dCqh65SAT4GWB4/FsL/F8fi276rSu0e
+	kS0T9G/WIN+alF6pE3wAG6EPpdF+McyKRHyGhdw5tmDg8ZIfVcPd3bHpArMm7pIul+wNp82D6dhSb
+	t9EFXMtJuN/k5s+DyI6WUxCSH7S1BNR7XebSQrZ4QYPJ5936fLyogBLKO8o06xFZ2INoOrNJIc0/x
+	gCwYCUIHVIplxfhjdGMg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ol9Tn-002JcP-5x; Wed, 19 Oct 2022 13:51:31 +0000
-Received: from mail-lj1-x22d.google.com ([2a00:1450:4864:20::22d])
+	id 1ol9U4-002JlT-Gf; Wed, 19 Oct 2022 13:51:48 +0000
+Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ol9Tj-002JXY-9p
-	for linux-phy@lists.infradead.org; Wed, 19 Oct 2022 13:51:29 +0000
-Received: by mail-lj1-x22d.google.com with SMTP id a6so22262900ljq.5
-        for <linux-phy@lists.infradead.org>; Wed, 19 Oct 2022 06:51:26 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=UJIED1GMLicc9E2xTm0vMrBYlH7QKNnQvZ0ZP1r6MEk=;
-        b=K9naMjrZKs+uKZCSLVPRDZ2jSvYGjjkZf49XV8WaELqWNzpbevfDUza4cYpAaua+oq
-         QCERtfMC3wjKCGvnU89DLqR/bLqjDUV8ktOm0luwt8ciKr3/wb8Gf+MF9fA7fjj5AAmP
-         HUjbH8OVfJCuEl7k6AD24SN+R1te3atr2YaJkpIo00fP7TML8XcjkyE2o09hp4uYAi+y
-         YE2hvmjKKbJIDIAVgtZLLTvYalXOkz560rvf6ks4AEcrM9i4inb53/yYCXjxJIZOY1TP
-         54g4TUGcDLnoX3eex9RpbsVl+iAiTUyukUCPBFF+3oYwbbf/qEnxgqZK8LDFWdQuZcd9
-         u8bQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=UJIED1GMLicc9E2xTm0vMrBYlH7QKNnQvZ0ZP1r6MEk=;
-        b=DRfrpdC4x6vqnL3vka6lOp5dQsK6oukXJsfr0HKjiGlaTLG6AYZqbc3ZmnsbAkZz/b
-         ZnJ9jFiRa2bMdkNQMLQ/upOd4drCkWgSE3f18l16OKnZjLm3cF+u1yUtR1zNRHrj2iA0
-         c1iA+s7b7c1izvKd8Z7fTjjRMCEXgDqL8e/8uHRs4mJFqhWOwMKGwVU4AKbej+0h9IcL
-         JJzRV4tZZ5H8HP97Fp13KG0Xw9YsZCBaweUcin+ZFI/OQ98dauXShUSvWaTpBDbgtNcv
-         DaVy/9UNy8u5UNUvILh3adWGy3gVh0RzSWjI8fjdqWme2WevAyItxbKUxfxkzbygZXmX
-         RMaA==
-X-Gm-Message-State: ACrzQf2nyRHNJgz+8omL2Tiqnb8855zN2xxlN+T3uNFbd3CnM6B68eEK
-	kTF2x1BP3XNGzfGA4ImJSy+1UXjG+AegJw==
-X-Google-Smtp-Source: AMsMyM7Cva7bl9FMqpWN6cGLNUl5h1EdpUNy5P98fDoiY7YC0WhyZAFXhoHFs2BmHbMdvQ9r5Xgbgg==
-X-Received: by 2002:a05:651c:a11:b0:26f:db4e:e7a6 with SMTP id k17-20020a05651c0a1100b0026fdb4ee7a6mr3016661ljq.361.1666187484890;
-        Wed, 19 Oct 2022 06:51:24 -0700 (PDT)
-Received: from [10.10.15.130] ([192.130.178.91])
-        by smtp.gmail.com with ESMTPSA id b7-20020a056512070700b004a2386b8ce8sm2285850lfs.211.2022.10.19.06.51.24
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 19 Oct 2022 06:51:24 -0700 (PDT)
-Message-ID: <e17c4a43-383f-110d-4682-11727cff66ce@linaro.org>
-Date: Wed, 19 Oct 2022 16:51:23 +0300
-MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.3.3
-Subject: Re: [PATCH v2 11/15] phy: qcom-qmp-pcie: restructure PHY creation
-Content-Language: en-GB
-To: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>
-Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konrad.dybcio@somainline.org>,
- Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+	id 1ol9U0-002Jin-MD
+	for linux-phy@lists.infradead.org; Wed, 19 Oct 2022 13:51:46 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by sin.source.kernel.org (Postfix) with ESMTPS id 8BE74CE20F4;
+	Wed, 19 Oct 2022 13:51:42 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 02F4FC433C1;
+	Wed, 19 Oct 2022 13:51:41 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1666187501;
+	bh=jrTe3eMGW5ffNFtDxkHTlei5AgA/Ul8ndLjqKSldIso=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=pyi9TrqIWBfDG8wOv1p0sfjY/8fUV82A51FEx8fgY7z1jjdXnqBj6gUtvN0ZeglC1
+	 Gmjtp1uoz/bFzZweXV99Y/82hK0HWoxzY8nH2j2QZ6xThw160k1P2WGTJlTfe5By2R
+	 WpQGE4MXa5UtcdWK7bU1jj7/ZX4a/gV3WchLmQvOpPVlnb0DWgRS+BEU5ZMpegHyRX
+	 ti1vX4DKlOVGQucE20mVjMj2zf9/k8GSi05iWTkV5ce39r4A1COk5uCxq3HdUijNXC
+	 tOAv6DLGnvy5s133JuuG4Qs1497XHlQqv8p09/hOCRjJ1I17DFsf9jcI0EJEbOPoSW
+	 1r+nD/20LJUFw==
+Received: from johan by xi.lan with local (Exim 4.94.2)
+	(envelope-from <johan@kernel.org>)
+	id 1ol9Tk-0006YN-GW; Wed, 19 Oct 2022 15:51:29 +0200
+Date: Wed, 19 Oct 2022 15:51:28 +0200
+From: Johan Hovold <johan@kernel.org>
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Cc: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+	Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@somainline.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v2 08/15] phy: qcom-qmp-pcie: add register init helper
+Message-ID: <Y1AA4ISrWQbOoaju@hovoldconsulting.com>
 References: <20221019113552.22353-1-johan+linaro@kernel.org>
- <20221019113552.22353-12-johan+linaro@kernel.org>
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-In-Reply-To: <20221019113552.22353-12-johan+linaro@kernel.org>
+ <20221019113552.22353-9-johan+linaro@kernel.org>
+ <0f1fff20-772f-c4d1-f803-f1824ef23780@linaro.org>
+ <Y0/63eH82t2zXFi5@hovoldconsulting.com>
+ <0b0c752c-1f3d-bf5a-ade7-e2f8acac92a4@linaro.org>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <0b0c752c-1f3d-bf5a-ade7-e2f8acac92a4@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221019_065127_412633_65A23496 
-X-CRM114-Status: GOOD (  11.29  )
+X-CRM114-CacheID: sfid-20221019_065144_935963_39D7108F 
+X-CRM114-Status: GOOD (  19.24  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,27 +80,50 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 19/10/2022 14:35, Johan Hovold wrote:
-> In preparation for supporting devicetree bindings which do not use a
-> child node, move the PHY creation to probe() proper and parse the serdes
-> resource in what is now the legacy devicetree helper.
-> 
-> Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
-> ---
->   drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 36 +++++++++++-------------
->   1 file changed, 17 insertions(+), 19 deletions(-)
+On Wed, Oct 19, 2022 at 04:44:33PM +0300, Dmitry Baryshkov wrote:
+> On 19/10/2022 16:25, Johan Hovold wrote:
+> > On Wed, Oct 19, 2022 at 04:12:02PM +0300, Dmitry Baryshkov wrote:
+> >> On 19/10/2022 14:35, Johan Hovold wrote:
+> >>> Generalise the serdes initialisation helper so that it can be used to
+> >>> initialise all the PHY registers (e.g. serdes, tx, rx, pcs).
+> >>>
+> >>> Note that this defers the ungating of the PIPE clock somewhat, which is
+> >>> fine as it isn't needed until starting the PHY.
+> >>>
+> >>> Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
+> >>> ---
+> >>>    drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 51 +++++++-----------------
+> >>>    1 file changed, 15 insertions(+), 36 deletions(-)
+> >>>
 
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+> >>> -static void qmp_pcie_pcs_init(struct qmp_pcie *qmp, const struct qmp_phy_cfg_tables *tables)
+> >>> -{
+> >>> -	void __iomem *pcs = qmp->pcs;
+> >>> -	void __iomem *pcs_misc = qmp->pcs_misc;
+> >>> -
+> >>> -	if (!tables)
+> >>> -		return;
+> >>>    
+> >>> -	qmp_pcie_configure(pcs, tables->pcs, tables->pcs_num);
+> >>> -	qmp_pcie_configure(pcs_misc, tables->pcs_misc, tables->pcs_misc_num);
+> >>> +	qmp_pcie_configure(pcs, tbls->pcs, tbls->pcs_num);
+> >>> +	qmp_pcie_configure(pcs_misc, tbls->pcs_misc, tbls->pcs_misc_num);
+> >>
+> >> Nit: could we please keep it as `tables'?
+> > 
+> > I considered that but found that the longer identifier hurt
+> > readability so I prefer to use "tbls" here.
 
--- 
-With best wishes
-Dmitry
+> I'd say, it's up to Vinod. I'd prefer the second version.
 
+Ultimately yes, but as the author of these patches I do have a say here.
+
+Johan
 
 -- 
 linux-phy mailing list
