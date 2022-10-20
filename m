@@ -4,78 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 00989C433FE
-	for <linux-phy@archiver.kernel.org>; Wed, 26 Oct 2022 05:40:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 532A8FA373E
+	for <linux-phy@archiver.kernel.org>; Wed, 26 Oct 2022 05:40:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Content-Type:
 	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=fwfD8x/AX5uYFfqbje1+1L7qrO8oGzXTR8U82GIBJmY=; b=Lh0Tx5kpt9vwZ0FhQhI1/qsLaN
-	nZdCoB423P05GfgkA0K7V4VsAY+yfEr8ilgosw/Myh0fbOsJczjACUiiCp+WRTZ5hEcw2Ym5lEM5s
-	OoJxgNVT8+/bHnK4tec9ZKGD5Y0tZ91aq9zBJoOTALZI5OYQtoTDkKpFAQa6bbOxsGom/rsV1Eozt
-	Wi3Ob1Gn2DRQibXC8Jxqd7Az59eXTzGudtt85tS4xlgdFMoAQ009czvDl3hS/X0zBzy30YEluXDbh
-	5a7FF+/F6ACn36bALFqJp2VDZXxYnEzVtKbZh6KwT+2ip6xVXRPntuhIdGyIX4D79kLgftqZmxfZH
-	Q4gdsGYQ==;
+	bh=i/+ho/GDDW0EFBZ/omzRZ6qZFzbpot07hUppX4KOaKU=; b=rohrwWB4cF0qt2BQI94FNMv8RU
+	3NhpUY9uILU1SZBO5MFmAvMfR1s9SxSQF44ZuY4jLANp/r57ohBDE8+XvMX8ro6Y+jhsfyglTbvRs
+	yA0/X1iI4lWYO5U/GsKDXDOa/PSG9gnpFzt9tfNFTF2/ViSkQ8c5cSBN1lYXJ8z5HiEf7cLiBrTK5
+	4+P+7oMRGsRQ0MvRjcb4PtpcJcNUlYJz6WXcomOmDnZE7dyfIogHtrZXhgfAte1tfcKrYOBpjLWvM
+	LHJNoHkI79lOSFXZcyvk+9jWT1PmzaHsNe+OeP+QWqoDXvGHICnn3ufad1lpniQ9eGWkAO8MLTUmf
+	ETi/TUrg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1onZ9f-00828B-CC; Wed, 26 Oct 2022 05:40:43 +0000
-Received: from mga09.intel.com ([134.134.136.24])
+	id 1onZ9f-00828J-J5; Wed, 26 Oct 2022 05:40:43 +0000
+Received: from mga05.intel.com ([192.55.52.43])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1olYzL-000kMk-V4; Thu, 20 Oct 2022 17:05:53 +0000
+	id 1ole29-002HMT-AD
+	for linux-phy@lists.infradead.org; Thu, 20 Oct 2022 22:29:06 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1666285547; x=1697821547;
+  t=1666304941; x=1697840941;
   h=date:from:to:cc:subject:message-id:references:
    mime-version:in-reply-to;
-  bh=CxXwxHHtlPhJfHuUu67DIf4ybeS9OxiafDYxGgnrMG8=;
-  b=CMa7k80QYINLGAlj17+YrcSgNZV8UGIswYzAD/Uh1VAP+v1615nLeikl
-   qpvshsxy2N+ughZ9M4iO0lrOfN85ELo5BTWs4PZPVvCisMMxssQhaWwfz
-   tvpZdikAeTQL0dd3UfICMfoqpH7KU1Af8nc7qqSqLV6rkf2LZkawnTa0v
-   54aSl0sYj77s/3hWfc1ebMAzSRuMDdJSOzNzDEyrL65EiS3JCNBP0bgko
-   qhp3ulejx/DUJUPeXkGyrYg96KRcTjdbvtmV061PbHI+mPzP9remXJWXH
-   tmtEW+KDKcj0NUtIUOh52sMbi92SVvrtCflbHjNFdeRn6qv1jIIBgkTxc
-   w==;
-X-IronPort-AV: E=McAfee;i="6500,9779,10506"; a="307873719"
+  bh=9XK0D8xv+o/7FsCI2RRFSzWznsQsiGbNwFVylarEO98=;
+  b=PxyNuHKA1emlL5P785uUixWAokZ/JYrXWFKr3+P2GIM2J/zEovzpz8zr
+   jidHVrbhpOeOUSV3C4fGEfibuqU6NlOwGLJgPRSw6oOlXMFi+fLS+zX/G
+   paVQMJs2talZseiI2NtRt6NYehwQzsiz9IJXdcUGcAm/H8pHbBJxPTAC0
+   /NsxLZUSpLD9sesK6vIv1L6bMSwqvdhhqbGYFNUlxMZdgM2MoLZWU1l1o
+   vXFFJF650ax+eIv5jLHH0tUc9s4v2smeVXPkN9g7rrtfALx1jTx4QRpRc
+   xC6qhfpt34rkCfzXdpTifpZOGuRZSCnxjiikUfYzPz3QO2BUAWxh4kriz
+   g==;
+X-IronPort-AV: E=McAfee;i="6500,9779,10506"; a="393152527"
 X-IronPort-AV: E=Sophos;i="5.95,199,1661842800"; 
-   d="scan'208";a="307873719"
-Received: from fmsmga003.fm.intel.com ([10.253.24.29])
-  by orsmga102.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 20 Oct 2022 10:05:43 -0700
+   d="scan'208";a="393152527"
+Received: from fmsmga004.fm.intel.com ([10.253.24.48])
+  by fmsmga105.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 20 Oct 2022 15:28:57 -0700
 X-ExtLoop1: 1
-X-IronPort-AV: E=McAfee;i="6500,9779,10506"; a="719179777"
+X-IronPort-AV: E=McAfee;i="6500,9779,10506"; a="698952007"
 X-IronPort-AV: E=Sophos;i="5.95,199,1661842800"; 
-   d="scan'208";a="719179777"
+   d="scan'208";a="698952007"
 Received: from lkp-server02.sh.intel.com (HELO b6d29c1a0365) ([10.239.97.151])
-  by FMSMGA003.fm.intel.com with ESMTP; 20 Oct 2022 10:05:37 -0700
+  by fmsmga004.fm.intel.com with ESMTP; 20 Oct 2022 15:28:54 -0700
 Received: from kbuild by b6d29c1a0365 with local (Exim 4.96)
 	(envelope-from <lkp@intel.com>)
-	id 1olYzA-0001Wd-2Y;
-	Thu, 20 Oct 2022 17:05:36 +0000
-Date: Fri, 21 Oct 2022 01:04:56 +0800
+	id 1ole21-0001na-0d;
+	Thu, 20 Oct 2022 22:28:53 +0000
+Date: Fri, 21 Oct 2022 06:28:04 +0800
 From: kernel test robot <lkp@intel.com>
-To: Sean Anderson <sean.anderson@seco.com>, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@ti.com>,
-	linux-phy@lists.infradead.org
+To: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>, kishon@ti.com,
+	vkoul@kernel.org, robh+dt@kernel.org,
+	krzysztof.kozlowski+dt@linaro.org
 Cc: llvm@lists.linux.dev, kbuild-all@lists.01.org,
-	Camelia Alexandra Groza <camelia.groza@nxp.com>,
-	Krzysztof Kozlowski <krzk@kernel.org>,
-	linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org,
-	devicetree@vger.kernel.org, Madalin Bucur <madalin.bucur@nxp.com>,
-	Rob Herring <robh+dt@kernel.org>,
-	Ioana Ciornei <ioana.ciornei@nxp.com>,
-	Sean Anderson <sean.anderson@seco.com>,
-	Jonathan Corbet <corbet@lwn.net>,
-	Michael Turquette <mturquette@baylibre.com>,
-	Stephen Boyd <sboyd@kernel.org>, linux-clk@vger.kernel.org,
-	linux-doc@vger.kernel.org
-Subject: Re: [PATCH v7 4/8] phy: fsl: Add Lynx 10G SerDes driver
-Message-ID: <202210210050.Mpj5O086-lkp@intel.com>
-References: <20221018231112.2142074-5-sean.anderson@seco.com>
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-renesas-soc@vger.kernel.org,
+	Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
+Subject: Re: [PATCH v2 2/2] phy: renesas: Add Renesas Ethernet SERDES driver
+ for R-Car S4-8
+Message-ID: <202210210600.85oNBk4a-lkp@intel.com>
+References: <20221019083449.933005-3-yoshihiro.shimoda.uh@renesas.com>
 MIME-Version: 1.0
-Content-Type: multipart/mixed; boundary="jne3DT32nI3Qe23q"
+Content-Type: multipart/mixed; boundary="2hEy7mZMcX5ft3/t"
 Content-Disposition: inline
-In-Reply-To: <20221018231112.2142074-5-sean.anderson@seco.com>
+In-Reply-To: <20221019083449.933005-3-yoshihiro.shimoda.uh@renesas.com>
 X-Mailman-Approved-At: Tue, 25 Oct 2022 22:40:42 -0700
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -92,25 +86,24 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
---jne3DT32nI3Qe23q
+--2hEy7mZMcX5ft3/t
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 
-Hi Sean,
+Hi Yoshihiro,
 
 I love your patch! Perhaps something to improve:
 
 [auto build test WARNING on robh/for-next]
-[also build test WARNING on clk/clk-next krzk/for-next krzk-dt/for-next linus/master v6.1-rc1 next-20221020]
-[cannot apply to shawnguo/for-next]
+[also build test WARNING on linus/master v6.1-rc1 next-20221020]
 [If your patch is applied to the wrong git tree, kindly drop us a note.
 And when submitting patch, we suggest to use '--base' as documented in
 https://git-scm.com/docs/git-format-patch#_base_tree_information]
 
-url:    https://github.com/intel-lab-lkp/linux/commits/Sean-Anderson/phy-Add-support-for-Lynx-10G-SerDes/20221019-071314
+url:    https://github.com/intel-lab-lkp/linux/commits/Yoshihiro-Shimoda/phy-renesas-Add-Renesas-Ethernet-SERDES-driver-for-R-Car-S4-8/20221019-163619
 base:   https://git.kernel.org/pub/scm/linux/kernel/git/robh/linux.git for-next
-patch link:    https://lore.kernel.org/r/20221018231112.2142074-5-sean.anderson%40seco.com
-patch subject: [PATCH v7 4/8] phy: fsl: Add Lynx 10G SerDes driver
+patch link:    https://lore.kernel.org/r/20221019083449.933005-3-yoshihiro.shimoda.uh%40renesas.com
+patch subject: [PATCH v2 2/2] phy: renesas: Add Renesas Ethernet SERDES driver for R-Car S4-8
 config: powerpc-allmodconfig
 compiler: clang version 16.0.0 (https://github.com/llvm/llvm-project 791a7ae1ba3efd6bca96338e10ffde557ba83920)
 reproduce (this is a W=1 build):
@@ -118,178 +111,91 @@ reproduce (this is a W=1 build):
         chmod +x ~/bin/make.cross
         # install powerpc cross compiling tool for clang build
         # apt-get install binutils-powerpc-linux-gnu
-        # https://github.com/intel-lab-lkp/linux/commit/61841850159f548e5ce4940701a4c75e9ff1a4b1
+        # https://github.com/intel-lab-lkp/linux/commit/2bce84d98f7bf868f118a441698377341129d5ae
         git remote add linux-review https://github.com/intel-lab-lkp/linux
-        git fetch --no-tags linux-review Sean-Anderson/phy-Add-support-for-Lynx-10G-SerDes/20221019-071314
-        git checkout 61841850159f548e5ce4940701a4c75e9ff1a4b1
+        git fetch --no-tags linux-review Yoshihiro-Shimoda/phy-renesas-Add-Renesas-Ethernet-SERDES-driver-for-R-Car-S4-8/20221019-163619
+        git checkout 2bce84d98f7bf868f118a441698377341129d5ae
         # save the config file
         mkdir build_dir && cp config build_dir/.config
-        COMPILER_INSTALL_PATH=$HOME/0day COMPILER=clang make.cross W=1 O=build_dir ARCH=powerpc SHELL=/bin/bash drivers/net/ethernet/renesas/ drivers/phy/freescale/ drivers/phy/renesas/
+        COMPILER_INSTALL_PATH=$HOME/0day COMPILER=clang make.cross W=1 O=build_dir ARCH=powerpc SHELL=/bin/bash drivers/phy/renesas/
 
 If you fix the issue, kindly add following tag where applicable
 | Reported-by: kernel test robot <lkp@intel.com>
 
 All warnings (new ones prefixed by >>):
 
->> drivers/phy/freescale/phy-fsl-lynx-10g.c:829:19: warning: variable 'ret' is uninitialized when used here [-Wuninitialized]
-                           "reg", fwnode, ret);
-                                          ^~~
-   include/linux/dev_printk.h:144:65: note: expanded from macro 'dev_err'
-           dev_printk_index_wrap(_dev_err, KERN_ERR, dev, dev_fmt(fmt), ##__VA_ARGS__)
-                                                                          ^~~~~~~~~~~
-   include/linux/dev_printk.h:110:23: note: expanded from macro 'dev_printk_index_wrap'
-                   _p_func(dev, fmt, ##__VA_ARGS__);                       \
-                                       ^~~~~~~~~~~
-   drivers/phy/freescale/phy-fsl-lynx-10g.c:813:24: note: initialize the variable 'ret' to silence this warning
-           int i, lane_count, ret;
-                                 ^
-                                  = 0
-   drivers/phy/freescale/phy-fsl-lynx-10g.c:1045:6: warning: variable 'base' set but not used [-Wunused-but-set-variable]
-           u32 base, pccr, off, shift, mask;
-               ^
-   2 warnings generated.
+>> drivers/phy/renesas/r8a779f0-ether-serdes.c:392:9: warning: variable 'ret' is uninitialized when used here [-Wuninitialized]
+           return ret;
+                  ^~~
+   drivers/phy/renesas/r8a779f0-ether-serdes.c:347:12: note: initialize the variable 'ret' to silence this warning
+           int i, ret;
+                     ^
+                      = 0
+   1 warning generated.
 
 
-vim +/ret +829 drivers/phy/freescale/phy-fsl-lynx-10g.c
+vim +/ret +392 drivers/phy/renesas/r8a779f0-ether-serdes.c
 
-   809	
-   810	static int lynx_probe_group(struct lynx_priv *serdes,
-   811				    struct fwnode_handle *fwnode)
-   812	{
-   813		int i, lane_count, ret;
-   814		struct device *dev = serdes->dev;
-   815		struct fwnode_handle *mode_node;
-   816		struct lynx_group *group;
-   817		struct lynx_mode *modes;
-   818		struct phy *phy;
-   819		u32 *lanes = NULL;
-   820	
-   821		group = devm_kzalloc(dev, sizeof(*group), GFP_KERNEL);
-   822		if (!group)
-   823			return -ENOMEM;
-   824		group->serdes = serdes;
-   825	
-   826		lane_count = fwnode_property_count_u32(fwnode, "reg");
-   827		if (lane_count < 0) {
-   828			dev_err(dev, "could not read %s from %pfwP: %d\n",
- > 829				"reg", fwnode, ret);
-   830			return lane_count;
-   831		}
-   832	
-   833		lanes = kcalloc(lane_count, sizeof(*lanes), GFP_KERNEL);
-   834		if (!lanes)
-   835			return -ENOMEM;
-   836	
-   837		ret = fwnode_property_read_u32_array(fwnode, "reg", lanes, lane_count);
-   838		if (ret) {
-   839			dev_err(dev, "could not read %s from %pfwP: %d\n",
-   840				"reg", fwnode, ret);
-   841			goto out;
-   842		}
-   843	
-   844		group->first_lane = lanes[0];
-   845		group->last_lane = lanes[lane_count - 1];
-   846		for (i = 0; i < lane_count; i++) {
-   847			u32 prots, gcr0;
-   848	
-   849			if (lanes[i] > serdes->cfg->lanes) {
-   850				ret = -EINVAL;
-   851				dev_err(dev, "lane %d not in range 0 to %u\n",
-   852					i, serdes->cfg->lanes);
-   853				goto out;
-   854			}
-   855	
-   856			if (lanes[i] != group->first_lane +
-   857					i * !!(group->last_lane - group->first_lane)) {
-   858				ret = -EINVAL;
-   859				dev_err(dev, "lane %d is not monotonic\n", i);
-   860				goto out;
-   861			}
-   862	
-   863			gcr0 = lynx_read(serdes, LNmGCR0(lanes[i]));
-   864			prots = FIELD_GET(LNmGCR0_PROTS, gcr0);
-   865			if (i && group->prots != prots) {
-   866				ret = -EIO;
-   867				dev_err(dev, "lane %d protocol does not match lane 0\n",
-   868					lanes[i]);
-   869				goto out;
-   870			}
-   871			group->prots = prots;
-   872		}
-   873	
-   874		fwnode_for_each_child_node(fwnode, mode_node)
-   875			group->mode_count++;
-   876	
-   877		modes = devm_kcalloc(dev, group->mode_count, sizeof(*group->modes),
-   878				     GFP_KERNEL);
-   879		if (!modes) {
-   880			ret = -ENOMEM;
-   881			goto out;
-   882		}
-   883	
-   884		i = 0;
-   885		fwnode_for_each_child_node(fwnode, mode_node) {
-   886			struct lynx_mode *mode = &modes[i++];
-   887			u32 val;
-   888	
-   889			ret = lynx_read_u32(dev, mode_node, "fsl,pccr", &val);
-   890			if (ret)
-   891				goto out;
-   892			mode->pccr = val;
-   893	
-   894			ret = lynx_read_u32(dev, mode_node, "fsl,index", &val);
-   895			if (ret)
-   896				goto out;
-   897			mode->idx = val;
-   898	
-   899			ret = lynx_read_u32(dev, mode_node, "fsl,cfg", &val);
-   900			if (ret)
-   901				goto out;
-   902			mode->cfg = val;
-   903	
-   904			ret = lynx_read_u32(dev, mode_node, "phy-type", &val);
-   905			if (ret)
-   906				goto out;
-   907	
-   908			ret = serdes->cfg->mode_init(serdes, mode, val);
-   909			if (ret)
-   910				goto out;
-   911	
-   912			dev_dbg(dev, "mode PCCR%X.%s%c_CFG=%x on lanes %u to %u\n",
-   913				mode->pccr, lynx_proto_str[__ffs(mode->protos)],
-   914				'A' + mode->idx, mode->cfg, group->first_lane,
-   915				group->last_lane);
-   916		}
-   917	
-   918		WARN_ON(i != group->mode_count);
-   919		group->modes = modes;
-   920	
-   921		/* Deselect anything configured by the RCW/bootloader */
-   922		for (i = 0; i < group->mode_count; i++)
-   923			serdes->cfg->mode_apply(serdes, &group->modes[i],
-   924						LYNX_PROTO_NONE);
-   925	
-   926		/* Disable the lanes for now */
-   927		lynx_power_off_group(group);
-   928	
-   929		phy = devm_phy_create(dev, to_of_node(fwnode), &lynx_phy_ops);
-   930		ret = PTR_ERR_OR_ZERO(phy);
-   931		if (ret)
-   932			dev_err_probe(dev, ret, "could not create phy\n");
-   933		else
-   934			phy_set_drvdata(phy, group);
-   935	
-   936	out:
-   937		kfree(lanes);
-   938		return ret;
-   939	}
-   940	
+   341	
+   342	static int r8a779f0_eth_serdes_probe(struct platform_device *pdev)
+   343	{
+   344		struct r8a779f0_eth_serdes_drv_data *dd;
+   345		struct phy_provider *provider;
+   346		struct resource *res;
+   347		int i, ret;
+   348	
+   349		res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+   350		if (!res) {
+   351			dev_err(&pdev->dev, "invalid resource\n");
+   352			return -EINVAL;
+   353		}
+   354	
+   355		dd = devm_kzalloc(&pdev->dev, sizeof(*dd), GFP_KERNEL);
+   356		if (!dd)
+   357			return -ENOMEM;
+   358	
+   359		platform_set_drvdata(pdev, dd);
+   360		dd->pdev = pdev;
+   361		dd->addr = devm_ioremap_resource(&pdev->dev, res);
+   362		if (IS_ERR(dd->addr))
+   363			return PTR_ERR(dd->addr);
+   364	
+   365		dd->reset = devm_reset_control_get(&pdev->dev, NULL);
+   366		if (IS_ERR(dd->reset))
+   367			return PTR_ERR(dd->reset);
+   368	
+   369		reset_control_reset(dd->reset);
+   370	
+   371		for (i = 0; i < R8A779F0_ETH_SERDES_NUM; i++) {
+   372			struct r8a779f0_eth_serdes_channel *channel = &dd->channel[i];
+   373	
+   374			channel->phy = devm_phy_create(&pdev->dev, NULL,
+   375						       &r8a779f0_eth_serdes_ops);
+   376			if (IS_ERR(channel->phy))
+   377				return PTR_ERR(channel->phy);
+   378			channel->addr = dd->addr + R8A779F0_ETH_SERDES_OFFSET * i;
+   379			channel->dd = dd;
+   380			channel->index = i;
+   381			phy_set_drvdata(channel->phy, channel);
+   382		}
+   383	
+   384		provider = devm_of_phy_provider_register(&pdev->dev,
+   385							 r8a779f0_eth_serdes_xlate);
+   386		if (IS_ERR(provider))
+   387			return PTR_ERR(provider);
+   388	
+   389		pm_runtime_enable(&pdev->dev);
+   390		pm_runtime_get_sync(&pdev->dev);
+   391	
+ > 392		return ret;
+   393	}
+   394	
 
 -- 
 0-DAY CI Kernel Test Service
 https://01.org/lkp
 
---jne3DT32nI3Qe23q
+--2hEy7mZMcX5ft3/t
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: attachment; filename=config
 
@@ -12763,7 +12669,6 @@ CONFIG_PHY_MIXEL_LVDS_PHY=m
 CONFIG_PHY_MIXEL_MIPI_DPHY=m
 CONFIG_PHY_FSL_IMX8M_PCIE=m
 CONFIG_PHY_FSL_LYNX_28G=m
-CONFIG_PHY_FSL_LYNX_10G=m
 CONFIG_PHY_HI6220_USB=m
 CONFIG_PHY_HI3660_USB=m
 CONFIG_PHY_HI3670_USB=m
@@ -12811,6 +12716,7 @@ CONFIG_PHY_QCOM_IPQ806X_USB=m
 CONFIG_PHY_MT7621_PCI=m
 CONFIG_PHY_RALINK_USB=m
 CONFIG_PHY_RCAR_GEN3_USB3=m
+CONFIG_PHY_R8A779F0_ETHERNET_SERDES=m
 CONFIG_PHY_ROCKCHIP_DPHY_RX0=m
 CONFIG_PHY_ROCKCHIP_INNO_HDMI=m
 CONFIG_PHY_ROCKCHIP_INNO_USB2=m
@@ -14479,7 +14385,7 @@ CONFIG_WARN_MISSING_DOCUMENTS=y
 CONFIG_WARN_ABI_ERRORS=y
 # end of Kernel hacking
 
---jne3DT32nI3Qe23q
+--2hEy7mZMcX5ft3/t
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -14490,5 +14396,5 @@ linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
 
---jne3DT32nI3Qe23q--
+--2hEy7mZMcX5ft3/t--
 
