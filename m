@@ -4,70 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6AC0BC4332F
-	for <linux-phy@archiver.kernel.org>; Thu, 20 Oct 2022 06:43:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D4E7BC43219
+	for <linux-phy@archiver.kernel.org>; Thu, 20 Oct 2022 08:31:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mF1dDqrurlXeUgkMbbfSSY9JWg9VI22Obb2kyCQZMqc=; b=S1A1rSEeZwOBWW
-	gIk+f1mrhvIA9yX8c2C/Ic435GojKRJ+VPqY69zyE3gQ1vvwlhNXiMdN2EhnN4el7elQ5vP9huzu5
-	lY469NfuYn5y1xqv4FnTAQs0MlQQ/F03JVGNDa4W4yY+dlIHeuVc9hox77CTMA6+OiEe7kvrd33q9
-	QU9j0b7BmHqQ1J1YF9qU4VqYAvzeeqMkaRD4tOswkhSC4gZ1m3wN0JwOscmGNwnJFYrQuh1pQIAT1
-	loHbXISRMlMT0wxPQm8HVTbvnLRXPyfZ27X/2OrMnCW9l2FZsWRvWA+oKkmDEyUrCFyKvbYQPTtiT
-	UlVWYFGAlNITvcpzhi4A==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:
+	Cc:To:Subject:MIME-Version:Date:Message-ID:Content-Type:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=YMusZSv76mEpwXJSMbacvp/rsQ7h0uxEJlT4bfoWs9s=; b=h2+VGv/eKfeu5gaME9I3xfvvzG
+	v6fE9GrDNo8N2SKxYK9pnO2BfHHVEO2L32IM5QkTcPdIefwqF24oVUhHzz7o6N0eUuA3jO6tSiYnv
+	c2x3sbCSO5q6Ngc+B6sk/hRWmOxdgrjGxZb2ZCta52fEf0Z4qw0UZCI/+t/AV8XXHcY+AFVudzSIh
+	ioe1gG6+ZXm76Lc1Ek7rmcqb+U0HOWfYLplPw5fUTNSuaOmJ3RUianAR3WpnqA6lxiShxXL1JLdEC
+	WEO9LPK0YbB8eshinnhWkI7mGVRPxnVuX5MXNv5uBZLcM8WeE1Mds5qKeYk8YJYhHOylINVF+ciQP
+	+eNIuP+Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1olPHF-00BCmA-PO; Thu, 20 Oct 2022 06:43:37 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1olQxs-00CEN1-6d; Thu, 20 Oct 2022 08:31:44 +0000
+Received: from mail-lf1-x132.google.com ([2a00:1450:4864:20::132])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1olPHD-00BCdl-3x
-	for linux-phy@lists.infradead.org; Thu, 20 Oct 2022 06:43:36 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 721FA61A02;
-	Thu, 20 Oct 2022 06:43:34 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id CE434C433C1;
-	Thu, 20 Oct 2022 06:43:33 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1666248213;
-	bh=P98rue6EL+V6EJka1psQePQe1VwTN63BL+TzJqbRDKs=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=ISHlqu89GIBldf3hubnpjInbd0yT3HfVjtB4wq27T/1F9w1/EjGes5gvfy0CL7jwY
-	 evODlNH1f62m7pL0Tdg/wqzz/K/hqHs7hcRqwOsnEHM6uD4GabRIGOu48+RG4a6/MR
-	 PwBdthU+zUG3MWdLHejIZWXxjw/V7ARdvHTVz5Mz/peOGGYxSDQxI9eaVKOsDvUsUO
-	 XuCFKsSlilDVtw2FuMVYXCMhEvF5+2UtziSGKHVx8UhcICrEcpdbQxrC77nblmRri4
-	 Y7CxebnRRzr32eQEDJc2OfC9zHvtymQ9glN2/pBOh7RilJysnM3fEHfUgjDXDx3gyW
-	 IiZlUJhisO24Q==
-Received: from johan by xi.lan with local (Exim 4.94.2)
-	(envelope-from <johan@kernel.org>)
-	id 1olPGx-0005YY-5N; Thu, 20 Oct 2022 08:43:19 +0200
-Date: Thu, 20 Oct 2022 08:43:19 +0200
-From: Johan Hovold <johan@kernel.org>
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Cc: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-	Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@somainline.org>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v2 15/15] phy: qcom-qmp-pcie: add support for sc8280xp
- 4-lane PHYs
-Message-ID: <Y1DuB6hzb3V5Lqdy@hovoldconsulting.com>
-References: <20221019113552.22353-1-johan+linaro@kernel.org>
- <20221019113552.22353-16-johan+linaro@kernel.org>
- <2902e7e8-eddf-149c-06fd-86b85d8af326@linaro.org>
+	id 1olQxo-00CEDn-Rh
+	for linux-phy@lists.infradead.org; Thu, 20 Oct 2022 08:31:42 +0000
+Received: by mail-lf1-x132.google.com with SMTP id bu25so32349237lfb.3
+        for <linux-phy@lists.infradead.org>; Thu, 20 Oct 2022 01:31:38 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google;
+        h=in-reply-to:from:references:cc:to:content-language:subject
+         :user-agent:mime-version:date:message-id:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=KgDK8YFBcYlO96C3KJm7NrQCSaicS4eCQwBe4/7dKC8=;
+        b=FI6eR3DYXht8+m9UalT4gkpR82tvRlAezR/K/yaB8vkJH28jtBAkdGh2XY/CykH9mj
+         KYZvIT98Yoyr1KycI4HGdn/JzFWGOQ5UZEqfKDGfFavS9jHlHNlLuy67jOmEN1K8xUqj
+         k4mrBaMSrb1UYIWVWz/8DZXLT3JV3JpkjwzePnKwpIYJA8Vr/qwOMsPLikI/xdfgJA2p
+         3J9P/BMI0AcxZZUQnO0GdYDnJAietkBkHVzeBhv/u9q4FBzJRcRhN825M/mnEEJBS6Tx
+         zPPYp8ZrrgvhdxFH5J0JRK8uGVsy6VIghNPcowfVTZhQsiyGsUmM78LrHCsPOjxmqChq
+         smjA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=in-reply-to:from:references:cc:to:content-language:subject
+         :user-agent:mime-version:date:message-id:x-gm-message-state:from:to
+         :cc:subject:date:message-id:reply-to;
+        bh=KgDK8YFBcYlO96C3KJm7NrQCSaicS4eCQwBe4/7dKC8=;
+        b=lcXCNFrkLccgcqttk/Ds6djG6/Rg3BUKilOBODPhMKUNUsIwXfyAxMTxOskPnEe+Fh
+         T31Ma1JzbSxg4KQjje81JAqi0ecRLmWfqJcxyzKUYp9kf2KDtbs4Dg3wjbaRiL225T1+
+         D8n6xLDDAz54Bzft/em89iMLgeswsLANeqVvQL1i3QJzkDWBeXuYVtE5wvOqhTWn4rBy
+         IkiojMOuf4MQHQ/DG54X1BBXxRA/wOqK21IdJp+OX5lZIgTOfo9p5wbJhi3Gi00sTAn/
+         5JnWr/feLJgU7KmYs3FQWk9y4irW64ZFgbwOGDc/N24VIT8lcOkyhOIHkkAAIQpA3SOq
+         1NNA==
+X-Gm-Message-State: ACrzQf2UDWVa6Qshu4BBUtZiygswDzgCWbxifCSO3l0aiv4hgxYvaeRx
+	LhbcRxyeuAEXOWV5RCkAldupDg==
+X-Google-Smtp-Source: AMsMyM5dvXV0bqmHga039wlUAXgeHaA+4elOpcHo3ft59KpTFvuA4ianAGx8LKDVRpd78p2nJPUkwg==
+X-Received: by 2002:a19:f71a:0:b0:4a2:4fdb:5037 with SMTP id z26-20020a19f71a000000b004a24fdb5037mr4773857lfe.535.1666254696819;
+        Thu, 20 Oct 2022 01:31:36 -0700 (PDT)
+Received: from [10.10.15.130] ([192.130.178.91])
+        by smtp.gmail.com with ESMTPSA id v14-20020a2ea44e000000b0026c35c4720esm2834569ljn.24.2022.10.20.01.31.35
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 20 Oct 2022 01:31:36 -0700 (PDT)
+Content-Type: multipart/mixed; boundary="------------i082W3S8x1RX9AUAq7cYn8mr"
+Message-ID: <325d6c7b-ca96-df73-a792-4d156a710267@linaro.org>
+Date: Thu, 20 Oct 2022 11:31:35 +0300
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <2902e7e8-eddf-149c-06fd-86b85d8af326@linaro.org>
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.3.3
+Subject: Re: [PATCH v2 13/15] phy: qcom-qmp-pcie: add support for pipediv2
+ clock
+Content-Language: en-GB
+To: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>
+Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
+ Konrad Dybcio <konrad.dybcio@somainline.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+References: <20221019113552.22353-1-johan+linaro@kernel.org>
+ <20221019113552.22353-14-johan+linaro@kernel.org>
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+In-Reply-To: <20221019113552.22353-14-johan+linaro@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221019_234335_268051_ED69CF8D 
-X-CRM114-Status: GOOD (  41.54  )
+X-CRM114-CacheID: sfid-20221020_013140_941471_7B92F643 
+X-CRM114-Status: GOOD (  27.70  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,180 +94,188 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Oct 20, 2022 at 06:43:47AM +0300, Dmitry Baryshkov wrote:
-> On 19/10/2022 14:35, Johan Hovold wrote:
-> > The PCIe2 and PCIe3 controllers and PHYs on SC8280XP can be used in
-> > 4-lane mode or as separate controllers and PHYs in 2-lane mode (e.g. as
-> > PCIe2A and PCIe2B).
-> > 
-> > Add support for fetching the 4-lane configuration from the TCSR and
-> > programming the lane registers of the second port when in 4-lane mode.
-> > 
-> > Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
-> > ---
-> >   drivers/phy/qualcomm/Kconfig             |   1 +
-> >   drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 118 +++++++++++++++++++++++
-> >   2 files changed, 119 insertions(+)
-> > 
-> > diff --git a/drivers/phy/qualcomm/Kconfig b/drivers/phy/qualcomm/Kconfig
-> > index 5c98850f5a36..eb9ddc685b38 100644
-> > --- a/drivers/phy/qualcomm/Kconfig
-> > +++ b/drivers/phy/qualcomm/Kconfig
-> > @@ -54,6 +54,7 @@ config PHY_QCOM_QMP
-> >   	tristate "Qualcomm QMP PHY Driver"
-> >   	depends on OF && COMMON_CLK && (ARCH_QCOM || COMPILE_TEST)
-> >   	select GENERIC_PHY
-> > +	select MFD_SYSCON
-> >   	help
-> >   	  Enable this to support the QMP PHY transceiver that is used
-> >   	  with controllers such as PCIe, UFS, and USB on Qualcomm chips.
-> > diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-> > index ea5228bd9ecc..e5bce4810bb5 100644
-> > --- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-> > +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-> > @@ -10,6 +10,7 @@
-> >   #include <linux/io.h>
-> >   #include <linux/iopoll.h>
-> >   #include <linux/kernel.h>
-> > +#include <linux/mfd/syscon.h>
-> >   #include <linux/module.h>
-> >   #include <linux/of.h>
-> >   #include <linux/of_device.h>
-> > @@ -17,6 +18,7 @@
-> >   #include <linux/phy/pcie.h>
-> >   #include <linux/phy/phy.h>
-> >   #include <linux/platform_device.h>
-> > +#include <linux/regmap.h>
-> >   #include <linux/regulator/consumer.h>
-> >   #include <linux/reset.h>
-> >   #include <linux/slab.h>
-> > @@ -886,6 +888,10 @@ static const struct qmp_phy_init_tbl sc8280xp_qmp_gen3x2_pcie_rc_serdes_tbl[] =
-> >   	QMP_PHY_INIT_CFG(QSERDES_V5_COM_BIAS_EN_CLKBUFLR_EN, 0x14),
-> >   };
-> >   
-> > +static const struct qmp_phy_init_tbl sc8280xp_qmp_gen3x4_pcie_serdes_4ln_tbl[] = {
-> > +	QMP_PHY_INIT_CFG(QSERDES_V5_COM_BIAS_EN_CLKBUFLR_EN, 0x1c),
-> > +};
-> > +
-> >   static const struct qmp_phy_init_tbl sc8280xp_qmp_gen3x1_pcie_tx_tbl[] = {
-> >   	QMP_PHY_INIT_CFG(QSERDES_V5_TX_PI_QEC_CTRL, 0x20),
-> >   	QMP_PHY_INIT_CFG(QSERDES_V5_TX_LANE_MODE_1, 0x75),
-> > @@ -1491,6 +1497,9 @@ struct qmp_phy_cfg {
-> >   	const struct qmp_phy_cfg_tables *tables_rc;
-> >   	const struct qmp_phy_cfg_tables *tables_ep;
-> >   
-> > +	const struct qmp_phy_init_tbl *serdes_4ln_tbl;
-> > +	int serdes_4ln_num;
+This is a multi-part message in MIME format.
+--------------i082W3S8x1RX9AUAq7cYn8mr
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
+
+On 19/10/2022 14:35, Johan Hovold wrote:
+> Some QMP PHYs have a second fixed-divider pipe clock that needs to be
+> enabled along with the pipe clock.
 > 
-> Would it make more sense to change this into the proper 
-> qmp_phy_cfg_tables entry and then use the existing API for programming 
-> the table?
-
-No, there is just one serdes register update needed when in 4-lane mode,
-besides programming tx/rx for the second port. Adding a third struct
-qmp_phy_cfg_tables for this seems like overkill and would lead to a more
-convoluted implementation of the programming sequence.
-
-And you can't add it two one of the existing ones, as your comment seems
-to suggest.
-
-The gen3x4 PHYs can be in either 4-lane or 2-lane mode depending on the
-TCSR configuration. Port A is programmed identically in both cases
-except for this serdes register, and in 4-lane mode tx/rx also needs
-to be programmed for port B.
- 
-> > +
-> >   	/* clock ids to be requested */
-> >   	const char * const *clk_list;
-> >   	int num_clks;
-> > @@ -1518,6 +1527,7 @@ struct qmp_pcie {
-> >   	struct device *dev;
-> >   
-> >   	const struct qmp_phy_cfg *cfg;
-> > +	bool tcsr_4ln_config;
+> Add support for an optional "pipediv2" clock.
 > 
-> As a matter of preference, this seems too specific. I'd rename it to 
-> split_config or split_4ln_config.
-
-I'm afraid those names do not make much sense. This TCSR register
-controls whether the PHY is in 4-lane mode (instead of 2-lane mode).
-
-> >   
-> >   	void __iomem *serdes;
-> >   	void __iomem *pcs;
-> > @@ -1527,6 +1537,8 @@ struct qmp_pcie {
-> >   	void __iomem *tx2;
-> >   	void __iomem *rx2;
-> >   
-> > +	void __iomem *port_b;
-> > +
-> >   	struct clk *pipe_clk;
-> >   	struct clk *pipediv2_clk;
-> >   	struct clk_bulk_data *clks;
-> > @@ -1932,6 +1944,44 @@ static const struct qmp_phy_cfg sc8280xp_qmp_gen3x2_pciephy_cfg = {
-> >   	.phy_status		= PHYSTATUS,
-> >   };
-  
-> > +static void qmp_pcie_init_port_b(struct qmp_pcie *qmp, const struct qmp_phy_cfg_tables *tbls)
-> > +{
-> > +	const struct qmp_phy_cfg *cfg = qmp->cfg;
-> > +	const struct qmp_pcie_offsets *offs = cfg->offsets;
-> > +	void __iomem *tx3, *rx3, *tx4, *rx4;
-> > +
-> > +	tx3 = qmp->port_b + offs->tx;
-> > +	rx3 = qmp->port_b + offs->rx;
-> > +	tx4 = qmp->port_b + offs->tx2;
-> > +	rx4 = qmp->port_b + offs->rx2;
-> > +
-> > +	qmp_pcie_configure_lane(tx3, tbls->tx, tbls->tx_num, 1);
-> > +	qmp_pcie_configure_lane(rx3, tbls->rx, tbls->rx_num, 1);
-> > +
-> > +	qmp_pcie_configure_lane(tx4, tbls->tx, tbls->tx_num, 2);
-> > +	qmp_pcie_configure_lane(rx4, tbls->rx, tbls->rx_num, 2);
+> Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
+> ---
+>   drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 42 ++++++++++++++++++++----
+>   1 file changed, 36 insertions(+), 6 deletions(-)
 > 
-> I'd use BIT(2) and BIT(3) here. This would allow one to make a 
-> difference between programming first pair of lanes and second pair of 
-> lanes if necessary.
+> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+> index 9c8e009033f1..c1d74c06fad1 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+> @@ -1379,7 +1379,9 @@ struct qmp_pcie {
+>   	void __iomem *rx2;
+>   
+>   	struct clk *pipe_clk;
+> +	struct clk *pipediv2_clk;
+>   	struct clk_bulk_data *clks;
+> +
+>   	struct reset_control_bulk_data *resets;
+>   	struct regulator_bulk_data *vregs;
+>   
+> @@ -1902,6 +1904,36 @@ static int qmp_pcie_exit(struct phy *phy)
+>   	return 0;
+>   }
+>   
+> +static int pipe_clk_enable(struct qmp_pcie *qmp)
+> +{
+> +	int ret;
+> +
+> +	ret = clk_prepare_enable(qmp->pipe_clk);
+> +	if (ret) {
+> +		dev_err(qmp->dev, "failed to enable pipe clock: %d\n", ret);
+> +		return ret;
+> +	}
+> +
+> +	ret = clk_prepare_enable(qmp->pipediv2_clk);
+> +	if (ret) {
+> +		dev_err(qmp->dev, "failed to enable pipediv2 clock: %d\n", ret);
+> +		goto err_disable_pipe_clk;
+> +	}
+> +
+> +	return 0;
+> +
+> +err_disable_pipe_clk:
+> +	clk_disable_unprepare(qmp->pipe_clk);
+> +
+> +	return ret;
+> +}
+> +
+> +static void pipe_clk_disable(struct qmp_pcie *qmp)
+> +{
+> +	clk_disable_unprepare(qmp->pipediv2_clk);
+> +	clk_disable_unprepare(qmp->pipe_clk);
+> +}
+> +
+>   static int qmp_pcie_power_on(struct phy *phy)
+>   {
+>   	struct qmp_pcie *qmp = phy_get_drvdata(phy);
+> @@ -1923,11 +1955,9 @@ static int qmp_pcie_power_on(struct phy *phy)
+>   	qmp_pcie_init_registers(qmp, &cfg->tables);
+>   	qmp_pcie_init_registers(qmp, mode_tables);
+>   
+> -	ret = clk_prepare_enable(qmp->pipe_clk);
+> -	if (ret) {
+> -		dev_err(qmp->dev, "pipe_clk enable failed err=%d\n", ret);
+> +	ret = pipe_clk_enable(qmp);
+> +	if (ret)
+>   		return ret;
+> -	}
+>   
+>   	/* Pull PHY out of reset state */
+>   	qphy_clrbits(pcs, cfg->regs[QPHY_SW_RESET], SW_RESET);
+> @@ -1950,7 +1980,7 @@ static int qmp_pcie_power_on(struct phy *phy)
+>   	return 0;
+>   
+>   err_disable_pipe_clk:
+> -	clk_disable_unprepare(qmp->pipe_clk);
+> +	pipe_clk_disable(qmp);
+>   
+>   	return ret;
+>   }
+> @@ -1960,7 +1990,7 @@ static int qmp_pcie_power_off(struct phy *phy)
+>   	struct qmp_pcie *qmp = phy_get_drvdata(phy);
+>   	const struct qmp_phy_cfg *cfg = qmp->cfg;
+>   
+> -	clk_disable_unprepare(qmp->pipe_clk);
+> +	pipe_clk_disable(qmp);
+>   
+>   	/* PHY reset */
+>   	qphy_setbits(qmp->pcs, cfg->regs[QPHY_SW_RESET], SW_RESET);
 
-No, the tx and tx registers of the second port should be programmed
-identically to that of the first port.
+I still think that the attached patch is somewhat simpler. Diffstat 
+supports that idea:
 
-> > +}
-> > +
-> >   static void qmp_pcie_init_registers(struct qmp_pcie *qmp, const struct qmp_phy_cfg_tables *tbls)
-> >   {
-> >   	const struct qmp_phy_cfg *cfg = qmp->cfg;
-> > @@ -2080,6 +2148,11 @@ static void qmp_pcie_init_registers(struct qmp_pcie *qmp, const struct qmp_phy_c
-> >   
-> >   	qmp_pcie_configure(pcs, tbls->pcs, tbls->pcs_num);
-> >   	qmp_pcie_configure(pcs_misc, tbls->pcs_misc, tbls->pcs_misc_num);
-> > +
-> > +	if (cfg->lanes >= 4 && qmp->tcsr_4ln_config) {
-> > +		qmp_pcie_configure(serdes, cfg->serdes_4ln_tbl, cfg->serdes_4ln_num);
-> > +		qmp_pcie_init_port_b(qmp, tbls);
-> > +	}
-> 
-> As you have been refactoring this piece of code, maybe it would make 
-> more sense to change qmp->tx/tx2 into an array of two elements? Then we 
-> can extend it to 4 in this patch, and just always write the whole array 
-> in a loop?
+$ diffstat /tmp/pipe.diff
+  phy-qcom-qmp-pcie.c |   26 ++++++++++++++++----------
+  1 file changed, 16 insertions(+), 10 deletions(-)
 
-No, I don't think that would be an improvement and would obscure the
-fact that we're programming two otherwise identical ports (e.g. tx1 and
-tx2 of port B is used for the third and fourth lanes).
+Yes, I'm speaking this after having cleaned up several open-coded 
+versions of clk_bulk_foo from the drm/msm code. It typically starts with 
+the 'just another clock' story, and then suddenly they are all over the 
+code.
 
-Note that the above conditional encodes the difference in programming
-sequence between 4-lane and 2-lane mode I described above (one serdes
-register difference + tx/rx of port b).
+-- 
+With best wishes
+Dmitry
 
-Johan
+--------------i082W3S8x1RX9AUAq7cYn8mr
+Content-Type: text/x-patch; charset=UTF-8; name="pipe.diff"
+Content-Disposition: attachment; filename="pipe.diff"
+Content-Transfer-Encoding: base64
+
+ZGlmZiAtLWdpdCBhL2RyaXZlcnMvcGh5L3F1YWxjb21tL3BoeS1xY29tLXFtcC1wY2llLmMg
+Yi9kcml2ZXJzL3BoeS9xdWFsY29tbS9waHktcWNvbS1xbXAtcGNpZS5jCmluZGV4IDljOGUw
+MDkwMzNmMS4uYTE0OGIxNDNkZDkwIDEwMDY0NAotLS0gYS9kcml2ZXJzL3BoeS9xdWFsY29t
+bS9waHktcWNvbS1xbXAtcGNpZS5jCisrKyBiL2RyaXZlcnMvcGh5L3F1YWxjb21tL3BoeS1x
+Y29tLXFtcC1wY2llLmMKQEAgLTEzNzgsOCArMTM3OCwxMCBAQCBzdHJ1Y3QgcW1wX3BjaWUg
+ewogCXZvaWQgX19pb21lbSAqdHgyOwogCXZvaWQgX19pb21lbSAqcngyOwogCi0Jc3RydWN0
+IGNsayAqcGlwZV9jbGs7CisJc3RydWN0IGNsa19idWxrX2RhdGEgKnBpcGVfY2xrczsKKwlp
+bnQgbnVtX3BpcGVfY2xrczsKIAlzdHJ1Y3QgY2xrX2J1bGtfZGF0YSAqY2xrczsKKwogCXN0
+cnVjdCByZXNldF9jb250cm9sX2J1bGtfZGF0YSAqcmVzZXRzOwogCXN0cnVjdCByZWd1bGF0
+b3JfYnVsa19kYXRhICp2cmVnczsKIApAQCAtMTkyMywxMSArMTkyNSw5IEBAIHN0YXRpYyBp
+bnQgcW1wX3BjaWVfcG93ZXJfb24oc3RydWN0IHBoeSAqcGh5KQogCXFtcF9wY2llX2luaXRf
+cmVnaXN0ZXJzKHFtcCwgJmNmZy0+dGFibGVzKTsKIAlxbXBfcGNpZV9pbml0X3JlZ2lzdGVy
+cyhxbXAsIG1vZGVfdGFibGVzKTsKIAotCXJldCA9IGNsa19wcmVwYXJlX2VuYWJsZShxbXAt
+PnBpcGVfY2xrKTsKLQlpZiAocmV0KSB7Ci0JCWRldl9lcnIocW1wLT5kZXYsICJwaXBlX2Ns
+ayBlbmFibGUgZmFpbGVkIGVycj0lZFxuIiwgcmV0KTsKKwlyZXQgPSBjbGtfYnVsa19wcmVw
+YXJlX2VuYWJsZShxbXAtPm51bV9waXBlX2Nsa3MsIHFtcC0+cGlwZV9jbGtzKTsKKwlpZiAo
+cmV0KQogCQlyZXR1cm4gcmV0OwotCX0KIAogCS8qIFB1bGwgUEhZIG91dCBvZiByZXNldCBz
+dGF0ZSAqLwogCXFwaHlfY2xyYml0cyhwY3MsIGNmZy0+cmVnc1tRUEhZX1NXX1JFU0VUXSwg
+U1dfUkVTRVQpOwpAQCAtMTk1MCw3ICsxOTUwLDcgQEAgc3RhdGljIGludCBxbXBfcGNpZV9w
+b3dlcl9vbihzdHJ1Y3QgcGh5ICpwaHkpCiAJcmV0dXJuIDA7CiAKIGVycl9kaXNhYmxlX3Bp
+cGVfY2xrOgotCWNsa19kaXNhYmxlX3VucHJlcGFyZShxbXAtPnBpcGVfY2xrKTsKKwljbGtf
+YnVsa19kaXNhYmxlX3VucHJlcGFyZShxbXAtPm51bV9waXBlX2Nsa3MsIHFtcC0+cGlwZV9j
+bGtzKTsKIAogCXJldHVybiByZXQ7CiB9CkBAIC0xOTYwLDcgKzE5NjAsNyBAQCBzdGF0aWMg
+aW50IHFtcF9wY2llX3Bvd2VyX29mZihzdHJ1Y3QgcGh5ICpwaHkpCiAJc3RydWN0IHFtcF9w
+Y2llICpxbXAgPSBwaHlfZ2V0X2RydmRhdGEocGh5KTsKIAljb25zdCBzdHJ1Y3QgcW1wX3Bo
+eV9jZmcgKmNmZyA9IHFtcC0+Y2ZnOwogCi0JY2xrX2Rpc2FibGVfdW5wcmVwYXJlKHFtcC0+
+cGlwZV9jbGspOworCWNsa19idWxrX2Rpc2FibGVfdW5wcmVwYXJlKHFtcC0+bnVtX3BpcGVf
+Y2xrcywgcW1wLT5waXBlX2Nsa3MpOwogCiAJLyogUEhZIHJlc2V0ICovCiAJcXBoeV9zZXRi
+aXRzKHFtcC0+cGNzLCBjZmctPnJlZ3NbUVBIWV9TV19SRVNFVF0sIFNXX1JFU0VUKTsKQEAg
+LTIxNTQsNiArMjE1NCw3IEBAIHN0YXRpYyBpbnQgcW1wX3BjaWVfcGFyc2VfZHRfbGVnYWN5
+KHN0cnVjdCBxbXBfcGNpZSAqcW1wLCBzdHJ1Y3QgZGV2aWNlX25vZGUgKm5wCiAJc3RydWN0
+IHBsYXRmb3JtX2RldmljZSAqcGRldiA9IHRvX3BsYXRmb3JtX2RldmljZShxbXAtPmRldik7
+CiAJY29uc3Qgc3RydWN0IHFtcF9waHlfY2ZnICpjZmcgPSBxbXAtPmNmZzsKIAlzdHJ1Y3Qg
+ZGV2aWNlICpkZXYgPSBxbXAtPmRldjsKKwlzdHJ1Y3QgY2xrICpjbGs7CiAKIAlxbXAtPnNl
+cmRlcyA9IGRldm1fcGxhdGZvcm1faW9yZW1hcF9yZXNvdXJjZShwZGV2LCAwKTsKIAlpZiAo
+SVNfRVJSKHFtcC0+c2VyZGVzKSkKQEAgLTIyMDYsMTIgKzIyMDcsMTcgQEAgc3RhdGljIGlu
+dCBxbXBfcGNpZV9wYXJzZV9kdF9sZWdhY3koc3RydWN0IHFtcF9wY2llICpxbXAsIHN0cnVj
+dCBkZXZpY2Vfbm9kZSAqbnAKIAkJfQogCX0KIAotCXFtcC0+cGlwZV9jbGsgPSBkZXZtX2dl
+dF9jbGtfZnJvbV9jaGlsZChkZXYsIG5wLCBOVUxMKTsKLQlpZiAoSVNfRVJSKHFtcC0+cGlw
+ZV9jbGspKSB7Ci0JCXJldHVybiBkZXZfZXJyX3Byb2JlKGRldiwgUFRSX0VSUihxbXAtPnBp
+cGVfY2xrKSwKKwljbGsgPSBkZXZtX2dldF9jbGtfZnJvbV9jaGlsZChkZXYsIG5wLCBOVUxM
+KTsKKwlpZiAoSVNfRVJSKGNsaykpIHsKKwkJcmV0dXJuIGRldl9lcnJfcHJvYmUoZGV2LCBQ
+VFJfRVJSKGNsayksCiAJCQkJICAgICAiZmFpbGVkIHRvIGdldCBwaXBlIGNsb2NrXG4iKTsK
+IAl9CiAKKwlxbXAtPm51bV9waXBlX2Nsa3MgPSAxOworCXFtcC0+cGlwZV9jbGtzID0gZGV2
+bV9rY2FsbG9jKGRldiwgcW1wLT5udW1fcGlwZV9jbGtzLAorCQkJCSAgICAgIHNpemVvZigq
+cW1wLT5waXBlX2Nsa3MpLCBHRlBfS0VSTkVMKTsKKwlxbXAtPnBpcGVfY2xrc1swXS5jbGsg
+PSBjbGs7CisKIAlyZXR1cm4gMDsKIH0KIAo=
+
+--------------i082W3S8x1RX9AUAq7cYn8mr
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--------------i082W3S8x1RX9AUAq7cYn8mr--
+
