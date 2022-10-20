@@ -4,85 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 822A1C43219
-	for <linux-phy@archiver.kernel.org>; Thu, 20 Oct 2022 02:45:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 08B5BC433FE
+	for <linux-phy@archiver.kernel.org>; Thu, 20 Oct 2022 02:56:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CMZg2Mhhf3FdNJWq9LFGNxqD5xKGdF8G/SiCsLgKSRY=; b=nTcrkXZ2xHFIKe
-	qsgUkenY31IpyQ2lOxZXIZW6cMilBVVvxSv33ZJNOeiN7NszI6RAy6Y5u8nQEz0cZVv+lFErCKoKB
-	iEYZawkj9mIxESQubwCdOiZOAzGEdDT2PirKbKPpzwb3Jr3OdrPFSvPc5wOPFr1msssKt0mFxe+Lb
-	Uoe+VcCJa5Dnr/OToN5NqMwXVINjymmPKGubacKrk90N2QO2gZGs+lX4VufE7s5I0U5G7OEMHDsEd
-	dHJUMDWbJLRN7icCOlkP2LuKttkl2naoAmB4MmFm8cRsqS7hnRMmi4bBfyFi4WXKfzU9+Tp0TkA3q
-	x23DL+dWFLSh3w3fHqIw==;
+	List-Owner; bh=EXQaZeAruyMeXG4qldlEUyXm6YQ/loNVOUvhCZ1sh0k=; b=AIaUZNqv0GFa6R
+	5fc8hvucRC1sA82/LbGBAttXXJyJBis/WpL3ESb5JDegLpBvPf+o7DzOnZhljHa3Cu0TEc/rUQO6x
+	t20GIRgkOVpJ0B5yXCr0TPJV7k3w/lfA+sHhld9xY9IFxuodmoEcJ0TOWJIpHrqx9xabBjlW+XSHi
+	og/aeavRJS1JV9Q9Cv5bXuKp7p8o/rSq9w5nCqKlgNrc/VeqOjAFi9OiTmOymWmpu+r5vk/AnRKeR
+	lupgPe5mvzzZ6RTjty+DmnzIko3b9c/Cm5OeF6LT1Vhg3MwPjhlmvBQysJAv8Q7MkbbbkMv0EM4wp
+	AzjPT79kYXb4EISUkzJw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1olLYO-009ZbN-Qw; Thu, 20 Oct 2022 02:45:04 +0000
-Received: from mail-pg1-x536.google.com ([2607:f8b0:4864:20::536])
+	id 1olLj9-009akE-Et; Thu, 20 Oct 2022 02:56:11 +0000
+Received: from mail-pj1-x1036.google.com ([2607:f8b0:4864:20::1036])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1olLYL-009ZSn-Qw; Thu, 20 Oct 2022 02:45:03 +0000
-Received: by mail-pg1-x536.google.com with SMTP id 128so18003571pga.1;
-        Wed, 19 Oct 2022 19:45:00 -0700 (PDT)
+	id 1olLj7-009aji-AY
+	for linux-phy@lists.infradead.org; Thu, 20 Oct 2022 02:56:10 +0000
+Received: by mail-pj1-x1036.google.com with SMTP id x31-20020a17090a38a200b0020d2afec803so1767188pjb.2
+        for <linux-phy@lists.infradead.org>; Wed, 19 Oct 2022 19:56:06 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=gmail.com; s=20210112;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=DxTNTmWj9D1rQHXlzMQFMBO3C27RqK0bb2TQ7qskUT0=;
-        b=G4le0DMd/DCIBNZdMwQxOY5flpwO+b5D4PD+gYTXLe9eI3p1nEiOx5K17nYeGlknvs
-         vY8FQLreZ/eNKktPjfFBDq0k9nEl72SFC8kza4Laokp93rVLrBXMRuij8bn84mtslSG/
-         E5M/6M+A66K8rS58H3pfJI7s4GMh3CSf48c7VuyjgeKICQm2pd75joYaQgxEWYg8UsIv
-         7NEqg5YFLXsfM4bhWbwf/pdHkITTEdWQZP8qUKhlbwPgBdTqjlJ6O3fFIL6Yl5sLMZqj
-         HOyevS2TFJDyOyIzvHnsfP3mCXkC/qPs7kt9E3yHLERtw0asJH0PtT0HheYS1wdENg7W
-         M8Pg==
+        bh=IneXvEA4RXH8O3z+9PeiWh97Dt1+hev7jQD9p0XzeCQ=;
+        b=SmBwQ77iZ8Ell4qr5KbdljTvp4r4cGxKZCDwkAFbSWKbQ/Jw9QUmvEQlxbJaQZB3/z
+         OGGhBqx74RZBIGGlcN58OJb+hs8lKmWFVPz0SluatE5URXeQ6IVfaiiCBrNz11ldHwvl
+         /w+o1gf2atrIlyaA+A4lo5lMSgs1R3KbwhFUAR27FWWRZRnZLPIZEjhLIKysFMuoXD3N
+         9k2caSY6y/LBSMWSNA7XQ1jHgEtMpPDObcX1cTBPyOfO4pgXzBNjloP7VW1pyg21VJgu
+         SuEbhguW143KfBaW3Wxfcu62sWnvMimbbLO6PFFv3WRCrl1HCcOidQyJXzEVksOaZSA6
+         hCng==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=DxTNTmWj9D1rQHXlzMQFMBO3C27RqK0bb2TQ7qskUT0=;
-        b=mz9CAjEvbzm3hHAMvzvrdHxy/SGAzlVYmn1yAfOJPvWW2eU033lWFLnI8rGIgTeks7
-         ET2AaQNojhnMRZXB/i3PafgtjwkO9K8d0/L8g7SFhTyz8/awkyXfyr6wFuuIE+HnJqSN
-         hRljImiubQP/WJDWL2ZNp2KGmTJh7zYvQwgSLy3RzQHwixrmN7xK6nNSeG5uf8R+kQwZ
-         fbBhkfVrCgVZVL/MkVyiRVqTBLiTqackR8EOTrXIjUxQohHmGKbQnigXwYUDyfjeV8Kx
-         M5SYi7sqDFsWtvUweaImVEJWM6kAQfE1zkw+aSJGlnaRtOcAeq4fU0M3+s/t+NvMY6mm
-         orzQ==
-X-Gm-Message-State: ACrzQf0gKpONsH0nd5oOjIAG7lhYawXnKD3cJBy57JNnc+74Xci1zP3j
-	/OZf44I/mAPFewHRkfZtPEY=
-X-Google-Smtp-Source: AMsMyM6UwkpmEE5y/h4FfAmmhnXDZIA3TlSD3kflBN72OO+k4Ln1lu0vuv0jLb4abMwtYBD443hHwg==
-X-Received: by 2002:a05:6a00:a28:b0:567:7014:490f with SMTP id p40-20020a056a000a2800b005677014490fmr7653793pfh.10.1666233899965;
-        Wed, 19 Oct 2022 19:44:59 -0700 (PDT)
+        bh=IneXvEA4RXH8O3z+9PeiWh97Dt1+hev7jQD9p0XzeCQ=;
+        b=rD73esf9kJk71yIUiru2+M+ab5Kq/JqtB4f7z+HDE02Y5KzU7RYZuC6sbYelj+N/Vr
+         iO/EHvfIfmGHj5I785CeAxzZ+tXX4afntPLvunykj/HyjDvWlRx3AN9fIkwz43kRKLAz
+         TM8+hXXsLj+IDJfdMmVdeL4wicI1Y02TKF1c7k9cSAY8o3Oc5rio4AMNUTac8SYLgap1
+         5xCStG8YGH3Wlvn+SDTAT9m81+L93T7jiuAjX0CaVSKHBwHjLDafqwGJIX4kZ/MQVd5v
+         tEE9envOSacu++5BtF02K96FrkRb4QEN8nXXloYtJeBagvli1ZEIJws9/Xh67/BjUGXG
+         ehmQ==
+X-Gm-Message-State: ACrzQf0tyzIw22UJG8zbYx7Br/wBka1qOTjwXuMxV7zOBo4j6cm37YAa
+	EQQcsZnoSkIHW+fJv5c7iiQ=
+X-Google-Smtp-Source: AMsMyM7LZp9fS9+vT58YHx52jB1RTGgNgVxo1udLEaQ8USN4foa5Vjg5y1BPMVCO88Uiyq+LsLKUIg==
+X-Received: by 2002:a17:90b:2243:b0:20b:42a:4c0d with SMTP id hk3-20020a17090b224300b0020b042a4c0dmr47402403pjb.123.1666234566534;
+        Wed, 19 Oct 2022 19:56:06 -0700 (PDT)
 Received: from [192.168.43.80] (subs03-180-214-233-92.three.co.id. [180.214.233.92])
-        by smtp.gmail.com with ESMTPSA id a4-20020a170902ecc400b0017f92d7fe2csm11581423plh.288.2022.10.19.19.44.54
+        by smtp.gmail.com with ESMTPSA id n15-20020a170902e54f00b0017b5e1f486asm11652518plf.211.2022.10.19.19.56.04
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 19 Oct 2022 19:44:59 -0700 (PDT)
-Message-ID: <12c8c3c1-eb17-8e44-8906-05e2e3e92acc@gmail.com>
-Date: Thu, 20 Oct 2022 09:44:52 +0700
+        Wed, 19 Oct 2022 19:56:06 -0700 (PDT)
+Message-ID: <25e6e305-69d4-f244-c255-3e832edc2f28@gmail.com>
+Date: Thu, 20 Oct 2022 09:56:02 +0700
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.3.3
-Subject: Re: [PATCH v7 0/8] phy: Add support for Lynx 10G SerDes
-To: Sean Anderson <sean.anderson@seco.com>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@ti.com>, linux-phy@lists.infradead.org
-Cc: Camelia Alexandra Groza <camelia.groza@nxp.com>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org,
- devicetree@vger.kernel.org, Madalin Bucur <madalin.bucur@nxp.com>,
- Rob Herring <robh+dt@kernel.org>, Ioana Ciornei <ioana.ciornei@nxp.com>,
- Jonathan Corbet <corbet@lwn.net>, Li Yang <leoyang.li@nxp.com>,
- Michael Turquette <mturquette@baylibre.com>, Shawn Guo
- <shawnguo@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
- linux-clk@vger.kernel.org, linux-doc@vger.kernel.org
-References: <20221018231112.2142074-1-sean.anderson@seco.com>
+Subject: Re: [PATCH] doc: phy: Document typical order of API calls
 Content-Language: en-US
+To: Sean Anderson <sean.anderson@seco.com>,
+ Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ linux-phy@lists.infradead.org
+Cc: Jonathan Corbet <corbet@lwn.net>, linux-kernel@vger.kernel.org,
+ linux-doc@vger.kernel.org
+References: <20221018175841.1906611-1-sean.anderson@seco.com>
+ <e002248f-7070-3f89-04f2-e7f694fad5cc@seco.com>
 From: Bagas Sanjaya <bagasdotme@gmail.com>
-In-Reply-To: <20221018231112.2142074-1-sean.anderson@seco.com>
+In-Reply-To: <e002248f-7070-3f89-04f2-e7f694fad5cc@seco.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221019_194501_958959_E5AD8944 
-X-CRM114-Status: GOOD (  53.77  )
+X-CRM114-CacheID: sfid-20221019_195609_391033_AE7FA05C 
+X-CRM114-Status: UNSURE (   8.45  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,179 +96,19 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 10/19/22 06:11, Sean Anderson wrote:
-> This adds support for the Lynx 10G SerDes found on the QorIQ T-series
-> and Layerscape series. Due to limited time and hardware, only support
-> for the LS1046ARDB is added in this initial series. There is a sketch
-> for LS1088ARDB support, but it is incomplete.
+On 10/19/22 01:01, Sean Anderson wrote:
+> Hi Vinod,
 > 
-> Dynamic reconfiguration does not work. That is, the configuration must
-> match what is set in the RCW. From my testing, SerDes register settings
-> appear identical. The issue appears to be between the PCS and the MAC.
-> The link itself comes up at both ends, and a mac loopback succeeds.
-> However, a PCS loopback results in dropped packets. Perhaps there is
-> some undocumented register in the PCS?
-> 
-> I suspect this driver is around 95% complete, but, unfortunately, I no
-> longer have time to investigate this further. At the very least it is
-> useful for two cases:
-> - Although this is untested, it should support 2.5G SGMII as well as
->   1000BASE-KX. The latter needs MAC and PCS support, but the former
->   should work out of the box.
-> - It allows for clock configurations not supported by the RCW. This is
->   very useful if you want to use e.g. SRDS_PRTCL_S1=0x3333 and =0x1133
->   on the same board. This is because the former setting will use PLL1
->   as the 1G reference, but the latter will use PLL1 as the 10G
->   reference. Because we can reconfigure the PLLs, it is possible to
->   always use PLL1 as the 1G reference.
-> 
-> Changes in v7:
-> - Use double quotes everywhere in yaml
-> - Break out call order into generic documentation
-> - Refuse to switch "major" protocols
-> - Update Kconfig to reflect restrictions
-> - Remove set/clear of "pcs reset" bit, since it doesn't seem to fix
->   anything.
-> 
-> Changes in v6:
-> - Bump PHY_TYPE_2500BASEX to 13, since PHY_TYPE_USXGMII was added in the
->   meantime
-> - fsl,type -> phy-type
-> - frequence -> frequency
-> - Update MAINTAINERS to include new files
-> - Include bitfield.h and slab.h to allow compilation on non-arm64
->   arches.
-> - Depend on COMMON_CLK and either layerscape/ppc
-> - XGI.9 -> XFI.9
-> 
-> Changes in v5:
-> - Update commit description
-> - Dual id header
-> - Remove references to PHY_INTERFACE_MODE_1000BASEKX to allow this
->   series to be applied directly to linux/master.
-> - Add fsl,lynx-10g.h to MAINTAINERS
-> 
-> Changes in v4:
-> - Add 2500BASE-X and 10GBASE-R phy types
-> - Use subnodes to describe lane configuration, instead of describing
->   PCCRs. This is the same style used by phy-cadence-sierra et al.
-> - Add ids for Lynx 10g PLLs
-> - Rework all debug statements to remove use of __func__. Additional
->   information has been provided as necessary.
-> - Consider alternative parent rates in round_rate and not in set_rate.
->   Trying to modify out parent's rate in set_rate will deadlock.
-> - Explicitly perform a stop/reset sequence in set_rate. This way we
->   always ensure that the PLL is properly stopped.
-> - Set the power-down bit when disabling the PLL. We can do this now that
->   enable/disable aren't abused during the set rate sequence.
-> - Fix typos in QSGMII_OFFSET and XFI_OFFSET
-> - Rename LNmTECR0_TEQ_TYPE_PRE to LNmTECR0_TEQ_TYPE_POST to better
->   reflect its function (adding post-cursor equalization).
-> - Use of_clk_hw_onecell_get instead of a custom function.
-> - Return struct clks from lynx_clks_init instead of embedding lynx_clk
->   in lynx_priv.
-> - Rework PCCR helper functions; T-series SoCs differ from Layerscape SoCs
->   primarily in the layout and offset of the PCCRs. This will help bring a
->   cleaner abstraction layer. The caps have been removed, since this handles the
->   only current usage.
-> - Convert to use new binding format. As a result of this, we no longer need to
->   have protocols for PCIe or SATA. Additionally, modes now live in lynx_group
->   instead of lynx_priv.
-> - Remove teq from lynx_proto_params, since it can be determined from
->   preq_ratio/postq_ratio.
-> - Fix an early return from lynx_set_mode not releasing serdes->lock.
-> - Rename lynx_priv.conf to .cfg, since I kept mistyping it.
-> 
-> Changes in v3:
-> - Manually expand yaml references
-> - Add mode configuration to device tree
-> - Rename remaining references to QorIQ SerDes to Lynx 10G
-> - Fix PLL enable sequence by waiting for our reset request to be cleared
->   before continuing. Do the same for the lock, even though it isn't as
->   critical. Because we will delay for 1.5ms on average, use prepare
->   instead of enable so we can sleep.
-> - Document the status of each protocol
-> - Fix offset of several bitfields in RECR0
-> - Take into account PLLRST_B, SDRST_B, and SDEN when considering whether
->   a PLL is "enabled."
-> - Only power off unused lanes.
-> - Split mode lane mask into first/last lane (like group)
-> - Read modes from device tree
-> - Use caps to determine whether KX/KR are supported
-> - Move modes to lynx_priv
-> - Ensure that the protocol controller is not already in-use when we try
->   to configure a new mode. This should only occur if the device tree is
->   misconfigured (e.g. when QSGMII is selected on two lanes but there is
->   only one QSGMII controller).
-> - Split PLL drivers off into their own file
-> - Add clock for "ext_dly" instead of writing the bit directly (and
->   racing with any clock code).
-> - Use kasprintf instead of open-coding the snprintf dance
-> - Support 1000BASE-KX in lynx_lookup_proto. This still requires PCS
->   support, so nothing is truly "enabled" yet.
-> - Describe modes in device tree
-> - ls1088a: Add serdes bindings
-> 
-> Changes in v2:
-> - Rename to fsl,lynx-10g.yaml
-> - Refer to the device in the documentation, rather than the binding
-> - Move compatible first
-> - Document phy cells in the description
-> - Allow a value of 1 for phy-cells. This allows for compatibility with
->   the similar (but according to Ioana Ciornei different enough) lynx-28g
->   binding.
-> - Remove minItems
-> - Use list for clock-names
-> - Fix example binding having too many cells in regs
-> - Add #clock-cells. This will allow using assigned-clocks* to configure
->   the PLLs.
-> - Document the structure of the compatible strings
-> - Rename driver to Lynx 10G (etc.)
-> - Fix not clearing group->pll after disabling it
-> - Support 1 and 2 phy-cells
-> - Power off lanes during probe
-> - Clear SGMIIaCR1_PCS_EN during probe
-> - Rename LYNX_PROTO_UNKNOWN to LYNX_PROTO_NONE
-> - Handle 1000BASE-KX in lynx_proto_mode_prep
-> - Use one phy cell for SerDes1, since no lanes can be grouped
-> - Disable SerDes by default to prevent breaking boards inadvertently.
-> 
-> Sean Anderson (8):
->   dt-bindings: phy: Add 2500BASE-X and 10GBASE-R
->   dt-bindings: phy: Add Lynx 10G phy binding
->   dt-bindings: clock: Add ids for Lynx 10g PLLs
->   phy: fsl: Add Lynx 10G SerDes driver
->   arm64: dts: ls1046a: Add serdes bindings
->   arm64: dts: ls1088a: Add serdes bindings
->   arm64: dts: ls1046ardb: Add serdes bindings
->   [WIP] arm64: dts: ls1088ardb: Add serdes bindings
-> 
->  .../devicetree/bindings/phy/fsl,lynx-10g.yaml |  236 ++++
->  Documentation/driver-api/phy/index.rst        |    1 +
->  Documentation/driver-api/phy/lynx_10g.rst     |   58 +
->  MAINTAINERS                                   |    7 +
->  .../boot/dts/freescale/fsl-ls1046a-rdb.dts    |  112 ++
->  .../arm64/boot/dts/freescale/fsl-ls1046a.dtsi |   18 +
->  .../boot/dts/freescale/fsl-ls1088a-rdb.dts    |  161 +++
->  .../arm64/boot/dts/freescale/fsl-ls1088a.dtsi |   18 +
->  drivers/phy/freescale/Kconfig                 |   23 +
->  drivers/phy/freescale/Makefile                |    3 +
->  drivers/phy/freescale/lynx-10g.h              |   16 +
->  drivers/phy/freescale/phy-fsl-lynx-10g-clk.c  |  503 +++++++
->  drivers/phy/freescale/phy-fsl-lynx-10g.c      | 1167 +++++++++++++++++
->  include/dt-bindings/clock/fsl,lynx-10g.h      |   14 +
->  include/dt-bindings/phy/phy.h                 |    2 +
->  15 files changed, 2339 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/fsl,lynx-10g.yaml
->  create mode 100644 Documentation/driver-api/phy/lynx_10g.rst
->  create mode 100644 drivers/phy/freescale/lynx-10g.h
->  create mode 100644 drivers/phy/freescale/phy-fsl-lynx-10g-clk.c
->  create mode 100644 drivers/phy/freescale/phy-fsl-lynx-10g.c
->  create mode 100644 include/dt-bindings/clock/fsl,lynx-10g.h
+> When sending this patch, I noticed that Kishon's email bounced. Is he
+> still maintaining this subsystem? He hasn't been very active for the
+> past year.
 > 
 
-I can't cleanly apply this series either on arm64 tree or linux-next.
-On what tree and commit the series is based on?
+He's now using @kernel.org address <kishon@kernel.org> (see [1]).
+
+Thanks.
+
+[1]: https://lore.kernel.org/lkml/20220928102431.658-1-kishon@ti.com/
 
 -- 
 An old man doll... just what I always wanted! - Clara
