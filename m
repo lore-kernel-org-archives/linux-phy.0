@@ -4,84 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 249A0C433FE
-	for <linux-phy@archiver.kernel.org>; Thu, 20 Oct 2022 03:43:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6AC0BC4332F
+	for <linux-phy@archiver.kernel.org>; Thu, 20 Oct 2022 06:43:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AOgHEnGCpXGn5mroCjU43+yEe2pqh5rBCNYeYUoNLkw=; b=qcUDNKzvDQYxYG
-	KBA7zzhaZaea9Q5bf82btW5WFxRsFRUUWFsOuENP5SuvtXZQP95Wz9HBXFeC+Ygy1UGLV1QnrYapC
-	LzwMyxh84k3uKALXhYTTm5A9wfK/dKKc04/Nk8Z8yItr3Ya97q2wq7fojELUFv3rxnSbm+6q+oZB+
-	UtfiK0odUUDjnZsJ8NSHev50a8HiCJ/tL4OIQJaBzzQq22FiKh9iOtc4PsdvWOHNja9gAU5Ibt2pu
-	mJcWgxcUqJ5q3E3bMypkfU+2VinNLffXgJ9HhW+7OeIkeJk6cr4PLfc7OCaXAONs9A6/EjG8yd2gc
-	DXTC4MP9y5MTKZrFigXQ==;
+	List-Owner; bh=mF1dDqrurlXeUgkMbbfSSY9JWg9VI22Obb2kyCQZMqc=; b=S1A1rSEeZwOBWW
+	gIk+f1mrhvIA9yX8c2C/Ic435GojKRJ+VPqY69zyE3gQ1vvwlhNXiMdN2EhnN4el7elQ5vP9huzu5
+	lY469NfuYn5y1xqv4FnTAQs0MlQQ/F03JVGNDa4W4yY+dlIHeuVc9hox77CTMA6+OiEe7kvrd33q9
+	QU9j0b7BmHqQ1J1YF9qU4VqYAvzeeqMkaRD4tOswkhSC4gZ1m3wN0JwOscmGNwnJFYrQuh1pQIAT1
+	loHbXISRMlMT0wxPQm8HVTbvnLRXPyfZ27X/2OrMnCW9l2FZsWRvWA+oKkmDEyUrCFyKvbYQPTtiT
+	UlVWYFGAlNITvcpzhi4A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1olMTK-00A2tH-HC; Thu, 20 Oct 2022 03:43:54 +0000
-Received: from mail-lf1-x12e.google.com ([2a00:1450:4864:20::12e])
+	id 1olPHF-00BCmA-PO; Thu, 20 Oct 2022 06:43:37 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1olMTH-00A2sB-7t
-	for linux-phy@lists.infradead.org; Thu, 20 Oct 2022 03:43:53 +0000
-Received: by mail-lf1-x12e.google.com with SMTP id bp15so31403227lfb.13
-        for <linux-phy@lists.infradead.org>; Wed, 19 Oct 2022 20:43:50 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=Mbb+ms7dDLns10UB111selnMgeoJrimy+PQGWTgS8os=;
-        b=GRtyKqUh+xv5psvLq7nIc/uv5P0r3/660TF9/kxeZxN52qyJUhRib44NzMiYTxaTEr
-         gt0lMlGyjzA2fjCTFjSW50BtLm0XQH2pKDal/noPsgy7J3PDU64LVzMWZpucBvLQho6M
-         zHAzs1fhiXK0EJH+/SYu13RkaENktAnPyvrHPHJ5XA5Lg85aDFJNuqc6MGxXU5yki90H
-         8fLy/lFuZNXgd+iJFajRLxxb0BpzC/EhocRwnh+WBeqX4yVD4kviu6GNaIivVLuHslp+
-         fM9/aVVU2yvR4xHnLv20NA8DnJfnCUEkTDSMO3XxFAUW50cU0CmyAloZtVExGDq1S6hF
-         97lg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=Mbb+ms7dDLns10UB111selnMgeoJrimy+PQGWTgS8os=;
-        b=ZaK1jMPiL5ZeQxkZCoVvJxVL3iBX4Ql+j/5ofAn5sl3IZQGaWjkmTermhCKzh0VPlw
-         cDnSZRSFTq0xlewhp/BHk/gqmEeZpsq/aeeLw4EZTsOsJTNDbh15l046iTORgDX0rKtv
-         j3s1JZtRXT7Sn8J9hgGDamQ9Sq7Sq5kJNoZlcyg37C1VZxLwxiVfN2jgkEfm+X/I6j2I
-         IlmWJRgj6tlSmedQ8X/eIUsCF5ZFIZfzBF0dSnob3k00+o4OBs5NFctB7jQR4dkz2qq/
-         Fccz4kxi3VBucMi4o5w8A5pghxnt8BXaCYr3fcTYvblHAclMf47i7UMJM+3wVlcEoCt0
-         6wCw==
-X-Gm-Message-State: ACrzQf1bQZIv3XUVZhBQbeIdYiQV5d4nxRXO6m2VccfN+2ZRsL3xTYkJ
-	BUVFpMH8p06LGYw9hV9hQaXq3Q==
-X-Google-Smtp-Source: AMsMyM6MKUT7PHDVARV6rvHpxydEsT1vycmI5y9FVGzscxrHq1b3OZzmwF1HsCbazGeU+aREwzCNOQ==
-X-Received: by 2002:ac2:443a:0:b0:4a2:623d:6022 with SMTP id w26-20020ac2443a000000b004a2623d6022mr4379478lfl.372.1666237428674;
-        Wed, 19 Oct 2022 20:43:48 -0700 (PDT)
-Received: from [10.27.10.248] ([195.165.23.90])
-        by smtp.gmail.com with ESMTPSA id k3-20020a2eb743000000b0026fd3d906d7sm2725364ljo.133.2022.10.19.20.43.47
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 19 Oct 2022 20:43:48 -0700 (PDT)
-Message-ID: <2902e7e8-eddf-149c-06fd-86b85d8af326@linaro.org>
-Date: Thu, 20 Oct 2022 06:43:47 +0300
-MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.3.3
+	id 1olPHD-00BCdl-3x
+	for linux-phy@lists.infradead.org; Thu, 20 Oct 2022 06:43:36 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 721FA61A02;
+	Thu, 20 Oct 2022 06:43:34 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id CE434C433C1;
+	Thu, 20 Oct 2022 06:43:33 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1666248213;
+	bh=P98rue6EL+V6EJka1psQePQe1VwTN63BL+TzJqbRDKs=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=ISHlqu89GIBldf3hubnpjInbd0yT3HfVjtB4wq27T/1F9w1/EjGes5gvfy0CL7jwY
+	 evODlNH1f62m7pL0Tdg/wqzz/K/hqHs7hcRqwOsnEHM6uD4GabRIGOu48+RG4a6/MR
+	 PwBdthU+zUG3MWdLHejIZWXxjw/V7ARdvHTVz5Mz/peOGGYxSDQxI9eaVKOsDvUsUO
+	 XuCFKsSlilDVtw2FuMVYXCMhEvF5+2UtziSGKHVx8UhcICrEcpdbQxrC77nblmRri4
+	 Y7CxebnRRzr32eQEDJc2OfC9zHvtymQ9glN2/pBOh7RilJysnM3fEHfUgjDXDx3gyW
+	 IiZlUJhisO24Q==
+Received: from johan by xi.lan with local (Exim 4.94.2)
+	(envelope-from <johan@kernel.org>)
+	id 1olPGx-0005YY-5N; Thu, 20 Oct 2022 08:43:19 +0200
+Date: Thu, 20 Oct 2022 08:43:19 +0200
+From: Johan Hovold <johan@kernel.org>
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Cc: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+	Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@somainline.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
 Subject: Re: [PATCH v2 15/15] phy: qcom-qmp-pcie: add support for sc8280xp
  4-lane PHYs
-Content-Language: en-GB
-To: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>
-Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konrad.dybcio@somainline.org>,
- Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Message-ID: <Y1DuB6hzb3V5Lqdy@hovoldconsulting.com>
 References: <20221019113552.22353-1-johan+linaro@kernel.org>
  <20221019113552.22353-16-johan+linaro@kernel.org>
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-In-Reply-To: <20221019113552.22353-16-johan+linaro@kernel.org>
+ <2902e7e8-eddf-149c-06fd-86b85d8af326@linaro.org>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <2902e7e8-eddf-149c-06fd-86b85d8af326@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221019_204351_387646_2EFF9B3C 
-X-CRM114-Status: GOOD (  36.03  )
+X-CRM114-CacheID: sfid-20221019_234335_268051_ED69CF8D 
+X-CRM114-Status: GOOD (  41.54  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,280 +79,178 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 19/10/2022 14:35, Johan Hovold wrote:
-> The PCIe2 and PCIe3 controllers and PHYs on SC8280XP can be used in
-> 4-lane mode or as separate controllers and PHYs in 2-lane mode (e.g. as
-> PCIe2A and PCIe2B).
+On Thu, Oct 20, 2022 at 06:43:47AM +0300, Dmitry Baryshkov wrote:
+> On 19/10/2022 14:35, Johan Hovold wrote:
+> > The PCIe2 and PCIe3 controllers and PHYs on SC8280XP can be used in
+> > 4-lane mode or as separate controllers and PHYs in 2-lane mode (e.g. as
+> > PCIe2A and PCIe2B).
+> > 
+> > Add support for fetching the 4-lane configuration from the TCSR and
+> > programming the lane registers of the second port when in 4-lane mode.
+> > 
+> > Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
+> > ---
+> >   drivers/phy/qualcomm/Kconfig             |   1 +
+> >   drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 118 +++++++++++++++++++++++
+> >   2 files changed, 119 insertions(+)
+> > 
+> > diff --git a/drivers/phy/qualcomm/Kconfig b/drivers/phy/qualcomm/Kconfig
+> > index 5c98850f5a36..eb9ddc685b38 100644
+> > --- a/drivers/phy/qualcomm/Kconfig
+> > +++ b/drivers/phy/qualcomm/Kconfig
+> > @@ -54,6 +54,7 @@ config PHY_QCOM_QMP
+> >   	tristate "Qualcomm QMP PHY Driver"
+> >   	depends on OF && COMMON_CLK && (ARCH_QCOM || COMPILE_TEST)
+> >   	select GENERIC_PHY
+> > +	select MFD_SYSCON
+> >   	help
+> >   	  Enable this to support the QMP PHY transceiver that is used
+> >   	  with controllers such as PCIe, UFS, and USB on Qualcomm chips.
+> > diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+> > index ea5228bd9ecc..e5bce4810bb5 100644
+> > --- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+> > +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+> > @@ -10,6 +10,7 @@
+> >   #include <linux/io.h>
+> >   #include <linux/iopoll.h>
+> >   #include <linux/kernel.h>
+> > +#include <linux/mfd/syscon.h>
+> >   #include <linux/module.h>
+> >   #include <linux/of.h>
+> >   #include <linux/of_device.h>
+> > @@ -17,6 +18,7 @@
+> >   #include <linux/phy/pcie.h>
+> >   #include <linux/phy/phy.h>
+> >   #include <linux/platform_device.h>
+> > +#include <linux/regmap.h>
+> >   #include <linux/regulator/consumer.h>
+> >   #include <linux/reset.h>
+> >   #include <linux/slab.h>
+> > @@ -886,6 +888,10 @@ static const struct qmp_phy_init_tbl sc8280xp_qmp_gen3x2_pcie_rc_serdes_tbl[] =
+> >   	QMP_PHY_INIT_CFG(QSERDES_V5_COM_BIAS_EN_CLKBUFLR_EN, 0x14),
+> >   };
+> >   
+> > +static const struct qmp_phy_init_tbl sc8280xp_qmp_gen3x4_pcie_serdes_4ln_tbl[] = {
+> > +	QMP_PHY_INIT_CFG(QSERDES_V5_COM_BIAS_EN_CLKBUFLR_EN, 0x1c),
+> > +};
+> > +
+> >   static const struct qmp_phy_init_tbl sc8280xp_qmp_gen3x1_pcie_tx_tbl[] = {
+> >   	QMP_PHY_INIT_CFG(QSERDES_V5_TX_PI_QEC_CTRL, 0x20),
+> >   	QMP_PHY_INIT_CFG(QSERDES_V5_TX_LANE_MODE_1, 0x75),
+> > @@ -1491,6 +1497,9 @@ struct qmp_phy_cfg {
+> >   	const struct qmp_phy_cfg_tables *tables_rc;
+> >   	const struct qmp_phy_cfg_tables *tables_ep;
+> >   
+> > +	const struct qmp_phy_init_tbl *serdes_4ln_tbl;
+> > +	int serdes_4ln_num;
 > 
-> Add support for fetching the 4-lane configuration from the TCSR and
-> programming the lane registers of the second port when in 4-lane mode.
+> Would it make more sense to change this into the proper 
+> qmp_phy_cfg_tables entry and then use the existing API for programming 
+> the table?
+
+No, there is just one serdes register update needed when in 4-lane mode,
+besides programming tx/rx for the second port. Adding a third struct
+qmp_phy_cfg_tables for this seems like overkill and would lead to a more
+convoluted implementation of the programming sequence.
+
+And you can't add it two one of the existing ones, as your comment seems
+to suggest.
+
+The gen3x4 PHYs can be in either 4-lane or 2-lane mode depending on the
+TCSR configuration. Port A is programmed identically in both cases
+except for this serdes register, and in 4-lane mode tx/rx also needs
+to be programmed for port B.
+ 
+> > +
+> >   	/* clock ids to be requested */
+> >   	const char * const *clk_list;
+> >   	int num_clks;
+> > @@ -1518,6 +1527,7 @@ struct qmp_pcie {
+> >   	struct device *dev;
+> >   
+> >   	const struct qmp_phy_cfg *cfg;
+> > +	bool tcsr_4ln_config;
 > 
-> Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
-> ---
->   drivers/phy/qualcomm/Kconfig             |   1 +
->   drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 118 +++++++++++++++++++++++
->   2 files changed, 119 insertions(+)
+> As a matter of preference, this seems too specific. I'd rename it to 
+> split_config or split_4ln_config.
+
+I'm afraid those names do not make much sense. This TCSR register
+controls whether the PHY is in 4-lane mode (instead of 2-lane mode).
+
+> >   
+> >   	void __iomem *serdes;
+> >   	void __iomem *pcs;
+> > @@ -1527,6 +1537,8 @@ struct qmp_pcie {
+> >   	void __iomem *tx2;
+> >   	void __iomem *rx2;
+> >   
+> > +	void __iomem *port_b;
+> > +
+> >   	struct clk *pipe_clk;
+> >   	struct clk *pipediv2_clk;
+> >   	struct clk_bulk_data *clks;
+> > @@ -1932,6 +1944,44 @@ static const struct qmp_phy_cfg sc8280xp_qmp_gen3x2_pciephy_cfg = {
+> >   	.phy_status		= PHYSTATUS,
+> >   };
+  
+> > +static void qmp_pcie_init_port_b(struct qmp_pcie *qmp, const struct qmp_phy_cfg_tables *tbls)
+> > +{
+> > +	const struct qmp_phy_cfg *cfg = qmp->cfg;
+> > +	const struct qmp_pcie_offsets *offs = cfg->offsets;
+> > +	void __iomem *tx3, *rx3, *tx4, *rx4;
+> > +
+> > +	tx3 = qmp->port_b + offs->tx;
+> > +	rx3 = qmp->port_b + offs->rx;
+> > +	tx4 = qmp->port_b + offs->tx2;
+> > +	rx4 = qmp->port_b + offs->rx2;
+> > +
+> > +	qmp_pcie_configure_lane(tx3, tbls->tx, tbls->tx_num, 1);
+> > +	qmp_pcie_configure_lane(rx3, tbls->rx, tbls->rx_num, 1);
+> > +
+> > +	qmp_pcie_configure_lane(tx4, tbls->tx, tbls->tx_num, 2);
+> > +	qmp_pcie_configure_lane(rx4, tbls->rx, tbls->rx_num, 2);
 > 
-> diff --git a/drivers/phy/qualcomm/Kconfig b/drivers/phy/qualcomm/Kconfig
-> index 5c98850f5a36..eb9ddc685b38 100644
-> --- a/drivers/phy/qualcomm/Kconfig
-> +++ b/drivers/phy/qualcomm/Kconfig
-> @@ -54,6 +54,7 @@ config PHY_QCOM_QMP
->   	tristate "Qualcomm QMP PHY Driver"
->   	depends on OF && COMMON_CLK && (ARCH_QCOM || COMPILE_TEST)
->   	select GENERIC_PHY
-> +	select MFD_SYSCON
->   	help
->   	  Enable this to support the QMP PHY transceiver that is used
->   	  with controllers such as PCIe, UFS, and USB on Qualcomm chips.
-> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-> index ea5228bd9ecc..e5bce4810bb5 100644
-> --- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-> @@ -10,6 +10,7 @@
->   #include <linux/io.h>
->   #include <linux/iopoll.h>
->   #include <linux/kernel.h>
-> +#include <linux/mfd/syscon.h>
->   #include <linux/module.h>
->   #include <linux/of.h>
->   #include <linux/of_device.h>
-> @@ -17,6 +18,7 @@
->   #include <linux/phy/pcie.h>
->   #include <linux/phy/phy.h>
->   #include <linux/platform_device.h>
-> +#include <linux/regmap.h>
->   #include <linux/regulator/consumer.h>
->   #include <linux/reset.h>
->   #include <linux/slab.h>
-> @@ -886,6 +888,10 @@ static const struct qmp_phy_init_tbl sc8280xp_qmp_gen3x2_pcie_rc_serdes_tbl[] =
->   	QMP_PHY_INIT_CFG(QSERDES_V5_COM_BIAS_EN_CLKBUFLR_EN, 0x14),
->   };
->   
-> +static const struct qmp_phy_init_tbl sc8280xp_qmp_gen3x4_pcie_serdes_4ln_tbl[] = {
-> +	QMP_PHY_INIT_CFG(QSERDES_V5_COM_BIAS_EN_CLKBUFLR_EN, 0x1c),
-> +};
-> +
->   static const struct qmp_phy_init_tbl sc8280xp_qmp_gen3x1_pcie_tx_tbl[] = {
->   	QMP_PHY_INIT_CFG(QSERDES_V5_TX_PI_QEC_CTRL, 0x20),
->   	QMP_PHY_INIT_CFG(QSERDES_V5_TX_LANE_MODE_1, 0x75),
-> @@ -1491,6 +1497,9 @@ struct qmp_phy_cfg {
->   	const struct qmp_phy_cfg_tables *tables_rc;
->   	const struct qmp_phy_cfg_tables *tables_ep;
->   
-> +	const struct qmp_phy_init_tbl *serdes_4ln_tbl;
-> +	int serdes_4ln_num;
+> I'd use BIT(2) and BIT(3) here. This would allow one to make a 
+> difference between programming first pair of lanes and second pair of 
+> lanes if necessary.
 
-Would it make more sense to change this into the proper 
-qmp_phy_cfg_tables entry and then use the existing API for programming 
-the table?
+No, the tx and tx registers of the second port should be programmed
+identically to that of the first port.
 
-> +
->   	/* clock ids to be requested */
->   	const char * const *clk_list;
->   	int num_clks;
-> @@ -1518,6 +1527,7 @@ struct qmp_pcie {
->   	struct device *dev;
->   
->   	const struct qmp_phy_cfg *cfg;
-> +	bool tcsr_4ln_config;
+> > +}
+> > +
+> >   static void qmp_pcie_init_registers(struct qmp_pcie *qmp, const struct qmp_phy_cfg_tables *tbls)
+> >   {
+> >   	const struct qmp_phy_cfg *cfg = qmp->cfg;
+> > @@ -2080,6 +2148,11 @@ static void qmp_pcie_init_registers(struct qmp_pcie *qmp, const struct qmp_phy_c
+> >   
+> >   	qmp_pcie_configure(pcs, tbls->pcs, tbls->pcs_num);
+> >   	qmp_pcie_configure(pcs_misc, tbls->pcs_misc, tbls->pcs_misc_num);
+> > +
+> > +	if (cfg->lanes >= 4 && qmp->tcsr_4ln_config) {
+> > +		qmp_pcie_configure(serdes, cfg->serdes_4ln_tbl, cfg->serdes_4ln_num);
+> > +		qmp_pcie_init_port_b(qmp, tbls);
+> > +	}
+> 
+> As you have been refactoring this piece of code, maybe it would make 
+> more sense to change qmp->tx/tx2 into an array of two elements? Then we 
+> can extend it to 4 in this patch, and just always write the whole array 
+> in a loop?
 
-As a matter of preference, this seems too specific. I'd rename it to 
-split_config or split_4ln_config.
+No, I don't think that would be an improvement and would obscure the
+fact that we're programming two otherwise identical ports (e.g. tx1 and
+tx2 of port B is used for the third and fourth lanes).
 
->   
->   	void __iomem *serdes;
->   	void __iomem *pcs;
-> @@ -1527,6 +1537,8 @@ struct qmp_pcie {
->   	void __iomem *tx2;
->   	void __iomem *rx2;
->   
-> +	void __iomem *port_b;
-> +
->   	struct clk *pipe_clk;
->   	struct clk *pipediv2_clk;
->   	struct clk_bulk_data *clks;
-> @@ -1932,6 +1944,44 @@ static const struct qmp_phy_cfg sc8280xp_qmp_gen3x2_pciephy_cfg = {
->   	.phy_status		= PHYSTATUS,
->   };
->   
-> +static const struct qmp_phy_cfg sc8280xp_qmp_gen3x4_pciephy_cfg = {
-> +	.lanes			= 4,
-> +
-> +	.offsets		= &qmp_pcie_offsets_v5,
-> +
-> +	.tables = {
-> +		.serdes		= sc8280xp_qmp_pcie_serdes_tbl,
-> +		.serdes_num	= ARRAY_SIZE(sc8280xp_qmp_pcie_serdes_tbl),
-> +		.tx		= sc8280xp_qmp_gen3x2_pcie_tx_tbl,
-> +		.tx_num		= ARRAY_SIZE(sc8280xp_qmp_gen3x2_pcie_tx_tbl),
-> +		.rx		= sc8280xp_qmp_gen3x2_pcie_rx_tbl,
-> +		.rx_num		= ARRAY_SIZE(sc8280xp_qmp_gen3x2_pcie_rx_tbl),
-> +		.pcs		= sc8280xp_qmp_gen3x2_pcie_pcs_tbl,
-> +		.pcs_num	= ARRAY_SIZE(sc8280xp_qmp_gen3x2_pcie_pcs_tbl),
-> +		.pcs_misc	= sc8280xp_qmp_gen3x2_pcie_pcs_misc_tbl,
-> +		.pcs_misc_num	= ARRAY_SIZE(sc8280xp_qmp_gen3x2_pcie_pcs_misc_tbl),
-> +	},
-> +
-> +	.tables_rc = &(const struct qmp_phy_cfg_tables) {
-> +		.serdes		= sc8280xp_qmp_gen3x2_pcie_rc_serdes_tbl,
-> +		.serdes_num	= ARRAY_SIZE(sc8280xp_qmp_gen3x2_pcie_rc_serdes_tbl),
-> +	},
-> +
-> +	.serdes_4ln_tbl		= sc8280xp_qmp_gen3x4_pcie_serdes_4ln_tbl,
-> +	.serdes_4ln_num		= ARRAY_SIZE(sc8280xp_qmp_gen3x4_pcie_serdes_4ln_tbl),
-> +
-> +	.clk_list		= sc8280xp_pciephy_clk_l,
-> +	.num_clks		= ARRAY_SIZE(sc8280xp_pciephy_clk_l),
-> +	.reset_list		= sdm845_pciephy_reset_l,
-> +	.num_resets		= ARRAY_SIZE(sdm845_pciephy_reset_l),
-> +	.vreg_list		= qmp_phy_vreg_l,
-> +	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
-> +	.regs			= sm8250_pcie_regs_layout,
-> +
-> +	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
-> +	.phy_status		= PHYSTATUS,
-> +};
-> +
->   static const struct qmp_phy_cfg sdx55_qmp_pciephy_cfg = {
->   	.lanes			= 2,
->   
-> @@ -2054,6 +2104,24 @@ static void qmp_pcie_configure(void __iomem *base,
->   	qmp_pcie_configure_lane(base, tbl, num, 0xff);
->   }
->   
-> +static void qmp_pcie_init_port_b(struct qmp_pcie *qmp, const struct qmp_phy_cfg_tables *tbls)
-> +{
-> +	const struct qmp_phy_cfg *cfg = qmp->cfg;
-> +	const struct qmp_pcie_offsets *offs = cfg->offsets;
-> +	void __iomem *tx3, *rx3, *tx4, *rx4;
-> +
-> +	tx3 = qmp->port_b + offs->tx;
-> +	rx3 = qmp->port_b + offs->rx;
-> +	tx4 = qmp->port_b + offs->tx2;
-> +	rx4 = qmp->port_b + offs->rx2;
-> +
-> +	qmp_pcie_configure_lane(tx3, tbls->tx, tbls->tx_num, 1);
-> +	qmp_pcie_configure_lane(rx3, tbls->rx, tbls->rx_num, 1);
-> +
-> +	qmp_pcie_configure_lane(tx4, tbls->tx, tbls->tx_num, 2);
-> +	qmp_pcie_configure_lane(rx4, tbls->rx, tbls->rx_num, 2);
+Note that the above conditional encodes the difference in programming
+sequence between 4-lane and 2-lane mode I described above (one serdes
+register difference + tx/rx of port b).
 
-I'd use BIT(2) and BIT(3) here. This would allow one to make a 
-difference between programming first pair of lanes and second pair of 
-lanes if necessary.
-
-
-> +}
-> +
->   static void qmp_pcie_init_registers(struct qmp_pcie *qmp, const struct qmp_phy_cfg_tables *tbls)
->   {
->   	const struct qmp_phy_cfg *cfg = qmp->cfg;
-> @@ -2080,6 +2148,11 @@ static void qmp_pcie_init_registers(struct qmp_pcie *qmp, const struct qmp_phy_c
->   
->   	qmp_pcie_configure(pcs, tbls->pcs, tbls->pcs_num);
->   	qmp_pcie_configure(pcs_misc, tbls->pcs_misc, tbls->pcs_misc_num);
-> +
-> +	if (cfg->lanes >= 4 && qmp->tcsr_4ln_config) {
-> +		qmp_pcie_configure(serdes, cfg->serdes_4ln_tbl, cfg->serdes_4ln_num);
-> +		qmp_pcie_init_port_b(qmp, tbls);
-> +	}
-
-As you have been refactoring this piece of code, maybe it would make 
-more sense to change qmp->tx/tx2 into an array of two elements? Then we 
-can extend it to 4 in this patch, and just always write the whole array 
-in a loop?
-
->   }
->   
->   static int qmp_pcie_init(struct phy *phy)
-> @@ -2477,6 +2550,37 @@ static int qmp_pcie_parse_dt_legacy(struct qmp_pcie *qmp, struct device_node *np
->   	return 0;
->   }
->   
-> +static int qmp_pcie_get_4ln_config(struct qmp_pcie *qmp)
-> +{
-> +	struct regmap *tcsr;
-> +	unsigned int args[2];
-> +	int ret;
-> +
-> +	tcsr = syscon_regmap_lookup_by_phandle_args(qmp->dev->of_node,
-> +						    "qcom,4ln-config-sel",
-> +						    ARRAY_SIZE(args), args);
-> +	if (IS_ERR(tcsr)) {
-> +		ret = PTR_ERR(tcsr);
-> +		if (ret == -ENOENT)
-> +			return 0;
-> +
-> +		dev_err(qmp->dev, "failed to lookup syscon: %d\n", ret);
-> +		return ret;
-> +	}
-> +
-> +	ret = regmap_test_bits(tcsr, args[0], BIT(args[1]));
-> +	if (ret < 0) {
-> +		dev_err(qmp->dev, "failed to read tcsr: %d\n", ret);
-> +		return ret;
-> +	}
-> +
-> +	qmp->tcsr_4ln_config = ret;
-> +
-> +	dev_dbg(qmp->dev, "4ln_config_sel = %d\n", qmp->tcsr_4ln_config);
-> +
-> +	return 0;
-> +}
-> +
->   static int qmp_pcie_parse_dt(struct qmp_pcie *qmp)
->   {
->   	struct platform_device *pdev = to_platform_device(qmp->dev);
-> @@ -2484,10 +2588,15 @@ static int qmp_pcie_parse_dt(struct qmp_pcie *qmp)
->   	const struct qmp_pcie_offsets *offs = cfg->offsets;
->   	struct device *dev = qmp->dev;
->   	void __iomem *base;
-> +	int ret;
->   
->   	if (!offs)
->   		return -EINVAL;
->   
-> +	ret = qmp_pcie_get_4ln_config(qmp);
-> +	if (ret)
-> +		return ret;
-> +
->   	base = devm_platform_ioremap_resource(pdev, 0);
->   	if (IS_ERR(base))
->   		return PTR_ERR(base);
-> @@ -2503,6 +2612,12 @@ static int qmp_pcie_parse_dt(struct qmp_pcie *qmp)
->   		qmp->rx2 = base + offs->rx2;
->   	}
->   
-> +	if (qmp->cfg->lanes >= 4 && qmp->tcsr_4ln_config) {
-> +		qmp->port_b = devm_platform_ioremap_resource(pdev, 1);
-> +		if (IS_ERR(qmp->port_b))
-> +			return PTR_ERR(qmp->port_b);
-> +	}
-> +
->   	qmp->pipe_clk = devm_clk_get(dev, "pipe");
->   	if (IS_ERR(qmp->pipe_clk)) {
->   		return dev_err_probe(dev, PTR_ERR(qmp->pipe_clk),
-> @@ -2610,6 +2725,9 @@ static const struct of_device_id qmp_pcie_of_match_table[] = {
->   	}, {
->   		.compatible = "qcom,sc8280xp-qmp-gen3x2-pcie-phy",
->   		.data = &sc8280xp_qmp_gen3x2_pciephy_cfg,
-> +	}, {
-> +		.compatible = "qcom,sc8280xp-qmp-gen3x4-pcie-phy",
-> +		.data = &sc8280xp_qmp_gen3x4_pciephy_cfg,
->   	}, {
->   		.compatible = "qcom,sdm845-qhp-pcie-phy",
->   		.data = &sdm845_qhp_pciephy_cfg,
-
--- 
-With best wishes
-Dmitry
-
+Johan
 
 -- 
 linux-phy mailing list
