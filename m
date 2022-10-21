@@ -4,47 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A1223C433FE
-	for <linux-phy@archiver.kernel.org>; Fri, 21 Oct 2022 11:10:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 21495C43217
+	for <linux-phy@archiver.kernel.org>; Fri, 21 Oct 2022 11:10:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zlUNg6zfoIQ7edGA+0Qcu/6ahFrteC5mWlB9XjfWA1s=; b=syRBIJpetTlE9s
-	mMuWQQqg/j78YBfFjqVs4RqSKRCMKwEKwK81r4o9OeFFkx2nlCixIaBPwhEEBCFIXx5tIAK8np/6C
-	yTScOYaPhRdY3Z+9oLJHq/Mvk+QPY5h950BgZmzmGYfGd0uaA/u1Mw1q/QFq31jrT8qtofBZBQ98m
-	Hh4FAuzHVBQgBDnYlJhKbKFER3/0t6jRkFljq3x2roDKD8pPI8dVilk+n/eDTLrlQb1QzuNS4uHkr
-	HX25N1rURNkb7JGDFxg0DXPsYVSfhn+xPjBJW7BUwKYQ+uFg6rY/3EHXeMbUZ5YDnH9n8mEzxOgdt
-	vReZqJs+xOJe6YVxqOaw==;
+	List-Owner; bh=eXcbf4hBaN/sLvBUSACiZ5offYHZRCJOM3ZfRBL6GVk=; b=zczK4+7Ff7k0YO
+	zZilUpO3X9U/liE5Y1HQlj/sBSeP+MCpQHkGOwvSHLjL4Y2hYK9K20hMzAgQi8ONE0Oc+kJLxIIH0
+	xBB2lfzcDy747bp5oH+VeQwZgMX49o1vmGqrL49/1yOSVxRiUrb3JHPsboNgPjhWc5kub2Kse6TJc
+	CNnqtra2eDPwWTBtKu/BYdif1OArdkqkk/2p+p6N/wpOXrLR6XoANIPXVyujM05i+DNob0jnx+5rp
+	oRhKfyaemAR9zv27VD+YW8ZYCDKG2ghFOmq9UkjlJCdPvqeWZQpP8NHZhAeWZcV60lopq79PGsnMd
+	xT7L0GaWB4r52iSeIJww==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1olpvN-007IhO-1t; Fri, 21 Oct 2022 11:10:49 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1olpvO-007Ihl-5S; Fri, 21 Oct 2022 11:10:50 +0000
+Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1olpvK-007IeC-Si
+	id 1olpvK-007IeA-RV
 	for linux-phy@lists.infradead.org; Fri, 21 Oct 2022 11:10:48 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 963C461E6B;
-	Fri, 21 Oct 2022 11:10:45 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8D0DAC43146;
+	by ams.source.kernel.org (Postfix) with ESMTPS id AD3D8B82B9C;
+	Fri, 21 Oct 2022 11:10:44 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 63915C433D6;
 	Fri, 21 Oct 2022 11:10:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1666350643;
-	bh=kHWHx6aJI0QiHRqoX6LC3zrlO/UEm3YyvB3PCvEOuoI=;
+	bh=lRsIeDE32txxDgHrud50FwieDzQk0o7XsNx3fuKa/K8=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=Iy3IdCpca4xb8uSbyz/8ENyN7twAvC/0b8/YfkD2BTGsoysk+Uszq3bQxJ7YYu3a/
-	 gppvb+AV+InS1s8ZNIR0mrO4SfgMu6sFWmOJRcCYZsc0AX9MWz7bE5vroZYU+r/HAv
-	 WUx+9wxDdxMtNFBjIsIgrvkOGltLGdLuFTiCoqXysoZ+qkfyzotcBryO71a0Gvgh7f
-	 2zmxA7ul4rF496FsHddmlTxfjLUHpxx/JXZXqX8UkmhoCltq5LiYDcCFpPG3dtuRKX
-	 cm3c//c+WUhy54iYmSyu7xeShSyjKG/4BT5EEs2Qp6G58QmAG7jGe93gLdYda6pS3K
-	 sn6i3clXH9azg==
+	b=LZ5dUCZogDVLLMnPzqKUd4wppfHNzg3Jc3rIciV4T03gdhhzOal2JyMQzhwGjnu2b
+	 Kx/IIIOYF7MXFxCaSp6bVZjzDgPYR5+qZHAzXKSVJ5qdFAqgfXx3VoVzfBjYtQ08/p
+	 j7/X6qj7k52TF8fHaz3SsRiZlPJB8GrjkNbfYwC+C2zXRlKZXHlzhHnTBPS/6oDqmm
+	 eQ48suN1EvQSSZfEpaNYov1uWRiN932FbGu3Eab9TrgxfjS0aGxB9scDJGX/w8afva
+	 mdMvClrsK2C3/loNB+ojoG1BpAi1zg15AUYp6WmJwzbRSF19EWs25RxAoEHPYrnwzJ
+	 eLasPRuHZIrsQ==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1olpv4-0007Kj-UR; Fri, 21 Oct 2022 13:10:30 +0200
+	id 1olpv4-0007KW-Gk; Fri, 21 Oct 2022 13:10:30 +0200
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>
 Cc: Andy Gross <agross@kernel.org>,
@@ -58,16 +58,16 @@ Cc: Andy Gross <agross@kernel.org>,
 	devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH v3 07/15] phy: qcom-qmp-pcie: clean up PHY lane init
-Date: Fri, 21 Oct 2022 13:09:39 +0200
-Message-Id: <20221021110947.28103-8-johan+linaro@kernel.org>
+Subject: [PATCH v3 02/15] phy: qcom-qmp-pcie: move device-id table
+Date: Fri, 21 Oct 2022 13:09:34 +0200
+Message-Id: <20221021110947.28103-3-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.37.3
 In-Reply-To: <20221021110947.28103-1-johan+linaro@kernel.org>
 References: <20221021110947.28103-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221021_041046_987615_7E323799 
-X-CRM114-Status: GOOD (  12.44  )
+X-CRM114-CacheID: sfid-20221021_041047_198892_1B850E7F 
+X-CRM114-Status: GOOD (  13.96  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,46 +84,123 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Clean up the PHY lane initialisation somewhat by adding further
-temporary variables and programming both tx and rx for the second lane
-after the first lane.
+Move the device-id table below probe() and next to the driver structure
+to keep the driver callback functions grouped together.
 
 Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 13 +++++++------
- 1 file changed, 7 insertions(+), 6 deletions(-)
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 90 ++++++++++++------------
+ 1 file changed, 45 insertions(+), 45 deletions(-)
 
 diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-index bd946438e3c3..dd7e72424fc0 100644
+index 4e5111d19692..e66f6adc404b 100644
 --- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
 +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-@@ -1835,18 +1835,19 @@ static void qmp_pcie_lanes_init(struct qmp_pcie *qmp, const struct qmp_phy_cfg_t
- 	const struct qmp_phy_cfg *cfg = qmp->cfg;
- 	void __iomem *tx = qmp->tx;
- 	void __iomem *rx = qmp->rx;
-+	void __iomem *tx2 = qmp->tx2;
-+	void __iomem *rx2 = qmp->rx2;
- 
- 	if (!tables)
- 		return;
- 
- 	qmp_pcie_configure_lane(tx, tables->tx, tables->tx_num, 1);
--
--	if (cfg->lanes >= 2)
--		qmp_pcie_configure_lane(qmp->tx2, tables->tx, tables->tx_num, 2);
--
- 	qmp_pcie_configure_lane(rx, tables->rx, tables->rx_num, 1);
--	if (cfg->lanes >= 2)
--		qmp_pcie_configure_lane(qmp->rx2, tables->rx, tables->rx_num, 2);
-+
-+	if (cfg->lanes >= 2) {
-+		qmp_pcie_configure_lane(tx2, tables->tx, tables->tx_num, 2);
-+		qmp_pcie_configure_lane(rx2, tables->rx, tables->rx_num, 2);
-+	}
+@@ -2280,51 +2280,6 @@ static int qmp_pcie_create(struct device *dev, struct device_node *np, int id,
+ 	return 0;
  }
  
- static void qmp_pcie_pcs_init(struct qmp_pcie *qmp, const struct qmp_phy_cfg_tables *tables)
+-static const struct of_device_id qmp_pcie_of_match_table[] = {
+-	{
+-		.compatible = "qcom,ipq6018-qmp-pcie-phy",
+-		.data = &ipq6018_pciephy_cfg,
+-	}, {
+-		.compatible = "qcom,ipq8074-qmp-gen3-pcie-phy",
+-		.data = &ipq8074_pciephy_gen3_cfg,
+-	}, {
+-		.compatible = "qcom,ipq8074-qmp-pcie-phy",
+-		.data = &ipq8074_pciephy_cfg,
+-	}, {
+-		.compatible = "qcom,msm8998-qmp-pcie-phy",
+-		.data = &msm8998_pciephy_cfg,
+-	}, {
+-		.compatible = "qcom,sc8180x-qmp-pcie-phy",
+-		.data = &sc8180x_pciephy_cfg,
+-	}, {
+-		.compatible = "qcom,sdm845-qhp-pcie-phy",
+-		.data = &sdm845_qhp_pciephy_cfg,
+-	}, {
+-		.compatible = "qcom,sdm845-qmp-pcie-phy",
+-		.data = &sdm845_qmp_pciephy_cfg,
+-	}, {
+-		.compatible = "qcom,sdx55-qmp-pcie-phy",
+-		.data = &sdx55_qmp_pciephy_cfg,
+-	}, {
+-		.compatible = "qcom,sm8250-qmp-gen3x1-pcie-phy",
+-		.data = &sm8250_qmp_gen3x1_pciephy_cfg,
+-	}, {
+-		.compatible = "qcom,sm8250-qmp-gen3x2-pcie-phy",
+-		.data = &sm8250_qmp_gen3x2_pciephy_cfg,
+-	}, {
+-		.compatible = "qcom,sm8250-qmp-modem-pcie-phy",
+-		.data = &sm8250_qmp_gen3x2_pciephy_cfg,
+-	}, {
+-		.compatible = "qcom,sm8450-qmp-gen3x1-pcie-phy",
+-		.data = &sm8450_qmp_gen3x1_pciephy_cfg,
+-	}, {
+-		.compatible = "qcom,sm8450-qmp-gen4x2-pcie-phy",
+-		.data = &sm8450_qmp_gen4x2_pciephy_cfg,
+-	},
+-	{ },
+-};
+-MODULE_DEVICE_TABLE(of, qmp_pcie_of_match_table);
+-
+ static int qmp_pcie_probe(struct platform_device *pdev)
+ {
+ 	struct qcom_qmp *qmp;
+@@ -2408,6 +2363,51 @@ static int qmp_pcie_probe(struct platform_device *pdev)
+ 	return ret;
+ }
+ 
++static const struct of_device_id qmp_pcie_of_match_table[] = {
++	{
++		.compatible = "qcom,ipq6018-qmp-pcie-phy",
++		.data = &ipq6018_pciephy_cfg,
++	}, {
++		.compatible = "qcom,ipq8074-qmp-gen3-pcie-phy",
++		.data = &ipq8074_pciephy_gen3_cfg,
++	}, {
++		.compatible = "qcom,ipq8074-qmp-pcie-phy",
++		.data = &ipq8074_pciephy_cfg,
++	}, {
++		.compatible = "qcom,msm8998-qmp-pcie-phy",
++		.data = &msm8998_pciephy_cfg,
++	}, {
++		.compatible = "qcom,sc8180x-qmp-pcie-phy",
++		.data = &sc8180x_pciephy_cfg,
++	}, {
++		.compatible = "qcom,sdm845-qhp-pcie-phy",
++		.data = &sdm845_qhp_pciephy_cfg,
++	}, {
++		.compatible = "qcom,sdm845-qmp-pcie-phy",
++		.data = &sdm845_qmp_pciephy_cfg,
++	}, {
++		.compatible = "qcom,sdx55-qmp-pcie-phy",
++		.data = &sdx55_qmp_pciephy_cfg,
++	}, {
++		.compatible = "qcom,sm8250-qmp-gen3x1-pcie-phy",
++		.data = &sm8250_qmp_gen3x1_pciephy_cfg,
++	}, {
++		.compatible = "qcom,sm8250-qmp-gen3x2-pcie-phy",
++		.data = &sm8250_qmp_gen3x2_pciephy_cfg,
++	}, {
++		.compatible = "qcom,sm8250-qmp-modem-pcie-phy",
++		.data = &sm8250_qmp_gen3x2_pciephy_cfg,
++	}, {
++		.compatible = "qcom,sm8450-qmp-gen3x1-pcie-phy",
++		.data = &sm8450_qmp_gen3x1_pciephy_cfg,
++	}, {
++		.compatible = "qcom,sm8450-qmp-gen4x2-pcie-phy",
++		.data = &sm8450_qmp_gen4x2_pciephy_cfg,
++	},
++	{ },
++};
++MODULE_DEVICE_TABLE(of, qmp_pcie_of_match_table);
++
+ static struct platform_driver qmp_pcie_driver = {
+ 	.probe		= qmp_pcie_probe,
+ 	.driver = {
 -- 
 2.37.3
 
