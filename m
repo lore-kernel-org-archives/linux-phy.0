@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CF57FFA3740
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DF03AFA3741
 	for <linux-phy@archiver.kernel.org>; Mon, 24 Oct 2022 10:07:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,39 +12,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kfgjHYXl5sapNZUmRayeYv2vEL3b8njUjkBu3djhFSg=; b=w2KCu1KTdPIH85
-	sVKaUqTmCB9QhczBV+xXYrEGIYI4LVWX1x0mOI/fjQlA7eILMHkNosrCGrLuCJ0IqLnMiEHDHvJwN
-	YSn7aPM/EisfZGuR6884+E4v1/PQipGpn0+tvkrOcjrUBm/LygddRcpWsAbTiZIri5tJ7xKYfoADX
-	Rh7bGt0Hemp2vqfeknEwxpXJOoavN2cQXWyv9ol0Ne4abEMM8Jj8ADAr98LZENIn3yA46P3frsF3C
-	N0wCJCGBst4jf1nF7kCotPlQ/NP88Yya66GicWgRGDtRwlnJTqDb91wOLTitmtHO2Qt5zV8VyCDqg
-	n/cLwfYePeMmNs641tRQ==;
+	List-Owner; bh=rUPmcfuIjdmeFRnoN3syp4iUKnXKbK0XwmvyX8W3QLg=; b=nov6/Ixua5raDS
+	1Wc3gK57hqli+43LnT2hmpJVO2JAhD/qzRYWNW5PDcXDKHHcO7J4T9kcUDepbiA5t3hyXPz7ZGQuc
+	cmTrLhDjZKVj2S11DQkXW6cfQOQjzM172SdaMsPNIgUEH+k+1LJSa843x5DKNyolkoIsUZeAiTcKJ
+	0Bh31wOhOj+Sq5Try6IozT8X4U9NMv5fdHchiPK1vk8ixH2iej/fSqzPXBITT1Nr0+0DUqLK2tCU4
+	Pxd/CUrgtsuiq+/hlgJejzra0fi7/Bru24oiiuDdgT0t6m0Mk5H2ludGqyrUcfqUBA3ULRg/Lg7T4
+	4sfKTo54IERWYUfQh6Ew==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1omuMU-000cER-7P; Mon, 24 Oct 2022 10:07:14 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1omuMU-000cEY-9P; Mon, 24 Oct 2022 10:07:14 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1omuMM-000c7a-UW
-	for linux-phy@lists.infradead.org; Mon, 24 Oct 2022 10:07:09 +0000
+	id 1omuMM-000c7b-Ui
+	for linux-phy@lists.infradead.org; Mon, 24 Oct 2022 10:07:10 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id CB10F611C9;
-	Mon, 24 Oct 2022 10:07:05 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id AC285C4167D;
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 13AD0611D6;
+	Mon, 24 Oct 2022 10:07:06 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B2DFCC4FEB5;
 	Mon, 24 Oct 2022 10:07:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1666606023;
-	bh=RyDjfkXeUvujKcmZYfnPRH9u4YqHbTjNf4y55UFXH7o=;
+	bh=Tm4gmSInyHHH6+chy2xagbTkIvb1pK5cY/1WuEhyaH8=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=PJ4s9yS5XLqbbKHf7QVKqRWV34Bk3tWALy77F4xypyxAoETPSjyYm9xOEHRSy831Q
-	 ECeB62kLRjG93325RJisvz8fgPvHF5j1aH/a9CsMIxwu5wboyPujEQIhE+LARFPnf1
-	 x6lYp3y4dEXfIPVP5ckkWKEIGZtJIW0fG8bYscJ8uDGIGLdbsNOEUGpK5jgZiA4fLp
-	 ZTPmgcqHN6ZOlUQiluAJuP3ph4I41h5yOVuFdIARu3uxft+rgn/nP+JEE8IZW3ctJ0
-	 P9rBrgUEO0azPJx+sa/rBMRlegnMgCF3oRkPQ/iVNCLnU8Sfg1QmVixowPde5k+AXB
-	 0zJmdC3DKCZ6A==
+	b=TJAtkfLhiUdBvonF1zrurKl0vzN8LUXwdtbm0iFYw40NkNAewds8gGTeQjaKLmErG
+	 /Z2tBxodiExjto/QPHO7reX4OGgQmdYGSYTgnGihDodxotmVp6u8UmTirSLtEt0vY9
+	 4SKzlj/LcTEBJjw8KTAUwLH9G5H07KvKkG7ZNmK6tOo3zatrE5CHJhuZ3k+sBm4R3z
+	 YCEftXnoWRuxCmZEhd6Zlb3Dk6HmaUS8ZKZq2u/NL1druWk4tnKPvR2BiXZP1hM0pa
+	 62GqgB1Q3CfyGtGUeBUnxEK+mdGOVB4fbwqaW0LZ2uj7lIABVRyt1xseSvFf7XZUNb
+	 eicQwEgrym4rw==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1omuM3-0005MY-EM; Mon, 24 Oct 2022 12:06:47 +0200
+	id 1omuM3-0005MV-BS; Mon, 24 Oct 2022 12:06:47 +0200
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>
 Cc: Andy Gross <agross@kernel.org>,
@@ -58,16 +58,16 @@ Cc: Andy Gross <agross@kernel.org>,
 	devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH 09/13] phy: qcom-qmp-usb: clean up PHY init
-Date: Mon, 24 Oct 2022 12:06:28 +0200
-Message-Id: <20221024100632.20549-10-johan+linaro@kernel.org>
+Subject: [PATCH 08/13] phy: qcom-qmp-usb: rename PHY ops structure
+Date: Mon, 24 Oct 2022 12:06:27 +0200
+Message-Id: <20221024100632.20549-9-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.37.3
 In-Reply-To: <20221024100632.20549-1-johan+linaro@kernel.org>
 References: <20221024100632.20549-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221024_030707_074218_ED407027 
-X-CRM114-Status: GOOD (  11.18  )
+X-CRM114-CacheID: sfid-20221024_030707_082599_ACAE8FFA 
+X-CRM114-Status: GOOD (  11.96  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,36 +84,55 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Clean up the PHY initialisation somewhat by programming both tx and rx
-for the second lane after the first lane.
+Rename the PHY operation structure so that it has a "phy_ops" suffix and
+move it next to the implementation.
 
 Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-usb.c | 8 +++-----
- 1 file changed, 3 insertions(+), 5 deletions(-)
+ drivers/phy/qualcomm/phy-qcom-qmp-usb.c | 16 ++++++++--------
+ 1 file changed, 8 insertions(+), 8 deletions(-)
 
 diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-index 4a7b961d2965..d5e62cfd93f8 100644
+index 2e603831e45e..4a7b961d2965 100644
 --- a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
 +++ b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-@@ -2058,14 +2058,12 @@ static int qmp_usb_power_on(struct phy *phy)
+@@ -2149,6 +2149,13 @@ static int qmp_usb_set_mode(struct phy *phy, enum phy_mode mode, int submode)
+ 	return 0;
+ }
  
- 	/* Tx, Rx, and PCS configurations */
- 	qmp_usb_configure_lane(tx, cfg->tx_tbl, cfg->tx_tbl_num, 1);
++static const struct phy_ops qmp_usb_phy_ops = {
++	.init		= qmp_usb_enable,
++	.exit		= qmp_usb_disable,
++	.set_mode	= qmp_usb_set_mode,
++	.owner		= THIS_MODULE,
++};
++
+ static void qmp_usb_enable_autonomous_mode(struct qmp_usb *qmp)
+ {
+ 	const struct qmp_phy_cfg *cfg = qmp->cfg;
+@@ -2366,13 +2373,6 @@ static int phy_pipe_clk_register(struct qmp_usb *qmp, struct device_node *np)
+ 	return devm_add_action_or_reset(qmp->dev, phy_clk_release_provider, np);
+ }
+ 
+-static const struct phy_ops qmp_usb_ops = {
+-	.init		= qmp_usb_enable,
+-	.exit		= qmp_usb_disable,
+-	.set_mode	= qmp_usb_set_mode,
+-	.owner		= THIS_MODULE,
+-};
 -
--	if (cfg->lanes >= 2)
--		qmp_usb_configure_lane(qmp->tx2, cfg->tx_tbl, cfg->tx_tbl_num, 2);
--
- 	qmp_usb_configure_lane(rx, cfg->rx_tbl, cfg->rx_tbl_num, 1);
+ static void __iomem *qmp_usb_iomap(struct device *dev, struct device_node *np,
+ 					int index, bool exclusive)
+ {
+@@ -2451,7 +2451,7 @@ static int qmp_usb_create(struct qmp_usb *qmp, struct device_node *np)
+ 				     "failed to get pipe clock\n");
+ 	}
  
--	if (cfg->lanes >= 2)
-+	if (cfg->lanes >= 2) {
-+		qmp_usb_configure_lane(qmp->tx2, cfg->tx_tbl, cfg->tx_tbl_num, 2);
- 		qmp_usb_configure_lane(qmp->rx2, cfg->rx_tbl, cfg->rx_tbl_num, 2);
-+	}
- 
- 	qmp_usb_configure(pcs, cfg->pcs_tbl, cfg->pcs_tbl_num);
- 
+-	generic_phy = devm_phy_create(dev, np, &qmp_usb_ops);
++	generic_phy = devm_phy_create(dev, np, &qmp_usb_phy_ops);
+ 	if (IS_ERR(generic_phy)) {
+ 		ret = PTR_ERR(generic_phy);
+ 		dev_err(dev, "failed to create PHY: %d\n", ret);
 -- 
 2.37.3
 
