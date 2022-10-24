@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C5BC7FA3744
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E5450FA3743
 	for <linux-phy@archiver.kernel.org>; Mon, 24 Oct 2022 09:01:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,39 +12,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EzaAnvf23LUnGJWi+5wNQlUPdZQb8e+zA7ZBiFH5Nl0=; b=qeF85M15vGJw22
-	jV7tIKmdvIt+exbcqqz8va5kpwRFogXYe9BpSFhCVQfnqnTdmUvs/dSO/lR2rrZLbURlySjzK9xFJ
-	VWXnduhNA8lmc4b42x7px4bScYZj15B8ctsgjvdSH2ePXJydk0xY1G+BR6GnjoQGFpEj5+QxiEreL
-	H/tQILE/9m3yHaFWyLLSzwFOlSS8vMfKzs6MJGiLWAZKSYaxpvztEScz8evH1rzf2TEeKuRq5OJ/9
-	G9XNnM1GyFN9IXGnlxJbJ4sEg5FnxoG65mjU3UwDhifTXM1oYt6s6wBepA49JcO4A8p7wC34zOh7K
-	mXVf7fY4N8SZ2zCzwjow==;
+	List-Owner; bh=PKhNoehso5vcA6131TPv2FcAt4nEJOTlrNBBxSsuk90=; b=C2ybXea01/ORJY
+	tU37N6lmhHmcjjwf4INRC+Rytakx+JQ3SOK4Vg4PuktvJFw8DHIIMwoN/CxXTsv0nqawCHLlqbtfv
+	BziHtA3Q/VvPPt04hRPKYU2vTpHe/R16Td/ZQe/Y4oCSeQ5gmJ5vB4FmUeAOVn8VUUeMIv3LiOeg3
+	XiBpUjZgzTfgmAAj1LQua+0VbEf1l4Hm4nNY1Spy1AOBsHl012VB2K/WdifxJVQb3M6+5FZm4+v/5
+	plgqeCPZ9BH8Tl9JdWgL3aCTESgS13NwC4OoxbyNFpcgY6vmvJhO3L5tjglqcfRRI6h+joakxZMlp
+	EqQ/FDgyvzP0T22TKKIg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1omtL7-000GhG-5T; Mon, 24 Oct 2022 09:01:45 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1omtL7-000GhO-8U; Mon, 24 Oct 2022 09:01:45 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1omtL2-000GdI-RF
-	for linux-phy@lists.infradead.org; Mon, 24 Oct 2022 09:01:43 +0000
+	id 1omtL3-000Gdi-6D
+	for linux-phy@lists.infradead.org; Mon, 24 Oct 2022 09:01:42 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 3FC9C61090;
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 7B1B7610A4;
 	Mon, 24 Oct 2022 09:01:40 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id BAA8DC4347C;
-	Mon, 24 Oct 2022 09:01:37 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2BC22C4FEBF;
+	Mon, 24 Oct 2022 09:01:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1666602097;
-	bh=XfrhZZ3hdURm8ajGKt9NS2MAtDQc+KzKurmU2+Tfeyw=;
+	s=k20201202; t=1666602098;
+	bh=uAsae8vn+6rxUI7yeq1aFl7/4iIeDVod4FR5wtZmmRI=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=eNspZSZecXgQUmn8Zwgwx9XYXoY1InofeQu7HDGa9EpGPRKQGwm0apmG4hLL7w5TT
-	 4kQtFjv6txcDuJhMGWtgrQ+ooek/DvoRNY9bVIcVpG8mAtFvWm3MWtvQkLhj3uhlti
-	 XujkM/GEAWqmaiFjvC3UpDqT1IqcaIN0wVxaitEiQLIam55dKfJXuACpW57bGve1sW
-	 NzaESSVdmVoRkNnrCMx/anGuvwZLGB5jilU3grNDHJTyqsDG+oycUxPJ97IYTgywNV
-	 1gPWRl619ZYYIhJxQoR85YpTmR1U9i1CwBolrQBmIF13wjz4Yem2PyT3x9usMHJo+g
-	 JMJuGWjwd5veg==
+	b=umcSX8tWKFKYP0M4tqzm57Tf2h6XAhW20S639wL/pvqoa/NxvOIz0TFkXijd9ddiN
+	 WWNn9Bs7M5txKVXPJmfsn9aYrfAzFJLEC3VcTBB2X7UCn+1PbYxjDJAUznOWidDz/y
+	 D/T5VsF7FSA21wKXsMG3X/Fargx0dcykaRUGfvvBpPDJPl6l729bQ+lYuIDzz88s3Z
+	 Ci/6RNRPK1PHl/+vGOsXDtVpo1knMtgF+I90zoRwdRYTiikk8xh3C73KTWICEMx7IP
+	 CTwAGzTVDN6NW+lq2CnP1PRgrYLlPFx8IFIyb9fwG9bARhaDeSIaipJvGgJZLVNpeh
+	 z58F9CtolhPJQ==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1omtKj-00056P-3y; Mon, 24 Oct 2022 11:01:21 +0200
+	id 1omtKj-00056m-Sr; Mon, 24 Oct 2022 11:01:21 +0200
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>
 Cc: Andy Gross <agross@kernel.org>,
@@ -58,16 +58,16 @@ Cc: Andy Gross <agross@kernel.org>,
 	devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH 02/10] phy: qcom-qmp-ufs: merge driver data
-Date: Mon, 24 Oct 2022 11:00:33 +0200
-Message-Id: <20221024090041.19574-3-johan+linaro@kernel.org>
+Subject: [PATCH 10/10] phy: qcom-qmp-ufs: add support for updated sc8280xp binding
+Date: Mon, 24 Oct 2022 11:00:41 +0200
+Message-Id: <20221024090041.19574-11-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.37.3
 In-Reply-To: <20221024090041.19574-1-johan+linaro@kernel.org>
 References: <20221024090041.19574-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221024_020141_010326_5ED118AE 
-X-CRM114-Status: GOOD (  20.54  )
+X-CRM114-CacheID: sfid-20221024_020141_343521_557444F2 
+X-CRM114-Status: GOOD (  20.75  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,356 +84,179 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The UFS QMP PHY driver only manages a single PHY so merge the old
-qcom_qmp and qmp_phy structures and drop the PHY array.
+Add support for the new SC8280XP binding.
+
+Note that the binding does not try to describe every register subregion
+and instead the driver holds the corresponding offsets.
+
+Also note that the driver will continue to accept the old binding, at
+least for the time being.
 
 Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 171 +++++++++---------------
- 1 file changed, 63 insertions(+), 108 deletions(-)
+ drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 90 ++++++++++++++++++++++---
+ 1 file changed, 80 insertions(+), 10 deletions(-)
 
 diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-index acb8efa1d758..b4c3b3d97f52 100644
+index bf5c1a6b9ca4..189103d1bd18 100644
 --- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
 +++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-@@ -548,54 +548,24 @@ struct qmp_phy_cfg {
- 	bool no_pcs_sw_reset;
+@@ -520,10 +520,21 @@ static const struct qmp_phy_init_tbl sm8350_ufsphy_pcs_tbl[] = {
+ 	QMP_PHY_INIT_CFG(QPHY_V5_PCS_UFS_MULTI_LANE_CTRL1, 0x02),
  };
  
--/**
-- * struct qmp_phy - per-lane phy descriptor
-- *
-- * @phy: generic phy
-- * @cfg: phy specific configuration
-- * @serdes: iomapped memory space for phy's serdes (i.e. PLL)
-- * @tx: iomapped memory space for lane's tx
-- * @rx: iomapped memory space for lane's rx
-- * @pcs: iomapped memory space for lane's pcs
-- * @tx2: iomapped memory space for second lane's tx (in dual lane PHYs)
-- * @rx2: iomapped memory space for second lane's rx (in dual lane PHYs)
-- * @pcs_misc: iomapped memory space for lane's pcs_misc
-- * @qmp: QMP phy to which this lane belongs
-- */
--struct qmp_phy {
--	struct phy *phy;
-+struct qmp_ufs {
-+	struct device *dev;
++struct qmp_ufs_offsets {
++	u16 serdes;
++	u16 pcs;
++	u16 tx;
++	u16 rx;
++	u16 tx2;
++	u16 rx2;
++};
 +
- 	const struct qmp_phy_cfg *cfg;
-+
- 	void __iomem *serdes;
-+	void __iomem *pcs;
-+	void __iomem *pcs_misc;
- 	void __iomem *tx;
- 	void __iomem *rx;
--	void __iomem *pcs;
- 	void __iomem *tx2;
- 	void __iomem *rx2;
--	void __iomem *pcs_misc;
--	struct qcom_qmp *qmp;
--};
--
--/**
-- * struct qcom_qmp - structure holding QMP phy block attributes
-- *
-- * @dev: device
-- *
-- * @clks: array of clocks required by phy
-- * @resets: array of resets required by phy
-- * @vregs: regulator supplies bulk data
-- *
-- * @phys: array of per-lane phy descriptors
-- * @ufs_reset: optional UFS PHY reset handle
-- */
--struct qcom_qmp {
--	struct device *dev;
+ /* struct qmp_phy_cfg - per-PHY initialization config */
+ struct qmp_phy_cfg {
+ 	int lanes;
  
- 	struct clk_bulk_data *clks;
- 	struct regulator_bulk_data *vregs;
--
--	struct qmp_phy **phys;
--
- 	struct reset_control *ufs_reset;
++	const struct qmp_ufs_offsets *offsets;
 +
-+	struct phy *phy;
+ 	/* Init sequence for PHY blocks - serdes, tx, rx, pcs */
+ 	const struct qmp_phy_init_tbl *serdes_tbl;
+ 	int serdes_tbl_num;
+@@ -611,6 +622,15 @@ static const char * const qmp_phy_vreg_l[] = {
+ 	"vdda-phy", "vdda-pll",
  };
  
- static inline void qphy_setbits(void __iomem *base, u32 offset, u32 val)
-@@ -782,10 +752,10 @@ static void qmp_ufs_configure(void __iomem *base,
- 	qmp_ufs_configure_lane(base, tbl, num, 0xff);
- }
++static const struct qmp_ufs_offsets qmp_ufs_offsets_v5 = {
++	.serdes		= 0,
++	.pcs		= 0xc00,
++	.tx		= 0x400,
++	.rx		= 0x600,
++	.tx2		= 0x800,
++	.rx2		= 0xa00,
++};
++
+ static const struct qmp_phy_cfg msm8996_ufs_cfg = {
+ 	.lanes			= 1,
  
--static int qmp_ufs_serdes_init(struct qmp_phy *qphy)
-+static int qmp_ufs_serdes_init(struct qmp_ufs *qmp)
- {
--	const struct qmp_phy_cfg *cfg = qphy->cfg;
--	void __iomem *serdes = qphy->serdes;
-+	const struct qmp_phy_cfg *cfg = qmp->cfg;
-+	void __iomem *serdes = qmp->serdes;
- 	const struct qmp_phy_init_tbl *serdes_tbl = cfg->serdes_tbl;
- 	int serdes_tbl_num = cfg->serdes_tbl_num;
+@@ -632,6 +652,26 @@ static const struct qmp_phy_cfg msm8996_ufs_cfg = {
+ 	.no_pcs_sw_reset	= true,
+ };
  
-@@ -794,11 +764,10 @@ static int qmp_ufs_serdes_init(struct qmp_phy *qphy)
++static const struct qmp_phy_cfg sc8280xp_ufsphy_cfg = {
++	.lanes			= 2,
++
++	.offsets		= &qmp_ufs_offsets_v5,
++
++	.serdes_tbl		= sm8350_ufsphy_serdes_tbl,
++	.serdes_tbl_num		= ARRAY_SIZE(sm8350_ufsphy_serdes_tbl),
++	.tx_tbl			= sm8350_ufsphy_tx_tbl,
++	.tx_tbl_num		= ARRAY_SIZE(sm8350_ufsphy_tx_tbl),
++	.rx_tbl			= sm8350_ufsphy_rx_tbl,
++	.rx_tbl_num		= ARRAY_SIZE(sm8350_ufsphy_rx_tbl),
++	.pcs_tbl		= sm8350_ufsphy_pcs_tbl,
++	.pcs_tbl_num		= ARRAY_SIZE(sm8350_ufsphy_pcs_tbl),
++	.clk_list		= sdm845_ufs_phy_clk_l,
++	.num_clks		= ARRAY_SIZE(sdm845_ufs_phy_clk_l),
++	.vreg_list		= qmp_phy_vreg_l,
++	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
++	.regs			= sm8150_ufsphy_regs_layout,
++};
++
+ static const struct qmp_phy_cfg sdm845_ufsphy_cfg = {
+ 	.lanes			= 2,
+ 
+@@ -1031,11 +1071,38 @@ static int qmp_ufs_parse_dt_legacy(struct qmp_ufs *qmp, struct device_node *np)
  	return 0;
  }
  
--static int qmp_ufs_com_init(struct qmp_phy *qphy)
-+static int qmp_ufs_com_init(struct qmp_ufs *qmp)
- {
--	struct qcom_qmp *qmp = qphy->qmp;
--	const struct qmp_phy_cfg *cfg = qphy->cfg;
--	void __iomem *pcs = qphy->pcs;
++static int qmp_ufs_parse_dt(struct qmp_ufs *qmp)
++{
++	struct platform_device *pdev = to_platform_device(qmp->dev);
 +	const struct qmp_phy_cfg *cfg = qmp->cfg;
-+	void __iomem *pcs = qmp->pcs;
++	const struct qmp_ufs_offsets *offs = cfg->offsets;
++	void __iomem *base;
++
++	if (!offs)
++		return -EINVAL;
++
++	base = devm_platform_ioremap_resource(pdev, 0);
++	if (IS_ERR(base))
++		return PTR_ERR(base);
++
++	qmp->serdes = base + offs->serdes;
++	qmp->pcs = base + offs->pcs;
++	qmp->tx = base + offs->tx;
++	qmp->rx = base + offs->rx;
++
++	if (cfg->lanes >= 2) {
++		qmp->tx2 = base + offs->tx2;
++		qmp->rx2 = base + offs->rx2;
++	}
++
++	return 0;
++}
++
+ static int qmp_ufs_probe(struct platform_device *pdev)
+ {
+ 	struct device *dev = &pdev->dev;
+-	struct device_node *child;
+ 	struct phy_provider *phy_provider;
++	struct device_node *np;
+ 	struct qmp_ufs *qmp;
  	int ret;
  
- 	ret = regulator_bulk_enable(cfg->num_vregs, qmp->vregs);
-@@ -821,10 +790,9 @@ static int qmp_ufs_com_init(struct qmp_phy *qphy)
- 	return ret;
- }
- 
--static int qmp_ufs_com_exit(struct qmp_phy *qphy)
-+static int qmp_ufs_com_exit(struct qmp_ufs *qmp)
- {
--	struct qcom_qmp *qmp = qphy->qmp;
--	const struct qmp_phy_cfg *cfg = qphy->cfg;
-+	const struct qmp_phy_cfg *cfg = qmp->cfg;
- 
- 	reset_control_assert(qmp->ufs_reset);
- 
-@@ -837,9 +805,8 @@ static int qmp_ufs_com_exit(struct qmp_phy *qphy)
- 
- static int qmp_ufs_init(struct phy *phy)
- {
--	struct qmp_phy *qphy = phy_get_drvdata(phy);
--	struct qcom_qmp *qmp = qphy->qmp;
--	const struct qmp_phy_cfg *cfg = qphy->cfg;
-+	struct qmp_ufs *qmp = phy_get_drvdata(phy);
-+	const struct qmp_phy_cfg *cfg = qmp->cfg;
- 	int ret;
- 	dev_vdbg(qmp->dev, "Initializing QMP phy\n");
- 
-@@ -870,7 +837,7 @@ static int qmp_ufs_init(struct phy *phy)
- 			return ret;
- 	}
- 
--	ret = qmp_ufs_com_init(qphy);
-+	ret = qmp_ufs_com_init(qmp);
+@@ -1057,15 +1124,18 @@ static int qmp_ufs_probe(struct platform_device *pdev)
  	if (ret)
  		return ret;
  
-@@ -879,28 +846,27 @@ static int qmp_ufs_init(struct phy *phy)
- 
- static int qmp_ufs_power_on(struct phy *phy)
- {
--	struct qmp_phy *qphy = phy_get_drvdata(phy);
--	struct qcom_qmp *qmp = qphy->qmp;
--	const struct qmp_phy_cfg *cfg = qphy->cfg;
--	void __iomem *tx = qphy->tx;
--	void __iomem *rx = qphy->rx;
--	void __iomem *pcs = qphy->pcs;
-+	struct qmp_ufs *qmp = phy_get_drvdata(phy);
-+	const struct qmp_phy_cfg *cfg = qmp->cfg;
-+	void __iomem *tx = qmp->tx;
-+	void __iomem *rx = qmp->rx;
-+	void __iomem *pcs = qmp->pcs;
- 	void __iomem *status;
- 	unsigned int val;
- 	int ret;
- 
--	qmp_ufs_serdes_init(qphy);
-+	qmp_ufs_serdes_init(qmp);
- 
- 	/* Tx, Rx, and PCS configurations */
- 	qmp_ufs_configure_lane(tx, cfg->tx_tbl, cfg->tx_tbl_num, 1);
- 
- 	if (cfg->lanes >= 2)
--		qmp_ufs_configure_lane(qphy->tx2, cfg->tx_tbl, cfg->tx_tbl_num, 2);
-+		qmp_ufs_configure_lane(qmp->tx2, cfg->tx_tbl, cfg->tx_tbl_num, 2);
- 
- 	qmp_ufs_configure_lane(rx, cfg->rx_tbl, cfg->rx_tbl_num, 1);
- 
- 	if (cfg->lanes >= 2)
--		qmp_ufs_configure_lane(qphy->rx2, cfg->rx_tbl, cfg->rx_tbl_num, 2);
-+		qmp_ufs_configure_lane(qmp->rx2, cfg->rx_tbl, cfg->rx_tbl_num, 2);
- 
- 	qmp_ufs_configure(pcs, cfg->pcs_tbl, cfg->pcs_tbl_num);
- 
-@@ -928,18 +894,18 @@ static int qmp_ufs_power_on(struct phy *phy)
- 
- static int qmp_ufs_power_off(struct phy *phy)
- {
--	struct qmp_phy *qphy = phy_get_drvdata(phy);
--	const struct qmp_phy_cfg *cfg = qphy->cfg;
-+	struct qmp_ufs *qmp = phy_get_drvdata(phy);
-+	const struct qmp_phy_cfg *cfg = qmp->cfg;
- 
- 	/* PHY reset */
- 	if (!cfg->no_pcs_sw_reset)
--		qphy_setbits(qphy->pcs, cfg->regs[QPHY_SW_RESET], SW_RESET);
-+		qphy_setbits(qmp->pcs, cfg->regs[QPHY_SW_RESET], SW_RESET);
- 
- 	/* stop SerDes */
--	qphy_clrbits(qphy->pcs, cfg->regs[QPHY_START_CTRL], SERDES_START);
-+	qphy_clrbits(qmp->pcs, cfg->regs[QPHY_START_CTRL], SERDES_START);
- 
- 	/* Put PHY into POWER DOWN state: active low */
--	qphy_clrbits(qphy->pcs, cfg->regs[QPHY_PCS_POWER_DOWN_CONTROL],
-+	qphy_clrbits(qmp->pcs, cfg->regs[QPHY_PCS_POWER_DOWN_CONTROL],
- 			SW_PWRDN);
- 
- 	return 0;
-@@ -947,9 +913,9 @@ static int qmp_ufs_power_off(struct phy *phy)
- 
- static int qmp_ufs_exit(struct phy *phy)
- {
--	struct qmp_phy *qphy = phy_get_drvdata(phy);
-+	struct qmp_ufs *qmp = phy_get_drvdata(phy);
- 
--	qmp_ufs_com_exit(qphy);
-+	qmp_ufs_com_exit(qmp);
- 
- 	return 0;
- }
-@@ -981,7 +947,7 @@ static int qmp_ufs_disable(struct phy *phy)
- 
- static int qmp_ufs_vreg_init(struct device *dev, const struct qmp_phy_cfg *cfg)
- {
--	struct qcom_qmp *qmp = dev_get_drvdata(dev);
-+	struct qmp_ufs *qmp = dev_get_drvdata(dev);
- 	int num = cfg->num_vregs;
- 	int i;
- 
-@@ -997,7 +963,7 @@ static int qmp_ufs_vreg_init(struct device *dev, const struct qmp_phy_cfg *cfg)
- 
- static int qmp_ufs_clk_init(struct device *dev, const struct qmp_phy_cfg *cfg)
- {
--	struct qcom_qmp *qmp = dev_get_drvdata(dev);
-+	struct qmp_ufs *qmp = dev_get_drvdata(dev);
- 	int num = cfg->num_clks;
- 	int i;
- 
-@@ -1017,78 +983,71 @@ static const struct phy_ops qcom_qmp_ufs_ops = {
- 	.owner		= THIS_MODULE,
- };
- 
--static int qmp_ufs_create(struct device *dev, struct device_node *np, int id,
-+static int qmp_ufs_create(struct device *dev, struct device_node *np,
- 			void __iomem *serdes, const struct qmp_phy_cfg *cfg)
- {
--	struct qcom_qmp *qmp = dev_get_drvdata(dev);
-+	struct qmp_ufs *qmp = dev_get_drvdata(dev);
- 	struct phy *generic_phy;
--	struct qmp_phy *qphy;
- 	int ret;
- 
--	qphy = devm_kzalloc(dev, sizeof(*qphy), GFP_KERNEL);
--	if (!qphy)
--		return -ENOMEM;
+-	child = of_get_next_available_child(dev->of_node, NULL);
+-	if (!child)
+-		return -EINVAL;
 -
--	qphy->cfg = cfg;
--	qphy->serdes = serdes;
-+	qmp->cfg = cfg;
-+	qmp->serdes = serdes;
- 	/*
- 	 * Get memory resources for the PHY:
- 	 * Resources are indexed as: tx -> 0; rx -> 1; pcs -> 2.
- 	 * For dual lane PHYs: tx2 -> 3, rx2 -> 4, pcs_misc (optional) -> 5
- 	 * For single lane PHYs: pcs_misc (optional) -> 3.
- 	 */
--	qphy->tx = devm_of_iomap(dev, np, 0, NULL);
--	if (IS_ERR(qphy->tx))
--		return PTR_ERR(qphy->tx);
-+	qmp->tx = devm_of_iomap(dev, np, 0, NULL);
-+	if (IS_ERR(qmp->tx))
-+		return PTR_ERR(qmp->tx);
+-	ret = qmp_ufs_parse_dt_legacy(qmp, child);
++	/* Check for legacy binding with child node. */
++	np = of_get_next_available_child(dev->of_node, NULL);
++	if (np) {
++		ret = qmp_ufs_parse_dt_legacy(qmp, np);
++	} else {
++		np = of_node_get(dev->of_node);
++		ret = qmp_ufs_parse_dt(qmp);
++	}
+ 	if (ret)
+ 		goto err_node_put;
  
--	qphy->rx = devm_of_iomap(dev, np, 1, NULL);
--	if (IS_ERR(qphy->rx))
--		return PTR_ERR(qphy->rx);
-+	qmp->rx = devm_of_iomap(dev, np, 1, NULL);
-+	if (IS_ERR(qmp->rx))
-+		return PTR_ERR(qmp->rx);
+-	qmp->phy = devm_phy_create(dev, child, &qcom_qmp_ufs_phy_ops);
++	qmp->phy = devm_phy_create(dev, np, &qcom_qmp_ufs_phy_ops);
+ 	if (IS_ERR(qmp->phy)) {
+ 		ret = PTR_ERR(qmp->phy);
+ 		dev_err(dev, "failed to create PHY: %d\n", ret);
+@@ -1074,14 +1144,14 @@ static int qmp_ufs_probe(struct platform_device *pdev)
  
--	qphy->pcs = devm_of_iomap(dev, np, 2, NULL);
--	if (IS_ERR(qphy->pcs))
--		return PTR_ERR(qphy->pcs);
-+	qmp->pcs = devm_of_iomap(dev, np, 2, NULL);
-+	if (IS_ERR(qmp->pcs))
-+		return PTR_ERR(qmp->pcs);
+ 	phy_set_drvdata(qmp->phy, qmp);
  
- 	if (cfg->lanes >= 2) {
--		qphy->tx2 = devm_of_iomap(dev, np, 3, NULL);
--		if (IS_ERR(qphy->tx2))
--			return PTR_ERR(qphy->tx2);
-+		qmp->tx2 = devm_of_iomap(dev, np, 3, NULL);
-+		if (IS_ERR(qmp->tx2))
-+			return PTR_ERR(qmp->tx2);
+-	of_node_put(child);
++	of_node_put(np);
  
--		qphy->rx2 = devm_of_iomap(dev, np, 4, NULL);
--		if (IS_ERR(qphy->rx2))
--			return PTR_ERR(qphy->rx2);
-+		qmp->rx2 = devm_of_iomap(dev, np, 4, NULL);
-+		if (IS_ERR(qmp->rx2))
-+			return PTR_ERR(qmp->rx2);
+ 	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
  
--		qphy->pcs_misc = devm_of_iomap(dev, np, 5, NULL);
-+		qmp->pcs_misc = devm_of_iomap(dev, np, 5, NULL);
- 	} else {
--		qphy->pcs_misc = devm_of_iomap(dev, np, 3, NULL);
-+		qmp->pcs_misc = devm_of_iomap(dev, np, 3, NULL);
- 	}
+ 	return PTR_ERR_OR_ZERO(phy_provider);
  
--	if (IS_ERR(qphy->pcs_misc))
-+	if (IS_ERR(qmp->pcs_misc))
- 		dev_vdbg(dev, "PHY pcs_misc-reg not used\n");
- 
- 	generic_phy = devm_phy_create(dev, np, &qcom_qmp_ufs_ops);
- 	if (IS_ERR(generic_phy)) {
- 		ret = PTR_ERR(generic_phy);
--		dev_err(dev, "failed to create qphy %d\n", ret);
-+		dev_err(dev, "failed to create PHY: %d\n", ret);
- 		return ret;
- 	}
- 
--	qphy->phy = generic_phy;
--	qphy->qmp = qmp;
--	qmp->phys[id] = qphy;
--	phy_set_drvdata(generic_phy, qphy);
-+	qmp->phy = generic_phy;
-+	phy_set_drvdata(generic_phy, qmp);
- 
- 	return 0;
+ err_node_put:
+-	of_node_put(child);
++	of_node_put(np);
+ 	return ret;
  }
  
- static int qmp_ufs_probe(struct platform_device *pdev)
- {
--	struct qcom_qmp *qmp;
- 	struct device *dev = &pdev->dev;
- 	struct device_node *child;
- 	struct phy_provider *phy_provider;
- 	void __iomem *serdes;
- 	const struct qmp_phy_cfg *cfg = NULL;
-+	struct qmp_ufs *qmp;
- 	int num, id;
- 	int ret;
- 
-@@ -1120,14 +1079,10 @@ static int qmp_ufs_probe(struct platform_device *pdev)
- 	if (num > 1)
- 		return -EINVAL;
- 
--	qmp->phys = devm_kcalloc(dev, num, sizeof(*qmp->phys), GFP_KERNEL);
--	if (!qmp->phys)
--		return -ENOMEM;
--
- 	id = 0;
- 	for_each_available_child_of_node(dev->of_node, child) {
- 		/* Create per-lane phy */
--		ret = qmp_ufs_create(dev, child, id, serdes, cfg);
-+		ret = qmp_ufs_create(dev, child, serdes, cfg);
- 		if (ret) {
- 			dev_err(dev, "failed to create lane%d phy, %d\n",
- 				id, ret);
+@@ -1097,7 +1167,7 @@ static const struct of_device_id qmp_ufs_of_match_table[] = {
+ 		.data = &sm8150_ufsphy_cfg,
+ 	}, {
+ 		.compatible = "qcom,sc8280xp-qmp-ufs-phy",
+-		.data = &sm8350_ufsphy_cfg,
++		.data = &sc8280xp_ufsphy_cfg,
+ 	}, {
+ 		.compatible = "qcom,sdm845-qmp-ufs-phy",
+ 		.data = &sdm845_ufsphy_cfg,
 -- 
 2.37.3
 
