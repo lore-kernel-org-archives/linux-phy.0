@@ -4,47 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5B3FAFA373E
-	for <linux-phy@archiver.kernel.org>; Mon, 24 Oct 2022 09:01:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8AE42ECDFA1
+	for <linux-phy@archiver.kernel.org>; Mon, 24 Oct 2022 09:01:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Vw31b+MpPawxyJkk5YqVA69Gf9gUS0ZlrIfRef6paCw=; b=3r4xsDJvO3kPvU
-	B/fAqf/4mbdHo4gSt4ATeOquKDt9hRTECAhf+WdDBm8PI7g7vLkyTQu7q/4W374SA9uqnAnli1V3A
-	0D8qiUBeF/STyDeyB4TzvHUlS1xhBjFcsMF54s1XzXBHfn4RYqSolsONEqjyHsyOeC/KK0RmVa4lt
-	UYRcwrjYGnDsUMW012+57wJJZH9MTsRs01RdFdtiqIjPxV746ajj8r7bZHbYxrU2CpNHVJMw14xJ3
-	g6nv3N4G1EMdT+Egkgu6CV/JidBn1RQCzabQimLUyaIXFWlJPUXfXb/5sEzhBOqwBfIXzln6VIMiv
-	v6IS0cueGvlEA8DnAepQ==;
+	List-Owner; bh=VzrUmRtfcfdNOQQZgimFHOzGUtzr+/XUfOtM+Adfr9k=; b=c925H2j4LngLXb
+	GqfwUsvxniTqLzbQSx1IDk9MKemmXXb5FgQrS0eZiZ9uFvK2VYu3Nd/jLW3ZFjdHt6AL/a3PNBrH4
+	haXBN3hmfp+AK/SaZqzy/+GJwD+OjR6qslH1ajr/nMbjBShJwuFqIAWYaeLEA9kVOrKc7wC7tuDgn
+	Dn/dJYy4USmmcKejp1BWGzN49BLIKk4od24tqgiEr04Qc+f213GuGW7CgQGHWE6YgOvZthW/CfoFV
+	Rtb5OSPwKIACbqIRhJVCl+Wt4heJNb4GoXG0ah0oOy1YjxDJyLtoB5LDay8e6IIBTJdLRs5/i4BzL
+	mJtmmnjdktKGFcMoCtdQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1omtL4-000Gfb-Lm; Mon, 24 Oct 2022 09:01:42 +0000
+	id 1omtL7-000Ggu-0z; Mon, 24 Oct 2022 09:01:45 +0000
 Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1omtL1-000GcN-FH
-	for linux-phy@lists.infradead.org; Mon, 24 Oct 2022 09:01:40 +0000
+	id 1omtL2-000GdB-GL
+	for linux-phy@lists.infradead.org; Mon, 24 Oct 2022 09:01:42 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 497E360C8F;
-	Mon, 24 Oct 2022 09:01:38 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A98DBC433D7;
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 12D1F6108E;
+	Mon, 24 Oct 2022 09:01:40 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id DC32CC4315C;
 	Mon, 24 Oct 2022 09:01:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1666602097;
-	bh=/QOd/A9j2LYjcIHbC2MjcBtERDD4VyR/2Wsyxi0u9T4=;
+	bh=eORV9LmEcdHb6Kr3GUyjApeVuli873Sn/SlzBLhCixE=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=irTWdS5LhaCd53En9T6AMWsM8Zp+9Ohltok3bZc4rw5BQfb20vZHbb5kOGtzt2sMg
-	 N6vSRbrPZEqdJzkJhB6Yw5J8I0iMUDBCr0PXqy+eSQ4KB6XJ+3QkTar1hUYtsHzdcs
-	 Kywpas+NHSc4SzfGCSIMgipfNIuXSxhT1AqAZj2f5zR0yY9QIJ7gdZgoE7DirVXLZG
-	 gbe+zyj+H+aG4+2ELglXdVEYX3n1c7K8cJFQ5uFiqQk5oumWmQWFApxnI6A/ULQ1/u
-	 4t+nmIY3h9bPwTDwCs2rUmMgLHmeRFJnQBwfCL11NXRGR51tJWeWykgzbWorpYI5JU
-	 IDfNd/sr67ITg==
+	b=q7XBzBVRtDWnivgHChKd8A/o1R1cb2VYbr4gnTcDGLrR86JS7bQQhNT8mGyivYcul
+	 vwFBYJZEUjz8rd8qEKMSxVhcC8TydFAciESdoYPXWZlE9sgcQWCJRScjhdYdJze1bJ
+	 0Wez0oSziuZ9ZyhcFBxJnXdu3+qutXqO9DqEXld84PSf7vBBJqMdFx88/Lg5Lqrtl5
+	 i3mzW+nMXW/sabTHP2g4V9uUbM5YMg4NeU0ujNAiZTzZom2GGh0LwqCOh7inOder4H
+	 CBUCAb3/+U16HOaeADXyirs+xfNlH1uACipBUseyVCQ7M5E5HOQRvLLw6eqyO9ZdTC
+	 Qlk0WYccbCjHw==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1omtKj-00056N-0h; Mon, 24 Oct 2022 11:01:21 +0200
+	id 1omtKj-00056j-Px; Mon, 24 Oct 2022 11:01:21 +0200
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>
 Cc: Andy Gross <agross@kernel.org>,
@@ -58,16 +58,16 @@ Cc: Andy Gross <agross@kernel.org>,
 	devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH 01/10] phy: qcom-qmp-ufs: move device-id table
-Date: Mon, 24 Oct 2022 11:00:32 +0200
-Message-Id: <20221024090041.19574-2-johan+linaro@kernel.org>
+Subject: [PATCH 09/10] phy: qcom-qmp-ufs: restructure PHY creation
+Date: Mon, 24 Oct 2022 11:00:40 +0200
+Message-Id: <20221024090041.19574-10-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.37.3
 In-Reply-To: <20221024090041.19574-1-johan+linaro@kernel.org>
 References: <20221024090041.19574-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221024_020139_627244_A3651C26 
-X-CRM114-Status: GOOD (  13.95  )
+X-CRM114-CacheID: sfid-20221024_020140_639607_5D793601 
+X-CRM114-Status: GOOD (  16.10  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,110 +84,87 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Move the device-id table below probe() and next to the driver structure
-to keep the driver callback functions grouped together.
+In preparation for supporting devicetree bindings which do not use a
+child node, move the PHY creation to probe() proper and parse the serdes
+resource in what is now the legacy devicetree helper.
 
 Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 78 ++++++++++++-------------
- 1 file changed, 39 insertions(+), 39 deletions(-)
+ drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 34 ++++++++++++-------------
+ 1 file changed, 16 insertions(+), 18 deletions(-)
 
 diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-index 9b58d742af3b..acb8efa1d758 100644
+index fa703e856eb7..bf5c1a6b9ca4 100644
 --- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
 +++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-@@ -1081,45 +1081,6 @@ static int qmp_ufs_create(struct device *dev, struct device_node *np, int id,
+@@ -983,12 +983,15 @@ static int qmp_ufs_clk_init(struct qmp_ufs *qmp)
+ 	return devm_clk_bulk_get(dev, num, qmp->clks);
+ }
+ 
+-static int qmp_ufs_create(struct qmp_ufs *qmp, struct device_node *np)
++static int qmp_ufs_parse_dt_legacy(struct qmp_ufs *qmp, struct device_node *np)
+ {
++	struct platform_device *pdev = to_platform_device(qmp->dev);
+ 	const struct qmp_phy_cfg *cfg = qmp->cfg;
+ 	struct device *dev = qmp->dev;
+-	struct phy *generic_phy;
+-	int ret;
++
++	qmp->serdes = devm_platform_ioremap_resource(pdev, 0);
++	if (IS_ERR(qmp->serdes))
++		return PTR_ERR(qmp->serdes);
+ 
+ 	/*
+ 	 * Get memory resources for the PHY:
+@@ -1025,16 +1028,6 @@ static int qmp_ufs_create(struct qmp_ufs *qmp, struct device_node *np)
+ 	if (IS_ERR(qmp->pcs_misc))
+ 		dev_vdbg(dev, "PHY pcs_misc-reg not used\n");
+ 
+-	generic_phy = devm_phy_create(dev, np, &qcom_qmp_ufs_phy_ops);
+-	if (IS_ERR(generic_phy)) {
+-		ret = PTR_ERR(generic_phy);
+-		dev_err(dev, "failed to create PHY: %d\n", ret);
+-		return ret;
+-	}
+-
+-	qmp->phy = generic_phy;
+-	phy_set_drvdata(generic_phy, qmp);
+-
  	return 0;
  }
  
--static const struct of_device_id qmp_ufs_of_match_table[] = {
--	{
--		.compatible = "qcom,msm8996-qmp-ufs-phy",
--		.data = &msm8996_ufs_cfg,
--	}, {
--		.compatible = "qcom,msm8998-qmp-ufs-phy",
--		.data = &sdm845_ufsphy_cfg,
--	}, {
--		.compatible = "qcom,sc8180x-qmp-ufs-phy",
--		.data = &sm8150_ufsphy_cfg,
--	}, {
--		.compatible = "qcom,sc8280xp-qmp-ufs-phy",
--		.data = &sm8350_ufsphy_cfg,
--	}, {
--		.compatible = "qcom,sdm845-qmp-ufs-phy",
--		.data = &sdm845_ufsphy_cfg,
--	}, {
--		.compatible = "qcom,sm6115-qmp-ufs-phy",
--		.data = &sm6115_ufsphy_cfg,
--	}, {
--		.compatible = "qcom,sm6350-qmp-ufs-phy",
--		.data = &sdm845_ufsphy_cfg,
--	}, {
--		.compatible = "qcom,sm8150-qmp-ufs-phy",
--		.data = &sm8150_ufsphy_cfg,
--	}, {
--		.compatible = "qcom,sm8250-qmp-ufs-phy",
--		.data = &sm8150_ufsphy_cfg,
--	}, {
--		.compatible = "qcom,sm8350-qmp-ufs-phy",
--		.data = &sm8350_ufsphy_cfg,
--	}, {
--		.compatible = "qcom,sm8450-qmp-ufs-phy",
--		.data = &sm8450_ufsphy_cfg,
--	},
--	{ },
--};
--MODULE_DEVICE_TABLE(of, qmp_ufs_of_match_table);
--
- static int qmp_ufs_probe(struct platform_device *pdev)
- {
- 	struct qcom_qmp *qmp;
-@@ -1185,6 +1146,45 @@ static int qmp_ufs_probe(struct platform_device *pdev)
- 	return ret;
- }
+@@ -1056,10 +1049,6 @@ static int qmp_ufs_probe(struct platform_device *pdev)
+ 	if (!qmp->cfg)
+ 		return -EINVAL;
  
-+static const struct of_device_id qmp_ufs_of_match_table[] = {
-+	{
-+		.compatible = "qcom,msm8996-qmp-ufs-phy",
-+		.data = &msm8996_ufs_cfg,
-+	}, {
-+		.compatible = "qcom,msm8998-qmp-ufs-phy",
-+		.data = &sdm845_ufsphy_cfg,
-+	}, {
-+		.compatible = "qcom,sc8180x-qmp-ufs-phy",
-+		.data = &sm8150_ufsphy_cfg,
-+	}, {
-+		.compatible = "qcom,sc8280xp-qmp-ufs-phy",
-+		.data = &sm8350_ufsphy_cfg,
-+	}, {
-+		.compatible = "qcom,sdm845-qmp-ufs-phy",
-+		.data = &sdm845_ufsphy_cfg,
-+	}, {
-+		.compatible = "qcom,sm6115-qmp-ufs-phy",
-+		.data = &sm6115_ufsphy_cfg,
-+	}, {
-+		.compatible = "qcom,sm6350-qmp-ufs-phy",
-+		.data = &sdm845_ufsphy_cfg,
-+	}, {
-+		.compatible = "qcom,sm8150-qmp-ufs-phy",
-+		.data = &sm8150_ufsphy_cfg,
-+	}, {
-+		.compatible = "qcom,sm8250-qmp-ufs-phy",
-+		.data = &sm8150_ufsphy_cfg,
-+	}, {
-+		.compatible = "qcom,sm8350-qmp-ufs-phy",
-+		.data = &sm8350_ufsphy_cfg,
-+	}, {
-+		.compatible = "qcom,sm8450-qmp-ufs-phy",
-+		.data = &sm8450_ufsphy_cfg,
-+	},
-+	{ },
-+};
-+MODULE_DEVICE_TABLE(of, qmp_ufs_of_match_table);
+-	qmp->serdes = devm_platform_ioremap_resource(pdev, 0);
+-	if (IS_ERR(qmp->serdes))
+-		return PTR_ERR(qmp->serdes);
+-
+ 	ret = qmp_ufs_clk_init(qmp);
+ 	if (ret)
+ 		return ret;
+@@ -1072,10 +1061,19 @@ static int qmp_ufs_probe(struct platform_device *pdev)
+ 	if (!child)
+ 		return -EINVAL;
+ 
+-	ret = qmp_ufs_create(qmp, child);
++	ret = qmp_ufs_parse_dt_legacy(qmp, child);
+ 	if (ret)
+ 		goto err_node_put;
+ 
++	qmp->phy = devm_phy_create(dev, child, &qcom_qmp_ufs_phy_ops);
++	if (IS_ERR(qmp->phy)) {
++		ret = PTR_ERR(qmp->phy);
++		dev_err(dev, "failed to create PHY: %d\n", ret);
++		goto err_node_put;
++	}
 +
- static struct platform_driver qmp_ufs_driver = {
- 	.probe		= qmp_ufs_probe,
- 	.driver = {
++	phy_set_drvdata(qmp->phy, qmp);
++
+ 	of_node_put(child);
+ 
+ 	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
 -- 
 2.37.3
 
