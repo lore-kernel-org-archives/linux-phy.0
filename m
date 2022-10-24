@@ -4,68 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EF661ECAAA1
-	for <linux-phy@archiver.kernel.org>; Mon, 24 Oct 2022 13:34:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3F12BC38A2D
+	for <linux-phy@archiver.kernel.org>; Mon, 24 Oct 2022 13:34:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Hr7MH6+9N4nH4NR5Ih8vLQL2bRlT1zt3DnAyASM70V0=; b=z1C8SgVw71JrNB
-	Kb9JlbDasfXhmAD2WOQvI/Ujin4HqjUORf4zkrGk0LpTVb5dM9JKitvxsVIpsty0AK86MRbKkUfLj
-	R/X/xGqKeHbu7lE4jBF0FCvqwd4FfZFbj9620xiz6kIH/Jedjs2wlk3o7gP/YtyVjPzrEoh4yA+K2
-	nhIvLHEjoX1d9S3FyphX3vCe33qN/nd8bFHt17v3GPSTD15CvQWSLt9vEqoVOImndIBDssEIHyGSa
-	KC4u73QAuk6ljYwK6ixsLd9o8xm+efdJ+kt1CCBuBQ+UkswIA+imoilNpl4hUqIPzy89Kmyf8SSEf
-	3znnviE65fbIVrFmHVNA==;
+	List-Owner; bh=VvH+Q30tDO4Q8POyadiH5FxzzbKj7J58X/DD78vZ6jM=; b=rOMqOQI7lRUmpj
+	Ursqs/x8mUqOpbBI2JlPNTaUSp+Rfe7at0QO4dF31JxYz0iVyJvOYhKHGLFluUt4yWpvlyGkNczfA
+	y3BRJRowN7kZtPAl2SgdCYlSdblDD8mDyohiA/4/ZF2nsEn5qp/r+VAqSYQll+kl3rR+/p0hGSiyj
+	T8pScfda1VXamhDWKx+sVcwyLYjeXaW6IAR7FiU6txaQOw+dnJybGuWh9sx24Sj5FlYitpouwB2EE
+	/UbjBPHW5QJTlhzYiuMfKs74Zdqr7EB1D+F4n2XOuOHwxkP+SZ/bkGBzD+iMcr7YBFJvuuyZ9j/Cg
+	Dp0Jv1sTBWS4J8derZ8Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1omxao-001jHq-Bm; Mon, 24 Oct 2022 13:34:14 +0000
-Received: from mail-lj1-x22c.google.com ([2a00:1450:4864:20::22c])
+	id 1omxbB-001jMM-Lr; Mon, 24 Oct 2022 13:34:37 +0000
+Received: from mail-lf1-x135.google.com ([2a00:1450:4864:20::135])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1omxam-001jBs-A7
-	for linux-phy@lists.infradead.org; Mon, 24 Oct 2022 13:34:13 +0000
-Received: by mail-lj1-x22c.google.com with SMTP id z24so2804228ljn.4
-        for <linux-phy@lists.infradead.org>; Mon, 24 Oct 2022 06:34:12 -0700 (PDT)
+	id 1omxb8-001jKi-T1
+	for linux-phy@lists.infradead.org; Mon, 24 Oct 2022 13:34:36 +0000
+Received: by mail-lf1-x135.google.com with SMTP id o12so16759177lfq.9
+        for <linux-phy@lists.infradead.org>; Mon, 24 Oct 2022 06:34:30 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=6NoS4CzM6HbNbKDtA4RCfd8Zj0ymS9k2HvHZ7A1OcBE=;
-        b=ZVz2a2n84yw5F1YXMAlz+q+nvJRxrVAI14sCbr+bgI/G13lWm4Es7/JM4+Ns9n5/+s
-         sDDSbpdJJ09ioxESNjqm/X+AZAqvVXtiC0a3uiyzmMOUXcSbt/I4D6xcyUNiwBmvCWWK
-         z/w3o5rvbQ5LtIWamdAxJH8+aZWyYH+JrI0Pv5AlHgucMjSF0NA/V7sVqal5YkiKXh5C
-         YvdCm0M1RR8Q/IRIW8jvJv1L13fcs81eFuFuJZFVYYjF7jlmxJWJWCjr0ED/SyEzvcV1
-         mHzFMNNlRF4edtN0U0IlZURt5/ko8Efiie9U3kBf6uskMKkC+F4x1b8aJJTxnWyRg0k5
-         jF4Q==
+        bh=HFZjX5S7TOtvQCwB9xl/hGQf5yUtgAWOiJRBK3Mc0r4=;
+        b=M/DrH1WIigY7MKVYeORXxguZGdlaMYm388Q9Y0zeJXJAYpNHUHnC/seWKCRCDKVHZh
+         FYLajzsz66qCaNceZ4vmnt6q8mylKNF6hvucvj0kq6KjGhccTuNPAZWnq83tJUI7Z2St
+         13JCqldQNVjW8JcEu9r2l5ED0Q3ZFdZIr9V2BFb4ECvtpBhJlie6bxLVirhOvz3P8+yc
+         0xYFfs46bfRCSHixg3T4aH/gR/HPM0R3W1YWJdu5KYXrCiItapruc5uPaS87CZjTypfF
+         ZK+d7HI9Y8/0t2DFftZ6FMqgICqwl6t9MaqXPtoysb99Gh9xPGzLnUgX3I4RVBkksVBp
+         UDww==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=6NoS4CzM6HbNbKDtA4RCfd8Zj0ymS9k2HvHZ7A1OcBE=;
-        b=DiWh8Kpek59my8LWGnbwP7aehrs8ykVqev5AnyIVp1YF8RV4EpLahLJgZUIdDc8wgh
-         vNGuNbAjUsAJLl4EkuyYiRe4CZcj+7VqIAB1IA+8RaLR+lqRINFyBsH/1yW/vhL6JbpO
-         6DVAsFq/4dbvHUReuIG8WVtRUjB68HCommkvArk6NO7jCWPSUUQIr86yvdiGcNKjsPA4
-         1Dzgtju1HJtafOwsRH6tNa5nvQJer7RghqfVdWX55XMFFVVoPqDdFLjmXSggORysZ4PH
-         ujM+AzMVyMk0/Hz2aV7SDHrXPJ8SF5iGKcehFY5OuvCb7mf2lgcdZ9Zpiay5oxgAldt4
-         KRyA==
-X-Gm-Message-State: ACrzQf1FG4WLJ7yiykrXVKtALngdcVHnEAy0ihnTi8brWBrxRlieQxQw
-	i4RPMbmf3uxhgh8nM4ZlF+Yjjg==
-X-Google-Smtp-Source: AMsMyM6mvtTdCqcq9VOEBMfv+mspzPOqw0hztaXGnmQNJbPRa4nFm1sK7jFGjmQ084PfoA/vRTmovg==
-X-Received: by 2002:a05:651c:1542:b0:26d:bf29:8cd5 with SMTP id y2-20020a05651c154200b0026dbf298cd5mr11385069ljp.304.1666618451843;
-        Mon, 24 Oct 2022 06:34:11 -0700 (PDT)
+        bh=HFZjX5S7TOtvQCwB9xl/hGQf5yUtgAWOiJRBK3Mc0r4=;
+        b=2229lmb/X1Io0bsUelppwa6eAHsAbsAbEAtD8GXoFvDsqeHIHwJ4l4Gupr2AatXyi2
+         jo+aT43I+RbXq/SyKCDcHo1+FqLsIsm+cUYrE9kkkxJa2OqdWH5vlys5a591dbCjLfDi
+         aEf3zgw19W34gYR4WErOQj6slsYdA4uZeIa/zmap505REVHl/7wbjzWPo/Hb/QsWAK2v
+         6bw4k8hSnvvGI+uhmFzdsLkK8+72i9Lg8rDwKM4Rd8YKO6b3cQdqORVbO1/wM0KuZy+c
+         FWO6kOHWyTBI3y8qLWSabwhc3sw6zbJudOQBz8YTrSrqMkyAe7p4I/C465mUyAcJoKTs
+         MjWg==
+X-Gm-Message-State: ACrzQf3IY+dcVz2nOEutA0uzu5UEyfO+NelVjtzH38PyQA1RO2SUB19U
+	IJo+R010LUYrIGOLqbhmn5zuvA==
+X-Google-Smtp-Source: AMsMyM6Cay83Fhrt2am2YSVlmOjugpbTdf1Ui3AKwagVyB8ovojrmkQXtuTIMd3QITZ4VR22jyyMYg==
+X-Received: by 2002:ac2:5b4e:0:b0:4aa:301f:3e2e with SMTP id i14-20020ac25b4e000000b004aa301f3e2emr2873383lfp.90.1666618468819;
+        Mon, 24 Oct 2022 06:34:28 -0700 (PDT)
 Received: from [10.10.15.130] ([192.130.178.91])
-        by smtp.gmail.com with ESMTPSA id f15-20020a05651201cf00b004aa14caf6e9sm930402lfp.58.2022.10.24.06.34.11
+        by smtp.gmail.com with ESMTPSA id n28-20020a05651203fc00b00494643db68bsm4531561lfq.78.2022.10.24.06.34.28
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 24 Oct 2022 06:34:11 -0700 (PDT)
-Message-ID: <d20d48eb-5ec0-f8da-1f4f-d337f8afd5f2@linaro.org>
-Date: Mon, 24 Oct 2022 16:34:10 +0300
+        Mon, 24 Oct 2022 06:34:28 -0700 (PDT)
+Message-ID: <e19e563c-842d-d54a-c986-62526a58b468@linaro.org>
+Date: Mon, 24 Oct 2022 16:34:27 +0300
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.3.3
-Subject: Re: [PATCH 06/13] phy: qcom-qmp-usb: clean up device-tree parsing
+Subject: Re: [PATCH 07/13] phy: qcom-qmp-usb: clean up probe initialisation
 Content-Language: en-GB
 To: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>
 Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
@@ -75,12 +75,13 @@ Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
  linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
 References: <20221024100632.20549-1-johan+linaro@kernel.org>
- <20221024100632.20549-7-johan+linaro@kernel.org>
+ <20221024100632.20549-8-johan+linaro@kernel.org>
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-In-Reply-To: <20221024100632.20549-7-johan+linaro@kernel.org>
+In-Reply-To: <20221024100632.20549-8-johan+linaro@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221024_063412_383042_143738D6 
-X-CRM114-Status: GOOD (  13.06  )
+X-CRM114-CacheID: sfid-20221024_063434_961366_4423F62A 
+X-CRM114-Status: UNSURE (   8.46  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,21 +99,13 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 24/10/2022 13:06, Johan Hovold wrote:
-> Since the QMP driver split there will be at most a single child node so
-> drop the obsolete iteration construct.
-> 
-> While at it, drop the verbose error logging that would have been
-> printed also on probe deferrals.
-> 
-> Note that there's no need to check if there are additional child nodes
-> (the kernel is not a devicetree validator), but let's return an error if
-> there are no child nodes at all for now.
+> Stop abusing the driver data pointer and instead pass the driver state
+> structure directly to the initialisation helpers during probe.
 > 
 > Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 > ---
->   drivers/phy/qualcomm/phy-qcom-qmp-usb.c | 40 ++++++++-----------------
->   1 file changed, 12 insertions(+), 28 deletions(-)
-> 
+>   drivers/phy/qualcomm/phy-qcom-qmp-usb.c | 46 ++++++++++++-------------
+>   1 file changed, 22 insertions(+), 24 deletions(-)
 
 Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 
