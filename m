@@ -4,62 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A935EC38A2D
-	for <linux-phy@archiver.kernel.org>; Mon, 24 Oct 2022 13:30:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 659EAECAAA1
+	for <linux-phy@archiver.kernel.org>; Mon, 24 Oct 2022 13:30:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Subject:Message-Id:
-	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bTBwob+ZgBxvrtl/HY+417lSg3jMftzkzRiLa57ngBg=; b=164c2Y6v1HZqyW
-	AyYVvkdTnTcvWM3vQedy9EykOlWDu0iuCo0oZMG5OgO4OHB/uS7WjDEmYWkhrLWrdgBBXPxgkeJi5
-	Ofz2I+V3MOdh84+UmN2nDvcy1lqTROfHjFq0XLs7Ye2qLsvDqEy+H4J66OPSj0zqx27izONs+Rsj0
-	VWMRqfTdQ6EPeIWiNLddtAWsSjf+fEDIExQ6ViuoK7s86gOHxt3V42gGbFa0egnVCxlWyyaJ9vKup
-	KMxA5p5mOLKu+HvOEZpQoWfg8rv54iLTCircurejixY41JjvBlm+CHNKHKtXwggFpy5rW/iU9wHb4
-	PG+/LXalDgf+gd8oaFNA==;
+	List-Owner; bh=AkEnnKfQbde7ixVvIgUeAgczDgNG5cqnk/wMtkIwMZ0=; b=nQl8DSxjviJVzP
+	XFFGTGQVRIFS0x429bYug0C3eaOjvQZCbtIvp/DK/vdkuCHjPWi28K0E3OnSxLG2SSFz1/KlTKkDP
+	Q1F1xNJExrxeaC+3uu8YySd/9rCYKCoBBlLxluhNm4ZY6AqTR1NdndwS4NlKw4vN5ocRopZN46B2l
+	ZXZA/5Oq3we8etMAxjqtUX6V6RGWmg/gD5pI5cghZTVaaUrAl/hR9YMp2Glw10/klbiWWZ3mIn2v3
+	EvtTrAIbhxHOh9bjcqZi20AN79cXgSeks4ZeGZA2PemQqtFL5ZiOIn+JxgiHAJP6Oao2okfN7Yn8R
+	rsyrO+9fIjiia2vufPUQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1omxWq-001iEM-1C; Mon, 24 Oct 2022 13:30:08 +0000
-Received: from mail-ot1-f52.google.com ([209.85.210.52])
+	id 1omxXH-001iKI-RL; Mon, 24 Oct 2022 13:30:35 +0000
+Received: from mail-lf1-x130.google.com ([2a00:1450:4864:20::130])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1omxWn-001iDI-NY
-	for linux-phy@lists.infradead.org; Mon, 24 Oct 2022 13:30:07 +0000
-Received: by mail-ot1-f52.google.com with SMTP id cy15-20020a056830698f00b0065c530585afso5903570otb.2
-        for <linux-phy@lists.infradead.org>; Mon, 24 Oct 2022 06:30:04 -0700 (PDT)
+	id 1omxXF-001iJC-1P
+	for linux-phy@lists.infradead.org; Mon, 24 Oct 2022 13:30:34 +0000
+Received: by mail-lf1-x130.google.com with SMTP id be13so16745425lfb.4
+        for <linux-phy@lists.infradead.org>; Mon, 24 Oct 2022 06:30:31 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=qaWaEd0PTNUwkHSdWBfjQaOKY0U/4iADkLwuX4tjYsI=;
+        b=QTLOedLCTWH0jSE73TXFDlpXIEqR6RHh3j3y/2qLMiCJ04s16ps7GqLwvgXl2lHMCR
+         QmogwGOsM/BiXf7D4uKAvaqjEXfvhYSXBEnHwAKLLIAkR693vNvKi/G8Wff7DnZiazsn
+         RQihbA1f6S6qq+gbrpZjQeISnvRLKUyDw7LBo/LaiQerMEgkc64xZtKkp7lkm6+sep0g
+         OGhS1kwhRltDJoXwCHK0nF7Gd0LdRMQBFkL5v2a8BR1GIcLQLgxg8JGz46Ifa7ePwUrs
+         7nvgAKnIoYg4sgNmHoBTsTTutjmfdoNR3rAoIFKeLeXKFa1RXF7lE7GI+CCpSvSIPM3v
+         Ridw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=date:subject:message-id:references:in-reply-to:cc:to:from
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=qVg+okVBVsVNqz1/oTqCye1j7oYLVkbnznHF/a3NqAY=;
-        b=iZWw8Oj7ze9lwBdSbvbExoImwOKTk3IiJQLNRJPdpmpmv3HSm0KRkXL+wvN+MePkyx
-         TdWNx5uYgdhkKFqzdRlL4RyoUnjThyXH57426F9rXtDgTknd5+xm8uwrXjGFnbj2U1VF
-         Rj9NaHYBUCNReVzoecTYNU28Au5jtZLuOoLf0d+PBGOeq7Mxf7Ce6wyEIBb7T2ugwl7H
-         JF6VsXr70+l9LX8ZTDKusJimFox3fwTzMvsGWfGn8YOcgl5k7asrli/bCddaazk3cgum
-         AwsuWIcGuFpLPV4FTRilbMveOG/Jj4uVnXTGI4SW2YMOV0TMh0d1MGQykKcqe1czFjqa
-         hHvQ==
-X-Gm-Message-State: ACrzQf0bBuFeHU9ipIWU/PHPkl+ktv5KDvnBBFCmVkt90SYv3gVHRF3B
-	/K3Wb6JA3zoIqVJExwDjVg==
-X-Google-Smtp-Source: AMsMyM4AQUZXFNB/vdlLThjKII2zhkC/sXhO+TloBWEatc44pTvPltXHFlhLlkEuJZKFRaMFbLyLtA==
-X-Received: by 2002:a05:6830:4120:b0:661:d839:cc63 with SMTP id w32-20020a056830412000b00661d839cc63mr16898634ott.51.1666618203612;
-        Mon, 24 Oct 2022 06:30:03 -0700 (PDT)
-Received: from robh_at_kernel.org (66-90-144-107.dyn.grandenetworks.net. [66.90.144.107])
-        by smtp.gmail.com with ESMTPSA id j31-20020a056870051f00b0012c21a64a76sm14191930oao.24.2022.10.24.06.30.02
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 24 Oct 2022 06:30:03 -0700 (PDT)
-Received: (nullmailer pid 1686092 invoked by uid 1000);
-	Mon, 24 Oct 2022 13:30:04 -0000
-From: Rob Herring <robh@kernel.org>
-To: Wayne Chang <waynec@nvidia.com>
-Cc: jonathanh@nvidia.com, linux-phy@lists.infradead.org, robh+dt@kernel.org, gregkh@linuxfoundation.org, kishon@ti.com, vkoul@kernel.org, linux-tegra@vger.kernel.org, linux-kernel@vger.kernel.org, singhanc@nvidia.com, linux-i2c@vger.kernel.org, mathias.nyman@intel.com, heikki.krogerus@linux.intel.com, linux-usb@vger.kernel.org, thierry.reding@gmail.com, devicetree@vger.kernel.org, treding@nvidia.com, krzysztof.kozlowski+dt@linaro.org, balbi@kernel.org, ajayg@nvidia.com, jckuo@nvidia.com, p.zabel@pengutronix.de
-In-Reply-To: <20221024074128.1113554-3-waynec@nvidia.com>
-References: <20221024074128.1113554-1-waynec@nvidia.com> <20221024074128.1113554-3-waynec@nvidia.com>
-Message-Id: <166661789886.1678573.2345753570567106623.robh@kernel.org>
-Subject: Re: [PATCH 02/11] dt-bindings: usb: Add NVIDIA Tegra XUSB host controller binding
-Date: Mon, 24 Oct 2022 08:30:04 -0500
+        bh=qaWaEd0PTNUwkHSdWBfjQaOKY0U/4iADkLwuX4tjYsI=;
+        b=Jq2GZRTYKJBvOCz3W41zUaBxchJfkAerJ/j0dztD0udvkecGZWrqlbns4Sf0vGDMHe
+         w4tXZ/N/K9JUJG55S0k3HFGGWUFbExTk07vQ7Tlw32D0LkRCZZU6SLwOHE/5oAYtRlpy
+         9DxYIiQg8nNplqCjl/vRMzN5LanlTIvhGxfZhlP3WRisyzh/mRPIHgl/6AMPvauw9d4h
+         aB+Wl1CqAu/DfaHD9t2Kt8w6W+WppHSmsyECeBpthjuz+Zv9g9fFE8Y7yI6626OC9b+Y
+         JArExTjwcc1i4fpIN9/YE53h3UETY35fViZNVJ2n1fiCkx4VoMc4YTquzho4qMS05nK6
+         Fn9w==
+X-Gm-Message-State: ACrzQf0TpessL73YitUNdJScMqQPmBO4o1Bz7GdEOQPEvgGLIWGV9NeE
+	EVlpAew/2+eEd4PyGIlCMDwr3THIWXDCrsU0
+X-Google-Smtp-Source: AMsMyM6HpatqnbXqxsA3dpg5mU8rj42wb07sIMKMi3Kr589GIFHjAxaf7FDsiuupdql6gn3KoPVsDA==
+X-Received: by 2002:a05:6512:c0d:b0:4a2:4129:366e with SMTP id z13-20020a0565120c0d00b004a24129366emr12771891lfu.328.1666618230554;
+        Mon, 24 Oct 2022 06:30:30 -0700 (PDT)
+Received: from [10.10.15.130] ([192.130.178.91])
+        by smtp.gmail.com with ESMTPSA id w25-20020ac24439000000b004a240eb0217sm4522460lfl.251.2022.10.24.06.30.29
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 24 Oct 2022 06:30:30 -0700 (PDT)
+Message-ID: <65db9e0a-29ae-3584-9dcc-e45d8a8a1cb6@linaro.org>
+Date: Mon, 24 Oct 2022 16:30:29 +0300
+MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.3.3
+Subject: Re: [PATCH 02/10] phy: qcom-qmp-ufs: merge driver data
+Content-Language: en-GB
+To: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>
+Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
+ Konrad Dybcio <konrad.dybcio@somainline.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+References: <20221024090041.19574-1-johan+linaro@kernel.org>
+ <20221024090041.19574-3-johan+linaro@kernel.org>
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+In-Reply-To: <20221024090041.19574-3-johan+linaro@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221024_063005_788044_C8DD3F00 
-X-CRM114-Status: GOOD (  11.08  )
+X-CRM114-CacheID: sfid-20221024_063033_111935_E973F492 
+X-CRM114-Status: UNSURE (   8.59  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,50 +93,26 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, 24 Oct 2022 15:41:19 +0800, Wayne Chang wrote:
-> Add device-tree binding documentation for the XUSB host controller present
-> on Tegra194 and Tegra234 SoC. This controller supports the USB 3.1
-> specification.
+On 24/10/2022 12:00, Johan Hovold wrote:
+> The UFS QMP PHY driver only manages a single PHY so merge the old
+> qcom_qmp and qmp_phy structures and drop the PHY array.
 > 
-> Signed-off-by: Wayne Chang <waynec@nvidia.com>
+> Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 > ---
->  .../bindings/usb/nvidia,tegra-xhci.yaml       | 213 ++++++++++++++++++
->  1 file changed, 213 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/usb/nvidia,tegra-xhci.yaml
+>   drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 171 +++++++++---------------
+>   1 file changed, 63 insertions(+), 108 deletions(-)
 > 
 
-My bot found errors running 'make DT_CHECKER_FLAGS=-m dt_binding_check'
-on your patch (DT_CHECKER_FLAGS is new in v5.13):
+Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 
-yamllint warnings/errors:
-
-dtschema/dtc warnings/errors:
-Error: Documentation/devicetree/bindings/usb/nvidia,tegra-xhci.example.dts:36.27-28 syntax error
-FATAL ERROR: Unable to parse input tree
-make[1]: *** [scripts/Makefile.lib:406: Documentation/devicetree/bindings/usb/nvidia,tegra-xhci.example.dtb] Error 1
-make[1]: *** Waiting for unfinished jobs....
-make: *** [Makefile:1492: dt_binding_check] Error 2
-
-doc reference errors (make refcheckdocs):
-
-See https://patchwork.ozlabs.org/patch/
-
-This check can fail if there are any dependencies. The base for a patch
-series is generally the most recent rc1.
-
-If you already ran 'make dt_binding_check' and didn't see the above
-error(s), then make sure 'yamllint' is installed and dt-schema is up to
-date:
-
-pip3 install dtschema --upgrade
-
-Please check and re-submit.
+-- 
+With best wishes
+Dmitry
 
 
 -- 
