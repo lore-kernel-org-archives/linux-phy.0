@@ -4,70 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D9948C38A2D
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E9020FA373E
 	for <linux-phy@archiver.kernel.org>; Mon, 24 Oct 2022 14:54:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3cRUz8KILKG+EhibPVRyVDZkdiFkW5+v8eLur6jb2PQ=; b=09xMpHc+/7SaCz
-	8pNicK2WrHe1FfA5tnYcajxijaA85nmDB1uBY1u1KXKszMs8MYo9mvICqSBzniqG6z0seUji7eGJk
-	eApT8I/rEBI99g0GXgkyWSbjg9FB5EWHJN+Aiee27xJExD1bzFlT+i27JmqKA9CqWXDI9YPy5w49Y
-	jrT8LTHaYrNVXJ3lUHpddIVnBZnm4AMfgVV3ZoRp/4d9chtzKQr4089Z7NaQR4TQ6+IePYlxrWVbV
-	oDSPYZFt7G7wpNkaRc9B9+A4YuqABQjzKsu1+ERLLbkk/VzuLVpTXz+GGgxj/Kc8JmJUSHzAj33oN
-	R/TQIgRs5G6XD32lwHhw==;
+	List-Owner; bh=urzy+MoUvkugZ7VxA4Pqh1Qb7TU7QRMCSD/qJRal+KE=; b=GCD9u8UfMTFuxQ
+	DsUiUMbEUQh76RR9X325igU7HS0WjQkzgaDGhZoUbQYPB2nu3TYZ+XyqpYI5fqHG9JGqUIHi9cMzQ
+	BwdM91cD0jYwHP9gGUnCOWdNdROa6X/48KJJtl0wJgzLNYvMsd9Ow2wyRL3ksouRChUAIyaDKwYwm
+	e89PU1tlXKi0/WusD4uXx4nmAbEhHlyFMqGPPLscEBz1GUvIE/zAcOmijhUcRD1/dLkYEMgUgrMvm
+	Byto8/u/ewYASd85MAICpXxwmRaUf0HrBnxmKc6WHA4e4UW1Ui6bGaE3cRpGNxLlSaq3TCyEgQKrd
+	kHtE2xPrjAavSWAiSuFA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1omyqt-00203x-4y; Mon, 24 Oct 2022 14:54:55 +0000
-Received: from sender4-op-o18.zoho.com ([136.143.188.18])
+	id 1omyqt-002041-9A; Mon, 24 Oct 2022 14:54:55 +0000
+Received: from mail-oa1-f44.google.com ([209.85.160.44])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1omyqh-00201i-WB; Mon, 24 Oct 2022 14:54:45 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1666623276; cv=none; 
-	d=zohomail.com; s=zohoarc; 
-	b=OuC5UuswYeJwvDBhbj5/UnDO5N1jT5QmGcDoTqLjmM+WB2SyFIMZK1U9Iakm2oM1Pg5egIcUhvJBEt2o0rThSEN8L5e/AQaz6ddjwD0W6eEXfxscplmQGhRhxi//XtO8neaYjes1G6VzYplBythR3bwn+ryak1tfHqpUt112Qsg=
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1666623276; h=Content-Type:Content-Transfer-Encoding:Cc:Date:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:To; 
-	bh=KtFnxpe3/zLGu3zMT8VZpJKVy8JzlMwgd9rxKAODgBc=; 
-	b=OhlF9/Ppa7U2cWGLMO+SpNRfzDiQj5sDmuroumxzRZZuTSO7pyfgJGiMQK6YSafQb9FmG08oC4EaB9AtRRjVcuqTBg3Hm5aby24aBd6ozCt/8VHqR8n1mdXbz2/9CjYUsCp6N1vWz6Vid9GJkkZOjvWzNx5kvqHtQ8F1im6KQzA=
-ARC-Authentication-Results: i=1; mx.zohomail.com;
-	dkim=pass  header.i=icenowy.me;
-	spf=pass  smtp.mailfrom=uwu@icenowy.me;
-	dmarc=pass header.from=<uwu@icenowy.me>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1666623276;
-	s=zmail; d=icenowy.me; i=uwu@icenowy.me;
-	h=Message-ID:Subject:Subject:From:From:To:To:Cc:Cc:Date:Date:In-Reply-To:References:Content-Type:Content-Transfer-Encoding:MIME-Version:Message-Id:Reply-To;
-	bh=KtFnxpe3/zLGu3zMT8VZpJKVy8JzlMwgd9rxKAODgBc=;
-	b=HjmrGs8cF4SHI5gvT0qasK+xbp3ZRTpFLth0wBnuvei9m5umaJ8AIrP7sfc9w/nl
-	XtwQuoLdjJxrD6z59KNz9Oou9mJHp7rOdrAzVyn8kRd5jE4TzcKbyjNwozA4IwXSLlC
-	6NZ9NJQQs4I4JzJJwAp7qvTa+aVbRIQdpnst2ZF8=
-Received: from edelgard.fodlan.icenowy.me (112.94.102.105 [112.94.102.105]) by mx.zohomail.com
-	with SMTPS id 166662327277432.6796919089179; Mon, 24 Oct 2022 07:54:32 -0700 (PDT)
-Message-ID: <6eac76260f5d47542ac88143082a2b4393deb3bf.camel@icenowy.me>
-Subject: Re: [PATCH v2 09/10] dt-binding: arm: sunxi: add compatible strings
- for PopStick v1.1
-From: Icenowy Zheng <uwu@icenowy.me>
-To: Andre Przywara <andre.przywara@arm.com>
-Cc: Rob Herring <robh+dt@kernel.org>, Krzysztof Kozlowski
- <krzysztof.kozlowski+dt@linaro.org>, Chen-Yu Tsai <wens@csie.org>, Jernej
- Skrabec <jernej.skrabec@gmail.com>, Samuel Holland <samuel@sholland.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, soc@kernel.org,
- linux-kernel@vger.kernel.org,  devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org,  linux-sunxi@lists.linux.dev,
- linux-phy@lists.infradead.org,  linux-usb@vger.kernel.org
-Date: Mon, 24 Oct 2022 22:54:25 +0800
-In-Reply-To: <20221024151714.59968916@donnerap.cambridge.arm.com>
-References: <20221012055602.1544944-1-uwu@icenowy.me>
-	 <20221012055602.1544944-10-uwu@icenowy.me>
-	 <20221024151714.59968916@donnerap.cambridge.arm.com>
-Organization: Anthon Open-Source Community
-User-Agent: Evolution 3.44.4 
+	id 1omyqm-00202c-0D
+	for linux-phy@lists.infradead.org; Mon, 24 Oct 2022 14:54:49 +0000
+Received: by mail-oa1-f44.google.com with SMTP id 586e51a60fabf-13b103a3e5dso12151335fac.2
+        for <linux-phy@lists.infradead.org>; Mon, 24 Oct 2022 07:54:47 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=gezVBAneqrs7XaH/fdMxwAK/2YWaqmP9HW9vTh1Ptis=;
+        b=gaBqydOckuibG9qiqTk9Q9ysXuApQZ8v4ArMtsTJKvscYyhsoofY+Pi3tJCMOcP22K
+         o4CuHZ6EykZvpg+Ir7IO59DfwRQo7LEgtfuMVF4LcOhIeZjlUHmgyQWMIxBW1cIpmRXQ
+         6X04eN7oFLWOW9WZiWlDayuor3lTDK8kh5F9kYaU3UxkXbACONpftIRWeeaBJMCyb3Ro
+         EBkwHg71mSy/NPbGxCVor1jxi/ZLVPkJe/l/ZS7QWK/FMlbiIFzfi228F5p7tcHzUFxF
+         aVkRdVpwa3YveJCypyK2KJL0PcuO5iD9KhdJikMHXLox7hKc8Q5VECF1EOj5tiPxVc2c
+         SgPQ==
+X-Gm-Message-State: ACrzQf1rZ8jSp4cAAt35uYhwv0oj/rLYVGYzATb8W0+q5mSH8ikxQtj3
+	9ZO+c03tNXK71ZB0bvbR7w==
+X-Google-Smtp-Source: AMsMyM42Jg3r8Ewtmh0Qc3jpN13ZbUDnPdjYyras8m0IwxfR0o9ZvqlFWkFA5v9EIKywV/cIiznewg==
+X-Received: by 2002:a05:6870:d389:b0:13b:a0cd:5fcd with SMTP id k9-20020a056870d38900b0013ba0cd5fcdmr3731915oag.260.1666623286325;
+        Mon, 24 Oct 2022 07:54:46 -0700 (PDT)
+Received: from robh_at_kernel.org (66-90-144-107.dyn.grandenetworks.net. [66.90.144.107])
+        by smtp.gmail.com with ESMTPSA id t19-20020a056871055300b0013b1301ce42sm5474921oal.47.2022.10.24.07.54.45
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 24 Oct 2022 07:54:45 -0700 (PDT)
+Received: (nullmailer pid 1774935 invoked by uid 1000);
+	Mon, 24 Oct 2022 14:54:46 -0000
+Date: Mon, 24 Oct 2022 09:54:46 -0500
+From: Rob Herring <robh@kernel.org>
+To: Wayne Chang <waynec@nvidia.com>
+Cc: gregkh@linuxfoundation.org, krzysztof.kozlowski+dt@linaro.org, treding@nvidia.com, jonathanh@nvidia.com, thierry.reding@gmail.com, heikki.krogerus@linux.intel.com, ajayg@nvidia.com, kishon@ti.com, vkoul@kernel.org, p.zabel@pengutronix.de, balbi@kernel.org, mathias.nyman@intel.com, jckuo@nvidia.com, linux-usb@vger.kernel.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, singhanc@nvidia.com, linux-i2c@vger.kernel.org, linux-phy@lists.infradead.org, linux-tegra@vger.kernel.org
+Subject: Re: [PATCH 02/11] dt-bindings: usb: Add NVIDIA Tegra XUSB host
+ controller binding
+Message-ID: <20221024145446.GA1763588-robh@kernel.org>
+References: <20221024074128.1113554-1-waynec@nvidia.com>
+ <20221024074128.1113554-3-waynec@nvidia.com>
 MIME-Version: 1.0
-X-ZohoMailClient: External
+Content-Disposition: inline
+In-Reply-To: <20221024074128.1113554-3-waynec@nvidia.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221024_075444_124565_38CD053B 
-X-CRM114-Status: GOOD (  17.70  )
+X-CRM114-CacheID: sfid-20221024_075448_080066_68967591 
+X-CRM114-Status: GOOD (  21.07  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,42 +76,274 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-5ZyoIDIwMjItMTAtMjTmmJ/mnJ/kuIDnmoQgMTU6MTcgKzAxMDDvvIxBbmRyZSBQcnp5d2FyYeWG
-memBk++8mgo+IE9uIFdlZCwgMTIgT2N0IDIwMjIgMTM6NTY6MDEgKzA4MDAKPiBJY2Vub3d5IFpo
-ZW5nIDx1d3VAaWNlbm93eS5tZT4gd3JvdGU6Cj4gCj4gSGkgSWNlbm93eSwKPiAKPiA+IFNvdXJj
-ZVBhcnRzIFBvcFN0aWNrIGlzIGEgRjFDMjAwcy1iYXNlZCBzdGljay1zaGFwZWQgU0JDLgo+ID4g
-Cj4gPiBBZGQgYSBjb21wYXRpYmxlIHN0cmluZyBsaXN0IGZvciBpdHMgdjEuMSB2ZXJzaW9uICh0
-aGUgZmlyc3QgcHVibGljCj4gPiBvbmUpLgo+IAo+IElmIHYxLjAgKG9yIGFueXRoaW5nIHByaW9y
-KSBuZXZlciBtYWRlIGl0IHRvIHRoZSBvdXRzaWRlIHdvcmxkLCBJCj4gZG9uJ3QKPiB0aGluayB3
-ZSBuZWVkIHRvIG1lbnRpb24gdGhhdCBpbiB0aGUgcHVibGljIGJpbmRpbmdzLgo+IEluIGdlbmVy
-YWwgTGludXggc2VlbXMgdG8gZGlzY291cmFnZSBzdXBwb3J0IGZvciB1bnJlbGVhc2VkIGhhcmR3
-YXJlLAo+IHNvIEkKPiB0aGluayB5b3UgY2FuIGp1c3QgZHJvcCB0aGUgInNvdXJjZXBhcnRzLHBv
-cHN0aWNrLXYxLjEiIG5hbWUuCgpUaGVyZSdzIGdvaW5nIHRvIGJlIHYyLjAsIHdoaWNoIGlzIHF1
-aXRlIGRpZmZlcmVudCB0byB2MS4xLgoKPiAKPiBDaGVlcnMsCj4gQW5kcmUKPiAKPiA+IFNpZ25l
-ZC1vZmYtYnk6IEljZW5vd3kgWmhlbmcgPHV3dUBpY2Vub3d5Lm1lPgo+ID4gLS0tCj4gPiBOZXcg
-cGF0Y2ggaW50cm9kdWNlZCBpbiB2Mi4KPiA+IAo+ID4gwqBEb2N1bWVudGF0aW9uL2RldmljZXRy
-ZWUvYmluZGluZ3MvYXJtL3N1bnhpLnlhbWwgfCA3ICsrKysrKysKPiA+IMKgMSBmaWxlIGNoYW5n
-ZWQsIDcgaW5zZXJ0aW9ucygrKQo+ID4gCj4gPiBkaWZmIC0tZ2l0IGEvRG9jdW1lbnRhdGlvbi9k
-ZXZpY2V0cmVlL2JpbmRpbmdzL2FybS9zdW54aS55YW1sCj4gPiBiL0RvY3VtZW50YXRpb24vZGV2
-aWNldHJlZS9iaW5kaW5ncy9hcm0vc3VueGkueWFtbAo+ID4gaW5kZXggM2FkMWNkNTBlM2ZlLi5j
-NmUwYWQ3ZjQ2MWQgMTAwNjQ0Cj4gPiAtLS0gYS9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmlu
-ZGluZ3MvYXJtL3N1bnhpLnlhbWwKPiA+ICsrKyBiL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9i
-aW5kaW5ncy9hcm0vc3VueGkueWFtbAo+ID4gQEAgLTgwNyw2ICs4MDcsMTMgQEAgcHJvcGVydGll
-czoKPiA+IMKgwqDCoMKgwqDCoMKgwqDCoMKgIC0gY29uc3Q6IHNpbmxpbngsc2luYTMzCj4gPiDC
-oMKgwqDCoMKgwqDCoMKgwqDCoCAtIGNvbnN0OiBhbGx3aW5uZXIsc3VuOGktYTMzCj4gPiDCoAo+
-ID4gK8KgwqDCoMKgwqAgLSBkZXNjcmlwdGlvbjogU291cmNlUGFydHMgUG9wU3RpY2sgdjEuMQo+
-ID4gK8KgwqDCoMKgwqDCoMKgIGl0ZW1zOgo+ID4gK8KgwqDCoMKgwqDCoMKgwqDCoCAtIGNvbnN0
-OiBzb3VyY2VwYXJ0cyxwb3BzdGljay12MS4xCj4gPiArwqDCoMKgwqDCoMKgwqDCoMKgIC0gY29u
-c3Q6IHNvdXJjZXBhcnRzLHBvcHN0aWNrCj4gPiArwqDCoMKgwqDCoMKgwqDCoMKgIC0gY29uc3Q6
-IGFsbHdpbm5lcixzdW5pdi1mMWMyMDBzCj4gPiArwqDCoMKgwqDCoMKgwqDCoMKgIC0gY29uc3Q6
-IGFsbHdpbm5lcixzdW5pdi1mMWMxMDBzCj4gPiArCj4gPiDCoMKgwqDCoMKgwqAgLSBkZXNjcmlw
-dGlvbjogU0w2MzEgQWN0aW9uIENhbWVyYSB3aXRoIElNWDE3OQo+ID4gwqDCoMKgwqDCoMKgwqDC
-oCBpdGVtczoKPiA+IMKgwqDCoMKgwqDCoMKgwqDCoMKgIC0gY29uc3Q6IGFsbHdpbm5lcixzbDYz
-MS1pbXgxNzkKPiAKCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMu
-aW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5m
-by9saW51eC1waHkK
+On Mon, Oct 24, 2022 at 03:41:19PM +0800, Wayne Chang wrote:
+> Add device-tree binding documentation for the XUSB host controller present
+> on Tegra194 and Tegra234 SoC. This controller supports the USB 3.1
+> specification.
+> 
+> Signed-off-by: Wayne Chang <waynec@nvidia.com>
+> ---
+>  .../bindings/usb/nvidia,tegra-xhci.yaml       | 213 ++++++++++++++++++
+>  1 file changed, 213 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/usb/nvidia,tegra-xhci.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/usb/nvidia,tegra-xhci.yaml b/Documentation/devicetree/bindings/usb/nvidia,tegra-xhci.yaml
+> new file mode 100644
+> index 000000000000..d261a419a04f
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/usb/nvidia,tegra-xhci.yaml
+> @@ -0,0 +1,213 @@
+> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: "http://devicetree.org/schemas/usb/nvidia,tegra-xhci.yaml#"
+> +$schema: "http://devicetree.org/meta-schemas/core.yaml#"
+> +
+> +title: Device tree binding for NVIDIA Tegra XUSB host controller
+
+Drop 'Device tree binding for '
+
+> +
+> +description:
+> +  The Tegra XHCI controller supports both USB 2.0 HighSpeed/FullSpeed and
+> +  USB 3.1 SuperSpeed protocols.
+> +
+> +maintainers:
+> +  - Wayne Chang <waynec@nvidia.com>
+> +
+
+Ref to usb-xhci.yaml? Or usb-hcd.yaml.
+
+> +properties:
+> +  compatible:
+> +    items:
+> +      - enum:
+> +          - nvidia,tegra194-xusb # For Tegra194
+> +          - nvidia,tegra234-xusb # For Tegra234
+
+The comment is kind of redundant.
+
+> +
+> +  reg:
+> +    minItems: 2
+> +    items:
+> +      - description: XUSB host controller registers
+> +      - description: XUSB host PCI Config registers
+> +      - description: XUSB host bar2 registers
+
+Drop 'XUSB host '
+
+> +
+> +  reg-names:
+> +    minItems: 2
+> +    items:
+> +      - const: hcd
+> +      - const: fpci
+> +      - const: bar2
+> +
+> +  interrupts:
+> +    items:
+> +      - description: Must contain the XUSB host interrupt.
+> +      - description: Must contain the XUSB mbox interrupt.
+
+Drop 'Must contain the '
+
+> +
+> +  clocks:
+> +    items:
+> +      - description: Clock to enable core XUSB host clock.
+> +      - description: Clock to enable XUSB falcon clock.
+> +      - description: Clock to enable XUSB super speed clock.
+> +      - description: Clock to enable XUSB super speed dev clock.
+> +      - description: Clock to enable XUSB high speed dev clock.
+> +      - description: Clock to enable XUSB full speed dev clock.
+> +      - description: Clock to enable XUSB UTMI PLL clock.
+> +      - description: Clock to enable core XUSB dev clock.
+> +      - description: Clock to enable XUSB PLLE clock.
+
+Drop 'Clock to enable '
+
+> +
+> +  clock-names:
+> +    items:
+> +      - const: xusb_host
+> +      - const: xusb_falcon_src
+> +      - const: xusb_ss
+> +      - const: xusb_ss_src
+> +      - const: xusb_hs_src
+> +      - const: xusb_fs_src
+> +      - const: pll_u_480m
+> +      - const: clk_m
+> +      - const: pll_e
+> +
+> +  interconnects:
+> +    items:
+> +      - description: memory read client
+> +      - description: memory write client
+> +
+> +  interconnect-names:
+> +    items:
+> +      - const: dma-mem # read
+> +      - const: write
+> +
+> +  iommus:
+> +    maxItems: 1
+> +
+> +  power-domains:
+> +    items:
+> +      - description: XUSBC(host) power-domain
+> +      - description: XUSBA(superspeed) power-domain
+> +
+> +  power-domain-names:
+> +    items:
+> +      - const: xusb_host
+> +      - const: xusb_ss
+
+Drop 'xusb_'.
+
+> +
+> +  nvidia,xusb-padctl:
+> +    $ref: /schemas/types.yaml#/definitions/phandle
+> +    description:
+> +      phandle to the XUSB pad controller that is used to configure the USB pads
+> +      used by the XUDC controller.
+> +
+> +  phys:
+> +    minItems: 1
+> +    maxItems: 8
+> +    description:
+> +      Must contain an entry for each entry in phy-names.
+> +      See ../phy/phy-bindings.txt for details.
+
+Drop description.
+
+> +
+> +  phy-names:
+> +    minItems: 1
+> +    maxItems: 8
+> +    items:
+> +      anyOf:
+> +        - const: usb2-0
+> +        - const: usb2-1
+> +        - const: usb2-2
+> +        - const: usb2-3
+> +        - const: usb3-0
+> +        - const: usb3-1
+> +        - const: usb3-2
+> +        - const: usb3-3
+> +
+> +  dma-coherent:
+> +    type: boolean
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - reg-names
+> +  - interrupts
+> +  - clocks
+> +  - clock-names
+> +  - power-domains
+> +  - power-domain-names
+> +  - nvidia,xusb-padctl
+> +  - phys
+> +  - phy-names
+> +
+> +allOf:
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            enum:
+> +              - nvidia,tegra194-xusb
+> +    then:
+> +      properties:
+> +        reg:
+> +          minItems: 2
+> +        reg-names:
+> +          minItems: 2
+> +        clocks:
+> +          minItems: 9
+> +        clock-names:
+> +          minItems: 9
+> +
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            enum:
+> +              - nvidia,tegra234-xusb
+> +    then:
+> +      properties:
+> +        reg:
+> +          minItems: 3
+> +        reg-names:
+> +          minItems: 3
+> +        clocks:
+> +          minItems: 9
+> +        clock-names:
+> +          minItems: 9
+
+Same number of items, why are clocks in the if/then?
+
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/gpio/tegra234-gpio.h>
+> +    #include <dt-bindings/clock/tegra234-clock.h>
+> +    #include <dt-bindings/memory/tegra234-mc.h>
+> +    #include <dt-bindings/power/tegra234-powergate.h>
+> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+> +    usb@3610000 {
+> +      compatible = "nvidia,tegra234-xusb";
+> +      reg = <0x03610000 0x40000>,
+> +            <0x03600000 0x10000>,
+> +            <0x03650000 0x10000>;
+> +      reg-names = "hcd", "fpci", "bar2";
+> +
+> +      interrupts = <GIC_SPI 163 IRQ_TYPE_LEVEL_HIGH>,
+> +             <GIC_SPI 164 IRQ_TYPE_LEVEL_HIGH>;
+> +
+> +      clocks = <&bpmp TEGRA234_CLK_XUSB_CORE_HOST>,
+> +         <&bpmp TEGRA234_CLK_XUSB_FALCON>,
+> +         <&bpmp TEGRA234_CLK_XUSB_CORE_SS>,
+> +         <&bpmp TEGRA234_CLK_XUSB_SS>,
+> +         <&bpmp TEGRA234_CLK_CLK_M>,
+> +         <&bpmp TEGRA234_CLK_XUSB_FS>,
+> +         <&bpmp TEGRA234_CLK_UTMIP_PLL>,
+> +         <&bpmp TEGRA234_CLK_CLK_M>,
+> +         <&bpmp TEGRA234_CLK_PLLE>;
+> +      clock-names = "xusb_host", "xusb_falcon_src",
+> +              "xusb_ss", "xusb_ss_src", "xusb_hs_src",
+> +              "xusb_fs_src", "pll_u_480m", "clk_m",
+> +              "pll_e";
+> +      interconnects = <&mc TEGRA234_MEMORY_CLIENT_XUSB_HOSTR &emc>,
+> +          <&mc TEGRA234_MEMORY_CLIENT_XUSB_HOSTW &emc>;
+> +      interconnect-names = "dma-mem", "write";
+> +      iommus = <&smmu_niso1 TEGRA234_SID_XUSB_HOST>;
+> +
+> +      power-domains = <&bpmp TEGRA234_POWER_DOMAIN_XUSBC>,
+> +          <&bpmp TEGRA234_POWER_DOMAIN_XUSBA>;
+> +      power-domain-names = "xusb_host", "xusb_ss";
+> +
+> +      nvidia,xusb-padctl = <&xusb_padctl>;
+> +
+> +      phys =  <&pad_lanes_usb2_0>;
+> +      phy-names = "usb2-0";
+> +
+> +    };
+> -- 
+> 2.25.1
+> 
+> 
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
