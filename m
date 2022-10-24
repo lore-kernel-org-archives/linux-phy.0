@@ -4,47 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C14D5C38A2D
-	for <linux-phy@archiver.kernel.org>; Mon, 24 Oct 2022 09:01:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 08542C38A2D
+	for <linux-phy@archiver.kernel.org>; Mon, 24 Oct 2022 10:07:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Sr6V8UOuKEzAfNL4xj+OvsoQMXZeo+bE/cjuCyx9sSo=; b=UYc29vWO+RT+gw
-	RW4norlcNPvqyvyzLIclLumsuHCQ44NVJB8H/1t+SUqinLyP6Jdr8R2gUPJuLHszVgbc4RVAI2Z7C
-	sZ/06T3wbYIPgMq77XkBXYM3TtptoCr6jh12E7aQxa9+t0HNbPhADcjrIc2RiIOfqCCgGkZr63dZc
-	Ivlydwx9h2kjFMsSKVBeH2h87U6zrxFseCKT4W/udvn016qprpVbv29h1rDn2XU3Q17/x7MIRvp6z
-	PlZU4h/eTbNc/N4dB6VAU748ySQlCH66LTg5hnEthr93iHkZpnmSTNEOfiTYGdq5f+YE+g12wlQIe
-	ORcjmNR6i9M7ry0pwIkA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ycpBBm6EcwE0oXPmiyZQnbN1+UVKZWsyC3Ic79aEf30=; b=ccB7C6whWS+4AN
+	Kd50xmbnkRsLi+W/cOz+edywpY5vX1Vgnq072LRpyGrolzlCIYQHn+HHm5ORIwtLTb12KsSy4CCBl
+	yb8FdCf/ak5huPplyMKpDugDTpx0har6ce9Nhka02n66iRhRmqF3omI0u7xUTTYjiTkunS1YSwNrf
+	DHb1324TsfNkVv7V+AlPdkCwZjtOSiBZb75fdpZgA5i8PhqpHrL3ZPgfoxNbWOWuS0jQcpjUx6UOW
+	u+dgEZVxKQ9AHDDgC8qE6mx0k4W8/CScn8DZnIYSWSSOJgN8zyNc8Yw+j9QnsdPMnZqEaH3X89MHL
+	OeLfjmXTdk1rRpXjECGw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1omtLC-000GlA-3r; Mon, 24 Oct 2022 09:01:50 +0000
-Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
+	id 1omuMN-000c89-Cz; Mon, 24 Oct 2022 10:07:07 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1omtL3-000Gdx-TZ
-	for linux-phy@lists.infradead.org; Mon, 24 Oct 2022 09:01:44 +0000
+	id 1omuMK-000c5T-SQ
+	for linux-phy@lists.infradead.org; Mon, 24 Oct 2022 10:07:06 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id 9DEBFB80FED;
-	Mon, 24 Oct 2022 09:01:40 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id BCF56C43470;
-	Mon, 24 Oct 2022 09:01:37 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 6F3336114F;
+	Mon, 24 Oct 2022 10:07:04 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 40D1BC433D6;
+	Mon, 24 Oct 2022 10:07:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1666602097;
-	bh=SLoNuE0wOlAn/sJQ6E07BFsAXMng8qt1Wiq6RyuB1MM=;
-	h=From:To:Cc:Subject:Date:From;
-	b=FMawn2Mi0AT5p/8QuvcGgd/YzYtdDQZPjTLr6yGd8153qHmn343LfNOTLwJPZxe5L
-	 qF3+Eo0CITPjdi3k9xfW2T6I3k26x2EBA7BKjZqvdwo6GCHVNlsXgJl95yKzOgMaoc
-	 TVWpo9BjLq4k8alB8Kp+Ydrz5kQtLO/lUamJpIaD8aMR6mPOAD1IiWVwpIlwOBrwiw
-	 iTRrLzPyO6OoulmERZX54MH8cvFbD7MqR6NwU+HNkptR+gBH3Qc2NALal5pWHh3qfZ
-	 vU/xWGz7ayQ/CHlQ6ANoftG/qHsaYmCvuJhAK7eZ7X+zIfVDrV+5Rr2qpC5llyae5g
-	 jr/43JdXKel7A==
+	s=k20201202; t=1666606023;
+	bh=0hzUAeDiWrfZBYKIvIEdXlwF8MUsk8JJpNzgiTtrLCI=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=Ix2AL/EW5Arc0bYOZSRRKXdegUidwM6qgvI3WADFJgw1frJOwJ2uKKIHxKhUOkxzh
+	 SZvyMtBaPr+LeCeDdaKctPPwdw/WO+/GPE076jdpkoTGPKaoOEzwRsr2cseErs7vOj
+	 7ZONirFV0gUBMDmqi/SYmlNj4bIhI5oJ1lGTCK757H8qD+3D2JsmmKdfepRSVcYo4/
+	 E2MPguc6f7MhSyOAElLf8t7u+okJUudZlPb/bBdGoL/tW9ColaijE1nqDG6sKb17jx
+	 egWUIwPNzGpWhxuGmz6kx/N4QB6v2mQnG+YuQed6l3XdkHADWURGYBjXTsZJjgNsKn
+	 i288rQ6p71zFw==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1omtKi-00056L-TD; Mon, 24 Oct 2022 11:01:20 +0200
+	id 1omuM2-0005MA-UC; Mon, 24 Oct 2022 12:06:46 +0200
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>
 Cc: Andy Gross <agross@kernel.org>,
@@ -58,14 +58,16 @@ Cc: Andy Gross <agross@kernel.org>,
 	devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH 00/10] phy: qcom-qmp-ufs: fix sc8280xp binding
-Date: Mon, 24 Oct 2022 11:00:31 +0200
-Message-Id: <20221024090041.19574-1-johan+linaro@kernel.org>
+Subject: [PATCH 03/13] phy: qcom-qmp-usb: move device-id table
+Date: Mon, 24 Oct 2022 12:06:22 +0200
+Message-Id: <20221024100632.20549-4-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.37.3
+In-Reply-To: <20221024100632.20549-1-johan+linaro@kernel.org>
+References: <20221024100632.20549-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221024_020142_110687_7F3B22FF 
-X-CRM114-Status: GOOD (  13.19  )
+X-CRM114-CacheID: sfid-20221024_030705_011228_664D6545 
+X-CRM114-Status: GOOD (  13.16  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,54 +84,158 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This series fixes the UFS PHY devicetree binding for SC8280XP and adds
-support for the new updated binding to the driver.
+Move the device-id table below probe() and next to the driver structure
+to keep the driver callback functions grouped together.
 
-The first half of the series clean up the driver in preparation for
-supporting SC8280XP and its new binding that drops the legacy child node
-and the (incomplete) description of register subregions.
+Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
+---
+ drivers/phy/qualcomm/phy-qcom-qmp-usb.c | 126 ++++++++++++------------
+ 1 file changed, 63 insertions(+), 63 deletions(-)
 
-The other QMP bindings suffer from similar problems and the PCIe driver
-is being fixed here:
-
-	https://lore.kernel.org/lkml/20221021110947.28103-1-johan+linaro@kernel.org/
-
-and follow-on series will do corresponding changes to the USB and combo
-QMP bindings and drivers.
-
-Note that these patches depend on the linux-phy next branch of today and
-the following two series:
-
- 1. [PATCH v2 00/14] phy: qcom-qmp: further prep cleanups
-
-    https://lore.kernel.org/lkml/20221012081241.18273-1-johan+linaro@kernel.org
-
- 2. [PATCH 00/20] phy: qcom-qmp: further prep fixes and cleanups (set 3)
-
-    https://lore.kernel.org/lkml/20221012084846.24003-1-johan+linaro@kernel.org
-
-Johan
-
-
-Johan Hovold (10):
-  phy: qcom-qmp-ufs: move device-id table
-  phy: qcom-qmp-ufs: merge driver data
-  phy: qcom-qmp-ufs: clean up device-tree parsing
-  phy: qcom-qmp-ufs: clean up probe initialisation
-  phy: qcom-qmp-ufs: rename PHY ops structure
-  phy: qcom-qmp-ufs: clean up PHY init
-  dt-bindings: phy: qcom,qmp-ufs: rename current bindings
-  dt-bindings: phy: qcom,qmp-ufs: fix sc8280xp binding
-  phy: qcom-qmp-ufs: restructure PHY creation
-  phy: qcom-qmp-ufs: add support for updated sc8280xp binding
-
- ...phy.yaml => qcom,msm8996-qmp-ufs-phy.yaml} |  17 +-
- .../phy/qcom,sc8280xp-qmp-ufs-phy.yaml        |  83 ++++
- drivers/phy/qualcomm/phy-qcom-qmp-ufs.c       | 381 +++++++++---------
- 3 files changed, 287 insertions(+), 194 deletions(-)
- rename Documentation/devicetree/bindings/phy/{qcom,qmp-ufs-phy.yaml => qcom,msm8996-qmp-ufs-phy.yaml} (93%)
- create mode 100644 Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
-
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
+index 41a4548f3f99..4591128743c7 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
+@@ -2501,69 +2501,6 @@ int qmp_usb_create(struct device *dev, struct device_node *np, int id,
+ 	return 0;
+ }
+ 
+-static const struct of_device_id qmp_usb_of_match_table[] = {
+-	{
+-		.compatible = "qcom,ipq6018-qmp-usb3-phy",
+-		.data = &ipq8074_usb3phy_cfg,
+-	}, {
+-		.compatible = "qcom,ipq8074-qmp-usb3-phy",
+-		.data = &ipq8074_usb3phy_cfg,
+-	}, {
+-		.compatible = "qcom,msm8996-qmp-usb3-phy",
+-		.data = &msm8996_usb3phy_cfg,
+-	}, {
+-		.compatible = "qcom,msm8998-qmp-usb3-phy",
+-		.data = &msm8998_usb3phy_cfg,
+-	}, {
+-		.compatible = "qcom,qcm2290-qmp-usb3-phy",
+-		.data = &qcm2290_usb3phy_cfg,
+-	}, {
+-		.compatible = "qcom,sc7180-qmp-usb3-phy",
+-		.data = &sc7180_usb3phy_cfg,
+-	}, {
+-		.compatible = "qcom,sc8180x-qmp-usb3-phy",
+-		.data = &sm8150_usb3phy_cfg,
+-	}, {
+-		.compatible = "qcom,sc8280xp-qmp-usb3-uni-phy",
+-		.data = &sc8280xp_usb3_uniphy_cfg,
+-	}, {
+-		.compatible = "qcom,sdm845-qmp-usb3-phy",
+-		.data = &qmp_v3_usb3phy_cfg,
+-	}, {
+-		.compatible = "qcom,sdm845-qmp-usb3-uni-phy",
+-		.data = &qmp_v3_usb3_uniphy_cfg,
+-	}, {
+-		.compatible = "qcom,sdx55-qmp-usb3-uni-phy",
+-		.data = &sdx55_usb3_uniphy_cfg,
+-	}, {
+-		.compatible = "qcom,sdx65-qmp-usb3-uni-phy",
+-		.data = &sdx65_usb3_uniphy_cfg,
+-	}, {
+-		.compatible = "qcom,sm8150-qmp-usb3-phy",
+-		.data = &sm8150_usb3phy_cfg,
+-	}, {
+-		.compatible = "qcom,sm8150-qmp-usb3-uni-phy",
+-		.data = &sm8150_usb3_uniphy_cfg,
+-	}, {
+-		.compatible = "qcom,sm8250-qmp-usb3-phy",
+-		.data = &sm8250_usb3phy_cfg,
+-	}, {
+-		.compatible = "qcom,sm8250-qmp-usb3-uni-phy",
+-		.data = &sm8250_usb3_uniphy_cfg,
+-	}, {
+-		.compatible = "qcom,sm8350-qmp-usb3-phy",
+-		.data = &sm8350_usb3phy_cfg,
+-	}, {
+-		.compatible = "qcom,sm8350-qmp-usb3-uni-phy",
+-		.data = &sm8350_usb3_uniphy_cfg,
+-	}, {
+-		.compatible = "qcom,sm8450-qmp-usb3-phy",
+-		.data = &sm8350_usb3phy_cfg,
+-	},
+-	{ },
+-};
+-MODULE_DEVICE_TABLE(of, qmp_usb_of_match_table);
+-
+ static const struct dev_pm_ops qmp_usb_pm_ops = {
+ 	SET_RUNTIME_PM_OPS(qmp_usb_runtime_suspend,
+ 			   qmp_usb_runtime_resume, NULL)
+@@ -2665,6 +2602,69 @@ static int qmp_usb_probe(struct platform_device *pdev)
+ 	return ret;
+ }
+ 
++static const struct of_device_id qmp_usb_of_match_table[] = {
++	{
++		.compatible = "qcom,ipq6018-qmp-usb3-phy",
++		.data = &ipq8074_usb3phy_cfg,
++	}, {
++		.compatible = "qcom,ipq8074-qmp-usb3-phy",
++		.data = &ipq8074_usb3phy_cfg,
++	}, {
++		.compatible = "qcom,msm8996-qmp-usb3-phy",
++		.data = &msm8996_usb3phy_cfg,
++	}, {
++		.compatible = "qcom,msm8998-qmp-usb3-phy",
++		.data = &msm8998_usb3phy_cfg,
++	}, {
++		.compatible = "qcom,qcm2290-qmp-usb3-phy",
++		.data = &qcm2290_usb3phy_cfg,
++	}, {
++		.compatible = "qcom,sc7180-qmp-usb3-phy",
++		.data = &sc7180_usb3phy_cfg,
++	}, {
++		.compatible = "qcom,sc8180x-qmp-usb3-phy",
++		.data = &sm8150_usb3phy_cfg,
++	}, {
++		.compatible = "qcom,sc8280xp-qmp-usb3-uni-phy",
++		.data = &sc8280xp_usb3_uniphy_cfg,
++	}, {
++		.compatible = "qcom,sdm845-qmp-usb3-phy",
++		.data = &qmp_v3_usb3phy_cfg,
++	}, {
++		.compatible = "qcom,sdm845-qmp-usb3-uni-phy",
++		.data = &qmp_v3_usb3_uniphy_cfg,
++	}, {
++		.compatible = "qcom,sdx55-qmp-usb3-uni-phy",
++		.data = &sdx55_usb3_uniphy_cfg,
++	}, {
++		.compatible = "qcom,sdx65-qmp-usb3-uni-phy",
++		.data = &sdx65_usb3_uniphy_cfg,
++	}, {
++		.compatible = "qcom,sm8150-qmp-usb3-phy",
++		.data = &sm8150_usb3phy_cfg,
++	}, {
++		.compatible = "qcom,sm8150-qmp-usb3-uni-phy",
++		.data = &sm8150_usb3_uniphy_cfg,
++	}, {
++		.compatible = "qcom,sm8250-qmp-usb3-phy",
++		.data = &sm8250_usb3phy_cfg,
++	}, {
++		.compatible = "qcom,sm8250-qmp-usb3-uni-phy",
++		.data = &sm8250_usb3_uniphy_cfg,
++	}, {
++		.compatible = "qcom,sm8350-qmp-usb3-phy",
++		.data = &sm8350_usb3phy_cfg,
++	}, {
++		.compatible = "qcom,sm8350-qmp-usb3-uni-phy",
++		.data = &sm8350_usb3_uniphy_cfg,
++	}, {
++		.compatible = "qcom,sm8450-qmp-usb3-phy",
++		.data = &sm8350_usb3phy_cfg,
++	},
++	{ },
++};
++MODULE_DEVICE_TABLE(of, qmp_usb_of_match_table);
++
+ static struct platform_driver qmp_usb_driver = {
+ 	.probe		= qmp_usb_probe,
+ 	.driver = {
 -- 
 2.37.3
 
