@@ -4,66 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 800FDC38A2D
-	for <linux-phy@archiver.kernel.org>; Wed, 26 Oct 2022 20:14:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 11527C433FE
+	for <linux-phy@archiver.kernel.org>; Wed, 26 Oct 2022 22:45:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GiiQIHdm/FzMTYPMBaRTjOGEbEEdA/lR0fn3m6Kj1oo=; b=WeFrWpqOvF2f5Y
-	DrkQ7IgKMqpt4kBjapgzplVFQ7syMtbWU5BpMQkFxEovCPiNzMwydkQzCORzlsSrPqziiXWbP/sVO
-	NDxYZR5fUWKOmPJlIewemhzKdj1tzLrEx2XTD2pX1Xh0qwtRrx6SE/rEeK11euAKe8kN/IPeLVDul
-	4cSf4jrY2a9Wgdh7SkuV7FpmmT77+DivFQxsJo1a8dBTmCqcaaf3Z8O35cQQW/USHd+GTx+LGN7X1
-	O5+OSse3hC57wHegYGRSdWpJM5lA71LEQ5YruA0DiIu4cc5WrFSiZ/w5lMW0XQsIoHDreLJDShgp2
-	Gn9ZakG7/kiEZJ5AmTYA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=NxZdlNmw6jpD/1ERqmS1JmkBVEogRvrsp5fNMQpAbjQ=; b=fnekkVes7PwNEX
+	bifByEXLyR3JweZ4aG9VEiyIMzL/sT/kfJ4QJUz+S5RvyuNLdXuJ+A8fmGi1FzjfgdXq9CR1YWHHP
+	s8jOk2WnTbQXFliAmkkVf3yHeyBckJWxNBZWDgq7y159PCD2N3A5/m2Lu7XT1ooyrfIFFw6nP/rje
+	ngif2ENLp1y8QBo9k67QNfGa0XO2bdeirg4v4JW7AMA8VANB2HUTtM6o/rwcFodLie/dsVyIXL0Dn
+	bnGS9TVsCIDpBPV+GMZnLW+Sl/hJdlpgsyySRQg0e2WWr7qCYc4zqxZgEfBADceDqaEdCKPKaDhrr
+	GHOEJFI9fNeq56+hmSKQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1onmn3-00AvQR-RT; Wed, 26 Oct 2022 20:14:17 +0000
-Received: from mail-ot1-f48.google.com ([209.85.210.48])
+	id 1onp9i-00BAF8-2h; Wed, 26 Oct 2022 22:45:50 +0000
+Received: from mail-qt1-x829.google.com ([2607:f8b0:4864:20::829])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1onmms-00AvPE-EP; Wed, 26 Oct 2022 20:14:07 +0000
-Received: by mail-ot1-f48.google.com with SMTP id v40-20020a056830092800b00661e37421c2so10704090ott.3;
-        Wed, 26 Oct 2022 13:14:03 -0700 (PDT)
+	id 1onp9e-00BAEW-Bv
+	for linux-phy@lists.infradead.org; Wed, 26 Oct 2022 22:45:49 +0000
+Received: by mail-qt1-x829.google.com with SMTP id c23so11183240qtw.8
+        for <linux-phy@lists.infradead.org>; Wed, 26 Oct 2022 15:45:41 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20210112;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=C6Inx+2mnGbd87syi22INdQZv7d9rvjsHpIiLrtgoFk=;
+        b=qhzYBGmPJLhr8FTtHtDHTDfF6FveUlj/50ukcwNWiL09tfLEQeDT1eJ6yHVlePX8De
+         1JAhpVZfHM0OLzPnJPCofWMmbnDTLgLAvMNkRlSOU7rrHj1GfmEK/n//wSoZRkYyXDPB
+         vQIXxP8bH3s5+rCid+nhpK+2TFBuAOti2UTot4o5v5dQWw5naEw6+ZTOF8dvwRo+142u
+         uB9nh7tFjtqRHK6iuexCz8w/BSBtPm6wQfycyjHmvbNEyQSmyu7PcYM2OKbz7UpnDxoH
+         Q3wvsiStSf/uu+ttt+YzftSb1X/p8ujRRudK7Q3ksTNs7BAb0DSgLFkGyXAnBgIHk5+G
+         3mJg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=HXzbeLcKBqkTorVo8+Zfos/3G48Sy4NmsXxFj9BHm4s=;
-        b=OG5Ln22tQ8flcJDdDhh5fhj1ixpkKg0jMI0IkVSTc8ABFuyJAv5oG79s7AqfjyDWkb
-         AJrrFAYz/QyJSslKf04ttLaK1AxllnCCu/A0FoWK/y9u7T0GOxtrYn5T08Q3P7/3jWiT
-         3wT6MXmA9PDsc+Sagy4KvMI+cIVq3xqTeFwN0RTtAoXmBQa1oa2SklXWX+zgjYR18sJ7
-         ktvGEdigzLdKi8MNJG9wYmeLPnVGON3oIkkq7BIlYzVt/6DHa/RPGLODCigowbCGV8bB
-         Ld9c0NiIxuflcZQU6A8/u3iw51G1E+fnfAptB5Dphx2xKLSJXJ2SU86BCk5rIc1Zc64b
-         93Xw==
-X-Gm-Message-State: ACrzQf0VnRoc+esK7EedGtebw4MLyZ3wDE7kw2PjHuALTpD332JfIyRG
-	x9i6bCoc8XMS6R/WP7aXhw==
-X-Google-Smtp-Source: AMsMyM7Zwol/YU/IWL2xizOWU3LR7EWtDOR4FhrFEny1tsGGtP5+wWG0o4VTMRg+N4Vj1hYfAmxtcQ==
-X-Received: by 2002:a9d:74c8:0:b0:661:d66e:c2c0 with SMTP id a8-20020a9d74c8000000b00661d66ec2c0mr22390323otl.117.1666815242828;
-        Wed, 26 Oct 2022 13:14:02 -0700 (PDT)
-Received: from robh_at_kernel.org (66-90-144-107.dyn.grandenetworks.net. [66.90.144.107])
-        by smtp.gmail.com with ESMTPSA id z8-20020a056871014800b0013125e6a60fsm3514895oab.58.2022.10.26.13.14.01
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=C6Inx+2mnGbd87syi22INdQZv7d9rvjsHpIiLrtgoFk=;
+        b=vUUcpH+nFJqagwTaAzOdqXfAP1k1kif9reP6ja7lVdiPL+yOOTuX1h5/+kXB8RfOHQ
+         p6DKLF5nLhMIHHUs08ecO1oUAHpYkwOC1uvRpKfYCMlq28bQFnLlbi7786IyGp89ydpm
+         0+QK+P9qcuj0GLUNa1upPzt7BkWReRIlihnwli+jw3ZiEWU9M856n3jEYFpBA0SiR6Hu
+         d2e8RFdh9qRhlWmpfiGPc/gaGnnNbEGhlo8mpNeoFt+ON3NiA+OFhx9t49Pw0rys5+OQ
+         H7QNTamhdwNS0AGqL/LAi8R+Nh7W1hD3F/SD2Fwpp+XKPa9jrreWBqRNB7/8kwr5um4t
+         XHoA==
+X-Gm-Message-State: ACrzQf0Bvj4/DI+n7lVvSq8UbZuwdCbgrUiq7OxYdRaOoutDFuC/glQC
+	18YPKBsrYKpkQkhc9rtT1+ZCQj6iyApplw==
+X-Google-Smtp-Source: AMsMyM7MvMhCDWgRBDgUrZo7cfyQBcnISZuDPBui6lKaPU83fxccaA7gUQsXIT2f5HaUidS9r3icag==
+X-Received: by 2002:a05:622a:284:b0:39c:cbec:e1f0 with SMTP id z4-20020a05622a028400b0039ccbece1f0mr38410506qtw.451.1666824340718;
+        Wed, 26 Oct 2022 15:45:40 -0700 (PDT)
+Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
+        by smtp.gmail.com with ESMTPSA id ff12-20020a05622a4d8c00b0039cb5c9dbacsm3895060qtb.22.2022.10.26.15.45.38
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 26 Oct 2022 13:14:01 -0700 (PDT)
-Received: (nullmailer pid 1161110 invoked by uid 1000);
-	Wed, 26 Oct 2022 20:14:03 -0000
-Date: Wed, 26 Oct 2022 15:14:03 -0500
-From: Rob Herring <robh@kernel.org>
-To: Siddharth Vadapalli <s-vadapalli@ti.com>
-Cc: linux-arm-kernel@lists.infradead.org, dan.carpenter@oracle.com, linux-phy@lists.infradead.org, krzysztof.kozlowski@linaro.org, krzysztof.kozlowski+dt@linaro.org, vkoul@kernel.org, linux-kernel@vger.kernel.org, rogerq@kernel.org, robh+dt@kernel.org, devicetree@vger.kernel.org, lee@kernel.org, kishon@kernel.org
-Subject: Re: [PATCH v3 1/3] dt-bindings: phy: ti: phy-gmii-sel: Add bindings
- for J721e
-Message-ID: <166681524182.1160710.10531302688571765618.robh@kernel.org>
-References: <20221026074532.109220-1-s-vadapalli@ti.com>
- <20221026074532.109220-2-s-vadapalli@ti.com>
+        Wed, 26 Oct 2022 15:45:39 -0700 (PDT)
+From: Florian Fainelli <f.fainelli@gmail.com>
+To: linux-kernel@vger.kernel.org
+Cc: justinpopo6@gmail.com,
+	Florian Fainelli <f.fainelli@gmail.com>,
+	Al Cooper <alcooperx@gmail.com>,
+	Broadcom internal kernel review list <bcm-kernel-feedback-list@broadcom.com>,
+	Kishon Vijay Abraham I <kishon@ti.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	linux-phy@lists.infradead.org (open list:GENERIC PHY FRAMEWORK)
+Subject: [PATCH] phy: phy-brcm-usb: Utilize platform_get_irq_byname_optional()
+Date: Wed, 26 Oct 2022 15:44:49 -0700
+Message-Id: <20221026224450.2958762-1-f.fainelli@gmail.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20221026074532.109220-2-s-vadapalli@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221026_131406_502681_FBF13F08 
-X-CRM114-Status: GOOD (  11.08  )
+X-CRM114-CacheID: sfid-20221026_154547_924575_457ECC4D 
+X-CRM114-Status: GOOD (  11.48  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,20 +92,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, 26 Oct 2022 13:15:30 +0530, Siddharth Vadapalli wrote:
-> TI's J721e SoC supports additional PHY modes like QSGMII and SGMII
-> that are not supported on earlier SoCs. Add a compatible for it.
-> 
-> Extend ti,qsgmii-main-ports property to support selection of upto
-> two main ports at once across the two QSGMII interfaces.
-> 
-> Signed-off-by: Siddharth Vadapalli <s-vadapalli@ti.com>
-> ---
->  .../bindings/phy/ti,phy-gmii-sel.yaml         | 48 ++++++++++++++++---
->  1 file changed, 42 insertions(+), 6 deletions(-)
-> 
+The wake-up interrupt lines are entirely optional, avoid printing
+messages that interrupts were not found by switching to the _optional
+variant.
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
+---
+ drivers/phy/broadcom/phy-brcm-usb.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/drivers/phy/broadcom/phy-brcm-usb.c b/drivers/phy/broadcom/phy-brcm-usb.c
+index 2cb3779fcdf8..fbf454b206f2 100644
+--- a/drivers/phy/broadcom/phy-brcm-usb.c
++++ b/drivers/phy/broadcom/phy-brcm-usb.c
+@@ -445,9 +445,9 @@ static int brcm_usb_phy_dvr_init(struct platform_device *pdev,
+ 		priv->suspend_clk = NULL;
+ 	}
+ 
+-	priv->wake_irq = platform_get_irq_byname(pdev, "wake");
++	priv->wake_irq = platform_get_irq_byname_optional(pdev, "wake");
+ 	if (priv->wake_irq < 0)
+-		priv->wake_irq = platform_get_irq_byname(pdev, "wakeup");
++		priv->wake_irq = platform_get_irq_byname_optional(pdev, "wakeup");
+ 	if (priv->wake_irq >= 0) {
+ 		err = devm_request_irq(dev, priv->wake_irq,
+ 				       brcm_usb_phy_wake_isr, 0,
+-- 
+2.25.1
+
 
 -- 
 linux-phy mailing list
