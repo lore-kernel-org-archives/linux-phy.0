@@ -4,80 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4CE7FFA3742
-	for <linux-phy@archiver.kernel.org>; Wed, 26 Oct 2022 19:45:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 800FDC38A2D
+	for <linux-phy@archiver.kernel.org>; Wed, 26 Oct 2022 20:14:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=g9Kc0zsU4CaGajAyQTv+Joe0ztkhXxI3kADe7ZExgvQ=; b=RDsUOrKL0+o8Ry
-	VdqNMjY9+HwKUi6OTeFD19pkPdKEoloYk58QkYSk4DfVMpDeOeym8quFmwRkMsDCufutP5ZD41hNa
-	/10Fo5jwVZubJbDmF1+qWEpfEdDEKEysifYVdHTuPXBGXeQZ6p7PrSF4qipPUr4Fv9+pOyqvijlv5
-	tcHgAn0Ooc2cvTdOcBquW6a6dHpAl34bfUu+JTPO3L187a6cBh+cLOhPMZkV58Ad8FN0XN7gX28VI
-	RMYPJkTsXP8LVPwCEgguh46uipo/CX2xLBEwP5mIDi8Dk0SNQ/6EUMLceT6tqZw1hJPoqYCW+RmwU
-	To89reKe7f9C/fDY1hDw==;
+	List-Owner; bh=GiiQIHdm/FzMTYPMBaRTjOGEbEEdA/lR0fn3m6Kj1oo=; b=WeFrWpqOvF2f5Y
+	DrkQ7IgKMqpt4kBjapgzplVFQ7syMtbWU5BpMQkFxEovCPiNzMwydkQzCORzlsSrPqziiXWbP/sVO
+	NDxYZR5fUWKOmPJlIewemhzKdj1tzLrEx2XTD2pX1Xh0qwtRrx6SE/rEeK11euAKe8kN/IPeLVDul
+	4cSf4jrY2a9Wgdh7SkuV7FpmmT77+DivFQxsJo1a8dBTmCqcaaf3Z8O35cQQW/USHd+GTx+LGN7X1
+	O5+OSse3hC57wHegYGRSdWpJM5lA71LEQ5YruA0DiIu4cc5WrFSiZ/w5lMW0XQsIoHDreLJDShgp2
+	Gn9ZakG7/kiEZJ5AmTYA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1onmL9-00ApyS-D3; Wed, 26 Oct 2022 19:45:27 +0000
-Received: from mail-lf1-x129.google.com ([2a00:1450:4864:20::129])
+	id 1onmn3-00AvQR-RT; Wed, 26 Oct 2022 20:14:17 +0000
+Received: from mail-ot1-f48.google.com ([209.85.210.48])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1onmIc-00Aokz-Br
-	for linux-phy@lists.infradead.org; Wed, 26 Oct 2022 19:42:51 +0000
-Received: by mail-lf1-x129.google.com with SMTP id p8so30847553lfu.11
-        for <linux-phy@lists.infradead.org>; Wed, 26 Oct 2022 12:42:47 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=zMYZxL04hWH2PZ6vJak+KLXReH8LIrsCpuymZRqCQuk=;
-        b=ZAx/9und4SFDOlvDZ90doIyigl1AirCbsf8z2YGYEMc3bk06egUUEnFcVFM1BgdTyc
-         O6fqj4TVqhqMAN8EZm6Vt2eZtZN+qjWBNQMC5Vc8ukJIt8cumjiH8GcoHZEQOt74q9mO
-         DdrGLyflrMRO8MnizNC6H9DQfc7mOATT+5ZjdplMQ6vvBi9bGzIj7fi7KdSr/ucrmhVf
-         6vUckxsvzBW2cu3KX6Kc8V+holQLkpum6Gma33Y1mke8Tt9Cfw0TQQ8aLWPMdESVJNOM
-         ZuqtfXYPEvqAvUiv+PwWDtIk50PHjY5/pPnRD8rjjCIEn9XxQGSfqS3KM3yvbD5WQjwY
-         OWGA==
+	id 1onmms-00AvPE-EP; Wed, 26 Oct 2022 20:14:07 +0000
+Received: by mail-ot1-f48.google.com with SMTP id v40-20020a056830092800b00661e37421c2so10704090ott.3;
+        Wed, 26 Oct 2022 13:14:03 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=zMYZxL04hWH2PZ6vJak+KLXReH8LIrsCpuymZRqCQuk=;
-        b=xvxm98ydHTbJCU7zzN688OlY0cTxT4RQ2acvuzR8rhX30P4Cd8yDwoZycS5OPYNNiB
-         ExlD5+33BPLh8cqZktmP8jWrDOkH0qkGrrad8TLXcIrGFT8/DxSqtJUEU6BZ2Dif+MVg
-         HZ8Nqgjgnq2SjsK9uK/v/kyoWoTGjzqjOz0Ez7DR0BfHkLg4FPx0XvxYAfqYRLxBBA7B
-         TfyNbWy0IM8moPoAevto5K6Hf4n38PHppH6tRqQtfdSeWTYowvsrfXTFS5hD3IMOLExx
-         +qb+ywlFg7g/CAWXq9jWcXwV+RkEKbd7VOkjMJg8+n8ncN2ROLeFDfvU/B4nG31TWzHe
-         Mwyg==
-X-Gm-Message-State: ACrzQf3tMepvRdsbSFZgn65891hj60Igh4FJgYtlF9EQuFl73EpLs2iQ
-	A4L504nIGSyKr7ziP1Us1W9Evg==
-X-Google-Smtp-Source: AMsMyM67lIeLflrZFt4dXiuUg4lborbWndQxvZ66aIfbu2PHV9pOgXVdY2Tf1eV2Lal90qH3qePTVg==
-X-Received: by 2002:a05:6512:3d9f:b0:4a2:4986:281 with SMTP id k31-20020a0565123d9f00b004a249860281mr15907943lfv.123.1666813365853;
-        Wed, 26 Oct 2022 12:42:45 -0700 (PDT)
-Received: from [10.27.10.248] ([195.165.23.90])
-        by smtp.gmail.com with ESMTPSA id b14-20020a056512070e00b0049f54c5f2a4sm943868lfs.229.2022.10.26.12.42.45
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 26 Oct 2022 12:42:45 -0700 (PDT)
-Message-ID: <5ff7957a-d220-f134-4b33-7c388dbb5627@linaro.org>
-Date: Wed, 26 Oct 2022 22:42:44 +0300
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=HXzbeLcKBqkTorVo8+Zfos/3G48Sy4NmsXxFj9BHm4s=;
+        b=OG5Ln22tQ8flcJDdDhh5fhj1ixpkKg0jMI0IkVSTc8ABFuyJAv5oG79s7AqfjyDWkb
+         AJrrFAYz/QyJSslKf04ttLaK1AxllnCCu/A0FoWK/y9u7T0GOxtrYn5T08Q3P7/3jWiT
+         3wT6MXmA9PDsc+Sagy4KvMI+cIVq3xqTeFwN0RTtAoXmBQa1oa2SklXWX+zgjYR18sJ7
+         ktvGEdigzLdKi8MNJG9wYmeLPnVGON3oIkkq7BIlYzVt/6DHa/RPGLODCigowbCGV8bB
+         Ld9c0NiIxuflcZQU6A8/u3iw51G1E+fnfAptB5Dphx2xKLSJXJ2SU86BCk5rIc1Zc64b
+         93Xw==
+X-Gm-Message-State: ACrzQf0VnRoc+esK7EedGtebw4MLyZ3wDE7kw2PjHuALTpD332JfIyRG
+	x9i6bCoc8XMS6R/WP7aXhw==
+X-Google-Smtp-Source: AMsMyM7Zwol/YU/IWL2xizOWU3LR7EWtDOR4FhrFEny1tsGGtP5+wWG0o4VTMRg+N4Vj1hYfAmxtcQ==
+X-Received: by 2002:a9d:74c8:0:b0:661:d66e:c2c0 with SMTP id a8-20020a9d74c8000000b00661d66ec2c0mr22390323otl.117.1666815242828;
+        Wed, 26 Oct 2022 13:14:02 -0700 (PDT)
+Received: from robh_at_kernel.org (66-90-144-107.dyn.grandenetworks.net. [66.90.144.107])
+        by smtp.gmail.com with ESMTPSA id z8-20020a056871014800b0013125e6a60fsm3514895oab.58.2022.10.26.13.14.01
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 26 Oct 2022 13:14:01 -0700 (PDT)
+Received: (nullmailer pid 1161110 invoked by uid 1000);
+	Wed, 26 Oct 2022 20:14:03 -0000
+Date: Wed, 26 Oct 2022 15:14:03 -0500
+From: Rob Herring <robh@kernel.org>
+To: Siddharth Vadapalli <s-vadapalli@ti.com>
+Cc: linux-arm-kernel@lists.infradead.org, dan.carpenter@oracle.com, linux-phy@lists.infradead.org, krzysztof.kozlowski@linaro.org, krzysztof.kozlowski+dt@linaro.org, vkoul@kernel.org, linux-kernel@vger.kernel.org, rogerq@kernel.org, robh+dt@kernel.org, devicetree@vger.kernel.org, lee@kernel.org, kishon@kernel.org
+Subject: Re: [PATCH v3 1/3] dt-bindings: phy: ti: phy-gmii-sel: Add bindings
+ for J721e
+Message-ID: <166681524182.1160710.10531302688571765618.robh@kernel.org>
+References: <20221026074532.109220-1-s-vadapalli@ti.com>
+ <20221026074532.109220-2-s-vadapalli@ti.com>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.3.3
-Subject: Re: [PATCH] phy: qcom-qmp-combo: fix NULL-deref on runtime resume
-Content-Language: en-GB
-To: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>
-Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konrad.dybcio@somainline.org>, linux-arm-msm@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
- stable@vger.kernel.org
-References: <20221026162116.26462-1-johan+linaro@kernel.org>
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-In-Reply-To: <20221026162116.26462-1-johan+linaro@kernel.org>
+Content-Disposition: inline
+In-Reply-To: <20221026074532.109220-2-s-vadapalli@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221026_124250_461464_A6111F0F 
-X-CRM114-Status: GOOD (  11.86  )
+X-CRM114-CacheID: sfid-20221026_131406_502681_FBF13F08 
+X-CRM114-Status: GOOD (  11.08  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,34 +75,25 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 26/10/2022 19:21, Johan Hovold wrote:
-> Commit fc64623637da ("phy: qcom-qmp-combo,usb: add support for separate
-> PCS_USB region") started treating the PCS_USB registers as potentially
-> separate from the PCS registers but used the wrong base when no PCS_USB
-> offset has been provided.
+On Wed, 26 Oct 2022 13:15:30 +0530, Siddharth Vadapalli wrote:
+> TI's J721e SoC supports additional PHY modes like QSGMII and SGMII
+> that are not supported on earlier SoCs. Add a compatible for it.
 > 
-> Fix the PCS_USB base used at runtime resume to prevent dereferencing a
-> NULL pointer on platforms that do not provide a PCS_USB offset (e.g.
-> SC7180).
+> Extend ti,qsgmii-main-ports property to support selection of upto
+> two main ports at once across the two QSGMII interfaces.
 > 
-> Fixes: fc64623637da ("phy: qcom-qmp-combo,usb: add support for separate PCS_USB region")
-> Cc: stable@vger.kernel.org	# 5.20
-> Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
+> Signed-off-by: Siddharth Vadapalli <s-vadapalli@ti.com>
 > ---
->   drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 2 +-
->   1 file changed, 1 insertion(+), 1 deletion(-)
+>  .../bindings/phy/ti,phy-gmii-sel.yaml         | 48 ++++++++++++++++---
+>  1 file changed, 42 insertions(+), 6 deletions(-)
+> 
 
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-
--- 
-With best wishes
-Dmitry
-
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 -- 
 linux-phy mailing list
