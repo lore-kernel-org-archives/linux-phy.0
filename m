@@ -4,128 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 52DC1FA3740
-	for <linux-phy@archiver.kernel.org>; Thu, 27 Oct 2022 19:16:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BF38DFA3740
+	for <linux-phy@archiver.kernel.org>; Thu, 27 Oct 2022 21:49:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:To:Cc:From:Subject:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PaYE4cQzWTrKZ4wJes2bLIIYSHzJp1rA5wXguNcRvA0=; b=AYia7PXTfNvaKZ
-	dpPIHL/rQdo6VL0/VCwjav5RsIxYaQdkVE0tP9uqgNltSHe7abgly5tVCUdZ2KGdMDcAw6HN8sJ8x
-	tmgaFKmFk/9CL5JWp1HAUAtg9lmczBJOmfMCNiPXphK0cxAhvlW5qcRd87f6V4OzM0wI5sJXB722m
-	25PfPHk+QOpd/2M8GYkznVFQ07tG4vskQFE1RADLaaOKlX8Sdt/AUU9wUfIYUvO9lk28jdWs7yDMF
-	3OK6PmAHJh3UV3HkgqeibszzVmkmH2AuynqtRCOVr+OlZ7ks4olBS+bFbrIzrEb4FNxvbooGLvIZ1
-	IWYWrA6YcLxR2Fn3tMZA==;
+	List-Owner; bh=84ubcRcuqNK93KSGt2zM1/+sbTq0IuxU81vaUrXBZfw=; b=ioFkN5PuQ/Y+i1
+	KpS/t+er+qwjpIFy+/XwNRVTwEq55qVf8a64z7W3ePfqBBQa6NkJexa8FalnS38m9/C30HBIF+b7q
+	vayw+Eai2txbaNIRd5Y6zRm6nX14HKQkY4EoDmz9VNZ6HPxHLKnc6ThbHSRNOlgbrfR03qJx0nyD/
+	Djhji9Nax77jICZaSQnua/qCYO4qfdH8i6KH4SJfyHV+O/Z9NNd5eaAHNZmhjdew9OIxg1W9X093H
+	aVbpBuWEsyuonWMygcBRc3c5gCtRQHxTMe3nRE1ITY4j3AkufQL/heLNZzgyidTsICL4BFszS9K5J
+	xFSu2M2zQzgmAHB4FUaQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oo8MG-00Ecrt-G1; Thu, 27 Oct 2022 19:16:04 +0000
-Received: from mail-vi1eur05on2084.outbound.protection.outlook.com ([40.107.21.84] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
+	id 1ooAkf-00EySy-IF; Thu, 27 Oct 2022 21:49:26 +0000
+Received: from ams.source.kernel.org ([145.40.68.75])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oo8IN-00EbFa-GB; Thu, 27 Oct 2022 19:12:06 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=TVjmRqnhkGHyKEyjVReqwz0y5/uMjkc+Bnq2nPEt2VpvFA8wnrrvmmcVlXyNqqvz0ETCymf4LVL/GCANkX2WRFD7LRmkqxDq/FUWuddm9e1N3BoiLx4tpkp0uL2awi46VP/AOI0eoZMLrAcRZtlnkc/bMLqxpRpBSblc3kLw1sjQ7QlHIqFXqARKP9Caq4NibZ/8nWYs1+y331QopvaSDVzjV92UyRPpCCu/92sQa22IZet7pYRwsiOSY6hn+Gc+Q8KQr12VoiGX2GasY6aTgy4kKMPqbgHuC+7fMoCPYpuJIcxrfF/Mz3XodcbbM6i8nvr2HCBET24OpVgE8Up3iQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=4rZnDIYRgiOMpogZa0b1T6zno6/ylouqK4NkpBXH1y4=;
- b=FuClKz+SGRq+SdSEp26NUGAqOuZBWqEhCwRLN7nq1Ss5wXpsOGmINKgv8PGjdtIyeX7DoZ6dVXvWq95VTJ3KD6y5rWiyzlnPZ+LTAuE3+tqEFXpqwF0HkX2wTipleFOssT3UEH7sLWAEqPxx3/SeQrfcmga0WmQ1fk9w5z80T/FwrjeXTDMqkVB3tafh79kzCBLhGoavLz9VDMV2YLpzsnZ0AY1QcBl9t14jVrzd99MzUabzUGSxNCWIx296E3hHT+aaJwl68VOjsOxq/hU68ew6h3ZLiNRr79WqFLLwxbnyPBBficK1LiN2HXsCGfmycAN37lLOV6wDy2tOEeSvJg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=seco.com; dmarc=pass action=none header.from=seco.com;
- dkim=pass header.d=seco.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=seco.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=4rZnDIYRgiOMpogZa0b1T6zno6/ylouqK4NkpBXH1y4=;
- b=YhRQrqPw73y09yWHI7EmRHdjfw2tabYeMvrCfknpgoIg1eTGpomDVb5TrkA6sqjKiSOB9qaGbzIfBdpPwvThwynB9NHMsjWxw+ZmZIQxnVB+PJChvhmS1ND5+jjipuvHpZVpKkcSRoGCcNgIKkv8sw5sxhnZ9rEUfdgLM0JVCTG5PZEKnjOQSdI3+Dr7YFAxsIP0Vtv6S7HCq+v6MTZ4ZpJWzPBz/dDS91gBOwJo0NzceULocyuX2RQVPJ5GfWwIzCpIwvm46FO0QYQOOGdQK0Ja4zt+xjytmYuHWfePdRlO0Cim9X9O2tZnj726m2A7XMtCnOfgXJd7mFySg3s/Yg==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=seco.com;
-Received: from VI1PR03MB4973.eurprd03.prod.outlook.com (2603:10a6:803:c5::12)
- by AS2PR03MB9648.eurprd03.prod.outlook.com (2603:10a6:20b:5e8::16) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5746.21; Thu, 27 Oct
- 2022 19:11:45 +0000
-Received: from VI1PR03MB4973.eurprd03.prod.outlook.com
- ([fe80::3d5c:1e59:4df8:975d]) by VI1PR03MB4973.eurprd03.prod.outlook.com
- ([fe80::3d5c:1e59:4df8:975d%6]) with mapi id 15.20.5769.014; Thu, 27 Oct 2022
- 19:11:45 +0000
-From: Sean Anderson <sean.anderson@seco.com>
-To: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@ti.com>,
-	linux-phy@lists.infradead.org
-Cc: Rob Herring <robh+dt@kernel.org>,
-	Bagas Sanjaya <bagasdotme@gmail.com>,
-	devicetree@vger.kernel.org,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	linuxppc-dev@lists.ozlabs.org,
-	Ioana Ciornei <ioana.ciornei@nxp.com>,
-	linux-arm-kernel@lists.infradead.org,
-	Camelia Alexandra Groza <camelia.groza@nxp.com>,
-	Madalin Bucur <madalin.bucur@nxp.com>,
-	Sean Anderson <sean.anderson@seco.com>,
-	Li Yang <leoyang.li@nxp.com>,
-	Shawn Guo <shawnguo@kernel.org>
-Subject: [PATCH v8 7/9] arm64: dts: ls1088a: Add serdes bindings
-Date: Thu, 27 Oct 2022 15:11:11 -0400
-Message-Id: <20221027191113.403712-8-sean.anderson@seco.com>
-X-Mailer: git-send-email 2.35.1.1320.gc452695387.dirty
-In-Reply-To: <20221027191113.403712-1-sean.anderson@seco.com>
-References: <20221027191113.403712-1-sean.anderson@seco.com>
-X-ClientProxiedBy: BL1PR13CA0218.namprd13.prod.outlook.com
- (2603:10b6:208:2bf::13) To VI1PR03MB4973.eurprd03.prod.outlook.com
- (2603:10a6:803:c5::12)
+	id 1ooAkT-00EyIu-L7; Thu, 27 Oct 2022 21:49:14 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by ams.source.kernel.org (Postfix) with ESMTPS id 4636AB827B3;
+	Thu, 27 Oct 2022 21:49:11 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id CA6BFC433D7;
+	Thu, 27 Oct 2022 21:49:09 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1666907349;
+	bh=0k2eUjbGTZClwZCNMvZTbgZwooGx5soYZsILmA03pD0=;
+	h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
+	b=j6bI1ti3m4wQ0VgaAxW5i9znS5m8p6Cx2HgWjerZn3jk3DgM8vcwDmnS0RchVIzxt
+	 S8Wt3TfTxsDOPq1h3o8USFEqxT8DQg1yD797axLBBBr4bkdCCtRA4GiiLHyJq0glpS
+	 f42IY4nMwjzTfhPQIrHkY/wIemNfCB0SvYB1i2BuSDUUow3875jvscA8TXUeeFV5TQ
+	 SjJ1jeGThupLMTgHs/yL2did4/Z28OqGbjMbqIA+b3BqFQFU+hU9YDHr8apGNmCqJl
+	 8C+UKp0T3+YvocBk1xpCL0yWWL48OPDf6csxmJvImGCvZBkHryH+Qymja82V0DTOAy
+	 ZNGCiH0MgDIyQ==
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: VI1PR03MB4973:EE_|AS2PR03MB9648:EE_
-X-MS-Office365-Filtering-Correlation-Id: dfa51c7b-7138-47e0-cd83-08dab84f1693
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 	F+jx3qdTt76hQ1BwOtZmhQLBCzjS0OzhapofPye7uPlsAKzVqklpySHsP5GTsj+X+DKwbXpg++c+2NtqOZzranFAzP3jmeqD99zcgci8nkrNDK69is92fV45u6+itkW48yKU27EYCxeSQiOkBFIKR+SX848Ih5GtwNKT6H5Mn7eXUAiNQCDv+dZ0VCHes2mo7TDC/zL5OUKlQl48fgCCG3ic+A+KYSUvoq6sXOoJGBFBSt/nHvkOex95URLBCURbEz36sLpJhpr9OjNkNM1P5lS0+1xWjmy+kyzl73AaJvusxXii7fd28rk4bMWQKeOWENMnTiuqZIjVeO93Pj1sfSlw/+zECLwpX0eAH9+A3ngYbSJmFe5ZX506+y0ltaSRGDk10LQwGl6HcTuNmdso6/d3IEGVv6Ap9Th8yYz/OBuJYh77AWJf4qvABC9kaSXoHHbKBg3Lf7YXH8OWMofU8cTqzD5BYa/jB+7I+9kjc4pJkJ0hfbUA6VNWGEijsSx01IbS+i4wZSamBoAtmjdljU5uWGkokzG/0qdPnBv7NG6Ks/0eJh+AC7NKtC458z07/1t3o6GbIbmkhgpBk4Yb7KAMpVPeSR3VhyMCUga5D7zGmnEOfoHqz9RMoFJ7Yi+lz8AHyIa6rVPhkCK/oTFhmn6nqR7f4/nplLITSnHPW983qpw6tNSmJWO0qgCETiQeXRlT8je5ubqwZkD0zP+g7Y9V6zdLie+Aga8zDuqTZXizNU7oUsqQCmsmOm2KgwU4
-X-Forefront-Antispam-Report: 	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:VI1PR03MB4973.eurprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230022)(39850400004)(366004)(396003)(376002)(346002)(136003)(451199015)(110136005)(478600001)(5660300002)(54906003)(83380400001)(38100700002)(6486002)(7416002)(2906002)(44832011)(36756003)(66556008)(66946007)(8676002)(41300700001)(66476007)(316002)(4326008)(8936002)(6512007)(1076003)(186003)(2616005)(6666004)(86362001)(38350700002)(26005)(52116002)(6506007);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: 	=?us-ascii?Q?EqEUr+Dwpn1ldNxma8wklsiOSirnh8mp6b7ES0XJyiykVx3NgYqjf6pU50eA?=
- =?us-ascii?Q?5e5vIIQ53j7+RNHtPNPWtF+g02yQKukyqqJcAlGGEhbEVTuwC0pS/CZ8m/tN?=
- =?us-ascii?Q?bz6ti7zPkzIhJIE+z73TyMj/GOGcK7f1+zvZ8NsnSUsPzr/cVf3tGAQXxNsU?=
- =?us-ascii?Q?lOyJqfqWCvbj0knhVY5wXz28xsb/CgnPT7dyNpO2WP5ecoWlUOTetFNaqXje?=
- =?us-ascii?Q?L2csKICpGxp98VdCubMlV1UiwD+0pG8RoJgX+gRpxiSZgpuYQSydJmPOYh/z?=
- =?us-ascii?Q?7UPvr/5EwX/IcnJFVyKqXoJ3ddIptmuc0LCuT1IYzUS54I2JbtzQ3ma8QSCg?=
- =?us-ascii?Q?lxJIMfjqwhPbdL588Bg+QgYeB0JL1QrawQ+ddwfqdAMWksAOkuqkavhOt8SL?=
- =?us-ascii?Q?IU09OttAwH9bksm9IDmgbYWSnKclNc/W2LVRl4lOvQMij2FIdR9NOmfTvEYN?=
- =?us-ascii?Q?gNgMYACwDCrHK80sAP17/D++lWkIk8fFKAwfK/FC9/YLfVMYKkEIWgRTiCh2?=
- =?us-ascii?Q?6O8O4tw76BacQRcMmA7hwJqnktGswdeHR00PuTzlxFGoBa5qwRWgHyC0ZlXs?=
- =?us-ascii?Q?gCq/iUlkAvGHVk0kvcUrqePHFZYWhnuduW31QF8Rb7SfT9Ujc6ntQRN+aJWB?=
- =?us-ascii?Q?13fC1n4ftKovPAKKz2ltjxOfWH9RLXfiX5/IPzQnro8o5US2Pv4DcH6PwoYl?=
- =?us-ascii?Q?JhchXO7LypoIWW0Ukv465Bp3gWanMFvDSapnNRtm+8B8ctjQJWHtCn3xeauJ?=
- =?us-ascii?Q?XKeF0k+fj7vlK5KDDR9GuKKOWmvg/krxyNY3uLuojP9XI1hMjCdwm+YHwjIF?=
- =?us-ascii?Q?FQ/vD3z5ndc0hse/esB18GBa+ZAi4N2mLgfm8fGiPpRYW4zxOittz9vFToTi?=
- =?us-ascii?Q?hW4StXLb8CNEeVaVPqQXE5VeCUQIGcGI+iT1Vxn7bux4CxqF7DkH97tEzBnO?=
- =?us-ascii?Q?f+FGMePcfBX0h1H2KfsIFguEvbMBocaGNvfWEtzhXrrTdg9QtwMpTv2cuzwh?=
- =?us-ascii?Q?k/MrkZtW8qEkGZCYxLD9ERwIvRdgSNLY4LyUX1wrnVbAfReHWkrtCDWBL6VM?=
- =?us-ascii?Q?eug8sj5eQy0VKOgDTnp+gWMo2tvtAViDmqvRiINiJ2OK2ELR0pLF7Y/zPSUn?=
- =?us-ascii?Q?5hNuEcss5IvevyPy/FBl4vnxMI7Xv7EGkKz1i+j7aig8hFLDb0hSCEi1EmBX?=
- =?us-ascii?Q?mP/3JpMpLJCiC2L9WJaVdikh0PrTFQ7IAhFMA5g570KawBCcQoV71/iMB100?=
- =?us-ascii?Q?D5GSg6rRo3XuK8Bq8oICQgJE+d6h5C5BUZlSftJKS8Cirs/g68PlAfWLQT1a?=
- =?us-ascii?Q?XKqARcLvJDyyP0Xr/mb7h6N+Y9VN6ij+U2eSi1qQLEuN963m6fgAJdeb2jVe?=
- =?us-ascii?Q?JwgsPsT7pJAdrwG1W4OR1vgFmqji+X1Iqo/pxsrhAzcpa9K4oz164K60+81e?=
- =?us-ascii?Q?yTOzaehUlHOOvngqYQ1vpdDIspa2D6DR00+wSH1S+ibuhj2e3K+gnQPETCb+?=
- =?us-ascii?Q?8LX3o4z/EzB6b6u69E0rUUZZ8MBwt8IayMAnhpIbAslCtURHmGQMF4axNl7/?=
- =?us-ascii?Q?hUFjw79hSWcmxYgCbPyCwF+ZTKWfeLsss6Kn9ckDa+TyZqDCLECd5ZN/W3ox?=
- =?us-ascii?Q?LQ=3D=3D?=
-X-OriginatorOrg: seco.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: dfa51c7b-7138-47e0-cd83-08dab84f1693
-X-MS-Exchange-CrossTenant-AuthSource: VI1PR03MB4973.eurprd03.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 27 Oct 2022 19:11:45.0964
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: bebe97c3-6438-442e-ade3-ff17aa50e733
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: JdHz1w9UK30xE2HBBTD1TPe+W23G3PFvp1wcmbvv1IAuGQv+rC9n0egYWD6CVAPIIzRPr3VveAzs/TUUqpkP+g==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS2PR03MB9648
+In-Reply-To: <20221018231112.2142074-4-sean.anderson@seco.com>
+References: <20221018231112.2142074-1-sean.anderson@seco.com> <20221018231112.2142074-4-sean.anderson@seco.com>
+Subject: Re: [PATCH v7 3/8] dt-bindings: clock: Add ids for Lynx 10g PLLs
+From: Stephen Boyd <sboyd@kernel.org>
+Cc: Camelia Alexandra Groza <camelia.groza@nxp.com>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org, Madalin Bucur <madalin.bucur@nxp.com>, Rob Herring <robh+dt@kernel.org>, Ioana Ciornei <ioana.ciornei@nxp.com>, Sean Anderson <sean.anderson@seco.com>, Rob Herring <robh@kernel.org>, Michael Turquette <mturquette@baylibre.com>, linux-clk@vger.kernel.org
+To: Kishon Vijay Abraham I <kishon@ti.com>, Sean Anderson <sean.anderson@seco.com>, Vinod Koul <vkoul@kernel.org>, linux-phy@lists.infradead.org
+Date: Thu, 27 Oct 2022 14:49:07 -0700
+User-Agent: alot/0.10
+Message-Id: <20221027214909.CA6BFC433D7@smtp.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221027_121203_645704_616BDD77 
-X-CRM114-Status: UNSURE (   7.09  )
+X-CRM114-CacheID: sfid-20221027_144913_863538_D319B4BC 
+X-CRM114-Status: UNSURE (   9.69  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -143,55 +71,18 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This adds bindings for the SerDes devices. They are disabled by default
-to prevent any breakage on existing boards.
+Quoting Sean Anderson (2022-10-18 16:11:07)
+> This adds ids for the Lynx 10g SerDes's internal PLLs. These may be used
+> with assigned-clock* to specify a particular frequency to use. For
+> example, to set the second PLL (at offset 0x20)'s frequency, use
+> LYNX10G_PLLa(1). These are for use only in the device tree, and are not
+> otherwise used by the driver.
+> 
+> Signed-off-by: Sean Anderson <sean.anderson@seco.com>
+> Acked-by: Rob Herring <robh@kernel.org>
+> ---
 
-Signed-off-by: Sean Anderson <sean.anderson@seco.com>
----
-
-(no changes since v4)
-
-Changes in v4:
-- Convert to new bindings
-
-Changes in v3:
-- New
-
- arch/arm64/boot/dts/freescale/fsl-ls1088a.dtsi | 18 ++++++++++++++++++
- 1 file changed, 18 insertions(+)
-
-diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1088a.dtsi b/arch/arm64/boot/dts/freescale/fsl-ls1088a.dtsi
-index 421d879013d7..3810d66f8725 100644
---- a/arch/arm64/boot/dts/freescale/fsl-ls1088a.dtsi
-+++ b/arch/arm64/boot/dts/freescale/fsl-ls1088a.dtsi
-@@ -238,6 +238,24 @@ reset: syscon@1e60000 {
- 			reg = <0x0 0x1e60000 0x0 0x10000>;
- 		};
- 
-+		serdes1: serdes@1ea0000 {
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+			#clock-cells = <1>;
-+			compatible = "fsl,ls1088a-serdes", "fsl,lynx-10g";
-+			reg = <0x0 0x1ea0000 0x0 0x2000>;
-+			status = "disabled";
-+		};
-+
-+		serdes2: serdes@1eb0000 {
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+			#clock-cells = <1>;
-+			compatible = "fsl,ls1088a-serdes", "fsl,lynx-10g";
-+			reg = <0x0 0x1eb0000 0x0 0x2000>;
-+			status = "disabled";
-+		};
-+
- 		isc: syscon@1f70000 {
- 			compatible = "fsl,ls1088a-isc", "syscon";
- 			reg = <0x0 0x1f70000 0x0 0x10000>;
--- 
-2.35.1.1320.gc452695387.dirty
-
+Acked-by: Stephen Boyd <sboyd@kernel.org>
 
 -- 
 linux-phy mailing list
