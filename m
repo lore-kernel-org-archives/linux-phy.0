@@ -4,137 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DE140ECAAA1
-	for <linux-phy@archiver.kernel.org>; Thu, 27 Oct 2022 22:00:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 496FCECAAA1
+	for <linux-phy@archiver.kernel.org>; Thu, 27 Oct 2022 23:03:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:
-	References:Cc:To:Subject:Date:Message-ID:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=rtTaSNzTEMIHB8FXsc/Es4smHfP5FaAz3XhqQH8wzEE=; b=Z7QMyr8cXld+so4D7ePdKH5w8w
-	zPm7/PjKdyLqR6nR0uhUwhsy1if/lQf4TigNJ2iE+BRhCIkU+fFi81Q13BQNHeAt3Ykt9N1L1FMKK
-	MNdF4DhmMuhkpC9JQrtsqfXjYnEWjI7JbrLcrkFlzG1DDqeX/QTvLjD97nTWqdDmCfZ5kNmywtB6a
-	geS6OeRbaPTD7uxy429G+AKr7ROotpsunjqdh+UASHeazB2VLUCsfIfiIax6jkjdilDI2p/KERwlm
-	rrfIQ0Fhs0AdOkHey9Tt3CF7iMV9vyWH8ER8A6hAOCLI9Pn941zMdhRlTrsQe0gUHgkes1TECjE15
-	Id9qulxA==;
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:To:Cc:From:Subject:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=bZm7xlm8dg2rAZA1RdzSUwq67ja1DDSo5nNrRcXj7AQ=; b=kWnRyNJlRU6njk
+	NcozVm/mPcJU+q1ZdYpA3htu/aua74cVRodQvSeZx9wphvKszGRE8kLSOQxOu26CF3VGTG2lAuJlh
+	2RLZPbGRUrQaODZltzRPrKfi/Zxn2isxYkDdBSUTqtoXZg1NxU34EcnfcfLW5/5TFRJvxqW9xehqb
+	HLRQw0wW0yDi9lamEY2x5e8G8CETfLFX1iclgJKPbJwo/szDOqYUPgTN2bce4M7a/deV/DrtUhiUx
+	DtIBusmTOR9NZztRXLPP2NB6T2IjcUJmDtwXRR5p/4nc4N2iDcgzdzij0g0zvWcEx5kyvI0dorl9q
+	F9ituYP+OJt/7t4xadxg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ooAuw-00F0OD-Nj; Thu, 27 Oct 2022 22:00:03 +0000
-Received: from mail-db8eur05on2059.outbound.protection.outlook.com ([40.107.20.59] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
+	id 1ooBua-00FAKR-Kv; Thu, 27 Oct 2022 23:03:44 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ooAus-00F0NQ-0m; Thu, 27 Oct 2022 22:00:00 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=MzLT5Ck5aQCXbymHq1pvbsmxW3kWoyjVTJfWmFhLeZ9zdUbfUj4MGtNKRDEuHAxRnQ2uEUjzZxbFKQvQCsoYNFXGERPXGUKbBYFfcpdnpE/t3DWQbao41q0E5nl1pmVHOjkKYifvNNLcps0nkJWWmWEaf6yoUXPHWrTZBjpODKy3ygudJ2sLcPHK4IL3Ao/3sqbsn8FemyV7UZQrM1FbLm3EaI3wW9k+C8VEIeCEnIGza0Q6m2ylP9PCXiRgsZkWK+ihSoMWTuNeepmzT+7OFCztZqkB7lwlnLASRfDjmurmAh39hOMl/hVHncALrCnzdqGLto8q/xyFdtDx2t11Iw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=/oiGdJcywM3+glaTqHJKZ0IKkpLHg15QjctF18FkvPQ=;
- b=lKo1V6MzWxI3oDRCnAB4/kyVypr7CwXafmiFaE5mBURXSlrUsKbjGfdcSSmU9yFoSCgPSRqYR++J9y8zU7cYQByATb6Bqt6luMNQtz2Ktl0YIG5vWgwjUdqSPEwiUFAyop8gm6nOE9JJUZJW1BePq3HPq9Y9uuOzBsud39CfRJGDZL+BZzsLT6I6vwZx14CUmxnrdH59ZkZhb8YT0VAJdhdjeiDfVq9z55iZyGyoVxWFz9s5HxB3fqZIbDPPdA/2o5escUGCSNL1OFSflHDyfIiRYZ+PWIv1JmLN/rrxBnafbPR+hgt7C6r09ZipD/ZtjVZtii39glw45wGuaYpYww==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=seco.com; dmarc=pass action=none header.from=seco.com;
- dkim=pass header.d=seco.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=seco.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=/oiGdJcywM3+glaTqHJKZ0IKkpLHg15QjctF18FkvPQ=;
- b=1kNHr4plQE7ZNFdPwEJ95K9hvXmOCFtx1S+FnjBQBlFub3TBK+AoVxCgLFL1lSK/Gs3IcpuCG8yLxRO889+a+eZpJhzZpP7cQOgGHDntjCwq8miuz1TY4AGxIUurgFqoCsrFQ2CfNdJWdTEghBBC5FENxqwf5NuDq3V4Hp4oZ3Kk780ZfopbSYCYIxuagKSg+QEhTYIpGHepYLKmZF+eCOip12hcrU0j9dJ/hD+EU92OFWmdUeIZE9YbfS/i/qtKrP7JK242dyrlkLf1FjXrob17wyeufOyZujqzfuEI4Zn2y650GIPEu8lbpCKeRoNgRgN7OCJy18Yg6Ry9HXD/aQ==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=seco.com;
-Received: from DB7PR03MB4972.eurprd03.prod.outlook.com (2603:10a6:10:7d::22)
- by AM9PR03MB7169.eurprd03.prod.outlook.com (2603:10a6:20b:266::20) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5746.23; Thu, 27 Oct
- 2022 21:59:55 +0000
-Received: from DB7PR03MB4972.eurprd03.prod.outlook.com
- ([fe80::9489:5192:ea65:b786]) by DB7PR03MB4972.eurprd03.prod.outlook.com
- ([fe80::9489:5192:ea65:b786%7]) with mapi id 15.20.5769.015; Thu, 27 Oct 2022
- 21:59:54 +0000
-Message-ID: <eb9590e6-d26f-84d7-16d1-e00cc112fda9@seco.com>
-Date: Thu, 27 Oct 2022 17:59:44 -0400
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.4.0
-Subject: Re: [PATCH v8 3/9] dt-bindings: clock: Add ids for Lynx 10g PLLs
-Content-Language: en-US
-To: Stephen Boyd <sboyd@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
- Vinod Koul <vkoul@kernel.org>, linux-phy@lists.infradead.org
-Cc: Rob Herring <robh+dt@kernel.org>, Bagas Sanjaya <bagasdotme@gmail.com>,
- devicetree@vger.kernel.org,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- linuxppc-dev@lists.ozlabs.org, Ioana Ciornei <ioana.ciornei@nxp.com>,
- linux-arm-kernel@lists.infradead.org,
- Camelia Alexandra Groza <camelia.groza@nxp.com>,
- Madalin Bucur <madalin.bucur@nxp.com>, Rob Herring <robh@kernel.org>,
- Michael Turquette <mturquette@baylibre.com>, linux-clk@vger.kernel.org
-References: <20221027191113.403712-1-sean.anderson@seco.com>
- <20221027191113.403712-4-sean.anderson@seco.com>
- <20221027214947.3E375C433D7@smtp.kernel.org>
-From: Sean Anderson <sean.anderson@seco.com>
-In-Reply-To: <20221027214947.3E375C433D7@smtp.kernel.org>
-X-ClientProxiedBy: SJ0PR13CA0035.namprd13.prod.outlook.com
- (2603:10b6:a03:2c2::10) To DB7PR03MB4972.eurprd03.prod.outlook.com
- (2603:10a6:10:7d::22)
+	id 1ooBuO-00FAJ5-H1; Thu, 27 Oct 2022 23:03:35 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id C5E106251A;
+	Thu, 27 Oct 2022 23:03:31 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 19C2FC433D6;
+	Thu, 27 Oct 2022 23:03:31 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1666911811;
+	bh=y8WKXdHUx7ISZalqWkNRYerFR0cXvknFq74JAhzWaN4=;
+	h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
+	b=BIGu38xEGqsAblvOSbHZKWSTE5hACJB/2bCLXKji2IHnM21Up7IVDkDA42VPT7FP7
+	 gCIIHNxrOZJimkW36e8Elah4Gu2YShTj6JbfizO4L8e8Oo5FInLsbX4myRdeSpz/V5
+	 Rw9Yy+UPk4UI5XnngoOfgzvHZwBCZa+0M5CuZ1K1RVSUZjvU5PF8OP50xbTg+kozF1
+	 UKKI+isUCw5QU01cIHrlxtuaFEW77THuWoq0EihZgdXgau1y4CPnkjV6EoxewIgN1H
+	 vMsuY1XOxlU/d9FKZ3CSI1+gbxx7DhHJypKymSkPjSXOaUJlRE+aN+IK3zO2kP7zuU
+	 zVjaBFDB2+bBg==
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: DB7PR03MB4972:EE_|AM9PR03MB7169:EE_
-X-MS-Office365-Filtering-Correlation-Id: 0430817a-007b-4f9a-0922-08dab8669471
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 	sm0DrFETVPR0OZKqtOid/VM4rk1FVJGKK7nYacwHpbGZOQxiHNFdtorHggPhsJhrIlK2dOkcvOtDD6QMa7oh/7IdNbcct4rh4ZlHlzWaqa0Aj7NO+KSEv2FlaUlWt/M34ikScfv9PvwmBEN9xplsYxmi/lIbVO0lAszJh2bByKXGemtzrom3W2iGhbx80ckHoxKqNM2n8pBQYoDxHEDSjdm3ZIS0PJ7p2l9WBqiRDa/KvnZ1v980cjud7ZSTEejOpczgtB8Hk+xUnJKLy5Gdb7FHZ6FlgtwDPqgtgDv9NwPZ0z1X8GnKyoyLsIV/SAkc8Iadl6SG9Ua1m2o+wvxG0P3MxqqTxhP5URpjWDdb1TR8KVwJVVloWboA3b7DJ5nLGZ+Nx8QvHfPixB1nXLEkJZjqlIidl3S7itjzVk3+dWzpn773ObbQ8+wDMIrrWVfzh2CONorSD29YNEIr0v2Kc2KMSvMmOObTGslaYA6HQm8+ipeOqBtCEMwWtZjCa5u0OACCAlAomgNaEJBiLkJJtas9c9KkjyM5fADioGg2bdm5g1vY7D5k5UaqXE2b2LCUEz8toPnGJGxGvSkhUMw9AACQpruaErU1Ui20sDGfOMT2SH6PhfqGC2ykWnK4Jv+ctFXiWTZH5aEVhVXjlrdehLRkHFhitawhckoheS34+YjvRXFN21UR4oiTQb7cYDdUiRpsaerU1QIdnP3VBZRHaZIj5UwTIl/ifJLwnXsEa50w4e6T6NfFp+5Eod2DbfwUdA7mF1u8XK6hlvdEr9rCcGHRs8DQioPNBwD9bYzosOYPRStQBeCz6s2BDnwRlkZLCBogXmDVEVwlUVEZFaM4DQ==
-X-Forefront-Antispam-Report: 	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DB7PR03MB4972.eurprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230022)(366004)(396003)(376002)(346002)(136003)(39850400004)(451199015)(478600001)(6486002)(2616005)(186003)(41300700001)(110136005)(52116002)(44832011)(86362001)(54906003)(6506007)(26005)(8936002)(38350700002)(6512007)(4744005)(36756003)(38100700002)(83380400001)(66476007)(31686004)(66946007)(31696002)(5660300002)(53546011)(7416002)(2906002)(6666004)(66556008)(4001150100001)(316002)(4326008)(8676002)(43740500002)(45980500001);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: 	=?utf-8?B?NVI5VEN5NWNFN3pzNTdya0FObStMY3FMNHRoMWl5TWtaMzAyaWFtbi9aZ2pB?=
- =?utf-8?B?WDh0ZjdZclJ5TDBteGFBTHZMRFdrUWxzWmdNZzA1bTdQTm5WK1ZRZVYyTE04?=
- =?utf-8?B?RDFCK2Y0azRvbTlHYlVibW1XcUU4YmdiZmJCYW9yM1h5MDgxZnlBVy9rM1Fx?=
- =?utf-8?B?Ny9COUkxN0t2UWRxa2N0Sjd6YU1WbGQyNS84MUdOQUZVMEh5TkVPeUZZZTN5?=
- =?utf-8?B?OGU5L2duV1h2OS96MUhXK1JIQzJidHRWQ2lNcy81Ymltajh4MnMxSHB4eE1j?=
- =?utf-8?B?OTg1Q3N4OTdRL3ZIV29hU2Nqak91MENjY25HdnNpVE4xNlM5a1N1OThjODBB?=
- =?utf-8?B?UGVERUsrREUyeUU2cmRqeGc0dGpGcVlURm1PRE82M2Q1TjlhemNJV0lhYU5I?=
- =?utf-8?B?RGc1dU9kRitwQWdhNW5ESUxKQnJBNk5sbUppWDNta3BxSmxQOTJta05nNE4w?=
- =?utf-8?B?NVhXWG1rUnVINytndXBLc1JPYmlmU1B0djF1ODB5NDBxM0lkYTA2WEpsWnJj?=
- =?utf-8?B?NFdERW5KOUpsUnRydi9La3ZOTm95L2VETXhNamhlZVB4Z2NoZXliTG5Scm1o?=
- =?utf-8?B?blZxY00weWFVcVd6NEVYUktzWFNmL1RxRHFMdjVablZXZUNpdDNsdDVpQ1JU?=
- =?utf-8?B?U2VONU1KWnV0UU95ekgybHZ3b3cxYUJFbmFQZGc2ZTRhV2F0OER0SDFJT1lH?=
- =?utf-8?B?ZXlNdWc2WWxWVlhUL2RrWTIxM3VLWFBMdWZ1U2ZIaHRLN3MvZEs4dzl6NXVR?=
- =?utf-8?B?cklsbGUyNUpGV2tRSDR2UXJuNWFmc1o1TFF3OFg1b1lFQll3VjRyVFYzc0c4?=
- =?utf-8?B?RVp3allMTjhXN2kxMmpCeFRCSTB5SWNpUGw1WnB6RFJmYW9pNXRnbjZtTlBr?=
- =?utf-8?B?T0xrUTJmRTJsalhXMDZqdnJhVWF4YStNRXNCcDhzNFFXaEN3c3hiQUpiODlJ?=
- =?utf-8?B?cTBWZGo1eGxWcmtrNXAwZTVvTUphUWRWWDBXUG0xSjUrVjZzYkJvMUd4MjNO?=
- =?utf-8?B?Q254eUNWOS8xMEROZUU2WXRUeVVtcmhyczZYRHd4OVpNYS9ZYkZwRnVGSGNZ?=
- =?utf-8?B?YW50U3ptSUVvdWxvTExDV0tTcVRaVHJsUks5VXJKYzZtVGtFdEk2Wm1EaTJF?=
- =?utf-8?B?TEhaRnZGWFhzVEZlYWFyaGVOd1psVGk5Z3dLbCtSSVBLYWJTLzIxSlA0QXpi?=
- =?utf-8?B?MFJRTmhidFdoSWYzNG4wQTBId0F6Y3pPRlVwZEhuK2dVVlUrUE9VZjBwL3Jo?=
- =?utf-8?B?UXBjdS9oMUJ4MlQ4VGFNck40dk55cWs1OXVBUklHVEdnZWtuN0NycnlZT0hZ?=
- =?utf-8?B?SjZKWGprbWN6b2VCT3ZIbCs2d3ptQVdTTmxLSG0reGhkQUFidjBrb3RJWEpP?=
- =?utf-8?B?WlQ4ZGc0WHhDRWpiMFBoUmJkb295bksrSXJIazZuM3JWN3BVbHY1YTUvQ3JB?=
- =?utf-8?B?d0VVOHhVNS9ld0J6ck9DSnN1NTZXbGtqSGZGTjFFNEhMbmxEUDVwd0NuNmsz?=
- =?utf-8?B?RTAxbEJDai9MMFJib0luOTVPU2libExpVmhjMFBMODhCZGNmclYzNzQ0d3Fo?=
- =?utf-8?B?bU8yWitVeGJEanhLSmFaSlc0RURVWmwrVlZVaEoveXdIY05vVVcwR3BXQWZs?=
- =?utf-8?B?aCtVNWFXU0owdTM2bEtpNHpBMG5rZ1ppV3JuWWRTeWNEYTIwQkxSWXJIcita?=
- =?utf-8?B?WVJTTm1ZVFJkNUxpcGs3TFFJdE1zTjN0RXVZUE80OFhndmV0TFZrK1BuTngv?=
- =?utf-8?B?Mit6anlLM3ZPbnU1Z3BDeC96ZTRtVUNOM2N6eTFzeG5icXE3Z3JscnNFN0da?=
- =?utf-8?B?a3c1ME5HZithR3ZROFFKRENrS1JyQTVDUkxrTUovWjdnYmpUWmRpTmZQMW1C?=
- =?utf-8?B?dXV2dFZVK2VZY252TmxEaE8zRElRQlBzYWNFZzNzdDdJOU5pNmFPNTdKdXJV?=
- =?utf-8?B?dzVpQ3BUMzZGL1dnNnpvUTE5Mm9EWW1VNEZGZ2JXREpqcFA0K3hGWWczbHZ0?=
- =?utf-8?B?ZElFY3k1TVdyTE9pVHFSbFUwRUlGVm1EQ2QwaURJcnc5clhXVlE5c21IYUM0?=
- =?utf-8?B?VzZFQzAwWUZ3K2pwSkQ4b05XSm1BQ2F0OWd2bGxSelVvZmdGb3JodWcySmVi?=
- =?utf-8?B?YU5COHpVd3lSRzl3VThOcGRubG4wejFzNXRYRVhoc0sydGxJdWVvNVhxZVJG?=
- =?utf-8?B?Qnc9PQ==?=
-X-OriginatorOrg: seco.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 0430817a-007b-4f9a-0922-08dab8669471
-X-MS-Exchange-CrossTenant-AuthSource: DB7PR03MB4972.eurprd03.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 27 Oct 2022 21:59:54.6238
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: bebe97c3-6438-442e-ade3-ff17aa50e733
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: M1IXDnBo86MVUoi4yy1Kh1RhgEKeZE/gatQc0tjVEuzRaScevHv3ny/W/ifJa3oYw6rDdFvKyXwq8fWNYcdQqw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM9PR03MB7169
+In-Reply-To: <20221027191113.403712-5-sean.anderson@seco.com>
+References: <20221027191113.403712-1-sean.anderson@seco.com> <20221027191113.403712-5-sean.anderson@seco.com>
+Subject: Re: [PATCH v8 4/9] phy: fsl: Add Lynx 10G SerDes driver
+From: Stephen Boyd <sboyd@kernel.org>
+Cc: Rob Herring <robh+dt@kernel.org>, Bagas Sanjaya <bagasdotme@gmail.com>, devicetree@vger.kernel.org, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, linuxppc-dev@lists.ozlabs.org, Ioana Ciornei <ioana.ciornei@nxp.com>, linux-arm-kernel@lists.infradead.org, Camelia Alexandra Groza <camelia.groza@nxp.com>, Madalin Bucur <madalin.bucur@nxp.com>, Sean Anderson <sean.anderson@seco.com>, Jonathan Corbet <corbet@lwn.net>, Michael Turquette <mturquette@baylibre.com>, linux-clk@vger.kernel.org, linux-doc@vger.kernel.org
+To: Kishon Vijay Abraham I <kishon@ti.com>, Sean Anderson <sean.anderson@seco.com>, Vinod Koul <vkoul@kernel.org>, linux-phy@lists.infradead.org
+Date: Thu, 27 Oct 2022 16:03:28 -0700
+User-Agent: alot/0.10
+Message-Id: <20221027230331.19C2FC433D6@smtp.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221027_145958_679026_C557D8CF 
-X-CRM114-Status: GOOD (  10.20  )
+X-CRM114-CacheID: sfid-20221027_160332_702803_C9CF8FA3 
+X-CRM114-Status: GOOD (  40.68  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -151,26 +70,614 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 10/27/22 17:49, Stephen Boyd wrote:
-> Quoting Sean Anderson (2022-10-27 12:11:07)
->> This adds ids for the Lynx 10g SerDes's internal PLLs. These may be used
->> with assigned-clock* to specify a particular frequency to use. For
->> example, to set the second PLL (at offset 0x20)'s frequency, use
->> LYNX10G_PLLa(1). These are for use only in the device tree, and are not
->> otherwise used by the driver.
->> 
->> Signed-off-by: Sean Anderson <sean.anderson@seco.com>
->> Acked-by: Rob Herring <robh@kernel.org>
->> ---
-> 
-> Acked-by: Stephen Boyd <sboyd@kernel.org>
+Quoting Sean Anderson (2022-10-27 12:11:08)
+> diff --git a/drivers/phy/freescale/Kconfig b/drivers/phy/freescale/Kconfig
+> index 853958fb2c06..a6ccccf9e39b 100644
+> --- a/drivers/phy/freescale/Kconfig
+> +++ b/drivers/phy/freescale/Kconfig
+> @@ -47,3 +47,25 @@ config PHY_FSL_LYNX_28G
+>           found on NXP's Layerscape platforms such as LX2160A.
+>           Used to change the protocol running on SerDes lanes at runtime.
+>           Only useful for a restricted set of Ethernet protocols.
+> +
+> +config PHY_FSL_LYNX_10G
+> +       tristate "Freescale QorIQ Lynx 10G SerDes support"
+> +       depends on COMMON_CLK
 
-Whoops, looks like I forgot to pick this up in v5.
+Does something not compile if COMMON_CLK is disabled?
 
-There's also an (internal) clock driver in the next patch if you want to
-look that over.
+> +       depends on ARCH_LAYERSCAPE || PPC || COMPILE_TEST
+> +       select GENERIC_PHY
+> +       select REGMAP_MMIO
+> +       help
+> +         This adds support for the Lynx "SerDes" devices found on various QorIQ
+> +         SoCs. There may be up to four SerDes devices on each SoC, and each
+> +         device supports up to eight lanes. The SerDes is configured by
+> +         default by the RCW, but this module is necessary in order to support
+> +         some modes (such as 2.5G SGMII or 1000BASE-KX), or clock setups (as
+> +         only as subset of clock configurations are supported by the RCW).
+> +         The hardware supports a variety of protocols, including Ethernet,
+> +         SATA, PCIe, and more exotic links such as Interlaken and Aurora. This
+> +         driver only supports Ethernet, but it will try not to touch lanes
+> +         configured for other protocols.
+> +
+> +         If you have a QorIQ processor and want to dynamically reconfigure your
+> +         SerDes, say Y. If this driver is compiled as a module, it will be
+> +         named phy-fsl-lynx-10g-drv.
+> diff --git a/drivers/phy/freescale/Makefile b/drivers/phy/freescale/Makefile
+> index cedb328bc4d2..1f18936507e0 100644
+> --- a/drivers/phy/freescale/Makefile
+> +++ b/drivers/phy/freescale/Makefile
+> @@ -3,4 +3,7 @@ obj-$(CONFIG_PHY_FSL_IMX8MQ_USB)        += phy-fsl-imx8mq-usb.o
+>  obj-$(CONFIG_PHY_MIXEL_LVDS_PHY)       += phy-fsl-imx8qm-lvds-phy.o
+>  obj-$(CONFIG_PHY_MIXEL_MIPI_DPHY)      += phy-fsl-imx8-mipi-dphy.o
+>  obj-$(CONFIG_PHY_FSL_IMX8M_PCIE)       += phy-fsl-imx8m-pcie.o
+> +phy-fsl-lynx-10g-drv-y                 += phy-fsl-lynx-10g.o
+> +phy-fsl-lynx-10g-drv-y                 += phy-fsl-lynx-10g-clk.o
+> +obj-$(CONFIG_PHY_FSL_LYNX_10G)         += phy-fsl-lynx-10g-drv.o
+>  obj-$(CONFIG_PHY_FSL_LYNX_28G)         += phy-fsl-lynx-28g.o
+> diff --git a/drivers/phy/freescale/lynx-10g.h b/drivers/phy/freescale/lynx-10g.h
+> new file mode 100644
+> index 000000000000..75d9353a867b
+> --- /dev/null
+> +++ b/drivers/phy/freescale/lynx-10g.h
+> @@ -0,0 +1,16 @@
+> +/* SPDX-License-Identifier: GPL-2.0 */
+> +/*
+> + * Copyright (C) 2022 Sean Anderson <sean.anderson@seco.com>
+> + */
+> +
+> +#ifndef LYNX_10G
+> +#define LYNX_10G
+> +
+> +struct clk;
+> +struct device;
+> +struct regmap;
+> +
+> +int lynx_clks_init(struct device *dev, struct regmap *regmap,
 
---Sean
+Can you use auxiliary bus to register this clk controller instead and
+then move the clk file to drivers/clk/?
+
+> +                  struct clk *plls[2], struct clk *ex_dlys[2]);
+> +
+> +#endif /* LYNX 10G */
+> diff --git a/drivers/phy/freescale/phy-fsl-lynx-10g-clk.c b/drivers/phy/freescale/phy-fsl-lynx-10g-clk.c
+> new file mode 100644
+> index 000000000000..6ec32bdfb9dd
+> --- /dev/null
+> +++ b/drivers/phy/freescale/phy-fsl-lynx-10g-clk.c
+> @@ -0,0 +1,503 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +/*
+> + * Copyright (C) 2022 Sean Anderson <sean.anderson@seco.com>
+> + *
+> + * This file contains the implementation for the PLLs found on Lynx 10G phys.
+> + *
+> + * XXX: The VCO rate of the PLLs can exceed ~4GHz, which is the maximum rate
+> + * expressable in an unsigned long. To work around this, rates are specified in
+> + * kHz. This is as if there was a division by 1000 in the PLL.
+> + */
+> +
+> +#include <linux/clk.h>
+
+Ideally clk.h isn't included in a clk provider. This allows us to easily
+identify drivers that are both a consumer (clk.h) and a provider
+(clk-provider.h). A provider/consumer is rare.
+
+> +#include <linux/clk-provider.h>
+> +#include <linux/device.h>
+> +#include <linux/bitfield.h>
+> +#include <linux/math64.h>
+> +#include <linux/regmap.h>
+> +#include <linux/slab.h>
+> +#include <linux/units.h>
+> +#include <dt-bindings/clock/fsl,lynx-10g.h>
+> +
+> +#include "lynx-10g.h"
+> +
+> +#define PLL_STRIDE     0x20
+> +#define PLLa(a, off)   ((a) * PLL_STRIDE + (off))
+> +#define PLLaRSTCTL(a)  PLLa(a, 0x00)
+> +#define PLLaCR0(a)     PLLa(a, 0x04)
+> +
+> +#define PLLaRSTCTL_RSTREQ      BIT(31)
+> +#define PLLaRSTCTL_RST_DONE    BIT(30)
+> +#define PLLaRSTCTL_RST_ERR     BIT(29)
+> +#define PLLaRSTCTL_PLLRST_B    BIT(7)
+> +#define PLLaRSTCTL_SDRST_B     BIT(6)
+> +#define PLLaRSTCTL_SDEN                BIT(5)
+> +
+> +#define PLLaRSTCTL_ENABLE_SET  (PLLaRSTCTL_RST_DONE | PLLaRSTCTL_PLLRST_B | \
+> +                                PLLaRSTCTL_SDRST_B | PLLaRSTCTL_SDEN)
+> +#define PLLaRSTCTL_ENABLE_MASK (PLLaRSTCTL_ENABLE_SET | PLLaRSTCTL_RST_ERR)
+> +
+> +#define PLLaCR0_POFF           BIT(31)
+> +#define PLLaCR0_RFCLK_SEL      GENMASK(30, 28)
+> +#define PLLaCR0_PLL_LCK                BIT(23)
+> +#define PLLaCR0_FRATE_SEL      GENMASK(19, 16)
+> +#define PLLaCR0_DLYDIV_SEL     GENMASK(1, 0)
+> +
+> +#define PLLaCR0_DLYDIV_SEL_16          0b01
+> +
+> +/**
+> + * struct lynx_clk - Driver data for the PLLs
+> + * @pll: The PLL clock
+> + * @ex_dly: The "PLLa_ex_dly_clk" clock
+> + * @ref: Our reference clock
+> + * @dev: The serdes device
+> + * @regmap: Our registers
+> + * @idx: Which PLL this clock is for
+> + */
+> +struct lynx_clk {
+> +       struct clk_hw pll, ex_dly;
+> +       struct clk_hw *ref;
+> +       struct device *dev;
+> +       struct regmap *regmap;
+> +       unsigned int idx;
+> +};
+> +
+> +static u32 lynx_read(struct lynx_clk *clk, u32 reg)
+> +{
+> +       unsigned int ret = 0;
+> +
+> +       WARN_ON_ONCE(regmap_read(clk->regmap, reg, &ret));
+> +       return ret;
+> +}
+> +
+> +static void lynx_write(struct lynx_clk *clk, u32 val, u32 reg)
+> +{
+> +       WARN_ON_ONCE(regmap_write(clk->regmap, reg, val));
+> +}
+> +
+> +static struct lynx_clk *lynx_pll_to_clk(struct clk_hw *hw)
+> +{
+> +       return container_of(hw, struct lynx_clk, pll);
+> +}
+> +
+> +static struct lynx_clk *lynx_ex_dly_to_clk(struct clk_hw *hw)
+> +{
+> +       return container_of(hw, struct lynx_clk, ex_dly);
+> +}
+> +
+> +static void lynx_pll_stop(struct lynx_clk *clk)
+> +{
+> +       u32 rstctl;
+> +
+> +       rstctl = lynx_read(clk, PLLaRSTCTL(clk->idx));
+> +       rstctl &= ~PLLaRSTCTL_SDRST_B;
+> +       lynx_write(clk, rstctl, PLLaRSTCTL(clk->idx));
+> +
+> +       ndelay(50);
+> +
+> +       rstctl = lynx_read(clk, PLLaRSTCTL(clk->idx));
+> +       rstctl &= ~(PLLaRSTCTL_SDEN | PLLaRSTCTL_PLLRST_B);
+> +       lynx_write(clk, rstctl, PLLaRSTCTL(clk->idx));
+> +
+> +       ndelay(100);
+> +}
+> +
+> +static void lynx_pll_disable(struct clk_hw *hw)
+> +{
+> +       struct lynx_clk *clk = lynx_pll_to_clk(hw);
+> +       u32 cr0;
+> +
+> +       dev_dbg(clk->dev, "disable pll%d\n", clk->idx);
+> +
+> +       lynx_pll_stop(clk);
+> +
+> +       cr0 = lynx_read(clk, PLLaCR0(clk->idx));
+> +       cr0 |= PLLaCR0_POFF;
+> +       lynx_write(clk, cr0, PLLaCR0(clk->idx));
+> +}
+> +
+> +static int lynx_pll_reset(struct lynx_clk *clk)
+> +{
+> +       int ret;
+> +       u32 rstctl = lynx_read(clk, PLLaRSTCTL(clk->idx));
+> +
+> +       rstctl |= PLLaRSTCTL_RSTREQ;
+> +       lynx_write(clk, rstctl, PLLaRSTCTL(clk->idx));
+> +       ret = read_poll_timeout(lynx_read, rstctl,
+> +                               rstctl & (PLLaRSTCTL_RST_DONE | PLLaRSTCTL_RST_ERR),
+> +                               100, 5000, true, clk, PLLaRSTCTL(clk->idx));
+> +       if (rstctl & PLLaRSTCTL_RST_ERR)
+> +               ret = -EIO;
+> +       if (ret) {
+> +               dev_err(clk->dev, "pll%d reset failed\n", clk->idx);
+> +               return ret;
+> +       }
+> +
+> +       rstctl |= PLLaRSTCTL_SDEN | PLLaRSTCTL_PLLRST_B | PLLaRSTCTL_SDRST_B;
+> +       lynx_write(clk, rstctl, PLLaRSTCTL(clk->idx));
+> +       return 0;
+> +}
+> +
+> +static int lynx_pll_prepare(struct clk_hw *hw)
+> +{
+> +       struct lynx_clk *clk = lynx_pll_to_clk(hw);
+> +       u32 rstctl = lynx_read(clk, PLLaRSTCTL(clk->idx));
+> +       u32 cr0 = lynx_read(clk, PLLaCR0(clk->idx));
+> +
+> +       /*
+> +        * "Enabling" the PLL involves resetting it (and all attached lanes).
+> +        * Avoid doing this if we are already enabled.
+> +        */
+> +       if (!(cr0 & PLLaCR0_POFF) &&
+> +           (rstctl & PLLaRSTCTL_ENABLE_MASK) == PLLaRSTCTL_ENABLE_SET) {
+> +               dev_dbg(clk->dev, "pll%d already prepared\n", clk->idx);
+> +               return 0;
+> +       }
+> +
+> +       dev_dbg(clk->dev, "prepare pll%d\n", clk->idx);
+> +
+> +       cr0 &= ~PLLaCR0_POFF;
+> +       lynx_write(clk, cr0, PLLaCR0(clk->idx));
+> +
+> +       return lynx_pll_reset(clk);
+> +}
+> +
+> +static int lynx_pll_is_enabled(struct clk_hw *hw)
+> +{
+> +       struct lynx_clk *clk = lynx_pll_to_clk(hw);
+> +       u32 cr0 = lynx_read(clk, PLLaCR0(clk->idx));
+> +       bool enabled = !(cr0 & PLLaCR0_POFF);
+> +
+> +       dev_dbg(clk->dev, "pll%d %s enabled\n", clk->idx,
+> +               enabled ? "is" : "is not");
+> +
+> +       return enabled;
+> +}
+> +
+> +static const u32 rfclk_sel_map[8] = {
+> +       [0b000] = 100000000,
+> +       [0b001] = 125000000,
+> +       [0b010] = 156250000,
+> +       [0b011] = 150000000,
+> +};
+> +
+> +/**
+> + * lynx_rfclk_to_sel() - Convert a reference clock rate to a selector
+> + * @rate: The reference clock rate
+> + *
+> + * To allow for some variation in the reference clock rate, up to 100ppm of
+> + * error is allowed.
+> + *
+> + * Return: An appropriate selector for @rate, or -%EINVAL.
+> + */
+> +static int lynx_rfclk_to_sel(u32 rate)
+
+Should rate be unsigned long? Or you really want 32-bits here?
+
+> +{
+> +       int ret;
+> +
+> +       for (ret = 0; ret < ARRAY_SIZE(rfclk_sel_map); ret++) {
+> +               u32 rfclk_rate = rfclk_sel_map[ret];
+> +               /* Allow an error of 100ppm */
+> +               u32 error = rfclk_rate / 10000;
+> +
+> +               if (rate > rfclk_rate - error && rate < rfclk_rate + error)
+
+Does
+
+	if (abs(rate - rfclk_rate) < error)
+
+work? I'm kinda surprised that we don't have a within_tolerance(x,
+margin) macro in math.h that would make it look like:
+
+	if (within_tolerance(rate - rfclk_rate, error))
+
+
+> +                       return ret;
+> +       }
+> +
+> +       return -EINVAL;
+> +}
+> +
+> +static const u32 frate_sel_map[16] = {
+> +       [0b0000] = 5000000,
+> +       [0b0101] = 3750000,
+> +       [0b0110] = 5156250,
+> +       [0b0111] = 4000000,
+> +       [0b1001] = 3125000,
+> +       [0b1010] = 3000000,
+> +};
+> +
+> +/**
+> + * lynx_frate_to_sel() - Convert a VCO clock rate to a selector
+> + * @rate_khz: The VCO frequency, in kHz
+> + *
+> + * Return: An appropriate selector for @rate_khz, or -%EINVAL.
+> + */
+> +static int lynx_frate_to_sel(u32 rate_khz)
+> +{
+> +       int ret;
+> +
+> +       for (ret = 0; ret < ARRAY_SIZE(frate_sel_map); ret++)
+> +               if (frate_sel_map[ret] == rate_khz)
+> +                       return ret;
+> +
+> +       return -EINVAL;
+> +}
+> +
+> +static u32 lynx_pll_ratio(u32 frate_sel, u32 rfclk_sel)
+> +{
+> +       u64 frate;
+> +       u32 rfclk, error, ratio;
+> +
+> +       frate = frate_sel_map[frate_sel] * (u64)HZ_PER_KHZ;
+> +       rfclk = rfclk_sel_map[rfclk_sel];
+> +
+> +       if (!frate || !rfclk)
+> +               return 0;
+> +
+> +       ratio = div_u64_rem(frate, rfclk, &error);
+> +       if (!error)
+> +               return ratio;
+> +       return 0;
+> +}
+> +
+> +static unsigned long lynx_pll_recalc_rate(struct clk_hw *hw,
+> +                                         unsigned long parent_rate)
+> +{
+> +       struct lynx_clk *clk = lynx_pll_to_clk(hw);
+> +       u32 cr0 = lynx_read(clk, PLLaCR0(clk->idx));
+> +       u32 frate_sel = FIELD_GET(PLLaCR0_FRATE_SEL, cr0);
+> +       u32 rfclk_sel = FIELD_GET(PLLaCR0_RFCLK_SEL, cr0);
+> +       u32 ratio = lynx_pll_ratio(frate_sel, rfclk_sel);
+> +       unsigned long ret;
+> +
+> +       /* Ensure that the parent matches our rfclk selector */
+> +       if (rfclk_sel == lynx_rfclk_to_sel(parent_rate))
+> +               ret = mult_frac(parent_rate, ratio, HZ_PER_KHZ);
+> +       else
+> +               ret = 0;
+> +
+> +       dev_dbg(clk->dev, "recalc pll%d new=%llu parent=%lu\n", clk->idx,
+> +               (u64)ret * HZ_PER_KHZ, parent_rate);
+> +       return ret;
+> +}
+> +
+> +static long lynx_pll_round_rate(struct clk_hw *hw, unsigned long rate_khz,
+> +                               unsigned long *parent_rate)
+> +{
+> +       int frate_sel, rfclk_sel;
+> +       struct lynx_clk *clk = lynx_pll_to_clk(hw);
+> +       u32 ratio;
+> +
+> +       dev_dbg(clk->dev, "round pll%d new=%llu parent=%lu\n", clk->idx,
+> +               (u64)rate_khz * HZ_PER_KHZ, *parent_rate);
+> +
+> +       frate_sel = lynx_frate_to_sel(rate_khz);
+> +       if (frate_sel < 0)
+> +               return frate_sel;
+> +
+> +       /* Try the current parent rate */
+> +       rfclk_sel = lynx_rfclk_to_sel(*parent_rate);
+> +       if (rfclk_sel >= 0) {
+> +               ratio = lynx_pll_ratio(frate_sel, rfclk_sel);
+> +               if (ratio)
+> +                       return mult_frac(*parent_rate, ratio, HZ_PER_KHZ);
+> +       }
+> +
+> +       /* Try all possible parent rates */
+> +       for (rfclk_sel = 0;
+> +            rfclk_sel < ARRAY_SIZE(rfclk_sel_map);
+> +            rfclk_sel++) {
+> +               unsigned long new_parent_rate;
+> +
+> +               ratio = lynx_pll_ratio(frate_sel, rfclk_sel);
+> +               if (!ratio)
+> +                       continue;
+> +
+> +               /* Ensure the reference clock can produce this rate */
+> +               new_parent_rate = rfclk_sel_map[rfclk_sel];
+> +               new_parent_rate = clk_hw_round_rate(clk->ref, new_parent_rate);
+> +               if (rfclk_sel != lynx_rfclk_to_sel(new_parent_rate))
+> +                       continue;
+> +
+> +               *parent_rate = new_parent_rate;
+> +               return mult_frac(new_parent_rate, ratio, HZ_PER_KHZ);
+> +       }
+> +
+> +       return -EINVAL;
+> +}
+> +
+> +static int lynx_pll_set_rate(struct clk_hw *hw, unsigned long rate_khz,
+> +                          unsigned long parent_rate)
+> +{
+> +       int frate_sel, rfclk_sel;
+> +       struct lynx_clk *clk = lynx_pll_to_clk(hw);
+> +       u32 ratio, cr0 = lynx_read(clk, PLLaCR0(clk->idx));
+> +
+> +       dev_dbg(clk->dev, "set rate pll%d new=%llu parent=%lu\n", clk->idx,
+> +               (u64)rate_khz * HZ_PER_KHZ, parent_rate);
+> +
+> +       frate_sel = lynx_frate_to_sel(rate_khz);
+> +       if (frate_sel < 0)
+> +               return frate_sel;
+> +
+> +       rfclk_sel = lynx_rfclk_to_sel(parent_rate);
+> +       if (rfclk_sel < 0)
+> +               return rfclk_sel;
+> +
+> +       ratio = lynx_pll_ratio(frate_sel, rfclk_sel);
+> +       if (!ratio)
+> +               return -EINVAL;
+> +
+> +       lynx_pll_stop(clk);
+> +       cr0 &= ~(PLLaCR0_RFCLK_SEL | PLLaCR0_FRATE_SEL);
+> +       cr0 |= FIELD_PREP(PLLaCR0_RFCLK_SEL, rfclk_sel);
+> +       cr0 |= FIELD_PREP(PLLaCR0_FRATE_SEL, frate_sel);
+> +       lynx_write(clk, cr0, PLLaCR0(clk->idx));
+> +       /* Don't bother resetting if it's off */
+> +       if (cr0 & PLLaCR0_POFF)
+> +               return 0;
+> +       return lynx_pll_reset(clk);
+> +}
+> +
+> +static const struct clk_ops lynx_pll_clk_ops = {
+> +       .prepare = lynx_pll_prepare,
+> +       .disable = lynx_pll_disable,
+> +       .is_enabled = lynx_pll_is_enabled,
+> +       .recalc_rate = lynx_pll_recalc_rate,
+> +       .round_rate = lynx_pll_round_rate,
+> +       .set_rate = lynx_pll_set_rate,
+> +};
+> +
+> +static void lynx_ex_dly_disable(struct clk_hw *hw)
+> +{
+> +       struct lynx_clk *clk = lynx_ex_dly_to_clk(hw);
+> +       u32 cr0 = lynx_read(clk, PLLaCR0(clk->idx));
+> +
+> +       cr0 &= ~PLLaCR0_DLYDIV_SEL;
+> +       lynx_write(clk, PLLaCR0(clk->idx), cr0);
+> +}
+> +
+> +static int lynx_ex_dly_enable(struct clk_hw *hw)
+> +{
+> +       struct lynx_clk *clk = lynx_ex_dly_to_clk(hw);
+> +       u32 cr0 = lynx_read(clk, PLLaCR0(clk->idx));
+> +
+> +       cr0 &= ~PLLaCR0_DLYDIV_SEL;
+> +       cr0 |= FIELD_PREP(PLLaCR0_DLYDIV_SEL, PLLaCR0_DLYDIV_SEL_16);
+> +       lynx_write(clk, PLLaCR0(clk->idx), cr0);
+> +       return 0;
+> +}
+> +
+> +static int lynx_ex_dly_is_enabled(struct clk_hw *hw)
+> +{
+> +       struct lynx_clk *clk = lynx_ex_dly_to_clk(hw);
+> +
+> +       return lynx_read(clk, PLLaCR0(clk->idx)) & PLLaCR0_DLYDIV_SEL;
+> +}
+> +
+> +static unsigned long lynx_ex_dly_recalc_rate(struct clk_hw *hw,
+> +                                            unsigned long parent_rate)
+> +{
+> +       return parent_rate / 16;
+> +}
+> +
+> +static const struct clk_ops lynx_ex_dly_clk_ops = {
+> +       .enable = lynx_ex_dly_enable,
+> +       .disable = lynx_ex_dly_disable,
+> +       .is_enabled = lynx_ex_dly_is_enabled,
+> +       .recalc_rate = lynx_ex_dly_recalc_rate,
+> +};
+> +
+> +static int lynx_clk_init(struct clk_hw_onecell_data *hw_data,
+> +                        struct device *dev, struct regmap *regmap,
+> +                        unsigned int index)
+> +{
+> +       const struct clk_hw *pll_parents, *ex_dly_parents;
+> +       struct clk_init_data pll_init = {
+> +               .ops = &lynx_pll_clk_ops,
+> +               .parent_hws = &pll_parents,
+> +               .num_parents = 1,
+> +               .flags = CLK_GET_RATE_NOCACHE | CLK_SET_RATE_PARENT |
+> +                        CLK_OPS_PARENT_ENABLE,
+> +       };
+> +       struct clk_init_data ex_dly_init = {
+> +               .ops = &lynx_ex_dly_clk_ops,
+> +               .parent_hws = &ex_dly_parents,
+> +               .num_parents = 1,
+> +       };
+> +       struct clk *ref;
+> +       struct lynx_clk *clk;
+> +       char *ref_name;
+> +       int ret;
+> +
+> +       clk = devm_kzalloc(dev, sizeof(*clk), GFP_KERNEL);
+> +       if (!clk)
+> +               return -ENOMEM;
+> +
+> +       clk->dev = dev;
+> +       clk->regmap = regmap;
+> +       clk->idx = index;
+> +
+> +       ref_name = kasprintf(GFP_KERNEL, "ref%d", index);
+> +       pll_init.name = kasprintf(GFP_KERNEL, "%s.pll%d_khz", dev_name(dev),
+> +                                 index);
+> +       ex_dly_init.name = kasprintf(GFP_KERNEL, "%s.pll%d_ex_dly_khz",
+> +                                    dev_name(dev), index);
+> +       if (!ref_name || !pll_init.name || !ex_dly_init.name) {
+> +               ret = -ENOMEM;
+> +               goto out;
+> +       }
+> +
+> +       ref = devm_clk_get(dev, ref_name);
+> +       if (IS_ERR(clk->ref)) {
+> +               ret = PTR_ERR(clk->ref);
+> +               dev_err_probe(dev, ret, "could not get %s\n", ref_name);
+> +               goto out;
+> +       }
+> +
+> +       clk->ref = __clk_get_hw(ref);
+
+Please don't use __clk_get_hw() for this. Instead use struct
+clk_parent_data and set a DT index in the index member to map to this
+clk.
+
+> +       pll_parents = clk->ref;
+> +       clk->pll.init = &pll_init;
+> +       ret = devm_clk_hw_register(dev, &clk->pll);
+> +       if (ret) {
+> +               dev_err_probe(dev, ret, "could not register %s\n",
+> +                             pll_init.name);
+> +               goto out;
+> +       }
+> +
+> +       ex_dly_parents = &clk->pll;
+> +       clk->ex_dly.init = &ex_dly_init;
+> +       ret = devm_clk_hw_register(dev, &clk->ex_dly);
+> +       if (ret)
+> +               dev_err_probe(dev, ret, "could not register %s\n",
+> +                             ex_dly_init.name);
+> +
+> +       hw_data->hws[LYNX10G_PLLa(index)] = &clk->pll;
+> +       hw_data->hws[LYNX10G_PLLa_EX_DLY(index)] = &clk->ex_dly;
+> +
+> +out:
+> +       kfree(ref_name);
+> +       kfree(pll_init.name);
+> +       kfree(ex_dly_init.name);
+> +       return ret;
+> +}
+> +
+> +#define NUM_PLLS 2
+> +#define NUM_CLKS (NUM_PLLS * LYNX10G_CLKS_PER_PLL)
+> +
+> +int lynx_clks_init(struct device *dev, struct regmap *regmap,
+> +                  struct clk *plls[2], struct clk *ex_dlys[2])
+> +{
+> +       int ret, i;
+> +       struct clk_hw_onecell_data *hw_data;
+> +
+> +       hw_data = devm_kzalloc(dev, struct_size(hw_data, hws, NUM_CLKS),
+> +                              GFP_KERNEL);
+> +       if (!hw_data)
+> +               return -ENOMEM;
+> +       hw_data->num = NUM_CLKS;
+> +
+> +       for (i = 0; i < NUM_PLLS; i++) {
+> +               ret = lynx_clk_init(hw_data, dev, regmap, i);
+> +               if (ret)
+> +                       return ret;
+> +
+> +               plls[i] = hw_data->hws[LYNX10G_PLLa(i)]->clk;
+> +               ex_dlys[i] = hw_data->hws[LYNX10G_PLLa_EX_DLY(i)]->clk;
+
+Use clk_hw_get_clk() please.
+
+> +       }
+> +
+> +       ret = devm_of_clk_add_hw_provider(dev, of_clk_hw_onecell_get, hw_data);
+> +       if (ret)
+> +               dev_err_probe(dev, ret, "could not register clock provider\n");
+> +
+> +       return ret;
+> +}
 
 -- 
 linux-phy mailing list
