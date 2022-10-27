@@ -4,53 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A9267FA3744
-	for <linux-phy@archiver.kernel.org>; Thu, 27 Oct 2022 13:44:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 92170FA3742
+	for <linux-phy@archiver.kernel.org>; Thu, 27 Oct 2022 16:50:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hBQhKVbKo0CTJcoBwJBTp43rl1830fhvYgpXxeiMJTM=; b=re2gRJjtYIKKQA
-	rdqCOJ6lhVvN/ZTnoxARHwC5wvEMhPxXQKTZD3oHj0oE40gSfuwcghOiNNPNZ7PymE4tqFi+SRhl4
-	WagjcBZuUnHsDgaIPyLsqVV/SsChSWA1e9K54HMN96N67jc1cd3vDiCjBoiQm9VdLOQFXba0xBRPv
-	4AaGRNHSgJgCgFmWcrjd/fps9zw15ErwmfG7EvMX+dU4A88knt0W25eqpULj7pDT9U+l9CJdvKbGq
-	t43a3/h59JX6KI1sAfbPs7zxc0Vt1BLoMAEKkFDeCQeqxRZBf+fpzwxmdMhzaet8usp30q9FpZoGz
-	md9SYRW15eYgvzKSjDhQ==;
+	List-Owner; bh=fkzN6k41frrbDHP/i+Jz+AOaFJzrpSGN60LG6mNXQK8=; b=HIposARI+IlcWs
+	Gq2UpNfOPq9DvusMjkIBlBXj+Ei+Sg5yqnC9IDq/WkW+zNBEZYspNPKHKvaToRe499Ek++ga2iVd0
+	DhZzASz+JxzB2XWEJhaqFTStero+85CUH51pBraIsUv5QsjbJNBClxwDCEBXDXmDi4qSGB5hmdb9m
+	cYtky+PRqDeKMhzO0ZSCHJlRTPJQCih2C8+ZC1iLEVdSmPejMRe2DWdLwwNtw1chI5KMUkxyUM9bP
+	7KbhaGNdTKylA2Ihmmxm3Nh9SeYYb/2+ZqQdtWp0get1DXxuhUbSRDF2AwkpJOWLepwvTCK1oOjdv
+	+yrYCnn2YwtJdmrYOiwA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oo3Bm-00Derb-RB; Thu, 27 Oct 2022 13:44:54 +0000
-Received: from relmlor1.renesas.com ([210.160.252.171] helo=relmlie5.idc.renesas.com)
-	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oo37E-00Dc2K-Go
-	for linux-phy@lists.infradead.org; Thu, 27 Oct 2022 13:40:16 +0000
-X-IronPort-AV: E=Sophos;i="5.95,217,1661785200"; 
-   d="scan'208";a="138151419"
-Received: from unknown (HELO relmlir5.idc.renesas.com) ([10.200.68.151])
-  by relmlie5.idc.renesas.com with ESMTP; 27 Oct 2022 22:40:11 +0900
-Received: from localhost.localdomain (unknown [10.166.15.32])
-	by relmlir5.idc.renesas.com (Postfix) with ESMTP id 6422F40006BD;
-	Thu, 27 Oct 2022 22:40:11 +0900 (JST)
-From: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
-To: vkoul@kernel.org,
-	kishon@kernel.org,
-	robh+dt@kernel.org,
-	krzysztof.kozlowski+dt@linaro.org
-Cc: linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-renesas-soc@vger.kernel.org,
-	Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
-Subject: [RESEND PATCH v3 2/2] phy: renesas: Add Renesas Ethernet SERDES driver for R-Car S4-8
-Date: Thu, 27 Oct 2022 22:40:06 +0900
-Message-Id: <20221027134006.2343164-3-yoshihiro.shimoda.uh@renesas.com>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20221027134006.2343164-1-yoshihiro.shimoda.uh@renesas.com>
-References: <20221027134006.2343164-1-yoshihiro.shimoda.uh@renesas.com>
+	id 1oo652-00EH0f-RA; Thu, 27 Oct 2022 16:50:08 +0000
+Received: from mail-ej1-x634.google.com ([2a00:1450:4864:20::634])
+	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
+	id 1oo650-00EGyA-0x
+	for linux-phy@lists.infradead.org; Thu, 27 Oct 2022 16:50:07 +0000
+Received: by mail-ej1-x634.google.com with SMTP id sc25so6308519ejc.12
+        for <linux-phy@lists.infradead.org>; Thu, 27 Oct 2022 09:50:00 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20210112;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=27thMH6kbiBYeHImVpD7suGwEm5dpzCEVU9319M7znE=;
+        b=LR5ylFn+fuISymwTB00xHZ6t3I/9VqmosSnSmVnG+w+wni69hiZfzUtKio5rU1epqQ
+         PKwl26tatzAMYRrFcU1ArEm9elaSOfVYxYBaGAWAwJBeUH6o3WbL+H1eChTNMnckRwoz
+         YLpPwxWkmTWPIxMH08r77/N86vm90ow8+Nhsduxhz4JqYgwq6ENfqc6awtMqNKOHO+6V
+         APUEvq4dtPgK6eeZbttohwccXcC/kku6WwdXXlVR1ixzeDn8iQsKFSwKwl3AdZMJa2ue
+         mqr0ytlrq4EJhLDIncsbdsYhTXeS7S5MImB0/owkhV2qBAOaNUPPhxO/Xwo4qnZHWMA+
+         JDVg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=27thMH6kbiBYeHImVpD7suGwEm5dpzCEVU9319M7znE=;
+        b=ICkCvfDRteneeJkOFa1PJF0UcqsYYdxbXgxP9maKmUKjmd+Vchilsu5NwAW+T1vIUm
+         nqctVnYbZo4cYY074NNDmvFXNMEgmOo1n8qH4TKZhqBo0eY8G8nJVhXA7dYhlL7D7zZ0
+         i9zCV7mZNJigSkKUtBMEcKuB9XQZBzS3JeoQ1MrfwnjMwANQRS9aUTFQGgS+ZaN/em8N
+         CLCY7K+VjysR2ARqobu600J1beoQ7GqgQ4tFpPfegZiFZVAjGM83BVkr6GV3PzeHi1VW
+         tlQ9jiij1e10R9XArICAjg+ue2SIN+MS/MCrLbBlx/tIxcsNL2EacFUkbf4WqI3m76Ou
+         v/hg==
+X-Gm-Message-State: ACrzQf08j1SI4mXac6nlVgNlVNJJcYitiO4lWbwMuPn94Bykm5btqQjz
+	i3R+9hcZ8JhK4Ag4S1yhM91tNr9M9kMUcyUMrPQ=
+X-Google-Smtp-Source: AMsMyM58LmKYkZC59FJWd+D3WjBzjSxLpn7tvaAGnZjFQMskGI5vXH3qrtVsby1unS0KOziaRirmP2zfJqz42OjuNno=
+X-Received: by 2002:a17:906:da85:b0:741:40a7:d08d with SMTP id
+ xh5-20020a170906da8500b0074140a7d08dmr45198589ejb.263.1666889399497; Thu, 27
+ Oct 2022 09:49:59 -0700 (PDT)
 MIME-Version: 1.0
+References: <20221026224450.2958762-1-f.fainelli@gmail.com>
+In-Reply-To: <20221026224450.2958762-1-f.fainelli@gmail.com>
+From: Justin Chen <justinpopo6@gmail.com>
+Date: Thu, 27 Oct 2022 09:49:48 -0700
+Message-ID: <CAJx26kWS6+FPjpe125817f7Rf6LiXHBPJ2AfM_1Sj7BwK09Fug@mail.gmail.com>
+Subject: Re: [PATCH] phy: phy-brcm-usb: Utilize platform_get_irq_byname_optional()
+To: Florian Fainelli <f.fainelli@gmail.com>
+Cc: linux-kernel@vger.kernel.org, Al Cooper <alcooperx@gmail.com>, 
+	Broadcom internal kernel review list <bcm-kernel-feedback-list@broadcom.com>, 
+	Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, 
+	"open list:GENERIC PHY FRAMEWORK" <linux-phy@lists.infradead.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221027_064012_812670_4D05F0D1 
-X-CRM114-Status: GOOD (  22.02  )
+X-CRM114-CacheID: sfid-20221027_095006_106479_CA258480 
+X-CRM114-Status: GOOD (  15.83  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -67,469 +87,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add Renesas Ethernet SERDES driver for R-Car S4-8 (r8a779f0).
-The datasheet describes initialization procedure without any information
-about registers' name/bits. So, this is all black magic to initialize
-the hardware. Especially, all channels should be initialized at once.
+On Wed, Oct 26, 2022 at 3:45 PM Florian Fainelli <f.fainelli@gmail.com> wrote:
+>
+> The wake-up interrupt lines are entirely optional, avoid printing
+> messages that interrupts were not found by switching to the _optional
+> variant.
+>
+> Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
 
-Signed-off-by: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
----
- drivers/phy/renesas/Kconfig                 |   7 +
- drivers/phy/renesas/Makefile                |   1 +
- drivers/phy/renesas/r8a779f0-ether-serdes.c | 416 ++++++++++++++++++++
- 3 files changed, 424 insertions(+)
- create mode 100644 drivers/phy/renesas/r8a779f0-ether-serdes.c
+Acked-by: Justin Chen <justinpopo6@gmail.com>
 
-diff --git a/drivers/phy/renesas/Kconfig b/drivers/phy/renesas/Kconfig
-index 111bdcae775c..68f160b0e8ef 100644
---- a/drivers/phy/renesas/Kconfig
-+++ b/drivers/phy/renesas/Kconfig
-@@ -32,3 +32,10 @@ config PHY_RCAR_GEN3_USB3
- 	select GENERIC_PHY
- 	help
- 	  Support for USB 3.0 PHY found on Renesas R-Car generation 3 SoCs.
-+
-+config PHY_R8A779F0_ETHERNET_SERDES
-+	tristate "Renesas R-Car S4-8 Ethernet SERDES driver"
-+	depends on ARCH_RENESAS || COMPILE_TEST
-+	select GENERIC_PHY
-+	help
-+	  Support for Ethernet SERDES found on Renesas R-Car S4-8 SoCs.
-diff --git a/drivers/phy/renesas/Makefile b/drivers/phy/renesas/Makefile
-index b599ff8a4349..8896d1919faa 100644
---- a/drivers/phy/renesas/Makefile
-+++ b/drivers/phy/renesas/Makefile
-@@ -1,4 +1,5 @@
- # SPDX-License-Identifier: GPL-2.0
-+obj-$(CONFIG_PHY_R8A779F0_ETHERNET_SERDES)	+= r8a779f0-ether-serdes.o
- obj-$(CONFIG_PHY_RCAR_GEN2)		+= phy-rcar-gen2.o
- obj-$(CONFIG_PHY_RCAR_GEN3_PCIE)	+= phy-rcar-gen3-pcie.o
- obj-$(CONFIG_PHY_RCAR_GEN3_USB2)	+= phy-rcar-gen3-usb2.o
-diff --git a/drivers/phy/renesas/r8a779f0-ether-serdes.c b/drivers/phy/renesas/r8a779f0-ether-serdes.c
-new file mode 100644
-index 000000000000..38cf6c408cae
---- /dev/null
-+++ b/drivers/phy/renesas/r8a779f0-ether-serdes.c
-@@ -0,0 +1,416 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/* Renesas Ethernet SERDES device driver
-+ *
-+ * Copyright (C) 2022 Renesas Electronics Corporation
-+ */
-+
-+#include <linux/delay.h>
-+#include <linux/err.h>
-+#include <linux/iopoll.h>
-+#include <linux/kernel.h>
-+#include <linux/phy.h>
-+#include <linux/phy/phy.h>
-+#include <linux/platform_device.h>
-+#include <linux/reset.h>
-+
-+#define R8A779F0_ETH_SERDES_NUM			3
-+#define R8A779F0_ETH_SERDES_OFFSET		0x0400
-+#define R8A779F0_ETH_SERDES_BANK_SELECT		0x03fc
-+#define R8A779F0_ETH_SERDES_TIMEOUT_US		100000
-+#define R8A779F0_ETH_SERDES_NUM_RETRY_LINKUP	3
-+#define R8A779F0_ETH_SERDES_NUM_RETRY_INIT	3
-+
-+struct r8a779f0_eth_serdes_drv_data;
-+struct r8a779f0_eth_serdes_channel {
-+	struct r8a779f0_eth_serdes_drv_data *dd;
-+	struct phy *phy;
-+	void __iomem *addr;
-+	phy_interface_t phy_interface;
-+	int speed;
-+	int index;
-+};
-+
-+struct r8a779f0_eth_serdes_drv_data {
-+	void __iomem *addr;
-+	struct platform_device *pdev;
-+	struct reset_control *reset;
-+	struct r8a779f0_eth_serdes_channel channel[R8A779F0_ETH_SERDES_NUM];
-+	bool initialized;
-+};
-+
-+/*
-+ * The datasheet describes initialization procedure without any information
-+ * about registers' name/bits. So, this is all black magic to initialize
-+ * the hardware.
-+ */
-+static void r8a779f0_eth_serdes_write32(void __iomem *addr, u32 offs, u32 bank, u32 data)
-+{
-+	iowrite32(bank, addr + R8A779F0_ETH_SERDES_BANK_SELECT);
-+	iowrite32(data, addr + offs);
-+}
-+
-+static int
-+r8a779f0_eth_serdes_reg_wait(struct r8a779f0_eth_serdes_channel *channel,
-+			     u32 offs, u32 bank, u32 mask, u32 expected)
-+{
-+	int ret;
-+	u32 val;
-+
-+	iowrite32(bank, channel->addr + R8A779F0_ETH_SERDES_BANK_SELECT);
-+
-+	ret = readl_poll_timeout_atomic(channel->addr + offs, val,
-+					(val & mask) == expected,
-+					1, R8A779F0_ETH_SERDES_TIMEOUT_US);
-+	if (ret)
-+		pr_debug("%s: index %d, offs %x, bank %x, mask %x, expected %x\n",
-+			 __func__, channel->index, offs, bank, mask, expected);
-+
-+	return ret;
-+}
-+
-+static int
-+r8a779f0_eth_serdes_common_init_ram(struct r8a779f0_eth_serdes_drv_data *dd)
-+{
-+	struct r8a779f0_eth_serdes_channel *channel;
-+	int i, ret;
-+
-+	for (i = 0; i < R8A779F0_ETH_SERDES_NUM; i++) {
-+		channel = &dd->channel[i];
-+		ret = r8a779f0_eth_serdes_reg_wait(channel, 0x026c, 0x180, BIT(0), 0x01);
-+		if (ret)
-+			return ret;
-+	}
-+
-+	r8a779f0_eth_serdes_write32(dd->addr, 0x026c, 0x180, 0x03);
-+
-+	return ret;
-+}
-+
-+static int
-+r8a779f0_eth_serdes_common_setting(struct r8a779f0_eth_serdes_channel *channel)
-+{
-+	struct r8a779f0_eth_serdes_drv_data *dd = channel->dd;
-+
-+	switch (channel->phy_interface) {
-+	case PHY_INTERFACE_MODE_SGMII:
-+		r8a779f0_eth_serdes_write32(dd->addr, 0x0244, 0x180, 0x0097);
-+		r8a779f0_eth_serdes_write32(dd->addr, 0x01d0, 0x180, 0x0060);
-+		r8a779f0_eth_serdes_write32(dd->addr, 0x01d8, 0x180, 0x2200);
-+		r8a779f0_eth_serdes_write32(dd->addr, 0x01d4, 0x180, 0x0000);
-+		r8a779f0_eth_serdes_write32(dd->addr, 0x01e0, 0x180, 0x003d);
-+		return 0;
-+	default:
-+		return -EOPNOTSUPP;
-+	}
-+}
-+
-+static int
-+r8a779f0_eth_serdes_chan_setting(struct r8a779f0_eth_serdes_channel *channel)
-+{
-+	int ret;
-+
-+	switch (channel->phy_interface) {
-+	case PHY_INTERFACE_MODE_SGMII:
-+		r8a779f0_eth_serdes_write32(channel->addr, 0x0000, 0x380, 0x2000);
-+		r8a779f0_eth_serdes_write32(channel->addr, 0x01c0, 0x180, 0x0011);
-+		r8a779f0_eth_serdes_write32(channel->addr, 0x0248, 0x180, 0x0540);
-+		r8a779f0_eth_serdes_write32(channel->addr, 0x0258, 0x180, 0x0015);
-+		r8a779f0_eth_serdes_write32(channel->addr, 0x0144, 0x180, 0x0100);
-+		r8a779f0_eth_serdes_write32(channel->addr, 0x01a0, 0x180, 0x0000);
-+		r8a779f0_eth_serdes_write32(channel->addr, 0x00d0, 0x180, 0x0002);
-+		r8a779f0_eth_serdes_write32(channel->addr, 0x0150, 0x180, 0x0003);
-+		r8a779f0_eth_serdes_write32(channel->addr, 0x00c8, 0x180, 0x0100);
-+		r8a779f0_eth_serdes_write32(channel->addr, 0x0148, 0x180, 0x0100);
-+		r8a779f0_eth_serdes_write32(channel->addr, 0x0174, 0x180, 0x0000);
-+		r8a779f0_eth_serdes_write32(channel->addr, 0x0160, 0x180, 0x0007);
-+		r8a779f0_eth_serdes_write32(channel->addr, 0x01ac, 0x180, 0x0000);
-+		r8a779f0_eth_serdes_write32(channel->addr, 0x00c4, 0x180, 0x0310);
-+		r8a779f0_eth_serdes_write32(channel->addr, 0x00c8, 0x380, 0x0101);
-+		ret = r8a779f0_eth_serdes_reg_wait(channel, 0x00c8, 0x0180, BIT(0), 0);
-+		if (ret)
-+			return ret;
-+
-+		r8a779f0_eth_serdes_write32(channel->addr, 0x0148, 0x180, 0x0101);
-+		ret = r8a779f0_eth_serdes_reg_wait(channel, 0x0148, 0x0180, BIT(0), 0);
-+		if (ret)
-+			return ret;
-+
-+		r8a779f0_eth_serdes_write32(channel->addr, 0x00c4, 0x180, 0x1310);
-+		r8a779f0_eth_serdes_write32(channel->addr, 0x00d8, 0x180, 0x1800);
-+		r8a779f0_eth_serdes_write32(channel->addr, 0x00dc, 0x180, 0x0000);
-+		r8a779f0_eth_serdes_write32(channel->addr, 0x001c, 0x300, 0x0001);
-+		r8a779f0_eth_serdes_write32(channel->addr, 0x0000, 0x380, 0x2100);
-+		ret = r8a779f0_eth_serdes_reg_wait(channel, 0x0000, 0x0380, BIT(8), 0);
-+		if (ret)
-+			return ret;
-+
-+		if (channel->speed == 1000)
-+			r8a779f0_eth_serdes_write32(channel->addr, 0x0000, 0x1f00, 0x0140);
-+		else if (channel->speed == 100)
-+			r8a779f0_eth_serdes_write32(channel->addr, 0x0000, 0x1f00, 0x2100);
-+
-+		/* For AN_ON */
-+		r8a779f0_eth_serdes_write32(channel->addr, 0x0004, 0x1f80, 0x0005);
-+		r8a779f0_eth_serdes_write32(channel->addr, 0x0028, 0x1f80, 0x07a1);
-+		r8a779f0_eth_serdes_write32(channel->addr, 0x0000, 0x1f80, 0x0208);
-+		break;
-+	default:
-+		return -EOPNOTSUPP;
-+	}
-+
-+	return 0;
-+}
-+
-+static int
-+r8a779f0_eth_serdes_chan_speed(struct r8a779f0_eth_serdes_channel *channel)
-+{
-+	int ret;
-+
-+	switch (channel->phy_interface) {
-+	case PHY_INTERFACE_MODE_SGMII:
-+		/* For AN_ON */
-+		if (channel->speed == 1000)
-+			r8a779f0_eth_serdes_write32(channel->addr, 0x0000, 0x1f00, 0x1140);
-+		else if (channel->speed == 100)
-+			r8a779f0_eth_serdes_write32(channel->addr, 0x0000, 0x1f00, 0x3100);
-+		ret = r8a779f0_eth_serdes_reg_wait(channel, 0x0008, 0x1f80, BIT(0), 1);
-+		if (ret)
-+			return ret;
-+		r8a779f0_eth_serdes_write32(channel->addr, 0x0008, 0x1f80, 0x0000);
-+		break;
-+	default:
-+		return -EOPNOTSUPP;
-+	}
-+
-+	return 0;
-+}
-+
-+
-+static int r8a779f0_eth_serdes_monitor_linkup(struct r8a779f0_eth_serdes_channel *channel)
-+{
-+	int i, ret;
-+
-+	for (i = 0; i < R8A779F0_ETH_SERDES_NUM_RETRY_LINKUP; i++) {
-+		ret = r8a779f0_eth_serdes_reg_wait(channel, 0x0004, 0x300,
-+						   BIT(2), BIT(2));
-+		if (!ret)
-+			break;
-+
-+		/* restart */
-+		r8a779f0_eth_serdes_write32(channel->addr, 0x0144, 0x180, 0x0100);
-+		udelay(1);
-+		r8a779f0_eth_serdes_write32(channel->addr, 0x0144, 0x180, 0x0000);
-+	}
-+
-+	return ret;
-+}
-+
-+static int r8a779f0_eth_serdes_hw_init(struct r8a779f0_eth_serdes_channel *channel)
-+{
-+	struct r8a779f0_eth_serdes_drv_data *dd = channel->dd;
-+	int i, ret;
-+
-+	if (dd->initialized)
-+		return 0;
-+
-+	ret = r8a779f0_eth_serdes_common_init_ram(dd);
-+	if (ret)
-+		return ret;
-+
-+	for (i = 0; i < R8A779F0_ETH_SERDES_NUM; i++) {
-+		ret = r8a779f0_eth_serdes_reg_wait(&dd->channel[i], 0x0000,
-+						   0x300, BIT(15), 0);
-+		if (ret)
-+			return ret;
-+	}
-+
-+	for (i = 0; i < R8A779F0_ETH_SERDES_NUM; i++)
-+		r8a779f0_eth_serdes_write32(dd->channel[i].addr, 0x03d4, 0x380, 0x0443);
-+
-+	ret = r8a779f0_eth_serdes_common_setting(channel);
-+	if (ret)
-+		return ret;
-+
-+	for (i = 0; i < R8A779F0_ETH_SERDES_NUM; i++)
-+		r8a779f0_eth_serdes_write32(dd->channel[i].addr, 0x03d0, 0x380, 0x0001);
-+
-+
-+	r8a779f0_eth_serdes_write32(dd->addr, 0x0000, 0x380, 0x8000);
-+
-+	ret = r8a779f0_eth_serdes_common_init_ram(dd);
-+	if (ret)
-+		return ret;
-+
-+	ret = r8a779f0_eth_serdes_reg_wait(&dd->channel[0], 0x0000, 0x380, BIT(15), 0);
-+	if (ret)
-+		return ret;
-+
-+	for (i = 0; i < R8A779F0_ETH_SERDES_NUM; i++) {
-+		ret = r8a779f0_eth_serdes_chan_setting(&dd->channel[i]);
-+		if (ret)
-+			return ret;
-+	}
-+
-+	for (i = 0; i < R8A779F0_ETH_SERDES_NUM; i++) {
-+		ret = r8a779f0_eth_serdes_chan_speed(&dd->channel[i]);
-+		if (ret)
-+			return ret;
-+	}
-+
-+	for (i = 0; i < R8A779F0_ETH_SERDES_NUM; i++)
-+		r8a779f0_eth_serdes_write32(dd->channel[i].addr, 0x03c0, 0x380, 0x0000);
-+	for (i = 0; i < R8A779F0_ETH_SERDES_NUM; i++)
-+		r8a779f0_eth_serdes_write32(dd->channel[i].addr, 0x03d0, 0x380, 0x0000);
-+
-+	for (i = 0; i < R8A779F0_ETH_SERDES_NUM; i++) {
-+		ret = r8a779f0_eth_serdes_monitor_linkup(&dd->channel[i]);
-+		if (ret)
-+			return ret;
-+	}
-+
-+	return 0;
-+}
-+
-+static int r8a779f0_eth_serdes_init(struct phy *p)
-+{
-+	struct r8a779f0_eth_serdes_channel *channel = phy_get_drvdata(p);
-+	int i, ret;
-+
-+	for (i = 0; i < R8A779F0_ETH_SERDES_NUM_RETRY_INIT; i++) {
-+		ret = r8a779f0_eth_serdes_hw_init(channel);
-+		if (!ret) {
-+			channel->dd->initialized = true;
-+			break;
-+		}
-+		usleep_range(1000, 2000);
-+	}
-+
-+	return ret;
-+}
-+
-+static int r8a779f0_eth_serdes_set_mode(struct phy *p, enum phy_mode mode,
-+					int submode)
-+{
-+	struct r8a779f0_eth_serdes_channel *channel = phy_get_drvdata(p);
-+
-+	if (mode != PHY_MODE_ETHERNET)
-+		return -EOPNOTSUPP;
-+
-+	switch (submode) {
-+	case PHY_INTERFACE_MODE_GMII:
-+	case PHY_INTERFACE_MODE_SGMII:
-+	case PHY_INTERFACE_MODE_USXGMII:
-+		channel->phy_interface = submode;
-+		return 0;
-+	default:
-+		return -EOPNOTSUPP;
-+	}
-+}
-+
-+static int r8a779f0_eth_serdes_set_speed(struct phy *p, int speed)
-+{
-+	struct r8a779f0_eth_serdes_channel *channel = phy_get_drvdata(p);
-+
-+	channel->speed = speed;
-+
-+	return 0;
-+}
-+
-+static const struct phy_ops r8a779f0_eth_serdes_ops = {
-+	.init		= r8a779f0_eth_serdes_init,
-+	.set_mode	= r8a779f0_eth_serdes_set_mode,
-+	.set_speed	= r8a779f0_eth_serdes_set_speed,
-+};
-+
-+static struct phy *r8a779f0_eth_serdes_xlate(struct device *dev,
-+					     struct of_phandle_args *args)
-+{
-+	struct r8a779f0_eth_serdes_drv_data *dd = dev_get_drvdata(dev);
-+
-+	if (args->args[0] >= R8A779F0_ETH_SERDES_NUM)
-+		return ERR_PTR(-ENODEV);
-+
-+	return dd->channel[args->args[0]].phy;
-+}
-+
-+static const struct of_device_id r8a779f0_eth_serdes_of_table[] = {
-+	{ .compatible = "renesas,r8a779f0-ether-serdes", },
-+	{ }
-+};
-+MODULE_DEVICE_TABLE(of, r8a779f0_eth_serdes_of_table);
-+
-+static int r8a779f0_eth_serdes_probe(struct platform_device *pdev)
-+{
-+	struct r8a779f0_eth_serdes_drv_data *dd;
-+	struct phy_provider *provider;
-+	struct resource *res;
-+	int i;
-+
-+	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-+	if (!res) {
-+		dev_err(&pdev->dev, "invalid resource\n");
-+		return -EINVAL;
-+	}
-+
-+	dd = devm_kzalloc(&pdev->dev, sizeof(*dd), GFP_KERNEL);
-+	if (!dd)
-+		return -ENOMEM;
-+
-+	platform_set_drvdata(pdev, dd);
-+	dd->pdev = pdev;
-+	dd->addr = devm_ioremap_resource(&pdev->dev, res);
-+	if (IS_ERR(dd->addr))
-+		return PTR_ERR(dd->addr);
-+
-+	dd->reset = devm_reset_control_get(&pdev->dev, NULL);
-+	if (IS_ERR(dd->reset))
-+		return PTR_ERR(dd->reset);
-+
-+	reset_control_reset(dd->reset);
-+
-+	for (i = 0; i < R8A779F0_ETH_SERDES_NUM; i++) {
-+		struct r8a779f0_eth_serdes_channel *channel = &dd->channel[i];
-+
-+		channel->phy = devm_phy_create(&pdev->dev, NULL,
-+					       &r8a779f0_eth_serdes_ops);
-+		if (IS_ERR(channel->phy))
-+			return PTR_ERR(channel->phy);
-+		channel->addr = dd->addr + R8A779F0_ETH_SERDES_OFFSET * i;
-+		channel->dd = dd;
-+		channel->index = i;
-+		phy_set_drvdata(channel->phy, channel);
-+	}
-+
-+	provider = devm_of_phy_provider_register(&pdev->dev,
-+						 r8a779f0_eth_serdes_xlate);
-+	if (IS_ERR(provider))
-+		return PTR_ERR(provider);
-+
-+	pm_runtime_enable(&pdev->dev);
-+	pm_runtime_get_sync(&pdev->dev);
-+
-+	return 0;
-+}
-+
-+static int r8a779f0_eth_serdes_remove(struct platform_device *pdev)
-+{
-+	pm_runtime_put(&pdev->dev);
-+	pm_runtime_disable(&pdev->dev);
-+
-+	platform_set_drvdata(pdev, NULL);
-+
-+	return 0;
-+}
-+
-+static struct platform_driver r8a779f0_eth_serdes_driver_platform = {
-+	.probe = r8a779f0_eth_serdes_probe,
-+	.remove = r8a779f0_eth_serdes_remove,
-+	.driver = {
-+		.name = "r8a779f0_eth_serdes",
-+		.of_match_table = r8a779f0_eth_serdes_of_table,
-+	}
-+};
-+module_platform_driver(r8a779f0_eth_serdes_driver_platform);
-+MODULE_AUTHOR("Yoshihiro Shimoda");
-+MODULE_DESCRIPTION("Renesas Ethernet SERDES device driver");
-+MODULE_LICENSE("GPL");
--- 
-2.25.1
-
+> ---
+>  drivers/phy/broadcom/phy-brcm-usb.c | 4 ++--
+>  1 file changed, 2 insertions(+), 2 deletions(-)
+>
+> diff --git a/drivers/phy/broadcom/phy-brcm-usb.c b/drivers/phy/broadcom/phy-brcm-usb.c
+> index 2cb3779fcdf8..fbf454b206f2 100644
+> --- a/drivers/phy/broadcom/phy-brcm-usb.c
+> +++ b/drivers/phy/broadcom/phy-brcm-usb.c
+> @@ -445,9 +445,9 @@ static int brcm_usb_phy_dvr_init(struct platform_device *pdev,
+>                 priv->suspend_clk = NULL;
+>         }
+>
+> -       priv->wake_irq = platform_get_irq_byname(pdev, "wake");
+> +       priv->wake_irq = platform_get_irq_byname_optional(pdev, "wake");
+>         if (priv->wake_irq < 0)
+> -               priv->wake_irq = platform_get_irq_byname(pdev, "wakeup");
+> +               priv->wake_irq = platform_get_irq_byname_optional(pdev, "wakeup");
+>         if (priv->wake_irq >= 0) {
+>                 err = devm_request_irq(dev, priv->wake_irq,
+>                                        brcm_usb_phy_wake_isr, 0,
+> --
+> 2.25.1
+>
 
 -- 
 linux-phy mailing list
