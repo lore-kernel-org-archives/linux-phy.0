@@ -4,66 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 30BC7FA3740
-	for <linux-phy@archiver.kernel.org>; Fri, 28 Oct 2022 12:13:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CC951C38A02
+	for <linux-phy@archiver.kernel.org>; Fri, 28 Oct 2022 12:23:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=u9ZfjdSYyG7d8QnQfXdyw7uc5yGsLaxzLFa6SZ1+WeQ=; b=36EV7g7SN8O95M
-	S6x/uGz1T5g4g1dexr+29KUo52nMRQ72cgG2O0OVyDp8BPY2ukV8dDoyz9YW8zbEjLXq8FhynfNHn
-	iWIJqNsNLVebbQQHi4GWU1T6xuPZU+Uq9NkPg/EvWUHxTMJzEN9dhmCQSGLcOqokG6mcJh4WmvmD8
-	XfTuSpgScN1qmfYcGUGg0U5SSXrmATWC99r3LKnUlvaIACvdEkgWQPnQ3V8oVAMtGhroMncqfo4/8
-	85AqjLRsu0YzgJENxn8N5zaXjnzvnlsl8u4Dopm9CBFTS6UeVl6KimjUhVJY7hSCI1XmOuP9kLKdk
-	uaesKr47zdlXwgtX4ndQ==;
+	List-Owner; bh=3QqtSTZPJHCt5X9ts0NgeisA6up5CRKBEIe+dqKtO5s=; b=HvOj68yR782CTl
+	+Eu47enb7oiQNicYyMi61kxfYwjhILVJzfIO0X1NojoINcAdWRSYTdSXAiMW1ENHWmbv0E/+/pwXo
+	etxu+Dcvrm+B3vCj/do3HmEm+OmQVB+rcYmJULbZ0kshPkRrAAeyYApqiMUMTOaRz1PLHEf83Vda8
+	TvJ3jepJnAK6rsUUDDUIGAowlJ/L1yRumMZQYpsT6scaJae5L/puRo3hCgUk+NtJvKTWtUwzpLW7Y
+	Upb2PQXvYJVbmyxhXXLdhAc71OhgwaNc5qPd/4dSe+xHSjlN7Gw18xG04Gu7WHVr1rbSrGq+w41ED
+	3SUKnVZYsyGw1eWsZSNA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ooOEr-00H4Mc-Fs; Fri, 28 Oct 2022 12:13:29 +0000
+	id 1ooOOi-00H5vq-5o; Fri, 28 Oct 2022 12:23:40 +0000
 Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ooOEo-00H4Li-NO
-	for linux-phy@lists.infradead.org; Fri, 28 Oct 2022 12:13:27 +0000
+	id 1ooOOf-00H5vK-Uo
+	for linux-phy@lists.infradead.org; Fri, 28 Oct 2022 12:23:39 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 48E1162818;
-	Fri, 28 Oct 2022 12:13:26 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id DEA3DC433D6;
-	Fri, 28 Oct 2022 12:13:24 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 8649362406;
+	Fri, 28 Oct 2022 12:23:37 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 28541C433C1;
+	Fri, 28 Oct 2022 12:23:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1666959205;
-	bh=ljENQ8jydh0IcG06Xm/fdMGM4Az0YuRelUKmmofFzjc=;
+	s=k20201202; t=1666959816;
+	bh=aMABIn5VBGdso1UMHCRd1cHCeGi+PYCtr5sq0K9Cir4=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=Plm1piARSo7IubRh36oP78LkgH4juDqvMHiWDWGE7asHDeRamzm0Gku59kcSFbUJK
-	 gSx30rrHdMUXu+6e0DqZU1POvpBAf+T1QbsZEan60w5zzWXQ7tQUTK+QvtYi93Ks4o
-	 a+eldyaB8d06aqy94fAv4IQ+j8pU3TvRWKZ0LV1+IVEP3F8OBhj2K2X6oFRagOw3uQ
-	 7n2RLV9EyzjSmxQUcPShLljXPkkjleE/KqtmrsTtBxRSAz3lrtG3twbKN9vXZWFhG+
-	 sIhqd1Mz4HMNDLtmReFJMx4LcJhqNp1cqyLzj9OfqgLXpHyY6/0GSwYhUhIzE4tvhG
-	 k5zRn+3P7eeMg==
-Date: Fri, 28 Oct 2022 17:43:21 +0530
+	b=IGk2WYZRRV7vVnwGQvOBOk4TvzROTq98CggsXXE4XOYG0ME/bGsRJJy3/VPjLzjcy
+	 V7Rs1iZ2Y1Pp2i9MroALy+l9WCD67zdsztcdsHKqy/Erx0frb6AWBBQ+shW3TiQ+D9
+	 +j4t6RwU8VKo/A/eC2cpO8NyuXOQa5z99ziSDuoDp7oZH0oRDfbixnL96HNud1vOsF
+	 7+E6Mj9L65fz1beQ4zdZjxr+tspMkXJ8TGo3p8KTT35YV2/jwk+GWr/Mrr+xav4zM2
+	 QlsjCqaWXUruUzGgwSzcN3Yb0GUNE2w0jfOogBrJk0EgA5jWIovHXEpPa1Y6mxwIEo
+	 Ipa79QTy4/B6A==
+Date: Fri, 28 Oct 2022 17:53:31 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Vidya Sagar <vidyas@nvidia.com>
-Cc: lpieralisi@kernel.org, robh@kernel.org, kw@linux.com,
-	bhelgaas@google.com, thierry.reding@gmail.com, jonathanh@nvidia.com,
-	kishon@ti.com, mani@kernel.org, Sergey.Semin@baikalelectronics.ru,
-	ffclaire1224@gmail.com, linux-pci@vger.kernel.org,
-	linux-tegra@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org, kthota@nvidia.com,
-	mmaddireddy@nvidia.com, sagar.tv@gmail.com
-Subject: Re: [PATCH V3 08/21] phy: tegra: p2u: Set ENABLE_L2_EXIT_RATE_CHANGE
- in calibration
-Message-ID: <Y1vHYduw4CQl5ssA@matsya>
-References: <20221013183854.21087-1-vidyas@nvidia.com>
- <20221013183854.21087-9-vidyas@nvidia.com>
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>, mani@kernel.org
+Cc: Johan Hovold <johan+linaro@kernel.org>, Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@somainline.org>,
+	Kishon Vijay Abraham I <kishon@ti.com>,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 16/20] phy: qcom-qmp-pcie: drop start-ctrl abstraction
+Message-ID: <Y1vJw2Co5tVhUrc+@matsya>
+References: <20221012084846.24003-1-johan+linaro@kernel.org>
+ <20221012085002.24099-1-johan+linaro@kernel.org>
+ <20221012085002.24099-16-johan+linaro@kernel.org>
+ <81632b90-bc8a-7f3b-d2c9-153b4cea16ed@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20221013183854.21087-9-vidyas@nvidia.com>
+In-Reply-To: <81632b90-bc8a-7f3b-d2c9-153b4cea16ed@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221028_051326_816904_46C2E1B7 
-X-CRM114-Status: UNSURE (   6.57  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20221028_052338_091404_153E0985 
+X-CRM114-Status: GOOD (  25.12  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,15 +79,143 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 14-10-22, 00:08, Vidya Sagar wrote:
-> Set ENABLE_L2_EXIT_RATE_CHANGE register bit to request UPHY PLL rate change
-> to Gen1 during initialization. This helps in the below surprise link down
-> cases,
->   - Surprise link down happens at Gen3/Gen4 link speed.
->   - Surprise link down happens and external REFCLK is cut off, which causes
-> UPHY PLL rate to deviate to an invalid rate.
+On 13-10-22, 00:20, Dmitry Baryshkov wrote:
+> On 12/10/2022 11:49, Johan Hovold wrote:
+> > All PCIe PHYs need to start and stop the SerDes and PCS so drop the
+> > start-ctrl abstraction which is no longer needed since the QMP driver
+> > split.
+> > 
+> > Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
+> > ---
+> >   drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 18 +++---------------
+> >   1 file changed, 3 insertions(+), 15 deletions(-)
+> 
+> I think it should be possible to also drop the pwrdn_ctrl by replacing it
+> with something like no_refclk_drv_dsbl. However I'd like to understand why
+> this is not required for SDX55. Is this the peculiarity of that platform? Or
+> is it a specifics of the EP mode?
+> Many, Vinod, do you know the answer by chance?
 
-Applied, thanks
+Adding Mani, i am not sure maybe sdx55 specific...?
+
+> 
+> Nevertheless, for this patch:
+> 
+> Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+> 
+> > 
+> > diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+> > index d3e7e673114f..5534a4ad0243 100644
+> > --- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+> > +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+> > @@ -1355,7 +1355,6 @@ struct qmp_phy_cfg {
+> >   	/* array of registers with different offsets */
+> >   	const unsigned int *regs;
+> > -	unsigned int start_ctrl;
+> >   	unsigned int pwrdn_ctrl;
+> >   	/* bit offset of PHYSTATUS in QPHY_PCS_STATUS register */
+> >   	unsigned int phy_status;
+> > @@ -1491,7 +1490,6 @@ static const struct qmp_phy_cfg ipq8074_pciephy_cfg = {
+> >   	.num_vregs		= 0,
+> >   	.regs			= pciephy_regs_layout,
+> > -	.start_ctrl		= SERDES_START | PCS_START,
+> >   	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
+> >   	.phy_status		= PHYSTATUS,
+> >   };
+> > @@ -1517,7 +1515,6 @@ static const struct qmp_phy_cfg ipq8074_pciephy_gen3_cfg = {
+> >   	.num_vregs		= 0,
+> >   	.regs			= ipq_pciephy_gen3_regs_layout,
+> > -	.start_ctrl		= SERDES_START | PCS_START,
+> >   	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
+> >   	.phy_status		= PHYSTATUS,
+> > @@ -1547,7 +1544,6 @@ static const struct qmp_phy_cfg ipq6018_pciephy_cfg = {
+> >   	.num_vregs		= 0,
+> >   	.regs			= ipq_pciephy_gen3_regs_layout,
+> > -	.start_ctrl		= SERDES_START | PCS_START,
+> >   	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
+> >   	.phy_status		= PHYSTATUS,
+> >   };
+> > @@ -1575,7 +1571,6 @@ static const struct qmp_phy_cfg sdm845_qmp_pciephy_cfg = {
+> >   	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
+> >   	.regs			= sdm845_qmp_pciephy_regs_layout,
+> > -	.start_ctrl		= PCS_START | SERDES_START,
+> >   	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
+> >   	.phy_status		= PHYSTATUS,
+> >   };
+> > @@ -1601,7 +1596,6 @@ static const struct qmp_phy_cfg sdm845_qhp_pciephy_cfg = {
+> >   	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
+> >   	.regs			= sdm845_qhp_pciephy_regs_layout,
+> > -	.start_ctrl		= PCS_START | SERDES_START,
+> >   	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
+> >   	.phy_status		= PHYSTATUS,
+> >   };
+> > @@ -1639,7 +1633,6 @@ static const struct qmp_phy_cfg sm8250_qmp_gen3x1_pciephy_cfg = {
+> >   	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
+> >   	.regs			= sm8250_pcie_regs_layout,
+> > -	.start_ctrl		= PCS_START | SERDES_START,
+> >   	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
+> >   	.phy_status		= PHYSTATUS,
+> >   };
+> > @@ -1677,7 +1670,6 @@ static const struct qmp_phy_cfg sm8250_qmp_gen3x2_pciephy_cfg = {
+> >   	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
+> >   	.regs			= sm8250_pcie_regs_layout,
+> > -	.start_ctrl		= PCS_START | SERDES_START,
+> >   	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
+> >   	.phy_status		= PHYSTATUS,
+> >   };
+> > @@ -1703,7 +1695,6 @@ static const struct qmp_phy_cfg msm8998_pciephy_cfg = {
+> >   	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
+> >   	.regs			= pciephy_regs_layout,
+> > -	.start_ctrl             = SERDES_START | PCS_START,
+> >   	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
+> >   	.phy_status		= PHYSTATUS,
+> > @@ -1733,7 +1724,6 @@ static const struct qmp_phy_cfg sc8180x_pciephy_cfg = {
+> >   	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
+> >   	.regs			= sm8250_pcie_regs_layout,
+> > -	.start_ctrl		= PCS_START | SERDES_START,
+> >   	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
+> >   	.phy_status		= PHYSTATUS,
+> >   };
+> > @@ -1761,7 +1751,6 @@ static const struct qmp_phy_cfg sdx55_qmp_pciephy_cfg = {
+> >   	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
+> >   	.regs			= sm8250_pcie_regs_layout,
+> > -	.start_ctrl		= PCS_START | SERDES_START,
+> >   	.pwrdn_ctrl		= SW_PWRDN,
+> >   	.phy_status		= PHYSTATUS_4_20,
+> >   };
+> > @@ -1789,7 +1778,6 @@ static const struct qmp_phy_cfg sm8450_qmp_gen3x1_pciephy_cfg = {
+> >   	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
+> >   	.regs			= sm8250_pcie_regs_layout,
+> > -	.start_ctrl             = SERDES_START | PCS_START,
+> >   	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
+> >   	.phy_status		= PHYSTATUS,
+> >   };
+> > @@ -1832,7 +1820,6 @@ static const struct qmp_phy_cfg sm8450_qmp_gen4x2_pciephy_cfg = {
+> >   	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
+> >   	.regs			= sm8250_pcie_regs_layout,
+> > -	.start_ctrl             = SERDES_START | PCS_START,
+> >   	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
+> >   	.phy_status		= PHYSTATUS_4_20,
+> >   };
+> > @@ -1997,7 +1984,7 @@ static int qmp_pcie_power_on(struct phy *phy)
+> >   	qphy_clrbits(pcs, cfg->regs[QPHY_SW_RESET], SW_RESET);
+> >   	/* start SerDes and Phy-Coding-Sublayer */
+> > -	qphy_setbits(pcs, cfg->regs[QPHY_START_CTRL], cfg->start_ctrl);
+> > +	qphy_setbits(pcs, cfg->regs[QPHY_START_CTRL], SERDES_START | PCS_START);
+> >   	if (!cfg->skip_start_delay)
+> >   		usleep_range(1000, 1200);
+> > @@ -2030,7 +2017,8 @@ static int qmp_pcie_power_off(struct phy *phy)
+> >   	qphy_setbits(qphy->pcs, cfg->regs[QPHY_SW_RESET], SW_RESET);
+> >   	/* stop SerDes and Phy-Coding-Sublayer */
+> > -	qphy_clrbits(qphy->pcs, cfg->regs[QPHY_START_CTRL], cfg->start_ctrl);
+> > +	qphy_clrbits(qphy->pcs, cfg->regs[QPHY_START_CTRL],
+> > +			SERDES_START | PCS_START);
+> >   	/* Put PHY into POWER DOWN state: active low */
+> >   	qphy_clrbits(qphy->pcs, cfg->regs[QPHY_PCS_POWER_DOWN_CONTROL],
+> 
+> -- 
+> With best wishes
+> Dmitry
 
 -- 
 ~Vinod
