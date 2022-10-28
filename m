@@ -4,87 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5982EECAAA1
-	for <linux-phy@archiver.kernel.org>; Fri, 28 Oct 2022 02:24:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 02B77ECAAA1
+	for <linux-phy@archiver.kernel.org>; Fri, 28 Oct 2022 06:09:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jDFTc9r7MQSz4UfBhzyUyP7Y4bMLBLem55G9lAvX3yM=; b=hNUKeTDRZO5Ef5
-	PHfB0VwpzhO9WzODeTmKmPJIchwgIKnwjhaU8eqJgov1cyEFI+wS0azIUDRDswcg18gHJ0loM3f2G
-	+OiwClKpwpvyUSXteNgCxaD+m8vNfM9AhA1oynFSaFUwNqtcygK1CRxzTO4QNn2e60UAj7lGnfZSM
-	lKoNzuWGxtdPombtJ0/uY8fAaoBVZ2aemtIT2CTXH7jPjkTPVfqbqDWoSRA4h6EixDVDDvR17rRnC
-	pJi5/Z4A+FZ4cki+Vzz3K6TMcGrX2sR/FMQ4mGZwjkHrMdG12NbmBU3cTEJkd4ywsJsDJ2+qypvt3
-	JS53C8PMAM21+azQFmEw==;
+	List-Owner; bh=rGvAVDle9Jlkqq6X/vleUH3s23+RTPAFq6WfmiJ/Uis=; b=deYtiNYPB344VJ
+	wlEBaZwo48t3VRO9iyrvHXhdW9P7GPYxEZj2O2uFabkUOB7E1j97Un+fZcA59IFMkDvpRjyL9Fv6V
+	vcXvhSNbwNKl6aF9L3XTNLDW4X3dserR0jagYm0M4FlK8Q2iblMvAmV+9/tbJy8HBOTizZvWUFHH/
+	mbmH2yt+wtACfXvM1ymf+4einYoBW1coIJNgk2hh96ofXLivXLAmkYKgqPHgoumIMvEMKOqe/kUcS
+	yNcERmAtxm+HAEjpjLMUffwvW8/AHvFJlOw1PdsbASv2ORKm13ggxNMGs0zky5VAUsp2KGl3vKyXL
+	KBGU2ugFwK8JnqCjWl+A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ooF2V-00FXQO-Jr; Fri, 28 Oct 2022 02:24:07 +0000
-Received: from mail-qt1-x82a.google.com ([2607:f8b0:4864:20::82a])
+	id 1ooIYh-00Fsn3-91; Fri, 28 Oct 2022 06:09:35 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ooF2T-00FXPd-AJ
-	for linux-phy@lists.infradead.org; Fri, 28 Oct 2022 02:24:07 +0000
-Received: by mail-qt1-x82a.google.com with SMTP id r19so2740279qtx.6
-        for <linux-phy@lists.infradead.org>; Thu, 27 Oct 2022 19:24:03 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=E6YuEbTvxm7O8eyz47pGuOxddlgQTa4cA4pcPo4hUJI=;
-        b=RvlZ3dTbvauA0B99ZDIDWWl4qM24s6MUS96r7BYXXIAT5tHrm1exYmum8d7Vfm3JOL
-         Jrj5sH/PWSHWpzg57Wfnuha+zWwzfBsFLA0pxjYmnTUAuJrYu6D4u9FLr4Czr+D4W5q8
-         WPQ6e3FtrFB0me3+8x4cmCq1a+RGF6YiHBskpw0gPQWkjSMFNKHZxPOl7JotM72QHQ7a
-         BGYrGphF7UspE8vHDBoHpFHCZZHmExHZKcDyE1MCoK7pvaVZj6gS8rDe3zhURAY90O9q
-         KEIOue7TlunFyK0JhxXrLhCgha6L/iqVxXNC5w1h2q3wCSw8eIfOd9E6SEVyhSdwKyQH
-         QV4w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=E6YuEbTvxm7O8eyz47pGuOxddlgQTa4cA4pcPo4hUJI=;
-        b=1oYvhWFDXhDyD713TnNI6IExV1SHLc5wygUdBZ5lLH52MsVTcuSxvYldLHSjWLlkv2
-         C0tWelO37bCtYUanMhNsDrwGLY1flZkW/bdwB7RJd3EvbiKcYt6TAsD6BnQ81FHlv893
-         YQB7bRUVXqqfRmuE5ZAjzvnjIDlP26ZwVxnGgQ5wWQgaM6ubJkAm1vH9IjsgNaeXW2uz
-         d07N3GotmPUbWY0HsdmWsN50koZPN/QX4tY2JphgtscKOGY6dIoatnaqWdaN/nqzguOI
-         ftW6WDLRz84VgITz4hRVMarAxcudNiCfC5NcEkdKMdtRpV965xFu7Cq6C4uvQC0oajoI
-         +VTQ==
-X-Gm-Message-State: ACrzQf2S+9nhzUlO5AlqUGv8erJqR2N8ZzEf4Xr2kf1x0zAn8gb15euT
-	MuRhf8BBgNOXxVevjF19GUNGqg==
-X-Google-Smtp-Source: AMsMyM5edx+u+jXkjLS022OCRzFXFfJ2caHhvxv7SfETslJUAjLK7INIk8S3YdDxs5ghQZ5SACKP+g==
-X-Received: by 2002:a05:622a:c5:b0:39c:f1c2:6732 with SMTP id p5-20020a05622a00c500b0039cf1c26732mr45199906qtw.588.1666923842972;
-        Thu, 27 Oct 2022 19:24:02 -0700 (PDT)
-Received: from [192.168.1.11] ([64.57.193.93])
-        by smtp.gmail.com with ESMTPSA id c2-20020a05622a024200b0038b684a1642sm1802068qtx.32.2022.10.27.19.24.00
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 27 Oct 2022 19:24:02 -0700 (PDT)
-Message-ID: <2059dfe5-b084-42a4-7f35-9da9561fc12b@linaro.org>
-Date: Thu, 27 Oct 2022 22:23:59 -0400
+	id 1ooIYe-00FsmO-88
+	for linux-phy@lists.infradead.org; Fri, 28 Oct 2022 06:09:33 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 206386262C;
+	Fri, 28 Oct 2022 06:09:28 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7AEA9C433C1;
+	Fri, 28 Oct 2022 06:09:27 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1666937367;
+	bh=UuiTRQk+7GReGbCZDOgtZ7lgyZlujMjbgmrzbepu8Xk=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=eHQUOqee88v8iCfjOZ2CPFb5YlM53mWWj5Ok0KL2pun8rat0+daypr40Y+y5MKpUq
+	 ABX+HsUoonKyodFi2MUkpcrCLLL/dxFH3D6H7EyT+6KhjUcfqyEtgqBcLIdmbndQ1i
+	 cM1Oy627YyW9jKVgoUgJnk1JjHL6u7s7SwTHOysyHkssa3q8P09+YvDsltQoJirquF
+	 v5B3+GwqllIOHkqwl61iCmRb89GHWf8HsFHgOMNbY9bWruROAEFnQ3px2xqmMgvmJV
+	 sFWUMQykws5bZADx5WATTucBRRV3uZqkZQKbvnOttf6Ioe8xNeKJf07zAGkdcvkYcA
+	 9sSLVRLC43xtw==
+Received: from johan by xi.lan with local (Exim 4.94.2)
+	(envelope-from <johan@kernel.org>)
+	id 1ooIYJ-0005Km-Uy; Fri, 28 Oct 2022 08:09:12 +0200
+Date: Fri, 28 Oct 2022 08:09:11 +0200
+From: Johan Hovold <johan@kernel.org>
+To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Cc: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+	Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@somainline.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 11/13] dt-bindings: phy: qcom,qmp-usb: fix sc8280xp
+ binding
+Message-ID: <Y1tyBw2iQvV89+UB@hovoldconsulting.com>
+References: <20221024100632.20549-1-johan+linaro@kernel.org>
+ <20221024100632.20549-12-johan+linaro@kernel.org>
+ <c9940701-8486-5a0c-4c7d-9c85b9460a7f@linaro.org>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.4.0
-Subject: Re: [PATCH 04/11] arm64: tegra: Enable XUSB host and device on Jetson
- AGX Orin
-Content-Language: en-US
-To: Wayne Chang <waynec@nvidia.com>, gregkh@linuxfoundation.org,
- robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org, treding@nvidia.com,
- jonathanh@nvidia.com, thierry.reding@gmail.com,
- heikki.krogerus@linux.intel.com, ajayg@nvidia.com, kishon@ti.com,
- vkoul@kernel.org, p.zabel@pengutronix.de, balbi@kernel.org,
- mathias.nyman@intel.com, jckuo@nvidia.com
-Cc: linux-usb@vger.kernel.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, singhanc@nvidia.com,
- linux-i2c@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-tegra@vger.kernel.org
-References: <20221024074128.1113554-1-waynec@nvidia.com>
- <20221024074128.1113554-5-waynec@nvidia.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20221024074128.1113554-5-waynec@nvidia.com>
+Content-Disposition: inline
+In-Reply-To: <c9940701-8486-5a0c-4c7d-9c85b9460a7f@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221027_192405_430196_654A311E 
-X-CRM114-Status: GOOD (  13.92  )
+X-CRM114-CacheID: sfid-20221027_230932_356228_435AA801 
+X-CRM114-Status: GOOD (  16.57  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,253 +85,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 24/10/2022 03:41, Wayne Chang wrote:
-> This commit enables XUSB host, device, and pad controller on
-> Jetson AGX Orin.
+On Thu, Oct 27, 2022 at 10:15:45PM -0400, Krzysztof Kozlowski wrote:
+> On 24/10/2022 06:06, Johan Hovold wrote:
+> > The current QMP USB PHY bindings are based on the original MSM8996 PCIe
+> > PHY binding which provided multiple PHYs per IP block and these in turn
+> > were described by child nodes.
+> > 
+> > The QMP USB PHY block only provide a single PHY and the remnant child
+> > node does not really reflect the hardware.
+> > 
+> > The original MSM8996 binding also ended up describing the individual
+> > register blocks as belonging to either the wrapper node or the PHY child
+> > nodes.
+> > 
 > 
-> Signed-off-by: Wayne Chang <waynec@nvidia.com>
-> ---
->  .../boot/dts/nvidia/tegra234-p3701-0000.dtsi  |  48 +++++
->  .../nvidia/tegra234-p3737-0000+p3701-0000.dts | 184 ++++++++++++++++++
->  arch/arm64/boot/dts/nvidia/tegra234.dtsi      | 170 ++++++++++++++++
->  3 files changed, 402 insertions(+)
+> (...)
 > 
-> diff --git a/arch/arm64/boot/dts/nvidia/tegra234-p3701-0000.dtsi b/arch/arm64/boot/dts/nvidia/tegra234-p3701-0000.dtsi
-> index 9e4d72cfa69f..8acef87a5398 100644
-> --- a/arch/arm64/boot/dts/nvidia/tegra234-p3701-0000.dtsi
-> +++ b/arch/arm64/boot/dts/nvidia/tegra234-p3701-0000.dtsi
-> @@ -61,6 +61,29 @@ mmc@3460000 {
->  			non-removable;
->  		};
->  
-> +		padctl@3520000 {
-> +			vclamp-usb-supply = <&vdd_ao_1v8>;
-> +			avdd-usb-supply = <&vdd_ao_3v3>;
-> +
-> +			ports {
-> +				usb2-0 {
-> +					vbus-supply = <&vdd_5v0_sys>;
-> +				};
-> +
-> +				usb2-1 {
-> +					vbus-supply = <&vdd_5v0_sys>;
-> +				};
-> +
-> +				usb2-2 {
-> +					vbus-supply = <&vdd_5v0_sys>;
-> +				};
-> +
-> +				usb2-3 {
-> +					vbus-supply = <&vdd_5v0_sys>;
-> +				};
-> +			};
-> +		};
-> +
->  		rtc@c2a0000 {
->  			status = "okay";
->  		};
-> @@ -69,4 +92,29 @@ pmc@c360000 {
->  			nvidia,invert-interrupt;
->  		};
->  	};
-> +
-> +	vdd_5v0_sys: regulator@0 {
-> +		compatible = "regulator-fixed";
-> +		regulator-name = "VIN_SYS_5V0";
-> +		regulator-min-microvolt = <5000000>;
-> +		regulator-max-microvolt = <5000000>;
-> +		regulator-always-on;
-> +		regulator-boot-on;
-> +	};
-> +
-> +	vdd_ao_1v8: regulator@1 {
-> +		compatible = "regulator-fixed";
-> +		regulator-name = "vdd-AO-1v8";
-> +		regulator-min-microvolt = <1800000>;
-> +		regulator-max-microvolt = <1800000>;
-> +		regulator-always-on;
-> +	};
-> +
-> +	vdd_ao_3v3: regulator@2 {
-> +		compatible = "regulator-fixed";
-> +		regulator-name = "vdd-AO-3v3";
-> +		regulator-min-microvolt = <3300000>;
-> +		regulator-max-microvolt = <3300000>;
-> +		regulator-always-on;
-> +	};
->  };
-> diff --git a/arch/arm64/boot/dts/nvidia/tegra234-p3737-0000+p3701-0000.dts b/arch/arm64/boot/dts/nvidia/tegra234-p3737-0000+p3701-0000.dts
-> index 57ab75328814..b4630280bb32 100644
-> --- a/arch/arm64/boot/dts/nvidia/tegra234-p3737-0000+p3701-0000.dts
-> +++ b/arch/arm64/boot/dts/nvidia/tegra234-p3737-0000+p3701-0000.dts
-> @@ -2011,6 +2011,190 @@ hda@3510000 {
->  			nvidia,model = "NVIDIA Jetson AGX Orin HDA";
->  			status = "okay";
->  		};
-> +
-> +		padctl@3520000 {
-> +			status = "okay";
-> +
-> +			pads {
-> +				usb2 {
-> +					lanes {
-> +						usb2-0 {
-> +							status = "okay";
-> +						};
-> +
-> +						usb2-1 {
-> +							status = "okay";
-> +						};
-> +
-> +						usb2-2 {
-> +							status = "okay";
-> +						};
-> +
-> +						usb2-3 {
-> +							status = "okay";
-> +						};
-> +					};
-> +				};
-> +
-> +				usb3 {
-> +					lanes {
-> +						usb3-0 {
-> +							status = "okay";
-> +						};
-> +
-> +						usb3-1 {
-> +							status = "okay";
-> +						};
-> +
-> +						usb3-2 {
-> +							status = "okay";
-> +						};
-> +					};
-> +				};
-> +			};
-> +
-> +			ports {
-> +				usb2-0 {
-> +					mode = "otg";
-> +					usb-role-switch;
-> +					status = "okay";
-> +					port {
-> +						hs_typec_p1: endpoint {
-> +							remote-endpoint = <&hs_ucsi_ccg_p1>;
-> +						};
-> +					};
-> +				};
-> +
-> +				usb2-1 {
-> +					mode = "host";
-> +					status = "okay";
-> +					port {
-> +						hs_typec_p0: endpoint {
-> +							remote-endpoint = <&hs_ucsi_ccg_p0>;
-> +						};
-> +					};
-> +				};
-> +
-> +				usb2-2 {
-> +					mode = "host";
-> +					status = "okay";
-> +				};
-> +
-> +				usb2-3 {
-> +					mode = "host";
-> +					status = "okay";
-> +				};
-> +
-> +				usb3-0 {
-> +					nvidia,usb2-companion = <1>;
-> +					status = "okay";
-> +					port {
-> +						ss_typec_p0: endpoint {
-> +							remote-endpoint = <&ss_ucsi_ccg_p0>;
-> +						};
-> +					};
-> +				};
-> +
-> +				usb3-1 {
-> +					nvidia,usb2-companion = <0>;
-> +					status = "okay";
-> +					port {
-> +						ss_typec_p1: endpoint {
-> +							remote-endpoint = <&ss_ucsi_ccg_p1>;
-> +						};
-> +					};
-> +				};
-> +
-> +				usb3-2 {
-> +					nvidia,usb2-companion = <3>;
-> +					status = "okay";
-> +				};
-> +			};
-> +		};
-> +
-> +		usb@3550000 {
-> +			status = "okay";
-> +
-> +			phys = <&{/bus@0/padctl@3520000/pads/usb2/lanes/usb2-0}>,
-> +				<&{/bus@0/padctl@3520000/pads/usb3/lanes/usb3-1}>;
-> +			phy-names = "usb2-0", "usb3-1";
-> +		};
-> +
-> +		usb@3610000 {
-> +			status = "okay";
-> +
-> +			phys =	<&{/bus@0/padctl@3520000/pads/usb2/lanes/usb2-0}>,
-> +				<&{/bus@0/padctl@3520000/pads/usb2/lanes/usb2-1}>,
-> +				<&{/bus@0/padctl@3520000/pads/usb2/lanes/usb2-2}>,
-> +				<&{/bus@0/padctl@3520000/pads/usb2/lanes/usb2-3}>,
-> +				<&{/bus@0/padctl@3520000/pads/usb3/lanes/usb3-0}>,
-> +				<&{/bus@0/padctl@3520000/pads/usb3/lanes/usb3-1}>,
-> +				<&{/bus@0/padctl@3520000/pads/usb3/lanes/usb3-2}>;
-> +			phy-names = "usb2-0", "usb2-1", "usb2-2", "usb2-3",
-> +				"usb3-0", "usb3-1", "usb3-2";
-> +		};
-> +
-> +		i2c@c240000 {
-> +			status = "okay";
-> +			ucsi_ccg: ucsi_ccg@8 {
+> >      then:
+> > diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb-phy.yaml
+> > new file mode 100644
+> > index 000000000000..95ee81d782f9
+> > --- /dev/null
+> > +++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb-phy.yaml
+> 
+> Filename based on compatible, so in this case
+> "qcom,sc8280xp-qmp-usb3-uni-phy.yaml", unless it's like the PCI case?
 
-No underscores in node names.
+Yes, you're right. Thanks for catching that. This should be the only
+sc8280xp USB PHY compatible so the file name should be updates as you
+suggested.
 
-> +				compatible = "cypress,cypd4226";
-> +				cypress,firmware-build = "gn";
-> +				interrupt-parent = <&gpio>;
-> +				interrupts = <TEGRA234_MAIN_GPIO(Y, 4) IRQ_TYPE_LEVEL_LOW>;
-> +				reg = <0x08>;
-> +				status = "okay";
+I'll wait a bit and see if Vinod has any comments before respinning this
+series.
 
-The pattern of redefining full path in Tegra is confusing - I have no
-clue which of these status=okay are correct which are redundant.
-
-Do you?
-
-
-
-> +				#address-cells = <1>;
-> +				#size-cells = <0>;
-> +				ccg_typec_con0: connector@0 {
-> +					compatible = "usb-c-connector";
-> +					reg = <0>;
-> +					label = "USB-C";
-> +					data-role = "host";
-> +					#address-cells = <1>;
-> +					#size-cells = <0>;
-> +					port@0 {
-> +						reg = <0>;
-> +						#address-cells = <1>;
-> +						#size-cells = <0>;
-
-Hm, why do you have here cells?
-
-Did you test the DTS with dtbs_check?
-
-Best regards,
-Krzysztof
-
+Johan
 
 -- 
 linux-phy mailing list
