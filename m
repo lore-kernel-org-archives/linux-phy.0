@@ -4,69 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7EFA1FA3749
-	for <linux-phy@archiver.kernel.org>; Fri, 28 Oct 2022 13:37:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CDA1FECAAA1
+	for <linux-phy@archiver.kernel.org>; Fri, 28 Oct 2022 13:39:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=r8Up3YpVKu+83ebqy8FUfvfvUb9J5Ce46r0jWWv268w=; b=2XVchoUidaXNUv
-	s2uhud7T97QirPa+znB5xncuV7BifGKHUi687c6s5wZ0xG2xhghOCO+rBNNgdLlumRpoGUyYtL4k4
-	M9ZdrwoWFqCw1cbFlUr9avqbiOmRhlWwL9o/DMleSFWXpmGVVelCJFmmJQrFLCoycbxl3wO3p9EAs
-	6mXEEt0H3i8wNhdNDBaNRTUmihUK7s69GOF0De4MOk9Dq5Z+vhmLI/q7QnakKA5lIOvdBMVVA6k3W
-	eUGpHpNfoigYjg/GsrXcDEWeAPGdpauCoUTkZMUgfwfFjY/H52F++YDjubyDnNh/u3hPQ7k+z5r7l
-	ImtqtXRpdRa70M//phqQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=aNFa8F7eP3NSrwnBsHv1vwKamvEwACxs5VP7SNo3kc4=; b=YsQu4hC+ygOyTlcS8MKpHT1ktO
+	x/49quPGFjaUs9ACnXy/tiG0WhEuYBVbpBr3r8S/sbgjPtVgh9azxPF/KeDHEwqiq8gw/vcdzPJxj
+	rzSPyRvIenQA/IECAFs8jPzrE2vnSYanlTx8D5y6JnKVRyG1A3+h10m8v5WN0ApQ3VUpS034Da5ER
+	l0dT2dEZngf5XnVBbpMgzn3+uno2e3fpaaGg9ENoQUpi5dmO7Y5fx5AjtfCr8o3upPNT/qQPEpe3D
+	Buos/9oGmzCb7zz62YzPGb/jpJcF5X/hjJXGfzCyu2b+gyyB2B7MCZDaZwyOQzdVzpjKKu+Dp0zAX
+	NV9qNd/Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ooPXm-00HOCb-PV; Fri, 28 Oct 2022 13:37:06 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1ooPaJ-00HP3l-4y; Fri, 28 Oct 2022 13:39:43 +0000
+Received: from mail-ej1-x62e.google.com ([2a00:1450:4864:20::62e])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ooPXa-00HO4J-TZ
-	for linux-phy@lists.infradead.org; Fri, 28 Oct 2022 13:37:03 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 134EB62895;
-	Fri, 28 Oct 2022 13:36:52 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id AB69FC4FF44;
-	Fri, 28 Oct 2022 13:36:49 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1666964209;
-	bh=SyN+Tar5QxF3fPxzvOG67m8Mtp2DczSUPcNYJXgQv7U=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=OCdJX9tia7t7c2Qw7z36qY9RQh9RwCYzSPMxsq7MNYzKEjgHXCePm6L+NkXcelIfv
-	 HkhTCLLkDYwikkrFlu9kT8P5pLwpVS6YyFMTM29m6px6f+GKj1znfnP4KLQDfPXzdI
-	 4Lf6qqlA5phOpMOJs4imaWCUXP2XDnikObdQNapbrBWbAivF+p924rhaHX8N2dXh1J
-	 VSekU2ZNA06DM2stVPfqp8EDnJsm6Vcb/DJG/50gDOGNjhunALJJpPm8QKEWw3OQcd
-	 Wql0WAP8UPdCsVRc4jJr6dxWnKq2lPtSkUvaLpxDBbY7ce00/EU+ZVdBuW1QZdL9Qv
-	 0TjQ3CmbDdpZg==
-Received: from johan by xi.lan with local (Exim 4.94.2)
-	(envelope-from <johan+linaro@kernel.org>)
-	id 1ooPXI-0004rd-6b; Fri, 28 Oct 2022 15:36:36 +0200
-From: Johan Hovold <johan+linaro@kernel.org>
-To: Vinod Koul <vkoul@kernel.org>
-Cc: Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@somainline.org>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
-	linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH v4 16/16] phy: qcom-qmp-pcie: add support for sc8280xp 4-lane PHYs
-Date: Fri, 28 Oct 2022 15:36:03 +0200
-Message-Id: <20221028133603.18470-17-johan+linaro@kernel.org>
-X-Mailer: git-send-email 2.37.3
-In-Reply-To: <20221028133603.18470-1-johan+linaro@kernel.org>
-References: <20221028133603.18470-1-johan+linaro@kernel.org>
+	id 1ooPaF-00HP1W-1v
+	for linux-phy@lists.infradead.org; Fri, 28 Oct 2022 13:39:41 +0000
+Received: by mail-ej1-x62e.google.com with SMTP id q9so13109901ejd.0
+        for <linux-phy@lists.infradead.org>; Fri, 28 Oct 2022 06:39:36 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20210112;
+        h=user-agent:in-reply-to:content-disposition:mime-version:references
+         :message-id:subject:cc:to:from:date:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=G4dibky+EpldM0UVD7pV5+/wckEMIzaOQZHu0CZ9KjA=;
+        b=UwU/VcsSY3Jkt0ndF7Zos3fs1bwS776Dl2VOHp5oS/yOtHbAj27YABvJXl1aN8SPE5
+         So8DGxLj+3s4B7xZo0jKHOu/EXEUWsuBRO4zbGraogIbnQ6neXhlsxNarfdOF2/wth7G
+         2iYTft50V8BTMnUlj5L33RlcA8gePJHKtKAvtTpzc55aO9WAkDVN8F6i6WUenBYWdTSY
+         wPcVBfd2mijV0IieJNo0a+5GBJpejUUsl0bHlbDtX6tMm3FKwpAzRceoQyG0PtLtnmPP
+         lXnNddJb0DJhdRiKA5GpUL/F7HDX2nnr4gk9vMxcpcL+jbr2f77xERDWIIMXAuO8W3pw
+         bbyg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=user-agent:in-reply-to:content-disposition:mime-version:references
+         :message-id:subject:cc:to:from:date:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=G4dibky+EpldM0UVD7pV5+/wckEMIzaOQZHu0CZ9KjA=;
+        b=zT2hR/yGbkYiR6rgJhKJ4ee2bN5aPQviR2OogdMGSjsBwAwp3F9RJNmzC0Zw5xYmQt
+         tAPQZnl5b7blt5hbews7FqkQfeJ4LgjquvC/S6wtA/C8NtzNM7Juh/wOvc8x3WwxAIl0
+         cO5Yu44tX+tHttq4lrqu1nHyflenLzmARtE0Tsnsnhjo4FjP10XiZihabyTDTFIKDG68
+         KZ2KMHNN+rXD1PvoBGj8M+rTaoMpvIaaGgkJdS2JE2Xz1vo3R3jVjjDqdLL5oPRzSe5W
+         W2F2ZqTON0kOCiX06T2bJ8g1NquCTcMWlPsJGS2IEyZ7dRFXh/cK33WUwmynazAs2Dnq
+         jvkg==
+X-Gm-Message-State: ACrzQf3dAzTqA2kLN2C84GFYyVPDGCRFgf7GYNh+RRsHjrUnf1EiZr5G
+	JOmWQg9Ka2LC3+anjxAFSbQ=
+X-Google-Smtp-Source: AMsMyM5+zB9ahEZAx00qJKxi1+WbjtiqFBEfC+Ec/FLowk3R+2Ey6JhYEHGKxEH4UhaHmIbh4nUDog==
+X-Received: by 2002:a17:906:db0c:b0:77b:7d7d:5805 with SMTP id xj12-20020a170906db0c00b0077b7d7d5805mr48761368ejb.726.1666964375220;
+        Fri, 28 Oct 2022 06:39:35 -0700 (PDT)
+Received: from orome (p200300e41f201d00f22f74fffe1f3a53.dip0.t-ipconnect.de. [2003:e4:1f20:1d00:f22f:74ff:fe1f:3a53])
+        by smtp.gmail.com with ESMTPSA id g11-20020a170906538b00b0078ba492db81sm2195402ejo.9.2022.10.28.06.39.33
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 28 Oct 2022 06:39:34 -0700 (PDT)
+Date: Fri, 28 Oct 2022 15:39:32 +0200
+From: Thierry Reding <thierry.reding@gmail.com>
+To: Wayne Chang <waynec@nvidia.com>
+Cc: gregkh@linuxfoundation.org, robh+dt@kernel.org,
+	krzysztof.kozlowski+dt@linaro.org, treding@nvidia.com,
+	jonathanh@nvidia.com, heikki.krogerus@linux.intel.com,
+	ajayg@nvidia.com, kishon@ti.com, vkoul@kernel.org,
+	p.zabel@pengutronix.de, balbi@kernel.org, mathias.nyman@intel.com,
+	jckuo@nvidia.com, linux-usb@vger.kernel.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	singhanc@nvidia.com, linux-i2c@vger.kernel.org,
+	linux-phy@lists.infradead.org, linux-tegra@vger.kernel.org
+Subject: Re: [PATCH 10/11] usb: host: xhci-tegra: Add Tegra234 XHCI support
+Message-ID: <Y1vblCOXOCtX/RTP@orome>
+References: <20221024074128.1113554-1-waynec@nvidia.com>
+ <20221024074128.1113554-11-waynec@nvidia.com>
 MIME-Version: 1.0
+In-Reply-To: <20221024074128.1113554-11-waynec@nvidia.com>
+User-Agent: Mutt/2.2.7 (2022-08-07)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221028_063655_109074_34309020 
-X-CRM114-Status: GOOD (  22.33  )
+X-CRM114-CacheID: sfid-20221028_063939_150658_0D57A5BB 
+X-CRM114-Status: GOOD (  42.16  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,254 +93,553 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============4206131599662463708=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The PCIe2 and PCIe3 controllers and PHYs on SC8280XP can be used in
-4-lane mode or as separate controllers and PHYs in 2-lane mode (e.g. as
-PCIe2A and PCIe2B).
 
-Add support for fetching the 4-lane configuration from the TCSR and
-programming the lane registers of the second port when in 4-lane mode.
+--===============4206131599662463708==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="Mbj1VkMtzmZhLdX9"
+Content-Disposition: inline
 
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
----
- drivers/phy/qualcomm/Kconfig             |   1 +
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 117 +++++++++++++++++++++++
- 2 files changed, 118 insertions(+)
 
-diff --git a/drivers/phy/qualcomm/Kconfig b/drivers/phy/qualcomm/Kconfig
-index 5c98850f5a36..eb9ddc685b38 100644
---- a/drivers/phy/qualcomm/Kconfig
-+++ b/drivers/phy/qualcomm/Kconfig
-@@ -54,6 +54,7 @@ config PHY_QCOM_QMP
- 	tristate "Qualcomm QMP PHY Driver"
- 	depends on OF && COMMON_CLK && (ARCH_QCOM || COMPILE_TEST)
- 	select GENERIC_PHY
-+	select MFD_SYSCON
- 	help
- 	  Enable this to support the QMP PHY transceiver that is used
- 	  with controllers such as PCIe, UFS, and USB on Qualcomm chips.
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-index 2ba57b230342..1425bdba68e7 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-@@ -10,6 +10,7 @@
- #include <linux/io.h>
- #include <linux/iopoll.h>
- #include <linux/kernel.h>
-+#include <linux/mfd/syscon.h>
- #include <linux/module.h>
- #include <linux/of.h>
- #include <linux/of_device.h>
-@@ -17,6 +18,7 @@
- #include <linux/phy/pcie.h>
- #include <linux/phy/phy.h>
- #include <linux/platform_device.h>
-+#include <linux/regmap.h>
- #include <linux/regulator/consumer.h>
- #include <linux/reset.h>
- #include <linux/slab.h>
-@@ -886,6 +888,10 @@ static const struct qmp_phy_init_tbl sc8280xp_qmp_gen3x2_pcie_rc_serdes_tbl[] =
- 	QMP_PHY_INIT_CFG(QSERDES_V5_COM_BIAS_EN_CLKBUFLR_EN, 0x14),
- };
- 
-+static const struct qmp_phy_init_tbl sc8280xp_qmp_gen3x4_pcie_serdes_4ln_tbl[] = {
-+	QMP_PHY_INIT_CFG(QSERDES_V5_COM_BIAS_EN_CLKBUFLR_EN, 0x1c),
-+};
-+
- static const struct qmp_phy_init_tbl sc8280xp_qmp_gen3x1_pcie_tx_tbl[] = {
- 	QMP_PHY_INIT_CFG(QSERDES_V5_TX_PI_QEC_CTRL, 0x20),
- 	QMP_PHY_INIT_CFG(QSERDES_V5_TX_LANE_MODE_1, 0x75),
-@@ -1491,6 +1497,9 @@ struct qmp_phy_cfg {
- 	const struct qmp_phy_cfg_tables *tables_rc;
- 	const struct qmp_phy_cfg_tables *tables_ep;
- 
-+	const struct qmp_phy_init_tbl *serdes_4ln_tbl;
-+	int serdes_4ln_num;
-+
- 	/* clock ids to be requested */
- 	const char * const *clk_list;
- 	int num_clks;
-@@ -1518,6 +1527,7 @@ struct qmp_pcie {
- 	struct device *dev;
- 
- 	const struct qmp_phy_cfg *cfg;
-+	bool tcsr_4ln_config;
- 
- 	void __iomem *serdes;
- 	void __iomem *pcs;
-@@ -1527,6 +1537,8 @@ struct qmp_pcie {
- 	void __iomem *tx2;
- 	void __iomem *rx2;
- 
-+	void __iomem *port_b;
-+
- 	struct clk_bulk_data *clks;
- 	struct clk_bulk_data pipe_clks[2];
- 	int num_pipe_clks;
-@@ -1932,6 +1944,44 @@ static const struct qmp_phy_cfg sc8280xp_qmp_gen3x2_pciephy_cfg = {
- 	.phy_status		= PHYSTATUS,
- };
- 
-+static const struct qmp_phy_cfg sc8280xp_qmp_gen3x4_pciephy_cfg = {
-+	.lanes			= 4,
-+
-+	.offsets		= &qmp_pcie_offsets_v5,
-+
-+	.tables = {
-+		.serdes		= sc8280xp_qmp_pcie_serdes_tbl,
-+		.serdes_num	= ARRAY_SIZE(sc8280xp_qmp_pcie_serdes_tbl),
-+		.tx		= sc8280xp_qmp_gen3x2_pcie_tx_tbl,
-+		.tx_num		= ARRAY_SIZE(sc8280xp_qmp_gen3x2_pcie_tx_tbl),
-+		.rx		= sc8280xp_qmp_gen3x2_pcie_rx_tbl,
-+		.rx_num		= ARRAY_SIZE(sc8280xp_qmp_gen3x2_pcie_rx_tbl),
-+		.pcs		= sc8280xp_qmp_gen3x2_pcie_pcs_tbl,
-+		.pcs_num	= ARRAY_SIZE(sc8280xp_qmp_gen3x2_pcie_pcs_tbl),
-+		.pcs_misc	= sc8280xp_qmp_gen3x2_pcie_pcs_misc_tbl,
-+		.pcs_misc_num	= ARRAY_SIZE(sc8280xp_qmp_gen3x2_pcie_pcs_misc_tbl),
-+	},
-+
-+	.tables_rc = &(const struct qmp_phy_cfg_tables) {
-+		.serdes		= sc8280xp_qmp_gen3x2_pcie_rc_serdes_tbl,
-+		.serdes_num	= ARRAY_SIZE(sc8280xp_qmp_gen3x2_pcie_rc_serdes_tbl),
-+	},
-+
-+	.serdes_4ln_tbl		= sc8280xp_qmp_gen3x4_pcie_serdes_4ln_tbl,
-+	.serdes_4ln_num		= ARRAY_SIZE(sc8280xp_qmp_gen3x4_pcie_serdes_4ln_tbl),
-+
-+	.clk_list		= sc8280xp_pciephy_clk_l,
-+	.num_clks		= ARRAY_SIZE(sc8280xp_pciephy_clk_l),
-+	.reset_list		= sdm845_pciephy_reset_l,
-+	.num_resets		= ARRAY_SIZE(sdm845_pciephy_reset_l),
-+	.vreg_list		= qmp_phy_vreg_l,
-+	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
-+	.regs			= sm8250_pcie_regs_layout,
-+
-+	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
-+	.phy_status		= PHYSTATUS,
-+};
-+
- static const struct qmp_phy_cfg sdx55_qmp_pciephy_cfg = {
- 	.lanes			= 2,
- 
-@@ -2054,6 +2104,24 @@ static void qmp_pcie_configure(void __iomem *base,
- 	qmp_pcie_configure_lane(base, tbl, num, 0xff);
- }
- 
-+static void qmp_pcie_init_port_b(struct qmp_pcie *qmp, const struct qmp_phy_cfg_tables *tbls)
-+{
-+	const struct qmp_phy_cfg *cfg = qmp->cfg;
-+	const struct qmp_pcie_offsets *offs = cfg->offsets;
-+	void __iomem *tx3, *rx3, *tx4, *rx4;
-+
-+	tx3 = qmp->port_b + offs->tx;
-+	rx3 = qmp->port_b + offs->rx;
-+	tx4 = qmp->port_b + offs->tx2;
-+	rx4 = qmp->port_b + offs->rx2;
-+
-+	qmp_pcie_configure_lane(tx3, tbls->tx, tbls->tx_num, 1);
-+	qmp_pcie_configure_lane(rx3, tbls->rx, tbls->rx_num, 1);
-+
-+	qmp_pcie_configure_lane(tx4, tbls->tx, tbls->tx_num, 2);
-+	qmp_pcie_configure_lane(rx4, tbls->rx, tbls->rx_num, 2);
-+}
-+
- static void qmp_pcie_init_registers(struct qmp_pcie *qmp, const struct qmp_phy_cfg_tables *tbls)
- {
- 	const struct qmp_phy_cfg *cfg = qmp->cfg;
-@@ -2080,6 +2148,11 @@ static void qmp_pcie_init_registers(struct qmp_pcie *qmp, const struct qmp_phy_c
- 
- 	qmp_pcie_configure(pcs, tbls->pcs, tbls->pcs_num);
- 	qmp_pcie_configure(pcs_misc, tbls->pcs_misc, tbls->pcs_misc_num);
-+
-+	if (cfg->lanes >= 4 && qmp->tcsr_4ln_config) {
-+		qmp_pcie_configure(serdes, cfg->serdes_4ln_tbl, cfg->serdes_4ln_num);
-+		qmp_pcie_init_port_b(qmp, tbls);
-+	}
- }
- 
- static int qmp_pcie_init(struct phy *phy)
-@@ -2452,6 +2525,37 @@ static int qmp_pcie_parse_dt_legacy(struct qmp_pcie *qmp, struct device_node *np
- 	return 0;
- }
- 
-+static int qmp_pcie_get_4ln_config(struct qmp_pcie *qmp)
-+{
-+	struct regmap *tcsr;
-+	unsigned int args[2];
-+	int ret;
-+
-+	tcsr = syscon_regmap_lookup_by_phandle_args(qmp->dev->of_node,
-+						    "qcom,4ln-config-sel",
-+						    ARRAY_SIZE(args), args);
-+	if (IS_ERR(tcsr)) {
-+		ret = PTR_ERR(tcsr);
-+		if (ret == -ENOENT)
-+			return 0;
-+
-+		dev_err(qmp->dev, "failed to lookup syscon: %d\n", ret);
-+		return ret;
-+	}
-+
-+	ret = regmap_test_bits(tcsr, args[0], BIT(args[1]));
-+	if (ret < 0) {
-+		dev_err(qmp->dev, "failed to read tcsr: %d\n", ret);
-+		return ret;
-+	}
-+
-+	qmp->tcsr_4ln_config = ret;
-+
-+	dev_dbg(qmp->dev, "4ln_config_sel = %d\n", qmp->tcsr_4ln_config);
-+
-+	return 0;
-+}
-+
- static int qmp_pcie_parse_dt(struct qmp_pcie *qmp)
- {
- 	struct platform_device *pdev = to_platform_device(qmp->dev);
-@@ -2464,6 +2568,10 @@ static int qmp_pcie_parse_dt(struct qmp_pcie *qmp)
- 	if (!offs)
- 		return -EINVAL;
- 
-+	ret = qmp_pcie_get_4ln_config(qmp);
-+	if (ret)
-+		return ret;
-+
- 	base = devm_platform_ioremap_resource(pdev, 0);
- 	if (IS_ERR(base))
- 		return PTR_ERR(base);
-@@ -2479,6 +2587,12 @@ static int qmp_pcie_parse_dt(struct qmp_pcie *qmp)
- 		qmp->rx2 = base + offs->rx2;
- 	}
- 
-+	if (qmp->cfg->lanes >= 4 && qmp->tcsr_4ln_config) {
-+		qmp->port_b = devm_platform_ioremap_resource(pdev, 1);
-+		if (IS_ERR(qmp->port_b))
-+			return PTR_ERR(qmp->port_b);
-+	}
-+
- 	qmp->num_pipe_clks = 2;
- 	qmp->pipe_clks[0].id = "pipe";
- 	qmp->pipe_clks[1].id = "pipediv2";
-@@ -2582,6 +2696,9 @@ static const struct of_device_id qmp_pcie_of_match_table[] = {
- 	}, {
- 		.compatible = "qcom,sc8280xp-qmp-gen3x2-pcie-phy",
- 		.data = &sc8280xp_qmp_gen3x2_pciephy_cfg,
-+	}, {
-+		.compatible = "qcom,sc8280xp-qmp-gen3x4-pcie-phy",
-+		.data = &sc8280xp_qmp_gen3x4_pciephy_cfg,
- 	}, {
- 		.compatible = "qcom,sdm845-qhp-pcie-phy",
- 		.data = &sdm845_qhp_pciephy_cfg,
--- 
-2.37.3
+--Mbj1VkMtzmZhLdX9
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
+On Mon, Oct 24, 2022 at 03:41:27PM +0800, Wayne Chang wrote:
+> From: Sing-Han Chen <singhanc@nvidia.com>
+>=20
+> This change adds Tegra234 XUSB host mode controller support.
+>=20
+> In Tegra234, some of the registers have moved to bar2 space.
+> The new soc variable has_bar2 indicates the chip with bar2
+> area. This patch adds new reg helper to let the driver reuse
+> the same code for those chips with bar2 support.
+>=20
+> The new soc variables has_ifr indicates the chip with IFR FW
+> loading support. IFR registers would be configured in
+> MB1, and FW loading will be triggered in MB2.
+>=20
+> Signed-off-by: Sing-Han Chen <singhanc@nvidia.com>
+> Co-developed-by: Wayne Chang <waynec@nvidia.com>
+> Signed-off-by: Wayne Chang <waynec@nvidia.com>
+> ---
+>  drivers/usb/host/xhci-tegra.c | 277 +++++++++++++++++++++++++++++-----
+>  1 file changed, 237 insertions(+), 40 deletions(-)
+>=20
+> diff --git a/drivers/usb/host/xhci-tegra.c b/drivers/usb/host/xhci-tegra.c
+> index bdb776553826..86036eeece43 100644
+> --- a/drivers/usb/host/xhci-tegra.c
+> +++ b/drivers/usb/host/xhci-tegra.c
+> @@ -44,6 +44,9 @@
+>  #define XUSB_CFG_4				0x010
+>  #define  XUSB_BASE_ADDR_SHIFT			15
+>  #define  XUSB_BASE_ADDR_MASK			0x1ffff
+> +#define XUSB_CFG_7				0x01c
+> +#define  XUSB_BASE2_ADDR_SHIFT			16
+> +#define  XUSB_BASE2_ADDR_MASK			0xffff
+>  #define XUSB_CFG_16				0x040
+>  #define XUSB_CFG_24				0x060
+>  #define XUSB_CFG_AXI_CFG			0x0f8
+> @@ -75,6 +78,20 @@
+>  #define  MBOX_SMI_INTR_FW_HANG			BIT(1)
+>  #define  MBOX_SMI_INTR_EN			BIT(3)
+> =20
+> +/* BAR2 registers */
+> +#define XUSB_BAR2_ARU_MBOX_CMD			0x004
+> +#define XUSB_BAR2_ARU_MBOX_DATA_IN		0x008
+> +#define XUSB_BAR2_ARU_MBOX_DATA_OUT		0x00c
+> +#define XUSB_BAR2_ARU_MBOX_OWNER		0x010
+> +#define XUSB_BAR2_ARU_SMI_INTR			0x014
+> +#define XUSB_BAR2_ARU_SMI_ARU_FW_SCRATCH_DATA0	0x01c
+> +#define XUSB_BAR2_ARU_IFRDMA_CFG0		0x0e0
+> +#define XUSB_BAR2_ARU_IFRDMA_CFG1		0x0e4
+> +#define XUSB_BAR2_ARU_IFRDMA_STREAMID_FIELD	0x0e8
+> +#define XUSB_BAR2_ARU_C11_CSBRANGE		0x9c
+> +#define XUSB_BAR2_ARU_FW_SCRATCH		0x1000
+> +#define XUSB_BAR2_CSB_BASE_ADDR			0x2000
+> +
+>  /* IPFS registers */
+>  #define IPFS_XUSB_HOST_MSI_BAR_SZ_0		0x0c0
+>  #define IPFS_XUSB_HOST_MSI_AXI_BAR_ST_0		0x0c4
+> @@ -111,6 +128,9 @@
+>  #define  IMFILLRNG1_TAG_HI_SHIFT		16
+>  #define XUSB_FALC_IMFILLCTL			0x158
+> =20
+> +/* CSB ARU  registers */
+
+Weird double-space between "ARU" and "registers".
+
+> +#define XUSB_CSB_ARU_SCRATCH0			0x100100
+> +
+>  /* MP CSB registers */
+>  #define XUSB_CSB_MP_ILOAD_ATTR			0x101a00
+>  #define XUSB_CSB_MP_ILOAD_BASE_LO		0x101a04
+> @@ -131,6 +151,9 @@
+> =20
+>  #define IMEM_BLOCK_SIZE				256
+> =20
+> +#define FW_IOCTL_TYPE_SHIFT             (24)
+
+This should use tabs for spacing, like all the other definitions. Also,
+no need to wrap literal integers in parentheses.
+
+> +#define FW_IOCTL_CFGTBL_READ		(17)
+
+No need for the parentheses.
+
+> +
+>  struct tegra_xusb_fw_header {
+>  	__le32 boot_loadaddr_in_imem;
+>  	__le32 boot_codedfi_offset;
+> @@ -175,6 +198,7 @@ struct tegra_xusb_mbox_regs {
+>  	u16 data_in;
+>  	u16 data_out;
+>  	u16 owner;
+> +	u16 smi_intr;
+>  };
+> =20
+>  struct tegra_xusb_context_soc {
+> @@ -189,6 +213,7 @@ struct tegra_xusb_context_soc {
+>  	} fpci;
+>  };
+> =20
+> +struct tegra_xusb_soc_ops;
+
+Probably better to move the definition of the structure here and instead
+predeclare struct tegra_xusb.
+
+>  struct tegra_xusb_soc {
+>  	const char *firmware;
+>  	const char * const *supply_names;
+> @@ -205,11 +230,15 @@ struct tegra_xusb_soc {
+>  	} ports;
+> =20
+>  	struct tegra_xusb_mbox_regs mbox;
+> +	struct tegra_xusb_soc_ops *ops;
+
+const please.
+
+> =20
+>  	bool scale_ss_clock;
+>  	bool has_ipfs;
+>  	bool lpm_support;
+>  	bool otg_reset_sspi;
+> +
+> +	bool has_bar2;
+> +	bool has_ifr;
+>  };
+> =20
+>  struct tegra_xusb_context {
+> @@ -230,6 +259,8 @@ struct tegra_xusb {
+> =20
+>  	void __iomem *ipfs_base;
+>  	void __iomem *fpci_base;
+> +	void __iomem *bar2_base;
+> +	resource_size_t bar2_start;
+
+Maybe just store struct resource *bar2, here.
+
+[...]
+> @@ -664,6 +754,7 @@ static void tegra_xusb_mbox_handle(struct tegra_xusb =
+*tegra,
+>  static irqreturn_t tegra_xusb_mbox_thread(int irq, void *data)
+>  {
+>  	struct tegra_xusb *tegra =3D data;
+> +	struct tegra_xusb_soc_ops *ops =3D tegra->soc->ops;
+
+const
+
+> @@ -709,6 +800,15 @@ static void tegra_xusb_config(struct tegra_xusb *teg=
+ra)
+>  	value |=3D regs & (XUSB_BASE_ADDR_MASK << XUSB_BASE_ADDR_SHIFT);
+>  	fpci_writel(tegra, value, XUSB_CFG_4);
+> =20
+> +	/* Program BAR2 space */
+> +	if (tegra->soc->has_bar2) {
+
+You could make this depend on tegra->bar2 if you make the change above.
+
+> +		value =3D fpci_readl(tegra, XUSB_CFG_7);
+> +		value &=3D ~(XUSB_BASE2_ADDR_MASK << XUSB_BASE2_ADDR_SHIFT);
+> +		value |=3D tegra->bar2_start &
+> +			(XUSB_BASE2_ADDR_MASK << XUSB_BASE2_ADDR_SHIFT);
+> +		fpci_writel(tegra, value, XUSB_CFG_7);
+> +	}
+> +
+>  	usleep_range(100, 200);
+> =20
+>  	/* Enable bus master */
+> @@ -881,21 +981,36 @@ static int tegra_xusb_request_firmware(struct tegra=
+_xusb *tegra)
+>  	return 0;
+>  }
+> =20
+> +static int tegra_xusb_wait_for_falcon(struct tegra_xusb *tegra)
+> +{
+> +	struct xhci_cap_regs __iomem *cap_regs;
+> +	struct xhci_op_regs __iomem *op_regs;
+> +	int ret;
+> +	u32 val;
+
+Use "value" for consistency with the rest of the driver.
+
+> +
+> +	cap_regs =3D tegra->regs;
+> +	op_regs =3D tegra->regs + HC_LENGTH(readl(&cap_regs->hc_capbase));
+> +
+> +	ret =3D readl_poll_timeout(&op_regs->status, val, !(val & STS_CNR), 100=
+0, 200000);
+> +
+> +	if (ret)
+> +		dev_err(tegra->dev, "XHCI Controller not ready. Falcon state: 0x%x\n",
+> +			csb_readl(tegra, XUSB_FALC_CPUCTL));
+> +
+> +	return ret;
+> +}
+
+This refactoring could be a separate patch. It makes the rest of the
+changes harder to review. Not necessarily something that needs to be
+addressed, though.
+
+> +
+>  static int tegra_xusb_load_firmware(struct tegra_xusb *tegra)
+>  {
+>  	unsigned int code_tag_blocks, code_size_blocks, code_blocks;
+> -	struct xhci_cap_regs __iomem *cap =3D tegra->regs;
+>  	struct tegra_xusb_fw_header *header;
+>  	struct device *dev =3D tegra->dev;
+> -	struct xhci_op_regs __iomem *op;
+> -	unsigned long timeout;
+>  	time64_t timestamp;
+>  	u64 address;
+>  	u32 value;
+>  	int err;
+> =20
+>  	header =3D (struct tegra_xusb_fw_header *)tegra->fw.virt;
+> -	op =3D tegra->regs + HC_LENGTH(readl(&cap->hc_capbase));
+> =20
+>  	if (csb_readl(tegra, XUSB_CSB_MP_ILOAD_BASE_LO) !=3D 0) {
+>  		dev_info(dev, "Firmware already loaded, Falcon state %#x\n",
+> @@ -968,26 +1083,43 @@ static int tegra_xusb_load_firmware(struct tegra_x=
+usb *tegra)
+>  	/* Boot Falcon CPU and wait for USBSTS_CNR to get cleared. */
+>  	csb_writel(tegra, CPUCTL_STARTCPU, XUSB_FALC_CPUCTL);
+> =20
+> -	timeout =3D jiffies + msecs_to_jiffies(200);
+> +	if (tegra_xusb_wait_for_falcon(tegra))
+> +		return -EIO;
+> =20
+> -	do {
+> -		value =3D readl(&op->status);
+> -		if ((value & STS_CNR) =3D=3D 0)
+> -			break;
+> +	timestamp =3D le32_to_cpu(header->fwimg_created_time);
+> =20
+> -		usleep_range(1000, 2000);
+> -	} while (time_is_after_jiffies(timeout));
+> +	dev_info(dev, "Firmware timestamp: %ptTs UTC\n", &timestamp);
+> +
+> +	return 0;
+> +}
+> =20
+> -	value =3D readl(&op->status);
+> -	if (value & STS_CNR) {
+> -		value =3D csb_readl(tegra, XUSB_FALC_CPUCTL);
+> -		dev_err(dev, "XHCI controller not read: %#010x\n", value);
+> +static u32 tegra_xusb_read_firmware_header(struct tegra_xusb *tegra, u32=
+ offset)
+> +{
+> +	/*
+> +	 * We only accept reading the firmware config table
+> +	 * The offset should not exceed the fw header structure
+> +	 */
+> +	if (offset >=3D sizeof(struct tegra_xusb_fw_header))
+> +		return 0;
+
+You technically still allow reading 3 bytes past the header structure.
+Or does the firmware's CFGTL_READ IOCTL mask out the lower 2 bits of the
+offset?
+
+> +
+> +	bar2_writel(tegra, (FW_IOCTL_CFGTBL_READ << FW_IOCTL_TYPE_SHIFT) | offs=
+et,
+> +			XUSB_BAR2_ARU_FW_SCRATCH);
+> +	return bar2_readl(tegra, XUSB_BAR2_ARU_SMI_ARU_FW_SCRATCH_DATA0);
+> +}
+> +
+> +static int tegra_xusb_init_ifr_firmware(struct tegra_xusb *tegra)
+> +{
+> +	time64_t timestamp;
+> +
+> +	if (tegra_xusb_wait_for_falcon(tegra))
+>  		return -EIO;
+> -	}
+> =20
+> -	timestamp =3D le32_to_cpu(header->fwimg_created_time);
+> +#define offsetof_32(X, Y) ((u8)(offsetof(X, Y) / sizeof(__le32)))
+> +	timestamp =3D tegra_xusb_read_firmware_header(tegra,
+> +			offsetof_32(struct tegra_xusb_fw_header,
+> +				fwimg_created_time) << 2);
+> =20
+> -	dev_info(dev, "Firmware timestamp: %ptTs UTC\n", &timestamp);
+> +	dev_info(tegra->dev, "Firmware timestamp: %ptTs UTC\n", &timestamp);
+> =20
+>  	return 0;
+>  }
+> @@ -1403,7 +1535,7 @@ static int tegra_xusb_probe(struct platform_device =
+*pdev)
+>  	struct of_phandle_args args;
+>  	struct tegra_xusb *tegra;
+>  	struct device_node *np;
+> -	struct resource *regs;
+> +	struct resource *res, *regs;
+>  	struct xhci_hcd *xhci;
+>  	unsigned int i, j, k;
+>  	struct phy *phy;
+> @@ -1435,6 +1567,11 @@ static int tegra_xusb_probe(struct platform_device=
+ *pdev)
+>  		tegra->ipfs_base =3D devm_platform_ioremap_resource(pdev, 2);
+>  		if (IS_ERR(tegra->ipfs_base))
+>  			return PTR_ERR(tegra->ipfs_base);
+> +	} else if (tegra->soc->has_bar2) {
+> +		tegra->bar2_base =3D devm_platform_get_and_ioremap_resource(pdev, 2, &=
+res);
+
+If you store struct resource *bar2 in tegra, you can pass &tegra->bar2
+here and ...
+
+> +		if (IS_ERR(tegra->bar2_base))
+> +			return PTR_ERR(tegra->bar2_base);
+> +		tegra->bar2_start =3D res->start;
+
+=2E.. skip this.
+
+>  	}
+> =20
+>  	tegra->xhci_irq =3D platform_get_irq(pdev, 0);
+> @@ -1651,10 +1788,13 @@ static int tegra_xusb_probe(struct platform_devic=
+e *pdev)
+>  		goto disable_phy;
+>  	}
+> =20
+> -	err =3D tegra_xusb_request_firmware(tegra);
+> -	if (err < 0) {
+> -		dev_err(&pdev->dev, "failed to request firmware: %d\n", err);
+> -		goto disable_phy;
+> +	if (!tegra->soc->has_ifr) {
+> +		err =3D tegra_xusb_request_firmware(tegra);
+> +		if (err < 0) {
+> +			dev_err(&pdev->dev,
+> +				"failed to request firmware: %d\n", err);
+> +			goto disable_phy;
+> +		}
+>  	}
+> =20
+>  	err =3D tegra_xusb_unpowergate_partitions(tegra);
+> @@ -1663,7 +1803,10 @@ static int tegra_xusb_probe(struct platform_device=
+ *pdev)
+> =20
+>  	tegra_xusb_config(tegra);
+> =20
+> -	err =3D tegra_xusb_load_firmware(tegra);
+> +	if (tegra->soc->has_ifr)
+> +		err =3D tegra_xusb_init_ifr_firmware(tegra);
+> +	else
+> +		err =3D tegra_xusb_load_firmware(tegra);
+>  	if (err < 0) {
+>  		dev_err(&pdev->dev, "failed to load firmware: %d\n", err);
+>  		goto powergate;
+> @@ -2070,7 +2213,10 @@ static int tegra_xusb_exit_elpg(struct tegra_xusb =
+*tegra, bool runtime)
+>  	tegra_xusb_config(tegra);
+>  	tegra_xusb_restore_context(tegra);
+> =20
+> -	err =3D tegra_xusb_load_firmware(tegra);
+> +	if (tegra->soc->has_ifr)
+> +		err =3D tegra_xusb_init_ifr_firmware(tegra);
+> +	else
+> +		err =3D tegra_xusb_load_firmware(tegra);
+
+Might be worth extracting this into a new function since you use this
+twice now.
+
+>  	if (err < 0) {
+>  		dev_err(tegra->dev, "failed to load firmware: %d\n", err);
+>  		goto disable_phy;
+> @@ -2271,6 +2417,13 @@ static const struct tegra_xusb_context_soc tegra12=
+4_xusb_context =3D {
+>  	},
+>  };
+> =20
+> +static struct tegra_xusb_soc_ops tegra124_ops =3D {
+
+const
+
+> +	.mbox_reg_readl =3D &fpci_readl,
+> +	.mbox_reg_writel =3D &fpci_writel,
+> +	.csb_reg_readl =3D &fpci_csb_readl,
+> +	.csb_reg_writel =3D &fpci_csb_writel,
+> +};
+> +
+>  static const struct tegra_xusb_soc tegra124_soc =3D {
+>  	.firmware =3D "nvidia/tegra124/xusb.bin",
+>  	.supply_names =3D tegra124_supply_names,
+> @@ -2286,11 +2439,13 @@ static const struct tegra_xusb_soc tegra124_soc =
+=3D {
+>  	.scale_ss_clock =3D true,
+>  	.has_ipfs =3D true,
+>  	.otg_reset_sspi =3D false,
+> +	.ops =3D &tegra124_ops,
+>  	.mbox =3D {
+>  		.cmd =3D 0xe4,
+>  		.data_in =3D 0xe8,
+>  		.data_out =3D 0xec,
+>  		.owner =3D 0xf0,
+> +		.smi_intr =3D XUSB_CFG_ARU_SMI_INTR,
+>  	},
+>  };
+>  MODULE_FIRMWARE("nvidia/tegra124/xusb.bin");
+> @@ -2322,11 +2477,13 @@ static const struct tegra_xusb_soc tegra210_soc =
+=3D {
+>  	.scale_ss_clock =3D false,
+>  	.has_ipfs =3D true,
+>  	.otg_reset_sspi =3D true,
+> +	.ops =3D &tegra124_ops,
+>  	.mbox =3D {
+>  		.cmd =3D 0xe4,
+>  		.data_in =3D 0xe8,
+>  		.data_out =3D 0xec,
+>  		.owner =3D 0xf0,
+> +		.smi_intr =3D XUSB_CFG_ARU_SMI_INTR,
+>  	},
+>  };
+>  MODULE_FIRMWARE("nvidia/tegra210/xusb.bin");
+> @@ -2363,11 +2520,13 @@ static const struct tegra_xusb_soc tegra186_soc =
+=3D {
+>  	.scale_ss_clock =3D false,
+>  	.has_ipfs =3D false,
+>  	.otg_reset_sspi =3D false,
+> +	.ops =3D &tegra124_ops,
+>  	.mbox =3D {
+>  		.cmd =3D 0xe4,
+>  		.data_in =3D 0xe8,
+>  		.data_out =3D 0xec,
+>  		.owner =3D 0xf0,
+> +		.smi_intr =3D XUSB_CFG_ARU_SMI_INTR,
+>  	},
+>  	.lpm_support =3D true,
+>  };
+> @@ -2394,21 +2553,59 @@ static const struct tegra_xusb_soc tegra194_soc =
+=3D {
+>  	.scale_ss_clock =3D false,
+>  	.has_ipfs =3D false,
+>  	.otg_reset_sspi =3D false,
+> +	.ops =3D &tegra124_ops,
+>  	.mbox =3D {
+>  		.cmd =3D 0x68,
+>  		.data_in =3D 0x6c,
+>  		.data_out =3D 0x70,
+>  		.owner =3D 0x74,
+> +		.smi_intr =3D XUSB_CFG_ARU_SMI_INTR,
+>  	},
+>  	.lpm_support =3D true,
+>  };
+>  MODULE_FIRMWARE("nvidia/tegra194/xusb.bin");
+> =20
+> +static struct tegra_xusb_soc_ops tegra234_ops =3D {
+
+const
+
+> +	.mbox_reg_readl =3D &bar2_readl,
+> +	.mbox_reg_writel =3D &bar2_writel,
+> +	.csb_reg_readl =3D &bar2_csb_readl,
+> +	.csb_reg_writel =3D &bar2_csb_writel,
+> +};
+> +
+> +static const struct tegra_xusb_soc tegra234_soc =3D {
+> +	.firmware =3D "nvidia/tegra234/xusb.bin",
+> +	.supply_names =3D tegra194_supply_names,
+> +	.num_supplies =3D ARRAY_SIZE(tegra194_supply_names),
+> +	.phy_types =3D tegra194_phy_types,
+> +	.num_types =3D ARRAY_SIZE(tegra194_phy_types),
+> +	.context =3D &tegra186_xusb_context,
+> +	.ports =3D {
+> +		.usb3 =3D { .offset =3D 0, .count =3D 4, },
+> +		.usb2 =3D { .offset =3D 4, .count =3D 4, },
+> +	},
+> +	.scale_ss_clock =3D false,
+> +	.has_ipfs =3D false,
+> +	.otg_reset_sspi =3D false,
+> +	.ops =3D &tegra234_ops,
+> +	.mbox =3D {
+> +		.cmd =3D XUSB_BAR2_ARU_MBOX_CMD,
+> +		.data_in =3D XUSB_BAR2_ARU_MBOX_DATA_IN,
+> +		.data_out =3D XUSB_BAR2_ARU_MBOX_DATA_OUT,
+> +		.owner =3D XUSB_BAR2_ARU_MBOX_OWNER,
+> +		.smi_intr =3D XUSB_BAR2_ARU_SMI_INTR,
+> +	},
+> +	.lpm_support =3D true,
+> +	.has_bar2 =3D true,
+> +	.has_ifr =3D true,
+> +};
+> +MODULE_FIRMWARE("nvidia/tegra234/xusb.bin");
+
+Can you prepare a patch to add this firmware to the linux-firmware
+repository? I don't see it there yet.
+
+Thierry
+
+> +
+>  static const struct of_device_id tegra_xusb_of_match[] =3D {
+>  	{ .compatible =3D "nvidia,tegra124-xusb", .data =3D &tegra124_soc },
+>  	{ .compatible =3D "nvidia,tegra210-xusb", .data =3D &tegra210_soc },
+>  	{ .compatible =3D "nvidia,tegra186-xusb", .data =3D &tegra186_soc },
+>  	{ .compatible =3D "nvidia,tegra194-xusb", .data =3D &tegra194_soc },
+> +	{ .compatible =3D "nvidia,tegra234-xusb", .data =3D &tegra234_soc },
+>  	{ },
+>  };
+>  MODULE_DEVICE_TABLE(of, tegra_xusb_of_match);
+> --=20
+> 2.25.1
+>=20
+
+--Mbj1VkMtzmZhLdX9
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAmNb25EACgkQ3SOs138+
+s6F7cw//UeHVl36CYig4HEaNFyNXLFCrs557GkVBx+bcayvmjHalwDjibi/AjNmp
++J6NsmxD/Jh1NOtq4EIyetWQ0lHKjAAVkb8YJ2CgdKDD1aQLIkceTxHRlKdgrVbh
+dPupJmtiwZf9qodUbwtV/vtuV8B/Xkr+BH5fDvtCNsiRsrdzirxpnti7kAME6v2/
+TFl1nXSKzvQqnLdgOZAuli9KPW9Z91KtsJs2pgnOFREcmkHOqvMlsWCV+xv7uJrz
+tUOwm67ApPdGwlo4MNDtJ4i8jA2enGT9xedhx36YKfYUBnpqEjcLXHxvnHdTXAnD
+ctK1cBLLxWrgaZjmgKmMuL4oo9g3SJI5Mld/Ye4l56bJhEHwBEaXLNnhRxSftiB8
+E/Pfckjjqoi6R0Ph5KT8KPnohGCcA5pPPxkvphCijAtuGP01YkSYVWbN9a5SS8YI
+8khrJXqn3EnOcsf6e5LJxLM6ebTsQQPhgA//nKxR859zI5dL6o2nlNkkkA6BDT6u
+Re0WdJQ34qHv1fWTzIynoi48w8WQDr3ZtnHOMxcW8lLFStMK+1RayB/UUz17Pl5a
+S6UtiaAoRbc9lCXLmeHD4hoQWVSeSsTdhxs3Z7oG9bQ3g+KBrJ89UNL5aCEYpq0l
+iu+VunOevd2YFmqpLVJBi+BVghxIK0N3QUdSRxnunPeVrIRF9S8=
+=6tE+
+-----END PGP SIGNATURE-----
+
+--Mbj1VkMtzmZhLdX9--
+
+
+--===============4206131599662463708==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============4206131599662463708==--
+
