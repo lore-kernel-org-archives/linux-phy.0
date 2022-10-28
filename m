@@ -4,62 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A8941FA3741
-	for <linux-phy@archiver.kernel.org>; Fri, 28 Oct 2022 12:56:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8295BC38A02
+	for <linux-phy@archiver.kernel.org>; Fri, 28 Oct 2022 12:57:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CcsTIbeSAILS+UI+30TBGybZZuiSF6Q7KZD1uwiI780=; b=BO6vfD7FWxUVgX
-	e1DTMBqjncV0TSKKjHcCaLCNOrBItj/e6zQtp+c7o2FqIz/k/UxYGzz89oEpdT2VrLic6C/s/PINh
-	6d1VPJzWlykb9Y8N38q5K6Mv0sQJSAumoSqT7ZNBpQjSpM3yONRLzaiwbVl4ePw10zapB6QfViDL/
-	WgtZP1vWGnqPVrhFJVhULdPDQzrPrezQJmb/VwEJZdRftNw0/gpLSS2JSS5M/myfhYP7lufhrnIE2
-	vy+mTvDGnyHwl5v+nvfR0zMghtOlEbEzG9RnOF/qOrwoAmTRYn2ojfPM8ByLDQUydnBAmEjw3/4nZ
-	ZOtKfFqCl0VrC78C5jMA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=g8PAJLjzQ8hHZ63dS4OJ24Fi+HJ6HYdM2An6tru9Pz4=; b=ZMsxzx9ka7y5WH6zSiQmLbbyk8
+	6IBIKqcRBUKrON7vtrjlJtv+W8zs8yW7buG0vstuK+8ijKEJi6xIlgEqHk+eeQ2ccDN3CY4bQHk+5
+	JLAlv+0Wtw6cJB5lQYOQZLZ4FwXVJAxUxlhTwm3kgOUgb6akd7IUXUgEDZXUd+A81gZn3wy2zv0Fo
+	PYhF1M+DjYvX8tR29jIBJxW9GixYtnbu5BPEo/2YuZyGji3H9dG5kWL6jCEtZUvANdbGaG+sT1pCz
+	LImVhbeHpfP0kmFUOSL7ZCzww0EfSYISwTDBYfGLMe+k2q8G1pkqc9lyUa9kSWKjO7z5k+UX0IV1R
+	gyzSe+aQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ooOuB-00HAzt-3w; Fri, 28 Oct 2022 12:56:11 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1ooOvG-00HBKf-VE; Fri, 28 Oct 2022 12:57:18 +0000
+Received: from mail-ed1-x534.google.com ([2a00:1450:4864:20::534])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ooOu9-00HAyi-DQ
-	for linux-phy@lists.infradead.org; Fri, 28 Oct 2022 12:56:10 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id DA54A6283F;
-	Fri, 28 Oct 2022 12:56:05 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6EF42C433C1;
-	Fri, 28 Oct 2022 12:56:04 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1666961765;
-	bh=VHuzHyK/ptJnT7l0y3XH9UJ/iKdBdii83zZaQVjzLGQ=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=qJK0uSjCKHOuaBdb8fohf3eG1Ezo4BX544vlCK2s//gCGhInnaT0Y3Xh5qduPhxVo
-	 1xJoCClTBT1I/iAGPMIZjp1q3pBJGSE1VkBpeWg19qtZxpJ3eYGh92wPjSNUXikuAF
-	 1dy22fZ5u/q0+2M1wBMKsVqxqtut6tdeWxJhkP2PPDvyFoOoxklODSzWQSuTXp8xSZ
-	 7Us2KxxmzFn99c1rpOtNvVzLir8Nmw8bF7F5n3dwp1WcYi+Ixvit93imqOsWYWuDus
-	 TzjKR/P+cjwYi/DTQecG5tUinB/wj0YeFJjBTAwjts7u7VTd5Gmjiex6ecadXqWHms
-	 cMvd68M5hNUpw==
-Date: Fri, 28 Oct 2022 18:26:00 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Johan Hovold <johan+linaro@kernel.org>
-Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@somainline.org>,
-	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org, stable@vger.kernel.org
-Subject: Re: [PATCH] phy: qcom-qmp-combo: fix NULL-deref on runtime resume
-Message-ID: <Y1vRYIl1eaAzfmEG@matsya>
-References: <20221026162116.26462-1-johan+linaro@kernel.org>
+	id 1ooOvD-00HBH6-34
+	for linux-phy@lists.infradead.org; Fri, 28 Oct 2022 12:57:16 +0000
+Received: by mail-ed1-x534.google.com with SMTP id v27so7776553eda.1
+        for <linux-phy@lists.infradead.org>; Fri, 28 Oct 2022 05:57:10 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20210112;
+        h=user-agent:in-reply-to:content-disposition:mime-version:references
+         :message-id:subject:cc:to:from:date:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=xlgtcNEkHLSQxefrkLYDw2NI8A0VX2rYADSe4gp+IWI=;
+        b=D6FMWgHVGm2MYqfbdj0u7uO5JT3gly5wkvLMYoc6KhZFvUtbMnX5WjaXdFUzqOaXoU
+         YuB+Px71m/4/RzDdCnm6a8ZQXgiyQXYXkqkWZFlXnF5CqOlxR3Zja3XrjiF8B4S5py39
+         b10lnlEbDnaT4cA776AOOUkpzOjD8s6sghfU2bsnLi7+L3WsM78WP6nU7ogn7NxYJ+IS
+         YEREx1IauNmb2f0n/5EKjze2Ryq1aCosxgiAmddNq2BnyyLluONUsey51gzP+VWJbOAA
+         t/uw93tPxSXBBddWx9foO18esl9c1fXG2ZJgD5P/AKdSSveuSRRXSo9wnZ8pXU6BPJSa
+         aW3A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=user-agent:in-reply-to:content-disposition:mime-version:references
+         :message-id:subject:cc:to:from:date:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=xlgtcNEkHLSQxefrkLYDw2NI8A0VX2rYADSe4gp+IWI=;
+        b=C48K21K9v2OgcC29jZPj8XdWuQD2j6YWi1WvoN6mxtpkrHDLCizTY2Z+3MJFc0oy7b
+         /X/n+I7cAwX6IkHtj2Y3or7MVyW6SlGF9xsD16yLIRTqPPWxFEeJwOxnhhF4VyNMAm3q
+         4GRPMCzhE3oyusqxyBucUh7e0otDLMVl+HfB1grXjvKphBXRr6LzkZ6Bf7yMoQKgW3Br
+         JsZeuYn6yd0AKBXssNOfFhvm1GNZHCv99BcpJoK/QseNX3UuenYpjC4rCaibHwDUDkhn
+         Mrinljc0SkJTZrO5ZBLTS1wAF4gG5X6XyQ0zGOYRp9bXAHhXSyq4IAy+9BOqSSeLPS0V
+         MM8w==
+X-Gm-Message-State: ACrzQf16q23ynbd7YpcLd20peXVG50HjfawE249kjP9MoYD4XQLu5QVp
+	hny7SDrmYek6hJwEq2SCvgbX5C4qVQ8=
+X-Google-Smtp-Source: AMsMyM5YC5NBUNMVLvqpGOhKxFPABiSIffwZ0JUtOGTuxf/IrQHJu+GkhJXcz7H9cWgYw2s9wH8WPw==
+X-Received: by 2002:a17:907:3f04:b0:741:4bf4:fe42 with SMTP id hq4-20020a1709073f0400b007414bf4fe42mr47994915ejc.664.1666961818654;
+        Fri, 28 Oct 2022 05:56:58 -0700 (PDT)
+Received: from orome (p200300e41f201d00f22f74fffe1f3a53.dip0.t-ipconnect.de. [2003:e4:1f20:1d00:f22f:74ff:fe1f:3a53])
+        by smtp.gmail.com with ESMTPSA id oz13-20020a170906cd0d00b007ad2da5668csm2134066ejb.112.2022.10.28.05.56.57
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 28 Oct 2022 05:56:57 -0700 (PDT)
+Date: Fri, 28 Oct 2022 14:56:56 +0200
+From: Thierry Reding <thierry.reding@gmail.com>
+To: Wayne Chang <waynec@nvidia.com>
+Cc: gregkh@linuxfoundation.org, robh+dt@kernel.org,
+	krzysztof.kozlowski+dt@linaro.org, treding@nvidia.com,
+	jonathanh@nvidia.com, heikki.krogerus@linux.intel.com,
+	ajayg@nvidia.com, kishon@ti.com, vkoul@kernel.org,
+	p.zabel@pengutronix.de, balbi@kernel.org, mathias.nyman@intel.com,
+	jckuo@nvidia.com, linux-usb@vger.kernel.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	singhanc@nvidia.com, linux-i2c@vger.kernel.org,
+	linux-phy@lists.infradead.org, linux-tegra@vger.kernel.org
+Subject: Re: [PATCH 09/11] phy: tegra: xusb: Add Tegra234 support
+Message-ID: <Y1vRmGss43zEcN/I@orome>
+References: <20221024074128.1113554-1-waynec@nvidia.com>
+ <20221024074128.1113554-10-waynec@nvidia.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20221026162116.26462-1-johan+linaro@kernel.org>
+In-Reply-To: <20221024074128.1113554-10-waynec@nvidia.com>
+User-Agent: Mutt/2.2.7 (2022-08-07)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221028_055609_508343_9D00E354 
-X-CRM114-Status: UNSURE (   9.19  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20221028_055715_166682_05E9CB09 
+X-CRM114-Status: GOOD (  32.31  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,27 +93,298 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============6183806738870992245=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 26-10-22, 18:21, Johan Hovold wrote:
-> Commit fc64623637da ("phy: qcom-qmp-combo,usb: add support for separate
-> PCS_USB region") started treating the PCS_USB registers as potentially
-> separate from the PCS registers but used the wrong base when no PCS_USB
-> offset has been provided.
-> 
-> Fix the PCS_USB base used at runtime resume to prevent dereferencing a
-> NULL pointer on platforms that do not provide a PCS_USB offset (e.g.
-> SC7180).
 
-Applied, thanks
+--===============6183806738870992245==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="EpD9Cm4/iJG55pEf"
+Content-Disposition: inline
 
--- 
-~Vinod
+
+--EpD9Cm4/iJG55pEf
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Mon, Oct 24, 2022 at 03:41:26PM +0800, Wayne Chang wrote:
+> From: Sing-Han Chen <singhanc@nvidia.com>
+>=20
+> Add support for the XUSB pad controller found on Tegra234 SoCs. It is
+> mostly similar to the same IP found on Tegra194, because most of
+> the Tegra234 XUSB PADCTL registers definition and programming sequence
+> are the same as Tegra194, Tegra234 XUSB PADCTL can share the same
+> driver with Tegra186 and Tegra194 XUSB PADCTL.
+>=20
+> Introduce a new feature, USB2 HW tracking, for Tegra234.
+> The feature is to enable HW periodical PAD tracking which measure
+> and capture the electric parameters of USB2.0 PAD.
+>=20
+> Signed-off-by: Sing-Han Chen <singhanc@nvidia.com>
+> Co-developed-by: Wayne Chang <waynec@nvidia.com>
+> Signed-off-by: Wayne Chang <waynec@nvidia.com>
+> ---
+>  drivers/phy/tegra/Makefile        |  1 +
+>  drivers/phy/tegra/xusb-tegra186.c | 65 +++++++++++++++++++++++++++++--
+>  drivers/phy/tegra/xusb.c          |  6 +++
+>  drivers/phy/tegra/xusb.h          | 23 +++++++++++
+>  4 files changed, 92 insertions(+), 3 deletions(-)
+>=20
+> diff --git a/drivers/phy/tegra/Makefile b/drivers/phy/tegra/Makefile
+> index 89b84067cb4c..eeeea72de117 100644
+> --- a/drivers/phy/tegra/Makefile
+> +++ b/drivers/phy/tegra/Makefile
+> @@ -7,4 +7,5 @@ phy-tegra-xusb-$(CONFIG_ARCH_TEGRA_132_SOC) +=3D xusb-teg=
+ra124.o
+>  phy-tegra-xusb-$(CONFIG_ARCH_TEGRA_210_SOC) +=3D xusb-tegra210.o
+>  phy-tegra-xusb-$(CONFIG_ARCH_TEGRA_186_SOC) +=3D xusb-tegra186.o
+>  phy-tegra-xusb-$(CONFIG_ARCH_TEGRA_194_SOC) +=3D xusb-tegra186.o
+> +phy-tegra-xusb-$(CONFIG_ARCH_TEGRA_234_SOC) +=3D xusb-tegra186.o
+>  obj-$(CONFIG_PHY_TEGRA194_P2U) +=3D phy-tegra194-p2u.o
+> diff --git a/drivers/phy/tegra/xusb-tegra186.c b/drivers/phy/tegra/xusb-t=
+egra186.c
+> index f121b4ffbbfd..cc02cea65a21 100644
+> --- a/drivers/phy/tegra/xusb-tegra186.c
+> +++ b/drivers/phy/tegra/xusb-tegra186.c
+> @@ -89,6 +89,11 @@
+>  #define  USB2_TRK_START_TIMER(x)		(((x) & 0x7f) << 12)
+>  #define  USB2_TRK_DONE_RESET_TIMER(x)		(((x) & 0x7f) << 19)
+>  #define  USB2_PD_TRK				BIT(26)
+> +#define  USB2_TRK_COMPLETED			BIT(31)
+> +
+> +#define XUSB_PADCTL_USB2_BIAS_PAD_CTL2		0x28c
+> +#define  USB2_TRK_HW_MODE			BIT(0)
+> +#define  CYA_TRK_CODE_UPDATE_ON_IDLE		BIT(31)
+> =20
+>  #define XUSB_PADCTL_HSIC_PADX_CTL0(x)		(0x300 + (x) * 0x20)
+>  #define  HSIC_PD_TX_DATA0			BIT(1)
+> @@ -609,9 +614,32 @@ static void tegra186_utmi_bias_pad_power_on(struct t=
+egra_xusb_padctl *padctl)
+>  	value &=3D ~USB2_PD_TRK;
+>  	padctl_writel(padctl, value, XUSB_PADCTL_USB2_BIAS_PAD_CTL1);
+> =20
+> -	udelay(100);
+> +	if (padctl->soc->poll_trk_completed) {
+> +		err =3D padctl_readl_poll(padctl, XUSB_PADCTL_USB2_BIAS_PAD_CTL1,
+> +					USB2_TRK_COMPLETED, USB2_TRK_COMPLETED, 100);
+> +		if (err) {
+> +			/* The failure with polling on trk complete will not
+> +			 * cause the failure of powering on the bias pad.
+> +			 */
+> +			dev_warn(dev, "failed to poll USB2 trk completed: %d\n",
+> +				err);
+> +		}
+> =20
+> -	clk_disable_unprepare(priv->usb2_trk_clk);
+> +		value =3D padctl_readl(padctl, XUSB_PADCTL_USB2_BIAS_PAD_CTL1);
+> +		value |=3D USB2_TRK_COMPLETED;
+> +		padctl_writel(padctl, value, XUSB_PADCTL_USB2_BIAS_PAD_CTL1);
+> +	} else {
+> +		udelay(100);
+> +	}
+> +
+> +	if (padctl->soc->trk_hw_mode) {
+> +		value =3D padctl_readl(padctl, XUSB_PADCTL_USB2_BIAS_PAD_CTL2);
+> +		value |=3D USB2_TRK_HW_MODE;
+> +		value &=3D ~CYA_TRK_CODE_UPDATE_ON_IDLE;
+> +		padctl_writel(padctl, value, XUSB_PADCTL_USB2_BIAS_PAD_CTL2);
+> +	} else {
+> +		clk_disable_unprepare(priv->usb2_trk_clk);
+> +	}
+> =20
+>  	mutex_unlock(&padctl->lock);
+>  }
+> @@ -637,6 +665,13 @@ static void tegra186_utmi_bias_pad_power_off(struct =
+tegra_xusb_padctl *padctl)
+>  	value |=3D USB2_PD_TRK;
+>  	padctl_writel(padctl, value, XUSB_PADCTL_USB2_BIAS_PAD_CTL1);
+> =20
+> +	if (padctl->soc->trk_hw_mode) {
+> +		value =3D padctl_readl(padctl, XUSB_PADCTL_USB2_BIAS_PAD_CTL2);
+> +		value &=3D ~USB2_TRK_HW_MODE;
+> +		padctl_writel(padctl, value, XUSB_PADCTL_USB2_BIAS_PAD_CTL2);
+> +		clk_disable_unprepare(priv->usb2_trk_clk);
+> +	}
+> +
+>  	mutex_unlock(&padctl->lock);
+>  }
+> =20
+> @@ -1560,7 +1595,8 @@ const struct tegra_xusb_padctl_soc tegra186_xusb_pa=
+dctl_soc =3D {
+>  EXPORT_SYMBOL_GPL(tegra186_xusb_padctl_soc);
+>  #endif
+> =20
+> -#if IS_ENABLED(CONFIG_ARCH_TEGRA_194_SOC)
+> +#if IS_ENABLED(CONFIG_ARCH_TEGRA_194_SOC) || \
+> +	IS_ENABLED(CONFIG_ARCH_TEGRA_234_SOC)
+>  static const char * const tegra194_xusb_padctl_supply_names[] =3D {
+>  	"avdd-usb",
+>  	"vclamp-usb",
+> @@ -1616,8 +1652,31 @@ const struct tegra_xusb_padctl_soc tegra194_xusb_p=
+adctl_soc =3D {
+>  	.supply_names =3D tegra194_xusb_padctl_supply_names,
+>  	.num_supplies =3D ARRAY_SIZE(tegra194_xusb_padctl_supply_names),
+>  	.supports_gen2 =3D true,
+> +	.poll_trk_completed =3D true,
+>  };
+>  EXPORT_SYMBOL_GPL(tegra194_xusb_padctl_soc);
+> +
+> +const struct tegra_xusb_padctl_soc tegra234_xusb_padctl_soc =3D {
+> +	.num_pads =3D ARRAY_SIZE(tegra194_pads),
+> +	.pads =3D tegra194_pads,
+> +	.ports =3D {
+> +		.usb2 =3D {
+> +			.ops =3D &tegra186_usb2_port_ops,
+> +			.count =3D 4,
+> +		},
+> +		.usb3 =3D {
+> +			.ops =3D &tegra186_usb3_port_ops,
+> +			.count =3D 4,
+> +		},
+> +	},
+> +	.ops =3D &tegra186_xusb_padctl_ops,
+> +	.supply_names =3D tegra194_xusb_padctl_supply_names,
+> +	.num_supplies =3D ARRAY_SIZE(tegra194_xusb_padctl_supply_names),
+> +	.supports_gen2 =3D true,
+> +	.poll_trk_completed =3D true,
+> +	.trk_hw_mode =3D true,
+> +};
+> +EXPORT_SYMBOL_GPL(tegra234_xusb_padctl_soc);
+
+I'm beginning to wonder if we perhaps went a bit overboard with this.
+These symbols are used exclusively by drivers/phy/tegra/xusb.c, which
+ends up in the same link unit as xusb-tegra186.c, so the export should
+not be necessary.
+
+Not necessarily something that needs fixing right now, but certainly
+something to circle back to eventually.
+
+>  #endif
+> =20
+>  MODULE_AUTHOR("JC Kuo <jckuo@nvidia.com>");
+> diff --git a/drivers/phy/tegra/xusb.c b/drivers/phy/tegra/xusb.c
+> index 95091876c422..23d179b1a5b5 100644
+> --- a/drivers/phy/tegra/xusb.c
+> +++ b/drivers/phy/tegra/xusb.c
+> @@ -71,6 +71,12 @@ static const struct of_device_id tegra_xusb_padctl_of_=
+match[] =3D {
+>  		.compatible =3D "nvidia,tegra194-xusb-padctl",
+>  		.data =3D &tegra194_xusb_padctl_soc,
+>  	},
+> +#endif
+> +#if defined(CONFIG_ARCH_TEGRA_234_SOC)
+> +	{
+> +		.compatible =3D "nvidia,tegra234-xusb-padctl",
+> +		.data =3D &tegra234_xusb_padctl_soc,
+> +	},
+>  #endif
+>  	{ }
+>  };
+> diff --git a/drivers/phy/tegra/xusb.h b/drivers/phy/tegra/xusb.h
+> index 8cfbbdbd6e0c..ec0b5b023ad1 100644
+> --- a/drivers/phy/tegra/xusb.h
+> +++ b/drivers/phy/tegra/xusb.h
+> @@ -8,6 +8,7 @@
+>  #define __PHY_TEGRA_XUSB_H
+> =20
+>  #include <linux/io.h>
+> +#include <linux/iopoll.h>
+>  #include <linux/mutex.h>
+>  #include <linux/workqueue.h>
+> =20
+> @@ -433,6 +434,8 @@ struct tegra_xusb_padctl_soc {
+>  	unsigned int num_supplies;
+>  	bool supports_gen2;
+>  	bool need_fake_usb3_port;
+> +	bool poll_trk_completed;
+> +	bool trk_hw_mode;
+>  };
+> =20
+>  struct tegra_xusb_padctl {
+> @@ -475,6 +478,23 @@ static inline u32 padctl_readl(struct tegra_xusb_pad=
+ctl *padctl,
+>  	return value;
+>  }
+> =20
+> +static inline u32 padctl_readl_poll(struct tegra_xusb_padctl *padctl,
+> +	unsigned long offset, u32 val, u32 mask, int us)
+> +{
+> +	u32 regval;
+> +	int err;
+> +
+> +	err =3D readl_poll_timeout_atomic(padctl->regs + offset, regval,
+> +					 (regval & mask) =3D=3D val, 1, us);
+
+Do we really need the atomic variant here? The function that calls this
+already uses a mutex for protection, so it can already sleep anyway.
+
+Also, do we really need the helper here? We use this exactly once and
+this doesn't make the invocation more readable, either.
+
+Thierry
+
+> +	dev_dbg(padctl->dev, "%08lx poll > %08x\n", offset, regval);
+> +	if (err) {
+> +		dev_err(padctl->dev, "%08lx poll timeout > %08x\n", offset,
+> +			regval);
+> +	}
+> +
+> +	return err;
+> +}
+> +
+>  struct tegra_xusb_lane *tegra_xusb_find_lane(struct tegra_xusb_padctl *p=
+adctl,
+>  					     const char *name,
+>  					     unsigned int index);
+> @@ -491,5 +511,8 @@ extern const struct tegra_xusb_padctl_soc tegra186_xu=
+sb_padctl_soc;
+>  #if defined(CONFIG_ARCH_TEGRA_194_SOC)
+>  extern const struct tegra_xusb_padctl_soc tegra194_xusb_padctl_soc;
+>  #endif
+> +#if defined(CONFIG_ARCH_TEGRA_234_SOC)
+> +extern const struct tegra_xusb_padctl_soc tegra234_xusb_padctl_soc;
+> +#endif
+> =20
+>  #endif /* __PHY_TEGRA_XUSB_H */
+> --=20
+> 2.25.1
+>=20
+
+--EpD9Cm4/iJG55pEf
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAmNb0ZUACgkQ3SOs138+
+s6E1aw//crfqY/5h5onKaE4z03lnf4wf7h/85cKbxHTyLFhR98XdmCX22+FJmwbl
+lXrf5GVPv/GUtdTnUdVs/7wErNgwGpkAPA7w3sIw6e/U1RpGqeLPgU9DB24Kcl6V
+rYa84SwrFtKeVuIEK9jYWUz1GGBP9VNgqclESvxqxtiS483+/tfT8YqB6hZL0SYh
+fqL/Ve6WMSP63YPIDhDRUSSH+UjK8bjbabU0tCPf/bw8nw9Q9/QLv15KCAPhtjAv
+P4UocDKIC5znZWokFn54kaxpBjla6cugK8mym7NISF+WsCptwfnezMs0XGaTlwhN
+0hyiqspCaOKJnZxVD7lEKtIiFZIplY39xQypL2O8KfiKAPL1waPKyypgrUNRM5pe
+oUKOA7FbsZq0fDn2gi6jrIX2jQXPuj8xY5/PWWq5J6ZR1c3KhfSm2s3X6Fu0Amfg
+ielsTghZiaNa8oysxCmh1sLnwwyHx3cfLQjghl8mzW+uqgnDiK3z5WXM2qKmSF6d
+oo/d9srqpcISk+GxyxpOMu8dvxeUv62dVXdtlP3S5ixle+uBD1hf1+dM7QLBbpxU
+OETl2JIw69eqPMJTqLwHsm3t915GkINmSDUk9+HrObSNIO6cuSI+znAprGo+Jvyi
+Jyfa8SFhriQu2MhaRikXVthS7gp33gkqjAyW3qAp/lDcfFFKXtY=
+=W2tL
+-----END PGP SIGNATURE-----
+
+--EpD9Cm4/iJG55pEf--
+
+
+--===============6183806738870992245==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============6183806738870992245==--
+
