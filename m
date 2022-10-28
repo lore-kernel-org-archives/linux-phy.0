@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8914EECAAA1
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B4D81FA3745
 	for <linux-phy@archiver.kernel.org>; Fri, 28 Oct 2022 13:44:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,39 +12,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wVRhH4bBjd+Mmlgzg8+ijthdz2MPwlx7E+UwRcVbgv8=; b=ttpcMHW1YdEhMX
-	mcY/6lc4tMMPnzCHMW3XhqneHV6pEbZqz8ympMSiUfo0joohXEtpqiVm9Zh1Y3IPU8p5V4u+6Smz6
-	2TIiOobuCNff4Tb8nFI57AtnGVeW74J61NzJ/p0KXrE97M7KoI8nEZ7kvKlVXWYLchsvM7Bxnutju
-	84LUvR628op/nn5U5MlDICKPUnsfozFHOfKjFm6YpsebN1rL7Jxk5S+nQAx1NAYxcfYn6c3K/1t6f
-	SmtQ817Q+ZKzrSONTVgiVzIDk4ppFIvXzCIV0B4apMKHXsAUqUlJyjFN/MyElusB4N/+2njqruwBL
-	S/MtwvHSchoklc2khNJg==;
+	List-Owner; bh=RL7Rh2l5DCyMqkIvkW7t2igWRDpnXBVOX+eRlID/q8A=; b=pLtg1ReL9bziOu
+	JNeO/6P6nxw7tFe4FsKaFYQj5hWDelbdchc5slWkA5pJ4C+wkxgRwIJPQEDbr3ZmfmYuQPgygEK57
+	kuyUhLlAclagI6e3EXHElHlwGNtuVNuqcMWZHgay61Xm6xVkCwnmApy5qkEC+buBi8poHY04/vVcy
+	gwUvHXOQSKcKiLNf3KCiyrU06IKLcALJghpiUKUNlSEDYshm5f8VB0YBGOJMFNEWPIAPTrDbV0Jqd
+	sRam+le2XLmHAO7vv/3bcqfo02hCDCZxJ5teM/l8uJzbmTfnylU530cvrwBsmnw8N1y7XX1YaJB6r
+	IUAuAbtETtWrhE/+0EtA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ooPfL-00HQdE-WB; Fri, 28 Oct 2022 13:44:56 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1ooPfM-00HQdR-4L; Fri, 28 Oct 2022 13:44:56 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ooPfB-00HQX6-NA
-	for linux-phy@lists.infradead.org; Fri, 28 Oct 2022 13:44:48 +0000
+	id 1ooPfB-00HQX7-NY
+	for linux-phy@lists.infradead.org; Fri, 28 Oct 2022 13:44:49 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 8DD086289E;
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 773556289D;
 	Fri, 28 Oct 2022 13:44:43 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6EF5AC4FF16;
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 550CDC4FF0A;
 	Fri, 28 Oct 2022 13:44:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1666964681;
-	bh=ehOzl1V5mkoIinUTs9josq3FH0SiP+r3PyK+Bk7lQGU=;
+	bh=g2S546vOT+qiDczrPZJjTlaO8HYs2FzpornxYhVMIoY=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=M2lUaCLv0coz3xjZJFE2Cu5zNnozxGIFRPJfzIo6BGfMrBEwq2FlXrM08xzwvD2EX
-	 X6AbMn/wDwBKgIjbSHmuL6F+o8G6542IjDMwieAnO4x2k/zk33qAIdG4GDHlYbfJZe
-	 7h+MWnViy0k2BrNjtFSynmn7+tOj1eOZculf4NHa9Aoz8VECa2xng7wLaMgvcekFBl
-	 JVfiPgS8VZgeRdhcOeqvqaJnWTAcOJBDM/lwblViQJlvZZtJG7I0qmxm/0dn+7Pu+N
-	 FCkXRkD2kEH190x4YOgQ6lmTGQdycy/BMHuoEM72B7fi4ILSHfaDri8bmqBYBo7mNc
-	 lEXHbONoLxPQg==
+	b=fTw1nqjsX9HubIjVDeL2f4LnzbcpBDCk63FeMF3Ptk8r2hsyZjrRokeNRiWIfSFBE
+	 Z9L0KyJyNSv0JcBxkRT+3PcHMEUebOgLJdmGxflA7O4NknmH3K5nBgMIPDMQnjDzts
+	 L56k9bJC08DahUrSlMrAIV/oas6XZp5HHvx6bnBw/HyurWFIXikkEXWuQpoVQlGufb
+	 EbM7S3LgJVVc8POLeSHnBjjqnQ3t90zk+qUQOFEWrysVwg3gB1taRcfEjXnkJeiPP3
+	 gjmS/fmYDRA+zCQh9K76VMqSb9wy1Ut1jKt3MLdx35KZjODyzegzqYFwHkX6WNdeqG
+	 +9zQAS/mLrkuw==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1ooPet-00052b-UU; Fri, 28 Oct 2022 15:44:27 +0200
+	id 1ooPet-00052U-P2; Fri, 28 Oct 2022 15:44:27 +0200
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>
 Cc: Andy Gross <agross@kernel.org>,
@@ -57,16 +57,16 @@ Cc: Andy Gross <agross@kernel.org>,
 	linux-phy@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH v2 13/13] phy: qcom-qmp-usb: add support for updated sc8280xp binding
-Date: Fri, 28 Oct 2022 15:44:07 +0200
-Message-Id: <20221028134407.19300-14-johan+linaro@kernel.org>
+Subject: [PATCH v2 11/13] dt-bindings: phy: qcom,qmp-usb: fix sc8280xp binding
+Date: Fri, 28 Oct 2022 15:44:05 +0200
+Message-Id: <20221028134407.19300-12-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.37.3
 In-Reply-To: <20221028134407.19300-1-johan+linaro@kernel.org>
 References: <20221028134407.19300-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221028_064445_921079_EC2AA66D 
-X-CRM114-Status: GOOD (  20.22  )
+X-CRM114-CacheID: sfid-20221028_064445_902928_F4AB1C87 
+X-CRM114-Status: GOOD (  19.32  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,183 +83,202 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add support for the new SC8280XP binding.
+The current QMP USB PHY bindings are based on the original MSM8996 PCIe
+PHY binding which provided multiple PHYs per IP block and these in turn
+were described by child nodes.
 
-Note that the binding does not try to describe every register subregion
-and instead the driver holds the corresponding offsets. This includes
-the PCS_USB region which was initially overlooked.
+The QMP USB PHY block only provide a single PHY and the remnant child
+node does not really reflect the hardware.
 
-Note that the driver will no longer accept the old binding due to the
-fixed "phy_phy" reset name.
+The original MSM8996 binding also ended up describing the individual
+register blocks as belonging to either the wrapper node or the PHY child
+nodes.
 
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+This is an unnecessary level of detail which has lead to problems when
+later IP blocks using different register layouts have been forced to fit
+the original mould rather than updating the binding. The bindings are
+arguable also incomplete as they only the describe register blocks used
+by the current Linux drivers (e.g. does not include the per lane PCS
+registers).
+
+Note that PCS_USB region is also not described by the current bindings
+despite being used by the driver and this has led to people increasing
+the size of the PCS region in the devicetree so that it includes PCS_USB
+registers even though other regions like TX and RX may lie in between.
+
+Add a new binding for the QMP USB PHYs found on SC8280XP which further
+bindings can be based on.
+
+Note that this also fixes the SC8280XP "phy_phy" reset name.
+
+Also note that the current binding is simply removed instead of being
+deprecated as it was only recently merged and support for SC8280XP is
+still under development. And, specifically, there is no support in
+mainline for the multiport controller that uses these PHYs.
+
 Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-usb.c | 82 ++++++++++++++++++++-----
- 1 file changed, 67 insertions(+), 15 deletions(-)
+ .../phy/qcom,msm8996-qmp-usb3-phy.yaml        |  13 ---
+ .../phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml   | 105 ++++++++++++++++++
+ 2 files changed, 105 insertions(+), 13 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-index 3f5e22b1d29e..372f9853c749 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-@@ -1414,10 +1414,20 @@ static const struct qmp_phy_init_tbl sc8280xp_usb3_uniphy_pcs_tbl[] = {
- 	QMP_PHY_INIT_CFG(QPHY_V5_PCS_REFGEN_REQ_CONFIG1, 0x21),
- };
+diff --git a/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-usb3-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-usb3-phy.yaml
+index 58ac84de8eee..0c6b3ba7346b 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-usb3-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-usb3-phy.yaml
+@@ -26,7 +26,6 @@ properties:
+       - qcom,qcm2290-qmp-usb3-phy
+       - qcom,sc7180-qmp-usb3-phy
+       - qcom,sc8180x-qmp-usb3-phy
+-      - qcom,sc8280xp-qmp-usb3-uni-phy
+       - qcom,sdm845-qmp-usb3-phy
+       - qcom,sdm845-qmp-usb3-uni-phy
+       - qcom,sdx55-qmp-usb3-uni-phy
+@@ -204,7 +203,6 @@ allOf:
+         compatible:
+           contains:
+             enum:
+-              - qcom,sc8280xp-qmp-usb3-uni-phy
+               - qcom,sm8150-qmp-usb3-phy
+               - qcom,sm8150-qmp-usb3-uni-phy
+               - qcom,sm8250-qmp-usb3-uni-phy
+@@ -271,16 +269,6 @@ allOf:
+             - const: phy_phy
+             - const: phy
  
-+struct qmp_usb_offsets {
-+	u16 serdes;
-+	u16 pcs;
-+	u16 pcs_usb;
-+	u16 tx;
-+	u16 rx;
-+};
-+
- /* struct qmp_phy_cfg - per-PHY initialization config */
- struct qmp_phy_cfg {
- 	int lanes;
- 
-+	const struct qmp_usb_offsets *offsets;
-+
- 	/* Init sequence for PHY blocks - serdes, tx, rx, pcs */
- 	const struct qmp_phy_init_tbl *serdes_tbl;
- 	int serdes_tbl_num;
-@@ -1548,6 +1558,14 @@ static const char * const qmp_phy_vreg_l[] = {
- 	"vdda-phy", "vdda-pll",
- };
- 
-+static const struct qmp_usb_offsets qmp_usb_offsets_v5 = {
-+	.serdes		= 0,
-+	.pcs		= 0x0200,
-+	.pcs_usb	= 0x1200,
-+	.tx		= 0x0e00,
-+	.rx		= 0x1000,
-+};
-+
- static const struct qmp_phy_cfg ipq8074_usb3phy_cfg = {
- 	.lanes			= 1,
- 
-@@ -1637,6 +1655,8 @@ static const struct qmp_phy_cfg sc7180_usb3phy_cfg = {
- static const struct qmp_phy_cfg sc8280xp_usb3_uniphy_cfg = {
- 	.lanes			= 1,
- 
-+	.offsets		= &qmp_usb_offsets_v5,
-+
- 	.serdes_tbl		= sc8280xp_usb3_uniphy_serdes_tbl,
- 	.serdes_tbl_num		= ARRAY_SIZE(sc8280xp_usb3_uniphy_serdes_tbl),
- 	.tx_tbl			= sc8280xp_usb3_uniphy_tx_tbl,
-@@ -1647,12 +1667,11 @@ static const struct qmp_phy_cfg sc8280xp_usb3_uniphy_cfg = {
- 	.pcs_tbl_num		= ARRAY_SIZE(sc8280xp_usb3_uniphy_pcs_tbl),
- 	.clk_list		= qmp_v4_phy_clk_l,
- 	.num_clks		= ARRAY_SIZE(qmp_v4_phy_clk_l),
--	.reset_list		= msm8996_usb3phy_reset_l,
--	.num_resets		= ARRAY_SIZE(msm8996_usb3phy_reset_l),
-+	.reset_list		= qcm2290_usb3phy_reset_l,
-+	.num_resets		= ARRAY_SIZE(qcm2290_usb3phy_reset_l),
- 	.vreg_list		= qmp_phy_vreg_l,
- 	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
- 	.regs			= qmp_v4_usb3phy_regs_layout,
--	.pcs_usb_offset		= 0x1000,
- };
- 
- static const struct qmp_phy_cfg qmp_v3_usb3_uniphy_cfg = {
-@@ -2461,11 +2480,41 @@ static int qmp_usb_parse_dt_legacy(struct qmp_usb *qmp, struct device_node *np)
- 	return 0;
- }
- 
-+static int qmp_usb_parse_dt(struct qmp_usb *qmp)
-+{
-+	struct platform_device *pdev = to_platform_device(qmp->dev);
-+	const struct qmp_phy_cfg *cfg = qmp->cfg;
-+	const struct qmp_usb_offsets *offs = cfg->offsets;
-+	struct device *dev = qmp->dev;
-+	void __iomem *base;
-+
-+	if (!offs)
-+		return -EINVAL;
-+
-+	base = devm_platform_ioremap_resource(pdev, 0);
-+	if (IS_ERR(base))
-+		return PTR_ERR(base);
-+
-+	qmp->serdes = base + offs->serdes;
-+	qmp->pcs = base + offs->pcs;
-+	qmp->pcs_usb = base + offs->pcs_usb;
-+	qmp->tx = base + offs->tx;
-+	qmp->rx = base + offs->rx;
-+
-+	qmp->pipe_clk = devm_clk_get(dev, "pipe");
-+	if (IS_ERR(qmp->pipe_clk)) {
-+		return dev_err_probe(dev, PTR_ERR(qmp->pipe_clk),
-+				     "failed to get pipe clock\n");
-+	}
-+
-+	return 0;
-+}
-+
- static int qmp_usb_probe(struct platform_device *pdev)
- {
- 	struct device *dev = &pdev->dev;
--	struct device_node *child;
- 	struct phy_provider *phy_provider;
-+	struct device_node *np;
- 	struct qmp_usb *qmp;
- 	int ret;
- 
-@@ -2491,9 +2540,16 @@ static int qmp_usb_probe(struct platform_device *pdev)
- 	if (ret)
- 		return ret;
- 
--	child = of_get_next_available_child(dev->of_node, NULL);
--	if (!child)
--		return -EINVAL;
-+	/* Check for legacy binding with child node. */
-+	np = of_get_next_available_child(dev->of_node, NULL);
-+	if (np) {
-+		ret = qmp_usb_parse_dt_legacy(qmp, np);
-+	} else {
-+		np = of_node_get(dev->of_node);
-+		ret = qmp_usb_parse_dt(qmp);
-+	}
-+	if (ret)
-+		goto err_node_put;
- 
- 	pm_runtime_set_active(dev);
- 	ret = devm_pm_runtime_enable(dev);
-@@ -2505,15 +2561,11 @@ static int qmp_usb_probe(struct platform_device *pdev)
- 	 */
- 	pm_runtime_forbid(dev);
- 
--	ret = qmp_usb_parse_dt_legacy(qmp, child);
--	if (ret)
--		goto err_node_put;
+-  - if:
+-      properties:
+-        compatible:
+-          contains:
+-            enum:
+-              - qcom,sc8280xp-qmp-usb3-uni-phy
+-    then:
+-      required:
+-        - power-domains
 -
--	ret = phy_pipe_clk_register(qmp, child);
-+	ret = phy_pipe_clk_register(qmp, np);
- 	if (ret)
- 		goto err_node_put;
- 
--	qmp->phy = devm_phy_create(dev, child, &qmp_usb_phy_ops);
-+	qmp->phy = devm_phy_create(dev, np, &qmp_usb_phy_ops);
- 	if (IS_ERR(qmp->phy)) {
- 		ret = PTR_ERR(qmp->phy);
- 		dev_err(dev, "failed to create PHY: %d\n", ret);
-@@ -2522,14 +2574,14 @@ static int qmp_usb_probe(struct platform_device *pdev)
- 
- 	phy_set_drvdata(qmp->phy, qmp);
- 
--	of_node_put(child);
-+	of_node_put(np);
- 
- 	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
- 
- 	return PTR_ERR_OR_ZERO(phy_provider);
- 
- err_node_put:
--	of_node_put(child);
-+	of_node_put(np);
- 	return ret;
- }
- 
+   - if:
+       properties:
+         compatible:
+@@ -352,7 +340,6 @@ allOf:
+           contains:
+             enum:
+               - qcom,msm8996-qmp-usb3-phy
+-              - qcom,sc8280xp-qmp-usb3-uni-phy
+               - qcom,sm8250-qmp-usb3-uni-phy
+               - qcom,sm8350-qmp-usb3-uni-phy
+     then:
+diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml
+new file mode 100644
+index 000000000000..ef080509747a
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml
+@@ -0,0 +1,105 @@
++# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Qualcomm QMP PHY controller (USB, SC8280XP)
++
++maintainers:
++  - Vinod Koul <vkoul@kernel.org>
++
++description:
++  The QMP PHY controller supports physical layer functionality for a number of
++  controllers on Qualcomm chipsets, such as, PCIe, UFS, and USB.
++
++properties:
++  compatible:
++    enum:
++      - qcom,sc8280xp-qmp-usb3-uni-phy
++
++  reg:
++    maxItems: 1
++
++  clocks:
++    maxItems: 5
++
++  clock-names:
++    items:
++      - const: aux
++      - const: ref_clk_src
++      - const: ref
++      - const: com_aux
++      - const: pipe
++
++  power-domains:
++    maxItems: 1
++
++  resets:
++    maxItems: 2
++
++  reset-names:
++    items:
++      - const: phy
++      - const: phy_phy
++
++  vdda-phy-supply: true
++
++  vdda-pll-supply: true
++
++  "#clock-cells":
++    const: 0
++
++  clock-output-names:
++    maxItems: 1
++
++  "#phy-cells":
++    const: 0
++
++required:
++  - compatible
++  - reg
++  - clocks
++  - clock-names
++  - power-domains
++  - resets
++  - reset-names
++  - vdda-phy-supply
++  - vdda-pll-supply
++  - "#clock-cells"
++  - clock-output-names
++  - "#phy-cells"
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/clock/qcom,gcc-sc8280xp.h>
++    #include <dt-bindings/clock/qcom,rpmh.h>
++
++    phy@88ef000 {
++      compatible = "qcom,sc8280xp-qmp-usb3-uni-phy";
++      reg = <0x088ef000 0x2000>;
++
++      clocks = <&gcc GCC_USB3_MP_PHY_AUX_CLK>,
++               <&rpmhcc RPMH_CXO_CLK>,
++               <&gcc GCC_USB3_MP0_CLKREF_CLK>,
++               <&gcc GCC_USB3_MP_PHY_COM_AUX_CLK>,
++               <&gcc GCC_USB3_MP_PHY_PIPE_0_CLK>;
++      clock-names = "aux", "ref_clk_src", "ref", "com_aux",
++                    "pipe";
++
++      power-domains = <&gcc USB30_MP_GDSC>;
++
++      resets = <&gcc GCC_USB3_UNIPHY_MP0_BCR>,
++               <&gcc GCC_USB3UNIPHY_PHY_MP0_BCR>;
++      reset-names = "phy", "phy_phy";
++
++      vdda-phy-supply = <&vreg_l3a>;
++      vdda-pll-supply = <&vreg_l5a>;
++
++      #clock-cells = <0>;
++      clock-output-names = "usb2_phy0_pipe_clk";
++
++      #phy-cells = <0>;
++    };
 -- 
 2.37.3
 
