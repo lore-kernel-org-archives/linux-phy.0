@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2BEBBECAAA1
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8DF6AFA3743
 	for <linux-phy@archiver.kernel.org>; Fri, 28 Oct 2022 16:05:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,39 +12,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zb7P8tGfPypzS6Nsx6ypaTa2lP2qyXu6hYpGVVbpFYU=; b=QpRGWI1UgWRP8f
-	s+K6hv+MrQf6IaC+D7QSQEe41qZ38CrYKSTK7ywbqt8tk1DAO+eKgD+DSzR5phxObf29wEGZGPAQW
-	4lAKY51uW/rcabko5GrUbgOoD4lnx1LnBX4BhRfKoO8kie9z31US+rVg7HAS+r/NtCYZld05T0Y8O
-	/Qom3G5BppreWH1XtbHSAP1bcofr+1F8qwoCdTjaeWCLIATTM7I5/JX/SGuO7uYdmcCxjzPszmv3U
-	d+tB3clWCIa8fBbQeDfnM6wIcRCNZLKqQ5iObtmsYxEcX1SXGe2iJyJdbL9kxorsceiKXAOjhUKhK
-	e0CRH6WDlzOFmcO0ICxw==;
+	List-Owner; bh=fo7/fet6MMe58nZjb1Cip5XTKsFnFWLMgAMM7JLcA4A=; b=fmo6tvdnCELDyG
+	tubbHX5DeCLcVspRybkGoqTbo71b3ff/ZuERZC2iLLCnmgS7HSfkXWBrY2avvg7enaYBrKzm1tMCk
+	v9LEQT9r2Ixr7OFW9+1JEXEjMe7ros1fX1j5mMgb8Tu217/4HbacO+uHiuWS4RPNEdrnr9vmuzdMV
+	lNQNtElkgCLSoiVW2HgsmgOB6D+nV10d3d4UFcqquDZoehg8voZaLpDObufTvSKa2PqrMD6r+pyzH
+	H22gyW4qDlmifObT1tdBpgwh8o0QAn6NbEFfV9YWi6gfOnOdzA7mggf3hOliEazL6NcZZN/mOnGeu
+	l1LaPjpA8gIE6pJ0ZNyw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ooRrD-000lgt-C8; Fri, 28 Oct 2022 16:05:19 +0000
+	id 1ooRrD-000lhH-Ql; Fri, 28 Oct 2022 16:05:19 +0000
 Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ooRr6-000laU-H1
+	id 1ooRr6-000lao-QS
 	for linux-phy@lists.infradead.org; Fri, 28 Oct 2022 16:05:14 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id E9AAA62958;
-	Fri, 28 Oct 2022 16:05:11 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D8CB0C43152;
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 53F0A62915;
+	Fri, 28 Oct 2022 16:05:12 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E40C9C4315A;
 	Fri, 28 Oct 2022 16:05:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1666973109;
-	bh=ILxmO+luaNlHEkk+yA0QURG+N4WAyWonqKyVeubJWJQ=;
+	s=k20201202; t=1666973110;
+	bh=LoebmK+dBQqJvUZEDYtP9VtGUiwSzpQBi7HG41jq64s=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=bt5hFKcD0/2pQYzaz4lA0nW6jIdjPHhuAL3o8urKi/4FnEbLNiupwxcjKhi9usQmW
-	 E+yFrK3QLAowMQc02oTTSyP13TunQh/gbpkiaXn3FY06MDHT3Zd5f709+YV65Ha4ZR
-	 cWavQW3KvIKWmyuBqLVD4k3nxL57eVfGr0rd5ypH0T4QV9Tuj3soMtptxRp6oojCym
-	 JgAr23lfrfHSxTbfrI7FvpFSgHCFBfdfAuVzrd2e5XGHoeBv5Dg87NZkVfHrE+PXdt
-	 ZtLyRD1JSajRZY2bpYfCJMkZKgRXZplRCqDVr+ww+0Ob7KnHTPTO53HOedxf1EQ73c
-	 TdLhrvDg8/D9g==
+	b=uEFdQegNekDVNoBvxNAA/j3yJVs3rXqU9GUeLNo9tntOKCIbZo2ed+yn+CgCaOMdO
+	 4b7tXb+ft6bSG7DenmkD7JkQTs8jYz3iAUKplRTJlLMb2weipsxCFdJSK+7Moe/6XB
+	 Ou4e0xKioSBjpahYk0a7ieWlHzMwHvsi1z+W/hlqger3da7XU6maxTn014MQOVUthS
+	 XiXorbt7ncgnCJQ41V9QadYx1gEXslF7q2+///I3+mjRx156sWjpBGnJaVcokPSs3u
+	 5PbCmA24daiSU7HAx98Vuu9+yoEVIi2GNAhwfs5WpX7DLGYq2Y0fNCRt7lnPLaAzyj
+	 sOZxkljI7MZag==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1ooRqq-00071m-DM; Fri, 28 Oct 2022 18:04:56 +0200
+	id 1ooRqq-00071g-7a; Fri, 28 Oct 2022 18:04:56 +0200
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>
 Cc: Andy Gross <agross@kernel.org>,
@@ -58,16 +58,16 @@ Cc: Andy Gross <agross@kernel.org>,
 	devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH RESEND v2 08/13] phy: qcom-qmp-usb: rename PHY ops structure
-Date: Fri, 28 Oct 2022 18:04:30 +0200
-Message-Id: <20221028160435.26948-9-johan+linaro@kernel.org>
+Subject: [PATCH RESEND v2 06/13] phy: qcom-qmp-usb: clean up device-tree parsing
+Date: Fri, 28 Oct 2022 18:04:28 +0200
+Message-Id: <20221028160435.26948-7-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.37.3
 In-Reply-To: <20221028160435.26948-1-johan+linaro@kernel.org>
 References: <20221028160435.26948-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221028_090512_623494_E946D864 
-X-CRM114-Status: GOOD (  12.00  )
+X-CRM114-CacheID: sfid-20221028_090512_956851_28987DFF 
+X-CRM114-Status: GOOD (  18.33  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,56 +84,91 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Rename the PHY operation structure so that it has a "phy_ops" suffix and
-move it next to the implementation.
+Since the QMP driver split there will be at most a single child node so
+drop the obsolete iteration construct.
+
+While at it, drop the verbose error logging that would have been
+printed also on probe deferrals.
+
+Note that there's no need to check if there are additional child nodes
+(the kernel is not a devicetree validator), but let's return an error if
+there are no child nodes at all for now.
 
 Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-usb.c | 16 ++++++++--------
- 1 file changed, 8 insertions(+), 8 deletions(-)
+ drivers/phy/qualcomm/phy-qcom-qmp-usb.c | 40 ++++++++-----------------
+ 1 file changed, 12 insertions(+), 28 deletions(-)
 
 diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-index 2e603831e45e..4a7b961d2965 100644
+index e009d63260e7..ccb834a08d5b 100644
 --- a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
 +++ b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-@@ -2149,6 +2149,13 @@ static int qmp_usb_set_mode(struct phy *phy, enum phy_mode mode, int submode)
- 	return 0;
- }
+@@ -2471,7 +2471,6 @@ static int qmp_usb_probe(struct platform_device *pdev)
+ 	void __iomem *serdes;
+ 	const struct qmp_phy_cfg *cfg = NULL;
+ 	struct qmp_usb *qmp;
+-	int num, id;
+ 	int ret;
  
-+static const struct phy_ops qmp_usb_phy_ops = {
-+	.init		= qmp_usb_enable,
-+	.exit		= qmp_usb_disable,
-+	.set_mode	= qmp_usb_set_mode,
-+	.owner		= THIS_MODULE,
-+};
-+
- static void qmp_usb_enable_autonomous_mode(struct qmp_usb *qmp)
- {
- 	const struct qmp_phy_cfg *cfg = qmp->cfg;
-@@ -2366,13 +2373,6 @@ static int phy_pipe_clk_register(struct qmp_usb *qmp, struct device_node *np)
- 	return devm_add_action_or_reset(qmp->dev, phy_clk_release_provider, np);
- }
+ 	qmp = devm_kzalloc(dev, sizeof(*qmp), GFP_KERNEL);
+@@ -2507,44 +2506,29 @@ static int qmp_usb_probe(struct platform_device *pdev)
+ 	if (ret)
+ 		return ret;
  
--static const struct phy_ops qmp_usb_ops = {
--	.init		= qmp_usb_enable,
--	.exit		= qmp_usb_disable,
--	.set_mode	= qmp_usb_set_mode,
--	.owner		= THIS_MODULE,
--};
+-	num = of_get_available_child_count(dev->of_node);
+-	/* do we have a rogue child node ? */
+-	if (num > 1)
++	child = of_get_next_available_child(dev->of_node, NULL);
++	if (!child)
+ 		return -EINVAL;
+ 
+ 	pm_runtime_set_active(dev);
+ 	ret = devm_pm_runtime_enable(dev);
+ 	if (ret)
+-		return ret;
++		goto err_node_put;
+ 	/*
+ 	 * Prevent runtime pm from being ON by default. Users can enable
+ 	 * it using power/control in sysfs.
+ 	 */
+ 	pm_runtime_forbid(dev);
+ 
+-	id = 0;
+-	for_each_available_child_of_node(dev->of_node, child) {
+-		/* Create per-lane phy */
+-		ret = qmp_usb_create(dev, child, serdes, cfg);
+-		if (ret) {
+-			dev_err(dev, "failed to create lane%d phy, %d\n",
+-				id, ret);
+-			goto err_node_put;
+-		}
 -
- static void __iomem *qmp_usb_iomap(struct device *dev, struct device_node *np,
- 					int index, bool exclusive)
- {
-@@ -2451,7 +2451,7 @@ static int qmp_usb_create(struct qmp_usb *qmp, struct device_node *np)
- 				     "failed to get pipe clock\n");
- 	}
+-		/*
+-		 * Register the pipe clock provided by phy.
+-		 * See function description to see details of this pipe clock.
+-		 */
+-		ret = phy_pipe_clk_register(qmp, child);
+-		if (ret) {
+-			dev_err(qmp->dev,
+-				"failed to register pipe clock source\n");
+-			goto err_node_put;
+-		}
+-
+-		id++;
+-	}
++	ret = qmp_usb_create(dev, child, serdes, cfg);
++	if (ret)
++		goto err_node_put;
++
++	ret = phy_pipe_clk_register(qmp, child);
++	if (ret)
++		goto err_node_put;
++
++	of_node_put(child);
  
--	generic_phy = devm_phy_create(dev, np, &qmp_usb_ops);
-+	generic_phy = devm_phy_create(dev, np, &qmp_usb_phy_ops);
- 	if (IS_ERR(generic_phy)) {
- 		ret = PTR_ERR(generic_phy);
- 		dev_err(dev, "failed to create PHY: %d\n", ret);
+ 	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
+ 
 -- 
 2.37.3
 
