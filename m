@@ -4,47 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 51E96FA3748
-	for <linux-phy@archiver.kernel.org>; Fri, 28 Oct 2022 13:44:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8914EECAAA1
+	for <linux-phy@archiver.kernel.org>; Fri, 28 Oct 2022 13:44:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NT16b+Q2uTmNcuOwvcwhaDVO3+c++HQ4wESaWAs6Ot8=; b=E1mTC1SrGzU+Zk
-	sUr3wgTPA4zJhA+fTm7gZ7BJAnmeKHV6Q3mfx6w8dDeuii7KFTE/yI8Mh6ItkLsoYjgbT3EouVNKi
-	EKUlw3YRDw192RHt/4rg69ep9RxlaPGGBqUDsUUoQevXDsWDyfmWziS4pTC9Ydi1excEgTGXT/y01
-	B0TqatttBY4JNqYFppN3JTXKcxh6ybNiFeql4Yl2OMA0l6vhJRguMjxv3JeyV0i6elsB4UPD8jD3I
-	KP7DbCNywNSdnXg+EN0Ly/IqCYajPIZuUKlEDTmI3PHB44ibngjC35uG0+/89Cs8HfBg8OdUD9t+0
-	4smf/rkuqwXiETnBVIVg==;
+	List-Owner; bh=wVRhH4bBjd+Mmlgzg8+ijthdz2MPwlx7E+UwRcVbgv8=; b=ttpcMHW1YdEhMX
+	mcY/6lc4tMMPnzCHMW3XhqneHV6pEbZqz8ympMSiUfo0joohXEtpqiVm9Zh1Y3IPU8p5V4u+6Smz6
+	2TIiOobuCNff4Tb8nFI57AtnGVeW74J61NzJ/p0KXrE97M7KoI8nEZ7kvKlVXWYLchsvM7Bxnutju
+	84LUvR628op/nn5U5MlDICKPUnsfozFHOfKjFm6YpsebN1rL7Jxk5S+nQAx1NAYxcfYn6c3K/1t6f
+	SmtQ817Q+ZKzrSONTVgiVzIDk4ppFIvXzCIV0B4apMKHXsAUqUlJyjFN/MyElusB4N/+2njqruwBL
+	S/MtwvHSchoklc2khNJg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ooPfF-00HQaQ-Mv; Fri, 28 Oct 2022 13:44:49 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1ooPfL-00HQdE-WB; Fri, 28 Oct 2022 13:44:56 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ooPfB-00HQX2-IT
-	for linux-phy@lists.infradead.org; Fri, 28 Oct 2022 13:44:47 +0000
+	id 1ooPfB-00HQX6-NA
+	for linux-phy@lists.infradead.org; Fri, 28 Oct 2022 13:44:48 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 4B922628A4;
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 8DD086289E;
 	Fri, 28 Oct 2022 13:44:43 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4041DC4FEBF;
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6EF5AC4FF16;
 	Fri, 28 Oct 2022 13:44:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1666964681;
-	bh=pa4qRgP2TlnZgyliaD9iQA0RXiwo8Z4IYATkxJPpjoE=;
+	bh=ehOzl1V5mkoIinUTs9josq3FH0SiP+r3PyK+Bk7lQGU=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=KbPamdSC7FSFA6KJDpgIAc93hR65jOa/vuiRpQGUpVMeRypqS0Ov0dPsBMkG0zEqa
-	 HbNei4Bi1hqyKiMCJnCb7JA3z519yZQmAh1pRm7UqxMNFtseosrgpLNqalNt1xH8l/
-	 vJEksxtfxuWxLPrVudS8oucczPWtNABghOx84RCnjfpUrj5mRsND7XbtEb1ybVkA7Q
-	 gPFHtPFXShfq/vpOvKlh4CSZ4nTOAX1N+iq0mr9AM8/DqKd67IRkzBcDQkjnQVgSc+
-	 2F+JlOctUkuj33nQmKdJZPpnuHns+drG6Td22bLk3S0AxX3GqraG8mvfUHGgntDIgG
-	 LQmZ1lhOCumBw==
+	b=M2lUaCLv0coz3xjZJFE2Cu5zNnozxGIFRPJfzIo6BGfMrBEwq2FlXrM08xzwvD2EX
+	 X6AbMn/wDwBKgIjbSHmuL6F+o8G6542IjDMwieAnO4x2k/zk33qAIdG4GDHlYbfJZe
+	 7h+MWnViy0k2BrNjtFSynmn7+tOj1eOZculf4NHa9Aoz8VECa2xng7wLaMgvcekFBl
+	 JVfiPgS8VZgeRdhcOeqvqaJnWTAcOJBDM/lwblViQJlvZZtJG7I0qmxm/0dn+7Pu+N
+	 FCkXRkD2kEH190x4YOgQ6lmTGQdycy/BMHuoEM72B7fi4ILSHfaDri8bmqBYBo7mNc
+	 lEXHbONoLxPQg==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1ooPet-00052P-Jc; Fri, 28 Oct 2022 15:44:27 +0200
+	id 1ooPet-00052b-UU; Fri, 28 Oct 2022 15:44:27 +0200
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>
 Cc: Andy Gross <agross@kernel.org>,
@@ -57,16 +57,16 @@ Cc: Andy Gross <agross@kernel.org>,
 	linux-phy@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH v2 09/13] phy: qcom-qmp-usb: clean up PHY init
-Date: Fri, 28 Oct 2022 15:44:03 +0200
-Message-Id: <20221028134407.19300-10-johan+linaro@kernel.org>
+Subject: [PATCH v2 13/13] phy: qcom-qmp-usb: add support for updated sc8280xp binding
+Date: Fri, 28 Oct 2022 15:44:07 +0200
+Message-Id: <20221028134407.19300-14-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.37.3
 In-Reply-To: <20221028134407.19300-1-johan+linaro@kernel.org>
 References: <20221028134407.19300-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221028_064445_696953_40273C36 
-X-CRM114-Status: GOOD (  11.33  )
+X-CRM114-CacheID: sfid-20221028_064445_921079_EC2AA66D 
+X-CRM114-Status: GOOD (  20.22  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,36 +83,182 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Clean up the PHY initialisation somewhat by programming both tx and rx
-for the second lane after the first lane.
+Add support for the new SC8280XP binding.
+
+Note that the binding does not try to describe every register subregion
+and instead the driver holds the corresponding offsets. This includes
+the PCS_USB region which was initially overlooked.
+
+Note that the driver will no longer accept the old binding due to the
+fixed "phy_phy" reset name.
 
 Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-usb.c | 8 +++-----
- 1 file changed, 3 insertions(+), 5 deletions(-)
+ drivers/phy/qualcomm/phy-qcom-qmp-usb.c | 82 ++++++++++++++++++++-----
+ 1 file changed, 67 insertions(+), 15 deletions(-)
 
 diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-index 4a7b961d2965..d5e62cfd93f8 100644
+index 3f5e22b1d29e..372f9853c749 100644
 --- a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
 +++ b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-@@ -2058,14 +2058,12 @@ static int qmp_usb_power_on(struct phy *phy)
+@@ -1414,10 +1414,20 @@ static const struct qmp_phy_init_tbl sc8280xp_usb3_uniphy_pcs_tbl[] = {
+ 	QMP_PHY_INIT_CFG(QPHY_V5_PCS_REFGEN_REQ_CONFIG1, 0x21),
+ };
  
- 	/* Tx, Rx, and PCS configurations */
- 	qmp_usb_configure_lane(tx, cfg->tx_tbl, cfg->tx_tbl_num, 1);
--
--	if (cfg->lanes >= 2)
--		qmp_usb_configure_lane(qmp->tx2, cfg->tx_tbl, cfg->tx_tbl_num, 2);
--
- 	qmp_usb_configure_lane(rx, cfg->rx_tbl, cfg->rx_tbl_num, 1);
++struct qmp_usb_offsets {
++	u16 serdes;
++	u16 pcs;
++	u16 pcs_usb;
++	u16 tx;
++	u16 rx;
++};
++
+ /* struct qmp_phy_cfg - per-PHY initialization config */
+ struct qmp_phy_cfg {
+ 	int lanes;
  
--	if (cfg->lanes >= 2)
-+	if (cfg->lanes >= 2) {
-+		qmp_usb_configure_lane(qmp->tx2, cfg->tx_tbl, cfg->tx_tbl_num, 2);
- 		qmp_usb_configure_lane(qmp->rx2, cfg->rx_tbl, cfg->rx_tbl_num, 2);
++	const struct qmp_usb_offsets *offsets;
++
+ 	/* Init sequence for PHY blocks - serdes, tx, rx, pcs */
+ 	const struct qmp_phy_init_tbl *serdes_tbl;
+ 	int serdes_tbl_num;
+@@ -1548,6 +1558,14 @@ static const char * const qmp_phy_vreg_l[] = {
+ 	"vdda-phy", "vdda-pll",
+ };
+ 
++static const struct qmp_usb_offsets qmp_usb_offsets_v5 = {
++	.serdes		= 0,
++	.pcs		= 0x0200,
++	.pcs_usb	= 0x1200,
++	.tx		= 0x0e00,
++	.rx		= 0x1000,
++};
++
+ static const struct qmp_phy_cfg ipq8074_usb3phy_cfg = {
+ 	.lanes			= 1,
+ 
+@@ -1637,6 +1655,8 @@ static const struct qmp_phy_cfg sc7180_usb3phy_cfg = {
+ static const struct qmp_phy_cfg sc8280xp_usb3_uniphy_cfg = {
+ 	.lanes			= 1,
+ 
++	.offsets		= &qmp_usb_offsets_v5,
++
+ 	.serdes_tbl		= sc8280xp_usb3_uniphy_serdes_tbl,
+ 	.serdes_tbl_num		= ARRAY_SIZE(sc8280xp_usb3_uniphy_serdes_tbl),
+ 	.tx_tbl			= sc8280xp_usb3_uniphy_tx_tbl,
+@@ -1647,12 +1667,11 @@ static const struct qmp_phy_cfg sc8280xp_usb3_uniphy_cfg = {
+ 	.pcs_tbl_num		= ARRAY_SIZE(sc8280xp_usb3_uniphy_pcs_tbl),
+ 	.clk_list		= qmp_v4_phy_clk_l,
+ 	.num_clks		= ARRAY_SIZE(qmp_v4_phy_clk_l),
+-	.reset_list		= msm8996_usb3phy_reset_l,
+-	.num_resets		= ARRAY_SIZE(msm8996_usb3phy_reset_l),
++	.reset_list		= qcm2290_usb3phy_reset_l,
++	.num_resets		= ARRAY_SIZE(qcm2290_usb3phy_reset_l),
+ 	.vreg_list		= qmp_phy_vreg_l,
+ 	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
+ 	.regs			= qmp_v4_usb3phy_regs_layout,
+-	.pcs_usb_offset		= 0x1000,
+ };
+ 
+ static const struct qmp_phy_cfg qmp_v3_usb3_uniphy_cfg = {
+@@ -2461,11 +2480,41 @@ static int qmp_usb_parse_dt_legacy(struct qmp_usb *qmp, struct device_node *np)
+ 	return 0;
+ }
+ 
++static int qmp_usb_parse_dt(struct qmp_usb *qmp)
++{
++	struct platform_device *pdev = to_platform_device(qmp->dev);
++	const struct qmp_phy_cfg *cfg = qmp->cfg;
++	const struct qmp_usb_offsets *offs = cfg->offsets;
++	struct device *dev = qmp->dev;
++	void __iomem *base;
++
++	if (!offs)
++		return -EINVAL;
++
++	base = devm_platform_ioremap_resource(pdev, 0);
++	if (IS_ERR(base))
++		return PTR_ERR(base);
++
++	qmp->serdes = base + offs->serdes;
++	qmp->pcs = base + offs->pcs;
++	qmp->pcs_usb = base + offs->pcs_usb;
++	qmp->tx = base + offs->tx;
++	qmp->rx = base + offs->rx;
++
++	qmp->pipe_clk = devm_clk_get(dev, "pipe");
++	if (IS_ERR(qmp->pipe_clk)) {
++		return dev_err_probe(dev, PTR_ERR(qmp->pipe_clk),
++				     "failed to get pipe clock\n");
 +	}
++
++	return 0;
++}
++
+ static int qmp_usb_probe(struct platform_device *pdev)
+ {
+ 	struct device *dev = &pdev->dev;
+-	struct device_node *child;
+ 	struct phy_provider *phy_provider;
++	struct device_node *np;
+ 	struct qmp_usb *qmp;
+ 	int ret;
  
- 	qmp_usb_configure(pcs, cfg->pcs_tbl, cfg->pcs_tbl_num);
+@@ -2491,9 +2540,16 @@ static int qmp_usb_probe(struct platform_device *pdev)
+ 	if (ret)
+ 		return ret;
+ 
+-	child = of_get_next_available_child(dev->of_node, NULL);
+-	if (!child)
+-		return -EINVAL;
++	/* Check for legacy binding with child node. */
++	np = of_get_next_available_child(dev->of_node, NULL);
++	if (np) {
++		ret = qmp_usb_parse_dt_legacy(qmp, np);
++	} else {
++		np = of_node_get(dev->of_node);
++		ret = qmp_usb_parse_dt(qmp);
++	}
++	if (ret)
++		goto err_node_put;
+ 
+ 	pm_runtime_set_active(dev);
+ 	ret = devm_pm_runtime_enable(dev);
+@@ -2505,15 +2561,11 @@ static int qmp_usb_probe(struct platform_device *pdev)
+ 	 */
+ 	pm_runtime_forbid(dev);
+ 
+-	ret = qmp_usb_parse_dt_legacy(qmp, child);
+-	if (ret)
+-		goto err_node_put;
+-
+-	ret = phy_pipe_clk_register(qmp, child);
++	ret = phy_pipe_clk_register(qmp, np);
+ 	if (ret)
+ 		goto err_node_put;
+ 
+-	qmp->phy = devm_phy_create(dev, child, &qmp_usb_phy_ops);
++	qmp->phy = devm_phy_create(dev, np, &qmp_usb_phy_ops);
+ 	if (IS_ERR(qmp->phy)) {
+ 		ret = PTR_ERR(qmp->phy);
+ 		dev_err(dev, "failed to create PHY: %d\n", ret);
+@@ -2522,14 +2574,14 @@ static int qmp_usb_probe(struct platform_device *pdev)
+ 
+ 	phy_set_drvdata(qmp->phy, qmp);
+ 
+-	of_node_put(child);
++	of_node_put(np);
+ 
+ 	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
+ 
+ 	return PTR_ERR_OR_ZERO(phy_provider);
+ 
+ err_node_put:
+-	of_node_put(child);
++	of_node_put(np);
+ 	return ret;
+ }
  
 -- 
 2.37.3
