@@ -4,79 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 29C77ECAAA1
-	for <linux-phy@archiver.kernel.org>; Fri, 28 Oct 2022 16:48:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A6A89C38A02
+	for <linux-phy@archiver.kernel.org>; Fri, 28 Oct 2022 19:35:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=iauwWFIYkkeHFdnglcb7CDzqKEL281mSTY/MJ7KzjhY=; b=HWaW5w3tskLNkA
-	7pkD+NHau5X+BfU0efqA6BIGan+2oC0EzODZXjvlIcUly1B+1yHjhAHK4uG8s/ri9aQpw/+VIuLPP
-	6yChxJ9ukr8NdIfOPyMLHMz7S0buQ7rSrFM5MUsjKVkOlE2wq/SSnV2hvM64it5glEoWGJykQX711
-	Fs6tCoWmj151hs4HkY4Zfhx+7EQOv298MqfZmkXnqLjSQgaM5UtjYqK929OqPOwBz9mgf2Wby+dV0
-	bWWwRKyPUZavtEAK/LkvHJ+lRTGiMBZuqeYRwxFCXwVyIiwuBCFxEGNn9F6l7qVwz2oFyKVVjGr3C
-	BXnOZQOQTXVMAS3Y8Hfg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=0DEpCguzsumsouNkS7TGITR4JYy9v7HbPijfTr+fiog=; b=V+t9Ga1cSv43w4
+	BzgDKJm8Wqbz8WEnBPdIMYSEFNGWh/+b09eItq00CGHRbR3mkbw98jEB8ji81ZCY1W2NKRN5nMg4s
+	N/LADlX+vSlc8buvaXEksWFAm/Q932LEgyNTjHQjTrZus01V7HVGm3gdzcYls/hu1SUi57kY4z7pl
+	l85uKt/wKb+cZ9RLljERPYvujtyGhEtirCnoMyeFIjPcSLmsxDRk3GaHEBlArYuHyniT1OnnoZ+N1
+	7mLeCXbeh3dsa1RQW513Lvp4hBXLk6Xvv2NxWb2NQ4H/YFSBXxG2RpjjONbvT85Zvrx69VRAuTdxn
+	JjAIYgAQNqM4OCeHTEcw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ooSXN-0011Lq-HZ; Fri, 28 Oct 2022 16:48:53 +0000
-Received: from mail-lf1-x135.google.com ([2a00:1450:4864:20::135])
+	id 1ooV8r-001vNg-VY; Fri, 28 Oct 2022 19:35:45 +0000
+Received: from mail-oi1-f170.google.com ([209.85.167.170])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ooSXK-0011JR-OD
-	for linux-phy@lists.infradead.org; Fri, 28 Oct 2022 16:48:52 +0000
-Received: by mail-lf1-x135.google.com with SMTP id r12so9249761lfp.1
-        for <linux-phy@lists.infradead.org>; Fri, 28 Oct 2022 09:48:49 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=oeXrdvfaiHrd+7mrB9OTuU81RmA3YoESHAYdc7E9Fn8=;
-        b=ozLUUlz39jA16RrRjwVzfnmAMU8W+x1Xcukyy+g2JCZAG35zE8CT8W27SzOnVHnWQw
-         mXyrP+/55NUZGfdjVbUTD7Ox1IPPBlyd5Zss9+OCBaLjgH9tHmP+vbPibe2C7Xjoo94A
-         ksu1tcF5ecC8BuvpzR2rLRnlLsp4aMg6pN8KodmYJW6suKMuerYQbft3Y37QiSfgCDu3
-         SaOoNCD9/pPYgasVC8uY2swqmtyla7yW/pzebshdB6eBT9QxpilLelz/potJtbQY2oJq
-         o3rwliJwnv7zKbhzjtgyrspsKYAl/e+8ryXszP4g83BdORS/lIC2MNbQgf6jdYH8G43o
-         OIjA==
+	id 1ooV8o-001vMf-Tu; Fri, 28 Oct 2022 19:35:44 +0000
+Received: by mail-oi1-f170.google.com with SMTP id p127so7154187oih.9;
+        Fri, 28 Oct 2022 12:35:41 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=oeXrdvfaiHrd+7mrB9OTuU81RmA3YoESHAYdc7E9Fn8=;
-        b=oNcrx1MOPTeNBwzCDRgi05EyRebrot+AuLUXdcgtGR6gr/qohxleqy6YEyvKS8m7JH
-         JCkw9TW9+SvlaxrGY/i9UcerETAYrWd0bvto9hYqKvLljsJD6MRcHXvSEgQby3Oewamj
-         Qrc1xLC46CmY0/n1nWKOa63q5UtvAJZkMTz0l+qS1ckbldbORgvKb6wC8xDASvqPLucA
-         JV9Z0o7gf6vboFkh/DQg9Dn6cRUJ+Eh9JTVY94NU3ttCYFqXlbI8QTlC8SPiCM/Ocmah
-         pFS2z6h2Kn6+79yy108hOxQjVegAhRfb/WrZwXIBIyLhVc/Wne/WsOsP4fIu2IpDLwnZ
-         xCZQ==
-X-Gm-Message-State: ACrzQf2MQafBA2MvgG4vuTTz71nUIEPk4bDTqywUHNbWwncHjlYgb82D
-	tcp50QNQSjhkKT81UETHC9u39A==
-X-Google-Smtp-Source: AMsMyM5O6XhIX030f487hO1gMSeZQGzYHHWl+CkzlqImG3P2noi1GQXwoWk1YtQsdAZzF6Fcj9Qz4g==
-X-Received: by 2002:a05:6512:503:b0:4af:1cbe:1ac6 with SMTP id o3-20020a056512050300b004af1cbe1ac6mr73689lfb.651.1666975728645;
-        Fri, 28 Oct 2022 09:48:48 -0700 (PDT)
-Received: from eriador.unikie.fi ([192.130.178.91])
-        by smtp.gmail.com with ESMTPSA id 24-20020ac25f58000000b004a03eb21c4fsm626892lfz.288.2022.10.28.09.48.47
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=8taqJDtvUl86Drgh5fEgYjN4USVyEjdYeYqtilVVUAs=;
+        b=TkXgL+hjTHwbdFBeZFr0E+HuyTJa1g9CA5RpB1QNiWK3M2HbxnvuhUIk0Ythkjn02e
+         ev/ETu7M+1dFZxzW8dTdXUp2/4sgTUVy+fomJ6cgDl9DOGhsL5NOqXlTBKEcChcw1kGR
+         ZQTca49JOCySxnLrJrqWPiel2lFPlG86OXOZAFQCBk15ZDslZmLvhaMauWTW/XUP/EUh
+         nZuTWTvIjrkt+MDjfFlfQcNRU+0n6xItPOC/iQDhuqCru4wX/5xLGuVreHi5QqVE7Bb0
+         O0rZgUex6mOnWBIM8vi41G3CgreFVJyBxP8V8zaWCKH9BVZFxMPgrTvgSjJiDgPnSwZF
+         OOUQ==
+X-Gm-Message-State: ACrzQf20jGK8Nq35QlXi4t1NL9BZ/UzEefL3eOaxrjOZ+4qolIaW69rg
+	yNS5/swJ5r19DeFkxlMOuA==
+X-Google-Smtp-Source: AMsMyM6Y9zExkyYtY64AW0IfA302F1WI9FzMoN/vCTIprGoOFxzrGGF1uk6seWK6mk7k3r4lw2QVxg==
+X-Received: by 2002:a05:6808:d50:b0:355:4cd9:e6ca with SMTP id w16-20020a0568080d5000b003554cd9e6camr547665oik.160.1666985740445;
+        Fri, 28 Oct 2022 12:35:40 -0700 (PDT)
+Received: from robh_at_kernel.org (66-90-144-107.dyn.grandenetworks.net. [66.90.144.107])
+        by smtp.gmail.com with ESMTPSA id 111-20020a9d0878000000b006605883eae6sm1991047oty.63.2022.10.28.12.35.39
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 28 Oct 2022 09:48:48 -0700 (PDT)
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-To: Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@somainline.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>
-Cc: Philipp Zabel <p.zabel@pengutronix.de>,
-	linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	Johan Hovold <johan@kernel.org>
-Subject: [PATCH v6] phy: qcom-qmp-ufs: provide symbol clocks
-Date: Fri, 28 Oct 2022 19:48:47 +0300
-Message-Id: <20221028164847.485874-1-dmitry.baryshkov@linaro.org>
-X-Mailer: git-send-email 2.35.1
+        Fri, 28 Oct 2022 12:35:39 -0700 (PDT)
+Received: (nullmailer pid 2188330 invoked by uid 1000);
+	Fri, 28 Oct 2022 19:35:41 -0000
+Date: Fri, 28 Oct 2022 14:35:41 -0500
+From: Rob Herring <robh@kernel.org>
+To: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+Cc: Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Masami Hiramatsu <mhiramat@kernel.org>, devicetree@vger.kernel.org, linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 1/2] dt-bindings: phy: Fix UniPhier USB3 controller node
+ names in example
+Message-ID: <20221028193541.GA2183248-robh@kernel.org>
+References: <20221027044920.23194-1-hayashi.kunihiko@socionext.com>
+ <20221027044920.23194-2-hayashi.kunihiko@socionext.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20221027044920.23194-2-hayashi.kunihiko@socionext.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221028_094850_831012_4A21172F 
-X-CRM114-Status: GOOD (  12.71  )
+X-CRM114-CacheID: sfid-20221028_123542_982563_61A45EFF 
+X-CRM114-Status: GOOD (  16.39  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,113 +80,56 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Register three UFS symbol clocks (ufs_rx_symbol_0_clk_src,
-ufs_rx_symbol_1_clk_src ufs_tx_symbol_0_clk_src). Register OF clock
-provider to let other devices link these clocks through the DT.
+On Thu, Oct 27, 2022 at 01:49:19PM +0900, Kunihiko Hayashi wrote:
+> The word "glue" is ambiguous for the controller node name. Should put
+> "usb-controller" instead of "usb-glue" on the controller node.
+> 
+> Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+> ---
+>  .../devicetree/bindings/phy/socionext,uniphier-usb3hs-phy.yaml  | 2 +-
+>  .../devicetree/bindings/phy/socionext,uniphier-usb3ss-phy.yaml  | 2 +-
+>  2 files changed, 2 insertions(+), 2 deletions(-)
 
-Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
----
+Acked-by: Rob Herring <robh@kernel.org>
 
-Changes since v5:
-- Rebased on top of phy/next
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/socionext,uniphier-usb3hs-phy.yaml b/Documentation/devicetree/bindings/phy/socionext,uniphier-usb3hs-phy.yaml
+> index 21e4414eea60..8ce57898fb96 100644
+> --- a/Documentation/devicetree/bindings/phy/socionext,uniphier-usb3hs-phy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/socionext,uniphier-usb3hs-phy.yaml
+> @@ -146,7 +146,7 @@ additionalProperties: false
+>  
+>  examples:
+>    - |
+> -    usb-glue@65b00000 {
+> +    usb-controller@65b00000 {
+>          compatible = "socionext,uniphier-ld20-dwc3-glue", "simple-mfd";
+>          #address-cells = <1>;
+>          #size-cells = <1>;
+> diff --git a/Documentation/devicetree/bindings/phy/socionext,uniphier-usb3ss-phy.yaml b/Documentation/devicetree/bindings/phy/socionext,uniphier-usb3ss-phy.yaml
+> index 4c26d2d2303d..ba60b7add4f7 100644
+> --- a/Documentation/devicetree/bindings/phy/socionext,uniphier-usb3ss-phy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/socionext,uniphier-usb3ss-phy.yaml
+> @@ -131,7 +131,7 @@ additionalProperties: false
+>  
+>  examples:
+>    - |
+> -    usb-glue@65b00000 {
+> +    usb-controller@65b00000 {
+>          compatible = "socionext,uniphier-ld20-dwc3-glue",
+>                       "simple-mfd";
 
-Changes since v4:
-- Rebased, dropping merged clk patches
-- Fixed whitespace errors
-- Added linebreaks to fit into 100 chars limit
+This and a bunch of other Socionext compatibles in examples throw 
+warnings because there is not a schema for them:
 
----
- drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 67 +++++++++++++++++++++++++
- 1 file changed, 67 insertions(+)
+Documentation/devicetree/bindings/phy/socionext,uniphier-usb3ss-phy.example.dtb:0:0: /example-0/usb-controller@65b00000: failed to match any schema with compatible: ['socionext,uniphier-ld20-dwc3-glue', 'simple-mfd']
+Documentation/devicetree/bindings/phy/socionext,uniphier-usb3hs-phy.example.dtb:0:0: /example-0/usb-controller@65b00000: failed to match any schema with compatible: ['socionext,uniphier-ld20-dwc3-glue', 'simple-mfd']
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-index 189103d1bd18..c1c9c6e7949d 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-@@ -1023,6 +1023,66 @@ static int qmp_ufs_clk_init(struct qmp_ufs *qmp)
- 	return devm_clk_bulk_get(dev, num, qmp->clks);
- }
- 
-+static void phy_clk_release_provider(void *res)
-+{
-+	of_clk_del_provider(res);
-+}
-+
-+#define UFS_SYMBOL_CLOCKS 3
-+
-+static int phy_symbols_clk_register(struct qmp_ufs *qmp, struct device_node *np)
-+{
-+	struct clk_hw_onecell_data *clk_data;
-+	struct clk_hw *hw;
-+	char name[64];
-+	int ret;
-+
-+	clk_data = devm_kzalloc(qmp->dev,
-+				struct_size(clk_data, hws, UFS_SYMBOL_CLOCKS),
-+				GFP_KERNEL);
-+	if (!clk_data)
-+		return -ENOMEM;
-+
-+	clk_data->num = UFS_SYMBOL_CLOCKS;
-+
-+	snprintf(name, sizeof(name), "%s::rx_symbol_0", dev_name(qmp->dev));
-+	hw = devm_clk_hw_register_fixed_rate(qmp->dev, name, NULL, 0, 0);
-+	if (IS_ERR(hw))
-+		return PTR_ERR(hw);
-+
-+	clk_data->hws[0] = hw;
-+
-+	snprintf(name, sizeof(name), "%s::rx_symbol_1", dev_name(qmp->dev));
-+	hw = devm_clk_hw_register_fixed_rate(qmp->dev, name, NULL, 0, 0);
-+	if (IS_ERR(hw))
-+		return PTR_ERR(hw);
-+
-+	clk_data->hws[1] = hw;
-+
-+	snprintf(name, sizeof(name), "%s::tx_symbol_0", dev_name(qmp->dev));
-+	hw = devm_clk_hw_register_fixed_rate(qmp->dev, name, NULL, 0, 0);
-+	if (IS_ERR(hw))
-+		return PTR_ERR(hw);
-+
-+	clk_data->hws[2] = hw;
-+
-+	ret = of_clk_add_hw_provider(np, of_clk_hw_onecell_get, clk_data);
-+	if (ret)
-+		return ret;
-+
-+	/*
-+	 * Roll a devm action because the clock provider is the child node, but
-+	 * the child node is not actually a device.
-+	 */
-+	return devm_add_action_or_reset(qmp->dev, phy_clk_release_provider, np);
-+}
-+
-+static const struct phy_ops qcom_qmp_ufs_ops = {
-+	.power_on	= qmp_ufs_enable,
-+	.power_off	= qmp_ufs_disable,
-+	.owner		= THIS_MODULE,
-+};
-+
- static int qmp_ufs_parse_dt_legacy(struct qmp_ufs *qmp, struct device_node *np)
- {
- 	struct platform_device *pdev = to_platform_device(qmp->dev);
-@@ -1135,6 +1195,13 @@ static int qmp_ufs_probe(struct platform_device *pdev)
- 	if (ret)
- 		goto err_node_put;
- 
-+	ret = phy_symbols_clk_register(qmp, np);
-+	if (ret) {
-+		dev_err(dev, "failed to create symbol clocks, %d\n",
-+			ret);
-+		goto err_node_put;
-+	}
-+
- 	qmp->phy = devm_phy_create(dev, np, &qcom_qmp_ufs_phy_ops);
- 	if (IS_ERR(qmp->phy)) {
- 		ret = PTR_ERR(qmp->phy);
--- 
-2.35.1
 
+The remaining warnings are preventing turning the warning on by default, 
+so fixing them would be nice.
+
+Rob
 
 -- 
 linux-phy mailing list
