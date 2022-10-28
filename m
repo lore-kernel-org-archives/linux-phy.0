@@ -4,82 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 94273FA373D
-	for <linux-phy@archiver.kernel.org>; Fri, 28 Oct 2022 01:23:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9142FFA3741
+	for <linux-phy@archiver.kernel.org>; Fri, 28 Oct 2022 02:09:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Q/cM8Fj6Tko8cRNa2PLr/ap/nv9UJOWyVph/5nCexWQ=; b=AcSZ7zGfQ+Dpj5
-	wmttSRkuKmlkFSIM0eRWS/0XIy6yGj8qV1sk9t7JzPbFPdiAF9WhQJpZTZLZYftElMym2YfWVCz6j
-	4C1lhr4kCtcYHKt0s0st0dMbQ+W0Olx9DEpIW4Y/I6Df0PLL08aytRftBh15y5KwJaCbomx9fjsWr
-	vCQ44YM14gb/221a2MXqVlwPOggjpwotvmau+P3xCEDKQBwEwAL+j0aMVNkzKtW/M9CrcIvunfRym
-	lgFHcnSgIkSOA3ZAKyHjjJOhb6Vc1C3ntsv24Kzarrygt71xFaijdnv23fBvAZ/bXcQOZS+bzHtP2
-	/fWqzFTXEvyw8MXTcZxw==;
+	List-Owner; bh=/znarBI/PNjZqlyA5pjfUykuMEHXz8QpKq2LOhfJAAk=; b=RIW43cz+zPKPda
+	zpsN92ke3aLDtyVdeU9e8kN3eDanDcH0h5HZQ6xToLyIfvxnl2wtOn8gPVBVqO3stA5IcbsqdLiT6
+	zfPAY5Rf1Vt2ZwiNlucc1OlV7SVpyS+jExt9YLmqtFxrl3u1A+OSH320hYEEhSnvPfIxfAQakjVWn
+	bg/gRY0Nb/OkBhRXFtb7KbMK9j3h8+lpKNyDjO3wD6wELchsQL+9bWFEmDmJQvvTq7d5ctai5l/9d
+	SSjscViq8YibH+UKgMD5h2gQvLWhq0r4g6omG8tHgxIew6m7I02k0UQBwN2j71AkGRuKy3BkIdCVZ
+	R+72LL6U2/JM+ejZEJNA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ooE61-00FNKy-Vm; Fri, 28 Oct 2022 01:23:41 +0000
-Received: from mail-qv1-xf2a.google.com ([2607:f8b0:4864:20::f2a])
+	id 1ooEoo-00FTmv-TG; Fri, 28 Oct 2022 02:09:58 +0000
+Received: from mail-qk1-x72c.google.com ([2607:f8b0:4864:20::72c])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ooE5x-00FNKO-Az
-	for linux-phy@lists.infradead.org; Fri, 28 Oct 2022 01:23:39 +0000
-Received: by mail-qv1-xf2a.google.com with SMTP id j6so3131179qvn.12
-        for <linux-phy@lists.infradead.org>; Thu, 27 Oct 2022 18:23:36 -0700 (PDT)
+	id 1ooEol-00FTmI-RP
+	for linux-phy@lists.infradead.org; Fri, 28 Oct 2022 02:09:57 +0000
+Received: by mail-qk1-x72c.google.com with SMTP id i10so2481235qkl.12
+        for <linux-phy@lists.infradead.org>; Thu, 27 Oct 2022 19:09:54 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=ExaNe0+PHAZeptGCdv7nhjhnGueQivhSmqML2WumfiY=;
-        b=FY91IEAccOF/X8e+Ry5ZCHAOxZAKItpkUVlmqfMGEN9WaKcOKqM9r08vVKPQC/rzZe
-         Qg1YJ052WTNEELJn8KFQuChvD0VsdiEf+2Uxu7fatC0AEoqGalohhjYogKFqe2wntPDB
-         8O5T7ymRULN9qj6OAz7EAQ+mThsnuFxDAGkOIP27jK8ND+op9gaYPKldLudPXuSof1l9
-         +4dtvAUXFk6JgKeJMhcSElLdbnvYV1T3A4m7Y2nl138OGUXhmW3AV3a/Kh+w4BhN+aeT
-         xT6ONe7SYgY4pTkoHGPlZS2CPHG9HVbi47UI6rXk7e6HkeOtz8RJNLxxvio2fqrTrpSB
-         ffyw==
+        bh=9jNJ5gOLssvCtUC1P5RUZaaZppmGVFIyqlwWASYBtXQ=;
+        b=bCtABFgHMifCesxcGWQZdPCTWQcA3y4oG4YgukH0ljbdjbLLPX7CwURykfEbBel5vE
+         tF8uZubpBMW3VurhcJMKhPxXGMtCG4/qBW4ysU0fj08VQelK6YzOBaBcZthUcjBNUpWY
+         oGu13YRR/IbD4ZGH1zITOWJ7SJmrJNpWOjRCzBo+cnhEis4iRo5xaEq+L4TdW/qL88Pn
+         K53cApjLbrB0bAsiOxFR705sFxXeYbGIbW8QOfVpDQ9fANJw5gzzZkhG7SDri8JEYLSj
+         tDnDzpgLs1MCHyi3vTk7yW3OTYhtDfONHCevq8fTtnprvvKOjgQTfiP5a3N62nhHz90v
+         lKZg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=ExaNe0+PHAZeptGCdv7nhjhnGueQivhSmqML2WumfiY=;
-        b=JzcmOcvwa/OYwlWTrLSFNO07nGUZRee9Eq2hvu1pe1DCGwq6I4WBVwdabDfRax0O19
-         ch+FbX9+kMUS9VqVD1Ba0znnsUMJxBPxIXclA6Mgci2I5XfqBviheflLUUyBfJ6/YxtD
-         5fvgMhgo1ozF2NIMXItJD5BjhsLhv9Rj9burA6WE6E4twIVvMr0BKTXztDAXfL5TVOMn
-         vLz+h7I1QvS7RdkN+iL9SaXGWoz+wulm3Us4m4uRwI9+dIp4R9/KViZ8iE8JPHXJci7v
-         EYtjxs+xheitGQx15sgA5zYbSiPRfYBioHHjVQok+xsxKIcFFow7uf09c8h5V8uiMAMl
-         O1Fw==
-X-Gm-Message-State: ACrzQf2mdKkeT++4AF5fkJUJzjmFjlEiZl+zCq4THM+9hPLqpK1nGENU
-	67kVRqKmVucNFalAQ8/jfvWHYQ==
-X-Google-Smtp-Source: AMsMyM59i8g2sKvo0v5DPB/P2cI6Ifwyum+sxSGT0d3frdGa5rKPJu7jleBGrSlrE7jzymWsKWq9zA==
-X-Received: by 2002:a05:6214:c4a:b0:4b1:9831:f067 with SMTP id r10-20020a0562140c4a00b004b19831f067mr43033644qvj.39.1666920215909;
-        Thu, 27 Oct 2022 18:23:35 -0700 (PDT)
+        bh=9jNJ5gOLssvCtUC1P5RUZaaZppmGVFIyqlwWASYBtXQ=;
+        b=PLhtAF3EQeUlyYfhRZ3gl0mqbux7TJkl6bHOUwZy9WxImVfZ7jdPKwK5ExE9KsIUju
+         j5WMwRmO6wk68m+7hoDaTZK35T8KSPfoImbeHeOvoiO6vlHugK40etRcmk3iFCWcmDU5
+         jlWljSTLB5grzKZ+uopL1EYzDCMVG+bcUmEQWJBAs8LvUkJf9WseA1geT7d/2KM5rVQ5
+         OdX7JYjn3dTLl94my8OS5cP8eidaM7pIPJBU/SMgKZHmzyVn1SFjXTKCP601kzA8bHCd
+         LSJWeSFekt6ZbRaD2PpfgeKw3afuY7w+R9acWIFVgYjkQdSBv42pu0tEaykGOPbNA0xC
+         PWVw==
+X-Gm-Message-State: ACrzQf3g8A/A5IGw+iABeGM3v7aGYTXE/wZSSVD0uVdmhAXru9hGqTcv
+	cEde2AdtUJ5eKM7pctw/RuEy/w==
+X-Google-Smtp-Source: AMsMyM4qjbXnWs4itU5ETbByGpSQukQHpsIH9pz8x+xIboSz3IUDYw/PyRUwdINHbb33IsO1DKG7AA==
+X-Received: by 2002:a05:620a:bc2:b0:6cf:468e:b8ce with SMTP id s2-20020a05620a0bc200b006cf468eb8cemr35944988qki.699.1666922993832;
+        Thu, 27 Oct 2022 19:09:53 -0700 (PDT)
 Received: from [192.168.1.11] ([64.57.193.93])
-        by smtp.gmail.com with ESMTPSA id r3-20020a05620a298300b006ee91ab3538sm2096703qkp.36.2022.10.27.18.23.34
+        by smtp.gmail.com with ESMTPSA id w8-20020a05620a424800b006ed30a8fb21sm2096915qko.76.2022.10.27.19.09.52
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 27 Oct 2022 18:23:35 -0700 (PDT)
-Message-ID: <e5c25e9f-f081-8593-c61c-321cca3726a7@linaro.org>
-Date: Thu, 27 Oct 2022 21:23:33 -0400
+        Thu, 27 Oct 2022 19:09:53 -0700 (PDT)
+Message-ID: <be3d4533-5f4e-d93e-dfec-1eaa1c7c4c8b@linaro.org>
+Date: Thu, 27 Oct 2022 22:09:51 -0400
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.4.0
-Subject: Re: [RESEND PATCH v3 1/2] dt-bindings: phy: renesas: Document Renesas
- Ethernet SERDES
+Subject: Re: [PATCH 07/10] dt-bindings: phy: qcom,qmp-ufs: rename current
+ bindings
 Content-Language: en-US
-To: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>, vkoul@kernel.org,
- kishon@kernel.org, robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-renesas-soc@vger.kernel.org
-References: <20221027134006.2343164-1-yoshihiro.shimoda.uh@renesas.com>
- <20221027134006.2343164-2-yoshihiro.shimoda.uh@renesas.com>
+To: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>
+Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
+ Konrad Dybcio <konrad.dybcio@somainline.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+References: <20221024090041.19574-1-johan+linaro@kernel.org>
+ <20221024090041.19574-8-johan+linaro@kernel.org>
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20221027134006.2343164-2-yoshihiro.shimoda.uh@renesas.com>
+In-Reply-To: <20221024090041.19574-8-johan+linaro@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221027_182337_407877_159F3528 
-X-CRM114-Status: UNSURE (   7.43  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20221027_190955_924747_7590CB6C 
+X-CRM114-Status: GOOD (  13.64  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,15 +99,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 27/10/2022 09:40, Yoshihiro Shimoda wrote:
-> Document Renesas Etherent SERDES for R-Car S4-8 (r8a779f0).
+On 24/10/2022 05:00, Johan Hovold wrote:
+> The current QMP UFS PHY bindings are based on the original MSM8996 PCIe
+> PHY binding which provided multiple PHYs per IP block and these in turn
+> were described by child nodes.
 > 
-> Signed-off-by: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
+> The QMP UFS PHY block only provide a single PHY and the remnant child
+> node does not really reflect the hardware.
+> 
+> The original MSM8996 binding also ended up describing the individual
+> register blocks as belonging to either the wrapper node or the PHY child
+> nodes.
+> 
+> This is an unnecessary level of detail which has lead to problems when
+> later IP blocks using different register layouts have been forced to fit
+> the original mould rather than updating the binding. The bindings are
+> arguable also incomplete as they only the describe register blocks used
+> by the current Linux drivers.
+> 
+> In preparation for adding new bindings for SC8280XP which further
+> bindings can be based on, rename the current bindings after MSM8996 and
+> add a reference to the SC8280XP bindings.
+> 
+> Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 > ---
->  .../phy/renesas,r8a779f0-ether-serdes.yaml    | 54 +++++++++++++++++++
->  1 file changed, 54 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/renesas,r8a779f0-ether-serdes.yaml
-> 
 
 
 Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
