@@ -4,99 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B8EBDECAAA1
-	for <linux-phy@archiver.kernel.org>; Fri, 28 Oct 2022 02:20:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5982EECAAA1
+	for <linux-phy@archiver.kernel.org>; Fri, 28 Oct 2022 02:24:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cm2NIVdazPYVMz5nWWQ/pdXFvr3KLgL/3Bp4ssjgmq4=; b=XEAgFkR/RXtkVl
-	G3eZnIBbB+gDUwZBHxOSuud2uI3g5ON8k8o8BIpCZPT216ZYKPqmbe6riEq6z/HHb4RwJL3UrUTJz
-	L4Xk/2zMzz2X4SsDdiziChi8OhYztMrdNNB95JYe2JAEyjTtqy1LogybQn3Ol11AL4Uw4r92Eovg9
-	u7lYqO4cZQQTuzDFCJlFqm9h/m0jof2M2ZFPKyh/xRhV3FytJrHccG+BzytygBydurVsy5fvo6H7o
-	KjiVGziAI3mC8OYw62vtkwk/fKi4Jl7NWpYoQdKCZJIVumV46kpw2D82vsmCp4dY7K9BtNGm6lOOc
-	IODUO6CsjPMoILVbOfTg==;
+	List-Owner; bh=jDFTc9r7MQSz4UfBhzyUyP7Y4bMLBLem55G9lAvX3yM=; b=hNUKeTDRZO5Ef5
+	PHfB0VwpzhO9WzODeTmKmPJIchwgIKnwjhaU8eqJgov1cyEFI+wS0azIUDRDswcg18gHJ0loM3f2G
+	+OiwClKpwpvyUSXteNgCxaD+m8vNfM9AhA1oynFSaFUwNqtcygK1CRxzTO4QNn2e60UAj7lGnfZSM
+	lKoNzuWGxtdPombtJ0/uY8fAaoBVZ2aemtIT2CTXH7jPjkTPVfqbqDWoSRA4h6EixDVDDvR17rRnC
+	pJi5/Z4A+FZ4cki+Vzz3K6TMcGrX2sR/FMQ4mGZwjkHrMdG12NbmBU3cTEJkd4ywsJsDJ2+qypvt3
+	JS53C8PMAM21+azQFmEw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ooEye-00FWM0-1s; Fri, 28 Oct 2022 02:20:08 +0000
-Received: from mail-qt1-x82f.google.com ([2607:f8b0:4864:20::82f])
+	id 1ooF2V-00FXQO-Jr; Fri, 28 Oct 2022 02:24:07 +0000
+Received: from mail-qt1-x82a.google.com ([2607:f8b0:4864:20::82a])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ooEya-00FWIY-Pt
-	for linux-phy@lists.infradead.org; Fri, 28 Oct 2022 02:20:06 +0000
-Received: by mail-qt1-x82f.google.com with SMTP id hh9so2718245qtb.13
-        for <linux-phy@lists.infradead.org>; Thu, 27 Oct 2022 19:20:01 -0700 (PDT)
+	id 1ooF2T-00FXPd-AJ
+	for linux-phy@lists.infradead.org; Fri, 28 Oct 2022 02:24:07 +0000
+Received: by mail-qt1-x82a.google.com with SMTP id r19so2740279qtx.6
+        for <linux-phy@lists.infradead.org>; Thu, 27 Oct 2022 19:24:03 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=cykFnUK9bm/0PhHnZ0sXhtZ2At3ENMM99eYPdegdYSI=;
-        b=AQJVYjKsyiTsjDySzOp48brbJiygd9QBWnj3eqx4ycythFdyul1dAGKYj+uTuabOYd
-         R4JA8+FlW70IhjEgqggL9QziGlh7/l3LTgAYQkrzZHeF84hiTphL3mIzJP+Ji1/7KXk6
-         Zxyk/yTJFtxODuiIdNpR1v4Tb/IHo1msssbiT/8gEcpo6dnsy/bBr5SicRVWQ/SYvoGw
-         f6qwZB0YLz/+nKEAZgio2FOp3UFjxD0tDnV+/H+L80njN6vGAonlJVvXHAc6ao7Baxs6
-         mKQQt1FP4htijiDoRDbs8D8DIX0D0JRqct708dGH7QvXcVsbvRvpY6AjgWqW0/q+3mAs
-         VJQw==
+        bh=E6YuEbTvxm7O8eyz47pGuOxddlgQTa4cA4pcPo4hUJI=;
+        b=RvlZ3dTbvauA0B99ZDIDWWl4qM24s6MUS96r7BYXXIAT5tHrm1exYmum8d7Vfm3JOL
+         Jrj5sH/PWSHWpzg57Wfnuha+zWwzfBsFLA0pxjYmnTUAuJrYu6D4u9FLr4Czr+D4W5q8
+         WPQ6e3FtrFB0me3+8x4cmCq1a+RGF6YiHBskpw0gPQWkjSMFNKHZxPOl7JotM72QHQ7a
+         BGYrGphF7UspE8vHDBoHpFHCZZHmExHZKcDyE1MCoK7pvaVZj6gS8rDe3zhURAY90O9q
+         KEIOue7TlunFyK0JhxXrLhCgha6L/iqVxXNC5w1h2q3wCSw8eIfOd9E6SEVyhSdwKyQH
+         QV4w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=cykFnUK9bm/0PhHnZ0sXhtZ2At3ENMM99eYPdegdYSI=;
-        b=TlYmYQ7WRoRr14Eo3AogyFW6GZbiIZ8DYrcLFbgpcsWBeub44ibnBrSNWM+q5YTx1V
-         p4Ph4aiglK2uQOg4HlgAQIRLyVsoBAMe4LSEgIPfpSnc5cjGxPFwl4dZ4R22nHZa3M10
-         x//wKUdZ90BagUNoBJCI9LTjX3GQiUDVXw3I8o84JVKMAEdbyrprSzDzMyIHrqljOMPp
-         elD3ed0Y/5Nb0DR6xGDlU5eJu3heqgcSIlBIO4Y8nPi2jKpMWYTf6fgGIZk8uV63v2Sd
-         lv8IZSRzuH8q6z/0qERrZOSToxGxBkpk2mYmoyerG2K/Pr0P4g2cgqQLl+yqRWOXrdpL
-         XJpg==
-X-Gm-Message-State: ACrzQf3VVIrPfgXzNuB2uqB1U0V/1VKQNMbaiEhhsrJobvK66rnNMSzr
-	4fLK3Cm2c+V395WMl7jD68hbJw==
-X-Google-Smtp-Source: AMsMyM4nFrse7LOawN/dKiRc/aj8ygVoOp4zOOXiLSE5lagp50tusE21h1qz86DoB8x3z2sSytqEbA==
-X-Received: by 2002:ac8:7d94:0:b0:39c:ed3c:98a3 with SMTP id c20-20020ac87d94000000b0039ced3c98a3mr45065437qtd.628.1666923600693;
-        Thu, 27 Oct 2022 19:20:00 -0700 (PDT)
+        bh=E6YuEbTvxm7O8eyz47pGuOxddlgQTa4cA4pcPo4hUJI=;
+        b=1oYvhWFDXhDyD713TnNI6IExV1SHLc5wygUdBZ5lLH52MsVTcuSxvYldLHSjWLlkv2
+         C0tWelO37bCtYUanMhNsDrwGLY1flZkW/bdwB7RJd3EvbiKcYt6TAsD6BnQ81FHlv893
+         YQB7bRUVXqqfRmuE5ZAjzvnjIDlP26ZwVxnGgQ5wWQgaM6ubJkAm1vH9IjsgNaeXW2uz
+         d07N3GotmPUbWY0HsdmWsN50koZPN/QX4tY2JphgtscKOGY6dIoatnaqWdaN/nqzguOI
+         ftW6WDLRz84VgITz4hRVMarAxcudNiCfC5NcEkdKMdtRpV965xFu7Cq6C4uvQC0oajoI
+         +VTQ==
+X-Gm-Message-State: ACrzQf2S+9nhzUlO5AlqUGv8erJqR2N8ZzEf4Xr2kf1x0zAn8gb15euT
+	MuRhf8BBgNOXxVevjF19GUNGqg==
+X-Google-Smtp-Source: AMsMyM5edx+u+jXkjLS022OCRzFXFfJ2caHhvxv7SfETslJUAjLK7INIk8S3YdDxs5ghQZ5SACKP+g==
+X-Received: by 2002:a05:622a:c5:b0:39c:f1c2:6732 with SMTP id p5-20020a05622a00c500b0039cf1c26732mr45199906qtw.588.1666923842972;
+        Thu, 27 Oct 2022 19:24:02 -0700 (PDT)
 Received: from [192.168.1.11] ([64.57.193.93])
-        by smtp.gmail.com with ESMTPSA id a24-20020ac86118000000b0039ee562799csm1760187qtm.59.2022.10.27.19.19.58
+        by smtp.gmail.com with ESMTPSA id c2-20020a05622a024200b0038b684a1642sm1802068qtx.32.2022.10.27.19.24.00
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 27 Oct 2022 19:19:59 -0700 (PDT)
-Message-ID: <f5d2c979-a61c-e0d4-7a08-5b6f5b38dffb@linaro.org>
-Date: Thu, 27 Oct 2022 22:19:57 -0400
+        Thu, 27 Oct 2022 19:24:02 -0700 (PDT)
+Message-ID: <2059dfe5-b084-42a4-7f35-9da9561fc12b@linaro.org>
+Date: Thu, 27 Oct 2022 22:23:59 -0400
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.4.0
-Subject: Re: [PATCH 02/11] dt-bindings: usb: Add NVIDIA Tegra XUSB host
- controller binding
+Subject: Re: [PATCH 04/11] arm64: tegra: Enable XUSB host and device on Jetson
+ AGX Orin
 Content-Language: en-US
-To: Wayne Chang <waynec@nvidia.com>, Rob Herring <robh@kernel.org>
-Cc: "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
- "krzysztof.kozlowski+dt@linaro.org" <krzysztof.kozlowski+dt@linaro.org>,
- Thierry Reding <treding@nvidia.com>, Jonathan Hunter <jonathanh@nvidia.com>,
- "thierry.reding@gmail.com" <thierry.reding@gmail.com>,
- "heikki.krogerus@linux.intel.com" <heikki.krogerus@linux.intel.com>,
- Ajay Gupta <ajayg@nvidia.com>, "kishon@ti.com" <kishon@ti.com>,
- "vkoul@kernel.org" <vkoul@kernel.org>,
- "p.zabel@pengutronix.de" <p.zabel@pengutronix.de>,
- "balbi@kernel.org" <balbi@kernel.org>,
- "mathias.nyman@intel.com" <mathias.nyman@intel.com>,
- Jui Chang Kuo <jckuo@nvidia.com>,
- "linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Sing-Han Chen <singhanc@nvidia.com>,
- "linux-i2c@vger.kernel.org" <linux-i2c@vger.kernel.org>,
- "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
- "linux-tegra@vger.kernel.org" <linux-tegra@vger.kernel.org>
+To: Wayne Chang <waynec@nvidia.com>, gregkh@linuxfoundation.org,
+ robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org, treding@nvidia.com,
+ jonathanh@nvidia.com, thierry.reding@gmail.com,
+ heikki.krogerus@linux.intel.com, ajayg@nvidia.com, kishon@ti.com,
+ vkoul@kernel.org, p.zabel@pengutronix.de, balbi@kernel.org,
+ mathias.nyman@intel.com, jckuo@nvidia.com
+Cc: linux-usb@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, singhanc@nvidia.com,
+ linux-i2c@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-tegra@vger.kernel.org
 References: <20221024074128.1113554-1-waynec@nvidia.com>
- <20221024074128.1113554-3-waynec@nvidia.com>
- <20221024145446.GA1763588-robh@kernel.org>
- <52ae737e-eb4f-9eb7-8b79-d58251062276@nvidia.com>
+ <20221024074128.1113554-5-waynec@nvidia.com>
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <52ae737e-eb4f-9eb7-8b79-d58251062276@nvidia.com>
+In-Reply-To: <20221024074128.1113554-5-waynec@nvidia.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221027_192004_906015_E91F3386 
-X-CRM114-Status: UNSURE (   8.60  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20221027_192405_430196_654A311E 
+X-CRM114-Status: GOOD (  13.92  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -113,26 +101,249 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 25/10/2022 04:02, Wayne Chang wrote:
+On 24/10/2022 03:41, Wayne Chang wrote:
+> This commit enables XUSB host, device, and pad controller on
+> Jetson AGX Orin.
 > 
->>> +  power-domain-names:
->>> +    items:
->>> +      - const: xusb_host
->>> +      - const: xusb_ss
->>
->> Drop 'xusb_'.
+> Signed-off-by: Wayne Chang <waynec@nvidia.com>
+> ---
+>  .../boot/dts/nvidia/tegra234-p3701-0000.dtsi  |  48 +++++
+>  .../nvidia/tegra234-p3737-0000+p3701-0000.dts | 184 ++++++++++++++++++
+>  arch/arm64/boot/dts/nvidia/tegra234.dtsi      | 170 ++++++++++++++++
+>  3 files changed, 402 insertions(+)
 > 
-> The properties are constant and we use the name to get the power domain.
-> 
-> 	tegra->genpd_dev_host = dev_pm_domain_attach_by_name(dev, "xusb_host");
-> 	
-> 	tegra->genpd_dev_ss = dev_pm_domain_attach_by_name(dev, "xusb_ss");
-> 	
-> we might not be able to drop the xusb_
+> diff --git a/arch/arm64/boot/dts/nvidia/tegra234-p3701-0000.dtsi b/arch/arm64/boot/dts/nvidia/tegra234-p3701-0000.dtsi
+> index 9e4d72cfa69f..8acef87a5398 100644
+> --- a/arch/arm64/boot/dts/nvidia/tegra234-p3701-0000.dtsi
+> +++ b/arch/arm64/boot/dts/nvidia/tegra234-p3701-0000.dtsi
+> @@ -61,6 +61,29 @@ mmc@3460000 {
+>  			non-removable;
+>  		};
+>  
+> +		padctl@3520000 {
+> +			vclamp-usb-supply = <&vdd_ao_1v8>;
+> +			avdd-usb-supply = <&vdd_ao_3v3>;
+> +
+> +			ports {
+> +				usb2-0 {
+> +					vbus-supply = <&vdd_5v0_sys>;
+> +				};
+> +
+> +				usb2-1 {
+> +					vbus-supply = <&vdd_5v0_sys>;
+> +				};
+> +
+> +				usb2-2 {
+> +					vbus-supply = <&vdd_5v0_sys>;
+> +				};
+> +
+> +				usb2-3 {
+> +					vbus-supply = <&vdd_5v0_sys>;
+> +				};
+> +			};
+> +		};
+> +
+>  		rtc@c2a0000 {
+>  			status = "okay";
+>  		};
+> @@ -69,4 +92,29 @@ pmc@c360000 {
+>  			nvidia,invert-interrupt;
+>  		};
+>  	};
+> +
+> +	vdd_5v0_sys: regulator@0 {
+> +		compatible = "regulator-fixed";
+> +		regulator-name = "VIN_SYS_5V0";
+> +		regulator-min-microvolt = <5000000>;
+> +		regulator-max-microvolt = <5000000>;
+> +		regulator-always-on;
+> +		regulator-boot-on;
+> +	};
+> +
+> +	vdd_ao_1v8: regulator@1 {
+> +		compatible = "regulator-fixed";
+> +		regulator-name = "vdd-AO-1v8";
+> +		regulator-min-microvolt = <1800000>;
+> +		regulator-max-microvolt = <1800000>;
+> +		regulator-always-on;
+> +	};
+> +
+> +	vdd_ao_3v3: regulator@2 {
+> +		compatible = "regulator-fixed";
+> +		regulator-name = "vdd-AO-3v3";
+> +		regulator-min-microvolt = <3300000>;
+> +		regulator-max-microvolt = <3300000>;
+> +		regulator-always-on;
+> +	};
+>  };
+> diff --git a/arch/arm64/boot/dts/nvidia/tegra234-p3737-0000+p3701-0000.dts b/arch/arm64/boot/dts/nvidia/tegra234-p3737-0000+p3701-0000.dts
+> index 57ab75328814..b4630280bb32 100644
+> --- a/arch/arm64/boot/dts/nvidia/tegra234-p3737-0000+p3701-0000.dts
+> +++ b/arch/arm64/boot/dts/nvidia/tegra234-p3737-0000+p3701-0000.dts
+> @@ -2011,6 +2011,190 @@ hda@3510000 {
+>  			nvidia,model = "NVIDIA Jetson AGX Orin HDA";
+>  			status = "okay";
+>  		};
+> +
+> +		padctl@3520000 {
+> +			status = "okay";
+> +
+> +			pads {
+> +				usb2 {
+> +					lanes {
+> +						usb2-0 {
+> +							status = "okay";
+> +						};
+> +
+> +						usb2-1 {
+> +							status = "okay";
+> +						};
+> +
+> +						usb2-2 {
+> +							status = "okay";
+> +						};
+> +
+> +						usb2-3 {
+> +							status = "okay";
+> +						};
+> +					};
+> +				};
+> +
+> +				usb3 {
+> +					lanes {
+> +						usb3-0 {
+> +							status = "okay";
+> +						};
+> +
+> +						usb3-1 {
+> +							status = "okay";
+> +						};
+> +
+> +						usb3-2 {
+> +							status = "okay";
+> +						};
+> +					};
+> +				};
+> +			};
+> +
+> +			ports {
+> +				usb2-0 {
+> +					mode = "otg";
+> +					usb-role-switch;
+> +					status = "okay";
+> +					port {
+> +						hs_typec_p1: endpoint {
+> +							remote-endpoint = <&hs_ucsi_ccg_p1>;
+> +						};
+> +					};
+> +				};
+> +
+> +				usb2-1 {
+> +					mode = "host";
+> +					status = "okay";
+> +					port {
+> +						hs_typec_p0: endpoint {
+> +							remote-endpoint = <&hs_ucsi_ccg_p0>;
+> +						};
+> +					};
+> +				};
+> +
+> +				usb2-2 {
+> +					mode = "host";
+> +					status = "okay";
+> +				};
+> +
+> +				usb2-3 {
+> +					mode = "host";
+> +					status = "okay";
+> +				};
+> +
+> +				usb3-0 {
+> +					nvidia,usb2-companion = <1>;
+> +					status = "okay";
+> +					port {
+> +						ss_typec_p0: endpoint {
+> +							remote-endpoint = <&ss_ucsi_ccg_p0>;
+> +						};
+> +					};
+> +				};
+> +
+> +				usb3-1 {
+> +					nvidia,usb2-companion = <0>;
+> +					status = "okay";
+> +					port {
+> +						ss_typec_p1: endpoint {
+> +							remote-endpoint = <&ss_ucsi_ccg_p1>;
+> +						};
+> +					};
+> +				};
+> +
+> +				usb3-2 {
+> +					nvidia,usb2-companion = <3>;
+> +					status = "okay";
+> +				};
+> +			};
+> +		};
+> +
+> +		usb@3550000 {
+> +			status = "okay";
+> +
+> +			phys = <&{/bus@0/padctl@3520000/pads/usb2/lanes/usb2-0}>,
+> +				<&{/bus@0/padctl@3520000/pads/usb3/lanes/usb3-1}>;
+> +			phy-names = "usb2-0", "usb3-1";
+> +		};
+> +
+> +		usb@3610000 {
+> +			status = "okay";
+> +
+> +			phys =	<&{/bus@0/padctl@3520000/pads/usb2/lanes/usb2-0}>,
+> +				<&{/bus@0/padctl@3520000/pads/usb2/lanes/usb2-1}>,
+> +				<&{/bus@0/padctl@3520000/pads/usb2/lanes/usb2-2}>,
+> +				<&{/bus@0/padctl@3520000/pads/usb2/lanes/usb2-3}>,
+> +				<&{/bus@0/padctl@3520000/pads/usb3/lanes/usb3-0}>,
+> +				<&{/bus@0/padctl@3520000/pads/usb3/lanes/usb3-1}>,
+> +				<&{/bus@0/padctl@3520000/pads/usb3/lanes/usb3-2}>;
+> +			phy-names = "usb2-0", "usb2-1", "usb2-2", "usb2-3",
+> +				"usb3-0", "usb3-1", "usb3-2";
+> +		};
+> +
+> +		i2c@c240000 {
+> +			status = "okay";
+> +			ucsi_ccg: ucsi_ccg@8 {
 
-These are new bindings, so why do say they are "constant"? New bindings
-means you did not use them. If you used them before bindings... what can
-we say? Don't?
+No underscores in node names.
+
+> +				compatible = "cypress,cypd4226";
+> +				cypress,firmware-build = "gn";
+> +				interrupt-parent = <&gpio>;
+> +				interrupts = <TEGRA234_MAIN_GPIO(Y, 4) IRQ_TYPE_LEVEL_LOW>;
+> +				reg = <0x08>;
+> +				status = "okay";
+
+The pattern of redefining full path in Tegra is confusing - I have no
+clue which of these status=okay are correct which are redundant.
+
+Do you?
+
+
+
+> +				#address-cells = <1>;
+> +				#size-cells = <0>;
+> +				ccg_typec_con0: connector@0 {
+> +					compatible = "usb-c-connector";
+> +					reg = <0>;
+> +					label = "USB-C";
+> +					data-role = "host";
+> +					#address-cells = <1>;
+> +					#size-cells = <0>;
+> +					port@0 {
+> +						reg = <0>;
+> +						#address-cells = <1>;
+> +						#size-cells = <0>;
+
+Hm, why do you have here cells?
+
+Did you test the DTS with dtbs_check?
 
 Best regards,
 Krzysztof
