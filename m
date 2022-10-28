@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7513BFA3741
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 83FEAFA3742
 	for <linux-phy@archiver.kernel.org>; Fri, 28 Oct 2022 13:37:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,39 +12,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yBFE3OXNwWFgBkNwf41ncbhXfF3OjAedoLtp06Bj0B0=; b=dKY9oMyFLJ+oYO
-	aGxrEn5SCPINuVTwe5LNgVgutr2XxF1Vkv+WTXsitKutuq/rinICgG7d25/larF758DLSZvd+EQKF
-	uCh0IoR8V6+POWnkHZ5yJhO3/0GUCgRt66LNN5omN/LJn0dwWVYjV4129h/mh0zKTUIPngD837f/9
-	8K8ivD3X8lXy3qx+0/ZUZrLkumggZRmzOPHzB+NvYs3FB4ImaYUElsk8AIxVrnQbwgNp6xlIDAloj
-	e4BA2NWTqzpbr64OReXLc6JpxDNi3dilswucZI3H4tkTrP0SNJd4Lg+f1ebmXB+cAtoCwPWkp6eEQ
-	vYmMktxVpNy4VBQm1n+g==;
+	List-Owner; bh=4ovl3MONkbFNno2CtY5CJsQROeVejYLpAdbJJJij3zU=; b=x75asD/cWMfJc5
+	j1CIJd9d9yisd2aCRf9D7JHE6KcPyWX/Ufid8+PwBjFdjyrkZ7k2b/GbNvIN9J7zgnq51h4qnVPuF
+	lzMDr4/Xm2EhvZnrRHX7BHdIXOeCWg/tht1IRqDcn5UBbuyg3fiTsz+JBjejhXKalPA86AvNOtxtJ
+	rDcvbFgL3jETlHCF6pSb7MfdG8nQ//50uJp8F7MPbBIwnw7iJD1e6UsCcaS/3/8/MhlkJ4esGpYw6
+	W8lsgTDP2D/a9+g9dbs4+Ke1jMkCbkcsVG7hsvYoXvpeaqIWrkz3LlQBzZ25o/b9A2maixoOfYRDm
+	AUhoDBa+CEEK5Y9Hb5ng==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ooPXl-00HOBP-OT; Fri, 28 Oct 2022 13:37:05 +0000
-Received: from ams.source.kernel.org ([145.40.68.75])
+	id 1ooPXl-00HOBZ-Sz; Fri, 28 Oct 2022 13:37:05 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ooPXZ-00HO1j-8r
-	for linux-phy@lists.infradead.org; Fri, 28 Oct 2022 13:36:58 +0000
+	id 1ooPXa-00HO4I-TZ
+	for linux-phy@lists.infradead.org; Fri, 28 Oct 2022 13:37:01 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id DCA1AB82A39;
+	by dfw.source.kernel.org (Postfix) with ESMTPS id D999A62884;
 	Fri, 28 Oct 2022 13:36:51 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E9B3BC43141;
-	Fri, 28 Oct 2022 13:36:48 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7706FC4FF15;
+	Fri, 28 Oct 2022 13:36:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1666964209;
-	bh=xoxEMrVgUDSA6xW48AZ4Xutg5TwUiPYQloujKm9//yI=;
+	bh=4mnICkBWbb6C7gqpfuGXYvIo4Kc1xOnaotX3R6uU03c=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=E2KNDqcyDaINoPvD+kBZ6YO10CuqOwihKuAA3gXpLcxTgg2ksGpq1N3EAwcG6PgAj
-	 YL0CkTwiqFdgpGvAHFf2cKz2no+EXGhIRnOO+ffZE507cBn5vVcvoCvuc/PmSP4s6Q
-	 tWe+SsZS2ofWJ9t+uZjet9ciq0bHiVj6pehKuy1BbqG+s0kDvvBX4FFaWGY9/KKXRI
-	 GcXGosEGx27lUKIzjzf8/kl2ZufngU3v+T4O9vPovHCftb+YI/l5dRJzjxON2/+hnt
-	 btx3NEV7XLyyvxrOQV4ZoFvfSfOnKSxjHW6tXTCmu928i9YRyAN/x+XPEn9pkvGD1c
-	 uCn2uHKHJZ2kA==
+	b=sk4uPyCTXTh5o+YLVTb0WPJGpz+bDOcphYNAJBKB0ahD2ukoIK5gUhYRuhtWrP9Eo
+	 VXc6gN5hcZZedXm/W1W22E4lDfRreT3LO3QZ65R2F9vZQfWV65pT5bWe6jcJNyruzA
+	 TL6wDSkyyJ5EqU6Qx0gTg+2udrxgxUdFAiW828shHmp1ZmKMtezkEk8xmNeyPj2yDg
+	 xYhW6eIPpoz1mhBqa2UJMAhK8cd+VpXsthyz+wqSw0Dv7VWQyq1x8bV5rCcP+HqCfY
+	 f4AbDskb2txOmALbvr+tKM93K/GBBFq4ufsecfaFotrIwZhZcnTAI6X7BcVD99S3RI
+	 wcGaxDce6SLgQ==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1ooPXG-0004qv-TA; Fri, 28 Oct 2022 15:36:34 +0200
+	id 1ooPXH-0004rT-Tk; Fri, 28 Oct 2022 15:36:35 +0200
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>
 Cc: Andy Gross <agross@kernel.org>,
@@ -57,16 +57,16 @@ Cc: Andy Gross <agross@kernel.org>,
 	linux-phy@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH v4 01/16] phy: qcom-qmp-pcie: sort device-id table
-Date: Fri, 28 Oct 2022 15:35:48 +0200
-Message-Id: <20221028133603.18470-2-johan+linaro@kernel.org>
+Subject: [PATCH v4 13/16] phy: qcom-qmp-pcie: fix initialisation reset
+Date: Fri, 28 Oct 2022 15:36:00 +0200
+Message-Id: <20221028133603.18470-14-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.37.3
 In-Reply-To: <20221028133603.18470-1-johan+linaro@kernel.org>
 References: <20221028133603.18470-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221028_063653_638957_876C2AEC 
-X-CRM114-Status: GOOD (  11.56  )
+X-CRM114-CacheID: sfid-20221028_063655_058392_697BDE28 
+X-CRM114-Status: GOOD (  12.20  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,64 +83,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Sort the device-id table by compatible string to make it easier to find
-and add new entries.
+Add the missing delay after asserting reset. This is specifically needed
+for the reset to have any effect on SC8280XP.
+
+The vendor driver uses a 1 ms delay, but that seems a bit excessive.
+Instead use a 200 us delay which appears to be more than enough and also
+matches the UFS reset delay added by commit 870b1279c7a0 ("scsi:
+ufs-qcom: Add reset control support for host controller").
 
 Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 20 ++++++++++----------
- 1 file changed, 10 insertions(+), 10 deletions(-)
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
 diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-index 7c81667dd968..4e5111d19692 100644
+index 2f4bdef73395..9c8e009033f1 100644
 --- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
 +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-@@ -2282,17 +2282,17 @@ static int qmp_pcie_create(struct device *dev, struct device_node *np, int id,
+@@ -1866,6 +1866,8 @@ static int qmp_pcie_init(struct phy *phy)
+ 		goto err_disable_regulators;
+ 	}
  
- static const struct of_device_id qmp_pcie_of_match_table[] = {
- 	{
--		.compatible = "qcom,msm8998-qmp-pcie-phy",
--		.data = &msm8998_pciephy_cfg,
--	}, {
--		.compatible = "qcom,ipq8074-qmp-pcie-phy",
--		.data = &ipq8074_pciephy_cfg,
-+		.compatible = "qcom,ipq6018-qmp-pcie-phy",
-+		.data = &ipq6018_pciephy_cfg,
- 	}, {
- 		.compatible = "qcom,ipq8074-qmp-gen3-pcie-phy",
- 		.data = &ipq8074_pciephy_gen3_cfg,
- 	}, {
--		.compatible = "qcom,ipq6018-qmp-pcie-phy",
--		.data = &ipq6018_pciephy_cfg,
-+		.compatible = "qcom,ipq8074-qmp-pcie-phy",
-+		.data = &ipq8074_pciephy_cfg,
-+	}, {
-+		.compatible = "qcom,msm8998-qmp-pcie-phy",
-+		.data = &msm8998_pciephy_cfg,
- 	}, {
- 		.compatible = "qcom,sc8180x-qmp-pcie-phy",
- 		.data = &sc8180x_pciephy_cfg,
-@@ -2302,6 +2302,9 @@ static const struct of_device_id qmp_pcie_of_match_table[] = {
- 	}, {
- 		.compatible = "qcom,sdm845-qmp-pcie-phy",
- 		.data = &sdm845_qmp_pciephy_cfg,
-+	}, {
-+		.compatible = "qcom,sdx55-qmp-pcie-phy",
-+		.data = &sdx55_qmp_pciephy_cfg,
- 	}, {
- 		.compatible = "qcom,sm8250-qmp-gen3x1-pcie-phy",
- 		.data = &sm8250_qmp_gen3x1_pciephy_cfg,
-@@ -2311,9 +2314,6 @@ static const struct of_device_id qmp_pcie_of_match_table[] = {
- 	}, {
- 		.compatible = "qcom,sm8250-qmp-modem-pcie-phy",
- 		.data = &sm8250_qmp_gen3x2_pciephy_cfg,
--	}, {
--		.compatible = "qcom,sdx55-qmp-pcie-phy",
--		.data = &sdx55_qmp_pciephy_cfg,
- 	}, {
- 		.compatible = "qcom,sm8450-qmp-gen3x1-pcie-phy",
- 		.data = &sm8450_qmp_gen3x1_pciephy_cfg,
++	usleep_range(200, 300);
++
+ 	ret = reset_control_bulk_deassert(cfg->num_resets, qmp->resets);
+ 	if (ret) {
+ 		dev_err(qmp->dev, "reset deassert failed\n");
 -- 
 2.37.3
 
