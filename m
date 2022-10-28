@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1C0FFFA3746
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 25B10FA3747
 	for <linux-phy@archiver.kernel.org>; Fri, 28 Oct 2022 13:44:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,39 +12,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zb7P8tGfPypzS6Nsx6ypaTa2lP2qyXu6hYpGVVbpFYU=; b=0asZ9rfu+rEvBQ
-	zLlpiBGZiV3Isfzt+6Y3KeLivF/9zmg60j9FYeDbEYOAssjFJcsCntAbk7g4/iYBpIjKFXgXd7XZE
-	YEYBuBG64ZynZFgrmwSLc6EpH+3gA9gn5cnJBCusjUQRQY0kXFsCN1nMKmacYL2XKcbpZuWbN1HjT
-	apHbAAv1DijUjl5JuKs3o7DEaje9Top/+ussLT61jsCyy8fR44PG9aZHIm8Dt/v/gKdh8mqst7fkW
-	9PxEYKhMVUsJF1mrjkwGUdui8KrpjQrfOoS6lfOMukdHZUbcG20A8ANPLCQiTyz84vGjsgxSEW5nl
-	ZeixBgzfQ+Q63Rfjfprw==;
+	List-Owner; bh=UoaAvrqNhLfrQcpMCa1JigCOCPfpWTFSotDxQ+PXrxs=; b=YDgOXXH1EhGOT5
+	0Y/yfLR/6MLuawZcKRskEBXd3HYU53Gi3H51PoRszgxiK4148Y4G0GGtb2rx2Mn1EhKwS5nsCI7GA
+	cdZ8Dxp7ZonA729XRb7PcwvYM4gwymx1AUgrSc9x7R0q3fJOXyjFh9b8O83TmDuEDLCjqKOvpaf6z
+	l27fb6JPi9anufAyGrqPUAiKAiE6KJkuyTm/BCswsfS4/9IWrg3KbCr2FhhXsMM2mCc7iFn8/X3Am
+	UjPFUnqkAu+y6ZXh3GTddORE+R74I4OHuNOlGZXn2TAFXA4xXYXSrnypY8elJ3LsJOcGfB7+MC/xO
+	hEy2NHQmoE5A8YBAgjlg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ooPfF-00HQa1-DX; Fri, 28 Oct 2022 13:44:49 +0000
+	id 1ooPfF-00HQa9-JI; Fri, 28 Oct 2022 13:44:49 +0000
 Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ooPf9-00HQVP-Ui
-	for linux-phy@lists.infradead.org; Fri, 28 Oct 2022 13:44:46 +0000
+	id 1ooPf9-00HQVO-Uh
+	for linux-phy@lists.infradead.org; Fri, 28 Oct 2022 13:44:47 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 1AE876289F;
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 2FD3B62891;
 	Fri, 28 Oct 2022 13:44:43 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 19D3AC43163;
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3590EC4FEB5;
 	Fri, 28 Oct 2022 13:44:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1666964681;
-	bh=ILxmO+luaNlHEkk+yA0QURG+N4WAyWonqKyVeubJWJQ=;
+	bh=e0nD5zuucDDrhhjUBAUr5MO2zIKxZY/BitCu5l0GrMg=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=OcYx8KXrZNl9Y6aSkV5am2QJsAArAwoAvHOtcAAkLk6FtZb7rku24ubOq0ewTTNIF
-	 UlilfuxZqCJRo6PLFXqUpnJIa/FjrDhOtXDef0vYyytsMoeNcCAMj/D+eovTU4X6Sz
-	 mtuL8p+y3FOqlTN3+JbXXpjxLQVUkf0gmSxkHDlgTjws0RpeyG2czgjvcV7A6DntNh
-	 BeN1k4hJ+qx9gYCgnLa9QEoJm8vVN8/XMjctksNuDs/8y4hW7zO0ZNNybn/oZbaxhA
-	 GV/eR+19Oc8pblClhQz0bPgTLPBByTTSB4oDQcsfhju3AAT0xGneFxyD6vO07o2Zue
-	 wXOCYiaDvMpDg==
+	b=FslfemM9X4CALZuVg/8lKp1NBs1TNK7rdjf8McxhLfCkB49NIzI0D4uTNLujc/KED
+	 f9jx/v1D4W2wlb2YwdThJr7FBKvsAv7KmtTHJEv3ggV6wfZIKNRj63bPzmf1YVHIaA
+	 BYJyhla4V/bXuM3pH1urGJUKI7fFl/gWvG5NR0HsBXUjSfDff0+ba/RNmOIGkNSuS/
+	 sGw6bwonCc86PMHp3hV7ioCCzb1hZPlD9Ck0G92F/y+tDUoWE43jZ4DTEIXRlOgf6N
+	 3BitlB3+ETOwdfwQURuGmyj3IdS5XKAM5giHuKJqdJ+eq9/HR24sI1o5r25A8jDVDG
+	 CSi2reuk53jDg==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1ooPet-00052M-Gf; Fri, 28 Oct 2022 15:44:27 +0200
+	id 1ooPet-00052R-M9; Fri, 28 Oct 2022 15:44:27 +0200
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>
 Cc: Andy Gross <agross@kernel.org>,
@@ -56,17 +56,18 @@ Cc: Andy Gross <agross@kernel.org>,
 	linux-arm-msm@vger.kernel.org,
 	linux-phy@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
-	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH v2 08/13] phy: qcom-qmp-usb: rename PHY ops structure
-Date: Fri, 28 Oct 2022 15:44:02 +0200
-Message-Id: <20221028134407.19300-9-johan+linaro@kernel.org>
+	Johan Hovold <johan+linaro@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Subject: [PATCH v2 10/13] dt-bindings: phy: qcom,qmp-usb: rename current bindings
+Date: Fri, 28 Oct 2022 15:44:04 +0200
+Message-Id: <20221028134407.19300-11-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.37.3
 In-Reply-To: <20221028134407.19300-1-johan+linaro@kernel.org>
 References: <20221028134407.19300-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221028_064444_063894_452F3072 
-X-CRM114-Status: GOOD (  12.12  )
+X-CRM114-CacheID: sfid-20221028_064444_102866_89BDF7C4 
+X-CRM114-Status: GOOD (  12.34  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,56 +84,65 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Rename the PHY operation structure so that it has a "phy_ops" suffix and
-move it next to the implementation.
+The current QMP USB PHY bindings are based on the original MSM8996
+binding which provided multiple PHYs per IP block and these in turn were
+described by child nodes.
 
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Later QMP USB PHY blocks only provide a single PHY and the remnant child
+node does not really reflect the hardware.
+
+The original MSM8996 binding also ended up describing the individual
+register blocks as belonging to either the wrapper node or the PHY child
+nodes.
+
+This is an unnecessary level of detail which has lead to problems when
+later IP blocks using different register layouts have been forced to fit
+the original mould rather than updating the binding. The bindings are
+arguable also incomplete as they only the describe register blocks used
+by the current Linux drivers (e.g. does not include the per lane PCS
+registers).
+
+In preparation for adding new bindings for SC8280XP which further
+bindings can be based on, rename the current bindings after MSM8996 and
+add a reference to the SC8280XP bindings.
+
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-usb.c | 16 ++++++++--------
- 1 file changed, 8 insertions(+), 8 deletions(-)
+ ...com,qmp-usb-phy.yaml => qcom,msm8996-qmp-usb3-phy.yaml} | 7 +++++--
+ 1 file changed, 5 insertions(+), 2 deletions(-)
+ rename Documentation/devicetree/bindings/phy/{qcom,qmp-usb-phy.yaml => qcom,msm8996-qmp-usb3-phy.yaml} (97%)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-index 2e603831e45e..4a7b961d2965 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-@@ -2149,6 +2149,13 @@ static int qmp_usb_set_mode(struct phy *phy, enum phy_mode mode, int submode)
- 	return 0;
- }
+diff --git a/Documentation/devicetree/bindings/phy/qcom,qmp-usb-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-usb3-phy.yaml
+similarity index 97%
+rename from Documentation/devicetree/bindings/phy/qcom,qmp-usb-phy.yaml
+rename to Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-usb3-phy.yaml
+index 7acb4b7de7f9..58ac84de8eee 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,qmp-usb-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-usb3-phy.yaml
+@@ -1,10 +1,10 @@
+ # SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+ %YAML 1.2
+ ---
+-$id: http://devicetree.org/schemas/phy/qcom,qmp-usb-phy.yaml#
++$id: http://devicetree.org/schemas/phy/qcom,msm8996-qmp-usb3-phy.yaml#
+ $schema: http://devicetree.org/meta-schemas/core.yaml#
  
-+static const struct phy_ops qmp_usb_phy_ops = {
-+	.init		= qmp_usb_enable,
-+	.exit		= qmp_usb_disable,
-+	.set_mode	= qmp_usb_set_mode,
-+	.owner		= THIS_MODULE,
-+};
+-title: Qualcomm QMP PHY controller (USB)
++title: Qualcomm QMP PHY controller (USB, MSM8996)
+ 
+ maintainers:
+   - Vinod Koul <vkoul@kernel.org>
+@@ -13,6 +13,9 @@ description:
+   QMP PHY controller supports physical layer functionality for a number of
+   controllers on Qualcomm chipsets, such as, PCIe, UFS, and USB.
+ 
++  Note that these bindings are for SoCs up to SC8180X. For newer SoCs, see
++  qcom,sc8280xp-qmp-usb3-uni-phy.yaml.
 +
- static void qmp_usb_enable_autonomous_mode(struct qmp_usb *qmp)
- {
- 	const struct qmp_phy_cfg *cfg = qmp->cfg;
-@@ -2366,13 +2373,6 @@ static int phy_pipe_clk_register(struct qmp_usb *qmp, struct device_node *np)
- 	return devm_add_action_or_reset(qmp->dev, phy_clk_release_provider, np);
- }
- 
--static const struct phy_ops qmp_usb_ops = {
--	.init		= qmp_usb_enable,
--	.exit		= qmp_usb_disable,
--	.set_mode	= qmp_usb_set_mode,
--	.owner		= THIS_MODULE,
--};
--
- static void __iomem *qmp_usb_iomap(struct device *dev, struct device_node *np,
- 					int index, bool exclusive)
- {
-@@ -2451,7 +2451,7 @@ static int qmp_usb_create(struct qmp_usb *qmp, struct device_node *np)
- 				     "failed to get pipe clock\n");
- 	}
- 
--	generic_phy = devm_phy_create(dev, np, &qmp_usb_ops);
-+	generic_phy = devm_phy_create(dev, np, &qmp_usb_phy_ops);
- 	if (IS_ERR(generic_phy)) {
- 		ret = PTR_ERR(generic_phy);
- 		dev_err(dev, "failed to create PHY: %d\n", ret);
+ properties:
+   compatible:
+     enum:
 -- 
 2.37.3
 
