@@ -4,47 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0EC2DFA3747
-	for <linux-phy@archiver.kernel.org>; Fri, 28 Oct 2022 13:37:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 17AB3FA3748
+	for <linux-phy@archiver.kernel.org>; Fri, 28 Oct 2022 13:37:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yFDC+2gYckloNrDVxTlI47Emn4eqgpsvmSH379phaBE=; b=QzNcz1KDZucN4X
-	1mcBsBTiqx5+A8WA2uKsPTL3hS2nDxNscmG7Y8fhdUakWMDWdHbqvQAmOIH2dIWJfXJCgCae7u7EJ
-	cOhJs2xL1tLcFRtIkYDWtsK+ozNzlzISm5TW2+jWW1yfzB+uTPofQc37hpN/fkaGSxs/2voGIlWtY
-	yuoZl6rIWWJI24bUi6IJGbmM8FGgA5r3UWQ8UzAQMkOMwQ/YVTQQBD9cdLO0oj8m6xTBAWfzMH97l
-	G9EGVTQUQNdmSpQKCps7RjSon0CrVmqo8N/+d0S8XxMbB+fWr+x7669OR4LeW4qfCrDkT9N4Oz+wA
-	oL1DQvrypxYGknN4U7gw==;
+	List-Owner; bh=EgleGGhUg/56AZ9WG7Yxsk2S21+jTw2W66repXPqsY8=; b=c1xA8IWyjnPFA5
+	FypnwkwQJO4f3C8Qiik9cFEfPxEy88zOryjkucHdDcWNg5BIzc4MrsWJcHKGpEnRNWuWAY/iWdQ/M
+	zg8POVBi2u2xb+CP0bh6y6h7TU/A2z/rqCtheHpG/DzsIgDL3Q2/nJx7Ye70dHg+YlHxoSb+jfXAp
+	uAJTXECgO1/1bZoyJEuiLZJg94bBvN3sYXyy5ouaw00OSGxdijhQqpE3Eh0RDvJ17BCxkPexGj/T+
+	oACtLp3KNDf4HKPW1ubQ6fFdTGIaL6jpuAhImgXby5Cxl6gz+V046hM+VGOpjFf3cYn7Ymy85shwR
+	p8qANwzSHQ9PHCLrqiVQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ooPXn-00HOCz-Dw; Fri, 28 Oct 2022 13:37:07 +0000
-Received: from sin.source.kernel.org ([145.40.73.55])
+	id 1ooPXm-00HOCF-Ex; Fri, 28 Oct 2022 13:37:06 +0000
+Received: from ams.source.kernel.org ([145.40.68.75])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ooPXg-00HO41-7p
-	for linux-phy@lists.infradead.org; Fri, 28 Oct 2022 13:37:03 +0000
+	id 1ooPXZ-00HO2O-PU
+	for linux-phy@lists.infradead.org; Fri, 28 Oct 2022 13:37:01 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by sin.source.kernel.org (Postfix) with ESMTPS id BBED7CE298C;
-	Fri, 28 Oct 2022 13:36:51 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D85E0C4347C;
-	Fri, 28 Oct 2022 13:36:48 +0000 (UTC)
+	by ams.source.kernel.org (Postfix) with ESMTPS id 42117B82A3E;
+	Fri, 28 Oct 2022 13:36:52 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id AB664C4FF40;
+	Fri, 28 Oct 2022 13:36:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1666964208;
-	bh=uzWUTR3P7np0s2tAQnIqpvhywblYRA2FHjkKtMwKV8s=;
+	s=k20201202; t=1666964210;
+	bh=1DOLRpBCXMsC1CLNbbIY7iZuk8xMt+gnpUh7sFM8oiw=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=mf3smrWUv+AOHy8u6jLzwi6jI9rz1UJagDT3Puy/+K/6OwcWTpvPhuvq7nzh6rZDY
-	 AHLCfhfPB9VzSfbQghzbTcpakOJv6teqhi7PVBEu4/8xofX/91HFx900iyi+pp+KAn
-	 CDBVX3v1m1dPBTCr3vCTQQkDfgDQkPkJR+GbrIGS4MTsV1ZQObbg/noRf9gaQUf5Y+
-	 x2g9wP6/RqwnZT9iAljKthmZbrJNcJRLaIDDevQ3jF6l2xF1q4lhEnpZZxrPQJu0te
-	 ycDTcLVvIu4aY20hrWatiJoRGALAZlG59toGT9VsGF7I4wSUTpcHJBnml8lWffC8G/
-	 KLnqqb/z7ksKg==
+	b=em9zwbCQ1hevIv2lQwrXWFMoKKsp373j5apm7QEOvXntlBlIvle89bUdeHCtM/13u
+	 l6jeGxBKRkBWeVjaRi3BgaQbJuu8Yui15QPvoA64TKgWf9yBZIvsHvZ99GcqIEAXVW
+	 fOyTureTeTtckrfW8Nzmj2s9GDgjfRs+yDFCWzYwyrItnBBE/ieXrCZq2UAZ7+/yEj
+	 OPPC/hSgFvGrKM1ym6Esh06KN5tbJepCZ6R4dERQUFyKXEn/rFBHudss/vLAGWTu+I
+	 wj6RPLnfC+dMuiq0FEVVYCeXxFt6Ug/hZl+7dZNxXKGkgCrLAH44OKCQEyAYvTjYVn
+	 Jy549K4yW3P2A==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1ooPXH-0004r3-7i; Fri, 28 Oct 2022 15:36:35 +0200
+	id 1ooPXI-0004rZ-3O; Fri, 28 Oct 2022 15:36:36 +0200
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>
 Cc: Andy Gross <agross@kernel.org>,
@@ -57,16 +57,16 @@ Cc: Andy Gross <agross@kernel.org>,
 	linux-phy@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH v4 05/16] phy: qcom-qmp-pcie: clean up probe initialisation
-Date: Fri, 28 Oct 2022 15:35:52 +0200
-Message-Id: <20221028133603.18470-6-johan+linaro@kernel.org>
+Subject: [PATCH v4 15/16] phy: qcom-qmp-pcie: add support for sc8280xp
+Date: Fri, 28 Oct 2022 15:36:02 +0200
+Message-Id: <20221028133603.18470-16-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.37.3
 In-Reply-To: <20221028133603.18470-1-johan+linaro@kernel.org>
 References: <20221028133603.18470-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221028_063700_670007_06B77395 
-X-CRM114-Status: GOOD (  15.99  )
+X-CRM114-CacheID: sfid-20221028_063654_259583_D651BC06 
+X-CRM114-Status: GOOD (  20.66  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,137 +83,421 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Stop abusing the driver data pointer and instead pass the driver state
-structure directly to the initialisation helpers during probe.
+Add support for the single and dual-lane PHYs found on SC8280XP.
 
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Note that the SC8280XP binding does not try to describe every register
+subregion and instead the driver holds the corresponding offsets.
+
 Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 49 +++++++++++-------------
- 1 file changed, 23 insertions(+), 26 deletions(-)
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c      | 299 +++++++++++++++++-
+ .../phy/qualcomm/phy-qcom-qmp-pcs-pcie-v5.h   |   2 +
+ 2 files changed, 291 insertions(+), 10 deletions(-)
 
 diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-index bc96518ad6b0..e30cbc94cbf6 100644
+index 758457943f2b..2ba57b230342 100644
 --- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
 +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-@@ -2037,9 +2037,10 @@ static int qmp_pcie_set_mode(struct phy *phy, enum phy_mode mode, int submode)
- 	return 0;
- }
- 
--static int qmp_pcie_vreg_init(struct device *dev, const struct qmp_phy_cfg *cfg)
-+static int qmp_pcie_vreg_init(struct qmp_pcie *qmp)
- {
--	struct qmp_pcie *qmp = dev_get_drvdata(dev);
-+	const struct qmp_phy_cfg *cfg = qmp->cfg;
-+	struct device *dev = qmp->dev;
- 	int num = cfg->num_vregs;
- 	int i;
- 
-@@ -2053,9 +2054,10 @@ static int qmp_pcie_vreg_init(struct device *dev, const struct qmp_phy_cfg *cfg)
- 	return devm_regulator_bulk_get(dev, num, qmp->vregs);
- }
- 
--static int qmp_pcie_reset_init(struct device *dev, const struct qmp_phy_cfg *cfg)
-+static int qmp_pcie_reset_init(struct qmp_pcie *qmp)
- {
--	struct qmp_pcie *qmp = dev_get_drvdata(dev);
-+	const struct qmp_phy_cfg *cfg = qmp->cfg;
-+	struct device *dev = qmp->dev;
- 	int i;
- 	int ret;
- 
-@@ -2074,9 +2076,10 @@ static int qmp_pcie_reset_init(struct device *dev, const struct qmp_phy_cfg *cfg
- 	return 0;
- }
- 
--static int qmp_pcie_clk_init(struct device *dev, const struct qmp_phy_cfg *cfg)
-+static int qmp_pcie_clk_init(struct qmp_pcie *qmp)
- {
--	struct qmp_pcie *qmp = dev_get_drvdata(dev);
-+	const struct qmp_phy_cfg *cfg = qmp->cfg;
-+	struct device *dev = qmp->dev;
- 	int num = cfg->num_clks;
- 	int i;
- 
-@@ -2164,18 +2167,15 @@ static const struct phy_ops qmp_pcie_ops = {
- 	.owner		= THIS_MODULE,
+@@ -834,6 +834,143 @@ static const struct qmp_phy_init_tbl sc8180x_qmp_pcie_pcs_misc_tbl[] = {
+ 	QMP_PHY_INIT_CFG(QPHY_V4_PCS_PCIE_ENDPOINT_REFCLK_DRIVE, 0xc1),
  };
  
--static int qmp_pcie_create(struct device *dev, struct device_node *np,
--			void __iomem *serdes, const struct qmp_phy_cfg *cfg)
-+static int qmp_pcie_create(struct qmp_pcie *qmp, struct device_node *np)
- {
--	struct qmp_pcie *qmp = dev_get_drvdata(dev);
-+	const struct qmp_phy_cfg *cfg = qmp->cfg;
-+	struct device *dev = qmp->dev;
- 	struct phy *generic_phy;
- 	int ret;
++static const struct qmp_phy_init_tbl sc8280xp_qmp_pcie_serdes_tbl[] = {
++	QMP_PHY_INIT_CFG(QSERDES_V5_COM_SSC_EN_CENTER, 0x00),
++	QMP_PHY_INIT_CFG(QSERDES_V5_COM_SSC_PER1, 0x31),
++	QMP_PHY_INIT_CFG(QSERDES_V5_COM_SSC_PER2, 0x01),
++	QMP_PHY_INIT_CFG(QSERDES_V5_COM_SSC_STEP_SIZE1_MODE0, 0xde),
++	QMP_PHY_INIT_CFG(QSERDES_V5_COM_SSC_STEP_SIZE2_MODE0, 0x07),
++	QMP_PHY_INIT_CFG(QSERDES_V5_COM_SSC_STEP_SIZE1_MODE1, 0x4c),
++	QMP_PHY_INIT_CFG(QSERDES_V5_COM_SSC_STEP_SIZE2_MODE1, 0x06),
++	QMP_PHY_INIT_CFG(QSERDES_V5_COM_CLK_ENABLE1, 0x90),
++	QMP_PHY_INIT_CFG(QSERDES_V5_COM_PLL_IVCO, 0x0f),
++	QMP_PHY_INIT_CFG(QSERDES_V5_COM_CP_CTRL_MODE0, 0x06),
++	QMP_PHY_INIT_CFG(QSERDES_V5_COM_CP_CTRL_MODE1, 0x06),
++	QMP_PHY_INIT_CFG(QSERDES_V5_COM_PLL_RCTRL_MODE0, 0x16),
++	QMP_PHY_INIT_CFG(QSERDES_V5_COM_PLL_RCTRL_MODE1, 0x16),
++	QMP_PHY_INIT_CFG(QSERDES_V5_COM_PLL_CCTRL_MODE0, 0x36),
++	QMP_PHY_INIT_CFG(QSERDES_V5_COM_PLL_CCTRL_MODE1, 0x36),
++	QMP_PHY_INIT_CFG(QSERDES_V5_COM_SYSCLK_EN_SEL, 0x08),
++	QMP_PHY_INIT_CFG(QSERDES_V5_COM_LOCK_CMP_EN, 0x42),
++	QMP_PHY_INIT_CFG(QSERDES_V5_COM_LOCK_CMP1_MODE0, 0x0a),
++	QMP_PHY_INIT_CFG(QSERDES_V5_COM_LOCK_CMP2_MODE0, 0x1a),
++	QMP_PHY_INIT_CFG(QSERDES_V5_COM_LOCK_CMP1_MODE1, 0x14),
++	QMP_PHY_INIT_CFG(QSERDES_V5_COM_LOCK_CMP2_MODE1, 0x34),
++	QMP_PHY_INIT_CFG(QSERDES_V5_COM_DEC_START_MODE0, 0x82),
++	QMP_PHY_INIT_CFG(QSERDES_V5_COM_DEC_START_MODE1, 0x68),
++	QMP_PHY_INIT_CFG(QSERDES_V5_COM_DIV_FRAC_START1_MODE0, 0x55),
++	QMP_PHY_INIT_CFG(QSERDES_V5_COM_DIV_FRAC_START2_MODE0, 0x55),
++	QMP_PHY_INIT_CFG(QSERDES_V5_COM_DIV_FRAC_START3_MODE0, 0x03),
++	QMP_PHY_INIT_CFG(QSERDES_V5_COM_DIV_FRAC_START1_MODE1, 0xab),
++	QMP_PHY_INIT_CFG(QSERDES_V5_COM_DIV_FRAC_START2_MODE1, 0xaa),
++	QMP_PHY_INIT_CFG(QSERDES_V5_COM_DIV_FRAC_START3_MODE1, 0x02),
++	QMP_PHY_INIT_CFG(QSERDES_V5_COM_VCO_TUNE_MAP, 0x02),
++	QMP_PHY_INIT_CFG(QSERDES_V5_COM_VCO_TUNE1_MODE0, 0x24),
++	QMP_PHY_INIT_CFG(QSERDES_V5_COM_VCO_TUNE1_MODE1, 0xb4),
++	QMP_PHY_INIT_CFG(QSERDES_V5_COM_VCO_TUNE2_MODE1, 0x03),
++	QMP_PHY_INIT_CFG(QSERDES_V5_COM_CLK_SELECT, 0x34),
++	QMP_PHY_INIT_CFG(QSERDES_V5_COM_HSCLK_SEL, 0x01),
++	QMP_PHY_INIT_CFG(QSERDES_V5_COM_CORECLK_DIV_MODE1, 0x08),
++	QMP_PHY_INIT_CFG(QSERDES_V5_COM_BIN_VCOCAL_CMP_CODE1_MODE0, 0xb9),
++	QMP_PHY_INIT_CFG(QSERDES_V5_COM_BIN_VCOCAL_CMP_CODE2_MODE0, 0x1e),
++	QMP_PHY_INIT_CFG(QSERDES_V5_COM_BIN_VCOCAL_CMP_CODE1_MODE1, 0x94),
++	QMP_PHY_INIT_CFG(QSERDES_V5_COM_BIN_VCOCAL_CMP_CODE2_MODE1, 0x18),
++	QMP_PHY_INIT_CFG(QSERDES_V5_COM_BIN_VCOCAL_HSCLK_SEL, 0x11),
++};
++
++static const struct qmp_phy_init_tbl sc8280xp_qmp_gen3x1_pcie_rc_serdes_tbl[] = {
++	QMP_PHY_INIT_CFG(QSERDES_V5_COM_SYSCLK_BUF_ENABLE, 0x07),
++};
++
++static const struct qmp_phy_init_tbl sc8280xp_qmp_gen3x2_pcie_rc_serdes_tbl[] = {
++	QMP_PHY_INIT_CFG(QSERDES_V5_COM_BIAS_EN_CLKBUFLR_EN, 0x14),
++};
++
++static const struct qmp_phy_init_tbl sc8280xp_qmp_gen3x1_pcie_tx_tbl[] = {
++	QMP_PHY_INIT_CFG(QSERDES_V5_TX_PI_QEC_CTRL, 0x20),
++	QMP_PHY_INIT_CFG(QSERDES_V5_TX_LANE_MODE_1, 0x75),
++	QMP_PHY_INIT_CFG(QSERDES_V5_TX_LANE_MODE_4, 0x3f),
++	QMP_PHY_INIT_CFG(QSERDES_V5_TX_RES_CODE_LANE_OFFSET_TX, 0x1d),
++	QMP_PHY_INIT_CFG(QSERDES_V5_TX_RES_CODE_LANE_OFFSET_RX, 0x0c),
++};
++
++static const struct qmp_phy_init_tbl sc8280xp_qmp_gen3x1_pcie_rx_tbl[] = {
++	QMP_PHY_INIT_CFG(QSERDES_V5_RX_RX_MODE_00_LOW, 0x7f),
++	QMP_PHY_INIT_CFG(QSERDES_V5_RX_RX_MODE_00_HIGH, 0xff),
++	QMP_PHY_INIT_CFG(QSERDES_V5_RX_RX_MODE_00_HIGH2, 0xbf),
++	QMP_PHY_INIT_CFG(QSERDES_V5_RX_RX_MODE_00_HIGH3, 0x3f),
++	QMP_PHY_INIT_CFG(QSERDES_V5_RX_RX_MODE_00_HIGH4, 0xd8),
++	QMP_PHY_INIT_CFG(QSERDES_V5_RX_RX_MODE_01_LOW, 0xdc),
++	QMP_PHY_INIT_CFG(QSERDES_V5_RX_RX_MODE_01_HIGH, 0xdc),
++	QMP_PHY_INIT_CFG(QSERDES_V5_RX_RX_MODE_01_HIGH2, 0x5c),
++	QMP_PHY_INIT_CFG(QSERDES_V5_RX_RX_MODE_01_HIGH3, 0x34),
++	QMP_PHY_INIT_CFG(QSERDES_V5_RX_RX_MODE_01_HIGH4, 0xa6),
++	QMP_PHY_INIT_CFG(QSERDES_V5_RX_TX_ADAPT_POST_THRESH, 0xf0),
++	QMP_PHY_INIT_CFG(QSERDES_V5_RX_RX_MODE_10_HIGH3, 0x34),
++	QMP_PHY_INIT_CFG(QSERDES_V5_RX_VGA_CAL_CNTRL2, 0x07),
++	QMP_PHY_INIT_CFG(QSERDES_V5_RX_GM_CAL, 0x00),
++	QMP_PHY_INIT_CFG(QSERDES_V5_RX_UCDR_SB2_THRESH1, 0x08),
++	QMP_PHY_INIT_CFG(QSERDES_V5_RX_UCDR_SB2_THRESH2, 0x08),
++	QMP_PHY_INIT_CFG(QSERDES_V5_RX_UCDR_PI_CONTROLS, 0xf0),
++	QMP_PHY_INIT_CFG(QSERDES_V5_RX_DFE_CTLE_POST_CAL_OFFSET, 0x38),
++};
++
++static const struct qmp_phy_init_tbl sc8280xp_qmp_gen3x1_pcie_pcs_tbl[] = {
++	QMP_PHY_INIT_CFG(QPHY_V5_PCS_REFGEN_REQ_CONFIG1, 0x05),
++	QMP_PHY_INIT_CFG(QPHY_V5_PCS_RX_SIGDET_LVL, 0x77),
++	QMP_PHY_INIT_CFG(QPHY_V5_PCS_RATE_SLEW_CNTRL1, 0x0b),
++};
++
++static const struct qmp_phy_init_tbl sc8280xp_qmp_gen3x1_pcie_pcs_misc_tbl[] = {
++	QMP_PHY_INIT_CFG(QPHY_V5_PCS_PCIE_OSC_DTCT_ACTIONS, 0x00),
++	QMP_PHY_INIT_CFG(QPHY_V5_PCS_PCIE_INT_AUX_CLK_CONFIG1, 0x00),
++	QMP_PHY_INIT_CFG(QPHY_V5_PCS_PCIE_EQ_CONFIG2, 0x0f),
++	QMP_PHY_INIT_CFG(QPHY_V5_PCS_PCIE_ENDPOINT_REFCLK_DRIVE, 0xc1),
++};
++
++static const struct qmp_phy_init_tbl sc8280xp_qmp_gen3x2_pcie_tx_tbl[] = {
++	QMP_PHY_INIT_CFG_LANE(QSERDES_V5_TX_PI_QEC_CTRL, 0x02, 1),
++	QMP_PHY_INIT_CFG_LANE(QSERDES_V5_TX_PI_QEC_CTRL, 0x04, 2),
++	QMP_PHY_INIT_CFG(QSERDES_V5_TX_LANE_MODE_1, 0xd5),
++	QMP_PHY_INIT_CFG(QSERDES_V5_TX_LANE_MODE_4, 0x3f),
++	QMP_PHY_INIT_CFG(QSERDES_V5_TX_RES_CODE_LANE_OFFSET_TX, 0x11),
++	QMP_PHY_INIT_CFG(QSERDES_V5_TX_RES_CODE_LANE_OFFSET_RX, 0x0c),
++};
++
++static const struct qmp_phy_init_tbl sc8280xp_qmp_gen3x2_pcie_rx_tbl[] = {
++	QMP_PHY_INIT_CFG(QSERDES_V5_RX_RX_MODE_00_LOW, 0x7f),
++	QMP_PHY_INIT_CFG(QSERDES_V5_RX_RX_MODE_00_HIGH, 0xff),
++	QMP_PHY_INIT_CFG(QSERDES_V5_RX_RX_MODE_00_HIGH2, 0x7f),
++	QMP_PHY_INIT_CFG(QSERDES_V5_RX_RX_MODE_00_HIGH3, 0x34),
++	QMP_PHY_INIT_CFG(QSERDES_V5_RX_RX_MODE_00_HIGH4, 0xd8),
++	QMP_PHY_INIT_CFG(QSERDES_V5_RX_RX_MODE_01_LOW, 0xdc),
++	QMP_PHY_INIT_CFG(QSERDES_V5_RX_RX_MODE_01_HIGH, 0xdc),
++	QMP_PHY_INIT_CFG(QSERDES_V5_RX_RX_MODE_01_HIGH2, 0x5c),
++	QMP_PHY_INIT_CFG(QSERDES_V5_RX_RX_MODE_01_HIGH3, 0x34),
++	QMP_PHY_INIT_CFG(QSERDES_V5_RX_RX_MODE_01_HIGH4, 0xa6),
++	QMP_PHY_INIT_CFG(QSERDES_V5_RX_RX_MODE_10_HIGH3, 0x34),
++	QMP_PHY_INIT_CFG(QSERDES_V5_RX_VGA_CAL_CNTRL2, 0x0f),
++	QMP_PHY_INIT_CFG(QSERDES_V5_RX_GM_CAL, 0x00),
++	QMP_PHY_INIT_CFG(QSERDES_V5_RX_UCDR_SB2_THRESH1, 0x08),
++	QMP_PHY_INIT_CFG(QSERDES_V5_RX_UCDR_SB2_THRESH2, 0x08),
++	QMP_PHY_INIT_CFG(QSERDES_V5_RX_UCDR_PI_CONTROLS, 0xf0),
++	QMP_PHY_INIT_CFG(QSERDES_V5_RX_DFE_CTLE_POST_CAL_OFFSET, 0x38),
++};
++
++static const struct qmp_phy_init_tbl sc8280xp_qmp_gen3x2_pcie_pcs_tbl[] = {
++	QMP_PHY_INIT_CFG(QPHY_V5_PCS_REFGEN_REQ_CONFIG1, 0x05),
++	QMP_PHY_INIT_CFG(QPHY_V5_PCS_RX_SIGDET_LVL, 0x88),
++	QMP_PHY_INIT_CFG(QPHY_V5_PCS_RATE_SLEW_CNTRL1, 0x0b),
++	QMP_PHY_INIT_CFG(QPHY_V5_PCS_EQ_CONFIG3, 0x0f),
++};
++
++static const struct qmp_phy_init_tbl sc8280xp_qmp_gen3x2_pcie_pcs_misc_tbl[] = {
++	QMP_PHY_INIT_CFG(QPHY_V5_PCS_PCIE_POWER_STATE_CONFIG2, 0x1d),
++	QMP_PHY_INIT_CFG(QPHY_V5_PCS_PCIE_POWER_STATE_CONFIG4, 0x07),
++	QMP_PHY_INIT_CFG(QPHY_V5_PCS_PCIE_ENDPOINT_REFCLK_DRIVE, 0xc1),
++	QMP_PHY_INIT_CFG(QPHY_V5_PCS_PCIE_OSC_DTCT_ACTIONS, 0x00),
++};
++
+ static const struct qmp_phy_init_tbl sm8250_qmp_pcie_serdes_tbl[] = {
+ 	QMP_PHY_INIT_CFG(QSERDES_V4_COM_SYSCLK_EN_SEL, 0x08),
+ 	QMP_PHY_INIT_CFG(QSERDES_V4_COM_CLK_SELECT, 0x34),
+@@ -1313,6 +1450,16 @@ static const struct qmp_phy_init_tbl sm8450_qmp_gen4x2_pcie_ep_pcs_misc_tbl[] =
+ 	QMP_PHY_INIT_CFG(QPHY_V5_20_PCS_PCIE_OSC_DTCT_MODE2_CONFIG5, 0x08),
+ };
  
- 	qmp->mode = PHY_MODE_PCIE_RC;
++struct qmp_pcie_offsets {
++	u16 serdes;
++	u16 pcs;
++	u16 pcs_misc;
++	u16 tx;
++	u16 rx;
++	u16 tx2;
++	u16 rx2;
++};
++
+ struct qmp_phy_cfg_tables {
+ 	const struct qmp_phy_init_tbl *serdes;
+ 	int serdes_num;
+@@ -1330,6 +1477,8 @@ struct qmp_phy_cfg_tables {
+ struct qmp_phy_cfg {
+ 	int lanes;
  
--	qmp->cfg = cfg;
--	qmp->serdes = serdes;
--
++	const struct qmp_pcie_offsets *offsets;
++
+ 	/* Main init sequence for PHY blocks - serdes, tx, rx, pcs */
+ 	const struct qmp_phy_cfg_tables tables;
  	/*
- 	 * Get memory resources for the PHY:
- 	 * Resources are indexed as: tx -> 0; rx -> 1; pcs -> 2.
-@@ -2247,8 +2247,6 @@ static int qmp_pcie_probe(struct platform_device *pdev)
+@@ -1422,6 +1571,9 @@ static const char * const msm8996_phy_clk_l[] = {
+ 	"aux", "cfg_ahb", "ref",
+ };
+ 
++static const char * const sc8280xp_pciephy_clk_l[] = {
++	"aux", "cfg_ahb", "ref", "rchng",
++};
+ 
+ static const char * const sdm845_pciephy_clk_l[] = {
+ 	"aux", "cfg_ahb", "ref", "refgen",
+@@ -1441,6 +1593,16 @@ static const char * const sdm845_pciephy_reset_l[] = {
+ 	"phy",
+ };
+ 
++static const struct qmp_pcie_offsets qmp_pcie_offsets_v5 = {
++	.serdes		= 0,
++	.pcs		= 0x0200,
++	.pcs_misc	= 0x0600,
++	.tx		= 0x0e00,
++	.rx		= 0x1000,
++	.tx2		= 0x1600,
++	.rx2		= 0x1800,
++};
++
+ static const struct qmp_phy_cfg ipq8074_pciephy_cfg = {
+ 	.lanes			= 1,
+ 
+@@ -1700,6 +1862,76 @@ static const struct qmp_phy_cfg sc8180x_pciephy_cfg = {
+ 	.phy_status		= PHYSTATUS,
+ };
+ 
++static const struct qmp_phy_cfg sc8280xp_qmp_gen3x1_pciephy_cfg = {
++	.lanes			= 1,
++
++	.offsets		= &qmp_pcie_offsets_v5,
++
++	.tables = {
++		.serdes		= sc8280xp_qmp_pcie_serdes_tbl,
++		.serdes_num	= ARRAY_SIZE(sc8280xp_qmp_pcie_serdes_tbl),
++		.tx		= sc8280xp_qmp_gen3x1_pcie_tx_tbl,
++		.tx_num		= ARRAY_SIZE(sc8280xp_qmp_gen3x1_pcie_tx_tbl),
++		.rx		= sc8280xp_qmp_gen3x1_pcie_rx_tbl,
++		.rx_num		= ARRAY_SIZE(sc8280xp_qmp_gen3x1_pcie_rx_tbl),
++		.pcs		= sc8280xp_qmp_gen3x1_pcie_pcs_tbl,
++		.pcs_num	= ARRAY_SIZE(sc8280xp_qmp_gen3x1_pcie_pcs_tbl),
++		.pcs_misc	= sc8280xp_qmp_gen3x1_pcie_pcs_misc_tbl,
++		.pcs_misc_num	= ARRAY_SIZE(sc8280xp_qmp_gen3x1_pcie_pcs_misc_tbl),
++	},
++
++	.tables_rc = &(const struct qmp_phy_cfg_tables) {
++		.serdes		= sc8280xp_qmp_gen3x1_pcie_rc_serdes_tbl,
++		.serdes_num	= ARRAY_SIZE(sc8280xp_qmp_gen3x1_pcie_rc_serdes_tbl),
++	},
++
++	.clk_list		= sc8280xp_pciephy_clk_l,
++	.num_clks		= ARRAY_SIZE(sc8280xp_pciephy_clk_l),
++	.reset_list		= sdm845_pciephy_reset_l,
++	.num_resets		= ARRAY_SIZE(sdm845_pciephy_reset_l),
++	.vreg_list		= qmp_phy_vreg_l,
++	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
++	.regs			= sm8250_pcie_regs_layout,
++
++	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
++	.phy_status		= PHYSTATUS,
++};
++
++static const struct qmp_phy_cfg sc8280xp_qmp_gen3x2_pciephy_cfg = {
++	.lanes			= 2,
++
++	.offsets		= &qmp_pcie_offsets_v5,
++
++	.tables = {
++		.serdes		= sc8280xp_qmp_pcie_serdes_tbl,
++		.serdes_num	= ARRAY_SIZE(sc8280xp_qmp_pcie_serdes_tbl),
++		.tx		= sc8280xp_qmp_gen3x2_pcie_tx_tbl,
++		.tx_num		= ARRAY_SIZE(sc8280xp_qmp_gen3x2_pcie_tx_tbl),
++		.rx		= sc8280xp_qmp_gen3x2_pcie_rx_tbl,
++		.rx_num		= ARRAY_SIZE(sc8280xp_qmp_gen3x2_pcie_rx_tbl),
++		.pcs		= sc8280xp_qmp_gen3x2_pcie_pcs_tbl,
++		.pcs_num	= ARRAY_SIZE(sc8280xp_qmp_gen3x2_pcie_pcs_tbl),
++		.pcs_misc	= sc8280xp_qmp_gen3x2_pcie_pcs_misc_tbl,
++		.pcs_misc_num	= ARRAY_SIZE(sc8280xp_qmp_gen3x2_pcie_pcs_misc_tbl),
++	},
++
++	.tables_rc = &(const struct qmp_phy_cfg_tables) {
++		.serdes		= sc8280xp_qmp_gen3x2_pcie_rc_serdes_tbl,
++		.serdes_num	= ARRAY_SIZE(sc8280xp_qmp_gen3x2_pcie_rc_serdes_tbl),
++	},
++
++	.clk_list		= sc8280xp_pciephy_clk_l,
++	.num_clks		= ARRAY_SIZE(sc8280xp_pciephy_clk_l),
++	.reset_list		= sdm845_pciephy_reset_l,
++	.num_resets		= ARRAY_SIZE(sdm845_pciephy_reset_l),
++	.vreg_list		= qmp_phy_vreg_l,
++	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
++	.regs			= sm8250_pcie_regs_layout,
++
++	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
++	.phy_status		= PHYSTATUS,
++};
++
+ static const struct qmp_phy_cfg sdx55_qmp_pciephy_cfg = {
+ 	.lanes			= 2,
+ 
+@@ -2220,11 +2452,49 @@ static int qmp_pcie_parse_dt_legacy(struct qmp_pcie *qmp, struct device_node *np
+ 	return 0;
+ }
+ 
++static int qmp_pcie_parse_dt(struct qmp_pcie *qmp)
++{
++	struct platform_device *pdev = to_platform_device(qmp->dev);
++	const struct qmp_phy_cfg *cfg = qmp->cfg;
++	const struct qmp_pcie_offsets *offs = cfg->offsets;
++	struct device *dev = qmp->dev;
++	void __iomem *base;
++	int ret;
++
++	if (!offs)
++		return -EINVAL;
++
++	base = devm_platform_ioremap_resource(pdev, 0);
++	if (IS_ERR(base))
++		return PTR_ERR(base);
++
++	qmp->serdes = base + offs->serdes;
++	qmp->pcs = base + offs->pcs;
++	qmp->pcs_misc = base + offs->pcs_misc;
++	qmp->tx = base + offs->tx;
++	qmp->rx = base + offs->rx;
++
++	if (cfg->lanes >= 2) {
++		qmp->tx2 = base + offs->tx2;
++		qmp->rx2 = base + offs->rx2;
++	}
++
++	qmp->num_pipe_clks = 2;
++	qmp->pipe_clks[0].id = "pipe";
++	qmp->pipe_clks[1].id = "pipediv2";
++
++	ret = devm_clk_bulk_get(dev, qmp->num_pipe_clks, qmp->pipe_clks);
++	if (ret)
++		return ret;
++
++	return 0;
++}
++
+ static int qmp_pcie_probe(struct platform_device *pdev)
+ {
  	struct device *dev = &pdev->dev;
- 	struct device_node *child;
+-	struct device_node *child;
  	struct phy_provider *phy_provider;
--	void __iomem *serdes;
--	const struct qmp_phy_cfg *cfg = NULL;
++	struct device_node *np;
  	struct qmp_pcie *qmp;
  	int ret;
  
-@@ -2257,28 +2255,27 @@ static int qmp_pcie_probe(struct platform_device *pdev)
- 		return -ENOMEM;
- 
- 	qmp->dev = dev;
--	dev_set_drvdata(dev, qmp);
- 
--	cfg = of_device_get_match_data(dev);
--	if (!cfg)
-+	qmp->cfg = of_device_get_match_data(dev);
-+	if (!qmp->cfg)
- 		return -EINVAL;
- 
--	WARN_ON_ONCE(!cfg->pwrdn_ctrl);
--	WARN_ON_ONCE(!cfg->phy_status);
-+	WARN_ON_ONCE(!qmp->cfg->pwrdn_ctrl);
-+	WARN_ON_ONCE(!qmp->cfg->phy_status);
- 
--	serdes = devm_platform_ioremap_resource(pdev, 0);
--	if (IS_ERR(serdes))
--		return PTR_ERR(serdes);
-+	qmp->serdes = devm_platform_ioremap_resource(pdev, 0);
-+	if (IS_ERR(qmp->serdes))
-+		return PTR_ERR(qmp->serdes);
- 
--	ret = qmp_pcie_clk_init(dev, cfg);
-+	ret = qmp_pcie_clk_init(qmp);
+@@ -2253,21 +2523,24 @@ static int qmp_pcie_probe(struct platform_device *pdev)
  	if (ret)
  		return ret;
  
--	ret = qmp_pcie_reset_init(dev, cfg);
-+	ret = qmp_pcie_reset_init(qmp);
- 	if (ret)
- 		return ret;
- 
--	ret = qmp_pcie_vreg_init(dev, cfg);
-+	ret = qmp_pcie_vreg_init(qmp);
- 	if (ret)
- 		return ret;
- 
-@@ -2286,7 +2283,7 @@ static int qmp_pcie_probe(struct platform_device *pdev)
- 	if (!child)
- 		return -EINVAL;
- 
--	ret = qmp_pcie_create(dev, child, serdes, cfg);
-+	ret = qmp_pcie_create(qmp, child);
+-	child = of_get_next_available_child(dev->of_node, NULL);
+-	if (!child)
+-		return -EINVAL;
+-
+-	ret = qmp_pcie_parse_dt_legacy(qmp, child);
++	/* Check for legacy binding with child node. */
++	np = of_get_next_available_child(dev->of_node, NULL);
++	if (np) {
++		ret = qmp_pcie_parse_dt_legacy(qmp, np);
++	} else {
++		np = of_node_get(dev->of_node);
++		ret = qmp_pcie_parse_dt(qmp);
++	}
  	if (ret)
  		goto err_node_put;
  
+-	ret = phy_pipe_clk_register(qmp, child);
++	ret = phy_pipe_clk_register(qmp, np);
+ 	if (ret)
+ 		goto err_node_put;
+ 
+ 	qmp->mode = PHY_MODE_PCIE_RC;
+ 
+-	qmp->phy = devm_phy_create(dev, child, &qmp_pcie_phy_ops);
++	qmp->phy = devm_phy_create(dev, np, &qmp_pcie_phy_ops);
+ 	if (IS_ERR(qmp->phy)) {
+ 		ret = PTR_ERR(qmp->phy);
+ 		dev_err(dev, "failed to create PHY: %d\n", ret);
+@@ -2276,14 +2549,14 @@ static int qmp_pcie_probe(struct platform_device *pdev)
+ 
+ 	phy_set_drvdata(qmp->phy, qmp);
+ 
+-	of_node_put(child);
++	of_node_put(np);
+ 
+ 	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
+ 
+ 	return PTR_ERR_OR_ZERO(phy_provider);
+ 
+ err_node_put:
+-	of_node_put(child);
++	of_node_put(np);
+ 	return ret;
+ }
+ 
+@@ -2303,6 +2576,12 @@ static const struct of_device_id qmp_pcie_of_match_table[] = {
+ 	}, {
+ 		.compatible = "qcom,sc8180x-qmp-pcie-phy",
+ 		.data = &sc8180x_pciephy_cfg,
++	}, {
++		.compatible = "qcom,sc8280xp-qmp-gen3x1-pcie-phy",
++		.data = &sc8280xp_qmp_gen3x1_pciephy_cfg,
++	}, {
++		.compatible = "qcom,sc8280xp-qmp-gen3x2-pcie-phy",
++		.data = &sc8280xp_qmp_gen3x2_pciephy_cfg,
+ 	}, {
+ 		.compatible = "qcom,sdm845-qhp-pcie-phy",
+ 		.data = &sdm845_qhp_pciephy_cfg,
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v5.h b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v5.h
+index 2e19fb3f051e..a469ae2a10a1 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v5.h
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v5.h
+@@ -8,6 +8,8 @@
+ #define QCOM_PHY_QMP_PCS_PCIE_V5_H_
+ 
+ /* Only for QMP V5 PHY - PCS_PCIE registers */
++#define QPHY_V5_PCS_PCIE_POWER_STATE_CONFIG2		0x0c
++#define QPHY_V5_PCS_PCIE_POWER_STATE_CONFIG4		0x14
+ #define QPHY_V5_PCS_PCIE_ENDPOINT_REFCLK_DRIVE		0x20
+ #define QPHY_V5_PCS_PCIE_INT_AUX_CLK_CONFIG1		0x54
+ #define QPHY_V5_PCS_PCIE_OSC_DTCT_ACTIONS		0x94
 -- 
 2.37.3
 
