@@ -4,70 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B4C48C38A02
-	for <linux-phy@archiver.kernel.org>; Fri, 28 Oct 2022 13:08:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3671AECAAA1
+	for <linux-phy@archiver.kernel.org>; Fri, 28 Oct 2022 13:36:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2eMTdggwksRSu3SkTPM5OcQiTAeHFOG5H3ujOx9dyHE=; b=gdmb5ad4kQbsjD
-	2U0ql9deLltyM0zU3vNuDAjIhLSQE1mHUcQAxS6Yzfp94RKrdFFbDKByy+CItWZ/RlTze0EKa+VxO
-	KrCK8B7kgTzxE8igFLXFCoWEj+2lQZv9iTQxrTdgCW6tDEQ0hRhU5OsGjxeYGAVcG3dZxzlaAqmNH
-	dtrJb05+rBAbXaPmiUt5056ffWBpees6eY27hrdHKYVh9fNcsMIn8oEaNDlIGWE1L4dLDJu730GaR
-	Cr37UPiYIGO0iI89hGEoNtMf+hC3GIa5lhk/04kEb2OP/KpM6oJxuBc6zI/g7C6s5OXHvLBMfaCVO
-	R/fglQk60JRAObPavEbw==;
+	List-Owner; bh=zlUNg6zfoIQ7edGA+0Qcu/6ahFrteC5mWlB9XjfWA1s=; b=hTz8owpVZqTn1/
+	3JXtNPhepIz6N0PJN/QNSXQiTt0DTdueNotG6ED6UC4x3yWWT48DcmCg0gNKGs274Gic11VMg3g0v
+	aqwFJecpk8NcAqJe8yPyaxPwjyQwYxgQzB+YXXn49g5qeYXfjnJ3Kni1PntwH/+agEcHUhGCyYqc8
+	Vnkw+bbr3uAFY/7Yl/acLBKBSZY+wnSd2hbyxhM6TvZ0Fgcv7+HAfKckO9lpPe9Ctibr67aw6rr3Y
+	YY4QQ/pG8nqsEUGxg/JjuiO+zDLvDA96zCfterp7kwZ0oCx4CLFBqhSs4b6f9afdSnLHTrXOHE2uB
+	2/m9kZoq9/t+scvuOXqw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ooP68-00HFDl-4H; Fri, 28 Oct 2022 13:08:32 +0000
-Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
+	id 1ooPXZ-00HO36-Jy; Fri, 28 Oct 2022 13:36:53 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ooP64-00HFBt-Vc
-	for linux-phy@lists.infradead.org; Fri, 28 Oct 2022 13:08:30 +0000
+	id 1ooPXW-00HNzF-Jn
+	for linux-phy@lists.infradead.org; Fri, 28 Oct 2022 13:36:52 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id 9EAA6B82A04;
-	Fri, 28 Oct 2022 13:08:27 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8CF53C433D6;
-	Fri, 28 Oct 2022 13:08:25 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 777FC62870;
+	Fri, 28 Oct 2022 13:36:49 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id D2B11C433C1;
+	Fri, 28 Oct 2022 13:36:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1666962506;
-	bh=ECi5ZL9/CovQrvlXRqJIBv8wWvMwdtva2tmSf8ayGz8=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=YHCV8/xrqJ4VydITOXS6s0km2idgLo5DtBEjthmVLki9+Blqo7INGNTqczdDJm2sT
-	 mK767JbQIE7BlOVsk0Z5DZ8H/HLzqQMMVT9rO+aynsEWPr5PmN6r7WDQtFPPKbpq0x
-	 lTlTZbQoS9DQ3OSYADBVZ8xT2iyWjj2esS1qSG9KqC0sEUrXlJ5/xyyYZHoLlO+vkg
-	 jfqPyEPZO6BBpZAqrOXB4zmKiSar/7WatDoceZJVlQ6UWFAQ35vZhijJQyeLjy82Fl
-	 S8T0WP/bRw9VxtHA/k+Dshomv9ornM7Dbz6ThoDAJwMuTVNNwbU3yaS+DKybALYX0w
-	 xOYxbceKs4/iw==
-Date: Fri, 28 Oct 2022 18:38:22 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Johan Hovold <johan@kernel.org>
-Cc: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
-	Johan Hovold <johan+linaro@kernel.org>,
-	Andy Gross <agross@kernel.org>,
+	s=k20201202; t=1666964208;
+	bh=kHWHx6aJI0QiHRqoX6LC3zrlO/UEm3YyvB3PCvEOuoI=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=TiaWdPFE0mD+v9D+PG1hQ8efNATegjr1QYQBhZwUtWqjm7nhuTReTDxUzGpvBet7s
+	 nv++7gmWAG0wRmtXdcCYIS8ti0tj4awoWg622BxWt3EpBWELRpE48nzXr47cSTM4Yo
+	 r6Y9neMTCbdjWHMEtBuU42CxLvClBV6i0pU5nS0cZX6T+M9Yw51qWwRyGfGhYI8k1i
+	 C2JUU2LjzbZUTbPavm+XdtFs48AJd6RNK7eiqoGIj0+IMQazRQ8910BG9Cy0V7z5ub
+	 ksrcbmzWa7wpFvPr+P/4DFrFgM8WopBbGUJnMpP4NWOoTfcFRhfEoYC0DArTGYOvX4
+	 O0YdmhcdTZWbA==
+Received: from johan by xi.lan with local (Exim 4.94.2)
+	(envelope-from <johan+linaro@kernel.org>)
+	id 1ooPXH-0004rA-DD; Fri, 28 Oct 2022 15:36:35 +0200
+From: Johan Hovold <johan+linaro@kernel.org>
+To: Vinod Koul <vkoul@kernel.org>
+Cc: Andy Gross <agross@kernel.org>,
 	Bjorn Andersson <andersson@kernel.org>,
 	Konrad Dybcio <konrad.dybcio@somainline.org>,
 	Rob Herring <robh+dt@kernel.org>,
 	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v3 08/15] phy: qcom-qmp-pcie: add register init helper
-Message-ID: <Y1vURr4xPZD5/bh0@matsya>
-References: <20221021110947.28103-1-johan+linaro@kernel.org>
- <20221021110947.28103-9-johan+linaro@kernel.org>
- <932765e0-ecbc-8c9b-69c5-ce0bb0c8de68@linaro.org>
- <Y1KDXD9n0cCqjTGy@hovoldconsulting.com>
- <Y1vRDv+hrMmnqwPj@matsya>
- <Y1vT94blD9PJHKDp@hovoldconsulting.com>
+	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+	linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	Johan Hovold <johan+linaro@kernel.org>
+Subject: [PATCH v4 07/16] phy: qcom-qmp-pcie: clean up PHY lane init
+Date: Fri, 28 Oct 2022 15:35:54 +0200
+Message-Id: <20221028133603.18470-8-johan+linaro@kernel.org>
+X-Mailer: git-send-email 2.37.3
+In-Reply-To: <20221028133603.18470-1-johan+linaro@kernel.org>
+References: <20221028133603.18470-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <Y1vT94blD9PJHKDp@hovoldconsulting.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221028_060829_186533_078167E4 
-X-CRM114-Status: GOOD (  22.35  )
+X-CRM114-CacheID: sfid-20221028_063650_750142_8FEC345A 
+X-CRM114-Status: GOOD (  11.97  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,38 +83,49 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 28-10-22, 15:07, Johan Hovold wrote:
-> On Fri, Oct 28, 2022 at 06:24:38PM +0530, Vinod Koul wrote:
-> > On 21-10-22, 13:32, Johan Hovold wrote:
-> 
-> > > [...] This is not about keeping the
-> > > diff small, this is about readability of the new helper function as I
-> > > already told you.
-> > > 
-> > > And this is a *local* identifier, not some state member that needs a
-> > > super descriptive name. And the rest of the driver used "tbl"
-> > > consistently until your EP/RC mode patches for that matter.
-> > 
-> > I would disagree here... You can change tbls/tables but then it does not
-> > help _this_ patch
-> > 
-> > Right thing would be to change tbls to tables first and then add init
-> > helper... For a reviewer seeing an undocumented change and unnecessary
-> > diff is not right..
-> 
-> I still think that it belongs in the patch adding the new helper
-> because it is essentially only in that new function that the improved
-> readability due to the shorter identifier matters (the earlier helpers
-> where per table type).
->  
-> > Pls split if you would still like the rename
-> 
-> But if you prefer I'll split it out in a preparatory patch.
+Clean up the PHY lane initialisation somewhat by adding further
+temporary variables and programming both tx and rx for the second lane
+after the first lane.
 
-That would be good thanks
+Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
+---
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 13 +++++++------
+ 1 file changed, 7 insertions(+), 6 deletions(-)
 
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+index bd946438e3c3..dd7e72424fc0 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+@@ -1835,18 +1835,19 @@ static void qmp_pcie_lanes_init(struct qmp_pcie *qmp, const struct qmp_phy_cfg_t
+ 	const struct qmp_phy_cfg *cfg = qmp->cfg;
+ 	void __iomem *tx = qmp->tx;
+ 	void __iomem *rx = qmp->rx;
++	void __iomem *tx2 = qmp->tx2;
++	void __iomem *rx2 = qmp->rx2;
+ 
+ 	if (!tables)
+ 		return;
+ 
+ 	qmp_pcie_configure_lane(tx, tables->tx, tables->tx_num, 1);
+-
+-	if (cfg->lanes >= 2)
+-		qmp_pcie_configure_lane(qmp->tx2, tables->tx, tables->tx_num, 2);
+-
+ 	qmp_pcie_configure_lane(rx, tables->rx, tables->rx_num, 1);
+-	if (cfg->lanes >= 2)
+-		qmp_pcie_configure_lane(qmp->rx2, tables->rx, tables->rx_num, 2);
++
++	if (cfg->lanes >= 2) {
++		qmp_pcie_configure_lane(tx2, tables->tx, tables->tx_num, 2);
++		qmp_pcie_configure_lane(rx2, tables->rx, tables->rx_num, 2);
++	}
+ }
+ 
+ static void qmp_pcie_pcs_init(struct qmp_pcie *qmp, const struct qmp_phy_cfg_tables *tables)
 -- 
-~Vinod
+2.37.3
+
 
 -- 
 linux-phy mailing list
