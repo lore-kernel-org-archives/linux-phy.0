@@ -4,71 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B49BCFA3743
-	for <linux-phy@archiver.kernel.org>; Sat, 29 Oct 2022 08:48:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DD558C433FE
+	for <linux-phy@archiver.kernel.org>; Sat, 29 Oct 2022 09:03:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Nm5I258D2EF9ZKZI6Q7XhMwRPvtxxfn5O4e5QhwGCxY=; b=G/uEw9ifsXljm2
-	KD9pP1aVPR99ggTn8FnJcJhDyBWUCJlhGiIZ+BnoGQHw8QHaQLgQHcMlSJFTDIRfYsnylDve21yjY
-	8+ufdYgJWt5Cp8AxBoMrafDsNbjFtvAhyIbwVL/2GUlSjbvnF6mGiEDLWbTetZsYy8G+DaaVv1mre
-	geHSXnLUoDCXtiiYjAnlm1KAxUZfeIhNRAdcqzUQNLiQ5p6tBdcGjzeuuvOQyhzgP6JOIXpP1Bv9k
-	NKqgoIFAIIbpAD8PrjPnv+hTuv7yGaisD7Rh+KSlP1bIyAwxbwPxkTBOHKKdCz+1ZYHX4EaX4sXQx
-	zxB2UsixMghDSFM+yFdg==;
+	List-Owner; bh=7G8b+rsd/4vxLZxBEnjKQVlCcgde0z6Kp849mdfFuPU=; b=4ftsCo2nySA4KV
+	1iZc53/Jxrr8/yan5tMjNTaeCUBubmH2wDxFBbrPgp1S03F0iKlsG5vVyDYA6QMLAqwuknxfEk7Df
+	ZG2wr8Heg9WZSIXPgLPWtoM/gIXRklsh3s3lYFUtAOZ5WfYdk93E4qSbwyrltcTyWreoZ9ZBlHHbM
+	AfdbK3eKhX035nAqAJF40PE35/YKvVlBSEtLgHXhaDEXCytnuOzWdJz4u3Pf6IJYfpfg2Npiq7Ra3
+	YOfg8v/LChqBFijEgKuwGKk2W+I3yEf3GJmnv4Mvg3wd98fZgHW4HUI1YHvEW3P0XSWBDlgZuT9L8
+	qUiYKXVpRezMy4Yuomyg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oohVj-005J1q-1F; Sat, 29 Oct 2022 08:48:11 +0000
-Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
+	id 1oohkJ-005dRx-4Z; Sat, 29 Oct 2022 09:03:15 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oohVg-005J1K-Fs
-	for linux-phy@lists.infradead.org; Sat, 29 Oct 2022 08:48:09 +0000
+	id 1oohkG-005dHD-BN
+	for linux-phy@lists.infradead.org; Sat, 29 Oct 2022 09:03:13 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id 55014B80B18;
-	Sat, 29 Oct 2022 08:48:05 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id EAF89C433C1;
-	Sat, 29 Oct 2022 08:48:03 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id D08B060E26;
+	Sat, 29 Oct 2022 09:03:09 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3407EC433D6;
+	Sat, 29 Oct 2022 09:03:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1667033284;
-	bh=qAB44AW9l7MBg3PipZA9gp8hcRBcbWZ2uPxGK7uAZ0k=;
+	s=k20201202; t=1667034189;
+	bh=KOp4149gFTxhvWHD2Z7vtNmIcuGs+lR9FJExOgj9UJE=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=Hj9EHjO9OTXV1nd8TMHapdEkPKuS1I1SAr0E/MPHdkLWnjuijP2cgi5Y+Acm4SJFF
-	 1TL9TQq/s9gK0F7VTDHiksxoom9bHUgBvHxY53QFEec6nwxKVamuNrs0eJ7spw6HU1
-	 luXDV39kM/dbJ9W7mM2VLTDnFomcfHRjkWqaT0OlB/TzrXZoLfYV06UVLkb2tVKlVl
-	 ATTVHRZ/dTomj7FtA5al8cvUvfBxBnZ6BKnqxR4HjJZhxQ6LUTtrGBD/0YSvih44Co
-	 PcW6+B/uUxtMkkd5YIhXnFbmS1KoDQl2JUeMHYZo8H5NnXiQx+Z8xDvttSyZF2n5N5
-	 jnpwTAVdloU0g==
+	b=B3VSmmqRad1T4DE55WKpzqg32vDqllSdyYHyb/TPDi7zpjvEEfqo1pQS3ZR/akJQY
+	 g47dqCwlP6yK/wQGFkazX7jmnJR6gGhTfuRw/OtmbzTHCldbjmcY4wWTzbdqVexmY9
+	 2kujJrVD/bJvPI0wwUcAExR/Y4O3jSLn5xygmx2wk1i5e7eJhSsayjEtrxSxRe+tBs
+	 UtAgVCsxoCnwaAQhmjYAm8JhrrBz9WNCnPLFlCnx+PRExyaUEixRA5H4qCWe6731nB
+	 dslQmqx+4Nrbc69Q4Ccl5tnF0gUM/CQrMR7zeoGQJq4zctPllzaxBxHcqCS8xsszjQ
+	 iSXCoCZF1uj8w==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan@kernel.org>)
-	id 1oohVP-00008o-Av; Sat, 29 Oct 2022 10:47:51 +0200
-Date: Sat, 29 Oct 2022 10:47:51 +0200
+	id 1oohk0-0000JY-JQ; Sat, 29 Oct 2022 11:02:56 +0200
+Date: Sat, 29 Oct 2022 11:02:56 +0200
 From: Johan Hovold <johan@kernel.org>
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Cc: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-	Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
 	Konrad Dybcio <konrad.dybcio@somainline.org>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v4 10/16] dt-bindings: phy: qcom,qmp-pcie: rename current
- bindings
-Message-ID: <Y1zot8aJ1WXnbrwF@hovoldconsulting.com>
-References: <20221028133603.18470-1-johan+linaro@kernel.org>
- <20221028133603.18470-11-johan+linaro@kernel.org>
- <33b13789-33d6-a22f-82c9-4c5691d0737d@linaro.org>
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org
+Subject: Re: [PATCH v6] phy: qcom-qmp-ufs: provide symbol clocks
+Message-ID: <Y1zsQN33joDlJRAP@hovoldconsulting.com>
+References: <20221028164847.485874-1-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <33b13789-33d6-a22f-82c9-4c5691d0737d@linaro.org>
+In-Reply-To: <20221028164847.485874-1-dmitry.baryshkov@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221029_014808_711404_EEAF4EE6 
-X-CRM114-Status: GOOD (  20.68  )
+X-CRM114-CacheID: sfid-20221029_020312_516224_77EBD5CE 
+X-CRM114-Status: GOOD (  26.62  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,40 +79,126 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Oct 28, 2022 at 05:57:01PM -0400, Krzysztof Kozlowski wrote:
-> On 28/10/2022 09:35, Johan Hovold wrote:
-> > The current QMP PCIe PHY bindings are based on the original MSM8996
-> > binding which provided multiple PHYs per IP block and these in turn were
-> > described by child nodes.
-> > 
-> > Later QMP PCIe PHY blocks only provide a single PHY and the remnant
-> > child node does not really reflect the hardware.
-> > 
-> > The original MSM8996 binding also ended up describing the individual
-> > register blocks as belonging to either the wrapper node or the PHY child
-> > nodes.
-> > 
-> > This is an unnecessary level of detail which has lead to problems when
-> > later IP blocks using different register layouts have been forced to fit
-> > the original mould rather than updating the binding. The bindings are
-> > arguable also incomplete as they only the describe register blocks used
-> > by the current Linux drivers (e.g. does not include the per lane PCS
-> > registers).
-> > 
-> > In preparation for adding new bindings for SC8280XP which further
-> > bindings can be based on, rename the current schema file after IPQ8074,
-> > which was the first SoC added to the bindings after MSM8996 (which has
-> > already been split out), and add a reference to the SC8280XP bindings.
-> > 
-> > Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-> > Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
-> > ---
+On Fri, Oct 28, 2022 at 07:48:47PM +0300, Dmitry Baryshkov wrote:
+> Register three UFS symbol clocks (ufs_rx_symbol_0_clk_src,
+> ufs_rx_symbol_1_clk_src ufs_tx_symbol_0_clk_src). Register OF clock
+> provider to let other devices link these clocks through the DT.
 > 
-> Also missing cc devicetree list.
+> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+> ---
+> 
+> Changes since v5:
+> - Rebased on top of phy/next
+> 
+> Changes since v4:
+> - Rebased, dropping merged clk patches
+> - Fixed whitespace errors
+> - Added linebreaks to fit into 100 chars limit
+> 
+> ---
+>  drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 67 +++++++++++++++++++++++++
+>  1 file changed, 67 insertions(+)
+> 
+> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+> index 189103d1bd18..c1c9c6e7949d 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+> @@ -1023,6 +1023,66 @@ static int qmp_ufs_clk_init(struct qmp_ufs *qmp)
+>  	return devm_clk_bulk_get(dev, num, qmp->clks);
+>  }
+>  
+> +static void phy_clk_release_provider(void *res)
+> +{
+> +	of_clk_del_provider(res);
+> +}
+> +
+> +#define UFS_SYMBOL_CLOCKS 3
+> +
+> +static int phy_symbols_clk_register(struct qmp_ufs *qmp, struct device_node *np)
+> +{
+> +	struct clk_hw_onecell_data *clk_data;
+> +	struct clk_hw *hw;
+> +	char name[64];
+> +	int ret;
+> +
+> +	clk_data = devm_kzalloc(qmp->dev,
+> +				struct_size(clk_data, hws, UFS_SYMBOL_CLOCKS),
+> +				GFP_KERNEL);
+> +	if (!clk_data)
+> +		return -ENOMEM;
+> +
+> +	clk_data->num = UFS_SYMBOL_CLOCKS;
+> +
+> +	snprintf(name, sizeof(name), "%s::rx_symbol_0", dev_name(qmp->dev));
+> +	hw = devm_clk_hw_register_fixed_rate(qmp->dev, name, NULL, 0, 0);
+> +	if (IS_ERR(hw))
+> +		return PTR_ERR(hw);
+> +
+> +	clk_data->hws[0] = hw;
+> +
+> +	snprintf(name, sizeof(name), "%s::rx_symbol_1", dev_name(qmp->dev));
+> +	hw = devm_clk_hw_register_fixed_rate(qmp->dev, name, NULL, 0, 0);
+> +	if (IS_ERR(hw))
+> +		return PTR_ERR(hw);
+> +
+> +	clk_data->hws[1] = hw;
+> +
+> +	snprintf(name, sizeof(name), "%s::tx_symbol_0", dev_name(qmp->dev));
+> +	hw = devm_clk_hw_register_fixed_rate(qmp->dev, name, NULL, 0, 0);
+> +	if (IS_ERR(hw))
+> +		return PTR_ERR(hw);
+> +
+> +	clk_data->hws[2] = hw;
+> +
+> +	ret = of_clk_add_hw_provider(np, of_clk_hw_onecell_get, clk_data);
+> +	if (ret)
+> +		return ret;
+> +
+> +	/*
+> +	 * Roll a devm action because the clock provider is the child node, but
+> +	 * the child node is not actually a device.
+> +	 */
+> +	return devm_add_action_or_reset(qmp->dev, phy_clk_release_provider, np);
+> +}
+> +
+> +static const struct phy_ops qcom_qmp_ufs_ops = {
+> +	.power_on	= qmp_ufs_enable,
+> +	.power_off	= qmp_ufs_disable,
+> +	.owner		= THIS_MODULE,
+> +};
 
-Yes, I know, but as I mentioned in my reply to Rob on the QMP USB
-series, I do not intend to repost this series unless someone insists as
-there were no binding-related changes in v4 (or v3).
+This phy_ops addition looks an artefact of the rebase and should not be
+here.
+
+>  static int qmp_ufs_parse_dt_legacy(struct qmp_ufs *qmp, struct device_node *np)
+>  {
+>  	struct platform_device *pdev = to_platform_device(qmp->dev);
+> @@ -1135,6 +1195,13 @@ static int qmp_ufs_probe(struct platform_device *pdev)
+>  	if (ret)
+>  		goto err_node_put;
+>  
+> +	ret = phy_symbols_clk_register(qmp, np);
+
+Looks like this should go in probe() instead, or was there a reason for
+not registering these clocks when using the new bindings?
+
+And don't they need to be described in both the old and new bindings
+first either way?
+
+> +	if (ret) {
+> +		dev_err(dev, "failed to create symbol clocks, %d\n",
+> +			ret);
+
+Please use the "...: %d\n" form for consistency.
+
+But you can probably just drop this error message instead.
+
+> +		goto err_node_put;
+> +	}
+> +
+>  	qmp->phy = devm_phy_create(dev, np, &qcom_qmp_ufs_phy_ops);
+>  	if (IS_ERR(qmp->phy)) {
+>  		ret = PTR_ERR(qmp->phy);
 
 Johan
 
