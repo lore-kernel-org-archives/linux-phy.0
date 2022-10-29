@@ -4,62 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 32670C433FE
-	for <linux-phy@archiver.kernel.org>; Sat, 29 Oct 2022 14:17:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8B333C433FE
+	for <linux-phy@archiver.kernel.org>; Sat, 29 Oct 2022 14:17:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=T3j5zfAAVQ2NOoBPNCdAnFPxlUeQrpSEXE942qPvYPI=; b=TbQuWqXImse6Z9
-	SJbO8Z7HoQu7Do1kFaeky1QskiwfbWntkyhjmlGxI3ALlfjNC6VI78UJSDMpuehGC7blyg4+/sz6a
-	Dihdh5LznkblG3BkLY3YDM+LP+WjPIxnFLgbLZPG4i1hwKg0U4+zeePpFJQZJerpcp1fW6btmF6cx
-	LqDj0vbxy+HyK47pXHNtG9bl28lJBZnoe/Wq8ZMi/Aj5PMXXlx/VKBMHq9pvqZdqlPx5i1dDJZkcx
-	HTN1dFwhVejyvYvAUMsQeSrlt0ecpzOUC9E/NAu6xkBAzG0p4wAcXtPsGdPKUFMpRqXdpH61t0ebl
-	6IbInSLsZT70vwI079HA==;
+	List-Owner; bh=Oqd1LL5KzBxcZJlVeigGf3QdXc15mv3KoNUfLh/w4bk=; b=rsf6yaFJle3FIf
+	1yc2ZQu0Q5jvKadn3FZui6/9qDPhKRvFjsHKm/z0RJ3/iXou5xFPUxTN6D0OJLD0bKP7bDuYfRkBf
+	uVR2B2ULIyHBch9exsc3TPNze/neIYk32dWeU8TQFsSzGibF+2g09+EiDHz26ItB/+jEjTWGiNKA4
+	IBXpzsC/Q0INPBfL4wsRwcE2mYscW5eX8T4NpRJGCzMlcm8r3FcRGK9Y5feRvQ7ZUCgLmvm8BTwb2
+	WYJOZ1jr3JicCajeH+671+O7Gp7GevOCirZv4zM2fYtvFtk65jIQJs6PAV8tivlKqyH9uZX3YEoiP
+	TtGCPbj7Zda3mxeTA99Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oomeb-006UIH-Kz; Sat, 29 Oct 2022 14:17:41 +0000
-Received: from mail-pj1-x1029.google.com ([2607:f8b0:4864:20::1029])
+	id 1oomeh-006UK6-0O; Sat, 29 Oct 2022 14:17:47 +0000
+Received: from mail-pf1-x42b.google.com ([2607:f8b0:4864:20::42b])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oomeZ-006UHM-DL
-	for linux-phy@lists.infradead.org; Sat, 29 Oct 2022 14:17:40 +0000
-Received: by mail-pj1-x1029.google.com with SMTP id m2so6934035pjr.3
-        for <linux-phy@lists.infradead.org>; Sat, 29 Oct 2022 07:17:37 -0700 (PDT)
+	id 1oomee-006UIZ-J5
+	for linux-phy@lists.infradead.org; Sat, 29 Oct 2022 14:17:45 +0000
+Received: by mail-pf1-x42b.google.com with SMTP id 130so7096542pfu.8
+        for <linux-phy@lists.infradead.org>; Sat, 29 Oct 2022 07:17:43 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=PPevE9Sh9eft9CvrrFJCCIetkvqvkKgpjjhTImTV4/g=;
-        b=RgWcT1WgSGpcqiPdFNxstMjSKLJ1/3c7FPBBzjWoL+uMaUSVdSdXEo60vJoE9qoVKR
-         9SQustPoRxFfq38euBRKG0REXWuvHM1yEJ3nVq1WU4BCqomup9cSJqGPP73PSO2g/wHk
-         NBaq4kIwhiKPoMqoZ9B6y0reZPw8SVUGrKZBg96Ig7sfC92cphvg7g2Yqju2OIq1q8GW
-         kbFUvP6QT2TdB043MvDCRDic8x+Me8CkxFvt16mWrBNv5809ml5Pzb2uUNoUmcKj7ss/
-         XH17ytdsaP0GktHH238TSd7jlivTD/Qk2RbyDL4M2CoL2sHwDP1JXRPJvuPCA9STov6N
-         YgWQ==
+        bh=dgO0itPmS4SJd2mGNhvjlL5RdA1WKEDpldIzySFpulk=;
+        b=MJjVSK83iQnWC3FbZ0ZRDQChEUVe7Bjq+6ETKYFya+P5BVO2U5HlxLoIznDcVbYRCE
+         052c0Gg+Z8F1NLlmjjJ/EML2o3rf50w54gItVnczSvye8+/4hXacL7W3YQwsc7G+q/TH
+         5b6VhYKuwG4PA6NQP+H6Q1HlxA0GA6NYcHI5MwhU/UtQo3jeuyn2UBD0AV+qJzNNea+W
+         At3h3PJBxBk9Y8S1ITDbrlUA9KWQ8NsD8wadvohht4FIxeaMOATOCTcxltotD8HrGFBV
+         mGcX6YeYnsD8U3F2mRb5Ft+/XdH40QE5aMI4Fd19w2oQFYiGj8QlRBKch/rBWP26ljRu
+         vvxw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=PPevE9Sh9eft9CvrrFJCCIetkvqvkKgpjjhTImTV4/g=;
-        b=Vt4GhEXKKw9UP5jp4JGepPM8/2JCuCoIe7bM5kQS7m7roKdDSx2knQyQzU781F0y0o
-         YgqKkvPtkC1OvacA1TV/OhPDmOv2WUhBr2nQxKIwh+tHN48MivqHYBCvNueHabpzckXr
-         i4UQWIZWfqM1MHqYNGL57APmAPswfHZm+MeMron3cq1lLFDmt2qZUx4+gUhgHAwk+XTS
-         i6I0rVf/Nh3MhmOhV0pMK6f5CDRigOVn9ZXt2Aa+sTVjL1RwhF11HyJiSbiuWDpMS/2w
-         /ypVS9w8sGQV1eRG2B4zz/0mHVKO8SdoAvVwCGrxw1SeiHhYygD/YyR46bBmPRYn/ot1
-         zo8A==
-X-Gm-Message-State: ACrzQf1DQqf52Fk3l1iL2UwgOo8gElKXu1t3cR9I2HgKRDrc9chlH7/e
-	nWjevmp5wEiyZbBDB9ANUr4f
-X-Google-Smtp-Source: AMsMyM62YUS5QBWrpRdTRJlP3R8PeCklLVuBSc7yrVwOlA1RFgktjS1qWcOJod4G5cdm1PLZsX31Jw==
-X-Received: by 2002:a17:90a:24b:b0:213:9da2:5c98 with SMTP id t11-20020a17090a024b00b002139da25c98mr4953272pje.123.1667053056498;
-        Sat, 29 Oct 2022 07:17:36 -0700 (PDT)
+        bh=dgO0itPmS4SJd2mGNhvjlL5RdA1WKEDpldIzySFpulk=;
+        b=zTtxwVqZMZ3d40U54EgHPwW3fVQaVHLVtbVUJBkdUudMPY7esOTVuerA/VIPonZHrS
+         LKJHmmvcgqwj0JSoIKVehxPqyL5+jbC9v4v4rIniwDJIig9aMjI5jg89fZUZc1+5T6hR
+         6AQjKVfDj+nc5Dg1G8EJQMqijhxc21Dyy+5HSAvUFIjeN6b2yU2eGvaccYOXAu05HJpL
+         ZKeRpVo+jniLBETzX4VAQk1ST02Mg0yaqygOfvKbVqGB6Nbo6WuWowCM1ViK6OagIUjL
+         xZVj104Hm11f++Cz0v/UnBig9dkCtH7RqPWVPS+8uXuZKnCm7VVRmQuu0w/zkpeKd7Pz
+         Ffog==
+X-Gm-Message-State: ACrzQf3uwV29TgFpPtJmzBGtoKAWo1vUJtOvjqAsQf/VPy31++5Dx9LL
+	Ix/4Mtot/x07Vvt/GeoZRNI/
+X-Google-Smtp-Source: AMsMyM6D7Gjtv9H4nPResuFkUX3gQ9TEpK+Cg7QPFWtb8q21cNu2cDaoubgeYAXJKmtPC6giM806pQ==
+X-Received: by 2002:a63:d60e:0:b0:46f:8979:30ba with SMTP id q14-20020a63d60e000000b0046f897930bamr1913693pgg.332.1667053062610;
+        Sat, 29 Oct 2022 07:17:42 -0700 (PDT)
 Received: from localhost.localdomain ([117.193.208.18])
-        by smtp.gmail.com with ESMTPSA id u4-20020a170902e5c400b001866049ddb1sm1370157plf.161.2022.10.29.07.17.31
+        by smtp.gmail.com with ESMTPSA id u4-20020a170902e5c400b001866049ddb1sm1370157plf.161.2022.10.29.07.17.36
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 29 Oct 2022 07:17:35 -0700 (PDT)
+        Sat, 29 Oct 2022 07:17:40 -0700 (PDT)
 From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 To: martin.petersen@oracle.com,
 	jejb@linux.ibm.com,
@@ -75,16 +75,16 @@ Cc: konrad.dybcio@somainline.org,
 	linux-phy@lists.infradead.org,
 	linux-scsi@vger.kernel.org,
 	Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Subject: [PATCH 10/15] scsi: ufs: ufs-qcom: Use bitfields where appropriate
-Date: Sat, 29 Oct 2022 19:46:28 +0530
-Message-Id: <20221029141633.295650-11-manivannan.sadhasivam@linaro.org>
+Subject: [PATCH 11/15] scsi: ufs: ufs-qcom: Use dev_err_probe() for printing probe error
+Date: Sat, 29 Oct 2022 19:46:29 +0530
+Message-Id: <20221029141633.295650-12-manivannan.sadhasivam@linaro.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20221029141633.295650-1-manivannan.sadhasivam@linaro.org>
 References: <20221029141633.295650-1-manivannan.sadhasivam@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221029_071739_468175_BDB4DA6A 
-X-CRM114-Status: GOOD (  10.89  )
+X-CRM114-CacheID: sfid-20221029_071744_641524_1FB91BF8 
+X-CRM114-Status: GOOD (  10.25  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,123 +101,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Use bitfield macros where appropriate to simplify the driver.
+Make use of dev_err_probe() for printing the probe error.
 
 Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 ---
- drivers/ufs/host/ufs-qcom.h | 58 ++++++++++++++++---------------------
- 1 file changed, 25 insertions(+), 33 deletions(-)
+ drivers/ufs/host/ufs-qcom.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/ufs/host/ufs-qcom.h b/drivers/ufs/host/ufs-qcom.h
-index 44466a395bb5..6cb0776456b3 100644
---- a/drivers/ufs/host/ufs-qcom.h
-+++ b/drivers/ufs/host/ufs-qcom.h
-@@ -17,12 +17,9 @@
- #define DEFAULT_CLK_RATE_HZ     1000000
- #define BUS_VECTOR_NAME_LEN     32
+diff --git a/drivers/ufs/host/ufs-qcom.c b/drivers/ufs/host/ufs-qcom.c
+index 8bb0f4415f1a..28ac5f0ab2bc 100644
+--- a/drivers/ufs/host/ufs-qcom.c
++++ b/drivers/ufs/host/ufs-qcom.c
+@@ -1441,7 +1441,7 @@ static int ufs_qcom_probe(struct platform_device *pdev)
+ 	/* Perform generic probe */
+ 	err = ufshcd_pltfrm_init(pdev, &ufs_hba_qcom_vops);
+ 	if (err)
+-		dev_err(dev, "ufshcd_pltfrm_init() failed %d\n", err);
++		dev_err_probe(dev, err, "ufshcd_pltfrm_init() failed\n");
  
--#define UFS_HW_VER_MAJOR_SHFT	(28)
--#define UFS_HW_VER_MAJOR_MASK	(0x000F << UFS_HW_VER_MAJOR_SHFT)
--#define UFS_HW_VER_MINOR_SHFT	(16)
--#define UFS_HW_VER_MINOR_MASK	(0x0FFF << UFS_HW_VER_MINOR_SHFT)
--#define UFS_HW_VER_STEP_SHFT	(0)
--#define UFS_HW_VER_STEP_MASK	(0xFFFF << UFS_HW_VER_STEP_SHFT)
-+#define UFS_HW_VER_MAJOR_MASK	GENMASK(31, 28)
-+#define UFS_HW_VER_MINOR_MASK	GENMASK(27, 16)
-+#define UFS_HW_VER_STEP_MASK	GENMASK(15, 0)
- 
- /* vendor specific pre-defined parameters */
- #define SLOW 1
-@@ -76,24 +73,24 @@ enum {
- #define UFS_CNTLR_3_x_x_VEN_REGS_OFFSET(x)	(0x400 + x)
- 
- /* bit definitions for REG_UFS_CFG1 register */
--#define QUNIPRO_SEL		0x1
--#define UTP_DBG_RAMS_EN		0x20000
-+#define QUNIPRO_SEL		BIT(0)
-+#define UTP_DBG_RAMS_EN		BIT(17)
- #define TEST_BUS_EN		BIT(18)
- #define TEST_BUS_SEL		GENMASK(22, 19)
- #define UFS_REG_TEST_BUS_EN	BIT(30)
- 
- /* bit definitions for REG_UFS_CFG2 register */
--#define UAWM_HW_CGC_EN		(1 << 0)
--#define UARM_HW_CGC_EN		(1 << 1)
--#define TXUC_HW_CGC_EN		(1 << 2)
--#define RXUC_HW_CGC_EN		(1 << 3)
--#define DFC_HW_CGC_EN		(1 << 4)
--#define TRLUT_HW_CGC_EN		(1 << 5)
--#define TMRLUT_HW_CGC_EN	(1 << 6)
--#define OCSC_HW_CGC_EN		(1 << 7)
-+#define UAWM_HW_CGC_EN		BIT(0)
-+#define UARM_HW_CGC_EN		BIT(1)
-+#define TXUC_HW_CGC_EN		BIT(2)
-+#define RXUC_HW_CGC_EN		BIT(3)
-+#define DFC_HW_CGC_EN		BIT(4)
-+#define TRLUT_HW_CGC_EN		BIT(5)
-+#define TMRLUT_HW_CGC_EN	BIT(6)
-+#define OCSC_HW_CGC_EN		BIT(7)
- 
- /* bit definition for UFS_UFS_TEST_BUS_CTRL_n */
--#define TEST_BUS_SUB_SEL_MASK	0x1F  /* All XXX_SEL fields are 5 bits wide */
-+#define TEST_BUS_SUB_SEL_MASK	GENMASK(4, 0)  /* All XXX_SEL fields are 5 bits wide */
- 
- #define REG_UFS_CFG2_CGC_EN_ALL (UAWM_HW_CGC_EN | UARM_HW_CGC_EN |\
- 				 TXUC_HW_CGC_EN | RXUC_HW_CGC_EN |\
-@@ -101,17 +98,12 @@ enum {
- 				 TMRLUT_HW_CGC_EN | OCSC_HW_CGC_EN)
- 
- /* bit offset */
--enum {
--	OFFSET_UFS_PHY_SOFT_RESET           = 1,
--	OFFSET_CLK_NS_REG                   = 10,
--};
-+#define OFFSET_CLK_NS_REG		0xa
- 
- /* bit masks */
--enum {
--	MASK_UFS_PHY_SOFT_RESET             = 0x2,
--	MASK_TX_SYMBOL_CLK_1US_REG          = 0x3FF,
--	MASK_CLK_NS_REG                     = 0xFFFC00,
--};
-+#define MASK_UFS_PHY_SOFT_RESET		BIT(1)
-+#define MASK_TX_SYMBOL_CLK_1US_REG	GENMASK(9, 0)
-+#define MASK_CLK_NS_REG			GENMASK(23, 10)
- 
- /* QCOM UFS debug print bit mask */
- #define UFS_QCOM_DBG_PRINT_REGS_EN	BIT(0)
-@@ -135,15 +127,15 @@ ufs_qcom_get_controller_revision(struct ufs_hba *hba,
- {
- 	u32 ver = ufshcd_readl(hba, REG_UFS_HW_VERSION);
- 
--	*major = (ver & UFS_HW_VER_MAJOR_MASK) >> UFS_HW_VER_MAJOR_SHFT;
--	*minor = (ver & UFS_HW_VER_MINOR_MASK) >> UFS_HW_VER_MINOR_SHFT;
--	*step = (ver & UFS_HW_VER_STEP_MASK) >> UFS_HW_VER_STEP_SHFT;
-+	*major = FIELD_GET(UFS_HW_VER_MAJOR_MASK, ver);
-+	*minor = FIELD_GET(UFS_HW_VER_MINOR_MASK, ver);
-+	*step = FIELD_GET(UFS_HW_VER_STEP_MASK, ver);
- };
- 
- static inline void ufs_qcom_assert_reset(struct ufs_hba *hba)
- {
--	ufshcd_rmwl(hba, MASK_UFS_PHY_SOFT_RESET,
--			1 << OFFSET_UFS_PHY_SOFT_RESET, REG_UFS_CFG1);
-+	ufshcd_rmwl(hba, MASK_UFS_PHY_SOFT_RESET, FIELD_PREP(MASK_UFS_PHY_SOFT_RESET, 1),
-+		    REG_UFS_CFG1);
- 
- 	/*
- 	 * Make sure assertion of ufs phy reset is written to
-@@ -154,8 +146,8 @@ static inline void ufs_qcom_assert_reset(struct ufs_hba *hba)
- 
- static inline void ufs_qcom_deassert_reset(struct ufs_hba *hba)
- {
--	ufshcd_rmwl(hba, MASK_UFS_PHY_SOFT_RESET,
--			0 << OFFSET_UFS_PHY_SOFT_RESET, REG_UFS_CFG1);
-+	ufshcd_rmwl(hba, MASK_UFS_PHY_SOFT_RESET, FIELD_PREP(MASK_UFS_PHY_SOFT_RESET, 0),
-+		    REG_UFS_CFG1);
- 
- 	/*
- 	 * Make sure de-assertion of ufs phy reset is written to
+ 	return err;
+ }
 -- 
 2.25.1
 
