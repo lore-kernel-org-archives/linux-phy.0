@@ -4,89 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 72818FA3745
-	for <linux-phy@archiver.kernel.org>; Sun, 30 Oct 2022 14:26:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 777B1FA3740
+	for <linux-phy@archiver.kernel.org>; Mon, 31 Oct 2022 11:16:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tVjlJ6GY388fwvH0qNB2X5kK4R0Cn6YZBXeh8+GkWqM=; b=g8JNdLrFsS8xuP
-	JWCik9aQ00ksnhOQqh1OQ8vXU7DUUU9LVxDCtKudlVeSKavNMK6dr5NTQrII0XOuUcuCgNYz3/Sd9
-	6LcQ1s0hsu4m9Mf8aA3WDpbXVgpnQP1RffFcEx6m+td4PNQNU0Fdr7Gi2MgRpuO/MmnLHzy2jymIT
-	tFfFgAcNPj3Sqgq/GBnhKGNkmkQkjFpkHzZIvjI0nQDMn0pn7tPCt7UlMLH8Ios3oi1uivQcjL1Jk
-	udaLzGJRMCUi9qEV96hK5f5xk1sCO270aS28Vu24ip435dnZwyTV0AjmAVj6tVDNlDqvW4MsDhvZG
-	LSi5R59eMyhYiPP/gK9Q==;
+	List-Owner; bh=aeAsvULvceBiWDzw5ie3F+nBVbk3C5G83fDr7Gaxhro=; b=y9DCtQAuZocfgD
+	9dUfTh/+CvpUH5m0nYkKr6x18zQpxNUG/iMx7rvMtTHQ6ISiVsm8bCc92Qi7u+8pkUmI+xsiJntb2
+	pVgQ2NuHJ/tgnkJVgJPsuAY50v2ZukXvL4FykAnZKtZfpRk160ArfLK+MAy8XnTg7UqFimzuloqoh
+	xQFq86LDS+siqN/r/5b4VT+jzLlj8qtjE/mCYE8HoYmL8oaj2mVgm0VTVadNLtE5CwL9eh/PaUuvR
+	psUB8NwO9XfASDjsPrFOTPerS9+TmvXVh7tI27bjQ0SpAklGzPEwQA+MLHiG13S4YTz69ZCIrHRGJ
+	7Cuf9+eZFG//aeWoHdyg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1op9GY-00Gs9W-PG; Sun, 30 Oct 2022 14:26:22 +0000
-Received: from mail-lj1-x234.google.com ([2a00:1450:4864:20::234])
-	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1op9GV-00Gs4v-Pa
-	for linux-phy@lists.infradead.org; Sun, 30 Oct 2022 14:26:21 +0000
-Received: by mail-lj1-x234.google.com with SMTP id u11so13956236ljk.6
-        for <linux-phy@lists.infradead.org>; Sun, 30 Oct 2022 07:26:17 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=km6wTK9gxRICmw3iQSSF3JcpeR0eL80m2+vYs16O/UQ=;
-        b=V1zyLgdo5YBUiVFFhEx4zgY3FiUrLOcOpn+wGpxtoWgS4fkYBeYa/p05+nKo9VEEBp
-         v4LQhI0o8sv8o4XYdCIuPTzMr14KfVRf4SNtsIAEyNg9Jd0wjPzVCFWYY3Kk2HVO6nSw
-         cgIS6tSmxGWiuXkZTTkLHlpEAVeUmlemYIHu5oP0nunhiPvWih8O43ZG8f2w2hwPd6kX
-         1wHpdHkeMTCZKXjZuxf3vvAnzbn4LDUKtzn1CHFBU1ZiH7n5kMww/7khN+EDtD9P9IHq
-         oFm1EWAQdBcV7UvNrfK0aShRqJ4sMGeXt1AuN5nnVMI9xfPqLeXrt9cY3It1kqxEhNt0
-         bBJg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=km6wTK9gxRICmw3iQSSF3JcpeR0eL80m2+vYs16O/UQ=;
-        b=8C89Qz0Q6Vs3PUE163tARURCM9qtBNO0174tSGdnoVlR2yej1D9LUTD4rpiZ++MxRE
-         XBwM+ps0gB3RXgaXHX/ypidzxdqQqxB05XxMiK95QmJx3o22xx2k4P6jQS00topv2BFd
-         kkOGxGjlSsOvf5UVpujJhqrtZ2U2641WpsKUyEqaj8Uv3oJyrd8usIBxjQdZvwJlzsg1
-         13gaqSJzQfHsCWg+eGg3rTJVcwMKXnLTqIdRX985qbJ6LaofW6TZx1PG0R4KNORMEyf4
-         VQEzdQ91cWQQz9+FkXHMp23wCiehqXgdpa452oqxGi4q598TSnX79FB7TLpN5bLcr+q1
-         cKIg==
-X-Gm-Message-State: ACrzQf2dADVM65cSFE0ydJ14tUGTp7u55An+MOiEN7BNPJW3q7D9LFme
-	Foz1L/+5jJw2V8rkp191XmvuFA==
-X-Google-Smtp-Source: AMsMyM5cnvx25mpAcD4KhlBDyl+lCQToilLxqqHXKf5AeiIp0KAacgeT10PKwy3Nv+iNARZthnMX3g==
-X-Received: by 2002:a05:651c:1038:b0:277:5452:60f6 with SMTP id w24-20020a05651c103800b00277545260f6mr584140ljm.21.1667139975982;
-        Sun, 30 Oct 2022 07:26:15 -0700 (PDT)
-Received: from [10.27.10.248] ([195.165.23.90])
-        by smtp.gmail.com with ESMTPSA id c27-20020a056512239b00b0049487818dd9sm818086lfv.60.2022.10.30.07.26.15
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sun, 30 Oct 2022 07:26:15 -0700 (PDT)
-Message-ID: <ffabb95a-8994-a695-255a-b19c25b9fbfa@linaro.org>
-Date: Sun, 30 Oct 2022 17:26:14 +0300
+	id 1opSlt-00B8FE-LF; Mon, 31 Oct 2022 11:16:01 +0000
+Received: from foss.arm.com ([217.140.110.172])
+	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
+	id 1opSkO-00B7D1-7c; Mon, 31 Oct 2022 11:14:30 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+	by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6F27D113E;
+	Mon, 31 Oct 2022 04:14:29 -0700 (PDT)
+Received: from donnerap.arm.com (donnerap.cambridge.arm.com [10.1.197.42])
+	by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8D96C3F703;
+	Mon, 31 Oct 2022 04:14:20 -0700 (PDT)
+From: Andre Przywara <andre.przywara@arm.com>
+To: Jernej Skrabec <jernej.skrabec@gmail.com>,
+	Samuel Holland <samuel@sholland.org>,
+	Chen-Yu Tsai <wens@csie.org>,
+	Kishon Vijay Abraham I <kishon@ti.com>,
+	Vinod Koul <vkoul@kernel.org>
+Cc: Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	linux-phy@lists.infradead.org,
+	linux-usb@vger.kernel.org,
+	devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-sunxi@lists.linux.dev,
+	Karl Kurbjun <karl.os@veroson.com>,
+	Icenowy Zheng <uwu@icenowy.me>
+Subject: [PATCH v2 1/7] dt-bindings: usb: Add H616 compatible string
+Date: Mon, 31 Oct 2022 11:13:52 +0000
+Message-Id: <20221031111358.3387297-2-andre.przywara@arm.com>
+X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20221031111358.3387297-1-andre.przywara@arm.com>
+References: <20221031111358.3387297-1-andre.przywara@arm.com>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.3.3
-Subject: Re: [PATCH v1 0/7] PCI/phy: Add support for PCI on sm8350 platform
-Content-Language: en-GB
-To: Bjorn Helgaas <helgaas@kernel.org>
-Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konrad.dybcio@somainline.org>,
- Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Jingoo Han <jingoohan1@gmail.com>,
- Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- =?UTF-8?Q?Krzysztof_Wilczy=c5=84ski?= <kw@linux.com>,
- Bjorn Helgaas <bhelgaas@google.com>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>,
- Philipp Zabel <p.zabel@pengutronix.de>, Johan Hovold <johan@kernel.org>,
- linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org
-References: <20221030122301.GA1022001@bhelgaas>
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-In-Reply-To: <20221030122301.GA1022001@bhelgaas>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221030_072619_877883_A1F6F380 
-X-CRM114-Status: GOOD (  15.83  )
+X-CRM114-CacheID: sfid-20221031_041428_350011_31029F81 
+X-CRM114-Status: UNSURE (   7.65  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,43 +68,48 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 30/10/2022 15:23, Bjorn Helgaas wrote:
-> On Sun, Oct 30, 2022 at 12:13:05AM +0300, Dmitry Baryshkov wrote:
->> SM8350 is one of the recent Qualcomm platforms which lacks PCIe support.
-> 
-> I guess the "platform" (the hardware) has PCIe, but the current driver
-> doesn't support it?
+The Allwinner H616 contains four fully OHCI/EHCI compatible USB host
+controllers, so just add their compatible strings to the list of
+generic OHCI/EHCI controllers.
 
-Yes.
+Signed-off-by: Andre Przywara <andre.przywara@arm.com>
+Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+---
+ Documentation/devicetree/bindings/usb/generic-ehci.yaml | 1 +
+ Documentation/devicetree/bindings/usb/generic-ohci.yaml | 1 +
+ 2 files changed, 2 insertions(+)
 
-> 
->> Use sm8450 PHY tables to add support for the PCIe hosts on Qualcomm SM8350 platform.
->>
->> Note: the PCIe0 table is based on the v2.1 tables, so it might work
->> incorrectly on earlier platforms.
-> 
-> I'm not sure what this means in terms of applying this series.  It
-> sounds like "this series might break earlier platforms".  That
-> wouldn't be good, so I assume it's more subtle than that.
-> 
-> I guess "v2.1 tables" refers to "PHY config tables"?  "PCIe0" appears
-> mostly in [6/7] as a 1-lane Gen3 host.  "v2.1" and "v2_1" don't appear
-> at all.  I can't quite figure out what symbols in the patches these
-> refer to.
-
-Oh, excuse me. There were several revisions of sm8350 SoC (1.0, 2.0, 
-2.1), with slight differences in the PHY programming. Usually we support 
-only the latest version, which is the version going into 
-mass-production. I'll expand the description in the v2.
-
+diff --git a/Documentation/devicetree/bindings/usb/generic-ehci.yaml b/Documentation/devicetree/bindings/usb/generic-ehci.yaml
+index c5f629c5bc617..994818cb60446 100644
+--- a/Documentation/devicetree/bindings/usb/generic-ehci.yaml
++++ b/Documentation/devicetree/bindings/usb/generic-ehci.yaml
+@@ -30,6 +30,7 @@ properties:
+               - allwinner,sun4i-a10-ehci
+               - allwinner,sun50i-a64-ehci
+               - allwinner,sun50i-h6-ehci
++              - allwinner,sun50i-h616-ehci
+               - allwinner,sun5i-a13-ehci
+               - allwinner,sun6i-a31-ehci
+               - allwinner,sun7i-a20-ehci
+diff --git a/Documentation/devicetree/bindings/usb/generic-ohci.yaml b/Documentation/devicetree/bindings/usb/generic-ohci.yaml
+index f838f78d6164a..4fcbd0add49d1 100644
+--- a/Documentation/devicetree/bindings/usb/generic-ohci.yaml
++++ b/Documentation/devicetree/bindings/usb/generic-ohci.yaml
+@@ -20,6 +20,7 @@ properties:
+               - allwinner,sun4i-a10-ohci
+               - allwinner,sun50i-a64-ohci
+               - allwinner,sun50i-h6-ohci
++              - allwinner,sun50i-h616-ohci
+               - allwinner,sun5i-a13-ohci
+               - allwinner,sun6i-a31-ohci
+               - allwinner,sun7i-a20-ohci
 -- 
-With best wishes
-Dmitry
+2.25.1
 
 
 -- 
