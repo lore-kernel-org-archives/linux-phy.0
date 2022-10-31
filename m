@@ -4,32 +4,32 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D6676C38A02
-	for <linux-phy@archiver.kernel.org>; Mon, 31 Oct 2022 11:16:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1292AFA3744
+	for <linux-phy@archiver.kernel.org>; Mon, 31 Oct 2022 11:16:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ST4M6FhZj/3/6B0ltR/1C9aHRa24uEQTcokgJ846Bgc=; b=WSW45vTwajDIJd
-	tvNjhhPNbEmDW8xw9SW3g+b+xHV5lLUVEma7QjoEGEXJ8BrqS+DF9f+CZ1JRv/F08XUPrD7xXP6Wa
-	IaZJUESea5bjh1AMdSnEFVM4KpYff0EMUCfI/NDKnm7lvyaMJV2/ZXxhItDqP/pOaF9BqKFmT0sDs
-	wnRY/EcU3OwPmq2TUg9EuJSRmBsDFEZhCOih34c6W4vTFLbrnhgcV7IcPvwUsYuZd6Vk5d1uo+Knb
-	qOccUPsSsQ78NjSYHaB3t37cZzjzImGqDBTA1+fqJZ6MFm/rpXz4Qo5RtwigGFeT6lp9N1EPqgoiR
-	c1RY0qFifE8MihLFlR6w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Mlb2AjpqaiYHd/GKqVyu1no03m/lM4slDENBsOJmF60=; b=UieuF0xyxsMPbF
+	X2GxPhGRbylG5Zaw0Gwv0DD5NOB073AsEwrSq0psm5i2FjQd6Suc8Sf7Bj+JMH1NE2bJGXFhV4sVT
+	6J/ekmZ3tI4e+keArMv/lZ74RGMbHjkVjy0clJm9NxOVoDYhG28HJLOnq0l+bhE0qwQSg89SOADGz
+	87Qmgi2cCehP2isJF+FjFhkNS+TsWbs7Lgbmyh0ap1VDk6vIri2yaVxzwuwy9wvrTQaUSpK3bKVOj
+	3lAwg5KNQsNo7fKzCboEhXbZxNueed6Z3CZcCONCeiWUyVDi04CrnPYQQ1unc9rRlmDJOjACpmRf6
+	gLduuVUiNv8UPIsbLbdQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1opSlt-00B8FW-Ux; Mon, 31 Oct 2022 11:16:01 +0000
+	id 1opSlu-00B8Fd-81; Mon, 31 Oct 2022 11:16:02 +0000
 Received: from foss.arm.com ([217.140.110.172])
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1opSkO-00B7DK-CI; Mon, 31 Oct 2022 11:14:31 +0000
+	id 1opSkP-00B7G8-E3; Mon, 31 Oct 2022 11:14:31 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
-	by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 905241FB;
-	Mon, 31 Oct 2022 04:14:26 -0700 (PDT)
+	by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 49AC112FC;
+	Mon, 31 Oct 2022 04:14:32 -0700 (PDT)
 Received: from donnerap.arm.com (donnerap.cambridge.arm.com [10.1.197.42])
-	by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id AADA73F703;
-	Mon, 31 Oct 2022 04:14:17 -0700 (PDT)
+	by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6FC263F703;
+	Mon, 31 Oct 2022 04:14:23 -0700 (PDT)
 From: Andre Przywara <andre.przywara@arm.com>
 To: Jernej Skrabec <jernej.skrabec@gmail.com>,
 	Samuel Holland <samuel@sholland.org>,
@@ -46,14 +46,17 @@ Cc: Rob Herring <robh+dt@kernel.org>,
 	linux-sunxi@lists.linux.dev,
 	Karl Kurbjun <karl.os@veroson.com>,
 	Icenowy Zheng <uwu@icenowy.me>
-Subject: [PATCH v2 0/7] arm64: sunxi: h616: Add USB support
-Date: Mon, 31 Oct 2022 11:13:51 +0000
-Message-Id: <20221031111358.3387297-1-andre.przywara@arm.com>
+Subject: [PATCH v2 2/7] dt-bindings: phy: Add special clock for Allwinner H616 PHY
+Date: Mon, 31 Oct 2022 11:13:53 +0000
+Message-Id: <20221031111358.3387297-3-andre.przywara@arm.com>
 X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20221031111358.3387297-1-andre.przywara@arm.com>
+References: <20221031111358.3387297-1-andre.przywara@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221031_041428_507601_A644621F 
-X-CRM114-Status: GOOD (  16.02  )
+X-CRM114-CacheID: sfid-20221031_041429_573049_2760E5CC 
+X-CRM114-Status: UNSURE (   8.80  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -70,70 +73,79 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This is a fixed and rebased update of the previous version, with only
-the DT binding and one DT seeing changes, triggered by Krzysztof's
-comments. For a changelog see below.
-Thanks to Karl for testing this on the OrangePi Zero 2!
+The USB PHY IP in the Allwinner H616 SoC requires a quirk that involves
+some resources from port 2's PHY and HCI IP. In particular the PMU clock
+for port 2 must be surely ungated before accessing the REG_HCI_PHY_CTL
+register of port 2. To allow each USB port to be controlled
+independently of port 2, we need a handle to that particular PMU clock
+in the *PHY* node, as the HCI and PHY part might be handled by separate
+drivers.
 
-------------------------
-The USB IP used in the Allwinner H616 SoC is very similar to the one
-used in the H3 chip: it contains four USB 2.0 host controllers and four
-PHYs, where the first PHY is shared with a separate USB-OTG controller.
+Add that clock to the requirements of the H616 PHY binding, so that a
+PHY driver can apply the quirk in isolation, without requiring help from
+port 2's HCI driver.
 
-But out of the four ports, only port 2 works out of the box, the other
-ports require some resources and registers of port 2 to be enabled as
-well.
+Signed-off-by: Andre Przywara <andre.przywara@arm.com>
+---
+ .../phy/allwinner,sun8i-h3-usb-phy.yaml       | 26 +++++++++++++++++++
+ 1 file changed, 26 insertions(+)
 
-Implement the required workaround in the Allwinner USB PHY driver, and
-key this off the respective compatible string. This core code is
-contained in patch 3/7. The first two patches add the respective DT
-binding documentation, whereas patch 4/7 encodes all the configuration
-options for the H616 USB PHY into the driver.
-The last three patches add the respective devicetree nodes, to the H616
-.dtsi, but also to the DTs of the two supported boards.
-
-This allows USB to be used on any H616 based machine. This was tested on
-the X96 Mate box.
-
-The patches in this series were originally contained in the initial H616
-support series, but where dropped there to speed up mainlining of the
-basic support.
-
-It is now based on v6.1-rc3 and is also available here:
-https://github.com/apritzel/linux/commits/h616-usb-v2
-
-Please have a look and test on your hardware, especically on all ports
-exposed on header pins of the OrangePi Zero2 board.
-
-Cheers,
-Andre
-
-Changelog v1 .. v2:
-- Add Krzysztof's ACK
-- wrap If: clause in allOf: (patch 2/7)
-- limit old (H3) PHYs to 4 clocks (else clause, patch 2/7)
-- change subsystem to phy: in subject (patch 2/7)
-- use "regulator-" prefix for DT node name (patch 6/7)
-- drop unneeded status property in regulator node (patch 6/7)
-
-Andre Przywara (7):
-  dt-bindings: usb: Add H616 compatible string
-  dt-bindings: phy: Add special clock for Allwinner H616 PHY
-  phy: sun4i-usb: Introduce port2 SIDDQ quirk
-  phy: sun4i-usb: Add support for the H616 USB PHY
-  arm64: dts: allwinner: h616: Add USB nodes
-  arm64: dts: allwinner: h616: OrangePi Zero 2: Add USB nodes
-  arm64: dts: allwinner: h616: X96 Mate: Add USB nodes
-
- .../phy/allwinner,sun8i-h3-usb-phy.yaml       |  26 +++
- .../devicetree/bindings/usb/generic-ehci.yaml |   1 +
- .../devicetree/bindings/usb/generic-ohci.yaml |   1 +
- .../allwinner/sun50i-h616-orangepi-zero2.dts  |  41 +++++
- .../dts/allwinner/sun50i-h616-x96-mate.dts    |  25 +++
- .../arm64/boot/dts/allwinner/sun50i-h616.dtsi | 160 ++++++++++++++++++
- drivers/phy/allwinner/phy-sun4i-usb.c         |  71 ++++++++
- 7 files changed, 325 insertions(+)
-
+diff --git a/Documentation/devicetree/bindings/phy/allwinner,sun8i-h3-usb-phy.yaml b/Documentation/devicetree/bindings/phy/allwinner,sun8i-h3-usb-phy.yaml
+index 77539b4601c24..2df012d13655e 100644
+--- a/Documentation/devicetree/bindings/phy/allwinner,sun8i-h3-usb-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/allwinner,sun8i-h3-usb-phy.yaml
+@@ -36,18 +36,22 @@ properties:
+       - const: pmu3
+ 
+   clocks:
++    minItems: 4
+     items:
+       - description: USB OTG PHY bus clock
+       - description: USB Host 0 PHY bus clock
+       - description: USB Host 1 PHY bus clock
+       - description: USB Host 2 PHY bus clock
++      - description: PMU clock for host port 2
+ 
+   clock-names:
++    minItems: 4
+     items:
+       - const: usb0_phy
+       - const: usb1_phy
+       - const: usb2_phy
+       - const: usb3_phy
++      - const: pmu2_clk
+ 
+   resets:
+     items:
+@@ -96,6 +100,28 @@ required:
+   - resets
+   - reset-names
+ 
++allOf:
++  - if:
++      properties:
++        compatible:
++          contains:
++            enum:
++              - allwinner,sun50i-h616-usb-phy
++    then:
++      properties:
++        clocks:
++          minItems: 5
++
++        clock-names:
++          minItems: 5
++    else:
++      properties:
++        clocks:
++          maxItems: 4
++
++        clock-names:
++          maxItems: 4
++
+ additionalProperties: false
+ 
+ examples:
 -- 
 2.25.1
 
