@@ -4,68 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9EFC9FA3744
-	for <linux-phy@archiver.kernel.org>; Mon, 31 Oct 2022 21:41:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 89139FA3741
+	for <linux-phy@archiver.kernel.org>; Mon, 31 Oct 2022 21:47:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iswDsucy9oMtRjalW7Cnkaji/lx2BPPLTvmoUvav8TA=; b=RZFLfcLBGvKplW
-	Jb1n3ZwrU7/gEkn45cZFHnlHjGtUmSykd/SHWHjCySul3/Yh/PliCHK9en5fWjAE4E4gmygNcXmfH
-	mlCfvo609hy2Ps0eMFTORrMY75PoV9tGtEC9PyqUeJnwTUXDP/OjPyKnMtgXhR++8fQz61C8fmfMw
-	zrfu0EFE7W0QcN3K6TtchGXTipOlFRfVRrQm9mwZrxiRwA3xnHGG1ypMJ2PgRlLWhu/TUs58fwSr9
-	bdkDwur/nIPcDsATKqhLyhLYvm/clbt8ZNcUN3pQqpR2jKiWRgt471DUSyzfrSDB4MCyJCzC+inv3
-	9/C/wiSCV7CQ9jWl1QOg==;
+	List-Owner; bh=qFFuforC9n8ybDxSr+GGJtsCxX7hVrXuJKg1pDDTY/E=; b=uF3HWpWK5LSTzP
+	kyzJ75euyn2CzsOMP1EDn3zHlUS5RUaXw+xfs629FS/dsn/Jd8DZggGkaCchWDJkMe+Y+RG3AEn7E
+	W9Lrm6qj2q+1EKN4iPo/ve97bgfg9jki22+mfwFDK9p85YhYdNqwr3nEUZ3yuk6r5FEEn5h4d8Hn4
+	EGMzpGcRL7XCbUM+XXYfknsvY80twZPSvMgt9zomTnJiP8kv6CnmgYHwuA0vJmmDdyH4lLpWJR053
+	u54QZpqGd4d+MaEX/oQvGwfqPhiwVt31z5BGS1jLnoCTl2sOfl7eiH09Y0GmuhVy5tRGjl+32SgO1
+	hNVHE1AbZG4YKKXyXe0g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1opcXL-00Fgrr-47; Mon, 31 Oct 2022 21:41:39 +0000
-Received: from mail-oa1-f54.google.com ([209.85.160.54])
+	id 1opccr-00Fk8t-Le; Mon, 31 Oct 2022 21:47:21 +0000
+Received: from mail-yw1-x112a.google.com ([2607:f8b0:4864:20::112a])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1opcXJ-00FgrH-8P
-	for linux-phy@lists.infradead.org; Mon, 31 Oct 2022 21:41:38 +0000
-Received: by mail-oa1-f54.google.com with SMTP id 586e51a60fabf-1322d768ba7so14926970fac.5
-        for <linux-phy@lists.infradead.org>; Mon, 31 Oct 2022 14:41:36 -0700 (PDT)
+	id 1opcco-00Fk5z-Cg
+	for linux-phy@lists.infradead.org; Mon, 31 Oct 2022 21:47:20 +0000
+Received: by mail-yw1-x112a.google.com with SMTP id 00721157ae682-3691e040abaso120356807b3.9
+        for <linux-phy@lists.infradead.org>; Mon, 31 Oct 2022 14:47:17 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=xzOjqeyFvqhS705oPAWJ0GddjV0BZAQlCXe8zauSjnY=;
+        b=WAbGR+86/wS/wQn7NrfO9yBuZ+LEYr45wjJW9kgI4iX5MZNea4xPjGtAJaGK3+cn3c
+         SmSPMD8A0+vNkwDFroz0sXZ8z9omzzXaaxX2l4NT5hVlKiBficeb09H9Jnk2DIex2HFS
+         WaZxiMcXacucddwHPOR5jnmrayrlc7eWEhvqaeh08KyqbPjj8Vr95h/idSDU6TWp82jX
+         mDkoPTBCJi52hQ8d/6nKlbv3P2VMMm97OTg4oqQM7IfMvW8r/EeXnA9qR2WiD+N4j31g
+         6506QrUb65Fg7gf+Nqu0r73/K3ho38WNv1Exws4/S2nQT98RpCFmQfI/fIugsGhobUzR
+         mJXQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=VcI0kyKn8cZbGuLpOtO1mv+Kxd6UqslGrJVaFZhYmE8=;
-        b=4zW/a9BEknOqIt2Qmg/cdyCwgV5jRz0hoYo5tJxVwAcco7FzZIcuBXOdIkMtoagtT/
-         FZDFIq5w2ie5WPJqDIX9UeSvuq27xCUPn/Kzddo+C4Qeb469Y23vEkmc0hIeRuVE9Cee
-         8ppB8NBFhGROgdIlA/YsCe7n0QmUMZVjOYtfHFDH+KtbaBy2SOHqc9gZZ5vfMEjS18vh
-         HIrq1I3ecYQ2wi3JJO5AGl2mN4J7a5kUtuAlVvvf6nom39PTN1O4aXIJmFAM3n+ThpcD
-         OexNdYRX2cau9Le1ASvcrcVaMXSkS0N5dN6mJWMWA2DFyH4+TTpg+zOltVlaDqv2VEBH
-         PMJw==
-X-Gm-Message-State: ACrzQf24K3xfg2568lFL6Vv7yTsC3lhOR2Y5kOcw9vuLhNrFBvKu/6CW
-	WvDcI56I/dZV7ARUX/7vEA==
-X-Google-Smtp-Source: AMsMyM5gEDn+v8FtcjVtTsmNxCqAjnGMCDqmiyURwxRSwgQ0L/lI8gWwRhVd0bJSL60yRW2+0Zja+g==
-X-Received: by 2002:a05:6870:4798:b0:12c:fdf7:e948 with SMTP id c24-20020a056870479800b0012cfdf7e948mr8606870oaq.247.1667252495847;
-        Mon, 31 Oct 2022 14:41:35 -0700 (PDT)
-Received: from robh_at_kernel.org (66-90-144-107.dyn.grandenetworks.net. [66.90.144.107])
-        by smtp.gmail.com with ESMTPSA id x32-20020a05683040a000b0066aba96addbsm3200540ott.81.2022.10.31.14.41.34
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 31 Oct 2022 14:41:35 -0700 (PDT)
-Received: (nullmailer pid 3618755 invoked by uid 1000);
-	Mon, 31 Oct 2022 21:41:37 -0000
-Date: Mon, 31 Oct 2022 16:41:37 -0500
-From: Rob Herring <robh@kernel.org>
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Cc: Konrad Dybcio <konrad.dybcio@somainline.org>, Bjorn Helgaas <bhelgaas@google.com>, linux-arm-msm@vger.kernel.org, Johan Hovold <johan@kernel.org>, Bjorn Andersson <andersson@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh+dt@kernel.org>, Gustavo Pimentel <gustavo.pimentel@synopsys.com>, Vinod Koul <vkoul@kernel.org>, devicetree@vger.kernel.org, Andy Gross <agross@kernel.org>, linux-phy@lists.infradead.org, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>, linux-pci@vger.kernel.org, Jingoo Han <jingoohan1@gmail.com>, Philipp Zabel <p.zabel@pengutronix.de>
-Subject: Re: [PATCH v1 2/7] dt-bindings: phy: qcom,qmp-pcie: add sm8350
- bindings
-Message-ID: <166725249648.3618701.17839968861509422583.robh@kernel.org>
-References: <20221029211312.929862-1-dmitry.baryshkov@linaro.org>
- <20221029211312.929862-3-dmitry.baryshkov@linaro.org>
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=xzOjqeyFvqhS705oPAWJ0GddjV0BZAQlCXe8zauSjnY=;
+        b=wWkGEUa5Wo0LlR2a/WSbRBGar9KC5NjZkIbQ/pb9istCRnT5fkKAkiBQbEs0QNB7xL
+         7+Ov63fq+Py+JrqwuG5ruBHpa/r63W63hO7titbCwginsANrYuPY/CxHnZAR+QlZ7w7q
+         mdfO7Y/v+ICyDMWHCLc/abygUHQ8WQ1MOf7D09mQezuhne0GtlnUP7pM5ppSNpNPL3Yr
+         QakRrRWQH9PGqDBxlO57GX2Iz0P5rIZUAyBpxffsAbBsuYiFi+e0nw+z7fRoLkITkbxI
+         J//duZDtRz1Jz4qKadx8OannZQpp7myAKDIncFzxq5KBaVPPKyw37+EKXhZ5x7dfIMvK
+         VGXA==
+X-Gm-Message-State: ACrzQf3wgZW4XGQU76EEGqfg9loZVYGhbnIu7UUqF9sEp0gBa2pC4F4r
+	XqtO1kmiH+2HryzjMT4pesIkWgwzDUsZTRaLeiG4Gg==
+X-Google-Smtp-Source: AMsMyM7WB8VP+s71qqDXHCNxNVqxxxMFfsqDw3nJpW8eHHM9Hbbq60q6Hu6nkcqqaQfIZF+eDstm2AASBcHNwD09E48=
+X-Received: by 2002:a81:7804:0:b0:369:1074:e2b with SMTP id
+ t4-20020a817804000000b0036910740e2bmr15334789ywc.127.1667252836424; Mon, 31
+ Oct 2022 14:47:16 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20221029211312.929862-3-dmitry.baryshkov@linaro.org>
+References: <20221029211312.929862-1-dmitry.baryshkov@linaro.org>
+ <20221029211312.929862-2-dmitry.baryshkov@linaro.org> <20221031214055.GA3613285-robh@kernel.org>
+In-Reply-To: <20221031214055.GA3613285-robh@kernel.org>
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Date: Tue, 1 Nov 2022 00:47:05 +0300
+Message-ID: <CAA8EJpqt+UvWHwd90Cdm3iCi2sbxbwbC3ADY6PW053Tw8r94VA@mail.gmail.com>
+Subject: Re: [PATCH v1 1/7] dt-bindings: PCI: qcom: Add sm8350 to bindings
+To: Rob Herring <robh@kernel.org>
+Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
+	Konrad Dybcio <konrad.dybcio@somainline.org>, 
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Jingoo Han <jingoohan1@gmail.com>, 
+	Gustavo Pimentel <gustavo.pimentel@synopsys.com>, 
+	Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, =?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?= <kw@linux.com>, 
+	Bjorn Helgaas <bhelgaas@google.com>, Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>, 
+	Johan Hovold <johan@kernel.org>, linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org, 
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221031_144137_310069_342B589A 
-X-CRM114-Status: UNSURE (   8.93  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20221031_144718_524612_9E229493 
+X-CRM114-Status: GOOD (  18.11  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,17 +93,122 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On Tue, 1 Nov 2022 at 00:40, Rob Herring <robh@kernel.org> wrote:
+>
+> On Sun, Oct 30, 2022 at 12:13:06AM +0300, Dmitry Baryshkov wrote:
+> > Add bindings for two PCIe hosts on SM8350 platform. The only difference
+> > between them is in the aggre0 clock, which warrants the oneOf clause for
+> > the clocks properties.
+> >
+> > Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+> > ---
+> >  .../devicetree/bindings/pci/qcom,pcie.yaml    | 54 +++++++++++++++++++
+> >  1 file changed, 54 insertions(+)
+> >
+> > diff --git a/Documentation/devicetree/bindings/pci/qcom,pcie.yaml b/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
+> > index 54f07852d279..55bf5958ef79 100644
+> > --- a/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
+> > +++ b/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
+> > @@ -32,6 +32,7 @@ properties:
+> >        - qcom,pcie-sdm845
+> >        - qcom,pcie-sm8150
+> >        - qcom,pcie-sm8250
+> > +      - qcom,pcie-sm8350
+> >        - qcom,pcie-sm8450-pcie0
+> >        - qcom,pcie-sm8450-pcie1
+> >        - qcom,pcie-ipq6018
+> > @@ -185,6 +186,7 @@ allOf:
+> >                - qcom,pcie-sc8180x
+> >                - qcom,pcie-sc8280xp
+> >                - qcom,pcie-sm8250
+> > +              - qcom,pcie-sm8350
+> >                - qcom,pcie-sm8450-pcie0
+> >                - qcom,pcie-sm8450-pcie1
+> >      then:
+> > @@ -540,6 +542,57 @@ allOf:
+> >            items:
+> >              - const: pci # PCIe core reset
+> >
+> > +  - if:
+> > +      properties:
+> > +        compatible:
+> > +          contains:
+> > +            enum:
+> > +              - qcom,pcie-sm8350
+> > +    then:
+> > +      oneOf:
+> > +          # Unfortunately the "optional" ref clock is used in the middle of the list
+> > +        - properties:
+> > +            clocks:
+> > +              maxItems: 13
+> > +            clock-names:
+> > +              items:
+> > +                - const: pipe # PIPE clock
+> > +                - const: pipe_mux # PIPE MUX
+> > +                - const: phy_pipe # PIPE output clock
+> > +                - const: ref # REFERENCE clock
+> > +                - const: aux # Auxiliary clock
+> > +                - const: cfg # Configuration clock
+> > +                - const: bus_master # Master AXI clock
+> > +                - const: bus_slave # Slave AXI clock
+> > +                - const: slave_q2a # Slave Q2A clock
+> > +                - const: tbu # PCIe TBU clock
+> > +                - const: ddrss_sf_tbu # PCIe SF TBU clock
+> > +                - const: aggre0 # Aggre NoC PCIe0 AXI clock
+>
+> 'enum: [ aggre0, aggre1 ]' and 'minItems: 12' would eliminate the 2nd
+> case. There's a implicit requirement that string names are unique (by
+> default).
 
-On Sun, 30 Oct 2022 00:13:07 +0300, Dmitry Baryshkov wrote:
-> Add bindings for the PCIe QMP PHYs found on SM8350.
-> 
-> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-> ---
->  .../phy/qcom,sc8280xp-qmp-pcie-phy.yaml       | 22 +++++++++++++++++++
->  1 file changed, 22 insertions(+)
-> 
+Wouldn't it also allow a single 'aggre0' string?
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+>
+> > +                - const: aggre1 # Aggre NoC PCIe1 AXI clock
+> > +        - properties:
+> > +            clocks:
+> > +              maxItems: 12
+> > +            clock-names:
+> > +              items:
+> > +                - const: pipe # PIPE clock
+> > +                - const: pipe_mux # PIPE MUX
+> > +                - const: phy_pipe # PIPE output clock
+> > +                - const: ref # REFERENCE clock
+> > +                - const: aux # Auxiliary clock
+> > +                - const: cfg # Configuration clock
+> > +                - const: bus_master # Master AXI clock
+> > +                - const: bus_slave # Slave AXI clock
+> > +                - const: slave_q2a # Slave Q2A clock
+> > +                - const: tbu # PCIe TBU clock
+> > +                - const: ddrss_sf_tbu # PCIe SF TBU clock
+> > +                - const: aggre1 # Aggre NoC PCIe1 AXI clock
+> > +      properties:
+> > +        resets:
+> > +          maxItems: 1
+> > +        reset-names:
+> > +          items:
+> > +            - const: pci # PCIe core reset
+> > +
+> >    - if:
+> >        properties:
+> >          compatible:
+> > @@ -670,6 +723,7 @@ allOf:
+> >                - qcom,pcie-sdm845
+> >                - qcom,pcie-sm8150
+> >                - qcom,pcie-sm8250
+> > +              - qcom,pcie-sm8350
+> >                - qcom,pcie-sm8450-pcie0
+> >                - qcom,pcie-sm8450-pcie1
+> >      then:
+> > --
+> > 2.35.1
+> >
+> >
+
+
+
+-- 
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
