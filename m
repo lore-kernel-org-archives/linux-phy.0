@@ -4,62 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BD3D7ECAAA1
-	for <linux-phy@archiver.kernel.org>; Mon, 31 Oct 2022 18:03:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0E5B4FA3741
+	for <linux-phy@archiver.kernel.org>; Mon, 31 Oct 2022 18:03:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=K9nt+qexMAXZ6WnxcOpGpTMGkYBlSYY+0MKungH6nL0=; b=T9bpjfYN/jM8h1
-	X5rYibQ2v0M9MpwoHY7zibskgj79BzBxV1biOcdpP0UbMeroVqkX6V2UBM57A2lvN1l9uti9MxalG
-	qBgLPDIOfokKpZROlMKQJ1COOHwgXVAePKtzc3xfSjF9qJ81eHhgOPNQ4XqAAZCF5SHhI9GEr4q4X
-	dsKoLSCcuSRaTe77jI2aPvnDKyFTwLKh1i7dM2aBE0YR22e2CtjdDx8/3xQDXg27y2FWa+nC9Jpca
-	r4y02cMy2cY39wEalWKVhMzoVos9Ab6MFM+kfiTctKVdDPq4bid2H6qiiKOX4p9s+AAqGvqqYJLje
-	VEjJUKeFTFJNs4YV/QRg==;
+	List-Owner; bh=zleGZ59Bruq44hL2yidQH2ID5MtVkLagNr7U8WvDey4=; b=3uOnyC0/xZj500
+	2QXToZ5Gt8bToe9tIzkgr4UGT/WDRYissvwLtjdylCQ+A1yNy/+/SYBga7noKKARaAkZHJ27zwT7i
+	el0rrkfCGr3HCA6aZ5PIOskaYzzCc4MyQkXonYqfiEr2UUhR/JET8qNsxQsr+swEdl6OwKMggv9YX
+	GGzjLkfuUzuP1Fpmka3YHlAN0xXJVaO2rKLvk99ztuJ2+VVFEA3eA61I7AFhmeBPxpU7xVfSlO+/d
+	Z82FU2O6jj3rGED2zrgIUd1l2RlcvRp8+5ZSs30A+yx7Sb7tWECe+kqNTF/CBAabo9Aa0c606V77V
+	x9zrBSjVOg1sMs35GPcA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1opZ8P-00DaeL-76; Mon, 31 Oct 2022 18:03:41 +0000
-Received: from mail-pl1-x632.google.com ([2607:f8b0:4864:20::632])
+	id 1opZ8U-00DagI-AA; Mon, 31 Oct 2022 18:03:46 +0000
+Received: from mail-pf1-x436.google.com ([2607:f8b0:4864:20::436])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1opZ8M-00DacI-Cu
-	for linux-phy@lists.infradead.org; Mon, 31 Oct 2022 18:03:40 +0000
-Received: by mail-pl1-x632.google.com with SMTP id u6so11420187plq.12
-        for <linux-phy@lists.infradead.org>; Mon, 31 Oct 2022 11:03:37 -0700 (PDT)
+	id 1opZ8R-00DaZx-PN
+	for linux-phy@lists.infradead.org; Mon, 31 Oct 2022 18:03:45 +0000
+Received: by mail-pf1-x436.google.com with SMTP id 17so7091912pfv.4
+        for <linux-phy@lists.infradead.org>; Mon, 31 Oct 2022 11:03:43 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=SEImNrrGJCLJR7lpSd2nSHN0zzQY9fzqQ71zihD+hPY=;
-        b=qFdedGLrwxmNMAehEwYxGQ6gohQFci3keB8yiTqBT8Aqxw6Uk4ITPICooavU872d4G
-         2En1DjQOIXxpKU8TDmEYKaAxRG+i7ZmFxNKmaRZOYSkLGgxanLXXcBFNEc6InNFIxaHW
-         2IAWOTNKH8LuS9xL8lDymF1EwJn31EHRzsbCjLo8F37RhG8UHgG/t9PpTh7+4gyp7OTF
-         E59JFlTkACuPadWq1PK1A9kgkSG0TUKv4FNKqvpJHv3n5vw9pX33Aq0hIol8ekprLwvD
-         18ROj3kz0ynryLQWXMSdVPxs4OTQPMqLt1zaa5DWjQ7ykOb1+SXaO+8zMrstvpgf50/o
-         5GfQ==
+        bh=3s4pb9x6UWl8wDrCXVlNY9pvnbipHUCj9wO5Sx7YnCg=;
+        b=Aqxzg4D/i1JrHY1gvTUikcKWYvNIR6/SOWTFirfsyknenpTiNExSaqMPOO4XTOGMr0
+         WjaDMhmDlSBJFRherP07thMkDv9uP+ytT5h5rOISFFZfNOFMDV3dcQb3AOJoxziDHC+E
+         aAg446XXtI5x1pD2GSVM/M9gsGM3Q7t49dONxrBYaSSRdpHjZwMhxxv+/dKs1WM3vZmv
+         ez3Wo8Z7SEIaD4GAmyrhJwYWHha71PE38otRjY3zU9gjAae1GRWd/vgCujig7aX3uFP1
+         pDwfXQmLAJNarMjlLz7QQRiC30fJ8d0aTD4Bu3a4QfMpbHg8GU/5QC94xE889PcLnOZc
+         XWlw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=SEImNrrGJCLJR7lpSd2nSHN0zzQY9fzqQ71zihD+hPY=;
-        b=5zVez7nE5iX+mqfyQNGEGZfBI3aFVj9cMJG1W1+F4tqrtmKkIOmLDmNikh11638ciU
-         Z1/9MmCPvxGYUMJA/lHL9Gu8mrAfkheQAOhJjeIu7/Hx9UaM5yFcRzdbv5lLXDk2nDBl
-         l5ofDi6W6LQmXHKTKBGO+zJqLMIh8krp0tyxaPE+jt4nZTeq6ajkTJ873g1jNKFiki85
-         T4Cpjps8u/1DqT0z0y9iReQqu8xJ/fA0M+XNuT4LnWnBSeP9g/e2gpYcAoYlPOKytpqm
-         xEMOwf6/E6x9FLoSGPJLVJE8/WnEfM4VioQTZPPJfp5DBFmE60eBr6Jp1I6rpOm9EpnU
-         zUSg==
-X-Gm-Message-State: ACrzQf07PYDsEyhseWzA0blL4oUEyy5Ez55iaMX6jA1bYca04B1cl6Tf
-	YysonJwtczT11izUveD8QuHZ
-X-Google-Smtp-Source: AMsMyM712xgW8kAEoVLy0cUvHulvl265TrZOhGTBUNdHfYHUIj4YTuhebwxoAcuNwMYVIcUmOZ+AJw==
-X-Received: by 2002:a17:90b:2504:b0:212:def1:623b with SMTP id ns4-20020a17090b250400b00212def1623bmr16483326pjb.47.1667239416866;
-        Mon, 31 Oct 2022 11:03:36 -0700 (PDT)
+        bh=3s4pb9x6UWl8wDrCXVlNY9pvnbipHUCj9wO5Sx7YnCg=;
+        b=cfQX8bQG945C+gWGxfn8mJQ+NDtHTGCNJF6f+PvA6T8gqvZm9QtGRrxsDmHhVGr9uS
+         czxK4n0Jx4eghFhXPTrlaHIqm02+tZ/c7wQFB6cBfe9gMYblpjks7LiVHGXJBm0iZ5dE
+         nAj8O6HdE9Ljuc9VJc/bSoawLSmjDOk2q6hlHIzJA7a49CfT7F/BFhfOj5T8G59cEOXb
+         OmW7SFW4vD0mAMlZA8nNKu6R7i6lJtHjlN9CUkP0Ql8q+zf50uOEhBTG2Zt8bbIJZabA
+         eIwNXEtg68QOZ3uflkt6iZQ1Gn4/YaYKc9a452l/bBMamVWzuMXUB0TpmYgbM22MaA44
+         nwLg==
+X-Gm-Message-State: ACrzQf3dHguDRfvJJ35SqZaMd+Zokk0oI83GejB6hVw88UHYwxgRJVnd
+	BUGUZGlP0fSvZVUw7DgFAN/Q
+X-Google-Smtp-Source: AMsMyM7lyqNnH5Zv2natwI+SL8YjteI6+uttuWSF9voVktP1yk/eeh9VzW9d4o4g84anScqZQNZXeg==
+X-Received: by 2002:a63:e218:0:b0:448:5163:478f with SMTP id q24-20020a63e218000000b004485163478fmr13962942pgh.415.1667239423271;
+        Mon, 31 Oct 2022 11:03:43 -0700 (PDT)
 Received: from localhost.localdomain ([117.193.209.221])
-        by smtp.gmail.com with ESMTPSA id q14-20020a170902a3ce00b00186c6d2e7e3sm4742224plb.26.2022.10.31.11.03.30
+        by smtp.gmail.com with ESMTPSA id q14-20020a170902a3ce00b00186c6d2e7e3sm4742224plb.26.2022.10.31.11.03.37
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 31 Oct 2022 11:03:35 -0700 (PDT)
+        Mon, 31 Oct 2022 11:03:42 -0700 (PDT)
 From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 To: martin.petersen@oracle.com,
 	jejb@linux.ibm.com,
@@ -77,16 +77,16 @@ Cc: konrad.dybcio@somainline.org,
 	dmitry.baryshkov@linaro.org,
 	ahalaney@redhat.com,
 	Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Subject: [PATCH v2 08/15] scsi: ufs: ufs-qcom: Remove un-necessary goto statements
-Date: Mon, 31 Oct 2022 23:32:10 +0530
-Message-Id: <20221031180217.32512-9-manivannan.sadhasivam@linaro.org>
+Subject: [PATCH v2 09/15] scsi: ufs: ufs-qcom: Remove un-necessary WARN_ON()
+Date: Mon, 31 Oct 2022 23:32:11 +0530
+Message-Id: <20221031180217.32512-10-manivannan.sadhasivam@linaro.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20221031180217.32512-1-manivannan.sadhasivam@linaro.org>
 References: <20221031180217.32512-1-manivannan.sadhasivam@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221031_110338_466337_12DFFF60 
-X-CRM114-Status: GOOD (  21.59  )
+X-CRM114-CacheID: sfid-20221031_110343_841882_B65C6753 
+X-CRM114-Status: GOOD (  11.16  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,382 +103,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-goto in error path is useful if the function needs to do cleanup other
-than returning the error code. But in this driver, goto statements are
-used for just returning the error code in many places. This really
-makes it hard to read the code.
+In the reset assert and deassert callbacks, the supplied "id" is not used
+at all and only the hba reset is performed all the time. So there is no
+reason to use a WARN_ON on the "id".
 
-So let's get rid of those goto statements and just return the error code
-directly.
-
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 ---
- drivers/ufs/host/ufs-qcom.c | 100 +++++++++++++++---------------------
- 1 file changed, 41 insertions(+), 59 deletions(-)
+ drivers/ufs/host/ufs-qcom.c | 4 ----
+ 1 file changed, 4 deletions(-)
 
 diff --git a/drivers/ufs/host/ufs-qcom.c b/drivers/ufs/host/ufs-qcom.c
-index 8ad1415e10b6..7cd996ac180b 100644
+index 7cd996ac180b..8bb0f4415f1a 100644
 --- a/drivers/ufs/host/ufs-qcom.c
 +++ b/drivers/ufs/host/ufs-qcom.c
-@@ -110,7 +110,7 @@ static void ufs_qcom_disable_lane_clks(struct ufs_qcom_host *host)
- 
- static int ufs_qcom_enable_lane_clks(struct ufs_qcom_host *host)
+@@ -895,8 +895,6 @@ ufs_qcom_reset_assert(struct reset_controller_dev *rcdev, unsigned long id)
  {
--	int err = 0;
-+	int err;
- 	struct device *dev = host->hba->dev;
+ 	struct ufs_qcom_host *host = rcdev_to_ufs_host(rcdev);
  
- 	if (host->is_lane_clks_enabled)
-@@ -119,7 +119,7 @@ static int ufs_qcom_enable_lane_clks(struct ufs_qcom_host *host)
- 	err = ufs_qcom_host_clk_enable(dev, "rx_lane0_sync_clk",
- 		host->rx_l0_sync_clk);
- 	if (err)
--		goto out;
-+		return err;
+-	/* Currently this code only knows about a single reset. */
+-	WARN_ON(id);
+ 	ufs_qcom_assert_reset(host->hba);
+ 	/* provide 1ms delay to let the reset pulse propagate. */
+ 	usleep_range(1000, 1100);
+@@ -908,8 +906,6 @@ ufs_qcom_reset_deassert(struct reset_controller_dev *rcdev, unsigned long id)
+ {
+ 	struct ufs_qcom_host *host = rcdev_to_ufs_host(rcdev);
  
- 	err = ufs_qcom_host_clk_enable(dev, "tx_lane0_sync_clk",
- 		host->tx_l0_sync_clk);
-@@ -137,7 +137,8 @@ static int ufs_qcom_enable_lane_clks(struct ufs_qcom_host *host)
- 		goto disable_rx_l1;
- 
- 	host->is_lane_clks_enabled = true;
--	goto out;
-+
-+	return 0;
- 
- disable_rx_l1:
- 	clk_disable_unprepare(host->rx_l1_sync_clk);
-@@ -145,7 +146,7 @@ static int ufs_qcom_enable_lane_clks(struct ufs_qcom_host *host)
- 	clk_disable_unprepare(host->tx_l0_sync_clk);
- disable_rx_l0:
- 	clk_disable_unprepare(host->rx_l0_sync_clk);
--out:
-+
- 	return err;
- }
- 
-@@ -160,25 +161,25 @@ static int ufs_qcom_init_lane_clks(struct ufs_qcom_host *host)
- 	err = ufs_qcom_host_clk_get(dev, "rx_lane0_sync_clk",
- 					&host->rx_l0_sync_clk, false);
- 	if (err)
--		goto out;
-+		return err;
- 
- 	err = ufs_qcom_host_clk_get(dev, "tx_lane0_sync_clk",
- 					&host->tx_l0_sync_clk, false);
- 	if (err)
--		goto out;
-+		return err;
- 
- 	/* In case of single lane per direction, don't read lane1 clocks */
- 	if (host->hba->lanes_per_direction > 1) {
- 		err = ufs_qcom_host_clk_get(dev, "rx_lane1_sync_clk",
- 			&host->rx_l1_sync_clk, false);
- 		if (err)
--			goto out;
-+			return err;
- 
- 		err = ufs_qcom_host_clk_get(dev, "tx_lane1_sync_clk",
- 			&host->tx_l1_sync_clk, true);
- 	}
--out:
--	return err;
-+
-+	return 0;
- }
- 
- static int ufs_qcom_check_hibern8(struct ufs_hba *hba)
-@@ -241,7 +242,7 @@ static int ufs_qcom_host_reset(struct ufs_hba *hba)
- 
- 	if (!host->core_reset) {
- 		dev_warn(hba->dev, "%s: reset control not set\n", __func__);
--		goto out;
-+		return 0;
- 	}
- 
- 	reenable_intr = hba->is_irq_enabled;
-@@ -252,7 +253,7 @@ static int ufs_qcom_host_reset(struct ufs_hba *hba)
- 	if (ret) {
- 		dev_err(hba->dev, "%s: core_reset assert failed, err = %d\n",
- 				 __func__, ret);
--		goto out;
-+		return ret;
- 	}
+-	/* Currently this code only knows about a single reset. */
+-	WARN_ON(id);
+ 	ufs_qcom_deassert_reset(host->hba);
  
  	/*
-@@ -274,15 +275,14 @@ static int ufs_qcom_host_reset(struct ufs_hba *hba)
- 		hba->is_irq_enabled = true;
- 	}
- 
--out:
--	return ret;
-+	return 0;
- }
- 
- static int ufs_qcom_power_up_sequence(struct ufs_hba *hba)
- {
- 	struct ufs_qcom_host *host = ufshcd_get_variant(hba);
- 	struct phy *phy = host->generic_phy;
--	int ret = 0;
-+	int ret;
- 	bool is_rate_B = UFS_QCOM_LIMIT_HS_RATE == PA_HS_MODE_B;
- 
- 	/* Reset UFS Host Controller and PHY */
-@@ -299,7 +299,7 @@ static int ufs_qcom_power_up_sequence(struct ufs_hba *hba)
- 	if (ret) {
- 		dev_err(hba->dev, "%s: phy init failed, ret = %d\n",
- 			__func__, ret);
--		goto out;
-+		return ret;
- 	}
- 
- 	/* power on phy - start serdes and phy's power and clocks */
-@@ -316,7 +316,7 @@ static int ufs_qcom_power_up_sequence(struct ufs_hba *hba)
- 
- out_disable_phy:
- 	phy_exit(phy);
--out:
-+
- 	return ret;
- }
- 
-@@ -374,7 +374,6 @@ static int ufs_qcom_hce_enable_notify(struct ufs_hba *hba,
- static int ufs_qcom_cfg_timers(struct ufs_hba *hba, u32 gear,
- 			       u32 hs, u32 rate, bool update_link_startup_timer)
- {
--	int ret = 0;
- 	struct ufs_qcom_host *host = ufshcd_get_variant(hba);
- 	struct ufs_clk_info *clki;
- 	u32 core_clk_period_in_ns;
-@@ -409,11 +408,11 @@ static int ufs_qcom_cfg_timers(struct ufs_hba *hba, u32 gear,
- 	 * Aggregation logic.
- 	*/
- 	if (ufs_qcom_cap_qunipro(host) && !ufshcd_is_intr_aggr_allowed(hba))
--		goto out;
-+		return 0;
- 
- 	if (gear == 0) {
- 		dev_err(hba->dev, "%s: invalid gear = %d\n", __func__, gear);
--		goto out_error;
-+		return -EINVAL;
- 	}
- 
- 	list_for_each_entry(clki, &hba->clk_list_head, list) {
-@@ -436,7 +435,7 @@ static int ufs_qcom_cfg_timers(struct ufs_hba *hba, u32 gear,
- 	}
- 
- 	if (ufs_qcom_cap_qunipro(host))
--		goto out;
-+		return 0;
- 
- 	core_clk_period_in_ns = NSEC_PER_SEC / core_clk_rate;
- 	core_clk_period_in_ns <<= OFFSET_CLK_NS_REG;
-@@ -451,7 +450,7 @@ static int ufs_qcom_cfg_timers(struct ufs_hba *hba, u32 gear,
- 					"%s: index %d exceeds table size %zu\n",
- 					__func__, gear,
- 					ARRAY_SIZE(hs_fr_table_rA));
--				goto out_error;
-+				return -EINVAL;
- 			}
- 			tx_clk_cycles_per_us = hs_fr_table_rA[gear-1][1];
- 		} else if (rate == PA_HS_MODE_B) {
-@@ -460,13 +459,13 @@ static int ufs_qcom_cfg_timers(struct ufs_hba *hba, u32 gear,
- 					"%s: index %d exceeds table size %zu\n",
- 					__func__, gear,
- 					ARRAY_SIZE(hs_fr_table_rB));
--				goto out_error;
-+				return -EINVAL;
- 			}
- 			tx_clk_cycles_per_us = hs_fr_table_rB[gear-1][1];
- 		} else {
- 			dev_err(hba->dev, "%s: invalid rate = %d\n",
- 				__func__, rate);
--			goto out_error;
-+			return -EINVAL;
- 		}
- 		break;
- 	case SLOWAUTO_MODE:
-@@ -476,14 +475,14 @@ static int ufs_qcom_cfg_timers(struct ufs_hba *hba, u32 gear,
- 					"%s: index %d exceeds table size %zu\n",
- 					__func__, gear,
- 					ARRAY_SIZE(pwm_fr_table));
--			goto out_error;
-+			return -EINVAL;
- 		}
- 		tx_clk_cycles_per_us = pwm_fr_table[gear-1][1];
- 		break;
- 	case UNCHANGED:
- 	default:
- 		dev_err(hba->dev, "%s: invalid mode = %d\n", __func__, hs);
--		goto out_error;
-+		return -EINVAL;
- 	}
- 
- 	if (ufshcd_readl(hba, REG_UFS_TX_SYMBOL_CLK_NS_US) !=
-@@ -507,12 +506,8 @@ static int ufs_qcom_cfg_timers(struct ufs_hba *hba, u32 gear,
- 		 */
- 		mb();
- 	}
--	goto out;
- 
--out_error:
--	ret = -EINVAL;
--out:
--	return ret;
-+	return 0;
- }
- 
- static int ufs_qcom_link_startup_notify(struct ufs_hba *hba,
-@@ -527,8 +522,7 @@ static int ufs_qcom_link_startup_notify(struct ufs_hba *hba,
- 					0, true)) {
- 			dev_err(hba->dev, "%s: ufs_qcom_cfg_timers() failed\n",
- 				__func__);
--			err = -EINVAL;
--			goto out;
-+			return -EINVAL;
- 		}
- 
- 		if (ufs_qcom_cap_qunipro(host))
-@@ -554,7 +548,6 @@ static int ufs_qcom_link_startup_notify(struct ufs_hba *hba,
- 		break;
- 	}
- 
--out:
- 	return err;
- }
- 
-@@ -691,8 +684,7 @@ static int ufs_qcom_pwr_change_notify(struct ufs_hba *hba,
- 
- 	if (!dev_req_params) {
- 		pr_err("%s: incoming dev_req_params is NULL\n", __func__);
--		ret = -EINVAL;
--		goto out;
-+		return -EINVAL;
- 	}
- 
- 	switch (status) {
-@@ -720,7 +712,7 @@ static int ufs_qcom_pwr_change_notify(struct ufs_hba *hba,
- 		if (ret) {
- 			pr_err("%s: failed to determine capabilities\n",
- 					__func__);
--			goto out;
-+			return ret;
- 		}
- 
- 		/* enable the device ref clock before changing to HS mode */
-@@ -761,7 +753,7 @@ static int ufs_qcom_pwr_change_notify(struct ufs_hba *hba,
- 		ret = -EINVAL;
- 		break;
- 	}
--out:
-+
- 	return ret;
- }
- 
-@@ -773,14 +765,11 @@ static int ufs_qcom_quirk_host_pa_saveconfigtime(struct ufs_hba *hba)
- 	err = ufshcd_dme_get(hba, UIC_ARG_MIB(PA_VS_CONFIG_REG1),
- 			     &pa_vs_config_reg1);
- 	if (err)
--		goto out;
-+		return err;
- 
- 	/* Allow extension of MSB bits of PA_SaveConfigTime attribute */
--	err = ufshcd_dme_set(hba, UIC_ARG_MIB(PA_VS_CONFIG_REG1),
-+	return ufshcd_dme_set(hba, UIC_ARG_MIB(PA_VS_CONFIG_REG1),
- 			    (pa_vs_config_reg1 | (1 << 12)));
--
--out:
--	return err;
- }
- 
- static int ufs_qcom_apply_dev_quirks(struct ufs_hba *hba)
-@@ -957,9 +946,8 @@ static int ufs_qcom_init(struct ufs_hba *hba)
- 
- 	host = devm_kzalloc(dev, sizeof(*host), GFP_KERNEL);
- 	if (!host) {
--		err = -ENOMEM;
- 		dev_err(dev, "%s: no memory for qcom ufs host\n", __func__);
--		goto out;
-+		return -ENOMEM;
- 	}
- 
- 	/* Make a two way bind between the qcom host and the hba */
-@@ -980,10 +968,8 @@ static int ufs_qcom_init(struct ufs_hba *hba)
- 	host->rcdev.owner = dev->driver->owner;
- 	host->rcdev.nr_resets = 1;
- 	err = devm_reset_controller_register(dev, &host->rcdev);
--	if (err) {
-+	if (err)
- 		dev_warn(dev, "Failed to register reset controller\n");
--		err = 0;
--	}
- 
- 	if (!has_acpi_companion(dev)) {
- 		host->generic_phy = devm_phy_get(dev, "ufsphy");
-@@ -1049,17 +1035,16 @@ static int ufs_qcom_init(struct ufs_hba *hba)
- 	host->dbg_print_en |= UFS_QCOM_DEFAULT_DBG_PRINT_EN;
- 	ufs_qcom_get_default_testbus_cfg(host);
- 	err = ufs_qcom_testbus_config(host);
--	if (err) {
-+	if (err)
-+		/* Failure is non-fatal */
- 		dev_warn(dev, "%s: failed to configure the testbus %d\n",
- 				__func__, err);
--		err = 0;
--	}
- 
--	goto out;
-+	return 0;
- 
- out_variant_clear:
- 	ufshcd_set_variant(hba, NULL);
--out:
-+
- 	return err;
- }
- 
-@@ -1085,7 +1070,7 @@ static int ufs_qcom_set_dme_vs_core_clk_ctrl_clear_div(struct ufs_hba *hba,
- 			    UIC_ARG_MIB(DME_VS_CORE_CLK_CTRL),
- 			    &core_clk_ctrl_reg);
- 	if (err)
--		goto out;
-+		return err;
- 
- 	core_clk_ctrl_reg &= ~DME_VS_CORE_CLK_CTRL_MAX_CORE_CLK_1US_CYCLES_MASK;
- 	core_clk_ctrl_reg |= clk_cycles;
-@@ -1093,11 +1078,9 @@ static int ufs_qcom_set_dme_vs_core_clk_ctrl_clear_div(struct ufs_hba *hba,
- 	/* Clear CORE_CLK_DIV_EN */
- 	core_clk_ctrl_reg &= ~DME_VS_CORE_CLK_CTRL_CORE_CLK_DIV_EN_BIT;
- 
--	err = ufshcd_dme_set(hba,
-+	return ufshcd_dme_set(hba,
- 			    UIC_ARG_MIB(DME_VS_CORE_CLK_CTRL),
- 			    core_clk_ctrl_reg);
--out:
--	return err;
- }
- 
- static int ufs_qcom_clk_scale_up_pre_change(struct ufs_hba *hba)
-@@ -1180,7 +1163,7 @@ static int ufs_qcom_clk_scale_notify(struct ufs_hba *hba,
- 
- 		if (err || !dev_req_params) {
- 			ufshcd_uic_hibern8_exit(hba);
--			goto out;
-+			return err;
- 		}
- 
- 		ufs_qcom_cfg_timers(hba,
-@@ -1191,8 +1174,7 @@ static int ufs_qcom_clk_scale_notify(struct ufs_hba *hba,
- 		ufshcd_uic_hibern8_exit(hba);
- 	}
- 
--out:
--	return err;
-+	return 0;
- }
- 
- static void ufs_qcom_print_hw_debug_reg_all(struct ufs_hba *hba,
 -- 
 2.25.1
 
