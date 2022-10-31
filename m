@@ -4,32 +4,32 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DDEF2C38A02
-	for <linux-phy@archiver.kernel.org>; Mon, 31 Oct 2022 11:16:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7E331FA3740
+	for <linux-phy@archiver.kernel.org>; Mon, 31 Oct 2022 11:17:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zRsc8JqhIWfQbhKSpM/wjZ8n6njHGkStPXu/Qa9gAGo=; b=kNCwSnn8RSpJkq
-	/6Xxax9Vm2XFXqrqAPEbx2qx/0gYw5bAE69dk+PEfhc7abBCz530K4OyxLSVtMxN1eH6UvRNBQug8
-	HJYHKXVW8RZXBLObFToiC+J0oG8hp2fqjKGKgaHKni6AJbMuWprfs06r2YhHa8m3lhsgCtF27E+sJ
-	/qs1bNQXY77+jr1SWTAOaHkiHxCRo6qLDlS+EVOJae5Dava8yVE2LFc8I6VJtDs42cihQD8hk+BY7
-	3R/w/UlTL9PmpzAk4c/JUrMiLykiFpu37vchxLmna+rMnKiVeRhXer5tV+xc+3N4JEed7jcE1kGvL
-	nMMJZF/fVxvXm0nLSe0g==;
+	List-Owner; bh=GvmXob5rURZhbZQI11pCkA04eMbKAmdzhwO4Sl7vTPw=; b=eb3orIqp+Wo6xv
+	aECoM3/cFnwd3h+KRUMV6ccbstUJF3h9QdXcuoJb1yTIRD7uB8yZ38mI1CUIW026M9i3xLM8BDfy4
+	xPsbXVEsrGNuMoCxevjfdgr+9BQ/mwODUzszMgOi2I5pvO/r/AECK3FWW9QuQCwpsovLsBwdpuwbV
+	PHNXtiZwDJjMXp53IXwuQbsU9Q0sNLyckUdZ34677gem+SZiU0a7B9IzV4ML4a20+M2HxaFXRoBN8
+	zwBLVkZOyhPaCAtUCFZEyL/QjhGjprEYMFGXE0ITLQOfFK75shyuLJT9XKLoCqk1/9C0mFb0PGvl6
+	chDbb8mQySraLubs2Y9A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1opSmG-00B8Ui-6h; Mon, 31 Oct 2022 11:16:24 +0000
+	id 1opSn6-00B94a-Pt; Mon, 31 Oct 2022 11:17:16 +0000
 Received: from foss.arm.com ([217.140.110.172])
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1opSkR-00B7Ig-BW; Mon, 31 Oct 2022 11:14:33 +0000
+	id 1opSkW-00B7M7-VN; Mon, 31 Oct 2022 11:14:38 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
-	by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4FA5313D5;
-	Mon, 31 Oct 2022 04:14:35 -0700 (PDT)
+	by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 55164113E;
+	Mon, 31 Oct 2022 04:14:41 -0700 (PDT)
 Received: from donnerap.arm.com (donnerap.cambridge.arm.com [10.1.197.42])
-	by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4B1A13F703;
-	Mon, 31 Oct 2022 04:14:26 -0700 (PDT)
+	by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 38F7A3F703;
+	Mon, 31 Oct 2022 04:14:32 -0700 (PDT)
 From: Andre Przywara <andre.przywara@arm.com>
 To: Jernej Skrabec <jernej.skrabec@gmail.com>,
 	Samuel Holland <samuel@sholland.org>,
@@ -46,16 +46,17 @@ Cc: Rob Herring <robh+dt@kernel.org>,
 	linux-sunxi@lists.linux.dev,
 	Karl Kurbjun <karl.os@veroson.com>,
 	Icenowy Zheng <uwu@icenowy.me>
-Subject: [PATCH v2 3/7] phy: sun4i-usb: Introduce port2 SIDDQ quirk
-Date: Mon, 31 Oct 2022 11:13:54 +0000
-Message-Id: <20221031111358.3387297-4-andre.przywara@arm.com>
+Subject: [PATCH v2 5/7] arm64: dts: allwinner: h616: Add USB nodes
+Date: Mon, 31 Oct 2022 11:13:56 +0000
+Message-Id: <20221031111358.3387297-6-andre.przywara@arm.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20221031111358.3387297-1-andre.przywara@arm.com>
 References: <20221031111358.3387297-1-andre.przywara@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221031_041431_533389_044FC001 
-X-CRM114-Status: GOOD (  14.55  )
+X-CRM114-CacheID: sfid-20221031_041437_153654_63F0E962 
+X-CRM114-Status: UNSURE (   9.15  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,115 +73,188 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-At least the Allwinner H616 SoC requires a weird quirk to make most
-USB PHYs work: Only port2 works out of the box, but all other ports
-need some help from this port2 to work correctly: The CLK_BUS_PHY2 and
-RST_USB_PHY2 clock and reset need to be enabled, and the SIDDQ bit in
-the PMU PHY control register needs to be cleared. For this register to
-be accessible, CLK_BUS_ECHI2 needs to be ungated. Don't ask ....
+Add the nodes for the MUSB and the four USB host controllers to the SoC
+.dtsi, along with the PHY node needed to bind all of them together.
 
-Instead of disguising this as some generic feature, treat it more like
-a quirk (what it really is):
-If the quirk bit is set, and we initialise a PHY other than PHY2, ungate
-this one special clock, and clear the SIDDQ bit. We also pick the clock
-and reset from PHY2 and enable them as well.
+EHCI/OHCI and MUSB are compatible to previous SoCs, but the PHY requires
+some quirks (handled in the driver).
 
 Signed-off-by: Andre Przywara <andre.przywara@arm.com>
 ---
- drivers/phy/allwinner/phy-sun4i-usb.c | 59 +++++++++++++++++++++++++++
- 1 file changed, 59 insertions(+)
+ .../arm64/boot/dts/allwinner/sun50i-h616.dtsi | 160 ++++++++++++++++++
+ 1 file changed, 160 insertions(+)
 
-diff --git a/drivers/phy/allwinner/phy-sun4i-usb.c b/drivers/phy/allwinner/phy-sun4i-usb.c
-index 3a3831f6059a3..e39f5ad62cc19 100644
---- a/drivers/phy/allwinner/phy-sun4i-usb.c
-+++ b/drivers/phy/allwinner/phy-sun4i-usb.c
-@@ -120,6 +120,7 @@ struct sun4i_usb_phy_cfg {
- 	u8 phyctl_offset;
- 	bool dedicated_clocks;
- 	bool phy0_dual_route;
-+	bool needs_phy2_siddq;
- 	int missing_phys;
- };
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h616.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-h616.dtsi
+index 622a1f7d16412..74aed0d232a9c 100644
+--- a/arch/arm64/boot/dts/allwinner/sun50i-h616.dtsi
++++ b/arch/arm64/boot/dts/allwinner/sun50i-h616.dtsi
+@@ -504,6 +504,166 @@ mdio0: mdio {
+ 			};
+ 		};
  
-@@ -289,6 +290,50 @@ static int sun4i_usb_phy_init(struct phy *_phy)
- 		return ret;
- 	}
- 
-+	/* Some PHYs on some SoCs need the help of PHY2 to work. */
-+	if (data->cfg->needs_phy2_siddq && phy->index != 2) {
-+		struct sun4i_usb_phy *phy2 = &data->phys[2];
++		usbotg: usb@5100000 {
++			compatible = "allwinner,sun50i-h616-musb",
++				     "allwinner,sun8i-h3-musb";
++			reg = <0x05100000 0x0400>;
++			clocks = <&ccu CLK_BUS_OTG>;
++			resets = <&ccu RST_BUS_OTG>;
++			interrupts = <GIC_SPI 25 IRQ_TYPE_LEVEL_HIGH>;
++			interrupt-names = "mc";
++			phys = <&usbphy 0>;
++			phy-names = "usb";
++			extcon = <&usbphy 0>;
++			status = "disabled";
++		};
 +
-+		ret = clk_prepare_enable(phy2->clk);
-+		if (ret) {
-+			reset_control_assert(phy->reset);
-+			clk_disable_unprepare(phy->clk2);
-+			clk_disable_unprepare(phy->clk);
-+			return ret;
-+		}
++		usbphy: phy@5100400 {
++			compatible = "allwinner,sun50i-h616-usb-phy";
++			reg = <0x05100400 0x24>,
++			      <0x05101800 0x14>,
++			      <0x05200800 0x14>,
++			      <0x05310800 0x14>,
++			      <0x05311800 0x14>;
++			reg-names = "phy_ctrl",
++				    "pmu0",
++				    "pmu1",
++				    "pmu2",
++				    "pmu3";
++			clocks = <&ccu CLK_USB_PHY0>,
++				 <&ccu CLK_USB_PHY1>,
++				 <&ccu CLK_USB_PHY2>,
++				 <&ccu CLK_USB_PHY3>,
++				 <&ccu CLK_BUS_EHCI2>;
++			clock-names = "usb0_phy",
++				      "usb1_phy",
++				      "usb2_phy",
++				      "usb3_phy",
++				      "pmu2_clk";
++			resets = <&ccu RST_USB_PHY0>,
++				 <&ccu RST_USB_PHY1>,
++				 <&ccu RST_USB_PHY2>,
++				 <&ccu RST_USB_PHY3>;
++			reset-names = "usb0_reset",
++				      "usb1_reset",
++				      "usb2_reset",
++				      "usb3_reset";
++			status = "disabled";
++			#phy-cells = <1>;
++		};
 +
-+		ret = reset_control_deassert(phy2->reset);
-+		if (ret) {
-+			clk_disable_unprepare(phy2->clk);
-+			reset_control_assert(phy->reset);
-+			clk_disable_unprepare(phy->clk2);
-+			clk_disable_unprepare(phy->clk);
-+			return ret;
-+		}
++		ehci0: usb@5101000 {
++			compatible = "allwinner,sun50i-h616-ehci",
++				     "generic-ehci";
++			reg = <0x05101000 0x100>;
++			interrupts = <GIC_SPI 26 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&ccu CLK_BUS_OHCI0>,
++				 <&ccu CLK_BUS_EHCI0>,
++				 <&ccu CLK_USB_OHCI0>;
++			resets = <&ccu RST_BUS_OHCI0>,
++				 <&ccu RST_BUS_EHCI0>;
++			phys = <&usbphy 0>;
++			phy-names = "usb";
++			status = "disabled";
++		};
 +
-+		/*
-+		 * This extra clock is just needed to access the
-+		 * REG_HCI_PHY_CTL PMU register for PHY2.
-+		 */
-+		ret = clk_prepare_enable(phy2->clk2);
-+		if (ret) {
-+			reset_control_assert(phy2->reset);
-+			clk_disable_unprepare(phy2->clk);
-+			reset_control_assert(phy->reset);
-+			clk_disable_unprepare(phy->clk2);
-+			clk_disable_unprepare(phy->clk);
-+			return ret;
-+		}
++		ohci0: usb@5101400 {
++			compatible = "allwinner,sun50i-h616-ohci",
++				     "generic-ohci";
++			reg = <0x05101400 0x100>;
++			interrupts = <GIC_SPI 27 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&ccu CLK_BUS_OHCI0>,
++				 <&ccu CLK_USB_OHCI0>;
++			resets = <&ccu RST_BUS_OHCI0>;
++			phys = <&usbphy 0>;
++			phy-names = "usb";
++			status = "disabled";
++		};
 +
-+		if (phy2->pmu && data->cfg->hci_phy_ctl_clear) {
-+			val = readl(phy2->pmu + REG_HCI_PHY_CTL);
-+			val &= ~data->cfg->hci_phy_ctl_clear;
-+			writel(val, phy2->pmu + REG_HCI_PHY_CTL);
-+		}
++		ehci1: usb@5200000 {
++			compatible = "allwinner,sun50i-h616-ehci",
++				     "generic-ehci";
++			reg = <0x05200000 0x100>;
++			interrupts = <GIC_SPI 28 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&ccu CLK_BUS_OHCI1>,
++				 <&ccu CLK_BUS_EHCI1>,
++				 <&ccu CLK_USB_OHCI1>;
++			resets = <&ccu RST_BUS_OHCI1>,
++				 <&ccu RST_BUS_EHCI1>;
++			phys = <&usbphy 1>;
++			phy-names = "usb";
++			status = "disabled";
++		};
 +
-+		clk_disable_unprepare(phy->clk2);
-+	}
++		ohci1: usb@5200400 {
++			compatible = "allwinner,sun50i-h616-ohci",
++				     "generic-ohci";
++			reg = <0x05200400 0x100>;
++			interrupts = <GIC_SPI 29 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&ccu CLK_BUS_OHCI1>,
++				 <&ccu CLK_USB_OHCI1>;
++			resets = <&ccu RST_BUS_OHCI1>;
++			phys = <&usbphy 1>;
++			phy-names = "usb";
++			status = "disabled";
++		};
 +
- 	if (phy->pmu && data->cfg->hci_phy_ctl_clear) {
- 		val = readl(phy->pmu + REG_HCI_PHY_CTL);
- 		val &= ~data->cfg->hci_phy_ctl_clear;
-@@ -354,6 +399,13 @@ static int sun4i_usb_phy_exit(struct phy *_phy)
- 		data->phy0_init = false;
- 	}
- 
-+	if (data->cfg->needs_phy2_siddq && phy->index != 2) {
-+		struct sun4i_usb_phy *phy2 = &data->phys[2];
++		ehci2: usb@5310000 {
++			compatible = "allwinner,sun50i-h616-ehci",
++				     "generic-ehci";
++			reg = <0x05310000 0x100>;
++			interrupts = <GIC_SPI 30 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&ccu CLK_BUS_OHCI2>,
++				 <&ccu CLK_BUS_EHCI2>,
++				 <&ccu CLK_USB_OHCI2>;
++			resets = <&ccu RST_BUS_OHCI2>,
++				 <&ccu RST_BUS_EHCI2>;
++			phys = <&usbphy 2>;
++			phy-names = "usb";
++			status = "disabled";
++		};
 +
-+		clk_disable_unprepare(phy2->clk);
-+		reset_control_assert(phy2->reset);
-+	}
++		ohci2: usb@5310400 {
++			compatible = "allwinner,sun50i-h616-ohci",
++				     "generic-ohci";
++			reg = <0x05310400 0x100>;
++			interrupts = <GIC_SPI 31 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&ccu CLK_BUS_OHCI2>,
++				 <&ccu CLK_USB_OHCI2>;
++			resets = <&ccu RST_BUS_OHCI2>;
++			phys = <&usbphy 2>;
++			phy-names = "usb";
++			status = "disabled";
++		};
 +
- 	sun4i_usb_phy_passby(phy, 0);
- 	reset_control_assert(phy->reset);
- 	clk_disable_unprepare(phy->clk2);
-@@ -785,6 +837,13 @@ static int sun4i_usb_phy_probe(struct platform_device *pdev)
- 				dev_err(dev, "failed to get clock %s\n", name);
- 				return PTR_ERR(phy->clk2);
- 			}
-+		} else {
-+			snprintf(name, sizeof(name), "pmu%d_clk", i);
-+			phy->clk2 = devm_clk_get_optional(dev, name);
-+			if (IS_ERR(phy->clk2)) {
-+				dev_err(dev, "failed to get clock %s\n", name);
-+				return PTR_ERR(phy->clk2);
-+			}
- 		}
- 
- 		snprintf(name, sizeof(name), "usb%d_reset", i);
++		ehci3: usb@5311000 {
++			compatible = "allwinner,sun50i-h616-ehci",
++				     "generic-ehci";
++			reg = <0x05311000 0x100>;
++			interrupts = <GIC_SPI 32 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&ccu CLK_BUS_OHCI3>,
++				 <&ccu CLK_BUS_EHCI3>,
++				 <&ccu CLK_USB_OHCI3>;
++			resets = <&ccu RST_BUS_OHCI3>,
++				 <&ccu RST_BUS_EHCI3>;
++			phys = <&usbphy 3>;
++			phy-names = "usb";
++			status = "disabled";
++		};
++
++		ohci3: usb@5311400 {
++			compatible = "allwinner,sun50i-h616-ohci",
++				     "generic-ohci";
++			reg = <0x05311400 0x100>;
++			interrupts = <GIC_SPI 33 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&ccu CLK_BUS_OHCI3>,
++				 <&ccu CLK_USB_OHCI3>;
++			resets = <&ccu RST_BUS_OHCI3>;
++			phys = <&usbphy 3>;
++			phy-names = "usb";
++			status = "disabled";
++		};
++
+ 		rtc: rtc@7000000 {
+ 			compatible = "allwinner,sun50i-h616-rtc";
+ 			reg = <0x07000000 0x400>;
 -- 
 2.25.1
 
