@@ -4,61 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7C820FA3746
-	for <linux-phy@archiver.kernel.org>; Mon, 31 Oct 2022 18:02:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B1007FA3741
+	for <linux-phy@archiver.kernel.org>; Mon, 31 Oct 2022 18:02:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=qe68r0++4cBzYJ4OurwlvMhihwoErubgunM4zjGWYQE=; b=DZHGO6tHKaCF0H
-	pET8Agq0ZZcBLpDFkumIpiMkwJFl4coETqPkoItm6ddzpok2le9Ya/rDEYVN5Tq8n2oG2iShyBa6E
-	LYHbQziXQphOKIrBvh+5XzGSSXonuCl6q5ehDqRpw7ubEXXh/VC1FwigCOsytDxusvaEWz9Xe0N0p
-	sk5I81in0+twhJpgjlNDHSXpCdgFr6CZj3HkBbFg+6Pw7p7cNbLHaZbDd8QKFfOqLx4NdWoF8MTYu
-	YFi0FDfITdIapEu4zChYWmY0T5xjfwnoQVrqHT823YK4dAtMgil3vv7c78/yXvhVtSjH45zgYxZo2
-	UOrP4uQeHl3Y5WG8VbOw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=FZnc8G039UVIMrSjB6x8wfRlWxeOyMtgFu036PWw/mg=; b=Egg/3r83q4/DwG
+	cT88aGGgUqjj5SOJ00kVJjPnUgwgerYFl0mlkNy6sxr8BV8ZL2jOsZ5nUMLwcw2NAWxZ1/EhhqHj/
+	E6w3SXX8D7ToHb8IWDfxpb1T4OZyAXYdmVuspsUngfOSSRZdc7K7LhMQ3T875XIynes5QV5/GAIlj
+	IeVp2NUYAFHQruTTV3+jNrcAl5olLNbOnvnm8Wcn/KDMk5RiF1fIXfT3F7i9mpyd6CCTJlFuLaqRf
+	bLBwz3QVtUVch8xvnM8aEZjRtOFVWpDeguNdBJzzPIGnJBXMTn1fVCVYPl+FQRqKxI1HNuwuCKwWI
+	+AB04rzpDzq0+7aJpH3A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1opZ7R-00DaFY-TC; Mon, 31 Oct 2022 18:02:41 +0000
-Received: from mail-pj1-x1032.google.com ([2607:f8b0:4864:20::1032])
+	id 1opZ7Y-00DaJn-0m; Mon, 31 Oct 2022 18:02:48 +0000
+Received: from mail-pg1-x52d.google.com ([2607:f8b0:4864:20::52d])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1opZ7P-00Da9c-J3
-	for linux-phy@lists.infradead.org; Mon, 31 Oct 2022 18:02:40 +0000
-Received: by mail-pj1-x1032.google.com with SMTP id l6so11066970pjj.0
-        for <linux-phy@lists.infradead.org>; Mon, 31 Oct 2022 11:02:37 -0700 (PDT)
+	id 1opZ7U-00DaGT-QJ
+	for linux-phy@lists.infradead.org; Mon, 31 Oct 2022 18:02:47 +0000
+Received: by mail-pg1-x52d.google.com with SMTP id r18so11324537pgr.12
+        for <linux-phy@lists.infradead.org>; Mon, 31 Oct 2022 11:02:44 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=lUeGzsrZuppVjIQtllMBu80KGrOeXpmn2SHkGIO0dZI=;
-        b=PfJeKC0nW0q3FOQ1HV8xzNPscrseO9wqTqzlujbVfJPQuw7OoUcyI8/HA/e6PYuwT9
-         3NterFjq9Q098c76cYnNqbeUtlN+WMHXuh7lACe917zc5WAf39BIAwfLrMwS2/aQsYZD
-         B/OV3MzAXaa5x35p7F+o9zFuK0yDd5yBkAWrVkResNl6h/sBsLhwxS3rkKfV9dj8UdIC
-         DW3vG619Oo5+c4yO875QCVLCP4aDNBfHKzCERADUuVj7MvxDl+0UGwOODaIF28SjJfdf
-         1X9F3SBkWggTSH/xUQYCndFrMatu+5Rcoxkbt8VfJQLekIMJ/7qVYlfL7fC53l2wotZ3
-         LDXg==
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=0IUK7dOZ9Lcdl6uBX0seGC6eqiOVvfBfRi7yzXg7EXo=;
+        b=bQ+V92GVTFKFxiD7r7e5JULUOzF3cPf1Tm2vHCiJCeNSNekLmABdNzuJSfJeiRj2g/
+         LOSt+9L6uRnlEcr6lU/WBy1Bk2BHC2QDREPgUTUFM/QmdNwOhF21dDWWwZgRuTgKLtFu
+         kNUjwAEYKx3jXvIznyXR/EIbUECkTaX6OhrIREa7SJ+ipLh+a9mSiSz4baKmwmc5j1WE
+         bOUl+9Uc+25djjidXVgmHLCsWMi0dZKZzTEJF47tycWeHM+TH/JRL8jWEeruiHHwoyhs
+         AZm/+gz1Nj72oHO5iYPCru+ZsyiRjrW20NLp/JxomU2TEOsYbtUE/r0J/60CjRupryXg
+         KtjA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=lUeGzsrZuppVjIQtllMBu80KGrOeXpmn2SHkGIO0dZI=;
-        b=GlZVRp242BApfiZR4izAaliAm5E8Fky+w1y9L4CS3YWF4u/8nZOXY97u82GRKNabMX
-         fWlyvF/AsDf1FhFPmxtN/jbgf+frWYhf8pzcok+wQMXgVJj1Cx3FFU576ZqhTllBnVwM
-         OxSEW2cJNbegYl7UsxVuQl6ni4OAGM29RWF3J1NhVJBo6fD46eT0N9jtR2z5/7CiAL3x
-         02wVxV75e+sfCYTovrO3Gjidmom7UpDvo3lAXPSRNWU//Jm6OViR3ju1sc8QQLBnWEe0
-         4++adNG8q3QP40/k0AKZQehO1uFH8Xumv6e3jlJygT6sUBpTvEHTR4Zmn5fvmdiBdF93
-         G/6Q==
-X-Gm-Message-State: ACrzQf0/wlSKIrl5e7d8xeKiIPSI/8MEEQX8VBtp07VNEi+vwA0Mem4S
-	yQ/XajYfIZJLYdKqS1q5QxlA
-X-Google-Smtp-Source: AMsMyM6KutCiKgVhfqnh64n0pNMgZINaIjYKukeENSzy9/oeepbkEm7QVIBjPIPLzso18X716IcE3g==
-X-Received: by 2002:a17:90b:153:b0:213:b853:5db1 with SMTP id em19-20020a17090b015300b00213b8535db1mr13077729pjb.168.1667239356552;
-        Mon, 31 Oct 2022 11:02:36 -0700 (PDT)
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=0IUK7dOZ9Lcdl6uBX0seGC6eqiOVvfBfRi7yzXg7EXo=;
+        b=7RKTtJz9OiufbX/q9n1wKLU3DGNY8pb/u76VgUJtKKeFf5F8q2YKRUSa44X3K6tOse
+         F6zoTsuWvdq9oLYc/B307ZnrqHYVF6SBNwl5eMIXxe9VqNNgPYTrAQ5G2SazqWvcCyDl
+         ggDQjaPxXsvMBYvk73K2c2bi9m/DVb1mjCp8Hc7Uc3FW7ZoWUwpixNXpwTtnNgcT7ANB
+         pJFCQvhxc3ILwc+t4JN5hZCPmCwTjCWTCtdqS7zJENM8MjYtItbLMFUysZvv72MvrvLI
+         NaGAdX8J896yjjeorj5Q9cvgIri0SgDD50fzqKkBrH6suiIlmSATa/V2aX+Ba++EudiQ
+         VIDQ==
+X-Gm-Message-State: ACrzQf1w38niiyAPX9oNzDYxACjuQeAhRzqTl1otg5wl61HQztdZ7Hd0
+	+g2YNhUUuTer4DIgXtCLunSB
+X-Google-Smtp-Source: AMsMyM7Oahtyd0+EKqV+9d/FgN2rFhA8nC0AZWemu0AFmC96NsoVMVZcE34BmOdqj/qCKDgtYwj0Ow==
+X-Received: by 2002:a05:6a00:27a1:b0:566:8937:27c2 with SMTP id bd33-20020a056a0027a100b00566893727c2mr15635363pfb.24.1667239363605;
+        Mon, 31 Oct 2022 11:02:43 -0700 (PDT)
 Received: from localhost.localdomain ([117.193.209.221])
-        by smtp.gmail.com with ESMTPSA id q14-20020a170902a3ce00b00186c6d2e7e3sm4742224plb.26.2022.10.31.11.02.29
+        by smtp.gmail.com with ESMTPSA id q14-20020a170902a3ce00b00186c6d2e7e3sm4742224plb.26.2022.10.31.11.02.36
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 31 Oct 2022 11:02:34 -0700 (PDT)
+        Mon, 31 Oct 2022 11:02:42 -0700 (PDT)
 From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 To: martin.petersen@oracle.com,
 	jejb@linux.ibm.com,
@@ -76,14 +77,16 @@ Cc: konrad.dybcio@somainline.org,
 	dmitry.baryshkov@linaro.org,
 	ahalaney@redhat.com,
 	Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Subject: [PATCH v2 00/15] ufs: qcom: Add HS-G4 support
-Date: Mon, 31 Oct 2022 23:32:02 +0530
-Message-Id: <20221031180217.32512-1-manivannan.sadhasivam@linaro.org>
+Subject: [PATCH v2 01/15] phy: qcom-qmp-ufs: Move register settings to qmp_phy_cfg_tables struct
+Date: Mon, 31 Oct 2022 23:32:03 +0530
+Message-Id: <20221031180217.32512-2-manivannan.sadhasivam@linaro.org>
 X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20221031180217.32512-1-manivannan.sadhasivam@linaro.org>
+References: <20221031180217.32512-1-manivannan.sadhasivam@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221031_110239_651636_3740B4C8 
-X-CRM114-Status: GOOD (  14.24  )
+X-CRM114-CacheID: sfid-20221031_110244_882039_F1D4F3A6 
+X-CRM114-Status: GOOD (  12.59  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,69 +103,447 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hello,
+As done for Qcom PCIe PHY driver, let's move the register settings to the
+common qmp_phy_cfg_tables struct. This helps in adding any additional PHY
+settings needed for functionalities like HS-G4 in the future by adding one
+more instance of the qmp_phy_cfg_tables.
 
-This series adds HS-G4 support to the Qcom UFS driver and PHY driver.
-The newer Qcom platforms support configuring the UFS controller and PHY
-in dual gears (i.e., controller/PHY can be configured to run in two gear
-speeds). This is accomplished by adding two different PHY init sequences
-to the PHY driver and the UFS driver requesting the one that's required
-based on the platform configuration.
+Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+---
+ drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 223 +++++++++++++-----------
+ 1 file changed, 126 insertions(+), 97 deletions(-)
 
-But this requires both the UFS controller and UFS device to agree to a
-common gear. For finding the max supported gear, a separate register is
-used for the UFS controller and devicetree is used for the UFS device.
-Based on the max gear of both, the UFS driver will decide which gear to
-use during runtime.
-
-This series has been tested on Qcom RB5 development platform powered by
-SM8250 SoC that uses HS-G4.
-
-Merging Strategy:
------------------
-
-The PHY patches are expected to go through PHY tree and UFS, MAINTAINERS
-patches are expected to go through SCSI tree. Finally, the binding and
-devicetree patches can go through ARM MSM tree. There is no build dependency
-between the patches.
-
-Thanks,
-Mani
-
-Changes in v2:
-
-* Collected reviews from Dmitry
-* Renamed "max-gear" property to "max-device-gear"
-* Used min() for deciding which gear to use instead of open comparision
-* Added comment about the old register name
-
-Manivannan Sadhasivam (15):
-  phy: qcom-qmp-ufs: Move register settings to qmp_phy_cfg_tables struct
-  phy: qcom-qmp-ufs: Add support for configuring PHY in HS Series B mode
-  phy: qcom-qmp-ufs: Add support for configuring PHY in HS G4 mode
-  phy: qcom-qmp-ufs: Add HS G4 mode support to SM8250 SoC
-  phy: qcom-qmp-ufs: Move HS Rate B register setting to tables_hs_b
-  dt-bindings: ufs: Add "max-device-gear" property for UFS device
-  arm64: dts: qcom: qrb5165-rb5: Add max-device-gear property to UFS
-    node
-  scsi: ufs: ufs-qcom: Remove un-necessary goto statements
-  scsi: ufs: ufs-qcom: Remove un-necessary WARN_ON()
-  scsi: ufs: ufs-qcom: Use bitfields where appropriate
-  scsi: ufs: ufs-qcom: Use dev_err_probe() for printing probe error
-  scsi: ufs: ufs-qcom: Fix the Qcom register name for offset 0xD0
-  scsi: ufs: ufs-qcom: Factor out the logic finding the HS Gear
-  scsi: ufs: ufs-qcom: Add support for finding HS gear on new UFS
-    versions
-  MAINTAINERS: Add myself as the maintainer for Qcom UFS driver
-
- .../devicetree/bindings/ufs/ufs-common.yaml   |   5 +
- MAINTAINERS                                   |   8 +
- arch/arm64/boot/dts/qcom/qrb5165-rb5.dts      |   1 +
- drivers/phy/qualcomm/phy-qcom-qmp-ufs.c       | 350 +++++++++++++-----
- drivers/ufs/host/ufs-qcom.c                   | 175 +++++----
- drivers/ufs/host/ufs-qcom.h                   |  68 ++--
- 6 files changed, 390 insertions(+), 217 deletions(-)
-
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+index c08d34ad1313..cdfda4e6d575 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+@@ -107,7 +107,7 @@ static const unsigned int sm8150_ufsphy_regs_layout[QPHY_LAYOUT_SIZE] = {
+ 	[QPHY_SW_RESET]			= QPHY_V4_PCS_UFS_SW_RESET,
+ };
+ 
+-static const struct qmp_phy_init_tbl msm8996_ufs_serdes_tbl[] = {
++static const struct qmp_phy_init_tbl msm8996_ufs_serdes[] = {
+ 	QMP_PHY_INIT_CFG(QSERDES_COM_CMN_CONFIG, 0x0e),
+ 	QMP_PHY_INIT_CFG(QSERDES_COM_SYSCLK_EN_SEL, 0xd7),
+ 	QMP_PHY_INIT_CFG(QSERDES_COM_CLK_SELECT, 0x30),
+@@ -156,12 +156,12 @@ static const struct qmp_phy_init_tbl msm8996_ufs_serdes_tbl[] = {
+ 	QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP3_MODE1, 0x00),
+ };
+ 
+-static const struct qmp_phy_init_tbl msm8996_ufs_tx_tbl[] = {
++static const struct qmp_phy_init_tbl msm8996_ufs_tx[] = {
+ 	QMP_PHY_INIT_CFG(QSERDES_TX_HIGHZ_TRANSCEIVEREN_BIAS_DRVR_EN, 0x45),
+ 	QMP_PHY_INIT_CFG(QSERDES_TX_LANE_MODE, 0x02),
+ };
+ 
+-static const struct qmp_phy_init_tbl msm8996_ufs_rx_tbl[] = {
++static const struct qmp_phy_init_tbl msm8996_ufs_rx[] = {
+ 	QMP_PHY_INIT_CFG(QSERDES_RX_SIGDET_LVL, 0x24),
+ 	QMP_PHY_INIT_CFG(QSERDES_RX_SIGDET_CNTRL, 0x02),
+ 	QMP_PHY_INIT_CFG(QSERDES_RX_RX_INTERFACE_MODE, 0x00),
+@@ -175,7 +175,7 @@ static const struct qmp_phy_init_tbl msm8996_ufs_rx_tbl[] = {
+ 	QMP_PHY_INIT_CFG(QSERDES_RX_RX_EQU_ADAPTOR_CNTRL2, 0x0E),
+ };
+ 
+-static const struct qmp_phy_init_tbl sm6115_ufsphy_serdes_tbl[] = {
++static const struct qmp_phy_init_tbl sm6115_ufsphy_serdes[] = {
+ 	QMP_PHY_INIT_CFG(QSERDES_COM_CMN_CONFIG, 0x0e),
+ 	QMP_PHY_INIT_CFG(QSERDES_COM_SYSCLK_EN_SEL, 0x14),
+ 	QMP_PHY_INIT_CFG(QSERDES_COM_CLK_SELECT, 0x30),
+@@ -231,12 +231,12 @@ static const struct qmp_phy_init_tbl sm6115_ufsphy_serdes_tbl[] = {
+ 	QMP_PHY_INIT_CFG(QSERDES_COM_VCO_TUNE_MAP, 0x44),
+ };
+ 
+-static const struct qmp_phy_init_tbl sm6115_ufsphy_tx_tbl[] = {
++static const struct qmp_phy_init_tbl sm6115_ufsphy_tx[] = {
+ 	QMP_PHY_INIT_CFG(QSERDES_TX_HIGHZ_TRANSCEIVEREN_BIAS_DRVR_EN, 0x45),
+ 	QMP_PHY_INIT_CFG(QSERDES_TX_LANE_MODE, 0x06),
+ };
+ 
+-static const struct qmp_phy_init_tbl sm6115_ufsphy_rx_tbl[] = {
++static const struct qmp_phy_init_tbl sm6115_ufsphy_rx[] = {
+ 	QMP_PHY_INIT_CFG(QSERDES_RX_SIGDET_LVL, 0x24),
+ 	QMP_PHY_INIT_CFG(QSERDES_RX_SIGDET_CNTRL, 0x0F),
+ 	QMP_PHY_INIT_CFG(QSERDES_RX_RX_INTERFACE_MODE, 0x40),
+@@ -254,7 +254,7 @@ static const struct qmp_phy_init_tbl sm6115_ufsphy_rx_tbl[] = {
+ 	QMP_PHY_INIT_CFG(QSERDES_RX_UCDR_SO_SATURATION_AND_ENABLE, 0x5B),
+ };
+ 
+-static const struct qmp_phy_init_tbl sm6115_ufsphy_pcs_tbl[] = {
++static const struct qmp_phy_init_tbl sm6115_ufsphy_pcs[] = {
+ 	QMP_PHY_INIT_CFG(QPHY_V2_PCS_RX_PWM_GEAR_BAND, 0x15),
+ 	QMP_PHY_INIT_CFG(QPHY_V2_PCS_RX_SIGDET_CTRL2, 0x6d),
+ 	QMP_PHY_INIT_CFG(QPHY_V2_PCS_TX_LARGE_AMP_DRV_LVL, 0x0f),
+@@ -266,7 +266,7 @@ static const struct qmp_phy_init_tbl sm6115_ufsphy_pcs_tbl[] = {
+ 	QMP_PHY_INIT_CFG(QPHY_V2_PCS_RX_MIN_HIBERN8_TIME, 0x9a), /* 8 us */
+ };
+ 
+-static const struct qmp_phy_init_tbl sdm845_ufsphy_serdes_tbl[] = {
++static const struct qmp_phy_init_tbl sdm845_ufsphy_serdes[] = {
+ 	QMP_PHY_INIT_CFG(QSERDES_V3_COM_SYS_CLK_CTRL, 0x02),
+ 	QMP_PHY_INIT_CFG(QSERDES_V3_COM_BIAS_EN_CLKBUFLR_EN, 0x04),
+ 	QMP_PHY_INIT_CFG(QSERDES_V3_COM_BG_TIMER, 0x0a),
+@@ -308,13 +308,13 @@ static const struct qmp_phy_init_tbl sdm845_ufsphy_serdes_tbl[] = {
+ 	QMP_PHY_INIT_CFG(QSERDES_V3_COM_VCO_TUNE_MAP, 0x44),
+ };
+ 
+-static const struct qmp_phy_init_tbl sdm845_ufsphy_tx_tbl[] = {
++static const struct qmp_phy_init_tbl sdm845_ufsphy_tx[] = {
+ 	QMP_PHY_INIT_CFG(QSERDES_V3_TX_LANE_MODE_1, 0x06),
+ 	QMP_PHY_INIT_CFG(QSERDES_V3_TX_RES_CODE_LANE_OFFSET_TX, 0x04),
+ 	QMP_PHY_INIT_CFG(QSERDES_V3_TX_RES_CODE_LANE_OFFSET_RX, 0x07),
+ };
+ 
+-static const struct qmp_phy_init_tbl sdm845_ufsphy_rx_tbl[] = {
++static const struct qmp_phy_init_tbl sdm845_ufsphy_rx[] = {
+ 	QMP_PHY_INIT_CFG(QSERDES_V3_RX_SIGDET_LVL, 0x24),
+ 	QMP_PHY_INIT_CFG(QSERDES_V3_RX_SIGDET_CNTRL, 0x0f),
+ 	QMP_PHY_INIT_CFG(QSERDES_V3_RX_SIGDET_DEGLITCH_CNTRL, 0x1e),
+@@ -333,7 +333,7 @@ static const struct qmp_phy_init_tbl sdm845_ufsphy_rx_tbl[] = {
+ 	QMP_PHY_INIT_CFG(QSERDES_V3_RX_RX_MODE_00, 0x59),
+ };
+ 
+-static const struct qmp_phy_init_tbl sdm845_ufsphy_pcs_tbl[] = {
++static const struct qmp_phy_init_tbl sdm845_ufsphy_pcs[] = {
+ 	QMP_PHY_INIT_CFG(QPHY_V3_PCS_UFS_RX_SIGDET_CTRL2, 0x6e),
+ 	QMP_PHY_INIT_CFG(QPHY_V3_PCS_UFS_TX_LARGE_AMP_DRV_LVL, 0x0a),
+ 	QMP_PHY_INIT_CFG(QPHY_V3_PCS_UFS_TX_SMALL_AMP_DRV_LVL, 0x02),
+@@ -344,7 +344,7 @@ static const struct qmp_phy_init_tbl sdm845_ufsphy_pcs_tbl[] = {
+ 	QMP_PHY_INIT_CFG(QPHY_V3_PCS_UFS_MULTI_LANE_CTRL1, 0x02),
+ };
+ 
+-static const struct qmp_phy_init_tbl sm8150_ufsphy_serdes_tbl[] = {
++static const struct qmp_phy_init_tbl sm8150_ufsphy_serdes[] = {
+ 	QMP_PHY_INIT_CFG(QSERDES_V4_COM_SYSCLK_EN_SEL, 0xd9),
+ 	QMP_PHY_INIT_CFG(QSERDES_V4_COM_HSCLK_SEL, 0x11),
+ 	QMP_PHY_INIT_CFG(QSERDES_V4_COM_HSCLK_HS_SWITCH_SEL, 0x00),
+@@ -374,7 +374,7 @@ static const struct qmp_phy_init_tbl sm8150_ufsphy_serdes_tbl[] = {
+ 	QMP_PHY_INIT_CFG(QSERDES_V4_COM_VCO_TUNE_MAP, 0x06),
+ };
+ 
+-static const struct qmp_phy_init_tbl sm8150_ufsphy_tx_tbl[] = {
++static const struct qmp_phy_init_tbl sm8150_ufsphy_tx[] = {
+ 	QMP_PHY_INIT_CFG(QSERDES_V4_TX_PWM_GEAR_1_DIVIDER_BAND0_1, 0x06),
+ 	QMP_PHY_INIT_CFG(QSERDES_V4_TX_PWM_GEAR_2_DIVIDER_BAND0_1, 0x03),
+ 	QMP_PHY_INIT_CFG(QSERDES_V4_TX_PWM_GEAR_3_DIVIDER_BAND0_1, 0x01),
+@@ -383,7 +383,7 @@ static const struct qmp_phy_init_tbl sm8150_ufsphy_tx_tbl[] = {
+ 	QMP_PHY_INIT_CFG(QSERDES_V4_TX_TRAN_DRVR_EMP_EN, 0x0c),
+ };
+ 
+-static const struct qmp_phy_init_tbl sm8150_ufsphy_rx_tbl[] = {
++static const struct qmp_phy_init_tbl sm8150_ufsphy_rx[] = {
+ 	QMP_PHY_INIT_CFG(QSERDES_V4_RX_SIGDET_LVL, 0x24),
+ 	QMP_PHY_INIT_CFG(QSERDES_V4_RX_SIGDET_CNTRL, 0x0f),
+ 	QMP_PHY_INIT_CFG(QSERDES_V4_RX_SIGDET_DEGLITCH_CNTRL, 0x1e),
+@@ -421,7 +421,7 @@ static const struct qmp_phy_init_tbl sm8150_ufsphy_rx_tbl[] = {
+ 
+ };
+ 
+-static const struct qmp_phy_init_tbl sm8150_ufsphy_pcs_tbl[] = {
++static const struct qmp_phy_init_tbl sm8150_ufsphy_pcs[] = {
+ 	QMP_PHY_INIT_CFG(QPHY_V4_PCS_UFS_RX_SIGDET_CTRL2, 0x6d),
+ 	QMP_PHY_INIT_CFG(QPHY_V4_PCS_UFS_TX_LARGE_AMP_DRV_LVL, 0x0a),
+ 	QMP_PHY_INIT_CFG(QPHY_V4_PCS_UFS_TX_SMALL_AMP_DRV_LVL, 0x02),
+@@ -431,7 +431,7 @@ static const struct qmp_phy_init_tbl sm8150_ufsphy_pcs_tbl[] = {
+ 	QMP_PHY_INIT_CFG(QPHY_V4_PCS_UFS_MULTI_LANE_CTRL1, 0x02),
+ };
+ 
+-static const struct qmp_phy_init_tbl sm8350_ufsphy_serdes_tbl[] = {
++static const struct qmp_phy_init_tbl sm8350_ufsphy_serdes[] = {
+ 	QMP_PHY_INIT_CFG(QSERDES_V5_COM_SYSCLK_EN_SEL, 0xd9),
+ 	QMP_PHY_INIT_CFG(QSERDES_V5_COM_HSCLK_SEL, 0x11),
+ 	QMP_PHY_INIT_CFG(QSERDES_V5_COM_HSCLK_HS_SWITCH_SEL, 0x00),
+@@ -461,7 +461,7 @@ static const struct qmp_phy_init_tbl sm8350_ufsphy_serdes_tbl[] = {
+ 	QMP_PHY_INIT_CFG(QSERDES_V5_COM_VCO_TUNE_MAP, 0x06),
+ };
+ 
+-static const struct qmp_phy_init_tbl sm8350_ufsphy_tx_tbl[] = {
++static const struct qmp_phy_init_tbl sm8350_ufsphy_tx[] = {
+ 	QMP_PHY_INIT_CFG(QSERDES_V5_TX_PWM_GEAR_1_DIVIDER_BAND0_1, 0x06),
+ 	QMP_PHY_INIT_CFG(QSERDES_V5_TX_PWM_GEAR_2_DIVIDER_BAND0_1, 0x03),
+ 	QMP_PHY_INIT_CFG(QSERDES_V5_TX_PWM_GEAR_3_DIVIDER_BAND0_1, 0x01),
+@@ -473,7 +473,7 @@ static const struct qmp_phy_init_tbl sm8350_ufsphy_tx_tbl[] = {
+ 	QMP_PHY_INIT_CFG(QSERDES_V5_TX_TRAN_DRVR_EMP_EN, 0x0c),
+ };
+ 
+-static const struct qmp_phy_init_tbl sm8350_ufsphy_rx_tbl[] = {
++static const struct qmp_phy_init_tbl sm8350_ufsphy_rx[] = {
+ 	QMP_PHY_INIT_CFG(QSERDES_V5_RX_SIGDET_LVL, 0x24),
+ 	QMP_PHY_INIT_CFG(QSERDES_V5_RX_SIGDET_CNTRL, 0x0f),
+ 	QMP_PHY_INIT_CFG(QSERDES_V5_RX_SIGDET_DEGLITCH_CNTRL, 0x1e),
+@@ -513,7 +513,7 @@ static const struct qmp_phy_init_tbl sm8350_ufsphy_rx_tbl[] = {
+ 	QMP_PHY_INIT_CFG(QSERDES_V5_RX_DCC_CTRL1, 0x0c),
+ };
+ 
+-static const struct qmp_phy_init_tbl sm8350_ufsphy_pcs_tbl[] = {
++static const struct qmp_phy_init_tbl sm8350_ufsphy_pcs[] = {
+ 	QMP_PHY_INIT_CFG(QPHY_V5_PCS_UFS_RX_SIGDET_CTRL2, 0x6d),
+ 	QMP_PHY_INIT_CFG(QPHY_V5_PCS_UFS_TX_LARGE_AMP_DRV_LVL, 0x0a),
+ 	QMP_PHY_INIT_CFG(QPHY_V5_PCS_UFS_TX_SMALL_AMP_DRV_LVL, 0x02),
+@@ -531,19 +531,24 @@ static const struct qmp_phy_init_tbl sm8350_ufsphy_pcs_tbl[] = {
+ 	QMP_PHY_INIT_CFG(QPHY_V5_PCS_UFS_MULTI_LANE_CTRL1, 0x02),
+ };
+ 
++struct qmp_phy_cfg_tables {
++	/* Init sequence for PHY blocks - serdes, tx, rx, pcs */
++	const struct qmp_phy_init_tbl *serdes;
++	int serdes_num;
++	const struct qmp_phy_init_tbl *tx;
++	int tx_num;
++	const struct qmp_phy_init_tbl *rx;
++	int rx_num;
++	const struct qmp_phy_init_tbl *pcs;
++	int pcs_num;
++};
++
+ /* struct qmp_phy_cfg - per-PHY initialization config */
+ struct qmp_phy_cfg {
+ 	int lanes;
+ 
+-	/* Init sequence for PHY blocks - serdes, tx, rx, pcs */
+-	const struct qmp_phy_init_tbl *serdes_tbl;
+-	int serdes_tbl_num;
+-	const struct qmp_phy_init_tbl *tx_tbl;
+-	int tx_tbl_num;
+-	const struct qmp_phy_init_tbl *rx_tbl;
+-	int rx_tbl_num;
+-	const struct qmp_phy_init_tbl *pcs_tbl;
+-	int pcs_tbl_num;
++	/* Main init sequence for PHY blocks - serdes, tx, rx, pcs */
++	const struct qmp_phy_cfg_tables tables;
+ 
+ 	/* clock ids to be requested */
+ 	const char * const *clk_list;
+@@ -660,12 +665,14 @@ static const char * const qmp_phy_vreg_l[] = {
+ static const struct qmp_phy_cfg msm8996_ufs_cfg = {
+ 	.lanes			= 1,
+ 
+-	.serdes_tbl		= msm8996_ufs_serdes_tbl,
+-	.serdes_tbl_num		= ARRAY_SIZE(msm8996_ufs_serdes_tbl),
+-	.tx_tbl			= msm8996_ufs_tx_tbl,
+-	.tx_tbl_num		= ARRAY_SIZE(msm8996_ufs_tx_tbl),
+-	.rx_tbl			= msm8996_ufs_rx_tbl,
+-	.rx_tbl_num		= ARRAY_SIZE(msm8996_ufs_rx_tbl),
++	.tables = {
++		.serdes		= msm8996_ufs_serdes,
++		.serdes_num	= ARRAY_SIZE(msm8996_ufs_serdes),
++		.tx		= msm8996_ufs_tx,
++		.tx_num		= ARRAY_SIZE(msm8996_ufs_tx),
++		.rx		= msm8996_ufs_rx,
++		.rx_num		= ARRAY_SIZE(msm8996_ufs_rx),
++	},
+ 
+ 	.clk_list		= msm8996_ufs_phy_clk_l,
+ 	.num_clks		= ARRAY_SIZE(msm8996_ufs_phy_clk_l),
+@@ -685,14 +692,16 @@ static const struct qmp_phy_cfg msm8996_ufs_cfg = {
+ static const struct qmp_phy_cfg sdm845_ufsphy_cfg = {
+ 	.lanes			= 2,
+ 
+-	.serdes_tbl		= sdm845_ufsphy_serdes_tbl,
+-	.serdes_tbl_num		= ARRAY_SIZE(sdm845_ufsphy_serdes_tbl),
+-	.tx_tbl			= sdm845_ufsphy_tx_tbl,
+-	.tx_tbl_num		= ARRAY_SIZE(sdm845_ufsphy_tx_tbl),
+-	.rx_tbl			= sdm845_ufsphy_rx_tbl,
+-	.rx_tbl_num		= ARRAY_SIZE(sdm845_ufsphy_rx_tbl),
+-	.pcs_tbl		= sdm845_ufsphy_pcs_tbl,
+-	.pcs_tbl_num		= ARRAY_SIZE(sdm845_ufsphy_pcs_tbl),
++	.tables = {
++		.serdes		= sdm845_ufsphy_serdes,
++		.serdes_num	= ARRAY_SIZE(sdm845_ufsphy_serdes),
++		.tx		= sdm845_ufsphy_tx,
++		.tx_num		= ARRAY_SIZE(sdm845_ufsphy_tx),
++		.rx		= sdm845_ufsphy_rx,
++		.rx_num		= ARRAY_SIZE(sdm845_ufsphy_rx),
++		.pcs		= sdm845_ufsphy_pcs,
++		.pcs_num	= ARRAY_SIZE(sdm845_ufsphy_pcs),
++	},
+ 	.clk_list		= sdm845_ufs_phy_clk_l,
+ 	.num_clks		= ARRAY_SIZE(sdm845_ufs_phy_clk_l),
+ 	.vreg_list		= qmp_phy_vreg_l,
+@@ -709,14 +718,16 @@ static const struct qmp_phy_cfg sdm845_ufsphy_cfg = {
+ static const struct qmp_phy_cfg sm6115_ufsphy_cfg = {
+ 	.lanes			= 1,
+ 
+-	.serdes_tbl		= sm6115_ufsphy_serdes_tbl,
+-	.serdes_tbl_num		= ARRAY_SIZE(sm6115_ufsphy_serdes_tbl),
+-	.tx_tbl			= sm6115_ufsphy_tx_tbl,
+-	.tx_tbl_num		= ARRAY_SIZE(sm6115_ufsphy_tx_tbl),
+-	.rx_tbl			= sm6115_ufsphy_rx_tbl,
+-	.rx_tbl_num		= ARRAY_SIZE(sm6115_ufsphy_rx_tbl),
+-	.pcs_tbl		= sm6115_ufsphy_pcs_tbl,
+-	.pcs_tbl_num		= ARRAY_SIZE(sm6115_ufsphy_pcs_tbl),
++	.tables = {
++		.serdes		= sm6115_ufsphy_serdes,
++		.serdes_num	= ARRAY_SIZE(sm6115_ufsphy_serdes),
++		.tx		= sm6115_ufsphy_tx,
++		.tx_num		= ARRAY_SIZE(sm6115_ufsphy_tx),
++		.rx		= sm6115_ufsphy_rx,
++		.rx_num		= ARRAY_SIZE(sm6115_ufsphy_rx),
++		.pcs		= sm6115_ufsphy_pcs,
++		.pcs_num	= ARRAY_SIZE(sm6115_ufsphy_pcs),
++	},
+ 	.clk_list		= sdm845_ufs_phy_clk_l,
+ 	.num_clks		= ARRAY_SIZE(sdm845_ufs_phy_clk_l),
+ 	.vreg_list		= qmp_phy_vreg_l,
+@@ -732,14 +743,16 @@ static const struct qmp_phy_cfg sm6115_ufsphy_cfg = {
+ static const struct qmp_phy_cfg sm8150_ufsphy_cfg = {
+ 	.lanes			= 2,
+ 
+-	.serdes_tbl		= sm8150_ufsphy_serdes_tbl,
+-	.serdes_tbl_num		= ARRAY_SIZE(sm8150_ufsphy_serdes_tbl),
+-	.tx_tbl			= sm8150_ufsphy_tx_tbl,
+-	.tx_tbl_num		= ARRAY_SIZE(sm8150_ufsphy_tx_tbl),
+-	.rx_tbl			= sm8150_ufsphy_rx_tbl,
+-	.rx_tbl_num		= ARRAY_SIZE(sm8150_ufsphy_rx_tbl),
+-	.pcs_tbl		= sm8150_ufsphy_pcs_tbl,
+-	.pcs_tbl_num		= ARRAY_SIZE(sm8150_ufsphy_pcs_tbl),
++	.tables = {
++		.serdes		= sm8150_ufsphy_serdes,
++		.serdes_num	= ARRAY_SIZE(sm8150_ufsphy_serdes),
++		.tx		= sm8150_ufsphy_tx,
++		.tx_num		= ARRAY_SIZE(sm8150_ufsphy_tx),
++		.rx		= sm8150_ufsphy_rx,
++		.rx_num		= ARRAY_SIZE(sm8150_ufsphy_rx),
++		.pcs		= sm8150_ufsphy_pcs,
++		.pcs_num	= ARRAY_SIZE(sm8150_ufsphy_pcs),
++	},
+ 	.clk_list		= sdm845_ufs_phy_clk_l,
+ 	.num_clks		= ARRAY_SIZE(sdm845_ufs_phy_clk_l),
+ 	.vreg_list		= qmp_phy_vreg_l,
+@@ -754,14 +767,16 @@ static const struct qmp_phy_cfg sm8150_ufsphy_cfg = {
+ static const struct qmp_phy_cfg sm8350_ufsphy_cfg = {
+ 	.lanes			= 2,
+ 
+-	.serdes_tbl		= sm8350_ufsphy_serdes_tbl,
+-	.serdes_tbl_num		= ARRAY_SIZE(sm8350_ufsphy_serdes_tbl),
+-	.tx_tbl			= sm8350_ufsphy_tx_tbl,
+-	.tx_tbl_num		= ARRAY_SIZE(sm8350_ufsphy_tx_tbl),
+-	.rx_tbl			= sm8350_ufsphy_rx_tbl,
+-	.rx_tbl_num		= ARRAY_SIZE(sm8350_ufsphy_rx_tbl),
+-	.pcs_tbl		= sm8350_ufsphy_pcs_tbl,
+-	.pcs_tbl_num		= ARRAY_SIZE(sm8350_ufsphy_pcs_tbl),
++	.tables = {
++		.serdes		= sm8350_ufsphy_serdes,
++		.serdes_num	= ARRAY_SIZE(sm8350_ufsphy_serdes),
++		.tx		= sm8350_ufsphy_tx,
++		.tx_num		= ARRAY_SIZE(sm8350_ufsphy_tx),
++		.rx		= sm8350_ufsphy_rx,
++		.rx_num		= ARRAY_SIZE(sm8350_ufsphy_rx),
++		.pcs		= sm8350_ufsphy_pcs,
++		.pcs_num	= ARRAY_SIZE(sm8350_ufsphy_pcs),
++	},
+ 	.clk_list		= sdm845_ufs_phy_clk_l,
+ 	.num_clks		= ARRAY_SIZE(sdm845_ufs_phy_clk_l),
+ 	.vreg_list		= qmp_phy_vreg_l,
+@@ -776,14 +791,16 @@ static const struct qmp_phy_cfg sm8350_ufsphy_cfg = {
+ static const struct qmp_phy_cfg sm8450_ufsphy_cfg = {
+ 	.lanes			= 2,
+ 
+-	.serdes_tbl		= sm8350_ufsphy_serdes_tbl,
+-	.serdes_tbl_num		= ARRAY_SIZE(sm8350_ufsphy_serdes_tbl),
+-	.tx_tbl			= sm8350_ufsphy_tx_tbl,
+-	.tx_tbl_num		= ARRAY_SIZE(sm8350_ufsphy_tx_tbl),
+-	.rx_tbl			= sm8350_ufsphy_rx_tbl,
+-	.rx_tbl_num		= ARRAY_SIZE(sm8350_ufsphy_rx_tbl),
+-	.pcs_tbl		= sm8350_ufsphy_pcs_tbl,
+-	.pcs_tbl_num		= ARRAY_SIZE(sm8350_ufsphy_pcs_tbl),
++	.tables = {
++		.serdes		= sm8350_ufsphy_serdes,
++		.serdes_num	= ARRAY_SIZE(sm8350_ufsphy_serdes),
++		.tx		= sm8350_ufsphy_tx,
++		.tx_num		= ARRAY_SIZE(sm8350_ufsphy_tx),
++		.rx		= sm8350_ufsphy_rx,
++		.rx_num		= ARRAY_SIZE(sm8350_ufsphy_rx),
++		.pcs		= sm8350_ufsphy_pcs,
++		.pcs_num	= ARRAY_SIZE(sm8350_ufsphy_pcs),
++	},
+ 	.clk_list		= sm8450_ufs_phy_clk_l,
+ 	.num_clks		= ARRAY_SIZE(sm8450_ufs_phy_clk_l),
+ 	.vreg_list		= qmp_phy_vreg_l,
+@@ -826,16 +843,43 @@ static void qmp_ufs_configure(void __iomem *base,
+ 	qmp_ufs_configure_lane(base, regs, tbl, num, 0xff);
+ }
+ 
+-static int qmp_ufs_serdes_init(struct qmp_phy *qphy)
++static void qmp_ufs_serdes_init(struct qmp_phy *qphy, const struct qmp_phy_cfg_tables *tables)
+ {
+ 	const struct qmp_phy_cfg *cfg = qphy->cfg;
+ 	void __iomem *serdes = qphy->serdes;
+-	const struct qmp_phy_init_tbl *serdes_tbl = cfg->serdes_tbl;
+-	int serdes_tbl_num = cfg->serdes_tbl_num;
+ 
+-	qmp_ufs_configure(serdes, cfg->regs, serdes_tbl, serdes_tbl_num);
++	if (!tables)
++		return;
+ 
+-	return 0;
++	qmp_ufs_configure(serdes, cfg->regs, tables->serdes, tables->serdes_num);
++}
++
++static void qmp_ufs_lanes_init(struct qmp_phy *qphy, const struct qmp_phy_cfg_tables *tables)
++{
++	const struct qmp_phy_cfg *cfg = qphy->cfg;
++	void __iomem *tx = qphy->tx;
++	void __iomem *rx = qphy->rx;
++
++	qmp_ufs_configure_lane(tx, cfg->regs, tables->tx, tables->tx_num, 1);
++
++	if (cfg->lanes >= 2)
++		qmp_ufs_configure_lane(qphy->tx2, cfg->regs, tables->tx, tables->tx_num, 2);
++
++	qmp_ufs_configure_lane(rx, cfg->regs, tables->rx, tables->rx_num, 1);
++
++	if (cfg->lanes >= 2)
++		qmp_ufs_configure_lane(qphy->rx2, cfg->regs, tables->rx, tables->rx_num, 2);
++}
++
++static void qmp_ufs_pcs_init(struct qmp_phy *qphy, const struct qmp_phy_cfg_tables *tables)
++{
++	const struct qmp_phy_cfg *cfg = qphy->cfg;
++	void __iomem *pcs = qphy->pcs;
++
++	if (!tables)
++		return;
++
++	qmp_ufs_configure(pcs, cfg->regs, tables->pcs, tables->pcs_num);
+ }
+ 
+ static int qmp_ufs_com_init(struct qmp_phy *qphy)
+@@ -933,31 +977,16 @@ static int qmp_ufs_power_on(struct phy *phy)
+ 	struct qmp_phy *qphy = phy_get_drvdata(phy);
+ 	struct qcom_qmp *qmp = qphy->qmp;
+ 	const struct qmp_phy_cfg *cfg = qphy->cfg;
+-	void __iomem *tx = qphy->tx;
+-	void __iomem *rx = qphy->rx;
+ 	void __iomem *pcs = qphy->pcs;
+ 	void __iomem *status;
+ 	unsigned int mask, val, ready;
+ 	int ret;
+ 
+-	qmp_ufs_serdes_init(qphy);
+-
+-	/* Tx, Rx, and PCS configurations */
+-	qmp_ufs_configure_lane(tx, cfg->regs, cfg->tx_tbl, cfg->tx_tbl_num, 1);
++	qmp_ufs_serdes_init(qphy, &cfg->tables);
+ 
+-	if (cfg->lanes >= 2) {
+-		qmp_ufs_configure_lane(qphy->tx2, cfg->regs,
+-					cfg->tx_tbl, cfg->tx_tbl_num, 2);
+-	}
+-
+-	qmp_ufs_configure_lane(rx, cfg->regs, cfg->rx_tbl, cfg->rx_tbl_num, 1);
+-
+-	if (cfg->lanes >= 2) {
+-		qmp_ufs_configure_lane(qphy->rx2, cfg->regs,
+-					cfg->rx_tbl, cfg->rx_tbl_num, 2);
+-	}
++	qmp_ufs_lanes_init(qphy, &cfg->tables);
+ 
+-	qmp_ufs_configure(pcs, cfg->regs, cfg->pcs_tbl, cfg->pcs_tbl_num);
++	qmp_ufs_pcs_init(qphy, &cfg->tables);
+ 
+ 	ret = reset_control_deassert(qmp->ufs_reset);
+ 	if (ret)
 -- 
 2.25.1
 
