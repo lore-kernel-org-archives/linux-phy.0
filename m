@@ -4,59 +4,141 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0CE89C433FE
-	for <linux-phy@archiver.kernel.org>; Tue,  1 Nov 2022 23:14:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 39C70C4332F
+	for <linux-phy@archiver.kernel.org>; Tue,  1 Nov 2022 23:27:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:Cc:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Ijy1HSG3yLGG41BcSXG3JNtDjevcs+NEZ7WI0DZOEew=; b=GsYXUphdgnt6wL+FPjATPWvgI4
-	yo8VIiuajIB0ipEn3NhdK1W7h0NA5OiCkDAeAIKRRoaec+XSXkgcWlBOXo7271nFP7TPRqSHkmgzL
-	7BI0C8eaYJ/UknFFMZXPtOG2QtaEE1QXDqqBg9u8N5mdAMvxQQ7jkJ29vTyJ2kuX2dadYgb/E2gng
-	8OX/G4lfxhha5IfZVGDTktO+jOnF7PVZKLaumnzZbjYxpZEOoxj9Ltj7JGOukTKpGwJVpY6gpOL9j
-	MkUEpGuOqz4J1K6wML9cOTedgUw7E0Xg+6m04alvYBkXh3Lnmk+Oizx7QMJyD08BahdvFhfxg1cU2
-	PEjUvXuQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:
+	References:Cc:To:Subject:Date:Message-ID:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=bZoGj34syfIInQyLWy6F5Ig1FUd6Q9WGI2Q9bJ/2VeA=; b=DheavYRJ6i03K4IZgxwbNHFnvX
+	GfgLk6gz7FdyR15lIsZYhqfkS3fyL41KuPHjG7958nmEFG6bSH+TtgAPFMf5m95Gq5yqd8B+0zEQi
+	wg1+ui/9GB1BN2fWgqEdZRTOcZTP/MbdcZA6OAusROlLhCsJQMYCfCcUSutbkkEA7XmTwOj0r3ySp
+	Jsa4zOGC6L8VRZw/xwRPtKnCIJInAJgOfrlh6YOLX995JyybRefI3vMFqSqI3tk4uu+hG3Q6RnWic
+	/v0UZy69XHjSYG2WjsLO6LNpKc4LjEOsq4LbMMt4WynpK2VNah3BE2g0rscMiHnNc4PYxQYqaNRsB
+	de08wc1w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oq0T5-007dbD-BV; Tue, 01 Nov 2022 23:14:51 +0000
-Received: from mx.socionext.com ([202.248.49.38])
-	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oq0Su-007dYf-IC; Tue, 01 Nov 2022 23:14:42 +0000
-Received: from unknown (HELO kinkan2-ex.css.socionext.com) ([172.31.9.52])
-  by mx.socionext.com with ESMTP; 02 Nov 2022 08:14:36 +0900
-Received: from mail.mfilter.local (m-filter-1 [10.213.24.61])
-	by kinkan2-ex.css.socionext.com (Postfix) with ESMTP id BACE72059027;
-	Wed,  2 Nov 2022 08:14:36 +0900 (JST)
-Received: from 172.31.9.51 (172.31.9.51) by m-FILTER with ESMTP; Wed, 2 Nov 2022 08:14:36 +0900
-Received: from [10.212.158.13] (unknown [10.212.158.13])
-	by kinkan2.css.socionext.com (Postfix) with ESMTP id DBFFBB62A4;
-	Wed,  2 Nov 2022 08:14:35 +0900 (JST)
-Subject: Re: [PATCH 2/2] dt-bindings: phy: Fix UniPhier SATA controller node
- names in example
-To: Rob Herring <robh@kernel.org>
-Cc: Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Masami Hiramatsu <mhiramat@kernel.org>, devicetree@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-References: <20221027044920.23194-1-hayashi.kunihiko@socionext.com>
- <20221027044920.23194-3-hayashi.kunihiko@socionext.com>
- <20221028193859.GA2188803-robh@kernel.org>
- <0d7636f6-2c51-587d-1961-face98dfa056@socionext.com>
- <CAL_Jsq+8Rm9v4megza14JPyamV-9Yr4iAa5r+HhM6qtdHRWEBw@mail.gmail.com>
-From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-Message-ID: <07155116-2027-2916-5a39-e4dff8298b27@socionext.com>
-Date: Wed, 2 Nov 2022 08:14:35 +0900
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101
- Thunderbird/78.11.0
-MIME-Version: 1.0
-In-Reply-To: <CAL_Jsq+8Rm9v4megza14JPyamV-9Yr4iAa5r+HhM6qtdHRWEBw@mail.gmail.com>
+	id 1oq0fY-007fjJ-JL; Tue, 01 Nov 2022 23:27:44 +0000
+Received: from mail-vi1eur05on2067.outbound.protection.outlook.com ([40.107.21.67] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
+	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
+	id 1oq0fM-007fgd-OB; Tue, 01 Nov 2022 23:27:35 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=lrZMX9hslRUG3QREZkB8r5tfb18dFE4Ory5DOmX9Z/QoX6JrjVAsbD70nfCED+z8FWgjjxXaMyFlf60Kopg1+iPhNrBrN/MfEZRjVTdTEEPXjh+l8Hz9m2OVIRWLSRUDYnPt5hNGhlTWUEIyLQM0Cw+uzrjrv03RYJOCImv31FC/EJlDf2fWlrnTpleyQAY9T6dEWKL8Dx5Hbmx+0zZ3/tM0aj1JWPybUI/YzUoDuKL1uf0Z+FI0zdoUEq8fAtBSIj54WnuHBUp0D+FSMHWjw9MD3V2+UaaEHum7MLSEEwaSnMo+CcCresIyMwRCBp+7lp2kKtUH7Si4TRoz45808w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=fB0euJUs8R9BTyhOLwueavcpAxZAjDo48mVPWxSKbac=;
+ b=f0If6PDoWUxENOseMFISIojzS6S6gvTQuBN0fjlfjUP8hSfntdSqKTDi4DuvLQ07o5LekU0pMSaRXDGGmn4e9jTPLgZQ6vAYm1du+cFHNcKSp4PN4t2NRSK0K5AP8DQU7xfRGtme1kRlLabSshEZu5+BjQK24uipxhj6wf+EUJOE8qdeizHFrqhSDDsCyxeRCitk9RwCbJWUeqZhFN95K/VWBeKmpidkYRRKXg2dGf0X0WDxJiPM8t5L5oMgmqdeUt4iM2UxaK/cCXLbr8tBo3gQ+CsLxInHdY2dz2YRYPqih67MthOehMZk3UAdf+yiN1BRuOKUResFe32jqZBm0Q==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=seco.com; dmarc=pass action=none header.from=seco.com;
+ dkim=pass header.d=seco.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=seco.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=fB0euJUs8R9BTyhOLwueavcpAxZAjDo48mVPWxSKbac=;
+ b=QcURuJzr9cetInqjo0My2GK9uNPzqP951rbXL+qbZB2D/SEEM3B+wf5U9jizewRyv5M6P4Och0MMC4AIzzABF3ABkfb2plf9jVxI3wuJKvxGNcbpEElnnAoZWw1qXmwDE/pubIOAc2eo3VnZIOnxszyZWdNt3y1X0Z9EU+6LxYGDlQNriGAzjhOy85CKR7A0ijY6NaCPjGqrUfOlgg/IBiJOeE7OH+BRBSKWa4yj28zt6FUCus5aV/P7NPqzGGOADV6FNMPYk5JspGpmcIhRdz+UkLJkCr+4kfAvILUhQhoVNJU3smXljagCFANCr6L6Rjj9u11NkoN3wRTXiCO/xA==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=seco.com;
+Received: from AM0PR03MB4964.eurprd03.prod.outlook.com (2603:10a6:208:fc::33)
+ by AS8PR03MB7205.eurprd03.prod.outlook.com (2603:10a6:20b:2b4::17) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5791.20; Tue, 1 Nov
+ 2022 23:27:26 +0000
+Received: from AM0PR03MB4964.eurprd03.prod.outlook.com
+ ([fe80::bebb:9559:edd8:5e79]) by AM0PR03MB4964.eurprd03.prod.outlook.com
+ ([fe80::bebb:9559:edd8:5e79%7]) with mapi id 15.20.5769.021; Tue, 1 Nov 2022
+ 23:27:26 +0000
+Message-ID: <45463950-7a4f-758d-d6a1-b8fdf9bfd319@seco.com>
+Date: Tue, 1 Nov 2022 19:27:21 -0400
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.4.0
+Subject: Re: [PATCH v8 4/9] phy: fsl: Add Lynx 10G SerDes driver
 Content-Language: en-US
+To: Stephen Boyd <sboyd@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
+ Vinod Koul <vkoul@kernel.org>, linux-phy@lists.infradead.org
+Cc: Rob Herring <robh+dt@kernel.org>, Bagas Sanjaya <bagasdotme@gmail.com>,
+ devicetree@vger.kernel.org,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ linuxppc-dev@lists.ozlabs.org, Ioana Ciornei <ioana.ciornei@nxp.com>,
+ linux-arm-kernel@lists.infradead.org,
+ Camelia Alexandra Groza <camelia.groza@nxp.com>,
+ Madalin Bucur <madalin.bucur@nxp.com>, Jonathan Corbet <corbet@lwn.net>,
+ Michael Turquette <mturquette@baylibre.com>, linux-clk@vger.kernel.org,
+ linux-doc@vger.kernel.org
+References: <20221027191113.403712-1-sean.anderson@seco.com>
+ <20221027191113.403712-5-sean.anderson@seco.com>
+ <20221027230331.19C2FC433D6@smtp.kernel.org>
+ <5f00ede6-10f5-c11c-ee21-54460c1f98b0@seco.com>
+ <d13ff3b2-79f0-2a72-c9da-2c310c4e3bb8@seco.com>
+ <20221101201020.B6180C433C1@smtp.kernel.org>
+From: Sean Anderson <sean.anderson@seco.com>
+In-Reply-To: <20221101201020.B6180C433C1@smtp.kernel.org>
+X-ClientProxiedBy: MN2PR20CA0015.namprd20.prod.outlook.com
+ (2603:10b6:208:e8::28) To AM0PR03MB4964.eurprd03.prod.outlook.com
+ (2603:10a6:208:fc::33)
+MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AM0PR03MB4964:EE_|AS8PR03MB7205:EE_
+X-MS-Office365-Filtering-Correlation-Id: 678054b5-69b4-4815-793f-08dabc60a307
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: 	mvz06i79cfDXqtUImMOhIUXCrXxYJ0kuHZBbccuNfGEqL0B5N3Uq4H8QrOjuJnTGc+J/UQHXlXeL01NCGJt5i4wB5Czw01dsbL1qPg3OLrQgdjOieGRgVk4cboLXT85yJuATraF9rw18kEuYUoFBbjydIp34/EJA4AWpqki7ruOkBinHHDPfpBqjpAG+5IkYb1OY6ke4/J/6abnj41Xe8bym6cx6Nmc8zVQM0XW4jruw+ZCg8P7RC++rqX5ixcrCYBFtjzGQFiaFOBWHzmXc8dMC9jtw9e3v2+fS8ki48lmHf6Mh8TjpkmPK8o3W1gAvP3kjNmUG8I6oCVuqtYw5gznmR6xXpjLi5vDRx2G7QguDa+FMUGHv06b3A+6M04d9QUoTtXwzzI9SRazm1SVJ5/Y79ueu7tFw3H/3YzgK20AA9qZDYex+PndfpiiyghH68xqq5r2zpORn72QsSbIFgiFPHq8Gr+FjMoyUa336bha1YcsPX/oZCADYybY9UrwcQK8TGVLJfOTFYZlBoGqkzRB+DfXwYe5M9BVujp77uJe22e2dlxgrC0BvmOS9zYRMgyHQpAeqaK5S6n78WDYdGnGZpFtHd9DcfcSgNcjMSawnRdDKfbxvvcI+mWvIJSFh0eLH0nvlBEzi6JMEOlfWqjkneDCk0iSTvkuaAXAHHz0BblosJ0AYXRMvyUZFCzjNwHm8zIxl3FZXikuOZLwNl14AV/c4uyTmr4jLLtjh4TIwKnwU54qBoJNnW8PiU4WCoz9X0nqE0cvqRtjS9EKPsrnr7P/smFuYmk/NA9SRThbi8LMDI3RTV8PbirPwku4h
+X-Forefront-Antispam-Report: 	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM0PR03MB4964.eurprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230022)(396003)(39850400004)(366004)(136003)(346002)(376002)(451199015)(31696002)(86362001)(38350700002)(38100700002)(8936002)(316002)(66556008)(66476007)(7416002)(44832011)(6486002)(5660300002)(66946007)(8676002)(41300700001)(4326008)(54906003)(110136005)(2616005)(26005)(186003)(83380400001)(2906002)(478600001)(4001150100001)(53546011)(6506007)(6512007)(6666004)(52116002)(31686004)(36756003)(45980500001)(43740500002);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: 	=?utf-8?B?K0JFV0dNa0JVeFY3eVMvZE8wVlFiQ05PamRiaGQzNGtqZUdQaDhvUlR4d1cy?=
+ =?utf-8?B?ajNNeTNScWFFYkhVKzN1Y0g1S2QvNkFRVW8vcllWKzN3d1VVRTR1SjJlWEVt?=
+ =?utf-8?B?UmdIUFQrazArQnFYTG0vNzhvazMzMGhuVktWM1M4blZsQjNyd3FTZ3VESFB2?=
+ =?utf-8?B?T05JUE1OYjBLWUtmSHNSTzE4N0UwOE1pT1VxM25wODNFYlVqTXVMTzF5OFhy?=
+ =?utf-8?B?R2YxS1FZL0RWN0ZMRG4xQUx5Y2JvenphRVFhbU54T3pvRGhQL1dXWGxKNi9I?=
+ =?utf-8?B?ZEsyU0NiT2pJL1VjbHJqcFBOL2NJOW9TK0xHRCtxWVFTU3JKdm5OWURWMlF0?=
+ =?utf-8?B?eFY3MkEzb0I4ejFkL2dLS1BXYXpRNit2a1BUczJVMnJub2JpcDZldW9rZWFM?=
+ =?utf-8?B?cUVYV0krb29nTHl0eGF2WEM4K3kyeS92YUY0c1JyRjNHMVd6UnpEYUQ2RXJP?=
+ =?utf-8?B?dXg0Y0NUWnJvZDRoU3QyS2FHYlZveUw2WHRvVGhpMzVVejdSYlFiNUdURk5G?=
+ =?utf-8?B?NFJ2blRhd0tWV2FTNEZseVREK1RiREhScU0xTGVtbGIvQnlDa3ZWTUE4Sm95?=
+ =?utf-8?B?ZUZBcFRlSUsraGU2WDdyUkpoSlRnb3EyNVZqV3RGeVJVK25yMGR0YzRxUW1z?=
+ =?utf-8?B?aHpaZkwxRWEzbmprM0FhMVVkdnZieEtjUmNaNWZIMm1pSTFUVWZvTEM2Nnlx?=
+ =?utf-8?B?WkZlR3dSVDJ4RWhjUU1FTlYycm1WR2xrWVZMbk5janFnMDhHWWZUK2IrTS8r?=
+ =?utf-8?B?SGcyWkdkckdoa1k3VVlNc2VXUGczaGRpdGJ2d0V3cVAwa1VXajlnSkI3RDlW?=
+ =?utf-8?B?dmNGME5lS2tMb1RFNEFCQU5HbjlaeEhhVHV3d0NBZGRJS0RjNHlWL1VVVGI4?=
+ =?utf-8?B?bnUrQTBQTGJHTVlNb3YxRzZkN1dDRmcvQUdGQW1hc0NJUGVyNU1mcGExNi9F?=
+ =?utf-8?B?S1M5MUF5WS9YNCsrcE4veWQwUE5hcDZTNlZlQk5SNE53Nks4MllJZjI1Zm9E?=
+ =?utf-8?B?TzNIb04yWHpUQlpYVE0wdFh1OWh2U0Ezd3ZlRXlpUGc3Z2pwQjNtMmxUQTJO?=
+ =?utf-8?B?cVdnbU5IUGY4NE1BTHNRZzRjMXBBUTZ3d3ZUUE9yV0dEdHkzRkQ2RG5zNmlP?=
+ =?utf-8?B?R2dNUTk4RWRWZElPNWZDb3d3N0QzZU9GSk5wdE90SUxTc3FNdzFwbm1FYnB6?=
+ =?utf-8?B?b1V1b2xFc2gycFJiN09VOE9wQytwQWx0RlVPQ3libTRkY2xYbFhkK3JhczM3?=
+ =?utf-8?B?am5uT041MUMvTXpuYkRkUjk2WmMxZTRBaTREMHdnVm5BaDNTSkdkdGFuZW52?=
+ =?utf-8?B?MUtRRFBpU0xwT1grY0Yya0UrL3JkSUwrWFNlN0h6L0trK3BFdzNSQnkveTBH?=
+ =?utf-8?B?cXdMVFliNXdhQzJUZTd4dTZjN1Q2SUdWWURSNXppZVdOWGQ5WjR5ZmVFSGZ3?=
+ =?utf-8?B?NjB1SVB0dEY0RVppc05VSjNoWHhpaFpNWktubDVQWVZJTVlLcmk1cVpIWXRS?=
+ =?utf-8?B?d1hndmtoVjNsZ2dQazNUSUlVV3p2TWVWL1RxZkhxTGpNc2ExNzVlYXpqTHc2?=
+ =?utf-8?B?dVlma2NBVWMwRmVkd3B5ejBOMjZaeHhYWGRUbUNlTU1qOWhvT2c4aVNBbkFF?=
+ =?utf-8?B?M0QxN0RYeWRxTENjTXExNTdITGk3WVB3RHp2bm5PeTNtWW9pWUorWmUwYisx?=
+ =?utf-8?B?T1F1cmpaSElwdnkwMFdpMHZRalZnWHBwcjdLNkpqcG1VeTZhVkxoRjlaUEls?=
+ =?utf-8?B?WGNJYnNDSzFyTnZEYmZucjI0Vml6TFFrR05LVjBZRWdBQXg3SVUyMkE3NWVZ?=
+ =?utf-8?B?dS9GZmJvSXNWdU5uMDZoYk9BZkNHTkE1MDZOT2ZjODdqZ25KeFV2RWJUdTlz?=
+ =?utf-8?B?N05WVXVSZTBqUyttVFpTc2RPYThCOUVqZGtTUC9uT3paWFgvR2JucUFTZ0U3?=
+ =?utf-8?B?MkhYNWc4Mnl0Z2FHR0dSMHd6RnliWk1aZW1Gc1dVbTZkSHhrRXl2bnFEY08v?=
+ =?utf-8?B?NnRIeENNZXB3bDlGVkExdmlhZkVldkdjQUNsVllzN21POTFlSDdvekwvQWo5?=
+ =?utf-8?B?eVJEWUpESkhQR1NHNWxUY05TN1NxMnlyRDB1R2NDMFFIZmhDclZDR1JGY08v?=
+ =?utf-8?B?aU55aXRBQ2VFYmQ0VVNZYWp4dGlsWGdlWm5wMGk0Szl0MjZkazZESW81R3N5?=
+ =?utf-8?B?MFE9PQ==?=
+X-OriginatorOrg: seco.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 678054b5-69b4-4815-793f-08dabc60a307
+X-MS-Exchange-CrossTenant-AuthSource: AM0PR03MB4964.eurprd03.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 01 Nov 2022 23:27:26.8154
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: bebe97c3-6438-442e-ade3-ff17aa50e733
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: dJK1QML+ZOb+fM7j+SDZf25D7r89NKySnYgzJVtlfh0UD2zzPCMKGpnsFGpyhoPH3isrKHr5tu0oWi5gJkSjkg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS8PR03MB7205
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221101_161440_741332_9B577B77 
-X-CRM114-Status: GOOD (  18.89  )
+X-CRM114-CacheID: sfid-20221101_162733_339043_BDAF6082 
+X-CRM114-Status: GOOD (  15.39  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -68,66 +150,34 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 2022/11/02 4:31, Rob Herring wrote:
-> On Tue, Nov 1, 2022 at 4:10 AM Kunihiko Hayashi
-> <hayashi.kunihiko@socionext.com> wrote:
->>
->> Hi Rob,
->>
->> On 2022/10/29 4:38, Rob Herring wrote:
->>> On Thu, Oct 27, 2022 at 01:49:20PM +0900, Kunihiko Hayashi wrote:
->>>> The word "glue" is ambiguous for the controller node name. Should put
->>>> "sata-controller" instead of "ahci-glue" on the controller node.
->>>> And rename a phy node to "sata-phy".
->>>>
->>>> Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
->>>> ---
->>>>    .../devicetree/bindings/phy/socionext,uniphier-ahci-phy.yaml  | 4
->>>> ++--
->>>>    1 file changed, 2 insertions(+), 2 deletions(-)
->>>>
->>>> diff --git
->>> a/Documentation/devicetree/bindings/phy/socionext,uniphier-ahci-phy.yaml
->>> b/Documentation/devicetree/bindings/phy/socionext,uniphier-ahci-phy.yaml
->>>> index a3cd45acea28..89b8b133777a 100644
->>>> ---
->>>> a/Documentation/devicetree/bindings/phy/socionext,uniphier-ahci-phy.
->>> yaml
->>>> +++
->>>> b/Documentation/devicetree/bindings/phy/socionext,uniphier-ahci-phy.
->>> yaml
->>>> @@ -117,14 +117,14 @@ additionalProperties: false
->>>>
->>>>    examples:
->>>>      - |
->>>> -    ahci-glue@65700000 {
->>>> +    sata-controller@65700000 {
->>>
->>> But is this really the SATA controller aka AHCI?
->>>
->>> In cases where we don't have a standardized name, I don't think it makes
->>> sense changing node names from one non-standard name to another.
->>
->> I see. This can't be named generic, so this change will drop.
->> And "sata-phy" in the same way.
-> 
-> I think sata-phy is fine. It may not be added, but usb3-phy or
-> pcie-phy are common already.
-I understand. But of cource "phy" is also common, so I defer the change
-from "phy" to "sata-phy".
-
-Thank you,
-
----
-Best Regards
-Kunihiko Hayashi
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gMTEvMS8yMiAxNjoxMCwgU3RlcGhlbiBCb3lkIHdyb3RlOgo+IFF1b3RpbmcgU2VhbiBBbmRl
+cnNvbiAoMjAyMi0xMC0yOCAwOTozMzo1OSkKPj4gT24gMTAvMjgvMjIgMTI6MTMsIFNlYW4gQW5k
+ZXJzb24gd3JvdGU6Cj4+ID4gT24gMTAvMjcvMjIgMTk6MDMsIFN0ZXBoZW4gQm95ZCB3cm90ZToK
+Pj4gPj4+ICvCoMKgwqDCoMKgwqAgcmVmID0gZGV2bV9jbGtfZ2V0KGRldiwgcmVmX25hbWUpOwo+
+PiA+Pj4gK8KgwqDCoMKgwqDCoCBpZiAoSVNfRVJSKGNsay0+cmVmKSkgewo+PiA+Pj4gK8KgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgcmV0ID0gUFRSX0VSUihjbGstPnJlZik7Cj4+ID4+PiAr
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBkZXZfZXJyX3Byb2JlKGRldiwgcmV0LCAiY291
+bGQgbm90IGdldCAlc1xuIiwgcmVmX25hbWUpOwo+PiA+Pj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqAgZ290byBvdXQ7Cj4+ID4+PiArwqDCoMKgwqDCoMKgIH0KPj4gPj4+ICsKPj4gPj4+
+ICvCoMKgwqDCoMKgwqAgY2xrLT5yZWYgPSBfX2Nsa19nZXRfaHcocmVmKTsKPj4gPj4KPj4gPj4g
+UGxlYXNlIGRvbid0IHVzZSBfX2Nsa19nZXRfaHcoKSBmb3IgdGhpcy4gSW5zdGVhZCB1c2Ugc3Ry
+dWN0Cj4+ID4+IGNsa19wYXJlbnRfZGF0YSBhbmQgc2V0IGEgRFQgaW5kZXggaW4gdGhlIGluZGV4
+IG1lbWJlciB0byBtYXAgdG8gdGhpcwo+PiA+PiBjbGsuCj4+ID4gCj4+ID4gT0sKPj4gCj4+IE9o
+LCBJIHJlbWVtYmVyIHdoeSBJIGRpZCB0aGlzLiBJIG5lZWQgdGhlIHJlZmVyZW5jZSBjbG9jayBm
+b3IgY2xrX2h3X3JvdW5kX3JhdGUsCj4+IHdoaWNoIGlzIEFGQUlDVCB0aGUgb25seSBjb3JyZWN0
+IHdheSB0byBpbXBsZW1lbnQgcm91bmRfcmF0ZS4KPj4gCj4gCj4gSXMgdGhlIHJlZmVyZW5jZSBj
+bGsgdGhlIHBhcmVudCBvZiB0aGUgY2xrIGltcGxlbWVudGluZwo+IGNsa19vcHM6OnJvdW5kX3Jh
+dGUoKT8KClllcy4gV2UgbWF5IGJlIGFibGUgdG8gcHJvZHVjZSBhIGdpdmVuIG91dHB1dCB3aXRo
+IG11bHRpcGxlIHJlZmVyZW5jZQpyYXRlcy4gSG93ZXZlciwgdGhlIGNsb2NrIEFQSSBwcm92aWRl
+cyBubyBtZWNoYW5pc20gdG8gc2F5ICJEb24ndCBhc2sKZm9yIHRoZSBwYXJlbnQgY2xvY2sgdG8g
+YmUgcmF0ZSBYLCB5b3UganVzdCB0cmllZCBpdCBhbmQgdGhlIHBhcmVudApjbG9jayBjYW4ndCBz
+dXBwb3J0IGl0LiIgU28gaW5zdGVhZCwgd2UgbG9vcCBvdmVyIHRoZSBwb3NzaWJsZSByZWZlcmVu
+Y2UKcmF0ZXMgYW5kIHBpY2sgdGhlIGZpcnN0IG9uZSB3aGljaCB0aGUgcGFyZW50IHNheXMgaXQg
+Y2FuIHJvdW5kIHRvLgoKLS1TZWFuCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1w
+aHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1h
+bi9saXN0aW5mby9saW51eC1waHkK
