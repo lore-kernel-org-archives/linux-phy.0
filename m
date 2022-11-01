@@ -4,90 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9F8A4C4332F
-	for <linux-phy@archiver.kernel.org>; Tue,  1 Nov 2022 15:12:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 080CBC4332F
+	for <linux-phy@archiver.kernel.org>; Tue,  1 Nov 2022 17:22:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8xXgFiKBZGSARlnSGHIcWmanZL0sDum7g3Og++SaGg4=; b=f10209i+nN1klT
-	rg3VAsDEOanA/hyGwnCtz2ir/dk71gOlwUn2lqL+4VGTPV8ZkSwWwE25hDY1Wc9zxRKzZ1zhj8lSn
-	/Tmk8eTsJj9Ge4MfjnEGmoVFlVQQORClsDwclYEtte13Jv/3cO1zPjHHce7B6Uh00eTOaQEzUP/NA
-	Iz42D8OJVGd/Wc29N+AmSx8kfy8cz1f9ReKJjxAz8iwqpaSwRO2fKWPRO0jIEhJYGbkEcMxSXjj/M
-	5H2HIAwvF5OY8doy/jLgU+9DqL2sGKw9I7Awv7HMPoHclEDNaMx6dMw0jh4FUVYalNM9mcl8jQIVx
-	vwvO61voKjNDxBoZGNYw==;
+	List-Owner; bh=2Sm5UiuCWkgbjWvKhHcCHlszDW5k7HCPVrAmJtK+NUg=; b=vO1mAjP1b5EdVm
+	fIS/vHV5jWQzF/KePj2P5NYcK1c+B0h3+7U05lbFO7gyfE+csoWhYEA+nOlUmjmdFkMZm/cHZRqg/
+	Gc83m8RMKxU3mRbLbJ3R8PhwSKvZYGcQpDKZ7W/vbGHU5adjKYtxst8oh8BycGRdnPK+nXzaLXGj/
+	m5897xhVOguSqTvOtg4hsBQ5qZOqvRVlQK1mY46D1KZI+FVwnu31I7mUN80c0PekGMaTpdbgoKzHd
+	qFHurXLDIuidHxEqRM4ulG5/1aMim1wJ//dt+rhqv9AhxvstEti/jt2QnWSauhDG/k7WASlvkDN68
+	bh3ZAgA2JTdrpKc2p1AA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1opswZ-005lGy-27; Tue, 01 Nov 2022 15:12:47 +0000
-Received: from us-smtp-delivery-124.mimecast.com ([170.10.133.124])
+	id 1opuyE-006F11-FD; Tue, 01 Nov 2022 17:22:38 +0000
+Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1opswR-005lDA-Em
-	for linux-phy@lists.infradead.org; Tue, 01 Nov 2022 15:12:46 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
-	s=mimecast20190719; t=1667315558;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 in-reply-to:in-reply-to:references:references;
-	bh=WhCfbrC+tKlaqwlNl94RimQiIKrtWvzi9RGBXnP5PaA=;
-	b=i2Sqz2pyCUKmYYZV76++4Gj0YRSoInD+4WSDzF4LGw9iPfTvWaONweB6Hj14UIPcGS7rhh
-	dNUrMK4Lnp7bRptbnE6Imf1APNdtFI4GHt5YX6YjxlNKW/fAj568r5fKap+q2xvWci647L
-	EqQ2DsBwKaSFFNvz9Zu+6mqHcwM/IJc=
-Received: from mail-oi1-f199.google.com (mail-oi1-f199.google.com
- [209.85.167.199]) by relay.mimecast.com with ESMTP with STARTTLS
- (version=TLSv1.3, cipher=TLS_AES_128_GCM_SHA256) id
- us-mta-590-PG3TKeS6P0qu0NrzpTulHA-1; Tue, 01 Nov 2022 11:12:37 -0400
-X-MC-Unique: PG3TKeS6P0qu0NrzpTulHA-1
-Received: by mail-oi1-f199.google.com with SMTP id r31-20020a056808211f00b003558144f5ceso6295091oiw.21
-        for <linux-phy@lists.infradead.org>; Tue, 01 Nov 2022 08:12:36 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=WhCfbrC+tKlaqwlNl94RimQiIKrtWvzi9RGBXnP5PaA=;
-        b=Y7A8MPyorIBBXLB2XhPx/aPPYcEh5lbmOYF7VWq+j9VTokxo2Fzk89AuAG0F4MP6qY
-         0Q8UhbGEXZSP4iRYSTtmsOgeQIsn+uC64MbNHVt923hnho8XEcXOowTLD5Y1d2+4DDku
-         9oog4AWlwKgKDadIFm5xSlRfW93wnf10UntJkaUaGnMB+m6Lt+C8DupAtILn7yPDH6zd
-         SGP3GeR3mW6TYiCjfXF7YzUkOdjkLZdXY+G2M5xuqlOEXQkf0oizLNFvJtJkt9ZKNP/G
-         Fe4mIWHch5zavH1n8V9XgEAk+YCu2vSKlKhhhUXyUE+lMdYsC45AHqOoQow4SrVSakLA
-         zvBw==
-X-Gm-Message-State: ACrzQf3a3QsgJW1g2NBivKNk6mUytFu31TZCn3CRloiMKbxgeuSrWx80
-	/Mjhm+5Pk+um4GYFw2ZlDvcg27ho0GlKrConqdvFpCUFC8roMjPA2j5SlordYYzE2ma7IAow5V7
-	feBGATR7RGtqNKof56dTExiF2nw==
-X-Received: by 2002:a05:6830:2693:b0:661:e5be:54d with SMTP id l19-20020a056830269300b00661e5be054dmr10137059otu.365.1667315556270;
-        Tue, 01 Nov 2022 08:12:36 -0700 (PDT)
-X-Google-Smtp-Source: AMsMyM793XlwTZxCVNxIGpeJvkdANMVrjJrL3o5j79HVnLEDlz/VJyPLPzK5QdqyGPayhDWk8QyQxQ==
-X-Received: by 2002:a05:6830:2693:b0:661:e5be:54d with SMTP id l19-20020a056830269300b00661e5be054dmr10137047otu.365.1667315556035;
-        Tue, 01 Nov 2022 08:12:36 -0700 (PDT)
-Received: from halaney-x13s ([2600:1700:1ff0:d0e0::41])
-        by smtp.gmail.com with ESMTPSA id w67-20020acadf46000000b0035770fc6ca9sm3437879oig.16.2022.11.01.08.12.34
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 01 Nov 2022 08:12:35 -0700 (PDT)
-Date: Tue, 1 Nov 2022 10:12:33 -0500
-From: Andrew Halaney <ahalaney@redhat.com>
-To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Cc: martin.petersen@oracle.com, jejb@linux.ibm.com, andersson@kernel.org,
-	vkoul@kernel.org, krzysztof.kozlowski+dt@linaro.org,
-	konrad.dybcio@somainline.org, robh+dt@kernel.org,
-	quic_cang@quicinc.com, linux-arm-msm@vger.kernel.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org, linux-scsi@vger.kernel.org,
-	dmitry.baryshkov@linaro.org
-Subject: Re: [PATCH v2 12/15] scsi: ufs: ufs-qcom: Fix the Qcom register name
- for offset 0xD0
-Message-ID: <20221101151233.gsmmdbz7htkzpbps@halaney-x13s>
-References: <20221031180217.32512-1-manivannan.sadhasivam@linaro.org>
- <20221031180217.32512-13-manivannan.sadhasivam@linaro.org>
+	id 1opuyB-006Epf-Dd
+	for linux-phy@lists.infradead.org; Tue, 01 Nov 2022 17:22:37 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by ams.source.kernel.org (Postfix) with ESMTPS id 80BBBB81E6C
+	for <linux-phy@lists.infradead.org>; Tue,  1 Nov 2022 17:22:33 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B1ED6C43144
+	for <linux-phy@lists.infradead.org>; Tue,  1 Nov 2022 17:22:31 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1667323351;
+	bh=rgPGhUUt+Eyr0PadTOMg/b3hGIEIFxFAmO+UgjHuXjg=;
+	h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+	b=sKK7JjMNpUp0pB4xBhlrCB4Q5PsVPhMCuyQFP06qzMwkOZUXClGjTp3ioNusBPvql
+	 pDtDKVjcSDhLImjrE/4+pfjgfeKpoiwXm8zeNcEqJ1EFd6Cug6V7NB9nvzk1a0uVrH
+	 BtykVR53Ni8+BOFwtc4crxEVkaPeh+fugsdv+R6OvwPluKc9IdrKOyC7j3NquziIFo
+	 vHX9Ihlt44Bb7XSnnoXrBY3rAjA7NcMCwTtw1yCRr+JgXLrElPcW3llcNItoaTBOic
+	 qYSC32+9pLwAChCVilgLXhHX+7rFAqLR5aLRDIj6lAJ3zBuFmKvxvtZNdIRsZydwsi
+	 1aczXvTT8+SZQ==
+Received: by mail-lj1-f176.google.com with SMTP id z24so21887387ljn.4
+        for <linux-phy@lists.infradead.org>; Tue, 01 Nov 2022 10:22:31 -0700 (PDT)
+X-Gm-Message-State: ACrzQf2XswHFyh2Rkp+5JifaFkNscq6/GJWjxaf5EXFtPRBcRdWAYMKd
+	8NuhbnWX1v0dXA2ekZOa1cqgUeLGrHMlxpfsVw==
+X-Google-Smtp-Source: AMsMyM5vOg74NIWBfxSPaEbGXTsm2QqL0KeMr1dNQn0vaGrKgq5wWdu76VnqemjN8nO91mLCT9GkD3PgA7n9FTpeu5A=
+X-Received: by 2002:a2e:9a85:0:b0:275:1343:df71 with SMTP id
+ p5-20020a2e9a85000000b002751343df71mr1163621lji.215.1667323349671; Tue, 01
+ Nov 2022 10:22:29 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20221031180217.32512-13-manivannan.sadhasivam@linaro.org>
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
-Content-Disposition: inline
+References: <20221029211312.929862-1-dmitry.baryshkov@linaro.org>
+ <20221029211312.929862-2-dmitry.baryshkov@linaro.org> <20221031214055.GA3613285-robh@kernel.org>
+ <CAA8EJpqt+UvWHwd90Cdm3iCi2sbxbwbC3ADY6PW053Tw8r94VA@mail.gmail.com>
+In-Reply-To: <CAA8EJpqt+UvWHwd90Cdm3iCi2sbxbwbC3ADY6PW053Tw8r94VA@mail.gmail.com>
+From: Rob Herring <robh@kernel.org>
+Date: Tue, 1 Nov 2022 12:22:20 -0500
+X-Gmail-Original-Message-ID: <CAL_JsqLVzPawSFh9e6b3nVfn+dNDFooVgOa7B_iTGU13tzXTRQ@mail.gmail.com>
+Message-ID: <CAL_JsqLVzPawSFh9e6b3nVfn+dNDFooVgOa7B_iTGU13tzXTRQ@mail.gmail.com>
+Subject: Re: [PATCH v1 1/7] dt-bindings: PCI: qcom: Add sm8350 to bindings
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
+	Konrad Dybcio <konrad.dybcio@somainline.org>, 
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Jingoo Han <jingoohan1@gmail.com>, 
+	Gustavo Pimentel <gustavo.pimentel@synopsys.com>, 
+	Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, =?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?= <kw@linux.com>, 
+	Bjorn Helgaas <bhelgaas@google.com>, Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>, 
+	Johan Hovold <johan@kernel.org>, linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org, 
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221101_081239_606413_238E455E 
-X-CRM114-Status: GOOD (  17.39  )
+X-CRM114-CacheID: sfid-20221101_102235_765888_9F477723 
+X-CRM114-Status: GOOD (  22.47  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,37 +89,81 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Oct 31, 2022 at 11:32:14PM +0530, Manivannan Sadhasivam wrote:
-> On newer UFS revisions, the register at offset 0xD0 is called,
-> REG_UFS_PARAM0. Since the existing register, RETRY_TIMER_REG is not used
-> anywhere, it is safe to use the new name.
-> 
-> Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+On Mon, Oct 31, 2022 at 4:47 PM Dmitry Baryshkov
+<dmitry.baryshkov@linaro.org> wrote:
+>
+> On Tue, 1 Nov 2022 at 00:40, Rob Herring <robh@kernel.org> wrote:
+> >
+> > On Sun, Oct 30, 2022 at 12:13:06AM +0300, Dmitry Baryshkov wrote:
+> > > Add bindings for two PCIe hosts on SM8350 platform. The only difference
+> > > between them is in the aggre0 clock, which warrants the oneOf clause for
+> > > the clocks properties.
+> > >
+> > > Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+> > > ---
+> > >  .../devicetree/bindings/pci/qcom,pcie.yaml    | 54 +++++++++++++++++++
+> > >  1 file changed, 54 insertions(+)
+> > >
+> > > diff --git a/Documentation/devicetree/bindings/pci/qcom,pcie.yaml b/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
+> > > index 54f07852d279..55bf5958ef79 100644
+> > > --- a/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
+> > > +++ b/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
+> > > @@ -32,6 +32,7 @@ properties:
+> > >        - qcom,pcie-sdm845
+> > >        - qcom,pcie-sm8150
+> > >        - qcom,pcie-sm8250
+> > > +      - qcom,pcie-sm8350
+> > >        - qcom,pcie-sm8450-pcie0
+> > >        - qcom,pcie-sm8450-pcie1
+> > >        - qcom,pcie-ipq6018
+> > > @@ -185,6 +186,7 @@ allOf:
+> > >                - qcom,pcie-sc8180x
+> > >                - qcom,pcie-sc8280xp
+> > >                - qcom,pcie-sm8250
+> > > +              - qcom,pcie-sm8350
+> > >                - qcom,pcie-sm8450-pcie0
+> > >                - qcom,pcie-sm8450-pcie1
+> > >      then:
+> > > @@ -540,6 +542,57 @@ allOf:
+> > >            items:
+> > >              - const: pci # PCIe core reset
+> > >
+> > > +  - if:
+> > > +      properties:
+> > > +        compatible:
+> > > +          contains:
+> > > +            enum:
+> > > +              - qcom,pcie-sm8350
+> > > +    then:
+> > > +      oneOf:
+> > > +          # Unfortunately the "optional" ref clock is used in the middle of the list
+> > > +        - properties:
+> > > +            clocks:
+> > > +              maxItems: 13
+> > > +            clock-names:
+> > > +              items:
+> > > +                - const: pipe # PIPE clock
+> > > +                - const: pipe_mux # PIPE MUX
+> > > +                - const: phy_pipe # PIPE output clock
+> > > +                - const: ref # REFERENCE clock
+> > > +                - const: aux # Auxiliary clock
+> > > +                - const: cfg # Configuration clock
+> > > +                - const: bus_master # Master AXI clock
+> > > +                - const: bus_slave # Slave AXI clock
+> > > +                - const: slave_q2a # Slave Q2A clock
+> > > +                - const: tbu # PCIe TBU clock
+> > > +                - const: ddrss_sf_tbu # PCIe SF TBU clock
+> > > +                - const: aggre0 # Aggre NoC PCIe0 AXI clock
+> >
+> > 'enum: [ aggre0, aggre1 ]' and 'minItems: 12' would eliminate the 2nd
+> > case. There's a implicit requirement that string names are unique (by
+> > default).
+>
+> Wouldn't it also allow a single 'aggre0' string?
 
-Reviewed-by: Andrew Halaney <ahalaney@redhat.com>
+No, because it's only for the 12th entry in the list.
 
-> ---
->  drivers/ufs/host/ufs-qcom.h | 3 ++-
->  1 file changed, 2 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/ufs/host/ufs-qcom.h b/drivers/ufs/host/ufs-qcom.h
-> index 9d96ac71b27f..7fe928b82753 100644
-> --- a/drivers/ufs/host/ufs-qcom.h
-> +++ b/drivers/ufs/host/ufs-qcom.h
-> @@ -33,7 +33,8 @@ enum {
->  	REG_UFS_TX_SYMBOL_CLK_NS_US         = 0xC4,
->  	REG_UFS_LOCAL_PORT_ID_REG           = 0xC8,
->  	REG_UFS_PA_ERR_CODE                 = 0xCC,
-> -	REG_UFS_RETRY_TIMER_REG             = 0xD0,
-> +	/* On older UFS revisions, this register is called "RETRY_TIMER_REG" */
-> +	REG_UFS_PARAM0                      = 0xD0,
->  	REG_UFS_PA_LINK_STARTUP_TIMER       = 0xD8,
->  	REG_UFS_CFG1                        = 0xDC,
->  	REG_UFS_CFG2                        = 0xE0,
-> -- 
-> 2.25.1
-> 
-
+Rob
 
 -- 
 linux-phy mailing list
