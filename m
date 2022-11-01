@@ -4,136 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 44845C4332F
-	for <linux-phy@archiver.kernel.org>; Tue,  1 Nov 2022 15:07:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9F8A4C4332F
+	for <linux-phy@archiver.kernel.org>; Tue,  1 Nov 2022 15:12:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:References:Cc:To:
-	Subject:Date:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=HVw2KZMcDi9ZfL9GEWHNYOto8bJIJ9Jgn1SZZ53Iazk=; b=S/yrzfAOAFur7yZ4SM6VsF6Mfv
-	8CW65plnFS5b9XBM3LA546sM/bR9gguQMqxePG9t6sYK0vs77j/3pQxuMbd1EJzl4ycdU+zQ263pS
-	1ooqhBGFthkLJMkQEz7JdXQRSvFuVWVxbgAI7swNgfSWq0qkNo3Y1Fai+17wm9/+XN6zAFgKo7SXk
-	rZELBjKiyFhQ4qSZxwDxUuv60RN9WRNvMOyobZ6bZix6brFhCFuiSzqGzq4wSJ5UAMVK0qZUoMq8D
-	1+AzbK2ANygE8e1HAEm5i4r0sCMNc0d4Fd6W6XS5IUDu6BqDgcArXf04rhMEayTQC+rwhsM81U16B
-	EhYiDwzw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=8xXgFiKBZGSARlnSGHIcWmanZL0sDum7g3Og++SaGg4=; b=f10209i+nN1klT
+	rg3VAsDEOanA/hyGwnCtz2ir/dk71gOlwUn2lqL+4VGTPV8ZkSwWwE25hDY1Wc9zxRKzZ1zhj8lSn
+	/Tmk8eTsJj9Ge4MfjnEGmoVFlVQQORClsDwclYEtte13Jv/3cO1zPjHHce7B6Uh00eTOaQEzUP/NA
+	Iz42D8OJVGd/Wc29N+AmSx8kfy8cz1f9ReKJjxAz8iwqpaSwRO2fKWPRO0jIEhJYGbkEcMxSXjj/M
+	5H2HIAwvF5OY8doy/jLgU+9DqL2sGKw9I7Awv7HMPoHclEDNaMx6dMw0jh4FUVYalNM9mcl8jQIVx
+	vwvO61voKjNDxBoZGNYw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1opsrs-005jlY-Mg; Tue, 01 Nov 2022 15:07:56 +0000
-Received: from mail-co1nam11on2086.outbound.protection.outlook.com ([40.107.220.86] helo=NAM11-CO1-obe.outbound.protection.outlook.com)
+	id 1opswZ-005lGy-27; Tue, 01 Nov 2022 15:12:47 +0000
+Received: from us-smtp-delivery-124.mimecast.com ([170.10.133.124])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1opsrp-005jjq-U2
-	for linux-phy@lists.infradead.org; Tue, 01 Nov 2022 15:07:55 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=YxAsJxsXoiy/s7DI8NkCJHlo/1TDprzLgqFFzsDILvXL4/8KROc4ATKBiWKbmIxGBY3MDZ3rbhfSw4BSpfPkYecESa48hBnI5gvsSTd4+US8M9TjA81X5xvBgwfhs8XP4FCSkSLC9L5E9LKbtsujj4CYs3f1oiA7VdU4RJ5/pLWQvstcctTwUoRxiQ+yz6uUrzUbIMzjNDz2zpoJXoq2fcOL3TlEQxdtBFGYhwfbb4MO1GgAUGkuW3yo4lig/H+J0ozbLPdy0AGGZxT9uXJvPVpY3drVkeAzFqRO1dzPxxrF5Li8rEByNE+/ZCjOjRgpxjw8Nox1bNdhjhBtP02u0g==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=nAQUSBdIqz4bSjDwo+D/8BvA0iTEwjdtMqWhn8WaO9E=;
- b=C5IrGiFkB08p45B/kjKqovT/zb4Iwq55/WMO6EpeXA+23oAK+bXcpOEGYHtwynwYpp5IPQszlMyJieQkwLgDjQyiXEU1YHY2NQVmFRuXsYpP5D74CTtZx6+RN6TT8PTdYrYS+aaxARiQTBOvLVwrQ+YkFFdGbfUBjIi4t4xRPo1qgWiA33soieYe+A7wmz+XRSFCmzpNo3P5qIOHmbQKK7VS+AAUG59DmbHq8SSIHfXFiuy5/AaMkEmMDyh/i/1zestdtPG+Lcc4R8i9HdR2CZKURRJZRSCMKYQof+yYUlAx2jjPP/M21T/r78Nbiky0w604YLi5aWviu7aqvjzanA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nvidia.com; dmarc=pass action=none header.from=nvidia.com;
- dkim=pass header.d=nvidia.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=nAQUSBdIqz4bSjDwo+D/8BvA0iTEwjdtMqWhn8WaO9E=;
- b=WdylXnbPNQEJxiA8HwPBAw5Kt5hiG0cw89imKwc89DR0AUPDlo3pKVYZH2DRbsLC/JoaceqoPWchMN8ZOUsdSc77gz6uvMwWAMNh4iisi3GHypamyRGz1pC8oNMLPQVCo2KL0Jd+RWhv5MX47qaTukmjKyHnuaxtELZE9xOabxSyHMsj19LsqLdIiIf6B5TLu763ioN2ybtkmhSLJChzDJylQLBW6Vyj7+50Ay6zpSHKTqL0P9P5JRXvfxIOnM1kJnzkEljXXJmhK93IVTl+9eZFKzhN09pJ274ZPg4o16SvpsJ6tnag/uMRrWRcLur5W/O2mfWWjeLJMcaMKUEdug==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nvidia.com;
-Received: from CO6PR12MB5444.namprd12.prod.outlook.com (2603:10b6:5:35e::8) by
- IA1PR12MB7566.namprd12.prod.outlook.com (2603:10b6:208:42e::16) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5746.28; Tue, 1 Nov
- 2022 15:07:47 +0000
-Received: from CO6PR12MB5444.namprd12.prod.outlook.com
- ([fe80::d749:2439:e6ae:5840]) by CO6PR12MB5444.namprd12.prod.outlook.com
- ([fe80::d749:2439:e6ae:5840%4]) with mapi id 15.20.5769.021; Tue, 1 Nov 2022
- 15:07:47 +0000
-Message-ID: <e63e9d49-318f-93ae-178f-93a7023538c1@nvidia.com>
-Date: Tue, 1 Nov 2022 15:07:38 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.2.2
-Subject: Re: [PATCH 07/11] i2c: nvidia-gpu: Replace ccgx to well-known regex
-Content-Language: en-US
-To: Wayne Chang <waynec@nvidia.com>, gregkh@linuxfoundation.org,
- robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org, treding@nvidia.com,
- thierry.reding@gmail.com, heikki.krogerus@linux.intel.com, ajayg@nvidia.com,
- kishon@ti.com, vkoul@kernel.org, p.zabel@pengutronix.de, balbi@kernel.org,
- mathias.nyman@intel.com, jckuo@nvidia.com
-Cc: linux-usb@vger.kernel.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, singhanc@nvidia.com,
- linux-i2c@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-tegra@vger.kernel.org
-References: <20221024074128.1113554-1-waynec@nvidia.com>
- <20221024074128.1113554-8-waynec@nvidia.com>
-From: Jon Hunter <jonathanh@nvidia.com>
-In-Reply-To: <20221024074128.1113554-8-waynec@nvidia.com>
-X-ClientProxiedBy: LO4P123CA0077.GBRP123.PROD.OUTLOOK.COM
- (2603:10a6:600:190::10) To CO6PR12MB5444.namprd12.prod.outlook.com
- (2603:10b6:5:35e::8)
+	id 1opswR-005lDA-Em
+	for linux-phy@lists.infradead.org; Tue, 01 Nov 2022 15:12:46 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+	s=mimecast20190719; t=1667315558;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 in-reply-to:in-reply-to:references:references;
+	bh=WhCfbrC+tKlaqwlNl94RimQiIKrtWvzi9RGBXnP5PaA=;
+	b=i2Sqz2pyCUKmYYZV76++4Gj0YRSoInD+4WSDzF4LGw9iPfTvWaONweB6Hj14UIPcGS7rhh
+	dNUrMK4Lnp7bRptbnE6Imf1APNdtFI4GHt5YX6YjxlNKW/fAj568r5fKap+q2xvWci647L
+	EqQ2DsBwKaSFFNvz9Zu+6mqHcwM/IJc=
+Received: from mail-oi1-f199.google.com (mail-oi1-f199.google.com
+ [209.85.167.199]) by relay.mimecast.com with ESMTP with STARTTLS
+ (version=TLSv1.3, cipher=TLS_AES_128_GCM_SHA256) id
+ us-mta-590-PG3TKeS6P0qu0NrzpTulHA-1; Tue, 01 Nov 2022 11:12:37 -0400
+X-MC-Unique: PG3TKeS6P0qu0NrzpTulHA-1
+Received: by mail-oi1-f199.google.com with SMTP id r31-20020a056808211f00b003558144f5ceso6295091oiw.21
+        for <linux-phy@lists.infradead.org>; Tue, 01 Nov 2022 08:12:36 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=WhCfbrC+tKlaqwlNl94RimQiIKrtWvzi9RGBXnP5PaA=;
+        b=Y7A8MPyorIBBXLB2XhPx/aPPYcEh5lbmOYF7VWq+j9VTokxo2Fzk89AuAG0F4MP6qY
+         0Q8UhbGEXZSP4iRYSTtmsOgeQIsn+uC64MbNHVt923hnho8XEcXOowTLD5Y1d2+4DDku
+         9oog4AWlwKgKDadIFm5xSlRfW93wnf10UntJkaUaGnMB+m6Lt+C8DupAtILn7yPDH6zd
+         SGP3GeR3mW6TYiCjfXF7YzUkOdjkLZdXY+G2M5xuqlOEXQkf0oizLNFvJtJkt9ZKNP/G
+         Fe4mIWHch5zavH1n8V9XgEAk+YCu2vSKlKhhhUXyUE+lMdYsC45AHqOoQow4SrVSakLA
+         zvBw==
+X-Gm-Message-State: ACrzQf3a3QsgJW1g2NBivKNk6mUytFu31TZCn3CRloiMKbxgeuSrWx80
+	/Mjhm+5Pk+um4GYFw2ZlDvcg27ho0GlKrConqdvFpCUFC8roMjPA2j5SlordYYzE2ma7IAow5V7
+	feBGATR7RGtqNKof56dTExiF2nw==
+X-Received: by 2002:a05:6830:2693:b0:661:e5be:54d with SMTP id l19-20020a056830269300b00661e5be054dmr10137059otu.365.1667315556270;
+        Tue, 01 Nov 2022 08:12:36 -0700 (PDT)
+X-Google-Smtp-Source: AMsMyM793XlwTZxCVNxIGpeJvkdANMVrjJrL3o5j79HVnLEDlz/VJyPLPzK5QdqyGPayhDWk8QyQxQ==
+X-Received: by 2002:a05:6830:2693:b0:661:e5be:54d with SMTP id l19-20020a056830269300b00661e5be054dmr10137047otu.365.1667315556035;
+        Tue, 01 Nov 2022 08:12:36 -0700 (PDT)
+Received: from halaney-x13s ([2600:1700:1ff0:d0e0::41])
+        by smtp.gmail.com with ESMTPSA id w67-20020acadf46000000b0035770fc6ca9sm3437879oig.16.2022.11.01.08.12.34
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 01 Nov 2022 08:12:35 -0700 (PDT)
+Date: Tue, 1 Nov 2022 10:12:33 -0500
+From: Andrew Halaney <ahalaney@redhat.com>
+To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+Cc: martin.petersen@oracle.com, jejb@linux.ibm.com, andersson@kernel.org,
+	vkoul@kernel.org, krzysztof.kozlowski+dt@linaro.org,
+	konrad.dybcio@somainline.org, robh+dt@kernel.org,
+	quic_cang@quicinc.com, linux-arm-msm@vger.kernel.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org, linux-scsi@vger.kernel.org,
+	dmitry.baryshkov@linaro.org
+Subject: Re: [PATCH v2 12/15] scsi: ufs: ufs-qcom: Fix the Qcom register name
+ for offset 0xD0
+Message-ID: <20221101151233.gsmmdbz7htkzpbps@halaney-x13s>
+References: <20221031180217.32512-1-manivannan.sadhasivam@linaro.org>
+ <20221031180217.32512-13-manivannan.sadhasivam@linaro.org>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: CO6PR12MB5444:EE_|IA1PR12MB7566:EE_
-X-MS-Office365-Filtering-Correlation-Id: f2be2e74-c8fe-4d3a-b61c-08dabc1ad598
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 	wAoQvapIJ70RIZfqh4lSdQgr/3glMrSs2fqzcLcqwCCpPtvOfCe0raDeZYGfXzAj0vV2cs+sh85WJvI92Ue8m3j2RMT62YPHTgX2nZHLshkksCHFs5wwbTy24bnYo8Uf3iuTAKoSEaUdKODd3EHLpvd+usALvrt4HnUTVIuyTzOASAOWc1P+yzF0m4lVxc8KZH/Q9tw95inFgJOMmGFFeEa/elC01K294o4Nkn52FRhEGcr1UIM0V8SBDdUV1b1WbvG+OV0NPKvkZgjckckFmv0dCW6R9RHzog00Sg/P8UZ7t/hqAfg6/+8O9GY5SfgZNLEJsjDUI/3r4BuVWPBmqEw1rMwxhSuoZz8gGWgzSOp9k0jLRGkQ/YM2Ed9+Q7W3C05X9sCtp0/Td3G3EQMRPRgG8E7Dg59DkHUDCDCzqUWgWTK29VreeXmYaY64TJnKJqZFtdC/EQevGnD+kR7tEomTDHP7BVx5IDhx0Xk49j/aDuMA/l4HEBalmFyWGL9DUXplwE0lcKdfY2TAIjm5n0pXY0dJ6tnhcEQ8cTYhSY7tnKXXTZsHClcD/RaqOcyPFsYO+VwIVo+GqrgXZHGTd34yP2wic0YI/W+nlg506US8NTtmqbh0e/VhE0CvFeZ8gKMa9C+6f7R0VbrbStJrIwAiSx3DbfgDvpGzYZYkWpKgKeIBtLMvNHWLwdpFffPIWcMcyKQf9QyC5+3qq1GBUGI3kQLGtRC8myjQ3SBmhf49qk2txBQOiLE0eaUCB7R//M/Pj0dRYEwP2/npoQ2pejfyLjG/Bn1JOlAEbd5xgDB5u1jJZ80IllK6cH7yKQ0L
-X-Forefront-Antispam-Report: 	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:CO6PR12MB5444.namprd12.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230022)(4636009)(376002)(346002)(136003)(366004)(39860400002)(396003)(451199015)(38100700002)(2616005)(53546011)(921005)(4326008)(55236004)(478600001)(31696002)(6666004)(86362001)(316002)(36756003)(6506007)(66476007)(6636002)(8676002)(66556008)(66946007)(31686004)(186003)(2906002)(83380400001)(8936002)(6486002)(7416002)(26005)(5660300002)(41300700001)(6512007)(43740500002)(45980500001);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: 	=?utf-8?B?c3dMbUpyK29WL05ZK1ZlRktZbW9ua3J6Skpaa2JYeG5NSVhpTndTWnd3WUV5?=
- =?utf-8?B?YVl6OVBFbUVYOStqSkUxLzlVRDhwZXZrMTlVOU5DTkdZd1ZDZE9VRDgzVE1j?=
- =?utf-8?B?SUxLWEhNZHhHbHY1ek9MQTlhSGFJV0tDdGZUSEpReS95ZllFQ24rYVkzV2tp?=
- =?utf-8?B?Tzh2UzhaNmpMeEQrVkptSTBtazBiZTRmWk81V2pyYzFqcE5NUUc5T2Z4RFA5?=
- =?utf-8?B?RU0rYmJ1dDJrbDhzSVhVV0dxanRMVUt2K1luYzhoNTRPVXg5Y1gzYmdMNjNn?=
- =?utf-8?B?SDA2Q081d1hGQ0h5QW9BOGIwUU9EemQyYXNSRjgwSWQrVnltME5HVWIzcmx5?=
- =?utf-8?B?Q1poTW9LZWhNQkUvai8zUG5NQXcrTUhVL3hpN0FZekhqcEdHRTJSbWlhd2Jo?=
- =?utf-8?B?Y1NnTDdLTkpxdGlMeFBVR2MrUzQvNVFMd0c4bmsvUGZtb2ViUE1JdUZyUWU5?=
- =?utf-8?B?UWZLTEsrUkFTalhHU0UrdlZmby8yZWZpcjBhdDVTZmhrcmQ3ZFlTTW81Z1Vv?=
- =?utf-8?B?U2ZwcnVYME9WR0lLeXBCVy8vVkk4ZkRZVGZMVTluNm84Qml0NWhmWjAvWFB2?=
- =?utf-8?B?NlBzaUJ4WDAyRzZrcmNjeFJSSk5BOTBDNXpIU1ZoSmlLUmU4QVVQalMwQWhx?=
- =?utf-8?B?WmxJcVltbFhYSGx0Ui9vMEZIWVA3ajh6ZENhNGlxeWdyeHladUlyTGlucVhY?=
- =?utf-8?B?STg5Tlh3Z3A1Z3RaYU1TTFBvR2x3MklVVVFFS2kvMnlCL0hLQlNKa0RNdG5r?=
- =?utf-8?B?QUhpbmpyelZSOVhuYldnbUNNc1Y0ZVBtbDRNaHhhbHpSSFp5bU5rdWFsTzlw?=
- =?utf-8?B?c3BqU1ZYQVB6emJTWVQ1TTFiVjc5RjhPWVJTZk5mQjkzdkJwUTZLZGxjVUM2?=
- =?utf-8?B?N0N2Qms1SFpMVXV2K2FTTXdFdUpORVdxbCtSNUY4TGVMc0pTOFE3VmxHSnRM?=
- =?utf-8?B?L0Y1bFNyREUrTEJRNmxLU1pBWDFUNlQwaStqcUxXL1U2ekgzTmhhektwQklQ?=
- =?utf-8?B?UW1HYU5CaDB6YXljNG9pa2lwdHJhTCt3OWo5Mlg3ejNGbGFGOUpkdGErTVpK?=
- =?utf-8?B?MjBJVDc5cUo1Q3RjMU5KR0ZqQUtPbS92WEZxOHNoeEptN1B2a3lYamZTYnE3?=
- =?utf-8?B?VUoyR3NZb3kzQmxjekRMVW5ybkNwSHB4NFZLdjhERlNVcEdkeS9oVzZNNTQ1?=
- =?utf-8?B?Y2VkdFpmK01Da29mTmRleXBmR1dtbi8yUS9NdEhLMVU3Ty9RY3U0OS9XZDUw?=
- =?utf-8?B?Wmp2WUdrMDNvK0RjSTZNQTBaeWU2dGNkVDd5TThNRitYeGRJK2RpL0hVL0ky?=
- =?utf-8?B?NFlONkZFRkd4OHJVUVp3clV1MFNqTTM3RXRTckpBY1R1VnpRRklDNDdMeGtu?=
- =?utf-8?B?aHhUV1NsTWkwOWM0NXFLZGM0cUMxQjVoZHAzTE90U3RDR3RMZ1J4TXdFcVpC?=
- =?utf-8?B?eGp6UFI2MkxqZlZrT0pMUUtEcjVnVlVmaFBXMTRERUdWRDZVTE0wMHJMclpx?=
- =?utf-8?B?UUlqREdoK250NHhlR2hOem1RcTlsUkl6TXd5NVM4SVNnQitlV2xWNzEybnZW?=
- =?utf-8?B?N3pBZmJVejgzbFl2SCtNdGsycUdCNXl1NFBMMlBHeW51Wmhoalk4KzVLTVdV?=
- =?utf-8?B?Rk8xVE9tQXQzMmd0aEhLd3pxQk9TMEZhbVk3NzVtQU54b0MycDlvZjNUWmoy?=
- =?utf-8?B?K1Z5N0NYUzZDdHhuZjFhbVpKc0V0NmpNVWtHRVlFbEJLSHpyb1hHR2g5MlhZ?=
- =?utf-8?B?UWlUbHZaNFpvZUY0eG45ZC9tQ3NZUHVGU3U5d01VVDVEekNPTHBOQmJveG5w?=
- =?utf-8?B?cmVnQU9lZGxmVXdvSldtUFRWdFh4ejhPT2p5NjNWbG03bjdyMWprZEVUS2NP?=
- =?utf-8?B?RnpvdWlQeDd2SGN1UTJxNUkrMXgxVHh6M0pGTVRJcTNqMERpV2IvanZ1WXVK?=
- =?utf-8?B?NnBpc2w2Q1o5MDlxMlBIQXdlOXZCSmVQZ0dKcm1FdFFUT0dvdFRENnRuRVcv?=
- =?utf-8?B?S1cyTGFzMVMxano4bWZyTTN4OERrWkhML2d1RndDZHJtck9RMXVsdDJFbE4v?=
- =?utf-8?B?M0ZKZGVLUVBmZ1YyczlmTFBHR0xyV05aQUhIenVEMVdkQXhuY3NQaGtOMldy?=
- =?utf-8?B?REZaOWYrY05JL2FhaXFVSjdCQzVZUDRxelN5T1JISzJIMDk5ZFF2U1QrbmxL?=
- =?utf-8?B?Wmc9PQ==?=
-X-OriginatorOrg: Nvidia.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: f2be2e74-c8fe-4d3a-b61c-08dabc1ad598
-X-MS-Exchange-CrossTenant-AuthSource: CO6PR12MB5444.namprd12.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 01 Nov 2022 15:07:47.1457
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: cKjDvmP0k3cu6vZ/+XkVfnox+SsDhI7DUthRv8/OsD9kTvEGCsT8vtlnBWAW36qSXDGQ1wSmkzWWNu26QQl7hw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: IA1PR12MB7566
+In-Reply-To: <20221031180217.32512-13-manivannan.sadhasivam@linaro.org>
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221101_080753_997567_19DA5F83 
-X-CRM114-Status: GOOD (  17.64  )
+X-CRM114-CacheID: sfid-20221101_081239_606413_238E455E 
+X-CRM114-Status: GOOD (  17.39  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -145,53 +99,42 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-On 24/10/2022 08:41, Wayne Chang wrote:
-> ccgx is refer to the cypress cypd4226 typec controller.
-> Replace ccgx to well-known regex "cypress".
+On Mon, Oct 31, 2022 at 11:32:14PM +0530, Manivannan Sadhasivam wrote:
+> On newer UFS revisions, the register at offset 0xD0 is called,
+> REG_UFS_PARAM0. Since the existing register, RETRY_TIMER_REG is not used
+> anywhere, it is safe to use the new name.
 > 
-> Signed-off-by: Wayne Chang <waynec@nvidia.com>
+> Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+
+Reviewed-by: Andrew Halaney <ahalaney@redhat.com>
+
 > ---
->   drivers/i2c/busses/i2c-nvidia-gpu.c | 2 +-
->   1 file changed, 1 insertion(+), 1 deletion(-)
+>  drivers/ufs/host/ufs-qcom.h | 3 ++-
+>  1 file changed, 2 insertions(+), 1 deletion(-)
 > 
-> diff --git a/drivers/i2c/busses/i2c-nvidia-gpu.c b/drivers/i2c/busses/i2c-nvidia-gpu.c
-> index 12e330cd7635..0934f8ad7f49 100644
-> --- a/drivers/i2c/busses/i2c-nvidia-gpu.c
-> +++ b/drivers/i2c/busses/i2c-nvidia-gpu.c
-> @@ -260,7 +260,7 @@ MODULE_DEVICE_TABLE(pci, gpu_i2c_ids);
->   
->   static const struct property_entry ccgx_props[] = {
->   	/* Use FW built for NVIDIA (nv) only */
-> -	PROPERTY_ENTRY_U16("ccgx,firmware-build", ('n' << 8) | 'v'),
-> +	PROPERTY_ENTRY_U16("cypress,firmware-build", ('n' << 8) | 'v'),
->   	{ }
->   };
->   
+> diff --git a/drivers/ufs/host/ufs-qcom.h b/drivers/ufs/host/ufs-qcom.h
+> index 9d96ac71b27f..7fe928b82753 100644
+> --- a/drivers/ufs/host/ufs-qcom.h
+> +++ b/drivers/ufs/host/ufs-qcom.h
+> @@ -33,7 +33,8 @@ enum {
+>  	REG_UFS_TX_SYMBOL_CLK_NS_US         = 0xC4,
+>  	REG_UFS_LOCAL_PORT_ID_REG           = 0xC8,
+>  	REG_UFS_PA_ERR_CODE                 = 0xCC,
+> -	REG_UFS_RETRY_TIMER_REG             = 0xD0,
+> +	/* On older UFS revisions, this register is called "RETRY_TIMER_REG" */
+> +	REG_UFS_PARAM0                      = 0xD0,
+>  	REG_UFS_PA_LINK_STARTUP_TIMER       = 0xD8,
+>  	REG_UFS_CFG1                        = 0xDC,
+>  	REG_UFS_CFG2                        = 0xE0,
+> -- 
+> 2.25.1
+> 
 
-
-Could we change this to be PROPERTY_ENTRY_STRING instead of 
-PROPERTY_ENTRY_U16? The benefit of this would be to allow us to use a 
-proper string identifier in device-tree for the Tegra devices which is 
-more flexible and descriptive.
-
-So given that this is for NVIDIA GPUs, we could simply make this ...
-
-  PROPERTY_ENTRY_STRING("cypress,firmware-build", "nvidia,gpu"),
-
-Then in the ucsi_ccg.c driver, when we read the device property 
-"cypress,firmware-build", if it is 'nvidia,gpu' then we set the 
-uc->fw_build variable to CCG_FW_BUILD_NVIDIA.
-
-Jon
-
--- 
-nvpublic
 
 -- 
 linux-phy mailing list
