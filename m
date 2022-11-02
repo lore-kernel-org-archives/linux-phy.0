@@ -4,55 +4,50 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C4938C4332F
-	for <linux-phy@archiver.kernel.org>; Wed,  2 Nov 2022 01:58:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EAF96C4332F
+	for <linux-phy@archiver.kernel.org>; Wed,  2 Nov 2022 02:59:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
 	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=y1JVxRgkamobENY/ZsMIrfRYk9GU3WaFYZzzedphA1s=; b=jDnxwUwR/NMb5E
-	VwNle4o2iRoRVltqvy1zG8dLUBufj/Wx2Pr5l4HRJQ4KvJXZT98gQQmmp4aPMigHS74ImgkPRCUmG
-	new88Qx1/snq4rZy6K60QhzcM84UJ4j/sqdv1/PkEtmIK28yk7z9P/L2xn9cMltP/WOJkgwVIvJAj
-	bajWT1fHvU5IoqZ4MH+Jg4KPc/dv/M8QnImlR+YNZ0qBjxlshFljS2KsTSkwiGEDVPcAelN8fmqcM
-	IzLJvqHMQNoAoJewMIJd0M4s+tP4uq4ekwquur8lhNvqheQ0hqAvlN3TBj06BaA1lVzLiIdPtsz7+
-	lzU0nCLJZsVMiJkKgCDQ==;
+	List-Owner; bh=9oVBJsKAIKhh53Slb09Vb2+ZW/1w0fDzkSSHMxPDFdI=; b=fSJVtYN4VcAlK8
+	LcXI5xkes8zMJw2rFTTU5okcqwGGqFSag5aZihq0AlTT7Xg9p3ZG0GfmpW3eapDFpMLaII31vs4LI
+	KAMv2Ig+cGT7EKDYMutCreiV0Y2om2nYnVlRYgFiO+t0AnonqD33Ebgw36Eb04Bwn+/5jYxjHe8Oz
+	89UJrec47264yxngnOPyjk7K9Zi/WuH1uVoDLdmmjvsxIOp29/TYFg/dqX8WWlPEvvOqZakTvirm5
+	Hn24aQf5s/Tuw92SvmSNyhmSGtJMGnaSLfeaioR1MJf3LgFm3yhDKMPU41xOhZHN5054wev0enCmP
+	TtKvoKihkzoTA2Nx+xwA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oq31p-007y8G-7M; Wed, 02 Nov 2022 01:58:53 +0000
+	id 1oq3yA-0083hB-AR; Wed, 02 Nov 2022 02:59:10 +0000
 Received: from szxga02-in.huawei.com ([45.249.212.188])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oq31m-007y6F-9Z
-	for linux-phy@lists.infradead.org; Wed, 02 Nov 2022 01:58:51 +0000
-Received: from dggpemm500023.china.huawei.com (unknown [172.30.72.53])
-	by szxga02-in.huawei.com (SkyGuard) with ESMTP id 4N290R2cK9zRnsS;
-	Wed,  2 Nov 2022 09:53:43 +0800 (CST)
-Received: from dggpemm500007.china.huawei.com (7.185.36.183) by
- dggpemm500023.china.huawei.com (7.185.36.83) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.2375.31; Wed, 2 Nov 2022 09:58:40 +0800
-Received: from huawei.com (10.175.103.91) by dggpemm500007.china.huawei.com
- (7.185.36.183) with Microsoft SMTP Server (version=TLS1_2,
+	id 1oq3y6-0083fS-OE
+	for linux-phy@lists.infradead.org; Wed, 02 Nov 2022 02:59:08 +0000
+Received: from kwepemi500023.china.huawei.com (unknown [172.30.72.53])
+	by szxga02-in.huawei.com (SkyGuard) with ESMTP id 4N2BL238WkzRnwG;
+	Wed,  2 Nov 2022 10:54:02 +0800 (CST)
+Received: from huawei.com (10.175.112.208) by kwepemi500023.china.huawei.com
+ (7.221.188.76) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2375.31; Wed, 2 Nov
- 2022 09:58:39 +0800
-From: Yang Yingliang <yangyingliang@huawei.com>
-To: <linux-phy@lists.infradead.org>, <linux-tegra@vger.kernel.org>
-CC: <yangyingliang@huawei.com>, JC Kuo <jckuo@nvidia.com>, "Kishon Vijay
- Abraham I" <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, Thierry Reding
-	<thierry.reding@gmail.com>, Jonathan Hunter <jonathanh@nvidia.com>
-Subject: [PATCH] phy: tegra: xusb: fix error handing in tegra_xusb_{pad|port}_init()
-Date: Wed, 2 Nov 2022 09:57:32 +0800
-Message-ID: <20221102015732.1332099-1-yangyingliang@huawei.com>
-X-Mailer: git-send-email 2.25.1
+ 2022 10:58:58 +0800
+From: Peng Wu <wupeng58@huawei.com>
+To: <vincent.sunplus@gmail.com>, <kishon@ti.com>, <vkoul@kernel.org>
+CC: <linux-usb@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+	<liwei391@huawei.com>, <wupeng58@huawei.com>
+Subject: [PATCH] phy: sunplus: Fix an IS_ERR() vs NULL bug in sp_usb_phy_probe
+Date: Wed, 2 Nov 2022 02:56:27 +0000
+Message-ID: <20221102025627.122388-1-wupeng58@huawei.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-X-Originating-IP: [10.175.103.91]
-X-ClientProxiedBy: dggems701-chm.china.huawei.com (10.3.19.178) To
- dggpemm500007.china.huawei.com (7.185.36.183)
+X-Originating-IP: [10.175.112.208]
+X-ClientProxiedBy: dggems705-chm.china.huawei.com (10.3.19.182) To
+ kwepemi500023.china.huawei.com (7.221.188.76)
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221101_185850_542421_6851B86E 
-X-CRM114-Status: UNSURE (   8.57  )
+X-CRM114-CacheID: sfid-20221101_195907_020909_3EB90DB0 
+X-CRM114-Status: UNSURE (   9.92  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -70,70 +65,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-If device_add() is not called successful, it can not call
-device_unregister(), it will lead a kernel crash because
-of deleting not added device. Fix these by using put_device()
-instead.
+The devm_ioremap() function returns NULL on error, it doesn't return
+error pointers.
 
-Fixes: 53d2a715c240 ("phy: Add Tegra XUSB pad controller support")
-Cc: JC Kuo <jckuo@nvidia.com>
-Cc: Kishon Vijay Abraham I <kishon@ti.com>
-Cc: Vinod Koul <vkoul@kernel.org>
-Cc: Thierry Reding <thierry.reding@gmail.com>
-Cc: Jonathan Hunter <jonathanh@nvidia.com>
-Signed-off-by: Yang Yingliang <yangyingliang@huawei.com>
+Fixes: 99d9ccd97385 ("phy: usb: Add USB2.0 phy driver for Sunplus SP7021")
+Signed-off-by: Peng Wu <wupeng58@huawei.com>
 ---
- drivers/phy/tegra/xusb.c | 16 ++++++++--------
- 1 file changed, 8 insertions(+), 8 deletions(-)
+ drivers/phy/sunplus/phy-sunplus-usb2.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/phy/tegra/xusb.c b/drivers/phy/tegra/xusb.c
-index 95091876c422..65e15dcde02f 100644
---- a/drivers/phy/tegra/xusb.c
-+++ b/drivers/phy/tegra/xusb.c
-@@ -165,16 +165,16 @@ int tegra_xusb_pad_init(struct tegra_xusb_pad *pad,
+diff --git a/drivers/phy/sunplus/phy-sunplus-usb2.c b/drivers/phy/sunplus/phy-sunplus-usb2.c
+index b932087c55b2..e827b79f6d49 100644
+--- a/drivers/phy/sunplus/phy-sunplus-usb2.c
++++ b/drivers/phy/sunplus/phy-sunplus-usb2.c
+@@ -256,8 +256,8 @@ static int sp_usb_phy_probe(struct platform_device *pdev)
+ 	usbphy->moon4_res_mem = platform_get_resource_byname(pdev, IORESOURCE_MEM, "moon4");
+ 	usbphy->moon4_regs = devm_ioremap(&pdev->dev, usbphy->moon4_res_mem->start,
+ 					  resource_size(usbphy->moon4_res_mem));
+-	if (IS_ERR(usbphy->moon4_regs))
+-		return PTR_ERR(usbphy->moon4_regs);
++	if (!usbphy->moon4_regs)
++		return -ENOMEM;
  
- 	err = dev_set_name(&pad->dev, "%s", pad->soc->name);
- 	if (err < 0)
--		goto unregister;
-+		goto put_dev;
- 
- 	err = device_add(&pad->dev);
- 	if (err < 0)
--		goto unregister;
-+		goto put_dev;
- 
- 	return 0;
- 
--unregister:
--	device_unregister(&pad->dev);
-+put_dev:
-+	put_device(&pad->dev);
- 	return err;
- }
- 
-@@ -542,16 +542,16 @@ static int tegra_xusb_port_init(struct tegra_xusb_port *port,
- 
- 	err = dev_set_name(&port->dev, "%s-%u", name, index);
- 	if (err < 0)
--		goto unregister;
-+		goto put_dev;
- 
- 	err = device_add(&port->dev);
- 	if (err < 0)
--		goto unregister;
-+		goto put_dev;
- 
- 	return 0;
- 
--unregister:
--	device_unregister(&port->dev);
-+put_dev:
-+	put_device(&port->dev);
- 	return err;
- }
- 
+ 	usbphy->phy_clk = devm_clk_get(&pdev->dev, NULL);
+ 	if (IS_ERR(usbphy->phy_clk))
 -- 
-2.25.1
+2.17.1
 
 
 -- 
