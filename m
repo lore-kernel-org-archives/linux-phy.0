@@ -4,61 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 02331C433FE
-	for <linux-phy@archiver.kernel.org>; Thu,  3 Nov 2022 21:21:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2CE70C4332F
+	for <linux-phy@archiver.kernel.org>; Thu,  3 Nov 2022 21:21:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=OAOKquXI/mFYe8ZrBiV87PAIh3AYDtVWoTzBJV3PIQQ=; b=u1/gAEGsVwJLsZ
-	rAvRa1kU625eg6md2syy5wXk2vb/wGK2rn0+ndRYhEGG+eGxeE5m/p7l851UToVaF38bu+qY9qv0C
-	XrL5cvd4yEjavm46CkLz48hPOEouaOBu0ufTXEGBH0N7yu/eXfnzW3fZxeKhKcBTvoOKF5M8gZxsQ
-	3/V0J4gTD/1szCYlKstxM/dOYjE8qulUy58hiAwC6QXUuOCKd6uPTKRRAGC6k3w/cAnNMZNmK502q
-	8VfFvLIT9t0okM7K9YihYROnQpQHs663/NQjmG0JveOSSwMvjo8uYcSTpXKnSwJNHVXnYBegaF6Z4
-	RIMEsNF5RuPksSODzEAA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=W39+pMe79j4LTFZZl6v//D7uN+XWqTGn66vrkIpHaow=; b=zO06wTrOgSOuU0
+	HW6vSPThip9lNl/9TGFujcY/2FX5CFX71GR9u+b2c37WyjC8DzwpaBHhiakyO6XvUfXLAJnNB0amm
+	TRMpIyr7y9/n/Dq/7TuTQ6rcVsESF2C388ziq1auie6/Obii8dUuDRd7NhqQCnjqmnNsBHLNxt0Qt
+	VIVaG4cqoPiBHIbK2CauMseoJ5ZzkOKDiNNppvE57ChfupMIkwDqScS7d2llGURatvTzrH0OhX3xJ
+	YSKLgqWi3+P1EH0KE/D7Eb43WXi887uEX+qtqDP3qL6flDS3sdu7AGiq277MmwOrswxCA3WiFlhIO
+	qXF0dJrvWGoHX33vP+PQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oqhek-001jra-EX; Thu, 03 Nov 2022 21:21:46 +0000
-Received: from mail-wr1-x430.google.com ([2a00:1450:4864:20::430])
+	id 1oqhel-001jrp-Ix; Thu, 03 Nov 2022 21:21:47 +0000
+Received: from mail-wm1-x32f.google.com ([2a00:1450:4864:20::32f])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oqheh-001jqM-OQ
-	for linux-phy@lists.infradead.org; Thu, 03 Nov 2022 21:21:45 +0000
-Received: by mail-wr1-x430.google.com with SMTP id o4so4584067wrq.6
-        for <linux-phy@lists.infradead.org>; Thu, 03 Nov 2022 14:21:42 -0700 (PDT)
+	id 1oqhei-001jqV-Sh
+	for linux-phy@lists.infradead.org; Thu, 03 Nov 2022 21:21:46 +0000
+Received: by mail-wm1-x32f.google.com with SMTP id i5-20020a1c3b05000000b003cf47dcd316so4202502wma.4
+        for <linux-phy@lists.infradead.org>; Thu, 03 Nov 2022 14:21:43 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=gmail.com; s=20210112;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=VIcm/SirnZMuA7oz66y5Oz4Q+8fuoc4tcWENPsKxvJU=;
-        b=km90eVlRFFREd/Ht0TdeBdyFn7QERBsyBxvACAsXnW5BgsIndfPfk3IugX6Q2o8J9C
-         ZS9QtORTcfsH6lV9aelKa9N8/6FaXuSrk+8AcGaysY2QGp8NC05x1nO6g+uNy1yLFAtL
-         SzuzNw4wAaoCAZKFt7hpeY9tyH2H4BMnrYjLOZArOMJvGUu6sYt/ZgPIbY9c37UyCcPW
-         ZlXllmPdx/FnnavTKRHzK19ib2uupuzalotJyCuybb9lO4w0AyNmbB7Elw3VmUsy0Yfy
-         y1PNHGzZchJ5WM2d23hNDbk2mcv5TiFzbdYaHI0zXueNJJMprlVCJHKsDeyaQnBsnUNG
-         IgmQ==
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=EBi1xTEb0SF667Jza54gm5V6cR58OHc1YhW84qRd8ZY=;
+        b=pEpBEi9mvFUmu+V8wv+E4uWSllh8HKI11O/WhiLwohawSDkKp3f4WiHG8k6eFuQupN
+         1Fo8hWGbqymC4ZYnuLbxp1OwsD92umaBOaVFejXTmpHluITjQjDFKqsW/ODtfSY+jbUi
+         fSYENdAOuVrOVUr5wX+IvPtt+B3ny1puRwGTi3dTukpwSm71z9rJZWiOMKpV9RZCMBZK
+         tXi7iDW1ggE+JLPczofCGcUJ5IIB7EcmU+Yo7njOlXjg6kPRHxjurd7NIYTpsQDvSJNi
+         aZn1cpJKIKi2sOoDYny5eCU6lu49qXlEOLMEw9dczZB17MHKx+M2NAZFyP0ejK4tGqiy
+         J6wg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=VIcm/SirnZMuA7oz66y5Oz4Q+8fuoc4tcWENPsKxvJU=;
-        b=IfiNHejRfKvWJLPDtNMLwsTJK0wMM69/yFD0UMPCN198QSa76KTzpTifQqYItTejPo
-         /RMlDJKCM1g/2SmOfDweLUzpStGyTl1Dng6xNnFCr7eI/XQ8R72V/qrldnKjs+eZzUle
-         5rt36zHk73U2TEUttN4slThnBQb+OND4Jg16LSjA1KvKCZuCH+j3qI/juFQ7jajAqdFo
-         HSP6n0sCDmjZ+heAG47qEYXQBVHF7V3aARMiMULllsskfAH9FXFoLApOvzpXXiDHZXr2
-         wN96HAHpojO6Rv7tdAltx2xJvhyatnjqRqSBjbM0kdoM3M3Zbe8VlbQdvkOxiF73PF2z
-         xpdw==
-X-Gm-Message-State: ACrzQf2RBDV2nfXmp6tkFQ8CGkl1y1uVBmHtFpZToB543yUcynE3AUWc
-	jVHOqPljG3dby19LcW84UWs=
-X-Google-Smtp-Source: AMsMyM4Tc7NHZWTmPrJLUG4XIhrT0h6TeynUXjG6j3uBaakeeybFCdXAj7cn1BoDQg0XLzlwqOVi+w==
-X-Received: by 2002:a5d:4887:0:b0:226:ed34:7bbd with SMTP id g7-20020a5d4887000000b00226ed347bbdmr19529597wrq.561.1667510501178;
-        Thu, 03 Nov 2022 14:21:41 -0700 (PDT)
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=EBi1xTEb0SF667Jza54gm5V6cR58OHc1YhW84qRd8ZY=;
+        b=jbKBGtUOXhsl2lLS+kmzm8x635N3941KNpcxL82HJ97P5mWKXF6Umd983cYXJ9E6lM
+         BVwc4B4D4JoGf9Tyj7k5U/UUZygV0tWLUGQbmJRlk67IfJqEjIgzaN5d0CGTJ26BjmaL
+         22pD+h/6cnhH+EYslD5lmhuv75nmlUJqk8yqmVWG/voOeTjMGwErquf2018u0gKeHawK
+         aADvFtPaMUhOcL4eb/VlgUknYK6uULo2JksluNWWG1KKimOQ7dYDawTbnAKGWw8Ly/6H
+         PozjrxfsOENUcznIxE0ow2LYHgDv1mJiiqh3c6jKfhvkPSx08IGu7GfkrPiqi3fbC3ac
+         PxVw==
+X-Gm-Message-State: ACrzQf0GvwSxiO/k3zt3o7mrz+P6kOtefgXU/MQEk9hkKkVR8wIbKt8s
+	BnWPtepfWMwXiMomsnkcEls=
+X-Google-Smtp-Source: AMsMyM5z2kO3XboxYINuKbpi6PqUYVuHI6ShBZBQbgTxcJLiIelbbB1yygyhNZLsHD0YytDk2cIUww==
+X-Received: by 2002:a05:600c:4486:b0:3cf:6e1d:f4a5 with SMTP id e6-20020a05600c448600b003cf6e1df4a5mr18119129wmo.85.1667510502516;
+        Thu, 03 Nov 2022 14:21:42 -0700 (PDT)
 Received: from localhost.localdomain (93-42-71-18.ip85.fastwebnet.it. [93.42.71.18])
-        by smtp.googlemail.com with ESMTPSA id m29-20020a05600c3b1d00b003b47b913901sm6968320wms.1.2022.11.03.14.21.40
+        by smtp.googlemail.com with ESMTPSA id m29-20020a05600c3b1d00b003b47b913901sm6968320wms.1.2022.11.03.14.21.41
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 03 Nov 2022 14:21:40 -0700 (PDT)
+        Thu, 03 Nov 2022 14:21:42 -0700 (PDT)
 From: Christian Marangi <ansuelsmth@gmail.com>
 To: Andy Gross <agross@kernel.org>,
 	Bjorn Andersson <andersson@kernel.org>,
@@ -72,16 +73,17 @@ To: Andy Gross <agross@kernel.org>,
 	devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
 	linux-phy@lists.infradead.org
-Cc: Christian Marangi <ansuelsmth@gmail.com>,
-	Robert Marko <robimarko@gmail.com>
-Subject: [PATCH 1/2] phy: qcom-qmp-pcie: split pcs_misc init cfg for ipq8074 pcs table
-Date: Thu,  3 Nov 2022 22:21:24 +0100
-Message-Id: <20221103212125.17156-1-ansuelsmth@gmail.com>
+Cc: Christian Marangi <ansuelsmth@gmail.com>
+Subject: [PATCH 2/2] arm64: dts: qcom: ipq6018: improve pcie phy pcs reg table
+Date: Thu,  3 Nov 2022 22:21:25 +0100
+Message-Id: <20221103212125.17156-2-ansuelsmth@gmail.com>
 X-Mailer: git-send-email 2.37.2
+In-Reply-To: <20221103212125.17156-1-ansuelsmth@gmail.com>
+References: <20221103212125.17156-1-ansuelsmth@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221103_142143_811451_E0F5BFBB 
-X-CRM114-Status: GOOD (  10.85  )
+X-CRM114-CacheID: sfid-20221103_142144_941801_FCB0CF9F 
+X-CRM114-Status: GOOD (  11.58  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,65 +100,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Commit af6643242d3a ("phy: qcom-qmp-pcie: split pcs_misc region for ipq6018
-pcie gen3") reworked the pcs regs values and removed the 0x400 offset
-for each pcs_misc regs.
+This is not a fix on its own but more a cleanup. Phy qmp pcie driver
+currently have a workaround to handle pcs_misc not declared and add
+0x400 offset to the pcs reg if pcs_misc is not declared.
 
-This change caused the malfunction of ipq8074 downstream since it still
-has the legacy pcs table where pcs_misc are not placed on a different
-table and instead put together assuming the offset of 0x400 for the
-related pcs_misc regs.
+Correctly declare pcs_misc reg and reduce PCS size to the common value
+of 0x1f0 as done for every other qmp based pcie phy device.
 
-Split pcs_misc init cfg from the ipq8074 pcs init table to be handled
-correctly to prepare for actual support for gen3 pcie for ipq8074.
-
-Fixes: af6643242d3a ("phy: qcom-qmp-pcie: split pcs_misc region for ipq6018 pcie gen3")
-Reported-by: Robert Marko <robimarko@gmail.com>
-Tested-by: Robert Marko <robimarko@gmail.com>
 Signed-off-by: Christian Marangi <ansuelsmth@gmail.com>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 13 +++++++++----
- 1 file changed, 9 insertions(+), 4 deletions(-)
+ arch/arm64/boot/dts/qcom/ipq6018.dtsi | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-index 7c81667dd968..d699fb4f7436 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-@@ -485,6 +485,13 @@ static const struct qmp_phy_init_tbl ipq8074_pcie_gen3_pcs_tbl[] = {
- 	QMP_PHY_INIT_CFG(QPHY_V4_PCS_FLL_CNTRL1, 0x01),
- 	QMP_PHY_INIT_CFG(QPHY_V4_PCS_P2U3_WAKEUP_DLY_TIME_AUXCLK_H, 0x0),
- 	QMP_PHY_INIT_CFG(QPHY_V4_PCS_P2U3_WAKEUP_DLY_TIME_AUXCLK_L, 0x1),
-+	QMP_PHY_INIT_CFG(QPHY_V4_PCS_G12S1_TXDEEMPH_M3P5DB, 0x10),
-+	QMP_PHY_INIT_CFG(QPHY_V4_PCS_RX_DCC_CAL_CONFIG, 0x01),
-+	QMP_PHY_INIT_CFG(QPHY_V4_PCS_RX_SIGDET_LVL, 0xaa),
-+	QMP_PHY_INIT_CFG(QPHY_V4_PCS_REFGEN_REQ_CONFIG1, 0x0d),
-+};
-+
-+static const struct qmp_phy_init_tbl ipq8074_pcie_gen3_pcs_misc_tbl[] = {
- 	QMP_PHY_INIT_CFG(QPHY_V4_PCS_PCIE_OSC_DTCT_ACTIONS, 0x0),
- 	QMP_PHY_INIT_CFG(QPHY_V4_PCS_PCIE_L1P1_WAKEUP_DLY_TIME_AUXCLK_H, 0x00),
- 	QMP_PHY_INIT_CFG(QPHY_V4_PCS_PCIE_L1P1_WAKEUP_DLY_TIME_AUXCLK_L, 0x01),
-@@ -497,11 +504,7 @@ static const struct qmp_phy_init_tbl ipq8074_pcie_gen3_pcs_tbl[] = {
- 	QMP_PHY_INIT_CFG(QPHY_V4_PCS_PCIE_OSC_DTCT_MODE2_CONFIG2, 0x50),
- 	QMP_PHY_INIT_CFG(QPHY_V4_PCS_PCIE_OSC_DTCT_MODE2_CONFIG4, 0x1a),
- 	QMP_PHY_INIT_CFG(QPHY_V4_PCS_PCIE_OSC_DTCT_MODE2_CONFIG5, 0x6),
--	QMP_PHY_INIT_CFG(QPHY_V4_PCS_G12S1_TXDEEMPH_M3P5DB, 0x10),
- 	QMP_PHY_INIT_CFG(QPHY_V4_PCS_PCIE_ENDPOINT_REFCLK_DRIVE, 0xc1),
--	QMP_PHY_INIT_CFG(QPHY_V4_PCS_RX_DCC_CAL_CONFIG, 0x01),
--	QMP_PHY_INIT_CFG(QPHY_V4_PCS_RX_SIGDET_LVL, 0xaa),
--	QMP_PHY_INIT_CFG(QPHY_V4_PCS_REFGEN_REQ_CONFIG1, 0x0d),
- };
+diff --git a/arch/arm64/boot/dts/qcom/ipq6018.dtsi b/arch/arm64/boot/dts/qcom/ipq6018.dtsi
+index 9ebb9e2371b1..95d7f49bc61a 100644
+--- a/arch/arm64/boot/dts/qcom/ipq6018.dtsi
++++ b/arch/arm64/boot/dts/qcom/ipq6018.dtsi
+@@ -406,7 +406,8 @@ pcie_phy: phy@84000 {
+ 			pcie_phy0: phy@84200 {
+ 				reg = <0x0 0x84200 0x0 0x16c>, /* Serdes Tx */
+ 				      <0x0 0x84400 0x0 0x200>, /* Serdes Rx */
+-				      <0x0 0x84800 0x0 0x4f4>; /* PCS: Lane0, COM, PCIE */
++				      <0x0 0x84800 0x0 0x1f0>; /* PCS: Lane0, COM, PCIE */
++				      <0x0 0x84c00 0x0 0xf4>; /* pcs_misc */
+ 				#phy-cells = <0>;
  
- static const struct qmp_phy_init_tbl sdm845_qmp_pcie_serdes_tbl[] = {
-@@ -1506,6 +1509,8 @@ static const struct qmp_phy_cfg ipq8074_pciephy_gen3_cfg = {
- 		.rx_num		= ARRAY_SIZE(ipq8074_pcie_gen3_rx_tbl),
- 		.pcs		= ipq8074_pcie_gen3_pcs_tbl,
- 		.pcs_num	= ARRAY_SIZE(ipq8074_pcie_gen3_pcs_tbl),
-+		.pcs_misc	= ipq8074_pcie_gen3_pcs_misc_tbl,
-+		.pcs_misc_num	= ARRAY_SIZE(ipq8074_pcie_gen3_pcs_misc_tbl),
- 	},
- 	.clk_list		= ipq8074_pciephy_clk_l,
- 	.num_clks		= ARRAY_SIZE(ipq8074_pciephy_clk_l),
+ 				clocks = <&gcc GCC_PCIE0_PIPE_CLK>;
 -- 
 2.37.2
 
