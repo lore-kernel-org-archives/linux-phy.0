@@ -4,58 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D5504C4321E
-	for <linux-phy@archiver.kernel.org>; Thu,  3 Nov 2022 10:36:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5EB23C43217
+	for <linux-phy@archiver.kernel.org>; Thu,  3 Nov 2022 10:47:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
 	References:Message-ID:Date:Subject:CC:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=i1HyaOPJhAV/9/kzbvlK43tf0SS8ZAaFKwdeTaEZWN4=; b=ifzWuxiYo0TvfZ
-	oyqRHrvFuZWFnt18GrOcZLv2UercwLfsVulh7wXgpNw2XDbhMdGYV3N4hY4M0owfXUxSHF6rJVvH9
-	7U4plUeg73C8STa/3nNvVBOvlhOxD7eag7pv0LChyRk3ZTsQYKnK+IIasDsM1idt1bD6G0LaZdcXD
-	ziCXPDT+SZUwB8m82XqegE9n9i1kgU4T2Uxs6Ab/uwRNHLMdNrsQMJfcLlWJOzY3XNiJWkkIByjrr
-	rY9anlc9+pJPK+HpXyZmYKJ5wpVwxz+QphjQV3fBVcSZAmyZsu7TRxX25b0Zx7mtHa4QHOrGRgJqJ
-	o7gjJ6yUekySFmejZjTQ==;
+	List-Owner; bh=Z2n93m+RexDdlGQHNBDnrF4hFcr3lwFE3mCeaf5JIGM=; b=S81CroridgQisG
+	0OzN/H1npCPu9Yac7e0xhTy+cWw1McdLhDEwmi9kaV4CYJ5E9I0pOLW9eK30oiJb7QXuxhemUnp+c
+	Qw3adT9W2oB9lqICPHcaQfdiUxVnUaybuM6OB5P0eRaDKsiHyfi32Je25ymS/8SNdVwpynEWVqY9L
+	eqsm3NOzaD7bRtmdm21orU+5Xr8QN67nw37UTahXgiYuyqlmDTh83CkQpcIATFa7FcE98bQD2jIK8
+	H4n8K85UYkN17lE7uVbgD25mJ6XJMfYU7IXWsOk3Jf2Kg/BY0uzQUloVh5XurCqkig62kWsjopQmy
+	8aecfldxu5+gh2JFKm5A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oqXad-00H72b-8n
-	for linux-phy@archiver.kernel.org; Thu, 03 Nov 2022 10:36:51 +0000
-Received: from mail-bn7nam10on2040.outbound.protection.outlook.com ([40.107.92.40] helo=NAM10-BN7-obe.outbound.protection.outlook.com)
+	id 1oqXkm-00H8WL-Hr
+	for linux-phy@archiver.kernel.org; Thu, 03 Nov 2022 10:47:20 +0000
+Received: from mail-bn8nam11on2040.outbound.protection.outlook.com ([40.107.236.40] helo=NAM11-BN8-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oqXaa-00H71s-9M
-	for linux-phy@lists.infradead.org; Thu, 03 Nov 2022 10:36:49 +0000
+	id 1oqXki-00H8Uo-JM
+	for linux-phy@lists.infradead.org; Thu, 03 Nov 2022 10:47:18 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=cVUraGacgndWs6y8PdXNQsyLehXJEUfVcxHhyu/ApdpaBJMG8bphNHg/0um11E+ouponTt39PaUB9YQQ96cbUqROvWjlm++hoEb/YHldS9VfK3Bb5VzWYEMqjZrAOhqA5N6dh76y7nC/BbMB+zRH2mOwhTkWgAfXgOS4cMxp1sxXj2K/fduUjO0imuJImU4Bhm7lX1ZtplpKnLaiirstV+BUfHD11dohoUya/ICG5Wv/CaDsa2FwELcvzkfBdjbGyiP1aln1C2c6bbFeHcObPhd0TwjP+C/LFdbzFo8V01MVytpzStLOqg5M22QQi7V7i6QFnLlnXgty4uFT7C+Lyg==
+ b=epTj5WrWcgmntWeTjsqB9WqKkwwIxeGRe+rb+nJEAtZQ3qI4smRur67tr0+Rkz1tt6bf+W7rEBvtZoghKdM0POjWUL0imU+ZTcDGUMQG/FQDSM91imX6dGjT5izuujxxtSBKdcACh58L+WmA7zJuQqqfJwhDk+1Pbg5CVbT45HVW1Qu6ItRxl2Oy9vDsEqwkoDEvXhsXflFcqanjz9ZbMx4eSoQuvGJuc7uZnms1dsuTkLcA0BJYqNFWU4lLJMbvpbpIba5amyPnS0Wt42vd68dDIo0q2J+PhJAm3rgejwio6aLV5n3j6uFuHIshm/1D4k9WEqRcouFULKcUb6lKUQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=E7mpgQ9mcpc+vQSFk8LBb2AV/bzfoTBi8kVt9Vlq4NU=;
- b=T6VSXv8Sn3wMbJYaRuXjbJ0Dz5pzDkUISkU9omp4XCdjB4J1DQPyxuivmdoydJ7ZQvIqhV0fVxD3GQC/bcStdXGVV4H2vLaqEKg8IQbl+JFItdl6aXhlhD8Y8lKV42x9yZelolwqbLVSg+uqLXIMw2+d55pPKZ2soU/ZY7SlNpoHdDrdLDXeaZmokEhvMM5RMBgsjzsoc71BpPDO9noIAQb0O34jfhG6dIU0BZmAeRCqQa/v3rJVRRWqTM+EBNXOyAhZF1N/vyP8f+yUgRb5mzpljNOQ79uvxuPzTJkB58aXphs5k1umRGQj0nYloesVVRiMTDEWFmTPEAXgkrApKA==
+ bh=rC3h5WIqb8cL09CB65hE2jL+WCOhrHA4o3HzdQtO/48=;
+ b=FlwwVntM5vAk7O3wYV9NHKb7GEmiqkvL3ZLfBfz8Pz7Zwn9Do3XOG13ohq1nH9FBfv+/MOWKSO3ZqSK2mvnA+4tBs9gh8ODsYYIpkCbhxt+SpYFaPdN7MdsaBsmigYWK63nOq5cme+1Vn08QODmF1BsyuXCjj2YEhjPGwMWKRgkGBdUd7NexIAxMiyNCCjNEZQaPE6nsPAP0IbjsOPS9LUUNFFxlUNVT8+yoVohJXnJU9qY2iz2iHjtVcqsr9QY+llYU19RjihbtOgCogWpITULHgOll0y8wxzZTCus7ufFHlXSHj0rdFouRHMY5M+Ym/3PRnDm8OJEvK81ykSgnSw==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nvidia.com; dmarc=pass action=none header.from=nvidia.com;
  dkim=pass header.d=nvidia.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
  s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=E7mpgQ9mcpc+vQSFk8LBb2AV/bzfoTBi8kVt9Vlq4NU=;
- b=Ba1VSQrYH9sFdlv0d97Ab7EvfXOTiA3ZpD6iQwqkI3m6gAbPOHWGUKQ2UI8shtueFyVCF9zeyu3opiFTdZM0t3n9ySvXByO09kQA+l9HUcgLK6pWTvxsZQJzNjXsG2Mj3U94K6xGF/ehlKdpDM1D5/nKMvfV8DND4CiVVZy/036PUvmTmCN7whDR+llntOwRj9TK1bLkhoZJ4rSuiLBE1XnYGOrgT602IMhP8J3ivlftmBzQfNeYTXb2OexbvcBgCUWw11tFlVAnppaAoauNbyFrjihAXC09ltDhysnh8rcEGnw4qV02uvit7XsaliR2wY3YF3hZY0z02UicRf/u+w==
+ bh=rC3h5WIqb8cL09CB65hE2jL+WCOhrHA4o3HzdQtO/48=;
+ b=sJ/NLjBfeISvLr8jRKQCbRVXaUjzw+jNtbEGKh2HSfLrGRyUpICB3Nsd6vkOm+YuURg4PDPLmpjrXZ+Sa67NZDVMd/nOqEy3NtZNj5R7MdvHr2BjHPbAAtVG20gEC2BosyeddvmjekBMwBseJD7KXXtThAvc2yecqX3Baxr/sxIfd0m45vv678Wb7tkqFSDfxvREglPsxq7sgun9cDpggfA48CyVcOhKFuVUIbhCMHVV3ORQDy3/kE9ByBOmii1vMIAXdiabLZx+Re80Ir+dfTmA+YtAnqHuRmaHHha0O6Fs4YT7pDhxjPkffOXlU5mWjQXCUWULw3PhWHbyHBj/1g==
 Received: from PH0PR12MB5500.namprd12.prod.outlook.com (2603:10b6:510:ef::8)
- by SN7PR12MB6813.namprd12.prod.outlook.com (2603:10b6:806:267::20) with
+ by CY5PR12MB6480.namprd12.prod.outlook.com (2603:10b6:930:33::6) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5769.21; Thu, 3 Nov
- 2022 10:36:42 +0000
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5791.22; Thu, 3 Nov
+ 2022 10:47:11 +0000
 Received: from PH0PR12MB5500.namprd12.prod.outlook.com
  ([fe80::ac8c:eada:77a0:e2f0]) by PH0PR12MB5500.namprd12.prod.outlook.com
  ([fe80::ac8c:eada:77a0:e2f0%2]) with mapi id 15.20.5791.022; Thu, 3 Nov 2022
- 10:36:42 +0000
+ 10:47:11 +0000
 From: Wayne Chang <waynec@nvidia.com>
-To: Rob Herring <robh@kernel.org>
-CC: "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
-	"krzysztof.kozlowski+dt@linaro.org" <krzysztof.kozlowski+dt@linaro.org>,
-	Thierry Reding <treding@nvidia.com>, Jonathan Hunter <jonathanh@nvidia.com>,
-	"thierry.reding@gmail.com" <thierry.reding@gmail.com>,
+To: Thierry Reding <thierry.reding@gmail.com>, Jonathan Hunter
+	<jonathanh@nvidia.com>
+CC: Rob Herring <robh+dt@kernel.org>, Krzysztof Kozlowski
+	<krzysztof.kozlowski+dt@linaro.org>, "gregkh@linuxfoundation.org"
+	<gregkh@linuxfoundation.org>, Thierry Reding <treding@nvidia.com>,
 	"heikki.krogerus@linux.intel.com" <heikki.krogerus@linux.intel.com>, Ajay
  Gupta <ajayg@nvidia.com>, "kishon@ti.com" <kishon@ti.com>, "vkoul@kernel.org"
 	<vkoul@kernel.org>, "p.zabel@pengutronix.de" <p.zabel@pengutronix.de>,
@@ -68,17 +68,18 @@ CC: "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
 	<linux-i2c@vger.kernel.org>, "linux-phy@lists.infradead.org"
 	<linux-phy@lists.infradead.org>, "linux-tegra@vger.kernel.org"
 	<linux-tegra@vger.kernel.org>
-Subject: Re: [PATCH 01/11] dt-bindings: usb: tegra-xudc: Add Tegra234 XUSB
- controller support
-Thread-Topic: [PATCH 01/11] dt-bindings: usb: tegra-xudc: Add Tegra234 XUSB
- controller support
-Thread-Index: AQHY53wQnDjvju/CBECRVhiE3Sqmja4fwvAAgA1OaYA=
-Date: Thu, 3 Nov 2022 10:36:42 +0000
-Message-ID: <159abbc5-495b-4329-0b44-858fbcca7124@nvidia.com>
+Subject: Re: [PATCH 03/11] dt-bindings: usb: Add binding for Cypress cypd4226
+ I2C driver
+Thread-Topic: [PATCH 03/11] dt-bindings: usb: Add binding for Cypress cypd4226
+ I2C driver
+Thread-Index: AQHY53wc4Wuwt5Vi/E64/Mw7R9FUF64gRg6AgAN9YYCAAAMcAIAAF7gAgAk2BAA=
+Date: Thu, 3 Nov 2022 10:47:11 +0000
+Message-ID: <3edaa3c8-f0fb-3b87-4f33-324d5b964aea@nvidia.com>
 References: <20221024074128.1113554-1-waynec@nvidia.com>
- <20221024074128.1113554-2-waynec@nvidia.com>
- <20221025232440.GA3430479-robh@kernel.org>
-In-Reply-To: <20221025232440.GA3430479-robh@kernel.org>
+ <20221024074128.1113554-4-waynec@nvidia.com>
+ <f8eeeebc-e635-9c97-b97b-46df38f06002@nvidia.com> <Y1vLoT+/dgOgrxjD@orome>
+ <7a1c4943-4ae2-cde4-221b-fa972c2baab2@nvidia.com> <Y1viIsL+Nxthc97j@orome>
+In-Reply-To: <Y1viIsL+Nxthc97j@orome>
 Accept-Language: en-US, zh-TW
 Content-Language: en-US
 X-MS-Has-Attach: 
@@ -88,66 +89,87 @@ user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
 authentication-results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=nvidia.com;
 x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: PH0PR12MB5500:EE_|SN7PR12MB6813:EE_
-x-ms-office365-filtering-correlation-id: ddb609fc-7110-41cd-4ef9-08dabd874c72
+x-ms-traffictypediagnostic: PH0PR12MB5500:EE_|CY5PR12MB6480:EE_
+x-ms-office365-filtering-correlation-id: 8fada1ae-60ac-457b-7412-08dabd88c334
 x-ms-exchange-senderadcheck: 1
 x-ms-exchange-antispam-relay: 0
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info:  He+rZmyt0DyhpDLsllk6lM4XHwhQA1/WpOVfS01lEawiIEE/FiwmzDMQ2Qrost0bo9/O2p8itdTn15Q1JOLgOmrlxfvpsa6RAdvuCf+cZBja/cxEQ3LY6PkPBvADPkiKIyITt0XoCugoW+v635FTNaSmVK5kJztaZxVRVdF44iO0X3dAvik6QBZiBXSZsALnpxXjX+0v/u/YTUDxjZ3NZAp5eL75ya+PzFD+Rnf7DsPYyTiOKMUE24uxVN4ALysIyXyTsISoRCI+rnHVMOVo6G94jbxPlZy2Po80XG7ux8HJHbWwNlScBuVP1rEd5oki0DOG5OIzRoPazYDeE6dEKgt0jhOngo6Jx823Q55/cbqsWe1TcnmGfi6liZ2aJGIloSBevsAQ8KX5NmWhuW5A+BWsCRzc7ATJVrynSkvUHOk/bnf0y/DjxekKBOqx6fFe23yaqRVs7297mUV527+yqEMrk0kCrYF0JLn39TaeIrH6zRw63M57kXa0PRiatiN4yd4p5iuF9UItCQls+RwxL+H4XGkiXL7KVRnq6+ghi2GswPyaKUJTCLCRUJH1PmaaVeZjRW+em0VhJ7adr7c4unqw3WngrYFcnsRrlZHQ+tvmire/u+a1mFQowHkkupMaZrRH7c/nfZ7BT9FzhxbrLTT7xMkk0C4stZXW4QLXnjCUwsedQVA6NPzskBngHl1g61bUB0JC5p/axUas3x8Ls+gdzL2Z+WBcYeflOwqzITnQVXmsPynshPLVgBvEUUZiHjyEGSgJpUCBVInE4gIxYPCfzNCifv8sd39ZMTfStoMysLa2HrldeHs3YI/LWK+SDvZ5zorVQXcxXf9xOE8dHA==
-x-forefront-antispam-report:  CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PH0PR12MB5500.namprd12.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230022)(4636009)(366004)(346002)(136003)(39860400002)(396003)(376002)(451199015)(71200400001)(478600001)(6486002)(38100700002)(122000001)(31686004)(38070700005)(54906003)(6916009)(2906002)(316002)(8676002)(186003)(4326008)(66446008)(86362001)(91956017)(66556008)(76116006)(66476007)(66946007)(6512007)(26005)(36756003)(31696002)(53546011)(6506007)(64756008)(7416002)(41300700001)(8936002)(2616005)(5660300002)(83380400001)(45980500001)(43740500002);DIR:OUT;SFP:1101;
+x-microsoft-antispam-message-info: 	=?utf-8?B?L0RQNUZiNXovcDU5akF4dmtIclNQRS92WjVTZlRMaG41aVRKYWsrZTlTNXd4?=
+ =?utf-8?B?OEZLQisxbU52N2oxeXhIYWJFQk9sbkh5eENYZ1dzaUpQVGFuNGFmQjZBQWxr?=
+ =?utf-8?B?eUZtUjVaNHlDVDZ6K2MrSmN5Wmg2MzlIZnJCaEZsMkhEZzIvK1RBYmJNUE11?=
+ =?utf-8?B?aFVvNEdFY0IzNDNSV3o0YWRNK0VOaFFLVDNmb2lqRFJ4VlBJSWtZK3BHVmIr?=
+ =?utf-8?B?N0RmQUdMd2xDME0wSE1lVW1GNDdDcklwVUk1aHdsZ2VaL3dXUE9uWktma1Vw?=
+ =?utf-8?B?akVGdWVZTTNYMSt3cmlGQndqaS91dVJ6Q21wd0E1M05hdlZjMndZSXg4REtQ?=
+ =?utf-8?B?MFhjQkowUW5LOXA3c3FYbnNLZExoYjFtanJ0RlFaTmlRU1VSazFaeld2YU11?=
+ =?utf-8?B?VjNWR3d3cFdCY05GM3N4ZUxEeXFSOW1DUzNsUmtGRWkwOGZscFNSRmMzU0hF?=
+ =?utf-8?B?QWt0aFRqWGNBem9TMVloVGFTNkpQcy9hcDN2YzFyV3QxNWorSnBXWkV2OFhE?=
+ =?utf-8?B?QjhqbmE3RUltUnk2RXppbzd4RnpLeHdxbm5sSWpRSkhqS2tKWHhNNFh3U21r?=
+ =?utf-8?B?Z0x0T2ZKdlZRZjNsMEhML01jVWlXbDlueStaZE1zSFdVeWRyODBObGJxL1BH?=
+ =?utf-8?B?VjFSYWN6ODdPRytGc3dsVUg0SzJPQVJFeEhZY0NsclNSSXRnbDRJb0hZWk5q?=
+ =?utf-8?B?ZVBpMU40SU9sdHdnNTdaaWFUdGJJUUlkNGl6WlB4SWFsYXI2MjVIUjJiRm9i?=
+ =?utf-8?B?dmdtR05VbFhDRHJaVGVlYS9QTzh5d01oa2Z4VDNZaGN2aUdBL1Q0UGNacENB?=
+ =?utf-8?B?OERGNk4xNXg3T1lkb2RvN1A4MnpuOHNsVWN1SHp3Mm1QYWYwczdDdlpJVXlr?=
+ =?utf-8?B?dUdwc0FKQXRlV1dIa1B3eEUxanJqcDZVT0lMdnRJbGlqWGJ3cldBeGx3aU1O?=
+ =?utf-8?B?MTI2WW93WFplVjhZelg4OTJKbWYzRUxyNDhnanZzTEpIM3k2bnd3SDFSeDZj?=
+ =?utf-8?B?VU1wRGNaY2pBMVhZSUgrS0tCbEh0VVVtaE9QaEh3QXhtUVA5M1l3dHR2NENo?=
+ =?utf-8?B?Q3lCRTdPOExuY2ZBWW9Pc2lsenJTdlJGYkFLL0VsUE5adEpXNCtQQmVEb0lp?=
+ =?utf-8?B?YWEweVdqYkVZTmVja3J3TnloK3VKelBKTFZTR0ZTc01NSGpHRWdoSUV2d05m?=
+ =?utf-8?B?aG82M0t4NmdvcTY2N0Y3RFlhMEQvdmc4KzNXbHdmZkwxNTBJKzhZYTEvVkcv?=
+ =?utf-8?B?MENVWUhKYldGZ215ZWxCdW9DR0hzRVI1OUNXcVluQStVREJhdz09?=
+x-forefront-antispam-report:  CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PH0PR12MB5500.namprd12.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230022)(4636009)(396003)(39860400002)(366004)(376002)(346002)(136003)(451199015)(31686004)(36756003)(66899015)(86362001)(31696002)(2906002)(38100700002)(122000001)(83380400001)(186003)(38070700005)(8676002)(6512007)(4326008)(26005)(53546011)(76116006)(91956017)(478600001)(6506007)(2616005)(6636002)(54906003)(110136005)(66476007)(66556008)(64756008)(66446008)(66946007)(71200400001)(316002)(8936002)(41300700001)(7416002)(5660300002)(966005)(6486002)(43740500002)(45980500001);DIR:OUT;SFP:1101;
 x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0:  =?utf-8?B?ZUZUQmZLVVE3OXNWUVN2TVBmK1d6bk9kOFliTUEzNDBZNTBhMXpic2QxMGll?=
- =?utf-8?B?VzY5NXdvRWprbS9aTXBSWWlqVEVDQndoazJ0aU5kYW5qNnNickRpN0RoWWU0?=
- =?utf-8?B?YS9CN2U1MlNOT1FNbmM2c0RVdklwVGFZS3dreXdwMUVQQzIvL2I2NGRVU0lu?=
- =?utf-8?B?MzNrbzhvNGliUHZnc3o1VEtwWUtxZUI4MEF4aWxsOEEwZytwcjJnemo1ZUkr?=
- =?utf-8?B?ZXBVNWlIalBQcC8xT1plRVQ2ckluN0tqWVdMbGhGWFdSaFdQUExRRkhhUnlT?=
- =?utf-8?B?dTQ3dkhCYk9PNWVob2JEZnNMNVFwWXNBTDJzRmhCc2RMWlFEL0JCbG5FdUFT?=
- =?utf-8?B?QzNlWXIxc2RMbCtMMExVdmZ3Q1ZDR1YzQStIRWpSRFBNcUpwMkh6aEFDS1Bh?=
- =?utf-8?B?YTZNRzJITmVHajNtYkRvaWNWdHFPSFJTcVZmaDJOUnNPZFd3US9TbnlUMWxH?=
- =?utf-8?B?dUM0aFMvYURGTkNwcUcxY2JwN1JhNkQxNmhCSm80VG4zREhUNjBSQlJFMkFh?=
- =?utf-8?B?eFJjcm9DV21lWmR3VE83K3Bnekczdi8wUlpuaFAwQ2NrVkU1THlEOU55RnJE?=
- =?utf-8?B?ZVcvaTBuN1pzZWtwN0J3NzM0dktIZUg2WHlzS1RKZEZWYVBYa0hzM2EwSzdY?=
- =?utf-8?B?ZFZlcmtOSkxhL1dtZnlIbndrcEJkTm9BUFNYM1ZYRTRoZS9aNkp1TzhZVlQ4?=
- =?utf-8?B?Tjk3eVM0UTEvU1djVEVBcVZXQnFJVVhnVnp6eERCN3ZrMDllMjBXa3l5SGNy?=
- =?utf-8?B?eUZyY1dLTjBYRnhzNjd0dTdmY0UyNnc3ajV3RWNJdVRJcFRsbXdBZXFYeHIv?=
- =?utf-8?B?OUdUV1BMMUcwRU50QjZ4anljMUZHR2M1dE9tdmxjQW53bGJSamNVQ09Oby96?=
- =?utf-8?B?bUs0NDlTRVRIUDdLUkRRaE1GSHc2OWUrYVFUczdWQVk0VDdCVmMybnNrWlhy?=
- =?utf-8?B?bHZDSlpIMDNYRWFXQ2x5T1Q4OEkwR1FBTVp5aXZPbHRIY1pvbWQweGFZSlds?=
- =?utf-8?B?WlBzbTdhOTZ0cUU0WHVZaEJ3MWVNRStoR3lqbllNRUdaQjZ0eHNzbG50SHFo?=
- =?utf-8?B?MjJmTStFdnRMMXMwU0hjQjkwVmt0Q2liRmRmeEsxYUE4b3M5SW1DanI2WEl0?=
- =?utf-8?B?UkVkaUtHQ1lpMUVFSzF5RXVtWHVHenhNVXdqQXdaREVnNU5xWHlFVHBaRXpT?=
- =?utf-8?B?RTZKS1F2cmIwSFdxZ3dibExRdVBmMkFqZ0MyMHFuMWdEWkgrOHJzdXcxNHhT?=
- =?utf-8?B?RjJ6OUhURThhS21nZVQrRjVteVVTTjhsMzJlMnpyd0w3VUx3MnBhdllxTXJK?=
- =?utf-8?B?RDVRMmdCd1A4MEVaQitiV1JYdXptbFppU2FWYTF3enc0N0w3ekxzb3BPbWhL?=
- =?utf-8?B?dmFTY0ZKSmdvYnNsUTFmMHp1WUNhcjQ3MldKdFl0N0xta2tmaThRbUh6ekd5?=
- =?utf-8?B?Z2V6U1VTRncybUtaQU1naWIxNW4vZ21TOUZCZjlqcGluaVBtQ0tWc3RxcUcz?=
- =?utf-8?B?MGgzSWV6eFpZNVJYdTZlVWFIcDUwdmpXOVZUY3JiOWFjbGsyNG9iQlJGeU5q?=
- =?utf-8?B?dzNjMWpMelRFSW5tMSt5WUNWTVZ0QXhvL1FvaGlxSGdqVWpIN05sVlBLaGFW?=
- =?utf-8?B?TWgvRUtKSFh1SUJXQkZwSGlTNzR1WmdWTm1IZkhPWnhXWDJQRUdyN0srOXpp?=
- =?utf-8?B?dUpacGp4RklCMk10SGJMNTZwbFY5cGxuMjdaRGhKdjgwOVhqT1NROTZLb3M2?=
- =?utf-8?B?SjN5TW5sUzBlTlhmL3pNL1RQYXJWRjJwcXYrMFArTjhBN0FqRElYT01rTkV1?=
- =?utf-8?B?cVAvQnRWUnY5amM4VjZXamVqY3NPVEh3NlJNYlQ0TU1Rd0VBNjYvZ0pMTEk4?=
- =?utf-8?B?dk9QZWtxLys3RkN5REhoRVBUblIwN1RQRWxkSnNFbldKR2txZ0dabEVWREkz?=
- =?utf-8?B?cnpJbWxKNzdST0J0d1czcVgvak5nMGhCZ1NNREkrMHNEL0tJdkRMT3NVbkF0?=
- =?utf-8?B?QlBpVVVVL2pCdmVrUkpkeDN1bXdqc2dOVldFQ241ZS92eW4zMXpnck1YcW4w?=
- =?utf-8?B?SHo5OGdaUDBSQlV4eW9iYWxXTTgrWWhpZ0ZxaVJEampzYllROXNBK3ltbWtY?=
- =?utf-8?Q?Qg5RA6apQR+J/QGKriw7qXRIV?=
-Content-ID: <D4155ADC02B2F4468881E2B82B6D25B0@namprd12.prod.outlook.com>
+x-ms-exchange-antispam-messagedata-0:  =?utf-8?B?aGVsclBEZWUrd3FFZDkvVTljOEMyQTRWUjFQNDhHOWg0c3hIRm1YOFpVa1hF?=
+ =?utf-8?B?ZGV1RjhVdEovOTh3Y0tOcXcyKzl3bWlxL0I2eGpaZ2VPSmVBdWNGbXVrSWxh?=
+ =?utf-8?B?bDJqaDN1bUplWktiZjZ4bU90MlRKdk9XdVpndGVjbGFEd0ZNaG9hTnpjUVhI?=
+ =?utf-8?B?VU90QjM2eUdRaUthSTJaeFFYWWlDNTlpYldIVUlnc0d4UDQ2NkNFaDNzL2Rn?=
+ =?utf-8?B?WUxBMDN0Q2NNVzczV3BHcmNKNFhLVjlEdmxVeWRPQUZMQ3pJUklsa2xBbG52?=
+ =?utf-8?B?MGZkN29HSWthYXQvRHh6OEgreGNDd3k3ZFRlRUs4NEx3S1dhRXpyd2hld0Fx?=
+ =?utf-8?B?djJTbUdCQXBLUFJqTVBDM0JuL1lPRHU4RTkzaWJzT2pMaFZoU090SUFDd2pv?=
+ =?utf-8?B?VWROM0RWY1VQc25XU1RWSld5d1FSR09adko5ZUdCRTMreURPVlAwM2RaYWFB?=
+ =?utf-8?B?Q0FFUXNSQThrWFVTK3MrRHVkTUJ4SnJISHp4TWhNaExxY2wzbUR4TDBpeDJ1?=
+ =?utf-8?B?MldhSWFMMG5KNVRUdzJGejFUVXgvMFBrcEV5TkdvMXZKMUpwR0p5Ti9wVnF4?=
+ =?utf-8?B?WGtGd1hvMm4vVVZ3VldOdm9VZUFHRktrQkpycDFXYWZVV0ZIRzlwTEZBa2sz?=
+ =?utf-8?B?Q3BNUGVzQXFVZVYzemZ4RWNwVWRRTGlNajB6aEV5Z2QvWVFGSThYbGwwRmU5?=
+ =?utf-8?B?RURwRGtFYlQyY3VVTlRPMzFZSm5WZlZFRU53cTNVZVlUNGtWeFNoMCt5Mkcx?=
+ =?utf-8?B?NTJjc0xkejEyMVlRM2VlNytZbTlCcXZEbkFuUGxmeWppZVVOREUzaVRtL0tR?=
+ =?utf-8?B?aHVaZm5nTElETnJVVVF2YU05SmRkTy95SEMwYk5wZ1Z6V3FlYTNkNzRUckkx?=
+ =?utf-8?B?RXJVV3VyOVZiTmJaZWR3bE53S0Yzdm9Jdkc0TDZ3Nzd3cDZEQXVrUjM4RVNI?=
+ =?utf-8?B?T0FRMTV0V0krSkpnaWR6ZEl4cmhvU3VEYmhyMktFcWIxZGUwbUd3S3ZYcVY3?=
+ =?utf-8?B?QTNuSXpiK2pzMTV0Z0tPZjRVMDRVNW1KaWNxMFZYUWlFb0RhRVVKNmlucDds?=
+ =?utf-8?B?MHdxT1RyRXNFRWl2SFRBTVFjbkhFRThWMm40V21lOTljUE9UWGFkdEF5YnJn?=
+ =?utf-8?B?c2c2ekVhNms0TlVFTHBGNDhHTkFXajhEMlc3THZmeDZIYW1CaERnUSthd083?=
+ =?utf-8?B?M0lrUjRGY2JVcFRJSjYzWGxnMjdhWGQrclpJZXd1ZWN5UDRmbnJwUXJORUhh?=
+ =?utf-8?B?S1BMZS9HVDV4dmtQTnJ2N1ZsUGpla1RISEx4TVRoTlozR0gxVEJGNnNmSDNz?=
+ =?utf-8?B?Y2VIeGJseXdKNXpIbW91cDlYL296S0dDY2pETDlkQnBZckQ3dkVHWnhCRUpm?=
+ =?utf-8?B?a3V6MFBsai9EanVOUlFWbzBlUHl0Y1VIN2hkdmdqbjlEcFhxY0tpOEkvRDRK?=
+ =?utf-8?B?dXhLYU9jSUxpbmlzOGVIYjJ2OFE1c2I4UXMrRDg4Qm9Jc0M4SFQ2OVVOMlJ1?=
+ =?utf-8?B?R2laSmt5SHdzZWUwNENDeVFyWTNQTGV6R0JOcGszMVJWVTM0dFhzNFdmbE1p?=
+ =?utf-8?B?Z2xqRjI2dE5YeWdjSG9PNkJJK3hVK3pNaU9WVnFsb3MybzNtWFRCRUtiK2Zj?=
+ =?utf-8?B?VTZrT3dPNDlqTXRMZi9YZFh2aGpJemxOUHIrY2padzNsVTFQYy9lOEdQbWhT?=
+ =?utf-8?B?eG5sVDFZMVdsTWxleXVWa2ZZZk9ZUm93aTR0R21DejgxZ0NERi9EK2pqNi9W?=
+ =?utf-8?B?OStsSWUzTDlCMDJPVXVXRUpHS1MvU0dDaWNBRVRtcDA1bVZKSzRLU3ZCSWNY?=
+ =?utf-8?B?bjlnSHI2TStMR0ZKaHRNcmhnWUFLWEFuMzNMSlVjUkhtN0JlWitBUWVpZmVB?=
+ =?utf-8?B?TzVlbnZ3dUZBc21SbkdJOVJYVGwvSXBRY1BBc1gwMHhJUTg0NlJ4M3UzOGxB?=
+ =?utf-8?B?OUVKZncyaWJxRUMwdlBmL05VOHM3WndMbkVtSUZIK2hLSzZSdFl1cDFWTVR1?=
+ =?utf-8?B?anVTQzd5UTJ1MUxvS09oSTA2UVdPclM4OTczdUNCVEltWURlS0FjU0FwdndT?=
+ =?utf-8?B?d2dwU3hZNkZKa0xLUTJTSUVUcEsyd3lJcmlkdmVJblhKVHhDeGRBY042QkFJ?=
+ =?utf-8?Q?KOfyuYjwuu+O66HcZwX4f6LqW?=
+Content-ID: <D44EC524B60EF14CAF4C2A7BB301572B@namprd12.prod.outlook.com>
 MIME-Version: 1.0
 X-OriginatorOrg: Nvidia.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
 X-MS-Exchange-CrossTenant-AuthSource: PH0PR12MB5500.namprd12.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: ddb609fc-7110-41cd-4ef9-08dabd874c72
-X-MS-Exchange-CrossTenant-originalarrivaltime: 03 Nov 2022 10:36:42.6984
+X-MS-Exchange-CrossTenant-Network-Message-Id: 8fada1ae-60ac-457b-7412-08dabd88c334
+X-MS-Exchange-CrossTenant-originalarrivaltime: 03 Nov 2022 10:47:11.3761
  (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 43083d15-7273-40c1-b7db-39efd9ccc17a
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: PVQlaSiLsUfg6JMUhjeUaOZ/AYRVwvHuSATQpQR7BA/GQwZQX0s+2VJyWSxObPs1Xz3Adj5NWHkFkAg3mpraOg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN7PR12MB6813
+X-MS-Exchange-CrossTenant-userprincipalname: Of0RhBCj9Aal31YtzJZBt44F8nW5/AO0f2hxxwAaXm1KMxg7/BMnMBtt54WtvY1Ri8jVz7EDYz0IMpqvu1QqaQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CY5PR12MB6480
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221103_033648_356370_A9549A49 
-X-CRM114-Status: GOOD (  16.76  )
+X-CRM114-CacheID: sfid-20221103_034716_735121_7A810801 
+X-CRM114-Status: GOOD (  22.36  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -166,97 +188,136 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
 
-On 10/26/22 07:24, Rob Herring wrote:
-> External email: Use caution opening links or attachments
+On 10/28/22 22:07, Thierry Reding wrote:
+> On Fri, Oct 28, 2022 at 01:42:36PM +0100, Jon Hunter wrote:
+>> On 28/10/2022 13:31, Thierry Reding wrote:
+>>> On Wed, Oct 26, 2022 at 08:13:57AM +0100, Jon Hunter wrote:
+>>>> On 24/10/2022 08:41, Wayne Chang wrote:
+>>>>> add device-tree binding documentation for Cypress cypd4226 type-C
+>>>>> controller's I2C interface. It is a standard i2c slave with GPIO
+>>>>> input as IRQ interface.
+>>>>>
+>>>>> Signed-off-by: Wayne Chang<waynec@nvidia.com>
+>>>>> ---
+>>>>>     .../bindings/usb/cypress,cypd4226.yaml        | 86 +++++++++++++++++++
+>>>>>     1 file changed, 86 insertions(+)
+>>>>>     create mode 100644 Documentation/devicetree/bindings/usb/cypress,cypd4226.yaml
+>>>>>
+>>>>> diff --git a/Documentation/devicetree/bindings/usb/cypress,cypd4226.yaml b/Documentation/devicetree/bindings/usb/cypress,cypd4226.yaml
+>>>>> new file mode 100644
+>>>>> index 000000000000..5ac28ab4e7a1
+>>>>> --- /dev/null
+>>>>> +++ b/Documentation/devicetree/bindings/usb/cypress,cypd4226.yaml
+>>>>> @@ -0,0 +1,86 @@
+>>>>> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+>>>>> +%YAML 1.2
+>>>>> +---
+>>>>> +$id:http://devicetree.org/schemas/usb/cypress,cypd4226.yaml#
+>>>>> +$schema:http://devicetree.org/meta-schemas/core.yaml#
+>>>>> +
+>>>>> +title: Cypress cypd4226 UCSI I2C Type-C Controller
+>>>>> +
+>>>>> +maintainers:
+>>>>> +  - Wayne Chang<waynec@nvidia.com>
+>>>>> +
+>>>>> +description: |
+>>>>> +  The Cypress cypd4226 UCSI I2C type-C controller is a I2C interface type-C
+>>>>> +  controller.
+>>>>> +
+>>>>> +properties:
+>>>>> +  compatible:
+>>>>> +    const: cypress,cypd4226
+>>>>> +
+>>>>> +  '#address-cells':
+>>>>> +    const: 1
+>>>>> +
+>>>>> +  '#size-cells':
+>>>>> +    const: 0
+>>>>> +
+>>>>> +  reg:
+>>>>> +    const: 0x08
+>>>>> +
+>>>>> +  interrupts:
+>>>>> +    maxItems: 1
+>>>>> +
+>>>>> +  cypress,firmware-build:
+>>>>> +    enum:
+>>>>> +      - nv
+>>>>> +      - gn
+>>>>> +    description: |
+>>>>> +      the name of the CCGx firmware built for product series.
+>>>>> +      should be set one of following:
+>>>>> +      - "nv" for the RTX product series
+>>>> Please add 'NVIDIA' so that it is 'for the NVIDIA RTX product series'
+>>>>
+>>>>> +      - "gn" for the Jetson product series
+>>>> Same here please add 'NVIDIA' so that it is 'for the NVIDIA Jetson product
+>>>> series'.
+>>>>
+>>>> Rob, any concerns about this property in general? Unfortunately, ACPI choose
+>>>> a 16-bit type for this and used 'nv' for the RTX product. I don't find 'gn'
+>>>> for Jetson very descriptive but we need a way to differentiate from RTX.
+>>>>
+>>>> This is needed in the Cypress CCGX driver for the following ...
+>>>>
+>>>> https://lore.kernel.org/lkml/20220928150840.3804313-1-waynec@nvidia.com/
+>>>>
+>>>> Ideally, this should have been included in this series but was sent before.
+>>>> We can always re-work/update the above patch even though it has been queued
+>>>> up now.
+>>> The driver seems to use this 16-bit value only to compare with a
+>>> corresponding field in the firmware headers. How exactly we obtain this
+>>> value is therefore not important. However, since this 16-bit value is
+>>> embedded in firmware images, we also cannot substitute them with
+>>> something more sensible.
+>> I am actually wondering if this is actually embedded in any images because I
+>> see it populated by the i2c-nvidia-gpu.c driver [0]. So I am wondering if we
+>> can use PROPERTY_ENTRY_STRING() for this driver instead and have a more
+>> descriptive name such as 'nvidia,rtx'?
+> What I mean by "embedded in firmware images" is that the value read from
+> the property is compared to values read from a firmware blob (either one
+> read back from the chip or one loaded using request_firmware()). See for
+> example ccg_check_vendor_version() and ccg_check_fw_version().
 > 
+> So the way that this 16-bit number is used is to define what type of
+> vendor firmware we support. So this is also used to avoid trying to load
+> a Tegra firmware on a GPU and vice versa.
 > 
-> On Mon, Oct 24, 2022 at 03:41:18PM +0800, Wayne Chang wrote:
->> Extend the Tegra XUSB controller device tree binding with Tegra234
->> support.
->>
->> Signed-off-by: Wayne Chang <waynec@nvidia.com>
->> ---
->>   .../bindings/usb/nvidia,tegra-xudc.yaml       | 24 ++++++++++++-------
->>   1 file changed, 16 insertions(+), 8 deletions(-)
->>
->> diff --git a/Documentation/devicetree/bindings/usb/nvidia,tegra-xudc.yaml b/Documentation/devicetree/bindings/usb/nvidia,tegra-xudc.yaml
->> index fd6e7c81426e..517fb692f199 100644
->> --- a/Documentation/devicetree/bindings/usb/nvidia,tegra-xudc.yaml
->> +++ b/Documentation/devicetree/bindings/usb/nvidia,tegra-xudc.yaml
->> @@ -22,6 +22,7 @@ properties:
->>             - nvidia,tegra210-xudc # For Tegra210
->>             - nvidia,tegra186-xudc # For Tegra186
->>             - nvidia,tegra194-xudc # For Tegra194
->> +          - nvidia,tegra234-xudc # For Tegra234
->>
->>     reg:
->>       minItems: 2
->> @@ -90,21 +91,27 @@ properties:
->>
->>     phys:
->>       minItems: 1
->> +    maxItems: 8
->>       description:
->>         Must contain an entry for each entry in phy-names.
->>         See ../phy/phy-bindings.txt for details.
->>
->>     phy-names:
->>       minItems: 1
->> +    maxItems: 8
->>       items:
->> -      - const: usb2-0
->> -      - const: usb2-1
->> -      - const: usb2-2
->> -      - const: usb2-3
->> -      - const: usb3-0
->> -      - const: usb3-1
->> -      - const: usb3-2
->> -      - const: usb3-3
->> +      anyOf:
->> +        - const: usb2-0
->> +        - const: usb2-1
->> +        - const: usb2-2
->> +        - const: usb2-3
->> +        - const: usb3-0
->> +        - const: usb3-1
->> +        - const: usb3-2
->> +        - const: usb3-3
+> So yes, we could potentially still make the i2c-nvidia-gpu.c driver add
+> a "nvidia,rtx" string to make it more descriptive like DT, but then we'd
+> still need to somehow resolve that to the "nv" string for the assignment
+> to uc->fw_build.
 > 
-> items:
->    pattern: '^usb[23]-[0-3]$'
+> Not sure about how that would impact the AMD bits. Another of those CCGX
+> UCSI devices is registered by the i2c-designware-pcidrv.c driver, but it
+> doesn't pass a software node. From what I can tell that simply means all
+> of those checks will work with fw_build == 0x00. Primarily I think that
+> will cause flashing of the firmware not to be supported.
 > 
-> And an explanation why you need any random order. If it is just
-> different for Tegra234, then you need an if/then schema for this.
+> So yeah, having that string be something else (i.e. more descriptive)
+> and then match on that instead would definitely work. After looking at
+> this some more, using existing driver-matching may not work after all
+> because while there's ACPI matching and with this series DT matching,
+> the various GPU I2C instantiations are purely done in software, so they
+> have neither and therefore would need a secondary lookup mechanism. We
+> may be stuck with that ccgx,firmware-build property, but as you said it
+> should be possible to at least sanitize it.
+> 
 
-Thanks for the review.
-We need to pick up one or more for the corresponding phys of the USB ports.
-It should be a common settings among all the chips.
-Adding anyOf here for the reason above and passing the dtb check.
-
-Please let me know If I have any misunderstanding here.
+OK. Thanks for the review. I'll make the change to extend the property 
+into string in the next patch series.
 
 thanks,
 Wayne.
 
+
+> Thierry
 > 
->> +
->> +  dma-coherent:
->> +    type: boolean
+>> Jon
 >>
->>     avddio-usb-supply:
->>       description: PCIe/USB3 analog logic power supply. Must supply 1.05 V.
->> @@ -153,6 +160,7 @@ allOf:
->>               enum:
->>                 - nvidia,tegra186-xudc
->>                 - nvidia,tegra194-xudc
->> +              - nvidia,tegra234-xudc
->>       then:
->>         properties:
->>           reg:
->> --
->> 2.25.1
->>
->>
+>> [0]https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/i2c/busses/i2c-nvidia-gpu.c#n261
+>> -- 
+>> nvpublic
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
