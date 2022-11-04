@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8DE5DC4332F
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E4EBBC43219
 	for <linux-phy@archiver.kernel.org>; Fri,  4 Nov 2022 13:18:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,51 +12,51 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BAqqCPntvbGMeoYP5dIXtcNoveqsXZNIM0uoaNeR/QA=; b=4cD9kNNh9pz4g/
-	sUO7WQ0aqwr2shDy6Fc1tBNuPOPBv1i8BeAPawhMRZWEodcOkAKpKN8PMwL7zDYeL1Ww7HKpOXP5H
-	NszbW8H6BLlBUsiq1N2magzjS0PXimTKj8aEcqQ8BRKgHc3clk6QwcWJEbgpSlvW7LgnC4IEv711W
-	LcUdN9ncrwjN9wYM18YtPfFHbgOKJ3w/LkW+4gpVrqY6C8h+LLU0cjDc2OYmJUvKzTaEVo3EB+6Ir
-	n7WtaKv9J92iuMLjm9otUdTWAleL7i8H49kc3gSLGA6pbBMXL7pddhv5r7+vEjyelDyiZlGoDmEip
-	xrL5bitgToffApliCmNw==;
+	List-Owner; bh=9U3Mq1voqWEbZVQQ2g4kwY3qx+SYjD3N2lBFUFZQyrs=; b=qohQ+C5jtazTGt
+	O7jvMpQdo4Afmf2+s8d7KyQvVSSXJBDKTQaDi282uZDkaKAzX+C70nisNhtRYAYA+bmmuq02WyKpd
+	/w3s3t2KBL9+iaR3a8Ieky+Mn9Rgae++Sr5mTu4anfu17mzUXhgac6ZHl1Am2Zt5b4EM/Y2Nr/WrW
+	cKkUA8hcjRrx584TOcdm4nRHfplQjKC0BWtqlS8nDtmSF8lCy7ihP3dnBob9zifVm/q5JE/uMllON
+	uhVwmZpkFb/IFVsopneLqntpqxUT3qD6T1cfmtr5KLa83iZ0GBfQPhgfvSj3sGO8IzlQXYOnl6F9r
+	LVvsbfZjwvzu4841WeVA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oqwaC-003cVF-P4; Fri, 04 Nov 2022 13:18:04 +0000
+	id 1oqwaD-003cVU-2g; Fri, 04 Nov 2022 13:18:05 +0000
 Received: from new1-smtp.messagingengine.com ([66.111.4.221])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oqwa2-003cOC-V1; Fri, 04 Nov 2022 13:17:56 +0000
-Received: from compute2.internal (compute2.nyi.internal [10.202.2.46])
-	by mailnew.nyi.internal (Postfix) with ESMTP id 61D9858044C;
-	Fri,  4 Nov 2022 09:17:52 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
-  by compute2.internal (MEProxy); Fri, 04 Nov 2022 09:17:52 -0400
+	id 1oqwa2-003cNn-Iz; Fri, 04 Nov 2022 13:17:56 +0000
+Received: from compute1.internal (compute1.nyi.internal [10.202.2.41])
+	by mailnew.nyi.internal (Postfix) with ESMTP id 4980458024E;
+	Fri,  4 Nov 2022 09:17:50 -0400 (EDT)
+Received: from mailfrontend2 ([10.202.2.163])
+  by compute1.internal (MEProxy); Fri, 04 Nov 2022 09:17:50 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=cc
 	:cc:content-transfer-encoding:content-type:date:date:from:from
 	:in-reply-to:in-reply-to:message-id:mime-version:references
-	:reply-to:sender:subject:subject:to:to; s=fm3; t=1667567872; x=
-	1667575072; bh=06erX3Kj2Cpg1UoaP6NUgmKg6CRYa/Sd79GEp9CTLUk=; b=e
-	1ZeoTljhCPkZpz2rIoVn4PYG9rZGAspv5rnLPPk41E3S9iCP+0nCwdQvSyVEpKlr
-	Z5Jiu8Mbec/PKLsbqcILj3878dmHzqvG+e9pk3gXVjxy+FUYgJbQqCZIE0NxHDJ6
-	FOf6Ez+WuBz85DACVSv1TfoY2uCWu6oSxx0yLC8K8Wkq+wRK8MlPV4X0RXDQwiGK
-	qQ59Dzpv2S5quPC/rxmIxn5jsKMIDI1Z5NpVGGAmUrQwdS6AtSzTQiXeahLbpbv1
-	fyZ2iR/6sHpVBP7gQk9WjuiA5ucOSZfWC37s3dYrDDB3LWJ7SUC5/SptcCEcvd1J
-	fIQccRyog/25GtPWrg8wA==
+	:reply-to:sender:subject:subject:to:to; s=fm3; t=1667567870; x=
+	1667575070; bh=G6roTlQI+WbfuJBVMerfpRGcIgbu8Jj1z+yrfkH1e+4=; b=n
+	305Fx+jcKbMsgUN7v1krJxUbv7vaOfIMbnWEiBcRYzX0RmgLNUo6ZQkQ041POXIZ
+	dxIzQjfl8zV82UiM8+VLMQJwrb6pLRYX7gCMb+XBMWuH1E/0jDHRJlvJ/Lpuin95
+	ZDW+gl9GhhcANj/Hsh5IWBqmfuv3jIxxLX8EstOLGKg7VuSm1kTHzuqYRVBMDUhB
+	+JjAc8H/cro+i7N4tOFy91tFBOszwsetF5RzSoAbn6n4jqLKw+oDrzkPQt1uAiRO
+	0tL7+W8Sv5otfhI+TTUQ693kejDfv6p3gxSaz+ybZkiMhJ3htwMZwenAoc/Uz60+
+	iTbTLunO1rfdpWZpT6mSw==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
 	messagingengine.com; h=cc:cc:content-transfer-encoding
 	:content-type:date:date:feedback-id:feedback-id:from:from
 	:in-reply-to:in-reply-to:message-id:mime-version:references
 	:reply-to:sender:subject:subject:to:to:x-me-proxy:x-me-proxy
-	:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; t=1667567872; x=
-	1667575072; bh=06erX3Kj2Cpg1UoaP6NUgmKg6CRYa/Sd79GEp9CTLUk=; b=O
-	1TqjhPO0LY4RXuxO29Nix1PCYvo1wCARUQeGv3LyVWVwqLlizWkmKCf4ONBaxIyX
-	y0c3rBl6+5IohCEpE3AmLurPhH1TpSY422cJaHmD6fA9H45dkj74X7c2SBob5UMJ
-	atcHQwp7sU33ZPzAvoDn7SIoHBxNcgkPrjZ9AP5+yi08cxEKT7IgaLG+n6h4CVbx
-	9kBAd0rWUHqYq4S7rwT6hwzy2RhFl1Fve1/j8L7h3peV+9hRZjRjvwfI+3aPpdie
-	9kgkIqVYCR+GZOzR01+RuVCjS/l8gYgWMyVDgh8E6W1fuLMpv/7PvvqbwoGytXWZ
-	mdscHkxnn0JPA9QiFdt8Q==
-X-ME-Sender: <xms:ABFlY_dJpQD9hcGry3hBHYYckdcnQpNy3dsh74dzGjsYN9wGMbIWDw>
-    <xme:ABFlY1OEfnCWIe5C33S-adK8w5Q4ZhTsV2ENpe0K7k_WfwT7mZDQ_80Lb28I1wGJr
-    a9eu8d9fO4qpF6uzQA>
-X-ME-Received: <xmr:ABFlY4hBpX56ErLfM4fX-GGFztlW0lFJmFNN_Ze7gvHpZoCFSMATNW0yt-BAVDn-DmGDoOnTnB2G5-UAzohkRovZkpvY4OtEsN37CmavcLHp8w>
+	:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; t=1667567870; x=
+	1667575070; bh=G6roTlQI+WbfuJBVMerfpRGcIgbu8Jj1z+yrfkH1e+4=; b=I
+	Z9JokDAMRMmEs198kcOyI8byre7eSOmpJS/5iXjULqjY+mM1ez554uEE5P/Dmq9n
+	Y2phF2Ulr43HOi7KVl59kOM2ZXOb2atqD2mg8M/epW+1ArP9EmdYUAJlZliMFOVD
+	o12Xx38r37wZLzYpfU+rJPcvqSDRpLY/FCYqk6k3WDWHqAoayvxVtE5/iP9xO5Ej
+	yWXKogQGxCteQLxh7SqLZ6FP2k0sBEskWmK/5LsDTWMImCxvmptKYJUVpH2wCBV6
+	CsD67r2Fk67TjOH07maYbYHROh63LTNDVT8baKk+pXZhP5+x0ZDzT30G2pMfBFWv
+	GuflU3e1PeXPYUL41JYFw==
+X-ME-Sender: <xms:_RBlYz5sWVh5Q2Prh_vcUS1V4bUgy-GcLDiEi6lCh0Bcu3Q64KA1vA>
+    <xme:_RBlY47mcMoIwdxKw4VYA8CgXYfqwofPIk_yfVQkQzfo1rGrC_va9Afa7ZcugfEHA
+    XB2_DJ4y-aQ2O-mC6g>
+X-ME-Received: <xmr:_RBlY6cWfkdXCW7SxXxy8D3iUOUKglqMWDCzsclEYVaMDfzMJQ2znJ6I5fQLhAC5V7nfAw1F5rwqAos6yBBWZqikovTGcFmzCpicojzmMbHmVw>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvgedrvddugdegkecutefuodetggdotefrodftvf
     curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
     uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
@@ -65,18 +65,18 @@ X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvgedrvddugdegkecutefuodetggdote
     htthgvrhhnpeduudduhfevjeetfeegvdffvdevvdejudegudekjeehtdelhfffveethfej
     ledtveenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhrohhmpe
     hmrgigihhmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:ABFlYw-DgANXlXvxTorZPiqI1K4NE9FxHGBpYOy0Fe8UYlBuvdQR3Q>
-    <xmx:ABFlY7sLjwO_bDmdsK2JWkcP8Gahy0ULxLN7Bi8KQhSg66ubzg2Z0w>
-    <xmx:ABFlY_GcvIPFbzURXkvd-U8XewfaQ5VfJfVlsyuXWk2kTR6cVyjxwg>
-    <xmx:ABFlY4ObWRjqPTCdsP6YSGjeS2QO6RdkD01nCaFrs_4ctu9H2dKeiA>
+X-ME-Proxy: <xmx:_RBlY0Ib4bHGO5KmpBgwthZxEPtuJoYhiBdH1sJFc6bY_Ro_cIUb-g>
+    <xmx:_RBlY3KrcZQruXj4HjKXTloKAi9Ves609ipl5P7HJSwdQSy9j5OqOw>
+    <xmx:_RBlY9wHbb5mW5glkJ3V3LnZPKWDZYBch6nxD8xhk9eK8jP0Hj8nNg>
+    <xmx:_hBlY-Y-LfwRpLmQErcd1SIYyAqJPysiO5TrAswCdcP4FFrTUcRVcw>
 Feedback-ID: i8771445c:Fastmail
 Received: by mail.messagingengine.com (Postfix) with ESMTPA; Fri,
- 4 Nov 2022 09:17:51 -0400 (EDT)
+ 4 Nov 2022 09:17:49 -0400 (EDT)
 From: Maxime Ripard <maxime@cerno.tech>
-Date: Fri, 04 Nov 2022 14:17:19 +0100
-Subject: [PATCH v2 02/65] clk: lan966x: Remove unused round_rate hook
+Date: Fri, 04 Nov 2022 14:17:18 +0100
+Subject: [PATCH v2 01/65] clk: Export clk_hw_forward_rate_request()
 MIME-Version: 1.0
-Message-Id: <20221018-clk-range-checks-fixes-v2-2-f6736dec138e@cerno.tech>
+Message-Id: <20221018-clk-range-checks-fixes-v2-1-f6736dec138e@cerno.tech>
 References: <20221018-clk-range-checks-fixes-v2-0-f6736dec138e@cerno.tech>
 In-Reply-To: <20221018-clk-range-checks-fixes-v2-0-f6736dec138e@cerno.tech>
 To: Stephen Boyd <sboyd@kernel.org>,
@@ -123,16 +123,17 @@ Cc: linux-stm32@st-md-mailman.stormreply.com, alsa-devel@alsa-project.org, linux
  linux-tegra@vger.kernel.org, linux-rtc@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-sunxi@lists.linux.dev, linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org
 X-Mailer: b4 0.11.0-dev-99e3a
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1566; i=maxime@cerno.tech;
- h=from:subject:message-id; bh=UUWQAfB4LjFBOSGFZ6uyIELdMsnaIf0eeBGtwWhM+3Y=;
- b=owGbwMvMwCX2+D1vfrpE4FHG02pJDMmpAp80QlY2nviyod257eWMD6xV2dMP2fspWXFExnhWBFwp
- NQruKGVhEONikBVTZIkRNl8Sd2rW6042vnkwc1iZQIYwcHEKwEQ+vGX4p7RFJ8c9ym9KRP3i+j9yG9
- f4pdRXfxHeFsm382TzioAPEowMM/46eBx3YEqvMhJnNg0UUA3Yslxced5S2+ZZYt2ZL9qZAQ==
+X-Developer-Signature: v=1; a=openpgp-sha256; l=818; i=maxime@cerno.tech;
+ h=from:subject:message-id; bh=pHSkDqlAWAoctG0mTmKyzVsJsENtdafsCZJ4udDXPgk=;
+ b=owGbwMvMwCX2+D1vfrpE4FHG02pJDMmpAp9aPz1sP7s2/Xn5a/ErU6beWJjGX1Lh2zWb89/fOWUJ
+ BsmFHaUsDGJcDLJiiiwxwuZL4k7Net3JxjcPZg4rE8gQBi5OAZjIRS5GhqnPGtbbXKwz4D9Z52Fi92
+ u/dNpMd35p+Z1zHPNui+1TEWVk2F9WoVG819j57F3279o6Mm83xyUl/TrE/K164Z5ff2asZgEA
 X-Developer-Key: i=maxime@cerno.tech; a=openpgp;
  fpr=BE5675C37E818C8B5764241C254BCFC56BF6CE8D
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221104_061755_253136_DEDC5A86 
-X-CRM114-Status: GOOD (  11.26  )
+X-CRM114-CacheID: sfid-20221104_061755_256080_2A44E862 
+X-CRM114-Status: UNSURE (   9.42  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -149,53 +150,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The lan966x driver registers a gck clock with both a determine_rate and
-a round_rate implementation. Both are equivalent, and are only called by
-clk_core_determine_round_nolock() which favors determine_rate.
+Commit 262ca38f4b6e ("clk: Stop forwarding clk_rate_requests to the
+parent") introduced the public clk_hw_forward_rate_request() function,
+but didn't export the symbol. Make sure it's the case.
 
-Thus, lan966x_gck_round_rate() is never called, so we can just remove
-it.
-
+Fixes: 262ca38f4b6e ("clk: Stop forwarding clk_rate_requests to the parent")
 Signed-off-by: Maxime Ripard <maxime@cerno.tech>
 ---
- drivers/clk/clk-lan966x.c | 17 -----------------
- 1 file changed, 17 deletions(-)
+ drivers/clk/clk.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/clk/clk-lan966x.c b/drivers/clk/clk-lan966x.c
-index 460e7216bfa1..870fd7df50c1 100644
---- a/drivers/clk/clk-lan966x.c
-+++ b/drivers/clk/clk-lan966x.c
-@@ -103,22 +103,6 @@ static int lan966x_gck_set_rate(struct clk_hw *hw,
- 	return 0;
+diff --git a/drivers/clk/clk.c b/drivers/clk/clk.c
+index 57b83665e5c3..d4a74759fe29 100644
+--- a/drivers/clk/clk.c
++++ b/drivers/clk/clk.c
+@@ -1525,6 +1525,7 @@ void clk_hw_forward_rate_request(const struct clk_hw *hw,
+ 				  parent->core, req,
+ 				  parent_rate);
  }
++EXPORT_SYMBOL_GPL(clk_hw_forward_rate_request);
  
--static long lan966x_gck_round_rate(struct clk_hw *hw, unsigned long rate,
--				   unsigned long *parent_rate)
--{
--	unsigned int div;
--
--	if (rate == 0 || *parent_rate == 0)
--		return -EINVAL;
--
--	if (rate >= *parent_rate)
--		return *parent_rate;
--
--	div = DIV_ROUND_CLOSEST(*parent_rate, rate);
--
--	return *parent_rate / div;
--}
--
- static unsigned long lan966x_gck_recalc_rate(struct clk_hw *hw,
- 					     unsigned long parent_rate)
+ static bool clk_core_can_round(struct clk_core * const core)
  {
-@@ -177,7 +161,6 @@ static const struct clk_ops lan966x_gck_ops = {
- 	.enable         = lan966x_gck_enable,
- 	.disable        = lan966x_gck_disable,
- 	.set_rate       = lan966x_gck_set_rate,
--	.round_rate     = lan966x_gck_round_rate,
- 	.recalc_rate    = lan966x_gck_recalc_rate,
- 	.determine_rate = lan966x_gck_determine_rate,
- 	.set_parent     = lan966x_gck_set_parent,
 
 -- 
 b4 0.11.0-dev-99e3a
