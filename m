@@ -4,135 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 228B1C43217
-	for <linux-phy@archiver.kernel.org>; Fri,  4 Nov 2022 13:36:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7A423C4332F
+	for <linux-phy@archiver.kernel.org>; Fri,  4 Nov 2022 13:42:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yedV2r5M5uPkVgUKpnWGiOo2RnD/1B/HnNG2auG7GNM=; b=Cnl6QS/1IUl80P
-	sDY7GMOIpM/sef0dr2siZD0AgjfNRsqyXIkF8BSe8dvpFyL2ioYlOtRIc8Jhv1wG5TrAPsE028fke
-	YtVWw7e1Ds4Gyz1NM325l4KZIqCA/Ni4YAO2cdnDiDQogK67LZ0n3YGaAje+cKgn3QOeEjrj0VD+5
-	1u4Y1m3Bslz0lDCNNV7ogdn0Nd+aRojgU4XwbMUPBd2G+uYaTBBDgMdd7YHX930P11TsPtXKr7v41
-	5C8ZnH6j8UQfwZupEEz+i/PHCy7eRBI3COwq7lhgjSQb1v9ko7bU8V9mW6dba3sZAy5nHFZoC3hHB
-	pZp4SFpdQJ35soFEasqw==;
+	List-Owner; bh=B4fuP+7nOHCfrrhPQ3zbSXnJACM2h/sk2f/O2zqBBFU=; b=Ol4sjIC4YyoYuq
+	YpjNIUsqvP2uzInJZB6RHAy6TeE5xlw16iirjTYjiND1PrEYkol0z0ZTaSM+4l/m7d/Bz1qupjs3l
+	dYCHxl9enu8mpWW78YaZ5HDP5iyofX/ydyP4eP1oFE4Dwnn5fBbGwtRntTA6jrAJnN2f3dGWCso73
+	OOSBrH6f+en5qJbUyTlRUsbspJlfG5GQt4PwNU6GOLjau9T591a8xIiBVU1hyJ+EppxMJFhe/yUA8
+	xWlEdDmwMSIUYx9M67Oglkj1YF74Dr5OJRf7KJGJb8lj1DTQryIPh2TN1bORSc5vD1XarlfXCAOAF
+	DEBE9WzekmNOku7/apiA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oqwrX-003kPo-3s; Fri, 04 Nov 2022 13:35:59 +0000
-Received: from new1-smtp.messagingengine.com ([66.111.4.221])
+	id 1oqwxg-003ldp-S6; Fri, 04 Nov 2022 13:42:20 +0000
+Received: from mail-qv1-xf36.google.com ([2607:f8b0:4864:20::f36])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oqwpY-003iW3-Ud; Fri, 04 Nov 2022 13:33:59 +0000
-Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
-	by mailnew.nyi.internal (Postfix) with ESMTP id 1CB475805AF;
-	Fri,  4 Nov 2022 09:33:56 -0400 (EDT)
-Received: from mailfrontend2 ([10.202.2.163])
-  by compute3.internal (MEProxy); Fri, 04 Nov 2022 09:33:56 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=cc
-	:cc:content-transfer-encoding:content-type:date:date:from:from
-	:in-reply-to:in-reply-to:message-id:mime-version:references
-	:reply-to:sender:subject:subject:to:to; s=fm3; t=1667568836; x=
-	1667576036; bh=8i9Mndy2jbfBk1MIVA7c/A2hrdbXrLt4ZlzMYH+ZKBI=; b=Y
-	tFpLN/RrfKWUEcWDR0f4VrdRTlj4gIMKGGpfK0akKub31fTdbquIY/iS3Ua2LFqo
-	chXDAEUzsvUrNYDMr91oZozPbA1gpnelWwcINGl2rx+gHlT6em+qGNhMZ4Jpbo+s
-	OxWGotUcAVThTMFOKgTnbY5eVDjboisUaiJqJXcvmmAQ/x8LioOlI0Gw4zjA8i0r
-	YcF3pggSXgWn5eQd3A9hrEUHDTDKmXHsezYWpKflijmMJETSEA1OuyQakkyyKH9E
-	f9Zw4Tj341f7UEjA+mG7kxo/uGP/D2HT32QZzh5aVzVo0fkdHtHEFgpklLUePDiu
-	+/50mfTLVF8VAFoDbo+8A==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
-	messagingengine.com; h=cc:cc:content-transfer-encoding
-	:content-type:date:date:feedback-id:feedback-id:from:from
-	:in-reply-to:in-reply-to:message-id:mime-version:references
-	:reply-to:sender:subject:subject:to:to:x-me-proxy:x-me-proxy
-	:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; t=1667568836; x=
-	1667576036; bh=8i9Mndy2jbfBk1MIVA7c/A2hrdbXrLt4ZlzMYH+ZKBI=; b=I
-	Dim9KnhBoO75TmaMviA33lXsyJaI5GzBZhMxr7PkD2xhbo4GP+AAk/aLXQuiGx5g
-	gBq2LY6aTVQDjm/uWk9LEKn+6vlJTw0bdMMgvWzsxkNNLli5iPshkfcFqTZ983y9
-	UnSDBNmrN/PSdmukA7VZhzVEQTyNRUBT6R7kicjqHtX8UoTrBEreK9m56whIkCoP
-	VTfrQM0aJfyLkF2x+qQpo2BugpbKSVEebmNKyHDY6PCE+4//j89QnLeD/Mr7LqZG
-	6xzsj9WkR4zZDyJa+fKLcPkGmFseQ2AJTkgkdowkMltbPQWAQBwIwRQHyq9/whOZ
-	ZmaOxa1PlWGSgJ8frasGQ==
-X-ME-Sender: <xms:wxRlY_sGaUKevWVJcyUWxXmH_gF14N4bWQN11bmRePnvVSai8iA9YA>
-    <xme:wxRlYweXVwQYfjMOnu_orcFboj0UgVJbgOFePmjCiqUJ0TgHS_jHaYgpxXPX6YlD0
-    lbJi89X4ME9_hJbqM4>
-X-ME-Received: <xmr:wxRlYyzwz87gIICWoAMSvh1qDLD0w_tlewKaE9XxM22KDLnwDZ9Lbd6CyUhB0kwbUIgC8REVHMg5L4cRbCjrs6r4KQEVftdOMhHhl7v9Qp4otQ>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvgedrvddugdehudcutefuodetggdotefrodftvf
-    curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
-    uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
-    fjughrpefhfffugggtgffkfhgjvfevofesthekredtredtjeenucfhrhhomhepofgrgihi
-    mhgvucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucggtffrrg
-    htthgvrhhnpeduudduhfevjeetfeegvdffvdevvdejudegudekjeehtdelhfffveethfej
-    ledtveenucevlhhushhtvghrufhiiigvpeeinecurfgrrhgrmhepmhgrihhlfhhrohhmpe
-    hmrgigihhmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:wxRlY-M2xLXb2o2X9JvAgpWTdk8tzd77fs3G_O89BKyfGhHPVUZEow>
-    <xmx:wxRlY_8UY10jK9A0kF2NsrKGiBxLBAqT1IE5AlUkQ7ZLRGk3KT_i2Q>
-    <xmx:wxRlY-WmB8bYawzGPDv5ppZqGGo8HW1ayy05wOhsijdSQRm4hCOBPg>
-    <xmx:xBRlY5dsSb2BVE_qW1PBYqjGk9oiX0uB6lms6dkAlzDGMKViO62QGg>
-Feedback-ID: i8771445c:Fastmail
-Received: by mail.messagingengine.com (Postfix) with ESMTPA; Fri,
- 4 Nov 2022 09:33:55 -0400 (EDT)
-From: Maxime Ripard <maxime@cerno.tech>
-Date: Fri, 04 Nov 2022 14:18:17 +0100
-Subject: [PATCH v2 60/65] clk: stm32: composite: Switch to determine_rate
+	id 1oqwxV-003laB-I3
+	for linux-phy@lists.infradead.org; Fri, 04 Nov 2022 13:42:13 +0000
+Received: by mail-qv1-xf36.google.com with SMTP id w10so3200510qvr.3
+        for <linux-phy@lists.infradead.org>; Fri, 04 Nov 2022 06:42:07 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=MMyaU86qb4lTKUtNgTOCQdes/+rIt6nWq/bdQaeuknw=;
+        b=y5AvJPLRIMXwWZKc9jQP4A0V2azYRNxYIGFEBK6zxdr0llR3PO3cPe/5eJ242K4uwN
+         Zij0h6pVcg8wDkxm/WOE2YmaUdosKO8QFIViEDlUSgL/ajC76Gis3Uucn6gh2HB2EsnE
+         N6TxBBJeG3bE1h0x6XvIa9lGfNzPPyEJVPHE84Tz/c10mQsqVWwhoV79GhsKCLruBeR9
+         P3tPgh0HNehK2u2SiUZss624PlZ+p6XN9Hq1EjOE5vzb0sTfFqiegqYbj4pANSlbAjEh
+         lhIlE2elDDn3CWXjewkAid0fDSPzj3Q7Gwjs4vt3UqR1MoXw/l8enGaDxV+i8XeBe9ym
+         zhYw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=MMyaU86qb4lTKUtNgTOCQdes/+rIt6nWq/bdQaeuknw=;
+        b=EQ0oewTH7xWQRJTvfGBjDOZ2j141qCXpkfoyxUqhNA7Ocl29USWbProKHvuTDh20lO
+         D7L82hFjdwMftZrRSCoLPFZciFFzItks8hyZbqHgbBPlv+JWm5BCUiosf41CARN/hm6u
+         xP/m50O3bqwpiBLqFMUV9dCFtgPlOB2HlmOld3x2Z9jCKMGTWNHLGosb3fJqRUcqiOg0
+         RfyAdppLjek6OL5fScpwhax/AYWeCtZKPSh/rapAL7KJpz3gL5JOXh2JDYnkDTJFrnm9
+         OuOxWMlGttvRXXMvxWlXfbeXDrWQ7MDcTVNB/zcIj9GWnmGhoCynxHm3hg09no/ftm3W
+         ePFw==
+X-Gm-Message-State: ACrzQf0DYLajIDWQ3Ldz3xhWuDvVcdWPiOc9fTcNMFxe8TCDcImq8qAz
+	auUf8bcH//Ixsy+w4hBj+u4ZIA==
+X-Google-Smtp-Source: AMsMyM6KTCIg67folrXpvHf9QQEoGa69VsGoeBFBv55wj82oFzf8ryegyUV4HWZc24EW2s7OFcWAuA==
+X-Received: by 2002:a05:6214:d0e:b0:4bb:f5db:76ec with SMTP id 14-20020a0562140d0e00b004bbf5db76ecmr24823843qvh.9.1667569326779;
+        Fri, 04 Nov 2022 06:42:06 -0700 (PDT)
+Received: from ?IPV6:2601:586:5000:570:aad6:acd8:4ed9:299b? ([2601:586:5000:570:aad6:acd8:4ed9:299b])
+        by smtp.gmail.com with ESMTPSA id q3-20020a05620a2a4300b006eed47a1a1esm2909548qkp.134.2022.11.04.06.42.04
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 04 Nov 2022 06:42:05 -0700 (PDT)
+Message-ID: <d5fb79bc-c05c-8de1-e8a4-9e19cc5c8e1a@linaro.org>
+Date: Fri, 4 Nov 2022 09:42:03 -0400
 MIME-Version: 1.0
-Message-Id: <20221018-clk-range-checks-fixes-v2-60-f6736dec138e@cerno.tech>
-References: <20221018-clk-range-checks-fixes-v2-0-f6736dec138e@cerno.tech>
-In-Reply-To: <20221018-clk-range-checks-fixes-v2-0-f6736dec138e@cerno.tech>
-To: Stephen Boyd <sboyd@kernel.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Chen-Yu Tsai <wens@csie.org>, Daniel Vetter <daniel@ffwll.ch>,
- Nicolas Ferre <nicolas.ferre@microchip.com>,
- Thierry Reding <thierry.reding@gmail.com>,
- Jaroslav Kysela <perex@perex.cz>, Shawn Guo <shawnguo@kernel.org>,
- Fabio Estevam <festevam@gmail.com>, Ulf Hansson <ulf.hansson@linaro.org>,
- Claudiu Beznea <claudiu.beznea@microchip.com>,
- Michael Turquette <mturquette@baylibre.com>,
- Dinh Nguyen <dinguyen@kernel.org>, Paul Cercueil <paul@crapouillou.net>,
- Chunyan Zhang <zhang.lyra@gmail.com>,
- Manivannan Sadhasivam <mani@kernel.org>,
- Andreas Färber <afaerber@suse.de>,
- Jonathan Hunter <jonathanh@nvidia.com>, Abel Vesa <abelvesa@kernel.org>,
- Charles Keepax <ckeepax@opensource.cirrus.com>,
- Alessandro Zummo <a.zummo@towertech.it>,
- Peter De Schrijver <pdeschrijver@nvidia.com>,
- Orson Zhai <orsonzhai@gmail.com>,
- Alexandre Torgue <alexandre.torgue@foss.st.com>,
- Prashant Gaikwad <pgaikwad@nvidia.com>,
- Liam Girdwood <lgirdwood@gmail.com>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Samuel Holland <samuel@sholland.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Richard Fitzgerald <rf@opensource.cirrus.com>,
- Vinod Koul <vkoul@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
- Sekhar Nori <nsekhar@ti.com>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Linus Walleij <linus.walleij@linaro.org>, Takashi Iwai <tiwai@suse.com>,
- David Airlie <airlied@gmail.com>,
- Luca Ceresoli <luca.ceresoli@bootlin.com>,
- Jernej Skrabec <jernej.skrabec@gmail.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Baolin Wang <baolin.wang@linux.alibaba.com>,
- David Lechner <david@lechnology.com>,
- Sascha Hauer <s.hauer@pengutronix.de>, Mark Brown <broonie@kernel.org>,
- Max Filippov <jcmvbkbc@gmail.com>,
- Geert Uytterhoeven <geert+renesas@glider.be>
-Cc: linux-stm32@st-md-mailman.stormreply.com, alsa-devel@alsa-project.org, linux-mediatek@lists.infradead.org,
- linux-phy@lists.infradead.org, linux-mips@vger.kernel.org, Maxime Ripard <maxime@cerno.tech>,
- linux-renesas-soc@vger.kernel.org, linux-actions@lists.infradead.org, linux-clk@vger.kernel.org,
- AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, patches@opensource.cirrus.com,
- linux-tegra@vger.kernel.org, linux-rtc@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-sunxi@lists.linux.dev, linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org
-X-Mailer: b4 0.11.0-dev-99e3a
-X-Developer-Signature: v=1; a=openpgp-sha256; l=3796; i=maxime@cerno.tech;
- h=from:subject:message-id; bh=wiPrQrPtwHN8JkTzjgovj5i1AFxQRgKSk4e/VekItv0=;
- b=owGbwMvMwCX2+D1vfrpE4FHG02pJDMmpAt+2uc8y+efrdmg9i7mF6t9F12s1T8acW/1o/bozHvv/
- 7rVO7yhlYRDjYpAVU2SJETZfEndq1utONr55MHNYmUCGMHBxCsBEvjUy/M9KP163gqVsrXqg9h954S
- fCJlMuyn63NnK9Xp+vJOM8kZGR4bf7tEXfjytNd2E8m5rGw/yAJfHgUtvQST9Zou1Ezl6sZgMA
-X-Developer-Key: i=maxime@cerno.tech; a=openpgp;
- fpr=BE5675C37E818C8B5764241C254BCFC56BF6CE8D
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.4.2
+Subject: Re: [v2 02/10] dts-bingings: display: bridge: Add MHDP HDMI bindings
+ for i.MX8MQ
+Content-Language: en-US
+To: Sandor Yu <Sandor.yu@nxp.com>, dri-devel@lists.freedesktop.org,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ andrzej.hajda@intel.com, neil.armstrong@linaro.org, robert.foss@linaro.org,
+ Laurent.pinchart@ideasonboard.com, jonas@kwiboo.se,
+ jernej.skrabec@gmail.com, kishon@ti.com, vkoul@kernel.org
+Cc: robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
+ shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de,
+ linux-imx@nxp.com, tzimmermann@suse.de, lyude@redhat.com,
+ javierm@redhat.com, ville.syrjala@linux.intel.com, sam@ravnborg.org,
+ jani.nikula@intel.com, maxime@cerno.tech,
+ penguin-kernel@I-love.SAKURA.ne.jp, p.yadav@ti.com, oliver.brown@nxp.com
+References: <cover.1667463263.git.Sandor.yu@nxp.com>
+ <0e1f631c22207c6af41ea512be85213b3953b44f.1667463263.git.Sandor.yu@nxp.com>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <0e1f631c22207c6af41ea512be85213b3953b44f.1667463263.git.Sandor.yu@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221104_063357_149981_A7C21BEF 
-X-CRM114-Status: GOOD (  21.81  )
+X-CRM114-CacheID: sfid-20221104_064209_625334_F2D83C96 
+X-CRM114-Status: GOOD (  15.33  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -149,105 +103,105 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The STM32 composite clocks implements a mux with a set_parent hook, but
-doesn't provide a determine_rate implementation.
+On 04/11/2022 02:44, Sandor Yu wrote:
+> Add bindings for i.MX8MQ MHDP HDMI.
 
-This is a bit odd, since set_parent() is there to, as its name implies,
-change the parent of a clock. However, the most likely candidate to
-trigger that parent change is a call to clk_set_rate(), with
-determine_rate() figuring out which parent is the best suited for a
-given rate.
+Typo in subject - bindings.
 
-The other trigger would be a call to clk_set_parent(), but it's far less
-used, and it doesn't look like there's any obvious user for that clock.
+Also in the subject - drop redundant second word "bindings".
 
-So, the set_parent hook is effectively unused, possibly because of an
-oversight. However, it could also be an explicit decision by the
-original author to avoid any reparenting but through an explicit call to
-clk_set_parent().
+> 
+> Signed-off-by: Sandor Yu <Sandor.yu@nxp.com>
+> ---
+>  .../display/bridge/cdns,mhdp-imx8mq-hdmi.yaml | 67 +++++++++++++++++++
+>  1 file changed, 67 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/display/bridge/cdns,mhdp-imx8mq-hdmi.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/display/bridge/cdns,mhdp-imx8mq-hdmi.yaml b/Documentation/devicetree/bindings/display/bridge/cdns,mhdp-imx8mq-hdmi.yaml
+> new file mode 100644
+> index 000000000000..b2a769d4cb82
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/display/bridge/cdns,mhdp-imx8mq-hdmi.yaml
+> @@ -0,0 +1,67 @@
+> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: "http://devicetree.org/schemas/display/bridge/cdns,mhdp-imx8mq-hdmi.yaml#"
+> +$schema: "http://devicetree.org/meta-schemas/core.yaml#"
+> +
+> +title: Cadence MHDP HDMI bridge
+> +
+> +maintainers:
+> +  - Sandor Yu <Sandor.yu@nxp.com>
+> +
+> +description:
+> +  The Cadence MHDP TX HDMI interface.
+> +
+> +properties:
+> +  compatible:
+> +    enum:
+> +      - cdns,mhdp-imx8mq-hdmi
+> +
+> +  reg:
+> +    items:
+> +      - description:
+> +          Memory mapped base address and length of mhdptx apb registers.
 
-The driver does implement round_rate() though, which means that we can
-change the rate of the clock, but we will never get to change the
-parent.
+Drop items and descripion and just "maxItems: 1"
 
-However, It's hard to tell whether it's been done on purpose or not.
+> +
+> +  phys:
+> +    description:
+> +      phandle to the HDMI PHY.
 
-Since we'll start mandating a determine_rate() implementation, let's
-convert the round_rate() implementation to a determine_rate(), which
-will also make the current behavior explicit. And if it was an
-oversight, the clock behaviour can be adjusted later on.
+Drop description, but instead "maxItems: 1"
 
-Signed-off-by: Maxime Ripard <maxime@cerno.tech>
----
- drivers/clk/stm32/clk-stm32-core.c | 31 +++++++++++++++++++++----------
- 1 file changed, 21 insertions(+), 10 deletions(-)
+> +
+> +  phy-names:
+> +    items:
+> +      - const: hdmiphy
 
-diff --git a/drivers/clk/stm32/clk-stm32-core.c b/drivers/clk/stm32/clk-stm32-core.c
-index 3247539683c9..4027ca7d9806 100644
---- a/drivers/clk/stm32/clk-stm32-core.c
-+++ b/drivers/clk/stm32/clk-stm32-core.c
-@@ -349,14 +349,15 @@ static int clk_stm32_divider_set_rate(struct clk_hw *hw, unsigned long rate,
- 	return ret;
- }
- 
--static long clk_stm32_divider_round_rate(struct clk_hw *hw, unsigned long rate,
--					 unsigned long *prate)
-+static int clk_stm32_divider_determine_rate(struct clk_hw *hw,
-+					    struct clk_rate_request *req)
- {
- 	struct clk_stm32_div *div = to_clk_stm32_divider(hw);
- 	const struct stm32_div_cfg *divider;
-+	unsigned long rate;
- 
- 	if (div->div_id == NO_STM32_DIV)
--		return rate;
-+		return 0;
- 
- 	divider = &div->clock_data->dividers[div->div_id];
- 
-@@ -367,14 +368,24 @@ static long clk_stm32_divider_round_rate(struct clk_hw *hw, unsigned long rate,
- 		val =  readl(div->base + divider->offset) >> divider->shift;
- 		val &= clk_div_mask(divider->width);
- 
--		return divider_ro_round_rate(hw, rate, prate, divider->table,
--				divider->width, divider->flags,
--				val);
-+		rate = divider_ro_round_rate(hw, req->rate, &req->best_parent_rate,
-+					     divider->table, divider->width, divider->flags,
-+					     val);
-+		if (rate < 0)
-+			return rate;
-+
-+		req->rate = rate;
-+		return 0;
- 	}
- 
--	return divider_round_rate_parent(hw, clk_hw_get_parent(hw),
--					 rate, prate, divider->table,
--					 divider->width, divider->flags);
-+	rate = divider_round_rate_parent(hw, clk_hw_get_parent(hw),
-+					 req->rate, &req->best_parent_rate,
-+					 divider->table, divider->width, divider->flags);
-+	if (rate < 0)
-+		return rate;
-+
-+	req->rate = rate;
-+	return 0;
- }
- 
- static unsigned long clk_stm32_divider_recalc_rate(struct clk_hw *hw,
-@@ -602,7 +613,7 @@ static void clk_stm32_composite_disable_unused(struct clk_hw *hw)
- const struct clk_ops clk_stm32_composite_ops = {
- 	.set_rate	= clk_stm32_composite_set_rate,
- 	.recalc_rate	= clk_stm32_composite_recalc_rate,
--	.round_rate	= clk_stm32_composite_round_rate,
-+	.determine_rate	= clk_stm32_composite_determine_rate,
- 	.get_parent	= clk_stm32_composite_get_parent,
- 	.set_parent	= clk_stm32_composite_set_parent,
- 	.enable		= clk_stm32_composite_gate_enable,
+Drop entire phy-names, not useful with one entry matching the name of
+theh block.
 
--- 
-b4 0.11.0-dev-99e3a
+> +
+> +  interrupts:
+> +    items:
+> +      - description: Hotplug detect interrupter for cable plugin event.
+> +      - description: Hotplug detect interrupter for cable plugout event.
+> +
+> +  interrupt-names:
+> +    items:
+> +      - const: plug_in
+> +      - const: plug_out
+> +
+> +  port:
+> +    $ref: /schemas/graph.yaml#/properties/port
+> +    description:
+> +      A port node pointing to the output port of a display controller..
+
+Just one '.' at the end.
+
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+> +    mhdp: mhdp@32c00000 {
+
+Node names should be generic, so hdmi-bridge, display-controller or just
+"hdmi"
+https://devicetree-specification.readthedocs.io/en/latest/chapter2-devicetree-basics.html#generic-names-recommendation
+
+
+> +        compatible = "cdns,mhdp-imx8mq-hdmi";
+> +        reg = <0x32c00000 0x100000>;
+
+
+Best regards,
+Krzysztof
+
 
 -- 
 linux-phy mailing list
