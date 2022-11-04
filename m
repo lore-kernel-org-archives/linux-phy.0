@@ -4,74 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6463AC4321E
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9022BC43219
 	for <linux-phy@archiver.kernel.org>; Fri,  4 Nov 2022 20:54:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=nHl3RhqUg2lGk8TCiU+amI4diPsXbOOAldxnfmKSN64=; b=a40X8nnHl+v9G/
-	wVwO03kwmcp3dii+wCdf9dVou1fP+RmFmIyqibMzd1rFaFBqJzwN1wqrc8p9xn789G8yTSVCOT1TJ
-	yMCs5S3oODdamm+gb/z5ysS2cS8bIO/0n0UnRs4NeaDY6J3U3T7zchIsAHWxY+yaWOR/NFNffoTWm
-	P1+6hEkLEMFV6M+63AW9jsM5c2NufGADHFSSPTowThsKtZDSbdk7sFOlDxj5BrG+LKTaY1iXMEshO
-	+crZhD/pOQckFeCp3CBQa/IZpGVXy6XKPCnCyUXJQAzv4A2XJqSlntNGqhOBu3iJKn1CT+pepFWI1
-	9nt/nnvxXZmhrjAkvEUQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=q/EVMrQ/eY1HDo9igMCCV/6GQ1lmNBKIhMzdTeBRXLA=; b=XPHvFrrm0s23sL
+	OT19nntaeUF1/gt9iFg+nlv059UiKC1i/YC9qtPVNWgSfW+wGlujUoG2x+sylXgfk8mUgteqfDpIc
+	kl2u5fLxprIhl8Q4S9DtuBhJ98/Zm+gQWYJ3mZWrwFev567EFZWdhtcSWoahRsoiuAA8pJ8Fqx518
+	x8S5W6RvxI5GAXbDuMpEk9vCVq4U7Wl8xpy5hwgI2Qako5HRRacpOsdKyQvLQ16/eA0ryd3OpXO5E
+	snxVkX0Zx9wJCFQfgPzILte/bfI/0aF/fscvytxhaxYvGeFbN4LROcI7iXaBp9Ma2TPoPQjGrTMSS
+	inDscjXm5ndkdhRQE7Vg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1or3hw-0056DU-OR; Fri, 04 Nov 2022 20:54:32 +0000
+	id 1or3hw-0056Di-Td; Fri, 04 Nov 2022 20:54:32 +0000
 Received: from out1-smtp.messagingengine.com ([66.111.4.25])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1or3hr-0056AB-Ai
+	id 1or3hs-0056An-95
 	for linux-phy@lists.infradead.org; Fri, 04 Nov 2022 20:54:31 +0000
 Received: from compute1.internal (compute1.nyi.internal [10.202.2.41])
-	by mailout.nyi.internal (Postfix) with ESMTP id 42D235C0095;
-	Fri,  4 Nov 2022 16:54:23 -0400 (EDT)
+	by mailout.nyi.internal (Postfix) with ESMTP id AC3BF5C009A;
+	Fri,  4 Nov 2022 16:54:27 -0400 (EDT)
 Received: from mailfrontend1 ([10.202.2.162])
-  by compute1.internal (MEProxy); Fri, 04 Nov 2022 16:54:23 -0400
+  by compute1.internal (MEProxy); Fri, 04 Nov 2022 16:54:27 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=fastmail.com.au;
 	 h=cc:cc:content-transfer-encoding:date:date:from:from
-	:in-reply-to:message-id:mime-version:reply-to:sender:subject
-	:subject:to:to; s=fm3; t=1667595263; x=1667681663; bh=nAQClq+Tqo
-	FF3Rk/ZtLA/p66I0V8hKd6yC+jF0Tb33s=; b=af6z3E0mbmtQVVMtkFIzKx7rPt
-	GVLtogtKli44vd3zwqQfUOQeGSVuyDz8lAovefVea8hoxCjcvbV4p0JjPo+mQ7yH
-	4arvpQWAaLkSyOXGGz/X3YDiYsR7TSaQUeBqolqUO4Q2xPaX/bZbubDerHeFRuDo
-	yPmagKKLn3PlHBog8hmvjVbi4G9p0jXPVZ5IEGH+utcZr0UQa/4TozZuNuDyGQUA
-	66sUhFWpVC798dIlTxLSD56UuKz3G04b0w7YJHDm0wQloH2MF9O1E5PGBtYVrhz6
-	+eOm1AsT19HbSdM4IC50kNIxklfZoyRfnhjzR7MMAvZ6lvhnqU1YJ5KU7crA==
+	:in-reply-to:in-reply-to:message-id:mime-version:references
+	:reply-to:sender:subject:subject:to:to; s=fm3; t=1667595267; x=
+	1667681667; bh=lJsdPrNmT8+mD6s1iPhVQ7qYCLCp7h1cNeMluNK4XT4=; b=E
+	O6eOBOkVKmYCBEl3HdGVUheKJcMVNMqYzWzy5OoM9/f421xFhaEPsDGf/FfYoleT
+	7COY6kt4OFxYjJibQB4KLrvM8CZk/hO5E1L40EIk0cKqU2N8SZYf+dvX8a5dbScz
+	JZlF1KyLASTAtMIXvMXk2eCS/gSF+F3SdICdbNJ4PxtdCstb3IPO3rKc8oaNoomM
+	TBA8OUhDTIKZjN9Hbty1K4YAno1OA1/zbMpVxsFnwyxAvLHP0Sy54VMVZvaaa/Wn
+	4f+ICKW77WDO7dduPDsPWzr/5RpyDeI0bziRHhtiy3g/9Elx2vQIrnCx/iAytstM
+	0oppi6LGjUm3pmdj5zFVg==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
 	messagingengine.com; h=cc:cc:content-transfer-encoding:date:date
-	:feedback-id:feedback-id:from:from:in-reply-to:message-id
-	:mime-version:reply-to:sender:subject:subject:to:to:x-me-proxy
-	:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; t=
-	1667595263; x=1667681663; bh=nAQClq+TqoFF3Rk/ZtLA/p66I0V8hKd6yC+
-	jF0Tb33s=; b=CuX9+0x5RHGqdqT1Go3gEQFA3csMghXXP8cvTsY8JQmnO+p2aqz
-	NOmH4ZzWVQWPXE0eB0fsnppFOCuti/7ytYHc00sQzT3kjfuikFznPzi3/wbXGKMC
-	RzJIKittMSj06LpOOERfmzPByLwlMmoivq4CXMy+LsfuyVQ0v1uV9FXjZ6IuBl3K
-	tdSlSiqOfretSHFWo3QNBQxir3FuhmHEAIN1tAGFehBg6ovh82YGIHFBeS6TZENv
-	KpOHAIsQm61VrDwS1j7YJbgGR59Bqicg5kaeduGkpHQqm2H6WS+VYqCo9AjGJvyt
-	OdWKkRhPMqSN97I+3DjZ9ogzAVIUQgpZmMw==
-X-ME-Sender: <xms:_ntlY2vmW-e9TIrY4GKDanVcZby5C1izsJFsFE8oDkSCHkTMl-3bHQ>
-    <xme:_ntlY7dZv496YUbR55kyAoVa1kcaLg_O9UYqdz41FNQq3BQI7KXRbQ1w8fOcs2EL5
-    n1dUxZAuB3JAvtU_w>
-X-ME-Received: <xmr:_ntlYxz1J31TlAerJlQDAdarFm4d2KXx3eABuWDNnP0kEwtHcoDhDvLr8J_sRAgXWROtCDZSw-_XXeV78cfnAwe6XfUXXmB97KtybXST5MnT2-omRvSktEMAGvY3zIHf>
+	:feedback-id:feedback-id:from:from:in-reply-to:in-reply-to
+	:message-id:mime-version:references:reply-to:sender:subject
+	:subject:to:to:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender
+	:x-sasl-enc; s=fm3; t=1667595267; x=1667681667; bh=lJsdPrNmT8+mD
+	6s1iPhVQ7qYCLCp7h1cNeMluNK4XT4=; b=e9E70KT7Ua6gQif8RAr7lQ1yJk4Xh
+	wmbs5nxg48WLha1z/Yg0E+DgebkVhvuwPm/WlXnLQUZYBuJAbtyBnlI+eV6JlL1d
+	qjyN4X0IqNrRhMFvIbKP+z1zIRtzYWMLzOFMUG4wme0lm1wS9KntQWzwkor4zvgg
+	sQNKb60tUEmBUaULO7sPqordbnWztqG/FPNedCUNIM/I0/ryBDYTH2CvKb5+9Z2K
+	fuFLx+YYsF8Hquhl+bSvahrc1RMNzEIaJFJtgdoPEJOjOUlA2T55vkYJyf+ELMXl
+	BEbRHaRPrjWKlnZooyP/2sb6AnsWECNzIZP1Q7hGD2BdfNkYTD6qvL4JA==
+X-ME-Sender: <xms:A3xlYxZXUuaLVPp_MHbir-9adoGbzmuVXBfKpN_emXnAX7sUeMUe7Q>
+    <xme:A3xlY4b0iq_W8WSZp9QClKVKWsmJV78H5OP8WvDVHKFBJbM0RtoL-0S8KA5kUdGse
+    vtc34XCv8kY3cKRbA>
+X-ME-Received: <xmr:A3xlYz_ZwizbfJ1pKI_z4B9iaGvEr2AD_OpvMGCEpCXoenKRGTc2mBUrvGi6Huww1_V1mAGIsPdGUtP5kAMd-dTFliLS9tLM3RTMArgjKpSZwAeppYpZPvvB_BZjKa05>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvgedrvddugddufeelucetufdoteggodetrfdotf
     fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
     uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
-    cujfgurhephffvvefufffkofgggfestdekredtredttdenucfhrhhomheplfhohhhnucfv
-    hhhomhhsohhnuceoghhithesjhhohhhnthhhohhmshhonhdrfhgrshhtmhgrihhlrdgtoh
-    hmrdgruheqnecuggftrfgrthhtvghrnhepfedvkeevgefgkeeghedvleetieffhefgiefh
-    lefgvdekfedvteekueeuveelheevnecuffhomhgrihhnpehkvghrnhgvlhdrohhrghenuc
-    evlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhrohhmpehgihhtsehj
-    ohhhnhhthhhomhhsohhnrdhfrghsthhmrghilhdrtghomhdrrghu
-X-ME-Proxy: <xmx:_3tlYxPx7bKjZ8PaeL5IMg6MqSJ3kZMqbdFnULTxCGjJs3m7yyruWQ>
-    <xmx:_3tlY297rungBX7x8uhVX9smJahAzhM3bhENgyepHYvpiWMaBZfUcw>
-    <xmx:_3tlY5Xkas8LL1gCor1_PZBDoMimdGG5UDYnFgFowPUF238EWKoCJA>
-    <xmx:_3tlY33H9tBHty31XDkYRCIXzlWmV9P5qxKucc8n0mgD99a_Wbu1KQ>
+    cujfgurhephffvvefufffkofgjfhgggfestdekredtredttdenucfhrhhomheplfhohhhn
+    ucfvhhhomhhsohhnuceoghhithesjhhohhhnthhhohhmshhonhdrfhgrshhtmhgrihhlrd
+    gtohhmrdgruheqnecuggftrfgrthhtvghrnhepffetgedttdefvddvhfeifedvvdeuveeg
+    hedvieffudegudduudehudfhjeekhfevnecuffhomhgrihhnpehkvghrnhgvlhdrohhrgh
+    enucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhrohhmpehgihht
+    sehjohhhnhhthhhomhhsohhnrdhfrghsthhmrghilhdrtghomhdrrghu
+X-ME-Proxy: <xmx:A3xlY_qFHEtu_bOuWS3h0ctm5bTyOxhlzJIYUdSFNM1DuRRUBz_LCg>
+    <xmx:A3xlY8prPyaIrMN2K_wfvj5u6hZN4P9nLpqaG2MPuUQkwCPNaTiWSQ>
+    <xmx:A3xlY1T99k6CDvRHwmwcwR2X4pxU0mv_1BDGaQEU7WM9d2rwyo08Kw>
+    <xmx:A3xlYxQNV4MOzYkJ0zZFAWDTv61c2i1f-IhApDDFkSllKDXqY9MaFw>
 Feedback-ID: ic081425d:Fastmail
 Received: by mail.messagingengine.com (Postfix) with ESMTPA; Fri,
- 4 Nov 2022 16:54:19 -0400 (EDT)
+ 4 Nov 2022 16:54:23 -0400 (EDT)
 From: John Thomson <git@johnthomson.fastmail.com.au>
 To: Sergio Paracuellos <sergio.paracuellos@gmail.com>,
 	Kishon Vijay Abraham I <kishon@ti.com>,
@@ -84,16 +85,18 @@ To: Sergio Paracuellos <sergio.paracuellos@gmail.com>,
 	=?UTF-8?q?Ar=C4=B1n=C3=A7=20=C3=9CNAL?= <arinc.unal@arinc9.com>
 Cc: linux-phy@lists.infradead.org,
 	linux-pci@vger.kernel.org,
-	linux-kernel@vger.kernel.org
-Subject: [PATCH 0/2] mt7621 pci & phy-pci fix future oops from soc_device_match_attr
-Date: Sat,  5 Nov 2022 06:52:40 +1000
-Message-Id: <20221104205242.3440388-1-git@johnthomson.fastmail.com.au>
+	linux-kernel@vger.kernel.org,
+	John Thomson <git@johnthomson.fastmail.com.au>
+Subject: [PATCH 1/2] phy: ralink: mt7621-pci: add sentinel to quirks table
+Date: Sat,  5 Nov 2022 06:52:41 +1000
+Message-Id: <20221104205242.3440388-2-git@johnthomson.fastmail.com.au>
 X-Mailer: git-send-email 2.37.2
+In-Reply-To: <20221104205242.3440388-1-git@johnthomson.fastmail.com.au>
+References: <20221104205242.3440388-1-git@johnthomson.fastmail.com.au>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221104_135428_057319_F2CE0CEA 
-X-CRM114-Status: UNSURE (   7.04  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20221104_135428_406166_32C00766 
+X-CRM114-Status: GOOD (  10.83  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -110,90 +113,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-A change in the mm/slub code identified that the arch/mips/ralink/mt7621.c
-soc_dev_init function attempted to kzalloc too early.
-https://lore.kernel.org/linux-mm/becf2ac3-2a90-4f3a-96d9-a70f67c66e4a@app.fastmail.com/
-RFC fix: https://lore.kernel.org/lkml/20221103050538.1930758-1-git@johnthomson.fastmail.com.au/
+With mt7621 soc_dev_attr fixed to register the soc as a device,
+kernel will experience an oops in soc_device_match_attr
 
-Fixing that mips mt7621 issue exposes an oops in testing the quirk table.
-I think we do want these changes committed before the mt7621
-kzalloc too early fix, otherwise I introduce oops.
+This quirk test was introduced in the staging driver in
+commit 9445ccb3714c ("staging: mt7621-pci-phy: add quirks for 'E2'
+revision using 'soc_device_attribute'"). The staging driver was removed,
+and later re-added in commit d87da32372a0 ("phy: ralink: Add PHY driver
+for MT7621 PCIe PHY") for kernel 5.11
 
-Checkpatch warns on the pci Fixes tag, and suggests
-my change for the Fixes tag.
+Link: https://lore.kernel.org/lkml/26ebbed1-0fe9-4af9-8466-65f841d0b382@app.fastmail.com
+Fixes: d87da32372a0 ("phy: ralink: Add PHY driver for MT7621 PCIe PHY")
+Signed-off-by: John Thomson <git@johnthomson.fastmail.com.au>
+---
+ drivers/phy/ralink/phy-mt7621-pci.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-I am not sure if we want these backported to stable trees?
-Then, if I need separate patches for the staging drivers in 5.10 pci-phy
-and 5.15 pci?
-
-
-Oops example after the mt7621 kzalloc too early fix atop v6.1-rc2
-From Sergio Paracuellos in
-https://lore.kernel.org/lkml/CAMhs-H-Eo0ELMpy0iPakTA-3nHdY_mYQG-rrqgSotBKKED=eOg@mail.gmail.com/
-[   20.569959] CPU 0 Unable to handle kernel paging request at virtual
-address 675f6b6c, epc == 80403dec, ra == 804ae11c
-[   20.591060] Oops[#1]:
-[   20.595462] CPU: 0 PID: 1 Comm: swapper/0 Not tainted 6.1.0-rc1+ #148
-[   20.608265] $ 0   : 00000000 00000001 82262a00 00000000
-[   20.618615] $ 4   : 675f6b6c 808dea04 00000000 804ae138
-[   20.628983] $ 8   : 00000000 808787ba 00000000 821f4b00
-[   20.639351] $12   : 0000005b 0000005d 0000002d 0000005c
-[   20.649735] $16   : 82253580 807b4034 807b4034 804ae138
-[   20.660087] $20   : fffffff4 82c382b8 809e1094 00000008
-[   20.670455] $24   : 0000002a 0000003f
-[   20.680823] $28   : 82050000 82051c30 80a0d638 804ae11c
-[   20.691190] Hi    : 00000037
-[   20.696891] Lo    : 5c28f6a0
-[   20.702610] epc   : 80403dec glob_match+0x1c/0x240
-[   20.712100] ra    : 804ae11c soc_device_match_attr+0xac/0xc8
-[   20.723330] Status: 11000403 KERNEL EXL IE
-[   20.731626] Cause : 40800008 (ExcCode 02)
-[   20.739576] BadVA : 675f6b6c
-[   20.745277] PrId  : 0001992f (MIPS 1004Kc)
-[   20.753414] Modules linked in:
-[   20.759448] Process swapper/0 (pid: 1, threadinfo=(ptrval),
-task=(ptrval), tls=00000000)
-[   20.775520] Stack : fffffff4 80496ab8 820c6010 828c8518 80950000
-ffffffea 80950000 80496b48
-[   20.792106]         00000000 828c8400 820c6010 821f4880 1e160000
-821bc754 82253734 7f8268e6
-[   20.808707]         809c6a94 807b4034 804ae138 809c8e88 819a0000
-804ae1d8 80a0d638 80438e10
-[   20.825282]         821f3e70 80950000 808c0000 828c8400 820c6000
-828c8548 820c6010 80456608
-[   20.841879]         821f3dc0 821d32c0 819a0000 801d8768 821f3dc0
-821d32c0 828c8540 80950000
-[   20.858473]         ...
-[   20.863298] Call Trace:
-[   20.868137] [<80403dec>] glob_match+0x1c/0x240
-[   20.876955] [<804ae11c>] soc_device_match_attr+0xac/0xc8
-[   20.887500] [<80496b48>] bus_for_each_dev+0x7c/0xc0
-[   20.897176] [<804ae1d8>] soc_device_match+0x98/0xc8
-[   20.906869] [<80456608>] mt7621_pcie_probe+0x90/0x7b8
-[   20.916876] [<8049b46c>] platform_probe+0x54/0x94
-[   20.926206] [<80499058>] really_probe+0x200/0x434
-[   20.935538] [<80499520>] driver_probe_device+0x44/0xd4
-[   20.945732] [<80499ae0>] __driver_attach+0xb8/0x1b0
-[   20.955428] [<80496b48>] bus_for_each_dev+0x7c/0xc0
-[   20.965089] [<80497f18>] bus_add_driver+0x100/0x218
-[   20.974763] [<8049a338>] driver_register+0xd0/0x118
-[   20.984438] [<80001590>] do_one_initcall+0x8c/0x28c
-[   20.994115] [<809e21c8>] kernel_init_freeable+0x254/0x28c
-[   21.004845] [<80781070>] kernel_init+0x24/0x118
-[   21.013830] [<800034f8>] ret_from_kernel_thread+0x14/0x1c
-[   21.024522]
-[   21.027457] Code: 240f005c  2418002a  2419003f <80820000> 24a90001
-90a70000  104c006f  24860001  2843005c
-[   21.046810]
-[   21.049830] ---[ end trace 0000000000000000 ]---
-[   21.058935] Kernel panic - not syncing: Fatal exception
-[   21.069310] Rebooting in 1 seconds..
-
-
-Cheers,
-
-John
-
+diff --git a/drivers/phy/ralink/phy-mt7621-pci.c b/drivers/phy/ralink/phy-mt7621-pci.c
+index 5e6530f545b5..85888ab2d307 100644
+--- a/drivers/phy/ralink/phy-mt7621-pci.c
++++ b/drivers/phy/ralink/phy-mt7621-pci.c
+@@ -280,7 +280,8 @@ static struct phy *mt7621_pcie_phy_of_xlate(struct device *dev,
+ }
+ 
+ static const struct soc_device_attribute mt7621_pci_quirks_match[] = {
+-	{ .soc_id = "mt7621", .revision = "E2" }
++	{ .soc_id = "mt7621", .revision = "E2" },
++	{ /* sentinel */ }
+ };
+ 
+ static const struct regmap_config mt7621_pci_phy_regmap_config = {
+-- 
+2.37.2
 
 
 -- 
