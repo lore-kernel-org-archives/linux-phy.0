@@ -4,81 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A1F5DC433FE
-	for <linux-phy@archiver.kernel.org>; Fri,  4 Nov 2022 15:30:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 77C50C43217
+	for <linux-phy@archiver.kernel.org>; Fri,  4 Nov 2022 15:30:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LPoplPwiVRYX233XV500mFfAHI30X2YLBEbql5TQBPM=; b=mbHr+hWcsRkY34
-	JFei3iASth/5set6AU9phu5TRiLwWLLhROkR7Q4QiKn0H8Mz42yt4nmMVz7OtQcP24VZeHMXZEWn4
-	KNOqeM1RoYCxzyaebLpTQIQ8M4691wMC771uH+dd5E4dAi1PNdIpuT9wo1YxCd0LdsghBY6W5TwvC
-	xy2tD6v2C29HXj0V1cEXNYeTu6GXtOlM8xZo2IB5XsQx6nZR4I5X/ZITjTrXemZF0T5QQEIcNlxqE
-	/80g5ofuskznZUSnm0a3c4kQzkLZXaVahBvbME12aubTvqQlVhuUlZSChOBYxbS9S5VIVreTZTKJC
-	cyuuOC4PeXF0UZ3EarJA==;
+	List-Owner; bh=TqhS4I8ycAnxgZ1uLVNb/UbGaRwh1yEwZvszntah9vY=; b=hQHygk28sPWL2v
+	1f3RRDch2v/SQ8ADg9TKSDQrKGzOtNIxk4+6zKAG/f5RrS5WCRA9AZkiudov3air5yU6VyNfOKXH0
+	ErAY4r41T3PM2flEnOA3Z7DTW9Nz+LkQr8UUleMAOJwbjm5cq5PNbOWE7TUmSfL+HMMr5mMgOTla0
+	dzdWPYWC+r5GFlB0V3nCsanQaInAdL7+yWDQzN+UZxNrW5fRt0zx3fjaGuysrbbfqNDlaPKFQwJv2
+	uTrfeh5umoS1nZLFZN8M2S4jcK81sgdebqsfS5BiSDNSCBnhgjecd/lvpX0yNRBUFaYM3Y8vTTedX
+	tl3Na8qLw/tSJdjBV+rQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oqyef-004EGm-UX; Fri, 04 Nov 2022 15:30:49 +0000
+	id 1oqyeg-004EH3-8c; Fri, 04 Nov 2022 15:30:50 +0000
 Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oqyby-004D5W-Nk
-	for linux-phy@bombadil.infradead.org; Fri, 04 Nov 2022 15:28:02 +0000
+	id 1oqybz-004D5W-9m
+	for linux-phy@bombadil.infradead.org; Fri, 04 Nov 2022 15:28:03 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=infradead.org; s=desiato.20200630; h=Cc:To:In-Reply-To:References:
 	Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
 	From:Sender:Reply-To:Content-ID:Content-Description;
-	bh=7j8J0GyRQ+3FBMQUBdmjs2oV8Oh7JyCUOZ1fdQPOAqU=; b=AxrZAKjyBjt/GHeGIw3d4UpcdS
-	C2jGJHd95XMrey/AfjzTBvF+eRCeCUcAi70dieIvMbH8oAZsGcO7WgUwIBqbGvQ8ERtt9iL4cZLA8
-	rzfsFqyASGkv2/RyjzO+gpQK8EKnGE5Svgyb+O2pEUnT+BDpTV2CLWhqaRVEr9kNI6U58vfw+Xa5Q
-	db8gnZoEDgmWtzHCDRvIDjgN5r+rHB/fBjSTyGzDbycQupQD8NUrW/J9AlDw3eedKIha2jN+bBpiO
-	oJnKknH4E1rps+EGv0b1csayzZlDRctLj+UqBaqrsoPLbWHqSdUJppDQc7/qxGGn8paLxq6QH8xTM
-	HkF6hQ2Q==;
-Received: from mail-wr1-x42c.google.com ([2a00:1450:4864:20::42c])
+	bh=6zHUtmTd6RGvQvohicUDo1+C3cWxOXttYxoZ7C1AyNM=; b=iWxjGdnWuEsBrGE/zQn81iHJjW
+	PpHyX3w7cqW7ypXgIDHrnCqJZbQ7mzLZr3LnhDHJOBJ15S6sVF2++puC0eMhITEclaz7CrQW6MNZz
+	NAJXhoX/m01UphtJXQoj6eHrgj5szXMak6ZOtfialPys1DngJrX1M0/iNC0aH3t3K3qP1QKVatHiq
+	oLybwijKn5S3b2C3FyLTGqkwjGeGgoyMKTKWH+BLkeiuumFYqdUuulN1ghfVdKlzMO1mOFSv1c9dd
+	56daU5DGbWtKWxjOVDIt8TohbzAn/tdMcys2N0NJf/QEiDdRmOgC+RuemUyWSPFMUNuOf8+h04R3R
+	HGfkia+g==;
+Received: from mail-wm1-x330.google.com ([2a00:1450:4864:20::330])
 	by desiato.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oqxSo-008zJV-U7
-	for linux-phy@lists.infradead.org; Fri, 04 Nov 2022 14:14:56 +0000
-Received: by mail-wr1-x42c.google.com with SMTP id z14so7242386wrn.7
-        for <linux-phy@lists.infradead.org>; Fri, 04 Nov 2022 07:14:23 -0700 (PDT)
+	id 1oqxSo-008zJO-JM
+	for linux-phy@lists.infradead.org; Fri, 04 Nov 2022 14:14:42 +0000
+Received: by mail-wm1-x330.google.com with SMTP id l39-20020a05600c1d2700b003cf93c8156dso1738428wms.4
+        for <linux-phy@lists.infradead.org>; Fri, 04 Nov 2022 07:14:19 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=baylibre-com.20210112.gappssmtp.com; s=20210112;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=7j8J0GyRQ+3FBMQUBdmjs2oV8Oh7JyCUOZ1fdQPOAqU=;
-        b=IMJ0/xILZLVnEBkansscKE2Eh+TOqfaPGt6+fS5MoahXAw4xQWsMFptqup5TY0PCAo
-         GZGcCUKP6SWPPT0FSv4pmMx0ylBNC9wV1e4eqo5kQ5LwXXvbnP1JfSShO3Z3bU/eI/PM
-         FZckgLajLIuLcrLT5f9s6QcvxqBeBDwQ088uQjQQ8ocitX3xPwFlKkTvbX829K/hMmGi
-         Q1pdrFIKwAZKSqF95C9egvE+pux2nfW1fYOEAWDcSWs/UIDYG0XEHNCjbffd/UpWvlVf
-         zSfyd8MX20w9V+DVRsQfd9eCJOa7zoZ59SUrI6ZD2mJDJl7bN2QJE3NFyhALdc75JYBu
-         +Dnw==
+        bh=6zHUtmTd6RGvQvohicUDo1+C3cWxOXttYxoZ7C1AyNM=;
+        b=sZpvZ48ZfL7ZHUcpdBGfIoKduwmTvL5EhX1uFBCa2jEXcfr8mcna8xs2xPZJpfBmCq
+         mKRUawmP8LzwcDAHLdITjH8mTdt2rR/RHm1wZbUujLSRnEaBYxYpn8k2tVgkyGqcQHXZ
+         V3C4NsMONBKoa75jZtvRtV2C9MrRVBEZzGCdJ8s56Uwi3/Lddwv3enOncogOyPK1oHB6
+         rsOArGEyYJi+GvlMMLK73qYd9vDx/0+mDExpKhenqU3UezG2QL2qCgSZgsJLuUh4zEs4
+         zmr8dooJSIFg7feKCmSZNEit3n9En4LRHKD0xhcwlvot+bE9rHyuuqSiZ9Zm+n/EpSJE
+         qCyA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=7j8J0GyRQ+3FBMQUBdmjs2oV8Oh7JyCUOZ1fdQPOAqU=;
-        b=5iyYGbMx4EcV9uCyj8ffKmLu2DfnNDkD/539Fse0AinrNg0i1jVBc4hCPriVtm/lzp
-         rerrK2KnpVKolFtMWI0C/t3B9mQvA8Xvb/FLxfyh+D/DqgLnn/zvQlUDDCLKA7cMkJ1/
-         vmp/l4068HZxS4hOLMiyYb+/s5NPot3HpxE4HV8D4CtOgEgNDHJ0VPoqSetM9Ocnh5Dn
-         L6574YdnTY/Htzr6xghNpNF/yuMTptZihnDKRN2DFOhySGCYsW/KUNe+eTYrb4hlPVim
-         2AyA0lcIw3kBLtLWVYCeP46d+ARtGh4/8ZMuXXVUX8YKd0gVIg/o1arcrfws4Sr6OD1w
-         j8RQ==
-X-Gm-Message-State: ACrzQf1fRreD81fzUmaKRJnBzf26llK70rC/Gu4CPqc94Lm1QvAV0Ua3
-	OwtxbowRbITVDvQy0fRYyCiEqw==
-X-Google-Smtp-Source: AMsMyM6HXnNdQ/QYpBAAIlY6JikFdXDRR5XgC5IY58zXDJatWjhm7npzfVuwgaj50mUZ3olhGPjZ1Q==
-X-Received: by 2002:a05:6000:689:b0:236:6c3e:ec88 with SMTP id bo9-20020a056000068900b002366c3eec88mr22263000wrb.346.1667571262227;
-        Fri, 04 Nov 2022 07:14:22 -0700 (PDT)
+        bh=6zHUtmTd6RGvQvohicUDo1+C3cWxOXttYxoZ7C1AyNM=;
+        b=4/aED5JOQsOsKyRYJ1GWz3M82KFpFbVaGcXq4T14D+07jpsRO+dC11rTsv16X1T3pl
+         gswTmTT6BYQuHGsjHe9QO9Yc82689X9nnpuwx3nr9z8LWqEwFe+eRKgT9wcVhC7nGQah
+         F/uFgU/kV3Aw/RhSMQ6GGyoixaeJe6huUpwo8CNvohz0bjC1D68DXsrX67AIZ2iWGmAq
+         GALUXGjMn/cW5ZGvOT/ESLEHENpjcNxTC7IFWcefQL32rELaMuJrr0DRsn8MQnrxWw2J
+         FQxWritBo9WB6miRaHyngkheteU+AeLdrd4sMJpuu6sXvbckM4cL/fqWZVOiZl9u6VCl
+         oldQ==
+X-Gm-Message-State: ACrzQf2OmR206Z+Kb5IyPnztleyAEBWGXc7C6QXuDQo3RjNcpWsL/oal
+	ELILjNIwxyqU4wcvKiInL0xal11yHhEQ9g==
+X-Google-Smtp-Source: AMsMyM5si9XfQzNepR9daWPGFME2Q9Ye8oPRfuLmG8pAZT/Jkr0RR5GB/3hFkZ2l/aquOD99c3P13A==
+X-Received: by 2002:a05:600c:4252:b0:3cf:678a:d189 with SMTP id r18-20020a05600c425200b003cf678ad189mr23153902wmm.51.1667571258161;
+        Fri, 04 Nov 2022 07:14:18 -0700 (PDT)
 Received: from [127.0.0.1] (2a02-8440-6440-7fff-3074-96af-9642-0003.rev.sfr.net. [2a02:8440:6440:7fff:3074:96af:9642:3])
-        by smtp.gmail.com with ESMTPSA id bj9-20020a0560001e0900b002365cd93d05sm3594512wrb.102.2022.11.04.07.14.20
+        by smtp.gmail.com with ESMTPSA id bj9-20020a0560001e0900b002365cd93d05sm3594512wrb.102.2022.11.04.07.14.16
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 04 Nov 2022 07:14:21 -0700 (PDT)
+        Fri, 04 Nov 2022 07:14:17 -0700 (PDT)
 From: Guillaume Ranquet <granquet@baylibre.com>
-Date: Fri, 04 Nov 2022 15:09:54 +0100
-Subject: [PATCH v3 08/12] drm/mediatek: hdmi: v2: add audio support
+Date: Fri, 04 Nov 2022 15:09:52 +0100
+Subject: [PATCH v3 06/12] drm/mediatek: hdmi: add frame_colorimetry flag
 MIME-Version: 1.0
-Message-Id: <20220919-v3-8-a803f2660127@baylibre.com>
+Message-Id: <20220919-v3-6-a803f2660127@baylibre.com>
 References: <20220919-v3-0-a803f2660127@baylibre.com>
 In-Reply-To: <20220919-v3-0-a803f2660127@baylibre.com>
 To: Rob Herring <robh+dt@kernel.org>, Chun-Kuang Hu <chunkuang.hu@kernel.org>, Chunfeng Yun <chunfeng.yun@mediatek.com>,
@@ -93,8 +93,8 @@ Cc: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, linux-arm-kernel@lists
  linux-phy@lists.infradead.org
 X-Mailer: b4 0.11.0-dev
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221104_141454_319669_3FD7C6B1 
-X-CRM114-Status: GOOD (  18.55  )
+X-CRM114-CacheID: sfid-20221104_141440_453987_9D33FFC5 
+X-CRM114-Status: GOOD (  11.16  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -111,345 +111,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add HDMI audio support for v2
+Add a flag to indicate support for frame colorimetry.
 
 Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
 ---
- drivers/gpu/drm/mediatek/mtk_hdmi_common.c |   1 +
- drivers/gpu/drm/mediatek/mtk_hdmi_ddc_v2.c |   2 +-
- drivers/gpu/drm/mediatek/mtk_hdmi_v2.c     | 213 +++++++++++++++++++++++++++++
- drivers/gpu/drm/mediatek/mtk_hdmi_v2.h     |   2 +
- 4 files changed, 217 insertions(+), 1 deletion(-)
+ drivers/gpu/drm/mediatek/mtk_hdmi_common.c | 11 +++++++++++
+ drivers/gpu/drm/mediatek/mtk_hdmi_common.h |  1 +
+ 2 files changed, 12 insertions(+)
 
 diff --git a/drivers/gpu/drm/mediatek/mtk_hdmi_common.c b/drivers/gpu/drm/mediatek/mtk_hdmi_common.c
-index e43c938a9aa5..1ea91f8bb6c7 100644
+index 3635ca66817b..933c51b5f6d7 100644
 --- a/drivers/gpu/drm/mediatek/mtk_hdmi_common.c
 +++ b/drivers/gpu/drm/mediatek/mtk_hdmi_common.c
-@@ -386,6 +386,7 @@ static const struct mtk_hdmi_conf mtk_hdmi_conf_v2 = {
- 	.mtk_hdmi_output_init = mtk_hdmi_output_init_v2,
- 	.mtk_hdmi_clk_disable = mtk_hdmi_clk_disable_v2,
- 	.mtk_hdmi_clk_enable = mtk_hdmi_clk_enable_v2,
-+	.set_hdmi_codec_pdata = set_hdmi_codec_pdata_v2,
- 	.mtk_hdmi_clock_names = mtk_hdmi_clk_names_v2,
- 	.num_clocks = MTK_HDMIV2_CLK_COUNT,
- };
-diff --git a/drivers/gpu/drm/mediatek/mtk_hdmi_ddc_v2.c b/drivers/gpu/drm/mediatek/mtk_hdmi_ddc_v2.c
-index 61696d255e51..26456802a5c4 100644
---- a/drivers/gpu/drm/mediatek/mtk_hdmi_ddc_v2.c
-+++ b/drivers/gpu/drm/mediatek/mtk_hdmi_ddc_v2.c
-@@ -309,7 +309,7 @@ static int mtk_hdmi_ddc_probe(struct platform_device *pdev)
- 	ddc->regs = device_node_to_regmap(hdmi);
- 	of_node_put(hdmi);
- 	if (IS_ERR(ddc->regs))
--		return dev_err_probe(dev, PTR_ERR(ddc->regs), "Unable to get mt8195-hdmi syscon");
-+		return dev_err_probe(dev, PTR_ERR(ddc->regs), "Unable to get hdmi syscon");
+@@ -120,6 +120,17 @@ int mtk_hdmi_setup_avi_infoframe(struct mtk_hdmi *hdmi, u8 *buffer, size_t bufsz
+ 		return err;
+ 	}
  
- 	ddc->clk = devm_clk_get_enabled(dev, "ddc");
- 	if (IS_ERR(ddc->clk))
-diff --git a/drivers/gpu/drm/mediatek/mtk_hdmi_v2.c b/drivers/gpu/drm/mediatek/mtk_hdmi_v2.c
-index e8457429964d..b391b22fa9f5 100644
---- a/drivers/gpu/drm/mediatek/mtk_hdmi_v2.c
-+++ b/drivers/gpu/drm/mediatek/mtk_hdmi_v2.c
-@@ -211,6 +211,26 @@ static void mtk_hdmi_hw_vid_black(struct mtk_hdmi *hdmi, bool black)
- 		mtk_hdmi_mask(hdmi, TOP_VMUTE_CFG1, 0, REG_VMUTE_EN);
- }
- 
-+static void mtk_hdmi_hw_aud_mute(struct mtk_hdmi *hdmi)
-+{
-+	u32 val;
++	if (hdmi->conf->has_frame_colorimetry) {
++		frame.colorimetry = hdmi->colorimtery;
++		if (frame.colorimetry == HDMI_COLORIMETRY_EXTENDED)
++			frame.extended_colorimetry = hdmi->extended_colorimetry;
 +
-+	val = mtk_hdmi_read(hdmi, AIP_CTRL, &val);
-+
-+	if (val & DSD_EN)
-+		mtk_hdmi_mask(hdmi, AIP_TXCTRL,
-+			      DSD_MUTE_DATA | AUD_MUTE_FIFO_EN,
-+			      DSD_MUTE_DATA | AUD_MUTE_FIFO_EN);
-+	else
-+		mtk_hdmi_mask(hdmi, AIP_TXCTRL, AUD_MUTE_FIFO_EN,
-+			      AUD_MUTE_FIFO_EN);
-+}
-+
-+static void mtk_hdmi_hw_aud_unmute(struct mtk_hdmi *hdmi)
-+{
-+	mtk_hdmi_mask(hdmi, AIP_TXCTRL, AUD_MUTE_DIS, AUD_MUTE_FIFO_EN);
-+}
-+
- static void mtk_hdmi_hw_reset(struct mtk_hdmi *hdmi)
- {
- 	mtk_hdmi_mask(hdmi, HDMITX_CONFIG, 0x0, HDMITX_SW_RSTB);
-@@ -889,6 +909,7 @@ static void mtk_hdmi_audio_reset(struct mtk_hdmi *hdmi, bool rst)
- static void mtk_hdmi_aud_output_config(struct mtk_hdmi *hdmi,
- 				       struct drm_display_mode *display_mode)
- {
-+	mtk_hdmi_hw_aud_mute(hdmi);
- 	mtk_hdmi_aud_enable_packet(hdmi, false);
- 	mtk_hdmi_audio_reset(hdmi, true);
- 	mtk_hdmi_aip_ctrl_init(hdmi);
-@@ -901,6 +922,7 @@ static void mtk_hdmi_aud_output_config(struct mtk_hdmi *hdmi,
- 	usleep_range(25, 50);
- 	mtk_hdmi_aud_on_off_hw_ncts(hdmi, true);
- 	mtk_hdmi_aud_enable_packet(hdmi, true);
-+	mtk_hdmi_hw_aud_unmute(hdmi);
- }
- 
- void mtk_hdmi_output_init_v2(struct mtk_hdmi *hdmi)
-@@ -935,6 +957,28 @@ static void mtk_hdmi_reset_colorspace_setting(struct mtk_hdmi *hdmi)
- 	hdmi->ycc_quantization_range = HDMI_YCC_QUANTIZATION_RANGE_LIMITED;
- }
- 
-+static void mtk_hdmi_audio_enable(struct mtk_hdmi *hdmi)
-+{
-+	mtk_hdmi_aud_enable_packet(hdmi, true);
-+	hdmi->audio_enable = true;
-+}
-+
-+static void mtk_hdmi_audio_disable(struct mtk_hdmi *hdmi)
-+{
-+	mtk_hdmi_aud_enable_packet(hdmi, false);
-+	hdmi->audio_enable = false;
-+}
-+
-+static void mtk_hdmi_audio_set_param(struct mtk_hdmi *hdmi,
-+				     struct hdmi_audio_param *param)
-+{
-+	if (!hdmi->audio_enable)
-+		return;
-+
-+	memcpy(&hdmi->aud_param, param, sizeof(*param));
-+	mtk_hdmi_aud_output_config(hdmi, &hdmi->mode);
-+}
-+
- static void mtk_hdmi_change_video_resolution(struct mtk_hdmi *hdmi)
- {
- 	bool is_over_340M = false;
-@@ -955,6 +999,7 @@ static void mtk_hdmi_change_video_resolution(struct mtk_hdmi *hdmi)
- 
- 	usleep_range(5, 10);
- 	mtk_hdmi_hw_vid_black(hdmi, true);
-+	mtk_hdmi_hw_aud_mute(hdmi);
- 	mtk_hdmi_hw_send_av_unmute(hdmi);
- 
- 	mtk_hdmi_mask(hdmi, TOP_CFG01, NULL_PKT_VSYNC_HIGH_EN,
-@@ -1285,6 +1330,7 @@ static void mtk_hdmi_bridge_disable(struct drm_bridge *bridge,
- 	mtk_hdmi_hw_send_av_mute(hdmi);
- 	usleep_range(50000, 50050);
- 	mtk_hdmi_hw_vid_black(hdmi, true);
-+	mtk_hdmi_hw_aud_mute(hdmi);
- 	mtk_hdmi_disable_hdcp_encrypt(hdmi);
- 	usleep_range(50000, 50050);
- 
-@@ -1293,6 +1339,14 @@ static void mtk_hdmi_bridge_disable(struct drm_bridge *bridge,
- 	hdmi->enabled = false;
- }
- 
-+static void mtk_hdmi_handle_plugged_change(struct mtk_hdmi *hdmi, bool plugged)
-+{
-+	mutex_lock(&hdmi->update_plugged_status_lock);
-+	if (hdmi->plugged_cb && hdmi->codec_dev)
-+		hdmi->plugged_cb(hdmi->codec_dev, plugged);
-+	mutex_unlock(&hdmi->update_plugged_status_lock);
-+}
-+
- static void mtk_hdmi_bridge_post_disable(struct drm_bridge *bridge,
- 					 struct drm_bridge_state *old_state)
- {
-@@ -1306,6 +1360,9 @@ static void mtk_hdmi_bridge_post_disable(struct drm_bridge *bridge,
- 	hdmi->powered = false;
- 
- 	mtk_hdmi_reset_colorspace_setting(hdmi);
-+
-+	/* signal the disconnect event to audio codec */
-+	mtk_hdmi_handle_plugged_change(hdmi, false);
- }
- 
- static void mtk_hdmi_bridge_pre_enable(struct drm_bridge *bridge,
-@@ -1338,6 +1395,10 @@ static void mtk_hdmi_bridge_enable(struct drm_bridge *bridge,
- 	mtk_hdmi_hw_avi_infoframe(hdmi, buffer_avi, sizeof(buffer_avi));
- 
- 	mtk_hdmi_hw_vid_black(hdmi, false);
-+	mtk_hdmi_hw_aud_unmute(hdmi);
-+
-+	/* signal the connect event to audio codec */
-+	mtk_hdmi_handle_plugged_change(hdmi, true);
- 
- 	hdmi->enabled = true;
- }
-@@ -1377,3 +1438,155 @@ const struct drm_bridge_funcs mtk_v2_hdmi_bridge_funcs = {
- 	.get_edid = mtk_hdmi_bridge_get_edid,
- 	.detect = mtk_hdmi_bridge_detect,
- };
-+
-+static void mtk_hdmi_set_plugged_cb(struct mtk_hdmi *hdmi,
-+				    hdmi_codec_plugged_cb fn,
-+				    struct device *codec_dev)
-+{
-+	bool plugged;
-+
-+	mutex_lock(&hdmi->update_plugged_status_lock);
-+	hdmi->plugged_cb = fn;
-+	hdmi->codec_dev = codec_dev;
-+	plugged = (hdmi->hpd == HDMI_PLUG_IN_AND_SINK_POWER_ON) ? true : false;
-+	mutex_unlock(&hdmi->update_plugged_status_lock);
-+
-+	mtk_hdmi_handle_plugged_change(hdmi, plugged);
-+}
-+
-+/*
-+ * HDMI audio codec callbacks
-+ */
-+static int mtk_hdmi_audio_hook_plugged_cb(struct device *dev, void *data,
-+					  hdmi_codec_plugged_cb fn,
-+					  struct device *codec_dev)
-+{
-+	struct mtk_hdmi *hdmi = dev_get_drvdata(dev);
-+
-+	if (!hdmi)
-+		return -ENODEV;
-+
-+	mtk_hdmi_set_plugged_cb(hdmi, fn, codec_dev);
-+	return 0;
-+}
-+
-+static int mtk_hdmi_audio_hw_params(struct device *dev, void *data,
-+				    struct hdmi_codec_daifmt *daifmt,
-+				    struct hdmi_codec_params *params)
-+{
-+	struct mtk_hdmi *hdmi = dev_get_drvdata(dev);
-+	struct hdmi_audio_param hdmi_params;
-+	unsigned int chan = params->cea.channels;
-+
-+	if (!hdmi->bridge.encoder)
-+		return -ENODEV;
-+
-+	switch (chan) {
-+	case 2:
-+		hdmi_params.aud_input_chan_type = HDMI_AUD_CHAN_TYPE_2_0;
-+		break;
-+	case 4:
-+		hdmi_params.aud_input_chan_type = HDMI_AUD_CHAN_TYPE_4_0;
-+		break;
-+	case 6:
-+		hdmi_params.aud_input_chan_type = HDMI_AUD_CHAN_TYPE_5_1;
-+		break;
-+	case 8:
-+		hdmi_params.aud_input_chan_type = HDMI_AUD_CHAN_TYPE_7_1;
-+		break;
-+	default:
-+		return -EINVAL;
++		/* quantiation range:limited or full */
++		if (frame.colorspace == HDMI_COLORSPACE_RGB)
++			frame.quantization_range = hdmi->quantization_range;
++		else
++			frame.ycc_quantization_range = hdmi->ycc_quantization_range;
 +	}
-+
-+	switch (params->sample_rate) {
-+	case 32000:
-+	case 44100:
-+	case 48000:
-+	case 88200:
-+	case 96000:
-+	case 176400:
-+	case 192000:
-+		break;
-+	default:
-+		return -EINVAL;
-+	}
-+
-+	switch (daifmt->fmt) {
-+	case HDMI_I2S:
-+		hdmi_params.aud_codec = HDMI_AUDIO_CODING_TYPE_PCM;
-+		hdmi_params.aud_sampe_size = HDMI_AUDIO_SAMPLE_SIZE_16;
-+		hdmi_params.aud_input_type = HDMI_AUD_INPUT_I2S;
-+		hdmi_params.aud_i2s_fmt = HDMI_I2S_MODE_I2S_24BIT;
-+		hdmi_params.aud_mclk = HDMI_AUD_MCLK_128FS;
-+		break;
-+	default:
-+		return -EINVAL;
-+	}
-+
-+	memcpy(&hdmi_params.codec_params, params,
-+	       sizeof(hdmi_params.codec_params));
-+
-+	mtk_hdmi_audio_set_param(hdmi, &hdmi_params);
-+
-+	return 0;
-+}
-+
-+static int mtk_hdmi_audio_startup(struct device *dev, void *data)
-+{
-+	struct mtk_hdmi *hdmi = dev_get_drvdata(dev);
-+
-+	mtk_hdmi_audio_enable(hdmi);
-+
-+	return 0;
-+}
-+
-+static void mtk_hdmi_audio_shutdown(struct device *dev, void *data)
-+{
-+	struct mtk_hdmi *hdmi = dev_get_drvdata(dev);
-+
-+	mtk_hdmi_audio_disable(hdmi);
-+}
-+
-+static int mtk_hdmi_audio_mute(struct device *dev, void *data, bool enable,
-+			       int direction)
-+{
-+	struct mtk_hdmi *hdmi = dev_get_drvdata(dev);
-+
-+	if (direction != SNDRV_PCM_STREAM_PLAYBACK)
-+		return 0;
-+
-+	if (enable)
-+		mtk_hdmi_hw_aud_mute(hdmi);
-+	else
-+		mtk_hdmi_hw_aud_unmute(hdmi);
-+
-+	return 0;
-+}
-+
-+static int mtk_hdmi_audio_get_eld(struct device *dev, void *data, uint8_t *buf,
-+				  size_t len)
-+{
-+	struct mtk_hdmi *hdmi = dev_get_drvdata(dev);
-+
-+	if (hdmi->enabled)
-+		memcpy(buf, hdmi->conn.eld, min(sizeof(hdmi->conn.eld), len));
-+	else
-+		memset(buf, 0, len);
-+	return 0;
-+}
-+
-+static const struct hdmi_codec_ops mtk_hdmi_audio_codec_ops = {
-+	.hw_params = mtk_hdmi_audio_hw_params,
-+	.audio_startup = mtk_hdmi_audio_startup,
-+	.audio_shutdown = mtk_hdmi_audio_shutdown,
-+	.mute_stream = mtk_hdmi_audio_mute,
-+	.get_eld = mtk_hdmi_audio_get_eld,
-+	.hook_plugged_cb = mtk_hdmi_audio_hook_plugged_cb,
-+};
-+
-+void set_hdmi_codec_pdata_v2(struct hdmi_codec_pdata *codec_data)
-+{
-+	codec_data->ops = &mtk_hdmi_audio_codec_ops;
-+	codec_data->max_i2s_channels = 2;
-+	codec_data->i2s = 1;
-+}
-diff --git a/drivers/gpu/drm/mediatek/mtk_hdmi_v2.h b/drivers/gpu/drm/mediatek/mtk_hdmi_v2.h
-index 53cb62e4389d..8a397f2ad2c6 100644
---- a/drivers/gpu/drm/mediatek/mtk_hdmi_v2.h
-+++ b/drivers/gpu/drm/mediatek/mtk_hdmi_v2.h
-@@ -9,6 +9,7 @@
+ 	err = hdmi_avi_infoframe_pack(&frame, buffer, bufsz);
  
- #include <linux/hdmi.h>
- #include <drm/drm_bridge.h>
-+#include <sound/hdmi-codec.h>
- 
- struct mtk_hdmi;
- 
-@@ -17,6 +18,7 @@ extern const struct drm_bridge_funcs mtk_v2_hdmi_bridge_funcs;
- void mtk_hdmi_output_init_v2(struct mtk_hdmi *hdmi);
- int mtk_hdmi_clk_enable_v2(struct mtk_hdmi *hdmi);
- void mtk_hdmi_clk_disable_v2(struct mtk_hdmi *hdmi);
-+void set_hdmi_codec_pdata_v2(struct hdmi_codec_pdata *codec_data);
- 
- enum mtk_hdmi_clk_id_v2 {
- 	MTK_HDMIV2_HDCP_SEL,
+ 	if (err < 0) {
+diff --git a/drivers/gpu/drm/mediatek/mtk_hdmi_common.h b/drivers/gpu/drm/mediatek/mtk_hdmi_common.h
+index 921bde150e11..2e8e5feec377 100644
+--- a/drivers/gpu/drm/mediatek/mtk_hdmi_common.h
++++ b/drivers/gpu/drm/mediatek/mtk_hdmi_common.h
+@@ -32,6 +32,7 @@ struct mtk_hdmi_conf {
+ 	bool tz_disabled;
+ 	bool cea_modes_only;
+ 	bool has_cec;
++	bool has_frame_colorimetry;
+ 	unsigned long max_mode_clock;
+ 	const struct drm_bridge_funcs *bridge_funcs;
+ 	void (*mtk_hdmi_output_init)(struct mtk_hdmi *hdmi);
 
 -- 
 b4 0.11.0-dev
