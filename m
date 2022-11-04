@@ -4,89 +4,135 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2E6BEC4332F
-	for <linux-phy@archiver.kernel.org>; Fri,  4 Nov 2022 13:43:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8405FC4332F
+	for <linux-phy@archiver.kernel.org>; Fri,  4 Nov 2022 13:44:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yr2vvHSkmY4q+bsDZEJWRdmO+0Odc+8H7kPnT6xdd0c=; b=RmXeclXhD6A3li
-	Yk+WBtQJFzHhwe0lfPoKYS6EjCSwaiRIbNzGYC7s2ecg0lkO+MHidSsflzs2zhXsyI/p4ecYn2ytY
-	Xmpoj7TwI5SND5AFg6dDxUBMoFiwxHAEQBSH7fWTZfNx5v8RhuVMVPquDnQAba9MonDv6oFLStwfT
-	cvhNkk7GKqisf/8Bzr+PSmtjrD2E5TK/a/QtfaAGaMC/Ne4wnGU9dfSdkfWv1OlChhg8RIMx9e5/m
-	iRK8oLVVeWWJA/GnCxxK1ZVl3+oDV42lCaE4SM6lE3R8u7hWmsPt33VhesCNsqVc4vv2AMcjJLyLr
-	s+U4l1fPOzl6B5W2sObQ==;
+	List-Owner; bh=i/1y4svqTjTxEX+4HR1SlIlwGkEOq6Cn42cySEWG9FU=; b=rWkx5ESnOwX1aS
+	6dMiasmP2ucHXlH1WyQWdcTG31Nyb/pNauLcciuUOIs02Xt7x5g9aExueFdlFHK7N8NFLi95kmPUA
+	Kip/m85v4KNO7qRzBPliixvU4L0jNz6IxTXFRrnFxF7OzSWqZtS6wtrG4EJ7wOiPUT8UDwC/1ci1/
+	Cy8wr/KPEHdOiYpzSIgSdjGgm94X5ITQ7Hvd35EUEeU0mKeLgrx/yE6zWdkLGuOTKlC5uWdmiqhLM
+	8k5ne1g2tRnEhu9jNxknN4C4md5XViR2OxqOJvBHrZJ8OCHXPww5+VTrC4evSk4lzOaZhEHcKb3rY
+	y+cYIc3F5gd5vIZno4Vg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oqwyY-003lnF-Lh; Fri, 04 Nov 2022 13:43:14 +0000
-Received: from mail-qk1-x72e.google.com ([2607:f8b0:4864:20::72e])
+	id 1oqwze-003m8X-Rm; Fri, 04 Nov 2022 13:44:22 +0000
+Received: from new1-smtp.messagingengine.com ([66.111.4.221])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oqwyV-003lmA-TT
-	for linux-phy@lists.infradead.org; Fri, 04 Nov 2022 13:43:13 +0000
-Received: by mail-qk1-x72e.google.com with SMTP id g10so3039076qkl.6
-        for <linux-phy@lists.infradead.org>; Fri, 04 Nov 2022 06:43:11 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=7aFvSvKZV6J4j21H0wqTwTzV7dfZuRBIYj/wdHuln8A=;
-        b=GaMee9e2GzV8cLSut9QKldsYQBEDoZfjIgBJdR8+LfWuj4/JzhrzKVSfN1KAXap1O+
-         1KJpue8Xyhld3zHiktciY9r3VG3Lq0aCNDXL0/iYG8EDhQfHauzvuSOtRJzsIYfxkfNp
-         eeJUnw+S51V8Lnh2BVryNy6s2Mq2AB0O41Z1mPVBqgegcqjqMDLnHu0xHBHAZfhpUplD
-         MrEOloMQnAdHlZfQnu54tuPdjXNnsGavUEkBGNklZCS1Yxsj068ndfxvda/AeNUcv4Iq
-         CjTo0LhZxPFNG41mDhTD+v0sLuiaLTHwLzc/2sVydKfe11FDM4dtTpZHzW/JyoaVeFIm
-         FbZw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=7aFvSvKZV6J4j21H0wqTwTzV7dfZuRBIYj/wdHuln8A=;
-        b=ghkdid+1rbrlE3gBbhZYAluIkCtjBj11l8ugq5ZVeNVN2TFl+6xhwMho2/5dYKf2da
-         OzB99ec5SG4G3+v0b3gDXbN0ghhM5ad3qFYyjno77mjg0htNogmRJI1lSKpXsisvgeYl
-         7ORAdd0wUole7YTNKsUpM0N5yZGQ+cIw4rSBqxAz//lEYmtElyARuLdcJKr7yTc1Htrd
-         oCr+A6TYF1QuLz8MJAvmMRax9HNPrGSdVI1kXTi7XQ9Oof86CNsMSDk51g9mpyoHb5yS
-         8jy6KqFtqBg5N6fE6UHo4chADSWqAckt0hn46Z7a9XofW08QHgQosCil5IwMQNzcFIOv
-         xcdw==
-X-Gm-Message-State: ACrzQf15UqjFM6Nh5oJubYaBErgLtf1hEWXWVJ6oxz9MWJInRZtjxC5H
-	7AEi/w6TD/3D0z7JghFPtmKgWg==
-X-Google-Smtp-Source: AMsMyM5h2Jt7+jT0RAOVbn0CG1cTAgwDsfRgt0Uidh3TtbGhH9wXo6gIn09S9DeruASfBxpjxXvjuw==
-X-Received: by 2002:a05:620a:1256:b0:6fa:2370:a7e8 with SMTP id a22-20020a05620a125600b006fa2370a7e8mr21569937qkl.374.1667569390902;
-        Fri, 04 Nov 2022 06:43:10 -0700 (PDT)
-Received: from ?IPV6:2601:586:5000:570:aad6:acd8:4ed9:299b? ([2601:586:5000:570:aad6:acd8:4ed9:299b])
-        by smtp.gmail.com with ESMTPSA id fa3-20020a05622a4cc300b003a4f14378d1sm2461421qtb.33.2022.11.04.06.43.08
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 04 Nov 2022 06:43:10 -0700 (PDT)
-Message-ID: <6babddd0-13d8-0f55-1981-ac5cfed8e5ad@linaro.org>
-Date: Fri, 4 Nov 2022 09:43:08 -0400
+	id 1oqwzZ-003m6B-P0; Fri, 04 Nov 2022 13:44:19 +0000
+Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
+	by mailnew.nyi.internal (Postfix) with ESMTP id C70E758027B;
+	Fri,  4 Nov 2022 09:44:16 -0400 (EDT)
+Received: from mailfrontend2 ([10.202.2.163])
+  by compute3.internal (MEProxy); Fri, 04 Nov 2022 09:44:16 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=cc
+	:cc:content-transfer-encoding:content-type:date:date:from:from
+	:in-reply-to:in-reply-to:message-id:mime-version:references
+	:reply-to:sender:subject:subject:to:to; s=fm3; t=1667569456; x=
+	1667576656; bh=tP0HGewViKfgCsDxSEncjuLu0rJM7VTaSvboP+A/WU8=; b=b
+	E0xbq0PMydVNQfUpMYzNNJWNH6UXe+pff49FmCpzlJH86cJiC9BxwkLuwdaJ+2AQ
+	BTOHlJBLCErPmiUDffmDb1KJfLkFiPffOE/ZzXL5HT0nyiM8VVIcDpxvKK/Hhrxw
+	FfnFmQUhEBbmRBKk5ic2rAbyUXjCMAKfroPKxA3ejjX14H77Rb8i2LLzyD5jCRYs
+	puvnfxcaFG6bHKjV/ov0jJrfIAC1TN/dfw9k/3/OAXGwPaRj4poGYnHgV97ICZ3R
+	CGYA1RIULL50uFOjfgvr4P2wIh0gbbUs0shUT4dNvRnpjfV5xiw9Iga6iqBW6+Ac
+	8ra2R1jlh9z7cWMNmk5Lg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	messagingengine.com; h=cc:cc:content-transfer-encoding
+	:content-type:date:date:feedback-id:feedback-id:from:from
+	:in-reply-to:in-reply-to:message-id:mime-version:references
+	:reply-to:sender:subject:subject:to:to:x-me-proxy:x-me-proxy
+	:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; t=1667569456; x=
+	1667576656; bh=tP0HGewViKfgCsDxSEncjuLu0rJM7VTaSvboP+A/WU8=; b=p
+	c7IHiyhgJS72W1HWSaEm8pM4f6nRZLy62zVJ4NM1JCXqbrbdPv6fwXUi9orAO8yj
+	JNR7VZyu0th0aG9ZuyxD7iNo+8lscOr2Uhv78sq2LTwhznHf6rBP6l3bzcFgEt/G
+	TddGSp7pu+vfUkoN/Ex0tRZGtKzRaRAq8wQuIO4KJ3kfVq3dh5yo3TwS1nOsfYIH
+	FhI4lYQpcvZwvBYC0VLmZotUx2vh9Z7H9oFOi6axCO/6N+mUjvoIsVGzOwjbv+MF
+	dx/6kAUIa6WdALliOTWSaDc7ymoet/H03vZ4uAwO8GEmySu0/o1ykb1m2ZkqqjsB
+	LkE03DPVycaPlJ+/9BzNg==
+X-ME-Sender: <xms:LxdlY-z5Tv7rrhAZByn7LvBg5_V1RueAhDra8YaOWWqYlcTL0ZnlZg>
+    <xme:LxdlY6SNsJHsOIp-p7GHxFmwSYn0Ho7GmRCvyxzQA83BZtx95NcqcDhyCdwPL7MW0
+    jxdzNQ2wGL7oQFc5Vc>
+X-ME-Received: <xmr:LxdlYwX__WnI17AlnyuFO_SNba7Yf2Iuu08A4YtegX9LVVekZ_4K9Qo37AIKpTTnxcKvb9YVwYHhpLgkjEooatBAQYNbd2R1dIAKSpy3ms6-dg>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvgedrvddugdehfecutefuodetggdotefrodftvf
+    curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+    uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+    fjughrpefhfffugggtgffkfhgjvfevofesthekredtredtjeenucfhrhhomhepofgrgihi
+    mhgvucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucggtffrrg
+    htthgvrhhnpeduudduhfevjeetfeegvdffvdevvdejudegudekjeehtdelhfffveethfej
+    ledtveenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhrohhmpe
+    hmrgigihhmvgestggvrhhnohdrthgvtghh
+X-ME-Proxy: <xmx:LxdlY0h_wwfWZqPuApig_Ng-pzQn_Oux9fBpj42DQSlMLytD7Fpk9g>
+    <xmx:LxdlYwCmO_UBGs0d6nXl6xp3919bq5_FeyWe2LvdEGYaAQVHDP4NQg>
+    <xmx:LxdlY1JKcIoNKkyNV3cuMLlQvKIg57v1YN3pV367htcTy8539UFv1A>
+    <xmx:MBdlY0zzxyU7As9tmVy0KhSrJYANzXc3Y0RlS6EzckHySm1XfzpJnQ>
+Feedback-ID: i8771445c:Fastmail
+Received: by mail.messagingengine.com (Postfix) with ESMTPA; Fri,
+ 4 Nov 2022 09:44:14 -0400 (EDT)
+From: Maxime Ripard <maxime@cerno.tech>
+Date: Fri, 04 Nov 2022 14:18:19 +0100
+Subject: [PATCH v2 62/65] clk: tegra: super: Switch to determine_rate
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.4.2
-Subject: Re: [v2 05/10] dts-bindings: display: bridge: Add MHDP DP bindings
- for i.MX8MQ
-Content-Language: en-US
-To: Sandor Yu <Sandor.yu@nxp.com>, dri-devel@lists.freedesktop.org,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
- andrzej.hajda@intel.com, neil.armstrong@linaro.org, robert.foss@linaro.org,
- Laurent.pinchart@ideasonboard.com, jonas@kwiboo.se,
- jernej.skrabec@gmail.com, kishon@ti.com, vkoul@kernel.org
-Cc: robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
- shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de,
- linux-imx@nxp.com, tzimmermann@suse.de, lyude@redhat.com,
- javierm@redhat.com, ville.syrjala@linux.intel.com, sam@ravnborg.org,
- jani.nikula@intel.com, maxime@cerno.tech,
- penguin-kernel@I-love.SAKURA.ne.jp, p.yadav@ti.com, oliver.brown@nxp.com
-References: <cover.1667463263.git.Sandor.yu@nxp.com>
- <aa8e5153d0ad12a2039ce44039f9ecf39e4a39d0.1667463263.git.Sandor.yu@nxp.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <aa8e5153d0ad12a2039ce44039f9ecf39e4a39d0.1667463263.git.Sandor.yu@nxp.com>
+Message-Id: <20221018-clk-range-checks-fixes-v2-62-f6736dec138e@cerno.tech>
+References: <20221018-clk-range-checks-fixes-v2-0-f6736dec138e@cerno.tech>
+In-Reply-To: <20221018-clk-range-checks-fixes-v2-0-f6736dec138e@cerno.tech>
+To: Stephen Boyd <sboyd@kernel.org>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Chen-Yu Tsai <wens@csie.org>, Daniel Vetter <daniel@ffwll.ch>,
+ Nicolas Ferre <nicolas.ferre@microchip.com>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Jaroslav Kysela <perex@perex.cz>, Shawn Guo <shawnguo@kernel.org>,
+ Fabio Estevam <festevam@gmail.com>, Ulf Hansson <ulf.hansson@linaro.org>,
+ Claudiu Beznea <claudiu.beznea@microchip.com>,
+ Michael Turquette <mturquette@baylibre.com>,
+ Dinh Nguyen <dinguyen@kernel.org>, Paul Cercueil <paul@crapouillou.net>,
+ Chunyan Zhang <zhang.lyra@gmail.com>,
+ Manivannan Sadhasivam <mani@kernel.org>,
+ Andreas Färber <afaerber@suse.de>,
+ Jonathan Hunter <jonathanh@nvidia.com>, Abel Vesa <abelvesa@kernel.org>,
+ Charles Keepax <ckeepax@opensource.cirrus.com>,
+ Alessandro Zummo <a.zummo@towertech.it>,
+ Peter De Schrijver <pdeschrijver@nvidia.com>,
+ Orson Zhai <orsonzhai@gmail.com>,
+ Alexandre Torgue <alexandre.torgue@foss.st.com>,
+ Prashant Gaikwad <pgaikwad@nvidia.com>,
+ Liam Girdwood <lgirdwood@gmail.com>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Samuel Holland <samuel@sholland.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Richard Fitzgerald <rf@opensource.cirrus.com>,
+ Vinod Koul <vkoul@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+ Sekhar Nori <nsekhar@ti.com>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Linus Walleij <linus.walleij@linaro.org>, Takashi Iwai <tiwai@suse.com>,
+ David Airlie <airlied@gmail.com>,
+ Luca Ceresoli <luca.ceresoli@bootlin.com>,
+ Jernej Skrabec <jernej.skrabec@gmail.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Baolin Wang <baolin.wang@linux.alibaba.com>,
+ David Lechner <david@lechnology.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>, Mark Brown <broonie@kernel.org>,
+ Max Filippov <jcmvbkbc@gmail.com>,
+ Geert Uytterhoeven <geert+renesas@glider.be>
+Cc: linux-stm32@st-md-mailman.stormreply.com, alsa-devel@alsa-project.org, linux-mediatek@lists.infradead.org,
+ linux-phy@lists.infradead.org, linux-mips@vger.kernel.org, Maxime Ripard <maxime@cerno.tech>,
+ linux-renesas-soc@vger.kernel.org, linux-actions@lists.infradead.org, linux-clk@vger.kernel.org,
+ AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, patches@opensource.cirrus.com,
+ linux-tegra@vger.kernel.org, linux-rtc@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-sunxi@lists.linux.dev, linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org
+X-Mailer: b4 0.11.0-dev-99e3a
+X-Developer-Signature: v=1; a=openpgp-sha256; l=2834; i=maxime@cerno.tech;
+ h=from:subject:message-id; bh=oMTph+HV5AiIbW0s6QwIveMIXBCjzwSykoljGPeW9XA=;
+ b=owGbwMvMwCX2+D1vfrpE4FHG02pJDMmpAt88u47UXNawWxJ5d7npqrS8Y5ZCrjUrXVe5hFxy9Zq9
+ 2Fq7o5SFQYyLQVZMkSVG2HxJ3KlZrzvZ+ObBzGFlAhnCwMUpABNhY2P4ySj+6teunW9bdriyfdvwx+
+ /i/PaO7QHvZyx7//qPyKvYg7WMDNd2xG5fZZx/rU7s/lfbEEuP87dn69i67s2tnSGyPd5SmxsA
+X-Developer-Key: i=maxime@cerno.tech; a=openpgp;
+ fpr=BE5675C37E818C8B5764241C254BCFC56BF6CE8D
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221104_064312_008056_2B3BA324 
-X-CRM114-Status: GOOD (  15.32  )
+X-CRM114-CacheID: sfid-20221104_064417_906309_58D0DCCC 
+X-CRM114-Status: GOOD (  21.28  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,98 +149,81 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 04/11/2022 02:44, Sandor Yu wrote:
-> Add bindings for i.MX8MQ MHDP DisplayPort.
-> 
-> Signed-off-by: Sandor Yu <Sandor.yu@nxp.com>
+The Tegra super clocks implements a mux with a set_parent hook, but
+doesn't provide a determine_rate implementation.
 
-Same comments as for HDMI bindings patch. Everywhere.
+This is a bit odd, since set_parent() is there to, as its name implies,
+change the parent of a clock. However, the most likely candidate to
+trigger that parent change is a call to clk_set_rate(), with
+determine_rate() figuring out which parent is the best suited for a
+given rate.
 
-> ---
->  .../display/bridge/cdns,mhdp-imx8mq-dp.yaml   | 67 +++++++++++++++++++
->  1 file changed, 67 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/display/bridge/cdns,mhdp-imx8mq-dp.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/display/bridge/cdns,mhdp-imx8mq-dp.yaml b/Documentation/devicetree/bindings/display/bridge/cdns,mhdp-imx8mq-dp.yaml
-> new file mode 100644
-> index 000000000000..06ed881247ea
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/display/bridge/cdns,mhdp-imx8mq-dp.yaml
-> @@ -0,0 +1,67 @@
-> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: "http://devicetree.org/schemas/display/bridge/cdns,mhdp-imx8mq-dp.yaml#"
-> +$schema: "http://devicetree.org/meta-schemas/core.yaml#"
-> +
-> +title: Cadence MHDP Displayport bridge
-> +
-> +maintainers:
-> +  - Sandor Yu <Sandor.yu@nxp.com>
-> +
-> +description:
-> +  The Cadence MHDP Displayport TX interface.
-> +
-> +properties:
-> +  compatible:
-> +    enum:
-> +      - cdns,mhdp-imx8mq-dp
-> +
-> +  reg:
-> +    items:
-> +      - description:
-> +          Memory mapped base address and length of mhdptx apb registers.
-> +
-> +  phys:
-> +    description:
-> +      phandle to the Displayport PHY.
-> +
-> +  phy-names:
-> +    items:
-> +      - const: dpphy
-> +
-> +  interrupts:
-> +    items:
-> +      - description: Hotplug detect interrupter for cable plugin event.
-> +      - description: Hotplug detect interrupter for cable plugout event.
-> +
-> +  interrupt-names:
-> +    items:
-> +      - const: plug_in
-> +      - const: plug_out
-> +
-> +  port:
-> +    $ref: /schemas/graph.yaml#/properties/port
-> +    description:
-> +      A port node pointing to the output port of a display controller..
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
-> +    mhdp: mhdp@32c00000 {
+The other trigger would be a call to clk_set_parent(), but it's far less
+used, and it doesn't look like there's any obvious user for that clock.
 
-dp@
+So, the set_parent hook is effectively unused, possibly because of an
+oversight. However, it could also be an explicit decision by the
+original author to avoid any reparenting but through an explicit call to
+clk_set_parent().
 
-> +        compatible = "cdns,mhdp-imx8mq-dp";
-> +        reg = <0x32c00000 0x100000>;
-> +        interrupts = <GIC_SPI 16 IRQ_TYPE_LEVEL_HIGH>,
-> +                <GIC_SPI 25 IRQ_TYPE_LEVEL_HIGH>;
-> +        interrupt-names = "plug_in", "plug_out";
-> +        phys = <&dp_phy>;
-> +        phy-names = "dpphy";
-> +
-> +        port {
-> +            hdmi_in: endpoint {
-> +                remote-endpoint = <&dcss_out>;
-> +            };
-> +        };
-> +    };
+The driver does implement round_rate() though, which means that we can
+change the rate of the clock, but we will never get to change the
+parent.
 
-Best regards,
-Krzysztof
+However, It's hard to tell whether it's been done on purpose or not.
 
+Since we'll start mandating a determine_rate() implementation, let's
+convert the round_rate() implementation to a determine_rate(), which
+will also make the current behavior explicit. And if it was an
+oversight, the clock behaviour can be adjusted later on.
+
+Signed-off-by: Maxime Ripard <maxime@cerno.tech>
+---
+ drivers/clk/tegra/clk-super.c | 15 +++++++++++----
+ 1 file changed, 11 insertions(+), 4 deletions(-)
+
+diff --git a/drivers/clk/tegra/clk-super.c b/drivers/clk/tegra/clk-super.c
+index 8ad62e04fd8b..c035f0eb030d 100644
+--- a/drivers/clk/tegra/clk-super.c
++++ b/drivers/clk/tegra/clk-super.c
+@@ -142,15 +142,22 @@ static const struct clk_ops tegra_clk_super_mux_ops = {
+ 	.restore_context = clk_super_mux_restore_context,
+ };
+ 
+-static long clk_super_round_rate(struct clk_hw *hw, unsigned long rate,
+-				 unsigned long *parent_rate)
++static int clk_super_determine_rate(struct clk_hw *hw,
++				    struct clk_rate_request *req)
+ {
+ 	struct tegra_clk_super_mux *super = to_clk_super_mux(hw);
+ 	struct clk_hw *div_hw = &super->frac_div.hw;
++	unsigned long rate;
+ 
+ 	__clk_hw_set_clk(div_hw, hw);
+ 
+-	return super->div_ops->round_rate(div_hw, rate, parent_rate);
++	rate = super->div_ops->round_rate(div_hw, req->rate,
++					  &req->best_parent_rate);
++	if (rate < 0)
++		return rate;
++
++	req->rate = rate;
++	return 0;
+ }
+ 
+ static unsigned long clk_super_recalc_rate(struct clk_hw *hw,
+@@ -193,7 +200,7 @@ const struct clk_ops tegra_clk_super_ops = {
+ 	.get_parent = clk_super_get_parent,
+ 	.set_parent = clk_super_set_parent,
+ 	.set_rate = clk_super_set_rate,
+-	.round_rate = clk_super_round_rate,
++	.determine_rate = clk_super_determine_rate,
+ 	.recalc_rate = clk_super_recalc_rate,
+ 	.restore_context = clk_super_restore_context,
+ };
+
+-- 
+b4 0.11.0-dev-99e3a
 
 -- 
 linux-phy mailing list
