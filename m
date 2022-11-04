@@ -4,79 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 35CD9C43219
-	for <linux-phy@archiver.kernel.org>; Fri,  4 Nov 2022 13:34:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0CA16C4321E
+	for <linux-phy@archiver.kernel.org>; Fri,  4 Nov 2022 13:34:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EP4NhNB+kQ0zJnoLeNX2lJolR31VSSdVQZjwOH145Kw=; b=mTk9nbNrETfGaI
-	7KmY8qTLBIdz9xUC2ihSwvtfGzu8qFiGaMeA0GHZTcRbPl6w4LA1MIWE8+uktYnAiOIS5syU/g4NT
-	RjMW57L5vcnodgxwUJ68SdKhfEFGl6YvORZUFmVhYg68jGXelZECp2xsmfRv8/aeFMRb0Lgnnb6iw
-	Gc335tvroy6dNcBkFpM9kH3dSWEYX2zObCh0RpBU3VUGMsqfyaB2tPupXianw98IrbT9cWhfDi9nI
-	NzoXBGyLFlpSsW0MDDUOMlzjRykOd/XPcmeuEwWCQYcBNilzJjTpHcmxgrDVcRUF9VBjzgxnD/Ivn
-	J15RnFW8GNAXWafVdGOA==;
+	List-Owner; bh=NJHFpGVl4RGhvdW3B/3bZFPjthc86jUpmbDwYpwpD/Q=; b=BGlj/i/JZimC80
+	kee7sNdPXw2sVm7z97EDS4OiZzfln4dZ22t6KAQVk4ETNIPhv0oBrm037/HB2fZC9nGqXGufN94f0
+	+fCyucLpVBqGqdUnu5bTfvP9P+yw76Ks+lsIrFrsXkHZSJMt3N7wQ41wsIzJ9PlMJ2YJlFRxSygH7
+	l4qG1mgqEy3/dRsbXVzIcDfrGFiyzwIqfT6bPYLtxEaGVAViUZdM7UOOEgEdMpCSpbBKY8Y7OuDAK
+	0dCkzQUupas0VPFwzcCci3Fg+6RWojQA3OlSPD3VCdnbSzC4p+SiXqQf12Ofnmt6EHKWjKInLmWui
+	SFP7I+0xxxWoCLDCGJYA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oqwpr-003ikL-J6; Fri, 04 Nov 2022 13:34:15 +0000
+	id 1oqwpx-003ipH-1g; Fri, 04 Nov 2022 13:34:21 +0000
 Received: from new1-smtp.messagingengine.com ([66.111.4.221])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oqwot-003i2B-Jr; Fri, 04 Nov 2022 13:33:18 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
-	by mailnew.nyi.internal (Postfix) with ESMTP id EE0F258051B;
-	Fri,  4 Nov 2022 09:33:14 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
-  by compute4.internal (MEProxy); Fri, 04 Nov 2022 09:33:14 -0400
+	id 1oqwoy-003i6R-Ay; Fri, 04 Nov 2022 13:33:25 +0000
+Received: from compute2.internal (compute2.nyi.internal [10.202.2.46])
+	by mailnew.nyi.internal (Postfix) with ESMTP id 7314958052E;
+	Fri,  4 Nov 2022 09:33:19 -0400 (EDT)
+Received: from mailfrontend2 ([10.202.2.163])
+  by compute2.internal (MEProxy); Fri, 04 Nov 2022 09:33:19 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=cc
 	:cc:content-transfer-encoding:content-type:date:date:from:from
 	:in-reply-to:in-reply-to:message-id:mime-version:references
-	:reply-to:sender:subject:subject:to:to; s=fm3; t=1667568794; x=
-	1667575994; bh=i/mdM6EBYqXU9owm3d69sSy2Pa3hzJ15q/3x138bZyE=; b=J
-	9nWs5By63qyldGfoZmgNazEVWBlEeNGjsA0SN8tbirUuxog9s4i0zrfw5GGBLya9
-	Evo+SqmEgs93b2kr2vmSc+dxzwGTU12hU+xqej8aG1Ii4CjRlwXwRqlXAC1rEtBW
-	5mylbxY1ynlVmY2o+SS3NqAc0yIVon/cllx3aVeXbjp4dS8KTUP2kaNNhI+uv1Ap
-	nJVf5zY5D3qy8c/HsZidhxweByt/JXBLNyenLxzvzG8dnUH88rmcwaXntuXwsmOP
-	tYZQWdbmKDNSOBYVMnFElBDqj+JK6CrOy6z+tBFRcEvBC6dq26BG39LyyC4sdGCg
-	jxOCP8/hqj7H9UoYrsu8g==
+	:reply-to:sender:subject:subject:to:to; s=fm3; t=1667568799; x=
+	1667575999; bh=HRYqZuPrTxR5ocoXQl58H79LzXrTK4oe+XLQKgDqwow=; b=n
+	YbfPD+YOONVImaVJW6okA+Ho8OWhjFirvYIkpf0xTJaiGhVQsUda3N1lFlEkumFp
+	t0kmgGTmNMLB6PSpBBcrS4uX7lfIxkZVjCzDyQxrDvOKR/itCqSigvJAilAJV7an
+	9h7xSGRnhjGBVM//FChVggcsrWpiqDOgpkOo6+FmtnYcZQ4x2KvSCfZQRmu0OONw
+	zVDDxIkJtaaVrNlpdfCCg60bttz2E9kDKrk8U9hxB9EwTlXr6r5YbXSrY+Zy1q5T
+	OItYukj8nHhe7X//1OAM7x8U7SlAjg4lbl/JBQFwB0jOFNs1CicyJ/l5iEHsSyVr
+	DctsKBlEWFf9rvoxNhVSA==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
 	messagingengine.com; h=cc:cc:content-transfer-encoding
 	:content-type:date:date:feedback-id:feedback-id:from:from
 	:in-reply-to:in-reply-to:message-id:mime-version:references
 	:reply-to:sender:subject:subject:to:to:x-me-proxy:x-me-proxy
-	:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; t=1667568794; x=
-	1667575994; bh=i/mdM6EBYqXU9owm3d69sSy2Pa3hzJ15q/3x138bZyE=; b=e
-	dHY5hm1zWpU0YGASfdRoL44xxdxjBrGMnPUcihMgN4pXSWsooezkVeoqd+P0FZ8C
-	u9RJTf22oaCo2WRQIakhyozIElT/ubuZrquA4JOHHwfr2CNsjuWuVA7vbf3BPr+n
-	abUqLUh2j/S+nFfOhkdbrATHOjoquPEfJFNG8Nt4f71BMni1+OR7tHJUUndtrYjn
-	+89vHPfffaliFdW+P/QTiR7Ij3L2ZyqFO0pJ+LvEBcCCqvfiHtNH8GV2lww8O/b2
-	ocXR9Oergoyr7M2aMg+RsoMZZAHCHwCIl3n3eQsheu1ZPLIIhrpwUvBgULAdPbgk
-	lncx0aAmOJt8aEsKbhG5Q==
-X-ME-Sender: <xms:mhRlYyhAnNjz59Te_QXoAGOsy7CY4BJwZkKyAh9UT8VX-sw7l0SpDQ>
-    <xme:mhRlYzBdAbkLJFWevBlay9JMhRPXOqrGBnHeKCOHRgenzwMGj747aIzVI6TnyoCK8
-    ocG3vYzRKLx9cND9Uw>
-X-ME-Received: <xmr:mhRlY6El7n78fPMtPvONnh8LI6ma-idm70tBYaAEFKa7XHaWqlaDm5WJDYcj0c4r7ljvSi54bJCsBPEWFqX1xnCU601XBpBHqVfUBaqZdTICew>
+	:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; t=1667568799; x=
+	1667575999; bh=HRYqZuPrTxR5ocoXQl58H79LzXrTK4oe+XLQKgDqwow=; b=E
+	n2m9L128afacmzm12GvhmuldgE/VzDJfYvnOaFGiWBIyK+sPY3YSYDwUHLnRJsjK
+	5tygCdoN/FihFV2m52kks7hLr0vPDYa1Hf1DZJvQop2/rocbvLsbP1yxQdDRJMrB
+	BlrjHz6S+DP41pU1Sb2JcHK45EK8OyzV9q8o66kcHQeFO1/qHgjHirQggrvUZ1ea
+	f2ydufWuTyWX5Bsc430VCmQf9xUzBjqs8Fu2M6oI12hO04MBZXxqOnPdM+NXwRc9
+	j6C1J5RjvnLh5RyZAC+8MtacAm2EFTun+r3JpQYVRJL90l436Pqgs1Z+JD8g8ld2
+	4kmmcKF4Dyfbbeholc8bg==
+X-ME-Sender: <xms:nxRlY47sz5BRx7ryI6nf8j9_1djTZLr_4hb_Dr_6U85TkrGTLOuX6Q>
+    <xme:nxRlY55o7fUx0abCmPU4-sYNWgT2ap4Wo3V5Tl8mlA8Ujdy_LPmEpgWOEAmVvzOoM
+    WXS_-vrrdWGMipX98g>
+X-ME-Received: <xmr:nxRlY3fXG29weQ3MpcFmfANZfMywh6AgnkI1ASmdzTyz5xktTq_WdnLpoHXK_eQ2KBno39EfeNaaoOFL4dM6Wet4CfWWFBXbHc57rxsQCgg6DQ>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvgedrvddugdehudcutefuodetggdotefrodftvf
     curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
     uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
     fjughrpefhfffugggtgffkfhgjvfevofesthekredtredtjeenucfhrhhomhepofgrgihi
     mhgvucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucggtffrrg
     htthgvrhhnpeduudduhfevjeetfeegvdffvdevvdejudegudekjeehtdelhfffveethfej
-    ledtveenucevlhhushhtvghrufhiiigvpedunecurfgrrhgrmhepmhgrihhlfhhrohhmpe
+    ledtveenucevlhhushhtvghrufhiiigvpeegnecurfgrrhgrmhepmhgrihhlfhhrohhmpe
     hmrgigihhmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:mhRlY7QXhJS3HplAi3aJ-uw0xhE_CukyqBoOhdKrrNquVyCl8vjybw>
-    <xmx:mhRlY_yTvRe_9YCn5yzYsbOyvBi0JAVeOECKWcy7Q7lVx7hLMs3DsA>
-    <xmx:mhRlY54G4-P3LLADjAlCUN_cCmyCd8DZQlGj7G95O_IPhM7Hz65bvw>
-    <xmx:mhRlY3gyV6x6qEa_o6ZOyXZ4I-9El8YOhr_k7VARwquXZVi6kweLGw>
+X-ME-Proxy: <xmx:nxRlY9ITB2tr_VmWvv6IXoM9k5tbzNYdYn9F-dWWZbPmBfFt4ElUnA>
+    <xmx:nxRlY8LgrYtyX8FpfXFGW_-3hDosvUN3T1z8eul9544-N9kD6yLEaA>
+    <xmx:nxRlY-yataAtvMNd8BggVnumO_AWC0JM0JCE2kyKGOWGSXl1R7COUA>
+    <xmx:nxRlY3ZApGGBTXyp71Hgdy-_lEzIPmJ0zg9EZhsLfhgvn_OpTztT-A>
 Feedback-ID: i8771445c:Fastmail
 Received: by mail.messagingengine.com (Postfix) with ESMTPA; Fri,
- 4 Nov 2022 09:33:13 -0400 (EDT)
+ 4 Nov 2022 09:33:18 -0400 (EDT)
 From: Maxime Ripard <maxime@cerno.tech>
-Date: Fri, 04 Nov 2022 14:17:59 +0100
-Subject: [PATCH v2 42/65] rtc: sun6i: Add a determine_rate hook
+Date: Fri, 04 Nov 2022 14:18:01 +0100
+Subject: [PATCH v2 44/65] clk: actions: composite: div: Switch to determine_rate
 MIME-Version: 1.0
-Message-Id: <20221018-clk-range-checks-fixes-v2-42-f6736dec138e@cerno.tech>
+Message-Id: <20221018-clk-range-checks-fixes-v2-44-f6736dec138e@cerno.tech>
 References: <20221018-clk-range-checks-fixes-v2-0-f6736dec138e@cerno.tech>
 In-Reply-To: <20221018-clk-range-checks-fixes-v2-0-f6736dec138e@cerno.tech>
 To: Stephen Boyd <sboyd@kernel.org>,
@@ -123,16 +123,16 @@ Cc: linux-stm32@st-md-mailman.stormreply.com, alsa-devel@alsa-project.org, linux
  linux-tegra@vger.kernel.org, linux-rtc@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-sunxi@lists.linux.dev, linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org
 X-Mailer: b4 0.11.0-dev-99e3a
-X-Developer-Signature: v=1; a=openpgp-sha256; l=2353; i=maxime@cerno.tech;
- h=from:subject:message-id; bh=i8NV7IjuD9Yk1Zqq8ZAa7SMelcQ7FkoI783UQL/koLU=;
- b=owGbwMvMwCX2+D1vfrpE4FHG02pJDMmpAl/1/VZaF0+xO3nvzpLUj0Lhj9ZM94pYvE+Ry81ombm7
- +4vVHaUsDGJcDLJiiiwxwuZL4k7Net3JxjcPZg4rE8gQBi5OAZiInTUjQ9MpMxvNpTFH+ji1p8+I/m
- 4cZKbL/NZdzCf1qne564+6fwz/o5bve5501XEa677Dto4WJcfWtbLdlZLwiq++IZqxpMybGwA=
+X-Developer-Signature: v=1; a=openpgp-sha256; l=2795; i=maxime@cerno.tech;
+ h=from:subject:message-id; bh=aQqMQVxKATvqDxq+DQ+zQmlJOI9IGNizwFw3mXLyv8I=;
+ b=owGbwMvMwCX2+D1vfrpE4FHG02pJDMmpAl89WM6nlJ/6XNTDuPyJPVNdnoGWxTE3To55q+w2qSSx
+ zbjdUcrCIMbFICumyBIjbL4k7tSs151sfPNg5rAygQxh4OIUgImYcDIy7P9qydHNZPtl5uqqp+67A5
+ 6liTo93q3ge+nutJwVufH/LzP84VnpWrRB6ajXp+tByy73Ls/9ascwf6GbKMseZsaqguJwBgA=
 X-Developer-Key: i=maxime@cerno.tech; a=openpgp;
  fpr=BE5675C37E818C8B5764241C254BCFC56BF6CE8D
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221104_063315_800402_FBC68505 
-X-CRM114-Status: GOOD (  18.37  )
+X-CRM114-CacheID: sfid-20221104_063320_545805_DA01D8BD 
+X-CRM114-Status: GOOD (  21.72  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -149,8 +149,8 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The Allwinner sun6i RTC clock implements a mux with a set_parent hook,
-but doesn't provide a determine_rate implementation.
+The Actions composite divider clocks implements a mux with a set_parent
+hook, but doesn't provide a determine_rate implementation.
 
 This is a bit odd, since set_parent() is there to, as its name implies,
 change the parent of a clock. However, the most likely candidate to
@@ -166,43 +166,59 @@ oversight. However, it could also be an explicit decision by the
 original author to avoid any reparenting but through an explicit call to
 clk_set_parent().
 
-The latter case would be equivalent to setting the flag
-CLK_SET_RATE_NO_REPARENT, together with setting our determine_rate hook
-to __clk_mux_determine_rate(). Indeed, if no determine_rate
-implementation is provided, clk_round_rate() (through
-clk_core_round_rate_nolock()) will call itself on the parent if
-CLK_SET_RATE_PARENT is set, and will not change the clock rate
-otherwise. __clk_mux_determine_rate() has the exact same behavior when
-CLK_SET_RATE_NO_REPARENT is set.
+The driver does implement round_rate() though, which means that we can
+change the rate of the clock, but we will never get to change the
+parent.
 
-And if it was an oversight, then we are at least explicit about our
-behavior now and it can be further refined down the line.
+However, It's hard to tell whether it's been done on purpose or not.
+
+Since we'll start mandating a determine_rate() implementation, let's
+convert the round_rate() implementation to a determine_rate(), which
+will also make the current behavior explicit. And if it was an
+oversight, the clock behaviour can be adjusted later on.
 
 Signed-off-by: Maxime Ripard <maxime@cerno.tech>
 ---
- drivers/rtc/rtc-sun6i.c | 2 ++
- 1 file changed, 2 insertions(+)
+ drivers/clk/actions/owl-composite.c | 16 +++++++++++-----
+ 1 file changed, 11 insertions(+), 5 deletions(-)
 
-diff --git a/drivers/rtc/rtc-sun6i.c b/drivers/rtc/rtc-sun6i.c
-index ed5516089e9a..a2781502c244 100644
---- a/drivers/rtc/rtc-sun6i.c
-+++ b/drivers/rtc/rtc-sun6i.c
-@@ -215,6 +215,7 @@ static int sun6i_rtc_osc_set_parent(struct clk_hw *hw, u8 index)
+diff --git a/drivers/clk/actions/owl-composite.c b/drivers/clk/actions/owl-composite.c
+index 4c844a5613e4..d66b268563d0 100644
+--- a/drivers/clk/actions/owl-composite.c
++++ b/drivers/clk/actions/owl-composite.c
+@@ -53,13 +53,19 @@ static int owl_comp_is_enabled(struct clk_hw *hw)
+ 	return owl_gate_clk_is_enabled(common, &comp->gate_hw);
+ }
  
- static const struct clk_ops sun6i_rtc_osc_ops = {
- 	.recalc_rate	= sun6i_rtc_osc_recalc_rate,
-+	.determine_rate	= __clk_mux_determine_rate,
+-static long owl_comp_div_round_rate(struct clk_hw *hw, unsigned long rate,
+-				unsigned long *parent_rate)
++static int owl_comp_div_determine_rate(struct clk_hw *hw,
++				       struct clk_rate_request *req)
+ {
+ 	struct owl_composite *comp = hw_to_owl_comp(hw);
++	long rate;
  
- 	.get_parent	= sun6i_rtc_osc_get_parent,
- 	.set_parent	= sun6i_rtc_osc_set_parent,
-@@ -228,6 +229,7 @@ static void __init sun6i_rtc_clk_init(struct device_node *node,
- 	struct clk_init_data init = {
- 		.ops		= &sun6i_rtc_osc_ops,
- 		.name		= "losc",
-+		.flags		= CLK_SET_RATE_NO_REPARENT,
- 	};
- 	const char *iosc_name = "rtc-int-osc";
- 	const char *clkout_name = "osc32k-out";
+-	return owl_divider_helper_round_rate(&comp->common, &comp->rate.div_hw,
+-					rate, parent_rate);
++	rate = owl_divider_helper_round_rate(&comp->common, &comp->rate.div_hw,
++					     req->rate, &req->best_parent_rate);
++	if (rate < 0)
++		return rate;
++
++	req->rate = rate;
++	return 0;
+ }
+ 
+ static unsigned long owl_comp_div_recalc_rate(struct clk_hw *hw,
+@@ -152,7 +158,7 @@ const struct clk_ops owl_comp_div_ops = {
+ 	.is_enabled	= owl_comp_is_enabled,
+ 
+ 	/* div_ops */
+-	.round_rate	= owl_comp_div_round_rate,
++	.determine_rate	= owl_comp_div_determine_rate,
+ 	.recalc_rate	= owl_comp_div_recalc_rate,
+ 	.set_rate	= owl_comp_div_set_rate,
+ };
 
 -- 
 b4 0.11.0-dev-99e3a
