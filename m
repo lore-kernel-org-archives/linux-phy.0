@@ -4,79 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E4EBBC43219
-	for <linux-phy@archiver.kernel.org>; Fri,  4 Nov 2022 13:18:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3AAC2C4332F
+	for <linux-phy@archiver.kernel.org>; Fri,  4 Nov 2022 13:18:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9U3Mq1voqWEbZVQQ2g4kwY3qx+SYjD3N2lBFUFZQyrs=; b=qohQ+C5jtazTGt
-	O7jvMpQdo4Afmf2+s8d7KyQvVSSXJBDKTQaDi282uZDkaKAzX+C70nisNhtRYAYA+bmmuq02WyKpd
-	/w3s3t2KBL9+iaR3a8Ieky+Mn9Rgae++Sr5mTu4anfu17mzUXhgac6ZHl1Am2Zt5b4EM/Y2Nr/WrW
-	cKkUA8hcjRrx584TOcdm4nRHfplQjKC0BWtqlS8nDtmSF8lCy7ihP3dnBob9zifVm/q5JE/uMllON
-	uhVwmZpkFb/IFVsopneLqntpqxUT3qD6T1cfmtr5KLa83iZ0GBfQPhgfvSj3sGO8IzlQXYOnl6F9r
-	LVvsbfZjwvzu4841WeVA==;
+	List-Owner; bh=L/VJmtCYM+3y+qDBd3Ue3t6Fbg7TmA8WjvgMJ8vJMBo=; b=cGfOBmTM2M5OLU
+	i6iLmyMNLAX6ztNAuHbHJ54D5NhlrPFV1ksOUBq+ZDeGDl80V2DWLbNIOusGUD2pueAFU2pTJ+zib
+	Wpv6AfCCwjwiemvJr6zLwUMVx66+FDqRqkbOduqylYsTF3RqKT3zL5nwPrJ7oKmKCVIImDO+O075W
+	M1VFRp/E2zoMgMYC1kQwVnPAns9a1+lkc4+1xZdtXPMZibQyAybht6PGgItR3/uenwzuV8HIyqV3+
+	j5xAr12xftHhlZLZGLo2VTsLYXld+ncLRHSJirT9MMhPqMb2eLE6+zBqj+Wt5RrlLnupEDGWM7ncZ
+	6+xVTdlMBO2Eh7KZ56RQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oqwaD-003cVU-2g; Fri, 04 Nov 2022 13:18:05 +0000
+	id 1oqwaI-003cZJ-6P; Fri, 04 Nov 2022 13:18:10 +0000
 Received: from new1-smtp.messagingengine.com ([66.111.4.221])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oqwa2-003cNn-Iz; Fri, 04 Nov 2022 13:17:56 +0000
+	id 1oqwa3-003cOn-1Y; Fri, 04 Nov 2022 13:17:58 +0000
 Received: from compute1.internal (compute1.nyi.internal [10.202.2.41])
-	by mailnew.nyi.internal (Postfix) with ESMTP id 4980458024E;
-	Fri,  4 Nov 2022 09:17:50 -0400 (EDT)
+	by mailnew.nyi.internal (Postfix) with ESMTP id 695D7580452;
+	Fri,  4 Nov 2022 09:17:54 -0400 (EDT)
 Received: from mailfrontend2 ([10.202.2.163])
-  by compute1.internal (MEProxy); Fri, 04 Nov 2022 09:17:50 -0400
+  by compute1.internal (MEProxy); Fri, 04 Nov 2022 09:17:54 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=cc
 	:cc:content-transfer-encoding:content-type:date:date:from:from
 	:in-reply-to:in-reply-to:message-id:mime-version:references
-	:reply-to:sender:subject:subject:to:to; s=fm3; t=1667567870; x=
-	1667575070; bh=G6roTlQI+WbfuJBVMerfpRGcIgbu8Jj1z+yrfkH1e+4=; b=n
-	305Fx+jcKbMsgUN7v1krJxUbv7vaOfIMbnWEiBcRYzX0RmgLNUo6ZQkQ041POXIZ
-	dxIzQjfl8zV82UiM8+VLMQJwrb6pLRYX7gCMb+XBMWuH1E/0jDHRJlvJ/Lpuin95
-	ZDW+gl9GhhcANj/Hsh5IWBqmfuv3jIxxLX8EstOLGKg7VuSm1kTHzuqYRVBMDUhB
-	+JjAc8H/cro+i7N4tOFy91tFBOszwsetF5RzSoAbn6n4jqLKw+oDrzkPQt1uAiRO
-	0tL7+W8Sv5otfhI+TTUQ693kejDfv6p3gxSaz+ybZkiMhJ3htwMZwenAoc/Uz60+
-	iTbTLunO1rfdpWZpT6mSw==
+	:reply-to:sender:subject:subject:to:to; s=fm3; t=1667567874; x=
+	1667575074; bh=gulfUfzWxrSqI04EuTpJI31rPi0/dfB3rbjvrNMKjxY=; b=j
+	xHzL7Cnzjfiw0PGk2c3HMN+PyHDbxOM2uEnKzwVGPtCzb8g3bu3Eiz3Xyexsc//I
+	eS6k5W3Op9rsyni8gj3FUiKo46O6VmY+Yn+cedj2E5AkZw35yhxickPQS1dFkcwS
+	7EpQk9j3L3hPZdNPSx2Tp4hp1NrDRw/6EuAzr0GkUDXHnkg+KVB8+VHBCa3OIeN6
+	HiG97KbdXWEXAER1UyuUfycgukhpXo9yKoP4RlJMZkyD8CQ3w5MF2ZyHA9/+4DMz
+	tNwzP+OTA1J8obKlrIJe1slYiwet0dc569CunTXqgx0e27uXxEHFKpAWFs/jJsjT
+	skp6xRiKzC6uH3PY8iMdg==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
 	messagingengine.com; h=cc:cc:content-transfer-encoding
 	:content-type:date:date:feedback-id:feedback-id:from:from
 	:in-reply-to:in-reply-to:message-id:mime-version:references
 	:reply-to:sender:subject:subject:to:to:x-me-proxy:x-me-proxy
-	:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; t=1667567870; x=
-	1667575070; bh=G6roTlQI+WbfuJBVMerfpRGcIgbu8Jj1z+yrfkH1e+4=; b=I
-	Z9JokDAMRMmEs198kcOyI8byre7eSOmpJS/5iXjULqjY+mM1ez554uEE5P/Dmq9n
-	Y2phF2Ulr43HOi7KVl59kOM2ZXOb2atqD2mg8M/epW+1ArP9EmdYUAJlZliMFOVD
-	o12Xx38r37wZLzYpfU+rJPcvqSDRpLY/FCYqk6k3WDWHqAoayvxVtE5/iP9xO5Ej
-	yWXKogQGxCteQLxh7SqLZ6FP2k0sBEskWmK/5LsDTWMImCxvmptKYJUVpH2wCBV6
-	CsD67r2Fk67TjOH07maYbYHROh63LTNDVT8baKk+pXZhP5+x0ZDzT30G2pMfBFWv
-	GuflU3e1PeXPYUL41JYFw==
-X-ME-Sender: <xms:_RBlYz5sWVh5Q2Prh_vcUS1V4bUgy-GcLDiEi6lCh0Bcu3Q64KA1vA>
-    <xme:_RBlY47mcMoIwdxKw4VYA8CgXYfqwofPIk_yfVQkQzfo1rGrC_va9Afa7ZcugfEHA
-    XB2_DJ4y-aQ2O-mC6g>
-X-ME-Received: <xmr:_RBlY6cWfkdXCW7SxXxy8D3iUOUKglqMWDCzsclEYVaMDfzMJQ2znJ6I5fQLhAC5V7nfAw1F5rwqAos6yBBWZqikovTGcFmzCpicojzmMbHmVw>
+	:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; t=1667567874; x=
+	1667575074; bh=gulfUfzWxrSqI04EuTpJI31rPi0/dfB3rbjvrNMKjxY=; b=N
+	cXu9Kys9Bj+Vx2D3rQoRZS89rl6OSuwEoxKU2uDggMYLKsUEucWr/xdkTEuyTfLe
+	4Gbh55NY0v1hs1/44EUfw0UXk/dmYaTUr4AgQB8nwcW6SVUYRVot0WUnfS4goOf6
+	VLMYeVNlx/xsVsQTya7UMOgN8U7yPZ13sQh8oyV+CzIThamJ2BSErys5KdaqJ5aK
+	Z6wLTHi0EDHZhcvFRVjlKGLtSQjeAkuLiDNUpGh5C9l00gV62N43kkIAZ1LfEjmf
+	B1xjczzbpL8i7prAlCCeW0o1e+X40do+K4XyW4DrEjJGhG/mTUtfvXbjWdq3i6uR
+	+UPBng6rPnYVVYBl25z0g==
+X-ME-Sender: <xms:AhFlY2upIJH4koeKBnyORuAyopysOCx1QQdNGaFQSMdQklGEL9G-jw>
+    <xme:AhFlY7dguGM17fNL2Qe0GfYw38EHIAKgQp6Rm45ssTq-S5uvXXxZQXJOKv0259d-h
+    9vzACvOadcd9CNsYLw>
+X-ME-Received: <xmr:AhFlYxzwee7TPE_98QdN1jV-I24svtraitIzkZPJZ92NZSG18zv4Rapo-C8BPA8cKr9wZ2XIQbe4Lt_FNzvL37V31J2m6mV-y0rVF5onMbkpNw>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvgedrvddugdegkecutefuodetggdotefrodftvf
     curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
     uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
     fjughrpefhfffugggtgffkfhgjvfevofesthekredtredtjeenucfhrhhomhepofgrgihi
     mhgvucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucggtffrrg
     htthgvrhhnpeduudduhfevjeetfeegvdffvdevvdejudegudekjeehtdelhfffveethfej
-    ledtveenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhrohhmpe
+    ledtveenucevlhhushhtvghrufhiiigvpedunecurfgrrhgrmhepmhgrihhlfhhrohhmpe
     hmrgigihhmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:_RBlY0Ib4bHGO5KmpBgwthZxEPtuJoYhiBdH1sJFc6bY_Ro_cIUb-g>
-    <xmx:_RBlY3KrcZQruXj4HjKXTloKAi9Ves609ipl5P7HJSwdQSy9j5OqOw>
-    <xmx:_RBlY9wHbb5mW5glkJ3V3LnZPKWDZYBch6nxD8xhk9eK8jP0Hj8nNg>
-    <xmx:_hBlY-Y-LfwRpLmQErcd1SIYyAqJPysiO5TrAswCdcP4FFrTUcRVcw>
+X-ME-Proxy: <xmx:AhFlYxPQV_4qB6R4mzBNbeL7NAYAufQMtB-TbqThpR4udegkpdtFng>
+    <xmx:AhFlY29uHLh6-Z-tuSmGv6CKZ_FISqEF0Jo7m9aFW0ToawVxdzWfWg>
+    <xmx:AhFlY5VbjYAJM1uy8LyXbQBHDCvC7AgbUHikgCRZGpozfiB1_em7Ew>
+    <xmx:AhFlY8cYP60TDPBp7WfFEjkPffC2RAHTjqLvJIr6zruG64eFPNAOfA>
 Feedback-ID: i8771445c:Fastmail
 Received: by mail.messagingengine.com (Postfix) with ESMTPA; Fri,
- 4 Nov 2022 09:17:49 -0400 (EDT)
+ 4 Nov 2022 09:17:53 -0400 (EDT)
 From: Maxime Ripard <maxime@cerno.tech>
-Date: Fri, 04 Nov 2022 14:17:18 +0100
-Subject: [PATCH v2 01/65] clk: Export clk_hw_forward_rate_request()
+Date: Fri, 04 Nov 2022 14:17:20 +0100
+Subject: [PATCH v2 03/65] clk: nodrv: Add a determine_rate hook
 MIME-Version: 1.0
-Message-Id: <20221018-clk-range-checks-fixes-v2-1-f6736dec138e@cerno.tech>
+Message-Id: <20221018-clk-range-checks-fixes-v2-3-f6736dec138e@cerno.tech>
 References: <20221018-clk-range-checks-fixes-v2-0-f6736dec138e@cerno.tech>
 In-Reply-To: <20221018-clk-range-checks-fixes-v2-0-f6736dec138e@cerno.tech>
 To: Stephen Boyd <sboyd@kernel.org>,
@@ -123,17 +123,16 @@ Cc: linux-stm32@st-md-mailman.stormreply.com, alsa-devel@alsa-project.org, linux
  linux-tegra@vger.kernel.org, linux-rtc@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-sunxi@lists.linux.dev, linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org
 X-Mailer: b4 0.11.0-dev-99e3a
-X-Developer-Signature: v=1; a=openpgp-sha256; l=818; i=maxime@cerno.tech;
- h=from:subject:message-id; bh=pHSkDqlAWAoctG0mTmKyzVsJsENtdafsCZJ4udDXPgk=;
- b=owGbwMvMwCX2+D1vfrpE4FHG02pJDMmpAp9aPz1sP7s2/Xn5a/ErU6beWJjGX1Lh2zWb89/fOWUJ
- BsmFHaUsDGJcDLJiiiwxwuZL4k7Net3JxjcPZg4rE8gQBi5OAZjIRS5GhqnPGtbbXKwz4D9Z52Fi92
- u/dNpMd35p+Z1zHPNui+1TEWVk2F9WoVG819j57F3279o6Mm83xyUl/TrE/K164Z5ff2asZgEA
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1157; i=maxime@cerno.tech;
+ h=from:subject:message-id; bh=cTvG3Ny7vbFY5Q42sItsaJ9Su6ls/B3daI8QtRhhdSg=;
+ b=owGbwMvMwCX2+D1vfrpE4FHG02pJDMmpAp8+C5Y88qpojMj6IcW27fC9ExOEC2IMTjbY8smt4mCY
+ VtvVUcrCIMbFICumyBIjbL4k7tSs151sfPNg5rAygQxh4OIUgIns+sLIsOpSyRUbDrOeLQs+e1bEvz
+ CNs3t1tfW627PaiTti9lwrsWf4Z9VzwsL9v+szkaxnq5uC5LtaWAyKmXWOvb6a9Ex7+88TXAA=
 X-Developer-Key: i=maxime@cerno.tech; a=openpgp;
  fpr=BE5675C37E818C8B5764241C254BCFC56BF6CE8D
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221104_061755_256080_2A44E862 
-X-CRM114-Status: UNSURE (   9.42  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20221104_061755_290803_A340A9D3 
+X-CRM114-Status: GOOD (  11.17  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -150,28 +149,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Commit 262ca38f4b6e ("clk: Stop forwarding clk_rate_requests to the
-parent") introduced the public clk_hw_forward_rate_request() function,
-but didn't export the symbol. Make sure it's the case.
+The nodrv clock implements a mux with a set_parent hook, but doesn't
+provide a determine_rate implementation.
 
-Fixes: 262ca38f4b6e ("clk: Stop forwarding clk_rate_requests to the parent")
+Even though it's a mock clock and the missing function is harmless,
+we'll start to require a determine_rate implementation when set_parent
+is set, so let's fill it.
+
 Signed-off-by: Maxime Ripard <maxime@cerno.tech>
 ---
- drivers/clk/clk.c | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/clk/clk.c | 7 +++++++
+ 1 file changed, 7 insertions(+)
 
 diff --git a/drivers/clk/clk.c b/drivers/clk/clk.c
-index 57b83665e5c3..d4a74759fe29 100644
+index d4a74759fe29..495d7497cc43 100644
 --- a/drivers/clk/clk.c
 +++ b/drivers/clk/clk.c
-@@ -1525,6 +1525,7 @@ void clk_hw_forward_rate_request(const struct clk_hw *hw,
- 				  parent->core, req,
- 				  parent_rate);
+@@ -4257,11 +4257,18 @@ static int clk_nodrv_set_parent(struct clk_hw *hw, u8 index)
+ 	return -ENXIO;
  }
-+EXPORT_SYMBOL_GPL(clk_hw_forward_rate_request);
  
- static bool clk_core_can_round(struct clk_core * const core)
- {
++static int clk_nodrv_determine_rate(struct clk_hw *hw,
++				    struct clk_rate_request *req)
++{
++	return -ENXIO;
++}
++
+ static const struct clk_ops clk_nodrv_ops = {
+ 	.enable		= clk_nodrv_prepare_enable,
+ 	.disable	= clk_nodrv_disable_unprepare,
+ 	.prepare	= clk_nodrv_prepare_enable,
+ 	.unprepare	= clk_nodrv_disable_unprepare,
++	.determine_rate	= clk_nodrv_determine_rate,
+ 	.set_rate	= clk_nodrv_set_rate,
+ 	.set_parent	= clk_nodrv_set_parent,
+ };
 
 -- 
 b4 0.11.0-dev-99e3a
