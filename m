@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7DBCBC3E8A8
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7A801C3A5A3
 	for <linux-phy@archiver.kernel.org>; Sat,  5 Nov 2022 15:03:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,39 +12,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ERdr/j8vAB4BmxZe/TptqD22ODmyRtdZ+gEmtXYioWY=; b=adCE7yqdtprrep
-	oGyVNM+GCgPqZIHGa4tk/KqNKZ2Zdgw87Kx8qmCuZ58rSYvCQmq/6JZ6DgqlNlMVSmuD9o7VLYAiB
-	E+bO46qLQjoW0V1kmZRg5tQ4mc2X6h410GTzs6SZnelkc1pzHifUcM4I4fMVuFKOuebSY2NCAAUO6
-	CnevBwJRRjcJSTPmC2l5tIL2v+a0VKtWUDeaaf1LihGeSyKP6p6a7abnLuDw7EWfkvoDNBBOksR39
-	e4/XS6oa8wxGvYJb5SLOU2/W3kstKDAScworHtsGB2C6HomRDhjO9GuAPOpmD0WSK4oIGUzJJospl
-	SmdzXY9WnDy68SRmoC2Q==;
+	List-Owner; bh=7N0WcxjGUcD6LlHXJNbe/e2ZmC16GrF13jpIgbzjs8g=; b=n1D/dAU/6ZZ91I
+	wG26XKF0l78WV7k7Pz+wuHt90ZytB+wPtPC1tKg0ekAH0/SrhCSA6JtwiJSbARAx+TJ7po6S+/Edn
+	0VSkjKWhvVrsmCCZIfDgqezXw5cZE4i8qG5wiESqx8EnsSlZBf+dHdi6NQX6L8f78utNuSKfB3qd1
+	hrIIdnJXqyf6XnENsdRGGYigoN+a2yIP0Tk8++yZLkiFlug0Ymau9vvGZ/RCaqhS+ER5gkKXIPaMV
+	bLJ91wF4mLWvZVCpx5yGbtPe0OYLttvdw6I9qXYklBDg2Zwt7S5ugjSf0Xu8L8xJuzR24Si9ffPTX
+	JGVK2X8yO7NwvaURAAWQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1orKhJ-006mNm-VQ; Sat, 05 Nov 2022 15:03:01 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1orKhJ-006mNT-S2; Sat, 05 Nov 2022 15:03:01 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1orKhD-006mHG-NX
+	id 1orKhD-006mHF-NF
 	for linux-phy@lists.infradead.org; Sat, 05 Nov 2022 15:02:59 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 612CA60B81;
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 7EAB460B61;
 	Sat,  5 Nov 2022 15:02:53 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C10EDC4FF0C;
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C886BC4FF17;
 	Sat,  5 Nov 2022 15:02:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1667660570;
-	bh=TV7DzdgdbhG7XCM0PpNhZ7z9y4rRgpD4ynb7bwaaAFY=;
+	bh=HswirRZMlApYAI9kTzaONSnZBS07q3rfW88eCURWAbc=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=JtmOeyQcynGInGQNXwYkghZt+32BiT49XDwNqImxsWYlPM8wfYTQFUZ6evHTKnbm8
-	 DlMLDllV9YvM7rNv8MC1BVdAvATrUwseTOKup2DUVheCoX+ca1aZWU/Io/dq71VAow
-	 /GF1k0G5hhYV25vifba9poLqD3Vdvi9jnv8j4Ol24SMhUF42JzMHpUFJrAokYZeL9I
-	 gy/8cvg2TG5ha9m5c4pJXl4Je0ntRaqI0LJRILEQ+YknD0HR/pyxX3DvnnbwV+4rx9
-	 +2bdjVqSJpQDqgYN6YVx0KoQI06FlNl1Fs1DMqT2+YNSVC13vNkQQOQXgT2OKywxN8
-	 Hb6bmvqpVf8Dg==
+	b=f2KFFSzJlwgFFaftmny888e0DFnIu5CQEgjJy6FYKyKnu2yWfzLHCtHgaF++R3WYG
+	 QsVrzuxQ1O0UkhgnM+Fk4UZvv9rGP3LbUW5vN8J2i5QtQ3re8y/I0VPjD07Bjc4gwt
+	 YQGGt/47YCwQ9fZYLxNbY0OURkBbi+2tVPdTR/Kvcycs+YfxZvLxbcrg+QSXb55XKn
+	 AZjkA1TaI0lJR3q5Ytf0vTi8BCcawhbBSu5SQtPP65GIDUNMeEOftPBo54XEOxL31E
+	 Y1YAkQrkrGx3b9ATP6Gz0EVYQo83MDa9V/a3KCLPMXJpXcadPIqsvYPqQckq7WBSs9
+	 eDSiNuaAPZMXg==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1orKgp-0005Km-OU; Sat, 05 Nov 2022 16:02:31 +0100
+	id 1orKgp-0005Kp-R1; Sat, 05 Nov 2022 16:02:31 +0100
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>
 Cc: Andy Gross <agross@kernel.org>,
@@ -58,16 +58,16 @@ Cc: Andy Gross <agross@kernel.org>,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>,
 	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Subject: [PATCH v5 12/16] phy: qcom-qmp-pcie: restructure PHY creation
-Date: Sat,  5 Nov 2022 15:59:35 +0100
-Message-Id: <20221105145939.20318-13-johan+linaro@kernel.org>
+Subject: [PATCH v5 13/16] phy: qcom-qmp-pcie: fix initialisation reset
+Date: Sat,  5 Nov 2022 15:59:36 +0100
+Message-Id: <20221105145939.20318-14-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.37.4
 In-Reply-To: <20221105145939.20318-1-johan+linaro@kernel.org>
 References: <20221105145939.20318-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221105_080255_879974_DE640EA4 
-X-CRM114-Status: GOOD (  15.76  )
+X-CRM114-CacheID: sfid-20221105_080255_818515_AC10132D 
+X-CRM114-Status: GOOD (  12.31  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,95 +84,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-In preparation for supporting devicetree bindings which do not use a
-child node, move the PHY creation to probe() proper and parse the serdes
-resource in what is now the legacy devicetree helper.
+Add the missing delay after asserting reset. This is specifically needed
+for the reset to have any effect on SC8280XP.
+
+The vendor driver uses a 1 ms delay, but that seems a bit excessive.
+Instead use a 200 us delay which appears to be more than enough and also
+matches the UFS reset delay added by commit 870b1279c7a0 ("scsi:
+ufs-qcom: Add reset control support for host controller").
 
 Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 36 +++++++++++-------------
- 1 file changed, 17 insertions(+), 19 deletions(-)
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
 diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-index 09999d5b5268..8af84ff755ab 100644
+index 8af84ff755ab..06844552922e 100644
 --- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
 +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-@@ -2147,14 +2147,15 @@ static int phy_pipe_clk_register(struct qmp_pcie *qmp, struct device_node *np)
- 	return devm_add_action_or_reset(qmp->dev, phy_clk_release_provider, np);
- }
- 
--static int qmp_pcie_create(struct qmp_pcie *qmp, struct device_node *np)
-+static int qmp_pcie_parse_dt_legacy(struct qmp_pcie *qmp, struct device_node *np)
- {
-+	struct platform_device *pdev = to_platform_device(qmp->dev);
- 	const struct qmp_phy_cfg *cfg = qmp->cfg;
- 	struct device *dev = qmp->dev;
--	struct phy *generic_phy;
--	int ret;
- 
--	qmp->mode = PHY_MODE_PCIE_RC;
-+	qmp->serdes = devm_platform_ioremap_resource(pdev, 0);
-+	if (IS_ERR(qmp->serdes))
-+		return PTR_ERR(qmp->serdes);
- 
- 	/*
- 	 * Get memory resources for the PHY:
-@@ -2209,16 +2210,6 @@ static int qmp_pcie_create(struct qmp_pcie *qmp, struct device_node *np)
- 				     "failed to get pipe clock\n");
+@@ -1866,6 +1866,8 @@ static int qmp_pcie_init(struct phy *phy)
+ 		goto err_disable_regulators;
  	}
  
--	generic_phy = devm_phy_create(dev, np, &qmp_pcie_phy_ops);
--	if (IS_ERR(generic_phy)) {
--		ret = PTR_ERR(generic_phy);
--		dev_err(dev, "failed to create PHY: %d\n", ret);
--		return ret;
--	}
--
--	qmp->phy = generic_phy;
--	phy_set_drvdata(generic_phy, qmp);
--
- 	return 0;
- }
- 
-@@ -2243,10 +2234,6 @@ static int qmp_pcie_probe(struct platform_device *pdev)
- 	WARN_ON_ONCE(!qmp->cfg->pwrdn_ctrl);
- 	WARN_ON_ONCE(!qmp->cfg->phy_status);
- 
--	qmp->serdes = devm_platform_ioremap_resource(pdev, 0);
--	if (IS_ERR(qmp->serdes))
--		return PTR_ERR(qmp->serdes);
--
- 	ret = qmp_pcie_clk_init(qmp);
- 	if (ret)
- 		return ret;
-@@ -2263,7 +2250,7 @@ static int qmp_pcie_probe(struct platform_device *pdev)
- 	if (!child)
- 		return -EINVAL;
- 
--	ret = qmp_pcie_create(qmp, child);
-+	ret = qmp_pcie_parse_dt_legacy(qmp, child);
- 	if (ret)
- 		goto err_node_put;
- 
-@@ -2271,6 +2258,17 @@ static int qmp_pcie_probe(struct platform_device *pdev)
- 	if (ret)
- 		goto err_node_put;
- 
-+	qmp->mode = PHY_MODE_PCIE_RC;
++	usleep_range(200, 300);
 +
-+	qmp->phy = devm_phy_create(dev, child, &qmp_pcie_phy_ops);
-+	if (IS_ERR(qmp->phy)) {
-+		ret = PTR_ERR(qmp->phy);
-+		dev_err(dev, "failed to create PHY: %d\n", ret);
-+		goto err_node_put;
-+	}
-+
-+	phy_set_drvdata(qmp->phy, qmp);
-+
- 	of_node_put(child);
- 
- 	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
+ 	ret = reset_control_bulk_deassert(cfg->num_resets, qmp->resets);
+ 	if (ret) {
+ 		dev_err(qmp->dev, "reset deassert failed\n");
 -- 
 2.37.4
 
