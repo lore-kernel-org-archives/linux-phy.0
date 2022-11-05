@@ -4,67 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B8051C43217
-	for <linux-phy@archiver.kernel.org>; Fri,  4 Nov 2022 21:40:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2DDB8C4332F
+	for <linux-phy@archiver.kernel.org>; Sat,  5 Nov 2022 06:25:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=A1+ADlpbwMCozyT16o38vndB2GXQUvRQJc6FiccRzrE=; b=eH5Zq6ruU9vBy6
-	2IeAr+t7FQDMpwYdGug6GyBFj4eOcXwEYOtAZ78NGtYG4pxo+cSxsmk4JTHY1Ky6xDN7m3RdTGkIG
-	v9LfXQ26criKTDFx8nqG6ZATdvS0+/Vjes1h8vzoxXLi8nUt6WkGG838h2AeMIjWWTJxNmGp9dBqP
-	nmAfwF4pw33L1wjshtB7zeNMD2063D7my01vnaRcjFm7exB5pbs+tChlBuUQ1meMJcZGSp//8eZyk
-	bxRoZIMzMRVzpizSpwrfieoGajHa80xD30wnP1kZeeduGzH/2SbQ3J61Rc1aB+zQPIzNwZcZco9io
-	BxzJBt+sM+OVsm+TcI8g==;
+	List-Owner; bh=+9NL27CCtiOMqL7qylhOW0+ZvPO4S9iFEIv9f1xFvE8=; b=xI6pYbReNWpLRv
+	v7nvjbp3YPOiZv+uLtu5GfJxm4tAgyz0Lo0r7rivXDEhULzBxqUsxcDgBfqfFhxl60+0hYcc+kAN3
+	kif3wlBOzB1VyzNkQotmHKKRQCJKBae6s+wzZAERtnOuqkuyKv4I0zXMIgdkZM3RaJ8r1dg6Eu3F3
+	+M+gy6/FNrHwwyrClDORrMKRueG7aH4bRBi5s3qYFzSvFuHR5H8DN6dzNm0GVkIPRzjF01UNRfsyw
+	2UedgOBhzHJ2LG52kgvUAvP8Pfd12nECjIECzgRN9ck497KLBN48Q7yc8hxHspg8OMD8QhVTlgTF8
+	u/3uYMEQiHISyIPhsyYw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1or4Qd-005FAw-5N; Fri, 04 Nov 2022 21:40:43 +0000
-Received: from mail-oi1-f172.google.com ([209.85.167.172])
+	id 1orCcF-005wEv-GI; Sat, 05 Nov 2022 06:25:15 +0000
+Received: from mail-oi1-x22b.google.com ([2607:f8b0:4864:20::22b])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1or4Qa-005FAA-9E
-	for linux-phy@lists.infradead.org; Fri, 04 Nov 2022 21:40:41 +0000
-Received: by mail-oi1-f172.google.com with SMTP id p127so6487420oih.9
-        for <linux-phy@lists.infradead.org>; Fri, 04 Nov 2022 14:40:38 -0700 (PDT)
+	id 1orCcC-005wEO-8m
+	for linux-phy@lists.infradead.org; Sat, 05 Nov 2022 06:25:13 +0000
+Received: by mail-oi1-x22b.google.com with SMTP id m204so7288513oib.6
+        for <linux-phy@lists.infradead.org>; Fri, 04 Nov 2022 23:25:10 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20210112;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=6AE3y29509hLMsGDmKEJpwzl8TMTLwTBza5239RAscQ=;
+        b=AUx2N1nbtsFMiWYIlO/6Y0D3ZQlXcMrcbtiRnZWA9ZFE78KapFuKDiYmC62PRk+vr7
+         74Ka/Ob07tg7d6e7kdJyrFduSbMUh1XG4h/RqH0Lplb+d8QGphPCQkSfIgTWMcL1H7O4
+         G63wO2aKGXfJRdKTnxWrt6qLkTIpx5mtCoyGaZSQB+1qZTSj8dqlxMnr2iqdj4hG+aau
+         cj0096rvvIjYJvIGL+FaWFqHpvfWbAFBwe1qC8HEx3Fmskg9rCXFQn5uAaE25w+ZWP5X
+         IMRuRlAgL0RZ7gWsQm7fcPXjA0Z7gpqKuThqAix+2ZCkPIt24+u33BnIS5Q5u/x848on
+         Swlg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=Jh4TZpx/fUejHGdSgYJPb2bOIrkhGmJ4yxw/EXpmSSk=;
-        b=LekCtMCl+zpYSzIrzEdmAWSh0h9vJ94Z67qCH0tC3+IJ1S0vSVG/ovCBLo5APwMAqp
-         CYkFBjoOq4Zgvrv7jSH1fj33rnKe1aIT3DvZkvrjqe9y/Xry1HkKIPTAr02hiO+qdiXQ
-         x1XCLD96XVXJ8Sq0RLr/iJnLzcvXN34X7CqkHx1kq8V4ha515O2AXuylL707GriDVZ1d
-         055oFsvE5lCZ3YfMcVcIUhPDM0b0FViW3v9jD2Wb09q4p1aVf4CmUF89s5VOjMCMkBqZ
-         hQlyIzOd9CmNUBey4FUwURgF5r/r7RePmJ/SjK5ZKhIZ7K4w2m92UVW9yYZ3/3tPBmDQ
-         kfXw==
-X-Gm-Message-State: ACrzQf1RAJtz4wASJ+D6l8Zo4zAo4aKlCNlmEJzs5NIc9h1PLwGu2T5G
-	G8gRi/eoVD87bTTzGhqGhnn62PjNHw==
-X-Google-Smtp-Source: AMsMyM4AIauGU9ELLG9wadYHkA3jCPpaknwCvdEYTBT+HNyDIyo9igsDWHLRAB0W7CXeL0RgIYFYcg==
-X-Received: by 2002:a05:6808:1288:b0:35a:5a4b:812a with SMTP id a8-20020a056808128800b0035a5a4b812amr2989133oiw.117.1667598038238;
-        Fri, 04 Nov 2022 14:40:38 -0700 (PDT)
-Received: from robh_at_kernel.org (66-90-144-107.dyn.grandenetworks.net. [66.90.144.107])
-        by smtp.gmail.com with ESMTPSA id r7-20020a4acb07000000b0047ed75e4d61sm135059ooq.7.2022.11.04.14.40.37
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 04 Nov 2022 14:40:37 -0700 (PDT)
-Received: (nullmailer pid 2878196 invoked by uid 1000);
-	Fri, 04 Nov 2022 21:40:39 -0000
-Date: Fri, 4 Nov 2022 16:40:39 -0500
-From: Rob Herring <robh@kernel.org>
-To: Johan Hovold <johan+linaro@kernel.org>
-Cc: devicetree@vger.kernel.org, Bjorn Andersson <andersson@kernel.org>, linux-arm-msm@vger.kernel.org, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Rob Herring <robh+dt@kernel.org>, linux-phy@lists.infradead.org, Andy Gross <agross@kernel.org>, Konrad Dybcio <konrad.dybcio@somainline.org>, Vinod Koul <vkoul@kernel.org>, Dmitry Baryshkov <dmitry.baryshkov@linaro.org>, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH RESEND v2 11/13] dt-bindings: phy: qcom,qmp-usb: fix
- sc8280xp binding
-Message-ID: <166759803901.2878139.5371601797957864706.robh@kernel.org>
-References: <20221028160435.26948-1-johan+linaro@kernel.org>
- <20221028160435.26948-12-johan+linaro@kernel.org>
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=6AE3y29509hLMsGDmKEJpwzl8TMTLwTBza5239RAscQ=;
+        b=P/w0Ot5074tXOUKz2wV8zeMc6ldg90BvoVXtpSCxDED8viprNL68q2E7QyQBo+O+M+
+         iaQdcU2uWNhxnmFN9S+0M5WTl7y2f/0pDYqzj526hZFbeQbdRQYKwqhhdQMfldpwa36e
+         P8v4pAzV6g+Hkyzbqm3HbFYtnf6X+MYGaM8XdHen02TEGwNA2lixLUfFVeM7eT1AB4LC
+         x/n7GHvLlsHJ+s+cvyjP6GteXdt0VVQybS1JAQ4gs23GiHJly+Ji1jI5cdoDdJaGTZDP
+         09s2UfNJStLM1FNmIYLJg5QO9micjMn8QzncX3Bu9t7i0KI0IqwEfyqQ6BvRXG/VdErU
+         kDIw==
+X-Gm-Message-State: ACrzQf1vr056bT4o9My5faHjAQAf3LVYG4U7Ayj0nhSO7hbl4UkvX1EE
+	YraRQbZ2dedbYR3n54QNioqcup+CjhOU2UBUnVo=
+X-Google-Smtp-Source: AMsMyM5DsRlY+IpeIBtRaARvugXX4xtvaU2mQyq0fH6YLi1+cQHHEFDfHmH8vrZWAcwMiBsXFFTxdtIjlL5F/V8jyf8=
+X-Received: by 2002:a05:6808:114a:b0:35a:4acd:f598 with SMTP id
+ u10-20020a056808114a00b0035a4acdf598mr7470562oiu.144.1667629510048; Fri, 04
+ Nov 2022 23:25:10 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20221028160435.26948-12-johan+linaro@kernel.org>
+References: <20221104205242.3440388-1-git@johnthomson.fastmail.com.au> <20221104205242.3440388-2-git@johnthomson.fastmail.com.au>
+In-Reply-To: <20221104205242.3440388-2-git@johnthomson.fastmail.com.au>
+From: Sergio Paracuellos <sergio.paracuellos@gmail.com>
+Date: Sat, 5 Nov 2022 07:24:58 +0100
+Message-ID: <CAMhs-H_uV=qURur1r4vK273rpaF990c9T6uP-7KWdPZz7+kNUg@mail.gmail.com>
+Subject: Re: [PATCH 1/2] phy: ralink: mt7621-pci: add sentinel to quirks table
+To: John Thomson <git@johnthomson.fastmail.com.au>
+Cc: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, 
+	Lorenzo Pieralisi <lpieralisi@kernel.org>, Rob Herring <robh@kernel.org>, 
+	=?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?= <kw@linux.com>, 
+	Bjorn Helgaas <bhelgaas@google.com>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
+	=?UTF-8?B?QXLEsW7DpyDDnE5BTA==?= <arinc.unal@arinc9.com>, 
+	linux-phy@lists.infradead.org, linux-pci@vger.kernel.org, 
+	linux-kernel@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221104_144040_342822_B776FFA5 
-X-CRM114-Status: GOOD (  22.23  )
+X-CRM114-CacheID: sfid-20221104_232512_368265_84B02894 
+X-CRM114-Status: GOOD (  12.79  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,50 +90,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-On Fri, 28 Oct 2022 18:04:33 +0200, Johan Hovold wrote:
-> The current QMP USB PHY bindings are based on the original MSM8996 PCIe
-> PHY binding which provided multiple PHYs per IP block and these in turn
-> were described by child nodes.
-> 
-> The QMP USB PHY block only provide a single PHY and the remnant child
-> node does not really reflect the hardware.
-> 
-> The original MSM8996 binding also ended up describing the individual
-> register blocks as belonging to either the wrapper node or the PHY child
-> nodes.
-> 
-> This is an unnecessary level of detail which has lead to problems when
-> later IP blocks using different register layouts have been forced to fit
-> the original mould rather than updating the binding. The bindings are
-> arguable also incomplete as they only the describe register blocks used
-> by the current Linux drivers (e.g. does not include the per lane PCS
-> registers).
-> 
-> Note that PCS_USB region is also not described by the current bindings
-> despite being used by the driver and this has led to people increasing
-> the size of the PCS region in the devicetree so that it includes PCS_USB
-> registers even though other regions like TX and RX may lie in between.
-> 
-> Add a new binding for the QMP USB PHYs found on SC8280XP which further
-> bindings can be based on.
-> 
-> Note that this also fixes the SC8280XP "phy_phy" reset name.
-> 
-> Also note that the current binding is simply removed instead of being
-> deprecated as it was only recently merged and support for SC8280XP is
-> still under development. And, specifically, there is no support in
-> mainline for the multiport controller that uses these PHYs.
-> 
-> Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
+On Fri, Nov 4, 2022 at 9:54 PM John Thomson
+<git@johnthomson.fastmail.com.au> wrote:
+>
+> With mt7621 soc_dev_attr fixed to register the soc as a device,
+> kernel will experience an oops in soc_device_match_attr
+>
+> This quirk test was introduced in the staging driver in
+> commit 9445ccb3714c ("staging: mt7621-pci-phy: add quirks for 'E2'
+> revision using 'soc_device_attribute'"). The staging driver was removed,
+> and later re-added in commit d87da32372a0 ("phy: ralink: Add PHY driver
+> for MT7621 PCIe PHY") for kernel 5.11
+>
+> Link: https://lore.kernel.org/lkml/26ebbed1-0fe9-4af9-8466-65f841d0b382@app.fastmail.com
+> Fixes: d87da32372a0 ("phy: ralink: Add PHY driver for MT7621 PCIe PHY")
+> Signed-off-by: John Thomson <git@johnthomson.fastmail.com.au>
 > ---
->  .../phy/qcom,msm8996-qmp-usb3-phy.yaml        |  13 ---
->  .../phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml   | 105 ++++++++++++++++++
->  2 files changed, 105 insertions(+), 13 deletions(-)
->  create mode 100644 Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml
-> 
+>  drivers/phy/ralink/phy-mt7621-pci.c | 3 ++-
+>  1 file changed, 2 insertions(+), 1 deletion(-)
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+Acked-by: Sergio Paracuellos <sergio.paracuellos@gmail.com>
+
+Thanks,
+    Sergio Paracuellos
 
 -- 
 linux-phy mailing list
