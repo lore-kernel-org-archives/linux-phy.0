@@ -4,47 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DD668C4332F
-	for <linux-phy@archiver.kernel.org>; Sat,  5 Nov 2022 15:02:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EC468C38A2B
+	for <linux-phy@archiver.kernel.org>; Sat,  5 Nov 2022 15:02:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HjV7e6XldKfpvCzetSgsQIxNV/LIwg0F6P2sn5RqFaU=; b=wdLoyQV/ZxUE5W
-	YQptOuOd+r0sMkdrcqkAhyPkOXEbvBanUhKOzDFUB8mBbxT/JWG3UaLnAxLBZwTHqSm/hZx+vsEFW
-	AM2TA+Z2LEU/WduTRliN9SydV0ZZ8xKd3zfpOmaxPj1BWm8Ss3VqkgqEKQ0pKe+t/UbEGWO8vlb9W
-	at6zgy+aqEYxAerKzwM8dlphntIJy+1Ae1lt8UD4W8iF7r78/Du+4kpqJiZh2Kc5hMVm45l/Y0aWU
-	L+CtAHfW3cgEZ4FFrr3B1f94MfmZWX5LstlzbU3WIWvGgVHKUTVBI9RYTZpX3NjcNeFAJOGi4Q6dT
-	raxJVeSPU5BqLNXy9+qw==;
+	List-Owner; bh=BSKr+Msx1tS87N8JYuXy0wp7zS8E17RHr/bTYoPVK04=; b=vA3fsrXfe0K6ML
+	QszE4ZcPI3cUIsP8Jer4e5ig148RnI5nUshFIjcZai7AyZ3pk5v/swqBOS2+AVTOBhy8e/mq2PA7h
+	c2xCf/f3/zDNdIBgWktxkaaw8yvIm+r7+LoodJsbCBSGesQxshE5jIovn7VYMC2qIo11GUAQTTbc2
+	o50H5JSqKRxp3XkyuG+XCjINc6RqRHbAaoePrNK9FRCyD36bqE3Lu9X7m16MkQcOA2Qzbge+n1F9w
+	/FUaJ5uAcqG88L+5KEUO8Uyk/bMN1O2mWwfeOSPTZimpvNlT7s5HTcsNJ0tbJ9eKlc9a5R11xpGTr
+	/65W93ie97zeVmt4Ydvw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1orKhE-006mHz-7H; Sat, 05 Nov 2022 15:02:56 +0000
+	id 1orKhF-006mJQ-CK; Sat, 05 Nov 2022 15:02:57 +0000
 Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1orKhB-006mE5-BJ
-	for linux-phy@lists.infradead.org; Sat, 05 Nov 2022 15:02:54 +0000
+	id 1orKhB-006mE6-BK
+	for linux-phy@lists.infradead.org; Sat, 05 Nov 2022 15:02:55 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 9F2E560B54;
+	by dfw.source.kernel.org (Postfix) with ESMTPS id CD38760B66;
 	Sat,  5 Nov 2022 15:02:52 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 71B51C4315E;
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 594F0C4315D;
 	Sat,  5 Nov 2022 15:02:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1667660570;
-	bh=PpdUtPZs9MpphCIeL3UrfFdOiK5XTAbpl61pby3c3ks=;
+	bh=YWp7kItkvrNSS6rRbYPEscUmb7SKqkwrWganfIrPbQA=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=YOi3i1c0ZRZwUnJgP67jehy8y/UJKktxUzHnRFii5q8pdRedmUMy3w3TeaRDBolC6
-	 LOcgnOjDyDZMyX5fxvfU3OZCP8/lBsvIZnyqBbfxmSW/FlNZoa6OkEWQ8Q9sTW8PhC
-	 xvi9/rWelxpryItEjSBwPIjYWUlSDunG+U0efFtrr0PX5YOyMoSQeJmbIa6d/j5T9d
-	 na22I4bhm+1Z9djgRuzPtJhyMf8wgbz159ccT4eDCA5JQR420nEKt7ILRCacyKU/rx
-	 /71YgU0w5mPeIqnx0luf41bOSOPf2U4+lAsgrgngyNfO30Q34glE6nBO29ttU5s+Vd
-	 xNcpRQh7RpeOw==
+	b=JP1GkJ0X2DSQJuM4QFrPz1ZFU1KhCeuS6PpnE/qSi6QBiCh8Y6yDk7yHxWYAhnkls
+	 80BKw/QIpcrDJmi5sc4WMxqiB3ZlgYPffq09LGN4AdIjuJb/Iiw9Q5sQJGy6UpFWCz
+	 2q0U+Fr6CsMBTigX+M3EYtGfF0eROvQjrFiWCuqSKTGRizUEpFvpW5LZS4JuqLEUOx
+	 a/AoVk5B27Ynr7ZE/rrjONPCsr0pr73Wyw98fgDGxMVUJvKF1b/yUHqVRqrWKGp00r
+	 vhFVqk1qDBXcJO1vOK8IUbeskFrkVQsDE5k9OY0bVre1Spn4qwoAGXES2O1oVRAEXj
+	 kklc3mHj2F4xw==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1orKgp-0005KU-64; Sat, 05 Nov 2022 16:02:31 +0100
+	id 1orKgp-0005Ka-CD; Sat, 05 Nov 2022 16:02:31 +0100
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>
 Cc: Andy Gross <agross@kernel.org>,
@@ -56,18 +56,17 @@ Cc: Andy Gross <agross@kernel.org>,
 	linux-phy@lists.infradead.org,
 	devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
-	Johan Hovold <johan+linaro@kernel.org>,
-	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Subject: [PATCH v5 06/16] phy: qcom-qmp-pcie: rename PHY ops structure
-Date: Sat,  5 Nov 2022 15:59:29 +0100
-Message-Id: <20221105145939.20318-7-johan+linaro@kernel.org>
+	Johan Hovold <johan+linaro@kernel.org>
+Subject: [PATCH v5 08/16] phy: qcom-qmp-pcie: use shorter tables identifiers
+Date: Sat,  5 Nov 2022 15:59:31 +0100
+Message-Id: <20221105145939.20318-9-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.37.4
 In-Reply-To: <20221105145939.20318-1-johan+linaro@kernel.org>
 References: <20221105145939.20318-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221105_080253_473517_BCF5AAE0 
-X-CRM114-Status: GOOD (  11.80  )
+X-CRM114-CacheID: sfid-20221105_080253_489799_6920347A 
+X-CRM114-Status: GOOD (  17.58  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,56 +83,308 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Rename the PHY operation structure so that it has a "phy_ops" suffix and
-move it next to the implementation.
+The QMP drivers all use 'tbl' to refer to their register initialisation
+tables.
 
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+For consistency use 'tbls' rather than 'tables' to refer to the new
+aggregate table structures.
+
 Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 16 ++++++++--------
- 1 file changed, 8 insertions(+), 8 deletions(-)
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 90 ++++++++++++------------
+ 1 file changed, 45 insertions(+), 45 deletions(-)
 
 diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-index e30cbc94cbf6..bd946438e3c3 100644
+index dd7e72424fc0..a977f2bbd831 100644
 --- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
 +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-@@ -2037,6 +2037,13 @@ static int qmp_pcie_set_mode(struct phy *phy, enum phy_mode mode, int submode)
- 	return 0;
+@@ -1313,7 +1313,7 @@ static const struct qmp_phy_init_tbl sm8450_qmp_gen4x2_pcie_ep_pcs_misc_tbl[] =
+ 	QMP_PHY_INIT_CFG(QPHY_V5_20_PCS_PCIE_OSC_DTCT_MODE2_CONFIG5, 0x08),
+ };
+ 
+-struct qmp_phy_cfg_tables {
++struct qmp_phy_cfg_tbls {
+ 	const struct qmp_phy_init_tbl *serdes;
+ 	int serdes_num;
+ 	const struct qmp_phy_init_tbl *tx;
+@@ -1331,7 +1331,7 @@ struct qmp_phy_cfg {
+ 	int lanes;
+ 
+ 	/* Main init sequence for PHY blocks - serdes, tx, rx, pcs */
+-	const struct qmp_phy_cfg_tables tables;
++	const struct qmp_phy_cfg_tbls tbls;
+ 	/*
+ 	 * Additional init sequences for PHY blocks, providing additional
+ 	 * register programming. They are used for providing separate sequences
+@@ -1339,8 +1339,8 @@ struct qmp_phy_cfg {
+ 	 *
+ 	 * If EP mode is not supported, both tables can be left unset.
+ 	 */
+-	const struct qmp_phy_cfg_tables *tables_rc;
+-	const struct qmp_phy_cfg_tables *tables_ep;
++	const struct qmp_phy_cfg_tbls *tbls_rc;
++	const struct qmp_phy_cfg_tbls *tbls_ep;
+ 
+ 	/* clock ids to be requested */
+ 	const char * const *clk_list;
+@@ -1442,7 +1442,7 @@ static const char * const sdm845_pciephy_reset_l[] = {
+ static const struct qmp_phy_cfg ipq8074_pciephy_cfg = {
+ 	.lanes			= 1,
+ 
+-	.tables = {
++	.tbls = {
+ 		.serdes		= ipq8074_pcie_serdes_tbl,
+ 		.serdes_num	= ARRAY_SIZE(ipq8074_pcie_serdes_tbl),
+ 		.tx		= ipq8074_pcie_tx_tbl,
+@@ -1467,7 +1467,7 @@ static const struct qmp_phy_cfg ipq8074_pciephy_cfg = {
+ static const struct qmp_phy_cfg ipq8074_pciephy_gen3_cfg = {
+ 	.lanes			= 1,
+ 
+-	.tables = {
++	.tbls = {
+ 		.serdes		= ipq8074_pcie_gen3_serdes_tbl,
+ 		.serdes_num	= ARRAY_SIZE(ipq8074_pcie_gen3_serdes_tbl),
+ 		.tx		= ipq8074_pcie_gen3_tx_tbl,
+@@ -1494,7 +1494,7 @@ static const struct qmp_phy_cfg ipq8074_pciephy_gen3_cfg = {
+ static const struct qmp_phy_cfg ipq6018_pciephy_cfg = {
+ 	.lanes			= 1,
+ 
+-	.tables = {
++	.tbls = {
+ 		.serdes		= ipq6018_pcie_serdes_tbl,
+ 		.serdes_num	= ARRAY_SIZE(ipq6018_pcie_serdes_tbl),
+ 		.tx		= ipq6018_pcie_tx_tbl,
+@@ -1521,7 +1521,7 @@ static const struct qmp_phy_cfg ipq6018_pciephy_cfg = {
+ static const struct qmp_phy_cfg sdm845_qmp_pciephy_cfg = {
+ 	.lanes			= 1,
+ 
+-	.tables = {
++	.tbls = {
+ 		.serdes		= sdm845_qmp_pcie_serdes_tbl,
+ 		.serdes_num	= ARRAY_SIZE(sdm845_qmp_pcie_serdes_tbl),
+ 		.tx		= sdm845_qmp_pcie_tx_tbl,
+@@ -1548,7 +1548,7 @@ static const struct qmp_phy_cfg sdm845_qmp_pciephy_cfg = {
+ static const struct qmp_phy_cfg sdm845_qhp_pciephy_cfg = {
+ 	.lanes			= 1,
+ 
+-	.tables = {
++	.tbls = {
+ 		.serdes		= sdm845_qhp_pcie_serdes_tbl,
+ 		.serdes_num	= ARRAY_SIZE(sdm845_qhp_pcie_serdes_tbl),
+ 		.tx		= sdm845_qhp_pcie_tx_tbl,
+@@ -1573,7 +1573,7 @@ static const struct qmp_phy_cfg sdm845_qhp_pciephy_cfg = {
+ static const struct qmp_phy_cfg sm8250_qmp_gen3x1_pciephy_cfg = {
+ 	.lanes			= 1,
+ 
+-	.tables = {
++	.tbls = {
+ 		.serdes		= sm8250_qmp_pcie_serdes_tbl,
+ 		.serdes_num	= ARRAY_SIZE(sm8250_qmp_pcie_serdes_tbl),
+ 		.tx		= sm8250_qmp_pcie_tx_tbl,
+@@ -1585,7 +1585,7 @@ static const struct qmp_phy_cfg sm8250_qmp_gen3x1_pciephy_cfg = {
+ 		.pcs_misc	= sm8250_qmp_pcie_pcs_misc_tbl,
+ 		.pcs_misc_num	= ARRAY_SIZE(sm8250_qmp_pcie_pcs_misc_tbl),
+ 	},
+-	.tables_rc = &(const struct qmp_phy_cfg_tables) {
++	.tbls_rc = &(const struct qmp_phy_cfg_tbls) {
+ 		.serdes		= sm8250_qmp_gen3x1_pcie_serdes_tbl,
+ 		.serdes_num	= ARRAY_SIZE(sm8250_qmp_gen3x1_pcie_serdes_tbl),
+ 		.rx		= sm8250_qmp_gen3x1_pcie_rx_tbl,
+@@ -1610,7 +1610,7 @@ static const struct qmp_phy_cfg sm8250_qmp_gen3x1_pciephy_cfg = {
+ static const struct qmp_phy_cfg sm8250_qmp_gen3x2_pciephy_cfg = {
+ 	.lanes			= 2,
+ 
+-	.tables = {
++	.tbls = {
+ 		.serdes		= sm8250_qmp_pcie_serdes_tbl,
+ 		.serdes_num	= ARRAY_SIZE(sm8250_qmp_pcie_serdes_tbl),
+ 		.tx		= sm8250_qmp_pcie_tx_tbl,
+@@ -1622,7 +1622,7 @@ static const struct qmp_phy_cfg sm8250_qmp_gen3x2_pciephy_cfg = {
+ 		.pcs_misc	= sm8250_qmp_pcie_pcs_misc_tbl,
+ 		.pcs_misc_num	= ARRAY_SIZE(sm8250_qmp_pcie_pcs_misc_tbl),
+ 	},
+-	.tables_rc = &(const struct qmp_phy_cfg_tables) {
++	.tbls_rc = &(const struct qmp_phy_cfg_tbls) {
+ 		.tx		= sm8250_qmp_gen3x2_pcie_tx_tbl,
+ 		.tx_num		= ARRAY_SIZE(sm8250_qmp_gen3x2_pcie_tx_tbl),
+ 		.rx		= sm8250_qmp_gen3x2_pcie_rx_tbl,
+@@ -1647,7 +1647,7 @@ static const struct qmp_phy_cfg sm8250_qmp_gen3x2_pciephy_cfg = {
+ static const struct qmp_phy_cfg msm8998_pciephy_cfg = {
+ 	.lanes			= 1,
+ 
+-	.tables = {
++	.tbls = {
+ 		.serdes		= msm8998_pcie_serdes_tbl,
+ 		.serdes_num	= ARRAY_SIZE(msm8998_pcie_serdes_tbl),
+ 		.tx		= msm8998_pcie_tx_tbl,
+@@ -1674,7 +1674,7 @@ static const struct qmp_phy_cfg msm8998_pciephy_cfg = {
+ static const struct qmp_phy_cfg sc8180x_pciephy_cfg = {
+ 	.lanes			= 1,
+ 
+-	.tables = {
++	.tbls = {
+ 		.serdes		= sc8180x_qmp_pcie_serdes_tbl,
+ 		.serdes_num	= ARRAY_SIZE(sc8180x_qmp_pcie_serdes_tbl),
+ 		.tx		= sc8180x_qmp_pcie_tx_tbl,
+@@ -1701,7 +1701,7 @@ static const struct qmp_phy_cfg sc8180x_pciephy_cfg = {
+ static const struct qmp_phy_cfg sdx55_qmp_pciephy_cfg = {
+ 	.lanes			= 2,
+ 
+-	.tables = {
++	.tbls = {
+ 		.serdes		= sdx55_qmp_pcie_serdes_tbl,
+ 		.serdes_num	= ARRAY_SIZE(sdx55_qmp_pcie_serdes_tbl),
+ 		.tx		= sdx55_qmp_pcie_tx_tbl,
+@@ -1728,7 +1728,7 @@ static const struct qmp_phy_cfg sdx55_qmp_pciephy_cfg = {
+ static const struct qmp_phy_cfg sm8450_qmp_gen3x1_pciephy_cfg = {
+ 	.lanes			= 1,
+ 
+-	.tables = {
++	.tbls = {
+ 		.serdes		= sm8450_qmp_gen3x1_pcie_serdes_tbl,
+ 		.serdes_num	= ARRAY_SIZE(sm8450_qmp_gen3x1_pcie_serdes_tbl),
+ 		.tx		= sm8450_qmp_gen3x1_pcie_tx_tbl,
+@@ -1755,7 +1755,7 @@ static const struct qmp_phy_cfg sm8450_qmp_gen3x1_pciephy_cfg = {
+ static const struct qmp_phy_cfg sm8450_qmp_gen4x2_pciephy_cfg = {
+ 	.lanes			= 2,
+ 
+-	.tables = {
++	.tbls = {
+ 		.serdes		= sm8450_qmp_gen4x2_pcie_serdes_tbl,
+ 		.serdes_num	= ARRAY_SIZE(sm8450_qmp_gen4x2_pcie_serdes_tbl),
+ 		.tx		= sm8450_qmp_gen4x2_pcie_tx_tbl,
+@@ -1768,14 +1768,14 @@ static const struct qmp_phy_cfg sm8450_qmp_gen4x2_pciephy_cfg = {
+ 		.pcs_misc_num	= ARRAY_SIZE(sm8450_qmp_gen4x2_pcie_pcs_misc_tbl),
+ 	},
+ 
+-	.tables_rc = &(const struct qmp_phy_cfg_tables) {
++	.tbls_rc = &(const struct qmp_phy_cfg_tbls) {
+ 		.serdes		= sm8450_qmp_gen4x2_pcie_rc_serdes_tbl,
+ 		.serdes_num	= ARRAY_SIZE(sm8450_qmp_gen4x2_pcie_rc_serdes_tbl),
+ 		.pcs_misc	= sm8450_qmp_gen4x2_pcie_rc_pcs_misc_tbl,
+ 		.pcs_misc_num	= ARRAY_SIZE(sm8450_qmp_gen4x2_pcie_rc_pcs_misc_tbl),
+ 	},
+ 
+-	.tables_ep = &(const struct qmp_phy_cfg_tables) {
++	.tbls_ep = &(const struct qmp_phy_cfg_tbls) {
+ 		.serdes		= sm8450_qmp_gen4x2_pcie_ep_serdes_tbl,
+ 		.serdes_num	= ARRAY_SIZE(sm8450_qmp_gen4x2_pcie_ep_serdes_tbl),
+ 		.pcs_misc	= sm8450_qmp_gen4x2_pcie_ep_pcs_misc_tbl,
+@@ -1820,17 +1820,17 @@ static void qmp_pcie_configure(void __iomem *base,
+ 	qmp_pcie_configure_lane(base, tbl, num, 0xff);
  }
  
-+static const struct phy_ops qmp_pcie_phy_ops = {
-+	.power_on	= qmp_pcie_enable,
-+	.power_off	= qmp_pcie_disable,
-+	.set_mode	= qmp_pcie_set_mode,
-+	.owner		= THIS_MODULE,
-+};
-+
- static int qmp_pcie_vreg_init(struct qmp_pcie *qmp)
+-static void qmp_pcie_serdes_init(struct qmp_pcie *qmp, const struct qmp_phy_cfg_tables *tables)
++static void qmp_pcie_serdes_init(struct qmp_pcie *qmp, const struct qmp_phy_cfg_tbls *tbls)
  {
- 	const struct qmp_phy_cfg *cfg = qmp->cfg;
-@@ -2160,13 +2167,6 @@ static int phy_pipe_clk_register(struct qmp_pcie *qmp, struct device_node *np)
- 	return devm_add_action_or_reset(qmp->dev, phy_clk_release_provider, np);
+ 	void __iomem *serdes = qmp->serdes;
+ 
+-	if (!tables)
++	if (!tbls)
+ 		return;
+ 
+-	qmp_pcie_configure(serdes, tables->serdes, tables->serdes_num);
++	qmp_pcie_configure(serdes, tbls->serdes, tbls->serdes_num);
  }
  
--static const struct phy_ops qmp_pcie_ops = {
--	.power_on	= qmp_pcie_enable,
--	.power_off	= qmp_pcie_disable,
--	.set_mode	= qmp_pcie_set_mode,
--	.owner		= THIS_MODULE,
--};
--
- static int qmp_pcie_create(struct qmp_pcie *qmp, struct device_node *np)
+-static void qmp_pcie_lanes_init(struct qmp_pcie *qmp, const struct qmp_phy_cfg_tables *tables)
++static void qmp_pcie_lanes_init(struct qmp_pcie *qmp, const struct qmp_phy_cfg_tbls *tbls)
  {
  	const struct qmp_phy_cfg *cfg = qmp->cfg;
-@@ -2229,7 +2229,7 @@ static int qmp_pcie_create(struct qmp_pcie *qmp, struct device_node *np)
- 				     "failed to get pipe clock\n");
+ 	void __iomem *tx = qmp->tx;
+@@ -1838,28 +1838,28 @@ static void qmp_pcie_lanes_init(struct qmp_pcie *qmp, const struct qmp_phy_cfg_t
+ 	void __iomem *tx2 = qmp->tx2;
+ 	void __iomem *rx2 = qmp->rx2;
+ 
+-	if (!tables)
++	if (!tbls)
+ 		return;
+ 
+-	qmp_pcie_configure_lane(tx, tables->tx, tables->tx_num, 1);
+-	qmp_pcie_configure_lane(rx, tables->rx, tables->rx_num, 1);
++	qmp_pcie_configure_lane(tx, tbls->tx, tbls->tx_num, 1);
++	qmp_pcie_configure_lane(rx, tbls->rx, tbls->rx_num, 1);
+ 
+ 	if (cfg->lanes >= 2) {
+-		qmp_pcie_configure_lane(tx2, tables->tx, tables->tx_num, 2);
+-		qmp_pcie_configure_lane(rx2, tables->rx, tables->rx_num, 2);
++		qmp_pcie_configure_lane(tx2, tbls->tx, tbls->tx_num, 2);
++		qmp_pcie_configure_lane(rx2, tbls->rx, tbls->rx_num, 2);
+ 	}
+ }
+ 
+-static void qmp_pcie_pcs_init(struct qmp_pcie *qmp, const struct qmp_phy_cfg_tables *tables)
++static void qmp_pcie_pcs_init(struct qmp_pcie *qmp, const struct qmp_phy_cfg_tbls *tbls)
+ {
+ 	void __iomem *pcs = qmp->pcs;
+ 	void __iomem *pcs_misc = qmp->pcs_misc;
+ 
+-	if (!tables)
++	if (!tbls)
+ 		return;
+ 
+-	qmp_pcie_configure(pcs, tables->pcs, tables->pcs_num);
+-	qmp_pcie_configure(pcs_misc, tables->pcs_misc, tables->pcs_misc_num);
++	qmp_pcie_configure(pcs, tbls->pcs, tbls->pcs_num);
++	qmp_pcie_configure(pcs_misc, tbls->pcs_misc, tbls->pcs_misc_num);
+ }
+ 
+ static int qmp_pcie_init(struct phy *phy)
+@@ -1918,7 +1918,7 @@ static int qmp_pcie_power_on(struct phy *phy)
+ {
+ 	struct qmp_pcie *qmp = phy_get_drvdata(phy);
+ 	const struct qmp_phy_cfg *cfg = qmp->cfg;
+-	const struct qmp_phy_cfg_tables *mode_tables;
++	const struct qmp_phy_cfg_tbls *mode_tbls;
+ 	void __iomem *pcs = qmp->pcs;
+ 	void __iomem *status;
+ 	unsigned int mask, val;
+@@ -1928,12 +1928,12 @@ static int qmp_pcie_power_on(struct phy *phy)
+ 			cfg->pwrdn_ctrl);
+ 
+ 	if (qmp->mode == PHY_MODE_PCIE_RC)
+-		mode_tables = cfg->tables_rc;
++		mode_tbls = cfg->tbls_rc;
+ 	else
+-		mode_tables = cfg->tables_ep;
++		mode_tbls = cfg->tbls_ep;
+ 
+-	qmp_pcie_serdes_init(qmp, &cfg->tables);
+-	qmp_pcie_serdes_init(qmp, mode_tables);
++	qmp_pcie_serdes_init(qmp, &cfg->tbls);
++	qmp_pcie_serdes_init(qmp, mode_tbls);
+ 
+ 	ret = clk_prepare_enable(qmp->pipe_clk);
+ 	if (ret) {
+@@ -1942,11 +1942,11 @@ static int qmp_pcie_power_on(struct phy *phy)
  	}
  
--	generic_phy = devm_phy_create(dev, np, &qmp_pcie_ops);
-+	generic_phy = devm_phy_create(dev, np, &qmp_pcie_phy_ops);
- 	if (IS_ERR(generic_phy)) {
- 		ret = PTR_ERR(generic_phy);
- 		dev_err(dev, "failed to create PHY: %d\n", ret);
+ 	/* Tx, Rx, and PCS configurations */
+-	qmp_pcie_lanes_init(qmp, &cfg->tables);
+-	qmp_pcie_lanes_init(qmp, mode_tables);
++	qmp_pcie_lanes_init(qmp, &cfg->tbls);
++	qmp_pcie_lanes_init(qmp, mode_tbls);
+ 
+-	qmp_pcie_pcs_init(qmp, &cfg->tables);
+-	qmp_pcie_pcs_init(qmp, mode_tables);
++	qmp_pcie_pcs_init(qmp, &cfg->tbls);
++	qmp_pcie_pcs_init(qmp, mode_tbls);
+ 
+ 	/* Pull PHY out of reset state */
+ 	qphy_clrbits(pcs, cfg->regs[QPHY_SW_RESET], SW_RESET);
+@@ -2217,9 +2217,9 @@ static int qmp_pcie_create(struct qmp_pcie *qmp, struct device_node *np)
+ 		qmp->pcs_misc = qmp->pcs + 0x400;
+ 
+ 	if (IS_ERR(qmp->pcs_misc)) {
+-		if (cfg->tables.pcs_misc ||
+-		    (cfg->tables_rc && cfg->tables_rc->pcs_misc) ||
+-		    (cfg->tables_ep && cfg->tables_ep->pcs_misc)) {
++		if (cfg->tbls.pcs_misc ||
++		    (cfg->tbls_rc && cfg->tbls_rc->pcs_misc) ||
++		    (cfg->tbls_ep && cfg->tbls_ep->pcs_misc)) {
+ 			return PTR_ERR(qmp->pcs_misc);
+ 		}
+ 	}
 -- 
 2.37.4
 
