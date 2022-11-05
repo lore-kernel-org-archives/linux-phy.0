@@ -4,66 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8DEE6C4321E
-	for <linux-phy@archiver.kernel.org>; Sat,  5 Nov 2022 15:01:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DD668C4332F
+	for <linux-phy@archiver.kernel.org>; Sat,  5 Nov 2022 15:02:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZpQ37rakf7nu6mdqMpr2+47GIHB9UIH6i7JyHGIRBKY=; b=4au2i4hJF1RMSD
-	0+iPGqYXfLbEdVL82zrbzn3Y+9Tr6HgSq6ETl1+4LSYAo8CspXVIsL45VH7FQNfKsuFSEtZJ5H6bk
-	cznQE65G+6htRIMGG0MbhLo1tzcbUWjIE9GdYxODx2X+70UXplauaWyQpLysyYyGUsyDAcXHKYeia
-	vQin7s/v9664nHbAR/fx72NHqriCpF+z6Xww6E+/rAfrfhrqT4LdW/WVewRGVqOI0lvlQUrPraJpM
-	TXbevSs6+Wc99lEPECXyggnVBY5IaIEzVlOJD5He3pDs5xboPz7oFeWPkt3Yy4M7uoakw4b4WXM1l
-	k1g/M1AxmSc9irs0MPgQ==;
+	List-Owner; bh=HjV7e6XldKfpvCzetSgsQIxNV/LIwg0F6P2sn5RqFaU=; b=wdLoyQV/ZxUE5W
+	YQptOuOd+r0sMkdrcqkAhyPkOXEbvBanUhKOzDFUB8mBbxT/JWG3UaLnAxLBZwTHqSm/hZx+vsEFW
+	AM2TA+Z2LEU/WduTRliN9SydV0ZZ8xKd3zfpOmaxPj1BWm8Ss3VqkgqEKQ0pKe+t/UbEGWO8vlb9W
+	at6zgy+aqEYxAerKzwM8dlphntIJy+1Ae1lt8UD4W8iF7r78/Du+4kpqJiZh2Kc5hMVm45l/Y0aWU
+	L+CtAHfW3cgEZ4FFrr3B1f94MfmZWX5LstlzbU3WIWvGgVHKUTVBI9RYTZpX3NjcNeFAJOGi4Q6dT
+	raxJVeSPU5BqLNXy9+qw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1orKgG-006mAn-1C; Sat, 05 Nov 2022 15:01:56 +0000
-Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
+	id 1orKhE-006mHz-7H; Sat, 05 Nov 2022 15:02:56 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1orKgD-006mAF-9v
-	for linux-phy@lists.infradead.org; Sat, 05 Nov 2022 15:01:55 +0000
+	id 1orKhB-006mE5-BJ
+	for linux-phy@lists.infradead.org; Sat, 05 Nov 2022 15:02:54 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id 87C7BB80064;
-	Sat,  5 Nov 2022 15:01:51 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6B64EC433D6;
-	Sat,  5 Nov 2022 15:01:49 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 9F2E560B54;
+	Sat,  5 Nov 2022 15:02:52 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 71B51C4315E;
+	Sat,  5 Nov 2022 15:02:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1667660510;
-	bh=TBIj1mpwPyTGiXuI59G7PkFJo6KYSisNE21WUW4k6SM=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=GMqTorvHY8jV64G0TO+pDsym29r59kOL0wNee1FD9Ia3N0hJu85JsV3Lq4qK9rf3l
-	 2AQ33U/nb+Exfdc5Jcoe/zaNk193oQ4Zgl//U59DGxWdQqopYPT+JwQ9w8EXBAotN+
-	 tmMm9rwr6ho/ovP1Y+UcBmzUXaCd1MZacMadl3BtKAyci7DPz5TjxlnGa7sPr9UaXQ
-	 y+7/LEyt84MeJiFLS69L4X6/ya/YP1vUNj2bKzt1ZEPPOHep2Gf0Djd0GM1aHFJ5e2
-	 0olFd60MX5cZuUtFnnfOpz5NXdJi9HBpUP0JpZHsflWvmYfh65NcyiJxFa3HBXt+hw
-	 tt2HlZ5eoe8Iw==
-Date: Sat, 5 Nov 2022 20:31:45 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Wayne Chang <waynec@nvidia.com>
-Cc: gregkh@linuxfoundation.org, robh+dt@kernel.org,
-	krzysztof.kozlowski+dt@linaro.org, treding@nvidia.com,
-	jonathanh@nvidia.com, thierry.reding@gmail.com,
-	heikki.krogerus@linux.intel.com, ajayg@nvidia.com, kishon@ti.com,
-	p.zabel@pengutronix.de, balbi@kernel.org, mathias.nyman@intel.com,
-	jckuo@nvidia.com, linux-usb@vger.kernel.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	singhanc@nvidia.com, linux-i2c@vger.kernel.org,
-	linux-phy@lists.infradead.org, linux-tegra@vger.kernel.org
-Subject: Re: [PATCH 09/11] phy: tegra: xusb: Add Tegra234 support
-Message-ID: <Y2Z62Ua1DDWx9YwS@matsya>
-References: <20221024074128.1113554-1-waynec@nvidia.com>
- <20221024074128.1113554-10-waynec@nvidia.com>
+	s=k20201202; t=1667660570;
+	bh=PpdUtPZs9MpphCIeL3UrfFdOiK5XTAbpl61pby3c3ks=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=YOi3i1c0ZRZwUnJgP67jehy8y/UJKktxUzHnRFii5q8pdRedmUMy3w3TeaRDBolC6
+	 LOcgnOjDyDZMyX5fxvfU3OZCP8/lBsvIZnyqBbfxmSW/FlNZoa6OkEWQ8Q9sTW8PhC
+	 xvi9/rWelxpryItEjSBwPIjYWUlSDunG+U0efFtrr0PX5YOyMoSQeJmbIa6d/j5T9d
+	 na22I4bhm+1Z9djgRuzPtJhyMf8wgbz159ccT4eDCA5JQR420nEKt7ILRCacyKU/rx
+	 /71YgU0w5mPeIqnx0luf41bOSOPf2U4+lAsgrgngyNfO30Q34glE6nBO29ttU5s+Vd
+	 xNcpRQh7RpeOw==
+Received: from johan by xi.lan with local (Exim 4.94.2)
+	(envelope-from <johan+linaro@kernel.org>)
+	id 1orKgp-0005KU-64; Sat, 05 Nov 2022 16:02:31 +0100
+From: Johan Hovold <johan+linaro@kernel.org>
+To: Vinod Koul <vkoul@kernel.org>
+Cc: Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@somainline.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	Johan Hovold <johan+linaro@kernel.org>,
+	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Subject: [PATCH v5 06/16] phy: qcom-qmp-pcie: rename PHY ops structure
+Date: Sat,  5 Nov 2022 15:59:29 +0100
+Message-Id: <20221105145939.20318-7-johan+linaro@kernel.org>
+X-Mailer: git-send-email 2.37.4
+In-Reply-To: <20221105145939.20318-1-johan+linaro@kernel.org>
+References: <20221105145939.20318-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20221024074128.1113554-10-waynec@nvidia.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221105_080153_648134_9D9F9239 
-X-CRM114-Status: GOOD (  28.31  )
+X-CRM114-CacheID: sfid-20221105_080253_473517_BCF5AAE0 
+X-CRM114-Status: GOOD (  11.80  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,230 +84,59 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 24-10-22, 15:41, Wayne Chang wrote:
-> From: Sing-Han Chen <singhanc@nvidia.com>
-> 
-> Add support for the XUSB pad controller found on Tegra234 SoCs. It is
-> mostly similar to the same IP found on Tegra194, because most of
-> the Tegra234 XUSB PADCTL registers definition and programming sequence
-> are the same as Tegra194, Tegra234 XUSB PADCTL can share the same
-> driver with Tegra186 and Tegra194 XUSB PADCTL.
-> 
-> Introduce a new feature, USB2 HW tracking, for Tegra234.
-> The feature is to enable HW periodical PAD tracking which measure
-> and capture the electric parameters of USB2.0 PAD.
+Rename the PHY operation structure so that it has a "phy_ops" suffix and
+move it next to the implementation.
 
-why cant this patch be sent separately, are phy patches dependent on
-rest..? If not consider splitting per subsystem and sending
-independently..
+Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
+---
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 16 ++++++++--------
+ 1 file changed, 8 insertions(+), 8 deletions(-)
 
-> 
-> Signed-off-by: Sing-Han Chen <singhanc@nvidia.com>
-> Co-developed-by: Wayne Chang <waynec@nvidia.com>
-> Signed-off-by: Wayne Chang <waynec@nvidia.com>
-> ---
->  drivers/phy/tegra/Makefile        |  1 +
->  drivers/phy/tegra/xusb-tegra186.c | 65 +++++++++++++++++++++++++++++--
->  drivers/phy/tegra/xusb.c          |  6 +++
->  drivers/phy/tegra/xusb.h          | 23 +++++++++++
->  4 files changed, 92 insertions(+), 3 deletions(-)
-> 
-> diff --git a/drivers/phy/tegra/Makefile b/drivers/phy/tegra/Makefile
-> index 89b84067cb4c..eeeea72de117 100644
-> --- a/drivers/phy/tegra/Makefile
-> +++ b/drivers/phy/tegra/Makefile
-> @@ -7,4 +7,5 @@ phy-tegra-xusb-$(CONFIG_ARCH_TEGRA_132_SOC) += xusb-tegra124.o
->  phy-tegra-xusb-$(CONFIG_ARCH_TEGRA_210_SOC) += xusb-tegra210.o
->  phy-tegra-xusb-$(CONFIG_ARCH_TEGRA_186_SOC) += xusb-tegra186.o
->  phy-tegra-xusb-$(CONFIG_ARCH_TEGRA_194_SOC) += xusb-tegra186.o
-> +phy-tegra-xusb-$(CONFIG_ARCH_TEGRA_234_SOC) += xusb-tegra186.o
->  obj-$(CONFIG_PHY_TEGRA194_P2U) += phy-tegra194-p2u.o
-> diff --git a/drivers/phy/tegra/xusb-tegra186.c b/drivers/phy/tegra/xusb-tegra186.c
-> index f121b4ffbbfd..cc02cea65a21 100644
-> --- a/drivers/phy/tegra/xusb-tegra186.c
-> +++ b/drivers/phy/tegra/xusb-tegra186.c
-> @@ -89,6 +89,11 @@
->  #define  USB2_TRK_START_TIMER(x)		(((x) & 0x7f) << 12)
->  #define  USB2_TRK_DONE_RESET_TIMER(x)		(((x) & 0x7f) << 19)
->  #define  USB2_PD_TRK				BIT(26)
-> +#define  USB2_TRK_COMPLETED			BIT(31)
-> +
-> +#define XUSB_PADCTL_USB2_BIAS_PAD_CTL2		0x28c
-> +#define  USB2_TRK_HW_MODE			BIT(0)
-> +#define  CYA_TRK_CODE_UPDATE_ON_IDLE		BIT(31)
->  
->  #define XUSB_PADCTL_HSIC_PADX_CTL0(x)		(0x300 + (x) * 0x20)
->  #define  HSIC_PD_TX_DATA0			BIT(1)
-> @@ -609,9 +614,32 @@ static void tegra186_utmi_bias_pad_power_on(struct tegra_xusb_padctl *padctl)
->  	value &= ~USB2_PD_TRK;
->  	padctl_writel(padctl, value, XUSB_PADCTL_USB2_BIAS_PAD_CTL1);
->  
-> -	udelay(100);
-> +	if (padctl->soc->poll_trk_completed) {
-> +		err = padctl_readl_poll(padctl, XUSB_PADCTL_USB2_BIAS_PAD_CTL1,
-> +					USB2_TRK_COMPLETED, USB2_TRK_COMPLETED, 100);
-> +		if (err) {
-> +			/* The failure with polling on trk complete will not
-> +			 * cause the failure of powering on the bias pad.
-> +			 */
-> +			dev_warn(dev, "failed to poll USB2 trk completed: %d\n",
-> +				err);
-
-Single line.. should this be dev_err
-
-> +		}
->  
-> -	clk_disable_unprepare(priv->usb2_trk_clk);
-> +		value = padctl_readl(padctl, XUSB_PADCTL_USB2_BIAS_PAD_CTL1);
-> +		value |= USB2_TRK_COMPLETED;
-> +		padctl_writel(padctl, value, XUSB_PADCTL_USB2_BIAS_PAD_CTL1);
-> +	} else {
-> +		udelay(100);
-> +	}
-> +
-> +	if (padctl->soc->trk_hw_mode) {
-> +		value = padctl_readl(padctl, XUSB_PADCTL_USB2_BIAS_PAD_CTL2);
-> +		value |= USB2_TRK_HW_MODE;
-> +		value &= ~CYA_TRK_CODE_UPDATE_ON_IDLE;
-> +		padctl_writel(padctl, value, XUSB_PADCTL_USB2_BIAS_PAD_CTL2);
-> +	} else {
-> +		clk_disable_unprepare(priv->usb2_trk_clk);
-> +	}
->  
->  	mutex_unlock(&padctl->lock);
->  }
-> @@ -637,6 +665,13 @@ static void tegra186_utmi_bias_pad_power_off(struct tegra_xusb_padctl *padctl)
->  	value |= USB2_PD_TRK;
->  	padctl_writel(padctl, value, XUSB_PADCTL_USB2_BIAS_PAD_CTL1);
->  
-> +	if (padctl->soc->trk_hw_mode) {
-> +		value = padctl_readl(padctl, XUSB_PADCTL_USB2_BIAS_PAD_CTL2);
-> +		value &= ~USB2_TRK_HW_MODE;
-> +		padctl_writel(padctl, value, XUSB_PADCTL_USB2_BIAS_PAD_CTL2);
-> +		clk_disable_unprepare(priv->usb2_trk_clk);
-> +	}
-> +
->  	mutex_unlock(&padctl->lock);
->  }
->  
-> @@ -1560,7 +1595,8 @@ const struct tegra_xusb_padctl_soc tegra186_xusb_padctl_soc = {
->  EXPORT_SYMBOL_GPL(tegra186_xusb_padctl_soc);
->  #endif
->  
-> -#if IS_ENABLED(CONFIG_ARCH_TEGRA_194_SOC)
-> +#if IS_ENABLED(CONFIG_ARCH_TEGRA_194_SOC) || \
-> +	IS_ENABLED(CONFIG_ARCH_TEGRA_234_SOC)
->  static const char * const tegra194_xusb_padctl_supply_names[] = {
->  	"avdd-usb",
->  	"vclamp-usb",
-> @@ -1616,8 +1652,31 @@ const struct tegra_xusb_padctl_soc tegra194_xusb_padctl_soc = {
->  	.supply_names = tegra194_xusb_padctl_supply_names,
->  	.num_supplies = ARRAY_SIZE(tegra194_xusb_padctl_supply_names),
->  	.supports_gen2 = true,
-> +	.poll_trk_completed = true,
->  };
->  EXPORT_SYMBOL_GPL(tegra194_xusb_padctl_soc);
-> +
-> +const struct tegra_xusb_padctl_soc tegra234_xusb_padctl_soc = {
-> +	.num_pads = ARRAY_SIZE(tegra194_pads),
-> +	.pads = tegra194_pads,
-> +	.ports = {
-> +		.usb2 = {
-> +			.ops = &tegra186_usb2_port_ops,
-> +			.count = 4,
-> +		},
-> +		.usb3 = {
-> +			.ops = &tegra186_usb3_port_ops,
-> +			.count = 4,
-> +		},
-> +	},
-> +	.ops = &tegra186_xusb_padctl_ops,
-> +	.supply_names = tegra194_xusb_padctl_supply_names,
-> +	.num_supplies = ARRAY_SIZE(tegra194_xusb_padctl_supply_names),
-> +	.supports_gen2 = true,
-> +	.poll_trk_completed = true,
-> +	.trk_hw_mode = true,
-> +};
-> +EXPORT_SYMBOL_GPL(tegra234_xusb_padctl_soc);
->  #endif
->  
->  MODULE_AUTHOR("JC Kuo <jckuo@nvidia.com>");
-> diff --git a/drivers/phy/tegra/xusb.c b/drivers/phy/tegra/xusb.c
-> index 95091876c422..23d179b1a5b5 100644
-> --- a/drivers/phy/tegra/xusb.c
-> +++ b/drivers/phy/tegra/xusb.c
-> @@ -71,6 +71,12 @@ static const struct of_device_id tegra_xusb_padctl_of_match[] = {
->  		.compatible = "nvidia,tegra194-xusb-padctl",
->  		.data = &tegra194_xusb_padctl_soc,
->  	},
-> +#endif
-> +#if defined(CONFIG_ARCH_TEGRA_234_SOC)
-> +	{
-> +		.compatible = "nvidia,tegra234-xusb-padctl",
-> +		.data = &tegra234_xusb_padctl_soc,
-> +	},
->  #endif
->  	{ }
->  };
-> diff --git a/drivers/phy/tegra/xusb.h b/drivers/phy/tegra/xusb.h
-> index 8cfbbdbd6e0c..ec0b5b023ad1 100644
-> --- a/drivers/phy/tegra/xusb.h
-> +++ b/drivers/phy/tegra/xusb.h
-> @@ -8,6 +8,7 @@
->  #define __PHY_TEGRA_XUSB_H
->  
->  #include <linux/io.h>
-> +#include <linux/iopoll.h>
->  #include <linux/mutex.h>
->  #include <linux/workqueue.h>
->  
-> @@ -433,6 +434,8 @@ struct tegra_xusb_padctl_soc {
->  	unsigned int num_supplies;
->  	bool supports_gen2;
->  	bool need_fake_usb3_port;
-> +	bool poll_trk_completed;
-> +	bool trk_hw_mode;
->  };
->  
->  struct tegra_xusb_padctl {
-> @@ -475,6 +478,23 @@ static inline u32 padctl_readl(struct tegra_xusb_padctl *padctl,
->  	return value;
->  }
->  
-> +static inline u32 padctl_readl_poll(struct tegra_xusb_padctl *padctl,
-> +	unsigned long offset, u32 val, u32 mask, int us)
-> +{
-> +	u32 regval;
-> +	int err;
-> +
-> +	err = readl_poll_timeout_atomic(padctl->regs + offset, regval,
-> +					 (regval & mask) == val, 1, us);
-> +	dev_dbg(padctl->dev, "%08lx poll > %08x\n", offset, regval);
-> +	if (err) {
-> +		dev_err(padctl->dev, "%08lx poll timeout > %08x\n", offset,
-> +			regval);
-> +	}
-> +
-> +	return err;
-> +}
-> +
->  struct tegra_xusb_lane *tegra_xusb_find_lane(struct tegra_xusb_padctl *padctl,
->  					     const char *name,
->  					     unsigned int index);
-> @@ -491,5 +511,8 @@ extern const struct tegra_xusb_padctl_soc tegra186_xusb_padctl_soc;
->  #if defined(CONFIG_ARCH_TEGRA_194_SOC)
->  extern const struct tegra_xusb_padctl_soc tegra194_xusb_padctl_soc;
->  #endif
-> +#if defined(CONFIG_ARCH_TEGRA_234_SOC)
-> +extern const struct tegra_xusb_padctl_soc tegra234_xusb_padctl_soc;
-> +#endif
->  
->  #endif /* __PHY_TEGRA_XUSB_H */
-> -- 
-> 2.25.1
-
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+index e30cbc94cbf6..bd946438e3c3 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+@@ -2037,6 +2037,13 @@ static int qmp_pcie_set_mode(struct phy *phy, enum phy_mode mode, int submode)
+ 	return 0;
+ }
+ 
++static const struct phy_ops qmp_pcie_phy_ops = {
++	.power_on	= qmp_pcie_enable,
++	.power_off	= qmp_pcie_disable,
++	.set_mode	= qmp_pcie_set_mode,
++	.owner		= THIS_MODULE,
++};
++
+ static int qmp_pcie_vreg_init(struct qmp_pcie *qmp)
+ {
+ 	const struct qmp_phy_cfg *cfg = qmp->cfg;
+@@ -2160,13 +2167,6 @@ static int phy_pipe_clk_register(struct qmp_pcie *qmp, struct device_node *np)
+ 	return devm_add_action_or_reset(qmp->dev, phy_clk_release_provider, np);
+ }
+ 
+-static const struct phy_ops qmp_pcie_ops = {
+-	.power_on	= qmp_pcie_enable,
+-	.power_off	= qmp_pcie_disable,
+-	.set_mode	= qmp_pcie_set_mode,
+-	.owner		= THIS_MODULE,
+-};
+-
+ static int qmp_pcie_create(struct qmp_pcie *qmp, struct device_node *np)
+ {
+ 	const struct qmp_phy_cfg *cfg = qmp->cfg;
+@@ -2229,7 +2229,7 @@ static int qmp_pcie_create(struct qmp_pcie *qmp, struct device_node *np)
+ 				     "failed to get pipe clock\n");
+ 	}
+ 
+-	generic_phy = devm_phy_create(dev, np, &qmp_pcie_ops);
++	generic_phy = devm_phy_create(dev, np, &qmp_pcie_phy_ops);
+ 	if (IS_ERR(generic_phy)) {
+ 		ret = PTR_ERR(generic_phy);
+ 		dev_err(dev, "failed to create PHY: %d\n", ret);
 -- 
-~Vinod
+2.37.4
+
 
 -- 
 linux-phy mailing list
