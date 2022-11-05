@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3935EC433FE
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AB3C9C46467
 	for <linux-phy@archiver.kernel.org>; Sat,  5 Nov 2022 15:03:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,39 +12,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QyhztdYN7m+rMTTrfeVRJD5BSr9DUjHXZXV8p1kfOgg=; b=TFKQ/ozjFh+GXM
-	yJDyjYxP82y5fa7PuOGPP/FzWorz3Y0Nx8kV72J6ZvRH4XVKB6SoPc1PEqVzNFRhB8NiRsgc0Tvi5
-	UgyMrCT7Uk+V/hv0iLUi7LLVR+IsDUHwWAr7rZR0oeet2Nce1P5uYH99iJF+OR036IJcGlxpx8gDX
-	v5R0Dm8bOMBbI8pmN/DZZuOsE3JDuEDNL5aYTGtDbL8kem9WoFMgb8chOkRuyHb51yc9SMs2nLe4z
-	6MNm6m1oEjHTgkHHVhGR5B4nAwah5LJDDN70oWaPA1G5tQWQRi9AJTs6PBX3EaTk5LpiEm3Lc33Zj
-	W04djjaSYdQIR3NChJ4A==;
+	List-Owner; bh=csNqHmo0qKDomEzb2PV98EP4Pcve+FbaSfSS/7K4/kg=; b=BLlzC8yZEigFeJ
+	THtZ3MLt7FzgasxMt+FkdiBI2h471lzKX12eGvrkxXpAVMcIfgvidxcfri3KvekreiHVAML0u6vP/
+	mZoGk6YqNv7fDt6XBSQj/JZ52P4oQng+YLFPabwbbLumNpxyL/0DUo8PnVYP+jSaRwc9ddOiYfejr
+	5FfqZyOcz9Oyb5fPZ8gsZVb7gknnpO7Q9eGk5tEil9H0eV7cajIu+jwSMOWALjLlcCk563qbHt3UO
+	kveCpZUoRV12068OGo8PWRcAM1ELDoznWU9kCjTRN2pi+T4dxeYJ05Zvf1nx/dKVEloLZeDY+pbOM
+	L9ZvtWG8NcF1dACh0KsQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1orKhI-006mLZ-LO; Sat, 05 Nov 2022 15:03:00 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1orKhJ-006mMU-1V; Sat, 05 Nov 2022 15:03:01 +0000
+Received: from ams.source.kernel.org ([145.40.68.75])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1orKhB-006mE7-DS
-	for linux-phy@lists.infradead.org; Sat, 05 Nov 2022 15:02:56 +0000
+	id 1orKhC-006mFV-TI
+	for linux-phy@lists.infradead.org; Sat, 05 Nov 2022 15:02:58 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 0706760B67;
+	by ams.source.kernel.org (Postfix) with ESMTPS id 8E78CB803F8;
 	Sat,  5 Nov 2022 15:02:53 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7CDFDC4315F;
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 631E5C4315C;
 	Sat,  5 Nov 2022 15:02:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1667660570;
-	bh=oVZOTzq45reHyMUZv3CzKzfVdLviOUal1dPut+RcE50=;
+	bh=usI7SVU2F7XfFuRII5YsxMFXBeHPRyg12IdGAqlAqsQ=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=dpzR3cQojso4N00J1Jx18hOHXzZGo4acBogaoMKYI5uvDVmeSLUWm3uR9BuZ/3LJc
-	 j3wzbR9AVrIZH+yNhahBHwDUbrs9YOaO2lM2J2zIw8jQoPI5Udq3mOPqo63R2AA04o
-	 7hPIwu5quonuQqp5LIh6JNg95HypYb+gGBbDbLp1wMWaQtddUyyrLW+2SNFzQSeNN8
-	 +LS9a3xiwnFC1qriAtr5SBmnz8l3knXllzafLOQzQ4g6fxB9wutDFNsxmkeATsyUVr
-	 te5laE5Cw0gD4emE+cDIo9YmvUoskHcqjKQw0QSGxjqFiavoF01m/vBgQWvRFZcdCZ
-	 DAf6QEojcrzlA==
+	b=UERsVm8A7OYLotkrlaP0FC8lZEd2VgYz3X6v4uUocwKsmPYn8sLXxkYzv684x5lBW
+	 NmCb2bbQzjEZSszI9GnXiZnmDYcrvZYY9NPK7R9A6sYcp88dDlD4D4tFMTnoatOkNY
+	 MUCLA0SaxPNQLr9LtLTXEM6dR9Zh9rEUvYOyZeILAOZTK+sIkROVkMxi5h8nudv/CW
+	 nukNteq+P1+Mso0r3PZa9mZ0lx2ZfGagPZaWA6W47MZLCa23Xu9VxVWACVjFQ3mVUR
+	 PgA5PiA+Krevso5KZF8JY4EHx3j/kkqBhiyx+9wY26Y+ccScRYx+1AmMTY+ydMDzze
+	 ApPxiQstFulLA==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1orKgp-0005Kd-FS; Sat, 05 Nov 2022 16:02:31 +0100
+	id 1orKgp-0005KW-9D; Sat, 05 Nov 2022 16:02:31 +0100
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>
 Cc: Andy Gross <agross@kernel.org>,
@@ -58,16 +58,16 @@ Cc: Andy Gross <agross@kernel.org>,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>,
 	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Subject: [PATCH v5 09/16] phy: qcom-qmp-pcie: add register init helper
-Date: Sat,  5 Nov 2022 15:59:32 +0100
-Message-Id: <20221105145939.20318-10-johan+linaro@kernel.org>
+Subject: [PATCH v5 07/16] phy: qcom-qmp-pcie: clean up PHY lane init
+Date: Sat,  5 Nov 2022 15:59:30 +0100
+Message-Id: <20221105145939.20318-8-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.37.4
 In-Reply-To: <20221105145939.20318-1-johan+linaro@kernel.org>
 References: <20221105145939.20318-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221105_080253_571657_28C2965E 
-X-CRM114-Status: GOOD (  12.38  )
+X-CRM114-CacheID: sfid-20221105_080255_121640_0E5E8C52 
+X-CRM114-Status: GOOD (  12.07  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,97 +84,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Generalise the serdes initialisation helper so that it can be used to
-initialise all the PHY registers (e.g. serdes, tx, rx, pcs).
-
-Note that this defers the ungating of the PIPE clock somewhat, which is
-fine as it isn't needed until starting the PHY.
+Clean up the PHY lane initialisation somewhat by adding further
+temporary variables and programming both tx and rx for the second lane
+after the first lane.
 
 Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 37 +++++-------------------
- 1 file changed, 8 insertions(+), 29 deletions(-)
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 13 +++++++------
+ 1 file changed, 7 insertions(+), 6 deletions(-)
 
 diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-index a977f2bbd831..09999d5b5268 100644
+index bd946438e3c3..dd7e72424fc0 100644
 --- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
 +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-@@ -1820,27 +1820,22 @@ static void qmp_pcie_configure(void __iomem *base,
- 	qmp_pcie_configure_lane(base, tbl, num, 0xff);
- }
- 
--static void qmp_pcie_serdes_init(struct qmp_pcie *qmp, const struct qmp_phy_cfg_tbls *tbls)
--{
--	void __iomem *serdes = qmp->serdes;
--
--	if (!tbls)
--		return;
--
--	qmp_pcie_configure(serdes, tbls->serdes, tbls->serdes_num);
--}
--
--static void qmp_pcie_lanes_init(struct qmp_pcie *qmp, const struct qmp_phy_cfg_tbls *tbls)
-+static void qmp_pcie_init_registers(struct qmp_pcie *qmp, const struct qmp_phy_cfg_tbls *tbls)
- {
+@@ -1835,18 +1835,19 @@ static void qmp_pcie_lanes_init(struct qmp_pcie *qmp, const struct qmp_phy_cfg_t
  	const struct qmp_phy_cfg *cfg = qmp->cfg;
-+	void __iomem *serdes = qmp->serdes;
  	void __iomem *tx = qmp->tx;
  	void __iomem *rx = qmp->rx;
- 	void __iomem *tx2 = qmp->tx2;
- 	void __iomem *rx2 = qmp->rx2;
-+	void __iomem *pcs = qmp->pcs;
-+	void __iomem *pcs_misc = qmp->pcs_misc;
++	void __iomem *tx2 = qmp->tx2;
++	void __iomem *rx2 = qmp->rx2;
  
- 	if (!tbls)
+ 	if (!tables)
  		return;
  
-+	qmp_pcie_configure(serdes, tbls->serdes, tbls->serdes_num);
+ 	qmp_pcie_configure_lane(tx, tables->tx, tables->tx_num, 1);
+-
+-	if (cfg->lanes >= 2)
+-		qmp_pcie_configure_lane(qmp->tx2, tables->tx, tables->tx_num, 2);
+-
+ 	qmp_pcie_configure_lane(rx, tables->rx, tables->rx_num, 1);
+-	if (cfg->lanes >= 2)
+-		qmp_pcie_configure_lane(qmp->rx2, tables->rx, tables->rx_num, 2);
 +
- 	qmp_pcie_configure_lane(tx, tbls->tx, tbls->tx_num, 1);
- 	qmp_pcie_configure_lane(rx, tbls->rx, tbls->rx_num, 1);
++	if (cfg->lanes >= 2) {
++		qmp_pcie_configure_lane(tx2, tables->tx, tables->tx_num, 2);
++		qmp_pcie_configure_lane(rx2, tables->rx, tables->rx_num, 2);
++	}
+ }
  
-@@ -1848,15 +1843,6 @@ static void qmp_pcie_lanes_init(struct qmp_pcie *qmp, const struct qmp_phy_cfg_t
- 		qmp_pcie_configure_lane(tx2, tbls->tx, tbls->tx_num, 2);
- 		qmp_pcie_configure_lane(rx2, tbls->rx, tbls->rx_num, 2);
- 	}
--}
--
--static void qmp_pcie_pcs_init(struct qmp_pcie *qmp, const struct qmp_phy_cfg_tbls *tbls)
--{
--	void __iomem *pcs = qmp->pcs;
--	void __iomem *pcs_misc = qmp->pcs_misc;
--
--	if (!tbls)
--		return;
- 
- 	qmp_pcie_configure(pcs, tbls->pcs, tbls->pcs_num);
- 	qmp_pcie_configure(pcs_misc, tbls->pcs_misc, tbls->pcs_misc_num);
-@@ -1932,8 +1918,8 @@ static int qmp_pcie_power_on(struct phy *phy)
- 	else
- 		mode_tbls = cfg->tbls_ep;
- 
--	qmp_pcie_serdes_init(qmp, &cfg->tbls);
--	qmp_pcie_serdes_init(qmp, mode_tbls);
-+	qmp_pcie_init_registers(qmp, &cfg->tbls);
-+	qmp_pcie_init_registers(qmp, mode_tbls);
- 
- 	ret = clk_prepare_enable(qmp->pipe_clk);
- 	if (ret) {
-@@ -1941,13 +1927,6 @@ static int qmp_pcie_power_on(struct phy *phy)
- 		return ret;
- 	}
- 
--	/* Tx, Rx, and PCS configurations */
--	qmp_pcie_lanes_init(qmp, &cfg->tbls);
--	qmp_pcie_lanes_init(qmp, mode_tbls);
--
--	qmp_pcie_pcs_init(qmp, &cfg->tbls);
--	qmp_pcie_pcs_init(qmp, mode_tbls);
--
- 	/* Pull PHY out of reset state */
- 	qphy_clrbits(pcs, cfg->regs[QPHY_SW_RESET], SW_RESET);
- 
+ static void qmp_pcie_pcs_init(struct qmp_pcie *qmp, const struct qmp_phy_cfg_tables *tables)
 -- 
 2.37.4
 
