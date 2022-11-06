@@ -4,58 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 17633C433FE
-	for <linux-phy@archiver.kernel.org>; Sun,  6 Nov 2022 15:53:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 07C57C433FE
+	for <linux-phy@archiver.kernel.org>; Sun,  6 Nov 2022 15:55:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:References:
+	In-Reply-To:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9MuP51S5BenW5vxnplO6kx5pxAwodm/dQZLCY7zfMzs=; b=IyPujtvhO+oghh
-	/ubCnsB/wkE3Juva9dVEvnI9QEpek/lBcESMRcDzAyqpDiFhOjISkhMqI+2qMR71W89/H8P0MOPRQ
-	cygnolF/qQwFPYniIS6eSQbg1nHDVt10yONwxNTiDm/7HagfFZaFMTpAThVnj464OCAtxQ3JeY6VT
-	ZLH8zrCZ6TCnGnSuM4lxR4f8mVag2JCzPCsWym2cECSNpeSUb5SZ1HgdYDrNJOvhelj9mOF7X6mMn
-	xEIIiGnvXO2tsW9ZHI2sXyDaDRbETnf7UWWuO+HN7qJxbz4cAC6FvZbepIc0v9PL/zZpZwOmMjV80
-	0zG72qI7BF5HaYAMSEmw==;
+	List-Owner; bh=SzrN96/7QabXam8X412UGPIrcYATHImLbqyVw/pQMk0=; b=aTUFSt8Y7Yayj5
+	P5sewKiINACufiW3TY7RqAdyqrPDR8I7BzjrLaSnkhTYlAVLjQFMTUiZHEKshzlgyUxjyzVYzIUZq
+	JDg9upI9cy0elqdrFGEQeeIQCFDUvvIUfbGYd+Yb9bR72XHNGLIblCH54wW37MjhlC165rLaCAnlU
+	hvRDNx3mZQB6FOButGDZPK4OsE0nBxHwlqTJ2Xku0oD0KGqpJg6aFd84Zz/YHCs15M3bqi9aLKCZu
+	GuG/uMcxPA711WLM2MKHemlEexU0VJtTYFCPkfeJ5CHauLRoDybuBxKwN6k9eR0yjsp8Cqf+dkvux
+	t7m6AfiPmf3lwnNm9nJg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1orhy3-008hTK-7B; Sun, 06 Nov 2022 15:53:51 +0000
-Received: from foss.arm.com ([217.140.110.172])
-	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1orhul-008f1C-IX; Sun, 06 Nov 2022 15:50:30 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
-	by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4CE171FB;
-	Sun,  6 Nov 2022 07:50:31 -0800 (PST)
-Received: from slackpad.fritz.box (unknown [172.31.20.19])
-	by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 305973F534;
-	Sun,  6 Nov 2022 07:50:22 -0800 (PST)
-From: Andre Przywara <andre.przywara@arm.com>
-To: Chen-Yu Tsai <wens@csie.org>,
-	Samuel Holland <samuel@sholland.org>,
-	Jernej Skrabec <jernej.skrabec@gmail.com>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Icenowy Zheng <uwu@icenowy.me>
-Cc: soc@kernel.org,
-	devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-sunxi@lists.linux.dev,
-	linux-phy@lists.infradead.org,
-	linux-usb@vger.kernel.org,
-	Kishon Vijay Abraham I <kishon@ti.com>,
-	Vinod Koul <vkoul@kernel.org>
-Subject: [PATCH v3 10/11] phy: sun4i-usb: Replace types with explicit quirk flags
-Date: Sun,  6 Nov 2022 15:48:25 +0000
-Message-Id: <20221106154826.6687-11-andre.przywara@arm.com>
-X-Mailer: git-send-email 2.35.5
-In-Reply-To: <20221106154826.6687-1-andre.przywara@arm.com>
-References: <20221106154826.6687-1-andre.przywara@arm.com>
+	id 1orhze-008iRr-77; Sun, 06 Nov 2022 15:55:30 +0000
+Received: from sender4-op-o18.zoho.com ([136.143.188.18])
+	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
+	id 1orhzG-008iEJ-9l; Sun, 06 Nov 2022 15:55:08 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1667750097; cv=none; 
+	d=zohomail.com; s=zohoarc; 
+	b=XNiv+CF7+Vs1rdY6a6EuF+1eJnqZQK/qGbQelTOrSa0EUkFwCTkmRX0D10G83loms2xu0CdspPkwCWlxDDZ38KQwGOv55kvu3znSn8merlJwJnqxULgGQqhIJWRHvwerjwa1W12XdXMsNgCeHvtWuVtnU6Ii5ShAHn7RHMYv/N4=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
+	t=1667750097; h=Content-Type:Content-Transfer-Encoding:Cc:Date:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:To; 
+	bh=y6fXoKKrDJIOduh8b2eg9tngV6yDXgIm+yDwzoQwtGg=; 
+	b=BHQGPW3Xay8ZQLy2KJEFTVjcRtXabnSO4cPlHkdTUwsv0Vt2k8piEq2HO2YFP3K050MAoBNvovYsJeImoDN3tMJW8F9pgQuIoGn5XIOde0Y1kgT4ttw7vZ5YmcG3RdJexCxtpiHNqJgqPwZiczHeD4DBe85A8oHDQIaXq8T7kng=
+ARC-Authentication-Results: i=1; mx.zohomail.com;
+	dkim=pass  header.i=icenowy.me;
+	spf=pass  smtp.mailfrom=uwu@icenowy.me;
+	dmarc=pass header.from=<uwu@icenowy.me>
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1667750097;
+	s=zmail; d=icenowy.me; i=uwu@icenowy.me;
+	h=Date:Date:From:From:To:To:CC:Subject:Subject:In-Reply-To:References:Message-ID:MIME-Version:Content-Type:Content-Transfer-Encoding:Message-Id:Reply-To:Cc;
+	bh=y6fXoKKrDJIOduh8b2eg9tngV6yDXgIm+yDwzoQwtGg=;
+	b=UXoiLHPi/gNN/lNsmmC93LqgNGqppYri8Y/CN4nyVcc3bWSaSyHRtuzPQI1xSa3q
+	EE8KlC5ulke76X2rqIgoHat01cbMXpy2CAUmpT9eNq2hhGQmuvIVc2c5NF6yE3pwIiE
+	e58n3VXcGhvh8OlZ0rwq84G9yRUel8jUKCxiqFMY=
+Received: from [127.0.0.1] (112.94.102.138 [112.94.102.138]) by mx.zohomail.com
+	with SMTPS id 1667750094773943.5610305071772; Sun, 6 Nov 2022 07:54:54 -0800 (PST)
+Date: Sun, 06 Nov 2022 23:54:46 +0800
+From: Icenowy Zheng <uwu@icenowy.me>
+To: Andre Przywara <andre.przywara@arm.com>, Chen-Yu Tsai <wens@csie.org>,
+ Samuel Holland <samuel@sholland.org>,
+ Jernej Skrabec <jernej.skrabec@gmail.com>, Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+CC: soc@kernel.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
+ linux-phy@lists.infradead.org, linux-usb@vger.kernel.org,
+ Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>
+Subject: =?US-ASCII?Q?Re=3A_=5BPATCH_v3_10/11=5D_phy=3A_sun4i-usb=3A_R?= =?US-ASCII?Q?eplace_types_with_explicit_quirk_flags?=
+User-Agent: K-9 Mail for Android
+In-Reply-To: <20221106154826.6687-11-andre.przywara@arm.com>
+References: <20221106154826.6687-1-andre.przywara@arm.com> <20221106154826.6687-11-andre.przywara@arm.com>
+Message-ID: <D8382138-8943-46F7-B6A6-F83DF98E26AE@icenowy.me>
 MIME-Version: 1.0
+X-ZohoMailClient: External
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221106_075027_731366_11604DB9 
-X-CRM114-Status: GOOD (  14.05  )
+X-CRM114-CacheID: sfid-20221106_075506_418998_8E405DD1 
+X-CRM114-Status: GOOD (  12.93  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -67,230 +76,134 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-So far we were assigning some crude "type" (SoC name, really) to each
-Allwinner USB PHY model, then guarding certain quirks based on this.
-This does not only look weird, but gets more or more cumbersome to
-maintain.
-
-Remove the bogus type names altogether, instead introduce flags for each
-quirk, and explicitly check for them.
-This improves readability, and simplifies future extensions.
-
-Signed-off-by: Andre Przywara <andre.przywara@arm.com>
----
- drivers/phy/allwinner/phy-sun4i-usb.c | 50 ++++++++-------------------
- 1 file changed, 15 insertions(+), 35 deletions(-)
-
-diff --git a/drivers/phy/allwinner/phy-sun4i-usb.c b/drivers/phy/allwinner/phy-sun4i-usb.c
-index 51fb24c6dcb3..422129c66282 100644
---- a/drivers/phy/allwinner/phy-sun4i-usb.c
-+++ b/drivers/phy/allwinner/phy-sun4i-usb.c
-@@ -99,27 +99,17 @@
- #define DEBOUNCE_TIME			msecs_to_jiffies(50)
- #define POLL_TIME			msecs_to_jiffies(250)
- 
--enum sun4i_usb_phy_type {
--	sun4i_a10_phy,
--	sun6i_a31_phy,
--	sun8i_a33_phy,
--	sun8i_a83t_phy,
--	sun8i_h3_phy,
--	sun8i_r40_phy,
--	sun8i_v3s_phy,
--	sun50i_a64_phy,
--	sun50i_h6_phy,
--};
--
- struct sun4i_usb_phy_cfg {
- 	int num_phys;
- 	int hsic_index;
--	enum sun4i_usb_phy_type type;
- 	u32 disc_thresh;
- 	u32 hci_phy_ctl_clear;
- 	u8 phyctl_offset;
- 	bool dedicated_clocks;
- 	bool phy0_dual_route;
-+	bool phy2_is_hsic;
-+	bool siddq_in_base;
-+	bool poll_vbusen;
- 	int missing_phys;
- };
- 
-@@ -251,7 +241,7 @@ static void sun4i_usb_phy_passby(struct sun4i_usb_phy *phy, int enable)
- 		SUNXI_AHB_INCRX_ALIGN_EN | SUNXI_ULPI_BYPASS_EN;
- 
- 	/* A83T USB2 is HSIC */
--	if (phy_data->cfg->type == sun8i_a83t_phy && phy->index == 2)
-+	if (phy_data->cfg->phy2_is_hsic && phy->index == 2)
- 		bits |= SUNXI_EHCI_HS_FORCE | SUNXI_HSIC_CONNECT_INT |
- 			SUNXI_HSIC;
- 
-@@ -295,8 +285,7 @@ static int sun4i_usb_phy_init(struct phy *_phy)
- 		writel(val, phy->pmu + REG_HCI_PHY_CTL);
- 	}
- 
--	if (data->cfg->type == sun8i_a83t_phy ||
--	    data->cfg->type == sun50i_h6_phy) {
-+	if (data->cfg->siddq_in_base) {
- 		if (phy->index == 0) {
- 			val = readl(data->base + data->cfg->phyctl_offset);
- 			val |= PHY_CTL_VBUSVLDEXT;
-@@ -340,8 +329,7 @@ static int sun4i_usb_phy_exit(struct phy *_phy)
- 	struct sun4i_usb_phy_data *data = to_sun4i_usb_phy_data(phy);
- 
- 	if (phy->index == 0) {
--		if (data->cfg->type == sun8i_a83t_phy ||
--		    data->cfg->type == sun50i_h6_phy) {
-+		if (data->cfg->siddq_in_base) {
- 			void __iomem *phyctl = data->base +
- 				data->cfg->phyctl_offset;
- 
-@@ -414,9 +402,8 @@ static bool sun4i_usb_phy0_poll(struct sun4i_usb_phy_data *data)
- 	 * vbus using the N_VBUSEN pin on the pmic, so we must poll
- 	 * when using the pmic for vbus-det _and_ we're driving vbus.
- 	 */
--	if ((data->cfg->type == sun6i_a31_phy ||
--	     data->cfg->type == sun8i_a33_phy) &&
--	    data->vbus_power_supply && data->phys[0].regulator_on)
-+	if (data->cfg->poll_vbusen && data->vbus_power_supply &&
-+	    data->phys[0].regulator_on)
- 		return true;
- 
- 	return false;
-@@ -861,7 +848,6 @@ static int sun4i_usb_phy_probe(struct platform_device *pdev)
- 
- static const struct sun4i_usb_phy_cfg suniv_f1c100s_cfg = {
- 	.num_phys = 1,
--	.type = sun4i_a10_phy,
- 	.disc_thresh = 3,
- 	.phyctl_offset = REG_PHYCTL_A10,
- 	.dedicated_clocks = true,
-@@ -869,7 +855,6 @@ static const struct sun4i_usb_phy_cfg suniv_f1c100s_cfg = {
- 
- static const struct sun4i_usb_phy_cfg sun4i_a10_cfg = {
- 	.num_phys = 3,
--	.type = sun4i_a10_phy,
- 	.disc_thresh = 3,
- 	.phyctl_offset = REG_PHYCTL_A10,
- 	.dedicated_clocks = false,
-@@ -877,7 +862,6 @@ static const struct sun4i_usb_phy_cfg sun4i_a10_cfg = {
- 
- static const struct sun4i_usb_phy_cfg sun5i_a13_cfg = {
- 	.num_phys = 2,
--	.type = sun4i_a10_phy,
- 	.disc_thresh = 2,
- 	.phyctl_offset = REG_PHYCTL_A10,
- 	.dedicated_clocks = false,
-@@ -885,15 +869,14 @@ static const struct sun4i_usb_phy_cfg sun5i_a13_cfg = {
- 
- static const struct sun4i_usb_phy_cfg sun6i_a31_cfg = {
- 	.num_phys = 3,
--	.type = sun6i_a31_phy,
- 	.disc_thresh = 3,
- 	.phyctl_offset = REG_PHYCTL_A10,
- 	.dedicated_clocks = true,
-+	.poll_vbusen = true,
- };
- 
- static const struct sun4i_usb_phy_cfg sun7i_a20_cfg = {
- 	.num_phys = 3,
--	.type = sun4i_a10_phy,
- 	.disc_thresh = 2,
- 	.phyctl_offset = REG_PHYCTL_A10,
- 	.dedicated_clocks = false,
-@@ -901,31 +884,31 @@ static const struct sun4i_usb_phy_cfg sun7i_a20_cfg = {
- 
- static const struct sun4i_usb_phy_cfg sun8i_a23_cfg = {
- 	.num_phys = 2,
--	.type = sun6i_a31_phy,
- 	.disc_thresh = 3,
- 	.phyctl_offset = REG_PHYCTL_A10,
- 	.dedicated_clocks = true,
-+	.poll_vbusen = true,
- };
- 
- static const struct sun4i_usb_phy_cfg sun8i_a33_cfg = {
- 	.num_phys = 2,
--	.type = sun8i_a33_phy,
- 	.disc_thresh = 3,
- 	.phyctl_offset = REG_PHYCTL_A33,
- 	.dedicated_clocks = true,
-+	.poll_vbusen = true,
- };
- 
- static const struct sun4i_usb_phy_cfg sun8i_a83t_cfg = {
- 	.num_phys = 3,
- 	.hsic_index = 2,
--	.type = sun8i_a83t_phy,
- 	.phyctl_offset = REG_PHYCTL_A33,
- 	.dedicated_clocks = true,
-+	.siddq_in_base = true,
-+	.phy2_is_hsic = true,
- };
- 
- static const struct sun4i_usb_phy_cfg sun8i_h3_cfg = {
- 	.num_phys = 4,
--	.type = sun8i_h3_phy,
- 	.disc_thresh = 3,
- 	.phyctl_offset = REG_PHYCTL_A33,
- 	.dedicated_clocks = true,
-@@ -935,7 +918,6 @@ static const struct sun4i_usb_phy_cfg sun8i_h3_cfg = {
- 
- static const struct sun4i_usb_phy_cfg sun8i_r40_cfg = {
- 	.num_phys = 3,
--	.type = sun8i_r40_phy,
- 	.disc_thresh = 3,
- 	.phyctl_offset = REG_PHYCTL_A33,
- 	.dedicated_clocks = true,
-@@ -945,7 +927,6 @@ static const struct sun4i_usb_phy_cfg sun8i_r40_cfg = {
- 
- static const struct sun4i_usb_phy_cfg sun8i_v3s_cfg = {
- 	.num_phys = 1,
--	.type = sun8i_v3s_phy,
- 	.disc_thresh = 3,
- 	.phyctl_offset = REG_PHYCTL_A33,
- 	.dedicated_clocks = true,
-@@ -955,16 +936,15 @@ static const struct sun4i_usb_phy_cfg sun8i_v3s_cfg = {
- 
- static const struct sun4i_usb_phy_cfg sun20i_d1_cfg = {
- 	.num_phys = 2,
--	.type = sun50i_h6_phy,
- 	.phyctl_offset = REG_PHYCTL_A33,
- 	.dedicated_clocks = true,
- 	.hci_phy_ctl_clear = PHY_CTL_SIDDQ,
- 	.phy0_dual_route = true,
-+	.siddq_in_base = true,
- };
- 
- static const struct sun4i_usb_phy_cfg sun50i_a64_cfg = {
- 	.num_phys = 2,
--	.type = sun50i_a64_phy,
- 	.disc_thresh = 3,
- 	.phyctl_offset = REG_PHYCTL_A33,
- 	.dedicated_clocks = true,
-@@ -974,11 +954,11 @@ static const struct sun4i_usb_phy_cfg sun50i_a64_cfg = {
- 
- static const struct sun4i_usb_phy_cfg sun50i_h6_cfg = {
- 	.num_phys = 4,
--	.type = sun50i_h6_phy,
- 	.phyctl_offset = REG_PHYCTL_A33,
- 	.dedicated_clocks = true,
- 	.phy0_dual_route = true,
- 	.missing_phys = BIT(1) | BIT(2),
-+	.siddq_in_base = true,
- };
- 
- static const struct of_device_id sun4i_usb_phy_of_match[] = {
--- 
-2.35.5
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+Cgrkuo4gMjAyMuW5tDEx5pyINuaXpSBHTVQrMDg6MDAg5LiL5Y2IMTE6NDg6MjUsIEFuZHJlIFBy
+enl3YXJhIDxhbmRyZS5wcnp5d2FyYUBhcm0uY29tPiDlhpnliLA6Cj5TbyBmYXIgd2Ugd2VyZSBh
+c3NpZ25pbmcgc29tZSBjcnVkZSAidHlwZSIgKFNvQyBuYW1lLCByZWFsbHkpIHRvIGVhY2gKPkFs
+bHdpbm5lciBVU0IgUEhZIG1vZGVsLCB0aGVuIGd1YXJkaW5nIGNlcnRhaW4gcXVpcmtzIGJhc2Vk
+IG9uIHRoaXMuCj5UaGlzIGRvZXMgbm90IG9ubHkgbG9vayB3ZWlyZCwgYnV0IGdldHMgbW9yZSBv
+ciBtb3JlIGN1bWJlcnNvbWUgdG8KPm1haW50YWluLgo+Cj5SZW1vdmUgdGhlIGJvZ3VzIHR5cGUg
+bmFtZXMgYWx0b2dldGhlciwgaW5zdGVhZCBpbnRyb2R1Y2UgZmxhZ3MgZm9yIGVhY2gKPnF1aXJr
+LCBhbmQgZXhwbGljaXRseSBjaGVjayBmb3IgdGhlbS4KPlRoaXMgaW1wcm92ZXMgcmVhZGFiaWxp
+dHksIGFuZCBzaW1wbGlmaWVzIGZ1dHVyZSBleHRlbnNpb25zLgo+Cj5TaWduZWQtb2ZmLWJ5OiBB
+bmRyZSBQcnp5d2FyYSA8YW5kcmUucHJ6eXdhcmFAYXJtLmNvbT4KPi0tLQo+IGRyaXZlcnMvcGh5
+L2FsbHdpbm5lci9waHktc3VuNGktdXNiLmMgfCA1MCArKysrKysrKy0tLS0tLS0tLS0tLS0tLS0t
+LS0KPiAxIGZpbGUgY2hhbmdlZCwgMTUgaW5zZXJ0aW9ucygrKSwgMzUgZGVsZXRpb25zKC0pCj4K
+PmRpZmYgLS1naXQgYS9kcml2ZXJzL3BoeS9hbGx3aW5uZXIvcGh5LXN1bjRpLXVzYi5jIGIvZHJp
+dmVycy9waHkvYWxsd2lubmVyL3BoeS1zdW40aS11c2IuYwo+aW5kZXggNTFmYjI0YzZkY2IzLi40
+MjIxMjljNjYyODIgMTAwNjQ0Cj4tLS0gYS9kcml2ZXJzL3BoeS9hbGx3aW5uZXIvcGh5LXN1bjRp
+LXVzYi5jCj4rKysgYi9kcml2ZXJzL3BoeS9hbGx3aW5uZXIvcGh5LXN1bjRpLXVzYi5jCj5AQCAt
+OTksMjcgKzk5LDE3IEBACj4gI2RlZmluZSBERUJPVU5DRV9USU1FCQkJbXNlY3NfdG9famlmZmll
+cyg1MCkKPiAjZGVmaW5lIFBPTExfVElNRQkJCW1zZWNzX3RvX2ppZmZpZXMoMjUwKQo+IAo+LWVu
+dW0gc3VuNGlfdXNiX3BoeV90eXBlIHsKPi0Jc3VuNGlfYTEwX3BoeSwKPi0Jc3VuNmlfYTMxX3Bo
+eSwKPi0Jc3VuOGlfYTMzX3BoeSwKPi0Jc3VuOGlfYTgzdF9waHksCj4tCXN1bjhpX2gzX3BoeSwK
+Pi0Jc3VuOGlfcjQwX3BoeSwKPi0Jc3VuOGlfdjNzX3BoeSwKPi0Jc3VuNTBpX2E2NF9waHksCj4t
+CXN1bjUwaV9oNl9waHksCj4tfTsKPi0KPiBzdHJ1Y3Qgc3VuNGlfdXNiX3BoeV9jZmcgewo+IAlp
+bnQgbnVtX3BoeXM7Cj4gCWludCBoc2ljX2luZGV4Owo+LQllbnVtIHN1bjRpX3VzYl9waHlfdHlw
+ZSB0eXBlOwo+IAl1MzIgZGlzY190aHJlc2g7Cj4gCXUzMiBoY2lfcGh5X2N0bF9jbGVhcjsKPiAJ
+dTggcGh5Y3RsX29mZnNldDsKPiAJYm9vbCBkZWRpY2F0ZWRfY2xvY2tzOwo+IAlib29sIHBoeTBf
+ZHVhbF9yb3V0ZTsKPisJYm9vbCBwaHkyX2lzX2hzaWM7CgpNYXliZSB1c2UgYSBgaW50IGhzaWNf
+cGh5YCBpbnN0ZWFkPyBCdXQgdGhlIHByb2JsZW0gaXMgdGhpcyBwcmFjdGljZSBpcwphc3N1bWlu
+ZyBVU0IwIGNvdWxkIG5vdCBiZSBIU0lDIC0tIGFsdGhvdWdoIFVTQjAgaXMgdXN1YWxseSBPVEcu
+Cgo+Kwlib29sIHNpZGRxX2luX2Jhc2U7Cj4rCWJvb2wgcG9sbF92YnVzZW47Cj4gCWludCBtaXNz
+aW5nX3BoeXM7Cj4gfTsKPiAKPkBAIC0yNTEsNyArMjQxLDcgQEAgc3RhdGljIHZvaWQgc3VuNGlf
+dXNiX3BoeV9wYXNzYnkoc3RydWN0IHN1bjRpX3VzYl9waHkgKnBoeSwgaW50IGVuYWJsZSkKPiAJ
+CVNVTlhJX0FIQl9JTkNSWF9BTElHTl9FTiB8IFNVTlhJX1VMUElfQllQQVNTX0VOOwo+IAo+IAkv
+KiBBODNUIFVTQjIgaXMgSFNJQyAqLwo+LQlpZiAocGh5X2RhdGEtPmNmZy0+dHlwZSA9PSBzdW44
+aV9hODN0X3BoeSAmJiBwaHktPmluZGV4ID09IDIpCj4rCWlmIChwaHlfZGF0YS0+Y2ZnLT5waHky
+X2lzX2hzaWMgJiYgcGh5LT5pbmRleCA9PSAyKQo+IAkJYml0cyB8PSBTVU5YSV9FSENJX0hTX0ZP
+UkNFIHwgU1VOWElfSFNJQ19DT05ORUNUX0lOVCB8Cj4gCQkJU1VOWElfSFNJQzsKPiAKPkBAIC0y
+OTUsOCArMjg1LDcgQEAgc3RhdGljIGludCBzdW40aV91c2JfcGh5X2luaXQoc3RydWN0IHBoeSAq
+X3BoeSkKPiAJCXdyaXRlbCh2YWwsIHBoeS0+cG11ICsgUkVHX0hDSV9QSFlfQ1RMKTsKPiAJfQo+
+IAo+LQlpZiAoZGF0YS0+Y2ZnLT50eXBlID09IHN1bjhpX2E4M3RfcGh5IHx8Cj4tCSAgICBkYXRh
+LT5jZmctPnR5cGUgPT0gc3VuNTBpX2g2X3BoeSkgewo+KwlpZiAoZGF0YS0+Y2ZnLT5zaWRkcV9p
+bl9iYXNlKSB7Cj4gCQlpZiAocGh5LT5pbmRleCA9PSAwKSB7Cj4gCQkJdmFsID0gcmVhZGwoZGF0
+YS0+YmFzZSArIGRhdGEtPmNmZy0+cGh5Y3RsX29mZnNldCk7Cj4gCQkJdmFsIHw9IFBIWV9DVExf
+VkJVU1ZMREVYVDsKPkBAIC0zNDAsOCArMzI5LDcgQEAgc3RhdGljIGludCBzdW40aV91c2JfcGh5
+X2V4aXQoc3RydWN0IHBoeSAqX3BoeSkKPiAJc3RydWN0IHN1bjRpX3VzYl9waHlfZGF0YSAqZGF0
+YSA9IHRvX3N1bjRpX3VzYl9waHlfZGF0YShwaHkpOwo+IAo+IAlpZiAocGh5LT5pbmRleCA9PSAw
+KSB7Cj4tCQlpZiAoZGF0YS0+Y2ZnLT50eXBlID09IHN1bjhpX2E4M3RfcGh5IHx8Cj4tCQkgICAg
+ZGF0YS0+Y2ZnLT50eXBlID09IHN1bjUwaV9oNl9waHkpIHsKPisJCWlmIChkYXRhLT5jZmctPnNp
+ZGRxX2luX2Jhc2UpIHsKPiAJCQl2b2lkIF9faW9tZW0gKnBoeWN0bCA9IGRhdGEtPmJhc2UgKwo+
+IAkJCQlkYXRhLT5jZmctPnBoeWN0bF9vZmZzZXQ7Cj4gCj5AQCAtNDE0LDkgKzQwMiw4IEBAIHN0
+YXRpYyBib29sIHN1bjRpX3VzYl9waHkwX3BvbGwoc3RydWN0IHN1bjRpX3VzYl9waHlfZGF0YSAq
+ZGF0YSkKPiAJICogdmJ1cyB1c2luZyB0aGUgTl9WQlVTRU4gcGluIG9uIHRoZSBwbWljLCBzbyB3
+ZSBtdXN0IHBvbGwKPiAJICogd2hlbiB1c2luZyB0aGUgcG1pYyBmb3IgdmJ1cy1kZXQgX2FuZF8g
+d2UncmUgZHJpdmluZyB2YnVzLgo+IAkgKi8KPi0JaWYgKChkYXRhLT5jZmctPnR5cGUgPT0gc3Vu
+NmlfYTMxX3BoeSB8fAo+LQkgICAgIGRhdGEtPmNmZy0+dHlwZSA9PSBzdW44aV9hMzNfcGh5KSAm
+Jgo+LQkgICAgZGF0YS0+dmJ1c19wb3dlcl9zdXBwbHkgJiYgZGF0YS0+cGh5c1swXS5yZWd1bGF0
+b3Jfb24pCj4rCWlmIChkYXRhLT5jZmctPnBvbGxfdmJ1c2VuICYmIGRhdGEtPnZidXNfcG93ZXJf
+c3VwcGx5ICYmCj4rCSAgICBkYXRhLT5waHlzWzBdLnJlZ3VsYXRvcl9vbikKPiAJCXJldHVybiB0
+cnVlOwo+IAo+IAlyZXR1cm4gZmFsc2U7Cj5AQCAtODYxLDcgKzg0OCw2IEBAIHN0YXRpYyBpbnQg
+c3VuNGlfdXNiX3BoeV9wcm9iZShzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNlICpwZGV2KQo+IAo+IHN0
+YXRpYyBjb25zdCBzdHJ1Y3Qgc3VuNGlfdXNiX3BoeV9jZmcgc3VuaXZfZjFjMTAwc19jZmcgPSB7
+Cj4gCS5udW1fcGh5cyA9IDEsCj4tCS50eXBlID0gc3VuNGlfYTEwX3BoeSwKPiAJLmRpc2NfdGhy
+ZXNoID0gMywKPiAJLnBoeWN0bF9vZmZzZXQgPSBSRUdfUEhZQ1RMX0ExMCwKPiAJLmRlZGljYXRl
+ZF9jbG9ja3MgPSB0cnVlLAo+QEAgLTg2OSw3ICs4NTUsNiBAQCBzdGF0aWMgY29uc3Qgc3RydWN0
+IHN1bjRpX3VzYl9waHlfY2ZnIHN1bml2X2YxYzEwMHNfY2ZnID0gewo+IAo+IHN0YXRpYyBjb25z
+dCBzdHJ1Y3Qgc3VuNGlfdXNiX3BoeV9jZmcgc3VuNGlfYTEwX2NmZyA9IHsKPiAJLm51bV9waHlz
+ID0gMywKPi0JLnR5cGUgPSBzdW40aV9hMTBfcGh5LAo+IAkuZGlzY190aHJlc2ggPSAzLAo+IAku
+cGh5Y3RsX29mZnNldCA9IFJFR19QSFlDVExfQTEwLAo+IAkuZGVkaWNhdGVkX2Nsb2NrcyA9IGZh
+bHNlLAo+QEAgLTg3Nyw3ICs4NjIsNiBAQCBzdGF0aWMgY29uc3Qgc3RydWN0IHN1bjRpX3VzYl9w
+aHlfY2ZnIHN1bjRpX2ExMF9jZmcgPSB7Cj4gCj4gc3RhdGljIGNvbnN0IHN0cnVjdCBzdW40aV91
+c2JfcGh5X2NmZyBzdW41aV9hMTNfY2ZnID0gewo+IAkubnVtX3BoeXMgPSAyLAo+LQkudHlwZSA9
+IHN1bjRpX2ExMF9waHksCj4gCS5kaXNjX3RocmVzaCA9IDIsCj4gCS5waHljdGxfb2Zmc2V0ID0g
+UkVHX1BIWUNUTF9BMTAsCj4gCS5kZWRpY2F0ZWRfY2xvY2tzID0gZmFsc2UsCj5AQCAtODg1LDE1
+ICs4NjksMTQgQEAgc3RhdGljIGNvbnN0IHN0cnVjdCBzdW40aV91c2JfcGh5X2NmZyBzdW41aV9h
+MTNfY2ZnID0gewo+IAo+IHN0YXRpYyBjb25zdCBzdHJ1Y3Qgc3VuNGlfdXNiX3BoeV9jZmcgc3Vu
+NmlfYTMxX2NmZyA9IHsKPiAJLm51bV9waHlzID0gMywKPi0JLnR5cGUgPSBzdW42aV9hMzFfcGh5
+LAo+IAkuZGlzY190aHJlc2ggPSAzLAo+IAkucGh5Y3RsX29mZnNldCA9IFJFR19QSFlDVExfQTEw
+LAo+IAkuZGVkaWNhdGVkX2Nsb2NrcyA9IHRydWUsCj4rCS5wb2xsX3ZidXNlbiA9IHRydWUsCj4g
+fTsKPiAKPiBzdGF0aWMgY29uc3Qgc3RydWN0IHN1bjRpX3VzYl9waHlfY2ZnIHN1bjdpX2EyMF9j
+ZmcgPSB7Cj4gCS5udW1fcGh5cyA9IDMsCj4tCS50eXBlID0gc3VuNGlfYTEwX3BoeSwKPiAJLmRp
+c2NfdGhyZXNoID0gMiwKPiAJLnBoeWN0bF9vZmZzZXQgPSBSRUdfUEhZQ1RMX0ExMCwKPiAJLmRl
+ZGljYXRlZF9jbG9ja3MgPSBmYWxzZSwKPkBAIC05MDEsMzEgKzg4NCwzMSBAQCBzdGF0aWMgY29u
+c3Qgc3RydWN0IHN1bjRpX3VzYl9waHlfY2ZnIHN1bjdpX2EyMF9jZmcgPSB7Cj4gCj4gc3RhdGlj
+IGNvbnN0IHN0cnVjdCBzdW40aV91c2JfcGh5X2NmZyBzdW44aV9hMjNfY2ZnID0gewo+IAkubnVt
+X3BoeXMgPSAyLAo+LQkudHlwZSA9IHN1bjZpX2EzMV9waHksCj4gCS5kaXNjX3RocmVzaCA9IDMs
+Cj4gCS5waHljdGxfb2Zmc2V0ID0gUkVHX1BIWUNUTF9BMTAsCj4gCS5kZWRpY2F0ZWRfY2xvY2tz
+ID0gdHJ1ZSwKPisJLnBvbGxfdmJ1c2VuID0gdHJ1ZSwKPiB9Owo+IAo+IHN0YXRpYyBjb25zdCBz
+dHJ1Y3Qgc3VuNGlfdXNiX3BoeV9jZmcgc3VuOGlfYTMzX2NmZyA9IHsKPiAJLm51bV9waHlzID0g
+MiwKPi0JLnR5cGUgPSBzdW44aV9hMzNfcGh5LAo+IAkuZGlzY190aHJlc2ggPSAzLAo+IAkucGh5
+Y3RsX29mZnNldCA9IFJFR19QSFlDVExfQTMzLAo+IAkuZGVkaWNhdGVkX2Nsb2NrcyA9IHRydWUs
+Cj4rCS5wb2xsX3ZidXNlbiA9IHRydWUsCj4gfTsKPiAKPiBzdGF0aWMgY29uc3Qgc3RydWN0IHN1
+bjRpX3VzYl9waHlfY2ZnIHN1bjhpX2E4M3RfY2ZnID0gewo+IAkubnVtX3BoeXMgPSAzLAo+IAku
+aHNpY19pbmRleCA9IDIsCj4tCS50eXBlID0gc3VuOGlfYTgzdF9waHksCj4gCS5waHljdGxfb2Zm
+c2V0ID0gUkVHX1BIWUNUTF9BMzMsCj4gCS5kZWRpY2F0ZWRfY2xvY2tzID0gdHJ1ZSwKPisJLnNp
+ZGRxX2luX2Jhc2UgPSB0cnVlLAo+KwkucGh5Ml9pc19oc2ljID0gdHJ1ZSwKPiB9Owo+IAo+IHN0
+YXRpYyBjb25zdCBzdHJ1Y3Qgc3VuNGlfdXNiX3BoeV9jZmcgc3VuOGlfaDNfY2ZnID0gewo+IAku
+bnVtX3BoeXMgPSA0LAo+LQkudHlwZSA9IHN1bjhpX2gzX3BoeSwKPiAJLmRpc2NfdGhyZXNoID0g
+MywKPiAJLnBoeWN0bF9vZmZzZXQgPSBSRUdfUEhZQ1RMX0EzMywKPiAJLmRlZGljYXRlZF9jbG9j
+a3MgPSB0cnVlLAo+QEAgLTkzNSw3ICs5MTgsNiBAQCBzdGF0aWMgY29uc3Qgc3RydWN0IHN1bjRp
+X3VzYl9waHlfY2ZnIHN1bjhpX2gzX2NmZyA9IHsKPiAKPiBzdGF0aWMgY29uc3Qgc3RydWN0IHN1
+bjRpX3VzYl9waHlfY2ZnIHN1bjhpX3I0MF9jZmcgPSB7Cj4gCS5udW1fcGh5cyA9IDMsCj4tCS50
+eXBlID0gc3VuOGlfcjQwX3BoeSwKPiAJLmRpc2NfdGhyZXNoID0gMywKPiAJLnBoeWN0bF9vZmZz
+ZXQgPSBSRUdfUEhZQ1RMX0EzMywKPiAJLmRlZGljYXRlZF9jbG9ja3MgPSB0cnVlLAo+QEAgLTk0
+NSw3ICs5MjcsNiBAQCBzdGF0aWMgY29uc3Qgc3RydWN0IHN1bjRpX3VzYl9waHlfY2ZnIHN1bjhp
+X3I0MF9jZmcgPSB7Cj4gCj4gc3RhdGljIGNvbnN0IHN0cnVjdCBzdW40aV91c2JfcGh5X2NmZyBz
+dW44aV92M3NfY2ZnID0gewo+IAkubnVtX3BoeXMgPSAxLAo+LQkudHlwZSA9IHN1bjhpX3Yzc19w
+aHksCj4gCS5kaXNjX3RocmVzaCA9IDMsCj4gCS5waHljdGxfb2Zmc2V0ID0gUkVHX1BIWUNUTF9B
+MzMsCj4gCS5kZWRpY2F0ZWRfY2xvY2tzID0gdHJ1ZSwKPkBAIC05NTUsMTYgKzkzNiwxNSBAQCBz
+dGF0aWMgY29uc3Qgc3RydWN0IHN1bjRpX3VzYl9waHlfY2ZnIHN1bjhpX3Yzc19jZmcgPSB7Cj4g
+Cj4gc3RhdGljIGNvbnN0IHN0cnVjdCBzdW40aV91c2JfcGh5X2NmZyBzdW4yMGlfZDFfY2ZnID0g
+ewo+IAkubnVtX3BoeXMgPSAyLAo+LQkudHlwZSA9IHN1bjUwaV9oNl9waHksCj4gCS5waHljdGxf
+b2Zmc2V0ID0gUkVHX1BIWUNUTF9BMzMsCj4gCS5kZWRpY2F0ZWRfY2xvY2tzID0gdHJ1ZSwKPiAJ
+LmhjaV9waHlfY3RsX2NsZWFyID0gUEhZX0NUTF9TSUREUSwKPiAJLnBoeTBfZHVhbF9yb3V0ZSA9
+IHRydWUsCj4rCS5zaWRkcV9pbl9iYXNlID0gdHJ1ZSwKPiB9Owo+IAo+IHN0YXRpYyBjb25zdCBz
+dHJ1Y3Qgc3VuNGlfdXNiX3BoeV9jZmcgc3VuNTBpX2E2NF9jZmcgPSB7Cj4gCS5udW1fcGh5cyA9
+IDIsCj4tCS50eXBlID0gc3VuNTBpX2E2NF9waHksCj4gCS5kaXNjX3RocmVzaCA9IDMsCj4gCS5w
+aHljdGxfb2Zmc2V0ID0gUkVHX1BIWUNUTF9BMzMsCj4gCS5kZWRpY2F0ZWRfY2xvY2tzID0gdHJ1
+ZSwKPkBAIC05NzQsMTEgKzk1NCwxMSBAQCBzdGF0aWMgY29uc3Qgc3RydWN0IHN1bjRpX3VzYl9w
+aHlfY2ZnIHN1bjUwaV9hNjRfY2ZnID0gewo+IAo+IHN0YXRpYyBjb25zdCBzdHJ1Y3Qgc3VuNGlf
+dXNiX3BoeV9jZmcgc3VuNTBpX2g2X2NmZyA9IHsKPiAJLm51bV9waHlzID0gNCwKPi0JLnR5cGUg
+PSBzdW41MGlfaDZfcGh5LAo+IAkucGh5Y3RsX29mZnNldCA9IFJFR19QSFlDVExfQTMzLAo+IAku
+ZGVkaWNhdGVkX2Nsb2NrcyA9IHRydWUsCj4gCS5waHkwX2R1YWxfcm91dGUgPSB0cnVlLAo+IAku
+bWlzc2luZ19waHlzID0gQklUKDEpIHwgQklUKDIpLAo+Kwkuc2lkZHFfaW5fYmFzZSA9IHRydWUs
+Cj4gfTsKPiAKPiBzdGF0aWMgY29uc3Qgc3RydWN0IG9mX2RldmljZV9pZCBzdW40aV91c2JfcGh5
+X29mX21hdGNoW10gPSB7CgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlz
+dHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0
+aW5mby9saW51eC1waHkK
