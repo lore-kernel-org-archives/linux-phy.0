@@ -4,32 +4,32 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F03FFC433FE
-	for <linux-phy@archiver.kernel.org>; Sun,  6 Nov 2022 15:52:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CBF4CC43217
+	for <linux-phy@archiver.kernel.org>; Sun,  6 Nov 2022 15:53:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AenwdjOBPQPIKEx8agkhVBGTntghguaenl+RLhoPFv8=; b=SKEzEZWWNeAtoE
-	ODsZ7K6M8D/z6GCHH3mbahTrjfZSeMwpoMxaOsSool3/ltWA9ARZX9JxoI+jYjiJXtC4N4kgETY9G
-	qnru63fOpm28nNjP4CjhXqKsW9F9XVSUAGkn6rIr7q5h/zRQvbgTbOtQrWWxFZjv80yHoxyuklXEu
-	LDXC8jpDuaWNCU8mSgHQqCvCngN2IbeLEUhA/SOFnlY1DH0h//de70s9PIUhokWk5yuPcVglxHdoC
-	NYlaYYhG+/vhwQbXlyN3P23Tk9CnmNR/DRAwsSYXz2jfKtjSfxmAU5VX/kA4pI/oCuQaOhfftAt+X
-	ya8aKzE9ms8iDfF/0poA==;
+	List-Owner; bh=njVpMHS7k+CrpKw8cY+d70uFj5tYP8BW23wvyOh0CZk=; b=EYDzZpaD9/SdSb
+	2egiJUZL3MGiBj53xCnMEZuzoy59ZqFQFmwlqJFHi3hMfAsKDHHgbz0xnPGhZHedUrf9s+xsWdj5W
+	gdD3b7wyre1ci8nUfH+r+6XPVTL7wfMHLLg9mPuo3k9n3wltRj8HQFVVAJxDXSppTvYt6yBJxFmYa
+	PxmbUBKCYEnTmRi20f6zXqM5K4wJkSPUPbGYtIxK5WsyMC+dqhuePHlWeYIPYbBxNkiQa/84f8wv6
+	GkGNluS+uKkquy+/Ada3WIA/WwgAhAKtBdh5mh3y+TBAuMqT0fPSSPCo+tJoMQvxkbJVxGzTH6gw9
+	4mf5htVmDW5k4yHf/hHQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1orhwy-008geP-8Y; Sun, 06 Nov 2022 15:52:44 +0000
+	id 1orhy2-008hT6-S7; Sun, 06 Nov 2022 15:53:50 +0000
 Received: from foss.arm.com ([217.140.110.172])
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1orhui-008eys-7N; Sun, 06 Nov 2022 15:50:26 +0000
+	id 1orhul-008f1l-Te; Sun, 06 Nov 2022 15:50:30 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
-	by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 12F1CED1;
-	Sun,  6 Nov 2022 07:50:28 -0800 (PST)
+	by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8D19DED1;
+	Sun,  6 Nov 2022 07:50:33 -0800 (PST)
 Received: from slackpad.fritz.box (unknown [172.31.20.19])
-	by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0FB303F534;
-	Sun,  6 Nov 2022 07:50:19 -0800 (PST)
+	by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 69F653F534;
+	Sun,  6 Nov 2022 07:50:25 -0800 (PST)
 From: Andre Przywara <andre.przywara@arm.com>
 To: Chen-Yu Tsai <wens@csie.org>,
 	Samuel Holland <samuel@sholland.org>,
@@ -43,17 +43,18 @@ Cc: soc@kernel.org,
 	linux-arm-kernel@lists.infradead.org,
 	linux-sunxi@lists.linux.dev,
 	linux-phy@lists.infradead.org,
-	linux-usb@vger.kernel.org
-Subject: [PATCH v3 09/11] ARM: dts: suniv: add device tree for PopStick v1.1
-Date: Sun,  6 Nov 2022 15:48:24 +0000
-Message-Id: <20221106154826.6687-10-andre.przywara@arm.com>
+	linux-usb@vger.kernel.org,
+	Bin Liu <b-liu@ti.com>
+Subject: [PATCH v3 11/11] usb: musb: sunxi: Introduce config struct
+Date: Sun,  6 Nov 2022 15:48:26 +0000
+Message-Id: <20221106154826.6687-12-andre.przywara@arm.com>
 X-Mailer: git-send-email 2.35.5
 In-Reply-To: <20221106154826.6687-1-andre.przywara@arm.com>
 References: <20221106154826.6687-1-andre.przywara@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221106_075024_391436_25BABB58 
-X-CRM114-Status: GOOD (  15.11  )
+X-CRM114-CacheID: sfid-20221106_075028_086301_8233D6EA 
+X-CRM114-Status: GOOD (  16.13  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -70,145 +71,199 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Icenowy Zheng <uwu@icenowy.me>
+Currently the probe routine explicitly compares the compatible string of
+the device node to figure out which features and quirks a certain
+Allwinner MUSB model requires. This gets harder to maintain for new
+SoCs.
 
-PopStick is a minimal Allwinner F1C200s dongle, with its USB controller
-wired to a USB Type-A port, a SD slot and a SPI NAND flash on board, and
-an on-board CH340 USB-UART converted connected to F1C200s's UART0.
+Add a struct sunxi_musb_cfg that names the features and quirks
+explicitly, and create instances of this struct for every type of MUSB
+device we support. Then bind this to the compatible strings via the OF
+data feature.
 
-Add a device tree for it. As F1C200s is just F1C100s with a different
-DRAM chip co-packaged, directly use F1C100s DTSI here.
-
-This commit covers the v1.1 version of this board, which is now shipped.
-v1.0 is some internal sample that have not been shipped at all.
-
-Signed-off-by: Icenowy Zheng <uwu@icenowy.me>
 Signed-off-by: Andre Przywara <andre.przywara@arm.com>
 ---
- arch/arm/boot/dts/Makefile                    |  3 +-
- .../boot/dts/suniv-f1c200s-popstick-v1.1.dts  | 99 +++++++++++++++++++
- 2 files changed, 101 insertions(+), 1 deletion(-)
- create mode 100644 arch/arm/boot/dts/suniv-f1c200s-popstick-v1.1.dts
+ drivers/usb/musb/sunxi.c | 101 +++++++++++++++++++++++++++++----------
+ 1 file changed, 75 insertions(+), 26 deletions(-)
 
-diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
-index 6aa7dc4db2fc..0249c07bd8a6 100644
---- a/arch/arm/boot/dts/Makefile
-+++ b/arch/arm/boot/dts/Makefile
-@@ -1391,7 +1391,8 @@ dtb-$(CONFIG_MACH_SUN9I) += \
- 	sun9i-a80-optimus.dtb \
- 	sun9i-a80-cubieboard4.dtb
- dtb-$(CONFIG_MACH_SUNIV) += \
--	suniv-f1c100s-licheepi-nano.dtb
-+	suniv-f1c100s-licheepi-nano.dtb \
-+	suniv-f1c200s-popstick-v1.1.dtb
- dtb-$(CONFIG_ARCH_TEGRA_2x_SOC) += \
- 	tegra20-acer-a500-picasso.dtb \
- 	tegra20-asus-tf101.dtb \
-diff --git a/arch/arm/boot/dts/suniv-f1c200s-popstick-v1.1.dts b/arch/arm/boot/dts/suniv-f1c200s-popstick-v1.1.dts
-new file mode 100644
-index 000000000000..7d69b5fcb905
---- /dev/null
-+++ b/arch/arm/boot/dts/suniv-f1c200s-popstick-v1.1.dts
-@@ -0,0 +1,99 @@
-+// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-+/*
-+ * Copyright 2022 Icenowy Zheng <uwu@icenowy.me>
-+ */
-+
-+/dts-v1/;
-+#include "suniv-f1c100s.dtsi"
-+
-+#include <dt-bindings/gpio/gpio.h>
-+#include <dt-bindings/leds/common.h>
-+
-+/ {
-+	model = "Popcorn Computer PopStick v1.1";
-+	compatible = "sourceparts,popstick-v1.1", "sourceparts,popstick",
-+		     "allwinner,suniv-f1c200s", "allwinner,suniv-f1c100s";
-+
-+	aliases {
-+		serial0 = &uart0;
-+	};
-+
-+	chosen {
-+		stdout-path = "serial0:115200n8";
-+	};
-+
-+	leds {
-+		compatible = "gpio-leds";
-+
-+		led {
-+			function = LED_FUNCTION_STATUS;
-+			color = <LED_COLOR_ID_GREEN>;
-+			gpios = <&pio 4 6 GPIO_ACTIVE_HIGH>; /* PE6 */
-+			linux,default-trigger = "heartbeat";
-+		};
-+	};
-+
-+	reg_vcc3v3: regulator-3v3 {
-+		compatible = "regulator-fixed";
-+		regulator-name = "vcc3v3";
-+		regulator-min-microvolt = <3300000>;
-+		regulator-max-microvolt = <3300000>;
-+	};
+diff --git a/drivers/usb/musb/sunxi.c b/drivers/usb/musb/sunxi.c
+index 4b368d16a73a..266f8baf5af0 100644
+--- a/drivers/usb/musb/sunxi.c
++++ b/drivers/usb/musb/sunxi.c
+@@ -15,6 +15,7 @@
+ #include <linux/kernel.h>
+ #include <linux/module.h>
+ #include <linux/of.h>
++#include <linux/of_device.h>
+ #include <linux/phy/phy-sun4i-usb.h>
+ #include <linux/platform_device.h>
+ #include <linux/reset.h>
+@@ -67,6 +68,13 @@
+ #define SUNXI_MUSB_FL_NO_CONFIGDATA		7
+ #define SUNXI_MUSB_FL_PHY_MODE_PEND		8
+ 
++struct sunxi_musb_cfg {
++	int nr_endpoints;
++	bool has_sram;
++	bool has_reset;
++	bool no_configdata;
 +};
 +
-+&mmc0 {
-+	cd-gpios = <&pio 4 3 GPIO_ACTIVE_LOW>; /* PE3 */
-+	bus-width = <4>;
-+	disable-wp;
-+	vmmc-supply = <&reg_vcc3v3>;
-+	status = "okay";
+ /* Our read/write methods need access and do not get passed in a musb ref :| */
+ static struct musb *sunxi_musb;
+ 
+@@ -625,7 +633,7 @@ static const struct musb_platform_ops sunxi_musb_ops = {
+ #define SUNXI_MUSB_MAX_EP_NUM	6
+ #define SUNXI_MUSB_RAM_BITS	11
+ 
+-static struct musb_fifo_cfg sunxi_musb_mode_cfg[] = {
++static struct musb_fifo_cfg sunxi_musb_mode_cfg_5eps[] = {
+ 	MUSB_EP_FIFO_SINGLE(1, FIFO_TX, 512),
+ 	MUSB_EP_FIFO_SINGLE(1, FIFO_RX, 512),
+ 	MUSB_EP_FIFO_SINGLE(2, FIFO_TX, 512),
+@@ -641,7 +649,7 @@ static struct musb_fifo_cfg sunxi_musb_mode_cfg[] = {
+ /* H3/V3s OTG supports only 4 endpoints */
+ #define SUNXI_MUSB_MAX_EP_NUM_H3	5
+ 
+-static struct musb_fifo_cfg sunxi_musb_mode_cfg_h3[] = {
++static struct musb_fifo_cfg sunxi_musb_mode_cfg_4eps[] = {
+ 	MUSB_EP_FIFO_SINGLE(1, FIFO_TX, 512),
+ 	MUSB_EP_FIFO_SINGLE(1, FIFO_RX, 512),
+ 	MUSB_EP_FIFO_SINGLE(2, FIFO_TX, 512),
+@@ -652,18 +660,18 @@ static struct musb_fifo_cfg sunxi_musb_mode_cfg_h3[] = {
+ 	MUSB_EP_FIFO_SINGLE(4, FIFO_RX, 512),
+ };
+ 
+-static const struct musb_hdrc_config sunxi_musb_hdrc_config = {
+-	.fifo_cfg       = sunxi_musb_mode_cfg,
+-	.fifo_cfg_size  = ARRAY_SIZE(sunxi_musb_mode_cfg),
++static const struct musb_hdrc_config sunxi_musb_hdrc_config_5eps = {
++	.fifo_cfg       = sunxi_musb_mode_cfg_5eps,
++	.fifo_cfg_size  = ARRAY_SIZE(sunxi_musb_mode_cfg_5eps),
+ 	.multipoint	= true,
+ 	.dyn_fifo	= true,
+ 	.num_eps	= SUNXI_MUSB_MAX_EP_NUM,
+ 	.ram_bits	= SUNXI_MUSB_RAM_BITS,
+ };
+ 
+-static struct musb_hdrc_config sunxi_musb_hdrc_config_h3 = {
+-	.fifo_cfg       = sunxi_musb_mode_cfg_h3,
+-	.fifo_cfg_size  = ARRAY_SIZE(sunxi_musb_mode_cfg_h3),
++static struct musb_hdrc_config sunxi_musb_hdrc_config_4eps = {
++	.fifo_cfg       = sunxi_musb_mode_cfg_4eps,
++	.fifo_cfg_size  = ARRAY_SIZE(sunxi_musb_mode_cfg_4eps),
+ 	.multipoint	= true,
+ 	.dyn_fifo	= true,
+ 	.num_eps	= SUNXI_MUSB_MAX_EP_NUM_H3,
+@@ -677,6 +685,7 @@ static int sunxi_musb_probe(struct platform_device *pdev)
+ 	struct platform_device_info	pinfo;
+ 	struct sunxi_glue		*glue;
+ 	struct device_node		*np = pdev->dev.of_node;
++	const struct sunxi_musb_cfg	*cfg;
+ 	int ret;
+ 
+ 	if (!np) {
+@@ -713,29 +722,35 @@ static int sunxi_musb_probe(struct platform_device *pdev)
+ 		return -EINVAL;
+ 	}
+ 	pdata.platform_ops	= &sunxi_musb_ops;
+-	if (!of_device_is_compatible(np, "allwinner,sun8i-h3-musb"))
+-		pdata.config = &sunxi_musb_hdrc_config;
+-	else
+-		pdata.config = &sunxi_musb_hdrc_config_h3;
++
++	cfg = of_device_get_match_data(&pdev->dev);
++	if (!cfg)
++		return -EINVAL;
++
++	switch (cfg->nr_endpoints) {
++	case 4:
++		pdata.config = &sunxi_musb_hdrc_config_4eps;
++		break;
++	case 5:
++		pdata.config = &sunxi_musb_hdrc_config_5eps;
++		break;
++	default:
++		dev_err(&pdev->dev, "Only 4 or 5 endpoints supported\n");
++		return -EINVAL;
++	}
+ 
+ 	glue->dev = &pdev->dev;
+ 	INIT_WORK(&glue->work, sunxi_musb_work);
+ 	glue->host_nb.notifier_call = sunxi_musb_host_notifier;
+ 
+-	if (of_device_is_compatible(np, "allwinner,sun4i-a10-musb") ||
+-	    of_device_is_compatible(np, "allwinner,suniv-f1c100s-musb")) {
++	if (cfg->has_sram)
+ 		set_bit(SUNXI_MUSB_FL_HAS_SRAM, &glue->flags);
+-	}
+ 
+-	if (of_device_is_compatible(np, "allwinner,sun6i-a31-musb"))
++	if (cfg->has_reset)
+ 		set_bit(SUNXI_MUSB_FL_HAS_RESET, &glue->flags);
+ 
+-	if (of_device_is_compatible(np, "allwinner,sun8i-a33-musb") ||
+-	    of_device_is_compatible(np, "allwinner,sun8i-h3-musb") ||
+-	    of_device_is_compatible(np, "allwinner,suniv-f1c100s-musb")) {
+-		set_bit(SUNXI_MUSB_FL_HAS_RESET, &glue->flags);
++	if (cfg->no_configdata)
+ 		set_bit(SUNXI_MUSB_FL_NO_CONFIGDATA, &glue->flags);
+-	}
+ 
+ 	glue->clk = devm_clk_get(&pdev->dev, NULL);
+ 	if (IS_ERR(glue->clk)) {
+@@ -813,12 +828,46 @@ static int sunxi_musb_remove(struct platform_device *pdev)
+ 	return 0;
+ }
+ 
++static const struct sunxi_musb_cfg sun4i_a10_musb_cfg = {
++	.nr_endpoints = 5,
++	.has_sram = true,
 +};
 +
-+&otg_sram {
-+	status = "okay";
++static const struct sunxi_musb_cfg sun6i_a31_musb_cfg = {
++	.nr_endpoints = 5,
++	.has_reset = true,
 +};
 +
-+&spi0 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&spi0_pc_pins>;
-+	status = "okay";
-+
-+	flash@0 {
-+		compatible = "spi-nand";
-+		reg = <0>;
-+		spi-max-frequency = <40000000>;
-+		#address-cells = <1>;
-+		#size-cells = <1>;
-+
-+		partitions {
-+			compatible = "fixed-partitions";
-+			#address-cells = <1>;
-+			#size-cells = <1>;
-+
-+			partition@0 {
-+				label = "u-boot-with-spl";
-+				reg = <0x0 0x100000>;
-+			};
-+
-+			ubi@100000 {
-+				label = "ubi";
-+				reg = <0x100000 0x7f00000>;
-+			};
-+		};
-+	};
++static const struct sunxi_musb_cfg sun8i_a33_musb_cfg = {
++	.nr_endpoints = 5,
++	.has_reset = true,
++	.no_configdata = true,
 +};
 +
-+&uart0 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&uart0_pe_pins>;
-+	status = "okay";
++static const struct sunxi_musb_cfg sun8i_h3_musb_cfg = {
++	.nr_endpoints = 4,
++	.has_reset = true,
++	.no_configdata = true,
 +};
 +
-+&usb_otg {
-+	dr_mode = "peripheral";
-+	status = "okay";
++static const struct sunxi_musb_cfg suniv_f1c100s_musb_cfg = {
++	.nr_endpoints = 5,
++	.has_sram = true,
++	.has_reset = true,
++	.no_configdata = true,
 +};
 +
-+&usbphy {
-+	status = "okay";
-+};
+ static const struct of_device_id sunxi_musb_match[] = {
+-	{ .compatible = "allwinner,sun4i-a10-musb", },
+-	{ .compatible = "allwinner,sun6i-a31-musb", },
+-	{ .compatible = "allwinner,sun8i-a33-musb", },
+-	{ .compatible = "allwinner,sun8i-h3-musb", },
+-	{ .compatible = "allwinner,suniv-f1c100s-musb", },
++	{ .compatible = "allwinner,sun4i-a10-musb",
++	  .data = &sun4i_a10_musb_cfg, },
++	{ .compatible = "allwinner,sun6i-a31-musb",
++	  .data = &sun6i_a31_musb_cfg, },
++	{ .compatible = "allwinner,sun8i-a33-musb",
++	  .data = &sun8i_a33_musb_cfg, },
++	{ .compatible = "allwinner,sun8i-h3-musb",
++	  .data = &sun8i_h3_musb_cfg, },
++	{ .compatible = "allwinner,suniv-f1c100s-musb",
++	  .data = &suniv_f1c100s_musb_cfg, },
+ 	{}
+ };
+ MODULE_DEVICE_TABLE(of, sunxi_musb_match);
 -- 
 2.35.5
 
