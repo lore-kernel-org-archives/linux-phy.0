@@ -4,32 +4,32 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 42C4EC4332F
-	for <linux-phy@archiver.kernel.org>; Sun,  6 Nov 2022 15:52:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E2B34C433FE
+	for <linux-phy@archiver.kernel.org>; Sun,  6 Nov 2022 15:52:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aZdUKwfDRxf6ueAm0uSvAgCol9c8UHy25nzyQZw7+Rw=; b=H/SdYwN8hDD2OS
-	nWgU3CAolY8U2V6Hxuu6u6YQfUZ2+oEK88KcOBqNMbNTbY2t3ErY9IbbYwm4ril7iZ7/s7Lfvk2bG
-	BobeM+1gbNFMOM8d3NHPQEXx1Uo3az8ifYqJ6j7mwN0Gx1Axzkv3ToFjSngO570RZIYqMo8Z9fWxI
-	OMQYrfD68suoW5ryoKuJ1Byx1B2UMTVpQZ/2ukk6lHi9zIMusz8I92L9VqRXF0/0NdIHBAGEeTjRE
-	khv+Qp1bcF3/AJ2PHDlZfI7qPHbGF5wLtqUrjVHyxCcGcJHwE98JK+uAUmBzaoq9VLbM9F1YTbgYf
-	xJ7gNff7GvX54d2O3Tig==;
+	List-Owner; bh=jEVZ6n3EUzGPPJTKyo6qDfu3HrQRUuf140cZ8R/kb2k=; b=N519owcOJjTutE
+	lrYTCeLWBfKGQgG5d/XQvWNgV/woVZDcOiXLlCdsekIuX5N5n+PjQ/YhA2jyWC4nstAuoBRNQbXuR
+	ZG3lFXWB/dJd9dxpdPr3PcDUmzeR1FUpscLfdnKwSbmri/YPjXEd/6b6fluz/T9gNC+srEg5bnXv9
+	dytnPmazWVvKb8WACY3C+vpILvP53gyESyKWzOU7Ok9787JdqUV28DOQKLwEUvQr+jRShiag07k+V
+	2xa58EywyHvsPQQMdMExH9UIGmbr3H2tSRmUzJZ6c59gP0QuYCDKIXSAlgoiBw4YDAhb0bnXfeDQd
+	j+IJ9Tq83EvtvOJZUGQw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1orhwI-008g5Z-Ll; Sun, 06 Nov 2022 15:52:02 +0000
+	id 1orhwd-008gLf-93; Sun, 06 Nov 2022 15:52:23 +0000
 Received: from foss.arm.com ([217.140.110.172])
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1orhue-008ex5-RU; Sun, 06 Nov 2022 15:50:22 +0000
+	id 1orhue-008ewr-RT; Sun, 06 Nov 2022 15:50:22 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
-	by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E77371FB;
-	Sun,  6 Nov 2022 07:50:25 -0800 (PST)
+	by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A4A5B23A;
+	Sun,  6 Nov 2022 07:50:23 -0800 (PST)
 Received: from slackpad.fritz.box (unknown [172.31.20.19])
-	by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C71B73F534;
-	Sun,  6 Nov 2022 07:50:17 -0800 (PST)
+	by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8508B3F534;
+	Sun,  6 Nov 2022 07:50:15 -0800 (PST)
 From: Andre Przywara <andre.przywara@arm.com>
 To: Chen-Yu Tsai <wens@csie.org>,
 	Samuel Holland <samuel@sholland.org>,
@@ -45,16 +45,16 @@ Cc: soc@kernel.org,
 	linux-phy@lists.infradead.org,
 	linux-usb@vger.kernel.org,
 	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Subject: [PATCH v3 08/11] dt-binding: arm: sunxi: add compatible strings for PopStick v1.1
-Date: Sun,  6 Nov 2022 15:48:23 +0000
-Message-Id: <20221106154826.6687-9-andre.przywara@arm.com>
+Subject: [PATCH v3 07/11] dt-bindings: vendor-prefixes: add Source Parts
+Date: Sun,  6 Nov 2022 15:48:22 +0000
+Message-Id: <20221106154826.6687-8-andre.przywara@arm.com>
 X-Mailer: git-send-email 2.35.5
 In-Reply-To: <20221106154826.6687-1-andre.przywara@arm.com>
 References: <20221106154826.6687-1-andre.przywara@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221106_075020_984709_1F052159 
-X-CRM114-Status: UNSURE (   7.18  )
+X-CRM114-CacheID: sfid-20221106_075020_996675_A28BBB84 
+X-CRM114-Status: UNSURE (   7.58  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -74,36 +74,34 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Icenowy Zheng <uwu@icenowy.me>
 
-SourceParts PopStick is a F1C200s-based stick-shaped SBC.
+Source Parts Inc. [1] is a company that makes a series of SBCs, SoMs,
+etc under a brand called Popcorn Computer [2].
 
-Add a compatible string list for its v1.1 version (the first public
-one).
+Add it to the vendor prefixes list.
+
+[1] https://source.parts/
+[2] https://popcorncomputer.com/
 
 Signed-off-by: Icenowy Zheng <uwu@icenowy.me>
 Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 Signed-off-by: Andre Przywara <andre.przywara@arm.com>
 ---
- Documentation/devicetree/bindings/arm/sunxi.yaml | 7 +++++++
- 1 file changed, 7 insertions(+)
+ Documentation/devicetree/bindings/vendor-prefixes.yaml | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/arm/sunxi.yaml b/Documentation/devicetree/bindings/arm/sunxi.yaml
-index 3ad1cd50e3fe..c6e0ad7f461d 100644
---- a/Documentation/devicetree/bindings/arm/sunxi.yaml
-+++ b/Documentation/devicetree/bindings/arm/sunxi.yaml
-@@ -807,6 +807,13 @@ properties:
-           - const: sinlinx,sina33
-           - const: allwinner,sun8i-a33
- 
-+      - description: SourceParts PopStick v1.1
-+        items:
-+          - const: sourceparts,popstick-v1.1
-+          - const: sourceparts,popstick
-+          - const: allwinner,suniv-f1c200s
-+          - const: allwinner,suniv-f1c100s
-+
-       - description: SL631 Action Camera with IMX179
-         items:
-           - const: allwinner,sl631-imx179
+diff --git a/Documentation/devicetree/bindings/vendor-prefixes.yaml b/Documentation/devicetree/bindings/vendor-prefixes.yaml
+index 6e323a380294..035ef859fbc5 100644
+--- a/Documentation/devicetree/bindings/vendor-prefixes.yaml
++++ b/Documentation/devicetree/bindings/vendor-prefixes.yaml
+@@ -1203,6 +1203,8 @@ patternProperties:
+     description: Solomon Systech Limited
+   "^sony,.*":
+     description: Sony Corporation
++  "^sourceparts,.*":
++    description: Source Parts Inc.
+   "^spansion,.*":
+     description: Spansion Inc.
+   "^sparkfun,.*":
 -- 
 2.35.5
 
