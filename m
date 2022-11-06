@@ -4,32 +4,32 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 05646C433FE
-	for <linux-phy@archiver.kernel.org>; Sun,  6 Nov 2022 15:50:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6507BC433FE
+	for <linux-phy@archiver.kernel.org>; Sun,  6 Nov 2022 15:50:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=NYeJYVRJ67QDYdO9+ROPTOszumiLgce+X+Elbmo+UDk=; b=IIIxdMBjnK+y2N
-	DyKIBs8JyGzapD9AFBHDdDd2IXMR4nL3nHNuqFNGm2WuWJphAgozTKjN8IV83GUdGCMaopyBClNdb
-	FTevGtIbjgSuzKg4NRC4NQTROuZsxIxqAPb7jTzLrFTSBCG/YzehWo+IM8YzSr76L4w0svXRzxB4y
-	gaWJA/5UNZukjyJCYNardmvodMg/OcbE/m8Y7pHNtG+ROcsopiVmq4/t9wWTVHFRWrKe6vt42HUb8
-	B6F/93U6wakMhrDuI6+DZ+4ao50R8VTSJAS93lld+vROD7Y/NFucoYm83L2mkvjggMXrytfo1ZCUG
-	fIFqlRevsDfV9bALrByg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=V8Hu8SplomZpj4x6nU7TjRtroFmoJOp/xYtxP5MCffQ=; b=hjP/BwfzqDVpom
+	PghD2VOQC4Fpb3FvFR3x0PRiCYeMTRq2WdWH30ex37NR1+MWYiRM5qoqH6frPkXm2Kq4fRsT4VO5Q
+	n6ousbEEvDOM//beNN0OGoTo2kY32S22ElltYJpYwSnt05LI8NTt10fGBMQOjr8RxO22GAxoTL4k/
+	6FYBXEBBLhPgPNS0ZV2hSHYWwHTjjYQaiIt1pRoKaIShI+S8O3z9jpQSEuy7t/9mElAFwhY8dzO1x
+	ePG8nmdNZkcUlQJcmDbaJDqEO1Kt2mbiedgzI3yYf2oskgfDgQpo6AHLPL7ky+4NN3TDZIFPOpcop
+	vSupipzO3RfXF4UQDp1w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1orhud-008ewT-5J; Sun, 06 Nov 2022 15:50:19 +0000
+	id 1orhuz-008f8t-Ni; Sun, 06 Nov 2022 15:50:41 +0000
 Received: from foss.arm.com ([217.140.110.172])
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1orhuQ-008ep1-EL; Sun, 06 Nov 2022 15:50:08 +0000
+	id 1orhuS-008eqA-4c; Sun, 06 Nov 2022 15:50:10 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
-	by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 35B9A1FB;
-	Sun,  6 Nov 2022 07:50:06 -0800 (PST)
+	by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 34AA123A;
+	Sun,  6 Nov 2022 07:50:09 -0800 (PST)
 Received: from slackpad.fritz.box (unknown [172.31.20.19])
-	by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 333783F534;
-	Sun,  6 Nov 2022 07:49:58 -0800 (PST)
+	by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 515FF3F534;
+	Sun,  6 Nov 2022 07:50:00 -0800 (PST)
 From: Andre Przywara <andre.przywara@arm.com>
 To: Chen-Yu Tsai <wens@csie.org>,
 	Samuel Holland <samuel@sholland.org>,
@@ -43,15 +43,18 @@ Cc: soc@kernel.org,
 	linux-arm-kernel@lists.infradead.org,
 	linux-sunxi@lists.linux.dev,
 	linux-phy@lists.infradead.org,
-	linux-usb@vger.kernel.org
-Subject: [PATCH v3 00/11] ARM: suniv: USB and PopStick board support
-Date: Sun,  6 Nov 2022 15:48:15 +0000
-Message-Id: <20221106154826.6687-1-andre.przywara@arm.com>
+	linux-usb@vger.kernel.org,
+	Rob Herring <robh@kernel.org>
+Subject: [PATCH v3 01/11] dt-bindings: phy: add binding document for Allwinner F1C100s USB PHY
+Date: Sun,  6 Nov 2022 15:48:16 +0000
+Message-Id: <20221106154826.6687-2-andre.przywara@arm.com>
 X-Mailer: git-send-email 2.35.5
+In-Reply-To: <20221106154826.6687-1-andre.przywara@arm.com>
+References: <20221106154826.6687-1-andre.przywara@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221106_075006_614623_AC109795 
-X-CRM114-Status: GOOD (  14.18  )
+X-CRM114-CacheID: sfid-20221106_075008_314900_CF8EE6E8 
+X-CRM114-Status: GOOD (  13.55  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -68,67 +71,116 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This is an update to Icenowy's v2 of the series, fixing the smaller
-issues mentioned during the review. Also it adds two patches that
-improve the quirk handling for the sunxi MUSB and USB PHY driver, as it
-was hinted in some replies. I put those patches at the end, to not
-jeopardy the actual USB functionality of the Allwinner F1C100s series.
-For a changelog see below.
-================
-This patchset introduces support for F1C100s' USB and SourceParts
-PopStick board.
+From: Icenowy Zheng <uwu@icenowy.me>
 
-The DT binding and driver support for SUNIV USB PHY/MUSB are added, in
-addition to DT changes to the DTSI and Lichee Nano DT. A new DT is added
-for SourceParts PopStick v1.1 board.
+Allwinner F1C100s has the most simple USB PHY among all Allwinner SoCs,
+because it has only one OTG USB controller, no host-only OHCI/EHCI
+controllers.
 
-Changelog v1 ... v2:
-- USB PHY binding: clarify the relation with other phy-sun4i-usb bindings
-- Add Popstick binding and .dts patches
+Add a binding document for it. Following the current situation of one
+YAML file per SoC, this one is based on
+allwinner,sun8i-v3s-usb-phy.yaml, but with OHCI/EHCI-related bits
+removed. (The same driver in Linux, phy-sun4i-usb, covers all these
+binding files now.)
 
-Changelog v2 ... v3:
-- remove redundant "Device Tree Bindings" suffix in DT binding doc title
-- add BSD license to binding doc file (as per checkpatch)
-- use existing PHY sun4i_a10_phy type instead of inventing new one
-- fix some commit message title prefixes
-- use proper plural spelling for usb0_id_det-gpios
-- popstick.dts: Reorder otg_sram node reference alphabetically
-- popstick.dts: Add regulator- prefix to 3.3V regulator node name
-- popstick.dts: Fix status, compatible and reg property order
-- popstick.dts: Drop unneeded mmc0 and spi0 aliases
-- add two patches to clean up sunxi MUSB and USB PHY driver
-- add Acks and Reviewed-by's
-
-
-Andre Przywara (2):
-  phy: sun4i-usb: Replace types with explicit quirk flags
-  usb: musb: sunxi: Introduce config struct
-
-Icenowy Zheng (9):
-  dt-bindings: phy: add binding document for Allwinner F1C100s USB PHY
-  dt-bindings: usb: sunxi-musb: add F1C100s MUSB compatible string
-  phy: sun4i-usb: add support for the USB PHY on F1C100s SoC
-  musb: sunxi: add support for the F1C100s MUSB controller
-  ARM: dts: suniv: add USB-related device nodes
-  ARM: dts: suniv: licheepi-nano: enable USB
-  dt-bindings: vendor-prefixes: add Source Parts
-  dt-binding: arm: sunxi: add compatible strings for PopStick v1.1
-  ARM: dts: suniv: add device tree for PopStick v1.1
-
- .../devicetree/bindings/arm/sunxi.yaml        |  7 ++
- .../phy/allwinner,suniv-f1c100s-usb-phy.yaml  | 83 ++++++++++++++++
- .../usb/allwinner,sun4i-a10-musb.yaml         |  1 +
- .../devicetree/bindings/vendor-prefixes.yaml  |  2 +
- arch/arm/boot/dts/Makefile                    |  3 +-
- .../boot/dts/suniv-f1c100s-licheepi-nano.dts  | 16 +++
- arch/arm/boot/dts/suniv-f1c100s.dtsi          | 26 +++++
- .../boot/dts/suniv-f1c200s-popstick-v1.1.dts  | 99 +++++++++++++++++++
- drivers/phy/allwinner/phy-sun4i-usb.c         | 58 +++++------
- drivers/usb/musb/sunxi.c                      | 97 +++++++++++++-----
- 10 files changed, 335 insertions(+), 57 deletions(-)
+Signed-off-by: Icenowy Zheng <uwu@icenowy.me>
+Reviewed-by: Rob Herring <robh@kernel.org>
+Reviewed-by: Andre Przywara <andre.przywara@arm.com>
+Signed-off-by: Andre Przywara <andre.przywara@arm.com>
+---
+ .../phy/allwinner,suniv-f1c100s-usb-phy.yaml  | 83 +++++++++++++++++++
+ 1 file changed, 83 insertions(+)
  create mode 100644 Documentation/devicetree/bindings/phy/allwinner,suniv-f1c100s-usb-phy.yaml
- create mode 100644 arch/arm/boot/dts/suniv-f1c200s-popstick-v1.1.dts
 
+diff --git a/Documentation/devicetree/bindings/phy/allwinner,suniv-f1c100s-usb-phy.yaml b/Documentation/devicetree/bindings/phy/allwinner,suniv-f1c100s-usb-phy.yaml
+new file mode 100644
+index 000000000000..948839499235
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/allwinner,suniv-f1c100s-usb-phy.yaml
+@@ -0,0 +1,83 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/allwinner,suniv-f1c100s-usb-phy.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Allwinner F1C100s USB PHY
++
++maintainers:
++  - Chen-Yu Tsai <wens@csie.org>
++  - Maxime Ripard <mripard@kernel.org>
++
++properties:
++  "#phy-cells":
++    const: 1
++
++  compatible:
++    const: allwinner,suniv-f1c100s-usb-phy
++
++  reg:
++    maxItems: 1
++    description: PHY Control registers
++
++  reg-names:
++    const: phy_ctrl
++
++  clocks:
++    maxItems: 1
++    description: USB OTG PHY bus clock
++
++  clock-names:
++    const: usb0_phy
++
++  resets:
++    maxItems: 1
++    description: USB OTG reset
++
++  reset-names:
++    const: usb0_reset
++
++  usb0_id_det-gpios:
++    maxItems: 1
++    description: GPIO to the USB OTG ID pin
++
++  usb0_vbus_det-gpios:
++    maxItems: 1
++    description: GPIO to the USB OTG VBUS detect pin
++
++  usb0_vbus_power-supply:
++    description: Power supply to detect the USB OTG VBUS
++
++  usb0_vbus-supply:
++    description: Regulator controlling USB OTG VBUS
++
++required:
++  - "#phy-cells"
++  - compatible
++  - clocks
++  - clock-names
++  - reg
++  - reg-names
++  - resets
++  - reset-names
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/gpio/gpio.h>
++    #include <dt-bindings/clock/suniv-ccu-f1c100s.h>
++    #include <dt-bindings/reset/suniv-ccu-f1c100s.h>
++
++    phy@1c13400 {
++        compatible = "allwinner,suniv-f1c100s-usb-phy";
++        reg = <0x01c13400 0x10>;
++        reg-names = "phy_ctrl";
++        clocks = <&ccu CLK_USB_PHY0>;
++        clock-names = "usb0_phy";
++        resets = <&ccu RST_USB_PHY0>;
++        reset-names = "usb0_reset";
++        #phy-cells = <1>;
++        usb0_id_det-gpios = <&pio 4 2 GPIO_ACTIVE_HIGH>;
++    };
 -- 
 2.35.5
 
