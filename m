@@ -4,49 +4,49 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D7FB1C4332F
-	for <linux-phy@archiver.kernel.org>; Mon,  7 Nov 2022 11:10:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 66E12C4332F
+	for <linux-phy@archiver.kernel.org>; Mon,  7 Nov 2022 11:20:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=csvZ91YtjR+GJMG4NJoagDzjrdutAPi3Tzk7aci2PbY=; b=AFKrbWbrRmBhR1
-	vxlkcEKZpX20wNhyHXbxBizglwTHUB9PVcycyQbJAkhPVVaTNvciqcb+MLGQwv3PVnFSb1NkdMbJQ
-	KGQDYFHDTAjjzBJLokWblOALp/wIHtLrp85Ob1L65U3UHgzNXAi0X4Qo6tLDrq+fD+aaOT6crd7MC
-	cUE6UfmCBR7WwdxsvkVyIt5c5Yla5JEOIJE7iTUEa9/0yChgp9x5UPo4F1CDN+X5XOd1c3Rph1m40
-	256W+Yz2axe1050BHS8pwFP4W2Css3/W6NG5MdxoLHb6eUkjv9+e9jLjpxW4XQ7PchQG+S/nF01TX
-	ndQezpDB8/X+ok05X9QQ==;
+	List-Owner; bh=+jLJj/GHpSrd8E7I6TJ/FNLB0GaIVjmBVa52j5TUM0U=; b=VoGCn/FWHE+I51
+	KqQN04/FQ74Gu0OBZMPJyzlW28ulGCpu5BQk0M+PP2Rr5qn/gOdoab1WsG4T6rF+lQz4migEsqwYg
+	k6ZwE+ZqrZaOpHSKa0G7To0j6cp1rA/U5VaWjeJ5HFGeNai4M3M2MvCBYLVqY9UCq7kqp9TEoQADY
+	a2kQKDNHRK919ZMt6TPOPZytkRxGi4vyRXnKS8PXh72BKfFu0EnsBA1peKra23qHmfNoqacY05bzV
+	slBNwJU6CUg7FYtwiLE6dOj4zbhHmGQqhzr/Z8ne822fsJZmW0q15bgklYMSTLBziW5E5l3a/qK5C
+	fGzBONnF0U17KfzFXDIw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1os01I-00E2od-66; Mon, 07 Nov 2022 11:10:24 +0000
+	id 1os0BA-00E6rN-Q4; Mon, 07 Nov 2022 11:20:36 +0000
 Received: from madras.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e5ab])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1os00Y-00E2WY-Rc; Mon, 07 Nov 2022 11:09:41 +0000
+	id 1os0Aw-00E6kb-4U; Mon, 07 Nov 2022 11:20:23 +0000
 Received: from [192.168.1.100] (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
 	(No client certificate requested)
 	(Authenticated sender: kholk11)
-	by madras.collabora.co.uk (Postfix) with ESMTPSA id 4AC4B6601FAA;
-	Mon,  7 Nov 2022 11:09:36 +0000 (GMT)
+	by madras.collabora.co.uk (Postfix) with ESMTPSA id 6863D660236A;
+	Mon,  7 Nov 2022 11:20:19 +0000 (GMT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1667819377;
-	bh=et1Jk5J0RJuKh02K+IugMlrxsiloJw26YAWzuRtvXjo=;
+	s=mail; t=1667820020;
+	bh=7z542Aj3CgGqKW5DeYxuUBU2RHuE8LKZ6Cy4e7BxEYA=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=UrnsMhIgjMtKW4rENetK+bxFEC3FL/aNIbsYpIwEp8+m3dTXkvTEXCRhpMM3YXdUY
-	 /p0bqsQFgCk8UihV7pWEy+C67PDxYlsm1Jc8vpr1Ov2wQsjXEJRrmYQcBslWsgRyWi
-	 k8Tdhv6AUuGwVlZVVwRnlGs7lM9LxWfz1kSSYMk3bRGO9imZBlrvUrZ5NDRmOg6Yid
-	 zlDixmJiXjRQS9SCeZgS57w3jNWK+x8u6/IXeKIJ0G3eeCogbX1eYSANsLLGshkzDj
-	 Ued5OqcezuIuxQrwjCRWgOclFdo3PICckeKyjurTQJ6yQ78zq/nt3TycQGWk7m35qv
-	 DInXP294aLzpA==
-Message-ID: <5895f15f-44ae-6164-77dd-c9bae5436a47@collabora.com>
-Date: Mon, 7 Nov 2022 12:09:33 +0100
+	b=Dl74wRMaSBKxFLE4SD7wiQV6g95KV0/pfW+wGLhCf8nqePUEfscyhBuTG1xcefTYr
+	 jBFnBGZ05LssJGphJq2pOX1JYUMtpHbTQ0yJYPIYtbW3JMOjOwcSzCqAXulqkL2iEk
+	 sjMBpX4EU9p7hwvpM4Fl1NZmIfs+g+/MkUUujWn42Hx73WL6JF2VxjD5+iOGqoZeka
+	 UpZoIk0zv9Ru/BQHdVRf73NLxu+/uq2u3o9eeb2cqsXu/Dru14nRNsW5/MO3XRw7wM
+	 0Kyc6rKQFZiEjvCMEB6rv/nlJrU4hUuHWuUHFiJ7BUSvenGKb9Eoa4QUJw+5P0XOtY
+	 Ew95u+utNO9lw==
+Message-ID: <988b0a7a-69bb-34e4-e777-1d9516221077@collabora.com>
+Date: Mon, 7 Nov 2022 12:20:16 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.3.3
-Subject: Re: [PATCH v3 08/12] drm/mediatek: hdmi: v2: add audio support
+Subject: Re: [PATCH v3 12/12] drm/mediatek: dpi: Add mt8195 hdmi to DPI driver
 Content-Language: en-US
 To: Guillaume Ranquet <granquet@baylibre.com>,
  Rob Herring <robh+dt@kernel.org>, Chun-Kuang Hu <chunkuang.hu@kernel.org>,
@@ -63,12 +63,12 @@ Cc: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
  linux-mediatek@lists.infradead.org, devicetree@vger.kernel.org,
  mac.shen@mediatek.com, linux-phy@lists.infradead.org
 References: <20220919-v3-0-a803f2660127@baylibre.com>
- <20220919-v3-8-a803f2660127@baylibre.com>
+ <20220919-v3-12-a803f2660127@baylibre.com>
 From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-In-Reply-To: <20220919-v3-8-a803f2660127@baylibre.com>
+In-Reply-To: <20220919-v3-12-a803f2660127@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221107_030939_228988_7FA82F90 
-X-CRM114-Status: GOOD (  28.38  )
+X-CRM114-CacheID: sfid-20221107_032022_342342_46776348 
+X-CRM114-Status: GOOD (  17.04  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,164 +86,59 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 Il 04/11/22 15:09, Guillaume Ranquet ha scritto:
-> Add HDMI audio support for v2
+> Add the DPI1 hdmi path support in mtk dpi driver
 > 
 > Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
 > ---
->   drivers/gpu/drm/mediatek/mtk_hdmi_common.c |   1 +
->   drivers/gpu/drm/mediatek/mtk_hdmi_ddc_v2.c |   2 +-
->   drivers/gpu/drm/mediatek/mtk_hdmi_v2.c     | 213 +++++++++++++++++++++++++++++
->   drivers/gpu/drm/mediatek/mtk_hdmi_v2.h     |   2 +
->   4 files changed, 217 insertions(+), 1 deletion(-)
+>   drivers/gpu/drm/mediatek/mtk_dpi.c      | 143 ++++++++++++++++++++++++++++++--
+>   drivers/gpu/drm/mediatek/mtk_dpi_regs.h |   5 ++
+>   2 files changed, 141 insertions(+), 7 deletions(-)
 > 
-> diff --git a/drivers/gpu/drm/mediatek/mtk_hdmi_common.c b/drivers/gpu/drm/mediatek/mtk_hdmi_common.c
-> index e43c938a9aa5..1ea91f8bb6c7 100644
-> --- a/drivers/gpu/drm/mediatek/mtk_hdmi_common.c
-> +++ b/drivers/gpu/drm/mediatek/mtk_hdmi_common.c
-> @@ -386,6 +386,7 @@ static const struct mtk_hdmi_conf mtk_hdmi_conf_v2 = {
->   	.mtk_hdmi_output_init = mtk_hdmi_output_init_v2,
->   	.mtk_hdmi_clk_disable = mtk_hdmi_clk_disable_v2,
->   	.mtk_hdmi_clk_enable = mtk_hdmi_clk_enable_v2,
-> +	.set_hdmi_codec_pdata = set_hdmi_codec_pdata_v2,
-
-Keep naming consistent please:
-
-	.mtk_hdmi_set_codec_pdata = mtk_hdmi_set_codec_pdata_v2,
-
->   	.mtk_hdmi_clock_names = mtk_hdmi_clk_names_v2,
->   	.num_clocks = MTK_HDMIV2_CLK_COUNT,
->   };
-> diff --git a/drivers/gpu/drm/mediatek/mtk_hdmi_ddc_v2.c b/drivers/gpu/drm/mediatek/mtk_hdmi_ddc_v2.c
-> index 61696d255e51..26456802a5c4 100644
-> --- a/drivers/gpu/drm/mediatek/mtk_hdmi_ddc_v2.c
-> +++ b/drivers/gpu/drm/mediatek/mtk_hdmi_ddc_v2.c
-> @@ -309,7 +309,7 @@ static int mtk_hdmi_ddc_probe(struct platform_device *pdev)
->   	ddc->regs = device_node_to_regmap(hdmi);
->   	of_node_put(hdmi);
->   	if (IS_ERR(ddc->regs))
-> -		return dev_err_probe(dev, PTR_ERR(ddc->regs), "Unable to get mt8195-hdmi syscon");
-> +		return dev_err_probe(dev, PTR_ERR(ddc->regs), "Unable to get hdmi syscon");
-
-You might as well do the rename in the commit that actually introduces this file,
-since you're doing that in the same series.
-
-Please do so.
-
+> diff --git a/drivers/gpu/drm/mediatek/mtk_dpi.c b/drivers/gpu/drm/mediatek/mtk_dpi.c
+> index 508a6d994e83..8052b47042b8 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_dpi.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_dpi.c
+> @@ -14,7 +14,10 @@
+>   #include <linux/of_graph.h>
+>   #include <linux/pinctrl/consumer.h>
+>   #include <linux/platform_device.h>
+> +#include <linux/reset.h>
+>   #include <linux/types.h>
+> +#include <linux/regmap.h>
+> +#include <linux/mfd/syscon.h>
 >   
->   	ddc->clk = devm_clk_get_enabled(dev, "ddc");
->   	if (IS_ERR(ddc->clk))
-> diff --git a/drivers/gpu/drm/mediatek/mtk_hdmi_v2.c b/drivers/gpu/drm/mediatek/mtk_hdmi_v2.c
-> index e8457429964d..b391b22fa9f5 100644
-> --- a/drivers/gpu/drm/mediatek/mtk_hdmi_v2.c
-> +++ b/drivers/gpu/drm/mediatek/mtk_hdmi_v2.c
-> @@ -211,6 +211,26 @@ static void mtk_hdmi_hw_vid_black(struct mtk_hdmi *hdmi, bool black)
->   		mtk_hdmi_mask(hdmi, TOP_VMUTE_CFG1, 0, REG_VMUTE_EN);
->   }
+>   #include <video/videomode.h>
 >   
-> +static void mtk_hdmi_hw_aud_mute(struct mtk_hdmi *hdmi)
-> +{
-> +	u32 val;
-> +
-> +	val = mtk_hdmi_read(hdmi, AIP_CTRL, &val);
-> +
-> +	if (val & DSD_EN)
-> +		mtk_hdmi_mask(hdmi, AIP_TXCTRL,
-> +			      DSD_MUTE_DATA | AUD_MUTE_FIFO_EN,
+> @@ -65,10 +68,14 @@ struct mtk_dpi {
+>   	struct drm_bridge *next_bridge;
+>   	struct drm_connector *connector;
+>   	void __iomem *regs;
+> +	struct reset_control *reset_ctl;
+>   	struct device *dev;
+>   	struct clk *engine_clk;
+> +	struct clk *dpi_ck_cg;
+>   	struct clk *pixel_clk;
+> +	struct clk *dpi_sel_clk;
+>   	struct clk *tvd_clk;
+> +	struct clk *hdmi_cg;
 
-I think I already gave you some advice to shorten this in an earlier
-series version.
+I admit that I didn't really check these clocks, but judging by the names,
+it is highly possible that one (or more) of them are supposed to be parents
+of some others.
 
-Besides, you can also use the FIELD_PREP() macro here, and please use it.
+The first suspicious ones are dpi_ck_cg and dpi_sel_clk: please check.
 
-P.S.:
-val = FIELD_PREP(... something AUD_MUTE_FIFO_EN);
-if (val & DSD_EN)
-	val |= FIELD_PREP( ... something DSD_MUTE_DATA)
+I'm also not sure about the hdmi_cg, shouldn't the DPI have a HDMI port in
+the graph that you'd declare in devicetree?
 
-mtk_hdmi_mask(hdmi, AIP_TXCTRL, val, val);
-
-> +			      DSD_MUTE_DATA | AUD_MUTE_FIFO_EN);
-> +	else
-> +		mtk_hdmi_mask(hdmi, AIP_TXCTRL, AUD_MUTE_FIFO_EN,
-> +			      AUD_MUTE_FIFO_EN);
-> +}
-> +
-> +static void mtk_hdmi_hw_aud_unmute(struct mtk_hdmi *hdmi)
-> +{
-> +	mtk_hdmi_mask(hdmi, AIP_TXCTRL, AUD_MUTE_DIS, AUD_MUTE_FIFO_EN);
-> +}
-> +
->   static void mtk_hdmi_hw_reset(struct mtk_hdmi *hdmi)
->   {
->   	mtk_hdmi_mask(hdmi, HDMITX_CONFIG, 0x0, HDMITX_SW_RSTB);
-> @@ -889,6 +909,7 @@ static void mtk_hdmi_audio_reset(struct mtk_hdmi *hdmi, bool rst)
-
-..snip..
-
-> @@ -935,6 +957,28 @@ static void mtk_hdmi_reset_colorspace_setting(struct mtk_hdmi *hdmi)
->   	hdmi->ycc_quantization_range = HDMI_YCC_QUANTIZATION_RANGE_LIMITED;
->   }
->   
-> +static void mtk_hdmi_audio_enable(struct mtk_hdmi *hdmi)
-
-These two functions are used only in one function (each)... so you don't
-need them. Just move the two lines in mtk_hdmi_audio_startup() ...
-
-> +{
-> +	mtk_hdmi_aud_enable_packet(hdmi, true);
-> +	hdmi->audio_enable = true;
-> +}
-> +
-> +static void mtk_hdmi_audio_disable(struct mtk_hdmi *hdmi)
-> +{
-
-... and in mtk_hdmi_audio_shutdown().
-
-> +	mtk_hdmi_aud_enable_packet(hdmi, false);
-> +	hdmi->audio_enable = false;
-> +}
-> +
-> +static void mtk_hdmi_audio_set_param(struct mtk_hdmi *hdmi,
-> +				     struct hdmi_audio_param *param)
-> +{
-> +	if (!hdmi->audio_enable)
-> +		return;
-> +
-> +	memcpy(&hdmi->aud_param, param, sizeof(*param));
-> +	mtk_hdmi_aud_output_config(hdmi, &hdmi->mode);
-> +}
-> +
->   static void mtk_hdmi_change_video_resolution(struct mtk_hdmi *hdmi)
->   {
->   	bool is_over_340M = false;
-
-..snip..
-
-
-> +
-> +static int mtk_hdmi_audio_mute(struct device *dev, void *data, bool enable,
-> +			       int direction)
-> +{
-> +	struct mtk_hdmi *hdmi = dev_get_drvdata(dev);
-> +
-> +	if (direction != SNDRV_PCM_STREAM_PLAYBACK)
-
-Why aren't you returning an error here?
-
-If this is really supposed to be like that, please add a comment in the code
-explaining the reason, so that the next person reading this won't mistakenly
-change that.
-
-> +		return 0;
-> +
-> +	if (enable)
-> +		mtk_hdmi_hw_aud_mute(hdmi);
-> +	else
-> +		mtk_hdmi_hw_aud_unmute(hdmi);
-> +
-> +	return 0;
-> +}
-> +
+Besides... you're doing a lot of work to check if (is_internal_hdmi) for
+power up/down paths, but seeing that you're introducing this change after
+adding the HDMI driver makes me mostly sure that the internal hdmi that we're
+talking about here is the one that is managed by the HDMIV2 driver... and
+this means that you should really, really, really rely on connecting inputs
+and outputs the right way in the devicetree, as that will most probably make
+you able to write practically 0 code to manage power for the DPI... and may
+also remove the need of adding the hdmi_cg clock here...
 
 Regards,
 Angelo
