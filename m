@@ -4,129 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B551AC4332F
-	for <linux-phy@archiver.kernel.org>; Mon,  7 Nov 2022 01:50:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7B026C433FE
+	for <linux-phy@archiver.kernel.org>; Mon,  7 Nov 2022 02:37:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HMasD5K5RxuG4to76PPj3/Cshj0TxWJkSIJ+v6kPaLw=; b=WPRO//02eEQyn3
-	Iq2q8OcK1tkFgda31XOTVj2/cRFFZUiQQc8MtXBwaxYY2mymPiyr5LjL6QbjknMU+k4qy9OOKO1vn
-	7bW8gUmqumieK3Eoc1iCViaI5y4dlWYtRCBy9yNShQ/YBXgnhCTdXmjk0uFxA3PW2vAlx2LxJzYLo
-	bWg2Dmw3PPgKwZy2r0YB14BrVyUogQQyZHk8+6+ON0oIDjAZa7lusNd6gfv20gY5ru+p8uW3R52Fw
-	+LfWlGflU93hESiyf1jsUjPKubjIjO5OM6RDnWtBBWXXckvcwB76HSLFS/0qvTmD7K0YHRFY8Zjb1
-	RSJL9Dp2UcA5hrUHQH9w==;
+	List-Owner; bh=SWpCgYftZsRuBX8RHQN/g0EhndS8pOpQjW/7TjErCK8=; b=jz56Rg7CvvqbZP
+	PmboSkGurWGIv8Zh2nURaKdOc1P5ednf7hn0p7k3k1D28jR+AaYGuOiryDBhz07mvvXKaq8jqqrAn
+	ywvwMRh1ZI2QKzv44rLDx1ZLnVcSg7jNyMmFH3wtPJFx78p20wBzHsFu7/NKVBuV4WNtGr+EedAbl
+	L/JmoLMNDChLMG3UXwWcpvdIEonRbeiksBj6V5YhcjwO0iBjBtQw3FQ0fZ+FMMC+56EZrggs7md63
+	kFuzCoBOqxbJkuiYNb0f3hnRz3twB/G66A13V5Plzd2JUqKXPNXo9rwIShPc1Q137IfkI17EsQUuD
+	wv2Byb1Tj0t6a3vf+LKw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1orrHm-00B2eV-Tb; Mon, 07 Nov 2022 01:50:50 +0000
-Received: from mail-tycjpn01on2118.outbound.protection.outlook.com ([40.107.114.118] helo=JPN01-TYC-obe.outbound.protection.outlook.com)
-	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1orrHi-00B2ci-G0
-	for linux-phy@lists.infradead.org; Mon, 07 Nov 2022 01:50:50 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=jiJekHDZDFeaXQlD2LZeiwu3k1q2RVt3GMUDvipkdB/22hEOFKzfhZZNJgzrQ1Rw+Vp1en+x/HsNP5mIU31p/25xKUYsGN28kkmbzg35MRx74gcwf/iyPPZQZMQ5LNTc/Ot43qF+ZyzDV4HAmc4hR9+b0E9imwy3rmknGBry1cs8p0s1+EdZma5tChK27D2etksnpwgiK3U/+Bpu/q0m9pR1X01/WWb5ROkynKEgolpgNphU0D008mqSOUteWaomVgu19OmiRs4Dm3lxqGZIFMn/9e0HN0xEh8K8n0kv/7iTjiRnJVZxjwKMa854Jsd7PH9lfnjjCKk+liKAi5/2ng==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=dilOPfMulH2MbT2NVCfdnNb93c0MEsai1/1Md+I1VHU=;
- b=Nt62QRISFIFFoXa3kYQp9a2rA5XmR5wGeYJ70ojE7HpYktS7jmtE7UyZsUNERPNj3cr3iaE7Ard+rxcy8Eboh9tp7MzjarPsFMaVbtbyX8mF/dN171y2pSacS91Pk6FJf8ommvvLj6WZgiXDto0IcawyJJClMUlZo6bvA2aCFSnTxlu5Xm+QDXsMP5uUeRL5GcjaB04O5QEC7y0enxAG8EThNyI9P7Nxh2I37LUK/zRchjsOQri7gkvi936hQi7DVE5QfxiFVU7u9kyYtka0O/Wxpiyfq/9qlCH0humvZqr6O2F0WxV3ETvNTyWVXPw3kATp3pHd4sEQ/Xj7vrWbwg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=renesas.com; dmarc=pass action=none header.from=renesas.com;
- dkim=pass header.d=renesas.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=renesas.com;
- s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=dilOPfMulH2MbT2NVCfdnNb93c0MEsai1/1Md+I1VHU=;
- b=itc2TlUH+EFpH2bg6dWmcDLNyKlh9GNiLqHV+Y9IEgxf8DBibchOX+o1mfRdncroMITyYKvGByvr9ubXZNuWrPz22A4wLJwd6QJ932354ldz/WAbdWyODHd90ChIhRK751twBWv7Qit6An15OB1FzX/to4ZmS/pRdO71ANTPnD8=
-Received: from TYBPR01MB5341.jpnprd01.prod.outlook.com
- (2603:1096:404:8028::13) by TYBPR01MB5535.jpnprd01.prod.outlook.com
- (2603:1096:404:801e::8) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5791.26; Mon, 7 Nov
- 2022 01:50:31 +0000
-Received: from TYBPR01MB5341.jpnprd01.prod.outlook.com
- ([fe80::cd89:4a4b:161e:b78d]) by TYBPR01MB5341.jpnprd01.prod.outlook.com
- ([fe80::cd89:4a4b:161e:b78d%9]) with mapi id 15.20.5791.025; Mon, 7 Nov 2022
- 01:50:31 +0000
-From: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
-To: Vinod Koul <vkoul@kernel.org>
-CC: "kishon@kernel.org" <kishon@kernel.org>, "robh+dt@kernel.org"
-	<robh+dt@kernel.org>, "krzysztof.kozlowski+dt@linaro.org"
-	<krzysztof.kozlowski+dt@linaro.org>, "linux-phy@lists.infradead.org"
-	<linux-phy@lists.infradead.org>, "devicetree@vger.kernel.org"
-	<devicetree@vger.kernel.org>, "linux-renesas-soc@vger.kernel.org"
-	<linux-renesas-soc@vger.kernel.org>
-Subject: RE: [RESEND PATCH v3 2/2] phy: renesas: Add Renesas Ethernet SERDES
- driver for R-Car S4-8
-Thread-Topic: [RESEND PATCH v3 2/2] phy: renesas: Add Renesas Ethernet SERDES
- driver for R-Car S4-8
-Thread-Index: AQHY6gmjy1WmwAnCP0miHnjYPdIYKq4wcl6AgAJM38A=
-Date: Mon, 7 Nov 2022 01:50:31 +0000
-Message-ID:  <TYBPR01MB5341DC696FCF3B7D4E139006D83C9@TYBPR01MB5341.jpnprd01.prod.outlook.com>
-References: <20221027134006.2343164-1-yoshihiro.shimoda.uh@renesas.com>
- <20221027134006.2343164-3-yoshihiro.shimoda.uh@renesas.com>
- <Y2ZzowD2eAxBFcwR@matsya>
-In-Reply-To: <Y2ZzowD2eAxBFcwR@matsya>
-Accept-Language: ja-JP, en-US
-Content-Language: ja-JP
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=renesas.com;
-x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: TYBPR01MB5341:EE_|TYBPR01MB5535:EE_
-x-ms-office365-filtering-correlation-id: 1358a965-9e69-47b1-aa8d-08dac062745d
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info:  SmyIQa7i8a7ubxv37P96BsZAJyMwS67YuCquYzUQUj8WfvrDVXQNaBH7edqWMnMks8UkKCuo7eKzC0baxSUXfzFcck/n9OwIu5vPJ8YSHxjmYt8ROXjwY2yvicpylZ+tnRK3fSsVVYOG33gX734tORTqDZ18W8kBKz8dqUr/+mHg4KFU9LyuoxpQkOpVCRp3S3iXx8vRCmrB5BVygulwiox+5uSdLnyEZmIF6YcuiwdcC76XQQTxPt6JsJLCO7i4qtrz/Cutqs8M9cAO0YLyp9nQxgpDSCKE24WBwRFGQ/Kpf7gFLS0ebBM7P2yu7sdnzsf4VUS8aq3aCyuxjjxJuJZGLGeNNVYUyeAZKXYGCfBgDFl+FslRu5m2a+3/E9RMacUZrI273CkEmvo6nU6jLFQrVP5fRc/qTgrRB9B3CxfzwpZP+9ubNY7vUFfSWsV8w7jnn0G6leSlQbOFi3f9PvLh7jXg9Tcmd+1J6ONZMrEjjm39eqTEZfuyzVxQVhMGyScZgKWLz6IHIwUV/4gOFuqeTNg8aOL07Nz9yHBlY+BRwXSICx4zGqKk0P7KhjJ0275Du1o/1HpqnqY7/PzYb/QyMTpL6cNjhS/Ga/MkyIeA8cF0UlHc1k1C/CepfjjUADMm6x4i6TzpjsYB5Ft081Hcp3SFYpwoz7+W1N3EcWp2ttTKzrij7X8SxbaopOtO+Pc12IvNpdpK5ds8nI9g1hqoROx3lifo7iH0+YW3oDeu7Doqv6udN7grU8WA6UWVJmEyulCbg+5Ri0Zra/TD3A==
-x-forefront-antispam-report:  CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:TYBPR01MB5341.jpnprd01.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230022)(4636009)(136003)(376002)(346002)(366004)(396003)(39860400002)(451199015)(54906003)(6916009)(316002)(30864003)(5660300002)(55016003)(38070700005)(2906002)(83380400001)(478600001)(76116006)(41300700001)(66446008)(66556008)(4326008)(66946007)(8676002)(64756008)(66476007)(52536014)(71200400001)(8936002)(33656002)(9686003)(186003)(38100700002)(122000001)(53546011)(86362001)(6506007)(7696005);DIR:OUT;SFP:1102;
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0:  =?us-ascii?Q?PPDsYEjDr7v89SQASjI4re1d+ahQ8AS+vLKinnNDO13HcaZyOkvHcBnBBMgm?=
- =?us-ascii?Q?qXxyzI/jPK6xMjbLxpMpAMJK8juFupQlt3Vn+hBy3jKdfNGqudZu6QQdUQxO?=
- =?us-ascii?Q?9c9kB1KVRdYYmLTldyJjpDcwwrZtJF9Ueg4YRPfRo7PiZtHumDEcMQnCkS+y?=
- =?us-ascii?Q?BlG1XiXiPJpjFMCIH50chCCMbXcIDEmyeJYJThStRKShFCUpK+Ub8SqFU7NF?=
- =?us-ascii?Q?T6GF8+A0euKWMkCShN70lwqysGTJlqpE9gtIGnkEV6YG25LK4fewrmI5xgzk?=
- =?us-ascii?Q?UsodTcvTkBWamyP0nizGNjGpUwjEUlqm0wGGpFzKQWtHkFTkIM/0lMe3R0rk?=
- =?us-ascii?Q?WkAQhEHhndM1N3d8DYYd3KsIDp8ymy/0qQowVnZ4aCG0h4MDmVTqqwq8X4LH?=
- =?us-ascii?Q?NhokXaecqOGgQfJEG4JPzgsAYvPadcWQmLygUv43EC8RnnPcE1hVoylCA0S0?=
- =?us-ascii?Q?tLMMPf0x+1REsMCUdIl1PGiqHvKUp2DW/k3Uc1y/OR5NU6A4bCSH1+c4Ixgl?=
- =?us-ascii?Q?/7mQyPC4g5eLpVAKlZ/ojWsTyDqvth47VudU+r+SiiCMYWxDp90cveboy2Lc?=
- =?us-ascii?Q?WVYtv1Sc/KRgaMsJHE2TD2s8qowB5uLSb9Bk4N9+GPyO1aYXfK8w2GBcXK7a?=
- =?us-ascii?Q?/zR01r9XORcyG2hzPB1vgSdB/5JDKd1FK3qZfxiyNkE2XZnFqxD+FS1YHkbI?=
- =?us-ascii?Q?71aBfVmJck2aoPzXiWQhLUropZnRkmmioNN6Q4QehUo62XvEfiKljisicv4h?=
- =?us-ascii?Q?Yr5iV6uLvWB2YL9UjgVgycx3kv78U7R9xSWpZ77cLCeoze1BkUSDj2ewFmAd?=
- =?us-ascii?Q?czo5mPRGNLWFAQ9jm2p7kI8HJOta9NMLfuMpQMsmiSrcnnlyJl8f5O4NAAze?=
- =?us-ascii?Q?Om/TPD2zkIyoincOC3fmMxkiwYMOi2Dfl9lTcfLUk3m4gRhc871bP1nXhB4j?=
- =?us-ascii?Q?Ux38GY1Page2mzsFSLfx5Bhk+ZIPtHTD7wiPVMSgUcs2ZivEPYfSkiqRyxhj?=
- =?us-ascii?Q?hCAp9hIXQEcOO6saYdVQ+StztEf8t+OqaZTDUgpNU6hmlQuphLSRkllD5sfd?=
- =?us-ascii?Q?GsALoKVIr+uSUa5rCYayqJy6rUWWF90YYifK69WLTuqe8vFygRVN0TJTl8/+?=
- =?us-ascii?Q?/NrO233kXrDG/WnA+O/ur3g0SZvm989mE1PQXzJ1YeM/bG9pM6s94EAlUaz+?=
- =?us-ascii?Q?8HKh+/vhhLokkCjY6siZniqCjxhsU1uA2Vge0OaRqH0jvEmB5avKZtHZGBsP?=
- =?us-ascii?Q?NYqS3WUQl+ShS2vgG6m24kqJ8SVdk0MRghZF2+sVIkIA8P7X/UjfcXYmMLwh?=
- =?us-ascii?Q?1bd1rhsZo6qcLogX7vrFPOb6v2xVnJKTZMaldZopj34lg9Mag6QDnADZx+8/?=
- =?us-ascii?Q?U+A3fc5p3aFjYIpP7DeVTz0j81IhAM2mdzeRuWkEIpiUKbdqsWAZRtvrJXDI?=
- =?us-ascii?Q?afdCkibkPAc/GZwCQWcq/6KP/SHM6O2qDqva7ueBGu8f2RFLkjtrNEo71ixM?=
- =?us-ascii?Q?DkNmoQqNvP2Nd7SvisjrnSB3/OYUxuQKdvQcAOiZqL29LRQ0smWJtbf0Mr2f?=
- =?us-ascii?Q?MwRmz4bAWUNjZFjIslRfnJ8Mj6/6uDWBnZSlJ5sE16Q8toRHfpjRgwNDhiTH?=
- =?us-ascii?Q?J+YAncn2nkfcvW2i7tfsiBJG0nmbQ++Vhu0gLdzNbS6e6eh3+1eatehc5ykY?=
- =?us-ascii?Q?Psaw5Q=3D=3D?=
+	id 1ors0S-00BAK9-LN; Mon, 07 Nov 2022 02:37:00 +0000
+Received: from mx.socionext.com ([202.248.49.38])
+	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
+	id 1ors0I-00BAIq-7y; Mon, 07 Nov 2022 02:36:52 +0000
+Received: from unknown (HELO iyokan2-ex.css.socionext.com) ([172.31.9.54])
+  by mx.socionext.com with ESMTP; 07 Nov 2022 11:36:44 +0900
+Received: from mail.mfilter.local (m-filter-1 [10.213.24.61])
+	by iyokan2-ex.css.socionext.com (Postfix) with ESMTP id A4D0020584CE;
+	Mon,  7 Nov 2022 11:36:44 +0900 (JST)
+Received: from 172.31.9.51 (172.31.9.51) by m-FILTER with ESMTP; Mon, 7 Nov 2022 11:36:44 +0900
+Received: from [10.212.157.112] (unknown [10.212.157.112])
+	by kinkan2.css.socionext.com (Postfix) with ESMTP id 3140EB62A4;
+	Mon,  7 Nov 2022 11:36:44 +0900 (JST)
+Message-ID: <c699e361-a8a3-c6d3-9db4-1e1d07fc6b5b@socionext.com>
+Date: Mon, 7 Nov 2022 11:36:43 +0900
 MIME-Version: 1.0
-X-OriginatorOrg: renesas.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: TYBPR01MB5341.jpnprd01.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 1358a965-9e69-47b1-aa8d-08dac062745d
-X-MS-Exchange-CrossTenant-originalarrivaltime: 07 Nov 2022 01:50:31.7657
- (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 53d82571-da19-47e4-9cb4-625a166a4a2a
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: k6R9oGWUztV1CVkMhRSlgQP4J+frpUfWJT82asqWltty0Wn7DiwGDle6Go5cj1ZLdriZ8fAmi7yLFRhX47IUmuyLBmudLW/rVMmZYPbdUA8LXRmAb5/Cvqf4t2gVXb/i
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYBPR01MB5535
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.4.2
+Subject: Re: [PATCH 2/2] dt-bindings: phy: Fix UniPhier SATA controller node
+ names in example
+To: Vinod Koul <vkoul@kernel.org>
+Cc: Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ Masami Hiramatsu <mhiramat@kernel.org>, devicetree@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+References: <20221027044920.23194-1-hayashi.kunihiko@socionext.com>
+ <20221027044920.23194-3-hayashi.kunihiko@socionext.com>
+ <20221028193859.GA2188803-robh@kernel.org>
+ <0d7636f6-2c51-587d-1961-face98dfa056@socionext.com>
+ <CAL_Jsq+8Rm9v4megza14JPyamV-9Yr4iAa5r+HhM6qtdHRWEBw@mail.gmail.com>
+ <07155116-2027-2916-5a39-e4dff8298b27@socionext.com>
+ <Y2YSGDOXpRQ8MIoR@matsya>
+Content-Language: en-US
+From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+In-Reply-To: <Y2YSGDOXpRQ8MIoR@matsya>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221106_175046_699569_3DB89723 
-X-CRM114-Status: GOOD (  30.87  )
+X-CRM114-CacheID: sfid-20221106_183650_444973_8DE992F9 
+X-CRM114-Status: GOOD (  17.81  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -138,510 +71,81 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 Hi Vinod,
 
-> From: Vinod Koul, Sent: Saturday, November 5, 2022 11:31 PM
+On 2022/11/05 16:34, Vinod Koul wrote:
+> On 02-11-22, 08:14, Kunihiko Hayashi wrote:
+>> On 2022/11/02 4:31, Rob Herring wrote:
+>>> On Tue, Nov 1, 2022 at 4:10 AM Kunihiko Hayashi
+>>> <hayashi.kunihiko@socionext.com> wrote:
+>>>>
+>>>> Hi Rob,
+>>>>
+>>>> On 2022/10/29 4:38, Rob Herring wrote:
+>>>>> On Thu, Oct 27, 2022 at 01:49:20PM +0900, Kunihiko Hayashi wrote:
+>>>>>> The word "glue" is ambiguous for the controller node name.
+> Should put
+>>>>>> "sata-controller" instead of "ahci-glue" on the controller node.
+>>>>>> And rename a phy node to "sata-phy".
+>>>>>>
+>>>>>> Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+>>>>>> ---
+>>>>>>     .../devicetree/bindings/phy/socionext,uniphier-ahci-phy.yaml
+> | 4
+>>>>>> ++--
+>>>>>>     1 file changed, 2 insertions(+), 2 deletions(-)
+>>>>>>
+>>>>>> diff --git
+>>>>>
+> a/Documentation/devicetree/bindings/phy/socionext,uniphier-ahci-phy.yaml
+>>>>>
+> b/Documentation/devicetree/bindings/phy/socionext,uniphier-ahci-phy.yaml
+>>>>>> index a3cd45acea28..89b8b133777a 100644
+>>>>>> ---
+>>>>>>
+> a/Documentation/devicetree/bindings/phy/socionext,uniphier-ahci-phy.
+>>>>> yaml
+>>>>>> +++
+>>>>>>
+> b/Documentation/devicetree/bindings/phy/socionext,uniphier-ahci-phy.
+>>>>> yaml
+>>>>>> @@ -117,14 +117,14 @@ additionalProperties: false
+>>>>>>
+>>>>>>     examples:
+>>>>>>       - |
+>>>>>> -    ahci-glue@65700000 {
+>>>>>> +    sata-controller@65700000 {
+>>>>>
+>>>>> But is this really the SATA controller aka AHCI?
+>>>>>
+>>>>> In cases where we don't have a standardized name, I don't think it
+> makes
+>>>>> sense changing node names from one non-standard name to another.
+>>>>
+>>>> I see. This can't be named generic, so this change will drop.
+>>>> And "sata-phy" in the same way.
+>>>
+>>> I think sata-phy is fine. It may not be added, but usb3-phy or
+>>> pcie-phy are common already.
+>> I understand. But of cource "phy" is also common, so I defer the change
+>> from "phy" to "sata-phy".
 > 
-> On 27-10-22, 22:40, Yoshihiro Shimoda wrote:
-> > Add Renesas Ethernet SERDES driver for R-Car S4-8 (r8a779f0).
-> > The datasheet describes initialization procedure without any information
-> > about registers' name/bits. So, this is all black magic to initialize
-> > the hardware. Especially, all channels should be initialized at once.
-> >
-> > Signed-off-by: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
-> > ---
-> >  drivers/phy/renesas/Kconfig                 |   7 +
-> >  drivers/phy/renesas/Makefile                |   1 +
-> >  drivers/phy/renesas/r8a779f0-ether-serdes.c | 416 ++++++++++++++++++++
-> >  3 files changed, 424 insertions(+)
-> >  create mode 100644 drivers/phy/renesas/r8a779f0-ether-serdes.c
-> >
-> > diff --git a/drivers/phy/renesas/Kconfig b/drivers/phy/renesas/Kconfig
-> > index 111bdcae775c..68f160b0e8ef 100644
-> > --- a/drivers/phy/renesas/Kconfig
-> > +++ b/drivers/phy/renesas/Kconfig
-> > @@ -32,3 +32,10 @@ config PHY_RCAR_GEN3_USB3
-> >  	select GENERIC_PHY
-> >  	help
-> >  	  Support for USB 3.0 PHY found on Renesas R-Car generation 3 SoCs.
-> > +
-> > +config PHY_R8A779F0_ETHERNET_SERDES
-> > +	tristate "Renesas R-Car S4-8 Ethernet SERDES driver"
-> > +	depends on ARCH_RENESAS || COMPILE_TEST
-> > +	select GENERIC_PHY
-> > +	help
-> > +	  Support for Ethernet SERDES found on Renesas R-Car S4-8 SoCs.
-> 
-> Sorted alphabetically please and not at the end
+> Should it not be just phy@xxx does it really need to be foo-phy?
 
-I intended to sort alphabetically about the prompt strings:
+This change was pointed out in the previous review for our devicetree,
+so I made this change in the devicetree, however, I think I can leave it
+as "phy" until the properties that depend on "sata-phy" are defined.
 
-<snip>
-"Renesas R-Car generation 3 USB 2.0 PHY driver"
-"Renesas R-Car generation 3 USB 3.0 PHY driver"
-"Renesas R-Car S4-8 Ethernet SERDES driver"
+Thank you,
 
-However, IIUC, should we sort alphabetically about the config strings like below?
-
-config PHY_R8A779F0_ETHERNET_SERDES
-config PHY_RCAR_GEN3_PCIE
-<snip>
-
-> > diff --git a/drivers/phy/renesas/Makefile b/drivers/phy/renesas/Makefile
-> > index b599ff8a4349..8896d1919faa 100644
-> > --- a/drivers/phy/renesas/Makefile
-> > +++ b/drivers/phy/renesas/Makefile
-> > @@ -1,4 +1,5 @@
-> >  # SPDX-License-Identifier: GPL-2.0
-> > +obj-$(CONFIG_PHY_R8A779F0_ETHERNET_SERDES)	+= r8a779f0-ether-serdes.o
-> >  obj-$(CONFIG_PHY_RCAR_GEN2)		+= phy-rcar-gen2.o
-> >  obj-$(CONFIG_PHY_RCAR_GEN3_PCIE)	+= phy-rcar-gen3-pcie.o
-> >  obj-$(CONFIG_PHY_RCAR_GEN3_USB2)	+= phy-rcar-gen3-usb2.o
-> > diff --git a/drivers/phy/renesas/r8a779f0-ether-serdes.c b/drivers/phy/renesas/r8a779f0-ether-serdes.c
-> > new file mode 100644
-> > index 000000000000..38cf6c408cae
-> > --- /dev/null
-> > +++ b/drivers/phy/renesas/r8a779f0-ether-serdes.c
-> > @@ -0,0 +1,416 @@
-> > +// SPDX-License-Identifier: GPL-2.0
-> > +/* Renesas Ethernet SERDES device driver
-> > + *
-> > + * Copyright (C) 2022 Renesas Electronics Corporation
-> > + */
-> > +
-> > +#include <linux/delay.h>
-> > +#include <linux/err.h>
-> > +#include <linux/iopoll.h>
-> > +#include <linux/kernel.h>
-> > +#include <linux/phy.h>
-> > +#include <linux/phy/phy.h>
-> > +#include <linux/platform_device.h>
-> > +#include <linux/reset.h>
-> > +
-> > +#define R8A779F0_ETH_SERDES_NUM			3
-> > +#define R8A779F0_ETH_SERDES_OFFSET		0x0400
-> > +#define R8A779F0_ETH_SERDES_BANK_SELECT		0x03fc
-> > +#define R8A779F0_ETH_SERDES_TIMEOUT_US		100000
-> > +#define R8A779F0_ETH_SERDES_NUM_RETRY_LINKUP	3
-> > +#define R8A779F0_ETH_SERDES_NUM_RETRY_INIT	3
-> > +
-> > +struct r8a779f0_eth_serdes_drv_data;
-> > +struct r8a779f0_eth_serdes_channel {
-> > +	struct r8a779f0_eth_serdes_drv_data *dd;
-> > +	struct phy *phy;
-> > +	void __iomem *addr;
-> > +	phy_interface_t phy_interface;
-> > +	int speed;
-> > +	int index;
-> > +};
-> > +
-> > +struct r8a779f0_eth_serdes_drv_data {
-> > +	void __iomem *addr;
-> > +	struct platform_device *pdev;
-> > +	struct reset_control *reset;
-> > +	struct r8a779f0_eth_serdes_channel channel[R8A779F0_ETH_SERDES_NUM];
-> > +	bool initialized;
-> > +};
-> > +
-> > +/*
-> > + * The datasheet describes initialization procedure without any information
-> > + * about registers' name/bits. So, this is all black magic to initialize
-> > + * the hardware.
-> > + */
-> > +static void r8a779f0_eth_serdes_write32(void __iomem *addr, u32 offs, u32 bank, u32 data)
-> > +{
-> > +	iowrite32(bank, addr + R8A779F0_ETH_SERDES_BANK_SELECT);
-> > +	iowrite32(data, addr + offs);
-> > +}
-> > +
-> > +static int
-> > +r8a779f0_eth_serdes_reg_wait(struct r8a779f0_eth_serdes_channel *channel,
-> > +			     u32 offs, u32 bank, u32 mask, u32 expected)
-> > +{
-> > +	int ret;
-> > +	u32 val;
-> > +
-> > +	iowrite32(bank, channel->addr + R8A779F0_ETH_SERDES_BANK_SELECT);
-> > +
-> > +	ret = readl_poll_timeout_atomic(channel->addr + offs, val,
-> > +					(val & mask) == expected,
-> > +					1, R8A779F0_ETH_SERDES_TIMEOUT_US);
-> > +	if (ret)
-> > +		pr_debug("%s: index %d, offs %x, bank %x, mask %x, expected %x\n",
-> > +			 __func__, channel->index, offs, bank, mask, expected);
-> 
-> 1) why not dev_ variant
-
-Oops. I'll use dev_ variant.
-
-> 2) this should be error log
-
-Sometimes timeout happened, but after retried, the initialization passes.
-So, I'd like to avoid the output messages if the log level is lower than KERN_DEBUG.
-
-Best regards,
-Yoshihiro Shimoda
-
-> > +
-> > +	return ret;
-> > +}
-> > +
-> > +static int
-> > +r8a779f0_eth_serdes_common_init_ram(struct r8a779f0_eth_serdes_drv_data *dd)
-> > +{
-> > +	struct r8a779f0_eth_serdes_channel *channel;
-> > +	int i, ret;
-> > +
-> > +	for (i = 0; i < R8A779F0_ETH_SERDES_NUM; i++) {
-> > +		channel = &dd->channel[i];
-> > +		ret = r8a779f0_eth_serdes_reg_wait(channel, 0x026c, 0x180, BIT(0), 0x01);
-> > +		if (ret)
-> > +			return ret;
-> > +	}
-> > +
-> > +	r8a779f0_eth_serdes_write32(dd->addr, 0x026c, 0x180, 0x03);
-> > +
-> > +	return ret;
-> > +}
-> > +
-> > +static int
-> > +r8a779f0_eth_serdes_common_setting(struct r8a779f0_eth_serdes_channel *channel)
-> > +{
-> > +	struct r8a779f0_eth_serdes_drv_data *dd = channel->dd;
-> > +
-> > +	switch (channel->phy_interface) {
-> > +	case PHY_INTERFACE_MODE_SGMII:
-> > +		r8a779f0_eth_serdes_write32(dd->addr, 0x0244, 0x180, 0x0097);
-> > +		r8a779f0_eth_serdes_write32(dd->addr, 0x01d0, 0x180, 0x0060);
-> > +		r8a779f0_eth_serdes_write32(dd->addr, 0x01d8, 0x180, 0x2200);
-> > +		r8a779f0_eth_serdes_write32(dd->addr, 0x01d4, 0x180, 0x0000);
-> > +		r8a779f0_eth_serdes_write32(dd->addr, 0x01e0, 0x180, 0x003d);
-> > +		return 0;
-> > +	default:
-> > +		return -EOPNOTSUPP;
-> > +	}
-> > +}
-> > +
-> > +static int
-> > +r8a779f0_eth_serdes_chan_setting(struct r8a779f0_eth_serdes_channel *channel)
-> > +{
-> > +	int ret;
-> > +
-> > +	switch (channel->phy_interface) {
-> > +	case PHY_INTERFACE_MODE_SGMII:
-> > +		r8a779f0_eth_serdes_write32(channel->addr, 0x0000, 0x380, 0x2000);
-> > +		r8a779f0_eth_serdes_write32(channel->addr, 0x01c0, 0x180, 0x0011);
-> > +		r8a779f0_eth_serdes_write32(channel->addr, 0x0248, 0x180, 0x0540);
-> > +		r8a779f0_eth_serdes_write32(channel->addr, 0x0258, 0x180, 0x0015);
-> > +		r8a779f0_eth_serdes_write32(channel->addr, 0x0144, 0x180, 0x0100);
-> > +		r8a779f0_eth_serdes_write32(channel->addr, 0x01a0, 0x180, 0x0000);
-> > +		r8a779f0_eth_serdes_write32(channel->addr, 0x00d0, 0x180, 0x0002);
-> > +		r8a779f0_eth_serdes_write32(channel->addr, 0x0150, 0x180, 0x0003);
-> > +		r8a779f0_eth_serdes_write32(channel->addr, 0x00c8, 0x180, 0x0100);
-> > +		r8a779f0_eth_serdes_write32(channel->addr, 0x0148, 0x180, 0x0100);
-> > +		r8a779f0_eth_serdes_write32(channel->addr, 0x0174, 0x180, 0x0000);
-> > +		r8a779f0_eth_serdes_write32(channel->addr, 0x0160, 0x180, 0x0007);
-> > +		r8a779f0_eth_serdes_write32(channel->addr, 0x01ac, 0x180, 0x0000);
-> > +		r8a779f0_eth_serdes_write32(channel->addr, 0x00c4, 0x180, 0x0310);
-> > +		r8a779f0_eth_serdes_write32(channel->addr, 0x00c8, 0x380, 0x0101);
-> > +		ret = r8a779f0_eth_serdes_reg_wait(channel, 0x00c8, 0x0180, BIT(0), 0);
-> > +		if (ret)
-> > +			return ret;
-> > +
-> > +		r8a779f0_eth_serdes_write32(channel->addr, 0x0148, 0x180, 0x0101);
-> > +		ret = r8a779f0_eth_serdes_reg_wait(channel, 0x0148, 0x0180, BIT(0), 0);
-> > +		if (ret)
-> > +			return ret;
-> > +
-> > +		r8a779f0_eth_serdes_write32(channel->addr, 0x00c4, 0x180, 0x1310);
-> > +		r8a779f0_eth_serdes_write32(channel->addr, 0x00d8, 0x180, 0x1800);
-> > +		r8a779f0_eth_serdes_write32(channel->addr, 0x00dc, 0x180, 0x0000);
-> > +		r8a779f0_eth_serdes_write32(channel->addr, 0x001c, 0x300, 0x0001);
-> > +		r8a779f0_eth_serdes_write32(channel->addr, 0x0000, 0x380, 0x2100);
-> > +		ret = r8a779f0_eth_serdes_reg_wait(channel, 0x0000, 0x0380, BIT(8), 0);
-> > +		if (ret)
-> > +			return ret;
-> > +
-> > +		if (channel->speed == 1000)
-> > +			r8a779f0_eth_serdes_write32(channel->addr, 0x0000, 0x1f00, 0x0140);
-> > +		else if (channel->speed == 100)
-> > +			r8a779f0_eth_serdes_write32(channel->addr, 0x0000, 0x1f00, 0x2100);
-> > +
-> > +		/* For AN_ON */
-> > +		r8a779f0_eth_serdes_write32(channel->addr, 0x0004, 0x1f80, 0x0005);
-> > +		r8a779f0_eth_serdes_write32(channel->addr, 0x0028, 0x1f80, 0x07a1);
-> > +		r8a779f0_eth_serdes_write32(channel->addr, 0x0000, 0x1f80, 0x0208);
-> > +		break;
-> > +	default:
-> > +		return -EOPNOTSUPP;
-> > +	}
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static int
-> > +r8a779f0_eth_serdes_chan_speed(struct r8a779f0_eth_serdes_channel *channel)
-> > +{
-> > +	int ret;
-> > +
-> > +	switch (channel->phy_interface) {
-> > +	case PHY_INTERFACE_MODE_SGMII:
-> > +		/* For AN_ON */
-> > +		if (channel->speed == 1000)
-> > +			r8a779f0_eth_serdes_write32(channel->addr, 0x0000, 0x1f00, 0x1140);
-> > +		else if (channel->speed == 100)
-> > +			r8a779f0_eth_serdes_write32(channel->addr, 0x0000, 0x1f00, 0x3100);
-> > +		ret = r8a779f0_eth_serdes_reg_wait(channel, 0x0008, 0x1f80, BIT(0), 1);
-> > +		if (ret)
-> > +			return ret;
-> > +		r8a779f0_eth_serdes_write32(channel->addr, 0x0008, 0x1f80, 0x0000);
-> > +		break;
-> > +	default:
-> > +		return -EOPNOTSUPP;
-> > +	}
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +
-> > +static int r8a779f0_eth_serdes_monitor_linkup(struct r8a779f0_eth_serdes_channel *channel)
-> > +{
-> > +	int i, ret;
-> > +
-> > +	for (i = 0; i < R8A779F0_ETH_SERDES_NUM_RETRY_LINKUP; i++) {
-> > +		ret = r8a779f0_eth_serdes_reg_wait(channel, 0x0004, 0x300,
-> > +						   BIT(2), BIT(2));
-> > +		if (!ret)
-> > +			break;
-> > +
-> > +		/* restart */
-> > +		r8a779f0_eth_serdes_write32(channel->addr, 0x0144, 0x180, 0x0100);
-> > +		udelay(1);
-> > +		r8a779f0_eth_serdes_write32(channel->addr, 0x0144, 0x180, 0x0000);
-> > +	}
-> > +
-> > +	return ret;
-> > +}
-> > +
-> > +static int r8a779f0_eth_serdes_hw_init(struct r8a779f0_eth_serdes_channel *channel)
-> > +{
-> > +	struct r8a779f0_eth_serdes_drv_data *dd = channel->dd;
-> > +	int i, ret;
-> > +
-> > +	if (dd->initialized)
-> > +		return 0;
-> > +
-> > +	ret = r8a779f0_eth_serdes_common_init_ram(dd);
-> > +	if (ret)
-> > +		return ret;
-> > +
-> > +	for (i = 0; i < R8A779F0_ETH_SERDES_NUM; i++) {
-> > +		ret = r8a779f0_eth_serdes_reg_wait(&dd->channel[i], 0x0000,
-> > +						   0x300, BIT(15), 0);
-> > +		if (ret)
-> > +			return ret;
-> > +	}
-> > +
-> > +	for (i = 0; i < R8A779F0_ETH_SERDES_NUM; i++)
-> > +		r8a779f0_eth_serdes_write32(dd->channel[i].addr, 0x03d4, 0x380, 0x0443);
-> > +
-> > +	ret = r8a779f0_eth_serdes_common_setting(channel);
-> > +	if (ret)
-> > +		return ret;
-> > +
-> > +	for (i = 0; i < R8A779F0_ETH_SERDES_NUM; i++)
-> > +		r8a779f0_eth_serdes_write32(dd->channel[i].addr, 0x03d0, 0x380, 0x0001);
-> > +
-> > +
-> > +	r8a779f0_eth_serdes_write32(dd->addr, 0x0000, 0x380, 0x8000);
-> > +
-> > +	ret = r8a779f0_eth_serdes_common_init_ram(dd);
-> > +	if (ret)
-> > +		return ret;
-> > +
-> > +	ret = r8a779f0_eth_serdes_reg_wait(&dd->channel[0], 0x0000, 0x380, BIT(15), 0);
-> > +	if (ret)
-> > +		return ret;
-> > +
-> > +	for (i = 0; i < R8A779F0_ETH_SERDES_NUM; i++) {
-> > +		ret = r8a779f0_eth_serdes_chan_setting(&dd->channel[i]);
-> > +		if (ret)
-> > +			return ret;
-> > +	}
-> > +
-> > +	for (i = 0; i < R8A779F0_ETH_SERDES_NUM; i++) {
-> > +		ret = r8a779f0_eth_serdes_chan_speed(&dd->channel[i]);
-> > +		if (ret)
-> > +			return ret;
-> > +	}
-> > +
-> > +	for (i = 0; i < R8A779F0_ETH_SERDES_NUM; i++)
-> > +		r8a779f0_eth_serdes_write32(dd->channel[i].addr, 0x03c0, 0x380, 0x0000);
-> > +	for (i = 0; i < R8A779F0_ETH_SERDES_NUM; i++)
-> > +		r8a779f0_eth_serdes_write32(dd->channel[i].addr, 0x03d0, 0x380, 0x0000);
-> > +
-> > +	for (i = 0; i < R8A779F0_ETH_SERDES_NUM; i++) {
-> > +		ret = r8a779f0_eth_serdes_monitor_linkup(&dd->channel[i]);
-> > +		if (ret)
-> > +			return ret;
-> > +	}
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static int r8a779f0_eth_serdes_init(struct phy *p)
-> > +{
-> > +	struct r8a779f0_eth_serdes_channel *channel = phy_get_drvdata(p);
-> > +	int i, ret;
-> > +
-> > +	for (i = 0; i < R8A779F0_ETH_SERDES_NUM_RETRY_INIT; i++) {
-> > +		ret = r8a779f0_eth_serdes_hw_init(channel);
-> > +		if (!ret) {
-> > +			channel->dd->initialized = true;
-> > +			break;
-> > +		}
-> > +		usleep_range(1000, 2000);
-> > +	}
-> > +
-> > +	return ret;
-> > +}
-> > +
-> > +static int r8a779f0_eth_serdes_set_mode(struct phy *p, enum phy_mode mode,
-> > +					int submode)
-> > +{
-> > +	struct r8a779f0_eth_serdes_channel *channel = phy_get_drvdata(p);
-> > +
-> > +	if (mode != PHY_MODE_ETHERNET)
-> > +		return -EOPNOTSUPP;
-> > +
-> > +	switch (submode) {
-> > +	case PHY_INTERFACE_MODE_GMII:
-> > +	case PHY_INTERFACE_MODE_SGMII:
-> > +	case PHY_INTERFACE_MODE_USXGMII:
-> > +		channel->phy_interface = submode;
-> > +		return 0;
-> > +	default:
-> > +		return -EOPNOTSUPP;
-> > +	}
-> > +}
-> > +
-> > +static int r8a779f0_eth_serdes_set_speed(struct phy *p, int speed)
-> > +{
-> > +	struct r8a779f0_eth_serdes_channel *channel = phy_get_drvdata(p);
-> > +
-> > +	channel->speed = speed;
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static const struct phy_ops r8a779f0_eth_serdes_ops = {
-> > +	.init		= r8a779f0_eth_serdes_init,
-> > +	.set_mode	= r8a779f0_eth_serdes_set_mode,
-> > +	.set_speed	= r8a779f0_eth_serdes_set_speed,
-> > +};
-> > +
-> > +static struct phy *r8a779f0_eth_serdes_xlate(struct device *dev,
-> > +					     struct of_phandle_args *args)
-> > +{
-> > +	struct r8a779f0_eth_serdes_drv_data *dd = dev_get_drvdata(dev);
-> > +
-> > +	if (args->args[0] >= R8A779F0_ETH_SERDES_NUM)
-> > +		return ERR_PTR(-ENODEV);
-> > +
-> > +	return dd->channel[args->args[0]].phy;
-> > +}
-> > +
-> > +static const struct of_device_id r8a779f0_eth_serdes_of_table[] = {
-> > +	{ .compatible = "renesas,r8a779f0-ether-serdes", },
-> > +	{ }
-> > +};
-> > +MODULE_DEVICE_TABLE(of, r8a779f0_eth_serdes_of_table);
-> > +
-> > +static int r8a779f0_eth_serdes_probe(struct platform_device *pdev)
-> > +{
-> > +	struct r8a779f0_eth_serdes_drv_data *dd;
-> > +	struct phy_provider *provider;
-> > +	struct resource *res;
-> > +	int i;
-> > +
-> > +	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-> > +	if (!res) {
-> > +		dev_err(&pdev->dev, "invalid resource\n");
-> > +		return -EINVAL;
-> > +	}
-> > +
-> > +	dd = devm_kzalloc(&pdev->dev, sizeof(*dd), GFP_KERNEL);
-> > +	if (!dd)
-> > +		return -ENOMEM;
-> > +
-> > +	platform_set_drvdata(pdev, dd);
-> > +	dd->pdev = pdev;
-> > +	dd->addr = devm_ioremap_resource(&pdev->dev, res);
-> > +	if (IS_ERR(dd->addr))
-> > +		return PTR_ERR(dd->addr);
-> > +
-> > +	dd->reset = devm_reset_control_get(&pdev->dev, NULL);
-> > +	if (IS_ERR(dd->reset))
-> > +		return PTR_ERR(dd->reset);
-> > +
-> > +	reset_control_reset(dd->reset);
-> > +
-> > +	for (i = 0; i < R8A779F0_ETH_SERDES_NUM; i++) {
-> > +		struct r8a779f0_eth_serdes_channel *channel = &dd->channel[i];
-> > +
-> > +		channel->phy = devm_phy_create(&pdev->dev, NULL,
-> > +					       &r8a779f0_eth_serdes_ops);
-> > +		if (IS_ERR(channel->phy))
-> > +			return PTR_ERR(channel->phy);
-> > +		channel->addr = dd->addr + R8A779F0_ETH_SERDES_OFFSET * i;
-> > +		channel->dd = dd;
-> > +		channel->index = i;
-> > +		phy_set_drvdata(channel->phy, channel);
-> > +	}
-> > +
-> > +	provider = devm_of_phy_provider_register(&pdev->dev,
-> > +						 r8a779f0_eth_serdes_xlate);
-> > +	if (IS_ERR(provider))
-> > +		return PTR_ERR(provider);
-> > +
-> > +	pm_runtime_enable(&pdev->dev);
-> > +	pm_runtime_get_sync(&pdev->dev);
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static int r8a779f0_eth_serdes_remove(struct platform_device *pdev)
-> > +{
-> > +	pm_runtime_put(&pdev->dev);
-> > +	pm_runtime_disable(&pdev->dev);
-> > +
-> > +	platform_set_drvdata(pdev, NULL);
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static struct platform_driver r8a779f0_eth_serdes_driver_platform = {
-> > +	.probe = r8a779f0_eth_serdes_probe,
-> > +	.remove = r8a779f0_eth_serdes_remove,
-> > +	.driver = {
-> > +		.name = "r8a779f0_eth_serdes",
-> > +		.of_match_table = r8a779f0_eth_serdes_of_table,
-> > +	}
-> > +};
-> > +module_platform_driver(r8a779f0_eth_serdes_driver_platform);
-> > +MODULE_AUTHOR("Yoshihiro Shimoda");
-> > +MODULE_DESCRIPTION("Renesas Ethernet SERDES device driver");
-> > +MODULE_LICENSE("GPL");
-> > --
-> > 2.25.1
-> 
-> --
-> ~Vinod
+---
+Best Regards
+Kunihiko Hayashi
 
 -- 
 linux-phy mailing list
