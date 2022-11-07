@@ -4,85 +4,130 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4BFDCC4332F
-	for <linux-phy@archiver.kernel.org>; Mon,  7 Nov 2022 14:59:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E0A72C4332F
+	for <linux-phy@archiver.kernel.org>; Mon,  7 Nov 2022 15:04:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:
-	MIME-Version:In-Reply-To:References:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=QuzIAwEk2o0wsqUTrKYOoWvTJN6oMm6/T72IIIhvrts=; b=dY8XZIbyNDpUxYBpdyXar5PXbT
-	1lG7Yzgj7dr9gusDybIrQawLZIVe5kvTPQrqMlgMcppRUNCD4yec8PxihL+c5sgxcQeEDkcxCKsiq
-	s7pxzWlSDIVwXt/NzSLzP6Ot16QjX3qT7zJNgFAW8oLnTybz7HTuTfH0NviKAPGeqte+xrLpPoPef
-	KSUPvQLJtaoQU7x3aC40jufVsso+AX6yFKzpHQvN71RNKrTMeIsUcDGctOzASV3sUaNEuBLSo47WD
-	cbxZ5avxxtxHVGLnz9u/FK68vPHyxk8Dns3k+LgRwfHg/YWriTj51DqFg+eXa0SmSalHH85KJZ4js
-	d63/AKqA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=YExQraom4r1tOQEKK76uI64lV8jjRkFENUIYWAuvLcg=; b=mrwTkCh3jAkdu9sak73Ta5y51X
+	+EMHuUn9A0MQcQxixgqfCy1KGuYw6fA1nijphO2/QRSFUxUvzmaJhOQq94sObZt/B/VRjrw6HD4/U
+	Cjhed30ZT0nmJs/sFQ97MVpQtd0590xL7ArXywcNnAujRGCshw2K+RxqZZYm4LCHM0wefx3/eUzcl
+	wp2UX/JN2DC2BgVuyq6JVmGR3GoBeAAVFgRO8e6ZhmnZ95nl9aRYWmulP1Yb7kLUIrdtb9f63dbau
+	hOem5tyQ4+sL/07KwjEbPZAprYxjSgp+nj3bQIbLl6iiZ8+5qIS0WYv1UgecVvKFRfBU/brkdw83+
+	4thzT65A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1os3aV-00FSbs-CT; Mon, 07 Nov 2022 14:58:59 +0000
-Received: from mail-lj1-x22a.google.com ([2a00:1450:4864:20::22a])
+	id 1os3fl-00FW4N-2d; Mon, 07 Nov 2022 15:04:25 +0000
+Received: from wnew2-smtp.messagingengine.com ([64.147.123.27])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1os3M0-00FKHQ-Fk
-	for linux-phy@lists.infradead.org; Mon, 07 Nov 2022 14:44:05 +0000
-Received: by mail-lj1-x22a.google.com with SMTP id k19so16612966lji.2
-        for <linux-phy@lists.infradead.org>; Mon, 07 Nov 2022 06:44:00 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=baylibre-com.20210112.gappssmtp.com; s=20210112;
-        h=cc:to:subject:message-id:date:mime-version:in-reply-to:references
-         :user-agent:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=i0O2rk5E0cL+fm306yvacQlome9MWqlkSl0PtbnJ/Fk=;
-        b=KGd9O5AMOGZXp+tE3f0j+hwAkW+8r8XE9RmQsXGMLtLEL+k0tlrOTlc9x3z6DY60pT
-         hoRXvYOeD/Og/ka1ZIfwjHVVwiYkMECBdxL+qr6sOmlcw2M4myVgfy3mUcsg34OUY9JJ
-         q2lBidE2ZbHrX8DY8H34jBlgMAfqbaTK5gWDjPBKRDyH0O/aQ5nkMbT7YyKZ1J3wKPKE
-         g2HXUzVU7qAK/Wi5p4uk8UO+C3/OrXQtIeJ+BKMBSvKfMctlvCZ9EjPETJgknfSh0Eme
-         qzAIsFJwkk2g1boA0NctS759r6L3DUzwJ6BMZO1g8SlxiYVglENC/U8KI+IphbjhOzQm
-         oWPw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=cc:to:subject:message-id:date:mime-version:in-reply-to:references
-         :user-agent:from:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=i0O2rk5E0cL+fm306yvacQlome9MWqlkSl0PtbnJ/Fk=;
-        b=gkfEFAKkPBGg23swJHvO+KXjvMjBjxfa+R/AuqLXNsf5zXrHE/hdkIg9Cx9ayD4R60
-         iNF4zLTYoe5RX7zx5LKj2Eb7UBr65BMtVxq/DmYLl4J0ZG4WJ/rDu0NurE829oQyQDDS
-         3wQ7t3Ab8n1gL39t2/xVtECv2icfH7V7+CzY782jKP5fF1ewmKQ/EXr/PSAmqGhj244+
-         3LpkQktEoQNG46LgWBVxg2HNyzDr6dnRpwozo7bs4BUdMKFqevSZ6WPKLWNkW0vr98pH
-         XGdKj6norLlm44gDR7KGYKYNzdO0anubo79gHY8t5AFTPXIWwwjc3gw4p4pHi2/zfQkk
-         ouyA==
-X-Gm-Message-State: ACrzQf2HYVbtmKhRJyZvxGmNgmzNMWAzo0UgaPlHtHX6b1P4WlpUxGjE
-	6osYSDDG3gqtgTG641pOmCHwUzjJKbXFxNOqR/XqZQ==
-X-Google-Smtp-Source: AMsMyM6xHORFjhVs0PnFDG1Q5hbXYVz1Gde1fVXPnnjTrXUg8FmzxrTbBpDXilPPBRiYEYQWH0D3yvUDzcEPlfT2y8I=
-X-Received: by 2002:a2e:2e0c:0:b0:277:75bb:429e with SMTP id
- u12-20020a2e2e0c000000b0027775bb429emr9673388lju.314.1667832238908; Mon, 07
- Nov 2022 06:43:58 -0800 (PST)
-Received: from 753933720722 named unknown by gmailapi.google.com with
- HTTPREST; Mon, 7 Nov 2022 14:43:58 +0000
-From: Guillaume Ranquet <granquet@baylibre.com>
-User-Agent: meli 0.7.2
-References: <20220919-v3-0-a803f2660127@baylibre.com> <20220919-v3-3-a803f2660127@baylibre.com>
- <05183178-32cb-98c0-4fcb-d5e78874e6c4@collabora.com>
-In-Reply-To: <05183178-32cb-98c0-4fcb-d5e78874e6c4@collabora.com>
+	id 1os3U5-00FOg1-KV; Mon, 07 Nov 2022 14:52:23 +0000
+Received: from compute2.internal (compute2.nyi.internal [10.202.2.46])
+	by mailnew.west.internal (Postfix) with ESMTP id 10FC32B05D99;
+	Mon,  7 Nov 2022 09:52:06 -0500 (EST)
+Received: from mailfrontend1 ([10.202.2.162])
+  by compute2.internal (MEProxy); Mon, 07 Nov 2022 09:52:15 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=cc
+	:cc:content-type:date:date:from:from:in-reply-to:in-reply-to
+	:message-id:mime-version:references:reply-to:sender:subject
+	:subject:to:to; s=fm2; t=1667832726; x=1667839926; bh=pH9EnTs5L3
+	AE9yRrf/TOfLTE3vMWtMQ5hIBy7+jkfxo=; b=F7wDDyPbg4B6cj4BQiM8vMTPkt
+	tkEJFLYEYVOXIksN+jqz4ftMcxZZXnzOddYWfqs9q6bd1iOFwyhB5pE4Fvz/05uZ
+	RF10RSC0RzcIedJ1G2E1LSQq4Zg42bEfK0TSyO7m7id0Yy1xeUuD5zWJX3us817V
+	rjIfPInA1Vwm/QlX4DnPJzUv40Z0ii9fRJxzgHqkydlEG9GHtOtzfSoBBYVuklOY
+	znHltzYI/nV8aA3pqWRO9oD9yS5dvx0Tnbouc9wI5DeGckOnRznPX94uGeI63tXw
+	4a6YpykXCScaYQzL11169W/UCCuCj+CqGjGcj2LOgIC8IwvROeIK920PT8Og==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	messagingengine.com; h=cc:cc:content-type:date:date:feedback-id
+	:feedback-id:from:from:in-reply-to:in-reply-to:message-id
+	:mime-version:references:reply-to:sender:subject:subject:to:to
+	:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
+	fm1; t=1667832726; x=1667839926; bh=pH9EnTs5L3AE9yRrf/TOfLTE3vMW
+	tMQ5hIBy7+jkfxo=; b=tm2CjukNyGky7m61cEbNeNPEwlXow6RPoGg2KjXghbKg
+	ra/lLyp2zKjbGDhKlZm+A1NYUYItu9u5SMkA9pJHis1as3Cuaw086EXYoGiWAwEc
+	kwmgNzmeS59QVCIvcfLkrQ+Ebrrzyvxm0bLZzUJt64WJNOdWIwV+A1Lm0sxt1PlG
+	pqQrTshYGPUOlH25VHE+1Lo/JkFnLumTSx7pnL0tNbn51t3OP92FWPXw0EfQztVG
+	wtJ4RnEpesPcGbqI0l7+PnoJguGMz6X3T6Oc+iWlaBg8/BNZZbD/jeW+bRR9Y7Mm
+	aeVy4dRLsyWLoksEM3gODq0m5OD2atrQxRTwoulo5w==
+X-ME-Sender: <xms:lBtpY-40Eo4JzBjQaFjHtoUz7QeBdEwcwbk96GIlHmmJELkNOdiNuw>
+    <xme:lBtpY355rFDdDU_5_Zhsu6BuYYJ8FsknqxkvYPdHiPLl5stDZ4ymxPAwZCGrhq1q0
+    rYmNowEFVM52RrtcrQ>
+X-ME-Received: <xmr:lBtpY9dGH4qlk66IJxrnFOeAg7gL0Dzov_oSAqI9d3jUn16Bj4wfUEZhAxYh6xwVb1pD_70A4Fj78DNZ9hmuXeqDZ6FtyKnnZ6v_m9fVoJ9KEg>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvgedrvdekgdeijecutefuodetggdotefrodftvf
+    curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+    uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+    fjughrpeffhffvvefukfhfgggtuggjsehgtderredttddvnecuhfhrohhmpeforgigihhm
+    vgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecuggftrfgrth
+    htvghrnhepteefffefgfektdefgfeludfgtdejfeejvddttdekteeiffejvdfgheehfffh
+    vedunecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomhepmh
+    grgihimhgvsegtvghrnhhordhtvggthh
+X-ME-Proxy: <xmx:lBtpY7K_De75Z1Qb3KnMLSjsRajiL-H-Ua3gdzprEa6elskIEslNHg>
+    <xmx:lBtpYyJPcAZLuZCZ9YrgeNVP2SDE0zyvQMv9GMV_qnwg12P9XLOYhg>
+    <xmx:lBtpY8zZKJW8BWrb3kvSxaP7pHRcbh-yGdZ8oBvUaVqZHP2VBvAXdw>
+    <xmx:lhtpY2R7H97-NMegP3mWI1QxFbMYDvDajfqDlJ0guaZiDLR4Zxs1FRw326M>
+Feedback-ID: i8771445c:Fastmail
+Received: by mail.messagingengine.com (Postfix) with ESMTPA; Mon,
+ 7 Nov 2022 09:52:03 -0500 (EST)
+Date: Mon, 7 Nov 2022 15:52:02 +0100
+From: Maxime Ripard <maxime@cerno.tech>
+To: David Lechner <david@lechnology.com>
+Cc: Stephen Boyd <sboyd@kernel.org>,
+	Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+	Chen-Yu Tsai <wens@csie.org>, Daniel Vetter <daniel@ffwll.ch>,
+	Nicolas Ferre <nicolas.ferre@microchip.com>,
+	Thierry Reding <thierry.reding@gmail.com>,
+	Jaroslav Kysela <perex@perex.cz>, Shawn Guo <shawnguo@kernel.org>,
+	Fabio Estevam <festevam@gmail.com>,	Ulf Hansson <ulf.hansson@linaro.org>,
+	Claudiu Beznea <claudiu.beznea@microchip.com>,
+	Michael Turquette <mturquette@baylibre.com>,
+	Dinh Nguyen <dinguyen@kernel.org>,	Paul Cercueil <paul@crapouillou.net>,
+	Chunyan Zhang <zhang.lyra@gmail.com>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Andreas =?utf-8?Q?F=C3=A4rber?= <afaerber@suse.de>,
+	Jonathan Hunter <jonathanh@nvidia.com>,	Abel Vesa <abelvesa@kernel.org>,
+	Charles Keepax <ckeepax@opensource.cirrus.com>,
+	Alessandro Zummo <a.zummo@towertech.it>,
+	Peter De Schrijver <pdeschrijver@nvidia.com>,
+	Orson Zhai <orsonzhai@gmail.com>,
+	Alexandre Torgue <alexandre.torgue@foss.st.com>,
+	Prashant Gaikwad <pgaikwad@nvidia.com>,
+	Liam Girdwood <lgirdwood@gmail.com>,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Samuel Holland <samuel@sholland.org>,
+	Matthias Brugger <matthias.bgg@gmail.com>,
+	Richard Fitzgerald <rf@opensource.cirrus.com>,
+	Vinod Koul <vkoul@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+	Sekhar Nori <nsekhar@ti.com>,	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Linus Walleij <linus.walleij@linaro.org>,	Takashi Iwai <tiwai@suse.com>,
+ David Airlie <airlied@gmail.com>,
+	Luca Ceresoli <luca.ceresoli@bootlin.com>,
+	Jernej Skrabec <jernej.skrabec@gmail.com>,
+	Pengutronix Kernel Team <kernel@pengutronix.de>,
+	Baolin Wang <baolin.wang@linux.alibaba.com>,
+	Sascha Hauer <s.hauer@pengutronix.de>,	Mark Brown <broonie@kernel.org>,
+ Max Filippov <jcmvbkbc@gmail.com>,
+	Geert Uytterhoeven <geert+renesas@glider.be>,
+	linux-stm32@st-md-mailman.stormreply.com,	alsa-devel@alsa-project.org,
+ linux-mediatek@lists.infradead.org,	linux-phy@lists.infradead.org,
+ linux-mips@vger.kernel.org,	linux-renesas-soc@vger.kernel.org,
+	linux-actions@lists.infradead.org, linux-clk@vger.kernel.org,
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	patches@opensource.cirrus.com, linux-tegra@vger.kernel.org,
+	linux-rtc@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-sunxi@lists.linux.dev, linux-kernel@vger.kernel.org,
+	dri-devel@lists.freedesktop.org
+Subject: Re: [PATCH v2 54/65] clk: da8xx: clk48: Switch to determine_rate
+Message-ID: <20221107145202.2mne5p2sa4l2dm6g@houat>
+References: <20221018-clk-range-checks-fixes-v2-0-f6736dec138e@cerno.tech>
+ <20221018-clk-range-checks-fixes-v2-54-f6736dec138e@cerno.tech>
+ <6296d944-e03d-6f2b-48b1-3dad78e3c89d@lechnology.com>
 MIME-Version: 1.0
-Date: Mon, 7 Nov 2022 14:43:58 +0000
-Message-ID: <CABnWg9sZ29jnCbCjtJ-tLWn2s1JYjFVEEGkau72WJyukHWU9=Q@mail.gmail.com>
-Subject: Re: [PATCH v3 03/12] drm/mediatek: hdmi: use a regmap instead of iomem
-To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, 
-	Kishon Vijay Abraham I <kishon@ti.com>, Rob Herring <robh+dt@kernel.org>, 
-	Chun-Kuang Hu <chunkuang.hu@kernel.org>, Chunfeng Yun <chunfeng.yun@mediatek.com>, 
-	Jitao shi <jitao.shi@mediatek.com>, Matthias Brugger <matthias.bgg@gmail.com>, 
-	Vinod Koul <vkoul@kernel.org>, CK Hu <ck.hu@mediatek.com>, Daniel Vetter <daniel@ffwll.ch>, 
-	David Airlie <airlied@gmail.com>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, 
-	Philipp Zabel <p.zabel@pengutronix.de>
-Cc: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, linux-arm-kernel@lists.infradead.org, 
-	stuart.lee@mediatek.com, linux-kernel@vger.kernel.org, 
-	dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org, 
-	devicetree@vger.kernel.org, mac.shen@mediatek.com, 
-	linux-phy@lists.infradead.org
+In-Reply-To: <6296d944-e03d-6f2b-48b1-3dad78e3c89d@lechnology.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221107_064400_572564_466929EF 
-X-CRM114-Status: GOOD (  11.39  )
+X-CRM114-CacheID: sfid-20221107_065221_771067_E5AC049D 
+X-CRM114-Status: GOOD (  32.03  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,72 +139,89 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============2691746879112248421=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, 07 Nov 2022 12:20, AngeloGioacchino Del Regno
-<angelogioacchino.delregno@collabora.com> wrote:
->Il 04/11/22 15:09, Guillaume Ranquet ha scritto:
->> To prepare support for newer chips that need to share their address
->> range with a dedicated ddc driver, use a regmap.
->>
->> Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
->> ---
->>   drivers/gpu/drm/mediatek/mtk_hdmi.c | 43 +++++++++++--------------------------
->>   1 file changed, 13 insertions(+), 30 deletions(-)
->>
->> diff --git a/drivers/gpu/drm/mediatek/mtk_hdmi.c b/drivers/gpu/drm/mediatek/mtk_hdmi.c
->> index 4c80b6896dc3..9b02b30a193a 100644
->> --- a/drivers/gpu/drm/mediatek/mtk_hdmi.c
->> +++ b/drivers/gpu/drm/mediatek/mtk_hdmi.c
->> @@ -171,7 +171,7 @@ struct mtk_hdmi {
->>   	u32 ibias_up;
->>   	struct regmap *sys_regmap;
->>   	unsigned int sys_offset;
->> -	void __iomem *regs;
->> +	struct regmap *regs;
->>   	enum hdmi_colorspace csp;
->>   	struct hdmi_audio_param aud_param;
->>   	bool audio_enable;
->> @@ -187,44 +187,29 @@ static inline struct mtk_hdmi *hdmi_ctx_from_bridge(struct drm_bridge *b)
->>   	return container_of(b, struct mtk_hdmi, bridge);
->>   }
->>
->> -static u32 mtk_hdmi_read(struct mtk_hdmi *hdmi, u32 offset)
->> +static int mtk_hdmi_read(struct mtk_hdmi *hdmi, u32 offset, u32 *val)
->>   {
->> -	return readl(hdmi->regs + offset);
->> +	return regmap_read(hdmi->regs, offset, val);
->>   }
->>
->>   static void mtk_hdmi_write(struct mtk_hdmi *hdmi, u32 offset, u32 val)
->>   {
->> -	writel(val, hdmi->regs + offset);
->> +	regmap_write(hdmi->regs, offset, val);
->>   }
->>
->>   static void mtk_hdmi_clear_bits(struct mtk_hdmi *hdmi, u32 offset, u32 bits)
->
->You don't need these functions anymore, as these are now simply wrapping
->regmap calls, hence these don't contain any "real" logic anymore.
->
->Please remove them and use the regmap API directly.
->
->Thanks,
->Angelo
->
 
-Agree with that, my intent was to minimize the change size so that it
-would be easy to review.
+--===============2691746879112248421==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="kwjqag62r4ghubsj"
+Content-Disposition: inline
 
-My mistake, I'll remove the wrappers.
 
-Thx,
-Guillaume.
+--kwjqag62r4ghubsj
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+Hi David,
+
+On Fri, Nov 04, 2022 at 11:49:34AM -0500, David Lechner wrote:
+> On 11/4/22 8:18 AM, Maxime Ripard wrote:
+> > The TI DA8xx USB0 clk48 clocks implements a mux with a set_parent
+> > hook, but doesn't provide a determine_rate implementation.
+> >=20
+> > This is a bit odd, since set_parent() is there to, as its name implies,
+> > change the parent of a clock. However, the most likely candidate to
+> > trigger that parent change is a call to clk_set_rate(), with
+> > determine_rate() figuring out which parent is the best suited for a
+> > given rate.
+> >=20
+> > The other trigger would be a call to clk_set_parent(), but it's far less
+> > used, and it doesn't look like there's any obvious user for that clock.
+> >=20
+> > So, the set_parent hook is effectively unused, possibly because of an
+> > oversight. However, it could also be an explicit decision by the
+> > original author to avoid any reparenting but through an explicit call to
+> > clk_set_parent().
+> >=20
+> > The driver does implement round_rate() though, which means that we can
+> > change the rate of the clock, but we will never get to change the
+> > parent.
+> >=20
+> > However, It's hard to tell whether it's been done on purpose or not.
+> >=20
+> > Since we'll start mandating a determine_rate() implementation, let's
+> > convert the round_rate() implementation to a determine_rate(), which
+> > will also make the current behavior explicit. And if it was an
+> > oversight, the clock behaviour can be adjusted later on.
+>=20
+> I think this one should be the same as the clk:davinci changes and
+> not allow re-parenting. Since this is a USB 48MHz PHY clock, a rate
+> change will never be requested.
+
+I'm not sure, it doesn't seem to be the same clock, it's not doing the
+same thing (this one will always force the same rate, the others let the
+rate change), and we're not doing the same refactoring (this one had a
+round_rate implementation, the other one doesn't)
+
+Maxime
+
+--kwjqag62r4ghubsj
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYKAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCY2kbkgAKCRDj7w1vZxhR
+xdnyAPoDUCObUrCr2C1a0eiJzKGIcW+Cl1z7L7QadhXWYBxPJAD+K5Cnal04FAYQ
+nw7UCY5eZErrD6YvLzwUrAeczrFXVQw=
+=GExv
+-----END PGP SIGNATURE-----
+
+--kwjqag62r4ghubsj--
+
+
+--===============2691746879112248421==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============2691746879112248421==--
+
