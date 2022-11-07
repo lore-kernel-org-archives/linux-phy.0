@@ -4,135 +4,91 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4221EC4167B
-	for <linux-phy@archiver.kernel.org>; Mon,  7 Nov 2022 08:54:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9ED6BC4321E
+	for <linux-phy@archiver.kernel.org>; Mon,  7 Nov 2022 10:03:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=a2elKCvP+PdVikL2nXxwp6brNofVjCGQQr9xQKHCt/0=; b=olwDn5zfB5WPJf
-	EE1d07KI48ny9UKMt3vGtdf2OAnwb1mvAqHXp2XFBWNwCcm9aXUQi4RKIfDeT4vdWm/WKgXuqGyjW
-	W2vu5deUSfEOoIXDEPJFa7wDIjRT6JSQRN7HT8Hps79qDV8CdvAtEu1PetXvZb5NG9KAWnOqdvBDC
-	G5VnA2QWcQ8ZpCdBq4mlVfLUmKq5fL/xiZXSyeUT1/gMbDX1A2WQybtUXcysrQ0mX3kez/RPpzzfB
-	pBjCWi6Dwa8T0GC76Me9vtRaG5V14Pzsl7KwVhTpwaQBuIkRNdi4Er+KvPognNsmbdWgzlK9gncxW
-	y+fABCEOTatFQlXOHjAQ==;
+	List-Owner; bh=ahvjlpwH6Uqr5RTHfMd84JR/fXPbHuPYUSDMF4YRI4w=; b=qblHtSzeuOTcU6
+	9CU8U60OTyTupLmoKdeb1DIR72KniR0mWvj1NIdPmhp4fNTvtAg2EhzWVdopGPuNnDmRj52xCw0UB
+	c9ykFs6qNkXrxQ/r28GzZfwZf17D0InFdHfvB38AUSTZkC0ivFSe7Nps0Nw/dfpggSyTOobtHlblu
+	FFldfZVc6LdzKAl+d6ZwGTYNu/ArbssMDHNGrq8hEMkWGeboMHDd0/6/UBDS9ow7ottrYBQXNnDDp
+	dcT/P3rb6wA1VwbJ+eFrDD05uF45hS6MUpMFoXHHKChTdvBfq9ClTQl0km1nNJypR2GV9rlxJfSgX
+	VHsjt+MIC+0MoKeRVlTA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1orxtj-00Cxct-Js; Mon, 07 Nov 2022 08:54:27 +0000
-Received: from new4-smtp.messagingengine.com ([66.111.4.230])
+	id 1oryy9-00DabT-TF; Mon, 07 Nov 2022 10:03:05 +0000
+Received: from mail-lj1-x229.google.com ([2a00:1450:4864:20::229])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1orxte-00CxaQ-OG; Mon, 07 Nov 2022 08:54:24 +0000
-Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
-	by mailnew.nyi.internal (Postfix) with ESMTP id CBDFB580981;
-	Mon,  7 Nov 2022 03:54:21 -0500 (EST)
-Received: from mailfrontend2 ([10.202.2.163])
-  by compute3.internal (MEProxy); Mon, 07 Nov 2022 03:54:21 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=cc
-	:cc:content-transfer-encoding:content-type:date:date:from:from
-	:in-reply-to:in-reply-to:message-id:mime-version:references
-	:reply-to:sender:subject:subject:to:to; s=fm2; t=1667811261; x=
-	1667818461; bh=DpobGsjjO6+ObD0CgLx0PfBT5w/ojqtKffWwUQfBXkA=; b=a
-	L7x6VeduJt+1Hu5h1m6xZv3p7hN365kpXqH5SuShvo3zwCzJIKsm96bEmylPDRnr
-	vKihkUHqJ+opr8d5eypGD34fQlnFGyxPjZz8U+6RxuJq36EaUEjtGGOHxWFWJmsR
-	xF8mQxK/zVQWtqPsaAi62pWa+AWIoU2BQQvgaXR8zkOkphgUl8UR2UNnuFhq1pY6
-	BBMhiWDZbMK+qFDNXAtIYmad+XRLYmN1xRyV+Cdif96MtdkOqfkm8tHhatycY5y4
-	6hqoUGqXVWC6P521j5IjRmmgaDJ6w3DWXYznabMX8M7Hgb9gEW6XKEk3hW0kJ2QI
-	+2VDPHajg+fFKI1/fw4zg==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
-	messagingengine.com; h=cc:cc:content-transfer-encoding
-	:content-type:date:date:feedback-id:feedback-id:from:from
-	:in-reply-to:in-reply-to:message-id:mime-version:references
-	:reply-to:sender:subject:subject:to:to:x-me-proxy:x-me-proxy
-	:x-me-sender:x-me-sender:x-sasl-enc; s=fm1; t=1667811261; x=
-	1667818461; bh=DpobGsjjO6+ObD0CgLx0PfBT5w/ojqtKffWwUQfBXkA=; b=a
-	wf3lMuGSE0c+KKuKS9VUt+n1OzUMiXhyTIxQLBDjWgJq5Rasjs/0LinZ+VNNis3Q
-	alYUFBZQZ1o6/Q54VwJt3hqIwUHR2Sqily3v9eJVSTlP+Hu2fMStre5KXTVYz4tY
-	up+dWJV8xLSoFiZUgzmweb/bZBcB/fFtJnk3gDOGBjofi4mAWNWAPpiPA0jEfPrm
-	qZYWyDNc5qSMORFII98iU3MY0TQmveTRjRLYGwUC3eXJUsRYRr3v7if3WJeSkO6I
-	j3g07rByjglyFc5HGmp7F1QOFNm/ObUDgojleoszz+DZFx1tbTqcAVeOKkORWZom
-	ZIRqMfyKz+fN8PnA+frdQ==
-X-ME-Sender: <xms:vMdoY_7qKFUnXrMLgK6UK63X-Fh4SaqG616lZWh2McRJiMf86oKkBg>
-    <xme:vMdoY05eqjOQdOTGTKTySzE1Wn9z9h-j5CLWyw-kRMMS7CUhWbIcIkplkIUxbV3Zx
-    tjU76RkWB9nO9l2Z6w>
-X-ME-Received: <xmr:vMdoY2eTjJtLQJNNaygWBJHdzqd2eezOC-jGJ5qGPoZggXSc-nHUmqhTbr9BJgETFjOt3Omg7gRBI2Br8ytbDietmUNlkAqFM8RJrlQ2C87Yog>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvgedrvdejgdduvdehucetufdoteggodetrfdotf
-    fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
-    uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
-    cujfgurhepfffhvfevuffkfhggtggugfgjsehtqhertddttddunecuhfhrohhmpeforgig
-    ihhmvgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecuggftrf
-    grthhtvghrnhepleelfeeileelteetfedvieekfeefffevhfdtvefgheevudevheejvddv
-    ieeltdeinecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomh
-    epmhgrgihimhgvsegtvghrnhhordhtvggthh
-X-ME-Proxy: <xmx:vMdoYwK5IAG7BHmBDjFkYVhB3wRP1TzolwSnR7LPSyHllzJNSVgrKg>
-    <xmx:vMdoYzJWQmddsqBUPbOODTn8VI2mqM3H1ese92evIxTkRlBaGuPeYA>
-    <xmx:vMdoY5w7ruPvXZ8uflNCksVlsNEDzQ_jl3m9tAGFgnB3-SXCh18Y3A>
-    <xmx:vcdoY6WhoDikh1uwLRRPXPUC7EI94vIUcFL5a0jAMBx8zIodtk5heg>
-Feedback-ID: i8771445c:Fastmail
-Received: by mail.messagingengine.com (Postfix) with ESMTPA; Mon,
- 7 Nov 2022 03:54:18 -0500 (EST)
-Date: Mon, 7 Nov 2022 09:54:17 +0100
-From: Maxime Ripard <maxime@cerno.tech>
-To: Aidan MacDonald <aidanmacdonald.0x0@gmail.com>
-Cc: Paul Cercueil <paul@crapouillou.net>, Stephen Boyd <sboyd@kernel.org>,
-	Maxime Coquelin <mcoquelin.stm32@gmail.com>,
-	Chen-Yu Tsai <wens@csie.org>, Daniel Vetter <daniel@ffwll.ch>,
-	Nicolas Ferre <nicolas.ferre@microchip.com>,
-	Thierry Reding <thierry.reding@gmail.com>,
-	Jaroslav Kysela <perex@perex.cz>, Shawn Guo <shawnguo@kernel.org>,
-	Fabio Estevam <festevam@gmail.com>,	Ulf Hansson <ulf.hansson@linaro.org>,
-	Claudiu Beznea <claudiu.beznea@microchip.com>,
-	Michael Turquette <mturquette@baylibre.com>,
-	Dinh Nguyen <dinguyen@kernel.org>,	Chunyan Zhang <zhang.lyra@gmail.com>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Andreas =?utf-8?Q?F=C3=A4rber?= <afaerber@suse.de>,
-	Jonathan Hunter <jonathanh@nvidia.com>,	Abel Vesa <abelvesa@kernel.org>,
-	Charles Keepax <ckeepax@opensource.cirrus.com>,
-	Alessandro Zummo <a.zummo@towertech.it>,
-	Peter De Schrijver <pdeschrijver@nvidia.com>,
-	Orson Zhai <orsonzhai@gmail.com>,
-	Alexandre Torgue <alexandre.torgue@foss.st.com>,
-	Prashant Gaikwad <pgaikwad@nvidia.com>,
-	Liam Girdwood <lgirdwood@gmail.com>,
-	Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Samuel Holland <samuel@sholland.org>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	Richard Fitzgerald <rf@opensource.cirrus.com>,
-	Vinod Koul <vkoul@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
-	Sekhar Nori <nsekhar@ti.com>,	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Linus Walleij <linus.walleij@linaro.org>,	Takashi Iwai <tiwai@suse.com>,
- David Airlie <airlied@gmail.com>,
-	Luca Ceresoli <luca.ceresoli@bootlin.com>,
-	Jernej Skrabec <jernej.skrabec@gmail.com>,
-	Pengutronix Kernel Team <kernel@pengutronix.de>,
-	Baolin Wang <baolin.wang@linux.alibaba.com>,
-	David Lechner <david@lechnology.com>,
-	Sascha Hauer <s.hauer@pengutronix.de>,	Mark Brown <broonie@kernel.org>,
- Max Filippov <jcmvbkbc@gmail.com>,
-	Geert Uytterhoeven <geert+renesas@glider.be>,
-	linux-stm32@st-md-mailman.stormreply.com,	alsa-devel@alsa-project.org,
- linux-mediatek@lists.infradead.org,	linux-phy@lists.infradead.org,
- linux-mips@vger.kernel.org,	linux-renesas-soc@vger.kernel.org,
-	linux-actions@lists.infradead.org, linux-clk@vger.kernel.org,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	patches@opensource.cirrus.com, linux-tegra@vger.kernel.org,
-	linux-rtc@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	linux-sunxi@lists.linux.dev, linux-kernel@vger.kernel.org,
-	dri-devel@lists.freedesktop.org
-Subject: Re: [PATCH v2 56/65] clk: ingenic: cgu: Switch to determine_rate
-Message-ID: <20221107085417.xrsh6xy3ouwdkp4z@houat>
-References: <20221018-clk-range-checks-fixes-v2-0-f6736dec138e@cerno.tech>
- <20221018-clk-range-checks-fixes-v2-56-f6736dec138e@cerno.tech>
- <80VTKR.CE8RVN8M3ZYK3@crapouillou.net>
- <20221104145946.orsyrhiqvypisl5j@houat>
- <cp7Yh29ndlOOi1yW8KwCcpzoLPLxm1vR@localhost>
+	id 1oryy7-00DaTL-DP
+	for linux-phy@lists.infradead.org; Mon, 07 Nov 2022 10:03:05 +0000
+Received: by mail-lj1-x229.google.com with SMTP id h12so15377242ljg.9
+        for <linux-phy@lists.infradead.org>; Mon, 07 Nov 2022 02:03:02 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=RM9kb3J3wnBPlGqqjFbWWIP1RllNoZN+0SAF5Yq6Zr4=;
+        b=zMGUtZu0IWNgDwJWBtEWy+3qUj/xZTiJLH3eT3yNKcOiC0kvdCoCfBnbH1cJLBnnjl
+         78/SC5P1u0YdAdrVaJTsU1Ycn8In4GnViWJn/G/x7qA2x2GhGO7S3pfdg3MuxGB+ttQG
+         EsZ9Ry4krL/6ZuqYd9u2jpHP+gADgE1CWK7uzdTM2MNs0Hp7hSAYGx55rldPnMl39vOo
+         AZsoNaHN2Ualx8AYYKKHE7XOeTVDZLlI3jSLcVavcUL/QW1AavkAELbHnGQKEz5gFIZ2
+         IKC0P8DkF9tWPQx7i6uRDGNa9bMHsEMOYpi8pYcU0/ZfmGGAhd6Mm5tGhAr37xRagpdj
+         r/Pg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=RM9kb3J3wnBPlGqqjFbWWIP1RllNoZN+0SAF5Yq6Zr4=;
+        b=AkI/8q6wnb4TLlke5+mQb6FlSH4/3fIUwtunjGgNnpGQ157oYSecOVKEQiIKDXSj5j
+         Pek8SKioSlWukl5ao3TpolWmoRunrmf2JJ0r3BCKCFmSAJQ64Ah/1PH5/I4L2aUwLOgR
+         /9/acqVPWssBQaPoNZXnxC25OlQNJcqQ8QksHA5rTpex4KdIZERMaol6t0xOYKqfh+lV
+         HSAkVEjwyUIRqHhVhY/lB70DAtmHXuSWxUDCS7LmizCfCBru9v6Hsb4Kh0YJfd1cGLjv
+         pCha+XMXV57kC97TwmJTqglLxv5Nw3Vl71FaL1Y2ze6EIiWUa/FPNgtkeePU+VLvNeZB
+         APqQ==
+X-Gm-Message-State: ACrzQf3+j2drIgBR6l3+DQCcfN+DrGWEntc9jIHyRDk9sWTd7sqajYAZ
+	uplM/KYgXZW0cV7DVDX5d3MYTQ==
+X-Google-Smtp-Source: AMsMyM45Nd4u9vh1fgVyjMywXV/syU6IzBqqpec13oIq/b2S10en3aGDNpC5XgVj+PXwKcO/NWFW4A==
+X-Received: by 2002:a2e:80c4:0:b0:277:fa0:d500 with SMTP id r4-20020a2e80c4000000b002770fa0d500mr5209054ljg.51.1667815381318;
+        Mon, 07 Nov 2022 02:03:01 -0800 (PST)
+Received: from [192.168.0.20] (088156142199.dynamic-2-waw-k-3-2-0.vectranet.pl. [88.156.142.199])
+        by smtp.gmail.com with ESMTPSA id t3-20020a19ad03000000b004a459799bc3sm1150870lfc.283.2022.11.07.02.02.59
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 07 Nov 2022 02:03:00 -0800 (PST)
+Message-ID: <ab8528cc-fa5d-35da-0c6e-cdebc694f646@linaro.org>
+Date: Mon, 7 Nov 2022 11:02:59 +0100
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <cp7Yh29ndlOOi1yW8KwCcpzoLPLxm1vR@localhost>
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.4.2
+Subject: Re: [PATCH v3 02/12] dt-bindings: display: mediatek: add MT8195 hdmi
+ bindings
+Content-Language: en-US
+To: Guillaume Ranquet <granquet@baylibre.com>,
+ Rob Herring <robh+dt@kernel.org>, Chun-Kuang Hu <chunkuang.hu@kernel.org>,
+ Chunfeng Yun <chunfeng.yun@mediatek.com>, Jitao shi
+ <jitao.shi@mediatek.com>, Matthias Brugger <matthias.bgg@gmail.com>,
+ Vinod Koul <vkoul@kernel.org>, CK Hu <ck.hu@mediatek.com>,
+ Daniel Vetter <daniel@ffwll.ch>, David Airlie <airlied@gmail.com>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ Kishon Vijay Abraham I <kishon@ti.com>
+Cc: linux-arm-kernel@lists.infradead.org, stuart.lee@mediatek.com,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+ linux-mediatek@lists.infradead.org, devicetree@vger.kernel.org,
+ mac.shen@mediatek.com, linux-phy@lists.infradead.org
+References: <20220919-v3-0-a803f2660127@baylibre.com>
+ <20220919-v3-2-a803f2660127@baylibre.com>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <20220919-v3-2-a803f2660127@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221107_005422_881419_3CF9D205 
-X-CRM114-Status: GOOD (  46.89  )
+X-CRM114-CacheID: sfid-20221107_020303_493482_9B76C0D2 
+X-CRM114-Status: GOOD (  18.00  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -144,120 +100,169 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi,
+On 04/11/2022 15:09, Guillaume Ranquet wrote:
+> Add mt8195 SoC bindings for hdmi and hdmi-ddc
+> 
+> On mt8195 the ddc i2c controller is part of the hdmi IP block and thus has no
+> specific register range, power domain or interrupt, making it simpler
+> than its the legacy "mediatek,hdmi-ddc" binding.
+> 
+> Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
+> ---
+>  .../bindings/display/mediatek/mediatek,hdmi.yaml   | 61 ++++++++++++++++++----
+>  .../display/mediatek/mediatek,mt8195-hdmi-ddc.yaml | 51 ++++++++++++++++++
+>  2 files changed, 101 insertions(+), 11 deletions(-)
+> 
+> diff --git a/Documentation/devicetree/bindings/display/mediatek/mediatek,hdmi.yaml b/Documentation/devicetree/bindings/display/mediatek/mediatek,hdmi.yaml
+> index bdaf0b51e68c..9710b7b6e9bf 100644
+> --- a/Documentation/devicetree/bindings/display/mediatek/mediatek,hdmi.yaml
+> +++ b/Documentation/devicetree/bindings/display/mediatek/mediatek,hdmi.yaml
+> @@ -21,6 +21,7 @@ properties:
+>        - mediatek,mt7623-hdmi
+>        - mediatek,mt8167-hdmi
+>        - mediatek,mt8173-hdmi
+> +      - mediatek,mt8195-hdmi
+>  
+>    reg:
+>      maxItems: 1
+> @@ -29,18 +30,12 @@ properties:
+>      maxItems: 1
+>  
+>    clocks:
+> -    items:
+> -      - description: Pixel Clock
+> -      - description: HDMI PLL
+> -      - description: Bit Clock
+> -      - description: S/PDIF Clock
+> +    minItems: 4
 
-On Fri, Nov 04, 2022 at 05:35:29PM +0000, Aidan MacDonald wrote:
-> =
+Drop minItems, it's not needed when equal to maxItems.
 
-> Maxime Ripard <maxime@cerno.tech> writes:
-> =
+> +    maxItems: 4
+>  
+>    clock-names:
+> -    items:
+> -      - const: pixel
+> -      - const: pll
+> -      - const: bclk
+> -      - const: spdif
+> +    minItems: 4
 
-> > Hi Paul,
-> >
-> > On Fri, Nov 04, 2022 at 02:31:20PM +0000, Paul Cercueil wrote:
-> >> Le ven. 4 nov. 2022 =E0 14:18:13 +0100, Maxime Ripard <maxime@cerno.te=
-ch> a
-> >> =E9crit :
-> >> > The Ingenic CGU clocks implements a mux with a set_parent hook, but
-> >> > doesn't provide a determine_rate implementation.
-> >> >
-> >> > This is a bit odd, since set_parent() is there to, as its name impli=
-es,
-> >> > change the parent of a clock. However, the most likely candidate to
-> >> > trigger that parent change is a call to clk_set_rate(), with
-> >> > determine_rate() figuring out which parent is the best suited for a
-> >> > given rate.
-> >> >
-> >> > The other trigger would be a call to clk_set_parent(), but it's far =
-less
-> >> > used, and it doesn't look like there's any obvious user for that clo=
-ck.
-> >> >
-> >> > So, the set_parent hook is effectively unused, possibly because of an
-> >> > oversight. However, it could also be an explicit decision by the
-> >> > original author to avoid any reparenting but through an explicit cal=
-l to
-> >> > clk_set_parent().
-> >> >
-> >> > The driver does implement round_rate() though, which means that we c=
-an
-> >> > change the rate of the clock, but we will never get to change the
-> >> > parent.
-> >> >
-> >> > However, It's hard to tell whether it's been done on purpose or not.
-> >> >
-> >> > Since we'll start mandating a determine_rate() implementation, let's
-> >> > convert the round_rate() implementation to a determine_rate(), which
-> >> > will also make the current behavior explicit. And if it was an
-> >> > oversight, the clock behaviour can be adjusted later on.
-> >>
-> >> So it's partly on purpose, partly because I didn't know about
-> >> .determine_rate.
-> >>
-> >> There's nothing odd about having a lonely .set_parent callback; in my =
-case
-> >> the clocks are parented from the device tree.
-> >>
-> >> Having the clocks driver trigger a parent change when requesting a rate
-> >> change sounds very dangerous, IMHO. My MMC controller can be parented =
-to the
-> >> external 48 MHz oscillator, and if the card requests 50 MHz, it could =
-switch
-> >> to one of the PLLs. That works as long as the PLLs don't change rate, =
-but if
-> >> one is configured as driving the CPU clock, it becomes messy.
-> >> The thing is, the clocks driver has no way to know whether or not it is
-> >> "safe" to use a designated parent.
-> >>
-> >> For that reason, in practice, I never actually want to have a clock
-> >> re-parented - it's almost always a bad idea vs. sticking to the parent=
- clock
-> >> configured in the DTS.
-> >
-> > Yeah, and this is totally fine. But we need to be explicit about it. The
-> > determine_rate implementation I did in all the patches is an exact
-> > equivalent to the round_rate one if there was one. We will never ask to
-> > change the parent.
-> >
-> > Given what you just said, I would suggest to set the
-> > CLK_SET_RATE_NO_REPARENT flag as well.
->
-> Ideally there should be a way for drivers and the device tree to
-> say, "clock X must be driven by clock Y", but the clock framework
-> would be allowed to re-parent clocks freely as long as it doesn't
-> violate any DT or driver constraints.
+Drop minItems, it's not needed when equal to maxItems.
 
-I'm not really sure what you mean there, sorry. Isn't it what
-assigned-clock-parents/clk_set_parent() at probe, plus a determine_rate
-implementation that would affect best_parent_hw would already provide?
 
-> That way allowing reparenting doesn't need to be an all-or-nothing
-> thing, and it doesn't need to be decided at the clock driver level
-> with special flags.
+> +    maxItems: 4
+>  
+>    phys:
+>      maxItems: 1
+> @@ -58,6 +53,9 @@ properties:
+>      description: |
+>        phandle link and register offset to the system configuration registers.
+>  
+> +  power-domains:
+> +    maxItems: 1
+> +
+>    ports:
+>      $ref: /schemas/graph.yaml#/properties/ports
+>  
+> @@ -86,9 +84,50 @@ required:
+>    - clock-names
+>    - phys
+>    - phy-names
+> -  - mediatek,syscon-hdmi
+>    - ports
+>  
+> +allOf:
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            const: mediatek,mt8195-hdmi
+> +    then:
+> +      properties:
+> +        clocks:
+> +          items:
+> +            - description: APB
+> +            - description: HDCP
+> +            - description: HDCP 24M
+> +            - description: Split HDMI
+> +        clock-names:
+> +          items:
+> +            - const: hdmi_apb_sel
+> +            - const: hdcp_sel
+> +            - const: hdcp24_sel
+> +            - const: split_hdmi
+> +
+> +      required:
+> +        - power-domains
+> +    else:
+> +      properties:
+> +        clocks:
+> +          items:
+> +            - description: Pixel Clock
+> +            - description: HDMI PLL
+> +            - description: Bit Clock
+> +            - description: S/PDIF Clock
+> +
+> +        clock-names:
+> +          items:
+> +            - const: pixel
+> +            - const: pll
+> +            - const: bclk
+> +            - const: spdif
+> +
+> +      required:
+> +        - mediatek,syscon-hdmi
+> +
+>  additionalProperties: false
+>  
+>  examples:
+> diff --git a/Documentation/devicetree/bindings/display/mediatek/mediatek,mt8195-hdmi-ddc.yaml b/Documentation/devicetree/bindings/display/mediatek/mediatek,mt8195-hdmi-ddc.yaml
+> new file mode 100644
+> index 000000000000..2dc273689584
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/display/mediatek/mediatek,mt8195-hdmi-ddc.yaml
+> @@ -0,0 +1,51 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/display/mediatek/mediatek,mt8195-hdmi-ddc.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Mediatek HDMI DDC for mt8195
+> +
+> +maintainers:
+> +  - CK Hu <ck.hu@mediatek.com>
+> +  - Jitao shi <jitao.shi@mediatek.com>
+> +
+> +description: |
+> +  The HDMI DDC i2c controller is used to interface with the HDMI DDC pins.
+> +
+> +properties:
+> +  compatible:
+> +    enum:
+> +      - mediatek,mt8195-hdmi-ddc
+> +
+> +  clocks:
+> +    maxItems: 1
+> +
+> +  clock-names:
+> +    items:
+> +      - const: ddc
 
-Like I said, the default implementation is already working to what you
-suggested if I understood properly. However, this has never been tested
-for any of the drivers in that series so I don't want to introduce (and
-debug ;)) regressions in all those drivers that were not setting any
-constraint but never actually tested their reparenting code.
+Unless you expect it to grow, I propose to drop clock-names. It's not
+useful when the name is the same as name of hardware.
 
-So that series is strictly equivalent to what you had before, it's just
-explicit now.
+Best regards,
+Krzysztof
 
-If you find that some other decision make sense for your driver in
-particular cases, feel free to change it. I barely know most of these
-platforms, so I won't be able to make that decision (and test it)
-unfortunately.
 
-Maxime
-
--- =
-
+-- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
