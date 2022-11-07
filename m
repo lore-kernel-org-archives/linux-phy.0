@@ -4,62 +4,97 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7B026C433FE
-	for <linux-phy@archiver.kernel.org>; Mon,  7 Nov 2022 02:37:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 76945C4332F
+	for <linux-phy@archiver.kernel.org>; Mon,  7 Nov 2022 07:52:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SWpCgYftZsRuBX8RHQN/g0EhndS8pOpQjW/7TjErCK8=; b=jz56Rg7CvvqbZP
-	PmboSkGurWGIv8Zh2nURaKdOc1P5ednf7hn0p7k3k1D28jR+AaYGuOiryDBhz07mvvXKaq8jqqrAn
-	ywvwMRh1ZI2QKzv44rLDx1ZLnVcSg7jNyMmFH3wtPJFx78p20wBzHsFu7/NKVBuV4WNtGr+EedAbl
-	L/JmoLMNDChLMG3UXwWcpvdIEonRbeiksBj6V5YhcjwO0iBjBtQw3FQ0fZ+FMMC+56EZrggs7md63
-	kFuzCoBOqxbJkuiYNb0f3hnRz3twB/G66A13V5Plzd2JUqKXPNXo9rwIShPc1Q137IfkI17EsQUuD
-	wv2Byb1Tj0t6a3vf+LKw==;
+	List-Owner; bh=wpqls8tT0cq3tXP92O0ckafKNeebjl8gexJR5WkiPVg=; b=dT/t+KvrxK5ERl
+	vFZC62/VPD8Awl1vq5J/s67ZZzKDWYTbO6QlT6eVn+RpAWU1Dqy2+t0rCkOVYZgLlOkCCqbhchcMG
+	93+D8AWl2b9OqPxzh7lZkn1579QoUqxInw4gk410HrjQSfH9g+h7P8pIhYXlIcgBAVUKCKmFhbJRe
+	nafmOasaZAnIY6WxpSm5DhkehOa2v9t0YWOebhcJJnQCFLiidJXZtmVEnFmfp4Zs12rSUZ5sdFt0u
+	JMkjoy8OAHvSgZPUkSTKYlxijESwgbc9+V3t8wgCX2ahYfaN5sgAxMivhkDQRAHCYzNghUq2qw0jx
+	k/IKf9ASU3qTK3OTzlDA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ors0S-00BAK9-LN; Mon, 07 Nov 2022 02:37:00 +0000
-Received: from mx.socionext.com ([202.248.49.38])
-	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ors0I-00BAIq-7y; Mon, 07 Nov 2022 02:36:52 +0000
-Received: from unknown (HELO iyokan2-ex.css.socionext.com) ([172.31.9.54])
-  by mx.socionext.com with ESMTP; 07 Nov 2022 11:36:44 +0900
-Received: from mail.mfilter.local (m-filter-1 [10.213.24.61])
-	by iyokan2-ex.css.socionext.com (Postfix) with ESMTP id A4D0020584CE;
-	Mon,  7 Nov 2022 11:36:44 +0900 (JST)
-Received: from 172.31.9.51 (172.31.9.51) by m-FILTER with ESMTP; Mon, 7 Nov 2022 11:36:44 +0900
-Received: from [10.212.157.112] (unknown [10.212.157.112])
-	by kinkan2.css.socionext.com (Postfix) with ESMTP id 3140EB62A4;
-	Mon,  7 Nov 2022 11:36:44 +0900 (JST)
-Message-ID: <c699e361-a8a3-c6d3-9db4-1e1d07fc6b5b@socionext.com>
-Date: Mon, 7 Nov 2022 11:36:43 +0900
+	id 1orwvi-00Cl18-OX; Mon, 07 Nov 2022 07:52:26 +0000
+Received: from mail-oi1-f173.google.com ([209.85.167.173])
+	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
+	id 1orwve-00CkNs-IO; Mon, 07 Nov 2022 07:52:24 +0000
+Received: by mail-oi1-f173.google.com with SMTP id l127so11303244oia.8;
+        Sun, 06 Nov 2022 23:52:20 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=hLKOOl0yo7YI7pAdrLyTR/NQWG7rhWdAq87I8wp+XOk=;
+        b=Mp42spz/zDTazHphj2S1wSQ+DPH4cwh072WkPreMhPebH6gzI4yvg8G3+A+2KWx3Po
+         qsCQhOhqIuHYYahSp4Qd9nUX/bFsKNcFmrxERB5hUcSNnzCxueQmKr8vbwg2bhT90B6k
+         f5C7EhePToe8hhyCEgbWqfXuLMDsTII4r2LApQV7Iq9DITKLVw7hDrh0Jjv7s0r7wGIc
+         m01/jJ6ok2rj+dpJ6LtIHEZuFVHDeulIZVI9jWtwe1EgNgKoCb1wj/WomE2FbE2MK8Ra
+         RfBYneuJOzSaqBtQHuRC7G/HAUFFtNv+z1mfwxn18q9fK9ECOK+MH0mOAiyq5yOM+27u
+         PZ2Q==
+X-Gm-Message-State: ACrzQf2vpIctMHeAa+qCIF3SCJXy4n5qTs2oaDG2ktjJ9dqywHmlNk/b
+	nGbl4m/Lt+k9MVZNFj58NWB6fge6+Bdd0Q==
+X-Google-Smtp-Source: AMsMyM4Rp38hni7QQEwRBgDxaCi2A3FZ/V/8hlcJ6i9H2wHdcS54YEBFqFL1NPcIstp3HpEyF84/MQ==
+X-Received: by 2002:aca:1c03:0:b0:359:c144:7f6 with SMTP id c3-20020aca1c03000000b00359c14407f6mr31351723oic.83.1667807539884;
+        Sun, 06 Nov 2022 23:52:19 -0800 (PST)
+Received: from mail-ot1-f43.google.com (mail-ot1-f43.google.com. [209.85.210.43])
+        by smtp.gmail.com with ESMTPSA id ca1-20020a056830610100b0066ca61230casm2171365otb.8.2022.11.06.23.52.19
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sun, 06 Nov 2022 23:52:19 -0800 (PST)
+Received: by mail-ot1-f43.google.com with SMTP id l42-20020a9d1b2d000000b0066c6366fbc3so6075632otl.3;
+        Sun, 06 Nov 2022 23:52:19 -0800 (PST)
+X-Received: by 2002:a81:9c49:0:b0:34a:de:97b8 with SMTP id n9-20020a819c49000000b0034a00de97b8mr45959924ywa.384.1667807529144;
+ Sun, 06 Nov 2022 23:52:09 -0800 (PST)
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.4.2
-Subject: Re: [PATCH 2/2] dt-bindings: phy: Fix UniPhier SATA controller node
- names in example
-To: Vinod Koul <vkoul@kernel.org>
-Cc: Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>,
- Masami Hiramatsu <mhiramat@kernel.org>, devicetree@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-References: <20221027044920.23194-1-hayashi.kunihiko@socionext.com>
- <20221027044920.23194-3-hayashi.kunihiko@socionext.com>
- <20221028193859.GA2188803-robh@kernel.org>
- <0d7636f6-2c51-587d-1961-face98dfa056@socionext.com>
- <CAL_Jsq+8Rm9v4megza14JPyamV-9Yr4iAa5r+HhM6qtdHRWEBw@mail.gmail.com>
- <07155116-2027-2916-5a39-e4dff8298b27@socionext.com>
- <Y2YSGDOXpRQ8MIoR@matsya>
-Content-Language: en-US
-From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-In-Reply-To: <Y2YSGDOXpRQ8MIoR@matsya>
+References: <20221018-clk-range-checks-fixes-v2-0-f6736dec138e@cerno.tech> <20221018-clk-range-checks-fixes-v2-28-f6736dec138e@cerno.tech>
+In-Reply-To: <20221018-clk-range-checks-fixes-v2-28-f6736dec138e@cerno.tech>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Mon, 7 Nov 2022 08:51:56 +0100
+X-Gmail-Original-Message-ID: <CAMuHMdXee3Xf8G53anCq-4qfenHhgnMiyC1KhKo8Uv6-UV_jrw@mail.gmail.com>
+Message-ID: <CAMuHMdXee3Xf8G53anCq-4qfenHhgnMiyC1KhKo8Uv6-UV_jrw@mail.gmail.com>
+Subject: Re: [PATCH v2 28/65] clk: renesas: r9a06g032: Add a determine_rate hook
+To: Maxime Ripard <maxime@cerno.tech>
+Cc: Stephen Boyd <sboyd@kernel.org>, Maxime Coquelin <mcoquelin.stm32@gmail.com>, 
+	Chen-Yu Tsai <wens@csie.org>, Daniel Vetter <daniel@ffwll.ch>, 
+	Nicolas Ferre <nicolas.ferre@microchip.com>, Thierry Reding <thierry.reding@gmail.com>, 
+	Jaroslav Kysela <perex@perex.cz>, Shawn Guo <shawnguo@kernel.org>, Fabio Estevam <festevam@gmail.com>, 
+	Ulf Hansson <ulf.hansson@linaro.org>, Claudiu Beznea <claudiu.beznea@microchip.com>, 
+	Michael Turquette <mturquette@baylibre.com>, Dinh Nguyen <dinguyen@kernel.org>, 
+	Paul Cercueil <paul@crapouillou.net>, Chunyan Zhang <zhang.lyra@gmail.com>, 
+	Manivannan Sadhasivam <mani@kernel.org>, =?UTF-8?Q?Andreas_F=C3=A4rber?= <afaerber@suse.de>, 
+	Jonathan Hunter <jonathanh@nvidia.com>, Abel Vesa <abelvesa@kernel.org>, 
+	Charles Keepax <ckeepax@opensource.cirrus.com>, Alessandro Zummo <a.zummo@towertech.it>, 
+	Peter De Schrijver <pdeschrijver@nvidia.com>, Orson Zhai <orsonzhai@gmail.com>, 
+	Alexandre Torgue <alexandre.torgue@foss.st.com>, Prashant Gaikwad <pgaikwad@nvidia.com>, 
+	Liam Girdwood <lgirdwood@gmail.com>, Alexandre Belloni <alexandre.belloni@bootlin.com>, 
+	Samuel Holland <samuel@sholland.org>, Matthias Brugger <matthias.bgg@gmail.com>, 
+	Richard Fitzgerald <rf@opensource.cirrus.com>, Vinod Koul <vkoul@kernel.org>, 
+	NXP Linux Team <linux-imx@nxp.com>, Sekhar Nori <nsekhar@ti.com>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Linus Walleij <linus.walleij@linaro.org>, 
+	Takashi Iwai <tiwai@suse.com>, David Airlie <airlied@gmail.com>, 
+	Luca Ceresoli <luca.ceresoli@bootlin.com>, Jernej Skrabec <jernej.skrabec@gmail.com>, 
+	Pengutronix Kernel Team <kernel@pengutronix.de>, Baolin Wang <baolin.wang@linux.alibaba.com>, 
+	David Lechner <david@lechnology.com>, Sascha Hauer <s.hauer@pengutronix.de>, 
+	Mark Brown <broonie@kernel.org>, Max Filippov <jcmvbkbc@gmail.com>, 
+	Geert Uytterhoeven <geert+renesas@glider.be>, linux-stm32@st-md-mailman.stormreply.com, 
+	alsa-devel@alsa-project.org, linux-mediatek@lists.infradead.org, 
+	linux-phy@lists.infradead.org, linux-mips@vger.kernel.org, 
+	linux-renesas-soc@vger.kernel.org, linux-actions@lists.infradead.org, 
+	linux-clk@vger.kernel.org, 
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, patches@opensource.cirrus.com, 
+	linux-tegra@vger.kernel.org, linux-rtc@vger.kernel.org, 
+	linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev, 
+	linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org, 
+	Gareth Williams <gareth.williams.jx@renesas.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221106_183650_444973_8DE992F9 
-X-CRM114-Status: GOOD (  17.81  )
+X-CRM114-CacheID: sfid-20221106_235222_638963_C0F36289 
+X-CRM114-Status: GOOD (  31.38  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,81 +106,73 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Vinod,
+CC Gareth
 
-On 2022/11/05 16:34, Vinod Koul wrote:
-> On 02-11-22, 08:14, Kunihiko Hayashi wrote:
->> On 2022/11/02 4:31, Rob Herring wrote:
->>> On Tue, Nov 1, 2022 at 4:10 AM Kunihiko Hayashi
->>> <hayashi.kunihiko@socionext.com> wrote:
->>>>
->>>> Hi Rob,
->>>>
->>>> On 2022/10/29 4:38, Rob Herring wrote:
->>>>> On Thu, Oct 27, 2022 at 01:49:20PM +0900, Kunihiko Hayashi wrote:
->>>>>> The word "glue" is ambiguous for the controller node name.
-> Should put
->>>>>> "sata-controller" instead of "ahci-glue" on the controller node.
->>>>>> And rename a phy node to "sata-phy".
->>>>>>
->>>>>> Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
->>>>>> ---
->>>>>>     .../devicetree/bindings/phy/socionext,uniphier-ahci-phy.yaml
-> | 4
->>>>>> ++--
->>>>>>     1 file changed, 2 insertions(+), 2 deletions(-)
->>>>>>
->>>>>> diff --git
->>>>>
-> a/Documentation/devicetree/bindings/phy/socionext,uniphier-ahci-phy.yaml
->>>>>
-> b/Documentation/devicetree/bindings/phy/socionext,uniphier-ahci-phy.yaml
->>>>>> index a3cd45acea28..89b8b133777a 100644
->>>>>> ---
->>>>>>
-> a/Documentation/devicetree/bindings/phy/socionext,uniphier-ahci-phy.
->>>>> yaml
->>>>>> +++
->>>>>>
-> b/Documentation/devicetree/bindings/phy/socionext,uniphier-ahci-phy.
->>>>> yaml
->>>>>> @@ -117,14 +117,14 @@ additionalProperties: false
->>>>>>
->>>>>>     examples:
->>>>>>       - |
->>>>>> -    ahci-glue@65700000 {
->>>>>> +    sata-controller@65700000 {
->>>>>
->>>>> But is this really the SATA controller aka AHCI?
->>>>>
->>>>> In cases where we don't have a standardized name, I don't think it
-> makes
->>>>> sense changing node names from one non-standard name to another.
->>>>
->>>> I see. This can't be named generic, so this change will drop.
->>>> And "sata-phy" in the same way.
->>>
->>> I think sata-phy is fine. It may not be added, but usb3-phy or
->>> pcie-phy are common already.
->> I understand. But of cource "phy" is also common, so I defer the change
->> from "phy" to "sata-phy".
-> 
-> Should it not be just phy@xxx does it really need to be foo-phy?
-
-This change was pointed out in the previous review for our devicetree,
-so I made this change in the devicetree, however, I think I can leave it
-as "phy" until the properties that depend on "sata-phy" are defined.
-
-Thank you,
-
----
-Best Regards
-Kunihiko Hayashi
+On Fri, Nov 4, 2022 at 2:18 PM Maxime Ripard <maxime@cerno.tech> wrote:
+>
+> The Renesas r9a06g032 bitselect clock implements a mux with a set_parent
+> hook, but doesn't provide a determine_rate implementation.
+>
+> This is a bit odd, since set_parent() is there to, as its name implies,
+> change the parent of a clock. However, the most likely candidate to
+> trigger that parent change is a call to clk_set_rate(), with
+> determine_rate() figuring out which parent is the best suited for a
+> given rate.
+>
+> The other trigger would be a call to clk_set_parent(), but it's far less
+> used, and it doesn't look like there's any obvious user for that clock.
+>
+> So, the set_parent hook is effectively unused, possibly because of an
+> oversight. However, it could also be an explicit decision by the
+> original author to avoid any reparenting but through an explicit call to
+> clk_set_parent().
+>
+> The latter case would be equivalent to setting the flag
+> CLK_SET_RATE_NO_REPARENT, together with setting our determine_rate hook
+> to __clk_mux_determine_rate(). Indeed, if no determine_rate
+> implementation is provided, clk_round_rate() (through
+> clk_core_round_rate_nolock()) will call itself on the parent if
+> CLK_SET_RATE_PARENT is set, and will not change the clock rate
+> otherwise. __clk_mux_determine_rate() has the exact same behavior when
+> CLK_SET_RATE_NO_REPARENT is set.
+>
+> And if it was an oversight, then we are at least explicit about our
+> behavior now and it can be further refined down the line.
+>
+> Signed-off-by: Maxime Ripard <maxime@cerno.tech>
+> ---
+>  drivers/clk/renesas/r9a06g032-clocks.c | 3 ++-
+>  1 file changed, 2 insertions(+), 1 deletion(-)
+>
+> diff --git a/drivers/clk/renesas/r9a06g032-clocks.c b/drivers/clk/renesas/r9a06g032-clocks.c
+> index 983faa5707b9..70c37097ca6e 100644
+> --- a/drivers/clk/renesas/r9a06g032-clocks.c
+> +++ b/drivers/clk/renesas/r9a06g032-clocks.c
+> @@ -773,6 +773,7 @@ static int r9a06g032_clk_mux_set_parent(struct clk_hw *hw, u8 index)
+>  }
+>
+>  static const struct clk_ops clk_bitselect_ops = {
+> +       .determine_rate = __clk_mux_determine_rate,
+>         .get_parent = r9a06g032_clk_mux_get_parent,
+>         .set_parent = r9a06g032_clk_mux_set_parent,
+>  };
+> @@ -797,7 +798,7 @@ r9a06g032_register_bitsel(struct r9a06g032_priv *clocks,
+>
+>         init.name = desc->name;
+>         init.ops = &clk_bitselect_ops;
+> -       init.flags = CLK_SET_RATE_PARENT;
+> +       init.flags = CLK_SET_RATE_PARENT | CLK_SET_RATE_NO_REPARENT;
+>         init.parent_names = names;
+>         init.num_parents = 2;
+>
+>
+> --
+> b4 0.11.0-dev-99e3a
 
 -- 
 linux-phy mailing list
