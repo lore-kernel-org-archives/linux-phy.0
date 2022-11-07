@@ -4,73 +4,111 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 25CDEC4332F
-	for <linux-phy@archiver.kernel.org>; Mon,  7 Nov 2022 11:21:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 17D3FC433FE
+	for <linux-phy@archiver.kernel.org>; Mon,  7 Nov 2022 12:06:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5Q900aNDWjJoKTrUK11E67KCn21On55P2vnGw3XlRpc=; b=lGWsb8RW9cE+Mv
-	2yRqAmMJPL3CBfBhiYVfLfLidZFQ8XuGcrYIiWO2l6pGM/mmG0ee7cXyX6t3Dm4n3SS4cJlpS+tC1
-	xyAlY7w6aZgWKVVfvBzNiGnNF4ZXzX/YpN+qAlI9q4h+ijA62vBL3Zz/dy5bhYKgGM2XAQ1c9EPno
-	uSMemfVHby0WX2CddBtYRNe9wSD/BTYduJBL+i2HMKoS/Re2OAPUz4yYW2/cecF5LteSbsBUnk5Xk
-	yXHjIv+7pu3WK1j0eppvZwFe12wQ69kC6/k2WZ7aC7G5YlLyoNtiVMbglh3B3o8zLXEtNEiZvFv9q
-	1Sxd/FH62UzHlBkCzRew==;
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=K0hn3g2dQ1o7hKSBO1OiQfpfaC11AXo9eRWsM8Ilpuk=; b=rSTrxNq4ECBicNi0cBWZloY0fR
+	hxMsTdHsvuaTUvh8L7n+GK0TISYUtLGR7vY3GhNmhGvBy3H9x6Q/1W4QFQAuRZqLtCP1Ir0umPTuN
+	IGQwzeGiFZqK6naHmTG1RId0cYAlsT5CJtHwj6tI9YtWJgn9WuRrT94kkYy55f7WGVbeIWUdD5Jxz
+	DQ1Z1CKysNPJCTm99txFKUCy+yZg97DP4oeCwNa/AloAqerqa4KzdH5FzK6JKfdiO89Ags9+nTfpj
+	tp1UB2wmbnq37+Pv3jm4uMURVXrOwY3/y1SCdAbd3Xa9L6x9RMy3b+K5V3kvf0ZaIQc5v+d7d9vM+
+	bFowRjzQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1os0Bb-00E74e-FM; Mon, 07 Nov 2022 11:21:03 +0000
-Received: from madras.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e5ab])
+	id 1os0ta-00EOSf-Fo; Mon, 07 Nov 2022 12:06:30 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1os0B1-00E6mu-Tu; Mon, 07 Nov 2022 11:20:29 +0000
-Received: from [192.168.1.100] (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
+	id 1os0tV-00EORC-Oa; Mon, 07 Nov 2022 12:06:27 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	(Authenticated sender: kholk11)
-	by madras.collabora.co.uk (Postfix) with ESMTPSA id 8D343660283A;
-	Mon,  7 Nov 2022 11:20:25 +0000 (GMT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1667820026;
-	bh=4GLK87T5vBSOqiSGloJWJSHYEYZ8q1Ph3WTRsU8DmKk=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=b48ldE8vEdmB4cELPLhlq6/zg5UPab9Qz4/Xfxs+Vv2fyJEFUzO4H4B+cLiHeTSv7
-	 TRkgiPTGbxGoK4lOleFzzdyOq2O3guLGtKJlq2x3+VLRntrLNizVnYSOQbmWTZc0gB
-	 E3BRzEDA0+SSlB9e3nlag9iOGwyQWomlpdmfqp8Z5DFSX8vIAwzNFt8sGFLfS7mwhr
-	 JgEqp4K0BXNVqHzrI2BknmldG4vQ9yO1VSAwuoe6suqkozOBM5giMiGAnvNbqe9HwG
-	 aWr945ZoVmPM57JozrbJzg1sUkmNcOvP9n7fbCWwfKfrzlI6XW4Sk8G7t0YFuVDg/m
-	 k1nKr69ca5i1w==
-Message-ID: <96d0f2d2-24b9-0838-4538-7d70c01ddace@collabora.com>
-Date: Mon, 7 Nov 2022 12:20:23 +0100
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 2025C60FFB;
+	Mon,  7 Nov 2022 12:06:24 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 46DD2C433D6;
+	Mon,  7 Nov 2022 12:06:11 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1667822783;
+	bh=TjwC/oCNbbUzKPDP67kFN1hAvayD11aeO+3EJVwBAHE=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=uVU4PMxo1R8a3xp/WKHs1dq/6doMgdlOpIsmcirQbv3czoZbcxWJpPwnRrBpNnLaM
+	 RIaI2ploJwL3I8PSy07X4klDoFGje/zAjmQm0GMafEh6v9eSVzb3H6UHbMJeGYIK/0
+	 3HkQjVeGkkfj4w3q16A9Jpu8h/eTG5MQNUyBXtMwVQBVCZBvcrvN6PBx8wq4Un2SsG
+	 waxoneKGslH7u6FU8MFJJQeOVg92oqhsWrP6aKBcVt7eUdvfzyvh8bep0OHaNEym9f
+	 kwo9TcnG/5EsDXRnkiFTaef9nelMlw97dI2zZnD+Bud8Et09b4EPGmFQOKomMmC6mm
+	 cuDEys2QhiEog==
+Date: Mon, 7 Nov 2022 12:06:07 +0000
+From: Mark Brown <broonie@kernel.org>
+To: Maxime Ripard <maxime@cerno.tech>
+Cc: Stephen Boyd <sboyd@kernel.org>,
+	Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+	Chen-Yu Tsai <wens@csie.org>, Daniel Vetter <daniel@ffwll.ch>,
+	Nicolas Ferre <nicolas.ferre@microchip.com>,
+	Thierry Reding <thierry.reding@gmail.com>,
+	Jaroslav Kysela <perex@perex.cz>, Shawn Guo <shawnguo@kernel.org>,
+	Fabio Estevam <festevam@gmail.com>,
+	Ulf Hansson <ulf.hansson@linaro.org>,
+	Claudiu Beznea <claudiu.beznea@microchip.com>,
+	Michael Turquette <mturquette@baylibre.com>,
+	Dinh Nguyen <dinguyen@kernel.org>,
+	Paul Cercueil <paul@crapouillou.net>,
+	Chunyan Zhang <zhang.lyra@gmail.com>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Andreas =?iso-8859-1?Q?F=E4rber?= <afaerber@suse.de>,
+	Jonathan Hunter <jonathanh@nvidia.com>,
+	Abel Vesa <abelvesa@kernel.org>,
+	Charles Keepax <ckeepax@opensource.cirrus.com>,
+	Alessandro Zummo <a.zummo@towertech.it>,
+	Peter De Schrijver <pdeschrijver@nvidia.com>,
+	Orson Zhai <orsonzhai@gmail.com>,
+	Alexandre Torgue <alexandre.torgue@foss.st.com>,
+	Prashant Gaikwad <pgaikwad@nvidia.com>,
+	Liam Girdwood <lgirdwood@gmail.com>,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Samuel Holland <samuel@sholland.org>,
+	Matthias Brugger <matthias.bgg@gmail.com>,
+	Richard Fitzgerald <rf@opensource.cirrus.com>,
+	Vinod Koul <vkoul@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+	Sekhar Nori <nsekhar@ti.com>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Linus Walleij <linus.walleij@linaro.org>,
+	Takashi Iwai <tiwai@suse.com>, David Airlie <airlied@gmail.com>,
+	Luca Ceresoli <luca.ceresoli@bootlin.com>,
+	Jernej Skrabec <jernej.skrabec@gmail.com>,
+	Pengutronix Kernel Team <kernel@pengutronix.de>,
+	Baolin Wang <baolin.wang@linux.alibaba.com>,
+	David Lechner <david@lechnology.com>,
+	Sascha Hauer <s.hauer@pengutronix.de>,
+	Max Filippov <jcmvbkbc@gmail.com>,
+	Geert Uytterhoeven <geert+renesas@glider.be>,
+	linux-stm32@st-md-mailman.stormreply.com,
+	alsa-devel@alsa-project.org, linux-mediatek@lists.infradead.org,
+	linux-phy@lists.infradead.org, linux-mips@vger.kernel.org,
+	linux-renesas-soc@vger.kernel.org,
+	linux-actions@lists.infradead.org, linux-clk@vger.kernel.org,
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	patches@opensource.cirrus.com, linux-tegra@vger.kernel.org,
+	linux-rtc@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-sunxi@lists.linux.dev, linux-kernel@vger.kernel.org,
+	dri-devel@lists.freedesktop.org
+Subject: Re: [PATCH v2 43/65] ASoC: tlv320aic32x4: Add a determine_rate hook
+Message-ID: <Y2j0r0wX1XtQBvqO@sirena.org.uk>
+References: <20221018-clk-range-checks-fixes-v2-0-f6736dec138e@cerno.tech>
+ <20221018-clk-range-checks-fixes-v2-43-f6736dec138e@cerno.tech>
+ <Y2UzdYyjgahJsbHg@sirena.org.uk>
+ <20221104155123.qomguvthehnogkdd@houat>
+ <Y2U2+ePwRieYkNjv@sirena.org.uk>
+ <20221107084322.gk4j75r52zo5k7xk@houat>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.3.3
-Subject: Re: [PATCH v3 01/12] dt-bindings: phy: mediatek: hdmi-phy: Add mt8195
- compatible
-Content-Language: en-US
-To: Guillaume Ranquet <granquet@baylibre.com>,
- Rob Herring <robh+dt@kernel.org>, Chun-Kuang Hu <chunkuang.hu@kernel.org>,
- Chunfeng Yun <chunfeng.yun@mediatek.com>, Jitao shi
- <jitao.shi@mediatek.com>, Matthias Brugger <matthias.bgg@gmail.com>,
- Vinod Koul <vkoul@kernel.org>, CK Hu <ck.hu@mediatek.com>,
- Daniel Vetter <daniel@ffwll.ch>, David Airlie <airlied@gmail.com>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Kishon Vijay Abraham I <kishon@ti.com>
-Cc: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
- linux-arm-kernel@lists.infradead.org, stuart.lee@mediatek.com,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- linux-mediatek@lists.infradead.org, devicetree@vger.kernel.org,
- mac.shen@mediatek.com, linux-phy@lists.infradead.org
-References: <20220919-v3-0-a803f2660127@baylibre.com>
- <20220919-v3-1-a803f2660127@baylibre.com>
-From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-In-Reply-To: <20220919-v3-1-a803f2660127@baylibre.com>
+In-Reply-To: <20221107084322.gk4j75r52zo5k7xk@houat>
+X-Cookie: Minimum charge for booths.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221107_032028_144096_4AE3D241 
-X-CRM114-Status: UNSURE (   7.08  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20221107_040625_913279_938A3CEE 
+X-CRM114-Status: GOOD (  27.98  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,27 +120,79 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Type: multipart/mixed; boundary="===============4065626556579431097=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Il 04/11/22 15:09, Guillaume Ranquet ha scritto:
-> Add a compatible for the HDMI PHY on MT8195
-> 
-> Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-> Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
 
-Ack and R-b tags go after your S-o-b.
-
-Apart from that:
-Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+--===============4065626556579431097==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="fjklijebr6IM77Hd"
+Content-Disposition: inline
 
 
+--fjklijebr6IM77Hd
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+On Mon, Nov 07, 2022 at 09:43:22AM +0100, Maxime Ripard wrote:
+> On Fri, Nov 04, 2022 at 03:59:53PM +0000, Mark Brown wrote:
+
+> > Well, hopefully everyone for whom it's an issue currently will be
+> > objecting to this version of the change anyway so we'll either know
+> > where to set the flag or we'll get the whack-a-mole with the series
+> > being merged?
+
+> I'm sorry, I'm not sure what you mean here. The only issue to fix at the
+> moment is that determine_rate and set_parent aren't coupled, and it led
+> to issues due to oversight.
+
+> I initially added a warning but Stephen wanted to fix all users in that
+> case and make that an error instead.
+
+My suggestion is that instead of doing either of these things it'd be
+quicker and less error prone to just fix the core to provide the default
+implementation if nothing more specific is provided.  Any issues that
+causes would already be present with your current series.
+
+> If I filled __clk_mux_determine_rate into clocks that weren't using it
+> before, I would change their behavior. With that flag set, on all users
+> I add __clk_mux_determine_rate to, the behavior is the same than what we
+> previously had, so the risk of regressions is minimal, and everything
+> should keep going like it was?
+
+The series does fill in __clk_mux_determine_rate for everything though -
+if it was just assumed by default the only thing that'd be needed would
+be adding the flag.
+
+--fjklijebr6IM77Hd
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAmNo9K4ACgkQJNaLcl1U
+h9CrmQf/bbIS1m2oXUj6n0mwM7QBssq/2mPiYM5zHCkJ5nf48MDZPWSwMuq37myq
+q8lR7tDeZBdU/MtjTTpvWo8j/TLyZRrhWhX5rItRjfhZdXtePpp0tci4nHKyvWuD
+Lc6+WJkeyUQsy93Y0qyvKl9DZ8o4Dyqs/lM7kkCEy+9eJNaT7QFAFZYhdUN2FJAR
+2YiQG2mvchxdE7SyVxMsOfXX/J6haXQKAcKej6M1HpuJukPGEKH2N9WqfKKNUuWY
+rMJ0QnheSBUxkPHRzdDOMo2k+xDK6cOSg8RxRtKQ2djWWWXII5JWs6VyVHLeK6Cx
+9KTsnJ+fIbHK0GK9Pq3vm90Uk4W3Ng==
+=y36Q
+-----END PGP SIGNATURE-----
+
+--fjklijebr6IM77Hd--
 
 
+--===============4065626556579431097==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============4065626556579431097==--
+
