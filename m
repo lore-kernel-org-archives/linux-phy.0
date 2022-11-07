@@ -4,73 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1714BC4332F
-	for <linux-phy@archiver.kernel.org>; Mon,  7 Nov 2022 17:18:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 50EAFC433FE
+	for <linux-phy@archiver.kernel.org>; Mon,  7 Nov 2022 17:19:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Kg3jPu3F4Lh/o7aEVGZQ/MnCqqvZpqQ23kBaHjUHXu4=; b=hoLxTv/UAwr7UX
-	z6SVyWJjWtUNUk0M/aC2gGE03rFZwIPur55XAOsOuxzArO6iD3ZAGp8Yidru0ZrCrR7/koJgWDvmg
-	fnpMyngqe6NX6+f/pt7llikb+o4wwp8m49ZLPexrxi6Jnc8jMMBtiepB0iSnN8Q8uJQeniKWZyNs7
-	gO7J/4n83zvvw9Dqk/n+AsewFFZr98GdhOwB00dxSuDepo+/xnzgeXdjq3AKmlATUyThcdCBBc5+F
-	wntDQGOEFmoXhOIRbfC+K5NHlmu8k+Pe3zex7MPzQSG9qBG0vrHAKxZmqB0qWWYx3BZa/kzk6DTFi
-	pKDmkMzCy446srCq8mXA==;
+	List-Owner; bh=G9qu/qY03qhTzAZJjs47ws/Hj30i//xPzY6OcMngEuY=; b=PCm6NVUCguoA9z
+	bR2RoiyYjYd9kryZg+hbEWJOy2kcDg+JxbLTLX9SnvRzI+YLJAc/Qr7GC+RJ83APMVQtIHHUzXvZz
+	J7wfDt5bzaAyzJ/Q/a9JrwSAOVZ9XehqAHoVXF6VoIQ2jfCs4Jb2dlxX6GayAL0EF0POAbP/imMbj
+	v4RQNY07/q1bXKmZlfBQcAbjZScxjca/mX3bB65Yapsgl/Sf2ua7WBtVY+xhYPjk3EWvXJOZSHpRn
+	R3wDLQCAPjDbt/GBr/KFWTYAlUSJfvToF7WrOez3jW7Mff+5RgSXJyZ4TJNrnjGpcx01VboDKToo9
+	/G3DhkYjKH1fEus4txhw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1os5lm-00Gbzj-F1; Mon, 07 Nov 2022 17:18:46 +0000
-Received: from mail-ej1-x632.google.com ([2a00:1450:4864:20::632])
+	id 1os5mS-00GcTT-Er; Mon, 07 Nov 2022 17:19:28 +0000
+Received: from mail-ed1-x52b.google.com ([2a00:1450:4864:20::52b])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1os5lb-00GbvC-Bs; Mon, 07 Nov 2022 17:18:36 +0000
-Received: by mail-ej1-x632.google.com with SMTP id kt23so31947394ejc.7;
-        Mon, 07 Nov 2022 09:18:30 -0800 (PST)
+	id 1os5mA-00GcIT-E5; Mon, 07 Nov 2022 17:19:11 +0000
+Received: by mail-ed1-x52b.google.com with SMTP id 21so18706319edv.3;
+        Mon, 07 Nov 2022 09:19:06 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=gmail.com; s=20210112;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=m+FL3EYtmTevx+/qcGveIJl0H5e1m/91jGuQ0ro55J0=;
-        b=DUznBw1PxsVpisi4ux5m0ygNTpMneN6HgLhaY0gCqNr4zYyifoCpVqSKvsnwyJjnC2
-         i5Rhq2cJARubP2+64WPHBO9zDgjXOhXQkStEgAvSQ5hOYRhHA0wzA0jCNfBsFAdDoCb+
-         91Fg4uAoTzylUw59WfohWOi4vdAf67w5uROfVrPa6dseoQNYSZ1w071aLrDPRIMTtgtr
-         imE2N1dWD3HY9T227a0AIALk9499TodWKdOcKGqj/vOr0q3J+YFgzGPvR1ni6i8drW+c
-         17Sdtb6a5LyC++DUSUoGzYZLBujb5VtR65SCcDki4NZLNQme/ZnT1GrUKIA0+DOQeuoe
-         LVfQ==
+        bh=WABWUxZUHt8M//n3pzxOX7MgxD/7jpIO4F4+cpbuU8Q=;
+        b=cpl9IXvObpPpjDH3q0oTFikx4eVLJa54BcB/VF0a60o7zdTUxUZjVIJCeZu8YGuHkd
+         amLM3TtYK/VXTOi1Ex9hUPMTvVoRB36Nm6yAMunAenrqLerTNX8L1TvFt2mxvodyttp2
+         ZGuky8vhB+yro3tgFDE38RD+V3wDU+eTW8Lmz3XeS+W0oIfEwcwYIkjg3MOeSjgHZZlQ
+         Nav/8phCbPoH7E6RoJv4xH4jtV3IViXN+pxzSMBkQSol8Zt5PVE7pGXJmmSlGqAyW/Rz
+         PIPEyRWHpePO6Cx0T8nawzfcZCFn5wHF1gcheffTNhyB1m998KTAvmVxcYbVK3iUHTwT
+         njfA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=m+FL3EYtmTevx+/qcGveIJl0H5e1m/91jGuQ0ro55J0=;
-        b=XQtoqYlFe69L4QkLBnxDeorDevvBSl6Lql6xnLhJuawSWT4zgrLhaDnRnhgp6SpCbf
-         buJeziRMHkBiUKlR7YdrqcFOifD8aw8kW8gh0tNqUEnfDSaIUIN7JcbIrFXMW6EkEiDq
-         7Bcsr6Nb2X2pChEehPdAFcmZ/HJbvc77D4tBCpTz9AqcCKHELvTq//SGNSIdzVOzR6/d
-         owlXlJeVQdVMAhvWS+RrigB/4+BeMyzhosq4wqFCBwU10yJujS3LuTcrWvV/Uny1TMXI
-         aLmxg/0BGdzq2bD4c5v9AQc8xZ3DicrSDx8JQdHylzzWpbQrlOsUZ+OnPYsALEEO3hhb
-         uGbw==
-X-Gm-Message-State: ACrzQf0VmEBiOBFBsc+PbEHDIQuBc/PYxEb2o0A1YgBa1SrJFrPkmLQb
-	8zq9Olbtcqx72Ao4cfETmu0=
-X-Google-Smtp-Source: AMsMyM6mV3aLso4CUT6uTdUiMHuu3LgcREAPDJpTwtCVBhcwZHXn3+qSLcJ2foQdm1a08lQY1XzMNQ==
-X-Received: by 2002:a17:907:720d:b0:7a9:b7e6:8612 with SMTP id dr13-20020a170907720d00b007a9b7e68612mr48312406ejc.435.1667841508935;
-        Mon, 07 Nov 2022 09:18:28 -0800 (PST)
+        bh=WABWUxZUHt8M//n3pzxOX7MgxD/7jpIO4F4+cpbuU8Q=;
+        b=xaqvb6DtxHyu4maLuW/s83wJ6/M31BDd0GCNtXTzrHkG5lba+SOHuwH5XkWBCwMt6L
+         1q8wyYY7sKyJOD2JM5zLi8WEPhb50c/eb5181SjDS2yrNlC3Pg1Uft38q5FVEl6d+8Y9
+         kAl8SKHIiULn/onugL7dEj0J9ZINPaHpC8eO5YW74gO1BUisKFqhtI6lFokeLVBLILpO
+         xVbsBBhJIuUq6Ttg6+9/aQGsV2pMqDhRZFvbcK1/kgmqyfbpGzATAs30HrG4gXT3gOpw
+         TYCPlHXRC6sZGLaFKizkxfORNEXY9lozgA+kQPTDpJ9af4j37uKOxkMqj/dhaYvvRPdP
+         cYlQ==
+X-Gm-Message-State: ACrzQf2vmGD3y3XTa02hs74Guo1lQxM+90xvPFmaZ/z5x/jV92Y0hWRt
+	CSaywrh+/0A8Dr5Q9f00WVk=
+X-Google-Smtp-Source: AMsMyM5VWvezBWyZBcC5CBPMjq7W4wsBETjGxm7Jxg6eDUizPN9CQhdCoHHadTq4T1yOhrqyQQBoUQ==
+X-Received: by 2002:aa7:cfda:0:b0:461:9d22:3484 with SMTP id r26-20020aa7cfda000000b004619d223484mr53028888edy.142.1667841545234;
+        Mon, 07 Nov 2022 09:19:05 -0800 (PST)
 Received: from kista.localnet (82-149-19-102.dynamic.telemach.net. [82.149.19.102])
-        by smtp.gmail.com with ESMTPSA id b18-20020a1709062b5200b00731582babcasm3698252ejg.71.2022.11.07.09.18.26
+        by smtp.gmail.com with ESMTPSA id eh9-20020a0564020f8900b004587f9d3ce8sm4471906edb.56.2022.11.07.09.19.04
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 07 Nov 2022 09:18:27 -0800 (PST)
+        Mon, 07 Nov 2022 09:19:04 -0800 (PST)
 From: Jernej =?utf-8?B?xaBrcmFiZWM=?= <jernej.skrabec@gmail.com>
 To: Chen-Yu Tsai <wens@csie.org>, Samuel Holland <samuel@sholland.org>, Rob Herring <robh+dt@kernel.org>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Icenowy Zheng <uwu@icenowy.me>, Andre Przywara <andre.przywara@arm.com>
 Cc: soc@kernel.org, devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev, linux-phy@lists.infradead.org, linux-usb@vger.kernel.org
-Subject: Re: [PATCH v3 03/11] phy: sun4i-usb: add support for the USB PHY on F1C100s SoC
-Date: Mon, 07 Nov 2022 18:18:26 +0100
-Message-ID: <2652859.mvXUDI8C0e@kista>
-In-Reply-To: <20221106154826.6687-4-andre.przywara@arm.com>
-References: <20221106154826.6687-1-andre.przywara@arm.com> <20221106154826.6687-4-andre.przywara@arm.com>
+Subject: Re: [PATCH v3 05/11] ARM: dts: suniv: add USB-related device nodes
+Date: Mon, 07 Nov 2022 18:19:03 +0100
+Message-ID: <5616911.DvuYhMxLoT@kista>
+In-Reply-To: <20221106154826.6687-6-andre.przywara@arm.com>
+References: <20221106154826.6687-1-andre.przywara@arm.com> <20221106154826.6687-6-andre.przywara@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221107_091835_438808_F0130C17 
-X-CRM114-Status: UNSURE (   8.89  )
+X-CRM114-CacheID: sfid-20221107_091910_499253_9AFC40EF 
+X-CRM114-Status: UNSURE (   8.52  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -88,14 +88,16 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Dne nedelja, 06. november 2022 ob 16:48:18 CET je Andre Przywara napisal(a):
+Dne nedelja, 06. november 2022 ob 16:48:20 CET je Andre Przywara napisal(a):
 > From: Icenowy Zheng <uwu@icenowy.me>
 > 
-> The F1C100s SoC has one USB OTG port connected to a MUSB controller.
+> The suniv SoC has a USB OTG controller and a USB PHY like other
+> Allwinner SoCs.
 > 
-> Add support for its USB PHY.
+> Add their device tree node.
 > 
 > Signed-off-by: Icenowy Zheng <uwu@icenowy.me>
+> Reviewed-by: Andre Przywara <andre.przywara@arm.com>
 > Signed-off-by: Andre Przywara <andre.przywara@arm.com>
 
 Acked-by: Jernej Skrabec <jernej.skrabec@gmail.com>
