@@ -4,33 +4,33 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E81F8C433FE
-	for <linux-phy@archiver.kernel.org>; Tue,  8 Nov 2022 00:55:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0C96AC4332F
+	for <linux-phy@archiver.kernel.org>; Tue,  8 Nov 2022 00:55:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=wQaZGuNC+DuBYq+D+u3VwslP3Eq6jCH1gt531Mnahf0=; b=qIVcsH2QWorxnu
-	LUfDM/pgWlq3+moI4YnifzzmaFPNGZfAqZKqp+SHtQ/X5BgFCShIQdA19HSc8Oykz+NyhlqCwm4fG
-	456/O3hWtv8tyG4lvSK1FspG4bCzO5tDrj3FIZju+RyOikyNfndG9s+6l7oyPmKBNt+pT/5gumP8T
-	6PhdnyfXZ6qwnWKHR6b0s9J3AxLAdg6qdT6DH9SeJ99idC/2YbLN032h57hoGawqJOhztzuw14XLa
-	yxaqMfYABfoVtMfJn24adrLTwdYWdEUGRbQrg1Z+0SoMcIax1cGgehLQvpdICumo3VqDEypNxUKrd
-	tk6+Ss8NK8SWfc2fcsBw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Xqiu+UWYmaZjyhxxi2SiPp2nkpICrWKFBoYskifK140=; b=LzGtVp0zLCW4Gm
+	XRRbD4UoVfUDPmG83Jv8SKgoWu+6f3KbkN5EuyQa4TEGqLu3jjoh4vbrLZlIClkg3sMT+uxdeNXK5
+	6q5RKUrMYnIBQ+py0FZ++bLvGB1/YX5QHmXSFhKEPSXGfFo2TOVPQ9OWKQZjdzoAlAgXZz9X05h1x
+	lt8rPr5tNJGOCIW00s0D544IwCCFLlMSoBkFSnmm1NS+DV9p+e0bJXMBE3TVRDmTyfxVoGW7VuJfq
+	+hPAibkcUZMNvKrhXC+L1Djl7cAW89SRG9PEXmVf6XSOxrce8UdqBEgyJbi9C1YvX0g12BayIIFgI
+	/vOSy/Xg+80vpS0TR1Yg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1osCtk-001fUi-3n; Tue, 08 Nov 2022 00:55:28 +0000
-Received: from relmlor1.renesas.com ([210.160.252.171] helo=relmlie5.idc.renesas.com)
+	id 1osCtk-001fUo-9V; Tue, 08 Nov 2022 00:55:28 +0000
+Received: from relmlor2.renesas.com ([210.160.252.172] helo=relmlie6.idc.renesas.com)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1osCth-001fSv-7C
+	id 1osCth-001fSu-76
 	for linux-phy@lists.infradead.org; Tue, 08 Nov 2022 00:55:27 +0000
 X-IronPort-AV: E=Sophos;i="5.96,145,1665414000"; 
-   d="scan'208";a="139278947"
+   d="scan'208";a="141831716"
 Received: from unknown (HELO relmlir6.idc.renesas.com) ([10.200.68.152])
-  by relmlie5.idc.renesas.com with ESMTP; 08 Nov 2022 09:55:21 +0900
+  by relmlie6.idc.renesas.com with ESMTP; 08 Nov 2022 09:55:21 +0900
 Received: from localhost.localdomain (unknown [10.166.15.32])
-	by relmlir6.idc.renesas.com (Postfix) with ESMTP id 0E2374157802;
+	by relmlir6.idc.renesas.com (Postfix) with ESMTP id 228EB4157831;
 	Tue,  8 Nov 2022 09:55:21 +0900 (JST)
 From: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
 To: vkoul@kernel.org,
@@ -40,15 +40,18 @@ To: vkoul@kernel.org,
 Cc: linux-phy@lists.infradead.org,
 	devicetree@vger.kernel.org,
 	linux-renesas-soc@vger.kernel.org,
-	Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
-Subject: [PATCH v4 0/2] phy: renesas: Add Renesas Ethernet SERDES driver for R-Car S4-8
-Date: Tue,  8 Nov 2022 09:54:58 +0900
-Message-Id: <20221108005500.3011449-1-yoshihiro.shimoda.uh@renesas.com>
+	Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Subject: [PATCH v4 1/2] dt-bindings: phy: renesas: Document Renesas Ethernet SERDES
+Date: Tue,  8 Nov 2022 09:54:59 +0900
+Message-Id: <20221108005500.3011449-2-yoshihiro.shimoda.uh@renesas.com>
 X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20221108005500.3011449-1-yoshihiro.shimoda.uh@renesas.com>
+References: <20221108005500.3011449-1-yoshihiro.shimoda.uh@renesas.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221107_165525_385353_118F36F7 
-X-CRM114-Status: UNSURE (   9.55  )
+X-CRM114-CacheID: sfid-20221107_165525_383069_EDCD1507 
+X-CRM114-Status: UNSURE (   9.03  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -66,43 +69,75 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This patch series is based on next-20221104.
-Add support for R-Car S4-8 Etherent SERDES as a Generic PHY.
+Document Renesas Etherent SERDES for R-Car S4-8 (r8a779f0).
 
-Changes from v3:
-https://lore.kernel.org/all/20221027134006.2343164-1-yoshihiro.shimoda.uh@renesas.com/
- - Rebased on next-20221104.
- - Add Reviewed-by in the patch [1/2].
- - Sorted config names alphabetically in the Kconfig of patch [2/2].
- - Use dev_dbg() instead of pr_debug() in the patch [2/2].
-
-Changes from v2:
-https://lore.kernel.org/all/20221019083449.933005-1-yoshihiro.shimoda.uh@renesas.com/
- - Rebased on next-20221027.
- - Fix examples on the dt-bindings doc.
- - Remove unneeded variable in r8a779f0_eth_serdes_probe().
-
-Changes from v1:
-https://lore.kernel.org/all/20220922051645.3442321-1-yoshihiro.shimoda.uh@renesas.com/
- - Rebased on next-20221017.
- - Rename the dt-binding file.
- - Fix the node name of examples.
- - Fix Makefile.
- - Modify the initialized procedure for all channels.
- - Add commit description about the initialization.
-
-Yoshihiro Shimoda (2):
-  dt-bindings: phy: renesas: Document Renesas Ethernet SERDES
-  phy: renesas: Add Renesas Ethernet SERDES driver for R-Car S4-8
-
- .../phy/renesas,r8a779f0-ether-serdes.yaml    |  54 +++
- drivers/phy/renesas/Kconfig                   |   8 +
- drivers/phy/renesas/Makefile                  |   1 +
- drivers/phy/renesas/r8a779f0-ether-serdes.c   | 417 ++++++++++++++++++
- 4 files changed, 480 insertions(+)
+Signed-off-by: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+---
+ .../phy/renesas,r8a779f0-ether-serdes.yaml    | 54 +++++++++++++++++++
+ 1 file changed, 54 insertions(+)
  create mode 100644 Documentation/devicetree/bindings/phy/renesas,r8a779f0-ether-serdes.yaml
- create mode 100644 drivers/phy/renesas/r8a779f0-ether-serdes.c
 
+diff --git a/Documentation/devicetree/bindings/phy/renesas,r8a779f0-ether-serdes.yaml b/Documentation/devicetree/bindings/phy/renesas,r8a779f0-ether-serdes.yaml
+new file mode 100644
+index 000000000000..93ab72874228
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/renesas,r8a779f0-ether-serdes.yaml
+@@ -0,0 +1,54 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/renesas,r8a779f0-ether-serdes.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Renesas Ethernet SERDES
++
++maintainers:
++  - Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
++
++properties:
++  compatible:
++    const: renesas,r8a779f0-ether-serdes
++
++  reg:
++    maxItems: 1
++
++  clocks:
++    maxItems: 1
++
++  resets:
++    maxItems: 1
++
++  power-domains:
++    maxItems: 1
++
++  '#phy-cells':
++    description: Port number of SERDES.
++    const: 1
++
++required:
++  - compatible
++  - reg
++  - clocks
++  - resets
++  - power-domains
++  - '#phy-cells'
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/clock/r8a779f0-cpg-mssr.h>
++    #include <dt-bindings/power/r8a779f0-sysc.h>
++
++    phy@e6444000 {
++        compatible = "renesas,r8a779f0-ether-serdes";
++        reg = <0xe6444000 0xc00>;
++        clocks = <&cpg CPG_MOD 1506>;
++        power-domains = <&sysc R8A779F0_PD_ALWAYS_ON>;
++        resets = <&cpg 1506>;
++        #phy-cells = <1>;
++    };
 -- 
 2.25.1
 
