@@ -4,132 +4,52 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0547EC4332F
-	for <linux-phy@archiver.kernel.org>; Mon,  7 Nov 2022 21:28:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E81F8C433FE
+	for <linux-phy@archiver.kernel.org>; Tue,  8 Nov 2022 00:55:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:References:Cc:To:
-	Subject:Date:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=tjH612CZXlKfOUMXns3OA3gEEjBd+lSuB88dx6NsNU0=; b=GM//Qm2TsCaWAsOOwWv218vIc3
-	31skm9UNgn9TDxMCliqXDqlZI1XmTMMZ6Rq0XHvENwY1mVTfeSBjH7PqE5HFI8tvtmT4iCHqN/RQ5
-	MrdPt24SI/LJh7AhUVvz9JOYG1X/v+Kc4kPvI1OPGLdZxgjuiSxrGELawnYHePOQd2qKsFaqi+8sS
-	CHBEnDre4UESj1/8rw8eMuq9cBOf1/jzmfjhIqk4nRBbxFjAZ8g10SYxNeqifEzPfnc160Dn5XoaM
-	DQhDMbU8C1f9IJlfTKDEh9QfsA10po+5/ByyoOllI1iYH/PnIEwARzZheP6+M6noYfj295+OrqKIx
-	3oungUTA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=wQaZGuNC+DuBYq+D+u3VwslP3Eq6jCH1gt531Mnahf0=; b=qIVcsH2QWorxnu
+	LUfDM/pgWlq3+moI4YnifzzmaFPNGZfAqZKqp+SHtQ/X5BgFCShIQdA19HSc8Oykz+NyhlqCwm4fG
+	456/O3hWtv8tyG4lvSK1FspG4bCzO5tDrj3FIZju+RyOikyNfndG9s+6l7oyPmKBNt+pT/5gumP8T
+	6PhdnyfXZ6qwnWKHR6b0s9J3AxLAdg6qdT6DH9SeJ99idC/2YbLN032h57hoGawqJOhztzuw14XLa
+	yxaqMfYABfoVtMfJn24adrLTwdYWdEUGRbQrg1Z+0SoMcIax1cGgehLQvpdICumo3VqDEypNxUKrd
+	tk6+Ss8NK8SWfc2fcsBw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1os9fH-000dQ1-EW; Mon, 07 Nov 2022 21:28:19 +0000
-Received: from mail-bn7nam10on2084.outbound.protection.outlook.com ([40.107.92.84] helo=NAM10-BN7-obe.outbound.protection.outlook.com)
-	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1os9fF-000dPH-O0
-	for linux-phy@lists.infradead.org; Mon, 07 Nov 2022 21:28:19 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=jGKObLxYVF1IccHJUxoBEdJywaD0T+dOf+GgeFvAbI2cX9DK9X7WPVO33b0cNROAKS1yoWyYt2zT1gfwYHHTiEYpI/0+IyrRMOkpVTBgaB58ENonkpmak7789WX6wJmXbvCdGmnUWQNRdL9wt/5mz/YH6K5KWT6+1IODLx5IhLqTM8RTxPOM0OGx0ONL1Wo8+mMtl/iY4umhfE5obCbYXZ5jDtfhaV9ASlfpAQRN5OJawBbzL+I8hQTriANQVEmSvDA40Y1fq1lRB/fpSfQggz9432yEeu2Tqjygl0rzbQjS9Tp20ugM8WCJXMPTn7vRCpEFiazVix3u/MCG2QqcVA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=7QWPjwIjjyfEh0odeOwCqzpOUb+MaRLjYE0XC0us1mA=;
- b=mxBiHcx5cbs2WayzHxmxkd+tFmrjuDkqEL4H1K4bR6rh6+KHFsoZfAalPsYU5rGjbfppoxtHGJbm0Cje2ID+3y6syl1DMh6imVohZlcOSwcLRqu39m4zXrDzcVmIlvEGGPxxkH83P7DjljLa94uhyFKNweiDTBeXehWRxBXQnNr6UON9+KO8nGiW3gCFqUsx7gB5zu5CPYf9Gd7uUKqYGF0t+10SUkvzuu11Vf0CsqrMM8SWnGvwtl8iEVQK/7k4tCnrl5IZRCSMp08BKUuo2BI9lxW2ILbjq7z0cVnZOiVWSwuEO/YoBmVftAaa6S4jFYMrAELi/xrenE0qc5N3BQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nvidia.com; dmarc=pass action=none header.from=nvidia.com;
- dkim=pass header.d=nvidia.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=7QWPjwIjjyfEh0odeOwCqzpOUb+MaRLjYE0XC0us1mA=;
- b=JrJu+7yBksbJZV46+GyHzsMQNDgWJ3ho61SAYogw/U8+WZhBToJ0fSKp0jhKT2lHOIG7vu0wwKbdq3/6SYwQ4vpB8KFvzO7XIhu7FR0eBqM3zImUEvbH6iyq6xYH9tqYNeMfSi+dwHCn3IA+oMFRpftlymVH+buKnyZTe3uufWSp5Cv591Hk4eS6Xvl8wuMY3SBBvQi3DVYcdLIA1OGfyUZ1APJ1lcriVLnqdNJg6/Roc8GMhFZO68VA9HHOByrZVGiJn4vLaQ66s+ncoqE+iQ10awusdiQ8EJcf+jrC3IsqnhvdRD9AD4igStn7tOH+nJGXjbWwImRbVPcsL2J8hQ==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nvidia.com;
-Received: from CO6PR12MB5444.namprd12.prod.outlook.com (2603:10b6:5:35e::8) by
- MW4PR12MB6802.namprd12.prod.outlook.com (2603:10b6:303:20f::19) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5791.26; Mon, 7 Nov
- 2022 21:28:12 +0000
-Received: from CO6PR12MB5444.namprd12.prod.outlook.com
- ([fe80::1912:a3a8:1a8d:a960]) by CO6PR12MB5444.namprd12.prod.outlook.com
- ([fe80::1912:a3a8:1a8d:a960%5]) with mapi id 15.20.5791.026; Mon, 7 Nov 2022
- 21:28:12 +0000
-Message-ID: <eaf26959-401c-1c82-e95b-9f8a07f189a0@nvidia.com>
-Date: Mon, 7 Nov 2022 21:27:56 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.2.2
-Subject: Re: [PATCH] phy: tegra: xusb: Fix crash during pad power on/down
-Content-Language: en-US
-To: Vinod Koul <vkoul@kernel.org>
-Cc: JC Kuo <jckuo@nvidia.com>, Kishon Vijay Abraham I <kishon@ti.com>,
- Thierry Reding <thierry.reding@gmail.com>, linux-phy@lists.infradead.org,
- linux-tegra@vger.kernel.org, Jim Lin <jilin@nvidia.com>
-References: <20221010135132.30809-1-jonathanh@nvidia.com>
- <Y0zqKh7B9BaOoREo@matsya>
-From: Jon Hunter <jonathanh@nvidia.com>
-In-Reply-To: <Y0zqKh7B9BaOoREo@matsya>
-X-ClientProxiedBy: LO4P123CA0526.GBRP123.PROD.OUTLOOK.COM
- (2603:10a6:600:2c5::12) To CO6PR12MB5444.namprd12.prod.outlook.com
- (2603:10b6:5:35e::8)
+	id 1osCtk-001fUi-3n; Tue, 08 Nov 2022 00:55:28 +0000
+Received: from relmlor1.renesas.com ([210.160.252.171] helo=relmlie5.idc.renesas.com)
+	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
+	id 1osCth-001fSv-7C
+	for linux-phy@lists.infradead.org; Tue, 08 Nov 2022 00:55:27 +0000
+X-IronPort-AV: E=Sophos;i="5.96,145,1665414000"; 
+   d="scan'208";a="139278947"
+Received: from unknown (HELO relmlir6.idc.renesas.com) ([10.200.68.152])
+  by relmlie5.idc.renesas.com with ESMTP; 08 Nov 2022 09:55:21 +0900
+Received: from localhost.localdomain (unknown [10.166.15.32])
+	by relmlir6.idc.renesas.com (Postfix) with ESMTP id 0E2374157802;
+	Tue,  8 Nov 2022 09:55:21 +0900 (JST)
+From: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
+To: vkoul@kernel.org,
+	kishon@kernel.org,
+	robh+dt@kernel.org,
+	krzysztof.kozlowski+dt@linaro.org
+Cc: linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-renesas-soc@vger.kernel.org,
+	Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
+Subject: [PATCH v4 0/2] phy: renesas: Add Renesas Ethernet SERDES driver for R-Car S4-8
+Date: Tue,  8 Nov 2022 09:54:58 +0900
+Message-Id: <20221108005500.3011449-1-yoshihiro.shimoda.uh@renesas.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: CO6PR12MB5444:EE_|MW4PR12MB6802:EE_
-X-MS-Office365-Filtering-Correlation-Id: 3c1de1ac-f348-4b1a-437a-08dac106f94b
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 	krwUT/im049XurRWIdOoki7FFHU6IQtWd6XdjX6c53VPDTmS6hukMBqkmMXmSDQtWI3r3LWykPkAAnF/zke2P4cDMKJ2MSucbz4BXu/N9PWNmDFEbIAul1Its+ZfOC4QfVVlwWd/cvcwmeavOpeqivV/GwJjK7uOZYKCjSwUlLGcF3ZSJlpeJ2Fy9b/PtvLzggNOsABTibJGFkx2I7ufeb81e7jeQU0iYV2Gk+U86TqNHUhcqPmL6mjTjE5ksHNiWVQNwDEeCUnTnrEHHoM6V8lWJ+UbkG73mqPK0OWCpct2B14b1tLzID18CRabDuRRXDpOfPkEIf9paKqV0UD0R8Z5h8XYTQg+nBMS0wF+2z5V7aMc7cCi1NBa8e+DUVuyC9R4VPtx7zXGnIJ7+sax/VrzXZgviMFDbSAdrN8+r/gOTCCzO7n615PnrN6n1IbwBQ1A+10VbXJrhH1IsCEQwdG0qX7aUX8kQk05PrSYw/r83hr2n43BULM5Z8r1ldm9y36Sqa4YHH8nu5mOuR2fMFHeO+88msq6ok6gD5lqEapNXCHebL9eHus2jee6MDs/xYMESq3bMn6ghlxZG1V6aqPTJp+JH5FKi3uYE45ObgvBrSU+zyw8MDScPWAUWtRhF2Zo7dzQXiIvQ5gTmeSSsg0tV8UZ+BljnIDvgym93a+9yaItCIIpWt7DwN9MBHIiR1/+8tb0j3m0kDSmjjd7ooYfEpKaUebIBDVpfrQywiscwBWGHoiFFcWT5tvlisXIKplDUPSVyouWSKn9SehhkoMDdfutlxzuvs2YE+6MLiQ=
-X-Forefront-Antispam-Report: 	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:CO6PR12MB5444.namprd12.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230022)(4636009)(346002)(39860400002)(376002)(366004)(136003)(396003)(451199015)(6512007)(41300700001)(83380400001)(38100700002)(2906002)(36756003)(5660300002)(2616005)(4744005)(8936002)(186003)(31686004)(53546011)(6506007)(478600001)(4326008)(8676002)(86362001)(66476007)(66946007)(66556008)(31696002)(6486002)(107886003)(54906003)(316002)(6666004)(6916009)(43740500002)(45980500001);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: 	=?utf-8?B?TmNaQ054dDh1c1E0cy9YVjV6NWxha1ZYLzhNVFlIblI4VVdHZ0ZtWTM5RGRL?=
- =?utf-8?B?Q3RoOHcwZWx0MytWV01wdkhsenl1SWRWbGdIR3N5ZGVlYWN1TlZFYWxVNHdm?=
- =?utf-8?B?TmFGcmdIaVZ0eUtkclgzU09ZR3hDcE5TdFVpNFVkZHFHbHJXak9lQmNDd1k2?=
- =?utf-8?B?OHRDMnVPUzVNM2xSTjgwMzZidW5UVUlualNHdUs0ZHlIcExMeSt1YmhYSGtp?=
- =?utf-8?B?Wk1kbzkwbVo4c1VWdnM1R0xwU0ZzcFdZcVNFc2dTVTJkaURRQnd2ZThiaEtV?=
- =?utf-8?B?Q1QwMTN4QVdOeWQrK1UwQmxyWm84cHFoR25CbXo3VkErd2pPZit3OFBJWkVF?=
- =?utf-8?B?ZFlSZnM0dTlNeUd5UkFzVUVBNkM2UDdwNzdOSTB1ME0xK2NyYnVRQjFwUy90?=
- =?utf-8?B?UksxaTJITG56Rmpuc3pCV3g4WFpLL2hlYjFDdFdQR1VCdUJ1L2Q2Rzg4UU5N?=
- =?utf-8?B?eDBNNkRhNWN3MG5aS1VLcTNKQjdGVDIxWCt4eGRnU25TM1dydjZJMzl2THY4?=
- =?utf-8?B?ZjVyUzRuSkNmYngxZXlaYmtOc1lLa1lVclVCYnUwSElxMzdvSEJMZ0dUbThV?=
- =?utf-8?B?L1RoRzFGa1AyZHdrenRxOEVvKzVMTkVQeFppMnFOZjk5M2d3MTJxL29Ka1VT?=
- =?utf-8?B?MjdaY1owOUgwTTBCWW5BZGFlYWJNV0VDNCtqM2M3QzVNSzVER0hUN1BHVHUr?=
- =?utf-8?B?OFlWV1pPWGdUbWsydlhtd21JL2JXY3QvMjYvdVBvT05SUnFrTjc3YU1ZRzJN?=
- =?utf-8?B?cjB4TDdnRm9FRHlCeEh0d0VFZWdaYzFQTU96M0VobCs2VUdjblZYTlVIMFow?=
- =?utf-8?B?dXFjdDJRQUVUWU5HU2kza2I1RUc1c2RVT0FDTmRDdXhySGFVdnl5eEsxbkRr?=
- =?utf-8?B?MUJjK0s0MjVleXdnRVZVNzVPUDZqNVJFY1pHV0NrcS91UHpNV0tzOTVWUDIv?=
- =?utf-8?B?dDIxYUZUR1ZOa2VxcUw3OVQvTS8xN0NmdzBUV2M0V2o1dFpGVys3TkRWNndH?=
- =?utf-8?B?UHduMVV4WXRDNnNQUUVYQU12eTQwWUozS2psV2lieFZXRDR1NkVvZDQ0RUdH?=
- =?utf-8?B?MXFxV2dscmhacUNydTMrTFhnZzlwWVdWK0w4RnRjTHhxdHQvVk1pWE41N0hY?=
- =?utf-8?B?YXFnWEVDUkh5OFJJYnE4MThxQzIyZ2ZndytqRUNHYnZwTDhZL3g1ek01bjNr?=
- =?utf-8?B?REs0YVBVR2EyMDJ1UEk5OVRFTS83UVRoU05qY2ovTitWK29ZWExLT3BxanF0?=
- =?utf-8?B?aVFTT2oxTnVBTWhNK25XNmpWaFI3VWlDQzgzdzJSOVd2cHIrVHEwam8ySm9j?=
- =?utf-8?B?TFdhR1JJVXNxRDYwd3JML1grVlVoWVV1MkN2R2ZBaUNGNmg2ZVpWaWNTUnZI?=
- =?utf-8?B?d3Q5bURRdTFia0VXSzhXeFVGT2l3b3pERTZKTDNTSWdpSGVJVG9IWTY3QmQ4?=
- =?utf-8?B?alNTK1dvQWhUVElPc2hPbXpVSFJua3lCSDZCeEdXUzMrNFNYcFg5enl1QlBJ?=
- =?utf-8?B?SmhDL09pZytFODJheVlIblhWVnJyS1lqKzJsV3pzUkpvdGJpckdzSzFkK0k3?=
- =?utf-8?B?c2UvNlNJUXZvaXd2dSttNi82ZVZBbEc5a2Noa2h5Y2Jxb1hPRFptRENZSE9K?=
- =?utf-8?B?bGVPR2ViQ29LTHk3azNZQURQS3NKYytxWVVsaHh5d1FQN1prTzF2dFV6YVZQ?=
- =?utf-8?B?YVdZdWRrTnc0di9nMTk2bGRiaTh4dG5HS3pvbFhVbDZEcGFtYmxzcVFKUWd4?=
- =?utf-8?B?U3ZlSnpxMVVFK3F0dHd2ZGNEbGtUdU8rd1pYM0VOOEJodUU5dGJJbXdLd3dP?=
- =?utf-8?B?SU5Ja3kvbmlvRXA2OTR5SFZJQkJBd2dySVFxOCtUcWpaYmJoZHZNWjlSSTZ6?=
- =?utf-8?B?UVMzQkxobG04RGtHUVpXRFhrMENteTVXR29sRDNjYzFtd3FNUWFJem1ieUdV?=
- =?utf-8?B?clZSTzQyUzNYNGIvY1VjSDMzVkJ4VVgyTGVKZGh1dE9wTGREL3AxNWtOSGRl?=
- =?utf-8?B?b0VHTzZoRzI3d3UvOVhCazJCZGk0UGxBcXp5T3lMUlArbXVTb09CWnYvOE5Y?=
- =?utf-8?B?TnhUV2YvSG9ZOFZ1R3JSWjRybmxYUU93UkNmLzFZa0JQbnpQTU9FVlZFVzcx?=
- =?utf-8?B?UEdIVzd3dnlUcDlyV0I0aDRqWG4rMk8zb3VhM0FaT29CUkxnVjVDOXBZOXEy?=
- =?utf-8?B?MTRMVUdFWUk4ZjF1UldMSkljTDBvSVpBaGZodmVjcXhNNFIwMmtGdnpZNjVs?=
- =?utf-8?B?RWZmTG05bDVLWmZ3SHhJeTdkL21RPT0=?=
-X-OriginatorOrg: Nvidia.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 3c1de1ac-f348-4b1a-437a-08dac106f94b
-X-MS-Exchange-CrossTenant-AuthSource: CO6PR12MB5444.namprd12.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 07 Nov 2022 21:28:12.6363
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: FOMVkhlHjRXre1dzkaW5sKVQz9cNt4E/jrDKLr3767NAbgEs9GB2qxzcKQlLoLSg7fFodchCjfR+TPSul45wjA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: MW4PR12MB6802
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221107_132817_856015_95B1CC68 
-X-CRM114-Status: GOOD (  11.41  )
+X-CRM114-CacheID: sfid-20221107_165525_385353_118F36F7 
+X-CRM114-Status: UNSURE (   9.55  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -141,34 +61,51 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Vinod,
+This patch series is based on next-20221104.
+Add support for R-Car S4-8 Etherent SERDES as a Generic PHY.
 
-On 17/10/2022 06:37, Vinod Koul wrote:
-> On 10-10-22, 14:51, Jon Hunter wrote:
->> Commit a88520bfc0ec ("usb: gadget: tegra: Reduce pad power") added calls
->> to tegra_phy_xusb_utmi_pad_power_on/down in the Tegra XUDC driver to
->> control the pad power. This change is causing a kernel panic when
->> powering down the pads on entering suspend with the Jetson TX2 platform.
->> The panic occurs because the 'xudc->curr_utmi_phy' is not configured on
->> this platform and we do not check to see if the pointer is valid before
->> attempting to deference the pointer. Fix this by checking to see if the
->> 'phy' pointer passed to tegra_phy_xusb_utmi_pad_power_on/down is valid.
-> 
-> Applied, thanks
-> 
+Changes from v3:
+https://lore.kernel.org/all/20221027134006.2343164-1-yoshihiro.shimoda.uh@renesas.com/
+ - Rebased on next-20221104.
+ - Add Reviewed-by in the patch [1/2].
+ - Sorted config names alphabetically in the Kconfig of patch [2/2].
+ - Use dev_dbg() instead of pr_debug() in the patch [2/2].
 
-We need this fix for Linux v6.1. The crash is still seen as of v6.1-rc3.
+Changes from v2:
+https://lore.kernel.org/all/20221019083449.933005-1-yoshihiro.shimoda.uh@renesas.com/
+ - Rebased on next-20221027.
+ - Fix examples on the dt-bindings doc.
+ - Remove unneeded variable in r8a779f0_eth_serdes_probe().
 
-Thanks
-Jon
+Changes from v1:
+https://lore.kernel.org/all/20220922051645.3442321-1-yoshihiro.shimoda.uh@renesas.com/
+ - Rebased on next-20221017.
+ - Rename the dt-binding file.
+ - Fix the node name of examples.
+ - Fix Makefile.
+ - Modify the initialized procedure for all channels.
+ - Add commit description about the initialization.
+
+Yoshihiro Shimoda (2):
+  dt-bindings: phy: renesas: Document Renesas Ethernet SERDES
+  phy: renesas: Add Renesas Ethernet SERDES driver for R-Car S4-8
+
+ .../phy/renesas,r8a779f0-ether-serdes.yaml    |  54 +++
+ drivers/phy/renesas/Kconfig                   |   8 +
+ drivers/phy/renesas/Makefile                  |   1 +
+ drivers/phy/renesas/r8a779f0-ether-serdes.c   | 417 ++++++++++++++++++
+ 4 files changed, 480 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/renesas,r8a779f0-ether-serdes.yaml
+ create mode 100644 drivers/phy/renesas/r8a779f0-ether-serdes.c
 
 -- 
-nvpublic
+2.25.1
+
 
 -- 
 linux-phy mailing list
