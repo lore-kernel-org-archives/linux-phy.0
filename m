@@ -4,65 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CBFCDC4167B
-	for <linux-phy@archiver.kernel.org>; Tue,  8 Nov 2022 13:25:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 70250C38A2B
+	for <linux-phy@archiver.kernel.org>; Tue,  8 Nov 2022 13:27:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=b7EDZUOMFDb/A9SdRKmWQMx99cU2YoEW2ZhHWvh+v7g=; b=4mfArEK8Muayew
-	q+0ioHcyFnT14dislXK//1iQ0kSYaEx3D1JmfCqEAD/AEq9bp4GxXAuI/36YbyxGwdDjaQGiGw9Ll
-	vekx9tecHEu93UovStNuQ9/aFYapBbXG8B4nXloN/LNA8lroxANnadOz3TiIgM2q3JDSUrfN29gcY
-	yve0DAu32oTtl8zBE4yMWQGid8D6WuzwlfBQ7KCF3Qdwd1bKsJzjGizO7NMACSPfIYGFI+3D8lOAr
-	EZ8Q07WXPuKH9+r8U+JKEOI2XxAa44qxxJxz6l0FUaYO5t51avj7jZ1uDLvkDKti5e9Jnh5IDqgG7
-	f6KR6DoA2aGvSf6jrzEA==;
+	List-Owner; bh=lNDY7FqCP3ko8Yf4wVxYvQjubmkK3TM8ZgGippnngCs=; b=XXKXk+z6nwRz/5
+	u+5gdv/AwBIxX7v9AIqf0tvq/7gMTQDkmhPG/h/4jMVQougZFgrfq/E7GXka4TSH3o4qSrYZutzkE
+	IHcoWvqLcUkyGF2WhXJeovvEYYPpSZL9nHeviG+cNkz4NA1hiwHXiiBjSh3xL3CkpxQZO4O1tqFGg
+	j1vAvXOUq6sbr8NzRi30FhutOiKAzXLZG00RIRmQqS6Bp06H2p/B/olBbT8DIGqJlwK0N8o2tJEtL
+	2ydrLlZv1itiusF/Xa4H0QtHVUd454R44ls3rhTDoTGRmQHrH+an95fByaqNkww4z5HHYTTh1XuwO
+	AMyzeLRMX4iDGXF/9kWw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1osObU-005bPx-5b; Tue, 08 Nov 2022 13:25:24 +0000
-Received: from mail-ej1-x62c.google.com ([2a00:1450:4864:20::62c])
+	id 1osOdQ-005cEf-Lv; Tue, 08 Nov 2022 13:27:24 +0000
+Received: from mail-ej1-x630.google.com ([2a00:1450:4864:20::630])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1osObP-005bMz-Cm
-	for linux-phy@lists.infradead.org; Tue, 08 Nov 2022 13:25:22 +0000
-Received: by mail-ej1-x62c.google.com with SMTP id b2so38563695eja.6
-        for <linux-phy@lists.infradead.org>; Tue, 08 Nov 2022 05:25:16 -0800 (PST)
+	id 1osOdM-005cBI-Cz
+	for linux-phy@lists.infradead.org; Tue, 08 Nov 2022 13:27:22 +0000
+Received: by mail-ej1-x630.google.com with SMTP id b2so38578400eja.6
+        for <linux-phy@lists.infradead.org>; Tue, 08 Nov 2022 05:27:18 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=cc:to:subject:message-id:date:from:in-reply-to:references
          :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=xIunjndO5rqOpIPjGIQJB4TuLtmFYebQ0fOsvPNeO54=;
-        b=dY2KECnuVH7NYv0yOK7RrL62QdqUlhl2JmgS7xh7Aop7k+RcPrpLQgabXuGbHHpGQR
-         eHydRYWR08BPIi0DGkFfFL5aziMJHQLfVfnBD+eU2h7KlhHzcO6P+1GLNOD4+iPtpIq9
-         f+xJ7woffKNTUf34ylHgwFwugM0mjDy+MNR+/tosLv90DX21VaSDgG9tpTl2KCuCdJUO
-         uOa6Dv9G/jILV/FYPlkjsMzVEJLK96Ug7G7tfkWymeifahO0bdSmcFGNxzhRtu8RVMPO
-         uhbfFCJ4Ya/DrkwEqdNt0sBFZZ7Pau3qynHAmgL94y0H0QvBHa6kKlb7zVfFQiDHP0ks
-         6ZQQ==
+        bh=N/2yj1vtV3WtEYwU3cNvgg/PVgtVCmwn3eJn8jo49wk=;
+        b=VMnat+U1KSonabFKRPuR13L5JqFFcM/AvvqPUwa+9VtqcDpyz6Op4uI9k8fhWWUfgj
+         OQMGyd7nBSVagfiyDveayuziCLNEcnxn2ErDoMUoLlpt3yo8/JHVhiTmfW1xUoXEQ8ch
+         5jJZRKNOXfrIQxouT0FZtywu8oBKzwLv6/7PIprEyWb5tHAmIqyiFvsPphy4dzO+D1O/
+         ByJEsT3p8EBbAPP+gKvFSCFRhufjqGSeVaHTdjl/xTUCo6crbpyBuirSVOUQflk15qBf
+         1q39gU7+oVdTRiJwpV9lCujVgxFVrOBGfRo6fbxcreewXR1hDWvKWjF1rSAwPNJVX2jh
+         IlsQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=cc:to:subject:message-id:date:from:in-reply-to:references
          :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=xIunjndO5rqOpIPjGIQJB4TuLtmFYebQ0fOsvPNeO54=;
-        b=aUznzD+mS+64K7bTWRkM3YpNJm5m5TlfFJaY2vWxwpOjmvpF659istZGs1JWijXoKL
-         jEiopsf/8awahUaU/iZG4PH5vLX01pDoBfRhG9lehw8fqdv2/e0IoCbq1iKyRfM5WgUi
-         oF6dBilfcTPjKJQoiCqVVLR7XTDMTWCLaDoBjF3eB0WIfbLu27URmSDpw0qcPlYUXUTv
-         yQyi5W43YyfAiUXkY5XJcJRaW+e+IxLhAOwdcUCzkORb1F//g3K3qW4flr341GQ47shh
-         6JC3zAQ0suWL9JbyWOj3+KzzAvRmVnPSchevwf+5e+qxPB9eRV4fA4Wq1zLGYtn1cvXT
-         xb8w==
-X-Gm-Message-State: ANoB5pkgmtVxLVCGsF6erpdAPhzQ96CLNWh3i8fR/udCWAFUyGzfX8u+
-	Qvhx5q2GGsS5iKxHkSdx7DSRwjS5/l+RlCs2Z0vfNw==
-X-Google-Smtp-Source: AA0mqf68wWCeuB7GkTzw5Vcyy6luDq6tRlJuZOq+6MaYhZcTvhkBj9mitsGYltXA5OQs4b2+osg1ro8i402jh/hf0IY=
-X-Received: by 2002:a17:906:6acc:b0:7ae:658c:ee45 with SMTP id
- q12-20020a1709066acc00b007ae658cee45mr11184945ejs.190.1667913915716; Tue, 08
- Nov 2022 05:25:15 -0800 (PST)
+        bh=N/2yj1vtV3WtEYwU3cNvgg/PVgtVCmwn3eJn8jo49wk=;
+        b=fskrC0MGcpOWfE8Pz5MCw5L257CXo8dI1UjwiVZ2g9Kzj/sEBQ3zwVlfkDmdwcyf2c
+         twNLm2X9PGYc+rF8JpQ0WjiUwTA3CYubk1XNCB+Ux9RvGaZzodRElreh/LPPOWORRa5N
+         fZA9Fb2sCF86UazLk0g+B40E7xTdjVeX4U7ArmAoKNDLorguiBOPWlSc2q091ZQZxEP3
+         3NOfKWa/EJ9AIcnSwIwxj+xUVIEtcw6scb1yT/LjD6HnGG1CQOoizvr/ibmVhp5rLP27
+         UGpacMUcvGxq8n3AgARQhWKNOYbGRQ25x5U/92VQ60Oalc2K/TYeZoT4VCHKb/OSy+BV
+         1sRw==
+X-Gm-Message-State: ACrzQf3GDIPwWNfDGKzuWTdExTzWKbIRLtTxIY39XgJHVcQZoau7B8L0
+	dYB0B6PFlwPG3GYe22ivKmNlLKARTqnuPwHMzJ4llQ==
+X-Google-Smtp-Source: AMsMyM4SQlliAGfUpQoe5HVHzBogl+LIrkzKv8wyDOakcTA7xnKfY84HO6wUWBApVXLz+WmeEpt0AVEmstNop5fvJLQ=
+X-Received: by 2002:a17:906:4c4b:b0:7ad:a197:b58e with SMTP id
+ d11-20020a1709064c4b00b007ada197b58emr54058070ejw.203.1667914037645; Tue, 08
+ Nov 2022 05:27:17 -0800 (PST)
 MIME-Version: 1.0
-References: <20221018-clk-range-checks-fixes-v2-0-f6736dec138e@cerno.tech> <20221018-clk-range-checks-fixes-v2-34-f6736dec138e@cerno.tech>
-In-Reply-To: <20221018-clk-range-checks-fixes-v2-34-f6736dec138e@cerno.tech>
+References: <20221018-clk-range-checks-fixes-v2-0-f6736dec138e@cerno.tech> <20221018-clk-range-checks-fixes-v2-35-f6736dec138e@cerno.tech>
+In-Reply-To: <20221018-clk-range-checks-fixes-v2-35-f6736dec138e@cerno.tech>
 From: Linus Walleij <linus.walleij@linaro.org>
-Date: Tue, 8 Nov 2022 14:25:04 +0100
-Message-ID: <CACRpkdYwM6X8bBABCisUGX=P4F=hcFb7QLT3Cu7XUWUvV4TE1Q@mail.gmail.com>
-Subject: Re: [PATCH v2 34/65] clk: ux500: prcmu: Add a determine_rate hook
+Date: Tue, 8 Nov 2022 14:27:06 +0100
+Message-ID: <CACRpkdaOM=T1pRJNK6hdc76m5tQfrjvF9nVBp7ZDf3wOMNSwyg@mail.gmail.com>
+Subject: Re: [PATCH v2 35/65] clk: ux500: sysctrl: Add a determine_rate hook
 To: Maxime Ripard <maxime@cerno.tech>
 Cc: Stephen Boyd <sboyd@kernel.org>, Maxime Coquelin <mcoquelin.stm32@gmail.com>, 
 	Chen-Yu Tsai <wens@csie.org>, Daniel Vetter <daniel@ffwll.ch>, 
@@ -95,8 +95,8 @@ Cc: Stephen Boyd <sboyd@kernel.org>, Maxime Coquelin <mcoquelin.stm32@gmail.com>
 	linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev, 
 	linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221108_052519_471044_25CFF629 
-X-CRM114-Status: GOOD (  20.38  )
+X-CRM114-CacheID: sfid-20221108_052720_462506_700CD9D1 
+X-CRM114-Status: GOOD (  21.92  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -115,8 +115,8 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On Fri, Nov 4, 2022 at 2:32 PM Maxime Ripard <maxime@cerno.tech> wrote:
 
-> The UX500 PRCMU "clkout" clock implements a mux with a set_parent hook,
-> but doesn't provide a determine_rate implementation.
+> The UX500 sysctrl "set_parent" clocks implement a mux with a set_parent
+> hook, but doesn't provide a determine_rate implementation.
 >
 > This is a bit odd, since set_parent() is there to, as its name implies,
 > change the parent of a clock. However, the most likely candidate to
@@ -131,21 +131,21 @@ On Fri, Nov 4, 2022 at 2:32 PM Maxime Ripard <maxime@cerno.tech> wrote:
 > oversight. However, it could also be an explicit decision by the
 > original author to avoid any reparenting but through an explicit call to
 > clk_set_parent().
+>
+> The latter case would be equivalent to setting the flag
+> CLK_SET_RATE_NO_REPARENT, together with setting our determine_rate hook
+> to __clk_mux_determine_rate(). Indeed, if no determine_rate
+> implementation is provided, clk_round_rate() (through
+> clk_core_round_rate_nolock()) will call itself on the parent if
+> CLK_SET_RATE_PARENT is set, and will not change the clock rate
+> otherwise. __clk_mux_determine_rate() has the exact same behavior when
+> CLK_SET_RATE_NO_REPARENT is set.
+>
+> And if it was an oversight, then we are at least explicit about our
+> behavior now and it can be further refined down the line.
+>
+> Signed-off-by: Maxime Ripard <maxime@cerno.tech>
 
-It is actually set up from the device tree, typically like this:
-
-/* clkout1 from ACLK divided by 8 */
-clocks = <&clkout_clk DB8500_CLKOUT_1 DB8500_CLKOUT_SRC_ACLK 8>;
-
-So the parent (source) and divisor comes in there.
-
-clk->source and clk->divider is already set up when clk_hw_register() is
-called.
-
-So set/get_parent() is never used on clkout.
-
-I think I just added the callbacks for completeness, should we delete them
-altogether? The patch is probably fine as-is as well so
 Acked-by: Linus Walleij <linus.walleij@linaro.org>
 
 Yours,
