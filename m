@@ -4,53 +4,99 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F3129C4332F
-	for <linux-phy@archiver.kernel.org>; Tue,  8 Nov 2022 00:55:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 244DFC4332F
+	for <linux-phy@archiver.kernel.org>; Tue,  8 Nov 2022 05:17:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Subject:References:Cc:To:
+	From:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Wrywu5JWl+zNVvBiI+rfbUJjDS/Xigkm7YwEWZCZwIE=; b=3s1iZSoqhm4dbu
-	7xkSmXx/QVol/0DON8cyBz0mpi+IhNbDsHGtRZGVDgF/0GmBow5B7NUmICi8J9YXE2kueyshbzAo8
-	IyVgQCzj0FmDjpwb57XZRlVy8lAKnalOG9h11iLzFec3JC2gre5aXGhyFQVgti0v9MVPsIj9pvA+N
-	bcFZC68crrYGL4MOI9A0PE2S0Vjbckcw5K270OvlbnSIuR4rI+OTh59PkYBUW0E4Rg00IX3uYmvqm
-	UQpoHPmZMD9oBmgvTyudfoIHdA2SCgQIngWRRSZLNj/Sk1KGLsM7fiym5EjKo58c0gM7wzZtmM64i
-	kpC4OgiT5LLU3tpyEirQ==;
+	List-Owner; bh=fmeCYRNwK4xmS8I4jAEGnkxZGIGHXS+2LMWJzfVweHw=; b=BXsje4cOkJjz4j
+	Hk/xTEbVeGsosacUNOkfMXNP9fyCAypaUbN7vLooR/bNaiA8tQdQfD2T6eDlQg07EUlQJJcz0jdsw
+	ZrHaJ0HTHBvIreKgvx++MebnpmBfSx3ixuWS9iZvgBlK3M9cHIgZ6f2qamKhOv82Arh4rIXeDdg0M
+	tMs9r6RItk/iZpYZSIu0BgL5OxdJbOEqf7guJHd4GeVl3yjkq4PFuCLMkkep9m+nvQX2vR6RQH7Fu
+	+6y0jKCRaGS4e5opR8tHsTMAhNc5uMInCi7MjGHrFZURp1KkHEJUi0mDyOGojXZXZmbLS+hUpqmoV
+	AZZtS98M7CR2sktNTRbA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1osCtn-001fVb-De; Tue, 08 Nov 2022 00:55:31 +0000
-Received: from relmlor2.renesas.com ([210.160.252.172] helo=relmlie6.idc.renesas.com)
-	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1osCtj-001fSu-IM
-	for linux-phy@lists.infradead.org; Tue, 08 Nov 2022 00:55:29 +0000
-X-IronPort-AV: E=Sophos;i="5.96,145,1665414000"; 
-   d="scan'208";a="141831720"
-Received: from unknown (HELO relmlir6.idc.renesas.com) ([10.200.68.152])
-  by relmlie6.idc.renesas.com with ESMTP; 08 Nov 2022 09:55:21 +0900
-Received: from localhost.localdomain (unknown [10.166.15.32])
-	by relmlir6.idc.renesas.com (Postfix) with ESMTP id 381574157802;
-	Tue,  8 Nov 2022 09:55:21 +0900 (JST)
-From: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
-To: vkoul@kernel.org,
-	kishon@kernel.org,
-	robh+dt@kernel.org,
-	krzysztof.kozlowski+dt@linaro.org
-Cc: linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-renesas-soc@vger.kernel.org,
-	Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
-Subject: [PATCH v4 2/2] phy: renesas: Add Renesas Ethernet SERDES driver for R-Car S4-8
-Date: Tue,  8 Nov 2022 09:55:00 +0900
-Message-Id: <20221108005500.3011449-3-yoshihiro.shimoda.uh@renesas.com>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20221108005500.3011449-1-yoshihiro.shimoda.uh@renesas.com>
-References: <20221108005500.3011449-1-yoshihiro.shimoda.uh@renesas.com>
+	id 1osGzb-002tNv-JT; Tue, 08 Nov 2022 05:17:47 +0000
+Received: from out1-smtp.messagingengine.com ([66.111.4.25])
+	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
+	id 1osGzQ-002tMk-1a; Tue, 08 Nov 2022 05:17:37 +0000
+Received: from compute1.internal (compute1.nyi.internal [10.202.2.41])
+	by mailout.nyi.internal (Postfix) with ESMTP id 94A605C012D;
+	Tue,  8 Nov 2022 00:17:30 -0500 (EST)
+Received: from mailfrontend2 ([10.202.2.163])
+  by compute1.internal (MEProxy); Tue, 08 Nov 2022 00:17:30 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sholland.org; h=
+	cc:cc:content-transfer-encoding:content-type:date:date:from:from
+	:in-reply-to:in-reply-to:message-id:mime-version:references
+	:reply-to:sender:subject:subject:to:to; s=fm2; t=1667884650; x=
+	1667971050; bh=SJuSQ+jl4Uygd+zShoyysZlrDAWOx7DmYFHRE5FGIXo=; b=S
+	kdhmMKzarfOb9xVud6mQlPboh4TpWsge6cXiy8JsE/M8hh9r/7KW2qkOpV136HKj
+	aNXOGnrLMS35PbnaY5A7LG2qwbtJcRcf9r7zC6EslEJ9PMJvyOZ3F6eBWCUBiqB1
+	qDyPol0ubpbmcBZ2A+OdtkQ0ZVK3bLYfBCH2gFzcgIB0Yx4lwH6CphFYZmYzjYr4
+	5cI5/+P29fop02nxsNzybXw7MiPkBpG2XZ4v6+dKloOjDHjFCKvSku6+eHyX+eZo
+	BggPYvDKBHaGfzILP4Kj1MKY5fdGntS5LHKrCgKFBLtFKr95OUYh1TXEWeYo3vMF
+	a8eeY+ihMWmi9daERIV1g==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	messagingengine.com; h=cc:cc:content-transfer-encoding
+	:content-type:date:date:feedback-id:feedback-id:from:from
+	:in-reply-to:in-reply-to:message-id:mime-version:references
+	:reply-to:sender:subject:subject:to:to:x-me-proxy:x-me-proxy
+	:x-me-sender:x-me-sender:x-sasl-enc; s=fm1; t=1667884650; x=
+	1667971050; bh=SJuSQ+jl4Uygd+zShoyysZlrDAWOx7DmYFHRE5FGIXo=; b=p
+	q00CHf9Fh3THRGWklQr99bPgKGDfkY6/btKw8o670yYtZfrWoRR0DU9yJSBWmFB0
+	+0SL3pAHUMbzEq7/+CQdEsSKbqtzG1wVVu2FTPCdBHhCoU6YSsKnRWOh+nF3CzMC
+	w0RnKdE+kuKx55R/ioHNFEKxs+fOIXMN5dpRw8BYdSMoVt1ZR/YLWy2bFfdm9c9c
+	HT7D4TbITewQVq4OTX7NvLgAFJpFBOoWwy/aim2ujlIP2xeoFvi0oVon1GG2EpDL
+	TaU5wqual0+kgR92I/pxbz5gapfV4Oiq3RZY78nQaEb2xTRcAOE3/zUztfOk/kqQ
+	KZ9Ff4V4aD+SpeYGMTSoQ==
+X-ME-Sender: <xms:aeZpYz3Rr6_glmAIYaIUgfS4A2k9UhEtGfTln3ue10Hy-VyxZRGpEA>
+    <xme:aeZpYyEBC9bawdXwSdhMkAYKHU5P2liriSJguUolkqxGsP6rWQiLK2iI5Z3Vuvo6g
+    w-6G5mSm07O13LRVA>
+X-ME-Received: <xmr:aeZpYz55f6XAaMxTJ-fb7oooC1_w5taPdfuhhQNQIYYt9cAQ-vjWJJGc2CHGRxJPYDNb-oZD4uL5JLvHsCobV0pVz38f4kyH8tOmk-fGwp46CavJqoXNOXZMLQ>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvgedrvdelgdekfecutefuodetggdotefrodftvf
+    curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+    uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+    fjughrpefkffggfgfhvfevfhfujggtgfesthejredttdefjeenucfhrhhomhepufgrmhhu
+    vghlucfjohhllhgrnhguuceoshgrmhhuvghlsehshhholhhlrghnugdrohhrgheqnecugg
+    ftrfgrthhtvghrnhephffhgeegudehieehtdekuddtgeeluddulefhkeehkedvteduveei
+    jeduhfevjeffnecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrh
+    homhepshgrmhhuvghlsehshhholhhlrghnugdrohhrgh
+X-ME-Proxy: <xmx:aeZpY42_P8wExozIe8TimLAG0Gif9UIs7Ul3aChmned4lySrh3sD-Q>
+    <xmx:aeZpY2EBfVVBM4CGZW_8dfvxIw5UH5l9xPjSIZ6j6bjdJKR7ehn8Rg>
+    <xmx:aeZpY59YyZlSgentAbJ8QTynuAPTjyZW7ly2CIoJxBDZyyf6BiMyfw>
+    <xmx:auZpYyHc8533pLlRx72z0WPK_N1w9fzkG8vmHQ-VhEP8BAQstvydSg>
+Feedback-ID: i0ad843c9:Fastmail
+Received: by mail.messagingengine.com (Postfix) with ESMTPA; Tue,
+ 8 Nov 2022 00:17:28 -0500 (EST)
+Message-ID: <41bad30b-b33c-0b68-bdb0-d93ae469ca7b@sholland.org>
+Date: Mon, 7 Nov 2022 23:17:27 -0600
 MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (X11; Linux ppc64le; rv:102.0) Gecko/20100101
+ Thunderbird/102.3.3
+Content-Language: en-US
+From: Samuel Holland <samuel@sholland.org>
+To: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+Cc: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Chen-Yu Tsai <wens@csie.org>, Jernej Skrabec <jernej.skrabec@gmail.com>,
+ Maxime Ripard <mripard@kernel.org>, Jagan Teki <jagan@amarulasolutions.com>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Maxime Ripard <maxime@cerno.tech>, Rob Herring <robh+dt@kernel.org>,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-sunxi@lists.linux.dev
+References: <20220812075603.59375-1-samuel@sholland.org>
+ <20220812075603.59375-2-samuel@sholland.org> <YvZGAEM4B8SdDjwJ@aptenodytes>
+ <0c82fb9e-60cd-70d5-96d6-ee06c56eeb85@sholland.org>
+Subject: Re: [PATCH 1/8] dt-bindings: sun6i-a31-mipi-dphy: Add the interrupts
+ property
+In-Reply-To: <0c82fb9e-60cd-70d5-96d6-ee06c56eeb85@sholland.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221107_165527_852350_5D5C6DDC 
-X-CRM114-Status: GOOD (  22.68  )
+X-CRM114-CacheID: sfid-20221107_211736_610996_B1093952 
+X-CRM114-Status: GOOD (  24.21  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -67,473 +113,87 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add Renesas Ethernet SERDES driver for R-Car S4-8 (r8a779f0).
-The datasheet describes initialization procedure without any information
-about registers' name/bits. So, this is all black magic to initialize
-the hardware. Especially, all channels should be initialized at once.
+Hi Paul,
 
-Signed-off-by: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
----
- drivers/phy/renesas/Kconfig                 |   8 +
- drivers/phy/renesas/Makefile                |   1 +
- drivers/phy/renesas/r8a779f0-ether-serdes.c | 417 ++++++++++++++++++++
- 3 files changed, 426 insertions(+)
- create mode 100644 drivers/phy/renesas/r8a779f0-ether-serdes.c
+On 8/12/22 17:44, Samuel Holland wrote:
+> On 8/12/22 7:22 AM, Paul Kocialkowski wrote:
+>> On Fri 12 Aug 22, 02:55, Samuel Holland wrote:
+>>> The sun6i DPHY can generate several interrupts, mostly for reporting
+>>> error conditions, but also for detecting BTA and UPLS sequences.
+>>> Document this capability in order to accurately describe the hardware.
+>>>
+>>> The DPHY has no interrupt number provided in the vendor documentation
+>>> because its interrupt line is shared with the DSI controller.
+>>
+>> Interesting! I do see DPHY_INT_EN*/PD* in the Allwinner BSP's
+>> drivers/media/video/sunxi-vfe/mipi_csi/dphy/dphy_reg_i.h
+> 
+> You can also find some bit of documentation in the T7 User Manual.
+> 
+>> Maybe it would be useful to import the fields in the driver so that the
+>> next person who'll try to debug DSI can use them directly?
+>>
+>> You might also want to submit a patch as [PATCH NOT FOR MERGE] that
+>> adds an interrupt routine and some useful debugging.
+> 
+> I think this would be more interesting to someone who knew more about MIPI
+> CSI/DSI and understood what those errors meant. :)
+> 
+> I'm mostly concerned with bringing up the D1 SoC at the moment.
 
-diff --git a/drivers/phy/renesas/Kconfig b/drivers/phy/renesas/Kconfig
-index 111bdcae775c..36505fc5f386 100644
---- a/drivers/phy/renesas/Kconfig
-+++ b/drivers/phy/renesas/Kconfig
-@@ -2,6 +2,14 @@
- #
- # Phy drivers for Renesas platforms
- #
-+# NOTE: Please sorted config names alphabetically.
-+config PHY_R8A779F0_ETHERNET_SERDES
-+	tristate "Renesas R-Car S4-8 Ethernet SERDES driver"
-+	depends on ARCH_RENESAS || COMPILE_TEST
-+	select GENERIC_PHY
-+	help
-+	  Support for Ethernet SERDES found on Renesas R-Car S4-8 SoCs.
-+
- config PHY_RCAR_GEN2
- 	tristate "Renesas R-Car generation 2 USB PHY driver"
- 	depends on ARCH_RENESAS
-diff --git a/drivers/phy/renesas/Makefile b/drivers/phy/renesas/Makefile
-index b599ff8a4349..8896d1919faa 100644
---- a/drivers/phy/renesas/Makefile
-+++ b/drivers/phy/renesas/Makefile
-@@ -1,4 +1,5 @@
- # SPDX-License-Identifier: GPL-2.0
-+obj-$(CONFIG_PHY_R8A779F0_ETHERNET_SERDES)	+= r8a779f0-ether-serdes.o
- obj-$(CONFIG_PHY_RCAR_GEN2)		+= phy-rcar-gen2.o
- obj-$(CONFIG_PHY_RCAR_GEN3_PCIE)	+= phy-rcar-gen3-pcie.o
- obj-$(CONFIG_PHY_RCAR_GEN3_USB2)	+= phy-rcar-gen3-usb2.o
-diff --git a/drivers/phy/renesas/r8a779f0-ether-serdes.c b/drivers/phy/renesas/r8a779f0-ether-serdes.c
-new file mode 100644
-index 000000000000..ec6594e6dc27
---- /dev/null
-+++ b/drivers/phy/renesas/r8a779f0-ether-serdes.c
-@@ -0,0 +1,417 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/* Renesas Ethernet SERDES device driver
-+ *
-+ * Copyright (C) 2022 Renesas Electronics Corporation
-+ */
-+
-+#include <linux/delay.h>
-+#include <linux/err.h>
-+#include <linux/iopoll.h>
-+#include <linux/kernel.h>
-+#include <linux/phy.h>
-+#include <linux/phy/phy.h>
-+#include <linux/platform_device.h>
-+#include <linux/reset.h>
-+
-+#define R8A779F0_ETH_SERDES_NUM			3
-+#define R8A779F0_ETH_SERDES_OFFSET		0x0400
-+#define R8A779F0_ETH_SERDES_BANK_SELECT		0x03fc
-+#define R8A779F0_ETH_SERDES_TIMEOUT_US		100000
-+#define R8A779F0_ETH_SERDES_NUM_RETRY_LINKUP	3
-+#define R8A779F0_ETH_SERDES_NUM_RETRY_INIT	3
-+
-+struct r8a779f0_eth_serdes_drv_data;
-+struct r8a779f0_eth_serdes_channel {
-+	struct r8a779f0_eth_serdes_drv_data *dd;
-+	struct phy *phy;
-+	void __iomem *addr;
-+	phy_interface_t phy_interface;
-+	int speed;
-+	int index;
-+};
-+
-+struct r8a779f0_eth_serdes_drv_data {
-+	void __iomem *addr;
-+	struct platform_device *pdev;
-+	struct reset_control *reset;
-+	struct r8a779f0_eth_serdes_channel channel[R8A779F0_ETH_SERDES_NUM];
-+	bool initialized;
-+};
-+
-+/*
-+ * The datasheet describes initialization procedure without any information
-+ * about registers' name/bits. So, this is all black magic to initialize
-+ * the hardware.
-+ */
-+static void r8a779f0_eth_serdes_write32(void __iomem *addr, u32 offs, u32 bank, u32 data)
-+{
-+	iowrite32(bank, addr + R8A779F0_ETH_SERDES_BANK_SELECT);
-+	iowrite32(data, addr + offs);
-+}
-+
-+static int
-+r8a779f0_eth_serdes_reg_wait(struct r8a779f0_eth_serdes_channel *channel,
-+			     u32 offs, u32 bank, u32 mask, u32 expected)
-+{
-+	int ret;
-+	u32 val;
-+
-+	iowrite32(bank, channel->addr + R8A779F0_ETH_SERDES_BANK_SELECT);
-+
-+	ret = readl_poll_timeout_atomic(channel->addr + offs, val,
-+					(val & mask) == expected,
-+					1, R8A779F0_ETH_SERDES_TIMEOUT_US);
-+	if (ret)
-+		dev_dbg(&channel->phy->dev,
-+			"%s: index %d, offs %x, bank %x, mask %x, expected %x\n",
-+			 __func__, channel->index, offs, bank, mask, expected);
-+
-+	return ret;
-+}
-+
-+static int
-+r8a779f0_eth_serdes_common_init_ram(struct r8a779f0_eth_serdes_drv_data *dd)
-+{
-+	struct r8a779f0_eth_serdes_channel *channel;
-+	int i, ret;
-+
-+	for (i = 0; i < R8A779F0_ETH_SERDES_NUM; i++) {
-+		channel = &dd->channel[i];
-+		ret = r8a779f0_eth_serdes_reg_wait(channel, 0x026c, 0x180, BIT(0), 0x01);
-+		if (ret)
-+			return ret;
-+	}
-+
-+	r8a779f0_eth_serdes_write32(dd->addr, 0x026c, 0x180, 0x03);
-+
-+	return ret;
-+}
-+
-+static int
-+r8a779f0_eth_serdes_common_setting(struct r8a779f0_eth_serdes_channel *channel)
-+{
-+	struct r8a779f0_eth_serdes_drv_data *dd = channel->dd;
-+
-+	switch (channel->phy_interface) {
-+	case PHY_INTERFACE_MODE_SGMII:
-+		r8a779f0_eth_serdes_write32(dd->addr, 0x0244, 0x180, 0x0097);
-+		r8a779f0_eth_serdes_write32(dd->addr, 0x01d0, 0x180, 0x0060);
-+		r8a779f0_eth_serdes_write32(dd->addr, 0x01d8, 0x180, 0x2200);
-+		r8a779f0_eth_serdes_write32(dd->addr, 0x01d4, 0x180, 0x0000);
-+		r8a779f0_eth_serdes_write32(dd->addr, 0x01e0, 0x180, 0x003d);
-+		return 0;
-+	default:
-+		return -EOPNOTSUPP;
-+	}
-+}
-+
-+static int
-+r8a779f0_eth_serdes_chan_setting(struct r8a779f0_eth_serdes_channel *channel)
-+{
-+	int ret;
-+
-+	switch (channel->phy_interface) {
-+	case PHY_INTERFACE_MODE_SGMII:
-+		r8a779f0_eth_serdes_write32(channel->addr, 0x0000, 0x380, 0x2000);
-+		r8a779f0_eth_serdes_write32(channel->addr, 0x01c0, 0x180, 0x0011);
-+		r8a779f0_eth_serdes_write32(channel->addr, 0x0248, 0x180, 0x0540);
-+		r8a779f0_eth_serdes_write32(channel->addr, 0x0258, 0x180, 0x0015);
-+		r8a779f0_eth_serdes_write32(channel->addr, 0x0144, 0x180, 0x0100);
-+		r8a779f0_eth_serdes_write32(channel->addr, 0x01a0, 0x180, 0x0000);
-+		r8a779f0_eth_serdes_write32(channel->addr, 0x00d0, 0x180, 0x0002);
-+		r8a779f0_eth_serdes_write32(channel->addr, 0x0150, 0x180, 0x0003);
-+		r8a779f0_eth_serdes_write32(channel->addr, 0x00c8, 0x180, 0x0100);
-+		r8a779f0_eth_serdes_write32(channel->addr, 0x0148, 0x180, 0x0100);
-+		r8a779f0_eth_serdes_write32(channel->addr, 0x0174, 0x180, 0x0000);
-+		r8a779f0_eth_serdes_write32(channel->addr, 0x0160, 0x180, 0x0007);
-+		r8a779f0_eth_serdes_write32(channel->addr, 0x01ac, 0x180, 0x0000);
-+		r8a779f0_eth_serdes_write32(channel->addr, 0x00c4, 0x180, 0x0310);
-+		r8a779f0_eth_serdes_write32(channel->addr, 0x00c8, 0x380, 0x0101);
-+		ret = r8a779f0_eth_serdes_reg_wait(channel, 0x00c8, 0x0180, BIT(0), 0);
-+		if (ret)
-+			return ret;
-+
-+		r8a779f0_eth_serdes_write32(channel->addr, 0x0148, 0x180, 0x0101);
-+		ret = r8a779f0_eth_serdes_reg_wait(channel, 0x0148, 0x0180, BIT(0), 0);
-+		if (ret)
-+			return ret;
-+
-+		r8a779f0_eth_serdes_write32(channel->addr, 0x00c4, 0x180, 0x1310);
-+		r8a779f0_eth_serdes_write32(channel->addr, 0x00d8, 0x180, 0x1800);
-+		r8a779f0_eth_serdes_write32(channel->addr, 0x00dc, 0x180, 0x0000);
-+		r8a779f0_eth_serdes_write32(channel->addr, 0x001c, 0x300, 0x0001);
-+		r8a779f0_eth_serdes_write32(channel->addr, 0x0000, 0x380, 0x2100);
-+		ret = r8a779f0_eth_serdes_reg_wait(channel, 0x0000, 0x0380, BIT(8), 0);
-+		if (ret)
-+			return ret;
-+
-+		if (channel->speed == 1000)
-+			r8a779f0_eth_serdes_write32(channel->addr, 0x0000, 0x1f00, 0x0140);
-+		else if (channel->speed == 100)
-+			r8a779f0_eth_serdes_write32(channel->addr, 0x0000, 0x1f00, 0x2100);
-+
-+		/* For AN_ON */
-+		r8a779f0_eth_serdes_write32(channel->addr, 0x0004, 0x1f80, 0x0005);
-+		r8a779f0_eth_serdes_write32(channel->addr, 0x0028, 0x1f80, 0x07a1);
-+		r8a779f0_eth_serdes_write32(channel->addr, 0x0000, 0x1f80, 0x0208);
-+		break;
-+	default:
-+		return -EOPNOTSUPP;
-+	}
-+
-+	return 0;
-+}
-+
-+static int
-+r8a779f0_eth_serdes_chan_speed(struct r8a779f0_eth_serdes_channel *channel)
-+{
-+	int ret;
-+
-+	switch (channel->phy_interface) {
-+	case PHY_INTERFACE_MODE_SGMII:
-+		/* For AN_ON */
-+		if (channel->speed == 1000)
-+			r8a779f0_eth_serdes_write32(channel->addr, 0x0000, 0x1f00, 0x1140);
-+		else if (channel->speed == 100)
-+			r8a779f0_eth_serdes_write32(channel->addr, 0x0000, 0x1f00, 0x3100);
-+		ret = r8a779f0_eth_serdes_reg_wait(channel, 0x0008, 0x1f80, BIT(0), 1);
-+		if (ret)
-+			return ret;
-+		r8a779f0_eth_serdes_write32(channel->addr, 0x0008, 0x1f80, 0x0000);
-+		break;
-+	default:
-+		return -EOPNOTSUPP;
-+	}
-+
-+	return 0;
-+}
-+
-+
-+static int r8a779f0_eth_serdes_monitor_linkup(struct r8a779f0_eth_serdes_channel *channel)
-+{
-+	int i, ret;
-+
-+	for (i = 0; i < R8A779F0_ETH_SERDES_NUM_RETRY_LINKUP; i++) {
-+		ret = r8a779f0_eth_serdes_reg_wait(channel, 0x0004, 0x300,
-+						   BIT(2), BIT(2));
-+		if (!ret)
-+			break;
-+
-+		/* restart */
-+		r8a779f0_eth_serdes_write32(channel->addr, 0x0144, 0x180, 0x0100);
-+		udelay(1);
-+		r8a779f0_eth_serdes_write32(channel->addr, 0x0144, 0x180, 0x0000);
-+	}
-+
-+	return ret;
-+}
-+
-+static int r8a779f0_eth_serdes_hw_init(struct r8a779f0_eth_serdes_channel *channel)
-+{
-+	struct r8a779f0_eth_serdes_drv_data *dd = channel->dd;
-+	int i, ret;
-+
-+	if (dd->initialized)
-+		return 0;
-+
-+	ret = r8a779f0_eth_serdes_common_init_ram(dd);
-+	if (ret)
-+		return ret;
-+
-+	for (i = 0; i < R8A779F0_ETH_SERDES_NUM; i++) {
-+		ret = r8a779f0_eth_serdes_reg_wait(&dd->channel[i], 0x0000,
-+						   0x300, BIT(15), 0);
-+		if (ret)
-+			return ret;
-+	}
-+
-+	for (i = 0; i < R8A779F0_ETH_SERDES_NUM; i++)
-+		r8a779f0_eth_serdes_write32(dd->channel[i].addr, 0x03d4, 0x380, 0x0443);
-+
-+	ret = r8a779f0_eth_serdes_common_setting(channel);
-+	if (ret)
-+		return ret;
-+
-+	for (i = 0; i < R8A779F0_ETH_SERDES_NUM; i++)
-+		r8a779f0_eth_serdes_write32(dd->channel[i].addr, 0x03d0, 0x380, 0x0001);
-+
-+
-+	r8a779f0_eth_serdes_write32(dd->addr, 0x0000, 0x380, 0x8000);
-+
-+	ret = r8a779f0_eth_serdes_common_init_ram(dd);
-+	if (ret)
-+		return ret;
-+
-+	ret = r8a779f0_eth_serdes_reg_wait(&dd->channel[0], 0x0000, 0x380, BIT(15), 0);
-+	if (ret)
-+		return ret;
-+
-+	for (i = 0; i < R8A779F0_ETH_SERDES_NUM; i++) {
-+		ret = r8a779f0_eth_serdes_chan_setting(&dd->channel[i]);
-+		if (ret)
-+			return ret;
-+	}
-+
-+	for (i = 0; i < R8A779F0_ETH_SERDES_NUM; i++) {
-+		ret = r8a779f0_eth_serdes_chan_speed(&dd->channel[i]);
-+		if (ret)
-+			return ret;
-+	}
-+
-+	for (i = 0; i < R8A779F0_ETH_SERDES_NUM; i++)
-+		r8a779f0_eth_serdes_write32(dd->channel[i].addr, 0x03c0, 0x380, 0x0000);
-+	for (i = 0; i < R8A779F0_ETH_SERDES_NUM; i++)
-+		r8a779f0_eth_serdes_write32(dd->channel[i].addr, 0x03d0, 0x380, 0x0000);
-+
-+	for (i = 0; i < R8A779F0_ETH_SERDES_NUM; i++) {
-+		ret = r8a779f0_eth_serdes_monitor_linkup(&dd->channel[i]);
-+		if (ret)
-+			return ret;
-+	}
-+
-+	return 0;
-+}
-+
-+static int r8a779f0_eth_serdes_init(struct phy *p)
-+{
-+	struct r8a779f0_eth_serdes_channel *channel = phy_get_drvdata(p);
-+	int i, ret;
-+
-+	for (i = 0; i < R8A779F0_ETH_SERDES_NUM_RETRY_INIT; i++) {
-+		ret = r8a779f0_eth_serdes_hw_init(channel);
-+		if (!ret) {
-+			channel->dd->initialized = true;
-+			break;
-+		}
-+		usleep_range(1000, 2000);
-+	}
-+
-+	return ret;
-+}
-+
-+static int r8a779f0_eth_serdes_set_mode(struct phy *p, enum phy_mode mode,
-+					int submode)
-+{
-+	struct r8a779f0_eth_serdes_channel *channel = phy_get_drvdata(p);
-+
-+	if (mode != PHY_MODE_ETHERNET)
-+		return -EOPNOTSUPP;
-+
-+	switch (submode) {
-+	case PHY_INTERFACE_MODE_GMII:
-+	case PHY_INTERFACE_MODE_SGMII:
-+	case PHY_INTERFACE_MODE_USXGMII:
-+		channel->phy_interface = submode;
-+		return 0;
-+	default:
-+		return -EOPNOTSUPP;
-+	}
-+}
-+
-+static int r8a779f0_eth_serdes_set_speed(struct phy *p, int speed)
-+{
-+	struct r8a779f0_eth_serdes_channel *channel = phy_get_drvdata(p);
-+
-+	channel->speed = speed;
-+
-+	return 0;
-+}
-+
-+static const struct phy_ops r8a779f0_eth_serdes_ops = {
-+	.init		= r8a779f0_eth_serdes_init,
-+	.set_mode	= r8a779f0_eth_serdes_set_mode,
-+	.set_speed	= r8a779f0_eth_serdes_set_speed,
-+};
-+
-+static struct phy *r8a779f0_eth_serdes_xlate(struct device *dev,
-+					     struct of_phandle_args *args)
-+{
-+	struct r8a779f0_eth_serdes_drv_data *dd = dev_get_drvdata(dev);
-+
-+	if (args->args[0] >= R8A779F0_ETH_SERDES_NUM)
-+		return ERR_PTR(-ENODEV);
-+
-+	return dd->channel[args->args[0]].phy;
-+}
-+
-+static const struct of_device_id r8a779f0_eth_serdes_of_table[] = {
-+	{ .compatible = "renesas,r8a779f0-ether-serdes", },
-+	{ }
-+};
-+MODULE_DEVICE_TABLE(of, r8a779f0_eth_serdes_of_table);
-+
-+static int r8a779f0_eth_serdes_probe(struct platform_device *pdev)
-+{
-+	struct r8a779f0_eth_serdes_drv_data *dd;
-+	struct phy_provider *provider;
-+	struct resource *res;
-+	int i;
-+
-+	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-+	if (!res) {
-+		dev_err(&pdev->dev, "invalid resource\n");
-+		return -EINVAL;
-+	}
-+
-+	dd = devm_kzalloc(&pdev->dev, sizeof(*dd), GFP_KERNEL);
-+	if (!dd)
-+		return -ENOMEM;
-+
-+	platform_set_drvdata(pdev, dd);
-+	dd->pdev = pdev;
-+	dd->addr = devm_ioremap_resource(&pdev->dev, res);
-+	if (IS_ERR(dd->addr))
-+		return PTR_ERR(dd->addr);
-+
-+	dd->reset = devm_reset_control_get(&pdev->dev, NULL);
-+	if (IS_ERR(dd->reset))
-+		return PTR_ERR(dd->reset);
-+
-+	reset_control_reset(dd->reset);
-+
-+	for (i = 0; i < R8A779F0_ETH_SERDES_NUM; i++) {
-+		struct r8a779f0_eth_serdes_channel *channel = &dd->channel[i];
-+
-+		channel->phy = devm_phy_create(&pdev->dev, NULL,
-+					       &r8a779f0_eth_serdes_ops);
-+		if (IS_ERR(channel->phy))
-+			return PTR_ERR(channel->phy);
-+		channel->addr = dd->addr + R8A779F0_ETH_SERDES_OFFSET * i;
-+		channel->dd = dd;
-+		channel->index = i;
-+		phy_set_drvdata(channel->phy, channel);
-+	}
-+
-+	provider = devm_of_phy_provider_register(&pdev->dev,
-+						 r8a779f0_eth_serdes_xlate);
-+	if (IS_ERR(provider))
-+		return PTR_ERR(provider);
-+
-+	pm_runtime_enable(&pdev->dev);
-+	pm_runtime_get_sync(&pdev->dev);
-+
-+	return 0;
-+}
-+
-+static int r8a779f0_eth_serdes_remove(struct platform_device *pdev)
-+{
-+	pm_runtime_put(&pdev->dev);
-+	pm_runtime_disable(&pdev->dev);
-+
-+	platform_set_drvdata(pdev, NULL);
-+
-+	return 0;
-+}
-+
-+static struct platform_driver r8a779f0_eth_serdes_driver_platform = {
-+	.probe = r8a779f0_eth_serdes_probe,
-+	.remove = r8a779f0_eth_serdes_remove,
-+	.driver = {
-+		.name = "r8a779f0_eth_serdes",
-+		.of_match_table = r8a779f0_eth_serdes_of_table,
-+	}
-+};
-+module_platform_driver(r8a779f0_eth_serdes_driver_platform);
-+MODULE_AUTHOR("Yoshihiro Shimoda");
-+MODULE_DESCRIPTION("Renesas Ethernet SERDES device driver");
-+MODULE_LICENSE("GPL");
--- 
-2.25.1
+I added a trivial IRQ handler that dumps the status registers, just to
+verify the interrupt number, and I got several interrupts during DSI
+panel setup (so during DCS commands), mostly with DPHY_INT_PD0_REG =
+0x03000000, signaling some sort of contention detection.
+
+>> Do you think this is also available without a DSI controller?
+>> I could just give it a try on V3/A83t here and find out :)
+> 
+> I would assume so. It could possibly be shared with the MIPI CSI interrupt (SPI
+> 90) or keep its position at SPI 89.
+
+Did you get a chance to try this? I am about to send v2 of this series.
+I wonder if I should keep the interrupts property as required, since I
+don't know if the interrupt is actually hooked up on SoCs with CSI only.
+
+Regards,
+Samuel
+
+>>> Fixes: c25b84c00826 ("dt-bindings: display: Convert Allwinner DSI to a schema")
+>>> Signed-off-by: Samuel Holland <samuel@sholland.org>
+>>> ---
+>>>
+>>>  .../bindings/phy/allwinner,sun6i-a31-mipi-dphy.yaml           | 4 ++++
+>>>  1 file changed, 4 insertions(+)
+>>>
+>>> diff --git a/Documentation/devicetree/bindings/phy/allwinner,sun6i-a31-mipi-dphy.yaml b/Documentation/devicetree/bindings/phy/allwinner,sun6i-a31-mipi-dphy.yaml
+>>> index 22636c9fdab8..cf49bd99b3e2 100644
+>>> --- a/Documentation/devicetree/bindings/phy/allwinner,sun6i-a31-mipi-dphy.yaml
+>>> +++ b/Documentation/devicetree/bindings/phy/allwinner,sun6i-a31-mipi-dphy.yaml
+>>> @@ -24,6 +24,9 @@ properties:
+>>>    reg:
+>>>      maxItems: 1
+>>>  
+>>> +  interrupts:
+>>> +    maxItems: 1
+>>> +
+>>>    clocks:
+>>>      items:
+>>>        - description: Bus Clock
+>>> @@ -53,6 +56,7 @@ required:
+>>>    - "#phy-cells"
+>>>    - compatible
+>>>    - reg
+>>> +  - interrupts
+>>>    - clocks
+>>>    - clock-names
+>>>    - resets
+>>> -- 
+>>> 2.35.1
+>>>
+>>
+> 
+> 
 
 
 -- 
