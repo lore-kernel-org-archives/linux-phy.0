@@ -4,99 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6AD3AC4332F
-	for <linux-phy@archiver.kernel.org>; Wed,  9 Nov 2022 02:44:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CDEC7C433FE
+	for <linux-phy@archiver.kernel.org>; Wed,  9 Nov 2022 09:37:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6Ca8AQTnm2ZCQ2t4S+zJEK6ZaMfwwceyDlCGEEGIxGk=; b=gw2qrabORylDvc
-	AVhvkpa2NLEnnsvMBYF5pNNRoOCZNxF/Ig5cQIzE8S9vJzFUBiIRZNOU54gzveUn7e1kxBg0+uboz
-	TlZuAzieOiwkbKiPvlSHbg3FRsMGqR0Gk6MuAapAaaqcwfi5RHeu86UkXjfh/WzbQ0B7Pc7J/HD2r
-	clR9ZKIzdnycsBstMJiHWxPLcCrZyB23sG+5CPKlKwaIY1lQr2Nx4blv18T8DEje+AaTxIu9ijyG0
-	LHGpidh/+Q5xCP6vg/Ndl5l5WIArR93d84v/OA91gXYlDn52cKvFeOM18vHbqgmsH1gtIu8k2Adv5
-	/f8SgYPaXGL1yO/wYK8Q==;
+	List-Owner; bh=JVEHw2jq0QFL7TUjZNGaUkj+KzskAJVVTD6AV+cUqao=; b=qzpa5hH4wrjkB7
+	zjbohk2kXzM8AEGqassYlc/lKsSB5EtNlnDfs6Um2stzwSMJm02QEaSJiVDjMhvENKLfUIBLjtECw
+	mV4q+Yx4c7oSA3cI+sA2UmKNULFXBIMXAQjg26caDCrz7il/mZBA6uxdbtpLq4lWepE8yIVvu1n2K
+	lMKh5FOA1MGCo1bDuAzlgcU+QrirIF9WAd+bGkKMiqZSXfbTdwKm6IUdSBvgRSDbUjbRnNoSP9sOq
+	0+ufigRdOegV9i9BCxlrbW1Vu1qPDvT0x+lzBOfTKUcIldHCWte6XK4fnYKCtPkQIwXSGsPsPwzwP
+	J/FUqqNyf4rOQvTY6GDQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1osb4X-00A40R-S0; Wed, 09 Nov 2022 02:44:13 +0000
-Received: from mail-ed1-x52c.google.com ([2a00:1450:4864:20::52c])
+	id 1oshWI-00CMv8-9H; Wed, 09 Nov 2022 09:37:18 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1osb4T-00A3vt-Qf; Wed, 09 Nov 2022 02:44:11 +0000
-Received: by mail-ed1-x52c.google.com with SMTP id i21so25268920edj.10;
-        Tue, 08 Nov 2022 18:44:05 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20210112;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=ZSs9bG/LbFf1fIR0eapTeL6P50DjYrAFt1f1UPagmkc=;
-        b=fm3R7eHwEY7icgp5E36AR1x+G3iJ/B+gTC6qXXcb2VuX8T7PYbpIOMaEAEk+z5gP5C
-         C30KcgR4lm806IYQfNeeuFx0cfGof3DpzdH786/cCDzuWrdeUNc7jFOrL5vMwTo9Vbtm
-         dVxBVDI57pb7BVYvuH3eLaJ4JjrtQb9xL2MZ41TI7RBi2z65S87p9zWDePR0yCVz6VHw
-         JOVSi+JRNqY3PBDz9qa44qLlWzFaPdXGRa4GRcfXuEi5nSYmnCJ6Zyk7dG4zjutSYT5H
-         vN2MmXbmOeI+y4HkZpv6Bi0bN99D9Nar9mmN1KGg/88Sfc9R8fV6gzM/jPxbXATFIa/1
-         F+hA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=ZSs9bG/LbFf1fIR0eapTeL6P50DjYrAFt1f1UPagmkc=;
-        b=r1DmTliKagkKfAJ2GKz6HOp2HVBkNw2hm/2spTPIDW0oR93iT+CY7T5+4O9Y19aftE
-         9kt+J5ucJY3Agi5sIf6O/Eh2V/B3OUkj6kAt/bDjkE8nxlAAyKUtvUY5YZtCnb5uPstG
-         ucBNxDOD/RUyQPH+GZ/MfIKEubAJwB9gI52TMo5J9fEDdrswkedOmKREjARXv2mnuaNq
-         LMl9u8TfR5mpA7Z8w+l2NH0T9t5RTlYoeYedrokourwSF6c0vx1aFjPKhGK72DPkxpXa
-         wz4OM/kOHDDVtDDvmZYr5PE+DwIkuKhwhEYqg6UgKajrtJgGHSu8IK5ePSH02RVAxHY7
-         wlqw==
-X-Gm-Message-State: ACrzQf3r9Yxo5yyWHGah8yvFX0teH2pnuFJ+lhIOrE5JdkRGSaiITqA6
-	Yaz10W2t4/1iv6seMMFoAKUko5Z3m2vzl15eID4=
-X-Google-Smtp-Source: AMsMyM4o96Fp/fgGe8bWp9qyaCLc1d6jcauj7urZdaiQjIItG7q8RJuK4x04Dncd47Xu2Mogx93A97DsfgYY/BWPass=
-X-Received: by 2002:a05:6402:3806:b0:450:bad8:8cd5 with SMTP id
- es6-20020a056402380600b00450bad88cd5mr59725933edb.305.1667961844484; Tue, 08
- Nov 2022 18:44:04 -0800 (PST)
+	id 1oshWF-00CMu3-6e
+	for linux-phy@lists.infradead.org; Wed, 09 Nov 2022 09:37:17 +0000
+Received: from ptx.hi.pengutronix.de ([2001:67c:670:100:1d::c0])
+	by metis.ext.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
+	(Exim 4.92)
+	(envelope-from <mfe@pengutronix.de>)
+	id 1oshVx-0006zs-CE; Wed, 09 Nov 2022 10:36:57 +0100
+Received: from mfe by ptx.hi.pengutronix.de with local (Exim 4.92)
+	(envelope-from <mfe@pengutronix.de>)
+	id 1oshVv-0005Qw-Br; Wed, 09 Nov 2022 10:36:55 +0100
+Date: Wed, 9 Nov 2022 10:36:55 +0100
+From: Marco Felsch <m.felsch@pengutronix.de>
+To: Sakari Ailus <sakari.ailus@linux.intel.com>
+Cc: mchehab@kernel.org, robh+dt@kernel.org,
+	krzysztof.kozlowski+dt@linaro.org, kishon@ti.com, vkoul@kernel.org,
+	laurent.pinchart@ideasonboard.com, jacopo@jmondi.org,
+	hverkuil@xs4all.nl, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	kernel@pengutronix.de, linux-media@vger.kernel.org
+Subject: Re: [PATCH v4 0/4] Add support for Toshiba TC358746
+Message-ID: <20221109093655.eh4aa2cnak6zwc35@pengutronix.de>
+References: <20220930124812.450332-1-m.felsch@pengutronix.de>
+ <20221028134349.lxvo2jjvs6aehrbd@pengutronix.de>
+ <Y2peJ+G7ho1HuJSl@paasikivi.fi.intel.com>
 MIME-Version: 1.0
-References: <20221018-clk-range-checks-fixes-v2-0-f6736dec138e@cerno.tech> <20221018-clk-range-checks-fixes-v2-58-f6736dec138e@cerno.tech>
-In-Reply-To: <20221018-clk-range-checks-fixes-v2-58-f6736dec138e@cerno.tech>
-From: Chunyan Zhang <zhang.lyra@gmail.com>
-Date: Wed, 9 Nov 2022 10:43:26 +0800
-Message-ID: <CAAfSe-t96pttpdLjLYntof5JCNcVHg0fMckk6zC7YHRRceDw+A@mail.gmail.com>
-Subject: Re: [PATCH v2 58/65] clk: sprd: composite: Switch to determine_rate
-To: Maxime Ripard <maxime@cerno.tech>
-Cc: Stephen Boyd <sboyd@kernel.org>, Maxime Coquelin <mcoquelin.stm32@gmail.com>, 
-	Chen-Yu Tsai <wens@csie.org>, Daniel Vetter <daniel@ffwll.ch>, 
-	Nicolas Ferre <nicolas.ferre@microchip.com>, Thierry Reding <thierry.reding@gmail.com>, 
-	Jaroslav Kysela <perex@perex.cz>, Shawn Guo <shawnguo@kernel.org>, Fabio Estevam <festevam@gmail.com>, 
-	Ulf Hansson <ulf.hansson@linaro.org>, Claudiu Beznea <claudiu.beznea@microchip.com>, 
-	Michael Turquette <mturquette@baylibre.com>, Dinh Nguyen <dinguyen@kernel.org>, 
-	Paul Cercueil <paul@crapouillou.net>, Manivannan Sadhasivam <mani@kernel.org>, 
-	=?UTF-8?Q?Andreas_F=C3=A4rber?= <afaerber@suse.de>, 
-	Jonathan Hunter <jonathanh@nvidia.com>, Abel Vesa <abelvesa@kernel.org>, 
-	Charles Keepax <ckeepax@opensource.cirrus.com>, Alessandro Zummo <a.zummo@towertech.it>, 
-	Peter De Schrijver <pdeschrijver@nvidia.com>, Orson Zhai <orsonzhai@gmail.com>, 
-	Alexandre Torgue <alexandre.torgue@foss.st.com>, Prashant Gaikwad <pgaikwad@nvidia.com>, 
-	Liam Girdwood <lgirdwood@gmail.com>, Alexandre Belloni <alexandre.belloni@bootlin.com>, 
-	Samuel Holland <samuel@sholland.org>, Matthias Brugger <matthias.bgg@gmail.com>, 
-	Richard Fitzgerald <rf@opensource.cirrus.com>, Vinod Koul <vkoul@kernel.org>, 
-	NXP Linux Team <linux-imx@nxp.com>, Sekhar Nori <nsekhar@ti.com>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Linus Walleij <linus.walleij@linaro.org>, 
-	Takashi Iwai <tiwai@suse.com>, David Airlie <airlied@gmail.com>, 
-	Luca Ceresoli <luca.ceresoli@bootlin.com>, Jernej Skrabec <jernej.skrabec@gmail.com>, 
-	Pengutronix Kernel Team <kernel@pengutronix.de>, Baolin Wang <baolin.wang@linux.alibaba.com>, 
-	David Lechner <david@lechnology.com>, Sascha Hauer <s.hauer@pengutronix.de>, 
-	Mark Brown <broonie@kernel.org>, Max Filippov <jcmvbkbc@gmail.com>, 
-	Geert Uytterhoeven <geert+renesas@glider.be>, linux-stm32@st-md-mailman.stormreply.com, 
-	alsa-devel@alsa-project.org, linux-mediatek@lists.infradead.org, 
-	linux-phy@lists.infradead.org, linux-mips@vger.kernel.org, 
-	linux-renesas-soc@vger.kernel.org, linux-actions@lists.infradead.org, 
-	linux-clk@vger.kernel.org, 
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, patches@opensource.cirrus.com, 
-	linux-tegra@vger.kernel.org, linux-rtc@vger.kernel.org, 
-	linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev, 
-	linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org
+Content-Disposition: inline
+In-Reply-To: <Y2peJ+G7ho1HuJSl@paasikivi.fi.intel.com>
+User-Agent: NeoMutt/20180716
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c0
+X-SA-Exim-Mail-From: mfe@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de); SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221108_184409_891147_8BD8DAE8 
-X-CRM114-Status: GOOD (  32.92  )
+X-CRM114-CacheID: sfid-20221109_013715_254394_A423E5BA 
+X-CRM114-Status: GOOD (  11.87  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -113,87 +74,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, 4 Nov 2022 at 21:33, Maxime Ripard <maxime@cerno.tech> wrote:
->
-> The Spreadtrum composite clocks implements a mux with a set_parent
-> hook, but doesn't provide a determine_rate implementation.
->
-> This is a bit odd, since set_parent() is there to, as its name implies,
-> change the parent of a clock. However, the most likely candidate to
-> trigger that parent change is a call to clk_set_rate(), with
-> determine_rate() figuring out which parent is the best suited for a
-> given rate.
->
-> The other trigger would be a call to clk_set_parent(), but it's far less
-> used, and it doesn't look like there's any obvious user for that clock.
->
-> So, the set_parent hook is effectively unused, possibly because of an
-> oversight. However, it could also be an explicit decision by the
-> original author to avoid any reparenting but through an explicit call to
-> clk_set_parent().
->
-> The driver does implement round_rate() though, which means that we can
-> change the rate of the clock, but we will never get to change the
-> parent.
->
-> However, It's hard to tell whether it's been done on purpose or not.
->
-> Since we'll start mandating a determine_rate() implementation, let's
-> convert the round_rate() implementation to a determine_rate(), which
-> will also make the current behavior explicit. And if it was an
-> oversight, the clock behaviour can be adjusted later on.
->
-> Signed-off-by: Maxime Ripard <maxime@cerno.tech>
+Hi Sakari,
 
-Acked-by: Chunyan Zhang <zhang.lyra@gmail.com>
+On 22-11-08, Sakari Ailus wrote:
+> Hi Marco,
+> 
+> On Fri, Oct 28, 2022 at 03:43:49PM +0200, Marco Felsch wrote:
+> > Hi,
+> > 
+> > gentle ping.
+> 
+> This is in my latest PR to Mauro:
+> 
+> <URL:https://patchwork.linuxtv.org/project/linux-media/patch/Y1uVp8hHo7DYUK82@valkosipuli.retiisi.eu/>
 
-Thanks,
-Chunyan
+Thanks for the info. FTR: The fixing patch for the Kconfig is already
+send.
 
-> ---
->  drivers/clk/sprd/composite.c | 16 +++++++++++-----
->  1 file changed, 11 insertions(+), 5 deletions(-)
->
-> diff --git a/drivers/clk/sprd/composite.c b/drivers/clk/sprd/composite.c
-> index ebb644820b1e..d3a852720c07 100644
-> --- a/drivers/clk/sprd/composite.c
-> +++ b/drivers/clk/sprd/composite.c
-> @@ -9,13 +9,19 @@
->
->  #include "composite.h"
->
-> -static long sprd_comp_round_rate(struct clk_hw *hw, unsigned long rate,
-> -                               unsigned long *parent_rate)
-> +static int sprd_comp_determine_rate(struct clk_hw *hw,
-> +                                   struct clk_rate_request *req)
->  {
->         struct sprd_comp *cc = hw_to_sprd_comp(hw);
-> +       unsigned long rate;
->
-> -       return sprd_div_helper_round_rate(&cc->common, &cc->div,
-> -                                        rate, parent_rate);
-> +       rate = sprd_div_helper_round_rate(&cc->common, &cc->div,
-> +                                         req->rate, &req->best_parent_rate);
-> +       if (rate < 0)
-> +               return rate;
-> +
-> +       req->rate = rate;
-> +       return 0;
->  }
->
->  static unsigned long sprd_comp_recalc_rate(struct clk_hw *hw,
-> @@ -53,7 +59,7 @@ const struct clk_ops sprd_comp_ops = {
->         .get_parent     = sprd_comp_get_parent,
->         .set_parent     = sprd_comp_set_parent,
->
-> -       .round_rate     = sprd_comp_round_rate,
-> +       .determine_rate = sprd_comp_determine_rate,
->         .recalc_rate    = sprd_comp_recalc_rate,
->         .set_rate       = sprd_comp_set_rate,
->  };
->
-> --
-> b4 0.11.0-dev-99e3a
+Regards,
+  Marco
+
+> 
+> -- 
+> Sakari Ailus
+> 
 
 -- 
 linux-phy mailing list
