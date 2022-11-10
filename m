@@ -4,70 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8E98BC4332F
-	for <linux-phy@archiver.kernel.org>; Thu, 10 Nov 2022 11:46:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 759B3C433FE
+	for <linux-phy@archiver.kernel.org>; Thu, 10 Nov 2022 11:51:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bqxXkdVOQLrDMyysUCavwW2uySY2kilwcpui9knaEd8=; b=avHbu3KvEVAj+P
-	Qfm2WBO941ImnQ/ThQyqwAS1TtViNTE5bUxbPPPtjAtrHeyApDP+ANXtO9Q31j/+4lkBatRwxy8Nh
-	s4xc1I7f2b6q9CbxntU4XiFjaYaoh03WVxP902irQMAGIIRUuI5MpA+yLDR0DjFph2j/2nOzl3m0T
-	uXw4rOFec7Fq8h0hlB/sAu/tVvdQK7m7GHF3X6UOLxkp5hpgUOkNSgf/z8kfFT40y6qhfqHvSHMHA
-	37eOsGrDbmbSF4R+LuF5dDdACJBr3r2T72u7tzmtLmGUaRh8al8foqhfmdzxyNAo21nVMraAccP7v
-	LsPLAUB0bhQYpmqmwp8A==;
+	List-Owner; bh=D+y0nQ/bT8CrGJF1LMlC/MY0jBkdgHpPYDbQ9xtBOIE=; b=w4jUJT98ddMaZP
+	WEqFD3uGBG0ZMhAWg/kkzd3ACpvAWs5l2A00KVEu9oCZLB9h28BCBGrVPXD1fI1xvJGVS209PCP/H
+	VA0q7nWaThI+zRpRDZliO5I2tdalJfXPiusjvc7gh63H/Wxtw+WUY0Hy+dY+psifJdaIbQ+lb/qh8
+	rDKk6UufrfOe72QZ91VOwB0ppawSOVnJTC6btLAZBDg8SHrLes/MaVWnoHDAo0lLgRIGsl4gJJOt3
+	8M/NDuh932912xrJHauQ/gsKJ0GwLEAUtFEvmQf7bmdw3O3PsD8fRtEWCov+cdzyIB/CdT2niEdxY
+	rqugUcx/cL2a4bXyR0Iw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ot615-005UTR-Jr; Thu, 10 Nov 2022 11:46:43 +0000
-Received: from mail-pg1-x529.google.com ([2607:f8b0:4864:20::529])
+	id 1ot662-005X5u-3H; Thu, 10 Nov 2022 11:51:50 +0000
+Received: from mail-ed1-x52e.google.com ([2a00:1450:4864:20::52e])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ot5kG-005MYs-LL
-	for linux-phy@lists.infradead.org; Thu, 10 Nov 2022 11:29:22 +0000
-Received: by mail-pg1-x529.google.com with SMTP id s196so1538176pgs.3
-        for <linux-phy@lists.infradead.org>; Thu, 10 Nov 2022 03:29:19 -0800 (PST)
+	id 1ot5ua-005R9G-MO
+	for linux-phy@lists.infradead.org; Thu, 10 Nov 2022 11:40:02 +0000
+Received: by mail-ed1-x52e.google.com with SMTP id v27so2673624eda.1
+        for <linux-phy@lists.infradead.org>; Thu, 10 Nov 2022 03:39:59 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=cc:to:subject:message-id:date:from:in-reply-to:references
          :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=dZWp2kHBH7BxTK24vYMYaWuh8ES61v4HZQKkOxWH97c=;
-        b=nm5AzPUP/c5SxnOWRF0E8OOs8vIUdOgDjB6wYkEQYpfYDRuGKSxS+CBIeuds7UEokj
-         CAc3O4M3Lzp0CmH9uvJ+chSuCz2e7UtgkMxDMXFmH0EFBdC81NQcL56cIa/e5fTzyvWS
-         kSegvkcOyKB6FEauX3mSzkzzDIAUq5r5SATzN3WmVSBqg1jyg/gg0kYs06KdBSG3zxV/
-         fvTxGa1dt18Ruz+5BEtQasGBTHQrEp0wpReAHWWGdK+pWMVHzmdtTwn3mkonTWk309ZV
-         x5RN6EKVnoWzvPKijsEeJPqRTGi+5rLHTCBxYP1D5lgzLbOuhL8arV0ezTVKJRNayIhr
-         L9Iw==
+        bh=ck1BFgYQUoxfjthSY0Z/ICMvhRDs51HkE0D/E51e4wU=;
+        b=cLoqN/9Hw4WN89uoDoxpq9Ce/Ps341RBpybWaA/Ttn7dX0XjEZSpQMeE/cLupilSy+
+         h9M/AwRJwi+wD3lcUZtgCbl5J3Y1/4+a+UG987xrzyBKVQSsdTGx1Fm9p56BVwQCgeqw
+         ImbNP+V0cuLG09qZBqDEVWEBH4JmnDYapBzy20rI0QOEnuyEvU41wtqwWtHQ/Ku+SIq6
+         z/iAwWeg98cPs684u3jM1bZkrHRFlxBeM553WE2HZydhyBqAswoiUSyHfbMc8MScHPVp
+         jTxj/0bSYX2PEajd6PNI/IV0ZBru+l7g17Wn1GCvWMrBI6s8qLNSd3U7dwQx3hiin+sp
+         LiYA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=cc:to:subject:message-id:date:from:in-reply-to:references
          :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=dZWp2kHBH7BxTK24vYMYaWuh8ES61v4HZQKkOxWH97c=;
-        b=2rljy4JtvK9hjfpKfgmiv/MdbGuNVky2oLk6ywV7uvFefhS7hSnVZ8c2WSBpXLqCk4
-         zs3vS3AT2UK9RHwlsKV+Ou31vTNSZpTC9oxk26PaJPXvUKpUIVaX3ZPO4zXmXV2tlauo
-         ruJ299LbQGPyQNW0vZbMMauEEkSf7Bs04nIwPdKhkMInOXfY7OBMIXLep0aVukZUfAPO
-         224rtnMcGdoj6tQeP11TGHoX552RDiep/5ilwgzyYudaa1F+WqQptxNkdJR7Xn9HNW88
-         EUwGva4rOhtRyLL/xNsCE2K2P6UDYtfcdSBd36m09y0O3jak6Q3PSZggRmRafWeAXwfq
-         mlag==
-X-Gm-Message-State: ACrzQf1o+hlIf699zUkYU7I7+L1UDWY7u+dYr+GIIeOxgwPOgQr3+Fj4
-	rsPhoxaHgV3tuIvXqNB0wk8ZqagcUWL68GuQWeLmhg==
-X-Google-Smtp-Source: AMsMyM4cuzpOD/TX9hqFyYyupcC8P3vPeFAFlSRm0wZ2MgnRUbZnV+cRg9A/mVHt7wBrkUdmfz48YahbcXukazUMnzc=
-X-Received: by 2002:a63:4204:0:b0:442:ee11:4894 with SMTP id
- p4-20020a634204000000b00442ee114894mr2372631pga.595.1668079758533; Thu, 10
- Nov 2022 03:29:18 -0800 (PST)
+        bh=ck1BFgYQUoxfjthSY0Z/ICMvhRDs51HkE0D/E51e4wU=;
+        b=A3n471FP1aM3K3YbgxJMEOCHTzCv04/q+pixP+JlNZ3tI9SYmO+qC1UL5A6Snnujaj
+         Gic6/HySAsU/Iqst8LWyZey+gWPFhhk859MdXKS4QUzz4paAdBd+5pF3juZkCFC3xTYG
+         bO1orEkP9bCPR6XIA/JNy/oKtoC5UshGm5fFZh/vSGlbhl0nAP31XFwCmNsmpvwKI74t
+         YOSt5oXmbg1m8jKLH3LV3+ooh/qufwzcCpinXrd3jhFQl6prXj+uNeL4CpjwLzUOWrDC
+         nMvSLNAAHOcR1Bht7mP5+hfHvFPn+kpgvwn6f0BItC9w4o3nDAm5oZwiVwevhoWpJyrk
+         P1Rw==
+X-Gm-Message-State: ACrzQf2+Cxc0ksP53rGmivGsDnr8tUY4ax6yJMkikHy5O0DUDtgHojQd
+	FsttN85/5unNgcYMjDLTqZS+QnDWAJorgD1LiGY7gQ==
+X-Google-Smtp-Source: AMsMyM6KPfAGNVILTJIJybxZbWNcNW1j294XPOEkghGZsATADMyuAh5FXMGRYiA9Y0UOLTHKSZCe9zdW3Mb4U369XWo=
+X-Received: by 2002:a05:6402:4002:b0:463:bc31:2604 with SMTP id
+ d2-20020a056402400200b00463bc312604mr2100488eda.32.1668080397979; Thu, 10 Nov
+ 2022 03:39:57 -0800 (PST)
 MIME-Version: 1.0
-References: <20221018-clk-range-checks-fixes-v2-0-f6736dec138e@cerno.tech> <20221018-clk-range-checks-fixes-v2-35-f6736dec138e@cerno.tech>
-In-Reply-To: <20221018-clk-range-checks-fixes-v2-35-f6736dec138e@cerno.tech>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Thu, 10 Nov 2022 12:28:41 +0100
-Message-ID: <CAPDyKFoycVedCJMy0=UK+q5SiPQHqje_8bSN-gdkpBa6KhFfkg@mail.gmail.com>
+References: <20221018-clk-range-checks-fixes-v2-0-f6736dec138e@cerno.tech>
+ <20221018-clk-range-checks-fixes-v2-35-f6736dec138e@cerno.tech> <CAPDyKFoycVedCJMy0=UK+q5SiPQHqje_8bSN-gdkpBa6KhFfkg@mail.gmail.com>
+In-Reply-To: <CAPDyKFoycVedCJMy0=UK+q5SiPQHqje_8bSN-gdkpBa6KhFfkg@mail.gmail.com>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Thu, 10 Nov 2022 12:39:46 +0100
+Message-ID: <CACRpkdYOj8uozJZO4MV-_OAKeOsQHhoEM=PyynVuNY-JkpgTOw@mail.gmail.com>
 Subject: Re: [PATCH v2 35/65] clk: ux500: sysctrl: Add a determine_rate hook
-To: Maxime Ripard <maxime@cerno.tech>
-Cc: Stephen Boyd <sboyd@kernel.org>, Maxime Coquelin <mcoquelin.stm32@gmail.com>, 
-	Chen-Yu Tsai <wens@csie.org>, Daniel Vetter <daniel@ffwll.ch>, 
-	Nicolas Ferre <nicolas.ferre@microchip.com>, Thierry Reding <thierry.reding@gmail.com>, 
-	Jaroslav Kysela <perex@perex.cz>, Shawn Guo <shawnguo@kernel.org>, Fabio Estevam <festevam@gmail.com>, 
+To: Ulf Hansson <ulf.hansson@linaro.org>
+Cc: Maxime Ripard <maxime@cerno.tech>, Stephen Boyd <sboyd@kernel.org>, 
+	Maxime Coquelin <mcoquelin.stm32@gmail.com>, Chen-Yu Tsai <wens@csie.org>, 
+	Daniel Vetter <daniel@ffwll.ch>, Nicolas Ferre <nicolas.ferre@microchip.com>, 
+	Thierry Reding <thierry.reding@gmail.com>, Jaroslav Kysela <perex@perex.cz>, 
+	Shawn Guo <shawnguo@kernel.org>, Fabio Estevam <festevam@gmail.com>, 
 	Claudiu Beznea <claudiu.beznea@microchip.com>, Michael Turquette <mturquette@baylibre.com>, 
 	Dinh Nguyen <dinguyen@kernel.org>, Paul Cercueil <paul@crapouillou.net>, 
 	Chunyan Zhang <zhang.lyra@gmail.com>, Manivannan Sadhasivam <mani@kernel.org>, 
@@ -80,8 +82,7 @@ Cc: Stephen Boyd <sboyd@kernel.org>, Maxime Coquelin <mcoquelin.stm32@gmail.com>
 	Samuel Holland <samuel@sholland.org>, Matthias Brugger <matthias.bgg@gmail.com>, 
 	Richard Fitzgerald <rf@opensource.cirrus.com>, Vinod Koul <vkoul@kernel.org>, 
 	NXP Linux Team <linux-imx@nxp.com>, Sekhar Nori <nsekhar@ti.com>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Linus Walleij <linus.walleij@linaro.org>, 
-	Takashi Iwai <tiwai@suse.com>, David Airlie <airlied@gmail.com>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Takashi Iwai <tiwai@suse.com>, David Airlie <airlied@gmail.com>, 
 	Luca Ceresoli <luca.ceresoli@bootlin.com>, Jernej Skrabec <jernej.skrabec@gmail.com>, 
 	Pengutronix Kernel Team <kernel@pengutronix.de>, Baolin Wang <baolin.wang@linux.alibaba.com>, 
 	David Lechner <david@lechnology.com>, Sascha Hauer <s.hauer@pengutronix.de>, 
@@ -96,8 +97,8 @@ Cc: Stephen Boyd <sboyd@kernel.org>, Maxime Coquelin <mcoquelin.stm32@gmail.com>
 	linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev, 
 	linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221110_032920_829743_DB4768B2 
-X-CRM114-Status: GOOD (  34.47  )
+X-CRM114-CacheID: sfid-20221110_034000_784360_187ADA85 
+X-CRM114-Status: GOOD (  23.66  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -114,92 +115,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, 4 Nov 2022 at 14:32, Maxime Ripard <maxime@cerno.tech> wrote:
+On Thu, Nov 10, 2022 at 12:29 PM Ulf Hansson <ulf.hansson@linaro.org> wrote:
+> On Fri, 4 Nov 2022 at 14:32, Maxime Ripard <maxime@cerno.tech> wrote:
+> >
+> > The UX500 sysctrl "set_parent" clocks implement a mux with a set_parent
+> > hook, but doesn't provide a determine_rate implementation.
+> >
+> > This is a bit odd, since set_parent() is there to, as its name implies,
+> > change the parent of a clock. However, the most likely candidate to
+> > trigger that parent change is a call to clk_set_rate(), with
+> > determine_rate() figuring out which parent is the best suited for a
+> > given rate.
+> >
+> > The other trigger would be a call to clk_set_parent(), but it's far less
+> > used, and it doesn't look like there's any obvious user for that clock.
 >
-> The UX500 sysctrl "set_parent" clocks implement a mux with a set_parent
-> hook, but doesn't provide a determine_rate implementation.
->
-> This is a bit odd, since set_parent() is there to, as its name implies,
-> change the parent of a clock. However, the most likely candidate to
-> trigger that parent change is a call to clk_set_rate(), with
-> determine_rate() figuring out which parent is the best suited for a
-> given rate.
->
-> The other trigger would be a call to clk_set_parent(), but it's far less
-> used, and it doesn't look like there's any obvious user for that clock.
+> If I recall correctly, that is the use case we did target for these
+> types of clocks. See sound/soc/ux500/ux500_ab85xx.c, for example.
 
-If I recall correctly, that is the use case we did target for these
-types of clocks. See sound/soc/ux500/ux500_ab85xx.c, for example.
+Hm I am trying to get that driver to work ... from time to time.
+It's just that ALSA SoC DT has changed to much that it turns out
+into a complete rewrite :/
 
-Maybe there are some additional pieces missing from the old down
-stream kernel, I don't have full picture, sorry.
+So in sound/soc/ux500/mop500_ab8500.c
+I see this:
 
-Anyway, if I am not wrong, this was about supporting a low-power audio
-use case, which requires us to switch the parent clock (to avoid
-wasting energy).
+        status = clk_set_parent(drvdata->clk_ptr_intclk, clk_ptr);
+        if (status)
+(...)
 
->
-> So, the set_parent hook is effectively unused, possibly because of an
-> oversight. However, it could also be an explicit decision by the
-> original author to avoid any reparenting but through an explicit call to
-> clk_set_parent().
+and there is elaborate code to switch between "SYSCLK" and
+"ULPCLK" (ulta-low power clock). Just like you say... however
+a clock named SYSCLK or ULPCLK does not appear in the
+code in drivers/clk/ux500 or any DT bindings so... it seems to
+be non-working for the time being.
 
-Yes, this was the reason.
-
-As a matter of fact, I don't even recall that re-parenting was
-possible through clk_set_rate() when this clock driver was introduced.
-But, I might be wrong, it's quite a while ago.
-
->
-> The latter case would be equivalent to setting the flag
-> CLK_SET_RATE_NO_REPARENT, together with setting our determine_rate hook
-> to __clk_mux_determine_rate(). Indeed, if no determine_rate
-> implementation is provided, clk_round_rate() (through
-> clk_core_round_rate_nolock()) will call itself on the parent if
-> CLK_SET_RATE_PARENT is set, and will not change the clock rate
-> otherwise. __clk_mux_determine_rate() has the exact same behavior when
-> CLK_SET_RATE_NO_REPARENT is set.
->
-> And if it was an oversight, then we are at least explicit about our
-> behavior now and it can be further refined down the line.
->
-> Signed-off-by: Maxime Ripard <maxime@cerno.tech>
-
-Seems reasonable to me!
-
-Reviewed-by: Ulf Hansson <ulf.hansson@linaro.org>
-
-Kind regards
-Uffe
-
-> ---
->  drivers/clk/ux500/clk-sysctrl.c | 4 +++-
->  1 file changed, 3 insertions(+), 1 deletion(-)
->
-> diff --git a/drivers/clk/ux500/clk-sysctrl.c b/drivers/clk/ux500/clk-sysctrl.c
-> index 702f2f8b43fa..d36336665b6d 100644
-> --- a/drivers/clk/ux500/clk-sysctrl.c
-> +++ b/drivers/clk/ux500/clk-sysctrl.c
-> @@ -110,6 +110,7 @@ static const struct clk_ops clk_sysctrl_gate_fixed_rate_ops = {
->  };
->
->  static const struct clk_ops clk_sysctrl_set_parent_ops = {
-> +       .determine_rate = __clk_mux_determine_rate,
->         .set_parent = clk_sysctrl_set_parent,
->         .get_parent = clk_sysctrl_get_parent,
->  };
-> @@ -220,6 +221,7 @@ struct clk *clk_reg_sysctrl_set_parent(struct device *dev,
->                                 unsigned long flags)
->  {
->         return clk_reg_sysctrl(dev, name, parent_names, num_parents,
-> -                       reg_sel, reg_mask, reg_bits, 0, 0, flags,
-> +                       reg_sel, reg_mask, reg_bits, 0, 0,
-> +                       flags | CLK_SET_RATE_NO_REPARENT,
->                         &clk_sysctrl_set_parent_ops);
->  }
->
-> --
-> b4 0.11.0-dev-99e3a
+Yours,
+Linus Walleij
 
 -- 
 linux-phy mailing list
