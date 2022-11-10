@@ -4,66 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 609F6C4332F
-	for <linux-phy@archiver.kernel.org>; Thu, 10 Nov 2022 07:08:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5FB0FC4332F
+	for <linux-phy@archiver.kernel.org>; Thu, 10 Nov 2022 07:10:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Pkjn7lD8r+3o34OMQePR8zKvBWD5ZtwP54CwtjnprUw=; b=xwuHaFCjd6IbIu
-	kSpKH+r+60E5c0c6bLtOcQeNjAAKOudU4Ru7A+YZBwxaNprCKpOKjFZofOOdkhkfAc1Cx5DEUWbNG
-	wBOJeDcRsHR5nuCBFXnTtPN6EosaBuBaUmc4QoxoAmQ91hsbRz6d3/GXsJQLCB5hrg4CTkwVmdRml
-	WH5UjgEWnZBkeaKf4aojvIy7XhtA2aqfsiB7YV1Y+3rPa15wiMMri9WaYoaL2DeQw4ER+jR73cE3P
-	AP1GyEL232qj9vV3QCk9hqY+cmbJpPWcwdisliZBN47gQK16lRgT/oj7Cf8i/kCvjjj0C7oxZ0b6s
-	WKKjZTLxM0iqlsfzB/FA==;
+	List-Owner; bh=4CO+X/0CAKQ3cryxr1Uqo87S3acnlltjxUgskJ6eotY=; b=lrn97S+I3o6NPl
+	jrpJqwbmhcmg9urgOvY/6sh6eOEJXRtrJAtA1fyFAHNVFpdGc2V7vqVCqKKgl9FZX/CmlxmakYTlG
+	2wq6dGjsvs2YZbDO4JYeqe5rJC5Gmls7uKFs9skTMCmsPbpQCqQvZTVKWOSIzqZ/RMwUdkiUr06g5
+	zmZGy99j5IJoFa5UigYS195poRStfNBB4kHPlHeuk8aR6jeNQVXXgKL6SRMWPCBhS4DKm6NTx7wsF
+	BOfqunSwMzZRUqpn6duagjzpPjGNllX5sY5THXKBMTwvqggh6Vzr6pUBpOz/bs2ImibGVB6CFBoLO
+	7Fi/S4XJjzoTsa1h6/Fw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ot1fz-003jtI-PF; Thu, 10 Nov 2022 07:08:39 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1ot1hL-003k6E-Qe; Thu, 10 Nov 2022 07:10:03 +0000
+Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ot1fw-003jsc-Rk
-	for linux-phy@lists.infradead.org; Thu, 10 Nov 2022 07:08:38 +0000
+	id 1ot1hI-003k5I-NJ
+	for linux-phy@lists.infradead.org; Thu, 10 Nov 2022 07:10:02 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 3CDD561D91;
-	Thu, 10 Nov 2022 07:08:36 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 18549C433D6;
-	Thu, 10 Nov 2022 07:08:34 +0000 (UTC)
+	by ams.source.kernel.org (Postfix) with ESMTPS id 66BB3B82050;
+	Thu, 10 Nov 2022 07:09:59 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9B7C2C433C1;
+	Thu, 10 Nov 2022 07:09:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1668064115;
-	bh=bC3mntiO+4TdnNlSsGW2KWLyVk6VhIwgdCAIZqUmDhI=;
+	s=k20201202; t=1668064198;
+	bh=V7yDfiL6FXOyL8hHuXJBRR5wnNHmetLnLRlaixlcqdY=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=fkeaIVavbPyf8nxRsqLXbkYtyY1sHTYZUw2uUmEl+c4xiyNGhmoZsfjeqOQmsj0Gk
-	 gKT8DrXBwsxLOkyD76kp8s3Av8WO7yfvoF/9RFMids8FrYUKtcb3jUt9PaK7mvMYl7
-	 uL9r8M8ewXk00smk1QobnnHUoHEs3IUKLRBIixhugdnzasL1qktbslb1wUfCDzrhju
-	 +8RFeUogxbLRL8VyzGGwhHo/fmUtiotKATFKFgcNS0T/t8wfbr25hWYPkxg6jHhDov
-	 XGtEUVymgpuweMyfSy7wZZ8Mp+0ScjhvOpMslAxy/JUkmcJgBkBeglwumFHDQNmcAu
-	 5y+U3VmoHWACQ==
-Date: Thu, 10 Nov 2022 12:38:31 +0530
+	b=uB2P9hwAMM01f/49Y+bDwuY972Gp1s7u4u1BdV8jGMGI8zTH+JzwMbYYEa3fm2BZp
+	 1cEUzyxw5r1Y5vzynJE1GWyUBAkSpqrEBrTBABbMAVLercW1vxWupOlZ/73uzpTAIM
+	 a+bEtk0SeFxqMv21Wdog3daUzIxjAHskpllCDbVhXHarKGn448kzjsmSs3YqNStuFs
+	 o4vRTuNvCrsy6ufqdNlJCNra5XEBANI0ehfoDSh190ZhKqeVEI7/8RVOCUcUBYfTwd
+	 k4K130bY3gh5HIr39CUy7d/4c/N1dBYnckna/61YMbsaGZlL3U6vfqcNGjUpSD8iY2
+	 TrzTnBg/foQjQ==
+Date: Thu, 10 Nov 2022 12:39:53 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Christian Marangi <ansuelsmth@gmail.com>
-Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@somainline.org>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
-	linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
-Subject: Re: [PATCH 2/2] arm64: dts: qcom: ipq6018: improve pcie phy pcs reg
- table
-Message-ID: <Y2yjb5nLgYUhey/P@matsya>
-References: <20221103212125.17156-1-ansuelsmth@gmail.com>
- <20221103212125.17156-2-ansuelsmth@gmail.com>
+To: Jon Hunter <jonathanh@nvidia.com>
+Cc: JC Kuo <jckuo@nvidia.com>, Kishon Vijay Abraham I <kishon@ti.com>,
+	Thierry Reding <thierry.reding@gmail.com>,
+	linux-phy@lists.infradead.org, linux-tegra@vger.kernel.org,
+	Jim Lin <jilin@nvidia.com>
+Subject: Re: [PATCH] phy: tegra: xusb: Fix crash during pad power on/down
+Message-ID: <Y2yjwRUFYQcrOHNT@matsya>
+References: <20221010135132.30809-1-jonathanh@nvidia.com>
+ <Y0zqKh7B9BaOoREo@matsya>
+ <eaf26959-401c-1c82-e95b-9f8a07f189a0@nvidia.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20221103212125.17156-2-ansuelsmth@gmail.com>
+In-Reply-To: <eaf26959-401c-1c82-e95b-9f8a07f189a0@nvidia.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221109_230836_952155_1869784E 
-X-CRM114-Status: GOOD (  10.07  )
+X-CRM114-CacheID: sfid-20221109_231000_919317_70ADD6F5 
+X-CRM114-Status: GOOD (  16.76  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,15 +76,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 03-11-22, 22:21, Christian Marangi wrote:
-> This is not a fix on its own but more a cleanup. Phy qmp pcie driver
-> currently have a workaround to handle pcs_misc not declared and add
-> 0x400 offset to the pcs reg if pcs_misc is not declared.
+On 07-11-22, 21:27, Jon Hunter wrote:
+> Hi Vinod,
 > 
-> Correctly declare pcs_misc reg and reduce PCS size to the common value
-> of 0x1f0 as done for every other qmp based pcie phy device.
+> On 17/10/2022 06:37, Vinod Koul wrote:
+> > On 10-10-22, 14:51, Jon Hunter wrote:
+> > > Commit a88520bfc0ec ("usb: gadget: tegra: Reduce pad power") added calls
+> > > to tegra_phy_xusb_utmi_pad_power_on/down in the Tegra XUDC driver to
+> > > control the pad power. This change is causing a kernel panic when
+> > > powering down the pads on entering suspend with the Jetson TX2 platform.
+> > > The panic occurs because the 'xudc->curr_utmi_phy' is not configured on
+> > > this platform and we do not check to see if the pointer is valid before
+> > > attempting to deference the pointer. Fix this by checking to see if the
+> > > 'phy' pointer passed to tegra_phy_xusb_utmi_pad_power_on/down is valid.
+> > 
+> > Applied, thanks
+> > 
+> 
+> We need this fix for Linux v6.1. The crash is still seen as of v6.1-rc3.
 
-Reviewed-by: Vinod Koul <vkoul@kernel.org>
+This is in phy/fixes so should be in v6.1 or in linus's tree shortly
 
 -- 
 ~Vinod
