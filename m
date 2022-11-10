@@ -4,102 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 44BB8C433FE
-	for <linux-phy@archiver.kernel.org>; Thu, 10 Nov 2022 13:06:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C3C57C4332F
+	for <linux-phy@archiver.kernel.org>; Thu, 10 Nov 2022 13:28:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tUPzEXHhzrst40bafuaAtJNMJKKSRPRpURbct4mkFDs=; b=mV/vp+2KNv4r9x
-	z7IoP9d8qp/13fdAJmT35S5JjC18GrsnFnKbr8LU5nRHBabpQNhCYDjLW5izgDPQmCp/aTSJ+2PNW
-	DZxhbzWPgLV0qkR4SkHq/puYsXvbuY9l/XtjTVEgawfd0YM10gPtowUZnYqXuqcaFW8+6x8FBYZ9e
-	XQ5R89KrTEq84UScRdaPoDbhB89WVN8uUWhK2XVte27xGhFn7dgW0CeOYlZGjsxHoqedAKcRs/7Ek
-	8tG9++kuW3Zbi84xRTSYN47Qd7L7zeiA4sEiL6AYwfsg9UnDYFzc5ukWD4NmOvWkuAe27Da/Q8b/g
-	epQEGC8i7n9SDh5AiQWA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=93VbS6eO0NO0R8O/v5X+MUi0hWOAv1HqQPhDEBk3+w4=; b=HChIQy8t2fJPjl
+	grA+A5M+hGSTkHLpCzloy1Yw5MCft9HvHvHZ9VOhTlp3OJYQtd8Uc4jjhriwCJL5WG3JJy1mkWK16
+	mngfkC/THPIfeKxhx9daso5otT03GnmsNFJ51onPjARszI7gH3uYp/RKpYaK5cCsvfXiFH4b5k9Bc
+	QCFNqnCKTUXWhKew8j7VKSWP2kKaDdEIyqiltOnpdD52GSeP9XTvUDuE+5uu0PABgLAn6CyX90rjk
+	5Liuvoz+Q4ig+Oq7m2NZ8c1Yrh1/Oasy8kI76wasrrlAZ+Yb3JMLnp+AxV/j+ZCLFoitxhkI7Bvm6
+	AbsVOsBN4DRshBqBurXQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ot7Fq-005uKW-Et; Thu, 10 Nov 2022 13:06:02 +0000
-Received: from mail-pl1-x62e.google.com ([2607:f8b0:4864:20::62e])
+	id 1ot7b8-00612a-7f; Thu, 10 Nov 2022 13:28:02 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ot7Fj-005uGb-Hq
-	for linux-phy@lists.infradead.org; Thu, 10 Nov 2022 13:05:57 +0000
-Received: by mail-pl1-x62e.google.com with SMTP id j12so1352456plj.5
-        for <linux-phy@lists.infradead.org>; Thu, 10 Nov 2022 05:05:54 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=lrV3scjxXBUgyRehk9/on/q8TxNDq8MdTdotV2WeMBQ=;
-        b=GVZ09h+ngHWOecbTC/uzghXW93HVi79Hc3aHUMBuHut0K+MRP4qjrmbxOsy9wAvyhh
-         CzAf4wAUsz2LX8ScnTSnBYBlU0zD4SfZXHjTGLx4odMNe2HTZmWoc8/O0MjERSTJDuKQ
-         9UeL9YNFV2iAuj4M769TxWHJzx0wEKM1UD/fL8Quarzgi8/jAHx03TmKPyEcNniVs1JP
-         E1bQ9YyT5yBnS4K6hTH0QDyjNMb9vjtJqKa6/m2IeBhMmf0jPp66hTlfQCyxBUHnorSo
-         4QxzB8BVVnzEGtFh63S81NhnvCx7MGrBaQEPEUdQo8KV1MCY/puvxsLONjSQ8GgFephe
-         xQuA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=lrV3scjxXBUgyRehk9/on/q8TxNDq8MdTdotV2WeMBQ=;
-        b=V3e9RwLRSaNSsuAls955cAq0ZfHw2Y7Mcnqz+MyOl0ObyyafVB5Tga0r9aAWOojNTa
-         lSogBU/JsG964hW/Exk9FdFvOx4YyLRbz1o6zNtz9gQiBQ+z8OcTMEboXzNj6xbgng3q
-         1pR9s5aZ+CUAfr0FSl/rVIfhpxHUF0a+LmcsVUy3gZgFYxcAIyPj27v/9paYKTZzauBb
-         mSwGYwtzsfbSZySPnTn5cDy/s3AoXLdsJDxKH+rs6iTexF5Wjb+ndBYo2vPuhmjnpEj1
-         vNaI8c4GSSUjZhu8yWXlKiMRYdB+4DGLpt976v/UgKBt7PKHdX0imjKWrYDOcWmtqI7X
-         p5mA==
-X-Gm-Message-State: ACrzQf3x4JX2PmISE6ZfLmqACRbyx7YN1ZMJ6awD8ACtJ6CuaIdBKblI
-	pwwyuWjtK7QHdUJ3D+zouelVkkMFjk9xHba/x0rNLw==
-X-Google-Smtp-Source: AMsMyM4ntafpxKu1kZoVYdCyuwK4y2qgGm0PDcBHChl8r8c0pj7m0JmQ6SHmodBY/Un25AY0R73awNrQX1GtCyrtwGQ=
-X-Received: by 2002:a17:903:100c:b0:186:63a1:3b5d with SMTP id
- a12-20020a170903100c00b0018663a13b5dmr65965693plb.148.1668085553525; Thu, 10
- Nov 2022 05:05:53 -0800 (PST)
+	id 1ot7b4-0060yE-TI; Thu, 10 Nov 2022 13:28:00 +0000
+X-UUID: 471cb8f788f543d9bb00372f99d74982-20221110
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
+	h=Content-Type:Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From; bh=S8W6/VsKY9UBnV+rl6xlAuNJ77NeZ4guQ3Yk9GbydsY=;
+	b=rgnvi34RUZgE7I1TKuea+OOjW01mxCfJArfXiccXJFrtnCcQoDcpFzeMrPjo/2uUDYfTqJ8dYLnS9fbT5KCF5J0e75m/2G7y944/SlNQYk2PT8ID7wV/Xs6/cZWSPrQfdSd+55WPcsTKE45mksLQQxRhFKcfTaToxjDhz0UhG4M=;
+X-CID-P-RULE: Release_Ham
+X-CID-O-INFO: VERSION:1.1.12,REQID:e280bbfe-5f23-4300-85e6-4e1491a72daf,IP:0,U
+	RL:0,TC:0,Content:0,EDM:0,RT:0,SF:100,FILE:0,BULK:0,RULE:Release_Ham,ACTIO
+	N:release,TS:100
+X-CID-INFO: VERSION:1.1.12,REQID:e280bbfe-5f23-4300-85e6-4e1491a72daf,IP:0,URL
+	:0,TC:0,Content:0,EDM:0,RT:0,SF:100,FILE:0,BULK:0,RULE:Spam_GS981B3D,ACTIO
+	N:quarantine,TS:100
+X-CID-META: VersionHash:62cd327,CLOUDID:54dded50-b7af-492d-8b40-b1032f90ce11,B
+	ulkID:2211102127412RLBA9Q2,BulkQuantity:1,Recheck:0,SF:28|17|19|48,TC:nil,
+	Content:0,EDM:-3,IP:nil,URL:11|1,File:nil,Bulk:40,QS:nil,BEC:nil,COL:0
+X-UUID: 471cb8f788f543d9bb00372f99d74982-20221110
+Received: from mtkmbs13n1.mediatek.inc [(172.21.101.193)] by mailgw02.mediatek.com
+	(envelope-from <chunfeng.yun@mediatek.com>)
+	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
+	with ESMTP id 409421687; Thu, 10 Nov 2022 06:27:51 -0700
+Received: from mtkmbs11n2.mediatek.inc (172.21.101.187) by
+ mtkmbs10n1.mediatek.inc (172.21.101.34) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.792.15; Thu, 10 Nov 2022 21:27:18 +0800
+Received: from localhost.localdomain (10.17.3.154) by mtkmbs11n2.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.2.792.15 via Frontend
+ Transport; Thu, 10 Nov 2022 21:27:17 +0800
+From: Chunfeng Yun <chunfeng.yun@mediatek.com>
+To: Vinod Koul <vkoul@kernel.org>
+CC: Chunfeng Yun <chunfeng.yun@mediatek.com>, Kishon Vijay Abraham I
+	<kishon@ti.com>, Matthias Brugger <matthias.bgg@gmail.com>, Nathan Chancellor
+	<nathan@kernel.org>, Nick Desaulniers <ndesaulniers@google.com>, Tom Rix
+	<trix@redhat.com>, AngeloGioacchino Del Regno
+	<angelogioacchino.delregno@collabora.com>,
+	<linux-arm-kernel@lists.infradead.org>, <linux-mediatek@lists.infradead.org>,
+	<linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+	<llvm@lists.linux.dev>, Eddie Hung <eddie.hung@mediatek.com>, Tianping Fang
+	<tianping.fang@mediatek.com>, kernel test robot <lkp@intel.com>
+Subject: [PATCH v4 1/3] phy: mediatek: fix build warning caused by clang for powerpc
+Date: Thu, 10 Nov 2022 21:27:14 +0800
+Message-ID: <20221110132716.12294-1-chunfeng.yun@mediatek.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-References: <20221018-clk-range-checks-fixes-v2-0-f6736dec138e@cerno.tech>
- <20221018-clk-range-checks-fixes-v2-35-f6736dec138e@cerno.tech>
- <CAPDyKFoycVedCJMy0=UK+q5SiPQHqje_8bSN-gdkpBa6KhFfkg@mail.gmail.com> <CACRpkdYOj8uozJZO4MV-_OAKeOsQHhoEM=PyynVuNY-JkpgTOw@mail.gmail.com>
-In-Reply-To: <CACRpkdYOj8uozJZO4MV-_OAKeOsQHhoEM=PyynVuNY-JkpgTOw@mail.gmail.com>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Thu, 10 Nov 2022 14:05:16 +0100
-Message-ID: <CAPDyKFr6VeF3s47JfzJ9urtMsEem+GiBtHeU=_S8jNaz-D+qnw@mail.gmail.com>
-Subject: Re: [PATCH v2 35/65] clk: ux500: sysctrl: Add a determine_rate hook
-To: Linus Walleij <linus.walleij@linaro.org>
-Cc: Maxime Ripard <maxime@cerno.tech>, Stephen Boyd <sboyd@kernel.org>, 
-	Maxime Coquelin <mcoquelin.stm32@gmail.com>, Chen-Yu Tsai <wens@csie.org>, 
-	Daniel Vetter <daniel@ffwll.ch>, Nicolas Ferre <nicolas.ferre@microchip.com>, 
-	Thierry Reding <thierry.reding@gmail.com>, Jaroslav Kysela <perex@perex.cz>, 
-	Shawn Guo <shawnguo@kernel.org>, Fabio Estevam <festevam@gmail.com>, 
-	Claudiu Beznea <claudiu.beznea@microchip.com>, Michael Turquette <mturquette@baylibre.com>, 
-	Dinh Nguyen <dinguyen@kernel.org>, Paul Cercueil <paul@crapouillou.net>, 
-	Chunyan Zhang <zhang.lyra@gmail.com>, Manivannan Sadhasivam <mani@kernel.org>, 
-	=?UTF-8?Q?Andreas_F=C3=A4rber?= <afaerber@suse.de>, 
-	Jonathan Hunter <jonathanh@nvidia.com>, Abel Vesa <abelvesa@kernel.org>, 
-	Charles Keepax <ckeepax@opensource.cirrus.com>, Alessandro Zummo <a.zummo@towertech.it>, 
-	Peter De Schrijver <pdeschrijver@nvidia.com>, Orson Zhai <orsonzhai@gmail.com>, 
-	Alexandre Torgue <alexandre.torgue@foss.st.com>, Prashant Gaikwad <pgaikwad@nvidia.com>, 
-	Liam Girdwood <lgirdwood@gmail.com>, Alexandre Belloni <alexandre.belloni@bootlin.com>, 
-	Samuel Holland <samuel@sholland.org>, Matthias Brugger <matthias.bgg@gmail.com>, 
-	Richard Fitzgerald <rf@opensource.cirrus.com>, Vinod Koul <vkoul@kernel.org>, 
-	NXP Linux Team <linux-imx@nxp.com>, Sekhar Nori <nsekhar@ti.com>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Takashi Iwai <tiwai@suse.com>, David Airlie <airlied@gmail.com>, 
-	Luca Ceresoli <luca.ceresoli@bootlin.com>, Jernej Skrabec <jernej.skrabec@gmail.com>, 
-	Pengutronix Kernel Team <kernel@pengutronix.de>, Baolin Wang <baolin.wang@linux.alibaba.com>, 
-	David Lechner <david@lechnology.com>, Sascha Hauer <s.hauer@pengutronix.de>, 
-	Mark Brown <broonie@kernel.org>, Max Filippov <jcmvbkbc@gmail.com>, 
-	Geert Uytterhoeven <geert+renesas@glider.be>, linux-stm32@st-md-mailman.stormreply.com, 
-	alsa-devel@alsa-project.org, linux-mediatek@lists.infradead.org, 
-	linux-phy@lists.infradead.org, linux-mips@vger.kernel.org, 
-	linux-renesas-soc@vger.kernel.org, linux-actions@lists.infradead.org, 
-	linux-clk@vger.kernel.org, 
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, patches@opensource.cirrus.com, 
-	linux-tegra@vger.kernel.org, linux-rtc@vger.kernel.org, 
-	linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev, 
-	linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221110_050555_642768_83814142 
-X-CRM114-Status: GOOD (  27.89  )
+X-CRM114-CacheID: sfid-20221110_052759_006319_4D045BA5 
+X-CRM114-Status: GOOD (  11.73  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -116,51 +86,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, 10 Nov 2022 at 12:39, Linus Walleij <linus.walleij@linaro.org> wrote:
->
-> On Thu, Nov 10, 2022 at 12:29 PM Ulf Hansson <ulf.hansson@linaro.org> wrote:
-> > On Fri, 4 Nov 2022 at 14:32, Maxime Ripard <maxime@cerno.tech> wrote:
-> > >
-> > > The UX500 sysctrl "set_parent" clocks implement a mux with a set_parent
-> > > hook, but doesn't provide a determine_rate implementation.
-> > >
-> > > This is a bit odd, since set_parent() is there to, as its name implies,
-> > > change the parent of a clock. However, the most likely candidate to
-> > > trigger that parent change is a call to clk_set_rate(), with
-> > > determine_rate() figuring out which parent is the best suited for a
-> > > given rate.
-> > >
-> > > The other trigger would be a call to clk_set_parent(), but it's far less
-> > > used, and it doesn't look like there's any obvious user for that clock.
-> >
-> > If I recall correctly, that is the use case we did target for these
-> > types of clocks. See sound/soc/ux500/ux500_ab85xx.c, for example.
->
-> Hm I am trying to get that driver to work ... from time to time.
-> It's just that ALSA SoC DT has changed to much that it turns out
-> into a complete rewrite :/
->
-> So in sound/soc/ux500/mop500_ab8500.c
-> I see this:
->
->         status = clk_set_parent(drvdata->clk_ptr_intclk, clk_ptr);
->         if (status)
-> (...)
->
-> and there is elaborate code to switch between "SYSCLK" and
-> "ULPCLK" (ulta-low power clock). Just like you say... however
-> a clock named SYSCLK or ULPCLK does not appear in the
-> code in drivers/clk/ux500 or any DT bindings so... it seems to
-> be non-working for the time being.
+Remove the temporary @mask_, this may cause build warning when use clang
+compiler for powerpc, but can't reproduce it when compile for arm64.
+the build warning is -Wtautological-constant-out-of-range-compare, and
+caused by
+"BUILD_BUG_ON_MSG(__bf_cast_unsigned(_mask, _mask)"
 
-It's definitely not working, but the corresponding clocks ("ulpclk",
-"intclk", "audioclk", etc) are being registered in ab8500_reg_clks().
+After removing @mask_, there is a "CHECK:MACRO_ARG_REUSE" when run
+checkpatch.pl, due to @mask is constant, no reuse problem will happen.
 
-What seems to be missing is a DT conversion for these clocks, so they
-can be consumed properly. Right?
+Fixes: 84513eccd678 ("phy: mediatek: fix build warning of FIELD_PREP()")
+Reported-by: kernel test robot <lkp@intel.com>
+Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+---
+v4 new patch, I'm not sure it can fix build warning, due to I don't cross compile
+    it for powerpc using clang in office.
+---
+ drivers/phy/mediatek/phy-mtk-io.h | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-Kind regards
-Uffe
+diff --git a/drivers/phy/mediatek/phy-mtk-io.h b/drivers/phy/mediatek/phy-mtk-io.h
+index d20ad5e5be81..58f06db822cb 100644
+--- a/drivers/phy/mediatek/phy-mtk-io.h
++++ b/drivers/phy/mediatek/phy-mtk-io.h
+@@ -39,8 +39,8 @@ static inline void mtk_phy_update_bits(void __iomem *reg, u32 mask, u32 val)
+ /* field @mask shall be constant and continuous */
+ #define mtk_phy_update_field(reg, mask, val) \
+ ({ \
+-	typeof(mask) mask_ = (mask);	\
+-	mtk_phy_update_bits(reg, mask_, FIELD_PREP(mask_, val)); \
++	BUILD_BUG_ON_MSG(!__builtin_constant_p(mask), "mask is not constant"); \
++	mtk_phy_update_bits(reg, mask, FIELD_PREP(mask, val)); \
+ })
+ 
+ #endif
+-- 
+2.18.0
+
 
 -- 
 linux-phy mailing list
