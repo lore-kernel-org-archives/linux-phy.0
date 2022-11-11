@@ -4,69 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CBB16C433FE
-	for <linux-phy@archiver.kernel.org>; Fri, 11 Nov 2022 19:00:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9A173C433FE
+	for <linux-phy@archiver.kernel.org>; Fri, 11 Nov 2022 20:27:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jzHpbrasIUHDyCdvEEXzQArhvxHWTtwoUEpSJJefwiI=; b=wn1lcoxuS98+nb
-	dF5gmPdeMzxcVuzKnuhCgbEu895JWipyusU4cVA/ZliLJ+o4933UN+u/0UCEcq8p9Z9LED/H9xzLD
-	CTuO5BYayT5Xzv1nT7LWPZ5zXLZG1o2lqQ8K9XqIqY17lFE+XnM7UhuCV7azC2/csDBDM3w5Xb8fn
-	IxFL1B9BAFLON6D2TG0xsqSRpSUkbssVTkNfc6TeLjITDWOfr7LXYdUyc3c3q3qLDz5KqGjRV8cV7
-	XobDLDYCWNnAWr8DmMfX4WbtnyP25m8OZEIcr0UXctiDBAsxdaeUCnk8+m/b11CygaZsPWA/Ez8Di
-	EwPhGWucNbG3llAlAqyw==;
+	List-Owner; bh=bd9JxT3qVpYnF9pgotBlHEu9iH6zK1hRFSuKH5BDP9A=; b=w4Uh5G8o0iYSnh
+	+tb7OKfBFqEwvdRf6eNsNuzDfvz23xFZiUbZBVKT4MgrelzxEkCqPb5SqZ8XWrUm8klwmNUCMx880
+	M/VQUbpHvD32FpDP7QVBbxEc3uBfvkCgQV9DZsJqlcuU7jwJJ4U0jATQO4CvncHlH+umiInT739Hd
+	yu8Te9n7Qa7prMVHwIUXboSUPtbe4M3iBZflnBKh+9wFTX3bTSbngNL7wtmsaWG118UKjBun1WSrf
+	GRkju1jf+Z3DLI0yubPBnBdoz0qCpg7kYlOEWRQ29k6zrM366ikYNd03aWODQHLrTvl9SaeWhdLNK
+	uWn57ZnjCn/ILpi1cthQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1otZGp-000KkK-4B; Fri, 11 Nov 2022 19:00:55 +0000
-Received: from mail-oo1-f50.google.com ([209.85.161.50])
+	id 1otacL-000uNv-RC; Fri, 11 Nov 2022 20:27:13 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1otXtO-00HIFN-P7
-	for linux-phy@lists.infradead.org; Fri, 11 Nov 2022 17:32:40 +0000
-Received: by mail-oo1-f50.google.com with SMTP id g10-20020a4ab4ca000000b00481082808cbso740287ooo.10
-        for <linux-phy@lists.infradead.org>; Fri, 11 Nov 2022 09:32:36 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=po5PnrsJOrtibdnuIvtZD7NvBSBhlNi4tJ/oxCe6Y54=;
-        b=C62tp0UT9qmmNOBYHJNX9NBiuuY/E4c36QWRHHAN/GCgemFmcw+H7Bdc/f/96r1YU+
-         a9vrhNTyiDKUaitJzAKb9y+f1mV5JvuRCrPyjjaTHHXheUlJEdWWnCWq03ft2D7r+rVB
-         WFMNM+oziTjOMHUga5qHIroAkZEj2sKSI/7uIBXvfPJqP29m8PsUAyQX41Hlg2gXycEn
-         /pL7cZ/yEpm7cmQ9DoXBXdtLf93j0qm0Fo2uzz9GpZVLhmzQOBrc2x0GgMrgfeUXAd8K
-         j1ANVuwN7uWIcV78INWvurkiztwQV6cfWhKns3o5VdU1av9jlfubtSYbDjfvRb0nMdQp
-         GoMw==
-X-Gm-Message-State: ANoB5pmy8klk/UfXQH6zM5cUtM3ntiPxDdPgjZjr7ErFB8s2gBXdZEOk
-	cb+Rj37keAf8Hpf30UEJIQ==
-X-Google-Smtp-Source: AA0mqf4Z94tBfrdLD8Dbj2VxNYqWTWzdRAPZ/PPQAwiuJKHfq3mYjcMCQnCCnCuCCJIqaSvKoTgpGg==
-X-Received: by 2002:a4a:a78b:0:b0:498:260c:d780 with SMTP id l11-20020a4aa78b000000b00498260cd780mr1380739oom.27.1668187955744;
-        Fri, 11 Nov 2022 09:32:35 -0800 (PST)
-Received: from robh_at_kernel.org (66-90-144-107.dyn.grandenetworks.net. [66.90.144.107])
-        by smtp.gmail.com with ESMTPSA id i2-20020a4ac502000000b00480816a5b8csm999120ooq.18.2022.11.11.09.32.34
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 11 Nov 2022 09:32:35 -0800 (PST)
-Received: (nullmailer pid 3566720 invoked by uid 1000);
-	Fri, 11 Nov 2022 17:32:36 -0000
-Date: Fri, 11 Nov 2022 11:32:36 -0600
-From: Rob Herring <robh@kernel.org>
-To: Jon Hunter <jonathanh@nvidia.com>
-Cc: Wayne Chang <waynec@nvidia.com>, mathias.nyman@intel.com, p.zabel@pengutronix.de, devicetree@vger.kernel.org, krzysztof.kozlowski+dt@linaro.org, linux-tegra@vger.kernel.org, singhanc@nvidia.com, balbi@kernel.org, linux-phy@lists.infradead.org, vkoul@kernel.org, thierry.reding@gmail.com, ajayg@nvidia.com, heikki.krogerus@linux.intel.com, linux-usb@vger.kernel.org, treding@nvidia.com, jckuo@nvidia.com, linux-kernel@vger.kernel.org, gregkh@linuxfoundation.org, linux-i2c@vger.kernel.org
-Subject: Re: [PATCH v2 02/13] dt-bindings: usb: Add NVIDIA Tegra234 XUSB host
- controller binding
-Message-ID: <20221111173236.GA3561612-robh@kernel.org>
-References: <20221111101509.999589-1-waynec@nvidia.com>
- <20221111101509.999589-3-waynec@nvidia.com>
- <166817308790.3060162.14990231448404857914.robh@kernel.org>
- <5782d31a-9a0c-33da-ff84-20cae29f977e@nvidia.com>
+	id 1otacI-000uJ1-Rc
+	for linux-phy@lists.infradead.org; Fri, 11 Nov 2022 20:27:12 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id E41A561FDB;
+	Fri, 11 Nov 2022 20:27:00 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8460FC433C1;
+	Fri, 11 Nov 2022 20:26:59 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1668198420;
+	bh=VFFbMfX4/o+UWM2oq92Ps0TnAJRnovYTG4dVRRwNmek=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=JIhYqyP+xZ8S6v1nHiz0+ojoNRzBDYw041MuMpA5sNeXdEipWJ381RiqGr0JdJelE
+	 A5aW0fJyWXVMCdrX9PaCBhIVNLxoKs3QJ3+pKxHskMbAxJwGkufUo+7DcYcwV33I0n
+	 GMqfFJfA+Hb2UJ4H6ETvOiLX73z5UizuxnO6cSh0dsPywRHearwcPNbbe/eUUAFL8D
+	 Rgz60jqhL9AAkhtvJOuOBSXITR1nFvBirmi175OqEYzfrjQVtq+HMmCAoCyZeMpmoH
+	 xbu41uPww5uLQN8KgpavD+4AZjFYe9Rm1Bds+iquI82tcZju/JV65Ews7LVJ0xsiNK
+	 ByvyNIJzDjd6Q==
+Date: Fri, 11 Nov 2022 14:26:57 -0600
+From: Bjorn Andersson <andersson@kernel.org>
+To: Johan Hovold <johan+linaro@kernel.org>
+Cc: Vinod Koul <vkoul@kernel.org>, Andy Gross <agross@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 1/3] dt-bindings: phy: qcom,sc8280xp-qmp-usb3-uni: drop
+ reference-clock source
+Message-ID: <20221111202657.kyzay7oy4yojp4xo@builder.lan>
+References: <20221111093857.11360-1-johan+linaro@kernel.org>
+ <20221111093857.11360-2-johan+linaro@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <5782d31a-9a0c-33da-ff84-20cae29f977e@nvidia.com>
+In-Reply-To: <20221111093857.11360-2-johan+linaro@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221111_093238_858611_6D17F8E6 
-X-CRM114-Status: GOOD (  16.40  )
+X-CRM114-CacheID: sfid-20221111_122710_958380_8E11436D 
+X-CRM114-Status: GOOD (  16.81  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,43 +79,54 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Nov 11, 2022 at 02:38:21PM +0000, Jon Hunter wrote:
+On Fri, Nov 11, 2022 at 10:38:55AM +0100, Johan Hovold wrote:
+> The source clock for the reference clock is not used by the PHY directly
+> and should not be included in the devicetree binding.
 > 
-> On 11/11/2022 13:30, Rob Herring wrote:
-> > 
-> > On Fri, 11 Nov 2022 18:14:58 +0800, Wayne Chang wrote:
-> > > Add device-tree binding documentation for the XUSB host controller present
-> > > on Tegra234 SoC. This controller supports the USB 3.1 specification.
-> > > 
-> > > Signed-off-by: Wayne Chang <waynec@nvidia.com>
-> > > ---
-> > > V1 -> V2: new change for adding nvidia,tegra234-xusb.yaml
-> > >   .../bindings/usb/nvidia,tegra234-xusb.yaml    | 159 ++++++++++++++++++
-> > >   1 file changed, 159 insertions(+)
-> > >   create mode 100644 Documentation/devicetree/bindings/usb/nvidia,tegra234-xusb.yaml
-> > > 
-> > 
-> > My bot found errors running 'make DT_CHECKER_FLAGS=-m dt_binding_check'
-> > on your patch (DT_CHECKER_FLAGS is new in v5.13):
-> > 
-> > yamllint warnings/errors:
-> > 
-> > dtschema/dtc warnings/errors:
-> > Error: Documentation/devicetree/bindings/usb/nvidia,tegra234-xusb.example.dts:36.27-28 syntax error
-> > FATAL ERROR: Unable to parse input tree
-> > make[1]: *** [scripts/Makefile.lib:406: Documentation/devicetree/bindings/usb/nvidia,tegra234-xusb.example.dtb] Error 1
-> > make[1]: *** Waiting for unfinished jobs....
-> > make: *** [Makefile:1492: dt_binding_check] Error 2
+> Fixes: e8e58e29a0c9 ("dt-bindings: phy: qcom,qmp-usb: fix sc8280xp binding")
+> Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
+
+Reviewed-by: Bjorn Andersson <andersson@kernel.org>
+
+> ---
+>  .../bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml       | 7 ++-----
+>  1 file changed, 2 insertions(+), 5 deletions(-)
 > 
-> This compiles fine on top of -next. We are just missing the change that
-> populates the required definitions.
-
-Where exactly is that mentioned in the commit msg?
-
-No maintainer can take patches which apply against linux-next, so not a 
-good dependency to mention either.
-
-Rob
+> diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml
+> index ef080509747a..16fce1038285 100644
+> --- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml
+> @@ -22,12 +22,11 @@ properties:
+>      maxItems: 1
+>  
+>    clocks:
+> -    maxItems: 5
+> +    maxItems: 4
+>  
+>    clock-names:
+>      items:
+>        - const: aux
+> -      - const: ref_clk_src
+>        - const: ref
+>        - const: com_aux
+>        - const: pipe
+> @@ -82,12 +81,10 @@ examples:
+>        reg = <0x088ef000 0x2000>;
+>  
+>        clocks = <&gcc GCC_USB3_MP_PHY_AUX_CLK>,
+> -               <&rpmhcc RPMH_CXO_CLK>,
+>                 <&gcc GCC_USB3_MP0_CLKREF_CLK>,
+>                 <&gcc GCC_USB3_MP_PHY_COM_AUX_CLK>,
+>                 <&gcc GCC_USB3_MP_PHY_PIPE_0_CLK>;
+> -      clock-names = "aux", "ref_clk_src", "ref", "com_aux",
+> -                    "pipe";
+> +      clock-names = "aux", "ref", "com_aux", "pipe";
+>  
+>        power-domains = <&gcc USB30_MP_GDSC>;
+>  
+> -- 
+> 2.37.4
+> 
 
 -- 
 linux-phy mailing list
