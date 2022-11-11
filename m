@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 910BFC4332F
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B88E4C433FE
 	for <linux-phy@archiver.kernel.org>; Fri, 11 Nov 2022 09:26:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,39 +12,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Z2scUuwTI676Vq4l4/CxJYz7ICpaX0WgadCJSstdfz8=; b=M7e4SKi3s71wRu
-	C+wcPc4KlEpIRFOqJ9bOhgUYn0x9DfCpYZx72tnIxoxDRQG0tx9A2TDRrdLIMB+KZiOnJ/DzLREVV
-	+qo9GRtQBSRVKKU/bDx/ukmmOj8o8LpEVvOh9MrJD443TnG/anXFUhVJksAHEl1BGGQ9UR6/QzB8e
-	k4oW7SK2mBNfPOyP9nnsSBJKY5rvh7dwNMgedT8G5FaFgxeiZz1ouTY+LzOmHpC/a6mGcrVmd2Zi7
-	nO6Ph/rRjufjLwvY2FZtWwh1t+6yRHYUtds0Tgv5sQcUHwhshs6fsPOk9G2gSonr2MfOurgiy0FRu
-	eZhu3sUXFIphUkjHIK5w==;
+	List-Owner; bh=jS1pBirPuA7MfFSiQQ4A/dAn4iLQzwWoagpveT1pcJA=; b=pGyC0vHk50BnNl
+	VtHD5F3upF5lCHvZ40YL9CJwsBKzCHjNYjWcSTfEtU9l0gYH2EBtgdTXs+O9+IRXP4Pz1vPsl77XE
+	AjLzVD1yYPXRhWAO2SurvN3hzTwRvijHOUuNJDtWvNoX89gheHPSFWNDf+8UoUdFhNpPGaF5E1Gab
+	7fBE6GS3jACn1e9hrbO4L6JygXhI5YtCEwxHEX8xqE3+ErGp0qWl9OkbpepMviWZilwBaPVmgykCj
+	fHQRJlCu9ZzzoQSVaa5LFmQ0bpMW9AIliIrnRxs0PMnzFE+E71OqE5NvKnfYE6wN3gI08o3g2K4dR
+	5nUw0rMoOJiMs5p8o2mA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1otQIo-00EaQj-VZ; Fri, 11 Nov 2022 09:26:22 +0000
-Received: from ams.source.kernel.org ([145.40.68.75])
+	id 1otQIp-00EaQr-3V; Fri, 11 Nov 2022 09:26:23 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1otQId-00EaJK-R4
-	for linux-phy@lists.infradead.org; Fri, 11 Nov 2022 09:26:15 +0000
+	id 1otQIf-00EaK4-KX
+	for linux-phy@lists.infradead.org; Fri, 11 Nov 2022 09:26:16 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id 0D5B4B824AB;
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 1099361F12;
 	Fri, 11 Nov 2022 09:26:08 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 44593C4FF12;
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 56388C4FF14;
 	Fri, 11 Nov 2022 09:26:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1668158765;
-	bh=GytNX5qMHGwRBIZQ4jQpYSYuZdJSnnn+VzUiNV2EjJ4=;
+	bh=Zc93zrWLEk/mbwGGbJNQIwKZAm30VFAYxogWwW49F5k=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=qnOlPyF/uc+ZKluq70ipVJ7R0BRk3ZbX4dLf7w/ScJalpxtHfQ10a43F2EyRJ23he
-	 eqYuAEbMu+P+Un1OwDyNPMNItXa0F3nEBfYiIRMVZRMm1tcs4fWaFTPZcoWFFavP7h
-	 7MawJg93t9pu4ZLVuGXiWuHeF4pjcTKILo+ottHFixjAg1sPhhQEiifkyhnE9jdx/0
-	 EnOai3uH8ozq9wPF1/h14uHXFRvCCYsW5iT028ZfoNqeL5oApQNBDX2Od1XSDiQmqZ
-	 oMZ2D/HVzctyg9NcJGE2HkdlU7BcbmiuHX9+1k0veVmGP/Qfc8XJ6tDwr65wiqMRiX
-	 akervAURvDESQ==
+	b=C3AUQa/9n/9j2FNq/dev8SIshUT9Qofnoy1OArKU0vmw4y3SseDP4yvNyggvATHia
+	 FD+esdOdLm3Q/klGjqDDk5XeB2bTfoTlmllbmBTsH/kqMYzRINLCTq3VX/iyvBp7KV
+	 7hE5PjeN3u93oz/Fa3cSyGMgBT4iq96pwOz0VCz8ct+/uSK/NLamlAx6fzCy35EIDL
+	 xWQFUg6kY8oz8udOJbaYHIw3rMuroH855OcfZLYHTFOCKj3qnTIgfx8C2XhtwwxYIw
+	 zafDEP7IsQ5eshs86pf7NWkY2tGkWG40HOH2ojj/j6am2TQbSMlxROO9j1etjrTmNF
+	 xFyj9QBdCVtIA==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1otQI5-0002lK-G9; Fri, 11 Nov 2022 10:25:37 +0100
+	id 1otQI5-0002lP-LZ; Fri, 11 Nov 2022 10:25:37 +0100
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>
 Cc: Andy Gross <agross@kernel.org>,
@@ -58,16 +58,16 @@ Cc: Andy Gross <agross@kernel.org>,
 	devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH 12/14] phy: qcom-qmp-combo: rename common-register pointers
-Date: Fri, 11 Nov 2022 10:24:55 +0100
-Message-Id: <20221111092457.10546-13-johan+linaro@kernel.org>
+Subject: [PATCH 14/14] phy: qcom-qmp-combo: add support for updated sc8280xp binding
+Date: Fri, 11 Nov 2022 10:24:57 +0100
+Message-Id: <20221111092457.10546-15-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.37.4
 In-Reply-To: <20221111092457.10546-1-johan+linaro@kernel.org>
 References: <20221111092457.10546-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221111_012613_380641_789DA617 
-X-CRM114-Status: GOOD (  14.76  )
+X-CRM114-CacheID: sfid-20221111_012614_120966_556EC3D6 
+X-CRM114-Status: GOOD (  22.13  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,85 +84,235 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The common registers are shared by the USB and DP parts of the PHY so
-drop the misleading "dp" prefix from the corresponding pointers.
+Add support for the new SC8280XP binding.
 
-Note that the "DP" prefix could also be dropped from the corresponding
-defines, but leave that in place for now.
+Note that the binding does not try to describe every register subregion
+and instead the driver holds the corresponding offsets.
+
+Also note that (possibly) unlike on earlier platforms, the TX registers
+are used by both the USB and DP implementation.
 
 Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 24 +++++++++++------------
- 1 file changed, 12 insertions(+), 12 deletions(-)
+ drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 143 ++++++++++++++++++++--
+ 1 file changed, 133 insertions(+), 10 deletions(-)
 
 diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-index 5068f8674faf..ee44ed6dfaae 100644
+index 0a4d53e6c586..544a7e55bf14 100644
 --- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
 +++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-@@ -866,7 +866,7 @@ struct qmp_combo {
+@@ -798,9 +798,25 @@ static const u8 qmp_dp_v5_voltage_swing_hbr_rbr[4][4] = {
  
- 	const struct qmp_phy_cfg *cfg;
+ struct qmp_combo;
  
--	void __iomem *dp_com;
-+	void __iomem *com;
++struct qmp_combo_offsets {
++	u16 com;
++	u16 txa;
++	u16 rxa;
++	u16 txb;
++	u16 rxb;
++	u16 usb3_serdes;
++	u16 usb3_pcs_misc;
++	u16 usb3_pcs;
++	u16 usb3_pcs_usb;
++	u16 dp_serdes;
++	u16 dp_dp_phy;
++};
++
+ struct qmp_phy_cfg {
+ 	int lanes;
  
- 	void __iomem *serdes;
- 	void __iomem *tx;
-@@ -1778,7 +1778,7 @@ static int qmp_combo_dp_calibrate(struct phy *phy)
- static int qmp_combo_com_init(struct qmp_combo *qmp)
++	const struct qmp_combo_offsets *offsets;
++
+ 	/* Init sequence for PHY blocks - serdes, tx, rx, pcs */
+ 	const struct qmp_phy_init_tbl *serdes_tbl;
+ 	int serdes_tbl_num;
+@@ -961,6 +977,20 @@ static const char * const sc7180_usb3phy_reset_l[] = {
+ 	"phy",
+ };
+ 
++static const struct qmp_combo_offsets qmp_combo_offsets_v5 = {
++	.com		= 0x0000,
++	.txa		= 0x0400,
++	.rxa		= 0x0600,
++	.txb		= 0x0a00,
++	.rxb		= 0x0c00,
++	.usb3_serdes	= 0x1000,
++	.usb3_pcs_misc	= 0x1200,
++	.usb3_pcs	= 0x1400,
++	.usb3_pcs_usb	= 0x1700,
++	.dp_serdes	= 0x2000,
++	.dp_dp_phy	= 0x2200,
++};
++
+ static const struct qmp_phy_cfg sc7180_usb3dpphy_cfg = {
+ 	.lanes			= 2,
+ 
+@@ -1107,6 +1137,8 @@ static const struct qmp_phy_cfg sc8180x_usb3dpphy_cfg = {
+ static const struct qmp_phy_cfg sc8280xp_usb43dpphy_cfg = {
+ 	.lanes			= 2,
+ 
++	.offsets		= &qmp_combo_offsets_v5,
++
+ 	.serdes_tbl		= sc8280xp_usb43dp_serdes_tbl,
+ 	.serdes_tbl_num		= ARRAY_SIZE(sc8280xp_usb43dp_serdes_tbl),
+ 	.tx_tbl			= sc8280xp_usb43dp_tx_tbl,
+@@ -1147,7 +1179,6 @@ static const struct qmp_phy_cfg sc8280xp_usb43dpphy_cfg = {
+ 	.vreg_list		= qmp_phy_vreg_l,
+ 	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
+ 	.regs			= qmp_v4_usb3phy_regs_layout,
+-	.pcs_usb_offset		= 0x300,
+ };
+ 
+ static const struct qmp_phy_cfg sm8250_usb3dpphy_cfg = {
+@@ -2433,6 +2464,22 @@ static int phy_dp_clks_register(struct qmp_combo *qmp, struct device_node *np)
+ 	return 0;
+ }
+ 
++static struct clk_hw *qmp_combo_clk_hw_get(struct of_phandle_args *clkspec, void *data)
++{
++	struct qmp_combo *qmp = data;
++
++	switch (clkspec->args[0]) {
++	case 0:
++		return &qmp->pipe_clk_fixed.hw;
++	case 1:
++		return &qmp->dp_link_hw;
++	case 2:
++		return &qmp->dp_pixel_hw;
++	}
++
++	return ERR_PTR(-EINVAL);
++}
++
+ static int qmp_combo_register_clocks(struct qmp_combo *qmp, struct device_node *usb_np,
+ 					struct device_node *dp_np)
  {
- 	const struct qmp_phy_cfg *cfg = qmp->cfg;
--	void __iomem *dp_com = qmp->dp_com;
-+	void __iomem *com = qmp->com;
- 	int ret;
- 
- 	mutex_lock(&qmp->phy_mutex);
-@@ -1809,25 +1809,25 @@ static int qmp_combo_com_init(struct qmp_combo *qmp)
+@@ -2446,6 +2493,15 @@ static int qmp_combo_register_clocks(struct qmp_combo *qmp, struct device_node *
  	if (ret)
- 		goto err_assert_reset;
+ 		return ret;
  
--	qphy_setbits(dp_com, QPHY_V3_DP_COM_POWER_DOWN_CTRL, SW_PWRDN);
-+	qphy_setbits(com, QPHY_V3_DP_COM_POWER_DOWN_CTRL, SW_PWRDN);
++	/*
++	 * Register a single provider for bindings without child nodes.
++	 */
++	if (usb_np == qmp->dev->of_node)
++		return devm_of_clk_add_hw_provider(qmp->dev, qmp_combo_clk_hw_get, qmp);
++
++	/*
++	 * Register multiple providers for legacy bindings with child nodes.
++	 */
+ 	ret = of_clk_add_hw_provider(usb_np, of_clk_hw_simple_get,
+ 					&qmp->pipe_clk_fixed.hw);
+ 	if (ret)
+@@ -2580,6 +2636,63 @@ static int qmp_combo_parse_dt_legacy(struct qmp_combo *qmp, struct device_node *
+ 	return 0;
+ }
  
- 	/* override hardware control for reset of qmp phy */
--	qphy_setbits(dp_com, QPHY_V3_DP_COM_RESET_OVRD_CTRL,
-+	qphy_setbits(com, QPHY_V3_DP_COM_RESET_OVRD_CTRL,
- 			SW_DPPHY_RESET_MUX | SW_DPPHY_RESET |
- 			SW_USB3PHY_RESET_MUX | SW_USB3PHY_RESET);
++static int qmp_combo_parse_dt(struct qmp_combo *qmp)
++{
++	struct platform_device *pdev = to_platform_device(qmp->dev);
++	const struct qmp_phy_cfg *cfg = qmp->cfg;
++	const struct qmp_combo_offsets *offs = cfg->offsets;
++	struct device *dev = qmp->dev;
++	void __iomem *base;
++
++	if (!offs)
++		return -EINVAL;
++
++	base = devm_platform_ioremap_resource(pdev, 0);
++	if (IS_ERR(base))
++		return PTR_ERR(base);
++
++	qmp->com = base + offs->com;
++	qmp->tx = base + offs->txa;
++	qmp->rx = base + offs->rxa;
++	qmp->tx2 = base + offs->txb;
++	qmp->rx2 = base + offs->rxb;
++
++	qmp->serdes = base + offs->usb3_serdes;
++	qmp->pcs_misc = base + offs->usb3_pcs_misc;
++	qmp->pcs = base + offs->usb3_pcs;
++	qmp->pcs_usb = base + offs->usb3_pcs_usb;
++
++	qmp->dp_serdes = base + offs->dp_serdes;
++	qmp->dp_tx = base + offs->txa;
++	qmp->dp_tx2 = base + offs->txb;
++	qmp->dp_dp_phy = base + offs->dp_dp_phy;
++
++	qmp->pipe_clk = devm_clk_get(dev, "usb3_pipe");
++	if (IS_ERR(qmp->pipe_clk)) {
++		return dev_err_probe(dev, PTR_ERR(qmp->pipe_clk),
++				"failed to get usb3_pipe clock\n");
++	}
++
++	return 0;
++}
++
++static struct phy *qmp_combo_phy_xlate(struct device *dev, struct of_phandle_args *args)
++{
++	struct qmp_combo *qmp = dev_get_drvdata(dev);
++
++	if (args->args_count == 0)
++		return ERR_PTR(-EINVAL);
++
++	switch (args->args[0]) {
++	case PHY_TYPE_USB3:
++		return qmp->usb_phy;
++	case PHY_TYPE_DP:
++		return qmp->dp_phy;
++	}
++
++	return ERR_PTR(-EINVAL);
++}
++
+ static int qmp_combo_probe(struct platform_device *pdev)
+ {
+ 	struct qmp_combo *qmp;
+@@ -2612,17 +2725,22 @@ static int qmp_combo_probe(struct platform_device *pdev)
+ 	if (ret)
+ 		return ret;
  
- 	/* Default type-c orientation, i.e CC1 */
--	qphy_setbits(dp_com, QPHY_V3_DP_COM_TYPEC_CTRL, 0x02);
-+	qphy_setbits(com, QPHY_V3_DP_COM_TYPEC_CTRL, 0x02);
++	/* Check for legacy binding with child nodes. */
+ 	usb_np = of_get_child_by_name(dev->of_node, "usb3-phy");
+-	if (!usb_np)
+-		return -EINVAL;
++	if (usb_np) {
++		dp_np = of_get_child_by_name(dev->of_node, "dp-phy");
++		if (!dp_np) {
++			of_node_put(usb_np);
++			return -EINVAL;
++		}
  
--	qphy_setbits(dp_com, QPHY_V3_DP_COM_PHY_MODE_CTRL, USB3_MODE | DP_MODE);
-+	qphy_setbits(com, QPHY_V3_DP_COM_PHY_MODE_CTRL, USB3_MODE | DP_MODE);
+-	dp_np = of_get_child_by_name(dev->of_node, "dp-phy");
+-	if (!dp_np) {
+-		of_node_put(usb_np);
+-		return -EINVAL;
+-	}
++		ret = qmp_combo_parse_dt_legacy(qmp, usb_np, dp_np);
++	} else {
++		usb_np = of_node_get(dev->of_node);
++		dp_np = of_node_get(dev->of_node);
  
- 	/* bring both QMP USB and QMP DP PHYs PCS block out of reset */
--	qphy_clrbits(dp_com, QPHY_V3_DP_COM_RESET_OVRD_CTRL,
-+	qphy_clrbits(com, QPHY_V3_DP_COM_RESET_OVRD_CTRL,
- 			SW_DPPHY_RESET_MUX | SW_DPPHY_RESET |
- 			SW_USB3PHY_RESET_MUX | SW_USB3PHY_RESET);
+-	ret = qmp_combo_parse_dt_legacy(qmp, usb_np, dp_np);
++		ret = qmp_combo_parse_dt(qmp);
++	}
+ 	if (ret)
+ 		goto err_node_put;
  
--	qphy_clrbits(dp_com, QPHY_V3_DP_COM_SWI_CTRL, 0x03);
--	qphy_clrbits(dp_com, QPHY_V3_DP_COM_SW_RESET, SW_RESET);
-+	qphy_clrbits(com, QPHY_V3_DP_COM_SWI_CTRL, 0x03);
-+	qphy_clrbits(com, QPHY_V3_DP_COM_SW_RESET, SW_RESET);
+@@ -2658,7 +2776,12 @@ static int qmp_combo_probe(struct platform_device *pdev)
  
- 	qphy_setbits(qmp->pcs, cfg->regs[QPHY_PCS_POWER_DOWN_CONTROL],
- 			SW_PWRDN);
-@@ -2560,9 +2560,9 @@ static int qmp_combo_parse_dt_legacy(struct qmp_combo *qmp, struct device_node *
- 	if (IS_ERR(qmp->serdes))
- 		return PTR_ERR(qmp->serdes);
+ 	phy_set_drvdata(qmp->dp_phy, qmp);
  
--	qmp->dp_com = devm_platform_ioremap_resource(pdev, 1);
--	if (IS_ERR(qmp->dp_com))
--		return PTR_ERR(qmp->dp_com);
-+	qmp->com = devm_platform_ioremap_resource(pdev, 1);
-+	if (IS_ERR(qmp->com))
-+		return PTR_ERR(qmp->com);
+-	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
++	dev_set_drvdata(dev, qmp);
++
++	if (usb_np == dev->of_node)
++		phy_provider = devm_of_phy_provider_register(dev, qmp_combo_phy_xlate);
++	else
++		phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
  
- 	qmp->dp_serdes = devm_platform_ioremap_resource(pdev, 2);
- 	if (IS_ERR(qmp->dp_serdes))
+ 	of_node_put(usb_np);
+ 	of_node_put(dp_np);
 -- 
 2.37.4
 
