@@ -4,47 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E7E06C43217
-	for <linux-phy@archiver.kernel.org>; Fri, 11 Nov 2022 09:43:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D9A7EC4321E
+	for <linux-phy@archiver.kernel.org>; Fri, 11 Nov 2022 09:43:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=QTj3732jafvxP3S7+Uxy64MOivRv6I8ioinfYvrUPUY=; b=jtty+r9/Gg3p8Q
-	Csyb56Jf0L/ZkMNjDdik/t2hKIuvUYJDsXeLRZLRWvkxXWmWmeHUCJQxSqbliiqT0t+8VTu9BEi+W
-	LBzaVJe5xzf0Cxe9DyzWvLy2f/XGnluneRmVzTSFjUxidqFfDU0Hu226lPfo5UnT2WtUfQHsf8135
-	8hEI0Ev640G1wIzJnZXWbRkEZHvcrkWQASyOaASoOH0Fauu6eEiTaKM6uRn2GmtJf5umv8q3RMMdI
-	Y2F9BICqCvOaLDy5KtgIiB510qiMVfOTcA5nxnL6b9c1EU5OcjAVnfCUVElDSTvQVTb4APbFJJCui
-	BfkoHhnfJ39aaHPhQK1A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=nlrAlwrPaEjRHeMU7/KqP3TFQkkdbUoF2BmJ5gx3n/E=; b=zGQKRU9++RCsAO
+	EbU6MiUT62SuGTajlcxIN1tDi/nOELR10ldcctYfaRCgksCyBF6nONZioWwlz88v2pIhrGnX0cBDh
+	emZLrnZxUu9MvmHYzfvudl9V9aWQO6VHHl2adXW9wrKWNADt8REggcqZkIkj/+h0y9bJ1Q7GyrlTo
+	c50LwjttUlzNQz6LK9eJv6pNUWoqdhWR/wT8i2+SLYJaExQa87Qbc9i2xP/mTwj5b5wm0wVg82O18
+	WLIq8akBu5pya8GOhcu0F8/woFTXXxzCMt32NSAoyV2jegjPdkoLPmt+Z1dzpFsXVl2MeVDf4tIoL
+	YSxc1XzYw5At/Awj3saQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1otQZc-00EgIK-OE; Fri, 11 Nov 2022 09:43:44 +0000
-Received: from ams.source.kernel.org ([145.40.68.75])
+	id 1otQZd-00EgKo-Sv; Fri, 11 Nov 2022 09:43:45 +0000
+Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1otQZD-00Efvv-8o
-	for linux-phy@lists.infradead.org; Fri, 11 Nov 2022 09:43:20 +0000
+	id 1otQZE-00Efwa-5H
+	for linux-phy@lists.infradead.org; Fri, 11 Nov 2022 09:43:21 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id B53BCB824C0;
-	Fri, 11 Nov 2022 09:43:17 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5643AC433D7;
+	by ams.source.kernel.org (Postfix) with ESMTPS id BAD42B824C2;
+	Fri, 11 Nov 2022 09:43:18 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5DF7EC43142;
 	Fri, 11 Nov 2022 09:43:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1668159796;
-	bh=3XOhKP1Tw+dE+Z0WDa+cOwqy3LoEJTTDfDARVmjTFlU=;
-	h=From:To:Cc:Subject:Date:From;
-	b=oihJCNV+5QiTZAly+/3w62btAo9IrDM7Z4RNw9rVtgudyXcS2kn75vRh0PyMmR0dp
-	 wU1zfjIef/S7S2GBkoJ0SO2KjY8iweyvIjg4V/0UPkk8VzFimXLeitXPVa3+zjCtpP
-	 iq6iK3eV6hwgfYBomuN/vmrhlCej/525K2a4NBs1rpVgLgMatOy1z7x/209qtBEOLv
-	 YvoU1c41nZtxKL/wco4iEWVbL2Hq9UTt4kOp8Npqp15ZtbfuLM+JIJI1KICk5B/ZHm
-	 KUJ4R0B+Wf9g1q0CCazzYspBk61Xd4v2nvM8OTChN61paGUKlN7bzkfAkdDJn4oDXJ
-	 XFLcKq5Ghas8w==
+	bh=TzRtDoyAfzMufPd65BGkX4pJ/DMl35ij09Pc1cMge34=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=AkV9KHrhRaLPwJse3DLZBzlWclo57AXP2hdYhe7qInV7pfqF1KTZLt8OMfbx06k+r
+	 o9GGULfLHoOYWvqVHiK/U//cKrOV5fQEIgyp82qL6bkblNQBoFr0UWNXpefv0i3vQo
+	 UhF2MbjxzLtaebXZnrwmJWD3RRmzZcMEEUBXYlvKnpVPB0Uj+BRPBT7YvqxZpQFyVM
+	 bE1LRoirVW/mSJ5d2+oiuKEcDZ8mucVDY5C9hRZ7fZiKu8BJGI6gdKRcyibQcdW9EW
+	 TMLCzMJbtt+Hqv4Jl0/GqRZLjftDUwTEsdFe0ry78I9NZwRHxcmFN/4y45/JZd7qHM
+	 3mbwPHT3w88QQ==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1otQYi-00030Z-Ai; Fri, 11 Nov 2022 10:42:48 +0100
+	id 1otQYi-00030f-Kx; Fri, 11 Nov 2022 10:42:48 +0100
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>
 Cc: Andy Gross <agross@kernel.org>,
@@ -55,15 +55,16 @@ Cc: Andy Gross <agross@kernel.org>,
 	linux-phy@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH 0/3] phy: qcom-qmp: misc cleanups
-Date: Fri, 11 Nov 2022 10:42:36 +0100
-Message-Id: <20221111094239.11547-1-johan+linaro@kernel.org>
+Subject: [PATCH 3/3] phy: qcom-qmp-pcie: drop redundant clock allocation
+Date: Fri, 11 Nov 2022 10:42:39 +0100
+Message-Id: <20221111094239.11547-4-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.37.4
+In-Reply-To: <20221111094239.11547-1-johan+linaro@kernel.org>
+References: <20221111094239.11547-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221111_014319_475775_D5256F2D 
-X-CRM114-Status: UNSURE (   7.03  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20221111_014320_403523_A71D9027 
+X-CRM114-Status: GOOD (  13.58  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,23 +81,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Here are three cleanups to the non-combo QMP drivers for smaller issues
-found while reworking the combo driver.
+Since the QMP driver split, there is no reason to allocate the
+fixed-rate pipe clock structure separately from the driver data.
 
-Johan
+Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
+---
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 8 +++-----
+ 1 file changed, 3 insertions(+), 5 deletions(-)
 
-
-Johan Hovold (3):
-  phy: qcom-qmp: drop unused type header
-  phy: qcom-qmp-usb: drop redundant clock allocation
-  phy: qcom-qmp-pcie: drop redundant clock allocation
-
- drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c |  2 --
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c         | 10 +++-------
- drivers/phy/qualcomm/phy-qcom-qmp-ufs.c          |  2 --
- drivers/phy/qualcomm/phy-qcom-qmp-usb.c          | 10 +++-------
- 4 files changed, 6 insertions(+), 18 deletions(-)
-
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+index 328708a09c37..68cafc9561ae 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+@@ -1546,6 +1546,8 @@ struct qmp_pcie {
+ 
+ 	struct phy *phy;
+ 	int mode;
++
++	struct clk_fixed_rate pipe_clk_fixed;
+ };
+ 
+ static inline void qphy_setbits(void __iomem *base, u32 offset, u32 val)
+@@ -2410,7 +2412,7 @@ static void phy_clk_release_provider(void *res)
+  */
+ static int phy_pipe_clk_register(struct qmp_pcie *qmp, struct device_node *np)
+ {
+-	struct clk_fixed_rate *fixed;
++	struct clk_fixed_rate *fixed = &qmp->pipe_clk_fixed;
+ 	struct clk_init_data init = { };
+ 	int ret;
+ 
+@@ -2420,10 +2422,6 @@ static int phy_pipe_clk_register(struct qmp_pcie *qmp, struct device_node *np)
+ 		return ret;
+ 	}
+ 
+-	fixed = devm_kzalloc(qmp->dev, sizeof(*fixed), GFP_KERNEL);
+-	if (!fixed)
+-		return -ENOMEM;
+-
+ 	init.ops = &clk_fixed_rate_ops;
+ 
+ 	/*
 -- 
 2.37.4
 
