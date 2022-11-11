@@ -4,47 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E9863C43217
-	for <linux-phy@archiver.kernel.org>; Fri, 11 Nov 2022 08:57:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 90D1AC4167E
+	for <linux-phy@archiver.kernel.org>; Fri, 11 Nov 2022 08:57:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ljhgWZLpWWbOm4mfyK2uMtT9x0qnoykRh3KL7G4i4wM=; b=bHhx9QnGusdMjy
-	fKsw8mf4OGwY/cVicZwgFOyfPA4uVBXDaVZnPIG6ZtdcpWUlPuunaSgWxTDk3kscTbO/q+A/4Hnqb
-	IlKqD+JivsF629flufGjwI6QWA0XyCN7ubcpJxNZeqWKHdLsxPE1qqUb3TrpWmWMPzMQ4pIHXE4Ww
-	Yf+twYwk4xsXbOixUyTQU+O9mfTF3bn9QdCVCQR/e6zaS9ncBLH8L2Lsl5Jf+dzIBvWc/1iU0Q2pa
-	/K25Iwa3Hi+XmEDaFSK4NGtbwvLx2ey/r64Phhrsl+df2HjZp8cGAUrExJd3sUwURv1XEx085o7Pz
-	3gObf+51oRGHoW20z0BA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=VFaPe6qqcHVyAFq/+gyfW/nhkJfzBL10DvE3yha/h5g=; b=QYu9xOVkHvT4HE
+	lLLATASjLpCzy2fn7M74l/F9G1Svxu9VWrYVgeQ38tSo+a/r7DGPgHJF0k/ckOdI7uOO1DTDum7Dh
+	eO5tpEubynZX1BLMlQ+QJPS3g+YUmvVLl6jZ7rJ2jZNNASP4RjB4rO2zsmpeeT4OawLtb9Moj1uOI
+	jOYuQ8W9UkHUuF56XLPV3C92iT3I2ObbNq0WDkIGb7N+U7WJ2qO5d9ERWwEUzWCDE7TzhJ8JcNlV4
+	a3NPoICz0lxK2Hk7viC1IXxT22EGr8BSqnxeZZamjwMQkfTTPQJ7tnPwfFJaSft6MGlJQr8aPzzjg
+	1m4LtrAMAdiopk0KzCDA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1otPr2-00EPlo-GW; Fri, 11 Nov 2022 08:57:40 +0000
-Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
+	id 1otPr3-00EPm7-8I; Fri, 11 Nov 2022 08:57:41 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1otPqo-00EPUF-84
+	id 1otPqn-00EPWs-Tw
 	for linux-phy@lists.infradead.org; Fri, 11 Nov 2022 08:57:29 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id A3C48B82478;
-	Fri, 11 Nov 2022 08:57:24 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id DA6F1C43143;
-	Fri, 11 Nov 2022 08:57:22 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 786EB61F10;
+	Fri, 11 Nov 2022 08:57:25 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5E502C4167C;
+	Fri, 11 Nov 2022 08:57:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1668157042;
-	bh=6lx4EuPQGDBHFiojMWKakUIRIo8dAD0np6BpOOEOAUI=;
-	h=From:To:Cc:Subject:Date:From;
-	b=qKzF3q0UwDaurz6612AAcMaD3CizUEFgCMp2/9GG4FugPV/lByzLqOt7sUEO4aZs5
-	 hNrnNFcnk9GAtwzw9Fo5AxxL5dpXfIXDU2/B5hTo+mevirP1ASf2CvupQyfRrqbpvb
-	 Aue7vgnHK1bOAlPB0NzNDFDzuZ+ABqngF3lWJ748Ekm4Hx6413/Gu70SH9CoXdJ6jc
-	 ajMgwNNy6fqIPQ/3xvdh+sHJ1hBxejlATMantBS+sRnLxJDm/7zUX0kOP9Nroz6GXO
-	 zegoqQQk28UJ0Bvo39kLqh/irUqeUcEzE6ynbD6aSlewU6x9ak58XmHnrVSKpx4dfy
-	 HR3JSEcM2egoQ==
+	s=k20201202; t=1668157043;
+	bh=NgYqnu8giu7mnMoKrxclBRtmdNwR4xrGTvQFfeAwZww=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=peUVhivvhcY8gHVz8f1ZLnUO5lybtKm/A4VqccPFko5OhTjv96Lc7Z9/Q2HCv9RDw
+	 07RyFMhr4Kwa2NE7rr2k3GYINAd/11WtyiKbbpDWIuzO9nc5nlUESIJ+pDRvhJGkMW
+	 14cEps5+c+MHYHXARNdTlZc1GvZeiuGQLlg0uHHLm7MTVGUeVAl4RPuGGzrJCJG+M3
+	 3shnscoaY81DKjuprSv8eSkrgKes3cWm39GeGCvQ+/w9hzfhc90SEIZOprfgWQole0
+	 C+ea01kFQipQmEHvDAcj/hSZuKxjg0lcjWqY5DqNd17wos2QhmRk1EeGSe5XiFvAPL
+	 zxKepYZKM9FZQ==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1otPqI-0002Tn-56; Fri, 11 Nov 2022 09:56:54 +0100
+	id 1otPqJ-0002UD-LK; Fri, 11 Nov 2022 09:56:55 +0100
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>
 Cc: Andy Gross <agross@kernel.org>,
@@ -55,15 +55,16 @@ Cc: Andy Gross <agross@kernel.org>,
 	linux-phy@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH 00/22] phy: qcom-qmp-combo: preparatory cleanups (set 2/3)
-Date: Fri, 11 Nov 2022 09:56:21 +0100
-Message-Id: <20221111085643.9478-1-johan+linaro@kernel.org>
+Subject: [PATCH 10/22] phy: qcom-qmp-combo: separate USB and DP power-on ops
+Date: Fri, 11 Nov 2022 09:56:31 +0100
+Message-Id: <20221111085643.9478-11-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.37.4
+In-Reply-To: <20221111085643.9478-1-johan+linaro@kernel.org>
+References: <20221111085643.9478-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221111_005726_467354_5DA6392A 
-X-CRM114-Status: UNSURE (   9.12  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20221111_005726_096936_E580852E 
+X-CRM114-Status: GOOD (  18.23  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,49 +81,184 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Here's a set of preparatory cleanups needed to fix the devicetree
-binding and add (proper) support for SC8280XP to the combo driver but
-that are otherwise self-contained.
+Separate the USB and DP power-on and power-off operations in two
+dedicated implementations.
 
-The full series is over forty patches and I'll be posting these in three
-parts of which this is the second. In an effort to get all of these into
-6.2, I'll also be submitting all three series before waiting for the
-previous ones to be applied.
+Note that the pipe clock is only used by the USB part of the PHY and
+that no DP configuration has a pcs (or rx) table or has has_pwrdn_delay
+set.
 
-This series specifically separates the USB and DP PHY ops
-implementations, and merges the USB and DP driver data and
-configurations.
+Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
+---
+ drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 100 +++++++++++++---------
+ 1 file changed, 59 insertions(+), 41 deletions(-)
 
-Johan
-
-
-Johan Hovold (22):
-  phy: qcom-qmp-combo: sort device-id table
-  phy: qcom-qmp-combo: move device-id table
-  phy: qcom-qmp-combo: move pm ops
-  phy: qcom-qmp-combo: rename PHY ops structures
-  phy: qcom-qmp-combo: drop unused DP PHY mode op
-  phy: qcom-qmp-combo: rename USB PHY ops
-  phy: qcom-qmp-combo: drop unnecessary debug message
-  phy: qcom-qmp-combo: separate USB and DP init ops
-  phy: qcom-qmp-combo: rename DP PHY ops
-  phy: qcom-qmp-combo: separate USB and DP power-on ops
-  phy: qcom-qmp-combo: clean up serdes initialisation
-  phy: qcom-qmp-combo: separate USB and DP devicetree parsing
-  phy: qcom-qmp-combo: add dedicated DP iomem pointers
-  phy: qcom-qmp-combo: clean up DP configurations
-  phy: qcom-qmp-combo: rename sc8280xp config
-  phy: qcom-qmp-combo: add DP configuration tables
-  phy: qcom-qmp-combo: merge USB and DP configurations
-  phy: qcom-qmp-combo: merge driver data
-  phy: qcom-qmp-combo: clean up device-tree parsing
-  phy: qcom-qmp-combo: clean up probe initialisation
-  phy: qcom-qmp-combo: clean up PHY init
-  phy: qcom-qmp-combo: clean up DP callback names
-
- drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 1328 ++++++++++-----------
- 1 file changed, 611 insertions(+), 717 deletions(-)
-
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+index 7392ae460fd7..748fd32a6f72 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+@@ -1988,7 +1988,39 @@ static int qmp_combo_dp_exit(struct phy *phy)
+ 	return 0;
+ }
+ 
+-static int qmp_combo_power_on(struct phy *phy)
++static int qmp_combo_dp_power_on(struct phy *phy)
++{
++	struct qmp_phy *qphy = phy_get_drvdata(phy);
++	const struct qmp_phy_cfg *cfg = qphy->cfg;
++	void __iomem *tx = qphy->tx;
++
++	qmp_combo_serdes_init(qphy);
++
++	qmp_combo_configure_lane(tx, cfg->tx_tbl, cfg->tx_tbl_num, 1);
++
++	if (cfg->lanes >= 2)
++		qmp_combo_configure_lane(qphy->tx2, cfg->tx_tbl, cfg->tx_tbl_num, 2);
++
++	/* Configure special DP tx tunings */
++	cfg->configure_dp_tx(qphy);
++
++	/* Configure link rate, swing, etc. */
++	cfg->configure_dp_phy(qphy);
++
++	return 0;
++}
++
++static int qmp_combo_dp_power_off(struct phy *phy)
++{
++	struct qmp_phy *qphy = phy_get_drvdata(phy);
++
++	/* Assert DP PHY power down */
++	writel(DP_PHY_PD_CTL_PSR_PWRDN, qphy->pcs + QSERDES_DP_PHY_PD_CTL);
++
++	return 0;
++}
++
++static int qmp_combo_usb_power_on(struct phy *phy)
+ {
+ 	struct qmp_phy *qphy = phy_get_drvdata(phy);
+ 	struct qcom_qmp *qmp = qphy->qmp;
+@@ -2014,39 +2046,30 @@ static int qmp_combo_power_on(struct phy *phy)
+ 	if (cfg->lanes >= 2)
+ 		qmp_combo_configure_lane(qphy->tx2, cfg->tx_tbl, cfg->tx_tbl_num, 2);
+ 
+-	/* Configure special DP tx tunings */
+-	if (cfg->type == PHY_TYPE_DP)
+-		cfg->configure_dp_tx(qphy);
+-
+ 	qmp_combo_configure_lane(rx, cfg->rx_tbl, cfg->rx_tbl_num, 1);
+ 
+ 	if (cfg->lanes >= 2)
+ 		qmp_combo_configure_lane(qphy->rx2, cfg->rx_tbl, cfg->rx_tbl_num, 2);
+ 
+-	/* Configure link rate, swing, etc. */
+-	if (cfg->type == PHY_TYPE_DP)
+-		cfg->configure_dp_phy(qphy);
+-	else
+-		qmp_combo_configure(pcs, cfg->pcs_tbl, cfg->pcs_tbl_num);
++	qmp_combo_configure(pcs, cfg->pcs_tbl, cfg->pcs_tbl_num);
+ 
+ 	if (cfg->has_pwrdn_delay)
+ 		usleep_range(10, 20);
+ 
+-	if (cfg->type != PHY_TYPE_DP) {
+-		/* Pull PHY out of reset state */
+-		qphy_clrbits(pcs, cfg->regs[QPHY_SW_RESET], SW_RESET);
+-		/* start SerDes and Phy-Coding-Sublayer */
+-		qphy_setbits(pcs, cfg->regs[QPHY_START_CTRL],
+-				SERDES_START | PCS_START);
++	/* Pull PHY out of reset state */
++	qphy_clrbits(pcs, cfg->regs[QPHY_SW_RESET], SW_RESET);
+ 
+-		status = pcs + cfg->regs[QPHY_PCS_STATUS];
+-		ret = readl_poll_timeout(status, val, !(val & PHYSTATUS), 200,
+-					 PHY_INIT_COMPLETE_TIMEOUT);
+-		if (ret) {
+-			dev_err(qmp->dev, "phy initialization timed-out\n");
+-			goto err_disable_pipe_clk;
+-		}
++	/* start SerDes and Phy-Coding-Sublayer */
++	qphy_setbits(pcs, cfg->regs[QPHY_START_CTRL], SERDES_START | PCS_START);
++
++	status = pcs + cfg->regs[QPHY_PCS_STATUS];
++	ret = readl_poll_timeout(status, val, !(val & PHYSTATUS), 200,
++			PHY_INIT_COMPLETE_TIMEOUT);
++	if (ret) {
++		dev_err(qmp->dev, "phy initialization timed-out\n");
++		goto err_disable_pipe_clk;
+ 	}
++
+ 	return 0;
+ 
+ err_disable_pipe_clk:
+@@ -2055,28 +2078,23 @@ static int qmp_combo_power_on(struct phy *phy)
+ 	return ret;
+ }
+ 
+-static int qmp_combo_power_off(struct phy *phy)
++static int qmp_combo_usb_power_off(struct phy *phy)
+ {
+ 	struct qmp_phy *qphy = phy_get_drvdata(phy);
+ 	const struct qmp_phy_cfg *cfg = qphy->cfg;
+ 
+ 	clk_disable_unprepare(qphy->pipe_clk);
+ 
+-	if (cfg->type == PHY_TYPE_DP) {
+-		/* Assert DP PHY power down */
+-		writel(DP_PHY_PD_CTL_PSR_PWRDN, qphy->pcs + QSERDES_DP_PHY_PD_CTL);
+-	} else {
+-		/* PHY reset */
+-		qphy_setbits(qphy->pcs, cfg->regs[QPHY_SW_RESET], SW_RESET);
++	/* PHY reset */
++	qphy_setbits(qphy->pcs, cfg->regs[QPHY_SW_RESET], SW_RESET);
+ 
+-		/* stop SerDes and Phy-Coding-Sublayer */
+-		qphy_clrbits(qphy->pcs, cfg->regs[QPHY_START_CTRL],
+-				SERDES_START | PCS_START);
++	/* stop SerDes and Phy-Coding-Sublayer */
++	qphy_clrbits(qphy->pcs, cfg->regs[QPHY_START_CTRL],
++			SERDES_START | PCS_START);
+ 
+-		/* Put PHY into POWER DOWN state: active low */
+-		qphy_clrbits(qphy->pcs, cfg->regs[QPHY_PCS_POWER_DOWN_CONTROL],
+-				SW_PWRDN);
+-	}
++	/* Put PHY into POWER DOWN state: active low */
++	qphy_clrbits(qphy->pcs, cfg->regs[QPHY_PCS_POWER_DOWN_CONTROL],
++			SW_PWRDN);
+ 
+ 	return 0;
+ }
+@@ -2090,7 +2108,7 @@ static int qmp_combo_usb_init(struct phy *phy)
+ 	if (ret)
+ 		return ret;
+ 
+-	ret = qmp_combo_power_on(phy);
++	ret = qmp_combo_usb_power_on(phy);
+ 	if (ret)
+ 		qmp_combo_com_exit(qphy);
+ 
+@@ -2102,7 +2120,7 @@ static int qmp_combo_usb_exit(struct phy *phy)
+ 	struct qmp_phy *qphy = phy_get_drvdata(phy);
+ 	int ret;
+ 
+-	ret = qmp_combo_power_off(phy);
++	ret = qmp_combo_usb_power_off(phy);
+ 	if (ret)
+ 		return ret;
+ 
+@@ -2128,9 +2146,9 @@ static const struct phy_ops qmp_combo_usb_phy_ops = {
+ static const struct phy_ops qmp_combo_dp_phy_ops = {
+ 	.init		= qmp_combo_dp_init,
+ 	.configure	= qmp_combo_dp_configure,
+-	.power_on	= qmp_combo_power_on,
++	.power_on	= qmp_combo_dp_power_on,
+ 	.calibrate	= qmp_combo_dp_calibrate,
+-	.power_off	= qmp_combo_power_off,
++	.power_off	= qmp_combo_dp_power_off,
+ 	.exit		= qmp_combo_dp_exit,
+ 	.owner		= THIS_MODULE,
+ };
 -- 
 2.37.4
 
