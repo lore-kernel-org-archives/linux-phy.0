@@ -4,47 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DCAE5C43217
-	for <linux-phy@archiver.kernel.org>; Fri, 11 Nov 2022 08:57:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9083FC4167B
+	for <linux-phy@archiver.kernel.org>; Fri, 11 Nov 2022 08:57:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gk+rcVXFBZHJkdRA/tyi+FkUA11jxwk4N6PXpqXOLNM=; b=EezLCva580iedj
-	Ksgya4d1PMwYvtJZ6hcoYSWVit7BRBFVhQdQdNsZvZcXQfljATLS+MnY2OXcjYYtwE/TU1lNeW6oz
-	3NIOOwkZNXIbTeQCv+1/OjtVNHf3ZhMFp9DZBHu7L0qIGh2AlGjsmBhVDItSH7RVyB3WahRa+Y6WY
-	PPZX4XlYJqpipbwv3kiJpZfr+ioSS8ZpHgPiIWI+o8cI5vJlNB+AMtPAu/r/vWgLVcXIOcjrWgPTG
-	HRhWkew97ko59JUbRVpZU3nWOXO9HxdC+LhM0w0h3Hj9GmEDGLJCNop75XzecFC+Vji/pjWJAyNRs
-	cwIFrcWdWz3rDQ10ggDw==;
+	List-Owner; bh=0O1xS+udzS07EMU6MBUtfHSPwdkGHrqyiwPZXNk7rPs=; b=ft3o4Kj4PX7FHl
+	2PiXH9lNQ8Tpr7dhyWd/XcaoJDeqOcqJZZFpWv8bNxEH2mlI6zBNUzVfcjGq72hr7a9YGguw4WNXL
+	dAH4hVaoTlr1D20D5kFncEfyURNtajUI/ef1WSHq6m1gbQf/GSOdIUNJPeqRlmFHgzrezg19Yulmd
+	Kgf072cp8iXW8XfolH9BBVqdc6EpnpV5OIwhexBABjP1iQlIoINc6z1XXGE41n5Hh1Kkh8vc0wQoP
+	zbgbNCv2tzUxwu8gaVj0lAmCK7hrIZonGmYj8yBp8x2nvrlu8AhQMyo7glblobW0f+tJkh4R3o780
+	RH17H7VCcVB/fFvIgNJw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1otPr9-00EPtq-MG; Fri, 11 Nov 2022 08:57:47 +0000
-Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
+	id 1otPrA-00EPv2-QV; Fri, 11 Nov 2022 08:57:48 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1otPqo-00EPUM-82
-	for linux-phy@lists.infradead.org; Fri, 11 Nov 2022 08:57:30 +0000
+	id 1otPqp-00EPZg-Fi
+	for linux-phy@lists.infradead.org; Fri, 11 Nov 2022 08:57:32 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id A45BEB82479;
-	Fri, 11 Nov 2022 08:57:24 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id DA09DC43142;
-	Fri, 11 Nov 2022 08:57:22 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id C23D361EFD;
+	Fri, 11 Nov 2022 08:57:25 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id BC652C4FF0D;
+	Fri, 11 Nov 2022 08:57:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1668157042;
-	bh=7irE5wSxKlSV0vo/oWIr5RUOEU51KJQ65oYsgILjvqo=;
+	s=k20201202; t=1668157043;
+	bh=2e1sFaescafNae6TCenVsXtXuc6P0oDVvqweiOwbJuc=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=upfsRCUt+W5g0mCCEo2L8LjiRNLT99l3NfxxjEVNSlSxQkxsAll1ANsqHAusFdZHg
-	 fAAiF2xVKh1orVoaaHF2rqWGSZNoI+K2Oc3p+aDYophm1mPVutygBxsTmh8msNVjLt
-	 y946Kff8/MJmtzPNL7W/+3RPWeu1n4dZeIa74tRBzZ6MTsa+DFGGbEqQ8TD5X5ir4g
-	 koMTBV1aK5Xf4CaBjAnPTyeR4qpsx5EH9JKvRQOo2ouTngvwFXP0gjG9NU/TLZamcc
-	 89YI+4G2hCkNIW2qBquQjTgPpxp+yNAX/lSoeYG97bQhtZVUJ1rQ/+xxkLBCNUFiyt
-	 8bR/hnF/Fc8Xg==
+	b=AJF31Wlts6vDFKHbmP8+/NrGyWGC1rKSlhmvQUsixCS/uRKYFBu8jL4h6v1R3XqG3
+	 JHAj3Dc+avslOLqKyqKr8DED6FKmSQa0fsN/03KLaXK4kKoHCoOsxIUc2rF9nRCOBz
+	 b0V0yyBepzAjkh0fCEOiTtrvb3LuWxiH7totaznXzdYu7Sy+kj6THycudS5m7J9rZq
+	 BRG65UWIdt1IPYqE9FfLmHlKNvDhzkV0uki7Wvhngn+PScmF6SwXBuyoWyXopMMIFQ
+	 OI5sK9KZagFrFyio9XER/dUT10gp0jB0bnLvmvhJc97oahjzsZEdukoX9b0A5rngKP
+	 UXHSFtzKE9UYw==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1otPqJ-0002Tr-0M; Fri, 11 Nov 2022 09:56:55 +0100
+	id 1otPqK-0002UU-3W; Fri, 11 Nov 2022 09:56:56 +0100
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>
 Cc: Andy Gross <agross@kernel.org>,
@@ -55,16 +55,16 @@ Cc: Andy Gross <agross@kernel.org>,
 	linux-phy@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH 02/22] phy: qcom-qmp-combo: move device-id table
-Date: Fri, 11 Nov 2022 09:56:23 +0100
-Message-Id: <20221111085643.9478-3-johan+linaro@kernel.org>
+Subject: [PATCH 15/22] phy: qcom-qmp-combo: rename sc8280xp config
+Date: Fri, 11 Nov 2022 09:56:36 +0100
+Message-Id: <20221111085643.9478-16-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.37.4
 In-Reply-To: <20221111085643.9478-1-johan+linaro@kernel.org>
 References: <20221111085643.9478-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221111_005726_606538_74F27E9A 
-X-CRM114-Status: GOOD (  13.25  )
+X-CRM114-CacheID: sfid-20221111_005727_679233_30D5EA4E 
+X-CRM114-Status: GOOD (  11.91  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,82 +81,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Move the device-id table after probe() and next to the driver structure
-to keep the driver callback functions grouped together.
+In preparation for merging the USB and DP configurations, drop the
+"combo" infix from the SC8280XP combined configuration for consistency
+with the other platforms.
 
 Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 50 +++++++++++------------
- 1 file changed, 25 insertions(+), 25 deletions(-)
+ drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-index d6a031bcfc30..e7c8c4417142 100644
+index c01cedda221c..499368e19e00 100644
 --- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
 +++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-@@ -2646,31 +2646,6 @@ static int qmp_combo_create(struct device *dev, struct device_node *np, int id,
- 	return 0;
- }
+@@ -1228,7 +1228,7 @@ static const struct qmp_phy_cfg sc8280xp_usb43dp_dp_cfg = {
+ 	.calibrate_dp_phy	= qcom_qmp_v4_dp_phy_calibrate,
+ };
  
--static const struct of_device_id qmp_combo_of_match_table[] = {
--	{
--		.compatible = "qcom,sc7180-qmp-usb3-dp-phy",
--		.data = &sc7180_usb3dpphy_cfg,
--	},
--	{
--		.compatible = "qcom,sc8180x-qmp-usb3-dp-phy",
--		.data = &sc8180x_usb3dpphy_cfg,
--	},
--	{
--		.compatible = "qcom,sc8280xp-qmp-usb43dp-phy",
+-static const struct qmp_phy_combo_cfg sc8280xp_usb43dpphy_combo_cfg = {
++static const struct qmp_phy_combo_cfg sc8280xp_usb43dpphy_cfg = {
+ 	.usb_cfg		= &sc8280xp_usb43dp_usb_cfg,
+ 	.dp_cfg			= &sc8280xp_usb43dp_dp_cfg,
+ };
+@@ -2858,7 +2858,7 @@ static const struct of_device_id qmp_combo_of_match_table[] = {
+ 	},
+ 	{
+ 		.compatible = "qcom,sc8280xp-qmp-usb43dp-phy",
 -		.data = &sc8280xp_usb43dpphy_combo_cfg,
--	},
--	{
--		.compatible = "qcom,sdm845-qmp-usb3-dp-phy",
--		.data = &sdm845_usb3dpphy_cfg,
--	},
--	{
--		.compatible = "qcom,sm8250-qmp-usb3-dp-phy",
--		.data = &sm8250_usb3dpphy_cfg,
--	},
--	{ }
--};
--MODULE_DEVICE_TABLE(of, qmp_combo_of_match_table);
--
- static const struct dev_pm_ops qmp_combo_pm_ops = {
- 	SET_RUNTIME_PM_OPS(qmp_combo_runtime_suspend,
- 			   qmp_combo_runtime_resume, NULL)
-@@ -2815,6 +2790,31 @@ static int qmp_combo_probe(struct platform_device *pdev)
- 	return ret;
- }
- 
-+static const struct of_device_id qmp_combo_of_match_table[] = {
-+	{
-+		.compatible = "qcom,sc7180-qmp-usb3-dp-phy",
-+		.data = &sc7180_usb3dpphy_cfg,
-+	},
-+	{
-+		.compatible = "qcom,sc8180x-qmp-usb3-dp-phy",
-+		.data = &sc8180x_usb3dpphy_cfg,
-+	},
-+	{
-+		.compatible = "qcom,sc8280xp-qmp-usb43dp-phy",
-+		.data = &sc8280xp_usb43dpphy_combo_cfg,
-+	},
-+	{
-+		.compatible = "qcom,sdm845-qmp-usb3-dp-phy",
-+		.data = &sdm845_usb3dpphy_cfg,
-+	},
-+	{
-+		.compatible = "qcom,sm8250-qmp-usb3-dp-phy",
-+		.data = &sm8250_usb3dpphy_cfg,
-+	},
-+	{ }
-+};
-+MODULE_DEVICE_TABLE(of, qmp_combo_of_match_table);
-+
- static struct platform_driver qmp_combo_driver = {
- 	.probe		= qmp_combo_probe,
- 	.driver = {
++		.data = &sc8280xp_usb43dpphy_cfg,
+ 	},
+ 	{
+ 		.compatible = "qcom,sdm845-qmp-usb3-dp-phy",
 -- 
 2.37.4
 
