@@ -4,47 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8D876C4167D
-	for <linux-phy@archiver.kernel.org>; Fri, 11 Nov 2022 08:57:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DCAE5C43217
+	for <linux-phy@archiver.kernel.org>; Fri, 11 Nov 2022 08:57:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hrNpHQgdQnAyMMtf5KOyJpqSFIXqC2oJEpzVSk1DupI=; b=K7R8F96V9ft/6S
-	DpHWjHv3FxzlU4ndT6ksSv1CB6h9qsZL8JARt3rdGEUhPjKTuRkFE6+uTeYfKqlpaGtJbR/oPrzTT
-	0VDcMDIBB/Up0SE+BACtpkWnYPxzZc4R4ePtvk4+Wwt4xWkyFSCKeRNFwPQmpuwyO3UZDhWGagd74
-	M1pRx+JFzb+kEC7t8p1Oks/Jx0A6ub/amD0VV/bBRscmwUFuwiB157XDJNSAjDPX+egrBsLzY1mrj
-	qRG3BClzOLNJGMczPZIyPcTmcHhYeMmGZ71YKNPUruws4SQGlcKT9U4TQsTpCDV9tpdmmTK31geH/
-	tjjUXBzQsPXd8MCr3Fzg==;
+	List-Owner; bh=gk+rcVXFBZHJkdRA/tyi+FkUA11jxwk4N6PXpqXOLNM=; b=EezLCva580iedj
+	Ksgya4d1PMwYvtJZ6hcoYSWVit7BRBFVhQdQdNsZvZcXQfljATLS+MnY2OXcjYYtwE/TU1lNeW6oz
+	3NIOOwkZNXIbTeQCv+1/OjtVNHf3ZhMFp9DZBHu7L0qIGh2AlGjsmBhVDItSH7RVyB3WahRa+Y6WY
+	PPZX4XlYJqpipbwv3kiJpZfr+ioSS8ZpHgPiIWI+o8cI5vJlNB+AMtPAu/r/vWgLVcXIOcjrWgPTG
+	HRhWkew97ko59JUbRVpZU3nWOXO9HxdC+LhM0w0h3Hj9GmEDGLJCNop75XzecFC+Vji/pjWJAyNRs
+	cwIFrcWdWz3rDQ10ggDw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1otPr8-00EPtF-Rh; Fri, 11 Nov 2022 08:57:46 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1otPr9-00EPtq-MG; Fri, 11 Nov 2022 08:57:47 +0000
+Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1otPqp-00EPZr-AR
-	for linux-phy@lists.infradead.org; Fri, 11 Nov 2022 08:57:32 +0000
+	id 1otPqo-00EPUM-82
+	for linux-phy@lists.infradead.org; Fri, 11 Nov 2022 08:57:30 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 0DF8361ED4;
-	Fri, 11 Nov 2022 08:57:26 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2B1A8C4FF41;
+	by ams.source.kernel.org (Postfix) with ESMTPS id A45BEB82479;
 	Fri, 11 Nov 2022 08:57:24 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id DA09DC43142;
+	Fri, 11 Nov 2022 08:57:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1668157044;
-	bh=9QCvgaPFthb6sQCOGE29pX488mZSMXQmDL1/DQjfEp8=;
+	s=k20201202; t=1668157042;
+	bh=7irE5wSxKlSV0vo/oWIr5RUOEU51KJQ65oYsgILjvqo=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=qv4nf/KV+mhHf+Otksy3+RznjhjvBR4RRjN6zOMUk1nfntKpdXHx9haFkISEhfKK3
-	 TbJaYMrFXR717ui97z39VNeodX4PBg4B8f6lFwuw8o+tbl7CpsiHgW6BChO8ZHLNS1
-	 l1Pbrz4B1hd7DQpylfEwz8nV++K6CHraNO2kKYpe82utvQLUF0XRYnph1tn4vkD8DN
-	 9AzI4JQi0V8hvmasTv5GmyBaq5ud728XK1cRKTFhUCLfUUP97zLa+kFTNvNx1toUp4
-	 Fgy7ZJTnwehHo0pmg8ldlTH4SsUzpLqzbWBnCAegbBgF4aZ9a039Sz5o6FljmKkYVH
-	 YOlbe0f64csFw==
+	b=upfsRCUt+W5g0mCCEo2L8LjiRNLT99l3NfxxjEVNSlSxQkxsAll1ANsqHAusFdZHg
+	 fAAiF2xVKh1orVoaaHF2rqWGSZNoI+K2Oc3p+aDYophm1mPVutygBxsTmh8msNVjLt
+	 y946Kff8/MJmtzPNL7W/+3RPWeu1n4dZeIa74tRBzZ6MTsa+DFGGbEqQ8TD5X5ir4g
+	 koMTBV1aK5Xf4CaBjAnPTyeR4qpsx5EH9JKvRQOo2ouTngvwFXP0gjG9NU/TLZamcc
+	 89YI+4G2hCkNIW2qBquQjTgPpxp+yNAX/lSoeYG97bQhtZVUJ1rQ/+xxkLBCNUFiyt
+	 8bR/hnF/Fc8Xg==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1otPqK-0002Ug-Fp; Fri, 11 Nov 2022 09:56:56 +0100
+	id 1otPqJ-0002Tr-0M; Fri, 11 Nov 2022 09:56:55 +0100
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>
 Cc: Andy Gross <agross@kernel.org>,
@@ -55,16 +55,16 @@ Cc: Andy Gross <agross@kernel.org>,
 	linux-phy@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH 19/22] phy: qcom-qmp-combo: clean up device-tree parsing
-Date: Fri, 11 Nov 2022 09:56:40 +0100
-Message-Id: <20221111085643.9478-20-johan+linaro@kernel.org>
+Subject: [PATCH 02/22] phy: qcom-qmp-combo: move device-id table
+Date: Fri, 11 Nov 2022 09:56:23 +0100
+Message-Id: <20221111085643.9478-3-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.37.4
 In-Reply-To: <20221111085643.9478-1-johan+linaro@kernel.org>
 References: <20221111085643.9478-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221111_005727_484942_B1E6CFB6 
-X-CRM114-Status: GOOD (  19.20  )
+X-CRM114-CacheID: sfid-20221111_005726_606538_74F27E9A 
+X-CRM114-Status: GOOD (  13.25  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,152 +81,82 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Since the QMP driver split there will be precisely two child nodes so
-drop the obsolete iteration construct.
-
-While at it, drop the verbose error logging that would have been printed
-also on probe deferrals.
-
-Note that there is no need to check if there are additional child nodes
-(the kernel is not a devicetree validator), but let's return an error if
-either child node is missing.
+Move the device-id table after probe() and next to the driver structure
+to keep the driver callback functions grouped together.
 
 Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 82 ++++++++---------------
- 1 file changed, 28 insertions(+), 54 deletions(-)
+ drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 50 +++++++++++------------
+ 1 file changed, 25 insertions(+), 25 deletions(-)
 
 diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-index 43b7ea5d2edc..a4df228d8ae2 100644
+index d6a031bcfc30..e7c8c4417142 100644
 --- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
 +++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-@@ -2598,13 +2598,12 @@ static int qmp_combo_probe(struct platform_device *pdev)
- {
- 	struct qmp_combo *qmp;
- 	struct device *dev = &pdev->dev;
--	struct device_node *child;
-+	struct device_node *dp_np, *usb_np;
- 	struct phy_provider *phy_provider;
- 	void __iomem *serdes;
- 	void __iomem *usb_serdes;
- 	void __iomem *dp_serdes = NULL;
- 	const struct qmp_phy_cfg *cfg = NULL;
--	int num, id, expected_phys;
- 	int ret;
+@@ -2646,31 +2646,6 @@ static int qmp_combo_create(struct device *dev, struct device_node *np, int id,
+ 	return 0;
+ }
  
- 	qmp = devm_kzalloc(dev, sizeof(*qmp), GFP_KERNEL);
-@@ -2630,8 +2629,6 @@ static int qmp_combo_probe(struct platform_device *pdev)
- 	if (IS_ERR(dp_serdes))
- 		return PTR_ERR(dp_serdes);
- 
--	expected_phys = 2;
+-static const struct of_device_id qmp_combo_of_match_table[] = {
+-	{
+-		.compatible = "qcom,sc7180-qmp-usb3-dp-phy",
+-		.data = &sc7180_usb3dpphy_cfg,
+-	},
+-	{
+-		.compatible = "qcom,sc8180x-qmp-usb3-dp-phy",
+-		.data = &sc8180x_usb3dpphy_cfg,
+-	},
+-	{
+-		.compatible = "qcom,sc8280xp-qmp-usb43dp-phy",
+-		.data = &sc8280xp_usb43dpphy_combo_cfg,
+-	},
+-	{
+-		.compatible = "qcom,sdm845-qmp-usb3-dp-phy",
+-		.data = &sdm845_usb3dpphy_cfg,
+-	},
+-	{
+-		.compatible = "qcom,sm8250-qmp-usb3-dp-phy",
+-		.data = &sm8250_usb3dpphy_cfg,
+-	},
+-	{ }
+-};
+-MODULE_DEVICE_TABLE(of, qmp_combo_of_match_table);
 -
- 	mutex_init(&qmp->phy_mutex);
- 
- 	ret = qmp_combo_clk_init(dev, cfg);
-@@ -2646,75 +2643,52 @@ static int qmp_combo_probe(struct platform_device *pdev)
- 	if (ret)
- 		return ret;
- 
--	num = of_get_available_child_count(dev->of_node);
--	/* do we have a rogue child node ? */
--	if (num > expected_phys)
-+	usb_np = of_get_child_by_name(dev->of_node, "usb3-phy");
-+	if (!usb_np)
-+		return -EINVAL;
-+
-+	dp_np = of_get_child_by_name(dev->of_node, "dp-phy");
-+	if (!dp_np) {
-+		of_node_put(usb_np);
- 		return -EINVAL;
-+	}
- 
- 	pm_runtime_set_active(dev);
- 	ret = devm_pm_runtime_enable(dev);
- 	if (ret)
--		return ret;
-+		goto err_node_put;
- 	/*
- 	 * Prevent runtime pm from being ON by default. Users can enable
- 	 * it using power/control in sysfs.
- 	 */
- 	pm_runtime_forbid(dev);
- 
--	id = 0;
--	for_each_available_child_of_node(dev->of_node, child) {
--		if (of_node_name_eq(child, "dp-phy")) {
--			serdes = dp_serdes;
--
--			/* Create per-lane phy */
--			ret = qmp_combo_create_dp(dev, child, serdes, cfg);
--			if (ret) {
--				dev_err(dev, "failed to create lane%d phy, %d\n",
--					id, ret);
--				goto err_node_put;
--			}
--
--			ret = phy_dp_clks_register(qmp, child);
--			if (ret) {
--				dev_err(qmp->dev,
--					"failed to register DP clock source\n");
--				goto err_node_put;
--			}
--		} else if (of_node_name_eq(child, "usb3-phy")) {
--			serdes = usb_serdes;
--
--			/* Create per-lane phy */
--			ret = qmp_combo_create_usb(dev, child, serdes, cfg);
--			if (ret) {
--				dev_err(dev, "failed to create lane%d phy, %d\n",
--					id, ret);
--				goto err_node_put;
--			}
--
--			/*
--			 * Register the pipe clock provided by phy.
--			 * See function description to see details of this pipe clock.
--			 */
--			ret = phy_pipe_clk_register(qmp, child);
--			if (ret) {
--				dev_err(qmp->dev,
--					"failed to register pipe clock source\n");
--				goto err_node_put;
--			}
--		}
-+	ret = qmp_combo_create_usb(dev, usb_np, usb_serdes, cfg);
-+	if (ret)
-+		goto err_node_put;
- 
--		id++;
--	}
-+	ret = phy_pipe_clk_register(qmp, usb_np);
-+	if (ret)
-+		goto err_node_put;
- 
--	if (!qmp->usb_phy)
--		return -EINVAL;
-+	ret = qmp_combo_create_dp(dev, dp_np, dp_serdes, cfg);
-+	if (ret)
-+		goto err_node_put;
-+
-+	ret = phy_dp_clks_register(qmp, dp_np);
-+	if (ret)
-+		goto err_node_put;
- 
- 	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
- 
-+	of_node_put(usb_np);
-+	of_node_put(dp_np);
-+
- 	return PTR_ERR_OR_ZERO(phy_provider);
- 
- err_node_put:
--	of_node_put(child);
-+	of_node_put(usb_np);
-+	of_node_put(dp_np);
+ static const struct dev_pm_ops qmp_combo_pm_ops = {
+ 	SET_RUNTIME_PM_OPS(qmp_combo_runtime_suspend,
+ 			   qmp_combo_runtime_resume, NULL)
+@@ -2815,6 +2790,31 @@ static int qmp_combo_probe(struct platform_device *pdev)
  	return ret;
  }
  
++static const struct of_device_id qmp_combo_of_match_table[] = {
++	{
++		.compatible = "qcom,sc7180-qmp-usb3-dp-phy",
++		.data = &sc7180_usb3dpphy_cfg,
++	},
++	{
++		.compatible = "qcom,sc8180x-qmp-usb3-dp-phy",
++		.data = &sc8180x_usb3dpphy_cfg,
++	},
++	{
++		.compatible = "qcom,sc8280xp-qmp-usb43dp-phy",
++		.data = &sc8280xp_usb43dpphy_combo_cfg,
++	},
++	{
++		.compatible = "qcom,sdm845-qmp-usb3-dp-phy",
++		.data = &sdm845_usb3dpphy_cfg,
++	},
++	{
++		.compatible = "qcom,sm8250-qmp-usb3-dp-phy",
++		.data = &sm8250_usb3dpphy_cfg,
++	},
++	{ }
++};
++MODULE_DEVICE_TABLE(of, qmp_combo_of_match_table);
++
+ static struct platform_driver qmp_combo_driver = {
+ 	.probe		= qmp_combo_probe,
+ 	.driver = {
 -- 
 2.37.4
 
