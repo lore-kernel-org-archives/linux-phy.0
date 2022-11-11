@@ -4,34 +4,34 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4C7A3C433FE
-	for <linux-phy@archiver.kernel.org>; Fri, 11 Nov 2022 10:16:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 60E76C4332F
+	for <linux-phy@archiver.kernel.org>; Fri, 11 Nov 2022 10:16:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TtSuUBZz/rmInHy4x3xpteA7aY41Mh2KKZBPGED0eZw=; b=x5oO0dfBpJEMoW
-	TgGYxcTXT7WJEzB2gyRIOhy5Z83yPjBHyU3fvg1Z6haB9YkpB2Cor6b5jY6yNfceldzff66xVUzFJ
-	szMduCOgR5sZCJ3msC/C9cv7JeThIIBhN3bFUWPdLkQ7TgfMEzZQykx8s+/vLPj539WHMRJvHU18Y
-	Tcgr5urI+AgO/fqc/yn6dhm7dlpOe0xTwu3eejDGSBWtQaZdhWYZcIWgjq7BP83UnEjOZQrUBupo6
-	t2rwIBB2/v0Mj4bT0UeE5WJgOkjLgutexyaI0V3NmAAF8bySdUDoqx5won7/XwDmWvofO+XxzM+Ve
-	VO/Phwwhx5VkqQF4lgHQ==;
+	List-Owner; bh=Fi6hjGf8jL1F0bHEGI4XHyVm0DL3eVTPP7adEFI3WyE=; b=EOGyuRqjwmFY27
+	Dg9BA+nDvvFNn6YgC6fYtpS5LaE7ouEQBnfal4MzCQ7mGVCfNkWy9HxOlsb/uyvqNDxRo6NZtvjZT
+	wsorvK9Y+4yoOdd12jogN3aG1EUNGh2bAEqJEXjWwCS+TkcuO2tC/LZ5szHZbMj3s7N5wFTGj0tF6
+	U/Ifm5kzDGvSL+TadNKt/UARe2kQ3/DJ3xAXY7IHfUrli8jlgz6Vs2/tjuF5dbD90QtaBhAFjiX+R
+	4mUz7j1zPmED0s29XDwjbVzX4/+idGkb+CefOLuTrghcR2BN4s30b3DzjzmbZfIT3EStdNCrU/dsj
+	PNOgvrRcZj3qLsKlTB+Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1otR5R-00Es8s-NG; Fri, 11 Nov 2022 10:16:37 +0000
-Received: from mail-mw2nam04on2081.outbound.protection.outlook.com ([40.107.101.81] helo=NAM04-MW2-obe.outbound.protection.outlook.com)
+	id 1otR5a-00EsEQ-2Y; Fri, 11 Nov 2022 10:16:46 +0000
+Received: from mail-dm6nam04on2069.outbound.protection.outlook.com ([40.107.102.69] helo=NAM04-DM6-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1otR5O-00Es6j-LN
-	for linux-phy@lists.infradead.org; Fri, 11 Nov 2022 10:16:36 +0000
+	id 1otR5T-00EsAe-5u
+	for linux-phy@lists.infradead.org; Fri, 11 Nov 2022 10:16:40 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=W1o5fHCNsE3iS4ODctrN+7ulFtRfWbR+HZyRSk6VmXuiuxNkPuSZFIBm544FTS8L7RIxCqrJcEuACiaCVj4kzwC1KhSa1gTcrA3fIcT0hrzdys22fclgnfSh6NvLb+LaIpaVPl2irNiUs+KbCrr0tXPARO/jRrgzG7FszloYiDNXrE/xjuFacvfBPpKAIXG5xjMfJ1oKWsAyQ4epdlbs9W3M+Tz8N5CIqfqyYfou6+tVo/49abE11IJOGEj6kWNEEVZEMQBQpJetxWV44Gslv2PUyBhPgf8FCryx4loB0no/fXvShicjfP9/4F3z88ndSgyNX2z6/yWxE1NjqmR9KQ==
+ b=aod0ZopEarpsx0LXvAML7hu9nb/vIooFNEBwXP9hRKdVyzDuqZFbHQTWmonWMvRk+cIzfhKtu5sSoXTQNWYJwBKMiFvCQ3vxgFMPCTi6UGTw1v9njg842hwf/2n9v849tapvXYYsCc65F4l5ybqNBpgkayON7SW89e3jfznqFY59zzgSF5aKt7beezSx/kWLQ9SMqqVkSbthvpPvSj31vkg/2LBu6UcDMWWaC2S7HfsOqf+DfclPQLNf/3btqheLFqF3by2qebSHQ+zJbTat31+9YgJohP0lgyOkNufso4IfhscH32q9ywhaoUXHWEVL4D03mDqnoYddPd5RIfSppA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=f65T2XoEhiUfwf8HgFImqiGxkWSY66pNhbk64UYq/og=;
- b=jZhZ/9cL6rKlKn1vIKQAYgJamqFErPrvq60gHK2zXx5nQBHyMoC5NIb03i8abm6yx0G579qPof4gvPKV6BPzUwPVyv5duqvoPbQ4D4bU2CznIpMjbJsFh+T3iun8DddI4Jjj0xCKEkvdp0eYtxjU2yihuqvDgnZmpGFqhQ+ayQuU4lAHysPNGhZMzmV3Vnwhv41snXd3Qkn0e2N0iAZfKsL5gbgswVP2iKaghyjA8odZE1V/nVrYlRTztzuD7G5OFt0oeoAlzy2GT3+8EmZyHO+QqtXRNZOQ7vwExL1Y+dnZQbKVvDEzxcgKaXsGTQjGtgyZ/ly8zJXSjVpkXLJoWA==
+ bh=5Dq4DR6bfOpMwbvWEHPF6B2z8xaLv7LRMxg0PuSwa04=;
+ b=Q6vDWPcEPO2mVg6GsQpfEI9kDIDrq0OKWiw4DeYI5Ius/nREwom0fYvR5ibpsl1jsPleUx9A0UmpPKPnjyj/yc0qt6AVx9FOei/2/p8SxH8lGGev1W3C/uWJT1+HUvDqxxHkvCAyD0W0FT3cNZD4J0oVCU2T/uc/ZfEd+nf8dqAuO6pAktp/HMTD0dDsvzX0xdkq3btdYjsW7Bu7pIy2hnj3uhLwCP15+G37T/nRgk9qhJ7/E4k8VND3BX5p2bvpIph091FB6jAx1IMcpeXeQkpYuGjLhiE8Ax4MWKUQ/b6CywL4/J+oOVR1o0azxbxuQ07L1QQPTZP6o6iCiOiqlQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
  216.228.117.160) smtp.rcpttodomain=linuxfoundation.org
  smtp.mailfrom=nvidia.com; dmarc=pass (p=reject sp=reject pct=100) action=none
@@ -39,18 +39,18 @@ ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
  s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=f65T2XoEhiUfwf8HgFImqiGxkWSY66pNhbk64UYq/og=;
- b=Z7JJhMqVFtWBSieWqorjCrSOfIYks1JlOWlWDu1yuO5+tGapn7QxIdweLMEFTMAzKzJTgWsEPwA98SY1/1DujG0KgEn035dzUs5I7ta5pC20JYlRQjzdo0rGkiLKjEHNsd7oU5pXnD1HLQENMZ4UlimcgmniGbbLTcpqXlq9JFhrBuazOeZck9xoR9HQJpV7vRvDd3XSC7DEfbn0yrM1VKsGc8U89itTNWmeonxNSmFrPdh3S/eRlGSzZZOceXHB88cIgDeHImhBiSsMUnEfIlexZWOyDNIkkWbpU0R+mjx6iS9vquY6yk2QdCdkfgyzaUWbZ9KtcBH2RwGDOvS40w==
-Received: from BN8PR03CA0009.namprd03.prod.outlook.com (2603:10b6:408:94::22)
- by SJ0PR12MB6902.namprd12.prod.outlook.com (2603:10b6:a03:484::7) with
+ bh=5Dq4DR6bfOpMwbvWEHPF6B2z8xaLv7LRMxg0PuSwa04=;
+ b=gG+PtxwrRdcNHLHLXrK6o0tUMEqkgbTJABVLwViLTTl2H2PoyHv2VdmFNmw51GmE/LITGQc9Dr1WuSeTbPuN9oobyNcSvb+aU/vu8/h+qO7s6suHq5BYx8Is53XUg3K2yevrrij2xf45NnSlshug39TnqxANhM1GiZSpM0y8Ee2h97bfZMMEhySuvqQ1k+i9KTHqslFg4tH2e/lYmaJpkrPW2b4soalFfR0TDtXx7iba8eHMoRMl3oCzqQmLFd5zokhoJMTxhr0cSCuKUVUzOSdv+EVK1ic5QZ6J8BUbL4658F+fgDdKCEHhrIfZHTz/yhrwxaH84mP516J3Pj6t1A==
+Received: from MN2PR14CA0004.namprd14.prod.outlook.com (2603:10b6:208:23e::9)
+ by LV2PR12MB5797.namprd12.prod.outlook.com (2603:10b6:408:17b::21) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5791.25; Fri, 11 Nov
- 2022 10:16:27 +0000
-Received: from BL02EPF0000EE3C.namprd05.prod.outlook.com
- (2603:10b6:408:94:cafe::15) by BN8PR03CA0009.outlook.office365.com
- (2603:10b6:408:94::22) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5791.27 via Frontend
- Transport; Fri, 11 Nov 2022 10:16:26 +0000
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5813.13; Fri, 11 Nov
+ 2022 10:16:35 +0000
+Received: from BL02EPF0000EE3D.namprd05.prod.outlook.com
+ (2603:10b6:208:23e:cafe::11) by MN2PR14CA0004.outlook.office365.com
+ (2603:10b6:208:23e::9) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5813.14 via Frontend
+ Transport; Fri, 11 Nov 2022 10:16:35 +0000
 X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 216.228.117.160)
  smtp.mailfrom=nvidia.com; dkim=none (message not signed)
  header.d=none;dmarc=pass action=none header.from=nvidia.com;
@@ -58,20 +58,20 @@ Received-SPF: Pass (protection.outlook.com: domain of nvidia.com designates
  216.228.117.160 as permitted sender) receiver=protection.outlook.com;
  client-ip=216.228.117.160; helo=mail.nvidia.com; pr=C
 Received: from mail.nvidia.com (216.228.117.160) by
- BL02EPF0000EE3C.mail.protection.outlook.com (10.167.241.132) with Microsoft
+ BL02EPF0000EE3D.mail.protection.outlook.com (10.167.241.134) with Microsoft
  SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.5813.11 via Frontend Transport; Fri, 11 Nov 2022 10:16:26 +0000
+ 15.20.5813.11 via Frontend Transport; Fri, 11 Nov 2022 10:16:35 +0000
 Received: from rnnvmail204.nvidia.com (10.129.68.6) by mail.nvidia.com
  (10.129.200.66) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.986.26; Fri, 11 Nov
- 2022 02:16:07 -0800
+ 2022 02:16:20 -0800
 Received: from rnnvmail202.nvidia.com (10.129.68.7) by rnnvmail204.nvidia.com
  (10.129.68.6) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.986.36; Fri, 11 Nov
- 2022 02:16:07 -0800
+ 2022 02:16:19 -0800
 Received: from waynec-Precision-5760.nvidia.com (10.127.8.13) by
  mail.nvidia.com (10.129.68.7) with Microsoft SMTP Server id 15.2.986.36 via
- Frontend Transport; Fri, 11 Nov 2022 02:16:03 -0800
+ Frontend Transport; Fri, 11 Nov 2022 02:16:16 -0800
 From: Wayne Chang <waynec@nvidia.com>
 To: <gregkh@linuxfoundation.org>, <robh+dt@kernel.org>,
 	<krzysztof.kozlowski+dt@linaro.org>, <treding@nvidia.com>,
@@ -83,9 +83,9 @@ CC: <waynec@nvidia.com>, <linux-usb@vger.kernel.org>,
 	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
 	<singhanc@nvidia.com>, <linux-i2c@vger.kernel.org>,
 	<linux-phy@lists.infradead.org>, <linux-tegra@vger.kernel.org>
-Subject: [PATCH v2 06/13] usb: typec: ucsi_ccg: Add cypress,firmware-build as a well-known regex
-Date: Fri, 11 Nov 2022 18:15:02 +0800
-Message-ID: <20221111101509.999589-7-waynec@nvidia.com>
+Subject: [PATCH v2 09/13] i2c: nvidia-gpu: Remove ccgx,firmware-build property
+Date: Fri, 11 Nov 2022 18:15:05 +0800
+Message-ID: <20221111101509.999589-10-waynec@nvidia.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20221111101509.999589-1-waynec@nvidia.com>
 References: <20221111101509.999589-1-waynec@nvidia.com>
@@ -93,26 +93,26 @@ MIME-Version: 1.0
 X-NVConfidentiality: public
 X-EOPAttributedMessage: 0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: BL02EPF0000EE3C:EE_|SJ0PR12MB6902:EE_
-X-MS-Office365-Filtering-Correlation-Id: b2d4e769-e181-45e0-1789-08dac3cdcb1b
+X-MS-TrafficTypeDiagnostic: BL02EPF0000EE3D:EE_|LV2PR12MB5797:EE_
+X-MS-Office365-Filtering-Correlation-Id: 1e4e0a94-9151-4f2e-4e34-08dac3cdd058
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 	YcmATPPuOP97y6bp+9I6FMmlt0CyewazvOdRogrJwvXS3bmVyKW7apoFB7c/1x3GMy+vWVu8LgQctTgOl1WWuhFRqaAgoUSQPOWbmD6Zf3qcFAniXsnfHxymp8Y73LkyJTXns1G1DOjlRYvdPu23ihZUCIvRB/xqysokt60E0RyrhHBi4WMtgZ9XEmVzQZN1Wu9Pjae0X7oGzgKT4XZqHdK4lAjZDHl9t+Ai6zBSrPAjcYqQvGkRWaT0mxBXUiZyvGnKpOpxsgizH0Noe8R9p8Wc88ZOdW7LpyyMC4PEIEA3Tg7H2noqd7HVI6vBPYeDfrwcQQOYFl44oz7FNZUStMhRXkH6xVFhFhEdKBriI9m1Y+BgtuX+GAWn46FiI8l4OtgnW2zs1PRve4zqFf3+a180MyA4vIdUpTMzmpQICxX0OvzF19U/GvdOFQzFwjAW9biikqt48J7RwRX6EyvNioyT2LmkAQc7osWz23WikPJS/Eh5rbHSR2mbyP4SIwYDiJNiBOR/QjEp61aAHoqp2jxYevGhPhXZTqTlti5v2ja6ouM4ablUPPGBoLe94kmLvZcH8LJK1aHGwE7J5gJElLLv289WfnSYNzabD88aD0Bo87wlpxsjyvOSxs5AoWY2Px+ReJ+lv4oYFHONpet8vCuj7E0EejYRwmdyZMd93/oKAzFCjaQGFK038Jh+1gDPJsIrrkKRjLxyG6LFXQL79bw3YCDdBXloInFpQYDiwAWi4YMRGNMggUNIwHG4fA/adnJW2MDi86z3O0kmbrolsNS+MnIKBKKIfA9WAvhoDcQ=
-X-Forefront-Antispam-Report: 	CIP:216.228.117.160;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc6edge1.nvidia.com;CAT:NONE;SFS:(13230022)(4636009)(39860400002)(136003)(376002)(346002)(396003)(451199015)(36840700001)(40470700004)(46966006)(2906002)(478600001)(7636003)(356005)(36756003)(7696005)(336012)(54906003)(70206006)(316002)(6636002)(110136005)(426003)(47076005)(86362001)(186003)(4326008)(40460700003)(8676002)(70586007)(1076003)(82310400005)(921005)(40480700001)(41300700001)(2616005)(8936002)(5660300002)(36860700001)(26005)(82740400003)(7416002);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam-Message-Info: 	EgZ0llBjlhOVUwc4swIorlHy75X+6Q5y2vE7g4tKqcdJOY2lhjnx4ZYXdaiqbqkJLMaKvJAxQiC86bWYzA8uj5rVd/kaHxpwq+MphQXbADThmCXziSrNNiJJTZK8pLNhQ5xR0z2u0AqE08VQSFEeyKkbQok52hBBB02VsF97/bRYlw64w1KXObP/+P95dN9Kva6jcbrpNr2gY/ifLwxnnT88ANux30q+BnMoVFsjyeQYQtgWvAvq7x8nM1G4wIenugXYyIbNcKMSa5WXpz5du97f0THv1L66Nri/DVH5hNAVliOL14ecyZFBgh67i2vpaB9XAPEUx5XA1IAgDa4+w42ZxrsEe9HPaehaPZEZ87DOeMbm6Oql8oRlpblDvBWXYPeuQDraa8zoDEpQGUjiXwXGRK34BTNz2xWjNoYY8vd9TXVGD9VMQdTX4pXFddQWTDEzAEE85mupb4mKjX/NzaGWE00wkDkTnZ3DY3sbak7vlp+jpSHujj8iSHtqdzxoYUo6HgDdSfcAEmWmyq4Vl1OMUMr/pkIYgofaUbbUMqRs17AqHjpFZXNS3d4tsPeSMVYq8tKmD5tbSBrUboeHkgkBYwTMgw3PDHTjQVxQ6y424eaj8MNrnI9PIJiZQvQzMru0A27GCmh1TFaYoMWJJ2+ciEmjjju3DA9inv4rzZh+JctUVJjwFwtgN2jlRAWlnPxhvEV2WGpnYItN+xUbyjs5K7k/gVdbdDMHjnQxNgczv+LJReivzEKpcNjLgO3egsOc5FKsvbcKryT/h/opcgLDDvegcu2KuazeUkuX7HQ=
+X-Forefront-Antispam-Report: 	CIP:216.228.117.160;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc6edge1.nvidia.com;CAT:NONE;SFS:(13230022)(4636009)(136003)(39860400002)(376002)(396003)(346002)(451199015)(40470700004)(46966006)(36840700001)(82310400005)(316002)(110136005)(54906003)(6636002)(2616005)(1076003)(41300700001)(47076005)(36860700001)(7416002)(186003)(26005)(5660300002)(40480700001)(40460700003)(426003)(86362001)(2906002)(4744005)(4326008)(7696005)(336012)(36756003)(70206006)(70586007)(8676002)(8936002)(921005)(478600001)(356005)(7636003)(82740400003)(83380400001)(6666004);DIR:OUT;SFP:1101;
 X-OriginatorOrg: Nvidia.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 11 Nov 2022 10:16:26.7733
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 11 Nov 2022 10:16:35.5631
  (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: b2d4e769-e181-45e0-1789-08dac3cdcb1b
+X-MS-Exchange-CrossTenant-Network-Message-Id: 1e4e0a94-9151-4f2e-4e34-08dac3cdd058
 X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
 X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[216.228.117.160];Helo=[mail.nvidia.com]
-X-MS-Exchange-CrossTenant-AuthSource: 	BL02EPF0000EE3C.namprd05.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthSource: 	BL02EPF0000EE3D.namprd05.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Anonymous
 X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SJ0PR12MB6902
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: LV2PR12MB5797
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221111_021634_722760_1C685DE4 
-X-CRM114-Status: UNSURE (   9.75  )
+X-CRM114-CacheID: sfid-20221111_021639_269758_CA05967B 
+X-CRM114-Status: UNSURE (   7.98  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -130,48 +130,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-ccgx is refer to the cypress cypd4226 typec controller.
-add cypress,firmware-build as a well-known regex.
-
-16-bit value is not sufficient for descriptiva names.
-Using string instead of u16 to make it more descriptive.
+Remove the property ccgx,firmware-build as we have added well-known
+regex cypress,firmware-build.
 
 Signed-off-by: Wayne Chang <waynec@nvidia.com>
 ---
-V1 -> V2:New change added for adding cypress,firmware-build
- drivers/usb/typec/ucsi/ucsi_ccg.c | 12 ++++++++++++
- 1 file changed, 12 insertions(+)
+V1 -> V2:New added for bisectablility
+ drivers/i2c/busses/i2c-nvidia-gpu.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
 
-diff --git a/drivers/usb/typec/ucsi/ucsi_ccg.c b/drivers/usb/typec/ucsi/ucsi_ccg.c
-index 139707a2f3d6..e412a457bbfc 100644
---- a/drivers/usb/typec/ucsi/ucsi_ccg.c
-+++ b/drivers/usb/typec/ucsi/ucsi_ccg.c
-@@ -1343,6 +1343,7 @@ static int ucsi_ccg_probe(struct i2c_client *client,
- {
- 	struct device *dev = &client->dev;
- 	struct ucsi_ccg *uc;
-+	const char *of_fw_build;
- 	int status;
+diff --git a/drivers/i2c/busses/i2c-nvidia-gpu.c b/drivers/i2c/busses/i2c-nvidia-gpu.c
+index 9b2e13bd44db..092d4d52098c 100644
+--- a/drivers/i2c/busses/i2c-nvidia-gpu.c
++++ b/drivers/i2c/busses/i2c-nvidia-gpu.c
+@@ -259,8 +259,7 @@ static const struct pci_device_id gpu_i2c_ids[] = {
+ MODULE_DEVICE_TABLE(pci, gpu_i2c_ids);
  
- 	uc = devm_kzalloc(dev, sizeof(*uc), GFP_KERNEL);
-@@ -1363,6 +1364,17 @@ static int ucsi_ccg_probe(struct i2c_client *client,
- 	if (status)
- 		dev_err(uc->dev, "failed to get FW build information\n");
- 
-+	status = device_property_read_string(dev, "cypress,firmware-build",
-+					  &of_fw_build);
-+	if (!status) {
-+		if (!strcmp(of_fw_build, "nvidia,jetson-agx-xavier"))
-+			uc->fw_build = CCG_FW_BUILD_NVIDIA_TEGRA;
-+		else if (!strcmp(of_fw_build, "nvidia,gpu"))
-+			uc->fw_build = CCG_FW_BUILD_NVIDIA;
-+	} else {
-+		dev_err(uc->dev, "failed to get FW build information\n");
-+	}
-+
- 	/* reset ccg device and initialize ucsi */
- 	status = ucsi_ccg_init(uc);
- 	if (status < 0) {
+ static const struct property_entry ccgx_props[] = {
+-	/* Use FW built for NVIDIA (nv) only */
+-	PROPERTY_ENTRY_U16("ccgx,firmware-build", ('n' << 8) | 'v'),
++	/* Use FW built for NVIDIA GPU only */
+ 	PROPERTY_ENTRY_STRING("cypress,firmware-build", "nvidia,gpu"),
+ 	{ }
+ };
 -- 
 2.25.1
 
