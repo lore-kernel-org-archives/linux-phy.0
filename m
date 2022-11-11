@@ -4,47 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 90D1AC4167E
-	for <linux-phy@archiver.kernel.org>; Fri, 11 Nov 2022 08:57:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6F000C433FE
+	for <linux-phy@archiver.kernel.org>; Fri, 11 Nov 2022 08:57:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VFaPe6qqcHVyAFq/+gyfW/nhkJfzBL10DvE3yha/h5g=; b=QYu9xOVkHvT4HE
-	lLLATASjLpCzy2fn7M74l/F9G1Svxu9VWrYVgeQ38tSo+a/r7DGPgHJF0k/ckOdI7uOO1DTDum7Dh
-	eO5tpEubynZX1BLMlQ+QJPS3g+YUmvVLl6jZ7rJ2jZNNASP4RjB4rO2zsmpeeT4OawLtb9Moj1uOI
-	jOYuQ8W9UkHUuF56XLPV3C92iT3I2ObbNq0WDkIGb7N+U7WJ2qO5d9ERWwEUzWCDE7TzhJ8JcNlV4
-	a3NPoICz0lxK2Hk7viC1IXxT22EGr8BSqnxeZZamjwMQkfTTPQJ7tnPwfFJaSft6MGlJQr8aPzzjg
-	1m4LtrAMAdiopk0KzCDA==;
+	List-Owner; bh=PtzYodnB3NYzf/BFrZtjsJukiKpAP5GL+SsZAbM9Kk8=; b=iT3XyeXcYdNF4u
+	BqeYGe2frJeuxBPwO5aAkbCYLrX/NW/KsZyx3dHlg+e9peGANWPV1IZJczN7lWVxmnTnacGoKhDSa
+	isOxTqLRgb4EVP+5yuHe3BAWsG8WPE3iHAhU9ajtQJSDeQ5ufwjGHGz1gKaKKzKOXqsRS+tYNSFy1
+	J+i7NGYyYz+TD5nygZMmyXc7L9/M5v/NOHVtIHJ5GJAb4q7nqdEIKfG9xnVKlcNsiqVP0VXxMw11N
+	0+OnfA0FBIzVufGmATWFD6e+Zc89cQg7cZ134thcIo05cfr9grcYoyd9GO/7UwTDao2/eNgtLnhxP
+	NgAPv763w3LDmSG0ndyw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1otPr3-00EPm7-8I; Fri, 11 Nov 2022 08:57:41 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1otPr4-00EPmi-4b; Fri, 11 Nov 2022 08:57:42 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1otPqn-00EPWs-Tw
+	id 1otPqn-00EPWx-Uc
 	for linux-phy@lists.infradead.org; Fri, 11 Nov 2022 08:57:29 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 786EB61F10;
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 7DA3061F0B;
 	Fri, 11 Nov 2022 08:57:25 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5E502C4167C;
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 821EBC43470;
 	Fri, 11 Nov 2022 08:57:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1668157043;
-	bh=NgYqnu8giu7mnMoKrxclBRtmdNwR4xrGTvQFfeAwZww=;
+	bh=fh/aqnYcDidigo48XuRvbr/aFFT5zxzhUQfJq7vVMG0=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=peUVhivvhcY8gHVz8f1ZLnUO5lybtKm/A4VqccPFko5OhTjv96Lc7Z9/Q2HCv9RDw
-	 07RyFMhr4Kwa2NE7rr2k3GYINAd/11WtyiKbbpDWIuzO9nc5nlUESIJ+pDRvhJGkMW
-	 14cEps5+c+MHYHXARNdTlZc1GvZeiuGQLlg0uHHLm7MTVGUeVAl4RPuGGzrJCJG+M3
-	 3shnscoaY81DKjuprSv8eSkrgKes3cWm39GeGCvQ+/w9hzfhc90SEIZOprfgWQole0
-	 C+ea01kFQipQmEHvDAcj/hSZuKxjg0lcjWqY5DqNd17wos2QhmRk1EeGSe5XiFvAPL
-	 zxKepYZKM9FZQ==
+	b=rfxiPQRHfzAt95l4LJpnuAF7Pzw9Gp4/ZwqO7Zty+yVe2Tcu+BxnblSQCqryF4dQO
+	 mkDuzFRtapMYFAb9TcOSgQ0URJkzPbYIvXa4fladf71F2b2PmI5i3f8c8Qsy2aZL3z
+	 UEqNc+UHxvOpQQVmPVe9xGBajROG+/nsSs/Y/qVlnMqqv/0HMP4CfRRWgtraYSJ2+7
+	 CiMZOO/05485peqK96J84zq0vypzJ2JeSZK860g+PTWy3Dduud8HQkd1iZ2irYL6uR
+	 3Ghg1ykCjXX/Rm5SupmugRq5nfX0CmpCHuOnVjCHvf+Sm6yvqrKqzsNiA+G+Ea0w+j
+	 BxeW51ad7bBtg==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1otPqJ-0002UD-LK; Fri, 11 Nov 2022 09:56:55 +0100
+	id 1otPqJ-0002UK-RQ; Fri, 11 Nov 2022 09:56:55 +0100
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>
 Cc: Andy Gross <agross@kernel.org>,
@@ -55,16 +55,16 @@ Cc: Andy Gross <agross@kernel.org>,
 	linux-phy@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH 10/22] phy: qcom-qmp-combo: separate USB and DP power-on ops
-Date: Fri, 11 Nov 2022 09:56:31 +0100
-Message-Id: <20221111085643.9478-11-johan+linaro@kernel.org>
+Subject: [PATCH 12/22] phy: qcom-qmp-combo: separate USB and DP devicetree parsing
+Date: Fri, 11 Nov 2022 09:56:33 +0100
+Message-Id: <20221111085643.9478-13-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.37.4
 In-Reply-To: <20221111085643.9478-1-johan+linaro@kernel.org>
 References: <20221111085643.9478-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221111_005726_096936_E580852E 
-X-CRM114-Status: GOOD (  18.23  )
+X-CRM114-CacheID: sfid-20221111_005726_158605_A7BED2B6 
+X-CRM114-Status: GOOD (  18.32  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,184 +81,141 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Separate the USB and DP power-on and power-off operations in two
-dedicated implementations.
+Separate the devicetree parsing of the USB and DP child nodes in two
+dedicated helpers in preparation for merging the driver data.
 
-Note that the pipe clock is only used by the USB part of the PHY and
-that no DP configuration has a pcs (or rx) table or has has_pwrdn_delay
-set.
+Note that only the USB part of the PHY has a pipe clock and that the DP
+implementation only uses the tx/tx2 and pcs register regions.
 
 Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 100 +++++++++++++---------
- 1 file changed, 59 insertions(+), 41 deletions(-)
+ drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 81 ++++++++++++++++-------
+ 1 file changed, 58 insertions(+), 23 deletions(-)
 
 diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-index 7392ae460fd7..748fd32a6f72 100644
+index c059e4aeecdb..52a00b51f09a 100644
 --- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
 +++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-@@ -1988,7 +1988,39 @@ static int qmp_combo_dp_exit(struct phy *phy)
- 	return 0;
+@@ -2576,13 +2576,63 @@ static int phy_dp_clks_register(struct qcom_qmp *qmp, struct qmp_phy *qphy,
+ 	return devm_add_action_or_reset(qmp->dev, phy_clk_release_provider, np);
  }
  
--static int qmp_combo_power_on(struct phy *phy)
-+static int qmp_combo_dp_power_on(struct phy *phy)
+-static int qmp_combo_create(struct device *dev, struct device_node *np, int id,
++static int qmp_combo_create_dp(struct device *dev, struct device_node *np, int id,
++			void __iomem *serdes, const struct qmp_phy_cfg *cfg)
 +{
-+	struct qmp_phy *qphy = phy_get_drvdata(phy);
-+	const struct qmp_phy_cfg *cfg = qphy->cfg;
-+	void __iomem *tx = qphy->tx;
++	struct qcom_qmp *qmp = dev_get_drvdata(dev);
++	struct phy *generic_phy;
++	struct qmp_phy *qphy;
++	int ret;
 +
-+	qmp_combo_serdes_init(qphy);
++	qphy = devm_kzalloc(dev, sizeof(*qphy), GFP_KERNEL);
++	if (!qphy)
++		return -ENOMEM;
 +
-+	qmp_combo_configure_lane(tx, cfg->tx_tbl, cfg->tx_tbl_num, 1);
++	qphy->cfg = cfg;
++	qphy->serdes = serdes;
++	/*
++	 * Get memory resources for each PHY:
++	 * Resources are indexed as: tx -> 0; rx -> 1; pcs -> 2.
++	 * For dual lane PHYs: tx2 -> 3, rx2 -> 4, pcs_misc (optional) -> 5
++	 * For single lane PHYs: pcs_misc (optional) -> 3.
++	 *
++	 * Note that only tx/tx2 and pcs are used by the DP implementation.
++	 */
++	qphy->tx = devm_of_iomap(dev, np, 0, NULL);
++	if (IS_ERR(qphy->tx))
++		return PTR_ERR(qphy->tx);
 +
-+	if (cfg->lanes >= 2)
-+		qmp_combo_configure_lane(qphy->tx2, cfg->tx_tbl, cfg->tx_tbl_num, 2);
++	qphy->pcs = devm_of_iomap(dev, np, 2, NULL);
++	if (IS_ERR(qphy->pcs))
++		return PTR_ERR(qphy->pcs);
 +
-+	/* Configure special DP tx tunings */
-+	cfg->configure_dp_tx(qphy);
++	if (cfg->lanes >= 2) {
++		qphy->tx2 = devm_of_iomap(dev, np, 3, NULL);
++		if (IS_ERR(qphy->tx2))
++			return PTR_ERR(qphy->tx2);
++	}
 +
-+	/* Configure link rate, swing, etc. */
-+	cfg->configure_dp_phy(qphy);
++	generic_phy = devm_phy_create(dev, np, &qmp_combo_dp_phy_ops);
++	if (IS_ERR(generic_phy)) {
++		ret = PTR_ERR(generic_phy);
++		dev_err(dev, "failed to create DP PHY: %d\n", ret);
++		return ret;
++	}
++
++	qphy->phy = generic_phy;
++	qphy->qmp = qmp;
++	qmp->phys[id] = qphy;
++	phy_set_drvdata(generic_phy, qphy);
 +
 +	return 0;
 +}
 +
-+static int qmp_combo_dp_power_off(struct phy *phy)
-+{
-+	struct qmp_phy *qphy = phy_get_drvdata(phy);
-+
-+	/* Assert DP PHY power down */
-+	writel(DP_PHY_PD_CTL_PSR_PWRDN, qphy->pcs + QSERDES_DP_PHY_PD_CTL);
-+
-+	return 0;
-+}
-+
-+static int qmp_combo_usb_power_on(struct phy *phy)
++static int qmp_combo_create_usb(struct device *dev, struct device_node *np, int id,
+ 			void __iomem *serdes, const struct qmp_phy_cfg *cfg)
  {
- 	struct qmp_phy *qphy = phy_get_drvdata(phy);
- 	struct qcom_qmp *qmp = qphy->qmp;
-@@ -2014,39 +2046,30 @@ static int qmp_combo_power_on(struct phy *phy)
- 	if (cfg->lanes >= 2)
- 		qmp_combo_configure_lane(qphy->tx2, cfg->tx_tbl, cfg->tx_tbl_num, 2);
- 
--	/* Configure special DP tx tunings */
--	if (cfg->type == PHY_TYPE_DP)
--		cfg->configure_dp_tx(qphy);
--
- 	qmp_combo_configure_lane(rx, cfg->rx_tbl, cfg->rx_tbl_num, 1);
- 
- 	if (cfg->lanes >= 2)
- 		qmp_combo_configure_lane(qphy->rx2, cfg->rx_tbl, cfg->rx_tbl_num, 2);
- 
--	/* Configure link rate, swing, etc. */
--	if (cfg->type == PHY_TYPE_DP)
--		cfg->configure_dp_phy(qphy);
--	else
--		qmp_combo_configure(pcs, cfg->pcs_tbl, cfg->pcs_tbl_num);
-+	qmp_combo_configure(pcs, cfg->pcs_tbl, cfg->pcs_tbl_num);
- 
- 	if (cfg->has_pwrdn_delay)
- 		usleep_range(10, 20);
- 
--	if (cfg->type != PHY_TYPE_DP) {
--		/* Pull PHY out of reset state */
--		qphy_clrbits(pcs, cfg->regs[QPHY_SW_RESET], SW_RESET);
--		/* start SerDes and Phy-Coding-Sublayer */
--		qphy_setbits(pcs, cfg->regs[QPHY_START_CTRL],
--				SERDES_START | PCS_START);
-+	/* Pull PHY out of reset state */
-+	qphy_clrbits(pcs, cfg->regs[QPHY_SW_RESET], SW_RESET);
- 
--		status = pcs + cfg->regs[QPHY_PCS_STATUS];
--		ret = readl_poll_timeout(status, val, !(val & PHYSTATUS), 200,
--					 PHY_INIT_COMPLETE_TIMEOUT);
--		if (ret) {
--			dev_err(qmp->dev, "phy initialization timed-out\n");
--			goto err_disable_pipe_clk;
--		}
-+	/* start SerDes and Phy-Coding-Sublayer */
-+	qphy_setbits(pcs, cfg->regs[QPHY_START_CTRL], SERDES_START | PCS_START);
-+
-+	status = pcs + cfg->regs[QPHY_PCS_STATUS];
-+	ret = readl_poll_timeout(status, val, !(val & PHYSTATUS), 200,
-+			PHY_INIT_COMPLETE_TIMEOUT);
-+	if (ret) {
-+		dev_err(qmp->dev, "phy initialization timed-out\n");
-+		goto err_disable_pipe_clk;
- 	}
-+
- 	return 0;
- 
- err_disable_pipe_clk:
-@@ -2055,28 +2078,23 @@ static int qmp_combo_power_on(struct phy *phy)
- 	return ret;
- }
- 
--static int qmp_combo_power_off(struct phy *phy)
-+static int qmp_combo_usb_power_off(struct phy *phy)
- {
- 	struct qmp_phy *qphy = phy_get_drvdata(phy);
- 	const struct qmp_phy_cfg *cfg = qphy->cfg;
- 
- 	clk_disable_unprepare(qphy->pipe_clk);
- 
--	if (cfg->type == PHY_TYPE_DP) {
--		/* Assert DP PHY power down */
--		writel(DP_PHY_PD_CTL_PSR_PWRDN, qphy->pcs + QSERDES_DP_PHY_PD_CTL);
--	} else {
--		/* PHY reset */
--		qphy_setbits(qphy->pcs, cfg->regs[QPHY_SW_RESET], SW_RESET);
-+	/* PHY reset */
-+	qphy_setbits(qphy->pcs, cfg->regs[QPHY_SW_RESET], SW_RESET);
- 
--		/* stop SerDes and Phy-Coding-Sublayer */
--		qphy_clrbits(qphy->pcs, cfg->regs[QPHY_START_CTRL],
--				SERDES_START | PCS_START);
-+	/* stop SerDes and Phy-Coding-Sublayer */
-+	qphy_clrbits(qphy->pcs, cfg->regs[QPHY_START_CTRL],
-+			SERDES_START | PCS_START);
- 
--		/* Put PHY into POWER DOWN state: active low */
--		qphy_clrbits(qphy->pcs, cfg->regs[QPHY_PCS_POWER_DOWN_CONTROL],
--				SW_PWRDN);
--	}
-+	/* Put PHY into POWER DOWN state: active low */
-+	qphy_clrbits(qphy->pcs, cfg->regs[QPHY_PCS_POWER_DOWN_CONTROL],
-+			SW_PWRDN);
- 
- 	return 0;
- }
-@@ -2090,7 +2108,7 @@ static int qmp_combo_usb_init(struct phy *phy)
- 	if (ret)
- 		return ret;
- 
--	ret = qmp_combo_power_on(phy);
-+	ret = qmp_combo_usb_power_on(phy);
- 	if (ret)
- 		qmp_combo_com_exit(qphy);
- 
-@@ -2102,7 +2120,7 @@ static int qmp_combo_usb_exit(struct phy *phy)
- 	struct qmp_phy *qphy = phy_get_drvdata(phy);
+ 	struct qcom_qmp *qmp = dev_get_drvdata(dev);
+ 	struct phy *generic_phy;
+ 	struct qmp_phy *qphy;
+-	const struct phy_ops *ops;
  	int ret;
  
--	ret = qmp_combo_power_off(phy);
-+	ret = qmp_combo_usb_power_off(phy);
- 	if (ret)
- 		return ret;
+ 	qphy = devm_kzalloc(dev, sizeof(*qphy), GFP_KERNEL);
+@@ -2631,31 +2681,16 @@ static int qmp_combo_create(struct device *dev, struct device_node *np, int id,
+ 		qphy->pcs_misc = NULL;
+ 	}
  
-@@ -2128,9 +2146,9 @@ static const struct phy_ops qmp_combo_usb_phy_ops = {
- static const struct phy_ops qmp_combo_dp_phy_ops = {
- 	.init		= qmp_combo_dp_init,
- 	.configure	= qmp_combo_dp_configure,
--	.power_on	= qmp_combo_power_on,
-+	.power_on	= qmp_combo_dp_power_on,
- 	.calibrate	= qmp_combo_dp_calibrate,
--	.power_off	= qmp_combo_power_off,
-+	.power_off	= qmp_combo_dp_power_off,
- 	.exit		= qmp_combo_dp_exit,
- 	.owner		= THIS_MODULE,
- };
+-	/*
+-	 * Get PHY's Pipe clock, if any. USB3 and PCIe are PIPE3
+-	 * based phys, so they essentially have pipe clock. So,
+-	 * we return error in case phy is USB3 or PIPE type.
+-	 * Otherwise, we initialize pipe clock to NULL for
+-	 * all phys that don't need this.
+-	 */
+ 	qphy->pipe_clk = devm_get_clk_from_child(dev, np, NULL);
+ 	if (IS_ERR(qphy->pipe_clk)) {
+-		if (cfg->type == PHY_TYPE_USB3)
+-			return dev_err_probe(dev, PTR_ERR(qphy->pipe_clk),
+-					     "failed to get lane%d pipe_clk\n",
+-					     id);
+-		qphy->pipe_clk = NULL;
++		return dev_err_probe(dev, PTR_ERR(qphy->pipe_clk),
++				     "failed to get lane%d pipe_clk\n", id);
+ 	}
+ 
+-	if (cfg->type == PHY_TYPE_DP)
+-		ops = &qmp_combo_dp_phy_ops;
+-	else
+-		ops = &qmp_combo_usb_phy_ops;
+-
+-	generic_phy = devm_phy_create(dev, np, ops);
++	generic_phy = devm_phy_create(dev, np, &qmp_combo_usb_phy_ops);
+ 	if (IS_ERR(generic_phy)) {
+ 		ret = PTR_ERR(generic_phy);
+-		dev_err(dev, "failed to create qphy %d\n", ret);
++		dev_err(dev, "failed to create USB PHY: %d\n", ret);
+ 		return ret;
+ 	}
+ 
+@@ -2752,7 +2787,7 @@ static int qmp_combo_probe(struct platform_device *pdev)
+ 			serdes = dp_serdes;
+ 
+ 			/* Create per-lane phy */
+-			ret = qmp_combo_create(dev, child, id, serdes, cfg);
++			ret = qmp_combo_create_dp(dev, child, id, serdes, cfg);
+ 			if (ret) {
+ 				dev_err(dev, "failed to create lane%d phy, %d\n",
+ 					id, ret);
+@@ -2770,7 +2805,7 @@ static int qmp_combo_probe(struct platform_device *pdev)
+ 			serdes = usb_serdes;
+ 
+ 			/* Create per-lane phy */
+-			ret = qmp_combo_create(dev, child, id, serdes, cfg);
++			ret = qmp_combo_create_usb(dev, child, id, serdes, cfg);
+ 			if (ret) {
+ 				dev_err(dev, "failed to create lane%d phy, %d\n",
+ 					id, ret);
 -- 
 2.37.4
 
