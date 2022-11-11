@@ -4,74 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 08943C4332F
-	for <linux-phy@archiver.kernel.org>; Fri, 11 Nov 2022 10:16:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 99719C4167D
+	for <linux-phy@archiver.kernel.org>; Fri, 11 Nov 2022 10:17:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Va0MbF7mZuzWPCv0XH4utATraUViWi8bUg6zsmB4uRE=; b=IWcV5O8Du3N4qX
-	uL91cEL8EPbuArbE6f9QjowHNfHVH2Y+TQTqXwG+3kgvHD9Zz6tL8cGrEbQfMdGZVh9nZ521qyDAv
-	qcIM/yp7a9bHyTDsFBZ6O8JenLjTU/EKqQYkU2CWfIo2h6RQJZhPdg0DbbxcBHiMZyon8f25R3iyk
-	J7suXxEnWhLbxNGYximUQDYUFj4ZIzG/ndkRv7u7YlDudWmJSL1Ik8zECCuZei5Vzyp6WBfqR3wHu
-	mjhDgr5ko7g1E/b0ES7zWc5y+P3Z0djDtKXiyeOeBt/qf7uahZvJ2Q4Erw3IOdvisJbqed+rPWAYB
-	hVYht5yxg9A5Xo1k5vbA==;
+	List-Owner; bh=GS5sI5stJAh/s4RCrQfnbK5FuZhogvQbaidfOb+LmTk=; b=FvHqjN1nvK81NL
+	vWpW6D/7GxzYr9stql3KSolef3CbsdnhRBXDV4v2uFmQURxZn8lg6ud/Z01cGuZTifWb57Ol6oes7
+	9OB8ASVb8FEUh8wW88AozQxX//nhVMrk3CgLyBSyEmwr7ub0ecvoXBF6xl8YK5PqqePzddpbA9EmR
+	Ad9nHEO7fcUlAMmHhT71kKOyLn9drRwvM74SA+br/BA9pfAqX3eDbV8Wfk8cMa6E+7q9WPahX7H1g
+	VS2tqFlzjl93rDkqNGck8r6Cdk3sRTPDJBfb02ZMefm+mCrRlNxMLZyftYJj9f5gQt5w1ICVq7HOW
+	MHFRVg/39V7hAX3QjWnw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1otR5i-00EsJV-De; Fri, 11 Nov 2022 10:16:54 +0000
-Received: from mail-mw2nam10on2075.outbound.protection.outlook.com ([40.107.94.75] helo=NAM10-MW2-obe.outbound.protection.outlook.com)
+	id 1otR5r-00EsNT-SI; Fri, 11 Nov 2022 10:17:03 +0000
+Received: from mail-bn7nam10on2042.outbound.protection.outlook.com ([40.107.92.42] helo=NAM10-BN7-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1otR5X-00EsCz-4B
-	for linux-phy@lists.infradead.org; Fri, 11 Nov 2022 10:16:48 +0000
+	id 1otR5o-00EsJU-Ub
+	for linux-phy@lists.infradead.org; Fri, 11 Nov 2022 10:17:02 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=TBSpZu2EVS3jh5L+pcYGfAn+O9QP+9Dptl4KiMgPoOIKhb8OIKKy4WhNAQKomneWm64lH3iPdwAh4MdZC6EAEmqw66vJHY1vvbZG5o8MVGiznY3ZAxm8+iqPm7kXkRhZFwxb85SEfIXvBEKIe27WHMrlEigo+6jRTFKW77R9LnGFU3Imz4u/VF/SIWYDd7/9wBLemIHwGQOq26/ugLbZuIJ1YZD9sd/RXs0bgPmFp0333PqwftbH1U4UwQ/fMIPOm7GB9RvwEl1FJMqppR9P+H5JZfpFeOeAez0ESHWQpwzCEVgU92jbLnFXpeu8zo0VDFAcHc+mjTpCV3WMfD717A==
+ b=V6OCI14v7wX6IcdhfiqBvevRc0vDEpe7C8UhS4Qqhcwd2Jun5xm5l/AKaZifVz+YcIvaSN23OVL86Z1678ttYA4ZrGmCpBafPquzzkpbrZwUeOTXiebYUV/MH+ncjmHAZnbOMdL+jB5B69fP0aOJjOS9PRcGL+q6bj0VWxETWseAv4AF6MgAQ9rtsFBJFXyYRLEtKUNyGFl5EvmlNMgX/lOkaeCCCbpQAN71gZdOb9S24p978A6ykqTlyOsHbR+CpICxyAwQDa07dr/WMeqPmwUj1lkZZSPf3DhQmbszLxB7AJDDnPVAcrmOKo7REUt9W3fkEHOebMqiV8hrL54R0w==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=1AF7aVigZwouxWVql2MnK0MSpcIZN0ezQ3PFXN5glmg=;
- b=Dx4YWxiyY5joANrVFLu/9Tf2ZCex6Ce/hboXGUoecyotnWwlOYGddBMDFyvQ/9erPpUysQPTxSEkqK7jiXGa1YX0NWpYG4UbkKrj1BmiUkTmvPa6Jgf8q751X5YVeV+Xs92WBXOiW5hxeLZax+R7WfWKH8kY9MpjyiA6uh9yyZdKbwvou/06F6u0HF3Ngwxqv+f7I4XKHhUphZXIHOndyKPZnrKo1P3xIWb6kdjlDtjiXaeFX0KqUDxXLTInZURF+r2+akYqMZ9ZmhkKV2QjFFRhySPUOt/3aUdhY3PsIuN2d9Qx9fXnpiz9VAehGNcidN5MqrxF3LCJ5pKXnB012Q==
+ bh=UJargNSXfW7QRE1/1dEp9jA9DYhmUchTKoXMao3tsQU=;
+ b=VK+ZVTmYbXL7ay3aJQeAiUFSTFR/l1JP6/QD0VVpqN9zKnPZpwa0v2PtY5YMfIXHN1nkBt4Y3t8huLSfLKl00+fKmnze6B2zguEhMviwYb4F4eqUZJaIrgSdp7wDYMWBiOxMmxI6drjOq5dUuZ1vcahuMjiQ3aJjbUS8iNkIcGd3xc8Z+7iHohnJ3HpEi5tEL8Vs9yp8JXI3hoswkSNby2Nt/H1f9YYQC0PFbIaUtoJx+d8mzvKo4Yv4twnkjKoMx6BIo+1rH6X5udzY5jZeklWg2EjrO5SGCa0k3tZ0yE/WqMbgJd3euy/nDwHmIbm+Xd13GUZPrlQlS7BTdGbR3g==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 216.228.117.161) smtp.rcpttodomain=linuxfoundation.org
+ 216.228.117.160) smtp.rcpttodomain=linuxfoundation.org
  smtp.mailfrom=nvidia.com; dmarc=pass (p=reject sp=reject pct=100) action=none
  header.from=nvidia.com; dkim=none (message not signed); arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
  s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=1AF7aVigZwouxWVql2MnK0MSpcIZN0ezQ3PFXN5glmg=;
- b=rtb6k3/0hPJDfRjFp8koF9yNGSZLylTENY3XymxDPhm3JKmfpOd+kiVVKB2vgOsrLde975FxmzCTGlIGUlWOYxWivUf9VZhkVuFh+rG4EOP1FVi45chND9fWEmYeyipZd1DhKD+rcSOW5PY6LGQ6kbXjPX/gOVWF2QO7qKs9dNZN8a1NlQmLm9s2VvXh8a4rFvG1t+eOO3O5t7Ri6JGVsqyviVg3Rdmcc69QvY3jlLhW3o1f8l5dawblaVKXcKwg4bHaDQ0AcRuRdo7p1qJ18Quo839kS2P8UlhY1NSoczegH/EXgjscSOC3owhu51RWWyh2aqY5sOO4crzALa3BNA==
-Received: from DS7PR03CA0175.namprd03.prod.outlook.com (2603:10b6:5:3b2::30)
- by BN9PR12MB5195.namprd12.prod.outlook.com (2603:10b6:408:11c::19) with
+ bh=UJargNSXfW7QRE1/1dEp9jA9DYhmUchTKoXMao3tsQU=;
+ b=MeRo+KZqOHgUbMPVYjzf2oZp0FtbhzcK5SMM2Q+5k1TsveputBGI5ZjbLUp1GlZJZmzd4R+CTmFJ6oZHXAwRb2Y0ZZHAt333Kaa+9T5NlF/F7RNbuERDz4xvRgG0YLRx7rppbFT6IMxmUSPXjtk02+EWzXlr96z9ypHUUZ7Efm/6tckgVYqkykpHxoB3Ry4TZGWF7GgFupA1PqEDVjmiHB6VTXWmD/8EJsBeBP+tsDcFmiiSnOWU5A+VrwNz9wA9iOcxkMDfDONLoKuobbHc5bZnpw0fDvfjt9GpJ+tbRj1+QKCZhXbLSOr6j+Q6gOFwHZ9XgBYTqEJBPxC8xbW9Wg==
+Received: from MN2PR12CA0011.namprd12.prod.outlook.com (2603:10b6:208:a8::24)
+ by BL1PR12MB5125.namprd12.prod.outlook.com (2603:10b6:208:309::15) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5813.14; Fri, 11 Nov
- 2022 10:16:39 +0000
-Received: from CY4PEPF0000B8EE.namprd05.prod.outlook.com
- (2603:10b6:5:3b2:cafe::16) by DS7PR03CA0175.outlook.office365.com
- (2603:10b6:5:3b2::30) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5813.14 via Frontend
- Transport; Fri, 11 Nov 2022 10:16:39 +0000
-X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 216.228.117.161)
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5813.13; Fri, 11 Nov
+ 2022 10:16:52 +0000
+Received: from BL02EPF0000EE3E.namprd05.prod.outlook.com
+ (2603:10b6:208:a8:cafe::a7) by MN2PR12CA0011.outlook.office365.com
+ (2603:10b6:208:a8::24) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5791.27 via Frontend
+ Transport; Fri, 11 Nov 2022 10:16:52 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 216.228.117.160)
  smtp.mailfrom=nvidia.com; dkim=none (message not signed)
  header.d=none;dmarc=pass action=none header.from=nvidia.com;
 Received-SPF: Pass (protection.outlook.com: domain of nvidia.com designates
- 216.228.117.161 as permitted sender) receiver=protection.outlook.com;
- client-ip=216.228.117.161; helo=mail.nvidia.com; pr=C
-Received: from mail.nvidia.com (216.228.117.161) by
- CY4PEPF0000B8EE.mail.protection.outlook.com (10.167.241.10) with Microsoft
+ 216.228.117.160 as permitted sender) receiver=protection.outlook.com;
+ client-ip=216.228.117.160; helo=mail.nvidia.com; pr=C
+Received: from mail.nvidia.com (216.228.117.160) by
+ BL02EPF0000EE3E.mail.protection.outlook.com (10.167.241.135) with Microsoft
  SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.5813.11 via Frontend Transport; Fri, 11 Nov 2022 10:16:38 +0000
-Received: from rnnvmail204.nvidia.com (10.129.68.6) by mail.nvidia.com
- (10.129.200.67) with Microsoft SMTP Server (version=TLS1_2,
+ 15.20.5813.11 via Frontend Transport; Fri, 11 Nov 2022 10:16:51 +0000
+Received: from rnnvmail201.nvidia.com (10.129.68.8) by mail.nvidia.com
+ (10.129.200.66) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.986.26; Fri, 11 Nov
- 2022 02:16:28 -0800
-Received: from rnnvmail202.nvidia.com (10.129.68.7) by rnnvmail204.nvidia.com
- (10.129.68.6) with Microsoft SMTP Server (version=TLS1_2,
+ 2022 02:16:37 -0800
+Received: from rnnvmail202.nvidia.com (10.129.68.7) by rnnvmail201.nvidia.com
+ (10.129.68.8) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.986.36; Fri, 11 Nov
- 2022 02:16:28 -0800
+ 2022 02:16:37 -0800
 Received: from waynec-Precision-5760.nvidia.com (10.127.8.13) by
  mail.nvidia.com (10.129.68.7) with Microsoft SMTP Server id 15.2.986.36 via
- Frontend Transport; Fri, 11 Nov 2022 02:16:24 -0800
+ Frontend Transport; Fri, 11 Nov 2022 02:16:33 -0800
 From: Wayne Chang <waynec@nvidia.com>
 To: <gregkh@linuxfoundation.org>, <robh+dt@kernel.org>,
 	<krzysztof.kozlowski+dt@linaro.org>, <treding@nvidia.com>,
@@ -83,9 +83,9 @@ CC: <waynec@nvidia.com>, <linux-usb@vger.kernel.org>,
 	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
 	<singhanc@nvidia.com>, <linux-i2c@vger.kernel.org>,
 	<linux-phy@lists.infradead.org>, <linux-tegra@vger.kernel.org>
-Subject: [PATCH v2 11/13] phy: tegra: xusb: Add Tegra234 support
-Date: Fri, 11 Nov 2022 18:15:07 +0800
-Message-ID: <20221111101509.999589-12-waynec@nvidia.com>
+Subject: [PATCH v2 13/13] usb: gadget: tegra-xudc: Add Tegra234 support
+Date: Fri, 11 Nov 2022 18:15:09 +0800
+Message-ID: <20221111101509.999589-14-waynec@nvidia.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20221111101509.999589-1-waynec@nvidia.com>
 References: <20221111101509.999589-1-waynec@nvidia.com>
@@ -93,26 +93,27 @@ MIME-Version: 1.0
 X-NVConfidentiality: public
 X-EOPAttributedMessage: 0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: CY4PEPF0000B8EE:EE_|BN9PR12MB5195:EE_
-X-MS-Office365-Filtering-Correlation-Id: 2913a553-fb5e-4d59-106b-08dac3cdd250
+X-MS-TrafficTypeDiagnostic: BL02EPF0000EE3E:EE_|BL1PR12MB5125:EE_
+X-MS-Office365-Filtering-Correlation-Id: c8527019-35b7-4fd4-4b2f-08dac3cdda0c
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 	tzIY1k/QRafb/SWgvE/3uxI+Zb4C6PlOTgX6L7t8rnqlZy8Ag1xRtB0Zbparcp3Tz6Ig7I502UWKFinkegILustdTUpQQ/NZwZrJa8fziPxN8lDeqjAh7KvV4oiUHTMUjvZtG4qYBh+c1eD2aph3MSKID6pBzB/3a4En/hXoYApDau2QfmhIKid2oBkuoxTmn0SRy4vjHifOFAIGfeiYuDCv6+Frnxuox4NT5lMV+lwVh4AyWNXVNFpmBlDj6JhGt58Y+b1ifOhZSnPljlKYJuiECC/eFw+ogrczUyCltZFRxuGhb8vmDldciqfCPSMjsQmRhP6fQbJJxh4A4mqcVauhO9G8qhZXXtz9afniDdDRjY8iEQIzQr/fpugf+bjQQHAobG1IumfL/Z71H0M/DBZDB+I9pJ+c/A3OlZHj8eP4LUiE+HcSqf4Ub1R+L+vwb/FR73rSctmwvoTNmcc/caIKKi6MWSB5X52HzN3afA1mOJ6kwdoXaV26C8h+vUrmygcuq/lsK7GEbnMcPVLOi86P1W9hR3F+WxkkBlBKMljRDOSzhwVGADm/aVZgymgZGxd/Dg1W/sDNmlcJ4KWvBOkaJv2bkPRS14m6nLDETjOnT9VJLwjFakkH+12G1BdY7fy2fAJd9RZfuOQjuWdSMf1+EBqoWbN6ic/nMHz4ed1jn9ENW4oO0uWbyEwYWE0i0lRLOnvKeJZqalyh0+Gj2YFvnup2j9gsmYrffqNmw95PKmM/21q9cOh6C9dHv0w7X0oo5Zgbgu0bLoxRYfghPe3c2JR7EFGXEzix48fysW8=
-X-Forefront-Antispam-Report: 	CIP:216.228.117.161;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc6edge2.nvidia.com;CAT:NONE;SFS:(13230022)(4636009)(396003)(136003)(39860400002)(346002)(376002)(451199015)(36840700001)(40470700004)(46966006)(4326008)(478600001)(70206006)(70586007)(26005)(86362001)(83380400001)(6666004)(41300700001)(426003)(82310400005)(8676002)(2906002)(47076005)(6636002)(36860700001)(8936002)(82740400003)(316002)(186003)(2616005)(54906003)(7696005)(921005)(1076003)(356005)(7636003)(40480700001)(336012)(110136005)(36756003)(7416002)(5660300002)(40460700003);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam-Message-Info: 	x2aO9h5yqQF6bx/8L1lHqDc7OMlcJmtF8ffPsFwNjovHToZ55qKlHRFx/2UjniZB5ny4HvOJ4zkwT9E9nURPdHL+SpclwY3LIWlDlPqdwxq2u6WRi307cb/Xkl26O8DRSaUykSbMAplNP1xHsgr7hZ4dhbJ+gADIr9wKVp32k+PwBsgn8fVWoJ2kmnxU7yM5H4wW7xYt424kXiw7lXFD8o/X/SkFy8xzGlolFQjXo/3USiwnUNK62+UNBER1xCgiXjLCILiWJJ5rjebtOgKm816erOvP10Ua0uD4fdxoRW2g8VsDYEKWVlxALQNIg9Y9UO4jEvO1hh+kNMbBoXpOKj/kmpMwBcFOtZfravtQ7BSEBjP/0I+e7V6wbp6bxRJ1LW4XozHMamNwTgaN1Cffg1xu9R97JLiPySel5hPbDRqZs0qGG//2cp+D/kAVzfz7fyoSk4kxlcj6VaMQS+qMoUAn0RCBT0BGCIRb+t7dPhmUvLbBvjNSGo9B1h9uZozSPRtacvIJTYBI+Uy1KLKesbMfUirNdcLCcQ6t5mGhJUBdoPyiKCGI6F9v7O3wiyI/QCZMigOaxPSHl/iq55y4oPd5MWQDUH+QkKnnZJUM5wM2JDQE8UoFcnS5PFWapaMmCnhdLccTBEs1iwsWJKcYGze/PAECZxsM15r7TZmMc564FvkIieJUSVyG/pb69FVubcypV7Zyy2ZB1QbOinBrePRUyk84Wxf/1qIMRwOa8gVKN6njIxdnyALaTZNtsf5I+gat4HKXsfQ7hpv2p8WyH1uKJLTAjmBzGVW36zEk7bU=
+X-Forefront-Antispam-Report: 	CIP:216.228.117.160;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc6edge1.nvidia.com;CAT:NONE;SFS:(13230022)(4636009)(376002)(396003)(346002)(39860400002)(136003)(451199015)(46966006)(40470700004)(36840700001)(26005)(7696005)(2616005)(82310400005)(478600001)(6666004)(40480700001)(921005)(40460700003)(82740400003)(356005)(7636003)(86362001)(83380400001)(336012)(186003)(1076003)(47076005)(426003)(36756003)(36860700001)(8936002)(5660300002)(41300700001)(2906002)(7416002)(316002)(6636002)(54906003)(110136005)(4326008)(70586007)(70206006)(8676002);DIR:OUT;SFP:1101;
 X-OriginatorOrg: Nvidia.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 11 Nov 2022 10:16:38.9114
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 11 Nov 2022 10:16:51.8422
  (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 2913a553-fb5e-4d59-106b-08dac3cdd250
+X-MS-Exchange-CrossTenant-Network-Message-Id: c8527019-35b7-4fd4-4b2f-08dac3cdda0c
 X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[216.228.117.161];Helo=[mail.nvidia.com]
-X-MS-Exchange-CrossTenant-AuthSource: 	CY4PEPF0000B8EE.namprd05.prod.outlook.com
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[216.228.117.160];Helo=[mail.nvidia.com]
+X-MS-Exchange-CrossTenant-AuthSource: 	BL02EPF0000EE3E.namprd05.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Anonymous
 X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN9PR12MB5195
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BL1PR12MB5125
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221111_021645_174552_916021B1 
-X-CRM114-Status: GOOD (  18.38  )
+X-CRM114-CacheID: sfid-20221111_021701_012095_371D1A77 
+X-CRM114-Status: UNSURE (   9.19  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -131,213 +132,51 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Sing-Han Chen <singhanc@nvidia.com>
 
-Add support for the XUSB pad controller found on Tegra234 SoCs. It is
-mostly similar to the same IP found on Tegra194, because most of
-the Tegra234 XUSB PADCTL registers definition and programming sequence
-are the same as Tegra194, Tegra234 XUSB PADCTL can share the same
-driver with Tegra186 and Tegra194 XUSB PADCTL.
-
-Introduce a new feature, USB2 HW tracking, for Tegra234.
-The feature is to enable HW periodical PAD tracking which measure
-and capture the electric parameters of USB2.0 PAD.
+This commit adds support for XUSB device mode controller support on
+Tegra234 SoC. This is very similar to the existing Tegra194 XUDC.
 
 Signed-off-by: Sing-Han Chen <singhanc@nvidia.com>
-Co-developed-by: Wayne Chang <waynec@nvidia.com>
 Signed-off-by: Wayne Chang <waynec@nvidia.com>
 ---
-V1 -> V2:remove atomic and the helper in padctl_readl_poll func.
- drivers/phy/tegra/Makefile        |  1 +
- drivers/phy/tegra/xusb-tegra186.c | 64 +++++++++++++++++++++++++++++--
- drivers/phy/tegra/xusb.c          |  6 +++
- drivers/phy/tegra/xusb.h          | 22 +++++++++++
- 4 files changed, 90 insertions(+), 3 deletions(-)
+V1 -> V2:Nothing has changed
+ drivers/usb/gadget/udc/tegra-xudc.c | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
 
-diff --git a/drivers/phy/tegra/Makefile b/drivers/phy/tegra/Makefile
-index 89b84067cb4c..eeeea72de117 100644
---- a/drivers/phy/tegra/Makefile
-+++ b/drivers/phy/tegra/Makefile
-@@ -7,4 +7,5 @@ phy-tegra-xusb-$(CONFIG_ARCH_TEGRA_132_SOC) += xusb-tegra124.o
- phy-tegra-xusb-$(CONFIG_ARCH_TEGRA_210_SOC) += xusb-tegra210.o
- phy-tegra-xusb-$(CONFIG_ARCH_TEGRA_186_SOC) += xusb-tegra186.o
- phy-tegra-xusb-$(CONFIG_ARCH_TEGRA_194_SOC) += xusb-tegra186.o
-+phy-tegra-xusb-$(CONFIG_ARCH_TEGRA_234_SOC) += xusb-tegra186.o
- obj-$(CONFIG_PHY_TEGRA194_P2U) += phy-tegra194-p2u.o
-diff --git a/drivers/phy/tegra/xusb-tegra186.c b/drivers/phy/tegra/xusb-tegra186.c
-index f121b4ffbbfd..5ae3cea19c84 100644
---- a/drivers/phy/tegra/xusb-tegra186.c
-+++ b/drivers/phy/tegra/xusb-tegra186.c
-@@ -89,6 +89,11 @@
- #define  USB2_TRK_START_TIMER(x)		(((x) & 0x7f) << 12)
- #define  USB2_TRK_DONE_RESET_TIMER(x)		(((x) & 0x7f) << 19)
- #define  USB2_PD_TRK				BIT(26)
-+#define  USB2_TRK_COMPLETED			BIT(31)
-+
-+#define XUSB_PADCTL_USB2_BIAS_PAD_CTL2		0x28c
-+#define  USB2_TRK_HW_MODE			BIT(0)
-+#define  CYA_TRK_CODE_UPDATE_ON_IDLE		BIT(31)
- 
- #define XUSB_PADCTL_HSIC_PADX_CTL0(x)		(0x300 + (x) * 0x20)
- #define  HSIC_PD_TX_DATA0			BIT(1)
-@@ -609,9 +614,31 @@ static void tegra186_utmi_bias_pad_power_on(struct tegra_xusb_padctl *padctl)
- 	value &= ~USB2_PD_TRK;
- 	padctl_writel(padctl, value, XUSB_PADCTL_USB2_BIAS_PAD_CTL1);
- 
--	udelay(100);
-+	if (padctl->soc->poll_trk_completed) {
-+		err = padctl_readl_poll(padctl, XUSB_PADCTL_USB2_BIAS_PAD_CTL1,
-+					USB2_TRK_COMPLETED, USB2_TRK_COMPLETED, 100);
-+		if (err) {
-+			/* The failure with polling on trk complete will not
-+			 * cause the failure of powering on the bias pad.
-+			 */
-+			dev_warn(dev, "failed to poll USB2 trk completed: %d\n", err);
-+		}
- 
--	clk_disable_unprepare(priv->usb2_trk_clk);
-+		value = padctl_readl(padctl, XUSB_PADCTL_USB2_BIAS_PAD_CTL1);
-+		value |= USB2_TRK_COMPLETED;
-+		padctl_writel(padctl, value, XUSB_PADCTL_USB2_BIAS_PAD_CTL1);
-+	} else {
-+		udelay(100);
-+	}
-+
-+	if (padctl->soc->trk_hw_mode) {
-+		value = padctl_readl(padctl, XUSB_PADCTL_USB2_BIAS_PAD_CTL2);
-+		value |= USB2_TRK_HW_MODE;
-+		value &= ~CYA_TRK_CODE_UPDATE_ON_IDLE;
-+		padctl_writel(padctl, value, XUSB_PADCTL_USB2_BIAS_PAD_CTL2);
-+	} else {
-+		clk_disable_unprepare(priv->usb2_trk_clk);
-+	}
- 
- 	mutex_unlock(&padctl->lock);
- }
-@@ -637,6 +664,13 @@ static void tegra186_utmi_bias_pad_power_off(struct tegra_xusb_padctl *padctl)
- 	value |= USB2_PD_TRK;
- 	padctl_writel(padctl, value, XUSB_PADCTL_USB2_BIAS_PAD_CTL1);
- 
-+	if (padctl->soc->trk_hw_mode) {
-+		value = padctl_readl(padctl, XUSB_PADCTL_USB2_BIAS_PAD_CTL2);
-+		value &= ~USB2_TRK_HW_MODE;
-+		padctl_writel(padctl, value, XUSB_PADCTL_USB2_BIAS_PAD_CTL2);
-+		clk_disable_unprepare(priv->usb2_trk_clk);
-+	}
-+
- 	mutex_unlock(&padctl->lock);
- }
- 
-@@ -1560,7 +1594,8 @@ const struct tegra_xusb_padctl_soc tegra186_xusb_padctl_soc = {
- EXPORT_SYMBOL_GPL(tegra186_xusb_padctl_soc);
- #endif
- 
--#if IS_ENABLED(CONFIG_ARCH_TEGRA_194_SOC)
-+#if IS_ENABLED(CONFIG_ARCH_TEGRA_194_SOC) || \
-+	IS_ENABLED(CONFIG_ARCH_TEGRA_234_SOC)
- static const char * const tegra194_xusb_padctl_supply_names[] = {
- 	"avdd-usb",
- 	"vclamp-usb",
-@@ -1616,8 +1651,31 @@ const struct tegra_xusb_padctl_soc tegra194_xusb_padctl_soc = {
- 	.supply_names = tegra194_xusb_padctl_supply_names,
- 	.num_supplies = ARRAY_SIZE(tegra194_xusb_padctl_supply_names),
- 	.supports_gen2 = true,
-+	.poll_trk_completed = true,
+diff --git a/drivers/usb/gadget/udc/tegra-xudc.c b/drivers/usb/gadget/udc/tegra-xudc.c
+index 76919d7570d2..ff697190469b 100644
+--- a/drivers/usb/gadget/udc/tegra-xudc.c
++++ b/drivers/usb/gadget/udc/tegra-xudc.c
+@@ -3660,6 +3660,19 @@ static struct tegra_xudc_soc tegra194_xudc_soc_data = {
+ 	.has_ipfs = false,
  };
- EXPORT_SYMBOL_GPL(tegra194_xusb_padctl_soc);
-+
-+const struct tegra_xusb_padctl_soc tegra234_xusb_padctl_soc = {
-+	.num_pads = ARRAY_SIZE(tegra194_pads),
-+	.pads = tegra194_pads,
-+	.ports = {
-+		.usb2 = {
-+			.ops = &tegra186_usb2_port_ops,
-+			.count = 4,
-+		},
-+		.usb3 = {
-+			.ops = &tegra186_usb3_port_ops,
-+			.count = 4,
-+		},
-+	},
-+	.ops = &tegra186_xusb_padctl_ops,
-+	.supply_names = tegra194_xusb_padctl_supply_names,
-+	.num_supplies = ARRAY_SIZE(tegra194_xusb_padctl_supply_names),
-+	.supports_gen2 = true,
-+	.poll_trk_completed = true,
-+	.trk_hw_mode = true,
-+};
-+EXPORT_SYMBOL_GPL(tegra234_xusb_padctl_soc);
- #endif
  
- MODULE_AUTHOR("JC Kuo <jckuo@nvidia.com>");
-diff --git a/drivers/phy/tegra/xusb.c b/drivers/phy/tegra/xusb.c
-index 95091876c422..23d179b1a5b5 100644
---- a/drivers/phy/tegra/xusb.c
-+++ b/drivers/phy/tegra/xusb.c
-@@ -71,6 +71,12 @@ static const struct of_device_id tegra_xusb_padctl_of_match[] = {
- 		.compatible = "nvidia,tegra194-xusb-padctl",
- 		.data = &tegra194_xusb_padctl_soc,
++static struct tegra_xudc_soc tegra234_xudc_soc_data = {
++	.clock_names = tegra186_xudc_clock_names,
++	.num_clks = ARRAY_SIZE(tegra186_xudc_clock_names),
++	.num_phys = 4,
++	.u1_enable = true,
++	.u2_enable = true,
++	.lpm_enable = true,
++	.invalid_seq_num = false,
++	.pls_quirk = false,
++	.port_reset_quirk = false,
++	.has_ipfs = false,
++};
++
+ static const struct of_device_id tegra_xudc_of_match[] = {
+ 	{
+ 		.compatible = "nvidia,tegra210-xudc",
+@@ -3673,6 +3686,10 @@ static const struct of_device_id tegra_xudc_of_match[] = {
+ 		.compatible = "nvidia,tegra194-xudc",
+ 		.data = &tegra194_xudc_soc_data
  	},
-+#endif
-+#if defined(CONFIG_ARCH_TEGRA_234_SOC)
 +	{
-+		.compatible = "nvidia,tegra234-xusb-padctl",
-+		.data = &tegra234_xusb_padctl_soc,
++		.compatible = "nvidia,tegra234-xudc",
++		.data = &tegra234_xudc_soc_data
 +	},
- #endif
  	{ }
  };
-diff --git a/drivers/phy/tegra/xusb.h b/drivers/phy/tegra/xusb.h
-index 8cfbbdbd6e0c..a21826c730d7 100644
---- a/drivers/phy/tegra/xusb.h
-+++ b/drivers/phy/tegra/xusb.h
-@@ -8,6 +8,7 @@
- #define __PHY_TEGRA_XUSB_H
- 
- #include <linux/io.h>
-+#include <linux/iopoll.h>
- #include <linux/mutex.h>
- #include <linux/workqueue.h>
- 
-@@ -433,6 +434,8 @@ struct tegra_xusb_padctl_soc {
- 	unsigned int num_supplies;
- 	bool supports_gen2;
- 	bool need_fake_usb3_port;
-+	bool poll_trk_completed;
-+	bool trk_hw_mode;
- };
- 
- struct tegra_xusb_padctl {
-@@ -475,6 +478,22 @@ static inline u32 padctl_readl(struct tegra_xusb_padctl *padctl,
- 	return value;
- }
- 
-+static inline u32 padctl_readl_poll(struct tegra_xusb_padctl *padctl,
-+	unsigned long offset, u32 val, u32 mask, int us)
-+{
-+	u32 regval;
-+	int err;
-+
-+	err = readl_poll_timeout(padctl->regs + offset, regval,
-+					 (regval & mask) == val, 1, us);
-+	if (err) {
-+		dev_err(padctl->dev, "%08lx poll timeout > %08x\n", offset,
-+			regval);
-+	}
-+
-+	return err;
-+}
-+
- struct tegra_xusb_lane *tegra_xusb_find_lane(struct tegra_xusb_padctl *padctl,
- 					     const char *name,
- 					     unsigned int index);
-@@ -491,5 +510,8 @@ extern const struct tegra_xusb_padctl_soc tegra186_xusb_padctl_soc;
- #if defined(CONFIG_ARCH_TEGRA_194_SOC)
- extern const struct tegra_xusb_padctl_soc tegra194_xusb_padctl_soc;
- #endif
-+#if defined(CONFIG_ARCH_TEGRA_234_SOC)
-+extern const struct tegra_xusb_padctl_soc tegra234_xusb_padctl_soc;
-+#endif
- 
- #endif /* __PHY_TEGRA_XUSB_H */
+ MODULE_DEVICE_TABLE(of, tegra_xudc_of_match);
 -- 
 2.25.1
 
