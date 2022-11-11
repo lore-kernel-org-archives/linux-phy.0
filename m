@@ -4,104 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 746A2C433FE
-	for <linux-phy@archiver.kernel.org>; Fri, 11 Nov 2022 09:21:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 82E86C433FE
+	for <linux-phy@archiver.kernel.org>; Fri, 11 Nov 2022 09:26:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Zt9OYAUyavfpCx3SGojNG5YB7rWGQjUQ1+gdJSBqTEI=; b=g18pHplKTOTjKW
-	1dHyFbPNwCKKJXpWsM59j8qTwtd+5qlSxsoiE0xD28CN5X8oZflgSGWAZTnB+d7Qba5iegwq5l4dt
-	uLq0aX/3yalF4d+zpYARJJ2YaT97iUgtDbwhWDYP2DXCd8shoWTwReeJGbNaeCw5A+cIBrAuCvMfy
-	k5MdDusEK6s32d8BMEqYhkhtF1SjOLx9oYPgeAbCpHx3SEN8+TwS1n26YoPgeY6CUNbqAoWHMStBv
-	/jcR/h9nCh50ZjxexabRQymHpvK82C8VClJMhmeQZaIiiS3sIfTrZA2x5CNlphwD4RF2Et6Mbmz1c
-	fGna64/KpXCmm9pmc8eQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=qoaqjbYEbmTBWe6gFqyvlbGn2dYum+kL2wuWxWrySHM=; b=hMI1gOK1Rtx89Y
+	su3vWcMFsQ4ThIpRb+af6vdMRwIIOd01aFHNqy6892zSJ8lbupefs6lMArBPN56cEuryFTZCZapsr
+	rwSs+Wnhd76VZrZkIIChnxSNzekTdQKcpL8d1ygVgLgdUnZ+nJlPtmgAP/sCa/ZjhkujAGsn3xTwt
+	mXi2lBPMJ1EFHwsI6Rn/sVd4+VLLrK2KwZr81DPei9ZgjXBNMJJ/om5Wef+qq0fXTs9bdtz773XUU
+	YIq0FrIfkgK4h+hbsuW7HAuSGslvmJvSIVIMKtYhs20jujxijo78wyaAKeblOYvoq9GvnyUpMhsnT
+	HU8UHH3NWhmfhXK16A4w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1otQDa-00EZ1V-DX; Fri, 11 Nov 2022 09:21:07 +0000
-Received: from mail-ed1-x533.google.com ([2a00:1450:4864:20::533])
+	id 1otQIe-00EaJp-5B; Fri, 11 Nov 2022 09:26:13 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1otQDT-00EYvg-4C
-	for linux-phy@lists.infradead.org; Fri, 11 Nov 2022 09:20:54 +0000
-Received: by mail-ed1-x533.google.com with SMTP id r14so6802477edc.7
-        for <linux-phy@lists.infradead.org>; Fri, 11 Nov 2022 01:20:47 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=KQqlnqh61yDEivsgLuzXFgBFvWeIkle9538NvChEgG4=;
-        b=eRHEStFUgdZI+TOEkzLgPNAUqr8je9PakORGJBpBvetm722q6+52mzO4PuK6UP2C9B
-         y5QKHELjwoL/I5ZveEAoHNQYPUFH2gG9BiO6rNE0Zoi1U/NPdjDb6jXihqpiYnUK7uS7
-         SaEgVVAc1rCLsO+PywRf34jY4cKkxjJ5rpb0iLv7Lx6icnPxIKkBSReqSNOAi5AyQqJr
-         wfParI72b+nyrA1C6NNwYpO2mYi/F3sK4RXxqU2kGu5IcDipfl9TyQkhA6GnH0/P0zga
-         4Pzu7HawlgloyguZmgsGbfP6pqVHW5N9NgfDTgsFvjn4zWaBEAPihtz4CQ3ui15zn27r
-         jJSw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=KQqlnqh61yDEivsgLuzXFgBFvWeIkle9538NvChEgG4=;
-        b=4X7j6AOTkUNNDX0usA6AincERkCtdzKzAaZF7D572HNudTdXvlN9gjOHiHitNn2AYH
-         ZxeqFPjf9hRhFHgVDUlfMRtN85GwoMRNVSMRI4VFAAYnvzc5D1gglB60zzo0DWiKJoK2
-         fhnuNRsCWGr/BFpkwpesdqOBf5enCrCwAUgGdXkD/k2pTM+0merq69Gp1GZim3OZvYjV
-         ACbcnXlfeliuKPLx28fMhzNAtGKOaKgJlAQSiIScyl3fiflBsMmWWg2ktCuX3EslcpxB
-         CqPi0proFLByR/YrJpxBd0NlMQajrIhZEL8WGQzj3wTH2YidQjWsQpc1+HnXJu2ifVsn
-         8elw==
-X-Gm-Message-State: ANoB5pnf/QXzlJdchHGOAq5OgK/4Q6yomiNzuX+LUCxie34y0G1l1pIU
-	oebrfiLrPZ4tzKCwjnqY2rcoHdD0uK13UVkNqLm9wg==
-X-Google-Smtp-Source: AA0mqf53QBR47pUgYWT2xVhbs/Lj4/kZl7NAGXQCY837HnfVAtbLsG6fA3g+X2q4OOQ/b93b11NyQoioTLD4pHwNxXU=
-X-Received: by 2002:a50:ee13:0:b0:463:a83c:e0af with SMTP id
- g19-20020a50ee13000000b00463a83ce0afmr679526eds.158.1668158446767; Fri, 11
- Nov 2022 01:20:46 -0800 (PST)
+	id 1otQIY-00EaGB-3T
+	for linux-phy@lists.infradead.org; Fri, 11 Nov 2022 09:26:10 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 5FEB661EF6;
+	Fri, 11 Nov 2022 09:26:05 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id AAA72C433B5;
+	Fri, 11 Nov 2022 09:26:04 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1668158764;
+	bh=WEY2NyK7kGYSFZQ1MVYoHe3uZ9puPVnYkW8PQVcfqcw=;
+	h=From:To:Cc:Subject:Date:From;
+	b=VY1jZEd7SGw28EB7kPDbF3wRCNldktRQayjUTL47oIR4d3Xod0RdEaAqy56N8MwaT
+	 lVXsHZFNlvslLGu4qNFn3Cy9e4X7z3SZpnlgenVHycnyJ4A4A7r1M2nxDo84SeinMk
+	 DcmUb4Ftyf8kk3O8cVWcMqpX6xJJE9amaZErjraZtX1gKk2FEVlTy8jxiVVMkjE67A
+	 PiU8qgesJaIxxK9jIcOpqF3tDNaU9XMcvtG0/2NNaLO7lICrAdDt397UuIuZaWmuK7
+	 6fIYwBbxSbqf1mp4pX3Joe3SC5N9bBhtKC1lX0Z3zoCiifo36ATH+VymDJzJC5qi2D
+	 cDGV+oEYU7w2w==
+Received: from johan by xi.lan with local (Exim 4.94.2)
+	(envelope-from <johan+linaro@kernel.org>)
+	id 1otQI3-0002kn-Oy; Fri, 11 Nov 2022 10:25:36 +0100
+From: Johan Hovold <johan+linaro@kernel.org>
+To: Vinod Koul <vkoul@kernel.org>
+Cc: Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+	linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	Johan Hovold <johan+linaro@kernel.org>
+Subject: [PATCH 00/14] phy: qcom-qmp-combo: fix sc8280xp binding (set 3/3)
+Date: Fri, 11 Nov 2022 10:24:43 +0100
+Message-Id: <20221111092457.10546-1-johan+linaro@kernel.org>
+X-Mailer: git-send-email 2.37.4
 MIME-Version: 1.0
-References: <20221018-clk-range-checks-fixes-v2-0-f6736dec138e@cerno.tech>
- <20221018-clk-range-checks-fixes-v2-35-f6736dec138e@cerno.tech>
- <CAPDyKFoycVedCJMy0=UK+q5SiPQHqje_8bSN-gdkpBa6KhFfkg@mail.gmail.com>
- <CACRpkdYOj8uozJZO4MV-_OAKeOsQHhoEM=PyynVuNY-JkpgTOw@mail.gmail.com> <CAPDyKFr6VeF3s47JfzJ9urtMsEem+GiBtHeU=_S8jNaz-D+qnw@mail.gmail.com>
-In-Reply-To: <CAPDyKFr6VeF3s47JfzJ9urtMsEem+GiBtHeU=_S8jNaz-D+qnw@mail.gmail.com>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Fri, 11 Nov 2022 10:20:34 +0100
-Message-ID: <CACRpkdb8uYfs6w99FVjD_t6nZgDhPUx=yB1j=CmpHTHAM2QGQw@mail.gmail.com>
-Subject: Re: [PATCH v2 35/65] clk: ux500: sysctrl: Add a determine_rate hook
-To: Ulf Hansson <ulf.hansson@linaro.org>
-Cc: Maxime Ripard <maxime@cerno.tech>, Stephen Boyd <sboyd@kernel.org>, 
-	Maxime Coquelin <mcoquelin.stm32@gmail.com>, Chen-Yu Tsai <wens@csie.org>, 
-	Daniel Vetter <daniel@ffwll.ch>, Nicolas Ferre <nicolas.ferre@microchip.com>, 
-	Thierry Reding <thierry.reding@gmail.com>, Jaroslav Kysela <perex@perex.cz>, 
-	Shawn Guo <shawnguo@kernel.org>, Fabio Estevam <festevam@gmail.com>, 
-	Claudiu Beznea <claudiu.beznea@microchip.com>, Michael Turquette <mturquette@baylibre.com>, 
-	Dinh Nguyen <dinguyen@kernel.org>, Paul Cercueil <paul@crapouillou.net>, 
-	Chunyan Zhang <zhang.lyra@gmail.com>, Manivannan Sadhasivam <mani@kernel.org>, 
-	=?UTF-8?Q?Andreas_F=C3=A4rber?= <afaerber@suse.de>, 
-	Jonathan Hunter <jonathanh@nvidia.com>, Abel Vesa <abelvesa@kernel.org>, 
-	Charles Keepax <ckeepax@opensource.cirrus.com>, Alessandro Zummo <a.zummo@towertech.it>, 
-	Peter De Schrijver <pdeschrijver@nvidia.com>, Orson Zhai <orsonzhai@gmail.com>, 
-	Alexandre Torgue <alexandre.torgue@foss.st.com>, Prashant Gaikwad <pgaikwad@nvidia.com>, 
-	Liam Girdwood <lgirdwood@gmail.com>, Alexandre Belloni <alexandre.belloni@bootlin.com>, 
-	Samuel Holland <samuel@sholland.org>, Matthias Brugger <matthias.bgg@gmail.com>, 
-	Richard Fitzgerald <rf@opensource.cirrus.com>, Vinod Koul <vkoul@kernel.org>, 
-	NXP Linux Team <linux-imx@nxp.com>, Sekhar Nori <nsekhar@ti.com>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Takashi Iwai <tiwai@suse.com>, David Airlie <airlied@gmail.com>, 
-	Luca Ceresoli <luca.ceresoli@bootlin.com>, Jernej Skrabec <jernej.skrabec@gmail.com>, 
-	Pengutronix Kernel Team <kernel@pengutronix.de>, Baolin Wang <baolin.wang@linux.alibaba.com>, 
-	David Lechner <david@lechnology.com>, Sascha Hauer <s.hauer@pengutronix.de>, 
-	Mark Brown <broonie@kernel.org>, Max Filippov <jcmvbkbc@gmail.com>, 
-	Geert Uytterhoeven <geert+renesas@glider.be>, linux-stm32@st-md-mailman.stormreply.com, 
-	alsa-devel@alsa-project.org, linux-mediatek@lists.infradead.org, 
-	linux-phy@lists.infradead.org, linux-mips@vger.kernel.org, 
-	linux-renesas-soc@vger.kernel.org, linux-actions@lists.infradead.org, 
-	linux-clk@vger.kernel.org, 
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, patches@opensource.cirrus.com, 
-	linux-tegra@vger.kernel.org, linux-rtc@vger.kernel.org, 
-	linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev, 
-	linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org, 
-	Lee Jones <lee@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221111_012051_215834_291544BA 
-X-CRM114-Status: GOOD (  32.80  )
+X-CRM114-CacheID: sfid-20221111_012606_241707_929A2FDD 
+X-CRM114-Status: GOOD (  15.14  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -118,59 +82,56 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Nov 10, 2022 at 2:05 PM Ulf Hansson <ulf.hansson@linaro.org> wrote:
-> On Thu, 10 Nov 2022 at 12:39, Linus Walleij <linus.walleij@linaro.org> wrote:
-> >
-> > On Thu, Nov 10, 2022 at 12:29 PM Ulf Hansson <ulf.hansson@linaro.org> wrote:
-> > > On Fri, 4 Nov 2022 at 14:32, Maxime Ripard <maxime@cerno.tech> wrote:
-> > > >
-> > > > The UX500 sysctrl "set_parent" clocks implement a mux with a set_parent
-> > > > hook, but doesn't provide a determine_rate implementation.
-> > > >
-> > > > This is a bit odd, since set_parent() is there to, as its name implies,
-> > > > change the parent of a clock. However, the most likely candidate to
-> > > > trigger that parent change is a call to clk_set_rate(), with
-> > > > determine_rate() figuring out which parent is the best suited for a
-> > > > given rate.
-> > > >
-> > > > The other trigger would be a call to clk_set_parent(), but it's far less
-> > > > used, and it doesn't look like there's any obvious user for that clock.
-> > >
-> > > If I recall correctly, that is the use case we did target for these
-> > > types of clocks. See sound/soc/ux500/ux500_ab85xx.c, for example.
-> >
-> > Hm I am trying to get that driver to work ... from time to time.
-> > It's just that ALSA SoC DT has changed to much that it turns out
-> > into a complete rewrite :/
-> >
-> > So in sound/soc/ux500/mop500_ab8500.c
-> > I see this:
-> >
-> >         status = clk_set_parent(drvdata->clk_ptr_intclk, clk_ptr);
-> >         if (status)
-> > (...)
-> >
-> > and there is elaborate code to switch between "SYSCLK" and
-> > "ULPCLK" (ulta-low power clock). Just like you say... however
-> > a clock named SYSCLK or ULPCLK does not appear in the
-> > code in drivers/clk/ux500 or any DT bindings so... it seems to
-> > be non-working for the time being.
->
-> It's definitely not working, but the corresponding clocks ("ulpclk",
-> "intclk", "audioclk", etc) are being registered in ab8500_reg_clks().
->
-> What seems to be missing is a DT conversion for these clocks, so they
-> can be consumed properly. Right?
+This series fixes the USB-DP PHY devicetree binding for SC8280XP and
+adds support for the new updated binding to the driver.
 
-Yeps that and a few more things, I have a scratch rewrite here:
-https://git.kernel.org/pub/scm/linux/kernel/git/linusw/linux-stericsson.git/log/?h=ux500-audio-rewrite
+As the full series including the preparatory parts is over forty patches
+and I've been posting this in three parts of which this is the last one.
+In an effort to get all of these into 6.2, I've also submitted all three
+series before waiting for the previous ones to be applied. Parts one and
+two can be found here:
 
-I remember Lee said he had audio working with the mainline kernel
-on Snowball at one point, unfortunately I think that was before we
-started with the DT conversions and then we probably broke it.
+	https://lore.kernel.org/lkml/20221111084255.8963-1-johan+linaro@kernel.org/
+	https://lore.kernel.org/lkml/20221111085643.9478-1-johan+linaro@kernel.org/
 
-Yours,
-Linus Walleij
+This last series adds a new binding for SC8280XP that drops the legacy
+child node and the (incomplete) description of register subregions.
+
+As the current bindings are both incomplete and incorrect it may be
+a good idea to update also the other platforms currently supported by
+this driver to the new binding scheme. The driver can support both
+schemes during a transitions period before removing the corresponding
+code (dt parsing and clock-provider registration).
+
+Johan
+
+
+Johan Hovold (14):
+  dt-bindings: phy: qcom,qmp-usb3-dp: rename current bindings
+  dt-bindings: phy: qcom,qmp-usb3-dp: fix sc8280xp bindings
+  phy: qcom-qmp-combo: drop v4 reference-clock source
+  phy: qcom-qmp-combo: restructure PHY creation
+  phy: qcom-qmp-combo: register clocks sooner
+  phy: qcom-qmp-combo: generate pipe clock name
+  phy: qcom-qmp-combo: drop redundant clock structure
+  phy: qcom-qmp-combo: drop redundant clock allocation
+  phy: qcom-qmp-combo: add clock registration helper
+  phy: qcom-qmp-combo: separate clock and provider registration
+  phy: qcom-qmp-combo: clean up DP clock callbacks
+  phy: qcom-qmp-combo: rename common-register pointers
+  phy: qcom-qmp-combo: rename DP_PHY register pointer
+  phy: qcom-qmp-combo: add support for updated sc8280xp binding
+
+ ....yaml => qcom,sc7180-qmp-usb3-dp-phy.yaml} |  23 +-
+ .../phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml    | 111 ++++
+ drivers/phy/qualcomm/phy-qcom-qmp-combo.c     | 532 +++++++++++-------
+ 3 files changed, 441 insertions(+), 225 deletions(-)
+ rename Documentation/devicetree/bindings/phy/{qcom,qmp-usb3-dp-phy.yaml => qcom,sc7180-qmp-usb3-dp-phy.yaml} (92%)
+ create mode 100644 Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
+
+-- 
+2.37.4
+
 
 -- 
 linux-phy mailing list
