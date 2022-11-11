@@ -4,65 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 308DDC4332F
-	for <linux-phy@archiver.kernel.org>; Fri, 11 Nov 2022 07:01:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 25A63C4167D
+	for <linux-phy@archiver.kernel.org>; Fri, 11 Nov 2022 08:44:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=V3o749hxnrTq7dZhXVeqiYJit51A0KWhW+j6rxEWEQo=; b=T8Stotao248SaL
-	PVncCjZBkPziIo8IOHcpHYUqiqGxMUBRoxA4tfBx4AbmDrrt3v6/CLdYFmPOKv37SQJ0GzsPGph3J
-	98J0d9eZ2tL1Wp0UuBtpinc1V0vABnJaE7XeShP5g7axaeS9PaSrKerGI+RzaU+xLr9vfIE3LDsqr
-	MBzgZrsxypQI9ex8sHoz9GN3vtlQBTGfiWZO5T5kbPggaWhXJg1hi3I8hy81RpzdGgW5tNKNi3F6u
-	qfBwHxAWWuaK0twibl1GkKsx9vl/2EC8ezC6t4NHRjc3TUzREI0tFrRHKxLcW5D6JhWpuLWjduXfS
-	twi6vSUnlYwmAKsxSH7w==;
+	List-Owner; bh=M3UEEL4+erAnGvzZbRY2RO6M/bV+QX0riwNmy2p8ZEQ=; b=PWcL76Psv+fhE5
+	YiOQMtzLmAWrenfzoqKBPT3ZH0GCdfSDES0gy+7Ri23twrQoHHB93jlq/DFjX0ErN6qWdylDxZXKO
+	gNqUA2yLiXRYJPeUtZuZ4kkih3X482foMR4nCXMklHvfH56OhsWvO7qH6MVKCnxYpWoYw6ZBI5d0q
+	581Zmf2iw7H7IKocvxj9NOl5fNp/RS4zvxr+d9eUkl5zXcl6VGWrRnyOL9VXnrcs+HPMvJVuaZgwC
+	ol8ir7o8O/x2WyVz3OOJwafm4rnxQ90U1ema8JeySx5z2RUxwSPqGUgfs1zD3yvxrejOqDmrne7bD
+	09yr6xikA+0dr0lqi9pw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1otO2X-00DhUb-CB; Fri, 11 Nov 2022 07:01:25 +0000
+	id 1otPek-00EIVf-FO; Fri, 11 Nov 2022 08:44:58 +0000
 Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1otO2U-00DhRc-Ff
-	for linux-phy@lists.infradead.org; Fri, 11 Nov 2022 07:01:23 +0000
+	id 1otPeh-00EISp-Cz
+	for linux-phy@lists.infradead.org; Fri, 11 Nov 2022 08:44:56 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id BA72F61EAC;
-	Fri, 11 Nov 2022 07:01:21 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id CE88FC433D6;
-	Fri, 11 Nov 2022 07:01:19 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 6BA7761EDC;
+	Fri, 11 Nov 2022 08:44:54 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id CE389C433D6;
+	Fri, 11 Nov 2022 08:44:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1668150081;
-	bh=F1W/88cKIisGvkI5jZLR7EExVe0GMTcmUxSVV6b6Azo=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=Pnmguo4Za0NkdmYj+MvBrVGYFCN65RoinGoYH12UUjDL7vuZ5AnRny11Z1P+qNBrO
-	 zvag2Z6KGFL1tHe/qO/behNdsyDOHuTkXhs6nhjcCgGsIzEQJctx0Mu3vw7HQRQvS9
-	 QUO5I0XWKOP1u1NfeEgT7mqitw7kOnXoB8jRxFikV4tDrTdC1+SEtUksP4K9YF62W3
-	 Ss7trMIYKoFGr8DUOyN+EqZosZzfrjH1Vv2am4TDy+3EjVrhfzaofv3j5b6tox9ZuY
-	 FxCXF7fUjWQJqQzZFt1TbjkuFbE+OiMkhxXtHHzvT+zFGs3K92cL/u+IfYRNo/xmgX
-	 vLHqQzuY3jrRQ==
-Date: Fri, 11 Nov 2022 12:31:15 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Cc: martin.petersen@oracle.com, jejb@linux.ibm.com, andersson@kernel.org,
-	krzysztof.kozlowski+dt@linaro.org, konrad.dybcio@somainline.org,
-	robh+dt@kernel.org, quic_cang@quicinc.com,
-	linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-scsi@vger.kernel.org, dmitry.baryshkov@linaro.org,
-	ahalaney@redhat.com
-Subject: Re: [PATCH v2 02/15] phy: qcom-qmp-ufs: Add support for configuring
- PHY in HS Series B mode
-Message-ID: <Y23zO68Bb5R0xLq/@matsya>
-References: <20221031180217.32512-1-manivannan.sadhasivam@linaro.org>
- <20221031180217.32512-3-manivannan.sadhasivam@linaro.org>
+	s=k20201202; t=1668156293;
+	bh=n6gU/Kh4pLDrdvJwnrFedkFVS9iAnD1+wNhxscwN2M4=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=Sc16wmgRz0fnc1vnv7vYp7ZAnYJnLymMZlmKpeukxR6m2NQUV9AzgSPA8ZwjLANLA
+	 miKXJ1rLB7NWLRM5G93LjMiWOQHIYCioqLs9+TutSTH/DJhCE6uUcwhUWAhkf9d/wY
+	 P3qceWqhcIT4+c9aZ30dRjDt314nQXW6zmKsZFHeUtlD2V8JbjYi5WlcX91l+AzXV/
+	 iEl25p4WMthcHEJWzrB11LaGAn6c+JbDxVL64mlyIqQmj6A/vyV5AvmnXbG/4z3ETQ
+	 FE5+6RoTPSx0IOTHVzp8bRVeEFKJiLONEL0qqhJosqWyWrme9thwoE1fUaK4I+WEff
+	 2Ovw58G6jlabg==
+Received: from johan by xi.lan with local (Exim 4.94.2)
+	(envelope-from <johan+linaro@kernel.org>)
+	id 1otPeD-0002Mo-U1; Fri, 11 Nov 2022 09:44:25 +0100
+From: Johan Hovold <johan+linaro@kernel.org>
+To: Vinod Koul <vkoul@kernel.org>
+Cc: Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+	linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	Johan Hovold <johan+linaro@kernel.org>
+Subject: [PATCH 5/6] phy: qcom-qmp-combo: fix runtime suspend
+Date: Fri, 11 Nov 2022 09:42:54 +0100
+Message-Id: <20221111084255.8963-6-johan+linaro@kernel.org>
+X-Mailer: git-send-email 2.37.4
+In-Reply-To: <20221111084255.8963-1-johan+linaro@kernel.org>
+References: <20221111084255.8963-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20221031180217.32512-3-manivannan.sadhasivam@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221110_230122_615369_0763C8BA 
-X-CRM114-Status: GOOD (  23.18  )
+X-CRM114-CacheID: sfid-20221111_004455_515374_816D1BB8 
+X-CRM114-Status: GOOD (  13.51  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,97 +81,62 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 31-10-22, 23:32, Manivannan Sadhasivam wrote:
-> Add separate tables_hs_b instance to allow the PHY driver to configure the
-> PHY in HS Series B mode. The individual SoC configs need to supply the
-> serdes register setting in tables_hs_b and the UFS driver can request the
-> Series B mode by calling phy_set_mode() with mode set to PHY_MODE_UFS_HS_B.
-> 
-> Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-> Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-> ---
->  drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 18 ++++++++++++++++++
->  1 file changed, 18 insertions(+)
-> 
-> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-> index cdfda4e6d575..4c6a2b5afc9a 100644
-> --- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-> @@ -20,6 +20,8 @@
->  #include <linux/reset.h>
->  #include <linux/slab.h>
->  
-> +#include <ufs/unipro.h>
-> +
->  #include <dt-bindings/phy/phy.h>
->  
->  #include "phy-qcom-qmp.h"
-> @@ -549,6 +551,8 @@ struct qmp_phy_cfg {
->  
->  	/* Main init sequence for PHY blocks - serdes, tx, rx, pcs */
->  	const struct qmp_phy_cfg_tables tables;
-> +	/* Additional sequence for HS Series B */
-> +	const struct qmp_phy_cfg_tables tables_hs_b;
+Drop the confused runtime-suspend type check which effectively broke
+runtime PM if the DP child node happens to be parsed before the USB
+child node during probe (e.g. due to order of child nodes in the
+devicetree).
 
-what am i missing, where was tables_hs_b added?
+Instead use the new driver data USB PHY pointer to access the USB
+configuration and resources.
 
->  
->  	/* clock ids to be requested */
->  	const char * const *clk_list;
-> @@ -582,6 +586,7 @@ struct qmp_phy_cfg {
->   * @rx2: iomapped memory space for second lane's rx (in dual lane PHYs)
->   * @pcs_misc: iomapped memory space for lane's pcs_misc
->   * @qmp: QMP phy to which this lane belongs
-> + * @mode: PHY mode configured by the UFS driver
->   */
->  struct qmp_phy {
->  	struct phy *phy;
-> @@ -594,6 +599,7 @@ struct qmp_phy {
->  	void __iomem *rx2;
->  	void __iomem *pcs_misc;
->  	struct qcom_qmp *qmp;
-> +	u32 mode;
->  };
->  
->  /**
-> @@ -983,6 +989,8 @@ static int qmp_ufs_power_on(struct phy *phy)
->  	int ret;
->  
->  	qmp_ufs_serdes_init(qphy, &cfg->tables);
-> +	if (qphy->mode == PHY_MODE_UFS_HS_B)
-> +		qmp_ufs_serdes_init(qphy, &cfg->tables_hs_b);
->  
->  	qmp_ufs_lanes_init(qphy, &cfg->tables);
->  
-> @@ -1070,6 +1078,15 @@ static int qmp_ufs_disable(struct phy *phy)
->  	return qmp_ufs_exit(phy);
->  }
->  
-> +static int qmp_ufs_set_mode(struct phy *phy, enum phy_mode mode, int submode)
-> +{
-> +	struct qmp_phy *qphy = phy_get_drvdata(phy);
-> +
-> +	qphy->mode = mode;
-> +
-> +	return 0;
-> +}
-> +
->  static int qmp_ufs_vreg_init(struct device *dev, const struct qmp_phy_cfg *cfg)
->  {
->  	struct qcom_qmp *qmp = dev_get_drvdata(dev);
-> @@ -1105,6 +1122,7 @@ static int qmp_ufs_clk_init(struct device *dev, const struct qmp_phy_cfg *cfg)
->  static const struct phy_ops qcom_qmp_ufs_ops = {
->  	.power_on	= qmp_ufs_enable,
->  	.power_off	= qmp_ufs_disable,
-> +	.set_mode	= qmp_ufs_set_mode,
->  	.owner		= THIS_MODULE,
->  };
->  
-> -- 
-> 2.25.1
+Fixes: ac0d239936bd ("phy: qcom-qmp: Add support for runtime PM")
+Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
+---
+ drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 12 ++----------
+ 1 file changed, 2 insertions(+), 10 deletions(-)
 
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+index 17707f68d482..fde30205f332 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+@@ -2207,15 +2207,11 @@ static void qmp_combo_disable_autonomous_mode(struct qmp_phy *qphy)
+ static int __maybe_unused qmp_combo_runtime_suspend(struct device *dev)
+ {
+ 	struct qcom_qmp *qmp = dev_get_drvdata(dev);
+-	struct qmp_phy *qphy = qmp->phys[0];
++	struct qmp_phy *qphy = qmp->usb_phy;
+ 	const struct qmp_phy_cfg *cfg = qphy->cfg;
+ 
+ 	dev_vdbg(dev, "Suspending QMP phy, mode:%d\n", qphy->mode);
+ 
+-	/* Supported only for USB3 PHY and luckily USB3 is the first phy */
+-	if (cfg->type != PHY_TYPE_USB3)
+-		return 0;
+-
+ 	if (!qmp->init_count) {
+ 		dev_vdbg(dev, "PHY not initialized, bailing out\n");
+ 		return 0;
+@@ -2232,16 +2228,12 @@ static int __maybe_unused qmp_combo_runtime_suspend(struct device *dev)
+ static int __maybe_unused qmp_combo_runtime_resume(struct device *dev)
+ {
+ 	struct qcom_qmp *qmp = dev_get_drvdata(dev);
+-	struct qmp_phy *qphy = qmp->phys[0];
++	struct qmp_phy *qphy = qmp->usb_phy;
+ 	const struct qmp_phy_cfg *cfg = qphy->cfg;
+ 	int ret = 0;
+ 
+ 	dev_vdbg(dev, "Resuming QMP phy, mode:%d\n", qphy->mode);
+ 
+-	/* Supported only for USB3 PHY and luckily USB3 is the first phy */
+-	if (cfg->type != PHY_TYPE_USB3)
+-		return 0;
+-
+ 	if (!qmp->init_count) {
+ 		dev_vdbg(dev, "PHY not initialized, bailing out\n");
+ 		return 0;
 -- 
-~Vinod
+2.37.4
+
 
 -- 
 linux-phy mailing list
