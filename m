@@ -4,47 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 26FF4C38A02
-	for <linux-phy@archiver.kernel.org>; Fri, 11 Nov 2022 08:57:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E9863C43217
+	for <linux-phy@archiver.kernel.org>; Fri, 11 Nov 2022 08:57:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=q/m9Ym7TJe6KtGO17PK3E0s5lgVxYFCMnkncacQYX+0=; b=FdHDpi1nIE8vOk
-	HtENuxri+SJ32SLagvUnSZmGO8HoqAhqFSErJTO9zclZDY9mz+WP+zA5SjosYC8MS0i7lOaS+2iJe
-	VyTrnflIyg1uy3anwJ09+5lVwfEZOz7b6Jh8PBsck9KQyv81s2blU0H8Xtj2zVDSbetpdHdlrFr2m
-	K1BMl1fTuhpOQUrq95YHCAuivaGm+psazVgPjy0K6pTZeHReBQGNBbrfyjAKefq/shQU5q6Joza1I
-	bzGjSjuBucaWQ+xbhmZJNh7Lt0WWzMjb514dfZg5rsaxYciUU4ApnWCYMHkjQVr1Ve43Qi2GLlDfw
-	7wb864qfFrhwt6Xd7c4Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ljhgWZLpWWbOm4mfyK2uMtT9x0qnoykRh3KL7G4i4wM=; b=bHhx9QnGusdMjy
+	fKsw8mf4OGwY/cVicZwgFOyfPA4uVBXDaVZnPIG6ZtdcpWUlPuunaSgWxTDk3kscTbO/q+A/4Hnqb
+	IlKqD+JivsF629flufGjwI6QWA0XyCN7ubcpJxNZeqWKHdLsxPE1qqUb3TrpWmWMPzMQ4pIHXE4Ww
+	Yf+twYwk4xsXbOixUyTQU+O9mfTF3bn9QdCVCQR/e6zaS9ncBLH8L2Lsl5Jf+dzIBvWc/1iU0Q2pa
+	/K25Iwa3Hi+XmEDaFSK4NGtbwvLx2ey/r64Phhrsl+df2HjZp8cGAUrExJd3sUwURv1XEx085o7Pz
+	3gObf+51oRGHoW20z0BA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1otPr0-00EPkQ-RM; Fri, 11 Nov 2022 08:57:38 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1otPr2-00EPlo-GW; Fri, 11 Nov 2022 08:57:40 +0000
+Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1otPqn-00EPWf-Ty
-	for linux-phy@lists.infradead.org; Fri, 11 Nov 2022 08:57:28 +0000
+	id 1otPqo-00EPUF-84
+	for linux-phy@lists.infradead.org; Fri, 11 Nov 2022 08:57:29 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 50C5661EE5;
-	Fri, 11 Nov 2022 08:57:25 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 52AC8C43162;
-	Fri, 11 Nov 2022 08:57:23 +0000 (UTC)
+	by ams.source.kernel.org (Postfix) with ESMTPS id A3C48B82478;
+	Fri, 11 Nov 2022 08:57:24 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id DA6F1C43143;
+	Fri, 11 Nov 2022 08:57:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1668157043;
-	bh=UcjQPB9m1Y/nqixRql/KGV5QHSLIloXxZBPzAAJt1eI=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=mxDnJheg/YmYxRIQJfUkUj4qVyKalxgGT27Fvr4wfAPP6SMAPYly3BjLR5ES59b1Y
-	 U6eX2/ZH4tyxfxGJeIX39eUgD83JKRrjlv6LE/Ez2VKkw7fLyKNcj5ZKSuGOCn+b+b
-	 6xJRxrh2k4epKNbBvm7WxbgFLp77C/mYFzcgiVkOsrElk1vZNvPmA1RlhM/nByi7Cz
-	 NX784g06yky8g/DCyvd8yoetlG82kz5avkVWzziKwTMiaJQ74etK9RbY0seRWeJWZ8
-	 P6yBvvOrS7G+D0EimD3TEut1OOWEFUeqNiLeBE4TNrFgfhT+iC3v77r7W2Qmw4Lv4g
-	 JpCujZxRRxkHg==
+	s=k20201202; t=1668157042;
+	bh=6lx4EuPQGDBHFiojMWKakUIRIo8dAD0np6BpOOEOAUI=;
+	h=From:To:Cc:Subject:Date:From;
+	b=qKzF3q0UwDaurz6612AAcMaD3CizUEFgCMp2/9GG4FugPV/lByzLqOt7sUEO4aZs5
+	 hNrnNFcnk9GAtwzw9Fo5AxxL5dpXfIXDU2/B5hTo+mevirP1ASf2CvupQyfRrqbpvb
+	 Aue7vgnHK1bOAlPB0NzNDFDzuZ+ABqngF3lWJ748Ekm4Hx6413/Gu70SH9CoXdJ6jc
+	 ajMgwNNy6fqIPQ/3xvdh+sHJ1hBxejlATMantBS+sRnLxJDm/7zUX0kOP9Nroz6GXO
+	 zegoqQQk28UJ0Bvo39kLqh/irUqeUcEzE6ynbD6aSlewU6x9ak58XmHnrVSKpx4dfy
+	 HR3JSEcM2egoQ==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1otPqJ-0002UA-In; Fri, 11 Nov 2022 09:56:55 +0100
+	id 1otPqI-0002Tn-56; Fri, 11 Nov 2022 09:56:54 +0100
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>
 Cc: Andy Gross <agross@kernel.org>,
@@ -55,16 +55,15 @@ Cc: Andy Gross <agross@kernel.org>,
 	linux-phy@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH 09/22] phy: qcom-qmp-combo: rename DP PHY ops
-Date: Fri, 11 Nov 2022 09:56:30 +0100
-Message-Id: <20221111085643.9478-10-johan+linaro@kernel.org>
+Subject: [PATCH 00/22] phy: qcom-qmp-combo: preparatory cleanups (set 2/3)
+Date: Fri, 11 Nov 2022 09:56:21 +0100
+Message-Id: <20221111085643.9478-1-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.37.4
-In-Reply-To: <20221111085643.9478-1-johan+linaro@kernel.org>
-References: <20221111085643.9478-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221111_005726_038168_D1B5DD2C 
-X-CRM114-Status: GOOD (  11.40  )
+X-CRM114-CacheID: sfid-20221111_005726_467354_5DA6392A 
+X-CRM114-Status: UNSURE (   9.12  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,48 +80,49 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Rename the configure and calibrate DP PHY ops using the common prefix
-for consistency.
+Here's a set of preparatory cleanups needed to fix the devicetree
+binding and add (proper) support for SC8280XP to the combo driver but
+that are otherwise self-contained.
 
-Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
----
- drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
+The full series is over forty patches and I'll be posting these in three
+parts of which this is the second. In an effort to get all of these into
+6.2, I'll also be submitting all three series before waiting for the
+previous ones to be applied.
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-index 5d985195df38..7392ae460fd7 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-@@ -1842,7 +1842,7 @@ static int qcom_qmp_v4_dp_phy_calibrate(struct qmp_phy *qphy)
- 	return 0;
- }
- 
--static int qcom_qmp_dp_phy_configure(struct phy *phy, union phy_configure_opts *opts)
-+static int qmp_combo_dp_configure(struct phy *phy, union phy_configure_opts *opts)
- {
- 	const struct phy_configure_opts_dp *dp_opts = &opts->dp;
- 	struct qmp_phy *qphy = phy_get_drvdata(phy);
-@@ -1857,7 +1857,7 @@ static int qcom_qmp_dp_phy_configure(struct phy *phy, union phy_configure_opts *
- 	return 0;
- }
- 
--static int qcom_qmp_dp_phy_calibrate(struct phy *phy)
-+static int qmp_combo_dp_calibrate(struct phy *phy)
- {
- 	struct qmp_phy *qphy = phy_get_drvdata(phy);
- 	const struct qmp_phy_cfg *cfg = qphy->cfg;
-@@ -2127,9 +2127,9 @@ static const struct phy_ops qmp_combo_usb_phy_ops = {
- 
- static const struct phy_ops qmp_combo_dp_phy_ops = {
- 	.init		= qmp_combo_dp_init,
--	.configure	= qcom_qmp_dp_phy_configure,
-+	.configure	= qmp_combo_dp_configure,
- 	.power_on	= qmp_combo_power_on,
--	.calibrate	= qcom_qmp_dp_phy_calibrate,
-+	.calibrate	= qmp_combo_dp_calibrate,
- 	.power_off	= qmp_combo_power_off,
- 	.exit		= qmp_combo_dp_exit,
- 	.owner		= THIS_MODULE,
+This series specifically separates the USB and DP PHY ops
+implementations, and merges the USB and DP driver data and
+configurations.
+
+Johan
+
+
+Johan Hovold (22):
+  phy: qcom-qmp-combo: sort device-id table
+  phy: qcom-qmp-combo: move device-id table
+  phy: qcom-qmp-combo: move pm ops
+  phy: qcom-qmp-combo: rename PHY ops structures
+  phy: qcom-qmp-combo: drop unused DP PHY mode op
+  phy: qcom-qmp-combo: rename USB PHY ops
+  phy: qcom-qmp-combo: drop unnecessary debug message
+  phy: qcom-qmp-combo: separate USB and DP init ops
+  phy: qcom-qmp-combo: rename DP PHY ops
+  phy: qcom-qmp-combo: separate USB and DP power-on ops
+  phy: qcom-qmp-combo: clean up serdes initialisation
+  phy: qcom-qmp-combo: separate USB and DP devicetree parsing
+  phy: qcom-qmp-combo: add dedicated DP iomem pointers
+  phy: qcom-qmp-combo: clean up DP configurations
+  phy: qcom-qmp-combo: rename sc8280xp config
+  phy: qcom-qmp-combo: add DP configuration tables
+  phy: qcom-qmp-combo: merge USB and DP configurations
+  phy: qcom-qmp-combo: merge driver data
+  phy: qcom-qmp-combo: clean up device-tree parsing
+  phy: qcom-qmp-combo: clean up probe initialisation
+  phy: qcom-qmp-combo: clean up PHY init
+  phy: qcom-qmp-combo: clean up DP callback names
+
+ drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 1328 ++++++++++-----------
+ 1 file changed, 611 insertions(+), 717 deletions(-)
+
 -- 
 2.37.4
 
