@@ -4,83 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 43A52C4332F
-	for <linux-phy@archiver.kernel.org>; Sat, 12 Nov 2022 11:17:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 867C6C4332F
+	for <linux-phy@archiver.kernel.org>; Sat, 12 Nov 2022 11:18:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:Date:Subject:Cc:
+	To:From:Message-ID:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PyLpO2wj8Be5r7Xpk8VCnqW9donOxZE/e67hEUulV1U=; b=29v0kCNfh/uudX
-	tJuirVDhL3vlx8nY6znwYG34MiUFzMT2JVaGT7SZLqlhmZ9mT7tV3SCvfbZnE/jVLwTqJhCFXi4w1
-	a2A6EKQmE1YUwkF2yDdrLUwRdYSAEvYkWNREGKwsFfvY/AgdWxl1gxmskF/q1vC5aKWDJM+uCfeLG
-	Fs4U7a9uIprN0GXlvWqKaswM5DIv4RO8BG2ci7FTTmN7ck7QR8qagnadcG/P5UP9cMLNopoS+2UH3
-	C37UBXMx789p2keLLiB4KBk4ln9u/vFClE1+SZZNve7PvhOrL6a5g3qyzln9z4bX0q7m8Zb5XS51N
-	kenkBIiTdr2J/LLT6dbg==;
+	List-Owner; bh=RHbqEI5C/CrX7F/KCAtcNd0sIq1A0bXPCQjgH06VnFY=; b=wMgZXmkojgr0hv
+	5WSOIOH/jhvDWPTztFDdtdZOVaIJqHkQSfNREwpO5zigw57DtW/vnj7jXk5Wmzz5r9rbPcHCRa5Hq
+	qooUovX6gZzFTbgPiyFJBuY5I1PELkiQ88QLbHJIIh72haKW6+5f+QyZ6bbs2DFYl1FWlEOGozutQ
+	Wr4Me6DJfgHSjUBtW0AJPKvcxKm/3ZVti9kIDDRzCyPPKjWS36jDS1InErFCPHSCGg3spF0hzJqyE
+	cydiObWILxG/VM3e3o/Dsnvj9qq/SWRn+uGgSd6/nwZefHcWUgHd1UAFZ/dRhNTuw1cHdcMuANJGR
+	MhjnRCSsm8b51W3qdJ9g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1otoWD-005Hk0-Cx; Sat, 12 Nov 2022 11:17:49 +0000
-Received: from mail-lf1-x12c.google.com ([2a00:1450:4864:20::12c])
+	id 1otoWv-005Hnh-T7; Sat, 12 Nov 2022 11:18:33 +0000
+Received: from mout.gmx.net ([212.227.15.18])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1otoWB-005HiF-8u
-	for linux-phy@lists.infradead.org; Sat, 12 Nov 2022 11:17:48 +0000
-Received: by mail-lf1-x12c.google.com with SMTP id p8so11901552lfu.11
-        for <linux-phy@lists.infradead.org>; Sat, 12 Nov 2022 03:17:46 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=a9/j7JZy19eS+PBrwwIX6icmMNg1umYgfu8PqBTGqlU=;
-        b=IA9PI0oH+xolk2+oKu6YLAJEFZQE6CC9vCwb3K4oUnqvf8b5zIUkrS7ljqP5lKK+6C
-         sE47n3eTAKBEk7ijQzBDVYNlBrbInB067/p1uTEdDc+cYqP6Pm/+c5N16xmT1Rvrr/ze
-         EoRyzMYOd8HEViNfwq8xq1ysuDUDsJsxPWohqBixMfaOQlzohk0vl0DgktyaLKfOUpRc
-         txZAR2kjZUL4VRa+RuFU71DIOAIOUjRRQLu9e+j9M4dCWpsi3xqBwHlAX+8j1LyC3Gdg
-         ILVQal/7pveVY6Mrrt1Gnw2v+hRKwfvUT4BroqCosrOUfk4VQfazh7ees3v5u63aAFko
-         MMUQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=a9/j7JZy19eS+PBrwwIX6icmMNg1umYgfu8PqBTGqlU=;
-        b=cUe06TkVfmIJ7spUtt1blDZu+b0gDFz8dyWpdGP9C8cg9zk+I6PyVR6elCxi1iqr/Z
-         zXYl1pAoAQnxLuyNZc8be/fCe9up5PASQCO/gbKDLxECUil1Yux6xhiTV2LomTCMMvlG
-         D/GzUwA5INnCTqEv+VY6h5SnE5GOkL2uzb0LxJZA3i8iXleI8BEgLr+cAU+dwoZ+tXOW
-         xeU1Pn+y27Zweh+nB2wbsEnwCF3FOUm4baxTJkXG9c3O6xr2cQhoR3zhnVtZI3oSa2fE
-         D1YhB/s+0Xv/ob9WaenD8Ta5Yf7nFD4LQGLkYMwjUZRiH4tR13yJMvQaQV7gKr3RuvML
-         uVsg==
-X-Gm-Message-State: ANoB5pkBTmLuGV+uw5hx1HnIJHAty8VFmYbZo5cOiyeZEW6X97m8oqOn
-	X0GvVYBX6DT1Wh7lWHi414ujpA==
-X-Google-Smtp-Source: AA0mqf5WR59psQF+ZKKE8lacjvMnXGhpXVifJY7jWFEezqckxEMKjxzVoBQiy73/qdltB+LriTECpw==
-X-Received: by 2002:a05:6512:b8c:b0:4a4:5f2e:49b3 with SMTP id b12-20020a0565120b8c00b004a45f2e49b3mr1907346lfv.148.1668251865058;
-        Sat, 12 Nov 2022 03:17:45 -0800 (PST)
-Received: from [192.168.1.211] ([37.153.55.125])
-        by smtp.gmail.com with ESMTPSA id z7-20020a056512370700b004a03fd4476esm816659lfr.287.2022.11.12.03.17.44
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sat, 12 Nov 2022 03:17:44 -0800 (PST)
-Message-ID: <75e188ce-99ea-7511-a561-5b0fef9feeaf@linaro.org>
-Date: Sat, 12 Nov 2022 14:17:44 +0300
+	id 1otoWk-005Hlw-ES; Sat, 12 Nov 2022 11:18:24 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=public-files.de;
+	s=s31663417; t=1668251878;
+	bh=pCQDOALh79Wg0//BO+hwd+gUI9nb61JMC5A9n1oxDJo=;
+	h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
+	b=tC3jbkeFkyX2cGN5JP1yoh4sVVWUa5ymY5NF+It/5QcNljZdruXu1yBVIN1g7T1qe
+	 A9EZgSPfohPm/l3mHuWUeS7927l1fYBKiP92ZCzzfkBYfSPL6g9MJKb5L6xUFkg/Ev
+	 Zs83RBF1wRw1eWZzTCO53hJPyo4Qyx3iucl4Ubpg5VuJb9njcoms2FNpgpo8MArnfT
+	 Ih2beDS9/awFyP+bWyZYtoxCk7MOHZUYLjpGuqCRsGAkmR0KZBHzVSThSGMoyPOes6
+	 t0lAgaAU0zI5LXWOfKpRfmNlOZ2VWyBKNCcj8LM4bWG+heAeLkxJpZx8861Zjdh7Mk
+	 sjTeHAcdWDPbg==
+X-UI-Sender-Class: 724b4f7f-cbec-4199-ad4e-598c01a50d3a
+Received: from [157.180.227.41] ([157.180.227.41]) by web-mail.gmx.net
+ (3c-app-gmx-bs18.server.lan [172.19.170.70]) (via HTTP); Sat, 12 Nov 2022
+ 12:17:58 +0100
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.4.1
-Subject: Re: [PATCH 08/14] phy: qcom-qmp-combo: drop redundant clock
- allocation
-Content-Language: en-GB
-To: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>
-Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konrad.dybcio@linaro.org>, Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-References: <20221111092457.10546-1-johan+linaro@kernel.org>
- <20221111092457.10546-9-johan+linaro@kernel.org>
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-In-Reply-To: <20221111092457.10546-9-johan+linaro@kernel.org>
+Message-ID: <trinity-33afde2b-7023-45f4-844c-db49f68e38aa-1668251877983@3c-app-gmx-bs18>
+From: Frank Wunderlich <frank-w@public-files.de>
+To: Frank Wunderlich <linux@fw-web.de>
+Cc: linux-mediatek@lists.infradead.org, Ryder Lee <ryder.lee@mediatek.com>,
+ Jianjun Wang <jianjun.wang@mediatek.com>, Bjorn Helgaas
+ <bhelgaas@google.com>, Rob Herring <robh+dt@kernel.org>, Krzysztof
+ Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Chunfeng Yun
+ <chunfeng.yun@mediatek.com>, Kishon Vijay Abraham I <kishon@ti.com>, Vinod
+ Koul <vkoul@kernel.org>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>, Paolo Abeni <pabeni@redhat.com>,
+ Lorenzo Bianconi <lorenzo@kernel.org>, Bo Jiao <Bo.Jiao@mediatek.com>,
+ linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-phy@lists.infradead.org, linux-usb@vger.kernel.org
+Subject: Aw: [PATCH v4 02/11] dt-bindings: phy: mediatek,tphy: add support
+ for mt7986
+Date: Sat, 12 Nov 2022 12:17:58 +0100
+Importance: normal
+Sensitivity: Normal
+In-Reply-To: <20221112091518.7846-3-linux@fw-web.de>
+References: <20221112091518.7846-1-linux@fw-web.de>
+ <20221112091518.7846-3-linux@fw-web.de>
+X-UI-Message-Type: mail
+X-Priority: 3
+X-Provags-ID: V03:K1:IdjKRZAc4G6HLMosS9W3l4ACXAgHyMBKtsfZjV4glKnOIzpgLETAF/Ge5C5uC/JhQ6zhZ
+ /Zvg98qbTZFOmoFYCHzhZG5sxbYMoGDfz5NyaC58aArUlPzICX8mFJZzw2ZfO9S3lKXGy3BetKKi
+ 339Em2xQ9y3WF05mYO60eRivo3jDP2APs7nYnDZn9c/qjxP/IGwmfTaMoq30YO1xt8nfdyTEj7R7
+ O9m8Dghdk8Dqr+rq2rF69B43EIqlU6iSuD3jvw35BgDi6pJ7SDX59buR56WIYe8gzXP8s1CDX/Oa
+ Ik=
+UI-OutboundReport: notjunk:1;M01:P0:Wc91JkxEs9I=;xIIdT2P6VfTS19OEOCIzPeazsU1
+ n1qm5hLpvysdWBP1oqyWMAFpe5vNdlKFVrtIPzSrbmEmH2ED6XNLsi46eP617uq7hhQJH/zBM
+ DS8FrSx2mFuk38mJsDr4xMLcinXuQswZN/dpJH/qHFTSHwxlonxzT24tZNsYn2UABe0C4Ulgk
+ rlbfKzC1cEbF9kYOWByhDvnWQKEq0RvuB9QM3uPOFiXec3DAchkKMrwJIRgtG+z5bjs5EkHll
+ 6DoZGD9DgxJxQ5ToSH2nKlNyq52WLWXYWWikIJCano2QLV816u2+i2L72C/h4nXsUsdDIP5d/
+ CBeRv6+U3qcDm4Pi6RnFU/xgqFNqsLdKIlYRRRcB24qZt0aBPpnJlkwGU4YMGgnCjbdEW/Dex
+ sqRrXwV3Kqyssq6xwMvlQd5Yp3Acgw0BNy3gv7p6bwO7DtrMVf3PUNmsurROoX42gHKseyAc7
+ qskz+HyFSwMlwl3EUGwgviSYfHjp2BpBLjyhAh6EhgLuKpQR9f1rc3f1W8txvGBN/7W6gywdq
+ LTdwp3Sisurq1EyHwhxINCvnziH6Kvx9X8316+4ipx1QJwO/918v99elQFXmL+c5Qxh2AxP9d
+ dnXPTRbigZEa/VgW4Pd/W+bw9nLTlAggS5LA1w7ZrJ65ybPFvJobDAdrN4tdk9lfoJb1uillM
+ UsfOV8TItHB+Moe2oYOJzqyH3aS17kHLAq0SIXMuhYHiujRTCLsfZ5/oMjepyVcm+s5fQ95T6
+ QGAQg5UQxreUGlHKg/3bGRhWCzrRRevxxfmd4FCOhM5vhi7vSEb5YfTDJZpH1LqIX0ebqHQM+
+ sCXz0Qoiz9HGFjvpLC87PgYg==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221112_031747_399234_AEE6195C 
-X-CRM114-Status: GOOD (  10.87  )
+X-CRM114-CacheID: sfid-20221112_031822_790344_1D00894C 
+X-CRM114-Status: UNSURE (   6.16  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,30 +96,18 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 11/11/2022 12:24, Johan Hovold wrote:
-> Since the QMP driver split, there is no reason to allocate the
-> fixed-rate pipe clock structure separately from the driver data.
-> 
-> Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
-> ---
->   drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 7 ++-----
->   1 file changed, 2 insertions(+), 5 deletions(-)
-> 
+i've noticed that i missed the Ack from Krzysztof i've got in v1 [1]
 
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
-Note: it would be nice to port these two patches to USB & PCIe QMP PHY 
-drivers.
+[1] https://patchwork.kernel.org/project/linux-mediatek/patch/20221017104141.7338-2-linux@fw-web.de/
 
--- 
-With best wishes
-Dmitry
-
+regards Frank
 
 -- 
 linux-phy mailing list
