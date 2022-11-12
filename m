@@ -4,68 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 79AB2C43219
-	for <linux-phy@archiver.kernel.org>; Sat, 12 Nov 2022 11:49:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D0995C43219
+	for <linux-phy@archiver.kernel.org>; Sat, 12 Nov 2022 11:49:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fDAeoYPCA79IJ6QVY9adQUs9y6W+DZ35bGX+uMVPcCk=; b=QiRqRG0GucELgK
-	2Tpihjqgt3ChJ7XlwEnyQCPNzyAHPGNJnfz7VxDVChuSMMcqpj3mj4jdHXo6In5qhfTy8SgEGQCMG
-	SwP35zn/IGklRtJE+gA6qJXvYngX/zbFU+8cIZqkh2j2C8DPI+tx+HxTrx4aK22/p98SDLczUX3s5
-	Ak7t1s6gWt9TNXjv6tfIzvkXCMata8bIMuXy8qjY+QNyDhyVMcTSoOls7PUosyHVeJ4kRWMYTm57J
-	Vr2y11Pf1mTBFcSAifaMMyn566MWl4kpX4VP/92caQ9JvEa7e7L0tJ4espUS8PT3hRHKPAy765MhP
-	dd9k8WGhxqi1iXVqWQdw==;
+	List-Owner; bh=1A7PfeFM4QLSBQVzJFPIYWr1Nn3ZLuPEVw/W6yITkdc=; b=3qbTegSaAocEWu
+	kN9M+RPutlK3t9wyybU2sc4+4uvCrlo3FgqqcXDs3I/EWXxkT0b5M23kg98kQtApdLCa4h+eqkdBQ
+	5ef8HS8lalkwAdcMk7G3SU4jqZ7giHyBxHdzctUtjkKegz3v5zUt42rUfDyDhlXenYAxLWWKTJ4WO
+	+i2WcckHvY4aNisYqeeM4lyZd8USZP4ogjHwqUkEkdKptngd4Lmose21LJsZfMhI+ROrlOlGPXtkX
+	HN3xyVcSFJvBA9JTNIgBTQHBBw/ECRls5ZU61UgDJ+RZVpDvSbk9EErrrAkMVTWxpxzrwIc1itahq
+	UeMmKy7UtFclKxHSUjnw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1otp0m-005OA7-SJ; Sat, 12 Nov 2022 11:49:24 +0000
-Received: from mail-lj1-x22d.google.com ([2a00:1450:4864:20::22d])
+	id 1otp18-005OJM-7g; Sat, 12 Nov 2022 11:49:46 +0000
+Received: from mail-lf1-x135.google.com ([2a00:1450:4864:20::135])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1otp0i-005O4q-1N
-	for linux-phy@lists.infradead.org; Sat, 12 Nov 2022 11:49:21 +0000
-Received: by mail-lj1-x22d.google.com with SMTP id s24so7253283ljs.11
-        for <linux-phy@lists.infradead.org>; Sat, 12 Nov 2022 03:49:19 -0800 (PST)
+	id 1otp15-005OGe-Pd
+	for linux-phy@lists.infradead.org; Sat, 12 Nov 2022 11:49:45 +0000
+Received: by mail-lf1-x135.google.com with SMTP id f37so11990567lfv.8
+        for <linux-phy@lists.infradead.org>; Sat, 12 Nov 2022 03:49:43 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=3Aiz88a/UWF1mDwyihRN1pRlhLSpbfmr9kqBgpQ71UU=;
-        b=sPZeq5gP66O2VJ4OcWwMEAJdanitpwOUakQLTc5Yu1E0hjroGMz1iYVnpepAS4l+lf
-         LvDaHj/ywGRIsNHrRRps9EvcTv85o68RU5+mhnSLzPFv2gBD0pdegvmH6/qI96FsTgef
-         J5yZinsafX/z25K5VFK8sa1JIoMBGlEA0MOG+WSLeIHjhPHSG6MSk3vOLQqU/YhNfvpX
-         9ANGSFtmfKUfuauL3Qxpxld3N5pdUE1Uc/5pnt0ppovO7q+cEmonBGdCajO7u47EeQht
-         WLVoEc4hiMgQHYZTuGpVf0b0SU1hkIPDQvZJAsHsbJk0ehiz4PPHb2VszrCNxuXvC1eF
-         sy0A==
+        bh=4oNgcDzAUynKRRT1NTYmiRuAAnV2qyMqsSjvtfnRj8g=;
+        b=b2oAN9hLamT+7bUdqbVUObYzuMEXQ2KhWnDf/DTBjBcc9VXz4cSpyHSY2srgzMwHOO
+         RPCA2VE3ooPB2FfxIgti+s7moF+bcdQbx5Nx9h3gGpBRN2S2V0Oued4UK+wN9RgEJRfZ
+         GLPWlQiGu5JeY2c9T7b8cil2Czn7LdGBUWZX0EnT0mOurUEa9M7+O2b3QfYZRb/UVTkl
+         UMSxPOs/Iqe836E46UimuCF12hmjVeBDz0uJ2gftWY4Oxx7VgSNTXeLcksHArvJ/PkLO
+         JlnX/QSOv7F/YtCZa0vPU5RJiDNiVjF5wbKuiW4ge4mWxxzKgg4bhMQSSJOkXlwME6E0
+         KvRA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=3Aiz88a/UWF1mDwyihRN1pRlhLSpbfmr9kqBgpQ71UU=;
-        b=8I7foZRxkbkZvkZIWsE6dd+uLgn4XckxfxoUMpjydbEu+heToJ6yViapDlH2p2QNBX
-         muwHrWvb+A4Dl9LUNG3Snrm6WzS0eK1U+64BBqiY4OYGPH5ePbhXvqkuTPco2/aMSR3F
-         VQfh1zGOSmyb+UDy2wNP7Nsr4IS6PL0kxerO9eYuS9efbGC62k6O5CUkfof+sZvrklJe
-         lFFznyfNmmki5k/NyR7y/5w0hMRs6oGl9HoyVJTPrUif5dkR4+g/GijHI2CuhXX8bdZp
-         Jde7J1bZykcup62CeMZp5Iz1ClhRTwRL8zaAlieslHtCpHEi+WAteiee7iPc4wkf82Q7
-         4SXA==
-X-Gm-Message-State: ANoB5pnicZxXFF1r2RU7y4cMsB+NfYj+0bqOaVjI/iAkqQJLPdjPRsed
-	L2qPXNRTXaCGyF8vav1QbkJrsg==
-X-Google-Smtp-Source: AA0mqf76UNssSrdqRc8o2C9SAs0oBaiwKLfmyBfB/2INeKn33JZw6A2p7qfaYjWtgNm8ZFiXroWhXQ==
-X-Received: by 2002:a2e:300b:0:b0:277:31c3:c9a3 with SMTP id w11-20020a2e300b000000b0027731c3c9a3mr1733250ljw.473.1668253758283;
-        Sat, 12 Nov 2022 03:49:18 -0800 (PST)
+        bh=4oNgcDzAUynKRRT1NTYmiRuAAnV2qyMqsSjvtfnRj8g=;
+        b=VpI4XcLm9tytynfM4w3E0vW1sHeuDj8h9jdBElkHQ7fHK5Th3MhIo8wU9MAaLqlEHY
+         +JUIqEYK5WExRq16EeGXYhvst8H7BkukXU7J4cdTl2FH21G/4MaT48djpncUDC/TsDXg
+         O6EvVZAz+gZ88g/jd7NVCRzVe87plz++7rGFEJxetcbKCQ6X6khmv5C6xQ8TSN8uLcQy
+         kLWvhOC6srVcG+cPLhM296LFhR9tB+nYCtqXRoy7k5czrDahHUEDBYXmC9N5pXa6XAFt
+         s2IAPkUHtiYQttDjeS5A0lbfrL6SUk7ZjWxPNlMYxKyZYO6XPyviXBOC5tdkQZ6KCSIl
+         C7iw==
+X-Gm-Message-State: ANoB5pmXhdTjqwU/YVf67L+rEVzdqZvQdpmBfzYf6VE+jeevYdpcL7pU
+	zS97653Vte4r8SLeM87ssaE2Pg==
+X-Google-Smtp-Source: AA0mqf4SA4FNsJtTeK540ABTurSznwTaWEG1mn5nfaXargOpNqwuQeJlmyzdOq1CNq4tdSubS2xikw==
+X-Received: by 2002:a05:6512:298f:b0:4a4:5e83:e07d with SMTP id du15-20020a056512298f00b004a45e83e07dmr1875576lfb.409.1668253781771;
+        Sat, 12 Nov 2022 03:49:41 -0800 (PST)
 Received: from [192.168.1.211] ([37.153.55.125])
-        by smtp.gmail.com with ESMTPSA id d13-20020a19f24d000000b0049ad2619becsm836125lfk.131.2022.11.12.03.49.17
+        by smtp.gmail.com with ESMTPSA id z36-20020a0565120c2400b004a47a92ff4csm836171lfu.193.2022.11.12.03.49.41
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sat, 12 Nov 2022 03:49:17 -0800 (PST)
-Message-ID: <a8a4f889-d69c-c6bc-25b6-755f8d6d934c@linaro.org>
-Date: Sat, 12 Nov 2022 14:49:17 +0300
+        Sat, 12 Nov 2022 03:49:41 -0800 (PST)
+Message-ID: <4c3dd58e-7162-3457-c785-dbd44eab7628@linaro.org>
+Date: Sat, 12 Nov 2022 14:49:40 +0300
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.4.1
-Subject: Re: [PATCH 2/3] phy: qcom-qmp-usb: drop sc8280xp reference-clock
+Subject: Re: [PATCH 3/3] arm64: dts: qcom: sc8280xp: drop reference-clock
  source
 Content-Language: en-GB
 To: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>,
@@ -76,12 +76,12 @@ Cc: Andy Gross <agross@kernel.org>, Konrad Dybcio <konrad.dybcio@linaro.org>,
  linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
 References: <20221111093857.11360-1-johan+linaro@kernel.org>
- <20221111093857.11360-3-johan+linaro@kernel.org>
+ <20221111093857.11360-4-johan+linaro@kernel.org>
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-In-Reply-To: <20221111093857.11360-3-johan+linaro@kernel.org>
+In-Reply-To: <20221111093857.11360-4-johan+linaro@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221112_034920_162200_3CEB4B86 
-X-CRM114-Status: GOOD (  11.37  )
+X-CRM114-CacheID: sfid-20221112_034943_865619_C116A663 
+X-CRM114-Status: GOOD (  11.93  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,24 +99,18 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 11/11/2022 12:38, Johan Hovold wrote:
-> The source clock for the reference clock is not used by the PHY directly
-> and should not be described by the devicetree (instead this relationship
-> should be modelled in the clock driver).
+> The source clock for the reference clock should not be described by the
+> devicetree binding and instead this relationship should be modelled in
+> the clock driver.
 > 
-> Drop the driver management of the reference-clock source for SC8280XP.
+> Update the USB PHY nodes to match the fixed binding.
 > 
-> Once the other clock drivers have been updated, the corresponding change
-> can be done also for the other QMP v4 platforms.
-
-It would be nice to also understand, how does this apply to the sm8250's 
-usb+dp PHY, which has ref_clk_src, but no ref clock.
-
-Bjorn, any comments?
-
-Other than this question:
+> Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
+> ---
+>   arch/arm64/boot/dts/qcom/sc8280xp.dtsi | 8 ++------
+>   1 file changed, 2 insertions(+), 6 deletions(-)
 
 Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-
 
 -- 
 With best wishes
