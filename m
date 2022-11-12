@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CED63C4332F
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A807EC433FE
 	for <linux-phy@archiver.kernel.org>; Sat, 12 Nov 2022 11:48:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
@@ -12,60 +12,61 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jKaJORKEeaTWxeNLdk3OsMtKhLDcjAUPe2QDbyjYFCM=; b=sIXTZOuJmhYpph
-	NpSv5mYGl4UqMpJklJwodDywl5/SQBUM4/QElUUt8fQCUKy7W/1+DEaxS5pTQ7U4o38l86qNVyXGW
-	kZGMKnjtqZiuIGw5dYJQFSF51laRPQSJ7cwCn1PwkoeAi1Ft+Rf58UTCXYmF/Af8Npgi1xcDrY17T
-	F1NPXwcmXefjTxIEk3OyZYTwugEeWUipv1HOgvUocCLyYmMDN8iW6v9S34EHaxDQPgNpgmWowtfTw
-	5E+aqGiXljRW6UKuxWZPVLrkpjxJZYlXtLzd8yYuFCg/MWxN/BkQPXMCvWk+E5DxsguswWmo74tcn
-	l3Su+5bdjIggIfLI3VPw==;
+	List-Owner; bh=8gLnd2AGRQZY2OjOs4fbY5mJrOznnv62xN7luN6crbI=; b=2Jn6k5oVI04ifX
+	C1YD0knHOLBNgruu6xvNtI55NEYQMOCdUwgjh+UFx7XBJGTH978Mfdc+MAWmfCoW/4rBI9ul0tjWW
+	CZfVFOTo7Vl6j0tafPtYMjr5az6RXC0PhTTd6yxv/LQWpjiTmsZJodIU1A/NUJ2Y+pMdayvBg96M6
+	wyxpDZOPsTlELfOwMEy0hjlWpT56PVRzZrc1JLlzRQyyXXtfU0cOQxcBQrGjhpjeWt5/CcgvhYWLJ
+	Q+z6WF9ip3N9G/8s3WGmMiE7DakaN+i4sxqsbiw9ZB1pZEQdvYlOkto7x5itQiPBjgtnN1V7k+LLS
+	3Ah8LT8g/EAu2BWwZ5xw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1otoyL-005NLv-Qq; Sat, 12 Nov 2022 11:46:53 +0000
-Received: from mail-lj1-x230.google.com ([2a00:1450:4864:20::230])
+	id 1otoxn-005NIX-VE; Sat, 12 Nov 2022 11:46:19 +0000
+Received: from mail-lj1-x22c.google.com ([2a00:1450:4864:20::22c])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1otovF-005N7V-It
-	for linux-phy@lists.infradead.org; Sat, 12 Nov 2022 11:43:42 +0000
-Received: by mail-lj1-x230.google.com with SMTP id t10so7286071ljj.0
-        for <linux-phy@lists.infradead.org>; Sat, 12 Nov 2022 03:43:40 -0800 (PST)
+	id 1otoug-005N6a-EX
+	for linux-phy@lists.infradead.org; Sat, 12 Nov 2022 11:43:08 +0000
+Received: by mail-lj1-x22c.google.com with SMTP id d3so7263889ljl.1
+        for <linux-phy@lists.infradead.org>; Sat, 12 Nov 2022 03:43:05 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=eD380Euz1OwWXwV/1GZN8saR9RgPwtKZ28UMySQa2Mk=;
-        b=gZf9k1QJDk/THIFTwgZxD6eyimwV7m0KPGKZJmKycGgkZdOY2v9hu1Wr94hFktFywm
-         xjCCEfADJbGH7CcyAEEO92DQl5wc9MKFEBofj0aF3K3hY2LIiI4dkgow2ws5Qy8aQERG
-         d48Pu1UFXHhPjtbBgbLpF66VqBPYRV757f89GeP7nbOSTDvH+J8cc5oVcptTpnZH/tu/
-         D2fE2eAmGzVaTMLwAJwUR9agMHYL1QduxnhEwkfnxaIlcgCqDnezCVh+k/UlurITzfme
-         GEpJWJ6pQ2nvT5LNQx74I1rGbJF6iJcOWo4rM28VwoJupDLYp4rNnab9Wt5Jq/8jc69i
-         FPBA==
+        bh=hjxvJKCOUGF0uKsEtLv1V3yxQcKhAe5TR96SwIkJJTY=;
+        b=nfeOBtCJONFbTODvWG5iKu/jDAoeyfaANc9ZVQVrYJGeYfhbMNDmc468Rqy+Pb5MpF
+         tdg99QC4TdKTbhwWozEjYd0M0MNStY7ap1XAYm2Ysvic0op2zbX0wlzRVAU48sRRxivJ
+         tOMcZ/q2+Pf232JWyQGH8uo38eHW11M3aW3gD85K5ra1JJhEwwPWNedha0t3mDBayI++
+         sfGUHJt2wr0Lq/0E6OYQ0pOjzoFeulmaTFTRvn0+hb8kJGyk7D1m2Ojw5Q3Cytsr0fOG
+         KxrvQx5Hj9QXypV9nA3COGKfn67kWeDYFfzbtoyJPq1x61H+hSKvJSCy7pQdJtdwItHo
+         ZdJA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=eD380Euz1OwWXwV/1GZN8saR9RgPwtKZ28UMySQa2Mk=;
-        b=N0yvJR/YtqpJjLpI8T2TgOawVKXSgcVL76Jx14ZUBZ0pXtCRKpqfzo+9XACCp6i8l5
-         9KBgjMCSrwp4qm/kInpXG757vDm0/8U4gbGP/kweZSCf9sdUJSwA7QIoandDSf/QRTCG
-         4GEvfahfKQDaNoJviB8uUQUuYPDwxZn2vaz4cm6eRrcGhv6W3cwKqBLX4KXHWZO/4BkN
-         /6BRIwQ7ATkR+51rWrJkv+MfwUt44qTBljSau3RFvzkDZE6G5M3qtauHolhvhYbchwiL
-         EiLwnMroAY0Y/4F5rRRMXaczfFFYK1hz1I2E1hsWUXF2Ti0Ccg675VC8KsG9icMG9nxg
-         kjDQ==
-X-Gm-Message-State: ANoB5pnTy9GO5LTZVESQ+kWRKeNm+6xbjQdnSZBlHbI1+6HObJVZCqPP
-	D2J6jJPDBgk9kn/yWS9MvOVMmg==
-X-Google-Smtp-Source: AA0mqf7c0VjEh5RXmezmzILU3Lrn76idN3LFYmk0/+FNKQeyP5Lm2ylYYVVsZ/r2NR1e3qaPAL4qaA==
-X-Received: by 2002:a2e:a553:0:b0:26f:c2c8:682d with SMTP id e19-20020a2ea553000000b0026fc2c8682dmr1719037ljn.16.1668253419137;
-        Sat, 12 Nov 2022 03:43:39 -0800 (PST)
+        bh=hjxvJKCOUGF0uKsEtLv1V3yxQcKhAe5TR96SwIkJJTY=;
+        b=DX+rOZuyAxoYWDLCy0oOlcNd7QlzKFMoHcjBtpPpo5z2d9JVdAYRd2y8x3AhqOcfZN
+         hxgpSed6vhxGfSp+JAtQxDEeqJ/i2e1wC/uReaMJh7x6WQO2tTxtRltSqMOnHi8HgdOd
+         zoJhtyUYHXAhrMcnFlqXFYYtSadln9pZNt986OmPgqN9TDDz0yEnJpWcTt2vXt56PRDs
+         Jjp73rG7u0i8mFBVbmozdo80+QpOndqkBEHGJiwWP/rnTANDVBx4SY4yy3N3VQNHIcn0
+         p/qoj6NYgP9edhX6wIBu8zfRJiE68sgrM8Cz3FuEZAG6gmUmaL/fIYpCnrJYvKe/1i5q
+         ns1A==
+X-Gm-Message-State: ANoB5pkrqEzEGqkQc4cbdHNuKw1PVZecThZf0ou+sssA+bw1x4UmyRe0
+	vsBwJUSiWUYr5GA90ddy09VNVw==
+X-Google-Smtp-Source: AA0mqf6vb15YAkHYZT9+DGZTKJanu/FLhhs+qQU5XcTdKudZwaaud6smmFGQA7jSxndaaz71lR9ACg==
+X-Received: by 2002:a2e:a590:0:b0:277:3ca2:dac6 with SMTP id m16-20020a2ea590000000b002773ca2dac6mr1703439ljp.143.1668253384342;
+        Sat, 12 Nov 2022 03:43:04 -0800 (PST)
 Received: from [192.168.1.211] ([37.153.55.125])
-        by smtp.gmail.com with ESMTPSA id 10-20020ac25f0a000000b004a287c50c13sm834743lfq.185.2022.11.12.03.43.38
+        by smtp.gmail.com with ESMTPSA id w2-20020a05651234c200b00492e3a8366esm841852lfr.9.2022.11.12.03.43.03
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sat, 12 Nov 2022 03:43:38 -0800 (PST)
-Message-ID: <14f01c33-dada-b66a-f81a-74b9028de18b@linaro.org>
-Date: Sat, 12 Nov 2022 14:43:38 +0300
+        Sat, 12 Nov 2022 03:43:04 -0800 (PST)
+Message-ID: <ace91d8b-9a14-5569-7c59-344e9751fa96@linaro.org>
+Date: Sat, 12 Nov 2022 14:43:03 +0300
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.4.1
-Subject: Re: [PATCH 03/14] phy: qcom-qmp-combo: drop v4 reference-clock source
+Subject: Re: [PATCH 02/14] dt-bindings: phy: qcom,qmp-usb3-dp: fix sc8280xp
+ bindings
 Content-Language: en-GB
 To: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>
 Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
@@ -74,12 +75,12 @@ Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
  linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
 References: <20221111092457.10546-1-johan+linaro@kernel.org>
- <20221111092457.10546-4-johan+linaro@kernel.org>
+ <20221111092457.10546-3-johan+linaro@kernel.org>
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-In-Reply-To: <20221111092457.10546-4-johan+linaro@kernel.org>
+In-Reply-To: <20221111092457.10546-3-johan+linaro@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221112_034341_669915_94AFF14F 
-X-CRM114-Status: GOOD (  20.09  )
+X-CRM114-CacheID: sfid-20221112_034306_530137_6AC04648 
+X-CRM114-Status: GOOD (  34.26  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,37 +98,207 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 11/11/2022 12:24, Johan Hovold wrote:
-> The source clock for the reference clock should not be described by the
-> devicetree and instead this relationship should be modelled in the clock
-> driver.
-
-Do we have a fix for the gcc driver?
-
+> The current QMP USB3-DP PHY bindings are based on the original MSM8996
+> binding which provided multiple PHYs per IP block and these in turn were
+> described by child nodes.
 > 
-> Drop the management of the source clock from the driver for SC8180X and
-> SC8280XP. Note that support for the former is not yet in mainline.
+> The QMP USB3-DP PHY block provides a single multi-protocol PHY and even
+> if some resources are only used by either the USB or DP part of the
+> device there is no real benefit in describing these resources in child
+> nodes.
 > 
-> Also note that the binding has never been updated to describe the v4
-> clocks for SC8180X.
+> The original MSM8996 binding also ended up describing the individual
+> register blocks as belonging to either the wrapper node or the PHY child
+> nodes.
+> 
+> This is an unnecessary level of detail which has lead to problems when
+> later IP blocks using different register layouts have been forced to fit
+> the original mould rather than updating the binding. The bindings are
+> arguable also incomplete as they only the describe register blocks used
+> by the current Linux drivers (e.g. does not include the PCS LANE
+> registers).
+> 
+> This is specifically true for later USB4-USB3-DP QMP PHYs where the TX
+> registers are used by both the USB3 and DP parts of the PHY (and where
+> the USB4 part of the PHY was not covered by the binding at all). Notably
+> there are also no DP "RX" (sic) registers as described by the current
+> bindings and the DP "PCS" region is really a set of DP_PHY registers.
+> 
+> Add a new binding for the USB4-USB3-DP QMP PHYs found on SC8280XP which
+> further bindings can be based on.
+> 
+> Note that the binding uses a PHY type index to access either the USB3 or
+> DP part of the PHY and that this can later be used also for the USB4
+> part if needed.
+> 
+> Similarly, the clock inputs and outputs can later be extended to support
+> USB4.
+> 
+> Also note that the current binding is simply removed instead of being
+> deprecated as it was only recently merged and would not allow for
+> supporting DP mode.
 > 
 > Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 > ---
->   drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 2 +-
->   1 file changed, 1 insertion(+), 1 deletion(-)
+>   .../phy/qcom,sc7180-qmp-usb3-dp-phy.yaml      |  12 --
+>   .../phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml    | 111 ++++++++++++++++++
+>   2 files changed, 111 insertions(+), 12 deletions(-)
+>   create mode 100644 Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
 > 
-> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-> index 51a03ac05c91..e6c7cf723b19 100644
-> --- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-> @@ -947,7 +947,7 @@ static const char * const qmp_v3_phy_clk_l[] = {
->   };
+> diff --git a/Documentation/devicetree/bindings/phy/qcom,sc7180-qmp-usb3-dp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc7180-qmp-usb3-dp-phy.yaml
+> index 50b1fce530d5..2f4a419197a8 100644
+> --- a/Documentation/devicetree/bindings/phy/qcom,sc7180-qmp-usb3-dp-phy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/qcom,sc7180-qmp-usb3-dp-phy.yaml
+> @@ -23,7 +23,6 @@ properties:
+>         - qcom,sc7180-qmp-usb3-dp-phy
+>         - qcom,sc7280-qmp-usb3-dp-phy
+>         - qcom,sc8180x-qmp-usb3-dp-phy
+> -      - qcom,sc8280xp-qmp-usb43dp-phy
+>         - qcom,sdm845-qmp-usb3-dp-phy
+>         - qcom,sm8250-qmp-usb3-dp-phy
+>     reg:
+> @@ -169,17 +168,6 @@ required:
 >   
->   static const char * const qmp_v4_phy_clk_l[] = {
-> -	"aux", "ref_clk_src", "ref", "com_aux",
-> +	"aux", "ref", "com_aux",
->   };
+>   additionalProperties: false
 >   
->   /* the primary usb3 phy on sm8250 doesn't have a ref clock */
+> -allOf:
+> -  - if:
+> -      properties:
+> -        compatible:
+> -          contains:
+> -            enum:
+> -              - qcom,sc8280xp-qmp-usb43dp-phy
+> -    then:
+> -      required:
+> -        - power-domains
+> -
+>   examples:
+>     - |
+>       #include <dt-bindings/clock/qcom,gcc-sdm845.h>
+> diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
+> new file mode 100644
+> index 000000000000..bd04150acee4
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
+> @@ -0,0 +1,111 @@
+> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Qualcomm QMP USB4-USB3-DP PHY controller (SC8280XP)
+> +
+> +maintainers:
+> +  - Vinod Koul <vkoul@kernel.org>
+> +
+> +description:
+> +  The QMP PHY controller supports physical layer functionality for a number of
+> +  controllers on Qualcomm chipsets, such as, PCIe, UFS and USB.
+> +
+> +  See also:
+> +    - include/dt-bindings/dt-bindings/phy/phy.h
+> +
+> +properties:
+> +  compatible:
+> +    enum:
+> +      - qcom,sc8280xp-qmp-usb43dp-phy
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    maxItems: 4
+> +
+> +  clock-names:
+> +    items:
+> +      - const: aux
+> +      - const: ref
+> +      - const: com_aux
+> +      - const: usb3_pipe
+> +
+> +  power-domains:
+> +    maxItems: 1
+> +
+> +  resets:
+> +    maxItems: 2
+> +
+> +  reset-names:
+> +    items:
+> +      - const: phy
+> +      - const: common
+> +
+> +  vdda-phy-supply: true
+> +
+> +  vdda-pll-supply: true
+> +
+> +  "#clock-cells":
+> +    const: 1
+> +
+> +  clock-output-names:
+> +    items:
+> +      - const: usb3_pipe
+> +      - const: dp_link
+> +      - const: dp_vco_div
+> +
+> +  "#phy-cells":
+> +    const: 1
+> +    description: |
+> +      PHY index
+> +        - PHY_TYPE_USB3
+> +        - PHY_TYPE_DP
+
+I'm stepping on Rob's and Krzysztof's ground here, but it might be more 
+logical and future proof to use indices instead of phy types.
+
+Just for my understanding, would USB4 support add another qserdes+tx/rx 
+construct or would it be the same USB3 register space?
+
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - clocks
+> +  - clock-names
+> +  - power-domains
+> +  - resets
+> +  - reset-names
+> +  - vdda-phy-supply
+> +  - vdda-pll-supply
+> +  - "#clock-cells"
+> +  - clock-output-names
+> +  - "#phy-cells"
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/clock/qcom,gcc-sc8280xp.h>
+> +
+> +    phy@88eb000 {
+> +      compatible = "qcom,sc8280xp-qmp-usb43dp-phy";
+> +      reg = <0x088eb000 0x4000>;
+> +
+> +      clocks = <&gcc GCC_USB3_PRIM_PHY_AUX_CLK>,
+> +               <&gcc GCC_USB4_EUD_CLKREF_CLK>,
+> +               <&gcc GCC_USB3_PRIM_PHY_COM_AUX_CLK>,
+> +               <&gcc GCC_USB3_PRIM_PHY_PIPE_CLK>;
+> +      clock-names = "aux", "ref", "com_aux", "usb3_pipe";
+> +
+> +      power-domains = <&gcc USB30_PRIM_GDSC>;
+> +
+> +      resets = <&gcc GCC_USB3_PHY_PRIM_BCR>,
+> +               <&gcc GCC_USB4_DP_PHY_PRIM_BCR>;
+> +      reset-names = "phy", "common";
+> +
+> +      vdda-phy-supply = <&vreg_l9d>;
+> +      vdda-pll-supply = <&vreg_l4d>;
+> +
+> +      #clock-cells = <1>;
+> +      clock-output-names = "usb3_pipe", "dp_link", "dp_vco_div";
+> +
+> +      #phy-cells = <1>;
+> +    };
 
 -- 
 With best wishes
