@@ -4,81 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4BDD0C4332F
-	for <linux-phy@archiver.kernel.org>; Sat, 12 Nov 2022 07:51:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BAF03C4332F
+	for <linux-phy@archiver.kernel.org>; Sat, 12 Nov 2022 07:52:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MFBNlpsNuee7wGD2IuE7T6uPXxujvAfT5eHEHWpus1g=; b=ayprvcZ2PzsUDk
-	B08pMrpM63uly6Kpzm2O7t1KAZjM8VRfeH5Nkj5nhtJRgCVyVugRobo1PqfCHIyNo8YE7K8rI1vkY
-	YRlz92TngdAYgB8a3AnzpfimHn1f2VS6DWu+2ogL7gDWwBRCfGfX+as6zO87/FvCKtfBqPgTexBy6
-	yYd8Ht+QgVCPdA/Mv7t8liJWapNDiQnNXDzkfDjWGfxB9by9rmmbZb7GVtJQ6cEpfloaD1pcZzBtL
-	oHauk9Vnrte3r8SgN+98Ku6dYI8OL6GNTnrg2bpn6HLIXYwDyzOZCIIh4/5+fCOsvFX4xRwaasWPP
-	q7trSKBRjpLRcR/p6JOg==;
+	List-Owner; bh=UoWbAR4A9KSQp/2vfR8uVvqVPOjwYdgdF16nJs1vH1w=; b=xVHJ2O0hKwn9KB
+	UEPUKKzHTv2GAIozv+A3YmsLFkumvSybuzBgAQJ7ZJ+gVLsiPVL/p+7Tp7tH1QD5I8MH8usssrwQI
+	mBjzrgXVlPfc+Ttj9KZBB55qU5ET84S2xu15T2tuK0Vs2C34wozRF0qWwm/YRUZdSS8IkVC0t8fVh
+	0z0dK+pL+tsoTdo/LlVnIXSTseG+CJmT+K51JDvpQaTR2zt2hdY2MJNc6zdfafBm9n49qHipfGIJS
+	cN+NyLWSUuVmGCLWB4eXswIuEB6KtqB4wDhduQ6ka/le21zN1qMImBxpvztJOcdvnzqzsNg8/RWO9
+	JkOMgTOk9Bi299XJBTLw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1otlIR-0045wq-Km; Sat, 12 Nov 2022 07:51:23 +0000
-Received: from mail-lj1-x229.google.com ([2a00:1450:4864:20::229])
+	id 1otlJD-0046pk-4h; Sat, 12 Nov 2022 07:52:11 +0000
+Received: from mail-lf1-x12f.google.com ([2a00:1450:4864:20::12f])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1otlIP-0045iv-Em
-	for linux-phy@lists.infradead.org; Sat, 12 Nov 2022 07:51:22 +0000
-Received: by mail-lj1-x229.google.com with SMTP id d3so6875426ljl.1
-        for <linux-phy@lists.infradead.org>; Fri, 11 Nov 2022 23:51:21 -0800 (PST)
+	id 1otlJA-0046ls-3F
+	for linux-phy@lists.infradead.org; Sat, 12 Nov 2022 07:52:09 +0000
+Received: by mail-lf1-x12f.google.com with SMTP id be13so11492358lfb.4
+        for <linux-phy@lists.infradead.org>; Fri, 11 Nov 2022 23:52:07 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=2jNNa94XG+j4AtxhXDtMD9Ngnwggz8hGYOvam5X+ciw=;
-        b=NjkuAZRBWfA3wfFKN5kvJXUiiW0S6Juci9RpQhW1qrAzggM08v6THBTevlA3u/gA4/
-         9hLEuNmalCFSGQkOmu49aZ2S3G9nCGDdT61HipSqJwwOY/frWO8Rz8pWpOBhVXevVEg5
-         EwgevE2r6pFhZ7MWWUtUqFrzZu8CaDyMDa1Cgn4qCByojs/RKc3ZOg9TZs4VJNLCSoOK
-         /jt8YfJONydYAfWytZFiiK14N6+6yuOa3dMLZWfLmUCHghxbY3Zrpe9JeLL2qNIOqVHd
-         xisIAS8Huznwp/MmUQWWOwzfKj2YcKMvnYNOp5Pv0gwLtzWYkV955SwKPXn/Uy56Jktj
-         wXEw==
+        bh=lDQX/PjKkRG4x6Pkdzn6ObFIUuJQnbWONq3jUFUhLhE=;
+        b=yCpjYZKAveVBN9///jLj1/M9776TpdzcK/O4D1N8JKjjaMFlLpHfIVKMDXukTnE9oW
+         DWossp+MKzO/1db0Eq1vVvQhRXsqMjyyk5Rzf4dAwXTnG7VrhC0BRBthcuAaEpPBuDyU
+         uBSlI5XtRchngQ0xBcJPzMb0Rd2gPwIkHBu7qcZLjbidPWcjMzayEBcObuTPfgE4Ipp/
+         OdG9/l6ClIQqg36Gth5/50iVkDAYPZzj2awkpMN361q1DQvcYmx3wV0aNg/sJ+YnQyJE
+         qZ+grcR7EsJGk6a09Vvdv7DRi5ROXo1CcEyzSeA+M2yXy2jfwqFCCsgHWYFSP4naZN6O
+         B9Qg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=2jNNa94XG+j4AtxhXDtMD9Ngnwggz8hGYOvam5X+ciw=;
-        b=JoFewcI6OdnuL+3YT0wIc5hJFuJFU9Fyt3RKtPEl0kcZU2looUP0Hn0jSTvVDnsG4f
-         +Fs1g442XIZ5JH881eXHzglX6Nz7Iy57Qd7Ui0LLk7imIxVlCWXyNCnOODCWptIIQ3ka
-         hl+Fwn0SE4BkEX4ezdykCTKgt2lDg6jyfOx90lepIl4LWTzmMkaB1swo/b2QG5l6QwcA
-         qOIGiTvqRZtoDlqTCQmfwigA9sjFNCxx+gmFJFHUiMaGlXiK8DrfNq1yElTBj8McvSx4
-         3idC6ywkQeXIRYLw01iaQTjCzmxmj05hLh1YSq71ffRFLkYbhXqswBGGW9pJyh+QkV41
-         CQvQ==
-X-Gm-Message-State: ANoB5pkI4dvSNlc2bHm6IfwYswhLP9z5VNvVfr2AjZdUO1EnzzCPRoXw
-	/6fzYWbhwPUR0mZGMF6H75Noh3t8XtrLlU+C
-X-Google-Smtp-Source: AA0mqf6EHlOlvN/k6hEFHAcfnf5RkjvFZ8rEaoPR0BCNMYrjcn5zy9XzRrNXZVQUeagBRS7ViuTyyg==
-X-Received: by 2002:a2e:9ec2:0:b0:26e:768c:11ed with SMTP id h2-20020a2e9ec2000000b0026e768c11edmr1730265ljk.436.1668239480882;
-        Fri, 11 Nov 2022 23:51:20 -0800 (PST)
+        bh=lDQX/PjKkRG4x6Pkdzn6ObFIUuJQnbWONq3jUFUhLhE=;
+        b=W64nViOJpRLYpLgwrxqqAtM/L9z4EJ+xt/upN16EM1SFwBmydnEBQW6N6GoWY7vOEe
+         MiDkkreweDwzYfA6snRFHt1gOiJy7M6ACqTlJwDa0DoC9Q6s1YO9HRXQOpO46vAZowi0
+         fwtlYroYRYCDTqrf85cfHY0KEzLXwfuRc1rlCyWnMU/Di1HO+ffjofLI3Cf2Wzq+aXl1
+         cxIiQKqpZ1XTYJmTzenGjb9LxxKZVSb74FS5wKAhbkpqDwMwXXfWRv6HXirzqoMPIqCZ
+         ZBEUVKUfZkYr4NNLhAXCTiGAdQFIFKMBuggA8C61O0ywF1pNLWpSd8d1fEvkfz+qPJPg
+         UpEw==
+X-Gm-Message-State: ANoB5pmaHJL8W8CSn9CNnKS9NRAGKRZzCqvFFJb/2kCiKWBex3wDf7ko
+	dOtgMykByn0EO0e14s4nSjDRpQ==
+X-Google-Smtp-Source: AA0mqf5owtBxZMBfsAnkOV666BH20Pfu/hTIUNJqkmqDRrHYUbraQDsTZPJEXRGziCjIrYTXwNZaKw==
+X-Received: by 2002:a05:6512:370a:b0:4ac:52cf:559b with SMTP id z10-20020a056512370a00b004ac52cf559bmr1847901lfr.476.1668239526494;
+        Fri, 11 Nov 2022 23:52:06 -0800 (PST)
 Received: from [192.168.1.211] ([37.153.55.125])
-        by smtp.gmail.com with ESMTPSA id b24-20020a056512071800b004b15bc0ff63sm736003lfs.277.2022.11.11.23.51.20
+        by smtp.gmail.com with ESMTPSA id du11-20020a056512298b00b0049f9c732858sm742166lfb.254.2022.11.11.23.52.05
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 11 Nov 2022 23:51:20 -0800 (PST)
-Message-ID: <ad6343e1-7734-2ecf-6cbf-0081931da97d@linaro.org>
-Date: Sat, 12 Nov 2022 10:51:20 +0300
+        Fri, 11 Nov 2022 23:52:06 -0800 (PST)
+Message-ID: <df8f21f6-4282-993b-fb17-b8bc94db887e@linaro.org>
+Date: Sat, 12 Nov 2022 10:52:05 +0300
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.4.1
-Subject: Re: [PATCH 3/6] phy: qcom-qmp-combo: fix sc8180x reset
+Subject: Re: [PATCH 1/3] phy: qcom-qmp: drop unused type header
 Content-Language: en-GB
 To: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>
 Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
  Konrad Dybcio <konrad.dybcio@linaro.org>, linux-arm-msm@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
- stable@vger.kernel.org
-References: <20221111084255.8963-1-johan+linaro@kernel.org>
- <20221111084255.8963-4-johan+linaro@kernel.org>
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
+References: <20221111094239.11547-1-johan+linaro@kernel.org>
+ <20221111094239.11547-2-johan+linaro@kernel.org>
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-In-Reply-To: <20221111084255.8963-4-johan+linaro@kernel.org>
+In-Reply-To: <20221111094239.11547-2-johan+linaro@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221111_235121_527154_0C9AECE2 
-X-CRM114-Status: GOOD (  10.10  )
+X-CRM114-CacheID: sfid-20221111_235208_250638_51FBF083 
+X-CRM114-Status: UNSURE (   7.74  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,20 +95,17 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 11/11/2022 11:42, Johan Hovold wrote:
-> The SC8180X has two resets but the DP configuration erroneously
-> described only one.
+On 11/11/2022 12:42, Johan Hovold wrote:
+> The PHY type defines are no longer used in the PCIe, UFS and USB QMP
+> drivers so drop the corresponding include.
 > 
-> In case the DP part of the PHY is initialised before the USB part (e.g.
-> depending on probe order), then only the first reset would be asserted.
-> 
-> Fixes: 1633802cd4ac ("phy: qcom: qmp: Add SC8180x USB/DP combo")
-> Cc: stable@vger.kernel.org	# 5.15
 > Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 > ---
->   drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 4 ++--
->   1 file changed, 2 insertions(+), 2 deletions(-)
->
+>   drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c | 2 --
+>   drivers/phy/qualcomm/phy-qcom-qmp-pcie.c         | 2 --
+>   drivers/phy/qualcomm/phy-qcom-qmp-ufs.c          | 2 --
+>   drivers/phy/qualcomm/phy-qcom-qmp-usb.c          | 2 --
+>   4 files changed, 8 deletions(-)
 
 Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 
