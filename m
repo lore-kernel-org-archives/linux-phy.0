@@ -4,80 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 789DFC4332F
-	for <linux-phy@archiver.kernel.org>; Sat, 12 Nov 2022 06:18:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C83A2C433FE
+	for <linux-phy@archiver.kernel.org>; Sat, 12 Nov 2022 06:19:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zKw0G6pwA3QWPmPiFQQY7HhsN1qOGINPJpoyTwNpD+A=; b=CBZnXAFE2EboG9
-	UOBkXBb4GV9adChXOgtam7sLVH5W8ERwo1qLuPzb0jebmmDdLqtdcLsdnwDPx91snEXmYNVRtnHCX
-	29BIzjimfxG7o1xFl+iDhI2dJXuPDlYPx+WYjE0Gnb90AVq0Pq7jkbLxBlQXQZ25cMN0Jspj0qNUg
-	CbZkY8vyzdyXmNFXnMCiGZs14M3uYjoaIwg4o9Xn+eGkVI68jARgszxoL2TAeOnIM6V4Dv1XOHPWJ
-	pQRRiROcBbq/yKyHnDVJU8rZXEn03cugaiI+09jXPMgB1P6tRj1tGanl+0VlUAB4vYN+zU3akIAH/
-	C2GKb4ujL2TuGoc+LF9A==;
+	List-Owner; bh=SeLiTlO7Bc7rrCx0CJj5ldcH1ctSCO91N67VtSbUs/g=; b=vE0Yi0M6SE9bxV
+	kUwWd6F7ubmyt7PC3OKFJ8l6NVVYJ+35TReZoIQJmeftcmVO81Tdx+4mvD51R5zEmNX2Fl08zVv8A
+	FH4yse811+KWV2fIdEdlc6F9kGBBgs8ZKk/CzUa4x+nUri8vyI+ebqAUaww2HfqGo2qTeMWuLgdAZ
+	V2nCX8vGy0c7M67qaEL4Xq3vxPKKxEwinKvQ3RShBwlLQdR+zHNi5SBqLe6Mdt00ioawy2hPKI58O
+	Ksy8O1YBbStPzGzstnjWYAQACkmeqYRbPt3ppuFbmYrSJOYitYzjPHw9FKQH2uLckt+H30nd6se17
+	0K/KLVAuBSFTZelHO1mw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1otjr0-003eOi-U3; Sat, 12 Nov 2022 06:18:58 +0000
-Received: from mail-lf1-x130.google.com ([2a00:1450:4864:20::130])
+	id 1otjrJ-003eU9-7P; Sat, 12 Nov 2022 06:19:17 +0000
+Received: from mail-lj1-x22d.google.com ([2a00:1450:4864:20::22d])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1otjqy-003eMs-PS
-	for linux-phy@lists.infradead.org; Sat, 12 Nov 2022 06:18:57 +0000
-Received: by mail-lf1-x130.google.com with SMTP id r12so11307097lfp.1
-        for <linux-phy@lists.infradead.org>; Fri, 11 Nov 2022 22:18:54 -0800 (PST)
+	id 1otjrH-003eSv-4l
+	for linux-phy@lists.infradead.org; Sat, 12 Nov 2022 06:19:16 +0000
+Received: by mail-lj1-x22d.google.com with SMTP id d20so6696344ljc.12
+        for <linux-phy@lists.infradead.org>; Fri, 11 Nov 2022 22:19:15 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=oyBD99VaO8VEQVZq7O+KQJj5GoNeYJIQtidVjSm/ty8=;
-        b=iu52zPDJ4DjSeKErAKY4WaitqjDF/Fb0973RWiJZ12PobXfu1qoEZRIuHoCo6nlv8b
-         kEueIT+reRE4b/ZInCpH0GdHa2b+3c6Vi0jR7FzywyhKT0aZUk3jUsNAjNoTIcwzF/1s
-         mzujLZD30yVhvYwO4jJ+wt6z2f7Dh7tnEcZIi26Q3KgIQ0Hh+wvOVwCZLKgXotWUOHnV
-         sInlhGzvlGY8Auz53eQ8izQw+Cxc5KgRrxfqjSzdf4BABqxsDczthkLI4cFOaW3zMxUy
-         WyKNdK2s5JIj7rznbecz9vcl6Emo9YfNfAGZPYwnBFaaHN4EbJOc/PPv9+Gg9xY/jrW9
-         DJVw==
+        bh=eKvsSc4rxfP6uP1G2yC7UY6Wk+VnQ3+TFfU4MXJqozs=;
+        b=gQILM5G24aQArIhNwyPb9mvZqE20fAg3ThlwOOxWrSShnsEe+S0nQXRTSgCgIyIOPB
+         Ki3zWg6AViDUYhqOiV+AkSTB08QzkeUNrnu3aYT1fCG1G+6wpzStTUi3DCOdLoenD5AK
+         MrUS7UnQeN2GMvHIKHcA87XEECuFr60dDQqhxN2lsZRHvoTad92h5wvhQNBx14awnux5
+         bKAGGUu15wG5UBlABYVOm/mDqtKBl8kkW2Ndgj13DI565gH0TsPg7uWjjpjYe84gGT7b
+         iCOfmOZGdvx8K39FakF3VekYfHcGwASy5JEuOyAyldymla1oEd+Nw/VOPNI5jVFjzxNM
+         asTg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=oyBD99VaO8VEQVZq7O+KQJj5GoNeYJIQtidVjSm/ty8=;
-        b=2rW00JfVCFDcdKPY952RJtEsgrl5hrRwc8sPmFcSgB+ssQfqMpPGJ571xln9YHXcg3
-         c525gMrPcOL2CgckoeAupypb3N0UYtnpPZvdDtFItsYlyRwe4ngNsTVKROXa6vuJDSMi
-         VEOA66t0E919U5sSj85mG7aQzsRaIlp6dJZ9HlQ4lE/nL40BuhZtEjmIojo9PzYTG8P8
-         u33lzbj09URBTnhbuTeVF4K3H9bloIOU6Ox/ZNSeV4c04uH/B8QN8YFVYwUA1SLATSJM
-         kVR/QSk3MVY96T5K6RDoBnWfOQEuSwlDuqwZlUaWBmF936ycKQjqteey8BLznyw8ip49
-         IzKA==
-X-Gm-Message-State: ANoB5pmZ1HvGmjySnABnRyQ/QrkVR9f7DickLFUDV7WKTCDs/uggbRRR
-	dng3qrd36WSPqB7wv2MCqdUHhTS17ZcADrYR
-X-Google-Smtp-Source: AA0mqf6+ON9YCNMqvgS4Z70cV8ixaeVDjHjBP6+s4aw+cLKlnc4ZDE1hqeEAmTcfNGn+ZDOxPl8e9w==
-X-Received: by 2002:a05:6512:3885:b0:4a2:2d86:ad85 with SMTP id n5-20020a056512388500b004a22d86ad85mr1779468lft.277.1668233933019;
-        Fri, 11 Nov 2022 22:18:53 -0800 (PST)
+        bh=eKvsSc4rxfP6uP1G2yC7UY6Wk+VnQ3+TFfU4MXJqozs=;
+        b=v82/3NmdRw7r9b4zGDTEsc6F8vzQRTw6vxiWzwWB6Vw/E4WDZEVN4Nj1WcCgJ3Hqm8
+         oHJxfMiu9bv/X+gWudOuUjKc6V/5Od0C6LbRJ95C7S7LZWW2iOaEaTo0HWEm6gUSuc2r
+         dmzbjdq95gRD1HkzVGov0UiWyV7lo9iOfUpRxR10rXq8DT6yh4XONJieidpzZG9MBxje
+         DCKVq+qL7h5/1MHuaqIYeiJfYXkv1RN0C2UfI72u4E9Ch8aVoaFw78mORxRxqO5kT03k
+         2Ik5KbeagTNbE0X8Qo7ShHSQnrrIMVJvDJ0c5btmzwjsS3jmfcBCSwBtxdYWmshejqDH
+         ehgw==
+X-Gm-Message-State: ANoB5plFInQq8ISmUSo5asWEdOXgp2fhlVR6HXDX3o/tDVHm2YLTfE5x
+	i+IMYaSW2J/+K/uicxmXaVc6bA==
+X-Google-Smtp-Source: AA0mqf4ooqTVhf2Zh5Tzsyi5kSEHZuKZ7t1Dx21WZF9D+CekCkzylKocDhLrsDe5HC2Ut+HyBG/iIw==
+X-Received: by 2002:a2e:300f:0:b0:277:7eef:1d97 with SMTP id w15-20020a2e300f000000b002777eef1d97mr1652392ljw.516.1668233953804;
+        Fri, 11 Nov 2022 22:19:13 -0800 (PST)
 Received: from [192.168.1.211] ([37.153.55.125])
-        by smtp.gmail.com with ESMTPSA id k4-20020a05651239c400b0048a934168c0sm714172lfu.35.2022.11.11.22.18.52
+        by smtp.gmail.com with ESMTPSA id p5-20020ac24ec5000000b004acd6e441cesm702806lfr.205.2022.11.11.22.19.13
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 11 Nov 2022 22:18:52 -0800 (PST)
-Message-ID: <4b4d7773-d3eb-8bfd-7b83-ad87a6b7d13e@linaro.org>
-Date: Sat, 12 Nov 2022 09:18:52 +0300
+        Fri, 11 Nov 2022 22:19:13 -0800 (PST)
+Message-ID: <fc435f8f-ad8d-fdc0-896b-2a88f31c4a41@linaro.org>
+Date: Sat, 12 Nov 2022 09:19:12 +0300
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.4.1
-Subject: Re: [PATCH 02/22] phy: qcom-qmp-combo: move device-id table
+Subject: Re: [PATCH 03/22] phy: qcom-qmp-combo: move pm ops
 Content-Language: en-GB
 To: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>
 Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
  Konrad Dybcio <konrad.dybcio@linaro.org>, linux-arm-msm@vger.kernel.org,
  linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
 References: <20221111085643.9478-1-johan+linaro@kernel.org>
- <20221111085643.9478-3-johan+linaro@kernel.org>
+ <20221111085643.9478-4-johan+linaro@kernel.org>
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-In-Reply-To: <20221111085643.9478-3-johan+linaro@kernel.org>
+In-Reply-To: <20221111085643.9478-4-johan+linaro@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221111_221856_874538_7E2D4783 
-X-CRM114-Status: UNSURE (   8.10  )
+X-CRM114-CacheID: sfid-20221111_221915_234183_BDE4D848 
+X-CRM114-Status: UNSURE (   8.55  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -96,13 +96,13 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 11/11/2022 11:56, Johan Hovold wrote:
-> Move the device-id table after probe() and next to the driver structure
-> to keep the driver callback functions grouped together.
+> Move the PM ops structure next to the implementation to keep the driver
+> callbacks grouped.
 > 
 > Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 > ---
->   drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 50 +++++++++++------------
->   1 file changed, 25 insertions(+), 25 deletions(-)
+>   drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 10 +++++-----
+>   1 file changed, 5 insertions(+), 5 deletions(-)
 
 Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 
