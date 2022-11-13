@@ -4,42 +4,42 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 63272C4332F
-	for <linux-phy@archiver.kernel.org>; Sun, 13 Nov 2022 07:57:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1EF79C4332F
+	for <linux-phy@archiver.kernel.org>; Sun, 13 Nov 2022 08:00:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
 	List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:
 	References:In-Reply-To:Subject:CC:To:From:Date:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dpFXthNtM2kuPXXtW1xeD3MBbrrDp75VPsBkgrigEH4=; b=kMryoJnQ7LMJEW
-	FBE5v/r7lQyv1ztSPVcWJ8kQ4JijM0l4WjAj2bQ/7RJnm8phIkBj9ZGgHEs089aYbvfoxgQbqPLf3
-	S10tl0c5E2jhk23oMg54g/rmpQeWjTe7PEev0C856PTHBvjp60Opf7ATQopiVQXI3uEfNKfyHAimt
-	Sq3Wmpv6YaJGbK5/FmDDX6VO/k6TMdEeuPIUTuo4wPy3J0zahhWe09KHN+Jvta1Xu3c/eAy6chKG9
-	LcmDyPIaRyfjR2cpWz9uhzav7axi1dXddlBPpiSFPadYG4mD5M0SGDxyV4NY3in/vpOoAevC/yI6h
-	cUrMVNcv6x4xqo4MmdHQ==;
+	List-Owner; bh=5OWQ4w53Qv5P5rrT/8xdN0sgNatBaMrE2a+TyhTvTVs=; b=p0EfP5h1QKZciy
+	8hRfs92yJQVCK4p7js36QMOi+VpCzQjVUP6y+1SLWOc2DAXk0pQY5l4hBtSg2lzVQNN1oUsvEIvZT
+	7yk9mILwI98JAtrEh0ijJ0gyl3czmtFAvfJvl2vIHTJoJD2qCCRwazDmGqyadViEUqMC0Fd5XG1AY
+	5lPviz5LweWAlSq7uxjEUzg9BzHkR/UGlGI9wDukuUnLarEZx9sbaCkAjPjq0quUTPUFq56D3SUwQ
+	aWplg8jTcTpiZcx1as+dZb41GV/SyxpfQrU9ti+UlJCEQL8bZgzXfZda5+lhCvZJx8AeTRMMxZK1e
+	8DQzXjLPzareq9NRnQHw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ou7rW-00AFi5-EI; Sun, 13 Nov 2022 07:57:06 +0000
-Received: from mout.gmx.net ([212.227.15.19])
+	id 1ou7ui-00AGTR-GJ; Sun, 13 Nov 2022 08:00:24 +0000
+Received: from mout.gmx.net ([212.227.15.18])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ou7rR-00AFhF-Tb; Sun, 13 Nov 2022 07:57:03 +0000
+	id 1ou7uW-00AGQt-Kg; Sun, 13 Nov 2022 08:00:14 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=public-files.de;
-	s=s31663417; t=1668326194;
-	bh=89zGoUuEp0HViTv9Y4Q00ELT3Jsiq1G3fJq8q2YvMXU=;
+	s=s31663417; t=1668326398;
+	bh=3acDHfn8jKJnznMLsVG0xCR20xZJ2jmq57QrDlNGNmc=;
 	h=X-UI-Sender-Class:Date:From:To:CC:Subject:Reply-to:In-Reply-To:
 	 References;
-	b=HsweIWo/8e9KBqGDXifPqdRYg7hPtBJn+NSsXfDJveiKDLIKaOZPvC9mBVGShVL6O
-	 Tcv/J2tPLwAN8VEcKo47xB1ZkyeIyTpTyFuwJcQ1tCbNhmRsm4byeIPyfXSMTGdN7R
-	 TIX7ty1r7j3b0tl08iDZsPunz1HxwCgXhsBiaMBtPqnHaphDeZ5Wnbz8jpDWnHfLJO
-	 sgh0zw8wbnjXXq9ysLw4hVvkM9FqGHQhN0ktto801QPHl2HjC4JOeQr/Q/jo4g2W63
-	 0jRYSeDahc3pBFFt9+H+Ms35dyLHZzf/xmEPaMxqabTZ3lKGPMIB5+r+groVm7rd/9
-	 Z+Vd6JI5Gzrvw==
+	b=IM+By4R5MXaGf8bPD/mJ57quLcj85g60ZIbuX0vfB6x12ARuOZ8NXkbwpuvNZJl+c
+	 kz2QYQsuuuu5alnb0lFKMOUXY1JIml+vkdxn/jBmiQwQ2Iuu+XPjFHdvSWYPn2gQLh
+	 sDOotj1Lu65K7r+8nyr5XuZwCxo7gcbkS15mmIjCuTNv4M2V22TfBfHP5N29pEvoV/
+	 cRfsGN/wcCdV0jLgiqpXxEy8jUQ3emWxNMcVhLEvmcGqX8M2jHVuZ5Urz8PmlG4WMN
+	 ihkvTRJ/beuUYYvi0rPzZg2DMUb/5RNk8nGq75fylfR8s1KUUCxlX87imu0AVNew91
+	 DqUmSyITTX99A==
 X-UI-Sender-Class: 724b4f7f-cbec-4199-ad4e-598c01a50d3a
-Received: from [127.0.0.1] ([80.245.74.27]) by mail.gmx.net (mrgmx005
- [212.227.17.190]) with ESMTPSA (Nemesis) id 1Mi2Jn-1pP4st2nFx-00e34I; Sun, 13
- Nov 2022 08:56:34 +0100
-Date: Sun, 13 Nov 2022 08:56:25 +0100
+Received: from [127.0.0.1] ([80.245.74.27]) by mail.gmx.net (mrgmx004
+ [212.227.17.190]) with ESMTPSA (Nemesis) id 1M42jK-1ou7uI0vwG-0007QC; Sun, 13
+ Nov 2022 08:59:58 +0100
+Date: Sun, 13 Nov 2022 08:59:53 +0100
 From: Frank Wunderlich <frank-w@public-files.de>
 To: Frank Wunderlich <linux@fw-web.de>, linux-mediatek@lists.infradead.org
 CC: Ryder Lee <ryder.lee@mediatek.com>, Jianjun Wang <jianjun.wang@mediatek.com>,
@@ -54,34 +54,34 @@ CC: Ryder Lee <ryder.lee@mediatek.com>, Jianjun Wang <jianjun.wang@mediatek.com>
  linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-phy@lists.infradead.org, linux-usb@vger.kernel.org,
  Rob Herring <robh@kernel.org>
-Subject: =?US-ASCII?Q?Re=3A_=5BPATCH_v4_05/11=5D_dt-bindings=3A_PCI=3A?= =?US-ASCII?Q?_mediatek-gen3=3A_add_support_for_mt7986?=
+Subject: =?US-ASCII?Q?Re=3A_=5BPATCH_v4_04/11=5D_dt-bindings=3A_PCI=3A_m?= =?US-ASCII?Q?ediatek-gen3=3A_add_SoC_based_clock_config?=
 User-Agent: K-9 Mail for Android
-In-Reply-To: <20221112091518.7846-6-linux@fw-web.de>
-References: <20221112091518.7846-1-linux@fw-web.de> <20221112091518.7846-6-linux@fw-web.de>
-Message-ID: <25CE3BBD-05B2-4E44-8451-A164C5BBB9BD@public-files.de>
+In-Reply-To: <20221112091518.7846-5-linux@fw-web.de>
+References: <20221112091518.7846-1-linux@fw-web.de> <20221112091518.7846-5-linux@fw-web.de>
+Message-ID: <F894EE66-6824-43C7-AE04-7AE6FF1C52AC@public-files.de>
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:RXjpN3W3W08raP5C+yB86kDRdauG6M3S3eL3CGdnFOEzy1z2uqO
- c0VuIMpQdLSMca3RMicXAAFQWhc6aMaZD2torvrkll2auuhfPeZDEUrJE+JETn/lZyeqXf9
- ynsmAmu7Is39/DsSy6ZiKkA/JNLZ5PClaErZVvZK/rsg5/1HjbCFpq6c321bQpwjFrfFEOY
- vJh1yqsy72FaLvEJcT3/A==
-UI-OutboundReport: notjunk:1;M01:P0:rvZvYhD2qSo=;guJK+ePlyLa4DOpD8osZUFG8WXV
- qQXP7A97MRV80Pt4Z9vfrJvOhBwbgfSkeuW2oU7l2RG5qWsG7Gm6txwFC4RtUDU4wqPjPveen
- ZvBxpm6WToW+LdKUPe/ixOjOXhe6SkWrV3SbzAjdMWfAZt/t1vrBNjQqmU8Re+O6/mFjXs0p2
- IR321siC4clhkLFqyjCSC8dCyV2PGo1oKxBpTSYHCQQX93BwPhIxOawmxA3nEBE1UOZtpH1uw
- aC9WAPd/IUDrK9FqkqE7YJ2lUgmUfun7yjeoikbmenNy3qYB/pO1MuMjw8EPV8Fxj+3mHu04p
- zCL3I3G1qXv3bGPehpbGPu3860gX65vA2yJYb1mbUs9MyCgiWbZkWi6gy7Ar989zEK269m6CT
- vYWAtQ+lK1TM+5+rD3Fv25Ccx/pjzbplBDXlv/YBso3fyGernQxiea0dIUz4jo20CywWTxR9V
- kkAn6k1YjyKfDR1i8uGWpyBgaMH0qHd0pakOBZU9kxhaYMN6EU9RSg0RyOse9ILwgzsk3Lgrg
- Rmi/Z2+JQeu7bDncltr3T7u6P9KX3DU3jKDr5VE+pgOMsVUGeyZ3GY21I5dPRQD66Ih5ccv7Q
- g7cTgW+8MxLgRTuP7lendVgCljwIrgfinJLwPudC3D2+du/PCOjIfdkaeSaxslYvFjzuTxzIH
- Kp2guw4er3l3T2J6a7ukfc1edXc5cb9yrbXgxZqGmfDCsjjNeB/jXpEBvukeo6uwyUL1zlDtp
- rOPG7d3Yc+egCfKysdF4DoEHv1AKX5CLAlV+vmJ2u7vGg9RG+tuQrUu/ZlgKgESPa8dKzN7ct
- YVk9i4Kl+DBS4+egeoBx/L1SzKyU2qjUEI/CPvoxfh7C93kfRtE7rjr8Mzjt275sZTEBSKdHc
- o+9TOT2HWFJHP5FhVe5y03dVU5Ol4ydtCZ2L+vOhiRW6FMNpuoIGfN8nzCTB7nU59/02G7pij
- mYHcGw==
+X-Provags-ID: V03:K1:GUCsNyzDalZvWOJYdXrFPJmqG2HqRf25PM8dw6TA7DzeHRVC53P
+ uLC2wpK1PjOwQKyB/73jGq1NLinwFc1rN1/UFJkrLbqnpkH5NBT1nP4asPu4hqBhT3Tpilt
+ urMDX2Sk1pMqFUC07KwwCBywFgrKRLck1KxsgDdiQHJ22yVfECODzaB/RG+jgJHptT3PxmZ
+ 5Vlna3KMRTIB8N+Nhs7xA==
+UI-OutboundReport: notjunk:1;M01:P0:pUUva5akvIk=;DbmGJfxgnH1QL1fCq2YPuyMYNlt
+ pIxwd5dNSo4z+ai0OzGHBcupfJZyt2rveBjwVPyz5o8/YKl/Ae+En/QCgE3dRQLoAG2lWqek/
+ iB7CdcHTtg9NBxQ9xhI6RtyyMSBOe8rJGiTmxNBze/JMX2Ho2MXUvzhOpKGnsy5c2kz2MONX/
+ OK/dqTjNzyth3cXZXU/4RNKS1aau9pC1FOfjHdsy4zp0TePszfMAold9FyC/bNxu0D7CSK/x4
+ jOP4dw1UHSaJ9juq6X03BXxWF/vaxpIsiPWlbb6sRV0MuMhQI/4sWz72LLfF1OhSUHf20qIGz
+ iNTS07ivBgQuRcz+yNu59z+5tQ7ZvX64CXY0rtStfUlUKKNIsZN3wQXgy5EVWWmeajRp97XkF
+ aSB1tBg4e4MlamIAEEbJYkuhguo0+QoiPy09JzOoCp4qUjizaLjWVK8esh59jBUJuXtiiWJdg
+ 14/KvkHiD95hgi+zoyVgiQxdkrYwlgdLcxcyqpDvCq0M7mZIA4vrgQ+A7X2ygH5J5VZac9LY/
+ ikjyAjIokHQGO7FCwknlYVJUGBbqb1XP/DJES6pEbj6pPs26c8egt5X/K9czIy3FhT+oIyv68
+ 13eRA61sYVKFBIv1gnXwBipiStwmp2sgypwp2ER0MSLTARh+05xqBKC8j6Id/k44GKQ/AoyyO
+ 3bqOMbkKZ0TfWWQBU4OpT3dTbGiCfuiVGF0dKxSsrd+TKXQFnGr3X8dkdEQtxRBsxzxGQR6/c
+ L/qbkaSFiDMgELGvWX5SXCE9CIo5rGOFS2APHgjUPbT+CkP8NtDFc7diZqkiLEB3ikCEeUZ2p
+ RnFC/GdYRNlhlASqX/4wy8c/e6GI9PO8ZztyzgTyeDisxj8edULt1ozo+kDqMg0nqL5lTm9wA
+ rZx0M+jtbKhZHe7hagMhXn1dFufOLaaDRmIm/meA0KcK7FNhZ+fzRI29PCB1pN8PLV0ejo4xw
+ RVOhwXaqC1n8BOlcnz2aMO9W1NA=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221112_235702_259420_AFA67FD7 
-X-CRM114-Status: UNSURE (   6.40  )
+X-CRM114-CacheID: sfid-20221113_000013_001195_0AEA7BF3 
+X-CRM114-Status: UNSURE (   3.80  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -100,70 +100,9 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Am 12. November 2022 10:15:12 MEZ schrieb Frank Wunderlich <linux@fw-web.de>:
->From: Frank Wunderlich <frank-w@public-files.de>
->
->Add compatible string and clock-definition for mt7986. It needs 4 clocks
->for PCIe, define them in binding.
->
->Signed-off-by: Frank Wunderlich <frank-w@public-files.de>
->Reviewed-by: Rob Herring <robh@kernel.org>
->---
->v2:
->- squashed patch 2+3 (compatible and clock definition)
->---
-> .../bindings/pci/mediatek-pcie-gen3.yaml        | 17 +++++++++++++++++
-> 1 file changed, 17 insertions(+)
->
->diff --git a/Documentation/devicetree/bindings/pci/mediatek-pcie-gen3.yaml b/Documentation/devicetree/bindings/pci/mediatek-pcie-gen3.yaml
->index 5d7369debff2..f7a02019daea 100644
->--- a/Documentation/devicetree/bindings/pci/mediatek-pcie-gen3.yaml
->+++ b/Documentation/devicetree/bindings/pci/mediatek-pcie-gen3.yaml
->@@ -48,6 +48,7 @@ properties:
->     oneOf:
->       - items:
->           - enum:
->+              - mediatek,mt7986-pcie
->               - mediatek,mt8188-pcie
->               - mediatek,mt8195-pcie
->           - const: mediatek,mt8192-pcie
->@@ -78,9 +79,11 @@ properties:
->       - const: mac
-> 
->   clocks:
->+    minItems: 4
->     maxItems: 6
-> 
->   clock-names:
->+    minItems: 4
->     maxItems: 6
-> 
->   assigned-clocks:
->@@ -160,6 +163,20 @@ allOf:
->             - const: tl_32k
->             - const: peri_26m
->             - const: peri_mem
->+  - if:
->+      properties:
->+        compatible:
->+          contains:
->+            enum:
->+              - mediatek,mt7986-pcie
->+    then:
->+      properties:
->+        clock-names:
->+          items:
->+            - const: pl_250m
->+            - const: tl_26m
->+            - const: peri_26m
->+            - const: top_133m
-> 
-> unevaluatedProperties: false
-> 
+I missed ack i've got here:
 
-Missed ack i got here:
-
-https://patchwork.kernel.org/project/linux-mediatek/patch/20221029175806.14899-3-frank-w@public-files.de/
+https://patchwork.kernel.org/project/linux-mediatek/patch/20221029175806.14899-2-frank-w@public-files.de/
 
 Acked-by: Jianjun Wang <jianjun.wang@mediatek.com>
 regards Frank
