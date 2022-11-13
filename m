@@ -4,85 +4,98 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1EF79C4332F
-	for <linux-phy@archiver.kernel.org>; Sun, 13 Nov 2022 08:00:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EC4F0C4332F
+	for <linux-phy@archiver.kernel.org>; Sun, 13 Nov 2022 22:32:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:
-	References:In-Reply-To:Subject:CC:To:From:Date:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5OWQ4w53Qv5P5rrT/8xdN0sgNatBaMrE2a+TyhTvTVs=; b=p0EfP5h1QKZciy
-	8hRfs92yJQVCK4p7js36QMOi+VpCzQjVUP6y+1SLWOc2DAXk0pQY5l4hBtSg2lzVQNN1oUsvEIvZT
-	7yk9mILwI98JAtrEh0ijJ0gyl3czmtFAvfJvl2vIHTJoJD2qCCRwazDmGqyadViEUqMC0Fd5XG1AY
-	5lPviz5LweWAlSq7uxjEUzg9BzHkR/UGlGI9wDukuUnLarEZx9sbaCkAjPjq0quUTPUFq56D3SUwQ
-	aWplg8jTcTpiZcx1as+dZb41GV/SyxpfQrU9ti+UlJCEQL8bZgzXfZda5+lhCvZJx8AeTRMMxZK1e
-	8DQzXjLPzareq9NRnQHw==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=LAGJHS4DbCFVKbQgLD0BB4g+hZOWxy8s+mP8Jtek2ck=; b=R939SrbRLSMQxt
+	fTf4QnOulgl/tL2XfzOOkHzuKE7N5PcuXv37QDOsPXFdGVVFpKZK3ZoH98n+xuJHycbnG1edZtGOe
+	4pUDPMPYV0YQAzjyjU0uGW7kehj1m22fDmYIzf2AKocZlRah7iq3Z303V/vMBZtwhFFk5vaplaBsy
+	uyUD9v3gRNIyRIC/K/aTiJ/NxJsuRP1vITYpTsi9jgU5yAMqAflTtw9jhRs8J4qM9HvauiGvmqrw7
+	PZ7imfmMTBXshFbQQ3g573iCl8O7mAdhd4u5dCDyNGHKUEUsdRlTv0p9SAoYtF+zWMZ6a0ST4ZpHC
+	s5UTK/ZxOMJDXxT4ZHGQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ou7ui-00AGTR-GJ; Sun, 13 Nov 2022 08:00:24 +0000
-Received: from mout.gmx.net ([212.227.15.18])
+	id 1ouLWa-00Efgp-C8; Sun, 13 Nov 2022 22:32:24 +0000
+Received: from out1-smtp.messagingengine.com ([66.111.4.25])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ou7uW-00AGQt-Kg; Sun, 13 Nov 2022 08:00:14 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=public-files.de;
-	s=s31663417; t=1668326398;
-	bh=3acDHfn8jKJnznMLsVG0xCR20xZJ2jmq57QrDlNGNmc=;
-	h=X-UI-Sender-Class:Date:From:To:CC:Subject:Reply-to:In-Reply-To:
-	 References;
-	b=IM+By4R5MXaGf8bPD/mJ57quLcj85g60ZIbuX0vfB6x12ARuOZ8NXkbwpuvNZJl+c
-	 kz2QYQsuuuu5alnb0lFKMOUXY1JIml+vkdxn/jBmiQwQ2Iuu+XPjFHdvSWYPn2gQLh
-	 sDOotj1Lu65K7r+8nyr5XuZwCxo7gcbkS15mmIjCuTNv4M2V22TfBfHP5N29pEvoV/
-	 cRfsGN/wcCdV0jLgiqpXxEy8jUQ3emWxNMcVhLEvmcGqX8M2jHVuZ5Urz8PmlG4WMN
-	 ihkvTRJ/beuUYYvi0rPzZg2DMUb/5RNk8nGq75fylfR8s1KUUCxlX87imu0AVNew91
-	 DqUmSyITTX99A==
-X-UI-Sender-Class: 724b4f7f-cbec-4199-ad4e-598c01a50d3a
-Received: from [127.0.0.1] ([80.245.74.27]) by mail.gmx.net (mrgmx004
- [212.227.17.190]) with ESMTPSA (Nemesis) id 1M42jK-1ou7uI0vwG-0007QC; Sun, 13
- Nov 2022 08:59:58 +0100
-Date: Sun, 13 Nov 2022 08:59:53 +0100
-From: Frank Wunderlich <frank-w@public-files.de>
-To: Frank Wunderlich <linux@fw-web.de>, linux-mediatek@lists.infradead.org
-CC: Ryder Lee <ryder.lee@mediatek.com>, Jianjun Wang <jianjun.wang@mediatek.com>,
- Bjorn Helgaas <bhelgaas@google.com>, Rob Herring <robh+dt@kernel.org>,
+	id 1ouLWN-00Efbd-1o; Sun, 13 Nov 2022 22:32:12 +0000
+Received: from compute1.internal (compute1.nyi.internal [10.202.2.41])
+	by mailout.nyi.internal (Postfix) with ESMTP id B93555C00A9;
+	Sun, 13 Nov 2022 17:32:07 -0500 (EST)
+Received: from mailfrontend2 ([10.202.2.163])
+  by compute1.internal (MEProxy); Sun, 13 Nov 2022 17:32:07 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sholland.org; h=
+	cc:cc:content-transfer-encoding:content-type:date:date:from:from
+	:in-reply-to:in-reply-to:message-id:mime-version:references
+	:reply-to:sender:subject:subject:to:to; s=fm2; t=1668378727; x=
+	1668465127; bh=D0UDPOcJzT1RD0W0b6Z42Zcs34D8+nlMSqsxaHZ8s4c=; b=G
+	bue/7XmTaxL+fotI1cBfc0OkeDdpw4W8BtHH6JVQ4XCT1wiwX+957v3rQQRvb3fP
+	P4cWNpmf4XNxD46NBbdzUgO6WjOvB90Q62JIPnCv72M/87PBYgLfpANQiDhbMcEt
+	65lmqINiagjIsRmJy9p9I9JMDhgxX45NX7PvIu+bUdetJ3+YWCqT1w1BTL3lqNhA
+	75fy6vrVGTC1P3SnXLIVv4mnlmtyMcqW4zew8PCZssy52LwIpuADafu2feSj8zLq
+	VJfdZjtyqcH3pCSngZrCx7inMh48doGUcjEdJr/mZpbCNPbEeA7UbAw0DwSeChBY
+	4aNGTOppRgvW7v0YdZZGQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	messagingengine.com; h=cc:cc:content-transfer-encoding
+	:content-type:date:date:feedback-id:feedback-id:from:from
+	:in-reply-to:in-reply-to:message-id:mime-version:references
+	:reply-to:sender:subject:subject:to:to:x-me-proxy:x-me-proxy
+	:x-me-sender:x-me-sender:x-sasl-enc; s=fm1; t=1668378727; x=
+	1668465127; bh=D0UDPOcJzT1RD0W0b6Z42Zcs34D8+nlMSqsxaHZ8s4c=; b=a
+	nb+ypKQbTHUP1Nibk45YU4XBzrt6WwCBU9uEiKxaaDze7rmGH4SCw1MIAp4wnfQA
+	TG3WzsD7TGMTLT0YRlzmEZFLdgO4CGiU50R9zPrffvzeuBNGnc6sjkXPAP32arcn
+	DR/G4cwvNb/CKiJTLyM9K/vo6NEz2fiLAju5mxcnxBy72HS3oi9sZdA0bQ68Xi6x
+	S19JGhNa7hfuiLheEO07FFgfUL5dtLpaugiNCrv5MqxwzmdpiRsB8JPx/EK4iCKx
+	oiSkr4SWZOErm6Ex7cbJURRUjlF+9Hzmr9mtIbgml98mOaZMPqpf6Quk96z57hJA
+	viumyG0xPJiz+fdsECZVA==
+X-ME-Sender: <xms:Z3BxY6sNlWRNXoJ0Uk_EsOMxRDO5QjiTyx7gp7TmVkOTsYl9V50rKQ>
+    <xme:Z3BxY_ePWOm4O-fz6PRTTJvJH6mFYa2wufmtIwpWLbtn3fWUhl6bikG6Fezi4WoZC
+    MF-8z_Fxt-jqQUCcg>
+X-ME-Received: <xmr:Z3BxY1yOIc2cRUWSykAQHsoED1lPSPRiiAxiawUEnxriafk2DnKSuCvOKR49Va2zFWOnmfOq1OBV5pnSkSbFsglMLcM0cnV33VKztR7Qj2KC_CM1E53Lfx4RrQ>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvgedrgedtgdduieegucetufdoteggodetrfdotf
+    fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+    uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
+    cujfgurhepkfffgggfuffvvehfhfgjtgfgsehtjeertddtfeejnecuhfhrohhmpefurghm
+    uhgvlhcujfholhhlrghnugcuoehsrghmuhgvlhesshhhohhllhgrnhgurdhorhhgqeenuc
+    ggtffrrghtthgvrhhnpeekjeelleefiedthfdtgfekgeehudefudeugeffvdfhudekleel
+    fedtteejhedutdenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfh
+    hrohhmpehsrghmuhgvlhesshhhohhllhgrnhgurdhorhhg
+X-ME-Proxy: <xmx:Z3BxY1Ox48ZDy-gRZWa2cXiBYSqqBG-hduR7JOCw58BMJzqf5K9aeg>
+    <xmx:Z3BxY6_WCu_QxiKm8f_NX9NWb2oEaOgzr33bpZZhbdyoCNEY0BV8uQ>
+    <xmx:Z3BxY9U-ubDYE8EEYjXnJePxrgsW2A2VSEzuDTHOvAiKDN2PTkJBUQ>
+    <xmx:Z3BxY1UscQ742TzqufOkY6b8RkpYRN5fe4n-zZjw2Fa8F345IC2org>
+Feedback-ID: i0ad843c9:Fastmail
+Received: by mail.messagingengine.com (Postfix) with ESMTPA; Sun,
+ 13 Nov 2022 17:32:06 -0500 (EST)
+Message-ID: <5c909a91-ced8-8a86-1385-f7d3bca00fc4@sholland.org>
+Date: Sun, 13 Nov 2022 16:32:04 -0600
+MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (X11; Linux ppc64le; rv:102.0) Gecko/20100101
+ Thunderbird/102.3.3
+Subject: Re: [PATCH v3 01/11] dt-bindings: phy: add binding document for
+ Allwinner F1C100s USB PHY
+Content-Language: en-US
+To: Andre Przywara <andre.przywara@arm.com>, Chen-Yu Tsai <wens@csie.org>,
+ Jernej Skrabec <jernej.skrabec@gmail.com>, Rob Herring <robh+dt@kernel.org>,
  Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Chunfeng Yun <chunfeng.yun@mediatek.com>,
- Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Matthias Brugger <matthias.bgg@gmail.com>, Paolo Abeni <pabeni@redhat.com>,
- Lorenzo Bianconi <lorenzo@kernel.org>, Bo Jiao <Bo.Jiao@mediatek.com>,
- linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Icenowy Zheng <uwu@icenowy.me>
+Cc: soc@kernel.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
  linux-phy@lists.infradead.org, linux-usb@vger.kernel.org,
  Rob Herring <robh@kernel.org>
-Subject: =?US-ASCII?Q?Re=3A_=5BPATCH_v4_04/11=5D_dt-bindings=3A_PCI=3A_m?= =?US-ASCII?Q?ediatek-gen3=3A_add_SoC_based_clock_config?=
-User-Agent: K-9 Mail for Android
-In-Reply-To: <20221112091518.7846-5-linux@fw-web.de>
-References: <20221112091518.7846-1-linux@fw-web.de> <20221112091518.7846-5-linux@fw-web.de>
-Message-ID: <F894EE66-6824-43C7-AE04-7AE6FF1C52AC@public-files.de>
-MIME-Version: 1.0
-X-Provags-ID: V03:K1:GUCsNyzDalZvWOJYdXrFPJmqG2HqRf25PM8dw6TA7DzeHRVC53P
- uLC2wpK1PjOwQKyB/73jGq1NLinwFc1rN1/UFJkrLbqnpkH5NBT1nP4asPu4hqBhT3Tpilt
- urMDX2Sk1pMqFUC07KwwCBywFgrKRLck1KxsgDdiQHJ22yVfECODzaB/RG+jgJHptT3PxmZ
- 5Vlna3KMRTIB8N+Nhs7xA==
-UI-OutboundReport: notjunk:1;M01:P0:pUUva5akvIk=;DbmGJfxgnH1QL1fCq2YPuyMYNlt
- pIxwd5dNSo4z+ai0OzGHBcupfJZyt2rveBjwVPyz5o8/YKl/Ae+En/QCgE3dRQLoAG2lWqek/
- iB7CdcHTtg9NBxQ9xhI6RtyyMSBOe8rJGiTmxNBze/JMX2Ho2MXUvzhOpKGnsy5c2kz2MONX/
- OK/dqTjNzyth3cXZXU/4RNKS1aau9pC1FOfjHdsy4zp0TePszfMAold9FyC/bNxu0D7CSK/x4
- jOP4dw1UHSaJ9juq6X03BXxWF/vaxpIsiPWlbb6sRV0MuMhQI/4sWz72LLfF1OhSUHf20qIGz
- iNTS07ivBgQuRcz+yNu59z+5tQ7ZvX64CXY0rtStfUlUKKNIsZN3wQXgy5EVWWmeajRp97XkF
- aSB1tBg4e4MlamIAEEbJYkuhguo0+QoiPy09JzOoCp4qUjizaLjWVK8esh59jBUJuXtiiWJdg
- 14/KvkHiD95hgi+zoyVgiQxdkrYwlgdLcxcyqpDvCq0M7mZIA4vrgQ+A7X2ygH5J5VZac9LY/
- ikjyAjIokHQGO7FCwknlYVJUGBbqb1XP/DJES6pEbj6pPs26c8egt5X/K9czIy3FhT+oIyv68
- 13eRA61sYVKFBIv1gnXwBipiStwmp2sgypwp2ER0MSLTARh+05xqBKC8j6Id/k44GKQ/AoyyO
- 3bqOMbkKZ0TfWWQBU4OpT3dTbGiCfuiVGF0dKxSsrd+TKXQFnGr3X8dkdEQtxRBsxzxGQR6/c
- L/qbkaSFiDMgELGvWX5SXCE9CIo5rGOFS2APHgjUPbT+CkP8NtDFc7diZqkiLEB3ikCEeUZ2p
- RnFC/GdYRNlhlASqX/4wy8c/e6GI9PO8ZztyzgTyeDisxj8edULt1ozo+kDqMg0nqL5lTm9wA
- rZx0M+jtbKhZHe7hagMhXn1dFufOLaaDRmIm/meA0KcK7FNhZ+fzRI29PCB1pN8PLV0ejo4xw
- RVOhwXaqC1n8BOlcnz2aMO9W1NA=
+References: <20221106154826.6687-1-andre.przywara@arm.com>
+ <20221106154826.6687-2-andre.przywara@arm.com>
+From: Samuel Holland <samuel@sholland.org>
+In-Reply-To: <20221106154826.6687-2-andre.przywara@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221113_000013_001195_0AEA7BF3 
-X-CRM114-Status: UNSURE (   3.80  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20221113_143211_694531_A2AB09E6 
+X-CRM114-Status: GOOD (  11.98  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,18 +107,35 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: frank-w@public-files.de
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-I missed ack i've got here:
+On 11/6/22 09:48, Andre Przywara wrote:
+> From: Icenowy Zheng <uwu@icenowy.me>
+> 
+> Allwinner F1C100s has the most simple USB PHY among all Allwinner SoCs,
+> because it has only one OTG USB controller, no host-only OHCI/EHCI
+> controllers.
+> 
+> Add a binding document for it. Following the current situation of one
+> YAML file per SoC, this one is based on
+> allwinner,sun8i-v3s-usb-phy.yaml, but with OHCI/EHCI-related bits
+> removed. (The same driver in Linux, phy-sun4i-usb, covers all these
+> binding files now.)
+> 
+> Signed-off-by: Icenowy Zheng <uwu@icenowy.me>
+> Reviewed-by: Rob Herring <robh@kernel.org>
+> Reviewed-by: Andre Przywara <andre.przywara@arm.com>
+> Signed-off-by: Andre Przywara <andre.przywara@arm.com>
+> ---
+>  .../phy/allwinner,suniv-f1c100s-usb-phy.yaml  | 83 +++++++++++++++++++
+>  1 file changed, 83 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/allwinner,suniv-f1c100s-usb-phy.yaml
 
-https://patchwork.kernel.org/project/linux-mediatek/patch/20221029175806.14899-2-frank-w@public-files.de/
+Reviewed-by: Samuel Holland <samuel@sholland.org>
 
-Acked-by: Jianjun Wang <jianjun.wang@mediatek.com>
-regards Frank
 
 -- 
 linux-phy mailing list
