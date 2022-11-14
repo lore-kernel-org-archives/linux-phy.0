@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 12079C41535
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 51F42C3E8A8
 	for <linux-phy@archiver.kernel.org>; Mon, 14 Nov 2022 08:14:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,39 +12,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KFiAezChWU02md1Mq/PH3IB5AvFIYIbflGqVFssCqN4=; b=LWdFGXbOHU78kh
-	iMROpBYdcwjfDiHvp6KnKDdbSGlDD1W13cLw06DqmzOCMOZ4WbR7O+W5NjAvFaiDgHAxOIKqMhpzY
-	nNDIgP+shs7KFJ9bDcYmz9Vq/q/JsdQXSZSWjz9iblznw6EvaUMoE5eoQ1JzR5qLX+564e/Qzg8G1
-	Ou+bW6rUgLZhT3hXIwuvhljzTnQtZlJ37zNIT7MlBTWTN04tDAFiSRnkqtUEMrLiJ59HbwHlaHOwK
-	zU37SdjK8wb7xQwGfkY7SKPtqkPe27GpHXS4+W7cAKRp3TNKtAJ2e05s4IPFZdtWpVzaw6UWjG3tq
-	4rn5HaJlO6tn7FdfJg3w==;
+	List-Owner; bh=AD1uXAMQuWb2/aZJ1xIZvOMqwFhzXYFRIWiOu5UpfHo=; b=u8F1ZOmWf9C8KZ
+	v6j8Bf2l1B9ep65C/py0jrkURHGbK8fjq5GA+FeMWJZaLDlFfU3MmF0rjY69yw5BOovrAyl2ZKdf2
+	UAnMec1knytgy6n8s165RQfB5vZryw6M/LeuwpXk5c3dVJZXtW1rmoGv0CQsflq/cPkULKq0ZcNni
+	2eic6Wv4XdWUOZT/IE2mNDUm5rCnGiS6rSp2fMOhXFXYPfYkTsGmXbjW33mhesXPmJvykAaxsvIvp
+	fCOesULblZEw9gq+HYYCmalN0DTjbtMXMCDu8GsR+MKXtu9BALKA9IAhL2Z4IFlNOG0d9jP/piNhj
+	ndrES+g2F71k6Lfv7z3g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ouUbz-00Ghxd-FI; Mon, 14 Nov 2022 08:14:35 +0000
-Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
+	id 1ouUbz-00Ghxr-J0; Mon, 14 Nov 2022 08:14:35 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ouUbw-00Ghrg-8S
+	id 1ouUbw-00Ghru-6m
 	for linux-phy@lists.infradead.org; Mon, 14 Nov 2022 08:14:34 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id E9BF9B80D40;
-	Mon, 14 Nov 2022 08:14:30 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 01F37C433D6;
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 8D25560EEB;
+	Mon, 14 Nov 2022 08:14:31 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1536CC43145;
 	Mon, 14 Nov 2022 08:14:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1668413669;
-	bh=IHFLp839t6wrDbrE/w7CcDSU1XWQfM/BgeoUJmtCdPQ=;
+	bh=NzS+/VskG+KkDUr6qPiVoEuNjsO5Y/0j9nTuX6m8hXk=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=ODGK87TO4Kb+6AjqtgTWH3OXfyp38/dR17p3O4ntsFWXrjw2Pt6NZZdLLvsKQcnhB
-	 XskAig3EVczgzeo3Z3JwPsJkEcZhqUivMOgOOPi+ZbY6Nc3qX+UZ+DbEfJx3xFYKI0
-	 ujOhwweSk+K9BpwItH0ExG5RnkncVuiyD4P65vRjjEJBgDY2BTgUwjmTUJkCKCmBv5
-	 s4xpp2xFCUhXi47+wU6R1BxnRlcHmrPKo+siGj/CL/x9yyLC6G2esQREdfPSjN6iSB
-	 un2nd5IHjfZWNRdEP14GRiITvTYbtazw0LmQnWEZT4tYwu3g37mQm4LDhuFeefXqXg
-	 2PRKcZIEgeIgA==
+	b=ZW9zqD/l38xk1Ff/d2yzy/ApfbNb3a3nqetZh/5Hv0Hf0tJmY3YhLO8Ve9zjItkyX
+	 iFH8E93XMpK1GJhv3OBUGe+s0gBeDEaFEZB2JCYPT0Z358kh6eT1FKiv+lCaGqaVbx
+	 utYfXeD6xwOuuMTCSknGZOYzckNvgN9yBCLZuzc+4W64JThaFuFJv8GV/MuveU166q
+	 1ICXlgPgqWumy5KSXB8eTMzfYTEmQ8mZlT11HKdoZX0MRW49pxoH4SzedaACWTn/CU
+	 B3zbbH+l+eqzWxBXPmvGpnA+kTseD+C6wLOUc0geX4PubPYH1xhkH9UAfUJWRX5wPL
+	 pjzMhet1EtdFQ==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1ouUbM-0001L2-RJ; Mon, 14 Nov 2022 09:13:56 +0100
+	id 1ouUbM-0001L0-O4; Mon, 14 Nov 2022 09:13:56 +0100
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>
 Cc: Andy Gross <agross@kernel.org>,
@@ -56,16 +56,16 @@ Cc: Andy Gross <agross@kernel.org>,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>,
 	stable@vger.kernel.org
-Subject: [PATCH v2 3/6] phy: qcom-qmp-combo: fix sc8180x reset
-Date: Mon, 14 Nov 2022 09:13:43 +0100
-Message-Id: <20221114081346.5116-4-johan+linaro@kernel.org>
+Subject: [PATCH v2 2/6] phy: qcom-qmp-combo: fix sdm845 reset
+Date: Mon, 14 Nov 2022 09:13:42 +0100
+Message-Id: <20221114081346.5116-3-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.37.4
 In-Reply-To: <20221114081346.5116-1-johan+linaro@kernel.org>
 References: <20221114081346.5116-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221114_001432_461538_B1BE1E9F 
-X-CRM114-Status: GOOD (  11.83  )
+X-CRM114-CacheID: sfid-20221114_001432_338643_ED58AFAE 
+X-CRM114-Status: GOOD (  11.89  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,35 +82,75 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The SC8180X has two resets but the DP configuration erroneously
-described only one.
+The SDM845 has two resets but the DP configuration erroneously described
+only one.
 
 In case the DP part of the PHY is initialised before the USB part (e.g.
 depending on probe order), then only the first reset would be asserted.
 
-Fixes: 1633802cd4ac ("phy: qcom: qmp: Add SC8180x USB/DP combo")
-Cc: stable@vger.kernel.org	# 5.15
+Add a dedicated configuration for SDM845 rather than reuse the
+incompatible SC7180 configuration.
+
+Fixes: d88497fb6bbd ("phy: qualcomm: phy-qcom-qmp: add support for combo USB3+DP phy on SDM845")
+Cc: stable@vger.kernel.org	# 6.1
 Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 39 ++++++++++++++++++++++-
+ 1 file changed, 38 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-index cc53e2f99121..40c25a0ead23 100644
+index bb38b18258ca..cc53e2f99121 100644
 --- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
 +++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-@@ -1177,8 +1177,8 @@ static const struct qmp_phy_cfg sc8180x_dpphy_cfg = {
+@@ -1084,9 +1084,46 @@ static const struct qmp_phy_cfg sdm845_usb3phy_cfg = {
+ 	.has_pwrdn_delay	= true,
+ };
  
- 	.clk_list		= qmp_v3_phy_clk_l,
- 	.num_clks		= ARRAY_SIZE(qmp_v3_phy_clk_l),
--	.reset_list		= sc7180_usb3phy_reset_l,
--	.num_resets		= ARRAY_SIZE(sc7180_usb3phy_reset_l),
++static const struct qmp_phy_cfg sdm845_dpphy_cfg = {
++	.type			= PHY_TYPE_DP,
++	.lanes			= 2,
++
++	.serdes_tbl		= qmp_v3_dp_serdes_tbl,
++	.serdes_tbl_num		= ARRAY_SIZE(qmp_v3_dp_serdes_tbl),
++	.tx_tbl			= qmp_v3_dp_tx_tbl,
++	.tx_tbl_num		= ARRAY_SIZE(qmp_v3_dp_tx_tbl),
++
++	.serdes_tbl_rbr		= qmp_v3_dp_serdes_tbl_rbr,
++	.serdes_tbl_rbr_num	= ARRAY_SIZE(qmp_v3_dp_serdes_tbl_rbr),
++	.serdes_tbl_hbr		= qmp_v3_dp_serdes_tbl_hbr,
++	.serdes_tbl_hbr_num	= ARRAY_SIZE(qmp_v3_dp_serdes_tbl_hbr),
++	.serdes_tbl_hbr2	= qmp_v3_dp_serdes_tbl_hbr2,
++	.serdes_tbl_hbr2_num	= ARRAY_SIZE(qmp_v3_dp_serdes_tbl_hbr2),
++	.serdes_tbl_hbr3	= qmp_v3_dp_serdes_tbl_hbr3,
++	.serdes_tbl_hbr3_num	= ARRAY_SIZE(qmp_v3_dp_serdes_tbl_hbr3),
++
++	.swing_hbr_rbr		= &qmp_dp_v3_voltage_swing_hbr_rbr,
++	.pre_emphasis_hbr_rbr	= &qmp_dp_v3_pre_emphasis_hbr_rbr,
++	.swing_hbr3_hbr2	= &qmp_dp_v3_voltage_swing_hbr3_hbr2,
++	.pre_emphasis_hbr3_hbr2 = &qmp_dp_v3_pre_emphasis_hbr3_hbr2,
++
++	.clk_list		= qmp_v3_phy_clk_l,
++	.num_clks		= ARRAY_SIZE(qmp_v3_phy_clk_l),
 +	.reset_list		= msm8996_usb3phy_reset_l,
 +	.num_resets		= ARRAY_SIZE(msm8996_usb3phy_reset_l),
- 	.vreg_list		= qmp_phy_vreg_l,
- 	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
- 	.regs			= qmp_v3_usb3phy_regs_layout,
++	.vreg_list		= qmp_phy_vreg_l,
++	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
++	.regs			= qmp_v3_usb3phy_regs_layout,
++
++	.dp_aux_init = qcom_qmp_v3_phy_dp_aux_init,
++	.configure_dp_tx = qcom_qmp_v3_phy_configure_dp_tx,
++	.configure_dp_phy = qcom_qmp_v3_phy_configure_dp_phy,
++	.calibrate_dp_phy = qcom_qmp_v3_dp_phy_calibrate,
++};
++
+ static const struct qmp_phy_combo_cfg sdm845_usb3dpphy_cfg = {
+ 	.usb_cfg                = &sdm845_usb3phy_cfg,
+-	.dp_cfg                 = &sc7180_dpphy_cfg,
++	.dp_cfg                 = &sdm845_dpphy_cfg,
+ };
+ 
+ static const struct qmp_phy_cfg sm8150_usb3phy_cfg = {
 -- 
 2.37.4
 
