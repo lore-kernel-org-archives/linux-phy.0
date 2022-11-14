@@ -4,89 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 62B86C43219
-	for <linux-phy@archiver.kernel.org>; Mon, 14 Nov 2022 15:49:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8FD48C4321E
+	for <linux-phy@archiver.kernel.org>; Mon, 14 Nov 2022 15:52:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MNekrbfwVP44yCNOEHxhZfSgvGGwJuT5UCFbFJOVJAc=; b=fI6Te/I2bbplin
-	6pVPbDSdBsxZiW7zdcsX8avylaYaggf/gOgwgimTbkQ5i+ncsKyuotPV9SqLpGoKiTnZH4B2mnDMF
-	Z6YRVqY4AlA/+9oM/S5wHH/IwvjJWSuVhpMBB7g0GVdjEkxS6zuPsfVlbaVsf+Qn3MWt84Vz+ye66
-	DKKUEvPegQTSu8BmvuzHzIIS5Kmon76Wgl+8FGZfimxTPHx6kD1kQKDMiqrJv9Z+/4Zk/WeKYrDos
-	wsIumNETgFFAzLAh1zVO5nRE8KLvsDmLtc2HeRi1fTcMf8Wjjdw7eoLENVYxFP0TC5dnUCIlHcH5X
-	SUPLEQTJqVYIQDB68zNA==;
+	List-Owner; bh=2trWEgGNA2wSQXzc4dnx8d3hL12hcYPg4oPKPuc+flM=; b=knMkIyqMvNJP1V
+	hqCETCXjEhQBSDVUaDHqDcC5T8IjGYSCyYlvxu+cg3Frh5g7AMEpcNriLzMj6cxAMQgYo6UG6kGkx
+	6J4hXmvHhW+TmhQeQ3I5sCV1a27ebix+dbtEuOSHk9+SJxu2IzZ7l/4T+8sjJwHX5gJB5baOYi5su
+	7cN0kCW/kyPf0soFwIS3AoFCecHfjr68oWxgQkKE4AM1XpVl5yFFVqMXF8SINr9G1ZnmF5OLJG2Pu
+	IgJDezo7BVd8ejQKq8sTzRZDrDnA4RX03QhyO2PVgFg2P3Q2IZ7AmgIgAtexx8AqEN7SAdXdqdpFX
+	ulsBJEghhMnPD/gWJKjg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oubiS-002Rt8-Oz; Mon, 14 Nov 2022 15:49:44 +0000
-Received: from mail-lj1-x229.google.com ([2a00:1450:4864:20::229])
+	id 1oubky-002T4y-1a; Mon, 14 Nov 2022 15:52:20 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oubiQ-002RsD-S6
-	for linux-phy@lists.infradead.org; Mon, 14 Nov 2022 15:49:44 +0000
-Received: by mail-lj1-x229.google.com with SMTP id d3so13762832ljl.1
-        for <linux-phy@lists.infradead.org>; Mon, 14 Nov 2022 07:49:41 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=6wSuGB76l81gaOZPm77HZM6lioiS7r+dfc+W7xsVPIc=;
-        b=HskIouhVyi2ue7+LEhRN1RNzMQvR2PC9gCYjtggrfbJLkrjQSaDW8HSkDC2ngq/GGY
-         T7CvhwkLZcQEP7RHrGRISmnitfx1GOUeqhMkImP7385hiYtqtnfPuY/NtKgTeaQqK3Xe
-         pgnx9nvuaNp7VJQmCWdEWilqgSbOoYiQaafmZWrfPz3T5RNkTyrhRLcqj8zrIUN70ITz
-         +sC3HeCliR8IXBCJsa3SMVIofiy0Tji4L7fXbJSgzNGYnkKuJ7GwIYGgnCvLzdst8IxB
-         U3bTqm76MPVBtBftuH8k2gpUyo6abWhlTUVle9NCp/FMZf2QYl7CRVCjNFI1i/z+XNXn
-         GgAg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=6wSuGB76l81gaOZPm77HZM6lioiS7r+dfc+W7xsVPIc=;
-        b=YHbpmArjBDs3uEf0HNVlYJJq+SqT4ASJoi3JnmYdC0UVdrUH8ENvPlHWPgPb1rjMxL
-         ql75kB66v/HHYEvQTopwxyA6RtMx2DPZYq4pWJnEVqP6kYeAoxJbeK43+iU3RoR5guW0
-         H3c5uUSZEqZHvSyVHgXnsy/um4OLghiZnx679lPnHAlMbmOrH+F9gHs1mmvHIvxW/UtE
-         YDf6VsBVdnO8nJGGED/FHxeV5Qu5s+XccOz3HQn8NoNrDw6KyGRnHrfHN/ixUwz54LVC
-         KqZ0VKMPV2QQz2E5nmH8AOWKBNcWp5is6fBQ4SalaizXq1ZQYrjwOaUA5W+9JLrQa4Ep
-         DNvA==
-X-Gm-Message-State: ANoB5pk4iiPMmneklPphArDL2UlQ9iiP/At20wlinSXjwIsTd+kXY98e
-	YybrDqzOaazO5oVZjSYXyu62bg==
-X-Google-Smtp-Source: AA0mqf6z1dI9nYxuRJzt3DSAk7mzSPHDwCDS+Nlxum6G3BtXxkcMr8KPa73iixm4aEeEjQ4yKM8BNQ==
-X-Received: by 2002:a2e:460a:0:b0:26f:ab25:8a77 with SMTP id t10-20020a2e460a000000b0026fab258a77mr4098788lja.93.1668440979411;
-        Mon, 14 Nov 2022 07:49:39 -0800 (PST)
-Received: from [192.168.0.20] (088156142067.dynamic-2-waw-k-3-2-0.vectranet.pl. [88.156.142.67])
-        by smtp.gmail.com with ESMTPSA id e10-20020a19674a000000b0049311968ca4sm1855621lfj.261.2022.11.14.07.49.37
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 14 Nov 2022 07:49:38 -0800 (PST)
-Message-ID: <02725b78-04ad-8f4a-25c2-9cdaa1e37ab7@linaro.org>
-Date: Mon, 14 Nov 2022 16:49:37 +0100
-MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.4.2
-Subject: Re: [PATCH 02/14] dt-bindings: phy: qcom,qmp-usb3-dp: fix sc8280xp
- bindings
-Content-Language: en-US
-To: Johan Hovold <johan@kernel.org>
+	id 1oubkv-002T2g-FK
+	for linux-phy@lists.infradead.org; Mon, 14 Nov 2022 15:52:18 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 2ED916126D;
+	Mon, 14 Nov 2022 15:52:15 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 84443C433D7;
+	Mon, 14 Nov 2022 15:52:14 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1668441134;
+	bh=n1AaO+JFk3+1SIAUdLI+8UQJro10H84KUKki8xFsQsQ=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=AtUYWhdPEUsI6OernTHj+UBdtQw4l5R1N2aT8HzU9MDYZwcJONCCLFd+4/+3xgbT6
+	 DvVHN1fH5YM1XdJa35M+quvFBtr2iNtPFjT7zYAszqGj5e6Iqh75Dnby2UaWuJQpir
+	 iu61J4dYkZH0DCRufwb4GcIkR+ibCIb6t7C7b/DIPoVBOmK2BI1KzxzMfYODKK9vdi
+	 Wq30yEKq8tUEPWVZGHK3JKyGhIcMRuXhDusmbrL7B/W5juOaPaGKjXijq9AAoRS+ZT
+	 doPQcQXM9ijyk0nP0SUi9coWye6soAuql5mUBQ3o0DZxOYyxH8bFEzs8a9Qv0EL4dx
+	 TpvGNGj2baSLw==
+Received: from johan by xi.lan with local (Exim 4.94.2)
+	(envelope-from <johan@kernel.org>)
+	id 1oubkM-0004Um-2G; Mon, 14 Nov 2022 16:51:42 +0100
+Date: Mon, 14 Nov 2022 16:51:42 +0100
+From: Johan Hovold <johan@kernel.org>
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 Cc: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konrad.dybcio@linaro.org>, Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+	Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 12/14] phy: qcom-qmp-combo: rename common-register
+ pointers
+Message-ID: <Y3JkDt9xMVMhUJPs@hovoldconsulting.com>
 References: <20221111092457.10546-1-johan+linaro@kernel.org>
- <20221111092457.10546-3-johan+linaro@kernel.org>
- <a22888cd-34cb-3453-0dc2-096da208564c@linaro.org>
- <Y3JCVzJ74YsfcDz4@hovoldconsulting.com>
- <de3a426a-03e8-ed15-a9a1-bb300e776e5f@linaro.org>
- <Y3JOO0kNnaNhnW3K@hovoldconsulting.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <Y3JOO0kNnaNhnW3K@hovoldconsulting.com>
+ <20221111092457.10546-13-johan+linaro@kernel.org>
+ <f3ae781b-2046-e1be-564f-9de74107f000@linaro.org>
+ <Y3I6lN6UTHg2ozNP@hovoldconsulting.com>
+ <e1140358-b693-c23e-68dc-787bf6aa2422@linaro.org>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <e1140358-b693-c23e-68dc-787bf6aa2422@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221114_074942_990040_1862BE58 
-X-CRM114-Status: GOOD (  32.15  )
+X-CRM114-CacheID: sfid-20221114_075217_611574_FEBC63B2 
+X-CRM114-Status: GOOD (  26.89  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,109 +86,67 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 14/11/2022 15:18, Johan Hovold wrote:
-> On Mon, Nov 14, 2022 at 03:07:41PM +0100, Krzysztof Kozlowski wrote:
->> On 14/11/2022 14:27, Johan Hovold wrote:
->>> On Fri, Nov 11, 2022 at 04:17:29PM +0100, Krzysztof Kozlowski wrote:
->>>> On 11/11/2022 10:24, Johan Hovold wrote:
->>>>> The current QMP USB3-DP PHY bindings are based on the original MSM8996
->>>>> binding which provided multiple PHYs per IP block and these in turn were
->>>>> described by child nodes.
+On Mon, Nov 14, 2022 at 06:38:36PM +0300, Dmitry Baryshkov wrote:
+> On 14/11/2022 15:54, Johan Hovold wrote:
+> > On Sat, Nov 12, 2022 at 02:31:27PM +0300, Dmitry Baryshkov wrote:
+> >> On 11/11/2022 12:24, Johan Hovold wrote:
+> >>> The common registers are shared by the USB and DP parts of the PHY so
+> >>> drop the misleading "dp" prefix from the corresponding pointers.
+> >>>
+> >>> Note that the "DP" prefix could also be dropped from the corresponding
+> >>> defines, but leave that in place for now.
+> >>>
+> >>> Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
+> >>> ---
+> >>>    drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 24 +++++++++++------------
+> >>>    1 file changed, 12 insertions(+), 12 deletions(-)
+> >>
+> >> Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+> >>
+> >> Note regarding the last phrase: I'd suggest leaving the DP prefix in
+> >> register names, it makes it easier to visually note & verify the
+> >> register block.
+> > 
+> > My point is that "DP" was never part of the COM register block name. The
+> > confusion likely comes from the vendor driver naming these defines along
+> > the lines of
+> > 
+> > 	USB3_DP_COM_POWER_DOWN_CTRL
+> > 
+> > Here "USB3_DP" is the common prefix for all defines that apply to both
+> > "parts" of the PHY so the corresponding Linux define
+> > 
+> > 	QPHY_V3_DP_COM_POWER_DOWN_CTRL
+> > 
+> > should either include "USB3" or drop "DP".
 > 
->>>>> +  "#clock-cells":
->>>>> +    const: 1
->>>>> +
->>>>> +  clock-output-names:
->>>>> +    items:
->>>>> +      - const: usb3_pipe
->>>>> +      - const: dp_link
->>>>> +      - const: dp_vco_div
->>>>
->>>> Why defining here fixed names? The purpose of this field is to actually
->>>> allow customizing these - at least in most cases. If these have to be
->>>> fixed, then driver should just instantiate these clocks with such names,
->>>> right?
->>>
->>> I'm only using these names as documentation of the indexes. The driver
->>
->> What do you mean by documentation of indexes? You require these specific
->> entries and do not allow anything else.
+> My thought was that we already have too many _COM_ defines in the qmp 
+> headers. Having QPHY_Vn_COM_something would make it too easy to mix it 
+> with QSERDES_Vn_COM_foo. Thus I'd vote to leave DP_COM prefix in place. 
+> While it might be not fully accurate, it serves the point of identifying 
+> the register block.
+
+I don't mind terribly and I didn't even consider trying to rename the
+current defines.
+
+The lack of public conclusive documentation makes structuring this mess
+much harder than it should have to be. 
+
+That said, I don't really think that the risk of mixing up
+QPHY_Vn_COM_foo with QSERDES_Vn_COM_bar is something we need to worry
+about as you already have a separating "QSERDES" in there. Those sets of
+registers should be disjoint too if I remember correctly.
+
+> > This becomes more apparent on SC8280XP where the corresponding define
+> > is:
+> > 
+> > 	USB43DP_COM_POWER_DOWN_CTRL
 > 
-> I'm using this property as documentation of the valid indexes that can
-> be used when referring to clocks provided by this device.
-> 
-> There are currently three and the mapping is described by the
-> 'clock-output-names' property.
+> I'd still use something like QPHY_V10_DP_COM_POWER_DOWN_CTRL here.
 
-That's not the purpose of this property. Drop it then. The names do not
-define the ABI and do not document it, actually. You require now that
-every DTB, if providing clock-output-names, will have exactly such names
-instead of having fixed IDs. DTBs are not for defining the ABI.
+Yeah, but then you're just making names up. ;)
 
->  
->>> doesn't use these names, but that's a Linux-specific implementation
->>> detail.
->>>
->>> I noticed that several bindings leave the clock indexes unspecified, or
->>> have header files defining some or all of them. I first added a QMP
->>> header but that seemed like overkill, especially if we'd end up with
->>> one header per SoC (cf. the GCC headers) due to (known and potential)
->>> platform differences.
->>
->> Headers for the names? I do not recall such but that does not seem right.
-> 
-> Headers for the indexes.
-> 
->>>
->>> On the other hand reproducing this list in each node is admittedly a bit
->>> redundant.
->>>
->>> Shall I add back a shared header for all PHYs handled by this driver
->>> (another implementation detail) even if this could eventually lead to
->>> describing clocks not supported by a particular SoC (so such constraints
->>> would still need to be described by the binding somehow):
->>>
->>> 	/* QMP clocks */
->>> 	#define QMP_USB3_PIPE_CLK	0
->>> 	#define QMP_DP_LINK_CLK		1
->>> 	#define QMP_DP_VCO_DIV_CLK	2
->>
->> What are these about? To remind - we talk about names of clocks this
->> device creates. The output names. Whatever IDs you have are not related
->> to the names.
-> 
-> As I mentioned above, this is not about the names that Linux gives to
-> its representation of these clocks. Its just about defining the valid
-> indexes in the binding.
-
-With or without the header, the IDs are part of ABI and are fixed. The
-headers are I think always encouraged because it makes above sentence
-explicit. Without the headers developers might want to change the IDs.
-
-> 
-> If you think that that using 'clock-output-names' for this is a bit too
-> unconventional, I can add back the header with defines like the above
-> instead.
-> 
-> Note that the clock schema has:
-> 
->   clock-output-names:
->     description: |
->       Recommended to be a list of strings of clock output signal
->       names indexed by the first cell in the clock specifier.
-
-Exactly. Not to describe the ABI behind the ID.
-
->       However, the meaning of clock-output-names is domain
->       specific to the clock provider, ...
-
-... because you might have more cells. Just because clock-output-names
-do not fit some drivers it does not mean you can use it any way you
-wish. It is still for names of provided clocks.
-
-Best regards,
-Krzysztof
-
+Johan
 
 -- 
 linux-phy mailing list
