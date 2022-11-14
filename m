@@ -4,110 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1C7DBC4332F
-	for <linux-phy@archiver.kernel.org>; Mon, 14 Nov 2022 09:10:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9BD3AC43217
+	for <linux-phy@archiver.kernel.org>; Mon, 14 Nov 2022 09:23:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XVt29RAuy0o+ifXxWO8LyVyhsKMOfbiwcqeVL6BqIXs=; b=Y5K3zqM4tvr5PF
-	k3+39ANEWjRGngICvJiqtb3f/t8N+2PUaULd4RKypUXTnHet8tF7Pmoh1n/aT+jwcjz9Wasa4Cb4W
-	x1WXSB+h9v3bCZ4Gv8/uX4a3KF7O5CIOGIirpKVCxhIb5GHM1qvIti1bXZmaim+o4FVgs2fCcx2qO
-	FHf/8tQ91k/SZhvPw1OgeShXj3ROXUEcT+RP+gyfbdLZKCLnRqcWL5EMaGNTKmRtKxM21DQgcPIkH
-	teDfWMKDWKJKypKZbAYT++cnooaXpRtr78QAau9pJ5PEqgxQVUIohR6LFvX8b8V1lRef02ni51ydW
-	YYR97vyR9BcmnkE8BB5g==;
+	List-Owner; bh=2WvN4HyrUfIIb/zb3IqQIwxgpqMlmw0Skg5ZRzTMEmU=; b=hS/1ZYs3xztaiw
+	TC2TuuP3bzTe2fKsZYZUmSGeENVYayre3snXvkfT2AXywNB/W3x0+SbSIMDDCz4qtqekP/bOR400P
+	DEeHQchFHIEQsBfDcWtE21msIUGKqmxFoj+HNYmzC7KtRZwxsZDKB46NN+kGaE2v+yTz66CxlPN/A
+	9sE3J1xhDUS2l6zBOW24KkfJgdVUjXQVgVqQd5QRGdNkUv7fUpShWvUE9LpAjI2WKW0QihEvqZjKO
+	Rb4qjc2SQraE2jIK1ypvgD4+AoZpL/xRq+xp+uBkyueBHZlsvmS67MhqdYZ+vRuM5+QGWHLRrn5Kr
+	LniDh1HOLAQ1fxvY1pIQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ouVUR-00H6gs-0w; Mon, 14 Nov 2022 09:10:51 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1ouVgD-00HAjJ-Va; Mon, 14 Nov 2022 09:23:01 +0000
+Received: from mail-yw1-x112c.google.com ([2607:f8b0:4864:20::112c])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ouVPc-00H3SA-Br; Mon, 14 Nov 2022 09:05:54 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 0AC7E60F67;
-	Mon, 14 Nov 2022 09:05:51 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2AA65C433C1;
-	Mon, 14 Nov 2022 09:05:37 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1668416750;
-	bh=D7WS1/Iq9HsSGiJfZeeNpWeUbfN2wCTKHRwR1waF5b8=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=gu23KWX+hkd2VrW8L8cgRL+RvzQoNmHr4ZHYqyx7b9ggw62j+4gl+srj7mMWbYEWO
-	 eMq9AeoWeTXuHN/JCWdPJOC4s9/SfymP7ivydCT3Rc5lzvj0XxUfCGvOXg+FUovve3
-	 mBjFDbEU8fbv5pZjeBcZG4yoTG+UTWC2w0hMhrdGaf5jiuivlIjmg6M0icdu4BayDd
-	 QORZ6I5Y6XZL3p7KDrZaQgns3WiyBQD5S5uJ7AJ3isJBuf/JmKGDVf410NdJ4z5Krb
-	 lm/rhmS+2/v3szQ2Sg6geE8bZDNcFgYVQt+IzZj3PeuYYzaH8viYNnTeheDKRc95zq
-	 VsYSZrpR3L72Q==
-Date: Mon, 14 Nov 2022 09:05:34 +0000
-From: Lee Jones <lee@kernel.org>
-To: Linus Walleij <linus.walleij@linaro.org>
-Cc: Ulf Hansson <ulf.hansson@linaro.org>, Maxime Ripard <maxime@cerno.tech>,
-	Stephen Boyd <sboyd@kernel.org>,
-	Maxime Coquelin <mcoquelin.stm32@gmail.com>,
-	Chen-Yu Tsai <wens@csie.org>, Daniel Vetter <daniel@ffwll.ch>,
-	Nicolas Ferre <nicolas.ferre@microchip.com>,
-	Thierry Reding <thierry.reding@gmail.com>,
-	Jaroslav Kysela <perex@perex.cz>, Shawn Guo <shawnguo@kernel.org>,
-	Fabio Estevam <festevam@gmail.com>,
-	Claudiu Beznea <claudiu.beznea@microchip.com>,
-	Michael Turquette <mturquette@baylibre.com>,
-	Dinh Nguyen <dinguyen@kernel.org>,
-	Paul Cercueil <paul@crapouillou.net>,
-	Chunyan Zhang <zhang.lyra@gmail.com>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Andreas =?iso-8859-1?Q?F=E4rber?= <afaerber@suse.de>,
-	Jonathan Hunter <jonathanh@nvidia.com>,
-	Abel Vesa <abelvesa@kernel.org>,
-	Charles Keepax <ckeepax@opensource.cirrus.com>,
-	Alessandro Zummo <a.zummo@towertech.it>,
-	Peter De Schrijver <pdeschrijver@nvidia.com>,
-	Orson Zhai <orsonzhai@gmail.com>,
-	Alexandre Torgue <alexandre.torgue@foss.st.com>,
-	Prashant Gaikwad <pgaikwad@nvidia.com>,
-	Liam Girdwood <lgirdwood@gmail.com>,
-	Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Samuel Holland <samuel@sholland.org>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	Richard Fitzgerald <rf@opensource.cirrus.com>,
-	Vinod Koul <vkoul@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
-	Sekhar Nori <nsekhar@ti.com>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Takashi Iwai <tiwai@suse.com>, David Airlie <airlied@gmail.com>,
-	Luca Ceresoli <luca.ceresoli@bootlin.com>,
-	Jernej Skrabec <jernej.skrabec@gmail.com>,
-	Pengutronix Kernel Team <kernel@pengutronix.de>,
-	Baolin Wang <baolin.wang@linux.alibaba.com>,
-	David Lechner <david@lechnology.com>,
-	Sascha Hauer <s.hauer@pengutronix.de>,
-	Mark Brown <broonie@kernel.org>, Max Filippov <jcmvbkbc@gmail.com>,
-	Geert Uytterhoeven <geert+renesas@glider.be>,
-	linux-stm32@st-md-mailman.stormreply.com,
-	alsa-devel@alsa-project.org, linux-mediatek@lists.infradead.org,
-	linux-phy@lists.infradead.org, linux-mips@vger.kernel.org,
-	linux-renesas-soc@vger.kernel.org,
-	linux-actions@lists.infradead.org, linux-clk@vger.kernel.org,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	patches@opensource.cirrus.com, linux-tegra@vger.kernel.org,
-	linux-rtc@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	linux-sunxi@lists.linux.dev, linux-kernel@vger.kernel.org,
-	dri-devel@lists.freedesktop.org
-Subject: Re: [PATCH v2 35/65] clk: ux500: sysctrl: Add a determine_rate hook
-Message-ID: <Y3IE3ta8hLLUcu7H@google.com>
-References: <20221018-clk-range-checks-fixes-v2-0-f6736dec138e@cerno.tech>
- <20221018-clk-range-checks-fixes-v2-35-f6736dec138e@cerno.tech>
- <CAPDyKFoycVedCJMy0=UK+q5SiPQHqje_8bSN-gdkpBa6KhFfkg@mail.gmail.com>
- <CACRpkdYOj8uozJZO4MV-_OAKeOsQHhoEM=PyynVuNY-JkpgTOw@mail.gmail.com>
- <CAPDyKFr6VeF3s47JfzJ9urtMsEem+GiBtHeU=_S8jNaz-D+qnw@mail.gmail.com>
- <CACRpkdb8uYfs6w99FVjD_t6nZgDhPUx=yB1j=CmpHTHAM2QGQw@mail.gmail.com>
+	id 1ouVgA-00HAhP-Tg
+	for linux-phy@lists.infradead.org; Mon, 14 Nov 2022 09:23:00 +0000
+Received: by mail-yw1-x112c.google.com with SMTP id 00721157ae682-368edbc2c18so100099667b3.13
+        for <linux-phy@lists.infradead.org>; Mon, 14 Nov 2022 01:22:55 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=YTSPKqKmSzN7Y9ddQTOuim0BwGIV+0OUYKAM+OJAgxU=;
+        b=FJ8f0IlKEyuFd9c7FRLCSKtPbw3QibehiiaGqUeq13/pnK5SBl1WAZuZCgYVpNe3k4
+         nIFNx26dIzPHHJJMcAJJzbYkpBv9TRwhr8h3Nn85SVR1C4jOzcg9x4IyqLcQQCgUZRaf
+         NEdfibo8iCzpRAWzKALEdeq3EuKnP5EKCDNi0FnghnveIVjSVLTcXsD8P19jRerKOAR0
+         ifvE9S/xti3oOvKMN5soUdNK9kFamqamD42vr5Zvh0qwFkcRNsLKBvjMFYTdrdI+h4Qf
+         0aA2LzoB96c8hAus+8eZ9UtahFBWs+oMBlK+zns8VlU6TeLfhiMzoR6lKDH7k4SaAl2W
+         fA/w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=YTSPKqKmSzN7Y9ddQTOuim0BwGIV+0OUYKAM+OJAgxU=;
+        b=6pMcuoVOOthb/d/QpVTse9c27HcA1q4EQPJLwxkmW9NTnugPXw7ZwY9Xgg0PyiSwWR
+         dIvAl8cIaQMcuCUC8fUlmiEKGlzstDfjtd9RAKjaH0ki89+jgfM8vg9yBQQLylUnCMSY
+         qs7SytfGVHDbxYkEVEkHg4D1HS1I3iOcs2yX0jmkfTGrXmOnEdEuEGmZbvpRa7XKdgkB
+         /DIkhHyG/iIPtCZJIPH+wQgvGszx4j4Rte+j11fLSvrQS8VsHZ7k7NXgdJMM7+zEkHfP
+         xeUv0KXNGaUAW+fiEmGrvFjpcobj2f4xkMqoMpGBFBzF1AkWTtw4HAe4R+hwag/rgK51
+         +OwQ==
+X-Gm-Message-State: ANoB5pkpKHVmsllhTat3DTdwvgs52M8b4Uh1j1nQPSvhxMAHPNM6qiIK
+	wXLfq0IlqGuLfY4Jhg57PPXjhM2W+Rdo76Cubm0uRerhPSw=
+X-Google-Smtp-Source: AA0mqf6Eb3N3yWA9GPPGTDup7DI7EWbsnHCkjc6p+IN70Fp46vORCtD3Crhhj/Vg7Sc8Pa8MQ7wdH5SW7I+84etan38=
+X-Received: by 2002:a81:9297:0:b0:370:547a:9d03 with SMTP id
+ j145-20020a819297000000b00370547a9d03mr12582358ywg.132.1668417774745; Mon, 14
+ Nov 2022 01:22:54 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CACRpkdb8uYfs6w99FVjD_t6nZgDhPUx=yB1j=CmpHTHAM2QGQw@mail.gmail.com>
+References: <20221111085643.9478-1-johan+linaro@kernel.org>
+ <20221111085643.9478-19-johan+linaro@kernel.org> <54d3d1b4-29de-4d18-a39e-bf74a5c61509@linaro.org>
+ <Y3ID+jTI4Bf6wvh2@hovoldconsulting.com>
+In-Reply-To: <Y3ID+jTI4Bf6wvh2@hovoldconsulting.com>
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Date: Mon, 14 Nov 2022 12:22:43 +0300
+Message-ID: <CAA8EJpqbrefwFxsudjm=-P8xYSg2Q5tXkvjOSKCt6qqbO5ubPg@mail.gmail.com>
+Subject: Re: [PATCH 18/22] phy: qcom-qmp-combo: merge driver data
+To: Johan Hovold <johan@kernel.org>
+Cc: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
+	Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
+	Konrad Dybcio <konrad.dybcio@linaro.org>, linux-arm-msm@vger.kernel.org, 
+	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221114_010552_524881_E3E4F38D 
-X-CRM114-Status: GOOD (  37.44  )
+X-CRM114-CacheID: sfid-20221114_012258_984791_2EDDE3EE 
+X-CRM114-Status: GOOD (  24.47  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -119,57 +84,180 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gRnJpLCAxMSBOb3YgMjAyMiwgTGludXMgV2FsbGVpaiB3cm90ZToKCj4gT24gVGh1LCBOb3Yg
-MTAsIDIwMjIgYXQgMjowNSBQTSBVbGYgSGFuc3NvbiA8dWxmLmhhbnNzb25AbGluYXJvLm9yZz4g
-d3JvdGU6Cj4gPiBPbiBUaHUsIDEwIE5vdiAyMDIyIGF0IDEyOjM5LCBMaW51cyBXYWxsZWlqIDxs
-aW51cy53YWxsZWlqQGxpbmFyby5vcmc+IHdyb3RlOgo+ID4gPgo+ID4gPiBPbiBUaHUsIE5vdiAx
-MCwgMjAyMiBhdCAxMjoyOSBQTSBVbGYgSGFuc3NvbiA8dWxmLmhhbnNzb25AbGluYXJvLm9yZz4g
-d3JvdGU6Cj4gPiA+ID4gT24gRnJpLCA0IE5vdiAyMDIyIGF0IDE0OjMyLCBNYXhpbWUgUmlwYXJk
-IDxtYXhpbWVAY2Vybm8udGVjaD4gd3JvdGU6Cj4gPiA+ID4gPgo+ID4gPiA+ID4gVGhlIFVYNTAw
-IHN5c2N0cmwgInNldF9wYXJlbnQiIGNsb2NrcyBpbXBsZW1lbnQgYSBtdXggd2l0aCBhIHNldF9w
-YXJlbnQKPiA+ID4gPiA+IGhvb2ssIGJ1dCBkb2Vzbid0IHByb3ZpZGUgYSBkZXRlcm1pbmVfcmF0
-ZSBpbXBsZW1lbnRhdGlvbi4KPiA+ID4gPiA+Cj4gPiA+ID4gPiBUaGlzIGlzIGEgYml0IG9kZCwg
-c2luY2Ugc2V0X3BhcmVudCgpIGlzIHRoZXJlIHRvLCBhcyBpdHMgbmFtZSBpbXBsaWVzLAo+ID4g
-PiA+ID4gY2hhbmdlIHRoZSBwYXJlbnQgb2YgYSBjbG9jay4gSG93ZXZlciwgdGhlIG1vc3QgbGlr
-ZWx5IGNhbmRpZGF0ZSB0bwo+ID4gPiA+ID4gdHJpZ2dlciB0aGF0IHBhcmVudCBjaGFuZ2UgaXMg
-YSBjYWxsIHRvIGNsa19zZXRfcmF0ZSgpLCB3aXRoCj4gPiA+ID4gPiBkZXRlcm1pbmVfcmF0ZSgp
-IGZpZ3VyaW5nIG91dCB3aGljaCBwYXJlbnQgaXMgdGhlIGJlc3Qgc3VpdGVkIGZvciBhCj4gPiA+
-ID4gPiBnaXZlbiByYXRlLgo+ID4gPiA+ID4KPiA+ID4gPiA+IFRoZSBvdGhlciB0cmlnZ2VyIHdv
-dWxkIGJlIGEgY2FsbCB0byBjbGtfc2V0X3BhcmVudCgpLCBidXQgaXQncyBmYXIgbGVzcwo+ID4g
-PiA+ID4gdXNlZCwgYW5kIGl0IGRvZXNuJ3QgbG9vayBsaWtlIHRoZXJlJ3MgYW55IG9idmlvdXMg
-dXNlciBmb3IgdGhhdCBjbG9jay4KPiA+ID4gPgo+ID4gPiA+IElmIEkgcmVjYWxsIGNvcnJlY3Rs
-eSwgdGhhdCBpcyB0aGUgdXNlIGNhc2Ugd2UgZGlkIHRhcmdldCBmb3IgdGhlc2UKPiA+ID4gPiB0
-eXBlcyBvZiBjbG9ja3MuIFNlZSBzb3VuZC9zb2MvdXg1MDAvdXg1MDBfYWI4NXh4LmMsIGZvciBl
-eGFtcGxlLgo+ID4gPgo+ID4gPiBIbSBJIGFtIHRyeWluZyB0byBnZXQgdGhhdCBkcml2ZXIgdG8g
-d29yayAuLi4gZnJvbSB0aW1lIHRvIHRpbWUuCj4gPiA+IEl0J3MganVzdCB0aGF0IEFMU0EgU29D
-IERUIGhhcyBjaGFuZ2VkIHRvIG11Y2ggdGhhdCBpdCB0dXJucyBvdXQKPiA+ID4gaW50byBhIGNv
-bXBsZXRlIHJld3JpdGUgOi8KPiA+ID4KPiA+ID4gU28gaW4gc291bmQvc29jL3V4NTAwL21vcDUw
-MF9hYjg1MDAuYwo+ID4gPiBJIHNlZSB0aGlzOgo+ID4gPgo+ID4gPiAgICAgICAgIHN0YXR1cyA9
-IGNsa19zZXRfcGFyZW50KGRydmRhdGEtPmNsa19wdHJfaW50Y2xrLCBjbGtfcHRyKTsKPiA+ID4g
-ICAgICAgICBpZiAoc3RhdHVzKQo+ID4gPiAoLi4uKQo+ID4gPgo+ID4gPiBhbmQgdGhlcmUgaXMg
-ZWxhYm9yYXRlIGNvZGUgdG8gc3dpdGNoIGJldHdlZW4gIlNZU0NMSyIgYW5kCj4gPiA+ICJVTFBD
-TEsiICh1bHRhLWxvdyBwb3dlciBjbG9jaykuIEp1c3QgbGlrZSB5b3Ugc2F5Li4uIGhvd2V2ZXIK
-PiA+ID4gYSBjbG9jayBuYW1lZCBTWVNDTEsgb3IgVUxQQ0xLIGRvZXMgbm90IGFwcGVhciBpbiB0
-aGUKPiA+ID4gY29kZSBpbiBkcml2ZXJzL2Nsay91eDUwMCBvciBhbnkgRFQgYmluZGluZ3Mgc28u
-Li4gaXQgc2VlbXMgdG8KPiA+ID4gYmUgbm9uLXdvcmtpbmcgZm9yIHRoZSB0aW1lIGJlaW5nLgo+
-ID4KPiA+IEl0J3MgZGVmaW5pdGVseSBub3Qgd29ya2luZywgYnV0IHRoZSBjb3JyZXNwb25kaW5n
-IGNsb2NrcyAoInVscGNsayIsCj4gPiAiaW50Y2xrIiwgImF1ZGlvY2xrIiwgZXRjKSBhcmUgYmVp
-bmcgcmVnaXN0ZXJlZCBpbiBhYjg1MDBfcmVnX2Nsa3MoKS4KPiA+Cj4gPiBXaGF0IHNlZW1zIHRv
-IGJlIG1pc3NpbmcgaXMgYSBEVCBjb252ZXJzaW9uIGZvciB0aGVzZSBjbG9ja3MsIHNvIHRoZXkK
-PiA+IGNhbiBiZSBjb25zdW1lZCBwcm9wZXJseS4gUmlnaHQ/Cj4gCj4gWWVwcyB0aGF0IGFuZCBh
-IGZldyBtb3JlIHRoaW5ncywgSSBoYXZlIGEgc2NyYXRjaCByZXdyaXRlIGhlcmU6Cj4gaHR0cHM6
-Ly9naXQua2VybmVsLm9yZy9wdWIvc2NtL2xpbnV4L2tlcm5lbC9naXQvbGludXN3L2xpbnV4LXN0
-ZXJpY3Nzb24uZ2l0L2xvZy8/aD11eDUwMC1hdWRpby1yZXdyaXRlCj4gCj4gSSByZW1lbWJlciBM
-ZWUgc2FpZCBoZSBoYWQgYXVkaW8gd29ya2luZyB3aXRoIHRoZSBtYWlubGluZSBrZXJuZWwKPiBv
-biBTbm93YmFsbCBhdCBvbmUgcG9pbnQsIHVuZm9ydHVuYXRlbHkgSSB0aGluayB0aGF0IHdhcyBi
-ZWZvcmUgd2UKPiBzdGFydGVkIHdpdGggdGhlIERUIGNvbnZlcnNpb25zIGFuZCB0aGVuIHdlIHBy
-b2JhYmx5IGJyb2tlIGl0LgoKVGhhdCB3YXMgYWxzbyAxMDAgeWVhcnMgYWdvLiA6KQoKQnV0IHll
-cywgaXQgdXNlZCB0byB3b3JrIGF0IG9uZSBwb2ludC4KCi0tIApMZWUgSm9uZXMgW+adjueQvOaW
-r10KCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQu
-b3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBo
-eQo=
+On Mon, 14 Nov 2022 at 12:02, Johan Hovold <johan@kernel.org> wrote:
+>
+> On Sat, Nov 12, 2022 at 10:46:53AM +0300, Dmitry Baryshkov wrote:
+> > On 11/11/2022 11:56, Johan Hovold wrote:
+> > > The QMP combo driver manages a single PHY (even if it provides two
+> > > interfaces for USB and DP, respectively) so merge the old qcom_qmp and
+> > > qmp_phy structures and drop the PHY array.
+> > >
+> > > Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
+> > > ---
+> > >   drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 690 ++++++++++------------
+> > >   1 file changed, 313 insertions(+), 377 deletions(-)
+> > >
+>
+> > > -/**
+> > > - * struct qmp_phy - per-lane phy descriptor
+> > > - *
+> > > - * @phy: generic phy
+> > > - * @cfg: phy specific configuration
+> > > - * @serdes: iomapped memory space for phy's serdes (i.e. PLL)
+> > > - * @tx: iomapped memory space for lane's tx
+> > > - * @rx: iomapped memory space for lane's rx
+> > > - * @pcs: iomapped memory space for lane's pcs
+> > > - * @tx2: iomapped memory space for second lane's tx (in dual lane PHYs)
+> > > - * @rx2: iomapped memory space for second lane's rx (in dual lane PHYs)
+> > > - * @pcs_misc: iomapped memory space for lane's pcs_misc
+> > > - * @pcs_usb: iomapped memory space for lane's pcs_usb
+> > > - * @pipe_clk: pipe clock
+> > > - * @qmp: QMP phy to which this lane belongs
+> > > - * @mode: current PHY mode
+> > > - * @dp_aux_cfg: Display port aux config
+> > > - * @dp_opts: Display port optional config
+> > > - * @dp_clks: Display port clocks
+> > > - */
+> > > -struct qmp_phy {
+> > > -   struct phy *phy;
+> > > +struct qmp_phy_dp_clks {
+> > > +   struct qmp_combo *qmp;
+> > > +   struct clk_hw dp_link_hw;
+> > > +   struct clk_hw dp_pixel_hw;
+> > > +};
+> > > +
+> >
+> > It would make sense to keep the kerneldoc here.
+>
+> I disagree. The above kernel doc is at best pointless and mostly just
+> restates what can be understood from the field names.
+
+Well, if viewed this way, 80% of kerneldocs's are pointless, as most
+of the fields are self-describing.
+In this case I can agree with you though. Especially since the struct
+is not a part of the public API.
+
+>
+> Note how it also incorrect by referring to "memory space for *lane's*
+
+I assumed that `lane's rx' and `lane's tx' were ugly wording. But yeah.
+
+> ...".
+>
+> > > +struct qmp_combo {
+> > > +   struct device *dev;
+> > > +
+> > >     const struct qmp_phy_cfg *cfg;
+> > > +
+> > > +   void __iomem *dp_com;
+> > > +
+> > >     void __iomem *serdes;
+> > >     void __iomem *tx;
+> > >     void __iomem *rx;
+> > > @@ -899,59 +889,33 @@ struct qmp_phy {
+> > >     void __iomem *dp_pcs;
+> > >
+> > >     struct clk *pipe_clk;
+> > > -   struct qcom_qmp *qmp;
+> > > -   enum phy_mode mode;
+> > > -   unsigned int dp_aux_cfg;
+> > > -   struct phy_configure_opts_dp dp_opts;
+> > > -   struct qmp_phy_dp_clks *dp_clks;
+> > > -};
+> > > -
+> > > -struct qmp_phy_dp_clks {
+> > > -   struct qmp_phy *qphy;
+> > > -   struct clk_hw dp_link_hw;
+> > > -   struct clk_hw dp_pixel_hw;
+> > > -};
+> > > -
+> > > -/**
+> > > - * struct qcom_qmp - structure holding QMP phy block attributes
+> > > - *
+> > > - * @dev: device
+> > > - * @dp_com: iomapped memory space for phy's dp_com control block
+> > > - *
+> > > - * @clks: array of clocks required by phy
+> > > - * @resets: array of resets required by phy
+> > > - * @vregs: regulator supplies bulk data
+> > > - *
+> > > - * @phys: array of per-lane phy descriptors
+> > > - * @phy_mutex: mutex lock for PHY common block initialization
+> > > - * @init_count: phy common block initialization count
+> > > - */
+> > > -struct qcom_qmp {
+> > > -   struct device *dev;
+> > > -   void __iomem *dp_com;
+> > > -
+> > >     struct clk_bulk_data *clks;
+> > >     struct reset_control_bulk_data *resets;
+> > >     struct regulator_bulk_data *vregs;
+> > >
+> > > -   struct qmp_phy **phys;
+> > > -   struct qmp_phy *usb_phy;
+> > > -
+> > >     struct mutex phy_mutex;
+> > >     int init_count;
+> > > +
+> > > +   struct phy *usb_phy;
+> > > +   enum phy_mode mode;
+> > > +
+> > > +   struct phy *dp_phy;
+> > > +   unsigned int dp_aux_cfg;
+> > > +   struct phy_configure_opts_dp dp_opts;
+> > > +   struct qmp_phy_dp_clks *dp_clks;
+> > >   };
+> > >
+> > > -static void qcom_qmp_v3_phy_dp_aux_init(struct qmp_phy *qphy);
+> > > -static void qcom_qmp_v3_phy_configure_dp_tx(struct qmp_phy *qphy);
+> > > -static int qcom_qmp_v3_phy_configure_dp_phy(struct qmp_phy *qphy);
+> > > -static int qcom_qmp_v3_dp_phy_calibrate(struct qmp_phy *qphy);
+> > > +static void qcom_qmp_v3_phy_dp_aux_init(struct qmp_combo *qmp);
+> > > +static void qcom_qmp_v3_phy_configure_dp_tx(struct qmp_combo *qmp);
+> > > +static int qcom_qmp_v3_phy_configure_dp_phy(struct qmp_combo *qmp);
+> > > +static int qcom_qmp_v3_dp_phy_calibrate(struct qmp_combo *qmp);
+> > >
+> > > -static void qcom_qmp_v4_phy_dp_aux_init(struct qmp_phy *qphy);
+> > > -static void qcom_qmp_v4_phy_configure_dp_tx(struct qmp_phy *qphy);
+> > > -static int qcom_qmp_v4_phy_configure_dp_phy(struct qmp_phy *qphy);
+> > > -static int qcom_qmp_v4_dp_phy_calibrate(struct qmp_phy *qphy);
+> > > +static void qcom_qmp_v4_phy_dp_aux_init(struct qmp_combo *qmp);
+> > > +static void qcom_qmp_v4_phy_configure_dp_tx(struct qmp_combo *qmp);
+> > > +static int qcom_qmp_v4_phy_configure_dp_phy(struct qmp_combo *qmp);
+> > > +static int qcom_qmp_v4_dp_phy_calibrate(struct qmp_combo *qmp);
+> > >
+> > > -static int qcom_qmp_v5_phy_configure_dp_phy(struct qmp_phy *qphy);
+> > > +static int qcom_qmp_v5_phy_configure_dp_phy(struct qmp_combo *qmp);
+> >
+> >
+> > As you are doing the cleanup anyway, would it make sense to move these
+> > functions up to be able to drop these prototypes?
+>
+> Nah, we want to keep the DP implementation together and for now the
+> configuration structs live at the top of the file.
+>
+> > >
+> > >   static inline void qphy_setbits(void __iomem *base, u32 offset, u32 val)
+> > >   {
+> > > @@ -1265,11 +1229,11 @@ static void qmp_combo_configure(void __iomem *base,
+> >
+> >
+> > The rest LGTM
+>
+> Thanks for reviewing all of these these.
+
+Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+
+-- 
+With best wishes
+Dmitry
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
