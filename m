@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A9439C43219
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E015CC43217
 	for <linux-phy@archiver.kernel.org>; Mon, 14 Nov 2022 11:07:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,39 +12,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nqrXBg771iIK16M+DPkOii8ZlSyMO5g7vjfeD1E6mlQ=; b=ZyLr8NT3bLubCv
-	MupNjbopQZzURtf2A4uLAfhP8F3Yh9KBJQEkcmqywS7kaFgsAKEPp0E3M9sVFzrAQSUXeuRCLjts0
-	vfZwSqxEgHueMdmOXERdclXHwtCp9neEBvOQ7Rw7NYLBaM1+ibjc5Lr8HVcl9B2RS220hmayIL2o0
-	VxN3DZtMVeKO/Tqyjjmo6hhD9FhRIIrzFERuHQ5xyvkmGWf9+awr6smkoNYVBS4k2Vjw5DFZXK4c6
-	OHBFaqqHcTiLwMNEeoorfyD0TTZl/7GNKxhEjyc6yNdMyT+48ME/GzNtnsZNeTSzqz861S+nozMWY
-	WqgOpUAPXph+BMvfIxzg==;
+	List-Owner; bh=t7Gg7rd3Lhi6HJyelOnr2J9orQB7PjJ4PUBs/QZKB6k=; b=Y9pz8gZwgsUnR4
+	RoSpv2v6TMXuPmwo5LsXBH3FxVrSscR7r/SfzFRi38ToxCgZH+OUIMp9oZ+u9jJAZ3PGPU2gDAw2S
+	d7jqsbszZyjW+1NWOMjqzpt/V3Xq1TXYVEknzr+pHaU7ZTAr1WYblf8FFh1C71XJXTiU/+pZSusv2
+	Spso5wusWgFPWX9WKrYy96pnZZrlAzoAw1cQiCt8UQvRyak6pndefPyxo4tvTRjMnGjgj4YsRJbYU
+	lW0yhiJCmjbgUxPVal565DB9Vp/szir1ZzZEJq8nGEB/6qheQH2f8qB4X0K+KVdCABOmorOGv7m7W
+	bWdoZbVCrO3s9VXUrE8Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ouXJQ-000D2l-0L; Mon, 14 Nov 2022 11:07:36 +0000
+	id 1ouXJQ-000D2v-5F; Mon, 14 Nov 2022 11:07:36 +0000
 Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ouXJ6-000Cnq-KP
+	id 1ouXJ6-000Cnc-HX
 	for linux-phy@lists.infradead.org; Mon, 14 Nov 2022 11:07:18 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 165716101A;
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 0EB1961030;
 	Mon, 14 Nov 2022 11:07:16 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E5D00C4315D;
-	Mon, 14 Nov 2022 11:07:13 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 17BE8C4FEB5;
+	Mon, 14 Nov 2022 11:07:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1668424033;
-	bh=3oKBVvbim8AnILN7ovfk5Q/WICjkxryDGKgk86VJ0wQ=;
+	s=k20201202; t=1668424034;
+	bh=TDErkI5MMhhMepYhg2GqGRdafBU+C2asoAiXs1z2LYs=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=Ow1nNeFOTv3yxZwqzIwbFSZ3b+zPr4r2YVn82VeWPXR6Rmy895qmA6/1A5cxC3pBs
-	 bC1q4c9+sT9ddKSJnaRWUXikKOlQRig+vklMqugzLH1765+us6wbfF/WHgjG3NQgHG
-	 wo544QdP5RJ4oeIwIzkRUr388n51+G6crOM6btDgGj/XCGqEXGBTgeqHcnv4Vdo9SS
-	 v+dAlJgoS/i1lq73FiqgYcDqcAJPLkBCkcPiB9Vyt+1Uc7+w3FCILG3O2sXXUSDe+I
-	 2eI/0483wWhUadZWp9UdDlCijogTYLDB8VMIM/pxGB3c9p2wrc5pd1cd100wTPpVkn
-	 sxLEIVV0GvDYQ==
+	b=RthtirqcOUdJX6WOeFLLN3ZauKjFZI1oqX78kgNh2FQrxfImCaKt5qLbA4y8lJKx9
+	 C9N0SYfSxpOXvnpslAYHwiCOS4Zq9msoJm11vhtITKTgFAFd2n89oyBK34xItDWQ9f
+	 i4WBmORP3p2pD6vJCFb7nqxx+NGqrjKK1uWsjSewwk7iZOF8MP8DlPRFmqKQy8hGjL
+	 Pu3Cg/kK97982xNSlckZGzhjA322NZ8CtEdg1mXW11hbXd9EihVu0uLDiADgZ9VyEO
+	 40kgPYDJwXOyU4DeUqAdMxtY7Kkal1/n+bWLL6zm7oguWQQscutPw62xWIowZR4KuX
+	 WrmthmZvLEgZA==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1ouXIY-0001Ed-8E; Mon, 14 Nov 2022 12:06:42 +0100
+	id 1ouXIY-0001Eo-GF; Mon, 14 Nov 2022 12:06:42 +0100
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>
 Cc: Andy Gross <agross@kernel.org>,
@@ -55,16 +55,16 @@ Cc: Andy Gross <agross@kernel.org>,
 	linux-phy@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH v2 06/22] phy: qcom-qmp-combo: rename USB PHY ops
-Date: Mon, 14 Nov 2022 12:06:05 +0100
-Message-Id: <20221114110621.4639-7-johan+linaro@kernel.org>
+Subject: [PATCH v2 09/22] phy: qcom-qmp-combo: rename DP PHY ops
+Date: Mon, 14 Nov 2022 12:06:08 +0100
+Message-Id: <20221114110621.4639-10-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.37.4
 In-Reply-To: <20221114110621.4639-1-johan+linaro@kernel.org>
 References: <20221114110621.4639-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221114_030716_750445_A52A4231 
-X-CRM114-Status: GOOD (  11.61  )
+X-CRM114-CacheID: sfid-20221114_030716_687733_FBE3499A 
+X-CRM114-Status: GOOD (  11.59  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,59 +81,49 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add a "usb" infix to the USB PHY operation functions and name them
-after the corresponding operations (e.g. "init" rather than "enable").
+Rename the configure and calibrate DP PHY ops using the common prefix
+for consistency.
 
 Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 12 ++++++------
- 1 file changed, 6 insertions(+), 6 deletions(-)
+ drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
 diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-index cec487560fd7..bf0874d22d91 100644
+index 5d985195df38..7392ae460fd7 100644
 --- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
 +++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-@@ -2084,7 +2084,7 @@ static int qmp_combo_exit(struct phy *phy)
+@@ -1842,7 +1842,7 @@ static int qcom_qmp_v4_dp_phy_calibrate(struct qmp_phy *qphy)
  	return 0;
  }
  
--static int qmp_combo_enable(struct phy *phy)
-+static int qmp_combo_usb_init(struct phy *phy)
+-static int qcom_qmp_dp_phy_configure(struct phy *phy, union phy_configure_opts *opts)
++static int qmp_combo_dp_configure(struct phy *phy, union phy_configure_opts *opts)
  {
- 	int ret;
- 
-@@ -2099,7 +2099,7 @@ static int qmp_combo_enable(struct phy *phy)
- 	return ret;
+ 	const struct phy_configure_opts_dp *dp_opts = &opts->dp;
+ 	struct qmp_phy *qphy = phy_get_drvdata(phy);
+@@ -1857,7 +1857,7 @@ static int qcom_qmp_dp_phy_configure(struct phy *phy, union phy_configure_opts *
+ 	return 0;
  }
  
--static int qmp_combo_disable(struct phy *phy)
-+static int qmp_combo_usb_exit(struct phy *phy)
- {
- 	int ret;
- 
-@@ -2109,7 +2109,7 @@ static int qmp_combo_disable(struct phy *phy)
- 	return qmp_combo_exit(phy);
- }
- 
--static int qmp_combo_set_mode(struct phy *phy, enum phy_mode mode, int submode)
-+static int qmp_combo_usb_set_mode(struct phy *phy, enum phy_mode mode, int submode)
+-static int qcom_qmp_dp_phy_calibrate(struct phy *phy)
++static int qmp_combo_dp_calibrate(struct phy *phy)
  {
  	struct qmp_phy *qphy = phy_get_drvdata(phy);
+ 	const struct qmp_phy_cfg *cfg = qphy->cfg;
+@@ -2127,9 +2127,9 @@ static const struct phy_ops qmp_combo_usb_phy_ops = {
  
-@@ -2119,9 +2119,9 @@ static int qmp_combo_set_mode(struct phy *phy, enum phy_mode mode, int submode)
- }
- 
- static const struct phy_ops qmp_combo_usb_phy_ops = {
--	.init		= qmp_combo_enable,
--	.exit		= qmp_combo_disable,
--	.set_mode	= qmp_combo_set_mode,
-+	.init		= qmp_combo_usb_init,
-+	.exit		= qmp_combo_usb_exit,
-+	.set_mode	= qmp_combo_usb_set_mode,
+ static const struct phy_ops qmp_combo_dp_phy_ops = {
+ 	.init		= qmp_combo_dp_init,
+-	.configure	= qcom_qmp_dp_phy_configure,
++	.configure	= qmp_combo_dp_configure,
+ 	.power_on	= qmp_combo_power_on,
+-	.calibrate	= qcom_qmp_dp_phy_calibrate,
++	.calibrate	= qmp_combo_dp_calibrate,
+ 	.power_off	= qmp_combo_power_off,
+ 	.exit		= qmp_combo_dp_exit,
  	.owner		= THIS_MODULE,
- };
- 
 -- 
 2.37.4
 
