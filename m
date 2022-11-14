@@ -4,80 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3629FC433FE
-	for <linux-phy@archiver.kernel.org>; Mon, 14 Nov 2022 16:56:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B99F1C433FE
+	for <linux-phy@archiver.kernel.org>; Mon, 14 Nov 2022 17:12:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=odiUyR7Uj3/VOvzQNiUmKRsfuCYJYjHquKkkRzj5PIk=; b=Jkd6ASdRpqRd9I
-	6dUQ2ILRO6PGFGSgcQFTOxSSVgulHfQhNlQIVsY2oYW6lbAe6KqUzmen4RYXXFRVXwaNwKgwA6Jwy
-	jJD9IU/2jFs++PmQHhi+pMu94JEeW2uOAvG29khxN+V6nIX/n8zu3XeL+i+QlfkI6Yp4pkaOZeRDd
-	4si5sfYnrYbYsWobC1puEJm6IyvGhR/zjh+djrFyjNN7DpWO3ofCSow8xiAU/iyqZAPcgknqrMqj4
-	S3dLe3234z6m6Oz3KzOsmpI/8dIz3UaQn+vYuAVxh2E4BbbgwrWWZu/tnq7uZHr1DjAqJvGSYcleJ
-	/S9MWH4k3s9som38kcIQ==;
+	List-Owner; bh=4fH2+dYlVehg2VtaMY7D+ltkJNqjIYjsjcTTa0I5mnk=; b=zGU3VC0mreNqjN
+	Am/+W7B8d4IVZBMBI/9TiGK6wbrvU0VoRuVfHS/9Iq9C98TqtgtZSLdlHB7LozQJoHqDiZlf3IGlG
+	V5ihWbBDbuRCuKkeLAeyDZ8gQNyrN758hgzOFetvWU2JkOnFE75nJR9g53xcN08Ddb6XVQP7KlEMH
+	aV9Fg33FhLj5NejTI3BR1Y2UcXoOfR1HqzuDhiR9siV8yliXZ12axijz++YctZIFjs+xuI2+UH/yy
+	19MgGAP+026dd9DynqNDuuIKpLD8rNAxZhx+YJdnEFM4t/R++CorZV2c4jLDDPigJKrkUx5G4dMoE
+	dp2Y7US1iF87q1yE0fhw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oucl5-002u9A-7E; Mon, 14 Nov 2022 16:56:31 +0000
-Received: from mail-lf1-x12e.google.com ([2a00:1450:4864:20::12e])
+	id 1oud0w-00333D-G8; Mon, 14 Nov 2022 17:12:54 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oucl2-002u4v-58
-	for linux-phy@lists.infradead.org; Mon, 14 Nov 2022 16:56:29 +0000
-Received: by mail-lf1-x12e.google.com with SMTP id g12so20325068lfh.3
-        for <linux-phy@lists.infradead.org>; Mon, 14 Nov 2022 08:56:24 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=Y58GC68qONNsMENmg/gVzchuwfipMrSIXXvNyA3gkbg=;
-        b=erS66v2Lwbd/Bxw+cRVGXpnK35dtxrMBXRB+gqK+ylQztNcHOO9KdsKrDgfgjZcEX+
-         ouaZTMB5YfsbyHkyDGm6jELbRu5So6/39tYq+IF6XHddJfI5TTmJ4z6iAg8DVsHMGfl0
-         HaJS/gZBtc22idWiPmbWpoymiy/5C7d267VVNe/NDMKjydsr3ooRdpDux5wD1rFsajuf
-         7siXOYyiajlxTPPIFiuXXDqe/6sddtRVNlm3w3MN/yBBk+Bcfsh4/TSgWH0yt5p50G56
-         2ymTpYLIj7UDHMugg/DMFidpg2JVq3pWUw/KNzYlaCzSBmeDP7NsY+xy/0oLaJSQmZxz
-         U4vA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=Y58GC68qONNsMENmg/gVzchuwfipMrSIXXvNyA3gkbg=;
-        b=JSNf2CtVBc8oSVK/faKpvhvVjYNmeRJ8dN8G6MeHx4avtnokODtiWg+kteFkY1hShz
-         dllT5jrlIA/SFI3u2FP5fHMpocXPg5Go9Se8wVqrL9kXIkzQZoPJ3W4fbqsLIGJIa4/G
-         PTWOMfkNuar0zPRzoyd+3/LcA7uS8x6HUR8Tb1Zj8GxFN/DZNWlgTnSbwlNIfeNl5vZH
-         huXwHOR99G6FuqvcGqQ0bu00La9vGIuTtdxJmbDfXUZ+7pVqjHkFME57ZFqHon5/bXrm
-         3DiLjFmIaA+OhVSNZdlzYStY66gci4jQIFNqgoLNgDbcg4Val24RZ7V0tfd2HLQpJqGf
-         8sDQ==
-X-Gm-Message-State: ANoB5pneWQ3kKczUmmrEWXSt9cEa4wHTCdrl8r78YCuU29wcwHWKemrM
-	TXjgHgvtLS4vyW9uFICrut4SwA==
-X-Google-Smtp-Source: AA0mqf6nd4/xXmES0TovIm34CZ9x5BlOLPTUbu60+ZDPXCjvtXdVhANJep/PDnB+Ud+HWFXHnhLUzQ==
-X-Received: by 2002:a05:6512:3414:b0:4a2:2b23:f17f with SMTP id i20-20020a056512341400b004a22b23f17fmr4121950lfr.688.1668444983295;
-        Mon, 14 Nov 2022 08:56:23 -0800 (PST)
-Received: from [192.168.0.20] (088156142067.dynamic-2-waw-k-3-2-0.vectranet.pl. [88.156.142.67])
-        by smtp.gmail.com with ESMTPSA id q3-20020a19f203000000b00493014c3d7csm1882169lfh.309.2022.11.14.08.56.22
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 14 Nov 2022 08:56:22 -0800 (PST)
-Message-ID: <8420c342-9dce-aea7-8d1e-f141e0c1ebb5@linaro.org>
-Date: Mon, 14 Nov 2022 17:56:21 +0100
-MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.4.2
+	id 1oucx2-002z8Z-9e
+	for linux-phy@lists.infradead.org; Mon, 14 Nov 2022 17:08:53 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id A71896131B;
+	Mon, 14 Nov 2022 17:08:51 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 07EB5C433D6;
+	Mon, 14 Nov 2022 17:08:51 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1668445731;
+	bh=nLP0ZNboWVONXh3vcZ+RBsQATflLw39DNNAy7jBUUuY=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=tysbVSveryf2eeWISCylrpUo/1kIP5i8+Ys+T7IwLJ0h7M60xDS2EBR0DMS2uBYaT
+	 WMvdNsgE44bqARSBvkj0H4QCdsiC9Pu4085CBqyxd8Y6y5nMeYHJiCJSa8MEydj6Pr
+	 9r0vBOxRpLHET7wbB2XDH/WNj+LR8Rejh9v5bOijlsP9Sp+r2zaKm0CXj4TXirQXBg
+	 B8pH5CBDHw2fxgs0KPLHR/M0dImtozbGEHnxpAzJu2SyVM7GPDyhfsZ4TmcxLFNsk/
+	 JLX4Y165Dk39Ktw7RmouUJg3ltxLemklC+vItFC4WstEJmW1FfOh3xMyJTKYmh03EZ
+	 V9bRt8YMl7H4A==
+Received: from johan by xi.lan with local (Exim 4.94.2)
+	(envelope-from <johan@kernel.org>)
+	id 1oucwU-0005RO-H9; Mon, 14 Nov 2022 18:08:19 +0100
+Date: Mon, 14 Nov 2022 18:08:18 +0100
+From: Johan Hovold <johan@kernel.org>
+To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Cc: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+	Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
 Subject: Re: [PATCH 02/14] dt-bindings: phy: qcom,qmp-usb3-dp: fix sc8280xp
  bindings
-Content-Language: en-US
-To: Johan Hovold <johan@kernel.org>
-Cc: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konrad.dybcio@linaro.org>, Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-References: <20221111092457.10546-1-johan+linaro@kernel.org>
- <20221111092457.10546-3-johan+linaro@kernel.org>
+Message-ID: <Y3J2AjjjsybI9mKd@hovoldconsulting.com>
+References: <20221111092457.10546-3-johan+linaro@kernel.org>
  <a22888cd-34cb-3453-0dc2-096da208564c@linaro.org>
  <Y3JCVzJ74YsfcDz4@hovoldconsulting.com>
  <de3a426a-03e8-ed15-a9a1-bb300e776e5f@linaro.org>
@@ -86,11 +69,13 @@ References: <20221111092457.10546-1-johan+linaro@kernel.org>
  <Y3JthM1jC2vH1Kn+@hovoldconsulting.com>
  <efd412d0-7411-8b0b-4700-9e183a592048@linaro.org>
  <Y3JxZ+yFMLZkwNBi@hovoldconsulting.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <Y3JxZ+yFMLZkwNBi@hovoldconsulting.com>
+ <8420c342-9dce-aea7-8d1e-f141e0c1ebb5@linaro.org>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <8420c342-9dce-aea7-8d1e-f141e0c1ebb5@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221114_085628_230419_C3D46E7F 
-X-CRM114-Status: GOOD (  18.34  )
+X-CRM114-CacheID: sfid-20221114_090852_438464_82A1097D 
+X-CRM114-Status: GOOD (  27.28  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -107,48 +92,63 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 14/11/2022 17:48, Johan Hovold wrote:
-> On Mon, Nov 14, 2022 at 05:39:26PM +0100, Krzysztof Kozlowski wrote:
->> On 14/11/2022 17:32, Johan Hovold wrote:
+On Mon, Nov 14, 2022 at 05:56:21PM +0100, Krzysztof Kozlowski wrote:
+> On 14/11/2022 17:48, Johan Hovold wrote:
+> > On Mon, Nov 14, 2022 at 05:39:26PM +0100, Krzysztof Kozlowski wrote:
+> >> On 14/11/2022 17:32, Johan Hovold wrote:
+> > 
+> >>> Fair enough, I'll drop it. But there doesn't seem to be a good way to
+> >>> describe the indexes currently and most bindings simply ignore to do so.
+> >>>
+> >>> So what is the preference then? Just leave things undocumented, listing
+> >>> indexes in a free-text 'description', or adding a free-text reference to
+> >>> a binding header file and using those define names in a free-text
+> >>> 'description'?
+> >>
+> >> Either 2 or 3. Several bindings for small number of constants choose
+> >> option 2.
+> > 
+> > Ok, we have three now, but USB4 will bump this to ten or so.
 > 
->>> Fair enough, I'll drop it. But there doesn't seem to be a good way to
->>> describe the indexes currently and most bindings simply ignore to do so.
->>>
->>> So what is the preference then? Just leave things undocumented, listing
->>> indexes in a free-text 'description', or adding a free-text reference to
->>> a binding header file and using those define names in a free-text
->>> 'description'?
->>
->> Either 2 or 3. Several bindings for small number of constants choose
->> option 2.
+> Then probably header file is the way to go.
 > 
-> Ok, we have three now, but USB4 will bump this to ten or so.
-
-Then probably header file is the way to go.
-
->  
->>> And if going with the last option, does this mean that every SoC and PHY
->>> type needs its own header for those three clocks or so to avoid having
->>> a common dumping ground header file where indexes will not necessarily
->>> be 0-based and consecutive.
->>
->> phy-qcom-qmp-combo.c has one qcom_qmp_dp_clks_hw_get(), so why would you
->> have many of header files?
+> >  
+> >>> And if going with the last option, does this mean that every SoC and PHY
+> >>> type needs its own header for those three clocks or so to avoid having
+> >>> a common dumping ground header file where indexes will not necessarily
+> >>> be 0-based and consecutive.
+> >>
+> >> phy-qcom-qmp-combo.c has one qcom_qmp_dp_clks_hw_get(), so why would you
+> >> have many of header files?
+> > 
+> > We don't know what kind of clock outputs later revisions of these PHYs
+> > will have. The only way to guarantee 0-based consecutive indexes appears
+> > to be to use per-SoC defines (e.g. as for the GCC bindings).
 > 
-> We don't know what kind of clock outputs later revisions of these PHYs
-> will have. The only way to guarantee 0-based consecutive indexes appears
-> to be to use per-SoC defines (e.g. as for the GCC bindings).
+> Which is also fine. I don't understand still why it is a problem - even
+> if you have multiple files, one for each SoC/phy. If USB4 brings here 10
+> more clocks and other SoCs/phys might bring many more options, then what
+> else can you do? Grow the binding file with big text-based mapping of
+> IDs? It's not a viable solution. Header or headers is the only
+> maintainable way for such cases.
 
-Which is also fine. I don't understand still why it is a problem - even
-if you have multiple files, one for each SoC/phy. If USB4 brings here 10
-more clocks and other SoCs/phys might bring many more options, then what
-else can you do? Grow the binding file with big text-based mapping of
-IDs? It's not a viable solution. Header or headers is the only
-maintainable way for such cases.
+So then we must add per-SoC (and PHY type) headers even if we can
+possibly reuse defines from one platform for another as long as they
+appear to be similar enough? For example, using a "SC7180_USB3_DP" infix
+for the current platforms and add a new series of indexes for SC8280XP:
 
-Best regards,
-Krzysztof
+	QMP_SC7180_USB3_DP_USB3_PIPE			0
+	QMP_SC7180_USB3_DP_DP_LINK			1
+	QMP_SC7180_USB3_DP_DP_VCO_DIV			2
 
+	QMP_SC8280XP_USB4_USB3_DP_USB3_PIPE		0
+	QMP_SC8280XP_USB4_USB3_DP_DP_LINK		1
+	QMP_SC8280XP_USB4_USB3_DP_DP_VCO_DIV		2
+	QMP_SC8280XP_USB4_USB3_DP_USB4_PCIE_PIPE	3
+	...
+	QMP_SC8280XP_USB4_USB3_DP_USB4_RX1		9
+
+Johan
 
 -- 
 linux-phy mailing list
