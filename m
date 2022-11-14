@@ -4,49 +4,49 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 73DE8C43219
-	for <linux-phy@archiver.kernel.org>; Mon, 14 Nov 2022 11:46:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9B5EAC433FE
+	for <linux-phy@archiver.kernel.org>; Mon, 14 Nov 2022 11:47:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7fooPQ6GVwXPwGEnLteu0ySj0Q1Yr82SQbfdIXt5MNI=; b=k2VXmmE9gX/898
-	NVq6Lx865wEzItUS0/kdOwZAE96cdNOzdNdRVNXX+t+JFkmcTfC6X1/AI/+O8bRUIF1HY4HqSOlCH
-	Vn3xcS071XLRTYpGnYcjfybK38AZ/RMlOcwvssw+CGX8qtw/2J8C7+f+/8vw7TG389C2ERanoFHeZ
-	fgAdwQfe1Vt98pAKSDG+P3B1+anfcBh5pDsvpKZujznTYjjIG/AQQ8DVgXdFtfLbdDcguUPOoGAfF
-	QJ2ty/h0fpz9Z53JTXWk9OAwcyb5LduVEoxrYtmZKHM9bj6eCy713uOt1IgV0fvwRdlBSyDQyoE3E
-	mwOT0IKOT0rYpvgMEr8A==;
+	List-Owner; bh=7fooPQ6GVwXPwGEnLteu0ySj0Q1Yr82SQbfdIXt5MNI=; b=cBLs6496IdA0bX
+	JlzUpuDfP6jLqh0/vlTyfHPJUg7yLnYXlWVNBKvuNEQqakACP8aD5G48Oq2lbePbhqAe9ZdYImEeZ
+	eKDwr3ArM8F++Bb3rt8UykdUkTtZEo2GM2RJKQ9AhoKOj/+YC0lMwPqnY384F3CGM+Y+o3PDnwAEu
+	hb9snO/N2Mwiyp60IYHdRkeN8ODGPImHDdHlwVGfARUTk3q/8t2Fw5etd3OpXnkac/CwjayNgfFrP
+	fOxLDGaEx7BgLw4JJKQLJ5wx9azbgXDJuZXyZtH0Ho5EWPHYcy0qtIfUOVnSGfe2q/f5f+//o4iD9
+	vmBc5TNfvsj58kMAgLag==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ouXvI-000VX0-8s; Mon, 14 Nov 2022 11:46:44 +0000
-Received: from madras.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e5ab])
+	id 1ouXvn-000VrG-R5; Mon, 14 Nov 2022 11:47:15 +0000
+Received: from madras.collabora.co.uk ([46.235.227.172])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ouXub-000V3R-0m; Mon, 14 Nov 2022 11:46:02 +0000
+	id 1ouXue-000V53-3Q; Mon, 14 Nov 2022 11:46:05 +0000
 Received: from [192.168.1.100] (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
 	(No client certificate requested)
 	(Authenticated sender: kholk11)
-	by madras.collabora.co.uk (Postfix) with ESMTPSA id 67882660232B;
-	Mon, 14 Nov 2022 11:45:58 +0000 (GMT)
+	by madras.collabora.co.uk (Postfix) with ESMTPSA id 8FA846602390;
+	Mon, 14 Nov 2022 11:46:01 +0000 (GMT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1668426359;
+	s=mail; t=1668426362;
 	bh=RYjZ3sdJeNZGdnIwnc0jKWFK8+Y+5HTVCty3jpMDWQc=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=gfPMSeoVMTMEFgqAF8/Fn7rxO6gIoSQDRZdyE/bhdtfx8mXIwApkmPrxAV4l4fKom
-	 yEIKm0vM0cgymem9DdE3nL+3JCzA2u+GTQE5227qLu8otO7hvM0yPWRVcV8acRKwV5
-	 IbYFj1K10eKqz0N+kRw/cmWqL4p18yszeicX6VlMaUHltSp9ztR5IlJxt9mX6b3W3D
-	 ECH1ITDJqIf9QZgatRKwjrPC92/2mB+wSrYW3Mdo+4zdpKOL4mJYwJ32NlvUnFcUjH
-	 VayVZiDQJJj6v7v9bKsgpjsswbPC1FOiy9AgGeKrrmQUBTVEEUF+R+zOhINrGe1/Q0
-	 LfE50+Tz4UOBQ==
-Message-ID: <fdd2c144-6c71-734a-2209-948f9ef5c6e6@collabora.com>
-Date: Mon, 14 Nov 2022 12:45:55 +0100
+	b=e5QG41UA34mhHrr1pN28/IT2Qs9anRhhPYzd3PN5TBhPVolVf1UjpO5Bud7bYacor
+	 MQ372bo9NE0a5pc3mf/TotyVN3VcFsad+liOM8EN5giZTZ3hfJhHBMFJp2S7NKiz6K
+	 6PDAev9+iZYRdfzKD5F3qGhDhzp67lPqs4NioXFFeF2gmSgG66httDRReBLTS/nONT
+	 DMJoeSWJb3Xa2L0TXuPJzxGaukjExSLNOPjs0OLLAJj7U1rI61opUvda6Sj9lV0XQE
+	 EQcZ5GfqEyOfq/x8O7G2rnf6iFtFa+zW/YmXgPdBQFYCeZuFracY0SlYq5hpi51vs4
+	 VQd+oVnLkrHcQ==
+Message-ID: <e390222a-52e8-c9eb-a534-b509684d8f04@collabora.com>
+Date: Mon, 14 Nov 2022 12:45:58 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.3.3
-Subject: Re: [PATCH v4 03/11] dt-bindings: usb: mtk-xhci: add support for
+Subject: Re: [PATCH v4 02/11] dt-bindings: phy: mediatek,tphy: add support for
  mt7986
 Content-Language: en-US
 To: Frank Wunderlich <linux@fw-web.de>, linux-mediatek@lists.infradead.org
@@ -63,12 +63,12 @@ Cc: devicetree@vger.kernel.org, Ryder Lee <ryder.lee@mediatek.com>,
  Paolo Abeni <pabeni@redhat.com>, Lorenzo Bianconi <lorenzo@kernel.org>,
  linux-arm-kernel@lists.infradead.org
 References: <20221112091518.7846-1-linux@fw-web.de>
- <20221112091518.7846-4-linux@fw-web.de>
+ <20221112091518.7846-3-linux@fw-web.de>
 From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-In-Reply-To: <20221112091518.7846-4-linux@fw-web.de>
+In-Reply-To: <20221112091518.7846-3-linux@fw-web.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221114_034601_276394_5E92D8FF 
-X-CRM114-Status: UNSURE (   7.30  )
+X-CRM114-CacheID: sfid-20221114_034604_284090_D4D0494E 
+X-CRM114-Status: UNSURE (   7.10  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
