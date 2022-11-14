@@ -4,56 +4,99 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 90B44C433FE
-	for <linux-phy@archiver.kernel.org>; Mon, 14 Nov 2022 00:22:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0BDB2C433FE
+	for <linux-phy@archiver.kernel.org>; Mon, 14 Nov 2022 00:41:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iXBziE5I6SQeMFgUopJsk0Vlc966xuPCFTK6CDbMVQs=; b=C3OycxqwDQrxuq
-	Hznh0n5n56fy2R7JzGq4HBJ7ZX7Qdd8FrNFeRyiBut1RLiDypZ8MlJxitNUFP76svMTH8xAckh1ov
-	UJx2ZBPgD0QFKaCLPDEHZ9Q+oUfs8QlKTQJn82ocGPSjJdRPA/e51zNnRW5LTa8ANnqkHwCXhaZlW
-	qwpVd3SFmtj/ZkY1VncYE9+gy2RrX1PByg6x8SEDO99Z+J42fdDtCKWkzM8PMQs11Ex4+QkLK3SmJ
-	GG8o6PUtpNUgQgnagWcKxPgpuGnZGsbA+Tzxwr1nuJsGPoeZgLrbVyi2Uup9hRivj4FHJzMlTu0Uz
-	v33qc0q0V2cfA/FE7Awg==;
+	List-Owner; bh=Tg7WbTJm8dh2dnMf9joveTJwF/nTLR2gRbqjmLzvZqU=; b=P91tWKUAqrtRpu
+	BLLqVq4MtOykSCy1fM0PPp/iBphFbramx2WTn3MAu/l94pveu4KV7ElUxr6ZTl3Vu2afrqOR1qUHn
+	B6VQiBiEeIW1sSvwFl3wTub5FQszSWLE1oiVH7l3t52CKirh8nnj+kQUd1EVXp3O8tcCgNddiOTQA
+	wLDeXinOnQSRrdQs5Vpj8dUpFMHTZocGJPYGEZ81YaD0c2h1CeWiOQuHQZFbRcvp4pbqDNCg81xXk
+	hoP7+VikkcGx47Ogf74jUYYxUaqM34OiQYqirbNMs9VferFe9IAPP9QWUtgOMHnI1s3Tg4Ed0y1ZR
+	0IT9lGE1+r8BQjOAqGRQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ouNEi-00EzuY-0E; Mon, 14 Nov 2022 00:22:04 +0000
-Received: from foss.arm.com ([217.140.110.172])
-	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ouNEY-00Ezsc-41; Mon, 14 Nov 2022 00:21:55 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
-	by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C9C1A23A;
-	Sun, 13 Nov 2022 16:21:56 -0800 (PST)
-Received: from slackpad.lan (unknown [172.31.20.19])
-	by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5DF6F3F73B;
-	Sun, 13 Nov 2022 16:21:48 -0800 (PST)
-Date: Mon, 14 Nov 2022 00:20:25 +0000
-From: Andre Przywara <andre.przywara@arm.com>
-To: Samuel Holland <samuel@sholland.org>
-Cc: Icenowy Zheng <uwu@icenowy.me>, Chen-Yu Tsai <wens@csie.org>, Jernej
- Skrabec <jernej.skrabec@gmail.com>, Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Greg Kroah-Hartman
- <gregkh@linuxfoundation.org>, soc@kernel.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
- linux-phy@lists.infradead.org, linux-usb@vger.kernel.org, Kishon Vijay
- Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>
-Subject: Re: [PATCH v3 10/11] phy: sun4i-usb: Replace types with explicit
- quirk flags
-Message-ID: <20221114002025.351d3084@slackpad.lan>
-In-Reply-To: <7b2606df-3ae5-2699-66bd-12815ffc785b@sholland.org>
-References: <20221106154826.6687-1-andre.przywara@arm.com>
-	<20221106154826.6687-11-andre.przywara@arm.com>
-	<D8382138-8943-46F7-B6A6-F83DF98E26AE@icenowy.me>
-	<7b2606df-3ae5-2699-66bd-12815ffc785b@sholland.org>
-Organization: Arm Ltd.
-X-Mailer: Claws Mail 4.1.0 (GTK 3.24.31; x86_64-slackware-linux-gnu)
+	id 1ouNXi-00F3iQ-C6; Mon, 14 Nov 2022 00:41:42 +0000
+Received: from wout2-smtp.messagingengine.com ([64.147.123.25])
+	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
+	id 1ouNXX-00F3gM-8m; Mon, 14 Nov 2022 00:41:32 +0000
+Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
+	by mailout.west.internal (Postfix) with ESMTP id 7B53532002E2;
+	Sun, 13 Nov 2022 19:41:28 -0500 (EST)
+Received: from mailfrontend2 ([10.202.2.163])
+  by compute3.internal (MEProxy); Sun, 13 Nov 2022 19:41:29 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sholland.org; h=
+	cc:cc:content-transfer-encoding:content-type:date:date:from:from
+	:in-reply-to:in-reply-to:message-id:mime-version:references
+	:reply-to:sender:subject:subject:to:to; s=fm2; t=1668386488; x=
+	1668472888; bh=853Q6QTGI1l6Ew34C/zHsFg9+iR6cwS96OTnFTcARoU=; b=s
+	SuyPVan6+AaD5faJYeN3v9hb5EEhKagQ6ENUqDYTkZ3lNtBcQtwIiwxWBef+QkPr
+	6Bce2Scm55FAEROHIoAarWHgGIArg/aOdJWfZeBIowqimKKYwOYU/1iWN0r86UO9
+	5M1pj6Brka2/CNKLXms8VedYtJygc9zB/C5e7BjYx3oQUWgeMCCFalGj69GwF5CW
+	b7oVm+LA5tR/5F0fHF/LVbm3FOkHc0ZW/rKPGszzKySmC5RmQBHWQ0KsrD32Ofjd
+	DpL3l7qFhQq854b5Ns73DRb49GLeSWSUowpEeWu4RFiJjX3TC7IqP+KbeWciboAt
+	fSsD8eOtFsBrrRL0GOuOw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	messagingengine.com; h=cc:cc:content-transfer-encoding
+	:content-type:date:date:feedback-id:feedback-id:from:from
+	:in-reply-to:in-reply-to:message-id:mime-version:references
+	:reply-to:sender:subject:subject:to:to:x-me-proxy:x-me-proxy
+	:x-me-sender:x-me-sender:x-sasl-enc; s=fm1; t=1668386488; x=
+	1668472888; bh=853Q6QTGI1l6Ew34C/zHsFg9+iR6cwS96OTnFTcARoU=; b=D
+	VXsBuXktnlMPD3MEtIktJqFX4bxMNx7aVEPeLjw2r9EHyhY9J9FxilrLXt2sxX6L
+	E+v9pQhDmmqzNCao/ZzF9A5OQbg/VZ9jeoBwQLDrk8WRJWkXwyyZqCyusmIE+mKl
+	PZBNoeKqAGqI0w31LQw/esBvNUS8e0dW96Z7VBE90pjr+xELxAr1NSexQ43+UOuI
+	kzM/qjYrAd92qgcEqtThK6UavDkMMzmwEmrxrUoG+AVJwq125B6UpWA7ze+Y+3QU
+	C/YAsvFCwLcvc7/Gvo+6KWBlAh5ZbZoj69n5VcJBoQYo1Ms6uDX8E6UXNvuwvSqk
+	af2nOS9lCoSAbIda9TWKA==
+X-ME-Sender: <xms:t45xY-KawIhKRxJ9n__ESocnH9PGcZGql6PKqmW5E9_l6p0_VEE_Kw>
+    <xme:t45xY2Iad1Fq3vyaWmFnezb4aGf922Kb1dFFdt8HOAcKD2yKwJQarzYIp7IV7xebs
+    T-4Brw2iH-SnrgPRg>
+X-ME-Received: <xmr:t45xY-ufIvcEfusp15dg7_wPCZwsQo8d1HKL33uy9UxVinbBpEOEaJU5QCBQeNpOL0Ih2NCnU_91E8G7wB2jVupRlgBV2bnpOEwFMHcIu54J2vdbO_MnqBUxzw>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvgedrgedugddvhecutefuodetggdotefrodftvf
+    curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+    uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+    fjughrpefkffggfgfuvfevfhfhjggtgfesthejredttdefjeenucfhrhhomhepufgrmhhu
+    vghlucfjohhllhgrnhguuceoshgrmhhuvghlsehshhholhhlrghnugdrohhrgheqnecugg
+    ftrfgrthhtvghrnhepkeejleelfeeitdfhtdfgkeeghedufeduueegffdvhfdukeelleef
+    tdetjeehuddtnecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrh
+    homhepshgrmhhuvghlsehshhholhhlrghnugdrohhrgh
+X-ME-Proxy: <xmx:t45xYzal8tCPFq0BYWdkRI8IF-k7DZtS53AVhPZg1rzhXIDYGqCfiw>
+    <xmx:t45xY1agylV04XVjN8WiSc6jU8hxTP_MwlHZ6bwG41dHOTiWSlMwGQ>
+    <xmx:t45xY_AkgndULWIIscYO-OnroRmm9c6vMJCEg6GO_wgUvMSmPe2ZkQ>
+    <xmx:uI5xY7BTq1cjM2hSRSC7TznLx4LKk_B_FYW-ZeCpslhKE3hTK1PdNg>
+Feedback-ID: i0ad843c9:Fastmail
+Received: by mail.messagingengine.com (Postfix) with ESMTPA; Sun,
+ 13 Nov 2022 19:41:27 -0500 (EST)
+Message-ID: <f4309a22-83a6-1d65-d9b4-7ecb1d3e251b@sholland.org>
+Date: Sun, 13 Nov 2022 18:41:26 -0600
 MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (X11; Linux ppc64le; rv:102.0) Gecko/20100101
+ Thunderbird/102.3.3
+Subject: Re: [PATCH v3 09/11] ARM: dts: suniv: add device tree for PopStick
+ v1.1
+Content-Language: en-US
+To: Andre Przywara <andre.przywara@arm.com>
+Cc: Chen-Yu Tsai <wens@csie.org>, Jernej Skrabec <jernej.skrabec@gmail.com>,
+ Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Icenowy Zheng <uwu@icenowy.me>, soc@kernel.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
+ linux-phy@lists.infradead.org, linux-usb@vger.kernel.org
+References: <20221106154826.6687-1-andre.przywara@arm.com>
+ <20221106154826.6687-10-andre.przywara@arm.com>
+ <7d7a84bd-78e2-868b-6659-9dcc596c718c@sholland.org>
+ <20221114001733.02c94151@slackpad.lan>
+From: Samuel Holland <samuel@sholland.org>
+In-Reply-To: <20221114001733.02c94151@slackpad.lan>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221113_162154_229426_2EAE0B3C 
-X-CRM114-Status: GOOD (  16.63  )
+X-CRM114-CacheID: sfid-20221113_164131_419116_55ACB96A 
+X-CRM114-Status: GOOD (  17.90  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -65,49 +108,163 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gU3VuLCAxMyBOb3YgMjAyMiAxNzo1MjozMyAtMDYwMApTYW11ZWwgSG9sbGFuZCA8c2FtdWVs
-QHNob2xsYW5kLm9yZz4gd3JvdGU6Cgo+IE9uIDExLzYvMjIgMDk6NTQsIEljZW5vd3kgWmhlbmcg
-d3JvdGU6Cj4gPiAKPiA+IAo+ID4g5LqOIDIwMjLlubQxMeaciDbml6UgR01UKzA4OjAwIOS4i+WN
-iDExOjQ4OjI1LCBBbmRyZSBQcnp5d2FyYSA8YW5kcmUucHJ6eXdhcmFAYXJtLmNvbT4g5YaZ5Yiw
-OiAgCj4gPj4gU28gZmFyIHdlIHdlcmUgYXNzaWduaW5nIHNvbWUgY3J1ZGUgInR5cGUiIChTb0Mg
-bmFtZSwgcmVhbGx5KSB0byBlYWNoCj4gPj4gQWxsd2lubmVyIFVTQiBQSFkgbW9kZWwsIHRoZW4g
-Z3VhcmRpbmcgY2VydGFpbiBxdWlya3MgYmFzZWQgb24gdGhpcy4KPiA+PiBUaGlzIGRvZXMgbm90
-IG9ubHkgbG9vayB3ZWlyZCwgYnV0IGdldHMgbW9yZSBvciBtb3JlIGN1bWJlcnNvbWUgdG8KPiA+
-PiBtYWludGFpbi4KPiA+Pgo+ID4+IFJlbW92ZSB0aGUgYm9ndXMgdHlwZSBuYW1lcyBhbHRvZ2V0
-aGVyLCBpbnN0ZWFkIGludHJvZHVjZSBmbGFncyBmb3IgZWFjaAo+ID4+IHF1aXJrLCBhbmQgZXhw
-bGljaXRseSBjaGVjayBmb3IgdGhlbS4KPiA+PiBUaGlzIGltcHJvdmVzIHJlYWRhYmlsaXR5LCBh
-bmQgc2ltcGxpZmllcyBmdXR1cmUgZXh0ZW5zaW9ucy4KPiA+Pgo+ID4+IFNpZ25lZC1vZmYtYnk6
-IEFuZHJlIFByenl3YXJhIDxhbmRyZS5wcnp5d2FyYUBhcm0uY29tPgo+ID4+IC0tLQo+ID4+IGRy
-aXZlcnMvcGh5L2FsbHdpbm5lci9waHktc3VuNGktdXNiLmMgfCA1MCArKysrKysrKy0tLS0tLS0t
-LS0tLS0tLS0tLS0KPiA+PiAxIGZpbGUgY2hhbmdlZCwgMTUgaW5zZXJ0aW9ucygrKSwgMzUgZGVs
-ZXRpb25zKC0pCj4gPj4KPiA+PiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9waHkvYWxsd2lubmVyL3Bo
-eS1zdW40aS11c2IuYyBiL2RyaXZlcnMvcGh5L2FsbHdpbm5lci9waHktc3VuNGktdXNiLmMKPiA+
-PiBpbmRleCA1MWZiMjRjNmRjYjMuLjQyMjEyOWM2NjI4MiAxMDA2NDQKPiA+PiAtLS0gYS9kcml2
-ZXJzL3BoeS9hbGx3aW5uZXIvcGh5LXN1bjRpLXVzYi5jCj4gPj4gKysrIGIvZHJpdmVycy9waHkv
-YWxsd2lubmVyL3BoeS1zdW40aS11c2IuYwo+ID4+IEBAIC05OSwyNyArOTksMTcgQEAKPiA+PiAj
-ZGVmaW5lIERFQk9VTkNFX1RJTUUJCQltc2Vjc190b19qaWZmaWVzKDUwKQo+ID4+ICNkZWZpbmUg
-UE9MTF9USU1FCQkJbXNlY3NfdG9famlmZmllcygyNTApCj4gPj4KPiA+PiAtZW51bSBzdW40aV91
-c2JfcGh5X3R5cGUgewo+ID4+IC0Jc3VuNGlfYTEwX3BoeSwKPiA+PiAtCXN1bjZpX2EzMV9waHks
-Cj4gPj4gLQlzdW44aV9hMzNfcGh5LAo+ID4+IC0Jc3VuOGlfYTgzdF9waHksCj4gPj4gLQlzdW44
-aV9oM19waHksCj4gPj4gLQlzdW44aV9yNDBfcGh5LAo+ID4+IC0Jc3VuOGlfdjNzX3BoeSwKPiA+
-PiAtCXN1bjUwaV9hNjRfcGh5LAo+ID4+IC0Jc3VuNTBpX2g2X3BoeSwKPiA+PiAtfTsKPiA+PiAt
-Cj4gPj4gc3RydWN0IHN1bjRpX3VzYl9waHlfY2ZnIHsKPiA+PiAJaW50IG51bV9waHlzOwo+ID4+
-IAlpbnQgaHNpY19pbmRleDsKPiA+PiAtCWVudW0gc3VuNGlfdXNiX3BoeV90eXBlIHR5cGU7Cj4g
-Pj4gCXUzMiBkaXNjX3RocmVzaDsKPiA+PiAJdTMyIGhjaV9waHlfY3RsX2NsZWFyOwo+ID4+IAl1
-OCBwaHljdGxfb2Zmc2V0Owo+ID4+IAlib29sIGRlZGljYXRlZF9jbG9ja3M7Cj4gPj4gCWJvb2wg
-cGh5MF9kdWFsX3JvdXRlOwo+ID4+ICsJYm9vbCBwaHkyX2lzX2hzaWM7ICAKPiA+IAo+ID4gTWF5
-YmUgdXNlIGEgYGludCBoc2ljX3BoeWAgaW5zdGVhZD8gQnV0IHRoZSBwcm9ibGVtIGlzIHRoaXMg
-cHJhY3RpY2UgaXMKPiA+IGFzc3VtaW5nIFVTQjAgY291bGQgbm90IGJlIEhTSUMgLS0gYWx0aG91
-Z2ggVVNCMCBpcyB1c3VhbGx5IE9URy4gIAo+IAo+IFRoZXJlIGlzIGFscmVhZHkgYSBgaHNpY19p
-bmRleGAgdmFyaWFibGUgaW4gdGhlIHN0cnVjdCB3ZSBjYW4gdXNlLgoKSGEsIGluZGVlZCwgZ29v
-ZCBmaW5kISBBbmQgd2UgYXJlIGFscmVhZHkgY2hlY2tpbmcgZm9yIHRoZSBzYW1lCmNvbmRpdGlv
-biAoaXMgdGhpcyB0aGUgSFNJQyBwb3J0PykgdXNpbmcgdGhpcyB2YXJpYWJsZS4gU2F2ZXMgb25l
-IG1vcmUKbWVtYmVyIGluIHRoZSBzdHJ1Y3QuCgpUaGFua3MhCkFuZHJlCgoKPiAKPiBSZWdhcmRz
-LAo+IFNhbXVlbAo+IAo+IAoKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBs
-aXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
-c3RpbmZvL2xpbnV4LXBoeQo=
+On 11/13/22 18:17, Andre Przywara wrote:
+> On Sun, 13 Nov 2022 16:41:04 -0600
+> Samuel Holland <samuel@sholland.org> wrote:
+> 
+>> On 11/6/22 09:48, Andre Przywara wrote:
+>>> From: Icenowy Zheng <uwu@icenowy.me>
+>>>
+>>> PopStick is a minimal Allwinner F1C200s dongle, with its USB controller
+>>> wired to a USB Type-A port, a SD slot and a SPI NAND flash on board, and
+>>> an on-board CH340 USB-UART converted connected to F1C200s's UART0.
+>>>
+>>> Add a device tree for it. As F1C200s is just F1C100s with a different
+>>> DRAM chip co-packaged, directly use F1C100s DTSI here.
+>>>
+>>> This commit covers the v1.1 version of this board, which is now shipped.
+>>> v1.0 is some internal sample that have not been shipped at all.
+>>>
+>>> Signed-off-by: Icenowy Zheng <uwu@icenowy.me>
+>>> Signed-off-by: Andre Przywara <andre.przywara@arm.com>
+>>> ---
+>>>  arch/arm/boot/dts/Makefile                    |  3 +-
+>>>  .../boot/dts/suniv-f1c200s-popstick-v1.1.dts  | 99 +++++++++++++++++++
+>>>  2 files changed, 101 insertions(+), 1 deletion(-)
+>>>  create mode 100644 arch/arm/boot/dts/suniv-f1c200s-popstick-v1.1.dts
+>>>
+>>> diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
+>>> index 6aa7dc4db2fc..0249c07bd8a6 100644
+>>> --- a/arch/arm/boot/dts/Makefile
+>>> +++ b/arch/arm/boot/dts/Makefile
+>>> @@ -1391,7 +1391,8 @@ dtb-$(CONFIG_MACH_SUN9I) += \
+>>>  	sun9i-a80-optimus.dtb \
+>>>  	sun9i-a80-cubieboard4.dtb
+>>>  dtb-$(CONFIG_MACH_SUNIV) += \
+>>> -	suniv-f1c100s-licheepi-nano.dtb
+>>> +	suniv-f1c100s-licheepi-nano.dtb \
+>>> +	suniv-f1c200s-popstick-v1.1.dtb
+>>>  dtb-$(CONFIG_ARCH_TEGRA_2x_SOC) += \
+>>>  	tegra20-acer-a500-picasso.dtb \
+>>>  	tegra20-asus-tf101.dtb \
+>>> diff --git a/arch/arm/boot/dts/suniv-f1c200s-popstick-v1.1.dts b/arch/arm/boot/dts/suniv-f1c200s-popstick-v1.1.dts
+>>> new file mode 100644
+>>> index 000000000000..7d69b5fcb905
+>>> --- /dev/null
+>>> +++ b/arch/arm/boot/dts/suniv-f1c200s-popstick-v1.1.dts
+>>> @@ -0,0 +1,99 @@
+>>> +// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+>>> +/*
+>>> + * Copyright 2022 Icenowy Zheng <uwu@icenowy.me>
+>>> + */
+>>> +
+>>> +/dts-v1/;
+>>> +#include "suniv-f1c100s.dtsi"
+>>> +
+>>> +#include <dt-bindings/gpio/gpio.h>
+>>> +#include <dt-bindings/leds/common.h>
+>>> +
+>>> +/ {
+>>> +	model = "Popcorn Computer PopStick v1.1";
+>>> +	compatible = "sourceparts,popstick-v1.1", "sourceparts,popstick",
+>>> +		     "allwinner,suniv-f1c200s", "allwinner,suniv-f1c100s";
+>>> +
+>>> +	aliases {
+>>> +		serial0 = &uart0;
+>>> +	};
+>>> +
+>>> +	chosen {
+>>> +		stdout-path = "serial0:115200n8";
+>>> +	};
+>>> +
+>>> +	leds {
+>>> +		compatible = "gpio-leds";
+>>> +
+>>> +		led {
+>>> +			function = LED_FUNCTION_STATUS;
+>>> +			color = <LED_COLOR_ID_GREEN>;
+>>> +			gpios = <&pio 4 6 GPIO_ACTIVE_HIGH>; /* PE6 */
+>>> +			linux,default-trigger = "heartbeat";
+>>> +		};
+>>> +	};
+>>> +
+>>> +	reg_vcc3v3: regulator-3v3 {
+>>> +		compatible = "regulator-fixed";
+>>> +		regulator-name = "vcc3v3";
+>>> +		regulator-min-microvolt = <3300000>;
+>>> +		regulator-max-microvolt = <3300000>;
+>>> +	};
+>>> +};
+>>> +
+>>> +&mmc0 {
+>>> +	cd-gpios = <&pio 4 3 GPIO_ACTIVE_LOW>; /* PE3 */
+>>> +	bus-width = <4>;
+>>> +	disable-wp;
+>>> +	vmmc-supply = <&reg_vcc3v3>;
+>>> +	status = "okay";
+>>> +};
+>>> +
+>>> +&otg_sram {
+>>> +	status = "okay";
+>>> +};
+>>> +
+>>> +&spi0 {
+>>> +	pinctrl-names = "default";
+>>> +	pinctrl-0 = <&spi0_pc_pins>;
+>>> +	status = "okay";
+>>> +
+>>> +	flash@0 {
+>>> +		compatible = "spi-nand";
+>>> +		reg = <0>;
+>>> +		spi-max-frequency = <40000000>;
+>>> +		#address-cells = <1>;
+>>> +		#size-cells = <1>;
+>>> +
+>>> +		partitions {
+>>> +			compatible = "fixed-partitions";
+>>> +			#address-cells = <1>;
+>>> +			#size-cells = <1>;
+>>> +
+>>> +			partition@0 {
+>>> +				label = "u-boot-with-spl";
+>>> +				reg = <0x0 0x100000>;
+>>> +			};
+>>> +
+>>> +			ubi@100000 {
+>>> +				label = "ubi";
+>>> +				reg = <0x100000 0x7f00000>;
+>>> +			};
+>>> +		};
+>>> +	};
+>>> +};
+>>> +
+>>> +&uart0 {
+>>> +	pinctrl-names = "default";
+>>> +	pinctrl-0 = <&uart0_pe_pins>;
+>>> +	status = "okay";
+>>> +};
+>>> +
+>>> +&usb_otg {
+>>> +	dr_mode = "peripheral";  
+>>
+>> The patch description says the board has a USB Type-A port. Why is the
+>> USB controller set to peripheral mode?
+> 
+> It's a USB type-A *plug*, not a socket, because it's some TV stick
+> style of device, just with a USB instead of an HDMI plug.
+
+Ah, that makes sense. Please clarify this in the commit message.
+
+Regards,
+Samuel
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
