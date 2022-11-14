@@ -4,99 +4,96 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0BDB2C433FE
-	for <linux-phy@archiver.kernel.org>; Mon, 14 Nov 2022 00:41:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5CC72C4332F
+	for <linux-phy@archiver.kernel.org>; Mon, 14 Nov 2022 02:21:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Tg7WbTJm8dh2dnMf9joveTJwF/nTLR2gRbqjmLzvZqU=; b=P91tWKUAqrtRpu
-	BLLqVq4MtOykSCy1fM0PPp/iBphFbramx2WTn3MAu/l94pveu4KV7ElUxr6ZTl3Vu2afrqOR1qUHn
-	B6VQiBiEeIW1sSvwFl3wTub5FQszSWLE1oiVH7l3t52CKirh8nnj+kQUd1EVXp3O8tcCgNddiOTQA
-	wLDeXinOnQSRrdQs5Vpj8dUpFMHTZocGJPYGEZ81YaD0c2h1CeWiOQuHQZFbRcvp4pbqDNCg81xXk
-	hoP7+VikkcGx47Ogf74jUYYxUaqM34OiQYqirbNMs9VferFe9IAPP9QWUtgOMHnI1s3Tg4Ed0y1ZR
-	0IT9lGE1+r8BQjOAqGRQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=nkoDx+4yVPUF2EqYf50AjX3/T5woTHFLp+xFEHwPfI8=; b=BcnnlRHX8ZIj/A
+	2tdqGK4cZY9ZKzuHgX0Z7g0J2RHDQbmJ3cKioJCSZ7jtWtirrJB9sUyWzAH8frxtkbmBWxGlYwNkL
+	xW39CKx36pG7GqDiiyJhv9Cz+a2ZvDLZXIUFrkFbqKL3Shi8arEEDyWRUC8A8ONE4eULTb6w0nTk6
+	g8VNWxjdUA+uClyywDQ5cMrNZigc/zI+TEyBA3agGY0dIzlYaGOWfQdipPPDh1x6MQZw6XWzu6AW2
+	9P7nOHlhjQWwnqX0wtfFMbOZYjQq7aUTk+TZBdW8v99jBeUVAWWlI4FgbQvakDugR3wVxXPQpisAI
+	99NB28QKWXBH5gitZ4aA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ouNXi-00F3iQ-C6; Mon, 14 Nov 2022 00:41:42 +0000
+	id 1ouP6H-00FXMn-LG; Mon, 14 Nov 2022 02:21:29 +0000
 Received: from wout2-smtp.messagingengine.com ([64.147.123.25])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ouNXX-00F3gM-8m; Mon, 14 Nov 2022 00:41:32 +0000
-Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
-	by mailout.west.internal (Postfix) with ESMTP id 7B53532002E2;
-	Sun, 13 Nov 2022 19:41:28 -0500 (EST)
+	id 1ouP65-00FXJP-A0; Mon, 14 Nov 2022 02:21:19 +0000
+Received: from compute2.internal (compute2.nyi.internal [10.202.2.46])
+	by mailout.west.internal (Postfix) with ESMTP id 581573200313;
+	Sun, 13 Nov 2022 21:21:15 -0500 (EST)
 Received: from mailfrontend2 ([10.202.2.163])
-  by compute3.internal (MEProxy); Sun, 13 Nov 2022 19:41:29 -0500
+  by compute2.internal (MEProxy); Sun, 13 Nov 2022 21:21:16 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sholland.org; h=
-	cc:cc:content-transfer-encoding:content-type:date:date:from:from
-	:in-reply-to:in-reply-to:message-id:mime-version:references
-	:reply-to:sender:subject:subject:to:to; s=fm2; t=1668386488; x=
-	1668472888; bh=853Q6QTGI1l6Ew34C/zHsFg9+iR6cwS96OTnFTcARoU=; b=s
-	SuyPVan6+AaD5faJYeN3v9hb5EEhKagQ6ENUqDYTkZ3lNtBcQtwIiwxWBef+QkPr
-	6Bce2Scm55FAEROHIoAarWHgGIArg/aOdJWfZeBIowqimKKYwOYU/1iWN0r86UO9
-	5M1pj6Brka2/CNKLXms8VedYtJygc9zB/C5e7BjYx3oQUWgeMCCFalGj69GwF5CW
-	b7oVm+LA5tR/5F0fHF/LVbm3FOkHc0ZW/rKPGszzKySmC5RmQBHWQ0KsrD32Ofjd
-	DpL3l7qFhQq854b5Ns73DRb49GLeSWSUowpEeWu4RFiJjX3TC7IqP+KbeWciboAt
-	fSsD8eOtFsBrrRL0GOuOw==
+	cc:cc:content-transfer-encoding:date:date:from:from:in-reply-to
+	:message-id:mime-version:reply-to:sender:subject:subject:to:to;
+	 s=fm2; t=1668392474; x=1668478874; bh=aYiCWONLZBFtYySFfLlgu9fEI
+	+6ZzF2ACekapN/b5p0=; b=VdmRmhbqMNkU5ZwEs8K4R9v+KRqdjbYmRrG+fc4JG
+	a2tN8MOoBesN+BaZ1btNO/zZwUEFgQ5ycRgKq+RBSBuBb3jGsGsO1NElyKtCbMQ0
+	h2TzT3CuI4mB7kHwCivKShYT3jIOziwlLLOzpJdzcDhPtjaXsS1VpNvEDkU2GtCk
+	yRonKC4rsvdufOiRyNySmtV+LVG2uGrw8mSMwv+Tm5smG0ifVtPNt0ol7tIZm6Mf
+	vl78Ur6IDsZamQ9ruO57Te7W3PJ/LJnikUMfDVQ2W6Y9oaT1TFip7RoHNAZXhbqS
+	eHSuUIrTg4BWqX0WZ2py2yFv0CkktVpH+Qox3LZSXPbVA==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
-	messagingengine.com; h=cc:cc:content-transfer-encoding
-	:content-type:date:date:feedback-id:feedback-id:from:from
-	:in-reply-to:in-reply-to:message-id:mime-version:references
-	:reply-to:sender:subject:subject:to:to:x-me-proxy:x-me-proxy
-	:x-me-sender:x-me-sender:x-sasl-enc; s=fm1; t=1668386488; x=
-	1668472888; bh=853Q6QTGI1l6Ew34C/zHsFg9+iR6cwS96OTnFTcARoU=; b=D
-	VXsBuXktnlMPD3MEtIktJqFX4bxMNx7aVEPeLjw2r9EHyhY9J9FxilrLXt2sxX6L
-	E+v9pQhDmmqzNCao/ZzF9A5OQbg/VZ9jeoBwQLDrk8WRJWkXwyyZqCyusmIE+mKl
-	PZBNoeKqAGqI0w31LQw/esBvNUS8e0dW96Z7VBE90pjr+xELxAr1NSexQ43+UOuI
-	kzM/qjYrAd92qgcEqtThK6UavDkMMzmwEmrxrUoG+AVJwq125B6UpWA7ze+Y+3QU
-	C/YAsvFCwLcvc7/Gvo+6KWBlAh5ZbZoj69n5VcJBoQYo1Ms6uDX8E6UXNvuwvSqk
-	af2nOS9lCoSAbIda9TWKA==
-X-ME-Sender: <xms:t45xY-KawIhKRxJ9n__ESocnH9PGcZGql6PKqmW5E9_l6p0_VEE_Kw>
-    <xme:t45xY2Iad1Fq3vyaWmFnezb4aGf922Kb1dFFdt8HOAcKD2yKwJQarzYIp7IV7xebs
-    T-4Brw2iH-SnrgPRg>
-X-ME-Received: <xmr:t45xY-ufIvcEfusp15dg7_wPCZwsQo8d1HKL33uy9UxVinbBpEOEaJU5QCBQeNpOL0Ih2NCnU_91E8G7wB2jVupRlgBV2bnpOEwFMHcIu54J2vdbO_MnqBUxzw>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvgedrgedugddvhecutefuodetggdotefrodftvf
+	messagingengine.com; h=cc:cc:content-transfer-encoding:date:date
+	:feedback-id:feedback-id:from:from:in-reply-to:message-id
+	:mime-version:reply-to:sender:subject:subject:to:to:x-me-proxy
+	:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm1; t=
+	1668392474; x=1668478874; bh=aYiCWONLZBFtYySFfLlgu9fEI+6ZzF2ACek
+	apN/b5p0=; b=JIBbtpjvZhRdOAbvnSmz0agoJzjRDEh8732u04Rtgx+cv6BucUw
+	kYr65g7iCgssFPx9P9JZVzlXspHatlNSSdQBE62LGLirQDXM5JThcmMe/bZqjS9w
+	MNDIrbFtIefShJ/xqEgUNPLq1rlrOod4u/uZGKvN8vGdU9wPwXMMm7eMXSA2mjon
+	Z1Oy8QQvweNiCdg+MgKmhI3oe/4hDmJZdQw6EZddufVA2VFBkOHIeO5bzYMlH0xr
+	vlxYJI5CROSdroDiWImYTG3hK8ExITWC1WdNnTOtkVqKM/M66lUTYDPuQthXFS4Q
+	ZRXFEwPh+JNcU1xZ4gUZqeJssgmnP/dHDXQ==
+X-ME-Sender: <xms:GqZxY1BAxcS0hhqRosBXYuCbB3L16WQej6wIbJGDMAOlEQg2Ue6GAg>
+    <xme:GqZxYzheevG5R67k9kgJwHBbthTYVeHgXw73Ielw3Ig2i2gy6BkyZovd7lJyMAv4H
+    xzKkVo-puyQ4aEiJA>
+X-ME-Received: <xmr:GqZxYwnGwCRlD18sJhqyZiVDVUKMh1k_d2r1dRd3r21fugFQC0UL8Drfewh_wTyyQvLpCeBnrYSZAGI0SasUQLLyYOH5TjaJ9u-zERTRYhuXUw_wecYPsaRWQ4-hGaS4Fef1cA>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvgedrgedugdeghecutefuodetggdotefrodftvf
     curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
     uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
-    fjughrpefkffggfgfuvfevfhfhjggtgfesthejredttdefjeenucfhrhhomhepufgrmhhu
-    vghlucfjohhllhgrnhguuceoshgrmhhuvghlsehshhholhhlrghnugdrohhrgheqnecugg
-    ftrfgrthhtvghrnhepkeejleelfeeitdfhtdfgkeeghedufeduueegffdvhfdukeelleef
-    tdetjeehuddtnecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrh
-    homhepshgrmhhuvghlsehshhholhhlrghnugdrohhrgh
-X-ME-Proxy: <xmx:t45xYzal8tCPFq0BYWdkRI8IF-k7DZtS53AVhPZg1rzhXIDYGqCfiw>
-    <xmx:t45xY1agylV04XVjN8WiSc6jU8hxTP_MwlHZ6bwG41dHOTiWSlMwGQ>
-    <xmx:t45xY_AkgndULWIIscYO-OnroRmm9c6vMJCEg6GO_wgUvMSmPe2ZkQ>
-    <xmx:uI5xY7BTq1cjM2hSRSC7TznLx4LKk_B_FYW-ZeCpslhKE3hTK1PdNg>
+    fjughrpefhvfevufffkffoggfgsedtkeertdertddtnecuhfhrohhmpefurghmuhgvlhcu
+    jfholhhlrghnugcuoehsrghmuhgvlhesshhhohhllhgrnhgurdhorhhgqeenucggtffrrg
+    htthgvrhhnpeekveelhfejueelleetvdejvdeffeetgeelheeujeffhefgffefkeehhffh
+    keekgeenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhrohhmpe
+    hsrghmuhgvlhesshhhohhllhgrnhgurdhorhhg
+X-ME-Proxy: <xmx:GqZxY_zTL3vqvyRgYZC_kSGrofLTG3OaGu3sp5x6FLY2m-OG8V05TA>
+    <xmx:GqZxY6RuZZwvEUjIVE-FwDUnlKbx-YhchIil56LXtCZsoWC_Y86JOw>
+    <xmx:GqZxYyYQrnAJCJCd5RG6pDafDAkmN336MZqKHz0JbtqMKbSXxneysQ>
+    <xmx:GqZxYxJr0by9ZqBo1mWj6RPElDbmaqB2vXy7V2IL9LNoaxI1SKAQlA>
 Feedback-ID: i0ad843c9:Fastmail
 Received: by mail.messagingengine.com (Postfix) with ESMTPA; Sun,
- 13 Nov 2022 19:41:27 -0500 (EST)
-Message-ID: <f4309a22-83a6-1d65-d9b4-7ecb1d3e251b@sholland.org>
-Date: Sun, 13 Nov 2022 18:41:26 -0600
-MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux ppc64le; rv:102.0) Gecko/20100101
- Thunderbird/102.3.3
-Subject: Re: [PATCH v3 09/11] ARM: dts: suniv: add device tree for PopStick
- v1.1
-Content-Language: en-US
-To: Andre Przywara <andre.przywara@arm.com>
-Cc: Chen-Yu Tsai <wens@csie.org>, Jernej Skrabec <jernej.skrabec@gmail.com>,
- Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Icenowy Zheng <uwu@icenowy.me>, soc@kernel.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
- linux-phy@lists.infradead.org, linux-usb@vger.kernel.org
-References: <20221106154826.6687-1-andre.przywara@arm.com>
- <20221106154826.6687-10-andre.przywara@arm.com>
- <7d7a84bd-78e2-868b-6659-9dcc596c718c@sholland.org>
- <20221114001733.02c94151@slackpad.lan>
+ 13 Nov 2022 21:21:13 -0500 (EST)
 From: Samuel Holland <samuel@sholland.org>
-In-Reply-To: <20221114001733.02c94151@slackpad.lan>
+To: Kishon Vijay Abraham I <kishon@kernel.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Chen-Yu Tsai <wens@csie.org>,
+	Jernej Skrabec <jernej.skrabec@gmail.com>,
+	Maxime Ripard <mripard@kernel.org>
+Cc: Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+	Samuel Holland <samuel@sholland.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-sunxi@lists.linux.dev
+Subject: [PATCH v2 0/8] phy: allwinner: phy-sun6i-mipi-dphy: Add the A100 DPHY
+Date: Sun, 13 Nov 2022 20:21:05 -0600
+Message-Id: <20221114022113.31694-1-samuel@sholland.org>
+X-Mailer: git-send-email 2.37.3
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221113_164131_419116_55ACB96A 
-X-CRM114-Status: GOOD (  17.90  )
+X-CRM114-CacheID: sfid-20221113_182117_729056_B8630E30 
+X-CRM114-Status: UNSURE (   9.75  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -113,155 +110,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 11/13/22 18:17, Andre Przywara wrote:
-> On Sun, 13 Nov 2022 16:41:04 -0600
-> Samuel Holland <samuel@sholland.org> wrote:
-> 
->> On 11/6/22 09:48, Andre Przywara wrote:
->>> From: Icenowy Zheng <uwu@icenowy.me>
->>>
->>> PopStick is a minimal Allwinner F1C200s dongle, with its USB controller
->>> wired to a USB Type-A port, a SD slot and a SPI NAND flash on board, and
->>> an on-board CH340 USB-UART converted connected to F1C200s's UART0.
->>>
->>> Add a device tree for it. As F1C200s is just F1C100s with a different
->>> DRAM chip co-packaged, directly use F1C100s DTSI here.
->>>
->>> This commit covers the v1.1 version of this board, which is now shipped.
->>> v1.0 is some internal sample that have not been shipped at all.
->>>
->>> Signed-off-by: Icenowy Zheng <uwu@icenowy.me>
->>> Signed-off-by: Andre Przywara <andre.przywara@arm.com>
->>> ---
->>>  arch/arm/boot/dts/Makefile                    |  3 +-
->>>  .../boot/dts/suniv-f1c200s-popstick-v1.1.dts  | 99 +++++++++++++++++++
->>>  2 files changed, 101 insertions(+), 1 deletion(-)
->>>  create mode 100644 arch/arm/boot/dts/suniv-f1c200s-popstick-v1.1.dts
->>>
->>> diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
->>> index 6aa7dc4db2fc..0249c07bd8a6 100644
->>> --- a/arch/arm/boot/dts/Makefile
->>> +++ b/arch/arm/boot/dts/Makefile
->>> @@ -1391,7 +1391,8 @@ dtb-$(CONFIG_MACH_SUN9I) += \
->>>  	sun9i-a80-optimus.dtb \
->>>  	sun9i-a80-cubieboard4.dtb
->>>  dtb-$(CONFIG_MACH_SUNIV) += \
->>> -	suniv-f1c100s-licheepi-nano.dtb
->>> +	suniv-f1c100s-licheepi-nano.dtb \
->>> +	suniv-f1c200s-popstick-v1.1.dtb
->>>  dtb-$(CONFIG_ARCH_TEGRA_2x_SOC) += \
->>>  	tegra20-acer-a500-picasso.dtb \
->>>  	tegra20-asus-tf101.dtb \
->>> diff --git a/arch/arm/boot/dts/suniv-f1c200s-popstick-v1.1.dts b/arch/arm/boot/dts/suniv-f1c200s-popstick-v1.1.dts
->>> new file mode 100644
->>> index 000000000000..7d69b5fcb905
->>> --- /dev/null
->>> +++ b/arch/arm/boot/dts/suniv-f1c200s-popstick-v1.1.dts
->>> @@ -0,0 +1,99 @@
->>> +// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
->>> +/*
->>> + * Copyright 2022 Icenowy Zheng <uwu@icenowy.me>
->>> + */
->>> +
->>> +/dts-v1/;
->>> +#include "suniv-f1c100s.dtsi"
->>> +
->>> +#include <dt-bindings/gpio/gpio.h>
->>> +#include <dt-bindings/leds/common.h>
->>> +
->>> +/ {
->>> +	model = "Popcorn Computer PopStick v1.1";
->>> +	compatible = "sourceparts,popstick-v1.1", "sourceparts,popstick",
->>> +		     "allwinner,suniv-f1c200s", "allwinner,suniv-f1c100s";
->>> +
->>> +	aliases {
->>> +		serial0 = &uart0;
->>> +	};
->>> +
->>> +	chosen {
->>> +		stdout-path = "serial0:115200n8";
->>> +	};
->>> +
->>> +	leds {
->>> +		compatible = "gpio-leds";
->>> +
->>> +		led {
->>> +			function = LED_FUNCTION_STATUS;
->>> +			color = <LED_COLOR_ID_GREEN>;
->>> +			gpios = <&pio 4 6 GPIO_ACTIVE_HIGH>; /* PE6 */
->>> +			linux,default-trigger = "heartbeat";
->>> +		};
->>> +	};
->>> +
->>> +	reg_vcc3v3: regulator-3v3 {
->>> +		compatible = "regulator-fixed";
->>> +		regulator-name = "vcc3v3";
->>> +		regulator-min-microvolt = <3300000>;
->>> +		regulator-max-microvolt = <3300000>;
->>> +	};
->>> +};
->>> +
->>> +&mmc0 {
->>> +	cd-gpios = <&pio 4 3 GPIO_ACTIVE_LOW>; /* PE3 */
->>> +	bus-width = <4>;
->>> +	disable-wp;
->>> +	vmmc-supply = <&reg_vcc3v3>;
->>> +	status = "okay";
->>> +};
->>> +
->>> +&otg_sram {
->>> +	status = "okay";
->>> +};
->>> +
->>> +&spi0 {
->>> +	pinctrl-names = "default";
->>> +	pinctrl-0 = <&spi0_pc_pins>;
->>> +	status = "okay";
->>> +
->>> +	flash@0 {
->>> +		compatible = "spi-nand";
->>> +		reg = <0>;
->>> +		spi-max-frequency = <40000000>;
->>> +		#address-cells = <1>;
->>> +		#size-cells = <1>;
->>> +
->>> +		partitions {
->>> +			compatible = "fixed-partitions";
->>> +			#address-cells = <1>;
->>> +			#size-cells = <1>;
->>> +
->>> +			partition@0 {
->>> +				label = "u-boot-with-spl";
->>> +				reg = <0x0 0x100000>;
->>> +			};
->>> +
->>> +			ubi@100000 {
->>> +				label = "ubi";
->>> +				reg = <0x100000 0x7f00000>;
->>> +			};
->>> +		};
->>> +	};
->>> +};
->>> +
->>> +&uart0 {
->>> +	pinctrl-names = "default";
->>> +	pinctrl-0 = <&uart0_pe_pins>;
->>> +	status = "okay";
->>> +};
->>> +
->>> +&usb_otg {
->>> +	dr_mode = "peripheral";  
->>
->> The patch description says the board has a USB Type-A port. Why is the
->> USB controller set to peripheral mode?
-> 
-> It's a USB type-A *plug*, not a socket, because it's some TV stick
-> style of device, just with a USB instead of an HDMI plug.
+This series adds support for the updated DPHY found in a couple of
+recent Allwinner SoCs. The first three patches fix an omission in the
+existing binding. The remaining patches add the new hardware variant.
 
-Ah, that makes sense. Please clarify this in the commit message.
+Changes in v2:
+ - Add the interrupts property to the binding example
+ - Drop the inappropriate Fixes tags
+ - Rename "supports_rx" to "rx_supported"
+ - Add a blank line for readability
 
-Regards,
-Samuel
+Samuel Holland (8):
+  dt-bindings: sun6i-a31-mipi-dphy: Add the interrupts property
+  ARM: dts: sun8i: a33: Add DPHY interrupt
+  arm64: dts: allwinner: a64: Add DPHY interrupt
+  dt-bindings: sun6i-a31-mipi-dphy: Add the A100 DPHY variant
+  phy: allwinner: phy-sun6i-mipi-dphy: Make RX support optional
+  phy: allwinner: phy-sun6i-mipi-dphy: Set the enable bit last
+  phy: allwinner: phy-sun6i-mipi-dphy: Add a variant power-on hook
+  phy: allwinner: phy-sun6i-mipi-dphy: Add the A100 DPHY variant
+
+ .../phy/allwinner,sun6i-a31-mipi-dphy.yaml    |  11 +
+ arch/arm/boot/dts/sun8i-a33.dtsi              |   1 +
+ arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi |   1 +
+ drivers/phy/allwinner/phy-sun6i-mipi-dphy.c   | 236 +++++++++++++++---
+ 4 files changed, 218 insertions(+), 31 deletions(-)
+
+-- 
+2.37.3
 
 
 -- 
