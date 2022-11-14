@@ -4,140 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9D7DDC4332F
-	for <linux-phy@archiver.kernel.org>; Mon, 14 Nov 2022 10:57:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EA4A3C4332F
+	for <linux-phy@archiver.kernel.org>; Mon, 14 Nov 2022 10:57:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:References:Cc:To:
-	Subject:Date:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=rpzvc1lbDjy0tu7i/3eR6DItpJtT5nqdrIBWaTS1pJ8=; b=2N/2bA1h3XT2VeuH5tyFW1Muhy
-	o9iglv+UL5HADOAOZzPYu3Zw1p+UB9xHCvhkRNwKZjz7TCJaNZrlTRTJmFOjcUQlpTv6Ra9peNGCt
-	m/0lrNikr75OAHhNyJO5Lz539i5bSQeobwWW3IYsvaBOLvhWG5NJ+4voOJxmIjcTsu8q9f3yyBt5M
-	f1YiHpachJPhpbSOpMlLxr7WRPziL91QiBjDRcgVcMb3YhCyfXWcbVyvAH8JqL+Y7lloZ2KKv9SE1
-	cO95tslc7drkwSy6qYh/O8d+Ei1BU3Fv2B2XqHc3/zs8YICHCWx/gh8JrRVcSNhBG1jvd9mdpjVKB
-	iplbLoVQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=w5AFjFP7R/O54F2Ad1ZFg1yG+18WKdHuvbexeLYOAy8=; b=x2vw5HhHf+l5oM
+	EqDFjxz/Oy0pYScB6mcs7+D/ob1WLz2a5LyfgaLnUapISBJ/rRUS86iYtMuMKZAfU5ipHNWj4/bZ+
+	vDKhTRnPYIL6wBYGnP0lWdbr31tyop8y81cMfZjwq867DUGzs4ze8GVf0zmJlB0ZOGHJi78VXMcU5
+	zzEKrxYY+uSGIk6Hha2SlWoJ8PE5fXwHOhhkuIeOm73Rn+LrvZPIcjiljpixbvyTupTNTC6J6yR90
+	KmHa4/Rd0VA2Yw/0JhRKgOVuvwkiXZERpIDTzH6c/XMgb7XlqIIrYTcVg3E3+ywl6BBhGxUvF6nEF
+	qd3ppgp/p55g1m+3qWnA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ouX9e-0008ne-2b; Mon, 14 Nov 2022 10:57:30 +0000
-Received: from mail-co1nam11on2057.outbound.protection.outlook.com ([40.107.220.57] helo=NAM11-CO1-obe.outbound.protection.outlook.com)
+	id 1ouX9o-0008qx-DJ; Mon, 14 Nov 2022 10:57:40 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ouX9b-0008lo-0i
-	for linux-phy@lists.infradead.org; Mon, 14 Nov 2022 10:57:28 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=FyepnMWJ1CWmJJXRQvZQVL3W9VL4dJGJAsnpi/yn4DcSaAIlh26kIQZo0yjjKWu02ht7ICH7kAqcLjfHH0b3113xCg44FQrPfDoF0DzVLyJsPtL5OziWn8pqkJ+P690RkDMBrBzLRlgxsUGiSn1RUFl4fYx0mpf3TeoU2BB9d6x50RFs+lLD6/BRZzH63dJJnUNTjDizR3eb9Ea51Wt8UThDXL1ZXrLg3MoVBC4fWGEr9YjDLKYjDMY33aASbtQrx/MmyxkkfGDbeM0CJ2zSZXr7rk8rUx5p7sPm3nSxBZ8LCzi5nEtvG3CN/72xnPdRmCoY9e7+R/lfpYO7Je2Bwg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=B0PZ14BWt5dRhw8BPMvTsE2wcmZxonQ+cwi4WQzj8JY=;
- b=lx3leBq237c0IsgXIj2buLho2oDTIam7DPuR9ElNBf0uR7u9NF1wg5/S/rK6kYdsGltZu0SNvFixuYJUBCE2mnj7igeHIw6MXzrtFU8OWTMFNdrOIMLr+Hobf0A/6lm8qxL/hpI9GlhB5ObC0o7Dz4oHMdzCmatN189n4bn4NB/qWcWZRDADd5xJOs0S1LZNJQbEWl45fd1GLL8pjt6ZjmfeVpsHhQNj/NH/XA4kGYKNa+ZIWzbfCWECBTjYEzsDY8eLlPYyfRh7fa6utOzct1c1yVPmj2+wPUQBfBenW1iod3dk+iTq33BFFi2lIioTvn8alsXMCadW6+pOdvFPIQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nvidia.com; dmarc=pass action=none header.from=nvidia.com;
- dkim=pass header.d=nvidia.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=B0PZ14BWt5dRhw8BPMvTsE2wcmZxonQ+cwi4WQzj8JY=;
- b=jHaaXjvOSeaNkzs//f1W7EJ4KodYTKoVd5nG4vaCUa56wXZkN/+woIyj6nn+eG6jKLTaSPAbKZjZHXSr6qik5xNYL4Tas2y13laGmCY+kJCTtm8ZtMvvioEV+NJ9luIWSH/LLjaw7zXa03hFfwTu/27uHQZxA44J9Xbh+Ib7wx88YK6E+OhZctw5/ur3kzJDDl6y9KW6BqU43N7vBx69nbm4c74CQUlSRAhF3Z55KEM6EBc+pc3Xw8+WaT4pFNN7Lwld8mpHPnXVeYNrPmxz1r8fpmtD4t5EXEMqQkObbbe5r6dDzbHh5K+S6Biz5nffZqKnLLSkOXf6hARI60fP8g==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nvidia.com;
-Received: from CO6PR12MB5444.namprd12.prod.outlook.com (2603:10b6:5:35e::8) by
- BN9PR12MB5116.namprd12.prod.outlook.com (2603:10b6:408:119::16) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5813.17; Mon, 14 Nov
- 2022 10:57:21 +0000
-Received: from CO6PR12MB5444.namprd12.prod.outlook.com
- ([fe80::8edd:6269:6f31:779e]) by CO6PR12MB5444.namprd12.prod.outlook.com
- ([fe80::8edd:6269:6f31:779e%5]) with mapi id 15.20.5813.017; Mon, 14 Nov 2022
- 10:57:21 +0000
-Message-ID: <7db869ea-c355-01a3-1d09-541473e1e8b8@nvidia.com>
-Date: Mon, 14 Nov 2022 10:57:12 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.2.2
-Subject: Re: [PATCH v2 02/13] dt-bindings: usb: Add NVIDIA Tegra234 XUSB host
- controller binding
-To: Rob Herring <robh@kernel.org>
-Cc: Wayne Chang <waynec@nvidia.com>, mathias.nyman@intel.com,
- p.zabel@pengutronix.de, devicetree@vger.kernel.org,
- krzysztof.kozlowski+dt@linaro.org, linux-tegra@vger.kernel.org,
- singhanc@nvidia.com, balbi@kernel.org, linux-phy@lists.infradead.org,
- vkoul@kernel.org, thierry.reding@gmail.com, ajayg@nvidia.com,
- heikki.krogerus@linux.intel.com, linux-usb@vger.kernel.org,
- treding@nvidia.com, jckuo@nvidia.com, linux-kernel@vger.kernel.org,
- gregkh@linuxfoundation.org, linux-i2c@vger.kernel.org
-References: <20221111101509.999589-1-waynec@nvidia.com>
- <20221111101509.999589-3-waynec@nvidia.com>
- <166817308790.3060162.14990231448404857914.robh@kernel.org>
- <5782d31a-9a0c-33da-ff84-20cae29f977e@nvidia.com>
- <20221111173236.GA3561612-robh@kernel.org>
-Content-Language: en-US
-From: Jon Hunter <jonathanh@nvidia.com>
-In-Reply-To: <20221111173236.GA3561612-robh@kernel.org>
-X-ClientProxiedBy: LO2P123CA0056.GBRP123.PROD.OUTLOOK.COM
- (2603:10a6:600:1::20) To CO6PR12MB5444.namprd12.prod.outlook.com
- (2603:10b6:5:35e::8)
+	id 1ouX9m-0008q1-0a
+	for linux-phy@lists.infradead.org; Mon, 14 Nov 2022 10:57:39 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 9C92960FBE;
+	Mon, 14 Nov 2022 10:57:37 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id F0B5DC433C1;
+	Mon, 14 Nov 2022 10:57:36 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1668423457;
+	bh=fUQ9vpvOPE5lm++N751vUFvd8FWP71h+ikUD+qipnFw=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=P9Y9QF3gyLnULxGSOG70vhOS13YMbNd6ulz2UXtYzXr/4muZvQ9G4sjuFJngy0iFW
+	 zTQ6ruoB44v/QHRlLJTF2bAr9UfToR8CQGZkDIZ6ZULOouDAb3WNdfmTkKvriogcHS
+	 d1MbFwy/MQAFMawia7USsV4woKNYd0l4tvAXdVnvp+r63SNV35iCwYfx5bO9MNHkKf
+	 zzHDtLN2s2Ni8rc/ZfazsvXd8+QjvrdWVF5jFrB3EWa4GEySV3ZvqjHzU3EGnkXUTH
+	 Cs/NcVJ7mVT19kWgYeZoOM6XZLH2kJRYdcq6NfzEZX3FpEIL0RXTufNJLVVX8zabx4
+	 1lv+/meEFsb7Q==
+Received: from johan by xi.lan with local (Exim 4.94.2)
+	(envelope-from <johan@kernel.org>)
+	id 1ouX9E-00010k-Jv; Mon, 14 Nov 2022 11:57:04 +0100
+Date: Mon, 14 Nov 2022 11:57:04 +0100
+From: Johan Hovold <johan@kernel.org>
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Cc: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+	Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 17/22] phy: qcom-qmp-combo: merge USB and DP
+ configurations
+Message-ID: <Y3IfAEhpPRLnFRhr@hovoldconsulting.com>
+References: <20221111085643.9478-1-johan+linaro@kernel.org>
+ <20221111085643.9478-18-johan+linaro@kernel.org>
+ <5fd7a56f-db12-deb3-753a-22867526d90b@linaro.org>
+ <Y3ICOwr2ld9cdgrK@hovoldconsulting.com>
+ <8802255c-16a9-1fb7-bbc5-d8e0d44a6f1f@linaro.org>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: CO6PR12MB5444:EE_|BN9PR12MB5116:EE_
-X-MS-Office365-Filtering-Correlation-Id: 633b34ef-1554-49bd-7288-08dac62f0076
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 	uzmEdV1v3lrnVV/1YVfaSs+C/SF5c6URdUNYBy+eoDtlsjDvEE/NDQXBWa+ZNnDhAJ1+s8jtvxJ6PiuJ9vMyFB1gNJvRM8xQZXFB1OnlWMPsATxSfzAPuZdXu4NsklEfrCVeUPDWb6nORaYO3vwgAn+qlZIkJtu1neQYoVeSrS4P7ppqZeqOqxmxEtFa75pf+x68YACiBKF5pcgd9SqRcPvsF8VsF6AiUDvoYk/BUQ9AI08gI0CTo8LN0sstCJIOlrqYDMA22J7MUtXPm8ewcav8QHi2rEhqxrYKXcaYZc2FkDoiRhzONxmb8X30qqdMP2VwT33JqHOeap2WAz6QbOvDL7P5qFIH2JP/zBOswOSo+412/tQH7UU9oIGEIQbL2LKr7ayM6we4sZKE+aGayEgR8hZSHii/2i2BynbQYog8mW0oCRKDhjxDZ8vxy5SXS1NrP4Xr49ZfF1WzOoc/uOtbQVVWkVWJyAjes2J2CG2S4LTvUlRwHonryFEx5ZmAfOPyh649VjYxI28X1Iy8iNaqztK+C2MDtB5OWvkp7vRgQXqftLYpIc0yuSDWPiWd4bNXOHfRwNxXAfuEfyGpyFhfCmutUYBHOboUkY2pjGjWtbb0AQ1dkiB04dXXvW3pXVETHfy/fCMb4RoiIzO9teyvpR7jN80qMuMtcb3EYvr+yC0Xxb9NdHVurVXn6FzvBnufhCERjJX1nZDOPwj88XtQmT58yhATfimgtyq+CtRM6JL20U8OHCvwqPuKVfPnyq2HAtrShBFBJIxyUprP163iGLNrgE4Id4RjLCP1KKA=
-X-Forefront-Antispam-Report: 	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:CO6PR12MB5444.namprd12.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230022)(4636009)(346002)(136003)(396003)(366004)(376002)(39860400002)(451199015)(31686004)(316002)(6916009)(36756003)(478600001)(6666004)(86362001)(6512007)(31696002)(6506007)(53546011)(2906002)(66476007)(8676002)(2616005)(66556008)(186003)(7416002)(8936002)(83380400001)(66946007)(6486002)(41300700001)(38100700002)(5660300002)(4326008)(43740500002)(45980500001);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: 	=?utf-8?B?WkliQmdOU2wzVUpXeStPZ1loeURDa2xzRkoxRlY3QkQ0YkdpTktLNHJpSjUr?=
- =?utf-8?B?RVhPbzk1bjJqNWU0clI1RFlpT1N6aXd0NlVhQk1MSFhrdFJNSjRpeitCcmYr?=
- =?utf-8?B?UkRFWlBmM1JvNkNKaENjMEFJTVZpQnhTTkpyUCtZV0tzbVE4bDNpbHNhTVVU?=
- =?utf-8?B?d0tEYUYwS2hoZENFZCtYTGNEbGJmUXVwOUVaODRWTGptZ0VtRFlpM1V4SlM5?=
- =?utf-8?B?anpubkt3SjQ4c3VZdW1ubGRXWTM1dVpSVzV6NHdHVVhadmIydStqQ21tdmJy?=
- =?utf-8?B?N0xqUFpiajR5RDgvZ2dRMGsySDRvV2lRckZrenBhUkpESGFEc1gwVkdzay9k?=
- =?utf-8?B?eXJvaWZ1bUVnN3haSGd0b1crd1M3VzFrUEVGNkZPL2Q4cFBmVjlhcDNCbFdz?=
- =?utf-8?B?VnJqNXlLZS9tM0NSekdES1pTSXhyWnJpUTNZV3JyWXZDcXZTY2xYVTgrQ0pX?=
- =?utf-8?B?eitMTFlaNDMxNWMwWXFkWkFvM2F6N1Q3YUJncUZTRnpGdWxhdUFTUVUyQWhF?=
- =?utf-8?B?eE4wdkUyeElWUW94L3NCT2tqRG5IOGxqRVpYYWxjc0l0dnpQQUF2NldSNHIz?=
- =?utf-8?B?ZUpENG8xU2VkOHBPZmx2MnVEOUVzSUdzWUhsUDAxR1ZlbmR2eDg3RXNBNk9o?=
- =?utf-8?B?KzhJS0U0cllVTGV3RFRFTXpLRFAxU2grUHNFN0lnUEhIQjg0OXlLc0VHVW8z?=
- =?utf-8?B?d2NnQlY4MzBuTnhvaXAzTEZYTEtIQnVmRWdmOEpvdFR1N2xtMTVWRFAraTZ5?=
- =?utf-8?B?UWdrMXI2Uk1lNElOamlDREl5a2ExTGdEaVRldXd0WjdLQ09zaWhFbFd5SFZz?=
- =?utf-8?B?eFo2YWVvYUJaUHJpMEtSRHJsNmhqeEdXY3FrTVUwSTNxYkQ5cTNZczlXSWw1?=
- =?utf-8?B?R0I1dGpBbDdWcXpPaXJUZ3JrUnJJZERid2tUU08xMUlJWXo2Z0xxYlhIcUkz?=
- =?utf-8?B?TGxBeERyVkcyVDhWOVVIRVloNG81YmsyaFdmb2UvNjZiUE5LVjRCY3d3Q0hv?=
- =?utf-8?B?WkdFQ3VtenMwcXR5NVhNY1J1WnhGSDN4M2szZ2N4cUVZME0zN2Y1TFdNbHJh?=
- =?utf-8?B?T2VsUlN2N2JXWXprSGhMTW1uWXEweWYwdjRiWDlROWVIOTVCTnN0OW5ha21M?=
- =?utf-8?B?L2xpNlRZc1NjeGxkdjlUcjNzV2IwNllPMUZwUHBndjhiN25LaUthazR0Lzdp?=
- =?utf-8?B?aGJJclJoVGV2OXlmSHlRRlpJd2xGOWh2ZmI4UWgydzdMSVVCT1ovQS9YSHgz?=
- =?utf-8?B?Q0pnQWx6bFFRaVNTSzNwZ1FEd090a2ptZXQ4dWdNSm8waXNlUGx1c1U5N0dC?=
- =?utf-8?B?NjVMVVVndXgzTURFM2hzU3JPTG5WVmxGV2IyR2xZaVU0bTNDbTl5cElqcVJu?=
- =?utf-8?B?WG02elZGYXJJaEJ4Nis2bi9SclRUR21tOExsZUYxRkZHTWVud3dkWHF1cHg5?=
- =?utf-8?B?dGpHRnFJeGc4Y3VQOUxwVTlLL0NhOC9ia2tOM2ZIOW1RZ2V4TTcvU1U3WXdO?=
- =?utf-8?B?aFBWOEJmcElWeFpLcEU5OHZ6d1J1NnFPb3gwZHM2UHJNT1E1bEJaUkRldjV1?=
- =?utf-8?B?ZEZwRTQ1cjVRa3o2dkg4aXBmZW5TSFluRkw2c3kySEc0SkU4bytwRnhUZ2Z2?=
- =?utf-8?B?bFAyL1RKY2t4dVVnNGZJS0pTb1JCeTJVSTVhdDZEd0ZldjljckVobzh5RGsv?=
- =?utf-8?B?ZENub2FEMGxNZmhWWkdFL0lmVHBGLzhLS3hlcWFKUTk5bElnd1NCazJ0YlBW?=
- =?utf-8?B?TDBKWkpRaVJudTM0ZnpOanRMTFN4UzVhNEg3L09ob0lhem1jeC9hVGpaSWNi?=
- =?utf-8?B?MVlWWGx3WTY4VlpFZU5TZWllU1psMVdYZHhBM0xWNk9aczJtdTZlTGpYaUFI?=
- =?utf-8?B?UzFFQmF1aTIyTEZFWFRING5oNHFPNGcyYXNyMHNHMU8xeUhpckFBSjlMeDk5?=
- =?utf-8?B?SndKUlBSd09TbGloTlhWWW91eEdMdEwxZmdCdlFRc0VXUlhUOFBKNVhYVEo4?=
- =?utf-8?B?bzBxL3hsS0YveWp6VGFaZDBMOFp2MWRXWUhqNmNTbWhyd00rME50RW9iMFFO?=
- =?utf-8?B?dkkzVzhQQ1VkSXJZMEFuektCd1dkclBRb3l0eVA0N3ptS2JERjN0UjZKV3lJ?=
- =?utf-8?B?N0NzWjNwRWQxOWdtVURFVjEvNXM4eDNVZk5xcHFDbnRwMkNSWEFXUTk3UXlv?=
- =?utf-8?Q?WdnXO2xRnhr3tiJUHIBYrhFTYccx95xh7y6pgWvolLkU?=
-X-OriginatorOrg: Nvidia.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 633b34ef-1554-49bd-7288-08dac62f0076
-X-MS-Exchange-CrossTenant-AuthSource: CO6PR12MB5444.namprd12.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 14 Nov 2022 10:57:21.2693
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: WTvYdRnprq0Jup6DhPdZLKv6dvxtzA0Zecj8a3b1bAMd0hyk/PAcjAQBYffojnfDygvZavxk1+0CD9sH1VR3oQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN9PR12MB5116
+Content-Disposition: inline
+In-Reply-To: <8802255c-16a9-1fb7-bbc5-d8e0d44a6f1f@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221114_025727_313646_FB2C8DCD 
-X-CRM114-Status: GOOD (  14.56  )
+X-CRM114-CacheID: sfid-20221114_025738_149406_AA19C3D0 
+X-CRM114-Status: GOOD (  26.05  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -149,58 +79,62 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-On 11/11/2022 17:32, Rob Herring wrote:
-> On Fri, Nov 11, 2022 at 02:38:21PM +0000, Jon Hunter wrote:
->>
->> On 11/11/2022 13:30, Rob Herring wrote:
->>>
->>> On Fri, 11 Nov 2022 18:14:58 +0800, Wayne Chang wrote:
->>>> Add device-tree binding documentation for the XUSB host controller present
->>>> on Tegra234 SoC. This controller supports the USB 3.1 specification.
->>>>
->>>> Signed-off-by: Wayne Chang <waynec@nvidia.com>
->>>> ---
->>>> V1 -> V2: new change for adding nvidia,tegra234-xusb.yaml
->>>>    .../bindings/usb/nvidia,tegra234-xusb.yaml    | 159 ++++++++++++++++++
->>>>    1 file changed, 159 insertions(+)
->>>>    create mode 100644 Documentation/devicetree/bindings/usb/nvidia,tegra234-xusb.yaml
->>>>
->>>
->>> My bot found errors running 'make DT_CHECKER_FLAGS=-m dt_binding_check'
->>> on your patch (DT_CHECKER_FLAGS is new in v5.13):
->>>
->>> yamllint warnings/errors:
->>>
->>> dtschema/dtc warnings/errors:
->>> Error: Documentation/devicetree/bindings/usb/nvidia,tegra234-xusb.example.dts:36.27-28 syntax error
->>> FATAL ERROR: Unable to parse input tree
->>> make[1]: *** [scripts/Makefile.lib:406: Documentation/devicetree/bindings/usb/nvidia,tegra234-xusb.example.dtb] Error 1
->>> make[1]: *** Waiting for unfinished jobs....
->>> make: *** [Makefile:1492: dt_binding_check] Error 2
->>
->> This compiles fine on top of -next. We are just missing the change that
->> populates the required definitions.
+On Mon, Nov 14, 2022 at 01:10:43PM +0300, Dmitry Baryshkov wrote:
+> On 14/11/2022 11:54, Johan Hovold wrote:
+> > On Sat, Nov 12, 2022 at 10:43:14AM +0300, Dmitry Baryshkov wrote:
+> >> On 11/11/2022 11:56, Johan Hovold wrote:
+> >>> It does not really make any sense to keep separate configuration
+> >>> structures for the USB and DP parts of the same PHY so merge them.
+   
+> >>> -/* struct qmp_phy_cfg - per-PHY initialization config */
+> >>>    struct qmp_phy_cfg {
+> >>> -	/* phy-type - PCIE/UFS/USB */
+> >>> -	unsigned int type;
+> >>>    	int lanes;
+> >>
+> >> int lanes doesn't really make sense here in my opinion. It should be
+> >> usb_lanes and dp_lanes.
+> > 
+> > It doesn't make much less sense than having it here currently do.
+> > 
+> > All of these USB-C PHYs are dual lane for bi-directional SS USB and
+> > quad lane for uni-directional DP (even if only CC1 orientation and lanes
+> > 2 and 3 are currently supported).
 > 
-> Where exactly is that mentioned in the commit msg?
+> I was under impression that sdm845 has just a single lane for each of 
+> USB and DP. After rechecking the phy/next, I see that it was my mistake 
+> (quite logical, SS is two lanes, so the compliant PHY must have two 
+> lanes too).
+> 
+> I wander how/if 4-lane DP works. The only thing that we do is 
+> programming of the QSERDES_DP_PHY_PD_CTL register, however judging e.g. 
+> your 4-lane PCIe changes, one should probably also program the other two 
+> lanes. Maybe it is handled automatically inside the hardware.
 
-It is mentioned in the cover-letter.
+4-lane PCIe on SC8280XP is a different thing entirely (and remember that
+that's actually 8 uni-directional lanes).
 
-> No maintainer can take patches which apply against linux-next, so not a
-> good dependency to mention either.
+I'm sure there are further problems with the current DP alt mode
+implementation, but hopefully that can be resolved when adding support
+for orientation detection. I'm just fixing the obvious bugs and try to
+stay "bug compatible" otherwise. :)
 
-Yes understand, I was just trying to indicate that there is a known 
-dependency here that we need to handle.
+> > I should probably just drop the lanes parameter completely, either as a
+> > preparatory clean up or as follow-on one (e.g. also a bit depending on
+> > if there are other reasons for respinning a v2).
+> 
+> I think a follow up is enough, but let's get it. Having a single lanes=2 
+> field looks... strange.
 
-Jon
+I dropped the lane parameter as a preparatory patch to this one in v2
+that I'll post in a bit.
 
--- 
-nvpublic
+Johan
 
 -- 
 linux-phy mailing list
