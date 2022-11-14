@@ -4,70 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EA4A3C4332F
-	for <linux-phy@archiver.kernel.org>; Mon, 14 Nov 2022 10:57:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4BB82C433FE
+	for <linux-phy@archiver.kernel.org>; Mon, 14 Nov 2022 11:07:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=w5AFjFP7R/O54F2Ad1ZFg1yG+18WKdHuvbexeLYOAy8=; b=x2vw5HhHf+l5oM
-	EqDFjxz/Oy0pYScB6mcs7+D/ob1WLz2a5LyfgaLnUapISBJ/rRUS86iYtMuMKZAfU5ipHNWj4/bZ+
-	vDKhTRnPYIL6wBYGnP0lWdbr31tyop8y81cMfZjwq867DUGzs4ze8GVf0zmJlB0ZOGHJi78VXMcU5
-	zzEKrxYY+uSGIk6Hha2SlWoJ8PE5fXwHOhhkuIeOm73Rn+LrvZPIcjiljpixbvyTupTNTC6J6yR90
-	KmHa4/Rd0VA2Yw/0JhRKgOVuvwkiXZERpIDTzH6c/XMgb7XlqIIrYTcVg3E3+ywl6BBhGxUvF6nEF
-	qd3ppgp/p55g1m+3qWnA==;
+	List-Owner; bh=UUrf7niIw2jJ8IOSmfStmKtNQuuftV1+vS8r+gWRHrE=; b=Y3HLBn5ehySN55
+	tkilmyKHy9BB2+HsqT/Kdm6O8h0amwyMiml5F+HK0lbWerCVDscIm4dbAsXrhO1iIra3aONuybl/r
+	+XUhLKr0a3OIoeDvb/tOC75yXcVuWQcyt6nZacQYS+5qDkNU7z9FIxsoC/5xrbcOD9esKy6Q7Zf37
+	sg1Emp7mcQ+l8LqomLJzrQaQ0G0oavF0z3LSBwyOvWUmfUhoOAFptsNV6qKxhYkV3blbG816OC0X8
+	yfXzWWndQAJ/3DakbjT6iqr6bQOybvCa/lAEtz6whG2ucQXw4j10jJmfwJjIQBJ+5kjXEm78g+pdx
+	/Gc9Egpz3snkqByNQylw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ouX9o-0008qx-DJ; Mon, 14 Nov 2022 10:57:40 +0000
+	id 1ouXJP-000D2Q-Mr; Mon, 14 Nov 2022 11:07:35 +0000
 Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ouX9m-0008q1-0a
-	for linux-phy@lists.infradead.org; Mon, 14 Nov 2022 10:57:39 +0000
+	id 1ouXJ4-000Cmk-Ry
+	for linux-phy@lists.infradead.org; Mon, 14 Nov 2022 11:07:16 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 9C92960FBE;
-	Mon, 14 Nov 2022 10:57:37 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id F0B5DC433C1;
-	Mon, 14 Nov 2022 10:57:36 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 4BB8460FE5;
+	Mon, 14 Nov 2022 11:07:14 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B30E2C433D6;
+	Mon, 14 Nov 2022 11:07:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1668423457;
-	bh=fUQ9vpvOPE5lm++N751vUFvd8FWP71h+ikUD+qipnFw=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=P9Y9QF3gyLnULxGSOG70vhOS13YMbNd6ulz2UXtYzXr/4muZvQ9G4sjuFJngy0iFW
-	 zTQ6ruoB44v/QHRlLJTF2bAr9UfToR8CQGZkDIZ6ZULOouDAb3WNdfmTkKvriogcHS
-	 d1MbFwy/MQAFMawia7USsV4woKNYd0l4tvAXdVnvp+r63SNV35iCwYfx5bO9MNHkKf
-	 zzHDtLN2s2Ni8rc/ZfazsvXd8+QjvrdWVF5jFrB3EWa4GEySV3ZvqjHzU3EGnkXUTH
-	 Cs/NcVJ7mVT19kWgYeZoOM6XZLH2kJRYdcq6NfzEZX3FpEIL0RXTufNJLVVX8zabx4
-	 1lv+/meEFsb7Q==
+	s=k20201202; t=1668424033;
+	bh=OreeBz+Kd7/2CeeAnBA+XN0OZC5YUsciJCJdvvga4ew=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=HuFOjISToWVijQI+U7+2whHiH8Jx/FUbqitfwU/+F7vW5xJ8Xnvm85NwziSjdiWg7
+	 F5W6L4JJffsgEzeIVGjst34X/qZQUTVtX/oxWidSNE6T3tG/BTm/bh9DLq2+vPWzrp
+	 bFVljR4b/lSPoEtdf93g3M6RFgIilA+qBGBO7ELiicEvVz9BqBWf7JJraEgoalr4zF
+	 ix51//tHMxUUysTagFCwmYldh5uYfWC8Cr8Km1s5JLwsz7VLsPACSZdiYFt4JWuXII
+	 /yX3eSuFzuoFJHwnZTv8ElV3bhRkm2oe6I1PQEbcnC4HygmO5TacWZp0XKyIC9cJjz
+	 OCR1Kot/n+72A==
 Received: from johan by xi.lan with local (Exim 4.94.2)
-	(envelope-from <johan@kernel.org>)
-	id 1ouX9E-00010k-Jv; Mon, 14 Nov 2022 11:57:04 +0100
-Date: Mon, 14 Nov 2022 11:57:04 +0100
-From: Johan Hovold <johan@kernel.org>
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Cc: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-	Andy Gross <agross@kernel.org>,
+	(envelope-from <johan+linaro@kernel.org>)
+	id 1ouXIX-0001ER-RZ; Mon, 14 Nov 2022 12:06:41 +0100
+From: Johan Hovold <johan+linaro@kernel.org>
+To: Vinod Koul <vkoul@kernel.org>
+Cc: Andy Gross <agross@kernel.org>,
 	Bjorn Andersson <andersson@kernel.org>,
 	Konrad Dybcio <konrad.dybcio@linaro.org>,
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 17/22] phy: qcom-qmp-combo: merge USB and DP
- configurations
-Message-ID: <Y3IfAEhpPRLnFRhr@hovoldconsulting.com>
-References: <20221111085643.9478-1-johan+linaro@kernel.org>
- <20221111085643.9478-18-johan+linaro@kernel.org>
- <5fd7a56f-db12-deb3-753a-22867526d90b@linaro.org>
- <Y3ICOwr2ld9cdgrK@hovoldconsulting.com>
- <8802255c-16a9-1fb7-bbc5-d8e0d44a6f1f@linaro.org>
+	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+	linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	Johan Hovold <johan+linaro@kernel.org>
+Subject: [PATCH v2 01/22] phy: qcom-qmp-combo: sort device-id table
+Date: Mon, 14 Nov 2022 12:06:00 +0100
+Message-Id: <20221114110621.4639-2-johan+linaro@kernel.org>
+X-Mailer: git-send-email 2.37.4
+In-Reply-To: <20221114110621.4639-1-johan+linaro@kernel.org>
+References: <20221114110621.4639-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <8802255c-16a9-1fb7-bbc5-d8e0d44a6f1f@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221114_025738_149406_AA19C3D0 
-X-CRM114-Status: GOOD (  26.05  )
+X-CRM114-CacheID: sfid-20221114_030714_971218_6BD19237 
+X-CRM114-Status: GOOD (  11.81  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,57 +81,52 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Nov 14, 2022 at 01:10:43PM +0300, Dmitry Baryshkov wrote:
-> On 14/11/2022 11:54, Johan Hovold wrote:
-> > On Sat, Nov 12, 2022 at 10:43:14AM +0300, Dmitry Baryshkov wrote:
-> >> On 11/11/2022 11:56, Johan Hovold wrote:
-> >>> It does not really make any sense to keep separate configuration
-> >>> structures for the USB and DP parts of the same PHY so merge them.
-   
-> >>> -/* struct qmp_phy_cfg - per-PHY initialization config */
-> >>>    struct qmp_phy_cfg {
-> >>> -	/* phy-type - PCIE/UFS/USB */
-> >>> -	unsigned int type;
-> >>>    	int lanes;
-> >>
-> >> int lanes doesn't really make sense here in my opinion. It should be
-> >> usb_lanes and dp_lanes.
-> > 
-> > It doesn't make much less sense than having it here currently do.
-> > 
-> > All of these USB-C PHYs are dual lane for bi-directional SS USB and
-> > quad lane for uni-directional DP (even if only CC1 orientation and lanes
-> > 2 and 3 are currently supported).
-> 
-> I was under impression that sdm845 has just a single lane for each of 
-> USB and DP. After rechecking the phy/next, I see that it was my mistake 
-> (quite logical, SS is two lanes, so the compliant PHY must have two 
-> lanes too).
-> 
-> I wander how/if 4-lane DP works. The only thing that we do is 
-> programming of the QSERDES_DP_PHY_PD_CTL register, however judging e.g. 
-> your 4-lane PCIe changes, one should probably also program the other two 
-> lanes. Maybe it is handled automatically inside the hardware.
+Sort the device-id table by compatible string to make it easier to find
+and add new entries.
 
-4-lane PCIe on SC8280XP is a different thing entirely (and remember that
-that's actually 8 uni-directional lanes).
+Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
+---
+ drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 16 ++++++++--------
+ 1 file changed, 8 insertions(+), 8 deletions(-)
 
-I'm sure there are further problems with the current DP alt mode
-implementation, but hopefully that can be resolved when adding support
-for orientation detection. I'm just fixing the obvious bugs and try to
-stay "bug compatible" otherwise. :)
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+index c7a926d548d8..d6a031bcfc30 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+@@ -2651,14 +2651,6 @@ static const struct of_device_id qmp_combo_of_match_table[] = {
+ 		.compatible = "qcom,sc7180-qmp-usb3-dp-phy",
+ 		.data = &sc7180_usb3dpphy_cfg,
+ 	},
+-	{
+-		.compatible = "qcom,sdm845-qmp-usb3-dp-phy",
+-		.data = &sdm845_usb3dpphy_cfg,
+-	},
+-	{
+-		.compatible = "qcom,sm8250-qmp-usb3-dp-phy",
+-		.data = &sm8250_usb3dpphy_cfg,
+-	},
+ 	{
+ 		.compatible = "qcom,sc8180x-qmp-usb3-dp-phy",
+ 		.data = &sc8180x_usb3dpphy_cfg,
+@@ -2667,6 +2659,14 @@ static const struct of_device_id qmp_combo_of_match_table[] = {
+ 		.compatible = "qcom,sc8280xp-qmp-usb43dp-phy",
+ 		.data = &sc8280xp_usb43dpphy_combo_cfg,
+ 	},
++	{
++		.compatible = "qcom,sdm845-qmp-usb3-dp-phy",
++		.data = &sdm845_usb3dpphy_cfg,
++	},
++	{
++		.compatible = "qcom,sm8250-qmp-usb3-dp-phy",
++		.data = &sm8250_usb3dpphy_cfg,
++	},
+ 	{ }
+ };
+ MODULE_DEVICE_TABLE(of, qmp_combo_of_match_table);
+-- 
+2.37.4
 
-> > I should probably just drop the lanes parameter completely, either as a
-> > preparatory clean up or as follow-on one (e.g. also a bit depending on
-> > if there are other reasons for respinning a v2).
-> 
-> I think a follow up is enough, but let's get it. Having a single lanes=2 
-> field looks... strange.
-
-I dropped the lane parameter as a preparatory patch to this one in v2
-that I'll post in a bit.
-
-Johan
 
 -- 
 linux-phy mailing list
