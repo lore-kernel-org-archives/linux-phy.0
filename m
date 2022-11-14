@@ -4,98 +4,176 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 99C63C433FE
-	for <linux-phy@archiver.kernel.org>; Mon, 14 Nov 2022 02:23:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D441EC433FE
+	for <linux-phy@archiver.kernel.org>; Mon, 14 Nov 2022 06:06:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:CC:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jnGgmDN0PFNrQswnWsJZ6nNMtdC/Bwb4qL2C0Ud8AfU=; b=EQd7YPxNqV1GYW
-	oIn/jATOfreQA6Q2XQupBRJ2VVphZjbgNtv64O6pIrzF4+NJh/ku6v7I4AkFIJ+BHvokKKnVNd6yB
-	9+uEbbVw+7CKuYvX7TeAhWhfvqikpNvg3JASQ3s0/++iHMiXrTfitIQ73HK69JLMJY6Vdgtl2Q/B2
-	3wPT3erPL5uGgW+wbemfsZyIxbKq51YVbzlN/WyKRs+xbJ1k4JJw+y4sHQ8Ft66mFEcceOvYGLftg
-	KbeqpYY+wmpnyAuqTOz06ur1rR4HZNBy+8YTLDHBiUzMRJUVUrKuncNpAQFU+RL6kt6YhSZdhlPFS
-	VrTXDynIRa6ZTcLU1EcQ==;
+	List-Owner; bh=3sD7w8RHvM/GkeeLhC107pDYtsqQ61QO+nU8rGU4mF8=; b=HTa1mmj7nfx5ch
+	/O83u0CgCS+2xjwpGm0jv7fBfffLWmZZqRlV7NU6H4YynRqsyXvSCtt4ewmjeYjz1V7h1YdGB2Ahn
+	Dxzyx28xefcBu7httS465c/Kkem6l2Hfe6aprBLbva8oRO9c4YKmUT2BEI8QBqOjzJLC0pI8R1vty
+	iUlpcszmaiJxUBtRYP9BIfEzJwIFDUEe3LyI6GLbC7TL0inDkguWqRHr8wsbVJ/86ALvOGBxrBrZo
+	qNccs1sPIbUmN9nU2aKO7J83XATDKn4dFe51dpXt0j9Dcppj3IOI7YkCoYD2Rekif8Zu3/Ipy7vne
+	dsSETuIYuseyrGzEnJVw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ouP88-00FYBW-TA; Mon, 14 Nov 2022 02:23:24 +0000
-Received: from wout2-smtp.messagingengine.com ([64.147.123.25])
+	id 1ouScH-00GBeX-6R; Mon, 14 Nov 2022 06:06:45 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ouP6P-00FXPQ-VO; Mon, 14 Nov 2022 02:21:39 +0000
-Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
-	by mailout.west.internal (Postfix) with ESMTP id 7BBAD3200919;
-	Sun, 13 Nov 2022 21:21:36 -0500 (EST)
-Received: from mailfrontend2 ([10.202.2.163])
-  by compute3.internal (MEProxy); Sun, 13 Nov 2022 21:21:37 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sholland.org; h=
-	cc:cc:content-transfer-encoding:date:date:from:from:in-reply-to
-	:in-reply-to:message-id:mime-version:references:reply-to:sender
-	:subject:subject:to:to; s=fm2; t=1668392496; x=1668478896; bh=gj
-	Txd/OJ3XJY9Y9W7MUwj9LbmBQtUOqoYWx80cWH4tA=; b=dv9RTRgh0sYupDLwTl
-	1jiL05KjhZ3cPsZwCHIh8u/HNuoCOyWmMo18j0BF6bLzEmGERmWbt6k0u3aomUnb
-	YYHmwjgoAQTjmBnGOr1v840kg52Wf/J0xz36ZHthYM6mrX/HmYhfMqoSbKwDNaaH
-	f4karJO+BiVcWoCqaHcigFUgCD/zxZ0YGVvQGxlFWSGatZmUqCahownObk9w/hpN
-	p3svfgj8LNucGbXdeM6Zm6FwYZZY9Zub8Q5mWPXRD1jnme8mZTaI0jSWhvy+eHCT
-	oK9ljUpR93MJvKzZDu2JT6nv2C94RH+xl06jYYDpA6nsKbS3G4JfQWUuT5x+AqGE
-	z9Rw==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
-	messagingengine.com; h=cc:cc:content-transfer-encoding:date:date
-	:feedback-id:feedback-id:from:from:in-reply-to:in-reply-to
-	:message-id:mime-version:references:reply-to:sender:subject
-	:subject:to:to:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender
-	:x-sasl-enc; s=fm1; t=1668392496; x=1668478896; bh=gjTxd/OJ3XJY9
-	Y9W7MUwj9LbmBQtUOqoYWx80cWH4tA=; b=eDe5SHgitCLCmhqOB38VQdkdhxkUL
-	td2WQK2rki7jIoZd9+vCH0fjf3CJRMs4AT13upvh67rh6YjYIY9BTG9LsNgJKHq/
-	FGuWLAGIvAuLP4xL6+XuinTkaGArlldg22AKwQY4mo8ZZ9ArG8QqYNTUD40D7izc
-	Wv2mW+PVvTq/+1ZVl/9HgN/IBdEZGxsE4cqo0xmIuXJOplvfxu7a4Q0rYeWgr/Nm
-	bD3kTDb/oI7WwZRbzbZYl7Liy7/SzPFbdlor+vwZNu964j8usJ7dWo0veVAUNgEu
-	pn/eEWqnS2/PSlhh9jyeQHi88UJmyEZ19OBMo0Jnw2qt2dNAvlm7rHEsw==
-X-ME-Sender: <xms:L6ZxYy70vmvPesL2emIiDveT2AK6pQft1C5gsO_CNewfZuNyR_-m_g>
-    <xme:L6ZxY75nDbbXv6MM1NjPa4BFdIgQeGUCYk2yP4ODoy8lFWAIzU7qwUZmsKbkNsX0H
-    Hy_3qiiZUxyuHeEqw>
-X-ME-Received: <xmr:L6ZxYxc4cu2tE1xgmyTvRcoXE-AW2pwcI6LwrSm4FeVUE2u10X3opvec_YRFocdkTkd0YTuPByfeSRNjnVbLdHi-iiyQ43qeapo1216FdBGlTSqkuLpMyNfe7YKvL51BMdQ3nw>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvgedrgedugdeghecutefuodetggdotefrodftvf
-    curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
-    uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
-    fjughrpefhvfevufffkffojghfggfgsedtkeertdertddtnecuhfhrohhmpefurghmuhgv
-    lhcujfholhhlrghnugcuoehsrghmuhgvlhesshhhohhllhgrnhgurdhorhhgqeenucggtf
-    frrghtthgvrhhnpedukeetueduhedtleetvefguddvvdejhfefudelgfduveeggeehgfdu
-    feeitdevteenucevlhhushhtvghrufhiiigvpedunecurfgrrhgrmhepmhgrihhlfhhroh
-    hmpehsrghmuhgvlhesshhhohhllhgrnhgurdhorhhg
-X-ME-Proxy: <xmx:MKZxY_L3HaR6rSkgY7s2-U0OTFig8o0FXzy5KbXmKrvYlhfHLuqPmg>
-    <xmx:MKZxY2LC4XhibtHVVqhy2mUynDuocDiYxCDAZkKrY8hpcjSnE2tSdQ>
-    <xmx:MKZxYwxsAvwlTlKwvJexvWXDzzZCw4Yf8hJr6EaEtrPrWA9JYpMaVA>
-    <xmx:MKZxY4BHqOppT4HEqHzbVnyZInEKPZ3ulJ2izQouUKydiry5fIfnrQ>
-Feedback-ID: i0ad843c9:Fastmail
-Received: by mail.messagingengine.com (Postfix) with ESMTPA; Sun,
- 13 Nov 2022 21:21:35 -0500 (EST)
-From: Samuel Holland <samuel@sholland.org>
-To: Kishon Vijay Abraham I <kishon@kernel.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Chen-Yu Tsai <wens@csie.org>,
-	Jernej Skrabec <jernej.skrabec@gmail.com>,
-	Maxime Ripard <mripard@kernel.org>
-Cc: Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
-	Samuel Holland <samuel@sholland.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Rob Herring <robh+dt@kernel.org>,
-	devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-sunxi@lists.linux.dev
-Subject: [PATCH v2 8/8] phy: allwinner: phy-sun6i-mipi-dphy: Add the A100 DPHY variant
-Date: Sun, 13 Nov 2022 20:21:13 -0600
-Message-Id: <20221114022113.31694-9-samuel@sholland.org>
-X-Mailer: git-send-email 2.37.3
-In-Reply-To: <20221114022113.31694-1-samuel@sholland.org>
-References: <20221114022113.31694-1-samuel@sholland.org>
+	id 1ouScE-00GBcU-J4; Mon, 14 Nov 2022 06:06:44 +0000
+X-UUID: a9b51260881b4314a91104af2506fb87-20221113
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
+	h=MIME-Version:Content-Transfer-Encoding:Content-ID:Content-Type:In-Reply-To:References:Message-ID:Date:Subject:CC:To:From; bh=DUgRwl/6uNZ9dYS784fImzN572OVVwlmVIDL0bmDxFk=;
+	b=GGDQTAWtX4JgD0SbBK36Y4JtzIHTbVu6fG56CcgubpBgxR5wUH/NufundVI1vjGXO4C6825gnllij5iTm2KjRQPIO9K2wsIP9rAni5rxEDwKiq07Bikm7KEO+V0nXxjFKj6xt6+1qxBKFA+F1wfW80DO3C4NhYVCLYualYa1rGA=;
+X-CID-UNFAMILIAR: 1
+X-CID-P-RULE: Release_Ham
+X-CID-O-INFO: VERSION:1.1.12,REQID:2fc78ea8-95b8-45f2-91d9-e82e98a43dfc,IP:0,U
+	RL:0,TC:0,Content:0,EDM:0,RT:0,SF:54,FILE:0,BULK:0,RULE:Release_Ham,ACTION
+	:release,TS:54
+X-CID-INFO: VERSION:1.1.12,REQID:2fc78ea8-95b8-45f2-91d9-e82e98a43dfc,IP:0,URL
+	:0,TC:0,Content:0,EDM:0,RT:0,SF:54,FILE:0,BULK:0,RULE:Release_HamU,ACTION:
+	release,TS:54
+X-CID-META: VersionHash:62cd327,CLOUDID:f5916b73-e2f1-446d-b75e-e1f2a8186d19,B
+	ulkID:2211141405599C6R7XNJ,BulkQuantity:6,Recheck:0,SF:38|28|16|19|48|102,
+	TC:nil,Content:0,EDM:-3,IP:nil,URL:11|1,File:nil,Bulk:40,QS:nil,BEC:nil,CO
+	L:0
+X-UUID: a9b51260881b4314a91104af2506fb87-20221113
+Received: from mtkmbs13n1.mediatek.inc [(172.21.101.193)] by mailgw01.mediatek.com
+	(envelope-from <chunfeng.yun@mediatek.com>)
+	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
+	with ESMTP id 1944243363; Sun, 13 Nov 2022 23:06:32 -0700
+Received: from mtkmbs10n2.mediatek.inc (172.21.101.183) by
+ mtkmbs10n2.mediatek.inc (172.21.101.183) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.792.3;
+ Mon, 14 Nov 2022 14:05:57 +0800
+Received: from APC01-SG2-obe.outbound.protection.outlook.com (172.21.101.239)
+ by mtkmbs10n2.mediatek.inc (172.21.101.183) with Microsoft SMTP Server id
+ 15.2.792.3 via Frontend Transport; Mon, 14 Nov 2022 14:05:57 +0800
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=WLrTYysBq2Rro5TE433uSASYZCDyvS3/KQ6cpnWhSoSGvdW+8x9STJee1SKTeT0Bg9zT3/qjVxGR6Jgjw4s9zDj0T9Slg0fx7tDEgbWmowvxevtSPwh3dP3HD7SpwRG7sMAZbeWjXfYKVdLOjiaI6Q4YVsQJPyA61ZJQVCzGCUNMbmW2E9Duay8xPs5tndQfWv650UiQ86GMYPAf1x9JRxr8G1S32BDzIzFmMk/M5x1lcIrAliwi3YS58W7wMnYBQdy5raozrcr3aaOhxI/8pyONnVPoVwAx2jV5jlskoBA3UGDAXLxfoTuzOm6m1V6PA8W2qPSQ2AMjtuL7LvU1Yw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=DUgRwl/6uNZ9dYS784fImzN572OVVwlmVIDL0bmDxFk=;
+ b=Vsmt+AJG5pgTRieYeqweJ3j6zDpZcrttkLQ6euDMs0ON/ARj3Lin8dXO/pqdOxu3K5WQQRv3ZgS14tT+pXBtpjtCtL+xmxemJx32Jc4NFHWK3p0t2Wxd/jG2ZSA4pymgP+KOgrNIzSV0sRYu9wZ+Egkh38XMdpFmnlw5OiYqjVuyZB+8BAqSlOPv5vshWxL6LpUBbyuItzy90PTn27iw4qYOO7MpALpZfZwHiGuEJJhzwdCwlLIqX5/GKctOzTxqYlm1diH/hulPtYR1FRZ/XsIH/sZKDFioNdjV1H7vrWsE1laae1WsnqcopG5Z5dvxzl02IXrVDoPm1bmNgd9lLg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=mediatek.com; dmarc=pass action=none header.from=mediatek.com;
+ dkim=pass header.d=mediatek.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=mediateko365.onmicrosoft.com; s=selector2-mediateko365-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=DUgRwl/6uNZ9dYS784fImzN572OVVwlmVIDL0bmDxFk=;
+ b=pfAF26oGtCkRdHMb+bG5zDBFEE0S0UERFap7au+KO95qL4Yb5pFcq29fVP670WUFkN8VBNAlxZOe8+OSbSvL4PZsVRYfdqm92jOgQakrfGDLQABf8vZvXrmHf76aPGxZ6OafiWuZBC9rcPg6dbmx3zOeUWqVyyEBLQ8sOOUQzgQ=
+Received: from KL1PR03MB5062.apcprd03.prod.outlook.com (2603:1096:820:1a::22)
+ by SI2PR03MB5514.apcprd03.prod.outlook.com (2603:1096:4:125::6) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5813.17; Mon, 14 Nov
+ 2022 06:05:55 +0000
+Received: from KL1PR03MB5062.apcprd03.prod.outlook.com
+ ([fe80::9585:3a04:b796:b696]) by KL1PR03MB5062.apcprd03.prod.outlook.com
+ ([fe80::9585:3a04:b796:b696%5]) with mapi id 15.20.5813.017; Mon, 14 Nov 2022
+ 06:05:55 +0000
+From: =?utf-8?B?Q2h1bmZlbmcgWXVuICjkupHmmKXls7Ap?= <Chunfeng.Yun@mediatek.com>
+To: "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+	"linux@fw-web.de" <linux@fw-web.de>
+CC: "linux-arm-kernel@lists.infradead.org"
+	<linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
+	<linux-kernel@vger.kernel.org>, "robh+dt@kernel.org" <robh+dt@kernel.org>,
+	"linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>, "kishon@ti.com"
+	<kishon@ti.com>, "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+	"lorenzo@kernel.org" <lorenzo@kernel.org>, "frank-w@public-files.de"
+	<frank-w@public-files.de>, "pabeni@redhat.com" <pabeni@redhat.com>,
+	=?utf-8?B?Smlhbmp1biBXYW5nICjnjovlu7rlhpsp?= <Jianjun.Wang@mediatek.com>,
+	"gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
+	"krzysztof.kozlowski+dt@linaro.org" <krzysztof.kozlowski+dt@linaro.org>,
+	"vkoul@kernel.org" <vkoul@kernel.org>, "bhelgaas@google.com"
+	<bhelgaas@google.com>, "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
+	"linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>, Ryder Lee
+	<Ryder.Lee@mediatek.com>, =?utf-8?B?Qm8gSmlhbyAo54Sm5rOiKQ==?=
+	<Bo.Jiao@mediatek.com>, "linux-pci@vger.kernel.org"
+	<linux-pci@vger.kernel.org>
+Subject: Re: [PATCH v4 02/11] dt-bindings: phy: mediatek,tphy: add support for
+ mt7986
+Thread-Topic: [PATCH v4 02/11] dt-bindings: phy: mediatek,tphy: add support
+ for mt7986
+Thread-Index: AQHY9neYBLZ6Uy7w80CKBDSRe1NgGa498V8A
+Date: Mon, 14 Nov 2022 06:05:55 +0000
+Message-ID: <80201824d322ce4f7bf782e63c10beb1d88df5da.camel@mediatek.com>
+References: <20221112091518.7846-1-linux@fw-web.de>
+	 <20221112091518.7846-3-linux@fw-web.de>
+In-Reply-To: <20221112091518.7846-3-linux@fw-web.de>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=mediatek.com;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: KL1PR03MB5062:EE_|SI2PR03MB5514:EE_
+x-ms-office365-filtering-correlation-id: e240f4b8-f56e-4e55-ba8f-08dac6064aae
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: PX09kGP2hmVi5J0HcBIqmIVwAD21Grdluu3imnF8TG2/UgBs2f2k4qQpXwj118rCXD9tn5cs1a5cWxi+9lb3z1zCnCSjQKmWHvQuFhVBy3ZkeXjh4aSLj4eZ31W7mPAj2hlnya4AoyHt1tAHh86Olsm62KQAAJcR7ZN6ye45GT9H8R7S0WU/HKCOWrHWv8YakdNPN3xxX5RcJKaLvdVy5vmzLv6Qr34m/J2911YHsA4hxwtaTIG8sxjKVL/Nih72/WvSvLa2FlxIyjIyIs3vpPEiWWAror5D5nLLDANYk0rDsvQARwzvzy6VZ3JblQyCl2VP811Jc4U1Dmlbm9iglTtOc0UYrCtwqonx6OMyxWOthCmnlsGVFMVEMmprJ2lXLo507tOGo1MaTFDnEUhvBAGD+dH3PQsPEhLhUU7E73m6XYRPE+Z3usiLQEyxDu4WEOdXGJAVygDVxkLCNawZwFxaDWorTCdmZwYp2u+Qks03czNJIqO5yDVYVD1rNWet8oogYB4LStEOPw0q8IWNGmg4kBBc7+EYA35H02rN/Y7BDAis6JCoYEKm2gfhgcx2ayOdl8QOn2GitNzxTBKiA5uqpHU1VvWfmroiGv/2p1wdQ3kHOUUV1hmjgk3GkLuzXlduCQDUDpI94DAEYDF4xYXJDEkeQKwLr27lkyg0Sv3KJ80Wux70ngfKF6UmTA6PjTTfSqwRAL1CMEvTeNebeWmA0mW4rOd4oH43iA/MPxz265ABGS64NOax17UFblOIMRK/Xpn58ythkcIod1Dqf6Krlt78gy6PcmX6nP2+RCNzemrt2nhJqaxaJb33AvTgF5EbsH8FproA7cyXjA5/2Q==
+x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:KL1PR03MB5062.apcprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230022)(4636009)(136003)(39860400002)(396003)(366004)(346002)(376002)(451199015)(2616005)(8936002)(4744005)(38070700005)(478600001)(6486002)(5660300002)(110136005)(54906003)(2906002)(122000001)(316002)(85182001)(71200400001)(36756003)(7416002)(86362001)(66446008)(186003)(76116006)(66476007)(66946007)(66556008)(41300700001)(4326008)(8676002)(91956017)(64756008)(26005)(6512007)(38100700002)(4001150100001)(6506007)(99106002);DIR:OUT;SFP:1102;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: =?utf-8?B?MUpXWTlZdHdlbHd4c3dhcjQrQXE3a0pkR2REdC9uc2swNDVpdUdTK2Y3OXRr?=
+ =?utf-8?B?dVdpS3VQY3pnZEJuUmZTRG1VaVZrOGdvTUxQb2pLN2UrWWVLa1VYMWxweTVT?=
+ =?utf-8?B?MXdaOUhtQWxEM0dUZ0lwQVl2U0JkN1JuT3lWNjRwaU5PRG15Zm54TjI3ZGJN?=
+ =?utf-8?B?QkJoR28wTERoOE02bDJhNVcvWEtOQWRJTS91eWJTZmxQeDQ1L080YmtMK3NG?=
+ =?utf-8?B?cmFpRXlmaVFCdExtU0wxUFJnbHB5ZG40ejgyQytRUmplM2RiRVhvUGQxR3o2?=
+ =?utf-8?B?emgrZTkrejJqbUMwaytHR1B6dkJtcms0STdmRDZuM2xoczcyWkxpdXVNNTFI?=
+ =?utf-8?B?VHh3VmtLMEZ6MENvbHE5OUFFaEtIM0xhVmJsK1Rhc2Y5bUllVHMrZnJCOFpQ?=
+ =?utf-8?B?TG5rNkpvQWpPemNUOVZBUlVIbU5mcUpFdUhzQkZGNTl6SitWTGhSdVFLaXdD?=
+ =?utf-8?B?SVZwWHNQTWpKcUxZWUVJQTRraFl0YUttUVBtRzRLSGxYcUw1amFYOGd1OC9T?=
+ =?utf-8?B?ZlVYZ1lldFZHdE91a1hwbG1wV3pTMGJLL3hvRmYwWFVtZ2hJZkJ6STY1bTVj?=
+ =?utf-8?B?Tk1mVUhFOFBCZHFNNUtmMlFzZ2c2aGE2MGxIR3RPNUdOOURTUGhhQ2tzMzZG?=
+ =?utf-8?B?cnNpZFJiSlJ4bGpCZkpYdDh4M0pQSXNDYXlocDZhZTJsTk9DeHBEditzTkN5?=
+ =?utf-8?B?UDhGSVRjbjI2cmYxcFJSdnRmaksrTU9DcEFqUG9yNE0zQXJ5T1V3Yy9PNFd4?=
+ =?utf-8?B?SGVzRGxrNGR1dCtvTGxaUG1DakJGbitzTW51NkNCdnNyaU9WUmx4cFdKeDlS?=
+ =?utf-8?B?OFJVYms4K2RDUm5UVDJLWmpFekZXdTRsZjFJVkpySTM3Z0xYUVJ0NEtDSjJV?=
+ =?utf-8?B?V2Y4ekhSdG5pc1ZBZ2wzWU5UOW1HUXEzUE5JbDZ0SHJrWGlCaTdpWE1tdTFI?=
+ =?utf-8?B?aW9XRytJL2QyWWZWUEh1TGR0YlZlT00rb1FXOExzRnZ3dnlvQzY3d0hodlhU?=
+ =?utf-8?B?MlpPdVVQZTNxYUEvWGhxMVE3RDRBUjlRWTNnQy9xRzBwYnN4WXJpN242Q0xH?=
+ =?utf-8?B?eXU1UFBJOVdCVXlWT2E5cFZJY1k4U28zYk9qYXZTczh3RFFRMXEyOWd6ZzlR?=
+ =?utf-8?B?bUR1NE9aUmF1QzRxaVpRdUg2ZGw3S2pGRVIzNERyUFdzSUJSOUN6OTREL091?=
+ =?utf-8?B?TXcwc0NUUFVhS2QyTGN6RmZFSE9YVGh6THZZcW41TTBsUU9mcmJkeDZ6ZDBJ?=
+ =?utf-8?B?VDVXZkg3ZDFCM1dndmVEaU5iTmRZREMzQ1FwM2Y2MzlJWjFGcllVM3JDY2lm?=
+ =?utf-8?B?M25rU05vRGMxMklVVkdWT0loRk9aaEFlVDdvN1pmL0s1STZKTW9YTlljM1JR?=
+ =?utf-8?B?K0hzdjJIRnMvcURGckEyMnB1b2E5K3V3Z1Y3dW9wNThsZU5oMXpXQnNRTGp1?=
+ =?utf-8?B?S1VvRVNMTUpwWUQxQTVhZmhNRVhFKzZQamdLOVlzZ3dWZS9LVUN1bjFUTC9k?=
+ =?utf-8?B?RWhESytGVEIyTkJDZXN4SGxJWktEMzFjOVF5WU1IMDFRRndRZTlSRmVYTEtQ?=
+ =?utf-8?B?SnBaRGFMazhyclBLWWxNV1VvMnFoVFdNSXRRUzNXSktyb2NpMFR3RTRTOW1H?=
+ =?utf-8?B?N0VhRVpDQVBkYWNBRG1JL1V3OVVoTUVuaWdrQjdGK3lKRWs4cHArKzBFQndy?=
+ =?utf-8?B?NHBRa2R3S2hQcjhJbkU4SHd0bVpOaGg3V3Z6YmU2QVpCZmdJQVpNdWZwUWhC?=
+ =?utf-8?B?alJabTNWNkdRWmRDcmg4TSttTEp2cDZqeG11UTZPZXUwbThiSy9NTHNHSDRq?=
+ =?utf-8?B?WXlDM2JhN2tyUFVTOG9wK0hQenVqRytpQlFqT0l0RngrRXNrR24xTit4TzFF?=
+ =?utf-8?B?S1crSlNCWENJZDVlQTRiT2VIOUdrek1BUjIxaW9ZemZNWkQrampPMndUUERh?=
+ =?utf-8?B?YTFhREY5MkVNc1FNL3R6YnVQRGE1dS9nU2hRdHZ5ZjFFWUIvdlYwK011UWx1?=
+ =?utf-8?B?bEozdkFSVzJvelJUTEpKWTBpaVR3L1ZhZnJOV1RDbTlUZmMzT3E1U3B0dXQ3?=
+ =?utf-8?B?cnlYUmRZdGV4eVRWbFJnZFEvSVlLb0Q5SEl0UE9icXJGRStxWFkvalpESXQw?=
+ =?utf-8?B?ckZTajB1Q2VQVFowWTF4aE4xNXNiY09FZWx1bFljcTF3aHNKVG04cGt1UGRF?=
+ =?utf-8?B?OWc9PQ==?=
+Content-ID: <AC19A79857FEC74EBDA7CFA5BD8F8531@apcprd03.prod.outlook.com>
 MIME-Version: 1.0
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: KL1PR03MB5062.apcprd03.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: e240f4b8-f56e-4e55-ba8f-08dac6064aae
+X-MS-Exchange-CrossTenant-originalarrivaltime: 14 Nov 2022 06:05:55.1102
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: a7687ede-7a6b-4ef6-bace-642f677fbe31
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: ZGUUmOUr4ykDwH1XZ5an6DxQPtnw6adwJKW/TFieGjuarSS7A2f9xOfEMhXzHj6CYm3kfpRi0bd4Vzzhjb7Na8761ww+A2570Qag2vIY6gk=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SI2PR03MB5514
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221113_182138_068847_EDD1260B 
-X-CRM114-Status: GOOD (  13.26  )
+X-CRM114-CacheID: sfid-20221113_220642_663778_81CA89D1 
+X-CRM114-Status: GOOD (  11.59  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -112,224 +190,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-A100 features an updated DPHY, which moves PLL control inside the DPHY
-register space (previously the PLL was controlled from the CCU). It also
-requires a modified analog power-on sequence. This "combo PHY" can also
-be used as an LVDS PHY, but that is not yet supported by the driver.
+On Sat, 2022-11-12 at 10:15 +0100, Frank Wunderlich wrote:
+> From: Frank Wunderlich <frank-w@public-files.de>
+> 
+> Add compatible string for mt7986.
+> 
+> Signed-off-by: Frank Wunderlich <frank-w@public-files.de>
+> ---
+>  Documentation/devicetree/bindings/phy/mediatek,tphy.yaml | 1 +
+>  1 file changed, 1 insertion(+)
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
+> b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
+> index 5613cc5106e3..230a17f24966 100644
+> --- a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
+> @@ -79,6 +79,7 @@ properties:
+>            - enum:
+>                - mediatek,mt2712-tphy
+>                - mediatek,mt7629-tphy
+> +              - mediatek,mt7986-tphy
+>                - mediatek,mt8183-tphy
+>                - mediatek,mt8186-tphy
+>                - mediatek,mt8192-tphy
 
-Signed-off-by: Samuel Holland <samuel@sholland.org>
----
+Reviewed-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
 
-(no changes since v1)
-
- drivers/phy/allwinner/phy-sun6i-mipi-dphy.c | 143 +++++++++++++++++++-
- 1 file changed, 142 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/phy/allwinner/phy-sun6i-mipi-dphy.c b/drivers/phy/allwinner/phy-sun6i-mipi-dphy.c
-index ac144ee0f0a6..36eab95271b2 100644
---- a/drivers/phy/allwinner/phy-sun6i-mipi-dphy.c
-+++ b/drivers/phy/allwinner/phy-sun6i-mipi-dphy.c
-@@ -70,11 +70,19 @@
- 
- #define SUN6I_DPHY_ANA0_REG		0x4c
- #define SUN6I_DPHY_ANA0_REG_PWS			BIT(31)
-+#define SUN6I_DPHY_ANA0_REG_PWEND		BIT(30)
-+#define SUN6I_DPHY_ANA0_REG_PWENC		BIT(29)
- #define SUN6I_DPHY_ANA0_REG_DMPC		BIT(28)
- #define SUN6I_DPHY_ANA0_REG_DMPD(n)		(((n) & 0xf) << 24)
-+#define SUN6I_DPHY_ANA0_REG_SRXDT(n)		(((n) & 0xf) << 20)
-+#define SUN6I_DPHY_ANA0_REG_SRXCK(n)		(((n) & 0xf) << 16)
-+#define SUN6I_DPHY_ANA0_REG_SDIV2		BIT(15)
- #define SUN6I_DPHY_ANA0_REG_SLV(n)		(((n) & 7) << 12)
- #define SUN6I_DPHY_ANA0_REG_DEN(n)		(((n) & 0xf) << 8)
-+#define SUN6I_DPHY_ANA0_REG_PLR(n)		(((n) & 0xf) << 4)
- #define SUN6I_DPHY_ANA0_REG_SFB(n)		(((n) & 3) << 2)
-+#define SUN6I_DPHY_ANA0_REG_RSD			BIT(1)
-+#define SUN6I_DPHY_ANA0_REG_SELSCK		BIT(0)
- 
- #define SUN6I_DPHY_ANA1_REG		0x50
- #define SUN6I_DPHY_ANA1_REG_VTTMODE		BIT(31)
-@@ -97,8 +105,13 @@
- #define SUN6I_DPHY_ANA3_EN_LDOR			BIT(18)
- 
- #define SUN6I_DPHY_ANA4_REG		0x5c
-+#define SUN6I_DPHY_ANA4_REG_EN_MIPI		BIT(31)
-+#define SUN6I_DPHY_ANA4_REG_EN_COMTEST		BIT(30)
-+#define SUN6I_DPHY_ANA4_REG_COMTEST(n)		(((n) & 3) << 28)
-+#define SUN6I_DPHY_ANA4_REG_IB(n)		(((n) & 3) << 25)
- #define SUN6I_DPHY_ANA4_REG_DMPLVC		BIT(24)
- #define SUN6I_DPHY_ANA4_REG_DMPLVD(n)		(((n) & 0xf) << 20)
-+#define SUN6I_DPHY_ANA4_REG_VTT_SET(n)		(((n) & 0x7) << 17)
- #define SUN6I_DPHY_ANA4_REG_CKDV(n)		(((n) & 0x1f) << 12)
- #define SUN6I_DPHY_ANA4_REG_TMSC(n)		(((n) & 3) << 10)
- #define SUN6I_DPHY_ANA4_REG_TMSD(n)		(((n) & 3) << 8)
-@@ -109,6 +122,56 @@
- 
- #define SUN6I_DPHY_DBG5_REG		0xf4
- 
-+#define SUN50I_DPHY_TX_SLEW_REG0	0xf8
-+#define SUN50I_DPHY_TX_SLEW_REG1	0xfc
-+#define SUN50I_DPHY_TX_SLEW_REG2	0x100
-+
-+#define SUN50I_DPHY_PLL_REG0		0x104
-+#define SUN50I_DPHY_PLL_REG0_CP36_EN		BIT(23)
-+#define SUN50I_DPHY_PLL_REG0_LDO_EN		BIT(22)
-+#define SUN50I_DPHY_PLL_REG0_EN_LVS		BIT(21)
-+#define SUN50I_DPHY_PLL_REG0_PLL_EN		BIT(20)
-+#define SUN50I_DPHY_PLL_REG0_P(n)		(((n) & 0xf) << 16)
-+#define SUN50I_DPHY_PLL_REG0_N(n)		(((n) & 0xff) << 8)
-+#define SUN50I_DPHY_PLL_REG0_NDET		BIT(7)
-+#define SUN50I_DPHY_PLL_REG0_TDIV		BIT(6)
-+#define SUN50I_DPHY_PLL_REG0_M0(n)		(((n) & 3) << 4)
-+#define SUN50I_DPHY_PLL_REG0_M1(n)		((n) & 0xf)
-+
-+#define SUN50I_DPHY_PLL_REG1		0x108
-+#define SUN50I_DPHY_PLL_REG1_UNLOCK_MDSEL(n)	(((n) & 3) << 14)
-+#define SUN50I_DPHY_PLL_REG1_LOCKMDSEL		BIT(13)
-+#define SUN50I_DPHY_PLL_REG1_LOCKDET_EN		BIT(12)
-+#define SUN50I_DPHY_PLL_REG1_VSETA(n)		(((n) & 0x7) << 9)
-+#define SUN50I_DPHY_PLL_REG1_VSETD(n)		(((n) & 0x7) << 6)
-+#define SUN50I_DPHY_PLL_REG1_LPF_SW		BIT(5)
-+#define SUN50I_DPHY_PLL_REG1_ICP_SEL(n)		(((n) & 3) << 3)
-+#define SUN50I_DPHY_PLL_REG1_ATEST_SEL(n)	(((n) & 3) << 1)
-+#define SUN50I_DPHY_PLL_REG1_TEST_EN		BIT(0)
-+
-+#define SUN50I_DPHY_PLL_REG2		0x10c
-+#define SUN50I_DPHY_PLL_REG2_SDM_EN		BIT(31)
-+#define SUN50I_DPHY_PLL_REG2_FF_EN		BIT(30)
-+#define SUN50I_DPHY_PLL_REG2_SS_EN		BIT(29)
-+#define SUN50I_DPHY_PLL_REG2_SS_FRAC(n)		(((n) & 0x1ff) << 20)
-+#define SUN50I_DPHY_PLL_REG2_SS_INT(n)		(((n) & 0xff) << 12)
-+#define SUN50I_DPHY_PLL_REG2_FRAC(n)		((n) & 0xfff)
-+
-+#define SUN50I_COMBO_PHY_REG0		0x110
-+#define SUN50I_COMBO_PHY_REG0_EN_TEST_COMBOLDO	BIT(5)
-+#define SUN50I_COMBO_PHY_REG0_EN_TEST_0P8	BIT(4)
-+#define SUN50I_COMBO_PHY_REG0_EN_MIPI		BIT(3)
-+#define SUN50I_COMBO_PHY_REG0_EN_LVDS		BIT(2)
-+#define SUN50I_COMBO_PHY_REG0_EN_COMBOLDO	BIT(1)
-+#define SUN50I_COMBO_PHY_REG0_EN_CP		BIT(0)
-+
-+#define SUN50I_COMBO_PHY_REG1		0x114
-+#define SUN50I_COMBO_PHY_REG2_REG_VREF1P6(n)	(((n) & 0x7) << 4)
-+#define SUN50I_COMBO_PHY_REG2_REG_VREF0P8(n)	((n) & 0x7)
-+
-+#define SUN50I_COMBO_PHY_REG2		0x118
-+#define SUN50I_COMBO_PHY_REG2_HS_STOP_DLY(n)	((n) & 0xff)
-+
- enum sun6i_dphy_direction {
- 	SUN6I_DPHY_DIRECTION_TX,
- 	SUN6I_DPHY_DIRECTION_RX,
-@@ -196,6 +259,76 @@ static void sun6i_a31_mipi_dphy_tx_power_on(struct sun6i_dphy *dphy)
- 	udelay(1);
- }
- 
-+static void sun50i_a100_mipi_dphy_tx_power_on(struct sun6i_dphy *dphy)
-+{
-+	unsigned long mipi_symbol_rate = dphy->config.hs_clk_rate;
-+	unsigned int div, n;
-+
-+	regmap_write(dphy->regs, SUN6I_DPHY_ANA4_REG,
-+		     SUN6I_DPHY_ANA4_REG_IB(2) |
-+		     SUN6I_DPHY_ANA4_REG_DMPLVD(4) |
-+		     SUN6I_DPHY_ANA4_REG_VTT_SET(3) |
-+		     SUN6I_DPHY_ANA4_REG_CKDV(3) |
-+		     SUN6I_DPHY_ANA4_REG_TMSD(1) |
-+		     SUN6I_DPHY_ANA4_REG_TMSC(1) |
-+		     SUN6I_DPHY_ANA4_REG_TXPUSD(2) |
-+		     SUN6I_DPHY_ANA4_REG_TXPUSC(3) |
-+		     SUN6I_DPHY_ANA4_REG_TXDNSD(2) |
-+		     SUN6I_DPHY_ANA4_REG_TXDNSC(3));
-+
-+	regmap_update_bits(dphy->regs, SUN6I_DPHY_ANA2_REG,
-+			   SUN6I_DPHY_ANA2_EN_CK_CPU,
-+			   SUN6I_DPHY_ANA2_EN_CK_CPU);
-+
-+	regmap_update_bits(dphy->regs, SUN6I_DPHY_ANA2_REG,
-+			   SUN6I_DPHY_ANA2_REG_ENIB,
-+			   SUN6I_DPHY_ANA2_REG_ENIB);
-+
-+	regmap_write(dphy->regs, SUN6I_DPHY_ANA3_REG,
-+		     SUN6I_DPHY_ANA3_EN_LDOR |
-+		     SUN6I_DPHY_ANA3_EN_LDOC |
-+		     SUN6I_DPHY_ANA3_EN_LDOD);
-+
-+	regmap_write(dphy->regs, SUN6I_DPHY_ANA0_REG,
-+		     SUN6I_DPHY_ANA0_REG_PLR(4) |
-+		     SUN6I_DPHY_ANA0_REG_SFB(1));
-+
-+	regmap_write(dphy->regs, SUN50I_COMBO_PHY_REG0,
-+		     SUN50I_COMBO_PHY_REG0_EN_CP);
-+
-+	/* Choose a divider to limit the VCO frequency to around 2 GHz. */
-+	div = 16 >> order_base_2(DIV_ROUND_UP(mipi_symbol_rate, 264000000));
-+	n = mipi_symbol_rate * div / 24000000;
-+
-+	regmap_write(dphy->regs, SUN50I_DPHY_PLL_REG0,
-+		     SUN50I_DPHY_PLL_REG0_CP36_EN |
-+		     SUN50I_DPHY_PLL_REG0_LDO_EN |
-+		     SUN50I_DPHY_PLL_REG0_EN_LVS |
-+		     SUN50I_DPHY_PLL_REG0_PLL_EN |
-+		     SUN50I_DPHY_PLL_REG0_NDET |
-+		     SUN50I_DPHY_PLL_REG0_P((div - 1) % 8) |
-+		     SUN50I_DPHY_PLL_REG0_N(n) |
-+		     SUN50I_DPHY_PLL_REG0_M0((div - 1) / 8) |
-+		     SUN50I_DPHY_PLL_REG0_M1(2));
-+
-+	/* Disable sigma-delta modulation. */
-+	regmap_write(dphy->regs, SUN50I_DPHY_PLL_REG2, 0);
-+
-+	regmap_update_bits(dphy->regs, SUN6I_DPHY_ANA4_REG,
-+			   SUN6I_DPHY_ANA4_REG_EN_MIPI,
-+			   SUN6I_DPHY_ANA4_REG_EN_MIPI);
-+
-+	regmap_update_bits(dphy->regs, SUN50I_COMBO_PHY_REG0,
-+			   SUN50I_COMBO_PHY_REG0_EN_MIPI |
-+			   SUN50I_COMBO_PHY_REG0_EN_COMBOLDO,
-+			   SUN50I_COMBO_PHY_REG0_EN_MIPI |
-+			   SUN50I_COMBO_PHY_REG0_EN_COMBOLDO);
-+
-+	regmap_write(dphy->regs, SUN50I_COMBO_PHY_REG2,
-+		     SUN50I_COMBO_PHY_REG2_HS_STOP_DLY(20));
-+	udelay(1);
-+}
-+
- static int sun6i_dphy_tx_power_on(struct sun6i_dphy *dphy)
- {
- 	u8 lanes_mask = GENMASK(dphy->config.lanes - 1, 0);
-@@ -408,7 +541,7 @@ static const struct regmap_config sun6i_dphy_regmap_config = {
- 	.reg_bits	= 32,
- 	.val_bits	= 32,
- 	.reg_stride	= 4,
--	.max_register	= SUN6I_DPHY_DBG5_REG,
-+	.max_register	= SUN50I_COMBO_PHY_REG2,
- 	.name		= "mipi-dphy",
- };
- 
-@@ -484,11 +617,19 @@ static const struct sun6i_dphy_variant sun6i_a31_mipi_dphy_variant = {
- 	.rx_supported	= true,
- };
- 
-+static const struct sun6i_dphy_variant sun50i_a100_mipi_dphy_variant = {
-+	.tx_power_on	= sun50i_a100_mipi_dphy_tx_power_on,
-+};
-+
- static const struct of_device_id sun6i_dphy_of_table[] = {
- 	{
- 		.compatible	= "allwinner,sun6i-a31-mipi-dphy",
- 		.data		= &sun6i_a31_mipi_dphy_variant,
- 	},
-+	{
-+		.compatible	= "allwinner,sun50i-a100-mipi-dphy",
-+		.data		= &sun50i_a100_mipi_dphy_variant,
-+	},
- 	{ }
- };
- MODULE_DEVICE_TABLE(of, sun6i_dphy_of_table);
--- 
-2.37.3
-
-
+Thanks
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
