@@ -4,68 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9F109C43219
-	for <linux-phy@archiver.kernel.org>; Mon, 14 Nov 2022 08:14:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DD612C4332F
+	for <linux-phy@archiver.kernel.org>; Mon, 14 Nov 2022 08:24:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XnLhTaSnZ9w1wsNt7vjHMx5l6GbPr+t/eHlalD9CzuM=; b=zVWmYoqIq4S10R
-	MO/oSx4uClngJsHhmBL1KuGJgOr6pKHRbP5b0HRq43Ip+QD++KevDjyxqoezvJ6D7Ocq9vzHiECIn
-	g7w1gJSvwQLHAe/2NLrUd/NXo956jTLhAGr7Jfvx/xv/Z/Ba3hzXjSLdmTC5becBc8ej+OFTj/v4E
-	59mxu4nZ1eM7ZOwQ1SfDd84OOHWe+0O8GL50MX1Z7w+dIGgvdEI1afjJOLyEQ3LdAbBFnW0M+A2Zw
-	HNe+5xXTn2w0j/w9t2e8d1y6QJbYvQ6roLGLFMnuwenka3xU1jZ678Souj7AY9vXKA0VHzlLhhtzp
-	zyhz0gilqDsTBIKiAMKw==;
+	List-Owner; bh=kTRHZylufKiwRYMXsBP4RLddMFYP1Fo+GSMFjW6BuCw=; b=wFKfkOpL7NjbRB
+	PcADis1T/nmkOJfszcDVvuNJcuTGvDilF6oA9HlNC4edae31zFFYObho8y17OdrIpir3aeKZtzr4X
+	ZUHo8VUyXCE3V442kbm4Xzmhr6VK98MIKnvczB/M2qOHWkaVZ42CJf5PVFMbTY9O5j7D6/78C8M+I
+	D0G47Cg4XkF98AnEuhZ1QMuq6nSs6s2N0WdbrrBPjAJz5EL1QoVbl7nRwjLjk6blo4jEidx8ynbHU
+	exONBjMR9PRJcwY5w59OlYfUEUpmZfofaN2ibRpQWrI0J+cUu//JGjh6TCdjWF5/CjI96pHrsYTGm
+	EDV2pCRvkDQJltgZ3jkg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ouUc3-00Ghzv-2t; Mon, 14 Nov 2022 08:14:39 +0000
-Received: from ams.source.kernel.org ([145.40.68.75])
+	id 1ouUle-00GmH7-9p; Mon, 14 Nov 2022 08:24:34 +0000
+Received: from mail-lf1-x12b.google.com ([2a00:1450:4864:20::12b])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ouUbx-00GhsB-7z
-	for linux-phy@lists.infradead.org; Mon, 14 Nov 2022 08:14:35 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id DE21EB80D42;
-	Mon, 14 Nov 2022 08:14:31 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0F32BC4347C;
-	Mon, 14 Nov 2022 08:14:28 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1668413669;
-	bh=XjGn/EJaHEm5vnkndgkidi1YsQNziJqXZoMhQGdQyjE=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=g0Uxo/KzHjJqCae+QZtQSEuwWB45QuqJkQf5E445JZskJLIGt5zO9mydzAVphnj5Y
-	 6zPa9gjxjQvfldi3vYw5zMzfkkILux59J3gab+m2tUNvA9uv+gbI5aD3412qnfhDTd
-	 ChvI/cKeyyQnoXMzqplh8ohpqo8P6xDUlV33wQejCpquIGQApZgBA12FgOoDCM9La+
-	 NeRI4+BTjL/vuP+EAkoy5Ignxi/bYollprN+3gB0+PQ0NXPnINDvgrR2j5oxt6RvaV
-	 Lb7D+dxT2CHISbEHmBmQXUvzhHgYeu5Sr3+yBYdknCI0/9I4JH7tfO3HBO+7nd9Wj3
-	 PLYUS/nibo8eg==
-Received: from johan by xi.lan with local (Exim 4.94.2)
-	(envelope-from <johan+linaro@kernel.org>)
-	id 1ouUbM-0001L4-UX; Mon, 14 Nov 2022 09:13:56 +0100
-From: Johan Hovold <johan+linaro@kernel.org>
-To: Vinod Koul <vkoul@kernel.org>
-Cc: Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
-	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
-	linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	Johan Hovold <johan+linaro@kernel.org>,
-	stable@vger.kernel.org
-Subject: [PATCH v2 4/6] phy: qcom-qmp-combo: fix broken power on
-Date: Mon, 14 Nov 2022 09:13:44 +0100
-Message-Id: <20221114081346.5116-5-johan+linaro@kernel.org>
-X-Mailer: git-send-email 2.37.4
-In-Reply-To: <20221114081346.5116-1-johan+linaro@kernel.org>
-References: <20221114081346.5116-1-johan+linaro@kernel.org>
+	id 1ouUlZ-00GmCi-L9
+	for linux-phy@lists.infradead.org; Mon, 14 Nov 2022 08:24:31 +0000
+Received: by mail-lf1-x12b.google.com with SMTP id j16so18005095lfe.12
+        for <linux-phy@lists.infradead.org>; Mon, 14 Nov 2022 00:24:27 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=mX7K+g1+HW/CWwyDEKxY//PTFx3zv2qtto+vRJUIuOI=;
+        b=dXI7heLthe0Tjl8jMmcyg784Yytf6YYvtMaeIbuzD82wNx4ULfsqv5nRAbLJ4aE2nn
+         wxqeiiG1gd74M5Jb1FEa2Esbtm2Q0FKG8RtRozlhHReZfK3gldgF+jC9cNHrWqQIXeE/
+         5ZpnmSXG3VH1uMdjAtmHQx5jvFS/MUSZ57D2j9ysBSFJUVDI9ODVux78D/TlxsHCxD0E
+         PG8XEwuBEP3p0oF4BagAoyqAKYAcK2bHEj47mVA0FaZ3Yf9U3GpxqZZDG4V9ejyxYMLS
+         xp9PAAO1w/2jB0VDOn5gZEQjqEWkeFgx4YKUGR5xIt66aLKmVAMq8lspuuwuN7PLeMNJ
+         zomw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=mX7K+g1+HW/CWwyDEKxY//PTFx3zv2qtto+vRJUIuOI=;
+        b=TEl0q1iHyxso6N1Sk568ZM0I/VroII1AGOBzYPfLVOreDOZqYoVDYp9xQ937d2wrat
+         V68NpkNWl6h/J5kfqZh/p3t3ENWXjRaLmERy4MlQvHv/vXxJAcTLJOW6bVceRYFarD7w
+         jr0VMJfLU6A+ATxgnSGymPV8Z9IzgLhzgNG0GOMJyX2ldTTGbFG8DiHWRdGtDcipMDId
+         3Eqms5dtI8fC1z+nA3NLbO9nxBF7NMAQGzKNgWD5gbvWfwGHJCjFOMek3nkpWTxA5bCm
+         IDyGWW29sJ38S2xutaXB2gKFKjczbYtAoY/HAKVoRDKQRl4cC6VU1A/oJPpl5P4ILvKj
+         w/jQ==
+X-Gm-Message-State: ANoB5pneibNPOzwlzE3dLCmboFWaf9NntGFpxdGpdH9B4O0ZG+C4DlD3
+	KyWb3n6LUuWdgyaoTrUQnRB9zA==
+X-Google-Smtp-Source: AA0mqf7iLNCZJ2eZU6SC3h0KAiScdNro51pki8wDvgKdcvb5ClGjeyXxYBJj4rX0NXA/q962vvLqMg==
+X-Received: by 2002:a19:915a:0:b0:4a9:e691:9232 with SMTP id y26-20020a19915a000000b004a9e6919232mr3506273lfj.182.1668414266192;
+        Mon, 14 Nov 2022 00:24:26 -0800 (PST)
+Received: from [192.168.0.20] (088156142067.dynamic-2-waw-k-3-2-0.vectranet.pl. [88.156.142.67])
+        by smtp.gmail.com with ESMTPSA id i17-20020a2e6d11000000b0027709706194sm1886628ljc.49.2022.11.14.00.24.25
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 14 Nov 2022 00:24:25 -0800 (PST)
+Message-ID: <040e00e1-00ea-32ca-09ff-ba3a35631a31@linaro.org>
+Date: Mon, 14 Nov 2022 09:24:24 +0100
 MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.4.2
+Subject: Re: [PATCH v2 1/8] dt-bindings: sun6i-a31-mipi-dphy: Add the
+ interrupts property
+Content-Language: en-US
+To: Samuel Holland <samuel@sholland.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+ Chen-Yu Tsai <wens@csie.org>, Jernej Skrabec <jernej.skrabec@gmail.com>,
+ Maxime Ripard <mripard@kernel.org>
+Cc: Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Rob Herring <robh+dt@kernel.org>, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-sunxi@lists.linux.dev
+References: <20221114022113.31694-1-samuel@sholland.org>
+ <20221114022113.31694-2-samuel@sholland.org>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <20221114022113.31694-2-samuel@sholland.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221114_001433_790196_9100AD9E 
-X-CRM114-Status: GOOD (  18.11  )
+X-CRM114-CacheID: sfid-20221114_002430_262791_1870E08C 
+X-CRM114-Status: GOOD (  12.26  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,79 +100,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The PHY is powered on during phy-init by setting the SW_PWRDN bit in the
-COM_POWER_DOWN_CTRL register and then setting the same bit in the in the
-PCS_POWER_DOWN_CONTROL register that belongs to the USB part of the
-PHY.
+On 14/11/2022 03:21, Samuel Holland wrote:
+> The sun6i DPHY can generate several interrupts, mostly for reporting
+> error conditions, but also for detecting BTA and UPLS sequences.
+> Document this capability in order to accurately describe the hardware.
+> 
+> The DPHY has no interrupt number provided in the vendor documentation
+> because its interrupt line is shared with the DSI controller.
+> 
+> A trivial interrupt handler was used to verify that interrupts were in
+> fact generated by the DPHY and not the DSI controller.
+> 
+> Signed-off-by: Samuel Holland <samuel@sholland.org>
+> ---
+> 
+> Changes in v2:
+>  - Add the interrupts property to the binding example
 
-Currently, whether power on succeeds depends on probe order and having
-the USB part of the PHY be initialised first. In case the DP part of the
-PHY is instead initialised first, the intended power on of the USB block
-results in a corrupted DP_PHY register (e.g. DP_PHY_AUX_CFG8).
 
-Add a pointer to the USB part of the PHY to the driver data and use that
-to power on the PHY also if the DP part of the PHY is initialised first.
+Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
-Fixes: 52e013d0bffa ("phy: qcom-qmp: Add support for DP in USB3+DP combo phy")
-Cc: stable@vger.kernel.org	# 5.10
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
----
- drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 11 +++++++++--
- 1 file changed, 9 insertions(+), 2 deletions(-)
-
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-index 40c25a0ead23..17707f68d482 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-@@ -932,6 +932,7 @@ struct qcom_qmp {
- 	struct regulator_bulk_data *vregs;
- 
- 	struct qmp_phy **phys;
-+	struct qmp_phy *usb_phy;
- 
- 	struct mutex phy_mutex;
- 	int init_count;
-@@ -1911,7 +1912,7 @@ static int qmp_combo_com_init(struct qmp_phy *qphy)
- {
- 	struct qcom_qmp *qmp = qphy->qmp;
- 	const struct qmp_phy_cfg *cfg = qphy->cfg;
--	void __iomem *pcs = qphy->pcs;
-+	struct qmp_phy *usb_phy = qmp->usb_phy;
- 	void __iomem *dp_com = qmp->dp_com;
- 	int ret;
- 
-@@ -1963,7 +1964,8 @@ static int qmp_combo_com_init(struct qmp_phy *qphy)
- 	qphy_clrbits(dp_com, QPHY_V3_DP_COM_SWI_CTRL, 0x03);
- 	qphy_clrbits(dp_com, QPHY_V3_DP_COM_SW_RESET, SW_RESET);
- 
--	qphy_setbits(pcs, cfg->regs[QPHY_PCS_POWER_DOWN_CONTROL], SW_PWRDN);
-+	qphy_setbits(usb_phy->pcs, usb_phy->cfg->regs[QPHY_PCS_POWER_DOWN_CONTROL],
-+			SW_PWRDN);
- 
- 	mutex_unlock(&qmp->phy_mutex);
- 
-@@ -2831,6 +2833,8 @@ static int qmp_combo_probe(struct platform_device *pdev)
- 				goto err_node_put;
- 			}
- 
-+			qmp->usb_phy = qmp->phys[id];
-+
- 			/*
- 			 * Register the pipe clock provided by phy.
- 			 * See function description to see details of this pipe clock.
-@@ -2846,6 +2850,9 @@ static int qmp_combo_probe(struct platform_device *pdev)
- 		id++;
- 	}
- 
-+	if (!qmp->usb_phy)
-+		return -EINVAL;
-+
- 	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
- 
- 	return PTR_ERR_OR_ZERO(phy_provider);
--- 
-2.37.4
+Best regards,
+Krzysztof
 
 
 -- 
