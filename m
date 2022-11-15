@@ -4,57 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B9FD1C43217
-	for <linux-phy@archiver.kernel.org>; Tue, 15 Nov 2022 12:22:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6AB95C4332F
+	for <linux-phy@archiver.kernel.org>; Tue, 15 Nov 2022 12:23:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:References:Cc:To:
 	Subject:Date:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=EVUzzxX3woyQfVEmr5qkum6bkj40uNJuFF+nkiMtRTs=; b=kYSsOSzJcqbG+EgBoEz2Ef4s9V
-	BYn4cyIcHh0XGLn5ugNuceQ3wUVaBQ3fseHT++1mLmGSVG869Xi89JmLn6OowBUKeNnHgtmHZ7eFD
-	w7i4ply9k+Qr67k11jjiF/AHIixSXzj5Pkh9W6b4PljsTKOaxRlWQp51nfx6ZRSjkQATIc2O/zg9M
-	rm3P7hJY6meY1PgOo1Xezpq8w2ZlV0r4wGvcvN5I9nO4A68BacKP0kxegAf0BvECDJAiPpLAmlpTU
-	6lrIKS0qyVMuUdwfalfHAYP7hz0HdDWfAJlqU/cQnicWHkNW8bP33oZxyPVwxxq2/v5RHoqJ2YF15
-	pRmeIg6w==;
+	bh=tc6Gizp6LogSlgNVBqKgCG25VpFJ0L9Uyk21YbjtTA4=; b=RtYgCKvHl0kD3x9QCm3aHYzpaC
+	tGjJVVQIiIUx75spaNRWriqlD5RknlCJRsF5hZm5fkBZkVRPWhqnE+3aHD1W32nB45TnKZLg9Yqf5
+	b0VMRPASHYALGDCtwckAT2hkMCofNzbkDDq4xp1Cs4EFREQ8Cq9GhI5kve7di2NmJfB5R0qkoeAZ8
+	8QOm6yMFe6aJqUNxGdoFzxprRvo0dYJbENaZc+6ACP2yD5SW6d0TAyjMOqzQGVOXxUT6MqmvMZKx+
+	xWgvVQL8z2HOm16TMc7059h+I8j9SyzFunKaXhKTMcLY3Dpur7joLgaUtVLZ3cCSUvcYZzcEuOh0W
+	90r1Hj/w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ouuxY-00B0eL-6K; Tue, 15 Nov 2022 12:22:36 +0000
-Received: from mail-dm3nam02on20619.outbound.protection.outlook.com ([2a01:111:f400:7e83::619] helo=NAM02-DM3-obe.outbound.protection.outlook.com)
+	id 1ouuyP-00B1WT-Rh; Tue, 15 Nov 2022 12:23:29 +0000
+Received: from mail-dm3nam02on20609.outbound.protection.outlook.com ([2a01:111:f400:7e83::609] helo=NAM02-DM3-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ouuxU-00B0Zn-Iz
-	for linux-phy@lists.infradead.org; Tue, 15 Nov 2022 12:22:34 +0000
+	id 1ouuyN-00B1JX-Ox
+	for linux-phy@lists.infradead.org; Tue, 15 Nov 2022 12:23:29 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=fQ6KkZtDDVBhsG4+eOAV7stbaK4bdIhwlmfWmDz6BPxPohnZZK/XDbFWqN1MAHWnG4lX209YFKDcQc4UXGraipwrcU+BWBcopWJygaVP1gQigaf16UO6i8Tv4WWwWQxjsWFOtYV7C0zHUWUpQrKjqYFKUtupvm4xag1eFJtfOuFoCjTdlJI1fVBG8/pjOPdVkRN0O3HRGF3FhRB3KJ0xSaKOnD9K8jJ/WRjSgJBlceJyBlfUJGi2Ve0aQmNK50UN/ZwSLUwj3NRC5RlwoIWavWX63p0WEkj1khXhSijIZG1iTl+Bue/JHcCLVb9BgRamVW3toa7IuUPnooruJNT1bw==
+ b=RMOSC9dlSlrKC4zy/d8wBPYP4tXppOuCSSJJBsZfQjm+8ZFF8KTK8Sy1AxDzMOAdjNrmP9ARR3oh4d7BLCM8GLtaN9c2GEIH6vwJqYkJGgPpfkeHtfyQCVGSK45Bx8upr0tqk2ua1j6oVUB7qf2vhMCOxY5FZYpCam5wQYT9YvQzbO0V5RquxbKHYmwb5CO/sSOXvhs9x8tMv1m4SQVpVDxCACQET+tydO5jAMOUQALnvYclSJy4EGGe9g+JoXGhO/mhPQQnLxFqZf224LtVn3nhAEL4J4pA5cL+hF22UaOC26OAZytkXmTCmXAX9Q0pYnMColCc7GzEUwHSrpITFQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=R8u6KEdt9atabWBsncICVABIM5CG4PZfEqEsXeqyZaU=;
- b=OVPguL540tC6i3YvVpjwNDvzinZLFJAZyWUll9L6DBa6FuD9UrEwvpN5GM+UytC3x5WDhwLpSknRwpIh5mKC/2e9VTsc+qWM05pseqeZDcCjp5p6P6Bhnjzyies/bGO9NiPZbSnVdnCyexI/xofe0kIrIswTgmPgtfihiVXRArz3AnMYvNpMt5025oWAqMG2qbR8aHQB7roVl2OkE5uG+JCPdNPs9DmAakFAJOQWjJeK/pDwGU0QLVhISi74ENOU6qJPguykV0L3qlQEkgakleijlqCiZ1X4ltmuw7u1F2pewY/buHQFJfawU9RK/Ilyz5RkMiLwy5bi2c1r1baelw==
+ bh=xZBd/dwH4P1Hhl/nCszYKCTwo+l/o77SgHkO6HI0kQg=;
+ b=ag2dI43lUp5uDMqhacosJzmCQvZNEUjfdgfKDPQ8Itc3WWWIH4tZLh8ByJ+2AzNGpGfrtwllVCoxOKgLV7BDfyF06wxtLQh6EAttvffxJb/RN4IzHcnke5Z80OV8daBoZjm5nOmXJsLxB4/HJKY75bvKLZnPgpwtoyKZTGNzYSsDEoNRfLg4qdTrTtDzoErjAWcs2YAN3xdVtTkiDWCkWFXj5Covzf7QgzAX9AiHn6FUjC55O+suAGH/CvtyTMOe7WU7tCDGOo/pC1p8+JrpMER1Vzv1ALqTgolum2R0OJGux7KHBgK6cc/27xe8C+lIluUKOlgpq6JJ8TgsuIKtuw==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nvidia.com; dmarc=pass action=none header.from=nvidia.com;
  dkim=pass header.d=nvidia.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
  s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=R8u6KEdt9atabWBsncICVABIM5CG4PZfEqEsXeqyZaU=;
- b=EDe7NSGfbLaS7ffr/QXkl0hAJpJAPEJ/SqWlLX16PSHf20yok1FwVPB7YA6WT0T9m/CLaZdtZNVyh9aB0iGznvjaZAxnR5dn3p35rwLJCbBl0h4yHyKMkOi+ryJvKmo0nPvb2iLfV5NeCEymhGFMmEJz4yH3QEDlE/ZJ9JzDzRHa07KMrnduMlZ/IjyTHoiW/3jDC+A6gSEOAFSGmcooyHmbyH1/9zdS+z0bl4LII4+Zf802sP/8haNmerZJ6hyuPcXZ2fTkp0kJDhsd2828JP/TVmkYI7my5oD0a+jjP0CQeVc8tb5qmxGzQVnFz+SHUl9FLzhDRSLDvmy94/cCdQ==
+ bh=xZBd/dwH4P1Hhl/nCszYKCTwo+l/o77SgHkO6HI0kQg=;
+ b=FunFqT3YEm93cgJ6D7w1/gmWer+08nCNbFkjp2I6SZQ2XJU2aPKW8Lm+HcrPtffe7SVa8vSGTr2MQH6wHFFVPTHsYzoxZkJudtRbUCG/xZBAMsA9z3u8FJu7QcitX4NOWDoPGyMBw+kGoQVvDPK0ZwO05bJvgf0A897GRj/oF8kyuWLYQhT6xVhfoU+V2fQJGg77cum1OUHnRznQpHVnL2zvjTSmGSyBwS3bUct8XRxjq95I2kIUrmBvVDQTVDoDbNnWYXsyL09FfWy8kSQ+vJcVDwLH0Ia/rnEtA6zIz5VotGtcgSuNUgaGpDyl6eatOt64jbK4eH4MDEuZeyKMDQ==
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=nvidia.com;
 Received: from CO6PR12MB5444.namprd12.prod.outlook.com (2603:10b6:5:35e::8) by
  SA0PR12MB4525.namprd12.prod.outlook.com (2603:10b6:806:92::10) with Microsoft
  SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.5813.17; Tue, 15 Nov 2022 12:22:23 +0000
+ 15.20.5813.17; Tue, 15 Nov 2022 12:23:19 +0000
 Received: from CO6PR12MB5444.namprd12.prod.outlook.com
  ([fe80::8edd:6269:6f31:779e]) by CO6PR12MB5444.namprd12.prod.outlook.com
  ([fe80::8edd:6269:6f31:779e%5]) with mapi id 15.20.5813.018; Tue, 15 Nov 2022
- 12:22:23 +0000
-Message-ID: <202a273f-4fdf-25ca-db1e-d1af81444cf5@nvidia.com>
-Date: Tue, 15 Nov 2022 12:22:14 +0000
+ 12:23:19 +0000
+Message-ID: <b2eb2dc4-3b80-8d48-0e91-34939395898a@nvidia.com>
+Date: Tue, 15 Nov 2022 12:23:11 +0000
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.4.2
-Subject: Re: [PATCH v3 11/13] phy: tegra: xusb: Add Tegra234 support
+Subject: Re: [PATCH v3 13/13] usb: gadget: tegra-xudc: Add Tegra234 support
 Content-Language: en-US
 To: Wayne Chang <waynec@nvidia.com>, gregkh@linuxfoundation.org,
  robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org, treding@nvidia.com,
@@ -66,73 +66,73 @@ Cc: linux-usb@vger.kernel.org, devicetree@vger.kernel.org,
  linux-i2c@vger.kernel.org, linux-phy@lists.infradead.org,
  linux-tegra@vger.kernel.org
 References: <20221114124053.1873316-1-waynec@nvidia.com>
- <20221114124053.1873316-12-waynec@nvidia.com>
+ <20221114124053.1873316-14-waynec@nvidia.com>
 From: Jon Hunter <jonathanh@nvidia.com>
-In-Reply-To: <20221114124053.1873316-12-waynec@nvidia.com>
-X-ClientProxiedBy: LO4P302CA0003.GBRP302.PROD.OUTLOOK.COM
- (2603:10a6:600:2c2::10) To CO6PR12MB5444.namprd12.prod.outlook.com
+In-Reply-To: <20221114124053.1873316-14-waynec@nvidia.com>
+X-ClientProxiedBy: LO4P302CA0004.GBRP302.PROD.OUTLOOK.COM
+ (2603:10a6:600:2c2::9) To CO6PR12MB5444.namprd12.prod.outlook.com
  (2603:10b6:5:35e::8)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
 X-MS-TrafficTypeDiagnostic: CO6PR12MB5444:EE_|SA0PR12MB4525:EE_
-X-MS-Office365-Filtering-Correlation-Id: 4ecc1deb-7230-41d0-9c16-08dac7040c64
+X-MS-Office365-Filtering-Correlation-Id: bb37baa2-d2b5-4391-e400-08dac7042e04
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 	vebODEWrA4bKny3dtiZPEFJB9uiHW3BM2nHMRBbgoU94dB1tATzth+8XDmQsMaBBDmMmoexzxKGRb14vESxsqomBobD5Rd/WBzcszIZWOpypHKd1vnGPeKv7elB+zeZlpaNxuQqkkxtz5spbXFyi9KZRtObCP+uKlpsdWNV0rxmzQxZ1XS8GxI+N3OCthDEHAGdyYLpe+T1XOlqhQLi09LgbIh46jc75A09t/aSZY5NR4UqELZK0g4IaTuWQ9QimbQ6ZdzcmtN88p9xtkUPU/iEHeCnuWaV+B8TmWvv08OIGG+HBbZOiNiaCp3XDUureGiKGy2cynXQRYMqo1cfpWCmugzgNsrHnxoBPOxt4uGcbFvbKOgGh3XHqfjO582WyHFGkMwUonfbXbhRW4XMMhVtxvm+FNy9gH2N8cq0z9Qnbrwo9gLyp7hUW6Ro1mY9SYwFR0tCdRZpW69XG1biCG7dauKuSjF04vaOMoE9/H4MmPnS5WBJdpmvCla3nQ6or0ImhKmSV0fBQlqCesnQKSeL8SC3EwZojg3acCinPlJVuAb5aPi+QTBjGlWEwkxHndapkSbwPWrqYe5fuLuPXh8jkKywKLUiM8u9/uG8q6mhQJoFRaSOgX9R8Vg8cPWh6bNVaq+M5yDaZ79a4lquFZkstbhQQtbeSDEOaT9Skk0m5jrEgpUHH2z7tm34vGsF+oEroPyGIAYcHZdv/qldyFSoxKWW/1XXkgnrRisaQtgxlZqeYD5SMG280eE4EoNbq0DkiK2RWa599S+iRMmexVBHHSyABxxSVHDJrgTuupLigEUCEJwv2H2c+wINcyNNw
+X-Microsoft-Antispam-Message-Info: 	TUIxfLNpbXGyKj/6wwhGfQj0uJW5oDZTPuDBQnry2m5Ldc4TMWLHgpKvkiIICMzNvvCZuTUMdiI8orjC9l78e/SB/Ykw9EIP8yPnrLzF4lKGtyMJy8aPAiLV2JHoKT28EJNlVfMWZDnB0qlSzb4oBdmH0Aujn3tTTfEhqlyauOC+15+r288fyodSWEcoXe0c7QgpSEX9ySC+YVKqp63pHGSgXBa7iDQG4uKCpDyF+/+u/Q1O15HDQijSVxdsemSa1b7tWPRVsgMnXxhcOm0c1C9b05zrHsrKvUfN3N3rArBxtI1cYGH1apUxQhy4kfR6ugIi1/+VWwenUKxv9g5VkJMSJgmvIsyJ6NrNcg0xt8zcIE8bo0onwLbxF6TgJi+od+b0nBFJItxF+BWrrFzAJ1PAT3z0OQ5smKw3+ESvEN3csLxkZWhswsyL2SkvokIQDoSP2KRzp6u+SnzzOVg9XDPIlu1xTMhQINZrBcbiFRgYW+TQj2KAkMhpv5K5WmZbgWhuENKRR+LBretoteqsbN+ngGYntvqJSkM3s3AYoFo09XjRjPMP3HjkxGaTaGIHWr0EiTSaZh5YK93FCSBs8mTPXjrCKBxDxureAOLaP1K8I0xP05N/Md4NjSxvP8bXHQpbEGAIThQdWyHqDuvPd9yf9WpRI16hGvnnkAOrmxrAVlObMalmdieDMEd4ZgOKuJ+U6Zs2xU83eE8JVv22jlSctrIM/OB8+juTBl8rQ5tpjJpIcn6wjriDr++qz4xrGZQEQDDwtaUEmeDikmXWcSmqoajRLOAceIuucDGQ0dXEXjm+wW1NPhZMLuB2p3VU
 X-Forefront-Antispam-Report: 	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:CO6PR12MB5444.namprd12.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230022)(4636009)(39860400002)(366004)(376002)(136003)(396003)(346002)(451199015)(6636002)(316002)(66556008)(38100700002)(66476007)(5660300002)(7416002)(8936002)(66946007)(83380400001)(6506007)(53546011)(8676002)(41300700001)(4326008)(55236004)(26005)(2616005)(6512007)(6486002)(186003)(478600001)(86362001)(31696002)(921005)(6666004)(31686004)(2906002)(36756003)(45980500001)(43740500002);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: 	=?utf-8?B?dnhXZUNSVGI0ZWNPcDE5d3dubDhpY2tUN1F0ZDdXTFk3dkdhbzRxT3JsRWdN?=
- =?utf-8?B?TjVLNG5sSlRoa2dXT3ZWbFdlb2w1WDR2bm9leGg4cEsrUE5maGRaZGt2N0RB?=
- =?utf-8?B?aWNzSmpjWjVnYWxIM1pVbTRySURRUk42eEJoUXZEb2I2MWJ0VElVbk50SU5V?=
- =?utf-8?B?MjJjMXd5Z1RCaCsyRCtUb3VjcHlOcTFOaDBSeG4vZG9GbDZDUjRPUStqWDln?=
- =?utf-8?B?cEczakdISDUwbnNhMitYcExGU2k5YlcvTjRjOWh3aE9lbFl1VU1vZVBqc3ho?=
- =?utf-8?B?TlhLdVBkbUdmcE1sL2d6R2hoSWRzSDNWMFYwR2tGOUF4TnpEVFFsUjhmUlZt?=
- =?utf-8?B?M2ZNcDVkT0poczlUUnRaRGlyL2J0VVAyblowWDVUeHlCME1YeCtRSFkwQ2Qw?=
- =?utf-8?B?MXFHdXJ5L2tGM0QvdmtCdXdhejVsK25UcEMyRGd3clBxa0xTYitzT2pNRy9q?=
- =?utf-8?B?dmd5RFVtb2FEUkZrOGV3L0lvQUtWZ3doQWFSNVFiUmZSMnJ6M0F0dFRtVjFT?=
- =?utf-8?B?UjJESkh1T21kc0RmdnFVbEU2bEQ0cTZVbEphS0pWeGgyaFpWdnhSbm5DeTFQ?=
- =?utf-8?B?OHcxWjRjNXd4Mkt4Q0QzNHB2aUowK015SENjbCtUeTM3RnBueFFyMUc0MmtR?=
- =?utf-8?B?MWllNzBlN2p1bUlWclJzRitUcmNjQVNabjJLZDFaZFYxdDBxUUpMMzIyWTVF?=
- =?utf-8?B?V3B5dUJNejBrVkVKTms3TWw4R29lUDR6NnVJa2Nlc2JBV1FiMXNWRXNTTzhI?=
- =?utf-8?B?b0dOLzZ4WVNENExGTmRWVWF5Vmx3NW1qWlZOUkJjUkpEdnNheHoydWNNd054?=
- =?utf-8?B?dFJ1Q2ZZSlhKTmhudUxXc0lEM2UxQ01jejVaMmZxNlJ3MDdoNk4zRE44aFF6?=
- =?utf-8?B?QnpNTkplNUtQWDBkWHBjNTZFT0h0VVVMc3FBTDBabnl4aFAvQXg0bkZvVm5J?=
- =?utf-8?B?amo0V2Y5UEdkUXUyOUZvUC9CNUpJK1NpeWtvcnFybkNjTHYwdGJlU01zSHkz?=
- =?utf-8?B?YlpHVnAwekxLcm01Z0hXbXBnZThYRkZ2bnJSTHhEdTk3ck12cDZycHJCVE80?=
- =?utf-8?B?VzZIYjBOMkpDTzNuTk01VCtqRDJHTnoyLzBQeGFKbnRML2NEd0YxdzlTU3dr?=
- =?utf-8?B?SGxaYy9LdDE3ZU5uUy9GYitLS3lqOTNZc095Tm54WnFCLzFYVDl6Rk0wZzRL?=
- =?utf-8?B?QTdEZzV5Umltb2FtWkxiNXNnRHhZbXhrbEZLWW9zM21jOEp1ZVdkTGV0dFhn?=
- =?utf-8?B?YzM1RE1VYTYwRXBaU1gwdDBmU0wwN3o4aHZXQy9yN1NvZXFBQlFEQ1BTRG1Q?=
- =?utf-8?B?UytOLytqbFg4Q2l6MjVYTkRvc1lqclVaRlppZC9zNjFMVFVNcVZ2dkpvQmNo?=
- =?utf-8?B?Q3JZbXR1OTQvTEdCcXIrcFVtSTNnSnVTQSs2SmRtTlZ4OWFpVTF6NTlwWVhw?=
- =?utf-8?B?S2ZvZjBxZTBCOUl5WWl4a0RFdkdDaGNoTDNaaTBzeFNtY2QzUU5lN014Z1dr?=
- =?utf-8?B?SHg3V285RW05eVUxMURhcVVvS0JjVCtQQWdkMHpyTStEamlpdG1IeEpnS0dN?=
- =?utf-8?B?TGNzVmtiVWJEM0srTVhBMW15b1hnbkZNdlFDS2dmaDlDWVZQeVZQWGU2WkNG?=
- =?utf-8?B?NHV1YkRxSXpTdHpBa3pWMC9CRTRtc0NSbGNaOVFzL1dSbXROZ3UvazVKVFlw?=
- =?utf-8?B?cCt4NmVSWGMvM0tLUnhCMmdCME5iR1BjcXM0bjlkWkViQ0tDL0RRNEhPS0Zy?=
- =?utf-8?B?WVVxdDg3OWJnQjZNVWtua3dYcFpkMDQrYkNrRTNTR1E4K2xYSDE5aGY1dzBJ?=
- =?utf-8?B?SFFtbkl0TGVOVFJQajRYTnFCQkF0M3JqdFUyVTVXV1ZjU1hQY0R1SXUwaVBB?=
- =?utf-8?B?cVRrVG1OelM5WGNpMGllaFBDdHNLZDBTaThDSWZnOVcvMU95VVY3NzVSUC82?=
- =?utf-8?B?bWVxWmw1U052T09RYmFsNHlsQ1NJZ2FhZzd0ckJ2MlNZSnA2aUU1eTZ1ejVq?=
- =?utf-8?B?Q3JEdUt6eDR3TTFBbUlUbVI2LzdKOWZMV3hFUHd2VDhFMmNRTGZyMlo4b0ln?=
- =?utf-8?B?QllqbjVLN1lMQzBpeS9BNzZkRkNITzBCU1lFVm5ST3lJRDBxNDFWSWUrYnhS?=
- =?utf-8?B?b1Fqci9wcytrVGZiKzlZeC9oOGx1dzI3Y0JMQUhsQXZnRU83MjhXQmxSK0R4?=
- =?utf-8?B?WkE9PQ==?=
+X-MS-Exchange-AntiSpam-MessageData-0: 	=?utf-8?B?dFFlbWVzT1hhVkN6L0ZnalZiY0NxcmZYaEpDOExDdnJoSG1EKzIwR3ZsSUE4?=
+ =?utf-8?B?T0ZLYVdSTFo1Vk9UemhOcSsvMHNKTU53MnhLSGNiU3RSbkNZQXgvN1V0SWRH?=
+ =?utf-8?B?UmYvRUcveTNsVDY3dHNRSzl5UFZFdmJpQjNPVUN2aWJBT3hyWS9Fd0RidnFR?=
+ =?utf-8?B?MGFreDNwWjdBM05ldWJHc3VrR3MwNDlCcTdNZCs5cURDVXdYOVlwaHZxSHdY?=
+ =?utf-8?B?dGFrM3picVhYWnRGWXNOV1d6ejZZT1lNUUNSYnZJOXVjczRlSFFiYjN0Unkx?=
+ =?utf-8?B?R1BIaWVyWlJUVGVGb3lzV1V3UkJ5SmZpUzZMK0ZVdDB0T1c4QmE5bUtuVHpP?=
+ =?utf-8?B?UXQyRzF6ckJMNWZDZHdRKzVTaTNkVkhIRG1RTnpmVEtRUm16OHBNUzVyM2J5?=
+ =?utf-8?B?bTdrR28zdFB0eTZZdzRUbGRxZHNYZmwwbkY5M3FuTHJBbStiRHVGOEgyYlFF?=
+ =?utf-8?B?V3Y2cmxVNlBtYXVVNE84RjNETjlGWi84SStSeUFoY214bHZUNFc1RmxKNTVt?=
+ =?utf-8?B?MFRvdWpEcFdvbzFkNXM4Mm1yQ2R1UlJLeHdkL0tGYlhRdnJndm1VTmtoRlBr?=
+ =?utf-8?B?QzBlUGM2bktUS242dUNPZ3JoODZoUGU0T1pnNWF0NGx1ZEJQUGVCMnV2aHpY?=
+ =?utf-8?B?TUkxVTFBZmswdkpZQkxOTlFSbkFPclM0ekZHK0d3OVZETnQ3Nk84MHVXR1pR?=
+ =?utf-8?B?VWNudnk4MkYwMHZ4dFlIVWRWVC84SURmOE8veFZBOVIrVnNVOHZweUpPeFlM?=
+ =?utf-8?B?N1huOWdwMTkvVXhUR2NtQ09pOTQ1TmNpMWFuOWVBdWhpTmNPRjNLdlg0dC9z?=
+ =?utf-8?B?MnB2dDg4bk8vV3oxR3g3RnZLMWpTOHVoL0xsRFpuSnQ0Mm5oaElEdjZPNzRC?=
+ =?utf-8?B?K0JkbHBGTGc5am1FRzcyMllRcmxVb1dUUXRGUmJLM00zOGxkbnB2NFE3NGlR?=
+ =?utf-8?B?R204RlN1clV6N2tSVkdnc2lGRWF2dTh0cFZsVllSR2xnbENTaWczNm92QmVD?=
+ =?utf-8?B?K2ZGZmcwVk9kMFRhSUl4cm92aWJSV0lMcnNNS1hXZk1WSUZmT1FxS3lpVVpY?=
+ =?utf-8?B?WkJEckRzeVhXeXlmS1hjeXZTVzZwaTZWS2RSQzc5ZjhDc1RicnZPMDJEUDRv?=
+ =?utf-8?B?LzNxazJKMFlGT2d3L2dIZFBUNk5waHhtTCt4VlMyVit6OGc4V0gzY3Bkczht?=
+ =?utf-8?B?KzAvQi9NNTcyTjVwMllqQlJRSS9ZN0FTdDNqSC9ZaC9qSnFEU3lId2padTFv?=
+ =?utf-8?B?anhwbmEzaDVhVHROM3NFWFZza3JnUjNEOGlrNGsrN2lFUTB1VVlXTWxtOEdh?=
+ =?utf-8?B?dmFIckZJdUlZWGdIMVdPYWNEOFFrRXBPelZ0OXZDWWxpMGp1czV2K0JTeVFN?=
+ =?utf-8?B?S2daajRyNlczU1JXYTRmeURHSmVpV200TUdKQVJIUGtlVUV2ZjNlVHpnVUQ4?=
+ =?utf-8?B?MUZoM3FRUlZoNUJWL1JURFJHVWxwcEQyZjk2OVBONUpIUHNhNW9DMitaQUpL?=
+ =?utf-8?B?a0RTTVIwZkJtcGFrRWR1Um8zdTJVQys2UEtMU3B6b1gxd2NFb2hmMmM0TVB4?=
+ =?utf-8?B?dHM4UTN0UWx3ZE1uQmZiaUtoMHJIbXllczV2K01MOUNtNm5UeFhxZU1XRnFu?=
+ =?utf-8?B?bW4yYVJ1YWdQTXVubnZGZElBUTdNbTIzQzk4ZUVvb202UmhHSUIzd3pKbTZh?=
+ =?utf-8?B?SHB6VFIvMGV3cTE4V2tuekQxaXpKMmFpdEJma2M5R3dSckR2QXhQYzhuSFdL?=
+ =?utf-8?B?blJzQWcvNytmNXRQOExkTW5tT3VRbU90dE1tRmdBQnhRT3ZMRUk1Q2gvRXVH?=
+ =?utf-8?B?ODNPbVdHS0I5c3JKV3Rsb2MzdFowK3FtbHZLN0tCazI0SHo3R0Nad0ZFbkxs?=
+ =?utf-8?B?TXNlN3AyRUFxMWhnTTJZdTJDZHUwbzJRcndxTVdIWGdvSldCL0UrSitBSFd4?=
+ =?utf-8?B?aHNra0NyTHhGaTJqSjNPRWlWRHhUTFFGbFJObC85ZElwK2xwZUtSeStFbGpL?=
+ =?utf-8?B?MmhaV2xHWlNwbjdzZmRxM3Z3ZlZieTdTajA0RGxRaWloS042c2J2UjNLUEpR?=
+ =?utf-8?B?eWgrakp1NlUvZityVFM2T2pCckRMTlpoTGc1Mm0waHlZZTl2akxqZ3doM09k?=
+ =?utf-8?B?c3NXazk3TVFRK21CT3d1ZHRJMGFNand2dlZDTS9LUnFaSGFLb1pJV0FoRzVE?=
+ =?utf-8?B?L3c9PQ==?=
 X-OriginatorOrg: Nvidia.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 4ecc1deb-7230-41d0-9c16-08dac7040c64
+X-MS-Exchange-CrossTenant-Network-Message-Id: bb37baa2-d2b5-4391-e400-08dac7042e04
 X-MS-Exchange-CrossTenant-AuthSource: CO6PR12MB5444.namprd12.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 15 Nov 2022 12:22:23.1031
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 15 Nov 2022 12:23:19.4715
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: eEj1ZkbtS6RcbFbnHXm1ebrny2q0b4SHct92w7IqCZkV7dmfs+JUKhBbFO8594Uxtcs8JayYnqvV5TjMtL1SMA==
+X-MS-Exchange-CrossTenant-UserPrincipalName: PscnvBNgz1pUowGsPQ7MpyGcBD+mPfbtijpaC+7DSxB2/oLzLtmb+9FkyWVbro+zEVVe5gb2ypVL9BbpSlZOBA==
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: SA0PR12MB4525
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221115_042232_725673_433F37A5 
-X-CRM114-Status: GOOD (  24.98  )
+X-CRM114-CacheID: sfid-20221115_042327_865186_555C3554 
+X-CRM114-Status: GOOD (  16.17  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -154,215 +154,52 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 On 14/11/2022 12:40, Wayne Chang wrote:
 > From: Sing-Han Chen <singhanc@nvidia.com>
 > 
-> Add support for the XUSB pad controller found on Tegra234 SoCs. It is
-> mostly similar to the same IP found on Tegra194, because most of
-> the Tegra234 XUSB PADCTL registers definition and programming sequence
-> are the same as Tegra194, Tegra234 XUSB PADCTL can share the same
-> driver with Tegra186 and Tegra194 XUSB PADCTL.
-> 
-> Introduce a new feature, USB2 HW tracking, for Tegra234.
-> The feature is to enable HW periodical PAD tracking which measure
-> and capture the electric parameters of USB2.0 PAD.
+> This commit adds support for XUSB device mode controller support on
+> Tegra234 SoC. This is very similar to the existing Tegra194 XUDC.
 > 
 > Signed-off-by: Sing-Han Chen <singhanc@nvidia.com>
-> Co-developed-by: Wayne Chang <waynec@nvidia.com>
 > Signed-off-by: Wayne Chang <waynec@nvidia.com>
 > ---
 > V2 -> V3:nothing has changed
-> V1 -> V2:remove atomic and the helper in padctl_readl_poll func.
->   drivers/phy/tegra/Makefile        |  1 +
->   drivers/phy/tegra/xusb-tegra186.c | 64 +++++++++++++++++++++++++++++--
->   drivers/phy/tegra/xusb.c          |  6 +++
->   drivers/phy/tegra/xusb.h          | 22 +++++++++++
->   4 files changed, 90 insertions(+), 3 deletions(-)
+> V1 -> V2:nothing has changed
+>   drivers/usb/gadget/udc/tegra-xudc.c | 17 +++++++++++++++++
+>   1 file changed, 17 insertions(+)
 > 
-> diff --git a/drivers/phy/tegra/Makefile b/drivers/phy/tegra/Makefile
-> index 89b84067cb4c..eeeea72de117 100644
-> --- a/drivers/phy/tegra/Makefile
-> +++ b/drivers/phy/tegra/Makefile
-> @@ -7,4 +7,5 @@ phy-tegra-xusb-$(CONFIG_ARCH_TEGRA_132_SOC) += xusb-tegra124.o
->   phy-tegra-xusb-$(CONFIG_ARCH_TEGRA_210_SOC) += xusb-tegra210.o
->   phy-tegra-xusb-$(CONFIG_ARCH_TEGRA_186_SOC) += xusb-tegra186.o
->   phy-tegra-xusb-$(CONFIG_ARCH_TEGRA_194_SOC) += xusb-tegra186.o
-> +phy-tegra-xusb-$(CONFIG_ARCH_TEGRA_234_SOC) += xusb-tegra186.o
->   obj-$(CONFIG_PHY_TEGRA194_P2U) += phy-tegra194-p2u.o
-> diff --git a/drivers/phy/tegra/xusb-tegra186.c b/drivers/phy/tegra/xusb-tegra186.c
-> index f121b4ffbbfd..5ae3cea19c84 100644
-> --- a/drivers/phy/tegra/xusb-tegra186.c
-> +++ b/drivers/phy/tegra/xusb-tegra186.c
-> @@ -89,6 +89,11 @@
->   #define  USB2_TRK_START_TIMER(x)		(((x) & 0x7f) << 12)
->   #define  USB2_TRK_DONE_RESET_TIMER(x)		(((x) & 0x7f) << 19)
->   #define  USB2_PD_TRK				BIT(26)
-> +#define  USB2_TRK_COMPLETED			BIT(31)
-> +
-> +#define XUSB_PADCTL_USB2_BIAS_PAD_CTL2		0x28c
-> +#define  USB2_TRK_HW_MODE			BIT(0)
-> +#define  CYA_TRK_CODE_UPDATE_ON_IDLE		BIT(31)
->   
->   #define XUSB_PADCTL_HSIC_PADX_CTL0(x)		(0x300 + (x) * 0x20)
->   #define  HSIC_PD_TX_DATA0			BIT(1)
-> @@ -609,9 +614,31 @@ static void tegra186_utmi_bias_pad_power_on(struct tegra_xusb_padctl *padctl)
->   	value &= ~USB2_PD_TRK;
->   	padctl_writel(padctl, value, XUSB_PADCTL_USB2_BIAS_PAD_CTL1);
->   
-> -	udelay(100);
-> +	if (padctl->soc->poll_trk_completed) {
-> +		err = padctl_readl_poll(padctl, XUSB_PADCTL_USB2_BIAS_PAD_CTL1,
-> +					USB2_TRK_COMPLETED, USB2_TRK_COMPLETED, 100);
-> +		if (err) {
-> +			/* The failure with polling on trk complete will not
-> +			 * cause the failure of powering on the bias pad.
-> +			 */
-> +			dev_warn(dev, "failed to poll USB2 trk completed: %d\n", err);
-> +		}
->   
-> -	clk_disable_unprepare(priv->usb2_trk_clk);
-> +		value = padctl_readl(padctl, XUSB_PADCTL_USB2_BIAS_PAD_CTL1);
-> +		value |= USB2_TRK_COMPLETED;
-> +		padctl_writel(padctl, value, XUSB_PADCTL_USB2_BIAS_PAD_CTL1);
-> +	} else {
-> +		udelay(100);
-> +	}
-> +
-> +	if (padctl->soc->trk_hw_mode) {
-> +		value = padctl_readl(padctl, XUSB_PADCTL_USB2_BIAS_PAD_CTL2);
-> +		value |= USB2_TRK_HW_MODE;
-> +		value &= ~CYA_TRK_CODE_UPDATE_ON_IDLE;
-> +		padctl_writel(padctl, value, XUSB_PADCTL_USB2_BIAS_PAD_CTL2);
-> +	} else {
-> +		clk_disable_unprepare(priv->usb2_trk_clk);
-> +	}
->   
->   	mutex_unlock(&padctl->lock);
->   }
-> @@ -637,6 +664,13 @@ static void tegra186_utmi_bias_pad_power_off(struct tegra_xusb_padctl *padctl)
->   	value |= USB2_PD_TRK;
->   	padctl_writel(padctl, value, XUSB_PADCTL_USB2_BIAS_PAD_CTL1);
->   
-> +	if (padctl->soc->trk_hw_mode) {
-> +		value = padctl_readl(padctl, XUSB_PADCTL_USB2_BIAS_PAD_CTL2);
-> +		value &= ~USB2_TRK_HW_MODE;
-> +		padctl_writel(padctl, value, XUSB_PADCTL_USB2_BIAS_PAD_CTL2);
-> +		clk_disable_unprepare(priv->usb2_trk_clk);
-> +	}
-> +
->   	mutex_unlock(&padctl->lock);
->   }
->   
-> @@ -1560,7 +1594,8 @@ const struct tegra_xusb_padctl_soc tegra186_xusb_padctl_soc = {
->   EXPORT_SYMBOL_GPL(tegra186_xusb_padctl_soc);
->   #endif
->   
-> -#if IS_ENABLED(CONFIG_ARCH_TEGRA_194_SOC)
-> +#if IS_ENABLED(CONFIG_ARCH_TEGRA_194_SOC) || \
-> +	IS_ENABLED(CONFIG_ARCH_TEGRA_234_SOC)
->   static const char * const tegra194_xusb_padctl_supply_names[] = {
->   	"avdd-usb",
->   	"vclamp-usb",
-> @@ -1616,8 +1651,31 @@ const struct tegra_xusb_padctl_soc tegra194_xusb_padctl_soc = {
->   	.supply_names = tegra194_xusb_padctl_supply_names,
->   	.num_supplies = ARRAY_SIZE(tegra194_xusb_padctl_supply_names),
->   	.supports_gen2 = true,
-> +	.poll_trk_completed = true,
+> diff --git a/drivers/usb/gadget/udc/tegra-xudc.c b/drivers/usb/gadget/udc/tegra-xudc.c
+> index 76919d7570d2..ff697190469b 100644
+> --- a/drivers/usb/gadget/udc/tegra-xudc.c
+> +++ b/drivers/usb/gadget/udc/tegra-xudc.c
+> @@ -3660,6 +3660,19 @@ static struct tegra_xudc_soc tegra194_xudc_soc_data = {
+>   	.has_ipfs = false,
 >   };
->   EXPORT_SYMBOL_GPL(tegra194_xusb_padctl_soc);
-> +
-> +const struct tegra_xusb_padctl_soc tegra234_xusb_padctl_soc = {
-> +	.num_pads = ARRAY_SIZE(tegra194_pads),
-> +	.pads = tegra194_pads,
-> +	.ports = {
-> +		.usb2 = {
-> +			.ops = &tegra186_usb2_port_ops,
-> +			.count = 4,
-> +		},
-> +		.usb3 = {
-> +			.ops = &tegra186_usb3_port_ops,
-> +			.count = 4,
-> +		},
-> +	},
-> +	.ops = &tegra186_xusb_padctl_ops,
-> +	.supply_names = tegra194_xusb_padctl_supply_names,
-> +	.num_supplies = ARRAY_SIZE(tegra194_xusb_padctl_supply_names),
-> +	.supports_gen2 = true,
-> +	.poll_trk_completed = true,
-> +	.trk_hw_mode = true,
-> +};
-> +EXPORT_SYMBOL_GPL(tegra234_xusb_padctl_soc);
->   #endif
 >   
->   MODULE_AUTHOR("JC Kuo <jckuo@nvidia.com>");
-> diff --git a/drivers/phy/tegra/xusb.c b/drivers/phy/tegra/xusb.c
-> index dce45fbbd699..c2f160628552 100644
-> --- a/drivers/phy/tegra/xusb.c
-> +++ b/drivers/phy/tegra/xusb.c
-> @@ -71,6 +71,12 @@ static const struct of_device_id tegra_xusb_padctl_of_match[] = {
->   		.compatible = "nvidia,tegra194-xusb-padctl",
->   		.data = &tegra194_xusb_padctl_soc,
+> +static struct tegra_xudc_soc tegra234_xudc_soc_data = {
+> +	.clock_names = tegra186_xudc_clock_names,
+> +	.num_clks = ARRAY_SIZE(tegra186_xudc_clock_names),
+> +	.num_phys = 4,
+> +	.u1_enable = true,
+> +	.u2_enable = true,
+> +	.lpm_enable = true,
+> +	.invalid_seq_num = false,
+> +	.pls_quirk = false,
+> +	.port_reset_quirk = false,
+> +	.has_ipfs = false,
+> +};
+> +
+>   static const struct of_device_id tegra_xudc_of_match[] = {
+>   	{
+>   		.compatible = "nvidia,tegra210-xudc",
+> @@ -3673,6 +3686,10 @@ static const struct of_device_id tegra_xudc_of_match[] = {
+>   		.compatible = "nvidia,tegra194-xudc",
+>   		.data = &tegra194_xudc_soc_data
 >   	},
-> +#endif
-> +#if defined(CONFIG_ARCH_TEGRA_234_SOC)
 > +	{
-> +		.compatible = "nvidia,tegra234-xusb-padctl",
-> +		.data = &tegra234_xusb_padctl_soc,
+> +		.compatible = "nvidia,tegra234-xudc",
+> +		.data = &tegra234_xudc_soc_data
 > +	},
->   #endif
 >   	{ }
 >   };
-> diff --git a/drivers/phy/tegra/xusb.h b/drivers/phy/tegra/xusb.h
-> index 8cfbbdbd6e0c..a21826c730d7 100644
-> --- a/drivers/phy/tegra/xusb.h
-> +++ b/drivers/phy/tegra/xusb.h
-> @@ -8,6 +8,7 @@
->   #define __PHY_TEGRA_XUSB_H
->   
->   #include <linux/io.h>
-> +#include <linux/iopoll.h>
->   #include <linux/mutex.h>
->   #include <linux/workqueue.h>
->   
-> @@ -433,6 +434,8 @@ struct tegra_xusb_padctl_soc {
->   	unsigned int num_supplies;
->   	bool supports_gen2;
->   	bool need_fake_usb3_port;
-> +	bool poll_trk_completed;
-> +	bool trk_hw_mode;
->   };
->   
->   struct tegra_xusb_padctl {
-> @@ -475,6 +478,22 @@ static inline u32 padctl_readl(struct tegra_xusb_padctl *padctl,
->   	return value;
->   }
->   
-> +static inline u32 padctl_readl_poll(struct tegra_xusb_padctl *padctl,
-> +	unsigned long offset, u32 val, u32 mask, int us)
-> +{
-> +	u32 regval;
-> +	int err;
-> +
-> +	err = readl_poll_timeout(padctl->regs + offset, regval,
-> +					 (regval & mask) == val, 1, us);
-> +	if (err) {
-> +		dev_err(padctl->dev, "%08lx poll timeout > %08x\n", offset,
-> +			regval);
-> +	}
-> +
-> +	return err;
-> +}
-> +
->   struct tegra_xusb_lane *tegra_xusb_find_lane(struct tegra_xusb_padctl *padctl,
->   					     const char *name,
->   					     unsigned int index);
-> @@ -491,5 +510,8 @@ extern const struct tegra_xusb_padctl_soc tegra186_xusb_padctl_soc;
->   #if defined(CONFIG_ARCH_TEGRA_194_SOC)
->   extern const struct tegra_xusb_padctl_soc tegra194_xusb_padctl_soc;
->   #endif
-> +#if defined(CONFIG_ARCH_TEGRA_234_SOC)
-> +extern const struct tegra_xusb_padctl_soc tegra234_xusb_padctl_soc;
-> +#endif
->   
->   #endif /* __PHY_TEGRA_XUSB_H */
-
+>   MODULE_DEVICE_TABLE(of, tegra_xudc_of_match);
 
 Reviewed-by: Jon Hunter <jonathanh@nvidia.com>
 
