@@ -4,86 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6B536C43217
-	for <linux-phy@archiver.kernel.org>; Tue, 15 Nov 2022 13:39:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8F639C4332F
+	for <linux-phy@archiver.kernel.org>; Tue, 15 Nov 2022 14:23:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YAkgl5rzc+9c14UujNHRcD86GMPVX0hVDOztUXvh6CQ=; b=GIp4xF0QZLa+2w
-	e5LlPVkSH4GBSKKSHKrFLr7i2DBXIjb/4f1gbmvOoX5ppOw+skXBZvDKx2fW6oOyMgUHmm4dTLrTw
-	cMj8PdijI0fGlJU+LvGuwLFqkMaDLHP/L4dkqS41ojCmEwTq+hYV59fiFaWAis4NBbLlBhS0S5W+t
-	4yXH5EyzMD0iZawOOtYJ/4Fpry1wDr+i6tGV4r3Kv3WSZ7ZQwTNraNhTItV7eKqO7e6+Zddh/5V1M
-	yOWJ2w8yGnldOgb9JLU8ZARirmRaQck3tOq0hDyY2pKKn6CU/s63myrV6w0wZwOkynHx5zsxDhrGJ
-	1/9RXBRM9WGnI9QKgbvA==;
+	List-Owner; bh=0SyaUEtNPML0l6e7xfYYlNNY6lsT+71IVwD+wZcWpnM=; b=Z+sAdwFfuey1UA
+	kI18CoLhTyGczNq8OWho6hgvFqNscW5yBNhHXwivIz4tOyzKC+gW/30g0dwccTpwPkSbk0qyf8PrM
+	/wx6vcbVlvkK+6P3dqwMy+HPAes16Y+wz2Kl9VSHZYJxmqxawGGy1a6okoWQMtqgquKHBC+1dSAG3
+	nOymxd8e3jFaitATMRWVTqLtS25e82wZwqXnW1EeEC2sTFATlDIWYkQ4oEYD9dvzhlh2/C6HazhMm
+	WGpIPHHMQpFpT1GSST9bJgcKHYg9Ug+fGd4bx1/BrsFLgjMxqYndpKW3HstjBjmO7zgZAVO0sn6ya
+	Oje2ciQfEEBxxA8ahjjg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ouw9T-00BVKY-Oj; Tue, 15 Nov 2022 13:38:59 +0000
-Received: from mail-lj1-x230.google.com ([2a00:1450:4864:20::230])
+	id 1ouwqb-00BrUa-RI; Tue, 15 Nov 2022 14:23:33 +0000
+Received: from ams.source.kernel.org ([145.40.68.75])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ouw9R-00BVJ6-LN
-	for linux-phy@lists.infradead.org; Tue, 15 Nov 2022 13:38:58 +0000
-Received: by mail-lj1-x230.google.com with SMTP id z24so17545317ljn.4
-        for <linux-phy@lists.infradead.org>; Tue, 15 Nov 2022 05:38:56 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=2CpA277xmc3TicpaEpZnhMOiKh9Ta2fws73LbvJb9po=;
-        b=HYtTbhykeOpyfp1CWHIRuXtxh9TDpTyRPig7PwTLVYkGWVURu/9aMJC4r/fjrECHM2
-         yl/wI62Aic7i2zXu0RCZHFht5vl6ouHHSvPlBaqWa2ZOaFZeQN9Ov8sKK0IiVaWBAmOj
-         qQlPAPBTvciwHFGt1SgQfWjil7+hGqSc/RPUCL4ODfITASsYfN65DX/yThlIU9NsJJoW
-         AZqL6DDxc6FYD8cGUqI2gnV2AOAC7yEt/RMb6BsDH+5ZDXl7Q3Kfj14YHSk78jfeg7uY
-         arGz7RYIUp9SXd2+xBZbtHHsYanAMotE1vF/fSbxRDzla4ahhgqeR+A/pQZEKcEz0PVv
-         8LQQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=2CpA277xmc3TicpaEpZnhMOiKh9Ta2fws73LbvJb9po=;
-        b=Epr2aWY/gQ42bykfixvntuFT9sd3Gu9jj8FI4OiriEgDFNx4eqmwAAo4DCkPrIs5ew
-         DWa54kApnqTq6XDbKcglIdBunmrHdwPXxIY5sFOVLvzwkh/W/JUIEzWU5j8jbD0P76IH
-         iuHEwM0VmDHo6DqppkElQTykUdIK91iAhg+fcfsNR7UxC5lj32fLFlfacuqjHvknB8Gw
-         8+6X8MU2F90+MYMv151calJcjvE4gI2o4UGj9nYh/8Yevenv84bR0Ta2hEiyZjNVtRue
-         bTy4nX2zeZSYmvDmC2i4cpfpvFY03a2Vu4ENvDJrODZ6//bcso89RiyrPyI0J2RvT2Zq
-         f4ig==
-X-Gm-Message-State: ANoB5pmkTk3LtJiVMJYQk9zks1R5INseA4f7kFLs8fUMYLE6oEuOLJGr
-	05LMqVsXW3vSNed/Ez+sc/6dUnPHdAezVT+U
-X-Google-Smtp-Source: AA0mqf4MKBH635VXC2jV4FG0ROe4MyyQ6PGcweo05qjZ5o8A1G8micaVYdR5ZVNm7fgnNjWFt8Ot7Q==
-X-Received: by 2002:a05:651c:32f:b0:277:1e9b:2b07 with SMTP id b15-20020a05651c032f00b002771e9b2b07mr6345597ljp.242.1668519535130;
-        Tue, 15 Nov 2022 05:38:55 -0800 (PST)
-Received: from [192.168.0.20] (088156142067.dynamic-2-waw-k-3-2-0.vectranet.pl. [88.156.142.67])
-        by smtp.gmail.com with ESMTPSA id k11-20020a05651210cb00b004a1e592837esm2215324lfg.140.2022.11.15.05.38.54
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 15 Nov 2022 05:38:54 -0800 (PST)
-Message-ID: <77c27fa4-5c3d-7e5e-058d-24ea6fc449a2@linaro.org>
-Date: Tue, 15 Nov 2022 14:38:53 +0100
+	id 1ouwqZ-00BrTG-0F
+	for linux-phy@lists.infradead.org; Tue, 15 Nov 2022 14:23:32 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by ams.source.kernel.org (Postfix) with ESMTPS id D6981B81923;
+	Tue, 15 Nov 2022 14:23:28 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 612C4C433C1;
+	Tue, 15 Nov 2022 14:23:27 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1668522207;
+	bh=6MybgYS++YBsa14WSMeMsE+CurMBOnWwTePlaWVNdAU=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=bXBhJuDfqCrmRoK3Wouw3dWT4IdtX2aEnsUF+G9YfKy/vi1bX/0NIMCCOoy4IF08Z
+	 UBA3zFlrHBfXg4Rosxr2K3VI525n+8TNv5rxqvMdMA2fU9gRBjtrc8FIYHFMTd4kx/
+	 kpcqRz8Py7MK8/k/CIajiPSqGmrS/ihoh0OZvDQxbVhFHxadK9hG8VhcTPRNehOvoz
+	 bSnJSdAoQ2vcGfbZIR5IcBNPkjCwvsp9kVjPecFnVtHF1ffFQsxCI3iGn3ljrcO3Y9
+	 y/qebzR3/zDueIByh8KYxb+TlP3L6JZWsjGnU3hrrUOHo8ombknmlyoo3WsuRck3kp
+	 g2SdLMD4Kkg/g==
+Received: from johan by xi.lan with local (Exim 4.94.2)
+	(envelope-from <johan@kernel.org>)
+	id 1ouwq0-0000Nf-NH; Tue, 15 Nov 2022 15:22:57 +0100
+Date: Tue, 15 Nov 2022 15:22:56 +0100
+From: Johan Hovold <johan@kernel.org>
+To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Cc: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+	Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 02/14] dt-bindings: phy: qcom,qmp-usb3-dp: fix sc8280xp
+ bindings
+Message-ID: <Y3OgwLlNaqcd5SwW@hovoldconsulting.com>
+References: <Y3JCVzJ74YsfcDz4@hovoldconsulting.com>
+ <de3a426a-03e8-ed15-a9a1-bb300e776e5f@linaro.org>
+ <Y3JOO0kNnaNhnW3K@hovoldconsulting.com>
+ <02725b78-04ad-8f4a-25c2-9cdaa1e37ab7@linaro.org>
+ <Y3JthM1jC2vH1Kn+@hovoldconsulting.com>
+ <efd412d0-7411-8b0b-4700-9e183a592048@linaro.org>
+ <Y3JxZ+yFMLZkwNBi@hovoldconsulting.com>
+ <8420c342-9dce-aea7-8d1e-f141e0c1ebb5@linaro.org>
+ <Y3J2AjjjsybI9mKd@hovoldconsulting.com>
+ <61df3c4f-f41c-9525-606d-1b8261163080@linaro.org>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.4.2
-Subject: Re: [PATCH 1/3] dt-bindings: phy: qcom,sc8280xp-qmp-usb3-uni: drop
- reference-clock source
-To: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Bjorn Andersson <andersson@kernel.org>
-Cc: Andy Gross <agross@kernel.org>, Konrad Dybcio <konrad.dybcio@linaro.org>,
- Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-References: <20221111093857.11360-1-johan+linaro@kernel.org>
- <20221111093857.11360-2-johan+linaro@kernel.org>
-Content-Language: en-US
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20221111093857.11360-2-johan+linaro@kernel.org>
+Content-Disposition: inline
+In-Reply-To: <61df3c4f-f41c-9525-606d-1b8261163080@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221115_053857_730937_2C65972D 
-X-CRM114-Status: UNSURE (   9.16  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20221115_062331_386512_0523C31F 
+X-CRM114-Status: GOOD (  28.89  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,20 +92,72 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 11/11/2022 10:38, Johan Hovold wrote:
-> The source clock for the reference clock is not used by the PHY directly
-> and should not be included in the devicetree binding.
+On Tue, Nov 15, 2022 at 09:12:54AM +0100, Krzysztof Kozlowski wrote:
+> On 14/11/2022 18:08, Johan Hovold wrote:
+> >>
+> >> Which is also fine. I don't understand still why it is a problem - even
+> >> if you have multiple files, one for each SoC/phy. If USB4 brings here 10
+> >> more clocks and other SoCs/phys might bring many more options, then what
+> >> else can you do? Grow the binding file with big text-based mapping of
+> >> IDs? It's not a viable solution. Header or headers is the only
+> >> maintainable way for such cases.
+> > 
+> > So then we must add per-SoC (and PHY type) headers even if we can
+> > possibly reuse defines from one platform for another as long as they
+> > appear to be similar enough?
 > 
-> Fixes: e8e58e29a0c9 ("dt-bindings: phy: qcom,qmp-usb: fix sc8280xp binding")
-> Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
-> ---
+> No, you don't have to. I just got impression that future devices will
+> bring so many changes that anyway you will end up with per-SoC defines.
+> 
+> > For example, using a "SC7180_USB3_DP" infix
+> > for the current platforms and add a new series of indexes for SC8280XP:
+> > 
+> > 	QMP_SC7180_USB3_DP_USB3_PIPE			0
+> > 	QMP_SC7180_USB3_DP_DP_LINK			1
+> > 	QMP_SC7180_USB3_DP_DP_VCO_DIV			2
+> > 
+> > 	QMP_SC8280XP_USB4_USB3_DP_USB3_PIPE		0
+> > 	QMP_SC8280XP_USB4_USB3_DP_DP_LINK		1
+> > 	QMP_SC8280XP_USB4_USB3_DP_DP_VCO_DIV		2
+> > 	QMP_SC8280XP_USB4_USB3_DP_USB4_PCIE_PIPE	3
+> > 	...
+> > 	QMP_SC8280XP_USB4_USB3_DP_USB4_RX1		9
+> 
+> The names are just a names, you can even use QMP_SC7180_* on SC8280XP.
+> You can skip the SoC part and have something shared. We already have
+> such patterns - although maybe more often for outside components (like
+> PMICs). The differences are:
+> 1. For per-SoC name it's quite obvious which clock is supported on fiven
+> SoC,
+> 2. With shared names, you should document somewhere mapping between
+> supported clocks and SoCs. Also what to do if new device comes with 10
+> new clocks entirely different - re-use/map existing defines or add
+> completely new set of 10 of them?
 
+Ok, thanks. I'll go with a common prefix per PHY type for now, and we
+can worry about hypothetical hardware revisions later.
 
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+I'll use a "QMP_USB43DP_" prefix for the new SC8280XP binding, which can
+be reused also for the older SoCs with USB3-DP PHYs if/when we convert
+them as their indexes will be a subset of the SC8280XP ones:
 
-Best regards,
-Krzysztof
+	/* QMP USB4-USB3-DP clocks */
+	#define QMP_USB43DP_USB3_PIPE_CLK	0
+	#define QMP_USB43DP_DP_LINK_CLK		1
+	#define QMP_USB43DP_DP_VCO_DIV_CLK	2
 
+Since I'm adding a new header anyway, I decided to go with dedicated
+indexes also for the PHY selection (instead of using the PHY_TYPE
+defines):
+
+	/* QMP USB4-USB3-DP PHYs */
+	#define QMP_USB43DP_USB3_PHY		0
+	#define QMP_USB43DP_DP_PHY		1
+
+I'll add these to a common dt-bindings/phy/phy-qcom-qmp.h header so that
+it can be used also for the UFS clocks (with a "QMP_UFS_" prefix).
+
+Johan
 
 -- 
 linux-phy mailing list
