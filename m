@@ -4,59 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2C553C4332F
-	for <linux-phy@archiver.kernel.org>; Tue, 15 Nov 2022 12:15:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A513DC4332F
+	for <linux-phy@archiver.kernel.org>; Tue, 15 Nov 2022 12:17:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:References:Cc:To:
 	Subject:Date:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=ASYTsvw8lBfjDyHmZvd9q+tz7TRA1+fiB6gVais506o=; b=f3j/m68tBTtrQaNVr6Ux/Igf12
-	cQ0La8TtPmiWJ/x8k0ek3xAFeaRi2dkNmZ0get6J3mmy7+RGwrvNulbXdDFNMfAqzx4FOkePh4K05
-	JUx4Zch7OvmHrSzY3Ij78ca+IPra0rrCKmCrVqTM5XxjCiCNUIy5kni/wAMLQ0VS1npuI0yC5xJ8v
-	r+Pnr6Ibumse96DuK2D4/FlBcmuMHlmHAaFOWc0tWjVOGVL5+NX02k+EajZN+dt+XiWILXXfMOJuP
-	PnoS/VP5CQBSjgCJPomJ2SAcyqPlSjhiTugO5Xklu7oPF5CnLLqaEGNqutKHDC2AqPk8WYenrHMl7
-	kTONpUGA==;
+	bh=v3qDEzyJiiIhgcP5FmAMKwcGYoM8F7RS4KQ11U/dUiw=; b=khRQI2jSB/52nBoA/xaz4dOqUJ
+	YPG9P7oVb2p7qAM1/Vv3h8UCvW0JLY+qQqBLHtXeqGCzDVmiUfCf2MzF8J0esGyPoltKu+X+t5hiw
+	WeTKfWJk6s6kwFncBc2HG7+vpjQfMOsKcnNVuVF5otej7NquS8jdTX3uyNy8NrgLdxSKEleegT0Kl
+	kk/78jNoE8ciFcZYToES3XnZBViukbSPKYdkbY0VeDk60W1K+3rp9qpbiZYoqyXvrmsE12VxSP9IC
+	bwSkl9LBhsfgfAMzvPML6gYcFCRCQTgIpSH3PmF5PjbwOrkpn+tVhFwV/yMNP8fZgCpxhzIvUcF0F
+	qmqs7iiQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ouuqj-00AudL-IO; Tue, 15 Nov 2022 12:15:33 +0000
-Received: from mail-mw2nam12on20618.outbound.protection.outlook.com ([2a01:111:f400:fe5a::618] helo=NAM12-MW2-obe.outbound.protection.outlook.com)
+	id 1ouusl-00Avfk-4H; Tue, 15 Nov 2022 12:17:39 +0000
+Received: from mail-bn1nam02on2062c.outbound.protection.outlook.com ([2a01:111:f400:7eb2::62c] helo=NAM02-BN1-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ouuqf-00Aubv-W4
-	for linux-phy@lists.infradead.org; Tue, 15 Nov 2022 12:15:31 +0000
+	id 1ouusi-00Avdc-Vm
+	for linux-phy@lists.infradead.org; Tue, 15 Nov 2022 12:17:38 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=DHBg9DtURnGQAkg/xnkbBQR8CXwCnohJZ1hQlHoS1tQkZ7G3LEWkbj+IqkIhH/VGmVA1QuGI6pV4i8BjReC9dDGjgqepTVXVe3FCXvBBiTGgKUC/cgad5aB/AZLjr7J8RHKugggcMAz3BlzCu2VjWD/Oeq62AfTW/EM7A454g4Js/fwf7t5i+nTA3L3OkpTa3D1mYQMbhwLXeqixyJh5ROcLYQnHF5kqE23FsNBpO1rx5E4Sz8r/JbRbS+w1s6dIYpLaGCvtzfAa6/sQOvHKTROQ1tsIAxmHs/v+nQSFqQM2YnBGfXgXPEjLcPy8k6UNRFDqx44UVL5WrKn1u4dPRg==
+ b=g+gFeZG9eV7+bAaIn1WDpvQJe+GiDOdGGyTm9t6Lb4Pw5KLhESdAff81Z7jSoi5evFLv5fdJzrwA+g5Bl0tsqrP5MyHFzN5vmBeHoIYglSNAExiMeCA9XRZkMNLoGRWIkKdn/K16EBcQnVLSerwNSE8iFPt71iE+2qXhBy1o5ulcFxWKzXGn04c9ryDFoGdgEelV3UycE8PuAf0BR38TWn3v5KQ8Uw5KrqmICI1uGFr64muHIifLZvuICkwjgbo/SAPGX7VvFLjn0QLIFuLDCwnvAkjJ7+m2m9mRLZOS1mjaC5GPYfkQImCA+xce/rIx1+nk2g21jdQn4A91fd9oiw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=CPyvLJoUD2RjryAriVoGjLdEFDQa0oK2qT6jkuESDhY=;
- b=Lw+B88EYv2ostp4SFOEYLG4e8rvUP6dvtxfgQdwEI7Hv8Kv4c1kIWTb6WFL3QhoPpITSLdq1OTh0RC0DzrwbkukzEQgHbUSYXSz5WjqJT3TcXSY1eyT7H4JF/xnv03dq0NzHZTBJh3qNSMr9KFN0H/arsxfAeIjuPAPx8NcvIdxo4yFLP5jrpm3bXVjvXxadkysNZHZI5lS2xlG7YkHfD+w+CqFwXJh/cwgiy8A9HbuYOX2z7UFQK2ZUPdb/KZ49eLltQ2SbW6Hu8DsdSu6NWZZe9GeauZ8TIKMgtBnpa6NtiuQjQOa949VxN+lnNcJLm2lMUK6vwjaq7N/Th3IMMw==
+ bh=oHkxFc5zeps/uBJUh1LeqMi7ZnRq0YeGMUSt6bADlv0=;
+ b=T9yhSsymV0Jz2MeCVJwvw8ec1vj+cp+RthPA1xhFuwGV7Xce+6hL4H2H5IMygli/VkEWKZ9yULPlDy+Lmh3Z1vPXF2p++Da5Uyk/cciOE8cgfQlRubLRNCJ1DHmPymdI/enHozEOQYJiAm54OzeuTt2QZuFLZ5Gxy6GTUOMYQWzwyzzo4hjgZrFxeIVujJFObQSZaiOW8edv+17Oytzcbr4i6X54PPWpJXtQgi/2tO1nnHn7nrgSRLcPmHKlnSLd7K3RMBfrBQEBYDB8X4V2jWWcjVO5bfdM5NEzh5g+QjYTu1RAjRuN2d3jw7NEngpyBgIEfvqn9oLyNLLIMvRjIA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nvidia.com; dmarc=pass action=none header.from=nvidia.com;
  dkim=pass header.d=nvidia.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
  s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=CPyvLJoUD2RjryAriVoGjLdEFDQa0oK2qT6jkuESDhY=;
- b=KdiOVKed6g9F7CguE9iG0GTTGDofWd+bYUxMC6E9C3FOobXFya5RuuvnZBs2fAVdr5sZX93llBr82VDUjg/qLjFvWjt0oVSu2WUocK52TvuAuL3q6n4LSv4vFDOnIC3dz3n97IKdc7AXgQ47FHqSovadnJzQdXgU9NL6b8VS4gYWHR5YH0opsx9+dWm99AAv1s0b202STeXoUUK8SmByAKl2SRVokt4yDJuyhiQvWfpYQu3/PIHyMnZxf6Rf5P+tVOfiGX+B9k6ZqZPh2CoyaDB8QkYidaFfWM9A0N/WsvLIZWCdxK/dFpX3UXjipjclO3bsOd7uV8it9qFD0MY13g==
+ bh=oHkxFc5zeps/uBJUh1LeqMi7ZnRq0YeGMUSt6bADlv0=;
+ b=JchFXRAZbgj/bGDeiq9UQExj4iAYCS9XLcg35Iqdk3jBGY+Ujj3Pa0mBAjo1jSs6l7dLMypCzYq1XQS9r/0a1ZwdU+dEQuq73ykgfDC/RwQ6uognocw2hkXd7hPS8yp9hh0h7aoFT+RpO7YzqA1JrqlK4wkvS2SRUG5ZrBwHApfIQCHnHDUSuoPgvnYXNrL7LOkCfOeLVxl+oe3QS6iiHDK1OUAAU/XBZigopRlQw+W4DU/r9ofLZx48AJI6k9vd0bKPBq6btUjgnVC2ZImsjkZW+l6tBhxsQPzqwfbb2Vhj2R3TF6LDHWD1tLcWW1r3kg5LnqHduYA3QOvPYPQ1Zg==
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=nvidia.com;
 Received: from CO6PR12MB5444.namprd12.prod.outlook.com (2603:10b6:5:35e::8) by
- SJ0PR12MB7082.namprd12.prod.outlook.com (2603:10b6:a03:4ae::12) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5813.17; Tue, 15 Nov
- 2022 12:15:21 +0000
+ BN9PR12MB5036.namprd12.prod.outlook.com (2603:10b6:408:135::8) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.5813.18; Tue, 15 Nov 2022 12:17:29 +0000
 Received: from CO6PR12MB5444.namprd12.prod.outlook.com
  ([fe80::8edd:6269:6f31:779e]) by CO6PR12MB5444.namprd12.prod.outlook.com
  ([fe80::8edd:6269:6f31:779e%5]) with mapi id 15.20.5813.018; Tue, 15 Nov 2022
- 12:15:21 +0000
-Message-ID: <6c1b733e-7926-098d-e852-f2220947979f@nvidia.com>
-Date: Tue, 15 Nov 2022 12:15:13 +0000
+ 12:17:29 +0000
+Message-ID: <44ee7109-71a2-a172-e840-483e2db716b3@nvidia.com>
+Date: Tue, 15 Nov 2022 12:17:21 +0000
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.4.2
-Subject: Re: [PATCH v3 03/13] dt-bindings: usb: Add binding for Cypress
- cypd4226 I2C driver
+Subject: Re: [PATCH v3 05/13] usb: typec: ucsi_ccg: Add OF support
 Content-Language: en-US
 To: Wayne Chang <waynec@nvidia.com>, gregkh@linuxfoundation.org,
  robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org, treding@nvidia.com,
@@ -68,73 +66,73 @@ Cc: linux-usb@vger.kernel.org, devicetree@vger.kernel.org,
  linux-i2c@vger.kernel.org, linux-phy@lists.infradead.org,
  linux-tegra@vger.kernel.org
 References: <20221114124053.1873316-1-waynec@nvidia.com>
- <20221114124053.1873316-4-waynec@nvidia.com>
+ <20221114124053.1873316-6-waynec@nvidia.com>
 From: Jon Hunter <jonathanh@nvidia.com>
-In-Reply-To: <20221114124053.1873316-4-waynec@nvidia.com>
-X-ClientProxiedBy: LO3P265CA0003.GBRP265.PROD.OUTLOOK.COM
- (2603:10a6:600:bb::8) To CO6PR12MB5444.namprd12.prod.outlook.com
+In-Reply-To: <20221114124053.1873316-6-waynec@nvidia.com>
+X-ClientProxiedBy: LO6P123CA0039.GBRP123.PROD.OUTLOOK.COM
+ (2603:10a6:600:2fe::19) To CO6PR12MB5444.namprd12.prod.outlook.com
  (2603:10b6:5:35e::8)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: CO6PR12MB5444:EE_|SJ0PR12MB7082:EE_
-X-MS-Office365-Filtering-Correlation-Id: 36b29302-16dc-4545-fbf1-08dac70310cb
+X-MS-TrafficTypeDiagnostic: CO6PR12MB5444:EE_|BN9PR12MB5036:EE_
+X-MS-Office365-Filtering-Correlation-Id: 7ce0e439-0b4f-401f-93f9-08dac7035d75
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 	Bq926l1LCuEWDMCdAJHP1E9t1JDXET+oLh/WJQuaqWJHThpGR6P1tYPnFyqlZ9UVZgQSYiIt7fE87K/M+x+C1X8XxCxB9zN/wdZw4kUsFcj+xpBz9JStVGHYoSwPezbix/UBURQfgfX5Wh2aTFKsPYOc4Q/HBei6w3vwjp0d08znwK4rn6APHWptezk5yp2iYnRzFBcgKGCb69YwN/mMzKSKbf5/V+KU8bFJ979NQHfMuC3UNRrYJ6YnUfs+0togdOm4mkj1zwkgFqXNn4qNYzkJ58ww/VZLejapQ4sNXxbEdRxPwm0odxuiohQPS9uD+avYCdVh9GDgF6yJBI5rm5JgSO5rqJHLLPFJadGTaV6OAIJPpMxqR97X1u9vAPH8ffl11h3omyxp72fLQ1+6XcecdnuMH36yqWtmT+lVlyEK0b3ZpyyA44HnNcf+8X0hJNPrTEWe6WyJQalaHAkCBDkuYiI3tv4+SMs6tEXn2ZM6Q3Ofo8eky8MwILL9atLi4s8ihW3qhfwn9ojRpk6t30zXglj0dmcdZKKJwF+npnQmsBkwQkx01xZ8jIDNYyM86dkorzov6VAi6FWmN6kPSQyKAYoJE7neABhTx0nldbhgsK/VwOLALxMaZFJEP9LMLSLA5wQ/BdfJNGvbkhikhWEaRC33Zt77Qmlz1xxHYy4OnAmaAFAxOCz5fiiNI3ESVg8B7EHLPOdfVr3DyAmx/7o6kDFr4gaColuO6C7OCasYUMV5cJEURUOk4ccBbbHX/Y/jQYM1c8JvkpIpx7C8HBBKP4YOTjrITM4i2ttLHtmYNC921uIXTtJWLB/l4bUrSkUuOuwQp23L50LCqhogh8/vIgjNe8HDMx2GMry7R0Fit48uMefSTl3X5gbsiS0oVTRsQ+PBZNcHhYOJxcl63ycOescRCpBPbOynfuIV0cMxKCKlS/POm6XLXIW1824G
-X-Forefront-Antispam-Report: 	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:CO6PR12MB5444.namprd12.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230022)(4636009)(376002)(39860400002)(346002)(396003)(136003)(366004)(451199015)(4326008)(26005)(66476007)(6512007)(66946007)(36756003)(41300700001)(5660300002)(7416002)(186003)(2616005)(8936002)(8676002)(66556008)(316002)(55236004)(31696002)(86362001)(38100700002)(53546011)(83380400001)(2906002)(921005)(6666004)(31686004)(6636002)(6506007)(966005)(6486002)(478600001)(45980500001)(43740500002);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam-Message-Info: 	JmdMbC/S+JxiM/qJkw3eZF0k1LVDNzGDbDsDv/YTPI4OabgoEAaixzQpEeA1A7MwD9pGdtKDojKQlOSkzvmATjc8oZfx1E7Sc8ANUClUdueOzn4sVhRDGAsk2UN0K0e2OEyvtFAlWub4ZJfnQX6rWSrO0utTOJz2zxO6h5AbrB5ko4uQC+WgNQcLX7PqTJcaCdJzVleeLP2IhiUzLKdd/2dASjLVhBdxJkygW/lfe8uNmJCGLTnESION0VyiERgsAbH/b+iLd/v2ACc7TrPfW3FAAkKHdsXnk3cCFp2LucV7eBB00rZW/1Z43zeLxFClqVUCWL9LeGYtNtGahbzoT/JQd65jji97UAC4Sq0fGeH2Iq7SrU+YMRag5LFr64BnYuQ5o6kgIrzSKxf/a9uJMBYpsMQ+KVaUzS9jpeVaAbEL+nicDq1HF4Y6ufZ5pAufnfMzKfp8Q/MHKPQdCl/+TMuyi/WdDEKTGwd7jd+DbRd940usjWDetGCQYCPPhe7FX6TCvbarIABcELv2sQ1AzTcr8ybfWgmCP3eZfHxxjUwREHTvTo+AjzOIECjdBsQvQs6cusBzDzMhgzRmK3fBHXyi5dmeUR4vWFk4JM9Snv4oZL7C+0nzF1p00M7HFXxJmrg8L7aqtBJC0sgd0OoFlZ5vrOJtGc9Ic5jW2pp3tArrLCGdi1Lg8fSQE7QKagZbSQ3nbSCMsTBfR4M/AoaZrgmenEB0f8hUmVd/gqk56QDFLj9y0muWbCBoq8wPPhJFBjFIzdWjMjWAyrXlGVLV4KPQ8Es+/yV8nFYRbVRBmZ2JxYSOx7h5SqX/uhO/FmI8
+X-Forefront-Antispam-Report: 	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:CO6PR12MB5444.namprd12.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230022)(4636009)(346002)(366004)(136003)(39860400002)(376002)(396003)(451199015)(6666004)(31686004)(6486002)(478600001)(6636002)(316002)(66946007)(55236004)(66556008)(26005)(53546011)(6512007)(8676002)(66476007)(36756003)(4326008)(41300700001)(2616005)(8936002)(186003)(5660300002)(921005)(38100700002)(7416002)(83380400001)(6506007)(86362001)(31696002)(2906002)(43740500002)(45980500001);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: 	=?utf-8?B?b2Z3L0dyWGZyc2NxOENLOHUxWktmaVBLRXd4NHVaL0huM0oxSEx2SWZCdU16?=
- =?utf-8?B?Zi9lbDdTNW1DVkdlcmdIcjJlK3h2bThXUjNyTFNwQ1BaOGt1OGs3bzJ4VGFs?=
- =?utf-8?B?eXFET1BUZ2UwZ1pOd0FIMzlYRWgweGRndFdUK0pLZ0tmM09XNm1xdXk2Tk1T?=
- =?utf-8?B?TnBNclJkOUJNUHZTang2QTJ3bVJYenpjQVluQlB2T0RCM3lmZE5ZcXc3NE1a?=
- =?utf-8?B?UjVyaU1nMEhSOHh1MXNJZnU3blI5dFA3YmJVa0JCWXYyL2Y1M2ZXU0dlSkhu?=
- =?utf-8?B?T2o1Nkdtc2VnZFhiMi9STTJTR3pzN1Y3YWZodWdhdjZDcFA4dm8rRjRZcHNr?=
- =?utf-8?B?UVBmdmkyZml4TWJPNXROQy91ZzVVa1ZnckVoMXJnNFdCeUVKb0ZZK29OTit6?=
- =?utf-8?B?VlQ4RjFpalI1c2VhMmJXdjZOQ295YW5rZmp3TnIvV0tHYWFpRGl6UlpSM3RE?=
- =?utf-8?B?c1lzNzlQdjRzQ1pja25oKzlJTHZGVzJMZXdmN2owTElZbkNNeTRDbmhranBZ?=
- =?utf-8?B?S25rdG16bDJvd3BBd0REN1A3dlBrS0JqK2k5T0RiNmJRRHQ4Zy9JTExWUGFy?=
- =?utf-8?B?Z0dXY1JHY1ZoRjE1ZHVRQkJJQTlzekR0amhDYWwrTUNvb1E1bWlQRkZ6VDYz?=
- =?utf-8?B?Y21QTmVYUDlndHlvcmZiQmNPVEdxa1ZybkM5cFFaaXh0Sm9ZSUc4SlZUUDNU?=
- =?utf-8?B?Y0VINyswUmlLZ25XV3FibTJGSDRFbnJYRUlPa2JNMzB5WllwbS93RG16bTha?=
- =?utf-8?B?MmJsdTNtUWw0Y1hlakJuQ3lZK1FOSE9sZ2F0QldpY0RyZUpkVjNVQmZmYW8w?=
- =?utf-8?B?YmhsbkVxMTNzL0lnLzJxUnRNR3Mwam9CVFUxRmJKTmpZQ3ptNjJDS2pLeFg0?=
- =?utf-8?B?ZVovalpJdElTT1ROWlBicGdpR01VRXNLZk5BUFlYL24xRFFXNGh1N1NnSVM5?=
- =?utf-8?B?NGp2Q1h2d0RxK2JEQXJuRW92eVE0ajBqSUNKRWlxM1BlZUdrVlFaSG5wdHNK?=
- =?utf-8?B?ZXNWUVpHOHJIVWc5LzVKTGd1WTczUTZUUDZHU0FodmQwQ1JTUCs0ajFzRFY1?=
- =?utf-8?B?OHd0VXBweGpjTTJCYTdzcnJncHpDaytLemQ3eHVVQjEyTlNkQUtjQkpZYnNw?=
- =?utf-8?B?UFA0VWRQZzlKemYySm03WmxkTGUrNjN4bDdYY1NnV3FEYldDNk04MEppNG90?=
- =?utf-8?B?ckluZ2pSYk1JWmFHK2VtVnFSRlBkU1c5RDVwK3VlcmQ1eGpwUWJzWHJtUDk5?=
- =?utf-8?B?cEIrbnBSUXlRTzN2cm5Zc3IrQ0x5VG1QM25YK0E0Qk5wbXhYQUQrYUFHNE1N?=
- =?utf-8?B?QW15SGRQZUpoTERuWVFINUtUZjRRelYwQ3pUVmpQanlESFpKcUFueW5Lb1Uv?=
- =?utf-8?B?TlVIZGpSY042eVNhSTlNOWhvQnFSTnNORFVCSmhCL1pWY2pxUUNwOGYyMVdG?=
- =?utf-8?B?cjQwMHNmY0RSdlFIdDd4dW5GZHhLVnhBS3BidzJGM1VPTUVPK0NpR041NGY1?=
- =?utf-8?B?NjhHQStsbUdZNkUzOUhuZE01OFVzc1RhZ0RzWVJuNHMwb2p5WTRwMW9BZEpr?=
- =?utf-8?B?RlRwYkh4djlQZUp1anRSaHRaVHN0dGtjRytxQVR6RWZKYzNFYkNtZG9VQmU0?=
- =?utf-8?B?V0dtOGlDN0xmV28xRTZKNTVzNUhJMDZsbStCR0pCQ3BXbTgreGZvVWY2VzJN?=
- =?utf-8?B?ZHpZT1BhcFNEYXNmZG9TWmJPUDN0dFdFN2dicGlsblZNYVg2QXRVbThYMVpD?=
- =?utf-8?B?T1FTVWdObDdPNTllSzlrN3hDM1lmRVZCMVlJd2NralFXRjJvb05oWWgzS1Fm?=
- =?utf-8?B?b2xMQkplTHR5MWtKUFBXZTlJMGtZME01ZUdXZ0U0bGNPNDF2eUU0WnM0Zk9y?=
- =?utf-8?B?dHU0TTErb0N3ZlpZbTlabHk3c2ZtWldBZ1FXa05iRmUyd1ZsSGd4MTlSeHlN?=
- =?utf-8?B?TUhIL3ZoNXJVVmxSd3Y1ditOYmE5WVhNQ3FyL0sxbldXbGtyS1MyU2pTeUJF?=
- =?utf-8?B?NDh0QjBKN1pjRjZuYkM3UnRpWlhWM25pS3FOOUU2RDZ2cTdwcyt5aFA5L3Fx?=
- =?utf-8?B?YVZ1MmVKSkh0aFFxN01nekQ5bHVLdnI5OEN5ZEdhKzdDbFk1ZFpSaER0NFBj?=
- =?utf-8?B?UWJiQlJGNU5UM2tGcm9SVTBucURabXBQSnYxRkhZNk1MODloY1NXK3R4QUVl?=
- =?utf-8?B?ZGc9PQ==?=
+X-MS-Exchange-AntiSpam-MessageData-0: 	=?utf-8?B?VHpScDl5NklQbHRrUzdDWlNIOGlvYVFkQ25FUm4zU2puQ0wxY1FHRlpVM2NK?=
+ =?utf-8?B?bVhSYjRJUzFDRU0wcFE5MjhVMVQwUmU5SkJUaC9KN3o0aWhzTVZtbXhWb3Ry?=
+ =?utf-8?B?RXk1bXdzekxvOEhzcTdMdnprZ0ltVGhoUXVLT2RPWmZzTEtKODFGS3EzaWJG?=
+ =?utf-8?B?aXc2NEIrZjE5aTVGaTBsaDFBQnQvTi9adXpoM1NReW5iNkQ3VUduSmNpY1RP?=
+ =?utf-8?B?NjFBWktyUGg5aUtCRFJyOWUxVGovaHRiQTl3WGRqd3dRZHRIdXFsazllWkFv?=
+ =?utf-8?B?ZnpYdm0rbDdEYU54ZGhxSS91d01NMHJyUFlMTHlKY1RQakNReFNKMk9tbFcz?=
+ =?utf-8?B?TG94Z3M5SVNMU1ZnRS9rd1RBSHg1SkxlL2FMN1g5SFQvZ0R3TU1HcjdpZWpq?=
+ =?utf-8?B?MjB5R2hMWVhSengxWXdKR0xXVnZPNnk4OFFFdTFjL1JQL2JNTXZWNlNhOWMz?=
+ =?utf-8?B?S3VpLzluT25RcjB6SkRGR1QzTGZKRm9nRnNhM1h6NEVBQnljUkFaZWRxSEhE?=
+ =?utf-8?B?VU9ydWdkNU5peElPM1VTQTM0djBVUUlUbnVEaXFYRmk5dDY5NDgyMEkyYjZz?=
+ =?utf-8?B?YUQ5eHBYQUZzRjB5cTBvZTZjVVlWTDZ2MUc2Zkkzc0pKbkEvdmdqTUJpZ01Q?=
+ =?utf-8?B?dmFsUXY3QjhhSXduVjFFUmZSNUk0TUlGN0dNZmJXMCtZUVVJN2NyWVNVSkEx?=
+ =?utf-8?B?aUdCWXpIZy91UjFpQTduYWNkMXM5VitXK3pxQnVlRzZ0M0NCeEZNRXY3QlN1?=
+ =?utf-8?B?L0Y5V29GSVRjRU9yTjFnZExPVnE3dDJiV2M2a291WGVGVXpnMHhZNGxwL3ZM?=
+ =?utf-8?B?Ti9PM1AwVndvTUlYZFkvbVY3ZGE4QTQ2WVNyb1VRSXpwQXlSdExDMkkvMjdO?=
+ =?utf-8?B?bVNoNFdRaWdiMXgrS2JtSFBTdVdKZXpFQ0h2R256cjBKQms2cXI5bktUNGky?=
+ =?utf-8?B?UW4xV3FkZGQ4UTRzK3RERnp6c3ZZRFlldXhybUM2UlpEbm1NK2dieVZyUktw?=
+ =?utf-8?B?Y3FTRTlXUUdNQ2lFcEtMRGgzSFBZV25WTUJ2Z2I3aHpHUDZIdUpFL3lyUFlo?=
+ =?utf-8?B?ZXZxRnZjQzN6VVY4amN3WTJ4ZVE3U1ZxYlB0ZWsrYmhSNzlOSTdOc2c4TDJC?=
+ =?utf-8?B?OURHcXZsRjlGOHZhTWQ1S254bmJHM2ZXY0xvckdaTkx1Zno3a2padVFaVW4z?=
+ =?utf-8?B?bHlBdUlSazkyUVNlRnp4OHVQRDNVcjRGd2ZBRW1WU1ZHbmp2NjBwakRPZW9F?=
+ =?utf-8?B?L1VzQWNUNXU1VmJCMHBOMTRyQmFmVDlVc1EwZkhDQVAxZ3R1cGhVNnhxT3dW?=
+ =?utf-8?B?SVVLV2R3cE5qcjRmVjFRZGQ4YVZjdTk4UXlHcjZ1bm9ieGpZamdHd2JWMkZ5?=
+ =?utf-8?B?V2lKLytzZzE1QVlwQjNWeWFpeHRXQS9LQ0d5eDN5VDRSZis2SUc5Njk5cWVS?=
+ =?utf-8?B?dEU1YWJCK3R5OGZvOXZDdDVaR010SFJEdlJWQ1M1Vm8weDdVQm1QZ3V4bjkr?=
+ =?utf-8?B?Q2h1eDJYTDcrNENLTmdRcFNKVlp1bHpPWkxmWkRsQlJmYlFTc01Oak5melNC?=
+ =?utf-8?B?Qnk0anUyODdNK3VqOThRejRvQmJkWUVGRW1GL29kbjdZZ1ZUcnhsOEhZQ2dC?=
+ =?utf-8?B?UU9ROHZGZ3V5bGpsQmxiM2d6R3VRSzJyeC80L3FRR3NId2RhN3NaVGVtb3Zn?=
+ =?utf-8?B?ZmFRcEY3R1NBUTNWRWd1T2EvekpERkZlcWRQMlA3ZTlaQ3RlSWlqQ2pnUTZV?=
+ =?utf-8?B?MnNjaTlNKytzMkRlS2FSWUFlVWgrYitMT3RUSjZXU0NkaS92U0dzakdOODJn?=
+ =?utf-8?B?ZnpKRmwremZIa1UrTDRLYnZsLzVHUnIrZTVsSEgyUzJTWEEvVTEvbzVyWnY4?=
+ =?utf-8?B?aGFDc0pVSnB3UzBMN3N1b2dmMDQ5TU9UTEh3WExqWTlqT3VaRTJOSUFjTVJK?=
+ =?utf-8?B?eWZ1MEZSeHdQVGhseEtLcnpwSUZUR2NvVkhNbmp4djM1V1gxM3pnRlBJRnFp?=
+ =?utf-8?B?RkdPbys3OGllSFU3WmpsQWlrSkVkQXoxR2VOd2VxUzhoaWZOYjR2QW9uZHlR?=
+ =?utf-8?B?ajZIM2tyL3ZHZ09hTUJ6T0s2ZTZNWHJGN1pUbk9PTHljV0xXV2pTNGs0MlVJ?=
+ =?utf-8?B?YkgwMDZ0c0J5SlJxWWRjM05tOTBmb1RuRE9JSlUvcVRrQnFxOEZ5c21KY0RX?=
+ =?utf-8?B?RFE9PQ==?=
 X-OriginatorOrg: Nvidia.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 36b29302-16dc-4545-fbf1-08dac70310cb
+X-MS-Exchange-CrossTenant-Network-Message-Id: 7ce0e439-0b4f-401f-93f9-08dac7035d75
 X-MS-Exchange-CrossTenant-AuthSource: CO6PR12MB5444.namprd12.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 15 Nov 2022 12:15:20.9791
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 15 Nov 2022 12:17:29.5662
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: Drh6gvTIdD/d//lLs9ae600jqvH7y9OB88VEa+vMFf/aeeA277zeGqpLLx59TZvA+qkge2DpOoqldRwpgX3mLQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SJ0PR12MB7082
+X-MS-Exchange-CrossTenant-UserPrincipalName: st+/8e4+vKhc9vkfndnk6Mirgocks1iFKds0amO+fjcGAp/D2dCUnSDyYgyelLg1KMOtzO7zZpfdRJzVngAjLQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN9PR12MB5036
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221115_041530_066506_F54AB4F4 
-X-CRM114-Status: GOOD (  18.08  )
+X-CRM114-CacheID: sfid-20221115_041737_056562_503E9890 
+X-CRM114-Status: GOOD (  17.96  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -154,112 +152,50 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
 On 14/11/2022 12:40, Wayne Chang wrote:
-> add device-tree binding documentation for Cypress cypd4226 type-C
-> controller's I2C interface. It is a standard I2C slave with GPIO
-> input as IRQ interface.
+> The change enables the device tree infrastructure support.
 > 
 > Signed-off-by: Wayne Chang <waynec@nvidia.com>
 > ---
-> V2 -> V3:fix additionalProperties warning on new schema
-> V1 -> V2:based on the review comments. Fix some addressed issues on
-> description, interrupts, cypress,firmware-build, connector, and
-> additionalProperties properties. And also remove the status in the example.
->   .../bindings/usb/cypress,cypd4226.yaml        | 86 +++++++++++++++++++
->   1 file changed, 86 insertions(+)
->   create mode 100644 Documentation/devicetree/bindings/usb/cypress,cypd4226.yaml
+> V2 -> V3:nothing has changed
+> V1 -> V2:nothing has changed
+>   drivers/usb/typec/ucsi/ucsi_ccg.c | 9 ++++++++-
+>   1 file changed, 8 insertions(+), 1 deletion(-)
 > 
-> diff --git a/Documentation/devicetree/bindings/usb/cypress,cypd4226.yaml b/Documentation/devicetree/bindings/usb/cypress,cypd4226.yaml
-> new file mode 100644
-> index 000000000000..854fe2f9181c
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/usb/cypress,cypd4226.yaml
-> @@ -0,0 +1,86 @@
-> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/usb/cypress,cypd4226.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> diff --git a/drivers/usb/typec/ucsi/ucsi_ccg.c b/drivers/usb/typec/ucsi/ucsi_ccg.c
+> index 835f1c4372ba..139707a2f3d6 100644
+> --- a/drivers/usb/typec/ucsi/ucsi_ccg.c
+> +++ b/drivers/usb/typec/ucsi/ucsi_ccg.c
+> @@ -643,7 +643,7 @@ static int ccg_request_irq(struct ucsi_ccg *uc)
+>   {
+>   	unsigned long flags = IRQF_ONESHOT;
+>   
+> -	if (!has_acpi_companion(uc->dev))
+> +	if (!dev_fwnode(uc->dev))
+>   		flags |= IRQF_TRIGGER_HIGH;
+>   
+>   	return request_threaded_irq(uc->irq, NULL, ccg_irq_handler, flags, dev_name(uc->dev), uc);
+> @@ -1427,6 +1427,12 @@ static void ucsi_ccg_remove(struct i2c_client *client)
+>   	free_irq(uc->irq, uc);
+>   }
+>   
+> +static const struct of_device_id ucsi_ccg_of_match_table[] = {
+> +		{ .compatible = "cypress,cypd4226", },
+> +		{ /* sentinel */ }
+> +};
+> +MODULE_DEVICE_TABLE(of, ucsi_ccg_of_match_table);
 > +
-> +title: Cypress cypd4226 UCSI I2C Type-C Controller
-> +
-> +maintainers:
-> +  - Wayne Chang <waynec@nvidia.com>
-> +
-> +description:
-> +  The Cypress cypd4226 UCSI I2C type-C controller is a I2C interface type-C
-> +  controller.
-> +
-> +properties:
-> +  compatible:
-> +    const: cypress,cypd4226
-> +
-> +  '#address-cells':
-> +    const: 1
-> +
-> +  '#size-cells':
-> +    const: 0
-> +
-> +  reg:
-> +    const: 0x08
-> +
-> +  interrupts:
-> +    items:
-> +      - description: cypd4226 I2C interrupt
-> +
-> +  cypress,firmware-build:
-> +    enum:
-> +      - nvidia,gpu
-> +      - nvidia,jetson-agx-xavier
-> +    description: |
-> +      the name of the CCGx firmware built for product series.
-> +      should be set one of following:
-> +      - "nvidia,gpu" for the NVIDIA RTX product series
-> +      - "nvidia,jetson-agx-xavier" for the NVIDIA Jetson product series
-> +
-> +patternProperties:
-> +  '^connector@[0-1]+$':
-> +    $ref: /schemas/connector/usb-connector.yaml#
-> +    properties:
-> +      reg:
-> +        maxItems: 1
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - interrupts
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/gpio/tegra194-gpio.h>
-> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
-> +    i2c {
-> +      #address-cells = <1>;
-> +      #size-cells = <0>;
-> +      #interrupt-cells = <2>;
-> +
-> +      ucsi-ccg@8 {
-> +        compatible = "cypress,cypd4226";
-> +        interrupt-parent = <&gpio_aon>;
-> +        interrupts = <TEGRA194_AON_GPIO(BB, 2) IRQ_TYPE_LEVEL_LOW>;
-> +        reg = <0x08>;
-> +        cypress,firmware-build = "nvidia,jetson-agx-xavier";
-> +        #address-cells = <1>;
-> +        #size-cells = <0>;
-> +        ccg_typec_con0: connector@0 {
-> +          compatible = "usb-c-connector";
-> +          reg = <0>;
-> +          label = "USB-C";
-> +          data-role = "dual";
-> +          port {
-> +            ucsi_ccg_p0: endpoint {
-> +              remote-endpoint = <&usb_role_switch0>;
-> +            };
-> +          };
-> +        };
-> +      };
-> +    };
+>   static const struct i2c_device_id ucsi_ccg_device_id[] = {
+>   	{"ccgx-ucsi", 0},
+>   	{}
+> @@ -1481,6 +1487,7 @@ static struct i2c_driver ucsi_ccg_driver = {
+>   		.pm = &ucsi_ccg_pm,
+>   		.dev_groups = ucsi_ccg_groups,
+>   		.acpi_match_table = amd_i2c_ucsi_match,
+> +		.of_match_table = ucsi_ccg_of_match_table,
+>   	},
+>   	.probe = ucsi_ccg_probe,
+>   	.remove = ucsi_ccg_remove,
+
 
 Reviewed-by: Jon Hunter <jonathanh@nvidia.com>
 
