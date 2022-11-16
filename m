@@ -4,70 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E4FC4C433FE
-	for <linux-phy@archiver.kernel.org>; Wed, 16 Nov 2022 13:48:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6834EC43217
+	for <linux-phy@archiver.kernel.org>; Wed, 16 Nov 2022 14:27:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8JiAHOXoUwawADrbj9o2YCMK5qQdlwzwQvAST2QML+E=; b=aPL7nUiMr8SqkW
-	mKcJllxMmTG/tvC9cH4AsYpSUsxM1jGfZbq0rC+/z1JA043lWCLpyI/ifngd4v4FVrwEnFM3wypZP
-	to/y0rcOYfeX8bGxILNFCNgd5ynCMh4vgAqBHZF3dVwFgnVI6yflqPrvZKEVwJGfxWFpvG20fjbFW
-	mpdp8einLtPHSaayh0KM3eSs27QJ2pECjKtoqKIkuIpYGzg/FuH8Cd3+fNJbjSU5JHzVrSEFXDQ4e
-	yMzUWSZ9CFuvedPt+qOg8ONBQBa1aTCmNlhzWPNw9UrNuH1lbVSQvCCgYC8yqa30FvtqnkjQ/SsX6
-	O2MvGAAvmmlpZR8+6dWg==;
+	List-Owner; bh=Wc/I1L9+Pjz5gc5Du76Kzv5nfUXu8nvFqCVq0bh500M=; b=Vfjx+TrDR3RowK
+	+Pqx7pcGuyiKPTyvo+BBXIhm5u5OCthiPfl57xnbjHJ5Y7G71ZcdxrV9/NC0HynDl2mD9EFId3Bc7
+	surKneN/riA0zDfRbJbVEKWpuIvtWQmQdpc4io5uvncZojIylfrc2ytHCUTkcSYetWs6/utMiBiph
+	Lh3wy2Bz3DJr3hxmFrYIWxYoh7ql1dMiK/ew8m/Q+TsBLy0LbCCG2NPU24QmTo18JSTTwQWnJp+QX
+	e44bhSw+1QcRNQ/9p8Y1WWbqs7gN12+/WfeQV7wd/LvJKGlunJuxOErHRfCFl6m8XrwX1et4EZy2i
+	bFpMkXYrkKC9RTWPUb8Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ovImF-004EiY-Cc; Wed, 16 Nov 2022 13:48:31 +0000
-Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
+	id 1ovJNg-004Yf9-Sd; Wed, 16 Nov 2022 14:27:12 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ovImC-004Efq-5a
-	for linux-phy@lists.infradead.org; Wed, 16 Nov 2022 13:48:29 +0000
+	id 1ovJNd-004Yco-Pm
+	for linux-phy@lists.infradead.org; Wed, 16 Nov 2022 14:27:11 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id 587C4B81D7D;
-	Wed, 16 Nov 2022 13:48:26 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 013DFC433C1;
-	Wed, 16 Nov 2022 13:48:25 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 2ECD461E37;
+	Wed, 16 Nov 2022 14:27:06 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E5C3EC433C1;
+	Wed, 16 Nov 2022 14:27:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1668606505;
-	bh=ykLJzDbZ0kLjeXVlSh0iMDNUh5L05twFQdQJECK6oD4=;
+	s=k20201202; t=1668608826;
+	bh=ahD/4zXE9e7nQQFpuuGPjNGZrn9Bn9hkwL74eBJbe6E=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=kKplzgjgN7NEtioBogzf7iLbgGXq5f2YbUKP9+VfrxBALv9PWGXO/V26m4/YnCl3t
-	 i0lqiSdjaBiBrahsvFOUFjIsAWHcmSm+C2TEYujcv//IBnbm22G+QRWMlb+qLfTdiS
-	 jbmERyYDq/m9KS3Stl4iGfEz0xXMTvk5yrZwoV2Aqd5hjwlP+W2RZiJFV4o0kPYgX2
-	 cU+bzbKMaHqz3wfZA9JUXh+zPI2BLIW9ghlLBjm7/DeJF5f18ZIq1yppNzhepQsFza
-	 gxOMqd1Z9aELNQ9EAjmU42ehPpH1M0CiF+MhKzZffSmYPj0MvsEWTr8viCFfQCmJr3
-	 7Ed2YEnFAgfnQ==
+	b=awj+6z41L1DfkGwzD4PaNsEiwuZfb+t8R/qG3aZnN0T6WrOsKuGBYvcdv3MFnY8TJ
+	 sMFb6ZSe3HKal8nvKxDy3qshp+B3QzMSeJQSwzhaUZqdUnoHrKSBBFqivM3hQuiIjW
+	 qam7sO/VH+Y1+eo8s80gTJOykJ60EcBp82vdJ9pmJQXePAhvasf/KLV+j0lf6Fd4zZ
+	 TzZKCZ7H8HZZuLkH+LVE82OWp3qCXG3Pky7rqENj9lTOMtxCYrNwJkPx/BxBRmgxpC
+	 /uMARJaiMXTWm6YL6PWJ3jJUBlqoecwVkhWFmA20PNTf0kq70/SUfgY1bF2joN5jWA
+	 ZJ+fQCfA/NaXg==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan@kernel.org>)
-	id 1ovIlf-0002kn-Fh; Wed, 16 Nov 2022 14:47:55 +0100
-Date: Wed, 16 Nov 2022 14:47:55 +0100
+	id 1ovJN5-00038I-Hs; Wed, 16 Nov 2022 15:26:36 +0100
+Date: Wed, 16 Nov 2022 15:26:35 +0100
 From: Johan Hovold <johan@kernel.org>
-To: Abel Vesa <abel.vesa@linaro.org>
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
-	"vkoul@kernel.org" <vkoul@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@somainline.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Jingoo Han <jingoohan1@gmail.com>,
+	Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
+	Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
+	Bjorn Helgaas <bhelgaas@google.com>, Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
-	Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
-	devicetree@vger.kernel.org, linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org
-Subject: Re: [PATCH 06/10] dt-bindings: phy: qcom,qmp-pcie: Document SM8550
- compatible
-Message-ID: <Y3TqCx2aQDswgFBb@hovoldconsulting.com>
-References: <20221116120157.2706810-1-abel.vesa@linaro.org>
- <20221116120157.2706810-7-abel.vesa@linaro.org>
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org
+Subject: Re: [PATCH v2 7/8] arm64: dts: qcom: sm8350: add PCIe devices
+Message-ID: <Y3TzG4HGsFSU3sky@hovoldconsulting.com>
+References: <20221110103345.729018-1-dmitry.baryshkov@linaro.org>
+ <20221110103345.729018-8-dmitry.baryshkov@linaro.org>
+ <Y2zYHEZDbNoGumTl@hovoldconsulting.com>
+ <37fe9a22-7ca0-e4e5-ebff-4eb56dbb74eb@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20221116120157.2706810-7-abel.vesa@linaro.org>
+In-Reply-To: <37fe9a22-7ca0-e4e5-ebff-4eb56dbb74eb@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221116_054828_370408_CE38CC7B 
-X-CRM114-Status: GOOD (  15.02  )
+X-CRM114-CacheID: sfid-20221116_062709_974414_F7158B90 
+X-CRM114-Status: GOOD (  19.49  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,29 +89,56 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Nov 16, 2022 at 02:01:53PM +0200, Abel Vesa wrote:
-> Add SM8550 both G4 and G3 dual lane compatible strings, also add the
-> qref supply, the power domains, the reg entries and increase the number
-> of allowed clocks needed to support the mentioned platform.
+On Thu, Nov 10, 2022 at 05:20:11PM +0300, Dmitry Baryshkov wrote:
+> On 10/11/2022 13:53, Johan Hovold wrote:
+> > On Thu, Nov 10, 2022 at 01:33:44PM +0300, Dmitry Baryshkov wrote:
+> >> Add PCIe0 and PCIe1 (and corresponding PHY) devices found on SM8350
+> >> platform. The PCIe0 is a 1-lane Gen3 host, PCIe1 is a 2-lane Gen3 host.
+> >>
+> >> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+> >> ---
+> >>   arch/arm64/boot/dts/qcom/sm8350.dtsi | 246 ++++++++++++++++++++++++++-
+> >>   1 file changed, 244 insertions(+), 2 deletions(-)
+> > 
+> >> @@ -1761,6 +1957,52 @@ tlmm: pinctrl@f100000 {
+> >>   			gpio-ranges = <&tlmm 0 0 204>;
+> >>   			wakeup-parent = <&pdc>;
+> >>   
+> >> +			pcie0_default_state: pcie0-default-state {
+> >> +				perst-pins {
+> >> +					pins = "gpio94";
+> >> +					function = "gpio";
+> >> +					drive-strength = <2>;
+> >> +					bias-pull-down;
+> >> +				};
+> >> +
+> >> +				clkreq-pins {
+> >> +					pins = "gpio95";
+> >> +					function = "pcie0_clkreqn";
+> >> +					drive-strength = <2>;
+> >> +					bias-pull-up;
+> >> +				};
+> >> +
+> >> +				wake-pins {
+> >> +					pins = "gpio96";
+> >> +					function = "gpio";
+> >> +					drive-strength = <2>;
+> >> +					bias-pull-up;
+> >> +				};
+> >> +			};
+> > 
+> > The pinconfig should go in the board file.
 > 
-> Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
-> ---
->  .../phy/qcom,ipq8074-qmp-pcie-phy.yaml        | 38 +++++++++++++++++--
->  1 file changed, 35 insertions(+), 3 deletions(-)
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/qcom,ipq8074-qmp-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,ipq8074-qmp-pcie-phy.yaml
-> index 62045dcfb20c..e5752ad93f0a 100644
-> --- a/Documentation/devicetree/bindings/phy/qcom,ipq8074-qmp-pcie-phy.yaml
-> +++ b/Documentation/devicetree/bindings/phy/qcom,ipq8074-qmp-pcie-phy.yaml
-> @@ -32,6 +32,8 @@ properties:
->        - qcom,sm8250-qmp-modem-pcie-phy
->        - qcom,sm8450-qmp-gen3x1-pcie-phy
->        - qcom,sm8450-qmp-gen4x2-pcie-phy
-> +      - qcom,sm8550-qmp-gen3x2-pcie-phy
-> +      - qcom,sm8550-qmp-gen4x2-pcie-phy
+> Usually yes. However for the PCIe we usually put them into the main 
+> .dtsi. See sm8[124]50.dtsi.
 
-Here too, don't add new compatibles to the legacy bindings, but rather
-base it on the sc8280xp binding.
+Yeah, I noticed that too and had this discussion with Bjorn for
+sc8280xp some months ago. Even if you may save a few lines by providing
+defaults in a dtsi, the pin configuration is board specific and belongs
+in the dts.
+
+Also note that 'perst' and 'wake' above could in principle be connected
+to other GPIOs on different boards.
 
 Johan
 
