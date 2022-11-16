@@ -4,48 +4,48 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 911A7C4332F
-	for <linux-phy@archiver.kernel.org>; Wed, 16 Nov 2022 13:46:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0D968C433FE
+	for <linux-phy@archiver.kernel.org>; Wed, 16 Nov 2022 13:47:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ulMM9+uDfbiRaBEH0NKzhCUSNAeKCBM6+7z0Ger/cTQ=; b=HqCRRRwanKAO6Z
-	v+o4TvNt/xv/vbuSfH3QZQhGp6vv+yyVrFkckvvzKdIMtRPaQSNd+Lfmj0FxSHfd3hcRcXwxKYYe3
-	XE2XdAiFj5vAN/XBDH8kcbCaZd/E0QxdiPhOWXeSAXT2Pht8dYhryaVy5lvMwRpESTahecslvubuq
-	mHwUL941qDWLFdOP4OiXypqo4jRPYqfuRHjmTBBFXKYYXSZhL8sTZ5KCelDxjPxKjwALZhx8IdWEl
-	SzAGSTxqloqKUQiLzq2TvgMSbNsJwd1e1r4Zg8/IvMn6LdeBcUmW+kPHKHi/hUGM3mXrKaQX26BAz
-	564aZhW1X3ulWPZQgGBg==;
+	List-Owner; bh=ZozbxdWKxHW7OlSmoY9XkgNcwFfS2hpqhllkToABXy4=; b=bqOmPgAE5CyuGy
+	pqGGXFmoswr9/295uIIX7ori3fEM3N3+Hb/Q3OWTeZnA6hhPq6NYePeUrlsYiEm2zvjDl+WQBMbiY
+	/+E/mWI6q8LJVVzIyGznHoVBWFU7tkwaujXmMTBjwSq0kUR1d8ew5wPiwEPWSf978f/9pxbhmDULS
+	3M/lA1uwx+q5S2hR3OXe4bEq/vy+n8EV6h+W94Fsn54lE8qzj1PPFfQJZARLZMUWzlT22D5FsMeRR
+	43Lqg3ciciZcyOlR1VRPvRigNjGfNW9Sy9yriLUw2K64Z8No0W8tPOY4ANhOwtd3gLFWwxoTIJ/nz
+	I6LgteQNkRUuaYBwLXjA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ovIkT-004Ciu-Se; Wed, 16 Nov 2022 13:46:41 +0000
-Received: from ams.source.kernel.org ([145.40.68.75])
+	id 1ovIlE-004DSP-GJ; Wed, 16 Nov 2022 13:47:28 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ovIkR-004CeJ-8r
-	for linux-phy@lists.infradead.org; Wed, 16 Nov 2022 13:46:40 +0000
+	id 1ovIlB-004DQP-8C
+	for linux-phy@lists.infradead.org; Wed, 16 Nov 2022 13:47:26 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id 7E4A4B81D8B;
-	Wed, 16 Nov 2022 13:46:37 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 257E3C433B5;
-	Wed, 16 Nov 2022 13:46:36 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 5A09761DFB;
+	Wed, 16 Nov 2022 13:47:24 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id AFB2DC433D6;
+	Wed, 16 Nov 2022 13:47:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1668606396;
-	bh=4Eyz0S2R9mU+xNSyb0CBshZrLiG7Ysc6IhA8sbgt8kI=;
+	s=k20201202; t=1668606443;
+	bh=bavOCPpVZflXom3L9vcP5a3uEurFEDRZ8UR6FNwwCmA=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=TYjYp3XLfit7zRxym2OFPG+NAwT2U+ECLor5O6cLRm0sJ5iqHL3umzzj0VMWd9tfg
-	 pmfXOghfTiRu7hmUe01VNMiSn5zOOosBUml4Bb9jSn+4Tc59avtYlZkgIJStcqKC09
-	 X7JzvO63NETaRXF6dn9mgqX86K7mfQtePZvEhcOnMryBH07M+/XsHzazHMikZJc86N
-	 Jx6MUTQmbp+1co4jYoKZdoMixq1Bf+YYnRqkwmo+HMoGBe+pp/aQrGJ6A309YBZVw6
-	 q9zkLkxjNuoTJOA2Lc7RD0DmhCm2349mHfvRIOxaSBxAK9B2rqGqHV1tlNIWTh7Gqx
-	 ejySq7W6fZGhQ==
+	b=pXif7wxmNT79tjEng+ImaLf/4H1bkm1YD8QpwPUPC6xO8b+K6NW4Os4jhX69CLVRP
+	 +I6//JUaDwv6BPzM/Y89q3BmzgkpVg332u/FxC1M7MvMnY2YT1h8uRQOtyo6ADJe/6
+	 lM7/WfhzIqEsDDfXSguCfEXlea5P47Z3mRnPkhhReByrI1IO09wmqqEbkIPZHp3fWi
+	 ye1mBzuZ8MGjw1moEImnyQkKbl7zuqNxP+QsPVOLl3cdW6g4crDBlKB1dYDvsfegE/
+	 ozPpeeQNe76B+lMXDdT8Ac4bQSWZZQD2r/bM8njLEZHe9udoxpuCRTWmD4gSsBOXRS
+	 uWM6CE4UXsxDw==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan@kernel.org>)
-	id 1ovIju-0002jH-G0; Wed, 16 Nov 2022 14:46:06 +0100
-Date: Wed, 16 Nov 2022 14:46:06 +0100
+	id 1ovIkg-0002js-6x; Wed, 16 Nov 2022 14:46:54 +0100
+Date: Wed, 16 Nov 2022 14:46:54 +0100
 From: Johan Hovold <johan@kernel.org>
 To: Abel Vesa <abel.vesa@linaro.org>
 Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
@@ -57,17 +57,17 @@ Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
 	Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
 	devicetree@vger.kernel.org, linux-arm-msm@vger.kernel.org,
 	linux-phy@lists.infradead.org
-Subject: Re: [PATCH 02/10] dt-bindings: phy: Add QMP UFS PHY comptible for
- SM8550
-Message-ID: <Y3Tpnsqh5qd8b8R6@hovoldconsulting.com>
+Subject: Re: [PATCH 04/10] dt-bindings: phy: qcom,qmp-usb: Document SM8550
+ compatible
+Message-ID: <Y3TpzgQ1JaFs5sNk@hovoldconsulting.com>
 References: <20221116120157.2706810-1-abel.vesa@linaro.org>
- <20221116120157.2706810-3-abel.vesa@linaro.org>
+ <20221116120157.2706810-5-abel.vesa@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20221116120157.2706810-3-abel.vesa@linaro.org>
+In-Reply-To: <20221116120157.2706810-5-abel.vesa@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221116_054639_473618_66207052 
-X-CRM114-Status: GOOD (  14.74  )
+X-CRM114-CacheID: sfid-20221116_054725_342718_9955948B 
+X-CRM114-Status: GOOD (  15.53  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,27 +84,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Nov 16, 2022 at 02:01:49PM +0200, Abel Vesa wrote:
-> Document the QMP UFS PHY compatible for SM8550.
+On Wed, Nov 16, 2022 at 02:01:51PM +0200, Abel Vesa wrote:
+> Add the SM8550 compatible to the list.
 > 
 > Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
 > ---
->  .../phy/qcom,msm8996-qmp-ufs-phy.yaml         | 24 +++++++++++++++++++
->  1 file changed, 24 insertions(+)
+>  .../devicetree/bindings/phy/qcom,msm8996-qmp-usb3-phy.yaml       | 1 +
+>  1 file changed, 1 insertion(+)
 > 
-> diff --git a/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-ufs-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-ufs-phy.yaml
-> index be41acbd3b6c..1ea5fcd4a59e 100644
-> --- a/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-ufs-phy.yaml
-> +++ b/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-ufs-phy.yaml
-> @@ -29,6 +29,7 @@ properties:
->        - qcom,sm8250-qmp-ufs-phy
->        - qcom,sm8350-qmp-ufs-phy
->        - qcom,sm8450-qmp-ufs-phy
-> +      - qcom,sm8550-qmp-ufs-phy
+> diff --git a/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-usb3-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-usb3-phy.yaml
+> index 0c6b3ba7346b..cba2a252baf8 100644
+> --- a/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-usb3-phy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-usb3-phy.yaml
+> @@ -37,6 +37,7 @@ properties:
+>        - qcom,sm8350-qmp-usb3-phy
+>        - qcom,sm8350-qmp-usb3-uni-phy
+>        - qcom,sm8450-qmp-usb3-phy
+> +      - qcom,sm8550-qmp-usb3-phy
 
-As I mentioned in my comment to the dts changes, you should base the
-binding on sc8280xp instead. The older ones will probably be converted
-too eventually.
+This one too should be based on sc8280xp rather than the legacy binding
+scheme.
 
 Johan
 
