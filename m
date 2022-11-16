@@ -4,53 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 27F34C4332F
-	for <linux-phy@archiver.kernel.org>; Wed, 16 Nov 2022 15:16:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 78903C433FE
+	for <linux-phy@archiver.kernel.org>; Wed, 16 Nov 2022 15:17:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=OQUX6FCDVIbJTayV72cXrSyWGkB3xPEF8vLyvRr5Ybc=; b=UP5eP/0kWa4SBa
-	LcVNIEZT+T/y/XV1KmIy8tdxEy/mwAIug84DLPlDSeilw9Qox5GZwDNvylsAuXbgplsTqeuQYezTW
-	gZL6uq0CMxrVewXinWvh6tPdn3bWdPV100L29qrnjDUps/aZWXIsJodamVfSNGe3iPoXe8wkO+2sp
-	lAk3H3zEc8Xxj9dXHPdxhAW6H/KM0HDVLNqJGOoJDWqVwQVGdgauox1nbn34Tm2eKYRc82FjHvCDm
-	xObaKgNUCUh2B0f32Fx59Lnpfmcbn/wqo/n5thohmwt+/677JktKXKsfzbfMh9q4nlZFLDgXXzZXo
-	nmyrKIXdRv/29rnMS7uw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=xXU0GPCKi8AJwjNg+qqpEmU7wlWr2bhh+Tp0ZWBwUt8=; b=EBxwqSXL5xS/9S
+	L8cXxERNnW9fxkaPjW17n2JYrC2XYNfmxq2LB0bwEv+gH38MbQ3Dmvl6e6yTzndAh/Wubi856oEFm
+	l+SoRBdZoVYM65AOlbPNh9Ztfr70hwrypiMKWbakIf1ZPhnjFnaHZkeOdYMHi+4X+TX23myvXwyzj
+	QwbAONXQam7NqjrVD3NKpXTfcQ0/z2i3pxL5tUZeWVhgckccOAbz3T6SU3byuUnonohDb7HBXMFoQ
+	nTpcq+CcqV22ARz/tgNqZTz7fVM++Y5ScK/HdbhfPkj+FuHb2sedXhYoycOqIs+Lckbcns55lAL6H
+	LPPtXpN37Wllj9AUCO0w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ovK9q-0054qo-Jq; Wed, 16 Nov 2022 15:16:58 +0000
-Received: from foss.arm.com ([217.140.110.172])
-	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ovK9I-0054YO-OM; Wed, 16 Nov 2022 15:16:28 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
-	by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AB1A41477;
-	Wed, 16 Nov 2022 07:16:23 -0800 (PST)
-Received: from donnerap.arm.com (donnerap.cambridge.arm.com [10.1.197.42])
-	by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BB7953F587;
-	Wed, 16 Nov 2022 07:16:13 -0800 (PST)
-From: Andre Przywara <andre.przywara@arm.com>
-To: Vinod Koul <vkoul@kernel.org>,
+	id 1ovKA1-0054wx-Pl; Wed, 16 Nov 2022 15:17:09 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
+	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
+	id 1ovK9N-0054eU-D9
+	for linux-phy@lists.infradead.org; Wed, 16 Nov 2022 15:16:33 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id EE9EB61E8B;
+	Wed, 16 Nov 2022 15:16:28 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B4B84C433D7;
+	Wed, 16 Nov 2022 15:16:28 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1668611788;
+	bh=jKQagBl3R/KyglvVGmZThplHX13NVZHVD0eA64HEDv8=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=NnwLFx90LSeoBcxta8H7gv+Sanbem74/0z1L+R5yOZ3Ow40dhoOj1w9FNYs05lW8P
+	 y/XJnO0/gu8Yu7ThFSadP2H8GGxELu5+A6dOSfaCVqOr9QVD7eOM5XU3mKA9io06U4
+	 vkn35h4qk5LESmJTfrUT8Dm/8k1ZcGDY31vMVw2nhYQ0yWpYZTqgGgiQ6UF3iVzjQq
+	 XyCt59n20IiDCK4Zu0HItTf6myPL3Wiyxe2vmY5gfHBYYurJKGiE57LB0fUU1FUfUO
+	 rf/GWHW5NOWjK1EhdWUBomOT6Mt992KrlckGZNIsXvD+aM9vxvjASu99Y2GvwjC4VB
+	 QV7ATgyjlMuXQ==
+Received: from johan by xi.lan with local (Exim 4.94.2)
+	(envelope-from <johan@kernel.org>)
+	id 1ovK8s-0003i4-IV; Wed, 16 Nov 2022 16:15:59 +0100
+Date: Wed, 16 Nov 2022 16:15:58 +0100
+From: Johan Hovold <johan@kernel.org>
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@somainline.org>,
+	Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
 	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
-Cc: Chen-Yu Tsai <wens@csie.org>,
-	Jernej Skrabec <jernej.skrabec@gmail.com>,
-	Samuel Holland <samuel@sholland.org>,
-	linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-sunxi@lists.linux.dev,
-	Icenowy Zheng <uwu@icenowy.me>
-Subject: [PATCH v4 0/3] phy: sun4i-usb: add support for the USB PHY on F1C100s SoC
-Date: Wed, 16 Nov 2022 15:16:00 +0000
-Message-Id: <20221116151603.819533-1-andre.przywara@arm.com>
-X-Mailer: git-send-email 2.25.1
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org
+Subject: Re: [PATCH v7 2/4] phy: qcom-qmp-ufs: provide symbol clocks
+Message-ID: <Y3T+rj1hACqSBrC4@hovoldconsulting.com>
+References: <20221110151748.795767-1-dmitry.baryshkov@linaro.org>
+ <20221110151748.795767-3-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20221110151748.795767-3-dmitry.baryshkov@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221116_071625_727632_CD7A39D4 
-X-CRM114-Status: GOOD (  11.07  )
+X-CRM114-CacheID: sfid-20221116_071629_630006_43B0B97B 
+X-CRM114-Status: GOOD (  25.46  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -67,52 +83,119 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This is a spin-off of v3 of the suniv F1C100s USB support series[1], just
-carrying the USB PHY bits. The H616 USB PHY support is already in
-linux-phy.git/next, so this is rebased on top of that, to avoid
-conflicts.
-The actual binding and driver change in the first two patches is
-straightforward. Since it came up in reviews, I reworked the quirk
-handling in the phy-sun4i-usb.c driver, to become more maintainable and
-readable, in patch 3/3. For a changelog, see below.
+On Thu, Nov 10, 2022 at 06:17:46PM +0300, Dmitry Baryshkov wrote:
+> Register three UFS symbol clocks (ufs_rx_symbol_0_clk_src,
+> ufs_rx_symbol_1_clk_src ufs_tx_symbol_0_clk_src). Register OF clock
+> provider to let other devices link these clocks through the DT.
+> 
+> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+> ---
 
-Cheers,
-Andre
+I was not CCed on this revision of this series either.
 
-[1] https://lore.kernel.org/linux-arm-kernel/20221106154826.6687-1-andre.przywara@arm.com/
+>  drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 64 +++++++++++++++++++++++++
+>  1 file changed, 64 insertions(+)
+> 
+> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+> index 189103d1bd18..78d7daf34667 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+> @@ -1023,6 +1023,66 @@ static int qmp_ufs_clk_init(struct qmp_ufs *qmp)
+>  	return devm_clk_bulk_get(dev, num, qmp->clks);
+>  }
+>  
+> +static void phy_clk_release_provider(void *res)
+> +{
+> +	of_clk_del_provider(res);
+> +}
+> +
+> +#define UFS_SYMBOL_CLOCKS 3
+> +
+> +static int phy_symbols_clk_register(struct qmp_ufs *qmp, struct device_node *np)
 
-Changelog v3 ... v4:
-- split off from rest of suniv F1C100s USB series
-- rebase on top of H616 USB PHY patches
-- drop phy2_is_hsic in favour of reusing existing hsic_index member
-- add tags
+Since you're adding a new function, please use the common prefix and
+reordering the terms and dropping the redundant "symbols" should make it
+more readable:
 
-Changelog v2 ... v3:
-- remove redundant "Device Tree Bindings" suffix in DT binding doc title
-- add BSD license to binding doc file (as per checkpatch)
-- use existing PHY sun4i_a10_phy type instead of inventing new one
-- add patch to clean up sunxi USB PHY driver
+	qmp_ufs_register_clocks()
 
-Changelog v1 ... v2:
-- USB PHY binding: clarify the relation with other phy-sun4i-usb bindings
+> +{
+> +	struct clk_hw_onecell_data *clk_data;
+> +	struct clk_hw *hw;
+> +	char name[64];
+> +	int ret;
+> +
+> +	clk_data = devm_kzalloc(qmp->dev,
+> +				struct_size(clk_data, hws, UFS_SYMBOL_CLOCKS),
+> +				GFP_KERNEL);
+> +	if (!clk_data)
+> +		return -ENOMEM;
+> +
+> +	clk_data->num = UFS_SYMBOL_CLOCKS;
+> +
+> +	snprintf(name, sizeof(name), "%s::rx_symbol_0", dev_name(qmp->dev));
+> +	hw = devm_clk_hw_register_fixed_rate(qmp->dev, name, NULL, 0, 0);
+> +	if (IS_ERR(hw))
+> +		return PTR_ERR(hw);
+> +
+> +	clk_data->hws[0] = hw;
+> +
+> +	snprintf(name, sizeof(name), "%s::rx_symbol_1", dev_name(qmp->dev));
+> +	hw = devm_clk_hw_register_fixed_rate(qmp->dev, name, NULL, 0, 0);
+> +	if (IS_ERR(hw))
+> +		return PTR_ERR(hw);
+> +
+> +	clk_data->hws[1] = hw;
+> +
+> +	snprintf(name, sizeof(name), "%s::tx_symbol_0", dev_name(qmp->dev));
+> +	hw = devm_clk_hw_register_fixed_rate(qmp->dev, name, NULL, 0, 0);
+> +	if (IS_ERR(hw))
+> +		return PTR_ERR(hw);
+> +
+> +	clk_data->hws[2] = hw;
+> +
+> +	ret = of_clk_add_hw_provider(np, of_clk_hw_onecell_get, clk_data);
+> +	if (ret)
+> +		return ret;
+> +
+> +	/*
+> +	 * Roll a devm action because the clock provider is the child node, but
+> +	 * the child node is not actually a device.
+> +	 */
 
+I know you just copied this from one of the other drivers, but perhaps
+rephrase as "can be a child node". You can just drop the second clause
+(no node *is* a device).
 
+> +	return devm_add_action_or_reset(qmp->dev, phy_clk_release_provider, np);
+> +}
+> +
+> +static const struct phy_ops qcom_qmp_ufs_ops = {
+> +	.power_on	= qmp_ufs_enable,
+> +	.power_off	= qmp_ufs_disable,
+> +	.owner		= THIS_MODULE,
+> +};
 
-Andre Przywara (1):
-  phy: sun4i-usb: Replace types with explicit quirk flags
+As I've already pointed out once, the above phy_ops struct hunk does not
+belong in this patch and is just some left over after you rebased on
+phy-next that must be removed.
 
-Icenowy Zheng (2):
-  dt-bindings: phy: add binding document for Allwinner F1C100s USB PHY
-  phy: sun4i-usb: add support for the USB PHY on F1C100s SoC
+>  static int qmp_ufs_parse_dt_legacy(struct qmp_ufs *qmp, struct device_node *np)
+>  {
+>  	struct platform_device *pdev = to_platform_device(qmp->dev);
+> @@ -1135,6 +1195,10 @@ static int qmp_ufs_probe(struct platform_device *pdev)
+>  	if (ret)
+>  		goto err_node_put;
+>  
+> +	ret = phy_symbols_clk_register(qmp, np);
+> +	if (ret)
+> +		goto err_node_put;
+> +
+>  	qmp->phy = devm_phy_create(dev, np, &qcom_qmp_ufs_phy_ops);
+>  	if (IS_ERR(qmp->phy)) {
+>  		ret = PTR_ERR(qmp->phy);
 
- .../phy/allwinner,suniv-f1c100s-usb-phy.yaml  | 83 +++++++++++++++++++
- drivers/phy/allwinner/phy-sun4i-usb.c         | 59 ++++++-------
- 2 files changed, 107 insertions(+), 35 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/phy/allwinner,suniv-f1c100s-usb-phy.yaml
-
--- 
-2.25.1
-
+Johan
 
 -- 
 linux-phy mailing list
