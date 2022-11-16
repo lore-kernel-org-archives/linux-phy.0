@@ -4,32 +4,32 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0C01DC4332F
-	for <linux-phy@archiver.kernel.org>; Wed, 16 Nov 2022 15:16:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 27F34C4332F
+	for <linux-phy@archiver.kernel.org>; Wed, 16 Nov 2022 15:16:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+GTyUFyFTwkSI/gnrZI5f4ByKg1koFFsS+2GNoviidI=; b=ICujRVfxh1Dmi+
-	kLWnuBHenNl1q4qDzXsNMvTG+Q1DIDmDL/JbWh9sDAMgr/dUUcwGJmqU9q+dMvOoFN3Er09O5lEiN
-	6O2bJkWOjHBfyPc7RyaiT/KvSuy7fJfTodYoLtlMDvCopY2GRYncroi9ZKtQehye4W4e2jcLeWDHu
-	sSfzEy9ejZ7QXYJ9sRXiY5Mzmo3+Mt+Q+3KQ6SghrLb8KR5YT6rc+5r2dJoS/I2EB1H3IXAeFQdLo
-	wJleYfRTy2rZI1kpJ9D3UChZcb5/9es5DM1qbQjzW+R7hF59CwAB6D70UmQZhacnTE5Xpwxzi9yNx
-	vCYE3Z6TyqGPjREG9nvw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=OQUX6FCDVIbJTayV72cXrSyWGkB3xPEF8vLyvRr5Ybc=; b=UP5eP/0kWa4SBa
+	LcVNIEZT+T/y/XV1KmIy8tdxEy/mwAIug84DLPlDSeilw9Qox5GZwDNvylsAuXbgplsTqeuQYezTW
+	gZL6uq0CMxrVewXinWvh6tPdn3bWdPV100L29qrnjDUps/aZWXIsJodamVfSNGe3iPoXe8wkO+2sp
+	lAk3H3zEc8Xxj9dXHPdxhAW6H/KM0HDVLNqJGOoJDWqVwQVGdgauox1nbn34Tm2eKYRc82FjHvCDm
+	xObaKgNUCUh2B0f32Fx59Lnpfmcbn/wqo/n5thohmwt+/677JktKXKsfzbfMh9q4nlZFLDgXXzZXo
+	nmyrKIXdRv/29rnMS7uw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ovK9c-0054kU-Bu; Wed, 16 Nov 2022 15:16:44 +0000
+	id 1ovK9q-0054qo-Jq; Wed, 16 Nov 2022 15:16:58 +0000
 Received: from foss.arm.com ([217.140.110.172])
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ovK9J-0054av-Mb; Wed, 16 Nov 2022 15:16:28 +0000
+	id 1ovK9I-0054YO-OM; Wed, 16 Nov 2022 15:16:28 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
-	by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 58A68152B;
-	Wed, 16 Nov 2022 07:16:27 -0800 (PST)
+	by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AB1A41477;
+	Wed, 16 Nov 2022 07:16:23 -0800 (PST)
 Received: from donnerap.arm.com (donnerap.cambridge.arm.com [10.1.197.42])
-	by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 74EDB3FA9C;
-	Wed, 16 Nov 2022 07:16:17 -0800 (PST)
+	by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BB7953F587;
+	Wed, 16 Nov 2022 07:16:13 -0800 (PST)
 From: Andre Przywara <andre.przywara@arm.com>
 To: Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
@@ -43,16 +43,14 @@ Cc: Chen-Yu Tsai <wens@csie.org>,
 	linux-arm-kernel@lists.infradead.org,
 	linux-sunxi@lists.linux.dev,
 	Icenowy Zheng <uwu@icenowy.me>
-Subject: [PATCH v4 2/3] phy: sun4i-usb: add support for the USB PHY on F1C100s SoC
-Date: Wed, 16 Nov 2022 15:16:02 +0000
-Message-Id: <20221116151603.819533-3-andre.przywara@arm.com>
+Subject: [PATCH v4 0/3] phy: sun4i-usb: add support for the USB PHY on F1C100s SoC
+Date: Wed, 16 Nov 2022 15:16:00 +0000
+Message-Id: <20221116151603.819533-1-andre.przywara@arm.com>
 X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20221116151603.819533-1-andre.przywara@arm.com>
-References: <20221116151603.819533-1-andre.przywara@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221116_071626_194634_13AA3418 
-X-CRM114-Status: GOOD (  11.68  )
+X-CRM114-CacheID: sfid-20221116_071625_727632_CD7A39D4 
+X-CRM114-Status: GOOD (  11.07  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -69,47 +67,49 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Icenowy Zheng <uwu@icenowy.me>
+This is a spin-off of v3 of the suniv F1C100s USB support series[1], just
+carrying the USB PHY bits. The H616 USB PHY support is already in
+linux-phy.git/next, so this is rebased on top of that, to avoid
+conflicts.
+The actual binding and driver change in the first two patches is
+straightforward. Since it came up in reviews, I reworked the quirk
+handling in the phy-sun4i-usb.c driver, to become more maintainable and
+readable, in patch 3/3. For a changelog, see below.
 
-The F1C100s SoC has one USB OTG port connected to a MUSB controller.
+Cheers,
+Andre
 
-Add support for its USB PHY.
+[1] https://lore.kernel.org/linux-arm-kernel/20221106154826.6687-1-andre.przywara@arm.com/
 
-Signed-off-by: Icenowy Zheng <uwu@icenowy.me>
-Acked-by: Jernej Skrabec <jernej.skrabec@gmail.com>
-Signed-off-by: Andre Przywara <andre.przywara@arm.com>
----
- drivers/phy/allwinner/phy-sun4i-usb.c | 10 ++++++++++
- 1 file changed, 10 insertions(+)
+Changelog v3 ... v4:
+- split off from rest of suniv F1C100s USB series
+- rebase on top of H616 USB PHY patches
+- drop phy2_is_hsic in favour of reusing existing hsic_index member
+- add tags
 
-diff --git a/drivers/phy/allwinner/phy-sun4i-usb.c b/drivers/phy/allwinner/phy-sun4i-usb.c
-index 5472db9e87ef8..d9beacc3f8c22 100644
---- a/drivers/phy/allwinner/phy-sun4i-usb.c
-+++ b/drivers/phy/allwinner/phy-sun4i-usb.c
-@@ -918,6 +918,14 @@ static int sun4i_usb_phy_probe(struct platform_device *pdev)
- 	return 0;
- }
- 
-+static const struct sun4i_usb_phy_cfg suniv_f1c100s_cfg = {
-+	.num_phys = 1,
-+	.type = sun4i_a10_phy,
-+	.disc_thresh = 3,
-+	.phyctl_offset = REG_PHYCTL_A10,
-+	.dedicated_clocks = true,
-+};
-+
- static const struct sun4i_usb_phy_cfg sun4i_a10_cfg = {
- 	.num_phys = 3,
- 	.type = sun4i_a10_phy,
-@@ -1059,6 +1067,8 @@ static const struct of_device_id sun4i_usb_phy_of_match[] = {
- 	  .data = &sun50i_a64_cfg},
- 	{ .compatible = "allwinner,sun50i-h6-usb-phy", .data = &sun50i_h6_cfg },
- 	{ .compatible = "allwinner,sun50i-h616-usb-phy", .data = &sun50i_h616_cfg },
-+	{ .compatible = "allwinner,suniv-f1c100s-usb-phy",
-+	  .data = &suniv_f1c100s_cfg },
- 	{ },
- };
- MODULE_DEVICE_TABLE(of, sun4i_usb_phy_of_match);
+Changelog v2 ... v3:
+- remove redundant "Device Tree Bindings" suffix in DT binding doc title
+- add BSD license to binding doc file (as per checkpatch)
+- use existing PHY sun4i_a10_phy type instead of inventing new one
+- add patch to clean up sunxi USB PHY driver
+
+Changelog v1 ... v2:
+- USB PHY binding: clarify the relation with other phy-sun4i-usb bindings
+
+
+
+Andre Przywara (1):
+  phy: sun4i-usb: Replace types with explicit quirk flags
+
+Icenowy Zheng (2):
+  dt-bindings: phy: add binding document for Allwinner F1C100s USB PHY
+  phy: sun4i-usb: add support for the USB PHY on F1C100s SoC
+
+ .../phy/allwinner,suniv-f1c100s-usb-phy.yaml  | 83 +++++++++++++++++++
+ drivers/phy/allwinner/phy-sun4i-usb.c         | 59 ++++++-------
+ 2 files changed, 107 insertions(+), 35 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/phy/allwinner,suniv-f1c100s-usb-phy.yaml
+
 -- 
 2.25.1
 
