@@ -4,53 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A3A06C433FE
-	for <linux-phy@archiver.kernel.org>; Wed, 16 Nov 2022 12:39:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9D495C4332F
+	for <linux-phy@archiver.kernel.org>; Wed, 16 Nov 2022 12:54:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0DmDbSS9rqhlmxPfyvZdd/HDJcX5N66Apvs+b34eVZM=; b=pTYmJb3FtHZAIY
-	MPiesgcbiKgfjiuTu1l9LZI3rmQyT6nwauubTgBu7H1QFPSWHyO21tc9KQCrTJaPiGPby8RvxTqrc
-	NOu1VvIbcDvrvOUKHg5SVu0zHwiGWqW2WS8obL2cvIqlxtCLl/UBoL8IeX9Wqj5+Md3fvXiO3WSLE
-	MVlXdlq7YnTbtxtPfDP1DHanU9l7rwFzveKPCPN08azQ0bGRq1AXaPrgRtxmFDtibqP/9hFZs9aZe
-	09Xe05i/VjH9OFZTm7PO85QFLqjr4U3wbXyr1/U6qZP07AESSfflaTNxsIFXbXta5AHz0CEESlP5h
-	+cTfNoY4Uk6mst3Sn98Q==;
+	List-Owner; bh=H9XbOp3D1UTRMxUY3vmSDyqTCEXyGqOFpeHlE+pEs9E=; b=p3kqIhQbMPwlpa
+	Keat/iIHba1lILLhU7SoZOER387/XJYn1QEG3wVVrPY+D/zKseGkNx73Ba5prQ6zOPEwY6BUz1pbw
+	LhezfN7osVn8Kzz9q1+jOL4v4Wj7dp4TmMkjyg9Uz/j/5fOQJ5F6uMoXJngnlJQoJ+CHxmLrZBFnt
+	KDEiQ0S3SMQ9MWWQ1uPAC5WH7O+HqwF88iXAD0zO+arjzr+dwXUzYXgGHxPLGvdWjlmSnjQPAxxhy
+	P+U+GoQs2yhBYMTiWUbcEpkEqmHDzXta7L5W/YL9ncUHpN+LcT6d3NDqqC+FkSeE+yzdOH1VZv+5w
+	ZGWjP7PfhNyWvkRbo/yw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ovHgz-003Tup-Pz; Wed, 16 Nov 2022 12:39:01 +0000
-Received: from mga07.intel.com ([134.134.136.100])
+	id 1ovHwD-003cIE-1h; Wed, 16 Nov 2022 12:54:45 +0000
+Received: from mga11.intel.com ([192.55.52.93])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ovHfL-003SlE-Pq
-	for linux-phy@lists.infradead.org; Wed, 16 Nov 2022 12:37:21 +0000
+	id 1ovHw9-003cDR-RW
+	for linux-phy@lists.infradead.org; Wed, 16 Nov 2022 12:54:44 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1668602239; x=1700138239;
+  t=1668603281; x=1700139281;
   h=date:from:to:cc:subject:message-id:references:
    mime-version:in-reply-to;
-  bh=oGL1Yrskd/4Uu+QY6jG0ey36GZ59SJOBtdPf971QTPY=;
-  b=BFn524ugnw8TEjZws+5MPlC8kUUzzhhyN4BWEpYhyMlPJtQ61U1+Mz/U
-   /GjLVEFiHb5b6foTf+MpzamEFtkyBdBOplgwC7uq9r4kh6vYzmId37AGp
-   qAlbXFHYT4LLYi/AvfulPumfMJFEgYMmU1KFu4i6Vwp3mfaMDHuaCBj1C
-   NOR6OzI45pUn1sxxKQHR+fv66QwTH5JXTUhSYcWq5QJekDqIqiUai6GyK
-   UTfOY9h6u38aoKNOxlJsN2ucc/Xu1aQ4tfPIoXABZOcJ97F0j21h2CCZ/
-   rfc782jUoUdacOrB5CBaiau9WWHrjP38iGd/e0Zo0TlkMXSQ7k0sDRYAI
-   g==;
-X-IronPort-AV: E=McAfee;i="6500,9779,10532"; a="376801377"
+  bh=ET2tipMncgEzwzEusVdc95hezlhXd+TGnXhqxAJayR4=;
+  b=JxXYyw4e19QJ+vXJYgh+bX3dCiM8c0PZfSFAhooPhn4yYN0psgfvwM4I
+   qvCxW8xBWFthYkne4kTXlR52caO4twMnP8YMU/vArZ9aOxNipFEVcJSm+
+   u7ACeyfLv9WhtdoMLp+ZKUbtWuYIcd/eDykt+jL9o5aTKvKoIONJs+Phe
+   nLfvG1xRXUmbf/xPxwAtK2a7KVuGwttNNrV5qmO9qKTVhyzT8kbvf23HZ
+   x7jJb0OSjbQneXYtnSEwCczPZ15LSIG5OYxX/Csj6yIiOjpj19gJao4Tb
+   j0gqnGJ7MXxO9Pg7FJMemKduCHfoV38g6AKkRPrMx+A/prplUd+iwGjJ9
+   A==;
+X-IronPort-AV: E=McAfee;i="6500,9779,10532"; a="310163739"
 X-IronPort-AV: E=Sophos;i="5.96,167,1665471600"; 
-   d="scan'208";a="376801377"
+   d="scan'208";a="310163739"
 Received: from fmsmga001.fm.intel.com ([10.253.24.23])
-  by orsmga105.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 16 Nov 2022 04:37:16 -0800
+  by fmsmga102.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 16 Nov 2022 04:54:38 -0800
 X-ExtLoop1: 1
-X-IronPort-AV: E=McAfee;i="6500,9779,10532"; a="781751953"
+X-IronPort-AV: E=McAfee;i="6500,9779,10532"; a="781755441"
 X-IronPort-AV: E=Sophos;i="5.96,167,1665471600"; 
-   d="scan'208";a="781751953"
+   d="scan'208";a="781755441"
 Received: from kuha.fi.intel.com ([10.237.72.185])
-  by fmsmga001.fm.intel.com with SMTP; 16 Nov 2022 04:37:10 -0800
-Received: by kuha.fi.intel.com (sSMTP sendmail emulation); Wed, 16 Nov 2022 14:37:10 +0200
-Date: Wed, 16 Nov 2022 14:37:10 +0200
+  by fmsmga001.fm.intel.com with SMTP; 16 Nov 2022 04:54:32 -0800
+Received: by kuha.fi.intel.com (sSMTP sendmail emulation); Wed, 16 Nov 2022 14:54:31 +0200
+Date: Wed, 16 Nov 2022 14:54:31 +0200
 From: Heikki Krogerus <heikki.krogerus@linux.intel.com>
 To: Wayne Chang <waynec@nvidia.com>
 Cc: gregkh@linuxfoundation.org, robh+dt@kernel.org,
@@ -63,15 +63,15 @@ Cc: gregkh@linuxfoundation.org, robh+dt@kernel.org,
 	linux-i2c@vger.kernel.org, linux-phy@lists.infradead.org,
 	linux-tegra@vger.kernel.org
 Subject: Re: [PATCH v3 05/13] usb: typec: ucsi_ccg: Add OF support
-Message-ID: <Y3TZdkdIltobUcb3@kuha.fi.intel.com>
+Message-ID: <Y3Tdh0MEVuIlE6is@kuha.fi.intel.com>
 References: <20221114124053.1873316-1-waynec@nvidia.com>
  <20221114124053.1873316-6-waynec@nvidia.com>
 MIME-Version: 1.0
 Content-Disposition: inline
 In-Reply-To: <20221114124053.1873316-6-waynec@nvidia.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221116_043719_913630_C4220C9F 
-X-CRM114-Status: GOOD (  19.63  )
+X-CRM114-CacheID: sfid-20221116_045441_930553_F0387156 
+X-CRM114-Status: GOOD (  22.86  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,9 +92,6 @@ On Mon, Nov 14, 2022 at 08:40:45PM +0800, Wayne Chang wrote:
 > The change enables the device tree infrastructure support.
 > 
 > Signed-off-by: Wayne Chang <waynec@nvidia.com>
-
-Reviewed-by: Heikki Krogerus <heikki.krogerus@linux.intel.com>
-
 > ---
 > V2 -> V3:nothing has changed
 > V1 -> V2:nothing has changed
@@ -112,7 +109,16 @@ Reviewed-by: Heikki Krogerus <heikki.krogerus@linux.intel.com>
 > -	if (!has_acpi_companion(uc->dev))
 > +	if (!dev_fwnode(uc->dev))
 >  		flags |= IRQF_TRIGGER_HIGH;
->  
+
+Sorry, I had to double check this, and the above does not work after
+all. In the function i2c_new_ccgx_ucsi() the device is given a fwnode
+(of type software_node).
+
+So that probable has to be changed to:
+
+        if (is_software_node(dev_fwnode(uc->dev)))
+                flags |= IRQF_TRIGGER_HIGH;
+
 >  	return request_threaded_irq(uc->irq, NULL, ccg_irq_handler, flags, dev_name(uc->dev), uc);
 > @@ -1427,6 +1427,12 @@ static void ucsi_ccg_remove(struct i2c_client *client)
 >  	free_irq(uc->irq, uc);
