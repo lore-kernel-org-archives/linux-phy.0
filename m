@@ -4,62 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 44C14C433FE
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 26718C4332F
 	for <linux-phy@archiver.kernel.org>; Wed, 16 Nov 2022 12:02:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9PSi8ws/+tJWQFDyHe/3CVsMWooV6iqxw/JsjKxC6qg=; b=sAr1qmAljmBPee
-	LLB7/HlDMFALdPlQxq1f+3EDxvSiV+f4TKAseN5/sylkzRTGkgPyGcoFecqLzrikZvflTAgjvTlsm
-	/wxQK+Ks7cWA5RgBeQTdP8j//8PK24r+zNSCCxqd0xTj/AmHaQfBKjJs5wqABZGok61Faq7DpOR3s
-	7Wp/yejuHjfhUZi9n4JIX8u2NbDN/Ww+0ht9GfGezqH14qacRB1XTERylklxwKBULcHWFG/ripm2G
-	cKftnjqWvRD7nETrDhX5/g6eAiGccUeKAOq7vfPwAkOwjaCmkqC9G4z5yWhqLjbjjaDv48xPzxqvB
-	8Iz6jwoMjRMp1ZLbbWoQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=jNfNP3sY65bb4VyCjpxN9UG942lO7bwo2NfPAQczetE=; b=0KemfDkMpK/adm
+	yOLDDzKg/Kd/nN3TcMnpwqEH/xbxnmwkUa/jcdCLLBJgHKEVi9qls1lsBmnLZsALhpJZ1e9MUCmWe
+	7NxSii4HVmIiat/8My9MDi25r/6hFIBFFuKaEN0GD5IsxIn02nV5zUgfFjN5TB/lObFsXbd6SxMVG
+	tBmxJ9V07gvD3f0kcI+/zLTYIHDO6uS33h0EpM8x4ZC8I3LZbaR5hraw/4yG9gvw0ApdAcAbbpNmJ
+	DVKzlRKf9hJReuF4YWY/gFaGJWLcJSPkg0JrJ7eXVtFEx+E232auvXdUcA/EtUEafg9/2CS0FNZeL
+	Bnk/tkAh3cvXNUMybxTg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ovH7G-003CxB-L7; Wed, 16 Nov 2022 12:02:06 +0000
-Received: from mail-wm1-x32e.google.com ([2a00:1450:4864:20::32e])
+	id 1ovH7G-003Cx3-Fq; Wed, 16 Nov 2022 12:02:06 +0000
+Received: from mail-wr1-x42d.google.com ([2a00:1450:4864:20::42d])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ovH7E-003Cvm-Ch
+	id 1ovH7E-003Cuz-4P
 	for linux-phy@lists.infradead.org; Wed, 16 Nov 2022 12:02:05 +0000
-Received: by mail-wm1-x32e.google.com with SMTP id ja4-20020a05600c556400b003cf6e77f89cso2930408wmb.0
-        for <linux-phy@lists.infradead.org>; Wed, 16 Nov 2022 04:02:04 -0800 (PST)
+Received: by mail-wr1-x42d.google.com with SMTP id cl5so29542749wrb.9
+        for <linux-phy@lists.infradead.org>; Wed, 16 Nov 2022 04:02:01 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=Qi/VS5VU4Lm5i+pPezZIpAbB2sXalMrX/FqWASjjTY4=;
-        b=HTXP5c1AMiiqA6OJWfHeApmyLBRuAId/J3xeLB/MYOlCgnOXMexGuzWthoqR9fvUKM
-         QRrhtaMBebFYZaqGi2ckcUshJ0Hpk9iZLYscGeBTPNEWbr0HKymHxQpVp1x+5n57bwAu
-         Hd6rnN+NhuhalBfdUBqDnmKExGC2FPH+eu/fAJPTA5sWX5vd9vKdozLM2GNBdmWekLYD
-         IsCVPp0zt+PLpal/pXLV4jDZ+SPuF0vLgxWEhQKt4K51LYrN8kFdxy5w7P0pmrpQL+2l
-         VJyzexydDoJSq3Shz2H2R/LNNYI8AgBtgg8vKjJpyjAjGqOqUQtMj5/OM2Si6q3xNOrp
-         MdEQ==
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=dpRgnbMi8qckAARNiFgw/+KtlyEj1vTV5D3PXlU2xTg=;
+        b=vj3zT89Y9w4Wmm6PjLwvVOBkxfmwSg71xksovxuPW14LdTfbw12qfIabfdtDu/+qt7
+         C2IfBL6jUaK0shIZ3cf0uxGE+cqEBdowBAsxePJ+8ThqoPH8NFcfPV3ULp4EWnZmM8gp
+         B9zCTYy7S3Z7mlFNGzu6LiTvfhs608kKx0bLOK/nFdC2ct9N/qnpIGVNidhHyuopolWW
+         Whq3XkSZb8P57pXpoERARY90aPcOBPXZLiiN1VaZtLB+CTro6HdiPDJbFhXUgTKDi4xm
+         vp/wrHyTJmWfp1pOXCeri51IyaCGZJNP8gsnTEKpZFS3fPSROCHDDcbSGEkTrt8aqIgD
+         jgIA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=Qi/VS5VU4Lm5i+pPezZIpAbB2sXalMrX/FqWASjjTY4=;
-        b=c6sZOVbTH4WWzafcW6Oi20QBoS+pPV+nCxDRPhUfCrvj45HQ53XMBwsjBH6oChZgYe
-         DjTCZv6OVfgkyrSXRaO98I4tKkqj0iKq1SXI/DrHEUzO46WF6t5l6YrxQlNKNhrJm310
-         P6F8RbH1yBJJYTgIqn79GItQp7CwmZOFoBPBvyzHCGTOPqjJxa3t0EkVGma+Dh5wwRg5
-         1lr1cpKiPDEWHl/mAOUg1ygGDon7vx51d4UZlOEIQJOPYSQhek0haLef5iA022RtWphV
-         hxUumftMATqi3QmT+eJD8Di4mYsUThhZXIwfnr2euOslGcGT3nZytkPSTvnQS9xU3utO
-         AC6A==
-X-Gm-Message-State: ANoB5pnfWTSbDxf8c0ynWpj/AsbjJZP080EnDz1L834IkstxPYVk/EUe
-	30EFaw6cA87sR84WdTFN0A+7hw==
-X-Google-Smtp-Source: AA0mqf4fOLACjnLE9fIXpNv9sG0VipGyempsJNgg7PdnvDVWB/g2Gj9AY7m8qIWsfgVPRFGJlH2ayw==
-X-Received: by 2002:a05:600c:4d24:b0:3c6:a8c7:755e with SMTP id u36-20020a05600c4d2400b003c6a8c7755emr1859789wmp.167.1668600122929;
-        Wed, 16 Nov 2022 04:02:02 -0800 (PST)
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=dpRgnbMi8qckAARNiFgw/+KtlyEj1vTV5D3PXlU2xTg=;
+        b=Mg7kBtuIOX3mb8dVPg9qCNptiPKjWwOD8wuOJBXzuFvK5M0EkE4UnJMlEzxQUr1LNI
+         0tbmDbJdHnoNnVtZ3ustS+GWk0fE7KToe3GS1RbUhYUzhZLhSrytlBBlvMKwu7xlI5P/
+         IyMMfKTB4x6Wa195XTinXCb+TBEX/HSTvO/UFZ2ji8q331AXHxImFTH/h4VtmejptGg4
+         sm+0UZ1C1hXPRXc8ttOi6I3aAuro7YM3bYuj3ZS3ErGjLR6w0CbRpu2i7J/ObXds6UlW
+         Aulsvmxzaxt4RzqquOOH9i1BOJDL/K+bQULjDFpaEaHL8dzd7RR3IitRGW3XIxOgYwCb
+         eVzA==
+X-Gm-Message-State: ANoB5pnCPNL8buj04FVsr/xEwhtyeEuRGq+pqqMDXbC6pO+5DeZUL/9K
+	Q7yuuhCdlMlbgdm0imXOSX58EA==
+X-Google-Smtp-Source: AA0mqf6ixmpppWedB5Oh+piLn1Omme6b6zbkSxNf6UmceeGl0ZaoCF8e8wNiQu1SaTCKMsF8koLSlw==
+X-Received: by 2002:a05:6000:181c:b0:236:60ce:7c10 with SMTP id m28-20020a056000181c00b0023660ce7c10mr13546096wrh.440.1668600120343;
+        Wed, 16 Nov 2022 04:02:00 -0800 (PST)
 Received: from localhost.localdomain ([94.52.112.99])
-        by smtp.gmail.com with ESMTPSA id r8-20020a056000014800b002206203ed3dsm15120109wrx.29.2022.11.16.04.02.01
+        by smtp.gmail.com with ESMTPSA id r8-20020a056000014800b002206203ed3dsm15120109wrx.29.2022.11.16.04.01.59
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 16 Nov 2022 04:02:02 -0800 (PST)
+        Wed, 16 Nov 2022 04:01:59 -0800 (PST)
 From: Abel Vesa <abel.vesa@linaro.org>
 To: Andy Gross <agross@kernel.org>,
 	Bjorn Andersson <andersson@kernel.org>,
@@ -72,17 +71,14 @@ Cc: Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
 	devicetree@vger.kernel.org,
 	linux-arm-msm@vger.kernel.org,
 	linux-phy@lists.infradead.org
-Subject: [PATCH 02/10] dt-bindings: phy: Add QMP UFS PHY comptible for SM8550
-Date: Wed, 16 Nov 2022 14:01:49 +0200
-Message-Id: <20221116120157.2706810-3-abel.vesa@linaro.org>
+Subject: [PATCH 00/10] phy: qualcomm: Add support for SM8550
+Date: Wed, 16 Nov 2022 14:01:47 +0200
+Message-Id: <20221116120157.2706810-1-abel.vesa@linaro.org>
 X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20221116120157.2706810-1-abel.vesa@linaro.org>
-References: <20221116120157.2706810-1-abel.vesa@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221116_040204_444772_88349BA4 
-X-CRM114-Status: UNSURE (   8.63  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20221116_040204_197287_89F5E697 
+X-CRM114-Status: GOOD (  11.56  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,76 +95,76 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Document the QMP UFS PHY compatible for SM8550.
+This patchset adds PHY support for the PCIe, UFS and USB found in
+the new Qualcomm SM8550 SoC. Since the SM8550 bumps the HW version
+to 6.0 (respectively, 6.20 for PCIe G4), add support for it beforehand.
+The SM8550 also uses Synopsis eUSB2 PHY, so add a dedicated driver
+for it.
 
-Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
----
- .../phy/qcom,msm8996-qmp-ufs-phy.yaml         | 24 +++++++++++++++++++
- 1 file changed, 24 insertions(+)
+To: Andy Gross <agross@kernel.org>
+To: Bjorn Andersson <andersson@kernel.org>
+To: Konrad Dybcio <konrad.dybcio@linaro.org>
+To: Vinod Koul <vkoul@kernel.org>
+To: Kishon Vijay Abraham I <kishon@kernel.org>
+To: Rob Herring <robh+dt@kernel.org>
+To: Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
+Cc: linux-arm-msm@vger.kernel.org
+Cc: linux-phy@lists.infradead.org
+Cc: devicetree@vger.kernel.org
+Cc: linux-kernel@vger.kernel.org
 
-diff --git a/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-ufs-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-ufs-phy.yaml
-index be41acbd3b6c..1ea5fcd4a59e 100644
---- a/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-ufs-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-ufs-phy.yaml
-@@ -29,6 +29,7 @@ properties:
-       - qcom,sm8250-qmp-ufs-phy
-       - qcom,sm8350-qmp-ufs-phy
-       - qcom,sm8450-qmp-ufs-phy
-+      - qcom,sm8550-qmp-ufs-phy
- 
-   reg:
-     items:
-@@ -66,6 +67,9 @@ properties:
- 
-   vddp-ref-clk-supply: true
- 
-+  vdda-phy-max-microamp: true
-+  vdda-pll-max-microamp: true
-+
- patternProperties:
-   "^phy@[0-9a-f]+$":
-     type: object
-@@ -141,6 +145,7 @@ allOf:
-           contains:
-             enum:
-               - qcom,sm8450-qmp-ufs-phy
-+              - qcom,sm8550-qmp-ufs-phy
-     then:
-       properties:
-         clocks:
-@@ -163,6 +168,7 @@ allOf:
-               - qcom,sm8250-qmp-ufs-phy
-               - qcom,sm8350-qmp-ufs-phy
-               - qcom,sm8450-qmp-ufs-phy
-+              - qcom,sm8550-qmp-ufs-phy
-     then:
-       patternProperties:
-         "^phy@[0-9a-f]+$":
-@@ -209,6 +215,24 @@ allOf:
-                 - description: RX
-                 - description: PCS
- 
-+  - if:
-+      properties:
-+        compatible:
-+          contains:
-+            enum:
-+              - qcom,sm8550-qmp-ufs-phy
-+    then:
-+      patternProperties:
-+        "^phy@[0-9a-f]+$":
-+          properties:
-+            vdda-phy-max-microamp:
-+              description:
-+                Specifies max. load that can be drawn from VDDA PHY supply.
-+
-+            vdda-pll-max-microamp:
-+              description:
-+                Specifies max. load that can be drawn from VDDA PLL supply.
-+
- examples:
-   - |
-     #include <dt-bindings/clock/qcom,gcc-sm8250.h>
+
+Abel Vesa (9):
+  phy: qcom-qmp: qserdes-com: Add v6 register offsets
+  dt-bindings: phy: Add QMP UFS PHY comptible for SM8550
+  phy: qcom-qmp-ufs: Add SM8550 support
+  dt-bindings: phy: qcom,qmp-usb: Document SM8550 compatible
+  phy: qualcomm: qmp-usb: Add support for SM8550
+  dt-bindings: phy: qcom,qmp-pcie: Document SM8550 compatible
+  phy: qualcomm: qmp-pcie: Add support for SM8550 g3x2 and g4x2 PCIEs
+  dt-bindings: phy: Add qcom,snps-eusb2-phy schema file
+  phy: qualcomm: Add QCOM SNPS eUSB2 driver
+
+Neil Armstrong (1):
+  phy: qualcomm: phy-qcom-snps-eusb2: Add support for eUSB2 repeater
+
+ .../phy/qcom,ipq8074-qmp-pcie-phy.yaml        |  38 +-
+ .../phy/qcom,msm8996-qmp-ufs-phy.yaml         |  24 +
+ .../phy/qcom,msm8996-qmp-usb3-phy.yaml        |   1 +
+ .../bindings/phy/qcom,snps-eusb2-phy.yaml     |  84 ++++
+ drivers/phy/qualcomm/Kconfig                  |   9 +
+ drivers/phy/qualcomm/Makefile                 |   1 +
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c      | 354 +++++++++++++
+ .../phy/qualcomm/phy-qcom-qmp-pcs-pcie-v6.h   |  15 +
+ .../qualcomm/phy-qcom-qmp-pcs-pcie-v6_20.h    |  23 +
+ .../phy/qualcomm/phy-qcom-qmp-pcs-ufs-v6.h    |  31 ++
+ .../phy/qualcomm/phy-qcom-qmp-pcs-usb-v6.h    |  31 ++
+ drivers/phy/qualcomm/phy-qcom-qmp-pcs-v6.h    |  16 +
+ drivers/phy/qualcomm/phy-qcom-qmp-pcs-v6_20.h |  18 +
+ .../qualcomm/phy-qcom-qmp-qserdes-com-v6.h    |  75 +++
+ .../phy-qcom-qmp-qserdes-ln-shrd-v6.h         |  32 ++
+ .../phy-qcom-qmp-qserdes-txrx-ufs-v6.h        |  30 ++
+ .../qualcomm/phy-qcom-qmp-qserdes-txrx-v6.h   |  68 +++
+ .../phy-qcom-qmp-qserdes-txrx-v6_20.h         |  45 ++
+ drivers/phy/qualcomm/phy-qcom-qmp-ufs.c       |  91 ++++
+ drivers/phy/qualcomm/phy-qcom-qmp-usb.c       | 171 +++++++
+ drivers/phy/qualcomm/phy-qcom-qmp.h           |  13 +
+ drivers/phy/qualcomm/phy-qcom-snps-eusb2.c    | 467 ++++++++++++++++++
+ 22 files changed, 1634 insertions(+), 3 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/phy/qcom,snps-eusb2-phy.yaml
+ create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v6.h
+ create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v6_20.h
+ create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-pcs-ufs-v6.h
+ create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-pcs-usb-v6.h
+ create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-pcs-v6.h
+ create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-pcs-v6_20.h
+ create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-qserdes-com-v6.h
+ create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-qserdes-ln-shrd-v6.h
+ create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-ufs-v6.h
+ create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-v6.h
+ create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-v6_20.h
+ create mode 100644 drivers/phy/qualcomm/phy-qcom-snps-eusb2.c
+
 -- 
 2.34.1
 
