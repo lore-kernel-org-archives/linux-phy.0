@@ -4,85 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AE499C43217
-	for <linux-phy@archiver.kernel.org>; Wed, 16 Nov 2022 16:30:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 68416C4332F
+	for <linux-phy@archiver.kernel.org>; Wed, 16 Nov 2022 17:31:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NlL6ZvHfQwi1DsyG39SW0jDdrwHylykI6bs5a6eW804=; b=rX7NC9GtX4Bmd4
-	iPDFdEdypEAq4hOTBOh1I2SsO9hMmWG1sPwE89SlE+lktzEpszdRBJ5SXLtaNzXqhdx7ucTEBNNZ2
-	f0+pyoooKIHhtAkTSQ2cKKvw0w0MRPsWgVkQsAtrNLvK2xBAK8aKcajlHobq63RZn+L66JmkgYdzl
-	DNB1/hsio0Fc6Jqs53Pq1APOPYnXFeauUaXW+8uIY5PQho5S5qMZfNnzL1sVtxzWZp/Bg/EPkqr3Y
-	/LuR0SoUyZJJlLwgShCYBVja2FHMHB/v2wCHIL2jNJw3FTvJmSvGOVtEXcGS2EtSc4dnO1oHqN57K
-	a1Zf99spgV6Jk4jf0w4g==;
+	List-Owner; bh=GWCT04v+UTS8txcujussV9gblWIaQ68xdAN7BY+/a+k=; b=nCYsrFekyCbAR1
+	fpK5xCYcaGDGfhxC2HUZHgTm7d+lhaxBge/rrRpqUtouXsyO5+vCknZXKIXAiy1/5ZaJ3v3PCic7o
+	9m0LnESeOvgIlbrCcwqK+LepvjbL4bIocLVegIZPs+3+61oO+MG9JX/F6LlpDCUHAos1ZMBnJNlHN
+	lz5N5lFMjTVqvnccPaO8eEiP+bK1h/SwJR/o9+RSALHjovEcOQNsfMd4FDmXGJCPHgYLaLcJlqqWx
+	5Dw9AWEKOuT2s6K7V6pJIyPKZmuiKQeJxiLP45nDjl3NAIOQpYSuvUsn1mwfxznUu8zil0jGR+Izk
+	wOuT34dTV1UWNQNMpciw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ovLJP-005sZw-2e; Wed, 16 Nov 2022 16:30:55 +0000
-Received: from mail-lj1-x22a.google.com ([2a00:1450:4864:20::22a])
+	id 1ovMG2-006Rhc-P3; Wed, 16 Nov 2022 17:31:30 +0000
+Received: from mail-oi1-f173.google.com ([209.85.167.173])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ovKEh-0059ah-C4
-	for linux-phy@lists.infradead.org; Wed, 16 Nov 2022 15:22:01 +0000
-Received: by mail-lj1-x22a.google.com with SMTP id u11so22168623ljk.6
-        for <linux-phy@lists.infradead.org>; Wed, 16 Nov 2022 07:21:56 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=4hyX3SOmdhZkf4G5iVnyyDhT1r2OXQYrZj5d/iATSVs=;
-        b=soelfGRwwyZEyt+ov+wYiQU4I/2pIW1PXpqo77jn/XCKLaXW+e0aKxMNUegxuZBRpx
-         wbgZsOWiO1LyDn3UUzAA74lCnWLkqaaGYre1CP07CERjnZUdlILnl4MMCvfGcYxWYbZL
-         merR+yr+5T7bWK7gbsJxGuQna1Rb5oMbgru8ObPHC2ESFqE0MYb2Qish7SMaJhRu2Mpf
-         ERWLixTO+f4+YlHt1qnkkaX8QrxCYoe8PpdObt5mqWrsmDSPBu4P2y5iUbPyqEEndoBC
-         VuuvPC9DvXNVNIAto+ki+O/YNsVdSeak7xxYzYKjn20TWNh0X9FB1YcOTAhANkrJGw2H
-         2oog==
+	id 1ovLEP-005q9w-2i; Wed, 16 Nov 2022 16:25:46 +0000
+Received: by mail-oi1-f173.google.com with SMTP id b124so19064256oia.4;
+        Wed, 16 Nov 2022 08:25:43 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=4hyX3SOmdhZkf4G5iVnyyDhT1r2OXQYrZj5d/iATSVs=;
-        b=WIk9uoQQYLrGAHslZP88hyEiX1lwmm8375Lbj7/GSfBlq8Une2z3LFG/z9OSxWpzY2
-         g7Dztlqx1J7/R7CSzEto63rDMoyGF/dBZv88a9/1uyDWOWMsImfS5KAKlDzAl0pRL7y6
-         R8qVYM/AuT8byVctCcSW8p1XcVOAGYKkclPScTNuIbaHN1n4dSG1nMtKiugqIBeuZTFd
-         Qo3dmxEJdiuizEeF29e2Wz5iXExU8DfwbvxHfF9pXtSjBEs3vOKPYaUPdKCkMHzFnbBL
-         VRdaA1pCkbFQdBQpf0FSG+20hqueIA3rok0g1NBSvPS+p3Xfu+YIJ51gDlcMxo6J18Mw
-         xIHw==
-X-Gm-Message-State: ANoB5pmYjfx7b9RdIL0Z/MBeU/aQE9sUfIliJDdBTp/GLbzYlFcBWfcs
-	1E5ct99B5gzn+3lnWkkXh0FU0g==
-X-Google-Smtp-Source: AA0mqf7eBPZsx75iWgNI31G3IMkd8p9EZfm72Rcb0mEbFlHRRLNmGoT1rQD7Cips6s1u1sAjJjOIrg==
-X-Received: by 2002:a05:651c:98c:b0:277:81ff:b8c4 with SMTP id b12-20020a05651c098c00b0027781ffb8c4mr7428478ljq.260.1668612115113;
-        Wed, 16 Nov 2022 07:21:55 -0800 (PST)
-Received: from [10.10.15.130] ([192.130.178.91])
-        by smtp.gmail.com with ESMTPSA id k11-20020a05651210cb00b004a1e592837esm2649900lfg.140.2022.11.16.07.21.54
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 16 Nov 2022 07:21:54 -0800 (PST)
-Message-ID: <a839e03c-33d5-59ba-8623-cbafccc8b0b8@linaro.org>
-Date: Wed, 16 Nov 2022 18:21:54 +0300
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=59o3Mlg3Bt4WsmBYPeaPa7JMIRGNco3k9zIgaMmG37k=;
+        b=wN/uNuN5JyR8bwmN/mR836ULy5LqIAR6I7NBDrGVEmD8Om0nDj2iA81Vlc3XK/GQYv
+         EV8WIiLG6bvqP29HTrOlzEnzS/1NoGtZnflVSsqvoMS85rudoDtE/ilOj+Dri4ufycuQ
+         iD+9UdNeYbxCG2RQ/DT8LIL8RkNfSyGIaMhFMui9/vzOvllobP0cDZuSo+2G8qObK/kQ
+         wm+Jf6E6SoIB0ASKccDrKGVQkvfNALgFT/T3jmBCobdQB4NcxkfnGU+xodqq8RXlOVr7
+         EO6ciiIiu8xgmdW1iSdWIrohXGWrPcGeDp2msD1DBTQty0WRx/mp79CGam5Hv6fQlXOA
+         poBA==
+X-Gm-Message-State: ANoB5pk1asNv5alB2wPIep1aW4f9kSp20i13VXq0N2Un/RnVrF8OTYAf
+	DG7u6KQXR8DjnkfAYo3P/A==
+X-Google-Smtp-Source: AA0mqf4IlcgAmzvLCHRHAVt7/LkJvqiP7OkXi3KiD6BfWcE1SyNP3xSxg6GNLTLHKGjFi1iLqbQAow==
+X-Received: by 2002:a05:6808:18a8:b0:35a:79fd:fc8b with SMTP id bi40-20020a05680818a800b0035a79fdfc8bmr2040722oib.231.1668615942969;
+        Wed, 16 Nov 2022 08:25:42 -0800 (PST)
+Received: from robh_at_kernel.org (66-90-144-107.dyn.grandenetworks.net. [66.90.144.107])
+        by smtp.gmail.com with ESMTPSA id u38-20020a05687100a600b00141e56210b2sm3750550oaa.57.2022.11.16.08.25.41
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 16 Nov 2022 08:25:42 -0800 (PST)
+Received: (nullmailer pid 195051 invoked by uid 1000);
+	Wed, 16 Nov 2022 16:25:44 -0000
+Date: Wed, 16 Nov 2022 10:25:44 -0600
+From: Rob Herring <robh@kernel.org>
+To: Sandor Yu <Sandor.yu@nxp.com>
+Cc: dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, andrzej.hajda@intel.com, neil.armstrong@linaro.org, robert.foss@linaro.org, Laurent.pinchart@ideasonboard.com, jonas@kwiboo.se, jernej.skrabec@gmail.com, vkoul@kernel.org, krzysztof.kozlowski+dt@linaro.org, shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de, linux-imx@nxp.com, tzimmermann@suse.de, lyude@redhat.com, javierm@redhat.com, ville.syrjala@linux.intel.com, sam@ravnborg.org, jani.nikula@intel.com, maxime@cerno.tech, penguin-kernel@i-love.sakura.ne.jp, oliver.brown@nxp.com
+Subject: Re: [PATCH v3 02/10] dt-bindings: display: bridge: Add MHDP HDMI for
+ i.MX8MQ
+Message-ID: <20221116162544.GA193163-robh@kernel.org>
+References: <cover.1667911321.git.Sandor.yu@nxp.com>
+ <9ccf53cad7f735f985f4ca37b3b0159ef78a2103.1667911321.git.Sandor.yu@nxp.com>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.4.1
-Subject: Re: [PATCH v7 2/4] phy: qcom-qmp-ufs: provide symbol clocks
-Content-Language: en-GB
-To: Johan Hovold <johan@kernel.org>
-Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konrad.dybcio@somainline.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring
- <robh+dt@kernel.org>, Krzysztof Kozlowski
- <krzysztof.kozlowski+dt@linaro.org>, Philipp Zabel <p.zabel@pengutronix.de>,
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org
-References: <20221110151748.795767-1-dmitry.baryshkov@linaro.org>
- <20221110151748.795767-3-dmitry.baryshkov@linaro.org>
- <Y3T+rj1hACqSBrC4@hovoldconsulting.com>
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-In-Reply-To: <Y3T+rj1hACqSBrC4@hovoldconsulting.com>
+Content-Disposition: inline
+In-Reply-To: <9ccf53cad7f735f985f4ca37b3b0159ef78a2103.1667911321.git.Sandor.yu@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221116_072159_485580_1BB20539 
-X-CRM114-Status: GOOD (  24.35  )
+X-CRM114-CacheID: sfid-20221116_082545_142428_59E8D6F4 
+X-CRM114-Status: GOOD (  15.75  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,136 +75,92 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 16/11/2022 18:15, Johan Hovold wrote:
-> On Thu, Nov 10, 2022 at 06:17:46PM +0300, Dmitry Baryshkov wrote:
->> Register three UFS symbol clocks (ufs_rx_symbol_0_clk_src,
->> ufs_rx_symbol_1_clk_src ufs_tx_symbol_0_clk_src). Register OF clock
->> provider to let other devices link these clocks through the DT.
->>
->> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
->> ---
+On Tue, Nov 08, 2022 at 09:00:05PM +0800, Sandor Yu wrote:
+> Add bindings for i.MX8MQ MHDP HDMI.
 > 
-> I was not CCed on this revision of this series either.
+> Signed-off-by: Sandor Yu <Sandor.yu@nxp.com>
+> ---
+>  .../display/bridge/cdns,mhdp-imx8mq-hdmi.yaml | 59 +++++++++++++++++++
+>  1 file changed, 59 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/display/bridge/cdns,mhdp-imx8mq-hdmi.yaml
 > 
->>   drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 64 +++++++++++++++++++++++++
->>   1 file changed, 64 insertions(+)
->>
->> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
->> index 189103d1bd18..78d7daf34667 100644
->> --- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
->> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
->> @@ -1023,6 +1023,66 @@ static int qmp_ufs_clk_init(struct qmp_ufs *qmp)
->>   	return devm_clk_bulk_get(dev, num, qmp->clks);
->>   }
->>   
->> +static void phy_clk_release_provider(void *res)
->> +{
->> +	of_clk_del_provider(res);
->> +}
->> +
->> +#define UFS_SYMBOL_CLOCKS 3
->> +
->> +static int phy_symbols_clk_register(struct qmp_ufs *qmp, struct device_node *np)
-> 
-> Since you're adding a new function, please use the common prefix and
-> reordering the terms and dropping the redundant "symbols" should make it
-> more readable:
-> 
-> 	qmp_ufs_register_clocks()
-> 
->> +{
->> +	struct clk_hw_onecell_data *clk_data;
->> +	struct clk_hw *hw;
->> +	char name[64];
->> +	int ret;
->> +
->> +	clk_data = devm_kzalloc(qmp->dev,
->> +				struct_size(clk_data, hws, UFS_SYMBOL_CLOCKS),
->> +				GFP_KERNEL);
->> +	if (!clk_data)
->> +		return -ENOMEM;
->> +
->> +	clk_data->num = UFS_SYMBOL_CLOCKS;
->> +
->> +	snprintf(name, sizeof(name), "%s::rx_symbol_0", dev_name(qmp->dev));
->> +	hw = devm_clk_hw_register_fixed_rate(qmp->dev, name, NULL, 0, 0);
->> +	if (IS_ERR(hw))
->> +		return PTR_ERR(hw);
->> +
->> +	clk_data->hws[0] = hw;
->> +
->> +	snprintf(name, sizeof(name), "%s::rx_symbol_1", dev_name(qmp->dev));
->> +	hw = devm_clk_hw_register_fixed_rate(qmp->dev, name, NULL, 0, 0);
->> +	if (IS_ERR(hw))
->> +		return PTR_ERR(hw);
->> +
->> +	clk_data->hws[1] = hw;
->> +
->> +	snprintf(name, sizeof(name), "%s::tx_symbol_0", dev_name(qmp->dev));
->> +	hw = devm_clk_hw_register_fixed_rate(qmp->dev, name, NULL, 0, 0);
->> +	if (IS_ERR(hw))
->> +		return PTR_ERR(hw);
->> +
->> +	clk_data->hws[2] = hw;
->> +
->> +	ret = of_clk_add_hw_provider(np, of_clk_hw_onecell_get, clk_data);
->> +	if (ret)
->> +		return ret;
->> +
->> +	/*
->> +	 * Roll a devm action because the clock provider is the child node, but
->> +	 * the child node is not actually a device.
->> +	 */
-> 
-> I know you just copied this from one of the other drivers, but perhaps
-> rephrase as "can be a child node". You can just drop the second clause
-> (no node *is* a device).
+> diff --git a/Documentation/devicetree/bindings/display/bridge/cdns,mhdp-imx8mq-hdmi.yaml b/Documentation/devicetree/bindings/display/bridge/cdns,mhdp-imx8mq-hdmi.yaml
+> new file mode 100644
+> index 000000000000..8c0afef157aa
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/display/bridge/cdns,mhdp-imx8mq-hdmi.yaml
+> @@ -0,0 +1,59 @@
+> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/display/bridge/cdns,mhdp-imx8mq-hdmi.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Cadence MHDP HDMI bridge
+> +
+> +maintainers:
+> +  - Sandor Yu <Sandor.yu@nxp.com>
+> +
+> +description:
+> +  The Cadence MHDP TX HDMI interface.
+> +
+> +properties:
+> +  compatible:
+> +    enum:
+> +      - cdns,mhdp-imx8mq-hdmi
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  phys:
+> +    maxItems: 1
+> +
+> +  interrupts:
+> +    items:
+> +      - description: Hotplug detect interrupter for cable plugin event.
+> +      - description: Hotplug detect interrupter for cable plugout event.
+> +
+> +  interrupt-names:
+> +    items:
+> +      - const: plug_in
+> +      - const: plug_out
+> +
+> +  port:
+> +    $ref: /schemas/graph.yaml#/properties/port
+> +    description:
+> +      A port node pointing to the output port of a display controller.
 
-Ack, thanks for the suggestion.
+You also need an output port to an HDMI connector node.
 
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+> +    mhdp_hdmi: hdmi-bridge@32c00000 {
+> +        compatible = "cdns,mhdp-imx8mq-hdmi";
+> +        reg = <0x32c00000 0x100000>;
+> +        interrupts = <GIC_SPI 16 IRQ_TYPE_LEVEL_HIGH>,
+> +                <GIC_SPI 25 IRQ_TYPE_LEVEL_HIGH>;
+> +        interrupt-names = "plug_in", "plug_out";
+> +        phys = <&hdmi_phy>;
+> +
+> +        port {
+> +            mhdp_in: endpoint {
+> +                remote-endpoint = <&dcss_out>;
+> +            };
+> +        };
+> +    };
+> -- 
+> 2.34.1
 > 
->> +	return devm_add_action_or_reset(qmp->dev, phy_clk_release_provider, np);
->> +}
->> +
->> +static const struct phy_ops qcom_qmp_ufs_ops = {
->> +	.power_on	= qmp_ufs_enable,
->> +	.power_off	= qmp_ufs_disable,
->> +	.owner		= THIS_MODULE,
->> +};
 > 
-> As I've already pointed out once, the above phy_ops struct hunk does not
-> belong in this patch and is just some left over after you rebased on
-> phy-next that must be removed.
-
-Oops. I'll fix this during the next respin.
-
-> 
->>   static int qmp_ufs_parse_dt_legacy(struct qmp_ufs *qmp, struct device_node *np)
->>   {
->>   	struct platform_device *pdev = to_platform_device(qmp->dev);
->> @@ -1135,6 +1195,10 @@ static int qmp_ufs_probe(struct platform_device *pdev)
->>   	if (ret)
->>   		goto err_node_put;
->>   
->> +	ret = phy_symbols_clk_register(qmp, np);
->> +	if (ret)
->> +		goto err_node_put;
->> +
->>   	qmp->phy = devm_phy_create(dev, np, &qcom_qmp_ufs_phy_ops);
->>   	if (IS_ERR(qmp->phy)) {
->>   		ret = PTR_ERR(qmp->phy);
-> 
-> Johan
-
--- 
-With best wishes
-Dmitry
-
 
 -- 
 linux-phy mailing list
