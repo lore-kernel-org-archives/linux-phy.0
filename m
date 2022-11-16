@@ -4,75 +4,55 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6834EC43217
-	for <linux-phy@archiver.kernel.org>; Wed, 16 Nov 2022 14:27:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0C01DC4332F
+	for <linux-phy@archiver.kernel.org>; Wed, 16 Nov 2022 15:16:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Wc/I1L9+Pjz5gc5Du76Kzv5nfUXu8nvFqCVq0bh500M=; b=Vfjx+TrDR3RowK
-	+Pqx7pcGuyiKPTyvo+BBXIhm5u5OCthiPfl57xnbjHJ5Y7G71ZcdxrV9/NC0HynDl2mD9EFId3Bc7
-	surKneN/riA0zDfRbJbVEKWpuIvtWQmQdpc4io5uvncZojIylfrc2ytHCUTkcSYetWs6/utMiBiph
-	Lh3wy2Bz3DJr3hxmFrYIWxYoh7ql1dMiK/ew8m/Q+TsBLy0LbCCG2NPU24QmTo18JSTTwQWnJp+QX
-	e44bhSw+1QcRNQ/9p8Y1WWbqs7gN12+/WfeQV7wd/LvJKGlunJuxOErHRfCFl6m8XrwX1et4EZy2i
-	bFpMkXYrkKC9RTWPUb8Q==;
+	List-Owner; bh=+GTyUFyFTwkSI/gnrZI5f4ByKg1koFFsS+2GNoviidI=; b=ICujRVfxh1Dmi+
+	kLWnuBHenNl1q4qDzXsNMvTG+Q1DIDmDL/JbWh9sDAMgr/dUUcwGJmqU9q+dMvOoFN3Er09O5lEiN
+	6O2bJkWOjHBfyPc7RyaiT/KvSuy7fJfTodYoLtlMDvCopY2GRYncroi9ZKtQehye4W4e2jcLeWDHu
+	sSfzEy9ejZ7QXYJ9sRXiY5Mzmo3+Mt+Q+3KQ6SghrLb8KR5YT6rc+5r2dJoS/I2EB1H3IXAeFQdLo
+	wJleYfRTy2rZI1kpJ9D3UChZcb5/9es5DM1qbQjzW+R7hF59CwAB6D70UmQZhacnTE5Xpwxzi9yNx
+	vCYE3Z6TyqGPjREG9nvw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ovJNg-004Yf9-Sd; Wed, 16 Nov 2022 14:27:12 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
-	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ovJNd-004Yco-Pm
-	for linux-phy@lists.infradead.org; Wed, 16 Nov 2022 14:27:11 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 2ECD461E37;
-	Wed, 16 Nov 2022 14:27:06 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E5C3EC433C1;
-	Wed, 16 Nov 2022 14:27:05 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1668608826;
-	bh=ahD/4zXE9e7nQQFpuuGPjNGZrn9Bn9hkwL74eBJbe6E=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=awj+6z41L1DfkGwzD4PaNsEiwuZfb+t8R/qG3aZnN0T6WrOsKuGBYvcdv3MFnY8TJ
-	 sMFb6ZSe3HKal8nvKxDy3qshp+B3QzMSeJQSwzhaUZqdUnoHrKSBBFqivM3hQuiIjW
-	 qam7sO/VH+Y1+eo8s80gTJOykJ60EcBp82vdJ9pmJQXePAhvasf/KLV+j0lf6Fd4zZ
-	 TzZKCZ7H8HZZuLkH+LVE82OWp3qCXG3Pky7rqENj9lTOMtxCYrNwJkPx/BxBRmgxpC
-	 /uMARJaiMXTWm6YL6PWJ3jJUBlqoecwVkhWFmA20PNTf0kq70/SUfgY1bF2joN5jWA
-	 ZJ+fQCfA/NaXg==
-Received: from johan by xi.lan with local (Exim 4.94.2)
-	(envelope-from <johan@kernel.org>)
-	id 1ovJN5-00038I-Hs; Wed, 16 Nov 2022 15:26:36 +0100
-Date: Wed, 16 Nov 2022 15:26:35 +0100
-From: Johan Hovold <johan@kernel.org>
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@somainline.org>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Jingoo Han <jingoohan1@gmail.com>,
-	Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
-	Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
-	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
-	Bjorn Helgaas <bhelgaas@google.com>, Vinod Koul <vkoul@kernel.org>,
+	id 1ovK9c-0054kU-Bu; Wed, 16 Nov 2022 15:16:44 +0000
+Received: from foss.arm.com ([217.140.110.172])
+	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
+	id 1ovK9J-0054av-Mb; Wed, 16 Nov 2022 15:16:28 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+	by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 58A68152B;
+	Wed, 16 Nov 2022 07:16:27 -0800 (PST)
+Received: from donnerap.arm.com (donnerap.cambridge.arm.com [10.1.197.42])
+	by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 74EDB3FA9C;
+	Wed, 16 Nov 2022 07:16:17 -0800 (PST)
+From: Andre Przywara <andre.przywara@arm.com>
+To: Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org
-Subject: Re: [PATCH v2 7/8] arm64: dts: qcom: sm8350: add PCIe devices
-Message-ID: <Y3TzG4HGsFSU3sky@hovoldconsulting.com>
-References: <20221110103345.729018-1-dmitry.baryshkov@linaro.org>
- <20221110103345.729018-8-dmitry.baryshkov@linaro.org>
- <Y2zYHEZDbNoGumTl@hovoldconsulting.com>
- <37fe9a22-7ca0-e4e5-ebff-4eb56dbb74eb@linaro.org>
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
+Cc: Chen-Yu Tsai <wens@csie.org>,
+	Jernej Skrabec <jernej.skrabec@gmail.com>,
+	Samuel Holland <samuel@sholland.org>,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-sunxi@lists.linux.dev,
+	Icenowy Zheng <uwu@icenowy.me>
+Subject: [PATCH v4 2/3] phy: sun4i-usb: add support for the USB PHY on F1C100s SoC
+Date: Wed, 16 Nov 2022 15:16:02 +0000
+Message-Id: <20221116151603.819533-3-andre.przywara@arm.com>
+X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20221116151603.819533-1-andre.przywara@arm.com>
+References: <20221116151603.819533-1-andre.przywara@arm.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <37fe9a22-7ca0-e4e5-ebff-4eb56dbb74eb@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221116_062709_974414_F7158B90 
-X-CRM114-Status: GOOD (  19.49  )
+X-CRM114-CacheID: sfid-20221116_071626_194634_13AA3418 
+X-CRM114-Status: GOOD (  11.68  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,58 +69,50 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Nov 10, 2022 at 05:20:11PM +0300, Dmitry Baryshkov wrote:
-> On 10/11/2022 13:53, Johan Hovold wrote:
-> > On Thu, Nov 10, 2022 at 01:33:44PM +0300, Dmitry Baryshkov wrote:
-> >> Add PCIe0 and PCIe1 (and corresponding PHY) devices found on SM8350
-> >> platform. The PCIe0 is a 1-lane Gen3 host, PCIe1 is a 2-lane Gen3 host.
-> >>
-> >> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-> >> ---
-> >>   arch/arm64/boot/dts/qcom/sm8350.dtsi | 246 ++++++++++++++++++++++++++-
-> >>   1 file changed, 244 insertions(+), 2 deletions(-)
-> > 
-> >> @@ -1761,6 +1957,52 @@ tlmm: pinctrl@f100000 {
-> >>   			gpio-ranges = <&tlmm 0 0 204>;
-> >>   			wakeup-parent = <&pdc>;
-> >>   
-> >> +			pcie0_default_state: pcie0-default-state {
-> >> +				perst-pins {
-> >> +					pins = "gpio94";
-> >> +					function = "gpio";
-> >> +					drive-strength = <2>;
-> >> +					bias-pull-down;
-> >> +				};
-> >> +
-> >> +				clkreq-pins {
-> >> +					pins = "gpio95";
-> >> +					function = "pcie0_clkreqn";
-> >> +					drive-strength = <2>;
-> >> +					bias-pull-up;
-> >> +				};
-> >> +
-> >> +				wake-pins {
-> >> +					pins = "gpio96";
-> >> +					function = "gpio";
-> >> +					drive-strength = <2>;
-> >> +					bias-pull-up;
-> >> +				};
-> >> +			};
-> > 
-> > The pinconfig should go in the board file.
-> 
-> Usually yes. However for the PCIe we usually put them into the main 
-> .dtsi. See sm8[124]50.dtsi.
+From: Icenowy Zheng <uwu@icenowy.me>
 
-Yeah, I noticed that too and had this discussion with Bjorn for
-sc8280xp some months ago. Even if you may save a few lines by providing
-defaults in a dtsi, the pin configuration is board specific and belongs
-in the dts.
+The F1C100s SoC has one USB OTG port connected to a MUSB controller.
 
-Also note that 'perst' and 'wake' above could in principle be connected
-to other GPIOs on different boards.
+Add support for its USB PHY.
 
-Johan
+Signed-off-by: Icenowy Zheng <uwu@icenowy.me>
+Acked-by: Jernej Skrabec <jernej.skrabec@gmail.com>
+Signed-off-by: Andre Przywara <andre.przywara@arm.com>
+---
+ drivers/phy/allwinner/phy-sun4i-usb.c | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
+
+diff --git a/drivers/phy/allwinner/phy-sun4i-usb.c b/drivers/phy/allwinner/phy-sun4i-usb.c
+index 5472db9e87ef8..d9beacc3f8c22 100644
+--- a/drivers/phy/allwinner/phy-sun4i-usb.c
++++ b/drivers/phy/allwinner/phy-sun4i-usb.c
+@@ -918,6 +918,14 @@ static int sun4i_usb_phy_probe(struct platform_device *pdev)
+ 	return 0;
+ }
+ 
++static const struct sun4i_usb_phy_cfg suniv_f1c100s_cfg = {
++	.num_phys = 1,
++	.type = sun4i_a10_phy,
++	.disc_thresh = 3,
++	.phyctl_offset = REG_PHYCTL_A10,
++	.dedicated_clocks = true,
++};
++
+ static const struct sun4i_usb_phy_cfg sun4i_a10_cfg = {
+ 	.num_phys = 3,
+ 	.type = sun4i_a10_phy,
+@@ -1059,6 +1067,8 @@ static const struct of_device_id sun4i_usb_phy_of_match[] = {
+ 	  .data = &sun50i_a64_cfg},
+ 	{ .compatible = "allwinner,sun50i-h6-usb-phy", .data = &sun50i_h6_cfg },
+ 	{ .compatible = "allwinner,sun50i-h616-usb-phy", .data = &sun50i_h616_cfg },
++	{ .compatible = "allwinner,suniv-f1c100s-usb-phy",
++	  .data = &suniv_f1c100s_cfg },
+ 	{ },
+ };
+ MODULE_DEVICE_TABLE(of, sun4i_usb_phy_of_match);
+-- 
+2.25.1
+
 
 -- 
 linux-phy mailing list
