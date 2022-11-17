@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 268F5C433FE
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7DBA7C4332F
 	for <linux-phy@archiver.kernel.org>; Thu, 17 Nov 2022 20:47:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
@@ -12,48 +12,48 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=WZE7a3lFygO3AiMU6C0ixyiZHTBP1vEdMQwy8CKkP3k=; b=01IGAB6tq00ui1Ji9gKXWcfkvN
-	BkjuKuIwFtT+P+Bch9hu3hCIrVlbTtIFxTD6qb+o2TaCoCN9u9sz5q0qRHOAVzVddFeZtaaAj8MCb
-	hR2JSh1sINzJiCsebUBUMi44DCANQLNhqGQncZBNOZXUaDN8D/y5zfnQtXgRn5+KUQ00mUZY6FBIa
-	hHK2iJngH5zY1YRA5i5kbqAE69JrU9qu7RfZ1uMsxbrwEVmbSqXLaeTEh1XoZdFdKzlIq649X1PCx
-	7q7qBkDnKLEFZfnbnzJpY3HVqmM9NkH3gZV+EmCLlzNxNM+0Gsx767UhCOnnPAr75woDWxW7OxhaF
-	PXn0eh3A==;
+	bh=LAvKc5sqrFuEYAI9VkNa9urG2VXDNpQvnxPYR4n827c=; b=wrxkaX9jkQrnQ6d4VsDM8DEN5Q
+	Li8Moen2Dt4Cfs8O8nn/s1Sa7d9GPfR3EHiZDv0ST9MefS6XpukCnj1i4USuF5RprArgDTFtcQJcw
+	jPGn3ojP1sIKpwk+y9ds4/012PCX6sdZEtiREKCrcBiiYTWH7yq0qStjKp9xZHbzq/FFrV9hIWgxV
+	fxS1PvNvdpkBNJznL0DJMCNwdE208kQBZjyWyrMfBj55OPfFJ78tuqSquHMJeqZkj41kMeI0o+Osb
+	R1zsmFpHK9a9cIHiUMJIx7d7nJwauLtnGBaMENnIhUxhvDToOVNeZdNeHyYbHjkQhzDqV7M8GEbaj
+	4RlgkmJw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ovlmt-00HSmT-FP; Thu, 17 Nov 2022 20:47:07 +0000
-Received: from mga11.intel.com ([192.55.52.93])
+	id 1ovlmt-00HSmZ-J8; Thu, 17 Nov 2022 20:47:07 +0000
+Received: from mga17.intel.com ([192.55.52.151])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ovgwy-00FPo9-Et
-	for linux-phy@lists.infradead.org; Thu, 17 Nov 2022 15:37:17 +0000
+	id 1ovhZc-00Foo8-6P
+	for linux-phy@lists.infradead.org; Thu, 17 Nov 2022 16:17:14 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1668699432; x=1700235432;
+  t=1668701828; x=1700237828;
   h=date:from:to:cc:subject:message-id:references:
    mime-version:in-reply-to;
-  bh=TDtdJbjP7mUBCgO7ym6GooTrmkrqWuHbDInoVogb18U=;
-  b=Yp7t/5ldJGB7n/bPQjx0B4XVLsK/RxXxzESBaWt9xjjIYrSbWBzT3H+/
-   /azGay3A7udz7NghaA91qzUe3r8NVEy7YjaOCM22fFdTkCHzl+a5pSB6H
-   oM6tVKkg3KopIzUVXd7H0IUh9vGiM4hsXCVZc4jmQcWUcAsyEkVDUHNuM
-   yEG3HhKsJ3yyyodO19aK6WliixS9ovv0X9hPOg9ybkXK4iRqSFJSHiCWp
-   zsVZE33EGsV8v5AgyvT7gm6e0xK7aPqpaeqaenPqaVtLJQtXmjwqAWpup
-   IsgeMot/oJZppcxH8wUXuoKRxZSeRqwey80JtYoC4lJQq/mTdHFiT2fdW
+  bh=8undL7KzKAl0UxD6cZWukGzq+7QBXO4GCGPZGhTCm4k=;
+  b=HBrhViC8Z63jdhegytjb9vSFa1Z2BZCzXOvwQGJ97rqUDsTarn5SWq8j
+   +LnxK0+qRpd/bWnYxiStDOSdW47jUW1Pvw4+OIIdp42pT2rLrZT2xKfy/
+   GhxkWLzGpjQc7EBt0CQy1Dj2bkGJ3nqEGtDGSlW0WzwP5B2nh4HIr4Qs1
+   6/pfkuklVCCRom6ESIeKtfSoFFBx/FhObu+XvJqHZB8RvasuUCqtEwBzp
+   kPmm8gBAqDKEbAD5MINOChKQdbyP8KLXUWObCqbRi+gVDPmdPt8ca9Ir8
+   P6N5nQL9tFFG7XZFaIp3XpbI81f86b5gINYTABP8R1TFwO0mzgBlcLgPa
    Q==;
-X-IronPort-AV: E=McAfee;i="6500,9779,10534"; a="310511552"
+X-IronPort-AV: E=McAfee;i="6500,9779,10534"; a="293289831"
 X-IronPort-AV: E=Sophos;i="5.96,171,1665471600"; 
-   d="scan'208";a="310511552"
-Received: from orsmga004.jf.intel.com ([10.7.209.38])
-  by fmsmga102.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 17 Nov 2022 07:37:05 -0800
+   d="scan'208";a="293289831"
+Received: from orsmga003.jf.intel.com ([10.7.209.27])
+  by fmsmga107.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 17 Nov 2022 08:17:07 -0800
 X-ExtLoop1: 1
-X-IronPort-AV: E=McAfee;i="6500,9779,10534"; a="764801674"
+X-IronPort-AV: E=McAfee;i="6500,9779,10534"; a="590673587"
 X-IronPort-AV: E=Sophos;i="5.96,171,1665471600"; 
-   d="scan'208";a="764801674"
+   d="scan'208";a="590673587"
 Received: from lkp-server01.sh.intel.com (HELO 55744f5052f8) ([10.239.97.150])
-  by orsmga004.jf.intel.com with ESMTP; 17 Nov 2022 07:37:00 -0800
+  by orsmga003.jf.intel.com with ESMTP; 17 Nov 2022 08:17:02 -0800
 Received: from kbuild by 55744f5052f8 with local (Exim 4.96)
 	(envelope-from <lkp@intel.com>)
-	id 1ovgwl-0000Q7-2c;
-	Thu, 17 Nov 2022 15:36:59 +0000
-Date: Thu, 17 Nov 2022 23:36:35 +0800
+	id 1ovhZV-0000Rf-2S;
+	Thu, 17 Nov 2022 16:17:01 +0000
+Date: Fri, 18 Nov 2022 00:17:00 +0800
 From: kernel test robot <lkp@intel.com>
 To: Abel Vesa <abel.vesa@linaro.org>, Andy Gross <agross@kernel.org>,
 	Bjorn Andersson <andersson@kernel.org>,
@@ -66,13 +66,13 @@ Cc: llvm@lists.linux.dev, oe-kbuild-all@lists.linux.dev,
 	Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
 	devicetree@vger.kernel.org, linux-arm-msm@vger.kernel.org,
 	linux-phy@lists.infradead.org
-Subject: Re: [PATCH 03/10] phy: qcom-qmp-ufs: Add SM8550 support
-Message-ID: <202211172343.7oHsunQL-lkp@intel.com>
-References: <20221116120157.2706810-4-abel.vesa@linaro.org>
+Subject: Re: [PATCH 05/10] phy: qualcomm: qmp-usb: Add support for SM8550
+Message-ID: <202211180049.Ny6Gb2Vw-lkp@intel.com>
+References: <20221116120157.2706810-6-abel.vesa@linaro.org>
 MIME-Version: 1.0
-Content-Type: multipart/mixed; boundary="BIHcbi/gsYv/6zkp"
+Content-Type: multipart/mixed; boundary="p8OxTLzsKhQe7b65"
 Content-Disposition: inline
-In-Reply-To: <20221116120157.2706810-4-abel.vesa@linaro.org>
+In-Reply-To: <20221116120157.2706810-6-abel.vesa@linaro.org>
 X-Mailman-Approved-At: Thu, 17 Nov 2022 12:47:07 -0800
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -89,7 +89,7 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
---BIHcbi/gsYv/6zkp
+--p8OxTLzsKhQe7b65
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 
@@ -104,17 +104,17 @@ And when submitting patch, we suggest to use '--base' as documented in
 https://git-scm.com/docs/git-format-patch#_base_tree_information]
 
 url:    https://github.com/intel-lab-lkp/linux/commits/Abel-Vesa/phy-qualcomm-Add-support-for-SM8550/20221116-200911
-patch link:    https://lore.kernel.org/r/20221116120157.2706810-4-abel.vesa%40linaro.org
-patch subject: [PATCH 03/10] phy: qcom-qmp-ufs: Add SM8550 support
+patch link:    https://lore.kernel.org/r/20221116120157.2706810-6-abel.vesa%40linaro.org
+patch subject: [PATCH 05/10] phy: qualcomm: qmp-usb: Add support for SM8550
 config: hexagon-randconfig-r033-20221117
 compiler: clang version 16.0.0 (https://github.com/llvm/llvm-project bbe6bd724a6335e497c7edaed191d37a828d0390)
 reproduce (this is a W=1 build):
         wget https://raw.githubusercontent.com/intel/lkp-tests/master/sbin/make.cross -O ~/bin/make.cross
         chmod +x ~/bin/make.cross
-        # https://github.com/intel-lab-lkp/linux/commit/c04d61d614f07f34f61ca0bd3d7343a57d01c356
+        # https://github.com/intel-lab-lkp/linux/commit/eb1385667254498e16435a8edd51824cd384e6ec
         git remote add linux-review https://github.com/intel-lab-lkp/linux
         git fetch --no-tags linux-review Abel-Vesa/phy-qualcomm-Add-support-for-SM8550/20221116-200911
-        git checkout c04d61d614f07f34f61ca0bd3d7343a57d01c356
+        git checkout eb1385667254498e16435a8edd51824cd384e6ec
         # save the config file
         mkdir build_dir && cp config build_dir/.config
         COMPILER_INSTALL_PATH=$HOME/0day COMPILER=clang make.cross W=1 O=build_dir ARCH=hexagon SHELL=/bin/bash drivers/phy/qualcomm/
@@ -124,7 +124,7 @@ If you fix the issue, kindly add following tag where applicable
 
 All warnings (new ones prefixed by >>):
 
-   In file included from drivers/phy/qualcomm/phy-qcom-qmp-ufs.c:10:
+   In file included from drivers/phy/qualcomm/phy-qcom-qmp-usb.c:10:
    In file included from include/linux/io.h:13:
    In file included from arch/hexagon/include/asm/io.h:334:
    include/asm-generic/io.h:547:31: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
@@ -136,7 +136,7 @@ All warnings (new ones prefixed by >>):
    include/uapi/linux/byteorder/little_endian.h:37:51: note: expanded from macro '__le16_to_cpu'
    #define __le16_to_cpu(x) ((__force __u16)(__le16)(x))
                                                      ^
-   In file included from drivers/phy/qualcomm/phy-qcom-qmp-ufs.c:10:
+   In file included from drivers/phy/qualcomm/phy-qcom-qmp-usb.c:10:
    In file included from include/linux/io.h:13:
    In file included from arch/hexagon/include/asm/io.h:334:
    include/asm-generic/io.h:573:61: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
@@ -145,7 +145,7 @@ All warnings (new ones prefixed by >>):
    include/uapi/linux/byteorder/little_endian.h:35:51: note: expanded from macro '__le32_to_cpu'
    #define __le32_to_cpu(x) ((__force __u32)(__le32)(x))
                                                      ^
-   In file included from drivers/phy/qualcomm/phy-qcom-qmp-ufs.c:10:
+   In file included from drivers/phy/qualcomm/phy-qcom-qmp-usb.c:10:
    In file included from include/linux/io.h:13:
    In file included from arch/hexagon/include/asm/io.h:334:
    include/asm-generic/io.h:584:33: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
@@ -157,25 +157,27 @@ All warnings (new ones prefixed by >>):
    include/asm-generic/io.h:604:59: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
            __raw_writel((u32 __force)cpu_to_le32(value), PCI_IOBASE + addr);
                                                          ~~~~~~~~~~ ^
->> drivers/phy/qualcomm/phy-qcom-qmp-ufs.c:553:38: warning: unused variable 'sm8550_ufsphy_hs_b_serdes' [-Wunused-const-variable]
-   static const struct qmp_phy_init_tbl sm8550_ufsphy_hs_b_serdes[] = {
-                                        ^
+>> drivers/phy/qualcomm/phy-qcom-qmp-usb.c:1673:27: warning: unused variable 'qmp_v4_sm8550_clk_l' [-Wunused-const-variable]
+   static const char * const qmp_v4_sm8550_clk_l[] = {
+                             ^
    7 warnings generated.
 
 
-vim +/sm8550_ufsphy_hs_b_serdes +553 drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+vim +/qmp_v4_sm8550_clk_l +1673 drivers/phy/qualcomm/phy-qcom-qmp-usb.c
 
-   552	
- > 553	static const struct qmp_phy_init_tbl sm8550_ufsphy_hs_b_serdes[] = {
-   554		QMP_PHY_INIT_CFG(QSERDES_V3_COM_VCO_TUNE_MAP, 0x44),
-   555	};
-   556	
+  1672	
+> 1673	static const char * const qmp_v4_sm8550_clk_l[] = {
+  1674		"aux_clk", "pipe_clk", "pipe_clk_mux",
+  1675		"pipe_clk_ext_src", "ref_clk_src",
+  1676		"ref_clk", "com_aux_clk"
+  1677	};
+  1678	
 
 -- 
 0-DAY CI Kernel Test Service
 https://01.org/lkp
 
---BIHcbi/gsYv/6zkp
+--p8OxTLzsKhQe7b65
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: attachment; filename=config
 
@@ -5588,7 +5590,7 @@ CONFIG_WARN_MISSING_DOCUMENTS=y
 # CONFIG_WARN_ABI_ERRORS is not set
 # end of Kernel hacking
 
---BIHcbi/gsYv/6zkp
+--p8OxTLzsKhQe7b65
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -5599,5 +5601,5 @@ linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
 
---BIHcbi/gsYv/6zkp--
+--p8OxTLzsKhQe7b65--
 
