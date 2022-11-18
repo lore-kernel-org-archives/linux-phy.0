@@ -4,136 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C3AA9C433FE
-	for <linux-phy@archiver.kernel.org>; Fri, 18 Nov 2022 15:44:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F1F06C43219
+	for <linux-phy@archiver.kernel.org>; Fri, 18 Nov 2022 15:46:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:References:Cc:To:
-	Subject:Date:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=7i5lgzJosX5gaIlSLBgaFDI9lRrd4e5AhpSoXwUgOa4=; b=j81TzcFbTor26SqYaERp2XjbaU
-	UySJoPxRt5+5LdlZLRU+T3Y4krJnR5U7U5QPBj29lNtSv5WUgKHoxCJd41KGa5BQoV/0b2FUcfZiz
-	lgnRruSAwBrk7KHCNg5dE337dw1UaKxVxIlWxh/OlTSHJVRNvL/rcw+aORVKeKr75Zt4Y7lRZIk0n
-	MnbiV79hONDEV5P1XGMQeyL0o94PVrjcqcFwDbP4m0RCzjFzX0iH/aU98GUAna0CFjXcJmZjmuzc2
-	FIN+4ZtkwmBzK73ugpdYpS1aL3owWZB5T0wsZ/lYM3inNzS0pnScxX8cgt1d6tkiPxODZvBAICZEB
-	BsDPKvMg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:Date:From:MIME-Version
+	:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=rwYNobUmJVfECxyKg8EUBZ5IaawuIk5/6mEgZR2Hsns=; b=VfRnflrDWb0Jsn
+	7FaTrfmqBWpexfs56qqE0/iV27kA4NPQjEOX0H6OarlHg7t2MjDD9/sq/EO9meaz4kkjY+bgQW3g9
+	UO7ur8XulElpTCLDXiuTgfJaukLK07ru3tIemaEKC9jSnMBNKs576FgS9mrhkGO8BFTUyLeko7+1h
+	AYt3h9Erg0Ln4cmN5fihnooaTiI7Il4+y75w7z1xCxY/pwMXvPaWxgJIVcKRtjJXLirAQ5lLMjlNJ
+	kn6kkh2tGFmiA8C56sRKtNJuDo5xHeZcCAOdRwgg+F2yhCIaNrs+r7kqeG3+WL86jaq9XEbLZsAZI
+	qwRVA7jsaaQvercnGtuQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ow3Xa-0051Bv-3m; Fri, 18 Nov 2022 15:44:30 +0000
-Received: from mail-bn8nam11on20600.outbound.protection.outlook.com ([2a01:111:f400:7eae::600] helo=NAM11-BN8-obe.outbound.protection.outlook.com)
+	id 1ow3ZP-0052A3-Dh; Fri, 18 Nov 2022 15:46:23 +0000
+Received: from mail-wr1-x42e.google.com ([2a00:1450:4864:20::42e])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ow3XY-00519d-4F
-	for linux-phy@lists.infradead.org; Fri, 18 Nov 2022 15:44:29 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=enOgP1kDR8cR/WqgZJ5ptOLKg3NW6gMoxzO0+57yA/KgYFONEqbkzb7F95E28Krcx/tmGj+OZLkYxa6++Ytwln++TjVDTnXcMd5saSzYYZjuWuF+17wEMuNnfas7FcfQikxVvKMQfsRad5y7dxACmg1muhL39xasrAb7F/TLya83i9G40zPLSWOzqOUhXa9OfXV40A1N3b8+/JXIMDUdUBApBedGCZ9nEPyIwR2A5++FMKeqmAXsCfO3zskdprxuVCfI26uiMN+qlFsX2PCPIov4jmv8i4Gx9u53Lxf9E+6vDLWkTqj6O9zdo+jlJh50b+Y/OnLDdGLAP9PldwEQVQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=wq76mKmYLbJBvcI1O3AsXWa8+TkjPSimB+++i2ejPGQ=;
- b=HSsTJrFHGDuX+PNe+1GH/edDW0YncNcC0NZoLzDbchcXl+VO/zE0Oa5iGcKD972ZdNRpixBvwpuSthpyCyHIQk+bAyGHXX8dQ9SOrVTYGJCKZ1H2bCVeM/x75wfYeASSWAHtNQ+XxOX+kq7V0JobdhuHnLHGj6U3LdECtV5gqYEP6ybo848EfYJpi3HYkOQKdr/4XUi8gml9xBuvsIZLLOmIpSy9peFxYLfyn4ryxPVNSHeDBRGQZuEHXPvM15itSvxF2mu0CQ3rrKBZSBiaHFKOJJyyNBJmg/r9tqLlSINBEnKqMJq3EAc5aNIYOgwBR5mseEn6lsnBL+SAA2UKWA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nvidia.com; dmarc=pass action=none header.from=nvidia.com;
- dkim=pass header.d=nvidia.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=wq76mKmYLbJBvcI1O3AsXWa8+TkjPSimB+++i2ejPGQ=;
- b=KWvwGDzvrgEbeGU6ALWNJzZkFHxSFDLWdyTGqY9jf7iaL5HQg/v3f8PvBqegLNL/qSM1WDwLBQjXGmTX57IJP24CcxFY28vsBLdaorCPu6WPU9qN/rrNnB2jovbkq6ja5SYyYHXQfjR8sdImMu9fMUQoP7iMiYUi/3fSc3IRkp7RHjw9a10BLZQxq5EKhcQ5plNrFYkprXEKVFS0Ld8n9d8M5blqqt30ZFlmwwCWkc7AX4lmtgCt3yWTByxarv1DVt72Vd0s9czBpGGiRXwNvqYybNDh+//Uz5bUvHr0YMCOTmGfprI09vJ1LY3HVzB8qTVhc6p7ibtb6wvQo1cdRQ==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nvidia.com;
-Received: from CO6PR12MB5444.namprd12.prod.outlook.com (2603:10b6:5:35e::8) by
- BY5PR12MB4275.namprd12.prod.outlook.com (2603:10b6:a03:20a::18) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5834.9; Fri, 18 Nov
- 2022 15:44:22 +0000
-Received: from CO6PR12MB5444.namprd12.prod.outlook.com
- ([fe80::8edd:6269:6f31:779e]) by CO6PR12MB5444.namprd12.prod.outlook.com
- ([fe80::8edd:6269:6f31:779e%5]) with mapi id 15.20.5813.020; Fri, 18 Nov 2022
- 15:44:22 +0000
-Message-ID: <51806f6c-5378-9a4b-9323-f8bc2529de0c@nvidia.com>
-Date: Fri, 18 Nov 2022 15:44:13 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.4.2
-Subject: Re: [PATCH v3 00/13] Enable USB host and device functions on Jetson
-Content-Language: en-US
-To: Wayne Chang <waynec@nvidia.com>, gregkh@linuxfoundation.org,
- robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org, treding@nvidia.com,
- thierry.reding@gmail.com, heikki.krogerus@linux.intel.com, ajayg@nvidia.com,
- vkoul@kernel.org, p.zabel@pengutronix.de, balbi@kernel.org,
- mathias.nyman@intel.com, jckuo@nvidia.com
-Cc: linux-usb@vger.kernel.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, singhanc@nvidia.com,
- linux-i2c@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-tegra@vger.kernel.org
-References: <20221114124053.1873316-1-waynec@nvidia.com>
-From: Jon Hunter <jonathanh@nvidia.com>
-In-Reply-To: <20221114124053.1873316-1-waynec@nvidia.com>
-X-ClientProxiedBy: LO4P123CA0012.GBRP123.PROD.OUTLOOK.COM
- (2603:10a6:600:150::17) To CO6PR12MB5444.namprd12.prod.outlook.com
- (2603:10b6:5:35e::8)
+	id 1ow2Qw-004Tac-6c
+	for linux-phy@lists.infradead.org; Fri, 18 Nov 2022 14:33:35 +0000
+Received: by mail-wr1-x42e.google.com with SMTP id cl5so9512556wrb.9
+        for <linux-phy@lists.infradead.org>; Fri, 18 Nov 2022 06:33:32 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google;
+        h=cc:to:message-id:date:from:content-transfer-encoding:mime-version
+         :subject:from:to:cc:subject:date:message-id:reply-to;
+        bh=r1O9HZ8MX1IL7UJAa5JH+dfK6/alNEcaVbgB3wjs4gs=;
+        b=F/nX0fPsj2tPLUnIyGh9FdlQJm505Li4kv12GOJg/laM/BN4t1o7cDArjx/hBkOv/s
+         lgxBXsILzg3UqegTRvrMY/g/ferTWZJj8KFHeAe6h//THsif+i74kXuNhfuaPJqK8exE
+         9y6milsbhIokCYIrHGbaz1nj1kyh0MSZgbsSDAEFr5MZOCvT/UJv6yeq/5nn+Ix5zjsK
+         a1LXXpOF9E3Xn45knkRZG/88aQnBk+cXFXtEpf5IWdAnEFI8wisDqHs7j02Ijs0/N+F1
+         DIXH3nibBE4L2EWIZdFpN/w3XfzgOEkxsFitChKg+FNLGWp5Y6rSv4iWCqDKToriVsqN
+         75qA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=cc:to:message-id:date:from:content-transfer-encoding:mime-version
+         :subject:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=r1O9HZ8MX1IL7UJAa5JH+dfK6/alNEcaVbgB3wjs4gs=;
+        b=tyz1w3j+tXVe2VBq/bCXEFiFJApkvWeqNUdhxFGAKuDM5gshDXw7L3LTQTv6ebNVcT
+         ZcN7pDyfpZyDn6RI/sikXeMZWYLnxSmYBdFBlHmdUEeoBtFJvCetRKBB1pTmy37RAtYQ
+         JBWprt44U4QwTuCUqhrdQl6Kr9Ytl9t9j+78Cetywlsfpt4bWR5pGqE++S7xAK3dHBJ2
+         5IvudwmjGRiMvCOSjbv+ywi0VUeB4Fq52kgSBDCypZ29Jd721cwlpcNWv0EvULs0JRxM
+         30vH417S04VPDyJEyG9SqF/19zwB7jWZwbqkU9HIG7aoW9AS6q5EpOBuX5nu6RP62PUP
+         LxnA==
+X-Gm-Message-State: ANoB5pk0A6mL+qafEVYJ04e4H+Dz4iFL0F+o68xtTu5KFC4v8Vkpg2O0
+	gx2hp4Rl8/uARwNSfoqIEVXXiQ==
+X-Google-Smtp-Source: AA0mqf6XKcHEDCl9rShqtBbR8Bxs5ZkAhKbK7DnnG5j7Xa9ZYop8ey+c8nEMBxbXJS6hVwShM9KRqA==
+X-Received: by 2002:a05:6000:18f:b0:241:a046:91ff with SMTP id p15-20020a056000018f00b00241a04691ffmr4433055wrx.23.1668782010856;
+        Fri, 18 Nov 2022 06:33:30 -0800 (PST)
+Received: from arrakeen.starnux.net ([2a01:e0a:982:cbb0:52eb:f6ff:feb3:451a])
+        by smtp.gmail.com with ESMTPSA id j21-20020a05600c1c1500b003cfb7c02542sm5436726wms.11.2022.11.18.06.33.29
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 18 Nov 2022 06:33:30 -0800 (PST)
+Subject: [PATCH 00/12] dt-bindings: first batch of dt-schema conversions for Amlogic Meson bindings
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: CO6PR12MB5444:EE_|BY5PR12MB4275:EE_
-X-MS-Office365-Filtering-Correlation-Id: 3dd55210-8e5f-433f-1bc4-08dac97bc2f7
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 	mH+gpAZHWiBGm8PUXDq1aUzJF7Vd4F1D9yA00KciwyQ4VfEl7ptm8YjquhdNoRPy8RSOb8Elk7q5po33mMciS4/HSxYlxqC6GIvEMJRkb3xpS8Z8TsqSEyesuvmQqT/o8T/3VS4iwA9BtLOzo6rBFU89t77eA5tl3gJ5+RFAJ3TGIMTy6IwxruQErhoKfWSExT+jS560maL+FJj6F3SAS4bo5rOCaSe4/rCU1SEiWPIFtvIYet0+saBhN3OJboRX4w7l40SJ4iqdvgv2tSZWyzp25GQN1YCdNpJLp6MExjAEZgPbj3vDs1ScCFTTotn9msBuY5PEscienMJsxHal2hgW0yUn4AnFY8H2aWEsg7kXNBP5uFZBQR7IyEaGs3KXL4geXAH/i60r0Ol0C3fcfT7PhICxHlnvUFYrpvavB7Xv1n688AGQTeJ3zElLrQUyIL7jbJFrQyNKBWae0v5bzeOCfjlVksbnuLvIT4VvlK/rvvOyR9oQ5z8q0T2QLpjMybaas1fZg2veQR6TM5xdaQp+QqYcutVV7NGMQkh+erXZ1oq0c5DzUmmIrRZTDKlUT5JSReJP8T1HZa6Lbncwj3eJl7aKpEuFgpfWWUeDIDEBvG+MWFQtEB2XQ8IDu9rBcT1PleawGdXhQ+62SEFILzFANeU8PS3zTE5QAyQjlsVf8BI3qDEuysx0Lo6LhSy/fz5SJj8a4qp3AH1R1u8sfgs2whhZe5lAPuKfYt9CACGXwqLeh2Hf5ESuZwegt/1qb7mhfc33ryiH04XXpDGYRNRRN6fH7UHfode0cZ6q2r/3Pe9eEKeXI6zXODR2oc4tAkPdxTF3cvxGEgODlcsolw==
-X-Forefront-Antispam-Report: 	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:CO6PR12MB5444.namprd12.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230022)(4636009)(346002)(376002)(366004)(39860400002)(136003)(396003)(451199015)(86362001)(966005)(478600001)(38100700002)(6486002)(31686004)(6666004)(6506007)(316002)(186003)(2616005)(36756003)(8936002)(2906002)(6636002)(53546011)(41300700001)(921005)(31696002)(4744005)(7416002)(6512007)(8676002)(66946007)(66476007)(5660300002)(4326008)(66556008)(45980500001)(43740500002);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: 	=?utf-8?B?dHhWMmUraHErZmd1cXd2di95WmhwUGI0SWJOVFY5dG5WOTU0dHJBNERHc0Nt?=
- =?utf-8?B?T0Q1MVBTM3NsbTl4YzZyeG0zdjh4aThzdXJmVWpTTnZ2bDdyQmgvYXAwUkdP?=
- =?utf-8?B?MW1TQlV2YTZkOFd1eHBlQnFZdHNqdThXNXJ1cnpVL01vcUFnVTNxYVVoQVlF?=
- =?utf-8?B?d3prV2FRUWFzSWw4cDhoSHRxQTJhMDZWL2VtNzZFY01PQndqRDRidUdvdnRu?=
- =?utf-8?B?U2p0K1UzR2VsVm1McVR4QnNiTEltcVQ0ZklDaUZhbFpJcnk0RTYvVjBiWmpm?=
- =?utf-8?B?akUvek02WjBySld2elN6K282WjhVU1BIeHpFSWxVN1Zna1pDRUJHY3BFUlcz?=
- =?utf-8?B?ZVR5aW54Zzdoejk4bXN1TWJ2MWtmSlowaGltV1ZFakZHUkhGNWRzb2NVQmYr?=
- =?utf-8?B?TU5Ya2NJS0dXQkxWSTZhN3N5MmV0TzNBaHJzQlM4MUdCN0lvUHJsM0pKaElU?=
- =?utf-8?B?N3F6TXNqSy9NYzdoZEwrMmdsVzhGdEZkY1lDcE9YR1dWVlFHWThCcTdkSlBs?=
- =?utf-8?B?eTJLRU81OXl3OTVpdGtlRWM0azhYMi85S0RGVVZ0b0o0dmxmTS9SdTlzZHB3?=
- =?utf-8?B?RllVdzQ1TkNEc1ltMFpGVkFPWC82cVc2WmluaWVVTlZXY1BkUFNGK094eGZa?=
- =?utf-8?B?OVpqZUdMQmIwR3ltOENwWEtqS3dXYVBHVHRTaGNHWlVXMzVhRTg5OTZVSnY2?=
- =?utf-8?B?T2dpVmVWQ3hKVFIyVTd0d2ExYUR4S3hTT3FIRW5GcXBiSTUvTUlNVmszV1hz?=
- =?utf-8?B?SXArN3lkdWhrZlN6UW1JcWlaSUhGTVFiWnF4emtGalVRVjQ3T2MrMEtUVWdR?=
- =?utf-8?B?MDFZZE96SnJ0Y25xdEU2cEcvd0NIeXZTTGZiWkE3MEIwc2RMWElVbC83TGgz?=
- =?utf-8?B?QlMyaXdMbTM4S2UwVTRiS2N0NXNWL1l5ODMyeE9RL25NTFFDb2pLTjdSMG5H?=
- =?utf-8?B?UGY0S3NmaW93ejRMazJXVGFxVlZOWDFKRXQ3a05BM2tiWnROOFhObnNuZkJD?=
- =?utf-8?B?cEFjSXF1Y2FFUXYzZWpoR09VMHcyVGd3WDdRWVdhV0Zpa3lCeXpvL05zejRM?=
- =?utf-8?B?YWh4czlmSHhVYkxIYlR0bWZ4Tk9aZkZMQkU2RkQ0K2w5ZDEzMFFyYUlpdUdE?=
- =?utf-8?B?S0QvaDBwN3Q2TDl0NHZKa2F1RWtuNXlLTHlhK1BuT1pySWcwenFJdGZlY1N6?=
- =?utf-8?B?TUsxYnN1MUZRVWJBRkNGZWdJTUJnTVQrbTN4RERoUjdVZC8yYUJlK2UrcVFT?=
- =?utf-8?B?Rjg5RmRkMncxVmdlRi9SZWhUdjVOMU4yd2ZVNzdDOVpzSE9XU2tFQWdyNlN4?=
- =?utf-8?B?eU9CNUNCZzRyeGZwVUxDaHdMYlZ0MEZOZW5aSlFEelYxY1M4MktidGdsdUR1?=
- =?utf-8?B?U1k3NENtRnh2TXhhYTJPbGZRK3MzeFR2SVZqei9SZHlNbXo5Ymt0NXluQWVk?=
- =?utf-8?B?UE8yYVJ5RnVXaE5xcDRubjJzMzljeUVHdUkxZlBNaHYrSEZCWHNVc3k4alZL?=
- =?utf-8?B?WnhxM3VHdlYyZjRWQVJpczFaMmdSa2dnYTM2SjFtYmtybURha3p5VDJudmRR?=
- =?utf-8?B?aFFiQlk1R3ZsSndYZ0pGcWt3TUd4V3R2bllJTkVNRHB3cjArWm9KUThtNlNH?=
- =?utf-8?B?ZWNLZTdMUmlBNTl3U0NBRENzTnBvVmxlM0lUdTdob2FEOU14c1IxMzBjTkxB?=
- =?utf-8?B?VXNEc2RqOEVJRTNEbmoyNnB3QlVjMnJCaGFab0ZjeGZnWHQzQ2Vvd0VYYWgz?=
- =?utf-8?B?RkYycEkwZVIrckNXL3J6Y0M1SGR1K2RpRmRKSGJXTzBMMkhVNGlIZUhJM2Ft?=
- =?utf-8?B?YkZYYmNHcmorRlhlbk0wNWs3Y3IwalFiZkEvRDdCYWFhRTk2U29CdVNSMS9w?=
- =?utf-8?B?SC9HM1VpOU5wQ3EyRXNzMm92T0VCRDBGREFaWkNFb0lRMU04RnY5Unc4V1JH?=
- =?utf-8?B?YUhDcXIyQTdMNzB0aEpkUExzbk5uQ0VEVWk1eDJNWXFYQmMrcENxVEZVYUZm?=
- =?utf-8?B?MHkvOGJmSTkzTHFkTCt0OVp1Qk5LYXZtWHZxbDl1NW9ocVJzb2gzVUlJRUN5?=
- =?utf-8?B?V3BtZ0N4RkcwNXJYc0swWmpTNXk1Q282aEY4MC8rZ3JsYnhQVnlqbzZBL2hJ?=
- =?utf-8?B?TEhwazljWkdqcUZvQVJ1UXJLVGI4enNPOFpDRllqTE5KeC9KUzF1UjQ3Y3ls?=
- =?utf-8?Q?Zoy831vxYY6aFtaTqjqQ0n3P4PO65N9Od3gp1+nJqY7N?=
-X-OriginatorOrg: Nvidia.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 3dd55210-8e5f-433f-1bc4-08dac97bc2f7
-X-MS-Exchange-CrossTenant-AuthSource: CO6PR12MB5444.namprd12.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 18 Nov 2022 15:44:22.0167
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: Yu7Vk+KiyEcg7on93baDGgr+mm9CNv8jpnywSqiZUCwAzf/9UCioyV2r2jriKQIDhhozRsVTVY30akPyN2gE/w==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BY5PR12MB4275
+X-b4-tracking: H4sIALaXd2MC/w3MwQqDMAwA0F+RnBcwxenY37RNVgNdCs3mRfx3e3yXd4JLV3F4Tyd0OdS12QA9Js
+ h7tCKoPAxhDoGINkwLxm9tRTMmNVYrjrnZIf2HL/kQb09ewsowhhRdMPVoeR+H/Wu9rhu2AOmCcgAA AA==
+From: Neil Armstrong <neil.armstrong@linaro.org>
+Date: Fri, 18 Nov 2022 15:33:26 +0100
+Message-Id: <20221117-b4-amlogic-bindings-convert-v1-0-3f025599b968@linaro.org>
+To: Jakub Kicinski <kuba@kernel.org>, Wim Van Sebroeck <wim@linux-watchdog.org>,
+ Srinivas Kandagatla <srinivas.kandagatla@linaro.org>, Rob Herring <robh+dt@kernel.org>, Andrew Lunn <andrew@lunn.ch>,
+ Alessandro Zummo <a.zummo@towertech.it>, Eric Dumazet <edumazet@google.com>, Bjorn Helgaas <bhelgaas@google.com>,
+ Kevin Hilman <khilman@baylibre.com>, Ulf Hansson <ulf.hansson@linaro.org>, Heiner Kallweit <hkallweit1@gmail.com>,
+ Vinod Koul <vkoul@kernel.org>, Russell King <linux@armlinux.org.uk>, Thomas Gleixner <tglx@linutronix.de>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, Guenter Roeck <linux@roeck-us.net>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>, Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Jerome Brunet <jbrunet@baylibre.com>, Paolo Abeni <pabeni@redhat.com>, Mauro Carvalho Chehab <mchehab@kernel.org>,
+ "David S. Miller" <davem@davemloft.net>
+Cc: linux-media@vger.kernel.org, netdev@vger.kernel.org, linux-amlogic@lists.infradead.org, linux-mmc@vger.kernel.org,
+ linux-rtc@vger.kernel.org, linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ linux-watchdog@vger.kernel.org, linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org,
+ Neil Armstrong <neil.armstrong@linaro.org>, devicetree@vger.kernel.org
+X-Mailer: b4 0.10.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221118_074428_205428_EF0F2DF7 
-X-CRM114-Status: UNSURE (   9.53  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20221118_063334_291002_55634CE6 
+X-CRM114-Status: GOOD (  12.42  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -145,26 +95,132 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Batch conversion of the following bindings:
+- meson_sm.txt
+- amlogic-efuse.txt
+- amlogic-meson-mx-efuse.txt
+- meson-wdt.txt
+- meson-ir.txt
+- rtc-meson.txt
+- amlogic,meson6-timer.txt
+- meson-gxl-usb2-phy.txt
+- amlogic,meson-gx.txt
+- amlogic,meson-pcie.txt
+- mdio-mux-meson-g12a.txt
 
-On 14/11/2022 12:40, Wayne Chang wrote:
-> The patch series enable the USB host and devie functions on Jetson AGX Orin
-> and depend on the following change
-> https://lore.kernel.org/all/20221003125141.123759-1-jonathanh@nvidia.com/
+The amlogic,meson-gx-pwrc.txt is removed since deprecated and unused 
+for a few releases now.
 
-I have been talking to Wayne about this series and for now we want to 
-see if we can get the USB host support merged. Then we will work on the 
-USB device support next. I have sent out the USB host patches on Wayne's 
-behalf.
+Martin Blumenstingl was also added as bindings maintainer for Meson6/8/8b
+related bindings.
 
-Jon
+Remaining conversions:
+- meson,pinctrl.txt
+- pwm-meson.txt
+- amlogic,meson-gpio-intc.txt
+- amlogic,meson-mx-sdio.txt
+- rtc-meson-vrtc.txt
+- amlogic,axg-sound-card.txt
+- amlogic,axg-fifo.txt
+- amlogic,axg-pdm.txt
+- amlogic,axg-spdifout.txt
+- amlogic,axg-tdm-formatters.txt
+- amlogic,axg-spdifin.txt
+- amlogic,axg-tdm-iface.txt
+- amlogic,g12a-tohdmitx.txt
+- amlogic,axg-audio-clkc.txt
+- amlogic,gxbb-clkc.txt
+- amlogic,gxbb-aoclkc.txt
+- amlogic,meson8b-clkc.txt
 
+To: Rob Herring <robh+dt@kernel.org>
+To: Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
+To: Kevin Hilman <khilman@baylibre.com>
+To: Jerome Brunet <jbrunet@baylibre.com>
+To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+To: Srinivas Kandagatla <srinivas.kandagatla@linaro.org>
+To: Wim Van Sebroeck <wim@linux-watchdog.org>
+To: Guenter Roeck <linux@roeck-us.net>
+To: Mauro Carvalho Chehab <mchehab@kernel.org>
+To: Alessandro Zummo <a.zummo@towertech.it>
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: Daniel Lezcano <daniel.lezcano@linaro.org>
+To: Thomas Gleixner <tglx@linutronix.de>
+To: Vinod Koul <vkoul@kernel.org>
+To: Kishon Vijay Abraham I <kishon@kernel.org>
+To: Ulf Hansson <ulf.hansson@linaro.org>
+To: Bjorn Helgaas <bhelgaas@google.com>
+To: "David S. Miller" <davem@davemloft.net>
+To: Eric Dumazet <edumazet@google.com>
+To: Jakub Kicinski <kuba@kernel.org>
+To: Paolo Abeni <pabeni@redhat.com>
+To: Andrew Lunn <andrew@lunn.ch>
+To: Heiner Kallweit <hkallweit1@gmail.com>
+To: Russell King <linux@armlinux.org.uk>
+Cc: devicetree@vger.kernel.org
+Cc: linux-arm-kernel@lists.infradead.org
+Cc: linux-amlogic@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org
+Cc: linux-watchdog@vger.kernel.org
+Cc: linux-media@vger.kernel.org
+Cc: linux-rtc@vger.kernel.org
+Cc: linux-phy@lists.infradead.org
+Cc: linux-mmc@vger.kernel.org
+Cc: linux-pci@vger.kernel.org
+Cc: netdev@vger.kernel.org
+Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
+
+---
+Neil Armstrong (12):
+      dt-bindings: firmware: convert meson_sm.txt to dt-schema
+      dt-bindings: nvmem: convert amlogic-efuse.txt to dt-schema
+      dt-bindings: nvmem: convert amlogic-meson-mx-efuse.txt to dt-schema
+      dt-bindings: watchdog: convert meson-wdt.txt to dt-schema
+      dt-bindings: media: convert meson-ir.txt to dt-schema
+      dt-bindings: rtc: convert rtc-meson.txt to dt-schema
+      dt-bindings: power: remove deprecated amlogic,meson-gx-pwrc.txt bindings
+      dt-bindings: timer: convert timer/amlogic,meson7-timer.txt to dt-schema
+      dt-bindings: phy: convert meson-gxl-usb2-phy.txt to dt-schema
+      dt-bindings: mmc: convert amlogic,meson-gx.txt to dt-schema
+      dt-bindings: pcie: convert amlogic,meson-pcie.txt to dt-schema
+      dt-bindings: net: convert mdio-mux-meson-g12a.txt to dt-schema
+
+ .../bindings/firmware/amlogic,meson-gxbb-sm.yaml   |  36 ++++++
+ .../bindings/firmware/meson/meson_sm.txt           |  15 ---
+ .../bindings/media/amlogic,meson6-ir.yaml          |  43 +++++++
+ .../devicetree/bindings/media/meson-ir.txt         |  20 ----
+ .../bindings/mmc/amlogic,meson-gx-mmc.yaml         |  78 +++++++++++++
+ .../devicetree/bindings/mmc/amlogic,meson-gx.txt   |  39 -------
+ .../bindings/net/amlogic,g12a-mdio-mux.yaml        |  80 +++++++++++++
+ .../bindings/net/mdio-mux-meson-g12a.txt           |  48 --------
+ .../bindings/nvmem/amlogic,meson-gxbb-efuse.yaml   |  52 +++++++++
+ .../bindings/nvmem/amlogic,meson6-efuse.yaml       |  64 ++++++++++
+ .../devicetree/bindings/nvmem/amlogic-efuse.txt    |  48 --------
+ .../bindings/nvmem/amlogic-meson-mx-efuse.txt      |  22 ----
+ .../devicetree/bindings/pci/amlogic,axg-pcie.yaml  | 129 +++++++++++++++++++++
+ .../devicetree/bindings/pci/amlogic,meson-pcie.txt |  70 -----------
+ .../bindings/phy/amlogic,meson-gxl-usb2-phy.yaml   |  56 +++++++++
+ .../devicetree/bindings/phy/meson-gxl-usb2-phy.txt |  21 ----
+ .../bindings/power/amlogic,meson-gx-pwrc.txt       |  63 ----------
+ .../bindings/rtc/amlogic,meson6-rtc.yaml           |  62 ++++++++++
+ .../devicetree/bindings/rtc/rtc-meson.txt          |  35 ------
+ .../bindings/timer/amlogic,meson6-timer.txt        |  22 ----
+ .../bindings/timer/amlogic,meson6-timer.yaml       |  53 +++++++++
+ .../bindings/watchdog/amlogic,meson6-wdt.yaml      |  39 +++++++
+ .../devicetree/bindings/watchdog/meson-wdt.txt     |  21 ----
+ 23 files changed, 692 insertions(+), 424 deletions(-)
+---
+base-commit: 094226ad94f471a9f19e8f8e7140a09c2625abaa
+change-id: 20221117-b4-amlogic-bindings-convert-8ef1d75d426d
+
+Best regards,
 -- 
-nvpublic
+Neil Armstrong <neil.armstrong@linaro.org>
 
 -- 
 linux-phy mailing list
