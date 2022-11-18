@@ -4,82 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B8557C433FE
-	for <linux-phy@archiver.kernel.org>; Fri, 18 Nov 2022 15:28:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 39D30C4332F
+	for <linux-phy@archiver.kernel.org>; Fri, 18 Nov 2022 15:28:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oUVdXvAyf0+ECkLjbt5geFueL5I/POxsXYQb4NirZO8=; b=nuKKZ92RFM78X0
-	FeQiVKuTvFJDLp7QB3cLHyjo8Nm+PduNKdl0PKA7HBkbkAatGe0nm08j+bNFtC5EL1YTiBjYuqtuE
-	mhLk5U3RtwVv0YxdfT5S4E87plS1BoMyLBxpofK4kJGWaDihcagnaSPCg3FaT4gs0N36ZdUTdl08G
-	s6IfEWhSokKPRvOfXzk6jx2LqkORbA2BgU0nC4e7W3/pkxds9faEWQSEbRSCbnP3ydZfPPvv6Cs1k
-	53knLoFYXJh6gL5Il6olWBkyFSrc38PJ/+YEEtMvIdX32akAiq2w/O8nKoY0Jz3PECXob1g8Aoc5k
-	c3ZQbtLe3hDnAFL+rqvw==;
+	List-Owner; bh=E9I1O1zQ6UVPEvDsHt2PCzrUhrE+pU6TdWh/+zrXHlA=; b=W/Y5vVUSyouKbX
+	UKhEJOGs1sUOIOpgNhNeDDj9gBXiDSJ4LvZYP+YLWWB1XHJ9emLYYlr5ss3UqvEyR2DHGLyK/8424
+	aDfEStnLMyxEyfbskekrzuw7cMOqRQ/6SZw7vwurf+XFnEio7oZN8JYH0TDjZMXzBoNlUREslnU/v
+	hDrI2Q7FfrOajtuTyCY+DOVaA9AVp0wteE/IUUjQ4yn4WqOV8K6+aNltWum+SMzQq14Pr7Z8e54ZV
+	VZd25eR/1bDJ9hOzBl+3kauDvDzDz/z5SdP8gKFobfttCF9byv1I1hhNKZ9YRhMV8HnvE0eHYhS/4
+	pc3x1G6aExTYXu+WCY6g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ow3Hc-004u9T-5s; Fri, 18 Nov 2022 15:28:00 +0000
+	id 1ow3Hc-004u9a-8T; Fri, 18 Nov 2022 15:28:00 +0000
 Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ow3HT-004u09-Mz
-	for linux-phy@bombadil.infradead.org; Fri, 18 Nov 2022 15:27:51 +0000
+	id 1ow3HU-004u09-2u
+	for linux-phy@bombadil.infradead.org; Fri, 18 Nov 2022 15:27:52 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=infradead.org; s=desiato.20200630; h=Cc:To:In-Reply-To:References:
 	Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
 	From:Sender:Reply-To:Content-ID:Content-Description;
-	bh=oZapRJG8z2JCvAvfXBnNMVwxacWcNRQ302sDNi+fas8=; b=jTil0+adqQKGvpqN62NlO5I+tA
-	cV5jcEAoaFgbfs2/IQ7qp/LYw1yzusW1s4NnlEznyOkrAiUGGFba2Q26CP2I/q+D5bch6lpTLSumf
-	pws88OKJku7bg/UhL3bL8qB4LpfeRowaQV24ta1M3neppL5t7HWUKECnlEO1YPueTAYm4fqPkrMX4
-	kOl92ehTLeBZTjMy8AtcQr8/P67t3NdLtHhoeK+/DFq3o7vJUW7Yuk00PNCYKgmThuYm/5NbFKvva
-	DbsCmUhSBrQzWMUo1RfWSPX4K1+WTV1Ut6yrCx8GhckKV3pMEyY8miuOnsSC7uuxU5SZtE0/N6ZZ8
-	dFQpo6xg==;
-Received: from mail-wm1-x335.google.com ([2a00:1450:4864:20::335])
+	bh=xLXGft1LTrsRUm/stssOzl0Wu0Tv4L36SFUjpXRih0U=; b=bwgeSvarcey6SqQdkga845pyvT
+	MQs2T+R5VENphOQn01DVb5qwxv6UXNizqqyysI50mg7a9CliufgYm0X2HH12ePpxNRpjafhdfspYq
+	NA13GsEt5yRFv+SCEXbh+0NsXxuoRBFI9lskGVd978YpD81xhDBV5kUwhyx1uG0f9o1SpJstAZJP0
+	3JYItdD4fTtmzvX7h/7foXw2BTvBny9S0RzUrvT5j6tsCl7z5QroNM9NSpy17Tzelf2Hw9ZTeGcPy
+	UK6K+fFm2flG8H6tnAnlJGVUOPtGh8BWoovnZTlfOO/WvT4WLfk5ZI7qilHEUFIlzQeX55kOFH5Rl
+	NsYFepYg==;
+Received: from mail-wr1-x42d.google.com ([2a00:1450:4864:20::42d])
 	by desiato.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ow2R9-0020y4-80
+	id 1ow2R9-0020zy-4t
 	for linux-phy@lists.infradead.org; Fri, 18 Nov 2022 14:33:51 +0000
-Received: by mail-wm1-x335.google.com with SMTP id r126-20020a1c4484000000b003cffd336e24so2956574wma.4
-        for <linux-phy@lists.infradead.org>; Fri, 18 Nov 2022 06:33:47 -0800 (PST)
+Received: by mail-wr1-x42d.google.com with SMTP id a14so9554153wru.5
+        for <linux-phy@lists.infradead.org>; Fri, 18 Nov 2022 06:33:46 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=oZapRJG8z2JCvAvfXBnNMVwxacWcNRQ302sDNi+fas8=;
-        b=NHwf5gzscDKYMdxL3OfdNvxiV73eYzt9izjpEJGw56qyn/2edQPWAXNqpqJqeMJSHf
-         MREGqHR85usarI/2xnrbF/tqtjXoIVpAGDdUCKa9NDWKlwnHSqxlgAQzVT9vTL1itUTT
-         NxcMawupLX+vL58TS/S4zccA6KBi5QDMDVG8bQXkreRNk4dTQp8T1Bk3bHmQXmszD2iV
-         GdzyApU8zF+JRueqj3Jw/e4EA9u8suC4iGZFmwfQrlv23dbuh73YpX7lD5pxURY2ZaED
-         0tNJdOxEw/NS7ff2giSBtuuJuL18OpOGATexPhFVj+93aD6OvmPHiSM9m4E3NjoDuU63
-         xtvQ==
+        bh=xLXGft1LTrsRUm/stssOzl0Wu0Tv4L36SFUjpXRih0U=;
+        b=cCR5gQy562wvY7HQ1tfOAsEkzRhd5Q67vmDhpKmXdhgwcXETjvsGX1J4mU9pCcNhV4
+         c+Mc00TU+/VeylHvYs5E0MnIxYMkiSJ5qbqI+34tyGUSNO9RGoGb93KXrFmg4kBwz4sl
+         4thkPqltfrVF30zr5uUyfhZ7eAOr0grm4V84lVwTr2NqhKpjXEDdkOYMVqxrlfV6LeWY
+         RJ1wBOHq7O34tVSUCtLq/MQUgq/jAyVT9beK7sU6Uu43xH623nWYhGBDiDoYqdx/L9Nh
+         HoH408Wcb8xfa9OozfxyU92ujUElSLyXDP8Wg+ouxedfxijEjU3QB62Dt5KIYW7GDdkI
+         EwOA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=oZapRJG8z2JCvAvfXBnNMVwxacWcNRQ302sDNi+fas8=;
-        b=yJvYRWP08Ty5lXXRoityaCR0dZSZooX9tV5zHWs4Zgtt7hElCaeVe14FcWS/gRWv8H
-         xvK3hnxguaVfRMQNf37ZXc6Pfk5MYHizavF8z6KhSBH8Up95DgTei2y6h+nPTgNNIntD
-         IrHk7DTrXzKMWrptHK4QeH6QLX4s9wkNzJ+G91f6TKH6al/GCzW93diumUkqioxM14gv
-         zRV3iKlfnUqMWpmc5Im+pomSQwlRw1vVnJ9em5OMzt/wIgpEDQ4Kb6bCdm4NEd4ccv7L
-         ZSA8XrMSXylAcQp0K2mDeslmRYbBYKS28bJgBOq/97tAKRS/WIYsmJv3ZJIQYz0SlvrV
-         Y19Q==
-X-Gm-Message-State: ANoB5pl17RFYQcvh8zFLgc9XXC0aEdMgYhmLr9cdN5hgtYIfR0ukC8t4
-	Nx7//5h3C1qHyIs+5h9uIaDumg==
-X-Google-Smtp-Source: AA0mqf6OgNWA+TIEwY5xvFtwseqvutQkVTW2N8FzT9WEGTWRAZmOEc5lNt7z8CriwQZvELVdMDiZ6w==
-X-Received: by 2002:a05:600c:468c:b0:3cf:7c81:caae with SMTP id p12-20020a05600c468c00b003cf7c81caaemr5207895wmo.135.1668782026873;
-        Fri, 18 Nov 2022 06:33:46 -0800 (PST)
+        bh=xLXGft1LTrsRUm/stssOzl0Wu0Tv4L36SFUjpXRih0U=;
+        b=CZqkSl2VSmkGVgCEF/b9Tk1J9xEhaHwDBs8S4mfJJRJXFnqtl+A7eOPHmQxK/XUkAo
+         z9TyE4aHc5f/3eoG+Q4FjbANtE0a8cVhDO2Qgv+93R1vf6NpNQhi0+oZaErxTrAVnazz
+         ORv7rXrc/8NQ0cWzEyGWBbEYIk9/67ZXZ1BHZtbn1RFoWE8JNEytP609vYbEawv4QJDs
+         pEMtJTwxGXEo74wKNX5eopOmPLP84u1BBYsIpp5Pd0/DgNV3fMhx2DmvvwvikRUJ7TDu
+         A8MEKCIykQTLnPdFz7oXd+GcH/oFiSwe2VUvRi3f37diE/PMDA+HOHEsv3EzLJUAzSVU
+         Uo2g==
+X-Gm-Message-State: ANoB5pmoxqlfHIJwpi5mPxo6SqnAqxOdGq/ty4oPy//XcarGFEFIB9Y0
+	g3+hyxqGcukl1OaR8TkIOsFUFg==
+X-Google-Smtp-Source: AA0mqf5izo8CUrxyl+/5K7a0ETPX8fLNUL2jQN7f+Pa+tcQ6frMXmlBDMAAxi7obM1ilnXFV6/S1WQ==
+X-Received: by 2002:adf:b342:0:b0:236:62ce:3db with SMTP id k2-20020adfb342000000b0023662ce03dbmr4460768wrd.687.1668782025463;
+        Fri, 18 Nov 2022 06:33:45 -0800 (PST)
 Received: from arrakeen.starnux.net ([2a01:e0a:982:cbb0:52eb:f6ff:feb3:451a])
-        by smtp.gmail.com with ESMTPSA id j21-20020a05600c1c1500b003cfb7c02542sm5436726wms.11.2022.11.18.06.33.45
+        by smtp.gmail.com with ESMTPSA id j21-20020a05600c1c1500b003cfb7c02542sm5436726wms.11.2022.11.18.06.33.44
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 18 Nov 2022 06:33:46 -0800 (PST)
+        Fri, 18 Nov 2022 06:33:45 -0800 (PST)
 From: Neil Armstrong <neil.armstrong@linaro.org>
-Date: Fri, 18 Nov 2022 15:33:37 +0100
-Subject: [PATCH 11/12] dt-bindings: pcie: convert amlogic,meson-pcie.txt to
- dt-schema
+Date: Fri, 18 Nov 2022 15:33:36 +0100
+Subject: [PATCH 10/12] dt-bindings: mmc: convert amlogic,meson-gx.txt to dt-schema
 MIME-Version: 1.0
-Message-Id: <20221117-b4-amlogic-bindings-convert-v1-11-3f025599b968@linaro.org>
+Message-Id: <20221117-b4-amlogic-bindings-convert-v1-10-3f025599b968@linaro.org>
 References: <20221117-b4-amlogic-bindings-convert-v1-0-3f025599b968@linaro.org>
 In-Reply-To: <20221117-b4-amlogic-bindings-convert-v1-0-3f025599b968@linaro.org>
 To: Jakub Kicinski <kuba@kernel.org>, Wim Van Sebroeck <wim@linux-watchdog.org>,
@@ -98,8 +97,8 @@ Cc: linux-media@vger.kernel.org, netdev@vger.kernel.org, linux-amlogic@lists.inf
  Neil Armstrong <neil.armstrong@linaro.org>, devicetree@vger.kernel.org
 X-Mailer: b4 0.10.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221118_143347_737999_6A09CC76 
-X-CRM114-Status: GOOD (  15.46  )
+X-CRM114-CacheID: sfid-20221118_143347_737999_16D3CE93 
+X-CRM114-Status: GOOD (  15.94  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -116,121 +115,83 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Convert the Amlogic Meson AXG DWC PCIE SoC controller bindings to
-dt-schema.
+Convert the Amlogic SD / eMMC controller for S905/GXBB family SoCs
+to dt-schema.
 
 Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
 ---
- .../devicetree/bindings/pci/amlogic,axg-pcie.yaml  | 129 +++++++++++++++++++++
- .../devicetree/bindings/pci/amlogic,meson-pcie.txt |  70 -----------
- 2 files changed, 129 insertions(+), 70 deletions(-)
+ .../bindings/mmc/amlogic,meson-gx-mmc.yaml         | 78 ++++++++++++++++++++++
+ .../devicetree/bindings/mmc/amlogic,meson-gx.txt   | 39 -----------
+ 2 files changed, 78 insertions(+), 39 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/pci/amlogic,axg-pcie.yaml b/Documentation/devicetree/bindings/pci/amlogic,axg-pcie.yaml
+diff --git a/Documentation/devicetree/bindings/mmc/amlogic,meson-gx-mmc.yaml b/Documentation/devicetree/bindings/mmc/amlogic,meson-gx-mmc.yaml
 new file mode 100644
-index 000000000000..563a0a3fa6f0
+index 000000000000..c9545334fd99
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/pci/amlogic,axg-pcie.yaml
-@@ -0,0 +1,129 @@
++++ b/Documentation/devicetree/bindings/mmc/amlogic,meson-gx-mmc.yaml
+@@ -0,0 +1,78 @@
 +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
 +%YAML 1.2
 +---
-+$id: http://devicetree.org/schemas/pci/amlogic,axg-pcie.yaml#
++$id: http://devicetree.org/schemas/mmc/amlogic,meson-gx-mmc.yaml#
 +$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+title: Amlogic Meson AXG DWC PCIE SoC controller
++title: Amlogic SD / eMMC controller for S905/GXBB family SoCs
++
++description:
++  The MMC 5.1 compliant host controller on Amlogic provides the
++  interface for SD, eMMC and SDIO devices
 +
 +maintainers:
 +  - Neil Armstrong <neil.armstrong@linaro.org>
 +
-+description:
-+  Amlogic Meson PCIe host controller is based on the Synopsys DesignWare PCI core.
-+
 +allOf:
-+  - $ref: snps,dw-pcie.yaml#
-+
-+# We need a select here so we don't match all nodes with 'snps,dw-pcie'
-+select:
-+  properties:
-+    compatible:
-+      contains:
-+        enum:
-+          - amlogic,axg-pcie
-+          - amlogic,g12a-pcie
-+  required:
-+    - compatible
++  - $ref: mmc-controller.yaml#
 +
 +properties:
 +  compatible:
-+    items:
++    oneOf:
 +      - enum:
-+          - amlogic,axg-pcie
-+          - amlogic,g12a-pcie
-+      - const: snps,dw-pcie
++          - amlogic,meson-gx-mmc
++          - amlogic,meson-axg-mmc
++      - items:
++          - enum:
++              - amlogic,meson-gxbb-mmc
++              - amlogic,meson-gxl-mmc
++              - amlogic,meson-gxm-mmc
++          - const: amlogic,meson-gx-mmc
 +
 +  reg:
-+    items:
-+      - description: External local bus interface registers
-+      - description: Meson designed configuration registers
-+      - description: PCIe configuration space
-+
-+  reg-names:
-+    items:
-+      - const: elbi
-+      - const: cfg
-+      - const: config
++    maxItems: 1
 +
 +  interrupts:
 +    maxItems: 1
 +
 +  clocks:
-+    items:
-+      - description: PCIe GEN 100M PLL clock
-+      - description: PCIe RC clock gate
-+      - description: PCIe PHY clock
++    maxItems: 3
 +
 +  clock-names:
 +    items:
-+      - const: pclk
-+      - const: port
-+      - const: general
-+
-+  phys:
-+    maxItems: 1
-+
-+  phy-names:
-+    const: pcie
++      - const: core
++      - const: clkin0
++      - const: clkin1
 +
 +  resets:
-+    items:
-+      - description: Port Reset
-+      - description: Shared APB reset
++    maxItems: 1
 +
-+  reset-names:
-+    items:
-+      - const: port
-+      - const: apb
-+
-+  num-lanes:
-+    const: 1
++  amlogic,dram-access-quirk:
++    type: boolean
++    description:
++      set when controller's internal DMA engine cannot access the DRAM memory,
++      like on the G12A dedicated SDIO controller.
 +
 +required:
 +  - compatible
 +  - reg
-+  - reg-names
 +  - interrupts
-+  - "#address-cells"
-+  - "#size-cells"
-+  - "#interrupt-cells"
-+  - interrupt-map
-+  - interrupt-map-mask
-+  - ranges
-+  - bus-range
-+  - device_type
-+  - num-lanes
-+  - phys
-+  - phy-names
++  - clocks
++  - clock-names
 +  - resets
-+  - reset-names
 +
 +unevaluatedProperties: false
 +
@@ -238,103 +199,59 @@ index 000000000000..563a0a3fa6f0
 +  - |
 +    #include <dt-bindings/interrupt-controller/irq.h>
 +    #include <dt-bindings/interrupt-controller/arm-gic.h>
-+    pcie: pcie@f9800000 {
-+        compatible = "amlogic,axg-pcie", "snps,dw-pcie";
-+        reg = <0xf9800000 0x400000>, <0xff646000 0x2000>, <0xf9f00000 0x100000>;
-+        reg-names = "elbi", "cfg", "config";
-+        interrupts = <GIC_SPI 177 IRQ_TYPE_EDGE_RISING>;
-+        clocks = <&pclk>, <&clk_port>, <&clk_phy>;
-+        clock-names = "pclk", "port", "general";
-+        resets = <&reset_pcie_port>, <&reset_pcie_apb>;
-+        reset-names = "port", "apb";
-+        phys = <&pcie_phy>;
-+        phy-names = "pcie";
-+        #interrupt-cells = <1>;
-+        interrupt-map-mask = <0 0 0 0>;
-+        interrupt-map = <0 0 0 0 &gic GIC_SPI 179 IRQ_TYPE_EDGE_RISING>;
-+        bus-range = <0x0 0xff>;
-+        #address-cells = <3>;
-+        #size-cells = <2>;
-+        device_type = "pci";
-+        num-lanes = <1>;
-+        ranges = <0x82000000 0 0 0xf9c00000 0 0x00300000>;
++    mmc@70000 {
++          compatible = "amlogic,meson-gx-mmc";
++          reg = <0x70000 0x2000>;
++          interrupts = <GIC_SPI 216 IRQ_TYPE_EDGE_RISING>;
++          clocks = <&clk_mmc>, <&xtal>, <&clk_div>;
++          clock-names = "core", "clkin0", "clkin1";
++          pinctrl-0 = <&emm_pins>;
++          resets = <&reset_mmc>;
 +    };
-+...
-diff --git a/Documentation/devicetree/bindings/pci/amlogic,meson-pcie.txt b/Documentation/devicetree/bindings/pci/amlogic,meson-pcie.txt
+diff --git a/Documentation/devicetree/bindings/mmc/amlogic,meson-gx.txt b/Documentation/devicetree/bindings/mmc/amlogic,meson-gx.txt
 deleted file mode 100644
-index c3a75ac6e59d..000000000000
---- a/Documentation/devicetree/bindings/pci/amlogic,meson-pcie.txt
+index ccc5358db131..000000000000
+--- a/Documentation/devicetree/bindings/mmc/amlogic,meson-gx.txt
 +++ /dev/null
-@@ -1,70 +0,0 @@
--Amlogic Meson AXG DWC PCIE SoC controller
+@@ -1,39 +0,0 @@
+-Amlogic SD / eMMC controller for S905/GXBB family SoCs
 -
--Amlogic Meson PCIe host controller is based on the Synopsys DesignWare PCI core.
--It shares common functions with the PCIe DesignWare core driver and
--inherits common properties defined in
--Documentation/devicetree/bindings/pci/snps,dw-pcie.yaml.
+-The MMC 5.1 compliant host controller on Amlogic provides the
+-interface for SD, eMMC and SDIO devices.
 -
--Additional properties are described here:
+-This file documents the properties in addition to those available in
+-the MMC core bindings, documented by mmc.txt.
 -
 -Required properties:
--- compatible:
--	should contain :
--	- "amlogic,axg-pcie" for AXG SoC Family
--	- "amlogic,g12a-pcie" for G12A SoC Family
--	to identify the core.
--- reg:
--	should contain the configuration address space.
--- reg-names: Must be
--	- "elbi"	External local bus interface registers
--	- "cfg"		Meson specific registers
--	- "config"	PCIe configuration space
--- reset-gpios: The GPIO to generate PCIe PERST# assert and deassert signal.
--- clocks: Must contain an entry for each entry in clock-names.
--- clock-names: Must include the following entries:
--	- "pclk"       PCIe GEN 100M PLL clock
--	- "port"       PCIe_x(A or B) RC clock gate
--	- "general"    PCIe Phy clock
--- resets: phandle to the reset lines.
--- reset-names: must contain "port" and "apb"
--       - "port"        Port A or B reset
--       - "apb"         Share APB reset
--- phys: should contain a phandle to the PCIE phy
--- phy-names: must contain "pcie"
+-- compatible : contains one of:
+-  - "amlogic,meson-gx-mmc"
+-  - "amlogic,meson-gxbb-mmc"
+-  - "amlogic,meson-gxl-mmc"
+-  - "amlogic,meson-gxm-mmc"
+-  - "amlogic,meson-axg-mmc"
+-- clocks     : A list of phandle + clock-specifier pairs for the clocks listed in clock-names.
+-- clock-names: Should contain the following:
+-	"core" - Main peripheral bus clock
+-	"clkin0" - Parent clock of internal mux
+-	"clkin1" - Other parent clock of internal mux
+-  The driver has an internal mux clock which switches between clkin0 and clkin1 depending on the
+-  clock rate requested by the MMC core.
+-- resets     : phandle of the internal reset line
 -
--- device_type:
--	should be "pci". As specified in snps,dw-pcie.yaml
+-Optional properties:
+-- amlogic,dram-access-quirk: set when controller's internal DMA engine cannot access the
+-  DRAM memory, like on the G12A dedicated SDIO controller.
 -
+-Example:
 -
--Example configuration:
--
--	pcie: pcie@f9800000 {
--			compatible = "amlogic,axg-pcie", "snps,dw-pcie";
--			reg = <0x0 0xf9800000 0x0 0x400000
--					0x0 0xff646000 0x0 0x2000
--					0x0 0xf9f00000 0x0 0x100000>;
--			reg-names = "elbi", "cfg", "config";
--			reset-gpios = <&gpio GPIOX_19 GPIO_ACTIVE_HIGH>;
--			interrupts = <GIC_SPI 177 IRQ_TYPE_EDGE_RISING>;
--			#interrupt-cells = <1>;
--			interrupt-map-mask = <0 0 0 0>;
--			interrupt-map = <0 0 0 0 &gic GIC_SPI 179 IRQ_TYPE_EDGE_RISING>;
--			bus-range = <0x0 0xff>;
--			#address-cells = <3>;
--			#size-cells = <2>;
--			device_type = "pci";
--			ranges = <0x82000000 0 0 0x0 0xf9c00000 0 0x00300000>;
--
--			clocks = <&clkc CLKID_USB
--					&clkc CLKID_PCIE_A
--					&clkc CLKID_PCIE_CML_EN0>;
--			clock-names = "general",
--					"pclk",
--					"port";
--			resets = <&reset RESET_PCIE_A>,
--				<&reset RESET_PCIE_APB>;
--			reset-names = "port",
--					"apb";
--			phys = <&pcie_phy>;
--			phy-names = "pcie";
+-	sd_emmc_a: mmc@70000 {
+-		compatible = "amlogic,meson-gxbb-mmc";
+-		reg = <0x0 0x70000 0x0 0x2000>;
+-		interrupts = < GIC_SPI 216 IRQ_TYPE_EDGE_RISING>;
+-		clocks = <&clkc CLKID_SD_EMMC_A>, <&xtal>, <&clkc CLKID_FCLK_DIV2>;
+-		clock-names = "core", "clkin0", "clkin1";
+-		pinctrl-0 = <&emmc_pins>;
+-		resets = <&reset RESET_SD_EMMC_A>;
 -	};
 
 -- 
