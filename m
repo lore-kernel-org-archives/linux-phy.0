@@ -4,80 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DE43AC4332F
-	for <linux-phy@archiver.kernel.org>; Fri, 18 Nov 2022 18:53:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A5515C4332F
+	for <linux-phy@archiver.kernel.org>; Fri, 18 Nov 2022 19:18:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Date:Subject:Message-Id:References:
-	In-Reply-To:Cc:To:From:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/mIyVkcJPriTBYME9tKNy0KtvqwE1RAkZboWX4bE+hM=; b=vuQWrkbFUnNatN
-	XWaES6j0g8vElD1RZ/+gg4iD1kD48e0KTwp062WTFlpNb2kVJhJ/J6LjTLUHKNMFDe6rERWwditln
-	br8Cwwqa+G/oW+Uv1mV+A8aHhUEnJpPo6AKNIXdjJDbhgQbCpz4/66VStjACoeyZpVUXBahyoOjRI
-	lmrQKTwqhBOxbgDIONQd+c50AYWw32F1r9e8CuZ4Iyy6m/WvpAkIseElWBvETziSdTLpjcBdviIAd
-	F9LnBctFehe6qwup5HqQ1MSAMFnAhGLS+OLR3Wy9VZ5SbFjvHFe8+sALj4mEMi8ktUmpdpVEyt2/5
-	3TafXaCxEPsVRYpC8Oeg==;
+	List-Owner; bh=0NM4YmfDafItaXpJMWXstBm8rbEBYmZwjKCyo2HVjFk=; b=X07qMFxCHh/7Qg
+	mEk63Lu1uevg94MMjQTizCYoDcCsZxdTmf9inWsGhTeqGvbEFS+N3PBOJQYgK2FWs1nhSnf3wBRAi
+	yVdWhdU+/Eib4zDpCyZxlKAo2m0On3J0u5qfDqc2txwv4Qh0GKun41S/UbKdWA+UIAymYJbT4/oCr
+	B+vwsMTx3PJke0c0qQwmEX0yJe6j4pYFH7vgtXsZAMl3DRmaeCcfMpz3vhRiOjkpEEe0X6+Cef1bj
+	N1eU1qXyWZtE3NYo+2i1wyivQhDcSWsodc3Jm4iEIsxkOnzM0GmglBDk8nt942ZEfF29pikaFdwgQ
+	YNXI7YHsTtARHSn1DE9g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ow6Tz-007KOi-JX; Fri, 18 Nov 2022 18:52:59 +0000
-Received: from mail-oa1-f41.google.com ([209.85.160.41])
+	id 1ow6sJ-007W3D-Ld; Fri, 18 Nov 2022 19:18:07 +0000
+Received: from mxout4.routing.net ([2a03:2900:1:a::9])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ow6SC-007JD3-6i; Fri, 18 Nov 2022 18:51:10 +0000
-Received: by mail-oa1-f41.google.com with SMTP id 586e51a60fabf-12c8312131fso6973271fac.4;
-        Fri, 18 Nov 2022 10:51:06 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=date:subject:message-id:references:in-reply-to:cc:to:from
-         :mime-version:content-transfer-encoding:x-gm-message-state:from:to
-         :cc:subject:date:message-id:reply-to;
-        bh=uuUisE6muQ2a8H+UFn8jxcAB9pjTtgR2YYMbLsdm6pE=;
-        b=XLpvS/pWGRi0WvDfxcpOukEREwt6x6vzZft0+ihGZsdrAYpS6mKVBYFoKLwxYxWr3U
-         WpAWZRNiFmHdI4sL4vzXS0Qm2oVfKbeuh/cmkLth3nyAMfMAHmojS2sNO2gJpG6LFVit
-         FeZomdHo6Plmi8jVooAXrJkk8gJreErqoH0lCdo4gEe01p74wdBNQyOLClXbahTGFwTF
-         +7S1z7Td16FPXQhULz78KYuWmY3IizKBDKb9EJ16N3j7tle3xliyGYdrmyVGjR8mU601
-         MLo5VLT5frroLQkm5SaBcHJnihJcJnWY9F/Z/MLrOY8x+e4JfsFZYAXo9CS7rZYSzH9R
-         AjLA==
-X-Gm-Message-State: ANoB5pkrSYzg7WqPlfJ9gdKQsuTMhttdCKmGlrxzVvYH5ooKIchj14Kc
-	t42hex6X3Rg3K9n/DwMiWw==
-X-Google-Smtp-Source: AA0mqf6bf2HY2HW6lGRmiXPWhAMZr4bJ2EvTFxkJh7esTNkKUL2fjgko3ZlpdrkN1JGLcX4aBxGgag==
-X-Received: by 2002:a05:6870:bf0b:b0:136:66d0:b853 with SMTP id qh11-20020a056870bf0b00b0013666d0b853mr4647233oab.161.1668797465890;
-        Fri, 18 Nov 2022 10:51:05 -0800 (PST)
-Received: from robh_at_kernel.org (66-90-144-107.dyn.grandenetworks.net. [66.90.144.107])
-        by smtp.gmail.com with ESMTPSA id i25-20020a056871029900b0010c727a3c79sm2408247oae.26.2022.11.18.10.51.04
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 18 Nov 2022 10:51:05 -0800 (PST)
-Received: (nullmailer pid 856961 invoked by uid 1000);
-	Fri, 18 Nov 2022 18:50:54 -0000
+	id 1ow6cQ-007OdM-Mp; Fri, 18 Nov 2022 19:01:44 +0000
+Received: from mxbulk.masterlogin.de (unknown [192.168.10.85])
+	by mxout4.routing.net (Postfix) with ESMTP id 8838A100995;
+	Fri, 18 Nov 2022 19:01:37 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mailerdienst.de;
+	s=20200217; t=1668798097;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=6YDvN14LGzYl2jRSkK1fRlKatqJWzuwYk+eXtAY5bVg=;
+	b=Bg8VOojRqjXpMbnvcQ0BS7YLdq0qU/ixxmd4qWW8aTSiRMhNppN9n3ZX6yXL3D63iLfYKj
+	RmsCghVZLHDx+vGs+y0zv+f0pci1vrv67b1npT/kLsrner+k1nETyiF2ELJfEXbvJPfkCH
+	oS6CyKYn3XmZdV61b/HV8DvuS1oWzow=
+Received: from frank-G5.. (fttx-pool-80.245.77.125.bambit.de [80.245.77.125])
+	by mxbulk.masterlogin.de (Postfix) with ESMTPSA id 365341226BC;
+	Fri, 18 Nov 2022 19:01:37 +0000 (UTC)
+From: Frank Wunderlich <linux@fw-web.de>
+To: linux-mediatek@lists.infradead.org
+Cc: Frank Wunderlich <frank-w@public-files.de>,
+	Ryder Lee <ryder.lee@mediatek.com>,
+	Jianjun Wang <jianjun.wang@mediatek.com>,
+	Bjorn Helgaas <bhelgaas@google.com>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Chunfeng Yun <chunfeng.yun@mediatek.com>,
+	Kishon Vijay Abraham I <kishon@ti.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Matthias Brugger <matthias.bgg@gmail.com>,
+	Paolo Abeni <pabeni@redhat.com>,
+	Lorenzo Bianconi <lorenzo@kernel.org>,
+	Bo Jiao <Bo.Jiao@mediatek.com>,
+	linux-pci@vger.kernel.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-phy@lists.infradead.org,
+	linux-usb@vger.kernel.org,
+	Rob Herring <robh@kernel.org>,
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Subject: [PATCH v6 04/11] dt-bindings: PCI: mediatek-gen3: add SoC based clock config
+Date: Fri, 18 Nov 2022 20:01:19 +0100
+Message-Id: <20221118190126.100895-5-linux@fw-web.de>
+X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20221118190126.100895-1-linux@fw-web.de>
+References: <20221118190126.100895-1-linux@fw-web.de>
 MIME-Version: 1.0
-From: Rob Herring <robh@kernel.org>
-To: Neil Armstrong <neil.armstrong@linaro.org>
-Cc: Paolo Abeni <pabeni@redhat.com>, Heiner Kallweit <hkallweit1@gmail.com>, 
-	Thomas Gleixner <tglx@linutronix.de>, linux-media@vger.kernel.org, 
-	Vinod Koul <vkoul@kernel.org>, Ulf Hansson <ulf.hansson@linaro.org>, 
-	linux-amlogic@lists.infradead.org, linux-watchdog@vger.kernel.org, 
-	Alessandro Zummo <a.zummo@towertech.it>, Jerome Brunet <jbrunet@baylibre.com>, linux-rtc@vger.kernel.org, 
-	Daniel Lezcano <daniel.lezcano@linaro.org>, Guenter Roeck <linux@roeck-us.net>, netdev@vger.kernel.org, 
-	Alexandre Belloni <alexandre.belloni@bootlin.com>, Kevin Hilman <khilman@baylibre.com>, 
-	Rob Herring <robh+dt@kernel.org>, linux-kernel@vger.kernel.org, 
-	Russell King <linux@armlinux.org.uk>, 
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, 
-	Martin Blumenstingl <martin.blumenstingl@googlemail.com>, linux-mmc@vger.kernel.org, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Eric Dumazet <edumazet@google.com>, 
-	Wim Van Sebroeck <wim@linux-watchdog.org>, Bjorn Helgaas <bhelgaas@google.com>, 
-	Srinivas Kandagatla <srinivas.kandagatla@linaro.org>, linux-phy@lists.infradead.org, 
-	Mauro Carvalho Chehab <mchehab@kernel.org>, linux-pci@vger.kernel.org, devicetree@vger.kernel.org, 
-	Jakub Kicinski <kuba@kernel.org>, Andrew Lunn <andrew@lunn.ch>, 
-	"David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
-In-Reply-To:   <20221117-b4-amlogic-bindings-convert-v1-4-3f025599b968@linaro.org>
-References:  <20221117-b4-amlogic-bindings-convert-v1-0-3f025599b968@linaro.org> 
- <20221117-b4-amlogic-bindings-convert-v1-4-3f025599b968@linaro.org>
-Message-Id: <166879731312.851419.16320390143824776926.robh@kernel.org>
-Subject:  Re: [PATCH 04/12] dt-bindings: watchdog: convert meson-wdt.txt to dt-schema
-Date: Fri, 18 Nov 2022 12:50:54 -0600
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221118_105108_266969_C0AAD07C 
-X-CRM114-Status: GOOD (  11.51  )
+X-CRM114-CacheID: sfid-20221118_110142_998832_2FE9F804 
+X-CRM114-Status: UNSURE (   9.40  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,39 +91,100 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+From: Frank Wunderlich <frank-w@public-files.de>
 
-On Fri, 18 Nov 2022 15:33:30 +0100, Neil Armstrong wrote:
-> Convert the Amlogic Meson6 SoCs Watchdog timer bindings to dt-schema.
-> 
-> Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
-> ---
->  .../bindings/watchdog/amlogic,meson6-wdt.yaml      | 39 ++++++++++++++++++++++
->  .../devicetree/bindings/watchdog/meson-wdt.txt     | 21 ------------
->  2 files changed, 39 insertions(+), 21 deletions(-)
-> 
+The PCIe driver covers different SOC which needing different clock
+configs. Define them based on compatible.
 
-Running 'make dtbs_check' with the schema in this patch gives the
-following warnings. Consider if they are expected or the schema is
-incorrect. These may not be new warnings.
+Signed-off-by: Frank Wunderlich <frank-w@public-files.de>
+Reviewed-by: Rob Herring <robh@kernel.org>
+Acked-by: Jianjun Wang <jianjun.wang@mediatek.com>
+Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+---
+v2:
+- fix typo in mediatek,mt8192-pcie
+v3:
+- remove contains to match only if compatible is no fallback
+  tested with series "Add driver nodes for MT8195 SoC" and mt7986
+  pcie-nodes, dtbs_check is now clean
+---
+ .../bindings/pci/mediatek-pcie-gen3.yaml      | 47 ++++++++++++++-----
+ 1 file changed, 35 insertions(+), 12 deletions(-)
 
-Note that it is not yet a requirement to have 0 warnings for dtbs_check.
-This will change in the future.
-
-Full log is available here: https://patchwork.ozlabs.org/project/devicetree-bindings/patch/20221117-b4-amlogic-bindings-convert-v1-4-3f025599b968@linaro.org
-
-
-watchdog@9900: compatible: ['amlogic,meson8m2-wdt', 'amlogic,meson8b-wdt'] is too long
-	arch/arm/boot/dts/meson8m2-mxiii-plus.dtb
-
-watchdog@9900: Unevaluated properties are not allowed ('compatible', 'interrupts' were unexpected)
-	arch/arm/boot/dts/meson8m2-mxiii-plus.dtb
-
-watchdog@9900: Unevaluated properties are not allowed ('interrupts' was unexpected)
-	arch/arm/boot/dts/meson6-atv1200.dtb
-	arch/arm/boot/dts/meson8b-ec100.dtb
-	arch/arm/boot/dts/meson8b-mxq.dtb
-	arch/arm/boot/dts/meson8b-odroidc1.dtb
-	arch/arm/boot/dts/meson8-minix-neo-x8.dtb
+diff --git a/Documentation/devicetree/bindings/pci/mediatek-pcie-gen3.yaml b/Documentation/devicetree/bindings/pci/mediatek-pcie-gen3.yaml
+index c00be39af64e..5d7369debff2 100644
+--- a/Documentation/devicetree/bindings/pci/mediatek-pcie-gen3.yaml
++++ b/Documentation/devicetree/bindings/pci/mediatek-pcie-gen3.yaml
+@@ -43,9 +43,6 @@ description: |+
+   each set has its own address for MSI message, and supports 32 MSI vectors
+   to generate interrupt.
+ 
+-allOf:
+-  - $ref: /schemas/pci/pci-bus.yaml#
+-
+ properties:
+   compatible:
+     oneOf:
+@@ -84,15 +81,7 @@ properties:
+     maxItems: 6
+ 
+   clock-names:
+-    items:
+-      - const: pl_250m
+-      - const: tl_26m
+-      - const: tl_96m
+-      - const: tl_32k
+-      - const: peri_26m
+-      - enum:
+-          - top_133m        # for MT8192
+-          - peri_mem        # for MT8188/MT8195
++    maxItems: 6
+ 
+   assigned-clocks:
+     maxItems: 1
+@@ -138,6 +127,40 @@ required:
+   - '#interrupt-cells'
+   - interrupt-controller
+ 
++allOf:
++  - $ref: /schemas/pci/pci-bus.yaml#
++  - if:
++      properties:
++        compatible:
++          const: mediatek,mt8192-pcie
++    then:
++      properties:
++        clock-names:
++          items:
++            - const: pl_250m
++            - const: tl_26m
++            - const: tl_96m
++            - const: tl_32k
++            - const: peri_26m
++            - const: top_133m
++  - if:
++      properties:
++        compatible:
++          contains:
++            enum:
++              - mediatek,mt8188-pcie
++              - mediatek,mt8195-pcie
++    then:
++      properties:
++        clock-names:
++          items:
++            - const: pl_250m
++            - const: tl_26m
++            - const: tl_96m
++            - const: tl_32k
++            - const: peri_26m
++            - const: peri_mem
++
+ unevaluatedProperties: false
+ 
+ examples:
+-- 
+2.34.1
 
 
 -- 
