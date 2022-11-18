@@ -4,69 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E510CC433FE
-	for <linux-phy@archiver.kernel.org>; Fri, 18 Nov 2022 14:52:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8462EC433FE
+	for <linux-phy@archiver.kernel.org>; Fri, 18 Nov 2022 14:54:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zH3EgHh/aS0H4sX8+FmHHyZN7AHoA3zuZOPiT9Nklnk=; b=kRFsC5K97lYYxO
-	CTcXdDwbHaSQDvM2aAD7xptK9BbyWpcN1Hf5kPgO3X3uTvqZOIs4nmKtNRtaC73atyS+c2E4piTVv
-	dtvAyLg6ZEObUvzpy9bKmUPLZC+XDaBWQl7JAI9RFl1yYxqh16WrwXYwz5cRzXSK/3SnB6xsYbVFZ
-	ByGfP/ysk/91ATF4BCU5ye3UjTDKKr2WLjK6Mh/cUtkMK79gDmGx3K28lOj0pOBQRvZZHaseJMbRd
-	tZCu5TzPV05juvzblprUWAaGRDenlA0OdtZzO98wbk5rYBcozf6Mab9fN1kxtm+aR04/p5FRe71eh
-	FabELFbSL5a5QlMTAfIA==;
+	List-Owner; bh=vJ5PSmxSlksO0ZUUro2cuxyic/dtyq4LioArZAVPCcY=; b=LkSANvnCitmJEq
+	LEk2lek32vmyhDBUpeVXOycP6mCn9RoTg014S2f/QuZLMZRnOGuwcKv5k1KNX+P2z/gRmZSIvsd5w
+	q+RIVgvQ7ga4icEu9CYKpKYy80+/cSd05Z5ZMl+s/4/IbhJhn884MM+I5l7DdMt3Lcy0ptoVZHYyw
+	a5tTDrJ5cKHLfnEt4cWJuh9vtVKDffvK5bT0ijlJnpGIOGWHPeWS6aSbqlyNME9frlDKWcZaYJ5aM
+	77TMfZr9mTztN4JsCqnjiVB8Fjh/UOfPNP+SA64ogR/+oxnFjNXPsuy1Klp46TsCdQrY+/cRQcqdD
+	8tT+27Zzx7ka4eeA8Gmg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ow2iy-004drY-8B; Fri, 18 Nov 2022 14:52:12 +0000
-Received: from mail-lj1-x234.google.com ([2a00:1450:4864:20::234])
+	id 1ow2kz-004ew8-JA; Fri, 18 Nov 2022 14:54:17 +0000
+Received: from mail-lf1-x135.google.com ([2a00:1450:4864:20::135])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ow2hd-004d7u-Gy
-	for linux-phy@lists.infradead.org; Fri, 18 Nov 2022 14:50:50 +0000
-Received: by mail-lj1-x234.google.com with SMTP id h12so7024959ljg.9
-        for <linux-phy@lists.infradead.org>; Fri, 18 Nov 2022 06:50:49 -0800 (PST)
+	id 1ow2jK-004e0e-2I
+	for linux-phy@lists.infradead.org; Fri, 18 Nov 2022 14:52:35 +0000
+Received: by mail-lf1-x135.google.com with SMTP id l12so8562236lfp.6
+        for <linux-phy@lists.infradead.org>; Fri, 18 Nov 2022 06:52:32 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=flARCzHTVyCR8t1b/alFfXpYG08uQcpbdpykx0qaY6o=;
-        b=WPhguTbEITewUUFmzDKk67xFlcItotk7CHPjo38HZOuTantjdkogWORtgo0xLlYRgF
-         HWg9GOTf1V4e9ThxnO5h7EGEtSAM84fFMdKNcc5IiTsPgjkjtPAow8xj447vQZ+xI9fu
-         +EMNqv8xxM0kkgUKOkUMQThTtqLNuitsLUM2+q9sG4Mf7bfPbimkEiHxBNyigCGXB3JH
-         hkw+VprjJL3OtOt+z25ktmnAiSNEDvhjN41HMNxYzS7ZhQbxwhTFwKXP3WbivZpl7aB6
-         XkuF/NX6RxoqzQhWxmZioNe+aR0PcSCpDbAE6M/O59pFVA7b2qTsMwpCsLKRSomd9Dlv
-         tTYQ==
+        bh=XKTObKEL8gc5S/Q51M+L8voEMredlLnbihUYlLO76vs=;
+        b=gMK7qVcD+/wXm6dGhENohbvUGU846z0Znfnyn4YkIaWmMt7X1/cw5naSy36DVIxHYk
+         uZVj98I4oB6xd9bZLUQf19Ph1O9dDQPRXIfyTYw7E6xdNwIF1NhCnr/5k2PO705Nc5k0
+         XQ1QiUNA3VL6Ip1u8qqtVQ7z8uICNwotEUJYWA+QgjTBfmuihMV3qsZhFJ+lRubn1aKy
+         070XoR3LZfwbwMUH7Ky7T1eOGmByPNFlfsvaWR9IGBsggX8t4Eo+ZmpB2Exc/X6bY3JA
+         gWZH4YYoZmpnbfFNMeuBEXtm68vEAQ3zeK3h6H7/zWrLl9hhTz0jCBxLBOvQFXbbLTV+
+         vM4w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=flARCzHTVyCR8t1b/alFfXpYG08uQcpbdpykx0qaY6o=;
-        b=R0zddYh57Xw7LNtFfgYaEQ/xGpJalhR+TeqjPfx/75N89FJmce0AdGdHoYw+PA3Xua
-         pKp8c3uvw+Ts7UpNzJ1COIdebyJ6PacyVYi19UtH4pbKP1SsqWnVDCDDiCyATCJvlXme
-         CjCVQG1V0Rosg0veqINk6PJw1qatipiEveI3s7gMqyjvN5U5ZeXMbbjAwdE+JFMvrK8m
-         ac+ZcwfbLmWqwMh1bi65bM1AgRIvWhY+Pb8F3hCx0mwmGE6AcfClEWs5lCElpvUpoHCT
-         M9TQaN+gjMFX86aGgPC2K05PD1JIE9z5/u9aZOgubICVQlZIfXIjayCq2TJuJnkQDESN
-         32IA==
-X-Gm-Message-State: ANoB5plCtrcEAMy/eSB+dsjuJowmjOYvQ1zFaD5ZIKD3mUcI754N2tXQ
-	36+u1rzPgvC5yx4gIOei5lvGZg==
-X-Google-Smtp-Source: AA0mqf59msaFmJhx4BlNDfC6dSrkN8YU7SVi7qZH3ZaQ9nO4p90o4YgmHrxZLIkn1WuJ/YF2IErpqA==
-X-Received: by 2002:a2e:9c13:0:b0:26d:c072:ddd with SMTP id s19-20020a2e9c13000000b0026dc0720dddmr2701980lji.158.1668783048034;
-        Fri, 18 Nov 2022 06:50:48 -0800 (PST)
+        bh=XKTObKEL8gc5S/Q51M+L8voEMredlLnbihUYlLO76vs=;
+        b=by/RM1mnybHd6rLIRtnI8iMxXtnADHAhBPNnwtgfPnZuIlYxgFa5I8kvNYv4sa38T2
+         jshHyaRe/JbDyptgc7YNac4wjqhLllENyJQdvtpYwg+U8QG3w9t60JuMNBOiHcNAn4Gm
+         +0jIORgJPO7JHFNMPyVGBU2y+id3aEFFqPz3PZ2e8NRMJSRV7MH2tkCjicCTB8aJ0DPY
+         4Sf8Kt9eGRdadYWfDUJ38+rfXoTMNI/nDjMeGGNgscJoUxQr2y/EAIJmRBanfTfQx4/B
+         8nKVvHxdiehf1uVBxI/osoRGZKOdmHqeWzPLlFiWVLeAyQYBfJkTWfMvpRIgowKHnwWm
+         S1hw==
+X-Gm-Message-State: ANoB5plRsFe95c+24LfJRi4AfyauVSAxoV+pb6vG0zYAdfeqL6aedqCE
+	9JtIwlALGZn/tyelLRo898XPwA==
+X-Google-Smtp-Source: AA0mqf74ROBTKaMUlZ8NEw2cWsCNjWuZzHLL5P0E9Dx63d7vUFRfCBhAqltBWgz7cA7TlfbXf1i4BA==
+X-Received: by 2002:ac2:5281:0:b0:4b3:ff4b:80a2 with SMTP id q1-20020ac25281000000b004b3ff4b80a2mr2379143lfm.281.1668783151407;
+        Fri, 18 Nov 2022 06:52:31 -0800 (PST)
 Received: from [192.168.0.20] (088156142067.dynamic-2-waw-k-3-2-0.vectranet.pl. [88.156.142.67])
-        by smtp.gmail.com with ESMTPSA id dt25-20020a0565122a9900b004947a12232bsm676480lfb.275.2022.11.18.06.50.45
+        by smtp.gmail.com with ESMTPSA id be34-20020a05651c172200b0026bf43a4d72sm676049ljb.115.2022.11.18.06.52.29
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 18 Nov 2022 06:50:47 -0800 (PST)
-Message-ID: <b2f16f4d-f340-185a-ecfe-5d83e8b8ad6a@linaro.org>
-Date: Fri, 18 Nov 2022 15:50:45 +0100
+        Fri, 18 Nov 2022 06:52:30 -0800 (PST)
+Message-ID: <15840da8-bae2-3bb2-af0c-0af563fdc27d@linaro.org>
+Date: Fri, 18 Nov 2022 15:52:29 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.4.2
-Subject: Re: [PATCH 06/12] dt-bindings: rtc: convert rtc-meson.txt to
- dt-schema
+Subject: Re: [PATCH 07/12] dt-bindings: power: remove deprecated
+ amlogic,meson-gx-pwrc.txt bindings
 Content-Language: en-US
 To: Neil Armstrong <neil.armstrong@linaro.org>,
  Jakub Kicinski <kuba@kernel.org>, Wim Van Sebroeck <wim@linux-watchdog.org>,
@@ -93,13 +93,12 @@ Cc: linux-media@vger.kernel.org, netdev@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org,
  devicetree@vger.kernel.org
 References: <20221117-b4-amlogic-bindings-convert-v1-0-3f025599b968@linaro.org>
- <20221117-b4-amlogic-bindings-convert-v1-6-3f025599b968@linaro.org>
+ <20221117-b4-amlogic-bindings-convert-v1-7-3f025599b968@linaro.org>
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20221117-b4-amlogic-bindings-convert-v1-6-3f025599b968@linaro.org>
+In-Reply-To: <20221117-b4-amlogic-bindings-convert-v1-7-3f025599b968@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221118_065049_635801_D02B4D45 
-X-CRM114-Status: UNSURE (   9.26  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20221118_065234_137436_809929B4 
+X-CRM114-Status: GOOD (  12.04  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -117,17 +116,26 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 18/11/2022 15:33, Neil Armstrong wrote:
-> Convert the Amlogic Meson6 RTC bindings to dt-schema.
+> Remove the deprecated amlogic,meson-gx-pwrc.txt bindings, which was
+> replaced by the amlogic,meson-ee-pwrc.yaml bindings.
+> 
+> The amlogic,meson-gx-pwrc-vpu compatible isn't used anymore since [1]
+> was merged in v5.8-rc1 and amlogic,meson-g12a-pwrc-vpu either since [2]
+> was merged in v5.3-rc1.
+> 
+> [1] commit 5273d6cacc06 ("arm64: dts: meson-gx: Switch to the meson-ee-pwrc bindings")
+> [2] commit f4f1c8d9ace7 ("arm64: dts: meson-g12: add Everything-Else power domain controller")
+
+As of next-20221109 I see both compatibles used, so something here is
+not accurate.
+
 > 
 > Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
 > ---
->  .../bindings/rtc/amlogic,meson6-rtc.yaml           | 62 ++++++++++++++++++++++
->  .../devicetree/bindings/rtc/rtc-meson.txt          | 35 ------------
->  2 files changed, 62 insertions(+), 35 deletions(-)
+>  .../bindings/power/amlogic,meson-gx-pwrc.txt       | 63 ----------------------
+>  1 file changed, 63 deletions(-)
 > 
 
-
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
 Best regards,
 Krzysztof
