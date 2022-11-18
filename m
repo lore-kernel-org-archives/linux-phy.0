@@ -4,72 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8EA90C433FE
-	for <linux-phy@archiver.kernel.org>; Fri, 18 Nov 2022 14:59:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3F3C9C43219
+	for <linux-phy@archiver.kernel.org>; Fri, 18 Nov 2022 15:00:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xGRjtyTwtgatVd1IApfEHJa/qdvSzL5ubpRr+OvdZO0=; b=sflug7zZRIsoDu
-	04aX4X0FMqtdAjQn24MDFwTTDTdkJUkIU37ITsh6dxjs10VDW+rBnW5+pAxsQVKELc3JDWwSWstUf
-	SEvMtudgLBplHru9Xt58HeDeTHlAb8dfoiH8hhtXa2f8E1etS/JeH2Z0fESC/psAFzv0pPzGJIGlq
-	dHTQUuJw/ujP1mstFAmUQ2eQEvsgR1KyQ1kkzVNerm4+czEELlbjsUq4tJnISNy+C4wdJf8xboj2o
-	qru2cWnzV8wn3qjy5DhZrsQdBath6daQ2exrV/K8apNkqhEbT4V/FxLtQQQp2kE6NCsmGGNEDqUzs
-	lMhHVcP2k9FaqxkS+QAw==;
+	List-Owner; bh=IpL+F3/FeJ4rTywvIuTyMjVZmlXrVkOtuDx7uUi/UxI=; b=k4EWfZW5W7objD
+	Y46CBNEwDP+Bg7rXD8puDyAZA6QvTgZ6zpdtQKIR8lg1L8O3qjoH/VF67Ace2PYEnaDeKvpbVcH/d
+	J4c6d5OIPfOgsWQ9CjGYh4QciGzHQFE1JShVMOnWFd9tE64B4KUgbzB8W4UapixipxT6wu6U+QZyn
+	JSk8rxX87NKNNxta/DNVa9Ju/RNe+UxrJyN2jRN8Vwi+EU2tY02hAC5708l36oAqtWo5TzUo2LQ/B
+	2eotTcPI5eERuUr0sUG8RMpHjnfMjJpSd6alFumlEWZFx4iVw5Gdnm2eiuFJlFj2D5i5+hCMWm4x/
+	ATKbl3lpLGPlcd0sA3Hw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ow2qI-004hrk-7H; Fri, 18 Nov 2022 14:59:46 +0000
-Received: from mail-lj1-x231.google.com ([2a00:1450:4864:20::231])
+	id 1ow2rE-004iI1-Pk; Fri, 18 Nov 2022 15:00:44 +0000
+Received: from mail-lj1-x233.google.com ([2a00:1450:4864:20::233])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ow2oG-004grH-V7
-	for linux-phy@lists.infradead.org; Fri, 18 Nov 2022 14:57:42 +0000
-Received: by mail-lj1-x231.google.com with SMTP id a15so7070051ljb.7
-        for <linux-phy@lists.infradead.org>; Fri, 18 Nov 2022 06:57:38 -0800 (PST)
+	id 1ow2p3-004hJZ-JM
+	for linux-phy@lists.infradead.org; Fri, 18 Nov 2022 14:58:31 +0000
+Received: by mail-lj1-x233.google.com with SMTP id b9so7089144ljr.5
+        for <linux-phy@lists.infradead.org>; Fri, 18 Nov 2022 06:58:27 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=ngv5gxBO7Ianat52oueLrPYqURLVbai2GDjDWBWPbzg=;
-        b=EROklCgzykSqhFNVyDi4+gpVhCwfP6B7mI+CUDZF1U/wuFkZa3Cf5/0PPw+YjSLMT4
-         hsBip0klea3c0Y/uRLReKIQHK2I/YveobyeZMW2Eef00tDR4+FJJ1yfaVx9MnnhCzfjk
-         cCvE8lbIwMNLLJREQo+vrTQRIDwYL4FPJ1AC23pg4kZf3hpwHGTvYjgCi+FwFicVPYVl
-         OUZpEIL5hmWoBdLHZ0v2sg6ctc51ghuX779Q4OPfaeKoeVTOzWghwn2NDM9owNC40pGR
-         gzSD7t+CX0ZNHtB52/AtIDFIqTrbH06XHLHVFXx/jQn82+R43nQ53cmvHx/KnGWr28zv
-         PfEw==
+        bh=gibrX75NV0o1Er7DAwf8HIM5v6cqoDdd2wUHdxJchhE=;
+        b=xlP2/zPO44yPgOZyJLVvU2O64clebhkb2vmGo5gBNeig3Ow/Ikz9yC2MGIXKRCdvt0
+         lgs97gHMJWxLzQeEWAWd4TUPsXItwsIf33R+z474tFpECaZSQxXSRD6nyNHMX84hbFpl
+         qOa7JUfbLDERx1AP423afzv+JxxpmRbbuYMBS9sWqWe2PZtbeMfDS7x8nHBfJuKmHUxg
+         kakz50WXbg0TKrdI7JcO6MbfKES672Ahu7rdE34KR75q5Ao4y9vUAEZc3V/1XQBycVcI
+         +pVtG0Sy08uigqxmUV+gjtdpxRxna5Zpc+pLemPTUQsG29Ar43U8KQBsGmagHGetsxPX
+         KQmg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=ngv5gxBO7Ianat52oueLrPYqURLVbai2GDjDWBWPbzg=;
-        b=ZkDqHWtamHPsDlZOnd/PTY914GWQOjM7E5DB6J3Wux+a1i7tg4NY2qOYoRrm83o1Se
-         JV1Ps4PgqcP8fjGOt/dYWf7kWgThFaogxWBMMd5BmXDnG3DPgxQCynxL6OrENZFX95s5
-         5rE6nHtm41oZNbvjsjJF4qpTKHI3dALJY61KWzzqkCmO5QahjpkpYjlDL01aMWNxODqr
-         zfjGeSiDfg4N4bCSb06Z33qENzrvFRWc4kv/FOK3+haqbmbd7B6EnALE9lBxmp+ZQ9kk
-         YbUc/XBW7hNNsNTFZS7BDntvkqVr7KsOnIScUwm+hUv9trr7sT2QVXHgCprr40hUN100
-         KiTg==
-X-Gm-Message-State: ANoB5pmUvnf4VCu92a67veG/UL7woUVEpWbsfedgwFKxU21HCBm/CqVX
-	23hztAc6ofSccg7B7BgPHUZjyQ==
-X-Google-Smtp-Source: AA0mqf4vIPsBBLJFJHTlqjhJ4CFdPwgqhejw4qFFRvVxAexWCQHYq1Ia/7slA+muOzdbuZsvy/yVog==
-X-Received: by 2002:a05:651c:12ca:b0:277:a9d:9355 with SMTP id 10-20020a05651c12ca00b002770a9d9355mr2409196lje.102.1668783457528;
-        Fri, 18 Nov 2022 06:57:37 -0800 (PST)
+        bh=gibrX75NV0o1Er7DAwf8HIM5v6cqoDdd2wUHdxJchhE=;
+        b=Dr7CgPG4zuDerVIlTEIh7QUWfOj1WdY4+2sDflOzPhoOfCrILnQ40SNb0Cwony4gSv
+         Uqb45Vm2A+1nZG5tQENCysBXxSgFsr3a5LEuOxvXZzMpA+nFl+tn1pv9lHfY6VWZFJ/U
+         stvffbC651paOxShty4Klq4O1IAO3BP5VL4GUOhu3z7ibBukmSCed7kYytZtr2+hHRbb
+         x72KcsrA+k9gPPnB6X6mlpsSPk2TUsVsaGqBWol5VKfLSx3QH43/cmoHS/Qfq/g5X7rD
+         BnX792uaLy2CAamQ7a/ut0zSke8/YQ+/cCfKIDc47fCiu1pT8V0Ov8LXrRk4YclPPO4n
+         Q3Pw==
+X-Gm-Message-State: ANoB5plKC74/P9wafVOCIox65AseKz3pki8UfWO+9zO00LfLgnTqvmrE
+	cyO0xtlrY94dtF0qEH3rb0JatgeZiXDuoTBz
+X-Google-Smtp-Source: AA0mqf4GsDcErhuHhrxTsrc1he+Ga3A4CdIcSPLSlvDmnQTf+lXOnPMqUgqrM17z2dntyeUlAKEDoA==
+X-Received: by 2002:a05:651c:301:b0:278:e996:d2b0 with SMTP id a1-20020a05651c030100b00278e996d2b0mr2640287ljp.50.1668783506295;
+        Fri, 18 Nov 2022 06:58:26 -0800 (PST)
 Received: from [192.168.0.20] (088156142067.dynamic-2-waw-k-3-2-0.vectranet.pl. [88.156.142.67])
-        by smtp.gmail.com with ESMTPSA id t23-20020ac243b7000000b004b490427bf2sm691531lfl.66.2022.11.18.06.57.35
+        by smtp.gmail.com with ESMTPSA id s30-20020a05651c201e00b0027758f0619fsm681677ljo.132.2022.11.18.06.58.23
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 18 Nov 2022 06:57:37 -0800 (PST)
-Message-ID: <b14655e4-44ca-24a7-3350-9f0eb80bf925@linaro.org>
-Date: Fri, 18 Nov 2022 15:57:35 +0100
+        Fri, 18 Nov 2022 06:58:25 -0800 (PST)
+Message-ID: <35c07fc0-574c-817a-93ed-4575659e767b@linaro.org>
+Date: Fri, 18 Nov 2022 15:58:23 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.4.2
-Subject: Re: [PATCH 10/12] dt-bindings: mmc: convert amlogic,meson-gx.txt to
- dt-schema
+Subject: Re: [PATCH 07/12] dt-bindings: power: remove deprecated
+ amlogic,meson-gx-pwrc.txt bindings
 Content-Language: en-US
-To: Neil Armstrong <neil.armstrong@linaro.org>,
- Jakub Kicinski <kuba@kernel.org>, Wim Van Sebroeck <wim@linux-watchdog.org>,
+To: neil.armstrong@linaro.org, Jakub Kicinski <kuba@kernel.org>,
+ Wim Van Sebroeck <wim@linux-watchdog.org>,
  Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
  Rob Herring <robh+dt@kernel.org>, Andrew Lunn <andrew@lunn.ch>,
  Alessandro Zummo <a.zummo@towertech.it>, Eric Dumazet <edumazet@google.com>,
@@ -93,12 +93,15 @@ Cc: linux-media@vger.kernel.org, netdev@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org,
  devicetree@vger.kernel.org
 References: <20221117-b4-amlogic-bindings-convert-v1-0-3f025599b968@linaro.org>
- <20221117-b4-amlogic-bindings-convert-v1-10-3f025599b968@linaro.org>
+ <20221117-b4-amlogic-bindings-convert-v1-7-3f025599b968@linaro.org>
+ <15840da8-bae2-3bb2-af0c-0af563fdc27d@linaro.org>
+ <95abd39d-b084-68e5-f012-6a1149bdb8a3@linaro.org>
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20221117-b4-amlogic-bindings-convert-v1-10-3f025599b968@linaro.org>
+In-Reply-To: <95abd39d-b084-68e5-f012-6a1149bdb8a3@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221118_065741_042312_437788E7 
-X-CRM114-Status: GOOD (  17.77  )
+X-CRM114-CacheID: sfid-20221118_065829_727292_D12275DC 
+X-CRM114-Status: UNSURE (   9.84  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -115,106 +118,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 18/11/2022 15:33, Neil Armstrong wrote:
-> Convert the Amlogic SD / eMMC controller for S905/GXBB family SoCs
-> to dt-schema.
+On 18/11/2022 15:55, Neil Armstrong wrote:
+> On 18/11/2022 15:52, Krzysztof Kozlowski wrote:
+>> On 18/11/2022 15:33, Neil Armstrong wrote:
+>>> Remove the deprecated amlogic,meson-gx-pwrc.txt bindings, which was
+>>> replaced by the amlogic,meson-ee-pwrc.yaml bindings.
+>>>
+>>> The amlogic,meson-gx-pwrc-vpu compatible isn't used anymore since [1]
+>>> was merged in v5.8-rc1 and amlogic,meson-g12a-pwrc-vpu either since [2]
+>>> was merged in v5.3-rc1.
+>>>
+>>> [1] commit 5273d6cacc06 ("arm64: dts: meson-gx: Switch to the meson-ee-pwrc bindings")
+>>> [2] commit f4f1c8d9ace7 ("arm64: dts: meson-g12: add Everything-Else power domain controller")
+>>
+>> As of next-20221109 I see both compatibles used, so something here is
+>> not accurate.
 > 
-> Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
-> ---
->  .../bindings/mmc/amlogic,meson-gx-mmc.yaml         | 78 ++++++++++++++++++++++
->  .../devicetree/bindings/mmc/amlogic,meson-gx.txt   | 39 -----------
->  2 files changed, 78 insertions(+), 39 deletions(-)
-> 
-> diff --git a/Documentation/devicetree/bindings/mmc/amlogic,meson-gx-mmc.yaml b/Documentation/devicetree/bindings/mmc/amlogic,meson-gx-mmc.yaml
-> new file mode 100644
-> index 000000000000..c9545334fd99
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/mmc/amlogic,meson-gx-mmc.yaml
-> @@ -0,0 +1,78 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/mmc/amlogic,meson-gx-mmc.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Amlogic SD / eMMC controller for S905/GXBB family SoCs
-> +
-> +description:
-> +  The MMC 5.1 compliant host controller on Amlogic provides the
-> +  interface for SD, eMMC and SDIO devices
-> +
-> +maintainers:
-> +  - Neil Armstrong <neil.armstrong@linaro.org>
-> +
-> +allOf:
-> +  - $ref: mmc-controller.yaml#
-> +
-> +properties:
-> +  compatible:
-> +    oneOf:
-> +      - enum:
-> +          - amlogic,meson-gx-mmc
-> +          - amlogic,meson-axg-mmc
-> +      - items:
-> +          - enum:
-> +              - amlogic,meson-gxbb-mmc
-> +              - amlogic,meson-gxl-mmc
-> +              - amlogic,meson-gxm-mmc
-> +          - const: amlogic,meson-gx-mmc
+> Yes driver still exists, was left for compatibility with older DTs during the migration.
 
-Mention changes in commit msg. Anyway this might not match existing
-usage in DTS. At least amlogic,meson-gxbb-mmc has different order.
-
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  interrupts:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    maxItems: 3
-> +
-> +  clock-names:
-> +    items:
-> +      - const: core
-> +      - const: clkin0
-> +      - const: clkin1
-> +
-> +  resets:
-> +    maxItems: 1
-> +
-> +  amlogic,dram-access-quirk:
-> +    type: boolean
-> +    description:
-> +      set when controller's internal DMA engine cannot access the DRAM memory,
-> +      like on the G12A dedicated SDIO controller.
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - interrupts
-> +  - clocks
-> +  - clock-names
-> +  - resets
-> +
-> +unevaluatedProperties: false
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/interrupt-controller/irq.h>
-> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
-> +    mmc@70000 {
-> +          compatible = "amlogic,meson-gx-mmc";
-> +          reg = <0x70000 0x2000>;
-> +          interrupts = <GIC_SPI 216 IRQ_TYPE_EDGE_RISING>;
-> +          clocks = <&clk_mmc>, <&xtal>, <&clk_div>;
-> +          clock-names = "core", "clkin0", "clkin1";
-> +          pinctrl-0 = <&emm_pins>;
-> +          resets = <&reset_mmc>;
-
-Use 4 spaces for example indentation.
-
+Then the bindings should stay. You can add "deprecated" to its title.
 
 Best regards,
 Krzysztof
