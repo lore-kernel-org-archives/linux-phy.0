@@ -4,92 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B6E95C4332F
-	for <linux-phy@archiver.kernel.org>; Fri, 18 Nov 2022 23:33:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C9501C4332F
+	for <linux-phy@archiver.kernel.org>; Sat, 19 Nov 2022 07:20:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:References:
+	In-Reply-To:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Z21QJ8YQld3R4hoDICS0opQtnDEcMbhE0KheQ+fgL1M=; b=RGiR0IugiTQ5ji
-	WCAlLS1wwML0LkDl5JB/JAGwg8ari4i1adIPdh6C1DrlXGgOfmbh8rgZ6WeRaXt99zZd3drb9ybwc
-	Uz/RnndB4PxeBEm27f/tyo0cM5yxqMfAE5ehCi9GzCBuX2H6BqFcE2/zAIdsU/00SuKi2LC8ueEbq
-	KsIAHze4Y20M3iDv+gIzmRSayC5iMaDYfBSqbYJqsIt4zflhqUMi0BX1yrQsKNukwR/uGxWHZWF+f
-	UNiWt1uFQ4SgfeW33TN/aHRTYJOnKFI3aAwtkLhdGs4J5Sjn1sIXkKn3LPNMA616mWJJJKJaHXc2V
-	hJzgImDg0q4L3VWrfE7w==;
+	List-Owner; bh=iy+PZ9cT9afK83qnCcROy94ROBAzqkh4X6RmAQBtJoo=; b=Ev+3+uey70o5Wn
+	ji8f0KtWZU5doof/UIjtSOM+8HshO6O8MlAn1m1oYx2jbtqGWNE7SBa4bOG88MS4jrSR0E8lO9db7
+	j5x5ioLGrXQoF2tDFXTIDuKQxEROHZMtpJA3UZVimlr4dV4iO47I3vaEfZtYcMau7J3s1Qc3uBain
+	aX1eDTh3/BjocxwYNMUShPDQDdFwD6mGiztrvA7Xf1am0EEUPrntZm191xq/KH/tKWDo8cswzJnb+
+	Vuws94BG3VcgWTM1IwB2cB2ROmK1Ayyp6xlKP0VW2NzCLKxtgsWeLJUGwVhYC6cIqOpVFpzLR6f/5
+	LYDt9Sz/scGsw0vTnKGQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1owAr7-009CO4-6Z; Fri, 18 Nov 2022 23:33:09 +0000
-Received: from mail-lf1-x12e.google.com ([2a00:1450:4864:20::12e])
+	id 1owI9A-00C14O-UP; Sat, 19 Nov 2022 07:20:16 +0000
+Received: from mxout3.routing.net ([2a03:2900:1:a::8])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1owAr4-009CLi-5z
-	for linux-phy@lists.infradead.org; Fri, 18 Nov 2022 23:33:07 +0000
-Received: by mail-lf1-x12e.google.com with SMTP id j4so10688086lfk.0
-        for <linux-phy@lists.infradead.org>; Fri, 18 Nov 2022 15:33:02 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=ZZW/KVp2AUxGQEWc2f/qSxCfb9I/iYgRFf9DDe1VokY=;
-        b=jeYxOBAae0nkZMhCajRWxNl4BsHIp/gJUcfUlzn4W//+IRNZdt4c+u4xkFcSSrbpF4
-         sh037Zjjh6OBFnXtZv+L9j+5jwN0QKPZYxbyNd0iVqa6l+skXoNYza9N/xnry4guT1n1
-         JKAYszaPm8LSW405Fg3GX108MPQgibCf63zG4K/d7lfbEBaF/OPiBxSqiEQDyWn0V89u
-         3s/LkPs2lOO7+dT0hFtLBww8jCLoHgxPEgyNI/Y2eBpse3FLvWGxCCOhrA25KKbVtkLp
-         ICnFJYDcnPyMQ3lTLyzzP6PnPu0dA/hI/rzUWoZ52tMD651+ax1umuzGfsq5zPTCwWLM
-         zhIw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=ZZW/KVp2AUxGQEWc2f/qSxCfb9I/iYgRFf9DDe1VokY=;
-        b=jXyesxnoqptL1r6lDa1jSmBqA0KGhFnKjum96NU+PW2uRYs2c51CZrhM2a3lG5LM1z
-         kM9jb6Xflk/Ae1A3VPq8L1jbdDgpMKaJ49moD5I/2qZokjvY6KHxueWEs+D9HaQyX3B4
-         K44O3zmjFOxvDrt/pNtEIY4hLs9MiYbpFKtsVCAmenluxDj998z2K9dDCwOy8E/alBum
-         BZzYirzDF4mmEMfBQAvMHe48jz7T1VCWnT2I1AeWmbJKgV37dPl5oP7R/e2RHg7osHUE
-         wg5+fly4JIUA5YiufkMnzSivnuloTls6798Pbvd6vfvHURSx/RsimcxbLTlrfeQB927M
-         MHcg==
-X-Gm-Message-State: ANoB5pl7EIi+W5i+vsDTY07Dmv8OGCukCrIL5Ic9CEaGdk+s0l9hjUa/
-	WAeuC8OtWm9nXsMH011CM0uilVDwy6qvyutZ
-X-Google-Smtp-Source: AA0mqf4jXbJTDhzUsg9iV+s2DbbmtyvSGp9egr4e4Kb0jNBK31FGHn1NPHnPzzzMdZbTag2CRNWLMA==
-X-Received: by 2002:ac2:593c:0:b0:4b2:2cff:8448 with SMTP id v28-20020ac2593c000000b004b22cff8448mr2869937lfi.252.1668814381687;
-        Fri, 18 Nov 2022 15:33:01 -0800 (PST)
-Received: from eriador.lumag.spb.ru ([194.204.33.9])
-        by smtp.gmail.com with ESMTPSA id k13-20020ac257cd000000b004947f8b6266sm843900lfo.203.2022.11.18.15.32.59
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 18 Nov 2022 15:33:01 -0800 (PST)
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-To: Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@somainline.org>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Jingoo Han <jingoohan1@gmail.com>,
-	Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
-	Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
-	=?UTF-8?q?Krzysztof=20Wilczy=C5=84ski?= <kw@linux.com>,
-	Bjorn Helgaas <bhelgaas@google.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>
-Cc: Philipp Zabel <p.zabel@pengutronix.de>,
-	Johan Hovold <johan@kernel.org>,
-	linux-arm-msm@vger.kernel.org,
-	linux-pci@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org
-Subject: [PATCH v4 8/8] arm64: dts: qcom: sm8350-hdk: enable PCIe devices
-Date: Sat, 19 Nov 2022 01:32:42 +0200
-Message-Id: <20221118233242.2904088-9-dmitry.baryshkov@linaro.org>
-X-Mailer: git-send-email 2.35.1
-In-Reply-To: <20221118233242.2904088-1-dmitry.baryshkov@linaro.org>
-References: <20221118233242.2904088-1-dmitry.baryshkov@linaro.org>
+	id 1owI8v-00C12P-Mi; Sat, 19 Nov 2022 07:20:05 +0000
+Received: from mxbox2.masterlogin.de (unknown [192.168.10.89])
+	by mxout3.routing.net (Postfix) with ESMTP id DD8B562608;
+	Sat, 19 Nov 2022 07:19:55 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mailerdienst.de;
+	s=20200217; t=1668842396;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=Ov0YYXmwqRVPJ8mk/jWh4VlTvRDF8RS9SB8/7u28NwE=;
+	b=LRCeCOrA6CSrOStxeGORqIrn0AjDw/k9ShF4O9sMHRnqkKk5OQtv62vv6wA/ucBL6JncGh
+	3myF4/S+2aEFiKopUC4Bq0fOWRi8IMO0K1t+/nTgaXH0g6dr1mqZD/K8D4qtWI+CssdiXr
+	QmMxwGHHrY88p7IJ1BbKM4VYHRLOxxI=
+Received: from [127.0.0.1] (fttx-pool-80.245.75.145.bambit.de [80.245.75.145])
+	by mxbox2.masterlogin.de (Postfix) with ESMTPSA id 88C511000CA;
+	Sat, 19 Nov 2022 07:19:54 +0000 (UTC)
+Date: Sat, 19 Nov 2022 08:19:52 +0100
+From: Frank Wunderlich <linux@fw-web.de>
+To: Rob Herring <robh+dt@kernel.org>, frank-w@public-files.de
+CC: linux-mediatek@lists.infradead.org, Ryder Lee <ryder.lee@mediatek.com>,
+ Jianjun Wang <jianjun.wang@mediatek.com>,
+ Bjorn Helgaas <bhelgaas@google.com>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Chunfeng Yun <chunfeng.yun@mediatek.com>,
+ Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>, Paolo Abeni <pabeni@redhat.com>,
+ Lorenzo Bianconi <lorenzo@kernel.org>, Bo Jiao <Bo.Jiao@mediatek.com>,
+ linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-phy@lists.infradead.org, linux-usb@vger.kernel.org
+Subject: Re: [PATCH v6 11/11] arm64: dts: mt7986: add BPI-R3 nand/nor overlays
+User-Agent: K-9 Mail for Android
+In-Reply-To: <CAL_JsqKz1qQFZnStLnApraJvp=-cQoW6x5=p7-GBcftYKVMErg@mail.gmail.com>
+References: <20221118190126.100895-1-linux@fw-web.de> <20221118190126.100895-12-linux@fw-web.de> <CAL_JsqKiRzRToSzk3q+csWR5DEZjZpQWChqZ3mH8MLruvfe=Dw@mail.gmail.com> <99114D73-22EF-43CD-848E-88A37B29B953@public-files.de> <CAL_JsqKz1qQFZnStLnApraJvp=-cQoW6x5=p7-GBcftYKVMErg@mail.gmail.com>
+Message-ID: <192D4414-DC88-4321-BB2A-4345C48E3C12@fw-web.de>
 MIME-Version: 1.0
+X-Mail-ID: 0ca9227a-4531-4695-b383-da3c235452f3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221118_153306_278240_FFF0FB54 
-X-CRM114-Status: UNSURE (   7.82  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20221118_232003_202372_C6E08F08 
+X-CRM114-Status: GOOD (  26.74  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,114 +81,143 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Enable PCIe0 and PCIe1 hosts found on SM8350 HDK board.
+Am 8. November 2022 15:45:49 MEZ schrieb Rob Herring <robh+dt@kernel.org>:
+>On Fri, Nov 18, 2022 at 4:05 PM Frank Wunderlich
+><frank-w@public-files.de> wrote:
+>>
+>> Am 18. November 2022 22:39:52 MEZ schrieb Rob Herring <robh+dt@kernel.org>:
+>> >On Fri, Nov 18, 2022 at 1:01 PM Frank Wunderlich <linux@fw-web.de> wrote:
+>> >>
+>> >> From: Frank Wunderlich <frank-w@public-files.de>
+>> >>
+>> >> Add devicetree overlays for using nand and nor on BPI-R3.
+>> >
+>> >Can you not tell at runtime which one you booted from? If not, how
+>> >does one choose which overlay to apply? If you can, why not populate
+>> >both nodes and enable the right one? IMO, if all h/w is present, it
+>> >should all be in the DT. Selecting what h/w to use is a separate
+>> >problem and overlays aren't a great solution for that.
+>>
+>> It is not the decision about bootdevice,more available devices.
+>>
+>> Only 1 spi device (nand OR nor) is available
+>> at boottime as they share same spi bus and
+>> chipselect is set via hw jumper.
+>> Both nodes have reg 0,which is imho not
+>> supported in linux.
+>
+>As long as one is set to disabled, it should be fine.
+>
+>
+>> I choosed overlays to add the right spi
+>> device on the right mmc device where
+>> similar selection happens (see patch 10).
+>> Either sd OR emmc can be used (1 mmc
+>> controller,first 4bits from bus switched by
+>> hardware jumper).But for mmc i use it as
+>> base fdt because i see mmc as primary
+>> device which holds rootfs too. Nand/nor is
+>> imho helping device for accessing emmc or
+>> like rescue system (only uboot).
+>
+>No way to read the jumper state or know what you booted from I gues?
+>
+>> I probe in uboot if emmc is available (mmc
+>>  partconf) and choose emmc else sd. For
+>>  spi i try with sf command to check for nor,if
+>>  this does not work i apply nand overlay.
+>
+>Instead of applying overlays, wouldn't just changing 'status' be easier?
 
-Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
----
- arch/arm64/boot/dts/qcom/sm8350-hdk.dts | 80 +++++++++++++++++++++++++
- 1 file changed, 80 insertions(+)
+It will be easier,but requires dts for all
+ combinations,we have have sd/emmc
+ combination twice (once for nand
+ enabling,once for nor) and we have then 4
+ full dts instead of smaller overlays in fit.
 
-diff --git a/arch/arm64/boot/dts/qcom/sm8350-hdk.dts b/arch/arm64/boot/dts/qcom/sm8350-hdk.dts
-index 69ae6503c2f6..bff75602303c 100644
---- a/arch/arm64/boot/dts/qcom/sm8350-hdk.dts
-+++ b/arch/arm64/boot/dts/qcom/sm8350-hdk.dts
-@@ -234,6 +234,39 @@ &mpss {
- 	firmware-name = "qcom/sm8350/modem.mbn";
- };
- 
-+&pcie0 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pcie0_default_state>;
-+
-+	perst-gpios = <&tlmm 94 GPIO_ACTIVE_LOW>;
-+	wake-gpios = <&tlmm 96 GPIO_ACTIVE_HIGH>;
-+
-+	status = "okay";
-+};
-+
-+&pcie0_phy {
-+	vdda-phy-supply = <&vreg_l5b_0p88>;
-+	vdda-pll-supply = <&vreg_l6b_1p2>;
-+
-+	status = "okay";
-+};
-+
-+&pcie1 {
-+	perst-gpios = <&tlmm 97 GPIO_ACTIVE_LOW>;
-+	wake-gpios = <&tlmm 99 GPIO_ACTIVE_HIGH>;
-+
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pcie1_default_state>;
-+
-+	status = "okay";
-+};
-+
-+&pcie1_phy {
-+	status = "okay";
-+	vdda-phy-supply = <&vreg_l5b_0p88>;
-+	vdda-pll-supply = <&vreg_l6b_1p2>;
-+};
-+
- &qupv3_id_0 {
- 	status = "okay";
- };
-@@ -245,6 +278,53 @@ &slpi {
- 
- &tlmm {
- 	gpio-reserved-ranges = <52 8>;
-+
-+	pcie0_default_state: pcie0-default-state {
-+		perst-pins {
-+			pins = "gpio94";
-+			function = "gpio";
-+			drive-strength = <2>;
-+			bias-pull-down;
-+		};
-+
-+		clkreq-pins {
-+			pins = "gpio95";
-+			function = "pcie0_clkreqn";
-+			drive-strength = <2>;
-+			bias-pull-up;
-+		};
-+
-+		wake-pins {
-+			pins = "gpio96";
-+			function = "gpio";
-+			drive-strength = <2>;
-+			bias-pull-up;
-+		};
-+	};
-+
-+	pcie1_default_state: pcie1-default-state {
-+		perst-pins {
-+			pins = "gpio97";
-+			function = "gpio";
-+			drive-strength = <2>;
-+			bias-pull-down;
-+		};
-+
-+		clkreq-pins {
-+			pins = "gpio98";
-+			function = "pcie1_clkreqn";
-+			drive-strength = <2>;
-+			bias-pull-up;
-+		};
-+
-+		wake-pins {
-+			pins = "gpio99";
-+			function = "gpio";
-+			drive-strength = <2>;
-+			bias-pull-up;
-+		};
-+	};
-+
- };
- 
- &uart2 {
--- 
-2.35.1
+So i should add spi subnodes both disabled
+ in base dtsi and create 4 dts (sd-nand,sd-nor,emmc-nand,emmc-nor) with
+ mmc node and enabling the right spi node?
+>>
+>> >> Signed-off-by: Frank Wunderlich <frank-w@public-files.de>
+>> >> ---
+>> >> maybe rename to dtso?
+>> >>
+>> >> "kbuild: Allow DTB overlays to built from .dtso named source files"
+>> >> https://git.kernel.org/pub/scm/linux/kernel/git/robh/linux.git/commit/?h=dt/next&id=363547d2191cbc32ca954ba75d72908712398ff2
+>>
+>> Should i do this?
+>
+>Yes. .dts -> .dtbo is going to be removed.
 
+Do this if still using overlays,will test new way.
+
+Maybe we can apply parts 1-9 first?
+
+>> >> more comments about the dt overlay-support:
+>> >>
+>> >> https://patchwork.kernel.org/comment/25092116/
+>> >> https://patchwork.kernel.org/comment/25085681/
+>>
+>> Daniel suggest define sd/emmc as overlay too...with way you mention below we could create 4 full fdt without applying overlays in uboot.
+>
+>Yes, but if you are going to do that, then you can just do all this
+>with includes.
+
+This is a third way if i understand correctly
+
+Make all of them as overlay (dtso?) but
+ build dtb by combining them in makefile.
+
+This looks the best way because it avoids
+ redundand code for mmc node and allows
+ my current spi config (not the status way
+ which may break due to same unit address).
+
+I guess my base dtsi is then a dts too?
+
+Or should these overlays only duplicated and either include sd dts or emmc dts (but this creates again redundant code)?
+>> >> --- a/arch/arm64/boot/dts/mediatek/Makefile
+>> >> +++ b/arch/arm64/boot/dts/mediatek/Makefile
+>> >> @@ -8,6 +8,8 @@ dtb-$(CONFIG_ARCH_MEDIATEK) += mt6797-x20-dev.dtb
+>> >>  dtb-$(CONFIG_ARCH_MEDIATEK) += mt7622-rfb1.dtb
+>> >>  dtb-$(CONFIG_ARCH_MEDIATEK) += mt7622-bananapi-bpi-r64.dtb
+>> >>  dtb-$(CONFIG_ARCH_MEDIATEK) += mt7986a-bananapi-bpi-r3-emmc.dtb
+>> >> +dtb-$(CONFIG_ARCH_MEDIATEK) += mt7986a-bananapi-bpi-r3-nand.dtbo
+>> >> +dtb-$(CONFIG_ARCH_MEDIATEK) += mt7986a-bananapi-bpi-r3-nor.dtbo
+>> >
+>> >These need rules to apply them to the base dtb(s). You just need:
+>> >
+>> >full.dtb := base.dtb overlay.dtb
+>> >dtb-y += full.dtb
+>>
+>> I would prefer to do this in bootloader to allow all 4 possible configurations:
+>>
+>> Sd+nand
+>> Sd+nor
+>> Emmc+nand
+>> Emmc+nor
+>
+>That's fine. The purpose here is to document what the overlays apply
+>to, check that they actually apply, and validate them when applied
+>(unless someone wants to figure out all the issues with validating
+>just an overlay and make that work). You for example have an
+>undocumented compatible in yours (denx,fit).
+
+Oh,need to check,copied partitions from my
+ uboot dts...maybe there is a linux version
+ for marking it as fit partition,else i drop
+ completely.
+
+So i i stay with current way i have to rename
+ overlays to dtso and add info about base
+ dtb (bpi-r3-sd/emmc) to commit message
+ or into the overlay itself?
+
+>Rob
+
+
+regards Frank
 
 -- 
 linux-phy mailing list
