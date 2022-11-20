@@ -4,50 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 92D6BC4332F
-	for <linux-phy@archiver.kernel.org>; Sun, 20 Nov 2022 07:17:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B406AC433FE
+	for <linux-phy@archiver.kernel.org>; Sun, 20 Nov 2022 16:13:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=DwnOjIL2RtHmLDphY6SttSXlF+25Nm2ns8q/tRaDHAI=; b=J3eF697blcRHoi
-	IwxQcmZsmkeZRZqclvwPVzZFYh3qN0WbA8Hzbpxqn7T8oeX12/KtfB4Y+K2DS8j0MviE/qWouhpNM
-	Yz11ezWsUx0QsM3flK+CKpaMc5sy6RqiFEZEGhyRXthdEY1l6WAfeUXv/uI1g6tzsrwVbNCKP+ARQ
-	Bo/IMKnn4WcYTI7cQ2U5QV3D8T6YRXFt2i2NGDpQNlFZh8IFv6vkvG6V+3Yv/ZFA/Jzfl+B7Jb0/n
-	WTc+O1JJgSRJfHd4rowjRKColpo03m9P1xL5sysAMLmj9uGx7J0KygVtEK7Utb2IpgBhMFR/LSMNh
-	jFNWjJWUp4H7KLUuZhBA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=B4Kq85DkqCN0x1YUE1CJG+N6U7v6N6jSq4yPy5KjdkI=; b=Xtnj43in/q8NsH
+	mGL73wZax+3+L9v6mb7kunzlFxAOVYuNUlY3dp99YcLLu17JmngC9jabrj6qW1UBATqt2qHssnw8Z
+	ZwDfI9PAkzvm0Qnt5CfiASuMqir8bzZMoOZmKOUzlg/WD/N2ckYFpCkvEbDfxUIUW+bLgYh+Ebs6n
+	Zzmj06q4n7fgaheai8U+vXxogfN7uELs3/nKcgjGJ9iy4wg2OijAKKzkvoH028FsiDi702uu9JXjw
+	gxKpqLT7RQ3W5zVh9rH6wjQ+dAQo+rzPuo/TpVSjKbtGi2TCw3b8VWUn1S5durg1z0gJtewleNfzE
+	YdvDdNgGHUCPJI5+bW0A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oweZf-002f4p-H3; Sun, 20 Nov 2022 07:17:07 +0000
-Received: from szxga01-in.huawei.com ([45.249.212.187])
+	id 1owmwR-005XlX-Ry; Sun, 20 Nov 2022 16:13:11 +0000
+Received: from mail-oa1-f46.google.com ([209.85.160.46])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oweZU-002euk-Ew; Sun, 20 Nov 2022 07:16:58 +0000
-Received: from dggpemm500024.china.huawei.com (unknown [172.30.72.53])
-	by szxga01-in.huawei.com (SkyGuard) with ESMTP id 4NFMDH2r5vzqSMb;
-	Sun, 20 Nov 2022 15:12:47 +0800 (CST)
-Received: from huawei.com (10.67.175.31) by dggpemm500024.china.huawei.com
- (7.185.36.203) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2375.31; Sun, 20 Nov
- 2022 15:16:39 +0800
-From: GUO Zihua <guozihua@huawei.com>
-To: <vkoul@kernel.org>, <kishon@kernel.org>, <heiko@sntech.de>
-CC: <linux-phy@lists.infradead.org>, <linux-arm-kernel@lists.infradead.org>,
-	<linux-rockchip@lists.infradead.org>, <bivvy.bi@rock-chips.com>
-Subject: [PATCH] phy: rockchip: Fix resource leakage in inno_dsidphy_power_on
-Date: Sun, 20 Nov 2022 15:13:30 +0800
-Message-ID: <20221120071330.31154-1-guozihua@huawei.com>
-X-Mailer: git-send-email 2.17.1
+	id 1owmwF-005Xi1-Rj; Sun, 20 Nov 2022 16:13:01 +0000
+Received: by mail-oa1-f46.google.com with SMTP id 586e51a60fabf-1322d768ba7so11299521fac.5;
+        Sun, 20 Nov 2022 08:12:58 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=wiLwBmMHV1A6Z4C0RQN7TsMa3l3kHluwKps8vWmowhY=;
+        b=0+BjqeTLifoXv9LjyxJlqT0BK1NoF4NDcSd0oIJqg0Npr5WfgKVD6lKKTDi8HGUdX8
+         seujgdkxR5zddhwQYZKRZl550LxyWHge1RdMb4bGGl2Q1aE7OpiX3vXNj43OUJdCALOJ
+         FK0r/GYYeb3LYhnoxc15SW69dc8AuCBzeDHTlB3C9csKYFiQ/CY2AZKybJI3O/emOJP/
+         DMdfL5PsLVEP3bEvQa7j7qJICl/w711yXzn9s2i0wvzfBMur9OfD/HU8EqAbh8+2S8Sm
+         VwY12yrd9RStcAzL+SLuGcgiqA7j5z8zNxAouIK3bJxS2H0PKZQv9idsTLRSU7h2ssDJ
+         eovQ==
+X-Gm-Message-State: ANoB5pmAtjjj2OQeBkHf/TjIi1idk8DZnB6MJrKr158Q/WFfbICQ3qWX
+	J1Z0FXy1jHiWjBv0Dy9Zmw==
+X-Google-Smtp-Source: AA0mqf6ZbXDYehIdfhDzXQQ1LP/V2dpERMTijOuj5pa1lBMe4ljmr5JO1MZblW1kwPOdHYFxj4miUQ==
+X-Received: by 2002:a05:6870:670a:b0:131:3a84:1326 with SMTP id gb10-20020a056870670a00b001313a841326mr11334462oab.128.1668960777844;
+        Sun, 20 Nov 2022 08:12:57 -0800 (PST)
+Received: from robh_at_kernel.org ([2605:ef80:80f6:1a48:29f6:113d:266f:a78e])
+        by smtp.gmail.com with ESMTPSA id i11-20020a9d53cb000000b00667ff6b7e9esm3960911oth.40.2022.11.20.08.12.50
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sun, 20 Nov 2022 08:12:57 -0800 (PST)
+Received: (nullmailer pid 3145083 invoked by uid 1000);
+	Sun, 20 Nov 2022 16:12:51 -0000
+Date: Sun, 20 Nov 2022 10:12:51 -0600
+From: Rob Herring <robh@kernel.org>
+To: Frank Wunderlich <linux@fw-web.de>
+Cc: frank-w@public-files.de, linux-mediatek@lists.infradead.org, Ryder Lee <ryder.lee@mediatek.com>, Jianjun Wang <jianjun.wang@mediatek.com>, Bjorn Helgaas <bhelgaas@google.com>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Chunfeng Yun <chunfeng.yun@mediatek.com>, Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Matthias Brugger <matthias.bgg@gmail.com>, Paolo Abeni <pabeni@redhat.com>, Lorenzo Bianconi <lorenzo@kernel.org>, Bo Jiao <Bo.Jiao@mediatek.com>, linux-pci@vger.kernel.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org, linux-usb@vger.kernel.org
+Subject: Re: [PATCH v6 11/11] arm64: dts: mt7986: add BPI-R3 nand/nor overlays
+Message-ID: <20221120161251.GA3133853-robh@kernel.org>
+References: <20221118190126.100895-1-linux@fw-web.de>
+ <20221118190126.100895-12-linux@fw-web.de>
+ <CAL_JsqKiRzRToSzk3q+csWR5DEZjZpQWChqZ3mH8MLruvfe=Dw@mail.gmail.com>
+ <99114D73-22EF-43CD-848E-88A37B29B953@public-files.de>
+ <CAL_JsqKz1qQFZnStLnApraJvp=-cQoW6x5=p7-GBcftYKVMErg@mail.gmail.com>
+ <192D4414-DC88-4321-BB2A-4345C48E3C12@fw-web.de>
 MIME-Version: 1.0
-X-Originating-IP: [10.67.175.31]
-X-ClientProxiedBy: dggems702-chm.china.huawei.com (10.3.19.179) To
- dggpemm500024.china.huawei.com (7.185.36.203)
-X-CFilter-Loop: Reflected
+Content-Disposition: inline
+In-Reply-To: <192D4414-DC88-4321-BB2A-4345C48E3C12@fw-web.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221119_231656_689313_828419EE 
-X-CRM114-Status: UNSURE (   7.17  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20221120_081259_938202_1A619EEF 
+X-CRM114-Status: GOOD (  43.48  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -64,37 +83,150 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-inno->pclk_phy and inno->ref_clk is not unprepared in error path.
-pm_runtime should also be put. This patch fix these issues.
+On Sat, Nov 19, 2022 at 08:19:52AM +0100, Frank Wunderlich wrote:
+> Am 8. November 2022 15:45:49 MEZ schrieb Rob Herring <robh+dt@kernel.org>:
+> >On Fri, Nov 18, 2022 at 4:05 PM Frank Wunderlich
+> ><frank-w@public-files.de> wrote:
+> >>
+> >> Am 18. November 2022 22:39:52 MEZ schrieb Rob Herring <robh+dt@kernel.org>:
+> >> >On Fri, Nov 18, 2022 at 1:01 PM Frank Wunderlich <linux@fw-web.de> wrote:
+> >> >>
+> >> >> From: Frank Wunderlich <frank-w@public-files.de>
+> >> >>
+> >> >> Add devicetree overlays for using nand and nor on BPI-R3.
+> >> >
+> >> >Can you not tell at runtime which one you booted from? If not, how
+> >> >does one choose which overlay to apply? If you can, why not populate
+> >> >both nodes and enable the right one? IMO, if all h/w is present, it
+> >> >should all be in the DT. Selecting what h/w to use is a separate
+> >> >problem and overlays aren't a great solution for that.
+> >>
+> >> It is not the decision about bootdevice,more available devices.
+> >>
+> >> Only 1 spi device (nand OR nor) is available
+> >> at boottime as they share same spi bus and
+> >> chipselect is set via hw jumper.
+> >> Both nodes have reg 0,which is imho not
+> >> supported in linux.
+> >
+> >As long as one is set to disabled, it should be fine.
+> >
+> >
+> >> I choosed overlays to add the right spi
+> >> device on the right mmc device where
+> >> similar selection happens (see patch 10).
+> >> Either sd OR emmc can be used (1 mmc
+> >> controller,first 4bits from bus switched by
+> >> hardware jumper).But for mmc i use it as
+> >> base fdt because i see mmc as primary
+> >> device which holds rootfs too. Nand/nor is
+> >> imho helping device for accessing emmc or
+> >> like rescue system (only uboot).
+> >
+> >No way to read the jumper state or know what you booted from I gues?
+> >
+> >> I probe in uboot if emmc is available (mmc
+> >>  partconf) and choose emmc else sd. For
+> >>  spi i try with sf command to check for nor,if
+> >>  this does not work i apply nand overlay.
+> >
+> >Instead of applying overlays, wouldn't just changing 'status' be easier?
+> 
+> It will be easier,but requires dts for all
+>  combinations,we have have sd/emmc
+>  combination twice (once for nand
+>  enabling,once for nor) and we have then 4
+>  full dts instead of smaller overlays in fit.
 
-This resolves smatch warning:
-inno_dsidphy_power_on() warn: 'inno->pclk_phy' from clk_prepare_enable()
-	not released on lines: 607.
+No, I mean can't you have 1 dtb with everything, but nand, nor, emmc, 
+and sd are all disabled. Then at boot change 'status' for what's 
+enabled.
 
-Fixes: b7535a3bc0ba ("phy/rockchip: Add support for Innosilicon MIPI/LVDS/TTL PHY")
-Fixes: f0684c1a8367 ("phy/rockchip: inno-dsidphy: generalize parameter handling")
-Signed-off-by: GUO Zihua <guozihua@huawei.com>
----
- drivers/phy/rockchip/phy-rockchip-inno-dsidphy.c | 3 +++
- 1 file changed, 3 insertions(+)
 
-diff --git a/drivers/phy/rockchip/phy-rockchip-inno-dsidphy.c b/drivers/phy/rockchip/phy-rockchip-inno-dsidphy.c
-index 2c5847faff63..20ba716f5dd0 100644
---- a/drivers/phy/rockchip/phy-rockchip-inno-dsidphy.c
-+++ b/drivers/phy/rockchip/phy-rockchip-inno-dsidphy.c
-@@ -604,6 +604,9 @@ static int inno_dsidphy_power_on(struct phy *phy)
- 		inno_dsidphy_lvds_mode_enable(inno);
- 		break;
- 	default:
-+		pm_runtime_put_sync(inno->dev);
-+		clk_disable_unprepare(inno->ref_clk);
-+		clk_disable_unprepare(inno->pclk_phy);
- 		return -EINVAL;
- 	}
- 
--- 
-2.17.1
+> So i should add spi subnodes both disabled
+>  in base dtsi and create 4 dts (sd-nand,sd-nor,emmc-nand,emmc-nor) with
+>  mmc node and enabling the right spi node?
+> >>
+> >> >> Signed-off-by: Frank Wunderlich <frank-w@public-files.de>
+> >> >> ---
+> >> >> maybe rename to dtso?
+> >> >>
+> >> >> "kbuild: Allow DTB overlays to built from .dtso named source files"
+> >> >> https://git.kernel.org/pub/scm/linux/kernel/git/robh/linux.git/commit/?h=dt/next&id=363547d2191cbc32ca954ba75d72908712398ff2
+> >>
+> >> Should i do this?
+> >
+> >Yes. .dts -> .dtbo is going to be removed.
+> 
+> Do this if still using overlays,will test new way.
+> 
+> Maybe we can apply parts 1-9 first?
 
+Sure.
+
+> 
+> >> >> more comments about the dt overlay-support:
+> >> >>
+> >> >> https://patchwork.kernel.org/comment/25092116/
+> >> >> https://patchwork.kernel.org/comment/25085681/
+> >>
+> >> Daniel suggest define sd/emmc as overlay too...with way you mention below we could create 4 full fdt without applying overlays in uboot.
+> >
+> >Yes, but if you are going to do that, then you can just do all this
+> >with includes.
+> 
+> This is a third way if i understand correctly
+> 
+> Make all of them as overlay (dtso?) but
+>  build dtb by combining them in makefile.
+> 
+> This looks the best way because it avoids
+>  redundand code for mmc node and allows
+>  my current spi config (not the status way
+>  which may break due to same unit address).
+> 
+> I guess my base dtsi is then a dts too?
+
+Yes, it can be.
+
+> 
+> Or should these overlays only duplicated and either include sd dts or emmc dts (but this creates again redundant code)?
+> >> >> --- a/arch/arm64/boot/dts/mediatek/Makefile
+> >> >> +++ b/arch/arm64/boot/dts/mediatek/Makefile
+> >> >> @@ -8,6 +8,8 @@ dtb-$(CONFIG_ARCH_MEDIATEK) += mt6797-x20-dev.dtb
+> >> >>  dtb-$(CONFIG_ARCH_MEDIATEK) += mt7622-rfb1.dtb
+> >> >>  dtb-$(CONFIG_ARCH_MEDIATEK) += mt7622-bananapi-bpi-r64.dtb
+> >> >>  dtb-$(CONFIG_ARCH_MEDIATEK) += mt7986a-bananapi-bpi-r3-emmc.dtb
+> >> >> +dtb-$(CONFIG_ARCH_MEDIATEK) += mt7986a-bananapi-bpi-r3-nand.dtbo
+> >> >> +dtb-$(CONFIG_ARCH_MEDIATEK) += mt7986a-bananapi-bpi-r3-nor.dtbo
+> >> >
+> >> >These need rules to apply them to the base dtb(s). You just need:
+> >> >
+> >> >full.dtb := base.dtb overlay.dtb
+> >> >dtb-y += full.dtb
+> >>
+> >> I would prefer to do this in bootloader to allow all 4 possible configurations:
+> >>
+> >> Sd+nand
+> >> Sd+nor
+> >> Emmc+nand
+> >> Emmc+nor
+> >
+> >That's fine. The purpose here is to document what the overlays apply
+> >to, check that they actually apply, and validate them when applied
+> >(unless someone wants to figure out all the issues with validating
+> >just an overlay and make that work). You for example have an
+> >undocumented compatible in yours (denx,fit).
+> 
+> Oh,need to check,copied partitions from my
+>  uboot dts...maybe there is a linux version
+>  for marking it as fit partition,else i drop
+>  completely.
+
+You just need to document it. But the first thing I'm going to say, is 
+'u-boot' is the vendor, not 'denx'. So 'u-boot,fit'.
+
+Rob
 
 -- 
 linux-phy mailing list
