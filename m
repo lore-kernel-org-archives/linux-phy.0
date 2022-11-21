@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9E69CC43217
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B4A98C43219
 	for <linux-phy@archiver.kernel.org>; Mon, 21 Nov 2022 08:52:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,39 +12,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jB4i30P4x11j5BN1u9S37qtf8AqVDEoElINnNrqIe3s=; b=QvT+i8tpFZUnRm
-	z0q86v/V9ZCKQIRxhG4cl6w3uaVimIjt1Erq5rzgP/dv9PkO44KHWh8NxHKEgEaNRech8og78AwRr
-	AkIzzGL7Iju7nlUDqO2QpHt53oOeovMhHtkaQaBdadNePyLwQci41c+gJ50ucZ+ke/wpEPsADNSUJ
-	SsL/Ex7iDGOnz0H/ksaqpBDoO8P0jBG0jEdUGYAs7QYOYlZClXdW4KmH/0hc6E2vtkBB2isdJcX8L
-	fIBV07xDU4Z1Znx4soS7P+BpnxXHchUmc9NrVYdHtDNReQfsPEi+xhgEJQzh8jDM2cG7JdvFCPsPz
-	GP0n3TDea/aF2HSrMs8g==;
+	List-Owner; bh=5Gexdbdk3azkU5z44VMyiajrEBouKgmRAlosEi0Q70k=; b=HoDfBAqPQoNqPO
+	9SySeX49tkXhQjmrGwjAe1JfE65Vx0bHAmvteQ36p2/DBAtGiR5fy5aHkSlt4GvTvJhaBvgm8t7NL
+	kVVka8qQg5ISVVDbUf2uFUe3i3D7RimD5hRpafr8i4cb3pqXRaK/mrz+Y9PBiWbzPmOrdunZYapt+
+	oOud5qM2RpVL5+dZeQOCsaxjaMr6J4/2EXJLfzgx/N3arwL2EZ02zeLkRYJfPxwI5lrOJipAAndJA
+	ung88byRhL1enfFU9KNKrJv9dRID+cGeUN68/I4DkmKnE3W7UYIEfvW3MFnKagAHvwCaXMC1V5eFX
+	f7jxePDWEj5vn6JilrOQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ox2X3-00BUe9-SG; Mon, 21 Nov 2022 08:52:01 +0000
+	id 1ox2X4-00BUeP-1O; Mon, 21 Nov 2022 08:52:02 +0000
 Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ox2Wz-00BUZY-S1
+	id 1ox2Wz-00BUZD-GI
 	for linux-phy@lists.infradead.org; Mon, 21 Nov 2022 08:52:00 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 7712F60F6D;
-	Mon, 21 Nov 2022 08:51:57 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E4E57C4FF07;
+	by dfw.source.kernel.org (Postfix) with ESMTPS id F1ED060F4F;
+	Mon, 21 Nov 2022 08:51:56 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8065DC43148;
 	Mon, 21 Nov 2022 08:51:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1669020715;
-	bh=RSCCNHg0pVmtS0IdanzEJRU1fo8izWYA/WxRqAymmF4=;
+	s=k20201202; t=1669020714;
+	bh=oaYydGIIhFbVg1SOFvykm3oAbCc9Ak2k+xW9nwe5c/g=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=OO9qHUMDKnLBjdXTTukUmV0MM718EyTHjXyefp2iLOUw1gUCKcbnNyKYj9lz0RqBP
-	 NQHFy/BqnDzgTI9ReWVieldnrgzfDdYDClzdePn+E0Ws2bvEt+1KD/E/wjpkOotZSn
-	 m5eRcTf3oqMN+N1A/Ds/yJnjzPWz8U2rsVos8Zv0/PkPNlV+vYVbXtUoFYcV4CVheM
-	 tdaRC95XdeFbkNT5DllABG45DpN/e4MAr3mFKeNO+Fbo+t9tRngmIoSJvSDi6H4cjC
-	 l6rNiy2QVVpe9muG3OukxBdXJiDGDsj3qlI9z7OXN99Fi7Qgr1Vyh7C8nw96qhcqEl
-	 YH1NIe8ZVHP7Q==
+	b=olGyWcvVUP0coNOd9kW8Idz/ytERBmGqAHrlgh/ysBGBmBZv1A+GP+oFH7uf8DT1a
+	 VbyhY58+3gaxeDGKka9B07xxEGZe21nAyEqPgGR9KSefkzQUS10iIWyYbrbs7R1Vkv
+	 HPS0WNZzf4N/GpWPCJ/14tWjzgaGRDmAtJIqHER7T8mHzcACHb1I3VNiF6aFZm4V4i
+	 qixFnYCjvZYAz8dMyz+nRlYdf8REOSY1yXWslQqZeBKqqFcDXKQMZiNBEo2JWKuiV5
+	 r5/UmV1iQHDNTgdFkB6byWrtBD7qTzJeoenw7+o8OfevFKUy2xqQHqTI6J4BU1hZ2g
+	 qsXDjdqVhtIqA==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1ox2WT-00088c-8b; Mon, 21 Nov 2022 09:51:25 +0100
+	id 1ox2WS-00088H-It; Mon, 21 Nov 2022 09:51:24 +0100
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>
 Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
@@ -58,17 +58,18 @@ Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
 	linux-phy@lists.infradead.org,
 	devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
-	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH v3 10/15] phy: qcom-qmp-combo: clean up DP clock callbacks
-Date: Mon, 21 Nov 2022 09:50:53 +0100
-Message-Id: <20221121085058.31213-11-johan+linaro@kernel.org>
+	Johan Hovold <johan+linaro@kernel.org>,
+	Rob Herring <robh@kernel.org>
+Subject: [PATCH v3 02/15] dt-bindings: phy: qcom,qmp-usb3-dp: fix sc8280xp binding
+Date: Mon, 21 Nov 2022 09:50:45 +0100
+Message-Id: <20221121085058.31213-3-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.37.4
 In-Reply-To: <20221121085058.31213-1-johan+linaro@kernel.org>
 References: <20221121085058.31213-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221121_005158_000479_C8DA7277 
-X-CRM114-Status: GOOD (  13.46  )
+X-CRM114-CacheID: sfid-20221121_005157_643699_4E733ACF 
+X-CRM114-Status: GOOD (  23.92  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,112 +86,217 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Clean up the DP clock callbacks somewhat by dropping the redundant
-"qcom" prefix and removing line breaks after type specifiers.
+The current QMP USB3-DP PHY bindings are based on the original MSM8996
+binding which provided multiple PHYs per IP block and these in turn were
+described by child nodes.
 
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+The QMP USB3-DP PHY block provides a single multi-protocol PHY and even
+if some resources are only used by either the USB or DP part of the
+device there is no real benefit in describing these resources in child
+nodes.
+
+The original MSM8996 binding also ended up describing the individual
+register blocks as belonging to either the wrapper node or the PHY child
+nodes.
+
+This is an unnecessary level of detail which has lead to problems when
+later IP blocks using different register layouts have been forced to fit
+the original mould rather than updating the binding. The bindings are
+arguable also incomplete as they only the describe register blocks used
+by the current Linux drivers (e.g. does not include the PCS LANE
+registers).
+
+This is specifically true for later USB4-USB3-DP QMP PHYs where the TX
+registers are used by both the USB3 and DP parts of the PHY (and where
+the USB4 part of the PHY was not covered by the binding at all). Notably
+there are also no DP "RX" (sic) registers as described by the current
+bindings and the DP "PCS" region is really a set of DP_PHY registers.
+
+Add a new binding for the USB4-USB3-DP QMP PHYs found on SC8280XP which
+further bindings can be based on.
+
+Note that the binding uses a PHY index to access either the USB3 or DP
+part of the PHY and that this can later be used also for the USB4 part
+if needed.
+
+Similarly, the clock inputs and outputs can later be extended to support
+USB4.
+
+Also note that the current binding is simply removed instead of being
+deprecated as it was only recently merged and would not allow for
+supporting DP mode.
+
+Reviewed-by: Rob Herring <robh@kernel.org>
 Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 33 ++++++++++-------------
- 1 file changed, 14 insertions(+), 19 deletions(-)
+ .../phy/qcom,sc7180-qmp-usb3-dp-phy.yaml      | 12 ---
+ .../phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml    | 99 +++++++++++++++++++
+ include/dt-bindings/phy/phy-qcom-qmp.h        | 20 ++++
+ 3 files changed, 119 insertions(+), 12 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
+ create mode 100644 include/dt-bindings/phy/phy-qcom-qmp.h
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-index 89a5b51c770d..fb3705b00823 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-@@ -2304,8 +2304,7 @@ static int phy_pipe_clk_register(struct qmp_combo *qmp, struct device_node *np)
-  *              for DP pixel clock
-  *
-  */
--static int qcom_qmp_dp_pixel_clk_determine_rate(struct clk_hw *hw,
--						struct clk_rate_request *req)
-+static int qmp_dp_pixel_clk_determine_rate(struct clk_hw *hw, struct clk_rate_request *req)
- {
- 	switch (req->rate) {
- 	case 1620000000UL / 2:
-@@ -2317,8 +2316,7 @@ static int qcom_qmp_dp_pixel_clk_determine_rate(struct clk_hw *hw,
- 	}
- }
+diff --git a/Documentation/devicetree/bindings/phy/qcom,sc7180-qmp-usb3-dp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc7180-qmp-usb3-dp-phy.yaml
+index 8afc5e815ae8..d9d0ab90edb1 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,sc7180-qmp-usb3-dp-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,sc7180-qmp-usb3-dp-phy.yaml
+@@ -23,7 +23,6 @@ properties:
+       - qcom,sc7180-qmp-usb3-dp-phy
+       - qcom,sc7280-qmp-usb3-dp-phy
+       - qcom,sc8180x-qmp-usb3-dp-phy
+-      - qcom,sc8280xp-qmp-usb43dp-phy
+       - qcom,sdm845-qmp-usb3-dp-phy
+       - qcom,sm8250-qmp-usb3-dp-phy
+   reg:
+@@ -169,17 +168,6 @@ required:
  
--static unsigned long
--qcom_qmp_dp_pixel_clk_recalc_rate(struct clk_hw *hw, unsigned long parent_rate)
-+static unsigned long qmp_dp_pixel_clk_recalc_rate(struct clk_hw *hw, unsigned long parent_rate)
- {
- 	const struct qmp_combo *qmp;
- 	const struct phy_configure_opts_dp *dp_opts;
-@@ -2340,13 +2338,12 @@ qcom_qmp_dp_pixel_clk_recalc_rate(struct clk_hw *hw, unsigned long parent_rate)
- 	}
- }
+ additionalProperties: false
  
--static const struct clk_ops qcom_qmp_dp_pixel_clk_ops = {
--	.determine_rate = qcom_qmp_dp_pixel_clk_determine_rate,
--	.recalc_rate = qcom_qmp_dp_pixel_clk_recalc_rate,
-+static const struct clk_ops qmp_dp_pixel_clk_ops = {
-+	.determine_rate	= qmp_dp_pixel_clk_determine_rate,
-+	.recalc_rate	= qmp_dp_pixel_clk_recalc_rate,
- };
- 
--static int qcom_qmp_dp_link_clk_determine_rate(struct clk_hw *hw,
--					       struct clk_rate_request *req)
-+static int qmp_dp_link_clk_determine_rate(struct clk_hw *hw, struct clk_rate_request *req)
- {
- 	switch (req->rate) {
- 	case 162000000:
-@@ -2359,8 +2356,7 @@ static int qcom_qmp_dp_link_clk_determine_rate(struct clk_hw *hw,
- 	}
- }
- 
--static unsigned long
--qcom_qmp_dp_link_clk_recalc_rate(struct clk_hw *hw, unsigned long parent_rate)
-+static unsigned long qmp_dp_link_clk_recalc_rate(struct clk_hw *hw, unsigned long parent_rate)
- {
- 	const struct qmp_combo *qmp;
- 	const struct phy_configure_opts_dp *dp_opts;
-@@ -2379,13 +2375,12 @@ qcom_qmp_dp_link_clk_recalc_rate(struct clk_hw *hw, unsigned long parent_rate)
- 	}
- }
- 
--static const struct clk_ops qcom_qmp_dp_link_clk_ops = {
--	.determine_rate = qcom_qmp_dp_link_clk_determine_rate,
--	.recalc_rate = qcom_qmp_dp_link_clk_recalc_rate,
-+static const struct clk_ops qmp_dp_link_clk_ops = {
-+	.determine_rate	= qmp_dp_link_clk_determine_rate,
-+	.recalc_rate	= qmp_dp_link_clk_recalc_rate,
- };
- 
--static struct clk_hw *
--qcom_qmp_dp_clks_hw_get(struct of_phandle_args *clkspec, void *data)
-+static struct clk_hw *qmp_dp_clks_hw_get(struct of_phandle_args *clkspec, void *data)
- {
- 	struct qmp_combo *qmp = data;
- 	unsigned int idx = clkspec->args[0];
-@@ -2408,7 +2403,7 @@ static int phy_dp_clks_register(struct qmp_combo *qmp, struct device_node *np)
- 	int ret;
- 
- 	snprintf(name, sizeof(name), "%s::link_clk", dev_name(qmp->dev));
--	init.ops = &qcom_qmp_dp_link_clk_ops;
-+	init.ops = &qmp_dp_link_clk_ops;
- 	init.name = name;
- 	qmp->dp_link_hw.init = &init;
- 	ret = devm_clk_hw_register(qmp->dev, &qmp->dp_link_hw);
-@@ -2416,7 +2411,7 @@ static int phy_dp_clks_register(struct qmp_combo *qmp, struct device_node *np)
- 		return ret;
- 
- 	snprintf(name, sizeof(name), "%s::vco_div_clk", dev_name(qmp->dev));
--	init.ops = &qcom_qmp_dp_pixel_clk_ops;
-+	init.ops = &qmp_dp_pixel_clk_ops;
- 	init.name = name;
- 	qmp->dp_pixel_hw.init = &init;
- 	ret = devm_clk_hw_register(qmp->dev, &qmp->dp_pixel_hw);
-@@ -2452,7 +2447,7 @@ static int qmp_combo_register_clocks(struct qmp_combo *qmp, struct device_node *
- 	if (ret)
- 		return ret;
- 
--	ret = of_clk_add_hw_provider(dp_np, qcom_qmp_dp_clks_hw_get, qmp);
-+	ret = of_clk_add_hw_provider(dp_np, qmp_dp_clks_hw_get, qmp);
- 	if (ret)
- 		return ret;
- 
+-allOf:
+-  - if:
+-      properties:
+-        compatible:
+-          contains:
+-            enum:
+-              - qcom,sc8280xp-qmp-usb43dp-phy
+-    then:
+-      required:
+-        - power-domains
+-
+ examples:
+   - |
+     #include <dt-bindings/clock/qcom,gcc-sdm845.h>
+diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
+new file mode 100644
+index 000000000000..6f31693d9868
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
+@@ -0,0 +1,99 @@
++# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Qualcomm QMP USB4-USB3-DP PHY controller (SC8280XP)
++
++maintainers:
++  - Vinod Koul <vkoul@kernel.org>
++
++description:
++  The QMP PHY controller supports physical layer functionality for a number of
++  controllers on Qualcomm chipsets, such as, PCIe, UFS and USB.
++
++properties:
++  compatible:
++    enum:
++      - qcom,sc8280xp-qmp-usb43dp-phy
++
++  reg:
++    maxItems: 1
++
++  clocks:
++    maxItems: 4
++
++  clock-names:
++    items:
++      - const: aux
++      - const: ref
++      - const: com_aux
++      - const: usb3_pipe
++
++  power-domains:
++    maxItems: 1
++
++  resets:
++    maxItems: 2
++
++  reset-names:
++    items:
++      - const: phy
++      - const: common
++
++  vdda-phy-supply: true
++
++  vdda-pll-supply: true
++
++  "#clock-cells":
++    const: 1
++    description:
++      See include/dt-bindings/dt-bindings/phy/phy-qcom-qmp.h
++
++  "#phy-cells":
++    const: 1
++    description:
++      See include/dt-bindings/dt-bindings/phy/phy-qcom-qmp.h
++
++required:
++  - compatible
++  - reg
++  - clocks
++  - clock-names
++  - power-domains
++  - resets
++  - reset-names
++  - vdda-phy-supply
++  - vdda-pll-supply
++  - "#clock-cells"
++  - "#phy-cells"
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/clock/qcom,gcc-sc8280xp.h>
++
++    phy@88eb000 {
++      compatible = "qcom,sc8280xp-qmp-usb43dp-phy";
++      reg = <0x088eb000 0x4000>;
++
++      clocks = <&gcc GCC_USB3_PRIM_PHY_AUX_CLK>,
++               <&gcc GCC_USB4_EUD_CLKREF_CLK>,
++               <&gcc GCC_USB3_PRIM_PHY_COM_AUX_CLK>,
++               <&gcc GCC_USB3_PRIM_PHY_PIPE_CLK>;
++      clock-names = "aux", "ref", "com_aux", "usb3_pipe";
++
++      power-domains = <&gcc USB30_PRIM_GDSC>;
++
++      resets = <&gcc GCC_USB3_PHY_PRIM_BCR>,
++               <&gcc GCC_USB4_DP_PHY_PRIM_BCR>;
++      reset-names = "phy", "common";
++
++      vdda-phy-supply = <&vreg_l9d>;
++      vdda-pll-supply = <&vreg_l4d>;
++
++      #clock-cells = <1>;
++      #phy-cells = <1>;
++    };
+diff --git a/include/dt-bindings/phy/phy-qcom-qmp.h b/include/dt-bindings/phy/phy-qcom-qmp.h
+new file mode 100644
+index 000000000000..4edec4c5b224
+--- /dev/null
++++ b/include/dt-bindings/phy/phy-qcom-qmp.h
+@@ -0,0 +1,20 @@
++/* SPDX-License-Identifier: (GPL-2.0 OR BSD-3-Clause) */
++/*
++ * Qualcomm QMP PHY constants
++ *
++ * Copyright (C) 2022 Linaro Limited
++ */
++
++#ifndef _DT_BINDINGS_PHY_QMP
++#define _DT_BINDINGS_PHY_QMP
++
++/* QMP USB4-USB3-DP clocks */
++#define QMP_USB43DP_USB3_PIPE_CLK	0
++#define QMP_USB43DP_DP_LINK_CLK		1
++#define QMP_USB43DP_DP_VCO_DIV_CLK	2
++
++/* QMP USB4-USB3-DP PHYs */
++#define QMP_USB43DP_USB3_PHY		0
++#define QMP_USB43DP_DP_PHY		1
++
++#endif /* _DT_BINDINGS_PHY_QMP */
 -- 
 2.37.4
 
