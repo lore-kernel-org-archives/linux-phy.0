@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C67EBC433FE
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D8528C4332F
 	for <linux-phy@archiver.kernel.org>; Mon, 21 Nov 2022 08:52:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,39 +12,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=f0yA//oUWoc3udu6zmR7Ue6XslJAqPl7fbygTO7Dif4=; b=5G6gq9Aae7cwkB
-	cwexw8Wujk+OgrhviQTwiNGT8NyyNPm3kesaYPqOUE31AaM7jIYeJ/IuUSQHzRIbAHsZ1txpMvQfZ
-	SFZf2W/1yrw1fDfsJ2sCcdRsm0yJMCr9BdwnMULBhVp77oS72XQf/fKMAmoEu42dQQqcmz2Dw7ees
-	UkuJediJBQW8oag8dEMRJK+3CyEgrMl/RtwOWhde+C0P05F2SplpEIhTrjVcyiCv0TLIASoufmVuk
-	8bNCsifvGu6vadgccEcq1Qbg/PZnc9CsgOPgX8UGfPZV+2ObIzfJbyLdpcdB4KBMivavlH0Q4E8ch
-	2bD89+H9cCSNLLHIe63A==;
+	List-Owner; bh=M4VGPhDbbDD4LRh03x9rFbvIHZWfoUspq03QsIhUlco=; b=1GXQt+hfNusqT5
+	J4cR6+/et5HVXvB77bUl2Yi87H0yVl9MmVIdd6+mkFjnhkjN7KyhKXmPqJwqQAVUsvjC/yS26AKSP
+	unz/wEJReKLPfDcUOlqalE6pL4EGt5ZIGmCVVehtJo7pHdTi2fCK9oTulGJyrrEjag/0vIoa51RkV
+	+MhEcKQGnMOzrdxtvz+O85Ge/oWBnMXybgTNSYOOZ/A2hJ0BipLE8OkZKVAFhpyH2XBQDjR0wsAxu
+	giqvd00hZfv3zJTkElOsQw8ObhSvIgDsrsFFgQbwS0Ag+oDp4+0LIzMZoVrazNpMo3IGSiT2F6Y4G
+	XrBEZ7sn1l06mJTPoihw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ox2XE-00BUmE-7g; Mon, 21 Nov 2022 08:52:12 +0000
-Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
+	id 1ox2XE-00BUmN-AM; Mon, 21 Nov 2022 08:52:12 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ox2X0-00BUZo-M7
+	id 1ox2X1-00BUbB-8n
 	for linux-phy@lists.infradead.org; Mon, 21 Nov 2022 08:52:02 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id 4BDE7B80D6C;
-	Mon, 21 Nov 2022 08:51:57 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7E2CEC43470;
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 0C71F60F40;
+	Mon, 21 Nov 2022 08:51:58 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id F30BBC4FF13;
 	Mon, 21 Nov 2022 08:51:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1669020714;
-	bh=rhNguSejjtkHA6rQ2L6dE0ZSqitXPRK1vRjUNJUgpvM=;
+	s=k20201202; t=1669020715;
+	bh=S5xseugGMZk5s5FcsKTKBF2KLbZ80lWoZS12gqBQ1d4=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=EA16iPG9ypkMshvtc06CbwmrvRe+qb5WP/tDi6G45HRTGLInt52k+r7hFqXFKBcl6
-	 DdqRzTNXLETE+ET+lWwP9chQSLhzNPPoaQ7LhlP8ENd1m5bhgOA97Pby91ys40UQZB
-	 wtQT2rQWcSMkLEsi3VUT+YQlvnKrWSAo8WZ3rJ5FFwONAkGKGqIzZbeF3x44ojHK+g
-	 fSmExonOL4LPUUFd0/2gFm/B93xfINupaBBWOGOUDXcAmUl5qfBhUxo+sTQYLOZOXE
-	 ndK9JliQzFWb8OhnM68mI2vKl3EYk28qoqB9RNmKwG5W5pwt/w30oogANu/iMeM2zt
-	 174L6xdaW0+uA==
+	b=gV77FZj3HmD3muBAP2D3gn4WplONtukbm/wFPKcKAoCZjx+5mQ6Ku2s49W17rsJMS
+	 dY1yhcum1TAZD9YX9VYWldMz14noh0kNSwjOrIwDD/JptgPKkeVfELHuJEf3xOHWSL
+	 h6apXcfivOGUGNLQx3pUl/eMfywTmSw/obX3RkvUg1Iv1DYoeShmgvhU/6XmEXT/YL
+	 0omqchMQFLyBIwoCnyz7+SgDqVQ5HDdp7V7/rAsefkEiluVKsKhz5YULiiEjR0PKd3
+	 8Lg7/x5kvbY60IIxiP633QQ4bfGIiP1eTyLkuztj5eS5MYp1u17O7zObU2mjdT2g90
+	 EVoDTmEJiGdLA==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1ox2WS-00088N-QT; Mon, 21 Nov 2022 09:51:24 +0100
+	id 1ox2WT-00088U-3D; Mon, 21 Nov 2022 09:51:25 +0100
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>
 Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
@@ -59,16 +59,16 @@ Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
 	devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH v3 05/15] phy: qcom-qmp-combo: generate pipe clock name
-Date: Mon, 21 Nov 2022 09:50:48 +0100
-Message-Id: <20221121085058.31213-6-johan+linaro@kernel.org>
+Subject: [PATCH v3 08/15] phy: qcom-qmp-combo: add clock registration helper
+Date: Mon, 21 Nov 2022 09:50:51 +0100
+Message-Id: <20221121085058.31213-9-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.37.4
 In-Reply-To: <20221121085058.31213-1-johan+linaro@kernel.org>
 References: <20221121085058.31213-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221121_005158_929520_57648FE8 
-X-CRM114-Status: GOOD (  13.37  )
+X-CRM114-CacheID: sfid-20221121_005159_387811_B78DFC73 
+X-CRM114-Status: GOOD (  14.72  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,41 +86,55 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 In preparation for supporting devicetree bindings which do not use child
-nodes, generate also the USB3 pipe clock name based on the platform
-device name as is done for the DP clocks.
+nodes, add a clock registration helper to handle the registration of
+both the USB and DP clocks.
 
 Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 9 +++------
- 1 file changed, 3 insertions(+), 6 deletions(-)
+ drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 22 +++++++++++++++++-----
+ 1 file changed, 17 insertions(+), 5 deletions(-)
 
 diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-index 85def6560e43..7434955c8898 100644
+index 9b945a72ae9b..1079a16b45f6 100644
 --- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
 +++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-@@ -2247,18 +2247,15 @@ static int phy_pipe_clk_register(struct qmp_combo *qmp, struct device_node *np)
+@@ -2447,6 +2447,22 @@ static int phy_dp_clks_register(struct qmp_combo *qmp, struct device_node *np)
+ 	return devm_add_action_or_reset(qmp->dev, phy_clk_release_provider, np);
+ }
+ 
++static int qmp_combo_register_clocks(struct qmp_combo *qmp, struct device_node *usb_np,
++					struct device_node *dp_np)
++{
++	int ret;
++
++	ret = phy_pipe_clk_register(qmp, usb_np);
++	if (ret)
++		return ret;
++
++	ret = phy_dp_clks_register(qmp, dp_np);
++	if (ret)
++		return ret;
++
++	return 0;
++}
++
+ static int qmp_combo_parse_dt_lecacy_dp(struct qmp_combo *qmp, struct device_node *np)
  {
- 	struct clk_fixed_rate *fixed;
- 	struct clk_init_data init = { };
-+	char name[64];
- 	int ret;
+ 	struct device *dev = qmp->dev;
+@@ -2606,11 +2622,7 @@ static int qmp_combo_probe(struct platform_device *pdev)
+ 	 */
+ 	pm_runtime_forbid(dev);
  
--	ret = of_property_read_string(np, "clock-output-names", &init.name);
--	if (ret) {
--		dev_err(qmp->dev, "%pOFn: No clock-output-names\n", np);
--		return ret;
--	}
+-	ret = phy_pipe_clk_register(qmp, usb_np);
+-	if (ret)
+-		goto err_node_put;
 -
- 	fixed = devm_kzalloc(qmp->dev, sizeof(*fixed), GFP_KERNEL);
- 	if (!fixed)
- 		return -ENOMEM;
+-	ret = phy_dp_clks_register(qmp, dp_np);
++	ret = qmp_combo_register_clocks(qmp, usb_np, dp_np);
+ 	if (ret)
+ 		goto err_node_put;
  
-+	snprintf(name, sizeof(name), "%s::pipe_clk", dev_name(qmp->dev));
-+	init.name = name;
- 	init.ops = &clk_fixed_rate_ops;
- 
- 	/* controllers using QMP phys use 125MHz pipe clock interface */
 -- 
 2.37.4
 
