@@ -4,85 +4,52 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3F08CC352A1
-	for <linux-phy@archiver.kernel.org>; Mon, 21 Nov 2022 08:52:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CCAECC4332F
+	for <linux-phy@archiver.kernel.org>; Mon, 21 Nov 2022 09:33:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wMqJnII0d6A06RlZ6skOwCyXhE6dm7Ro0sf4mt28VUw=; b=QgbDi0YXUEpaFt
-	gWBYs32+x7ODaR9Dvk5KQXqpE7ThTiQSCR6eRkZNZwS0ieDGgjQ5baCECEAj5247DWgnoAGwazDc0
-	JfflXnW1xaZXSfd7dYIC5y/X6NM8H2UOZ081SG2cfGTMZj3SN5htvFf+gHf3Hod4ORuH3dhUuI8a/
-	LDF5SG9RG7F4coLZMK+EKBwmFGQd+iGVXls80jmrydc3pH+FzfZRng7oGkTkJNfi/D712CQ4KWuCm
-	H0cHlQmCqke8h/tx76V1kAds4hLlUatzl92QvYnx05J+yxWSD4eSuJc6Db4Lc79Dr3z8kAFbidO/p
-	enmxdSPOg6zRJ8pd3cOg==;
+	List-Owner; bh=HwmOxp/dEguwbFZXq+dlxZbzGGeObttoRjHPOmCmhDk=; b=OMkdOjMUVK5MOJ
+	ToHr2wwf5uI7Y0xpPRSstVaK8hb0pEkAeHpYl4e7ijFNVUK3pB9zVqLiERLEFzW50W4rMSIk6JZSQ
+	zMPHVJIbODlq/M+5Zjxtnb1QE2zXcWDKua8hW71pXyEuQTIsI/fAfquzGc93+R3aE7qqHRlPpYkFB
+	a1/kH9G/Sh3stz7zXMUNSKdrEy6U7/m8UsNT0xiGr4cdmwjh/o0EtLbrmyZNd55+ob1tTSyeXYIBz
+	9e1lwsdm8Vi/V3+eeaN/mRiWNOyaqNs1NFnNeJ88NhyjaXiw2Trj3PJyHk8j9cJke2IeMjX6ixTk8
+	HrUZzsWq9JxjepdNyK+Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ox2XE-00BUnT-LB; Mon, 21 Nov 2022 08:52:12 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
-	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ox2XC-00BUio-5C
-	for linux-phy@bombadil.infradead.org; Mon, 21 Nov 2022 08:52:10 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
-	:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
-	Content-Type:Content-ID:Content-Description;
-	bh=a4io63s0SPkqlm/8z6oxORucVGIHFiv29FQ6du/kfd4=; b=abRDWDdkFDmWc4irZC7BRrfQNF
-	b2V34id4PYD8Yh31gbZhg3ylMk+HrFlfP3I5JdTa+xppldWn64A12KEheKDel25/jMkgJUQg7lF2a
-	g9miRh2VBstEq+i+Urfa1mS4RHQhSLWUQ5T6IIIrfaOPD5JHEFCDClDuJQNrIJrLcYTvYMuC6v8NC
-	WNLkNFp5WrIPdTA/RcrCdxZ3dXbu6G395Ts4WE/m2DllR/oboXnRM4rTK3mPZ5rMaSbvs8Y230sxU
-	9fWYJ1+e0LMOS1kw/mf/FVQ63r8QJrorj2iyhu0/g4QAIUWJqnqLUOoc92IgryaWk7n9vXtccXYCS
-	t4isBvIA==;
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
-	by desiato.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ox2X7-0033b5-DN
-	for linux-phy@lists.infradead.org; Mon, 21 Nov 2022 08:52:08 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 8A23760F70;
-	Mon, 21 Nov 2022 08:51:57 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E52E6C4FF11;
-	Mon, 21 Nov 2022 08:51:54 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1669020715;
-	bh=WRo1qWVdZ75SVsnLQEiddVe0DwiPcNXnEMSF6iU/Sdo=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=cUcY+2pY4YgHnR3Vup7rOWmkPos2SnXGxV43i9sHwxRr8MKjyu/J/TJ9hdJfkR2WO
-	 Ef/tBlpWf6Vhz7UOLvfxqNpBsLfjK/wj3J18rKLZzItZeVCBS/22Hq26wEF6FAAOSF
-	 FWZLbl5fSdJhr6tLV11WeWkTkmSGdw8CDVcJdfTj/qtwmjpFrDU5pBo4FlaXv7aQvm
-	 rMPVmxflTdKbEIlxVd7Dhhyol5BjpeHI9JuHNVSRxy433mYfLOXjz70buuRkoZ7EQs
-	 BhqNSfPZS0vHjCZHb/mIjlSwHCoKAIT1YHhmcXqHSUb34G2VhfsjveMNPGhVEypghd
-	 fsMSk9POf038w==
-Received: from johan by xi.lan with local (Exim 4.94.2)
-	(envelope-from <johan+linaro@kernel.org>)
-	id 1ox2WT-00088m-Hg; Mon, 21 Nov 2022 09:51:25 +0100
-From: Johan Hovold <johan+linaro@kernel.org>
-To: Vinod Koul <vkoul@kernel.org>
-Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
-	Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
-	linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH v3 13/15] phy: qcom-qmp-combo: add support for updated sc8280xp binding
-Date: Mon, 21 Nov 2022 09:50:56 +0100
-Message-Id: <20221121085058.31213-14-johan+linaro@kernel.org>
-X-Mailer: git-send-email 2.37.4
-In-Reply-To: <20221121085058.31213-1-johan+linaro@kernel.org>
-References: <20221121085058.31213-1-johan+linaro@kernel.org>
+	id 1ox3BH-00Bp6D-8e; Mon, 21 Nov 2022 09:33:35 +0000
+Received: from foss.arm.com ([217.140.110.172])
+	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
+	id 1ox3B2-00Bp1f-AR; Mon, 21 Nov 2022 09:33:24 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+	by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1AF341FB;
+	Mon, 21 Nov 2022 01:33:19 -0800 (PST)
+Received: from donnerap.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+	by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 39A1D3F587;
+	Mon, 21 Nov 2022 01:33:11 -0800 (PST)
+Date: Mon, 21 Nov 2022 09:33:08 +0000
+From: Andre Przywara <andre.przywara@arm.com>
+To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
+ <kishon@kernel.org>, Rob Herring <robh+dt@kernel.org>, Krzysztof Kozlowski
+ <krzysztof.kozlowski+dt@linaro.org>
+Cc: Chen-Yu Tsai <wens@csie.org>, Jernej Skrabec <jernej.skrabec@gmail.com>,
+ Samuel Holland <samuel@sholland.org>, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-sunxi@lists.linux.dev, Icenowy Zheng <uwu@icenowy.me>
+Subject: Re: [PATCH v4 0/3] phy: sun4i-usb: add support for the USB PHY on
+ F1C100s SoC
+Message-ID: <20221121093308.6c01140b@donnerap.cambridge.arm.com>
+In-Reply-To: <20221116151603.819533-1-andre.przywara@arm.com>
+References: <20221116151603.819533-1-andre.przywara@arm.com>
+Organization: ARM
+X-Mailer: Claws Mail 3.18.0 (GTK+ 2.24.32; aarch64-unknown-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221121_085205_980253_C1ED9745 
-X-CRM114-Status: GOOD (  23.46  )
+X-CRM114-CacheID: sfid-20221121_013320_432459_7370176A 
+X-CRM114-Status: GOOD (  19.80  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,245 +66,62 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add support for the new SC8280XP binding.
+On Wed, 16 Nov 2022 15:16:00 +0000
+Andre Przywara <andre.przywara@arm.com> wrote:
 
-Note that the binding does not try to describe every register subregion
-and instead the driver holds the corresponding offsets.
+Hi Vinod, Kishon,
 
-Also note that (possibly) unlike on earlier platforms, the TX registers
-are used by both the USB and DP implementation.
+is there any chance you could take at least patch 1/3 and 2/3 through your
+tree? As suggested, I split this off the original series, which now
+somewhat depends on this one - at least dtbs_check and functionality wise,
+both series build cleanly in isolation.
 
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
----
- drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 145 ++++++++++++++++++++--
- 1 file changed, 134 insertions(+), 11 deletions(-)
+Many thanks,
+Andre
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-index b82bd0a221d6..77052c66cf70 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-@@ -20,7 +20,7 @@
- #include <linux/reset.h>
- #include <linux/slab.h>
- 
--#include <dt-bindings/phy/phy.h>
-+#include <dt-bindings/phy/phy-qcom-qmp.h>
- 
- #include "phy-qcom-qmp.h"
- 
-@@ -798,7 +798,23 @@ static const u8 qmp_dp_v5_voltage_swing_hbr_rbr[4][4] = {
- 
- struct qmp_combo;
- 
-+struct qmp_combo_offsets {
-+	u16 com;
-+	u16 txa;
-+	u16 rxa;
-+	u16 txb;
-+	u16 rxb;
-+	u16 usb3_serdes;
-+	u16 usb3_pcs_misc;
-+	u16 usb3_pcs;
-+	u16 usb3_pcs_usb;
-+	u16 dp_serdes;
-+	u16 dp_dp_phy;
-+};
-+
- struct qmp_phy_cfg {
-+	const struct qmp_combo_offsets *offsets;
-+
- 	/* Init sequence for PHY blocks - serdes, tx, rx, pcs */
- 	const struct qmp_phy_init_tbl *serdes_tbl;
- 	int serdes_tbl_num;
-@@ -959,6 +975,20 @@ static const char * const sc7180_usb3phy_reset_l[] = {
- 	"phy",
- };
- 
-+static const struct qmp_combo_offsets qmp_combo_offsets_v5 = {
-+	.com		= 0x0000,
-+	.txa		= 0x0400,
-+	.rxa		= 0x0600,
-+	.txb		= 0x0a00,
-+	.rxb		= 0x0c00,
-+	.usb3_serdes	= 0x1000,
-+	.usb3_pcs_misc	= 0x1200,
-+	.usb3_pcs	= 0x1400,
-+	.usb3_pcs_usb	= 0x1700,
-+	.dp_serdes	= 0x2000,
-+	.dp_dp_phy	= 0x2200,
-+};
-+
- static const struct qmp_phy_cfg sc7180_usb3dpphy_cfg = {
- 	.serdes_tbl		= qmp_v3_usb3_serdes_tbl,
- 	.serdes_tbl_num		= ARRAY_SIZE(qmp_v3_usb3_serdes_tbl),
-@@ -1098,6 +1128,8 @@ static const struct qmp_phy_cfg sc8180x_usb3dpphy_cfg = {
- };
- 
- static const struct qmp_phy_cfg sc8280xp_usb43dpphy_cfg = {
-+	.offsets		= &qmp_combo_offsets_v5,
-+
- 	.serdes_tbl		= sc8280xp_usb43dp_serdes_tbl,
- 	.serdes_tbl_num		= ARRAY_SIZE(sc8280xp_usb43dp_serdes_tbl),
- 	.tx_tbl			= sc8280xp_usb43dp_tx_tbl,
-@@ -1138,7 +1170,6 @@ static const struct qmp_phy_cfg sc8280xp_usb43dpphy_cfg = {
- 	.vreg_list		= qmp_phy_vreg_l,
- 	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
- 	.regs			= qmp_v4_usb3phy_regs_layout,
--	.pcs_usb_offset		= 0x300,
- };
- 
- static const struct qmp_phy_cfg sm8250_usb3dpphy_cfg = {
-@@ -2421,6 +2452,22 @@ static int phy_dp_clks_register(struct qmp_combo *qmp, struct device_node *np)
- 	return 0;
- }
- 
-+static struct clk_hw *qmp_combo_clk_hw_get(struct of_phandle_args *clkspec, void *data)
-+{
-+	struct qmp_combo *qmp = data;
-+
-+	switch (clkspec->args[0]) {
-+	case QMP_USB43DP_USB3_PIPE_CLK:
-+		return &qmp->pipe_clk_fixed.hw;
-+	case QMP_USB43DP_DP_LINK_CLK:
-+		return &qmp->dp_link_hw;
-+	case QMP_USB43DP_DP_VCO_DIV_CLK:
-+		return &qmp->dp_pixel_hw;
-+	}
-+
-+	return ERR_PTR(-EINVAL);
-+}
-+
- static int qmp_combo_register_clocks(struct qmp_combo *qmp, struct device_node *usb_np,
- 					struct device_node *dp_np)
- {
-@@ -2434,6 +2481,15 @@ static int qmp_combo_register_clocks(struct qmp_combo *qmp, struct device_node *
- 	if (ret)
- 		return ret;
- 
-+	/*
-+	 * Register a single provider for bindings without child nodes.
-+	 */
-+	if (usb_np == qmp->dev->of_node)
-+		return devm_of_clk_add_hw_provider(qmp->dev, qmp_combo_clk_hw_get, qmp);
-+
-+	/*
-+	 * Register multiple providers for legacy bindings with child nodes.
-+	 */
- 	ret = of_clk_add_hw_provider(usb_np, of_clk_hw_simple_get,
- 					&qmp->pipe_clk_fixed.hw);
- 	if (ret)
-@@ -2558,6 +2614,63 @@ static int qmp_combo_parse_dt_legacy(struct qmp_combo *qmp, struct device_node *
- 	return 0;
- }
- 
-+static int qmp_combo_parse_dt(struct qmp_combo *qmp)
-+{
-+	struct platform_device *pdev = to_platform_device(qmp->dev);
-+	const struct qmp_phy_cfg *cfg = qmp->cfg;
-+	const struct qmp_combo_offsets *offs = cfg->offsets;
-+	struct device *dev = qmp->dev;
-+	void __iomem *base;
-+
-+	if (!offs)
-+		return -EINVAL;
-+
-+	base = devm_platform_ioremap_resource(pdev, 0);
-+	if (IS_ERR(base))
-+		return PTR_ERR(base);
-+
-+	qmp->com = base + offs->com;
-+	qmp->tx = base + offs->txa;
-+	qmp->rx = base + offs->rxa;
-+	qmp->tx2 = base + offs->txb;
-+	qmp->rx2 = base + offs->rxb;
-+
-+	qmp->serdes = base + offs->usb3_serdes;
-+	qmp->pcs_misc = base + offs->usb3_pcs_misc;
-+	qmp->pcs = base + offs->usb3_pcs;
-+	qmp->pcs_usb = base + offs->usb3_pcs_usb;
-+
-+	qmp->dp_serdes = base + offs->dp_serdes;
-+	qmp->dp_tx = base + offs->txa;
-+	qmp->dp_tx2 = base + offs->txb;
-+	qmp->dp_dp_phy = base + offs->dp_dp_phy;
-+
-+	qmp->pipe_clk = devm_clk_get(dev, "usb3_pipe");
-+	if (IS_ERR(qmp->pipe_clk)) {
-+		return dev_err_probe(dev, PTR_ERR(qmp->pipe_clk),
-+				"failed to get usb3_pipe clock\n");
-+	}
-+
-+	return 0;
-+}
-+
-+static struct phy *qmp_combo_phy_xlate(struct device *dev, struct of_phandle_args *args)
-+{
-+	struct qmp_combo *qmp = dev_get_drvdata(dev);
-+
-+	if (args->args_count == 0)
-+		return ERR_PTR(-EINVAL);
-+
-+	switch (args->args[0]) {
-+	case QMP_USB43DP_USB3_PHY:
-+		return qmp->usb_phy;
-+	case QMP_USB43DP_DP_PHY:
-+		return qmp->dp_phy;
-+	}
-+
-+	return ERR_PTR(-EINVAL);
-+}
-+
- static int qmp_combo_probe(struct platform_device *pdev)
- {
- 	struct qmp_combo *qmp;
-@@ -2590,17 +2703,22 @@ static int qmp_combo_probe(struct platform_device *pdev)
- 	if (ret)
- 		return ret;
- 
-+	/* Check for legacy binding with child nodes. */
- 	usb_np = of_get_child_by_name(dev->of_node, "usb3-phy");
--	if (!usb_np)
--		return -EINVAL;
-+	if (usb_np) {
-+		dp_np = of_get_child_by_name(dev->of_node, "dp-phy");
-+		if (!dp_np) {
-+			of_node_put(usb_np);
-+			return -EINVAL;
-+		}
- 
--	dp_np = of_get_child_by_name(dev->of_node, "dp-phy");
--	if (!dp_np) {
--		of_node_put(usb_np);
--		return -EINVAL;
--	}
-+		ret = qmp_combo_parse_dt_legacy(qmp, usb_np, dp_np);
-+	} else {
-+		usb_np = of_node_get(dev->of_node);
-+		dp_np = of_node_get(dev->of_node);
- 
--	ret = qmp_combo_parse_dt_legacy(qmp, usb_np, dp_np);
-+		ret = qmp_combo_parse_dt(qmp);
-+	}
- 	if (ret)
- 		goto err_node_put;
- 
-@@ -2636,7 +2754,12 @@ static int qmp_combo_probe(struct platform_device *pdev)
- 
- 	phy_set_drvdata(qmp->dp_phy, qmp);
- 
--	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
-+	dev_set_drvdata(dev, qmp);
-+
-+	if (usb_np == dev->of_node)
-+		phy_provider = devm_of_phy_provider_register(dev, qmp_combo_phy_xlate);
-+	else
-+		phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
- 
- 	of_node_put(usb_np);
- 	of_node_put(dp_np);
--- 
-2.37.4
+> This is a spin-off of v3 of the suniv F1C100s USB support series[1], just
+> carrying the USB PHY bits. The H616 USB PHY support is already in
+> linux-phy.git/next, so this is rebased on top of that, to avoid
+> conflicts.
+> The actual binding and driver change in the first two patches is
+> straightforward. Since it came up in reviews, I reworked the quirk
+> handling in the phy-sun4i-usb.c driver, to become more maintainable and
+> readable, in patch 3/3. For a changelog, see below.
+> 
+> Cheers,
+> Andre
+> 
+> [1] https://lore.kernel.org/linux-arm-kernel/20221106154826.6687-1-andre.przywara@arm.com/
+> 
+> Changelog v3 ... v4:
+> - split off from rest of suniv F1C100s USB series
+> - rebase on top of H616 USB PHY patches
+> - drop phy2_is_hsic in favour of reusing existing hsic_index member
+> - add tags
+> 
+> Changelog v2 ... v3:
+> - remove redundant "Device Tree Bindings" suffix in DT binding doc title
+> - add BSD license to binding doc file (as per checkpatch)
+> - use existing PHY sun4i_a10_phy type instead of inventing new one
+> - add patch to clean up sunxi USB PHY driver
+> 
+> Changelog v1 ... v2:
+> - USB PHY binding: clarify the relation with other phy-sun4i-usb bindings
+> 
+> 
+> 
+> Andre Przywara (1):
+>   phy: sun4i-usb: Replace types with explicit quirk flags
+> 
+> Icenowy Zheng (2):
+>   dt-bindings: phy: add binding document for Allwinner F1C100s USB PHY
+>   phy: sun4i-usb: add support for the USB PHY on F1C100s SoC
+> 
+>  .../phy/allwinner,suniv-f1c100s-usb-phy.yaml  | 83 +++++++++++++++++++
+>  drivers/phy/allwinner/phy-sun4i-usb.c         | 59 ++++++-------
+>  2 files changed, 107 insertions(+), 35 deletions(-)
+>  create mode 100644 Documentation/devicetree/bindings/phy/allwinner,suniv-f1c100s-usb-phy.yaml
+> 
 
 
 -- 
