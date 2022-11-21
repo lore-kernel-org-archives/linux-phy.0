@@ -4,47 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E1376C43217
-	for <linux-phy@archiver.kernel.org>; Mon, 21 Nov 2022 08:52:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1804FC46467
+	for <linux-phy@archiver.kernel.org>; Mon, 21 Nov 2022 08:52:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=k2St1+oUsfin1OBoT1m1E2A21CHXs9qTdKC5mKumAHo=; b=JkD/2vsHkYRp83
-	ij/VdBkzLoXmhQFLpaFyMqM67JO3d+wO1O8dYF0Lz6nNBicE6mr7zCQeIfTEnBpP3BoiNaL1+IxPm
-	QeHhoNMPi/Q73GLnRXGvx8Ju06olyw9I7uKX/TO7REQCjJr8W9UnSlpQ82Zw3LWO0Csp1eIBnjRCI
-	m71hMPHvknzVv8nRfUIOY9U+6I1G+d58P1iJnVYZn2tOk65Rdj/kTlrIkEybVt9dKc53cU8Ds7gwJ
-	eJ/i895iDJrfEBvP6YnYxqGNjZIXkk84wlDS9vi4PMTb1vcm9BFsixCjx+hHB/tdtR0S1E29q+VIH
-	vmsycaX6kAeMoiD+6tgA==;
+	List-Owner; bh=mX0hZF97RnLkmj9CbFMnROpRd9j9rhEbuJkhLkNtAmg=; b=3Vx+V8QUb6zv8U
+	3ggqNUEV+oAONSBmX04S4lzRvVNP1iiRtFORsyH+keDFsmno4hqByfxnpko4VhMNzg8oqOMKJcAwp
+	jT4QqkpT3r2dqzzqAPUKdcSM2Jsch+6dazuS+/haPldgk/l4eAzDfR8z+vy55yiEBPjgJXNMTmgTy
+	CPmmDY/l8gkMJ3LGDQi8lydh+YCaqfJH84kLycVp2IbpKlyZrn1eJseLdr/7cwaUDVLANrSVtEBFq
+	ebdshmKZJCffQ+ZNBl5WYtZxA3IPoVEQ89ROuMr9G4qWnge1dSO3t+fvJu0TpeFpwpNhVzcELfbQv
+	Q3MSR7DS0uVi/RazftVQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ox2XE-00BUmj-Ct; Mon, 21 Nov 2022 08:52:12 +0000
+	id 1ox2XE-00BUmu-Eq; Mon, 21 Nov 2022 08:52:12 +0000
 Received: from ams.source.kernel.org ([145.40.68.75])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ox2X0-00BUZk-Ly
+	id 1ox2X1-00BUaJ-17
 	for linux-phy@lists.infradead.org; Mon, 21 Nov 2022 08:52:02 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id 45D4DB80D69;
+	by ams.source.kernel.org (Postfix) with ESMTPS id A3FD6B80D62;
 	Mon, 21 Nov 2022 08:51:57 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8D41CC43149;
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E4F0BC4FF0F;
 	Mon, 21 Nov 2022 08:51:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1669020714;
-	bh=WfOHBJjixJuQ4FLUSSwYNB6T5TOaxLa26wr1JxeAHYo=;
+	s=k20201202; t=1669020715;
+	bh=UoN5wh15U6OwcuNRI1oxfnYffMWGCblGCdMNWedim9o=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=XLEfYFI7r1yT0exbbMpItoMqRJBj32iLxTfBaVYJRTz6CcqfJixkigBXp5ftJVZER
-	 NdXiUSEU55/bKEFg2lqsu4CNilQEx5vIgb20yr9QtddPDzBssEknDKDteJL6jlcgW5
-	 zc15XAXOOd6Xz2L+5Wme12CgmSiQH7xKzjDHSKVZamJMMNzYt23AGvU2cyJK73e8nH
-	 NZ2cgUYk34UdBTSbjlRAP6tkeT1R/taYyYaOxN9BqfxoLQmtxqQcHvOgtSKd79qDNZ
-	 xEC1qJpKUPko61mHSjRM0g5iYhhptGIrkLcmcCuBkcWtrqgLgKsWjL1G8wpkke80pF
-	 ir1mHRqMP244Q==
+	b=u+8PL8DvTjpTmKm98hiriehVbwFSzWmaKK89M7oDFzQUQjeAb9X+NnQxNKzfpor77
+	 hAkcr4P3NIKRODEWIv/ZnvFWps3LcN7R8CUrLD8MxPA4cXHXoaSq+s7Ix9sAu4DvEp
+	 FNheVqSg/j8Yzh5JuHj3EabFX2TXYLXo3qAqVrxcoqb4iMvjf34ju7q8r5X/umR0+K
+	 JN65BfVjwbaVKAr6vbW7tne9QOiM17L2m8IaQH9JnjHNi0h1ChIPoxngzSWdGl+dnU
+	 bCKKvZPj3YXpk9jlmLPcOXMlKwTj/1zTDzx8Gem0T/2d6cYuOOW3f8PvuME9FXhZ8w
+	 7GFMk9DSdXBaQ==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1ox2WS-00088R-WD; Mon, 21 Nov 2022 09:51:25 +0100
+	id 1ox2WT-00088e-Bs; Mon, 21 Nov 2022 09:51:25 +0100
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>
 Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
@@ -59,16 +59,16 @@ Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
 	devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH v3 07/15] phy: qcom-qmp-combo: drop redundant clock allocation
-Date: Mon, 21 Nov 2022 09:50:50 +0100
-Message-Id: <20221121085058.31213-8-johan+linaro@kernel.org>
+Subject: [PATCH v3 11/15] phy: qcom-qmp-combo: rename common-register pointers
+Date: Mon, 21 Nov 2022 09:50:54 +0100
+Message-Id: <20221121085058.31213-12-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.37.4
 In-Reply-To: <20221121085058.31213-1-johan+linaro@kernel.org>
 References: <20221121085058.31213-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221121_005158_946409_1B369F5B 
-X-CRM114-Status: GOOD (  13.74  )
+X-CRM114-CacheID: sfid-20221121_005159_417188_A35FDCC6 
+X-CRM114-Status: GOOD (  15.42  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,44 +85,86 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Since the QMP driver split, there is no reason to allocate the
-fixed-rate pipe clock structure separately from the driver data.
+The common registers are shared by the USB and DP parts of the PHY so
+drop the misleading "dp" prefix from the corresponding pointers.
+
+Note that the "DP" prefix could also be dropped from the corresponding
+defines, but leave that in place for now.
 
 Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 7 ++-----
- 1 file changed, 2 insertions(+), 5 deletions(-)
+ drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 24 +++++++++++------------
+ 1 file changed, 12 insertions(+), 12 deletions(-)
 
 diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-index ebfefecffd86..9b945a72ae9b 100644
+index fb3705b00823..5777bd1f76b3 100644
 --- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
 +++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-@@ -895,6 +895,7 @@ struct qmp_combo {
- 	unsigned int dp_aux_cfg;
- 	struct phy_configure_opts_dp dp_opts;
+@@ -864,7 +864,7 @@ struct qmp_combo {
  
-+	struct clk_fixed_rate pipe_clk_fixed;
- 	struct clk_hw dp_link_hw;
- 	struct clk_hw dp_pixel_hw;
- };
-@@ -2239,15 +2240,11 @@ static void phy_clk_release_provider(void *res)
-  */
- static int phy_pipe_clk_register(struct qmp_combo *qmp, struct device_node *np)
+ 	const struct qmp_phy_cfg *cfg;
+ 
+-	void __iomem *dp_com;
++	void __iomem *com;
+ 
+ 	void __iomem *serdes;
+ 	void __iomem *tx;
+@@ -1767,7 +1767,7 @@ static int qmp_combo_dp_calibrate(struct phy *phy)
+ static int qmp_combo_com_init(struct qmp_combo *qmp)
  {
--	struct clk_fixed_rate *fixed;
-+	struct clk_fixed_rate *fixed = &qmp->pipe_clk_fixed;
- 	struct clk_init_data init = { };
- 	char name[64];
+ 	const struct qmp_phy_cfg *cfg = qmp->cfg;
+-	void __iomem *dp_com = qmp->dp_com;
++	void __iomem *com = qmp->com;
  	int ret;
  
--	fixed = devm_kzalloc(qmp->dev, sizeof(*fixed), GFP_KERNEL);
--	if (!fixed)
--		return -ENOMEM;
--
- 	snprintf(name, sizeof(name), "%s::pipe_clk", dev_name(qmp->dev));
- 	init.name = name;
- 	init.ops = &clk_fixed_rate_ops;
+ 	mutex_lock(&qmp->phy_mutex);
+@@ -1798,25 +1798,25 @@ static int qmp_combo_com_init(struct qmp_combo *qmp)
+ 	if (ret)
+ 		goto err_assert_reset;
+ 
+-	qphy_setbits(dp_com, QPHY_V3_DP_COM_POWER_DOWN_CTRL, SW_PWRDN);
++	qphy_setbits(com, QPHY_V3_DP_COM_POWER_DOWN_CTRL, SW_PWRDN);
+ 
+ 	/* override hardware control for reset of qmp phy */
+-	qphy_setbits(dp_com, QPHY_V3_DP_COM_RESET_OVRD_CTRL,
++	qphy_setbits(com, QPHY_V3_DP_COM_RESET_OVRD_CTRL,
+ 			SW_DPPHY_RESET_MUX | SW_DPPHY_RESET |
+ 			SW_USB3PHY_RESET_MUX | SW_USB3PHY_RESET);
+ 
+ 	/* Default type-c orientation, i.e CC1 */
+-	qphy_setbits(dp_com, QPHY_V3_DP_COM_TYPEC_CTRL, 0x02);
++	qphy_setbits(com, QPHY_V3_DP_COM_TYPEC_CTRL, 0x02);
+ 
+-	qphy_setbits(dp_com, QPHY_V3_DP_COM_PHY_MODE_CTRL, USB3_MODE | DP_MODE);
++	qphy_setbits(com, QPHY_V3_DP_COM_PHY_MODE_CTRL, USB3_MODE | DP_MODE);
+ 
+ 	/* bring both QMP USB and QMP DP PHYs PCS block out of reset */
+-	qphy_clrbits(dp_com, QPHY_V3_DP_COM_RESET_OVRD_CTRL,
++	qphy_clrbits(com, QPHY_V3_DP_COM_RESET_OVRD_CTRL,
+ 			SW_DPPHY_RESET_MUX | SW_DPPHY_RESET |
+ 			SW_USB3PHY_RESET_MUX | SW_USB3PHY_RESET);
+ 
+-	qphy_clrbits(dp_com, QPHY_V3_DP_COM_SWI_CTRL, 0x03);
+-	qphy_clrbits(dp_com, QPHY_V3_DP_COM_SW_RESET, SW_RESET);
++	qphy_clrbits(com, QPHY_V3_DP_COM_SWI_CTRL, 0x03);
++	qphy_clrbits(com, QPHY_V3_DP_COM_SW_RESET, SW_RESET);
+ 
+ 	qphy_setbits(qmp->pcs, cfg->regs[QPHY_PCS_POWER_DOWN_CONTROL],
+ 			SW_PWRDN);
+@@ -2538,9 +2538,9 @@ static int qmp_combo_parse_dt_legacy(struct qmp_combo *qmp, struct device_node *
+ 	if (IS_ERR(qmp->serdes))
+ 		return PTR_ERR(qmp->serdes);
+ 
+-	qmp->dp_com = devm_platform_ioremap_resource(pdev, 1);
+-	if (IS_ERR(qmp->dp_com))
+-		return PTR_ERR(qmp->dp_com);
++	qmp->com = devm_platform_ioremap_resource(pdev, 1);
++	if (IS_ERR(qmp->com))
++		return PTR_ERR(qmp->com);
+ 
+ 	qmp->dp_serdes = devm_platform_ioremap_resource(pdev, 2);
+ 	if (IS_ERR(qmp->dp_serdes))
 -- 
 2.37.4
 
