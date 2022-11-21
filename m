@@ -4,47 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9491AC352A1
-	for <linux-phy@archiver.kernel.org>; Mon, 21 Nov 2022 08:52:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C67EBC433FE
+	for <linux-phy@archiver.kernel.org>; Mon, 21 Nov 2022 08:52:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=d9X5RS71IyRuw1VDZ4zdTp/2S2r2vJCGQ9rv7uPB4Z0=; b=qKqzzxfLf0KVdG
-	VRcOdCNKmtquMzNptO8BAX/Qd2sPV06TRDOBbE2VRs+7nfQwhLWUPV+G8G3e/d+2vrPf1dowPv1EP
-	Zo8F2wJKaRIP1s8OpKjvZVrfgLceHJrCtltluQnqwdPOTsrSsul3X8r/1W0SKI/6nfBs+8BqEJAXc
-	60hEu7zOw0oHs9F9YpE42Qjmhax8PSoqQWDU42y1xkIcUa6bfjMaoiP0vUIyB/8Oc8pOwwHhX8C8M
-	fW9NWAIwDVE9SOF1ON/mRJ61sL4PZ3DHTmSAymNsPLFiAnDPPwH+IgGo0X31Cgp1p+v+Us+CJISPM
-	hl8jNKIl6z45z4R77g6Q==;
+	List-Owner; bh=f0yA//oUWoc3udu6zmR7Ue6XslJAqPl7fbygTO7Dif4=; b=5G6gq9Aae7cwkB
+	cwexw8Wujk+OgrhviQTwiNGT8NyyNPm3kesaYPqOUE31AaM7jIYeJ/IuUSQHzRIbAHsZ1txpMvQfZ
+	SFZf2W/1yrw1fDfsJ2sCcdRsm0yJMCr9BdwnMULBhVp77oS72XQf/fKMAmoEu42dQQqcmz2Dw7ees
+	UkuJediJBQW8oag8dEMRJK+3CyEgrMl/RtwOWhde+C0P05F2SplpEIhTrjVcyiCv0TLIASoufmVuk
+	8bNCsifvGu6vadgccEcq1Qbg/PZnc9CsgOPgX8UGfPZV+2ObIzfJbyLdpcdB4KBMivavlH0Q4E8ch
+	2bD89+H9cCSNLLHIe63A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ox2X5-00BUga-Ss; Mon, 21 Nov 2022 08:52:03 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1ox2XE-00BUmE-7g; Mon, 21 Nov 2022 08:52:12 +0000
+Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ox2X0-00BUaM-F9
-	for linux-phy@lists.infradead.org; Mon, 21 Nov 2022 08:52:01 +0000
+	id 1ox2X0-00BUZo-M7
+	for linux-phy@lists.infradead.org; Mon, 21 Nov 2022 08:52:02 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 7AA8E60F5A;
+	by ams.source.kernel.org (Postfix) with ESMTPS id 4BDE7B80D6C;
 	Mon, 21 Nov 2022 08:51:57 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E4EC0C4FF0E;
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7E2CEC43470;
 	Mon, 21 Nov 2022 08:51:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1669020715;
-	bh=DPEC4Ilp5QnQgwZzP4PbKBn+Zx699/V1FQSwG3qGmeU=;
+	s=k20201202; t=1669020714;
+	bh=rhNguSejjtkHA6rQ2L6dE0ZSqitXPRK1vRjUNJUgpvM=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=o8osry22nL53W47ZE0NwmycIslGm9kD2qDGnYUq5eWCLqZvdYC7U5wtGNQuxIwJ0F
-	 zGi/Mu2AKNlqHACcOi2U/GCsG/SE3dAImFGbU5WDXb2lr6mB4c9nFpQBC7jumQxbuF
-	 oIDxUEFCGVLF5b9Iaxfj45/QIaDWQ1GauuQXW8cmDi7fubomTWSfGMMNdbTildFxJe
-	 qUbaqB4XqtPZFHR0qKbEBh3j7K4d/7oipih11WQG0pVzXMbpUCmKUPfGuBLd2O068s
-	 PdhPmxDO6MbwxMgN+rSeuSqwId2xTecvWM8/VnU39XOgM4Hj4zVVtc1NbHyWkSpXv5
-	 cuXbyxep+yXCg==
+	b=EA16iPG9ypkMshvtc06CbwmrvRe+qb5WP/tDi6G45HRTGLInt52k+r7hFqXFKBcl6
+	 DdqRzTNXLETE+ET+lWwP9chQSLhzNPPoaQ7LhlP8ENd1m5bhgOA97Pby91ys40UQZB
+	 wtQT2rQWcSMkLEsi3VUT+YQlvnKrWSAo8WZ3rJ5FFwONAkGKGqIzZbeF3x44ojHK+g
+	 fSmExonOL4LPUUFd0/2gFm/B93xfINupaBBWOGOUDXcAmUl5qfBhUxo+sTQYLOZOXE
+	 ndK9JliQzFWb8OhnM68mI2vKl3EYk28qoqB9RNmKwG5W5pwt/w30oogANu/iMeM2zt
+	 174L6xdaW0+uA==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1ox2WT-00088q-Ks; Mon, 21 Nov 2022 09:51:25 +0100
+	id 1ox2WS-00088N-QT; Mon, 21 Nov 2022 09:51:24 +0100
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>
 Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
@@ -59,16 +59,16 @@ Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
 	devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH v3 14/15] arm64: dts: qcom: sc8280xp: fix primary USB-DP PHY reset
-Date: Mon, 21 Nov 2022 09:50:57 +0100
-Message-Id: <20221121085058.31213-15-johan+linaro@kernel.org>
+Subject: [PATCH v3 05/15] phy: qcom-qmp-combo: generate pipe clock name
+Date: Mon, 21 Nov 2022 09:50:48 +0100
+Message-Id: <20221121085058.31213-6-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.37.4
 In-Reply-To: <20221121085058.31213-1-johan+linaro@kernel.org>
 References: <20221121085058.31213-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221121_005158_603268_508888C6 
-X-CRM114-Status: GOOD (  12.10  )
+X-CRM114-CacheID: sfid-20221121_005158_929520_57648FE8 
+X-CRM114-Status: GOOD (  13.37  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,30 +85,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The vendor kernel is using the GCC_USB4_DP_PHY_PRIM_BCR and
-GCC_USB4_1_DP_PHY_PRIM_BCR resets for the USB4-USB3-DP QMP PHYs.
+In preparation for supporting devicetree bindings which do not use child
+nodes, generate also the USB3 pipe clock name based on the platform
+device name as is done for the DP clocks.
 
-Update the primary USB-DP PHY node to match.
-
-Fixes: 152d1faf1e2f ("arm64: dts: qcom: add SC8280XP platform")
+Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- arch/arm64/boot/dts/qcom/sc8280xp.dtsi | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 9 +++------
+ 1 file changed, 3 insertions(+), 6 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/qcom/sc8280xp.dtsi b/arch/arm64/boot/dts/qcom/sc8280xp.dtsi
-index e769b7b0004b..85c674e7e1a5 100644
---- a/arch/arm64/boot/dts/qcom/sc8280xp.dtsi
-+++ b/arch/arm64/boot/dts/qcom/sc8280xp.dtsi
-@@ -1682,7 +1682,7 @@ usb_0_qmpphy: phy-wrapper@88ec000 {
- 			clock-names = "aux", "ref_clk_src", "ref", "com_aux";
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+index 85def6560e43..7434955c8898 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+@@ -2247,18 +2247,15 @@ static int phy_pipe_clk_register(struct qmp_combo *qmp, struct device_node *np)
+ {
+ 	struct clk_fixed_rate *fixed;
+ 	struct clk_init_data init = { };
++	char name[64];
+ 	int ret;
  
- 			resets = <&gcc GCC_USB3_PHY_PRIM_BCR>,
--				 <&gcc GCC_USB3_DP_PHY_PRIM_BCR>;
-+				 <&gcc GCC_USB4_DP_PHY_PRIM_BCR>;
- 			reset-names = "phy", "common";
+-	ret = of_property_read_string(np, "clock-output-names", &init.name);
+-	if (ret) {
+-		dev_err(qmp->dev, "%pOFn: No clock-output-names\n", np);
+-		return ret;
+-	}
+-
+ 	fixed = devm_kzalloc(qmp->dev, sizeof(*fixed), GFP_KERNEL);
+ 	if (!fixed)
+ 		return -ENOMEM;
  
- 			power-domains = <&gcc USB30_PRIM_GDSC>;
++	snprintf(name, sizeof(name), "%s::pipe_clk", dev_name(qmp->dev));
++	init.name = name;
+ 	init.ops = &clk_fixed_rate_ops;
+ 
+ 	/* controllers using QMP phys use 125MHz pipe clock interface */
 -- 
 2.37.4
 
