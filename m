@@ -4,87 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6D691C433FE
-	for <linux-phy@archiver.kernel.org>; Mon, 21 Nov 2022 12:11:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 56C15C43219
+	for <linux-phy@archiver.kernel.org>; Mon, 21 Nov 2022 14:23:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8Jw/dDpJitfl8jRDsU7W0nt5GV8mLmKhPyzVe3q+L9g=; b=NqRPtqNnUBAs4/
-	4Eo1jeyIiz03FrbOt2W4MKPVcaugtiYff1psf7xGAHtOyB8VgzxwgEL35YoAjl7LHS3fK6FzQz01u
-	0t3xY2Yb0hBHiiaMdy/XGD9LlYaRybL5/aQJWcLaJuUXgwORRaG9JMV25rP9qKhEuw4GNekoTrB0c
-	+EaMwQ+NNeTn82JEj0vvz6rZsi9ZUrzHZtBi5nnUfByT7VCrHO6SnDcvXYMUnoRPXtxBSnyzNSD2m
-	Xc/GI1EFbBpSRfwucrlf8mer9zeVX4Pscu/5f4LP+uoqo2ff0sw1D/f3y/A+iYY9UDX1r17MBeRO1
-	opVqETHiAVJ2y/zf84iw==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:Date:From:MIME-Version
+	:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=GBmVgB9yhtBpfH0Dr1WZ05NFD9XlBjwRwxBwFgOj8bk=; b=MRIW4rOxuqgT83
+	2jvNueCntfLH/KXYxuaFe7PWCTAI+EeMU3WYV5vRUiXsX9NLBVGiLJudN17KF48dPP83h57PpY0aU
+	dkgrXLUTrk/m1YtYh6lvxEyop2HKwFTm4jMxh7kF3XKAL/Lx0MK8M2hxcVl5jYn/0K9rIvT/NoRpp
+	fu3rXb4IMC5YIVDBk8b8rTvFY90D/A+P6Zl2F+u2cWXGPnMfMtd7tigmND7RzerPx+U/ZXyBbSYVY
+	+aZVG2rEqCa2eUZqJmDlWcCPkflfcoAuofHYFA+7Eb8+MIhs5bkNgDZf+uVr48siYts8O1Qc9ZDNe
+	yFocyjtwM1ztQ/vvBieA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ox5eH-00DIq5-SB; Mon, 21 Nov 2022 12:11:41 +0000
-Received: from mail-lf1-x136.google.com ([2a00:1450:4864:20::136])
+	id 1ox7i2-00EPEe-Kd; Mon, 21 Nov 2022 14:23:42 +0000
+Received: from mail-wr1-x42e.google.com ([2a00:1450:4864:20::42e])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ox5eE-00DIdx-Bd
-	for linux-phy@lists.infradead.org; Mon, 21 Nov 2022 12:11:40 +0000
-Received: by mail-lf1-x136.google.com with SMTP id l12so18499508lfp.6
-        for <linux-phy@lists.infradead.org>; Mon, 21 Nov 2022 04:11:37 -0800 (PST)
+	id 1ox7hf-00EOsf-12
+	for linux-phy@lists.infradead.org; Mon, 21 Nov 2022 14:23:23 +0000
+Received: by mail-wr1-x42e.google.com with SMTP id l14so1208140wrw.13
+        for <linux-phy@lists.infradead.org>; Mon, 21 Nov 2022 06:23:13 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=7qhOMct1HtHorGbIWxyZEdTxvsTx5R3VBHmP3l2woMg=;
-        b=rOgOeCRWpjxZg5nXP82q7tc9S0QzvizVoefqoQzE2Q7H86DBuFTopuoD1mNZ5sPC4w
-         92LR2HCe2f0niGUYjXVAgkj3CgjHkIIJP4c/FaNkPVIYy1kwyTkuXSkoLygGnmvi/jst
-         imcQn5rkWlnFProwvMfFtxz5Hy9UDchjTMZGqJdQcNGdSkPZCzKKueQiMuiUhbuzPyKj
-         DTJLiye9/PufyxJsnjqipi7wyoayFR5DAInUve/lu0v07p92+EvTAYJMpWwk/7ImGKK/
-         MwIant5rN7BDSi0jJdmn094NsfnOvSb7KBWDqtHLQYrNl06EDQK81HZhMyEoOVgry0Xm
-         A6lA==
+        d=baylibre-com.20210112.gappssmtp.com; s=20210112;
+        h=cc:to:message-id:date:from:content-transfer-encoding:mime-version
+         :subject:from:to:cc:subject:date:message-id:reply-to;
+        bh=ApgbBZshAeQOw9pkeKTeXHyu/sDAx7l2fVv7nBtVMo4=;
+        b=JOj8ERrSkiiFbvhLUOS10gbdm3dGjio1sc0L+J+VhUjPOtREOV5XC6V5KMnetrOj7Z
+         MqlTFilZxnRBw5U34g0W/99jVnzlDBgjEkl0cJq9cc+zW7lCsZuKJmJLniXbj18sfn6q
+         wjZPYk8Rpmir1EmWy0FgcKpinL7Wh/ovXYkUm8iQYBe43aScTrtTEjMDggnsI5wPLvCy
+         /STO9raP2yYZowKD+UKXBO+Noq3BOEso0jV6VE6jRVFYIE4aG03pLMcQ/yk+hdxToHDH
+         dSmCQEdwO+k1vwDIFKNRm+b1PG46FUK1eS4iNFo7oMMDVUb0EQzjVmcrr2ibmRamEGHY
+         maXA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=7qhOMct1HtHorGbIWxyZEdTxvsTx5R3VBHmP3l2woMg=;
-        b=tSYdMqCE0RlZ75W9QNcSmMzaItKfNDgj9+8JHSQkas2PBDs6hNXGzuBCitOxr4cUzd
-         F4mzsYZF9y4d6DT26k0rG0S83P/WL4lAmCmS4FUw+lOam3Y06ejh6oedQ8BSIEvQfBR2
-         YYAg0jZ/XZ9ny55hs69moedeRb5sIOadvHBkicOh4EuR9BwS99xdaIbSgP4fxH3ki9eL
-         9//PU11+V+3Uu2M6zGO4HEQNjug15ceLAIgYdBn957dYfVhRHSzWcaZe2vdpu/obfalj
-         avFWi54gv380w/n2xJ/iL3KfUvOiVRRamfARZh27pW29EgkAeuAIDbCZGDxMR/OtxN+C
-         9ZDA==
-X-Gm-Message-State: ANoB5pmiG8MRhYITUDXO9g2+YWyLyfXmXRa8McXCJAEWM085jzOchB5S
-	E850iWaJYdBQRLypzVWMBiD2Ww==
-X-Google-Smtp-Source: AA0mqf7xZ0mWUdJCN+6VFR2cUJVKZcxOD17BCaNQ2fbAP6LUKcuL2AlNDQkkD7XCO/YE1IbrdhUIRw==
-X-Received: by 2002:ac2:58ca:0:b0:4b4:eed:ec3e with SMTP id u10-20020ac258ca000000b004b40eedec3emr5710487lfo.446.1669032695820;
-        Mon, 21 Nov 2022 04:11:35 -0800 (PST)
-Received: from [192.168.0.20] (088156142067.dynamic-2-waw-k-3-2-0.vectranet.pl. [88.156.142.67])
-        by smtp.gmail.com with ESMTPSA id w2-20020a19c502000000b004a05767bc07sm1996327lfe.28.2022.11.21.04.11.34
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 21 Nov 2022 04:11:35 -0800 (PST)
-Message-ID: <0149c0e5-f3d6-1e15-cadb-5b88ed4b3dbf@linaro.org>
-Date: Mon, 21 Nov 2022 13:11:33 +0100
+        h=cc:to:message-id:date:from:content-transfer-encoding:mime-version
+         :subject:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=ApgbBZshAeQOw9pkeKTeXHyu/sDAx7l2fVv7nBtVMo4=;
+        b=zlseOSfelLE8h7oBwauI/U/Me1o6CvIx4nU6mhApxtVBa64KXQgiKNzfQVz6N/1wMG
+         7ykxzKXbOqsW6f1heBK5dPwxP4YkM75v5Fh0xAxpUwCNZENnKRZSMlpSQNO3J0IAGEol
+         virvg8Hih0nuq+J56PXqcrOuIvrQRWU1GipI1cPwZXI6zR078HweJCnB7QcvAdNntiEk
+         ifbDgqnc93ewbO4lJze5xObqvaXJnIyOEKoXLC2E0rl7ZYbZRI12SNFYMMr+j1LeNTkk
+         wkEKbvrbtv3hvUEhCwfZdFj3rWXRIdXhJ/+E0co5vE83HcPO8uov/dpt9PlG2kfops95
+         FPZw==
+X-Gm-Message-State: ANoB5pntFlz7jk7HUo+0s4f16f+G24SbLnsdc+NTdhYzin/dIpI4HJEe
+	YLTX2qvZEKSbNT5KJyqQCCnEsQ==
+X-Google-Smtp-Source: AA0mqf6RSC4twqdaC4T+eNyvJRXlNyhsDoJT4o9bQNdbOdWsagRC7U2kD1RJas+wAHB1EBwcNi5PLA==
+X-Received: by 2002:adf:e303:0:b0:22e:3c66:bda1 with SMTP id b3-20020adfe303000000b0022e3c66bda1mr2684983wrj.139.1669040591732;
+        Mon, 21 Nov 2022 06:23:11 -0800 (PST)
+Received: from [127.0.0.1] (2a02-8440-6441-244f-3074-96af-9642-0002.rev.sfr.net. [2a02:8440:6441:244f:3074:96af:9642:2])
+        by smtp.gmail.com with ESMTPSA id m7-20020a05600c4f4700b003b4fe03c881sm20206468wmq.48.2022.11.21.06.23.09
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 21 Nov 2022 06:23:11 -0800 (PST)
+Subject: [PATCH v4 0/3] Add MT8195 HDMI phy support
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.4.2
-Subject: Re: [PATCH 5/6] arm64: dts: fsd: Add PCIe support for Tesla FSD SoC
-Content-Language: en-US
-To: Shradha Todi <shradha.t@samsung.com>, bhelgaas@google.com,
- robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org, kishon@ti.com,
- vkoul@kernel.org, lpieralisi@kernel.org, kw@linux.com, mani@kernel.org,
- arnd@arndb.de, gregkh@linuxfoundation.org, alim.akhtar@samsung.com,
- ajaykumar.rs@samsung.com, rcsekar@samsung.com, sriranjani.p@samsung.com,
- bharat.uppal@samsung.com, s.prashar@samsung.com, aswani.reddy@samsung.com,
- pankaj.dubey@samsung.com, p.rajanbabu@samsung.com, niyas.ahmed@samsung.com,
- chanho61.park@samsung.com
-Cc: linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
-References: <20221121105210.68596-1-shradha.t@samsung.com>
- <CGME20221121104741epcas5p31e1320bc4c0912485c1fabe52ea19988@epcas5p3.samsung.com>
- <20221121105210.68596-6-shradha.t@samsung.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20221121105210.68596-6-shradha.t@samsung.com>
+X-b4-tracking: H4sIAN6Ie2MC/23MTQrCMBAF4KuUWRtJ0lATV72HiOSvJtimkNRAKb27gxuhuBre432zQfE5+gLXZo
+ PsayxxThjEqQEbdHp6Eh1m4JRzqpgiwU3xMS0vwIXRxROTdbIBN+k9jliGWJY5r9+PleG5/XBlhBIh
+ hZCss0pS2Ru9jtFkf7bzBHfklR8IRyIFU84OYqDK/SHtgbRItKTtwLuOMn45kH3fP9SYURL4AAAA
+From: Guillaume Ranquet <granquet@baylibre.com>
+Date: Mon, 21 Nov 2022 15:19:10 +0100
+Message-Id: <20220919-v4-0-bdc21e1307e9@baylibre.com>
+To: Philipp Zabel <p.zabel@pengutronix.de>, Rob Herring <robh+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+ CK Hu <ck.hu@mediatek.com>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Jitao shi <jitao.shi@mediatek.com>,
+ Daniel Vetter <daniel@ffwll.ch>, Kishon Vijay Abraham I <kishon@ti.com>, Chunfeng Yun <chunfeng.yun@mediatek.com>,
+ Chun-Kuang Hu <chunkuang.hu@kernel.org>, David Airlie <airlied@gmail.com>, Matthias Brugger <matthias.bgg@gmail.com>
+Cc: Guillaume Ranquet <granquet@baylibre.com>, linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
+ stuart.lee@mediatek.com, Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, linux-arm-kernel@lists.infradead.org,
+ AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, mac.shen@mediatek.com,
+ linux-phy@lists.infradead.org, linux-mediatek@lists.infradead.org
+X-Mailer: b4 0.11.0-dev
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221121_041138_451951_7F7F86C5 
-X-CRM114-Status: GOOD (  16.25  )
+X-CRM114-CacheID: sfid-20221121_062319_151483_AA071D3A 
+X-CRM114-Status: GOOD (  12.32  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,176 +95,78 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 21/11/2022 11:52, Shradha Todi wrote:
-> Add the support for PCIe controller driver and phy driver
-> for Tesla FSD. It includes support for both RC and EP.
-> 
-> Signed-off-by: Niyas Ahmed S T <niyas.ahmed@samsung.com>
-> Signed-off-by: Pankaj Dubey <pankaj.dubey@samsung.com>
-> Signed-off-by: Shradha Todi <shradha.t@samsung.com>
-> ---
->  arch/arm64/boot/dts/tesla/fsd-evb.dts      |  48 ++++++
->  arch/arm64/boot/dts/tesla/fsd-pinctrl.dtsi |  65 ++++++++
->  arch/arm64/boot/dts/tesla/fsd.dtsi         | 171 +++++++++++++++++++++
->  3 files changed, 284 insertions(+)
-> 
-> diff --git a/arch/arm64/boot/dts/tesla/fsd-evb.dts b/arch/arm64/boot/dts/tesla/fsd-evb.dts
-> index 1db6ddf03f01..cda72b0f76f8 100644
-> --- a/arch/arm64/boot/dts/tesla/fsd-evb.dts
-> +++ b/arch/arm64/boot/dts/tesla/fsd-evb.dts
-> @@ -41,3 +41,51 @@
->  &ufs {
->  	status = "okay";
->  };
-> +
-> +&pcie_phy0 {
-> +	status = "disabled";
+Add support for HDMI phy on MT8195.
 
-It's a double disable, isn't it?
+This is split from the previous v3 to contain only the phy related
+changes to the HDMI support for mt8195 as suggested by Vinod.
 
-> +};
-> +
-> +&pcie_phy1 {
-> +	status = "disabled";
-> +};
-> +
-> +&pcie4_rc {
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pcie1_clkreq>, <&pcie1_wake>, <&pcie1_preset>,
-> +			<&pcie0_slot1>;
-> +	status = "disabled";
+This is based on top of next-20221121
 
-???
+To: Chunfeng Yun <chunfeng.yun@mediatek.com>
+To: Kishon Vijay Abraham I <kishon@ti.com>
+To: Vinod Koul <vkoul@kernel.org>
+To: Rob Herring <robh+dt@kernel.org>
+To: Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
+To: Matthias Brugger <matthias.bgg@gmail.com>
+To: Chun-Kuang Hu <chunkuang.hu@kernel.org>
+To: Philipp Zabel <p.zabel@pengutronix.de>
+To: David Airlie <airlied@gmail.com>
+To: Daniel Vetter <daniel@ffwll.ch>
+To: CK Hu <ck.hu@mediatek.com>
+To: Jitao shi <jitao.shi@mediatek.com>
+Cc: linux-arm-kernel@lists.infradead.org
+Cc: linux-mediatek@lists.infradead.org
+Cc: linux-phy@lists.infradead.org
+Cc: devicetree@vger.kernel.org
+Cc: linux-kernel@vger.kernel.org
+Cc: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Cc: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Cc: mac.shen@mediatek.com
+CC: stuart.lee@mediatek.com
+Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
+---
+Changes in v4:
+- Dedicated series for HDMI phy support (without the drm/ related
+  changes)
+- Removed useless variable initializations in phy driver
+- Link to v3: https://lore.kernel.org/r/20220919-v3-0-a803f2660127@baylibre.com
 
-> +};
-> +
-> +&pcie4_ep {
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pcie1_clkreq>, <&pcie1_wake>, <&pcie1_preset>,
-> +			<&pcie0_slot1>;
-> +	status = "disabled";
-> +};
-> +
-> +&pcie0_rc {
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pcie0_clkreq>, <&pcie0_wake0>, <&pcie0_preset0>,
-> +			 <&pcie0_slot0>;
-> +	status = "disabled";
-> +};
-> +
-> +&pcie0_ep {
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pcie0_clkreq>, <&pcie0_wake0>, <&pcie0_preset0>,
-> +			 <&pcie0_slot0>;
-> +	status = "disabled";
-> +};
-> +
-> +&pcie1_rc {
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pcie0_clkreq>, <&pcie0_wake1>, <&pcie0_preset0>;
-> +	status = "disabled";
-> +};
-> +
-> +&pcie1_ep {
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pcie0_clkreq>, <&pcie0_wake1>, <&pcie0_preset0>;
-> +	status = "disabled";
+Changes in v3:
+- phy: Grouped register and bit definition together to add clarity
+- dt-bindings: Addressed comments
+- Link to v2: https://lore.kernel.org/r/20220919-v2-0-8419dcf4f09d@baylibre.com
 
-Ordering is broken. All overrides/extends are ordered by label name.
+Changes in v2:
+- Removed syscon requirement from the hdmi node
+- Use as much as possible bit FIELD_PREP/FIELD_GET macros across all the
+  patches
+- Make cec optional dynamically instead of hardcoded with a flag
+- Renamed hdmi variants to v1 (legacy) and v2 (mt8195) while waiting for
+  a better name
+- Rework hdmi v2 code to use a connector (same as v1)
+- Remove "magic" 0x43 addr special handling in hdmi ddc code
+- Link to v1: https://lore.kernel.org/r/20220919-v1-0-4844816c9808@baylibre.com
 
-> +};
-> diff --git a/arch/arm64/boot/dts/tesla/fsd-pinctrl.dtsi b/arch/arm64/boot/dts/tesla/fsd-pinctrl.dtsi
-> index d0abb9aa0e9e..edae62dfa987 100644
-> --- a/arch/arm64/boot/dts/tesla/fsd-pinctrl.dtsi
-> +++ b/arch/arm64/boot/dts/tesla/fsd-pinctrl.dtsi
-> @@ -64,6 +64,27 @@
->  		samsung,pin-pud = <FSD_PIN_PULL_NONE>;
->  		samsung,pin-drv = <FSD_PIN_DRV_LV2>;
->  	};
-> +
-> +	pcie1_clkreq: pcie1-clkreq {
+---
+Guillaume Ranquet (3):
+      dt-bindings: phy: mediatek: hdmi-phy: Add mt8195 compatible
+      phy: phy-mtk-hdmi: Add generic phy configure callback
+      phy: mediatek: add support for phy-mtk-hdmi-mt8195
 
-Does not look like you tested the DTS against bindings. Please run `make
-dtbs_check` (see Documentation/devicetree/bindings/writing-schema.rst
-for instructions).
-
-(...)
-
->  
->  &pinctrl_pmu {
-> diff --git a/arch/arm64/boot/dts/tesla/fsd.dtsi b/arch/arm64/boot/dts/tesla/fsd.dtsi
-> index f35bc5a288c2..2177f6964553 100644
-> --- a/arch/arm64/boot/dts/tesla/fsd.dtsi
-> +++ b/arch/arm64/boot/dts/tesla/fsd.dtsi
-> @@ -32,6 +32,14 @@
->  		spi0 = &spi_0;
->  		spi1 = &spi_1;
->  		spi2 = &spi_2;
-> +		pciephy0 = &pcie_phy0;
-> +		pciephy1 = &pcie_phy1;
-> +		pcierc0 = &pcie0_rc;
-> +		pcieep0 = &pcie0_ep;
-> +		pcierc1 = &pcie1_rc;
-> +		pcieep1 = &pcie1_ep;
-> +		pcierc2 = &pcie4_rc;
-> +		pcieep2 = &pcie4_ep;
-
-Since these are disabled, aliases do not belong to DTSI, but to board.
-
-Also, explain why do you need them.
-
->  	};
->  
->  	cpus {
-> @@ -860,6 +868,169 @@
->  			clocks = <&clock_fsys0 UFS0_MPHY_REFCLK_IXTAL26>;
->  			clock-names = "ref_clk";
->  		};
-> +
-> +		pcie_phy0: pcie-phy@15080000 {
-> +			compatible = "tesla,fsd-pcie-phy";
-> +			#phy-cells = <0>;
-> +			reg = <0x0 0x15080000 0x0 0x2000>,
-> +			      <0x0 0x150A0000 0x0 0x1000>;
-> +			reg-names = "phy", "pcs";
-> +			samsung,pmureg-phandle = <&pmu_system_controller>;
-> +			tesla,pcie-sysreg = <&sysreg_fsys0>;
-> +			phy-mode = <0>;
-> +			status = "disabled";
-> +		};
-> +
-> +		pcie_phy1: pcie-phy@16880000 {
-> +			compatible = "tesla,fsd-pcie-phy";
-> +			#phy-cells = <0>;
-> +			reg = <0x0 0x16880000 0x0 0x2000>,
-> +			      <0x0 0x16860000 0x0 0x1000>;
-> +			reg-names = "phy", "pcs";
-> +			samsung,pmureg-phandle = <&pmu_system_controller>;
-> +			tesla,pcie-sysreg = <&sysreg_fsys1>;
-> +			phy-mode = <0>;
-> +			status = "disabled";
-> +		};
-> +
-> +		pcie4_rc: pcie@15400000 {
-
-Not ordered. Keep nodes sorted by unit address, at least within the
-group of devices you add.
-
-> +			compatible = "tesla,fsd-pcie";
-
-reg is second property. reg-names and ranges follow.
-
-> +			clocks = <&clock_fsys0 PCIE_SUBCTRL_INST0_AUX_CLK_SOC>,
-> +				 <&clock_fsys0 PCIE_SUBCTRL_INST0_DBI_ACLK_SOC>,
-> +				 <&clock_fsys0 PCIE_SUBCTRL_INST0_MSTR_ACLK_SOC>,
-> +				 <&clock_fsys0 PCIE_SUBCTRL_INST0_SLV_ACLK_SOC>;
-> +			clock-names = "aux_clk", "dbi_clk", "mstr_clk", "slv_clk";
-> +			#address-cells = <3>;
-> +			#size-cells = <2>;
+ .../devicetree/bindings/phy/mediatek,hdmi-phy.yaml |   1 +
+ drivers/phy/mediatek/Makefile                      |   1 +
+ drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c         | 541 +++++++++++++++++++++
+ drivers/phy/mediatek/phy-mtk-hdmi-mt8195.h         | 111 +++++
+ drivers/phy/mediatek/phy-mtk-hdmi.c                |  15 +
+ drivers/phy/mediatek/phy-mtk-hdmi.h                |   2 +
+ 6 files changed, 671 insertions(+)
+---
+base-commit: e4cd8d3ff7f9efeb97330e5e9b99eeb2a68f5cf9
+change-id: 20220919-hdmi_mtk
 
 Best regards,
-Krzysztof
-
+-- 
+Guillaume Ranquet <granquet@baylibre.com>
 
 -- 
 linux-phy mailing list
