@@ -4,104 +4,135 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4048EC43217
-	for <linux-phy@archiver.kernel.org>; Sun, 20 Nov 2022 16:48:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3F9D4C4332F
+	for <linux-phy@archiver.kernel.org>; Mon, 21 Nov 2022 07:27:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:Date:Subject:Cc:
-	To:From:Message-ID:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3tjIKE5+mj42pU5ts/hdCy4Ia9jRuDVC8p/GiEEx/eM=; b=1UjGUNbz5rE68f
-	9AQ14LrEphZmguY+xZ9fxAbaLT0QJp55zw6RhWeGAfH7HyvXO5p2eMQTNkCnmFXKGrR+ge/qbgO9b
-	MeC9EtHOkmDMnnM6b60bABkReebjDkvD0ucslmfGd8phyDdvlLzj6eXXNRiJgRYiCBdGSEvBdKf+l
-	3MrksTpI4Nj/BOIf9w9BO7dl70Qx5i6RHXMKgLQaeh71PQnOua2FSCW87DmvUzw4Gn3QuL83huyNz
-	8e14o1QtWbsywjHi1wxIYrKHAs2HutuNm5eqfh4BegMxDgj8T9xYzSEEhpS1BhH2rS+9YKB8xya4C
-	mOXW8U2I7FL62PdRnXPw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Ez5vX+7EdO36YSSM3D4u3qHKGg8KO4RyhF8B0byBXsY=; b=NPbbkCVLsLuw5b
+	eopAC5EdVTQ0c0TPlCfRsna8N9ZdRHHZqdcWdEK1xFlTjl+3S6zUWTfuMitrONDlVQRPAhx8lc2Od
+	CYk0Dszdb1Xsn+TLA1yoHfhtcAS4qYO/BkurQ1ip0G+DcRtiYOWNlbxCd88eDgt5MFjVNgfnWqsS5
+	vh+h47CgropPMIUV77GG1R+B9YGeMxdwayaRgzhPz0RvfRSpRh4uAqb1YlHHQlTNJmL7/EMX9r9ws
+	4M2NSlwAoYafguaUllF6YoZvXAem5UG/t5O1A/bBHjnWC4jJxWau0YTSSJcivsjLUZbMuh22Y7+9t
+	WmB5FrQLznwolri3orvg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ownUO-005pBk-MC; Sun, 20 Nov 2022 16:48:16 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1ox1Cs-00ALAh-Ho; Mon, 21 Nov 2022 07:27:06 +0000
+Received: from mail-he1eur01on0601.outbound.protection.outlook.com ([2a01:111:f400:fe1e::601] helo=EUR01-HE1-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ownUD-005oz3-EP; Sun, 20 Nov 2022 16:48:05 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:References:
-	In-Reply-To:Date:Content-Type:Subject:Cc:To:From:Message-ID:MIME-Version:
-	Sender:Reply-To:Content-ID:Content-Description;
-	bh=1GLuNIxiKDOs38/+oJCmYYg0Xa7h76F7G1oxwSrcII8=; b=fLEQyyQQmtfSp3wotp1NBQEls7
-	tb6FUs/m92ZwE/JoD/iWsZfqSHCmjVC9TeCh8q0din08gADr/eht26me5PGXBuJDB1bKtG79rPwOS
-	6cb2XHiZZGny1EJBr43zIvItvuHbRr9Na1J9q814KzkViepCvwVj2oBjY/ItstKTWzcy5T7yRMfJS
-	eQVGgi9Y7/4eYyJrbhUi7VTJE9Q4EIRqn112a/naNwePi9UV0ktReL2SzEqZ+TvT17s++y+uMhWq9
-	BQuahK4rsZTFeFvLg5O7cEg3uNI90dU9otRR2GMm1YI0vv6uVdrO8K5p+b2sBR/G82NEcgseiSQwB
-	lXZXGXaQ==;
-Received: from mout.gmx.net ([212.227.15.18])
-	by desiato.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ownU6-002pu1-31; Sun, 20 Nov 2022 16:48:03 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=public-files.de;
-	s=s31663417; t=1668962851;
-	bh=kN1ix6DsnqlIaJ1DQdtXu0RkNkA/M6KneNeTlPLILwE=;
-	h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
-	b=PPdIHlbYixoLxy7bio1Yjdp8DmVQGA2yqZJ8QB7XZOhOwkDuimMD7tMmy9N859IQC
-	 DpXE4fLZK5p8am2giDU0usoeVBqL97j1ZmSif0bfDGVx9VZnbs70Yjg0yEcv5hjSzE
-	 9IfosZl4Z3RR1lgR3EwyicBHNaIAdbnYin7N8Myw5p94xWL+oQ1YKm6AVh+c9cYomp
-	 jjBcivN+fwLRZalKgwyrZnyYBnRJIrGsAUc3FGaQSgoMmmXLOJrirINGmqKjr2ixyc
-	 MsQb8vJUAuK0noJm29Alevzqtn0t5JJ/f1nHxm/x4xKV4eaOBhcWLKZSK9t32enVdf
-	 FBcbL7/UJtuBg==
-X-UI-Sender-Class: 724b4f7f-cbec-4199-ad4e-598c01a50d3a
-Received: from [80.245.78.132] ([80.245.78.132]) by web-mail.gmx.net
- (3c-app-gmx-bs53.server.lan [172.19.170.137]) (via HTTP); Sun, 20 Nov 2022
- 17:47:31 +0100
+	id 1ox1Cp-00AL4z-DL; Mon, 21 Nov 2022 07:27:05 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=Q4e4yGJVjSr1nvJfA+JzzFjDPlukivDUK9QvS86KRg57yYUQNSsxBGB20V0Q7w6cLzZfdP/5lUdfiUnrPrQTGg4ykbNJ8eaHAZJ7mqnQCRSvfgjzvPThzhNpVCmUHXOykXGhyWn2ihINcXqT4recAZRRu1PCeASUZAVl+3napE5cQYVVkys/wq9aovf6rV1w62YZDW3WsxGckOj/OqZbRUCa3WzfumqTo0sZuoViYduvPXIAwf+oOtRaJ2b05pQ7XmlVIy9ZE05xBNRm0eOtDaXXg2LbsMX7ffRKsrbflIPMMZDfyY0h/JQe7Ao/3ns1X1a/EaSWrjBlbg8YmrFkOA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=ax+iSoDRovbihzbLJHubNFTn6Y7J//DxyIVd5oM7vuY=;
+ b=kY2Dpi1TSyH9OlU0dDqleKj4ONgqhPnfIlWu+qAPjlyM+QTA8sChl7t/8eYdFOx6p+gCHEP93IHa3mi+eLawC9igxrsTj98HXGyOBhZNsrqD8kex4kGW6YEuBDPANVfh5TRBTxP0B2L1gZ4O+x8mG1ZEMhOLOqWjI9cWNToaZGISDV2TU2oR6TwVuqZHEPwUlTKn/2R4oummB7BHeZeQGOsxcucHV9f7LfKdClsIi1IRhr5NoJy9AcOMRFYXxQ8ERCPDbpz6NaXB/fiiB9twsScRPimKgQjMuGFw9KtbE5mdZ/gZ0TiBr5CluHfD9GV1SKlzQ2tbT2221lyQtKfWjg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=ax+iSoDRovbihzbLJHubNFTn6Y7J//DxyIVd5oM7vuY=;
+ b=HNMN58aMofF08DfIJbP+v0GSlO966b671OduZd2JLXXbgOT2DrIfv0i9NvZ9O4GRB7mqf1ke2pucij7RH1V4DXDeRB8UPcqd7fDD9cQwGKHs3caxXGl55/4Y7q9PkaY/kSVziI5evPmDIm2Kj+pQy0yD1oSqWltsOUytmntT3rQ=
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from PAXPR04MB9448.eurprd04.prod.outlook.com (2603:10a6:102:2b1::21)
+ by DBBPR04MB7769.eurprd04.prod.outlook.com (2603:10a6:10:1e0::9) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5834.9; Mon, 21 Nov
+ 2022 07:26:53 +0000
+Received: from PAXPR04MB9448.eurprd04.prod.outlook.com
+ ([fe80::60b2:4bec:7707:e196]) by PAXPR04MB9448.eurprd04.prod.outlook.com
+ ([fe80::60b2:4bec:7707:e196%5]) with mapi id 15.20.5834.015; Mon, 21 Nov 2022
+ 07:26:53 +0000
+From: Sandor Yu <Sandor.yu@nxp.com>
+To: andrzej.hajda@intel.com,
+	neil.armstrong@linaro.org,
+	robert.foss@linaro.org,
+	Laurent.pinchart@ideasonboard.com,
+	jonas@kwiboo.se,
+	jernej.skrabec@gmail.com,
+	airlied@gmail.com,
+	daniel@ffwll.ch,
+	robh+dt@kernel.org,
+	krzysztof.kozlowski+dt@linaro.org,
+	shawnguo@kernel.org,
+	s.hauer@pengutronix.de,
+	festevam@gmail.com,
+	kishon@ti.com,
+	vkoul@kernel.org,
+	dri-devel@lists.freedesktop.org,
+	devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	alexander.stein@ew.tq-group.com
+Cc: kernel@pengutronix.de,
+	linux-imx@nxp.com,
+	Sandor.yu@nxp.com,
+	oliver.brown@nxp.com
+Subject: [PATCH v4 00/10] Initial support for Cadence MHDP(HDMI/DP) for i.MX8MQ
+Date: Mon, 21 Nov 2022 15:23:50 +0800
+Message-Id: <cover.1669013346.git.Sandor.yu@nxp.com>
+X-Mailer: git-send-email 2.34.1
+X-ClientProxiedBy: SG2PR06CA0246.apcprd06.prod.outlook.com
+ (2603:1096:4:ac::30) To PAXPR04MB9448.eurprd04.prod.outlook.com
+ (2603:10a6:102:2b1::21)
 MIME-Version: 1.0
-Message-ID: <trinity-173fe7db-fa76-43c0-ac05-f30b26fe763a-1668962851364@3c-app-gmx-bs53>
-From: Frank Wunderlich <frank-w@public-files.de>
-To: Rob Herring <robh@kernel.org>, Daniel Golle <daniel@makrotopia.org>
-Cc: Frank Wunderlich <linux@fw-web.de>, linux-mediatek@lists.infradead.org,
- Ryder Lee <ryder.lee@mediatek.com>, Jianjun Wang
- <jianjun.wang@mediatek.com>, Bjorn Helgaas <bhelgaas@google.com>, Krzysztof
- Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Chunfeng Yun
- <chunfeng.yun@mediatek.com>, Kishon Vijay Abraham I <kishon@ti.com>, Vinod
- Koul <vkoul@kernel.org>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Matthias Brugger <matthias.bgg@gmail.com>, Paolo Abeni <pabeni@redhat.com>,
- Lorenzo Bianconi <lorenzo@kernel.org>, Bo Jiao <Bo.Jiao@mediatek.com>,
- linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-phy@lists.infradead.org, linux-usb@vger.kernel.org
-Subject: Aw: Re: [PATCH v6 11/11] arm64: dts: mt7986: add BPI-R3 nand/nor
- overlays
-Date: Sun, 20 Nov 2022 17:47:31 +0100
-Importance: normal
-Sensitivity: Normal
-In-Reply-To: <20221120161251.GA3133853-robh@kernel.org>
-References: <20221118190126.100895-1-linux@fw-web.de>
- <20221118190126.100895-12-linux@fw-web.de>
- <CAL_JsqKiRzRToSzk3q+csWR5DEZjZpQWChqZ3mH8MLruvfe=Dw@mail.gmail.com>
- <99114D73-22EF-43CD-848E-88A37B29B953@public-files.de>
- <CAL_JsqKz1qQFZnStLnApraJvp=-cQoW6x5=p7-GBcftYKVMErg@mail.gmail.com>
- <192D4414-DC88-4321-BB2A-4345C48E3C12@fw-web.de>
- <20221120161251.GA3133853-robh@kernel.org>
-X-UI-Message-Type: mail
-X-Priority: 3
-X-Provags-ID: V03:K1:C7xJd2hzPN9fyMTUXsj8PYqDg4YzTaRB/7S5nxyzaLv4uA0E1gEhdMDdksdqVpn+VUfJj
- GDZKxU20mADzmc/XyHrg5mbPyipbNd11BmoGm86B/Co5GiSEmXzCpBCevNY2Y3TJW1i0OnIjNsY0
- knJi3WzV2IShfSEkyRmIoFpfLT9rGen7JpeNz9Sv3BwC48MqIj760wHBx+ajTXEfC+9U6IMOtU4G
- dwJGN4cWNt2I3YgHUMBuNg6KZwfB9IWL0irt7lEjnivUBa7xNKIy19Vbn0kw5Ill0rejRvE/+CuQ
- TY=
-UI-OutboundReport: notjunk:1;M01:P0:jDG5B94+XiE=;BtwYU38VBQ3E6C6jO8fJOaIThMS
- XZiYy1LXpzIVrbaIodm0Rt/x1t3iUNGICq8jTc5pgLBuUcn+Zwc1AAF3/3nCWpQuaL7GH98ow
- FuU1mbwf5/1Icu0hZgBntUbg2VsewCxV9MTjwYm44T+ZvbQU2627SsrJ75Uw/Ah32ZMGWmTdW
- 7X0Bd9cov19WZcHT4scXMoFUCuWPYqt0i1fzgBPG1DohL+HSaQjnvmTcIIWpQLy/jcZtRPRfs
- O+ps+9P4DzXYPyMza0zyFScdyvv03jxTsVc6dwvGyww7wVYawEqdCDjYszU6ngjHKKKKbL9W2
- 3n8KMV8917ir/J84OnMZct+g/n4cECtNjr1FqOi5aPA5daK5Vmk4UxfR26aaQ+q3DxvHcmgbi
- CGDid5vVEm8xZZq4DI+e8cZgoed3Vo3mzNlZunJakNLFppzcnOtRloLVFhzIGaklVGfND2Oox
- TKQPZ53a4VV9H89uQMRpXGVyvbAPTe3nv26GQei4j6HzUDKMw+pFFh/8lJPPPF3Om7J1aH2yP
- liz/R2GCBEnoNCHQrQ0XI3zHjorgPcBBpVsxXjdyhU68T6ZH0C5DYGeZAP/bkF2Gc91171IHI
- 857iqo5BgQlfGc/ih77VbOF3M43wKAZG7Ds8/EbwXivy4oZEyNVprZmsDHvmcRffc90v7rtWG
- Jt687iBQ9qwNB0Ys6Zuqk+LV5BcU1/e43D6300ThdPYHeeSEdGfGj1BhU3/HMgwgjYUHKdgo9
- lbUVyRfZ+oUwcMU5FmQg5fcP74lJC/6rbEIEGLQAfq/NXPuessD6fJ7b0YziGM0IVaBkTi6MU
- V1kASQBLsUwWoAGm6CHvr9wA==
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: PAXPR04MB9448:EE_|DBBPR04MB7769:EE_
+X-MS-Office365-Filtering-Correlation-Id: 5af55e4f-efd7-4e71-6914-08dacb91c336
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: 	fDX9GvfojAjE27BjVdFlBdaoRZznmSs8rzXQ5js5WQNVEweVPxIULFistXagVC7WwHNZFRk7EkPZHM8cJKIxurhI4ww1meQqK9dl2CVsEGTizwps/Bs7nJWpKpi6+mqj/FxX0Zbacmr42lLB7Aop1UgxGtopswN5E6URbZ1I1HsYUSG9t+afLWuoJ9eQ5wD3tOuXdqoLueXkuSgZpVPe6qmqvtdaHv0PtV1z7Jt0YaXIy1qc95CZs6utDDOc9aMNpig8eiKaYwe1Cm8PVZHGDhEavzhp21VvlQehZQf5ySZuuFfL04rgXkbY/v7Emgo+0dY3E8Pijc/iwORykhfmeneyctyf5+Bc9rH2TOoGdlc/xYZVwACSvKH2Qs2uHfVcjNFcRJfEjHRqX7X+h8MFRS2DE9lABruhRGnZDoi5JBvcJspIlOXcch19kNQAd8Yj9EC5PoSZMhvGGlFDY2lpgQTtxpXhcqZnoJxAs0z1/hWtjVsPIMf0PB7SBpSVh/NNwpY4hDUoV6yfRbTqyHhCRYs/+Msrlh/NzxZCfX0BC2I3v5DIVxUGxc1duve119as337S9XlCvqt9xNsJrLATgE9z5EAv2DEFbv8Wsb+MvXmqIRzisuyNa+bzDLfWjcds/xE9HcmF5kC9KulSmr+ax6ijan525Q5T1pYcwsLwTY0BJk30t7UK1brWSYMz/iTf4ysrCM3PMLPJcTkp1UwwtjAFxVC6URs7OEFYKAalnvedz9OdE8c66QPAxsXncphx
+X-Forefront-Antispam-Report: 	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB9448.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230022)(4636009)(396003)(366004)(39860400002)(136003)(376002)(346002)(451199015)(86362001)(36756003)(8936002)(5660300002)(7416002)(2616005)(2906002)(186003)(316002)(52116002)(4326008)(6506007)(66476007)(66946007)(8676002)(66556008)(6512007)(478600001)(38350700002)(38100700002)(26005)(921005)(41300700001)(83380400001)(6486002)(966005);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: 	=?us-ascii?Q?j4sHi9Nz7aM7+cpsSYss+3G4oO/5ZxDecCzC86n5jWDIw1E9WiKzbE/9brBB?=
+ =?us-ascii?Q?mjA76v6uVGOMzc/NPtRUV0ii6xKcIaEG4IPbAunFYvUPxQB/O0RuVNv7/1Ht?=
+ =?us-ascii?Q?eXXxuZGDBIA4gCkB8wizxhWCpdZTJT0HCv7KZANCAR8ZiDDWpq66FOhGQmKS?=
+ =?us-ascii?Q?03Gt6zNiiocMoswQ2OOiI/ktNszc8BLIOCUf7d2uDWFj15k6dwtVcE4B++qn?=
+ =?us-ascii?Q?PAttDQ8GUpzziyaLsdZWN83HUzwZZR9mgb6xjy0orQjb/d7kTK8gKYcvQQBF?=
+ =?us-ascii?Q?YLo57i/y7lIFYrP0K/Pkc2hjwT04UdEcGGwXtn3UXfHk+tMDEodyPNIjF8VE?=
+ =?us-ascii?Q?4X6W6EX5VGXCmD93prNApBOHbmZPw/mQUIBFkkaQuQTmCg6gaP8UoLLe4s96?=
+ =?us-ascii?Q?KZjyy6ccix21E5sW757XJCtHbQ/62g7ENhdCwbokP1fPyp4BPLeF+y0ye1AF?=
+ =?us-ascii?Q?ryuRmZE2THLMJ5IdfsGtmkXrl3S/9kKikSsJDD8SJpgmGHiOzEYcfTH0vLwJ?=
+ =?us-ascii?Q?WW9xy+NO1eXw3f9dm4zcSR0ZxxPGDxQT611Z9la6/t8AioX4ZYhS/5hlsdaL?=
+ =?us-ascii?Q?c2Ayh8eFg2LKQzCJP7wu6agyFxupEnBppbbxJgpwG5yN5m+zyS0ZLyBTPEFO?=
+ =?us-ascii?Q?/8iYJdecP2gwV/in4/hVSUREGY+7AOOAbKktIbUg/bDhdOCvN98/5YO3vDYa?=
+ =?us-ascii?Q?kmkiw0sbHFuQ8xyTdfi9SofLuABsZOsF07bllW6eKL8jzwXUFzUpgPjjNHcu?=
+ =?us-ascii?Q?IGpBfGG8FdeUShTMRThb8Jz2qyxCQ2WRFyfwQQE58+LnLbkU3zfAiOlletGy?=
+ =?us-ascii?Q?zX5hJwyoT62gIx3VHJg8wGz/gs7bqor4jOoQCQD4rvrS8ASQbLnM5yo0LDsi?=
+ =?us-ascii?Q?murgbnQstS8LAwr/6upiaHi1Zl0f9/SySXRzw1jAgwNO12h41K6dpKB79hiF?=
+ =?us-ascii?Q?+mQFGZcF6vl45BjbcibG4ZLhyoqRkUS+JeXRdZbZh0ixjKsm3F3js5Oy4PWu?=
+ =?us-ascii?Q?qH+/yGAYCQgA5zTQh2gVKfJ9hhUUW0g+wWOu/9RL+iA0Gf90S6N2sCR9IuEC?=
+ =?us-ascii?Q?t3BzrjJDD1EUtGt/9zdR1hB1FbK6kDZrZfLsTtsE1ebIuXzomD3zdcseB10Y?=
+ =?us-ascii?Q?TbyVBgD5rGTEn6HwtTYcPP6nbiV1pAbkZQrTJLYEHHW14S3VT8arMHnEvqlg?=
+ =?us-ascii?Q?yJJE3JgI/PljFqU+LzLACOdsBrN/RYorJl15LfU7OeGxeCYe+WXP5OOT6ege?=
+ =?us-ascii?Q?TPKtgfd1Ch0bb0GA4D0CnjB4RWM8+Yh2cOYBgN4gGOO1MXjxn47ymEHMsXLC?=
+ =?us-ascii?Q?z+1n8b2QePgqIocJKeFp+Zj4O8aUeQWvvk+B+Fh+AGaNl1aig4Rb9+pBzdlD?=
+ =?us-ascii?Q?HRZRMFAD+TwuJAYG4rsTNXWFLu6u3W8HPlm5+3Ei32Ie+YjYKGw8/CSXL5y7?=
+ =?us-ascii?Q?/R6Wm4A6x3k3Ekt9qtQ/JbxeWGFCTIYW7HsURqEel6P0EX9S8ipaSrsBZR0s?=
+ =?us-ascii?Q?LqUWdM7bvdmgOB+jNBSkzYsSwzeOZ2HJtcqCmP7S2AK6myJt+/RL1xnZIREL?=
+ =?us-ascii?Q?N2rXhKDcNuRXD0s2XDrKOUwApaVmsMIbybm3jqro?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 5af55e4f-efd7-4e71-6914-08dacb91c336
+X-MS-Exchange-CrossTenant-AuthSource: PAXPR04MB9448.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 21 Nov 2022 07:26:53.4196
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: 7+nRnhwwOvudyu47Smxrrj45S/OEIWaD0edhqVYLwAAZORnti9urEQvlXoyQX7p6MFMtvdNomB4Yy5zLllwRBg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DBBPR04MB7769
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221120_164759_010811_FC8DA187 
-X-CRM114-Status: GOOD (  50.06  )
+X-CRM114-CacheID: sfid-20221120_232703_483357_CEC02963 
+X-CRM114-Status: GOOD (  15.42  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -118,170 +149,114 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi
+The patch set initial support for Cadence MHDP(HDMI/DP) DRM bridge
+drivers and Cadence HDP-TX PHY(HDMI/DP) drivers for iMX8MQ.
 
-> Gesendet: Sonntag, 20. November 2022 um 17:12 Uhr
-> Von: "Rob Herring" <robh@kernel.org>
-> On Sat, Nov 19, 2022 at 08:19:52AM +0100, Frank Wunderlich wrote:
-> > Am 8. November 2022 15:45:49 MEZ schrieb Rob Herring <robh+dt@kernel.org>:
-> > >On Fri, Nov 18, 2022 at 4:05 PM Frank Wunderlich
-> > ><frank-w@public-files.de> wrote:
-> > >>
-> > >> Am 18. November 2022 22:39:52 MEZ schrieb Rob Herring <robh+dt@kernel.org>:
-> > >> >On Fri, Nov 18, 2022 at 1:01 PM Frank Wunderlich <linux@fw-web.de> wrote:
-> > >> >>
-> > >> >> From: Frank Wunderlich <frank-w@public-files.de>
-> > >> >>
-> > >> >> Add devicetree overlays for using nand and nor on BPI-R3.
-> > >> >
-> > >> >Can you not tell at runtime which one you booted from? If not, how
-> > >> >does one choose which overlay to apply? If you can, why not populate
-> > >> >both nodes and enable the right one? IMO, if all h/w is present, it
-> > >> >should all be in the DT. Selecting what h/w to use is a separate
-> > >> >problem and overlays aren't a great solution for that.
-> > >>
-> > >> It is not the decision about bootdevice,more available devices.
-> > >>
-> > >> Only 1 spi device (nand OR nor) is available
-> > >> at boottime as they share same spi bus and
-> > >> chipselect is set via hw jumper.
-> > >> Both nodes have reg 0,which is imho not
-> > >> supported in linux.
-> > >
-> > >As long as one is set to disabled, it should be fine.
-> > >
-> > >
-> > >> I choosed overlays to add the right spi
-> > >> device on the right mmc device where
-> > >> similar selection happens (see patch 10).
-> > >> Either sd OR emmc can be used (1 mmc
-> > >> controller,first 4bits from bus switched by
-> > >> hardware jumper).But for mmc i use it as
-> > >> base fdt because i see mmc as primary
-> > >> device which holds rootfs too. Nand/nor is
-> > >> imho helping device for accessing emmc or
-> > >> like rescue system (only uboot).
-> > >
-> > >No way to read the jumper state or know what you booted from I gues?
-> > >
-> > >> I probe in uboot if emmc is available (mmc
-> > >>  partconf) and choose emmc else sd. For
-> > >>  spi i try with sf command to check for nor,if
-> > >>  this does not work i apply nand overlay.
-> > >
-> > >Instead of applying overlays, wouldn't just changing 'status' be easier?
-> >
-> > It will be easier,but requires dts for all
-> >  combinations,we have have sd/emmc
-> >  combination twice (once for nand
-> >  enabling,once for nor) and we have then 4
-> >  full dts instead of smaller overlays in fit.
->
-> No, I mean can't you have 1 dtb with everything, but nand, nor, emmc,
-> and sd are all disabled. Then at boot change 'status' for what's
-> enabled.
+The patch set compose of DRM bridge drivers and PHY drivers.
+Both of them need the followed two patches to pass build.
+  drm: bridge: cadence: convert mailbox functions to macro functions
+  phy: Add HDMI configuration options
 
-at least for sd/emmc: no, as they share same mmc-node with different settings (bus-width,speed,...).
+DRM bridges driver patches:
+  dts-bingings: display: bridge: Add MHDP HDMI bindings for i.MX8MQ
+  drm: bridge: cadence: Add MHDP DP driver for i.MX8MQ
+  dts-bindings: display: bridge: Add MHDP DP bindings for i.MX8MQ
+  drm: bridge: cadence: Add MHDP HDMI driver for i.MX8MQ
 
-for nand/nor i'm not sure if spi can have 2 childs with same unit-address/reg even if disabled.
-Then i do not know how to enable a dts-node in uboot...only know (not long time) how to apply overlay ;)
+PHY driver patches:
+  dts-bindings: phy: Add Cadence HDP-TX DP PHY bindings
+  phy: cadence: Add driver for HDP-TX DisplyPort PHY
+  dts-bindings: phy: Add Cadence HDP-TX HDMI PHY bindings
+  phy: cadence: Add driver for HDP-TX HDMI PHY
 
-> > So i should add spi subnodes both disabled
-> >  in base dtsi and create 4 dts (sd-nand,sd-nor,emmc-nand,emmc-nor) with
-> >  mmc node and enabling the right spi node?
-> > >>
-> > >> >> Signed-off-by: Frank Wunderlich <frank-w@public-files.de>
-> > >> >> ---
-> > >> >> maybe rename to dtso?
-> > >> >>
-> > >> >> "kbuild: Allow DTB overlays to built from .dtso named source files"
-> > >> >> https://git.kernel.org/pub/scm/linux/kernel/git/robh/linux.git/commit/?h=dt/next&id=363547d2191cbc32ca954ba75d72908712398ff2
-> > >>
-> > >> Should i do this?
-> > >
-> > >Yes. .dts -> .dtbo is going to be removed.
-> >
-> > Do this if still using overlays,will test new way.
-> >
-> > Maybe we can apply parts 1-9 first?
->
-> Sure.
+v3->v4:
+dt-bindings:
+- Correct dt-bindings coding style and address review comments.
+- Add apb_clk description.
+- Add output port for HDMI/DP connector
+PHY:
+- Alphabetically sorted in Kconfig and Makefile for DP and HDMI PHY
+- Remove unused registers define from HDMI and DP PHY drivers.
+- More description in phy_hdmi.h.
+- Add apb_clk to HDMI and DP phy driver.
+HDMI/DP:
+- Use get_unaligned_le32() to replace hardcode type conversion
+  in HDMI AVI infoframe data fill function.
+- Add mailbox mutex lock in HDMI/DP driver for phy functions
+  to reslove race conditions between HDMI/DP and PHY drivers.
+- Add apb_clk to both HDMI and DP driver.
+- Rename some function names and add prefix with "cdns_hdmi/cdns_dp".
+- Remove bpc 12 and 16 optional that not supported.
 
-i would wait for them applied before posting next version, i hope they can go into 6.2. Then it is easier because depencies are all in.
+v2->v3:
+Address comments for dt-bindings files.
+- Correct dts-bindings file names 
+  Rename phy-cadence-hdptx-dp.yaml to cdns,mhdp-imx8mq-dp.yaml
+  Rename phy-cadence-hdptx-hdmi.yaml to cdns,mhdp-imx8mq-hdmi.yaml
+- Drop redundant words and descriptions.
+- Correct hdmi/dp node name.
 
-overlay was only for discussion the right way...my preferred way was mmc in board dts and spi as overlay,
-daniel preferred base fdt without them all and 4 overlays. another way already discussed were 4 full fdt, but
-how to get all 4 combinations with less files and not defining mmc/spi device twice? i see only the overlay
-version and combining via Makefile.
+v2 is a completely different version compared to v1.
+Previous v1 can be available here [1].
 
-what is your preferred way (except all devices in 1 dts which is afair not possible, daniel please correct me if
-i'm wrong)?
+v1->v2:
+- Reuse Cadence mailbox access functions from mhdp8546 instead of
+  rockchip DP.
+- Mailbox access functions be convert to marco functions
+  that will be referenced by HDP-TX PHY(HDMI/DP) driver too.
+- Plain bridge instead of component driver.
+- Standalone Cadence HDP-TX PHY(HDMI/DP) driver.
+- Audio driver are removed from the patch set, it will be add in another
+  patch set later.
 
-> >
-> > >> >> more comments about the dt overlay-support:
-> > >> >>
-> > >> >> https://patchwork.kernel.org/comment/25092116/
-> > >> >> https://patchwork.kernel.org/comment/25085681/
-> > >>
-> > >> Daniel suggest define sd/emmc as overlay too...with way you mention below we could create 4 full fdt without applying overlays in uboot.
-> > >
-> > >Yes, but if you are going to do that, then you can just do all this
-> > >with includes.
-> >
-> > This is a third way if i understand correctly
-> >
-> > Make all of them as overlay (dtso?) but
-> >  build dtb by combining them in makefile.
-> >
-> > This looks the best way because it avoids
-> >  redundand code for mmc node and allows
-> >  my current spi config (not the status way
-> >  which may break due to same unit address).
-> >
-> > I guess my base dtsi is then a dts too?
->
-> Yes, it can be.
->
-> >
-> > Or should these overlays only duplicated and either include sd dts or emmc dts (but this creates again redundant code)?
-> > >> >> --- a/arch/arm64/boot/dts/mediatek/Makefile
-> > >> >> +++ b/arch/arm64/boot/dts/mediatek/Makefile
-> > >> >> @@ -8,6 +8,8 @@ dtb-$(CONFIG_ARCH_MEDIATEK) += mt6797-x20-dev.dtb
-> > >> >>  dtb-$(CONFIG_ARCH_MEDIATEK) += mt7622-rfb1.dtb
-> > >> >>  dtb-$(CONFIG_ARCH_MEDIATEK) += mt7622-bananapi-bpi-r64.dtb
-> > >> >>  dtb-$(CONFIG_ARCH_MEDIATEK) += mt7986a-bananapi-bpi-r3-emmc.dtb
-> > >> >> +dtb-$(CONFIG_ARCH_MEDIATEK) += mt7986a-bananapi-bpi-r3-nand.dtbo
-> > >> >> +dtb-$(CONFIG_ARCH_MEDIATEK) += mt7986a-bananapi-bpi-r3-nor.dtbo
-> > >> >
-> > >> >These need rules to apply them to the base dtb(s). You just need:
-> > >> >
-> > >> >full.dtb := base.dtb overlay.dtb
-> > >> >dtb-y += full.dtb
-> > >>
-> > >> I would prefer to do this in bootloader to allow all 4 possible configurations:
-> > >>
-> > >> Sd+nand
-> > >> Sd+nor
-> > >> Emmc+nand
-> > >> Emmc+nor
-> > >
-> > >That's fine. The purpose here is to document what the overlays apply
-> > >to, check that they actually apply, and validate them when applied
-> > >(unless someone wants to figure out all the issues with validating
-> > >just an overlay and make that work). You for example have an
-> > >undocumented compatible in yours (denx,fit).
-> >
-> > Oh,need to check,copied partitions from my
-> >  uboot dts...maybe there is a linux version
-> >  for marking it as fit partition,else i drop
-> >  completely.
->
-> You just need to document it. But the first thing I'm going to say, is
-> 'u-boot' is the vendor, not 'denx'. So 'u-boot,fit'.
+[1] https://patchwork.kernel.org/project/linux-rockchip/cover/cover.1590982881.git.Sandor.yu@nxp.com/
 
-imho it is not needed in linux, so i drop it.
+Sandor Yu (10):
+  drm: bridge: cadence: convert mailbox functions to macro functions
+  dt-bindings: display: bridge: Add MHDP DP for i.MX8MQ
+  drm: bridge: cadence: Add MHDP DP driver for i.MX8MQ
+  phy: Add HDMI configuration options
+  dt-bindings: display: bridge: Add MHDP HDMI for i.MX8MQ
+  drm: bridge: cadence: Add MHDP HDMI driver for i.MX8MQ
+  dt-bindings: phy: Add Cadence HDP-TX DP PHY
+  phy: cadence: Add driver for HDP-TX DisplyPort PHY
+  dt-bindings: phy: Add Cadence HDP-TX HDMI PHY
+  phy: cadence: Add driver for HDP-TX HDMI PHY
 
-regards Frank
+ .../display/bridge/cdns,mhdp-imx8mq-dp.yaml   |   93 ++
+ .../display/bridge/cdns,mhdp-imx8mq-hdmi.yaml |   93 ++
+ .../bindings/phy/cdns,hdptx-dp-phy.yaml       |   68 ++
+ .../bindings/phy/cdns,hdptx-hdmi-phy.yaml     |   52 +
+ drivers/gpu/drm/bridge/cadence/Kconfig        |   25 +
+ drivers/gpu/drm/bridge/cadence/Makefile       |    3 +
+ drivers/gpu/drm/bridge/cadence/cdns-dp-core.c | 1071 +++++++++++++++++
+ .../gpu/drm/bridge/cadence/cdns-hdmi-core.c   | 1018 ++++++++++++++++
+ .../gpu/drm/bridge/cadence/cdns-mhdp-common.h |  400 ++++++
+ .../drm/bridge/cadence/cdns-mhdp8546-core.c   |  197 +--
+ .../drm/bridge/cadence/cdns-mhdp8546-core.h   |    1 -
+ drivers/phy/cadence/Kconfig                   |   16 +
+ drivers/phy/cadence/Makefile                  |    2 +
+ drivers/phy/cadence/phy-cadence-hdptx-dp.c    |  737 ++++++++++++
+ drivers/phy/cadence/phy-cadence-hdptx-hdmi.c  |  891 ++++++++++++++
+ include/drm/bridge/cdns-mhdp-mailbox.h        |  240 ++++
+ include/linux/phy/phy-hdmi.h                  |   38 +
+ include/linux/phy/phy.h                       |    7 +-
+ 18 files changed, 4755 insertions(+), 197 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/display/bridge/cdns,mhdp-imx8mq-dp.yaml
+ create mode 100644 Documentation/devicetree/bindings/display/bridge/cdns,mhdp-imx8mq-hdmi.yaml
+ create mode 100644 Documentation/devicetree/bindings/phy/cdns,hdptx-dp-phy.yaml
+ create mode 100644 Documentation/devicetree/bindings/phy/cdns,hdptx-hdmi-phy.yaml
+ create mode 100644 drivers/gpu/drm/bridge/cadence/cdns-dp-core.c
+ create mode 100644 drivers/gpu/drm/bridge/cadence/cdns-hdmi-core.c
+ create mode 100644 drivers/gpu/drm/bridge/cadence/cdns-mhdp-common.h
+ create mode 100644 drivers/phy/cadence/phy-cadence-hdptx-dp.c
+ create mode 100644 drivers/phy/cadence/phy-cadence-hdptx-hdmi.c
+ create mode 100644 include/drm/bridge/cdns-mhdp-mailbox.h
+ create mode 100644 include/linux/phy/phy-hdmi.h
+
+-- 
+2.34.1
+
 
 -- 
 linux-phy mailing list
