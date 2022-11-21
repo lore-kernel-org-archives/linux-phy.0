@@ -4,47 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1C4C4C4332F
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4C2A3C433FE
 	for <linux-phy@archiver.kernel.org>; Mon, 21 Nov 2022 08:52:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=HdYh2lnhT0r6gZ2E1mxZ1H70+a7C5LYkUYO/NGWtRH4=; b=RyrWVbsi3yVG1V
-	hC2hCwWooeLTMGgef3kHYWr914sKjzahx0IbHHrAnZZWTca6KmISDFl35C8MWmxwNLX9cySSAvfAe
-	XQP/vuPFsFwr948ZJbDCmi0lu6q8tuJ0ZgU74UCq+dCDWrFNMFIOxVmuzzrCrV5oXXpsEuKM25FLI
-	fl4zanSTFOheGEWAwU/Z3OQznsHzIo3utDjNRGyIXIxHlu5iyrMkHT0i0XWjfpMuVx3Q5eX5Is2v6
-	f03e38zJjdu+QcE7ko5Fw6N+kraAgJFMpVEs1wokiEGTFrudat03cLqOPSZ+WC/b/hqnASu4ZyLMx
-	aRfpJcyLLZlXldyO4HSA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Qfj7fe93u7c7E/ITJzKhIpRVr6Feu/y7AMjTiBIY94o=; b=rsfueYZ+kQ2KDw
+	jms1qrEh6caYjNJDAzSv6MigWIujk6h1GbZe9oiPdSL2k8jU+R3Ap0Jzc1vI8d85BRvfZBjF/K20p
+	v1AkONPwnxqw+h47+SIfnGlDlWmrq7GDeMSYaJ/kvz8rlh7UUQPO1bBtxlsOKKySSF6WjaGiI4ILO
+	F80PXi4eFnmclDFxisEpwWPRBCvj8YgEWHEhlH6zEjSxHzk3EAtC/zbjsdb8faGsaIK0keDaw6hiT
+	A2k3GxJ3h7qfC+KrW6A37aKED02wXBrmcduMnZz7Msr6LFd1jLiHsjmdFcYTJESXgm06daxLMSxLJ
+	/E5argRFP3SKdww6TH8g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ox2X3-00BUdf-CI; Mon, 21 Nov 2022 08:52:01 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1ox2X3-00BUe0-Kr; Mon, 21 Nov 2022 08:52:01 +0000
+Received: from ams.source.kernel.org ([145.40.68.75])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ox2Wz-00BUYg-3b
-	for linux-phy@lists.infradead.org; Mon, 21 Nov 2022 08:51:58 +0000
+	id 1ox2Wz-00BUYe-CX
+	for linux-phy@lists.infradead.org; Mon, 21 Nov 2022 08:51:59 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 62CC060F46;
-	Mon, 21 Nov 2022 08:51:56 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7BAD7C43145;
+	by ams.source.kernel.org (Postfix) with ESMTPS id CE0AEB80D33;
+	Mon, 21 Nov 2022 08:51:55 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7671EC433D7;
 	Mon, 21 Nov 2022 08:51:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1669020714;
-	bh=0/FEbAx1GFTzClwrya9NO6G7aq+zFSmoJtaI7TVM8P4=;
-	h=From:To:Cc:Subject:Date:From;
-	b=l2b+nQa9h0fZOMYnjcesQxnSVrSglrMo5ieYBrmWlCEj6v+hgw4yaXo8IUrYeErMU
-	 lWaFMOY2DDRV+XC+9X/DxbLcvcqQR+H0uKNLuQQGi8Xbp+c3kvoTQVpo7ww7gHT3Uk
-	 5xLY1WyJpzcotx/RfJi5B6FFrwORJzz7JwzxdmShx/9uXHcUxPKSY6eu8POPaPEkP3
-	 PYlO8l05UZ+U/qhV24tJncq+/fSedRWqrRD+m0MUkab2xL5i1nt0KWdF0ashaAFnr/
-	 vB/oHFPI0L9T3bC0bmQFD25qjYxk+uHwh/Es2/8x04DhV0nKDiJHszhscOq96P8iVf
-	 gHW0bqxffLnAg==
+	bh=ElTyCaaFuJwFQkSxTO8dVBHZVU+p8b+U2ZsbEePHpm0=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=ddWAUbe/7hdh6zeAu3+fHc+DxFvRvcXP13A7zUp7PH7BQsNPLzK+ut9NJslx9A1h4
+	 pk2Yc9F6fGghq9k26NgDHKeTqHgmgiNBWSC6EIdh6Fu00pLSsBL4RmoWNMhCxU78Yl
+	 2oQIXr1sO6cu4wYWKONiIACtWeRLNo7AHpvx0yfrGXjJsHpL6p8Wdu/dpqXgzhHwE5
+	 +0BdQ97jVwort2DgzFtExrrJQDT3uYKR3vvLwKJpCptVYZTggIMgOzXn0H4tTUNwV2
+	 aD5lt4EbbsHRUvl8eyMUMC2CnG8GD7L9+FAKbkIB3t5g75q2b0oARACjhbHfUJUoEO
+	 Z3lFP+6wqUKDw==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1ox2WS-00088D-CY; Mon, 21 Nov 2022 09:51:24 +0100
+	id 1ox2WS-00088J-LP; Mon, 21 Nov 2022 09:51:24 +0100
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>
 Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
@@ -59,14 +59,16 @@ Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
 	devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH v3 00/15] phy: qcom-qmp-combo: fix sc8280xp binding (set 3/3)
-Date: Mon, 21 Nov 2022 09:50:43 +0100
-Message-Id: <20221121085058.31213-1-johan+linaro@kernel.org>
+Subject: [PATCH v3 03/15] phy: qcom-qmp-combo: drop v4 reference-clock source
+Date: Mon, 21 Nov 2022 09:50:46 +0100
+Message-Id: <20221121085058.31213-4-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.37.4
+In-Reply-To: <20221121085058.31213-1-johan+linaro@kernel.org>
+References: <20221121085058.31213-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221121_005157_247226_132CC989 
-X-CRM114-Status: GOOD (  18.15  )
+X-CRM114-CacheID: sfid-20221121_005157_587138_0D6C0461 
+X-CRM114-Status: GOOD (  15.26  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,68 +85,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This series fixes the USB-DP PHY devicetree binding for SC8280XP and
-adds support for the new updated binding to the driver.
+The source clock for the reference clock should not be described by the
+devicetree and instead this relationship should be modelled in the clock
+driver.
 
-As the full series including the preparatory parts is over forty patches
-and I've been posting this in three parts of which this is the last one.
-In an effort to get all of these into 6.2, I've also submitted all three
-series before waiting for the previous ones to be applied. Parts one and
-two can be found here:
+Drop the management of the source clock from the driver for SC8180X and
+SC8280XP. Note that support for the former is not yet in mainline.
 
-  https://lore.kernel.org/lkml/20221114081346.5116-1-johan+linaro@kernel.org/
-  https://lore.kernel.org/lkml/20221114110621.4639-1-johan+linaro@kernel.org/
+Also note that the binding has never been updated to describe the v4
+clocks for SC8180X.
 
-This last series adds a new binding for SC8280XP that drops the legacy
-child node and the (incomplete) description of register subregions.
+Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
+---
+ drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-As the current bindings are both incomplete and incorrect it may be
-a good idea to update also the other platforms currently supported by
-this driver to the new binding scheme. The driver can support both
-schemes during a transition period before removing the corresponding
-code (dt parsing and clock-provider registration).
-
-Johan
-
-
-Changes in v3
- - make new QMP header dual licensed (Rob)
-
-Changes in v2:
- - drop quotes from old DT schema $id and $schema (Krzysztof)
- - drop clock-output-names from new binding (Krzysztof)
- - add QMP clock and PHY index constants in a new header
- - drop patch moving clock registration before runtime PM enable (Dmitry)
- - include also the corresponding dts changes
-
-
-Johan Hovold (15):
-  dt-bindings: phy: qcom,qmp-usb3-dp: rename current bindings
-  dt-bindings: phy: qcom,qmp-usb3-dp: fix sc8280xp binding
-  phy: qcom-qmp-combo: drop v4 reference-clock source
-  phy: qcom-qmp-combo: restructure PHY creation
-  phy: qcom-qmp-combo: generate pipe clock name
-  phy: qcom-qmp-combo: drop redundant clock structure
-  phy: qcom-qmp-combo: drop redundant clock allocation
-  phy: qcom-qmp-combo: add clock registration helper
-  phy: qcom-qmp-combo: separate clock and provider registration
-  phy: qcom-qmp-combo: clean up DP clock callbacks
-  phy: qcom-qmp-combo: rename common-register pointers
-  phy: qcom-qmp-combo: rename DP_PHY register pointer
-  phy: qcom-qmp-combo: add support for updated sc8280xp binding
-  arm64: dts: qcom: sc8280xp: fix primary USB-DP PHY reset
-  arm64: dts: qcom: sc8280xp: fix USB-DP PHY nodes
-
- ....yaml => qcom,sc7180-qmp-usb3-dp-phy.yaml} |  25 +-
- .../phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml    |  99 ++++
- arch/arm64/boot/dts/qcom/sc8280xp.dtsi        |  79 +--
- drivers/phy/qualcomm/phy-qcom-qmp-combo.c     | 530 +++++++++++-------
- include/dt-bindings/phy/phy-qcom-qmp.h        |  20 +
- 5 files changed, 473 insertions(+), 280 deletions(-)
- rename Documentation/devicetree/bindings/phy/{qcom,qmp-usb3-dp-phy.yaml => qcom,sc7180-qmp-usb3-dp-phy.yaml} (91%)
- create mode 100644 Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
- create mode 100644 include/dt-bindings/phy/phy-qcom-qmp.h
-
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+index c5d8f8bfaaaa..5da42a4e5bf6 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+@@ -945,7 +945,7 @@ static const char * const qmp_v3_phy_clk_l[] = {
+ };
+ 
+ static const char * const qmp_v4_phy_clk_l[] = {
+-	"aux", "ref_clk_src", "ref", "com_aux",
++	"aux", "ref", "com_aux",
+ };
+ 
+ /* the primary usb3 phy on sm8250 doesn't have a ref clock */
 -- 
 2.37.4
 
