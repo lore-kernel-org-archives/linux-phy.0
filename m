@@ -4,129 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 36925C433FE
-	for <linux-phy@archiver.kernel.org>; Mon, 21 Nov 2022 11:46:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 356FDC4332F
+	for <linux-phy@archiver.kernel.org>; Mon, 21 Nov 2022 12:00:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WtLMR09blxZjYZAVCvqSeFcF3w0idaVvCLM45w+lU/8=; b=vaYMsqtfRCgCq2
-	2kpa3LTKx1myZbsw0mvWaeDA07OtElX2wHMH4YYAcrQZgFjuLi7x9HOhc45SZQBLVU+jyWxrrCrTZ
-	L35DcFcDvPr7wATpI4Qvd2huYyKYWGPjnmjLdkzDoOK2JKDgBhjSvr71nzatE62ENLWCZ6kxj423I
-	s/YG42n6ZGkLZxCeLbF8h/fw9xXhsIBTqEwzoslDQ/9JVZ6vkHFvKkZAT8Kp8/lrUnh77qFH4Y6gm
-	IaNoS6vSwEPzldU10asf3bbBd0gVFC4whJoNbbweVkY1QZmgtlt/GpbnoGoo2LitXAGW/5Oi4PXuG
-	rW9pxNcd2YwUSOZXUlFw==;
+	List-Owner; bh=vzf+v4JlurOxqb2wikHpv6nvXmDvx2Ei6hNHTHOBW4g=; b=YGOr45tr3yE86d
+	amP5jCtoLzMw3Pc193BcXj/Iax59THMDg4YObHRYC9tdsuIC0n6kSJnr5vY3iQRMv3Kngne2vNMGG
+	pZVPVIXDP+sEKLnYkXEGcJgoJQ4kvX3jADyR6QwgoeE3l7UoVPUztuLexJiYBjUcIIXbsuPpf/9KJ
+	a7/neGwt4IEzJ42JqXt4Xtwo6RHpyqBtNseWH6TYcvjOroMGgfYyxJTFUlwcB/VHfEieKB7FRAe5z
+	dPjX/UGNBH+DY7+dotLKmgnV8tGOIFBkKgpO5OLGCfRxZVKunlG93EsCSMOf5gy3Rhcjs/NrKm3hl
+	jYUnWg+tF8L/b9LxsLEQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ox5Fc-00D2ry-KK; Mon, 21 Nov 2022 11:46:12 +0000
-Received: from mailout4.samsung.com ([203.254.224.34])
+	id 1ox5T1-00D9sd-K8; Mon, 21 Nov 2022 12:00:03 +0000
+Received: from mail-lj1-x229.google.com ([2a00:1450:4864:20::229])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ox5FZ-00D2ng-NH
-	for linux-phy@lists.infradead.org; Mon, 21 Nov 2022 11:46:11 +0000
-Received: from epcas5p4.samsung.com (unknown [182.195.41.42])
-	by mailout4.samsung.com (KnoxPortal) with ESMTP id 20221121114604epoutp0498ac6aa83e829b40fe3fb30424328679~plwBcdZtx3262532625epoutp04P
-	for <linux-phy@lists.infradead.org>; Mon, 21 Nov 2022 11:46:04 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout4.samsung.com 20221121114604epoutp0498ac6aa83e829b40fe3fb30424328679~plwBcdZtx3262532625epoutp04P
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
-	s=mail20170921; t=1669031164;
-	bh=4DQSEQbGFqTzsAQ1vDOskhu5NeotvLsqwP2LwtiyYOM=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=G9wf9OFp9+O65mfEGgfr4eUdhvM12Z6IQVk2R/PXpirOdsSlUgQDc3nDIiLMgZhnK
-	 UWa43lOAsvl8aByc+eWBgkkNmGrfSG+wbsMhvtvBQLTcwFbNa4roEyvDHW7oIR2ig5
-	 1yRbvn6sqUXGbyZLBeOlCFmTnbESHUj0KGEa+qvs=
-Received: from epsnrtp4.localdomain (unknown [182.195.42.165]) by
-	epcas5p4.samsung.com (KnoxPortal) with ESMTP id
-	20221121114603epcas5p42b556919e142f6c0ae022bad2f21b055~plwAwMW_U0433904339epcas5p4C;
-	Mon, 21 Nov 2022 11:46:03 +0000 (GMT)
-Received: from epsmges5p3new.samsung.com (unknown [182.195.38.175]) by
-	epsnrtp4.localdomain (Postfix) with ESMTP id 4NG5F62YLVz4x9Pw; Mon, 21 Nov
-	2022 11:46:02 +0000 (GMT)
-Received: from epcas5p2.samsung.com ( [182.195.41.40]) by
-	epsmges5p3new.samsung.com (Symantec Messaging Gateway) with SMTP id
-	F2.F5.56352.AF46B736; Mon, 21 Nov 2022 20:46:02 +0900 (KST)
-Received: from epsmtrp1.samsung.com (unknown [182.195.40.13]) by
-	epcas5p1.samsung.com (KnoxPortal) with ESMTPA id
-	20221121104746epcas5p109c7bb299cf19070a9237c00c162ed8f~pk9HX5aeT2593625936epcas5p1_;
-	Mon, 21 Nov 2022 10:47:46 +0000 (GMT)
-Received: from epsmgms1p2.samsung.com (unknown [182.195.42.42]) by
-	epsmtrp1.samsung.com (KnoxPortal) with ESMTP id
-	20221121104746epsmtrp1db7d5813c1c84b763ba0a5f00015f418~pk9HVfj7O2438624386epsmtrp1d;
-	Mon, 21 Nov 2022 10:47:46 +0000 (GMT)
-X-AuditID: b6c32a4b-5f7fe7000001dc20-91-637b64fa45e5
-Received: from epsmtip1.samsung.com ( [182.195.34.30]) by
-	epsmgms1p2.samsung.com (Symantec Messaging Gateway) with SMTP id
-	6F.45.18644.2575B736; Mon, 21 Nov 2022 19:47:46 +0900 (KST)
-Received: from cheetah.sa.corp.samsungelectronics.net (unknown
-	[107.109.115.53]) by epsmtip1.samsung.com (KnoxPortal) with ESMTPA id
-	20221121104742epsmtip18fae01eacc517566d39093dcb2713ce7~pk9EDB1I31291012910epsmtip1f;
-	Mon, 21 Nov 2022 10:47:42 +0000 (GMT)
-From: Shradha Todi <shradha.t@samsung.com>
-To: bhelgaas@google.com, robh+dt@kernel.org,
-	krzysztof.kozlowski+dt@linaro.org, kishon@ti.com, vkoul@kernel.org,
-	lpieralisi@kernel.org, kw@linux.com, mani@kernel.org, arnd@arndb.de,
-	gregkh@linuxfoundation.org, alim.akhtar@samsung.com,
-	ajaykumar.rs@samsung.com, rcsekar@samsung.com, sriranjani.p@samsung.com,
-	bharat.uppal@samsung.com, s.prashar@samsung.com, aswani.reddy@samsung.com,
-	pankaj.dubey@samsung.com, p.rajanbabu@samsung.com, niyas.ahmed@samsung.com,
-	chanho61.park@samsung.com
+	id 1ox5Sz-00D9pp-1H
+	for linux-phy@lists.infradead.org; Mon, 21 Nov 2022 12:00:02 +0000
+Received: by mail-lj1-x229.google.com with SMTP id t10so14303043ljj.0
+        for <linux-phy@lists.infradead.org>; Mon, 21 Nov 2022 04:00:00 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=gAe96EUQJW/t2YfQOYFjoHjjiIW4hHrPPaKyPCc7BE4=;
+        b=UVduBhk3PJQZkKzEskUrpKs00z1z4r/O7LnJCkT22HInQOeMTGaNIiUeqIGHvlHNel
+         8VqMPfMXtV6tMv9ea7G6sbKvzE3Fm/DlG1E+g8NcPhYe8kgMQ604qRLIDomYKgkO4nJm
+         nNM0oOsRVkJDTr9ybiWyVEr8r6WawaItHr7qHt8Sbx4Ok3kdRHr2SR9GXJjMcjqAyue3
+         iOGkflLwOC1bOY41x6zbbYbq9oqoBTN30Z/aCEk3crJLxYULIxr+CRUxsV3WKHgXoVok
+         yHMtfO5pYc15hhPs6wnzHYeNYaUln8nxRvBy6UGnsaaprdi+rLUUBCYXS1isltaJirK1
+         YmLg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=gAe96EUQJW/t2YfQOYFjoHjjiIW4hHrPPaKyPCc7BE4=;
+        b=vBchTVjK8/jCrz5ToPv+NR3dQ7hnxzCE/sXaXmPhnySq3o1Zv+gJRmd1lNJlRuhDeA
+         wxkVs3u+tR9Zmz2IwuhvREcbV5kG+G3lwgRn0Dj65O0nPmnu2F276QNC3LcBaKrUWF4M
+         zV0hk2a6ZNICSqZZhS05cGhDfGDIXzy1jdhtWAqXKeKd/1PC3zxNxWLBlN9WMCIZuwNJ
+         NSvvCOsSweWsqi3aCxRlvp08YCMVf7vjz2gtmK7K6DBLx41r8op0202t0tSG/5qAgmCy
+         A/OflTxW9LebLHASs8bdgk/chZ0OHhezbILgqVqIqPfBKixMm/K9ENMMaRRHbF90a5+q
+         EKqw==
+X-Gm-Message-State: ANoB5pk5cuKzlubZVbtqHcokdHcV3y/Q8TWwpU+k/zFxERgDBhU653xL
+	FljOEhPaE5rNSHWm4eIHiIVbXw==
+X-Google-Smtp-Source: AA0mqf6lo8pDgZCEf5cpGQ6TpOYX19afdgtwbFTqg3DuazhEzItnWlNNkGFC2exRFsAu0oB9C2ARJA==
+X-Received: by 2002:a05:651c:160f:b0:278:d847:1a8b with SMTP id f15-20020a05651c160f00b00278d8471a8bmr5107958ljq.17.1669031999150;
+        Mon, 21 Nov 2022 03:59:59 -0800 (PST)
+Received: from [192.168.0.20] (088156142067.dynamic-2-waw-k-3-2-0.vectranet.pl. [88.156.142.67])
+        by smtp.gmail.com with ESMTPSA id p3-20020ac24ec3000000b00492e3a8366esm2005053lfr.9.2022.11.21.03.59.57
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 21 Nov 2022 03:59:58 -0800 (PST)
+Message-ID: <856449f3-6341-78d8-28db-3d4b8a0a25ad@linaro.org>
+Date: Mon, 21 Nov 2022 12:59:57 +0100
+MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.4.2
+Subject: Re: [PATCH 1/6] dt-bindings: phy: Add PCIe PHY bindings for FSD
+Content-Language: en-US
+To: Shradha Todi <shradha.t@samsung.com>, bhelgaas@google.com,
+ robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org, kishon@ti.com,
+ vkoul@kernel.org, lpieralisi@kernel.org, kw@linux.com, mani@kernel.org,
+ arnd@arndb.de, gregkh@linuxfoundation.org, alim.akhtar@samsung.com,
+ ajaykumar.rs@samsung.com, rcsekar@samsung.com, sriranjani.p@samsung.com,
+ bharat.uppal@samsung.com, s.prashar@samsung.com, aswani.reddy@samsung.com,
+ pankaj.dubey@samsung.com, p.rajanbabu@samsung.com, niyas.ahmed@samsung.com,
+ chanho61.park@samsung.com
 Cc: linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, Shradha Todi
-	<shradha.t@samsung.com>
-Subject: [PATCH 6/6] misc: pci_endpoint_test: Add driver data for FSD PCIe
- controllers
-Date: Mon, 21 Nov 2022 16:22:10 +0530
-Message-Id: <20221121105210.68596-7-shradha.t@samsung.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20221121105210.68596-1-shradha.t@samsung.com>
-X-Brightmail-Tracker: H4sIAAAAAAAAA0WTe0zTVxTHd/trfy2kNT8L00szGfmRLQPHo1rKBYFBJFsNZoLOZSFboGl/
-	aYHSdn3ApjMgUpNhRcGqPCsCU1odYkHltVFesocjzWDEDTaBsYWXgyFieHRZS2H773PO+Z7H
-	PfdeFsZ14DxWhlJHaZRiBYl70+/3Br0RsiY9KQk3WtjIvtBNR+Pm+zhylj5kop7me0w0MuNg
-	ovoCORrq2ouu9Q0y0Jm6Ozhy/GHEUfH0BIbyjesMNNRehaMfzAM4umhdoaPCjUI6si9aAZoy
-	TTJQ/91jqPbeMhNVOFoZyPBVHxOZW6sBOt97Co3ONzJQ29g3WDxPtL5WCkQ1Nr3IZv0cF42N
-	dOKiqeGrNFFX9W2mqLk+T1TcYgWigccPaKJnNv9k79SsGDklllKaAEopUUkzlLJYMulY2sG0
-	CGE4P4QfhSLJAKU4m4olEw8nh7ydoXAdnAzIESv0LleyWKslw+JiNCq9jgqQq7S6WJJSSxVq
-	gTpUK87W6pWyUCWli+aHh++LcAnTs+SGfr561PuT7o5/mPngnFcR8GJBQgCLe9tobuYSHQAO
-	PskrAt4uXgJwebAG9xjPAOxsHMa3M64YypmeQDuAJRYjw2MYaHC++sxmLZwIhqefF2Fu9iWW
-	MPjiSrRbhBE1AE48tgB3wIf4AD798UtXWRaLTrwGGy587EYOEQ27ag56mr0KbzXZN8t4EQdg
-	Y93o5kSQmGfBytlLWxMlwtXSP4GHfeDsQAvTwzw4c+HsFsugpbkM87ACrjTX0zz8FrQPV9Hd
-	fTEiCN5pD/O498DL3zVuSjBiBzy/PrUl58BW8zYHwmVnJ93DftD8cIjhYRHsWKjdWlAxgOWl
-	PYyLwL/i/xY1AFiBH6XWZssobYR6v5LK/e/OJKpsG9h82sFJrWByfDG0B9BYoAdAFkb6cvI+
-	PCnhcqTiT09QGlWaRq+gtD0gwrW+Eoz3skTl+htKXRpfEBUuEAqFgqj9Qj65m1NXFizhEjKx
-	jsqiKDWl2c6jsbx4+bRdBWdPf3Y9h1THxGVkzk7L4go144HL7LnD45K9TyPJQw92KJqcIxNZ
-	V9+VlX+fUllyPeinpeCX5gyCqoUwRsNx7istw3O5iVI/x7zFbHrnvQrTrpsrdwnDvr96byFb
-	ehmPKUwY+vYL5aS8aWfKRkjgjQC587jvCd6bq7Uj65X97D2S5JTdbN8bCV/3FySOnGpYHM1d
-	Tco8knzIboonK9ceZSQkYezSMKM/ZYu65DP2iNvN+bXd+fx93s7ImZ+FG04bNcapzRlPn4w/
-	kGnNcUgv/2YPM9J+f2F6UvQLhz0kFdSb+s4ddUz36xraPnr9ZqqFAas0qyu3U1v1hpTqv4/6
-	knStXMwPxjRa8b/Obxt5YwQAAA==
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFupgkeLIzCtJLcpLzFFi42LZdlhJTjcovDrZ4M4zfosD7w+yWDyYt43N
-	4u+kY+wWhzZvZbe49vICu8WSpgyLy/u1LeYfOcdq0bx4PZvFhac9bBZ9Lx4yWzT0/Ga1uLxr
-	DpvF2XnH2SwmrPrGYtHyp4XF4sCHVYwWT6Y8YrU4ujHYYtHWL+wWsy7sYLVo3XuE3WLejrmM
-	Fr2Hay1uv1nHarHzzglmBymP378mMXos2FTqsWlVJ5vHnWt72DyeXJnO5LF/7hp2j81L6j36
-	tqxi9Dh+YzuTx+dNcgFcUVw2Kak5mWWpRfp2CVwZrUcNC25zVRzc/Y+9gbGbs4uRk0NCwERi
-	WutM9i5GLg4hgR2MEt/W/2eBSEhKfL64jgnCFpZY+e85VFEzk8Skk4vBitgEtCQav3YxgyRE
-	BHpYJGZvvQNWxSywhFFi8909bCBVwgJhEne//APq4OBgEVCVWNFfCGLyClhJ7F/gDLFAXmL1
-	hgPMIDangLXEusW3wTqFgErW3fjDPoGRbwEjwypGydSC4tz03GLDAqO81HK94sTc4tK8dL3k
-	/NxNjODI0tLawbhn1Qe9Q4xMHIyHGCU4mJVEeEWOVSYL8aYkVlalFuXHF5XmpBYfYpTmYFES
-	573QdTJeSCA9sSQ1OzW1ILUIJsvEwSnVwHRlkfWD894y94VaImsPTP5S9mWe0YLIRG2H1SVM
-	LSFFV9ZOFt1gcazmwdwPX+dZKelP0FWeU+2nPVmRoZB7PqfqtxNMU1c+U627n7B93dd/KUdY
-	O3zW6k87J1XDfo1TXPs7176JOY/uXGOyTuM8YVsVwmNy2aS8bfdz6ykMzVWNO/JSVT3n6Lof
-	jXHM8XFPSy38fuSS+b7T0iI3HUo6zwqHi0f0JxrX5xw28UpujFv4fba6HEsn55y0SQmZUe7Z
-	udt3VidMyBKa9PO+8eQJDZ/3BWdprJ/10fSg7y0dYxNlLeWUdREfA98Kq6u/zbo2762xNufO
-	2Y/WKu5KZz97J33/xm6dbZ2sCzTXfDh6WImlOCPRUIu5qDgRAPt6QyUbAwAA
-X-CMS-MailID: 20221121104746epcas5p109c7bb299cf19070a9237c00c162ed8f
-X-Msg-Generator: CA
-X-Sendblock-Type: REQ_APPROVE
-CMS-TYPE: 105P
-DLP-Filter: Pass
-X-CFilter-Loop: Reflected
-X-CMS-RootMailID: 20221121104746epcas5p109c7bb299cf19070a9237c00c162ed8f
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
 References: <20221121105210.68596-1-shradha.t@samsung.com>
-	<CGME20221121104746epcas5p109c7bb299cf19070a9237c00c162ed8f@epcas5p1.samsung.com>
+ <CGME20221121104719epcas5p2f87febfba74a4ca6807b3095acf507d0@epcas5p2.samsung.com>
+ <20221121105210.68596-2-shradha.t@samsung.com>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <20221121105210.68596-2-shradha.t@samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221121_034610_140071_12057C0A 
-X-CRM114-Status: GOOD (  14.34  )
+X-CRM114-CacheID: sfid-20221121_040001_110452_C3FA221E 
+X-CRM114-Status: GOOD (  16.58  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -138,51 +96,144 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-dma_map_single() might not return a 4KB aligned address, so add the
-default_data as driver data for FSD PCIe controllers to make it
-4KB aligned.
+On 21/11/2022 11:52, Shradha Todi wrote:
+> Document the PCIe PHY device tree bindings for Tesla
+> FSD SoC
 
-Signed-off-by: Shradha Todi <shradha.t@samsung.com>
----
- drivers/misc/pci_endpoint_test.c | 3 +++
- include/linux/pci_ids.h          | 2 ++
- 2 files changed, 5 insertions(+)
+Subject: drop second, redundant "bindings".
 
-diff --git a/drivers/misc/pci_endpoint_test.c b/drivers/misc/pci_endpoint_test.c
-index 11530b4ec389..2cd1aaa87966 100644
---- a/drivers/misc/pci_endpoint_test.c
-+++ b/drivers/misc/pci_endpoint_test.c
-@@ -983,6 +983,9 @@ static const struct pci_device_id pci_endpoint_test_tbl[] = {
- 	{ PCI_DEVICE(PCI_VENDOR_ID_FREESCALE, PCI_DEVICE_ID_LS1088A),
- 	  .driver_data = (kernel_ulong_t)&default_data,
- 	},
-+	{ PCI_DEVICE(PCI_VENDOR_ID_TESLA, 0x7777),
-+	  .driver_data = (kernel_ulong_t)&default_data,
-+	},
- 	{ PCI_DEVICE_DATA(SYNOPSYS, EDDA, NULL) },
- 	{ PCI_DEVICE(PCI_VENDOR_ID_TI, PCI_DEVICE_ID_TI_AM654),
- 	  .driver_data = (kernel_ulong_t)&am654_data
-diff --git a/include/linux/pci_ids.h b/include/linux/pci_ids.h
-index b362d90eb9b0..a29b69e908aa 100644
---- a/include/linux/pci_ids.h
-+++ b/include/linux/pci_ids.h
-@@ -158,6 +158,8 @@
- 
- #define PCI_VENDOR_ID_LOONGSON		0x0014
- 
-+#define PCI_VENDOR_ID_TESLA		0x014a
-+
- #define PCI_VENDOR_ID_TTTECH		0x0357
- #define PCI_DEVICE_ID_TTTECH_MC322	0x000a
- 
--- 
-2.17.1
+> 
+> Signed-off-by: Shradha Todi <shradha.t@samsung.com>
+> ---
+>  .../bindings/phy/phy-tesla-pcie.yaml          | 75 +++++++++++++++++++
+>  1 file changed, 75 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/phy-tesla-pcie.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/phy-tesla-pcie.yaml b/Documentation/devicetree/bindings/phy/phy-tesla-pcie.yaml
+> new file mode 100644
+> index 000000000000..8fa9a050af7a
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/phy/phy-tesla-pcie.yaml
+
+Filename based on compatible.
+
+> @@ -0,0 +1,75 @@
+> +# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/phy/phy-tesla-pcie.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Tesla FSD SoC PCIe PHY
+> +
+> +maintainers:
+> +  - Shradha Todi <shradha.t@samsung.com>
+> +
+> +properties:
+> +  "#phy-cells":
+> +    const: 0
+
+Put compatible as first.
+
+> +
+> +  compatible:
+> +    enum:
+> +      - tesla,fsd-pcie-phy
+> +
+> +  reg:
+> +    minItems: 2
+
+Drop minItems
+
+> +    maxItems: 2
+> +
+> +  reg-names:
+> +    minItems: 2
+> +    maxItems: 2
+
+Drop both.
+
+> +    items:
+> +      enum: [phy, pcs]
+
+Instead list items one after another.
+
+> +    description: |
+> +      phy is the register access to PMA layer
+> +      pcs is the register access to PCS layer
+
+These go to describing items in 'reg:'
+
+> +
+> +  phy-mode:
+> +    description: |
+> +      Defines the bifurcation mode of the PHY
+
+enum, probably type as well... phy-mode is usually a string. Is it here?
+
+> +
+> +  tesla,pmureg-phandle:
+
+Drop phandle, so tesla,pmu-syscon
+
+> +    $ref: '/schemas/types.yaml#/definitions/phandle'
+
+Drop quotes
+
+> +    description: phandle for PMU system controller interface used to
+> +                 control PMU register bits for PCIe PHY
+> +
+> +  tesla,pcie-sysreg:
+> +    $ref: '/schemas/types.yaml#/definitions/phandle'
+
+Drop quotes
+
+> +    description: phandle for system control registers, used to
+> +                 control phy signals at system level
+> +
+> +required:
+> +  - "#phy-cells"
+> +  - compatible
+
+compatible first.
+
+> +  - reg
+> +  - reg-names
+> +  - phy-mode
+> +  - tesla,pmureg-phandle
+> +  - tesla,pcie-sysreg
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    bus {
+> +      #address-cells = <2>;
+> +      #size-cells = <2>;
+> +
+> +      pcie_phy0: pcie-phy@15080000 {
+> +        compatible = "tesla,fsd-pcie-phy";
+> +        #phy-cells = <0>;
+> +        reg = <0x0 0x15080000 0x0 0x2000>, <0x0 0x150A0000 0x0 0x1000>;
+> +        reg-names = "phy", "pcs";
+> +        tesla,pmureg-phandle = <&pmu_system_controller>;
+> +        tesla,pcie-sysreg = <&sysreg_fsys0>;
+> +        phy-mode = <0>;
+> +        status = "disabled";
+
+Drop status
+
+> +      };
+> +    };
+> +...
+
+Best regards,
+Krzysztof
 
 
 -- 
