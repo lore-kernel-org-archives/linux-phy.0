@@ -4,90 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 216B9C4332F
-	for <linux-phy@archiver.kernel.org>; Mon, 21 Nov 2022 17:32:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AA460C433FE
+	for <linux-phy@archiver.kernel.org>; Mon, 21 Nov 2022 17:35:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/iJ6QMonW1+WLgbBQ6B9wjvHpjsRjw8UiLZwF1yBON8=; b=1NScAQ2+0Dnsi2
-	m6mDBY26x/5/AClwlyOgtVsFVCVOC3Gv0Abuhnubl8N0pgSFG5C0PvUL5NIvD5/zckLjQF8H4lwzl
-	5Eq4U9c5lYtEe4ZqXMS7aDWhNC8ENJ+Ml5jA7TWpsOctDpA8V/xua+SlTT3IRTkOfWvKlaGJSYX+I
-	RENU4lwjW3tqal8Z2VSeBWLfBKEr/LNFKNywgQ8RQ2HWrsMdaEf172Ah+hHFuaJdRVzm5jorgYEdL
-	uusGoo61apz3BmJ9QgmhCNgVn585DqMphNjy3HO3SU+6QiQp3wIiOeXiZcOzDDyl+a/jIco6g4BSH
-	xr/3nncL9RrvXZIH79QA==;
+	List-Owner; bh=K584YNU10UR1CCWDCECJPN7YIg5y525OMwHioIPTDgY=; b=f+Axjm7SDCjco2
+	aD+muIbhkScZaKnsoOZaT76mzoEota8NvCMvVdkPpU3CJAfV0Z3PTWsNT6js1JF6XekbJg6UzLAzL
+	cX20jUyYiGK6UVdylSPBqjZffOFRKAPLMev/mmSPxXXVPsdh+esm4PM4vbNzmxfZ4+vYExKz05SQC
+	Tjb2N0lTzwK5GMISXiRlpdpTUVZvJlhPMYh1AbbAd/EfcJtupttEOU0F+ENnVFEBsUwElOhtNn8V1
+	6dEMhuUJTfXORcu0Tebfn+ghaOlA3+mOGtneSpDmKHsrzwFFN5tpXTayl0M1Wz1a3ZQscADLu42HX
+	cKO/UUvjM+I08u66lPTw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oxAeS-00GKxB-94; Mon, 21 Nov 2022 17:32:12 +0000
-Received: from mail-wm1-x334.google.com ([2a00:1450:4864:20::334])
+	id 1oxAhk-00GNFX-WE; Mon, 21 Nov 2022 17:35:37 +0000
+Received: from mail-wr1-x435.google.com ([2a00:1450:4864:20::435])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oxASq-00GFPp-Q8; Mon, 21 Nov 2022 17:20:14 +0000
-Received: by mail-wm1-x334.google.com with SMTP id v7so8982170wmn.0;
-        Mon, 21 Nov 2022 09:20:10 -0800 (PST)
+	id 1oxAhF-00GMxa-Ho; Mon, 21 Nov 2022 17:35:08 +0000
+Received: by mail-wr1-x435.google.com with SMTP id x17so7479205wrn.6;
+        Mon, 21 Nov 2022 09:35:05 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=gmail.com; s=20210112;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=xMcN9cuI8kd/EBAZ74WJbV4knfpudOgQHBZHEvjiUeg=;
-        b=CdG/Jsfw1WTtgaq07815E+5iiz2BxCttLVutSSsFDeJFpdjNTgCM7mczngh0Mw0gQz
-         SnTnYE2NuBXGHWFYumksr7JptJia+L+A9Py3dN8WPTyvvc9GgnpNljN4pEl0euji5eE1
-         eyC8cYmYM+bHAe88l8/ZMLMlpikoW4T6vKWbn1n/jk48V1E2Dw4Y61p9lNjkiZxY3k5Y
-         eopvdLuyLCetDs8o1UMQQd1ayN+JEoDZr37YZm1qdCe1sGBeqsPyXWYDnouy4B1/K2IM
-         NYCYuCeeYrJTx/Cp+fZ3+lAaZ4ij8zzFbQKPGliDB5otsq7HURxo8kzaKU+ve9GHoDCw
-         2vBQ==
+        bh=H739gohkJQiXvKefWiLyqitYzOD/5OYfD2uRzWxJMv0=;
+        b=Sw4vUrpV+2ZKerURpiiaRPbic/zppeNW8NcdRE+SOtCQaKWeI7Z9q6CLWu9trUZVX0
+         dOBHa2KaSZV9zAL9fOGSNVWmAyEmP5pBTfbUFA3Z6/SlswhOql+H3ZPXezC9oKFC8Ckw
+         HffyxJS3QDcqeJM7CFeNaVIFlWHCEEthmCXJ2PeL9qAt4BjS0e+gfd7/XDJy68WlnYeS
+         W44A6uI+xi0e77dXoiRLxzlGsBM2JbtLVr3w9WD6z4Sy/+e9JhPsiVUzutWxv2MA1oXq
+         dvbvHUUfW1aFUpOZAwFZZ4KaRgF+Mk39DfSO5njA/EmDr3vdoVecxTtm82RlS+tV12v/
+         aonA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=xMcN9cuI8kd/EBAZ74WJbV4knfpudOgQHBZHEvjiUeg=;
-        b=V6xE/IBuGxOoLuIPo1OUgiLKo+wQxI/I9jy0zm1mRmTnrFPqPtCekAb1lvtsi+ykG9
-         V5CATvNly4NShJRUfrsMKetV1vLrmSPkyjddskpqLlZGvNNdPBpiWoOWbdE07L/wsTQJ
-         VP76YDDrFgBgrpDPRbH5ls+T/+K0CPqvEuZio/m5/93djmijOngHi41pHcvrLxVci8yt
-         YeD4Ub7eO7nePAH375eHwxSIi57QRJh1+bIEKTmdmK68UACEH1NXYgfz5ukK9DnE7X0F
-         NaYfjDluSR5ihGtdaPRCaDqPLgUw9YnT55Ibisx86f1VwkOispENKhPCWS9aldwjz3qe
-         vSUw==
-X-Gm-Message-State: ANoB5pkQ6+0FGnCNcbMovc4uuY/lhp4fweekZPQpUcdpzKPf825PtG/Z
-	MiL89lDWEEYfAKqREh4KorI=
-X-Google-Smtp-Source: AA0mqf5NIforkcTyJS8N4lSRmBCwg/nq8MPBei0Dm1KYtcSUjGsnHEVqkWMPQgn0njhjv49oLeM4WQ==
-X-Received: by 2002:a05:600c:4f93:b0:3cf:a616:ccc0 with SMTP id n19-20020a05600c4f9300b003cfa616ccc0mr17500223wmq.73.1669051208958;
-        Mon, 21 Nov 2022 09:20:08 -0800 (PST)
+        bh=H739gohkJQiXvKefWiLyqitYzOD/5OYfD2uRzWxJMv0=;
+        b=xJ4GN1ni6Q20lOPeEDkl94YGVxD4I5IMNkRhU7wsBDp7QYU+UH6Q8+w9/YWsWkGox0
+         pVfF6lcMEsYXTin9uvlMvKB2fG/6NxNEL9KcvjG10BJDUXbPLXyCkmFiq8Ysl7lm/Da5
+         jvdXDBb7C4Nfgrgjoe0j/SAa6GHEUubzq+1cJfh5bJuOQMlwFN02hjhowrLhGM0NyQS2
+         trw/YxyCgdT4WVEi92rnWRJXUw2ndQ5mBgPQZeiAHhH4oYnNuHwJdLNn18cwgGfjL4bA
+         3SdiyQYIO7DSNfMWTLCwTbun/z5bWjFKkfIdEc19BYEHDxDGQ8GD909kf2nCK4VSueaS
+         EPbQ==
+X-Gm-Message-State: ANoB5pnZ8MQ39KEk4nxnPFNOSkrjp47fGzvXm7QxrH5ipnWWYxsULpK+
+	9Z8mfbQ8Zu2Kb2vKDx8S7r8=
+X-Google-Smtp-Source: AA0mqf6s5UrB6KSQzIfGircalN42vcOhoXNt66f+1gAnQqi9w65qZfja19jeAbwazXHd+sfm6fd/Aw==
+X-Received: by 2002:a5d:538b:0:b0:241:c3c2:24cf with SMTP id d11-20020a5d538b000000b00241c3c224cfmr3225033wrv.587.1669052103907;
+        Mon, 21 Nov 2022 09:35:03 -0800 (PST)
 Received: from [192.168.1.131] ([207.188.167.132])
-        by smtp.gmail.com with ESMTPSA id c12-20020adffb4c000000b0022a3a887ceasm11736948wrs.49.2022.11.21.09.20.06
+        by smtp.gmail.com with ESMTPSA id l18-20020a05600c4f1200b003c6f3f6675bsm20780645wmq.26.2022.11.21.09.35.01
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 21 Nov 2022 09:20:07 -0800 (PST)
-Message-ID: <7902124b-fb5e-6eb4-1f57-f3fd49146e24@gmail.com>
-Date: Mon, 21 Nov 2022 18:20:05 +0100
+        Mon, 21 Nov 2022 09:35:02 -0800 (PST)
+Message-ID: <1c33cf07-900a-7acf-92d9-ad40f8543db8@gmail.com>
+Date: Mon, 21 Nov 2022 18:35:00 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.4.2
-Subject: Re: [PATCH v6 06/11] arm64: dts: mt7986: add spi related device nodes
+Subject: Re: [PATCH v4 1/3] dt-bindings: phy: mediatek: hdmi-phy: Add mt8195
+ compatible
 Content-Language: en-US
-To: Frank Wunderlich <linux@fw-web.de>, linux-mediatek@lists.infradead.org
-Cc: Frank Wunderlich <frank-w@public-files.de>,
- Ryder Lee <ryder.lee@mediatek.com>, Jianjun Wang
- <jianjun.wang@mediatek.com>, Bjorn Helgaas <bhelgaas@google.com>,
- Rob Herring <robh+dt@kernel.org>,
+To: Guillaume Ranquet <granquet@baylibre.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>, Rob Herring <robh+dt@kernel.org>,
+ Vinod Koul <vkoul@kernel.org>, CK Hu <ck.hu@mediatek.com>,
  Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Jitao shi <jitao.shi@mediatek.com>, Daniel Vetter <daniel@ffwll.ch>,
+ Kishon Vijay Abraham I <kishon@ti.com>,
  Chunfeng Yun <chunfeng.yun@mediatek.com>,
- Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Paolo Abeni <pabeni@redhat.com>, Lorenzo Bianconi <lorenzo@kernel.org>,
- Bo Jiao <Bo.Jiao@mediatek.com>, linux-pci@vger.kernel.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
- linux-usb@vger.kernel.org, Sam Shih <sam.shih@mediatek.com>,
- AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-References: <20221118190126.100895-1-linux@fw-web.de>
- <20221118190126.100895-7-linux@fw-web.de>
+ Chun-Kuang Hu <chunkuang.hu@kernel.org>, David Airlie <airlied@gmail.com>
+Cc: linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
+ stuart.lee@mediatek.com, Krzysztof Kozlowski
+ <krzysztof.kozlowski@linaro.org>, linux-arm-kernel@lists.infradead.org,
+ AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+ mac.shen@mediatek.com, linux-phy@lists.infradead.org,
+ linux-mediatek@lists.infradead.org
+References: <20220919-v4-0-bdc21e1307e9@baylibre.com>
+ <20220919-v4-1-bdc21e1307e9@baylibre.com>
 From: Matthias Brugger <matthias.bgg@gmail.com>
-In-Reply-To: <20221118190126.100895-7-linux@fw-web.de>
+In-Reply-To: <20220919-v4-1-bdc21e1307e9@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221121_092012_936124_3ADACA69 
-X-CRM114-Status: GOOD (  15.74  )
+X-CRM114-CacheID: sfid-20221121_093505_662131_36A713FD 
+X-CRM114-Status: GOOD (  12.37  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,168 +106,32 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
 
-On 18/11/2022 20:01, Frank Wunderlich wrote:
-> From: Sam Shih <sam.shih@mediatek.com>
+On 21/11/2022 15:19, Guillaume Ranquet wrote:
+> Add a compatible for the HDMI PHY on MT8195
 > 
-> This patch adds spi support for MT7986.
-> 
-> Signed-off-by: Sam Shih <sam.shih@mediatek.com>
-> Signed-off-by: Frank Wunderlich <frank-w@public-files.de>
+> Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 > Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+> Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
 
-Applied, thanks!
+Reviewed-by: Matthias Brugger <matthias.bgg@gmail.com>
 
 > ---
->   arch/arm64/boot/dts/mediatek/mt7986a-rfb.dts | 35 ++++++++++++++++++++
->   arch/arm64/boot/dts/mediatek/mt7986a.dtsi    | 28 ++++++++++++++++
->   arch/arm64/boot/dts/mediatek/mt7986b-rfb.dts | 35 ++++++++++++++++++++
->   3 files changed, 98 insertions(+)
+>   Documentation/devicetree/bindings/phy/mediatek,hdmi-phy.yaml | 1 +
+>   1 file changed, 1 insertion(+)
 > 
-> diff --git a/arch/arm64/boot/dts/mediatek/mt7986a-rfb.dts b/arch/arm64/boot/dts/mediatek/mt7986a-rfb.dts
-> index 2f48cc3d3ddb..006878e3f2b2 100644
-> --- a/arch/arm64/boot/dts/mediatek/mt7986a-rfb.dts
-> +++ b/arch/arm64/boot/dts/mediatek/mt7986a-rfb.dts
-> @@ -59,6 +59,20 @@ switch: switch@0 {
->   };
+> diff --git a/Documentation/devicetree/bindings/phy/mediatek,hdmi-phy.yaml b/Documentation/devicetree/bindings/phy/mediatek,hdmi-phy.yaml
+> index 0d94950b84ca..71c75a11e189 100644
+> --- a/Documentation/devicetree/bindings/phy/mediatek,hdmi-phy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/mediatek,hdmi-phy.yaml
+> @@ -28,6 +28,7 @@ properties:
+>             - const: mediatek,mt2701-hdmi-phy
+>         - const: mediatek,mt2701-hdmi-phy
+>         - const: mediatek,mt8173-hdmi-phy
+> +      - const: mediatek,mt8195-hdmi-phy
 >   
->   &pio {
-> +	spi_flash_pins: spi-flash-pins {
-> +		mux {
-> +			function = "spi";
-> +			groups = "spi0", "spi0_wp_hold";
-> +		};
-> +	};
-> +
-> +	spic_pins: spic-pins {
-> +		mux {
-> +			function = "spi";
-> +			groups = "spi1_2";
-> +		};
-> +	};
-> +
->   	uart1_pins: uart1-pins {
->   		mux {
->   			function = "uart";
-> @@ -105,6 +119,27 @@ conf {
->   	};
->   };
->   
-> +&spi0 {
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&spi_flash_pins>;
-> +	cs-gpios = <0>, <0>;
-> +	status = "okay";
-> +	spi_nand: spi_nand@0 {
-> +		compatible = "spi-nand";
-> +		reg = <0>;
-> +		spi-max-frequency = <10000000>;
-> +		spi-tx-buswidth = <4>;
-> +		spi-rx-buswidth = <4>;
-> +	};
-> +};
-> +
-> +&spi1 {
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&spic_pins>;
-> +	cs-gpios = <0>, <0>;
-> +	status = "okay";
-> +};
-> +
->   &switch {
->   	ports {
->   		#address-cells = <1>;
-> diff --git a/arch/arm64/boot/dts/mediatek/mt7986a.dtsi b/arch/arm64/boot/dts/mediatek/mt7986a.dtsi
-> index afc01abfa99c..29da9b8ed753 100644
-> --- a/arch/arm64/boot/dts/mediatek/mt7986a.dtsi
-> +++ b/arch/arm64/boot/dts/mediatek/mt7986a.dtsi
-> @@ -253,6 +253,34 @@ i2c0: i2c@11008000 {
->   			status = "disabled";
->   		};
->   
-> +		spi0: spi@1100a000 {
-> +			compatible = "mediatek,mt7986-spi-ipm", "mediatek,spi-ipm";
-> +			#address-cells = <1>;
-> +			#size-cells = <0>;
-> +			reg = <0 0x1100a000 0 0x100>;
-> +			interrupts = <GIC_SPI 140 IRQ_TYPE_LEVEL_HIGH>;
-> +			clocks = <&topckgen CLK_TOP_MPLL_D2>,
-> +				 <&topckgen CLK_TOP_SPI_SEL>,
-> +				 <&infracfg CLK_INFRA_SPI0_CK>,
-> +				 <&infracfg CLK_INFRA_SPI0_HCK_CK>;
-> +			clock-names = "parent-clk", "sel-clk", "spi-clk", "hclk";
-> +			status = "disabled";
-> +		};
-> +
-> +		spi1: spi@1100b000 {
-> +			compatible = "mediatek,mt7986-spi-ipm", "mediatek,spi-ipm";
-> +			#address-cells = <1>;
-> +			#size-cells = <0>;
-> +			reg = <0 0x1100b000 0 0x100>;
-> +			interrupts = <GIC_SPI 141 IRQ_TYPE_LEVEL_HIGH>;
-> +			clocks = <&topckgen CLK_TOP_MPLL_D2>,
-> +				 <&topckgen CLK_TOP_SPIM_MST_SEL>,
-> +				 <&infracfg CLK_INFRA_SPI1_CK>,
-> +				 <&infracfg CLK_INFRA_SPI1_HCK_CK>;
-> +			clock-names = "parent-clk", "sel-clk", "spi-clk", "hclk";
-> +			status = "disabled";
-> +		};
-> +
->   		ethsys: syscon@15000000 {
->   			 #address-cells = <1>;
->   			 #size-cells = <1>;
-> diff --git a/arch/arm64/boot/dts/mediatek/mt7986b-rfb.dts b/arch/arm64/boot/dts/mediatek/mt7986b-rfb.dts
-> index 79c5c78f7a14..2c7f1d4fb352 100644
-> --- a/arch/arm64/boot/dts/mediatek/mt7986b-rfb.dts
-> +++ b/arch/arm64/boot/dts/mediatek/mt7986b-rfb.dts
-> @@ -100,6 +100,20 @@ fixed-link {
->   };
->   
->   &pio {
-> +	spi_flash_pins: spi-flash-pins {
-> +		mux {
-> +			function = "spi";
-> +			groups = "spi0", "spi0_wp_hold";
-> +		};
-> +	};
-> +
-> +	spic_pins: spic-pins {
-> +		mux {
-> +			function = "spi";
-> +			groups = "spi1_2";
-> +		};
-> +	};
-> +
->   	wf_2g_5g_pins: wf-2g-5g-pins {
->   		mux {
->   			function = "wifi";
-> @@ -132,6 +146,27 @@ conf {
->   	};
->   };
->   
-> +&spi0 {
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&spi_flash_pins>;
-> +	cs-gpios = <0>, <0>;
-> +	status = "okay";
-> +	spi_nand: spi_nand@0 {
-> +		compatible = "spi-nand";
-> +		reg = <0>;
-> +		spi-max-frequency = <10000000>;
-> +		spi-tx-buswidth = <4>;
-> +		spi-rx-buswidth = <4>;
-> +	};
-> +};
-> +
-> +&spi1 {
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&spic_pins>;
-> +	cs-gpios = <0>, <0>;
-> +	status = "okay";
-> +};
-> +
->   &uart0 {
->   	status = "okay";
->   };
+>     reg:
+>       maxItems: 1
+> 
 
 -- 
 linux-phy mailing list
