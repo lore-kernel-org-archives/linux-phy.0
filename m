@@ -4,86 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D2BCFC433FE
-	for <linux-phy@archiver.kernel.org>; Tue, 22 Nov 2022 11:04:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 01BFCC4332F
+	for <linux-phy@archiver.kernel.org>; Tue, 22 Nov 2022 14:13:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=i3vDfeQWwwp8+rNR8AcbGNc/2v8oUVPeK6RDv6YW8bg=; b=v3ZntFn37lTyZs
-	bTg9xEtNpiC5X4QSeM9WDyfpqmn8SV4+UE2HqYZTArWkgUIL1yXE3PQVBEBP9LbdvOKBaRtMpeWT8
-	vagg2Y+6GGjywm0+BBVnX0lltxlwMJlcZUUuL1NDThdBI7FlT6PrzcGLBQ1VwNrMq2YGz18y8dmAT
-	EiMlaX3NcOPZ2Wp6J4jwtCx6XdV2aFgJyu9IVNEOdhThh1ZK3iD7/xLLfxIHnQXjFUk6ukGQD3WwF
-	dxus2pMYxwtVcYIyjnJn1dwOzP+jBS7FkQ1M55BeXWETUM2yKPdC2Z0LGHsbC9oXXIDWF3XwhyBXN
-	1EiIN9IVqQVgAa8jVBow==;
+	List-Owner; bh=GBwj9MNPr3a7ieRb5IwEjO29+kttVvt1+toAMD8N6As=; b=1N4aX4Wb7kyq8l
+	ADpUJvUymOMJ2VgSeRLO12uW8+GVlFiIOBSrkYLvgwAhzgGyKr6YYvQDgRqU+5SKglwWkOGnTVDFD
+	FV67/e/sFqnQ1OmLq9mFzTzPlnjQX9ZlA9hUiYLclb4NXpyoeo7WwOGdwQQ38yG6kRLmURP4a7feB
+	9U8zRVXJkudQnY8dlUKNmXf4FFE3RdX4C6nlaOWvih/vxrh5i+s34QX+kcXezPKpX8M8h6r1AKnu+
+	xb7nsPjuuk6pDC8B9VzRWpVtZjY4lmowLkHJBrlADKSHTsVWiYN+Osp6xFtjTKGXouNF3DBuQgZME
+	DdQ1eLIyxEAJZLMdO9xA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oxR4W-008EVJ-7I; Tue, 22 Nov 2022 11:04:12 +0000
-Received: from mail-lf1-x12e.google.com ([2a00:1450:4864:20::12e])
+	id 1oxU1o-009s8A-CM; Tue, 22 Nov 2022 14:13:36 +0000
+Received: from lelv0143.ext.ti.com ([198.47.23.248])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oxR4G-008ENG-Qm
-	for linux-phy@lists.infradead.org; Tue, 22 Nov 2022 11:03:59 +0000
-Received: by mail-lf1-x12e.google.com with SMTP id be13so23051768lfb.4
-        for <linux-phy@lists.infradead.org>; Tue, 22 Nov 2022 03:03:55 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=zcinWTUxzmlD4ETHKdNfDgH3HuvcezRo5wS9GT3LS6U=;
-        b=VK+gZmXqaDrn/uu3zDv9bml7Bq/CdP84f5gKch5vTxrzFx0j4BF1qx5rzxGApvrIsA
-         5Eu7PO9kyK0VwIqazcJxh2hYz7i2k8jEEBSlkpVTryuIZRc+zdiP654jBspBaGwmlwky
-         5XyO2IKbwxQFsOHAYo+cKtAPwbnQjQZnXzWYCB3K9N0Hn4HIYtI/Eq/yVhCysKjCZbVl
-         cXuuet/YXxh1Hw6v29pwAlo2Z8vk/9Uy0aKFIWwbpOQVPFAEwqTE7AfILmhvnZVok35Y
-         +BCLX8hiXgBjwWfjZy0cgkvgczMFCqY8LWjPFSQh2DX2XnReiBmIpLGVtX6v4jSV+dt2
-         zM8Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=zcinWTUxzmlD4ETHKdNfDgH3HuvcezRo5wS9GT3LS6U=;
-        b=Fbge7x0OJva2h3qPIYFlBmp6FTlrccWiN7gt1QL44H1xRW/ohQAl2k/CY34obKunmv
-         A54Nqivv3U6g2uKsgqbZ239hYZkBOV3G7I0ZpuqciPvJzQ0iVG5T41fQ4It0N8v1obiX
-         Et5iCzce2LgkzSEFMmApjFWtJWXlWlaWuoE1XDruRa1AI85930jVuRMQGUQPFYvc6t5R
-         R02kIWR/Cp4vuuhND/wDpjaGUKy1xZDAuRxQWhdZPrnJD0LLDfvG4vCc5y4FjFyEJHh+
-         yFm2VK6SXl7atjvgOcH9g+MNXtbK6NLccLHrND7ae0pHvVIlGeUoz4Vrxrl5WMZU9JG2
-         AD8Q==
-X-Gm-Message-State: ANoB5pnV7zkr5zEQn4uqGzy26tO9mNOICzcdnkBx0j5ICoK++DRyyXDo
-	KGiuusZCpoOQbKWHFkNqSa63zQ==
-X-Google-Smtp-Source: AA0mqf5e0DuqvZwYG6CYp8J8pYkWb7Fa/PJ9p3aq6DrglvSC6J24tlD1cUzaZ9rzXnecRgt0Ah/ddg==
-X-Received: by 2002:ac2:5618:0:b0:4a2:455c:622a with SMTP id v24-20020ac25618000000b004a2455c622amr998103lfd.508.1669115034440;
-        Tue, 22 Nov 2022 03:03:54 -0800 (PST)
-Received: from [192.168.0.20] (088156142067.dynamic-2-waw-k-3-2-0.vectranet.pl. [88.156.142.67])
-        by smtp.gmail.com with ESMTPSA id d3-20020a05651233c300b004a0589786ddsm2431100lfg.69.2022.11.22.03.03.51
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 22 Nov 2022 03:03:53 -0800 (PST)
-Message-ID: <bea11c30-09a1-2b13-db7e-25dadc6e43ec@linaro.org>
-Date: Tue, 22 Nov 2022 12:03:51 +0100
+	id 1oxU1W-009s0i-H7; Tue, 22 Nov 2022 14:13:20 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+	by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 2AMEDCjT009946;
+	Tue, 22 Nov 2022 08:13:12 -0600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+	s=ti-com-17Q1; t=1669126392;
+	bh=V8LkFZIM3tGLhnTmS1ipkc+xFqua74H2fHbU7YYtILA=;
+	h=Date:From:To:CC:Subject:References:In-Reply-To;
+	b=N+Q/20DwesScmiGcoDN/AsLpjHH1iEY75mbL0+/Dh/S18VWE5+hcf9cLYUrlYNcWQ
+	 NqXot91yTCNqAI8iMxYqJroEQw+7e/a8EXCqZWD6gf3FoRkU+Cy0oA2bduWEzmbBaJ
+	 OJKZOI01FkFZChXXSeO33IG4EE8oQZpO7t8/2/R0=
+Received: from DLEE104.ent.ti.com (dlee104.ent.ti.com [157.170.170.34])
+	by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 2AMEDCBI029736
+	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+	Tue, 22 Nov 2022 08:13:12 -0600
+Received: from DLEE103.ent.ti.com (157.170.170.33) by DLEE104.ent.ti.com
+ (157.170.170.34) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.16; Tue, 22
+ Nov 2022 08:13:12 -0600
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE103.ent.ti.com
+ (157.170.170.33) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.16 via
+ Frontend Transport; Tue, 22 Nov 2022 08:13:12 -0600
+Received: from ubuntu (ileaxei01-snat.itg.ti.com [10.180.69.5])
+	by lelv0326.itg.ti.com (8.15.2/8.15.2) with SMTP id 2AMED3Z5031729;
+	Tue, 22 Nov 2022 08:13:05 -0600
+Date: Tue, 22 Nov 2022 06:13:01 -0800
+From: Matt Ranostay <mranostay@ti.com>
+To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+CC: <r-gunasekaran@ti.com>, <rogerq@kernel.org>, <vkoul@kernel.org>,
+        <robh+dt@kernel.org>, <krzysztof.kozlowski+dt@linaro.org>,
+        <vigneshr@ti.com>, <linux-phy@lists.infradead.org>,
+        <devicetree@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>
+Subject: Re: [PATCH 1/2] dt-bindings: phy-j721e-wiz: add j721s2 compatible
+ string
+Message-ID: <Y3zY7QIpj+7gPvO0@ubuntu>
+References: <20221122092203.762308-1-mranostay@ti.com>
+ <20221122092203.762308-2-mranostay@ti.com>
+ <3160a4dd-f8c0-5cce-8c15-c9a4c173ef1e@linaro.org>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.4.2
-Subject: Re: [PATCH v4 09/10] dt-bindings: phy: Add Cadence HDP-TX HDMI PHY
-Content-Language: en-US
-To: Sandor Yu <Sandor.yu@nxp.com>, andrzej.hajda@intel.com,
- neil.armstrong@linaro.org, robert.foss@linaro.org,
- Laurent.pinchart@ideasonboard.com, jonas@kwiboo.se,
- jernej.skrabec@gmail.com, airlied@gmail.com, daniel@ffwll.ch,
- robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org, shawnguo@kernel.org,
- s.hauer@pengutronix.de, festevam@gmail.com, kishon@ti.com, vkoul@kernel.org,
- dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, alexander.stein@ew.tq-group.com
-Cc: kernel@pengutronix.de, linux-imx@nxp.com, oliver.brown@nxp.com
-References: <cover.1669013346.git.Sandor.yu@nxp.com>
- <2c5da069419541e22b29079467887f1a1bd3cc69.1669013346.git.Sandor.yu@nxp.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <2c5da069419541e22b29079467887f1a1bd3cc69.1669013346.git.Sandor.yu@nxp.com>
+Content-Disposition: inline
+In-Reply-To: <3160a4dd-f8c0-5cce-8c15-c9a4c173ef1e@linaro.org>
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221122_030356_873821_4AFEF435 
-X-CRM114-Status: GOOD (  12.46  )
+X-CRM114-CacheID: sfid-20221122_061318_650162_02248BEE 
+X-CRM114-Status: GOOD (  12.50  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,55 +85,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 21/11/2022 08:23, Sandor Yu wrote:
-> Add bindings for Cadence HDP-TX HDMI PHY.
+On Tue, Nov 22, 2022 at 11:19:09AM +0100, Krzysztof Kozlowski wrote:
+> On 22/11/2022 10:22, Matt Ranostay wrote:
+> > Add ti,j721s2-wiz-10g compatible string to binding documentation.
+> > 
+> > Signed-off-by: Matt Ranostay <mranostay@ti.com>
+> > ---
+> >  Documentation/devicetree/bindings/phy/ti,phy-j721e-wiz.yaml | 1 +
+> >  1 file changed, 1 insertion(+)
+> > 
+> > diff --git a/Documentation/devicetree/bindings/phy/ti,phy-j721e-wiz.yaml b/Documentation/devicetree/bindings/phy/ti,phy-j721e-wiz.yaml
+> > index a9e38739c010..b837748f33d1 100644
+> > --- a/Documentation/devicetree/bindings/phy/ti,phy-j721e-wiz.yaml
+> > +++ b/Documentation/devicetree/bindings/phy/ti,phy-j721e-wiz.yaml
+> > @@ -18,6 +18,7 @@ properties:
+> >        - ti,am64-wiz-10g
+> >        - ti,j7200-wiz-10g
+> >        - ti,j784s4-wiz-10g
+> > +      - ti,j721s2-wiz-10g
+> >  
+> Keep items sorted.
+>
+
+Noted. Will correct in v2
+
+- Matt
+
+> Best regards,
+> Krzysztof
 > 
-> Signed-off-by: Sandor Yu <Sandor.yu@nxp.com>
-> ---
->  .../bindings/phy/cdns,hdptx-hdmi-phy.yaml     | 52 +++++++++++++++++++
->  1 file changed, 52 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/cdns,hdptx-hdmi-phy.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/cdns,hdptx-hdmi-phy.yaml b/Documentation/devicetree/bindings/phy/cdns,hdptx-hdmi-phy.yaml
-> new file mode 100644
-> index 000000000000..99352e655eec
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/cdns,hdptx-hdmi-phy.yaml
-> @@ -0,0 +1,52 @@
-> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/cdns,hdptx-hdmi-phy.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Cadence HDP-TX(HDMI/DisplayPort) PHY for HDMI protocol
-> +
-> +maintainers:
-> +  - Sandor Yu <sandor.yu@nxp.com>
-> +
-> +properties:
-> +  compatible:
-> +    enum:
-> +      - cdns,hdptx-hdmi-phy
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    items:
-> +      - description: PHY reference clock.
-> +      - description: APB clock.
-> +
-> +  clock-names:
-> +    items:
-> +      - const: refclk
-> +      - const: apbclk
-
-Drop "clk" suffix.
-
-Best regards,
-Krzysztof
-
 
 -- 
 linux-phy mailing list
