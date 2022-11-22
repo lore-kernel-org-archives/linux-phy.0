@@ -4,82 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 46D67C4332F
-	for <linux-phy@archiver.kernel.org>; Tue, 22 Nov 2022 10:23:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6F110C4332F
+	for <linux-phy@archiver.kernel.org>; Tue, 22 Nov 2022 11:02:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eZnlkpbvGvg4VuihtVEOeZQIfa43NwWsIg4PRKkWHXA=; b=RzZR1D1GVd5Vpu
-	INeRO3peoI2BxSw8TjprnqvKRf1LIePqf+GzahsBW1+54zMj5E6aFskYuj34hVOKf8h1iJWdU1krP
-	bQPyG5yWnPEUmkJEr7g+Z81MdLZMEvbCzjFpJeofAIl3Qu3KMdzAmQzav/oDHOqeavlOmxFNj01A1
-	GGTZu+dIBTc7JAFQP1U93keuHlOOnSlv79A0ZygcPvMXfDBqa2Rt7U32sJv7pA2MjHyjDV+MGYgYM
-	SR72P8Kl6TPBlBlisJuSMD5xT06T7MZA0BFe/vEuLqEB9ps1g3T2LQm7tT/ppOKzKQGfDm97vNNwh
-	tQ5M0mN8/P8tk51IiR5w==;
+	List-Owner; bh=XmHR2I1ha4h0aYaxhxJd7rC6kYhqxRD7hHW/YWAju/8=; b=jnfJZH+zWANLeo
+	+P8W8N4UaYWZpaimA6Lkt8mJUFbuUswwjro1VujvNc4sNITOoFmKPCgGs9MWfWgtKxc/FvYB9KfIM
+	du4Wk1DyAxoNr9+ordJHcBFGw4QuXeK92KFwK0hQbY6xVl0dhdLGtlc2Ha/zeY2AkSNhoPYa6tBS9
+	ohFzjUpUQLZSx2Lif9RBopldkOiFi5FjIsx2yX2nV9qmwepvDHsOphVIo2Tpz6bAbKwtKy2aZPWVO
+	BLxh9K/zlHhXjtaV35d1gcmyP1nKaWCI1eSSnugjLdAcl4lsdwfX0TKU3RuScl51pVnSdD1gaTCsa
+	ieW5w48zl6cxzP21tpnA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oxQQq-007low-G1; Tue, 22 Nov 2022 10:23:12 +0000
-Received: from mail-lf1-x12d.google.com ([2a00:1450:4864:20::12d])
+	id 1oxR3D-008Dxv-R0; Tue, 22 Nov 2022 11:02:51 +0000
+Received: from mail-lj1-x22e.google.com ([2a00:1450:4864:20::22e])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oxQN0-007jrj-Lz
-	for linux-phy@lists.infradead.org; Tue, 22 Nov 2022 10:19:16 +0000
-Received: by mail-lf1-x12d.google.com with SMTP id f13so1353179lfa.6
-        for <linux-phy@lists.infradead.org>; Tue, 22 Nov 2022 02:19:13 -0800 (PST)
+	id 1oxR3B-008Duo-6U
+	for linux-phy@lists.infradead.org; Tue, 22 Nov 2022 11:02:50 +0000
+Received: by mail-lj1-x22e.google.com with SMTP id d20so17482399ljc.12
+        for <linux-phy@lists.infradead.org>; Tue, 22 Nov 2022 03:02:46 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=JfLIpkOTN7mnH1pqkEcUyKs3y8dy0IMYzeie/rgKHMQ=;
-        b=jnlqjhLudUc6ZW0+QJnNeONAY3SPc6ywVgAxCssWrw5bFnoqo1RSzRqExLKKA++v7H
-         DM/ChKhWdAi7fi6K4kD5f8LwR5RjqHsDgT4CtjQlUDllG9PAe6hAUabjNYS9VZfI+/xB
-         RJe2IN0kHOkRVJ61wHvm3GeiA0sVTFRwFwj4pFALtrq3X7RXEgeBzbLGUP54dlNfdUyK
-         ggnXS7n3hgWZKWrMPQJpJ5ENbI7KAS00J3nVTYLi0YreQfQ/nj8iEwdHsH6jZdJ44ADV
-         60QUHwfQObNe6zYOvDAmKfJJz6LSdPEAwZz3x7YyzTK5Lz/03cxAdWA53ZP1fxtKAfVu
-         VObw==
+        bh=WLUdigsApmRK74tKDjONSTE2dMi6WHx5zi8E0wjDf2Y=;
+        b=LRFka4TnsqZBKvaCuN+bPxENtgjSKcVFXnRvPHryrCPnVdt9dSHiIKcL/r/tVfsPlP
+         eKtCKhwXTM/jDD/WGL546uvNJN17g7IQonRwdZPsfrGvIiHXqxYFd0IyO/KZhHpVvFmq
+         K+vsDgKSkaAyNMP688NdlXI1ydEBpf4ySOkkYtV3ywxMcuLP/GWxAh0FNp5LIzbvkoyN
+         p1xn5774qN4kGrygDa8ElEiz2qFF7JsHffs4q5xvB+5zwDhGNov6Ipy3uUG5wz6EcBQf
+         hocpxC7y8JW1AZlUKl2FKoiNeWnVslDfPAmYz17BPHSCzEORSsHzrgOAZ1xS2NwfjNkl
+         otMA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=JfLIpkOTN7mnH1pqkEcUyKs3y8dy0IMYzeie/rgKHMQ=;
-        b=vzYbHSkuWb9pCuAVXZkR3ZOYlCiQ9qDbGf5Phg7Q0oHUKDIBnhTHs+sVs7EL4kJr6D
-         Z4lXRZnGR2i9do7PIKRxWnONrz5dQyO0IImiPdVTDegvUaLHtyC9vkExXiI2VJJi7x/F
-         AIvD4HP/d1tit6R466Oq2NC3kQbHAUi0J1QL3in8py9P8rks4Lxdsjz0WS9GaaM17Q3y
-         R5CQN2HCunECic7fSXVACL1LBcPUcCcXGt+yFU0lSA95VuwqTNSGj9msFOZX4ebyUQHO
-         VgmfzvR6XKbLHh8zaIKVGNzaMajRqqK1HExW2swumLWuTJ6UK8pPSb1u2FDIemVmzHFK
-         G8gQ==
-X-Gm-Message-State: ANoB5pnNzxJwTfwLZ5lwDvQkI2l4zliKi0EK92pf5Vsk59/p86/cZC+T
-	nQ/tSBX7DWbS3FO9ljomjBFWaQ==
-X-Google-Smtp-Source: AA0mqf7uvNwaFNT5aVok49cOQrvlBp+Mf8/NctCjOga1BXBHs3KEoUjBhmzaRyCxc2l02l0HmCOk7A==
-X-Received: by 2002:a05:6512:3282:b0:4a2:4b1b:6ad9 with SMTP id p2-20020a056512328200b004a24b1b6ad9mr8549363lfe.296.1669112352299;
-        Tue, 22 Nov 2022 02:19:12 -0800 (PST)
+        bh=WLUdigsApmRK74tKDjONSTE2dMi6WHx5zi8E0wjDf2Y=;
+        b=xtP40AJWtN761oyNTiGXRFAgIOay//3bfu85mqnAMWUUmMApDKSHoSIeUj1mnD0xuP
+         v3vbPUR8Llzel97tczB9f7zBQTZDHulphnT1FkrIlECTbd8hzY6OdMtWRcXFHgLlyFo4
+         H4slqMQk2/e2ofnkSmHvGB+GYDnsrJnXeBgAmmiFbB0sdca+X+e5kyRmgLlwJjodtuTV
+         0+MW9MKUlLCtnVHwPYiPaa+NGl8iEGHtr7lkelha2m9GOfuv9UT4BA3otn3RaFVCy6lc
+         FwTzlEPY/fz1Vhdeyg+gtDXEZiEhfw3JH4UT+FbrhmCTUDJgQFJpdbS/ytFUzfA7Ak3g
+         x8pQ==
+X-Gm-Message-State: ANoB5pmHMF3+K/UMFVmbadJL4DaJ1SzfsqugODKddo/OF8WGVqx7P5ha
+	mZI28zt9WEDJzUutg2wEhicKew==
+X-Google-Smtp-Source: AA0mqf7vvF2BfXvTbPIQ/acLujnLA0PSEBSsit/7dUyYrj/tz7iYaoGNrDleBKloFAvsRnGQDkevcQ==
+X-Received: by 2002:a05:651c:b21:b0:277:b04:ffe8 with SMTP id b33-20020a05651c0b2100b002770b04ffe8mr7794982ljr.136.1669114964740;
+        Tue, 22 Nov 2022 03:02:44 -0800 (PST)
 Received: from [192.168.0.20] (088156142067.dynamic-2-waw-k-3-2-0.vectranet.pl. [88.156.142.67])
-        by smtp.gmail.com with ESMTPSA id c26-20020ac2415a000000b0048a8c907fe9sm2432513lfi.167.2022.11.22.02.19.10
+        by smtp.gmail.com with ESMTPSA id 19-20020ac25f53000000b0049d83646ce7sm2410812lfz.110.2022.11.22.03.02.41
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 22 Nov 2022 02:19:11 -0800 (PST)
-Message-ID: <3160a4dd-f8c0-5cce-8c15-c9a4c173ef1e@linaro.org>
-Date: Tue, 22 Nov 2022 11:19:09 +0100
+        Tue, 22 Nov 2022 03:02:44 -0800 (PST)
+Message-ID: <79831a58-0b67-920f-3c07-d304dff5af0c@linaro.org>
+Date: Tue, 22 Nov 2022 12:02:40 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.4.2
-Subject: Re: [PATCH 1/2] dt-bindings: phy-j721e-wiz: add j721s2 compatible
- string
+Subject: Re: [PATCH v4 07/10] dt-bindings: phy: Add Cadence HDP-TX DP PHY
 Content-Language: en-US
-To: Matt Ranostay <mranostay@ti.com>, r-gunasekaran@ti.com,
- rogerq@kernel.org, vkoul@kernel.org, robh+dt@kernel.org,
- krzysztof.kozlowski+dt@linaro.org, vigneshr@ti.com
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-References: <20221122092203.762308-1-mranostay@ti.com>
- <20221122092203.762308-2-mranostay@ti.com>
+To: Sandor Yu <Sandor.yu@nxp.com>, andrzej.hajda@intel.com,
+ neil.armstrong@linaro.org, robert.foss@linaro.org,
+ Laurent.pinchart@ideasonboard.com, jonas@kwiboo.se,
+ jernej.skrabec@gmail.com, airlied@gmail.com, daniel@ffwll.ch,
+ robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org, shawnguo@kernel.org,
+ s.hauer@pengutronix.de, festevam@gmail.com, kishon@ti.com, vkoul@kernel.org,
+ dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org, alexander.stein@ew.tq-group.com
+Cc: kernel@pengutronix.de, linux-imx@nxp.com, oliver.brown@nxp.com
+References: <cover.1669013346.git.Sandor.yu@nxp.com>
+ <5f8a3f15f744e201171c20505e1e3c47f5a27dce.1669013346.git.Sandor.yu@nxp.com>
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20221122092203.762308-2-mranostay@ti.com>
+In-Reply-To: <5f8a3f15f744e201171c20505e1e3c47f5a27dce.1669013346.git.Sandor.yu@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221122_021914_768231_BDAE0559 
-X-CRM114-Status: GOOD (  10.94  )
+X-CRM114-CacheID: sfid-20221122_030249_371966_5EB0B8BC 
+X-CRM114-Status: GOOD (  12.18  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,25 +100,51 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 22/11/2022 10:22, Matt Ranostay wrote:
-> Add ti,j721s2-wiz-10g compatible string to binding documentation.
+On 21/11/2022 08:23, Sandor Yu wrote:
+> Add bindings for Cadence HDP-TX DisplayPort PHY.
 > 
-> Signed-off-by: Matt Ranostay <mranostay@ti.com>
-> ---
->  Documentation/devicetree/bindings/phy/ti,phy-j721e-wiz.yaml | 1 +
->  1 file changed, 1 insertion(+)
+> Signed-off-by: Sandor Yu <Sandor.yu@nxp.com>
+> --->  .../bindings/phy/cdns,hdptx-dp-phy.yaml       | 68 +++++++++++++++++++
+>  1 file changed, 68 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/cdns,hdptx-dp-phy.yaml
 > 
-> diff --git a/Documentation/devicetree/bindings/phy/ti,phy-j721e-wiz.yaml b/Documentation/devicetree/bindings/phy/ti,phy-j721e-wiz.yaml
-> index a9e38739c010..b837748f33d1 100644
-> --- a/Documentation/devicetree/bindings/phy/ti,phy-j721e-wiz.yaml
-> +++ b/Documentation/devicetree/bindings/phy/ti,phy-j721e-wiz.yaml
-> @@ -18,6 +18,7 @@ properties:
->        - ti,am64-wiz-10g
->        - ti,j7200-wiz-10g
->        - ti,j784s4-wiz-10g
-> +      - ti,j721s2-wiz-10g
->  
-Keep items sorted.
+> diff --git a/Documentation/devicetree/bindings/phy/cdns,hdptx-dp-phy.yaml b/Documentation/devicetree/bindings/phy/cdns,hdptx-dp-phy.yaml
+> new file mode 100644
+> index 000000000000..b997c15ff0bb
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/phy/cdns,hdptx-dp-phy.yaml
+> @@ -0,0 +1,68 @@
+> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/phy/cdns,hdptx-dp-phy.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Cadence HDP-TX(HDMI/DisplayPort) PHY for DisplayPort protocol
+> +
+> +maintainers:
+> +  - Sandor Yu <sandor.yu@nxp.com>
+> +
+> +properties:
+> +  compatible:
+> +    enum:
+> +      - cdns,hdptx-dp-phy
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    items:
+> +      - description: PHY reference clock.
+> +      - description: APB clock.
+> +
+> +  clock-names:
+> +    items:
+> +      - const: refclk
+> +      - const: apbclk
+
+Drop "clk" suffix.
+
 
 Best regards,
 Krzysztof
