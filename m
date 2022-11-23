@@ -4,82 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B6B57C4332F
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D6791C4167D
 	for <linux-phy@archiver.kernel.org>; Wed, 23 Nov 2022 11:45:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:From:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=j1tphIpHHJfYuKWKZB30bmIR7X9DLiEFxcOGhJ3+dUg=; b=CiXkaYZ1ULxnbD
-	CzbIrs+HhyFYgMMA5TQilNN/kE62pIieuoUDsAhQT6/XfERYGQcVeim1pvADSTTpkTVhv9u50T03/
-	rU/C/g9aHiX0VLRmlEairCr+8/zNhoKZYmA5iYxKgHrPcHWfAEbSAYt7X1bHsEKJKXU3LGrWJr6RU
-	EkiPvYWHF5+JcqmvzSv/BBPqmjxrVj8zcewizZIDNStDpIDjhFFhulItEwu6E4TP8UpK1kk+3y8P8
-	2jymtKO2CdNeupZuRA5BoeC5wIvSuSSwYe7f2VsgLJaY+1/5hXVOUHvei/Zdj8fpx+JKYCMRr8US9
-	zzpGn56GUCRL7R9rHxhw==;
+	List-Owner; bh=LVFVEsa8xuIx0n5I2bUVawPf/rrVEATIISli1NtjcNg=; b=eEwgDjJxSNzY4R
+	IWUUN4OcIfJo79vyAE/c13Mr8Vh973yf9KPG8oc/kWSB5rsn3wHe/9VZ97jmJQdJqlUWI7cah+cBu
+	ubCooKZ7VMJGqL9Vf/SUoUyrdc7VSugSugfprmkDAKg0j2Ji+wv2rRsx29lYy9Eup1ccX2SwzJ/eQ
+	+jtWmGQdiEnjMaKFBewq0Iu+cfzr31qCjTBNdKFRAwxAOeAHVyZbzInpjcZVV+wigVJrwXdERe1Ym
+	vDrAeKJHBAbSJp6hQpIq7R9+fRpxLwSmslNS5rmUZKlXkzfnoCqcttbRnck27uik0JM9u8eiLGH7K
+	2MlFrn3KUS1+abMQaFyw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oxoCR-00Glf0-US; Wed, 23 Nov 2022 11:45:55 +0000
-Received: from mail-lf1-x134.google.com ([2a00:1450:4864:20::134])
+	id 1oxoCS-00Glfe-94; Wed, 23 Nov 2022 11:45:56 +0000
+Received: from mail-lf1-x130.google.com ([2a00:1450:4864:20::130])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oxnEL-00GQJH-D3
-	for linux-phy@lists.infradead.org; Wed, 23 Nov 2022 10:43:50 +0000
-Received: by mail-lf1-x134.google.com with SMTP id p8so27530894lfu.11
-        for <linux-phy@lists.infradead.org>; Wed, 23 Nov 2022 02:43:47 -0800 (PST)
+	id 1oxnFI-00GQXL-Ob
+	for linux-phy@lists.infradead.org; Wed, 23 Nov 2022 10:44:50 +0000
+Received: by mail-lf1-x130.google.com with SMTP id j16so27540875lfe.12
+        for <linux-phy@lists.infradead.org>; Wed, 23 Nov 2022 02:44:46 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
-        h=content-transfer-encoding:in-reply-to:references:cc:to:from
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=rT3zcQTdiqIKVUqVpCnTTdj/c8j+Nk1Lz6ur5IXMJOA=;
-        b=EMg9kUC1+ELdZg4dG/mu5U5HWqIDh2zj38EIiGc6PXb/Tty6+0y+tysqOb/UfVwY5V
-         x+jqoABT4qC7m+d2D+qZIuJGDBvjwhIaki6eJzLfUwG9UPwBezsZC+HHNrtLOhAPsi9G
-         n+oMu50QndXYVCXfr1tDzmvtdQ/IN29K0FVG5FYtUED/0g/8utJpV1zn7xcTCYMgGR4J
-         l10oL16UVwKsVpgczL+gjXjSw+ZYXMtOb0ixi1qk8ayBVOo931PfdomB9ADSW1LF3pWf
-         9aYRiIeKAAao8GdC7AA84m8EOfzTsjpSc9fTW4gFHYo+/ifquaDVtOKCeK+NQtAqyJwS
-         yi8g==
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=Bda09macuyK5fYNXnbLx3WrcVV5Sb23aKOiNbSvBd8U=;
+        b=jekgNuCk4zXNuk2nmghYikACoNtSbi0eNG1Jw+T0c8um+N5/b8wVcIxQRkJ9UC3A8m
+         3vh1tLuWfCeHVTitGT34LR0GdfbEgwzPIJjrhc4+4LcNkOGUTosfGDDZJvGCFC5ghJvP
+         kIHBVEVwE+fvQDt1gWE7xnm20lutYhBCKHx5WCdxUE83ZJakKBLSEvERuJMiWbCkNqE0
+         D/4Rjxf9/OODoDtkqes6/VXxaTOzQawJksqFqJLtLlV0OuXy5hJmzceevAXxiqPtrl6L
+         YO1eLtrGY4SyI0CfW5MpEeeilrqUrajXg/ljOwrnGgR9E1NQB+Xt+t0qe2LiwqkcBh36
+         sgnw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=content-transfer-encoding:in-reply-to:references:cc:to:from
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=rT3zcQTdiqIKVUqVpCnTTdj/c8j+Nk1Lz6ur5IXMJOA=;
-        b=am51f0OHKoRyFUtVlQdaI2MSqhU04ZMGnkOPNYxU7xY0s7d+Bcr+7Q9/MOiZnqDAhL
-         sKCzt/yy25xH6kI1Lwdsx4ze88dMU5xPbVSmvjdhTIpRkW+k+EAqpZOebHjaWXUzNMj6
-         n+dvh/HFglIrKBsTLSI7Y1P/I0hHDrxUYuDeYSmMVg7LC1RTEw5+JZmAYfSF86vMuo86
-         ex13IcNIBPeiUmHndcQBupZKPfcTn8wnFAHNKVdgEyQ9zjXjYgJ/aizbEoTUhSklaXRm
-         ThZflp/OE921yVkoA9AB3A03uiAQed4DmkPF4AoXezH6PXfzwA8cE9VgLLX+IHCV/jrv
-         oOiA==
-X-Gm-Message-State: ANoB5pmfM/wF9ZDHAfhWL+Tdq7rC5htdW78sMkm3wrDI8dtVc3nuNOON
-	z1Tv9RT2tP8HpKhzeMoz3jYx5g==
-X-Google-Smtp-Source: AA0mqf6VYlXsQaHR4cbFjaN5eV+7fCtvNBbhQ7J0rfydPqrSvO6VpNFGGC42MRUUxP2ujuSxtVP06g==
-X-Received: by 2002:ac2:4558:0:b0:494:6bb2:485f with SMTP id j24-20020ac24558000000b004946bb2485fmr3581244lfm.451.1669200226234;
-        Wed, 23 Nov 2022 02:43:46 -0800 (PST)
-Received: from ?IPV6:2001:14ba:a302:5f12::1? (dzpbg0ftyyyyyyyyyyyyt-3.rev.dnainternet.fi. [2001:14ba:a302:5f12::1])
-        by smtp.gmail.com with ESMTPSA id g4-20020a056512118400b0049e9122bd0esm2037454lfr.114.2022.11.23.02.43.45
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 23 Nov 2022 02:43:45 -0800 (PST)
-Message-ID: <e7635cc4-a436-11f0-1ea6-46f0056e403c@linaro.org>
-Date: Wed, 23 Nov 2022 12:43:45 +0200
-MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.5.0
-Subject: Re: [PATCH v8 0/4] phy: qcom-qmp-ufs: add symbol clocks support
-Content-Language: en-GB
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=Bda09macuyK5fYNXnbLx3WrcVV5Sb23aKOiNbSvBd8U=;
+        b=BeNfKx0hcVOu8E7AVVPG7xwVCBUFfQO++WF+sJr8akd7D46u0nU3rUJaJbQX6WzAEP
+         tX+qsSooo3u8M6ppcGR9R1f4kZeMMwV4E6d05vVp5aXGguAYD5stf5Bo+p/vgNs1x+Pp
+         z3cRdWGdRjsXPzzW9QphW40pQ6gkGiE/th1DEPcFJCZnMY/z5HBmOI/li1N87Ac+sT8y
+         T4JuBzAv+CC50R75ZxurtZCmcykP0Gyl4JchC5mbocgw/BDKohjEEyywrZHNM1gf3tNX
+         nzr0wMJMQdkFiAwfM85oDGht/qHaCJPnQJ0agp8irMoznudFmW4D7/ezBrmMgawwI3MB
+         Gjcw==
+X-Gm-Message-State: ANoB5pmSDXnGB4bUNC8Fnw6FU9REX6JzISux7b6tMA4B2TrZ238dR5IK
+	BBP2H5FezRW2R5W9Q7cIkQDpSA==
+X-Google-Smtp-Source: AA0mqf7uZQF9lF8kL/6lDrvTcWEXHH6BbiADC5ssM2O7V5T3YpNFuTa0V8H8trm8n2YcJunSky2bhw==
+X-Received: by 2002:a05:6512:32d3:b0:4a2:500e:2bfa with SMTP id f19-20020a05651232d300b004a2500e2bfamr8808224lfg.629.1669200285576;
+        Wed, 23 Nov 2022 02:44:45 -0800 (PST)
+Received: from eriador.lumag.spb.ru (dzpbg0ftyyyyyyyyyyyyt-3.rev.dnainternet.fi. [2001:14ba:a302:5f12::1])
+        by smtp.gmail.com with ESMTPSA id be34-20020a056512252200b0049e9122bd1bsm2869082lfb.164.2022.11.23.02.44.44
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 23 Nov 2022 02:44:45 -0800 (PST)
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-To: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konrad.dybcio@somainline.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring
- <robh+dt@kernel.org>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
-Cc: Johan Hovold <johan@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>,
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org
-References: <20221123104215.3414528-1-dmitry.baryshkov@linaro.org>
-In-Reply-To: <20221123104215.3414528-1-dmitry.baryshkov@linaro.org>
+To: Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@somainline.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
+Cc: Johan Hovold <johan@kernel.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Subject: [PATCH v9 1/4] dt-bindings: phy: qcom,*-qmp-ufs-phy: add clock-cells property
+Date: Wed, 23 Nov 2022 12:44:40 +0200
+Message-Id: <20221123104443.3415267-2-dmitry.baryshkov@linaro.org>
+X-Mailer: git-send-email 2.35.1
+In-Reply-To: <20221123104443.3415267-1-dmitry.baryshkov@linaro.org>
+References: <20221123104443.3415267-1-dmitry.baryshkov@linaro.org>
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221123_024349_487054_69784D63 
-X-CRM114-Status: UNSURE (   8.00  )
+X-CRM114-CacheID: sfid-20221123_024448_803482_F1227D9A 
+X-CRM114-Status: UNSURE (   7.97  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -92,27 +96,51 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 23/11/2022 12:42, Dmitry Baryshkov wrote:
-> Register UFS symbol clocks in the Qualcomm QMP PHY driver. Some of the
-> platforms (msm8996, sc7280, sm8350/sm8450) expect them to be defined (to
-> be used as GCC clock parents).
-> 
-> Changes since v7:
-> - Rebased on top of phy/next
-> - Renamed the clock registration function (Johan)
-> - Dropped rogue qcom_qmp_ufs_ops (Johan)
-> - Fixed the comment following Johan's suggestion.
-Ugh, this went total crazy with me sending the patches from the wrong 
-commit. Please excuse me, I'll send v9 instead.
+Add #clock-cells property to the QMP UFS PHYs to describe them as clock
+providers. The QMP PHY provides rx and tx symbol clocks for the GCC.
 
+Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+---
+ .../devicetree/bindings/phy/qcom,msm8996-qmp-ufs-phy.yaml      | 3 +++
+ .../devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml     | 3 +++
+ 2 files changed, 6 insertions(+)
+
+diff --git a/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-ufs-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-ufs-phy.yaml
+index be41acbd3b6c..80a5348dbfde 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-ufs-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-ufs-phy.yaml
+@@ -75,6 +75,9 @@ patternProperties:
+         minItems: 3
+         maxItems: 6
+ 
++      "#clock-cells":
++        const: 1
++
+       "#phy-cells":
+         const: 0
+ 
+diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
+index dde86a19f792..32ed1886fbae 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
+@@ -43,6 +43,9 @@ properties:
+ 
+   vdda-pll-supply: true
+ 
++  "#clock-cells":
++    const: 1
++
+   "#phy-cells":
+     const: 0
+ 
 -- 
-With best wishes
-Dmitry
+2.35.1
 
 
 -- 
