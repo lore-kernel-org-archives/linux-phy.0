@@ -4,62 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BC8E3C433FE
-	for <linux-phy@archiver.kernel.org>; Wed, 23 Nov 2022 07:50:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 46FABC4332F
+	for <linux-phy@archiver.kernel.org>; Wed, 23 Nov 2022 07:50:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=i/k7WPedycXHt6nDomVVtoPteJnN9xuOZQfK8mo20TA=; b=dkI5C9rgB2LCyX
-	27O7k6Uuo1Pj1OiS8ezYaX8NxVp3dtyRQ2kMj26LgYBDOdTVUDjoo0Io7eZRZOLLle1j8d69twZwh
-	NW2km8E7pQyBFWbDrRWWisdJeqyLCPRpDCZfEemDIBb65kXGUQlr6QQf3wl97/mNFLPLAusFvmkGE
-	Eygr8dFt1On3ahyk5POSC9ed/Lbi3cJPtmdvZQV5OhunvFTjodp8QN+DOTPZdZPtLBSmr6zyEwCWD
-	IuRORuoHwPEa+Itx0roRD8c4XsxHWgEUgWDsSjuka7W0eQ5wwd0ihygpyLJKAIyPpxX9O1BxieZeO
-	Ns2ztq0ES/JxX9moNQUw==;
+	List-Owner; bh=YWQMr9TMSBQNDbiwdVVxc2MxRKyxHW6QyfmIrm0vFMI=; b=QSEKoCPIpmWk/T
+	Aiffi5gSVG5luYgG1DgXm4NeYntm5e2maTYm+HgikzTKVR+OztDgSanLsvAc5j7BO0KV8XMNVqqRR
+	b6pxQ5iYHgEdidJPusJ/2kSEsPb1dqj44ldgtM8e72areccMIuXXr9D3TkYhJTY0PutRIEZafjTu7
+	RPdf/qiDYch5YRxR4rmi0d0L3YMG3AFiPTFxmivovORAZIEV/I66fX2QkTRDuCNexO2cqCO0cxUon
+	INgDKQmJBEWBVM5Zb7cP7rizAyYdSjf09qI2mTI8vYVeoON7cVuaw6kBbfjrjP8kh++YRUnlFBCiL
+	1g5ne4QYAqsfi6pykMfg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oxkWM-00FJx7-62; Wed, 23 Nov 2022 07:50:14 +0000
-Received: from mail-pg1-x52d.google.com ([2607:f8b0:4864:20::52d])
+	id 1oxkWR-00FK09-Mf; Wed, 23 Nov 2022 07:50:19 +0000
+Received: from mail-pj1-x1035.google.com ([2607:f8b0:4864:20::1035])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oxkWJ-00FJuu-Pr
-	for linux-phy@lists.infradead.org; Wed, 23 Nov 2022 07:50:13 +0000
-Received: by mail-pg1-x52d.google.com with SMTP id s196so16139875pgs.3
-        for <linux-phy@lists.infradead.org>; Tue, 22 Nov 2022 23:50:10 -0800 (PST)
+	id 1oxkWP-00FJyE-8y
+	for linux-phy@lists.infradead.org; Wed, 23 Nov 2022 07:50:18 +0000
+Received: by mail-pj1-x1035.google.com with SMTP id g5so111955pjd.4
+        for <linux-phy@lists.infradead.org>; Tue, 22 Nov 2022 23:50:16 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=/Xs9R7SPzAS5pOWZNCxb7jU9uBO2AEwyHCVEvHAOYro=;
-        b=xnIcVBVVhreHcdS7Ugnx76iz55CIxjVzKcXg+MoU+KmJuWrTaUBEXS9+FIx/Y0u73z
-         vdCgbI8cTzTHdjUSxoIi/95NV0Vjlxhc70yIy8lliHjCgDKewiee6q1iEgSma6we3Azo
-         T4VlECf+1VJ+oeFF3As5u8ezCHr5bVmigRRYPAG9yTiU46ck8y+wquPdWWK7ITuCm2bo
-         sKdQ7aRcs1rNHa5QQO5gIyCNf1v6mp4G8rXT5eEu9GudQ4qf3UTv8vi+wWNI8K440gks
-         QlJ1qrrg4bEZYFpqu+Sp8/oFR/Xb+uv91V/siAlNJB5diHdFSyKkPniMWfwj6S3K0bLC
-         SJ5g==
+        bh=jQW21UMpMMT39kQGkUZ44Bi2KAiI76Uffz4R9s7ZIY4=;
+        b=Q4uifVNUG8xLZiw0nKZzqWhlsFQVjN7R7zmwgdRS/fTSn0Pz18mv37YJD39o+JlZ+U
+         YX50U9RmFIiBE5gaK+qWmu8dehcTfKoU1BOe+NxgY/P8qv4PehJ3qfZDfW4HwQ/uSNLF
+         SO5irDbKFTLjuwkrCMMdtgUjo/xb1StQ14ri1Bxv1UkA/bIwjVqyt+gMUVpvegQ+Peff
+         qG4EAibX1FxdFxy8A92f6uSiv92YFS5FM3PH+5SGqa7OLIVqu/yGOPBW3106ZA1Dj0nN
+         or6T2UMyGk7jCA89uhNo+9K4YwS8Q70+I2BoLGhEhoS19d02r0QG25cSU+dfJA25+76c
+         lyFA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=/Xs9R7SPzAS5pOWZNCxb7jU9uBO2AEwyHCVEvHAOYro=;
-        b=yoizQWNASUDfp4Sbt5o9ROUvHRo+pJU+Gdb9GEDLLAXFxdNv5y9QqxPItg38kbcY16
-         frGgcCkBJni1GKp1x4+rfH1hfB72oAvkf396G3NO5UheVywhIwFRDWE8qdNuoq3GqWL/
-         YkkZMw8ItQq7uRLhDiYHmuhkhSJK32/2t0AeAfLX3W8UbDOTHto1kRQl2004Yy5d4dbR
-         7BGT57R+gWaIVyLJPMrb16GDnUchodR/rEZZB3d4SBlSpaXPcDZTom4bE3zv2IurWy5c
-         /Z0kNIQPFUpdrORNy3yfeU+JOWXdw2xRfHffCWd2yhUPbFz/+3tvtg4EiD6xoKgYWbJv
-         2C7g==
-X-Gm-Message-State: ANoB5plIqPLp7S/+0rMKHzGvydCv+aLQJKIZga9OzwHKbdeoh6lpfFht
-	l72XaJOdhI34vIflOhcROhzA
-X-Google-Smtp-Source: AA0mqf5Qkci9MclBetYKpk99wpyqRldXc/tZtpb53k/xKGLez3Vf4fNonMqHr0wE24M73D9Dz1d/DQ==
-X-Received: by 2002:a63:230d:0:b0:476:aad3:9122 with SMTP id j13-20020a63230d000000b00476aad39122mr7060304pgj.402.1669189810294;
-        Tue, 22 Nov 2022 23:50:10 -0800 (PST)
+        bh=jQW21UMpMMT39kQGkUZ44Bi2KAiI76Uffz4R9s7ZIY4=;
+        b=Ayn9G9JCdGGAX4yt2XZvlpxEQHpi6mes0j6mDEmYl9mvEc4AbBVB0DTp6YIrpIhKlA
+         f6LR3vF3uQt6fE7US7ocfevYHZ/VZFiMZYBpPduhZZPqWEZANss03GEWOYJEbA3tzJnK
+         txvJ0yHVNY3F9k2r/VVmK3Uv9/KSb66imOe7zgI8ZbZGPdC5vN4a6DIXRBVcGS5/V3pM
+         zueqP0V1xq3JaHQFNqHw3Ivo/YXyYsP4aHAFEsRmobzqhYiZLAP61vDgoUpGetPyjnyK
+         KZbsm06LrgoVeXANZMUgP4fkOCKD2H9sQAr//YamWNChNHhLYiMc7V+i3de8jXBsGedz
+         mocA==
+X-Gm-Message-State: ANoB5pnwnfyzJytI4Vq7iVhaWzbUVaKhkmt8HB1kWesGe9l2uvq/2pzP
+	058NtDB5+i0KoJ3L+UBnk5ZP
+X-Google-Smtp-Source: AA0mqf5ljrSPGVNBRtykID1TL3/cGOrewa2yjiZmVTTVZrWsBIkuV1+BoJ27rIUb9wyuYvjPhd49vw==
+X-Received: by 2002:a17:90a:d811:b0:213:aa8:dda with SMTP id a17-20020a17090ad81100b002130aa80ddamr30077911pjv.111.1669189815878;
+        Tue, 22 Nov 2022 23:50:15 -0800 (PST)
 Received: from localhost.localdomain ([117.202.191.0])
-        by smtp.gmail.com with ESMTPSA id s16-20020a170902a51000b001869f2120a5sm13334059plq.34.2022.11.22.23.50.04
+        by smtp.gmail.com with ESMTPSA id s16-20020a170902a51000b001869f2120a5sm13334059plq.34.2022.11.22.23.50.10
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 22 Nov 2022 23:50:09 -0800 (PST)
+        Tue, 22 Nov 2022 23:50:15 -0800 (PST)
 From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 To: martin.petersen@oracle.com,
 	jejb@linux.ibm.com,
@@ -75,16 +75,16 @@ Cc: quic_cang@quicinc.com,
 	ahalaney@redhat.com,
 	abel.vesa@linaro.org,
 	Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Subject: [PATCH v3 16/20] scsi: ufs: core: Add support for reinitializing the UFS device
-Date: Wed, 23 Nov 2022 13:18:22 +0530
-Message-Id: <20221123074826.95369-17-manivannan.sadhasivam@linaro.org>
+Subject: [PATCH v3 17/20] scsi: ufs: ufs-qcom: Factor out the logic finding the HS Gear
+Date: Wed, 23 Nov 2022 13:18:23 +0530
+Message-Id: <20221123074826.95369-18-manivannan.sadhasivam@linaro.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20221123074826.95369-1-manivannan.sadhasivam@linaro.org>
 References: <20221123074826.95369-1-manivannan.sadhasivam@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221122_235011_865202_5286C17A 
-X-CRM114-Status: GOOD (  18.82  )
+X-CRM114-CacheID: sfid-20221122_235017_339892_F5A2BCFA 
+X-CRM114-Status: GOOD (  16.58  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,147 +101,72 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Some platforms like Qcom, requires the UFS device to be reinitialized
-after switching to maximum gear speed. So add support for that in UFS
-core by introducing a new quirk (UFSHCD_CAP_REINIT_AFTER_MAX_GEAR_SWITCH)
-and doing the reinitialization, if the quirk is enabled by the controller
-driver.
+In the preparation of adding support for new gears, let's move the
+logic that finds the gear for each platform to a new function. This helps
+with code readability and also allows the logic to be used in other places
+of the driver in future.
 
+While at it, let's make it clear that this driver only supports symmetric
+gear setting (hs_tx_gear == hs_rx_gear).
+
+Reviewed-by: Andrew Halaney <ahalaney@redhat.com>
 Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 ---
- drivers/ufs/core/ufshcd.c | 63 +++++++++++++++++++++++++++++----------
- include/ufs/ufshcd.h      |  6 ++++
- 2 files changed, 53 insertions(+), 16 deletions(-)
+ drivers/ufs/host/ufs-qcom.c | 34 +++++++++++++++++++++-------------
+ 1 file changed, 21 insertions(+), 13 deletions(-)
 
-diff --git a/drivers/ufs/core/ufshcd.c b/drivers/ufs/core/ufshcd.c
-index 7256e6c43ca6..c44ffb63d48f 100644
---- a/drivers/ufs/core/ufshcd.c
-+++ b/drivers/ufs/core/ufshcd.c
-@@ -8161,27 +8161,18 @@ static int ufshcd_add_lus(struct ufs_hba *hba)
- 	return ret;
+diff --git a/drivers/ufs/host/ufs-qcom.c b/drivers/ufs/host/ufs-qcom.c
+index 38e2ed749d75..919b6eae439d 100644
+--- a/drivers/ufs/host/ufs-qcom.c
++++ b/drivers/ufs/host/ufs-qcom.c
+@@ -278,6 +278,25 @@ static int ufs_qcom_host_reset(struct ufs_hba *hba)
+ 	return 0;
  }
  
--/**
-- * ufshcd_probe_hba - probe hba to detect device and initialize it
-- * @hba: per-adapter instance
-- * @init_dev_params: whether or not to call ufshcd_device_params_init().
-- *
-- * Execute link-startup and verify device initialization
-- */
--static int ufshcd_probe_hba(struct ufs_hba *hba, bool init_dev_params)
-+static int ufshcd_device_init(struct ufs_hba *hba, bool init_dev_params)
- {
- 	int ret;
--	unsigned long flags;
--	ktime_t start = ktime_get();
- 
- 	hba->ufshcd_state = UFSHCD_STATE_RESET;
- 
- 	ret = ufshcd_link_startup(hba);
- 	if (ret)
--		goto out;
-+		return ret;
- 
- 	if (hba->quirks & UFSHCD_QUIRK_SKIP_PH_CONFIGURATION)
--		goto out;
-+		return ret;
- 
- 	/* Debug counters initialization */
- 	ufshcd_clear_dbg_ufs_stats(hba);
-@@ -8192,12 +8183,12 @@ static int ufshcd_probe_hba(struct ufs_hba *hba, bool init_dev_params)
- 	/* Verify device initialization by sending NOP OUT UPIU */
- 	ret = ufshcd_verify_dev_init(hba);
- 	if (ret)
--		goto out;
-+		return ret;
- 
- 	/* Initiate UFS initialization, and waiting until completion */
- 	ret = ufshcd_complete_dev_init(hba);
- 	if (ret)
--		goto out;
-+		return ret;
- 
- 	/*
- 	 * Initialize UFS device parameters used by driver, these
-@@ -8206,7 +8197,7 @@ static int ufshcd_probe_hba(struct ufs_hba *hba, bool init_dev_params)
- 	if (init_dev_params) {
- 		ret = ufshcd_device_params_init(hba);
- 		if (ret)
--			goto out;
-+			return ret;
- 	}
- 
- 	ufshcd_tune_unipro_params(hba);
-@@ -8227,11 +8218,51 @@ static int ufshcd_probe_hba(struct ufs_hba *hba, bool init_dev_params)
- 		if (ret) {
- 			dev_err(hba->dev, "%s: Failed setting power mode, err = %d\n",
- 					__func__, ret);
-+			return ret;
-+		}
++static u32 ufs_qcom_get_hs_gear(struct ufs_hba *hba)
++{
++	struct ufs_qcom_host *host = ufshcd_get_variant(hba);
++
++	if (host->hw_ver.major == 0x1) {
++		/*
++		 * HS-G3 operations may not reliably work on legacy QCOM
++		 * UFS host controller hardware even though capability
++		 * exchange during link startup phase may end up
++		 * negotiating maximum supported gear as G3.
++		 * Hence downgrade the maximum supported gear to HS-G2.
++		 */
++		return UFS_HS_G2;
 +	}
 +
-+	return 0;
++	/* Default is HS-G3 */
++	return UFS_HS_G3;
 +}
 +
-+/**
-+ * ufshcd_probe_hba - probe hba to detect device and initialize it
-+ * @hba: per-adapter instance
-+ * @init_dev_params: whether or not to call ufshcd_device_params_init().
-+ *
-+ * Execute link-startup and verify device initialization
-+ */
-+static int ufshcd_probe_hba(struct ufs_hba *hba, bool init_dev_params)
-+{
-+	ktime_t start = ktime_get();
-+	unsigned long flags;
-+	int ret;
-+
-+	ret = ufshcd_device_init(hba, init_dev_params);
-+	if (ret)
-+		goto out;
-+
-+	if (hba->quirks & UFSHCD_QUIRK_REINIT_AFTER_MAX_GEAR_SWITCH) {
-+		/* Reset the device and controller before doing reinit */
-+		ufshcd_device_reset(hba);
-+		ufshcd_hba_stop(hba);
-+		ufshcd_vops_reinit_notify(hba);
-+		ret = ufshcd_hba_enable(hba);
-+		if (ret) {
-+			dev_err(hba->dev, "Host controller enable failed\n");
-+			ufshcd_print_evt_hist(hba);
-+			ufshcd_print_host_state(hba);
- 			goto out;
- 		}
--		ufshcd_print_pwr_info(hba);
-+
-+		/* Reinit the device */
-+		ret = ufshcd_device_init(hba, init_dev_params);
-+		if (ret)
-+			goto out;
- 	}
+ static int ufs_qcom_power_up_sequence(struct ufs_hba *hba)
+ {
+ 	struct ufs_qcom_host *host = ufshcd_get_variant(hba);
+@@ -692,19 +711,8 @@ static int ufs_qcom_pwr_change_notify(struct ufs_hba *hba,
+ 		ufshcd_init_pwr_dev_param(&ufs_qcom_cap);
+ 		ufs_qcom_cap.hs_rate = UFS_QCOM_LIMIT_HS_RATE;
  
-+	ufshcd_print_pwr_info(hba);
-+
- 	/*
- 	 * bActiveICCLevel is volatile for UFS device (as per latest v2.1 spec)
- 	 * and for removable UFS card as well, hence always set the parameter.
-diff --git a/include/ufs/ufshcd.h b/include/ufs/ufshcd.h
-index 09927a011a84..d3e8aa7a4207 100644
---- a/include/ufs/ufshcd.h
-+++ b/include/ufs/ufshcd.h
-@@ -595,6 +595,12 @@ enum ufshcd_quirks {
- 	 * auto-hibernate capability but it's FASTAUTO only.
- 	 */
- 	UFSHCD_QUIRK_HIBERN_FASTAUTO			= 1 << 18,
-+
-+	/*
-+	 * This quirk needs to be enabled if the host controller needs
-+	 * to reinit the device after switching to maximum gear.
-+	 */
-+	UFSHCD_QUIRK_REINIT_AFTER_MAX_GEAR_SWITCH       = 1 << 19,
- };
+-		if (host->hw_ver.major == 0x1) {
+-			/*
+-			 * HS-G3 operations may not reliably work on legacy QCOM
+-			 * UFS host controller hardware even though capability
+-			 * exchange during link startup phase may end up
+-			 * negotiating maximum supported gear as G3.
+-			 * Hence downgrade the maximum supported gear to HS-G2.
+-			 */
+-			if (ufs_qcom_cap.hs_tx_gear > UFS_HS_G2)
+-				ufs_qcom_cap.hs_tx_gear = UFS_HS_G2;
+-			if (ufs_qcom_cap.hs_rx_gear > UFS_HS_G2)
+-				ufs_qcom_cap.hs_rx_gear = UFS_HS_G2;
+-		}
++		/* This driver only supports symmetic gear setting i.e., hs_tx_gear == hs_rx_gear */
++		ufs_qcom_cap.hs_tx_gear = ufs_qcom_cap.hs_rx_gear = ufs_qcom_get_hs_gear(hba);
  
- enum ufshcd_caps {
+ 		ret = ufshcd_get_pwr_dev_param(&ufs_qcom_cap,
+ 					       dev_max_params,
 -- 
 2.25.1
 
