@@ -4,61 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4449BC4332F
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 670D5C43219
 	for <linux-phy@archiver.kernel.org>; Wed, 23 Nov 2022 10:44:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=K/sxMNYfmwKF0Az6HW/Y9q0wtmeJTMKyCC9CgHCWMLs=; b=YbyT4dH7nr0+2y
-	a27sy47C0w9AF3doxDVQ27s0jZbCZavrTDUz+je0Ll0v974tfRPaIYUqnzGu2mMj71AtTjQrDs8/c
-	hEKIrvrfyv6vX3k1/Z5aGMLUxpVjmPoKhm0rWkprdRjGihL1L8Zi70Nz4yNJE5onRz/IYJMs1oabr
-	5C123HwVBdTM0++GfIrVKwmWhtJQvQbpQ/vci44qIpbzBjX1FSrCbB5VDOcklRuY/cFtFaYK1UwvE
-	BGvPm5gBr0qRuSVvtSXv0GxIiJpTvtXfseiSlQrMZUOOrrg4hgDwUGUrYV9ZWI2sREAh6qJ7lE2Yd
-	TYzHBPQnqYx4a+Do6Uow==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=mWQaDvuRfJOIHaQ6039VAGSzpTC8j/48PKhnTMgXwlM=; b=wKuaZQ1ZSSY+qb
+	8ZeOCZGCAFg918++RDIbUXNI7/vXdWo3kCP5QqWkab6RuQxUWoWMLk6wOeEpWWUBhv2qrVcbTS/0z
+	/quxrD0y2zzFfEXVk6gDqO+jfFBDmK0OTnFgIvBZZbXZJO0oglcmfxUkln8T6YL4SL6uCsMQLKL/X
+	OlbwtDhfJJDFhRXtbqA+ROrr8rIU2vuTCbsPubiVgqmE36PjsICTJlyZNXG6Jwm9WUnOI9j3xu0yW
+	vTKQBL+XZB0T7uaci1a5u2CF29n20ZMOSFW1KTxGwv/cSOQcNWNp7/0F+eFcbwMhgs/lI2simqoC2
+	STpUMH91AMpXeRcTZ3TQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oxnFK-00GQYu-Nx; Wed, 23 Nov 2022 10:44:50 +0000
+	id 1oxnFK-00GQZ0-QE; Wed, 23 Nov 2022 10:44:50 +0000
 Received: from mail-lj1-x234.google.com ([2a00:1450:4864:20::234])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oxnFH-00GQXC-FN
-	for linux-phy@lists.infradead.org; Wed, 23 Nov 2022 10:44:48 +0000
-Received: by mail-lj1-x234.google.com with SMTP id s24so20879706ljs.11
-        for <linux-phy@lists.infradead.org>; Wed, 23 Nov 2022 02:44:45 -0800 (PST)
+	id 1oxnFH-00GQXi-Nu
+	for linux-phy@lists.infradead.org; Wed, 23 Nov 2022 10:44:49 +0000
+Received: by mail-lj1-x234.google.com with SMTP id z24so20930171ljn.4
+        for <linux-phy@lists.infradead.org>; Wed, 23 Nov 2022 02:44:47 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=jH4aljA+w1T0Z649dDtQqsVnBdBM341tSjMAtxabFJg=;
-        b=YF2kg4wG8959hxA7KOnbUjvEPYuj8EQ6wadfttNzKh9CzDua1m0IF4ZgZiucAM2Qyx
-         PZKXmJSCQnTQq5dqbyJS2S8O/GSON5ZBhcxSWjYpDrmJ77jcOwMClmMmERpBni2GGdX9
-         nV/E5DIzUBgS6cXQw5wwqt8Qid4geoVlljC/EWdY45To4tvNtLRvvF9qpLqkEvSNINPd
-         dla44MGSDudS31oSwCJc79G0QaA9mUGCVCwhyzM8zmWtTfwiWPjrZbYKGLTA+774OQ5Y
-         /pH4/TJxZ70XUKREk6snR2sVIWbrywL/3Tly0XfR+KMqeY9oX0dY39B1NCHr8KD9ccpQ
-         qoig==
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=hasDy1+t/B8Y/xArguog4wPmJmnVb9H5spMq9+2JDcg=;
+        b=FD+6cjsM0AH2+2CDIxDnDJN4K8NqaRyiqqcM/QhJzUsxY5ItxzaThxQ5aaMxBEF20c
+         LHAc5z1zBDjMTrBZCwKkjJxE341z4lVPte3ze5HMQETw+lZefvPWohfFpZlcxy4zB+Jb
+         ynCs0BYVZZEKVT9NJ9Az9UibYeg/pQe5xq6nj2r4ExwQeFCbj1SY/bttqOwt4wBu9h1s
+         I3VDMt9AfATc5/y7exOFBbzRtFvCM3zmh5kiC3rp6CzmEs6Wukoc0+/w3Kj6VlOjXBJa
+         CFKTy+/VaAyhgdtXmXfGU0OJabrkRfxe8kEuSxUy1r119KIH+xyc1A9+qW3jtzzewR6X
+         nvkA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=jH4aljA+w1T0Z649dDtQqsVnBdBM341tSjMAtxabFJg=;
-        b=Yi8fATAT75DA7rKUGKER1Zh0yDe0pViy3YjDcy5iuvOo3lS1imajoU00X+t6Ds0xUH
-         NGbXXubn3lcxzbvs7HvYFl7RD5LF1IRHAUy47TLIwQCuW/v9yKd9LS38+70cL+76yw9Z
-         8YgFiWdceg58saDzb5yZd/GnIWdD3EwkI9HMTDeFX+I56qcJSf9CmZqSFTRseesFcMeh
-         SiBU42O/N5goiqUisiWIbKsAo1gLKzfvKrITmDe3RrABDloW6RDBgIz3zkNwYxg0TPnn
-         AMZKfB4HRFj+Vq1UkXYl+xUDvnFxm7euwX5SItsk538RxJBE7kdvL/G07ikOPVc49uH3
-         bxeg==
-X-Gm-Message-State: ANoB5pmLJxac9ztdlmBGlrx8orHJnjLM1NBmE+3tfCCZyu8ktRH0llyp
-	Gz3MxwnyWNxSckWwEwFX4lMAaQ==
-X-Google-Smtp-Source: AA0mqf4+o9Lb0WHylI+egb6zgCOsG8itakJoTDMrkVj3qdrA4RFBixayWKNCcRT3kRh9+0jq2+glIA==
-X-Received: by 2002:a2e:b88d:0:b0:277:452a:473c with SMTP id r13-20020a2eb88d000000b00277452a473cmr2682008ljp.454.1669200284638;
-        Wed, 23 Nov 2022 02:44:44 -0800 (PST)
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=hasDy1+t/B8Y/xArguog4wPmJmnVb9H5spMq9+2JDcg=;
+        b=oonlCIa3lleqxXdzDB/zTjq1weLGeIc1XCBWiK52owBgTipnktAulsSlRFOb/oTsTH
+         p+FHhixT2gSxn8X1DxdCAWXwfQlNtvZMAgfrYCLp3DC2L+UPtexcuwaZ4kMWjpmmeHwj
+         OmtU9z8RyEaYN4P3AVxrHK9auNpHSYDOjrCHgJwZfAGEXva2TcGYUQzn9sBxN/NTiRtr
+         gB1TYaJgJIHND7GA8pW+vpOx3TbJl+pGeKvxKeLnOCEzpBQuuOEe71RjkL9Z/xe89YZe
+         Ebu8FPC664lJCifk1AkjtJan1gHHWs11GEJdIG1+O3DKz/cMSAR9uhOZu+aGDIEghhUz
+         AwKA==
+X-Gm-Message-State: ANoB5pkICon983Epm09RLFBkQrTvywI3RbSJ6YKFv60i7Gyggby4wDV1
+	KrnT1AJVJMAQb0tSP9Wx54gQ5Q==
+X-Google-Smtp-Source: AA0mqf5scskv1XCelKbs7W3K6Z/9+gBIeesXfpBhpCcFHbuhgiPG+poOqIjARIJoBZTQeGFnnRF/iA==
+X-Received: by 2002:a2e:9998:0:b0:279:7405:85d5 with SMTP id w24-20020a2e9998000000b00279740585d5mr1703820lji.31.1669200286436;
+        Wed, 23 Nov 2022 02:44:46 -0800 (PST)
 Received: from eriador.lumag.spb.ru (dzpbg0ftyyyyyyyyyyyyt-3.rev.dnainternet.fi. [2001:14ba:a302:5f12::1])
-        by smtp.gmail.com with ESMTPSA id be34-20020a056512252200b0049e9122bd1bsm2869082lfb.164.2022.11.23.02.44.43
+        by smtp.gmail.com with ESMTPSA id be34-20020a056512252200b0049e9122bd1bsm2869082lfb.164.2022.11.23.02.44.45
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 23 Nov 2022 02:44:44 -0800 (PST)
+        Wed, 23 Nov 2022 02:44:45 -0800 (PST)
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 To: Andy Gross <agross@kernel.org>,
 	Bjorn Andersson <andersson@kernel.org>,
@@ -72,15 +73,16 @@ Cc: Johan Hovold <johan@kernel.org>,
 	linux-arm-msm@vger.kernel.org,
 	linux-phy@lists.infradead.org,
 	devicetree@vger.kernel.org
-Subject: [PATCH v9 0/4] phy: qcom-qmp-ufs: add symbol clocks support
-Date: Wed, 23 Nov 2022 12:44:39 +0200
-Message-Id: <20221123104443.3415267-1-dmitry.baryshkov@linaro.org>
+Subject: [PATCH v9 2/4] phy: qcom-qmp-ufs: provide symbol clocks
+Date: Wed, 23 Nov 2022 12:44:41 +0200
+Message-Id: <20221123104443.3415267-3-dmitry.baryshkov@linaro.org>
 X-Mailer: git-send-email 2.35.1
+In-Reply-To: <20221123104443.3415267-1-dmitry.baryshkov@linaro.org>
+References: <20221123104443.3415267-1-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221123_024447_529466_0E7607D4 
-X-CRM114-Status: UNSURE (   9.71  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20221123_024447_813322_AF024C5F 
+X-CRM114-Status: GOOD (  10.67  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,66 +99,90 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Register UFS symbol clocks in the Qualcomm QMP PHY driver. Some of the
-platforms (msm8996, sc7280, sm8350/sm8450) expect them to be defined (to
-be used as GCC clock parents).
+Register three UFS symbol clocks (ufs_rx_symbol_0_clk_src,
+ufs_rx_symbol_1_clk_src ufs_tx_symbol_0_clk_src). Register OF clock
+provider to let other devices link these clocks through the DT.
 
-Changes since v8:
-- Send proper patchset this time.
+Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+---
+ drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 57 +++++++++++++++++++++++++
+ 1 file changed, 57 insertions(+)
 
-Changes since v7:
-- Rebased on top of phy/next
-- Renamed the clock registration function (Johan)
-- Dropped rogue qcom_qmp_ufs_ops (Johan)
-- Fixed the comment following Johan's suggestion.
-
-Changes since v6:
-- Added bindings change (Johan, thanks for the reminder)
-- Added corresponding dts changes for msm8996 and sm8350/sm8450.
-
-Changes since v5:
-- Rebased on top of phy/next
-
-Changes since v4:
-- Rebased, dropping merged clk patches
-- Fixed whitespace errors
-- Added linebreaks to fit into 100 chars limit
-
-Changes since v3:
-- Rewrote asm9260 clk driver to fix the TODO item by using parent index
-  rather than calling of_clk_get_parent_name().
-
-Changes since v2:
-- Added error handling to phy_symbols_clk_register() (requested by
-  Johan).
-
-Changes since v1:
-- Added a macro used by clk-asm9260, so that the clk-fixed-rate changes
-  do not affect the driver
-- Changed registered clock names to be unique (as e.g. SC8280XP will
-  have two UFS PHYs).
-
-Dmitry Baryshkov (4):
-  dt-bindings: phy: qcom,*-qmp-ufs-phy: add clock-cells property
-  phy: qcom-qmp-ufs: provide symbol clocks
-  arm64: dts: qcom: sm8450: fix gcc clocks order to follow the schema
-  arm64: dts: qcom: use UFS symbol clocks provided by PHY
-
-
-Dmitry Baryshkov (4):
-  dt-bindings: phy: qcom,*-qmp-ufs-phy: add clock-cells property
-  phy: qcom-qmp-ufs: provide symbol clocks
-  arm64: dts: qcom: sm8450: fix gcc clocks order to follow the schema
-  arm64: dts: qcom: use UFS symbol clocks provided by PHY
-
- .../phy/qcom,msm8996-qmp-ufs-phy.yaml         |  3 +
- .../phy/qcom,sc8280xp-qmp-ufs-phy.yaml        |  3 +
- arch/arm64/boot/dts/qcom/msm8996.dtsi         |  5 +-
- arch/arm64/boot/dts/qcom/sm8350.dtsi          | 25 ++------
- arch/arm64/boot/dts/qcom/sm8450.dtsi          | 15 ++++-
- drivers/phy/qualcomm/phy-qcom-qmp-ufs.c       | 57 +++++++++++++++++++
- 6 files changed, 84 insertions(+), 24 deletions(-)
-
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+index 189103d1bd18..ce50eabccb9d 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+@@ -1023,6 +1023,59 @@ static int qmp_ufs_clk_init(struct qmp_ufs *qmp)
+ 	return devm_clk_bulk_get(dev, num, qmp->clks);
+ }
+ 
++static void qmp_ufs_clk_release_provider(void *res)
++{
++	of_clk_del_provider(res);
++}
++
++#define UFS_SYMBOL_CLOCKS 3
++
++static int qmp_ufs_register_clocks(struct qmp_ufs *qmp, struct device_node *np)
++{
++	struct clk_hw_onecell_data *clk_data;
++	struct clk_hw *hw;
++	char name[64];
++	int ret;
++
++	clk_data = devm_kzalloc(qmp->dev,
++				struct_size(clk_data, hws, UFS_SYMBOL_CLOCKS),
++				GFP_KERNEL);
++	if (!clk_data)
++		return -ENOMEM;
++
++	clk_data->num = UFS_SYMBOL_CLOCKS;
++
++	snprintf(name, sizeof(name), "%s::rx_symbol_0", dev_name(qmp->dev));
++	hw = devm_clk_hw_register_fixed_rate(qmp->dev, name, NULL, 0, 0);
++	if (IS_ERR(hw))
++		return PTR_ERR(hw);
++
++	clk_data->hws[0] = hw;
++
++	snprintf(name, sizeof(name), "%s::rx_symbol_1", dev_name(qmp->dev));
++	hw = devm_clk_hw_register_fixed_rate(qmp->dev, name, NULL, 0, 0);
++	if (IS_ERR(hw))
++		return PTR_ERR(hw);
++
++	clk_data->hws[1] = hw;
++
++	snprintf(name, sizeof(name), "%s::tx_symbol_0", dev_name(qmp->dev));
++	hw = devm_clk_hw_register_fixed_rate(qmp->dev, name, NULL, 0, 0);
++	if (IS_ERR(hw))
++		return PTR_ERR(hw);
++
++	clk_data->hws[2] = hw;
++
++	ret = of_clk_add_hw_provider(np, of_clk_hw_onecell_get, clk_data);
++	if (ret)
++		return ret;
++
++	/*
++	 * Roll a devm action because the clock provider can be a child node.
++	 */
++	return devm_add_action_or_reset(qmp->dev, qmp_ufs_clk_release_provider, np);
++}
++
+ static int qmp_ufs_parse_dt_legacy(struct qmp_ufs *qmp, struct device_node *np)
+ {
+ 	struct platform_device *pdev = to_platform_device(qmp->dev);
+@@ -1135,6 +1188,10 @@ static int qmp_ufs_probe(struct platform_device *pdev)
+ 	if (ret)
+ 		goto err_node_put;
+ 
++	ret = qmp_ufs_register_clocks(qmp, np);
++	if (ret)
++		goto err_node_put;
++
+ 	qmp->phy = devm_phy_create(dev, np, &qcom_qmp_ufs_phy_ops);
+ 	if (IS_ERR(qmp->phy)) {
+ 		ret = PTR_ERR(qmp->phy);
 -- 
 2.35.1
 
