@@ -4,62 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0CD37C4332F
-	for <linux-phy@archiver.kernel.org>; Wed, 23 Nov 2022 07:49:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 78F09C4332F
+	for <linux-phy@archiver.kernel.org>; Wed, 23 Nov 2022 07:49:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bITmYtL460pV5U6V1QStm791H709A9e7UlTfexBfVOM=; b=peS+31rLHY9i+V
-	HALKf4jwiolcjfdgObbWZN6pkKvwMeaj5cz4UUSvoeuOjwzCjh0nz5HS/mHxcP11ErC1gmNMdP+LO
-	ZapWYoRni+qsi2Bmpr1+xAuuvB4zQhIkczJUD3yHib6hQeROiU/AmmDoAu1FQ72pHvtWnTrkgRvCP
-	2jPpRAECtMcLs+eGuo6NhsaQoaaBI1zWMI8DQxP9Xk6rbiFacxxI/WazDUF4sho8hMQkkioFOKN5q
-	474tsvAFLKPNxwxuNFtLxdpao0CxadhR7O5NRMGoftWHKjV1zAupObrDHpHOK+VO/BGgZRV8c7vJM
-	b25RU0JVloF7irNAeYyA==;
+	List-Owner; bh=3/FxNtSSYH8g1btPRNSSMzigUajCw/9EZf35MQA2qAM=; b=bgp/fdqGr+lV3h
+	V5PXwf4FvqcKHYZKQiOvdw52bRp4/Rf7GQNi+f6Zhc0DRmF0WhrpFwIM8PyhzUr8Z2EwkB2caKKxV
+	ggV+4d6h0yp03tBWIDgK3hTmye4lKQD+E6T9P+k5djLSZIuYduUhJR2I/bQ0YFeu0D3GFYIY3uYYS
+	hyI7VAq1ivraUleewsMc82PgdDzVDB/p0kPVZCUTw8r4qGdLSAGNuQv/Hwf5WSpixTPKacy7hPM8B
+	UwKl5oOyRHHVXAjgHLn57gONdPPyDx8wKIASqH8Awni6cYCxURmvluuayeRSyx1EjTyLvtZDoTK5I
+	tDiHS49huIVvCqkWpfxQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oxkVD-00FJDN-DV; Wed, 23 Nov 2022 07:49:03 +0000
-Received: from mail-pf1-x42a.google.com ([2607:f8b0:4864:20::42a])
+	id 1oxkVJ-00FJGN-Tc; Wed, 23 Nov 2022 07:49:09 +0000
+Received: from mail-pj1-x102c.google.com ([2607:f8b0:4864:20::102c])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oxkVA-00FJBN-AF
-	for linux-phy@lists.infradead.org; Wed, 23 Nov 2022 07:49:01 +0000
-Received: by mail-pf1-x42a.google.com with SMTP id w129so243282pfb.5
-        for <linux-phy@lists.infradead.org>; Tue, 22 Nov 2022 23:49:00 -0800 (PST)
+	id 1oxkVH-00FJEN-2i
+	for linux-phy@lists.infradead.org; Wed, 23 Nov 2022 07:49:08 +0000
+Received: by mail-pj1-x102c.google.com with SMTP id o5-20020a17090a678500b00218cd5a21c9so1118302pjj.4
+        for <linux-phy@lists.infradead.org>; Tue, 22 Nov 2022 23:49:06 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=17DUm1BHWO+9+pCruDSwXwFA2DWaV0LvIvFJmkLFp/8=;
-        b=szHgLObizdRjU8Uhq446KGApvra49ApA5BIcru3Ey/6Do2T56DSsWvR5g9jLZHc476
-         MSlgWT8MIf8p+f/sxml/uIYI/OfERwdOxx5UrTrYqsRwWRZFHtuRDyZJ5Rx4UxQu9KFi
-         bHD+ee5c55d9SFNG5Pwp6XrqCpbVMI7Noo/UYKv4oy6hdO4XzjAQT10xIo8VNGpS1lk0
-         Z20HdS4+82s4XqLdrE2uV7dVCOiPbh7w+y4ldF3k1iYZtAtLx40Dsl+kKesa4AdfKKoU
-         pHw3S/F4iNp6nK3l1atD4eXQ9Qt72dI6wxGZlj7nTc6si+4kweYwgd/xG8XerHXUsBmF
-         dhZA==
+        bh=lZ+MoCrzv+gfQQlMeW5WbAnmXRNL0HTRmdnVMxPl0cY=;
+        b=rTVDZnzCbprEOjWhm+OWYfVd3SVRZhCSkGhAb8ZFiWFAeIq8pMUGmVrS1DV0RCTXz4
+         RtvpSBrlsnnWjpUMod2BPbot9BTJ+fSHYSU5Gj2CTBsIss4fTozJfFcMU32rYErsCJeI
+         JxANAljaFOM8fe4KPlHmCPaJ2G+XP7IDfOyp/TXWEgO9OtobP8RmOBRHznIaDFYQ2zCO
+         bZ1XXLB2c0XDOh3o1H8w0qGReU5YYqlQvLVUXgEPPH01qpcWxITAhYt6iwijrg7ALIHl
+         s9vnUys5X2DW6GwJwbkveHNxwbPwKUQhV6OSKF5V098puOuEVHiAcO6tqUA5PcowdSNO
+         BQxg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=17DUm1BHWO+9+pCruDSwXwFA2DWaV0LvIvFJmkLFp/8=;
-        b=dGZyjT2hOCMWIOgsMQrNJcOjy2IrmPqfhP8DLW2IRk9ChygRP4Nk60MU1829DKvY5p
-         cEPe+RXEG+vsPYyENIcxTMws4zWB9wgF3UPztdHVzBiUbGLMA5Psc2d48GEtsBc5eU2u
-         Xdd9+xE8YoCodytpQ9BOb6YiC3dfL8aURyti3S7HxBcJJbE+dusbo5ExWRQ4b/vkXML7
-         HmyCSSMLK2Lr+PYcW30lN9jqTNvg4w6iCsfgjjam4aL2hTAjCT4K0nLH7DeOboVTwHvk
-         G/WSMIB5KhxNB9j1XRYcGR2UGMitQwvkTNceYELq8ZZ5cmP2X6ih7ziN7Evh4FEmOEEO
-         TqLQ==
-X-Gm-Message-State: ANoB5plvVOFn50SSB8EgV57w76IttlY3tCcST6FVxksKJXWsKDzGwF0q
-	wRxNQbDcdKYQmceWP26LvZ83
-X-Google-Smtp-Source: AA0mqf5p/xJXOPvTRxbeUxcJCUOhwd51+9yIUCWj0RA8EwvAT98+ugBHbeaX8uInPuYuqUPJ+lVyfQ==
-X-Received: by 2002:a63:5007:0:b0:45f:beda:4116 with SMTP id e7-20020a635007000000b0045fbeda4116mr8165671pgb.618.1669189739616;
-        Tue, 22 Nov 2022 23:48:59 -0800 (PST)
+        bh=lZ+MoCrzv+gfQQlMeW5WbAnmXRNL0HTRmdnVMxPl0cY=;
+        b=o1dRgoC2YYr0lL8buNQKE0c1wjwe+H47XmOHRvV+o5Fc+LvtwTam1wHnuHpqJwp0Pw
+         Z2YjchLTOhsL5kkEro8+h1A0N/oXw01PNKu44RNPHzrfX997//zUBSXRWCTmsE5Qurt+
+         9l+oZT0qQ+freLxmktZdC6xthVc7oCA0MG35JCQNV0b92EIt1NzJE9ByhS6U7HPJ+dXP
+         Dm+ikGlrsBz6WS5pYZyKfH+LaFocUQhZCq3CeZVYL54+q7mUPakEPtFgHsReLtT594Z0
+         aZZlsJ+4OJirK1XixYPj3qqaI0sXY5svw6CA4O14KI5UWhEJu/V769iIM3MeMmx1P9TM
+         wRSg==
+X-Gm-Message-State: ANoB5pmyRpFF8DebqCefsBjrkRevKgtqKj1yIxP2emAmc9U52Cu+m9l5
+	Rj97CbNJQOhTi3/5MopkwHUo
+X-Google-Smtp-Source: AA0mqf7t739TpdcQ3ko/yzBAkk8CJjjbrbWW5NFxLKP3l+rmMq+NCR2N2qvUCyO4zu8PHoRl++US/g==
+X-Received: by 2002:a17:90a:5918:b0:213:df25:7e8a with SMTP id k24-20020a17090a591800b00213df257e8amr36106769pji.154.1669189745683;
+        Tue, 22 Nov 2022 23:49:05 -0800 (PST)
 Received: from localhost.localdomain ([117.202.191.0])
-        by smtp.gmail.com with ESMTPSA id s16-20020a170902a51000b001869f2120a5sm13334059plq.34.2022.11.22.23.48.53
+        by smtp.gmail.com with ESMTPSA id s16-20020a170902a51000b001869f2120a5sm13334059plq.34.2022.11.22.23.49.00
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 22 Nov 2022 23:48:58 -0800 (PST)
+        Tue, 22 Nov 2022 23:49:04 -0800 (PST)
 From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 To: martin.petersen@oracle.com,
 	jejb@linux.ibm.com,
@@ -75,16 +75,16 @@ Cc: quic_cang@quicinc.com,
 	ahalaney@redhat.com,
 	abel.vesa@linaro.org,
 	Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Subject: [PATCH v3 04/20] phy: qcom-qmp-ufs: Add support for configuring PHY in HS Series B mode
-Date: Wed, 23 Nov 2022 13:18:10 +0530
-Message-Id: <20221123074826.95369-5-manivannan.sadhasivam@linaro.org>
+Subject: [PATCH v3 05/20] phy: qcom-qmp-ufs: Add support for configuring PHY in HS G4 mode
+Date: Wed, 23 Nov 2022 13:18:11 +0530
+Message-Id: <20221123074826.95369-6-manivannan.sadhasivam@linaro.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20221123074826.95369-1-manivannan.sadhasivam@linaro.org>
 References: <20221123074826.95369-1-manivannan.sadhasivam@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221122_234900_377746_00646602 
-X-CRM114-Status: GOOD (  15.35  )
+X-CRM114-CacheID: sfid-20221122_234907_139806_0D5DB7E1 
+X-CRM114-Status: GOOD (  13.13  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,88 +101,66 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add separate tables_hs_b instance to allow the PHY driver to configure the
-PHY in HS Series B mode. The individual SoC configs need to supply the
-serdes register setting in tables_hs_b and the UFS driver can request the
-Series B mode by calling phy_set_mode() with mode set to PHY_MODE_UFS_HS_B.
+Add separate tables_hs_g4 instance to allow the PHY driver to configure the
+PHY in HS G4 mode. The individual SoC configs need to supply the Rx, Tx and
+PCS register setting in tables_hs_g4 and the UFS driver can request the
+Hs G4 mode by calling phy_set_mode_ext() with submode set to UFS_HS_G4.
 
 Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 18 ++++++++++++++++++
- 1 file changed, 18 insertions(+)
+ drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 9 +++++++++
+ 1 file changed, 9 insertions(+)
 
 diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-index 3b7b36e32f5d..694b1d6c1f9c 100644
+index 694b1d6c1f9c..1b6e76bf82e5 100644
 --- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
 +++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-@@ -20,6 +20,8 @@
- #include <linux/reset.h>
- #include <linux/slab.h>
- 
-+#include <ufs/unipro.h>
-+
- #include <dt-bindings/phy/phy.h>
- 
- #include "phy-qcom-qmp.h"
-@@ -549,6 +551,8 @@ struct qmp_phy_cfg {
- 
- 	/* Main init sequence for PHY blocks - serdes, tx, rx, pcs */
+@@ -553,6 +553,8 @@ struct qmp_phy_cfg {
  	const struct qmp_phy_cfg_tbls tbls;
-+	/* Additional sequence for HS Series B */
-+	const struct qmp_phy_cfg_tbls tbls_hs_b;
+ 	/* Additional sequence for HS Series B */
+ 	const struct qmp_phy_cfg_tbls tbls_hs_b;
++	/* Additional sequence for HS G4 */
++	const struct qmp_phy_cfg_tbls tbls_hs_g4;
  
  	/* clock ids to be requested */
  	const char * const *clk_list;
-@@ -582,6 +586,7 @@ struct qmp_phy_cfg {
-  * @rx2: iomapped memory space for second lane's rx (in dual lane PHYs)
+@@ -587,6 +589,7 @@ struct qmp_phy_cfg {
   * @pcs_misc: iomapped memory space for lane's pcs_misc
   * @qmp: QMP phy to which this lane belongs
-+ * @mode: PHY mode configured by the UFS driver
+  * @mode: PHY mode configured by the UFS driver
++ * @submode: PHY submode configured by the UFS driver
   */
  struct qmp_phy {
  	struct phy *phy;
-@@ -594,6 +599,7 @@ struct qmp_phy {
- 	void __iomem *rx2;
+@@ -600,6 +603,7 @@ struct qmp_phy {
  	void __iomem *pcs_misc;
  	struct qcom_qmp *qmp;
-+	u32 mode;
+ 	u32 mode;
++	u32 submode;
  };
  
  /**
-@@ -885,6 +891,8 @@ static void qmp_ufs_pcs_init(struct qmp_phy *qphy, const struct qmp_phy_cfg_tbls
- static void qmp_ufs_init_registers(struct qmp_phy *qphy, const struct qmp_phy_cfg *cfg)
- {
- 	qmp_ufs_serdes_init(qphy, &cfg->tbls);
-+	if (qphy->mode == PHY_MODE_UFS_HS_B)
-+		qmp_ufs_serdes_init(qphy, &cfg->tbls_hs_b);
+@@ -894,7 +898,11 @@ static void qmp_ufs_init_registers(struct qmp_phy *qphy, const struct qmp_phy_cf
+ 	if (qphy->mode == PHY_MODE_UFS_HS_B)
+ 		qmp_ufs_serdes_init(qphy, &cfg->tbls_hs_b);
  	qmp_ufs_lanes_init(qphy, &cfg->tbls);
++	if (qphy->submode == UFS_HS_G4)
++		qmp_ufs_lanes_init(qphy, &cfg->tbls_hs_g4);
  	qmp_ufs_pcs_init(qphy, &cfg->tbls);
- }
-@@ -1073,6 +1081,15 @@ static int qmp_ufs_disable(struct phy *phy)
- 	return qmp_ufs_exit(phy);
++	if (qphy->submode == UFS_HS_G4)
++		qmp_ufs_pcs_init(qphy, &cfg->tbls_hs_g4);
  }
  
-+static int qmp_ufs_set_mode(struct phy *phy, enum phy_mode mode, int submode)
-+{
-+	struct qmp_phy *qphy = phy_get_drvdata(phy);
-+
-+	qphy->mode = mode;
-+
-+	return 0;
-+}
-+
- static int qmp_ufs_vreg_init(struct device *dev, const struct qmp_phy_cfg *cfg)
- {
- 	struct qcom_qmp *qmp = dev_get_drvdata(dev);
-@@ -1108,6 +1125,7 @@ static int qmp_ufs_clk_init(struct device *dev, const struct qmp_phy_cfg *cfg)
- static const struct phy_ops qcom_qmp_ufs_ops = {
- 	.power_on	= qmp_ufs_enable,
- 	.power_off	= qmp_ufs_disable,
-+	.set_mode	= qmp_ufs_set_mode,
- 	.owner		= THIS_MODULE,
- };
+ static int qmp_ufs_com_init(struct qmp_phy *qphy)
+@@ -1086,6 +1094,7 @@ static int qmp_ufs_set_mode(struct phy *phy, enum phy_mode mode, int submode)
+ 	struct qmp_phy *qphy = phy_get_drvdata(phy);
  
+ 	qphy->mode = mode;
++	qphy->submode = submode;
+ 
+ 	return 0;
+ }
 -- 
 2.25.1
 
