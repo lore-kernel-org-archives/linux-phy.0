@@ -4,82 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6E21DC433FE
-	for <linux-phy@archiver.kernel.org>; Wed, 23 Nov 2022 08:54:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3BD60C4332F
+	for <linux-phy@archiver.kernel.org>; Wed, 23 Nov 2022 10:42:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bh3mBXjVcp3Nj2VmaYV4CMLDfUBoRdz1cLMgn4B8g8o=; b=AsFvcD6mlXUJl3
-	OMhnZaLmVhP1B6C0QJssSPLyPTr7S0QU0lCQZfp5N7xDoU8MjoFFNCNlFRQGJYsJo2jmNvhP0XEao
-	mOW+7A95lfFgAmgBDj0Hb6OlaXAEvxgFqxwMha11bkyfPWn7pH732R6A+yP61FOZYwa08mHwoJMGq
-	R2e4/Afm4KWSIy19mICKdgwUSbf6cI0hdhpy/81eLDyruGBRoEY16+yt8xkth5nFQRR6Dn758G2UC
-	qwaY59KMnAIU3nyb985MdHJcYYeBNj4m+JId3DCw21xDLrdktFh2WjxsZDgCOzXJoXD7vAtc4P6Is
-	30HQuL5FD9cpv3dtrXPQ==;
+	List-Owner; bh=LVFVEsa8xuIx0n5I2bUVawPf/rrVEATIISli1NtjcNg=; b=QZTlRdo6/uAsFb
+	lFqFYnhm8CXQ5FFLcDWS+1fdWQYHT7A50LbxI4TivdKzDt2umc5SQnkKOQi+T8YGrnMsB0T2l9FZ1
+	DsSt/A4ofFGaF5MnRmiN1w9sGZ8glgusgEaEeCnvQ7LJ52qy/+JwqBMh9DlaUeX9bwo5AY07xYBST
+	gFbObhZoeeuqeiOPsQ5JpX6nYjbBOQQzncIadydEH5dWzaVc0yfumtaqMFpQy+e08/qaN19r6OscF
+	eja6WQQ3mdxtgAmmXLpPLKh3XlkhldhEkej4yCjbW7nm9NzbobrgYnjVWsqYRkMHJhReNhlrlnGch
+	bnTzrAFM9g+U+b92gSTw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oxlWf-00Fi8v-S5; Wed, 23 Nov 2022 08:54:37 +0000
-Received: from mail-lj1-x233.google.com ([2a00:1450:4864:20::233])
+	id 1oxnCx-00GPsj-K3; Wed, 23 Nov 2022 10:42:23 +0000
+Received: from mail-lj1-x22f.google.com ([2a00:1450:4864:20::22f])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oxlWe-00Fi7X-2K
-	for linux-phy@lists.infradead.org; Wed, 23 Nov 2022 08:54:37 +0000
-Received: by mail-lj1-x233.google.com with SMTP id z4so3726346ljq.6
-        for <linux-phy@lists.infradead.org>; Wed, 23 Nov 2022 00:54:35 -0800 (PST)
+	id 1oxnCu-00GPpl-J8
+	for linux-phy@lists.infradead.org; Wed, 23 Nov 2022 10:42:22 +0000
+Received: by mail-lj1-x22f.google.com with SMTP id z24so20923783ljn.4
+        for <linux-phy@lists.infradead.org>; Wed, 23 Nov 2022 02:42:19 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=PNci12Bf0vBYmKC3Nyo1ySusK0Po552Ewnk3CKCFgiM=;
-        b=uFzBBFc2i+/cs2eokxyz9+zPpobzbSA5PttHyEmsE5O8m9d0ffaSHLkggJctyfOHvC
-         GaPb456kzfgPTkarLmQq0yq4EJflAF87ejknNDXPUDrCKpRfra4nGdRn/MkhxB14eNZ1
-         ClWptRHX/l2rYgeWkhXxPa41aBgHHxWm+g0rcTLfvkcIZu9UiUx3KWtdGirv3IzK3P1C
-         d+kcfk6eZbP4gUupa5jfz+RXFrQzQpjEljUS+lAsH+ZJEm8dQn3+s9msHQNZFPQvI+wn
-         ZuZqRPpgb4B7j4uDvSGrfDyrkJPNLSSgW9D6IbIviLL1NGiCVNKXuNGMJ5D6ATxPIAzy
-         wkWg==
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=Bda09macuyK5fYNXnbLx3WrcVV5Sb23aKOiNbSvBd8U=;
+        b=bOBm+hpF6D9fAUC6maQ8j1uwXXeEOzWC68rFDd5Elim232VcyJg+ZZb3eWhdLVMDE7
+         /po3+jQ4o9/PdzTUWjzUOFrWza5CnEuCtgcj0An4C+x6juAENvO8lH0eJ66iEuk0AjPY
+         WjftM1dVUeGXn0UsnLY0+0zRMwzcq35PnyojqudM3BKxfOdY3hJLozxJ34mfLZLyuB8Q
+         xYYRCW8Fflvs/23a9EcCqzHh3RDrnsP6XsAEfy/ey8FMLz+pTBH1kFrkcNma7YXaBV7m
+         TwD1ywvJrGzQhA4DYJMK3WP1XtGMUhx6ZdZAT41Fkhvja6uoLYdWYqWN58aVd2o0kta8
+         qVYQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=PNci12Bf0vBYmKC3Nyo1ySusK0Po552Ewnk3CKCFgiM=;
-        b=URR/CDxfgQsoll0WCTRszZoLCltGK+0TaBxCZnLflLq4pXn4lXuKhmZtNKg5pmfVBO
-         0eQZ7gfXjE5b29GoYtmHvs9Kz8X0eH9Xg5iIVn9A1McVuFQAVSqrXhHCtTaUCfmAG7EM
-         0Z49ySvx6OCtFqTdSy1cQSJGjtOrPet0PqSF69Yh/vHHasy89SmYtFEhhIWN47G5aD5b
-         6lOwbFvbLxY6Hn35aUpqubo73je61bDpBKIGh+KTQ9Kk5/D14E3OhFCt9pw0jrqv5WC+
-         ZhTSerlVb4V5ZtoZzi56wsG0kafik9xI5Q4Puu+RaGTBDQ5pN3KhiH4vdCegZCRu+Afd
-         x9+A==
-X-Gm-Message-State: ANoB5plbgUyrzzQiniNs0doyinF6NATpdZM3jMtXkchQgOzKVQtDkPGA
-	qejTon8UtVWdEgwYvwoso3LVBQ==
-X-Google-Smtp-Source: AA0mqf7zw0pr/I8AJsrt0bkdgbbMNDxfTG/Inc4P8oO0f9B7+bwl+WZbKu89sNkMdVirsGZ8SjdSMA==
-X-Received: by 2002:a2e:a80a:0:b0:277:2600:9cc0 with SMTP id l10-20020a2ea80a000000b0027726009cc0mr8668597ljq.437.1669193674524;
-        Wed, 23 Nov 2022 00:54:34 -0800 (PST)
-Received: from [192.168.0.20] (088156142067.dynamic-2-waw-k-3-2-0.vectranet.pl. [88.156.142.67])
-        by smtp.gmail.com with ESMTPSA id t17-20020a195f11000000b004994117b0fdsm2812854lfb.281.2022.11.23.00.54.33
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 23 Nov 2022 00:54:33 -0800 (PST)
-Message-ID: <40a0eff9-607d-1143-3835-378079f38c0f@linaro.org>
-Date: Wed, 23 Nov 2022 09:54:32 +0100
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=Bda09macuyK5fYNXnbLx3WrcVV5Sb23aKOiNbSvBd8U=;
+        b=F6M2ccQxflir55sfsNnWfELRTbQ71SAhoRpHKxUouy8Rf3RzdTnUGPueTy/DJTMQQD
+         23x9uPUmwVDtOd22edJteT/x7U0zHHUK9D13koBSLKmJ+Lttu+CxsC//Pip+WxeME72u
+         GtPbfKiuGefVuSwWwAr8e3w3P6yAVLzF8n/nWyp6kaaVTwb2Erm5mACtjpSolyzYF0Re
+         78TI67D9NqdUhmQ4ADLc8Kydpx8mOokcuQIBrCTzBVMiBqqpZ2ddvHYhpVHAXD2gaPGH
+         jXkIXjbyFeI72VNer1AvOQ695bA23CesArspA3al3KrRTaUKcL36TmSqrkYZA9UD/Rdv
+         dTGA==
+X-Gm-Message-State: ANoB5pmW7qVjBW0d6xccByPiXbzvV/P+9JlIhyl2tFLFX73G5t55V+ch
+	AMhr6v31pKQMbtfI8W6vsXNRgw==
+X-Google-Smtp-Source: AA0mqf64Owtbu7ESJT1RZlk0iUTM2xUoDEQI5h/X43/zXe5olzOeKuAa4Hj2m4Qvs+MIwtZMJY4TJA==
+X-Received: by 2002:a05:651c:2db:b0:279:13e4:b790 with SMTP id f27-20020a05651c02db00b0027913e4b790mr8874615ljo.154.1669200138561;
+        Wed, 23 Nov 2022 02:42:18 -0800 (PST)
+Received: from eriador.lumag.spb.ru (dzpbg0ftyyyyyyyyyyyyt-3.rev.dnainternet.fi. [2001:14ba:a302:5f12::1])
+        by smtp.gmail.com with ESMTPSA id n5-20020a05651203e500b00498f570aef2sm2862908lfq.209.2022.11.23.02.42.17
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 23 Nov 2022 02:42:17 -0800 (PST)
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+To: Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@somainline.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
+Cc: Johan Hovold <johan@kernel.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Subject: [PATCH v8 3/4] dt-bindings: phy: qcom,*-qmp-ufs-phy: add clock-cells property
+Date: Wed, 23 Nov 2022 12:42:14 +0200
+Message-Id: <20221123104215.3414528-4-dmitry.baryshkov@linaro.org>
+X-Mailer: git-send-email 2.35.1
+In-Reply-To: <20221123104215.3414528-1-dmitry.baryshkov@linaro.org>
+References: <20221123104215.3414528-1-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.5.0
-Subject: Re: [PATCH v2 1/2] dt-bindings: phy-j721e-wiz: add j721s2 compatible
- string
-Content-Language: en-US
-To: Matt Ranostay <mranostay@ti.com>, r-gunasekaran@ti.com,
- rogerq@kernel.org, vkoul@kernel.org, robh+dt@kernel.org,
- krzysztof.kozlowski+dt@linaro.org, vigneshr@ti.com
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-References: <20221123032413.1193961-1-mranostay@ti.com>
- <20221123032413.1193961-2-mranostay@ti.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20221123032413.1193961-2-mranostay@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221123_005436_182247_1D4468B0 
-X-CRM114-Status: UNSURE (   6.15  )
+X-CRM114-CacheID: sfid-20221123_024220_644984_9E78C7F7 
+X-CRM114-Status: UNSURE (   8.07  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -97,18 +101,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 23/11/2022 04:24, Matt Ranostay wrote:
-> Add ti,j721s2-wiz-10g compatible string to binding documentation.
-> 
-> Signed-off-by: Matt Ranostay <mranostay@ti.com>
-> ---
->  Documentation/devicetree/bindings/phy/ti,phy-j721e-wiz.yam
-
+Add #clock-cells property to the QMP UFS PHYs to describe them as clock
+providers. The QMP PHY provides rx and tx symbol clocks for the GCC.
 
 Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+---
+ .../devicetree/bindings/phy/qcom,msm8996-qmp-ufs-phy.yaml      | 3 +++
+ .../devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml     | 3 +++
+ 2 files changed, 6 insertions(+)
 
-Best regards,
-Krzysztof
+diff --git a/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-ufs-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-ufs-phy.yaml
+index be41acbd3b6c..80a5348dbfde 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-ufs-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-ufs-phy.yaml
+@@ -75,6 +75,9 @@ patternProperties:
+         minItems: 3
+         maxItems: 6
+ 
++      "#clock-cells":
++        const: 1
++
+       "#phy-cells":
+         const: 0
+ 
+diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
+index dde86a19f792..32ed1886fbae 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
+@@ -43,6 +43,9 @@ properties:
+ 
+   vdda-pll-supply: true
+ 
++  "#clock-cells":
++    const: 1
++
+   "#phy-cells":
+     const: 0
+ 
+-- 
+2.35.1
 
 
 -- 
