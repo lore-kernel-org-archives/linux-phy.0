@@ -4,84 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 520B7C4332F
-	for <linux-phy@archiver.kernel.org>; Thu, 24 Nov 2022 08:45:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6E872C4321E
+	for <linux-phy@archiver.kernel.org>; Thu, 24 Nov 2022 10:13:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NMSfFB/9KxCOoYotYtT1IGGuoHKdCMlVkVZ8i/AT95E=; b=eT0sI0OFePWag2
-	PsAYzFygbL+MPq1G9q1p5IPcDU0pqz1ioa9dhBmWxxneGc3wz1t8qrrc4a0T5tb1Kt7kBWRJU5psx
-	qQgNlFUq5RPnQf3PeFzUwLe9LRIyeSnKubokzkpbRcZEYt2UlRZ3JE/jHcTRPSUSwisZe3Fjqzuzm
-	+82XxKCl4R0hFMNcqMdFOy4ZbGs2Qcz5y01m7V9uhaEbXn21QcBhZZbpOpsl4677MhtOkKx8WFMEw
-	5byim8ZefMujRBG0alewCVJMRN5WUruLBxYTbKcUFDU8kucOoDqyMqgsalAjvBPNo7t2krMCZOBxX
-	VcYNAchVXmbcTQQ7bhbg==;
+	List-Owner; bh=NFeFrv72Kf1DpXHKUEBHz9rVvyXmEKCnGKaZx5H9z2k=; b=uYOCas8iTyyKsG
+	0CIUd3gdCK/BEG0lTuOUlygXuj3R5p8M3k94cwWKg33dfX3p9uIyE2ihcW+GG2QPj83mREfDx1GuX
+	WHGywpygkJ8Hb/4Ehse84BPKsRN/ZhYuRAmVNzfiozNYlIiELgtxz6E1IUKoZVwIJHQTuf4j+GaVp
+	ZSgT3zux/UYxETRMPll0TWmcB1nC54FQeCg1a2elyUG4O0Adlr+2024vVixmFloSAGzwd5gKH9N0D
+	BVg1XtOcRZoiJRcHeh8/+pM/+6GnBJd8sS++rwluPHIp3QjBhivUnGVevpUB2jbbO5NjimvIPU5ql
+	BQszR5T39EE1mRaH77yA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oy7rL-006fMM-N4; Thu, 24 Nov 2022 08:45:27 +0000
-Received: from mail-lj1-x236.google.com ([2a00:1450:4864:20::236])
+	id 1oy9EN-007Whb-Nu; Thu, 24 Nov 2022 10:13:19 +0000
+Received: from mail-pj1-x102f.google.com ([2607:f8b0:4864:20::102f])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oy7rJ-006fI3-No
-	for linux-phy@lists.infradead.org; Thu, 24 Nov 2022 08:45:27 +0000
-Received: by mail-lj1-x236.google.com with SMTP id u2so1233886ljl.3
-        for <linux-phy@lists.infradead.org>; Thu, 24 Nov 2022 00:45:22 -0800 (PST)
+	id 1oy9EK-007Wer-RE
+	for linux-phy@lists.infradead.org; Thu, 24 Nov 2022 10:13:18 +0000
+Received: by mail-pj1-x102f.google.com with SMTP id e7-20020a17090a77c700b00216928a3917so4710231pjs.4
+        for <linux-phy@lists.infradead.org>; Thu, 24 Nov 2022 02:13:16 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=o+bou2Eqve5CvNCEe8A4y27WMBYElKaquLsQIo7P2JQ=;
-        b=Eqfk1RGF9j3RdprJYIXx7HGeIq9xPFflC0DBHFZv84z8rXJQ5/vglbRa3wWOGKWGIQ
-         gLftpjDA8F2d9p131D/taQD+L1ualWywLsR9jmFpVeUEmOyx3skcNVLbLGmxUv01Ccs1
-         h8hoaQCg3vx1YFG8Tv7hav6GCcfU3oehhr9h4Za3ef5AV/vCOoMBq1g36K8bi4XB0fMz
-         v5tqdMn4k68ROH2+hh2ygTIlS1j0bf0Y31Iv9IyMpkN5hK6rGEl5kftjMe56NRobUhlc
-         CY3p8z8pvDn+c0fA/4z7p97JFRmkc4RMljDdiyIZ86cIR8ax3Xoh4vis9omLr9B5CBQ9
-         KUSw==
+        h=in-reply-to:content-transfer-encoding:content-disposition
+         :mime-version:references:message-id:subject:cc:to:from:date:from:to
+         :cc:subject:date:message-id:reply-to;
+        bh=k2dr7Cgu4oJVGxGU1Y/2qFukYAZmH/+X4Fm9CRZLrY8=;
+        b=P9EOPeyXPx8GBJUYiq9uOyAn/qCWcWTGvL6Wha5DJLhTpCMmeXU8Qwr+VvfGYTryoM
+         0tUJDO5CfhLJ3URozTuKhk7INuvCw7+W74GbRlWy9SKKytlYp1sb0F9FzanRATTnkLyI
+         Yp53dXTE6HyC/L2c3UhFnhXXKUJiwP6/FINdzAf/0o9w+IoX9bJ90qSXgmlvZfhnPisN
+         FT8feH4EmP3pVlGqPUb2mgQRozoam3WpwGfb/nF/hr/ChS15K5bu0nbnkazVjdyLWhi8
+         Dv3WpK4QujOTOytec+yPzPzU14p2UnmmkE1JqnPzOVjjKDxWlvtvlKS79H2QlaSxb2b5
+         yOKQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
+        h=in-reply-to:content-transfer-encoding:content-disposition
+         :mime-version:references:message-id:subject:cc:to:from:date
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=o+bou2Eqve5CvNCEe8A4y27WMBYElKaquLsQIo7P2JQ=;
-        b=3TkGZTutFKRwXz3bKuietxxcx33JlZosNmGCPaLljhwYY4DGQexz1XKZCEFZic2gZV
-         gqqX9p9Du1xTB8BJiluFuIELo3qz8G/TH4iW+kbj+UkpE2YvuNNtVkqisC4Kj6HRILga
-         2CYocEoAVPhM5RneMVFgO1GDID0fi/YrDcZro9s3gKBtkI5o4H7zEPqHT5TCLu2ptCcT
-         85g+2JQmBK+l9A0+T0aMmIJ4eVyOkg0cb/jDWRzZHx4PUpU1y6yhqDcmlRHHLnlAFYQV
-         H3I3r0ZovOUyMnc6i8XUGojCJ8b2q4hxvtuut1SoeKO7D4AxWouockOkmz6kZwk1KTcQ
-         Voug==
-X-Gm-Message-State: ANoB5pkgYqt8yB/KDKripyR33tHORSTb7YETcALa3WyZ8Luybec6HuAO
-	N0sckS905vvxCkk+YYOEDlDE8w==
-X-Google-Smtp-Source: AA0mqf6Z3tWCtGpuP577dWMuvzhmVrpzGUmuDSeOU43vilip13LGn5V10NAdwcMHcLQV3aLfRXGe8Q==
-X-Received: by 2002:a05:651c:c89:b0:26f:bd61:ac4f with SMTP id bz9-20020a05651c0c8900b0026fbd61ac4fmr5219103ljb.396.1669279520992;
-        Thu, 24 Nov 2022 00:45:20 -0800 (PST)
-Received: from [192.168.0.20] (088156142067.dynamic-2-waw-k-3-2-0.vectranet.pl. [88.156.142.67])
-        by smtp.gmail.com with ESMTPSA id z8-20020a2e8848000000b0026b2094f6fcsm48669ljj.73.2022.11.24.00.45.19
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 24 Nov 2022 00:45:20 -0800 (PST)
-Message-ID: <0b203c11-851c-fd6c-faeb-e283b158f1c8@linaro.org>
-Date: Thu, 24 Nov 2022 09:45:19 +0100
+        bh=k2dr7Cgu4oJVGxGU1Y/2qFukYAZmH/+X4Fm9CRZLrY8=;
+        b=SC79G8goJn+rgr8yrqx5aGxYaO92eNKvAYs4xGiDs0EX6wl7n2lQ40a9hIyh2NghFF
+         1Kt11Mwq58S0Mydj9MQtbyi5mKcXYKRXPTHEfredO5yoMFd2osIDXaVAkZVYDRDKSy0e
+         XWGUCC0noMVZoJAUrF+n5Ey++smBlYtKQrPHcuuZsMAin/7NzgM/n2Ff9HXLPMMfRBZV
+         dEkpOGUY/GhIVU23SVdOBUmL1YdwVfJ7827duUpdpjgV5D/4ajudcIvL+2JTjafCiCzT
+         ZyEMoAuEBjlxzap+zCKyVS24LTjOjxUBbqrOSukV6tpi9y/jehA4elXEaACMM6sYSOFI
+         jyCA==
+X-Gm-Message-State: ANoB5pk5JCzmm7sxl0eMChpMw3CN1MIz3//TrzGGamux3PAuQ44TAErM
+	L0GQu1jwvualIuh79sg0fJ4t
+X-Google-Smtp-Source: AA0mqf4t6fAJ8A/JX49OHFGtob0Y2bkzouwdtsvSrPv9mEsKtqsl4IbjvZwzfzqw9F0zT26bCyhhsw==
+X-Received: by 2002:a17:90b:f04:b0:218:8ec2:a4e2 with SMTP id br4-20020a17090b0f0400b002188ec2a4e2mr27805083pjb.174.1669284796009;
+        Thu, 24 Nov 2022 02:13:16 -0800 (PST)
+Received: from thinkpad ([59.92.97.13])
+        by smtp.gmail.com with ESMTPSA id pl18-20020a17090b269200b00218f830c63esm842600pjb.1.2022.11.24.02.13.11
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 24 Nov 2022 02:13:14 -0800 (PST)
+Date: Thu, 24 Nov 2022 15:43:09 +0530
+From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+To: Eric Biggers <ebiggers@kernel.org>
+Cc: martin.petersen@oracle.com, jejb@linux.ibm.com, andersson@kernel.org,
+	vkoul@kernel.org, quic_cang@quicinc.com, quic_asutoshd@quicinc.com,
+	linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org, linux-scsi@vger.kernel.org,
+	dmitry.baryshkov@linaro.org, ahalaney@redhat.com,
+	abel.vesa@linaro.org
+Subject: Re: [PATCH v3 20/20] MAINTAINERS: Add myself as the maintainer for
+ Qcom UFS driver
+Message-ID: <20221124101309.GE5119@thinkpad>
+References: <20221123074826.95369-1-manivannan.sadhasivam@linaro.org>
+ <20221123074826.95369-21-manivannan.sadhasivam@linaro.org>
+ <Y35nBIIRmu3w9C1C@gmail.com>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.5.0
-Subject: Re: [PATCH 1/3] dt-bindings: PHY: P2U: Add PCIe lane margining
- support
-To: Manikanta Maddireddy <mmaddireddy@nvidia.com>, vkoul@kernel.org,
- kishon@kernel.org, krzysztof.kozlowski+dt@linaro.org,
- thierry.reding@gmail.com, jonathanh@nvidia.com, vidyas@nvidia.com
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-tegra@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-pci@vger.kernel.org, bhelgaas@google.com, lpieralisi@kernel.org,
- nkristam@nvidia.com
-References: <20221124083510.3008139-1-mmaddireddy@nvidia.com>
- <20221124083510.3008139-2-mmaddireddy@nvidia.com>
-Content-Language: en-US
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20221124083510.3008139-2-mmaddireddy@nvidia.com>
+Content-Disposition: inline
+In-Reply-To: <Y35nBIIRmu3w9C1C@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221124_004525_806934_08F421D1 
-X-CRM114-Status: GOOD (  14.61  )
+X-CRM114-CacheID: sfid-20221124_021316_946331_0E326C2A 
+X-CRM114-Status: GOOD (  16.71  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,87 +92,35 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 24/11/2022 09:35, Manikanta Maddireddy wrote:
-> Tegra234 supports PCIe lane margining. P2U HW acts as a relay to exchange
-
-typo: merging?
-
-> margin control data and margin status between PCIe controller and UPHY.
-
-Please use scripts/get_maintainers.pl to get a list of necessary people
-and lists to CC.  It might happen, that command when run on an older
-kernel, gives you outdated entries.  Therefore please be sure you base
-your patches on recent Linux kernel.
-
-
-> 
-> Signed-off-by: Manikanta Maddireddy <mmaddireddy@nvidia.com>
-> ---
->  .../bindings/phy/phy-tegra194-p2u.yaml        | 50 +++++++++++++++++++
->  1 file changed, 50 insertions(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/phy-tegra194-p2u.yaml b/Documentation/devicetree/bindings/phy/phy-tegra194-p2u.yaml
-> index 4dc5205d893b..0ba3f6a0b474 100644
-> --- a/Documentation/devicetree/bindings/phy/phy-tegra194-p2u.yaml
-> +++ b/Documentation/devicetree/bindings/phy/phy-tegra194-p2u.yaml
-> @@ -40,6 +40,51 @@ properties:
->    '#phy-cells':
->      const: 0
->  
-> +  interrupts:
-> +    items:
-> +      description: P2U interrupt for Gen4 lane margining functionality.
-
-typo: merging?
-
-> +
-> +  interrupt-names:
-> +    items:
-> +      - const: intr
-
-Drop entire property, not really useful.
-
-> +
-> +  nvidia,bpmp:
-> +    $ref: /schemas/types.yaml#/definitions/phandle-array
-> +    description: Must contain a pair of phandles to BPMP controller node followed by P2U ID.
-> +    items:
-> +      - items:
-> +          - description: phandle to BPMP controller node
-> +          - description: P2U instance ID
-> +            maximum: 24
-> +
-> +allOf:
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          contains:
-> +            enum:
-> +              - nvidia,tegra194-p2u
-> +    then:
-> +      required:
-> +        - reg
-> +        - reg-names
-> +        - '#phy-cells'
-
-That's not how it should be done. You have only two variants here, so
-add a "required:" block with above and only one if:then: clause for
-interrupts and nvidia,bpmp.
-
-Requiring reg/reg-names/phy-cells should be in separate patch with its
-own reasoning.
-
-
-Best regards,
-Krzysztof
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gV2VkLCBOb3YgMjMsIDIwMjIgYXQgMDY6MzE6MzJQTSArMDAwMCwgRXJpYyBCaWdnZXJzIHdy
+b3RlOgo+IE9uIFdlZCwgTm92IDIzLCAyMDIyIGF0IDAxOjE4OjI2UE0gKzA1MzAsIE1hbml2YW5u
+YW4gU2FkaGFzaXZhbSB3cm90ZToKPiA+IFFjb20gVUZTIGRyaXZlciBoYXMgYmVlbiBsZWZ0IHVu
+LW1haW50YWluZWQgdGlsbCBub3cuIEknZCBsaWtlIHRvIHN0ZXAKPiA+IHVwIHRvIG1haW50YWlu
+IHRoZSBkcml2ZXIgYW5kIGl0cyBiaW5kaW5nLgo+ID4gCj4gPiBTaWduZWQtb2ZmLWJ5OiBNYW5p
+dmFubmFuIFNhZGhhc2l2YW0gPG1hbml2YW5uYW4uc2FkaGFzaXZhbUBsaW5hcm8ub3JnPgo+ID4g
+LS0tCj4gPiAgTUFJTlRBSU5FUlMgfCA4ICsrKysrKysrCj4gPiAgMSBmaWxlIGNoYW5nZWQsIDgg
+aW5zZXJ0aW9ucygrKQo+ID4gCj4gPiBkaWZmIC0tZ2l0IGEvTUFJTlRBSU5FUlMgYi9NQUlOVEFJ
+TkVSUwo+ID4gaW5kZXggY2YwZjE4NTAyMzcyLi4xNDlmZDZkYWY1MmIgMTAwNjQ0Cj4gPiAtLS0g
+YS9NQUlOVEFJTkVSUwo+ID4gKysrIGIvTUFJTlRBSU5FUlMKPiA+IEBAIC0yMTA5Nyw2ICsyMTA5
+NywxNCBAQCBMOglsaW51eC1tZWRpYXRla0BsaXN0cy5pbmZyYWRlYWQub3JnIChtb2RlcmF0ZWQg
+Zm9yIG5vbi1zdWJzY3JpYmVycykKPiA+ICBTOglNYWludGFpbmVkCj4gPiAgRjoJZHJpdmVycy91
+ZnMvaG9zdC91ZnMtbWVkaWF0ZWsqCj4gPiAgCj4gPiArVU5JVkVSU0FMIEZMQVNIIFNUT1JBR0Ug
+SE9TVCBDT05UUk9MTEVSIERSSVZFUiBRVUFMQ09NTSBIT09LUwo+ID4gK006CU1hbml2YW5uYW4g
+U2FkaGFzaXZhbSA8bWFuaXZhbm5hbi5zYWRoYXNpdmFtQGxpbmFyby5vcmc+Cj4gPiArTDoJbGlu
+dXgtYXJtLW1zbUB2Z2VyLmtlcm5lbC5vcmcKPiA+ICtMOglsaW51eC1zY3NpQHZnZXIua2VybmVs
+Lm9yZwo+ID4gK1M6CU1haW50YWluZWQKPiA+ICtGOglEb2N1bWVudGF0aW9uL2RldmljZXRyZWUv
+YmluZGluZ3MvdWZzL3Fjb20sdWZzLnlhbWwKPiA+ICtGOglkcml2ZXJzL3Vmcy9ob3N0L3Vmcy1x
+Y29tLmMKPiAKPiBUaGFua3MgZm9yIHZvbHVudGVlcmluZyB0byBtYWludGFpbiB0aGlzIGRyaXZl
+ciEKPiAKPiBXaGF0IGFib3V0IHVmcy1xY29tLmggYW5kIHVmcy1xY29tLWljZS5jPyAgVGhvc2Ug
+YXJlIHBhcnQgb2YgdGhpcyBkcml2ZXIgdG9vLgo+IAo+IFRoZSBwYXR0ZXJuIGRyaXZlcnMvdWZz
+L2hvc3QvdWZzLXFjb20qIHdvdWxkIGNvdmVyIGFsbCB0aGVzZSBmaWxlcy4KPiAKClNvcnJ5LCBm
+b3Jnb3QgdGhlIHdpbGRjYXJkISBXaWxsIGZpeCBpdCBpbiBuZXh0IHJldmlzaW9uLgoKVGhhbmtz
+LApNYW5pCgo+IC0gRXJpYwoKLS0gCuCuruCuo+Cuv+CuteCuo+CvjeCuo+CuqeCvjSDgrprgrqTg
+rr7grprgrr/grrXgrq7gr40KCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBs
+aXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
+c3RpbmZvL2xpbnV4LXBoeQo=
