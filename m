@@ -4,64 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 77477C4332F
-	for <linux-phy@archiver.kernel.org>; Thu, 24 Nov 2022 17:24:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B5C57C433FE
+	for <linux-phy@archiver.kernel.org>; Thu, 24 Nov 2022 17:35:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xtqkNdLctZsvJ8HoCHeE3dioMIlEXapTkqMQ35koD+8=; b=1bpab0Z435+Zdc
-	Q7wcGpG+y9kUcYf6GhpX+7rTIiChYnoYaWxoDe/tuSrzwtA7WSmRSnzD6pqxUGvUxTN55ZYu4Fr76
-	xXsTCIlqYsIVI+jMdaiQsBV9A0BDyAeyUyNf4x62NuHYq5vKkkKcEs39tUCpnTNYgQ18/yaeB2SsZ
-	oj3vtdiQBeieR5SrB76PjSzCjp6hSbw3Wtb3HnJ90fPcmgk95fvnYTflWGyGujwexrHb3HITde1c4
-	vNtMVmDQGgj5/QIxBjSuF7JevQQ8ly3n4gqVwE9Gk+/5xQ3zfAQwXJTKBoSYU4QcvHfJjqUGNreFE
-	i3XgX9EeVOYjIQDz93/g==;
+	List-Owner; bh=JCbZme4xjZVQ2dWw5Uu2Bvktt+e4wPiDznNFBXOhQjU=; b=s/SgT1m5QNCETx
+	K8ryLc8Sz2YsDe+mEy6b81m/3pg7/lcU3840IpvRGRKyG+uBKxouYSTM/bAFi45BD6PK7aG9Fe2pG
+	iJm+F9Fm6Xt4D/7xflJ0SW4dGuJAj4GUgsMGbnEGmXItQF339j1iBHIxg3jpzWYFE0ArJipyIe3+Y
+	p9YaGmp6JGB4YHUI5+OntWGDN6w9HIN0+Dm8ZuvWcXFmEeWMPYsi4FW2zV+kKjI8FdqnwvgWWTns0
+	HaigdJ2K7Da4Kvu1SwfXKnkQhMP5YsUillxIUbBQFw+MEfk/0WhxpHubppd+yJ7LpXEWHakceltQ1
+	y5pNRmy+CKPKwckChhtQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oyFxQ-00ARuG-8C; Thu, 24 Nov 2022 17:24:16 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1oyG7o-00AVm8-1W; Thu, 24 Nov 2022 17:35:00 +0000
+Received: from ams.source.kernel.org ([145.40.68.75])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oyFxL-00ARqD-PF
-	for linux-phy@lists.infradead.org; Thu, 24 Nov 2022 17:24:13 +0000
+	id 1oyG7a-00AVdA-DF; Thu, 24 Nov 2022 17:34:48 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 446B5620AB;
-	Thu, 24 Nov 2022 17:24:11 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 049CEC433C1;
-	Thu, 24 Nov 2022 17:24:09 +0000 (UTC)
+	by ams.source.kernel.org (Postfix) with ESMTPS id 6C979B82898;
+	Thu, 24 Nov 2022 17:34:42 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5F332C433C1;
+	Thu, 24 Nov 2022 17:34:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1669310650;
-	bh=sLYI5P+ZMh6NxKkyycCPNxF1W3y95huQkPC5wh9Z+BU=;
+	s=k20201202; t=1669311281;
+	bh=ZimMhVjHA71uL0p/U9neQ/CDzc18IyUZBXeajOZUTeE=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=CHDCmUPTpdPyA5Tg3IK3OXznFOan1VCT1MRQ7qhxKjwENU5j79bPbPmpg52mY7V4Q
-	 HyCBH9cYFLtacgn5jrDMs8doE+XfDPwtPAPrWi7RcA1ZoQ1Fx5OXFZJDXMtXyh/xbS
-	 2ZbP5pyTgRsoSQamSIRkehcXlvAuvN0XRMWZZHLfqpQGmcWOC0N2BGiJgf7nLGzm/Q
-	 e7leJylr/PZeYM4kyxbyHQ3VbLIsyNTNr9bzy1DPRGX0XnLppzqjJnZR8j8bbG6aGA
-	 TWuXq1D33eelYRx2froKY8e/SJ54Bq5+TOcvcy30IqDpsLjHcIJ3Ynm8Dc0PpKUSj2
-	 fNSP+pVlolX/g==
-Date: Thu, 24 Nov 2022 22:54:06 +0530
+	b=F6G06OHkw6Lw76Ptb8RrcCNwrJORwJ0uxyvjribBoTqmMheB4hPy0a1LCCFhLyRg0
+	 NP4ZXhreHKZTWxkZ/xT2si1pC9MOQpzU5At5vRRTLQZii1ZGr20tojcpR9GhRJ7/Qy
+	 GX9CehQ3oyGxNq60W8s+JdwLzIIL7hG6pPNP8prgRtxvcXn8M78Lz+3kTFNHaeh6DX
+	 /yakbGdGyI0Xz0t5T+ekmfq18y7mTjksrWU1ruQFv46WoTMZvGoUpigKE7CXcZe6cd
+	 g3EWvyFhNs4SbgLi4Ou0VJXfQBj04dULk2mtiZ4BbttmkF5GlIZTQWQerdZl+vUqFR
+	 YMHR6F1AaVhIQ==
+Date: Thu, 24 Nov 2022 23:04:37 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Johan Hovold <johan+linaro@kernel.org>
-Cc: Bjorn Andersson <andersson@kernel.org>, Andy Gross <agross@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
-	Rob Herring <robh+dt@kernel.org>,
+To: Samuel Holland <samuel@sholland.org>
+Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
+	Chen-Yu Tsai <wens@csie.org>,
+	Jernej Skrabec <jernej.skrabec@gmail.com>,
+	Maxime Ripard <mripard@kernel.org>,
+	Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
 	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 0/3] phy: qcom-qmp-usb: drop sc8280xp reference-clock
- source
-Message-ID: <Y3+otgofTu8izmgz@matsya>
-References: <20221111093857.11360-1-johan+linaro@kernel.org>
+	Rob Herring <robh+dt@kernel.org>, devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org, linux-sunxi@lists.linux.dev
+Subject: Re: [PATCH v2 0/8] phy: allwinner: phy-sun6i-mipi-dphy: Add the A100
+ DPHY
+Message-ID: <Y3+rLe4xrnR/Mmo3@matsya>
+References: <20221114022113.31694-1-samuel@sholland.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20221111093857.11360-1-johan+linaro@kernel.org>
+In-Reply-To: <20221114022113.31694-1-samuel@sholland.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221124_092411_904057_C1A586CC 
-X-CRM114-Status: GOOD (  10.08  )
+X-CRM114-CacheID: sfid-20221124_093446_644206_86F39DAA 
+X-CRM114-Status: GOOD (  10.70  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,14 +79,12 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 11-11-22, 10:38, Johan Hovold wrote:
-> The source clock for the reference clock is not used by the PHY directly
-> and should not have been included in the devicetree binding.
-> 
-> As the new SC8280XP binding has been merged for 6.2, we should get this
-> fixed as soon as possible.
+On 13-11-22, 20:21, Samuel Holland wrote:
+> This series adds support for the updated DPHY found in a couple of
+> recent Allwinner SoCs. The first three patches fix an omission in the
+> existing binding. The remaining patches add the new hardware variant.
 
-Applied, thanks
+Applied 1 & 4-8, thanks
 
 -- 
 ~Vinod
