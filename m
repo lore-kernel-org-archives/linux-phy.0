@@ -4,48 +4,48 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 14F0CC4332F
-	for <linux-phy@archiver.kernel.org>; Fri, 25 Nov 2022 10:38:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C0C36C4332F
+	for <linux-phy@archiver.kernel.org>; Fri, 25 Nov 2022 10:40:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cIIz0HP7qXRko5uTCd/+RXzHL1Q3z4jBB4U7Tj45at8=; b=l6sGP00mu1phKv
-	mW0BkPwZlZ4XJHqlLSulUke2x52tpZKqOjtbSRNMnKjRvrjHswQC2YhH4pAmt1r+Uo8eXbaD5QXrg
-	UptrSEEhFNORFzA/lUAveWlVTW1vF3Rsd+LAgVxBS5gRD/5VsA9gHCPdajuXwPFHK3hNAoPwBsVE2
-	c5GDfAmot3c0bztHOr9oHcyFjPJpD05wKtq65n3zkdcXShUJmYu6hriJiEco+AJ/utf/zK72DyDBo
-	xPG9iGm3UNoKqMz6tmnhSmX6u0VTXbnHBi/HdaqU6I9AjtUPKcq1a+XQ/m4RSp+pUTUtIzyROBLew
-	YYRbboznJ/UPqt/yQGjQ==;
+	List-Owner; bh=YFGKJjV+CckvZnFOGeFqsK0lzJE+Qf1ik68pPrVrRaA=; b=LmHdNEm7+IN6wi
+	9vDxK1XLYyu/mJ9VYuPAXDEF0XlxTSpKnBQMRixH6MyXiMJIcTHHxgH1bqKcsoFl0kseGkyUu4sr6
+	X4wVVYSzloRdKi/uZjrDAynUP07Ganp2e4ZoPQPBnVQXuBHvTTv+tGqkeB4UphuFlul+KwTfr46Vq
+	eXVmRLHV0ICR+zz3xCdo9UNcgi7wPRQm9zvu5PdEwOOEpkO9mWrRzu9+zR0noL/iUs+5p2xyY84v1
+	mvni1UrFMwb0pr5zBEJ9xsPZaa48kG4bPIeC6BLpZQiV6Ix6PSVfsdAJLwvimk8rHtThvaGuRd6ve
+	NC/rNt63XBPH3hbE6ZzA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oyW67-00FXoG-F1; Fri, 25 Nov 2022 10:38:19 +0000
+	id 1oyW8e-00FZzX-QO; Fri, 25 Nov 2022 10:40:56 +0000
 Received: from ams.source.kernel.org ([145.40.68.75])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oyVo6-00FKeU-64
-	for linux-phy@lists.infradead.org; Fri, 25 Nov 2022 10:19:44 +0000
+	id 1oyVsX-00FO3v-JF
+	for linux-phy@lists.infradead.org; Fri, 25 Nov 2022 10:24:19 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id 550C0B829D8;
-	Fri, 25 Nov 2022 10:19:40 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 09032C433D6;
-	Fri, 25 Nov 2022 10:19:39 +0000 (UTC)
+	by ams.source.kernel.org (Postfix) with ESMTPS id 28511B82981;
+	Fri, 25 Nov 2022 10:24:16 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id D75A7C433D6;
+	Fri, 25 Nov 2022 10:24:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1669371579;
-	bh=wi1wajl/uQaonaWjdH3x87mG1xWYis5sdgMpB1P6VBQ=;
+	s=k20201202; t=1669371854;
+	bh=UZVGoBnwbqgX7QHkA+XxraCebfb9ih7yV/82oceIMgI=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=E4cr9iHDICE9SsxDGL/9CiVT1UOVGyWQ4OQfzc+Y5O0XoADgHg6A6o5tSPOviuUe/
-	 RtfoTfYzYOBLh9WP92bGkdT9oFeBV3ADNNPARQE3tRORxYrx8+on/dXoJBeyC6BaBg
-	 OPuYLTHQ1ZLCpieJH8qgkI49PaeYVplOEGBy2MVuVDSWcXmiu+qy4Arkwn4lxHGwwX
-	 7THM2IgwOy6+d95VPW5rnD1cQ8ZTE9g8xyuuLFKTX04zis9ZLF+5L/dC63PafAhgZe
-	 4+/EDF205WIZuHosU4jl7HIvWPKWT1U+jEpVPdfuLH+x9W54L1mcUdMHnEHSDOlfIi
-	 XQPR8It5XbCrA==
+	b=kAbBEKzxQW3BJZfTG3aYOohUWiAEpSVowGD+CqfEjT8iYkTbMJEAsEKTliV/+bqc1
+	 xxb9OJelnz/cJhh3L0D5Uz8EKycRJhlfH6T1vn2tOHn+YRcBMhlWIvc4ADNjpPpFW/
+	 gGCnr/UkoQ6/V7bjzt17DnpvC1acTDhrsqhX4sftEnHDIe19vcxaQQ1KRnQZz/FvWl
+	 4M/h/My7xpHg3YWA6UKLx+ISzvzs5uWGi0/O7FpL/Te4XIMIy0S/Zb0Q7KWzmTm0Kv
+	 /Uo9y+M9o27zetPCwtL1sNeJrwIQXRvzrEzrBx+FFAcSfyB4Cmz5vG7GZUgps4CTAF
+	 mnC9lixd0c2uA==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan@kernel.org>)
-	id 1oyVnd-0002Wq-KI; Fri, 25 Nov 2022 11:19:14 +0100
-Date: Fri, 25 Nov 2022 11:19:13 +0100
+	id 1oyVs6-0002aK-Av; Fri, 25 Nov 2022 11:23:50 +0100
+Date: Fri, 25 Nov 2022 11:23:50 +0100
 From: Johan Hovold <johan@kernel.org>
 To: Luca Weiss <luca.weiss@fairphone.com>
 Cc: linux-arm-msm@vger.kernel.org, ~postmarketos/upstreaming@lists.sr.ht,
@@ -54,22 +54,19 @@ Cc: linux-arm-msm@vger.kernel.org, ~postmarketos/upstreaming@lists.sr.ht,
 	Konrad Dybcio <konrad.dybcio@linaro.org>,
 	Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [RFC PATCH v2 1/3] dt-bindings: phy: qcom,qmp-usb3-dp: Add
- sm6350 compatible
-Message-ID: <Y4CWoT52Q8jnm/dF@hovoldconsulting.com>
+	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [RFC PATCH v2 2/3] phy: qcom-qmp-combo: Add config for SM6350
+Message-ID: <Y4CXtn/o3aNvBNh5@hovoldconsulting.com>
 References: <20221125092749.46073-1-luca.weiss@fairphone.com>
- <Y4CP9fwhDXsLu57Q@hovoldconsulting.com>
- <COLABNHBQ1DG.1PB8SDY3FW1YY@otso>
+ <20221125092749.46073-2-luca.weiss@fairphone.com>
+ <Y4CSYZE+3fZCV4Z3@hovoldconsulting.com>
+ <COLAQH772WXW.P442ICY46TDR@otso>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <COLABNHBQ1DG.1PB8SDY3FW1YY@otso>
+In-Reply-To: <COLAQH772WXW.P442ICY46TDR@otso>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221125_021942_605405_3382D13D 
-X-CRM114-Status: GOOD (  32.58  )
+X-CRM114-CacheID: sfid-20221125_022417_884828_0A6229BD 
+X-CRM114-Status: GOOD (  25.45  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,86 +83,55 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Nov 25, 2022 at 10:55:31AM +0100, Luca Weiss wrote:
+On Fri, Nov 25, 2022 at 11:14:53AM +0100, Luca Weiss wrote:
 > Hi Johan,
 > 
-> On Fri Nov 25, 2022 at 10:50 AM CET, Johan Hovold wrote:
-> > On Fri, Nov 25, 2022 at 10:27:47AM +0100, Luca Weiss wrote:
-> > > Add the compatible describing the combo phy found on SM6350.
+> On Fri Nov 25, 2022 at 11:01 AM CET, Johan Hovold wrote:
+> > On Fri, Nov 25, 2022 at 10:27:48AM +0100, Luca Weiss wrote:
+> > > Add the tables and config for the combo phy found on SM6350.
 > > > 
 > > > Signed-off-by: Luca Weiss <luca.weiss@fairphone.com>
 > > > ---
-> > > @Johan Hovold, I've sent this v2 as RFC because there are several things
-> > > where I have questions on how it should be done.
-> > > 
-> > > In this patch, you can see there's cfg_ahb (&xo_board) and power-domains
-> > > is not set. In msm-4.19 &gcc_usb30_prim_gdsc is only used in the
-> > > ssusb@a600000 node, or should I also add it to qmpphy?
+> > > @Johan Hovold, here I've added dp_txa & dp_txb, I believe otherwise
+> > > qmp->dp_tx would be wrong. Is this different on sc8280xp or was this a
+> > > mistake on your side? I think this should probably be split out to
+> > > another patch to not mix things up too much.
 > >
-> > Yeah, you may need to add a platform specific section of the clocks,
-> > which appear to be different, even if I'm not sure they are currently
-> > described correctly (xo_board as cfg_ahb and "QLINK" as ref). How are
-> > they named in the vendor's dts?
+> > Yeah, that's a difference in sc8280xp which does not have dedicated TX
+> > registers for DP.
 > 
-> This is the msm-4.19 dts:
-> https://android.googlesource.com/kernel/msm-extra/devicetree/+/refs/heads/android-msm-bramble-4.19-android11-qpr1/qcom/lagoon-usb.dtsi#354
-
-		clocks = <&gcc GCC_USB3_PRIM_PHY_AUX_CLK>,
-			<&gcc GCC_USB3_PRIM_PHY_PIPE_CLK>,
-			<&rpmhcc RPMH_QLINK_CLK>,
-			<&gcc GCC_USB3_PRIM_CLKREF_CLK>,
-			<&gcc GCC_USB3_PRIM_PHY_COM_AUX_CLK>;
-		clock-names = "aux_clk", "pipe_clk", "ref_clk_src",
-				"ref_clk", "com_aux_clk";
-
-So it looks like you don't need update the binding for the clocks as the
-above matches sc8280xp:
-
-	aux
-	ref
-	com_aux
-	usb3_pipe
-
-Parent clocks (ref_clk_src) should not be included in the binding, but
-rather be handled by the clock driver. For example, see:
-
-	https://lore.kernel.org/all/20221121085058.31213-4-johan+linaro@kernel.org/
-	https://lore.kernel.org/all/20221115152956.21677-1-quic_shazhuss@quicinc.com/
-
-> > >  .../bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml          | 5 +++--
-> > >  1 file changed, 3 insertions(+), 2 deletions(-)
-> > > 
-> > > diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
-> > > index 6f31693d9868..3e39e3e0504d 100644
-> > > --- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
-> > > +++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
-> > > @@ -17,16 +17,18 @@ properties:
-> > >    compatible:
-> > >      enum:
-> > >        - qcom,sc8280xp-qmp-usb43dp-phy
-> > > +      - qcom,sm6350-qmp-usb3-dp-phy
-> > >  
-> > >    reg:
-> > >      maxItems: 1
-> > >  
-> > >    clocks:
-> > > -    maxItems: 4
-> > > +    maxItems: 5
-> > >  
-> > >    clock-names:
-> > >      items:
-> > >        - const: aux
-> > > +      - const: cfg_ahb
-> > >        - const: ref
-> > >        - const: com_aux
-> > >        - const: usb3_pipe
+> Good to know.
+> 
 > >
-> > So this would need to be moved to an allOf: construct at the end with
-> > one section each for sc8280xp and sm6350.
+> > This is probably best handled explicitly when parsing the DT by using
+> > dp_txa/b if they are set and otherwise fallback to txa/txb (e.g.
+> > instead of hiding it in the v5 table by using the same offset in two
+> > places).
 > 
-> Ack.
+> Are you thinking about something like this?
+> 
+> if (offs->dp_txa)
+>     qmp->dp_tx = base + offs->dp_txa
+> else
+>     qmp->dp_tx = base + offs->txa;
+> 
+> if (offs->dp_txb)
+>     qmp->dp_tx2 = base + offs->dp_txb;
+> else
+>     qmp->dp_tx2 = base + offs->txb;
+> 
+> This wouldn't handle ".dp_txa = 0x0000" but I don't think this should be
+> a problem, right?
 
-So no need to change this it seems.
+Yeah, that should be fine. I'd even merge the branches:
+
+	if (offs->dp_txa) {
+		qmp->dp_tx = base + offs->dp_txa;
+		qmp->dp_tx2 = base + offs->dp_txb;
+	} else {
+		qmp->dp_tx = base + offs->txa;
+		qmp->dp_tx2 = base + offs->txb;
+	}
 
 Johan
 
