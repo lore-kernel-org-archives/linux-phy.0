@@ -4,65 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4E3BFC4332F
-	for <linux-phy@archiver.kernel.org>; Fri, 25 Nov 2022 23:05:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7135AC4332F
+	for <linux-phy@archiver.kernel.org>; Fri, 25 Nov 2022 23:09:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XlsuxDA6HNb/gi2vcxujP0shGbmLGQkRjCXblfNb8E4=; b=taTaeA/h+GZGoC
-	V9i4o6k/CTmEaaqvyd8JNFT+Zow4H8ti+Z1nnTgcbY7t9ajU/jGraiMspO02t9WeqSDl3p4QrgdrK
-	2rQDUJXqJrgM4WV8lZifUo3cBmd5qgprM2k60WGQWabdIj2Vcut7uouerFSaAQFUks+DN9vYUIlr3
-	2KANol45pQctwu00TTF4/VnW51aSYQwyaNjJupYWJeuIGB/VlDcUmJBVYU+svilvxrytuX3OdDuik
-	7CwoX1UC0G0j71BdgyeK6OqkC7ZBrBurm/Y5JQK/jk91yJ0A99uvOnpjgRmG6V/422X2MMGmZIjoD
-	w/5fopQaMb9Au5juxo5Q==;
+	List-Owner; bh=Gd2QXhv4AvUD9t6WUInTVHbO/aLHoMasFTqsTkG62fA=; b=e+jS/i8RVckVxm
+	W0YYW4whWFXe2xyYOpRK2Qj1r84XCQSb9nbOwDR00QOPp+DDjirTYqAPDs65XrkQMtdovXD2UoWKD
+	7aSv9DzNB+P6bWZv8Gk8RGQv4n3RaMW97SnowiQ0WQkganUNqPAOJSvC4Rnltfm5lAq1feWAmiLn/
+	jJF4bKgDGA3YqBNOpuJ1c07W7JKeduzmCeUfq4sQrFNEjpZz9StlVEr1CahrfhzNQngwoqEDMo+So
+	3NNiaDHV7U4JbqVzScO8si66O0D8qayE1um5vIz3lQAUeP+DY4SbH85QKH2y2oDd+o4MHp1QQN5PU
+	ZLbM+/Gg9R0QEXqCodqg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oyhko-002fJ0-Gv; Fri, 25 Nov 2022 23:05:06 +0000
-Received: from mail-ed1-x534.google.com ([2a00:1450:4864:20::534])
+	id 1oyhpK-002hBt-Ow; Fri, 25 Nov 2022 23:09:46 +0000
+Received: from mail-ej1-x632.google.com ([2a00:1450:4864:20::632])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oyhkl-002fGf-GH; Fri, 25 Nov 2022 23:05:04 +0000
-Received: by mail-ed1-x534.google.com with SMTP id f7so8126175edc.6;
-        Fri, 25 Nov 2022 15:05:01 -0800 (PST)
+	id 1oyhpH-002h6W-MK; Fri, 25 Nov 2022 23:09:44 +0000
+Received: by mail-ej1-x632.google.com with SMTP id e27so13137825ejc.12;
+        Fri, 25 Nov 2022 15:09:41 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=googlemail.com; s=20210112;
         h=cc:to:subject:message-id:date:from:in-reply-to:references
          :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=SrTRFSS/x4t6+IVdYOMgEeoJ308qI/cUd08WWdG+ebA=;
-        b=bsrCkPS7FyV3HCb4+fg+Qg08H/NUS8Fj7Q0hEixpV+cYoGxhfTbZ8MZCtDdquHpioj
-         we7k2tDT7sUow8SX8+UDZ3BHUFOI2RqHFQER+e+NeFQ7wccSpwcvvtvzPTJheDUsRp3l
-         kSzCi2BFiNnjAAGyybdy6ZhCqP4bLeVfsUg2gfqhE9thjPwwCClGF414PEF3gaaaOVHr
-         0DkloM4FXRV7XHh0SMZjYop6Pn2STK64kgXjzEmke6lDts3uSTDombG7A9RTYcDPDX40
-         eFXLCiPrRIZIBHqWlmOvSAPeWTSMrwi/LaZVmnRmTiuAv9Zcxy7+P57twERnlgdvGpNN
-         ls4Q==
+        bh=0XioFARl1h+9O4FdVBDeUHFWIc6Iha9ExJeFsC7agBo=;
+        b=ijem6b9zdomha6/vwYCcu6q8sRZEnyYMC+N/TfI2betHX8h/17lEvcObNDwAQZJrG1
+         CyZg1GysIN3LJ6SCN+fz3ZbQ0s5Tv99nsSKleNi1cMo4HZr6+dqNoyz0huHMEsUKblbo
+         j0iZ8uZIUhy4GKX8DuQdVW9dJAeRPmOdo8wBpvyB4DGVk6RFhKFlvSC6nHSvFV45a7GV
+         lzTF7YNPMIzzTc7iDwJt6lA682jcC7xhATg7OxVhqLcIYkgwlIJUf08RD07lTP6m43xu
+         p3UHG5Dp/A/fg39MCY4C9PQ6p5pXNBt0+B08vp6X1ohQfD/1CGL0eDy8QZLi3Eh7sP1A
+         p+9A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=cc:to:subject:message-id:date:from:in-reply-to:references
          :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=SrTRFSS/x4t6+IVdYOMgEeoJ308qI/cUd08WWdG+ebA=;
-        b=SoCTIDaoaCwQ9RZueTBT8XU+VpxJlz6cxqrvDar++ja5Cx3+ySCK5qEwoW7nHeKPbM
-         FffDDDuq+KrkNJ6Ilvx7SYnqrvOxNj/bd44zlmaKhOC4JhlPTcBMZLpCClUvnORHCwGE
-         aa9yurlrZFQHZ7F14miBr8vqkUIEOkaAeTAF32GbBOqJfL1a2mLbRm1L/aagzzj6M0Se
-         k6FVIS8G3ZLzp0PHCVD16R0SEM55hYOg5es+IJmRqO9ICTh7nZna+Edfw2I0e+RUgXTb
-         nvUPotx+IHr8wilObAyadjImr8pDZjUJVGplXm1FQnklDcBjJ+bmSr55WGaolyGImnXv
-         f6Uw==
-X-Gm-Message-State: ANoB5pnkLw5St0Tg+yGZlbkrtyrluVaYzEXyz2lwwsSIEY5eEIu4tNaN
-	rFpX0Wt7SaPlu/PH+n0a4lV9pDfENWOlJ2dWNgsPLjCmFz8=
-X-Google-Smtp-Source: AA0mqf7oYYnOUvxYJelBH+ZCQeIchQJlARoJQwAnQuoPWecqswsfj8HILcbdy2jSsZv7bqLG10yyurKQ2U9QeGAVcvw=
-X-Received: by 2002:a05:6402:2404:b0:467:67e1:ca61 with SMTP id
- t4-20020a056402240400b0046767e1ca61mr4120477eda.27.1669417499790; Fri, 25 Nov
- 2022 15:04:59 -0800 (PST)
+        bh=0XioFARl1h+9O4FdVBDeUHFWIc6Iha9ExJeFsC7agBo=;
+        b=aSLR07IH8dp/NFWJTUy/9ak9rds5/hEstKI6l1tcSi1m0GPDrcc5nTkLGa4bMlHiP5
+         2p/LPi9n3dOdP0c9ASLI5nbaklcdWjon7X/FU1o36fpwMh/ShCSNwMejNBVr6xOHbKYm
+         8khf7Ctk8+HYCvthDJxq6V4PIp1L/M2+l+M1n7AOrnfflodecS1CUWkT3Vlxb+0I8XtQ
+         cLXn0WuAL9YjimaU7Hru02DxGcTMWPtg2i6A0ArYtbERMmZzsbt8mXX+DmPUK0r/qUKj
+         /hi21rhETvoVygbPuHpxa3kGKF+wFvHWzUIKJDgVqFWjfIO6qZXtpCssXNNiMpODQT7J
+         JLVQ==
+X-Gm-Message-State: ANoB5pm2PkSNQT3ljPwkF8c/X+FMCIAcE1DLta3eRXW+RRLM9wWdbFiy
+	0JcHmDHLxOWfJxNwZ5AvGUJfRDEk1+cbdtOBQvA=
+X-Google-Smtp-Source: AA0mqf6ewtl/tvr8AuX1o3Xv/HwzUQiWRCO/BLv6pZISPImaHV2Rdm1l6LFkGhHL2TOQaHdJhN8otAdj5S+OkRcsIHY=
+X-Received: by 2002:a17:906:1498:b0:73f:40a9:62ff with SMTP id
+ x24-20020a170906149800b0073f40a962ffmr34923198ejc.678.1669417779871; Fri, 25
+ Nov 2022 15:09:39 -0800 (PST)
 MIME-Version: 1.0
 References: <20221117-b4-amlogic-bindings-convert-v1-0-3f025599b968@linaro.org>
- <20221117-b4-amlogic-bindings-convert-v1-3-3f025599b968@linaro.org>
-In-Reply-To: <20221117-b4-amlogic-bindings-convert-v1-3-3f025599b968@linaro.org>
+ <20221117-b4-amlogic-bindings-convert-v1-8-3f025599b968@linaro.org>
+In-Reply-To: <20221117-b4-amlogic-bindings-convert-v1-8-3f025599b968@linaro.org>
 From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Sat, 26 Nov 2022 00:04:48 +0100
-Message-ID: <CAFBinCANM=AOw1bbGCheFy20mqQ1ym_maK0C1sYpjceoNH-dNQ@mail.gmail.com>
-Subject: Re: [PATCH 03/12] dt-bindings: nvmem: convert amlogic-meson-mx-efuse.txt
+Date: Sat, 26 Nov 2022 00:09:28 +0100
+Message-ID: <CAFBinCBgj-SCh8-BN6aG49GxfNXshjV3XGi0uWkZ26zT3mOceg@mail.gmail.com>
+Subject: Re: [PATCH 08/12] dt-bindings: timer: convert timer/amlogic,meson7-timer.txt
  to dt-schema
 To: Neil Armstrong <neil.armstrong@linaro.org>
 Cc: Jakub Kicinski <kuba@kernel.org>, Wim Van Sebroeck <wim@linux-watchdog.org>, 
@@ -83,8 +83,9 @@ Cc: Jakub Kicinski <kuba@kernel.org>, Wim Van Sebroeck <wim@linux-watchdog.org>,
 	linux-watchdog@vger.kernel.org, linux-kernel@vger.kernel.org, 
 	linux-pci@vger.kernel.org, devicetree@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221125_150503_585703_92802754 
-X-CRM114-Status: GOOD (  11.26  )
+X-CRM114-CacheID: sfid-20221125_150943_759371_A7B81AB8 
+X-CRM114-Status: UNSURE (   8.62  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,42 +104,19 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 Hi Neil,
 
-thanks for your work on this!
+there's a typo in the subject line: it should be meson6-timer.txt
+(instead of meson7-timer.txt)
 
 On Fri, Nov 18, 2022 at 3:33 PM Neil Armstrong
 <neil.armstrong@linaro.org> wrote:
-[...]
-> +        #address-cells = <1>;
-> +        #size-cells = <1>;
-> +
-> +        sn: sn@14 {
-> +            reg = <0x14 0x10>;
-> +        };
-> +
-> +        eth_mac: mac@34 {
-> +            reg = <0x34 0x10>;
-> +        };
-> +
-> +        bid: bid@46 {
-> +            reg = <0x46 0x30>;
-> +        };
-I assume you took these examples from the newer, GX eFuse?
-Unfortunately on boards with these older SoCs the serial number and
-MAC address are often not stored in the eFuse.
-This is just an example, so I won't be sad if we keep them. To avoid
-confusion I suggest switching to different examples:
-  ethernet_mac_address: mac@1b4 {
-    reg = <0x1b4 0x6>;
-  };
-  temperature_calib: calib@1f4 {
-     reg = <0x1f4 0x4>;
-  };
-
-What do you think?
-
-
-Best regards,
-Martin
+>
+> Convert the Amlogic Meson6 SoCs Timer Controller bindings to dt-schema.
+>
+> Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
+If you re-send this with the subject updated and the per-timer
+interrupt description (that Krzysztof mentioned) added then please add
+my:
+Reviewed-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 
 -- 
 linux-phy mailing list
