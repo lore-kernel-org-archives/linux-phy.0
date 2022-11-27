@@ -4,86 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A2DC7C4708A
-	for <linux-phy@archiver.kernel.org>; Fri, 25 Nov 2022 23:36:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 64E1BC4321E
+	for <linux-phy@archiver.kernel.org>; Sun, 27 Nov 2022 11:42:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/gB8wNnG9CF6HCDoxD3btd6nkHwyky7MGbKdSD2zKos=; b=wJzRZ4N7yOiR5e
-	k+eKYzIUyrqqPTypewb9oDxY3cVsGASqYMndLZnnGipp6pYT+uMvR/U+uW6Mnn3k0xFLq/OjPZyU9
-	V3l3He4zbXH85k9jlu+RGzjsx+lgS4guEQ5RN6+rWQS0jADNJEhKeFFhNv2pZR4Z3AhN+fI4UAUaQ
-	m/4N7EgMu3rqDQ75pDiIVxL+qnSC4Ir9ZApc45nmD/LNZRKXgD2VanCXKLal1JC5031zWbs2hmhdd
-	szSU51ChTiyxALfbEnP7brWWGECt6ubmwNGGujWnFFaUOFbMLl+JE/SeVUlnluwj9pKMdWezKhKcR
-	yfaxE//zY4cCmGr9mgIg==;
+	List-Owner; bh=z/CNq99y8KrfSuZQ4Cl75p7z6LA3eDcQRhnOf+WusYQ=; b=OhDVyjBLEz0AN0
+	ry/swMVsHZy0YTvD2kJd2XtP/IxRG19zDYgiSFzuy6+4Rxdc9IM9BQjmVgMoZrt89ub8ZEWmMrkWG
+	C/wrALtIMmriuY3bPTJNtmUWDte6c6CS4ZH/cHWfoXHE1BuTOdqfdB823r36+mt/sR4jB89d3Zzz/
+	+x7DOJdM//+sc73uL7GbH6LR7WjAj3BCyQmkYF8s8CvnaFMajC2K/gnxZ7jbRWtWARKxRuA0982SI
+	xcnhdog8+938Ncobc+JRE4YpLjykBXRg//J++cklvKbjdtPQVoflZ8GaWpxaWUY8PYg3guuyIuEjD
+	XyO3gSms/LtEjR4Byihw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oyiFX-002rrE-SR; Fri, 25 Nov 2022 23:36:51 +0000
-Received: from mail-ej1-x633.google.com ([2a00:1450:4864:20::633])
+	id 1ozG3A-00B5To-DT; Sun, 27 Nov 2022 11:42:20 +0000
+Received: from mxout1.routing.net ([2a03:2900:1:a::a])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oyiFU-002rnh-MX; Fri, 25 Nov 2022 23:36:49 +0000
-Received: by mail-ej1-x633.google.com with SMTP id ho10so13303419ejc.1;
-        Fri, 25 Nov 2022 15:36:47 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=googlemail.com; s=20210112;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=53pASLo6U2zzYHdiGPJru2sei7EMeIsybEcbugHJMGw=;
-        b=aNmO4iy1jEBOxe4hLQffwUBwh9RXL7ogbj5yuKyKDk+Xzpa9rmxmLXt65tfNv5wpIX
-         zCIgP3UXxPHLUlvesV043w+pnVAvv6aeeguf3WSjGGxzBGh+aGFCYvAO2eYViSso1InR
-         eOGZh6VgaeO+Dmvu0OMjrZ0zg4rQqCRarVo3050M4z3zqJJCa0+ynj6CUT3S+u+xB6b0
-         vn0mNPQGaf68AAHuzsCi7zOUJm60aMjynS55gdF+ou7JUayNoM4xyAM+nJwCMhQWg9XQ
-         JoCTXbY/uWDqaBgF7oYHso/i7h9fojytw30ODsNPAnbkRuWDT8FHy4rdPIF3rXMBPTMf
-         AFlw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=53pASLo6U2zzYHdiGPJru2sei7EMeIsybEcbugHJMGw=;
-        b=k1QVb7k2VRA34kxaZ2OgSrtkX9NOnikOdsNFs0sKw4q5hp7ixasqA9nCYoYAEqV7Os
-         0GN9zfBpkRZkMA2C3nxCsKSO2pgN4DPsdylmvp5CpCP3fwWf/2KP8d9+/iDN4nd4/UB2
-         Qr5JGLKgitXFDEi0Fqfv17P9Je0QQzEhbOgYoG1iNXjJjorof97zl0HTc3K+AJatlq9x
-         wVDm85BcFb8dPhaQ4a4/kkX8+QUbie3Ps7+Gve20v63xGs1FI33BypJKZnlLJjQSVKIf
-         Sz3gdSHMcOQ883C59oK7vZnvy4DKKK9zR7CMRX68uN4SQBU9cuTJOVNVcymTDN5ldEAK
-         ttXQ==
-X-Gm-Message-State: ANoB5pmgqt+Ee0cqqJh8ek0c+b97xkyUMCFtzv0wBvxmVq2kWuYU2FAb
-	0BubOrMpSgSFqsAqh+MdOSJFd2wIJmqihsbzEdI=
-X-Google-Smtp-Source: AA0mqf45bdEJiOxhbUnLhIigBT0GjU47GsHYZmyiWPQnPoGEsgOfGs0TvhtmfqACF3pOoGPbacknnLPg3TD8cSTM64A=
-X-Received: by 2002:a17:907:a709:b0:79f:cd7c:e861 with SMTP id
- vw9-20020a170907a70900b0079fcd7ce861mr33399680ejc.339.1669419406346; Fri, 25
- Nov 2022 15:36:46 -0800 (PST)
+	id 1ozG2o-00B5JH-7Y; Sun, 27 Nov 2022 11:41:59 +0000
+Received: from mxbulk.masterlogin.de (unknown [192.168.10.85])
+	by mxout1.routing.net (Postfix) with ESMTP id B3FC9401E5;
+	Sun, 27 Nov 2022 11:41:53 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mailerdienst.de;
+	s=20200217; t=1669549313;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=TXaEWxtn0uFZdcMKR1HVawy7OAcOEaMqyiThbbGx/JQ=;
+	b=RTkTl+SXoG0E6g0M0S3JjtdCmOf0cTkv7RgYAn1JZAIOO9Bq/3GcYNaNGAvDcMVeNuCcH+
+	hB6DXRFKMN/vayaKLP/6rwicfRNZHA/s3LIEbfZU0UzxYZFUXkY8KNSx/7SR9Uj3RMXFEV
+	9Bww7OBZ92IbXOL6AoXamfxiR70rolw=
+Received: from frank-G5.. (fttx-pool-217.61.157.144.bambit.de [217.61.157.144])
+	by mxbulk.masterlogin.de (Postfix) with ESMTPSA id 62797122713;
+	Sun, 27 Nov 2022 11:41:53 +0000 (UTC)
+From: Frank Wunderlich <linux@fw-web.de>
+To: linux-mediatek@lists.infradead.org
+Cc: Frank Wunderlich <frank-w@public-files.de>,
+	Ryder Lee <ryder.lee@mediatek.com>,
+	Jianjun Wang <jianjun.wang@mediatek.com>,
+	Lorenzo Pieralisi <lpieralisi@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	=?UTF-8?q?Krzysztof=20Wilczy=C5=84ski?= <kw@linux.com>,
+	Bjorn Helgaas <bhelgaas@google.com>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Chunfeng Yun <chunfeng.yun@mediatek.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Matthias Brugger <matthias.bgg@gmail.com>,
+	linux-pci@vger.kernel.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-phy@lists.infradead.org,
+	linux-usb@vger.kernel.org,
+	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Subject: [next v7 1/8] dt-bindings: phy: mediatek,tphy: add support for mt7986
+Date: Sun, 27 Nov 2022 12:41:35 +0100
+Message-Id: <20221127114142.156573-2-linux@fw-web.de>
+X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20221127114142.156573-1-linux@fw-web.de>
+References: <20221127114142.156573-1-linux@fw-web.de>
 MIME-Version: 1.0
-References: <20221117-b4-amlogic-bindings-convert-v1-0-3f025599b968@linaro.org>
- <20221117-b4-amlogic-bindings-convert-v1-6-3f025599b968@linaro.org>
-In-Reply-To: <20221117-b4-amlogic-bindings-convert-v1-6-3f025599b968@linaro.org>
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Sat, 26 Nov 2022 00:36:35 +0100
-Message-ID: <CAFBinCAmV7wuPq8y+g0YKxZ0W1G8_=WgY+E3OT9WT62eDkxXqw@mail.gmail.com>
-Subject: Re: [PATCH 06/12] dt-bindings: rtc: convert rtc-meson.txt to dt-schema
-To: Neil Armstrong <neil.armstrong@linaro.org>
-Cc: Jakub Kicinski <kuba@kernel.org>, Wim Van Sebroeck <wim@linux-watchdog.org>, 
-	Srinivas Kandagatla <srinivas.kandagatla@linaro.org>, Rob Herring <robh+dt@kernel.org>, 
-	Andrew Lunn <andrew@lunn.ch>, Alessandro Zummo <a.zummo@towertech.it>, 
-	Eric Dumazet <edumazet@google.com>, Bjorn Helgaas <bhelgaas@google.com>, 
-	Kevin Hilman <khilman@baylibre.com>, Ulf Hansson <ulf.hansson@linaro.org>, 
-	Heiner Kallweit <hkallweit1@gmail.com>, Vinod Koul <vkoul@kernel.org>, 
-	Russell King <linux@armlinux.org.uk>, Thomas Gleixner <tglx@linutronix.de>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Guenter Roeck <linux@roeck-us.net>, 
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, 
-	Alexandre Belloni <alexandre.belloni@bootlin.com>, Daniel Lezcano <daniel.lezcano@linaro.org>, 
-	Jerome Brunet <jbrunet@baylibre.com>, Paolo Abeni <pabeni@redhat.com>, 
-	Mauro Carvalho Chehab <mchehab@kernel.org>, "David S. Miller" <davem@davemloft.net>, linux-media@vger.kernel.org, 
-	netdev@vger.kernel.org, linux-amlogic@lists.infradead.org, 
-	linux-mmc@vger.kernel.org, linux-rtc@vger.kernel.org, 
-	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
-	linux-watchdog@vger.kernel.org, linux-kernel@vger.kernel.org, 
-	linux-pci@vger.kernel.org, devicetree@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221125_153648_753242_D697FDD5 
-X-CRM114-Status: GOOD (  10.98  )
+X-CRM114-CacheID: sfid-20221127_034158_485515_02C381C9 
+X-CRM114-Status: UNSURE (   7.53  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,32 +90,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Neil,
+From: Frank Wunderlich <frank-w@public-files.de>
 
-On Fri, Nov 18, 2022 at 3:33 PM Neil Armstrong
-<neil.armstrong@linaro.org> wrote:
->
-> Convert the Amlogic Meson6 RTC bindings to dt-schema.
->
-> Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
-With the comment below addressed please add my:
-Reviewed-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Add compatible string for mt7986.
 
-[...]
-> +        mac@0 {
-> +            reg = <0 6>;
-> +        };
-My understanding is that here you want to showcase the nvmem integration.
-This IP block only supports 4 bytes of NVMEM. Instead of using MAC
-(which is not what's stored here, the suspend firmware uses it
-instead) I'd just use something like:
-data@0 {
-  reg = <0x0 4>;
-};
+Signed-off-by: Frank Wunderlich <frank-w@public-files.de>
+Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Reviewed-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Reviewed-by: Matthias Brugger <matthias.bgg@gmail.com>
+---
+ Documentation/devicetree/bindings/phy/mediatek,tphy.yaml | 1 +
+ 1 file changed, 1 insertion(+)
 
+diff --git a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
+index 5613cc5106e3..230a17f24966 100644
+--- a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
++++ b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
+@@ -79,6 +79,7 @@ properties:
+           - enum:
+               - mediatek,mt2712-tphy
+               - mediatek,mt7629-tphy
++              - mediatek,mt7986-tphy
+               - mediatek,mt8183-tphy
+               - mediatek,mt8186-tphy
+               - mediatek,mt8192-tphy
+-- 
+2.34.1
 
-Best regards,
-Martin
 
 -- 
 linux-phy mailing list
