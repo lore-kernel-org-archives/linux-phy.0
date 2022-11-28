@@ -4,51 +4,51 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4E9F3C433FE
-	for <linux-phy@archiver.kernel.org>; Mon, 28 Nov 2022 07:42:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 311F0C433FE
+	for <linux-phy@archiver.kernel.org>; Mon, 28 Nov 2022 07:44:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QF1Hs01un4OiePY5NqqwYFOutymlubS+1Y6V0e0R52c=; b=edFb+FBsmCwMQM
-	N0+4NB4YEm/8MTGyvH+gcikKJ7vIgGkFZdr19Vc8EmruB+KU6ZP2ojychqwVRbPyVsTyOXidZTSLz
-	DIrmXBhl2wN63yVRy/2fMbXt7ILwqFwMNIItoxfRzmMtLtFWmbmd8f4Vsw3JNThr5ljUfvkUNOTQJ
-	ctpc+vamg/ZpU4gGUeglqGEqYoJqzIqincL7YJtnHfKyJgu8NFcxhJvfP4IhRO7w7y19IjFxuuYeM
-	qguy698DlYqfT/rbxNPkEiyviDYzuxYUqWtA2s8KfBFGgCPp815mfZxgU4QXx3PcJ7ieeTcDk4EV1
-	i1Icvpu48BWuXSzR0Isg==;
+	List-Owner; bh=e8GWx8VP9rP8ZGF5mKRs4sKl6RQl1Hh9evVnQssbHkk=; b=VPBNuxWJ5liwsU
+	lvurCw5jt2zqJXUBkW2ccThbFa7I/nv5Q9h8gVL0nZUVwUOvHm+W5lk3/jQ/TA1FLbcRg6y/GQqDB
+	lD4Fk/Tts9gv2755Lfn+WOB52AZnTSB8CZs1UDXXOXiABFXu+gSz2+Mk7bhZqjCXr5Fq1Q9kSiYDT
+	YOBvc9Op4s02exJMUT/uGaydjciUOIJNWUOqrKRVpm4EWVKxtQlCGoEnyfZnVDPLfu2xgWUT6kFyd
+	2fYhmxHZidfVWZ/IH+Ul8lrHQF2DNT5HWREs8IZnHTcjVVhe/3BUCsHqC0fe5mLPxIRJ4YW+1NxFe
+	G1pvar27XdvxaQIGiE8A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ozYmm-00HOjW-Lc; Mon, 28 Nov 2022 07:42:40 +0000
-Received: from mail-vi1eur02on20605.outbound.protection.outlook.com ([2a01:111:f400:fe16::605] helo=EUR02-VI1-obe.outbound.protection.outlook.com)
+	id 1ozYol-00HPSe-7t; Mon, 28 Nov 2022 07:44:43 +0000
+Received: from mail-db3eur04on0602.outbound.protection.outlook.com ([2a01:111:f400:fe0c::602] helo=EUR04-DB3-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ozYih-00HN0O-Iu; Mon, 28 Nov 2022 07:38:33 +0000
+	id 1ozYiv-00HND3-AQ; Mon, 28 Nov 2022 07:38:52 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=bXg2H/321pUqcpRjSGsqQkU0FV6LyRO/7MQM7x6dOmzEi+InpzUMuPXIu1OePhZ2YS0es9u9YkxSXF9wXDYVeEyboKevnTgOM1bA9WTsH8c8InSsu7kktnpmDZi2JA9GW02WhHhiKFkPP0Ehr6lkAz5WR74bDJS113HidCgRBG+TmFlIygSOKpGe1seBurKzrLutnNJ8V0MKanxr186pn6X70NQxmPRqB9dVqzUAR9IAGTheXwOjgiG1TT24EJXeMMy9xpC1VcHViyKyebBYEr3oIfxTl9/dcGOy/VU++CqTPGTrReklWjiZfrfCH62t3lIw12iIbZtTkvkA+MTbcw==
+ b=S2VThmoU3gGDP6SEuebpih/lCnzaYRL/qehwanVpgmejAuHe22J33kwYL24pMqrP2/KclpDfhW1WyxTiSetTD8g4t6c5+c8/7rQQxJr3k9n/NmoKSaZ9zDX+ZJT4eOoFwOPSX78PF2t5ICpj9CbWccX619dEl63uyZKCPSXfFvbPZM4B6jjAMa8LpYt9zAKRk0/5Ci/qnACk0pN3xYhBvMRfAZUz4FtgvuRzd9ajEMjUo5cksICd6W0zKUGmzs4/+SVf/lMT8+7j0B89B0H87XgLYz40RwDj3RvBoAruB5Frzk6NsFx+1JJPFX6P57Qcsp30YQbST8mKFX+i05UgKQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=xjzfNg9NDJHgJ/WSbKq+MqsQK75uslQGriF3wOGvWC8=;
- b=Ys/TZO3BAhZ2LUwyr2fipdOPyjEFKd6Fhb+3WppMbhNFUVU4FTCOzTYzbus6O8NkmybBOdadCn0zs7l1Id73AXxaC1N6cJcQKvRlzefEsG7pBwIziINKmaeiBeQUV/pa6LyTqokdBnVt/10GgkBUyoPWqpRBIxULEP1XIPC9RxdsfI6+qKSk8FwZmlAQsF2fFGexdrZEV2L5k6dZUAK3XhI7H+BIywxT7oNznGGxufJh8T1rGc2+KnfvGolossUZyJjtC0nj+4ZTwJx2gjY8hePAAUyJVda8o0GsnO0GJZ2amr7n680fgAgu+DwpmNfRPvSge4pi3V606y1yGByaQA==
+ bh=h64WEwofDgq+ctHjuTVJnHdzfiMCL6SDnIf+E60KxDA=;
+ b=J+hyg7GLHEIgQjgya/zejx6WlXt8cz8piwKzs6hVFvLhUdqgf1pnBEJjoH/G3/LMNk4lGAY5ONNheo4lDxD3Qev1doRdvB0968XY6Zwe4DwMWeOMnRmO+GSEzYF91T0+0YDuuXJ3OE6EBIMJpja55/RBMIapvQht372gik7x/jeix7mYPQ65+B70SiBYE19ljvIneTzOBSkC7rR+0pY8iSY695pDNfg1ZuMG+R3VUodha5t0pV/AUooAQeO7IFGqaK6T43UyBXsYBft8xxsXQeGQ4AKgroFVI7+IskFXv2zBqGMBAnPDbAecF3YJjQ0FOcUrCnSUuCHcHiDE1FUViA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=xjzfNg9NDJHgJ/WSbKq+MqsQK75uslQGriF3wOGvWC8=;
- b=YTlT2CQq13VI+xRWcIgwHNICcjgq2GSGc+4wzqeeAcUzJK86ZXi0/uUqDJgm+CxyhXLxXfTRux2KMhwx4WKJgHzJDVyyKiPDpF3ZbpOi/ifx8Plb8QZhVgzymDWQHdQhLIGEAfk41A9wTO7yQqeVaCWSYEE/1xUK04pI9feQz7Y=
+ bh=h64WEwofDgq+ctHjuTVJnHdzfiMCL6SDnIf+E60KxDA=;
+ b=qq06rJHLftwwYqnipYR0NLZrDbFTpRpbj/xbcayxeaFuPDuY6k/qRWacuUjEsmcLkDXZD42cRZSNVigsp8KTLoe7f6bA0QE9Ck7WQy83+6J1rafyIxGka6P2MhqbzO5WYbuD39iCPf/+5FIrWFVW9c+/Ey+lrdhtb1wIJAXtjAA=
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=nxp.com;
 Received: from PAXPR04MB9448.eurprd04.prod.outlook.com (2603:10a6:102:2b1::21)
- by DU0PR04MB9249.eurprd04.prod.outlook.com (2603:10a6:10:350::20) with
+ by AS8PR04MB9511.eurprd04.prod.outlook.com (2603:10a6:20b:44b::18) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5857.23; Mon, 28 Nov
- 2022 07:38:16 +0000
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5813.15; Mon, 28 Nov
+ 2022 07:38:38 +0000
 Received: from PAXPR04MB9448.eurprd04.prod.outlook.com
  ([fe80::d0c6:7b1d:6982:d400]) by PAXPR04MB9448.eurprd04.prod.outlook.com
  ([fe80::d0c6:7b1d:6982:d400%6]) with mapi id 15.20.5857.022; Mon, 28 Nov 2022
- 07:38:16 +0000
+ 07:38:38 +0000
 From: Sandor Yu <Sandor.yu@nxp.com>
 To: andrzej.hajda@intel.com,
 	neil.armstrong@linaro.org,
@@ -73,9 +73,9 @@ Cc: kernel@pengutronix.de,
 	linux-imx@nxp.com,
 	Sandor.yu@nxp.com,
 	oliver.brown@nxp.com
-Subject: [PATCH v5 04/10] phy: Add HDMI configuration options
-Date: Mon, 28 Nov 2022 15:36:12 +0800
-Message-Id: <89d8325b57ceb62fb5b11b04f195a6156965375f.1669620155.git.Sandor.yu@nxp.com>
+Subject: [PATCH v5 07/10] dt-bindings: phy: Add Cadence HDP-TX DP PHY
+Date: Mon, 28 Nov 2022 15:36:15 +0800
+Message-Id: <beb1dae2a08595a6b9a6b6028ac994faa207d4bd.1669620155.git.Sandor.yu@nxp.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <cover.1669620155.git.Sandor.yu@nxp.com>
 References: <cover.1669620155.git.Sandor.yu@nxp.com>
@@ -84,55 +84,55 @@ X-ClientProxiedBy: SI1PR02CA0051.apcprd02.prod.outlook.com
  (2603:10a6:102:2b1::21)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: PAXPR04MB9448:EE_|DU0PR04MB9249:EE_
-X-MS-Office365-Filtering-Correlation-Id: 35980726-6505-4475-fdb2-08dad11382ff
+X-MS-TrafficTypeDiagnostic: PAXPR04MB9448:EE_|AS8PR04MB9511:EE_
+X-MS-Office365-Filtering-Correlation-Id: 53c77c4c-b339-4c3f-4407-08dad1139025
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 	Az/7UV2vhaG439xCBfgW40Xp7mEEtTNDRc0ITXrul3sGrz3ogJz/VVS1c1/DdW1Pu7PlHvINhdyf+fXj/ZZ4t9jnCGZXY8HoPWjQxkiAVH8lBHRgc1s4atuBKkh1jgsEUngVhTL26xU6cNMdFJsUCaha4oPSAwBM/BNFLgLLfpF/cjTiugcDqPG5WcchODv7QHNUnp+lqEKojaXdvCyBaUhjK63/5AAHrx9exOy4zgaKrF+BeM6tLbDhTwXjzSgcvPw8V8q7Y+EalfyS4ZzcRSBeRBkFs2mZ0KBiEg90hcIPmzXqtUQY5hrOBJjku8SW5ZgUkPY4lIBSPHWAO7xy9jJmFnBoL+WfEq1wO/0gVYeR8qW2BgOJlc/HfOeMNuinJgulUtmjxYWxgEQx7h9LZmnMTO3HVsZH/XJsicyVMzAczi8xuhULqwKfwYGr7dGH48aWHkRc3qM/KvD3s7ek8y8Ft6fbjiH4izx9KVIO8kMGLJ7Ef0s2bhAvRN4f/tP3Oq80KIBcZjBv4AkrxRTAoIeXUCRg1mjRgxHNeMdn/LuW9Zl9KZJUt00vCKf4yOZdpMj5nUbZVoUEvIlEtWeobx4sDYN50jIM6AKm8jPQ2P9wpmRyO9necbWcyf1RdoVP/WgKwnhKhzdjK21e1t8sDZLSNC8pLc+xnOhevVVikucl+5wFwGnKbOUMNZDAUSjLk0KErJucsCJPoihwSYq0yQ==
-X-Forefront-Antispam-Report: 	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB9448.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230022)(4636009)(346002)(136003)(366004)(39860400002)(376002)(396003)(451199015)(5660300002)(7416002)(66556008)(66476007)(8676002)(4326008)(8936002)(41300700001)(66946007)(6486002)(2906002)(316002)(478600001)(36756003)(86362001)(6512007)(6506007)(26005)(52116002)(186003)(2616005)(921005)(83380400001)(38100700002)(6666004)(38350700002);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam-Message-Info: 	8O0cM+IvDORKk1zxHaTIOmAWoSJu5Ykd34wsabP82be2VGvLOV+pG4zzQKdkQt7jC3uSqqqTfx5vsNwX4deI+qzpEFxdv9naYZcs1egG9KtFt8aMucedemmquZhDPOMMXrenVqkis5cyjzLMg1rWSi+D/4tA7Aq5JOfMW+nAXUoO1X0JDQWuGgDwisjyy43z56J6s7ZYb5qtZWFWCTXXPPAdyfSNchZBy5Hdf9wUNQauFD/XDsOuiNBXYTssY8EhNi7zU3Z21Ojy+iCMnrpn84SrgsWy75tJFM5Cl9bbMIqqrdgAjtsJcE6hJVBdnRs3JmtxiSuSnLW8sdZtCOVAoL+B+AX9nWRN9STp7W1yWb1Cmr0q4oxrD2G30foUAM+UsZrTOH7nDeNSS23XM9whzh8aBjHAdaymEwmhrvxRl1gD+CiJzsc/SczPzj1fVIr1PXs0TPrDYe7XC7c1mW0zebAfWQDz+k0d7e2Vf/Dx3RDpXwA1Qh9osALsA9CfuIFUbuQElyaCtJiAQUDHZuHYrc0Ag04BRUf4BNFEVreJankfBQQmVcYN4x56+bstUeBzYJRfAGMKBPm7Ryv68GPq0a56ctQepeXMKM4ICS0+tdIj7QVWHHi+NcOqRt6WCmdtaEEMbGGrY1imkjG/HWq3yLp804RKPkeYPQ0btddVNj7GXIBiCasXWKk9QnjM2rxtQqXj4kEAEHh4WBMmPHZDPeZx9Jt2qzZ/ro1zz5F8Ma+edowWAoX5IkbxNfl5DI++aUc1K3UnlK3edetJq6vRlQ==
+X-Forefront-Antispam-Report: 	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB9448.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230022)(4636009)(136003)(366004)(376002)(346002)(39860400002)(396003)(451199015)(26005)(66556008)(921005)(38350700002)(86362001)(38100700002)(5660300002)(8936002)(8676002)(4326008)(7416002)(186003)(316002)(2616005)(66946007)(66476007)(2906002)(83380400001)(478600001)(6666004)(52116002)(966005)(6506007)(6486002)(41300700001)(6512007)(36756003);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: 	=?us-ascii?Q?h5K5rkaSNU+q4xnsjJB75tFgopCoulIpNLZk5ctzdEL9XFAcVkg3RMXUFk16?=
- =?us-ascii?Q?NfulLOxUnERIET7Iif+N01sB/UoDZs4oChi6lp4qATkCd+ggnCfqaQ526sxc?=
- =?us-ascii?Q?stFxAjgqnf7KZ1RaKbhIX1kSpQzGVn6Z7erm+NmoEWoO+dwwRstezihAKB0t?=
- =?us-ascii?Q?voml+6kKbsdGYMWdcu4XxaTuQZQ6YQOW4zArZ1Ra73sdSHrw/bOWn0JYyaTG?=
- =?us-ascii?Q?+OnOzHQuO/kafIPLe+TUzKk8DJ2Y3p3foug14rruEiBjDL9vvUHIG3e0f4W1?=
- =?us-ascii?Q?CFHn5tKZ5txj4mct64Wmw76DkyoI2ITPMrLifKpApGuLlvR5ZHEiC7qYAO2J?=
- =?us-ascii?Q?biE3tgiaF8npdKl9pDVJVa1yyVqX1rK74VYn/0LjegOBU/tN+rmPCjQEPoCq?=
- =?us-ascii?Q?DjGTjTl4z9DH6FDL1efz6Z2R/sajqRVLRuEdi2o2DYji6A0l2+/icobTXtpa?=
- =?us-ascii?Q?AFCpPGMUJatRAjTJIJMtjA2od2H9sk0wjZ2LuYsfNJQnPLq5YBmXcPDuyJ6X?=
- =?us-ascii?Q?MX1vD5tOWntU7zab0tvNLnlbEGJnWAJnNY7We4NNeqCdMXm8PgwQGN0G9nYB?=
- =?us-ascii?Q?BjaqCR8oJq06ZDIg4LerGWr3Fa91H3y61Jm6jh/8AXLlLYfBFuxOmuorDy3q?=
- =?us-ascii?Q?dgEopuje5SWP01WkI256ln39xSlvN93ygLy3z+IXLpYQdXfiZ9EC6UArcAx1?=
- =?us-ascii?Q?Y51uvIHin5KnZn5p0f8Ykdv8B9LceKrGm2vHVm1h60IoSOKsESOAzIm2uTFL?=
- =?us-ascii?Q?UXRQUXUV/B652hqHdtFWKznDPRRmdfijV5IhFcgCb+76sRQps02DhTyGba2/?=
- =?us-ascii?Q?AAsWXAkPvnMdD0vF5dxCVoRSu+q5FkAwQanV5W9IebM4Cjj1Bj0npEanSjIE?=
- =?us-ascii?Q?BDkhWxOKmeUExGg0nIGTSS1SsN3VY4IN78HpjF8U2TjqU41oRHQVrkygPdme?=
- =?us-ascii?Q?U/ggFi4A6h5FJ42memlsLT6SS7s20jeW/bAzBC2CSVECYMbcZXTlB72fs7Nd?=
- =?us-ascii?Q?ANLQ6zrquVQcCBRAdEZ0wajI79nQJd9/UyUdKqdpZL7A5zq/tt0sNTfBlkNM?=
- =?us-ascii?Q?0Idjd3PusaMoE9YbS7rckHaZKSOug2FjkJCvtmGWKAhX0r/boPcKWXfpdPdI?=
- =?us-ascii?Q?oluN9OIFakDB6Sc2wXIO/CbMaizEb1JAxlEQKRmQL1K0GMsquoYquFVdf9rP?=
- =?us-ascii?Q?C8XWzDDJIFhxBqqiZeuSkd6EkTlvSOHlNaGAkEqusobvr0lMpXGm1SQ9Cf6A?=
- =?us-ascii?Q?4YhmjRn5XPoBu/cIyOaTijC1w+ObwlQ/B8ehujmQ4S57vZ8swhiyaNYvUjbr?=
- =?us-ascii?Q?eRJ9LoIk5Qu9aTb1MkX1/kqbK2Is0v/grThLqi/LVRxUydt8aaAydmMxjac2?=
- =?us-ascii?Q?ne4F54FAz2f+9pTOMzEiIxhhV2YE3jxu4SkXL0wOqxtnjm/Hul3XnoRcrhON?=
- =?us-ascii?Q?c0+o0HQbe0DL0+bLwF2SuzuAeZXXLTXLMBpNNqishdgeXVadwrY1wLuke2zW?=
- =?us-ascii?Q?yvzX2td3zhatvHppLrA6jc2I6X6pgCzIkbMGvvqYtXvroGshXRkmC9xDeE/v?=
- =?us-ascii?Q?ucUzH0dt0G0WLABe2Fl4TvM5P13NKx+jfNCsjiAO?=
+X-MS-Exchange-AntiSpam-MessageData-0: 	=?us-ascii?Q?4Y0y1fvU/+1DT68LSUen6vnQHd4RfFX2y+I2L1oNalZ4SyAnY2bXcjrBz2bZ?=
+ =?us-ascii?Q?OrVugmaeqvnjo/pihIhPr+p1eiun7zzqMMW3/q8Ueds0bSRqvWvfh4mRfZWh?=
+ =?us-ascii?Q?w8ZX7hc8RxGO0okLOoOrsreWoQkohaMtl7IfSU7QymXX2wJgTPeoVCHvZ3pf?=
+ =?us-ascii?Q?tCVAD8jdce/4bp43+Gm1iGqGm3ac9zptOkwRP5zqYRtzurAVKZ34R5QKLeul?=
+ =?us-ascii?Q?3x39/9ORglZTi+u/aqOiCpT+d/jFg4BH5T5/Dvon1G2b2Eh954xRq8Pxi7Mr?=
+ =?us-ascii?Q?7Lu6EaARVhKw804kKHHFiXal+V/N/8zSrl6qSgyjm4FtNHL9qjUJqyLSNKuW?=
+ =?us-ascii?Q?NYht/xC0Tdb5wS6xm9pF8ikCzCM+zvDIpjb5Ih05cHxsPdhoRIWuVJVD81jp?=
+ =?us-ascii?Q?ARn3p+/4ggnPxUsVvqZNvlM7ytI/k5gpMzLZyRgqNwtZKunIsD29jwHK51Xx?=
+ =?us-ascii?Q?6F3IGQRymkClnwpI2ETXiGrfNNdPmlDSo4jnMqCNnFDUjD8HvFPjHRwnapZB?=
+ =?us-ascii?Q?WAQWGbAnwOexYNTbb2FSI5xcTEB5kI1ALfJXZ85e09R3kuzJfUbfc/IFRfQA?=
+ =?us-ascii?Q?ByTmJrrMVT8TCIHdiEaRkqUDUr/1fnfFCeHLYfpWqOebCL9OzzqlKrcbMXKk?=
+ =?us-ascii?Q?1TUQcsn9VsPYSqdz+yOVhHYBjooR5k7wMRXcsBtXmd6AF9gv21CKjjnGOyGW?=
+ =?us-ascii?Q?zdfuXuE9zt/82F7NuTLuBUvmvpjEpLhgX2G6z6jvCWlL28iEBJpU/Mlnf1Vw?=
+ =?us-ascii?Q?X85cvb/0oySgvou+CAZzqGGGOQXJJL/zaLjAJXyrRx5foTE7l+ut1r4SQp/f?=
+ =?us-ascii?Q?tRkgm/HPlW17t6ya2yhBng8qXyz7DWZYWjNoHFrmEb3Z0DsIEPVXWn+uHSh5?=
+ =?us-ascii?Q?lkDJgIcCAki4fKbNqeHZL8HFPPu9jeCRFwSHuDkfpJJd/QPkAIF33A4lcxTO?=
+ =?us-ascii?Q?U+6fnJhUIPybqcjDZEw183I4ZwRow6eqUxeUJqVdPT3b+fBSTjxIo8DytA2u?=
+ =?us-ascii?Q?mf6SZhhgJbb6HfGYi2yeXiojXHl/3/z5AYLdXqr/TQSROu+cBlhCgs4BYE/m?=
+ =?us-ascii?Q?hsEN0sEk5Nh9xp4S7pCGVxie1QYHmfnFbEo2rSsZqFPW82E6uu2kM/4gj6Xx?=
+ =?us-ascii?Q?Sl4cECmP6I74xcl0jek37qanmLsHT4Y766VJjSpg1X30K7rpS0w8Vx2W0SAt?=
+ =?us-ascii?Q?Q8bbVs+PK501goVcaocx+SonwRWXNgy+s84CRjYSYmH2n9fPtBg075F2gO1z?=
+ =?us-ascii?Q?T6efK7RKQgft16ucfsfhOk3LAZVY0sJP8Mrz0eiCM0os3PviaMeT7xDAdJQQ?=
+ =?us-ascii?Q?sRxm4aT4WBQxNTVesXzO8gAi9nEyy1bVQZ27xdRazAVkLvTMnvpJk68S/F/K?=
+ =?us-ascii?Q?RmZmdblLQXgEJdioj7sae3VE8sLGJhcSAZc0MvRFZ5Mn3uP0rAY8CFnrvoJW?=
+ =?us-ascii?Q?Y5dNEAyTtk6zHufZwLxAU4KrymfvOlHnWcv/hZUFImgKV3YRFw0zhCEB3DtB?=
+ =?us-ascii?Q?0x9weDoAGOvGNtt4mTqBAvlUg4TfsZ4Zko+MTiNabnP29N5CpnnrdG18iYd2?=
+ =?us-ascii?Q?uALZ+O+w4eVJnfWv30xf3FMl+NNyKX4fgpmmcgPd?=
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 35980726-6505-4475-fdb2-08dad11382ff
+X-MS-Exchange-CrossTenant-Network-Message-Id: 53c77c4c-b339-4c3f-4407-08dad1139025
 X-MS-Exchange-CrossTenant-AuthSource: PAXPR04MB9448.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 28 Nov 2022 07:38:16.0463
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 28 Nov 2022 07:38:38.1166
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: vpWr0hpTPPGX7TVOcUsPh1Y7RK48+K79MC3ye0urChVyvZBtD09be62d9JVoyOMMft6728YivS5fpthlE9w4SA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DU0PR04MB9249
+X-MS-Exchange-CrossTenant-UserPrincipalName: Ao/j8VXVGnUrvdZ4Y9ctTR539CMTvIzCzRqmi7BLR3LpY8+GE3rgXUeNGp+pnstrIzU/rVgyebLBxZRE4a9Kmw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS8PR04MB9511
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221127_233827_797217_E7E7CCB0 
-X-CRM114-Status: GOOD (  16.38  )
+X-CRM114-CacheID: sfid-20221127_233841_449737_A5997A1A 
+X-CRM114-Status: GOOD (  11.06  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -149,101 +149,88 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Allow HDMI PHYs to be configured through the generic
-functions through a custom structure added to the generic union.
-
-The parameters added here are based on HDMI PHY
-implementation practices.  The current set of parameters
-should cover the potential users.
+Add bindings for Cadence HDP-TX DisplayPort PHY.
 
 Signed-off-by: Sandor Yu <Sandor.yu@nxp.com>
 ---
- include/linux/phy/phy-hdmi.h | 38 ++++++++++++++++++++++++++++++++++++
- include/linux/phy/phy.h      |  7 ++++++-
- 2 files changed, 44 insertions(+), 1 deletion(-)
- create mode 100644 include/linux/phy/phy-hdmi.h
+ .../bindings/phy/cdns,hdptx-dp-phy.yaml       | 68 +++++++++++++++++++
+ 1 file changed, 68 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/cdns,hdptx-dp-phy.yaml
 
-diff --git a/include/linux/phy/phy-hdmi.h b/include/linux/phy/phy-hdmi.h
+diff --git a/Documentation/devicetree/bindings/phy/cdns,hdptx-dp-phy.yaml b/Documentation/devicetree/bindings/phy/cdns,hdptx-dp-phy.yaml
 new file mode 100644
-index 000000000000..5765aa5bc175
+index 000000000000..f4f741150c12
 --- /dev/null
-+++ b/include/linux/phy/phy-hdmi.h
-@@ -0,0 +1,38 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+/*
-+ * Copyright 2022 NXP
-+ */
++++ b/Documentation/devicetree/bindings/phy/cdns,hdptx-dp-phy.yaml
+@@ -0,0 +1,68 @@
++# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/cdns,hdptx-dp-phy.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+#ifndef __PHY_HDMI_H_
-+#define __PHY_HDMI_H_
++title: Cadence HDP-TX(HDMI/DisplayPort) PHY for DisplayPort protocol
 +
-+/**
-+ * Pixel Encoding as HDMI Specification
-+ * RGB, YUV422, YUV444:HDMI Specification 1.4a Section 6.5
-+ * YUV420: HDMI Specification 2.a Section 7.1
-+ */
-+enum hdmi_phy_colorspace {
-+	HDMI_PHY_COLORSPACE_RGB,        /* RGB 4:4:4 */
-+	HDMI_PHY_COLORSPACE_YUV422,     /* YCbCr 4:2:2 */
-+	HDMI_PHY_COLORSPACE_YUV444,     /* YCbCr 4:4:4 */
-+	HDMI_PHY_COLORSPACE_YUV420,     /* YCbCr 4:2:0 */
-+	HDMI_PHY_COLORSPACE_RESERVED4,
-+	HDMI_PHY_COLORSPACE_RESERVED5,
-+	HDMI_PHY_COLORSPACE_RESERVED6,
-+};
++maintainers:
++  - Sandor Yu <sandor.yu@nxp.com>
 +
-+/**
-+ * struct phy_configure_opts_hdmi - HDMI configuration set
-+ * @pixel_clk_rate:	Pixel clock of video modes in KHz.
-+ * @bpc: Maximum bits per color channel.
-+ * @color_space: Colorspace in enum hdmi_phy_colorspace.
-+ *
-+ * This structure is used to represent the configuration state of a HDMI phy.
-+ */
-+struct phy_configure_opts_hdmi {
-+	unsigned int pixel_clk_rate;
-+	unsigned int bpc;
-+	enum hdmi_phy_colorspace color_space;
-+};
++properties:
++  compatible:
++    enum:
++      - cdns,hdptx-dp-phy
 +
-+#endif /* __PHY_HDMI_H_ */
-diff --git a/include/linux/phy/phy.h b/include/linux/phy/phy.h
-index b1413757fcc3..6f6873ea7270 100644
---- a/include/linux/phy/phy.h
-+++ b/include/linux/phy/phy.h
-@@ -17,6 +17,7 @@
- #include <linux/regulator/consumer.h>
- 
- #include <linux/phy/phy-dp.h>
-+#include <linux/phy/phy-hdmi.h>
- #include <linux/phy/phy-lvds.h>
- #include <linux/phy/phy-mipi-dphy.h>
- 
-@@ -42,7 +43,8 @@ enum phy_mode {
- 	PHY_MODE_MIPI_DPHY,
- 	PHY_MODE_SATA,
- 	PHY_MODE_LVDS,
--	PHY_MODE_DP
-+	PHY_MODE_DP,
-+	PHY_MODE_HDMI,
- };
- 
- enum phy_media {
-@@ -60,11 +62,14 @@ enum phy_media {
-  *		the DisplayPort protocol.
-  * @lvds:	Configuration set applicable for phys supporting
-  *		the LVDS phy mode.
-+ * @hdmi:	Configuration set applicable for phys supporting
-+ *		the HDMI phy mode.
-  */
- union phy_configure_opts {
- 	struct phy_configure_opts_mipi_dphy	mipi_dphy;
- 	struct phy_configure_opts_dp		dp;
- 	struct phy_configure_opts_lvds		lvds;
-+	struct phy_configure_opts_hdmi		hdmi;
- };
- 
- /**
++  reg:
++    maxItems: 1
++
++  clocks:
++    items:
++      - description: PHY reference clock.
++      - description: APB clock.
++
++  clock-names:
++    items:
++      - const: ref
++      - const: apb
++
++  "#phy-cells":
++    const: 0
++
++  cdns,num-lanes:
++    description:
++      Number of lanes.
++    $ref: /schemas/types.yaml#/definitions/uint32
++    enum: [1, 2, 3, 4]
++    default: 4
++
++  cdns,max-bit-rate:
++    description:
++      Maximum DisplayPort link bit rate to use, in Mbps
++    $ref: /schemas/types.yaml#/definitions/uint32
++    enum: [2160, 2430, 2700, 3240, 4320, 5400]
++    default: 5400
++
++required:
++  - compatible
++  - reg
++  - clocks
++  - clock-names
++  - "#phy-cells"
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/clock/imx8mq-clock.h>
++    #include <dt-bindings/phy/phy.h>
++    dp_phy: phy@32c00000 {
++        compatible = "cdns,hdptx-dp-phy";
++        reg = <0x32c00000 0x100000>;
++        #phy-cells = <0>;
++        clocks = <&hdmi_phy_27m>, <&clk IMX8MQ_CLK_DISP_APB_ROOT>;
++        clock-names = "ref", "apb";
++        cdns,num-lanes = <4>;
++        cdns,max-bit-rate = <5400>;
++    };
 -- 
 2.34.1
 
