@@ -4,73 +4,166 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6AB70C4321E
-	for <linux-phy@archiver.kernel.org>; Sun, 27 Nov 2022 11:44:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3EFCFC4321E
+	for <linux-phy@archiver.kernel.org>; Mon, 28 Nov 2022 07:21:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:CC:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JJivjQp7CcHtUGaUaUDmlXcMZRMiNBL+85WmMaa97fQ=; b=CN5sx9DRRy+zjg
-	G2ENwpnXa0koxEEt9da/iZ3J1YpnwUDn4Vzk7t0Fs3xm+LYlHQh0GG97ObSpVSxgb/NE1VmtX8cKT
-	uwD9nD1/Z+AndgKdKGXqNuqIvzW1+BW8RsxEF8v0gHnoX/rgLFljXwj6+ylSFyaw2NpKIZ0Pnu1/s
-	90bEqD2sqDQjpuBWRRf167pqQdeayRmlrADcjkpxu+laC9AzISddoW0A8p5SP5i1DPNx+8dhXOP+w
-	HwaoPxoYT+H1KunLlVTx1au1AdC7aPg2QyC+8vIwECf+wncs2NPr+Bl+RJ8v9xZnnXBxCR/xR2TWp
-	VFQ7XIheMuszsqb3Pmbw==;
+	List-Owner; bh=rslWB+4QRXCLh6FkZcZFLzL+MfRf86BWkJsZNGWDybc=; b=zubytdrjHFIQ68
+	IfOgRTFyJCYfyN56LPAdqgoSUDpPsUVPZVa5/SKV5sg/bLcW9XC0VrQZYnq/MQMx346/wxuLXOqWH
+	In5IqvnONq/5q8kU+CGxJslsG6usQcvyFgBWEwJAzY0DYLOZObMixMU3DewpK++iNu+giQ/+YsmCl
+	6PHNeAPl42sMnFlS4M1hX9WfeS26pQCSSVBfpqVCLAHMY4eV/yux5YIT/7HAO8sde95RA07uUFf3i
+	W0nUvbC88QdKDS93rwsZmHani3bStUdlfV4FBAePCIk4C5f1HSYTzDDTfM2RiLeQLaKVA9OdqM32N
+	ccEI5zxzoaqplYVY4OBA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ozG5A-00B6eO-OD; Sun, 27 Nov 2022 11:44:24 +0000
-Received: from mxout2.routing.net ([2a03:2900:1:a::b])
+	id 1ozYRu-00HEL5-KF; Mon, 28 Nov 2022 07:21:06 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ozG2p-00B5JN-Fk; Sun, 27 Nov 2022 11:42:04 +0000
-Received: from mxbulk.masterlogin.de (unknown [192.168.10.85])
-	by mxout2.routing.net (Postfix) with ESMTP id 2ACBD5FC22;
-	Sun, 27 Nov 2022 11:41:56 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mailerdienst.de;
-	s=20200217; t=1669549316;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=xXb5cyE2qS3zMsbew6j5YkfvhLAL3KMYFcocU0qq5Fk=;
-	b=Cwqup+v/9mcJqEUuWeHckfeDFnAkT22i77jUaM6zMqMsLFeZ416+blzzE+BZApeDe59KTt
-	txooCnN7jspenkTFsx175Xugd7v5XFAuFavrRpTx4eswkaRbhYLLMYjKJMZoLNzDHuUriS
-	pvdy/ky2oLfk6Tfuea5ed4QcsCAD86g=
-Received: from frank-G5.. (fttx-pool-217.61.157.144.bambit.de [217.61.157.144])
-	by mxbulk.masterlogin.de (Postfix) with ESMTPSA id CE4321226D4;
-	Sun, 27 Nov 2022 11:41:55 +0000 (UTC)
-From: Frank Wunderlich <linux@fw-web.de>
-To: linux-mediatek@lists.infradead.org
-Cc: Frank Wunderlich <frank-w@public-files.de>,
-	Ryder Lee <ryder.lee@mediatek.com>,
-	Jianjun Wang <jianjun.wang@mediatek.com>,
-	Lorenzo Pieralisi <lpieralisi@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	=?UTF-8?q?Krzysztof=20Wilczy=C5=84ski?= <kw@linux.com>,
-	Bjorn Helgaas <bhelgaas@google.com>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Chunfeng Yun <chunfeng.yun@mediatek.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	linux-pci@vger.kernel.org,
-	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-phy@lists.infradead.org,
-	linux-usb@vger.kernel.org
-Subject: [next v7 8/8] arm64: dts: mt7986: add Bananapi R3
-Date: Sun, 27 Nov 2022 12:41:42 +0100
-Message-Id: <20221127114142.156573-9-linux@fw-web.de>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20221127114142.156573-1-linux@fw-web.de>
-References: <20221127114142.156573-1-linux@fw-web.de>
+	id 1ozYRs-00HEIM-4Z; Mon, 28 Nov 2022 07:21:05 +0000
+X-UUID: 21d5178119c34a3cb748149f48a72c7a-20221128
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
+	h=MIME-Version:Content-Transfer-Encoding:Content-ID:Content-Type:In-Reply-To:References:Message-ID:Date:Subject:CC:To:From; bh=6D1mUzaxP0QwqL+ByQM1WUT+FsSZ6OuGyyFL/63soR4=;
+	b=nRboxZPJ8nq4Z9INZ99KxfYu+K12YwwpmjmlTL+keyQG+5TBTgQr+eLDwpIB8qrwqpwcD5367LTGrohnaNgoIfVREpt5HPKqo3OJELriijSb4Sph4tb/OpC+4BOB1Whme9djG0UH7COX/MbCp2ydmKlgKlk1rja+MOMcbhEmDjE=;
+X-CID-P-RULE: Release_Ham
+X-CID-O-INFO: VERSION:1.1.14,REQID:41fec7c3-1880-41c6-90e5-e4ac7e4a4563,IP:0,U
+	RL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:
+	release,TS:0
+X-CID-META: VersionHash:dcaaed0,CLOUDID:c9287c1e-5e1d-4ab5-ab8e-3e04efc02b30,B
+	ulkID:nil,BulkQuantity:0,Recheck:0,SF:102,TC:nil,Content:0,EDM:-3,IP:nil,U
+	RL:11|1,File:nil,Bulk:nil,QS:nil,BEC:nil,COL:0
+X-UUID: 21d5178119c34a3cb748149f48a72c7a-20221128
+Received: from mtkmbs11n1.mediatek.inc [(172.21.101.185)] by mailgw02.mediatek.com
+	(envelope-from <chunfeng.yun@mediatek.com>)
+	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
+	with ESMTP id 1024411694; Mon, 28 Nov 2022 00:20:56 -0700
+Received: from mtkmbs10n1.mediatek.inc (172.21.101.34) by
+ mtkmbs11n1.mediatek.inc (172.21.101.185) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.792.15; Mon, 28 Nov 2022 15:00:53 +0800
+Received: from APC01-SG2-obe.outbound.protection.outlook.com (172.21.101.239)
+ by mtkmbs10n1.mediatek.com (172.21.101.34) with Microsoft SMTP Server id
+ 15.2.792.15 via Frontend Transport; Mon, 28 Nov 2022 15:00:53 +0800
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=Of4MGdB/1oYGDrgx7CIucNprm47Sf8QCh+bi3jQpL1tKpvdrYXpr8F55ouMCMr/kipZOvDhaT5IflUWfzy8rMnjhGMOvlajhOJ0vZV00XSWrisKB8bLd7EwryE1CbFXqWiooYVjG2jbkT7dyJbccP0FLWjolFy+0y4KOOUrq6rlU6UdXYc7Yw/4TWm20X+SFqbHMIYx3RkxycqZBrD06jYe9dIkCPHRycpsOu+qntGhSC6LTpBRW99BA0TuAWne2BBEPUzXeH9ZFwB0012DZPJwFbMqEgxMcHuxIgynqhZ+i7gLXAtSHQ2nxol76cRiCdl195qaF0uHMmyBrdQrhPw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=6D1mUzaxP0QwqL+ByQM1WUT+FsSZ6OuGyyFL/63soR4=;
+ b=IXqveTByJ/Gaw0MIztpKzizEoezhKXAF555LcGxf6lx7d6isZm70G9uqZWwDReNNxDL6HIrcE7tNrreMzfF86dZxDDVBxHAi2fe+4xxuPT4CwxHwYysSjiSGyL+x90ythewbk0i2n/QF5WkyrTFnVomYOGgR7leaDxPHYzpFT80Inpm14ec7uOSJa6YVUWyr45v5vUSLpsZXL+wlOlna0FAMwSvjiYT3jnF9m2jDifkWPT3b1n6iWly3lyF88KyDK9tAm6vWFjdrKdq5IFBO/ypjvundhA7Mg3dGKFM6py6/JnGrZaz0cg60RkNy2OXfV1iwHCpnbTIaWxbk6zMnxQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=mediatek.com; dmarc=pass action=none header.from=mediatek.com;
+ dkim=pass header.d=mediatek.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=mediateko365.onmicrosoft.com; s=selector2-mediateko365-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=6D1mUzaxP0QwqL+ByQM1WUT+FsSZ6OuGyyFL/63soR4=;
+ b=j9vkUdCqwCVHqC6DnqIiIskkVnDZv5T6QwAUk09Lh+sVV89Xm24NYGigjEnODdzN73+/S+bbl6pOQkZoW5dau3+36lU6Of3Co1p+VEO+0cgsDpPUmET739oDcpoXouoXoVII8vEZXx67lblUWgJdfO7fNbR43W9hluR90z5j6OM=
+Received: from KL1PR03MB5062.apcprd03.prod.outlook.com (2603:1096:820:1a::22)
+ by PUZPR03MB6855.apcprd03.prod.outlook.com (2603:1096:301:e5::9) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5857.23; Mon, 28 Nov
+ 2022 07:00:51 +0000
+Received: from KL1PR03MB5062.apcprd03.prod.outlook.com
+ ([fe80::9585:3a04:b796:b696]) by KL1PR03MB5062.apcprd03.prod.outlook.com
+ ([fe80::9585:3a04:b796:b696%5]) with mapi id 15.20.5857.020; Mon, 28 Nov 2022
+ 07:00:50 +0000
+From: =?utf-8?B?Q2h1bmZlbmcgWXVuICjkupHmmKXls7Ap?= <Chunfeng.Yun@mediatek.com>
+To: "vkoul@kernel.org" <vkoul@kernel.org>
+CC: "llvm@lists.linux.dev" <llvm@lists.linux.dev>,
+	"linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+	"nathan@kernel.org" <nathan@kernel.org>, "kishon@ti.com" <kishon@ti.com>,
+	=?utf-8?B?RWRkaWUgSHVuZyAo5rSq5q2j6ZGrKQ==?= <Eddie.Hung@mediatek.com>,
+	=?utf-8?B?VGlhbnBpbmcgRmFuZyAo5pa55aSp5bmzKQ==?=
+	<Tianping.Fang@mediatek.com>, "linux-arm-kernel@lists.infradead.org"
+	<linux-arm-kernel@lists.infradead.org>, "matthias.bgg@gmail.com"
+	<matthias.bgg@gmail.com>, "linux-phy@lists.infradead.org"
+	<linux-phy@lists.infradead.org>, "trix@redhat.com" <trix@redhat.com>,
+	"angelogioacchino.delregno@collabora.com"
+	<angelogioacchino.delregno@collabora.com>, "ndesaulniers@google.com"
+	<ndesaulniers@google.com>
+Subject: Re: [PATCH v4 2/3] phy: core: add debugfs root
+Thread-Topic: [PATCH v4 2/3] phy: core: add debugfs root
+Thread-Index: AQHY9QgpVRJM2vxsIUeK39IN/xwo7q5ObUSAgAWW9oA=
+Date: Mon, 28 Nov 2022 07:00:50 +0000
+Message-ID: <0326f3314c47853876c0a7e3a2cd32c5a4f21427.camel@mediatek.com>
+References: <20221110132716.12294-1-chunfeng.yun@mediatek.com>
+	 <20221110132716.12294-2-chunfeng.yun@mediatek.com>
+	 <Y3+sQewHEpCU0xu9@matsya>
+In-Reply-To: <Y3+sQewHEpCU0xu9@matsya>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=mediatek.com;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: KL1PR03MB5062:EE_|PUZPR03MB6855:EE_
+x-ms-office365-filtering-correlation-id: 1910a596-d14b-4557-a5bb-08dad10e4887
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: SvFPiLozxkGuL6/xaNtjcSFXwB3z/ZyDo2CORTUQP9MODxJNa1JQmNXNi+HUR8VdWylDD7oMH3t9VTyz3P3sJAH+1LE8EEhgzC6+SVBaamrhEOYruSO5jUIIZ8eRE5O0u4YhKLbWyaD0M1QKTg/nUY5yQ3TDifKc71Eoyw9BB596R9fHkI8AQQTetP7ic9kKVDzOIK0QsNxByz7pA5Z6iwx8ytC65A0xKq/TuMXhw5/eBCsLJqAU9rIz26Zhc6qeKtzhIkKlHwc1nSVSFxKBvLE65IUKIAgzSm6rvIJ3mUo8OO6CA2PqXKZwTobyVUgF3WwRDg5BVyXh2NwcQJ985G4sTruL8Jwp8SAaZ8H7rczWL6tapFdD3OQ5mQgKQ27W7Z7HL5XpZOoXq81Imp05Bd5rRZeJ8cs7M3OxYJcByF5Ym2q5aC9vp4mNZ5ZSzqgTL/67w1cSx/fZMq8B/U/UyrcKyCVFZ4NkGtb6YgBRG3b2Kn+XcIu+4dgxaUSWN0iaz/RXi5gN9qgVX/11R7mJh+0tVCs3R36FFzwtr39vb9969Ik9QGWxduY8F96TdAB19dGuU3UcS6inao3Gdvq3MzmIyhnMBddceguu02B2O7oufxlpCxJbDJqkGqg9MDJzVA3R3xJa8RI27U7vMO2HMQ5cV/G5LCCFZL/9d6uCWUixHPThFHXbt20qkBSbQ/++PHeAAHaC4zTczYzIx+wHrMm+t+Tuq7gr0aY536Fbag7gGUwI3+l3I+ZmYduyTFYzZrFMcj4xTOgE20phVQFWfA==
+x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:KL1PR03MB5062.apcprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230022)(4636009)(366004)(39860400002)(396003)(376002)(136003)(346002)(451199015)(8936002)(71200400001)(5660300002)(76116006)(91956017)(66446008)(4326008)(66946007)(64756008)(8676002)(66556008)(36756003)(85182001)(6916009)(186003)(66476007)(54906003)(41300700001)(316002)(122000001)(38070700005)(38100700002)(478600001)(6486002)(26005)(86362001)(6512007)(2616005)(53546011)(6506007)(7416002)(2906002)(4001150100001)(99106002);DIR:OUT;SFP:1102;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: =?utf-8?B?NXBCS0hBaEZmR0c3aG55a1p6cEJsdzFFeHR5ZGd0TjhQRTFjWnBKaCs1bWV1?=
+ =?utf-8?B?M09RcG1ucm5SUXhkanh1SUxXUXREcFJ4VGRoQWFpM2dGYzZoSjhES0lQeGM0?=
+ =?utf-8?B?V2xnYVZxaWwxVzYvVDM1RFhqcWd5NjIyd2FMdU5BY1hwcjM1L3c1VUNpS1d4?=
+ =?utf-8?B?a01ER2tFYmdOY0JrUk1vSHJNbW9mSG1FNnhzdmdwbHQxVmptOHJXNHYvWmV2?=
+ =?utf-8?B?djNQSDhFR09PWlZhRThqbE52Rk1PWTFRVDdTTjdOdGVQREY2R1BYWE1pS21L?=
+ =?utf-8?B?clR3OHA0SGgwUVNWazlSUlBDU2dZRjdMaThPbUhBMUwraWw3WEpIdzB0Q3V1?=
+ =?utf-8?B?RElidko0T3lhemhoREs1eFh6cWtkWG15ZDl1cFVxM3RIUHZURGdFNE9KbWRn?=
+ =?utf-8?B?cGVhek9FRCtkWnpYOTcvNlE4MnRqbWUrZmY0WUZyWU0rZXM2K2lleTBhR1Mv?=
+ =?utf-8?B?OVVKZkwrMTdOcFJpTm5KQW5kdFRTcFZyU3lob2ZxdmVRVzA5RkxJUTdja3lD?=
+ =?utf-8?B?Mmd5K25xSHo3Y0hoOVN3Zjc4dXpxWUJScTFFUFhmMUlDNy9HMnJkaWhmTE9P?=
+ =?utf-8?B?Ym1odnJJRUtvd0ZhRC91VEdHd2Y0OFBBVXRTaytiZzlPWVRIb2VwZjg4bGdX?=
+ =?utf-8?B?bTAxcldDS0lUK0l2MVFoY2x6NmZWbVJOV3lpVEVkTW5HaEc4UWRGTUdsZW91?=
+ =?utf-8?B?eWh3djhUUXBrbjY4VnhZc3JxUWNHTXhkK2x3Vm9ZMTlsMXl3RFk5bm13bEs1?=
+ =?utf-8?B?ZVZ3ZGNML1dNRmE3bVNmTnptZUVpblNCYUF1MmdsNWZsb1NCOUFKNytFbWpE?=
+ =?utf-8?B?SEcwOWV3TmJ6cFNOcTVLYXphaStDd3hKc2p5empMam9Mb09YL3AyQXphcWhK?=
+ =?utf-8?B?OGY3UVJMNERvVklHa2RDU0R0UkRDR2d2TzB5ZzJUK2dha3llem9tUXIxV1E5?=
+ =?utf-8?B?aU5IVytQMjVMUVFPMnJlaFl1WFFuRWV2dStGSm5aMjl3elNpR0JtSzY3SUUz?=
+ =?utf-8?B?cm02c1kwcVVFWnF0dUtYcTlkeGFnS1JPL0tsRm52dUpuN3lEeWF2QWdPRkZV?=
+ =?utf-8?B?ZXh1N2s4RjJQMTNCbnBoMDVodWs4cGJXWlJUa3pXU3hKTmF4ZStzMHl5SE9U?=
+ =?utf-8?B?cWp1b1M3cmNBeUtrSGpQVVpuRUpSZGdJYUhtUThpSHRscXdaTzhWemlMM09i?=
+ =?utf-8?B?ZHdaQkJwSUlqeVdQUWtYRERzaXVKV2Q2dlFsY1BJZm8zZnFEQUZpcXA2M2Rj?=
+ =?utf-8?B?WTVDL0VXcmJ2alp0amxwQmRucUsyR3Vsb0VERHlQZENNbHlxSENxdHBndGRF?=
+ =?utf-8?B?SzdsWk1rSTBESjVQNnVNaHVjYWpmTzNDR01kMk1Ebk1qUVU3L2xmS0hHRGRy?=
+ =?utf-8?B?cjMxUEVlR05ERTFRTGgzb21iditLeUI0dXdaUkE1QkNUNnd1UytsZjUrL3p6?=
+ =?utf-8?B?Y3B6TEdUaUJISWp3bU1iMmxXQXhmUjhkbWtJbFg2SmU2YmpZVWh1TzM0em9W?=
+ =?utf-8?B?a1FDbjFtRk5oZDZ2YXZHdFppODA4WXFhaExFTThsWEtUZzlUcUFTOGJUZ0FY?=
+ =?utf-8?B?dFREN0Rqb01qZGNtS1BNTFB1ZkRMSUtZUElUbnZGemtDUTRQR1JQdWRDWU8r?=
+ =?utf-8?B?a01ObTlPRnBoOStrdGFLblZ4RHpXL0ZXc2ExeDJzM1RHTjU2RUtFTVR1MUw4?=
+ =?utf-8?B?NklzQW1xd2dSVi9GQ1hlQUJrbklUYTN6WHRiY3gxbUZObHpldnlKZXVxdWlP?=
+ =?utf-8?B?dGlDSFVtaHdnSFI4Y0swbzNWUmw5ckR1ZGdNRDh5NlFnTE13cHJ1cFZHcVVD?=
+ =?utf-8?B?am1oVUZBbTZkUytEM0ZVVkpyRjhhbHRoUTBUN2pSZFZKNlIrS1RRa3RubGF2?=
+ =?utf-8?B?L1V1WDFWMlM5UjFPM2dhallDbTJGR0tFKy9RTWprcWRFZm8zMDlJOUovZlJ5?=
+ =?utf-8?B?cVJ6aHY0dkFZa1E4R0ErUU9jRVNsUHBlSmI4MEVzRFdML0VNemVEOGh0RHRR?=
+ =?utf-8?B?VEtWSmpZdDhLeSsrL2FvcVprOUxCRnEwWnRseHRncTBHOHVGUE1GNVZSVGxJ?=
+ =?utf-8?B?bXU1QVl3VlNzOVhMdHdnMnJuOWJWblphOUhQaVRlalE2bFFXNTlQYlhIWXVT?=
+ =?utf-8?B?blBQeFFDN3BiVHlWTFB5V3ZGU21IY0o1TlVNSDdxZ3l3MnNNSWJJcVo3bDEx?=
+ =?utf-8?B?anc9PQ==?=
+Content-ID: <191F212D591B6A48A1ED075B3BBB6E5D@apcprd03.prod.outlook.com>
 MIME-Version: 1.0
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: KL1PR03MB5062.apcprd03.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 1910a596-d14b-4557-a5bb-08dad10e4887
+X-MS-Exchange-CrossTenant-originalarrivaltime: 28 Nov 2022 07:00:50.2318
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: a7687ede-7a6b-4ef6-bace-642f677fbe31
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: oTMxc/9m9rF9m84mznWQRiwkFPTOTw2k3le8fjIuUZGm8OReRNtuQ119eLNmvjzbx3kuxuQIemnYH0WiJ+2q0eWGkeNCet1UCrXObXl9hRk=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PUZPR03MB6855
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221127_034159_933583_8A63536D 
-X-CRM114-Status: GOOD (  19.63  )
+X-CRM114-CacheID: sfid-20221127_232104_231495_1D679221 
+X-CRM114-Status: GOOD (  19.74  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,744 +180,79 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Frank Wunderlich <frank-w@public-files.de>
+On Thu, 2022-11-24 at 23:09 +0530, Vinod Koul wrote:
+> On 10-11-22, 21:27, Chunfeng Yun wrote:
+> > Add a debugfs root for phy class, then phy drivers can add debugfs
+> > files
+> > under this folder.
+> > 
+> > Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+> > ---
+> > v2~v4: no changes
+> > ---
+> >  drivers/phy/phy-core.c  | 6 ++++++
+> >  include/linux/phy/phy.h | 2 ++
+> >  2 files changed, 8 insertions(+)
+> > 
+> > diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
+> > index d93ddf1262c5..2f9f69190519 100644
+> > --- a/drivers/phy/phy-core.c
+> > +++ b/drivers/phy/phy-core.c
+> > @@ -11,6 +11,7 @@
+> >  #include <linux/export.h>
+> >  #include <linux/module.h>
+> >  #include <linux/err.h>
+> > +#include <linux/debugfs.h>
+> >  #include <linux/device.h>
+> >  #include <linux/slab.h>
+> >  #include <linux/of.h>
+> > @@ -1204,6 +1205,9 @@ void devm_of_phy_provider_unregister(struct
+> > device *dev,
+> >  }
+> >  EXPORT_SYMBOL_GPL(devm_of_phy_provider_unregister);
+> >  
+> > +struct dentry *phy_debug_root;
+> > +EXPORT_SYMBOL_GPL(phy_debug_root);
+> 
+> Why expose this to whole world? Alternate approach would be to add
+> this
+> in struct phy
+If only add it in struct phy, many phy folders will be created under
+/sys/kernel/debug/, and create them under /sys/kernel/debug/phy seems
+more clearer, this also follows other class, such as usb
 
-Add support for Bananapi R3 SBC.
-
-- SD/eMMC support (switching first 4 bits of data-bus with sw6/D)
-- SPI-NAND/NOR support (switched CS by sw5/C)
-- all rj45 ports and both SFP working (eth1/lan4)
-- all USB-Ports + SIM-Slot tested
-- i2c and all uarts tested
-- wifi tested (with eeprom calibration data)
-
-The device can boot from all 4 storage options. Both, SPI and MMC, can
-be switched using hardware switches on the board, see
-https://wiki.banana-pi.org/Banana_Pi_BPI-R3#Jumper_setting
-
-Signed-off-by: Frank Wunderlich <frank-w@public-files.de>
----
-changes:
-v7:
-- squashed overlay-patch and converted sd/emmc dts to overlay too
-- moved mmc-regulators to base dts
-- changed common dtsi to (base dts) and overlay extension to dtso
-
-v6:
-- drop usb 5v regulator from bpi-r3
-  based on chunfengs response it is only needed if regulator is
-  switched (like for otg), usb works without it.
-
-v4:
-- add PCIe nodes
-- fix sfp-properties of sfp-1 (need to be plural)
-  thx to Denis Odintsov for this
-
-v3:
-- rename factory-key to reset-key
-- add dcin regulator and add it as input for 3v3 (with renaming)
-- remove memory-node
-- dropped wifi eeprom (calibration) data
-- move mmc0 pinctrl to common dtsi and drop sdcard comment
-- change mmc pull-up/down to have generic bias-pull*
-
-v2:
-- remove pcie to be added later (discussion about clocks)
-- some fixes based on suggestions on ML
-  - add key suffix like it's done in mt7622-bpi-r64 devicetree
-  - add dash in sfp node names
-  - use reg as unit for switch-node
-  - drop "-3-4" suffix from i2c-pins node name
-  - fix order in Makefile
----
- arch/arm64/boot/dts/mediatek/Makefile         |   5 +
- .../mt7986a-bananapi-bpi-r3-emmc.dtso         |  30 ++
- .../mt7986a-bananapi-bpi-r3-nand.dtso         |  55 +++
- .../mediatek/mt7986a-bananapi-bpi-r3-nor.dtso |  68 +++
- .../mediatek/mt7986a-bananapi-bpi-r3-sd.dtso  |  24 +
- .../dts/mediatek/mt7986a-bananapi-bpi-r3.dts  | 448 ++++++++++++++++++
- 6 files changed, 630 insertions(+)
- create mode 100644 arch/arm64/boot/dts/mediatek/mt7986a-bananapi-bpi-r3-emmc.dtso
- create mode 100644 arch/arm64/boot/dts/mediatek/mt7986a-bananapi-bpi-r3-nand.dtso
- create mode 100644 arch/arm64/boot/dts/mediatek/mt7986a-bananapi-bpi-r3-nor.dtso
- create mode 100644 arch/arm64/boot/dts/mediatek/mt7986a-bananapi-bpi-r3-sd.dtso
- create mode 100644 arch/arm64/boot/dts/mediatek/mt7986a-bananapi-bpi-r3.dts
-
-diff --git a/arch/arm64/boot/dts/mediatek/Makefile b/arch/arm64/boot/dts/mediatek/Makefile
-index 813e735c5b96..d5cd7b3e09cf 100644
---- a/arch/arm64/boot/dts/mediatek/Makefile
-+++ b/arch/arm64/boot/dts/mediatek/Makefile
-@@ -8,6 +8,11 @@ dtb-$(CONFIG_ARCH_MEDIATEK) += mt6797-evb.dtb
- dtb-$(CONFIG_ARCH_MEDIATEK) += mt6797-x20-dev.dtb
- dtb-$(CONFIG_ARCH_MEDIATEK) += mt7622-rfb1.dtb
- dtb-$(CONFIG_ARCH_MEDIATEK) += mt7622-bananapi-bpi-r64.dtb
-+dtb-$(CONFIG_ARCH_MEDIATEK) += mt7986a-bananapi-bpi-r3.dtb
-+dtb-$(CONFIG_ARCH_MEDIATEK) += mt7986a-bananapi-bpi-r3-emmc.dtbo
-+dtb-$(CONFIG_ARCH_MEDIATEK) += mt7986a-bananapi-bpi-r3-nand.dtbo
-+dtb-$(CONFIG_ARCH_MEDIATEK) += mt7986a-bananapi-bpi-r3-nor.dtbo
-+dtb-$(CONFIG_ARCH_MEDIATEK) += mt7986a-bananapi-bpi-r3-sd.dtbo
- dtb-$(CONFIG_ARCH_MEDIATEK) += mt7986a-rfb.dtb
- dtb-$(CONFIG_ARCH_MEDIATEK) += mt7986b-rfb.dtb
- dtb-$(CONFIG_ARCH_MEDIATEK) += mt8167-pumpkin.dtb
-diff --git a/arch/arm64/boot/dts/mediatek/mt7986a-bananapi-bpi-r3-emmc.dtso b/arch/arm64/boot/dts/mediatek/mt7986a-bananapi-bpi-r3-emmc.dtso
-new file mode 100644
-index 000000000000..c15f2f5760ed
---- /dev/null
-+++ b/arch/arm64/boot/dts/mediatek/mt7986a-bananapi-bpi-r3-emmc.dtso
-@@ -0,0 +1,30 @@
-+// SPDX-License-Identifier: (GPL-2.0 OR MIT)
-+/*
-+ * Copyright (C) 2021 MediaTek Inc.
-+ * Author: Sam.Shih <sam.shih@mediatek.com>
-+ */
-+
-+/dts-v1/;
-+/plugin/;
-+
-+/ {
-+	compatible = "bananapi,bpi-r3", "mediatek,mt7986a";
-+	model = "Bananapi BPI-R3 (emmc)";
-+
-+	fragment@0 {
-+		target-path = "/soc/mmc@11230000";
-+		__overlay__ {
-+			bus-width = <8>;
-+			max-frequency = <200000000>;
-+			cap-mmc-highspeed;
-+			mmc-hs200-1_8v;
-+			mmc-hs400-1_8v;
-+			hs400-ds-delay = <0x14014>;
-+			non-removable;
-+			no-sd;
-+			no-sdio;
-+			status = "okay";
-+		};
-+	};
-+};
-+
-diff --git a/arch/arm64/boot/dts/mediatek/mt7986a-bananapi-bpi-r3-nand.dtso b/arch/arm64/boot/dts/mediatek/mt7986a-bananapi-bpi-r3-nand.dtso
-new file mode 100644
-index 000000000000..15ee8c568f3c
---- /dev/null
-+++ b/arch/arm64/boot/dts/mediatek/mt7986a-bananapi-bpi-r3-nand.dtso
-@@ -0,0 +1,55 @@
-+/* SPDX-License-Identifier: (GPL-2.0-only OR MIT) */
-+/*
-+ * Authors: Daniel Golle <daniel@makrotopia.org>
-+ *          Frank Wunderlich <frank-w@public-files.de>
-+ */
-+
-+/dts-v1/;
-+/plugin/;
-+
-+/ {
-+	compatible = "bananapi,bpi-r3", "mediatek,mt7986a";
-+
-+	fragment@0 {
-+		target-path = "/soc/spi@1100a000";
-+		__overlay__ {
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+			spi_nand: spi_nand@0 {
-+				compatible = "spi-nand";
-+				reg = <0>;
-+				spi-max-frequency = <10000000>;
-+				spi-tx-buswidth = <4>;
-+				spi-rx-buswidth = <4>;
-+
-+				partitions {
-+					compatible = "fixed-partitions";
-+					#address-cells = <1>;
-+					#size-cells = <1>;
-+
-+					partition@0 {
-+						label = "bl2";
-+						reg = <0x0 0x80000>;
-+						read-only;
-+					};
-+
-+					partition@80000 {
-+						label = "reserved";
-+						reg = <0x80000 0x300000>;
-+					};
-+
-+					partition@380000 {
-+						label = "fip";
-+						reg = <0x380000 0x200000>;
-+						read-only;
-+					};
-+
-+					partition@580000 {
-+						label = "ubi";
-+						reg = <0x580000 0x7a80000>;
-+					};
-+				};
-+			};
-+		};
-+	};
-+};
-diff --git a/arch/arm64/boot/dts/mediatek/mt7986a-bananapi-bpi-r3-nor.dtso b/arch/arm64/boot/dts/mediatek/mt7986a-bananapi-bpi-r3-nor.dtso
-new file mode 100644
-index 000000000000..84aa229e80f3
---- /dev/null
-+++ b/arch/arm64/boot/dts/mediatek/mt7986a-bananapi-bpi-r3-nor.dtso
-@@ -0,0 +1,68 @@
-+/* SPDX-License-Identifier: (GPL-2.0-only OR MIT) */
-+/*
-+ * Authors: Daniel Golle <daniel@makrotopia.org>
-+ *          Frank Wunderlich <frank-w@public-files.de>
-+ */
-+
-+/dts-v1/;
-+/plugin/;
-+
-+/ {
-+	compatible = "bananapi,bpi-r3", "mediatek,mt7986a";
-+
-+	fragment@0 {
-+		target-path = "/soc/spi@1100a000";
-+		__overlay__ {
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+			flash@0 {
-+				compatible = "jedec,spi-nor";
-+				reg = <0>;
-+				spi-max-frequency = <10000000>;
-+
-+				partitions {
-+					compatible = "fixed-partitions";
-+					#address-cells = <1>;
-+					#size-cells = <1>;
-+
-+					partition@0 {
-+						label = "bl2";
-+						reg = <0x0 0x20000>;
-+						read-only;
-+					};
-+
-+					partition@20000 {
-+						label = "reserved";
-+						reg = <0x20000 0x20000>;
-+					};
-+
-+					partition@40000 {
-+						label = "u-boot-env";
-+						reg = <0x40000 0x40000>;
-+					};
-+
-+					partition@80000 {
-+						label = "reserved2";
-+						reg = <0x80000 0x80000>;
-+					};
-+
-+					partition@100000 {
-+						label = "fip";
-+						reg = <0x100000 0x80000>;
-+						read-only;
-+					};
-+
-+					partition@180000 {
-+						label = "recovery";
-+						reg = <0x180000 0xa80000>;
-+					};
-+
-+					partition@c00000 {
-+						label = "fit";
-+						reg = <0xc00000 0x1400000>;
-+					};
-+				};
-+			};
-+		};
-+	};
-+};
-diff --git a/arch/arm64/boot/dts/mediatek/mt7986a-bananapi-bpi-r3-sd.dtso b/arch/arm64/boot/dts/mediatek/mt7986a-bananapi-bpi-r3-sd.dtso
-new file mode 100644
-index 000000000000..08af778d8adc
---- /dev/null
-+++ b/arch/arm64/boot/dts/mediatek/mt7986a-bananapi-bpi-r3-sd.dtso
-@@ -0,0 +1,24 @@
-+// SPDX-License-Identifier: (GPL-2.0 OR MIT)
-+/*
-+ * Copyright (C) 2021 MediaTek Inc.
-+ * Author: Sam.Shih <sam.shih@mediatek.com>
-+ */
-+
-+/dts-v1/;
-+/plugin/;
-+
-+/ {
-+	compatible = "bananapi,bpi-r3", "mediatek,mt7986a";
-+	model = "Bananapi BPI-R3 (sdmmc)";
-+
-+	fragment@0 {
-+		target-path = "/soc/mmc@11230000";
-+		__overlay__ {
-+			bus-width = <4>;
-+			max-frequency = <52000000>;
-+			cap-sd-highspeed;
-+			status = "okay";
-+		};
-+	};
-+};
-+
-diff --git a/arch/arm64/boot/dts/mediatek/mt7986a-bananapi-bpi-r3.dts b/arch/arm64/boot/dts/mediatek/mt7986a-bananapi-bpi-r3.dts
-new file mode 100644
-index 000000000000..618d3bb2f32f
---- /dev/null
-+++ b/arch/arm64/boot/dts/mediatek/mt7986a-bananapi-bpi-r3.dts
-@@ -0,0 +1,448 @@
-+// SPDX-License-Identifier: (GPL-2.0 OR MIT)
-+/*
-+ * Copyright (C) 2021 MediaTek Inc.
-+ * Authors: Sam.Shih <sam.shih@mediatek.com>
-+ *          Frank Wunderlich <frank-w@public-files.de>
-+ *          Daniel Golle <daniel@makrotopia.org>
-+ */
-+
-+/dts-v1/;
-+#include <dt-bindings/gpio/gpio.h>
-+#include <dt-bindings/input/input.h>
-+#include <dt-bindings/leds/common.h>
-+#include <dt-bindings/pinctrl/mt65xx.h>
-+
-+#include "mt7986a.dtsi"
-+
-+/ {
-+	model = "Bananapi BPI-R3";
-+	compatible = "bananapi,bpi-r3", "mediatek,mt7986a";
-+
-+	aliases {
-+		serial0 = &uart0;
-+		ethernet0 = &gmac0;
-+		ethernet1 = &gmac1;
-+	};
-+
-+	chosen {
-+		stdout-path = "serial0:115200n8";
-+	};
-+
-+	dcin: regulator-12vd {
-+		compatible = "regulator-fixed";
-+		regulator-name = "12vd";
-+		regulator-min-microvolt = <12000000>;
-+		regulator-max-microvolt = <12000000>;
-+		regulator-boot-on;
-+		regulator-always-on;
-+	};
-+
-+	gpio-keys {
-+		compatible = "gpio-keys";
-+
-+		reset-key {
-+			label = "reset";
-+			linux,code = <KEY_RESTART>;
-+			gpios = <&pio 9 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		wps-key {
-+			label = "wps";
-+			linux,code = <KEY_WPS_BUTTON>;
-+			gpios = <&pio 10 GPIO_ACTIVE_LOW>;
-+		};
-+	};
-+
-+	/* i2c of the left SFP cage (wan) */
-+	i2c_sfp1: i2c-gpio-0 {
-+		compatible = "i2c-gpio";
-+		sda-gpios = <&pio 16 (GPIO_ACTIVE_HIGH | GPIO_OPEN_DRAIN)>;
-+		scl-gpios = <&pio 17 (GPIO_ACTIVE_HIGH | GPIO_OPEN_DRAIN)>;
-+		i2c-gpio,delay-us = <2>;
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+	};
-+
-+	/* i2c of the right SFP cage (lan) */
-+	i2c_sfp2: i2c-gpio-1 {
-+		compatible = "i2c-gpio";
-+		sda-gpios = <&pio 18 (GPIO_ACTIVE_HIGH | GPIO_OPEN_DRAIN)>;
-+		scl-gpios = <&pio 19 (GPIO_ACTIVE_HIGH | GPIO_OPEN_DRAIN)>;
-+		i2c-gpio,delay-us = <2>;
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+	};
-+
-+	leds {
-+		compatible = "gpio-leds";
-+
-+		green_led: led-0 {
-+			color = <LED_COLOR_ID_GREEN>;
-+			function = LED_FUNCTION_POWER;
-+			gpios = <&pio 69 GPIO_ACTIVE_HIGH>;
-+			default-state = "on";
-+		};
-+
-+		blue_led: led-1 {
-+			color = <LED_COLOR_ID_BLUE>;
-+			function = LED_FUNCTION_STATUS;
-+			gpios = <&pio 86 GPIO_ACTIVE_HIGH>;
-+			default-state = "off";
-+		};
-+	};
-+
-+	reg_1p8v: regulator-1p8v {
-+		compatible = "regulator-fixed";
-+		regulator-name = "1.8vd";
-+		regulator-min-microvolt = <1800000>;
-+		regulator-max-microvolt = <1800000>;
-+		regulator-boot-on;
-+		regulator-always-on;
-+		vin-supply = <&dcin>;
-+	};
-+
-+	reg_3p3v: regulator-3p3v {
-+		compatible = "regulator-fixed";
-+		regulator-name = "3.3vd";
-+		regulator-min-microvolt = <3300000>;
-+		regulator-max-microvolt = <3300000>;
-+		regulator-boot-on;
-+		regulator-always-on;
-+		vin-supply = <&dcin>;
-+	};
-+
-+	/* left SFP cage (wan) */
-+	sfp1: sfp-1 {
-+		compatible = "sff,sfp";
-+		i2c-bus = <&i2c_sfp1>;
-+		los-gpios = <&pio 46 GPIO_ACTIVE_HIGH>;
-+		mod-def0-gpios = <&pio 49 GPIO_ACTIVE_LOW>;
-+		tx-disable-gpios = <&pio 20 GPIO_ACTIVE_HIGH>;
-+		tx-fault-gpios = <&pio 7 GPIO_ACTIVE_HIGH>;
-+	};
-+
-+	/* right SFP cage (lan) */
-+	sfp2: sfp-2 {
-+		compatible = "sff,sfp";
-+		i2c-bus = <&i2c_sfp2>;
-+		los-gpios = <&pio 31 GPIO_ACTIVE_HIGH>;
-+		mod-def0-gpios = <&pio 47 GPIO_ACTIVE_LOW>;
-+		tx-disable-gpios = <&pio 15 GPIO_ACTIVE_HIGH>;
-+		tx-fault-gpios = <&pio 48 GPIO_ACTIVE_HIGH>;
-+	};
-+};
-+
-+&crypto {
-+	status = "okay";
-+};
-+
-+&eth {
-+	status = "okay";
-+
-+	gmac0: mac@0 {
-+		compatible = "mediatek,eth-mac";
-+		reg = <0>;
-+		phy-mode = "2500base-x";
-+
-+		fixed-link {
-+			speed = <2500>;
-+			full-duplex;
-+			pause;
-+		};
-+	};
-+
-+	gmac1: mac@1 {
-+		compatible = "mediatek,eth-mac";
-+		reg = <1>;
-+		phy-mode = "2500base-x";
-+		sfp = <&sfp1>;
-+		managed = "in-band-status";
-+	};
-+
-+	mdio: mdio-bus {
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+	};
-+};
-+
-+&mdio {
-+	switch: switch@31 {
-+		compatible = "mediatek,mt7531";
-+		reg = <31>;
-+		reset-gpios = <&pio 5 GPIO_ACTIVE_HIGH>;
-+	};
-+};
-+
-+&mmc0 {
-+	pinctrl-names = "default", "state_uhs";
-+	pinctrl-0 = <&mmc0_pins_default>;
-+	pinctrl-1 = <&mmc0_pins_uhs>;
-+	vmmc-supply = <&reg_3p3v>;
-+	vqmmc-supply = <&reg_1p8v>;
-+};
-+
-+&i2c0 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&i2c_pins>;
-+	status = "okay";
-+};
-+
-+&pcie {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pcie_pins>;
-+	status = "okay";
-+};
-+
-+&pcie_phy {
-+	status = "okay";
-+};
-+
-+&pio {
-+	i2c_pins: i2c-pins {
-+		mux {
-+			function = "i2c";
-+			groups = "i2c";
-+		};
-+	};
-+
-+	mmc0_pins_default: mmc0-pins {
-+		mux {
-+			function = "emmc";
-+			groups = "emmc_51";
-+		};
-+		conf-cmd-dat {
-+			pins = "EMMC_DATA_0", "EMMC_DATA_1", "EMMC_DATA_2",
-+			       "EMMC_DATA_3", "EMMC_DATA_4", "EMMC_DATA_5",
-+			       "EMMC_DATA_6", "EMMC_DATA_7", "EMMC_CMD";
-+			input-enable;
-+			drive-strength = <4>;
-+			bias-pull-up = <MTK_PUPD_SET_R1R0_01>; /* pull-up 10K */
-+		};
-+		conf-clk {
-+			pins = "EMMC_CK";
-+			drive-strength = <6>;
-+			bias-pull-down = <MTK_PUPD_SET_R1R0_10>; /* pull-down 50K */
-+		};
-+		conf-ds {
-+			pins = "EMMC_DSL";
-+			bias-pull-down = <MTK_PUPD_SET_R1R0_10>; /* pull-down 50K */
-+		};
-+		conf-rst {
-+			pins = "EMMC_RSTB";
-+			drive-strength = <4>;
-+			bias-pull-up = <MTK_PUPD_SET_R1R0_01>; /* pull-up 10K */
-+		};
-+	};
-+
-+	mmc0_pins_uhs: mmc0-uhs-pins {
-+		mux {
-+			function = "emmc";
-+			groups = "emmc_51";
-+		};
-+		conf-cmd-dat {
-+			pins = "EMMC_DATA_0", "EMMC_DATA_1", "EMMC_DATA_2",
-+			       "EMMC_DATA_3", "EMMC_DATA_4", "EMMC_DATA_5",
-+			       "EMMC_DATA_6", "EMMC_DATA_7", "EMMC_CMD";
-+			input-enable;
-+			drive-strength = <4>;
-+			bias-pull-up = <MTK_PUPD_SET_R1R0_01>; /* pull-up 10K */
-+		};
-+		conf-clk {
-+			pins = "EMMC_CK";
-+			drive-strength = <6>;
-+			bias-pull-down = <MTK_PUPD_SET_R1R0_10>; /* pull-down 50K */
-+		};
-+		conf-ds {
-+			pins = "EMMC_DSL";
-+			bias-pull-down = <MTK_PUPD_SET_R1R0_10>; /* pull-down 50K */
-+		};
-+		conf-rst {
-+			pins = "EMMC_RSTB";
-+			drive-strength = <4>;
-+			bias-pull-up = <MTK_PUPD_SET_R1R0_01>; /* pull-up 10K */
-+		};
-+	};
-+
-+	pcie_pins: pcie-pins {
-+		mux {
-+			function = "pcie";
-+			groups = "pcie_clk", "pcie_pereset";
-+		};
-+	};
-+
-+	spi_flash_pins: spi-flash-pins {
-+		mux {
-+			function = "spi";
-+			groups = "spi0", "spi0_wp_hold";
-+		};
-+	};
-+
-+	spic_pins: spic-pins {
-+		mux {
-+			function = "spi";
-+			groups = "spi1_0";
-+		};
-+	};
-+
-+	uart1_pins: uart1-pins {
-+		mux {
-+			function = "uart";
-+			groups = "uart1_rx_tx";
-+		};
-+	};
-+
-+	uart2_pins: uart2-pins {
-+		mux {
-+			function = "uart";
-+			groups = "uart2_0_rx_tx";
-+		};
-+	};
-+
-+	wf_2g_5g_pins: wf-2g-5g-pins {
-+		mux {
-+			function = "wifi";
-+			groups = "wf_2g", "wf_5g";
-+		};
-+		conf {
-+			pins = "WF0_HB1", "WF0_HB2", "WF0_HB3", "WF0_HB4",
-+			       "WF0_HB0", "WF0_HB0_B", "WF0_HB5", "WF0_HB6",
-+			       "WF0_HB7", "WF0_HB8", "WF0_HB9", "WF0_HB10",
-+			       "WF0_TOP_CLK", "WF0_TOP_DATA", "WF1_HB1",
-+			       "WF1_HB2", "WF1_HB3", "WF1_HB4", "WF1_HB0",
-+			       "WF1_HB5", "WF1_HB6", "WF1_HB7", "WF1_HB8",
-+			       "WF1_TOP_CLK", "WF1_TOP_DATA";
-+			drive-strength = <4>;
-+		};
-+	};
-+
-+	wf_dbdc_pins: wf-dbdc-pins {
-+		mux {
-+			function = "wifi";
-+			groups = "wf_dbdc";
-+		};
-+		conf {
-+			pins = "WF0_HB1", "WF0_HB2", "WF0_HB3", "WF0_HB4",
-+			       "WF0_HB0", "WF0_HB0_B", "WF0_HB5", "WF0_HB6",
-+			       "WF0_HB7", "WF0_HB8", "WF0_HB9", "WF0_HB10",
-+			       "WF0_TOP_CLK", "WF0_TOP_DATA", "WF1_HB1",
-+			       "WF1_HB2", "WF1_HB3", "WF1_HB4", "WF1_HB0",
-+			       "WF1_HB5", "WF1_HB6", "WF1_HB7", "WF1_HB8",
-+			       "WF1_TOP_CLK", "WF1_TOP_DATA";
-+			drive-strength = <4>;
-+		};
-+	};
-+
-+	wf_led_pins: wf-led-pins {
-+		mux {
-+			function = "led";
-+			groups = "wifi_led";
-+		};
-+	};
-+};
-+
-+&spi0 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&spi_flash_pins>;
-+	cs-gpios = <0>, <0>;
-+	status = "okay";
-+};
-+
-+&spi1 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&spic_pins>;
-+	cs-gpios = <0>, <0>;
-+	status = "okay";
-+};
-+
-+&ssusb {
-+	status = "okay";
-+};
-+
-+&switch {
-+	ports {
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+
-+		port@0 {
-+			reg = <0>;
-+			label = "wan";
-+		};
-+
-+		port@1 {
-+			reg = <1>;
-+			label = "lan0";
-+		};
-+
-+		port@2 {
-+			reg = <2>;
-+			label = "lan1";
-+		};
-+
-+		port@3 {
-+			reg = <3>;
-+			label = "lan2";
-+		};
-+
-+		port@4 {
-+			reg = <4>;
-+			label = "lan3";
-+		};
-+
-+		port5: port@5 {
-+			reg = <5>;
-+			label = "lan4";
-+			phy-mode = "2500base-x";
-+			sfp = <&sfp2>;
-+			managed = "in-band-status";
-+		};
-+
-+		port@6 {
-+			reg = <6>;
-+			label = "cpu";
-+			ethernet = <&gmac0>;
-+			phy-mode = "2500base-x";
-+
-+			fixed-link {
-+				speed = <2500>;
-+				full-duplex;
-+				pause;
-+			};
-+		};
-+	};
-+};
-+
-+&trng {
-+	status = "okay";
-+};
-+
-+&uart0 {
-+	status = "okay";
-+};
-+
-+&uart1 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&uart1_pins>;
-+	status = "okay";
-+};
-+
-+&uart2 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&uart2_pins>;
-+	status = "okay";
-+};
-+
-+&usb_phy {
-+	status = "okay";
-+};
-+
-+&watchdog {
-+	status = "okay";
-+};
-+
-+&wifi {
-+	status = "okay";
-+	pinctrl-names = "default", "dbdc";
-+	pinctrl-0 = <&wf_2g_5g_pins>, <&wf_led_pins>;
-+	pinctrl-1 = <&wf_dbdc_pins>, <&wf_led_pins>;
-+};
-+
--- 
-2.34.1
-
-
+> 
+> > +
+> >  /**
+> >   * phy_release() - release the phy
+> >   * @dev: the dev member within phy
+> > @@ -1233,6 +1237,8 @@ static int __init phy_core_init(void)
+> >  
+> >  	phy_class->dev_release = phy_release;
+> >  
+> > +	phy_debug_root = debugfs_create_dir("phy", NULL);
+> > +
+> >  	return 0;
+> >  }
+> >  device_initcall(phy_core_init);
+> > diff --git a/include/linux/phy/phy.h b/include/linux/phy/phy.h
+> > index b1413757fcc3..c398749d49b9 100644
+> > --- a/include/linux/phy/phy.h
+> > +++ b/include/linux/phy/phy.h
+> > @@ -205,6 +205,8 @@ struct phy_lookup {
+> >  #define devm_of_phy_provider_register_full(dev, children, xlate) \
+> >  	__devm_of_phy_provider_register(dev, children, THIS_MODULE,
+> > xlate)
+> >  
+> > +extern struct dentry *phy_debug_root;
+> > +
+> >  static inline void phy_set_drvdata(struct phy *phy, void *data)
+> >  {
+> >  	dev_set_drvdata(&phy->dev, data);
+> > -- 
+> > 2.18.0
+> 
+> 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
