@@ -4,67 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EC2D4C433FE
-	for <linux-phy@archiver.kernel.org>; Mon, 28 Nov 2022 16:22:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A468AC433FE
+	for <linux-phy@archiver.kernel.org>; Mon, 28 Nov 2022 16:22:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EtiKUtvdddT+M5FcY8vlS/jm3ExAkODXo6DuelGL3BA=; b=RGv3UL7YWcXcBp
-	PAn1wzEdrpeV2eAPD7eh60Lp8UAM4REJ4WrOiJROBTwXhiyvo0MakM0E5Pm27HnjfBVKSM4KwrfTu
-	f75s/mN6TW5hmr//plRx/MGLb8u7n8OTtVpSOJP0lLgcQFkunkckad/2B/HWK5N/Mgwsw9KY3fEiz
-	GZzHHvXUW/EVdr3e5JkhyCbnnrks2eOtl4VT7AAUKhhyeatJw67P8XP6ijYz3vY45Lv7fSgdwZDjZ
-	c6b7C3BQ0BhV9BDWAcxBa9TDRByEkLGJKNnERnZtM3TbNSKgc9cZxOrdFA1sjC97NoRg4BoDItcEz
-	he46a36A+asuCVoUFZnQ==;
+	List-Owner; bh=1jyUF3YUMooR5PckaTtBWFSsK7guognYdYNYAcRxWpo=; b=uHxYGad33k42/p
+	u+zGfNnxXKDdgqUw7zkmW6o1YOH2x5Nh+EgK8HbPXEnKCceo9n5LN5c0vQ1xg41KDi+bCtGTGRase
+	GgvzZaTNLof1z5qLoM3kZAuz9r8PqizSc+3/BFKCy6e1XGnBif6L4kafGEkkfSgRDqekHoBClWDFR
+	TlpASZavCTpvTxgM+EUTBQ8g1PNivOXUO4Go8YtPEK9ubS1W+p796E5yBzIlJq/KJ7whleiyBZ4bZ
+	FZQPFllVaCXryci/EqyChGrAm6zzsBgv1NRhLHGE1ln7h7llnMkTzwjL0RRw76SiIw//vRW/ZhwRs
+	EFa9gHkHgr3qHPrnxe2Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ozgtS-002m5Y-Bo; Mon, 28 Nov 2022 16:22:06 +0000
+	id 1ozgtc-002m8E-1g; Mon, 28 Nov 2022 16:22:16 +0000
 Received: from mail-wr1-x42b.google.com ([2a00:1450:4864:20::42b])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ozgtB-002luA-6Z
+	id 1ozgtB-002luS-6b
 	for linux-phy@lists.infradead.org; Mon, 28 Nov 2022 16:21:53 +0000
-Received: by mail-wr1-x42b.google.com with SMTP id x5so17723431wrt.7
-        for <linux-phy@lists.infradead.org>; Mon, 28 Nov 2022 08:21:46 -0800 (PST)
+Received: by mail-wr1-x42b.google.com with SMTP id bx10so5617322wrb.0
+        for <linux-phy@lists.infradead.org>; Mon, 28 Nov 2022 08:21:48 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=baylibre-com.20210112.gappssmtp.com; s=20210112;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=dS8cQQ4bUCIGdTuiAN/aAd8jqSH5EJokFUSJdAjidPI=;
-        b=0+jl/jbubFkfZTQZYgBADk0y7xxrO/2O6QnzOVhd0Ay2GZ3bHMfzNgrtNe26Sz8wrW
-         x+gpWK/PWX9RuKHQi9Ch0lKr7Fd2CxuKQcJefXlOvLsbdjQbfpN81PLo5z6u6RrKZQ1/
-         dY0NeCNnghuCx5+smHJpKR5x43S7aUls/hwRPXFC3u/Z7e49DZ70Ni+XFVOcAUJwZU4U
-         LbehBw0bXN9VsXSVv3+SyJrjfLxG47GWP1E1qPhVnl9qHUwRU8OrPseNT2rJvgdixZnD
-         tix9Ry5TWNyILcL7MiL4+CyOFJc2kjHhqnjEuH53SjfWTtCwAbhBDmrA64Ain9vGGAl8
-         dlIQ==
+        bh=A0OXxX4BN+JC/Hy+vtoYftLVfMwhN/RiALx1B4QXUlc=;
+        b=SlkrWf3SnnGDpb675mkRP6lf4nLIT1ljnSs811QXoTIpKGIr6nkO1robz4uvX+3hel
+         emJjd5A2yCCTjR0LXKEjLdGYNb2o2zsvcHdQ1nXfW9oFv0bIePuY9EEF+wvSQ1jpJpfe
+         uYlNtXWlsAQakgdO/rq4yHkCGTL/bSh4cUCBhsM2mfP/FtZp0bXgE/HPcGJU/oRl3i2l
+         zPL3lW+z6Kap+h6fgLOacZBtOL/HD9TJ6ShxhljgFYgVd4/L6A/2W0q8oT/Juz8T/7qv
+         qlVqVlXVA5+/JbXKOjRIX+Nb72oLRueixKPJUM69A14modQclXgDP110z0Dye0vX0jdJ
+         cvZg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=dS8cQQ4bUCIGdTuiAN/aAd8jqSH5EJokFUSJdAjidPI=;
-        b=69ph8u+31KxwjnXrh83HIno72eavjQ6Cr4qS/t8HucJNvQdOzpKKqMV3ZJnVSjiXYl
-         ntH0nGzQIWf83E4KgA65JaxUs1p1a+qNNGaactOX43RuieUrKfiA+0XTy1+OZOKO0Lat
-         NnMaDslJadlDznhZPF75reJG2Q62y6aFE/L7/pdRTJkOKGCL32AkrCMf5QFj5VwjrLyk
-         ZXd0sLprnlc/8HQU56u78f4a2XpdBg51dMtq/kqmkZCfCl7BiTGr9dzXvwMLmWWoX4Uv
-         yL1EJ4+Sq7n7xxw1Rbs0vGOZT4gIaxs3HPSz3vpE4426pCnpPBexRkArAEqbvE8QvNOn
-         inRw==
-X-Gm-Message-State: ANoB5pkymrl/9AHZPwqwHcmRGPmmTq7dBXVzt8IJAKWPgD5APVdNBLX3
-	2JLmvVgIwXuHU6uEZWZ2C8PY0g==
-X-Google-Smtp-Source: AA0mqf7zILY88KtlDUpp9lKnmVPVFaeVSYmrpe6eWbhZCXd1jcABe1SItKMY2e2rfy2bYoaSKhc5bQ==
-X-Received: by 2002:adf:fd01:0:b0:235:83aa:a6ed with SMTP id e1-20020adffd01000000b0023583aaa6edmr30496312wrr.543.1669652505287;
-        Mon, 28 Nov 2022 08:21:45 -0800 (PST)
+        bh=A0OXxX4BN+JC/Hy+vtoYftLVfMwhN/RiALx1B4QXUlc=;
+        b=ZIcbwYnUQq+S2mP6yXhvK4MsgrSMzJiOhGHlOB24FBnle2Vh4df5v2OiUSo7465Kar
+         HERkLMMurZS6x+jspX5T7DdBJCJtG9YNmjDoYA6vDWAgl2brsx0xmBjnyghQasHYD5cF
+         ZUaaIpcyRMf4ENUYnp4CNMfpG5hr8UYwoVlM5ZZvtzHG3ovFyYaIzS+u7me+h0kElXGQ
+         piYZdnUWU+O6x/F+FQN+BXedWiKJCfeLazHyhndBd5rusCMWNvUp7vohPp2TjY1H6IoK
+         MHEdUuHIqwwhTWaY6isejsArOB/ywSDkQ656X4js/4HB4RdUkcelnGWaRRlpzjXfWsrJ
+         tbTQ==
+X-Gm-Message-State: ANoB5pk6d3FLrPzbeRQv2jmR184/JzLdloawZp6G44E8BAYP9ZGw60FT
+	py1LlrZwqonHOvF5OjNJwXmv+g==
+X-Google-Smtp-Source: AA0mqf4mvZhMdusHlUCoDzlaITnTfcTdfTwIBg2rPiKj4l0XqNnN3xuoOOxzvyyaTx+gTn619CGt5g==
+X-Received: by 2002:a05:6000:128c:b0:236:e512:1a9e with SMTP id f12-20020a056000128c00b00236e5121a9emr23151843wrx.416.1669652506887;
+        Mon, 28 Nov 2022 08:21:46 -0800 (PST)
 Received: from [127.0.0.1] (2a02-8440-6340-f657-3074-96af-9642-0003.rev.sfr.net. [2a02:8440:6340:f657:3074:96af:9642:3])
-        by smtp.gmail.com with ESMTPSA id s10-20020a1cf20a000000b003cfe1376f68sm15311450wmc.9.2022.11.28.08.21.43
+        by smtp.gmail.com with ESMTPSA id s10-20020a1cf20a000000b003cfe1376f68sm15311450wmc.9.2022.11.28.08.21.45
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 28 Nov 2022 08:21:44 -0800 (PST)
+        Mon, 28 Nov 2022 08:21:46 -0800 (PST)
 From: Guillaume Ranquet <granquet@baylibre.com>
-Date: Mon, 28 Nov 2022 17:17:36 +0100
-Subject: [PATCH v5 1/3] dt-bindings: phy: mediatek: hdmi-phy: Add mt8195 compatible
+Date: Mon, 28 Nov 2022 17:17:37 +0100
+Subject: [PATCH v5 2/3] phy: phy-mtk-hdmi: Add generic phy configure callback
 MIME-Version: 1.0
-Message-Id: <20220919-v5-1-f346444bc459@baylibre.com>
+Message-Id: <20220919-v5-2-f346444bc459@baylibre.com>
 References: <20220919-v5-0-f346444bc459@baylibre.com>
 In-Reply-To: <20220919-v5-0-f346444bc459@baylibre.com>
 To: Chunfeng Yun <chunfeng.yun@mediatek.com>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
@@ -79,9 +79,8 @@ Cc: mac.shen@mediatek.com, Guillaume Ranquet <granquet@baylibre.com>,
  linux-mediatek@lists.infradead.org
 X-Mailer: b4 0.11.0-dev
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221128_082149_273455_5F5C3280 
-X-CRM114-Status: UNSURE (   7.40  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20221128_082149_291755_9BBA723A 
+X-CRM114-Status: GOOD (  10.24  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,28 +97,62 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add a compatible for the HDMI PHY on MT8195
+Some phys, such as mt8195, needs to have a configure callback defined.
 
-Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 Reviewed-by: Matthias Brugger <matthias.bgg@gmail.com>
 Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
 ---
- Documentation/devicetree/bindings/phy/mediatek,hdmi-phy.yaml | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/phy/mediatek/phy-mtk-hdmi.c | 12 ++++++++++++
+ drivers/phy/mediatek/phy-mtk-hdmi.h |  1 +
+ 2 files changed, 13 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/phy/mediatek,hdmi-phy.yaml b/Documentation/devicetree/bindings/phy/mediatek,hdmi-phy.yaml
-index 0d94950b84ca..71c75a11e189 100644
---- a/Documentation/devicetree/bindings/phy/mediatek,hdmi-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/mediatek,hdmi-phy.yaml
-@@ -28,6 +28,7 @@ properties:
-           - const: mediatek,mt2701-hdmi-phy
-       - const: mediatek,mt2701-hdmi-phy
-       - const: mediatek,mt8173-hdmi-phy
-+      - const: mediatek,mt8195-hdmi-phy
+diff --git a/drivers/phy/mediatek/phy-mtk-hdmi.c b/drivers/phy/mediatek/phy-mtk-hdmi.c
+index b16d437d6721..32f713301768 100644
+--- a/drivers/phy/mediatek/phy-mtk-hdmi.c
++++ b/drivers/phy/mediatek/phy-mtk-hdmi.c
+@@ -8,10 +8,12 @@
  
-   reg:
-     maxItems: 1
+ static int mtk_hdmi_phy_power_on(struct phy *phy);
+ static int mtk_hdmi_phy_power_off(struct phy *phy);
++static int mtk_hdmi_phy_configure(struct phy *phy, union phy_configure_opts *opts);
+ 
+ static const struct phy_ops mtk_hdmi_phy_dev_ops = {
+ 	.power_on = mtk_hdmi_phy_power_on,
+ 	.power_off = mtk_hdmi_phy_power_off,
++	.configure = mtk_hdmi_phy_configure,
+ 	.owner = THIS_MODULE,
+ };
+ 
+@@ -43,6 +45,16 @@ static int mtk_hdmi_phy_power_off(struct phy *phy)
+ 	return 0;
+ }
+ 
++static int mtk_hdmi_phy_configure(struct phy *phy, union phy_configure_opts *opts)
++{
++	struct mtk_hdmi_phy *hdmi_phy = phy_get_drvdata(phy);
++
++	if (hdmi_phy->conf->hdmi_phy_configure)
++		return hdmi_phy->conf->hdmi_phy_configure(phy, opts);
++
++	return 0;
++}
++
+ static const struct phy_ops *
+ mtk_hdmi_phy_dev_get_ops(const struct mtk_hdmi_phy *hdmi_phy)
+ {
+diff --git a/drivers/phy/mediatek/phy-mtk-hdmi.h b/drivers/phy/mediatek/phy-mtk-hdmi.h
+index c7fa65cff989..f5aac9d352d8 100644
+--- a/drivers/phy/mediatek/phy-mtk-hdmi.h
++++ b/drivers/phy/mediatek/phy-mtk-hdmi.h
+@@ -24,6 +24,7 @@ struct mtk_hdmi_phy_conf {
+ 	const struct clk_ops *hdmi_phy_clk_ops;
+ 	void (*hdmi_phy_enable_tmds)(struct mtk_hdmi_phy *hdmi_phy);
+ 	void (*hdmi_phy_disable_tmds)(struct mtk_hdmi_phy *hdmi_phy);
++	int (*hdmi_phy_configure)(struct phy *phy, union phy_configure_opts *opts);
+ };
+ 
+ struct mtk_hdmi_phy {
 
 -- 
 2.38.1
