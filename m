@@ -4,68 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 541F3C4167D
-	for <linux-phy@archiver.kernel.org>; Mon, 28 Nov 2022 14:01:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0CF60C4321E
+	for <linux-phy@archiver.kernel.org>; Mon, 28 Nov 2022 16:21:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=k2dFapERwcVK+Cp2nf5q7m6NVgTfo+ZMf2R0ZcDAlDU=; b=nRozVkRy6hEVld
-	SOP4v7H8249KUo5LHebcSUV2HWaT9aYmDeVkKwYuFZ2Y6DLw80Ip9X+C5678d5X2/S8iaNzB9KNob
-	3HG0bLbpm7yNFkx9D+NcqacPgGtYjnUX6aQV50Edgd94aduRtdW+u4rF7Z3HVpoAlp7/cCVTsDUs0
-	JEi7QkV51971VciEUTEU5tIqmbXjbtgoJDPjzD/RI4gYctLf9OalVvrhXoNYXOyJz/LFfjpoUa14F
-	xgiE2fZ48d+zu2cGLNlimcvsqL70kS8igdVVwuL4x2I5KpfeZgmr3sALVtP17VZJITnU04y4vDS6d
-	iWWCYVaZlqajyktHRakg==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:Date:From:MIME-Version
+	:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=X3v5LyMqhXaK91jdcmR8DCylhj72UtDYL+7+f78HxS8=; b=vT6eQ5bzWtb+46
+	c+AwJEqA7TRtDB7Q3uNCwBX3FkQF2IpN+u7LeXyv+KKjBWDA7gSVgMCZLb09JTR+9tu3Tvc7iu417
+	JtN21K8ZULwwZvEVjGYxTeVgRob6g2JkK2wdY7dmRsUn9+XyaVHplTSdnZBPfVYwCAoNW2hrMHRuV
+	uwYjRXa4Stvr9twdXD2xTJGbz7L7Jf6sgiDp40vrUxzLAwAliMgfpTgdFS2HqS36b82MXvzYgqoAG
+	5D5FxaPcLROmlKn281SUP3ScwGhfI25W9zN+uR3AAVZ3MUNu8bBq/IOYRrEtUad19EeUes6Nd5WUf
+	dYFuMA9wCalxvNuaSSLg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ozehe-0022lz-Ps; Mon, 28 Nov 2022 14:01:46 +0000
-Received: from vps0.lunn.ch ([156.67.10.101])
+	id 1ozgtF-002lyb-5x; Mon, 28 Nov 2022 16:21:53 +0000
+Received: from mail-wm1-x32c.google.com ([2a00:1450:4864:20::32c])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ozehT-0022hi-4c; Mon, 28 Nov 2022 14:01:36 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
-	s=20171124; h=In-Reply-To:Content-Transfer-Encoding:Content-Disposition:
-	Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:From:
-	Sender:Reply-To:Subject:Date:Message-ID:To:Cc:MIME-Version:Content-Type:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Content-Disposition:
-	In-Reply-To:References; bh=/RsElrJ4fTpZwQGc5X/fuTrHyuS75pyOL1EdjY8Plxg=; b=xY
-	R6f5DBIUtCPgDzvdOMVTFzCvO0KVS6tiBc4qDT6PwCyrku33r2WcWfkTQEggH0ZX9v3eH0/8REaSp
-	leaw7ev/I/etiU1oFPJGr6nl0ydANI7EKEN//tmCTSWidBJTf4iqh3MXZWcXyjSikAKq9S9tDHAHi
-	fh8OnGlFTox4hyA=;
-Received: from andrew by vps0.lunn.ch with local (Exim 4.94.2)
-	(envelope-from <andrew@lunn.ch>)
-	id 1ozegs-003evG-3k; Mon, 28 Nov 2022 15:00:58 +0100
-Date: Mon, 28 Nov 2022 15:00:58 +0100
-From: Andrew Lunn <andrew@lunn.ch>
-To: Chunfeng Yun =?utf-8?B?KOS6keaYpeWzsCk=?= <Chunfeng.Yun@mediatek.com>
-Cc: "vkoul@kernel.org" <vkoul@kernel.org>,
-	"llvm@lists.linux.dev" <llvm@lists.linux.dev>,
-	"linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
-	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
-	"nathan@kernel.org" <nathan@kernel.org>,
-	"kishon@ti.com" <kishon@ti.com>,
-	Eddie Hung =?utf-8?B?KOa0quato+mRqyk=?= <Eddie.Hung@mediatek.com>,
-	Tianping Fang =?utf-8?B?KOaWueWkqeW5syk=?= <Tianping.Fang@mediatek.com>,
-	"linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
-	"matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
-	"linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
-	"trix@redhat.com" <trix@redhat.com>,
-	"angelogioacchino.delregno@collabora.com" <angelogioacchino.delregno@collabora.com>,
-	"ndesaulniers@google.com" <ndesaulniers@google.com>
-Subject: Re: [PATCH v4 3/3] phy: mediatek: tphy: add debugfs files
-Message-ID: <Y4S/GhUcrxJ9W/gE@lunn.ch>
-References: <20221110132716.12294-1-chunfeng.yun@mediatek.com>
- <20221110132716.12294-3-chunfeng.yun@mediatek.com>
- <Y3+uGjpMQcEWQrew@matsya>
- <70407a789b48a4fbd498e392450eb9db76e025bf.camel@mediatek.com>
+	id 1ozgtA-002ltc-Nu
+	for linux-phy@lists.infradead.org; Mon, 28 Nov 2022 16:21:51 +0000
+Received: by mail-wm1-x32c.google.com with SMTP id 83-20020a1c0256000000b003d03017c6efso11376254wmc.4
+        for <linux-phy@lists.infradead.org>; Mon, 28 Nov 2022 08:21:44 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=baylibre-com.20210112.gappssmtp.com; s=20210112;
+        h=cc:to:message-id:date:from:content-transfer-encoding:mime-version
+         :subject:from:to:cc:subject:date:message-id:reply-to;
+        bh=qSSoTx14sBp+/R1ydiiF1swCqSgaAAS/RFqYam0nfSU=;
+        b=ZRTwWarpwcayUpxJzRgrtg4c2XeVGb8nNkmkJpweInvESpP+xnjVD5+zc6XPcNdJuk
+         bLgAxlNyOF62cELMAOEXshJGz+umN6jXAi6oAT8mn/aOmpf6/NWXGT6QPL232LuZa8hN
+         F4LgeVs8+o62iVrSblFGUjzpEI8cIJN2Q+YCWrIZG/RkXVoZR/JmczlZw8csUdTor4kM
+         EARazyWEzsNL95/hDGJwU9esHcg7DWnWWKdH+RZNDpIzRWvmZk19NNGadZQBdFXuQ9S2
+         gtKxALKXbg/izfheP+Sf+99Idmvqe/ZaiSCOP57u5AslA36kaG7miO8cD6XIDuw0agqu
+         KIGw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=cc:to:message-id:date:from:content-transfer-encoding:mime-version
+         :subject:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=qSSoTx14sBp+/R1ydiiF1swCqSgaAAS/RFqYam0nfSU=;
+        b=oixc/FJYkXjOOPu8grZjvgN+hf5Ny6jalgetsoAIR3L7KmrMY1COEZ7lfPIUgSExVr
+         O/HMgmMEgg1IyQrKsY6vUqgvQT/FALKhhdvXYojxWZeAsNsqCXqPUN8njaJTKhHJ8VPl
+         9Sq1ZgEE/7MXasiaOuPjEWqqE9qBP1UbssJNbM6XD77kTqtvmydxyauzEwxPLjNr8JzY
+         xLOP4frRpHkYnfCY84jau4U8Y0he/XhrIcOoFcZ0Ix8OIfA04cMzYju3vH1eOouNGFV6
+         ixs15E8+e1VJLvbus7hjak8QLHMFhl2bGPckTa6DJxsdlx0T/TVO/zRmrBotWtKuEkXu
+         pFBw==
+X-Gm-Message-State: ANoB5pm+vrl19OL/kvRJn7QTqFqMWnoHFp6ecum18yaNINKlW8Fir+7g
+	cM+fN1oXfL2l8mfMiK2gL9oIdQ==
+X-Google-Smtp-Source: AA0mqf7fGwMzUE1Ciq26LwjSbLIj1HTemOv/bJvoR+I2TGq+pQY37aZ4UVpsafa/xFsvjuhDAYgJBQ==
+X-Received: by 2002:a05:600c:4fd0:b0:3cf:70a0:f689 with SMTP id o16-20020a05600c4fd000b003cf70a0f689mr42860114wmq.161.1669652503650;
+        Mon, 28 Nov 2022 08:21:43 -0800 (PST)
+Received: from [127.0.0.1] (2a02-8440-6340-f657-3074-96af-9642-0003.rev.sfr.net. [2a02:8440:6340:f657:3074:96af:9642:3])
+        by smtp.gmail.com with ESMTPSA id s10-20020a1cf20a000000b003cfe1376f68sm15311450wmc.9.2022.11.28.08.21.42
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 28 Nov 2022 08:21:43 -0800 (PST)
+Subject: [PATCH v5 0/3] Add MT8195 HDMI phy support
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <70407a789b48a4fbd498e392450eb9db76e025bf.camel@mediatek.com>
+X-b4-tracking: H4sIAB/fhGMC/23MTQrDIBAF4KsE17WosYl21XuUUvxLlSYGNBVCyN07dFOQrIb3eN9sKLsUXEbXZk
+ PJlZDDHCFcTg0yXsWXw8FCRowwRiSV2NspPKfljWChVXZYJxWNh038jCOUPuRlTuvvY6Fw7n9cKCaY
+ C84F7YwURNy0WsegkzubeUIP4IVVhAERnEprBj4QaQ9IW5EWiBKkHVjXEcr6A8IrwoFoaxh1tCW9kx XZ9/0LLLTAOysBAAA=
+From: Guillaume Ranquet <granquet@baylibre.com>
+Date: Mon, 28 Nov 2022 17:17:35 +0100
+Message-Id: <20220919-v5-0-f346444bc459@baylibre.com>
+To: Chunfeng Yun <chunfeng.yun@mediatek.com>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ David Airlie <airlied@gmail.com>, Matthias Brugger <matthias.bgg@gmail.com>, Philipp Zabel <p.zabel@pengutronix.de>,
+ Rob Herring <robh+dt@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>, Daniel Vetter <daniel@ffwll.ch>,
+ Vinod Koul <vkoul@kernel.org>, Chun-Kuang Hu <chunkuang.hu@kernel.org>, CK Hu <ck.hu@mediatek.com>,
+ Jitao shi <jitao.shi@mediatek.com>
+Cc: mac.shen@mediatek.com, Guillaume Ranquet <granquet@baylibre.com>,
+ Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, linux-arm-kernel@lists.infradead.org, stuart.lee@mediatek.com,
+ kernel test robot <lkp@intel.com>, linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
+ devicetree@vger.kernel.org, AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+ linux-mediatek@lists.infradead.org
+X-Mailer: b4 0.11.0-dev
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221128_060135_198927_D4B4616F 
-X-CRM114-Status: UNSURE (   7.75  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20221128_082149_024425_BDCFD7D4 
+X-CRM114-Status: GOOD (  12.53  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,20 +92,87 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gTW9uLCBOb3YgMjgsIDIwMjIgYXQgMDc6MjY6MDJBTSArMDAwMCwgQ2h1bmZlbmcgWXVuICjk
-upHmmKXls7ApIHdyb3RlOgo+IE9uIFRodSwgMjAyMi0xMS0yNCBhdCAyMzoxNyArMDUzMCwgVmlu
-b2QgS291bCB3cm90ZToKPiA+IE9uIDEwLTExLTIyLCAyMToyNywgQ2h1bmZlbmcgWXVuIHdyb3Rl
-Ogo+ID4gPiBUaGVzZSBkZWJ1Z2ZzIGZpbGVzIGFyZSBtYWlubHkgdXNlZCB0byBtYWtlIGV5ZSBk
-aWFncmFtIHRlc3QKPiA+ID4gZWFzaWVyLAo+ID4gPiBlc3BlY2lhbGx5IGhlbHBmdWwgdG8gZG8g
-SFFBIHRlc3QgZm9yIGEgbmV3IElDIHdpdGhvdXQgZWZ1c2UKPiA+ID4gZW5hYmxlZC4KCkV4cG9y
-dGluZyBkYXRhIGZvciBleWUgZGlhZ3JhbXMgc2VlbXMgbGlrZSBzb21ldGhpbmcgbWFueSBQSFlz
-IGNvdWxkCnVzZS4gUGxlYXNlIGNvbnNpZGVyIGFkZGluZyBhbiBvZmZpY2lhbCB1bmlmb3JtIEFQ
-SSB3aGljaCBhbnkgUEhZCmNvdWxkIHVzZSwgc28gd2UgZG9uJ3QgZW5kIHVwIHdpdGggbG90cyBv
-ZiBpbmNvbXBhdGlibGUgZm9ybWF0cyBpbgpkZWJ1Z2ZzLgoKCUFuZHJldwoKLS0gCmxpbnV4LXBo
-eSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0
-cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+Add support for HDMI phy on MT8195.
+
+This is based on top of next-20221128
+
+To: Chunfeng Yun <chunfeng.yun@mediatek.com>
+To: Kishon Vijay Abraham I <kishon@ti.com>
+To: Vinod Koul <vkoul@kernel.org>
+To: Rob Herring <robh+dt@kernel.org>
+To: Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
+To: Matthias Brugger <matthias.bgg@gmail.com>
+To: Chun-Kuang Hu <chunkuang.hu@kernel.org>
+To: Philipp Zabel <p.zabel@pengutronix.de>
+To: David Airlie <airlied@gmail.com>
+To: Daniel Vetter <daniel@ffwll.ch>
+To: CK Hu <ck.hu@mediatek.com>
+To: Jitao shi <jitao.shi@mediatek.com>
+Cc: linux-arm-kernel@lists.infradead.org
+Cc: linux-mediatek@lists.infradead.org
+Cc: linux-phy@lists.infradead.org
+Cc: devicetree@vger.kernel.org
+Cc: linux-kernel@vger.kernel.org
+Cc: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Cc: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Cc: mac.shen@mediatek.com
+CC: stuart.lee@mediatek.com
+Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
+---
+Changes in v5:
+- Fix compilation errors on 32 bits platform with no support for __udivdi3.
+    Compile tested on mips with gcc-12
+- Link to v4: https://lore.kernel.org/r/20220919-v4-0-bdc21e1307e9@baylibre.com
+
+Changes in v4:
+- Dedicated series for HDMI phy support (without the drm/ related
+  changes)
+- Removed useless variable initializations in phy driver
+- Link to v3: https://lore.kernel.org/r/20220919-v3-0-a803f2660127@baylibre.com
+
+Changes in v3:
+- phy: Grouped register and bit definition together to add clarity
+- dt-bindings: Addressed comments
+- Link to v2: https://lore.kernel.org/r/20220919-v2-0-8419dcf4f09d@baylibre.com
+
+Changes in v2:
+- Removed syscon requirement from the hdmi node
+- Use as much as possible bit FIELD_PREP/FIELD_GET macros across all the
+  patches
+- Make cec optional dynamically instead of hardcoded with a flag
+- Renamed hdmi variants to v1 (legacy) and v2 (mt8195) while waiting for
+  a better name
+- Rework hdmi v2 code to use a connector (same as v1)
+- Remove "magic" 0x43 addr special handling in hdmi ddc code
+- Link to v1: https://lore.kernel.org/r/20220919-v1-0-4844816c9808@baylibre.com
+
+---
+Guillaume Ranquet (3):
+      dt-bindings: phy: mediatek: hdmi-phy: Add mt8195 compatible
+      phy: phy-mtk-hdmi: Add generic phy configure callback
+      phy: mediatek: add support for phy-mtk-hdmi-mt8195
+
+ .../devicetree/bindings/phy/mediatek,hdmi-phy.yaml |   1 +
+ drivers/phy/mediatek/Makefile                      |   1 +
+ drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c         | 527 +++++++++++++++++++++
+ drivers/phy/mediatek/phy-mtk-hdmi-mt8195.h         | 111 +++++
+ drivers/phy/mediatek/phy-mtk-hdmi.c                |  15 +
+ drivers/phy/mediatek/phy-mtk-hdmi.h                |   2 +
+ 6 files changed, 657 insertions(+)
+---
+base-commit: 15f2f20ccbf2d04cb14e3e7635aa0447208c71e7
+change-id: 20220919-hdmi_mtk
+
+Best regards,
+-- 
+Guillaume Ranquet <granquet@baylibre.com>
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
