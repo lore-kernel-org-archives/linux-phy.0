@@ -4,61 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B2EB2C47088
-	for <linux-phy@archiver.kernel.org>; Thu,  1 Dec 2022 17:44:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 69E6CC4708E
+	for <linux-phy@archiver.kernel.org>; Thu,  1 Dec 2022 17:44:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=7M4YNmSIUzr2RFVuUbM/aJF8/gm06JGAPGQBn1+PJyo=; b=fRX5OyazgnFt30
-	A0aYBLQinXSGQgIRu2FYTyO8bPW3vjY4QTvSOcPuetuTIyAwbt4k9dzL3+2k4BIxltA5iwB7iNKwM
-	iAJ9710wWYFi5UBwk+WFatYSzGBcOa7gfRQY/z1M7HoVs+n3jiVWJvJnCcGJSpbCU2aGb3Zj1RhA7
-	W5VX3FtRq4s5OWpFFb8Sn5gjYMm9qz+6+zBFELRlwgCKP8UO6ajdY7rwPhjRA3qiLjfNqQHuFyMQh
-	rUaELCW42r8PEJ57QFInzZUONrIz4arSweDAuaKnXvz5UM4WBX5s3u+7DHWJsXxcAdJvbOZym8fU8
-	6aK/Uf5FkQJ2i91Aa0OQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=3jYAaK5LPc/9hA2nn9iVlhWpSoFjcmNe5p0idIYBggc=; b=BkdlZxLM2goUCn
+	D2FiDA4PB2XWgVDSmyM1fDZEWEVBNK/LxxQR0isCi1n7ca/OmBBBXjwva+6/CUrh9g9a8v0rEfjVd
+	pUiYA7iu+qgjhedNQoy7Ix8ZKQE36l3MZGq5HfcN+2AeaAx1+Rkb3Y5ylrlNN3OcpSU4yiTIx5ZUf
+	9993rVp5SO5EM392/l8Ys+IPFmq7B3/OyiP7GDJdCDh9nnUGSkmUtb7T9es+07S4o24nB+wpAyoC5
+	XJbJWDWGrpyU0agGpAy5bhpk+ZNEkIT05ESP/i1FhrT07j3iKMcMUJ6ETXSVtjJvEC380YBkC4ZAV
+	nGeuow3MdJS7cwMZ1agg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1p0nc0-0099Fw-RK; Thu, 01 Dec 2022 17:44:40 +0000
-Received: from mail-pj1-x1036.google.com ([2607:f8b0:4864:20::1036])
+	id 1p0nc1-0099GR-Nz; Thu, 01 Dec 2022 17:44:41 +0000
+Received: from mail-pj1-x1035.google.com ([2607:f8b0:4864:20::1035])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1p0nb7-0098YA-1j
-	for linux-phy@lists.infradead.org; Thu, 01 Dec 2022 17:43:46 +0000
-Received: by mail-pj1-x1036.google.com with SMTP id o12so2509981pjo.4
-        for <linux-phy@lists.infradead.org>; Thu, 01 Dec 2022 09:43:43 -0800 (PST)
+	id 1p0nbd-00997d-EF
+	for linux-phy@lists.infradead.org; Thu, 01 Dec 2022 17:44:19 +0000
+Received: by mail-pj1-x1035.google.com with SMTP id u15-20020a17090a3fcf00b002191825cf02so2811431pjm.2
+        for <linux-phy@lists.infradead.org>; Thu, 01 Dec 2022 09:44:17 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=BpBie4jkW/BfxvQG7eHd3js6+LWawB9Le/asGO1bMFA=;
-        b=UCOwgQt8RZigkWNgSd1ke+sJbq8LSwRBcqZB8crZW/+D3bvgWNt4ttG8AdBYOqpVtc
-         n4N29Eo3116K73DwQjoSmAP49oYkVYTOE3mCM3/O+BXc6YPjvOQjduuPiNN9mLboIuse
-         NNnX7dpqmBfuLMlOtIV5+TGEqQ1puds6oF9YDHp5NK9pkZMhDAHkL1hkWTcSCiCnMsXC
-         0z6+8qnk2Y4IrUbyTXIrH/a8BRw0Rg/M+ozcLt9hEAeIOoWWPDNPXAGyCNShLhUJJ/FR
-         V8AQKugEHC5BqiR31HbMDUQjYullb0JIvr513FZb05CyRYweUXsDfLaTOzgHd5FNP/nc
-         x7lA==
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=0EwbwxScxAH0Ye5HC8kecov46MNjbALXnqq/6xD/uZI=;
+        b=t+B+gdvWpTyroYE+SGEqX9/YuhL5Dufp6zJbMHpPHKhyaoEcktAaFKu/KlVFq2Akzm
+         pW2nsD9QNakchPgTAfPcv6qm/0opGtV3Hscm7fhTCw9FwPmXqVvGXHZ93ulLzlegBNlI
+         oQvRpUkMTWVh8sfqCYPG/SAd6CcqbDdRLU2nUAwwP2qb3rjSKrRmzZ8LBt53Z7Kk84bM
+         62exduN0roGn38WL9Y/U2Sm7JXUPt0SMU5w51yQSxCnSXOmtEPZ2khFbr2CyV4dxlWWO
+         YKdzwsXrLB/HBc3E2WQhbQwRgjwNbqk0vBscGy8L9eaNluH6S6hiJPzLCsBH8+rIBLiN
+         mhHA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=BpBie4jkW/BfxvQG7eHd3js6+LWawB9Le/asGO1bMFA=;
-        b=dig/8rclWh2ugqp7XBcvwy9JS+1g1yVfKcYIyZVRN3ojdd5sA7D6Xf+6lGqPLZMxWv
-         9dLTsEaY7Sn++Zds3I7bAfQWzesWqArOTRw7BbJaisjrJ1PEJGSRQ5VuneKHPIs1pPfq
-         9mzKJxFFmRqbcaPn7LHPp4sDe3GDRNLqFsIaXDcsKWFyfW2NwMCHulQ3YIna1K/AT70/
-         gJRzVYkaan0YRswsH1oJXDwQ9QR8uI01/x/cuqXEqsiKLpmlIcOiD5wBSv1tFhAFTZsM
-         VttXTydRSVxYReneH9IwaSHCUf1woEakK79bBk9dTpKTf2dTyGTcTeG1E4CndCTmiInv
-         HDGw==
-X-Gm-Message-State: ANoB5plF72urpwbWLNG6KYXwT2dVdz2PDjc/uU7cepRhoUolcRlFz73u
-	GArtPBZo03jveFZoFlg/Vd5v
-X-Google-Smtp-Source: AA0mqf7lrHvbI6R/i7eq5zc7oayucCfI5hEsfEFmlM7cZP1cBPnHiT5XX45q3DnUog1aq7u69hZeZg==
-X-Received: by 2002:a17:90a:e2c1:b0:219:5bdb:2b45 with SMTP id fr1-20020a17090ae2c100b002195bdb2b45mr12216640pjb.71.1669916622611;
-        Thu, 01 Dec 2022 09:43:42 -0800 (PST)
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=0EwbwxScxAH0Ye5HC8kecov46MNjbALXnqq/6xD/uZI=;
+        b=qu36DTukZmmKOSFvgb1wdg9tQVYC6OGLOX20KOekupsOR+AjMl72XkEodraxtyLzT8
+         zYHmkqsVtZNSCnzsatv3ENy8KV02iK5GsJFeFCgfWXvYpHGmKjUIQRq0VFZgUR++V5Wt
+         7cht79u3znLuZT1BtWr+QGqg+Plzv3YT56TBA6QZP0NYzfe19PR+2+t3f3ibfvRWHc0q
+         hNT2Fy8A9QZ82j7KoPPe7YE6cuBUJGZ1u/Ktnj9NPovorE3DY+xXrj+/m3hzHOKLtanw
+         3D2OUWGd/YXD1BFnKkLxe0GxJR4xI/Kmy28LkBJgI/QFjrA8/FKFvlZIwXuSWZJ1VCKT
+         n5+g==
+X-Gm-Message-State: ANoB5plNv0k8PXuEDtsSEg4soPlyPXROMwDUZxytTvJ/swEvWwh7PgK3
+	R8J3jaVKHdfREGZOD2Avnhvx
+X-Google-Smtp-Source: AA0mqf5ydUecqFe7PW9IOZSeA7CC2Qp/29SmhDgnZCLdXfjL++61YnwIkT911+LZT8O2qDb9RPw2kw==
+X-Received: by 2002:a17:902:e94e:b0:186:5613:becf with SMTP id b14-20020a170902e94e00b001865613becfmr37192236pll.46.1669916656633;
+        Thu, 01 Dec 2022 09:44:16 -0800 (PST)
 Received: from localhost.localdomain ([220.158.159.39])
-        by smtp.gmail.com with ESMTPSA id p4-20020a170902780400b0016d9b101413sm3898743pll.200.2022.12.01.09.43.35
+        by smtp.gmail.com with ESMTPSA id p4-20020a170902780400b0016d9b101413sm3898743pll.200.2022.12.01.09.44.09
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 01 Dec 2022 09:43:41 -0800 (PST)
+        Thu, 01 Dec 2022 09:44:15 -0800 (PST)
 From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 To: martin.petersen@oracle.com,
 	jejb@linux.ibm.com,
@@ -77,14 +78,16 @@ Cc: quic_cang@quicinc.com,
 	avri.altman@wdc.com,
 	bvanassche@acm.org,
 	Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Subject: [PATCH v4 00/23] ufs: qcom: Add HS-G4 support
-Date: Thu,  1 Dec 2022 23:13:05 +0530
-Message-Id: <20221201174328.870152-1-manivannan.sadhasivam@linaro.org>
+Subject: [PATCH v4 05/23] phy: qcom-qmp-ufs: Add support for configuring PHY in HS G4 mode
+Date: Thu,  1 Dec 2022 23:13:10 +0530
+Message-Id: <20221201174328.870152-6-manivannan.sadhasivam@linaro.org>
 X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20221201174328.870152-1-manivannan.sadhasivam@linaro.org>
+References: <20221201174328.870152-1-manivannan.sadhasivam@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221201_094345_195383_66CBE34D 
-X-CRM114-Status: GOOD (  17.47  )
+X-CRM114-CacheID: sfid-20221201_094417_592585_7DB24F18 
+X-CRM114-Status: GOOD (  12.91  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,101 +104,66 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hello,
+Add separate tables_hs_g4 instance to allow the PHY driver to configure the
+PHY in HS G4 mode. The individual SoC configs need to supply the Rx, Tx and
+PCS register setting in tables_hs_g4 and the UFS driver can request the
+Hs G4 mode by calling phy_set_mode_ext() with submode set to UFS_HS_G4.
 
-This series adds HS-G4 support to the Qcom UFS driver and PHY driver.
-The newer Qcom platforms support configuring the UFS controller and PHY
-in dual gears (i.e., controller/PHY can be configured to run in two gear
-speeds). This is accomplished by adding two different PHY init sequences
-to the PHY driver and the UFS driver requesting the one that's required
-based on the platform configuration.
+Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+---
+ drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 9 +++++++++
+ 1 file changed, 9 insertions(+)
 
-Initially the ufs-qcom driver will use the default gear G2 for enumerating
-the UFS device. Afer enumeration, the max gear supported by both the
-controller and device would be found out and that will be used thereafter.
-But for using the max gear after enumeration, the ufs-qcom driver requires
-the UFS device to be reinitialized. For this purpose, a separate quirk has
-been introduced in the UFS core along with a callback and those will be used
-by the ufs-qcom driver.
-
-This series has been tested on following platforms:
-
-* Qcom RB5 development platform powered by SM8250 SoC
-* SM8450 based dev board
-
-Merging Strategy:
------------------
-
-The PHY patches are expected to go through PHY tree and UFS, MAINTAINERS
-patches are expected to go through SCSI tree.
-
-NOTE: Since this series targets multiple SoCs (base like SM8350) and
-(derivative like SC8280XP), testing on all of these platforms is really
-appreciated. Although, if the series works for base SoC, then for derivatives
-also it should work.
-
-Thanks,
-Mani
-
-Changes in v4:
-
-* Dropped HS G3 specific setting from SM8350 default init sequence
-* Added G4 support to SM8350 and SC8280XP
-* Covered all qcom files under drivers/ufs/host in MAINTAINERS file
-* Added missing Suggested-by tags for Can Guo
-* Rebased on top of linux-next 20221201
-
-Changes in v3:
-
-* Dropped the "device-max-gear" DT property and switched to reinitialization (Krzysztof)
-* Added HS-G4 support to all compatible SoCs (SM8150, SM8250 and SM8450). This will also
-  benefit the derivative SoCs of these platforms like SC8180x, SC8280x etc...
-* Splitted the qmp_phy_init_tbl changes into separate patches (Vinod)
-* Collected reviews from Andrew H
-
-Changes in v2:
-
-* Collected reviews from Dmitry
-* Renamed "max-gear" property to "max-device-gear"
-* Used min() for deciding which gear to use instead of open comparision
-* Added comment about the old register name
-
-Manivannan Sadhasivam (23):
-  phy: qcom-qmp-ufs: Remove _tbl suffix from qmp_phy_init_tbl
-    definitions
-  phy: qcom-qmp-ufs: Rename MSM8996 PHY definitions
-  phy: qcom-qmp-ufs: Move register settings to qmp_phy_cfg_tbls struct
-  phy: qcom-qmp-ufs: Add support for configuring PHY in HS Series B mode
-  phy: qcom-qmp-ufs: Add support for configuring PHY in HS G4 mode
-  phy: qcom-qmp-ufs: Move HS Rate B register setting to tbls_hs_b
-  phy: qcom-qmp-ufs: Add HS G4 mode support to SM8150 SoC
-  phy: qcom-qmp-ufs: Add HS G4 mode support to SM8250 SoC
-  phy: qcom-qmp-ufs: Avoid setting HS G3 specific registers
-  phy: qcom-qmp-ufs: Add HS G4 mode support to SM8350 SoC
-  phy: qcom-qmp-ufs: Add HS G4 mode support to SM8450 SoC
-  phy: qcom-qmp-ufs: Add HS G4 mode support to SC8280XP SoC
-  scsi: ufs: ufs-qcom: Remove un-necessary goto statements
-  scsi: ufs: ufs-qcom: Remove un-necessary WARN_ON()
-  scsi: ufs: ufs-qcom: Use bitfields where appropriate
-  scsi: ufs: ufs-qcom: Use dev_err_probe() for printing probe error
-  scsi: ufs: ufs-qcom: Fix the Qcom register name for offset 0xD0
-  scsi: ufs: core: Add reinit_notify() callback
-  scsi: ufs: core: Add support for reinitializing the UFS device
-  scsi: ufs: ufs-qcom: Factor out the logic finding the HS Gear
-  scsi: ufs: ufs-qcom: Add support for reinitializing the UFS device
-  scsi: ufs: ufs-qcom: Add support for finding max gear on new platforms
-  MAINTAINERS: Add myself as the maintainer for Qcom UFS drivers
-
- MAINTAINERS                                   |   8 +
- .../phy/qualcomm/phy-qcom-qmp-pcs-ufs-v5.h    |   1 +
- drivers/phy/qualcomm/phy-qcom-qmp-ufs.c       | 454 +++++++++++++-----
- drivers/ufs/core/ufshcd-priv.h                |   6 +
- drivers/ufs/core/ufshcd.c                     |  63 ++-
- drivers/ufs/host/ufs-qcom.c                   | 170 +++----
- drivers/ufs/host/ufs-qcom.h                   |  70 +--
- include/ufs/ufshcd.h                          |   8 +
- 8 files changed, 532 insertions(+), 248 deletions(-)
-
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+index 2d5dd336aeb2..82be9b754e8e 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+@@ -20,6 +20,7 @@
+ #include <linux/reset.h>
+ #include <linux/slab.h>
+ 
++#include <ufs/unipro.h>
+ #include "phy-qcom-qmp.h"
+ 
+ /* QPHY_SW_RESET bit */
+@@ -549,6 +550,8 @@ struct qmp_phy_cfg {
+ 	const struct qmp_phy_cfg_tbls tbls;
+ 	/* Additional sequence for HS Series B */
+ 	const struct qmp_phy_cfg_tbls tbls_hs_b;
++	/* Additional sequence for HS G4 */
++	const struct qmp_phy_cfg_tbls tbls_hs_g4;
+ 
+ 	/* clock ids to be requested */
+ 	const char * const *clk_list;
+@@ -583,6 +586,7 @@ struct qmp_ufs {
+ 
+ 	struct phy *phy;
+ 	u32 mode;
++	u32 submode;
+ };
+ 
+ static inline void qphy_setbits(void __iomem *base, u32 offset, u32 val)
+@@ -847,7 +851,11 @@ static void qmp_ufs_init_registers(struct qmp_ufs *qmp, const struct qmp_phy_cfg
+ 	if (qmp->mode == PHY_MODE_UFS_HS_B)
+ 		qmp_ufs_serdes_init(qmp, &cfg->tbls_hs_b);
+ 	qmp_ufs_lanes_init(qmp, &cfg->tbls);
++	if (qmp->submode == UFS_HS_G4)
++		qmp_ufs_lanes_init(qmp, &cfg->tbls_hs_g4);
+ 	qmp_ufs_pcs_init(qmp, &cfg->tbls);
++	if (qmp->submode == UFS_HS_G4)
++		qmp_ufs_pcs_init(qmp, &cfg->tbls_hs_g4);
+ }
+ 
+ static int qmp_ufs_com_init(struct qmp_ufs *qmp)
+@@ -1021,6 +1029,7 @@ static int qmp_ufs_set_mode(struct phy *phy, enum phy_mode mode, int submode)
+ 	struct qmp_ufs *qmp = phy_get_drvdata(phy);
+ 
+ 	qmp->mode = mode;
++	qmp->submode = submode;
+ 
+ 	return 0;
+ }
 -- 
 2.25.1
 
