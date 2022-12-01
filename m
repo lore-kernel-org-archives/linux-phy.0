@@ -4,62 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 56670C43217
-	for <linux-phy@archiver.kernel.org>; Thu,  1 Dec 2022 17:45:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9DB63C47088
+	for <linux-phy@archiver.kernel.org>; Thu,  1 Dec 2022 17:47:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mWIgM9ogDgGnm9L90wyQGwrZWk0l4i6c7lBLy1J9R3o=; b=AP92IKyLhwtAmf
-	2XAF6IbMbeboaBIApXH6ccKruQMsHiBr3/T+vUl3HDOXRc/laOHsUL0EbZWENJxKIMsmMskNmdyr8
-	0FDftWqaW3np9M/8Hv1cmRpTJOg+zGAgJXQRgpAmQv5lKJOm4qzY4clcnKMdxktm4i+wugfKcyf23
-	2c6U7GeOkOTQlNx0bobmzuURnYy4cJl5uZ8ngg3jbr2N4JulARP8SkwJu+wjAtR6v+VHzPSh041XH
-	Yj8jCwutG6X5aCPNcMnZPdKqwAU0W+WYk7+AjWSwR+ukjC17390T2xgQ5YBpyjc+0qSNxwQbQVPB6
-	u5lG5gcQ5VUSwG7k1+sQ==;
+	List-Owner; bh=8S88xcOHEbg6Sop2G28hUvx+v3V0XH4gKIgq0JpcYZk=; b=S8GPiepHc2GL7n
+	mOATriIJK6BnYyQAG04VhIe05U+D4rM5nlgbnM1ReaHiIYemZ5IroDrb7Sy+v/rSgP0mqAWKVpcY7
+	6ODFuhpRMtYsT3F+OvbbOm3Wdrv1MITFv48Z8f/pPXBHZCDs26DcvIZ9gCYr0bciCxL8/UToZDMM3
+	M1eADLBwk/vmWp7LnN2F4+dY9j2xQkOhe8bgv2dkFy3V5WX9GOz/yNxaqdVxis3SczaXvbPg/nsOX
+	vR0BV+HlO5YwUiKNqj5H13ivcJRYne/UyB+ZCZGeUT3rtYK/YYXDk3LiLMNlwxpqgex2X0asxewnq
+	I9GJzHLTZU4LWs5A0XSA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1p0ncu-0099uv-Pn; Thu, 01 Dec 2022 17:45:36 +0000
-Received: from mail-pg1-x52b.google.com ([2607:f8b0:4864:20::52b])
+	id 1p0nei-009CW7-WB; Thu, 01 Dec 2022 17:47:29 +0000
+Received: from mail-pf1-x436.google.com ([2607:f8b0:4864:20::436])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1p0ncq-0099pL-7S
-	for linux-phy@lists.infradead.org; Thu, 01 Dec 2022 17:45:33 +0000
-Received: by mail-pg1-x52b.google.com with SMTP id h193so2265135pgc.10
-        for <linux-phy@lists.infradead.org>; Thu, 01 Dec 2022 09:45:31 -0800 (PST)
+	id 1p0ncy-0099yr-V6
+	for linux-phy@lists.infradead.org; Thu, 01 Dec 2022 17:45:43 +0000
+Received: by mail-pf1-x436.google.com with SMTP id k79so2551146pfd.7
+        for <linux-phy@lists.infradead.org>; Thu, 01 Dec 2022 09:45:38 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=Ff060FMlh2MHBX3ga6yMFYN0UyVEYS40VqwmLXF4PCQ=;
-        b=ChLzP/jCsMP/7siDVnOirGouhwX7bHn8Xmjbes6aYzsley+JEB5YH+txK3cEAocgCO
-         tWMUW7/XxtsTbxniN7+xNm4fhW98Cp3Olci2b+gVhIVPetAPa4iGquaU18A1UeLIk/rk
-         qw1YFOlOUvEIdMFX4jfhaqeRikGbEsguk7uaxFycoJg9dhWF6dvyKdbANzsBlipDvWV3
-         KXH/GfEG+DFeDnnu/dfw+sCyiMnsXdy/ujc3gNVWZ+hjo5+K/qEUA4Gi1s/WdJ/8fXxP
-         YTJxbSJ8FbKZitaBUZXVjIvZZ65rWiinyCnJ/OeMStjTwWLNW+cQk2iQdE/foG8GJnZ8
-         DomQ==
+        bh=dxBfeAGPJSh5Y/5FKQg+M0y4cyLZHfyLwZKtosIJVD4=;
+        b=cVwgxrvy/wOo/YjbpaKogtDcuRpXMD+mUA4GkYeUOI6ezInGYpeliOJhgIJry0ziLR
+         8y9LGTbBtBmeMdV/H8LCPq3vDwErrNqkT9rgREnBoj3DsUMM1DopJr76+l6mMKCBpxJu
+         zmMZN4Bah9vgAJWZDusTqfvblRNVK4s8q3kahKW9bwfUHWxxlZm0ixfbpawBuguxhREf
+         UfvY4NEIePA5J+Qi8PGi5o6eTWE3eJ3zuKPx6VPJaNQ76kUG2CBWQ5Qe/oD+9AtYmR/s
+         FEgVg6l1SkCWtxOLanu3bXfrK0hyRTrvYJqivFlLYP92MKJNPayoF7ims3T9syyvtCTT
+         NqDg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=Ff060FMlh2MHBX3ga6yMFYN0UyVEYS40VqwmLXF4PCQ=;
-        b=Xe9mQmyuOFrXuc+MbdZrZopumiuRcsbydvrZdfThFtfpUrzZjZpS0f7qzMVBNF/JYn
-         jHBPmW0VfViSPeLBLYx9tQMmw5q8MLT7QpAKqAyD08e9Rs4Itc+MBV/YeWVEd7zIEvDP
-         K66w2Jfx6TouYqei05dgIs/rFqIbkSF2UfFQNzDoZFu6kruhpb9ABu7DQ2qTq+2x8zR8
-         +4zOWW7yrLMUcOXiB+Tv8JM2TIsLI1fgtgXeZzrL8SLwp1/ZcE/j9HHzJ6TIYs/0NPLr
-         CiHVEYlYennTXlqMvJw+L+izRvVfoODuzDlUPBhBT1dsf2eAy1JFj7NwAyer+ItS2mkO
-         Wqrw==
-X-Gm-Message-State: ANoB5plXaCf70aQXbgCVKHoEOyDElbz0TzanptjwGovaKDBGGlb+7dDc
-	M/JJLU4oPplTJrtb2mOEM+cn
-X-Google-Smtp-Source: AA0mqf4Cuxf3UyHQpczq+r1vzyH2b1ABJK/TrKQIBMWfdC192LUpUe035VBHnShh7DVbLhUTF/ngLw==
-X-Received: by 2002:a62:f94c:0:b0:56e:174e:efdf with SMTP id g12-20020a62f94c000000b0056e174eefdfmr68316959pfm.29.1669916731346;
-        Thu, 01 Dec 2022 09:45:31 -0800 (PST)
+        bh=dxBfeAGPJSh5Y/5FKQg+M0y4cyLZHfyLwZKtosIJVD4=;
+        b=TmXLsCP5eCBq1fW+GXIIqy8p/AWRdqSGONcwHMmKKpu+gWiK8IAaXQ7X/wd0vVO7mz
+         zbGgA4ntjREBO844N1j2JXphVh2b5pph1yZCMSMFkEKHUZ57SFQSX8TSwwcITLSDz/6s
+         FBPDrMD/chMu9gychJ8V51tG0EX1bIJfskxe3zLdtTDpkWsR/k/ueRraTxDxjL4Xhoyn
+         Tz8y0hfBfy18Q6i7AkCXpwvwQhZHTEtEbwT77g73LKZC5cNbCmsf49Nz+46VtXbzSztu
+         jqD8dzzIdeW4Nj1dBFZcKcRGGVyOvmALYAfTPaMxQq6C8z4va4RVFnzJY4nSjR6birG4
+         +sQA==
+X-Gm-Message-State: ANoB5plbJiSkF7DdVXiUammHn1vEZszHC1cMTBiCPS/4zGInk7YQbP35
+	e9uKFeLOylCuSRiXxYZxGWmp
+X-Google-Smtp-Source: AA0mqf5Mgc99o/UTJhLXzyZGQaJIysEcv5YHIa6ydHMeEjKzcZ4+/ZNExCZfxzP0xAEDdC+jXRyw0w==
+X-Received: by 2002:a05:6a00:f8a:b0:56c:2576:9d2a with SMTP id ct10-20020a056a000f8a00b0056c25769d2amr49815642pfb.60.1669916737965;
+        Thu, 01 Dec 2022 09:45:37 -0800 (PST)
 Received: from localhost.localdomain ([220.158.159.39])
-        by smtp.gmail.com with ESMTPSA id p4-20020a170902780400b0016d9b101413sm3898743pll.200.2022.12.01.09.45.25
+        by smtp.gmail.com with ESMTPSA id p4-20020a170902780400b0016d9b101413sm3898743pll.200.2022.12.01.09.45.31
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 01 Dec 2022 09:45:30 -0800 (PST)
+        Thu, 01 Dec 2022 09:45:37 -0800 (PST)
 From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 To: martin.petersen@oracle.com,
 	jejb@linux.ibm.com,
@@ -78,16 +78,16 @@ Cc: quic_cang@quicinc.com,
 	avri.altman@wdc.com,
 	bvanassche@acm.org,
 	Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Subject: [PATCH v4 16/23] scsi: ufs: ufs-qcom: Use dev_err_probe() for printing probe error
-Date: Thu,  1 Dec 2022 23:13:21 +0530
-Message-Id: <20221201174328.870152-17-manivannan.sadhasivam@linaro.org>
+Subject: [PATCH v4 17/23] scsi: ufs: ufs-qcom: Fix the Qcom register name for offset 0xD0
+Date: Thu,  1 Dec 2022 23:13:22 +0530
+Message-Id: <20221201174328.870152-18-manivannan.sadhasivam@linaro.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20221201174328.870152-1-manivannan.sadhasivam@linaro.org>
 References: <20221201174328.870152-1-manivannan.sadhasivam@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221201_094532_415352_E141DD80 
-X-CRM114-Status: GOOD (  10.39  )
+X-CRM114-CacheID: sfid-20221201_094541_049760_3151A69F 
+X-CRM114-Status: GOOD (  10.93  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,30 +104,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Make use of dev_err_probe() for printing the probe error.
+On newer UFS revisions, the register at offset 0xD0 is called,
+REG_UFS_PARAM0. Since the existing register, RETRY_TIMER_REG is not used
+anywhere, it is safe to use the new name.
 
 Reviewed-by: Andrew Halaney <ahalaney@redhat.com>
 Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 ---
- drivers/ufs/host/ufs-qcom.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ drivers/ufs/host/ufs-qcom.h | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/ufs/host/ufs-qcom.c b/drivers/ufs/host/ufs-qcom.c
-index 8bb0f4415f1a..38e2ed749d75 100644
---- a/drivers/ufs/host/ufs-qcom.c
-+++ b/drivers/ufs/host/ufs-qcom.c
-@@ -1441,9 +1441,9 @@ static int ufs_qcom_probe(struct platform_device *pdev)
- 	/* Perform generic probe */
- 	err = ufshcd_pltfrm_init(pdev, &ufs_hba_qcom_vops);
- 	if (err)
--		dev_err(dev, "ufshcd_pltfrm_init() failed %d\n", err);
-+		return dev_err_probe(dev, err, "ufshcd_pltfrm_init() failed\n");
- 
--	return err;
-+	return 0;
- }
- 
- /**
+diff --git a/drivers/ufs/host/ufs-qcom.h b/drivers/ufs/host/ufs-qcom.h
+index 9d96ac71b27f..7fe928b82753 100644
+--- a/drivers/ufs/host/ufs-qcom.h
++++ b/drivers/ufs/host/ufs-qcom.h
+@@ -33,7 +33,8 @@ enum {
+ 	REG_UFS_TX_SYMBOL_CLK_NS_US         = 0xC4,
+ 	REG_UFS_LOCAL_PORT_ID_REG           = 0xC8,
+ 	REG_UFS_PA_ERR_CODE                 = 0xCC,
+-	REG_UFS_RETRY_TIMER_REG             = 0xD0,
++	/* On older UFS revisions, this register is called "RETRY_TIMER_REG" */
++	REG_UFS_PARAM0                      = 0xD0,
+ 	REG_UFS_PA_LINK_STARTUP_TIMER       = 0xD8,
+ 	REG_UFS_CFG1                        = 0xDC,
+ 	REG_UFS_CFG2                        = 0xE0,
 -- 
 2.25.1
 
