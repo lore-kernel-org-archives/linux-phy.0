@@ -4,62 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 91A79C47088
-	for <linux-phy@archiver.kernel.org>; Thu,  1 Dec 2022 17:55:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6897AC47089
+	for <linux-phy@archiver.kernel.org>; Thu,  1 Dec 2022 17:55:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=V0ZEV9x0tz7fGswsLIomofj5xkD0m9eUxUKf0USPARk=; b=L3DjB9vN5wrlY6
-	8syUwIpeUQuFnPURRhIKQ3NTn8i3E/iyzZ9PdYLs9KcNFkHj4yvQFoj0bQvkwRkddYFRJRsr+lhJL
-	8qquSkIQJVcNw756r9yZWdoDqta5CEwhOEKMiq8Homlcr4dhrLvQWu54pMN8IXPxYhukAkDA+HCnw
-	TVBF5MuaaWUhddM3ALiUjkgw08ZPqLsYGrPD8GYNNuT8O/XOXpxKkLPd4Ojyjttnk5BcOtCEr+G0D
-	LShAvArWvdMyey5BwHMTL1HHwctaSmYHEmY5z0LvXAS8fOqXy0wm1sT/Usj4g5rdicjHXeqk10fjt
-	u9rH3Jb9ABx1nO7yvRhg==;
+	List-Owner; bh=G7vR5Vc/cX2XIoHUBjYdcN8hTvHPJ9fKfvX9eHcknaU=; b=awy1VSeATmwYKQ
+	wjnpQ6OMMQwTm/gReQWt33QthOl8afv91GdwCPKF6tEKi9zf71MYytRYQo/MesEByFoSnmIF9GJAu
+	hf/yAzn4sySLskWp+kt4Qh3IgUnTtKlUtoHk3UEvW3Pi9Hk/niwA4qxJQhs3jxa7l5zMRLXcXcyHn
+	/eeuioFFRAuaJPSibnpQO8ajhoj/e3Fo2qVZeFTP23S8Cj4QaSU43HSQMKbwmjUVOUzEVIs9MZzh3
+	0o/QINvmzlhTZjuO/ASoVP4NXjaqUyAP3aLufkXbGqeU0JsKPxMOlPq5DhIdzRyK4zTPf5BHbdEDt
+	9QZl6ruNFkg2W8NpumNg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1p0nmv-009Khf-TD; Thu, 01 Dec 2022 17:55:57 +0000
-Received: from mail-pj1-x102f.google.com ([2607:f8b0:4864:20::102f])
+	id 1p0nmw-009KiY-Hm; Thu, 01 Dec 2022 17:55:58 +0000
+Received: from mail-pg1-x52f.google.com ([2607:f8b0:4864:20::52f])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1p0ndO-009Age-CC
-	for linux-phy@lists.infradead.org; Thu, 01 Dec 2022 17:46:07 +0000
-Received: by mail-pj1-x102f.google.com with SMTP id u15-20020a17090a3fcf00b002191825cf02so2816636pjm.2
-        for <linux-phy@lists.infradead.org>; Thu, 01 Dec 2022 09:46:04 -0800 (PST)
+	id 1p0ndZ-009Azc-8g
+	for linux-phy@lists.infradead.org; Thu, 01 Dec 2022 17:46:18 +0000
+Received: by mail-pg1-x52f.google.com with SMTP id f3so2293436pgc.2
+        for <linux-phy@lists.infradead.org>; Thu, 01 Dec 2022 09:46:15 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=HfEJwN0vYVybfZ9YyTm6eBmcGL9HtCjfrKAQuwx/Vlk=;
-        b=ITIGZHCi9cPswRmdxDZ6T83A0c6HKJ0ts/3XspYsfh/mGdC16YCB8MvDu0jwqM3zkl
-         BV6SzOWQTIOFHKEBzEaaIfIXnsVezdtUlvrLVX1N2+t7ogMRlGN6pphE0PM3YO+ecZw/
-         DT8ZtU/76aNYNBXhTZ6uB5KZyU0GmYPrDNuy8IAqa/fBF9exALPccbhvJeE2Wm1/k7ch
-         I9Zm45bnFKXsjPUDD3paMA0DW/6yy8FmLlKGv0vPwkXZY7VUjrMqapJcj6tdpY/eB2Vi
-         WOJP6lx4eyunsLWU3AJzFr16BGTwaZ0YoPeE7VBRO8fAFC11590Sj2nRA7RJXD6hNQzG
-         e+WQ==
+        bh=43OqRHaaIujJi6ZlQt/N8badSJ3sWGrShf1wADibj34=;
+        b=NmPY8iCDxI+NhdKK5uUYYLt8/z3vqea6wkBFcmL3hDLIQ2o87rg+rRhj+mkuN/E1z1
+         gLdcQ0VjJJrZwx2+tj6eWlyids+OqliSDb82dhXf+V9km/G2FgMPVSxJF0tPUx9HtApI
+         0zHIeHNft62jZOjXQ0tID5RteBnF++m1Ry72uLtWQ/re8HR0wBS67ohbK3Vjmn8K9bKD
+         VI+c0Ws0++zPjmSHNsSL5U8DDR7ztW4XttZKgFQ8nQAszbwyYEwbAuOFbBx6aeopiexo
+         ibofa9Gkr8xq5YUroQb67IM68EFua/fbX7SFpy51N6hiMrqvwLJPklmfywd93kQbm4Q8
+         t4ng==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=HfEJwN0vYVybfZ9YyTm6eBmcGL9HtCjfrKAQuwx/Vlk=;
-        b=v2K4o/863kMdZf/dJEHv6BgrDPxTGyMfk0AKmniKEBXZ+7Dr1fadHpz4ytgM6Wsw2P
-         GOLrMOcg2EoouQj0p28dATT7R6HYeob9f9sbFUGJ/iD/RuqIgISoRdD80y61XeFlBJCz
-         EgbLBHw3cm67SYMGk23cCPt+LcItH4X48+m2jqhcZ+i8XF7zpL6PHKbhBQdJctdBAsc3
-         TCzgR7JVqnqQWAVF0YcusHJdvRZ5+3blixKV5PylOzIdEk7FDBIBhmg68fGEIRnbNCel
-         3kSEqHN61KyOxErnb+KPdbwZRHz67RlEkQZ7Szb3kNtT7S81eZGiDXFxdbefYIhTjy1Z
-         Iy6w==
-X-Gm-Message-State: ANoB5pmd5BKxLP7aP6c5o/hIrxQzUnaPhfKeJ94y4gg4Nd6qiuB/1sCa
-	a+xcxOLSDevVFKehlCO2Q0Hc
-X-Google-Smtp-Source: AA0mqf7X2y4uCqcQwAP/5lxkylBmUsvwLff+iLprcgKo90LT16Br3DakEIn/3PQ6YtvSo/pznOihhQ==
-X-Received: by 2002:a17:902:dacd:b0:189:6889:c309 with SMTP id q13-20020a170902dacd00b001896889c309mr32201361plx.3.1669916764269;
-        Thu, 01 Dec 2022 09:46:04 -0800 (PST)
+        bh=43OqRHaaIujJi6ZlQt/N8badSJ3sWGrShf1wADibj34=;
+        b=N6xz8bWj12Y8TD0w+PhCvv0YHg8wF5Ze1zD3Lf1PR1HW98bBV+4HS6Ck9NFZzjw227
+         sYpIjxGzQgyMwV1S3zvnMyfXbbagoYd3yTut9jbUPVxcf4Ll+ExinqpdYHLxUGVTzFsV
+         A8LJ/okpIBgfZi5YlTTqZkqOpCR+fzYmjTYc6iIu++bvl5RHegWkRkdp5V+5PflwPQxD
+         qMsjoYswyt5AdCQBN07+9y5dYIzV9zQBY0kXTWxn8pq2rdq07Fl7FjbFikM6xgQ3mp8i
+         FtNclIaXta1IaampYgu3AMVhNU/duHLaQruIV4fDoBEy/VCgMHCrQaEZ7GJENuZTimRM
+         9XCg==
+X-Gm-Message-State: ANoB5pkMjOVlWtnPbLjv0sOUQrYtvlYxpgOytYskEbtuwbkLEUckJJvR
+	5sa6GBbPIsgFg/R+5n3q/oBG
+X-Google-Smtp-Source: AA0mqf64D09WmHdfFGHHBXjzBUhd1iZ31q9mHzfnHXrDTrmY1nFgAImzsVcgggCYrYBrM0bUZjm06A==
+X-Received: by 2002:a62:3006:0:b0:554:7525:7acf with SMTP id w6-20020a623006000000b0055475257acfmr48105047pfw.44.1669916775237;
+        Thu, 01 Dec 2022 09:46:15 -0800 (PST)
 Received: from localhost.localdomain ([220.158.159.39])
-        by smtp.gmail.com with ESMTPSA id p4-20020a170902780400b0016d9b101413sm3898743pll.200.2022.12.01.09.45.57
+        by smtp.gmail.com with ESMTPSA id p4-20020a170902780400b0016d9b101413sm3898743pll.200.2022.12.01.09.46.10
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 01 Dec 2022 09:46:03 -0800 (PST)
+        Thu, 01 Dec 2022 09:46:14 -0800 (PST)
 From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 To: martin.petersen@oracle.com,
 	jejb@linux.ibm.com,
@@ -78,16 +78,17 @@ Cc: quic_cang@quicinc.com,
 	avri.altman@wdc.com,
 	bvanassche@acm.org,
 	Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Subject: [PATCH v4 21/23] scsi: ufs: ufs-qcom: Add support for reinitializing the UFS device
-Date: Thu,  1 Dec 2022 23:13:26 +0530
-Message-Id: <20221201174328.870152-22-manivannan.sadhasivam@linaro.org>
+Subject: [PATCH v4 23/23] MAINTAINERS: Add myself as the maintainer for Qcom UFS drivers
+Date: Thu,  1 Dec 2022 23:13:28 +0530
+Message-Id: <20221201174328.870152-24-manivannan.sadhasivam@linaro.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20221201174328.870152-1-manivannan.sadhasivam@linaro.org>
 References: <20221201174328.870152-1-manivannan.sadhasivam@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221201_094606_489864_EB0F9525 
-X-CRM114-Status: GOOD (  17.39  )
+X-CRM114-CacheID: sfid-20221201_094617_369427_8416BB0B 
+X-CRM114-Status: UNSURE (   8.30  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,118 +105,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Starting from Qualcomm UFS version 4, the UFS device needs to be
-reinitialized after switching to maximum gear by the UFS core. Hence, add
-support for it by enabling the UFSHCD_QUIRK_REINIT_AFTER_MAX_GEAR_SWITCH
-quirk, implementing reinit_notify() callback and using the agreed gear
-speed for setting the PHY mode.
+Qcom UFS drivers are left un-maintained till now. I'd like to step up to
+maintain the drivers and the binding.
 
-Suggested-by: Can Guo <quic_cang@quicinc.com>
 Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 ---
- drivers/ufs/host/ufs-qcom.c | 26 ++++++++++++++++++++++----
- drivers/ufs/host/ufs-qcom.h |  2 ++
- 2 files changed, 24 insertions(+), 4 deletions(-)
+ MAINTAINERS | 8 ++++++++
+ 1 file changed, 8 insertions(+)
 
-diff --git a/drivers/ufs/host/ufs-qcom.c b/drivers/ufs/host/ufs-qcom.c
-index 919b6eae439d..3efef2f36e69 100644
---- a/drivers/ufs/host/ufs-qcom.c
-+++ b/drivers/ufs/host/ufs-qcom.c
-@@ -302,7 +302,6 @@ static int ufs_qcom_power_up_sequence(struct ufs_hba *hba)
- 	struct ufs_qcom_host *host = ufshcd_get_variant(hba);
- 	struct phy *phy = host->generic_phy;
- 	int ret;
--	bool is_rate_B = UFS_QCOM_LIMIT_HS_RATE == PA_HS_MODE_B;
+diff --git a/MAINTAINERS b/MAINTAINERS
+index 3583c5f6889d..3c8214f4a3cf 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -21379,6 +21379,14 @@ L:	linux-mediatek@lists.infradead.org (moderated for non-subscribers)
+ S:	Maintained
+ F:	drivers/ufs/host/ufs-mediatek*
  
- 	/* Reset UFS Host Controller and PHY */
- 	ret = ufs_qcom_host_reset(hba);
-@@ -310,9 +309,6 @@ static int ufs_qcom_power_up_sequence(struct ufs_hba *hba)
- 		dev_warn(hba->dev, "%s: host reset returned %d\n",
- 				  __func__, ret);
- 
--	if (is_rate_B)
--		phy_set_mode(phy, PHY_MODE_UFS_HS_B);
--
- 	/* phy initialization - calibrate the phy */
- 	ret = phy_init(phy);
- 	if (ret) {
-@@ -321,6 +317,8 @@ static int ufs_qcom_power_up_sequence(struct ufs_hba *hba)
- 		return ret;
- 	}
- 
-+	phy_set_mode_ext(phy, PHY_MODE_UFS_HS_B, host->hs_gear);
++UNIVERSAL FLASH STORAGE HOST CONTROLLER DRIVER QUALCOMM HOOKS
++M:	Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
++L:	linux-arm-msm@vger.kernel.org
++L:	linux-scsi@vger.kernel.org
++S:	Maintained
++F:	Documentation/devicetree/bindings/ufs/qcom,ufs.yaml
++F:	drivers/ufs/host/ufs-qcom*
 +
- 	/* power on phy - start serdes and phy's power and clocks */
- 	ret = phy_power_on(phy);
- 	if (ret) {
-@@ -723,6 +721,9 @@ static int ufs_qcom_pwr_change_notify(struct ufs_hba *hba,
- 			return ret;
- 		}
- 
-+		/* Use the agreed gear */
-+		host->hs_gear = dev_req_params->gear_tx;
-+
- 		/* enable the device ref clock before changing to HS mode */
- 		if (!ufshcd_is_hs_mode(&hba->pwr_info) &&
- 			ufshcd_is_hs_mode(dev_req_params))
-@@ -836,6 +837,9 @@ static void ufs_qcom_advertise_quirks(struct ufs_hba *hba)
- 				| UFSHCD_QUIRK_DME_PEER_ACCESS_AUTO_MODE
- 				| UFSHCD_QUIRK_BROKEN_PA_RXHSUNTERMCAP);
- 	}
-+
-+	if (host->hw_ver.major > 0x3)
-+		hba->quirks |= UFSHCD_QUIRK_REINIT_AFTER_MAX_GEAR_SWITCH;
- }
- 
- static void ufs_qcom_set_caps(struct ufs_hba *hba)
-@@ -1044,6 +1048,12 @@ static int ufs_qcom_init(struct ufs_hba *hba)
- 		dev_warn(dev, "%s: failed to configure the testbus %d\n",
- 				__func__, err);
- 
-+	/*
-+	 * Power up the PHY using the minimum supported gear (UFS_HS_G2).
-+	 * Switching to max gear will be performed during reinit if supported.
-+	 */
-+	host->hs_gear = UFS_HS_G2;
-+
- 	return 0;
- 
- out_variant_clear:
-@@ -1410,6 +1420,13 @@ static void ufs_qcom_config_scaling_param(struct ufs_hba *hba,
- }
- #endif
- 
-+static void ufs_qcom_reinit_notify(struct ufs_hba *hba)
-+{
-+	struct ufs_qcom_host *host = ufshcd_get_variant(hba);
-+
-+	phy_power_off(host->generic_phy);
-+}
-+
- /*
-  * struct ufs_hba_qcom_vops - UFS QCOM specific variant operations
-  *
-@@ -1433,6 +1450,7 @@ static const struct ufs_hba_variant_ops ufs_hba_qcom_vops = {
- 	.device_reset		= ufs_qcom_device_reset,
- 	.config_scaling_param = ufs_qcom_config_scaling_param,
- 	.program_key		= ufs_qcom_ice_program_key,
-+	.reinit_notify		= ufs_qcom_reinit_notify,
- };
- 
- /**
-diff --git a/drivers/ufs/host/ufs-qcom.h b/drivers/ufs/host/ufs-qcom.h
-index 7fe928b82753..4b00c67e9d7f 100644
---- a/drivers/ufs/host/ufs-qcom.h
-+++ b/drivers/ufs/host/ufs-qcom.h
-@@ -217,6 +217,8 @@ struct ufs_qcom_host {
- 	struct reset_controller_dev rcdev;
- 
- 	struct gpio_desc *device_reset;
-+
-+	u32 hs_gear;
- };
- 
- static inline u32
+ UNIVERSAL FLASH STORAGE HOST CONTROLLER DRIVER RENESAS HOOKS
+ M:	Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
+ L:	linux-renesas-soc@vger.kernel.org
 -- 
 2.25.1
 
