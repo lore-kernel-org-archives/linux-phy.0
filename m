@@ -4,84 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5F909C43217
-	for <linux-phy@archiver.kernel.org>; Thu,  1 Dec 2022 14:12:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AAFD3C47089
+	for <linux-phy@archiver.kernel.org>; Thu,  1 Dec 2022 16:27:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eBabdmAPNBLBmXNgoT8DYuqBanohCp21RaBh6IavWjI=; b=FsXMjuOvmlRZvQ
-	zPY8pY3eccQFQPKYEYUBnFKW2RuzW8OHVI49E6XjRhwv9orFOgd/+zjqA3jW4yw2ONwfOzx/Iyvm8
-	94y5thjMdtkYf2NZZwW7QlvgIF9FTISk/Vw5KVoRdu0cW8PUQnLzhV163F3VgM75dmwhekQQwufP/
-	J7TB6DEO8l85ZMYvppAGoiUNFeFhxiqGWpCqyc5r9GP5xcaxf3a/YRR+/b4FkiN/ys685vBwgMAQV
-	T/zhs9qxI1+acfkWA0QF9TB1aoBNkR7IprrfKBSlnkh1Erm6b/cuBz0sJ9FrLhL4jAeaj5sS0iuFM
-	MJ/JKLGaOae9K4HbtLaA==;
+	List-Owner; bh=pYXcgHYb18Gg8pwoVnitS3SDBW5TASSNo47tnFUV4aQ=; b=i1KDiZKPPAFI/a
+	DBM0AAdk7QTVkU1N82OkNKBedu1hkbY2KhWqq9hR/M4i+rBWwFIE0GbUFM3jNXWgq+qCTP3uWAKy7
+	lLMjMWtHEwB2HgIog+Ms6vWWFGTVA2NM9AFn22AR36Oz9upT0aFUr3WUt3HTMpUqPbH85jsif9agW
+	jCvk6uBIU619kjdZ9R+XWPDi74UTn32GuEUeVQThFiE5wl+zj9SqkN8Ms1Q+l5QbgEXAspGiwsP42
+	JJyE5aKi4donS1O0JOF3sdnE9dcU/GNlHGohzMikI/1dQ/zopRL8+edX+ymoE72turgxFF+eq2c7k
+	AAwHGCW8xgYPOUoQ92Dg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1p0kIY-007qlM-L8; Thu, 01 Dec 2022 14:12:22 +0000
-Received: from mail-lj1-x22a.google.com ([2a00:1450:4864:20::22a])
+	id 1p0mP9-008YKy-6Q; Thu, 01 Dec 2022 16:27:19 +0000
+Received: from mail-lf1-x12a.google.com ([2a00:1450:4864:20::12a])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1p0kIW-007qj9-HG
-	for linux-phy@lists.infradead.org; Thu, 01 Dec 2022 14:12:21 +0000
-Received: by mail-lj1-x22a.google.com with SMTP id d3so2030010ljl.1
-        for <linux-phy@lists.infradead.org>; Thu, 01 Dec 2022 06:12:17 -0800 (PST)
+	id 1p0mP6-008YJ3-NL
+	for linux-phy@lists.infradead.org; Thu, 01 Dec 2022 16:27:17 +0000
+Received: by mail-lf1-x12a.google.com with SMTP id j16so3247772lfe.12
+        for <linux-phy@lists.infradead.org>; Thu, 01 Dec 2022 08:27:15 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=FUdjNoV4twBRqhcTiBFjGp/lnY9gr8hGcfHeADPJd8g=;
-        b=gLdbfB+NoqVy/6JQwUiXSvW6BoGUetq5eK6vmNTOlUmYOP8evL6GpfYN+kZWyfsbS+
-         NNL3JCmnZGwZRCfZh2uvvJZu5+yoP5SgR3B9lfA5kAqnIlEP2yXp1Tv/VGC2wp13D8lM
-         OCyHFiFWhYYlxyrtKNLFPUnyUKfBfKB3bfHjwgxxcqp58zNBvgj0+RadhAq/o/keDVwx
-         agzAhliKrCGPBVUlXMSXOCu7/JDLDFONo7w89SHgWkGz6Zh/qWDfukiN3R1y2gmlhfpD
-         DitNcH2K9WGIuepM9uIKgADnyE7OzWoCT00J9krofzu+VA6iUWF1FJePIRVi0IF+EGsv
-         hEMg==
+        bh=ioDN+pQOq5HgtdlEf9mzg0ol1oWyOo4wG8Vd6+93HFU=;
+        b=DcPJ/+ro4LTVRBqT5fBcbYkOTmqVTNe/CEugS6D/beI6xfBxbs78ENrgSxClvaMHcf
+         RkbIdl7gtHfOWwI7vMXWHhX3/ZQJeTmu6dmNEE9l+s7/JEKxMpaKnirFvkUKKDnsR6jx
+         L1MSIZ/lnV08pyOMAh+9dQPAme6uv1CtegPV9HmyAnBJp+wpSBA3UaM+weZbXxut9o39
+         ByIve5BWXDhp765OWpbJ6zeXzaR0ZoPf+5HezQBGY/u0jgUdnTuZA2W6Obo6IM5ajJyK
+         hLpoSl+NddeROjGsWeZjbzHBYqzf/+UCxy4xp9TE3sE07m3HM/2L4X1wD2zpQgYSdMvh
+         m46g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=FUdjNoV4twBRqhcTiBFjGp/lnY9gr8hGcfHeADPJd8g=;
-        b=Ml3uW9Izpoq/jN8Hw7nvlWBU5AIyBnizqi+GlsxLXuQmJV2CjH68kFYo5FJBT+ed0f
-         KQg05mOHHEfLM1ob+K83a02ukTwyrZupFHf/gfTF6L8a9DgY2QlJlselWEOPiuBe56Wq
-         v4XMY3gXHndHVgnwkBIBxD2DlkN5vMQS/7gvb1Tro70T4Dz0ePavGauOdWfRJCXkGqby
-         q25nYlHIDMLP3VIWccrrkAiawCceHdvpSbnYx12ey0qkdWFkS4RGmT/8ZXSR2WriUDLN
-         ioRV1xkgvFXXcc8L7F4jUFa5qWx3q4bpmgwZ7/ofTP5MdTtzFiOHIaU3i+di8TcZWiZH
-         QizQ==
-X-Gm-Message-State: ANoB5pmuwjxG3eexjv849ntZs/ruOWzJFYaGWd4bp2QtHOm7TgSX32T6
-	pS+iP8c5a0YO2cGjMb3TTLR1Dw==
-X-Google-Smtp-Source: AA0mqf52pp6u4HK9pZLT/QCWfEFCWjSU+8eugblqryuYcRqm+NsMavJ6McDbegAIVleeyAbDg4vpYg==
-X-Received: by 2002:a2e:87d7:0:b0:277:100c:db42 with SMTP id v23-20020a2e87d7000000b00277100cdb42mr20200484ljj.417.1669903936101;
-        Thu, 01 Dec 2022 06:12:16 -0800 (PST)
+        bh=ioDN+pQOq5HgtdlEf9mzg0ol1oWyOo4wG8Vd6+93HFU=;
+        b=ndBXBW9Sbe280AgY1x5z5Fx/QlIk2Ay09eM9AkPRbBgH3Ie0/xfkXRNGCs3rlWTm6A
+         1ysMT0e7z8jIgbCQbx/E8kwhdS5LNgLGVi0uHy3u2rGRpjMK07FD8lct10tZKOt2ZbAE
+         3kJ66mBI+fpLriaAqT+O6RKelMUWkfYcFTlk0bdwm0KE0zvjohghVg4cTXpZIW6yZufm
+         sHhBUtL3gmX2axCmbkdJUUsOB5tjJ6Kf6RenuW9eE1bFEjt9rdvbVYSOMd9Ezb5tN6zo
+         C57xERohrFQU2+U2UQ8mwBOBWp0dFIVF5cer2DQmAQ/ENIFrVkXAzJbAn+cy7sTL1HV9
+         +sqw==
+X-Gm-Message-State: ANoB5pmaVIT9awfNbbBZiB3pfaZpDKTlGZCX2TQVc8oyzinGXv0srh5m
+	ItGTagfGL+AAnDCQuiI5jjcTuA==
+X-Google-Smtp-Source: AA0mqf7SXeJYAFY40xLBV+mv7rmI1226pH4qxPkT72pkjWhQqM7mclAyG6E0AGksRTezv8lCWk5gNA==
+X-Received: by 2002:a05:6512:3a7:b0:4a4:77a8:5ba1 with SMTP id v7-20020a05651203a700b004a477a85ba1mr20981287lfp.569.1669912033890;
+        Thu, 01 Dec 2022 08:27:13 -0800 (PST)
 Received: from [192.168.0.20] (088156142067.dynamic-2-waw-k-3-2-0.vectranet.pl. [88.156.142.67])
-        by smtp.gmail.com with ESMTPSA id q7-20020ac25147000000b004b514efb1a3sm659117lfd.201.2022.12.01.06.12.13
+        by smtp.gmail.com with ESMTPSA id p21-20020a2eba15000000b002796fb63dbdsm439396lja.13.2022.12.01.08.27.10
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 01 Dec 2022 06:12:14 -0800 (PST)
-Message-ID: <c91b13e2-ac74-153f-f19b-587ded948a75@linaro.org>
-Date: Thu, 1 Dec 2022 15:12:13 +0100
+        Thu, 01 Dec 2022 08:27:12 -0800 (PST)
+Message-ID: <9ea881a6-5786-2e3b-7341-60180359d2b0@linaro.org>
+Date: Thu, 1 Dec 2022 17:27:10 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.5.0
-Subject: Re: [PATCH v3 15/15] arm64: dts: qcom: sc8280xp: fix USB-DP PHY nodes
+Subject: Re: [PATCH v3 1/3] dt-bindings: phy: qcom,qmp-usb3-dp: Add sm6350
+ compatible
 Content-Language: en-US
-To: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>
-Cc: Kishon Vijay Abraham I <kishon@kernel.org>, Andy Gross
- <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konrad.dybcio@linaro.org>, Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+To: Luca Weiss <luca.weiss@fairphone.com>, linux-arm-msm@vger.kernel.org,
+ Johan Hovold <johan@kernel.org>
+Cc: ~postmarketos/upstreaming@lists.sr.ht, phone-devel@vger.kernel.org,
+ Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
+ Konrad Dybcio <konrad.dybcio@linaro.org>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring
+ <robh+dt@kernel.org>, Krzysztof Kozlowski
+ <krzysztof.kozlowski+dt@linaro.org>, linux-phy@lists.infradead.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-References: <20221121085058.31213-1-johan+linaro@kernel.org>
- <20221121085058.31213-16-johan+linaro@kernel.org>
+References: <20221130081430.67831-1-luca.weiss@fairphone.com>
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20221121085058.31213-16-johan+linaro@kernel.org>
+In-Reply-To: <20221130081430.67831-1-luca.weiss@fairphone.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221201_061220_658228_AEF576B7 
-X-CRM114-Status: GOOD (  14.38  )
+X-CRM114-CacheID: sfid-20221201_082716_797878_1FB88C9B 
+X-CRM114-Status: UNSURE (   6.69  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,58 +100,16 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 21/11/2022 09:50, Johan Hovold wrote:
-> Update the USB4-USB3-DP QMP PHY nodes to match the new binding which
-> specifically includes the missing register regions (e.g. DP_PHY) and
-> allows for supporting DisplayPort Alternate Mode.
+On 30/11/2022 09:14, Luca Weiss wrote:
+> Add the compatible describing the combo phy found on SM6350.
 > 
-> Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-> Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
+> Signed-off-by: Luca Weiss <luca.weiss@fairphone.com>
 > ---
->  arch/arm64/boot/dts/qcom/sc8280xp.dtsi | 77 ++++++++------------------
->  1 file changed, 23 insertions(+), 54 deletions(-)
-> 
-> diff --git a/arch/arm64/boot/dts/qcom/sc8280xp.dtsi b/arch/arm64/boot/dts/qcom/sc8280xp.dtsi
-> index 85c674e7e1a5..3c5bc56e68fc 100644
-> --- a/arch/arm64/boot/dts/qcom/sc8280xp.dtsi
-> +++ b/arch/arm64/boot/dts/qcom/sc8280xp.dtsi
-> @@ -11,6 +11,7 @@
->  #include <dt-bindings/interconnect/qcom,sc8280xp.h>
->  #include <dt-bindings/interrupt-controller/arm-gic.h>
->  #include <dt-bindings/mailbox/qcom-ipcc.h>
-> +#include <dt-bindings/phy/phy-qcom-qmp.h>
->  #include <dt-bindings/power/qcom-rpmpd.h>
->  #include <dt-bindings/soc/qcom,rpmh-rsc.h>
->  #include <dt-bindings/thermal/thermal.h>
-> @@ -763,7 +764,7 @@ gcc: clock-controller@100000 {
->  				 <0>,
->  				 <0>,
->  				 <0>,
-> -				 <&usb_0_ssphy>,
-> +				 <&usb_0_qmpphy QMP_USB43DP_USB3_PIPE_CLK>,
->  				 <0>,
->  				 <0>,
->  				 <0>,
-> @@ -771,7 +772,7 @@ gcc: clock-controller@100000 {
->  				 <0>,
->  				 <0>,
->  				 <0>,
-> -				 <&usb_1_ssphy>,
-> +				 <&usb_1_qmpphy QMP_USB43DP_USB3_PIPE_CLK>,
->  				 <0>,
->  				 <0>,
->  				 <0>,
-> @@ -1666,42 +1667,26 @@ IPCC_MPROC_SIGNAL_GLINK_QMP
->  			};
->  		};
->  
-> -		usb_0_qmpphy: phy-wrapper@88ec000 {
-> +		usb_0_qmpphy: phy@88eb000 {
+> Changes since v2:
+> * Drop misc schema changes again since same schema applies to sm6350
 
-Johan (and anyone also interested in this),
 
-What are the next steps with this for older SoCs? Is there any plan to
-change the bindings and DTS for them in similar way?
+Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
 Best regards,
 Krzysztof
