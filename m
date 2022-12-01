@@ -4,62 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 543D1C43217
-	for <linux-phy@archiver.kernel.org>; Thu,  1 Dec 2022 17:44:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9CD32C47088
+	for <linux-phy@archiver.kernel.org>; Thu,  1 Dec 2022 17:44:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tyja76uqeQ8riRYrdSzfRGL+mGPtyC7Y4gt+aJ88sL0=; b=ZN0xqXjrOUfAvQ
-	MeBswYgf4acoCXzULsFX/Y79/ro57dhGYuQWRWOZeb/bz1R/IEX4jlxhOqNZGInfVeCJEYO26F6us
-	oEt9EPCg4IEVOcTh21gIVFuI6vGM2mGigwKTCOG8HG43dgAk7XMW0zJNVgqQ/DMpdhFtQdf7esUAb
-	AzmT4X3FIYuTWwq1Vxfo/fk5WWQQOysazchDCb2ykp/1gfB4iBZIQLn16V6JN690MPD7CX/QAbd42
-	WRwH8/wBBAEL2Vwu+8d86+evDLRpJ/SJdPz4P/yBuIP1ApRBdtMXtd2C3QP9p+L//mHW/oVaFnoxN
-	YeEyp+hpJqNzjVA+cbSg==;
+	List-Owner; bh=oX3tOdjKv1JN12htSmd4os35dHzZqqXFr9uvrDYzJYY=; b=R6jYdCadNEnRSU
+	f+LlMKiAnSCsAShxbws5Psi6df5edHlMr9ImR/nKpRq9YZg3oJGbL9akMmtkIN+Jo2+SYmB2ERhHK
+	MUqDoWE3w0jGBlOZUGeRymwG/BczBBDqMJepUZzmoxKe2JobOMf7afAdxM5WJ86+5tMQ3s/vGCc69
+	SmFl0/ZcHxu2aWP6N5L1pXQTit9/5BzEJJuw1kCkVg2n40tT43eku3zT5MA2u10sO2yIBNJrmYsJg
+	1r5xIF861fLJGZBWEpxAhgPoER/5a901tQlLLHELHBqdnhwMVtaqE5Q8Ki95xiXBUnXmu+KvD+dHZ
+	NA4E+0dUzF+klSYxKYcA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1p0nc3-0099IP-Kd; Thu, 01 Dec 2022 17:44:43 +0000
-Received: from mail-pf1-x433.google.com ([2607:f8b0:4864:20::433])
+	id 1p0nc7-0099La-RR; Thu, 01 Dec 2022 17:44:47 +0000
+Received: from mail-pg1-x531.google.com ([2607:f8b0:4864:20::531])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1p0nbz-0099Eg-LU
-	for linux-phy@lists.infradead.org; Thu, 01 Dec 2022 17:44:41 +0000
-Received: by mail-pf1-x433.google.com with SMTP id 21so2560251pfw.4
-        for <linux-phy@lists.infradead.org>; Thu, 01 Dec 2022 09:44:37 -0800 (PST)
+	id 1p0nc4-0099Iq-N1
+	for linux-phy@lists.infradead.org; Thu, 01 Dec 2022 17:44:46 +0000
+Received: by mail-pg1-x531.google.com with SMTP id s196so2288606pgs.3
+        for <linux-phy@lists.infradead.org>; Thu, 01 Dec 2022 09:44:44 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=3abCssckiIC20hZYw/bwI9pB44XETlrVptMf7eIENNo=;
-        b=sbNb+4yOd1zk6qUTHWJ3+UugwTDJddrTcU25nMzZb8JL4nCotj0nA6ws6dAj03nxIJ
-         dBdN9vr67llNmE+Bx2ZQAoQWBEixKmZlg3nt6aeg5eyG06RXWpf0hK+LUYt0HN+4Udmb
-         RRHig18ymJS9SsNRecr8PWD5yn7mqaOTb/jnNH/EDGpvDTGlsW9bIC4J9V12+BqqLm+W
-         v/7pQnVcet6bmZGg3qNxZdFozkkXg+4bbg5adHXwi3zkVXfMBKWFq1LlMS+9DsXWhVkp
-         JWIT0DGviSznHDwaxe/+65JvxL3dg21rhmZ35/piJmBy41IV8HvUqOAw1q1fSWVOEwcv
-         EWNw==
+        bh=T/BNw/j/jyyiC6Nde2Mk6v6dKHHqRWva/o8+iSkZe08=;
+        b=VkALK2zJnqUvofpKNzlp4vh4yPYZ7VRwFNZOMPsnXGxrSdZ2HXQiwxrOwQvBqyTIoN
+         +C8vtvUZDt2Js6yqWsQwGZDL5Y9KLzeaGW0yPZnq9906hh/u4ZvoEl66lDOcOzuEo+Ln
+         8FSbdy81bmwKX59FlZi+O84yZwEyqbaROC/cse1ZhsMJj9k9Fh5kbAAvZgTAvxCGdJ6b
+         iTlvlkingi72L2yaQdBp999tZ3eaoTy7Qb2k1L7vdS3XVr50Ee1LoQbVp4YvY8na7o94
+         +uVyR8FsmEUgPH8zG/xJkZkyc6IE/sXcpqhOXbjjFXk2ZTCwrPGulsTSeAJcwAVjgk6j
+         WsEw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=3abCssckiIC20hZYw/bwI9pB44XETlrVptMf7eIENNo=;
-        b=f/+fSnJaG4Jco0gEQzjF3jOy+XYBb5wFK7VCfnsUZumywFyr2lTv567/V/Yyi8S0AV
-         ge8tmmS5MAZH5IlTBnbR1leGmlszOBjL2CM8P4CO9UKf9dEqALOaaAmNzf1vjHcnEeto
-         Bgh5A9QUCxjfXFjTxjNqeDy4TZvPYrXGUEnftB6hB4nGHADhB4/GpRvjZ5WlzucxD6Fw
-         dWP95wrXqX8JLz/omoYB1+Fi8DBUTYaXYaJIVuoB9LnireEPtWZqvglECpZ5vqL/+JWb
-         GNvMCPDVQIeAGNBA0cE19jGH9/x0qZbMrbPWPhn1h79Z/5x4GHBu8lAA6FHLl4ADq1h3
-         lgTQ==
-X-Gm-Message-State: ANoB5plxmE0WgdiCe3xVuvwX3KUsCExCuSZsoyK0iBYU+OxNPEcieVC4
-	LvJrLXWWFBNBUB46ILpWF6d2
-X-Google-Smtp-Source: AA0mqf4fkNT3nl3jtvIMTF3vn3aqjF9RooqTcQn20+rsRszSfNuQ3pdwKUtJh6SdtSX5kGsBeH7EfQ==
-X-Received: by 2002:a63:5308:0:b0:46f:cec6:8805 with SMTP id h8-20020a635308000000b0046fcec68805mr43582371pgb.612.1669916676739;
-        Thu, 01 Dec 2022 09:44:36 -0800 (PST)
+        bh=T/BNw/j/jyyiC6Nde2Mk6v6dKHHqRWva/o8+iSkZe08=;
+        b=cZkt4PzakAIftxCakg95qgKi/FLxO/oWqtgRYCFTMVbcfPFSEADlHKMwopBVySeOyK
+         0pI7ctNRtufueHcfzW22LEB+D27H5fgKcnO/pDUcvZ5JlPjrtwp3n7t0pFsdsAtiWWks
+         ZSEa5dFDsZo8MR+SfoL5CSgNXpbnJGjt8/ReciKl32JVij/p8X7An4m5xEW6JIbhtLfI
+         eP1XOjsBVI6eduGqN+8d8t7WckirFBDDUE+ISsOJMYhY+468L7Wb4E5x450oMJZPNQ+E
+         wjdOtZKEakYLQei65LnXbV+oWUm7xOoLjjkbLobX8TMyytMzVuk/7SGjMCgC64UJq14K
+         OtHQ==
+X-Gm-Message-State: ANoB5pkspoHoCO6PDrc4mAzrD4rp0bggqDHS7tDJEIPYNukyMmMKBLyO
+	REwVE9H46sOTty3/7WoXirgh
+X-Google-Smtp-Source: AA0mqf6xV5CiNhOXSOwJd9AqSTlFTaoJjHREQvuOzcYW+q7bae6vQ0BHQv5u7CMeWrtGKQX66+M1TA==
+X-Received: by 2002:a05:6a00:198d:b0:569:92fa:cbbc with SMTP id d13-20020a056a00198d00b0056992facbbcmr48793744pfl.77.1669916683821;
+        Thu, 01 Dec 2022 09:44:43 -0800 (PST)
 Received: from localhost.localdomain ([220.158.159.39])
-        by smtp.gmail.com with ESMTPSA id p4-20020a170902780400b0016d9b101413sm3898743pll.200.2022.12.01.09.44.30
+        by smtp.gmail.com with ESMTPSA id p4-20020a170902780400b0016d9b101413sm3898743pll.200.2022.12.01.09.44.37
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 01 Dec 2022 09:44:35 -0800 (PST)
+        Thu, 01 Dec 2022 09:44:43 -0800 (PST)
 From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 To: martin.petersen@oracle.com,
 	jejb@linux.ibm.com,
@@ -78,16 +78,16 @@ Cc: quic_cang@quicinc.com,
 	avri.altman@wdc.com,
 	bvanassche@acm.org,
 	Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Subject: [PATCH v4 08/23] phy: qcom-qmp-ufs: Add HS G4 mode support to SM8250 SoC
-Date: Thu,  1 Dec 2022 23:13:13 +0530
-Message-Id: <20221201174328.870152-9-manivannan.sadhasivam@linaro.org>
+Subject: [PATCH v4 09/23] phy: qcom-qmp-ufs: Avoid setting HS G3 specific registers
+Date: Thu,  1 Dec 2022 23:13:14 +0530
+Message-Id: <20221201174328.870152-10-manivannan.sadhasivam@linaro.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20221201174328.870152-1-manivannan.sadhasivam@linaro.org>
 References: <20221201174328.870152-1-manivannan.sadhasivam@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221201_094439_770490_1B81BF2D 
-X-CRM114-Status: GOOD (  11.23  )
+X-CRM114-CacheID: sfid-20221201_094444_937008_A9614A84 
+X-CRM114-Status: GOOD (  10.56  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,116 +104,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-UFS PHY in SM8250 SoC is capable of operating at HS G4 mode. Hence, add the
-required register settings using the tables_hs_g4 struct instance. This
-also requires a separate qmp_phy_cfg for SM8250 instead of reusing SM8150.
+SM8350 default init sequence sets some PCS registers to HS G3, thereby
+disabling HS G4 mode. This has the effect on MPHY capability negotiation
+between the host and the device during link startup and causes the
+PA_MAXHSGEAR to G3 irrespective of device max gear.
 
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Due to that, the agreed gear speed determined by the UFS core will become
+G3 only and the platform won't run at G4.
+
+So, let's remove setting these registers for SM8350 as like other G4
+compatible platforms. One downside of this is that, when the board design
+uses non-G4 compatible device, then MPHY will continue to run in the
+default mode (G4) even if UFSHCD runs in G3. But this is the case for
+other platforms as well.
+
 Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 ---
- .../phy/qualcomm/phy-qcom-qmp-pcs-ufs-v5.h    |  1 +
- drivers/phy/qualcomm/phy-qcom-qmp-ufs.c       | 62 ++++++++++++++++++-
- 2 files changed, 62 insertions(+), 1 deletion(-)
+ drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 7 -------
+ 1 file changed, 7 deletions(-)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-ufs-v5.h b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-ufs-v5.h
-index bcca23493b7e..3aa4232f84a6 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-ufs-v5.h
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-ufs-v5.h
-@@ -13,6 +13,7 @@
- #define QPHY_V5_PCS_UFS_PLL_CNTL			0x02c
- #define QPHY_V5_PCS_UFS_TX_LARGE_AMP_DRV_LVL		0x030
- #define QPHY_V5_PCS_UFS_TX_SMALL_AMP_DRV_LVL		0x038
-+#define QPHY_V5_PCS_UFS_BIST_FIXED_PAT_CTRL		0x060
- #define QPHY_V5_PCS_UFS_TX_HSGEAR_CAPABILITY		0x074
- #define QPHY_V5_PCS_UFS_RX_HSGEAR_CAPABILITY		0x0b4
- #define QPHY_V5_PCS_UFS_DEBUG_BUS_CLKSEL		0x124
 diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-index 269f96a0f752..d5324c4e8513 100644
+index d5324c4e8513..6c7c6a06fe3b 100644
 --- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
 +++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-@@ -449,6 +449,34 @@ static const struct qmp_phy_init_tbl sm8150_ufsphy_hs_g4_pcs[] = {
- 	QMP_PHY_INIT_CFG(QPHY_V4_PCS_UFS_BIST_FIXED_PAT_CTRL, 0x0a),
+@@ -567,13 +567,6 @@ static const struct qmp_phy_init_tbl sm8350_ufsphy_pcs[] = {
+ 	QMP_PHY_INIT_CFG(QPHY_V5_PCS_UFS_TX_MID_TERM_CTRL1, 0x43),
+ 	QMP_PHY_INIT_CFG(QPHY_V5_PCS_UFS_DEBUG_BUS_CLKSEL, 0x1f),
+ 	QMP_PHY_INIT_CFG(QPHY_V5_PCS_UFS_RX_MIN_HIBERN8_TIME, 0xff),
+-	QMP_PHY_INIT_CFG(QPHY_V5_PCS_UFS_PLL_CNTL, 0x03),
+-	QMP_PHY_INIT_CFG(QPHY_V5_PCS_UFS_TIMER_20US_CORECLK_STEPS_MSB, 0x16),
+-	QMP_PHY_INIT_CFG(QPHY_V5_PCS_UFS_TIMER_20US_CORECLK_STEPS_LSB, 0xd8),
+-	QMP_PHY_INIT_CFG(QPHY_V5_PCS_UFS_TX_PWM_GEAR_BAND, 0xaa),
+-	QMP_PHY_INIT_CFG(QPHY_V5_PCS_UFS_TX_HS_GEAR_BAND, 0x06),
+-	QMP_PHY_INIT_CFG(QPHY_V5_PCS_UFS_TX_HSGEAR_CAPABILITY, 0x03),
+-	QMP_PHY_INIT_CFG(QPHY_V5_PCS_UFS_RX_HSGEAR_CAPABILITY, 0x03),
+ 	QMP_PHY_INIT_CFG(QPHY_V5_PCS_UFS_RX_SIGDET_CTRL1, 0x0e),
+ 	QMP_PHY_INIT_CFG(QPHY_V5_PCS_UFS_MULTI_LANE_CTRL1, 0x02),
  };
- 
-+static const struct qmp_phy_init_tbl sm8250_ufsphy_hs_g4_tx[] = {
-+	QMP_PHY_INIT_CFG(QSERDES_V4_TX_LANE_MODE_1, 0xe5),
-+};
-+
-+static const struct qmp_phy_init_tbl sm8250_ufsphy_hs_g4_rx[] = {
-+	QMP_PHY_INIT_CFG(QSERDES_V4_RX_UCDR_SO_SATURATION_AND_ENABLE, 0x5a),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_RX_UCDR_PI_CTRL2, 0x81),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_RX_UCDR_FO_GAIN, 0x0e),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_TERM_BW, 0x6f),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_EQU_ADAPTOR_CNTRL1, 0x04),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_EQU_ADAPTOR_CNTRL2, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_EQU_ADAPTOR_CNTRL3, 0x09),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_EQU_ADAPTOR_CNTRL4, 0x07),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_EQ_OFFSET_ADAPTOR_CNTRL1, 0x17),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_IDAC_MEASURE_TIME, 0x20),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_IDAC_TSETTLE_LOW, 0x80),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_IDAC_TSETTLE_HIGH, 0x01),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_00_LOW, 0x3f),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_00_HIGH, 0xff),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_00_HIGH2, 0xff),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_00_HIGH3, 0x7f),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_00_HIGH4, 0x2c),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_01_LOW, 0x6d),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_01_HIGH, 0x6d),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_01_HIGH2, 0xed),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_01_HIGH4, 0x3c),
-+};
-+
- static const struct qmp_phy_init_tbl sm8350_ufsphy_serdes[] = {
- 	QMP_PHY_INIT_CFG(QSERDES_V5_COM_SYSCLK_EN_SEL, 0xd9),
- 	QMP_PHY_INIT_CFG(QSERDES_V5_COM_HSCLK_SEL, 0x11),
-@@ -805,6 +833,38 @@ static const struct qmp_phy_cfg sm8150_ufsphy_cfg = {
- 	.regs			= sm8150_ufsphy_regs_layout,
- };
- 
-+static const struct qmp_phy_cfg sm8250_ufsphy_cfg = {
-+	.lanes			= 2,
-+
-+	.tbls = {
-+		.serdes		= sm8150_ufsphy_serdes,
-+		.serdes_num	= ARRAY_SIZE(sm8150_ufsphy_serdes),
-+		.tx		= sm8150_ufsphy_tx,
-+		.tx_num		= ARRAY_SIZE(sm8150_ufsphy_tx),
-+		.rx		= sm8150_ufsphy_rx,
-+		.rx_num		= ARRAY_SIZE(sm8150_ufsphy_rx),
-+		.pcs		= sm8150_ufsphy_pcs,
-+		.pcs_num	= ARRAY_SIZE(sm8150_ufsphy_pcs),
-+	},
-+	.tbls_hs_b = {
-+		.serdes		= sm8150_ufsphy_hs_b_serdes,
-+		.serdes_num	= ARRAY_SIZE(sm8150_ufsphy_hs_b_serdes),
-+	},
-+	.tbls_hs_g4 = {
-+		.tx		= sm8250_ufsphy_hs_g4_tx,
-+		.tx_num		= ARRAY_SIZE(sm8250_ufsphy_hs_g4_tx),
-+		.rx		= sm8250_ufsphy_hs_g4_rx,
-+		.rx_num		= ARRAY_SIZE(sm8250_ufsphy_hs_g4_rx),
-+		.pcs		= sm8150_ufsphy_hs_g4_pcs,
-+		.pcs_num	= ARRAY_SIZE(sm8150_ufsphy_hs_g4_pcs),
-+	},
-+	.clk_list		= sdm845_ufs_phy_clk_l,
-+	.num_clks		= ARRAY_SIZE(sdm845_ufs_phy_clk_l),
-+	.vreg_list		= qmp_phy_vreg_l,
-+	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
-+	.regs			= sm8150_ufsphy_regs_layout,
-+};
-+
- static const struct qmp_phy_cfg sm8350_ufsphy_cfg = {
- 	.lanes			= 2,
- 
-@@ -1297,7 +1357,7 @@ static const struct of_device_id qmp_ufs_of_match_table[] = {
- 		.data = &sm8150_ufsphy_cfg,
- 	}, {
- 		.compatible = "qcom,sm8250-qmp-ufs-phy",
--		.data = &sm8150_ufsphy_cfg,
-+		.data = &sm8250_ufsphy_cfg,
- 	}, {
- 		.compatible = "qcom,sm8350-qmp-ufs-phy",
- 		.data = &sm8350_ufsphy_cfg,
 -- 
 2.25.1
 
