@@ -4,132 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CA7E1C4332F
-	for <linux-phy@archiver.kernel.org>; Fri,  2 Dec 2022 09:58:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EAB91C4332F
+	for <linux-phy@archiver.kernel.org>; Fri,  2 Dec 2022 20:51:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:References:Cc:To:
-	Subject:Date:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=PWSKvVTtziXJijgIEq5w0x/I5g2xjSbxyw4D4hmVbFg=; b=CWf7Io5aO3gFT63cDqdpHn9doY
-	flAwWvmNG9iZScmsFCBZ1I0wyevSOZy6+yzQN9X3ggsL5FSDagpLrcxc9UwjbE5deD16vppz6RWQD
-	WCRNzFPA1nZuBBBGkOvAHup5na2SRplXbwPcgLWSnj6yC2XM3/yre3aqK9qY08tlzqv0g+mmfdAr8
-	tYx4KhY86HhVQZgYV91rbS9g1UzKuuPhhGLlNq9BNcWd0sPoo+gyLrhQQbRak+bCUWAzJKH0LEkw1
-	pmZjeJ/nobbLb9bHXvYR1jMnUP32zhpOcIlE/cI6V5TLtpFDE7g6dSGXY6F288+iPignpEEYJ+uUh
-	flKxKfiA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=sMGAGIpxGsUgzGKMpBRj9IG0Fsb75JYy2tPtfPwXVM4=; b=qYn9EZUODsluDJ
+	AXqv0sZ/cTF7RwwxC5mNoF41jUdfZEWgyb2+4xbVtodJfIEqRhVRS9q7Gsb2duaDbT/5SHCVb7F/7
+	evi+Q9RuLGkPHdIWc/BBzgDSAvGsAw3qU1cTp9iYQEx4P7t4OzyGU+wyfL7ERLBn6LilHEHe93+AY
+	8+TaTkpRfv+vSK1gTnt9WIgLafkxK4SIqTE3UrKL2rsOuC1h9CNt6LKpwwx5klsya39O6Fb6oQedj
+	e00aUzbFl9sP6H3kpPvnGPI7DinYHNEtf3J/jZOgfQwzgv2/itNWoXiZ2OTDuRi4EtNYeErVH7Ky/
+	J/NskJmMFPg7g/hxGy9A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1p12oS-00FD6j-66; Fri, 02 Dec 2022 09:58:32 +0000
-Received: from mail-bn8nam04on20612.outbound.protection.outlook.com ([2a01:111:f400:7e8d::612] helo=NAM04-BN8-obe.outbound.protection.outlook.com)
+	id 1p1D08-001Ebj-2U; Fri, 02 Dec 2022 20:51:16 +0000
+Received: from us-smtp-delivery-124.mimecast.com ([170.10.133.124])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1p12oK-00FCx5-5M
-	for linux-phy@lists.infradead.org; Fri, 02 Dec 2022 09:58:26 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=JTOdPQiDx8a09otmEJs0B7dL3Yaqp04EagrCJYuWPsv7FiatfRS3Ih7f1D9ryw0Fvo+2pRascX/X8KO8DcSCGjquz/ivH0tuYphtk7Kx+1gibbV+ncJk5HTMxzmcIAbSNAZXDyhMVESX9b2vGQzw5iYxH+5mlp16A74VfNQld5aFFcdl93/KxPBxnSCOJs/YYLgeH1Vze1cKluCWlzB9VZ/+MC1Qxi3iEJaxhtSx7c8xdZRLi+CxUPvzR4esFyjhgndnVWHvBeuGRXEkhv0nb2ei0Mq4VKJMMMOpbsFyqN8LYOM9BmZ6540hdV/11Bvk+/nEYKWeEtf/ohj3ms/K7Q==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=Ui9lFJ/Nx1pIxE0VougvREH9Ux4MnZ6V7gC5bHBF0Tw=;
- b=SK8FIbMQ1BoFNPmx4uhfvPZRiiNXHOBzgqMh/dFUdWWY07CxtrJKZcb5kWD94D5OySySIS4zfFWUSxWrpFBwjQhPM46Gl3Sj7c2F9CSbfhQpL2JERO809hWroYF659JcehyMOjsLBGVHDz733vguA8N/rxofvbIUdOk8vv2zf8hTUC+DAGBmEn9pmI5YjYmEiS3YUyubU5IpsuXNKRDyrLEoo7OkCO/lFYBZqQNJ6rQ9pPY2biSP205fHjw2bur9fXKOdDgQd4Q5oljpfxY97mWJjy4HZX1PtGcwpq7jjoVZpw0/sSCMvZO35E1Bm6ZRjmnXCksg10ltFk4Y7zyzPw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nvidia.com; dmarc=pass action=none header.from=nvidia.com;
- dkim=pass header.d=nvidia.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Ui9lFJ/Nx1pIxE0VougvREH9Ux4MnZ6V7gC5bHBF0Tw=;
- b=XIvTGZD3XSej/1Telg6RwfolswSGps+1BRWN7NYmkKOsSRe1DTmUGvZM56H1SllXFJckA4jnqM8v+JwQnlXaUIz5Uy4v2+I1ZCvKLGo97NB9R2cYmx35luSzorZk29mKaXxl7h9R8Ad8HksrfwAZ2urUgsSamJ/EVnXiUSMboet9WK1AV8aHekQROnhP1sgMjknQdRp3ovJOAnxrSSsHFJpykUcIkYDbfzyvr/aSOZoyz81mqw09qxHRokuMnZgA2W4EiskjLmgQrwkYUko9GNGhl2TBqKXL7ImG1pLtC5HMRXsPO4DrAHCx4qeTip+RW9KP77OB5+bJfdTTGvbCEQ==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nvidia.com;
-Received: from CO6PR12MB5444.namprd12.prod.outlook.com (2603:10b6:5:35e::8) by
- SJ0PR12MB6831.namprd12.prod.outlook.com (2603:10b6:a03:47d::9) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.5880.10; Fri, 2 Dec 2022 09:58:16 +0000
-Received: from CO6PR12MB5444.namprd12.prod.outlook.com
- ([fe80::f1be:5d:f297:e2f]) by CO6PR12MB5444.namprd12.prod.outlook.com
- ([fe80::f1be:5d:f297:e2f%6]) with mapi id 15.20.5880.008; Fri, 2 Dec 2022
- 09:58:16 +0000
-Message-ID: <6c664b5c-aea8-883f-c278-e010b95e5b84@nvidia.com>
-Date: Fri, 2 Dec 2022 09:53:48 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.4.2
-Subject: Re: [PATCH V4 6/6] dt-bindings: phy: tegra-xusb: Add support for
- Tegra234
-To: Rob Herring <robh@kernel.org>
-Cc: Mathias Nyman <mathias.nyman@intel.com>, gregkh@linuxfoundation.org,
- krzysztof.kozlowski+dt@linaro.org, vkoul@kernel.org, treding@nvidia.com,
- linux-usb@vger.kernel.org, devicetree@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-tegra@vger.kernel.org, waynec@nvidia.com
-References: <20221118154006.173082-1-jonathanh@nvidia.com>
- <20221118154006.173082-7-jonathanh@nvidia.com>
- <20221130170709.GA2454510-robh@kernel.org>
-Content-Language: en-US
-From: Jon Hunter <jonathanh@nvidia.com>
-In-Reply-To: <20221130170709.GA2454510-robh@kernel.org>
-X-ClientProxiedBy: LO4P265CA0070.GBRP265.PROD.OUTLOOK.COM
- (2603:10a6:600:2af::10) To CO6PR12MB5444.namprd12.prod.outlook.com
- (2603:10b6:5:35e::8)
+	id 1p1Cyk-001E0z-7f
+	for linux-phy@lists.infradead.org; Fri, 02 Dec 2022 20:49:52 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+	s=mimecast20190719; t=1670014186;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 in-reply-to:in-reply-to:references:references;
+	bh=lmJqjycXnIm3mfXptIlpVA/MYamH6IUZDJJdpxDnvuY=;
+	b=furHu/+5S4wDOlm9o41tC646Ow2GfW0MleghzH3CkvH3K3QD0IFjsa621Ew0fwzsL/6bMS
+	qsogmDm359w7chz54TG6VdqPUfM/gD9RQJjsc22ydFX2/Qb/oaI5c/AYNEpaAOxb2QA+fb
+	QF0M9z/OKc7sDy0Hq1aOdL4BNLomu9Q=
+Received: from mail-ot1-f71.google.com (mail-ot1-f71.google.com
+ [209.85.210.71]) by relay.mimecast.com with ESMTP with STARTTLS
+ (version=TLSv1.3, cipher=TLS_AES_128_GCM_SHA256) id
+ us-mta-568-1gzhlApIP6iawTfqacCqIw-1; Fri, 02 Dec 2022 15:49:44 -0500
+X-MC-Unique: 1gzhlApIP6iawTfqacCqIw-1
+Received: by mail-ot1-f71.google.com with SMTP id a1-20020a056830008100b0066e84572870so1272878oto.15
+        for <linux-phy@lists.infradead.org>; Fri, 02 Dec 2022 12:49:44 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=lmJqjycXnIm3mfXptIlpVA/MYamH6IUZDJJdpxDnvuY=;
+        b=WrB9MiMYQT445jqvQ5zJU04M3zQ940HRb2kR06Wf9OHCHM04ECVQb4u4ms0/2YrH+Q
+         DjEMnxktFAtK5WuNdmUOm57h1mYt7NaIU3/p/D/cdK5M8BfZPS+V+rxGQBjHUGZZ5J8z
+         qo/51bsdbVgPBgc4X5nVbqWZyMUIaMOUdaxvVmAgMosVzhAjOko4nLuFdhaW9RPYLc5Y
+         QKMg/moQBxmEB+6HLkJXZNr/CDJSilRFp36+SVpRTLyFpRKQ9VOqvvrrg+Sd91kag53o
+         c2CNHmuuo1HDw+b+HD7QF9G2gm8vvzs7LLp4hIeBIKTa+5TlSTB8fSAPcOC94BUhyxLM
+         ly0A==
+X-Gm-Message-State: ANoB5pngPtfK4WddjYgm4hrhfEig+itQSj8rdGrlzAwRrnewBhV/iN+T
+	U4eDzZApTuhzcGqQFTanP/vosOF24KO41yC3McZxnF9DqDU0bYtU14A22tF8q8ZUAyVuCp4AGl7
+	CtN3XUHwl+dmZ0og4o8u/A5Q6Jg==
+X-Received: by 2002:a54:4714:0:b0:35a:7a65:5b76 with SMTP id k20-20020a544714000000b0035a7a655b76mr26774398oik.108.1670014184145;
+        Fri, 02 Dec 2022 12:49:44 -0800 (PST)
+X-Google-Smtp-Source: AA0mqf6noLIf8pat9k4yYYZCWskVIULw37YazTQF+DxXXYYiq1qokYwFtLvCMg92rUjW390wZnssIw==
+X-Received: by 2002:a54:4714:0:b0:35a:7a65:5b76 with SMTP id k20-20020a544714000000b0035a7a655b76mr26774375oik.108.1670014183872;
+        Fri, 02 Dec 2022 12:49:43 -0800 (PST)
+Received: from halaney-x13s ([2600:1700:1ff0:d0e0::41])
+        by smtp.gmail.com with ESMTPSA id fo12-20020a0568709a0c00b001431bf4e5a0sm4724774oab.38.2022.12.02.12.49.41
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 02 Dec 2022 12:49:43 -0800 (PST)
+Date: Fri, 2 Dec 2022 14:49:40 -0600
+From: Andrew Halaney <ahalaney@redhat.com>
+To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+Cc: martin.petersen@oracle.com, jejb@linux.ibm.com, andersson@kernel.org,
+	vkoul@kernel.org, quic_cang@quicinc.com, quic_asutoshd@quicinc.com,
+	linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org, linux-scsi@vger.kernel.org,
+	dmitry.baryshkov@linaro.org, abel.vesa@linaro.org,
+	alim.akhtar@samsung.com, avri.altman@wdc.com, bvanassche@acm.org
+Subject: Re: [PATCH v4 00/23] ufs: qcom: Add HS-G4 support
+Message-ID: <20221202204940.ojk5e43mu3lbmr2r@halaney-x13s>
+References: <20221201174328.870152-1-manivannan.sadhasivam@linaro.org>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: CO6PR12MB5444:EE_|SJ0PR12MB6831:EE_
-X-MS-Office365-Filtering-Correlation-Id: 4ab15a6a-c6ae-44a4-5b7f-08dad44bbba8
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 	83B3SyMbRomLVMI8kFm687Ptli49gZuqguGPfE6tbLe3ElVL/hRBKZckGbqu7pLWvPA+w/lfWAM7iSwKaHiXNAOxFrd0JWuWlyV+ZCpxhondzLe+MhWZ8ZQ3VJZnGbyT/qqnbIfsukgJ3FjkWs44IBp3GgDd+zJmccl4Usn7e8rlikATfSQI0S3ztyop6+ehlE5hYbGro5l3/FiW8QIO1ORhyYYmmSaAiv2MYu5cgjUKrTFe7VmPGwECHbpyjN8LbBBTX9s69Yb9IMaI7QcPxpfPtwzor8FsUATTkiaE6P1WevAGkqUKJKj44cHN0rRIqojS0ZwYn6sUOiNIsQMwAtDHkJWKmg3T5+Vf+D+dosHplb31y3DNI3tyNPiRMGDkNgJx6uhxb/ECh3vOyw8Ll6rKm0MMu8bGQdmboTfN5Kw5upedsAd4goPQsJONtGvtEpimfxmQv0G3UkiciP6+fGmcX+L6T32fF9iYJQPtZAlUAj9cvkl88yfOhm9fGL2n9P/4fx6jPYgOEpcyl38SamtAOQ7WvuDWRRTCtKl3g6sQNRJQfvfqCZl2UKwZZUI5gq9hBrRPIczT+pqHgxZnMnl6rEYNk4zA/GdBlTnBSPwNIqNLlPT9lnLHcyEbVMt97ZEVD2cAjjqorzh3tm47OutrBEV5SJGbg7KKtWSsFllaV2FGmiAwyEWWKzHfRPLbqpsUE26RMyu66JGRKfqJ7C/NtZduvL89pRgySp7n0uckFSqiAX8nCyCFROZAjW2SeXAPSVUxGV1oLxIwC7GEsUAD+ylC6yVeOSGq/zkpjB2BXu3uULunQXGnFSvZ3YQa
-X-Forefront-Antispam-Report: 	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:CO6PR12MB5444.namprd12.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230022)(4636009)(376002)(396003)(346002)(39860400002)(366004)(136003)(451199015)(31686004)(36756003)(8676002)(66946007)(66476007)(186003)(5660300002)(4326008)(41300700001)(38100700002)(2616005)(66556008)(8936002)(6916009)(316002)(2906002)(6512007)(26005)(6666004)(6506007)(107886003)(53546011)(55236004)(83380400001)(31696002)(86362001)(6486002)(966005)(478600001)(45980500001)(43740500002);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: 	=?utf-8?B?dkZBZTljckZ2MHpQMUZ5VzEyRzdOcHpoZXQ0Z0xOWjd1anlZTGp2RVlKenFk?=
- =?utf-8?B?K3VvSXBYMGhFQjVIWEJWQ3J2NjREU0pqbS95ODhsb3RWTDlCcEtiM0MzVHN2?=
- =?utf-8?B?ajgzbmFMQ1BXZmhSZk14QS9jd2NaeEdxekk5d3d0bDJ1UEFGRXBNMEpuL1ox?=
- =?utf-8?B?Q0pDYk14TkxYcnQ0VFdwOFNFSDMrbnljT0VhYWUzOGdzdW5JL1MxaG8rRUlJ?=
- =?utf-8?B?V3NtNFNSNVdHMDlFdEl6bWZQVFhhQXpkTERSSVN2OXc2cCttV1czdVBVa09I?=
- =?utf-8?B?TWFtYlBITmJVQ1FKUVVITUxhd09JK01iWm9uSFBrWkZ3RkhsbnRZRjE3VkhR?=
- =?utf-8?B?WWFrQnY4ZTRBMW1MdkQ1T3BaRDZsN2duUkxlZjhTWG0yS25TY2hqUnJHTzRo?=
- =?utf-8?B?bnNleWkvOEw2bmJjZ0xEcktyU25JS295anFGMXpWZVVxejgxMnBQSVNVdXJj?=
- =?utf-8?B?K1ZZbW84TVRrUEJDWWNXbG9YVk1MWnYzTGY1TkgxNWtwSnFac1phS05ScnJT?=
- =?utf-8?B?Q2dod2ZPRHVsTGcybzMrTFl6MUQ3NGpRQmFETUNrSWJ4ODhrTEt1ay9BQmRU?=
- =?utf-8?B?VzFmZU4zeU9BVXRtaXlSc2E4VHVqbFFvNDZaYnFJb2EvZ0lQby9DS3VSK2Uw?=
- =?utf-8?B?aTM0MTVhNy8zdUk1UUQzb29raXNsMnB3L29sdDErMjhadk52YUc0bVFVd0Jw?=
- =?utf-8?B?RDFab0QweUJIcWRNWkdFT1Q0MGg3WEZRTTJvRDNSN25ZOXVkQ2ptbzFrdXBs?=
- =?utf-8?B?Q3Z3cDRHRGVNa1IyekJyeUY3eWg0aC9VUkdGSDh0cnZQVTNXWGlNOXNVMW1q?=
- =?utf-8?B?MFlIMEE0eWNnUkFGNmZqNlgveUJvYzc2UWdZRkh4N0pISFR1c1A0WWs0Zjkr?=
- =?utf-8?B?azJEVlpQdXRMWGw0UUYvYm9xM3l0VFpQZXNYdkxKc0FETkJ5b1BXZWJpTXph?=
- =?utf-8?B?TjlqWG5Bd3hCblFuTlZmdnR6NlRjSUpSMjZLZ0hzcWVndlhJN1dHWkVDUGxY?=
- =?utf-8?B?Umt3bndUdFJaVDhneUFObm1sTjB0SUNCOVV5VTdYRDZHYTJJRUxiQnVjbzV2?=
- =?utf-8?B?ZTVWdmZUcVNEcVkwZHZhOWtYUDNMQ1k0eEVOMnp2clpaWm16WW9WbW5nNkk4?=
- =?utf-8?B?ZlU3bUxPSWtMZXRUSVc5djNaTWpwT2JyMzkyQlgrb1BFU1JsTVNKTlhjRzdK?=
- =?utf-8?B?Mk85SDBFQjA1ejV3dXU3UzhSb3RqbGRhNjBablRFUUp4c2NXeEZzQi9kT2th?=
- =?utf-8?B?aWsrajNOMnE2MEEvS1JMVUlJTGxYbVJUS2U2YjlIcnhmS3FDUUxCYnZqNU5x?=
- =?utf-8?B?QVZwaFg3MkprMVR0Rzc0RGErQkQ1WkJaeVJTVEhCN3JEUGdKbHpwbTR6b3Z6?=
- =?utf-8?B?QlZBd1lRWEM3cnEySXpURnlpeHFiMzR0RENEaWFkM29DTXJRN0k3UFF5bFBi?=
- =?utf-8?B?UUJ1VFFNeGc5WjhidGkyUHRQcllaNldKYTgxWlkzS0twMnBkL2RNOWo2Mlpk?=
- =?utf-8?B?R0wxcjdubW1sM0p5bnFkZ2VrZGxBYnpDTExyZ21WZWJHRGE0Y1RZbnlNNE5Y?=
- =?utf-8?B?NU9aZnlJckhWZmsrUElGenRMYStReU5TYWFpR0lWZnR1U0RabDl0YmJ2cURQ?=
- =?utf-8?B?TCtVQVlSZjhBRDBaK3JRTWdRcUxISkF5YXdYUGZWeEJEckw2emkrV1NUcE1S?=
- =?utf-8?B?cjBmcVV0SkR0MlZNdVNndnp6aEVjRHBidnpIUStReEs1cnRQZ20xRGFycHAx?=
- =?utf-8?B?bWZyZkdvUDlIcmNTYUdLTTM3WXdOSkxlSUtDZDArSjNTZlN5OUwwRzBzZmFs?=
- =?utf-8?B?cnNvWUE3dzFOYm9LQThEVDJNQjgyTEVnL0c0YUgvL2NIUjBoNWR2bnNvSktO?=
- =?utf-8?B?UFhMUHpFbnBWeFNvQTUrdEcxeUlRYVZoaXNyOXIzWFUzcXlXS0J5aEg5Wk9Z?=
- =?utf-8?B?WVJnSTNtUjdDOEpMbW9OOXRvS040eWRocmV1MHhSelJ2MER0L04zQmZmL3JF?=
- =?utf-8?B?TGdMUVNhWldTNUNwQWdHTHRwV2VmaERTT3QxMS9yZ2QrQWRQSC9pMEZtUG43?=
- =?utf-8?B?NS9rTlBsWW82bzEzK3hwOW54cWRYamdhNmFEUWtyOE4vNjRYc3FNUHgwVi9U?=
- =?utf-8?Q?VKk9Q0UXoKz6AJCfRAAHR3/ol?=
-X-OriginatorOrg: Nvidia.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 4ab15a6a-c6ae-44a4-5b7f-08dad44bbba8
-X-MS-Exchange-CrossTenant-AuthSource: CO6PR12MB5444.namprd12.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 02 Dec 2022 09:58:16.5514
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: 5OFIsNqViXJZ23qnNn1+QRU+zTijLgJ7qib6rBEMZHqyQfm1773biQhkhU1Rnz+VbMXcrsj284MRJ56xrm5YMA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SJ0PR12MB6831
+In-Reply-To: <20221201174328.870152-1-manivannan.sadhasivam@linaro.org>
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221202_015824_452468_A0478CC1 
-X-CRM114-Status: GOOD (  13.91  )
+X-CRM114-CacheID: sfid-20221202_124950_511410_B0E0BF4C 
+X-CRM114-Status: GOOD (  34.12  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -141,50 +96,150 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On Thu, Dec 01, 2022 at 11:13:05PM +0530, Manivannan Sadhasivam wrote:
+> Hello,
+>
+> This series adds HS-G4 support to the Qcom UFS driver and PHY driver.
+> The newer Qcom platforms support configuring the UFS controller and PHY
+> in dual gears (i.e., controller/PHY can be configured to run in two gear
+> speeds). This is accomplished by adding two different PHY init sequences
+> to the PHY driver and the UFS driver requesting the one that's required
+> based on the platform configuration.
+>
+> Initially the ufs-qcom driver will use the default gear G2 for enumerating
+> the UFS device. Afer enumeration, the max gear supported by both the
+> controller and device would be found out and that will be used thereafter.
+> But for using the max gear after enumeration, the ufs-qcom driver requires
+> the UFS device to be reinitialized. For this purpose, a separate quirk has
+> been introduced in the UFS core along with a callback and those will be used
+> by the ufs-qcom driver.
+>
+> This series has been tested on following platforms:
+>
+> * Qcom RB5 development platform powered by SM8250 SoC
+> * SM8450 based dev board
+>
+> Merging Strategy:
+> -----------------
+>
+> The PHY patches are expected to go through PHY tree and UFS, MAINTAINERS
+> patches are expected to go through SCSI tree.
+>
+> NOTE: Since this series targets multiple SoCs (base like SM8350) and
+> (derivative like SC8280XP), testing on all of these platforms is really
+> appreciated. Although, if the series works for base SoC, then for derivatives
+> also it should work.
 
-On 30/11/2022 17:07, Rob Herring wrote:
-> On Fri, Nov 18, 2022 at 03:40:06PM +0000, Jon Hunter wrote:
->> Add the compatible string for the Tegra234 XUSB PHY.
->>
->> Signed-off-by: Jon Hunter <jonathanh@nvidia.com>
->> ---
->> This is a new patch in this version of the series. This patch is
->> dependent upon the following patch.
->>
->> https://lore.kernel.org/linux-tegra/20221118144015.3650774-1-thierry.reding@gmail.com/
->>
->>   .../devicetree/bindings/phy/nvidia,tegra194-xusb-padctl.yaml  | 4 +++-
->>   1 file changed, 3 insertions(+), 1 deletion(-)
->>
->> diff --git a/Documentation/devicetree/bindings/phy/nvidia,tegra194-xusb-padctl.yaml b/Documentation/devicetree/bindings/phy/nvidia,tegra194-xusb-padctl.yaml
->> index 1c570ff65eb4..5302fdb0949c 100644
->> --- a/Documentation/devicetree/bindings/phy/nvidia,tegra194-xusb-padctl.yaml
->> +++ b/Documentation/devicetree/bindings/phy/nvidia,tegra194-xusb-padctl.yaml
->> @@ -42,7 +42,9 @@ description:
->>   
->>   properties:
->>     compatible:
->> -    const: nvidia,tegra194-xusb-padctl
->> +    enum:
->> +      - nvidia,tegra194-xusb-padctl
->> +      - nvidia,tegra194-xusb-padctl
-> 
-> Did you test this because I'm pretty sure you would get an error. The
-> bot didn't test because of the dependency.
+Tested-by: Andrew Halaney <ahalaney@redhat.com> # Qdrive3/sa8540p-ride
 
+Without this patch series, the board's operating in gear 3. With it the
+board's operating in gear 4. Gentle reminder sa8540p-ride is a SC8280XP
+derivative.
 
-Indeed. My fault for trying to juggle too many things at once. OK will 
-correct this.
+I'm not really proficient in storage benchmarking, but a simple dd test
+showed the following (sorry for the poor output, console got a
+little wacky on the output).
 
-Jon
+Gear 3:
+    [root@localhost ~]# dd bs=4k oflag=direct if=/dev/zero of=/dev/disk/by-partlabel/userdata
+    dd: error writing '/dev/disk/by-partlabel/userdata': No space left on device
+    19873276+0 records in
+    19873275+0 records out
+    81400934400 bytes (81 GB, 76 GiB) copied, 864.111 s, 94.2 MB/s
+    [root@localhost ~]# dd bs=4k if=/dev/disk/by-partlabel/userdata of=/dev/null
+    19873275+0 records in
+    19873275+0 records out
+    81400934400 bytes (81 GB, 76 GiB) copied, 75.7823 s, 1.1 GB/s
+    [root@localhost ~]#
 
--- 
-nvpublic
+Gear 4:
+    [root@localhost ~]# dd bs=4k oflag=direct if=/dev/zero of=/dev/disk/by-partlabel/userdata
+    [   81.651598] ufshcd-qcom 1d84000.ufs: ufs_qcom_get_hs_gear: 296: UFS_HS_G4
+    [   81.658592] ufshcd-qcom 1d84000.ufs: ufs_qcom_pwr_change_notify: 731: Agreed gear: 4
+    [root@localhost ~]#  GB, 76 GiB) copied, 738.015 s, 110 MB/s
+    [root@localhost ~]# dd bs=4k if=/dev/disk/by-partlabel/userdata of=/dev/null
+    19873275+0 records in
+    19873275+0 records out
+    81400934400 bytes (81 GB, 76 GiB) copied, 63.9846 s, 1.3 GB/s
+    [root@localhost ~]#
+
+So a bit of a performance gain was seen with this patch series :)
+
+Thanks,
+Andrew
+
+>
+> Thanks,
+> Mani
+>
+> Changes in v4:
+>
+> * Dropped HS G3 specific setting from SM8350 default init sequence
+> * Added G4 support to SM8350 and SC8280XP
+> * Covered all qcom files under drivers/ufs/host in MAINTAINERS file
+> * Added missing Suggested-by tags for Can Guo
+> * Rebased on top of linux-next 20221201
+>
+> Changes in v3:
+>
+> * Dropped the "device-max-gear" DT property and switched to reinitialization (Krzysztof)
+> * Added HS-G4 support to all compatible SoCs (SM8150, SM8250 and SM8450). This will also
+>   benefit the derivative SoCs of these platforms like SC8180x, SC8280x etc...
+> * Splitted the qmp_phy_init_tbl changes into separate patches (Vinod)
+> * Collected reviews from Andrew H
+>
+> Changes in v2:
+>
+> * Collected reviews from Dmitry
+> * Renamed "max-gear" property to "max-device-gear"
+> * Used min() for deciding which gear to use instead of open comparision
+> * Added comment about the old register name
+>
+> Manivannan Sadhasivam (23):
+>   phy: qcom-qmp-ufs: Remove _tbl suffix from qmp_phy_init_tbl
+>     definitions
+>   phy: qcom-qmp-ufs: Rename MSM8996 PHY definitions
+>   phy: qcom-qmp-ufs: Move register settings to qmp_phy_cfg_tbls struct
+>   phy: qcom-qmp-ufs: Add support for configuring PHY in HS Series B mode
+>   phy: qcom-qmp-ufs: Add support for configuring PHY in HS G4 mode
+>   phy: qcom-qmp-ufs: Move HS Rate B register setting to tbls_hs_b
+>   phy: qcom-qmp-ufs: Add HS G4 mode support to SM8150 SoC
+>   phy: qcom-qmp-ufs: Add HS G4 mode support to SM8250 SoC
+>   phy: qcom-qmp-ufs: Avoid setting HS G3 specific registers
+>   phy: qcom-qmp-ufs: Add HS G4 mode support to SM8350 SoC
+>   phy: qcom-qmp-ufs: Add HS G4 mode support to SM8450 SoC
+>   phy: qcom-qmp-ufs: Add HS G4 mode support to SC8280XP SoC
+>   scsi: ufs: ufs-qcom: Remove un-necessary goto statements
+>   scsi: ufs: ufs-qcom: Remove un-necessary WARN_ON()
+>   scsi: ufs: ufs-qcom: Use bitfields where appropriate
+>   scsi: ufs: ufs-qcom: Use dev_err_probe() for printing probe error
+>   scsi: ufs: ufs-qcom: Fix the Qcom register name for offset 0xD0
+>   scsi: ufs: core: Add reinit_notify() callback
+>   scsi: ufs: core: Add support for reinitializing the UFS device
+>   scsi: ufs: ufs-qcom: Factor out the logic finding the HS Gear
+>   scsi: ufs: ufs-qcom: Add support for reinitializing the UFS device
+>   scsi: ufs: ufs-qcom: Add support for finding max gear on new platforms
+>   MAINTAINERS: Add myself as the maintainer for Qcom UFS drivers
+>
+>  MAINTAINERS                                   |   8 +
+>  .../phy/qualcomm/phy-qcom-qmp-pcs-ufs-v5.h    |   1 +
+>  drivers/phy/qualcomm/phy-qcom-qmp-ufs.c       | 454 +++++++++++++-----
+>  drivers/ufs/core/ufshcd-priv.h                |   6 +
+>  drivers/ufs/core/ufshcd.c                     |  63 ++-
+>  drivers/ufs/host/ufs-qcom.c                   | 170 +++----
+>  drivers/ufs/host/ufs-qcom.h                   |  70 +--
+>  include/ufs/ufshcd.h                          |   8 +
+>  8 files changed, 532 insertions(+), 248 deletions(-)
+>
+> --
+> 2.25.1
+>
+
 
 -- 
 linux-phy mailing list
