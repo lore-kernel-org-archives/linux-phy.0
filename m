@@ -4,81 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 66368C4708C
-	for <linux-phy@archiver.kernel.org>; Mon,  5 Dec 2022 22:27:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D5D1AC352A1
+	for <linux-phy@archiver.kernel.org>; Tue,  6 Dec 2022 07:12:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:References:
-	In-Reply-To:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1vbAyf8IedxlPfciaDGcotKsnJmYIcwC9wFNID114rA=; b=qgf7pOailHsHK6
-	FMZIez58QrFtHXpnt3GSbJpT0rwQ8+gFpiFEK45tQG9RN04zVV5/bxSTGSpPyf9EdB8nweyZ+v4sv
-	T6VT5O9vRPftkDqdExyvmHBlvC7aWY3PPFdfv6O2VKUTKkuEgs7dYu+DdGWSl6NG1BgS5+d55l98S
-	aEaljgebzzBEaJ0tYzFGFyXTLkt7OziWDLaWPdLZ1XiwnWfrQF3sl+JCmhkIOHsoHq6ovR6617nUe
-	JGZTFG8bIAqmiV/UlZDwxoZKug4AFReJZkj1Th7zVwJRuqXIsJRPJI17aD5ocESDhscCE5rzoIjnu
-	GGND15RhQ1uHMBMyiSsw==;
+	List-Owner; bh=HE4dOPtr0D8XGKszRU67C4+wynybycddhqlVNX5AW+c=; b=gC0DbDnNQJhYxQ
+	BurbStltNLOP9VDj55ptUS4Iz554o+yditkqly66/ApIBy8C3B7OmQfnsURLDwVRKLZKrHvimyP3T
+	jayCDPUEwk996PVCQZnyPFu+xYK7PZVPjnLEUJ7hlWa27yehkr7QYNrdPxy+6eYZP5WLlXLi37l1a
+	mn0DGNLMgthLgVcjHG16v01UsfqTtmntpsF1pMEoKcFkhUmwhTG/LGCgrPawt465OaL+8Tjat/2Kw
+	CIYaHS0SD2IZSo0E8o37rjhOte1Sg6Zjy4iXRw+WVUPH2NhlsdlGkWJZfEVmxEe/MBhM1D2iq+RcS
+	W13MD+sMalj/6vV4zU4w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1p2Jw7-00BHPZ-QW; Mon, 05 Dec 2022 22:27:43 +0000
-Received: from mail-lf1-x12b.google.com ([2a00:1450:4864:20::12b])
+	id 1p2S82-003MRI-1C; Tue, 06 Dec 2022 07:12:34 +0000
+Received: from mail-pg1-x530.google.com ([2607:f8b0:4864:20::530])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1p2Jw4-00BHLk-Vj
-	for linux-phy@lists.infradead.org; Mon, 05 Dec 2022 22:27:43 +0000
-Received: by mail-lf1-x12b.google.com with SMTP id x28so3498046lfn.6
-        for <linux-phy@lists.infradead.org>; Mon, 05 Dec 2022 14:27:38 -0800 (PST)
+	id 1p2S7y-003MAi-4b
+	for linux-phy@lists.infradead.org; Tue, 06 Dec 2022 07:12:31 +0000
+Received: by mail-pg1-x530.google.com with SMTP id h193so12592103pgc.10
+        for <linux-phy@lists.infradead.org>; Mon, 05 Dec 2022 23:12:23 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
-        h=content-transfer-encoding:mime-version:message-id:references
-         :in-reply-to:user-agent:subject:cc:to:from:date:from:to:cc:subject
-         :date:message-id:reply-to;
-        bh=Ik/UwYGkNtvCKECth4XEynNimFfWTJwc3LAnHqyGcKM=;
-        b=HpWcdPQye7eAnYl6/VFGcLZEkXqb0Gbfs2zHPaNL3UDbgG71N4p95sjHZWjmdAe7oW
-         /X5V1wP7L5cVQEJngTBJbfUULlZzX0s/TRMni5oQZBhJ1khqOuxqOK6kS7XDZERRXl98
-         eNNmoBGEAylwHs4VxWfdfnaaMoa1ec89Ds42RIULDMVTopSPazVDDajiUE/cq3wj5KKA
-         4+rhOWdwiDkbyL4uQtJ6YHwkBbCg3owcvDXoL8pDt9+t1zrw5QoQJN8Lkms7AeSwIJwg
-         8osV3Ip76RKWngK7UUY7GetBKctPsW+2DZFXIvR+xans3D4n59vAFsj4WKmd7zgwbFRo
-         Di2w==
+        h=in-reply-to:content-transfer-encoding:content-disposition
+         :mime-version:references:message-id:subject:cc:to:from:date:from:to
+         :cc:subject:date:message-id:reply-to;
+        bh=B1ANPs4DOsm+UmHpJKXF/8eOmbfQxRkzXdEOzvRDR0M=;
+        b=h6iWhky3HNQ9/UAroFVu1c+YaOp5hTc8qWEg+liylRRbSddMndy3T8bGavUnnPHPoc
+         BJHn0yVyaQCk/TP0+iqLwCBnOUS/CFyGhpP3v1X0RRSy19tKVJkFAMz8TGNKNgikv5Co
+         evQOdPQ6v2JLkS2TbWCMZsZNLvooyzVGnOmnKEUclleIOBpfpuxB0ZVhr9mCRPdl35cm
+         /T+HSA3Nn7xCMpoftJcstFZ83FTeaqGlofBVFZBttSR/6jCwxyOIahWOfXOfiALLJfAY
+         /aGzowNZASXJYkbLpil8GHBc7leT9ovBsrfx0VukswY/lbzcQOK6vZqbEOpMUHwSL8kM
+         1/1w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=content-transfer-encoding:mime-version:message-id:references
-         :in-reply-to:user-agent:subject:cc:to:from:date:x-gm-message-state
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=Ik/UwYGkNtvCKECth4XEynNimFfWTJwc3LAnHqyGcKM=;
-        b=UZoa4vgoIiwsZgMO/8nyK+VmUVsVWOTHNKJJRu4zt9PHeewyfRvYp+WKSsk2kBqEvu
-         3gGUst9jm25l3yee04oX+KEoycY5EmqWkCYaTdW84E4Ap4fSkfKscpX/7dsaM16qb30L
-         dTG+WXp+k1nGIeVDz9WOJGU3hjM7ajG6NeSd1CVtibf6I190vRVgNhNKVGZo7boMqBfY
-         5nGVY5yxhSb0u6kYt7GNVjzSaxx/LiGSGOpT1QqO4dbmv297jHXRM4oxy1o4plMEdlcx
-         CJljy3JaC4w4nzdwPHnaa5LJpTbuL5+WtiH0PBiiOF1msfV8HqwM9OqSwW9gbk7+gNhd
-         FeIg==
-X-Gm-Message-State: ANoB5pn8PEOzPNyyaAQUL2Y0pm06tTLG9qkYo2+1cXGWiD030HBOzECL
-	5TNDXCRByXYNjIB9LNLdu6Xqow==
-X-Google-Smtp-Source: AA0mqf4ix7dAZ17Pea+SOr+Lf9tdy75RBjwTknY7dYH+pwR4H3+ziQ7VLQVdGorXp/iwo9WROlWYEQ==
-X-Received: by 2002:ac2:5636:0:b0:4b5:5f97:6a18 with SMTP id b22-20020ac25636000000b004b55f976a18mr4282631lff.77.1670279257008;
-        Mon, 05 Dec 2022 14:27:37 -0800 (PST)
-Received: from [127.0.0.1] ([94.25.229.129])
-        by smtp.gmail.com with ESMTPSA id v20-20020a2e5054000000b002797d6bb516sm1503230ljd.20.2022.12.05.14.27.36
-        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
-        Mon, 05 Dec 2022 14:27:36 -0800 (PST)
-Date: Tue, 06 Dec 2022 01:26:26 +0300
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
- martin.petersen@oracle.com, jejb@linux.ibm.com, andersson@kernel.org,
- vkoul@kernel.org
-CC: quic_cang@quicinc.com, quic_asutoshd@quicinc.com,
- linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-scsi@vger.kernel.org,
- ahalaney@redhat.com, abel.vesa@linaro.org, alim.akhtar@samsung.com,
- avri.altman@wdc.com, bvanassche@acm.org
-Subject: =?US-ASCII?Q?Re=3A_=5BPATCH_v4_13/23=5D_scsi=3A_ufs=3A_ufs-qc?= =?US-ASCII?Q?om=3A_Remove_un-necessary_goto_statements?=
-User-Agent: K-9 Mail for Android
-In-Reply-To: <20221201174328.870152-14-manivannan.sadhasivam@linaro.org>
-References: <20221201174328.870152-1-manivannan.sadhasivam@linaro.org> <20221201174328.870152-14-manivannan.sadhasivam@linaro.org>
-Message-ID: <3F1FB621-3368-43C6-8D91-115352BE6921@linaro.org>
+        h=in-reply-to:content-transfer-encoding:content-disposition
+         :mime-version:references:message-id:subject:cc:to:from:date
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=B1ANPs4DOsm+UmHpJKXF/8eOmbfQxRkzXdEOzvRDR0M=;
+        b=BG++iaA1LJzAVeUUJ31kMRCATX3T9oNZkbMmPYwoiMT+G9QBEr8K9G3X7bok4VUBlQ
+         2pxKqPCM/VoqfsQLCaQDqoU5s/Z6MF+WRQba86gjxgG8Lquj/NKyNsLB2kXxqpiey9mP
+         IdYBj+G/YQw0FfcXm3NUq5OUZI+tk8fmGn7CRy5jIkfxOO6uuXlJZZMBOobuAYib4tf0
+         xzFNIBlnqhjjjcQwAN+X4Gds/64JRMZuIckpn2Rw7fBo9zIVxWmTuSgmaNuCxm7SSOBO
+         uhUZA39run91Wciw0t+5tlYQCUczjZpYRA0mLgfH9f/vb9h3CLNryhVYfNNkajakvcyT
+         bpPQ==
+X-Gm-Message-State: ANoB5pk9JVAs+6b36dpPOgEqEA8SlCXZ12YW4sCYPElHv9uxKfD31+vL
+	DGyVhKF/tPBRPJFjlvc7w1np
+X-Google-Smtp-Source: AA0mqf54IKnAGppRNz0mXYBvpJUyY3qJ/ynQHuD0Eq4Kx1RmzbUPe15c2LK96rk2XExXRZe1KksIPA==
+X-Received: by 2002:a05:6a00:1d22:b0:577:e7d:5490 with SMTP id a34-20020a056a001d2200b005770e7d5490mr6282671pfx.71.1670310742370;
+        Mon, 05 Dec 2022 23:12:22 -0800 (PST)
+Received: from thinkpad ([117.207.29.147])
+        by smtp.gmail.com with ESMTPSA id i28-20020a056a00005c00b005771f5ea2ebsm2058560pfk.135.2022.12.05.23.12.15
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 05 Dec 2022 23:12:21 -0800 (PST)
+Date: Tue, 6 Dec 2022 12:42:13 +0530
+From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Cc: martin.petersen@oracle.com, jejb@linux.ibm.com, andersson@kernel.org,
+	vkoul@kernel.org, quic_cang@quicinc.com, quic_asutoshd@quicinc.com,
+	linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org, linux-scsi@vger.kernel.org,
+	ahalaney@redhat.com, abel.vesa@linaro.org, alim.akhtar@samsung.com,
+	avri.altman@wdc.com, bvanassche@acm.org
+Subject: Re: [PATCH v4 04/23] phy: qcom-qmp-ufs: Add support for configuring
+ PHY in HS Series B mode
+Message-ID: <20221206071213.GA15486@thinkpad>
+References: <20221201174328.870152-1-manivannan.sadhasivam@linaro.org>
+ <20221201174328.870152-5-manivannan.sadhasivam@linaro.org>
+ <32201EF1-8169-4940-99E1-31CC0C37C522@linaro.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <32201EF1-8169-4940-99E1-31CC0C37C522@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221205_142741_123255_4C729639 
-X-CRM114-Status: GOOD (  19.44  )
+X-CRM114-CacheID: sfid-20221205_231230_214875_212D10DD 
+X-CRM114-Status: GOOD (  19.46  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,400 +92,59 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-
-On 1 December 2022 20:43:18 GMT+03:00, Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org> wrote:
->goto in error path is useful if the function needs to do cleanup other
->than returning the error code. But in this driver, goto statements are
->used for just returning the error code in many places. This really
->makes it hard to read the code.
->
->So let's get rid of those goto statements and just return the error code
->directly.
->
->Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
->Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-
-
->---
-> drivers/ufs/host/ufs-qcom.c | 100 +++++++++++++++---------------------
-> 1 file changed, 41 insertions(+), 59 deletions(-)
->
->diff --git a/drivers/ufs/host/ufs-qcom.c b/drivers/ufs/host/ufs-qcom.c
->index 8ad1415e10b6..7cd996ac180b 100644
->--- a/drivers/ufs/host/ufs-qcom.c
->+++ b/drivers/ufs/host/ufs-qcom.c
->@@ -110,7 +110,7 @@ static void ufs_qcom_disable_lane_clks(struct ufs_qcom_host *host)
-> 
-> static int ufs_qcom_enable_lane_clks(struct ufs_qcom_host *host)
-> {
->-	int err = 0;
->+	int err;
-> 	struct device *dev = host->hba->dev;
-> 
-> 	if (host->is_lane_clks_enabled)
->@@ -119,7 +119,7 @@ static int ufs_qcom_enable_lane_clks(struct ufs_qcom_host *host)
-> 	err = ufs_qcom_host_clk_enable(dev, "rx_lane0_sync_clk",
-> 		host->rx_l0_sync_clk);
-> 	if (err)
->-		goto out;
->+		return err;
-> 
-> 	err = ufs_qcom_host_clk_enable(dev, "tx_lane0_sync_clk",
-> 		host->tx_l0_sync_clk);
->@@ -137,7 +137,8 @@ static int ufs_qcom_enable_lane_clks(struct ufs_qcom_host *host)
-> 		goto disable_rx_l1;
-> 
-> 	host->is_lane_clks_enabled = true;
->-	goto out;
->+
->+	return 0;
-> 
-> disable_rx_l1:
-> 	clk_disable_unprepare(host->rx_l1_sync_clk);
->@@ -145,7 +146,7 @@ static int ufs_qcom_enable_lane_clks(struct ufs_qcom_host *host)
-> 	clk_disable_unprepare(host->tx_l0_sync_clk);
-> disable_rx_l0:
-> 	clk_disable_unprepare(host->rx_l0_sync_clk);
->-out:
->+
-> 	return err;
-> }
-> 
->@@ -160,25 +161,25 @@ static int ufs_qcom_init_lane_clks(struct ufs_qcom_host *host)
-> 	err = ufs_qcom_host_clk_get(dev, "rx_lane0_sync_clk",
-> 					&host->rx_l0_sync_clk, false);
-> 	if (err)
->-		goto out;
->+		return err;
-> 
-> 	err = ufs_qcom_host_clk_get(dev, "tx_lane0_sync_clk",
-> 					&host->tx_l0_sync_clk, false);
-> 	if (err)
->-		goto out;
->+		return err;
-> 
-> 	/* In case of single lane per direction, don't read lane1 clocks */
-> 	if (host->hba->lanes_per_direction > 1) {
-> 		err = ufs_qcom_host_clk_get(dev, "rx_lane1_sync_clk",
-> 			&host->rx_l1_sync_clk, false);
-> 		if (err)
->-			goto out;
->+			return err;
-> 
-> 		err = ufs_qcom_host_clk_get(dev, "tx_lane1_sync_clk",
-> 			&host->tx_l1_sync_clk, true);
-> 	}
->-out:
->-	return err;
->+
->+	return 0;
-> }
-> 
-> static int ufs_qcom_check_hibern8(struct ufs_hba *hba)
->@@ -241,7 +242,7 @@ static int ufs_qcom_host_reset(struct ufs_hba *hba)
-> 
-> 	if (!host->core_reset) {
-> 		dev_warn(hba->dev, "%s: reset control not set\n", __func__);
->-		goto out;
->+		return 0;
-> 	}
-> 
-> 	reenable_intr = hba->is_irq_enabled;
->@@ -252,7 +253,7 @@ static int ufs_qcom_host_reset(struct ufs_hba *hba)
-> 	if (ret) {
-> 		dev_err(hba->dev, "%s: core_reset assert failed, err = %d\n",
-> 				 __func__, ret);
->-		goto out;
->+		return ret;
-> 	}
-> 
-> 	/*
->@@ -274,15 +275,14 @@ static int ufs_qcom_host_reset(struct ufs_hba *hba)
-> 		hba->is_irq_enabled = true;
-> 	}
-> 
->-out:
->-	return ret;
->+	return 0;
-> }
-> 
-> static int ufs_qcom_power_up_sequence(struct ufs_hba *hba)
-> {
-> 	struct ufs_qcom_host *host = ufshcd_get_variant(hba);
-> 	struct phy *phy = host->generic_phy;
->-	int ret = 0;
->+	int ret;
-> 	bool is_rate_B = UFS_QCOM_LIMIT_HS_RATE == PA_HS_MODE_B;
-> 
-> 	/* Reset UFS Host Controller and PHY */
->@@ -299,7 +299,7 @@ static int ufs_qcom_power_up_sequence(struct ufs_hba *hba)
-> 	if (ret) {
-> 		dev_err(hba->dev, "%s: phy init failed, ret = %d\n",
-> 			__func__, ret);
->-		goto out;
->+		return ret;
-> 	}
-> 
-> 	/* power on phy - start serdes and phy's power and clocks */
->@@ -316,7 +316,7 @@ static int ufs_qcom_power_up_sequence(struct ufs_hba *hba)
-> 
-> out_disable_phy:
-> 	phy_exit(phy);
->-out:
->+
-> 	return ret;
-> }
-> 
->@@ -374,7 +374,6 @@ static int ufs_qcom_hce_enable_notify(struct ufs_hba *hba,
-> static int ufs_qcom_cfg_timers(struct ufs_hba *hba, u32 gear,
-> 			       u32 hs, u32 rate, bool update_link_startup_timer)
-> {
->-	int ret = 0;
-> 	struct ufs_qcom_host *host = ufshcd_get_variant(hba);
-> 	struct ufs_clk_info *clki;
-> 	u32 core_clk_period_in_ns;
->@@ -409,11 +408,11 @@ static int ufs_qcom_cfg_timers(struct ufs_hba *hba, u32 gear,
-> 	 * Aggregation logic.
-> 	*/
-> 	if (ufs_qcom_cap_qunipro(host) && !ufshcd_is_intr_aggr_allowed(hba))
->-		goto out;
->+		return 0;
-> 
-> 	if (gear == 0) {
-> 		dev_err(hba->dev, "%s: invalid gear = %d\n", __func__, gear);
->-		goto out_error;
->+		return -EINVAL;
-> 	}
-> 
-> 	list_for_each_entry(clki, &hba->clk_list_head, list) {
->@@ -436,7 +435,7 @@ static int ufs_qcom_cfg_timers(struct ufs_hba *hba, u32 gear,
-> 	}
-> 
-> 	if (ufs_qcom_cap_qunipro(host))
->-		goto out;
->+		return 0;
-> 
-> 	core_clk_period_in_ns = NSEC_PER_SEC / core_clk_rate;
-> 	core_clk_period_in_ns <<= OFFSET_CLK_NS_REG;
->@@ -451,7 +450,7 @@ static int ufs_qcom_cfg_timers(struct ufs_hba *hba, u32 gear,
-> 					"%s: index %d exceeds table size %zu\n",
-> 					__func__, gear,
-> 					ARRAY_SIZE(hs_fr_table_rA));
->-				goto out_error;
->+				return -EINVAL;
-> 			}
-> 			tx_clk_cycles_per_us = hs_fr_table_rA[gear-1][1];
-> 		} else if (rate == PA_HS_MODE_B) {
->@@ -460,13 +459,13 @@ static int ufs_qcom_cfg_timers(struct ufs_hba *hba, u32 gear,
-> 					"%s: index %d exceeds table size %zu\n",
-> 					__func__, gear,
-> 					ARRAY_SIZE(hs_fr_table_rB));
->-				goto out_error;
->+				return -EINVAL;
-> 			}
-> 			tx_clk_cycles_per_us = hs_fr_table_rB[gear-1][1];
-> 		} else {
-> 			dev_err(hba->dev, "%s: invalid rate = %d\n",
-> 				__func__, rate);
->-			goto out_error;
->+			return -EINVAL;
-> 		}
-> 		break;
-> 	case SLOWAUTO_MODE:
->@@ -476,14 +475,14 @@ static int ufs_qcom_cfg_timers(struct ufs_hba *hba, u32 gear,
-> 					"%s: index %d exceeds table size %zu\n",
-> 					__func__, gear,
-> 					ARRAY_SIZE(pwm_fr_table));
->-			goto out_error;
->+			return -EINVAL;
-> 		}
-> 		tx_clk_cycles_per_us = pwm_fr_table[gear-1][1];
-> 		break;
-> 	case UNCHANGED:
-> 	default:
-> 		dev_err(hba->dev, "%s: invalid mode = %d\n", __func__, hs);
->-		goto out_error;
->+		return -EINVAL;
-> 	}
-> 
-> 	if (ufshcd_readl(hba, REG_UFS_TX_SYMBOL_CLK_NS_US) !=
->@@ -507,12 +506,8 @@ static int ufs_qcom_cfg_timers(struct ufs_hba *hba, u32 gear,
-> 		 */
-> 		mb();
-> 	}
->-	goto out;
-> 
->-out_error:
->-	ret = -EINVAL;
->-out:
->-	return ret;
->+	return 0;
-> }
-> 
-> static int ufs_qcom_link_startup_notify(struct ufs_hba *hba,
->@@ -527,8 +522,7 @@ static int ufs_qcom_link_startup_notify(struct ufs_hba *hba,
-> 					0, true)) {
-> 			dev_err(hba->dev, "%s: ufs_qcom_cfg_timers() failed\n",
-> 				__func__);
->-			err = -EINVAL;
->-			goto out;
->+			return -EINVAL;
-> 		}
-> 
-> 		if (ufs_qcom_cap_qunipro(host))
->@@ -554,7 +548,6 @@ static int ufs_qcom_link_startup_notify(struct ufs_hba *hba,
-> 		break;
-> 	}
-> 
->-out:
-> 	return err;
-> }
-> 
->@@ -691,8 +684,7 @@ static int ufs_qcom_pwr_change_notify(struct ufs_hba *hba,
-> 
-> 	if (!dev_req_params) {
-> 		pr_err("%s: incoming dev_req_params is NULL\n", __func__);
->-		ret = -EINVAL;
->-		goto out;
->+		return -EINVAL;
-> 	}
-> 
-> 	switch (status) {
->@@ -720,7 +712,7 @@ static int ufs_qcom_pwr_change_notify(struct ufs_hba *hba,
-> 		if (ret) {
-> 			pr_err("%s: failed to determine capabilities\n",
-> 					__func__);
->-			goto out;
->+			return ret;
-> 		}
-> 
-> 		/* enable the device ref clock before changing to HS mode */
->@@ -761,7 +753,7 @@ static int ufs_qcom_pwr_change_notify(struct ufs_hba *hba,
-> 		ret = -EINVAL;
-> 		break;
-> 	}
->-out:
->+
-> 	return ret;
-> }
-> 
->@@ -773,14 +765,11 @@ static int ufs_qcom_quirk_host_pa_saveconfigtime(struct ufs_hba *hba)
-> 	err = ufshcd_dme_get(hba, UIC_ARG_MIB(PA_VS_CONFIG_REG1),
-> 			     &pa_vs_config_reg1);
-> 	if (err)
->-		goto out;
->+		return err;
-> 
-> 	/* Allow extension of MSB bits of PA_SaveConfigTime attribute */
->-	err = ufshcd_dme_set(hba, UIC_ARG_MIB(PA_VS_CONFIG_REG1),
->+	return ufshcd_dme_set(hba, UIC_ARG_MIB(PA_VS_CONFIG_REG1),
-> 			    (pa_vs_config_reg1 | (1 << 12)));
->-
->-out:
->-	return err;
-> }
-> 
-> static int ufs_qcom_apply_dev_quirks(struct ufs_hba *hba)
->@@ -957,9 +946,8 @@ static int ufs_qcom_init(struct ufs_hba *hba)
-> 
-> 	host = devm_kzalloc(dev, sizeof(*host), GFP_KERNEL);
-> 	if (!host) {
->-		err = -ENOMEM;
-> 		dev_err(dev, "%s: no memory for qcom ufs host\n", __func__);
->-		goto out;
->+		return -ENOMEM;
-> 	}
-> 
-> 	/* Make a two way bind between the qcom host and the hba */
->@@ -980,10 +968,8 @@ static int ufs_qcom_init(struct ufs_hba *hba)
-> 	host->rcdev.owner = dev->driver->owner;
-> 	host->rcdev.nr_resets = 1;
-> 	err = devm_reset_controller_register(dev, &host->rcdev);
->-	if (err) {
->+	if (err)
-> 		dev_warn(dev, "Failed to register reset controller\n");
->-		err = 0;
->-	}
-> 
-> 	if (!has_acpi_companion(dev)) {
-> 		host->generic_phy = devm_phy_get(dev, "ufsphy");
->@@ -1049,17 +1035,16 @@ static int ufs_qcom_init(struct ufs_hba *hba)
-> 	host->dbg_print_en |= UFS_QCOM_DEFAULT_DBG_PRINT_EN;
-> 	ufs_qcom_get_default_testbus_cfg(host);
-> 	err = ufs_qcom_testbus_config(host);
->-	if (err) {
->+	if (err)
->+		/* Failure is non-fatal */
-> 		dev_warn(dev, "%s: failed to configure the testbus %d\n",
-> 				__func__, err);
->-		err = 0;
->-	}
-> 
->-	goto out;
->+	return 0;
-> 
-> out_variant_clear:
-> 	ufshcd_set_variant(hba, NULL);
->-out:
->+
-> 	return err;
-> }
-> 
->@@ -1085,7 +1070,7 @@ static int ufs_qcom_set_dme_vs_core_clk_ctrl_clear_div(struct ufs_hba *hba,
-> 			    UIC_ARG_MIB(DME_VS_CORE_CLK_CTRL),
-> 			    &core_clk_ctrl_reg);
-> 	if (err)
->-		goto out;
->+		return err;
-> 
-> 	core_clk_ctrl_reg &= ~DME_VS_CORE_CLK_CTRL_MAX_CORE_CLK_1US_CYCLES_MASK;
-> 	core_clk_ctrl_reg |= clk_cycles;
->@@ -1093,11 +1078,9 @@ static int ufs_qcom_set_dme_vs_core_clk_ctrl_clear_div(struct ufs_hba *hba,
-> 	/* Clear CORE_CLK_DIV_EN */
-> 	core_clk_ctrl_reg &= ~DME_VS_CORE_CLK_CTRL_CORE_CLK_DIV_EN_BIT;
-> 
->-	err = ufshcd_dme_set(hba,
->+	return ufshcd_dme_set(hba,
-> 			    UIC_ARG_MIB(DME_VS_CORE_CLK_CTRL),
-> 			    core_clk_ctrl_reg);
->-out:
->-	return err;
-> }
-> 
-> static int ufs_qcom_clk_scale_up_pre_change(struct ufs_hba *hba)
->@@ -1180,7 +1163,7 @@ static int ufs_qcom_clk_scale_notify(struct ufs_hba *hba,
-> 
-> 		if (err || !dev_req_params) {
-> 			ufshcd_uic_hibern8_exit(hba);
->-			goto out;
->+			return err;
-> 		}
-> 
-> 		ufs_qcom_cfg_timers(hba,
->@@ -1191,8 +1174,7 @@ static int ufs_qcom_clk_scale_notify(struct ufs_hba *hba,
-> 		ufshcd_uic_hibern8_exit(hba);
-> 	}
-> 
->-out:
->-	return err;
->+	return 0;
-> }
-> 
-> static void ufs_qcom_print_hw_debug_reg_all(struct ufs_hba *hba,
-
--- 
-With best wishes
-Dmitry
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gVHVlLCBEZWMgMDYsIDIwMjIgYXQgMTI6NTE6NDJBTSArMDMwMCwgRG1pdHJ5IEJhcnlzaGtv
+diB3cm90ZToKPiAKPiAKPiBPbiAxIERlY2VtYmVyIDIwMjIgMjA6NDM6MDkgR01UKzAzOjAwLCBN
+YW5pdmFubmFuIFNhZGhhc2l2YW0gPG1hbml2YW5uYW4uc2FkaGFzaXZhbUBsaW5hcm8ub3JnPiB3
+cm90ZToKPiA+QWRkIHNlcGFyYXRlIHRhYmxlc19oc19iIGluc3RhbmNlIHRvIGFsbG93IHRoZSBQ
+SFkgZHJpdmVyIHRvIGNvbmZpZ3VyZSB0aGUKPiA+UEhZIGluIEhTIFNlcmllcyBCIG1vZGUuIFRo
+ZSBpbmRpdmlkdWFsIFNvQyBjb25maWdzIG5lZWQgdG8gc3VwcGx5IHRoZQo+ID5zZXJkZXMgcmVn
+aXN0ZXIgc2V0dGluZyBpbiB0YWJsZXNfaHNfYiBhbmQgdGhlIFVGUyBkcml2ZXIgY2FuIHJlcXVl
+c3QgdGhlCj4gPlNlcmllcyBCIG1vZGUgYnkgY2FsbGluZyBwaHlfc2V0X21vZGUoKSB3aXRoIG1v
+ZGUgc2V0IHRvIFBIWV9NT0RFX1VGU19IU19CLgo+ID4KPiA+UmV2aWV3ZWQtYnk6IERtaXRyeSBC
+YXJ5c2hrb3YgPGRtaXRyeS5iYXJ5c2hrb3ZAbGluYXJvLm9yZz4KPiA+U2lnbmVkLW9mZi1ieTog
+TWFuaXZhbm5hbiBTYWRoYXNpdmFtIDxtYW5pdmFubmFuLnNhZGhhc2l2YW1AbGluYXJvLm9yZz4K
+PiA+LS0tCj4gPiBkcml2ZXJzL3BoeS9xdWFsY29tbS9waHktcWNvbS1xbXAtdWZzLmMgfCAxNSAr
+KysrKysrKysrKysrKysKPiA+IDEgZmlsZSBjaGFuZ2VkLCAxNSBpbnNlcnRpb25zKCspCj4gPgo+
+ID5kaWZmIC0tZ2l0IGEvZHJpdmVycy9waHkvcXVhbGNvbW0vcGh5LXFjb20tcW1wLXVmcy5jIGIv
+ZHJpdmVycy9waHkvcXVhbGNvbW0vcGh5LXFjb20tcW1wLXVmcy5jCj4gPmluZGV4IDUxNjAyN2Uz
+NTZmMC4uMmQ1ZGQzMzZhZWIyIDEwMDY0NAo+ID4tLS0gYS9kcml2ZXJzL3BoeS9xdWFsY29tbS9w
+aHktcWNvbS1xbXAtdWZzLmMKPiA+KysrIGIvZHJpdmVycy9waHkvcXVhbGNvbW0vcGh5LXFjb20t
+cW1wLXVmcy5jCj4gPkBAIC01NDcsNiArNTQ3LDggQEAgc3RydWN0IHFtcF9waHlfY2ZnIHsKPiA+
+IAo+ID4gCS8qIE1haW4gaW5pdCBzZXF1ZW5jZSBmb3IgUEhZIGJsb2NrcyAtIHNlcmRlcywgdHgs
+IHJ4LCBwY3MgKi8KPiA+IAljb25zdCBzdHJ1Y3QgcW1wX3BoeV9jZmdfdGJscyB0YmxzOwo+ID4r
+CS8qIEFkZGl0aW9uYWwgc2VxdWVuY2UgZm9yIEhTIFNlcmllcyBCICovCj4gPisJY29uc3Qgc3Ry
+dWN0IHFtcF9waHlfY2ZnX3RibHMgdGJsc19oc19iOwo+ID4gCj4gPiAJLyogY2xvY2sgaWRzIHRv
+IGJlIHJlcXVlc3RlZCAqLwo+ID4gCWNvbnN0IGNoYXIgKiBjb25zdCAqY2xrX2xpc3Q7Cj4gPkBA
+IC01ODAsNiArNTgyLDcgQEAgc3RydWN0IHFtcF91ZnMgewo+ID4gCXN0cnVjdCByZXNldF9jb250
+cm9sICp1ZnNfcmVzZXQ7Cj4gPiAKPiA+IAlzdHJ1Y3QgcGh5ICpwaHk7Cj4gPisJdTMyIG1vZGU7
+Cj4gPiB9Owo+ID4gCj4gPiBzdGF0aWMgaW5saW5lIHZvaWQgcXBoeV9zZXRiaXRzKHZvaWQgX19p
+b21lbSAqYmFzZSwgdTMyIG9mZnNldCwgdTMyIHZhbCkKPiA+QEAgLTg0MSw2ICs4NDQsOCBAQCBz
+dGF0aWMgdm9pZCBxbXBfdWZzX3Bjc19pbml0KHN0cnVjdCBxbXBfdWZzICpxbXAsIGNvbnN0IHN0
+cnVjdCBxbXBfcGh5X2NmZ190YmxzCj4gPiBzdGF0aWMgdm9pZCBxbXBfdWZzX2luaXRfcmVnaXN0
+ZXJzKHN0cnVjdCBxbXBfdWZzICpxbXAsIGNvbnN0IHN0cnVjdCBxbXBfcGh5X2NmZyAqY2ZnKQo+
+ID4gewo+ID4gCXFtcF91ZnNfc2VyZGVzX2luaXQocW1wLCAmY2ZnLT50YmxzKTsKPiA+KwlpZiAo
+cW1wLT5tb2RlID09IFBIWV9NT0RFX1VGU19IU19CKQo+ID4rCQlxbXBfdWZzX3NlcmRlc19pbml0
+KHFtcCwgJmNmZy0+dGJsc19oc19iKTsKPiAKPiBJIHN0aWxsIHRoaW5rIHRoYXQgcW1wX3Vmc19p
+bml0X3JlZ2lzdGVycygpIGlzIGEgd2F5IHRvIGdvIGhlcmUgLCBzZWUgdGhlIHBjaWUgZHJpdmVy
+Lgo+IAoKSSBkaWQgdXNlIHFtcF91ZnNfaW5pdF9yZWdpc3RlcnMoKSBhcyBhIHdyYXBwZXIuIE9u
+bHkgZGlmZmVyZW5jZSBoZXJlIGlzIHRoYXQKdGhlcmUgaXMgb25lIG1vcmUgbGV2ZWwgb2YgYWJz
+dHJhY3Rpb24gd2hpY2ggbG9va3MgY2xlYW5lciB0byBtZS4KClRoYW5rcywKTWFuaQoKPiA+IAlx
+bXBfdWZzX2xhbmVzX2luaXQocW1wLCAmY2ZnLT50YmxzKTsKPiA+IAlxbXBfdWZzX3Bjc19pbml0
+KHFtcCwgJmNmZy0+dGJscyk7Cj4gPiB9Cj4gPkBAIC0xMDExLDkgKzEwMTYsMTkgQEAgc3RhdGlj
+IGludCBxbXBfdWZzX2Rpc2FibGUoc3RydWN0IHBoeSAqcGh5KQo+ID4gCXJldHVybiBxbXBfdWZz
+X2V4aXQocGh5KTsKPiA+IH0KPiA+IAo+ID4rc3RhdGljIGludCBxbXBfdWZzX3NldF9tb2RlKHN0
+cnVjdCBwaHkgKnBoeSwgZW51bSBwaHlfbW9kZSBtb2RlLCBpbnQgc3VibW9kZSkKPiA+K3sKPiA+
+KwlzdHJ1Y3QgcW1wX3VmcyAqcW1wID0gcGh5X2dldF9kcnZkYXRhKHBoeSk7Cj4gPisKPiA+Kwlx
+bXAtPm1vZGUgPSBtb2RlOwo+ID4rCj4gPisJcmV0dXJuIDA7Cj4gPit9Cj4gPisKPiA+IHN0YXRp
+YyBjb25zdCBzdHJ1Y3QgcGh5X29wcyBxY29tX3FtcF91ZnNfcGh5X29wcyA9IHsKPiA+IAkucG93
+ZXJfb24JPSBxbXBfdWZzX2VuYWJsZSwKPiA+IAkucG93ZXJfb2ZmCT0gcW1wX3Vmc19kaXNhYmxl
+LAo+ID4rCS5zZXRfbW9kZQk9IHFtcF91ZnNfc2V0X21vZGUsCj4gPiAJLm93bmVyCQk9IFRISVNf
+TU9EVUxFLAo+ID4gfTsKPiA+IAo+IAo+IC0tIAo+IFdpdGggYmVzdCB3aXNoZXMKPiBEbWl0cnkK
+Ci0tIArgrq7grqPgrr/grrXgrqPgr43grqPgrqngr40g4K6a4K6k4K6+4K6a4K6/4K614K6u4K+N
+CgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9y
+ZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
