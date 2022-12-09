@@ -4,143 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D86B5C3A5A7
-	for <linux-phy@archiver.kernel.org>; Thu,  8 Dec 2022 15:37:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BFFFEC04FDE
+	for <linux-phy@archiver.kernel.org>; Fri,  9 Dec 2022 11:30:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:
-	References:Cc:To:Subject:Date:Message-ID:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=yA+eYbKvUG6Oxnygai09VAbbL1ipWbIII5F5LCbyh4c=; b=vESudYlCBb665JkL59hNz3sR2k
-	nP+DVaNw+0C+30FXL06F9J/wSj4jFbAXPa/wfdUvqLnYGRlAfhohajRmat0cXbTx269XXKmCt3pGB
-	w+jv0z4FSYJPvRl5dcAx1/j1lIoK/w+VvaLnnkjCG3fkE017hbVhGPWO/7amSUFCM2HpaoQ2sHPsO
-	VKmQd012leXJp+/wAkEc0nDHDT2AEVsGQPzygOJmFlD9edsLfRmfRK7dtRai3QMBAaFLeHD18T9Nd
-	6gQsOR07+NAuQ2Cw3azNHfhg9OeZgRspQNTNKY+gF02k5wsPrp1BZHa78foAbH2f47WZArkKNvz9I
-	vX8l/skw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=mNktd5twx8Gbf+unZLoQGsVI1yR9H8IUgvMcXIDQ7qQ=; b=zLEVcfy9btZj9F
+	El2Df9maHn6QbNI5bSmJBjNygQeqe/ZBe7rFEVkWQ/G1FxsmpvpA8VmJocYPzpp/w7moiXq/Avk8W
+	VTKT58/JQVcTFC4yCPu3rJfVa4AaBtScORQdBGnoBhLXCj5QjF0pEH4k99iRLjHcnH/C/zvB4b0Jo
+	jDWd3HQK5Kb6rpxNLRQldlfejkHvKnsNCtQ+j3Ifkwixk8KP+9TyvkRk8Zdv3IFr1v6gg+tOwEb8D
+	f1Q5UBO5RVSnAv+4+JVUk3jpVYQ4qwI1R5eHzRPW+vVmLc3MKLK2yryRmHwCQWmL5hJB0PFV061hl
+	nYBoDQ3Hku7fKN1sS4/g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1p3IxY-003iz7-9g; Thu, 08 Dec 2022 15:37:16 +0000
-Received: from mail-am6eur05on2060c.outbound.protection.outlook.com ([2a01:111:f400:7e1b::60c] helo=EUR05-AM6-obe.outbound.protection.outlook.com)
+	id 1p3baf-0078kL-6G; Fri, 09 Dec 2022 11:30:53 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1p3IxH-003hxM-En; Thu, 08 Dec 2022 15:37:01 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Y9kphbdSsZ9b0dft95gPArwf4wtGQ3yQtg4ZSBu4GRPIZGSkv3eUZAgCK9MlqG3X07GLbeUL8rqytv1pN+xpmnfX0hlvEJCAbI6bMYb16ML5eqnOUIhIcMM6flh4N1XSxowsWfTOprJGmYa1O/OJcLLyQp2idEdIVz1IM2GIPrs0MkQfbJb/4H24U3b38jajlSDSkJBFpbfiN4BInwckfkPecB0wTsujii4I8nmv4et83pBQBz9cmypH+EiOOpMWj2IdEIR7VSGs2ko6fp8k7IRIXw99KPfwkFwsi3iB7QY8R1NolBgg9ox/6+R80EfYInqG7PnDZslvvxDRfCCl1Q==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=5I5xcRaF8L3+CpoQNYe4Us5Sbm9Pb+Sf5SDlAS2uY14=;
- b=hDB+iTJD/3F3lDncOB0s1Ke1BDv9Xf1fFzY2ZDrMpHQWTmH31jI2Ij/9UFnsS6aIvdJCPtPBe+uggOGs+FAOQnUEhgzqNrRKB+l5yG2K7Zsr2D4ZPsZGOA0wyxvMZ52spxJsKPYADFGRdReDBmmHAnXf+klV87lxB/XtGvRareADvS+Iy/VGwaloEExZA4Q+8d3pRXzuh0irNYWJyiwO4geS93kVXsfbcFCp4KseZ28Sqrn4R2RRc8WNLL5nNyvM3fB6xxhHGnMBcDVqJJVmmcrH9dD8WmlkBfU3XLGlDm5vstUz1BaxbilThaShYFX2goH2cpVIUaS6kONvPlQAGA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=seco.com; dmarc=pass action=none header.from=seco.com;
- dkim=pass header.d=seco.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=seco.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=5I5xcRaF8L3+CpoQNYe4Us5Sbm9Pb+Sf5SDlAS2uY14=;
- b=pfMvuv5hx16lG4s5p8KSw/6mv9X+OxTz7TrpAUVhQLdSZHEWRc3/cJrkCeM/jvJUmH12NfkjxeXU3CHIPiBbT4grazA0uEuPE2miPI4d/8m1ZTzuQ2xppPLaenvN7zF6nGDNdQ8NhcB3iwCma+peJ/7cGAW1IFioGygBUYrO9DFjpeZLftpVrztarHFasBCHE49//yZA5teoWHJe3sRzveorG0tjgL6CyZRZd74KUQSUxSY0u31ejWwmQeI1ImLOQSToPRNXnDn90qd8PrTqtaL7JbXF/YMc+I6s3JuUNW2p7CWGZCLjrds8mEPMFFbx6b79luUbry+Mu24I9CaKNw==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=seco.com;
-Received: from DB9PR03MB8847.eurprd03.prod.outlook.com (2603:10a6:10:3dd::13)
- by PR3PR03MB6665.eurprd03.prod.outlook.com (2603:10a6:102:7d::6) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5880.11; Thu, 8 Dec
- 2022 15:36:53 +0000
-Received: from DB9PR03MB8847.eurprd03.prod.outlook.com
- ([fe80::2b95:1fe4:5d8f:22fb]) by DB9PR03MB8847.eurprd03.prod.outlook.com
- ([fe80::2b95:1fe4:5d8f:22fb%7]) with mapi id 15.20.5880.014; Thu, 8 Dec 2022
- 15:36:52 +0000
-Message-ID: <8b42763d-5fc3-3853-c421-227494c0144a@seco.com>
-Date: Thu, 8 Dec 2022 10:36:45 -0500
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.4.0
-Subject: Re: [PATCH v8 4/9] phy: fsl: Add Lynx 10G SerDes driver
-Content-Language: en-US
-To: Stephen Boyd <sboyd@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
- Vinod Koul <vkoul@kernel.org>, linux-phy@lists.infradead.org
-Cc: Rob Herring <robh+dt@kernel.org>, Bagas Sanjaya <bagasdotme@gmail.com>,
- devicetree@vger.kernel.org,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- linuxppc-dev@lists.ozlabs.org, Ioana Ciornei <ioana.ciornei@nxp.com>,
- linux-arm-kernel@lists.infradead.org,
- Camelia Alexandra Groza <camelia.groza@nxp.com>,
- Madalin Bucur <madalin.bucur@nxp.com>, Jonathan Corbet <corbet@lwn.net>,
- Michael Turquette <mturquette@baylibre.com>, linux-clk@vger.kernel.org,
- linux-doc@vger.kernel.org
-References: <20221027191113.403712-1-sean.anderson@seco.com>
- <20221027191113.403712-5-sean.anderson@seco.com>
- <20221027230331.19C2FC433D6@smtp.kernel.org>
- <5f00ede6-10f5-c11c-ee21-54460c1f98b0@seco.com>
- <d13ff3b2-79f0-2a72-c9da-2c310c4e3bb8@seco.com>
- <20221101201020.B6180C433C1@smtp.kernel.org>
- <45463950-7a4f-758d-d6a1-b8fdf9bfd319@seco.com>
- <20221207021742.A3596C433C1@smtp.kernel.org>
-From: Sean Anderson <sean.anderson@seco.com>
-In-Reply-To: <20221207021742.A3596C433C1@smtp.kernel.org>
-X-ClientProxiedBy: BL1PR13CA0092.namprd13.prod.outlook.com
- (2603:10b6:208:2b9::7) To DB9PR03MB8847.eurprd03.prod.outlook.com
- (2603:10a6:10:3dd::13)
+	id 1p3baW-0078iM-7u
+	for linux-phy@lists.infradead.org; Fri, 09 Dec 2022 11:30:46 +0000
+Received: from ptz.office.stw.pengutronix.de ([2a0a:edc0:0:900:1d::77] helo=[IPv6:::1])
+	by metis.ext.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
+	(Exim 4.92)
+	(envelope-from <l.stach@pengutronix.de>)
+	id 1p3bZw-0004FK-Oh; Fri, 09 Dec 2022 12:30:09 +0100
+Message-ID: <cb1ad1aadb29f03c559a7ca15b9acd37dcd49ab7.camel@pengutronix.de>
+Subject: Re: [PATCH v5 01/10] drm: bridge: cadence: convert mailbox
+ functions to macro functions
+From: Lucas Stach <l.stach@pengutronix.de>
+To: Sandor Yu <Sandor.yu@nxp.com>, andrzej.hajda@intel.com, 
+ neil.armstrong@linaro.org, robert.foss@linaro.org, 
+ Laurent.pinchart@ideasonboard.com, jonas@kwiboo.se,
+ jernej.skrabec@gmail.com,  airlied@gmail.com, daniel@ffwll.ch,
+ robh+dt@kernel.org,  krzysztof.kozlowski+dt@linaro.org,
+ shawnguo@kernel.org, s.hauer@pengutronix.de,  festevam@gmail.com,
+ vkoul@kernel.org, dri-devel@lists.freedesktop.org, 
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
+Cc: oliver.brown@nxp.com, linux-imx@nxp.com, kernel@pengutronix.de
+Date: Fri, 09 Dec 2022 12:29:59 +0100
+In-Reply-To: <be4532b834109595b0fbf3562bf072caf2852a01.1669620155.git.Sandor.yu@nxp.com>
+References: <cover.1669620155.git.Sandor.yu@nxp.com>
+	 <be4532b834109595b0fbf3562bf072caf2852a01.1669620155.git.Sandor.yu@nxp.com>
+User-Agent: Evolution 3.40.4 (3.40.4-1.fc34) 
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: DB9PR03MB8847:EE_|PR3PR03MB6665:EE_
-X-MS-Office365-Filtering-Correlation-Id: d3af0bde-735a-497b-448f-08dad93206b1
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 	bS0eFpD/eJrArJkz1QJLEL5ll4OnC5NZ+7stbRNu63YEBQC9SdeSGVqCVeVWUY0DfSj/dA53QCy58xdiNYGI415v4SIogMwPxeuZ0r9sKLv+HA8Ixkt9Yj3P4ZXV0DJoGb1/WE/vaMX7QtNiv7DSLOEGrUzZKUNhm4MjtEw54rRQeast33zZfFRr/0FJlN2d290vD/aevFEVC+k/j8zxsaMC4AqaQJKsB3CvcwHqypvBA0D9bfzBikhq5oWsr/yhlwkkRVL4dKpJWizxVfXCPvyamxZaZPnAhpFj7q5hA57x5iLLLbPLjicgJdBxWX4SobhuwcwsAEc9i8VyRedXACKXvkIz4nKZuUKLZFyPaLDYAOOnDhzWyIDr+5JVlbtVJADXxKrHaKVLuZelAhvBdwRs3GfaiNHsD3FqheV0j9Bf4wscnP6OeB2JPEOmoTaLNx6/yrYqQb2G+o7BgZVax+6J7kwZ9P6ZK/7EMgPf1Mw2pbOyWuS3qHT1DJiyat1gunV4m6vo5EjXQRW06W4cIHrY9TaAbpEJbBR9pL17P9yc7ANEoKJG+WjI4E/lUzoR25WzfCc3JVCuJ1OpaAqpSzrsL+4OCEpHVWvAVeYIIrLZJuGMzfNWf1hOr9r7WPnGp901IzUieazCM+thXb1pGUkrpN9XPa+gpM560Qv9F57fjPwLL7tzGfajuvx9OV9WpfMXMnsr+SLpkJxPwzBBmoUD61jrRUFtYDNYK5QjiEdBrwZVbd0iyw3sUrl/kabi5+WCODhSofpVMi3eRxzFfg==
-X-Forefront-Antispam-Report: 	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DB9PR03MB8847.eurprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230022)(396003)(39850400004)(346002)(366004)(376002)(136003)(451199015)(8936002)(83380400001)(31696002)(38100700002)(38350700002)(44832011)(7416002)(86362001)(5660300002)(4326008)(2906002)(8676002)(41300700001)(6512007)(53546011)(52116002)(26005)(6666004)(186003)(6506007)(316002)(110136005)(478600001)(6486002)(54906003)(66476007)(2616005)(66946007)(66556008)(31686004)(36756003)(43740500002)(45980500001);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: 	=?utf-8?B?SXYrZHhJTnltMTlnRnprbm8yNjRsMnh0dGlWa2JOK21WUWVSNldPRlB5V1VZ?=
- =?utf-8?B?c3Z6ajdzZkZBRDdpZkYvSjhaNkpLQVRiVHgyTE9KSnRyRmZxeHRyWUtxY0ox?=
- =?utf-8?B?dFdEcjI0T0JCSHRqTFo2aGtTeG5XWWZSamJ1SWJOMWJKUllWMHZpRHpCeFBI?=
- =?utf-8?B?YzEwNTVNUGNlMUQrU3U0bmZ5ZW9wa0pqS3FlNWdhR1BzSEVPTEE1MHBWSGRw?=
- =?utf-8?B?N3p2U3dHcENXMFdId1grOXZhbGp3dStBREoyYmlSVkMzdG45OWxiMmJHV2ZH?=
- =?utf-8?B?T1AySnllNDJDNGkxVitxZmE2Y2MvMlVwdGExLzZEaG1mejYyNGl2TGk3bVFL?=
- =?utf-8?B?RGRialRpNGNMcXJCNDg4SDMwQmhvWVJJMzBNazNReE12VWhxNUQraXRFZzNF?=
- =?utf-8?B?SE04MWQ3NldOQW1wbDBDVStVT2NoRFZ0RlAzU3dZNk5pd0Q0enk3bStEOG54?=
- =?utf-8?B?bjM1bGZNMFYwcjROQ1RVcGhPOXZ3N0JzUGFEbW94OWkyYUgyVEFveGQ3cHhT?=
- =?utf-8?B?dzdwdE9RbGJRSUZQU0tOdWgxblZYSzhVeUk2LzBudWthU3VuRHhPVVNNMkEy?=
- =?utf-8?B?Z2h3Q28rYjhmZHNTU3ArVnhwVHlNQmpMSTk2d2hZVjBhTVcwU0FRNmkxNU5n?=
- =?utf-8?B?bDZ0ZG1pL1pSdmNHcGU1SC9MM0tBc3IvMStGd08wWjJ4OGczYjRqajg4TkJO?=
- =?utf-8?B?RTR3WWtCUzNWMVhGbjZTZ0JhZ3hJOXJaWTkrY0ZiN0szWmRYUXh1OXFPVlhX?=
- =?utf-8?B?ZlBiaU1vVTlTdnkwd2lPUVAwNklaUkFtZzFOYTlpM0lTeFNQNVBKWDhTcEgz?=
- =?utf-8?B?QUYwN1ZLcml0ZnJNOEVLWm1jUGVUcGVpdmh0cjFpcG9aNTlHc2pPdlN0WEhG?=
- =?utf-8?B?NDVucGJrN3hmOUU2RGQzK2RzajVadCt5Rm0yTGgrQW5rVE5GZGFqWmZrZVRN?=
- =?utf-8?B?aGZjU3kvYTRaMVBENkV4NXFtZitteXRjYllBZW04ZDZmYmhmdGVwRkJDSWor?=
- =?utf-8?B?VTdKalQ3TUJGaHZsRzdIK251Q1RJRTFxV24vblJlTEY0WVY2Rk5GNCtGRG1o?=
- =?utf-8?B?Z3dpSW9maEVUdzRyVldSd0ZNYlFtbE9lZExaL2JoTWJRdnRaUi9WS0dSYTRo?=
- =?utf-8?B?cU1oRnE1OFJiQWZrSlIrMGFyNjUvU3ZENGhRQ1VKOFNaOXczY3JlcGhpUm9r?=
- =?utf-8?B?aStWYkdKOWEwM1FSMnpTMzRCNHo0NUpqYjl6WWIxK0JGWnBtS3oyREMxelBE?=
- =?utf-8?B?b1Y3ZXg5ci9PSU9yNXJ3SXlmbkJRLzlSOEVLRFgzM0xyRUNhUWx2eHByVGcy?=
- =?utf-8?B?KzZtOTZNYVpiVVJhR0pFSi9XU1RhSEc1MjE2UlNhdlJtbmY3dHNkM3hOV1l5?=
- =?utf-8?B?S1hmQ3Y0UmZmR3pWT2tzSVh3V0MrMzB2cHhFc1hFSzR1Y3krMkNvUEdYZEN0?=
- =?utf-8?B?R2FRWTc5NDVsaVR6MUtDSEpwa0lWTkxIZzFWTUtZSWJ3ZXVxZWxCZ3FvZE9E?=
- =?utf-8?B?djZXMzhKbkdHT1E4alFQZkJUbVJ6WGpXL2d6ZUppWlAwWnFoK3JLeDJvdWVn?=
- =?utf-8?B?RlJham02RUFPQmgreHMyb05tVkdUN3JvSTAxYkpHQUR0cVZ4R0tHZmNOb2Zm?=
- =?utf-8?B?aXprcnFGK3RCbVBJQXIvTHpuUi9xbFcrcjd2clYvSm5PTk5weStVbjllTFBG?=
- =?utf-8?B?a2J4Qk5BTDUwK1ArQkV5Rjk5NFpJNGREV00zREt4cmhXRkZsVm5SNTlFS2sz?=
- =?utf-8?B?OWNzQ25PVXgraThOa1pGRC8yaUZ5NjVtOFd1ZnFSdGkwVnVKN3JMcmRaMm1M?=
- =?utf-8?B?dkN3VEpaOWQxSytEM0lTTS84UWFlSkMxS0dpeW1MYjN5bzMvbXFmR1grTlFJ?=
- =?utf-8?B?cXptNDlkcE4weFN4VXhRNldZQm9zaDFpeFIzajdCM25aSDgyOFdDUUpRdUlT?=
- =?utf-8?B?MHNaZXlBcjVkMFl4c0hwc0ZSVlJ3ZlRiaDFqeTZ0UGluK3lqVkUxZjJNWVJT?=
- =?utf-8?B?ZDk1ZlkvUHNtWXVhUkp6QXFCV1RPeWc2WjZmT0NCYXdGTlV1Mm84V3BoNG5j?=
- =?utf-8?B?Zkx5bVNnMkpaTHduK0tTaFA1eURsdElKWVZuS2JsN2xBeEZvVlA5U0hQOUZ1?=
- =?utf-8?B?TkM5ZXI4R0FDOHlPU3VuMVBGUktqZThpbEhnMUt6U1A4ZDdvV0ZTYkVzNS9J?=
- =?utf-8?B?Tnc9PQ==?=
-X-OriginatorOrg: seco.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: d3af0bde-735a-497b-448f-08dad93206b1
-X-MS-Exchange-CrossTenant-AuthSource: DB9PR03MB8847.eurprd03.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 08 Dec 2022 15:36:52.6309
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: bebe97c3-6438-442e-ade3-ff17aa50e733
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: Ao1fYTFHzGMMCBmau9NPohj3LEpseNLU3oFwa4CPl/UC6tDiVAHZwN9FdzqEy6xabul4INN15zQAU7C869jbxQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PR3PR03MB6665
+X-SA-Exim-Connect-IP: 2a0a:edc0:0:900:1d::77
+X-SA-Exim-Mail-From: l.stach@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de); SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221208_073700_074058_FED0B3E3 
-X-CRM114-Status: GOOD (  12.48  )
+X-CRM114-CacheID: sfid-20221209_033044_623304_0CAB606D 
+X-CRM114-Status: GOOD (  36.52  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -157,32 +73,528 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 12/6/22 21:17, Stephen Boyd wrote:
-> Quoting Sean Anderson (2022-11-01 16:27:21)
->> On 11/1/22 16:10, Stephen Boyd wrote:
->> >> 
->> >> Oh, I remember why I did this. I need the reference clock for clk_hw_round_rate,
->> >> which is AFAICT the only correct way to implement round_rate.
->> >> 
->> > 
->> > Is the reference clk the parent of the clk implementing
->> > clk_ops::round_rate()?
->> 
->> Yes. We may be able to produce a given output with multiple reference
->> rates. However, the clock API provides no mechanism to say "Don't ask
->> for the parent clock to be rate X, you just tried it and the parent
->> clock can't support it." So instead, we loop over the possible reference
->> rates and pick the first one which the parent says it can round to.
->> 
+Hi Sandor,
+
+Am Montag, dem 28.11.2022 um 15:36 +0800 schrieb Sandor Yu:
+> Mailbox access functions could be share to other mhdp driver and
+> HDP-TX HDMI/DP PHY drivers, move those functions to head file
+> include/drm/bridge/cdns-mhdp-mailbox.h and convert them to
+> macro functions.
 > 
-> Sorry, I'm lost. Why can't you loop over possible reference rates in
-> determine_rate/round_rate clk op here?
 
-This is what I do currently, but you need to have the parent clock to do
-so. With your suggested method, we never actually get a struct clk(_hw)
-which we can query for rate support.
+This does not look right. If those functions need to be called from
+other units and implemented in the header, they should simply be static
+inline functions rather than macros. Those macros obfuscate the code a
+lot.
 
---Sean
+However, I don't believe those should be called by other units
+directly. From what I can see this is mostly used by the PHY drivers,
+to interact with the mailbox and read/write PHY registers. However,
+there is no locking between the bridge and the core driver in any form,
+so they could corrupt the mailbox state. The PHY drivers have mailbox
+mutexes, but as far as I can see they aren't used and even if they were
+they would not guard against concurrent access to the mailbox between
+the bridge and the PHY driver.
+
+I think the right thing to do here would be to have a regmap
+implementation in the bridge driver, which uses the mailbox functions
+to implement the register access. Then this regmap could be passed down
+from the bridge driver to the PHY, which should simply be a child node
+of the bridge in DT.
+
+Regards,
+Lucas
+
+> Signed-off-by: Sandor Yu <Sandor.yu@nxp.com>
+> ---
+>  .../drm/bridge/cadence/cdns-mhdp8546-core.c   | 197 +-------------
+>  .../drm/bridge/cadence/cdns-mhdp8546-core.h   |   1 -
+>  include/drm/bridge/cdns-mhdp-mailbox.h        | 240 ++++++++++++++++++
+>  3 files changed, 242 insertions(+), 196 deletions(-)
+>  create mode 100644 include/drm/bridge/cdns-mhdp-mailbox.h
+> 
+> diff --git a/drivers/gpu/drm/bridge/cadence/cdns-mhdp8546-core.c b/drivers/gpu/drm/bridge/cadence/cdns-mhdp8546-core.c
+> index 31442a922502..b77b0ddcc9b3 100644
+> --- a/drivers/gpu/drm/bridge/cadence/cdns-mhdp8546-core.c
+> +++ b/drivers/gpu/drm/bridge/cadence/cdns-mhdp8546-core.c
+> @@ -36,6 +36,7 @@
+>  #include <linux/slab.h>
+>  #include <linux/wait.h>
+>  
+> +#include <drm/bridge/cdns-mhdp-mailbox.h>
+>  #include <drm/display/drm_dp_helper.h>
+>  #include <drm/display/drm_hdcp_helper.h>
+>  #include <drm/drm_atomic.h>
+> @@ -55,200 +56,6 @@
+>  #include "cdns-mhdp8546-hdcp.h"
+>  #include "cdns-mhdp8546-j721e.h"
+>  
+> -static int cdns_mhdp_mailbox_read(struct cdns_mhdp_device *mhdp)
+> -{
+> -	int ret, empty;
+> -
+> -	WARN_ON(!mutex_is_locked(&mhdp->mbox_mutex));
+> -
+> -	ret = readx_poll_timeout(readl, mhdp->regs + CDNS_MAILBOX_EMPTY,
+> -				 empty, !empty, MAILBOX_RETRY_US,
+> -				 MAILBOX_TIMEOUT_US);
+> -	if (ret < 0)
+> -		return ret;
+> -
+> -	return readl(mhdp->regs + CDNS_MAILBOX_RX_DATA) & 0xff;
+> -}
+> -
+> -static int cdns_mhdp_mailbox_write(struct cdns_mhdp_device *mhdp, u8 val)
+> -{
+> -	int ret, full;
+> -
+> -	WARN_ON(!mutex_is_locked(&mhdp->mbox_mutex));
+> -
+> -	ret = readx_poll_timeout(readl, mhdp->regs + CDNS_MAILBOX_FULL,
+> -				 full, !full, MAILBOX_RETRY_US,
+> -				 MAILBOX_TIMEOUT_US);
+> -	if (ret < 0)
+> -		return ret;
+> -
+> -	writel(val, mhdp->regs + CDNS_MAILBOX_TX_DATA);
+> -
+> -	return 0;
+> -}
+> -
+> -static int cdns_mhdp_mailbox_recv_header(struct cdns_mhdp_device *mhdp,
+> -					 u8 module_id, u8 opcode,
+> -					 u16 req_size)
+> -{
+> -	u32 mbox_size, i;
+> -	u8 header[4];
+> -	int ret;
+> -
+> -	/* read the header of the message */
+> -	for (i = 0; i < sizeof(header); i++) {
+> -		ret = cdns_mhdp_mailbox_read(mhdp);
+> -		if (ret < 0)
+> -			return ret;
+> -
+> -		header[i] = ret;
+> -	}
+> -
+> -	mbox_size = get_unaligned_be16(header + 2);
+> -
+> -	if (opcode != header[0] || module_id != header[1] ||
+> -	    req_size != mbox_size) {
+> -		/*
+> -		 * If the message in mailbox is not what we want, we need to
+> -		 * clear the mailbox by reading its contents.
+> -		 */
+> -		for (i = 0; i < mbox_size; i++)
+> -			if (cdns_mhdp_mailbox_read(mhdp) < 0)
+> -				break;
+> -
+> -		return -EINVAL;
+> -	}
+> -
+> -	return 0;
+> -}
+> -
+> -static int cdns_mhdp_mailbox_recv_data(struct cdns_mhdp_device *mhdp,
+> -				       u8 *buff, u16 buff_size)
+> -{
+> -	u32 i;
+> -	int ret;
+> -
+> -	for (i = 0; i < buff_size; i++) {
+> -		ret = cdns_mhdp_mailbox_read(mhdp);
+> -		if (ret < 0)
+> -			return ret;
+> -
+> -		buff[i] = ret;
+> -	}
+> -
+> -	return 0;
+> -}
+> -
+> -static int cdns_mhdp_mailbox_send(struct cdns_mhdp_device *mhdp, u8 module_id,
+> -				  u8 opcode, u16 size, u8 *message)
+> -{
+> -	u8 header[4];
+> -	int ret, i;
+> -
+> -	header[0] = opcode;
+> -	header[1] = module_id;
+> -	put_unaligned_be16(size, header + 2);
+> -
+> -	for (i = 0; i < sizeof(header); i++) {
+> -		ret = cdns_mhdp_mailbox_write(mhdp, header[i]);
+> -		if (ret)
+> -			return ret;
+> -	}
+> -
+> -	for (i = 0; i < size; i++) {
+> -		ret = cdns_mhdp_mailbox_write(mhdp, message[i]);
+> -		if (ret)
+> -			return ret;
+> -	}
+> -
+> -	return 0;
+> -}
+> -
+> -static
+> -int cdns_mhdp_reg_read(struct cdns_mhdp_device *mhdp, u32 addr, u32 *value)
+> -{
+> -	u8 msg[4], resp[8];
+> -	int ret;
+> -
+> -	put_unaligned_be32(addr, msg);
+> -
+> -	mutex_lock(&mhdp->mbox_mutex);
+> -
+> -	ret = cdns_mhdp_mailbox_send(mhdp, MB_MODULE_ID_GENERAL,
+> -				     GENERAL_REGISTER_READ,
+> -				     sizeof(msg), msg);
+> -	if (ret)
+> -		goto out;
+> -
+> -	ret = cdns_mhdp_mailbox_recv_header(mhdp, MB_MODULE_ID_GENERAL,
+> -					    GENERAL_REGISTER_READ,
+> -					    sizeof(resp));
+> -	if (ret)
+> -		goto out;
+> -
+> -	ret = cdns_mhdp_mailbox_recv_data(mhdp, resp, sizeof(resp));
+> -	if (ret)
+> -		goto out;
+> -
+> -	/* Returned address value should be the same as requested */
+> -	if (memcmp(msg, resp, sizeof(msg))) {
+> -		ret = -EINVAL;
+> -		goto out;
+> -	}
+> -
+> -	*value = get_unaligned_be32(resp + 4);
+> -
+> -out:
+> -	mutex_unlock(&mhdp->mbox_mutex);
+> -	if (ret) {
+> -		dev_err(mhdp->dev, "Failed to read register\n");
+> -		*value = 0;
+> -	}
+> -
+> -	return ret;
+> -}
+> -
+> -static
+> -int cdns_mhdp_reg_write(struct cdns_mhdp_device *mhdp, u16 addr, u32 val)
+> -{
+> -	u8 msg[6];
+> -	int ret;
+> -
+> -	put_unaligned_be16(addr, msg);
+> -	put_unaligned_be32(val, msg + 2);
+> -
+> -	mutex_lock(&mhdp->mbox_mutex);
+> -
+> -	ret = cdns_mhdp_mailbox_send(mhdp, MB_MODULE_ID_DP_TX,
+> -				     DPTX_WRITE_REGISTER, sizeof(msg), msg);
+> -
+> -	mutex_unlock(&mhdp->mbox_mutex);
+> -
+> -	return ret;
+> -}
+> -
+> -static
+> -int cdns_mhdp_reg_write_bit(struct cdns_mhdp_device *mhdp, u16 addr,
+> -			    u8 start_bit, u8 bits_no, u32 val)
+> -{
+> -	u8 field[8];
+> -	int ret;
+> -
+> -	put_unaligned_be16(addr, field);
+> -	field[2] = start_bit;
+> -	field[3] = bits_no;
+> -	put_unaligned_be32(val, field + 4);
+> -
+> -	mutex_lock(&mhdp->mbox_mutex);
+> -
+> -	ret = cdns_mhdp_mailbox_send(mhdp, MB_MODULE_ID_DP_TX,
+> -				     DPTX_WRITE_FIELD, sizeof(field), field);
+> -
+> -	mutex_unlock(&mhdp->mbox_mutex);
+> -
+> -	return ret;
+> -}
+> -
+>  static
+>  int cdns_mhdp_dpcd_read(struct cdns_mhdp_device *mhdp,
+>  			u32 addr, u8 *data, u16 len)
+> @@ -2058,7 +1865,7 @@ static void cdns_mhdp_atomic_disable(struct drm_bridge *bridge,
+>  				     struct drm_bridge_state *bridge_state)
+>  {
+>  	struct cdns_mhdp_device *mhdp = bridge_to_mhdp(bridge);
+> -	u32 resp;
+> +	u32 resp = 0;
+>  
+>  	dev_dbg(mhdp->dev, "%s\n", __func__);
+>  
+> diff --git a/drivers/gpu/drm/bridge/cadence/cdns-mhdp8546-core.h b/drivers/gpu/drm/bridge/cadence/cdns-mhdp8546-core.h
+> index bedddd510d17..10c878bf0e63 100644
+> --- a/drivers/gpu/drm/bridge/cadence/cdns-mhdp8546-core.h
+> +++ b/drivers/gpu/drm/bridge/cadence/cdns-mhdp8546-core.h
+> @@ -212,7 +212,6 @@ struct phy;
+>  #define MB_MODULE_ID_HDCP_TX			0x07
+>  #define MB_MODULE_ID_HDCP_RX			0x08
+>  #define MB_MODULE_ID_HDCP_GENERAL		0x09
+> -#define MB_MODULE_ID_GENERAL			0x0a
+>  
+>  /* firmware and opcodes */
+>  #define FW_NAME					"cadence/mhdp8546.bin"
+> diff --git a/include/drm/bridge/cdns-mhdp-mailbox.h b/include/drm/bridge/cdns-mhdp-mailbox.h
+> new file mode 100644
+> index 000000000000..0249322a74b0
+> --- /dev/null
+> +++ b/include/drm/bridge/cdns-mhdp-mailbox.h
+> @@ -0,0 +1,240 @@
+> +/* SPDX-License-Identifier: GPL-2.0 */
+> +/*
+> + * Cadence MHDP Firmware Access API function by Malibox.
+> + *
+> + * Copyright (C) 2022 NXP Semiconductor, Inc.
+> + *
+> + */
+> +#ifndef CDNS_MHDP_MAILBOX_H
+> +#define CDNS_MHDP_MAILBOX_H
+> +
+> +#include <asm/unaligned.h>
+> +#include <linux/iopoll.h>
+> +
+> +/* mailbox regs offset */
+> +#define CDNS_MAILBOX_FULL			0x00008
+> +#define CDNS_MAILBOX_EMPTY			0x0000c
+> +#define CDNS_MAILBOX_TX_DATA		0x00010
+> +#define CDNS_MAILBOX_RX_DATA		0x00014
+> +
+> +#define MAILBOX_RETRY_US			1000
+> +#define MAILBOX_TIMEOUT_US			2000000
+> +
+> +/* Module ID Code */
+> +#define MB_MODULE_ID_GENERAL		0x0A
+> +#define MB_MODULE_ID_DP_TX			0x01
+> +
+> +/* General Commands */
+> +#define GENERAL_REGISTER_WRITE		0x05
+> +#define GENERAL_REGISTER_READ		0x07
+> +
+> +/* DP TX Command */
+> +#define DPTX_WRITE_FIELD			0x08
+> +
+> +/* MHDP Firmware access functions by Mailbox */
+> +#define cdns_mhdp_mailbox_read(__mhdp) \
+> +({ \
+> +	int ret, empty, val; \
+> +\
+> +	WARN_ON(!mutex_is_locked(&(__mhdp)->mbox_mutex)); \
+> +\
+> +	do {  \
+> +		ret = readx_poll_timeout(readl, (__mhdp)->regs + CDNS_MAILBOX_EMPTY,  \
+> +					 empty, !empty, MAILBOX_RETRY_US,  \
+> +					 MAILBOX_TIMEOUT_US);  \
+> +		if (ret < 0)  \
+> +			break;  \
+> +\
+> +		val = readl((__mhdp)->regs + CDNS_MAILBOX_RX_DATA) & 0xff; \
+> +	} while (0);  \
+> +\
+> +	(ret < 0) ? ret : val;  \
+> +})
+> +
+> +#define cdns_mhdp_mailbox_write(__mhdp, __val) \
+> +({ \
+> +	int ret, full;  \
+> +\
+> +	WARN_ON(!mutex_is_locked(&(__mhdp)->mbox_mutex)); \
+> +\
+> +	do {  \
+> +		ret = readx_poll_timeout(readl, (__mhdp)->regs + CDNS_MAILBOX_FULL,  \
+> +					 full, !full, MAILBOX_RETRY_US,  \
+> +					 MAILBOX_TIMEOUT_US);  \
+> +		if (ret < 0)  \
+> +			break;  \
+> +\
+> +		writel((__val), (__mhdp)->regs + CDNS_MAILBOX_TX_DATA); \
+> +	} while (0);  \
+> +\
+> +	ret; \
+> +})
+> +
+> +#define  cdns_mhdp_mailbox_recv_header(__mhdp, __module_id, __opcode, __req_size) \
+> +({  \
+> +	u32 mbox_size, i;  \
+> +	u8 header[4];  \
+> +	int ret;  \
+> +\
+> +	do {  \
+> +		/* read the header of the message */ \
+> +		for (i = 0; i < sizeof(header); i++) {  \
+> +			ret = cdns_mhdp_mailbox_read(__mhdp);  \
+> +			if (ret < 0)  \
+> +				break;  \
+> +\
+> +			header[i] = ret;  \
+> +		}  \
+> +\
+> +		mbox_size = get_unaligned_be16(header + 2);  \
+> +\
+> +		if ((__opcode) != header[0] || (__module_id) != header[1] ||  \
+> +		    (__req_size) != mbox_size) {  \
+> +			/* If the message in mailbox is not what we want, we need to
+> +			 * clear the mailbox by reading its contents. */  \
+> +			for (i = 0; i < mbox_size; i++)   \
+> +				if (cdns_mhdp_mailbox_read(__mhdp) < 0)  \
+> +					break;  \
+> +\
+> +			ret = -EINVAL;  \
+> +		}  \
+> +\
+> +		ret = 0; \
+> +\
+> +	} while (0);  \
+> +\
+> +	ret;  \
+> +})
+> +
+> +#define cdns_mhdp_mailbox_recv_data(mhdp, buff, buff_size)  \
+> +({  \
+> +	u32 i;  \
+> +	int ret;  \
+> +\
+> +	do {  \
+> +		for (i = 0; i < buff_size; i++) {  \
+> +			ret = cdns_mhdp_mailbox_read(mhdp);  \
+> +			if (ret < 0)  \
+> +				break;  \
+> +\
+> +			((u8 *)buff)[i] = ret;  \
+> +		}  \
+> +\
+> +		ret = 0;  \
+> +\
+> +	} while (0);  \
+> +\
+> +	ret; \
+> +})
+> +
+> +#define cdns_mhdp_mailbox_send(mhdp, module_id, opcode, size, message)  \
+> +({  \
+> +	u8 header[4];  \
+> +	int ret, i;  \
+> +\
+> +	header[0] = opcode;  \
+> +	header[1] = module_id;  \
+> +	put_unaligned_be16(size, header + 2);  \
+> +\
+> +	do {  \
+> +		for (i = 0; i < sizeof(header); i++) {  \
+> +			ret = cdns_mhdp_mailbox_write(mhdp, header[i]);  \
+> +			if (ret < 0)  \
+> +				break;  \
+> +		}  \
+> +\
+> +		for (i = 0; i < size; i++) {  \
+> +			ret = cdns_mhdp_mailbox_write(mhdp, ((u8 *)message)[i]);  \
+> +			if (ret < 0)  \
+> +				break;;  \
+> +		}  \
+> +		ret = 0;  \
+> +	} while (0);  \
+> +\
+> +	ret;  \
+> +})
+> +
+> +#define cdns_mhdp_reg_read(mhdp, addr, value)  \
+> +({  \
+> +	u8 msg[4], resp[8];  \
+> +	int ret;  \
+> +\
+> +	put_unaligned_be32(addr, msg);  \
+> +\
+> +	mutex_lock(&mhdp->mbox_mutex);  \
+> +\
+> +	do {  \
+> +		ret = cdns_mhdp_mailbox_send(mhdp, MB_MODULE_ID_GENERAL,  \
+> +					     GENERAL_REGISTER_READ,  \
+> +					     sizeof(msg), msg);  \
+> +		if (ret < 0)  \
+> +			break;  \
+> +\
+> +		ret = cdns_mhdp_mailbox_recv_header(mhdp, MB_MODULE_ID_GENERAL,  \
+> +						    GENERAL_REGISTER_READ,  \
+> +						    sizeof(resp));  \
+> +		if (ret < 0)  \
+> +			break;  \
+> +\
+> +		ret = cdns_mhdp_mailbox_recv_data(mhdp, resp, sizeof(resp));  \
+> +		if (ret < 0)  \
+> +			break;  \
+> +\
+> +		/* Returned address value should be the same as requested */  \
+> +		if (memcmp(msg, resp, sizeof(msg))) {  \
+> +			ret = -EINVAL;  \
+> +			break;  \
+> +		}  \
+> +\
+> +		*((u32 *)value) = get_unaligned_be32(resp + 4);  \
+> +			ret = 0;  \
+> +	} while (0);  \
+> +\
+> +	mutex_unlock(&mhdp->mbox_mutex);  \
+> +	if (ret < 0) {  \
+> +		dev_err(mhdp->dev, "Failed to read register\n");  \
+> +		*((u32 *)value) = 0;  \
+> +	}  \
+> +\
+> +	ret;  \
+> +})
+> +
+> +#define cdns_mhdp_reg_write(mhdp, addr, val)  \
+> +({  \
+> +	u8 msg[8];  \
+> +	int ret;  \
+> +\
+> +	put_unaligned_be32(addr, msg);  \
+> +	put_unaligned_be32(val, msg + 4);  \
+> +\
+> +	mutex_lock(&mhdp->mbox_mutex);  \
+> +\
+> +	ret = cdns_mhdp_mailbox_send(mhdp, MB_MODULE_ID_GENERAL,  \
+> +				      GENERAL_REGISTER_WRITE, sizeof(msg), msg);  \
+> +\
+> +	mutex_unlock(&mhdp->mbox_mutex);  \
+> +\
+> +	ret;  \
+> +})
+> +
+> +#define cdns_mhdp_reg_write_bit(mhdp, addr, start_bit, bits_no, val) \
+> +({  \
+> +	u8 field[8];  \
+> +	int ret;  \
+> +\
+> +	put_unaligned_be16(addr, field);  \
+> +	field[2] = start_bit;  \
+> +	field[3] = bits_no;  \
+> +	put_unaligned_be32(val, field + 4);  \
+> +\
+> +	mutex_lock(&mhdp->mbox_mutex);  \
+> +\
+> +	ret = cdns_mhdp_mailbox_send(mhdp, MB_MODULE_ID_DP_TX, \
+> +				     DPTX_WRITE_FIELD, sizeof(field), field);  \
+> +\
+> +	mutex_unlock(&mhdp->mbox_mutex);  \
+> +\
+> +	ret; \
+> +})
+> +
+> +#endif
+
+
 
 -- 
 linux-phy mailing list
