@@ -4,62 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B3BEBC3DA6E
-	for <linux-phy@archiver.kernel.org>; Fri, 16 Dec 2022 23:41:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 09A90C4167B
+	for <linux-phy@archiver.kernel.org>; Fri, 16 Dec 2022 23:41:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=q1Qu+DP5GLtLQf3Vw7HFsduwDXejuPLoYC0c1ImuMdU=; b=zuOozjT0+zU7xl
-	3m4Lr9mQtYKV53Ayadf1o7FCHm6prUDT+pmmbdr6FwIBuDk4GPmk1biCIXyUsgzG2K2taAH+jsD+Z
-	XAtvytPIfJgExzv4GlaWWeIXV6q+ub5NcWjpRfAT/G8FlTf4RG/OCrxJxJVU1TLdxcpkMPkGEaCnO
-	CAzyunFX6bre3+5Rq1M+eeDzz3hMAiDgrG3cQQP+SzrOiEtGc8aNGopr51AHiL96/2P+AeVQJbDKq
-	VeHmiCwNncV2sSxnn5dljw2K7cbJ5qLUJJ3dqtbXVhzE8E/aNz/w/uUlODMIZPF0PTM5/+Vtr1zAA
-	T6m6B619X3EzP6cAthDw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=YI0Uw3bZr15vamjw1eEe759fFaDiJsxH42PUiFPA20I=; b=3gfEyaYAHTuVJa
+	8Ck+cv+wAN/OsfQFC8QAi6qxg3nNoiRfNJj0nEyEpD9ed8Z5mZgPkq1jOcNOWjdu0VGCTyr9lK0IA
+	nT1S8fYWwUyKCHkDcpQyOlOWjWdrL2etedQ8bvU1ClmAQtcHT/QgzHMDew1d71e6Mqg2aVTkLhBBI
+	DcQ9Yq3VrKG4ADE+6aW3b7tiSnre4K7co9eMAiNitnCKpj74A2+XeXaxZ/mY0FEn3vyWOs1sdf78r
+	+qNfiTk2wqPQ20DmCuuWrJYaiiTUPolCH8SzZ2+Ala3hwSJQ1wuXV1IDxwWUisYHMOIEzSGRVz/0U
+	y+gvh4xnh+tk0gJsTT7w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1p6KKJ-002jG4-Iq; Fri, 16 Dec 2022 23:41:15 +0000
-Received: from mail-lf1-x12c.google.com ([2a00:1450:4864:20::12c])
+	id 1p6KKK-002jGV-9f; Fri, 16 Dec 2022 23:41:16 +0000
+Received: from mail-lf1-x136.google.com ([2a00:1450:4864:20::136])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1p6KJd-002ivk-NP
-	for linux-phy@lists.infradead.org; Fri, 16 Dec 2022 23:40:35 +0000
-Received: by mail-lf1-x12c.google.com with SMTP id bf43so5795105lfb.6
+	id 1p6KJd-002ivU-Ix
+	for linux-phy@lists.infradead.org; Fri, 16 Dec 2022 23:40:37 +0000
+Received: by mail-lf1-x136.google.com with SMTP id q6so5760463lfm.10
         for <linux-phy@lists.infradead.org>; Fri, 16 Dec 2022 15:40:30 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=7cZwQ38RrZGBM4qHYSFGd7K3TwyC7n/w0FHJkPUy2UM=;
-        b=mO6GTEu8x/YM6wnvapt5u40IbV3efRsxnbpPo9jpp2d/qIdvVJ/I+NSdS4K5e09bbc
-         bLPi/pf8fMQR4Mgz/LzlNEdN7+aVGsQempHQm9YJaTRyV2SbT2CX8ltb2jRgLwltuLti
-         oMjrXTk/B8qk2KawhYNGWqEZ+k6z7IU35rNIUMtN6uBE9AoJiXmvxXNVWW7rxo4eV8Lm
-         9VW88mGVFkA/n5GEFy0P7ishOxc+akf1xQLAmxJ3n4fBcu9EIwBm6ZWbVuEXPh1vhq5v
-         0Po7UAgMl4y0stvdPm4FCgytDr6VzlS6VwhH17ZWa8ai1hjMcaDkXqSRGF4NAYCLjPzJ
-         dxuQ==
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=Eot6Ch9ktr7c1NPzEakSz2KfZ2lWHPXfKY4tvkPLu3o=;
+        b=J9+eGa40Eo6lbkO1rPjMNhpDL/MN8HHT9atYShSM7fXGdez37iIQCpmkgX4QJxWpR+
+         MMJECNAhX1S3dxnE2jIk4raaTsmc+xAxxf27bWjhz/iikt+v665xV6rc2x5AvWwi8LDv
+         fhBFaKb8SlwvBW7wkZ6Yos33PDVAygfoXFHbOqGhIzfV9cy0pFUSZT3heWKRrH2UNHCZ
+         Ab84TdhDmJGDVfNDRrrk8dIdi7kwE2LfoQUdR5S+WyHFTzfpeR/jGa084RQ/fcCD8jLl
+         iCdy3zcadtD45OtXujOSsRNWI5nbaGrryu/wSBaNBXm4aM2BRV83Pi1kd14YThYEsqIi
+         D4gw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=7cZwQ38RrZGBM4qHYSFGd7K3TwyC7n/w0FHJkPUy2UM=;
-        b=H2fAZyOfvjugO4J/k9p+xvVOeJwXH1hQxZO85jsdBqOrIz9JkflDIhnaDeSLjwqea/
-         jBhGNCqv61OgSfO65i9lJ/q1uwn6N+UK4CwN4Yxxqd85UnrB+byBumAUTLFFBO1bx4+Z
-         i2ozNR2cc6d8LHAeIUvN9YUG3kDbU++7tu/DN1Ntz74iv7cVVie8DUk1Z1DjLVPQOZVc
-         0BIFYPIhHBFoeDfYnGIeuvS3iwPkCoV8klkGD9ZUZ/VwwoVxnXuaAy1cx5wOljNn88G2
-         98gzxoyFcADMfhReijtf5U6gxIgnxHYt7A40cbXiXhL+G1Xk+3lo+F9bCoSGOuYrnhNc
-         kfuQ==
-X-Gm-Message-State: ANoB5pncMdXijSygeg0VGBo4XtpFacMdD0eQ6Nu/Sah36MyAgp6QopLp
-	np+My0fdMHD2LJQMwRTRnXM8MA==
-X-Google-Smtp-Source: AA0mqf6LBdEGcgyFkutG3rmz4Csb86TyQrexMg3SEuzL6EnIva7pNhA9wUTmnPTfxzPeybD5RMF5Ig==
-X-Received: by 2002:ac2:5a43:0:b0:4b5:90c5:281c with SMTP id r3-20020ac25a43000000b004b590c5281cmr9295436lfn.19.1671234029557;
-        Fri, 16 Dec 2022 15:40:29 -0800 (PST)
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=Eot6Ch9ktr7c1NPzEakSz2KfZ2lWHPXfKY4tvkPLu3o=;
+        b=YG7aWyxU3GBvFFK8lXrLbtHeb35PblraFNW1BhHYyziGFBhSHDEDDqXowwF+666JXR
+         Up4fnF5YTRaQnUzEOhQuos1QILJeVEoBVlat9fJQvr2i/efzEuGiMtnJs3ycjxRec0wU
+         XpsZCDPeVpN/HN3/H+cwD/qxk2DjVJxSiCPt3m2uB3/xvAJKg6F0ME0MVoHwfd5YYTsg
+         k8mqER/xLkMaWTVJ5q1eBqhr1uqtHCULzlB8jOQT4LaEmUgCfb3KDXjHTTH+E0zeSJtd
+         UmlmHkkfuK/RPeGrykHgZT1Rlgh2C29HO3SqcjYegXt/NnD7g46pNncuyI0OhQZ9hCzH
+         2wHg==
+X-Gm-Message-State: ANoB5pnpASXbfKOvezZO5yENDZXm3HZr2gF8qIRd16kte89cZrBWoAMQ
+	d7MYi5OppuaTtk9y1ruYRPDAbA==
+X-Google-Smtp-Source: AA0mqf77Bq7wd745sA6uN3Qyen+p2FVXlZKvVvCcfiw8EUSGttr+gsd0BMnibFt3vht0ivXPL/cXVw==
+X-Received: by 2002:a05:6512:b8c:b0:4b5:7d49:4a05 with SMTP id b12-20020a0565120b8c00b004b57d494a05mr13684431lfv.0.1671234028721;
+        Fri, 16 Dec 2022 15:40:28 -0800 (PST)
 Received: from eriador.lan (dzccz6yyyyyyyyyyybcwt-3.rev.dnainternet.fi. [2001:14ba:a085:4d00::8a5])
-        by smtp.gmail.com with ESMTPSA id a21-20020ac25055000000b004b40c2fccfdsm336950lfm.59.2022.12.16.15.40.28
+        by smtp.gmail.com with ESMTPSA id a21-20020ac25055000000b004b40c2fccfdsm336950lfm.59.2022.12.16.15.40.27
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 16 Dec 2022 15:40:29 -0800 (PST)
+        Fri, 16 Dec 2022 15:40:28 -0800 (PST)
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 To: Andy Gross <agross@kernel.org>,
 	Bjorn Andersson <andersson@kernel.org>,
@@ -72,17 +71,14 @@ Cc: Philipp Zabel <p.zabel@pengutronix.de>,
 	linux-arm-msm@vger.kernel.org,
 	linux-phy@lists.infradead.org,
 	devicetree@vger.kernel.org
-Subject: [PATCH 2/3] phy: qualcomm: pcie2: register as clock provider
-Date: Sat, 17 Dec 2022 01:40:26 +0200
-Message-Id: <20221216234027.539917-2-dmitry.baryshkov@linaro.org>
+Subject: [PATCH 1/3] dt-bindings: phy: qcom,pcie2-phy: convert to YAML format
+Date: Sat, 17 Dec 2022 01:40:25 +0200
+Message-Id: <20221216234027.539917-1-dmitry.baryshkov@linaro.org>
 X-Mailer: git-send-email 2.35.1
-In-Reply-To: <20221216234027.539917-1-dmitry.baryshkov@linaro.org>
-References: <20221216234027.539917-1-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221216_154033_842874_9C1DF5E2 
-X-CRM114-Status: UNSURE (   9.76  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20221216_154033_738050_E1167D22 
+X-CRM114-Status: GOOD (  13.75  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,31 +95,158 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Register pcie2 PHY as a clock provider to enable using it in the
-DT-based clock lookup.
+Convert the bindings for the Qualcomm PCIe2 PHY into the YAML format
+from the text description.
 
 Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 ---
- drivers/phy/qualcomm/phy-qcom-pcie2.c | 6 +++++-
- 1 file changed, 5 insertions(+), 1 deletion(-)
+ .../bindings/phy/qcom,pcie2-phy.yaml          | 87 +++++++++++++++++++
+ .../bindings/phy/qcom-pcie2-phy.txt           | 42 ---------
+ 2 files changed, 87 insertions(+), 42 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/phy/qcom,pcie2-phy.yaml
+ delete mode 100644 Documentation/devicetree/bindings/phy/qcom-pcie2-phy.txt
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-pcie2.c b/drivers/phy/qualcomm/phy-qcom-pcie2.c
-index 5407e59bb185..11a2bb958681 100644
---- a/drivers/phy/qualcomm/phy-qcom-pcie2.c
-+++ b/drivers/phy/qualcomm/phy-qcom-pcie2.c
-@@ -243,7 +243,11 @@ static int phy_pipe_clksrc_register(struct qcom_phy *qphy)
- 	fixed->fixed_rate = 250000000;
- 	fixed->hw.init = &init;
- 
--	return devm_clk_hw_register(qphy->dev, &fixed->hw);
-+	ret = devm_clk_hw_register(qphy->dev, &fixed->hw);
-+	if (ret < 0)
-+		return ret;
+diff --git a/Documentation/devicetree/bindings/phy/qcom,pcie2-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,pcie2-phy.yaml
+new file mode 100644
+index 000000000000..497850a5b428
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/qcom,pcie2-phy.yaml
+@@ -0,0 +1,87 @@
++# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
 +
-+	return devm_of_clk_add_hw_provider(qphy->dev, of_clk_hw_simple_get, &fixed->hw);
- }
- 
- static int qcom_pcie2_phy_probe(struct platform_device *pdev)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/qcom,pcie2-phy.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Qualcomm PCIe2 PHY controller
++
++maintainers:
++  - Vinod Koul <vkoul@kernel.org>
++
++description:
++  The Qualcomm PCIe2 PHY is a Synopsys based phy found in a number of Qualcomm
++  platforms.
++
++properties:
++  compatible:
++    items:
++      - const: qcom,qcs404-pcie2-phy
++      - const: qcom,pcie2-phy
++
++  reg:
++    items:
++      - description: PHY register set
++
++  clocks:
++    items:
++      - description: a clock-specifier pair for the "pipe" clock
++
++  "#phy-cells":
++    const: 0
++
++  vdda-vp-supply:
++    description: phandle to low voltage regulator
++
++  vdda-vph-supply:
++    description: phandle to high voltage regulator
++
++  resets:
++    maxItems: 2
++
++  reset-names:
++    items:
++      - const: phy
++      - const: pipe
++  "#clock-cells":
++    const: 0
++
++  clock-output-names:
++    maxItems: 1
++
++required:
++  - compatible
++  - reg
++  - "#phy-cells"
++  - clocks
++  - vdda-vp-supply
++  - vdda-vph-supply
++  - resets
++  - reset-names
++  - clock-output-names
++  - "#clock-cells"
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/clock/qcom,gcc-qcs404.h>
++    phy@7786000 {
++      compatible = "qcom,qcs404-pcie2-phy", "qcom,pcie2-phy";
++      reg = <0x07786000 0xb8>;
++
++      clocks = <&gcc GCC_PCIE_0_PIPE_CLK>;
++      resets = <&gcc GCC_PCIEPHY_0_PHY_BCR>,
++               <&gcc GCC_PCIE_0_PIPE_ARES>;
++      reset-names = "phy", "pipe";
++
++      vdda-vp-supply = <&vreg_l3_1p05>;
++      vdda-vph-supply = <&vreg_l5_1p8>;
++
++      clock-output-names = "pcie_0_pipe_clk";
++      #clock-cells = <0>;
++      #phy-cells = <0>;
++    };
++...
++
+diff --git a/Documentation/devicetree/bindings/phy/qcom-pcie2-phy.txt b/Documentation/devicetree/bindings/phy/qcom-pcie2-phy.txt
+deleted file mode 100644
+index 30064253f290..000000000000
+--- a/Documentation/devicetree/bindings/phy/qcom-pcie2-phy.txt
++++ /dev/null
+@@ -1,42 +0,0 @@
+-Qualcomm PCIe2 PHY controller
+-=============================
+-
+-The Qualcomm PCIe2 PHY is a Synopsys based phy found in a number of Qualcomm
+-platforms.
+-
+-Required properties:
+- - compatible: compatible list, should be:
+-	       "qcom,qcs404-pcie2-phy", "qcom,pcie2-phy"
+-
+- - reg: offset and length of the PHY register set.
+- - #phy-cells: must be 0.
+-
+- - clocks: a clock-specifier pair for the "pipe" clock
+-
+- - vdda-vp-supply: phandle to low voltage regulator
+- - vdda-vph-supply: phandle to high voltage regulator
+-
+- - resets: reset-specifier pairs for the "phy" and "pipe" resets
+- - reset-names: list of resets, should contain:
+-		"phy" and "pipe"
+-
+- - clock-output-names: name of the outgoing clock signal from the PHY PLL
+- - #clock-cells: must be 0
+-
+-Example:
+- phy@7786000 {
+-	compatible = "qcom,qcs404-pcie2-phy", "qcom,pcie2-phy";
+-	reg = <0x07786000 0xb8>;
+-
+-	clocks = <&gcc GCC_PCIE_0_PIPE_CLK>;
+-	resets = <&gcc GCC_PCIEPHY_0_PHY_BCR>,
+-	         <&gcc GCC_PCIE_0_PIPE_ARES>;
+-	reset-names = "phy", "pipe";
+-
+-	vdda-vp-supply = <&vreg_l3_1p05>;
+-	vdda-vph-supply = <&vreg_l5_1p8>;
+-
+-	clock-output-names = "pcie_0_pipe_clk";
+-	#clock-cells = <0>;
+-	#phy-cells = <0>;
+- };
 -- 
 2.35.1
 
