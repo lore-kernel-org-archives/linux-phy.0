@@ -4,67 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 64785C3DA6E
-	for <linux-phy@archiver.kernel.org>; Fri, 16 Dec 2022 23:38:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1376CC4332F
+	for <linux-phy@archiver.kernel.org>; Fri, 16 Dec 2022 23:41:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YpEtQkE0yQ+CTbS+RSwjgChTtIXZkNH62aLLy2LrmHw=; b=XwIIAyJyoJIrWQ
-	N2L1h1mXRrdDJHXVi74/EDzXtBMfTTk3txlLK/gOfhp2pSBzrKsezMDrSe50w/zjLaNU3GePCAweu
-	tBe+lDDsoe/JOgRph5x/LMEipikbLiHQE40WdVz9mfmblP65TpvJPHpM/SCIe8hQ0XtRY5ZGOuMi2
-	fht9l08FK8iQAk6ksJK/0LiwORGv/HK3TfyQbAYuynWT5TaLEoBOfmQVEh13mTY+FWVDRsC0U1ETR
-	Ct42dD22q6vqeLuwI8SMU2uLLxugO9B5oKHb9DVJhoTmCU5XY9PTnVff+8Mf6pIj4logkX11mHUKD
-	VdmEZG0exnC/fQRRY1cQ==;
+	List-Owner; bh=BR4JgsJr/EeiNOA9qFvE/IAL/6ENSTLASF1pZGhByHI=; b=BzvMZQ8eAgaZ6C
+	M4MhbDBQ8ustSPftEoyIGMInCof/Np+QpvN5OLP6QtwnkBGATqoKhiLU1mzZLP7l0UHN1H0GH5IGp
+	tHwvbbEslVCQI2FUJLLSTgQgSOrXYciOIRsiPSnYszFjbA3gu9/b3Y/nl6tcs+Yd5nF8rL+TIcaHu
+	hIzZ7QFuASLr2O9D+74Sw58Zf+G+4V7IA5RwVU4GJcaNiP92pSPNKn4VI8IVObB3gBrhEsh5KVVwx
+	5LBVXPy5sqcDAipbzYwrhYn5QI6tBnK3sAE93Ql1uXuvmqe+MVVzeWudCCuZyMkmyZRltRjM505P/
+	8gWbqbtxKh0hELB0ZSCw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1p6KHO-002iC7-H1; Fri, 16 Dec 2022 23:38:14 +0000
-Received: from mail-oa1-f47.google.com ([209.85.160.47])
+	id 1p6KKJ-002jFl-6M; Fri, 16 Dec 2022 23:41:15 +0000
+Received: from mail-lf1-x129.google.com ([2a00:1450:4864:20::129])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1p6KGd-002hsf-Ew
-	for linux-phy@lists.infradead.org; Fri, 16 Dec 2022 23:37:28 +0000
-Received: by mail-oa1-f47.google.com with SMTP id 586e51a60fabf-142b72a728fso5119698fac.9
-        for <linux-phy@lists.infradead.org>; Fri, 16 Dec 2022 15:37:21 -0800 (PST)
+	id 1p6KJd-002ivq-MG
+	for linux-phy@lists.infradead.org; Fri, 16 Dec 2022 23:40:35 +0000
+Received: by mail-lf1-x129.google.com with SMTP id b13so5818302lfo.3
+        for <linux-phy@lists.infradead.org>; Fri, 16 Dec 2022 15:40:31 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=g/bLk04dhGvObgv0ibnCNcEYZnqfFntTEvodjggi70o=;
+        b=J072llu5NfA6FPCI0kSB6d9eWuWAoO5i4aFxwLXXZq/JJMYLPfmWT6NWEIOlK70wUD
+         ZuhE0Bg1O7B6SARBI8G2FGjIeIMsm0oVgXUjW2KcL0pi3zQ/cGucyEfBDKHrOTHheRSN
+         B/SR2Olo68a3ZDOekdmIMiDyIumvA6A5hRgjQ6AVV6cXxUtauGg2U+isTW9mcFrr79ff
+         KhQHHRF3Ty63pyfTiUCQsDzG2+jTTcLWKxJOtvcG6Ro2/9rumyH89sSaHU4mzHhjrSxs
+         fzc6ccZ9W5jOB+3Ftdhn5J6JlpPPjxkCEKtL9wb5fuGBwMZ/iqmwUGTWOSuLOe0WG4We
+         geHA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=ii0p33EQ9H4zp/XmzfpUA0yClbxfMoE6kATAvTWMwec=;
-        b=wQQ0RlYaHXjY0SRhDtrVHtryfy4vOAhzmwgmdEYPbjabnqIXmEoV2t6KVSFkEgCHKk
-         SGyKnFi5YU9OrM9Bkf4ZBlMwQ+wEwOK6CvYTD3vIiD1JjzVCzf5g8otW7FpJr6sGnfM+
-         oRwegqv+kW5g4Y1FnGf/nOpyUt6/WtfUTvMtKodQngp6MPRJyatNgEYZjFMNQjGMxoMc
-         ZemnuG3Im0d2uE3ah2nuAgiiSoahm1Y3DEV6VWRbBnhDAbAhN2KH68IwuIp5DAlVMHbv
-         kxEHDD+JNoc2l8VuZ/E3hRW95HpUWehE7yLAQJk2s4AZzlVsSqdVWzvFvvHeghoEw9vc
-         bQEg==
-X-Gm-Message-State: AFqh2krftBU8znlNYwc3n6mp9tM9R1yPN+EBcBxD290FNC+4kmE/um2V
-	5Et6W8WnclrYwTuT31OkqR21OSVkEA==
-X-Google-Smtp-Source: AMrXdXvAb/LsQP3Ex0aDd+UgqHNCU2nLgLX/l3ruHhfCO9PK3TsEg8yDhvAa4dol4NasHyfSjPcTsQ==
-X-Received: by 2002:a05:6870:46ab:b0:144:c0f3:ca57 with SMTP id a43-20020a05687046ab00b00144c0f3ca57mr252303oap.39.1671233840763;
-        Fri, 16 Dec 2022 15:37:20 -0800 (PST)
-Received: from robh_at_kernel.org (66-90-144-107.dyn.grandenetworks.net. [66.90.144.107])
-        by smtp.gmail.com with ESMTPSA id i8-20020a056820012800b004a0aac2d28fsm1397017ood.35.2022.12.16.15.37.20
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=g/bLk04dhGvObgv0ibnCNcEYZnqfFntTEvodjggi70o=;
+        b=u7QdGJo7R0vrONQQsCuXN6JxydtGXmSuWktqnWJhSOeHz+s93gk3bSE6MiPBeiIuud
+         yyCy9Z+qJM/7yQUehPrWAWocu0eYGwbepNREW2KqLa9l2a8g6PObTYAAFcPDQz0z0nD/
+         BoTZ4wF5vARoEVc/8+YZ8l2slbj4l/GggcB4qUqL2VCKzWj2CcoGUhVBEOWjM0Lw8rdd
+         6Bpjz4AVG0Zz14DyLeGIfK9lpnAluIaMUKjzzKQv9XqcRPZAwSU4f8bAOUvP9J9zPogF
+         /okYMN8mwsstB/+qfbO9N+aX3Jpjb77RZFywa3jhsK5URAgFVNwwvtrZwG2L/PgzLkBT
+         zssw==
+X-Gm-Message-State: AFqh2kqDb/MUEDFRp6kU4XJ66umewx/LCQQfl3V+rvDLQVl1A+XlXF2o
+	T+nSVq96ptJTk1Hd5ujDJFbpWQ==
+X-Google-Smtp-Source: AMrXdXu5EMtQvFkCcKMVgrjQBjg12/f7JLtr0e3sjyWv4wljAUzxoT+/cbrxL9uucWk+Con97pufQQ==
+X-Received: by 2002:a05:6512:12c1:b0:4b6:ff4a:885a with SMTP id p1-20020a05651212c100b004b6ff4a885amr10191927lfg.37.1671234030228;
+        Fri, 16 Dec 2022 15:40:30 -0800 (PST)
+Received: from eriador.lan (dzccz6yyyyyyyyyyybcwt-3.rev.dnainternet.fi. [2001:14ba:a085:4d00::8a5])
+        by smtp.gmail.com with ESMTPSA id a21-20020ac25055000000b004b40c2fccfdsm336950lfm.59.2022.12.16.15.40.29
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 16 Dec 2022 15:37:20 -0800 (PST)
-Received: (nullmailer pid 81854 invoked by uid 1000);
-	Fri, 16 Dec 2022 23:37:19 -0000
-Date: Fri, 16 Dec 2022 17:37:19 -0600
-From: Rob Herring <robh@kernel.org>
-To: Eugen Hristev <eugen.hristev@microchip.com>
-Cc: linux-media@vger.kernel.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, luis.oliveira@synopsys.com
-Subject: Re: [PATCH v5 2/4] dt-bindings: phy: Document the Synopsys MIPI DPHY
- Rx bindings
-Message-ID: <20221216233719.GA80712-robh@kernel.org>
-References: <20221216143717.1002015-1-eugen.hristev@microchip.com>
- <20221216143717.1002015-3-eugen.hristev@microchip.com>
+        Fri, 16 Dec 2022 15:40:29 -0800 (PST)
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+To: Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
+Cc: Philipp Zabel <p.zabel@pengutronix.de>,
+	linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org
+Subject: [PATCH 3/3] arm64: dts: qcom: qcs404: register PCIe PHY as a clock provider
+Date: Sat, 17 Dec 2022 01:40:27 +0200
+Message-Id: <20221216234027.539917-3-dmitry.baryshkov@linaro.org>
+X-Mailer: git-send-email 2.35.1
+In-Reply-To: <20221216234027.539917-1-dmitry.baryshkov@linaro.org>
+References: <20221216234027.539917-1-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20221216143717.1002015-3-eugen.hristev@microchip.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221216_153727_619790_F3E1D565 
-X-CRM114-Status: UNSURE (   8.58  )
+X-CRM114-CacheID: sfid-20221216_154033_765537_99E36236 
+X-CRM114-Status: UNSURE (   7.03  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -82,21 +99,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Dec 16, 2022 at 04:37:15PM +0200, Eugen Hristev wrote:
-> From: Luis Oliveira <Luis.Oliveira@synopsys.com>
-> 
-> Add device-tree bindings documentation for SNPS DesignWare MIPI D-PHY in
-> RX mode.
-> 
-> Signed-off-by: Luis Oliveira <luis.oliveira@synopsys.com>
-> ---
->  .../bindings/phy/snps,dw-dphy-rx.txt          | 29 +++++++++++++++++++
->  1 file changed, 29 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/snps,dw-dphy-rx.txt
+Add #clock-cells to the pcie_phy node. It provides a PCIe PIPE clock.
 
-New bindings must be in schema format.
+Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+---
+ arch/arm64/boot/dts/qcom/qcs404.dtsi | 1 +
+ 1 file changed, 1 insertion(+)
 
-Rob
+diff --git a/arch/arm64/boot/dts/qcom/qcs404.dtsi b/arch/arm64/boot/dts/qcom/qcs404.dtsi
+index a5324eecb50a..ffffaa7507cf 100644
+--- a/arch/arm64/boot/dts/qcom/qcs404.dtsi
++++ b/arch/arm64/boot/dts/qcom/qcs404.dtsi
+@@ -810,6 +810,7 @@ pcie_phy: phy@7786000 {
+ 			reset-names = "phy", "pipe";
+ 
+ 			clock-output-names = "pcie_0_pipe_clk";
++			#clock-cells = <0>;
+ 			#phy-cells = <0>;
+ 
+ 			status = "disabled";
+-- 
+2.35.1
 
 
 -- 
