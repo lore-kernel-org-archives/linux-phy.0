@@ -4,67 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E0ECEC4332F
-	for <linux-phy@archiver.kernel.org>; Fri, 16 Dec 2022 23:43:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5E52AC3DA6E
+	for <linux-phy@archiver.kernel.org>; Sat, 17 Dec 2022 15:01:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=z7nenJuQDsPdfKOAw+11ykTUpXoSESWmvsqR8ts84e0=; b=RHRZZgVphZN8kn
-	ehWDRTeUuKI/P8G+eyk+kgpBP52YOxHxlLE+Fq5CBoWzYh6rTit4POVtu3Q7HQ5Cx3wnO89TK1PCM
-	QjY3v7oycD8d718rr+YBDllOCpxn9RL4pK85YE5yrU7zowlqDjk9dGjIdsY9mDzqbnjraY0TD9U7z
-	VOYY0tybiXlRE2ubnv07/KsNEdtRTBSlrNvlfOV5CwQNvj1MvzoqFn874Fj3XGsYDxUrB9/UbTCCF
-	TtxgFhb0UMts1BWoye99osQGPcPj4TzeJc7eaJi3v1y5qCF7R9sKBalh7fTm7jLncJgVA2AngxNwE
-	oaU3Pku0aWr+DZXs+ATA==;
+	List-Owner; bh=DJiciN+kkDSjxRSf9nllU6X/atVaVdt+YO2qIO0W++0=; b=C/iHvMtUoY7QqP
+	UwU3dDWKh5VHN/RVTMscTjQJYtsl0wKOKf6gOsasugxg1oBTmrHll47QXvpkp9wNT2ey6HyZ2POdP
+	8VR1fUQbqlVfx6qiW5xpHXQszzktAJl+M0Ihkd5cc2fPdXBInpYl3ot28kg+kh7Y/vU//HU3XAAzh
+	wAD6ACHi9jgDo3Jp3YlSpON2E+VHBEo/YiWBnihxtoz2hE+27CDaprVPAEWNzh0JA4hPnrR7ZTSbH
+	5DPatxinPNv/T8I5gxLLu9PLwwrg922EH8oFtYCTGWrpVUZzBeWv/JOlKjmkL/MYH67ySjobwf7X6
+	gCIQjNStlMLWbB2AVuCg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1p6KMV-002kQY-6E; Fri, 16 Dec 2022 23:43:31 +0000
-Received: from mail-oa1-f48.google.com ([209.85.160.48])
+	id 1p6Yh9-00AT4Q-OL; Sat, 17 Dec 2022 15:01:47 +0000
+Received: from mail-lf1-x136.google.com ([2a00:1450:4864:20::136])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1p6KLO-002jdg-Uw
-	for linux-phy@lists.infradead.org; Fri, 16 Dec 2022 23:42:24 +0000
-Received: by mail-oa1-f48.google.com with SMTP id 586e51a60fabf-144b21f5e5fso5095673fac.12
-        for <linux-phy@lists.infradead.org>; Fri, 16 Dec 2022 15:42:22 -0800 (PST)
+	id 1p6Yh6-00ASzt-NK
+	for linux-phy@lists.infradead.org; Sat, 17 Dec 2022 15:01:46 +0000
+Received: by mail-lf1-x136.google.com with SMTP id 1so7722487lfz.4
+        for <linux-phy@lists.infradead.org>; Sat, 17 Dec 2022 07:01:41 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=D3h3onfk/w75vYssXLX8rbrcDV/vqWhlZbg0paogVXE=;
+        b=nJ4MxFtd0Kg23YKBoyRO22cEcryuRW4jBivs/VcYCz7SKMv2C1OCVUdZp7eoru0RNM
+         cAKbgnpk/uOuTmWjtvUE+XODCVFJTADnf3NN05hVYhRIBUWPez86AYKfi/gHXAPYMafR
+         7UxTkOHfVotkxOS9lM3j4vh3y2flNhLcTJ2kdzl9eUGPWR6EHInUIXLp+V1a70YhbCJS
+         IpybyJ+YU8bT9F4M0IDhPZXC+mik11beQeHxh/Rt185tbErCfwgHBVXT2McYNanvZl/J
+         NRHkTGpuKv+KUBmpbmskTnXsQpU8uenTOeCesioyvI/FLmT1EIVz3YZejDIutENVpLk6
+         i6JA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=QfSl+FX9JTy+jdpFFR1D1kGG2K/ycBgrvJ9W+hYCCRs=;
-        b=o/EmpqZ/DZqYVUVp2XXkHrq7QvDvrBzNpYo7oNQOSkewSAYYEX1wXhyKGWUGtSb9TW
-         kET4gTRNQW5p/q+FGRbWAsBFgc9WkMiaa30dGVz10t+HX+YJ9zZyh3kq6QiSpWfyMzrM
-         NNF/9+i0sesiXvuoAgj3QQF9jbK63oGIR0m0xw10Y4dTAQWaSy2al5uwvb0Ww8RWvjne
-         gugKGphxVK1NK3S3wLsKhVcUUYQT7VKb/O9SmVuVSAp5VVuHC5zkGRTc6SLqSOyJCU49
-         sONtPhzflPuZI32vdm3Vovr6icRxf2QXgMVjC5BpvTUI8IV9+hZGwLOOIIbCg+HBaE8b
-         M00g==
-X-Gm-Message-State: ANoB5pnQg1ZpRxYLBrnOXTeQsw59XjsCdNOKaBM8u1xLpZaxROp1RVgT
-	zkP50e3PE2hkMNDn6ixZH61deH4rBg==
-X-Google-Smtp-Source: AA0mqf5MYBGCni7xQDRAsLZ2V/eXQh5hzxi51tza1LPWdei/oEGQT80Vdt1JMaxgf+O6639iY/fivg==
-X-Received: by 2002:a05:6870:9d83:b0:144:7061:112 with SMTP id pv3-20020a0568709d8300b0014470610112mr18616683oab.15.1671234141537;
-        Fri, 16 Dec 2022 15:42:21 -0800 (PST)
-Received: from robh_at_kernel.org (66-90-144-107.dyn.grandenetworks.net. [66.90.144.107])
-        by smtp.gmail.com with ESMTPSA id r43-20020a05687108ab00b001428eb454e9sm1603705oaq.13.2022.12.16.15.42.20
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 16 Dec 2022 15:42:21 -0800 (PST)
-Received: (nullmailer pid 88182 invoked by uid 1000);
-	Fri, 16 Dec 2022 23:42:20 -0000
-Date: Fri, 16 Dec 2022 17:42:20 -0600
-From: Rob Herring <robh@kernel.org>
-To: Eugen Hristev <eugen.hristev@microchip.com>
-Cc: linux-media@vger.kernel.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, luis.oliveira@synopsys.com
-Subject: Re: [PATCH v5 2/4] dt-bindings: phy: Document the Synopsys MIPI DPHY
- Rx bindings
-Message-ID: <20221216234220.GB80712-robh@kernel.org>
-References: <20221216143717.1002015-1-eugen.hristev@microchip.com>
- <20221216143717.1002015-3-eugen.hristev@microchip.com>
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=D3h3onfk/w75vYssXLX8rbrcDV/vqWhlZbg0paogVXE=;
+        b=Dd9xDvLWU0i+wnhqYzk7eUakSTTYNOVvWBD+LFN/E6eV1MSjr/74C2KgBblb4UMfiL
+         R2N/z4wXG8+n06qkD7TUP72VZS10b8DIaCtTceqTchaF0CW7AEcExI90a9VFuPQG37PR
+         s16niCELBSrKJcW3pNIvrzxPuC6hvg9/YBl59mgXjTPyC9XqNFhqHVBGloTHSSguTFUT
+         T8Kx/j80hcUcgqc570FgUYtqBptowRHsX24LHomTKFffO3GvympSN3/hHbqhBzianzzg
+         NFDT+ISJVnAXbjKoYjdfPTBR3aBU0oHHijulRJaYVsckTEuvEPPJH7HstJogwA1G43hM
+         f5/g==
+X-Gm-Message-State: ANoB5pkcSUSbk6mYV0Ch7HNFO7TvOnt35QpyvUBPCVJBVn1t15IKnyqy
+	BEQG0xBeFWwrUQbkIG9nqz34ZCw2HkN7MpzE
+X-Google-Smtp-Source: AA0mqf7uSma3aMecf1CJ3CyLaa9GcTXho/Ckya7MKPBcNJZLX4lAUMSmoG77OD2kqt0sYQIutF0sKQ==
+X-Received: by 2002:a19:6a0f:0:b0:4b5:6db0:d598 with SMTP id u15-20020a196a0f000000b004b56db0d598mr10190403lfu.20.1671289300746;
+        Sat, 17 Dec 2022 07:01:40 -0800 (PST)
+Received: from [192.168.1.101] (abxh44.neoplus.adsl.tpnet.pl. [83.9.1.44])
+        by smtp.gmail.com with ESMTPSA id s16-20020a056512215000b004c316ae669fsm262618lfr.68.2022.12.17.07.01.38
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 17 Dec 2022 07:01:40 -0800 (PST)
+Message-ID: <98e95f3c-d64a-410d-8f56-845d55675e87@linaro.org>
+Date: Sat, 17 Dec 2022 16:01:33 +0100
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20221216143717.1002015-3-eugen.hristev@microchip.com>
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.6.0
+Subject: Re: [PATCH 3/3] arm64: dts: qcom: qcs404: register PCIe PHY as a
+ clock provider
+Content-Language: en-US
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+ Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
+Cc: Philipp Zabel <p.zabel@pengutronix.de>, linux-arm-msm@vger.kernel.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org
+References: <20221216234027.539917-1-dmitry.baryshkov@linaro.org>
+ <20221216234027.539917-3-dmitry.baryshkov@linaro.org>
+From: Konrad Dybcio <konrad.dybcio@linaro.org>
+In-Reply-To: <20221216234027.539917-3-dmitry.baryshkov@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221216_154223_101455_FFE15843 
-X-CRM114-Status: GOOD (  18.16  )
+X-CRM114-CacheID: sfid-20221217_070144_832051_993F663C 
+X-CRM114-Status: GOOD (  11.36  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,72 +98,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Dec 16, 2022 at 04:37:15PM +0200, Eugen Hristev wrote:
-> From: Luis Oliveira <Luis.Oliveira@synopsys.com>
+
+
+On 17.12.2022 00:40, Dmitry Baryshkov wrote:
+> Add #clock-cells to the pcie_phy node. It provides a PCIe PIPE clock.
 > 
-> Add device-tree bindings documentation for SNPS DesignWare MIPI D-PHY in
-> RX mode.
-> 
-> Signed-off-by: Luis Oliveira <luis.oliveira@synopsys.com>
+> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 > ---
->  .../bindings/phy/snps,dw-dphy-rx.txt          | 29 +++++++++++++++++++
->  1 file changed, 29 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/snps,dw-dphy-rx.txt
+Reviewed-by: Konrad Dybcio <konrad.dybcio@linaro.org>
+
+Konrad
+>  arch/arm64/boot/dts/qcom/qcs404.dtsi | 1 +
+>  1 file changed, 1 insertion(+)
 > 
-> diff --git a/Documentation/devicetree/bindings/phy/snps,dw-dphy-rx.txt b/Documentation/devicetree/bindings/phy/snps,dw-dphy-rx.txt
-> new file mode 100644
-> index 000000000000..ffb64fe5cbd1
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/snps,dw-dphy-rx.txt
-> @@ -0,0 +1,29 @@
-> +Synopsys DesignWare MIPI Rx D-PHY block details
-> +
-> +Description
-> +-----------
-> +
-> +The Synopsys MIPI D-PHY controller supports MIPI-DPHY in receiver mode.
-> +Please refer to phy-bindings.txt for more information.
-> +
-> +Required properties:
-> +- compatible		: Shall be "snps,dw-dphy-rx".
-> +- #phy-cells		: Must be 1.
-
-There is more than 1 lane/phy for a single instance?
-
-> +- bus-width		: Size of the test interface data bus (8 bits->8 or
-> +			  12bits->12).
-
-Do we need a test interface upstream?
-
-If so, needs a vendor prefix.
-
-> +- snps,dphy-frequency	: Frequency at which D-PHY should start, configurable.
-> +			  Check Synopsys databook. (-kHz)
-
-Is this frequency of the link? We have properties for that. Or this 
-should somehow be using the clock binding.
-
-And anything with units should have a unit suffix as defined in 
-property-units.yaml.
-
-> +- reg			: Test interface register. This correspondes to the
-> +			  physical base address of the controller and size of
-> +			  the device memory mapped registers; Check Synopsys
-> +			  databook.
-> +
-> +Example:
-> +
-> +	mipi_dphy_rx1: dphy@d00003040 {
-> +		compatible = "snps,dw-dphy-rx";
-> +		#phy-cells = <1>;
-> +		bus-width = <12>;
-> +		snps,dphy-frequency = <300000>;
-> +		reg = <0xd0003040 0x20>;
-> +	};
-> -- 
-> 2.25.1
-> 
-> 
+> diff --git a/arch/arm64/boot/dts/qcom/qcs404.dtsi b/arch/arm64/boot/dts/qcom/qcs404.dtsi
+> index a5324eecb50a..ffffaa7507cf 100644
+> --- a/arch/arm64/boot/dts/qcom/qcs404.dtsi
+> +++ b/arch/arm64/boot/dts/qcom/qcs404.dtsi
+> @@ -810,6 +810,7 @@ pcie_phy: phy@7786000 {
+>  			reset-names = "phy", "pipe";
+>  
+>  			clock-output-names = "pcie_0_pipe_clk";
+> +			#clock-cells = <0>;
+>  			#phy-cells = <0>;
+>  
+>  			status = "disabled";
 
 -- 
 linux-phy mailing list
