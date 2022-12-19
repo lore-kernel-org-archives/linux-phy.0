@@ -4,61 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5531EC4332F
-	for <linux-phy@archiver.kernel.org>; Mon, 19 Dec 2022 11:30:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B58D3C4332F
+	for <linux-phy@archiver.kernel.org>; Mon, 19 Dec 2022 12:35:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=j3cNBBVWueGabQMN1KYLRs4uvUMgsTzDovS09FriiEk=; b=Z4TfBLI2IHY0ChVcfs8iXNDlhv
-	B5ThNr/l+B91k4k4F7nmk/pupLuHZCra1A5Fxe0fw5p2HUbkn10q4zTetVW3y77o4hadpQVTd7TYB
-	b89RqP1WazI/uqPunQWoStIk4csCSeS7y86SVtDVWUjkwK+UfbKFpouQ7Hk1DT45US44MIOWm32IQ
-	Au8B8FwX0x2XhuhlP4OWtHVDV+kXBsKTSV6Qo2FwrLK5X1gdqrbBf/jRQoXfoepbew1S8r4uIMmJA
-	BklU1lTg31cSsETWF4A/RgNYqU4r0pS0SXdqnuZeCNh5n6RcRJZ9bVOIpaa97lI0RNRO/MPqP9FK1
-	ciiywS5A==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=XN/YqY+f1t9hLP3CEvRVpnjQA459z8MOR0wxao4Belg=; b=OovxLKIYcqp8D2
+	jkJTDWfOIARj2br7zpWLYHNWkFnyH5/cgCU49VFYNSlevRWYcUbrYUFRJLiLzNtxZiiRcdB7P/Bwf
+	6dflSyS/dJIIsNebRMjl4hzVHtaDdT/1WdWF1ORWTl3xMJu5ZGEwuFRR0eux27Ptumq30WJfvjfPU
+	2caKzIV3vGqBcgTAMioccNicoFvS3WVgEf+T1JL4ovNNZWtXrW4FIedwClNivBblukTFW3A7e16rl
+	IZY0J+Ts5T3/uGgoiUpgld/j84qtsnLfOjNc7fPWp0H6h05I5B7pcRyAvFVo867Y5MoXlXtN4l8q1
+	5E8Hw4iam5oatDYalHDA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1p7ELe-00CchC-Ll; Mon, 19 Dec 2022 11:30:22 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1p7FMY-00DCrI-1s; Mon, 19 Dec 2022 12:35:22 +0000
+Received: from mail-ej1-x632.google.com ([2a00:1450:4864:20::632])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1p7ELb-00Ccc3-8d
-	for linux-phy@lists.infradead.org; Mon, 19 Dec 2022 11:30:21 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 0111E60EFD;
-	Mon, 19 Dec 2022 11:30:14 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4031DC433D2;
-	Mon, 19 Dec 2022 11:30:13 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1671449413;
-	bh=3PNzKHxhEzGjYNdXcEyYpXrFjmsxPTwPqQiENaoHqNY=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=LCFE7EtAdIbdrVO7xiQ3DbOR4q9l9odX9Yev7gYX4SMMug07owufuZiNb37FPzvod
-	 2VyzK5rke57dHijljbS7uYy0K6Z9fBKrpjh2K/qFfVqVWmnwFtIZY2aupUbcg/zhSw
-	 qGBPw7H+d3N+m0QirO9R2Z8lhUgWInpjNAdCHAcTiVLpHhhBvyUDgOwYzIuUTeFZzc
-	 lcaFVpVYnKkEekzQ/Sfnwltb11EH7it1/qspwzxe0oZ4yJd2+sBth8zc7PyLPSZIzF
-	 5dspAeF+M0Jbh8XJ756njttZnXcinzbBEeK6VgHB0gGlGoT4DFZCJUFuw3pZrvSWeh
-	 CYT0RP5UJAJqA==
-Received: from johan by xi.lan with local (Exim 4.94.2)
-	(envelope-from <johan@kernel.org>)
-	id 1p7EMB-0003tH-Bs; Mon, 19 Dec 2022 12:30:55 +0100
-Date: Mon, 19 Dec 2022 12:30:55 +0100
-From: Johan Hovold <johan@kernel.org>
-To: Vinod Koul <vkoul@kernel.org>
-Cc: Linus Torvalds <torvalds@linux-foundation.org>,
-	Linux Phy <linux-phy@lists.infradead.org>,
-	Kishon Vijay Abraham I <kishon@ti.com>
-Subject: Re: [GIT PULL]: Generic phy updates for 6.2
-Message-ID: <Y6BLb8rKoivrRC4M@hovoldconsulting.com>
-References: <Y58jOP0HrtMxuP3y@matsya>
+	id 1p7FMT-00DCnW-V5
+	for linux-phy@lists.infradead.org; Mon, 19 Dec 2022 12:35:20 +0000
+Received: by mail-ej1-x632.google.com with SMTP id ud5so21126084ejc.4
+        for <linux-phy@lists.infradead.org>; Mon, 19 Dec 2022 04:35:15 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=amarulasolutions.com; s=google;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=rCYG7t1izN/gOyqR3UaPefTWs3YwGVtAE/HZuYn9Rfc=;
+        b=ZKtkG+FX5U20S1M6EMAO9s5DcYzxSPb3NQCBOLLNZKUq1ijR3Q2uoYri0UIzTgvgB0
+         BuFxphDmBbwcllU3Gq/LcNYSqtuoFmVbWfxHoWpZbb485QqVZreK8NBdka6pJ9kqxEfi
+         b6g2VtgxtP/YluAJZKnBbJAR0WCcpqKp7HjTA=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=rCYG7t1izN/gOyqR3UaPefTWs3YwGVtAE/HZuYn9Rfc=;
+        b=Q6dUP7WoM8vpxsXjfqHYRnBInNt70Eo7yutTq4QEg/ATlemTlfxSSae0+D6OtyHzRh
+         jr9C81n7OWYJgoe2YjpVyFP7wltUhehNR2q2VmfQDR1Q9/wmyDLz43mXQA7crP7d0enG
+         P1Az0MC1qXYwFhRW5shj23OjpSxDh/QmaxHtMQrBLJd+PJx2BDQhK+EFZmV5T3AEs+yk
+         Zj1CDFrPQzd0EzrWLNhMfxEn4lloJHumXMemdK20jkTFW+hAa4iBsp6lCx3LquIaqb7p
+         aXyeveJGDDzCYubcu4Iu/HZfegnTOkGSYjINLjuBTey5okD77zzLpno0WGu3zRUPx0Bw
+         Icwg==
+X-Gm-Message-State: ANoB5pkzqzUqdjeddqSLADalxoTLkcfLVw5aMwI2anklISYreqFjRTZk
+	GJfbs9BC4w3a+OLAKoPWDknxpkc9AHTRjCAIom4CDAqaqsLxVPa0
+X-Google-Smtp-Source: AA0mqf7MRvG+Qj2JseT+Qj2IY04GU3ehuu2j+6yoRs/z0TWbsGNO6utzwcWxYija4unhyYJGQ57ZKqf8K83fjcrrTnQ=
+X-Received: by 2002:a17:906:8383:b0:7c1:19ea:dda with SMTP id
+ p3-20020a170906838300b007c119ea0ddamr8979778ejx.31.1671453314287; Mon, 19 Dec
+ 2022 04:35:14 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <Y58jOP0HrtMxuP3y@matsya>
+References: <20221002064540.2500257-1-michael@amarulasolutions.com>
+In-Reply-To: <20221002064540.2500257-1-michael@amarulasolutions.com>
+From: Michael Nazzareno Trimarchi <michael@amarulasolutions.com>
+Date: Mon, 19 Dec 2022 13:35:02 +0100
+Message-ID: <CAOf5uw=2zjki8DEkgvDTKrj6V=FS44Z1WN3AvFZvzuN-MU_y4Q@mail.gmail.com>
+Subject: Re: [RFC PATCH 0/4] Add RGB ttl connection on rockchip phy
+To: Sandy Huang <hjc@rock-chips.com>, =?UTF-8?Q?Heiko_St=C3=BCbner?= <heiko@sntech.de>, 
+	David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>
+Cc: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, dri-devel@lists.freedesktop.org, 
+	linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
+	linux-amarula@amarulasolutions.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221219_033019_480518_A16AF6A2 
-X-CRM114-Status: GOOD (  16.80  )
+X-CRM114-CacheID: sfid-20221219_043518_070395_2A9C3687 
+X-CRM114-Status: GOOD (  19.51  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -70,212 +80,69 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============4183206816067947184=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Hi all
 
---===============4183206816067947184==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="Oz/j3kEjT8Hxv6aE"
-Content-Disposition: inline
+On Sun, Oct 2, 2022 at 8:45 AM Michael Trimarchi
+<michael@amarulasolutions.com> wrote:
+>
+> The rockchip phy can be convigured in ttl mode. The phy is shared
+> between lvds, dsi, ttl. The configuration that now I'm able to support
+> has the display output on some set of pins on standard vop output
+> and a set of pins using the ttl phy. The solution is not clean as I
+> would like to have because some register that are used to enable
+> the TTL, are in the same register area of the dsi controller.
+> In order to test I must add the following
+>
+> dsi_dphy: phy@ff2e0000 {
+>
+>         reg = <0x0 0xff2e0000 0x0 0x10000>,
+>                 <0x0 0xff450000 0x0 0x10000>;
+>         ...
+> }
+>
+> The problem here is the second region I have added is the same of
+> dsi logic. Only one register is needed by the the phy driver
+>
 
+Is there anyone who has time to review it?
 
---Oz/j3kEjT8Hxv6aE
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+Michael
 
-Hi Vinod,
-
-On Sun, Dec 18, 2022 at 07:57:04PM +0530, Vinod Koul wrote:
-
-> ----------------------------------------------------------------
-> phy-for-6.2
->=20
->   - New support:
->         - Allwinner H616 USB PHY and A100 DPHY support
->         - TI J721s2, J784s4 and J721e support
-> 	- Freescale i.MX8MP PCIe PHY support
-> 	- New driver for Renesas Ethernet SERDES supporting R-Car S4-8
-> 	- Qualcomm SM8450 PCIe1 PHY support in EP mode
-
-You could also have mentioned
-
-	- Qualcomm SC8280XP PCIe PHY support (including x4 mode)
-	- Fixed Qualcomm SC8280XP USB4-USB3-DP PHY DT bindings
-
-which were the primary reasons for reworking the QMP drivers and DT
-bindings, something which also lead to a number of bugs in these drivers
-being found and fixed.
-
->   - Updates:
->         - again a big pile of updates on qcom-qmp-* drivers following the
->           driver split and reorganization merged earlier
-> 	- Phy order of API calls documentation update
->=20
-> ----------------------------------------------------------------
-
-> Johan Hovold (131):
->       phy: qcom-qmp: fix obsolete lane comments
->       phy: qcom-qmp-combo: drop unused UFS reset
->       phy: qcom-qmp-pcie: drop unused common-block registers
->       phy: qcom-qmp-pcie: clean up power-down handling
->       phy: qcom-qmp-pcie: move power-down update
->       phy: qcom-qmp-pcie-msm8996: clean up power-down handling
->       phy: qcom-qmp-combo: clean up power-down handling
->       phy: qcom-qmp-ufs: clean up power-down handling
->       phy: qcom-qmp-usb: clean up power-down handling
->       phy: qcom-qmp-pcie: clean up clock lists
->       phy: qcom-qmp-pcie: drop bogus register update
->       phy: qcom-qmp: drop regulator error message
->       phy: qcom-qmp: drop superfluous comments
->       phy: qcom-qmp-combo: drop unused in-layout configuration
->       phy: qcom-qmp-pcie: drop redundant ipq8074 power on
->       phy: qcom-qmp-pcie-msm8996: drop unused in-layout configuration
->       phy: qcom-qmp-ufs: drop unused in-layout configuration
->       phy: qcom-qmp-usb: drop unused in-layout configuration
->       phy: qcom-qmp-pcie: drop power-down delay config
->       phy: qcom-qmp-pcie: replace power-down delay
->       phy: qcom-qmp-pcie-msm8996: drop power-down delay config
->       phy: qcom-qmp-combo: drop sc8280xp power-down delay
->       phy: qcom-qmp-combo: drop power-down delay config
->       phy: qcom-qmp-usb: drop sc8280xp power-down delay
->       phy: qcom-qmp-usb: drop power-down delay config
->       phy: qcom-qmp-pcie: fix sc8180x initialisation
->       phy: qcom-qmp-pcie: fix ipq8074-gen3 initialisation
->       phy: qcom-qmp-pcie: fix ipq6018 initialisation
->       phy: qcom-qmp-pcie: clean up status polling
->       phy: qcom-qmp-pcie: increase status polling period
->       phy: qcom-qmp-pcie-msm8996: clean up ready and status polling
->       phy: qcom-qmp-pcie-msm8996: increase status polling period
->       phy: qcom-qmp-combo: clean up status polling
->       phy: qcom-qmp-combo: increase status polling period
->       phy: qcom-qmp-ufs: drop unused phy-status config
->       phy: qcom-qmp-ufs: clean up ready polling
->       phy: qcom-qmp-ufs: increase ready polling period
->       phy: qcom-qmp-usb: clean up status polling
->       phy: qcom-qmp-usb: increase status polling period
->       phy: qcom-qmp-combo: drop start and pwrdn-ctrl abstraction
->       phy: qcom-qmp-pcie: drop start-ctrl abstraction
->       phy: qcom-qmp-pcie: add config sanity checks
->       phy: qcom-qmp-pcie-msm8996: drop start and pwrdn-ctrl abstraction
->       phy: qcom-qmp-ufs: drop start and pwrdn-ctrl abstraction
->       phy: qcom-qmp-usb: drop start and pwrdn-ctrl abstraction
->       phy: qcom-qmp-combo: fix NULL-deref on runtime resume
->       phy: qcom-qmp-ufs: move device-id table
->       phy: qcom-qmp-ufs: merge driver data
->       phy: qcom-qmp-ufs: clean up device-tree parsing
->       phy: qcom-qmp-ufs: clean up probe initialisation
->       phy: qcom-qmp-ufs: rename PHY ops structure
->       phy: qcom-qmp-ufs: clean up PHY init
->       dt-bindings: phy: qcom,qmp-ufs: rename current bindings
->       dt-bindings: phy: qcom,qmp-ufs: fix sc8280xp binding
->       phy: qcom-qmp-ufs: restructure PHY creation
->       phy: qcom-qmp-ufs: add support for updated sc8280xp binding
->       phy: qcom-qmp-usb: fix sc8280xp PCS_USB offset
->       phy: qcom-qmp-usb: sort device-id table
->       phy: qcom-qmp-usb: move device-id table
->       phy: qcom-qmp-usb: move pm ops
->       phy: qcom-qmp-usb: merge driver data
->       phy: qcom-qmp-usb: clean up device-tree parsing
->       phy: qcom-qmp-usb: clean up probe initialisation
->       phy: qcom-qmp-usb: rename PHY ops structure
->       phy: qcom-qmp-usb: clean up PHY init
->       dt-bindings: phy: qcom,qmp-usb: rename current bindings
->       dt-bindings: phy: qcom,qmp-usb: fix sc8280xp binding
->       phy: qcom-qmp-usb: restructure PHY creation
->       phy: qcom-qmp-usb: add support for updated sc8280xp binding
->       phy: qcom-qmp-pcie: sort device-id table
->       phy: qcom-qmp-pcie: move device-id table
->       phy: qcom-qmp-pcie: merge driver data
->       phy: qcom-qmp-pcie: clean up device-tree parsing
->       phy: qcom-qmp-pcie: clean up probe initialisation
->       phy: qcom-qmp-pcie: rename PHY ops structure
->       phy: qcom-qmp-pcie: clean up PHY lane init
->       phy: qcom-qmp-pcie: use shorter tables identifiers
->       phy: qcom-qmp-pcie: add register init helper
->       dt-bindings: phy: qcom,qmp-pcie: rename current bindings
->       dt-bindings: phy: qcom,qmp-pcie: add sc8280xp bindings
->       phy: qcom-qmp-pcie: restructure PHY creation
->       phy: qcom-qmp-pcie: fix initialisation reset
->       phy: qcom-qmp-pcie: add support for pipediv2 clock
->       phy: qcom-qmp-pcie: add support for sc8280xp
->       phy: qcom-qmp-pcie: add support for sc8280xp 4-lane PHYs
->       phy: qcom-qmp-combo: fix out-of-bounds clock access
->       phy: qcom-qmp-combo: fix sdm845 reset
->       phy: qcom-qmp-combo: fix sc8180x reset
->       phy: qcom-qmp-combo: fix broken power on
->       phy: qcom-qmp-combo: fix runtime suspend
->       phy: qcom-qmp-combo: clean up common initialisation
->       phy: qcom-qmp-combo: sort device-id table
->       phy: qcom-qmp-combo: move device-id table
->       phy: qcom-qmp-combo: move pm ops
->       phy: qcom-qmp-combo: rename PHY ops structures
->       phy: qcom-qmp-combo: drop unused DP PHY mode op
->       phy: qcom-qmp-combo: rename USB PHY ops
->       phy: qcom-qmp-combo: drop unnecessary debug message
->       phy: qcom-qmp-combo: separate USB and DP init ops
->       phy: qcom-qmp-combo: rename DP PHY ops
->       phy: qcom-qmp-combo: separate USB and DP power-on ops
->       phy: qcom-qmp-combo: clean up serdes initialisation
->       phy: qcom-qmp-combo: separate USB and DP devicetree parsing
->       phy: qcom-qmp-combo: add dedicated DP iomem pointers
->       phy: qcom-qmp-combo: clean up DP configurations
->       phy: qcom-qmp-combo: rename sc8280xp config
->       phy: qcom-qmp-combo: add DP configuration tables
->       phy: qcom-qmp-combo: drop lanes config parameter
->       phy: qcom-qmp-combo: merge USB and DP configurations
->       phy: qcom-qmp-combo: merge driver data
->       phy: qcom-qmp-combo: clean up device-tree parsing
->       phy: qcom-qmp-combo: clean up probe initialisation
->       phy: qcom-qmp-combo: clean up DP callback names
->       dt-bindings: phy: qcom,qmp-usb3-dp: rename current bindings
->       dt-bindings: phy: qcom,qmp-usb3-dp: fix sc8280xp binding
->       phy: qcom-qmp-combo: drop v4 reference-clock source
->       phy: qcom-qmp-combo: restructure PHY creation
->       phy: qcom-qmp-combo: generate pipe clock name
->       phy: qcom-qmp-combo: drop redundant clock structure
->       phy: qcom-qmp-combo: drop redundant clock allocation
->       phy: qcom-qmp-combo: add clock registration helper
->       phy: qcom-qmp-combo: separate clock and provider registration
->       phy: qcom-qmp-combo: clean up DP clock callbacks
->       phy: qcom-qmp-combo: rename common-register pointers
->       phy: qcom-qmp-combo: rename DP_PHY register pointer
->       phy: qcom-qmp-combo: add support for updated sc8280xp binding
->       dt-bindings: phy: qcom,sc8280xp-qmp-usb3-uni: drop reference-clock =
-source
->       phy: qcom-qmp-usb: drop sc8280xp reference-clock source
->       phy: qcom-qmp: drop unused type header
->       phy: qcom-qmp-usb: drop redundant clock allocation
->       phy: qcom-qmp-pcie: drop redundant clock allocation
-
-Johan
-
---Oz/j3kEjT8Hxv6aE
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQQHbPq+cpGvN/peuzMLxc3C7H1lCAUCY6BLaQAKCRALxc3C7H1l
-CFpcAP4qJYV9fuWNzeSOkZz2Ev+VCr8l4eRn0e7NCMqQOuxpUwEAkD5ClW7DJsuq
-HoWyBClGvmUlFSNrv1gUgOpsGZ5knAM=
-=uejG
------END PGP SIGNATURE-----
-
---Oz/j3kEjT8Hxv6aE--
+> Michael Trimarchi (4):
+>   phy: add PHY_MODE_TTL
+>   phy: rockchip: Add inno_is_valid_phy_mode
+>   phy: rockchip: Implement TTY phy mode
+>   drm/rockchip: rgb: Add dphy connection to rgb output
+>
+>  drivers/gpu/drm/rockchip/rockchip_rgb.c       | 18 +++++
+>  .../phy/rockchip/phy-rockchip-inno-dsidphy.c  | 72 +++++++++++++++++++
+>  include/linux/phy/phy.h                       |  3 +-
+>  3 files changed, 92 insertions(+), 1 deletion(-)
+>
+> --
+> 2.34.1
+>
 
 
---===============4183206816067947184==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+-- 
+Michael Nazzareno Trimarchi
+Co-Founder & Chief Executive Officer
+M. +39 347 913 2170
+michael@amarulasolutions.com
+__________________________________
+
+Amarula Solutions BV
+Joop Geesinkweg 125, 1114 AB, Amsterdam, NL
+T. +31 (0)85 111 9172
+info@amarulasolutions.com
+www.amarulasolutions.com
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============4183206816067947184==--
-
