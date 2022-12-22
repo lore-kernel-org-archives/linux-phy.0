@@ -4,62 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2F82DC4332F
-	for <linux-phy@archiver.kernel.org>; Thu, 22 Dec 2022 14:36:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 94A9FC4332F
+	for <linux-phy@archiver.kernel.org>; Thu, 22 Dec 2022 14:36:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NH5r6zOVgFVX/5VhWsU3nzSZTimLmXU/7AjeDjaaTaM=; b=YHY+VrwHDo3uF0
-	AGTWCf49MYdLNJmA+YD3NusI/c7K18sg3JFman2+4HpyKTGQfPnM8yo5JhQg87GYDL7g8rihcTNX+
-	y96kvYPCi+udJE5GoEjbwFRP7rlkSn/1Pi9OAwZSw2t3cSi8RZS1EoXWubVojtarerlzboi1oktZd
-	kO0zU/ixKKwS6INMd/XsMb2LU7N7Jn8+tUpCGhqco2IgEvagEQx35+yvGqWoJu1Hj5ZvFr4Vw7dVx
-	pDwjZilaYJIFw4Q3gIKKYQLV46sObByXpXBUXW+gz2QyN/lSr/9GxH9nM+xvE+Qx9yHoWE750EV30
-	BkNy2Zb784PtQnayIsPw==;
+	List-Owner; bh=eVZ11CiDjxBomKVNzgpqMeA26ASKH9rZk3DLYgyjL+c=; b=wxgTf6Y92TX7vg
+	qsue6p5e1233OUCL4LPDze2jgMQs5py0gYEzXPPMyBCxBsFkEGNGX4CXnS43inOZ4CfDD61JDg1ao
+	c/Ya29ADaC7VLq7nRGabs+u1dq5Wq3cm6IIrBC1iFgUmQTqiWr43eApGH+Dg33OJOCYf/ZiW5zy1K
+	sYSDv01bXO6XcmX3YvVkYILjcEvvd2vk3wujQFvQNWh5LFMbkESpm+zz2BLVUhTCqJIQe/DENsFmt
+	xicBzA/ftYVczmsO4Nm0CrM3FkkDxG60lspfEELti/hhvZMH0IU97axLv8IGDketzK0TtnwGO6RWm
+	TamxhCJQfup6jx1ncvaQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1p8Mg9-00D2Jq-0p; Thu, 22 Dec 2022 14:36:13 +0000
-Received: from mail-pj1-x1036.google.com ([2607:f8b0:4864:20::1036])
+	id 1p8MgA-00D2La-TA; Thu, 22 Dec 2022 14:36:14 +0000
+Received: from mail-pj1-x102c.google.com ([2607:f8b0:4864:20::102c])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1p8MJb-00CpJd-Hk
-	for linux-phy@lists.infradead.org; Thu, 22 Dec 2022 14:12:57 +0000
-Received: by mail-pj1-x1036.google.com with SMTP id x3so2012969pjv.4
-        for <linux-phy@lists.infradead.org>; Thu, 22 Dec 2022 06:12:55 -0800 (PST)
+	id 1p8MJv-00CpOC-Ag
+	for linux-phy@lists.infradead.org; Thu, 22 Dec 2022 14:13:17 +0000
+Received: by mail-pj1-x102c.google.com with SMTP id gv5-20020a17090b11c500b00223f01c73c3so5537875pjb.0
+        for <linux-phy@lists.infradead.org>; Thu, 22 Dec 2022 06:13:02 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=8r6KWtBC24mvcKhKbi7oMsl/OBPp4xpGlki0s+jabEY=;
-        b=P4YYRDE7eLMbshCu/AHFfq4yO9XLNrx8vkP9s9ulv6mT6xjsgejmF7rZxI3q6MWsSr
-         UcJ/yJdcKMahNPOMOwprplmiNGv11pKw3UvQEFcQzE30vtdW0VhOzTrWNV/1uvEvvluk
-         OKfjfmw9AXCkybIh1bWJ/Q1J7cd6cPuLRqolxmcXGTN08h/p+BEieKI61QV1pHZ9ZKkR
-         BgbFvnOWEgC8craFOZ56y8EqPp3zuw3fmmdf0tkDj+35Ic9zylbaBTXttoxUCBZw8lM7
-         bSMJXQuRCBYHyGvemSAbZYbbI/xLN0tzsFHPyKRd1xShBmwCEfCM526PNiNxrlL5msmL
-         ukbw==
+        bh=+9vMWr+QReiCFTMChXS+VaiIVai5hcXHpa8PnZ2xGs0=;
+        b=CdISaZLIaDAiejs3ebXWfckHizcdGNVuYMECOILk4yH8xwZVwxG4rqfNknKiQ9bMxv
+         K6t7qbFpxglLraOezwuKyzjqE8CILTiYQ8fqC9spqWBaWJemqGlFl9HcxUr/IKp4GiVs
+         lmvYjvo5Xsua2Dr3Hikt0B9Qgo+BR+9rdhHGiGch3nEldEUjjhkJEPBqpNEJNmNBWlR7
+         afSp0RPecbEl4ZEjX8yxe7ItSy8y0659l6Vht++AZTi1zjiu/7I/OJvwdg/hfknwmO05
+         fKeR62Njz+K0Ku39QJtMu4hAR3KOVexrkaHShOcxUgXcwsBT/pNtnOm1BuGm8aBWvH1H
+         26Vw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=8r6KWtBC24mvcKhKbi7oMsl/OBPp4xpGlki0s+jabEY=;
-        b=rgCZ7mkA91jESguVYCtopX6M6RSyktx+ZQQMwqzh9BOiT3rxnTlENoOoiqi931BQ1Z
-         69kXlzSXMP6Du9Y1rWWy49cGCRnDjtdu8wNW/3t+6snM/K0bHM0IIpAMd3+ZBHAQyhFr
-         GFGQzdUEFDPFnZOpq1yq5ZHKik4d/rcCDvVfhMH/gM/x7V2jFahXsvqdcLIUjAsmmtiL
-         xXE7vTWYt1Srcyy+v0gkznWAn0OJjKMyzBgwUVlCHywrMfNz/L82LltYz9h4LTAx1uTN
-         Ph5+NfxCiaDt/Pep9QdlOvUK2dOD6gGCW0wsarjMJ8zrcnprfcmsURIgglsQ+/gp5TPA
-         5hQg==
-X-Gm-Message-State: AFqh2koN3SO7PYCaDgiKe9LL5Ral6gRXATkwvWaj7y575+/QHK9OCDeQ
-	ZY1HwRxSLdlvBBIhFZ5z4N4P
-X-Google-Smtp-Source: AMrXdXt39otDg2GPiuR+A8WWlXVq1iDlfUJ6rH6SVRvyktfugDgqkZ6oq6hotpPIIqAIrKuhLnlHxQ==
-X-Received: by 2002:a05:6a20:3ca5:b0:af:ae01:54df with SMTP id b37-20020a056a203ca500b000afae0154dfmr9321720pzj.11.1671718374656;
-        Thu, 22 Dec 2022 06:12:54 -0800 (PST)
+        bh=+9vMWr+QReiCFTMChXS+VaiIVai5hcXHpa8PnZ2xGs0=;
+        b=YaJOUiOxS9OwpdVmnKo92yXI6Yj2uUSxjhhD+Z+CPS92QettwR5kR731hIju+kQYzK
+         jOxGbmn7griAPTZuhP2+q53z1qzPl0h3A2qXWWMZrzbE2FZ8CcJgnaNYFEbOtHknqOnD
+         6gZIBXw3WS5gagl2RX88Fs5OK8MK2Xyy0xKsY9dcf6Clq/wOTaRZlYtzJDJLRU5XCPXd
+         pOX+dxjaxCfMla08lYGiQZfqBdbWbiKRIVbuPMTZylki8FEcirCqGt57tpMYIHbSpjtv
+         6rOdSpg/siHRli6tAcvhOKcShOBpdpjU0DvnQtA8WDiC0olqwciymnmiDLSQj5PEUbtr
+         V+7Q==
+X-Gm-Message-State: AFqh2kqknBMp+SpHGKYoXO18dgfoQei8Zv129l+qlK9YjALVwFVXT3x5
+	VImndfGYXk3SPfEfBry199Tc
+X-Google-Smtp-Source: AMrXdXsteySjBHCQNu+U2EA0Z9ki5BDJhCG3tehQDYHTLHrsEX/9rNG3ICW7RmKBQP2Yjf+3ELN7ag==
+X-Received: by 2002:a17:90b:3712:b0:223:ceed:ef6f with SMTP id mg18-20020a17090b371200b00223ceedef6fmr6803083pjb.10.1671718382131;
+        Thu, 22 Dec 2022 06:13:02 -0800 (PST)
 Received: from localhost.localdomain ([117.217.177.177])
-        by smtp.gmail.com with ESMTPSA id f8-20020a655908000000b0047829d1b8eesm832031pgu.31.2022.12.22.06.12.47
+        by smtp.gmail.com with ESMTPSA id f8-20020a655908000000b0047829d1b8eesm832031pgu.31.2022.12.22.06.12.55
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 22 Dec 2022 06:12:53 -0800 (PST)
+        Thu, 22 Dec 2022 06:13:01 -0800 (PST)
 From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 To: martin.petersen@oracle.com,
 	jejb@linux.ibm.com,
@@ -78,16 +78,17 @@ Cc: quic_cang@quicinc.com,
 	avri.altman@wdc.com,
 	bvanassche@acm.org,
 	Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Subject: [PATCH v5 22/23] scsi: ufs: ufs-qcom: Add support for finding max gear on new platforms
-Date: Thu, 22 Dec 2022 19:40:00 +0530
-Message-Id: <20221222141001.54849-23-manivannan.sadhasivam@linaro.org>
+Subject: [PATCH v5 23/23] MAINTAINERS: Add myself as the maintainer for Qcom UFS drivers
+Date: Thu, 22 Dec 2022 19:40:01 +0530
+Message-Id: <20221222141001.54849-24-manivannan.sadhasivam@linaro.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20221222141001.54849-1-manivannan.sadhasivam@linaro.org>
 References: <20221222141001.54849-1-manivannan.sadhasivam@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221222_061255_701165_9135745C 
-X-CRM114-Status: GOOD (  10.59  )
+X-CRM114-CacheID: sfid-20221222_061315_719109_ED31BAD2 
+X-CRM114-Status: UNSURE (   8.18  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,46 +105,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Starting from Qcom UFS version 4.0, vendor specific REG_UFS_PARAM0 register
-can be used to determine the maximum gear supported by the controller.
+Qcom UFS drivers are left un-maintained till now. I'd like to step up to
+maintain the drivers and the binding.
 
-Suggested-by: Can Guo <quic_cang@quicinc.com>
-Reviewed-by: Andrew Halaney <ahalaney@redhat.com>
-Tested-by: Andrew Halaney <ahalaney@redhat.com> # Qdrive3/sa8540p-ride
+Acked-by: Bjorn Andersson <andersson@kernel.org>
 Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 ---
- drivers/ufs/host/ufs-qcom.c | 2 ++
- drivers/ufs/host/ufs-qcom.h | 4 ++++
- 2 files changed, 6 insertions(+)
+ MAINTAINERS | 8 ++++++++
+ 1 file changed, 8 insertions(+)
 
-diff --git a/drivers/ufs/host/ufs-qcom.c b/drivers/ufs/host/ufs-qcom.c
-index 3efef2f36e69..607fddb7b4c3 100644
---- a/drivers/ufs/host/ufs-qcom.c
-+++ b/drivers/ufs/host/ufs-qcom.c
-@@ -291,6 +291,8 @@ static u32 ufs_qcom_get_hs_gear(struct ufs_hba *hba)
- 		 * Hence downgrade the maximum supported gear to HS-G2.
- 		 */
- 		return UFS_HS_G2;
-+	} else if (host->hw_ver.major >= 0x4) {
-+		return UFS_QCOM_MAX_GEAR(ufshcd_readl(hba, REG_UFS_PARAM0));
- 	}
+diff --git a/MAINTAINERS b/MAINTAINERS
+index 7729a30b9609..7638c749a63f 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -21411,6 +21411,14 @@ L:	linux-mediatek@lists.infradead.org (moderated for non-subscribers)
+ S:	Maintained
+ F:	drivers/ufs/host/ufs-mediatek*
  
- 	/* Default is HS-G3 */
-diff --git a/drivers/ufs/host/ufs-qcom.h b/drivers/ufs/host/ufs-qcom.h
-index 4b00c67e9d7f..dd3abd23ec22 100644
---- a/drivers/ufs/host/ufs-qcom.h
-+++ b/drivers/ufs/host/ufs-qcom.h
-@@ -94,6 +94,10 @@ enum {
- #define TMRLUT_HW_CGC_EN	BIT(6)
- #define OCSC_HW_CGC_EN		BIT(7)
- 
-+/* bit definitions for REG_UFS_PARAM0 */
-+#define MAX_HS_GEAR_MASK	GENMASK(6, 4)
-+#define UFS_QCOM_MAX_GEAR(x)	FIELD_GET(MAX_HS_GEAR_MASK, (x))
++UNIVERSAL FLASH STORAGE HOST CONTROLLER DRIVER QUALCOMM HOOKS
++M:	Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
++L:	linux-arm-msm@vger.kernel.org
++L:	linux-scsi@vger.kernel.org
++S:	Maintained
++F:	Documentation/devicetree/bindings/ufs/qcom,ufs.yaml
++F:	drivers/ufs/host/ufs-qcom*
 +
- /* bit definition for UFS_UFS_TEST_BUS_CTRL_n */
- #define TEST_BUS_SUB_SEL_MASK	GENMASK(4, 0)  /* All XXX_SEL fields are 5 bits wide */
- 
+ UNIVERSAL FLASH STORAGE HOST CONTROLLER DRIVER RENESAS HOOKS
+ M:	Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
+ L:	linux-renesas-soc@vger.kernel.org
 -- 
 2.25.1
 
