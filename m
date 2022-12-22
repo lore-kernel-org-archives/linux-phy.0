@@ -4,62 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 006D7C4167B
-	for <linux-phy@archiver.kernel.org>; Thu, 22 Dec 2022 14:32:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8F84BC4332F
+	for <linux-phy@archiver.kernel.org>; Thu, 22 Dec 2022 14:32:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oKU/K25JnosxsyOvzrF0uR2sL+pWLQcTWQd1RhVNb58=; b=xm7K9cSv+Tu+2i
-	SqCN1da/1IRREUnimpOUcKvptFw4VBKj64vQEd7t2EYppnOnrVQNptPU4sLaWPUziJ0ro6lUt4ATg
-	tyH3DFypCcJYDzJ0XSGpHfy7kB+RYoxWQqpHWfn539fLhXDTja8dFlyiG4+kx8RS3apT6nTQJSf4F
-	McKC7QMnn+nD52IzsMGIXwqlY7I6AZazmhIhahabPyV0EjVwKFBupmnPCJKS6UW0Gxowik0UA/ojS
-	lRWubUVClnN1FzxkeqThIfgdpQv/+C2btPzY6JL6FY8GjEYsVe/Z/Ws0lyGHUgLsxn/40Opjc6WzN
-	6idQWj1NprZ4FnkLPJFw==;
+	List-Owner; bh=yFRAhPMHYswQx5t3ZzNSrVjr+Bw/wnue4aeHPRjxuPw=; b=zzDXg6iUn64TAh
+	+nl/faDoV/AdxyE0NuCg14gqhLo2XdZOVDZBkJB81E4tfZYg8NFGX+iKQYV3Xi9ruy/gy9cXEwlPE
+	kdptZLBUxbXgAyi4S7RVshHFH74AhoQOfwP/ptWTkWJuXwbcn8dkGQddKUuA1HsxE8gruNQcGMPfx
+	XqOxbUUTpSO9S/MHyB64OEodW+c2Nv17Ihz4BKcaqITOf9r8rnsnlHvT5XmVpweGiGRIgZrkWWYjM
+	P1Iy/xB18ixjXaPeCA1ceOGtcIA2Ql9xVbgqCarJcJVETN2ciFNWHuWzee4lkIaS7FDEuzg3Cvih9
+	eN+Fvr3wWY4MpxAJy9vQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1p8Mcd-00D08Y-Af; Thu, 22 Dec 2022 14:32:35 +0000
-Received: from mail-pl1-x62b.google.com ([2607:f8b0:4864:20::62b])
+	id 1p8Mce-00D09x-V9; Thu, 22 Dec 2022 14:32:37 +0000
+Received: from mail-pj1-x1031.google.com ([2607:f8b0:4864:20::1031])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1p8MJA-00CoxP-Pf
-	for linux-phy@lists.infradead.org; Thu, 22 Dec 2022 14:12:30 +0000
-Received: by mail-pl1-x62b.google.com with SMTP id 4so2137224plj.3
-        for <linux-phy@lists.infradead.org>; Thu, 22 Dec 2022 06:12:25 -0800 (PST)
+	id 1p8MJH-00Cp3L-EE
+	for linux-phy@lists.infradead.org; Thu, 22 Dec 2022 14:12:37 +0000
+Received: by mail-pj1-x1031.google.com with SMTP id v23so2014004pju.3
+        for <linux-phy@lists.infradead.org>; Thu, 22 Dec 2022 06:12:32 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=mPijPobTcYQaRyLBeRVB3HBZnVNDSDqtRoK4CmiEviM=;
-        b=BA0eDOPbqVVIhhnoX9eUYS0pHxcdGVSvOSEqKJssJmQgmB/zpfNs2ywpseefd9emYh
-         XoqN4fMEHfG2pCF4KZiD2D5/qOOhJbSP8VUw1VfdAzx0eEsQJRZfPNZ1giqckcw6l/0F
-         RY9jGf365mZQMeq8fABGTxuju4LBtSxJVrQVhQSYMynUL2F04SC6OwQb54WMmEL+4MHi
-         nj4OlLmn3jy8CMwICcCtp6czimJzm9ypl8bMFg5PkRnYD7CXnKG/mQwKZnsgSz2ndx0y
-         UIxtddqWDUwypdkhoLzg5pp8bnnjBvmdaWC8ZQ+LmnfdZ565cBWkogTOH/3UPtLm+trg
-         koiA==
+        bh=UnBUp5WyCz4krAwRvhsnV8wS00kgXpu7vT2PwLsChp8=;
+        b=YdGqbwN+gQqfHCFSWQmyIsywlKkBpIYcrXg3HvTHS9G+mtStS43WruoltROS/uEKmo
+         5O0zfwcO568bsfeWlPwgJFW0h5+Mevpep4gv/Z4Kd/4G9UwqYB6lGPf9ennfbbO/autt
+         PEFZKjtsvw0sxM5kGviTs1A+k5IR27ckqFWJFoUvTVjANNuoacVT/cHWjAImL+I3Jwxk
+         Gi43pb99ZJveG9SKVWrUxZ3GttulbqQJz2lhDE0sxWzxsV3mXop09VXI3g2Irs0LhP+Z
+         hywLxlVT/J+vhftxL+uOTDwUl/1ORzp+G6AFRdghV/4n8ZOwmFmKY/j8Wi5PAOmrKWi3
+         GToQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=mPijPobTcYQaRyLBeRVB3HBZnVNDSDqtRoK4CmiEviM=;
-        b=KVdVQR121E+Ll4s2xpNd2mA4+6iiTjGOQYUUpvh6ShrZdjMtYE//BKwW1NPJ3mwMB/
-         B+wdVBp/hfq/9WusrPM4pn6c9ZXMJQ5hKaEiOrcPWYAyIKZj5DMsz+6WAH8QIMeIDq7t
-         Y8XSEVFU8nfmAc0AvkNrN1PNqeAdTKW0pI/CFqZbKvVTtj6qUSij/nogHWij9Y4H75eF
-         eVVwGNJsJRA6fftxEZlYU7k4rqZL3qYjL5YyeAhCLfpTIyZjzZnohT0+b90Zi91ime7H
-         AlRLNRMvDCNSTJB6aci5JeGNE/q7sYuOAZmYytRxQbz9p4cLdyezAzjDtLaTg+SxhH9q
-         GVjQ==
-X-Gm-Message-State: AFqh2kqdGgqotE8InO7eR1mMPkDmT/Gee8EZ+7gkVZ+M44v+OpU5Bxny
-	mhFq9rLZlzIG/GbxQ4z/H9C5
-X-Google-Smtp-Source: AMrXdXvWMjrApzmz5yi1BXdIqlRS22IM1TaOp7Xa1o1bPm+EfdAnwO2fH9/w5YnfyLy+cSU+N9cqsQ==
-X-Received: by 2002:a17:903:28d:b0:191:386:d8f with SMTP id j13-20020a170903028d00b0019103860d8fmr6265636plr.47.1671718344357;
-        Thu, 22 Dec 2022 06:12:24 -0800 (PST)
+        bh=UnBUp5WyCz4krAwRvhsnV8wS00kgXpu7vT2PwLsChp8=;
+        b=NE+xRv0VGaxULePgv/tvrj/dNCnjUwVNqhlxP1C3poS4iIi7494g1Y9gUnm32HcebT
+         tA00S8EQ4I8IfSc1oAJyxjq0uqI6ITjYBNMbKkDUQXwbvzgpTzR5gJPM4mPKO+xWq8Or
+         /nRfi4uwEDftlcq22CBmiE1Cbt7YeGPwZJrhXibxG53uTWNub6R0yXciyfw3KnyLLzIa
+         Of211gIzNUmvtfd9OHTssK4MMGuARSOItBi853xVyBLNir1CdXL8xEBKz2vlbzJhEdVD
+         T6VK1UYM+VvMRmRtytAfL3R9ttilTNAR+28SB/LDFvFlJoIYUCT44oJYVJaw8HZ2KWcf
+         9PWA==
+X-Gm-Message-State: AFqh2kptqTz1QPwNVthb1/1vInz+oXuE+xmkMcqcqaHoxDlD8VxS+rtV
+	7sdJjL+ncWhtYb8EeftFa0CH
+X-Google-Smtp-Source: AMrXdXvxNWJ3I9wCdsRq+WWRItGU4LaRqqcv3b3NKRJwUI3B0oHtW7J9RE43Xlo2gfcOsBjbHh4h5Q==
+X-Received: by 2002:a05:6a20:a884:b0:af:9fa8:ce05 with SMTP id ca4-20020a056a20a88400b000af9fa8ce05mr6825267pzb.2.1671718351929;
+        Thu, 22 Dec 2022 06:12:31 -0800 (PST)
 Received: from localhost.localdomain ([117.217.177.177])
-        by smtp.gmail.com with ESMTPSA id f8-20020a655908000000b0047829d1b8eesm832031pgu.31.2022.12.22.06.12.17
+        by smtp.gmail.com with ESMTPSA id f8-20020a655908000000b0047829d1b8eesm832031pgu.31.2022.12.22.06.12.24
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 22 Dec 2022 06:12:23 -0800 (PST)
+        Thu, 22 Dec 2022 06:12:31 -0800 (PST)
 From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 To: martin.petersen@oracle.com,
 	jejb@linux.ibm.com,
@@ -78,17 +78,16 @@ Cc: quic_cang@quicinc.com,
 	avri.altman@wdc.com,
 	bvanassche@acm.org,
 	Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Subject: [PATCH v5 18/23] scsi: ufs: core: Add reinit_notify() callback
-Date: Thu, 22 Dec 2022 19:39:56 +0530
-Message-Id: <20221222141001.54849-19-manivannan.sadhasivam@linaro.org>
+Subject: [PATCH v5 19/23] scsi: ufs: core: Add support for reinitializing the UFS device
+Date: Thu, 22 Dec 2022 19:39:57 +0530
+Message-Id: <20221222141001.54849-20-manivannan.sadhasivam@linaro.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20221222141001.54849-1-manivannan.sadhasivam@linaro.org>
 References: <20221222141001.54849-1-manivannan.sadhasivam@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221222_061229_050293_3131B066 
-X-CRM114-Status: UNSURE (   9.19  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20221222_061235_536030_4601231B 
+X-CRM114-Status: GOOD (  18.50  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,54 +104,149 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-reinit_notify() callback can be used by the UFS controller drivers to
-perform changes required for UFSHCD reinit that can happen during max
-gear switch.
+Some platforms like Qcom, requires the UFS device to be reinitialized
+after switching to maximum gear speed. So add support for that in UFS
+core by introducing a new quirk (UFSHCD_CAP_REINIT_AFTER_MAX_GEAR_SWITCH)
+and doing the reinitialization, if the quirk is enabled by the controller
+driver.
 
+Suggested-by: Can Guo <quic_cang@quicinc.com>
 Tested-by: Andrew Halaney <ahalaney@redhat.com> # Qdrive3/sa8540p-ride
 Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 ---
- drivers/ufs/core/ufshcd-priv.h | 6 ++++++
- include/ufs/ufshcd.h           | 2 ++
- 2 files changed, 8 insertions(+)
+ drivers/ufs/core/ufshcd.c | 63 +++++++++++++++++++++++++++++----------
+ include/ufs/ufshcd.h      |  6 ++++
+ 2 files changed, 53 insertions(+), 16 deletions(-)
 
-diff --git a/drivers/ufs/core/ufshcd-priv.h b/drivers/ufs/core/ufshcd-priv.h
-index a9e8e1f5afe7..2ce3c98e0711 100644
---- a/drivers/ufs/core/ufshcd-priv.h
-+++ b/drivers/ufs/core/ufshcd-priv.h
-@@ -226,6 +226,12 @@ static inline void ufshcd_vops_config_scaling_param(struct ufs_hba *hba,
- 		hba->vops->config_scaling_param(hba, p, data);
+diff --git a/drivers/ufs/core/ufshcd.c b/drivers/ufs/core/ufshcd.c
+index bda61be5f035..fe4720bf0d67 100644
+--- a/drivers/ufs/core/ufshcd.c
++++ b/drivers/ufs/core/ufshcd.c
+@@ -8161,27 +8161,18 @@ static int ufshcd_add_lus(struct ufs_hba *hba)
+ 	return ret;
  }
  
-+static inline void ufshcd_vops_reinit_notify(struct ufs_hba *hba)
-+{
-+	if (hba->vops && hba->vops->reinit_notify)
-+		hba->vops->reinit_notify(hba);
+-/**
+- * ufshcd_probe_hba - probe hba to detect device and initialize it
+- * @hba: per-adapter instance
+- * @init_dev_params: whether or not to call ufshcd_device_params_init().
+- *
+- * Execute link-startup and verify device initialization
+- */
+-static int ufshcd_probe_hba(struct ufs_hba *hba, bool init_dev_params)
++static int ufshcd_device_init(struct ufs_hba *hba, bool init_dev_params)
+ {
+ 	int ret;
+-	unsigned long flags;
+-	ktime_t start = ktime_get();
+ 
+ 	hba->ufshcd_state = UFSHCD_STATE_RESET;
+ 
+ 	ret = ufshcd_link_startup(hba);
+ 	if (ret)
+-		goto out;
++		return ret;
+ 
+ 	if (hba->quirks & UFSHCD_QUIRK_SKIP_PH_CONFIGURATION)
+-		goto out;
++		return ret;
+ 
+ 	/* Debug counters initialization */
+ 	ufshcd_clear_dbg_ufs_stats(hba);
+@@ -8192,12 +8183,12 @@ static int ufshcd_probe_hba(struct ufs_hba *hba, bool init_dev_params)
+ 	/* Verify device initialization by sending NOP OUT UPIU */
+ 	ret = ufshcd_verify_dev_init(hba);
+ 	if (ret)
+-		goto out;
++		return ret;
+ 
+ 	/* Initiate UFS initialization, and waiting until completion */
+ 	ret = ufshcd_complete_dev_init(hba);
+ 	if (ret)
+-		goto out;
++		return ret;
+ 
+ 	/*
+ 	 * Initialize UFS device parameters used by driver, these
+@@ -8206,7 +8197,7 @@ static int ufshcd_probe_hba(struct ufs_hba *hba, bool init_dev_params)
+ 	if (init_dev_params) {
+ 		ret = ufshcd_device_params_init(hba);
+ 		if (ret)
+-			goto out;
++			return ret;
+ 	}
+ 
+ 	ufshcd_tune_unipro_params(hba);
+@@ -8227,11 +8218,51 @@ static int ufshcd_probe_hba(struct ufs_hba *hba, bool init_dev_params)
+ 		if (ret) {
+ 			dev_err(hba->dev, "%s: Failed setting power mode, err = %d\n",
+ 					__func__, ret);
++			return ret;
++		}
++	}
++
++	return 0;
 +}
 +
- extern const struct ufs_pm_lvl_states ufs_pm_lvl_states[];
++/**
++ * ufshcd_probe_hba - probe hba to detect device and initialize it
++ * @hba: per-adapter instance
++ * @init_dev_params: whether or not to call ufshcd_device_params_init().
++ *
++ * Execute link-startup and verify device initialization
++ */
++static int ufshcd_probe_hba(struct ufs_hba *hba, bool init_dev_params)
++{
++	ktime_t start = ktime_get();
++	unsigned long flags;
++	int ret;
++
++	ret = ufshcd_device_init(hba, init_dev_params);
++	if (ret)
++		goto out;
++
++	if (hba->quirks & UFSHCD_QUIRK_REINIT_AFTER_MAX_GEAR_SWITCH) {
++		/* Reset the device and controller before doing reinit */
++		ufshcd_device_reset(hba);
++		ufshcd_hba_stop(hba);
++		ufshcd_vops_reinit_notify(hba);
++		ret = ufshcd_hba_enable(hba);
++		if (ret) {
++			dev_err(hba->dev, "Host controller enable failed\n");
++			ufshcd_print_evt_hist(hba);
++			ufshcd_print_host_state(hba);
+ 			goto out;
+ 		}
+-		ufshcd_print_pwr_info(hba);
++
++		/* Reinit the device */
++		ret = ufshcd_device_init(hba, init_dev_params);
++		if (ret)
++			goto out;
+ 	}
  
- /**
++	ufshcd_print_pwr_info(hba);
++
+ 	/*
+ 	 * bActiveICCLevel is volatile for UFS device (as per latest v2.1 spec)
+ 	 * and for removable UFS card as well, hence always set the parameter.
 diff --git a/include/ufs/ufshcd.h b/include/ufs/ufshcd.h
-index 5cf81dff60aa..0a0b435f5c17 100644
+index 0a0b435f5c17..68bd822b9c22 100644
 --- a/include/ufs/ufshcd.h
 +++ b/include/ufs/ufshcd.h
-@@ -297,6 +297,7 @@ struct ufs_pwr_mode_info {
-  * @config_scaling_param: called to configure clock scaling parameters
-  * @program_key: program or evict an inline encryption key
-  * @event_notify: called to notify important events
-+ * @reinit_notify: called to notify reinit of UFSHCD during max gear switch
-  */
- struct ufs_hba_variant_ops {
- 	const char *name;
-@@ -335,6 +336,7 @@ struct ufs_hba_variant_ops {
- 			       const union ufs_crypto_cfg_entry *cfg, int slot);
- 	void	(*event_notify)(struct ufs_hba *hba,
- 				enum ufs_event_type evt, void *data);
-+	void	(*reinit_notify)(struct ufs_hba *);
+@@ -595,6 +595,12 @@ enum ufshcd_quirks {
+ 	 * auto-hibernate capability but it's FASTAUTO only.
+ 	 */
+ 	UFSHCD_QUIRK_HIBERN_FASTAUTO			= 1 << 18,
++
++	/*
++	 * This quirk needs to be enabled if the host controller needs
++	 * to reinit the device after switching to maximum gear.
++	 */
++	UFSHCD_QUIRK_REINIT_AFTER_MAX_GEAR_SWITCH       = 1 << 19,
  };
  
- /* clock gating state  */
+ enum ufshcd_caps {
 -- 
 2.25.1
 
