@@ -4,66 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 25085C4332F
-	for <linux-phy@archiver.kernel.org>; Tue, 20 Dec 2022 20:01:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E2A88C4332F
+	for <linux-phy@archiver.kernel.org>; Thu, 22 Dec 2022 14:28:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6WuiPzklfYiXUW53uSOpmDxC9Y07VKLoAtjjG/uBlPc=; b=nfaWla08d2eSAS
-	XfrHf/8g9Rg7xVEQDgNlYS0DdGEZWRLBNn9+ylNvKOp0KiCKWMcyV8TPk+6Tlr459VcLGw2r3wYkS
-	WXw2fqy/uYbKDigsLXNadw87YY7P9hH8G1nifzzwpkYD5R4vFNaLEm/GYhCz53FXc3wttwt3/XHjf
-	DJ6Q8odTOATdZStR5TST5DuhyAzP/jHOkyeXPandzi1vxdbebSTuTmr/1jx6fFU2jSb1jL0+gZlzE
-	yep2RjmWx5zWjGY+++ChYW2YOBHJoKIqdktaxFWbBhzfgk88Uu7hgk4sQAv2pcTdYewo9dbvZJRcw
-	2Joxy7v0Attexq/BnzCg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=cT58hpF+N9qC5/Qoen54lIFGNIC42YpcNoG4bkU6ZLs=; b=N7Km3KkKQCbThY
+	BfgXGG17dyquPgNAVHFmDql1GkX9cWtLiNxipedBj2NiniBscl7l5x7WOOXj/WzpEWT0Knt3g6IwX
+	DHxq584k1ABFXenJ8yzPS4WhgNXslp87sytWHz1nMxlSuwZuGXK2JlZ07RwHRmPprxaTeFwLUfJ2n
+	nqMQTU3sIuWOnOd6a34ylnNo6tPyVk6p/4gUgtu8QLoJ7lPUoMmr3eYhxyBfRW/nlbfIinG8RLr/r
+	+BrlIKHxA54Fpwi0aV9nhZnawD7gKyHUJB6gopp8jesWOs0o7aJAWwa+Bp6hJdljs+1kSYdjGQ4dP
+	45k2aKFJE+ufUovSf0Tw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1p7inP-003e69-1N; Tue, 20 Dec 2022 20:01:03 +0000
-Received: from mail-oa1-f46.google.com ([209.85.160.46])
+	id 1p8MYF-00CxRp-Hm; Thu, 22 Dec 2022 14:28:03 +0000
+Received: from mail-pj1-x102e.google.com ([2607:f8b0:4864:20::102e])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1p7inK-003e1Y-Qw; Tue, 20 Dec 2022 20:01:00 +0000
-Received: by mail-oa1-f46.google.com with SMTP id 586e51a60fabf-1443a16b71cso16680176fac.13;
-        Tue, 20 Dec 2022 12:00:57 -0800 (PST)
+	id 1p8MH4-00Cndh-3m
+	for linux-phy@lists.infradead.org; Thu, 22 Dec 2022 14:10:20 +0000
+Received: by mail-pj1-x102e.google.com with SMTP id u4-20020a17090a518400b00223f7eba2c4so1961049pjh.5
+        for <linux-phy@lists.infradead.org>; Thu, 22 Dec 2022 06:10:14 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=maKazkqxDXKNlbDmatrsJr0yRFC5v9vVzKjjcP/hqRY=;
+        b=AABuUZlxOnwe7CqeZepSq1GN/aiZtuPS0RScE5ISqZpaE4eO0AzrRnghARB1/opFOZ
+         99f03JZBJ3vnV1InjXwuwVX9kQMp9bYfoquYv9yPKgo3yBP3rhluCA6xn+7gPKHy9Gut
+         5JNDL7oL4Df40SKYlFOPEtYi397zLzjv3t7wSfkLik38CZE7lOn85gQLL/WjKYppeRRJ
+         AYiMX8q6m3skqJ6KngLXeMdceoqj8OZYj1pANHsYo33QmzYpwRKVbtzLnUYSym29UBGJ
+         rl1rB2/Ka+htTkwGvU03F5fM4ocHG4FhfBadmcZRbGjvZ1vbeCpkjZGqEFXrpPVICmWn
+         OnrQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=m7rQADosS+b3+803ppmC4G5l6lsD7QIny2Q7opGqliM=;
-        b=EeAFLhReSWwR02DJ5tNXtCFAk73mbl5XBpRcnQeT1BK4sPa2+TVHAs1X43kTYG0No4
-         MWd58HtIpeOqnWYn8PzlTz/U88fWRB4zqkdv8q0coXXv+MlCiR7Exd6HWEg6paSpJ+Rf
-         Ykw7dYOhXu/AUAmIme3q5E40OYGrUsZRcPlxc5gNK0SnAYE3ACiOiNsbRGj8w9DEo+8Y
-         HU7M9ZlCAn06DBRT5LwItc9bToGiA6A/rRmGAkUP/72k3jAnIGu5jkDXNCk4QsTgOlwL
-         DFJUWzwI3aFdJN2VCbEHn/awvLZhIP12mbaINXoyzcmOIiBS0yY4cDIZUoQIN7aLOqJM
-         V5rw==
-X-Gm-Message-State: AFqh2kr2EideeO6S+4T8DrP14+ZtWs9HmpNFAKLl0kTPE07H8PoEFZOb
-	9D2bRNkvcISBEqEYtWxo3g==
-X-Google-Smtp-Source: AMrXdXt9sEtEqgQZhotj9V3mZGPtA+Z0Jj7vkU5jn2um2dvY3ioakyoO6JU+NnthNj+8BzLMwIRf8g==
-X-Received: by 2002:a05:6870:c991:b0:148:500d:c6fb with SMTP id hi17-20020a056870c99100b00148500dc6fbmr7635185oab.38.1671566456641;
-        Tue, 20 Dec 2022 12:00:56 -0800 (PST)
-Received: from robh_at_kernel.org (66-90-144-107.dyn.grandenetworks.net. [66.90.144.107])
-        by smtp.gmail.com with ESMTPSA id y29-20020a056870459d00b0011d02a3fa63sm6504888oao.14.2022.12.20.12.00.54
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=maKazkqxDXKNlbDmatrsJr0yRFC5v9vVzKjjcP/hqRY=;
+        b=XBBxp6+bH3n5uhV6Q4VvvQeLyx4vvQgBehqmzSYoCRSbazH1/l1xw3SEvqrbTLAhs6
+         VxAR2WgA1YSSn3chmOEl+wVvTjI/2gDOYZ0V6W+9f7amcYIZBJ7Lxn/GC5rAT90feuQR
+         QAL89wb8TN1KdMWII279GXCBRfXwMtBv4W1E3bWmU6nZKaZcDBtgvv5YCfhe4vFs0ucE
+         yvapd5pODOHMrgQs+M/MUtJvCXY4nRO6fT84el90X9ASfIo5XnBXY9maQ6bpx1j50X5h
+         Y/tai7ORQ+8XQZrdYlnWjEjf91HUMbRo6q7zy/QCd8dFemfrS6JVfJhPenaGD6JRXP5m
+         PE4w==
+X-Gm-Message-State: AFqh2kp4IG0Nk7NwMqNccE2cCe691r93DnkK/P0u4Hisjsl84X2mHNte
+	Fg/5PVvolqgeHD13j3ztXvuK
+X-Google-Smtp-Source: AMrXdXuF2JibIiTYzAmjvFYio+hNi+Z0b/bVtuZcp4sFJ3r90Z/OtlV9hB18rGs1wY4afwTgE4YybA==
+X-Received: by 2002:a05:6a21:3284:b0:ad:4a3e:a6e1 with SMTP id yt4-20020a056a21328400b000ad4a3ea6e1mr9736629pzb.11.1671718213733;
+        Thu, 22 Dec 2022 06:10:13 -0800 (PST)
+Received: from localhost.localdomain ([117.217.177.177])
+        by smtp.gmail.com with ESMTPSA id f8-20020a655908000000b0047829d1b8eesm832031pgu.31.2022.12.22.06.10.07
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 20 Dec 2022 12:00:55 -0800 (PST)
-Received: (nullmailer pid 990414 invoked by uid 1000);
-	Tue, 20 Dec 2022 20:00:54 -0000
-Date: Tue, 20 Dec 2022 14:00:54 -0600
-From: Rob Herring <robh@kernel.org>
-To: Johan Jonker <jbx6244@gmail.com>
-Cc: heiko@sntech.de, hjc@rock-chips.com, krzysztof.kozlowski+dt@linaro.org, airlied@gmail.com, daniel@ffwll.ch, vkoul@kernel.org, kishon@kernel.org, linux-phy@lists.infradead.org, dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v4 3/5] dt-bindings: phy: add port node to
- phy-rockchip-inno-usb2.yaml
-Message-ID: <20221220200054.GA953433-robh@kernel.org>
-References: <7f38e245-4fc0-1754-e75c-10c1e31bbd4d@gmail.com>
- <e54f7b52-3530-59c4-90c6-1fb5a17d6491@gmail.com>
+        Thu, 22 Dec 2022 06:10:12 -0800 (PST)
+From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+To: martin.petersen@oracle.com,
+	jejb@linux.ibm.com,
+	andersson@kernel.org,
+	vkoul@kernel.org
+Cc: quic_cang@quicinc.com,
+	quic_asutoshd@quicinc.com,
+	linux-arm-msm@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-scsi@vger.kernel.org,
+	dmitry.baryshkov@linaro.org,
+	ahalaney@redhat.com,
+	abel.vesa@linaro.org,
+	alim.akhtar@samsung.com,
+	avri.altman@wdc.com,
+	bvanassche@acm.org,
+	Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+Subject: [PATCH v5 00/23] ufs: qcom: Add HS-G4 support
+Date: Thu, 22 Dec 2022 19:39:38 +0530
+Message-Id: <20221222141001.54849-1-manivannan.sadhasivam@linaro.org>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <e54f7b52-3530-59c4-90c6-1fb5a17d6491@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221220_120058_928336_D4FFF74C 
-X-CRM114-Status: GOOD (  17.68  )
+X-CRM114-CacheID: sfid-20221222_061018_247186_893F03A7 
+X-CRM114-Status: GOOD (  17.61  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,38 +101,110 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Dec 19, 2022 at 05:56:55PM +0100, Johan Jonker wrote:
-> On Rockchip rk3399 a port node with one endpoint can be connected
-> to a USB Type-C connector node.
-> Add a port node to the phy-rockchip-inno-usb2.yaml file.
-> 
-> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
-> ---
->  .../devicetree/bindings/phy/phy-rockchip-inno-usb2.yaml      | 5 +++++
->  1 file changed, 5 insertions(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/phy-rockchip-inno-usb2.yaml b/Documentation/devicetree/bindings/phy/phy-rockchip-inno-usb2.yaml
-> index f71920082..ffc7e7560 100644
-> --- a/Documentation/devicetree/bindings/phy/phy-rockchip-inno-usb2.yaml
-> +++ b/Documentation/devicetree/bindings/phy/phy-rockchip-inno-usb2.yaml
-> @@ -115,6 +115,11 @@ properties:
->      required:
->        - "#phy-cells"
-> 
-> +  port:
-> +    $ref: /schemas/graph.yaml#/properties/port
-> +    description:
-> +      Port node with one endpoint connected to a USB Type-C connector node.
-> +
+Hello,
 
-This doesn't make sense. First, this phy has an otg and host phy, so 
-which one is it? Second, the USB connector graph is supposed to be 
-connected to the USB controllers, not a phy.
+This series adds HS-G4 support to the Qcom UFS driver and PHY driver.
+The newer Qcom platforms support configuring the UFS controller and PHY
+in dual gears (i.e., controller/PHY can be configured to run in two gear
+speeds). This is accomplished by adding two different PHY init sequences
+to the PHY driver and the UFS driver requesting the one that's required
+based on the platform configuration.
 
-But I guess we already have this in use, so I guess just mark it 
-deprecated to discourage more usage..
+Initially the ufs-qcom driver will use the default gear G2 for enumerating
+the UFS device. Afer enumeration, the max gear supported by both the
+controller and device would be found out and that will be used thereafter.
+But for using the max gear after enumeration, the ufs-qcom driver requires
+the UFS device to be reinitialized. For this purpose, a separate quirk has
+been introduced in the UFS core along with a callback and those will be used
+by the ufs-qcom driver.
 
-Rob
+This series has been tested on following platforms:
+
+* Qcom RB5 development platform powered by SM8250 SoC
+* SM8450 based dev board
+* Qdrive3/sa8540p-ride board based on SC8280XP (derivative)
+
+Merging Strategy:
+-----------------
+
+The PHY patches are expected to go through PHY tree and UFS, MAINTAINERS
+patches are expected to go through SCSI tree.
+
+NOTE: Since this series targets multiple SoCs (base like SM8350) and
+(derivative like SC8280XP), testing on all of these platforms is really
+appreciated. Although, if the series works for base SoC, then for derivatives
+also it should work.
+
+Thanks,
+Mani
+
+Changes in v5:
+
+* Collected Review and tested-by tags
+* Reworded patch 18/23 (Bart) and also the comment for reinit_notify
+
+Changes in v4:
+
+* Dropped HS G3 specific setting from SM8350 default init sequence
+* Added G4 support to SM8350 and SC8280XP
+* Covered all qcom files under drivers/ufs/host in MAINTAINERS file
+* Added missing Suggested-by tags for Can Guo
+* Rebased on top of linux-next 20221201
+
+Changes in v3:
+
+* Dropped the "device-max-gear" DT property and switched to reinitialization (Krzysztof)
+* Added HS-G4 support to all compatible SoCs (SM8150, SM8250 and SM8450). This will also
+  benefit the derivative SoCs of these platforms like SC8180x, SC8280x etc...
+* Splitted the qmp_phy_init_tbl changes into separate patches (Vinod)
+* Collected reviews from Andrew H
+
+Changes in v2:
+
+* Collected reviews from Dmitry
+* Renamed "max-gear" property to "max-device-gear"
+* Used min() for deciding which gear to use instead of open comparision
+* Added comment about the old register name
+
+Manivannan Sadhasivam (23):
+  phy: qcom-qmp-ufs: Remove _tbl suffix from qmp_phy_init_tbl
+    definitions
+  phy: qcom-qmp-ufs: Rename MSM8996 PHY definitions
+  phy: qcom-qmp-ufs: Move register settings to qmp_phy_cfg_tbls struct
+  phy: qcom-qmp-ufs: Add support for configuring PHY in HS Series B mode
+  phy: qcom-qmp-ufs: Add support for configuring PHY in HS G4 mode
+  phy: qcom-qmp-ufs: Move HS Rate B register setting to tbls_hs_b
+  phy: qcom-qmp-ufs: Add HS G4 mode support to SM8150 SoC
+  phy: qcom-qmp-ufs: Add HS G4 mode support to SM8250 SoC
+  phy: qcom-qmp-ufs: Avoid setting HS G3 specific registers
+  phy: qcom-qmp-ufs: Add HS G4 mode support to SM8350 SoC
+  phy: qcom-qmp-ufs: Add HS G4 mode support to SM8450 SoC
+  phy: qcom-qmp-ufs: Add HS G4 mode support to SC8280XP SoC
+  scsi: ufs: ufs-qcom: Remove un-necessary goto statements
+  scsi: ufs: ufs-qcom: Remove un-necessary WARN_ON()
+  scsi: ufs: ufs-qcom: Use bitfields where appropriate
+  scsi: ufs: ufs-qcom: Use dev_err_probe() for printing probe error
+  scsi: ufs: ufs-qcom: Fix the Qcom register name for offset 0xD0
+  scsi: ufs: core: Add reinit_notify() callback
+  scsi: ufs: core: Add support for reinitializing the UFS device
+  scsi: ufs: ufs-qcom: Factor out the logic finding the HS Gear
+  scsi: ufs: ufs-qcom: Add support for reinitializing the UFS device
+  scsi: ufs: ufs-qcom: Add support for finding max gear on new platforms
+  MAINTAINERS: Add myself as the maintainer for Qcom UFS drivers
+
+ MAINTAINERS                                   |   8 +
+ .../phy/qualcomm/phy-qcom-qmp-pcs-ufs-v5.h    |   1 +
+ drivers/phy/qualcomm/phy-qcom-qmp-ufs.c       | 454 +++++++++++++-----
+ drivers/ufs/core/ufshcd-priv.h                |   6 +
+ drivers/ufs/core/ufshcd.c                     |  63 ++-
+ drivers/ufs/host/ufs-qcom.c                   | 170 +++----
+ drivers/ufs/host/ufs-qcom.h                   |  70 +--
+ include/ufs/ufshcd.h                          |   8 +
+ 8 files changed, 532 insertions(+), 248 deletions(-)
+
+-- 
+2.25.1
+
 
 -- 
 linux-phy mailing list
