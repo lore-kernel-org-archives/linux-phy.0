@@ -4,65 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3DF7AC4332F
-	for <linux-phy@archiver.kernel.org>; Thu, 22 Dec 2022 20:38:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C5397C46467
+	for <linux-phy@archiver.kernel.org>; Fri, 23 Dec 2022 16:18:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=B/Sore8y6Ydn+fIt88xh//JyjZcPNSYv9+IOCSDq45Q=; b=zRjwBXcj9anaXN
-	rNK0ElWiIXrc2DXiQbA17XbVf8/oZbkCBLfdMGYzEM3kblpeQam9vFc+A9bGioOBJ7fqyzKoRWEPL
-	kfsCLp4ygP43tYDxqjWn4ol14wJUcFAz9BkLl6g6bHkzX/kMiqWDpYwVKvsbrprf/+tZuWQ3s5TU+
-	qEDFHZnpPot5nyaU3uwEquB3iDqMYNopzG7Q9vDDZc1t30jdRE4ru+7CpWOoCBe0CQJUjxKLckCoN
-	tNZ98sSaEVarA8kIzYFkFOuUy14wuk+S3WwcPFiRJRBwPOmXA8EsDex5pdrSh0739gY/36HgSpHFj
-	UPmIRKSgxPfAd6Z3c/cw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=N2a/3zMla7TI/Traa4UGV/DfYnhJV3Y61zuSro8WRek=; b=iatQs0emA/wLjs
+	FlBLJ8oI+he8Pv4/rbGc963QUBmniizUZWlJYSp6XpbZ8ubzuP947yOJtOC+0G+1PY52yS9FIVmNq
+	UcUC0Dw1sZN81j3VB70Upp4yCg0XiaEd5QfWDnCoFC1NqXQ5U6RbZy5Wtkgxr40PDNJJlk1qzZZ2u
+	GTESeTkTDmapFuNZFQIgJYhKJlVgrx7YTVmBK61IG3oultf1BcDCZLoMT7I44qq4O8IBbhwSoJzT7
+	kYasV0HruAKc3Lwrj8y654GFTO/hao89GE6NSctokREFLTwRenSahCNjU3sregdJK9dF4I2nQ1fPe
+	LXFLlvwNk9RnJFmktYzA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1p8SL4-00GyJJ-MR; Thu, 22 Dec 2022 20:38:50 +0000
-Received: from mail-oi1-f176.google.com ([209.85.167.176])
+	id 1p8kky-009tyT-T7; Fri, 23 Dec 2022 16:18:49 +0000
+Received: from mail-lf1-x12c.google.com ([2a00:1450:4864:20::12c])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1p8SL1-00GyHr-Ov
-	for linux-phy@lists.infradead.org; Thu, 22 Dec 2022 20:38:49 +0000
-Received: by mail-oi1-f176.google.com with SMTP id r11so2901526oie.13
-        for <linux-phy@lists.infradead.org>; Thu, 22 Dec 2022 12:38:46 -0800 (PST)
+	id 1p8kkv-009tt5-BU
+	for linux-phy@lists.infradead.org; Fri, 23 Dec 2022 16:18:47 +0000
+Received: by mail-lf1-x12c.google.com with SMTP id p36so7592807lfa.12
+        for <linux-phy@lists.infradead.org>; Fri, 23 Dec 2022 08:18:42 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=Ssdvzhuee2XQDm50/3Dh08z9mzFiguEgbpNiLUtPtQk=;
+        b=UYjsne41U/8//XGrEZ6dq42DkOf4pl/H4mBwv95l7LC/HPOBxZBwIOHP512CSawS/V
+         ZXRxPXvOBUKILtZWA6ZCHDGiTWcfnPi5EujmFDoS/QYeXBeVfd9qGhjN0xdyqARDD2h9
+         WV4xJo5w7mJN3fK5yuHO7DCiAZh1cBTovHrXChNvE3TCggPvirfwVf/stzpztbef/jDR
+         ox7SMWCthNCXopIH0fL+A93HX0+5N2zKKbKGXHEEwh3wS/HFJB7V/lfin8nsd2xAAK2p
+         ZqNj2j1L4PYBVZYbqF1Y3cQ7ARbhV53zt3b2HXhYSrm+70WsNa9pUsC1Yux6sObo/tEQ
+         tPyw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=8m3vdeoqRapejnKIbOke3igL2UHNLgon/GdxcFm+kZ8=;
-        b=8Rz+BYNluhzV0GMOFFf9zfgaqAx9UlUOo7USGSDNcCNXq9/CGhd4LgZX5PBEf1tlru
-         U7hS6a6eqVZ/UKe4++Lmv8MtHP/REZmyk/R5krWd4siiHB62wlUzxJS8sAmlCkjPq8Cu
-         zGGAeP8EbHT4XU2+sXPF+zJnyehHp++ojcJ3mmqxVUuaKrnJpkqRQwi0/GTWdKWQkl7m
-         4ggP9iKddo2N/wn2HFOvGfAmYjrKWSamzlrhPul9wjdNB/Yud8Nyww7Q4391RnesqlKw
-         UbYfFaZcCMYhddGURj40dAL1SVyhZLjv1KwKYr54T05Z0AorujUFoV7Gg1be8ajnfEwz
-         jX1Q==
-X-Gm-Message-State: AFqh2kp88NuSV1EHoLBVeP2ayUDsA2xuiguZsmXGH802GasrlcGMC5yd
-	4eECw64sw2b96cd4PgvsGPwnejNOZQ==
-X-Google-Smtp-Source: AMrXdXuYdVVTMMnQkm5gnhNsazhIx/OOOqoRnvH+O9vVz6IawyTzbghgBPgrK7U/Dw/pm+YKbyV4uw==
-X-Received: by 2002:aca:3d88:0:b0:361:8d6:944d with SMTP id k130-20020aca3d88000000b0036108d6944dmr2841162oia.47.1671741525643;
-        Thu, 22 Dec 2022 12:38:45 -0800 (PST)
-Received: from robh_at_kernel.org (66-90-144-107.dyn.grandenetworks.net. [66.90.144.107])
-        by smtp.gmail.com with ESMTPSA id e9-20020a544f09000000b0035aa617156bsm743444oiy.17.2022.12.22.12.38.44
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=Ssdvzhuee2XQDm50/3Dh08z9mzFiguEgbpNiLUtPtQk=;
+        b=7cnBMujin8WareydbDl4roy+4qTyRsDTLvZzjebWDvu7yQEKUM9LwhEfu3HPPE2f+0
+         tYwa1WtBRmSIezHZnFK4UtEzBPvtJbeMUkM/DDJFY/UZl52t7Spe1TKhf+TaES2xjHif
+         MoFjBYCgS/Zdx3mwzvC3F/KzZg2EyJcMtZJf9dgcBM2LTsijU72y6czF3a3J7N3h5Cjy
+         1arejuewCkNMtO8RrV1g6fnJvUWHRlxedmfExNlrN5dyUwTm/6V/iqVjTqB7btHcuDCo
+         vI3zGOa0HfqncTRItYVIvy5/gACwkM3/A5Xnk/QYLFLk+BcFZOfVpuZzv/hc6J4KNfBu
+         y39w==
+X-Gm-Message-State: AFqh2ko90RHUAkzD/uejNTw/j8RtXbmRvMkgDtmJQbM2A8o92uS+y6PD
+	ge4vlSVjqQBU8fEKFyQi4MecZg==
+X-Google-Smtp-Source: AMrXdXsWw512KHluUBDJzRaXuHifwQ7aus50gdJRaT8b2kbKkEG6+slseJlplBRP71EZhfMrDmokPQ==
+X-Received: by 2002:a19:f80c:0:b0:4b5:853c:ed30 with SMTP id a12-20020a19f80c000000b004b5853ced30mr2676054lff.23.1671812321141;
+        Fri, 23 Dec 2022 08:18:41 -0800 (PST)
+Received: from krzk-bin.NAT.warszawa.vectranet.pl (088156142067.dynamic-2-waw-k-3-2-0.vectranet.pl. [88.156.142.67])
+        by smtp.gmail.com with ESMTPSA id n18-20020a05651203f200b004b4f2a30e6csm581360lfq.0.2022.12.23.08.18.40
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 22 Dec 2022 12:38:45 -0800 (PST)
-Received: (nullmailer pid 2079648 invoked by uid 1000);
-	Thu, 22 Dec 2022 20:38:44 -0000
-Date: Thu, 22 Dec 2022 14:38:44 -0600
-From: Rob Herring <robh@kernel.org>
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Cc: linux-arm-msm@vger.kernel.org, Rob Herring <robh+dt@kernel.org>, linux-phy@lists.infradead.org, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Bjorn Andersson <andersson@kernel.org>, devicetree@vger.kernel.org, Andy Gross <agross@kernel.org>, linux-kernel@vger.kernel.org, Vinod Koul <vkoul@kernel.org>, Konrad Dybcio <konrad.dybcio@linaro.org>, Peng Fan <peng.fan@oss.nxp.com>
-Subject: Re: [PATCH] dt-bindings: phy: qcom,usb-hsic-phy: convert to DT schema
-Message-ID: <167174152396.2079609.894160712392200876.robh@kernel.org>
-References: <20221222155805.139284-1-krzysztof.kozlowski@linaro.org>
+        Fri, 23 Dec 2022 08:18:40 -0800 (PST)
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+To: Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Wesley Cheng <quic_wcheng@quicinc.com>,
+	linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org
+Cc: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Subject: [PATCH 1/4] dt-bindings: phy: qcom,usb-snps-femto-v2: use fallback compatibles
+Date: Fri, 23 Dec 2022 17:18:32 +0100
+Message-Id: <20221223161835.112079-1-krzysztof.kozlowski@linaro.org>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20221222155805.139284-1-krzysztof.kozlowski@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221222_123847_852376_E288C44E 
-X-CRM114-Status: UNSURE (   8.66  )
+X-CRM114-CacheID: sfid-20221223_081845_452977_3D06CB82 
+X-CRM114-Status: UNSURE (   8.33  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -80,20 +98,82 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Document SoC-specific compatibles with generic fallback (e.g.
+qcom,usb-snps-hs-7nm-phy) already used in DTSI.  Add SoC-specific
+compatibles for PHY on SDX55 and SDX65.
 
-On Thu, 22 Dec 2022 16:58:05 +0100, Krzysztof Kozlowski wrote:
-> Convert Qualcomm USB HSIC PHY bindings to DT schema.
-> 
-> Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-> ---
->  .../bindings/phy/qcom,usb-hsic-phy.txt        | 65 ------------------
->  .../bindings/phy/qcom,usb-hsic-phy.yaml       | 67 +++++++++++++++++++
->  2 files changed, 67 insertions(+), 65 deletions(-)
->  delete mode 100644 Documentation/devicetree/bindings/phy/qcom,usb-hsic-phy.txt
->  create mode 100644 Documentation/devicetree/bindings/phy/qcom,usb-hsic-phy.yaml
-> 
+This disallows usage of the qcom,usb-snps-hs-5nm-phy and
+qcom,usb-snps-hs-7nm-phy generic compatibles alone.  Do not touch
+remaining two compatibles - qcom,usb-snps-femto-v2-phy and
+qcom,sc8180x-usb-hs-phy - because there are no upstream users, so not
+sure what was the intention for them.
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+This fixes warnings like:
+
+  sa8295p-adp.dtb: phy@88e5000: compatible: 'oneOf' conditional failed, one must be fixed:
+    ['qcom,sc8280xp-usb-hs-phy', 'qcom,usb-snps-hs-5nm-phy'] is too long
+    'qcom,sc8280xp-usb-hs-phy' is not one of ['qcom,sm8150-usb-hs-phy', 'qcom,sm8250-usb-hs-phy', 'qcom,sm8350-usb-hs-phy', 'qcom,sm8450-usb-hs-phy']
+    'qcom,usb-snps-hs-7nm-phy' was expected
+
+Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+---
+ .../bindings/phy/qcom,usb-snps-femto-v2.yaml  | 33 +++++++++++--------
+ 1 file changed, 20 insertions(+), 13 deletions(-)
+
+diff --git a/Documentation/devicetree/bindings/phy/qcom,usb-snps-femto-v2.yaml b/Documentation/devicetree/bindings/phy/qcom,usb-snps-femto-v2.yaml
+index 68e70961beb2..85d405e028b9 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,usb-snps-femto-v2.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,usb-snps-femto-v2.yaml
+@@ -14,18 +14,25 @@ description: |
+ 
+ properties:
+   compatible:
+-    enum:
+-      - qcom,usb-snps-hs-5nm-phy
+-      - qcom,usb-snps-hs-7nm-phy
+-      - qcom,sc7280-usb-hs-phy
+-      - qcom,sc8180x-usb-hs-phy
+-      - qcom,sc8280xp-usb-hs-phy
+-      - qcom,sm6375-usb-hs-phy
+-      - qcom,sm8150-usb-hs-phy
+-      - qcom,sm8250-usb-hs-phy
+-      - qcom,sm8350-usb-hs-phy
+-      - qcom,sm8450-usb-hs-phy
+-      - qcom,usb-snps-femto-v2-phy
++    oneOf:
++      - enum:
++          - qcom,sc8180x-usb-hs-phy
++          - qcom,usb-snps-femto-v2-phy
++      - items:
++          - enum:
++              - qcom,sc8280xp-usb-hs-phy
++          - const: qcom,usb-snps-hs-5nm-phy
++      - items:
++          - enum:
++              - qcom,sc7280-usb-hs-phy
++              - qcom,sdx55-usb-hs-phy
++              - qcom,sdx65-usb-hs-phy
++              - qcom,sm6375-usb-hs-phy
++              - qcom,sm8150-usb-hs-phy
++              - qcom,sm8250-usb-hs-phy
++              - qcom,sm8350-usb-hs-phy
++              - qcom,sm8450-usb-hs-phy
++          - const: qcom,usb-snps-hs-7nm-phy
+ 
+   reg:
+     maxItems: 1
+@@ -160,7 +167,7 @@ examples:
+     #include <dt-bindings/clock/qcom,rpmh.h>
+     #include <dt-bindings/clock/qcom,gcc-sm8150.h>
+     phy@88e2000 {
+-        compatible = "qcom,sm8150-usb-hs-phy";
++        compatible = "qcom,sm8150-usb-hs-phy", "qcom,usb-snps-hs-7nm-phy";
+         reg = <0x088e2000 0x400>;
+         #phy-cells = <0>;
+ 
+-- 
+2.34.1
+
 
 -- 
 linux-phy mailing list
