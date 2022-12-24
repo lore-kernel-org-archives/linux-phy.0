@@ -4,85 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 939E8C4332F
-	for <linux-phy@archiver.kernel.org>; Sat, 24 Dec 2022 15:33:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 39210C4332F
+	for <linux-phy@archiver.kernel.org>; Sat, 24 Dec 2022 16:32:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LZhMqglwpinGzipCmb8/KlcXclLG4byjk7ZBf5tbWCA=; b=vu2iMCdvDlzi5c
-	EwK5X8aih7YGrVcAdrrEVcd/869gHbhBfN9ictla1zApcWPW3a1V9naOhmBDUyRCO26w8GaR7tDrs
-	NxJeCzowh9lSmrdVthXUZBY/Vsbgxc3+awUWwIWLZ1TK8XknjVB/Eou6Ep3W+HWgIvwMSIyWcpE+Y
-	pyc+LHGHWnLElsFO+89rehyp2KZAJaa1vPoLxTEEMTCvpZ3KjHODx6aN2ChwZnapBSS3huqMzuNSM
-	1P0nJAHVLX5GTC+VlRubWFtnwP6WWXZiJ9M/Z2X1kLWS3Iif8Lp0p5rouJeb5XKBVKhm89T15cCob
-	61PNUY73cHn73GvqOkVA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=xnKgofsJFdJlH2cIdskRVToDB2r3PGdXUHM0iYaqmVg=; b=taCdC7n9XZ9DFX
+	klZ9TO7DJrUuUNIHdVOWcqJ9YO7/2VaGKN8bkuAwPGRFfjDtsuGyE8HwfOMArYB2+/DxBg6IfDuqD
+	Yeb9sNvQ7Lx2iNMsmWROWv5ifmNIcBgMd7nCJRTsSWAhSRi8Tt1jhZOu4mCi6IuFhO7CtTcDfQxxk
+	L8VSdlvpK84rwN7YGUjsTlPKRNdRGr0YQYoYDtujrVAXqUkPUvtxedMeTH/K0k5SwHDQ22AIIdprO
+	iLylfiXrmo9tULetpZe9JEKs5eEDxgHqoKZQfwJ8ZBDXzGV9vyxBBjbOdrgLsI+6XaECrZ/U94MmB
+	GuRn7YWV0/ri0xM+vO6w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1p96WH-0018dh-Bk; Sat, 24 Dec 2022 15:33:05 +0000
-Received: from mail-lj1-x22f.google.com ([2a00:1450:4864:20::22f])
+	id 1p97RZ-001fdz-RL; Sat, 24 Dec 2022 16:32:17 +0000
+Received: from mail-lf1-x12a.google.com ([2a00:1450:4864:20::12a])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1p94Kq-00HOwI-4h
-	for linux-phy@lists.infradead.org; Sat, 24 Dec 2022 13:13:12 +0000
-Received: by mail-lj1-x22f.google.com with SMTP id y4so7658300ljc.9
-        for <linux-phy@lists.infradead.org>; Sat, 24 Dec 2022 05:13:02 -0800 (PST)
+	id 1p96fP-001DOy-Vl
+	for linux-phy@lists.infradead.org; Sat, 24 Dec 2022 15:44:32 +0000
+Received: by mail-lf1-x12a.google.com with SMTP id f34so10692935lfv.10
+        for <linux-phy@lists.infradead.org>; Sat, 24 Dec 2022 07:42:30 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
-        h=content-transfer-encoding:in-reply-to:from:references:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=vKooxm9xL5ScTSLAkqGgl8XoM29nVfbKpvwZn93/+/E=;
-        b=ER0D0mgudmmoxY65pvs0+g60xHKjYJxJL6AsTSOXHitngVaXr2n2aiA9ATcm8E2hTD
-         24MtS8S1xYWjCZrV4O9mlkVR1mtL+4so04j+uBKQLzHQTKoF5RKicNV/7FG9UVFbNvv7
-         77CpJq5ypBZl4R9xE7NiJjzoK2AoQ0SY92vqcLvXg/h6BOdb830DGE66WPuMkxy04YYW
-         NNaETJScrvH4XF/gAGHScKGTrnurfmFYjsFOjxaIa1ccx8zw/cbAHwaGsD/iBDsrCVQt
-         V5r4r3FdNX82c9RlcM+VJc6H1aKfMWv1Gt52NV+vVPeMb6AsZOAuTP3ffGQ436mCXLbn
-         sGqg==
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=gJqi/1NfJw5LwmQrgbx8SfjaLOZbl6rNXmEOBkpmpe8=;
+        b=wUUm02cnXMPlt2wsPdE3aMA2yBXTJM2VCaWmwwqZJrw3xAXSIGYwmq1jxaG0rXOYKE
+         pzioV0tukf8viXwELdkDqkNEpYMvEFEshPpkbNHzbfy0lrVU+cZaEAftFOBkTVPxl3GR
+         Rg7n/u37E97Uc4n0itbD/nmCsF/FHRVNLJOf+zspSgk1VmkG8sbPOqzyKiAucSB5cqZ1
+         YVpD0IySp44WMQR+giw+N88E13sqO472wa0pCukxj/oYxWZ7W3B4vSJouQd0C0kWzOeO
+         koGYyJziLfTOz2NkPujTsjY3aHk/YkDSiULt5DlodvFeTjE+eNw6Osye0pON7pPSkGAB
+         /48Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=content-transfer-encoding:in-reply-to:from:references:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=vKooxm9xL5ScTSLAkqGgl8XoM29nVfbKpvwZn93/+/E=;
-        b=WZ/D4CJsXjOcTQhE97sOnU1qFWBnIrc/lCYPp2G3HZj5mF+2cYEWHyQNUiTWoIqm8E
-         sMwDCo2yjoIacvHk5z5djCQWb4qUcE4jl9zWnDvMACfoK1xjhXMiGHkYDfz986p5pUJU
-         ho+fFDIq20PAYWHi4OBWMWi2QVPlFlUU5UZqpyMOY8hI3JFqSUBCt7fhJ677vNlG/m0C
-         K+6xM9y/u6eQymK+4OL1gl5P02PtdotTuQgLed7L/+sCn5Kpu6pevEcVYp99b7HFhw5m
-         RAXK6sajlghF5OSEU2eTBNdJpD8r3fw9Y+gOexFAJd5/AMicm2kHmrN9G3+5La1IU+zq
-         9jhw==
-X-Gm-Message-State: AFqh2kpBMQQ2tMnHVMKv6MzxNueNg59ZXUHyIqH3LmQ3zh9aqkDODJp8
-	l2TvMIMlZfnyXCDT2sRJeYud9g==
-X-Google-Smtp-Source: AMrXdXv4wJOqvXuk4jlsUaRGiCmgix1povzrzFh6Fq2qkhg4zUzx2nNeLPIO9bUZ0hWlNgmRyFtgoA==
-X-Received: by 2002:a2e:b177:0:b0:27d:3c1e:42de with SMTP id a23-20020a2eb177000000b0027d3c1e42demr3383154ljm.27.1671887581289;
-        Sat, 24 Dec 2022 05:13:01 -0800 (PST)
-Received: from [192.168.0.20] (088156142067.dynamic-2-waw-k-3-2-0.vectranet.pl. [88.156.142.67])
-        by smtp.gmail.com with ESMTPSA id bj40-20020a2eaaa8000000b0027fb76a4b44sm289495ljb.97.2022.12.24.05.13.00
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sat, 24 Dec 2022 05:13:00 -0800 (PST)
-Message-ID: <6a9506a5-caf0-0977-af75-0a4e4c0e3a0f@linaro.org>
-Date: Sat, 24 Dec 2022 14:12:59 +0100
-MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.6.0
-Subject: Re: [PATCH 3/4] ARM: dts: qcom: sdx65: add specific compatible for
- USB HS PHY
-Content-Language: en-US
-To: Konrad Dybcio <konrad.dybcio@linaro.org>, Andy Gross <agross@kernel.org>,
- Bjorn Andersson <andersson@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring
- <robh+dt@kernel.org>, Krzysztof Kozlowski
- <krzysztof.kozlowski+dt@linaro.org>, Wesley Cheng <quic_wcheng@quicinc.com>,
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-References: <20221223161835.112079-1-krzysztof.kozlowski@linaro.org>
- <20221223161835.112079-3-krzysztof.kozlowski@linaro.org>
- <d6fcecda-2f78-bd75-579b-672f6db779a2@linaro.org>
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=gJqi/1NfJw5LwmQrgbx8SfjaLOZbl6rNXmEOBkpmpe8=;
+        b=oybsSv2GsJAJofj1PkBG/X9IpdHwQBmLeU+nrDSewT4N0xfaiAyOc8UTlzYYXRPipx
+         8TJlH6579ly0sCUt/mqyvY/dTtjoK9M3OI9wwBf/dUWL3PLe6gm/R2XHmmy0xscx/3a+
+         Napy+vbslTvQQaUCf8oZ7r7XNnWDWhxTq62+UcezVN8j+Ao13L6lLGRaM3UWEqKcNUwQ
+         JXLwvzLBzlrbxyIxZkdvILXZimoDxT+NhhuUEYkIl04Clyu8+7KLbwNxEQjfwarx+jEg
+         D/jzKKGh4KphSXWBVPvr9gQFTtPqUQNoL9F1+6rDMzNx5iBFHF9q8S+hDhoYVF6kbihT
+         vPQg==
+X-Gm-Message-State: AFqh2krFITOhZqvo37J/Og0u2qxCHxGzFuDwBij4SxtggxDm/HfOGyov
+	/yvUJQRM9QAp8R8BbmK1DaP7Yw==
+X-Google-Smtp-Source: AMrXdXtxRWvo/hNKLsncTNLOdWGWw0VPar3rFmWqe8f8wqB2p0eEuNC5Pu/kpr5/kkvzuhjNN/QIUw==
+X-Received: by 2002:a05:6512:3984:b0:4a4:68b8:c2dd with SMTP id j4-20020a056512398400b004a468b8c2ddmr4191249lfu.52.1671896548741;
+        Sat, 24 Dec 2022 07:42:28 -0800 (PST)
+Received: from krzk-bin.NAT.warszawa.vectranet.pl (088156142067.dynamic-2-waw-k-3-2-0.vectranet.pl. [88.156.142.67])
+        by smtp.gmail.com with ESMTPSA id x11-20020a0565123f8b00b004b5adb59ed5sm979918lfa.297.2022.12.24.07.42.27
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sat, 24 Dec 2022 07:42:28 -0800 (PST)
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <d6fcecda-2f78-bd75-579b-672f6db779a2@linaro.org>
+To: Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Wesley Cheng <quic_wcheng@quicinc.com>,
+	linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org
+Cc: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Subject: [PATCH] dt-bindings: phy: qcom,qusb2: do not define properties in "if" block
+Date: Sat, 24 Dec 2022 16:42:26 +0100
+Message-Id: <20221224154226.43417-1-krzysztof.kozlowski@linaro.org>
+X-Mailer: git-send-email 2.34.1
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221224_051308_290210_A3B7053D 
-X-CRM114-Status: GOOD (  13.56  )
+X-CRM114-CacheID: sfid-20221224_074232_175393_B5268D6A 
+X-CRM114-Status: GOOD (  11.14  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,37 +97,199 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 23/12/2022 17:20, Konrad Dybcio wrote:
-> 
-> 
-> On 23.12.2022 17:18, Krzysztof Kozlowski wrote:
->> Add SoC-specific compatible to the USB HS PHY to match other devices and
->> bindings.
->>
->> Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
->> ---
->>  arch/arm/boot/dts/qcom-sdx65.dtsi | 3 ++-
->>  1 file changed, 2 insertions(+), 1 deletion(-)
->>
->> diff --git a/arch/arm/boot/dts/qcom-sdx65.dtsi b/arch/arm/boot/dts/qcom-sdx65.dtsi
->> index b073e0c63df4..d3c661d7650d 100644
->> --- a/arch/arm/boot/dts/qcom-sdx65.dtsi
->> +++ b/arch/arm/boot/dts/qcom-sdx65.dtsi
->> @@ -219,7 +219,8 @@ blsp1_uart3: serial@831000 {
->>  		};
->>  
->>  		usb_hsphy: phy@ff4000 {
->> -			compatible = "qcom,usb-snps-hs-7nm-phy";
->> +			compatible = "qcom,sdx65-usb-hs-phy",
->> +				     "qcom,usb-snps-hs-7nm-phy";
-> Not sure if the newline is necessary, but still:
-> 
-> Reviewed-by: Konrad Dybcio <konrad.dybcio@linaro.org>
+It is more readable to define properties in top-level "properties:" and
+restrict them (if needed) per compatible in the "if" block.  Defining
+properties in "if" block  does not work correctly with
+additionalProperties:false:
 
-It is over 80 - up to 90 - and we still keep 80-limit in coding style.
+  sc7180-trogdor-pazquel-lte-ti.dtb: phy@88e3000: 'qcom,bias-ctrl-value', 'qcom,charge-ctrl-value', 'qcom,hsdisc-trim-value',
+    'qcom,imp-res-offset-value', 'qcom,preemphasis-level', 'qcom,preemphasis-width' do not match any of the regexes: 'pinctrl-[0-9]+'
 
-Best regards,
-Krzysztof
+Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+---
+ .../bindings/phy/qcom,qusb2-phy.yaml          | 160 ++++++++++--------
+ 1 file changed, 85 insertions(+), 75 deletions(-)
+
+diff --git a/Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml
+index 636ea430fbff..7f403e77f320 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml
+@@ -82,81 +82,74 @@ properties:
+       Phandle to TCSR syscon register region.
+     $ref: /schemas/types.yaml#/definitions/phandle
+ 
+-if:
+-  properties:
+-    compatible:
+-      contains:
+-        const: qcom,qusb2-v2-phy
+-then:
+-  properties:
+-    qcom,imp-res-offset-value:
+-      description:
+-        It is a 6 bit value that specifies offset to be
+-        added to PHY refgen RESCODE via IMP_CTRL1 register. It is a PHY
+-        tuning parameter that may vary for different boards of same SOC.
+-      $ref: /schemas/types.yaml#/definitions/uint32
+-      minimum: 0
+-      maximum: 63
+-      default: 0
+-
+-    qcom,bias-ctrl-value:
+-      description:
+-        It is a 6 bit value that specifies bias-ctrl-value. It is a PHY
+-        tuning parameter that may vary for different boards of same SOC.
+-      $ref: /schemas/types.yaml#/definitions/uint32
+-      minimum: 0
+-      maximum: 63
+-      default: 32
+-
+-    qcom,charge-ctrl-value:
+-      description:
+-        It is a 2 bit value that specifies charge-ctrl-value. It is a PHY
+-        tuning parameter that may vary for different boards of same SOC.
+-      $ref: /schemas/types.yaml#/definitions/uint32
+-      minimum: 0
+-      maximum: 3
+-      default: 0
+-
+-    qcom,hstx-trim-value:
+-      description:
+-        It is a 4 bit value that specifies tuning for HSTX
+-        output current.
+-        Possible range is - 15mA to 24mA (stepsize of 600 uA).
+-        See dt-bindings/phy/phy-qcom-qusb2.h for applicable values.
+-      $ref: /schemas/types.yaml#/definitions/uint32
+-      minimum: 0
+-      maximum: 15
+-      default: 3
+-
+-    qcom,preemphasis-level:
+-      description:
+-        It is a 2 bit value that specifies pre-emphasis level.
+-        Possible range is 0 to 15% (stepsize of 5%).
+-        See dt-bindings/phy/phy-qcom-qusb2.h for applicable values.
+-      $ref: /schemas/types.yaml#/definitions/uint32
+-      minimum: 0
+-      maximum: 3
+-      default: 2
+-
+-    qcom,preemphasis-width:
+-      description:
+-        It is a 1 bit value that specifies how long the HSTX
+-        pre-emphasis (specified using qcom,preemphasis-level) must be in
+-        effect. Duration could be half-bit of full-bit.
+-        See dt-bindings/phy/phy-qcom-qusb2.h for applicable values.
+-      $ref: /schemas/types.yaml#/definitions/uint32
+-      minimum: 0
+-      maximum: 1
+-      default: 0
+-
+-    qcom,hsdisc-trim-value:
+-      description:
+-        It is a 2 bit value tuning parameter that control disconnect
+-        threshold and may vary for different boards of same SOC.
+-      $ref: /schemas/types.yaml#/definitions/uint32
+-      minimum: 0
+-      maximum: 3
+-      default: 0
++  qcom,imp-res-offset-value:
++    description:
++      It is a 6 bit value that specifies offset to be
++      added to PHY refgen RESCODE via IMP_CTRL1 register. It is a PHY
++      tuning parameter that may vary for different boards of same SOC.
++    $ref: /schemas/types.yaml#/definitions/uint32
++    minimum: 0
++    maximum: 63
++    default: 0
++
++  qcom,bias-ctrl-value:
++    description:
++      It is a 6 bit value that specifies bias-ctrl-value. It is a PHY
++      tuning parameter that may vary for different boards of same SOC.
++    $ref: /schemas/types.yaml#/definitions/uint32
++    minimum: 0
++    maximum: 63
++    default: 32
++
++  qcom,charge-ctrl-value:
++    description:
++      It is a 2 bit value that specifies charge-ctrl-value. It is a PHY
++      tuning parameter that may vary for different boards of same SOC.
++    $ref: /schemas/types.yaml#/definitions/uint32
++    minimum: 0
++    maximum: 3
++    default: 0
++
++  qcom,hstx-trim-value:
++    description:
++      It is a 4 bit value that specifies tuning for HSTX
++      output current.
++      Possible range is - 15mA to 24mA (stepsize of 600 uA).
++      See dt-bindings/phy/phy-qcom-qusb2.h for applicable values.
++    $ref: /schemas/types.yaml#/definitions/uint32
++    minimum: 0
++    maximum: 15
++    default: 3
++
++  qcom,preemphasis-level:
++    description:
++      It is a 2 bit value that specifies pre-emphasis level.
++      Possible range is 0 to 15% (stepsize of 5%).
++      See dt-bindings/phy/phy-qcom-qusb2.h for applicable values.
++    $ref: /schemas/types.yaml#/definitions/uint32
++    minimum: 0
++    maximum: 3
++    default: 2
++
++  qcom,preemphasis-width:
++    description:
++      It is a 1 bit value that specifies how long the HSTX
++      pre-emphasis (specified using qcom,preemphasis-level) must be in
++      effect. Duration could be half-bit of full-bit.
++      See dt-bindings/phy/phy-qcom-qusb2.h for applicable values.
++    $ref: /schemas/types.yaml#/definitions/uint32
++    minimum: 0
++    maximum: 1
++    default: 0
++
++  qcom,hsdisc-trim-value:
++    description:
++      It is a 2 bit value tuning parameter that control disconnect
++      threshold and may vary for different boards of same SOC.
++    $ref: /schemas/types.yaml#/definitions/uint32
++    minimum: 0
++    maximum: 3
++    default: 0
+ 
+ required:
+   - compatible
+@@ -169,6 +162,23 @@ required:
+   - vdda-phy-dpdm-supply
+   - resets
+ 
++allOf:
++  - if:
++      not:
++        properties:
++          compatible:
++            contains:
++              const: qcom,qusb2-v2-phy
++    then:
++      properties:
++        qcom,imp-res-offset-value: false
++        qcom,bias-ctrl-value: false
++        qcom,charge-ctrl-value: false
++        qcom,hstx-trim-value: false
++        qcom,preemphasis-level: false
++        qcom,preemphasis-width: false
++        qcom,hsdisc-trim-value: false
++
+ additionalProperties: false
+ 
+ examples:
+-- 
+2.34.1
 
 
 -- 
