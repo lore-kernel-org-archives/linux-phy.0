@@ -4,87 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EC95BC4332F
-	for <linux-phy@archiver.kernel.org>; Tue, 27 Dec 2022 10:30:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 953BFC46467
+	for <linux-phy@archiver.kernel.org>; Tue, 27 Dec 2022 11:14:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:Date:Subject:Cc:
-	To:From:Message-ID:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MbppsVWGRujNW68exZtIgvQeZ5jXWZEtngEyntwdbf8=; b=D5oA+uwlMRFMYY
-	rwpJvuSwQw0OM+2p1/aGkVcnZb9tc60HLvnyPwJic1eDeyumqukp1NielTJyYp/4+44kx9AxVCHxV
-	jaEy2j56nAQlgQ0y6jQ5ZUwb01m0PIDhyUP61Mr9Rzr3sMubdft1zQBEKpaRG9yq/ds0DbM7T3KQ4
-	CR+tw52sGa2Epam7v52NB6WMyKG98QI+7jWreTaXknfj6L+VfrAcNO6mcKjR3CyYkEu35V+2hkizR
-	V/DZMV3SCVLxUgpDgElBoDcRAV5MeBJP2ISmtqWZf6wAi18ERl0XH27aNpTIjx0/XmLGEnGW06xDv
-	aUd2oC92LN24MortckJQ==;
+	List-Owner; bh=cOZhjKmlKHzossDoX6T4CeEEEFUEVdwrSqoM0k2hqnU=; b=H6lfKV1OqQTjtv
+	yclnov1pnlOCfoCqTfbVU63k8/PHffgxMVLadjpGbRKyDBPaZTNZExZHbMbQnWqLRgA7k2a5swv8A
+	Ekh2d/yNAFR9lAqw2E9P0wk0zmyXL//4K4o0y8ia90eWQtd0OA4B+ylWficnod6OEoy9C1M8r6xCn
+	AMrFn2lzH0CiXgM4RCU5iSrCRUmBkQrEaHl/9yS+zFwNogqqYsymqlaazmHklRhChRd0zUEqM0z2b
+	Ve9wXRdf15yQ+RupOZYpllqehoGyLuWTvhn7m30sVgXP3F57xt+w1QC3GNBnDE2FzViPnsCjM6HGr
+	L7azDSgY0kGNxqDxR0tQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pA7E6-00C5yy-21; Tue, 27 Dec 2022 10:30:30 +0000
-Received: from mout.gmx.net ([212.227.17.21])
+	id 1pA7uo-00COan-UC; Tue, 27 Dec 2022 11:14:38 +0000
+Received: from mail-lf1-x12c.google.com ([2a00:1450:4864:20::12c])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pA7Db-00C5o8-4d; Tue, 27 Dec 2022 10:30:20 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=public-files.de;
-	s=s31663417; t=1672136978;
-	bh=6rUL/0fqLXUc3EXcoTbmuRQCiIi6QAilAchLciXsdAw=;
-	h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
-	b=r+YiZvZlnUxMyhBIQFkg9VK1CsEsBPCu6gPQmPLEQAbDGpbAgmHGBNxB9+1Wb6M8d
-	 bup5FzjJkrbh1fMYLiyeFtuDwJa6ZkHx0E+STBoBmQLLSf4a7EBZmaXYTnyqq15MK6
-	 bih6f6Upn/2wdI00+suCEySy+JEh086fjGTuOr71z2z7vLwlI0gNKqv9/QQRrajwr2
-	 cXjHb/p4UJPo/MrkCPMTfwfNWb0jtaiEVQfgMStgHTrt/o4A+ZUNKX6xZMRIGbLwWI
-	 w5r8HysTrW/d6YI606cN0756PxNSy1S7CL4J9npulX21/9iXbrjfPpZEFkmcmPijUz
-	 xVlGB6lU/wpfA==
-X-UI-Sender-Class: 724b4f7f-cbec-4199-ad4e-598c01a50d3a
-Received: from [217.61.153.252] ([217.61.153.252]) by web-mail.gmx.net
- (3c-app-gmx-bap27.server.lan [172.19.172.97]) (via HTTP); Tue, 27 Dec 2022
- 11:29:38 +0100
+	id 1pA7ul-00COYp-IO
+	for linux-phy@lists.infradead.org; Tue, 27 Dec 2022 11:14:37 +0000
+Received: by mail-lf1-x12c.google.com with SMTP id bp15so19156081lfb.13
+        for <linux-phy@lists.infradead.org>; Tue, 27 Dec 2022 03:14:34 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:to:subject:user-agent:mime-version:date:message-id:from
+         :to:cc:subject:date:message-id:reply-to;
+        bh=q91h+qmG72Eyypqxw89XsMvqCu6zqsw6i6tKexOSIMk=;
+        b=CVtxK3hRsKFd4mXM4EZaHOPtc6hX8rz5lFXti/X8zL4Sx6eSIoVJFcyaf1xO6/vLKY
+         s+EyL5EjUvacFnVzeR5B/Jzu0IoIiS/jaGXF7DFgxXSN04QufLb/20o8s+b+LotQ9iSC
+         0ksqfnDiMMEPmWy4qxA2PubG7Gbb+YriR9dQebLbZ/mQPu5DohcPuy7fKXaNHwkKvp9u
+         Gya8hQaKEn4oUnU8Z7FdyAI9BJWXf/64KOrzrDjCCb1yRGvIVoDmt+IK0skrceKHbx+R
+         tSI8qyoD3h7OX+9lqB2YJu+2aZbAEqqpFS72Gx47lncuz7P8HH5gi68FcwWuJChZgKjt
+         6eXw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=q91h+qmG72Eyypqxw89XsMvqCu6zqsw6i6tKexOSIMk=;
+        b=U4UcJG/tbmZpcE0coribS85uxpRcyQ5TNnp9ksiO8N8SQaVk2uE5Aa3Qobon1H6WmP
+         nnRhIQ5IrtVlE/Ni3rJDjU/Z2zKe7/q7pjWn+Gt0Gd/y7CgsqwMjnQDNLzK+y7eN0ZXd
+         n6wV4Sq1sKlvxAJK2m/xzS63tq12cOKfrP+n5w33ZCrnso6WG8PuSkA04aLSHvM01vvY
+         BKGeQ7Zr8Oeiwy6Ix9I+yfduFqKpb4zBsa/e4Nb8SZHjn9nuPjaZvHNoZamPIRNJrljA
+         vYaO0ZmgzIU9HFgbIWiTxNL1QvUpXuaRudwJBa+P73zKI+OYphbnbWML3IGLH/ahm+sl
+         mTHg==
+X-Gm-Message-State: AFqh2kqPc7Aunl++o2t8E0hSTeOp+h5wlTpt5ODYjEU6bbybpOYhAKk7
+	GeNX1ZuRI7QQh2zaLEwp54JVXA==
+X-Google-Smtp-Source: AMrXdXtBNHz+BrTIliM1MB0RostvYMij6h6w+EmNqEFxkV0c0vDc0zls+MdTHE+2Hp+BApv8F4WUFg==
+X-Received: by 2002:ac2:5dce:0:b0:4b5:b988:b409 with SMTP id x14-20020ac25dce000000b004b5b988b409mr6117596lfq.21.1672139672953;
+        Tue, 27 Dec 2022 03:14:32 -0800 (PST)
+Received: from [192.168.1.101] (abyl184.neoplus.adsl.tpnet.pl. [83.9.31.184])
+        by smtp.gmail.com with ESMTPSA id k2-20020a05651239c200b004ab2cb8deb5sm2197371lfu.18.2022.12.27.03.14.31
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 27 Dec 2022 03:14:32 -0800 (PST)
+Message-ID: <542a4f6f-931a-3e0a-bd5d-1344339651ea@linaro.org>
+Date: Tue, 27 Dec 2022 12:14:30 +0100
 MIME-Version: 1.0
-Message-ID: <trinity-6777c8ee-36ac-4564-8542-f74d3a942a91-1672136978587@3c-app-gmx-bap27>
-From: Frank Wunderlich <frank-w@public-files.de>
-To: Frank Wunderlich <frank-w@public-files.de>
-Cc: Daniel Golle <daniel@makrotopia.org>, Frank Wunderlich
- <linux@fw-web.de>, linux-mediatek@lists.infradead.org, Kishon Vijay Abraham
- I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, Ryder Lee
- <ryder.lee@mediatek.com>, =?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?=
- <kw@linux.com>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Lorenzo
- Pieralisi <lpieralisi@kernel.org>, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, Jianjun Wang <jianjun.wang@mediatek.com>,
- Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>,
- linux-usb@vger.kernel.org, Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org, Krzysztof Kozlowski
- <krzysztof.kozlowski+dt@linaro.org>, linux-pci@vger.kernel.org, Bjorn
- Helgaas <bhelgaas@google.com>, devicetree@vger.kernel.org
-Subject: Aw: Re: [next v7 8/8] arm64: dts: mt7986: add Bananapi R3
-Date: Tue, 27 Dec 2022 11:29:38 +0100
-Importance: normal
-Sensitivity: Normal
-In-Reply-To: <trinity-256904b6-bbb5-4424-9686-50ec7fa14f26-1672134220733@3c-app-gmx-bap27>
-References: <20221127114142.156573-1-linux@fw-web.de>
- <20221127114142.156573-9-linux@fw-web.de> <Y6dMWFy7gChG88j0@makrotopia.org>
- <trinity-256904b6-bbb5-4424-9686-50ec7fa14f26-1672134220733@3c-app-gmx-bap27>
-X-UI-Message-Type: mail
-X-Priority: 3
-X-Provags-ID: V03:K1:uoMc7nMOIJIrLTMKyLHi5Zf+w/mb4Fzoluw4dxHqiG7Oh3NCdu3bQPysJDKjXeSdF3pWn
- jaWkxXdLvNm01Hn/aewnT06IsBqEfmbeCdLtU+ilvh7Nvs5l2AOup2GSF8gppkuGSLyU1iSxGiv+
- ptXmk1z2u14AHo0epOf9V04OMa20adKrX+D38DcBs6YA/e2rffYiPf6hNVrblfNU6Q8qlHy1svFl
- FcSO5I8fpT3Bm/fGPcLdiGgk4WFUT8NQRt3q3Fb+zatO03cpqNqj3lWpRWG9hHwQNVG2DrXuL1YE
- Tw=
-UI-OutboundReport: notjunk:1;M01:P0:zRngNs/wW1c=;wpD4ghfb7HZxstpqtJ4IJmHdX7N
- Nh97dEZkWW/RqQx7esRtmZ/sUkd5Z7pn7kzVkfTKFrprUoZ8RYp8I8kjw9SfGMq17fGTL6teZ
- xNEE5R5GD9wo9ZYbcwsY8iCr/nkj6AV8L5j2Zt8xwJDFoezR7BDmknG4R3j4milCUSgJOdyi/
- cIzq+a9DCoQLMcR1Z0wjpmY/ZiMQy5JVt1e8J3340hf5RTTs2gujA5Kf4T0/wLTYEOeWc/1Lh
- GnxQZuRatOn35fBKz7I10efG2DJUqmCah6Ab/ohbSEZqlNM7ZmbxVj4lulKoMrTIG0UuwjUmu
- QJZ6tbNcIXDKsJCrqNX9PW1CvD3tySRFkXbS4V5ifIsoL0fAHXy1USexOWPXRDva1TAi8OIWi
- a8KkRFoU+3N5QXEghfPevzMmkf+f7WeSLEG+ySQYFC3fyJ6iFp1t9oxEv9cZXxYUGZeCURbUe
- L42ylPAQg3xqLQgR82+aXdFWKEYTVfGPBqgekqye/ZhedDaIu+hkMivudxlY6pOB+Y/vy0h94
- x1fS3kz+qVRejgFh6fKMxDq+NTUgRMBpNxaKqBAHXQyDf/8Fdvzq/ug8EGuKyDR6PAPQ8gDhr
- EvaTpEPQPX6pt4qBGEWYO8SxLgjDQL5zr2VqYDoCkXKGufX6YxVPG4nG0xm2iw15fHHb1FeSf
- FSi4gbxb5+5ZQ19xfx2v4QEpeeOtNHBWrmy1asxToSqD3FcI+HUX8MXJEJxhUkd+1nnvcugAD
- K8G749+8bBgWSqokMRKk4onu7yBdK09ngsSuA2d/e0d1Zk3F+bOrgWAQXBJIEeWOdAVxtHCwy
- 4jJA7C8+M/YaDnXtB/4ZYFug==
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.6.0
+Subject: Re: [PATCH 3/4] ARM: dts: qcom: sdx65: add specific compatible for
+ USB HS PHY
+To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
+ Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Wesley Cheng <quic_wcheng@quicinc.com>, linux-arm-msm@vger.kernel.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org
+References: <20221223161835.112079-1-krzysztof.kozlowski@linaro.org>
+ <20221223161835.112079-3-krzysztof.kozlowski@linaro.org>
+ <d6fcecda-2f78-bd75-579b-672f6db779a2@linaro.org>
+ <6a9506a5-caf0-0977-af75-0a4e4c0e3a0f@linaro.org>
+Content-Language: en-US
+From: Konrad Dybcio <konrad.dybcio@linaro.org>
+In-Reply-To: <6a9506a5-caf0-0977-af75-0a4e4c0e3a0f@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221227_023002_221231_42CB5D70 
-X-CRM114-Status: GOOD (  10.40  )
+X-CRM114-CacheID: sfid-20221227_031435_675300_C684B8F1 
+X-CRM114-Status: GOOD (  13.90  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,42 +101,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-looks like i've found it:
-
-when reverting these 2 (latter alone was not enough and seems not fixing the timeout as shown in my trace)
-
-Revert "spi: mediatek: Enable irq when pdata is ready"  (HEAD -> 6.2-rc)
-Revert "spi: spi-mtk-nor: Add recovery mechanism for dma read timeout"
-
-so this breaks spi on mt7986:
-
-c6f7874687f7 2022-11-28 spi: mediatek: Enable irq when pdata is ready
-
-have sent bug-report to mailinglist and author/reviewer/maintainer...
-
-regards Frank
 
 
-> Gesendet: Dienstag, 27. Dezember 2022 um 10:43 Uhr
-> Von: "Frank Wunderlich" <frank-w@public-files.de>
->
-> at first look it seems it is needed...as i get this trace with 6.2:
->
-> [    2.145931] pc : mtk_spi_can_dma+0x0/0x34
-> [    2.155212] lr : mtk_spi_interrupt+0x74/0x360
->
-> [    2.091801] mtk-spi 1100a000.spi: spi-mem transfer timeout
-> [    2.097310] spi-nor: probe of spi0.0 failed with error -110
-> [    2.102930] Unable to handle kernel read from unreadable memory at virtual address 0000000000000010
->
-> but i get the same trace when reverting the cs-gpios change....seems something is broken in 6.2-rc1
->
-> 6.1 works without the bogus cs-gpios (and the mt7531 interrupt-change)...
->
-> have tried reverting this commit, but it does not fix the issue:
->
-> 8330e9e8269b 2022-12-07 spi: spi-mtk-nor: Add recovery mechanism for dma read timeout
+On 24.12.2022 14:12, Krzysztof Kozlowski wrote:
+> On 23/12/2022 17:20, Konrad Dybcio wrote:
+>>
+>>
+>> On 23.12.2022 17:18, Krzysztof Kozlowski wrote:
+>>> Add SoC-specific compatible to the USB HS PHY to match other devices and
+>>> bindings.
+>>>
+>>> Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+>>> ---
+>>>  arch/arm/boot/dts/qcom-sdx65.dtsi | 3 ++-
+>>>  1 file changed, 2 insertions(+), 1 deletion(-)
+>>>
+>>> diff --git a/arch/arm/boot/dts/qcom-sdx65.dtsi b/arch/arm/boot/dts/qcom-sdx65.dtsi
+>>> index b073e0c63df4..d3c661d7650d 100644
+>>> --- a/arch/arm/boot/dts/qcom-sdx65.dtsi
+>>> +++ b/arch/arm/boot/dts/qcom-sdx65.dtsi
+>>> @@ -219,7 +219,8 @@ blsp1_uart3: serial@831000 {
+>>>  		};
+>>>  
+>>>  		usb_hsphy: phy@ff4000 {
+>>> -			compatible = "qcom,usb-snps-hs-7nm-phy";
+>>> +			compatible = "qcom,sdx65-usb-hs-phy",
+>>> +				     "qcom,usb-snps-hs-7nm-phy";
+>> Not sure if the newline is necessary, but still:
+>>
+>> Reviewed-by: Konrad Dybcio <konrad.dybcio@linaro.org>
+> 
+> It is over 80 - up to 90 - and we still keep 80-limit in coding style.
+Torvalds said 100 is fine a year a go or so.
 
+Konrad
+> 
+> Best regards,
+> Krzysztof
+> 
 
 -- 
 linux-phy mailing list
