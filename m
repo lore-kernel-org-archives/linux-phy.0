@@ -4,67 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D006FC4167B
-	for <linux-phy@archiver.kernel.org>; Tue, 27 Dec 2022 17:43:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 93DA9C10F1B
+	for <linux-phy@archiver.kernel.org>; Tue, 27 Dec 2022 18:04:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rLmdjRUR/XSdW7pK+wyCLrXibXixfbFQnNan8oFagS8=; b=h39Wc+OTRMi4tD
-	vGX/zBAqngP/azdeHaseLSYcg7T6MqpbcB7oRcvfdRVI6d9FklRdJikqh2yNQ7W8aXUDXGiHhr8YH
-	JtL0Ti1hoy4Qk4akqToeLR0ceZ/FNMe9CgZmc6pben9ftZ+uTszAfUxmZFgUdvYc5XP0Rcso6WvgN
-	v0ANviXf2sqH2jswCLDarJSqMoWRjnZMO0n7pA2UD4UZ2D0irUAdM+Bp9x73/uIQ8uT7GSIrSjctG
-	5PAh/QapFCOxN0mF9XTNrbe5kGEzgwXIiR+UWr0KfO2E2dYnfQmv+fLxkwLcsYxM8TRJ5F02bHI9o
-	8y030v96UNK2ukXnwgfA==;
+	List-Owner; bh=K8N3hPdULAHgzjX1mAu8h1hHOH5iCfNJ3EPq/mTsYdI=; b=oxiXttjtrxFKA4
+	goQzw4AlfKKUww3hIYc8fcMJ4nT1FLB1QcpGaoMFBYQRl4vypYuzEBuauP7lQHS0m0wZY+TWOeQ6m
+	zxr/m3r+j8rtJthpNUDQ5XwaOHnkkKa5itnCMiPGOvIsGUNVBCsg463bTwtbDIfePuRDjZ0cPuXNJ
+	ovqz9mhu9RTpugEmhyayjpM83Wfyu1ERD34C1wBUiTEs9Zc9jP2SNkCfnlQpBic6p2g/UrBwYzUww
+	KHEOqDXSUI/ICG3EVEO8wg+HEiSIdGDqGMmRjFi6ToZcm8ylLhAwsFk142T3G4jSnZY+ppT3+YQJB
+	H/GGYesJH6fcSdBzjafw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pADz5-00F0ex-UH; Tue, 27 Dec 2022 17:43:28 +0000
+	id 1pAEJ7-00F9k2-KJ; Tue, 27 Dec 2022 18:04:09 +0000
 Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pADz3-00F0d4-5g
-	for linux-phy@lists.infradead.org; Tue, 27 Dec 2022 17:43:26 +0000
+	id 1pAEJ3-00F9gT-Nq
+	for linux-phy@lists.infradead.org; Tue, 27 Dec 2022 18:04:07 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 25B37611DF;
-	Tue, 27 Dec 2022 17:43:24 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B91D1C433D2;
-	Tue, 27 Dec 2022 17:43:22 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 0CB8D61166;
+	Tue, 27 Dec 2022 18:04:05 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 92A3CC433EF;
+	Tue, 27 Dec 2022 18:04:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1672163003;
-	bh=wC4VLe06gE2LY53KCWyVczISN3pEQ0xS9kuOl+zqvsE=;
+	s=k20201202; t=1672164244;
+	bh=I6jd4XwS/L5DIHtyZOpfhgWdtcHV5gfEUW44QKWNuKo=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=QCdp/vPPAgMUMlLWsG4C5V+cLjebNU5MYpL6cEr29s149KTmu7o/Eu9lNfkktc4Zk
-	 LxKBs5DkFEJOaCYx5blmB5bbhfGYdS0Q+ykkP/AMpCNNjc3luBakUlasCh2GMvNr1v
-	 TqIWFA/AcXw2ZgeDNm3K0F9nJPiIqr6X2xCtCACJt7XhSclSNr+yIkfte9oe1C3G4+
-	 x8oZtk9+GKKRMdqDi93rhWx1QGinHx8h03lig2mzPZ2z620npn1g1DoJowRhSbjwRv
-	 ViqAp6DtXJBBfwIwJHmLwLrqklfMyt4Fdi5KCyXakOe0q5qI5Wgia/U/viDyUjNdQm
-	 MZUOKst9h3j/w==
+	b=AqWjgMbRmZC8e0LmJNRGH8hrnOew19bxkCuw8PmSZObXrSV/gXi7/5Wcg0J3oj3Fo
+	 NJNMp8duuf9dn+ggSJ0AB6D0DF+G/r80WhsDSezQYqBng1XKrsCXhHZlQ0dx/dh60A
+	 V30yMk/aGkbRehDLHXMc9TElD2CqDoZThEPZaq7oo+WbRgYQXZYJMgWqOW3gNfDCAj
+	 sLa1bddc6QhHGp3K5X1Dn/PJYCArkKmrKJ1dfONaJK3fmRNT/MHsxfk5xuhL//k/15
+	 5xH0jo35pNYpIXfF3boDm+y6TX/Wt8xwg5cvTRkXrsIvzSQLrYG8Cdwl9bOfBaMGsK
+	 m3149pQDD05Fw==
 From: Bjorn Andersson <andersson@kernel.org>
-To: vkoul@kernel.org,
-	johan+linaro@kernel.org
-Cc: linux-arm-msm@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	agross@kernel.org,
-	krzysztof.kozlowski+dt@linaro.org,
-	konrad.dybcio@linaro.org,
-	dmitry.baryshkov@linaro.org,
-	kishon@kernel.org,
+To: dmitry.baryshkov@linaro.org,
 	robh+dt@kernel.org,
+	kishon@kernel.org,
+	krzysztof.kozlowski+dt@linaro.org,
+	vkoul@kernel.org,
+	agross@kernel.org,
+	konrad.dybcio@linaro.org
+Cc: linux-arm-msm@vger.kernel.org,
 	devicetree@vger.kernel.org,
+	p.zabel@pengutronix.de,
 	linux-phy@lists.infradead.org
-Subject: Re: (subset) [PATCH v3 00/15] phy: qcom-qmp-combo: fix sc8280xp binding (set 3/3)
-Date: Tue, 27 Dec 2022 11:43:21 -0600
-Message-Id: <167216295787.739944.14627174630343077236.b4-ty@kernel.org>
+Subject: Re: (subset) [PATCH 1/3] dt-bindings: phy: qcom,pcie2-phy: convert to YAML format
+Date: Tue, 27 Dec 2022 12:03:59 -0600
+Message-Id: <167216423712.744668.9850054899253387953.b4-ty@kernel.org>
 X-Mailer: git-send-email 2.37.1
-In-Reply-To: <20221121085058.31213-1-johan+linaro@kernel.org>
-References: <20221121085058.31213-1-johan+linaro@kernel.org>
+In-Reply-To: <20221216234027.539917-1-dmitry.baryshkov@linaro.org>
+References: <20221216234027.539917-1-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221227_094325_291362_3F851026 
-X-CRM114-Status: GOOD (  14.09  )
+X-CRM114-CacheID: sfid-20221227_100405_965529_B1178A2D 
+X-CRM114-Status: UNSURE (   7.13  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,24 +81,16 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, 21 Nov 2022 09:50:43 +0100, Johan Hovold wrote:
-> This series fixes the USB-DP PHY devicetree binding for SC8280XP and
-> adds support for the new updated binding to the driver.
+On Sat, 17 Dec 2022 01:40:25 +0200, Dmitry Baryshkov wrote:
+> Convert the bindings for the Qualcomm PCIe2 PHY into the YAML format
+> from the text description.
 > 
-> As the full series including the preparatory parts is over forty patches
-> and I've been posting this in three parts of which this is the last one.
-> In an effort to get all of these into 6.2, I've also submitted all three
-> series before waiting for the previous ones to be applied. Parts one and
-> two can be found here:
 > 
-> [...]
 
 Applied, thanks!
 
-[14/15] arm64: dts: qcom: sc8280xp: fix primary USB-DP PHY reset
-        commit: ee4e530bdde29a69c58656a919545251a782674e
-[15/15] arm64: dts: qcom: sc8280xp: fix USB-DP PHY nodes
-        commit: 721c0d68c0f882b6358102b52961ff6eb601839c
+[3/3] arm64: dts: qcom: qcs404: register PCIe PHY as a clock provider
+      commit: 977e9262c3542e87b513d4dad4c57b2c85e16c8c
 
 Best regards,
 -- 
