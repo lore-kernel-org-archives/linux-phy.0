@@ -4,43 +4,43 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D8183C4167B
-	for <linux-phy@archiver.kernel.org>; Tue, 27 Dec 2022 20:33:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0174AC4167B
+	for <linux-phy@archiver.kernel.org>; Tue, 27 Dec 2022 20:35:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3jWsNlB6pHXyoQ3V7fvlkSjKq5xJb9k9oBBimzcy4DI=; b=pt3B83Nw9RZ2sL
-	/sK6/R5EroDSoXlhRtEjfaqDKFLpjwa2D70H0xMvePshzSOdQefz73ykKlzO9jdEhApeGzdG0dDGc
-	r7x2IOCSU7eKFYUAqpY1Y89HCQhAGqCLZEoWdqpGsL3ykBCFnRv7EmGMo2Meg3zjrwEIrMSvAfLJV
-	q3hzi2PF7TNqBiXl50Sxt48e9/WNaOWLyfgtvAe06dcV6Ao2+8JgrbaMDZBnvfVj6Gq9c1/8Y0PtI
-	mjEWXULo/NaWrn//DQBEj2e8Fs9pNG3Vp+dPJGhMWK08uqd4rzGphi1HeyWGZDFWrbvof7SAGJopA
-	w1cBVq0VP42gDO2IEkcg==;
+	List-Owner; bh=V4WyZokIZrNDsPMlznzs8UhWcHfVaQI5TAlWuS82RfU=; b=dLK8CIPLJIh+fg
+	LNx4SDCOzHde//rc/BUZGoeML19gu7wEP87O8qAJSROSmUMc7/XlqCR2xR9Ggzzo44Kcw4QNjf6Q7
+	mJtIxP+MJLZ1Pn12d8AaCU1LfH9eJpvuSpFtn7UasOlnJxR+o2wU/Ekgtf9Ad0eyF6dPk/GERnCPT
+	kVnXBerrkuJ+l45ad3y2kt1nKWLcAYvj9n18KHDV53Dbnkqr53Pt2za/ndd1cN37e8cA4mq5a9RX8
+	oXS4fXMyAP2WRoo98lXMwv2i310v6Ai+S65pxWdmKUrO5QHgQgSZL2rf0knkMK31YHgnDihiPK6a/
+	34SKoGzEil1WSOTO9Caw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pAGdl-00G5aK-49; Tue, 27 Dec 2022 20:33:37 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1pAGfR-00G6NG-8N; Tue, 27 Dec 2022 20:35:21 +0000
+Received: from ams.source.kernel.org ([145.40.68.75])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pAGdN-00G5R2-T6; Tue, 27 Dec 2022 20:33:15 +0000
+	id 1pAGeB-00G5mg-4D; Tue, 27 Dec 2022 20:34:05 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 55E816122C;
-	Tue, 27 Dec 2022 20:33:09 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5714CC433EF;
-	Tue, 27 Dec 2022 20:33:07 +0000 (UTC)
+	by ams.source.kernel.org (Postfix) with ESMTPS id B45D0B811FB;
+	Tue, 27 Dec 2022 20:34:01 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id DB944C433F0;
+	Tue, 27 Dec 2022 20:33:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1672173188;
-	bh=Cw70npNCrYgOUOKEX+03N24pA9AGSIUhXwgU3cP1C4U=;
+	s=k20201202; t=1672173240;
+	bh=ZWmPZ8H+dLlQauMTgrcx16OCLI21CEqqEfoAM4bpd0E=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=fJ8F4FdVunMKg4G1RPWhQG0LR1FqsNcu1UKFQ5bShzFW9ff1g8YYxTvwi2ecm9LHU
-	 iZXwqCLlDXi7h8+OcX5qbTnLynJoBATUvjvAC3G6CjmFdTTaJ8P7r7dHeRjGrDsnE4
-	 kbrzn54KXvmACXMQDSyJQZ095uicWTz2NXBdbPcJQyvQKiLX2iVa1EcUa9F4eWr+7h
-	 AnjQIeaCC35KmaHsfhHQkpWNYi3qtPJHAQCZz0fp1HzXm/olqMQXGQv3VG97tvhJH+
-	 nDWjtk//4Q605eznX3402j9Uetsb4AOmwCUVPsZ/1aNo3H4fYx2rCSDESqxD8CK77B
-	 nvSTAHvjt6g6w==
+	b=drR5s0ouYeS6GOlcsLf3GsUeLH1Ifs6AYYwtXVt94Mf4NKwOUML2sEvVydVyUelvK
+	 TwEddFLMzocuO6xo7DdjT8PTbsgBNOcg2gYM+G+FITUAvsZtJIp3SUhDnS/BmOuZxc
+	 QKQ+eqpf5rhZ3Ii2/+XSU9dTCwqq+gpmqnQ0PbXURhIbRO1gnc+GmPHUMhHv7N31nc
+	 h9k7MGvRg0aSaQISBSvrJkg55wHTYg7ypUgAdVsxP1/VHyRuVeYiRFGRbCYa5CU+It
+	 yZ9apsAqG1d5nxEXXOktDcpDTvZGHSwW9/+yUzaJ5iLWanCRVsbPe/OUqwSNWSqQFR
+	 eyig7n8+CTNMg==
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
@@ -56,17 +56,17 @@ Cc: Andre Przywara <andre.przywara@arm.com>,
 	linux-phy@lists.infradead.org,
 	linux-arm-kernel@lists.infradead.org,
 	linux-sunxi@lists.linux.dev
-Subject: [PATCH AUTOSEL 6.1 12/28] phy: sun4i-usb: Introduce port2 SIDDQ quirk
-Date: Tue, 27 Dec 2022 15:32:33 -0500
-Message-Id: <20221227203249.1213526-12-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 6.0 12/27] phy: sun4i-usb: Introduce port2 SIDDQ quirk
+Date: Tue, 27 Dec 2022 15:33:27 -0500
+Message-Id: <20221227203342.1213918-12-sashal@kernel.org>
 X-Mailer: git-send-email 2.35.1
-In-Reply-To: <20221227203249.1213526-1-sashal@kernel.org>
-References: <20221227203249.1213526-1-sashal@kernel.org>
+In-Reply-To: <20221227203342.1213918-1-sashal@kernel.org>
+References: <20221227203342.1213918-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221227_123314_105095_E2E23226 
+X-CRM114-CacheID: sfid-20221227_123403_589374_7F666543 
 X-CRM114-Status: GOOD (  15.67  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -110,7 +110,7 @@ Signed-off-by: Sasha Levin <sashal@kernel.org>
  1 file changed, 59 insertions(+)
 
 diff --git a/drivers/phy/allwinner/phy-sun4i-usb.c b/drivers/phy/allwinner/phy-sun4i-usb.c
-index 3a3831f6059a..e39f5ad62cc1 100644
+index d5f3b42eb8ce..f094a4cd7cbc 100644
 --- a/drivers/phy/allwinner/phy-sun4i-usb.c
 +++ b/drivers/phy/allwinner/phy-sun4i-usb.c
 @@ -120,6 +120,7 @@ struct sun4i_usb_phy_cfg {
