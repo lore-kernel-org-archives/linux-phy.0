@@ -4,82 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A7334C3DA7A
-	for <linux-phy@archiver.kernel.org>; Wed, 28 Dec 2022 14:36:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 33504C4332F
+	for <linux-phy@archiver.kernel.org>; Wed, 28 Dec 2022 22:01:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Subject:Cc:To:
-	From:Message-Id:Date:Mime-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ryuP+rcORnBiiV8ukfbtbkogKwcjyaPtYY7KABP1Q9w=; b=T6/N6ki5+tTJWQ
-	ULcFhI4+OBjLXSx9COHegG9+4cgWjxTwBDzDzVMCO7QceumJ6RgH+rAi9zMauj50dkVZmTv7lQlDa
-	FoO//aAXq/F9rXsBDafr5aTjhUWNlhDPc3g7L41maBXI8TDR3Mix/22SDrfklIb3SRLFZ/v83Iluf
-	iJrqmXibLUb19OXTuXV108sjawz9KjUGb2QCyKRgmIn48sj5oZaWquX4A0FIHfRdMDvD/soVctXyq
-	eFCcdQKzKhqvGklxe0vg88WyK6n06Mw/uFOFxQ/g9Qqa6DFKR9vhRguiPfFvotTNEJACgFzkvNCMO
-	UdAAVNVcjVSMbDBOALZQ==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:From:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=LrmxDtz6XsxZ3vtM6nci26HlH6holutY+oK5Q6vvlNs=; b=d1ndaCa28sTfFb
+	XOM+l6J8Nv392c2IbTPQBV1r0x1svQlzGiMSYECcmh2Yvf7FCv65NknMQb6xDZ18v+O6WjYrsuobM
+	hWz+oeUi4kPYbZZXv+aIFUJd36KTjxfG8SHSGE0Rq3PsTGfu1JKKPEvfAtfbAMHFa5+/jhCxX9d8g
+	PUORZh/DjTfGCsS9SRC17K2cdO/vKqkIRXkuzZQSFwQC+0WihILxJR7EduFw1N4uO2hHPo5YWeDhj
+	m41otlx5gJBtArTk5+PLLy/NJVUDEf73rA0/HDc4riznyuUkg68X4NpKLL58Sm5VZ+l+dvTv1eE7U
+	9JsEm7c6CoIbwo/yiXbw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pAXXm-005bkl-SZ; Wed, 28 Dec 2022 14:36:34 +0000
-Received: from mail-wr1-x42e.google.com ([2a00:1450:4864:20::42e])
+	id 1pAeUV-008ZuP-Dg; Wed, 28 Dec 2022 22:01:39 +0000
+Received: from mail-ej1-x62b.google.com ([2a00:1450:4864:20::62b])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pAXXj-005bhE-Pa
-	for linux-phy@lists.infradead.org; Wed, 28 Dec 2022 14:36:33 +0000
-Received: by mail-wr1-x42e.google.com with SMTP id j17so9742834wrr.7
-        for <linux-phy@lists.infradead.org>; Wed, 28 Dec 2022 06:36:30 -0800 (PST)
+	id 1pAeUG-008Zp3-5s; Wed, 28 Dec 2022 22:01:25 +0000
+Received: by mail-ej1-x62b.google.com with SMTP id fc4so41061582ejc.12;
+        Wed, 28 Dec 2022 14:01:22 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=fairphone.com; s=fair;
-        h=in-reply-to:references:subject:cc:to:from:message-id:date
-         :content-transfer-encoding:mime-version:from:to:cc:subject:date
+        d=gmail.com; s=20210112;
+        h=content-transfer-encoding:content-language:cc:to:subject:from
+         :user-agent:mime-version:date:message-id:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=wcDJ8cLQMqdQCgdlu7boodh16/p3tpC1pQ2svfRFC3A=;
-        b=IvNoRS6OeLqDUjIqbx1sfziFPIjchIHDmR5ZRGybzQrDZWA3db8SEyytYdHzfyIgPV
-         tArCq9XdUhjK9kJqZGLya+LvIlZ11naohLQvLziQoWcRkedMFb54dgAGJa2izFqlC/G8
-         0s0yjC48OT1vsWJr8akX1ERobMHTMjwozQjkk4T3DwptvyVqi6ovXvVFqY1T9HlzvGfg
-         JuJqTQTTehi76HsS/RDXLKLmDnsIzpeB3yUjlmivqLCMQDJ1Yyg1NyQcKR+uZgLc8aUO
-         mgp0KkEZS/MBpMWxWKWLT1HWkw48D1V9av9nSGKH4nCapSrLluq54CmMHHcsoGb5mM85
-         4rxg==
+        bh=LXpwDRhegkKqFBKPdsaD1Z/bgeJAmjFVHZvc5PWsjjE=;
+        b=mEV36ZK+fCaMEqG4mCqf7EjZ6FEcrzK2F+Mr106XvI/3vuZEqfb6RA5+2sTYiaoSb1
+         jtnM8CSYWdMhkaDFcBFlFg+6WiQAKTPDkHHJ8SJOWim5gNrnoRhV3ju6f9MeQda9uUKE
+         IZRFLJPJdHoYBdwYwMFKJIcN1Bd9Po4Wax9bA1m/pZ/YGsHpFmYu27K2dqBefitDeY/b
+         idcc4s4+sxWpVZj9/1SoNOKOc75A8AZIZHQcrPQDIX++e3NEWprn+1PHdUgci5wlywtV
+         jfeqelvZ/y3sWwyIPDbWKO2ahfxvV3rLd1sBmSTGBHJlmMd4rQrkwWAROxB6Id33RZXZ
+         KlgA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=in-reply-to:references:subject:cc:to:from:message-id:date
-         :content-transfer-encoding:mime-version:x-gm-message-state:from:to
+        h=content-transfer-encoding:content-language:cc:to:subject:from
+         :user-agent:mime-version:date:message-id:x-gm-message-state:from:to
          :cc:subject:date:message-id:reply-to;
-        bh=wcDJ8cLQMqdQCgdlu7boodh16/p3tpC1pQ2svfRFC3A=;
-        b=09+orrXWLsoMP810Off2ps2kX0H1+BEkCcC6wWZIQzgTHv6er3XLMZ7UVIDHClCmUF
-         Iia4slRo1XjaITMlyeuDh00hiPJcryHBCkVKRtj6btJgtJ+kGtUP/lEMEU4lapmDJmx/
-         qPFkWdZDX4Sg0IdbSZs4XjwyBHRT3CC4/La5tyTUZTEbncqJ9+4JYfQMI0xI81zSOy71
-         83JZeMQ/1tcLgEyx55OK2xzKKIDnEzG2Wy3PQ9KgnXo6qA7ixUHvI4INVFhb6MJqcehm
-         Kv3d6bqFntRVjqtNGlddzYgMdbDBj+nmfFrHVMeQCBjjvtUkUAbARMIoGGwVSKCiWGio
-         4lag==
-X-Gm-Message-State: AFqh2koLGLhL7gS6O9Xb2rWRIFDXjEZnaF/NMDCGDHx9i3xeiIkgXUZF
-	Gf+0iInSotO/50rXjs/kzpEbNg==
-X-Google-Smtp-Source: AMrXdXs/f/cqcVzu+3CGx54m9jP459zFofYksGpECKKnYTfedSdo9W0pKOM1c8Lw4Ke4C5BjkK6Zbw==
-X-Received: by 2002:adf:d850:0:b0:273:7882:2c7a with SMTP id k16-20020adfd850000000b0027378822c7amr14770589wrl.62.1672238189044;
-        Wed, 28 Dec 2022 06:36:29 -0800 (PST)
-Received: from localhost (2a02-8388-6582-fe80-0000-0000-0000-0006.cable.dynamic.v6.surfer.at. [2a02:8388:6582:fe80::6])
-        by smtp.gmail.com with ESMTPSA id l3-20020a05600012c300b00236c1f2cecesm17860300wrx.81.2022.12.28.06.36.28
+        bh=LXpwDRhegkKqFBKPdsaD1Z/bgeJAmjFVHZvc5PWsjjE=;
+        b=RU02ebcOVCuAk3LW1oBQIR7JvgtuP90RIVmAU+FP04ERf1zdOdbQ7Uw3DlcSUHFVWI
+         xUEV4YF/bf5G2MziyHt7dZslxDjECB4fpO61SDIJ41EZQKgEeFprsJM1XT7ehEbGNHvn
+         8DgPkaxKkTlbPoZiBDSsA4FZtuSCaejitDEnU/s17abHJ5JQ5V8UWjLzWc3LopNK6qTF
+         W4PYJVoLmMxNxYXxjIKSpLBRdTYR1j4Tj0cMNP0ERDNbp6mDbsLf1GBoZ0rLpCes2HYr
+         KJ696KSPg6ixqGVIS/g5HMASqM76JqUVxjcF5zOTzs+6LXXR02jBgFgh9PpVuv0Oe6J9
+         dtDw==
+X-Gm-Message-State: AFqh2ko+0yOes5n7sJOgJ6W6dgEO8hdKdnc1wRzk4N7/a+51nqhT1Mri
+	HMJvycNkelJazDDgquHw5nY=
+X-Google-Smtp-Source: AMrXdXvayKNs2MYNNK3ZiUuIf9BdTvY0mtNtigekQbnGc542UVm7F0Z961eejRZ1qUTItjDYTiwM9Q==
+X-Received: by 2002:a17:906:60cb:b0:84b:b481:6188 with SMTP id f11-20020a17090660cb00b0084bb4816188mr12899468ejk.64.1672264881524;
+        Wed, 28 Dec 2022 14:01:21 -0800 (PST)
+Received: from [192.168.2.1] (81-204-249-205.fixed.kpn.net. [81.204.249.205])
+        by smtp.gmail.com with ESMTPSA id a14-20020a1709063a4e00b007e5856d6359sm7781741ejf.66.2022.12.28.14.01.20
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 28 Dec 2022 06:36:28 -0800 (PST)
-Mime-Version: 1.0
-Date: Wed, 28 Dec 2022 15:36:27 +0100
-Message-Id: <CPDIYQ3SSY3E.I0Y0NMIED0WO@otso>
-From: "Luca Weiss" <luca.weiss@fairphone.com>
-To: "Johan Hovold" <johan@kernel.org>, "Vinod Koul" <vkoul@kernel.org>
-Cc: <linux-arm-msm@vger.kernel.org>,
- <~postmarketos/upstreaming@lists.sr.ht>, <phone-devel@vger.kernel.org>,
- "Andy Gross" <agross@kernel.org>, "Bjorn Andersson" <andersson@kernel.org>,
- "Konrad Dybcio" <konrad.dybcio@linaro.org>, "Kishon Vijay Abraham I"
- <kishon@kernel.org>, <linux-phy@lists.infradead.org>,
- <linux-kernel@vger.kernel.org>
-Subject: Re: [PATCH v3 2/3] phy: qcom-qmp-combo: Add config for SM6350
-X-Mailer: aerc 0.13.0
-References: <20221130081430.67831-1-luca.weiss@fairphone.com>
- <20221130081430.67831-2-luca.weiss@fairphone.com>
- <Y6xP4YRAp68TfxFi@hovoldconsulting.com>
-In-Reply-To: <Y6xP4YRAp68TfxFi@hovoldconsulting.com>
+        Wed, 28 Dec 2022 14:01:20 -0800 (PST)
+Message-ID: <5fa3aaca-4e49-8baa-68c4-2b3981400d3b@gmail.com>
+Date: Wed, 28 Dec 2022 23:01:19 +0100
+MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.3.0
+From: Johan Jonker <jbx6244@gmail.com>
+Subject: [PATCH v1 1/2] dt-bindings: phy: rockchip: convert
+ rockchip-dp-phy.txt to yaml
+To: heiko@sntech.de
+Cc: robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
+ linux-phy@lists.infradead.org, vkoul@kernel.org, kishon@kernel.org
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221228_063631_947262_B33404A8 
-X-CRM114-Status: GOOD (  20.20  )
+X-CRM114-CacheID: sfid-20221228_140124_260911_B656D49F 
+X-CRM114-Status: GOOD (  13.05  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,101 +92,100 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Johan,
+Convert rockchip-dp-phy.txt to yaml.
 
-On Wed Dec 28, 2022 at 3:17 PM CET, Johan Hovold wrote:
-> Luca, Vinod,
->
-> On Wed, Nov 30, 2022 at 09:14:28AM +0100, Luca Weiss wrote:
-> > Add the tables and config for the combo phy found on SM6350.
-> > 
-> > Signed-off-by: Luca Weiss <luca.weiss@fairphone.com>
-> > ---
-> > Changes since v2:
-> > * Drop dp_txa/dp_txb changes, not required
-> > * Fix dp_dp_phy offset
-> > 
-> >  drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 126 ++++++++++++++++++++++
-> >  1 file changed, 126 insertions(+)
-> > 
-> > diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-> > index 77052c66cf70..6ac0c68269dc 100644
-> > --- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-> > +++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
->
-> > @@ -975,6 +1039,19 @@ static const char * const sc7180_usb3phy_reset_l[] = {
-> >  	"phy",
-> >  };
-> >  
-> > +static const struct qmp_combo_offsets qmp_combo_offsets_v3 = {
-> > +	.com		= 0x0000,
-> > +	.txa		= 0x1200,
-> > +	.rxa		= 0x1400,
-> > +	.txb		= 0x1600,
-> > +	.rxb		= 0x1800,
-> > +	.usb3_serdes	= 0x1000,
-> > +	.usb3_pcs_misc	= 0x1a00,
-> > +	.usb3_pcs	= 0x1c00,
-> > +	.dp_serdes	= 0x1000,
->
-> I would have expected this to be 0x2000 as that's what the older
-> platforms have been using for the dp serdes table so far. Without access
-> to any documentation it's hard to tell whether everyone's just been
-> cargo-culting all along or if there's actually something there at offset
-> 0x2000.
+Changed:
+  rename file name
 
-From what I saw comparing downstream code vs mainline 0x1000 should be
-correct.
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+---
+ .../bindings/phy/rockchip,dp-phy.yaml         | 41 +++++++++++++++++++
+ .../bindings/phy/rockchip-dp-phy.txt          | 26 ------------
+ 2 files changed, 41 insertions(+), 26 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/phy/rockchip,dp-phy.yaml
+ delete mode 100644 Documentation/devicetree/bindings/phy/rockchip-dp-phy.txt
 
-From https://gerrit-public.fairphone.software/plugins/gitiles/kernel/msm-4.19/+/refs/heads/kernel/11/fp4/include/dt-bindings/phy/qcom,lagoon-qmp-usb3.h#38
-
-USB3_DP_QSERDES_COM_BIAS_EN_CLKBUFLR_EN (downstream 0x1034) =
-  QSERDES_V3_COM_BIAS_EN_CLKBUFLR_EN (mainline 0x034)
-
-USB3_DP_QSERDES_COM_CP_CTRL_MODE0 (downstream 0x1060) =
-  QSERDES_V3_COM_CP_CTRL_MODE0 (mainline 0x060)
-
-These defines downstream are used in qcom,qmp-phy-init-seq
-(lagoon-usb.dtsi) which super abbreviated gets used like this:
-
-lagoon-usb.dtsi:
-    reg = <0x88e8000 0x3000>;
-    reg-names = "qmp_phy_base";
-    qcom,qmp-phy-init-seq = <...>;
-
-drivers/usb/phy/phy-msm-ssusb-qmp.c
-    res = platform_get_resource_byname(pdev, IORESOURCE_MEM,
-                        "qmp_phy_base");
-    phy->base = devm_ioremap_nocache(dev, res->start, resource_size(res));
-
-    of_property_read_u32_array(dev->of_node,
-            "qcom,qmp-phy-init-seq",
-            phy->qmp_phy_init_seq,
-            phy->init_seq_len);
-
-    reg = (struct qmp_reg_val *)phy->qmp_phy_init_seq;
-
-    while (reg->offset != -1) {
-        writel_relaxed(reg->val, phy->base + reg->offset);
-
-I don't see anywhere where an extra 0x1000 should come from. But perhaps
-I'm missing something. The reg address is the same downstream and
-mainline also.
-
->
-> Vinod, could you shed some light on this as presumably you have access
-> to some documentation?
-
-That would be useful :)
-
-Regards
-Luca
-
->
-> > +	.dp_dp_phy	= 0x2a00,
-> > +};
->
-> Johan
+diff --git a/Documentation/devicetree/bindings/phy/rockchip,dp-phy.yaml b/Documentation/devicetree/bindings/phy/rockchip,dp-phy.yaml
+new file mode 100644
+index 000000000..73f75ab1c
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/rockchip,dp-phy.yaml
+@@ -0,0 +1,41 @@
++# SPDX-License-Identifier: GPL-2.0
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/rockchip,dp-phy.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Rockchip specific extensions to the Analogix Display Port PHY
++
++maintainers:
++  - Heiko Stuebner <heiko@sntech.de>
++
++properties:
++  compatible:
++    const: rockchip,rk3288-dp-phy
++
++  clocks:
++    maxItems: 1
++
++  clock-names:
++    const: 24m
++
++  "#phy-cells":
++    const: 0
++
++required:
++  - compatible
++  - clocks
++  - clock-names
++  - "#phy-cells"
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/clock/rk3288-cru.h>
++    edp-phy {
++      compatible = "rockchip,rk3288-dp-phy";
++      clocks = <&cru SCLK_EDP_24M>;
++      clock-names = "24m";
++      #phy-cells = <0>;
++    };
+diff --git a/Documentation/devicetree/bindings/phy/rockchip-dp-phy.txt b/Documentation/devicetree/bindings/phy/rockchip-dp-phy.txt
+deleted file mode 100644
+index e3b4809fb..000000000
+--- a/Documentation/devicetree/bindings/phy/rockchip-dp-phy.txt
++++ /dev/null
+@@ -1,26 +0,0 @@
+-Rockchip specific extensions to the Analogix Display Port PHY
+-------------------------------------
+-
+-Required properties:
+-- compatible : should be one of the following supported values:
+-	 - "rockchip.rk3288-dp-phy"
+-- clocks: from common clock binding: handle to dp clock.
+-	of memory mapped region.
+-- clock-names: from common clock binding:
+-	Required elements: "24m"
+-- #phy-cells : from the generic PHY bindings, must be 0;
+-
+-Example:
+-
+-grf: syscon@ff770000 {
+-	compatible = "rockchip,rk3288-grf", "syscon", "simple-mfd";
+-
+-...
+-
+-	edp_phy: edp-phy {
+-		compatible = "rockchip,rk3288-dp-phy";
+-		clocks = <&cru SCLK_EDP_24M>;
+-		clock-names = "24m";
+-		#phy-cells = <0>;
+-	};
+-};
+--
+2.20.1
 
 
 -- 
