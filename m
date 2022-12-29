@@ -4,28 +4,28 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 520B6C3DA79
-	for <linux-phy@archiver.kernel.org>; Thu, 29 Dec 2022 14:52:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8E3D6C4332F
+	for <linux-phy@archiver.kernel.org>; Thu, 29 Dec 2022 14:53:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fRqnY1RgPlsFVpZlChfvHaguKprKkOkP+3v6XjLNI78=; b=VTK4jYsGcD6icb
-	2bZpcHkDlEtUWNMTBJA6av5BVFLVOC9HlNuVqeWqOrUXP6dm2wh/M9NZrxy/Oq4ywC9rHWZX9TKWu
-	5uHWCHn7E7kpOcMg1d1zN/NfHZC+hr8+szKPLW3NXobrUHBGLAonYYgD8dHwPas0jRABZ5ZsIJrIT
-	MOr9fMLhV99BTJQIT3sCcFQrSpVH0QQzEXouxFDi6B9VDE1OylL5ZiMV9a7eZ8KQ46ompuOGuIwY/
-	NB/WLQSrjZi3tWy3Q2BFHVjzE8ASlXTfvz/V2+YPIrBoieC7L/RccHR/jhQtsSRvt/Ypfw/Unzsdy
-	olskiNvPc7gKG5e2YdxQ==;
+	List-Owner; bh=QDd8LhxmM8RMNXQ/LwpBzB4o9l/5jnkp8nobLrTw13E=; b=GzWIMW4NZvPgzi
+	9j9ZxdlVyuI9+HTXd1q3mzyzInFEq7DlV4c+uXweF/JJXRNpWNBrY8+xYwxNHgZMQgrr1qPnX6qjc
+	dzcUxqVCXFkoqYX6REDV5C1zlMQIu0VNCai/XeFW2Lia2vyiTedr396NtvHK+UoyQovT3PJ/TU6CF
+	ydXhmIdVH1f3yqRkRKOXJgR0H4uYi/kp4AC6FpSya0UFoUgEm1ZP60fi39wVUXlR3aKNXSeg9s6DO
+	GHQArLKW8JJzp9WGPuckB5LhAzsFCBAUmVxHP1d5c0sCsndMgj/tkTQu0t7gbyXPmbe+6vs4qxDyl
+	dPIDP1zm5lWOcSjkFvPA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pAuGs-00Giyj-Dq; Thu, 29 Dec 2022 14:52:38 +0000
-Received: from mxout2.routing.net ([2a03:2900:1:a::b])
+	id 1pAuHy-00Gjc3-Vw; Thu, 29 Dec 2022 14:53:46 +0000
+Received: from mxout3.routing.net ([2a03:2900:1:a::8])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pAuEv-00Gi4p-VG; Thu, 29 Dec 2022 14:50:40 +0000
+	id 1pAuEv-00Gi4o-VY; Thu, 29 Dec 2022 14:50:43 +0000
 Received: from mxbulk.masterlogin.de (unknown [192.168.10.85])
-	by mxout2.routing.net (Postfix) with ESMTP id 70E6360012;
+	by mxout3.routing.net (Postfix) with ESMTP id 3255F60510;
 	Thu, 29 Dec 2022 14:50:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mailerdienst.de;
 	s=20200217; t=1672325433;
@@ -33,13 +33,13 @@ DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mailerdienst.de;
 	 to:to:cc:cc:mime-version:mime-version:
 	 content-transfer-encoding:content-transfer-encoding:
 	 in-reply-to:in-reply-to:references:references;
-	bh=7w7+yEBl4vGwjIjE10iuV0TWKv2sdao0DcaahtfY9sY=;
-	b=xQfqutAmpCYUjYaXe8wYVtEGuzewqzKqXtwxQQ3Ty/HfRF79fkv/kR2D0rGUAOwRsC03Ng
-	ui4ltGOgqfRMNJ7jLslahSwrzkxS/bEM3aqfN4/KQucMgH3QgpY7zNLuHeMo0dibo6R1Bs
-	0zzAyxOrP3jqHb+q5AwFyQBcsMMftcs=
+	bh=xI7XT67CqYlVW3+/XRkZxk2brg5+ceAOUtpu7n5qfPw=;
+	b=jt+ZH0Km/I3eda2F3q+kXXIzOPty6DMH9W53DVdoSsxySZp8Wu9HUqYFb8ccMW2OQEVLBV
+	0p9EDViI3/msY5vOAQJQHPpku14TB/KbFUqYSiCZuZytTCy8l6SWXx0AEowNk2G2yX0LZl
+	/hHc8LcsRuF8HXhWXAOTlVw8LFiu1dI=
 Received: from frank-G5.. (fttx-pool-80.245.77.213.bambit.de [80.245.77.213])
-	by mxbulk.masterlogin.de (Postfix) with ESMTPSA id 37DC41226AC;
-	Thu, 29 Dec 2022 14:50:33 +0000 (UTC)
+	by mxbulk.masterlogin.de (Postfix) with ESMTPSA id E3D53122725;
+	Thu, 29 Dec 2022 14:50:32 +0000 (UTC)
 From: Frank Wunderlich <linux@fw-web.de>
 To: linux-mediatek@lists.infradead.org
 Cc: Frank Wunderlich <frank-w@public-files.de>,
@@ -53,19 +53,17 @@ Cc: Frank Wunderlich <frank-w@public-files.de>,
 	linux-phy@lists.infradead.org,
 	devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
-	Sam Shih <sam.shih@mediatek.com>,
-	Jieyy Yang <jieyy.yang@mediatek.com>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-Subject: [PATCH v8 4/5] arm64: dts: mt7986: add pcie related device nodes
-Date: Thu, 29 Dec 2022 15:50:22 +0100
-Message-Id: <20221229145023.55713-5-linux@fw-web.de>
+	Sam Shih <sam.shih@mediatek.com>
+Subject: [PATCH v8 3/5] arm64: dts: mt7986: add mmc related device nodes
+Date: Thu, 29 Dec 2022 15:50:21 +0100
+Message-Id: <20221229145023.55713-4-linux@fw-web.de>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20221229145023.55713-1-linux@fw-web.de>
 References: <20221229145023.55713-1-linux@fw-web.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221229_065038_211668_83083A98 
-X-CRM114-Status: GOOD (  11.73  )
+X-CRM114-CacheID: sfid-20221229_065038_377256_216C7F9E 
+X-CRM114-Status: GOOD (  11.81  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,53 +82,141 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Sam Shih <sam.shih@mediatek.com>
 
-This patch adds PCIe support for MT7986.
+This patch adds mmc support for MT7986.
 
-Signed-off-by: Jieyy Yang <jieyy.yang@mediatek.com>
 Signed-off-by: Sam Shih <sam.shih@mediatek.com>
 Signed-off-by: Frank Wunderlich <frank-w@public-files.de>
-Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 ---
-changes compared to sams original version:
+v2:
+- update mmc-node because clocks changed
 
-- add clock-names to pcie node
-- update clocks to new binding
+v3:
+- fix pullups/pulldowns for mt7986a-rfb to have generic bias-pull-*
+
+v6:
+- add 3v3 regulator in mt7986a-rfb (was in usb patch before)
+- dropped AngeloGioacchino RB because of this change
 ---
-bindings-patches:
-https://patchwork.kernel.org/project/linux-mediatek/list/?series=690172
----
- arch/arm64/boot/dts/mediatek/mt7986a-rfb.dts | 16 ++++++
- arch/arm64/boot/dts/mediatek/mt7986a.dtsi    | 52 ++++++++++++++++++++
- 2 files changed, 68 insertions(+)
+ arch/arm64/boot/dts/mediatek/mt7986a-rfb.dts | 96 ++++++++++++++++++++
+ arch/arm64/boot/dts/mediatek/mt7986a.dtsi    | 15 +++
+ 2 files changed, 111 insertions(+)
 
 diff --git a/arch/arm64/boot/dts/mediatek/mt7986a-rfb.dts b/arch/arm64/boot/dts/mediatek/mt7986a-rfb.dts
-index c7a2ac764a30..4f18b4a9a8c8 100644
+index 58089fcf4d16..c7a2ac764a30 100644
 --- a/arch/arm64/boot/dts/mediatek/mt7986a-rfb.dts
 +++ b/arch/arm64/boot/dts/mediatek/mt7986a-rfb.dts
-@@ -93,6 +93,15 @@ &mmc0 {
- 	non-removable;
- 	no-sd;
- 	no-sdio;
-+};
+@@ -5,6 +5,8 @@
+  */
+ 
+ /dts-v1/;
++#include <dt-bindings/pinctrl/mt65xx.h>
 +
-+&pcie {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pcie_pins>;
+ #include "mt7986a.dtsi"
+ 
+ / {
+@@ -23,6 +25,24 @@ memory@40000000 {
+ 		device_type = "memory";
+ 		reg = <0 0x40000000 0 0x40000000>;
+ 	};
++
++	reg_1p8v: regulator-1p8v {
++		compatible = "regulator-fixed";
++		regulator-name = "fixed-1.8V";
++		regulator-min-microvolt = <1800000>;
++		regulator-max-microvolt = <1800000>;
++		regulator-boot-on;
++		regulator-always-on;
++	};
++
++	reg_3p3v: regulator-3p3v {
++		compatible = "regulator-fixed";
++		regulator-name = "fixed-3.3V";
++		regulator-min-microvolt = <3300000>;
++		regulator-max-microvolt = <3300000>;
++		regulator-boot-on;
++		regulator-always-on;
++	};
+ };
+ 
+ &crypto {
+@@ -58,7 +78,83 @@ switch: switch@0 {
+ 	};
+ };
+ 
++&mmc0 {
++	pinctrl-names = "default", "state_uhs";
++	pinctrl-0 = <&mmc0_pins_default>;
++	pinctrl-1 = <&mmc0_pins_uhs>;
++	bus-width = <8>;
++	max-frequency = <200000000>;
++	cap-mmc-highspeed;
++	mmc-hs200-1_8v;
++	mmc-hs400-1_8v;
++	hs400-ds-delay = <0x14014>;
++	vmmc-supply = <&reg_3p3v>;
++	vqmmc-supply = <&reg_1p8v>;
++	non-removable;
++	no-sd;
++	no-sdio;
 +	status = "okay";
 +};
 +
-+&pcie_phy {
- 	status = "okay";
- };
- 
-@@ -155,6 +164,13 @@ conf-rst {
- 		};
- 	};
- 
-+	pcie_pins: pcie-pins {
+ &pio {
++	mmc0_pins_default: mmc0-pins {
 +		mux {
-+			function = "pcie";
-+			groups = "pcie_clk", "pcie_wake", "pcie_pereset";
++			function = "emmc";
++			groups = "emmc_51";
++		};
++		conf-cmd-dat {
++			pins = "EMMC_DATA_0", "EMMC_DATA_1", "EMMC_DATA_2",
++			       "EMMC_DATA_3", "EMMC_DATA_4", "EMMC_DATA_5",
++			       "EMMC_DATA_6", "EMMC_DATA_7", "EMMC_CMD";
++			input-enable;
++			drive-strength = <4>;
++			bias-pull-up = <MTK_PUPD_SET_R1R0_01>; /* pull-up 10K */
++		};
++		conf-clk {
++			pins = "EMMC_CK";
++			drive-strength = <6>;
++			bias-pull-down = <MTK_PUPD_SET_R1R0_10>; /* pull-down 50K */
++		};
++		conf-ds {
++			pins = "EMMC_DSL";
++			bias-pull-down = <MTK_PUPD_SET_R1R0_10>; /* pull-down 50K */
++		};
++		conf-rst {
++			pins = "EMMC_RSTB";
++			drive-strength = <4>;
++			bias-pull-up = <MTK_PUPD_SET_R1R0_01>; /* pull-up 10K */
++		};
++	};
++
++	mmc0_pins_uhs: mmc0-uhs-pins {
++		mux {
++			function = "emmc";
++			groups = "emmc_51";
++		};
++		conf-cmd-dat {
++			pins = "EMMC_DATA_0", "EMMC_DATA_1", "EMMC_DATA_2",
++			       "EMMC_DATA_3", "EMMC_DATA_4", "EMMC_DATA_5",
++			       "EMMC_DATA_6", "EMMC_DATA_7", "EMMC_CMD";
++			input-enable;
++			drive-strength = <4>;
++			bias-pull-up = <MTK_PUPD_SET_R1R0_01>; /* pull-up 10K */
++		};
++		conf-clk {
++			pins = "EMMC_CK";
++			drive-strength = <6>;
++			bias-pull-down = <MTK_PUPD_SET_R1R0_10>; /* pull-down 50K */
++		};
++		conf-ds {
++			pins = "EMMC_DSL";
++			bias-pull-down = <MTK_PUPD_SET_R1R0_10>; /* pull-down 50K */
++		};
++		conf-rst {
++			pins = "EMMC_RSTB";
++			drive-strength = <4>;
++			bias-pull-up = <MTK_PUPD_SET_R1R0_01>; /* pull-up 10K */
 +		};
 +	};
 +
@@ -138,70 +224,26 @@ index c7a2ac764a30..4f18b4a9a8c8 100644
  		mux {
  			function = "spi";
 diff --git a/arch/arm64/boot/dts/mediatek/mt7986a.dtsi b/arch/arm64/boot/dts/mediatek/mt7986a.dtsi
-index 9c552442c02d..f6e980771b69 100644
+index 9ff2968152ae..9c552442c02d 100644
 --- a/arch/arm64/boot/dts/mediatek/mt7986a.dtsi
 +++ b/arch/arm64/boot/dts/mediatek/mt7986a.dtsi
-@@ -8,6 +8,7 @@
- #include <dt-bindings/interrupt-controller/arm-gic.h>
- #include <dt-bindings/clock/mt7986-clk.h>
- #include <dt-bindings/reset/mt7986-resets.h>
-+#include <dt-bindings/phy/phy.h>
- 
- / {
- 	compatible = "mediatek,mt7986a";
-@@ -361,6 +362,57 @@ mmc0: mmc@11230000 {
+@@ -346,6 +346,21 @@ ssusb: usb@11200000 {
  			status = "disabled";
  		};
  
-+		pcie: pcie@11280000 {
-+			compatible = "mediatek,mt7986-pcie",
-+				     "mediatek,mt8192-pcie";
-+			device_type = "pci";
-+			#address-cells = <3>;
-+			#size-cells = <2>;
-+			reg = <0x00 0x11280000 0x00 0x4000>;
-+			reg-names = "pcie-mac";
-+			interrupts = <GIC_SPI 168 IRQ_TYPE_LEVEL_HIGH>;
-+			bus-range = <0x00 0xff>;
-+			ranges = <0x82000000 0x00 0x20000000 0x00
-+				  0x20000000 0x00 0x10000000>;
-+			clocks = <&infracfg CLK_INFRA_IPCIE_PIPE_CK>,
-+				 <&infracfg CLK_INFRA_IPCIE_CK>,
-+				 <&infracfg CLK_INFRA_IPCIER_CK>,
-+				 <&infracfg CLK_INFRA_IPCIEB_CK>;
-+			clock-names = "pl_250m", "tl_26m", "peri_26m", "top_133m";
++		mmc0: mmc@11230000 {
++			compatible = "mediatek,mt7986-mmc";
++			reg = <0 0x11230000 0 0x1000>,
++			      <0 0x11c20000 0 0x1000>;
++			interrupts = <GIC_SPI 143 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&topckgen CLK_TOP_EMMC_416M_SEL>,
++				 <&infracfg CLK_INFRA_MSDC_HCK_CK>,
++				 <&infracfg CLK_INFRA_MSDC_CK>,
++				 <&infracfg CLK_INFRA_MSDC_133M_CK>,
++				 <&infracfg CLK_INFRA_MSDC_66M_CK>;
++			clock-names = "source", "hclk", "source_cg", "bus_clk",
++				      "sys_cg";
 +			status = "disabled";
-+
-+			phys = <&pcie_port PHY_TYPE_PCIE>;
-+			phy-names = "pcie-phy";
-+
-+			#interrupt-cells = <1>;
-+			interrupt-map-mask = <0 0 0 0x7>;
-+			interrupt-map = <0 0 0 1 &pcie_intc 0>,
-+					<0 0 0 2 &pcie_intc 1>,
-+					<0 0 0 3 &pcie_intc 2>,
-+					<0 0 0 4 &pcie_intc 3>;
-+			pcie_intc: interrupt-controller {
-+				#address-cells = <0>;
-+				#interrupt-cells = <1>;
-+				interrupt-controller;
-+			};
-+		};
-+
-+		pcie_phy: t-phy@11c00000 {
-+			compatible = "mediatek,mt7986-tphy",
-+				     "mediatek,generic-tphy-v2";
-+			#address-cells = <2>;
-+			#size-cells = <2>;
-+			ranges;
-+			status = "disabled";
-+
-+			pcie_port: pcie-phy@11c00000 {
-+				reg = <0 0x11c00000 0 0x20000>;
-+				clocks = <&clk40m>;
-+				clock-names = "ref";
-+				#phy-cells = <1>;
-+			};
 +		};
 +
  		usb_phy: t-phy@11e10000 {
