@@ -4,81 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DA865C4332F
-	for <linux-phy@archiver.kernel.org>; Thu, 29 Dec 2022 10:31:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E6502C4332F
+	for <linux-phy@archiver.kernel.org>; Thu, 29 Dec 2022 11:42:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0TrbN/3+MXP1RPTMwBVLDSYAYqXh7374hCH4I126/Bc=; b=xONEkapCo8YIVB
-	9XKQwOGnGrA7KLfThmG++o3DjPA2rBTzLRYjVHOgPRcs/pnA+ja4tjSX7ooqTqIOV8RQcg0yG65qi
-	YvgZMYMzbZmUtTqYxX8CHs0DnbZpj1SKF9rJKL5mliBTt0IQpIQwLbIia3hY6DtWh8mfKkcEoituN
-	wSyFjMf1xJHGJwuOAUnUQ0T0JBnvraryVjLsw2B0p2GAvGVLuRMAulOILcwb2TqltQXq4vxiO8z/F
-	9UgNKkCDOFYWegGp7Ejvvrpf1D2tQrvlylMh1XA65ZoRroDRH6lVS0gANxueFIWphqBO3VJYmnn31
-	Z7sMerPOb8SjPrbJC9Uw==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:From:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ItdMATo1U9ET8ivx+uAA/U6jTQMySW4RqOqeUxnBbzo=; b=rBdjLQQ+yPYIPJ
+	749UMBhPclr8YyCjdhaLbLWW3r+cjYzZC/SUhAw5P17N0QAKCa7GHt+ShVxdM2h+fwZ0OH1OwD5KZ
+	+vZOJ/TjdaNIQxBvWvNyaZkTaybfM+QbGH/zgR8plvOtzIlqcqf2ve5Z1q/NXV1HTy8qVDFrFEscv
+	gwc+M6VKarpfDYT7lIXlCI7WRFN4bNAw4fk+u8NL0ylnA8fVedaDep+kLfD9l+Uw7IUDrl7xxMW0n
+	A1XRyQzXNneGaVNHqG+MCff88zb7fohq3CnKRjBqvBxuSg06WBwzap6WeRtDnPNDPDFuaXc8GxnP7
+	ldQ9ph+Wo8E1a+uKexYQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pAqBn-00Ehxw-UJ; Thu, 29 Dec 2022 10:31:07 +0000
-Received: from mail-lf1-x130.google.com ([2a00:1450:4864:20::130])
+	id 1pArIi-00FDYB-AR; Thu, 29 Dec 2022 11:42:20 +0000
+Received: from mail-ed1-x52a.google.com ([2a00:1450:4864:20::52a])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pAqBb-00Ehst-L9
-	for linux-phy@lists.infradead.org; Thu, 29 Dec 2022 10:30:57 +0000
-Received: by mail-lf1-x130.google.com with SMTP id j17so17461763lfr.3
-        for <linux-phy@lists.infradead.org>; Thu, 29 Dec 2022 02:30:54 -0800 (PST)
+	id 1pArFq-00FC3f-Jw; Thu, 29 Dec 2022 11:39:24 +0000
+Received: by mail-ed1-x52a.google.com with SMTP id s5so26343299edc.12;
+        Thu, 29 Dec 2022 03:39:21 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=iAox9jZdEvifzmLQL+c6tUgFpF++A9pWe7sG2ptRj0I=;
-        b=vW6WcxQf2oA57xpF12GrMN5nxO7C+GTBWRcwy6OFCaQ1xipbnG2BJ3uqema3wdK+df
-         2x/+KN367tqENjlU619vns3XOhuW+19APzRsdN7o6SX2WrIRHAYFAoPKlXMbJH+ME1Gd
-         eC2mihlLh2q+JUxZvFvcTE0wIk7Ye7MbIZ3H4Z4h/kL3FMUJJdY0uu9D5DdYs2xB7ebR
-         wDsFP6ownoJPAxDyIlGLDQK2qFhcKuHZ7Ydv+hhzGyj+/w4WvEYdiwAtCDn/mayPKvya
-         plVvgsNoqiJC/agaS3LXF+CQQdl9yngkvMS9NzbUftg+6EBOP45InBgxPS+p9SnA8qHo
-         iiBg==
+        d=gmail.com; s=20210112;
+        h=content-transfer-encoding:content-language:cc:to:subject:from
+         :user-agent:mime-version:date:message-id:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=ZL7W0UbK/uwHhrL/ebbYLl16dFNUQnqpqk5DlrkcofQ=;
+        b=XZebkHQJ416b2bVgOIpHp7OjUe+l5KMCIwXfMscGFBwoNs4j4l32Jrbn64AgdoaKq3
+         eFwp5ruKCymbMl4iHGbjt7ZXCZlJkRwMKoETrNz77eX670EGUDPV1qg8mOzLTl4W8KzN
+         gRHxEacLvb0dGJZGd8nlhzlLvohACE2GeQj/CKmRFWDug9fkVV1GI6G4Dd6ZPJUTgwBX
+         8kIyQS4FNd6Qail9uIbTpfhf0rBoaK1poKfC2To12ARZAvYLBDPdjfetv50kXBInudH4
+         ZxQrQKLJioMFOTe4eWEyAj+mvbMunSRGNUyrZhApDj1E1omytLGjg+70ejvgUP1GoG1B
+         b0iw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=iAox9jZdEvifzmLQL+c6tUgFpF++A9pWe7sG2ptRj0I=;
-        b=CXV1XO/8mIEdUPVwz2roRn5gNTe5IBx6xLXfv5/Ii7r0o5uaj3Bmk7kkaKr2+mKMPL
-         xhlXoUJWYUG83lsiR2nfeH551kGTTEgPiZ/FYXnahNvLESpee/7TcaDL0N6OG7IEf/O/
-         IECXHUFolh6E10XNjIZLLWxSaji2JzTRMglVm8OkKUsnRXJas1f7KK2CnDF0JmZ1iXRo
-         1wWdlKRFnJ9FEwfYjqmUQ4eKAWTv0Ywy2D+Oz7LaQ3lq3EHlyLhyqm54Jsmyy+6192zu
-         1tHHIXrJeANQVp6xX5LfKOrjbiOlegwkKY/fOSiijNZAND1WJE45BbJmnP4XP49qlDWS
-         ISyA==
-X-Gm-Message-State: AFqh2kr8/oT9bQ5QvRpvqGKRqOpWMaQT0FUCFhMSWmt/kMoyo7oCjPQ1
-	g0X5e84WHCdC3FTdXdgrJ/a8+Q==
-X-Google-Smtp-Source: AMrXdXsUMVEakLd8I9Ld+9cvNnWvLibPZXo9wxW/3r/FhHxjIMmijyS3NwrUfhTgMxmGNghGO4E02Q==
-X-Received: by 2002:a19:f70b:0:b0:4ca:cb4a:1875 with SMTP id z11-20020a19f70b000000b004cacb4a1875mr7178275lfe.45.1672309852903;
-        Thu, 29 Dec 2022 02:30:52 -0800 (PST)
-Received: from [192.168.0.20] (088156142067.dynamic-2-waw-k-3-2-0.vectranet.pl. [88.156.142.67])
-        by smtp.gmail.com with ESMTPSA id bu16-20020a056512169000b004b5ab5e904esm3027993lfb.306.2022.12.29.02.30.51
+        h=content-transfer-encoding:content-language:cc:to:subject:from
+         :user-agent:mime-version:date:message-id:x-gm-message-state:from:to
+         :cc:subject:date:message-id:reply-to;
+        bh=ZL7W0UbK/uwHhrL/ebbYLl16dFNUQnqpqk5DlrkcofQ=;
+        b=QLJLM2PxgnN0ZlIKbhpGeqHmb9X9CCJuH12S9OIlUGT6Ir/GFBVRgPle5y5OymXV7A
+         pxnQ1HE0Jymq4AvxiKeJ1++kZVSOthY6l4VTf4jdxfowT3oj73iSRQUzjZzbzBmL2f8n
+         lm83RcEFgBuIcRKJvVQPVTxOB+T4zGiAHH8D8RagzjE/E4Rg4yTyTZh/6DqQieUxrIc3
+         6cVl8GlGACGTceqWeeNf/CQaNBSR8aHjUtuuCEJGCOLBxfkf4MXOV03igjwq/A4EzJX4
+         UmMi1mAUSiowyZo5Kasy2l2h+pzT6n6qRWU1xPDdxBYtTlLIBTf92ZKs6MbzaMXgblc0
+         cGJg==
+X-Gm-Message-State: AFqh2kpvxSmtEmyuywtOLsstHzzhlbX8T5aIimqN8A7eqq9oSAzyIUTz
+	Hx2EazXvAVKHb2zAi7T2szg=
+X-Google-Smtp-Source: AMrXdXvpRLDZqD2mcnt2ORSXZKriqyX1MovkfFzEg33cDv6OGKF42t7q6lJRk0KCvZs3N4kx+yTweQ==
+X-Received: by 2002:aa7:c516:0:b0:485:48ed:b1f3 with SMTP id o22-20020aa7c516000000b0048548edb1f3mr10954209edq.26.1672313959810;
+        Thu, 29 Dec 2022 03:39:19 -0800 (PST)
+Received: from [192.168.2.1] (81-204-249-205.fixed.kpn.net. [81.204.249.205])
+        by smtp.gmail.com with ESMTPSA id r28-20020a056402035c00b0045b4b67156fsm8161374edw.45.2022.12.29.03.39.18
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 29 Dec 2022 02:30:52 -0800 (PST)
-Message-ID: <a606f91c-1a68-09c7-2081-03484fd0d513@linaro.org>
-Date: Thu, 29 Dec 2022 11:30:50 +0100
+        Thu, 29 Dec 2022 03:39:19 -0800 (PST)
+Message-ID: <99794484-d67e-ee1f-4e76-200de20a879c@gmail.com>
+Date: Thu, 29 Dec 2022 12:39:17 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.6.1
-Subject: Re: [PATCH v2 1/2] dt-bindings: phy: rockchip: convert
- rockchip-dp-phy.txt to yaml
-Content-Language: en-US
-To: Johan Jonker <jbx6244@gmail.com>, heiko@sntech.de
+ Thunderbird/102.3.0
+From: Johan Jonker <jbx6244@gmail.com>
+Subject: [PATCH v1] dt-bindings: phy: rename phy-rockchip-inno-usb2.yaml
+To: heiko@sntech.de
 Cc: robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
  linux-phy@lists.infradead.org, vkoul@kernel.org, kishon@kernel.org
-References: <aa6fe473-71f2-edba-f009-994a3dbc9802@gmail.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <aa6fe473-71f2-edba-f009-994a3dbc9802@gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221229_023055_747453_2E9C567C 
-X-CRM114-Status: UNSURE (   6.61  )
+X-CRM114-CacheID: sfid-20221229_033922_737224_F63BB49A 
+X-CRM114-Status: UNSURE (   8.80  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -96,19 +92,51 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 29/12/2022 10:44, Johan Jonker wrote:
-> Convert rockchip-dp-phy.txt to yaml.
-> 
-> Changed:
->   rename file name
-> 
-> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+Rename phy-rockchip-inno-usb2.yaml to a more common format of
+rockchip,inno-usb2phy.yaml
 
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+---
 
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Apply after:
+  dt-bindings: soc: rockchip: grf: add rockchip,rk3288-dp-phy.yaml
+---
+ .../{phy-rockchip-inno-usb2.yaml => rockchip,inno-usb2phy.yaml} | 2 +-
+ Documentation/devicetree/bindings/soc/rockchip/grf.yaml         | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+ rename Documentation/devicetree/bindings/phy/{phy-rockchip-inno-usb2.yaml => rockchip,inno-usb2phy.yaml} (98%)
 
-Best regards,
-Krzysztof
+diff --git a/Documentation/devicetree/bindings/phy/phy-rockchip-inno-usb2.yaml b/Documentation/devicetree/bindings/phy/rockchip,inno-usb2phy.yaml
+similarity index 98%
+rename from Documentation/devicetree/bindings/phy/phy-rockchip-inno-usb2.yaml
+rename to Documentation/devicetree/bindings/phy/rockchip,inno-usb2phy.yaml
+index f71920082..0d6b8c28b 100644
+--- a/Documentation/devicetree/bindings/phy/phy-rockchip-inno-usb2.yaml
++++ b/Documentation/devicetree/bindings/phy/rockchip,inno-usb2phy.yaml
+@@ -1,7 +1,7 @@
+ # SPDX-License-Identifier: GPL-2.0
+ %YAML 1.2
+ ---
+-$id: http://devicetree.org/schemas/phy/phy-rockchip-inno-usb2.yaml#
++$id: http://devicetree.org/schemas/phy/rockchip,inno-usb2phy.yaml#
+ $schema: http://devicetree.org/meta-schemas/core.yaml#
+
+ title: Rockchip USB2.0 phy with inno IP block
+diff --git a/Documentation/devicetree/bindings/soc/rockchip/grf.yaml b/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
+index 8dc141410..39d8c3b5d 100644
+--- a/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
++++ b/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
+@@ -192,7 +192,7 @@ allOf:
+       patternProperties:
+         "usb2phy@[0-9a-f]+$":
+           type: object
+-          $ref: /schemas/phy/phy-rockchip-inno-usb2.yaml#
++          $ref: /schemas/phy/rockchip,inno-usb2phy.yaml#
+           unevaluatedProperties: false
+
+   - if:
+--
+2.20.1
 
 
 -- 
