@@ -4,84 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2C6C3C4708D
-	for <linux-phy@archiver.kernel.org>; Thu, 29 Dec 2022 12:00:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8924CC4332F
+	for <linux-phy@archiver.kernel.org>; Thu, 29 Dec 2022 14:01:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1516uGmSddHYVI3430klyWyYF6hrjveUZ7SMTdSfvpo=; b=iOyGJ6d4gKtcoM
-	czVMpWxdkFmGOQt2faBGeLQ9oCJDPmgnPxOWHc9Uzbzk3CiUF4Fv0d8MzluJ8TmrFupX6AYfqf54f
-	l4iv3Gu2lBNOq6fANN41SGdYOB/EvEEOqBATSAFznWCsc3ACApnAsbMcsx1WVZk8zi8DIEQkXcZyR
-	QuG5ew24eQRV2EzR74gnfHoiTQXyjeCJ9tNxsmcREu8g436ZeE70kaXkFUcKo8Y7Vy2x0iP4EFgTA
-	yQR6cefh+S5O1NosK8kR49DcPd0RJJEPLaEKgb3dhoe47j4N/rLvO2pH4oNOx/6K/0xssLR8xPo9B
-	FeLUg2e2kVx6GfKlLg0A==;
+	List-Owner; bh=RBC6HiFqLCOLHwwFdD34BJH886RpjgfCbgilmQ2Trl8=; b=VGIvltl7esW4/1
+	NVMxjrTYc2t3C6Tl02yjWC1D8DPI01J14YtMtYaWTgw7TG3WBLFAadZtogEV67IMf53oGR03Ezg2L
+	AJjnHq17LSrlP6YxxTuNsgWz+HPh5FHsymOeA0LH+vjAHhmWVUL6xZTiOf7z8Eh1f/j3nm5s5AcC3
+	nKDoERrEJlWXSBmAY4m8G/QJkKTOjLkEB5+0keWRDU1pWqwB0fyimAJ11yDE2lFal/SkVgzQ7KnJa
+	gfkMLhG+gAhnHzyGOnRqqEYHhIyEdh8rKqT4SGRtFGxUeP+g702LzVKeQnE+clLPEIPPIbbWNBaxL
+	8XfSrpBN3wmxi+nK4w8A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pAra5-00FMzD-A7; Thu, 29 Dec 2022 12:00:17 +0000
-Received: from mail-lf1-x130.google.com ([2a00:1450:4864:20::130])
+	id 1pAtTB-00GMOk-LT; Thu, 29 Dec 2022 14:01:17 +0000
+Received: from mail-lf1-x12b.google.com ([2a00:1450:4864:20::12b])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pArZR-00FMaI-1H
-	for linux-phy@lists.infradead.org; Thu, 29 Dec 2022 11:59:39 +0000
-Received: by mail-lf1-x130.google.com with SMTP id z26so27224400lfu.8
-        for <linux-phy@lists.infradead.org>; Thu, 29 Dec 2022 03:59:35 -0800 (PST)
+	id 1pAtT0-00GMHK-KT
+	for linux-phy@lists.infradead.org; Thu, 29 Dec 2022 14:01:11 +0000
+Received: by mail-lf1-x12b.google.com with SMTP id z26so27606050lfu.8
+        for <linux-phy@lists.infradead.org>; Thu, 29 Dec 2022 06:01:04 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=rnM8DBj1VvOTIEH0B8jqgDUoXyYAgVlsZfzjH2GBtsI=;
-        b=gL52k+gkeeW8qEE8vG+gSjWbiuZGuv0Rv/En2ENuwN6OLLLG09vz5oPcj8RWxvpP+i
-         k2+xiRkcPj6hZp39gr1n5TMEbMW3KFHqkDmNMPM0zNW2xsrrNbOnOGQLEYBS7mnT3bB+
-         Ejfle0Osb8Ajb7KiBVDVNBMugfqnonAxSjNJ740HFC6fN8gPyowtwWIYbMdqq8Dzee1M
-         J/13aPRu2uSxogOG9VXKJQ8qcatAZBmZUncpIOkLNI4QUma7dNkDRCmnv4Dv5qbkA7zU
-         DeIzpHtNLkoKE+A06MPnV9KLwdy0QHdPtjg3lT4g2kgMk3RX96qSnqTaug89AvO4BoS2
-         +ZJg==
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=dWdcdzFREv5V6SPJe4nJ9WrjQaP+foHIino4lv73g54=;
+        b=cQfwacO9fMts3lyQV2pz6a6+thsvJud3cvHWtX+VxFUXojtqK+nI8xvvWoZjlscD3b
+         WoY7dZsM0DZ4cONKcOJYmU8wCn88ETrJ24NYIXgZ9swGTxP3AKs9jomGGXRCaiUIaGJ2
+         EueunHBVrLvn4acWgPuAJvLWp8oaFqG6VebuVQkcSkKnIqNw1/48jzjF1xO0Q/55fIFx
+         DtOSNEEVzXNLRwbCCXl66xN8ykk7DO+6xHF9R1Gi9sBMh4LYb4Is9o7fhUhjArDvTy9t
+         ZRujMZUueui11IDiD5vRsjAWn8o7GO7Pomc0GzZN2S4C4iFTXhjMwhGJpFeyqfPSQgZx
+         bYDQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=rnM8DBj1VvOTIEH0B8jqgDUoXyYAgVlsZfzjH2GBtsI=;
-        b=b5Wbdk/0c/j7Bds5nPktfpbmgIat1sFZePn2aFH76sElvqN78yjSTnqIQgvXyBPKto
-         TcYgsHt3l+N1arHRdzNIWVT+4rL1RqMAspBl7lNCr73U+uQspgff7NCRHj3Pf8NtQuax
-         XjHqIJMktr3q6sSl+Hm+hCePh4eyDGTndwtj56p75MaL/RqfvOImTBZWHfSWfp6Gnq/Q
-         tiAdLk8RZq0KUe2b9cYmvRXEpvN10V3e1liex/TrZxHK7L3StrfVNbD8tEIghYKDCBwf
-         /hhhkj7WPOR83aIQmgPJzHCPNJOMG+2qddVmLxQyeaM79U8im2b6OfxfTO153+QPLSCm
-         039Q==
-X-Gm-Message-State: AFqh2kqVhuqbcphpU/IvASOSlrHEZO0reyNZvhInd2TT6pqPBdFC/ChB
-	gUMXfYwBv7HxbxsgwjM+vMjBwQ==
-X-Google-Smtp-Source: AMrXdXuvsxEdRIqIZPvn/GA1l1OSajW7K8UuToLjRDZnd80lXo3rVk/aJPqvYbkBo1cPs69nWDAMmw==
-X-Received: by 2002:a05:6512:3d9e:b0:4c0:2b07:e6e7 with SMTP id k30-20020a0565123d9e00b004c02b07e6e7mr10288765lfv.58.1672315174460;
-        Thu, 29 Dec 2022 03:59:34 -0800 (PST)
-Received: from eriador.lan (dzccz6yyyyyyyyyyybcwt-3.rev.dnainternet.fi. [2001:14ba:a085:4d00::8a5])
-        by smtp.gmail.com with ESMTPSA id n7-20020a05651203e700b0049464d89e40sm3006313lfq.72.2022.12.29.03.59.33
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 29 Dec 2022 03:59:34 -0800 (PST)
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-To: Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
-Cc: Philipp Zabel <p.zabel@pengutronix.de>,
-	linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org
-Subject: [PATCH v3 1/2] dt-bindings: phy: qcom,pcie2-phy: convert to YAML format
-Date: Thu, 29 Dec 2022 13:59:31 +0200
-Message-Id: <20221229115932.3312318-2-dmitry.baryshkov@linaro.org>
-X-Mailer: git-send-email 2.39.0
-In-Reply-To: <20221229115932.3312318-1-dmitry.baryshkov@linaro.org>
-References: <20221229115932.3312318-1-dmitry.baryshkov@linaro.org>
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=dWdcdzFREv5V6SPJe4nJ9WrjQaP+foHIino4lv73g54=;
+        b=AU302MGK6IKURYUfD52UHnBxmZj+3u6x6H1pQF1Y7u8AiCQMqWWbu8H7xko+/xGMM8
+         XJKAfXTj+dfmzH8NuOH44E7klTEd7h0aZmIB5NWq+OrjRi1pQk587E57VKTuXb+Bh0sX
+         jh4kggyekIgFWytmXBm57CagEj4P+KwnCdEGCO73C7y6kBgUHxj6ML3HsRMapnZpBMul
+         pKgon6YnkZyhLGNYfbX+AYMjXG8MI1oOAka+EeFqlvMZTbT49Zt+8ApRmmikWngqTnrD
+         hOSY8Q0/7U6owQ/dnfuFbSU8kC4SxzsE9H56ScSQy2X81WfTsVgsubT1QC2x/6foH8Su
+         NHog==
+X-Gm-Message-State: AFqh2kqNFAbupy1P+imrQT3EVoUP5uOtjBG5esLJTUfKnCS4q9XV0gbD
+	5rFxJtu4lgjRT+i2cnZOzcJ8q761igZS+owe
+X-Google-Smtp-Source: AMrXdXt4v6DQu4Wx3StmNSh0drgudTxpXbIAARtAiGvM5/Htc6reK7Ak6X/cOQjMJTlmotXT1kp62Q==
+X-Received: by 2002:ac2:5975:0:b0:4b5:8f03:a2bc with SMTP id h21-20020ac25975000000b004b58f03a2bcmr7460398lfp.9.1672322463145;
+        Thu, 29 Dec 2022 06:01:03 -0800 (PST)
+Received: from [192.168.0.20] (088156142067.dynamic-2-waw-k-3-2-0.vectranet.pl. [88.156.142.67])
+        by smtp.gmail.com with ESMTPSA id e19-20020a195013000000b004cae648066csm3080925lfb.257.2022.12.29.06.01.01
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 29 Dec 2022 06:01:02 -0800 (PST)
+Message-ID: <1b11ca6d-3e28-f019-435d-06daea38d00c@linaro.org>
+Date: Thu, 29 Dec 2022 15:01:01 +0100
 MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.6.1
+Subject: Re: [PATCH v3 1/2] dt-bindings: phy: qcom,pcie2-phy: convert to YAML
+ format
+Content-Language: en-US
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+ Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
+ Konrad Dybcio <konrad.dybcio@linaro.org>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring
+ <robh+dt@kernel.org>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
+Cc: Philipp Zabel <p.zabel@pengutronix.de>, linux-arm-msm@vger.kernel.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org
+References: <20221229115932.3312318-1-dmitry.baryshkov@linaro.org>
+ <20221229115932.3312318-2-dmitry.baryshkov@linaro.org>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <20221229115932.3312318-2-dmitry.baryshkov@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221229_035937_290801_B392F4C5 
-X-CRM114-Status: GOOD (  14.61  )
+X-CRM114-CacheID: sfid-20221229_060108_686408_6FCB7692 
+X-CRM114-Status: UNSURE (   6.17  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,159 +99,14 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Convert the bindings for the Qualcomm PCIe2 PHY into the YAML format
-from the text description.
+On 29/12/2022 12:59, Dmitry Baryshkov wrote:
+> Convert the bindings for the Qualcomm PCIe2 PHY into the YAML format
+> from the text description.
 
-Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
----
- .../bindings/phy/qcom,pcie2-phy.yaml          | 86 +++++++++++++++++++
- .../bindings/phy/qcom-pcie2-phy.txt           | 42 ---------
- 2 files changed, 86 insertions(+), 42 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/phy/qcom,pcie2-phy.yaml
- delete mode 100644 Documentation/devicetree/bindings/phy/qcom-pcie2-phy.txt
+You got here Rob's tag.
 
-diff --git a/Documentation/devicetree/bindings/phy/qcom,pcie2-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,pcie2-phy.yaml
-new file mode 100644
-index 000000000000..dbc4a4c71f05
---- /dev/null
-+++ b/Documentation/devicetree/bindings/phy/qcom,pcie2-phy.yaml
-@@ -0,0 +1,86 @@
-+# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/phy/qcom,pcie2-phy.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Qualcomm PCIe2 PHY controller
-+
-+maintainers:
-+  - Vinod Koul <vkoul@kernel.org>
-+
-+description:
-+  The Qualcomm PCIe2 PHY is a Synopsys based phy found in a number of Qualcomm
-+  platforms.
-+
-+properties:
-+  compatible:
-+    items:
-+      - const: qcom,qcs404-pcie2-phy
-+      - const: qcom,pcie2-phy
-+
-+  reg:
-+    items:
-+      - description: PHY register set
-+
-+  clocks:
-+    items:
-+      - description: a clock-specifier pair for the "pipe" clock
-+
-+  clock-output-names:
-+    maxItems: 1
-+
-+  "#clock-cells":
-+    const: 0
-+
-+  "#phy-cells":
-+    const: 0
-+
-+  vdda-vp-supply:
-+    description: low voltage regulator
-+
-+  vdda-vph-supply:
-+    description: high voltage regulator
-+
-+  resets:
-+    maxItems: 2
-+
-+  reset-names:
-+    items:
-+      - const: phy
-+      - const: pipe
-+
-+required:
-+  - compatible
-+  - reg
-+  - clocks
-+  - clock-output-names
-+  - "#clock-cells"
-+  - "#phy-cells"
-+  - vdda-vp-supply
-+  - vdda-vph-supply
-+  - resets
-+  - reset-names
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    #include <dt-bindings/clock/qcom,gcc-qcs404.h>
-+    phy@7786000 {
-+      compatible = "qcom,qcs404-pcie2-phy", "qcom,pcie2-phy";
-+      reg = <0x07786000 0xb8>;
-+
-+      clocks = <&gcc GCC_PCIE_0_PIPE_CLK>;
-+      resets = <&gcc GCC_PCIEPHY_0_PHY_BCR>,
-+               <&gcc GCC_PCIE_0_PIPE_ARES>;
-+      reset-names = "phy", "pipe";
-+
-+      vdda-vp-supply = <&vreg_l3_1p05>;
-+      vdda-vph-supply = <&vreg_l5_1p8>;
-+
-+      clock-output-names = "pcie_0_pipe_clk";
-+      #clock-cells = <0>;
-+      #phy-cells = <0>;
-+    };
-+...
-diff --git a/Documentation/devicetree/bindings/phy/qcom-pcie2-phy.txt b/Documentation/devicetree/bindings/phy/qcom-pcie2-phy.txt
-deleted file mode 100644
-index 30064253f290..000000000000
---- a/Documentation/devicetree/bindings/phy/qcom-pcie2-phy.txt
-+++ /dev/null
-@@ -1,42 +0,0 @@
--Qualcomm PCIe2 PHY controller
--=============================
--
--The Qualcomm PCIe2 PHY is a Synopsys based phy found in a number of Qualcomm
--platforms.
--
--Required properties:
-- - compatible: compatible list, should be:
--	       "qcom,qcs404-pcie2-phy", "qcom,pcie2-phy"
--
-- - reg: offset and length of the PHY register set.
-- - #phy-cells: must be 0.
--
-- - clocks: a clock-specifier pair for the "pipe" clock
--
-- - vdda-vp-supply: phandle to low voltage regulator
-- - vdda-vph-supply: phandle to high voltage regulator
--
-- - resets: reset-specifier pairs for the "phy" and "pipe" resets
-- - reset-names: list of resets, should contain:
--		"phy" and "pipe"
--
-- - clock-output-names: name of the outgoing clock signal from the PHY PLL
-- - #clock-cells: must be 0
--
--Example:
-- phy@7786000 {
--	compatible = "qcom,qcs404-pcie2-phy", "qcom,pcie2-phy";
--	reg = <0x07786000 0xb8>;
--
--	clocks = <&gcc GCC_PCIE_0_PIPE_CLK>;
--	resets = <&gcc GCC_PCIEPHY_0_PHY_BCR>,
--	         <&gcc GCC_PCIE_0_PIPE_ARES>;
--	reset-names = "phy", "pipe";
--
--	vdda-vp-supply = <&vreg_l3_1p05>;
--	vdda-vph-supply = <&vreg_l5_1p8>;
--
--	clock-output-names = "pcie_0_pipe_clk";
--	#clock-cells = <0>;
--	#phy-cells = <0>;
-- };
--- 
-2.39.0
+Best regards,
+Krzysztof
 
 
 -- 
