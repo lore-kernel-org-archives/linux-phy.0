@@ -4,69 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 659D3C4332F
-	for <linux-phy@archiver.kernel.org>; Thu, 29 Dec 2022 08:43:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 18EFAC4332F
+	for <linux-phy@archiver.kernel.org>; Thu, 29 Dec 2022 08:43:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/0bWMb80m9I2bUVvbuCmzth8h5DCujW3+xL0wpXZP5s=; b=a5MDtl1C97nLwM
-	PbQnG2sPPu9660Nkyj5WuU/4e9mLBuVFrSTibvvBNmOeq4shlEjZBacakfkiXUYNZVlT/PijICkOk
-	lYu8avcF4DokVRxBTezGu7zClI/SPv+I3ZbRnGI4WR1+7KfpuMsLijujk7E+Z4JXorMTZR+kNVbyN
-	vnTGzpI+41/nKMETtN1NR18Xkp6+R0vDfVELv/QWhZjjmmblB/jxBvFHEcGV+XbCenTe2lkRV/ogE
-	fd1pdDDpf5H4dDqANlJXx++q0MmyujSVXDgtWLJLj4frrxRl8ArxaSF6A2wI5vm8yEb5pTa2+Bibx
-	i+x1LKlEYldA3r78Qdfg==;
+	List-Owner; bh=q831ZCjMz/6h90SVQeBV/Let4WZUXoYp9HuOgqS/BXo=; b=JNwUhih5t4pDEb
+	+MZWZPQDeEdYmHZh/aKWnAsUTunmi8pJB1B0watUpbfQcCngDQJdOZS5jSPBiNqQD0TUc6Z06ezlA
+	7PyKZ6meVKo7elrBFOS2SanMPwKeV3djTqWzQU7twMmqJlTyIX91nXZDcMHVA2j8hLVEFAjbUrpsW
+	v0HT3gyIaeuNW/gWqR904Q3RvlzIe7+Y4JTsBasHw4VUgQHUN/4Kcl1Ww/3FLHcgiP4I+38YJLLT8
+	Z23DCUXaRS4GlaU6czjQI3sFYBbUTIg3EuZJdoJHXua6HUEzqAlK3Jx2vRw+pq9+hReHCyxVVVpJP
+	EcqyhIILLpJxC401sdxg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pAoVR-00DpjB-Jm; Thu, 29 Dec 2022 08:43:17 +0000
-Received: from mail-lj1-x22d.google.com ([2a00:1450:4864:20::22d])
+	id 1pAoW1-00Dq1z-9b; Thu, 29 Dec 2022 08:43:53 +0000
+Received: from mail-lf1-x12c.google.com ([2a00:1450:4864:20::12c])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pAoVN-00Dpdw-Q5
-	for linux-phy@lists.infradead.org; Thu, 29 Dec 2022 08:43:15 +0000
-Received: by mail-lj1-x22d.google.com with SMTP id i19so5891367ljg.8
-        for <linux-phy@lists.infradead.org>; Thu, 29 Dec 2022 00:43:09 -0800 (PST)
+	id 1pAoVx-00Dpy4-Aa
+	for linux-phy@lists.infradead.org; Thu, 29 Dec 2022 08:43:51 +0000
+Received: by mail-lf1-x12c.google.com with SMTP id bp15so26637336lfb.13
+        for <linux-phy@lists.infradead.org>; Thu, 29 Dec 2022 00:43:48 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=nw6Uct2xEoCrpgNOW52yhpC+6eWgh3FH1ea9ZVctRno=;
-        b=pCEbAz0T1XglJBlSXuxTbjrwiv4wNCqyqHaBl1cOgxC10WIhJUx1XqILAymx7HuKL7
-         YEirVgRe2/THfR1kO517BhOCIMS+PAEtVjBc4YNbFiofwma/9gT8KCWra1vU9uCvIC0n
-         mXx0nvisliErqfV8PaeB9avYKzMt0Fb6GjUP1Oxh65vFUX40XpReTzIY3Dp41IFwmtDv
-         Bu4MUCYmpUSGxfTOpb2UAgTtg/VBNJ6PS6XbPqMunEsBX0Sy8WoX5r0OnW22IupWT0Wm
-         m+T9P+udIGI5H6sI4kE0k48FkYlopTBUBREA8rySzIwdMBgtRUOCbaDOc3ffNgts9p79
-         DN1A==
+        bh=vL8afHzTaqjBY6U5w1WFZj4uiZAR1AAE2D/1vRWSAHg=;
+        b=jvAJbYHFZGbz9dPddn2mPrro2N71ItWk2khEugyAqyHCTvQdYJ24CJLSFZS0nfWIPm
+         0JPEh6ieruyHJN3HB+np8ETesGVGIPJ2hK1ea6mHP7STdkdDqVH5xn06SEJhAIJ4aslZ
+         94M8A2ltNYXPALWwd72mITM8x34hXTc0JYvHHbPZR+sOp9vyHIClFPLZp1+lflCG3EKL
+         KYmhm1hWx/fFc7cvlvWwmrrkwiMm5TaQnxqHHOG4juwomWvdfQcTbfOz1WNCXEvLqqgF
+         re7cKY0+EFkl2nbawv+pvOkzUX+rY7TdCjxS4yyPhubqsF6dU7qumwnw81HMtTSkGTK3
+         tSWw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=nw6Uct2xEoCrpgNOW52yhpC+6eWgh3FH1ea9ZVctRno=;
-        b=znJKSZqej3nPFEmAhYEISnupkslnAyiW7ugqb/o+DjiBAtOKHPR+lqTcorbQj3qQJg
-         ZuIZTDU/zx3fekKhcLRujfURQaGq7Y0g/m+ZqFR3Pxd/+cwiJs2hMxKPlY5KHoEhO83+
-         1dUcuJ36oa/I7Bn6d/KbJwTlv6qDpapn0y0Rwja5ajcVicpeZT6GBzKSbsz/DD66Gv0d
-         D2J+HP/I1SaelIUNTU5HZ/ingDnyBtCNblFx/AaLpQ0O/gZurziR5cVHSElkmPXXG3db
-         0oBRH9Q6wvnC07PgX4iBiLRm2W11jUw3y1nis11m/b9IRPA0dVHXzl2MNWZGHsjyWc9x
-         Sqbg==
-X-Gm-Message-State: AFqh2kpGGv4AGqwhYwhXROdj4Neten/+ubaNy1+v4ugRlsKOIv5LLN6H
-	WshnONKKQYkVvmHz1fkbCSd8QrUwqhTilaMa
-X-Google-Smtp-Source: AMrXdXuuazk2ZVLVLqbx4q6boiXtVROmzLgnwiJeIj7jTd31t+WbE4I92u8Xfu1JSmorUwKMHbVB9Q==
-X-Received: by 2002:a2e:a234:0:b0:27f:cdec:38be with SMTP id i20-20020a2ea234000000b0027fcdec38bemr1652357ljm.40.1672303387661;
-        Thu, 29 Dec 2022 00:43:07 -0800 (PST)
+        bh=vL8afHzTaqjBY6U5w1WFZj4uiZAR1AAE2D/1vRWSAHg=;
+        b=STifXtrwIP3sI4wbTjc50H9+bhKZ3l3eCTVgNvqrloUkvD7m6qiZ30XEkPCimZTtt5
+         V5K41GSEASd8IfHRX/70dsrBpG5bRC9evYWIme0jebB6og1GV3mO+AOCUsp1ORTNCfNn
+         Z5Y4XL6L6Ijw1FZ0g07mT9MqYGukBbp5CiyOeFlo5yvxa5nBvEFp3GU7i0Lt4x5f1mjJ
+         h/RwATFzvOCxJn+JSKp5xnicsLaFe8T+Z+QA6FHR+HUhQuzPScKNWgUrGD8eEmlz81LG
+         W+98K9qOSD8cl5kHFW8vDMuWl5LsZJwjuw0IfU8C6+zP93+5GwvjY3sKyWKGD1aUKzCU
+         ltMg==
+X-Gm-Message-State: AFqh2kqDl7tntC/9nPdr2wfI0VAJKdn8/zrHzMbjFe53uEcDU5aZNLaI
+	KDeyLDtiusVJus02FFgf98gVLg==
+X-Google-Smtp-Source: AMrXdXsiU8r20s+g29/F1UOGiJVZst6npjcKAkomkf1TTX+1kDwXWnKtkw8AsQ6aF9WcMYF1Gkg4rA==
+X-Received: by 2002:ac2:5142:0:b0:4cb:2260:8553 with SMTP id q2-20020ac25142000000b004cb22608553mr62917lfd.30.1672303426916;
+        Thu, 29 Dec 2022 00:43:46 -0800 (PST)
 Received: from [192.168.0.20] (088156142067.dynamic-2-waw-k-3-2-0.vectranet.pl. [88.156.142.67])
-        by smtp.gmail.com with ESMTPSA id r8-20020ac252a8000000b004b54ca56cf9sm2984212lfm.303.2022.12.29.00.43.06
+        by smtp.gmail.com with ESMTPSA id c9-20020a05651200c900b0049944ab6895sm2951747lfp.260.2022.12.29.00.43.45
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 29 Dec 2022 00:43:07 -0800 (PST)
-Message-ID: <95068572-51c3-4caa-7df7-4d3303c5182c@linaro.org>
-Date: Thu, 29 Dec 2022 09:43:06 +0100
+        Thu, 29 Dec 2022 00:43:46 -0800 (PST)
+Message-ID: <1216b455-7637-a510-28ca-f2affa0ec799@linaro.org>
+Date: Thu, 29 Dec 2022 09:43:45 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.6.1
-Subject: Re: [PATCH v1 1/2] dt-bindings: phy: rockchip: convert
- rockchip-dp-phy.txt to yaml
+Subject: Re: [PATCH v1 2/2] dt-bindings: soc: rockchip: graf: add
+ rockchip,dp-phy.yaml
 Content-Language: en-US
 To: Johan Jonker <jbx6244@gmail.com>, heiko@sntech.de
 Cc: robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
@@ -74,11 +74,12 @@ Cc: robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
  linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
  linux-phy@lists.infradead.org, vkoul@kernel.org, kishon@kernel.org
 References: <5fa3aaca-4e49-8baa-68c4-2b3981400d3b@gmail.com>
+ <aa942b16-1135-c202-d44a-d25f1f82787f@gmail.com>
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <5fa3aaca-4e49-8baa-68c4-2b3981400d3b@gmail.com>
+In-Reply-To: <aa942b16-1135-c202-d44a-d25f1f82787f@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221229_004313_886478_CEF5BAC4 
-X-CRM114-Status: GOOD (  14.29  )
+X-CRM114-CacheID: sfid-20221229_004349_370355_8BF31BCC 
+X-CRM114-Status: GOOD (  11.88  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,43 +96,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 28/12/2022 23:01, Johan Jonker wrote:
-> Convert rockchip-dp-phy.txt to yaml.
-> 
-> Changed:
->   rename file name
+On 28/12/2022 23:02, Johan Jonker wrote:
+> Add new converted rockchip,dp-phy.yaml to grf.yaml file.
 > 
 > Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 > ---
->  .../bindings/phy/rockchip,dp-phy.yaml         | 41 +++++++++++++++++++
->  .../bindings/phy/rockchip-dp-phy.txt          | 26 ------------
->  2 files changed, 41 insertions(+), 26 deletions(-)
->  create mode 100644 Documentation/devicetree/bindings/phy/rockchip,dp-phy.yaml
->  delete mode 100644 Documentation/devicetree/bindings/phy/rockchip-dp-phy.txt
+>  Documentation/devicetree/bindings/soc/rockchip/grf.yaml | 7 +++++--
+>  1 file changed, 5 insertions(+), 2 deletions(-)
 > 
-> diff --git a/Documentation/devicetree/bindings/phy/rockchip,dp-phy.yaml b/Documentation/devicetree/bindings/phy/rockchip,dp-phy.yaml
-> new file mode 100644
-> index 000000000..73f75ab1c
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/rockchip,dp-phy.yaml
-> @@ -0,0 +1,41 @@
-> +# SPDX-License-Identifier: GPL-2.0
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/rockchip,dp-phy.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> diff --git a/Documentation/devicetree/bindings/soc/rockchip/grf.yaml b/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
+> index 7ac9aa5fa..36f6d85a9 100644
+> --- a/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
+> +++ b/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
+> @@ -96,8 +96,11 @@ allOf:
+>      then:
+>        properties:
+>          edp-phy:
+> -          description:
+> -            Documentation/devicetree/bindings/phy/rockchip-dp-phy.txt
+> +          type: object
 > +
-> +title: Rockchip specific extensions to the Analogix Display Port PHY
-> +
-> +maintainers:
-> +  - Heiko Stuebner <heiko@sntech.de>
-> +
-> +properties:
-> +  compatible:
-> +    const: rockchip,rk3288-dp-phy
 
-No new compatibles were added here for the last 7 years, so it is safe
-to assume none will appear in the future. Use the compatible as filename.
+Drop the blank line
+
+> +          $ref: /schemas/phy/rockchip,dp-phy.yaml#
+> +
+
+Ditto, so with updated path:
+
+Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
 Best regards,
 Krzysztof
