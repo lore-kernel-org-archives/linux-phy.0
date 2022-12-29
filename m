@@ -4,81 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7147FC4332F
-	for <linux-phy@archiver.kernel.org>; Thu, 29 Dec 2022 15:12:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 652D7C46467
+	for <linux-phy@archiver.kernel.org>; Thu, 29 Dec 2022 17:23:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:Date:Subject:Cc:
-	To:From:Message-ID:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9aUnqb0us0no9PqzCGr4OjazaNR+n4tXf8IpsLFvzpE=; b=Y8w0CHd+SrvR0S
-	u2HlVhCDDebUrSqiKbtDla1PXa/j/Hk88a1Qf/fJIAiwqzayRcbqblzENbGeeCl3ePru2eCpOcm8Z
-	dFmB3pH9rqTe/OLzKWzk8Im3pspesNcD70ChHwrXs1ZjZthOodlzWYmh0/yYkbh7SnBArKo1fe6BR
-	WsbwCrebYglJMVUxdWBzrpCv9ivgU/PrXqPashm9/DOasITtEyo5mHK7OtFuTk+TsQ1oM3/pcGhqG
-	rs6/IrkrNqKmzjFIp4+mEfZ2NSP74eq2bmrkmienQ++Wx+bONZA++zW5w8qc12pTho/aTSySFA1wD
-	v5oflfK06xrXR15qbI6g==;
+	List-Owner; bh=iePaCi5S5R6Yh6tFg6peFgmZGdDBEsjs3SYbK05FFvY=; b=GoSjLi6AO8UkQ4
+	TpXtzLfxG8yOtNTzYRc87jl1gi4fDqXMW0XdHDcQFV3CZ4zcvDIIQm6BUaFqjVOPLQBbLIzxsWnvN
+	3yoKXvtjK2X4tCD8vHOZYyx6erAQOuOYCdrLVXqYc9aE+FZd4WkYIIcfIU3ns8tbg5LVymH3pOHZD
+	yLR0aBWmVNCNzCv+XoJ/yv3Y5WZdKDnPCL99JHmaPTZ49GDqMMCfbM0fPnEcWVh7sGDaP6iTAVhXR
+	TpHblynbNiNCLLbXJa8ZV1cqhs27/jbaX1BJgJAePs6S0Kqwz/GgnFpZd5KFanr7pTFKgg2rUlJfo
+	8NEHPBQxUlnTxRENC3XA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pAuZw-00Gtrb-Lh; Thu, 29 Dec 2022 15:12:20 +0000
-Received: from mout.gmx.net ([212.227.17.21])
+	id 1pAwdK-000Iax-JL; Thu, 29 Dec 2022 17:23:58 +0000
+Received: from ams.source.kernel.org ([145.40.68.75])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pAuZr-00GtiS-Ke; Thu, 29 Dec 2022 15:12:18 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=public-files.de;
-	s=s31663417; t=1672326708;
-	bh=xirCA9c8DIti9Fo5Dwsm15yj3OA0oAtHohoPlTTonIU=;
-	h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
-	b=KMIX/nUtp7UuPb7FDZVa9mTDMixLkMDCa6qKzW38+jA8ZFxpGHIgQY/QJdrtk9huW
-	 VsDHEBfy7Sf/fs9KPFPVOS/CR+zxVPQJ/4JVjJkdqltlYFjrxPcUokFi+K9hWwKqbl
-	 yd81EJbRyXOB906tzY9wRtAPjz21NrRKuEt8oQGo6N2SqjcmAgmKbZmYACF+1Wi3n8
-	 GLfFU5dzmtuHBm2ElBs1qOh7RYg3aFMLZslkLE5V0LlX+vEBxQOxKWSEXWIAPNCR+M
-	 iz2GWBb9rt1K9i3u0D92v/m6ZgjOXFTEhejJetqM22D05eIi0iP957ng4yIOxDAhc1
-	 epSXJkggUUu9Q==
-X-UI-Sender-Class: 724b4f7f-cbec-4199-ad4e-598c01a50d3a
-Received: from [80.245.77.213] ([80.245.77.213]) by web-mail.gmx.net
- (3c-app-gmx-bap35.server.lan [172.19.172.105]) (via HTTP); Thu, 29 Dec 2022
- 16:11:48 +0100
+	id 1pAwdH-000IXC-DT
+	for linux-phy@lists.infradead.org; Thu, 29 Dec 2022 17:23:56 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by ams.source.kernel.org (Postfix) with ESMTPS id 65F66B81A1D;
+	Thu, 29 Dec 2022 17:23:50 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B5877C43392;
+	Thu, 29 Dec 2022 17:23:48 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1672334629;
+	bh=HU4MnHmmBDb9OIPsFbHECPnG5crF+eulSsFCVAVp9t4=;
+	h=From:To:Subject:Date:In-Reply-To:References:From;
+	b=tGrxrApVFYFtZLpt5k7J3a+ffiyQeS8NEyXL61RPme9p3hHyyzmruKMyMgtFDfdPj
+	 pI4fXQ/mnhBrlzSRLmlEs9wsASuV4WJbuTdS8a5nEbut1/4S1lMbaD/nsn226UT2G6
+	 yPDR+/c9RD6QHwEY9Gw8MjFhZ+T2FqXzxxsa/slQ+wHzMgsNLT3ZZKpsRedIqmDcAN
+	 Q56ZcuroJevj8ess9u0OEppWGk/MI8NOJJqqVOtsVhCpMZBlmU/VPXMx9L2r/eeZHl
+	 5LU+DT/XwZGzEFWxn49pIthycylH7SVYjqJU27QmpQYj3EkmoAbTPE/D/MFwa7Dyma
+	 66MRk1TXT/8Bw==
+From: Bjorn Andersson <andersson@kernel.org>
+To: agross@kernel.org,
+	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
+	vkoul@kernel.org,
+	linux-arm-msm@vger.kernel.org,
+	quic_wcheng@quicinc.com,
+	linux-phy@lists.infradead.org,
+	robh+dt@kernel.org,
+	krzysztof.kozlowski+dt@linaro.org,
+	linux-kernel@vger.kernel.org,
+	kishon@kernel.org,
+	konrad.dybcio@linaro.org,
+	devicetree@vger.kernel.org
+Subject: Re: (subset) [PATCH 1/4] dt-bindings: phy: qcom,usb-snps-femto-v2: use fallback compatibles
+Date: Thu, 29 Dec 2022 11:23:28 -0600
+Message-Id: <167233461765.1099840.11639944662425293788.b4-ty@kernel.org>
+X-Mailer: git-send-email 2.37.1
+In-Reply-To: <20221223161835.112079-1-krzysztof.kozlowski@linaro.org>
+References: <20221223161835.112079-1-krzysztof.kozlowski@linaro.org>
 MIME-Version: 1.0
-Message-ID: <trinity-f4c66c53-204d-43c7-90f5-1ecf75e4bbad-1672326708689@3c-app-gmx-bap35>
-From: Frank Wunderlich <frank-w@public-files.de>
-To: Daniel Golle <daniel@makrotopia.org>
-Cc: Frank Wunderlich <linux@fw-web.de>, linux-mediatek@lists.infradead.org,
- Kishon Vijay Abraham I <kishon@kernel.org>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, Matthias
- Brugger <matthias.bgg@gmail.com>, Vinod Koul <vkoul@kernel.org>, Rob
- Herring <robh+dt@kernel.org>, Krzysztof Kozlowski
- <krzysztof.kozlowski+dt@linaro.org>, Chunfeng Yun
- <chunfeng.yun@mediatek.com>, linux-arm-kernel@lists.infradead.org
-Subject: Aw: Re: [PATCH v8 5/5] arm64: dts: mt7986: add Bananapi R3
-Date: Thu, 29 Dec 2022 16:11:48 +0100
-Importance: normal
-Sensitivity: Normal
-In-Reply-To: <Y62s4+zMm1ECnMlH@makrotopia.org>
-References: <20221229145023.55713-1-linux@fw-web.de>
- <20221229145023.55713-6-linux@fw-web.de> <Y62s4+zMm1ECnMlH@makrotopia.org>
-X-UI-Message-Type: mail
-X-Priority: 3
-X-Provags-ID: V03:K1:8Pqig6h4mKzYCwMQwatNyxCbSzbryuniyYILFjvgqWM0ZxKxqzsZwm+y6/oW/Z/QTsv+k
- ieQkbtQiHm64R+MJ7ItH1KnUsWKGNfXoQnJvCrVyOynrgtIYzTC5joEEKHKpx5pxGq2Bdsaf4H8K
- bKUOfsGpgdkFPcwsxxxl5oxL2w8F8fUQlCv0ylMNImDVthL12v4kwRczdHIC6RLnQbax82OSPKai
- eLW8B1ta/kRps7O4cAMMcLs74Bo2fPL3/t84/Htu5kn28KLvXgTGWo/Of1RlAojKYn/kRLIWp0Hx
- xE=
-UI-OutboundReport: notjunk:1;M01:P0:RMr5q3HhiPQ=;bJNbwCfCkaGcHV5432yNa9sL2ER
- wiwQWMCCj8a1tzW+cZn91OlSqO3YTG7KjuriWaUChD9LbUvuRNXcR8tZI0YwMkQCyhmAwv2tN
- bMVIT0o1Qi4Hx6P2hJw66uFOFWTjb29SWJ8SxnRmK9bpc+u4y6IZdr+hZb5OLELXBfah4FPiv
- FsDbBT8sNG8TvaFpBY3QOiXUxptrPU8NBY/q7vJCMImSkBehhxu1zPm/DjCgix6FLwlKJUHit
- cMNaykC5mR2hytLBeteVgGqRoAA3cH/n/mdWIEqx0xdERB+GhILY5r+Pe51t8KXGgehFGYNlV
- gwd4MXChtmAPjEyH1Zu7Tt8dA3X00tJbR86cWQUs8oupY876TDFRIq6QzbWWLmzn7Q/1tsb/O
- T92AwuAXwVeNnd0BY+oHIdgAEI5e+2aXjzAGMUmCxb2fmGOlvIBY3f+0It6mM9ldZav0tvJoi
- YoHYRvZVXab05o8Me31Ugq+QP6r20ucXqYS6XhO1ZgsHFR1gtCpxP7V69kyCiRqZeO+93iT/+
- SgyX+q+Abg8l1dk/aa2J1i4DDQOtjwoK/6wPfkaRgK1YxZt4ZNB5WIIyx/Gj9AG6BrSTkxJk8
- yOZ7X0o4gwGxrrq1uL/bMoVuxbWk07zgxh6dPjw30bIc/jDwSTPdu6C/cKoEhtjMaRtwCqmvh
- b4LjCXUd3TL4m3n5FaPeTGvuOEHE3I4EhlQWNfMzVwcsueEesfr85Rw6skF/6Z+N+Bn2FxAxM
- DFEbfWzXJ8M30FDP+OCaJofJKqy5a4QDd8bj+Vgzi57z5QaZ10BjwwJf3nM4huKC7e30NqudZ
- oJ4o7HxDdKO14dX/1BkD4ruQ==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221229_071216_110308_ABF76BC5 
-X-CRM114-Status: GOOD (  13.29  )
+X-CRM114-CacheID: sfid-20221229_092355_618270_AB2758E1 
+X-CRM114-Status: UNSURE (   9.95  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,37 +82,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi
+On Fri, 23 Dec 2022 17:18:32 +0100, Krzysztof Kozlowski wrote:
+> Document SoC-specific compatibles with generic fallback (e.g.
+> qcom,usb-snps-hs-7nm-phy) already used in DTSI.  Add SoC-specific
+> compatibles for PHY on SDX55 and SDX65.
+> 
+> This disallows usage of the qcom,usb-snps-hs-5nm-phy and
+> qcom,usb-snps-hs-7nm-phy generic compatibles alone.  Do not touch
+> remaining two compatibles - qcom,usb-snps-femto-v2-phy and
+> qcom,sc8180x-usb-hs-phy - because there are no upstream users, so not
+> sure what was the intention for them.
+> 
+> [...]
 
-> Gesendet: Donnerstag, 29. Dezember 2022 um 16:06 Uhr
-> Von: "Daniel Golle" <daniel@makrotopia.org>
+Applied, thanks!
 
-> > diff --git a/arch/arm64/boot/dts/mediatek/mt7986a-bananapi-bpi-r3-sd.dtso b/arch/arm64/boot/dts/mediatek/mt7986a-bananapi-bpi-r3-sd.dtso
-> > new file mode 100644
-> > index 000000000000..08af778d8adc
-> > --- /dev/null
-> > +++ b/arch/arm64/boot/dts/mediatek/mt7986a-bananapi-bpi-r3-sd.dtso
-> > @@ -0,0 +1,24 @@
-> > +// SPDX-License-Identifier: (GPL-2.0 OR MIT)
-> > +/*
-> > + * Copyright (C) 2021 MediaTek Inc.
-> > + * Author: Sam.Shih <sam.shih@mediatek.com>
-> > + */
-> > +
-> > +/dts-v1/;
-> > +/plugin/;
-> > +
-> > +/ {
-> > +	compatible = "bananapi,bpi-r3", "mediatek,mt7986a";
-> > +	model = "Bananapi BPI-R3 (sdmmc)";
->
-> There is another model string here which shouldn't be.
+[4/4] arm64: dts: qcom: sm8350: align MMC node names with DT schema
+      commit: 06a0676b5de9221537156957b90b2b69dfceebba
 
-sorry, missed this one, will drop it in next version
-
-@all: anything else i need to change?
-
-regards Frank
+Best regards,
+-- 
+Bjorn Andersson <andersson@kernel.org>
 
 -- 
 linux-phy mailing list
