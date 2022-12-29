@@ -4,84 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 551ECC4332F
-	for <linux-phy@archiver.kernel.org>; Thu, 29 Dec 2022 08:45:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2B6E3C4332F
+	for <linux-phy@archiver.kernel.org>; Thu, 29 Dec 2022 09:45:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9rvO4phMejgK4Iw7eqU4qpEaOtmgfs09KedWUrxKI6w=; b=u2ZNXOLkM2bfSd
-	rRXuYKQ1nZxD8h4rHrCg3WhZqosoxnLNyM2kPXiVQmlaOCSlugcl2RZCyYS74ugFiNv0iVswxQNXU
-	ngRlcQ95AF1JovLDH5fvi23rsmJJWbv/baL+6L+yz6ZrktcSxWQ0K+swku0tpeUgcDTyOdZbhQm4p
-	Yp4JVYcxq9IlnYnQ24ziON4emljTTTo1IjBZqplJehifUAwr/3pJ/mTsj3QVHA3Rt77VrtEEr+MJ0
-	DjFZ/fLL4JNqzeWtx9bQg7Kso0APdbifyX1IygJU3lgwCg6cI4o6ScWjy0cdUkS5vZe1R7r/AHBGf
-	6BSGcy9F2vW29S2x/mnw==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:From:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=O81AHU7123NPF3jQR1g6GjRhqVuNeRD9C4dTAgqHA2Q=; b=Up9V55YoIVF2c3
+	pXPQgpj2NCzYjL2FWihCCsKOW7Xyx6ohVJPoCXGZ/10n9Okg4QEv9nFN+wHKGf4r7udHj/FVH0/J8
+	ZfL3b7BDZRWwgJOE+XJ3M9/fxjJz1UZBFWohaGTgK14aToODIIyWVcZoATR2x4VsOLkx6momN2G++
+	f3xWEeu8N+AdIBUHl6y/7rg8hTxbJGQZWNImWp9qI3Whk06Dhy8gkswcJOwYrrI1GVgl5EVb/CF6M
+	Yi/IYSDxjvjQ+EJJkCxQhAyYf1zqXi5cmEvyIqtWPH1p8tx9qMFHt8mFcziUIDZvnwUL6ppHW3lQu
+	iDt6PmsfzhocrT+hcTDA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pAoXr-00Dqze-O6; Thu, 29 Dec 2022 08:45:47 +0000
-Received: from mail-lj1-x22b.google.com ([2a00:1450:4864:20::22b])
+	id 1pApTA-00EKRq-Gp; Thu, 29 Dec 2022 09:45:00 +0000
+Received: from mail-ej1-x634.google.com ([2a00:1450:4864:20::634])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pAoXk-00Dqu1-6m
-	for linux-phy@lists.infradead.org; Thu, 29 Dec 2022 08:45:42 +0000
-Received: by mail-lj1-x22b.google.com with SMTP id z7so13143797ljq.12
-        for <linux-phy@lists.infradead.org>; Thu, 29 Dec 2022 00:45:37 -0800 (PST)
+	id 1pApSk-00EKF3-FO; Thu, 29 Dec 2022 09:44:37 +0000
+Received: by mail-ej1-x634.google.com with SMTP id u19so43799406ejm.8;
+        Thu, 29 Dec 2022 01:44:31 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=WhhThnTcIHOOnU4TldxJQBEXkc0+gKJ8zUJ0NnzGF8w=;
-        b=iACwngYUW2NO/QI//cidNjkSY6IR2L6BvEIVEAFyQl0zymVU79PvIQBgWY/D0yoIUe
-         YHYOZTLiJ7al8Uhw/p2hy2ex26ZQnXD1iiHLEMEy/hmj2+NQkBlLigPtVAD5NOdvtBNG
-         VB9oL/XGZGiX6MdxU6BF4B/vso6HnrBhOFK0LTJ2IU4eG1qzFOnPxH0CnEgkjSk25GWY
-         erPOj9vqGBiDKUC3d6OSvczpyfB50aIKlVfZsPIS+3aacZswA4WH+wmEjE6LLUzGK0sU
-         gNVQqSd9DluhlXf1dt1jNqWOSgx8UvUegBW+Ws2oTxsEANYuMcCmMHAL7erVaeoRj7th
-         KLLw==
+        d=gmail.com; s=20210112;
+        h=content-transfer-encoding:content-language:cc:to:subject:from
+         :user-agent:mime-version:date:message-id:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=iyphewPZOfLnxnaRNTB29uqTkJVQ86RQ4fAds/3h3Vs=;
+        b=UILyHAR71jRgy8hhzyaRGBWZA/3j6ZCcj33u4g6LkDlrE7d1URoiSz+mXM6Ou1R8z8
+         /uzl0JEIqBlkwRzFwi0//frG6jJ2zCgcvaBCwabhhOLn8extuXQgd53Ky/zuEShcIptW
+         1SuMd/WZfftH+qhLMHuaebr8lAvHeaG9RVOQige+q1KYZdFf8FAS6FXljuYvD+B0QqJF
+         36tiGKzHUQQ8Q7E3apO9vSfOEMcIRUxXa8Jk67Mvd5yDebFyaN2Vfwrg8q715sMkzPss
+         fe+7mSLJxCbleoWaJgnroxnWH3wBvBAdORzAYFjSQlCedmjiV/T5D0AoNV7yfgZ20+oT
+         9AAg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=WhhThnTcIHOOnU4TldxJQBEXkc0+gKJ8zUJ0NnzGF8w=;
-        b=WGkFzXXiBdqEP9wXIbWcS7Pnzipo38+VBlhn8OCR9DOyvavCZAVai5N4q/VAGT1Gza
-         LFrb7sQMxsYWpYsNfuu62BQD7/BCqf7Y0YLefxFjAHDAMvi3ZK+SGD7IBSnYj2OaYJ7X
-         /34ypHq9wTFJP2q+68ZzK1oms7SsVjEZbm9J3DmtoDEcjcUmA5aZWQIu29Mlv3sB2KWU
-         9TQ8iepLIgpbtie1XsQd17iib8LKGezE/ypWo1F1ra4AenU+JR8Ak21uOBDD1q9x9yKy
-         s0IcFMOyrhTzJLWKGsO4aG6AqFnfF9wByvgExMt6u2HvjBCcvYLCoMooadQdfC6pAQhz
-         MV2w==
-X-Gm-Message-State: AFqh2kqvoHdXPEOYdJv+YGk4PQ71Kw/73mJ3vHSeLp2xTC8lFIbdXdRv
-	t32qZ/J6BhkCUKP1DaRSXzKyvw==
-X-Google-Smtp-Source: AMrXdXutjgkEHkED1oh840UWFw8WlnqcYr1SfxtSQLUXyecp3Hg4fP6tMrLui8h4uuPLKErhi1FUEw==
-X-Received: by 2002:a2e:92c3:0:b0:27a:1860:eb86 with SMTP id k3-20020a2e92c3000000b0027a1860eb86mr7218840ljh.31.1672303536156;
-        Thu, 29 Dec 2022 00:45:36 -0800 (PST)
-Received: from [192.168.0.20] (088156142067.dynamic-2-waw-k-3-2-0.vectranet.pl. [88.156.142.67])
-        by smtp.gmail.com with ESMTPSA id p7-20020a2ea4c7000000b0027fc5d5dbb5sm1018709ljm.77.2022.12.29.00.45.34
+        h=content-transfer-encoding:content-language:cc:to:subject:from
+         :user-agent:mime-version:date:message-id:x-gm-message-state:from:to
+         :cc:subject:date:message-id:reply-to;
+        bh=iyphewPZOfLnxnaRNTB29uqTkJVQ86RQ4fAds/3h3Vs=;
+        b=FYHhd9uRm7LyxGxN/9k/f9PVu8GKbqmPa85gfw1bxlUEuHZCliQnWx5KPHZO1GrtMt
+         5CjOoWkHLdb+Oii9580wGr8+yDV1kz02p1f8xsg7m9dXz0sgAwDVmQY9XFyRIA5BiB+5
+         7Kthq+v8uhw3mOYnhjujyw7TvD3k31eYNoqKXFYryKeMn1PExp6biWIlNL7aK8Vtr8FJ
+         +n1gAv1QSywozpYOqFB5jw7FhCOTJldSiekMYaD1NCXU5uO3cH6iGcxVcM1SswVSBX6h
+         957fCqDkceDA1H4/yz8L1Hndvb+hXNLElH/Rwb1No7aJjWxSjmeyRg0yjCuimUE7UDFC
+         +a5A==
+X-Gm-Message-State: AFqh2koaJl5k+lBbVgYUOvkQ/cuHvnxh5XEJ1JgHKFiY+6YPRGaK7h06
+	mv9HIFwicVnU1RbnTSINH08=
+X-Google-Smtp-Source: AMrXdXsZL1j1TTNvr8CasU6e9oELKnEX7gPztZg2Fjnd1DsSXTPke5G6cc0hnwJgSA2jIWfVe3gKLw==
+X-Received: by 2002:a17:907:a782:b0:7c1:6430:e5d0 with SMTP id vx2-20020a170907a78200b007c16430e5d0mr24247352ejc.4.1672307070247;
+        Thu, 29 Dec 2022 01:44:30 -0800 (PST)
+Received: from [192.168.2.1] (81-204-249-205.fixed.kpn.net. [81.204.249.205])
+        by smtp.gmail.com with ESMTPSA id o11-20020a170906768b00b0077b523d309asm8357801ejm.185.2022.12.29.01.44.29
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 29 Dec 2022 00:45:35 -0800 (PST)
-Message-ID: <da10e351-1f22-9583-5f0a-ae7db060cf0b@linaro.org>
-Date: Thu, 29 Dec 2022 09:45:34 +0100
+        Thu, 29 Dec 2022 01:44:29 -0800 (PST)
+Message-ID: <aa6fe473-71f2-edba-f009-994a3dbc9802@gmail.com>
+Date: Thu, 29 Dec 2022 10:44:28 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.6.1
-Subject: Re: [PATCH v2 1/3] dt-bindings: phy: qcom,pcie2-phy: convert to YAML
- format
+ Thunderbird/102.3.0
+From: Johan Jonker <jbx6244@gmail.com>
+Subject: [PATCH v2 1/2] dt-bindings: phy: rockchip: convert
+ rockchip-dp-phy.txt to yaml
+To: heiko@sntech.de
+Cc: robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
+ linux-phy@lists.infradead.org, vkoul@kernel.org, kishon@kernel.org
 Content-Language: en-US
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
- Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konrad.dybcio@linaro.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring
- <robh+dt@kernel.org>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
-Cc: Philipp Zabel <p.zabel@pengutronix.de>, linux-arm-msm@vger.kernel.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org
-References: <20221226031059.2563165-1-dmitry.baryshkov@linaro.org>
- <20221226031059.2563165-2-dmitry.baryshkov@linaro.org>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20221226031059.2563165-2-dmitry.baryshkov@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221229_004540_414892_8F2A019A 
-X-CRM114-Status: GOOD (  13.10  )
+X-CRM114-CacheID: sfid-20221229_014434_778131_7D96CFA3 
+X-CRM114-Status: GOOD (  13.71  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,36 +92,104 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 26/12/2022 04:10, Dmitry Baryshkov wrote:
-> Convert the bindings for the Qualcomm PCIe2 PHY into the YAML format
-> from the text description.
-> 
-> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-> ---
->  .../bindings/phy/qcom,pcie2-phy.yaml          | 87 +++++++++++++++++++
->  .../bindings/phy/qcom-pcie2-phy.txt           | 42 ---------
->  2 files changed, 87 insertions(+), 42 deletions(-)
->  create mode 100644 Documentation/devicetree/bindings/phy/qcom,pcie2-phy.yaml
->  delete mode 100644 Documentation/devicetree/bindings/phy/qcom-pcie2-phy.txt
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/qcom,pcie2-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,pcie2-phy.yaml
-> new file mode 100644
-> index 000000000000..672035199c19
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/qcom,pcie2-phy.yaml
-> @@ -0,0 +1,87 @@
-> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> +
+Convert rockchip-dp-phy.txt to yaml.
 
-Drop the blank line.
+Changed:
+  rename file name
 
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/qcom,pcie2-phy.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+---
 
-Best regards,
-Krzysztof
+Changed V2:
+  Use the compatible as filename.
+---
+ .../bindings/phy/rockchip,rk3288-dp-phy.yaml  | 41 +++++++++++++++++++
+ .../bindings/phy/rockchip-dp-phy.txt          | 26 ------------
+ 2 files changed, 41 insertions(+), 26 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/phy/rockchip,rk3288-dp-phy.yaml
+ delete mode 100644 Documentation/devicetree/bindings/phy/rockchip-dp-phy.txt
+
+diff --git a/Documentation/devicetree/bindings/phy/rockchip,rk3288-dp-phy.yaml b/Documentation/devicetree/bindings/phy/rockchip,rk3288-dp-phy.yaml
+new file mode 100644
+index 000000000..2538235c5
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/rockchip,rk3288-dp-phy.yaml
+@@ -0,0 +1,41 @@
++# SPDX-License-Identifier: GPL-2.0
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/rockchip,rk3288-dp-phy.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Rockchip specific extensions to the Analogix Display Port PHY
++
++maintainers:
++  - Heiko Stuebner <heiko@sntech.de>
++
++properties:
++  compatible:
++    const: rockchip,rk3288-dp-phy
++
++  clocks:
++    maxItems: 1
++
++  clock-names:
++    const: 24m
++
++  "#phy-cells":
++    const: 0
++
++required:
++  - compatible
++  - clocks
++  - clock-names
++  - "#phy-cells"
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/clock/rk3288-cru.h>
++    edp-phy {
++      compatible = "rockchip,rk3288-dp-phy";
++      clocks = <&cru SCLK_EDP_24M>;
++      clock-names = "24m";
++      #phy-cells = <0>;
++    };
+diff --git a/Documentation/devicetree/bindings/phy/rockchip-dp-phy.txt b/Documentation/devicetree/bindings/phy/rockchip-dp-phy.txt
+deleted file mode 100644
+index e3b4809fb..000000000
+--- a/Documentation/devicetree/bindings/phy/rockchip-dp-phy.txt
++++ /dev/null
+@@ -1,26 +0,0 @@
+-Rockchip specific extensions to the Analogix Display Port PHY
+-------------------------------------
+-
+-Required properties:
+-- compatible : should be one of the following supported values:
+-	 - "rockchip.rk3288-dp-phy"
+-- clocks: from common clock binding: handle to dp clock.
+-	of memory mapped region.
+-- clock-names: from common clock binding:
+-	Required elements: "24m"
+-- #phy-cells : from the generic PHY bindings, must be 0;
+-
+-Example:
+-
+-grf: syscon@ff770000 {
+-	compatible = "rockchip,rk3288-grf", "syscon", "simple-mfd";
+-
+-...
+-
+-	edp_phy: edp-phy {
+-		compatible = "rockchip,rk3288-dp-phy";
+-		clocks = <&cru SCLK_EDP_24M>;
+-		clock-names = "24m";
+-		#phy-cells = <0>;
+-	};
+-};
+--
+2.20.1
 
 
 -- 
