@@ -4,68 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 652D7C46467
-	for <linux-phy@archiver.kernel.org>; Thu, 29 Dec 2022 17:23:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id ECF01C4167B
+	for <linux-phy@archiver.kernel.org>; Thu, 29 Dec 2022 17:31:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iePaCi5S5R6Yh6tFg6peFgmZGdDBEsjs3SYbK05FFvY=; b=GoSjLi6AO8UkQ4
-	TpXtzLfxG8yOtNTzYRc87jl1gi4fDqXMW0XdHDcQFV3CZ4zcvDIIQm6BUaFqjVOPLQBbLIzxsWnvN
-	3yoKXvtjK2X4tCD8vHOZYyx6erAQOuOYCdrLVXqYc9aE+FZd4WkYIIcfIU3ns8tbg5LVymH3pOHZD
-	yLR0aBWmVNCNzCv+XoJ/yv3Y5WZdKDnPCL99JHmaPTZ49GDqMMCfbM0fPnEcWVh7sGDaP6iTAVhXR
-	TpHblynbNiNCLLbXJa8ZV1cqhs27/jbaX1BJgJAePs6S0Kqwz/GgnFpZd5KFanr7pTFKgg2rUlJfo
-	8NEHPBQxUlnTxRENC3XA==;
+	List-Owner; bh=ftXjUl7GCxlyNLSBhlkh29PdB++W50hi9FP2DGeBtuw=; b=TUWQwSln7Z5Oze
+	ANhDPTa8lM+EtRijQaSwEl7ZPScFmzbGWRuw35YQt+3Y10bS1AcoYcyxlfKPc4BQO44m0TV5725WW
+	ihBEPrB1ZgAtGC06PzxyA49QGIsaQpaOypG8HnPqykK3HRfYLohY9uhVRHprGBhQyptasqUABL1dS
+	nioRh1QWKteTasNJ3GyJeSDlNcJbnGRjc0wdWkeZEtEJNbiCbPcL/DxBqyyGV+ZxAPiGFWHLjTKEY
+	ERN8/+2Ilx2XBPdBhQ9kxfqu3NeUUjVUOxm2fO3A7UzNAc8igwDoSeMnY8/6zmtXiVNWPyTvFRvYC
+	lhfS/q115pQ8gy6rmguQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pAwdK-000Iax-JL; Thu, 29 Dec 2022 17:23:58 +0000
+	id 1pAwkq-000MqY-37; Thu, 29 Dec 2022 17:31:44 +0000
 Received: from ams.source.kernel.org ([145.40.68.75])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pAwdH-000IXC-DT
-	for linux-phy@lists.infradead.org; Thu, 29 Dec 2022 17:23:56 +0000
+	id 1pAwkl-000MmS-VD
+	for linux-phy@lists.infradead.org; Thu, 29 Dec 2022 17:31:41 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id 65F66B81A1D;
-	Thu, 29 Dec 2022 17:23:50 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B5877C43392;
-	Thu, 29 Dec 2022 17:23:48 +0000 (UTC)
+	by ams.source.kernel.org (Postfix) with ESMTPS id 6047BB81A25;
+	Thu, 29 Dec 2022 17:31:38 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id D2E31C433EF;
+	Thu, 29 Dec 2022 17:31:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1672334629;
-	bh=HU4MnHmmBDb9OIPsFbHECPnG5crF+eulSsFCVAVp9t4=;
-	h=From:To:Subject:Date:In-Reply-To:References:From;
-	b=tGrxrApVFYFtZLpt5k7J3a+ffiyQeS8NEyXL61RPme9p3hHyyzmruKMyMgtFDfdPj
-	 pI4fXQ/mnhBrlzSRLmlEs9wsASuV4WJbuTdS8a5nEbut1/4S1lMbaD/nsn226UT2G6
-	 yPDR+/c9RD6QHwEY9Gw8MjFhZ+T2FqXzxxsa/slQ+wHzMgsNLT3ZZKpsRedIqmDcAN
-	 Q56ZcuroJevj8ess9u0OEppWGk/MI8NOJJqqVOtsVhCpMZBlmU/VPXMx9L2r/eeZHl
-	 5LU+DT/XwZGzEFWxn49pIthycylH7SVYjqJU27QmpQYj3EkmoAbTPE/D/MFwa7Dyma
-	 66MRk1TXT/8Bw==
+	s=k20201202; t=1672335097;
+	bh=j3qG4bGdaEXrYNRPEIJY/y6BAFFyj1LA3ARl7FLkrLc=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=A4sAGzauvpyN7efg6S4Tt8IiUEpZ0pASvRe3oGUwwaLxVTNcPdlHIqrN58hpmaUUa
+	 RiM42MzPJVTqIJe9AaD62iuWZQDB/STAAszJSBI2BMPdbPDzp12xY7nk22is9soD/t
+	 qeAX9Bgon5afLZcXNpUckXI7DxqyBeEwUt64BhPYSf+TO3ZMWipEzT9+/gAokNa6Zi
+	 OLE8z+ltM47ZoJsjQZ68IRB+FhS46sZIC60r2C2e59Y/m931blIbdT9TWtfKHb428C
+	 kUWSuVrFYQNjK6TN89D+dVXgmG2KxR40igx+ARV/vRLI+B3j68ZLaNOBJz5bP5SClB
+	 QjsaX0jrHUlFw==
+Date: Thu, 29 Dec 2022 11:31:34 -0600
 From: Bjorn Andersson <andersson@kernel.org>
-To: agross@kernel.org,
-	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
-	vkoul@kernel.org,
-	linux-arm-msm@vger.kernel.org,
-	quic_wcheng@quicinc.com,
-	linux-phy@lists.infradead.org,
-	robh+dt@kernel.org,
-	krzysztof.kozlowski+dt@linaro.org,
-	linux-kernel@vger.kernel.org,
-	kishon@kernel.org,
-	konrad.dybcio@linaro.org,
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Cc: Andy Gross <agross@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@somainline.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Jingoo Han <jingoohan1@gmail.com>,
+	Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
+	Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
+	Bjorn Helgaas <bhelgaas@google.com>, Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Johan Hovold <johan@kernel.org>, linux-arm-msm@vger.kernel.org,
+	linux-pci@vger.kernel.org, linux-phy@lists.infradead.org,
 	devicetree@vger.kernel.org
-Subject: Re: (subset) [PATCH 1/4] dt-bindings: phy: qcom,usb-snps-femto-v2: use fallback compatibles
-Date: Thu, 29 Dec 2022 11:23:28 -0600
-Message-Id: <167233461765.1099840.11639944662425293788.b4-ty@kernel.org>
-X-Mailer: git-send-email 2.37.1
-In-Reply-To: <20221223161835.112079-1-krzysztof.kozlowski@linaro.org>
-References: <20221223161835.112079-1-krzysztof.kozlowski@linaro.org>
+Subject: Re: [PATCH v4 3/8] PCI: qcom: Add support for SM8350
+Message-ID: <20221229173134.ul2kzupf4yjvbvgk@builder.lan>
+References: <20221118233242.2904088-1-dmitry.baryshkov@linaro.org>
+ <20221118233242.2904088-4-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20221118233242.2904088-4-dmitry.baryshkov@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221229_092355_618270_AB2758E1 
-X-CRM114-Status: UNSURE (   9.95  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20221229_093140_188286_F1F1FA59 
+X-CRM114-Status: GOOD (  15.92  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,27 +85,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, 23 Dec 2022 17:18:32 +0100, Krzysztof Kozlowski wrote:
-> Document SoC-specific compatibles with generic fallback (e.g.
-> qcom,usb-snps-hs-7nm-phy) already used in DTSI.  Add SoC-specific
-> compatibles for PHY on SDX55 and SDX65.
+On Sat, Nov 19, 2022 at 01:32:37AM +0200, Dmitry Baryshkov wrote:
+> Add support for the PCIe host on Qualcomm SM8350 platform.
 > 
-> This disallows usage of the qcom,usb-snps-hs-5nm-phy and
-> qcom,usb-snps-hs-7nm-phy generic compatibles alone.  Do not touch
-> remaining two compatibles - qcom,usb-snps-femto-v2-phy and
-> qcom,sc8180x-usb-hs-phy - because there are no upstream users, so not
-> sure what was the intention for them.
+> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+
+Reviewed-by: Bjorn Andersson <andersson@kernel.org>
+
+Regards,
+Bjorn
+
+> ---
+>  drivers/pci/controller/dwc/pcie-qcom.c | 1 +
+>  1 file changed, 1 insertion(+)
 > 
-> [...]
-
-Applied, thanks!
-
-[4/4] arm64: dts: qcom: sm8350: align MMC node names with DT schema
-      commit: 06a0676b5de9221537156957b90b2b69dfceebba
-
-Best regards,
--- 
-Bjorn Andersson <andersson@kernel.org>
+> diff --git a/drivers/pci/controller/dwc/pcie-qcom.c b/drivers/pci/controller/dwc/pcie-qcom.c
+> index 77e5dc7b88ad..b9350d93b4ba 100644
+> --- a/drivers/pci/controller/dwc/pcie-qcom.c
+> +++ b/drivers/pci/controller/dwc/pcie-qcom.c
+> @@ -1826,6 +1826,7 @@ static const struct of_device_id qcom_pcie_match[] = {
+>  	{ .compatible = "qcom,pcie-sdm845", .data = &cfg_2_7_0 },
+>  	{ .compatible = "qcom,pcie-sm8150", .data = &cfg_1_9_0 },
+>  	{ .compatible = "qcom,pcie-sm8250", .data = &cfg_1_9_0 },
+> +	{ .compatible = "qcom,pcie-sm8350", .data = &cfg_1_9_0 },
+>  	{ .compatible = "qcom,pcie-sm8450-pcie0", .data = &cfg_1_9_0 },
+>  	{ .compatible = "qcom,pcie-sm8450-pcie1", .data = &cfg_1_9_0 },
+>  	{ }
+> -- 
+> 2.35.1
+> 
 
 -- 
 linux-phy mailing list
