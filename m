@@ -4,74 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B3F0AC4167B
-	for <linux-phy@archiver.kernel.org>; Fri, 30 Dec 2022 12:11:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A81BFC3DA7C
+	for <linux-phy@archiver.kernel.org>; Fri, 30 Dec 2022 12:18:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RnKAMVqcF0Tc8gnQYcgeaM429MBlETBB/YgwXvLEk54=; b=CVAQfaKrrTrriD
-	/KEof7g9TpmoqcWT925d1gjLSQ4TLb63rdZV4LT6jw6zjgSoHnQTmUbg+cJWPaom4rXswgCBA3AqB
-	5g+jS5ky5przhfYTfUAf4DSx5NuI/mgXkmC4PzHdyKUBZjJpE3V+GjTl9ZMWUIxkbq1r6rthxSSjq
-	yQhTlWRRUIjA28xslWhmXK7f4RSABMOP4Ykdfki8YM4c7e+fSne58NxCW8jTIBsw0HuSVxnNxBqd8
-	X8fye6FsSLtFpMQX8iy9F8G3gsXzidoBiBCKx7A5jutqminrCQnqOm3eDgXBUnxQfOYO1nqT5EG2b
-	+4VcTvjcgaTn5o8n2Mhg==;
+	List-Owner; bh=9sBjIf8MvrQ/s1r5KBlUjGhVWf/vpbg63trrUMVHPu0=; b=Wf/rEwy4xq9rZ1
+	i1QQ+vqDRer9dtbfaXPhAiz1w96GiEhATIuQOXcluQtqWV1E27et4Qlzn0wEQcgMgbWQwei8cUjNg
+	b5u7GoG0T5MNRlcrFZy4w8BP3loqeVYUIcY89HQaA8E4CG/mS6E5TuM9WAucLi4vvS0TFZBHyf1+u
+	LBk6G0D/DESygmOUf1O8oNYo4P3TcJ8KzQtPNPP57RWQCybHh0SmKcMbte9hsh5pYydtA8kYQv5qL
+	fom6kLGH+DBwGIno4uMf/w5ie/zVAO2f+XHGNgW2kXuDLLatVP42IZY0wQ0Kv2Ccfp5CcGHgUFSL/
+	Zbgg53h3jkb1QIjww5ZA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pBEE8-008sdG-9o; Fri, 30 Dec 2022 12:11:08 +0000
-Received: from mo4-p02-ob.smtp.rzone.de ([85.215.255.80])
+	id 1pBEL2-008uXC-1t; Fri, 30 Dec 2022 12:18:16 +0000
+Received: from mail-lf1-x133.google.com ([2a00:1450:4864:20::133])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pBE9A-008rph-4k
-	for linux-phy@lists.infradead.org; Fri, 30 Dec 2022 12:06:01 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1672401955;
-    s=strato-dkim-0002; d=gerhold.net;
-    h=In-Reply-To:References:Message-ID:Subject:Cc:To:From:Date:Cc:Date:
-    From:Subject:Sender;
-    bh=EwBEUtWQM+CIXSqRF+omnXUkb+ypVnL3yjnzwSrntUs=;
-    b=FuLbBcknLwS9BsNPXPu7AnkJVkRJDpZBWdIpjR2Cd9PREzRZJRA153ksJ6Kd4I2Mt4
-    e1T/PYVrPRmE5a0Uc2EjwQ3Ox1OklSzbjMY0cLP8kz1TUCYKJJD8U5De1J54m+sOBgH2
-    mtWjfyiimfvju5Jy/DO2wKLt7UB290Mx3w8fCWByUXbbSKrb0zBmHa3gle/vWuyVLeXI
-    Aw50xM7/GwubXhtI/MP/UoGRTG+7UnNyvyyNbyKv/1V0wYTw37HjcNzcrqfkyr0ghc7R
-    UMP7PprTgS4xJpzqgWVKgv0wH/yMRnPUbH9VzoojsDFNBAxb2lGf2NqEy6kfETH11HtX
-    UzdQ==
-Authentication-Results: strato.com;
-    dkim=none
-X-RZG-AUTH: ":P3gBZUipdd93FF5ZZvYFPugejmSTVR2nRPhVOQ/OcYgojyw4j34+u261EJF5OxJAhdlWwfOntQ=="
-X-RZG-CLASS-ID: mo00
-Received: from gerhold.net
-    by smtp.strato.de (RZmta 48.2.1 DYNA|AUTH)
-    with ESMTPSA id Yce349yBUC5qYxl
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256 bits))
-	(Client did not present a certificate);
-    Fri, 30 Dec 2022 13:05:52 +0100 (CET)
-Date: Fri, 30 Dec 2022 13:05:51 +0100
-From: Stephan Gerhold <stephan@gerhold.net>
-To: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
-Cc: agross@kernel.org, andersson@kernel.org, vkoul@kernel.org,
-	kishon@kernel.org, robh+dt@kernel.org,
-	krzysztof.kozlowski+dt@linaro.org, konrad.dybcio@linaro.org,
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-usb@vger.kernel.org
-Subject: Re: [PATCH v2 2/2] phy: qcom-usb-hs: Add qcom,dp-manual-pullup logic
-Message-ID: <Y67UH0xfTPH0GN+S@gerhold.net>
-References: <20221229183410.683584-1-bryan.odonoghue@linaro.org>
- <20221229183410.683584-3-bryan.odonoghue@linaro.org>
- <Y63uSgMdP4m6nvhL@gerhold.net>
- <Y64AfHcUw192Pyr6@gerhold.net>
- <6061938c-b830-2fe0-2f4d-368e34c33676@linaro.org>
- <Y64CaOzWZXERrvkz@gerhold.net>
- <cdcef656-1ae7-fe8a-a4dd-3547d6395b33@linaro.org>
- <Y64Jgu2o6aJV4ggk@gerhold.net>
- <da671da3-61f5-ce4d-05aa-76f3f6ae12cf@linaro.org>
+	id 1pBEGE-008tA2-VR
+	for linux-phy@lists.infradead.org; Fri, 30 Dec 2022 12:13:20 +0000
+Received: by mail-lf1-x133.google.com with SMTP id m6so21120910lfj.11
+        for <linux-phy@lists.infradead.org>; Fri, 30 Dec 2022 04:13:15 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=tOV4608QXvjceJ4orI18C2FMI82fRREo3ytAKFrDAno=;
+        b=oKfWKWbyNwZodxgmd7818YAECzl/XyC2dFCzkj/S2x0O2WO3uO/ZQrtF3roTdI+gOC
+         Y5oZV2aG9isdrkBf6/w01OUplJH6tNL97VgSLhxTd30ng5UsYQ/q6hVTadLEENw0kHEW
+         +qISic/+E4+a027OBf7uO2nDbWo1WGtxjyPCVwirKtEIJCSqK3FkUBGiU5ZWtLbcvfcg
+         0dmjM+z8SSh3IOSgtXAi4mN3WZyJ4RHh8YvTJj5o6D1AR3ihFtkqJtremVVtYhf9GOs2
+         DuFOLoe9YSwL36RbFHGZ9DLT0kYqRa1aer3ZEa/jRFqLj2osPXUp5B2omNiGo1ZQowFO
+         Dmqw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=tOV4608QXvjceJ4orI18C2FMI82fRREo3ytAKFrDAno=;
+        b=b86OfPxMn35ufvEK3hVxohAZbvyiqxbhcL8rnwZZcevcnQNVXueCEYFSReVa/ppXJ7
+         01ZtAUAE1Wr2HXj+maPzb8O9y9pyD5PKZ7A40b8LL4QfMJllWWASeAYjHXoLNUwTUjy9
+         ZRibVG4WgYI7ahpg4Rnboy3CqP9syIy/6t1LUuSMtay2vjOhHml/SUjtPtF3bMluc49y
+         ncnpBFDj1X0z7zyliqdw3nC7lwrkapomX3xHPGYcqPLXRIJfkM4KK4LhVTvq4YPkP2fD
+         Y8iMpqNLRBEkZnhfPgWC5IhF0UQV8fPN9wm3LwhV2YJq3HkZNJQJWudHbpAKFb8nC0Ak
+         u/4w==
+X-Gm-Message-State: AFqh2kqUfDn2GCDk8bPi3KNAD2eiKIesMv8FFWNk/M4KkmzeVopFiu5E
+	E3PqOJ0aG22Bd+Cr/Z1tIfwG4A==
+X-Google-Smtp-Source: AMrXdXusvA7Bqp0kTD6ocUkCT45Y8k7XajNQ/mNEXARtiL/stEyuuSH+ZWkdiQok1QaZKKe0pfCC2Q==
+X-Received: by 2002:ac2:430c:0:b0:4cb:10ad:76bd with SMTP id l12-20020ac2430c000000b004cb10ad76bdmr3410731lfh.64.1672402394062;
+        Fri, 30 Dec 2022 04:13:14 -0800 (PST)
+Received: from ?IPV6:2001:14ba:a085:4d00::8a5? (dzccz6yyyyyyyyyyybcwt-3.rev.dnainternet.fi. [2001:14ba:a085:4d00::8a5])
+        by smtp.gmail.com with ESMTPSA id w5-20020ac254a5000000b004b4bb6286d8sm3429914lfk.84.2022.12.30.04.13.13
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 30 Dec 2022 04:13:13 -0800 (PST)
+Message-ID: <9dfbb21c-b430-193b-a51c-56cc9827eaa1@linaro.org>
+Date: Fri, 30 Dec 2022 14:13:12 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <da671da3-61f5-ce4d-05aa-76f3f6ae12cf@linaro.org>
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.6.0
+Subject: Re: (subset) [PATCH v4 0/8] PCI/phy: Add support for PCI on sm8350
+ platform
+Content-Language: en-GB
+To: Lorenzo Pieralisi <lpieralisi@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+ Bjorn Andersson <andersson@kernel.org>,
+ Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ =?UTF-8?Q?Krzysztof_Wilczy=c5=84ski?= <kw@linux.com>,
+ Jingoo Han <jingoohan1@gmail.com>, Rob Herring <robh+dt@kernel.org>,
+ Bjorn Helgaas <bhelgaas@google.com>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Konrad Dybcio <konrad.dybcio@somainline.org>, Andy Gross <agross@kernel.org>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-pci@vger.kernel.org,
+ Johan Hovold <johan@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>
+References: <20221118233242.2904088-1-dmitry.baryshkov@linaro.org>
+ <167239965740.745771.6371707855803359101.b4-ty@kernel.org>
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+In-Reply-To: <167239965740.745771.6371707855803359101.b4-ty@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221230_040600_351279_AADF531F 
-X-CRM114-Status: GOOD (  11.55  )
+X-CRM114-CacheID: sfid-20221230_041319_149689_27BA285C 
+X-CRM114-Status: GOOD (  10.22  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,29 +98,37 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Dec 29, 2022 at 11:38:04PM +0000, Bryan O'Donoghue wrote:
-> On 29/12/2022 21:41, Stephan Gerhold wrote:
-> > That is still good enough to replace qcom,dp-manual-pullup though.
+On 30/12/2022 13:27, Lorenzo Pieralisi wrote:
+> On Sat, 19 Nov 2022 01:32:34 +0200, Dmitry Baryshkov wrote:
+>> SM8350 is one of the recent Qualcomm platforms which lacks PCIe support.
+>> Use sm8450 PHY tables to add support for the PCIe hosts on Qualcomm SM8350 platform.
+>>
+>> Note: the PCIe0 table is based on the lahaina-v2.1.dtsi file, so it
+>> might work incorrectly on earlier SoC revisions.
+>>
+>> Dependencies:
+>> - phy/next (for PHY patches only)
+>>
+>> [...]
 > 
-> But there's no requirement to tie USB_IN_x high if VBUS is not connected to
-> it.
+> Applied to pci/qcom, thanks!
 > 
+> [3/8] PCI: qcom: Add support for SM8350
+>        https://git.kernel.org/lpieralisi/pci/c/a39fb9fabdb7
 
-I've yet to find any device where USB_IN is not connected in a usable way.
 
-But as I said I leave it up to you - it would be nice to have a proper
-solution for devices where VBUS state cannot be determined at all. Those
-devices should be rare though so if &pm8916_usbin works in your case
-maybe the time would be better invested into other open problems right
-now. :)
+Thank you! Would you also pick the patch 1/8 (dt-bindings: PCI: qcom: 
+Add sm8350 to bindings)?
 
-Thanks,
-Stephan
+-- 
+With best wishes
+Dmitry
+
 
 -- 
 linux-phy mailing list
