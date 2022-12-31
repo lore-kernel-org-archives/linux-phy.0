@@ -4,73 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3BED7C3DA7D
-	for <linux-phy@archiver.kernel.org>; Sat, 31 Dec 2022 21:29:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3DE34C3DA7A
+	for <linux-phy@archiver.kernel.org>; Sat, 31 Dec 2022 22:25:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hHsf5Gcy9IRtEvj+BikY5ihtp4+IdxxIlprY08leZs0=; b=He+a/TwoTk6jyh
-	JBMiBFOQE2hz9owM46R52cvP6Tpj7Zpj6OsF97NJcHVAc7owe/bv56AWOHdIKGPYNkNOPBYM6/RLV
-	qKCWN3ItA54Fkx+MW8iDamLKMpA0mMS2hyBmX/aycEpwRthnC7j8dgYXqquLQdruY1D3HdnFEECHy
-	vmucNrr2Ckg/QEomMHVZrTWe5SnmzF2DqyFDSMvzHOyW9rrZpk2ud+7K3P9Xl5JbzR/HVpcpjJmc7
-	SYYxYeJ5zhYkTp/nsOcAvi34pYLGvS6N1DTlrfCL00mfar1Kg1+BOZrIYcODVMatEEsgs4W/x/04h
-	fjq3lzijf7E8OQjEOH4w==;
+	List-Owner; bh=9ORfjFNSNi4a41ZKiZcOLJ/zT0SHsD++lhAYFuS7FD4=; b=cfmHuJLGaVF5L/
+	rtZLsL7toKiHRmzENrgY0kDt/8YJdb9Hp0+29ENOWdO9qVlDbETd7fkmCqNv+cemNmdZb1mCqS3rX
+	imSAf+3F+CBquHG3U9/IUVea9HoUOQPvPmR9X1Zjlce6LUB/g4JMYGsSqsBRH9lPq97/DxLn9e7u/
+	0j8495V3cKvrNIHcVRkbf2BJFhEIEnkBjv2eqZoAef7v9uPZOe2qBzNVBoDR3mRQMmghBmnpQXB1w
+	P0KfEDHzvCDJzbPyewZQxyanEmJGrXwzreMqVEPyHNHjxJgM5ZVlTF0/9O37jb73jseN/ZWge+X3c
+	si2ODBibF9aUcXAciHYw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pBjPu-00AXsG-EX; Sat, 31 Dec 2022 21:29:22 +0000
-Received: from mail-pj1-f52.google.com ([209.85.216.52])
+	id 1pBkHr-00B05c-G9; Sat, 31 Dec 2022 22:25:07 +0000
+Received: from vmi888983.contaboserver.net ([149.102.157.145] helo=amity.mint.lgbt)
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pBjPs-00AXqi-1b
-	for linux-phy@lists.infradead.org; Sat, 31 Dec 2022 21:29:21 +0000
-Received: by mail-pj1-f52.google.com with SMTP id h7-20020a17090aa88700b00225f3e4c992so16398350pjq.1
-        for <linux-phy@lists.infradead.org>; Sat, 31 Dec 2022 13:29:19 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=ISWRdwVih23bgfgAaCXa5whpIWz2PcBW3G4foSLvUag=;
-        b=ePxdz6wsx5lQyFd3vAaJn9gXmt/vCbyETt4kqmckPm7KNHMLibyEmrUyqqaaaaMfUN
-         0OTovS4b68B6NSGqaza07B26IASm1+tEP1eofYZO946a2gIGNpq4PUw0tCbxUpZQKqSQ
-         PYNV0pGtOHF0nwqc2/rzML8PQyYsMphbr+oep0impWdEGhMf2DzJzSCT2Zq62klNep2t
-         byHNI97ggWVaJspDECKjLu5e29VbYsbNSO7xnY/iWfvly1JI+A98+vsbV4lG1c5FiF09
-         P+ARsWgNbLJR2sV5XrPuuFfvqOdXoYPlDCXkZn+NbUv0ZrM9oBqBTDEVJsMv4Ny6agkr
-         P7HA==
-X-Gm-Message-State: AFqh2koNW5CcJrENFoiHcXdoazzP57YIm4DLCX9f5e/SnkoHjZQtKoTD
-	/gYYQjaqIy+fpXijpe3LN7w=
-X-Google-Smtp-Source: AMrXdXvraG9d4tzLLt+SMadNLdkPrk9+LoAN6PepE438N39jPpTDruR0LSLMxxgooeS/zwR/m27KRg==
-X-Received: by 2002:a17:902:e1d4:b0:192:8b2f:38e4 with SMTP id t20-20020a170902e1d400b001928b2f38e4mr15036127pla.66.1672522159036;
-        Sat, 31 Dec 2022 13:29:19 -0800 (PST)
-Received: from [192.168.51.14] ([98.51.102.78])
-        by smtp.gmail.com with ESMTPSA id i14-20020a170902cf0e00b00186a2444a43sm17212453plg.27.2022.12.31.13.29.16
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sat, 31 Dec 2022 13:29:18 -0800 (PST)
-Message-ID: <a0133561-2fd5-b962-2561-454aab7e97bb@acm.org>
-Date: Sat, 31 Dec 2022 13:29:16 -0800
+	id 1pBkHl-00Aztn-HK
+	for linux-phy@lists.infradead.org; Sat, 31 Dec 2022 22:25:03 +0000
+Received: from amity.mint.lgbt (mx.mint.lgbt [127.0.0.1])
+	by amity.mint.lgbt (Postfix) with ESMTP id 4NkxWf5BYZz1S5F0
+	for <linux-phy@lists.infradead.org>; Sat, 31 Dec 2022 17:24:46 -0500 (EST)
+Authentication-Results: amity.mint.lgbt (amavisd-new);
+	dkim=pass (2048-bit key) reason="pass (just generated, assumed good)"
+	header.d=mint.lgbt
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=mint.lgbt; h=
+	content-transfer-encoding:mime-version:references:in-reply-to
+	:x-mailer:message-id:date:subject:to:from; s=dkim; t=1672525486;
+	 x=1673389487; bh=n/SJk/pinTpxZTv2ojGtArZAwokciPTwlvYARNi8gEw=; b=
+	4yyeCfrWxtpbLoe4ck1VllGTU8Uclmk6nu5ibxMzT865D/+Oj39R+eJjpUGKpT9Q
+	WYq2bO8Ih4PuCXOAqipObZmLqAQK1702FcJF2cQZTCraAtPouEn0f/VupbZ0obJW
+	+BlLgs/A06r+EyFvml34bVVUp1XtTSPeCTZOPNgxMDC2upwl1DpOZTjRkch5dIqS
+	c2I/6s/14JJNqNLePy05K/fa9FDqC3/AreuFHACndOAryOLEW0TK7Dj7UW/QM47I
+	9Woi7v579Rw3h2Ch0u4IqGQfOrbzT3+typVxkiGM4bRihZl1PrrADEw0SX4OCFYZ
+	d/Mqg/6THalCOlEN3NcRLw==
+X-Virus-Scanned: amavisd-new at amity.mint.lgbt
+Received: from amity.mint.lgbt ([127.0.0.1])
+	by amity.mint.lgbt (amity.mint.lgbt [127.0.0.1]) (amavisd-new, port 10026)
+	with ESMTP id lQOafhWJvJbn for <linux-phy@lists.infradead.org>;
+	Sat, 31 Dec 2022 17:24:46 -0500 (EST)
+Received: from dorothy.. (unknown [190.196.92.66])
+	by amity.mint.lgbt (Postfix) with ESMTPSA id 4NkxWX3Qw2z1S5Dq;
+	Sat, 31 Dec 2022 17:24:40 -0500 (EST)
+From: Lux Aliaga <they@mint.lgbt>
+To: Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
+Cc: ~postmarketos/upstreaming@lists.sr.ht,
+	martin.botka@somainline.org,
+	marijn.suijten@somainline.org,
+	Lux Aliaga <they@mint.lgbt>,
+	linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH v5 2/6] dt-bindings: phy: Add QMP UFS PHY compatible for SM6125
+Date: Sat, 31 Dec 2022 19:24:16 -0300
+Message-Id: <20221231222420.75233-3-they@mint.lgbt>
+X-Mailer: git-send-email 2.38.1
+In-Reply-To: <20221231222420.75233-1-they@mint.lgbt>
+References: <20221231222420.75233-1-they@mint.lgbt>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.4.0
-Subject: Re: [PATCH v5 19/23] scsi: ufs: core: Add support for reinitializing
- the UFS device
-Content-Language: en-US
-To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
- martin.petersen@oracle.com, jejb@linux.ibm.com, andersson@kernel.org,
- vkoul@kernel.org
-Cc: quic_cang@quicinc.com, quic_asutoshd@quicinc.com,
- linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-scsi@vger.kernel.org,
- dmitry.baryshkov@linaro.org, ahalaney@redhat.com, abel.vesa@linaro.org,
- alim.akhtar@samsung.com, avri.altman@wdc.com
-References: <20221222141001.54849-1-manivannan.sadhasivam@linaro.org>
- <20221222141001.54849-20-manivannan.sadhasivam@linaro.org>
-From: Bart Van Assche <bvanassche@acm.org>
-In-Reply-To: <20221222141001.54849-20-manivannan.sadhasivam@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221231_132920_132383_D5180912 
-X-CRM114-Status: UNSURE (   8.47  )
+X-CRM114-CacheID: sfid-20221231_142501_765747_BA0DEAD2 
+X-CRM114-Status: UNSURE (   5.55  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -83,19 +87,32 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 12/22/22 06:09, Manivannan Sadhasivam wrote:
-> Some platforms like Qcom, requires the UFS device to be reinitialized
-> after switching to maximum gear speed. So add support for that in UFS
-> core by introducing a new quirk (UFSHCD_CAP_REINIT_AFTER_MAX_GEAR_SWITCH)
-> and doing the reinitialization, if the quirk is enabled by the controller
-> driver.
+Document the QMP UFS PHY compatible for SM6125.
 
-Reviewed-by: Bart Van Assche <bvanassche@acm.org>
+Signed-off-by: Lux Aliaga <they@mint.lgbt>
+---
+ .../devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml       | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
+index dde86a19f792..a7af57931f32 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
+@@ -17,6 +17,7 @@ properties:
+   compatible:
+     enum:
+       - qcom,sc8280xp-qmp-ufs-phy
++      - qcom,sm6125-qmp-ufs-phy
+ 
+   reg:
+     maxItems: 1
+-- 
+2.38.1
 
 
 -- 
