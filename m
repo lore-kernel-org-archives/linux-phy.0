@@ -4,89 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 04B3AC46467
-	for <linux-phy@archiver.kernel.org>; Wed,  4 Jan 2023 07:22:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 930A0C46467
+	for <linux-phy@archiver.kernel.org>; Wed,  4 Jan 2023 07:48:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fNMSifzoaXvpwSOORy5GuQAsXwM+iKVevcF2Xo5ABME=; b=E9RBHPbHH9ARuU
-	jnxsENtu4JQaiH0iFCxMUxHtacv0IC2ZZP91iVgzhMe77RBsBjJGp7NDxAVe8CVZygZ0lW0CIxD1g
-	agPlFhu7ndnC7Oq18pjjHc5Uh+/Hr8q2Mm2nA9ymVuci6w3R3HzFnOMVwz1h4ePdhj+uLtGLXnZNS
-	mZMTRATxDg+qs9PojuDkTbncr/ETa0bfkidCWL6/xywiWPlyYy185v5w2b4/JR+j1X8JcnYmeZs3e
-	1z66zuT43dwASRdX4unDMhGs1FBvDRPkVtFN3Kkwwzug9B1AsHVTkB0SEdqh3HTogcffSrp/6dFUq
-	czolKCchatkVr7Yf6S4g==;
+	List-Owner; bh=LPWmDba1gSYDJQjmobvydrQrEWqYvIp9te3rgpqDhls=; b=ttPJjBM6an7tW2
+	7ubVQWEdf+7CEZX2N5Lbx1AVhEBzO1UZm0VTqlxaQMSI/SkcYwiaXJP0d2i5zCcTjdZnsXNLHwSV9
+	p6nDqHpEWBTTZrf0zb3tboyIaW4AtpFX43MQ5MuaG2SAPOiag0G2cM/TSY8m0epIe/SAiHHS0de+R
+	IjSVDC4BUKhVmSrPcOORvCGRCqItIa+zR7p1gZDj3WSOwwEFEyA2DbzxfdVSz5LAOiZu2sjEE9wIk
+	nQx4ikaWFwBSd54jcV5XNrEcocC+xuO5odDK5z0WbfGk0UxZTUuOR/HG7Ms/zpP+c7dApA4XmdNwm
+	+iObi2xeDnbf7smxNORg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pCy6v-007MHJ-51; Wed, 04 Jan 2023 07:22:53 +0000
+	id 1pCyW5-007Ubj-Tx; Wed, 04 Jan 2023 07:48:53 +0000
 Received: from egress-ip33a.ess.de.barracuda.com ([18.185.115.192])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pCy6S-007M96-84
-	for linux-phy@lists.infradead.org; Wed, 04 Jan 2023 07:22:26 +0000
-Received: from mail-lj1-f197.google.com (mail-lj1-f197.google.com [209.85.208.197]) by mx-outbound15-224.eu-central-1a.ess.aws.cudaops.com (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO); Wed, 04 Jan 2023 07:22:17 +0000
-Received: by mail-lj1-f197.google.com with SMTP id by6-20020a05651c1a0600b0027fc191dd12so5674394ljb.20
-        for <linux-phy@lists.infradead.org>; Tue, 03 Jan 2023 23:22:17 -0800 (PST)
+	id 1pCyV1-007UPq-U9
+	for linux-phy@lists.infradead.org; Wed, 04 Jan 2023 07:47:50 +0000
+Received: from mail-lf1-f72.google.com (mail-lf1-f72.google.com [209.85.167.72]) by mx-outbound15-224.eu-central-1a.ess.aws.cudaops.com (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO); Wed, 04 Jan 2023 07:47:45 +0000
+Received: by mail-lf1-f72.google.com with SMTP id y26-20020a0565123f1a00b004b4b8aabd0cso11645281lfa.16
+        for <linux-phy@lists.infradead.org>; Tue, 03 Jan 2023 23:47:45 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=mistralsolutions.com; s=google;
         h=cc:to:subject:message-id:date:from:in-reply-to:references
          :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=MPr6Xd4nz1xJ4HkAPF7aPXqQXKgfzwm0p8dfzBvdBL4=;
-        b=NygIbKg3K8OU6dHO4fevpu1TOszp/orSOULJFc+uAni8FwLTQIL5d2FurhVFoUfMZ8
-         RY/l7sHX/yQTxe9hYjYhvZP15diSWGoNpAv3okkhnR7LGE7T+Q6ivVZ+nuyjquxuzdA2
-         GTCyuyU0XIlfNMKXXHHaxj9YdwapBTrNnferc=
+        bh=D9f5z3cCFhs4FR8+gGLSNtq0xtNbjblXeZzCadPdRGE=;
+        b=O6d2M1Vej/BwZLu4EoGLh5uM7yv0nu6iP0TkVbc3k7WGicrfyEfKuHmSdPUv0bUcUd
+         oojLPhabL2JIoviRqHTudV0sDgdh9LehmAKWbFMRLoVLzlUrFhq+UVvr2Nr3itsInn0j
+         fJ/6JBCHqi6sVeveJG6TMbN+vzYYCCkPszDWs=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=cc:to:subject:message-id:date:from:in-reply-to:references
          :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=MPr6Xd4nz1xJ4HkAPF7aPXqQXKgfzwm0p8dfzBvdBL4=;
-        b=jdUUO8Y+FuKxuhKOHhlGGoVMP8/buvkY7KP1vtqUvPK5VvO3tbR/MWEtjrDPM7BjmO
-         RBCXUxWyA0lJYQ4abz5u1jiBXPYisG1QCejimnOPwBrquzV1/HWWyYBZNRE9EFZjzxnZ
-         LOQ5Xx3HPNOHPdtjgTLwEnOuuMm8W+fB8fza3j1TIsMGUK8njq3Nku0yUxYIbzDTebkK
-         3Z/3HM7HZWZHAx1BD7K5n4ZiN/dVNSGbWUFFbFBHksdBiyTwpCQdVeNWDHVWi1Rxgyvi
-         LdTEt5aqrb8hgBrVtMMnjwVG0Y11otEHoBZyr5Xa5AFb2pg1+xAVyWACDhr+27vdnRUV
-         V2Ew==
-X-Gm-Message-State: AFqh2ko5rO+fi3ksFDNoWqpG6y89keNVcNHJ1KaXL7ccudNVsZbpbN/9
-	7JELznK8MKykGszkC6HvsEvNPiGNfr7DCjQJLPIHpZTfnGhZ+F+q48+noBU+jyAurhic0kafukd
-	YEo90CTFlQK6BsakDBGC4Gw6hyVcg+6ylGGVY5k4N7F5OYblwBdfpaqQe7rkdqNZY1kMVbGmqP9
-	SN7A==
-X-Received: by 2002:a2e:a37b:0:b0:27f:c04f:aa1d with SMTP id i27-20020a2ea37b000000b0027fc04faa1dmr2582406ljn.40.1672816936891;
-        Tue, 03 Jan 2023 23:22:16 -0800 (PST)
-X-Google-Smtp-Source: AMrXdXunuxL2xbl/2H1i2awmpkiFKs7C8YBoMpa9p5n32fbtyy9bvUMymVQM8rfpYxINyfARYqnZMrPyY56jNr/OJzI=
-X-Received: by 2002:a2e:a37b:0:b0:27f:c04f:aa1d with SMTP id
- i27-20020a2ea37b000000b0027fc04faa1dmr2582399ljn.40.1672816936649; Tue, 03
- Jan 2023 23:22:16 -0800 (PST)
+        bh=D9f5z3cCFhs4FR8+gGLSNtq0xtNbjblXeZzCadPdRGE=;
+        b=D8jDo0JrHCQE2r4dFSOHUpFUH1OYnUZ9r0PdBmayzsNqAWa4/s/lyfmlPbg+XCCBOa
+         ZUrDuc96gxseyYnMGq6InZx0SRAnKobApwMW72UXIpr70hAVJRetw89UzVlAziL1Bv//
+         eH/Q/M5aqj4qZBvHkkreKHDQKpNyEyJ4p8EVl8ACIGt/7431WyYVLyrvzUQ4XWL3pip+
+         e2ARsw3dbKBuzDkqA569Q5aDP651V22WMg2+C61Or3GQQGAau6/jBdmC2k2Zuk4D4efm
+         Z68i1bk4nPjP/2sUz7u4IX4dUQEK0jnWrsmEguyOI6Fn47ekWF8cwwAvO90mPuOU09WM
+         IMVQ==
+X-Gm-Message-State: AFqh2kq60agGQPGytTEU88Lao4unjdiJMOxRY/P5Wl3sr/Ky6H2PQfsN
+	6WyEu8Yzcv8AQqre7v27yZDBRga2tD9mO8YGnYesk62C8YK/87sc4aAXz+GhNCiJV1tpTnrX2+Y
+	6tuB/oRdt3nL9CmArI3HTrruKt1K3wsMufICjjbavEmLp1KYOyTXO5XV2CDGGyUImcpQX5Qj7Fa
+	ghRg==
+X-Received: by 2002:ac2:5de3:0:b0:4b4:a536:f866 with SMTP id z3-20020ac25de3000000b004b4a536f866mr1787903lfq.262.1672818464885;
+        Tue, 03 Jan 2023 23:47:44 -0800 (PST)
+X-Google-Smtp-Source: AMrXdXvcwoBZoAjr1B1FS1N0PlG/MN9fvsCDXnPzOywCadO0g5UuE7gHb7YLH7P42zk3VwKiejVRKyn1giV2dty0xqY=
+X-Received: by 2002:ac2:5de3:0:b0:4b4:a536:f866 with SMTP id
+ z3-20020ac25de3000000b004b4a536f866mr1787900lfq.262.1672818464592; Tue, 03
+ Jan 2023 23:47:44 -0800 (PST)
 MIME-Version: 1.0
-References: <20221213124854.3779-1-sinthu.raja@ti.com> <20221213124854.3779-3-sinthu.raja@ti.com>
- <47c159b6-a1d3-dd7f-265e-6acbfc06ead0@kernel.org>
-In-Reply-To: <47c159b6-a1d3-dd7f-265e-6acbfc06ead0@kernel.org>
+References: <20221213124854.3779-1-sinthu.raja@ti.com> <20221213124854.3779-2-sinthu.raja@ti.com>
+ <b4f725b1-3ed6-51fd-4973-92e28987f488@kernel.org>
+In-Reply-To: <b4f725b1-3ed6-51fd-4973-92e28987f488@kernel.org>
 From: Sinthu Raja M <sinthu.raja@mistralsolutions.com>
-Date: Wed, 4 Jan 2023 12:52:04 +0530
-Message-ID: <CAEd-yTSgABwuohxg=-GxDkJYkW1hSLHmtW=LUuSnzYN3X0AXLw@mail.gmail.com>
-Subject: Re: [PATCH 2/2] phy: ti: j721e-wiz: Add support to enable LN23 Type-C swap
+Date: Wed, 4 Jan 2023 13:17:32 +0530
+Message-ID: <CAEd-yTQEUcXYP1hJkUHyvd95-tyDMRETDNHBf07-_zbQu7UAJw@mail.gmail.com>
+Subject: Re: [PATCH 1/2] phy: ti: j721e-wiz: Manage TypeC lane swap if
+ typec-gpio-dir not specified
 To: Roger Quadros <rogerq@kernel.org>
 Cc: Vinod Koul <vkoul@kernel.org>, Ravi Gunasekaran <r-gunasekaran@ti.com>, 
 	Siddharth Vadapalli <s-vadapalli@ti.com>, Vignesh Raghavendra <vigneshr@ti.com>, linux-phy@lists.infradead.org, 
 	linux-kernel@vger.kernel.org, Sinthu Raja <sinthu.raja@ti.com>
-X-BESS-ID: 1672816937-304064-5387-431-1
+X-BESS-ID: 1672818465-304064-5388-1602-1
 X-BESS-VER: 2019.1_20221214.2106
-X-BESS-Apparent-Source-IP: 209.85.208.197
-X-BESS-Outbound-Spam-Score: 0.50
+X-BESS-Apparent-Source-IP: 209.85.167.72
+X-BESS-Outbound-Spam-Score: 0.00
 X-BESS-Outbound-Spam-Report: Code version 3.2, rules version 3.2.2.245240 [from 
-	cloudscan12-143.eu-central-1a.ess.aws.cudaops.com]
+	cloudscan13-86.eu-central-1a.ess.aws.cudaops.com]
 	Rule breakdown below
 	 pts rule name              description
 	---- ---------------------- --------------------------------
-	0.50 BSF_RULE7568M          META: Custom Rule 7568M 
-	0.00 BSF_BESS_OUTBOUND      META: BESS Outbound 
 	0.00 BSF_SC0_MISMATCH_TO    META: Envelope rcpt doesn't match header 
-X-BESS-Outbound-Spam-Status: SCORE=0.50 using account:ESS91090 scores of KILL_LEVEL=7.0 tests=BSF_RULE7568M, BSF_BESS_OUTBOUND, BSF_SC0_MISMATCH_TO
+	0.00 BSF_BESS_OUTBOUND      META: BESS Outbound 
+X-BESS-Outbound-Spam-Status: SCORE=0.00 using account:ESS91090 scores of KILL_LEVEL=7.0 tests=BSF_SC0_MISMATCH_TO, BSF_BESS_OUTBOUND
 X-BESS-BRTS-Status: 1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230103_232224_539090_B18E4513 
-X-CRM114-Status: GOOD (  35.63  )
+X-CRM114-CacheID: sfid-20230103_234748_180365_6A0E8387 
+X-CRM114-Status: GOOD (  41.97  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,142 +104,165 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 Hi Roger,
-On Wed, Dec 14, 2022 at 2:47 PM Roger Quadros <rogerq@kernel.org> wrote:
+
+On Wed, Dec 14, 2022 at 3:12 PM Roger Quadros <rogerq@kernel.org> wrote:
 >
+> Hi,
 >
+> Some more comments below.
 >
 > On 13/12/2022 14:48, Sinthu Raja wrote:
-> > Serdes wiz supports both LN23 and LN10 Type-C swap. Add support to
->
-> SerDes?
->
-> what is wiz?
-The WIZ acts as a wrapper for the SerDes and can send control signals
-to and report status signals from the SerDes, and muxes SerDes to
-peripherals.
->
-> It has nothing to do with Type-C. It is just a lane swap.
-> There may or may not be a Type-C port.
-According to the SerDes design, in the case of 4 lanes SerDes, Lane 0
-and Lane 2 are reserved for USB for type-C lane swap if Lane 1 and
-Lane 3 are integrated into USB3 PHY. The C-type lane swap is
-responsible for swapping lanes 0 and 1 or lanes 2 and 3 based on the
-configuration register. This allows a Type C USB connector to deal
-with the connector orientation.
->
-> > configure LN23 bit to swap between lane2 or lane3 if required.
->
-> What do you mean by "swap between lane2 or lane3"?
->
-> Do you mean "swap lanes 2 and 3"?
-Yes.
->
-> Is LN23 bit supported on all variants?
-Yes, it is supported in all J7 variants if it is a 4 Lanes SerDes and
-USB3 PHY is supported.
->
+> > It's possible that the Type-C plug orientation on the DIR line will be
+> > implemented through hardware design. In that situation, there won't be
+> > an external GPIO line available, but the driver still needs to address
+> > this since the DT won't use the typec-gpio-dir property.
+> >
+> > Add code to handle LN10 Type-C swap if typec-gpio-dir property is not
+> > specified in DT.
+> >
+> > Remove typec-gpio-dir check to use minimum debounce from Type-C spec if
+> > it is not provided in DT
 > >
 > > Signed-off-by: Sinthu Raja <sinthu.raja@ti.com>
 > > ---
-> >  drivers/phy/ti/phy-j721e-wiz.c | 33 +++++++++++++++++++++++++++++----
-> >  1 file changed, 29 insertions(+), 4 deletions(-)
+> >  drivers/phy/ti/phy-j721e-wiz.c | 65 +++++++++++++++++++++-------------
+> >  1 file changed, 40 insertions(+), 25 deletions(-)
 > >
 > > diff --git a/drivers/phy/ti/phy-j721e-wiz.c b/drivers/phy/ti/phy-j721e-wiz.c
-> > index b17eec632d49..0091892af0b0 100644
+> > index 141b51af4427..b17eec632d49 100644
 > > --- a/drivers/phy/ti/phy-j721e-wiz.c
 > > +++ b/drivers/phy/ti/phy-j721e-wiz.c
-> > @@ -58,6 +58,11 @@ enum wiz_lane_standard_mode {
-> >       LANE_MODE_GEN4,
-> >  };
-> >
-> > +enum wiz_lane_typec_swap_mode {
-> > +     LANE10_SWAP = 0,
-> > +     LANE23_SWAP = 2,
-> > +};
+> > @@ -375,6 +375,7 @@ struct wiz {
+> >       struct gpio_desc        *gpio_typec_dir;
+> >       int                     typec_dir_delay;
+> >       u32 lane_phy_type[WIZ_MAX_LANES];
+> > +     u32 lane_phy_reg[WIZ_MAX_LANES];
 >
-> What is this? Is it a register setting?
-These are the master lane numbers that support the C-type lane swap.
-Will change the enum name relatable and also shall add a comment for
-more clarification.
+> This name looks misleading. I'll discuss about it where you are setting it.
+Will change the name to master_lane_num[];
 >
-> > +
-> >  enum wiz_refclk_mux_sel {
-> >       PLL0_REFCLK,
-> >       PLL1_REFCLK,
-> > @@ -194,6 +199,9 @@ static const struct reg_field p_mac_div_sel1[WIZ_MAX_LANES] = {
-> >  static const struct reg_field typec_ln10_swap =
-> >                                       REG_FIELD(WIZ_SERDES_TYPEC, 30, 30);
+> >       struct clk              *input_clks[WIZ_MAX_INPUT_CLOCKS];
+> >       struct clk              *output_clks[WIZ_MAX_OUTPUT_CLOCKS];
+> >       struct clk_onecell_data clk_data;
+> > @@ -1231,14 +1232,28 @@ static int wiz_phy_reset_deassert(struct reset_controller_dev *rcdev,
+> >       int ret;
 > >
-> > +static const struct reg_field typec_ln23_swap =
-> > +                                     REG_FIELD(WIZ_SERDES_TYPEC, 31, 31);
+> >       /* if typec-dir gpio was specified, set LN10 SWAP bit based on that */
+> > -     if (id == 0 && wiz->gpio_typec_dir) {
+> > -             if (wiz->typec_dir_delay)
+> > -                     msleep_interruptible(wiz->typec_dir_delay);
+> > -
+> > -             if (gpiod_get_value_cansleep(wiz->gpio_typec_dir))
+> > -                     regmap_field_write(wiz->typec_ln10_swap, 1);
+> > -             else
+> > -                     regmap_field_write(wiz->typec_ln10_swap, 0);
+> > +     if (id == 0 && wiz->typec_dir_delay) {
+> > +             msleep_interruptible(wiz->typec_dir_delay);
 > > +
-> >  struct wiz_clk_mux {
-> >       struct clk_hw           hw;
-> >       struct regmap_field     *field;
-> > @@ -366,6 +374,7 @@ struct wiz {
-> >       struct regmap_field     *mux_sel_field[WIZ_MUX_NUM_CLOCKS];
-> >       struct regmap_field     *div_sel_field[WIZ_DIV_NUM_CLOCKS_16G];
-> >       struct regmap_field     *typec_ln10_swap;
-> > +     struct regmap_field     *typec_ln23_swap;
-> >       struct regmap_field     *sup_legacy_clk_override;
-> >
-> >       struct device           *dev;
-> > @@ -675,6 +684,13 @@ static int wiz_regfield_init(struct wiz *wiz)
-> >               return PTR_ERR(wiz->typec_ln10_swap);
+> > +             if (wiz->gpio_typec_dir) {
+> > +                     if (gpiod_get_value_cansleep(wiz->gpio_typec_dir))
+> > +                             regmap_field_write(wiz->typec_ln10_swap, 1);
+> > +                     else
+> > +                             regmap_field_write(wiz->typec_ln10_swap, 0);
+> > +             } else {
+> > +                     /* if no typec-dir gpio was specified, and USB lines
+> > +                      * are connected to Lane 0 then set LN10 SWAP bit to 1.
+> > +                      */
+>
+> Why should lanes 1 and 0 be swapped if USB is connected to lane 0?
+My Bad! I should have been more precise in mentioning the USB3 Type C.
+Lanes 0 and 2 are reserved for USB3 for type-C connector lane swap.
+>
+> > +                     u32 num_lanes = wiz->num_lanes;
+> > +                     int i;
+> > +
+> > +                     for (i = 0; i < num_lanes; i++) {
+> > +                             if ((wiz->lane_phy_type[i] == PHY_TYPE_USB3) \
+> > +                                             && wiz->lane_phy_reg[i] == 0) {
+> > +                                     regmap_field_write(wiz->typec_ln10_swap, 1);
+> > +                             }
+> > +                     }
+>
+> I really don't understand what you are doing here.
+> It definitely doesn't match your comment.
+> As an example. If num_lanes = 2 then wiz->lane_phy_reg[1] is being used without being
+> really initialized (see later). Just because of kzalloc, it would of course be 0.
+This register is used to configure the external lanes selections that
+need to be swapped for SerDes type C. The initialization of the lanes
+is done separately. This bit is set to configure that all control for
+lane 0 will apply to lane 1 and vice versa.  Will update the commit
+description.
+>
+> > +             }
 > >       }
 > >
-> > +     wiz->typec_ln23_swap = devm_regmap_field_alloc(dev, regmap,
-> > +                                                    typec_ln23_swap);
-> > +     if (IS_ERR(wiz->typec_ln23_swap)) {
-> > +             dev_err(dev, "LN23_SWAP reg field init failed\n");
-> > +             return PTR_ERR(wiz->typec_ln23_swap);
-> > +     }
-> > +
-> >       wiz->phy_en_refclk = devm_regmap_field_alloc(dev, regmap, phy_en_refclk);
-> >       if (IS_ERR(wiz->phy_en_refclk)) {
-> >               dev_err(dev, "PHY_EN_REFCLK reg field init failed\n");
-> > @@ -1242,15 +1258,24 @@ static int wiz_phy_reset_deassert(struct reset_controller_dev *rcdev,
-> >                               regmap_field_write(wiz->typec_ln10_swap, 0);
-> >               } else {
-> >                       /* if no typec-dir gpio was specified, and USB lines
-> > -                      * are connected to Lane 0 then set LN10 SWAP bit to 1.
-> > +                      * are connected to SWAP lanes '0' or '2' then set LN10 SWAP
-> > +                      * or LN23 bit to 1 respectively.
-> >                        */
-> >                       u32 num_lanes = wiz->num_lanes;
-> >                       int i;
+> >       if (id == 0) {
+> > @@ -1370,8 +1385,10 @@ static int wiz_get_lane_phy_types(struct device *dev, struct wiz *wiz)
+> >               dev_dbg(dev, "%s: Lanes %u-%u have phy-type %u\n", __func__,
+> >                       reg, reg + num_lanes - 1, phy_type);
 > >
-> >                       for (i = 0; i < num_lanes; i++) {
-> > -                             if ((wiz->lane_phy_type[i] == PHY_TYPE_USB3) \
-> > -                                             && wiz->lane_phy_reg[i] == 0) {
-> > -                                     regmap_field_write(wiz->typec_ln10_swap, 1);
-> > +                             if (wiz->lane_phy_type[i] == PHY_TYPE_USB3) {
-> > +                                     switch (wiz->lane_phy_reg[i]) {
-> > +                                     case LANE10_SWAP:
-> > +                                             regmap_field_write(wiz->typec_ln10_swap, 1);
-> > +                                             break;
-> > +                                     case LANE23_SWAP:
-> > +                                             regmap_field_write(wiz->typec_ln23_swap, 1);
-> > +                                             break;
-> > +                                     default:
-> > +                                             break;
-> > +                                     }
+> > -             for (i = reg; i < reg + num_lanes; i++)
+> > +             for (i = reg; i < reg + num_lanes; i++) {
+> > +                     wiz->lane_phy_reg[i] = reg;
 >
-> Could you please explain what is going on here?
-> What is the basis for deciding if LN10 or LN23 bit must be set or not?
-This snippet is used to configure the SerDes Type C control register
-that allows the external lanes selection to be swapped. Based on the
-master lane number and if the PHY type is USB3, we are configuring the
-lane swap bits.
+> As per DT binding
+>       reg:
+>         description:
+>           The master lane number. This is the lowest numbered lane in the lane group.
 >
-
-> What about clearing those bits?
-According to the design this does not need to be cleared if it is set.
-By default, it is set to 0.
+> So you are in fact storing the Master lane number of every Link (or lane group).
+> A link may have 1 or more lanes in it.
 >
-> >                               }
-> >                       }
-> >               }
+> Also notice that if num_lanes has been 2 then wiz->lane_phy_reg[1] is not initialized.
+Irrespective of the number of lanes that are connected to the link, if
+the master lane is '0' or '2'  and the PHY type is USB3, then this bit
+needs to be set in the SerDes WIZ control register (according to the
+design).
+>
+> >                       wiz->lane_phy_type[i] = phy_type;
+> > +             }
+> >       }
+> >
+> >       return 0;
+> > @@ -1464,24 +1481,22 @@ static int wiz_probe(struct platform_device *pdev)
+> >               goto err_addr_to_resource;
+> >       }
+> >
+> > -     if (wiz->gpio_typec_dir) {
+> > -             ret = of_property_read_u32(node, "typec-dir-debounce-ms",
+> > -                                        &wiz->typec_dir_delay);
+> > -             if (ret && ret != -EINVAL) {
+> > -                     dev_err(dev, "Invalid typec-dir-debounce property\n");
+> > -                     goto err_addr_to_resource;
+> > -             }
+> > +     ret = of_property_read_u32(node, "typec-dir-debounce-ms",
+> > +                                &wiz->typec_dir_delay);
+> > +     if (ret && ret != -EINVAL) {
+> > +             dev_err(dev, "Invalid typec-dir-debounce property\n");
+> > +             goto err_addr_to_resource;
+> > +     }
+> >
+> > -             /* use min. debounce from Type-C spec if not provided in DT  */
+> > -             if (ret == -EINVAL)
+> > -                     wiz->typec_dir_delay = WIZ_TYPEC_DIR_DEBOUNCE_MIN;
+> > +     /* use min. debounce from Type-C spec if not provided in DT  */
+> > +     if (ret == -EINVAL)
+> > +             wiz->typec_dir_delay = WIZ_TYPEC_DIR_DEBOUNCE_MIN;
+> >
+> > -             if (wiz->typec_dir_delay < WIZ_TYPEC_DIR_DEBOUNCE_MIN ||
+> > -                 wiz->typec_dir_delay > WIZ_TYPEC_DIR_DEBOUNCE_MAX) {
+> > -                     ret = -EINVAL;
+> > -                     dev_err(dev, "Invalid typec-dir-debounce property\n");
+> > -                     goto err_addr_to_resource;
+> > -             }
+> > +     if (wiz->typec_dir_delay < WIZ_TYPEC_DIR_DEBOUNCE_MIN ||
+> > +         wiz->typec_dir_delay > WIZ_TYPEC_DIR_DEBOUNCE_MAX) {
+> > +             ret = -EINVAL;
+> > +             dev_err(dev, "Invalid typec-dir-debounce property\n");
+> > +             goto err_addr_to_resource;
+> >       }
+> >
+> >       ret = wiz_get_lane_phy_types(dev, wiz);
 >
 > cheers,
 > -roger
