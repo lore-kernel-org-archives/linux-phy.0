@@ -4,84 +4,180 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3BA4FC4332F
-	for <linux-phy@archiver.kernel.org>; Wed,  4 Jan 2023 14:29:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F268BC4708E
+	for <linux-phy@archiver.kernel.org>; Thu,  5 Jan 2023 18:44:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=e8QNvvI6GFStqfsA9faWY2Rpo2bpQjYQTxaiit7D4K8=; b=y1hV6tsRNvPvJf
-	sn93oH7VgTjtNOiDzL2wnJWjx48G2IlADr8SxGikUzCSSv04E+Y2ruDjOimmzZn/7TL73bN4cxxqA
-	vrB0tcDb3JOhEt6TuYHb8CKdHbcf3vvgBM+34mO78ofybciOgcK37aG3NyDRzG7R6fEHn1BEYzvnk
-	AF+CASHfob2s5sddWdHgbeENVMkMzfdq1/mMP5ZA01r779WZyABLzhXSoJgcVx+ax7P1H5Zs54vM+
-	P+4dL5mE6k61BcaG8+8r8qnbqh6+N2Eh7LWy2UX/BiUv6tOxfmP04B6JoIKVA4Owbiga5tTWCah3G
-	gs487S4N+RNMqpoAtClQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:Date:
+	References:Message-ID:From:Subject:Cc:To:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=VToM7FyifKRiXhOAMjDFaNHrrl3Ao46dAQX2eytWBiQ=; b=CCrAocBzjfSzsoPod3DNYt2Gg+
+	TwY7uMOoqh+Q7p/A108iLaBKwrFw34DyJB4DrYgTBJIiK6sMASSvG0fEUWat6Nb7AdgwyGFpChH3M
+	pbifxo+QSL9R5Hp/MoMqGKhhrVGUxQkVGupoej2+puftN30PXywPJ+Vvi+5+q+09jvVwDvUZkvx4p
+	y6AWOpPVVi9bJ7xqeB/65nWi/Ng1taSlIX7cu/Zj3JytULTSkel57240uOhLOVPtxnYoXoXEivASf
+	JSicXGPrkrS/Ag3myRT5f52gb5hH68ezfbsxEEhFOyY96YXflN1YSEI30pg2yAdhdee2wT/PB2e69
+	2xBUp0yg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pD4lR-009hiG-36; Wed, 04 Jan 2023 14:29:09 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1pDVER-00Dmxv-Uw; Thu, 05 Jan 2023 18:44:51 +0000
+Received: from mx0b-00069f02.pphosted.com ([205.220.177.32])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pD3nm-009Iu0-DN; Wed, 04 Jan 2023 13:27:30 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Type:Content-Transfer-Encoding
-	:MIME-Version:Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:Content-ID:
-	Content-Description:In-Reply-To:References;
-	bh=SJsKDaLisFLP+9xbSgisqMqiIgGxLySDzuXQz0Dj2o8=; b=auDSDDIKyS7UTu+uGV6klNAhHp
-	POXGhrO5t7OMw9PdOExesER9iyRzXJFiS2DjRMMYPCRCI24/8mVcrBJ5gGITAyStpq+j3xr4/NhJ8
-	aPwH7fGt0beT7SGz0rxI4v1b9roGcIS3IjkzBS7q4rv2jh1lKZatjLi3BTEvMkoM4Od8imqbdhdYv
-	5yx/WUc6fSOKarvazpVxwKwigkmLeRgYpH3SCafOLL5MbyMkBD7STtb/dJR/qcoHbsCLy4D1e48Qu
-	Hi2SdBdtkbCNgGG63iNo9p4VlNI9aaxFsBv5CdTbsmfvBJB51NdIvdzxOBdCz4tKTPcr1s1RxARS0
-	RKp49C2Q==;
-Received: from mailgw01.mediatek.com ([216.200.240.184])
-	by desiato.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pD3na-000xMM-2t;
-	Wed, 04 Jan 2023 13:27:23 +0000
-X-UUID: 79cdd67e31a04d93a895f8408fd81b78-20230104
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
-	h=Content-Type:Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From; bh=SJsKDaLisFLP+9xbSgisqMqiIgGxLySDzuXQz0Dj2o8=;
-	b=qjQVxPuT/DfswfWxw3VXu7B5ODHBCUDRo6puKtkuX/JUn6OK2bsC+QzRtugaZuWzPzDnyvpW4LcXP0eOcuU2DKppoEibz0bP94Lbd1gJ4gA0MmrOM+ROC9cSnS09RgmukbHAuAsMF2JdVLBZ7OuNzaDUc7Pu3Of5WeNz8eXT5gM=;
-X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.1.16,REQID:73d26bd0-a67b-4e1e-8c38-c81050d4f599,IP:0,U
-	RL:0,TC:0,Content:27,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION
-	:release,TS:27
-X-CID-META: VersionHash:09771b1,CLOUDID:073b3c8b-8530-4eff-9f77-222cf6e2895b,B
-	ulkID:nil,BulkQuantity:0,Recheck:0,SF:102,TC:nil,Content:4,EDM:-3,IP:nil,U
-	RL:11|1,File:nil,Bulk:nil,QS:nil,BEC:nil,COL:0,OSI:0,OSA:0
-X-CID-BVR: 0
-X-UUID: 79cdd67e31a04d93a895f8408fd81b78-20230104
-Received: from mtkmbs11n2.mediatek.inc [(172.21.101.187)] by mailgw01.mediatek.com
-	(envelope-from <chunfeng.yun@mediatek.com>)
-	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
-	with ESMTP id 2013307629; Wed, 04 Jan 2023 06:26:50 -0700
-Received: from mtkmbs11n1.mediatek.inc (172.21.101.186) by
- mtkmbs10n1.mediatek.inc (172.21.101.34) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.792.15; Wed, 4 Jan 2023 21:26:47 +0800
-Received: from mhfsdcap04.gcn.mediatek.inc (10.17.3.154) by
- mtkmbs11n1.mediatek.inc (172.21.101.73) with Microsoft SMTP Server id
- 15.2.792.15 via Frontend Transport; Wed, 4 Jan 2023 21:26:46 +0800
-From: Chunfeng Yun <chunfeng.yun@mediatek.com>
-To: Vinod Koul <vkoul@kernel.org>
-CC: Chunfeng Yun <chunfeng.yun@mediatek.com>, Kishon Vijay Abraham I
-	<kishon@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>, "Nathan
- Chancellor" <nathan@kernel.org>, Nick Desaulniers <ndesaulniers@google.com>,
-	Tom Rix <trix@redhat.com>, AngeloGioacchino Del Regno
-	<angelogioacchino.delregno@collabora.com>,
-	<linux-arm-kernel@lists.infradead.org>, <linux-mediatek@lists.infradead.org>,
-	<linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
-	<llvm@lists.linux.dev>, Eddie Hung <eddie.hung@mediatek.com>, "kernel test
- robot" <lkp@intel.com>
-Subject: [PATCH v6 1/3] phy: mediatek: fix build warning caused by clang
-Date: Wed, 4 Jan 2023 21:26:44 +0800
-Message-ID: <20230104132646.7100-1-chunfeng.yun@mediatek.com>
-X-Mailer: git-send-email 2.25.1
+	id 1pDG8y-00Gtbj-8c
+	for linux-phy@lists.infradead.org; Thu, 05 Jan 2023 02:38:28 +0000
+Received: from pps.filterd (m0246632.ppops.net [127.0.0.1])
+	by mx0b-00069f02.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 304MDwwP008873;
+	Thu, 5 Jan 2023 02:38:02 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com; h=to : cc : subject :
+ from : message-id : references : date : in-reply-to : content-type :
+ mime-version; s=corp-2022-7-12;
+ bh=CKk0gRE0IMMi5D8m7lacmyc6ESQqVhqiRCXl0WHz1s8=;
+ b=r0gVJLyW1ixpsEwpSdtEl6fSHuNjq2we+W2VyauWK1dw1Pud1dmgSR//okkhzygz+PPv
+ d2VxHzEICksPp3ciQrpfIopLiNF9KDKrCxTL6LrInXhct6HZCB9rvVzI41wgNLIKFetO
+ xIuoKPkG5HalnW+50rzjEBslG8QTsjXLxZHY5fsTD6fNKwXD47iUbqz1v8ENQYQSk3BZ
+ KJo7BgfHyq0xV8gmKmDpf0lRD58WS8prjQ01nxTYXZ9uM3yQJiNYc2MSd9FuPSXYWAEE
+ guf65fM1BqR3/w7P1gqgvAcd+uZmCIiSomU86lz7mLB+QWdgx90K1PBjcKek5xSQKJm+ sg== 
+Received: from phxpaimrmta03.imrmtpd1.prodappphxaev1.oraclevcn.com (phxpaimrmta03.appoci.oracle.com [138.1.37.129])
+	by mx0b-00069f02.pphosted.com (PPS) with ESMTPS id 3mtcpt7y5g-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+	Thu, 05 Jan 2023 02:38:02 +0000
+Received: from pps.filterd (phxpaimrmta03.imrmtpd1.prodappphxaev1.oraclevcn.com [127.0.0.1])
+	by phxpaimrmta03.imrmtpd1.prodappphxaev1.oraclevcn.com (8.17.1.5/8.17.1.5) with ESMTP id 3051HMjo031254;
+	Thu, 5 Jan 2023 02:38:01 GMT
+Received: from nam10-mw2-obe.outbound.protection.outlook.com (mail-mw2nam10lp2106.outbound.protection.outlook.com [104.47.55.106])
+	by phxpaimrmta03.imrmtpd1.prodappphxaev1.oraclevcn.com (PPS) with ESMTPS id 3mwg37abcq-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+	Thu, 05 Jan 2023 02:38:01 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=cO54f0E/JcQAcWnjQbEoA2Et7rhFilXA1Uvt9dhM4pGyC0qViAf1TjvFVXC44XQvN35V+ZD/Muet/ibpCiuLq4QscarC8ZlVCD9y2rj2KdQsYDJffEupVzerspn4orw52QUOPoDLqiijsxUxCzDds7KREfqX3I41OVKcL/CdiS9Z57NkNHU/q5TmqHcuAcuTj1msZRcGxBT6oTz0z41LzmDqXUVV7jB8HoIyI/G/fk0fxfAgy14zildlA2f/VbRG7ywKBmfUznYBjdhe0Ig5u2zkfAP5vwQnCSwBjoEKMM7iSp+f/rM1JNi2aufc8BJ2bM8oh9ObDpR4Wwi2tzoqtw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=CKk0gRE0IMMi5D8m7lacmyc6ESQqVhqiRCXl0WHz1s8=;
+ b=WpEqYz7VS5Z2PA6qBqTI9S29xmfXxjyeEMaSKY1f4QpU91PFhDey/rrZRvEoNBL8RD8eXUsYJ1eZts8NzW8Bvd4IS77pdx3PqhygGZFmB7101DVD0RcyePnzizO8GDb+JXB8t9gjassQR4iK+fDhUlIf+oCKBPqdSJZ+HBmTHR1xcUw+sZhniAo1lvVLR5So+AQ9IJSMO/N8wBwcYG1ZKqxa/cKxbSyrjxv4aGDhrCghWzze6vh946O64lIJhKTDa+Y5bOF0nEIgGI+CBNx72+oGtBgpxomJ5msjpbkjEa1gZ0HYC2bW3pGmJYtLlJCVmr+P6A5Swxv9wLYsHb2nng==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=oracle.com; dmarc=pass action=none header.from=oracle.com;
+ dkim=pass header.d=oracle.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=oracle.onmicrosoft.com; s=selector2-oracle-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=CKk0gRE0IMMi5D8m7lacmyc6ESQqVhqiRCXl0WHz1s8=;
+ b=eMp/6JaFhe8nPyQQwXZzWeCBJSA4O8IGsppjIYGTyw9jzhROXn0Nu1hvjufR8Eztqs77gP+K3Zycik7qbKyCLlNgnaG1Y/W6up3LUJwz4RUuaqTL1CuyJqVwX93EqnkN0H5WFH1o60a4VY0O2O9SanCAS65aFe4hFErO064sDMs=
+Received: from PH0PR10MB4759.namprd10.prod.outlook.com (2603:10b6:510:3d::12)
+ by SN7PR10MB6307.namprd10.prod.outlook.com (2603:10b6:806:271::5) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5944.19; Thu, 5 Jan
+ 2023 02:37:59 +0000
+Received: from PH0PR10MB4759.namprd10.prod.outlook.com
+ ([fe80::25bc:7f6f:954:ca22]) by PH0PR10MB4759.namprd10.prod.outlook.com
+ ([fe80::25bc:7f6f:954:ca22%2]) with mapi id 15.20.5944.019; Thu, 5 Jan 2023
+ 02:37:59 +0000
+To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+Cc: "Martin K. Petersen" <martin.petersen@oracle.com>, jejb@linux.ibm.com,
+        andersson@kernel.org, vkoul@kernel.org, quic_cang@quicinc.com,
+        quic_asutoshd@quicinc.com, linux-arm-msm@vger.kernel.org,
+        linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+        linux-scsi@vger.kernel.org, dmitry.baryshkov@linaro.org,
+        ahalaney@redhat.com, abel.vesa@linaro.org, alim.akhtar@samsung.com,
+        avri.altman@wdc.com, bvanassche@acm.org
+Subject: Re: [PATCH v5 00/23] ufs: qcom: Add HS-G4 support
+From: "Martin K. Petersen" <martin.petersen@oracle.com>
+Organization: Oracle Corporation
+Message-ID: <yq1r0w91zbw.fsf@ca-mkp.ca.oracle.com>
+References: <20221222141001.54849-1-manivannan.sadhasivam@linaro.org>
+	<yq17cy84gqc.fsf@ca-mkp.ca.oracle.com>
+	<20230102084707.GA16638@thinkpad>
+Date: Wed, 04 Jan 2023 21:37:56 -0500
+In-Reply-To: <20230102084707.GA16638@thinkpad> (Manivannan Sadhasivam's
+	message of "Mon, 2 Jan 2023 14:17:07 +0530")
+X-ClientProxiedBy: SA9PR11CA0006.namprd11.prod.outlook.com
+ (2603:10b6:806:6e::11) To PH0PR10MB4759.namprd10.prod.outlook.com
+ (2603:10b6:510:3d::12)
 MIME-Version: 1.0
-X-MTK: N
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: PH0PR10MB4759:EE_|SN7PR10MB6307:EE_
+X-MS-Office365-Filtering-Correlation-Id: 4fe95b1e-f60a-449d-864a-08daeec5dbb3
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: 	MCYyRSknsra3QFRnAf/7nstr6EudeZ5Drx8PwlHikMagicyakO4aN8BL4L5PmhPTW9kwvVq0fpMrSMRPhi0guqtIwK81ZzAy2w4VDyPpnbUvPaM23ijBeIXd5ZV4ZfKjUw1tYv6OnLoj5T0Qt3riQ3rvRifFNsrgYy230e9ylwvm6cP11OXpVwSZV80mD/C0Yu2kz9QZ5b54FVNFDvmeGnCzgb1J+AnI5FFVJ0mbVFbMhBOMhwLe7i5tKIyjZQIFsLkAjDRJW/wRuVFdc1RDf7G2N8KI6JEU3m4ChUkCXOD0nM/hwUwnEBDLgzb4yNwrlpFaG/9hVPATcjpn2d6zErRR6I1X+FusI5LCmfWTIQmjUSONbYEA/wILufzOLgxgfiOcLUMZixBIrRfgx+ko7P2htynvITGol3yFBA6uz+OeX6sWxEbnaTzhGXBEN5X3sRlnqc7Xbbm1YvcTjYbBmjCnDyQtsMQNo+W/LMhF0i8AowxYGAgR9Wt0I3IYiNcc1CSPx7ZQXs+SKjnDjTPftN+dcJZDarvqaqpqljrashzBz3/+z2WMqRlP5GYy1CScHDWs+uu6f/ZvwHTK7M6jYrfeqMDeIa8/00p7pRwLsTM7KCyfi+7FHa6F5+wL90IPuOoGKwb6djySxPSpPEpxYQ==
+X-Forefront-Antispam-Report: 	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PH0PR10MB4759.namprd10.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230022)(366004)(396003)(136003)(39860400002)(376002)(346002)(451199015)(86362001)(38100700002)(2906002)(8936002)(5660300002)(4744005)(7416002)(41300700001)(478600001)(6666004)(186003)(8676002)(6512007)(6506007)(26005)(4326008)(316002)(66476007)(6916009)(66946007)(36916002)(6486002)(66556008);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: 	=?us-ascii?Q?ZRgxGYz+UeS3u5Q6Q7Yig7QAJNxXcoMlMmTPo5hVUN4rWucn7lXuFlijsMvk?=
+ =?us-ascii?Q?R9Z+UZmT6yurPIjaT/d69wbS+8aHdshIESCpR/phRTDwftXQdN+sVxCojag1?=
+ =?us-ascii?Q?pwlzPpOx9dq0Kdxmrbo/kbvHKQRLjWkmi88omX02SrGKOD6GpsTaHkDTQwRp?=
+ =?us-ascii?Q?ghDJ8VCu3s8b89PclaM5EbLshTFW65Z71aIPfn8AtL9M2LlCKOvk2b7UXjt4?=
+ =?us-ascii?Q?PTQZRsv3u8g8Ju6FxlVRQtSsD+KYsRLnw2fh04TTtstbH0IOCcyrMrmK1bRP?=
+ =?us-ascii?Q?+WFEqqJk67+1oVZo+4rHzlDKn4A3qgq1u9iKUcCCdjtzWkmUnGygGD6zHBts?=
+ =?us-ascii?Q?pWML8QfavBkdAX1dHQQt7d9rS/WOvx5MLk3PZarueuWQ0I8rNVtdKxuHPKAq?=
+ =?us-ascii?Q?FdSb7u61FFZOmM1p7JgMEUgRUkCIpDjMmm2FfK3VgmN3Sl6usy7yHp243czG?=
+ =?us-ascii?Q?+v0cCNd5ajiRUw+xd3ozvBtBOTLQ3dgR7ocwrzI3AXrWck7Co6j0z+pLqiKb?=
+ =?us-ascii?Q?8NKH1IxBYpSeX5MWifmvOlL+G9kL7vh9w/PVOK3fasHSLWIb22HN+QFEOyYv?=
+ =?us-ascii?Q?YaiDeBe7TyGg3kREouPoXejusKSVWqw+AaNllrO33SS5zn9krXbfM5d/rstk?=
+ =?us-ascii?Q?uFeWRU48gCASht+VoopMdjDQFOT0BLk/Rcv8CjZRGQM2yMZMpfWOwcIR6an3?=
+ =?us-ascii?Q?zA68CMrurpiyqha1yMdz1O4Q4yvQ7smekcHdWnFa9mSpEj074QAfK3QsG1Ke?=
+ =?us-ascii?Q?KanLIwKb/nG3Oy0bbw+8AYhINL2UfdwSsOPfEu7xN0JMYwWueiC6Pby5z35n?=
+ =?us-ascii?Q?OmNUIOBSHN4C4y/3stladBZT8yS7NGsmiZEFW8O9kDbUqXi5K/O0jUA0V6vt?=
+ =?us-ascii?Q?3UPu2NnFZylKi72M+hHE1rxsmb2C2bblPRiU6vVN+F5xty/XkfXBkClvJ0wM?=
+ =?us-ascii?Q?8NoApS/ggoDus1lzVdVTotpz9cCzmsV3Dy8IxPOEmqQIz1uyyUtMHWs3mTbP?=
+ =?us-ascii?Q?+Z9qQY4q/Gp17C4W1FAWFqOe/4uHF6oVPnhtAzqODuXox/ZWss7kJqLuKmxt?=
+ =?us-ascii?Q?ZYuDQYbAUNEIFSjBl7gv/Gr4qT9rPoPYmPDpac9cOrVm2TBw7TGDRf6XRFB+?=
+ =?us-ascii?Q?B7SKT+JUUygq6xTRHtdVHF9RzYKtnekZFzu7W+rgSt7AOCMNG+Q4DYojUES9?=
+ =?us-ascii?Q?4GZ2+3Wlpj1X0SsuOUeWI8Vy0XgG4aVfQAGU7qtZHRlWDELT7BzZHLBl6qxN?=
+ =?us-ascii?Q?N/HPobBmz131mYBpi3srti1ZBE05fI7qbsbx0bHDJAebYKe80XjZfkeRg+I2?=
+ =?us-ascii?Q?y8QQyixuZU9QeVNMWLMURKgSW90op4id3SUU9S/D+l++HeIUAxiENe9gmCx/?=
+ =?us-ascii?Q?pHf7l+ijltaoQDazBhoAMcnIBFZEPu9tJdEzHM/OsBMMN+wIjSzoTUgyQRfZ?=
+ =?us-ascii?Q?dVQ2X2k7z5W23HMyTiQNhF2pXwdfq6zca4abPK5A4Y6LWt6SV/f103VSC6ic?=
+ =?us-ascii?Q?wdDyEGrymD4Cv+V0PrbhkYUWTZ5SwYH3H/bLCgJVUE4vNYaoHAOPD8RFjJXh?=
+ =?us-ascii?Q?QEH21tCUEKtLhrH9Cv4brwUh+o4jVMm1QZK4ZO9x1RQQZuvlQ+eCtLr433Ot?=
+ =?us-ascii?Q?mg=3D=3D?=
+X-MS-Exchange-AntiSpam-ExternalHop-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-ExternalHop-MessageData-0: 	=?us-ascii?Q?Ein2NJJ3UVS7XNHp8GpoOemdP9b6VpKOhhOg0gyz99AMwTyhGUE4ql+A4e/d?=
+ =?us-ascii?Q?hZrSJKwvpb2KAykx1WVN0XUa5F7Yhhvx/apcTD9C7AFc2PIp++3Yl8+JbsKx?=
+ =?us-ascii?Q?DdLE4Gtu3Y7s20iQZ+Zn0Qi496U+hH1xzroogvzsCHEykxms6GZuNFkIbtF7?=
+ =?us-ascii?Q?8sMsXSpBrFN4clg1bZKu+m+xy+L63zWp4J2tcPWWrzC5jOMhQ3If1kPdojMi?=
+ =?us-ascii?Q?Uovk9DJxZLXyW543p5eUHkQrxxKrywoQTmTPzZBuNsx7+utD/GaRMb0yGmwT?=
+ =?us-ascii?Q?a+cI8lbG4mXKQHVG5LPlkETRydmBRAwnwo+ZosO5dgvjTOKTOJe6XXZJKJrj?=
+ =?us-ascii?Q?gZz6siBbn2tUYxtKeJvB70e3oIYadx7Lb5Ulp/PLKK9FtIPAQY4eSVi73yqA?=
+ =?us-ascii?Q?bN6Yl0FUssKuHIZAa7tfSZgEZA4o1eRZ4h2bUtpoII+X9klfONPBzEFmaaqM?=
+ =?us-ascii?Q?urxJpNz4RXCzUmb2ZIyY2O/DBL/Pes36JPxN4zIErVLuZ1VIWyX9R36TU1dM?=
+ =?us-ascii?Q?u2xGHOsEbSgpptChDbdafqQ6AHaZHmIjawFfph5UQlV993VSG7Xjmn4xaw8D?=
+ =?us-ascii?Q?yMhcvWPdIT2UH9Q+BOAMhlJcT88UIQ0KdZqLarjLhHnJ09fVjRhGzlBafKqg?=
+ =?us-ascii?Q?+vHaD1VC0n0RMm9qgoSbXeY0S6/gpAH5/VgTv6PwyJUKt55RRIHjr+6MxwO4?=
+ =?us-ascii?Q?t9EYpTuEF1kxiI7KWxLtQMnDmWVLfjTSomiC48eRMWmZuqo2Ko+wmckHXLur?=
+ =?us-ascii?Q?QzG6ksLtHYR9ehD52HzR9VpTYy6LCnjX58KAXY0zm/M324nRTPDePONbbvEt?=
+ =?us-ascii?Q?N9TSHRA+VlvYz0917zW6Ami2U1vrvzigyvUHxkpAw+8Wi6UaGxXTPDit+od/?=
+ =?us-ascii?Q?k7JvdTGPybMeHaP+1KGyH4Tlz+ZpSyspSWbpsP5Dnhm15nQhKuICfnmtFLj8?=
+ =?us-ascii?Q?fyweHXX8jwvr0C77RK/vp6x6uFIw9n8R//EPzhRUF5z3w/5uX9K/dnMEvN3y?=
+ =?us-ascii?Q?VVfDKfx77VvLjSCUV3SwmBpMxb91nmvQkmnejYk7HtqvvKjIscmMdb+LB5Xi?=
+ =?us-ascii?Q?fpFVcfSkaZSrnvhsj9EjHNSQmhTAmfd0oGkUfdwrnmWYXZVzSBXLIlU/WkbR?=
+ =?us-ascii?Q?1nf+sf9VhYIH9soZxVvfyXefG6Lip+DaGzXUCuQ0C2A/SCgB+J16TEEPDEZG?=
+ =?us-ascii?Q?nGbOqoD+uMNck56FgkGcD6au/w8GFm6UBITNf4fw/hjofK5BH7vKySTfDHqY?=
+ =?us-ascii?Q?iJ4RugnJcFsVwggFj4K6?=
+X-OriginatorOrg: oracle.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 4fe95b1e-f60a-449d-864a-08daeec5dbb3
+X-MS-Exchange-CrossTenant-AuthSource: PH0PR10MB4759.namprd10.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 05 Jan 2023 02:37:59.0321
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 4e2c6054-71cb-48f1-bd6c-3a9705aca71b
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: 1WlaYR5ecmijwqcMukNWolAsRt5Qke6RVG8Qrxz2nrQd9XERQaTbajNw/XmwLYa1zaeQUmWga9w7oGkDNbhkf/9ozfXGdxB/45UlWkJKEm8=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN7PR10MB6307
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.205,Aquarius:18.0.923,Hydra:6.0.545,FMLib:17.11.122.1
+ definitions=2023-01-04_07,2023-01-04_02,2022-06-22_01
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 mlxscore=0 bulkscore=0 mlxlogscore=974
+ malwarescore=0 suspectscore=0 phishscore=0 adultscore=0 spamscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2212070000
+ definitions=main-2301050020
+X-Proofpoint-ORIG-GUID: 7iP5En6R_iCWmPKmwA4RDOoj9vi_ZhpL
+X-Proofpoint-GUID: 7iP5En6R_iCWmPKmwA4RDOoj9vi_ZhpL
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230104_132719_805271_F6D81AA6 
-X-CRM114-Status: GOOD (  13.08  )
+X-CRM114-CacheID: sfid-20230104_183827_238267_9B8D1191 
+X-CRM114-Status: GOOD (  12.26  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,45 +194,21 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Remove the temporary @mask_, this may cause build warning when use clang
-compiler for powerpc, but can't reproduce it when compile for arm64.
-the build warning is -Wtautological-constant-out-of-range-compare, and
-caused by
-"BUILD_BUG_ON_MSG(__bf_cast_unsigned(_mask, _mask)"
 
-After removing @mask_, there is a "CHECK:MACRO_ARG_REUSE" when run
-checkpatch.pl, due to @mask is constant, no reuse problem will happen.
+Manivannan,
 
-Fixes: 84513eccd678 ("phy: mediatek: fix build warning of FIELD_PREP()")
-Reported-by: kernel test robot <lkp@intel.com>
-Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
----
-v6: modify the title
-v5: no changes
-v4 new patch, I'm not sure it can fix build warning, due to I don't cross compile
-    it for powerpc using clang in office.
----
- drivers/phy/mediatek/phy-mtk-io.h | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+>> >   scsi: ufs: core: Add reinit_notify() callback
+>> >   scsi: ufs: core: Add support for reinitializing the UFS device
+>> 
+>> I would like to see some reviews of the proposed core changes.
+>> 
+>
+> Both patches are reviewed by Bart now.
 
-diff --git a/drivers/phy/mediatek/phy-mtk-io.h b/drivers/phy/mediatek/phy-mtk-io.h
-index d20ad5e5be81..58f06db822cb 100644
---- a/drivers/phy/mediatek/phy-mtk-io.h
-+++ b/drivers/phy/mediatek/phy-mtk-io.h
-@@ -39,8 +39,8 @@ static inline void mtk_phy_update_bits(void __iomem *reg, u32 mask, u32 val)
- /* field @mask shall be constant and continuous */
- #define mtk_phy_update_field(reg, mask, val) \
- ({ \
--	typeof(mask) mask_ = (mask);	\
--	mtk_phy_update_bits(reg, mask_, FIELD_PREP(mask_, val)); \
-+	BUILD_BUG_ON_MSG(!__builtin_constant_p(mask), "mask is not constant"); \
-+	mtk_phy_update_bits(reg, mask, FIELD_PREP(mask, val)); \
- })
- 
- #endif
+Series applied to 6.3/scsi-staging, thanks!
+
 -- 
-2.18.0
-
+Martin K. Petersen	Oracle Linux Engineering
 
 -- 
 linux-phy mailing list
