@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7D7F7C54EBE
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E9770C54EF1
 	for <linux-phy@archiver.kernel.org>; Fri,  6 Jan 2023 15:31:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,65 +12,66 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=drC5XlKZENGd4EldDjSF+zv0pq7sQGswAdOZBDDXU2A=; b=Vsc0W17ty3wzHb
-	RajX4Q5+wo0Cy6v0Jr0L2eOO7Csgan1coK55cF4NIMaiUXtOptAgwMV3HXOQEwXBDl9XkzhYGCbfj
-	/M6EO3ZUsHRqaPJZE0wIF9yUEmLWL6/+bslFx+MeZqwMh2RmMUViHlw/5pLrF3X8C9znTi7+91i77
-	zFNAWuG9ASG9ZclnNhsuxXdYYoT8Cttj+9lI8cJW/yPhigeQn+GWnDW7O+zppj42I1eubZ/fxCF89
-	4M//bG4TX35mL8RZX5UG1/Yq42b1EZBp2DiY2EJwL4IUTLKOx2tdV0dvjb2qvsKZGtO0ZKh66EZ/x
-	GojSERhtEz4LjyUEOPog==;
+	List-Owner; bh=TW6jU+HwTC5ccFL8TNPl6AmaTHN6tlxak0XBqzhiQn4=; b=bQzIQkI8GOis1A
+	3zmHjAKccVcmBkqE9Nv8Tdgn7s7GJuV42OdSMgJI1hHzxvujNuOeLFcSymSH1EdJHfy2gy3BegICq
+	repKCXd8dgJpZGANXjnyNEanfarfMCThfPPLX2ft6WsDmBL3dO1nrDr+8QXHdBevK2T44BjXiekoY
+	QtWNm85M5mNn0wdR7vb3tL0Ez5UtepQCeT7irGAMKwJYlDX3su4k58nV5q3A6D8f9B7JaWBafyFG/
+	IzW0CBvI1cf2NPUk76RrwimIhi3zFwkDbD648CghEQomz42R7f/LKVXHHM1+mvFIvfzktYc1gaZAO
+	g4Z102M7IP1JiOnd7U0Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pDogS-009IYP-L7; Fri, 06 Jan 2023 15:31:04 +0000
-Received: from mail-mw2nam10on2076.outbound.protection.outlook.com ([40.107.94.76] helo=NAM10-MW2-obe.outbound.protection.outlook.com)
+	id 1pDogT-009IYv-0h; Fri, 06 Jan 2023 15:31:05 +0000
+Received: from mail-bn8nam12on2054.outbound.protection.outlook.com ([40.107.237.54] helo=NAM12-BN8-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pDof6-009GsN-6x
-	for linux-phy@lists.infradead.org; Fri, 06 Jan 2023 15:29:42 +0000
+	id 1pDof7-009Gsr-1p
+	for linux-phy@lists.infradead.org; Fri, 06 Jan 2023 15:29:43 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=FEHuvb0mHxRTOc82sVmRQd8UhmadGKurw8eq7yfvqoSTpLlFaVaAYRB/pwUsk6//hwE9Ihpdtx/y5tuIQ5mPeuPwu0DKmvavJFIwqQEud/0PD6oNBkVTlPuu6iwTs2FTksHlGW2GBh/C80xDNyNFVvUYoq20Uh5jMbtxfSVVQJQFL+kjrxVnP8fvpL1mUEttO16IX5cKE1gcV1Laq0srizo9UBPqAZeauRo8udW8KYDjGWTL5LwUAuFGKtugq4eqnLx7EkK3b4cFA8a7b8Jy78gGTuh97hRRV8zlf5QeoFzVf0/UG7o2jueGIt8Mf6hgMRBXrQHJoZFfV6pAp3lerQ==
+ b=VzlNRBz6nQ9UDGDsJbAeAUj1BtXKyC077cv5ZIpanThL2AZ3wT5f0XC/sKL8Mgl9NAUo0S9fEvGXL4DrJxwJSwmViFwvbRKAx1iM7AK8tLGS5nLzStMiAY9hj9MN3QkVXSmchlTswuN/IQ/QpSZqIinWqvIeymw6z0LTkmYNZsGR59XuL1aSe1wIRHsayo6dKOui97UjEoooC0Uo1rULMCdpmX4Gf+bKYiN3I3QalvJ4klaL1BzNZIy3Sp0h1GBHtu7rMAKa7tLNrkxoQBZ5Q0/7404ecjCVd3UywGHsexUC9wd+YFvxWvB2tJI9x45i9Gu4oLPP+adw+sCMQWodjA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=YE0fXBMFd+7kCX5TOCR6h9f2BUWB5Ppry3tMQJVUJyo=;
- b=BCj5SOAm8MEr8AISjXTAhCBzfLIk3bbitp9+rengGoWY2Zc5hpozoCpeT/vHpK1MBhruTJ3826NegfDMnO4h3S3H5LsY4TZql8jNVmmdFA4Y6ZbugVeiJJiZbzDQS/ScCmj9mBlqFhToZzIg7h1r5n/t/irBVVe8jOHU19arRNd1HC/Pe9brMoiWY75rH4KLF5moiBj7uuCeqxMjcPXBZWXDdB19NjewzjgoJyyFm3IG6Tsh/rPebBXKX+Z7nAhQ2jlmT19pTZz3Tul7KqE8XLGPpJG6/39ijfRr3ViuzjewPUEMVDmyKi7zZBYbudVTROIq2VXRfHj0uA68o/fF0g==
+ bh=eM6KUc/IqbulPoLcB75niZTNeCw5/ogKpuZKNi+N4kI=;
+ b=FxOgORJo9KHi26aytRbu5jDZZLr5vHaUc4TZbuBETw4aZZIeR3lF/Mu4rmTDaIfy402Lh598X1itbIEjIUcxZB0mCAbgizIODpa9MHamr4cUdHm0s3r8sRSJ8CgGUY/GmJpkmui1bHV+5eNYDINHJMK3P9z74PsAAgunxjpslt+oFdQW+3N5TY9jvYfopqNFOArSXrwTUlVgsWFcz8FjjEwY/8/p3xkxrIh6G2tSzXtvsJLv8LwQsRu/dKvsjfcPWDcI8bgrVjeUGV9oSe8XlK0CZSPV/zZXjJubE5/8Rn1bcwuvwvdadUr6X1AMUW10KmBzDF5AWzni+SDjSLj4mQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 216.228.117.160) smtp.rcpttodomain=linuxfoundation.org
+ 216.228.117.161) smtp.rcpttodomain=linuxfoundation.org
  smtp.mailfrom=nvidia.com; dmarc=pass (p=reject sp=reject pct=100) action=none
  header.from=nvidia.com; dkim=none (message not signed); arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
  s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=YE0fXBMFd+7kCX5TOCR6h9f2BUWB5Ppry3tMQJVUJyo=;
- b=HiWyMXZUukQRHyKrja24TTBhGMWL21hjAtHkaZIgpFGLCoVEHpnBlTEgSU0HCMgkRY5Z8L3Cy0C6SkToDq6NqLYd/7Ga5G7zZw0cZnXt2wKW6QeHYoOG6ivDCc7w0Qcxvr3c3/LPAN2c/k6WFEB3FzbutGkq/xLzJJHbydIk2ZzQJYtoFvwWphe+Bd2TXvELzflFCfhu7OfTDnxgpgV5RNAhpgt8ebobCgUehN2PDAZ3lD6R46OsrLINXcxYS/eEqaoavaEIadK86qFhwlzijBJogFgLcvDXpXgBqzzRUcKcFuUe+tj09scM3bXZEdnPZmeFVznNonaK992sBN3zhQ==
-Received: from MW2PR16CA0035.namprd16.prod.outlook.com (2603:10b6:907::48) by
- DM6PR12MB4171.namprd12.prod.outlook.com (2603:10b6:5:21f::18) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.5944.19; Fri, 6 Jan 2023 15:29:34 +0000
-Received: from CO1NAM11FT036.eop-nam11.prod.protection.outlook.com
- (2603:10b6:907:0:cafe::d0) by MW2PR16CA0035.outlook.office365.com
- (2603:10b6:907::48) with Microsoft SMTP Server (version=TLS1_2,
+ bh=eM6KUc/IqbulPoLcB75niZTNeCw5/ogKpuZKNi+N4kI=;
+ b=RJirIii77vUd4hmpLAEM7/TP+5Cz9/QzI1CQo1eHeprRbLzNUA4F1bc2xu6+KL9h/h0B3pKSc2QosDSgZ+INJjxyqxUaXF0tKDPueI2FHEaXqwPBCPUPA8ZsduTU1qXh2W7qMQU4wrg+dR83Mg3KoYfDUddoAiVgb60Px8pacB/QagJIcwj8zlZeghHgijAvOnSLEG2cgQ0UFF1sNf/KUKGPZb1/+iJP6metFLGnmeyE13vBEW4/A/pJN75m+NZfk0RrKJmTkYs6VmEr8pseTsX8W9DzOIPvy+4RZ8r+QKb0rG9Z/VFJxk1kWs4HYM7LZvof+anmiUMq62bxGSuu2Q==
+Received: from BN9P220CA0014.NAMP220.PROD.OUTLOOK.COM (2603:10b6:408:13e::19)
+ by DS7PR12MB5792.namprd12.prod.outlook.com (2603:10b6:8:77::22) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5944.19; Fri, 6 Jan
+ 2023 15:29:34 +0000
+Received: from BN8NAM11FT081.eop-nam11.prod.protection.outlook.com
+ (2603:10b6:408:13e:cafe::89) by BN9P220CA0014.outlook.office365.com
+ (2603:10b6:408:13e::19) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5986.15 via Frontend
  Transport; Fri, 6 Jan 2023 15:29:33 +0000
-X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 216.228.117.160)
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 216.228.117.161)
  smtp.mailfrom=nvidia.com; dkim=none (message not signed)
  header.d=none;dmarc=pass action=none header.from=nvidia.com;
 Received-SPF: Pass (protection.outlook.com: domain of nvidia.com designates
- 216.228.117.160 as permitted sender) receiver=protection.outlook.com;
- client-ip=216.228.117.160; helo=mail.nvidia.com; pr=C
-Received: from mail.nvidia.com (216.228.117.160) by
- CO1NAM11FT036.mail.protection.outlook.com (10.13.174.124) with Microsoft SMTP
+ 216.228.117.161 as permitted sender) receiver=protection.outlook.com;
+ client-ip=216.228.117.161; helo=mail.nvidia.com; pr=C
+Received: from mail.nvidia.com (216.228.117.161) by
+ BN8NAM11FT081.mail.protection.outlook.com (10.13.177.233) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.5966.17 via Frontend Transport; Fri, 6 Jan 2023 15:29:33 +0000
-Received: from rnnvmail201.nvidia.com (10.129.68.8) by mail.nvidia.com
- (10.129.200.66) with Microsoft SMTP Server (version=TLS1_2,
+ 15.20.5944.17 via Frontend Transport; Fri, 6 Jan 2023 15:29:33 +0000
+Received: from rnnvmail202.nvidia.com (10.129.68.7) by mail.nvidia.com
+ (10.129.200.67) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.986.36; Fri, 6 Jan 2023
- 07:29:26 -0800
-Received: from rnnvmail203.nvidia.com (10.129.68.9) by rnnvmail201.nvidia.com
- (10.129.68.8) with Microsoft SMTP Server (version=TLS1_2,
+ 07:29:20 -0800
+Received: from rnnvmail203.nvidia.com (10.129.68.9) by rnnvmail202.nvidia.com
+ (10.129.68.7) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.986.36; Fri, 6 Jan 2023
- 07:29:25 -0800
+ 07:29:19 -0800
 Received: from moonraker.nvidia.com (10.127.8.13) by mail.nvidia.com
  (10.129.68.9) with Microsoft SMTP Server id 15.2.986.36 via Frontend
- Transport; Fri, 6 Jan 2023 07:29:23 -0800
+ Transport; Fri, 6 Jan 2023 07:29:17 -0800
 From: Jon Hunter <jonathanh@nvidia.com>
 To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Rob Herring
 	<robh+dt@kernel.org>, Krzysztof Kozlowski
@@ -78,11 +79,11 @@ To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Rob Herring
 	<thierry.reding@gmail.com>, Vinod Koul <vkoul@kernel.org>
 CC: <linux-usb@vger.kernel.org>, <devicetree@vger.kernel.org>,
 	<linux-tegra@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-	<waynec@nvidia.com>, Sing-Han Chen <singhanc@nvidia.com>, Jon Hunter
+	<waynec@nvidia.com>, Thierry Reding <treding@nvidia.com>, Jon Hunter
 	<jonathanh@nvidia.com>
-Subject: [PATCH V5 5/6] phy: tegra: xusb: Add Tegra234 support
-Date: Fri, 6 Jan 2023 15:28:57 +0000
-Message-ID: <20230106152858.49574-6-jonathanh@nvidia.com>
+Subject: [PATCH V5 3/6] arm64: tegra: Enable XUSB host function on Jetson AGX Orin
+Date: Fri, 6 Jan 2023 15:28:55 +0000
+Message-ID: <20230106152858.49574-4-jonathanh@nvidia.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20230106152858.49574-1-jonathanh@nvidia.com>
 References: <20230106152858.49574-1-jonathanh@nvidia.com>
@@ -90,26 +91,27 @@ MIME-Version: 1.0
 X-NVConfidentiality: public
 X-EOPAttributedMessage: 0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: CO1NAM11FT036:EE_|DM6PR12MB4171:EE_
-X-MS-Office365-Filtering-Correlation-Id: 89a4516a-0baf-483c-1879-08daeffad000
+X-MS-TrafficTypeDiagnostic: BN8NAM11FT081:EE_|DS7PR12MB5792:EE_
+X-MS-Office365-Filtering-Correlation-Id: fcb10b6f-bc85-4527-e714-08daeffad01a
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 	5mEaR2MjkD3zMnA7IWsOUcbi80j+Q9ojq7X7t0mMP9VXFK2bIEi45+lNVYtDUwSq3Wy22/Txy4Qr+JfCee6T2VkzunX87ghDRDoiUV3lSzY8hB0vcqNtnH9xUkRPYJPJg7Xumu8yuDG+ofR3+E0iEfELh5XrpYdDUawFLuV0tS0poi7pi4y07Ml73IQfwlZVQHs2gUzajtVctnuDNEsy5wujgbFzDtBeCP0QdVFwxbau+8W/zkukovTmDQyeDunfTb6mKDbnVKqiEWeJ/asMa3fGCCpIlqjhyQ0X8FAWbnE3mK2PzLWsUy1XrvGS32moroO28eQGi+VE6mjhau84IvOQhYgLac/RX1PKuVEAH7hRcVkFY3SXkQbgieabdmeWzGpv99yo2KwU3FKJ7zM/cAGfxy/jxdlc+5b8N4X52yWGmuYmC8V+4PL30T/J8WwoN6pfHD5o861XUiWG5/6X5RgBlbEiwomiLp5QHvDAW5NmCvp3ZQVSFYI6UoywrK0KbAjKKjoLHeeyzEn4vCiHcXfeDW0Vk6QHrn9q1+mFAREQbwttmW2dX+8OPePxULDXSljudFFicCAUMexw3fRN+0+JrjkrBXF7OOFbeQQbgOhy/rY/mpHnMUuF/jMQMrwC8GfeuWQ+Bdd4lVqJQkbv7H+/3BAK5Z/8UNL6R4mZ7Wx4qc4AyKPIMpKiTXQ9NTUH7Y+/B/zDs6GElQvniDLXuQ==
-X-Forefront-Antispam-Report: 	CIP:216.228.117.160;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc6edge1.nvidia.com;CAT:NONE;SFS:(13230022)(4636009)(346002)(376002)(136003)(39860400002)(396003)(451199015)(46966006)(40470700004)(36840700001)(7696005)(26005)(186003)(54906003)(316002)(7636003)(478600001)(110136005)(70206006)(8676002)(107886003)(4326008)(336012)(6666004)(2616005)(1076003)(70586007)(8936002)(47076005)(426003)(5660300002)(2906002)(83380400001)(41300700001)(356005)(36756003)(40460700003)(82740400003)(36860700001)(86362001)(82310400005)(40480700001);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam-Message-Info: 	1zjI1se6pcjrgaJSztQX9bHFrO/AsRZwAYacs8kVmLBXgWXO53TkaM4Iv3YEOcfLv8zRQLfDE3r5pyerzNag8b7VkBqZ19Lserhu7viktBrAIj6L4St9rjaK6fXfUhJcyinyVWmDd90k4+7WgnlCijgekEpsR4S3sOdgdbwOmvXQW9KfnG2nliO6TFr2SERVxdobhGFWOWlWH+xB4fotu13wyeunouptNJxASlKMsBoHUh7PEwgpNr9xxhlONFXtu7lt1H14IHYpOqTHyx6ypkgS+bIcrprhKVi0g7nrH0+dmnejWJ2gYPOTdNkHLL91lqUt7pPjoNf97uxeq3ya4q+/ExsM3HfZ+ZXzDpz51/V1PyCc9QnqQy/Mk7fswxe7nHyVyv168a1vd/EVc8QK5MmoUhuvKbkT6hu1cB9Izxhh/9j5YdUspfK4L7V8bTy3FjTemhUu+dx0zfwmfn7rN/gDEB5IyvuANdT/qTGmGQeyZP22E4gur32Q07BvQpE7h8UaNqvHp5TzrYA/B8CuzZgqjq9cgj+hbWd3rylnkIT2pHY7ZuDI7aVbLEnYBaP666sG3P+I8U158LMGMQ1WJvBtt5wf8QJ0WnTIScSgPde0HZUEkSsPKA7eexLZbhAi3V4K8n5eI40lLRjuSNmDA4xUfXZ+eABtki3dNDw8c1Q5M+BSpnAtk7s+UX2Lgf+p2EShiP8+IokfQkPBEw88Ew==
+X-Forefront-Antispam-Report: 	CIP:216.228.117.161;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc6edge2.nvidia.com;CAT:NONE;SFS:(13230022)(4636009)(136003)(396003)(376002)(346002)(39860400002)(451199015)(40470700004)(46966006)(36840700001)(82740400003)(7636003)(356005)(40480700001)(82310400005)(86362001)(316002)(40460700003)(54906003)(36756003)(1076003)(2616005)(7696005)(110136005)(478600001)(107886003)(6666004)(26005)(186003)(5660300002)(2906002)(83380400001)(36860700001)(70586007)(8676002)(70206006)(4326008)(41300700001)(336012)(8936002)(47076005)(426003);DIR:OUT;SFP:1101;
 X-OriginatorOrg: Nvidia.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 06 Jan 2023 15:29:33.5938
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 06 Jan 2023 15:29:33.6601
  (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 89a4516a-0baf-483c-1879-08daeffad000
+X-MS-Exchange-CrossTenant-Network-Message-Id: fcb10b6f-bc85-4527-e714-08daeffad01a
 X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[216.228.117.160];Helo=[mail.nvidia.com]
-X-MS-Exchange-CrossTenant-AuthSource: 	CO1NAM11FT036.eop-nam11.prod.protection.outlook.com
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[216.228.117.161];Helo=[mail.nvidia.com]
+X-MS-Exchange-CrossTenant-AuthSource: 	BN8NAM11FT081.eop-nam11.prod.protection.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Anonymous
 X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR12MB4171
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DS7PR12MB5792
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230106_072940_294677_DDBEE477 
-X-CRM114-Status: GOOD (  20.60  )
+X-CRM114-CacheID: sfid-20230106_072941_197453_FBEB79C3 
+X-CRM114-Status: UNSURE (   9.99  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -126,221 +128,348 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Sing-Han Chen <singhanc@nvidia.com>
+From: Wayne Chang <waynec@nvidia.com>
 
-Add support for the XUSB pad controller found on Tegra234 SoCs. It is
-mostly similar to the same IP found on Tegra194, because most of
-the Tegra234 XUSB PADCTL registers definition and programming sequence
-are the same as Tegra194, Tegra234 XUSB PADCTL can share the same
-driver with Tegra186 and Tegra194 XUSB PADCTL.
+This commit enables XUSB host and pad controller on Jetson AGX Orin.
 
-Introduce a new feature, USB2 HW tracking, for Tegra234.
-The feature is to enable HW periodical PAD tracking which measure
-and capture the electric parameters of USB2.0 PAD.
-
-Signed-off-by: Sing-Han Chen <singhanc@nvidia.com>
-Co-developed-by: Wayne Chang <waynec@nvidia.com>
 Signed-off-by: Wayne Chang <waynec@nvidia.com>
+Signed-off-by: Thierry Reding <treding@nvidia.com>
 Signed-off-by: Jon Hunter <jonathanh@nvidia.com>
 ---
-V4 -> V5: no changes
-V3 -> V4: fixed checkpatch warnings
-V2 -> V3: nothing has changed
-V1 -> V2: remove atomic and the helper in padctl_readl_poll func.
+V4 -> V5: No changes
+V3 -> V4: dropped support for the USB device and type-c connector
+V2 -> V3: nothing has changed but added the dependency here
+V1 -> V2: removed the redundant cells and status in ucsi-cc
 
- drivers/phy/tegra/Makefile        |  1 +
- drivers/phy/tegra/xusb-tegra186.c | 64 +++++++++++++++++++++++++++++--
- drivers/phy/tegra/xusb.c          |  6 +++
- drivers/phy/tegra/xusb.h          | 23 +++++++++++
- 4 files changed, 91 insertions(+), 3 deletions(-)
+ .../boot/dts/nvidia/tegra234-p3701-0000.dtsi  |  48 ++++++
+ .../nvidia/tegra234-p3737-0000+p3701-0000.dts |  93 +++++++++++
+ arch/arm64/boot/dts/nvidia/tegra234.dtsi      | 145 ++++++++++++++++++
+ 3 files changed, 286 insertions(+)
 
-diff --git a/drivers/phy/tegra/Makefile b/drivers/phy/tegra/Makefile
-index 89b84067cb4c..eeeea72de117 100644
---- a/drivers/phy/tegra/Makefile
-+++ b/drivers/phy/tegra/Makefile
-@@ -7,4 +7,5 @@ phy-tegra-xusb-$(CONFIG_ARCH_TEGRA_132_SOC) += xusb-tegra124.o
- phy-tegra-xusb-$(CONFIG_ARCH_TEGRA_210_SOC) += xusb-tegra210.o
- phy-tegra-xusb-$(CONFIG_ARCH_TEGRA_186_SOC) += xusb-tegra186.o
- phy-tegra-xusb-$(CONFIG_ARCH_TEGRA_194_SOC) += xusb-tegra186.o
-+phy-tegra-xusb-$(CONFIG_ARCH_TEGRA_234_SOC) += xusb-tegra186.o
- obj-$(CONFIG_PHY_TEGRA194_P2U) += phy-tegra194-p2u.o
-diff --git a/drivers/phy/tegra/xusb-tegra186.c b/drivers/phy/tegra/xusb-tegra186.c
-index c00d14f27ab4..1aae8535f452 100644
---- a/drivers/phy/tegra/xusb-tegra186.c
-+++ b/drivers/phy/tegra/xusb-tegra186.c
-@@ -89,6 +89,11 @@
- #define  USB2_TRK_START_TIMER(x)		(((x) & 0x7f) << 12)
- #define  USB2_TRK_DONE_RESET_TIMER(x)		(((x) & 0x7f) << 19)
- #define  USB2_PD_TRK				BIT(26)
-+#define  USB2_TRK_COMPLETED			BIT(31)
+diff --git a/arch/arm64/boot/dts/nvidia/tegra234-p3701-0000.dtsi b/arch/arm64/boot/dts/nvidia/tegra234-p3701-0000.dtsi
+index 8b86ea9cb50c..4fae2547e90e 100644
+--- a/arch/arm64/boot/dts/nvidia/tegra234-p3701-0000.dtsi
++++ b/arch/arm64/boot/dts/nvidia/tegra234-p3701-0000.dtsi
+@@ -67,6 +67,29 @@ mmc@3460000 {
+ 			non-removable;
+ 		};
+ 
++		padctl@3520000 {
++			vclamp-usb-supply = <&vdd_ao_1v8>;
++			avdd-usb-supply = <&vdd_ao_3v3>;
 +
-+#define XUSB_PADCTL_USB2_BIAS_PAD_CTL2		0x28c
-+#define  USB2_TRK_HW_MODE			BIT(0)
-+#define  CYA_TRK_CODE_UPDATE_ON_IDLE		BIT(31)
- 
- #define XUSB_PADCTL_HSIC_PADX_CTL0(x)		(0x300 + (x) * 0x20)
- #define  HSIC_PD_TX_DATA0			BIT(1)
-@@ -609,9 +614,31 @@ static void tegra186_utmi_bias_pad_power_on(struct tegra_xusb_padctl *padctl)
- 	value &= ~USB2_PD_TRK;
- 	padctl_writel(padctl, value, XUSB_PADCTL_USB2_BIAS_PAD_CTL1);
- 
--	udelay(100);
-+	if (padctl->soc->poll_trk_completed) {
-+		err = padctl_readl_poll(padctl, XUSB_PADCTL_USB2_BIAS_PAD_CTL1,
-+					USB2_TRK_COMPLETED, USB2_TRK_COMPLETED, 100);
-+		if (err) {
-+			/* The failure with polling on trk complete will not
-+			 * cause the failure of powering on the bias pad.
-+			 */
-+			dev_warn(dev, "failed to poll USB2 trk completed: %d\n", err);
-+		}
- 
--	clk_disable_unprepare(priv->usb2_trk_clk);
-+		value = padctl_readl(padctl, XUSB_PADCTL_USB2_BIAS_PAD_CTL1);
-+		value |= USB2_TRK_COMPLETED;
-+		padctl_writel(padctl, value, XUSB_PADCTL_USB2_BIAS_PAD_CTL1);
-+	} else {
-+		udelay(100);
-+	}
++			ports {
++				usb2-0 {
++					vbus-supply = <&vdd_5v0_sys>;
++				};
 +
-+	if (padctl->soc->trk_hw_mode) {
-+		value = padctl_readl(padctl, XUSB_PADCTL_USB2_BIAS_PAD_CTL2);
-+		value |= USB2_TRK_HW_MODE;
-+		value &= ~CYA_TRK_CODE_UPDATE_ON_IDLE;
-+		padctl_writel(padctl, value, XUSB_PADCTL_USB2_BIAS_PAD_CTL2);
-+	} else {
-+		clk_disable_unprepare(priv->usb2_trk_clk);
-+	}
- 
- 	mutex_unlock(&padctl->lock);
- }
-@@ -637,6 +664,13 @@ static void tegra186_utmi_bias_pad_power_off(struct tegra_xusb_padctl *padctl)
- 	value |= USB2_PD_TRK;
- 	padctl_writel(padctl, value, XUSB_PADCTL_USB2_BIAS_PAD_CTL1);
- 
-+	if (padctl->soc->trk_hw_mode) {
-+		value = padctl_readl(padctl, XUSB_PADCTL_USB2_BIAS_PAD_CTL2);
-+		value &= ~USB2_TRK_HW_MODE;
-+		padctl_writel(padctl, value, XUSB_PADCTL_USB2_BIAS_PAD_CTL2);
-+		clk_disable_unprepare(priv->usb2_trk_clk);
-+	}
++				usb2-1 {
++					vbus-supply = <&vdd_5v0_sys>;
++				};
 +
- 	mutex_unlock(&padctl->lock);
- }
- 
-@@ -1559,7 +1593,8 @@ const struct tegra_xusb_padctl_soc tegra186_xusb_padctl_soc = {
- EXPORT_SYMBOL_GPL(tegra186_xusb_padctl_soc);
- #endif
- 
--#if IS_ENABLED(CONFIG_ARCH_TEGRA_194_SOC)
-+#if IS_ENABLED(CONFIG_ARCH_TEGRA_194_SOC) || \
-+	IS_ENABLED(CONFIG_ARCH_TEGRA_234_SOC)
- static const char * const tegra194_xusb_padctl_supply_names[] = {
- 	"avdd-usb",
- 	"vclamp-usb",
-@@ -1615,8 +1650,31 @@ const struct tegra_xusb_padctl_soc tegra194_xusb_padctl_soc = {
- 	.supply_names = tegra194_xusb_padctl_supply_names,
- 	.num_supplies = ARRAY_SIZE(tegra194_xusb_padctl_supply_names),
- 	.supports_gen2 = true,
-+	.poll_trk_completed = true,
++				usb2-2 {
++					vbus-supply = <&vdd_5v0_sys>;
++				};
++
++				usb2-3 {
++					vbus-supply = <&vdd_5v0_sys>;
++				};
++			};
++		};
++
+ 		rtc@c2a0000 {
+ 			status = "okay";
+ 		};
+@@ -75,4 +98,29 @@ pmc@c360000 {
+ 			nvidia,invert-interrupt;
+ 		};
+ 	};
++
++	vdd_5v0_sys: regulator-vdd-5v0-sys {
++		compatible = "regulator-fixed";
++		regulator-name = "VIN_SYS_5V0";
++		regulator-min-microvolt = <5000000>;
++		regulator-max-microvolt = <5000000>;
++		regulator-always-on;
++		regulator-boot-on;
++	};
++
++	vdd_ao_1v8: regulator-vdd-1v8-ao {
++		compatible = "regulator-fixed";
++		regulator-name = "vdd-AO-1v8";
++		regulator-min-microvolt = <1800000>;
++		regulator-max-microvolt = <1800000>;
++		regulator-always-on;
++	};
++
++	vdd_ao_3v3: regulator-vdd-3v3-ao {
++		compatible = "regulator-fixed";
++		regulator-name = "vdd-AO-3v3";
++		regulator-min-microvolt = <3300000>;
++		regulator-max-microvolt = <3300000>;
++		regulator-always-on;
++	};
  };
- EXPORT_SYMBOL_GPL(tegra194_xusb_padctl_soc);
+diff --git a/arch/arm64/boot/dts/nvidia/tegra234-p3737-0000+p3701-0000.dts b/arch/arm64/boot/dts/nvidia/tegra234-p3737-0000+p3701-0000.dts
+index 96aa2267b06d..32c58aa00035 100644
+--- a/arch/arm64/boot/dts/nvidia/tegra234-p3737-0000+p3701-0000.dts
++++ b/arch/arm64/boot/dts/nvidia/tegra234-p3737-0000+p3701-0000.dts
+@@ -2022,6 +2022,99 @@ hda@3510000 {
+ 			nvidia,model = "NVIDIA Jetson AGX Orin HDA";
+ 			status = "okay";
+ 		};
 +
-+const struct tegra_xusb_padctl_soc tegra234_xusb_padctl_soc = {
-+	.num_pads = ARRAY_SIZE(tegra194_pads),
-+	.pads = tegra194_pads,
-+	.ports = {
-+		.usb2 = {
-+			.ops = &tegra186_usb2_port_ops,
-+			.count = 4,
-+		},
-+		.usb3 = {
-+			.ops = &tegra186_usb3_port_ops,
-+			.count = 4,
-+		},
-+	},
-+	.ops = &tegra186_xusb_padctl_ops,
-+	.supply_names = tegra194_xusb_padctl_supply_names,
-+	.num_supplies = ARRAY_SIZE(tegra194_xusb_padctl_supply_names),
-+	.supports_gen2 = true,
-+	.poll_trk_completed = true,
-+	.trk_hw_mode = true,
-+};
-+EXPORT_SYMBOL_GPL(tegra234_xusb_padctl_soc);
- #endif
- 
- MODULE_AUTHOR("JC Kuo <jckuo@nvidia.com>");
-diff --git a/drivers/phy/tegra/xusb.c b/drivers/phy/tegra/xusb.c
-index ff4b930879f3..3707a0b5c1ae 100644
---- a/drivers/phy/tegra/xusb.c
-+++ b/drivers/phy/tegra/xusb.c
-@@ -71,6 +71,12 @@ static const struct of_device_id tegra_xusb_padctl_of_match[] = {
- 		.compatible = "nvidia,tegra194-xusb-padctl",
- 		.data = &tegra194_xusb_padctl_soc,
- 	},
-+#endif
-+#if defined(CONFIG_ARCH_TEGRA_234_SOC)
-+	{
-+		.compatible = "nvidia,tegra234-xusb-padctl",
-+		.data = &tegra234_xusb_padctl_soc,
-+	},
- #endif
- 	{ }
- };
-diff --git a/drivers/phy/tegra/xusb.h b/drivers/phy/tegra/xusb.h
-index c384734a61c2..8bd6cd281119 100644
---- a/drivers/phy/tegra/xusb.h
-+++ b/drivers/phy/tegra/xusb.h
-@@ -8,6 +8,7 @@
- #define __PHY_TEGRA_XUSB_H
- 
- #include <linux/io.h>
-+#include <linux/iopoll.h>
- #include <linux/mutex.h>
- #include <linux/workqueue.h>
- 
-@@ -431,6 +432,8 @@ struct tegra_xusb_padctl_soc {
- 	unsigned int num_supplies;
- 	bool supports_gen2;
- 	bool need_fake_usb3_port;
-+	bool poll_trk_completed;
-+	bool trk_hw_mode;
- };
- 
- struct tegra_xusb_padctl {
-@@ -473,6 +476,23 @@ static inline u32 padctl_readl(struct tegra_xusb_padctl *padctl,
- 	return value;
- }
- 
-+static inline u32 padctl_readl_poll(struct tegra_xusb_padctl *padctl,
-+				    unsigned long offset, u32 val, u32 mask,
-+				    int us)
-+{
-+	u32 regval;
-+	int err;
++		padctl@3520000 {
++			status = "okay";
 +
-+	err = readl_poll_timeout(padctl->regs + offset, regval,
-+				 (regval & mask) == val, 1, us);
-+	if (err) {
-+		dev_err(padctl->dev, "%08lx poll timeout > %08x\n", offset,
-+			regval);
-+	}
++			pads {
++				usb2 {
++					lanes {
++						usb2-0 {
++							status = "okay";
++						};
 +
-+	return err;
-+}
++						usb2-1 {
++							status = "okay";
++						};
 +
- struct tegra_xusb_lane *tegra_xusb_find_lane(struct tegra_xusb_padctl *padctl,
- 					     const char *name,
- 					     unsigned int index);
-@@ -489,5 +509,8 @@ extern const struct tegra_xusb_padctl_soc tegra186_xusb_padctl_soc;
- #if defined(CONFIG_ARCH_TEGRA_194_SOC)
- extern const struct tegra_xusb_padctl_soc tegra194_xusb_padctl_soc;
- #endif
-+#if defined(CONFIG_ARCH_TEGRA_234_SOC)
-+extern const struct tegra_xusb_padctl_soc tegra234_xusb_padctl_soc;
-+#endif
++						usb2-2 {
++							status = "okay";
++						};
++
++						usb2-3 {
++							status = "okay";
++						};
++					};
++				};
++
++				usb3 {
++					lanes {
++						usb3-0 {
++							status = "okay";
++						};
++
++						usb3-1 {
++							status = "okay";
++						};
++
++						usb3-2 {
++							status = "okay";
++						};
++					};
++				};
++			};
++
++			ports {
++				usb2-0 {
++					mode = "host";
++					status = "okay";
++				};
++
++				usb2-1 {
++					mode = "host";
++					status = "okay";
++				};
++
++				usb2-2 {
++					mode = "host";
++					status = "okay";
++				};
++
++				usb2-3 {
++					mode = "host";
++					status = "okay";
++				};
++
++				usb3-0 {
++					nvidia,usb2-companion = <1>;
++					status = "okay";
++				};
++
++				usb3-1 {
++					nvidia,usb2-companion = <0>;
++					status = "okay";
++				};
++
++				usb3-2 {
++					nvidia,usb2-companion = <3>;
++					status = "okay";
++				};
++			};
++		};
++
++		usb@3610000 {
++			status = "okay";
++
++			phys =	<&{/bus@0/padctl@3520000/pads/usb2/lanes/usb2-0}>,
++				<&{/bus@0/padctl@3520000/pads/usb2/lanes/usb2-1}>,
++				<&{/bus@0/padctl@3520000/pads/usb2/lanes/usb2-2}>,
++				<&{/bus@0/padctl@3520000/pads/usb2/lanes/usb2-3}>,
++				<&{/bus@0/padctl@3520000/pads/usb3/lanes/usb3-0}>,
++				<&{/bus@0/padctl@3520000/pads/usb3/lanes/usb3-1}>,
++				<&{/bus@0/padctl@3520000/pads/usb3/lanes/usb3-2}>;
++			phy-names = "usb2-0", "usb2-1", "usb2-2", "usb2-3",
++				"usb3-0", "usb3-1", "usb3-2";
++		};
+ 	};
  
- #endif /* __PHY_TEGRA_XUSB_H */
+ 	chosen {
+diff --git a/arch/arm64/boot/dts/nvidia/tegra234.dtsi b/arch/arm64/boot/dts/nvidia/tegra234.dtsi
+index ec8a28a9d380..d71b0b5b931c 100644
+--- a/arch/arm64/boot/dts/nvidia/tegra234.dtsi
++++ b/arch/arm64/boot/dts/nvidia/tegra234.dtsi
+@@ -1079,6 +1079,151 @@ hda@3510000 {
+ 			status = "disabled";
+ 		};
+ 
++		xusb_padctl: padctl@3520000 {
++			compatible = "nvidia,tegra234-xusb-padctl";
++			reg = <0x03520000 0x20000>,
++			      <0x03540000 0x10000>;
++			reg-names = "padctl", "ao";
++			interrupts = <GIC_SPI 167 IRQ_TYPE_LEVEL_HIGH>;
++
++			resets = <&bpmp TEGRA234_RESET_XUSB_PADCTL>;
++			reset-names = "padctl";
++
++			status = "disabled";
++
++			pads {
++				usb2 {
++					clocks = <&bpmp TEGRA234_CLK_USB2_TRK>;
++					clock-names = "trk";
++
++					lanes {
++						usb2-0 {
++							nvidia,function = "xusb";
++							status = "disabled";
++							#phy-cells = <0>;
++						};
++
++						usb2-1 {
++							nvidia,function = "xusb";
++							status = "disabled";
++							#phy-cells = <0>;
++						};
++
++						usb2-2 {
++							nvidia,function = "xusb";
++							status = "disabled";
++							#phy-cells = <0>;
++						};
++
++						usb2-3 {
++							nvidia,function = "xusb";
++							status = "disabled";
++							#phy-cells = <0>;
++						};
++					};
++				};
++
++				usb3 {
++					lanes {
++						usb3-0 {
++							nvidia,function = "xusb";
++							status = "disabled";
++							#phy-cells = <0>;
++						};
++
++						usb3-1 {
++							nvidia,function = "xusb";
++							status = "disabled";
++							#phy-cells = <0>;
++						};
++
++						usb3-2 {
++							nvidia,function = "xusb";
++							status = "disabled";
++							#phy-cells = <0>;
++						};
++
++						usb3-3 {
++							nvidia,function = "xusb";
++							status = "disabled";
++							#phy-cells = <0>;
++						};
++					};
++				};
++			};
++
++			ports {
++				usb2-0 {
++					status = "disabled";
++				};
++
++				usb2-1 {
++					status = "disabled";
++				};
++
++				usb2-2 {
++					status = "disabled";
++				};
++
++				usb2-3 {
++					status = "disabled";
++				};
++
++				usb3-0 {
++					status = "disabled";
++				};
++
++				usb3-1 {
++					status = "disabled";
++				};
++
++				usb3-2 {
++					status = "disabled";
++				};
++
++				usb3-3 {
++					status = "disabled";
++				};
++			};
++		};
++
++		usb@3610000 {
++			compatible = "nvidia,tegra234-xusb";
++			reg = <0x03610000 0x40000>,
++			      <0x03600000 0x10000>,
++			      <0x03650000 0x10000>;
++			reg-names = "hcd", "fpci", "bar2";
++
++			interrupts = <GIC_SPI 163 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 164 IRQ_TYPE_LEVEL_HIGH>;
++
++			clocks = <&bpmp TEGRA234_CLK_XUSB_CORE_HOST>,
++				 <&bpmp TEGRA234_CLK_XUSB_FALCON>,
++				 <&bpmp TEGRA234_CLK_XUSB_CORE_SS>,
++				 <&bpmp TEGRA234_CLK_XUSB_SS>,
++				 <&bpmp TEGRA234_CLK_CLK_M>,
++				 <&bpmp TEGRA234_CLK_XUSB_FS>,
++				 <&bpmp TEGRA234_CLK_UTMIP_PLL>,
++				 <&bpmp TEGRA234_CLK_CLK_M>,
++				 <&bpmp TEGRA234_CLK_PLLE>;
++			clock-names = "xusb_host", "xusb_falcon_src",
++				      "xusb_ss", "xusb_ss_src", "xusb_hs_src",
++				      "xusb_fs_src", "pll_u_480m", "clk_m",
++				      "pll_e";
++			interconnects = <&mc TEGRA234_MEMORY_CLIENT_XUSB_HOSTR &emc>,
++					<&mc TEGRA234_MEMORY_CLIENT_XUSB_HOSTW &emc>;
++			interconnect-names = "dma-mem", "write";
++			iommus = <&smmu_niso1 TEGRA234_SID_XUSB_HOST>;
++
++			power-domains = <&bpmp TEGRA234_POWER_DOMAIN_XUSBC>,
++					<&bpmp TEGRA234_POWER_DOMAIN_XUSBA>;
++			power-domain-names = "xusb_host", "xusb_ss";
++
++			nvidia,xusb-padctl = <&xusb_padctl>;
++			dma-coherent;
++			status = "disabled";
++		};
++
+ 		fuse@3810000 {
+ 			compatible = "nvidia,tegra234-efuse";
+ 			reg = <0x03810000 0x10000>;
 -- 
 2.25.1
 
