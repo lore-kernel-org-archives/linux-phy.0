@@ -4,51 +4,51 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8A1CAC54EBC
-	for <linux-phy@archiver.kernel.org>; Sun,  8 Jan 2023 19:54:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DCC89C54EBC
+	for <linux-phy@archiver.kernel.org>; Sun,  8 Jan 2023 19:54:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=70nt2gjzO6OFXZf4BUBHfhKphNEsvZPwMb1XMeiNtBw=; b=Ue3psyIGU4L6A1
-	am+shs/HMp7olnhRfij/iKRJNJz28FTo5JKzWCIFNfHxWQ1NhrrGZnudEZ9jj7zJtaQZsH2uZU/Rs
-	6uDWmOEEBysuqVi+4ayrdySEegZA0Tyxe3rgEfwHVkfDPPLehaPIfpL4vQtukeUNg6IXtkSP760dP
-	JwO0snSGaUhMo1sVjHlTnUh9WJIu30XAnfdgNfqOAoOnTAqlcjmKlmiAl5MVeCEmE7Lv08oBRYwSm
-	Bj9F8TShfXPxZH27ntftLtwzJhvHrimhdE6oSKpTIF2Sk8xwRg+wRSU3FHvOhhMPzKuiXvCDFtfQH
-	IdaNueOAGWFM7OZY2B5A==;
+	List-Owner; bh=H7R3J1i0TZ7m1mzc98jPDc1Kyw1KkBQaMz0p5uyLp5w=; b=EFRdf/soo6DRXF
+	23sscii4jonKpMY8SvXqSxvzAmCDR9jwnFGWEK2ayVS20IObZdTyU7TKG63wGrPt7Jaqdcj2UrB8g
+	Sgv6i35Li4pdXEVD014vf2k36Jnl/Rc0riNsrilbGFw6TAO4TdPGJX0dLngTV/YWg8RDmm8hPwwAj
+	Y0eWmnKFgO+aLecY2TGiCGdkIZ9VT0ZACcEGXK5J1lPcSMfQQ/uvEF6X3VKaP+InyhKEEZuDMUBSx
+	tACspgVgHzbcy0yNXzjz/Wpgt3xga+CB0G/cBWdqDrHjZHIAjEtJbmuwHlcl0PZlkpEC3GD4Akz3P
+	eo2SSfA+MEhLnlvcE5Fg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pEbkO-00FXKd-Uv; Sun, 08 Jan 2023 19:54:24 +0000
+	id 1pEbkU-00FXME-8m; Sun, 08 Jan 2023 19:54:30 +0000
 Received: from vmi888983.contaboserver.net ([149.102.157.145] helo=amity.mint.lgbt)
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pEbkJ-00FXHw-Rg
-	for linux-phy@lists.infradead.org; Sun, 08 Jan 2023 19:54:21 +0000
+	id 1pEbkR-00FXLG-SH
+	for linux-phy@lists.infradead.org; Sun, 08 Jan 2023 19:54:29 +0000
 Received: from amity.mint.lgbt (mx.mint.lgbt [127.0.0.1])
-	by amity.mint.lgbt (Postfix) with ESMTP id 4NqnpL3xpJz1S5FW
-	for <linux-phy@lists.infradead.org>; Sun,  8 Jan 2023 14:54:18 -0500 (EST)
+	by amity.mint.lgbt (Postfix) with ESMTP id 4NqnpV4jBFz1S5FM
+	for <linux-phy@lists.infradead.org>; Sun,  8 Jan 2023 14:54:26 -0500 (EST)
 Authentication-Results: amity.mint.lgbt (amavisd-new);
 	dkim=pass (2048-bit key) reason="pass (just generated, assumed good)"
 	header.d=mint.lgbt
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=mint.lgbt; h=
 	content-transfer-encoding:mime-version:references:in-reply-to
-	:x-mailer:message-id:date:subject:to:from; s=dkim; t=1673207658;
-	 x=1674071659; bh=ONLsUPqi6gcoDHsCIKRtVdHKDiLgbanaPpLa4/u4aME=; b=
-	08nz4B+4RzPnnkLFD/HwWeJHhW3CMuxUDdp0oQbmZ6u84xakSQoiMXDZR9MxCdJ5
-	nRo+7JosZfYmuF3v3flZyj9c0OyamXvZH9r7YubgVmen0D9YPxiOsw0vShP0ftv2
-	C3ViukA6CPFFwdrf8QoPewVy8L+DNmZhFlLTD01YadPRoC/nmHnIFxtrRMisF0mT
-	Sjkz7o6M+wuNoewVGPx1Om2OnfuMzeEjjFq3uhCzSXOS0GKXGuKNaB0rJlgqa+oC
-	RylDzj7bDKU05Pi9bQ9DM+1YgbhpORbsJPxxQB4PPekVgDcxwIGzg30uODmd/u3K
-	nC1zMbVy6ri7v3AP1NnCSw==
+	:x-mailer:message-id:date:subject:to:from; s=dkim; t=1673207666;
+	 x=1674071667; bh=7SGUnv8/9GXAMnrXipF1Gnrfa8E+qEW51nU9dPwZc7E=; b=
+	JFHRwCJ9BlEk12kR3A0jr042Pq97+HuWUT6enkGI18ibTgy+1jCIbr7SEJpAKu3H
+	a2KwGUxn9u6c6phOJcR1cQJyhsqILNxMAJ9+hcYaDTsTzgl+6s0d4jCNTHVZtclk
+	kQ8tHoqGu7Hf/0RH0RYuvLfE5Ah4gbFdQqYJkYmJg1ioygEX5x9wgIgVAQsRBwYz
+	eeAUDANLSNCoxRkjOLr35lIFlW/gnyBqzRzQpCFnygwJHMwMhASlih+WrmEGKIjX
+	QuDMXcFqQ7z2j1PNkq7X9F579bDaDqlACxPzaN6H8DYKo0Bk5S1pYt4rsesucduo
+	Fww5dAmIjhUA6tCm4iJjtw==
 X-Virus-Scanned: amavisd-new at amity.mint.lgbt
 Received: from amity.mint.lgbt ([127.0.0.1])
 	by amity.mint.lgbt (amity.mint.lgbt [127.0.0.1]) (amavisd-new, port 10026)
-	with ESMTP id t6Gu_fRaqlzn for <linux-phy@lists.infradead.org>;
-	Sun,  8 Jan 2023 14:54:18 -0500 (EST)
+	with ESMTP id PVNai9B6OEN4 for <linux-phy@lists.infradead.org>;
+	Sun,  8 Jan 2023 14:54:26 -0500 (EST)
 Received: from dorothy.. (unknown [186.105.5.197])
-	by amity.mint.lgbt (Postfix) with ESMTPSA id 4Nqnp93FSJz1S5FK;
-	Sun,  8 Jan 2023 14:54:09 -0500 (EST)
+	by amity.mint.lgbt (Postfix) with ESMTPSA id 4NqnpK3xc8z1S59n;
+	Sun,  8 Jan 2023 14:54:17 -0500 (EST)
 From: Lux Aliaga <they@mint.lgbt>
 To: agross@kernel.org,
 	andersson@kernel.org,
@@ -74,16 +74,16 @@ Cc: ~postmarketos/upstreaming@lists.sr.ht,
 	martin.botka@somainline.org,
 	marijn.suijten@somainline.org,
 	Lux Aliaga <they@mint.lgbt>
-Subject: [PATCH v6 3/6] phy: qcom-qmp: Add SM6125 UFS PHY support
-Date: Sun,  8 Jan 2023 16:53:33 -0300
-Message-Id: <20230108195336.388349-4-they@mint.lgbt>
+Subject: [PATCH v6 4/6] arm64: dts: qcom: sm6125: Add UFS nodes
+Date: Sun,  8 Jan 2023 16:53:34 -0300
+Message-Id: <20230108195336.388349-5-they@mint.lgbt>
 X-Mailer: git-send-email 2.39.0
 In-Reply-To: <20230108195336.388349-1-they@mint.lgbt>
 References: <20230108195336.388349-1-they@mint.lgbt>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230108_115420_339383_BC82B5EF 
-X-CRM114-Status: UNSURE (   9.51  )
+X-CRM114-CacheID: sfid-20230108_115428_067761_B92EBE9A 
+X-CRM114-Status: UNSURE (   7.08  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -101,39 +101,82 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The SM6125 UFS PHY is compatible with the one from SM6115. Add a
-compatible for it and modify the config from SM6115 to make them
-compatible with the SC8280XP binding
+Adds a UFS host controller node and its corresponding PHY to
+the sm6125 platform.
 
 Signed-off-by: Lux Aliaga <they@mint.lgbt>
-Reviewed-by: Martin Botka <martin.botka@somainline.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 5 +++++
- 1 file changed, 5 insertions(+)
+ arch/arm64/boot/dts/qcom/sm6125.dtsi | 57 ++++++++++++++++++++++++++++
+ 1 file changed, 57 insertions(+)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-index 318eea35b972..f33c84578940 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-@@ -693,6 +693,8 @@ static const struct qmp_phy_cfg sdm845_ufsphy_cfg = {
- static const struct qmp_phy_cfg sm6115_ufsphy_cfg = {
- 	.lanes			= 1,
+diff --git a/arch/arm64/boot/dts/qcom/sm6125.dtsi b/arch/arm64/boot/dts/qcom/sm6125.dtsi
+index df5453fcf2b9..cec7071d5279 100644
+--- a/arch/arm64/boot/dts/qcom/sm6125.dtsi
++++ b/arch/arm64/boot/dts/qcom/sm6125.dtsi
+@@ -511,6 +511,63 @@ sdhc_2: mmc@4784000 {
+ 			status = "disabled";
+ 		};
  
-+	.offsets		= &qmp_ufs_offsets_v5,
++		ufs_mem_hc: ufs@4804000 {
++			compatible = "qcom,sm6125-ufshc", "qcom,ufshc", "jedec,ufs-2.0";
++			reg = <0x04804000 0x3000>, <0x04810000 0x8000>;
++			interrupts = <GIC_SPI 356 IRQ_TYPE_LEVEL_HIGH>;
++			phys = <&ufs_mem_phy>;
++			phy-names = "ufsphy";
++			lanes-per-direction = <1>;
++			#reset-cells = <1>;
++			resets = <&gcc GCC_UFS_PHY_BCR>;
++			reset-names = "rst";
++			iommus = <&apps_smmu 0x200 0x0>;
 +
- 	.serdes_tbl		= sm6115_ufsphy_serdes_tbl,
- 	.serdes_tbl_num		= ARRAY_SIZE(sm6115_ufsphy_serdes_tbl),
- 	.tx_tbl			= sm6115_ufsphy_tx_tbl,
-@@ -1172,6 +1174,9 @@ static const struct of_device_id qmp_ufs_of_match_table[] = {
- 	}, {
- 		.compatible = "qcom,sm6115-qmp-ufs-phy",
- 		.data = &sm6115_ufsphy_cfg,
-+	}, {
-+		.compatible = "qcom,sm6125-qmp-ufs-phy",
-+		.data = &sm6115_ufsphy_cfg,
- 	}, {
- 		.compatible = "qcom,sm6350-qmp-ufs-phy",
- 		.data = &sdm845_ufsphy_cfg,
++			clock-names = "core_clk",
++				      "bus_aggr_clk",
++				      "iface_clk",
++				      "core_clk_unipro",
++				      "ref_clk",
++				      "tx_lane0_sync_clk",
++				      "rx_lane0_sync_clk",
++				      "ice_core_clk";
++			clocks = <&gcc GCC_UFS_PHY_AXI_CLK>,
++				 <&gcc GCC_SYS_NOC_UFS_PHY_AXI_CLK>,
++				 <&gcc GCC_UFS_PHY_AHB_CLK>,
++				 <&gcc GCC_UFS_PHY_UNIPRO_CORE_CLK>,
++				 <&rpmcc RPM_SMD_XO_CLK_SRC>,
++				 <&gcc GCC_UFS_PHY_TX_SYMBOL_0_CLK>,
++				 <&gcc GCC_UFS_PHY_RX_SYMBOL_0_CLK>,
++				 <&gcc GCC_UFS_PHY_ICE_CORE_CLK>;
++			freq-table-hz = <50000000 240000000>,
++					<0 0>,
++					<0 0>,
++					<37500000 150000000>,
++					<0 0>,
++					<0 0>,
++					<0 0>,
++					<75000000 300000000>;
++
++			status = "disabled";
++		};
++
++		ufs_mem_phy: phy@4807000 {
++			compatible = "qcom,sm6125-qmp-ufs-phy";
++			reg = <0x04807000 0x1c4>;
++
++			clock-names = "ref", "ref_aux";
++			clocks = <&gcc GCC_UFS_MEM_CLKREF_CLK>, <&gcc GCC_UFS_PHY_PHY_AUX_CLK>;
++
++			power-domains = <&gcc UFS_PHY_GDSC>;
++
++			resets = <&ufs_mem_hc 0>;
++			reset-names = "ufsphy";
++
++			#phy-cells = <0>;
++
++			status = "disabled";
++		};
++
+ 		gpi_dma0: dma-controller@4a00000 {
+ 			compatible = "qcom,sm6125-gpi-dma", "qcom,sdm845-gpi-dma";
+ 			reg = <0x04a00000 0x60000>;
 -- 
 2.39.0
 
