@@ -4,51 +4,51 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CB274C54EBD
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F0BFCC61DB3
 	for <linux-phy@archiver.kernel.org>; Sun,  8 Jan 2023 19:54:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IyWtsBtZRa7K0aDx/qSmL+0orUFuozg2f6dHwFrDpew=; b=38M6pu66qBgBGj
-	4OuyzJmjMoRV0m4O2+9JXvErJJ53Y1vnel+cM+Fv8m0wZAJZJ8JNAzwLINSkG8eHJpEqpj33Oiscs
-	IiUN/1dEw9j5/ar3MbScBt3lD6VOOOaf4Txlzt7WETdct6yrx0CH+/fgvws2b1D8JiGO+MQ7TQYwa
-	TzMnszQuwwKhFCL+L0QWbXU4p0iYvzQJogTZCSXiWMAunfmzvreJ3ccBwkbuW8OoQFltAbjdLLCi8
-	bZPI615NqFgJL0n7ad5DvjCAijrIMkTQE1+se+rXNo8ypalsZWaVoeGGZlHWEgEjvj6wNewht91p5
-	2fd9uyBKdXBRqTfV28Iw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=t/P3HLRGUAVHEIF3HKDFHDYqeN5GrtBrST5uxkWj1mE=; b=td0fIwAxp7rvjw
+	zd8USUkPRTp/ylcVD5COAnTlLwQN296cj+YdecicPLvuaepuyhckiCIDXF9zvbz3GqXEkxwUoSQjt
+	iP0QjnzWKst2vhpghKIawnnNLbnPgfZbc6g7o49vZVMdx62yXabpmA+A4AOgEU70eXvjXn9RAT6pL
+	Cvs3dpfboTkaNhpOyw36DDgaKaULQaLh1Kp6KR3BGsQecyj5PMFuqbyAT7904Sr/ap3hCKrhG21yK
+	UBRZDBDmI410ELozJLzTcVCT7jeputQgEFyzGdoWiOUpJO45HVuQIu3KRyvYYpUo02SGIMa5dl1SK
+	nP4bt8IRlbPXT77Xd7LA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pEbkJ-00FXHx-0f; Sun, 08 Jan 2023 19:54:19 +0000
+	id 1pEbkJ-00FXI3-9k; Sun, 08 Jan 2023 19:54:19 +0000
 Received: from vmi888983.contaboserver.net ([149.102.157.145] helo=amity.mint.lgbt)
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pEbkF-00FXET-Sq
+	id 1pEbkF-00FXF1-MB
 	for linux-phy@lists.infradead.org; Sun, 08 Jan 2023 19:54:17 +0000
 Received: from amity.mint.lgbt (mx.mint.lgbt [127.0.0.1])
-	by amity.mint.lgbt (Postfix) with ESMTP id 4Nqnp308MGz1S5FR
-	for <linux-phy@lists.infradead.org>; Sun,  8 Jan 2023 14:54:03 -0500 (EST)
+	by amity.mint.lgbt (Postfix) with ESMTP id 4Nqnnx0PqMz1S59n
+	for <linux-phy@lists.infradead.org>; Sun,  8 Jan 2023 14:53:57 -0500 (EST)
 Authentication-Results: amity.mint.lgbt (amavisd-new);
 	dkim=pass (2048-bit key) reason="pass (just generated, assumed good)"
 	header.d=mint.lgbt
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=mint.lgbt; h=
-	content-transfer-encoding:mime-version:references:in-reply-to
-	:x-mailer:message-id:date:subject:to:from; s=dkim; t=1673207642;
-	 x=1674071643; bh=+bQ/DTUcXr/BuXPX8xB0uQZRzOVOF3zqXUU8A33G6WU=; b=
-	ADBbjOARkCgGRKjo1CqIrONJ5RHnAYoLE7+Hnky1E8SBXqmT1SXGoCOUpOsNAYdJ
-	W9hfim3mipmwBdIYO8bDsOk62fiZ4GuPap0jar8Uei+7HRIawLUVTal1sesKnrJn
-	1NjCTKu2MJdTpXI6FICUBODKR44EqLK69AzUoygaELQYLsgva59kjV1ptfLDFDIc
-	nYc+drD3oMOlR/R/Xzch1fQdlcDY9J6+k+oeAWlu2l6MpHnvKyQER0mTV/CMeqJB
-	nLiqxxHx5JSk2Jc3ReMgnJXibQJhRwenHYTNZ84gyy68KNMsjtONsp+lx5AhSMRg
-	bomgRnW6SJAIc71atDsbJA==
+	content-transfer-encoding:mime-version:x-mailer:message-id:date
+	:subject:to:from; s=dkim; t=1673207636; x=1674071637; bh=9dsgbhg
+	A9vnJIYjG6YuVbFl47O4RVEcVJHNR4rpiPy0=; b=pXks/KWScelK/lBld7jZJZo
+	b4I5e0ozw49Dhv0+vcX9G5q9mK1iPpe8mpFMU0CC8M6Kv+qr27mPl1dnTQU6lEXn
+	X95pVy3nMlpLa7nYkcGO0IJx7G5YRTKz603oydBk45+qj4AXQ7mmmPQKhVSfy9c2
+	V+AhsGQAxhCzRwxGVFQf9QNisS0ves8+2wK1lvehW+8M1SXbaCXaYDxWymu/yJmo
+	gBIgAZAqdt5ZNeeCIHlGfKwY8MlOXy7MfXW+5YvbfvpTxF9jyU/0EnzKgVBrG1QL
+	6hBym9KB6RGEHx7N/+WodRy4aJZOOslAl8KJgJSWxcoqQGUaFSo6KlpT+tRUSfg=
+	=
 X-Virus-Scanned: amavisd-new at amity.mint.lgbt
 Received: from amity.mint.lgbt ([127.0.0.1])
 	by amity.mint.lgbt (amity.mint.lgbt [127.0.0.1]) (amavisd-new, port 10026)
-	with ESMTP id pYjiOjw3iMMy for <linux-phy@lists.infradead.org>;
-	Sun,  8 Jan 2023 14:54:02 -0500 (EST)
+	with ESMTP id AIb-DVaWGF3g for <linux-phy@lists.infradead.org>;
+	Sun,  8 Jan 2023 14:53:56 -0500 (EST)
 Received: from dorothy.. (unknown [186.105.5.197])
-	by amity.mint.lgbt (Postfix) with ESMTPSA id 4Nqnnr6WSNz1S50l;
-	Sun,  8 Jan 2023 14:53:52 -0500 (EST)
+	by amity.mint.lgbt (Postfix) with ESMTPSA id 4Nqnnj34NHz1S56d;
+	Sun,  8 Jan 2023 14:53:45 -0500 (EST)
 From: Lux Aliaga <they@mint.lgbt>
 To: agross@kernel.org,
 	andersson@kernel.org,
@@ -72,19 +72,15 @@ Cc: ~postmarketos/upstreaming@lists.sr.ht,
 	linux-hardening@vger.kernel.org,
 	phone-devel@vger.kernel.org,
 	martin.botka@somainline.org,
-	marijn.suijten@somainline.org,
-	Lux Aliaga <they@mint.lgbt>,
-	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Subject: [PATCH v6 1/6] dt-bindings: ufs: qcom: Add SM6125 compatible string
-Date: Sun,  8 Jan 2023 16:53:31 -0300
-Message-Id: <20230108195336.388349-2-they@mint.lgbt>
+	marijn.suijten@somainline.org
+Subject: [PATCH v6 0/6] arm64: dts: qcom: sm6125: UFS and xiaomi-laurel-sprout support
+Date: Sun,  8 Jan 2023 16:53:30 -0300
+Message-Id: <20230108195336.388349-1-they@mint.lgbt>
 X-Mailer: git-send-email 2.39.0
-In-Reply-To: <20230108195336.388349-1-they@mint.lgbt>
-References: <20230108195336.388349-1-they@mint.lgbt>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230108_115416_105943_09798596 
-X-CRM114-Status: UNSURE (   7.16  )
+X-CRM114-CacheID: sfid-20230108_115415_909398_7376355A 
+X-CRM114-Status: UNSURE (   4.64  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -102,37 +98,21 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Document the compatible for UFS found on the SM6125.
+Introduce Universal Flash Storage support on SM6125 and add support for the Xiaomi Mi A3 based on the former platform. Uses the name xiaomi-laurel-sprout instead of the official codename (laurel_sprout) due to naming limitations in the kernel.
 
-Signed-off-by: Lux Aliaga <they@mint.lgbt>
-Reviewed-by: Martin Botka <martin.botka@somainline.org>
-Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
----
- Documentation/devicetree/bindings/ufs/qcom,ufs.yaml | 2 ++
- 1 file changed, 2 insertions(+)
+Changes since v5:
+- Drop "non-removable" property from ufs_mem_hc for sm6125 platform
+- Drop "status" and "autorepeat" properties from gpio-keys node for xiaomi-laurel-sprout
+- Rename "key-vol-up" node to "key-volume-up" for xiaomi-laurel-sprout
+- Drop "gpio-key,wakeup" property from key-volume-up node for xiaomi-laurel-sprout
+- Set "linux,input-type" and "wakeup-source" properties on key-volume-up node for xiaomi-laurel-sprout
+- Change "key_vol_up" node name to "vol-up-n-state" and its label to "vol_up_n" in PM6125 GPIO node for xiaomi-laurel-sprout
+- Use labels instead of node names for PM6125 ADC channels in xiaomi laurel-sprout
+- Set "regulator-allow-set-load" properties on l4, l5, l10, l11, l18 and l24 regulators on xiaomi-laurel-sprout
 
-diff --git a/Documentation/devicetree/bindings/ufs/qcom,ufs.yaml b/Documentation/devicetree/bindings/ufs/qcom,ufs.yaml
-index b517d76215e3..42422f3471b3 100644
---- a/Documentation/devicetree/bindings/ufs/qcom,ufs.yaml
-+++ b/Documentation/devicetree/bindings/ufs/qcom,ufs.yaml
-@@ -29,6 +29,7 @@ properties:
-           - qcom,sc8280xp-ufshc
-           - qcom,sdm845-ufshc
-           - qcom,sm6115-ufshc
-+          - qcom,sm6125-ufshc
-           - qcom,sm6350-ufshc
-           - qcom,sm8150-ufshc
-           - qcom,sm8250-ufshc
-@@ -185,6 +186,7 @@ allOf:
-           contains:
-             enum:
-               - qcom,sm6115-ufshc
-+              - qcom,sm6125-ufshc
-     then:
-       properties:
-         clocks:
--- 
-2.39.0
+v5: https://lore.kernel.org/linux-devicetree/20221231222420.75233-2-they@mint.lgbt/
+
+
 
 
 -- 
