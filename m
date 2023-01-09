@@ -4,78 +4,55 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7F19BC61DB3
-	for <linux-phy@archiver.kernel.org>; Sun,  8 Jan 2023 22:20:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9C832C54EBD
+	for <linux-phy@archiver.kernel.org>; Mon,  9 Jan 2023 01:23:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:Subject:From:References:Cc:To:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CY3BEAAUA7Xu52TvV0FMSsvqenZFdV7z+jF44EyTDao=; b=CnCSV+qaP5cHxw
-	xkw3pPn7XTRfabbom68lVE1vcxCFwG8R50icqtlEoSsFaWhRu2ES4uWU17i+Ig0lC0vQYO/VN/Lh/
-	GcvH7DvtP85swOFAT74Nh1t0Si5e5HXoiCUyFtPRXqhFNL78BhmHy7IKwiC9ntPsLQlBg8dddRXKS
-	3ov/IZ2COOOopnR1gbNAUXboR/8cXMx33/cNk3Neqw+xmBnNqIsVhT6YSAyQQcWOyehyZrCfacKus
-	7kgLWgTuSVQfapn4731PBTPYogahWIOJ31aRUR4WEMqgvnf6wEHTEm/tZHgHxz+BrVl+4308uGZXW
-	pzARipOLIg/rorH0cgIw==;
+	List-Owner; bh=+GTyUFyFTwkSI/gnrZI5f4ByKg1koFFsS+2GNoviidI=; b=OAQB9bVijp/uEF
+	Ugj74dy7TOe66e5XRclSZHAT8ahGN0pNMmooBMutYyVsqtsLkfH5gE8JGAzrDFYTVpeOLqYhtAxZO
+	r+jRupXd4sj0AuCo0+Fx44kVyb99wowrg4vrq5A0z7vOqYgrRGD0zUzJSrhPDkQq6ka1aVfXGBKQE
+	CPLeFdl/lruT0XNp46pn0dEElciGprBjkL8rDjLhoFrt+Evp5QBK8TXvPEsrkFNmQfl2lUKs6w2zD
+	Ph+qhY0A7OL3I2LZ07hJp+7dKs3j7qJpOzyusBOXitw6G0lk+quvRZWjqDbp1EuxQeXmAslJBILgY
+	ISJ/uXbEJD7qznOUK0hQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pEe1q-00G0Zf-Uu; Sun, 08 Jan 2023 22:20:34 +0000
-Received: from vmi888983.contaboserver.net ([149.102.157.145] helo=amity.mint.lgbt)
-	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pEe1o-00G0Yr-RB
-	for linux-phy@lists.infradead.org; Sun, 08 Jan 2023 22:20:34 +0000
-Received: from amity.mint.lgbt (mx.mint.lgbt [127.0.0.1])
-	by amity.mint.lgbt (Postfix) with ESMTP id 4Nqs305VZJz1S5FJ
-	for <linux-phy@lists.infradead.org>; Sun,  8 Jan 2023 17:20:28 -0500 (EST)
-Authentication-Results: amity.mint.lgbt (amavisd-new);
-	dkim=pass (2048-bit key) reason="pass (just generated, assumed good)"
-	header.d=mint.lgbt
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=mint.lgbt; h=
-	content-transfer-encoding:content-type:in-reply-to:subject:from
-	:content-language:references:to:user-agent:mime-version:date
-	:message-id; s=dkim; t=1673216427; x=1674080428; bh=StAJiwaFSWK0
-	oRu5sb22M02ztG8ghVtA9FhCHEt3NzQ=; b=lMFkcskwZAyX7GXnQtYoVxIA7iQm
-	5mMF3sLyYwZiFFZ4gW3sT18E3xWsoy2sSSNk0qUaQDgO3PK3cvigucWkLmoc1rUB
-	e3jJ2cnQl7KtMrsykWTJy3dUYSAfYMmH5QfATtg8njRHfpH6YDZL72WRaspePe1D
-	uVMaFnuweMsp97npBPQo5UTJyC0sJiGbHaxjsJL6B3OnZnL6EmaZda861kJxVnJD
-	ypQAf9QMcDyoWES1FMgyUWAXajSMi4Alk1qIMXXP84P40/PJ5lkhp2pN/k/lwYMN
-	m+b3Fq3EcRed26bR3WD0LnwgS5EQBww7wSsvhqRUfduC9/XSXWj2e0DqvQ==
-X-Virus-Scanned: amavisd-new at amity.mint.lgbt
-Received: from amity.mint.lgbt ([127.0.0.1])
-	by amity.mint.lgbt (amity.mint.lgbt [127.0.0.1]) (amavisd-new, port 10026)
-	with ESMTP id iajoq9G2LVID for <linux-phy@lists.infradead.org>;
-	Sun,  8 Jan 2023 17:20:27 -0500 (EST)
-Received: from [192.168.1.96] (unknown [186.105.5.197])
-	by amity.mint.lgbt (Postfix) with ESMTPSA id 4Nqs2r1cGpz1S50l;
-	Sun,  8 Jan 2023 17:20:19 -0500 (EST)
-Message-ID: <71daa662-51c2-f4b8-d716-08c3c4480911@mint.lgbt>
-Date: Sun, 8 Jan 2023 19:20:17 -0300
+	id 1pEgsP-00GdcG-QE; Mon, 09 Jan 2023 01:23:01 +0000
+Received: from foss.arm.com ([217.140.110.172])
+	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
+	id 1pEgs6-00GdWT-Sb; Mon, 09 Jan 2023 01:22:44 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+	by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5FF85152B;
+	Sun,  8 Jan 2023 17:23:15 -0800 (PST)
+Received: from donnerap.cambridge.arm.com (donnerap.cambridge.arm.com [10.1.197.42])
+	by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C71DC3F67D;
+	Sun,  8 Jan 2023 17:22:31 -0800 (PST)
+From: Andre Przywara <andre.przywara@arm.com>
+To: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
+Cc: Icenowy Zheng <uwu@icenowy.me>,
+	Chen-Yu Tsai <wens@csie.org>,
+	Jernej Skrabec <jernej.skrabec@gmail.com>,
+	Samuel Holland <samuel@sholland.org>,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-sunxi@lists.linux.dev
+Subject: [PATCH v5 2/3] phy: sun4i-usb: add support for the USB PHY on F1C100s SoC
+Date: Mon,  9 Jan 2023 01:22:22 +0000
+Message-Id: <20230109012223.4079299-3-andre.przywara@arm.com>
+X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20230109012223.4079299-1-andre.przywara@arm.com>
+References: <20230109012223.4079299-1-andre.przywara@arm.com>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.6.1
-To: Rob Herring <robh@kernel.org>
-Cc: linux-phy@lists.infradead.org, marijn.suijten@somainline.org,
- Vinod Koul <vkoul@kernel.org>, linux-kernel@vger.kernel.org,
- martin.botka@somainline.org, Kishon Vijay Abraham I <kishon@kernel.org>,
- devicetree@vger.kernel.org, Konrad Dybcio <konrad.dybcio@linaro.org>,
- Andy Gross <agross@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Bjorn Andersson <andersson@kernel.org>,
- ~postmarketos/upstreaming@lists.sr.ht,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- linux-arm-msm@vger.kernel.org
-References: <20221231222420.75233-1-they@mint.lgbt>
- <20221231222420.75233-3-they@mint.lgbt>
- <167320890262.220493.12109738826337104873.robh@kernel.org>
-Content-Language: en-US
-From: Lux Aliaga <they@mint.lgbt>
-Subject: Re: [PATCH v5 2/6] dt-bindings: phy: Add QMP UFS PHY compatible for
- SM6125
-In-Reply-To: <167320890262.220493.12109738826337104873.robh@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230108_142033_052596_E55B2C2E 
-X-CRM114-Status: UNSURE (   9.41  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230108_172243_013721_3DBAD8AB 
+X-CRM114-Status: GOOD (  11.29  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,30 +64,54 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 08/01/2023 17:15, Rob Herring wrote:
+From: Icenowy Zheng <uwu@icenowy.me>
 
-> On Sat, 31 Dec 2022 19:24:16 -0300, Lux Aliaga wrote:
->> Document the QMP UFS PHY compatible for SM6125.
->>
->> Signed-off-by: Lux Aliaga <they@mint.lgbt>
->> ---
->>   .../devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml       | 1 +
->>   1 file changed, 1 insertion(+)
->>
-> Acked-by: Rob Herring <robh@kernel.org>
-Hi! You seem to have acked this patch from a previous revision of the 
-patchset. However, it was left unchanged so if I need to submit a new 
-revision I'll include this signature. You can the newer revision here: 
-https://lore.kernel.org/linux-devicetree/20230108195336.388349-1-they@mint.lgbt/T/#m9862de18e18e1c0f4abf9db0bcc7c4d2f7f1a948
+The F1C100s SoC has one USB OTG port connected to a MUSB controller.
 
+Add support for its USB PHY.
+
+Signed-off-by: Icenowy Zheng <uwu@icenowy.me>
+Acked-by: Jernej Skrabec <jernej.skrabec@gmail.com>
+Signed-off-by: Andre Przywara <andre.przywara@arm.com>
+---
+ drivers/phy/allwinner/phy-sun4i-usb.c | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
+
+diff --git a/drivers/phy/allwinner/phy-sun4i-usb.c b/drivers/phy/allwinner/phy-sun4i-usb.c
+index 5472db9e87ef8..d9beacc3f8c22 100644
+--- a/drivers/phy/allwinner/phy-sun4i-usb.c
++++ b/drivers/phy/allwinner/phy-sun4i-usb.c
+@@ -918,6 +918,14 @@ static int sun4i_usb_phy_probe(struct platform_device *pdev)
+ 	return 0;
+ }
+ 
++static const struct sun4i_usb_phy_cfg suniv_f1c100s_cfg = {
++	.num_phys = 1,
++	.type = sun4i_a10_phy,
++	.disc_thresh = 3,
++	.phyctl_offset = REG_PHYCTL_A10,
++	.dedicated_clocks = true,
++};
++
+ static const struct sun4i_usb_phy_cfg sun4i_a10_cfg = {
+ 	.num_phys = 3,
+ 	.type = sun4i_a10_phy,
+@@ -1059,6 +1067,8 @@ static const struct of_device_id sun4i_usb_phy_of_match[] = {
+ 	  .data = &sun50i_a64_cfg},
+ 	{ .compatible = "allwinner,sun50i-h6-usb-phy", .data = &sun50i_h6_cfg },
+ 	{ .compatible = "allwinner,sun50i-h616-usb-phy", .data = &sun50i_h616_cfg },
++	{ .compatible = "allwinner,suniv-f1c100s-usb-phy",
++	  .data = &suniv_f1c100s_cfg },
+ 	{ },
+ };
+ MODULE_DEVICE_TABLE(of, sun4i_usb_phy_of_match);
 -- 
-Lux Aliaga
-https://nixgoat.me/
+2.25.1
 
 
 -- 
