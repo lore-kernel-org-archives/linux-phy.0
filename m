@@ -4,103 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C1A19C5479D
-	for <linux-phy@archiver.kernel.org>; Mon,  9 Jan 2023 11:44:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8FDABC54EBD
+	for <linux-phy@archiver.kernel.org>; Mon,  9 Jan 2023 12:18:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
-	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=yz+4VdEYS16+gvKIRv8/zA1eJLsc9xaw6qonu4wMZXM=; b=itt5N3i7E8GW3XP5GZhRjIAnUX
-	rM7nUmuAloqmp17VecKpS2dsrGkGaRONsiOOz61JaFQMf4+i3RRPvGMfQ7aNyeEMdE+ASWMSzJ81D
-	RxtdVu/B6qVVkJAUPFv3nYE2drIyCslXS0sTnXQgH/J6D26VHvr8OdKoEJAj4Zo1iRB6xdTuibe9W
-	PMAVIbnyQXURGw5uQ/U4i0kv4K4FjqkwqaLKtrr4+XZQwjchs62Ll/dWSPkyQG5Z+/32wrT/cmSiv
-	LAJ553Pm9GYvkCceiGY9sLtU1yHDyYkhYIUKmydXZK6/2KdAKtJPUZIX3PL7N1pxqNwN9W8K1iNrb
-	HWbiyvVw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=0WjAtxbAw+sFAkB6ZtbGChwKxIkJx14KFbspeRPcrK8=; b=spmZECkEfqHDml
+	aIU/1e7tZaSE2/Q82AD4u8EAZcgsm09ON5zYn018JY0t7aQjPwWlYq0sAGHRZi3KSJFhkXW2oHXue
+	4Hb1I1q/KMiPqFZmL8UGl9Kq06MuMI98v9pbtfDnLjN26rW0GoI2hUZCg7lqSUbaqmuIxXEja/xEc
+	pmVWSuqI4gTPKeUOOYz4Fa73FcCiQDbgi0KLxZL6hRc/MOorjGlw8/QuQTsE/5J2/N3jfpqkjg0AE
+	tz/Pag1qRKT4rfMH6fVbthzIDdRsTK+uZW3ky6HBFqItZOjrRSogT3b57cx7YxIMyyhP9gIqUIhBH
+	L7+FnCswfg2G8RSXa8Mg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pEqXL-0014Dg-6n; Mon, 09 Jan 2023 11:41:55 +0000
-Received: from mail-wm1-x332.google.com ([2a00:1450:4864:20::332])
+	id 1pEr6i-001Bk0-Me; Mon, 09 Jan 2023 12:18:28 +0000
+Received: from mail-lf1-x130.google.com ([2a00:1450:4864:20::130])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pEqUG-0013qm-7d
-	for linux-phy@lists.infradead.org; Mon, 09 Jan 2023 11:38:46 +0000
-Received: by mail-wm1-x332.google.com with SMTP id ja17so6037836wmb.3
-        for <linux-phy@lists.infradead.org>; Mon, 09 Jan 2023 03:38:40 -0800 (PST)
+	id 1pEr6f-001Bi3-3v
+	for linux-phy@lists.infradead.org; Mon, 09 Jan 2023 12:18:26 +0000
+Received: by mail-lf1-x130.google.com with SMTP id bq39so12694324lfb.0
+        for <linux-phy@lists.infradead.org>; Mon, 09 Jan 2023 04:18:22 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
-        h=content-transfer-encoding:in-reply-to:organization:references:cc:to
-         :content-language:subject:reply-to:from:user-agent:mime-version:date
-         :message-id:from:to:cc:subject:date:message-id:reply-to;
-        bh=uWRQwZU7Q5uXmRpQpJb8/BTaeDI/2pDdqBknaeuYMoc=;
-        b=y1NBPAWB/5QSk15IQF0sayDsBGK9DTwzo64Fwhce+Wv3f7tVbPw++Vm7KjFJ/ePuIH
-         alZSxq4wMtI3JYRZn3zmZrqmW5U+tcE/36mSZS+ao+PBouUNXkLt8uMAN3EDUZoM8y1Z
-         V38rcAlr6k9TL1waTrhaRP8dMZcyQgFxWY3TRRWCtw3tASJlyK9l3O/MWYqVGJgAknVC
-         jyzHq/yTgZ5C7OdYW+njoDU4LjZ+sYY1fS9XGuRSIkUPXzN3ekBZA31uKMfMGcdTnJze
-         j7zyR4Zp7HBcTCJS529n0Jvj5PuGWJpqpZXzP6IkeqqXkPlbC7aVB/jHNAVTFf8RXMND
-         S+Fw==
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=DifmN6L/adKoCUxtqAMK0Lt+Rvw7dAd2CGTYKxx25Ks=;
+        b=c4c29HwIOCrN5rNFt4Nhyw69bHd78n8mskBOpdz4YTWuE4oXGYmuSieq2+TKbC5Wdy
+         HS3U95DF5wBoDXrCdQkr+Jn/v5dQyYWutTE8dmcO5FEtaeSDAkfqtfGOFNWp1Z2LwjSb
+         S9u3QVsnxmK9eu2Q5Yz0Rezw1YSikqUh9Kf7v2isCNJy8eMGWNhk0V5HjAwxH2yLlkPC
+         Rq7pHtxDZJMLOY8iM8tHyepfNqaAVXEWnrXW7tO2g4+HoG+6Ldk4PafT1xQgqhU6OaxM
+         jMz6BGwkbt/98GMKZv5PJ7Nv+18K/7gzJTwTncxuJnTxOO8aXWH7rM2N1eP/D08m4zK1
+         dsCQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=content-transfer-encoding:in-reply-to:organization:references:cc:to
-         :content-language:subject:reply-to:from:user-agent:mime-version:date
-         :message-id:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=uWRQwZU7Q5uXmRpQpJb8/BTaeDI/2pDdqBknaeuYMoc=;
-        b=Fi6E8wZnOjX38ZLWSOFAUj7y6ixm7wJZgVMN+B8KYhuR8zJaJDve0e0l4EjviQsxm8
-         QHsjeSOb3jYPCDNKQVpTUqyhtuJQfli/vN0E2Dn8d2LjGG5PmAgrRep0cr5QsLFMf03y
-         qhLONgPem2L+2Q6s6Xt3ZqLy4GXrlUbVFJ2HI33N8XKbjd18XKuu14nXsCosr7MkeGYn
-         IJ/o5MQJY3Hiav7jFZPi3HTUB95XTd0TXojahifUDzyWVEcBD0DziPP4xK0jnF5xdJW/
-         Pgdt/sRzkxvpaqnNHfAqPVfQsHEsU4m3IhGvPShvHb1Lh8ZIpvFtl/FuvogWQxJXp1jQ
-         iz3A==
-X-Gm-Message-State: AFqh2koXUzV6Z8V4OxMFySO9F+rdCQ5t8ep32/E1hJ9YtqRrArShe1L1
-	VuVkoXqdEfCtAo++/AzE56H2Sg==
-X-Google-Smtp-Source: AMrXdXsgKZSO61ZWkew6Daa4r2uBx8Xe/DlWi/W5u/PDxgxQsVfDr2oBgtSbr4LJo3JD2nU14fQRlg==
-X-Received: by 2002:a05:600c:1f12:b0:3cf:8155:2adc with SMTP id bd18-20020a05600c1f1200b003cf81552adcmr47185923wmb.33.1673264319841;
-        Mon, 09 Jan 2023 03:38:39 -0800 (PST)
-Received: from [192.168.7.111] (679773502.box.freepro.com. [212.114.21.58])
-        by smtp.gmail.com with ESMTPSA id r126-20020a1c2b84000000b003d35c845cbbsm15439361wmr.21.2023.01.09.03.38.38
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=DifmN6L/adKoCUxtqAMK0Lt+Rvw7dAd2CGTYKxx25Ks=;
+        b=s7g+fBbu2YUkFeepPGjffEA57yypokJBgEigQTEZzdwRao10rQRAzQ75BSTJ1ns69g
+         4g1bY0dfN4CYTzx30ILuWMX5c6/+2EEheurRQVU+rsli4jlYlraEC1gjoN9AgDjNrauJ
+         Pc6i0W+mmsaKyNzrKhn6XlJXBRNV/jacHEXT/ooPb9ANml4qYNJTwyqQj0aOZhvmZ4lp
+         liUu+x9v4TYNZDzzw8CvGp7Hxa2BW+sD+NVcgvwZVBNBLVHAIa0Pxj3M9l4sCmNx1szb
+         l7trW4R0Q/e1VpyE6ItfNYssgniREoNL22TMqaaw3JcbwkWZUPnethe6DuiSgq3MdXtU
+         D+0Q==
+X-Gm-Message-State: AFqh2kpuE5hBYX8qAR/tJclyrnhGKhP/+ypuGVlyPtrZ4Ke5LT2tzJhZ
+	WAr/cxfg3If+KW8/zLzX3uW8Cw==
+X-Google-Smtp-Source: AMrXdXuH0t6wTXKr/wNZTaA+WuTI+fWxIR9xpAoOUVy3L1mqqK4X3ba9f5GIZ+jNGa0HdYUWL4rqIg==
+X-Received: by 2002:a19:9116:0:b0:4cc:5e97:d357 with SMTP id t22-20020a199116000000b004cc5e97d357mr3699274lfd.33.1673266701267;
+        Mon, 09 Jan 2023 04:18:21 -0800 (PST)
+Received: from [192.168.1.101] (abxi45.neoplus.adsl.tpnet.pl. [83.9.2.45])
+        by smtp.gmail.com with ESMTPSA id w4-20020a19c504000000b004b5812207dbsm1597098lfe.201.2023.01.09.04.18.19
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 09 Jan 2023 03:38:39 -0800 (PST)
-Message-ID: <6c784b12-ea81-2ac9-ff99-e33f5c123483@linaro.org>
-Date: Mon, 9 Jan 2023 12:38:37 +0100
+        Mon, 09 Jan 2023 04:18:20 -0800 (PST)
+Message-ID: <475d3f2f-114f-d6d2-89db-465ba7acd0d6@linaro.org>
+Date: Mon, 9 Jan 2023 13:18:18 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.6.0
-From: Neil Armstrong <neil.armstrong@linaro.org>
-Subject: Re: [PATCH 03/12] dt-bindings: nvmem: convert
- amlogic-meson-mx-efuse.txt to dt-schema
+ Thunderbird/102.6.1
+Subject: Re: [PATCH v6 4/6] arm64: dts: qcom: sm6125: Add UFS nodes
 Content-Language: en-US
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Cc: Jakub Kicinski <kuba@kernel.org>,
- Wim Van Sebroeck <wim@linux-watchdog.org>,
- Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
- Rob Herring <robh+dt@kernel.org>, Andrew Lunn <andrew@lunn.ch>,
- Alessandro Zummo <a.zummo@towertech.it>, Eric Dumazet <edumazet@google.com>,
- Bjorn Helgaas <bhelgaas@google.com>, Kevin Hilman <khilman@baylibre.com>,
- Ulf Hansson <ulf.hansson@linaro.org>, Heiner Kallweit
- <hkallweit1@gmail.com>, Vinod Koul <vkoul@kernel.org>,
- Russell King <linux@armlinux.org.uk>, Thomas Gleixner <tglx@linutronix.de>,
- Kishon Vijay Abraham I <kishon@kernel.org>,
- Guenter Roeck <linux@roeck-us.net>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- Jerome Brunet <jbrunet@baylibre.com>, Paolo Abeni <pabeni@redhat.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- "David S. Miller" <davem@davemloft.net>, linux-media@vger.kernel.org,
- netdev@vger.kernel.org, linux-amlogic@lists.infradead.org,
- linux-mmc@vger.kernel.org, linux-rtc@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- linux-watchdog@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-pci@vger.kernel.org, devicetree@vger.kernel.org
-References: <20221117-b4-amlogic-bindings-convert-v1-0-3f025599b968@linaro.org>
- <20221117-b4-amlogic-bindings-convert-v1-3-3f025599b968@linaro.org>
- <CAFBinCANM=AOw1bbGCheFy20mqQ1ym_maK0C1sYpjceoNH-dNQ@mail.gmail.com>
-Organization: Linaro Developer Services
-In-Reply-To: <CAFBinCANM=AOw1bbGCheFy20mqQ1ym_maK0C1sYpjceoNH-dNQ@mail.gmail.com>
+To: Lux Aliaga <they@mint.lgbt>, agross@kernel.org, andersson@kernel.org,
+ robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org, vkoul@kernel.org,
+ kishon@kernel.org, alim.akhtar@samsung.com, avri.altman@wdc.com,
+ bvanassche@acm.org, keescook@chromium.org, tony.luck@intel.com,
+ gpiccoli@igalia.com
+Cc: ~postmarketos/upstreaming@lists.sr.ht, linux-arm-msm@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-scsi@vger.kernel.org,
+ linux-hardening@vger.kernel.org, phone-devel@vger.kernel.org,
+ martin.botka@somainline.org, marijn.suijten@somainline.org
+References: <20230108195336.388349-1-they@mint.lgbt>
+ <20230108195336.388349-5-they@mint.lgbt>
+From: Konrad Dybcio <konrad.dybcio@linaro.org>
+In-Reply-To: <20230108195336.388349-5-they@mint.lgbt>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230109_033844_283852_296D1D41 
-X-CRM114-Status: GOOD (  17.01  )
+X-CRM114-CacheID: sfid-20230109_041825_214992_BDB4F2CB 
+X-CRM114-Status: GOOD (  12.11  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -112,57 +95,131 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: neil.armstrong@linaro.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 26/11/2022 00:04, Martin Blumenstingl wrote:
-> Hi Neil,
-> 
-> thanks for your work on this!
-> 
-> On Fri, Nov 18, 2022 at 3:33 PM Neil Armstrong
-> <neil.armstrong@linaro.org> wrote:
-> [...]
->> +        #address-cells = <1>;
->> +        #size-cells = <1>;
->> +
->> +        sn: sn@14 {
->> +            reg = <0x14 0x10>;
->> +        };
->> +
->> +        eth_mac: mac@34 {
->> +            reg = <0x34 0x10>;
->> +        };
->> +
->> +        bid: bid@46 {
->> +            reg = <0x46 0x30>;
->> +        };
-> I assume you took these examples from the newer, GX eFuse?
-> Unfortunately on boards with these older SoCs the serial number and
-> MAC address are often not stored in the eFuse.
-> This is just an example, so I won't be sad if we keep them. To avoid
-> confusion I suggest switching to different examples:
->    ethernet_mac_address: mac@1b4 {
->      reg = <0x1b4 0x6>;
->    };
->    temperature_calib: calib@1f4 {
->       reg = <0x1f4 0x4>;
->    };
-> 
-> What do you think?
 
 
-Sure switched to it !
-
-Neil
+On 8.01.2023 20:53, Lux Aliaga wrote:
+> Adds a UFS host controller node and its corresponding PHY to
+> the sm6125 platform.
 > 
+> Signed-off-by: Lux Aliaga <they@mint.lgbt>
+> ---
+>  arch/arm64/boot/dts/qcom/sm6125.dtsi | 57 ++++++++++++++++++++++++++++
+>  1 file changed, 57 insertions(+)
 > 
-> Best regards,
-> Martin
+> diff --git a/arch/arm64/boot/dts/qcom/sm6125.dtsi b/arch/arm64/boot/dts/qcom/sm6125.dtsi
+> index df5453fcf2b9..cec7071d5279 100644
+> --- a/arch/arm64/boot/dts/qcom/sm6125.dtsi
+> +++ b/arch/arm64/boot/dts/qcom/sm6125.dtsi
+> @@ -511,6 +511,63 @@ sdhc_2: mmc@4784000 {
+>  			status = "disabled";
+>  		};
+>  
+> +		ufs_mem_hc: ufs@4804000 {
+> +			compatible = "qcom,sm6125-ufshc", "qcom,ufshc", "jedec,ufs-2.0";
+> +			reg = <0x04804000 0x3000>, <0x04810000 0x8000>;
+You need reg-names for ICE to probe, otherwise the second reg sits unused.
 
+> +			interrupts = <GIC_SPI 356 IRQ_TYPE_LEVEL_HIGH>;
+> +			phys = <&ufs_mem_phy>;
+> +			phy-names = "ufsphy";
+> +			lanes-per-direction = <1>;
+> +			#reset-cells = <1>;
+> +			resets = <&gcc GCC_UFS_PHY_BCR>;
+> +			reset-names = "rst";
+> +			iommus = <&apps_smmu 0x200 0x0>;
+> +
+> +			clock-names = "core_clk",
+> +				      "bus_aggr_clk",
+> +				      "iface_clk",
+> +				      "core_clk_unipro",
+> +				      "ref_clk",
+> +				      "tx_lane0_sync_clk",
+> +				      "rx_lane0_sync_clk",
+> +				      "ice_core_clk";
+> +			clocks = <&gcc GCC_UFS_PHY_AXI_CLK>,
+> +				 <&gcc GCC_SYS_NOC_UFS_PHY_AXI_CLK>,
+> +				 <&gcc GCC_UFS_PHY_AHB_CLK>,
+> +				 <&gcc GCC_UFS_PHY_UNIPRO_CORE_CLK>,
+> +				 <&rpmcc RPM_SMD_XO_CLK_SRC>,
+> +				 <&gcc GCC_UFS_PHY_TX_SYMBOL_0_CLK>,
+> +				 <&gcc GCC_UFS_PHY_RX_SYMBOL_0_CLK>,
+> +				 <&gcc GCC_UFS_PHY_ICE_CORE_CLK>;
+> +			freq-table-hz = <50000000 240000000>,
+> +					<0 0>,
+> +					<0 0>,
+> +					<37500000 150000000>,
+> +					<0 0>,
+> +					<0 0>,
+> +					<0 0>,
+> +					<75000000 300000000>;
+> +
+> +			status = "disabled";
+> +		};
+> +
+> +		ufs_mem_phy: phy@4807000 {
+> +			compatible = "qcom,sm6125-qmp-ufs-phy";
+> +			reg = <0x04807000 0x1c4>;
+Isn't this too small? Downstream says 0xdb8, but it's probably even bigger..
+> +
+> +			clock-names = "ref", "ref_aux";
+We recently started an endless quest, trying to unify property
+order [1], please adjust this to:
+
+compat
+reg
+clocks
+clock-names
+[freq-table-hz seems fitting here tbf]
+resets
+reset-names
+power-domains
+#phy-cells
+status
+
+so in your case, put power-domains after reset-names and flip
+clocks/clock-names
+
+similarly for the node above this order would look good:
+
+compat
+reg
+reg-names
+interrupts
+clocks
+clock-names
+resets
+reset-names
+reset-cells
+phys
+phy-names
+lines-per-direction
+iommus
+status
+
+
+Konrad 
+
+[1] https://github.com/konradybcio-work/dt_review
+> +			clocks = <&gcc GCC_UFS_MEM_CLKREF_CLK>, <&gcc GCC_UFS_PHY_PHY_AUX_CLK>;
+> +
+> +			power-domains = <&gcc UFS_PHY_GDSC>;
+> +
+> +			resets = <&ufs_mem_hc 0>;
+> +			reset-names = "ufsphy";
+> +
+> +			#phy-cells = <0>;
+> +
+> +			status = "disabled";
+> +		};
+> +
+>  		gpi_dma0: dma-controller@4a00000 {
+>  			compatible = "qcom,sm6125-gpi-dma", "qcom,sdm845-gpi-dma";
+>  			reg = <0x04a00000 0x60000>;
 
 -- 
 linux-phy mailing list
