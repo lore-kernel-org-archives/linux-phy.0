@@ -4,82 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D36D6C54EBD
-	for <linux-phy@archiver.kernel.org>; Mon,  9 Jan 2023 13:17:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 930CDC54EBD
+	for <linux-phy@archiver.kernel.org>; Mon,  9 Jan 2023 13:17:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TuoVmqXvfbnQI8pM4gyMaXeIwfMCFAo5Q6ZeqTPxRow=; b=XWmadZiqPWGPFh
-	SIcu5jCkkVzMCgQo2wAQrSOBwGGWAfIRba+qAtLx6Td/vx5z2qn708iM0FwyT9eceZtL7HdcRm2j8
-	FSK7n/fwYh3c309GPCG1n2Q5f5gGS6xzI43i/LYS8Xhn1+RI1RMKbwguXMKSEx/6n/NOlV+D2UcsU
-	dBD0FG+i6MAE9dwDCE+GkbrTy+xdxgGEaOeRiUSR+p5Ec657kJyrvqxtFrB4lsTLxv1gkGHgHcBTn
-	omqjTYrWcFPi598RcHDfSq8UrvVuxhu7cZAEPfi7lLQJuDlgkBzCFagvX2hOb5g9SnCUm1LqwOsbQ
-	14YBxFOcaO14ycENof/g==;
+	List-Owner; bh=+oSgo4kxjhfXEqxqEGrO/9zdxb/dXlRhRL1ZfYfIEBM=; b=gS632NY1XnJkrQ
+	7mRxak0TeRq7/zyWT33QPa9qpaeTvSs3qytuAnrdkN3GgskEPYdM+LZP+L2nWBvpBgthwH/Dv8jJC
+	Tq8tZYdQkcI9vHW4OW2t69jYOIJWaQkpHTmd1LJNJ8hc9VpSKBW8G5ea7C4nou9E4452GXFprCpG9
+	rYkiU50OcZm1uKL8pNQ7F2tkRQB9bcdpbeRbLRusa8oQZN89dnOrRLGFyCiXDyHceDvYXayzz9H1m
+	Ey24TQrobv96LkN4x3e7GdsvxuvqddnWozwI1VEaz45JeF44oD25RodvX0ckMcIilXyaMO3QIV6BR
+	aE61aQe1uOK1E11sJ0Xw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pEs1P-001Vje-4R; Mon, 09 Jan 2023 13:17:03 +0000
+	id 1pEs1w-001W1x-Ij; Mon, 09 Jan 2023 13:17:36 +0000
 Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pErzN-001UXJ-NV
-	for linux-phy@bombadil.infradead.org; Mon, 09 Jan 2023 13:14:57 +0000
+	id 1pErzO-001UXJ-RW
+	for linux-phy@bombadil.infradead.org; Mon, 09 Jan 2023 13:14:59 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=infradead.org; s=casper.20170209; h=Cc:To:In-Reply-To:References:Message-Id
 	:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:From:Sender
 	:Reply-To:Content-ID:Content-Description;
-	bh=apTdb92AzNQ96d3ETxccHyv95HLA5cv6Przk0hO/8h8=; b=QcmhmfhjYgntLX73WvbwfTWF7a
-	OYDUbu4jgev3hfIlZBuvS9Ka0A4QXlSSZ38hR26+oF40FazEJzt5uoQUq5vYgoQ/2Xd2fNdFbJyqQ
-	woFNdcin+79RxuPGkvmOyVkf09tzvYx7h74qYfznqJ+2B0DmHZ/wz41pn3lhnF9GkCTxnpjo054Fr
-	485wSXxTw6wzKQ+eorSLuf1B8h+We3fhAb8oqC1RceBHQDzU3yOlHRwkjkz7auGxPRoYPT3TlBmO5
-	LLJQYrleXFCvG16mxwf94GG8pfriCoZ7HwloL0rGU+uJXbj9rbp4zVWEjY3qqihqMLzTYFL2RB3nX
-	oFqow9jg==;
-Received: from mail-wm1-x329.google.com ([2a00:1450:4864:20::329])
+	bh=Tquvwj2kpJM2Ju/UAJGs8M9lyCJgcUVyQS/lXUiEhkI=; b=SO4Ir+IO3voauNGV/zy2QN21gy
+	d6rhzETySGsrgenS+qOThg5d1JinZaUphjXA+JqjJrmFTrYggqsknM0pwvBjqBEotF2lsn25wigob
+	vX3qYPwvHr9UZSwuWoMfBArFp20InvnJNroyyIcEuYY/tbE9ZpVYUyh9qbvOzLe4pTYS2rwrMOXb2
+	TAJ6QqWuc4qpC5Yvk1YXLIpcWsifxNBrM8Mi+oiaxc4ZS9PRvkT8+FAbj5K+j5HB8V9nHZtVGTLKj
+	LrEixigt2qARdtb5bEaI/i4ZOLPqISrQ8GqrlOFxge+WatmlaPpyHamhIXhvUOMhNELSKPq4N+/aL
+	DiG/3k5A==;
+Received: from mail-wm1-x334.google.com ([2a00:1450:4864:20::334])
 	by casper.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pErf8-002HUZ-BU
-	for linux-phy@lists.infradead.org; Mon, 09 Jan 2023 12:54:05 +0000
-Received: by mail-wm1-x329.google.com with SMTP id i17-20020a05600c355100b003d99434b1cfso6635426wmq.1
-        for <linux-phy@lists.infradead.org>; Mon, 09 Jan 2023 04:53:49 -0800 (PST)
+	id 1pErf6-002HTJ-2z
+	for linux-phy@lists.infradead.org; Mon, 09 Jan 2023 12:54:02 +0000
+Received: by mail-wm1-x334.google.com with SMTP id m8-20020a05600c3b0800b003d96f801c48so8914266wms.0
+        for <linux-phy@lists.infradead.org>; Mon, 09 Jan 2023 04:53:44 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=apTdb92AzNQ96d3ETxccHyv95HLA5cv6Przk0hO/8h8=;
-        b=EsPXoXoYQiEGXrVW2y08Jw63MOaSE7K82Wa7hO1KkMnIEV1GsOeInOf2/7FEhX/x7g
-         HfnceNCBdr4d2qFy48gJokuywZ0DFfHh0/lc/FmPU0BXvkVj9BFzr1QCZvHVnekASNRd
-         aPw+24RSxuSQfYvMPvyZSrIfntYA8LQV2+LMWjudIVGoj4nSTJSzSCjcsOWb0FLx8nFN
-         xbVGV/sNMT1pUIX7L/fyYV/wbCR02VLtIk0oHdwVzjN3iPjNggr+OOwIH2odCBxfsO1u
-         docmtVsMF/TOvbNWwV0XUaNuyxB4deNMoTK7R1YJc93cZ59tTYI9Mmn1E7mEnyNg6eIC
-         kKIA==
+        bh=Tquvwj2kpJM2Ju/UAJGs8M9lyCJgcUVyQS/lXUiEhkI=;
+        b=j4WnyX0OrhV3Tl4dXLdREy6trUYPvtp6GUEeJ7GPOcr73tsXoa4iOdeDXWB502uqCb
+         L8UokGsnT4o4qVlJsUCzo/J4Gx6YpBCaStpX8O2/AfvVVoCCWuOV6iFQdxiWGFhCM7pr
+         eBwl3cWeK751NdGbRKATht+u7uei9a51RSkVcEAxkFTpHBB7n4BU97L6gu+R591cFEc6
+         wrZPz6ROTTgyq5NNhr3BhFw/WQJVusUfgPQ6SFLl23+qT0Me5yjaHsxlb2fyXlliEoz4
+         gtb5vBBw0hqWuV9GYsAWdnIcxSuWq0N4fHT6PY0U8ME5pivWgx1xfJq+6oR1s6KvA+97
+         69Sg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=apTdb92AzNQ96d3ETxccHyv95HLA5cv6Przk0hO/8h8=;
-        b=JKq6qxU5JiRkSkjSc4nhSeQ63JNF4KZO5VGffnpe9cFd5KWuTzNBcnhrWIZkvcFbtG
-         aDJifbQWFstgEFh7X6wrT2Isic5emx5ugnlsJwfYkVY9UyeVEN53+cF9F7qV+PCfCPSg
-         hWYTFIh9ZHPox8KBBeXYuJfapoGChenqOJ4bBz2VUBgQhtU4P78P92zd6gALvxi1yYiZ
-         HkLfMC4STlsr1DHgv8ifWBztfTlWjC5XrV6CqL1aOoNIALNXP8w1zi21INqYtrpMViTX
-         MgxABWlBotTkpLPxx8NdObIJx004uh6U6lGKCkoC9Wv5zcbwHmc0so9QvMJc+epsi4E1
-         gCsg==
-X-Gm-Message-State: AFqh2krgNzc5HezddFHMnRjp/ee2moXmUg7VF6Jq7Q+kLu9tlzSPWTEO
-	l2Uet+l5EmFhDxCJC480+h+a/g==
-X-Google-Smtp-Source: AMrXdXtAapEnKxQpOhIkltcToEX8T5OnPnIqchFzqGnfuLYUoCHcU94+sp3J+/xrNs805/CeyL0VSw==
-X-Received: by 2002:a05:600c:1e1d:b0:3cf:b07a:cd2f with SMTP id ay29-20020a05600c1e1d00b003cfb07acd2fmr45391761wmb.37.1673268828090;
-        Mon, 09 Jan 2023 04:53:48 -0800 (PST)
+        bh=Tquvwj2kpJM2Ju/UAJGs8M9lyCJgcUVyQS/lXUiEhkI=;
+        b=JTELb3kXyuL7naFeWQepGinGvVLd5izyaioJKJ7BShSD49sStIOQqTB/szcAkGluC5
+         QNFKnF8upUIsxna3swrNWa5hWF6OJVv38aMR8NAfLQ8Sp8Q93AU8GARiJAOZ9wiCDqFR
+         yeggNGZAmQ6PkNHTXmmOd0n530r512cVDAno3gVFZOAbCGLMAQbiYvD6eh6MSJKJKRHd
+         36e6X1OqprFF/h7dxcJhqm/9q5j7uRNIoeSmYd2V8lm7vlxxVVNxDEXknrLsQuOFhkvG
+         T6/1mwlAbeSCpSwa6T4e4ktaygIL/+t6uMlembFQx82bdD9ssDQlob/l3IIpzlPJYqLd
+         riXA==
+X-Gm-Message-State: AFqh2kqYnwDo2iSKbRvw0WIMwW0xxUnci15q4AHryhsy9P5tNd4/sJdi
+	JHQhXpteg/++vcW1ol7piKhEtQ==
+X-Google-Smtp-Source: AMrXdXuDMWMWyAxYhduaA0kIz0hDTTIZak6lv6S7NHGoYj5aNSpW7iiMBldGLNyII8nQkPvLHAq60w==
+X-Received: by 2002:a05:600c:3b16:b0:3d5:365b:7749 with SMTP id m22-20020a05600c3b1600b003d5365b7749mr46672260wms.16.1673268823250;
+        Mon, 09 Jan 2023 04:53:43 -0800 (PST)
 Received: from arrakeen.starnux.net ([2a01:e0a:982:cbb0:52eb:f6ff:feb3:451a])
-        by smtp.gmail.com with ESMTPSA id y7-20020a7bcd87000000b003d997e5e679sm12805667wmj.14.2023.01.09.04.53.46
+        by smtp.gmail.com with ESMTPSA id y7-20020a7bcd87000000b003d997e5e679sm12805667wmj.14.2023.01.09.04.53.41
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 09 Jan 2023 04:53:47 -0800 (PST)
+        Mon, 09 Jan 2023 04:53:42 -0800 (PST)
 From: Neil Armstrong <neil.armstrong@linaro.org>
-Date: Mon, 09 Jan 2023 13:53:35 +0100
-Subject: [PATCH v2 11/11] dt-bindings: net: convert mdio-mux-meson-g12a.txt to
+Date: Mon, 09 Jan 2023 13:53:32 +0100
+Subject: [PATCH v2 08/11] dt-bindings: phy: convert meson-gxl-usb2-phy.txt to
  dt-schema
 MIME-Version: 1.0
-Message-Id:  <20221117-b4-amlogic-bindings-convert-v2-11-36ad050bb625@linaro.org>
+Message-Id:  <20221117-b4-amlogic-bindings-convert-v2-8-36ad050bb625@linaro.org>
 References:  <20221117-b4-amlogic-bindings-convert-v2-0-36ad050bb625@linaro.org>
 In-Reply-To:  <20221117-b4-amlogic-bindings-convert-v2-0-36ad050bb625@linaro.org>
 To: Rob Herring <robh+dt@kernel.org>,
@@ -108,8 +108,8 @@ Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 X-Mailer: b4 0.11.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230109_125402_400580_D01CB1ED 
-X-CRM114-Status: GOOD (  14.84  )
+X-CRM114-CacheID: sfid-20230109_125400_264410_79B5569D 
+X-CRM114-Status: GOOD (  14.43  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -126,157 +126,105 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Convert MDIO bus multiplexer/glue of Amlogic G12a SoC family bindings
-to dt-schema.
+Convert the Amlogic Meson GXL USB2 PHY bindings to dt-schema.
 
-Reviewed-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Reviewed-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
 ---
- .../bindings/net/amlogic,g12a-mdio-mux.yaml        | 80 ++++++++++++++++++++++
- .../bindings/net/mdio-mux-meson-g12a.txt           | 48 -------------
- 2 files changed, 80 insertions(+), 48 deletions(-)
+ .../bindings/phy/amlogic,meson-gxl-usb2-phy.yaml   | 56 ++++++++++++++++++++++
+ .../devicetree/bindings/phy/meson-gxl-usb2-phy.txt | 21 --------
+ 2 files changed, 56 insertions(+), 21 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/net/amlogic,g12a-mdio-mux.yaml b/Documentation/devicetree/bindings/net/amlogic,g12a-mdio-mux.yaml
+diff --git a/Documentation/devicetree/bindings/phy/amlogic,meson-gxl-usb2-phy.yaml b/Documentation/devicetree/bindings/phy/amlogic,meson-gxl-usb2-phy.yaml
 new file mode 100644
-index 000000000000..ec5c038ce6a0
+index 000000000000..c2f5c9d2fce6
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/net/amlogic,g12a-mdio-mux.yaml
-@@ -0,0 +1,80 @@
++++ b/Documentation/devicetree/bindings/phy/amlogic,meson-gxl-usb2-phy.yaml
+@@ -0,0 +1,56 @@
 +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
 +%YAML 1.2
 +---
-+$id: http://devicetree.org/schemas/net/amlogic,g12a-mdio-mux.yaml#
++$id: http://devicetree.org/schemas/phy/amlogic,meson-gxl-usb2-phy.yaml#
 +$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+title: MDIO bus multiplexer/glue of Amlogic G12a SoC family
-+
-+description:
-+  This is a special case of a MDIO bus multiplexer. It allows to choose between
-+  the internal mdio bus leading to the embedded 10/100 PHY or the external
-+  MDIO bus.
++title: Amlogic Meson GXL USB2 PHY
 +
 +maintainers:
 +  - Neil Armstrong <neil.armstrong@linaro.org>
 +
-+allOf:
-+  - $ref: mdio-mux.yaml#
-+
 +properties:
 +  compatible:
-+    const: amlogic,g12a-mdio-mux
++    const: amlogic,meson-gxl-usb2-phy
 +
 +  reg:
 +    maxItems: 1
 +
 +  clocks:
-+    items:
-+      - description: peripheral clock
-+      - description: platform crytal
-+      - description: SoC 50MHz MPLL
++    maxItems: 1
 +
 +  clock-names:
 +    items:
-+      - const: pclk
-+      - const: clkin0
-+      - const: clkin1
++      - const: phy
++
++  resets:
++    maxItems: 1
++
++  reset-names:
++    items:
++      - const: phy
++
++  "#phy-cells":
++    const: 0
++
++  phy-supply: true
 +
 +required:
 +  - compatible
 +  - reg
-+  - clocks
-+  - clock-names
++  - "#phy-cells"
 +
-+unevaluatedProperties: false
++additionalProperties: false
 +
 +examples:
 +  - |
-+    #include <dt-bindings/interrupt-controller/irq.h>
-+    #include <dt-bindings/interrupt-controller/arm-gic.h>
-+    mdio-multiplexer@4c000 {
-+        compatible = "amlogic,g12a-mdio-mux";
-+        reg = <0x4c000 0xa4>;
-+        clocks = <&clkc_eth_phy>, <&xtal>, <&clkc_mpll>;
-+        clock-names = "pclk", "clkin0", "clkin1";
-+        mdio-parent-bus = <&mdio0>;
-+        #address-cells = <1>;
-+        #size-cells = <0>;
-+
-+        mdio@0 {
-+            reg = <0>;
-+            #address-cells = <1>;
-+            #size-cells = <0>;
-+        };
-+
-+        mdio@1 {
-+            reg = <1>;
-+            #address-cells = <1>;
-+            #size-cells = <0>;
-+
-+            ethernet-phy@8 {
-+                compatible = "ethernet-phy-id0180.3301",
-+                             "ethernet-phy-ieee802.3-c22";
-+                interrupts = <GIC_SPI 9 IRQ_TYPE_LEVEL_HIGH>;
-+                reg = <8>;
-+                max-speed = <100>;
-+            };
-+        };
++    phy@78000 {
++        compatible = "amlogic,meson-gxl-usb2-phy";
++        reg = <0x78000 0x20>;
++        clocks = <&xtal>;
++        clock-names = "phy";
++        resets = <&phy_reset>;
++        reset-names = "phy";
++        #phy-cells = <0>;
++        phy-supply = <&usb2_supply>;
 +    };
-+...
-diff --git a/Documentation/devicetree/bindings/net/mdio-mux-meson-g12a.txt b/Documentation/devicetree/bindings/net/mdio-mux-meson-g12a.txt
+diff --git a/Documentation/devicetree/bindings/phy/meson-gxl-usb2-phy.txt b/Documentation/devicetree/bindings/phy/meson-gxl-usb2-phy.txt
 deleted file mode 100644
-index 3a96cbed9294..000000000000
---- a/Documentation/devicetree/bindings/net/mdio-mux-meson-g12a.txt
+index b84a02ebffdf..000000000000
+--- a/Documentation/devicetree/bindings/phy/meson-gxl-usb2-phy.txt
 +++ /dev/null
-@@ -1,48 +0,0 @@
--Properties for the MDIO bus multiplexer/glue of Amlogic G12a SoC family.
+@@ -1,21 +0,0 @@
+-* Amlogic Meson GXL and GXM USB2 PHY binding
 -
--This is a special case of a MDIO bus multiplexer. It allows to choose between
--the internal mdio bus leading to the embedded 10/100 PHY or the external
--MDIO bus.
+-Required properties:
+-- compatible:	Should be "amlogic,meson-gxl-usb2-phy"
+-- reg:		The base address and length of the registers
+-- #phys-cells:	must be 0 (see phy-bindings.txt in this directory)
 -
--Required properties in addition to the generic multiplexer properties:
--- compatible : amlogic,g12a-mdio-mux
--- reg: physical address and length of the multiplexer/glue registers
--- clocks: list of clock phandle, one for each entry clock-names.
--- clock-names: should contain the following:
--  * "pclk"   : peripheral clock.
--  * "clkin0" : platform crytal
--  * "clkin1" : SoC 50MHz MPLL
+-Optional properties:
+-- clocks:	a phandle to the clock of this PHY
+-- clock-names:	must be "phy"
+-- resets:	a phandle to the reset line of this PHY
+-- reset-names:	must be "phy"
+-- phy-supply:	see phy-bindings.txt in this directory
 -
--Example :
 -
--mdio_mux: mdio-multiplexer@4c000 {
--	compatible = "amlogic,g12a-mdio-mux";
--	reg = <0x0 0x4c000 0x0 0xa4>;
--	clocks = <&clkc CLKID_ETH_PHY>,
--		 <&xtal>,
--		 <&clkc CLKID_MPLL_5OM>;
--	clock-names = "pclk", "clkin0", "clkin1";
--	mdio-parent-bus = <&mdio0>;
--	#address-cells = <1>;
--	#size-cells = <0>;
--
--	ext_mdio: mdio@0 {
--		reg = <0>;
--		#address-cells = <1>;
--		#size-cells = <0>;
+-Example:
+-	usb2_phy0: phy@78000 {
+-		compatible = "amlogic,meson-gxl-usb2-phy";
+-		#phy-cells = <0>;
+-		reg = <0x0 0x78000 0x0 0x20>;
 -	};
--
--	int_mdio: mdio@1 {
--		reg = <1>;
--		#address-cells = <1>;
--		#size-cells = <0>;
--
--		internal_ephy: ethernet-phy@8 {
--			compatible = "ethernet-phy-id0180.3301",
--				     "ethernet-phy-ieee802.3-c22";
--			interrupts = <GIC_SPI 9 IRQ_TYPE_LEVEL_HIGH>;
--			reg = <8>;
--			max-speed = <100>;
--		};
--	};
--};
 
 -- 
 2.34.1
