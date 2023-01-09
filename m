@@ -4,83 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D01EAC67871
-	for <linux-phy@archiver.kernel.org>; Mon,  9 Jan 2023 13:14:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1953BC54EBD
+	for <linux-phy@archiver.kernel.org>; Mon,  9 Jan 2023 13:15:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Y4xwnfaDY3Z+Sj8OvszAEuhy6YZxze5ZPHGNUA0He0g=; b=Cw2nJb89W2q1bR
-	tP1LG7jvggZdPrqUyXPYSETRoSwPVemSgeKz5kgTlNVYoBoqnJTh+luuG3ERmSzBD7X9X9zspI/X8
-	kRGL/Rt+AHQx2vUH3Eo7+u7Jewrki5D8XTzTt8DnwSnb5gDZJnfCMrCdZuaroMJMIJFeFZ2fTjGjD
-	Cd8KMhAOjhw+kmrDw8fLtpVSkrdKaQ3dKtzmMihNCHjaCUW5BRtajWR+PgGFI7yP9tfSfz2OieOE4
-	MQ7qjb+ZfD7N7eJEBVdq5xLJefzhfUyLU6NOON/TGGqYyWt7ydoMBNTqIGsH2wERsZ+r5MrBTQLjR
-	y2B5GUnSpdWIUwO+BdDw==;
+	List-Owner; bh=riYmu95dAO7bfZzg5/hTgo/0TSlAHTj6A2AxxoL9GTA=; b=vHRqqxrdQHirfr
+	XiP4AOtt+7giJIEOoVDdxp67xPr5IpFc57OL86TEa4cp6CJD3EHYmFvT+U2TAWnhYSi6KcgAzkJcV
+	S4QeFfdHR5DG7JhGtLiao/NOqrR4WjYBml5SLglR+pNc7j/te4Mq2IUSGJ/JilWCFQf5Sf4YGGeRN
+	V7mF2na+QjexLEbLIOgmGoI7u1r0JL/XD4WxxGNfoZS1jyY1x5gLGeMqjb1mw/CGqSNv1qBV1d7eb
+	sUaNvbPtDAUPZOk+aKU3ArJYdMraXWbGd9cLaU1H/xcqPJt0YAFtNsNC0F8OAMaw/AURiMfUatrNy
+	OUbRIpwp8EHmJpVuM+0A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pEryu-001UJ5-30; Mon, 09 Jan 2023 13:14:28 +0000
+	id 1pErzl-001Ukz-Cr; Mon, 09 Jan 2023 13:15:21 +0000
 Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pEryW-001U9d-FW
-	for linux-phy@bombadil.infradead.org; Mon, 09 Jan 2023 13:14:04 +0000
+	id 1pErya-001UB9-Gg
+	for linux-phy@bombadil.infradead.org; Mon, 09 Jan 2023 13:14:08 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=infradead.org; s=desiato.20200630; h=Cc:To:In-Reply-To:References:
 	Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
 	From:Sender:Reply-To:Content-ID:Content-Description;
-	bh=eHeD4/5Q26ruqFmP/If/k2xNMCXAhjZeCMYfTgUbKRU=; b=aefMcy7+PZRvhcj2Kt56bDP0ag
-	M5EXH3zAK0CQwEc6P3HzN7pCqcTiOqk+eNn2edwUTpujNNH3S/BZodtQ2Nv2vVusTcp1qO4aTIjbC
-	p/4yPWe+SlJeuaXYqydTIaf+rP+VQOxU2BDj5T4zJJ8oMSNLVQPVodqP5rczQdqTeEwMeOypEmVLA
-	YySvDYRZTKZkie4t8WkIs1tBqurDaSf4hBnXvZwTl5wGLwT6EzKnzV0YWu42qs8cUhocK4oESmtyC
-	ThrOeQbsHeQ9Hf2VNsc7Au4wod4ozfMotvC5ap6ftK/mxr1TwrXxyH8/YlRyRP4f3GiOhRZzTqu++
-	lETZYB3A==;
-Received: from mail-wm1-x331.google.com ([2a00:1450:4864:20::331])
+	bh=qRoLsjyY/qf2Mb569g+NlHCALe/agKv6TWaWZecCXbM=; b=hY2S2TulTdp9I/hVUvFxosenfM
+	LXrTBxqtdMIbdxCPH2tNy0ESAXZFxypWV9SIxkGk1RPlyVOHf9lR7VJTut08DgpO25u+xUulxYGHk
+	9zsus4hQigyqxIUnyGIqzX+LTnpU82oxooNL/hy/UF/vUyCsd3wT09HfndmJ/4b1OfaHrQQEI8N/E
+	QdOTCJ4Z/ZdASfQYRqBZxga3nBn6AD0lPUnUH0KpyFmFDuPTgqSgw78H4Gbca3ZOocKg3O9/Dk3WE
+	S+BIAVigBQELCX63gHlM9AAfAtS23rG0zrzmAAJVy7Ns7WWgOyl5Q8e2dhAvz8MGQOwt6KpGdrAia
+	UbIMmaXg==;
+Received: from mail-wm1-x32c.google.com ([2a00:1450:4864:20::32c])
 	by desiato.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pEreg-002jE3-1w
+	id 1pEreg-002jDl-0a
 	for linux-phy@lists.infradead.org;
-	Mon, 09 Jan 2023 12:53:55 +0000
-Received: by mail-wm1-x331.google.com with SMTP id l26so6178962wme.5
-        for <linux-phy@lists.infradead.org>; Mon, 09 Jan 2023 04:53:41 -0800 (PST)
+	Mon, 09 Jan 2023 12:53:39 +0000
+Received: by mail-wm1-x32c.google.com with SMTP id l26so6178878wme.5
+        for <linux-phy@lists.infradead.org>; Mon, 09 Jan 2023 04:53:38 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=eHeD4/5Q26ruqFmP/If/k2xNMCXAhjZeCMYfTgUbKRU=;
-        b=ST+d6exv+eSO89qaxYEHQlIUZjwGyGwBJ4xr+vru1zfL5TKvPyAhqO8Pkx0pwPrsz+
-         jgw4926gADuQo43X4dvIXEFVEX+2jkFCW71Ibl6xlz8rEKH4KDOuwPJavaTNh6Xc5P0A
-         AjwReWC2HFTNu9qYXgDmUygMPt7ZAvBkFipkWakWAcAxMsf5vwA9wpujm+DSd3CLhQ62
-         Fm9K10aodqGSrxbo5Zu0m7mpFDY6eTc0BH5igwv8WsKfuWKKBwQ+/tSlmb8JcRvYv2nf
-         gApIKGwFDwKoKVFmWMoGxExR8BxoEEnI+UkTInipxpBoGPl/IFugqltGY0B5Ddf6azXK
-         M/8A==
+        bh=qRoLsjyY/qf2Mb569g+NlHCALe/agKv6TWaWZecCXbM=;
+        b=PtAZ9sogJ7D4ak5aTWeShdIBpAojseUr1St7O+JcXvW9KypuHN2Tf5W1eVB8HsoPF5
+         Qc5AYGcZBGHgvHxrR3P6gpgTinKrkUnuy5LEDPE03vAR78m1vUv3J7o9Zs8EkLiokWFG
+         C5+WI1eABYMDkQ5QEoKydR/Me0T2WGlkuMYQfCLahG/XOli4iTy+Rn+agbzFJXwgJjhY
+         fQR1MEQz3dhs6YPpglpZflbvBSoAWJOLMZKoVKR9KOP9UnbpyVI8cbcw38XnxxrIevb5
+         gAPqB1nL5xVr+w5BIPh5+EWDCP9351eyJjxkEPdFQmPvKJPhGUQwh+0uzz7LAv35bZsI
+         uYtQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=eHeD4/5Q26ruqFmP/If/k2xNMCXAhjZeCMYfTgUbKRU=;
-        b=xo1kXX/3Q1AWz4uZ/GW3FeOaz8Eh3j8Rs+i8iJ9/U/ARRWCU13Srg83Ds2JX+YJzbn
-         s5QrjwlvQgzXRQQfzQgRcPDsvGXV78Ec3glr5kfN3qngrC0dVQO+cybNLnevq8waCqPQ
-         sRplkgHYzVy6meEaVD7j72HKWotRACa5cbifG5OXp4o2xvg4jD+cbe0ve6/o+m4okl2z
-         QQZp4sUDYFmnBB53Lvn66cJbzhQPLUfPHlYKgB5tCqp0oFTzbhwCKSFb35iP73Ect8MS
-         KEdCwjUL0YD2cOmKFd/bClfKjkXhK4nZ4b5GsBgq4JBsvmAsAyn/Nfdfl5MUYoaPVa9p
-         FyMg==
-X-Gm-Message-State: AFqh2ko4g4k6X7rlBEZSFdGbRQKTdPEmn5mp6pWqTSXn3oSYFNmvHyaT
-	Ts8m5a7MtUTJlwl2RnfKo7K4Zg==
-X-Google-Smtp-Source: AMrXdXsaurQF4EtQDAHouXVvSJBqCu54hP/k4K5wC/jqtSrGfESg6vwwkM/iQm8oVMP1uuBrED7e8A==
-X-Received: by 2002:a05:600c:3d05:b0:3d3:5c21:dd94 with SMTP id bh5-20020a05600c3d0500b003d35c21dd94mr48020557wmb.9.1673268820053;
-        Mon, 09 Jan 2023 04:53:40 -0800 (PST)
+        bh=qRoLsjyY/qf2Mb569g+NlHCALe/agKv6TWaWZecCXbM=;
+        b=zcHsuLYd0oe42wNCi7yySo6JLlZVOvNah5+cywJ1qFVyw+zgriTezxh+RQxiUWrOik
+         bbeXuu79T6JxRiJvL5K0JgpCu7hgGAE+/S6kUGvOqa+fV+4EVx2cysLMzEx6VU2V4yUz
+         3/c3oJOWE8rD3dKlczs1Sz79VfNAMJdaTMHqj71mVFgDzfVzbidon51C1d3ilzdN2bh/
+         G/UY4pVa3UM+73VWUQLviOZThIS/s/QbgaldkxTILm9mpahNPhDYl4eBayBByfRlkj4B
+         lpLFidaECuMy3ZE802XRG3Ee4TVYpxaIRBb+9tSerPldrsRretJ+vbtheAsaGbO/gj9R
+         N7PA==
+X-Gm-Message-State: AFqh2krTbw4QjNQSI/0CLk/6L+ch2ErGRSme1e+ydq3bqdVyWdaboAgJ
+	ybB1q0ZLgogH5dkpCP5wlfiTHQ==
+X-Google-Smtp-Source: AMrXdXv0Bdf0Epz6SrHpPBay5WK9tEtRPRH405V8jHfx2VRO9KsOFVi+7uQvyzocCrT86ySajHKxRw==
+X-Received: by 2002:a05:600c:d2:b0:3d2:2b70:f2fd with SMTP id u18-20020a05600c00d200b003d22b70f2fdmr47240724wmm.21.1673268816880;
+        Mon, 09 Jan 2023 04:53:36 -0800 (PST)
 Received: from arrakeen.starnux.net ([2a01:e0a:982:cbb0:52eb:f6ff:feb3:451a])
-        by smtp.gmail.com with ESMTPSA id y7-20020a7bcd87000000b003d997e5e679sm12805667wmj.14.2023.01.09.04.53.38
+        by smtp.gmail.com with ESMTPSA id y7-20020a7bcd87000000b003d997e5e679sm12805667wmj.14.2023.01.09.04.53.35
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 09 Jan 2023 04:53:39 -0800 (PST)
+        Mon, 09 Jan 2023 04:53:36 -0800 (PST)
 From: Neil Armstrong <neil.armstrong@linaro.org>
-Date: Mon, 09 Jan 2023 13:53:30 +0100
-Subject: [PATCH v2 06/11] dt-bindings: power: amlogic,meson-gx-pwrc: mark
- bindings as deprecated
+Date: Mon, 09 Jan 2023 13:53:28 +0100
+Subject:  [PATCH v2 04/11] dt-bindings: watchdog: convert meson-wdt.txt to dt-schema
 MIME-Version: 1.0
-Message-Id:  <20221117-b4-amlogic-bindings-convert-v2-6-36ad050bb625@linaro.org>
+Message-Id:  <20221117-b4-amlogic-bindings-convert-v2-4-36ad050bb625@linaro.org>
 References:  <20221117-b4-amlogic-bindings-convert-v2-0-36ad050bb625@linaro.org>
 In-Reply-To:  <20221117-b4-amlogic-bindings-convert-v2-0-36ad050bb625@linaro.org>
 To: Rob Herring <robh+dt@kernel.org>,
@@ -109,8 +108,8 @@ Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 X-Mailer: b4 0.11.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230109_125334_802441_F096DEA9 
-X-CRM114-Status: GOOD (  12.32  )
+X-CRM114-CacheID: sfid-20230109_125334_496673_B44E0FB7 
+X-CRM114-Status: GOOD (  14.97  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -127,30 +126,100 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The amlogic,meson-gx-pwrc-vpu compatible isn't used anymore since [1]
-was merged in v5.8-rc1 and amlogic,meson-g12a-pwrc-vpu either since [2]
-was merged in v5.3-rc1.
+Convert the Amlogic Meson6 SoCs Watchdog timer bindings to dt-schema.
 
-[1] commit 5273d6cacc06 ("arm64: dts: meson-gx: Switch to the meson-ee-pwrc bindings")
-[2] commit f4f1c8d9ace7 ("arm64: dts: meson-g12: add Everything-Else power domain controller")
+Take in account the used interrupts property.
 
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
 ---
- Documentation/devicetree/bindings/power/amlogic,meson-gx-pwrc.txt | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ .../bindings/watchdog/amlogic,meson6-wdt.yaml      | 50 ++++++++++++++++++++++
+ .../devicetree/bindings/watchdog/meson-wdt.txt     | 21 ---------
+ 2 files changed, 50 insertions(+), 21 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/power/amlogic,meson-gx-pwrc.txt b/Documentation/devicetree/bindings/power/amlogic,meson-gx-pwrc.txt
-index 99b5b10cda31..ba5865ae6bfe 100644
---- a/Documentation/devicetree/bindings/power/amlogic,meson-gx-pwrc.txt
-+++ b/Documentation/devicetree/bindings/power/amlogic,meson-gx-pwrc.txt
-@@ -1,5 +1,5 @@
--Amlogic Meson Power Controller
--==============================
-+Amlogic Meson Power Controller (deprecated)
-+===========================================
- 
- The Amlogic Meson SoCs embeds an internal Power domain controller.
- 
+diff --git a/Documentation/devicetree/bindings/watchdog/amlogic,meson6-wdt.yaml b/Documentation/devicetree/bindings/watchdog/amlogic,meson6-wdt.yaml
+new file mode 100644
+index 000000000000..84732cb58ec4
+--- /dev/null
++++ b/Documentation/devicetree/bindings/watchdog/amlogic,meson6-wdt.yaml
+@@ -0,0 +1,50 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/watchdog/amlogic,meson6-wdt.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Amlogic Meson6 SoCs Watchdog timer
++
++maintainers:
++  - Neil Armstrong <neil.armstrong@linaro.org>
++  - Martin Blumenstingl <martin.blumenstingl@googlemail.com>
++
++allOf:
++  - $ref: watchdog.yaml#
++
++properties:
++  compatible:
++    oneOf:
++      - enum:
++          - amlogic,meson6-wdt
++          - amlogic,meson8-wdt
++          - amlogic,meson8b-wdt
++      - items:
++          - const: amlogic,meson8m2-wdt
++          - const: amlogic,meson8b-wdt
++
++  interrupts:
++    maxItems: 1
++
++  reg:
++    maxItems: 1
++
++required:
++  - compatible
++  - interrupts
++  - reg
++
++unevaluatedProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/interrupt-controller/irq.h>
++    #include <dt-bindings/interrupt-controller/arm-gic.h>
++
++    wdt: watchdog@c1109900 {
++        compatible = "amlogic,meson6-wdt";
++        reg = <0xc1109900 0x8>;
++        interrupts = <GIC_SPI 0 IRQ_TYPE_EDGE_RISING>;
++        timeout-sec = <10>;
++    };
+diff --git a/Documentation/devicetree/bindings/watchdog/meson-wdt.txt b/Documentation/devicetree/bindings/watchdog/meson-wdt.txt
+deleted file mode 100644
+index 7588cc3971bf..000000000000
+--- a/Documentation/devicetree/bindings/watchdog/meson-wdt.txt
++++ /dev/null
+@@ -1,21 +0,0 @@
+-Meson SoCs Watchdog timer
+-
+-Required properties:
+-
+-- compatible : depending on the SoC this should be one of:
+-	"amlogic,meson6-wdt" on Meson6 SoCs
+-	"amlogic,meson8-wdt" and "amlogic,meson6-wdt" on Meson8 SoCs
+-	"amlogic,meson8b-wdt" on Meson8b SoCs
+-	"amlogic,meson8m2-wdt" and "amlogic,meson8b-wdt" on Meson8m2 SoCs
+-- reg : Specifies base physical address and size of the registers.
+-
+-Optional properties:
+-- timeout-sec: contains the watchdog timeout in seconds.
+-
+-Example:
+-
+-wdt: watchdog@c1109900 {
+-	compatible = "amlogic,meson6-wdt";
+-	reg = <0xc1109900 0x8>;
+-	timeout-sec = <10>;
+-};
 
 -- 
 2.34.1
