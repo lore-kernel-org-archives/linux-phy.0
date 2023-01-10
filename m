@@ -4,100 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 81B5EC46467
-	for <linux-phy@archiver.kernel.org>; Tue, 10 Jan 2023 10:18:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3FF95C46467
+	for <linux-phy@archiver.kernel.org>; Tue, 10 Jan 2023 11:57:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=s87jT3Xdfz+foxB1cYo7jKtpAiRWmx3N62BNoHcMH/0=; b=ypx8ToMLqVo5as
-	cF4zqWq1e2lcmDu4KDSrBG5pirFRxTMNIWMERIEfJ4rV/i4Amnrf0kwGFVONVrml9MmDtjLcNQMJg
-	Zr8dRsWAbpUeHovH13S6v44bB+uxoSusmup0K8DiIkix5oR2e1n4zzuiWrKWg8ChhXwUaPUXpuDIW
-	Hwl/SZTGLCOyo2aK0z0LajMgg2Em6/CxrCjt6HyHzOvmDO/mU0qs3S+os+xknukfExMCRCe8vAbyJ
-	QWIA6WLKsQ4wcHhwxj7yDF0KU1IoAxxm/S9oPd8kAJ08uwKRLO/txyuxfZa+RTN2EHtRafuhl2pO8
-	WLvUUzWYr+sAJdw+khGw==;
+	List-Owner; bh=01WZFIOOG2FFPJUXi4Z9lHECtLjhTjKde/MZglhNW8E=; b=LVj3V+5mRpAESI
+	rTgD9wMLYmUz01AKJP1/C0UHEEGveJJyksd9DOqowh9Nrk9TgNAWMWrSsnijRltm72iN1NwqT0fgx
+	vFHBBqOMN+FNJDjddcfzG0PgBm5GY3/D43cLVhFAox/bZVTwMr5f/S0Uio1FP6bcOE1hPBQVCjxcT
+	2mTEKNPXnnACkuUTQIdJKyc2o8mA9pxpQvd8wR1Y/nFoICvlpzMTSvNP6xbWX3Crwe2RdJN6MRrmv
+	lzVOtYrqDLYNC2H9fXc8dRzt7yDOAIiOkDSs0BhGfsR+8SP3VfVEcCYaPERK/9Jttnk/4ezl5+A5B
+	5v7Ed6zkjm41qVpD+PNA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pFBhm-006Jrt-VX; Tue, 10 Jan 2023 10:18:06 +0000
-Received: from mail-wm1-x32b.google.com ([2a00:1450:4864:20::32b])
+	id 1pFDFm-006jGC-ML; Tue, 10 Jan 2023 11:57:18 +0000
+Received: from relay08.th.seeweb.it ([5.144.164.169])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pFBhk-006Jq8-Kn
-	for linux-phy@lists.infradead.org; Tue, 10 Jan 2023 10:18:06 +0000
-Received: by mail-wm1-x32b.google.com with SMTP id g10so8406434wmo.1
-        for <linux-phy@lists.infradead.org>; Tue, 10 Jan 2023 02:18:04 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=PM3i+83BPLCvCkjcHeSsVRsAE5H2Nw7gtRNrJCRY2Ks=;
-        b=dCctDUIS0wC58/aHLK5o+YpcliPRN6sleu5Xkbclt/zqSjkzezo8juF4OGzlLsvyGf
-         tUK3Rkiu727qQvxILep6HVoaAKnbkXRJxXvgarWY5BU8gAhVnxynCpG6cAqFAtwFfQan
-         3pwJ3RN0AT5mFJYR+byVFD9HC1x7kN8/SimGHmYJMdTQmmPWlFJml+nBX3qwrwOyQ0L2
-         UvUktrvtRBUHh2RAj9it+AGiFB2eOiNTbZqual4iMCHAWr+CVeoF7M3ea+Zyeosp0P2O
-         Fta/A301YwGUtq0CiX/gKZAwpIxyloMcGasDLKovqyrb3C28XcQSXdlOKbYVcLBa90Gh
-         bQdg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=PM3i+83BPLCvCkjcHeSsVRsAE5H2Nw7gtRNrJCRY2Ks=;
-        b=sK7MJLOKYSvDTyuq8lmRQQQRVESJee61w7wH3Z0jMNiKQ2Cafh3AFWTPLUaxB0U7iq
-         ORCzYr9hBMXtvx8IivWFk+mWUJu1hzX086+eTq7kdGzyX7SSXy6ZBTtc7k0PaTazfTUl
-         UBSl9a1vHYNU2sYJTZ1iMAWoV3S04LOqEzd4NqZ86O4wCJDvkfZkJyEauewkR8lVZ6tg
-         TsZ2xmW5X44qZShDeqJnRnBWoLrJhtKztaOas6T71Su+FoXWFPlMoBFJan1YnAIly5/U
-         Tp2+0W7jjpnwJYsn9tBjL3CJluvhLXu8ZPFXu1q2UYLGAnKN/GYFdNYpQeR5SncZeZPp
-         aPxg==
-X-Gm-Message-State: AFqh2krf3/KgkUZdVbIqYSRcfJHMydOG1c9vMlVQpi1kyNY/+ppbefwP
-	+EaA5OvWAVcly7uHzdaW4+fwrg==
-X-Google-Smtp-Source: AMrXdXvxClrR4BtCis3ALpFrfvnnBH5INQXfgVxgssgGc8gS8VU+28Qjf2O0/5xOZ+1CSwryJpUEpQ==
-X-Received: by 2002:a05:600c:48a1:b0:3d1:f270:a81e with SMTP id j33-20020a05600c48a100b003d1f270a81emr48836013wmp.17.1673345883348;
-        Tue, 10 Jan 2023 02:18:03 -0800 (PST)
-Received: from [192.168.1.109] ([178.197.216.144])
-        by smtp.gmail.com with ESMTPSA id z9-20020a7bc7c9000000b003d9ef37ec1bsm8484251wmk.5.2023.01.10.02.17.53
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 10 Jan 2023 02:18:02 -0800 (PST)
-Message-ID: <e3d32fe1-9f2b-09fb-d7e0-2c8f42e5365c@linaro.org>
-Date: Tue, 10 Jan 2023 11:17:52 +0100
+	id 1pFDFh-006jBa-35
+	for linux-phy@lists.infradead.org; Tue, 10 Jan 2023 11:57:16 +0000
+Received: from SoMainline.org (94-211-6-86.cable.dynamic.v4.ziggo.nl [94.211.6.86])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange ECDHE (P-256) server-signature RSA-PSS (2048 bits) server-digest SHA256)
+	(No client certificate requested)
+	by m-r2.th.seeweb.it (Postfix) with ESMTPSA id 26E573F2E2;
+	Tue, 10 Jan 2023 12:56:59 +0100 (CET)
+Date: Tue, 10 Jan 2023 12:56:57 +0100
+From: Marijn Suijten <marijn.suijten@somainline.org>
+To: Lux Aliaga <they@mint.lgbt>
+Cc: agross@kernel.org, andersson@kernel.org, konrad.dybcio@linaro.org,
+	robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
+	vkoul@kernel.org, kishon@kernel.org, alim.akhtar@samsung.com,
+	avri.altman@wdc.com, bvanassche@acm.org, keescook@chromium.org,
+	tony.luck@intel.com, gpiccoli@igalia.com,
+	~postmarketos/upstreaming@lists.sr.ht,
+	linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-scsi@vger.kernel.org, linux-hardening@vger.kernel.org,
+	phone-devel@vger.kernel.org, martin.botka@somainline.org
+Subject: Re: [PATCH v6 6/6] arm64: dts: qcom: sm6125: Initial support for
+ xiaomi-laurel-sprout
+Message-ID: <20230110115657.zkm6yomut6tevqrz@SoMainline.org>
+Mail-Followup-To: Marijn Suijten <marijn.suijten@somainline.org>,
+	Lux Aliaga <they@mint.lgbt>, agross@kernel.org,
+	andersson@kernel.org, konrad.dybcio@linaro.org, robh+dt@kernel.org,
+	krzysztof.kozlowski+dt@linaro.org, vkoul@kernel.org,
+	kishon@kernel.org, alim.akhtar@samsung.com, avri.altman@wdc.com,
+	bvanassche@acm.org, keescook@chromium.org, tony.luck@intel.com,
+	gpiccoli@igalia.com, ~postmarketos/upstreaming@lists.sr.ht,
+	linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-scsi@vger.kernel.org, linux-hardening@vger.kernel.org,
+	phone-devel@vger.kernel.org, martin.botka@somainline.org
+References: <20230108195336.388349-1-they@mint.lgbt>
+ <20230108195336.388349-7-they@mint.lgbt>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.6.1
-Subject: Re: [PATCH v2 09/11] dt-bindings: mmc: convert amlogic,meson-gx.txt
- to dt-schema
-Content-Language: en-US
-To: Neil Armstrong <neil.armstrong@linaro.org>,
- Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Kevin Hilman <khilman@baylibre.com>, Jerome Brunet <jbrunet@baylibre.com>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
- Wim Van Sebroeck <wim@linux-watchdog.org>, Guenter Roeck
- <linux@roeck-us.net>, Mauro Carvalho Chehab <mchehab@kernel.org>,
- Alessandro Zummo <a.zummo@towertech.it>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- Thomas Gleixner <tglx@linutronix.de>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>,
- Ulf Hansson <ulf.hansson@linaro.org>, Bjorn Helgaas <bhelgaas@google.com>,
- "David S. Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>,
- Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
- Andrew Lunn <andrew@lunn.ch>, Heiner Kallweit <hkallweit1@gmail.com>,
- Russell King <linux@armlinux.org.uk>
-Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-watchdog@vger.kernel.org, linux-media@vger.kernel.org,
- linux-rtc@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-mmc@vger.kernel.org, linux-pci@vger.kernel.org, netdev@vger.kernel.org
-References: <20221117-b4-amlogic-bindings-convert-v2-0-36ad050bb625@linaro.org>
- <20221117-b4-amlogic-bindings-convert-v2-9-36ad050bb625@linaro.org>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20221117-b4-amlogic-bindings-convert-v2-9-36ad050bb625@linaro.org>
+Content-Disposition: inline
+In-Reply-To: <20230108195336.388349-7-they@mint.lgbt>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230110_021804_713782_75D479C6 
-X-CRM114-Status: GOOD (  18.62  )
+X-CRM114-CacheID: sfid-20230110_035713_492381_55A32AC5 
+X-CRM114-Status: GOOD (  18.82  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -114,59 +82,486 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 09/01/2023 13:53, Neil Armstrong wrote:
-> Convert the Amlogic SD / eMMC controller for S905/GXBB family SoCs
-> to dt-schema.
+On 2023-01-08 16:53:36, Lux Aliaga wrote:
+> Add support for the Xiaomi Mi A3 (xiaomi-laurel-sprout). Here's a
+> summary on what's defined.
 > 
-> Take in account the used variant with amlogic,meson-gx-mmc.
+> - dmesg output to bootloader preconfigured display
+> - USB
+> - UFS
+> - SD card
+> - SMD RPM regulators
+> - Volume Up, Down and Power buttons
+> - Thermistors
 > 
-> Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
+> Signed-off-by: Lux Aliaga <they@mint.lgbt>
 > ---
->  .../bindings/mmc/amlogic,meson-gx-mmc.yaml         | 75 ++++++++++++++++++++++
->  .../devicetree/bindings/mmc/amlogic,meson-gx.txt   | 39 -----------
->  2 files changed, 75 insertions(+), 39 deletions(-)
+>  arch/arm64/boot/dts/qcom/Makefile             |   1 +
+>  .../dts/qcom/sm6125-xiaomi-laurel-sprout.dts  | 424 ++++++++++++++++++
+>  2 files changed, 425 insertions(+)
+>  create mode 100644 arch/arm64/boot/dts/qcom/sm6125-xiaomi-laurel-sprout.dts
 > 
-> diff --git a/Documentation/devicetree/bindings/mmc/amlogic,meson-gx-mmc.yaml b/Documentation/devicetree/bindings/mmc/amlogic,meson-gx-mmc.yaml
+> diff --git a/arch/arm64/boot/dts/qcom/Makefile b/arch/arm64/boot/dts/qcom/Makefile
+> index 3e79496292e7..2b2a0170db14 100644
+> --- a/arch/arm64/boot/dts/qcom/Makefile
+> +++ b/arch/arm64/boot/dts/qcom/Makefile
+> @@ -157,6 +157,7 @@ dtb-$(CONFIG_ARCH_QCOM)	+= sdm850-lenovo-yoga-c630.dtb
+>  dtb-$(CONFIG_ARCH_QCOM)	+= sdm850-samsung-w737.dtb
+>  dtb-$(CONFIG_ARCH_QCOM)	+= sm4250-oneplus-billie2.dtb
+>  dtb-$(CONFIG_ARCH_QCOM)	+= sm6125-sony-xperia-seine-pdx201.dtb
+> +dtb-$(CONFIG_ARCH_QCOM)	+= sm6125-xiaomi-laurel-sprout.dtb
+>  dtb-$(CONFIG_ARCH_QCOM)	+= sm6350-sony-xperia-lena-pdx213.dtb
+>  dtb-$(CONFIG_ARCH_QCOM)	+= sm6375-sony-xperia-murray-pdx225.dtb
+>  dtb-$(CONFIG_ARCH_QCOM)	+= sm7225-fairphone-fp4.dtb
+> diff --git a/arch/arm64/boot/dts/qcom/sm6125-xiaomi-laurel-sprout.dts b/arch/arm64/boot/dts/qcom/sm6125-xiaomi-laurel-sprout.dts
 > new file mode 100644
-> index 000000000000..30228964fd9c
+> index 000000000000..7ff18f481060
 > --- /dev/null
-> +++ b/Documentation/devicetree/bindings/mmc/amlogic,meson-gx-mmc.yaml
-> @@ -0,0 +1,75 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/mmc/amlogic,meson-gx-mmc.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +++ b/arch/arm64/boot/dts/qcom/sm6125-xiaomi-laurel-sprout.dts
+> @@ -0,0 +1,424 @@
+> +// SPDX-License-Identifier: BSD-3-Clause
+> +/*
+> + * Copyright (c) 2022, Lux Aliaga <they@mint.lgbt>
+> + */
 > +
-> +title: Amlogic SD / eMMC controller for S905/GXBB family SoCs
+> +/dts-v1/;
 > +
-> +description:
-> +  The MMC 5.1 compliant host controller on Amlogic provides the
-> +  interface for SD, eMMC and SDIO devices
+> +#include <dt-bindings/gpio/gpio.h>
+> +#include <dt-bindings/input/input.h>
+> +#include <dt-bindings/input/gpio-keys.h>
+> +#include <dt-bindings/pinctrl/qcom,pmic-gpio.h>
+> +#include "sm6125.dtsi"
+> +#include "pm6125.dtsi"
 > +
-> +maintainers:
-> +  - Neil Armstrong <neil.armstrong@linaro.org>
+> +/ {
+> +	model = "Xiaomi Mi A3";
+> +	compatible = "xiaomi,laurel-sprout", "qcom,sm6125";
+> +	chassis-type = "handset";
 > +
-> +allOf:
-> +  - $ref: mmc-controller.yaml#
+> +	/* required for bootloader to select correct board */
+> +	qcom,msm-id = <394 0>; /* sm6125 v1 */
+> +	qcom,board-id = <11 0>;
 > +
-> +properties:
-> +  compatible:
-> +    oneOf:
-> +      - enum:
-> +          - amlogic,meson-gx-mmc
-> +          - amlogic,meson-axg-mmc
-> +      - items:
-> +          - const: amlogic,meson-gx-mmc
+> +	chosen {
+> +		#address-cells = <2>;
+> +		#size-cells = <2>;
+> +		ranges;
+> +
+> +		framebuffer0: framebuffer@5c000000 {
+> +			compatible = "simple-framebuffer";
+> +			reg = <0 0x5c000000 0 (1560 * 720 * 4)>;
+> +			width = <720>;
+> +			height = <1560>;
+> +			stride = <(720 * 4)>;
+> +			format = "a8r8g8b8";
+> +		};
+> +	};
+> +
+> +	reserved-memory {
+> +		#address-cells = <2>;
+> +		#size-cells = <2>;
+> +
+> +		debug_mem: debug@ffb00000 {
+> +			reg = <0x0 0xffb00000 0x0 0xc0000>;
+> +			no-map;
+> +		};
+> +
+> +		last_log_mem: lastlog@ffbc0000 {
+> +			reg = <0x0 0xffbc0000 0x0 0x80000>;
+> +			no-map;
+> +		};
+> +
+> +		pstore_mem: ramoops@ffc00000 {
+> +			compatible = "ramoops";
+> +			reg = <0x0 0xffc40000 0x0 0xc0000>;
+> +			record-size = <0x1000>;
+> +			console-size = <0x40000>;
+> +			msg-size = <0x20000 0x20000>;
+> +		};
+> +
+> +		cmdline_mem: memory@ffd00000 {
+> +			reg = <0x0 0xffd40000 0x0 0x1000>;
+> +			no-map;
+> +		};
+> +	};
+> +
+> +	extcon_usb: usb-id {
+> +		compatible = "linux,extcon-usb-gpio";
+> +		id-gpio = <&tlmm 102 GPIO_ACTIVE_HIGH>;
+> +	};
+> +
+> +	gpio-keys {
+> +		compatible = "gpio-keys";
+> +
+> +		pinctrl-0 = <&vol_up_n>;
+> +		pinctrl-names = "default";
+> +
+> +		key-volume-up {
+> +			label = "Volume Up";
+> +			gpios = <&pm6125_gpio 5 GPIO_ACTIVE_LOW>;
 
-This does not look correct. Either gx is alone (not compatible with
-gxbb) or it is compatible with gxbb. Cannot be both.
+Note that this changed to plural pm6125_gpioS in -next:
+https://lore.kernel.org/all/20221209220450.1793421-1-marijn.suijten@somainline.org/
 
+You'll have to fix that up before this patch can be applied to Bjorn's
+QCOM DTS tree.
 
+> +			linux,code = <KEY_VOLUMEUP>;
+> +			debounce-interval = <15>;
+> +			linux,can-disable;
+> +			wakeup-source;
+> +		};
+> +	};
+> +
+> +	thermal-zones {
+> +		rf-pa0-thermal {
+> +			polling-delay-passive = <0>;
+> +			polling-delay = <0>;
+> +			thermal-sensors = <&pm6125_adc_tm 0>;
+> +
+> +			trips {
+> +				active-config0 {
+> +					temperature = <125000>;
+> +					hysteresis = <1000>;
+> +					type = "critical";
+> +				};
+> +			};
+> +		};
+> +
+> +		quiet-thermal {
+> +			polling-delay-passive = <0>;
+> +			polling-delay = <5000>;
+> +			thermal-sensors = <&pm6125_adc_tm 1>;
+> +
+> +			trips {
+> +				active-config0 {
+> +					temperature = <125000>;
+> +					hysteresis = <1000>;
+> +					type = "critical";
+> +				};
+> +			};
+> +		};
+> +
+> +		xo-thermal {
+> +			polling-delay-passive = <0>;
+> +			polling-delay = <0>;
+> +			thermal-sensors = <&pm6125_adc_tm 2>;
+> +
+> +			trips {
+> +				active-config0 {
+> +					temperature = <125000>;
+> +					hysteresis = <1000>;
+> +					type = "critical";
+> +				};
+> +			};
+> +		};
+> +	};
+> +};
+> +
+> +&hsusb_phy1 {
+> +	vdd-supply = <&vreg_l7a>;
+> +	vdda-pll-supply = <&vreg_l10a>;
+> +	vdda-phy-dpdm-supply = <&vreg_l15a>;
+> +	status = "okay";
+> +};
+> +
+> +&pm6125_adc {
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&camera_flash_therm &emmc_ufs_therm>;
+> +
+> +	adc-chan@4d {
+> +		reg = <ADC5_AMUX_THM1_100K_PU>;
+> +		qcom,ratiometric;
+> +		qcom,hw-settle-time = <200>;
+> +		qcom,pre-scaling = <1 1>;
+> +		label = "rf_pa0_therm";
+> +	};
+> +
+> +	adc-chan@4e {
+> +		reg = <ADC5_AMUX_THM2_100K_PU>;
+> +		qcom,ratiometric;
+> +		qcom,hw-settle-time = <200>;
+> +		qcom,pre-scaling = <1 1>;
+> +		label = "quiet_therm";
+> +	};
+> +
+> +	adc-chan@52 {
+> +		reg = <ADC5_GPIO1_100K_PU>;
+> +		qcom,ratiometric;
+> +		qcom,hw-settle-time = <200>;
+> +		qcom,pre-scaling = <1 1>;
+> +		label = "camera_flash_therm";
+> +	};
+> +
+> +	adc-chan@54 {
+> +		reg = <ADC5_GPIO3_100K_PU>;
+> +		qcom,ratiometric;
+> +		qcom,hw-settle-time = <200>;
+> +		qcom,pre-scaling = <1 1>;
+> +		label = "emmc_ufs_therm";
+> +	};
+> +};
+> +
+> +&pm6125_adc_tm {
+> +	status = "okay";
+> +
+> +	rf-pa0-therm@0 {
+> +		reg = <0>;
+> +		io-channels = <&pm6125_adc ADC5_AMUX_THM1_100K_PU>;
+> +		qcom,ratiometric;
+> +		qcom,hw-settle-time-us = <200>;
+> +	};
+> +
+> +	quiet-therm@1 {
+> +		reg = <1>;
+> +		io-channels = <&pm6125_adc ADC5_AMUX_THM2_100K_PU>;
+> +		qcom,ratiometric;
+> +		qcom,hw-settle-time-us = <200>;
+> +	};
+> +
+> +	xo-therm@2 {
+> +		reg = <2>;
+> +		io-channels = <&pm6125_adc ADC5_XO_THERM_100K_PU>;
+> +		qcom,ratiometric;
+> +		qcom,hw-settle-time-us = <200>;
+> +	};
+> +};
+> +
+> +&pm6125_gpio {
 
-Best regards,
-Krzysztof
+Plural here too.
 
+With that (and Konrad's comment) fixed:
+
+Reviewed-by: Marijn Suijten <marijn.suijten@somainline.org>
+
+- Marijn
+
+> +	camera_flash_therm: camera-flash-therm-state {
+> +		pins = "gpio3";
+> +		function = PMIC_GPIO_FUNC_NORMAL;
+> +		bias-high-impedance;
+> +	};
+> +
+> +	emmc_ufs_therm: emmc-ufs-therm-state {
+> +		pins = "gpio6";
+> +		function = PMIC_GPIO_FUNC_NORMAL;
+> +		bias-high-impedance;
+> +	};
+> +
+> +	vol_up_n: vol-up-n-state {
+> +		pins = "gpio5";
+> +		function = PMIC_GPIO_FUNC_NORMAL;
+> +		input-enable;
+> +		bias-pull-up;
+> +	};
+> +};
+> +
+> +&pon_pwrkey {
+> +	status = "okay";
+> +};
+> +
+> +&pon_resin {
+> +	status = "okay";
+> +	linux,code = <KEY_VOLUMEDOWN>;
+> +};
+> +
+> +&rpm_requests {
+> +	regulators-0 {
+> +		compatible = "qcom,rpm-pm6125-regulators";
+> +
+> +		vreg_s6a: s6 {
+> +			regulator-min-microvolt = <936000>;
+> +			regulator-max-microvolt = <1422000>;
+> +		};
+> +
+> +		vreg_l1a: l1 {
+> +			regulator-min-microvolt = <1200000>;
+> +			regulator-max-microvolt = <1256000>;
+> +		};
+> +
+> +		vreg_l2a: l2 {
+> +			regulator-min-microvolt = <1000000>;
+> +			regulator-max-microvolt = <1056000>;
+> +		};
+> +
+> +		vreg_l3a: l3 {
+> +			regulator-min-microvolt = <1000000>;
+> +			regulator-max-microvolt = <1064000>;
+> +		};
+> +
+> +		vreg_l4a: l4 {
+> +			regulator-min-microvolt = <872000>;
+> +			regulator-max-microvolt = <976000>;
+> +			regulator-allow-set-load;
+> +		};
+> +
+> +		vreg_l5a: l5 {
+> +			regulator-min-microvolt = <1648000>;
+> +			regulator-max-microvolt = <2950000>;
+> +			regulator-allow-set-load;
+> +		};
+> +
+> +		vreg_l6a: l6 {
+> +			regulator-min-microvolt = <576000>;
+> +			regulator-max-microvolt = <656000>;
+> +		};
+> +
+> +		vreg_l7a: l7 {
+> +			regulator-min-microvolt = <872000>;
+> +			regulator-max-microvolt = <976000>;
+> +		};
+> +
+> +		vreg_l8a: l8 {
+> +			regulator-min-microvolt = <400000>;
+> +			regulator-max-microvolt = <728000>;
+> +		};
+> +
+> +		vreg_l9a: l9 {
+> +			regulator-min-microvolt = <1800000>;
+> +			regulator-max-microvolt = <1896000>;
+> +		};
+> +
+> +		vreg_l10a: l10 {
+> +			regulator-min-microvolt = <1800000>;
+> +			regulator-max-microvolt = <1896000>;
+> +			regulator-allow-set-load;
+> +		};
+> +
+> +		vreg_l11a: l11 {
+> +			regulator-min-microvolt = <1800000>;
+> +			regulator-max-microvolt = <1952000>;
+> +			regulator-allow-set-load;
+> +		};
+> +
+> +		vreg_l12a: l12 {
+> +			regulator-min-microvolt = <1800000>;
+> +			regulator-max-microvolt = <1996000>;
+> +		};
+> +
+> +		vreg_l13a: l13 {
+> +			regulator-min-microvolt = <1800000>;
+> +			regulator-max-microvolt = <1832000>;
+> +		};
+> +
+> +		vreg_l14a: l14 {
+> +			regulator-min-microvolt = <1800000>;
+> +			regulator-max-microvolt = <1904000>;
+> +		};
+> +
+> +		vreg_l15a: l15 {
+> +			regulator-min-microvolt = <3104000>;
+> +			regulator-max-microvolt = <3232000>;
+> +		};
+> +
+> +		vreg_l16a: l16 {
+> +			regulator-min-microvolt = <1800000>;
+> +			regulator-max-microvolt = <1904000>;
+> +		};
+> +
+> +		vreg_l17a: l17 {
+> +			regulator-min-microvolt = <1248000>;
+> +			regulator-max-microvolt = <1304000>;
+> +		};
+> +
+> +		vreg_l18a: l18 {
+> +			regulator-min-microvolt = <1200000>;
+> +			regulator-max-microvolt = <1264000>;
+> +			regulator-allow-set-load;
+> +		};
+> +
+> +		vreg_l19a: l19 {
+> +			regulator-min-microvolt = <1648000>;
+> +			regulator-max-microvolt = <2952000>;
+> +		};
+> +
+> +		vreg_l20a: l20 {
+> +			regulator-min-microvolt = <1648000>;
+> +			regulator-max-microvolt = <2952000>;
+> +		};
+> +
+> +		vreg_l21a: l21 {
+> +			regulator-min-microvolt = <2600000>;
+> +			regulator-max-microvolt = <2856000>;
+> +		};
+> +
+> +		vreg_l22a: l22 {
+> +			regulator-min-microvolt = <2944000>;
+> +			regulator-max-microvolt = <2950000>;
+> +			regulator-allow-set-load;
+> +		};
+> +
+> +		vreg_l23a: l23 {
+> +			regulator-min-microvolt = <3000000>;
+> +			regulator-max-microvolt = <3400000>;
+> +		};
+> +
+> +		vreg_l24a: l24 {
+> +			regulator-min-microvolt = <2944000>;
+> +			regulator-max-microvolt = <2950000>;
+> +			regulator-allow-set-load;
+> +		};
+> +	};
+> +};
+> +
+> +&sdc2_off_state {
+> +	sd-cd-pins {
+> +		pins = "gpio98";
+> +		function = "gpio";
+> +		drive-strength = <2>;
+> +		bias-disable;
+> +	};
+> +};
+> +
+> +&sdc2_on_state {
+> +	sd-cd-pins {
+> +		pins = "gpio98";
+> +		function = "gpio";
+> +		drive-strength = <2>;
+> +		bias-pull-up;
+> +	};
+> +};
+> +
+> +&sdhc_2 {
+> +	cd-gpios = <&tlmm 98 GPIO_ACTIVE_HIGH>;
+> +	vmmc-supply = <&vreg_l22a>;
+> +	vqmmc-supply = <&vreg_l5a>;
+> +	no-sdio;
+> +	no-mmc;
+> +	status = "okay";
+> +};
+> +
+> +&tlmm {
+> +	gpio-reserved-ranges = <22 2>, <28 6>;
+> +};
+> +
+> +&ufs_mem_hc {
+> +	vcc-supply = <&vreg_l24a>;
+> +	vccq2-supply = <&vreg_l11a>;
+> +	vcc-max-microamp = <600000>;
+> +	vccq2-max-microamp = <600000>;
+> +	status = "okay";
+> +};
+> +
+> +&ufs_mem_phy {
+> +	vdda-phy-supply = <&vreg_l4a>;
+> +	vdda-pll-supply = <&vreg_l10a>;
+> +	vdda-phy-max-microamp = <51400>;
+> +	vdda-pll-max-microamp = <14200>;
+> +	vddp-ref-clk-supply = <&vreg_l18a>;
+> +	status = "okay";
+> +};
+> +
+> +&usb3 {
+> +	status = "okay";
+> +};
+> +
+> +&usb3_dwc3 {
+> +	extcon = <&extcon_usb>;
+> +};
+> -- 
+> 2.39.0
+> 
 
 -- 
 linux-phy mailing list
