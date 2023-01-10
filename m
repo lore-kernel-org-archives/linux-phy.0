@@ -4,83 +4,100 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3E066C54EBE
-	for <linux-phy@archiver.kernel.org>; Tue, 10 Jan 2023 15:03:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 71062C677F1
+	for <linux-phy@archiver.kernel.org>; Tue, 10 Jan 2023 16:41:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
-	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=Y13+SifejYpRnA58dX9RetnIcFRhb/OCKggmWopvOyY=; b=cKcGQKUFUMYp8Y
-	bsT0P3IiQlZqBvesKrYbB8Ht6fh4U6x2okPV7VBt0RaB8bY669dXnDr3nVjSryAssl6mwsWnhpXFo
-	W/ScIdhV4LN1/I9yWPdDZgkxW36wewv3qZ9fjy5LF6XFeOhaGB27u6gf9YHqJOlos37z7bIOc8ORl
-	/8jeBghvGStbj06U7zcjVuzdyKVPkn+T/r31JIeCO51xWV1DNhIXZYciLN6CVjztu8jvu66EfQY9E
-	GvNsv4dx0OBn8pGeqFXVNGXpI/4FhGyJMcqz7fM/BRCUNuwGVim1uU//BfJh/o4rKnZYU5REJjb2W
-	62yQGTYNxcsGYMAK8/CA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=B6vp3it0iwCGwVM25RHID6AZPhzA2GFhGzSyOPqzplQ=; b=x3dJLjbBNgG7Vw
+	9KKrMRU+GgZ+CwND8hNDAv/8lkX518dlJBFraEQ2H14qckkwKKaQUmKugcPcfUGLVWgzmwgpzmDyF
+	B1lL9bxCYJNoJ7hxK4dGhwT62C/A8RzITiC2Ht0X8f3BpejHbO6X+mpPD0y7YxGypmv72rEObFxJw
+	FMbKHXCF5dkznIpQLLGfZWhgl4nbHTDG0w9Y1H5HedZnQhvrpFZ32jN90/oMhDCqq5jjmJQ8LnnaP
+	ukfqAViZ/fcj8adO0q6cbGexUVd0LWfcPzFxrOd9P0wjuNjlcCcrmOkrj2FEX/CfZGQuh7Jw+lSqg
+	3hK151HYhKXd3OPSP25w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pFGAM-007TKg-L1; Tue, 10 Jan 2023 15:03:54 +0000
-Received: from ams.source.kernel.org ([145.40.68.75])
+	id 1pFHga-007pUU-S8; Tue, 10 Jan 2023 16:41:16 +0000
+Received: from mail-wm1-x331.google.com ([2a00:1450:4864:20::331])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pFGA5-007TCy-R8; Tue, 10 Jan 2023 15:03:39 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id ED6C5B816D7;
-	Tue, 10 Jan 2023 15:03:32 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E0C6DC433EF;
-	Tue, 10 Jan 2023 15:03:29 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1673363010;
-	bh=cSOjhI/rcYOBxIyxdsvudzOyCa6ADLVAW/FmFkVKg00=;
-	h=Date:From:To:Cc:Subject:In-Reply-To:From;
-	b=ueMulu/pRqy9gq0M9ADRSVx5gNW+bOd5FqE36CY0G+MMCuSTJ2NeoJls5C6GgOz6F
-	 7ecCEwKkvMNCnLAIhRAp9YUcYtJ/R3fN5KT8fH144ZhaIrOo6+plyVGdGrYo9y2V2R
-	 aHHY42/bBXpJ/XM3ewJVue9v/S6D1tCSOp22Ib3EeGoqQcOriOPLXIbKdQEvOqTVC5
-	 Ld1HuYHyu60RivS9pjlewHcseOPlFiVXaS8Pbto556JYjYdCnRUAtXOLsH1DglI8Ms
-	 +dAhlI89nGhNO4Z/Fol3nodQ+GgPrvW9JQpvihMOUiNTyFtb6BjpSbyezKWWeMj5g4
-	 ExAKB8+0nfY7g==
-Date: Tue, 10 Jan 2023 09:03:28 -0600
-From: Bjorn Helgaas <helgaas@kernel.org>
-To: Neil Armstrong <neil.armstrong@linaro.org>
-Cc: Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Kevin Hilman <khilman@baylibre.com>,
-	Jerome Brunet <jbrunet@baylibre.com>,
-	Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
-	Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
-	Wim Van Sebroeck <wim@linux-watchdog.org>,
-	Guenter Roeck <linux@roeck-us.net>,
-	Mauro Carvalho Chehab <mchehab@kernel.org>,
-	Alessandro Zummo <a.zummo@towertech.it>,
-	Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Daniel Lezcano <daniel.lezcano@linaro.org>,
-	Thomas Gleixner <tglx@linutronix.de>, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Ulf Hansson <ulf.hansson@linaro.org>,
-	Bjorn Helgaas <bhelgaas@google.com>,
-	"David S. Miller" <davem@davemloft.net>,
-	Eric Dumazet <edumazet@google.com>,
-	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
-	Andrew Lunn <andrew@lunn.ch>,
-	Heiner Kallweit <hkallweit1@gmail.com>,
-	Russell King <linux@armlinux.org.uk>, devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org,
-	linux-watchdog@vger.kernel.org, linux-media@vger.kernel.org,
-	linux-rtc@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-mmc@vger.kernel.org, linux-pci@vger.kernel.org,
-	netdev@vger.kernel.org,
-	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Subject: Re: [PATCH v2 10/11] dt-bindings: PCI: convert
- amlogic,meson-pcie.txt to dt-schema
-Message-ID: <20230110150328.GA1502381@bhelgaas>
+	id 1pFHgP-007pPk-Jo
+	for linux-phy@lists.infradead.org; Tue, 10 Jan 2023 16:41:07 +0000
+Received: by mail-wm1-x331.google.com with SMTP id g19-20020a05600c4ed300b003d9eb1dbc0aso7583371wmq.3
+        for <linux-phy@lists.infradead.org>; Tue, 10 Jan 2023 08:41:04 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=Th4XS3ExnJps+ejGgAt+lEc+wt5pkhQaMhYYIYNJy0U=;
+        b=a2RI/NAz23mB851gzvwuv+p7hExudFo71Jz2+0oDw0T1EhzC7jwPZqmqwBS3mZ7Pk5
+         XN+mp23UWm76WcYPMr+2b0ss91RHKvx5Q3bTO6u/8pXjO8pCxW5ph1dwoq/P9vV/hU8P
+         uotbWX0UA1lJXNzp/yuQyd+Lybnq+sTqqt4Wu8jG1aiinRxynfX9xOUkrXVM8KlULoUd
+         8fO+I6pUurdwv+JnjMTH1bjinN+feq4bT35Uf3/Uy+IpzcgzqQ7JahwDt2J12PTMjSky
+         UqYsIc6fT9oEA/mGd0GtJKQnrOVgfM4z/YU/ABm/7341rcFsAxWKw8PKuZUveZxmvBsH
+         2hHA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=Th4XS3ExnJps+ejGgAt+lEc+wt5pkhQaMhYYIYNJy0U=;
+        b=67HmOFd9xY9Yj41p798cDos5QYyBGCpfitCUffqxCdXeOog+c3mwZ+VSzIDt/AbedO
+         aOUa4LiiC+AxAE2svGDZDYjhbIW4foP9PS6a9wlSIZ+jc9vf7qNOb3Ax9S2pkKdjDmwb
+         /EoHt1+hLk9zTNMogvbsxnDtCfBzPnGcGpjPSGgnxP+pWY3MdF+VGMgwb6NgrYWnbk7X
+         rCZ1nrOKSvNsEd+lqT8GyV+Jz7/KagCkZ2nu7ytWfNG+hoL6uk2Hvx/EJFrWMMykEKcq
+         4V0gw1foe9zDDBCdN9V4KNCj0s/SYD1Wg3OBuS9Eu1HRriJM4NGMXq76xIUGPQ4Tzq9u
+         vIcA==
+X-Gm-Message-State: AFqh2kqn6TqFIXzWBHvFGpbu62F+2x2TmptJhwW8CyqYrQpWQ6DDPxLt
+	5T1e+lXEhPFW7PwceMvwsFYI6g==
+X-Google-Smtp-Source: AMrXdXskmZw3ugW9Pk8CVGZsMZh1RbFbAqdASFjBu3L9/SbBgfi3fYgfSX8zXMjI3EW8xExE+p+a9Q==
+X-Received: by 2002:a05:600c:46c7:b0:3d9:ee3d:2f54 with SMTP id q7-20020a05600c46c700b003d9ee3d2f54mr6883493wmo.13.1673368863486;
+        Tue, 10 Jan 2023 08:41:03 -0800 (PST)
+Received: from [192.168.1.109] ([178.197.216.144])
+        by smtp.gmail.com with ESMTPSA id he12-20020a05600c540c00b003d9ddc82450sm15086035wmb.45.2023.01.10.08.41.00
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 10 Jan 2023 08:41:03 -0800 (PST)
+Message-ID: <9640d2a0-7245-285e-0e7a-d75bfe3f88ac@linaro.org>
+Date: Tue, 10 Jan 2023 17:40:59 +0100
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20221117-b4-amlogic-bindings-convert-v2-10-36ad050bb625@linaro.org>
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.6.1
+Subject: Re: [PATCH v2 09/11] dt-bindings: mmc: convert amlogic,meson-gx.txt
+ to dt-schema
+Content-Language: en-US
+To: neil.armstrong@linaro.org, Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Kevin Hilman <khilman@baylibre.com>, Jerome Brunet <jbrunet@baylibre.com>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
+ Wim Van Sebroeck <wim@linux-watchdog.org>, Guenter Roeck
+ <linux@roeck-us.net>, Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Alessandro Zummo <a.zummo@towertech.it>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Thomas Gleixner <tglx@linutronix.de>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ Ulf Hansson <ulf.hansson@linaro.org>, Bjorn Helgaas <bhelgaas@google.com>,
+ "David S. Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>,
+ Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
+ Andrew Lunn <andrew@lunn.ch>, Heiner Kallweit <hkallweit1@gmail.com>,
+ Russell King <linux@armlinux.org.uk>
+Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-watchdog@vger.kernel.org, linux-media@vger.kernel.org,
+ linux-rtc@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-mmc@vger.kernel.org, linux-pci@vger.kernel.org, netdev@vger.kernel.org
+References: <20221117-b4-amlogic-bindings-convert-v2-0-36ad050bb625@linaro.org>
+ <20221117-b4-amlogic-bindings-convert-v2-9-36ad050bb625@linaro.org>
+ <e3d32fe1-9f2b-09fb-d7e0-2c8f42e5365c@linaro.org>
+ <2037156d-5113-4b96-8f86-c8ef1c1fdf96@linaro.org>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <2037156d-5113-4b96-8f86-c8ef1c1fdf96@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230110_070338_180245_3C61C150 
+X-CRM114-CacheID: sfid-20230110_084105_663032_2E89A087 
 X-CRM114-Status: GOOD (  17.66  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -98,49 +115,78 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Is this the same sort of conversion done by one of these?
-
-  e4dffb674cfd ("dt-bindings: PCI: tegra194: Convert to json-schema")
-  075a9d55932e ("dt-bindings: PCI: qcom: Convert to YAML")
-
-It's helpful to non-experts like me if the subject lines use similar
-style (capitalized) and similar terminology ("dt-schema" vs
-"json-schema" vs "YAML").
-
-On Mon, Jan 09, 2023 at 01:53:34PM +0100, Neil Armstrong wrote:
-> Convert the Amlogic Meson AXG DWC PCIE SoC controller bindings to
-> dt-schema.
-
-Some references here and below are "PCIE" (inherited from the
-original) and others are "PCIe".  Could be made consistent here.
-
-> Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-> Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
-> ---
->  .../devicetree/bindings/pci/amlogic,axg-pcie.yaml  | 134 +++++++++++++++++++++
->  .../devicetree/bindings/pci/amlogic,meson-pcie.txt |  70 -----------
->  2 files changed, 134 insertions(+), 70 deletions(-)
+On 10/01/2023 15:17, Neil Armstrong wrote:
+> On 10/01/2023 11:17, Krzysztof Kozlowski wrote:
+>> On 09/01/2023 13:53, Neil Armstrong wrote:
+>>> Convert the Amlogic SD / eMMC controller for S905/GXBB family SoCs
+>>> to dt-schema.
+>>>
+>>> Take in account the used variant with amlogic,meson-gx-mmc.
+>>>
+>>> Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
+>>> ---
+>>>   .../bindings/mmc/amlogic,meson-gx-mmc.yaml         | 75 ++++++++++++++++++++++
+>>>   .../devicetree/bindings/mmc/amlogic,meson-gx.txt   | 39 -----------
+>>>   2 files changed, 75 insertions(+), 39 deletions(-)
+>>>
+>>> diff --git a/Documentation/devicetree/bindings/mmc/amlogic,meson-gx-mmc.yaml b/Documentation/devicetree/bindings/mmc/amlogic,meson-gx-mmc.yaml
+>>> new file mode 100644
+>>> index 000000000000..30228964fd9c
+>>> --- /dev/null
+>>> +++ b/Documentation/devicetree/bindings/mmc/amlogic,meson-gx-mmc.yaml
+>>> @@ -0,0 +1,75 @@
+>>> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+>>> +%YAML 1.2
+>>> +---
+>>> +$id: http://devicetree.org/schemas/mmc/amlogic,meson-gx-mmc.yaml#
+>>> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+>>> +
+>>> +title: Amlogic SD / eMMC controller for S905/GXBB family SoCs
+>>> +
+>>> +description:
+>>> +  The MMC 5.1 compliant host controller on Amlogic provides the
+>>> +  interface for SD, eMMC and SDIO devices
+>>> +
+>>> +maintainers:
+>>> +  - Neil Armstrong <neil.armstrong@linaro.org>
+>>> +
+>>> +allOf:
+>>> +  - $ref: mmc-controller.yaml#
+>>> +
+>>> +properties:
+>>> +  compatible:
+>>> +    oneOf:
+>>> +      - enum:
+>>> +          - amlogic,meson-gx-mmc
+>>> +          - amlogic,meson-axg-mmc
+>>> +      - items:
+>>> +          - const: amlogic,meson-gx-mmc
+>>
+>> This does not look correct. Either gx is alone (not compatible with
+>> gxbb) or it is compatible with gxbb. Cannot be both.
 > 
-> diff --git a/Documentation/devicetree/bindings/pci/amlogic,axg-pcie.yaml b/Documentation/devicetree/bindings/pci/amlogic,axg-pcie.yaml
-> new file mode 100644
-> index 000000000000..a08f15fe9a9a
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/pci/amlogic,axg-pcie.yaml
-> @@ -0,0 +1,134 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/pci/amlogic,axg-pcie.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Amlogic Meson AXG DWC PCIE SoC controller
-> +
-> +maintainers:
-> +  - Neil Armstrong <neil.armstrong@linaro.org>
-> +
-> +description:
-> +  Amlogic Meson PCIe host controller is based on the Synopsys DesignWare PCI core.
-> ...
+> This ishow it's used in DT:
+> 
+> arch/arm64/boot/dts/amlogic/meson-gx.dtsi:                              compatible = "amlogic,meson-gx-mmc", "amlogic,meson-gxbb-mmc";
+> arch/arm64/boot/dts/amlogic/meson-axg.dtsi:                             compatible = "amlogic,meson-axg-mmc";
+> arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi:                      compatible = "amlogic,meson-axg-mmc";
+> 
+> So I'll drop the amlogic,meson-gx-mmc in the first enum to have :
+> +properties:
+> +  compatible:
+> +    oneOf:
+> +      - const: amlogic,meson-axg-mmc
+> +      - items:
+> +          - const: amlogic,meson-gx-mmc
+> +          - const: amlogic,meson-gxbb-mmc
+> 
+> It's right ?
+
+Yes.
+
+Best regards,
+Krzysztof
+
 
 -- 
 linux-phy mailing list
