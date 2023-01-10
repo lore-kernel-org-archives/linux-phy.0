@@ -4,101 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 71062C677F1
-	for <linux-phy@archiver.kernel.org>; Tue, 10 Jan 2023 16:41:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4FB63C61DB3
+	for <linux-phy@archiver.kernel.org>; Tue, 10 Jan 2023 21:48:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=B6vp3it0iwCGwVM25RHID6AZPhzA2GFhGzSyOPqzplQ=; b=x3dJLjbBNgG7Vw
-	9KKrMRU+GgZ+CwND8hNDAv/8lkX518dlJBFraEQ2H14qckkwKKaQUmKugcPcfUGLVWgzmwgpzmDyF
-	B1lL9bxCYJNoJ7hxK4dGhwT62C/A8RzITiC2Ht0X8f3BpejHbO6X+mpPD0y7YxGypmv72rEObFxJw
-	FMbKHXCF5dkznIpQLLGfZWhgl4nbHTDG0w9Y1H5HedZnQhvrpFZ32jN90/oMhDCqq5jjmJQ8LnnaP
-	ukfqAViZ/fcj8adO0q6cbGexUVd0LWfcPzFxrOd9P0wjuNjlcCcrmOkrj2FEX/CfZGQuh7Jw+lSqg
-	3hK151HYhKXd3OPSP25w==;
+	List-Owner; bh=9QWLHrqjItJnSizonnL1S+faQTtvNaZ6CjGSowTZags=; b=p98dKLFeLk7Iho
+	JXifPRn4WRiMlGYom6OOdJy/XLAtbS0S4QQK9FGLFy5Ap8slkeOS2rxdEwTs4l2pec3HjEmJNFo14
+	8Db3zbIy5sL8nB3H60cKpyeLQ/DnrtfpfiWyzHv5BkkPPmiLa3ibTC7wRABKYIkXISxR1E06gUfCS
+	U6VWnRphQ+wm2g9VwcM8nHpLy2sppJ7TjsjfRqXGBR9R1TNGX5hsIvEs8HQi/X+fpO+QNrInuQkbW
+	dIx2nH8+eelv8lxK4zzWaU/LNwXwZNje3WJl8oCRi/3gqgPvoBj04lj70ZkCMlKwjnuZ87LpamKk3
+	V0YVSEEbRxX5OK8kWZBw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pFHga-007pUU-S8; Tue, 10 Jan 2023 16:41:16 +0000
-Received: from mail-wm1-x331.google.com ([2a00:1450:4864:20::331])
+	id 1pFMUM-008fW4-Nt; Tue, 10 Jan 2023 21:48:58 +0000
+Received: from mail-ej1-x62b.google.com ([2a00:1450:4864:20::62b])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pFHgP-007pPk-Jo
-	for linux-phy@lists.infradead.org; Tue, 10 Jan 2023 16:41:07 +0000
-Received: by mail-wm1-x331.google.com with SMTP id g19-20020a05600c4ed300b003d9eb1dbc0aso7583371wmq.3
-        for <linux-phy@lists.infradead.org>; Tue, 10 Jan 2023 08:41:04 -0800 (PST)
+	id 1pFMUA-008fQU-A8; Tue, 10 Jan 2023 21:48:47 +0000
+Received: by mail-ej1-x62b.google.com with SMTP id ud5so32220398ejc.4;
+        Tue, 10 Jan 2023 13:48:44 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=Th4XS3ExnJps+ejGgAt+lEc+wt5pkhQaMhYYIYNJy0U=;
-        b=a2RI/NAz23mB851gzvwuv+p7hExudFo71Jz2+0oDw0T1EhzC7jwPZqmqwBS3mZ7Pk5
-         XN+mp23UWm76WcYPMr+2b0ss91RHKvx5Q3bTO6u/8pXjO8pCxW5ph1dwoq/P9vV/hU8P
-         uotbWX0UA1lJXNzp/yuQyd+Lybnq+sTqqt4Wu8jG1aiinRxynfX9xOUkrXVM8KlULoUd
-         8fO+I6pUurdwv+JnjMTH1bjinN+feq4bT35Uf3/Uy+IpzcgzqQ7JahwDt2J12PTMjSky
-         UqYsIc6fT9oEA/mGd0GtJKQnrOVgfM4z/YU/ABm/7341rcFsAxWKw8PKuZUveZxmvBsH
-         2hHA==
+        d=googlemail.com; s=20210112;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=M3b2Vz7EFrY4ZoAZ7zhZDOrT9y3BFK6sS3AzbYrmCT4=;
+        b=SbL0sV3pbNJK6Bfyz2VD6czCXh94iQNaxKjXTjpArf+vHkqL2nrS4tK4IMhXZLfjob
+         c09q+NtJP7jTDEHqrpo4z+vxiPked3kTWBAamhe6hgWly3pGWP1K2kIFb6xFE1EMHHuA
+         W7zBN02N/9NXq5XxJ/cNLh3c3H5r4KcNP2TGEaQlZGQMQVMYxos6BKl4aN9W3LHnQDlo
+         uGtcnMyr0/OMndxB8218GOxLOCJBH6euzCMpEExz1HDoJNY47/pGCsIUK7g0mauCBUMm
+         nVxzqMQVGuqTMbJEYrlXPc7O60AVGYgvu35Ga9sqHDSFK9Pb5q0iDpNSZZ8SpIE1m8RL
+         PTXA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=Th4XS3ExnJps+ejGgAt+lEc+wt5pkhQaMhYYIYNJy0U=;
-        b=67HmOFd9xY9Yj41p798cDos5QYyBGCpfitCUffqxCdXeOog+c3mwZ+VSzIDt/AbedO
-         aOUa4LiiC+AxAE2svGDZDYjhbIW4foP9PS6a9wlSIZ+jc9vf7qNOb3Ax9S2pkKdjDmwb
-         /EoHt1+hLk9zTNMogvbsxnDtCfBzPnGcGpjPSGgnxP+pWY3MdF+VGMgwb6NgrYWnbk7X
-         rCZ1nrOKSvNsEd+lqT8GyV+Jz7/KagCkZ2nu7ytWfNG+hoL6uk2Hvx/EJFrWMMykEKcq
-         4V0gw1foe9zDDBCdN9V4KNCj0s/SYD1Wg3OBuS9Eu1HRriJM4NGMXq76xIUGPQ4Tzq9u
-         vIcA==
-X-Gm-Message-State: AFqh2kqn6TqFIXzWBHvFGpbu62F+2x2TmptJhwW8CyqYrQpWQ6DDPxLt
-	5T1e+lXEhPFW7PwceMvwsFYI6g==
-X-Google-Smtp-Source: AMrXdXskmZw3ugW9Pk8CVGZsMZh1RbFbAqdASFjBu3L9/SbBgfi3fYgfSX8zXMjI3EW8xExE+p+a9Q==
-X-Received: by 2002:a05:600c:46c7:b0:3d9:ee3d:2f54 with SMTP id q7-20020a05600c46c700b003d9ee3d2f54mr6883493wmo.13.1673368863486;
-        Tue, 10 Jan 2023 08:41:03 -0800 (PST)
-Received: from [192.168.1.109] ([178.197.216.144])
-        by smtp.gmail.com with ESMTPSA id he12-20020a05600c540c00b003d9ddc82450sm15086035wmb.45.2023.01.10.08.41.00
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 10 Jan 2023 08:41:03 -0800 (PST)
-Message-ID: <9640d2a0-7245-285e-0e7a-d75bfe3f88ac@linaro.org>
-Date: Tue, 10 Jan 2023 17:40:59 +0100
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=M3b2Vz7EFrY4ZoAZ7zhZDOrT9y3BFK6sS3AzbYrmCT4=;
+        b=MnGNzFSk55mn0yIa0ZnpUB88tQeApwdOa/uSp2/mLpF2lNbo76S0jAamQ9RFifvlcA
+         uw+EnNunNyPpSgb6n6AE+JFNbqXszRfMBdi1tu+ZlFdvfO105BtnGGS5/CnrIOsKvlk+
+         64Tb12pTik5KdfLbVypXwQD74B08d2/o00ZkJ4te+oe/FZ71UfBWCbzlv71HHvzMJ0Gx
+         59DMIC2Um0MFQx0qO7wXveXck2fqI0oTf607P9yTdz/cGxdemyy4zO36iQvS5TGQaAlC
+         xl/EyJfMMi4jdqiFW+9mGmNtzhoYUpay7egGxt0ElNJBKGGJGyPEUEenL/nFa+Z8tmmT
+         IelQ==
+X-Gm-Message-State: AFqh2kr4WYr/4Pi8213N12PS3Wu2RaZngpuy+4mh89Z0kgYGEXQjDJfw
+	EHKGvrjQUjDrU1HKqIZGZhMlxWVtr1AYG6G8sBA=
+X-Google-Smtp-Source: AMrXdXvZWTCfsyyAyIXqF03H40iDiOq0blSYlASCBEmUrGVmKB7QN5KAlN7UDroP7DZCIIDm9TmpeUqouJfNZE/s2tk=
+X-Received: by 2002:a17:906:e4f:b0:7c0:ae1c:3eb7 with SMTP id
+ q15-20020a1709060e4f00b007c0ae1c3eb7mr4388606eji.510.1673387322980; Tue, 10
+ Jan 2023 13:48:42 -0800 (PST)
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.6.1
-Subject: Re: [PATCH v2 09/11] dt-bindings: mmc: convert amlogic,meson-gx.txt
- to dt-schema
-Content-Language: en-US
-To: neil.armstrong@linaro.org, Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Kevin Hilman <khilman@baylibre.com>, Jerome Brunet <jbrunet@baylibre.com>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
- Wim Van Sebroeck <wim@linux-watchdog.org>, Guenter Roeck
- <linux@roeck-us.net>, Mauro Carvalho Chehab <mchehab@kernel.org>,
- Alessandro Zummo <a.zummo@towertech.it>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- Thomas Gleixner <tglx@linutronix.de>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>,
- Ulf Hansson <ulf.hansson@linaro.org>, Bjorn Helgaas <bhelgaas@google.com>,
- "David S. Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>,
- Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
- Andrew Lunn <andrew@lunn.ch>, Heiner Kallweit <hkallweit1@gmail.com>,
- Russell King <linux@armlinux.org.uk>
-Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-watchdog@vger.kernel.org, linux-media@vger.kernel.org,
- linux-rtc@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-mmc@vger.kernel.org, linux-pci@vger.kernel.org, netdev@vger.kernel.org
 References: <20221117-b4-amlogic-bindings-convert-v2-0-36ad050bb625@linaro.org>
- <20221117-b4-amlogic-bindings-convert-v2-9-36ad050bb625@linaro.org>
- <e3d32fe1-9f2b-09fb-d7e0-2c8f42e5365c@linaro.org>
- <2037156d-5113-4b96-8f86-c8ef1c1fdf96@linaro.org>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <2037156d-5113-4b96-8f86-c8ef1c1fdf96@linaro.org>
+ <20221117-b4-amlogic-bindings-convert-v2-4-36ad050bb625@linaro.org>
+In-Reply-To: <20221117-b4-amlogic-bindings-convert-v2-4-36ad050bb625@linaro.org>
+From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Date: Tue, 10 Jan 2023 22:48:32 +0100
+Message-ID: <CAFBinCDd1MJEmSHR1XPsfBoRasBq+cV1F+66sCBXALtCCmoyUA@mail.gmail.com>
+Subject: Re: [PATCH v2 04/11] dt-bindings: watchdog: convert meson-wdt.txt to dt-schema
+To: Neil Armstrong <neil.armstrong@linaro.org>
+Cc: Rob Herring <robh+dt@kernel.org>, 
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Kevin Hilman <khilman@baylibre.com>, 
+	Jerome Brunet <jbrunet@baylibre.com>, Srinivas Kandagatla <srinivas.kandagatla@linaro.org>, 
+	Wim Van Sebroeck <wim@linux-watchdog.org>, Guenter Roeck <linux@roeck-us.net>, 
+	Mauro Carvalho Chehab <mchehab@kernel.org>, Alessandro Zummo <a.zummo@towertech.it>, 
+	Alexandre Belloni <alexandre.belloni@bootlin.com>, Daniel Lezcano <daniel.lezcano@linaro.org>, 
+	Thomas Gleixner <tglx@linutronix.de>, Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Ulf Hansson <ulf.hansson@linaro.org>, 
+	Bjorn Helgaas <bhelgaas@google.com>, "David S. Miller" <davem@davemloft.net>, 
+	Eric Dumazet <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, 
+	Andrew Lunn <andrew@lunn.ch>, Heiner Kallweit <hkallweit1@gmail.com>, 
+	Russell King <linux@armlinux.org.uk>, devicetree@vger.kernel.org, 
+	linux-arm-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org, 
+	linux-kernel@vger.kernel.org, linux-watchdog@vger.kernel.org, 
+	linux-media@vger.kernel.org, linux-rtc@vger.kernel.org, 
+	linux-phy@lists.infradead.org, linux-mmc@vger.kernel.org, 
+	linux-pci@vger.kernel.org, netdev@vger.kernel.org, 
+	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230110_084105_663032_2E89A087 
-X-CRM114-Status: GOOD (  17.66  )
+X-CRM114-CacheID: sfid-20230110_134846_393328_4D5E41F5 
+X-CRM114-Status: GOOD (  13.40  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -115,78 +101,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 10/01/2023 15:17, Neil Armstrong wrote:
-> On 10/01/2023 11:17, Krzysztof Kozlowski wrote:
->> On 09/01/2023 13:53, Neil Armstrong wrote:
->>> Convert the Amlogic SD / eMMC controller for S905/GXBB family SoCs
->>> to dt-schema.
->>>
->>> Take in account the used variant with amlogic,meson-gx-mmc.
->>>
->>> Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
->>> ---
->>>   .../bindings/mmc/amlogic,meson-gx-mmc.yaml         | 75 ++++++++++++++++++++++
->>>   .../devicetree/bindings/mmc/amlogic,meson-gx.txt   | 39 -----------
->>>   2 files changed, 75 insertions(+), 39 deletions(-)
->>>
->>> diff --git a/Documentation/devicetree/bindings/mmc/amlogic,meson-gx-mmc.yaml b/Documentation/devicetree/bindings/mmc/amlogic,meson-gx-mmc.yaml
->>> new file mode 100644
->>> index 000000000000..30228964fd9c
->>> --- /dev/null
->>> +++ b/Documentation/devicetree/bindings/mmc/amlogic,meson-gx-mmc.yaml
->>> @@ -0,0 +1,75 @@
->>> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
->>> +%YAML 1.2
->>> +---
->>> +$id: http://devicetree.org/schemas/mmc/amlogic,meson-gx-mmc.yaml#
->>> +$schema: http://devicetree.org/meta-schemas/core.yaml#
->>> +
->>> +title: Amlogic SD / eMMC controller for S905/GXBB family SoCs
->>> +
->>> +description:
->>> +  The MMC 5.1 compliant host controller on Amlogic provides the
->>> +  interface for SD, eMMC and SDIO devices
->>> +
->>> +maintainers:
->>> +  - Neil Armstrong <neil.armstrong@linaro.org>
->>> +
->>> +allOf:
->>> +  - $ref: mmc-controller.yaml#
->>> +
->>> +properties:
->>> +  compatible:
->>> +    oneOf:
->>> +      - enum:
->>> +          - amlogic,meson-gx-mmc
->>> +          - amlogic,meson-axg-mmc
->>> +      - items:
->>> +          - const: amlogic,meson-gx-mmc
->>
->> This does not look correct. Either gx is alone (not compatible with
->> gxbb) or it is compatible with gxbb. Cannot be both.
-> 
-> This ishow it's used in DT:
-> 
-> arch/arm64/boot/dts/amlogic/meson-gx.dtsi:                              compatible = "amlogic,meson-gx-mmc", "amlogic,meson-gxbb-mmc";
-> arch/arm64/boot/dts/amlogic/meson-axg.dtsi:                             compatible = "amlogic,meson-axg-mmc";
-> arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi:                      compatible = "amlogic,meson-axg-mmc";
-> 
-> So I'll drop the amlogic,meson-gx-mmc in the first enum to have :
-> +properties:
+Hi Neil,
+
+On Mon, Jan 9, 2023 at 1:53 PM Neil Armstrong <neil.armstrong@linaro.org> wrote:
+[...]
 > +  compatible:
 > +    oneOf:
-> +      - const: amlogic,meson-axg-mmc
-> +      - items:
-> +          - const: amlogic,meson-gx-mmc
-> +          - const: amlogic,meson-gxbb-mmc
-> 
-> It's right ?
+> +      - enum:
+> +          - amlogic,meson6-wdt
+> +          - amlogic,meson8-wdt
+Technically this is not an identical representation of what we had
+before which was:
+-       "amlogic,meson8-wdt" and "amlogic,meson6-wdt" on Meson8 SoCs
 
-Yes.
+We're not using the "amlogic,meson8-wdt" compatible anywhere at the moment.
+In the meson_wdt driver it's defined with the same per-SoC data as
+"amlogic,meson6-wdt".
+
+Long story short: In my opinion there's no need to change what you
+have right now.
+If you have to re-spin this then maybe you can add a note to the patch
+description.
+Please add my:
+Reviewed-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+
 
 Best regards,
-Krzysztof
-
+Martin
 
 -- 
 linux-phy mailing list
