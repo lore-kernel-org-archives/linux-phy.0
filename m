@@ -4,38 +4,101 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 06F15C46467
-	for <linux-phy@archiver.kernel.org>; Tue, 10 Jan 2023 06:25:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A8C95C54EBC
+	for <linux-phy@archiver.kernel.org>; Tue, 10 Jan 2023 10:14:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=hyV02saLakIbFRrPH7lRhhjESDZEcwyUMlqejEr4MBA=; b=PQTYufvSoJfAiC
-	+ashlNLCi1t2wjfazNnwaPN85VPXbb5ewo4uysNN6YEnjEU0uejYwS1ozqWbZ7Urwaogc40DgAejc
-	yzC8ii6YNMy6+LaN+5ySpSckRxdaU8HjVl2HSPtZsEE5KOZQg+RNcogDUPTYmTNsRKSNaHwTzOICP
-	obimVnMdFAZRxo5kFFAkCrvqaG+2DC2PmO+SAQATcQwahfgvObBuUOQk3E5/+wBiW8h+3TLmYnf4t
-	7J/YwF+hzXhelvisegkJHY0fkWfCOTsKHU6ua/26dIscCjJJkEIvji0UVOchemTV14RwDs+wmE+zh
-	csFlDP1sWGPDJx6QBN0w==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=SJLk1t/kouSfHumBtQWzqnZHmSNreihw+ILcrssV8I4=; b=1sLmblpeQf2/p+
+	eQtY7ut+k5IqGFefK5OozQuxNyz8o5RA0dzrjxLtgezBplngwhBzNK2LL0NSgVqrJPGhUFtN4nO19
+	8b/+m/OfFXupVra9sAr19ZScGA/y7DZwhxxMww6C4kCSuRxPnm9VdIj9A/RDkSS7z7SoeeSbxbzQk
+	fKjsybHr5jdV7I1rsDU/v7UGq4RFZnsxTsPyKZtyvfG9LqlgiH86ArRnuRjycrNc9z7B2yDmxDqA6
+	Kr3z8QM7Cox73+3y16YJf3cW5S/PS/v7AQwZPTr3FlGf1aAI5VjMjamLC/3l+bkLqQEc8JiLYF9z+
+	1mi7rudoh5Q8t+drn57Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pF84i-005UA5-Cr; Tue, 10 Jan 2023 06:25:32 +0000
-Received: from [2601:1c2:d80:3110::a2e7] (helo=bombadil.infradead.org)
-	by bombadil.infradead.org with esmtpsa (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pF84h-005U9k-5n; Tue, 10 Jan 2023 06:25:31 +0000
-From: Randy Dunlap <rdunlap@infradead.org>
-To: linux-kernel@vger.kernel.org
-Cc: Randy Dunlap <rdunlap@infradead.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	linux-phy@lists.infradead.org,
-	Arnd Bergmann <arnd@arndb.de>
-Subject: [PATCH] phy: ti: fix Kconfig warning and operator precedence
-Date: Mon,  9 Jan 2023 22:25:29 -0800
-Message-Id: <20230110062529.22668-1-rdunlap@infradead.org>
-X-Mailer: git-send-email 2.39.0
+	id 1pFBdz-006IAn-09; Tue, 10 Jan 2023 10:14:11 +0000
+Received: from mail-wr1-x42c.google.com ([2a00:1450:4864:20::42c])
+	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
+	id 1pFBdw-006I8C-0N
+	for linux-phy@lists.infradead.org; Tue, 10 Jan 2023 10:14:09 +0000
+Received: by mail-wr1-x42c.google.com with SMTP id bk16so11151404wrb.11
+        for <linux-phy@lists.infradead.org>; Tue, 10 Jan 2023 02:14:06 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=jojCCGfavVKv5imMe2sO0IZFTAm6Qt+UkX8aAOYmM8Q=;
+        b=bbhb/M2Tbo7P6JQFLKz1c0s92pip1LUY/qoQtVnezlvmXlve3kgyeNba8+WtmX4t2D
+         Dqs5HvWz9j8ad8G7zjQAKt2OUhJ5oPpmAugq792ubXvNuvlNgx12r2eNxoiWtfJtAgkc
+         ln8dRvw1xf/0keWdYbSaNriNWp27rABFZucUCHjhkgOSv2oYBu+gDWHpRQmu7nuZYux/
+         Ch1A4NbCcbmL1JAXJRKL58l8adrR3ecbI+lYW+4ObQNnSVJc2XVqhStvYLd1MguXeStw
+         ks3SHXuek07nXLDarhxwAioHsl5xyI708nCoT8Z6Vdq/Uf2JhdoccDoTWgGesRpg8BQ0
+         zb0Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=jojCCGfavVKv5imMe2sO0IZFTAm6Qt+UkX8aAOYmM8Q=;
+        b=mZ2cjfUP+ZeLgYMgHqJEnGs8L260odB+pT6iIX0gY8oP/9hQBQzQQAdltMAAQpfk7J
+         rJdarUBbmEw7XOhpzQfPZA5aE+0TVgyOd+k+a8azEm8+2dUIebjvc6kCKIspOs8us45+
+         HV7QBnqdpjyps5iFCFmsuJ8OGj1oNs2YpCBcoqdDmu3p28XyVNU0t/p3sNd9TgQQhY3E
+         35nXhnzo19DdRHjN7yPSPg3o+6M/Io5rMQG6n5mep1GV/NmVekZ/whV9Qr+eQ0veciGz
+         Z65kOIStFFf9L8faxH/rAZHmnqUWn5/tsMFQgzrC9B1AzBJuNVl9arV5n73NR7/7vYPl
+         8Eqg==
+X-Gm-Message-State: AFqh2krqDXyYrtEADnzm8jF/ihG9HZiDp4LZJH8FdRBzKkhjXY0fZ4WH
+	EbKf/Y/gEWh6BYG/ED653kKuDw==
+X-Google-Smtp-Source: AMrXdXsns+wODkeVA+eyVg6DWDP7h4ZsUK2KoND8WPXo2OLQMg/ZUcoSsqQ0z3Y2wBq+9Yj/x0NG4A==
+X-Received: by 2002:a05:6000:16cb:b0:242:1b0d:9c58 with SMTP id h11-20020a05600016cb00b002421b0d9c58mr50376842wrf.69.1673345645653;
+        Tue, 10 Jan 2023 02:14:05 -0800 (PST)
+Received: from [192.168.1.109] ([178.197.216.144])
+        by smtp.gmail.com with ESMTPSA id a10-20020adfdd0a000000b002bb6b45ab57sm8867372wrm.85.2023.01.10.02.14.02
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 10 Jan 2023 02:14:04 -0800 (PST)
+Message-ID: <6044f85b-93f2-fe2e-68b5-9912836f4a38@linaro.org>
+Date: Tue, 10 Jan 2023 11:14:01 +0100
 MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.6.1
+Subject: Re: [PATCH v2 01/11] dt-bindings: firmware: convert meson_sm.txt to
+ dt-schema
+Content-Language: en-US
+To: Neil Armstrong <neil.armstrong@linaro.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Kevin Hilman <khilman@baylibre.com>, Jerome Brunet <jbrunet@baylibre.com>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
+ Wim Van Sebroeck <wim@linux-watchdog.org>, Guenter Roeck
+ <linux@roeck-us.net>, Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Alessandro Zummo <a.zummo@towertech.it>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Thomas Gleixner <tglx@linutronix.de>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ Ulf Hansson <ulf.hansson@linaro.org>, Bjorn Helgaas <bhelgaas@google.com>,
+ "David S. Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>,
+ Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
+ Andrew Lunn <andrew@lunn.ch>, Heiner Kallweit <hkallweit1@gmail.com>,
+ Russell King <linux@armlinux.org.uk>
+Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-watchdog@vger.kernel.org, linux-media@vger.kernel.org,
+ linux-rtc@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-mmc@vger.kernel.org, linux-pci@vger.kernel.org, netdev@vger.kernel.org
+References: <20221117-b4-amlogic-bindings-convert-v2-0-36ad050bb625@linaro.org>
+ <20221117-b4-amlogic-bindings-convert-v2-1-36ad050bb625@linaro.org>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <20221117-b4-amlogic-bindings-convert-v2-1-36ad050bb625@linaro.org>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20230110_021408_060200_040AFE00 
+X-CRM114-Status: UNSURE (   9.97  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -52,46 +115,18 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Fix Kconfig depends operator precedence to prevent a Kconfig warning:
+On 09/01/2023 13:53, Neil Armstrong wrote:
+> Convert the Amlogic Secure Monitor bindings to dt-schema.
+> 
+> Take in account usage the used variant with amlogic,meson-gx-sm.
+> 
+> Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
 
-WARNING: unmet direct dependencies detected for MUX_MMIO
-  Depends on [n]: MULTIPLEXER [=m] && OF [=n]
-  Selected by [m]:
-  - PHY_AM654_SERDES [=m] && (OF [=n] && ARCH_K3 || COMPILE_TEST [=y]) && COMMON_CLK [=y]
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
-Fixes: 71e2f5c5c224 ("phy: ti: Add a new SERDES driver for TI's AM654x SoC")
-Fixes: 091876cc355d ("phy: ti: j721e-wiz: Add support for WIZ module present in TI J721E SoC")
+Best regards,
+Krzysztof
 
-Signed-off-by: Randy Dunlap <rdunlap@infradead.org>
-Cc: Vinod Koul <vkoul@kernel.org>
-Cc: Kishon Vijay Abraham I <kishon@kernel.org>
-Cc: linux-phy@lists.infradead.org
-Cc: Arnd Bergmann <arnd@arndb.de>
----
- drivers/phy/ti/Kconfig |    4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
-
-diff -- a/drivers/phy/ti/Kconfig b/drivers/phy/ti/Kconfig
---- a/drivers/phy/ti/Kconfig
-+++ b/drivers/phy/ti/Kconfig
-@@ -23,7 +23,7 @@ config PHY_DM816X_USB
- 
- config PHY_AM654_SERDES
- 	tristate "TI AM654 SERDES support"
--	depends on OF && ARCH_K3 || COMPILE_TEST
-+	depends on OF && (ARCH_K3 || COMPILE_TEST)
- 	depends on COMMON_CLK
- 	select GENERIC_PHY
- 	select MULTIPLEXER
-@@ -35,7 +35,7 @@ config PHY_AM654_SERDES
- 
- config PHY_J721E_WIZ
- 	tristate "TI J721E WIZ (SERDES Wrapper) support"
--	depends on OF && ARCH_K3 || COMPILE_TEST
-+	depends on OF && (ARCH_K3 || COMPILE_TEST)
- 	depends on HAS_IOMEM && OF_ADDRESS
- 	depends on COMMON_CLK
- 	select GENERIC_PHY
 
 -- 
 linux-phy mailing list
