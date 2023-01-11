@@ -4,64 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 558A2C5479D
-	for <linux-phy@archiver.kernel.org>; Wed, 11 Jan 2023 15:16:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BE4B1C5479D
+	for <linux-phy@archiver.kernel.org>; Wed, 11 Jan 2023 18:40:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Date:
+	Message-Id:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/8wvGMc+Df7jYMitGrN4ODt0vMaM5zEmoy/896Nr36s=; b=JKb+TfY6c/Q/2d
-	zM9zqKXMdedfes6k6+zglbEyctDMmO4CQnMr09VW+lp1IU78+kF4euYuMOe0teudxqCKvrS9ytn9k
-	qbK1TXUWeQj8PX3jSv5sok2fbJEvLspSJt+dItj6ndau6xDrWS/uhy3D5OvTAAyG/uIZ/oVuj/8DH
-	CJid6n9vGYTOlCy6aZ8oAteCMEfJJ88L5jrLMOOM6H5WjNURwinKe9Cd/M3ZSCYRF19C8ab1nc7at
-	aH/FoeZWzbQHdK2qNbNh1uDsQ0AcvPp14avPQ5Iv/CYcfyyli62eW/M9mQ64e4WmUYlZxDmDyBZ2D
-	P/lw/PaitPxZE/gGdsHA==;
+	List-Owner; bh=h5ehMJ8/r/qOrfn57SJeR6GMFOQqxyPAFiua2hfqOrM=; b=pcuCg9NrFxVF4K
+	cO3vxtFVZxSSfkc5uSMYxAIRhDQb/qse5pcCja0JtgQbeI36BaaVMQOAtXr3qKnCJu2XYVSDq3A1l
+	4UJYpeRM+ZLiezO8ADztHxhSSxzOVgj4qOdDGrZj9cvTpAErMw/jidDMnS3lRy80jn87huDS7dDx3
+	8QJgDu0e7F2HQgCJZjBuZXJ9cl6p4WdC0f3bS42odTpY+Mo5NOfADM6G/4oOpzgBnaUTmfkLtwvNT
+	K40JqTZhh73QEOoyaPvcWAud8VDGcMklGxgXuavi/c46+Y9pN2rO1+H3k8IVFFoJcb6h/ElXOIDv6
+	Yc9VtY6mJVj6YzsrjW3w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pFcqL-00Bxfu-Nc; Wed, 11 Jan 2023 15:16:45 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1pFg1Z-00CesH-1j; Wed, 11 Jan 2023 18:40:33 +0000
+Received: from ams.source.kernel.org ([145.40.68.75])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pFcqK-00Bxf6-2O
-	for linux-phy@lists.infradead.org; Wed, 11 Jan 2023 15:16:45 +0000
+	id 1pFg1N-00Ceow-HB; Wed, 11 Jan 2023 18:40:23 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 3ADDE61D58;
-	Wed, 11 Jan 2023 15:16:42 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1EF34C433F1;
-	Wed, 11 Jan 2023 15:16:39 +0000 (UTC)
+	by ams.source.kernel.org (Postfix) with ESMTPS id 06543B81CA2;
+	Wed, 11 Jan 2023 18:40:20 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPS id 92F2BC433EF;
+	Wed, 11 Jan 2023 18:40:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1673450202;
-	bh=fFLqTcQNwLu0CsRaw3Xnu2gv0QW9Ki3xX4+eSs6i54s=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=c3vmkxZv3lvuQb/VNRoDNM7FSHASMDfX6xpCLjXchEHwuPRNyRNwPjltmeMEzK3Ru
-	 067GSJofKaXCJ9G0tzWSnwPfv0vTz781jHuPpMe0tpN2YoZh8LVaTIOmT06BTPxxo3
-	 FpQGRZVtBGGU0cUl5gG06UM+uT+bGmuTIVQuF/tdzJJOXewT35A471w78XVyuTws1X
-	 e71IEUSvKojJS91aOK82RakTpM7cgaJbTPTf4ONj1Z7BeU/14/Na692zcZC+LOf3V3
-	 odYNf6z15SoKiPd0adutLaDHOAfgytOGjXVgK8u7xwl8UiedxZ0v0k1uC2fweDtLLj
-	 dOh/qE0q5YSYg==
-Message-ID: <3423a83e-a937-d158-9123-5a85fdf9b07c@kernel.org>
-Date: Wed, 11 Jan 2023 17:16:37 +0200
+	s=k20201202; t=1673462418;
+	bh=ZEmryboLk5mj+5TUuTuCS6naNIRPhdyWhLOCWdpU+D0=;
+	h=Subject:From:Date:References:In-Reply-To:To:Cc:From;
+	b=iSyIQ2yyoC3B0GBCDQJdd/AjVnQhPtqHCRIbEkSrrHdUq7RF962QX/zB0ITIfYfSA
+	 3/D81YsFoplAuk07q+rs1ROy+hGaHCuTObSwnYmfwqifrJljRKGWDsoz836weNNaBo
+	 GLiDiGuqi20c1B+V3/gbU/jYToaZNaxVHsO2SJoqO/g+pt2hlJVfs4yRYd7BquKLHK
+	 W8sVu6wNviooo9e/w3eIH25eRm9LQVQdVsIfozC5UJQ6yZtvHf7HBHp7sWyPjsPLkg
+	 drRe9DoPTVOOD655oQch1MEgH31f/rE7CuAFGxVIDiUEFzzr0TtWcqwswEQUzSoFCV
+	 dpRICWt9nlOEw==
+Received: from aws-us-west-2-korg-oddjob-1.ci.codeaurora.org (localhost.localdomain [127.0.0.1])
+	by aws-us-west-2-korg-oddjob-1.ci.codeaurora.org (Postfix) with ESMTP id 6DDAFE4D025;
+	Wed, 11 Jan 2023 18:40:18 +0000 (UTC)
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.4.2
-Subject: Re: [PATCH V3 2/2] phy: ti: j721e-wiz: Add support to enable LN23
- Type-C swap
-Content-Language: en-US
-To: Sinthu Raja <sinthu.raja@mistralsolutions.com>,
- Vinod Koul <vkoul@kernel.org>, Ravi Gunasekaran <r-gunasekaran@ti.com>,
- Siddharth Vadapalli <s-vadapalli@ti.com>
-Cc: Vignesh Raghavendra <vigneshr@ti.com>, linux-phy@lists.infradead.org,
- linux-kernel@vger.kernel.org, Sinthu Raja <sinthu.raja@ti.com>
-References: <20230111111356.17392-1-sinthu.raja@ti.com>
- <20230111111356.17392-3-sinthu.raja@ti.com>
-From: Roger Quadros <rogerq@kernel.org>
-In-Reply-To: <20230111111356.17392-3-sinthu.raja@ti.com>
+Subject: Re: [PATCH v2 00/11] dt-bindings: first batch of dt-schema conversions
+ for Amlogic Meson bindings
+From: patchwork-bot+netdevbpf@kernel.org
+Message-Id:  <167346241843.19883.15310921170918729898.git-patchwork-notify@kernel.org>
+Date: Wed, 11 Jan 2023 18:40:18 +0000
+References: <20221117-b4-amlogic-bindings-convert-v2-0-36ad050bb625@linaro.org>
+In-Reply-To: <20221117-b4-amlogic-bindings-convert-v2-0-36ad050bb625@linaro.org>
+To: Neil Armstrong <neil.armstrong@linaro.org>
+Cc: robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
+ khilman@baylibre.com, jbrunet@baylibre.com,
+ martin.blumenstingl@googlemail.com, srinivas.kandagatla@linaro.org,
+ wim@linux-watchdog.org, linux@roeck-us.net, mchehab@kernel.org,
+ a.zummo@towertech.it, alexandre.belloni@bootlin.com,
+ daniel.lezcano@linaro.org, tglx@linutronix.de, vkoul@kernel.org,
+ kishon@kernel.org, ulf.hansson@linaro.org, bhelgaas@google.com,
+ davem@davemloft.net, edumazet@google.com, kuba@kernel.org, pabeni@redhat.com,
+ andrew@lunn.ch, hkallweit1@gmail.com, linux@armlinux.org.uk,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-watchdog@vger.kernel.org, linux-media@vger.kernel.org,
+ linux-rtc@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-mmc@vger.kernel.org, linux-pci@vger.kernel.org, netdev@vger.kernel.org,
+ krzysztof.kozlowski@linaro.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230111_071644_165089_3DDC0E26 
-X-CRM114-Status: GOOD (  11.61  )
+X-CRM114-CacheID: sfid-20230111_104021_861133_9AC973A1 
+X-CRM114-Status: UNSURE (   8.38  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,22 +83,64 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-CgpPbiAxMS8wMS8yMDIzIDEzOjEzLCBTaW50aHUgUmFqYSB3cm90ZToKPiBGcm9tOiBTaW50aHUg
-UmFqYSA8c2ludGh1LnJhamFAdGkuY29tPgo+IAo+IFRoZcKgV0laIGFjdHMgYXMgYSB3cmFwcGVy
-IGZvciBTZXJEZXMgYW5kwqBoYXPCoExhbmVzIDAgYW5kwqAyIHJlc2VydmVkCj4gZm9yIFVTQiBm
-b3IgdHlwZS1DIGxhbmUgc3dhcCBpZiBMYW5lIDEgYW5kIExhbmUgMyBhcmUgbGlua2VkIHRvIHRo
-ZQo+IFVTQiBQSFkgdGhhdCBpcyBpbnRlZ3JhdGVkIGludG8gdGhlIFNlckRlcyBJUC4gVGhlIFdJ
-WiBjb250cm9sIHJlZ2lzdGVyCj4gaGFzIHRvIGJlIGNvbmZpZ3VyZWQgdG8gc3VwcG9ydCB0aGlz
-IGxhbmUgc3dhcCBmZWF0dXJlLgo+IAo+IFRoZSBzdXBwb3J0IGZvciBzd2FwcGluZyBsYW5lcyAy
-IGFuZCAzIGlzIG1pc3NpbmcgYW5kIHRoZXJlZm9yZQo+IGFkZCBzdXBwb3J0IHRvIGNvbmZpZ3Vy
-ZSB0aGUgY29udHJvbCByZWdpc3RlciB0byBzd2FwIGJldHdlZW4KPiBsYW5lcyAyIGFuZCAzIGlm
-IFBIWSB0eXBlIGlzIFVTQi4KPiAKPiBTaWduZWQtb2ZmLWJ5OiBTaW50aHUgUmFqYSA8c2ludGh1
-LnJhamFAdGkuY29tPgoKUmV2aWV3ZWQtYnk6IFJvZ2VyIFF1YWRyb3MgPHJvZ2VycUBrZXJuZWwu
-b3JnPgoKCi0tCmNoZWVycywKLXJvZ2VyCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51
-eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFp
-bG1hbi9saXN0aW5mby9saW51eC1waHkK
+Hello:
+
+This series was applied to netdev/net-next.git (master)
+by Jakub Kicinski <kuba@kernel.org>:
+
+On Mon, 09 Jan 2023 13:53:25 +0100 you wrote:
+> Batch conversion of the following bindings:
+> - meson_sm.txt
+> - amlogic-efuse.txt
+> - amlogic-meson-mx-efuse.txt
+> - meson-wdt.txt
+> - meson-ir.txt
+> - rtc-meson.txt
+> - amlogic,meson6-timer.txt
+> - meson-gxl-usb2-phy.txt
+> - amlogic,meson-gx.txt
+> - amlogic,meson-pcie.txt
+> - mdio-mux-meson-g12a.txt
+> 
+> [...]
+
+Here is the summary with links:
+  - [v2,01/11] dt-bindings: firmware: convert meson_sm.txt to dt-schema
+    (no matching commit)
+  - [v2,02/11] dt-bindings: nvmem: convert amlogic-efuse.txt to dt-schema
+    (no matching commit)
+  - [v2,03/11] dt-bindings: nvmem: convert amlogic-meson-mx-efuse.txt to dt-schema
+    (no matching commit)
+  - [v2,04/11] dt-bindings: watchdog: convert meson-wdt.txt to dt-schema
+    (no matching commit)
+  - [v2,05/11] dt-bindings: media: convert meson-ir.txt to dt-schema
+    (no matching commit)
+  - [v2,06/11] dt-bindings: power: amlogic,meson-gx-pwrc: mark bindings as deprecated
+    (no matching commit)
+  - [v2,07/11] dt-bindings: timer: convert timer/amlogic,meson6-timer.txt to dt-schema
+    (no matching commit)
+  - [v2,08/11] dt-bindings: phy: convert meson-gxl-usb2-phy.txt to dt-schema
+    (no matching commit)
+  - [v2,09/11] dt-bindings: mmc: convert amlogic,meson-gx.txt to dt-schema
+    (no matching commit)
+  - [v2,10/11] dt-bindings: PCI: convert amlogic,meson-pcie.txt to dt-schema
+    (no matching commit)
+  - [v2,11/11] dt-bindings: net: convert mdio-mux-meson-g12a.txt to dt-schema
+    https://git.kernel.org/netdev/net-next/c/82fc0f87cd2c
+
+You are awesome, thank you!
+-- 
+Deet-doot-dot, I am a bot.
+https://korg.docs.kernel.org/patchwork/pwbot.html
+
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
