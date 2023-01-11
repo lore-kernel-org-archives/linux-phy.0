@@ -4,91 +4,113 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 31187C46467
-	for <linux-phy@archiver.kernel.org>; Wed, 11 Jan 2023 09:58:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9D2A2C677F1
+	for <linux-phy@archiver.kernel.org>; Wed, 11 Jan 2023 11:05:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6QyZuWFx6zuIww54LoOVMP71yGGJykFyV7NkxHMl5Bg=; b=A0rKSTOC+huMQH
-	VtOS9mFE4IALfwbiT+YDZyzJRp3+FBJ7UIWL0zzT4py4glUmBO6mq7S4re245PUrvjy/jtfjFkV/v
-	mAXNH+VpgyrhPva2aG5fHlGGnz5NTQU3ZrE8mHM8PqwkCLNOYc79tdH7uKXxcJ1HuAKMYimRhykqs
-	4E+N0wns982lklYhVRRdR8Np2E2BKPerNbtQWcMOL/K+7oGi0KxbdDfAwomDKmKODkFw7wzPXv9gG
-	4KnMfib9eEFhm9YQF5H/+PuSEVq4SJeYO7vRpo1LZ2JkBJnKHRDJek43of6ci4hROjHDUfNpR4xBQ
-	tPi/JMsTq3Tdb4V/cYCw==;
+	List-Owner; bh=TDNZ68kT/UcdJljSpH1GNhXIREygRNEVwrB6rGOkxtc=; b=DnV7zjH7KgSXXl
+	l+ei/aOc8zaFxc6LpjOijpMiYfi53382M26/21YCUZ/R/EGktdQ/3MUKVE4vIgD9mzyk6/rMARMdq
+	agIj1mdsS7HJaMadSHpwWczOG92530AA63YFADbV+Ht55eBCJIuqLd+2/Pk0fnQJWpkZkbeSuVlCB
+	wQzut+wf5E+z9q5qoX7pZO4BqhBGUTReRN6hUx6X4jUNKBPEILh5OxbyRBMKQZXUVHFPrNNsEMt6S
+	JRhKV6NlmpZKddVyEMc6Aqz0Y4K1ZBHCYWxJqM7Z1/d1/l6xrazxz9VxZEhjqbm/Z4ox+VI2D1chx
+	FD8UpT3zk62MtuD3e9OA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pFXsg-00AesX-KU; Wed, 11 Jan 2023 09:58:50 +0000
-Received: from egress-ip33a.ess.de.barracuda.com ([18.185.115.192])
+	id 1pFYv4-00AyJ7-2r; Wed, 11 Jan 2023 11:05:22 +0000
+Received: from mail-mw2nam12on2045.outbound.protection.outlook.com ([40.107.244.45] helo=NAM12-MW2-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pFXsc-00Aepq-Q0
-	for linux-phy@lists.infradead.org; Wed, 11 Jan 2023 09:58:48 +0000
-Received: from mail-lf1-f69.google.com (mail-lf1-f69.google.com [209.85.167.69]) by mx-outbound9-241.eu-central-1a.ess.aws.cudaops.com (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO); Wed, 11 Jan 2023 09:58:36 +0000
-Received: by mail-lf1-f69.google.com with SMTP id z8-20020ac25de8000000b004c66d7fb5baso5570273lfq.21
-        for <linux-phy@lists.infradead.org>; Wed, 11 Jan 2023 01:58:36 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=mistralsolutions.com; s=google;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=f+NDmNbFwjo9DxMWr9KM3RKDdc7/RIp0UCXNPTu6MxA=;
-        b=VlOJxEjrjd+VrQXJF6dP3QOBELPyvzrhRIc7t7KdSQp+j9RupVVVCYCNvRx4+ZKgeb
-         ql5Q/vYxqD39/7mRf5D/l4Vw8MeK/rfq+3ubX9EJWsSCiLW/VTtTaHTA9xVHzV4jQp/p
-         gpBATLZFlgKMT5mtSUOTXETbKZJC/8XAj/deM=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=f+NDmNbFwjo9DxMWr9KM3RKDdc7/RIp0UCXNPTu6MxA=;
-        b=BrdkKOkTs3YeFBEIvtG7myMVaJ+pUSwbWgmMeWgcL9W3PLgGBRfuUIMpFp+Fk+oZfS
-         9J/9GxaVyJiGbQPiNyv0YzJ8Cmr1sxj+VqNLndXTIId9wQWP7b7ialg+uYjjC+7jF8qi
-         ZsWzKwOe7Y7n6kCBtmXN56KuQeU5EQkM0tRbTWKTMOuVKXNp+Zq/wOcaZ8A78zu6miGj
-         xUNgqEuPfDA0yLTAdtXfPIZGJYxDABxnJyKLcHL57NtwcnSCHsBPaRNE3ZXo8dbdtUnp
-         hordJwt1pwVny23iR0ATwwX/fuX20+snYYgDa06IQF+knN3j9BDgkNZEnvSwLiDPhCrP
-         KNmQ==
-X-Gm-Message-State: AFqh2kqx99VUD/L+RVE2LJCPZe6CAuyFdax0WKLze+cwvAmxQeBrMf6n
-	fnOIYtn7+uBDHAqXqfjAlHolvtaYbNdskE8DcDWuquiU2CkWi+S4lVlCWL1Ko5ZpjIEBLkNi6b0
-	2dOu3H4kTaRTXBfFcr+qwEncGQcpEyfzZ60EkCVW++UeGGB59swULpfGlD0NSaLO2YM2EcBLqbp
-	p/7g==
-X-Received: by 2002:a05:651c:210c:b0:286:6e49:190f with SMTP id a12-20020a05651c210c00b002866e49190fmr717450ljq.40.1673431115286;
-        Wed, 11 Jan 2023 01:58:35 -0800 (PST)
-X-Google-Smtp-Source: AMrXdXsufEAoTnnzxY8wmHx63idXKB1GFlobCduIWhEry1RFVfcwllpiNPdlE9GyZtuOaND3yRD93DBm8KZoD8RtA18=
-X-Received: by 2002:a05:651c:210c:b0:286:6e49:190f with SMTP id
- a12-20020a05651c210c00b002866e49190fmr717441ljq.40.1673431114978; Wed, 11 Jan
- 2023 01:58:34 -0800 (PST)
+	id 1pFYv1-00AyHy-DM
+	for linux-phy@lists.infradead.org; Wed, 11 Jan 2023 11:05:21 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=iAmfzz6y5PxZWRSfDToGMLa2c1zjN3m7DWPpwPtYv868YR87A5UKXBrAq4JuXaigy7fMdIedcxh3DlR8RlvKW3R96YHzmq/ERI/eLJ8zoKJPdi2GfyxuK5FI+ayZqckP/JLXeoYXkbwk9xGsH2T1uLuajOcT6q7///aNfTC610MIkg/udRxIK5BH0+8R130Y55jBSr8qkIdLVuRxQVOlVVaQkvDl91VZ7AC+/8bnlzeVdOwHC3GNhNXyOr6DHxpm1fEqAVndVNmIWRBGWWQkqkV+YgELm+MYRqW8ragLXOsevsFyzusMdhd1c8K+29Aon16B5qJ+PLT2GLeaYWyYHw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=naasYfbh9yt3EaNAvkPUDMzIZBY9/MU++WU2QeKG7DE=;
+ b=WkYKr3taZpne/MkzIHg++7yJ7vAafLU/WDW2YQKhxGGzuYJFEqWBxLcUIvU5T/m8Ds7PbbYeDS+MmuvRBSYNNBJYnZL9N1Gynsat5n1OaKKvDpc7cETQaGy+zMAOt5uDVwGHyJYlIfIdGt4i/AaymhFyTQr6UrJHdJuRdjohY7ZZjXa6XNBCCEscOV+7MfNvCpaYt5Q58dMMx2K1XYMonDgGecdg6xdE6mJgpox68PmbUUOv3nDBhXGCyb5ZEk4PBbzI440hj4GACltFQ0406wAypu0rG/Eqx8XUs9bOPKnggQmg40B/SWexwmzZuxeGG/FLW6h/1IqKHhwPcXghRQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 216.228.117.160) smtp.rcpttodomain=linuxfoundation.org
+ smtp.mailfrom=nvidia.com; dmarc=pass (p=reject sp=reject pct=100) action=none
+ header.from=nvidia.com; dkim=none (message not signed); arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=naasYfbh9yt3EaNAvkPUDMzIZBY9/MU++WU2QeKG7DE=;
+ b=rczEq6nU0wXXyOxn9VgIoVb4faZDHHzMg1sly6v9iiEMKpwlcmFzsow01LFywRgizozUNMdvUCBkly1lkO0Yp2UguCo7jWmxZx9tllA9vRXr62+LoIFQYA+A4ahzPOrse9h4aPoS+81j8BhZ+/4Is3z/9UKP09oKkVmLmTEiq0MEKPWFFzJyLPQW7G67b1GJG9i4Z06OTmNulN2wzmQm6xDccvTx/IM+yYoRLPr4NMaG3zY68UQil0KJiwRpUBKKw5Xhj312DxRgwhjWz3YKj+S1CDrZG7IJphBp9jDb3Yc457eWe0Szn7jCrJ01TbLyqeMo5YRG7chODf0iWsJ2zQ==
+Received: from DS7PR03CA0275.namprd03.prod.outlook.com (2603:10b6:5:3ad::10)
+ by MW4PR12MB6875.namprd12.prod.outlook.com (2603:10b6:303:209::5) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5986.18; Wed, 11 Jan
+ 2023 11:05:15 +0000
+Received: from DM6NAM11FT066.eop-nam11.prod.protection.outlook.com
+ (2603:10b6:5:3ad:cafe::82) by DS7PR03CA0275.outlook.office365.com
+ (2603:10b6:5:3ad::10) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6002.13 via Frontend
+ Transport; Wed, 11 Jan 2023 11:05:15 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 216.228.117.160)
+ smtp.mailfrom=nvidia.com; dkim=none (message not signed)
+ header.d=none;dmarc=pass action=none header.from=nvidia.com;
+Received-SPF: Pass (protection.outlook.com: domain of nvidia.com designates
+ 216.228.117.160 as permitted sender) receiver=protection.outlook.com;
+ client-ip=216.228.117.160; helo=mail.nvidia.com; pr=C
+Received: from mail.nvidia.com (216.228.117.160) by
+ DM6NAM11FT066.mail.protection.outlook.com (10.13.173.179) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.5986.18 via Frontend Transport; Wed, 11 Jan 2023 11:05:15 +0000
+Received: from rnnvmail203.nvidia.com (10.129.68.9) by mail.nvidia.com
+ (10.129.200.66) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.986.36; Wed, 11 Jan
+ 2023 03:05:07 -0800
+Received: from rnnvmail202.nvidia.com (10.129.68.7) by rnnvmail203.nvidia.com
+ (10.129.68.9) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.986.36; Wed, 11 Jan
+ 2023 03:05:06 -0800
+Received: from moonraker.nvidia.com (10.127.8.10) by mail.nvidia.com
+ (10.129.68.7) with Microsoft SMTP Server id 15.2.986.36 via Frontend
+ Transport; Wed, 11 Jan 2023 03:05:04 -0800
+From: Jon Hunter <jonathanh@nvidia.com>
+To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Rob Herring
+	<robh+dt@kernel.org>, Krzysztof Kozlowski
+	<krzysztof.kozlowski+dt@linaro.org>, Thierry Reding
+	<thierry.reding@gmail.com>, Vinod Koul <vkoul@kernel.org>
+CC: <linux-usb@vger.kernel.org>, <devicetree@vger.kernel.org>,
+	<linux-tegra@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+	<waynec@nvidia.com>, Thierry Reding <treding@nvidia.com>, Jon Hunter
+	<jonathanh@nvidia.com>
+Subject: [PATCH V6 1/6] dt-bindings: usb: Add NVIDIA Tegra234 XUSB host controller binding
+Date: Wed, 11 Jan 2023 11:04:45 +0000
+Message-ID: <20230111110450.24617-2-jonathanh@nvidia.com>
+X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20230111110450.24617-1-jonathanh@nvidia.com>
+References: <20230111110450.24617-1-jonathanh@nvidia.com>
 MIME-Version: 1.0
-References: <20230106071714.30562-1-sinthu.raja@ti.com> <20230106071714.30562-3-sinthu.raja@ti.com>
- <cf854af6-fbbc-6e5c-f773-c4a868d85278@kernel.org>
-In-Reply-To: <cf854af6-fbbc-6e5c-f773-c4a868d85278@kernel.org>
-From: Sinthu Raja M <sinthu.raja@mistralsolutions.com>
-Date: Wed, 11 Jan 2023 15:28:23 +0530
-Message-ID: <CAEd-yTTDrTs_dpb_VqhyZjbTWDcXvZwKqhoP=sU_921PjuLpGQ@mail.gmail.com>
-Subject: Re: [PATCH V2 2/2] phy: ti: j721e-wiz: Add support to enable LN23
- Type-C swap
-To: Roger Quadros <rogerq@kernel.org>
-Cc: Vinod Koul <vkoul@kernel.org>, Ravi Gunasekaran <r-gunasekaran@ti.com>, 
-	Siddharth Vadapalli <s-vadapalli@ti.com>, Vignesh Raghavendra <vigneshr@ti.com>, linux-phy@lists.infradead.org, 
-	linux-kernel@vger.kernel.org, Sinthu Raja <sinthu.raja@ti.com>
-X-BESS-ID: 1673431115-302545-5390-2780-1
-X-BESS-VER: 2019.1_20221214.2106
-X-BESS-Apparent-Source-IP: 209.85.167.69
-X-BESS-Outbound-Spam-Score: 0.40
-X-BESS-Outbound-Spam-Report: Code version 3.2, rules version 3.2.2.245392 [from 
-	cloudscan11-79.eu-central-1a.ess.aws.cudaops.com]
-	Rule breakdown below
-	 pts rule name              description
-	---- ---------------------- --------------------------------
-	0.00 BSF_SC0_MISMATCH_TO    META: Envelope rcpt doesn't match header 
-	0.40 BSF_SC0_SA085b         META: Custom Rule SA085b 
-	0.00 BSF_BESS_OUTBOUND      META: BESS Outbound 
-X-BESS-Outbound-Spam-Status: SCORE=0.40 using account:ESS91090 scores of KILL_LEVEL=7.0 tests=BSF_SC0_MISMATCH_TO, BSF_SC0_SA085b, BSF_BESS_OUTBOUND
-X-BESS-BRTS-Status: 1
+X-NVConfidentiality: public
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: DM6NAM11FT066:EE_|MW4PR12MB6875:EE_
+X-MS-Office365-Filtering-Correlation-Id: 9b18d41b-f6e6-4023-cc93-08daf3c3b7d6
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: 	aK3R1BjXKOCstujbbKQKdkPZsfPKsoUaVCH2HtI1e/2QCiCnLZzolfuKoi7HX+qkETLssQQN/JgTPf8KKLCw4IuUOYyu2GHhMLNccQktr+Je8EbVRRENtd8MVsIU4/3m1nsmzeIMyOxv9HzmoP2oFCQDPd+pg2r5EfoxFjLxynPyOfUuOUDACA+Spp8EZpZI4exkLNE2xb1u8ZYrvGuYAuVUzcJ7fgwwWnwUdPIXDRGe9Zdr+/05XaJqLunprgXL6pjkeuavQAZ82Q9KbLFJYDjhpuCmFZvBncZ3fU1eSP0iU2g7A9FSHTAIxvYbxg9scbKxF7pmzZK1zHfvV/5eYEtnsHXEquDdctvyMrokZO0OGYBwHjtaAlS/FpJJ84jieCBrchlKahnq19Iu1Z/gd9oluXxlpHayK7g7pWBLsfUURDmqVmigz1VbpEkkEnkHN4VwqfnVYwq7/WjuA+JKI1DUq6o2jwFFWuZPZzF0F1q917JO3C3YdoLS8/Tw0RxWpMG8k9DAd5uknZ/z7cPPgrhe9HKDPJYOjO+c1eCTDZ5kDEuqdDBFdQ+elw1llGeHyAxC65w/YlNU3tWA62qRKyP/4RyaniBoIMz9ooiG8ilJz2XZkg9F8r5wrXqzQHxnaHwwg38IFKpRRgPov15q+MVr4apwt31X+M+ZXEA3kQLqHNTsdTTezCorS/3S3QrwBB9SI78PwsNWkVYW9Q1SwPIb0RuTxfjwHvDMnUB//sebHGyAz2a+rTNRrW1mdRczOAB6Pqs1nUAuQbMf6EM0eoQs8IAfu3FjkLUOYKYLDW6ACNRP7+YZTokfd2pyhGhN
+X-Forefront-Antispam-Report: 	CIP:216.228.117.160;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc6edge1.nvidia.com;CAT:NONE;SFS:(13230022)(4636009)(39860400002)(396003)(346002)(136003)(376002)(451199015)(40470700004)(36840700001)(46966006)(36756003)(26005)(186003)(8936002)(107886003)(6666004)(7696005)(1076003)(2616005)(40480700001)(5660300002)(316002)(4326008)(40460700003)(86362001)(966005)(356005)(82740400003)(478600001)(7636003)(54906003)(8676002)(41300700001)(110136005)(70586007)(70206006)(82310400005)(83380400001)(47076005)(2906002)(426003)(336012)(36860700001);DIR:OUT;SFP:1101;
+X-OriginatorOrg: Nvidia.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 11 Jan 2023 11:05:15.3420
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 9b18d41b-f6e6-4023-cc93-08daf3c3b7d6
+X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[216.228.117.160];Helo=[mail.nvidia.com]
+X-MS-Exchange-CrossTenant-AuthSource: 	DM6NAM11FT066.eop-nam11.prod.protection.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MW4PR12MB6875
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230111_015847_244904_682B701C 
-X-CRM114-Status: GOOD (  29.34  )
+X-CRM114-CacheID: sfid-20230111_030519_485604_E5317D63 
+X-CRM114-Status: GOOD (  15.74  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,134 +127,194 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Jan 11, 2023 at 3:24 PM Roger Quadros <rogerq@kernel.org> wrote:
->
-> Hi Sinthu,
->
-> On 06/01/2023 09:17, Sinthu Raja wrote:
-> > From: Sinthu Raja <sinthu.raja@ti.com>
-> >
-> > The WIZ acts as a wrapper for SerDes and has Lanes 0 and 2 reserved
-> > for USB for type-C lane swap if Lane 1 and Lane 3 are linked to the
-> > USB PHY that is integrated into the SerDes IP. The WIZ control register
-> > has to be configured to support this lane swap feature.
-> >
-> > The support for swapping lanes 2 and 3 is missing and therefore
-> > add support to configure the control register to swap between
-> > lanes 2 and 3 if PHY type is USB.
-> >
-> > Signed-off-by: Sinthu Raja <sinthu.raja@ti.com>
-> > ---
-> >
-> > Changes in V2:
-> > =============
-> > Address review comments:
-> > - Update commit description.
-> > - Rename enum variable name from wiz_lane_typec_swap_mode to wiz_typec_master_lane.
-> > - Rename enumerators name specific to list of master lanes used for lane swapping.
-> > - Add inline comments.
-> >
-> > V1: https://linkprotect.cudasvc.com/url?a=https%3a%2f%2flore.kernel.org%2flkml%2f20221213124854.3779-2-sinthu.raja%40ti.com%2fT%2f%23m5e2d1a15d647f5df9dd28ed2dedc4b0812d6466f&c=E,1,Y-aGHFF9W5xMNeMlJ71LqKOZsmcrFFVOKtXq77GFhXQctctl3hRfr-TLmdAnjdaeSzzP0z8DPPPmxLORLMeyROZypsrLBJDsa2LdQkLThbo_gfu7bN9Uj_qC&typo=1
-> >
-> >  drivers/phy/ti/phy-j721e-wiz.c | 33 ++++++++++++++++++++++++++++++---
-> >  1 file changed, 30 insertions(+), 3 deletions(-)
-> >
-> > diff --git a/drivers/phy/ti/phy-j721e-wiz.c b/drivers/phy/ti/phy-j721e-wiz.c
-> > index 571f0ca18874..815e8124b94a 100644
-> > --- a/drivers/phy/ti/phy-j721e-wiz.c
-> > +++ b/drivers/phy/ti/phy-j721e-wiz.c
-> > @@ -58,6 +58,14 @@ enum wiz_lane_standard_mode {
-> >       LANE_MODE_GEN4,
-> >  };
-> >
-> > +/*
-> > + * List of master lanes used for lane swapping
-> > + */
-> > +enum wiz_typec_master_lane {
-> > +     LANE0 = 0,
-> > +     LANE2 = 2,
-> > +};
-> > +
-> >  enum wiz_refclk_mux_sel {
-> >       PLL0_REFCLK,
-> >       PLL1_REFCLK,
-> > @@ -194,6 +202,9 @@ static const struct reg_field p_mac_div_sel1[WIZ_MAX_LANES] = {
-> >  static const struct reg_field typec_ln10_swap =
-> >                                       REG_FIELD(WIZ_SERDES_TYPEC, 30, 30);
-> >
-> > +static const struct reg_field typec_ln23_swap =
-> > +                                     REG_FIELD(WIZ_SERDES_TYPEC, 31, 31);
-> > +
-> >  struct wiz_clk_mux {
-> >       struct clk_hw           hw;
-> >       struct regmap_field     *field;
-> > @@ -367,6 +378,7 @@ struct wiz {
-> >       struct regmap_field     *mux_sel_field[WIZ_MUX_NUM_CLOCKS];
-> >       struct regmap_field     *div_sel_field[WIZ_DIV_NUM_CLOCKS_16G];
-> >       struct regmap_field     *typec_ln10_swap;
-> > +     struct regmap_field     *typec_ln23_swap;
-> >       struct regmap_field     *sup_legacy_clk_override;
-> >
-> >       struct device           *dev;
-> > @@ -676,6 +688,13 @@ static int wiz_regfield_init(struct wiz *wiz)
-> >               return PTR_ERR(wiz->typec_ln10_swap);
-> >       }
-> >
-> > +     wiz->typec_ln23_swap = devm_regmap_field_alloc(dev, regmap,
-> > +                                                    typec_ln23_swap);
-> > +     if (IS_ERR(wiz->typec_ln23_swap)) {
-> > +             dev_err(dev, "LN23_SWAP reg field init failed\n");
-> > +             return PTR_ERR(wiz->typec_ln23_swap);
-> > +     }
-> > +
-> >       wiz->phy_en_refclk = devm_regmap_field_alloc(dev, regmap, phy_en_refclk);
-> >       if (IS_ERR(wiz->phy_en_refclk)) {
-> >               dev_err(dev, "PHY_EN_REFCLK reg field init failed\n");
-> > @@ -1254,9 +1273,17 @@ static int wiz_phy_reset_deassert(struct reset_controller_dev *rcdev,
-> >                       int i;
-> >
->
-> Don't you have to update the below comment you added in patch 1 to mention about LN23 as well?
+From: Wayne Chang <waynec@nvidia.com>
 
-Thanks for the review, Roger.
-Yes, I have to. My bad. I will send out another version updating this comment.
->
->
-> +                       /* if no typec-dir gpio was specified and PHY type is
-> +                        * USB3 with master lane number is '0', set LN10 SWAP
-> +                        * bit to '1'
-> +                        */
->
->
-> >                       for (i = 0; i < num_lanes; i++) {
-> > -                             if ((wiz->lane_phy_type[i] == PHY_TYPE_USB3)
-> > -                                             && wiz->master_lane_num[i] == 0) {
-> > -                                     regmap_field_write(wiz->typec_ln10_swap, 1);
-> > +                             if (wiz->lane_phy_type[i] == PHY_TYPE_USB3) {
-> > +                                     switch (wiz->master_lane_num[i]) {
-> > +                                     case LANE0:
-> > +                                             regmap_field_write(wiz->typec_ln10_swap, 1);
-> > +                                             break;
-> > +                                     case LANE2:
-> > +                                             regmap_field_write(wiz->typec_ln23_swap, 1);
-> > +                                             break;
-> > +                                     default:
-> > +                                             break;
-> > +                                     }
-> >                               }
-> >                       }
-> >               }
->
-> Otherwise looks good.
->
-> cheers,
-> -roger
->
+Add device-tree binding documentation for the XUSB host controller present
+on Tegra234 SoC. This controller supports the USB 3.1 specification.
 
+Signed-off-by: Wayne Chang <waynec@nvidia.com>
+Signed-off-by: Thierry Reding <treding@nvidia.com>
+Signed-off-by: Jon Hunter <jonathanh@nvidia.com>
+---
+V5 -> V6: Updated main description and register description.
+          Corrected 'dma-coherent'.
+V4 -> V5: No changes
+V3 -> V4: minor update to the power-domain description
+V2 -> V3: nothing has changed
+V1 -> V2: address the issue on phy-names property
 
+ .../bindings/usb/nvidia,tegra234-xusb.yaml    | 159 ++++++++++++++++++
+ 1 file changed, 159 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/usb/nvidia,tegra234-xusb.yaml
+
+diff --git a/Documentation/devicetree/bindings/usb/nvidia,tegra234-xusb.yaml b/Documentation/devicetree/bindings/usb/nvidia,tegra234-xusb.yaml
+new file mode 100644
+index 000000000000..db761dcbf72a
+--- /dev/null
++++ b/Documentation/devicetree/bindings/usb/nvidia,tegra234-xusb.yaml
+@@ -0,0 +1,159 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/usb/nvidia,tegra234-xusb.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: NVIDIA Tegra234 xHCI controller
++
++maintainers:
++  - Thierry Reding <thierry.reding@gmail.com>
++  - Jon Hunter <jonathanh@nvidia.com>
++
++description: |
++  The Tegra xHCI controller supports both USB2 and USB3 interfaces exposed by
++  the Tegra XUSB pad controller. The xHCI controller controls up to eight
++  ports; there are four USB 2.0 ports and four USB 3.2 Gen1 x1 ports.
++
++properties:
++  compatible:
++    const: nvidia,tegra234-xusb
++
++  reg:
++    items:
++      - description: xHCI host registers
++      - description: XUSB FPCI registers
++      - description: XUSB bar2 registers
++
++  reg-names:
++    items:
++      - const: hcd
++      - const: fpci
++      - const: bar2
++
++  interrupts:
++    items:
++      - description: xHCI host interrupt
++      - description: mailbox interrupt
++
++  clocks:
++    items:
++      - description: XUSB host clock
++      - description: XUSB Falcon source clock
++      - description: XUSB SuperSpeed clock
++      - description: XUSB SuperSpeed source clock
++      - description: XUSB HighSpeed clock source
++      - description: XUSB FullSpeed clock source
++      - description: USB PLL
++      - description: reference clock
++      - description: I/O PLL
++
++  clock-names:
++    items:
++      - const: xusb_host
++      - const: xusb_falcon_src
++      - const: xusb_ss
++      - const: xusb_ss_src
++      - const: xusb_hs_src
++      - const: xusb_fs_src
++      - const: pll_u_480m
++      - const: clk_m
++      - const: pll_e
++
++  interconnects:
++    items:
++      - description: read client
++      - description: write client
++
++  interconnect-names:
++    items:
++      - const: dma-mem # read
++      - const: write
++
++  iommus:
++    maxItems: 1
++
++  nvidia,xusb-padctl:
++    $ref: /schemas/types.yaml#/definitions/phandle
++    description: phandle to the XUSB pad controller that is used to configure
++      the USB pads used by the XHCI controller
++
++  phys:
++    minItems: 1
++    maxItems: 8
++
++  phy-names:
++    minItems: 1
++    maxItems: 8
++    items:
++      enum:
++        - usb2-0
++        - usb2-1
++        - usb2-2
++        - usb2-3
++        - usb3-0
++        - usb3-1
++        - usb3-2
++        - usb3-3
++
++  power-domains:
++    items:
++      - description: XUSBC power domain (for Host and USB 2.0)
++      - description: XUSBA power domain (for SuperSpeed)
++
++  power-domain-names:
++    items:
++      - const: xusb_host
++      - const: xusb_ss
++
++  dma-coherent: true
++
++allOf:
++  - $ref: usb-xhci.yaml
++
++unevaluatedProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/clock/tegra234-clock.h>
++    #include <dt-bindings/interrupt-controller/arm-gic.h>
++    #include <dt-bindings/memory/tegra234-mc.h>
++    #include <dt-bindings/power/tegra234-powergate.h>
++
++    usb@3610000 {
++        compatible = "nvidia,tegra234-xusb";
++        reg = <0x03610000 0x40000>,
++              <0x03600000 0x10000>,
++              <0x03650000 0x10000>;
++        reg-names = "hcd", "fpci", "bar2";
++
++        interrupts = <GIC_SPI 163 IRQ_TYPE_LEVEL_HIGH>,
++                     <GIC_SPI 164 IRQ_TYPE_LEVEL_HIGH>;
++
++        clocks = <&bpmp TEGRA234_CLK_XUSB_CORE_HOST>,
++                 <&bpmp TEGRA234_CLK_XUSB_FALCON>,
++                 <&bpmp TEGRA234_CLK_XUSB_CORE_SS>,
++                 <&bpmp TEGRA234_CLK_XUSB_SS>,
++                 <&bpmp TEGRA234_CLK_CLK_M>,
++                 <&bpmp TEGRA234_CLK_XUSB_FS>,
++                 <&bpmp TEGRA234_CLK_UTMIP_PLL>,
++                 <&bpmp TEGRA234_CLK_CLK_M>,
++                 <&bpmp TEGRA234_CLK_PLLE>;
++        clock-names = "xusb_host", "xusb_falcon_src",
++                      "xusb_ss", "xusb_ss_src", "xusb_hs_src",
++                      "xusb_fs_src", "pll_u_480m", "clk_m",
++                      "pll_e";
++        interconnects = <&mc TEGRA234_MEMORY_CLIENT_XUSB_HOSTR &emc>,
++                        <&mc TEGRA234_MEMORY_CLIENT_XUSB_HOSTW &emc>;
++        interconnect-names = "dma-mem", "write";
++        iommus = <&smmu_niso1 TEGRA234_SID_XUSB_HOST>;
++
++        power-domains = <&bpmp TEGRA234_POWER_DOMAIN_XUSBC>,
++                        <&bpmp TEGRA234_POWER_DOMAIN_XUSBA>;
++        power-domain-names = "xusb_host", "xusb_ss";
++
++        nvidia,xusb-padctl = <&xusb_padctl>;
++
++        phys = <&pad_lanes_usb2_0>;
++        phy-names = "usb2-0";
++    };
 -- 
-With Regards
-Sinthu Raja
+2.25.1
+
 
 -- 
 linux-phy mailing list
