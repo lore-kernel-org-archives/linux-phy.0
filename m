@@ -4,64 +4,91 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 56F72C46467
-	for <linux-phy@archiver.kernel.org>; Wed, 11 Jan 2023 09:54:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 31187C46467
+	for <linux-phy@archiver.kernel.org>; Wed, 11 Jan 2023 09:58:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pt0gAm4PsgIRN7D/osUTIWrphq3HZjt1iA7j6uj3ymg=; b=LjDuO+zjNOKO2G
-	BTWL3DrHFVk0UPWPgPAa3GPUswYVtZtwi8+DGKHwAoG6SNFBShpdMPUUvwqVk2lz0GaBAfwcTfydC
-	TjEkQeGrBIlTgFbFfzb6VUearajJxDGpilNtEBnhxDsR0Fe2LFdwAXt523Qp11QGHvjl8zBltwX+K
-	9t8qZ1jXmWD705FB9UpicNtCdCPEMooED2MUXdTFYC7qm43bzFMmUq1Gnd0sFpknZJmCg5rq5r8dF
-	cA/VGWMsd+VBN7MkqZNUdKDNoWdNiCePvYhiZNfhozKzRJLo9MqsYbtyWNlP2FjmB7xyVRw8jVFEU
-	vyrJblRf3PPNCWOjya6Q==;
+	List-Owner; bh=6QyZuWFx6zuIww54LoOVMP71yGGJykFyV7NkxHMl5Bg=; b=A0rKSTOC+huMQH
+	VtOS9mFE4IALfwbiT+YDZyzJRp3+FBJ7UIWL0zzT4py4glUmBO6mq7S4re245PUrvjy/jtfjFkV/v
+	mAXNH+VpgyrhPva2aG5fHlGGnz5NTQU3ZrE8mHM8PqwkCLNOYc79tdH7uKXxcJ1HuAKMYimRhykqs
+	4E+N0wns982lklYhVRRdR8Np2E2BKPerNbtQWcMOL/K+7oGi0KxbdDfAwomDKmKODkFw7wzPXv9gG
+	4KnMfib9eEFhm9YQF5H/+PuSEVq4SJeYO7vRpo1LZ2JkBJnKHRDJek43of6ci4hROjHDUfNpR4xBQ
+	tPi/JMsTq3Tdb4V/cYCw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pFXou-00Ae1C-KK; Wed, 11 Jan 2023 09:54:56 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1pFXsg-00AesX-KU; Wed, 11 Jan 2023 09:58:50 +0000
+Received: from egress-ip33a.ess.de.barracuda.com ([18.185.115.192])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pFXor-00Ae0I-5A
-	for linux-phy@lists.infradead.org; Wed, 11 Jan 2023 09:54:54 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 9F77261B8E;
-	Wed, 11 Jan 2023 09:54:52 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 428EBC433D2;
-	Wed, 11 Jan 2023 09:54:50 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1673430892;
-	bh=kbawuu+G4uhdhk6Z3iHZybE1MSwuvuLFahb8EbDh9VM=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=BQoovrkzqShYA5ElXnNFPZZMv8OCDbzkP7k+/fTO0DWODS9jAXrtliuh3qjaSkwpu
-	 65apxuUgPGLr/gj7eW/qE0qAsCwasphkV//btWgaOOK8z3Uner+mpVXULd7Md+Pjet
-	 U7cu8oWMPawGFJAD/sJH9xWMwqJqZczd79EVKm7E9tianfU/cyl6Pf9YSjlG3Br0RE
-	 Ngqy4ejUdsJKC6JO1LQD3NxK6E7592v9u57Q97gEszAHVR3srbDEcGDQxiT3NMV1+t
-	 3ToMATiJX9TQSauuDlN0+RginTu5NVmCryA37cBZtG6SQA4BzTAjMNNgqh5C17yW0R
-	 xXca0N8L9iwJg==
-Message-ID: <cf854af6-fbbc-6e5c-f773-c4a868d85278@kernel.org>
-Date: Wed, 11 Jan 2023 11:54:47 +0200
+	id 1pFXsc-00Aepq-Q0
+	for linux-phy@lists.infradead.org; Wed, 11 Jan 2023 09:58:48 +0000
+Received: from mail-lf1-f69.google.com (mail-lf1-f69.google.com [209.85.167.69]) by mx-outbound9-241.eu-central-1a.ess.aws.cudaops.com (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO); Wed, 11 Jan 2023 09:58:36 +0000
+Received: by mail-lf1-f69.google.com with SMTP id z8-20020ac25de8000000b004c66d7fb5baso5570273lfq.21
+        for <linux-phy@lists.infradead.org>; Wed, 11 Jan 2023 01:58:36 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=mistralsolutions.com; s=google;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=f+NDmNbFwjo9DxMWr9KM3RKDdc7/RIp0UCXNPTu6MxA=;
+        b=VlOJxEjrjd+VrQXJF6dP3QOBELPyvzrhRIc7t7KdSQp+j9RupVVVCYCNvRx4+ZKgeb
+         ql5Q/vYxqD39/7mRf5D/l4Vw8MeK/rfq+3ubX9EJWsSCiLW/VTtTaHTA9xVHzV4jQp/p
+         gpBATLZFlgKMT5mtSUOTXETbKZJC/8XAj/deM=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=f+NDmNbFwjo9DxMWr9KM3RKDdc7/RIp0UCXNPTu6MxA=;
+        b=BrdkKOkTs3YeFBEIvtG7myMVaJ+pUSwbWgmMeWgcL9W3PLgGBRfuUIMpFp+Fk+oZfS
+         9J/9GxaVyJiGbQPiNyv0YzJ8Cmr1sxj+VqNLndXTIId9wQWP7b7ialg+uYjjC+7jF8qi
+         ZsWzKwOe7Y7n6kCBtmXN56KuQeU5EQkM0tRbTWKTMOuVKXNp+Zq/wOcaZ8A78zu6miGj
+         xUNgqEuPfDA0yLTAdtXfPIZGJYxDABxnJyKLcHL57NtwcnSCHsBPaRNE3ZXo8dbdtUnp
+         hordJwt1pwVny23iR0ATwwX/fuX20+snYYgDa06IQF+knN3j9BDgkNZEnvSwLiDPhCrP
+         KNmQ==
+X-Gm-Message-State: AFqh2kqx99VUD/L+RVE2LJCPZe6CAuyFdax0WKLze+cwvAmxQeBrMf6n
+	fnOIYtn7+uBDHAqXqfjAlHolvtaYbNdskE8DcDWuquiU2CkWi+S4lVlCWL1Ko5ZpjIEBLkNi6b0
+	2dOu3H4kTaRTXBfFcr+qwEncGQcpEyfzZ60EkCVW++UeGGB59swULpfGlD0NSaLO2YM2EcBLqbp
+	p/7g==
+X-Received: by 2002:a05:651c:210c:b0:286:6e49:190f with SMTP id a12-20020a05651c210c00b002866e49190fmr717450ljq.40.1673431115286;
+        Wed, 11 Jan 2023 01:58:35 -0800 (PST)
+X-Google-Smtp-Source: AMrXdXsufEAoTnnzxY8wmHx63idXKB1GFlobCduIWhEry1RFVfcwllpiNPdlE9GyZtuOaND3yRD93DBm8KZoD8RtA18=
+X-Received: by 2002:a05:651c:210c:b0:286:6e49:190f with SMTP id
+ a12-20020a05651c210c00b002866e49190fmr717441ljq.40.1673431114978; Wed, 11 Jan
+ 2023 01:58:34 -0800 (PST)
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.4.2
+References: <20230106071714.30562-1-sinthu.raja@ti.com> <20230106071714.30562-3-sinthu.raja@ti.com>
+ <cf854af6-fbbc-6e5c-f773-c4a868d85278@kernel.org>
+In-Reply-To: <cf854af6-fbbc-6e5c-f773-c4a868d85278@kernel.org>
+From: Sinthu Raja M <sinthu.raja@mistralsolutions.com>
+Date: Wed, 11 Jan 2023 15:28:23 +0530
+Message-ID: <CAEd-yTTDrTs_dpb_VqhyZjbTWDcXvZwKqhoP=sU_921PjuLpGQ@mail.gmail.com>
 Subject: Re: [PATCH V2 2/2] phy: ti: j721e-wiz: Add support to enable LN23
  Type-C swap
-Content-Language: en-US
-To: Sinthu Raja <sinthu.raja@mistralsolutions.com>,
- Vinod Koul <vkoul@kernel.org>, Ravi Gunasekaran <r-gunasekaran@ti.com>,
- Siddharth Vadapalli <s-vadapalli@ti.com>
-Cc: Vignesh Raghavendra <vigneshr@ti.com>, linux-phy@lists.infradead.org,
- linux-kernel@vger.kernel.org, Sinthu Raja <sinthu.raja@ti.com>
-References: <20230106071714.30562-1-sinthu.raja@ti.com>
- <20230106071714.30562-3-sinthu.raja@ti.com>
-From: Roger Quadros <rogerq@kernel.org>
-In-Reply-To: <20230106071714.30562-3-sinthu.raja@ti.com>
+To: Roger Quadros <rogerq@kernel.org>
+Cc: Vinod Koul <vkoul@kernel.org>, Ravi Gunasekaran <r-gunasekaran@ti.com>, 
+	Siddharth Vadapalli <s-vadapalli@ti.com>, Vignesh Raghavendra <vigneshr@ti.com>, linux-phy@lists.infradead.org, 
+	linux-kernel@vger.kernel.org, Sinthu Raja <sinthu.raja@ti.com>
+X-BESS-ID: 1673431115-302545-5390-2780-1
+X-BESS-VER: 2019.1_20221214.2106
+X-BESS-Apparent-Source-IP: 209.85.167.69
+X-BESS-Outbound-Spam-Score: 0.40
+X-BESS-Outbound-Spam-Report: Code version 3.2, rules version 3.2.2.245392 [from 
+	cloudscan11-79.eu-central-1a.ess.aws.cudaops.com]
+	Rule breakdown below
+	 pts rule name              description
+	---- ---------------------- --------------------------------
+	0.00 BSF_SC0_MISMATCH_TO    META: Envelope rcpt doesn't match header 
+	0.40 BSF_SC0_SA085b         META: Custom Rule SA085b 
+	0.00 BSF_BESS_OUTBOUND      META: BESS Outbound 
+X-BESS-Outbound-Spam-Status: SCORE=0.40 using account:ESS91090 scores of KILL_LEVEL=7.0 tests=BSF_SC0_MISMATCH_TO, BSF_SC0_SA085b, BSF_BESS_OUTBOUND
+X-BESS-BRTS-Status: 1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230111_015453_295642_2A38AB27 
-X-CRM114-Status: GOOD (  28.57  )
+X-CRM114-CacheID: sfid-20230111_015847_244904_682B701C 
+X-CRM114-Status: GOOD (  29.34  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,77 +100,141 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SGkgU2ludGh1LAoKT24gMDYvMDEvMjAyMyAwOToxNywgU2ludGh1IFJhamEgd3JvdGU6Cj4gRnJv
-bTogU2ludGh1IFJhamEgPHNpbnRodS5yYWphQHRpLmNvbT4KPiAKPiBUaGXCoFdJWiBhY3RzIGFz
-IGEgd3JhcHBlciBmb3IgU2VyRGVzIGFuZMKgaGFzwqBMYW5lcyAwIGFuZMKgMiByZXNlcnZlZAo+
-IGZvciBVU0IgZm9yIHR5cGUtQyBsYW5lIHN3YXAgaWYgTGFuZSAxIGFuZCBMYW5lIDMgYXJlIGxp
-bmtlZCB0byB0aGUKPiBVU0IgUEhZIHRoYXQgaXMgaW50ZWdyYXRlZCBpbnRvIHRoZSBTZXJEZXMg
-SVAuIFRoZSBXSVogY29udHJvbCByZWdpc3Rlcgo+IGhhcyB0byBiZSBjb25maWd1cmVkIHRvIHN1
-cHBvcnQgdGhpcyBsYW5lIHN3YXAgZmVhdHVyZS4KPiAKPiBUaGUgc3VwcG9ydCBmb3Igc3dhcHBp
-bmcgbGFuZXMgMiBhbmQgMyBpcyBtaXNzaW5nIGFuZCB0aGVyZWZvcmUKPiBhZGQgc3VwcG9ydCB0
-byBjb25maWd1cmUgdGhlIGNvbnRyb2wgcmVnaXN0ZXIgdG8gc3dhcCBiZXR3ZWVuCj4gbGFuZXMg
-MiBhbmQgMyBpZiBQSFkgdHlwZSBpcyBVU0IuCj4gCj4gU2lnbmVkLW9mZi1ieTogU2ludGh1IFJh
-amEgPHNpbnRodS5yYWphQHRpLmNvbT4KPiAtLS0KPiAKPiBDaGFuZ2VzIGluIFYyOgo+ID09PT09
-PT09PT09PT0KPiBBZGRyZXNzIHJldmlldyBjb21tZW50czoKPiAtIFVwZGF0ZSBjb21taXQgZGVz
-Y3JpcHRpb24uCj4gLSBSZW5hbWUgZW51bSB2YXJpYWJsZSBuYW1lIGZyb20gd2l6X2xhbmVfdHlw
-ZWNfc3dhcF9tb2RlIHRvIHdpel90eXBlY19tYXN0ZXJfbGFuZS4KPiAtIFJlbmFtZSBlbnVtZXJh
-dG9ycyBuYW1lIHNwZWNpZmljIHRvIGxpc3Qgb2YgbWFzdGVyIGxhbmVzIHVzZWQgZm9yIGxhbmUg
-c3dhcHBpbmcuCj4gLSBBZGQgaW5saW5lIGNvbW1lbnRzLgo+IAo+IFYxOiBodHRwczovL2xvcmUu
-a2VybmVsLm9yZy9sa21sLzIwMjIxMjEzMTI0ODU0LjM3NzktMi1zaW50aHUucmFqYUB0aS5jb20v
-VC8jbTVlMmQxYTE1ZDY0N2Y1ZGY5ZGQyOGVkMmRlZGM0YjA4MTJkNjQ2NmYKPiAKPiAgZHJpdmVy
-cy9waHkvdGkvcGh5LWo3MjFlLXdpei5jIHwgMzMgKysrKysrKysrKysrKysrKysrKysrKysrKysr
-KysrLS0tCj4gIDEgZmlsZSBjaGFuZ2VkLCAzMCBpbnNlcnRpb25zKCspLCAzIGRlbGV0aW9ucygt
-KQo+IAo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3BoeS90aS9waHktajcyMWUtd2l6LmMgYi9kcml2
-ZXJzL3BoeS90aS9waHktajcyMWUtd2l6LmMKPiBpbmRleCA1NzFmMGNhMTg4NzQuLjgxNWU4MTI0
-Yjk0YSAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL3BoeS90aS9waHktajcyMWUtd2l6LmMKPiArKysg
-Yi9kcml2ZXJzL3BoeS90aS9waHktajcyMWUtd2l6LmMKPiBAQCAtNTgsNiArNTgsMTQgQEAgZW51
-bSB3aXpfbGFuZV9zdGFuZGFyZF9tb2RlIHsKPiAgCUxBTkVfTU9ERV9HRU40LAo+ICB9Owo+ICAK
-PiArLyoKPiArICogTGlzdCBvZiBtYXN0ZXIgbGFuZXMgdXNlZCBmb3IgbGFuZSBzd2FwcGluZwo+
-ICsgKi8KPiArZW51bSB3aXpfdHlwZWNfbWFzdGVyX2xhbmUgewo+ICsJTEFORTAgPSAwLAo+ICsJ
-TEFORTIgPSAyLAo+ICt9Owo+ICsKPiAgZW51bSB3aXpfcmVmY2xrX211eF9zZWwgewo+ICAJUExM
-MF9SRUZDTEssCj4gIAlQTEwxX1JFRkNMSywKPiBAQCAtMTk0LDYgKzIwMiw5IEBAIHN0YXRpYyBj
-b25zdCBzdHJ1Y3QgcmVnX2ZpZWxkIHBfbWFjX2Rpdl9zZWwxW1dJWl9NQVhfTEFORVNdID0gewo+
-ICBzdGF0aWMgY29uc3Qgc3RydWN0IHJlZ19maWVsZCB0eXBlY19sbjEwX3N3YXAgPQo+ICAJCQkJ
-CVJFR19GSUVMRChXSVpfU0VSREVTX1RZUEVDLCAzMCwgMzApOwo+ICAKPiArc3RhdGljIGNvbnN0
-IHN0cnVjdCByZWdfZmllbGQgdHlwZWNfbG4yM19zd2FwID0KPiArCQkJCQlSRUdfRklFTEQoV0la
-X1NFUkRFU19UWVBFQywgMzEsIDMxKTsKPiArCj4gIHN0cnVjdCB3aXpfY2xrX211eCB7Cj4gIAlz
-dHJ1Y3QgY2xrX2h3CQlodzsKPiAgCXN0cnVjdCByZWdtYXBfZmllbGQJKmZpZWxkOwo+IEBAIC0z
-NjcsNiArMzc4LDcgQEAgc3RydWN0IHdpeiB7Cj4gIAlzdHJ1Y3QgcmVnbWFwX2ZpZWxkCSptdXhf
-c2VsX2ZpZWxkW1dJWl9NVVhfTlVNX0NMT0NLU107Cj4gIAlzdHJ1Y3QgcmVnbWFwX2ZpZWxkCSpk
-aXZfc2VsX2ZpZWxkW1dJWl9ESVZfTlVNX0NMT0NLU18xNkddOwo+ICAJc3RydWN0IHJlZ21hcF9m
-aWVsZAkqdHlwZWNfbG4xMF9zd2FwOwo+ICsJc3RydWN0IHJlZ21hcF9maWVsZAkqdHlwZWNfbG4y
-M19zd2FwOwo+ICAJc3RydWN0IHJlZ21hcF9maWVsZAkqc3VwX2xlZ2FjeV9jbGtfb3ZlcnJpZGU7
-Cj4gIAo+ICAJc3RydWN0IGRldmljZQkJKmRldjsKPiBAQCAtNjc2LDYgKzY4OCwxMyBAQCBzdGF0
-aWMgaW50IHdpel9yZWdmaWVsZF9pbml0KHN0cnVjdCB3aXogKndpeikKPiAgCQlyZXR1cm4gUFRS
-X0VSUih3aXotPnR5cGVjX2xuMTBfc3dhcCk7Cj4gIAl9Cj4gIAo+ICsJd2l6LT50eXBlY19sbjIz
-X3N3YXAgPSBkZXZtX3JlZ21hcF9maWVsZF9hbGxvYyhkZXYsIHJlZ21hcCwKPiArCQkJCQkJICAg
-ICAgIHR5cGVjX2xuMjNfc3dhcCk7Cj4gKwlpZiAoSVNfRVJSKHdpei0+dHlwZWNfbG4yM19zd2Fw
-KSkgewo+ICsJCWRldl9lcnIoZGV2LCAiTE4yM19TV0FQIHJlZyBmaWVsZCBpbml0IGZhaWxlZFxu
-Iik7Cj4gKwkJcmV0dXJuIFBUUl9FUlIod2l6LT50eXBlY19sbjIzX3N3YXApOwo+ICsJfQo+ICsK
-PiAgCXdpei0+cGh5X2VuX3JlZmNsayA9IGRldm1fcmVnbWFwX2ZpZWxkX2FsbG9jKGRldiwgcmVn
-bWFwLCBwaHlfZW5fcmVmY2xrKTsKPiAgCWlmIChJU19FUlIod2l6LT5waHlfZW5fcmVmY2xrKSkg
-ewo+ICAJCWRldl9lcnIoZGV2LCAiUEhZX0VOX1JFRkNMSyByZWcgZmllbGQgaW5pdCBmYWlsZWRc
-biIpOwo+IEBAIC0xMjU0LDkgKzEyNzMsMTcgQEAgc3RhdGljIGludCB3aXpfcGh5X3Jlc2V0X2Rl
-YXNzZXJ0KHN0cnVjdCByZXNldF9jb250cm9sbGVyX2RldiAqcmNkZXYsCj4gIAkJCWludCBpOwo+
-ICAKCkRvbid0IHlvdSBoYXZlIHRvIHVwZGF0ZSB0aGUgYmVsb3cgY29tbWVudCB5b3UgYWRkZWQg
-aW4gcGF0Y2ggMSB0byBtZW50aW9uIGFib3V0IExOMjMgYXMgd2VsbD8KCisJCQkvKiBpZiBubyB0
-eXBlYy1kaXIgZ3BpbyB3YXMgc3BlY2lmaWVkIGFuZCBQSFkgdHlwZSBpcworCQkJICogVVNCMyB3
-aXRoIG1hc3RlciBsYW5lIG51bWJlciBpcyAnMCcsIHNldCBMTjEwIFNXQVAKKwkJCSAqIGJpdCB0
-byAnMScKKwkJCSAqLwoKCj4gIAkJCWZvciAoaSA9IDA7IGkgPCBudW1fbGFuZXM7IGkrKykgewo+
-IC0JCQkJaWYgKCh3aXotPmxhbmVfcGh5X3R5cGVbaV0gPT0gUEhZX1RZUEVfVVNCMykKPiAtCQkJ
-CQkJJiYgd2l6LT5tYXN0ZXJfbGFuZV9udW1baV0gPT0gMCkgewo+IC0JCQkJCXJlZ21hcF9maWVs
-ZF93cml0ZSh3aXotPnR5cGVjX2xuMTBfc3dhcCwgMSk7Cj4gKwkJCQlpZiAod2l6LT5sYW5lX3Bo
-eV90eXBlW2ldID09IFBIWV9UWVBFX1VTQjMpIHsKPiArCQkJCQlzd2l0Y2ggKHdpei0+bWFzdGVy
-X2xhbmVfbnVtW2ldKSB7Cj4gKwkJCQkJY2FzZSBMQU5FMDoKPiArCQkJCQkJcmVnbWFwX2ZpZWxk
-X3dyaXRlKHdpei0+dHlwZWNfbG4xMF9zd2FwLCAxKTsKPiArCQkJCQkJYnJlYWs7Cj4gKwkJCQkJ
-Y2FzZSBMQU5FMjoKPiArCQkJCQkJcmVnbWFwX2ZpZWxkX3dyaXRlKHdpei0+dHlwZWNfbG4yM19z
-d2FwLCAxKTsKPiArCQkJCQkJYnJlYWs7Cj4gKwkJCQkJZGVmYXVsdDoKPiArCQkJCQkJYnJlYWs7
-Cj4gKwkJCQkJfQo+ICAJCQkJfQo+ICAJCQl9Cj4gIAkJfQoKT3RoZXJ3aXNlIGxvb2tzIGdvb2Qu
-CgpjaGVlcnMsCi1yb2dlcgoKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBs
-aXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
-c3RpbmZvL2xpbnV4LXBoeQo=
+On Wed, Jan 11, 2023 at 3:24 PM Roger Quadros <rogerq@kernel.org> wrote:
+>
+> Hi Sinthu,
+>
+> On 06/01/2023 09:17, Sinthu Raja wrote:
+> > From: Sinthu Raja <sinthu.raja@ti.com>
+> >
+> > The WIZ acts as a wrapper for SerDes and has Lanes 0 and 2 reserved
+> > for USB for type-C lane swap if Lane 1 and Lane 3 are linked to the
+> > USB PHY that is integrated into the SerDes IP. The WIZ control register
+> > has to be configured to support this lane swap feature.
+> >
+> > The support for swapping lanes 2 and 3 is missing and therefore
+> > add support to configure the control register to swap between
+> > lanes 2 and 3 if PHY type is USB.
+> >
+> > Signed-off-by: Sinthu Raja <sinthu.raja@ti.com>
+> > ---
+> >
+> > Changes in V2:
+> > =============
+> > Address review comments:
+> > - Update commit description.
+> > - Rename enum variable name from wiz_lane_typec_swap_mode to wiz_typec_master_lane.
+> > - Rename enumerators name specific to list of master lanes used for lane swapping.
+> > - Add inline comments.
+> >
+> > V1: https://linkprotect.cudasvc.com/url?a=https%3a%2f%2flore.kernel.org%2flkml%2f20221213124854.3779-2-sinthu.raja%40ti.com%2fT%2f%23m5e2d1a15d647f5df9dd28ed2dedc4b0812d6466f&c=E,1,Y-aGHFF9W5xMNeMlJ71LqKOZsmcrFFVOKtXq77GFhXQctctl3hRfr-TLmdAnjdaeSzzP0z8DPPPmxLORLMeyROZypsrLBJDsa2LdQkLThbo_gfu7bN9Uj_qC&typo=1
+> >
+> >  drivers/phy/ti/phy-j721e-wiz.c | 33 ++++++++++++++++++++++++++++++---
+> >  1 file changed, 30 insertions(+), 3 deletions(-)
+> >
+> > diff --git a/drivers/phy/ti/phy-j721e-wiz.c b/drivers/phy/ti/phy-j721e-wiz.c
+> > index 571f0ca18874..815e8124b94a 100644
+> > --- a/drivers/phy/ti/phy-j721e-wiz.c
+> > +++ b/drivers/phy/ti/phy-j721e-wiz.c
+> > @@ -58,6 +58,14 @@ enum wiz_lane_standard_mode {
+> >       LANE_MODE_GEN4,
+> >  };
+> >
+> > +/*
+> > + * List of master lanes used for lane swapping
+> > + */
+> > +enum wiz_typec_master_lane {
+> > +     LANE0 = 0,
+> > +     LANE2 = 2,
+> > +};
+> > +
+> >  enum wiz_refclk_mux_sel {
+> >       PLL0_REFCLK,
+> >       PLL1_REFCLK,
+> > @@ -194,6 +202,9 @@ static const struct reg_field p_mac_div_sel1[WIZ_MAX_LANES] = {
+> >  static const struct reg_field typec_ln10_swap =
+> >                                       REG_FIELD(WIZ_SERDES_TYPEC, 30, 30);
+> >
+> > +static const struct reg_field typec_ln23_swap =
+> > +                                     REG_FIELD(WIZ_SERDES_TYPEC, 31, 31);
+> > +
+> >  struct wiz_clk_mux {
+> >       struct clk_hw           hw;
+> >       struct regmap_field     *field;
+> > @@ -367,6 +378,7 @@ struct wiz {
+> >       struct regmap_field     *mux_sel_field[WIZ_MUX_NUM_CLOCKS];
+> >       struct regmap_field     *div_sel_field[WIZ_DIV_NUM_CLOCKS_16G];
+> >       struct regmap_field     *typec_ln10_swap;
+> > +     struct regmap_field     *typec_ln23_swap;
+> >       struct regmap_field     *sup_legacy_clk_override;
+> >
+> >       struct device           *dev;
+> > @@ -676,6 +688,13 @@ static int wiz_regfield_init(struct wiz *wiz)
+> >               return PTR_ERR(wiz->typec_ln10_swap);
+> >       }
+> >
+> > +     wiz->typec_ln23_swap = devm_regmap_field_alloc(dev, regmap,
+> > +                                                    typec_ln23_swap);
+> > +     if (IS_ERR(wiz->typec_ln23_swap)) {
+> > +             dev_err(dev, "LN23_SWAP reg field init failed\n");
+> > +             return PTR_ERR(wiz->typec_ln23_swap);
+> > +     }
+> > +
+> >       wiz->phy_en_refclk = devm_regmap_field_alloc(dev, regmap, phy_en_refclk);
+> >       if (IS_ERR(wiz->phy_en_refclk)) {
+> >               dev_err(dev, "PHY_EN_REFCLK reg field init failed\n");
+> > @@ -1254,9 +1273,17 @@ static int wiz_phy_reset_deassert(struct reset_controller_dev *rcdev,
+> >                       int i;
+> >
+>
+> Don't you have to update the below comment you added in patch 1 to mention about LN23 as well?
+
+Thanks for the review, Roger.
+Yes, I have to. My bad. I will send out another version updating this comment.
+>
+>
+> +                       /* if no typec-dir gpio was specified and PHY type is
+> +                        * USB3 with master lane number is '0', set LN10 SWAP
+> +                        * bit to '1'
+> +                        */
+>
+>
+> >                       for (i = 0; i < num_lanes; i++) {
+> > -                             if ((wiz->lane_phy_type[i] == PHY_TYPE_USB3)
+> > -                                             && wiz->master_lane_num[i] == 0) {
+> > -                                     regmap_field_write(wiz->typec_ln10_swap, 1);
+> > +                             if (wiz->lane_phy_type[i] == PHY_TYPE_USB3) {
+> > +                                     switch (wiz->master_lane_num[i]) {
+> > +                                     case LANE0:
+> > +                                             regmap_field_write(wiz->typec_ln10_swap, 1);
+> > +                                             break;
+> > +                                     case LANE2:
+> > +                                             regmap_field_write(wiz->typec_ln23_swap, 1);
+> > +                                             break;
+> > +                                     default:
+> > +                                             break;
+> > +                                     }
+> >                               }
+> >                       }
+> >               }
+>
+> Otherwise looks good.
+>
+> cheers,
+> -roger
+>
+
+
+-- 
+With Regards
+Sinthu Raja
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
