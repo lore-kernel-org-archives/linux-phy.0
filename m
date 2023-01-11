@@ -4,77 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C0E90C46467
-	for <linux-phy@archiver.kernel.org>; Wed, 11 Jan 2023 02:54:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 351F0C54EBE
+	for <linux-phy@archiver.kernel.org>; Wed, 11 Jan 2023 07:55:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BMT/wCFN82/QQr1E1xiwIrR6Bl04H8nv6PHJ/mdwm3c=; b=KX4bOzHTN1E65D
-	6z2PMYyinhkTpvvADq2slIiyxENxkgP0gA4U+vrl3ltolpH6Irk58uAUIwyu7Hnrqp7RftPF5nhQ4
-	aA7dDdDE+zYxgN3+64ZM71MnY/yLdnGpr/J+7bF9W1r3LHvCKoAfgV/0qgK+rinFKj/NxcaPSPW2d
-	suB5Bz2QEtKOldSge726noFs7OMD0JSHXa2pg/rkpI7LfLrzks1rvf/v5uSsx1uMP3GgwB9zzfU4x
-	VbfzvqPelVQoq7Venc19jr+ts6tpqFtbVtaAhWYJKOhbUMVECkiBVoeTWTWkq5hydnZOCMt89jXfW
-	0dTU0SZLIyTb80BpD52w==;
+	List-Owner; bh=xHNxGmKEo+Al5BEEe7/36DOATwZW+xiWbheRqm9zNnE=; b=Eyo047Ru6sqbTX
+	nE9Aene0njyPpcZgzCiGD6M9t0SyWwbUg9BUlrgL9A6LOCqo+L3FkXmDo5wqZA6p3+s+85ewvKHUX
+	pyQNfnTaRKBPJ3F2bC4zF3G0jauxjPsL2Cl0usgPSS3gtvV682+gANLH6EXeaqB5ThGTfZ/HzfnzK
+	xNT1FuyXkC4HzlerQhS8At0ICEMUy7+gEwxKavHQSevf31oMPWzu9XmP62WVDG5bNOuv+dkhqwWZY
+	D7HSZ4m110TB1mMisj9iRmghdZmtLNIPjbt3BsjJepGTD01idx8Fjy0zaD6714MpVMmpsLpCirGQW
+	M9vzL1dkqplcMRCmCp0g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pFRFf-009LQl-2q; Wed, 11 Jan 2023 02:54:07 +0000
-Received: from vmi888983.contaboserver.net ([149.102.157.145] helo=amity.mint.lgbt)
+	id 1pFVxG-00ABYX-6W; Wed, 11 Jan 2023 07:55:26 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pFRFb-009LOJ-Pr
-	for linux-phy@lists.infradead.org; Wed, 11 Jan 2023 02:54:05 +0000
-Received: from amity.mint.lgbt (mx.mint.lgbt [127.0.0.1])
-	by amity.mint.lgbt (Postfix) with ESMTP id 4NsC1T30dGz1S5Ff
-	for <linux-phy@lists.infradead.org>; Tue, 10 Jan 2023 21:53:49 -0500 (EST)
-Authentication-Results: amity.mint.lgbt (amavisd-new);
-	dkim=pass (2048-bit key) reason="pass (just generated, assumed good)"
-	header.d=mint.lgbt
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=mint.lgbt; h=
-	content-transfer-encoding:content-type:in-reply-to:from
-	:references:to:content-language:subject:user-agent:mime-version
-	:date:message-id; s=dkim; t=1673405628; x=1674269629; bh=8i4jmOu
-	APCAp11p4DZJjHBlsAcEc2Uu0uW9fgZ3zFUU=; b=l2rt7HZQe1rwy8LwQ+mvR9s
-	ghIi4RanvHXb5D/8oOnFQXPnDLRd5Eni5PfUYb2Yo0Ri2cmtTDD6WZ0b5jhqBSAJ
-	5XzksWHGpEQrFkqNYAM/6XDHiQ/TypWOJZ2g5MxKLZQelFOPHKKdjvlsw8rH0r0a
-	R+XSjrRYCBDSMeKihasqs0QTs5XmOlU+KKtSThmmwyZwJU8i3ZCplxt7AmQt7++5
-	RV5Qn/AYGO2SpmPoniBX2GI5sjHsLeaFW13aZsxWggn6dSnICqgEgjrdO77I7N1U
-	8D1Sg7XrfmSIVm3g74a/niYgEW1NlGtTwsZ5J5rtk017cJ70UN7qM8JQFZ7FoAA=
-	=
-X-Virus-Scanned: amavisd-new at amity.mint.lgbt
-Received: from amity.mint.lgbt ([127.0.0.1])
-	by amity.mint.lgbt (amity.mint.lgbt [127.0.0.1]) (amavisd-new, port 10026)
-	with ESMTP id qZjYnZE5JkFr for <linux-phy@lists.infradead.org>;
-	Tue, 10 Jan 2023 21:53:48 -0500 (EST)
-Received: from [192.168.4.25] (unknown [190.196.92.66])
-	by amity.mint.lgbt (Postfix) with ESMTPSA id 4NsC1B5blwz1S4tq;
-	Tue, 10 Jan 2023 21:53:34 -0500 (EST)
-Message-ID: <f1f1337a-30cc-df3c-81d5-2daac61e874c@mint.lgbt>
-Date: Tue, 10 Jan 2023 23:53:31 -0300
+	id 1pFVx5-00ABVO-MI
+	for linux-phy@lists.infradead.org; Wed, 11 Jan 2023 07:55:17 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 3BE6A61AAD;
+	Wed, 11 Jan 2023 07:55:14 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2CBB1C433EF;
+	Wed, 11 Jan 2023 07:55:12 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1673423713;
+	bh=QAUoBiQrPpx40h8K8YX98H2l7tJgXLzCYCWBOQxuwHs=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=S/sbZEoIIfe8OMX+uc9bAsmau3zzvJkl4U7TOUCJn/TcPHLMKksGgy0SAS3aV45Nw
+	 e3opo/DfNFnCE++RrAhGXZRLfcc9RyiDNQfPK6nqIo+GhZiI28+HkqKoCgOxHN7WQE
+	 OvMIJbtQuF5Tk4BdpXzKO6dA6pLwZr4/WRMnOxqWHegFesYAroBSHNkmI3i/V2WDzy
+	 X5YjdTE26vf7pTT9ipqVwfoSADKj8yYOPLPJCg3p5VwOL+qSZ6xEQF/HphE0qbIpgf
+	 Dm3Bz/rMwQBlCq1G4YyZV21IyCGnnUXTkd3sO/jBasHJ1UpGzGmguN+6idog4yfFqM
+	 l5BG4J8hmdFzA==
+Date: Wed, 11 Jan 2023 13:25:09 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Randy Dunlap <rdunlap@infradead.org>
+Cc: linux-kernel@vger.kernel.org,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	linux-phy@lists.infradead.org, Arnd Bergmann <arnd@arndb.de>
+Subject: Re: [PATCH] phy: ti: fix Kconfig warning and operator precedence
+Message-ID: <Y75rXeTK7m/uAE9I@matsya>
+References: <20230110062529.22668-1-rdunlap@infradead.org>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.6.1
-Subject: Re: [PATCH v6 4/6] arm64: dts: qcom: sm6125: Add UFS nodes
-Content-Language: en-US
-To: Konrad Dybcio <konrad.dybcio@linaro.org>, agross@kernel.org,
- andersson@kernel.org, robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
- vkoul@kernel.org, kishon@kernel.org, alim.akhtar@samsung.com,
- avri.altman@wdc.com, bvanassche@acm.org, keescook@chromium.org,
- tony.luck@intel.com, gpiccoli@igalia.com
-Cc: ~postmarketos/upstreaming@lists.sr.ht, linux-arm-msm@vger.kernel.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-scsi@vger.kernel.org,
- linux-hardening@vger.kernel.org, phone-devel@vger.kernel.org,
- martin.botka@somainline.org, marijn.suijten@somainline.org
-References: <20230108195336.388349-1-they@mint.lgbt>
- <20230108195336.388349-5-they@mint.lgbt>
- <475d3f2f-114f-d6d2-89db-465ba7acd0d6@linaro.org>
-From: Lux Aliaga <they@mint.lgbt>
-In-Reply-To: <475d3f2f-114f-d6d2-89db-465ba7acd0d6@linaro.org>
+Content-Disposition: inline
+In-Reply-To: <20230110062529.22668-1-rdunlap@infradead.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230110_185404_051882_CFFBB933 
-X-CRM114-Status: GOOD (  13.46  )
+X-CRM114-CacheID: sfid-20230110_235515_784930_160932DD 
+X-CRM114-Status: UNSURE (   8.86  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,85 +69,29 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On 09-01-23, 22:25, Randy Dunlap wrote:
+> Fix Kconfig depends operator precedence to prevent a Kconfig warning:
+> 
+> WARNING: unmet direct dependencies detected for MUX_MMIO
+>   Depends on [n]: MULTIPLEXER [=m] && OF [=n]
+>   Selected by [m]:
+>   - PHY_AM654_SERDES [=m] && (OF [=n] && ARCH_K3 || COMPILE_TEST [=y]) && COMMON_CLK [=y]
+> 
+> Fixes: 71e2f5c5c224 ("phy: ti: Add a new SERDES driver for TI's AM654x SoC")
+> Fixes: 091876cc355d ("phy: ti: j721e-wiz: Add support for WIZ module present in TI J721E SoC")
+> 
 
-On 09/01/2023 09:18, Konrad Dybcio wrote:
->
-> On 8.01.2023 20:53, Lux Aliaga wrote:
->> Adds a UFS host controller node and its corresponding PHY to
->> the sm6125 platform.
->>
->> Signed-off-by: Lux Aliaga <they@mint.lgbt>
->> ---
->>   arch/arm64/boot/dts/qcom/sm6125.dtsi | 57 ++++++++++++++++++++++++++++
->>   1 file changed, 57 insertions(+)
->>
->> diff --git a/arch/arm64/boot/dts/qcom/sm6125.dtsi b/arch/arm64/boot/dts/qcom/sm6125.dtsi
->> index df5453fcf2b9..cec7071d5279 100644
->> --- a/arch/arm64/boot/dts/qcom/sm6125.dtsi
->> +++ b/arch/arm64/boot/dts/qcom/sm6125.dtsi
->> @@ -511,6 +511,63 @@ sdhc_2: mmc@4784000 {
->>   			status = "disabled";
->>   		};
->>   
->> +		ufs_mem_hc: ufs@4804000 {
->> +			compatible = "qcom,sm6125-ufshc", "qcom,ufshc", "jedec,ufs-2.0";
->> +			reg = <0x04804000 0x3000>, <0x04810000 0x8000>;
-> You need reg-names for ICE to probe, otherwise the second reg sits unused.
->
->> +			interrupts = <GIC_SPI 356 IRQ_TYPE_LEVEL_HIGH>;
->> +			phys = <&ufs_mem_phy>;
->> +			phy-names = "ufsphy";
->> +			lanes-per-direction = <1>;
->> +			#reset-cells = <1>;
->> +			resets = <&gcc GCC_UFS_PHY_BCR>;
->> +			reset-names = "rst";
->> +			iommus = <&apps_smmu 0x200 0x0>;
->> +
->> +			clock-names = "core_clk",
->> +				      "bus_aggr_clk",
->> +				      "iface_clk",
->> +				      "core_clk_unipro",
->> +				      "ref_clk",
->> +				      "tx_lane0_sync_clk",
->> +				      "rx_lane0_sync_clk",
->> +				      "ice_core_clk";
->> +			clocks = <&gcc GCC_UFS_PHY_AXI_CLK>,
->> +				 <&gcc GCC_SYS_NOC_UFS_PHY_AXI_CLK>,
->> +				 <&gcc GCC_UFS_PHY_AHB_CLK>,
->> +				 <&gcc GCC_UFS_PHY_UNIPRO_CORE_CLK>,
->> +				 <&rpmcc RPM_SMD_XO_CLK_SRC>,
->> +				 <&gcc GCC_UFS_PHY_TX_SYMBOL_0_CLK>,
->> +				 <&gcc GCC_UFS_PHY_RX_SYMBOL_0_CLK>,
->> +				 <&gcc GCC_UFS_PHY_ICE_CORE_CLK>;
->> +			freq-table-hz = <50000000 240000000>,
->> +					<0 0>,
->> +					<0 0>,
->> +					<37500000 150000000>,
->> +					<0 0>,
->> +					<0 0>,
->> +					<0 0>,
->> +					<75000000 300000000>;
->> +
->> +			status = "disabled";
->> +		};
->> +
->> +		ufs_mem_phy: phy@4807000 {
->> +			compatible = "qcom,sm6125-qmp-ufs-phy";
->> +			reg = <0x04807000 0x1c4>;
-> Isn't this too small? Downstream says 0xdb8, but it's probably even bigger..
-What do you think could help me find the new length of the registers? I 
-tried 0x1000 and it probed just fine, but I'm not really sure until what 
-extent I could push it.
+Please no blank line here
+
+Applied, after fixing this
 
 -- 
-Lux Aliaga
-https://nixgoat.me/
-
+~Vinod
 
 -- 
 linux-phy mailing list
