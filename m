@@ -4,64 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DF418C54EBE
-	for <linux-phy@archiver.kernel.org>; Thu, 12 Jan 2023 17:14:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 93D41C54EBE
+	for <linux-phy@archiver.kernel.org>; Thu, 12 Jan 2023 17:17:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ekaUm2NKxAf1NKZUIp9Seu4Ys880dNfqW3u6A//9pJk=; b=j6dFPEZ6ARPg6n
-	oFO+hPRPFHCe+eFI5xSaMGze6aXZ5wgoyIjMEn15TCG2fgAptWQe3AkEJY8d2jbzufUYoHLkiqQdB
-	0r1KIMPBrZmve+NsuVG/IHDjwOSKf3LX7mGY8Ka0swhd0KCH39dcMgW4uujO1fhIhFLkbFZ3GZyQd
-	+8UK//PUnAoOJfI6/nLcPIoiRGG2s31GhSzE6FB/bLRPClDtZQ6CAF1sD671DUsmXU4XuZHkJf1LR
-	qgCS0c8NH7XVEoYTSRa1Re4lzL5X4mUwKZ0gdQ1Bl/pqUWKCiHT6ffpirXCEJ1qLtfMKai22ba3Qk
-	9sSjzDfdiD7eoF0SZzRQ==;
+	List-Owner; bh=j2PgrH3UqOQSsPuMcED402eJByNRDhrSIQochkFwORw=; b=CzW64kdwO7bJ+K
+	AadNcLD4PgvUYSdW02cwkUYXYHpRtntJBHLaHxyaGuwpMBM5p+OTE41xPV+2ncagNOZoOtkRflrsg
+	jsbMdtCEGFjqo/BBY+Ffd+6CDRmGjc/UUea/xN3+4k/YSND61oCcDazigY4xOnEOCobho7+4/1HkJ
+	NI4UNXRe+owun9xr2Q0BWIUM/Gj7FBWs7UDe0T9sx3vM5Kxt1N3CDkRK0Od2xQhrNZ0lHigQXu80s
+	8A66Nhf8E6sQz6zhrsDJj6JpWFMcT5ZcudThV2v2RWprPFUNEgNqn4sSYTgdQD/njMX8LQnd0BEaS
+	AvljlzLMcXgxVDcXJ2Qg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pG1AI-00Fz7M-8T; Thu, 12 Jan 2023 17:14:58 +0000
+	id 1pG1Ck-00FzaO-UA; Thu, 12 Jan 2023 17:17:30 +0000
 Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pG1AF-00Fz6W-Dk
-	for linux-phy@lists.infradead.org; Thu, 12 Jan 2023 17:14:56 +0000
+	id 1pG1CZ-00FzX7-NP
+	for linux-phy@lists.infradead.org; Thu, 12 Jan 2023 17:17:21 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by sin.source.kernel.org (Postfix) with ESMTPS id 96258CE1EF3;
-	Thu, 12 Jan 2023 17:14:50 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id EDE33C433D2;
-	Thu, 12 Jan 2023 17:14:47 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTPS id AA7FFCE1EEF;
+	Thu, 12 Jan 2023 17:17:17 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6BA5AC433F0;
+	Thu, 12 Jan 2023 17:17:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1673543688;
-	bh=wGqSSUxokKljpXDAZgu+rOwnQLNJ0q0o/BKGpJxolX8=;
+	s=k20201202; t=1673543836;
+	bh=946nuW3ZeOOlefD+SB1EAI5Sfidnxq92FXIl/3/TxQk=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=enJk3CSrILDdZ7OkTGHvaHJRpi9Z1nBhInZhmMARqPCCWKQpaVNL4MfF/O9sAXS/N
-	 1ZkUk8LA6JFHfnEDV66ajL4lFj9Uo4sOUO5FEBGN6/+W/IgIjnFPj02wDQtn2zSfqB
-	 ynkqz7pXBS9bKJYETPvLHGTi67KVP0Vm+xenJLl950WlAUQ0zGlsadDG9ByDLXLBIz
-	 U7cia9DL+RTB8prtLYfDCDGR+5Xudac7PQuVEUrYFBAK6wakt22JRQRkA8u5f6LbFR
-	 tA7iXm946YLTBuua4MKwueWeDEeXR401EKmhwGRar/InkX80sfaeK+M6C45POiscJ3
-	 2PJwb/Qwb9aXw==
-Date: Thu, 12 Jan 2023 22:44:44 +0530
+	b=nUean0f5ACSHOCPcPKDOG3P/jh9TCQ6Tmx5/xkFd8l69vlxHTkMCF+duRJj9mZvAm
+	 DUZYL7BR3WwFRJaXmF3vkK1KBAByj1ua6mmp0cV0Ul0xCaxJM6+vviGp9kRrc5mvo6
+	 Tj98i2NP30o/onCGEG8oSdLiqfqh4BTrPYbyxXy55JHan+V7Mq5biAs3UgYAW9pY8i
+	 LHrVqK+x4ACRpgl0ItHvWdBOD9JrhHgLCZO3x+ziM1G/Oud2BM8GYNcEyQfZXqbfKM
+	 B2fmK9Dw/6mc9NUwg4a4CV1uRnFEMpoLL2aepTkLVcBVbB+Iprr4uZCf9czxnRBWzV
+	 FN1c+7MGb4q6w==
+Date: Thu, 12 Jan 2023 22:46:40 +0530
 From: Vinod Koul <vkoul@kernel.org>
 To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Konrad Dybcio <konrad.dybcio@somainline.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
 	Rob Herring <robh+dt@kernel.org>,
 	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Johan Hovold <johan@kernel.org>,
 	Philipp Zabel <p.zabel@pengutronix.de>,
 	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
 	devicetree@vger.kernel.org
-Subject: Re: [PATCH v3 0/2] phy: qualcomm: pcie2: register as clock provider
-Message-ID: <Y8BABOGYm+y8BfsD@matsya>
-References: <20221229115932.3312318-1-dmitry.baryshkov@linaro.org>
+Subject: Re: [PATCH v9 0/4] phy: qcom-qmp-ufs: add symbol clocks support
+Message-ID: <Y8BAeEbIDQPajiOm@matsya>
+References: <20221123104443.3415267-1-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20221229115932.3312318-1-dmitry.baryshkov@linaro.org>
+In-Reply-To: <20221123104443.3415267-1-dmitry.baryshkov@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230112_091455_656393_19D3DCDC 
-X-CRM114-Status: UNSURE (   7.35  )
+X-CRM114-CacheID: sfid-20230112_091719_965231_2DA47AC2 
+X-CRM114-Status: UNSURE (   7.03  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -79,11 +80,12 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 29-12-22, 13:59, Dmitry Baryshkov wrote:
-> On Qualcomm QCS404 platform the PCIe2 PHY provides PIPE clock to the gcc
-> (Global Clock Controller). Register the PHY as clock provider.
+On 23-11-22, 12:44, Dmitry Baryshkov wrote:
+> Register UFS symbol clocks in the Qualcomm QMP PHY driver. Some of the
+> platforms (msm8996, sc7280, sm8350/sm8450) expect them to be defined (to
+> be used as GCC clock parents).
 
-Applied, thanks
+Applied 1-2, thanks
 
 -- 
 ~Vinod
