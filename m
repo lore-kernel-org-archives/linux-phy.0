@@ -4,73 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BE4B1C5479D
-	for <linux-phy@archiver.kernel.org>; Wed, 11 Jan 2023 18:40:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BB8E0C677F1
+	for <linux-phy@archiver.kernel.org>; Thu, 12 Jan 2023 13:06:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Date:
-	Message-Id:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=h5ehMJ8/r/qOrfn57SJeR6GMFOQqxyPAFiua2hfqOrM=; b=pcuCg9NrFxVF4K
-	cO3vxtFVZxSSfkc5uSMYxAIRhDQb/qse5pcCja0JtgQbeI36BaaVMQOAtXr3qKnCJu2XYVSDq3A1l
-	4UJYpeRM+ZLiezO8ADztHxhSSxzOVgj4qOdDGrZj9cvTpAErMw/jidDMnS3lRy80jn87huDS7dDx3
-	8QJgDu0e7F2HQgCJZjBuZXJ9cl6p4WdC0f3bS42odTpY+Mo5NOfADM6G/4oOpzgBnaUTmfkLtwvNT
-	K40JqTZhh73QEOoyaPvcWAud8VDGcMklGxgXuavi/c46+Y9pN2rO1+H3k8IVFFoJcb6h/ElXOIDv6
-	Yc9VtY6mJVj6YzsrjW3w==;
+	List-Owner; bh=5k5u3VT1rg/3v0bc6k3erlS0FSI9AmDVTaIvdsACGhk=; b=jD46mz5oj9m0EJ
+	vM1hCyeyFJTpusXQmf/ZmFsCCh8pyBHMEmngi/hiXfiZt8DK84y97s399OTs8ytWg6bJmfehf43io
+	tEPeMxNgXBO+GnyAptcML4TMckJcl6xJU/jV9pEKRcUPpzliKfkU/YPHwJ7jr6cYs+4KjtRjG8NzE
+	hnubrWZUTTzO99Ki0RZ13KLC723MUiqtXb2cit3WV+xLeiIT1du1Y8E4EuRNqW26bphjxJc8dKbPs
+	2KJlpI/E8PysMOK4aO+jFNpBvoD1F7jr1C2V45zc5zD7oaoWeTqvjhur5S+R00XgWU0hHorb0kA+E
+	uWGjVOmwoPVXF7qRC35g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pFg1Z-00CesH-1j; Wed, 11 Jan 2023 18:40:33 +0000
-Received: from ams.source.kernel.org ([145.40.68.75])
+	id 1pFxHM-00F5eJ-2L; Thu, 12 Jan 2023 13:06:00 +0000
+Received: from mail-ej1-x62c.google.com ([2a00:1450:4864:20::62c])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pFg1N-00Ceow-HB; Wed, 11 Jan 2023 18:40:23 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id 06543B81CA2;
-	Wed, 11 Jan 2023 18:40:20 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id 92F2BC433EF;
-	Wed, 11 Jan 2023 18:40:18 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1673462418;
-	bh=ZEmryboLk5mj+5TUuTuCS6naNIRPhdyWhLOCWdpU+D0=;
-	h=Subject:From:Date:References:In-Reply-To:To:Cc:From;
-	b=iSyIQ2yyoC3B0GBCDQJdd/AjVnQhPtqHCRIbEkSrrHdUq7RF962QX/zB0ITIfYfSA
-	 3/D81YsFoplAuk07q+rs1ROy+hGaHCuTObSwnYmfwqifrJljRKGWDsoz836weNNaBo
-	 GLiDiGuqi20c1B+V3/gbU/jYToaZNaxVHsO2SJoqO/g+pt2hlJVfs4yRYd7BquKLHK
-	 W8sVu6wNviooo9e/w3eIH25eRm9LQVQdVsIfozC5UJQ6yZtvHf7HBHp7sWyPjsPLkg
-	 drRe9DoPTVOOD655oQch1MEgH31f/rE7CuAFGxVIDiUEFzzr0TtWcqwswEQUzSoFCV
-	 dpRICWt9nlOEw==
-Received: from aws-us-west-2-korg-oddjob-1.ci.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by aws-us-west-2-korg-oddjob-1.ci.codeaurora.org (Postfix) with ESMTP id 6DDAFE4D025;
-	Wed, 11 Jan 2023 18:40:18 +0000 (UTC)
+	id 1pFxHG-00F5c7-Pp
+	for linux-phy@lists.infradead.org; Thu, 12 Jan 2023 13:05:58 +0000
+Received: by mail-ej1-x62c.google.com with SMTP id vm8so44589798ejc.2
+        for <linux-phy@lists.infradead.org>; Thu, 12 Jan 2023 05:05:53 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=Js79G0ew5SBLWV/rp6ARJpWVK36TQx65bfTfHk7gwPY=;
+        b=WdwnFkSJ6TcQXJX0/YPUg2u26LJdKuuvmh6a4VmVSCu93pLHHZCqhBDl7C1Mom7mCc
+         L+Rw5jcBJjG+adaV+vlEyQ9oAFCmmXgMNWC0mFzirsmDljWLksDNmPVFAEJ4nIAcKWxf
+         l/AlaCkYpRXdMvbtZqNPfhJREPhB3M79ZcCqFEQx85zXwPHNOKAxGscs7tJLK8B9Q6WU
+         ZAZBBT3XbLWn6mo70gZaZKx22EgIpGuMbRZEkAqMoS9WC3B6c1OMr8jn6+0ycMil6uqF
+         9wcmyiDXs30gAuDSnmgm9/AJWGCYLUY34uD1HqX8IOFIeZjfgtO2eKUkleO27LGwx8ZF
+         cG1Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=Js79G0ew5SBLWV/rp6ARJpWVK36TQx65bfTfHk7gwPY=;
+        b=SVjeZ/sL+ucmeYbVTnlW5RxY2FAK2J1mS94W5WqHo4efnAYxHDEuXYigcwkKCopv8a
+         RO1bNQ5TtztU8pfpYajoBakM97BqAOw3t0f6UwvA3dKlgHdls+HSaVUN519RirZ9WM19
+         v20V2Tp1Jypt9tlL0G735uWRy7ap6dYOelO/Fv2Q99vakWvp9fMhodqczwPJfdnXDhwS
+         p4o9GqILJAhwyJS9q3NqJY03GRIo65WkA/zedF5V6oIXAdkmH15S9tpy2v2sqBmvuJeJ
+         GQXYNNHezxamgL35U9CsVRHV9z59qrM5Da1ICRdpNywmWvPx+uWCUtP59rySLjlqB9r9
+         YARg==
+X-Gm-Message-State: AFqh2kpRXdiup7NkCKJGCIeRkzcs/UmvblkSRFGzh6aYnl9DWAT1ubyy
+	uk5tLNsTIemrxY/JyHqJ8n710A==
+X-Google-Smtp-Source: AMrXdXsOc8saCzmD/dXqJ2/l2qrKh7yzarDqaDTYDJKr8FLOUpOP5e9rsoahF5JlLSFJYI/9/P2l4A==
+X-Received: by 2002:a17:907:d004:b0:7c0:f213:4485 with SMTP id va4-20020a170907d00400b007c0f2134485mr66310785ejc.73.1673528752001;
+        Thu, 12 Jan 2023 05:05:52 -0800 (PST)
+Received: from hackbox.lan ([94.52.112.99])
+        by smtp.gmail.com with ESMTPSA id 11-20020a170906318b00b0078d3f96d293sm7427668ejy.30.2023.01.12.05.05.50
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 12 Jan 2023 05:05:51 -0800 (PST)
+From: Abel Vesa <abel.vesa@linaro.org>
+To: Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	"vkoul@kernel.org"  <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
+Cc: linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
+Subject: [PATCH v2 1/6] dt-bindings: phy: Add QMP UFS PHY comptible for SM8550
+Date: Thu, 12 Jan 2023 15:05:37 +0200
+Message-Id: <20230112130542.1399921-2-abel.vesa@linaro.org>
+X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20230112130542.1399921-1-abel.vesa@linaro.org>
+References: <20230112130542.1399921-1-abel.vesa@linaro.org>
 MIME-Version: 1.0
-Subject: Re: [PATCH v2 00/11] dt-bindings: first batch of dt-schema conversions
- for Amlogic Meson bindings
-From: patchwork-bot+netdevbpf@kernel.org
-Message-Id:  <167346241843.19883.15310921170918729898.git-patchwork-notify@kernel.org>
-Date: Wed, 11 Jan 2023 18:40:18 +0000
-References: <20221117-b4-amlogic-bindings-convert-v2-0-36ad050bb625@linaro.org>
-In-Reply-To: <20221117-b4-amlogic-bindings-convert-v2-0-36ad050bb625@linaro.org>
-To: Neil Armstrong <neil.armstrong@linaro.org>
-Cc: robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
- khilman@baylibre.com, jbrunet@baylibre.com,
- martin.blumenstingl@googlemail.com, srinivas.kandagatla@linaro.org,
- wim@linux-watchdog.org, linux@roeck-us.net, mchehab@kernel.org,
- a.zummo@towertech.it, alexandre.belloni@bootlin.com,
- daniel.lezcano@linaro.org, tglx@linutronix.de, vkoul@kernel.org,
- kishon@kernel.org, ulf.hansson@linaro.org, bhelgaas@google.com,
- davem@davemloft.net, edumazet@google.com, kuba@kernel.org, pabeni@redhat.com,
- andrew@lunn.ch, hkallweit1@gmail.com, linux@armlinux.org.uk,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-watchdog@vger.kernel.org, linux-media@vger.kernel.org,
- linux-rtc@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-mmc@vger.kernel.org, linux-pci@vger.kernel.org, netdev@vger.kernel.org,
- krzysztof.kozlowski@linaro.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230111_104021_861133_9AC973A1 
-X-CRM114-Status: UNSURE (   8.38  )
+X-CRM114-CacheID: sfid-20230112_050554_877708_09EAE195 
+X-CRM114-Status: UNSURE (   8.31  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -88,56 +99,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hello:
+Document the QMP UFS PHY compatible for SM8550.
 
-This series was applied to netdev/net-next.git (master)
-by Jakub Kicinski <kuba@kernel.org>:
+Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
+---
+ .../devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml       | 1 +
+ 1 file changed, 1 insertion(+)
 
-On Mon, 09 Jan 2023 13:53:25 +0100 you wrote:
-> Batch conversion of the following bindings:
-> - meson_sm.txt
-> - amlogic-efuse.txt
-> - amlogic-meson-mx-efuse.txt
-> - meson-wdt.txt
-> - meson-ir.txt
-> - rtc-meson.txt
-> - amlogic,meson6-timer.txt
-> - meson-gxl-usb2-phy.txt
-> - amlogic,meson-gx.txt
-> - amlogic,meson-pcie.txt
-> - mdio-mux-meson-g12a.txt
-> 
-> [...]
-
-Here is the summary with links:
-  - [v2,01/11] dt-bindings: firmware: convert meson_sm.txt to dt-schema
-    (no matching commit)
-  - [v2,02/11] dt-bindings: nvmem: convert amlogic-efuse.txt to dt-schema
-    (no matching commit)
-  - [v2,03/11] dt-bindings: nvmem: convert amlogic-meson-mx-efuse.txt to dt-schema
-    (no matching commit)
-  - [v2,04/11] dt-bindings: watchdog: convert meson-wdt.txt to dt-schema
-    (no matching commit)
-  - [v2,05/11] dt-bindings: media: convert meson-ir.txt to dt-schema
-    (no matching commit)
-  - [v2,06/11] dt-bindings: power: amlogic,meson-gx-pwrc: mark bindings as deprecated
-    (no matching commit)
-  - [v2,07/11] dt-bindings: timer: convert timer/amlogic,meson6-timer.txt to dt-schema
-    (no matching commit)
-  - [v2,08/11] dt-bindings: phy: convert meson-gxl-usb2-phy.txt to dt-schema
-    (no matching commit)
-  - [v2,09/11] dt-bindings: mmc: convert amlogic,meson-gx.txt to dt-schema
-    (no matching commit)
-  - [v2,10/11] dt-bindings: PCI: convert amlogic,meson-pcie.txt to dt-schema
-    (no matching commit)
-  - [v2,11/11] dt-bindings: net: convert mdio-mux-meson-g12a.txt to dt-schema
-    https://git.kernel.org/netdev/net-next/c/82fc0f87cd2c
-
-You are awesome, thank you!
+diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
+index 32ed1886fbae..cd4e877415d6 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
+@@ -17,6 +17,7 @@ properties:
+   compatible:
+     enum:
+       - qcom,sc8280xp-qmp-ufs-phy
++      - qcom,sm8550-qmp-ufs-phy
+ 
+   reg:
+     maxItems: 1
 -- 
-Deet-doot-dot, I am a bot.
-https://korg.docs.kernel.org/patchwork/pwbot.html
-
+2.34.1
 
 
 -- 
