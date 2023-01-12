@@ -4,84 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BB89DC61DB3
-	for <linux-phy@archiver.kernel.org>; Thu, 12 Jan 2023 13:06:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2DD6DC61DB3
+	for <linux-phy@archiver.kernel.org>; Thu, 12 Jan 2023 14:32:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WeeqUgF4mHvUECNcCzNL7BkKgdS/02IQzkWUoVQaroQ=; b=NjldBlfTn956a0
-	uNWqFDKF4S+gT9sKGSWSzF+UaxJhOI0OB1peoV6D3WdjY3woNky4FCUNY3T7hQ4ZFGy7iUBQxc+pL
-	0k9z/wimoyvSekeKxBkV7omTLUQ99CmeSsYsGQnse2AeGXjTcenLssxJCYrlJgUyCw7ATne7NCHSW
-	IfqRgiprS7ZtcH/WX2ALTNFFjE6tIMzP+zTZXAWo9VKzVeYDynKGSiJIGX+z8Nr/5xzUnFtNKOhak
-	4MrydeDlEXHVffo/35Wzu0GKqILJdxjwxvRGiBkUY+OejW5ZJA2BiXf/amAsTSyKoCPOfxTNdDF2J
-	p1HLr7YzmBe46/y08RuA==;
+	List-Owner; bh=gPCM4COZkGWBwvG+gRUmk5+Gvbnrgp8J8qtDTzNAxhE=; b=IkDnqBw77kVIEk
+	qNOM4VBKOJewVZ7r4ILk7i320UW3LrBwrUTHJJvgh1HDHp5i1Z9A403DdNuHxfWPfoziuckmiA+Di
+	ROTlc/J2+9zf4rbUnQRgiyksgmg4vDHgdWS9Nbg92ERlzYfmR/mAeV4r30X6DZzpN+Cppadf6h+aq
+	rPgo0inK7zAry4MYuju0fr1x5m2pRYOBW3jA5cX6yaR4wkCxD9gBZk46KNHeP8ooGr5UkQZcZDlhr
+	wwuHyGYCGCyEplfJ/csDT1lydhB4cZkbc275yzOq5egC893gLO9mXw++bORlb7LhIvO1sSjv1OI2q
+	6sJ/uZKtlFVpr/5Sdc8g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pFxHe-00F5il-5X; Thu, 12 Jan 2023 13:06:18 +0000
-Received: from mail-ej1-x62a.google.com ([2a00:1450:4864:20::62a])
+	id 1pFydA-00FO5o-G8; Thu, 12 Jan 2023 14:32:36 +0000
+Received: from mail-ej1-x62e.google.com ([2a00:1450:4864:20::62e])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pFxHP-00F5dH-BE
-	for linux-phy@lists.infradead.org; Thu, 12 Jan 2023 13:06:13 +0000
-Received: by mail-ej1-x62a.google.com with SMTP id jo4so44619486ejb.7
-        for <linux-phy@lists.infradead.org>; Thu, 12 Jan 2023 05:05:58 -0800 (PST)
+	id 1pFyd5-00FO2v-Il
+	for linux-phy@lists.infradead.org; Thu, 12 Jan 2023 14:32:34 +0000
+Received: by mail-ej1-x62e.google.com with SMTP id u9so45274327ejo.0
+        for <linux-phy@lists.infradead.org>; Thu, 12 Jan 2023 06:32:28 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=tbHIds8BFvGtaiOTl0/aVRYn+MTTKrUpCy0OwIBQhqQ=;
-        b=J0wlkJdrSQYSqbfYrmFWRf8WEoZAPNQOUZ3DFXBug/xXeuSSPgCDZhqLyOso7VNX/A
-         TOSrGXn/6kNPF3WSDFGHwe1Tyy5Es4Wr/0WbAGzV72fx2z3+faKmpcRMcYN8hl+809RX
-         k8H7JNx8E2XKhN/QrblkYRLseZ4SJHCl2PipR4+WiqyGqQwvcAwedegboBHKyD5C66q4
-         mkPG/AGrM9kWkOtkq0mBqHtlmn4qOrHjNF8qyuC4n/hzHPW5Pd7WanAobJHJlNGU23Ra
-         J5VxAx48JKesRqgNnuto5sg/4RU/gP4MvbRD4WmQLKoIevARaCSJFlUJ+UiX7PE+313s
-         9mJQ==
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=X6uMjJS/3NnDxO/SMA/w1sCCelcrWohvr5VsLfwhgYU=;
+        b=mA7vp0A3H9QLTwxyxBiSUUJrToUQsdD3hA4dGO+UWGtE2Qz/yTR9suwEI+4Pnf8Bk/
+         BSqv+CJKZj4FSkX1ttLb+Bg8f7fw6qbTJawcj5/af+TbuK5U5Lwcg1xfvEpKw6NoRxjK
+         GWTZbkLsEVGcO7K4hN0jyhU89xsbhAN5LCd2piTvzt497Wf6NC+7/6xab+9iyKsq6ZMz
+         /DorbILM7fePxjSwd23rhthjDEdZfflfpgMO6pNqjx1+51W1dA+X8Z8D24G8kKdIfLw8
+         /eWcW7F6D9yDiRroZanlU5vgywk3XoLM8ifoW5kxZmTTnUfm3DEP9kuHFD/mzeKakBcK
+         rTLQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=tbHIds8BFvGtaiOTl0/aVRYn+MTTKrUpCy0OwIBQhqQ=;
-        b=gXpmI3A+QzHO+L/lvaqSWFmP7XT7k8y5pZMmhGUTT7a937ZYSS4DsyFl8jR1Ym4GlA
-         H6BOKhtHwBhb5dZypVBfPhC9QhXP4oUutTEFfHTExqGqmo4ICBJeUrkseX8TP8g1N4Nn
-         kSeRtkseJ4fnIB8KaByAeDsQ+uPvg3K14n1kArDtZe4NI8gjxmdsnuuxPJ8/HUSY2pey
-         HDPHnmmTvgCUJKFIG6NAuf+I3T1OyKahZLQCNBcXkqLOcMrbMzOpcxhvRSCXA3E4riD+
-         rmYduRBF6iwVmgz/e1N0KnH8XdeJOPnxLWKdvcCX+MOo8ZqfFFAGOrQqPd9WhPEVLqn1
-         dcrw==
-X-Gm-Message-State: AFqh2kqa7QL6FSoaJQ+MA8DRha/EoKAyN2/DOXhxtZIqxFb01tO/v7Zk
-	GwvD96I+Gp9rDOpoaVR/b6v9cQ==
-X-Google-Smtp-Source: AMrXdXtL/rn2Xiyw3+uwfI0xvT8ajBsruE4yQ8WRSkKeJIEwYzGTJlmoQnVgOZK3IDQhZFM8PBJkSQ==
-X-Received: by 2002:a17:907:b681:b0:858:a721:8394 with SMTP id vm1-20020a170907b68100b00858a7218394mr9049653ejc.65.1673528757225;
-        Thu, 12 Jan 2023 05:05:57 -0800 (PST)
-Received: from hackbox.lan ([94.52.112.99])
-        by smtp.gmail.com with ESMTPSA id 11-20020a170906318b00b0078d3f96d293sm7427668ejy.30.2023.01.12.05.05.55
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 12 Jan 2023 05:05:56 -0800 (PST)
-From: Abel Vesa <abel.vesa@linaro.org>
-To: Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
-	"vkoul@kernel.org"  <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
-Cc: linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
-Subject: [PATCH v2 5/6] phy: qcom-qmp: pcs-ufs: Add v6 register offsets
-Date: Thu, 12 Jan 2023 15:05:41 +0200
-Message-Id: <20230112130542.1399921-6-abel.vesa@linaro.org>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20230112130542.1399921-1-abel.vesa@linaro.org>
-References: <20230112130542.1399921-1-abel.vesa@linaro.org>
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=X6uMjJS/3NnDxO/SMA/w1sCCelcrWohvr5VsLfwhgYU=;
+        b=aIZOqnejuWAWUFjOWlGBYHPkerwuVfPi7yGWxxMWwGNV7T+NAP8CyQrKXphRia91Px
+         LVvpUSH/SH+NiJczlA/vjSxRkMDA/3kTqAE4v0VAj5bZQJA+lOj/7JSUA4yiLNxu94RE
+         5FtS4SNTadOY8r2jK5NNoJo9PR/8x59ejEMYgceFV3FzheCalX1fwRUqzN6U3BTEzQMy
+         82Mno1nnvnsxEg3Uu9M5eormlAevJDrMpJrFWK38VSzw0Md5RbNXwD+lBpRat6ikiHxD
+         0qEL4vravHIZbfxOrCCzcrp4FV7iBHkrCaSZan6006rLwA5P3iLv3VZIZXbK2/vPnSU3
+         NHvw==
+X-Gm-Message-State: AFqh2kpYYsKNSfVTMcoATU/pN1X33JEBVA33dtruRdnYw5EoFcEzEdsa
+	p0X1LXVq9PDx561raRSXCBvQPQ==
+X-Google-Smtp-Source: AMrXdXsqW8Cd/27xRzj7BYpHe/IRGl8aYcmOsGdFJkLK0wcL6QXh4jaHkK6atMgaLVH69Eft9ugnag==
+X-Received: by 2002:a17:906:e11a:b0:84d:13ac:2fd4 with SMTP id gj26-20020a170906e11a00b0084d13ac2fd4mr22014886ejb.17.1673533947444;
+        Thu, 12 Jan 2023 06:32:27 -0800 (PST)
+Received: from [192.168.1.109] ([178.197.216.144])
+        by smtp.gmail.com with ESMTPSA id m24-20020a1709066d1800b0084d4b8f5889sm4623834ejr.102.2023.01.12.06.32.26
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 12 Jan 2023 06:32:26 -0800 (PST)
+Message-ID: <a6823408-a7c0-9e27-45e5-50305aedb8db@linaro.org>
+Date: Thu, 12 Jan 2023 15:32:25 +0100
 MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.6.1
+Subject: Re: [PATCH v2 1/6] dt-bindings: phy: Add QMP UFS PHY comptible for
+ SM8550
+To: Abel Vesa <abel.vesa@linaro.org>, Andy Gross <agross@kernel.org>,
+ Bjorn Andersson <andersson@kernel.org>,
+ Konrad Dybcio <konrad.dybcio@linaro.org>, "vkoul@kernel.org"
+ <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
+References: <20230112130542.1399921-1-abel.vesa@linaro.org>
+ <20230112130542.1399921-2-abel.vesa@linaro.org>
+Content-Language: en-US
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <20230112130542.1399921-2-abel.vesa@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230112_050609_522000_E3A5B50A 
-X-CRM114-Status: GOOD (  13.03  )
+X-CRM114-CacheID: sfid-20230112_063232_075394_CBF82D06 
+X-CRM114-Status: UNSURE (   7.02  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,69 +101,17 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The new SM8550 SoC bumps up the HW version of QMP phy to v6 for USB,
-UFS and PCIE g3x2. Add the new PCS UFS specific offsets in a dedicated
-header file.
+On 12/01/2023 14:05, Abel Vesa wrote:
+> Document the QMP UFS PHY compatible for SM8550.
+> 
+> Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
+> ---
 
-Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
----
- .../phy/qualcomm/phy-qcom-qmp-pcs-ufs-v6.h    | 31 +++++++++++++++++++
- drivers/phy/qualcomm/phy-qcom-qmp.h           |  2 ++
- 2 files changed, 33 insertions(+)
- create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-pcs-ufs-v6.h
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-ufs-v6.h b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-ufs-v6.h
-new file mode 100644
-index 000000000000..dde8830257b5
---- /dev/null
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-ufs-v6.h
-@@ -0,0 +1,31 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+/*
-+ * Copyright (c) 2022, The Linux Foundation. All rights reserved.
-+ */
-+
-+#ifndef QCOM_PHY_QMP_PCS_UFS_V6_H_
-+#define QCOM_PHY_QMP_PCS_UFS_V6_H_
-+
-+/* Only for QMP V6 PHY - UFS PCS registers */
-+#define QPHY_V6_PCS_UFS_PHY_START			0x000
-+#define QPHY_V6_PCS_UFS_POWER_DOWN_CONTROL		0x004
-+#define QPHY_V6_PCS_UFS_SW_RESET			0x008
-+#define QPHY_V6_PCS_UFS_TIMER_20US_CORECLK_STEPS_MSB	0x00c
-+#define QPHY_V6_PCS_UFS_TIMER_20US_CORECLK_STEPS_LSB	0x010
-+#define QPHY_V6_PCS_UFS_PLL_CNTL			0x02c
-+#define QPHY_V6_PCS_UFS_TX_LARGE_AMP_DRV_LVL		0x030
-+#define QPHY_V6_PCS_UFS_TX_SMALL_AMP_DRV_LVL		0x038
-+#define QPHY_V6_PCS_UFS_BIST_FIXED_PAT_CTRL		0x060
-+#define QPHY_V6_PCS_UFS_TX_HSGEAR_CAPABILITY		0x074
-+#define QPHY_V6_PCS_UFS_RX_HSGEAR_CAPABILITY		0x0bc
-+#define QPHY_V6_PCS_UFS_DEBUG_BUS_CLKSEL		0x158
-+#define QPHY_V6_PCS_UFS_LINECFG_DISABLE			0x17c
-+#define QPHY_V6_PCS_UFS_RX_MIN_HIBERN8_TIME		0x184
-+#define QPHY_V6_PCS_UFS_RX_SIGDET_CTRL2			0x18c
-+#define QPHY_V6_PCS_UFS_TX_PWM_GEAR_BAND		0x178
-+#define QPHY_V6_PCS_UFS_TX_HS_GEAR_BAND			0x174
-+#define QPHY_V6_PCS_UFS_READY_STATUS			0x1a8
-+#define QPHY_V6_PCS_UFS_TX_MID_TERM_CTRL1		0x1f4
-+#define QPHY_V6_PCS_UFS_MULTI_LANE_CTRL1		0x1fc
-+
-+#endif
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp.h b/drivers/phy/qualcomm/phy-qcom-qmp.h
-index 6d6108925716..9de8e7e41af0 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp.h
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp.h
-@@ -49,6 +49,8 @@
- 
- #include "phy-qcom-qmp-pcs-pcie-v5_20.h"
- 
-+#include "phy-qcom-qmp-pcs-ufs-v6.h"
-+
- #include "phy-qcom-qmp-pcie-qhp.h"
- 
- /* Only for QMP V3 & V4 PHY - DP COM registers */
--- 
-2.34.1
+Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+
+Best regards,
+Krzysztof
 
 
 -- 
