@@ -4,83 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 34264C54EBD
-	for <linux-phy@archiver.kernel.org>; Fri, 13 Jan 2023 19:13:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B6250C3DA78
+	for <linux-phy@archiver.kernel.org>; Fri, 13 Jan 2023 19:31:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/KLu2v0+FgIRbLr3ChrL9UpB6qT5NmFucU6qs9tO3Gk=; b=H9huCJPjzrh6Cn
-	19+wXoU0diJhs6JsozypOVBxpEyC82O8N31BiZl/4tD1nHXUNOINqQsnDJJxgeDvTJaiQGSWRg+gW
-	F7fXOaRYBD24eh/mAeg2oJA26M8uIjK/CjobGkQb6CVfX/MH4j/Phm97TkcxHwYpesPxNPk/SM362
-	I0yhHPpHqC/Yp+jluT3xltc9uZ9HwlUqtcVJhU6wS278QoaScSTlZmqxaX08rA/5y2l+9BAd5eVIG
-	3BMjISkMi++uC/IdftWCnj7oh9R5J+CqLaUIUkjms6e8Wh7CGXMlH0fExeUHlwHxQn5F/1ZKl0b30
-	WljWYL/agDhY4ro6b3gA==;
+	List-Owner; bh=+wW6MOOOEf7R/15t6jfqsxrT0Th/V+R+0osisXVH3k4=; b=WKEixDMcE+TbjE
+	Gy3Zj9v3XCba2ciVf8/yU6OlPSlajrbaNH4DkeVDT9iXAv+1cHa3DoWFFBQwgNO/QCdYxGVhhWGHP
+	Ww5BFvvd3B/4hnRpNR+9oYjfEL+Qfb9zPlesr+TbKLzDpXk1Ax1fFVQ5v2cTsHDMAuKYJ9T+gUajY
+	NEyiAZ/LQy/b09Xqw6ejgnpBnYqD+7PTYhNTUcBQ7bw+DlfgwCr93JFXuUPTQ+p+MQFw83EI3htOg
+	0RWK4htFz/EnJoPESiDThnVckM9P2MqVqllic+hFklb+8N8mPodVLSuGbNpkcO/fxOOYPdDY8W4Sl
+	JGLxBlxllV/DQehBwWUw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pGPUZ-004BD0-LE; Fri, 13 Jan 2023 19:13:31 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1pGPmP-004Eev-3b; Fri, 13 Jan 2023 19:31:57 +0000
+Received: from mail-yb1-xb35.google.com ([2607:f8b0:4864:20::b35])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pGPUY-004BCd-Hs
-	for linux-phy@bombadil.infradead.org; Fri, 13 Jan 2023 19:13:30 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=In-Reply-To:Content-Type:MIME-Version:
-	References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description;
-	bh=aFmGn8H0AyUbffI3Ed9O4Auopin8Ul/by6EY8uZUZeo=; b=SrpRyhd+wpPrWHa0ZOsGYpvbE1
-	tcT6JjCWrkSvfI5I+ldnd+/cbdV6LgM4M1XUW7Bk14Emh+KhW1hhM/SvRhJ/9qumxh5CPNkcBAtHz
-	pfeT0FFEb9Lk2jkQTNokTVqp6MgfD72vaRqvlOk36AYR26c/gtex7TySMT++30jVLe+m1uykbOZDT
-	ydJrpWKCbD68A4xq89QBFAvYxtsrX2EO+piHGOmCqeTu5O04808XyX/fiizCY0OoxhmBkIBFW2EMj
-	HUKhGyzLJF8LGAi725YeEFHB2ZnjsZzWRBIBQAPR0aH3LORW/OSh1RQoG7gMikkEIXK9vMOW3oEsg
-	dp/Va26A==;
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
-	by desiato.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pGOgX-004QkE-0d
-	for linux-phy@lists.infradead.org;
-	Fri, 13 Jan 2023 18:21:51 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 86272622C7;
-	Fri, 13 Jan 2023 18:21:55 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 19F79C433EF;
-	Fri, 13 Jan 2023 18:21:54 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1673634115;
-	bh=wgQJUKdJiGKKA14S47GMRE1JaKpLXL4mOsb55g2FXfs=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=LHqcZJFW7FFOU7mLmtzcZc65vV/jG1OheZkgWG+nZpLF5a07vabcsa0W0mPknD3W3
-	 6piXoExjwVwNJw3NeMYKekgT+lk8/1DLKu5/bkstfoTPaZvXU64xovijcaDiYUiGFk
-	 Rd5NfpqWMTaFCEjuCoT4QWGZQrhR0QzI8HxMF6+tvslQKZL5Nolf5pGHRYV/6vqPBE
-	 OAmUqnXJl7IRRbEMMbzfI4/n7i4UkTj6uLVdI2N7K3bEp0pT9HT+IZznwylpQX8yzE
-	 565XcMR2/LpYlaptp1l9ZR7anl1/iXPvalchvrmWsWh4soIqdSi9T63jQF7Be7Fqz8
-	 dhDa/4nB1pHcA==
-Date: Fri, 13 Jan 2023 23:51:50 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Lux Aliaga <they@mint.lgbt>
-Cc: agross@kernel.org, andersson@kernel.org, konrad.dybcio@linaro.org,
-	robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
-	kishon@kernel.org, alim.akhtar@samsung.com, avri.altman@wdc.com,
-	bvanassche@acm.org, keescook@chromium.org, tony.luck@intel.com,
-	gpiccoli@igalia.com, ~postmarketos/upstreaming@lists.sr.ht,
-	linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-scsi@vger.kernel.org, linux-hardening@vger.kernel.org,
-	phone-devel@vger.kernel.org, martin.botka@somainline.org,
-	marijn.suijten@somainline.org
-Subject: Re: [PATCH v6 3/6] phy: qcom-qmp: Add SM6125 UFS PHY support
-Message-ID: <Y8GhPiRZxFZhhQuu@matsya>
-References: <20230108195336.388349-1-they@mint.lgbt>
- <20230108195336.388349-4-they@mint.lgbt>
+	id 1pGPmM-004Ebw-65
+	for linux-phy@lists.infradead.org; Fri, 13 Jan 2023 19:31:55 +0000
+Received: by mail-yb1-xb35.google.com with SMTP id e202so207178ybh.11
+        for <linux-phy@lists.infradead.org>; Fri, 13 Jan 2023 11:31:51 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=Q3w2TiU+Lm4nUzsmAN2R9y6Z1pBbZIeSZTFy+e+i1Wk=;
+        b=wwkkD/BbYvU5NuTiZHjqY6R/O+FRehpJ86yRYqvetizP1k1TrxND2a8wx5XckTHlAR
+         +bzA9nNbrS8Hi2ckThe8kGGYkIxYsP9CReFyV5gT9J4XPS8UJ7Cp7zUobVzaDAxHL+Rd
+         29Xk+FkVcheDmHH0IhvWxzPdfRREwBTEbwmN6Ssd+33B7k+QEHeUedzmqn7VIvFFSw6U
+         AAohESqAXJJNdAOFkDqC6I6VRaxf8qWA+GveIBguZcE+sk92sku8QQdQbLOh1pjKaXnI
+         0L2eTI4kOu03otfB272qaDnq8eASvQfg2uFIuIMEzYAv724TEzM12sAWMNa1wrw3XOtu
+         Q6wg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=Q3w2TiU+Lm4nUzsmAN2R9y6Z1pBbZIeSZTFy+e+i1Wk=;
+        b=Dxj0JAPJmH8bRECtXOJwzA5ILoZzVgDFxRJXd4YLd/UeKpN1iSdr54QJpwFbAjwN+l
+         LAY4W8tH4BCIPt0LD6ZvI292I96jFhTcjAB7ntYLYeNM7HvWO+a1HvzW+sgOsu3UG61q
+         sEdIcVOFtxdn0TGQHIJ+U0mzTLXXJcHafZx793Kggg3UNrJ5i+19RE/1QP1ZJD849XkF
+         9MthmnWfBFmqY2wcB+S86mVwNUHpZaPcyuqTbUcYmEe4WFX8sodKOkYkv+97srnhhvDm
+         Ndtbxo+HSV2WtFq8gn4l8poKToqTYDW2G7JZ+r27j301ULECd//7iJG+ZWJAjW8m/xMs
+         PpQg==
+X-Gm-Message-State: AFqh2ko1VAXqVPrxn8GS6BLeyoIga9yx7CeKVBRGmKAz2xMgai6CfX/T
+	x36HmDqxtnfZA1CJtKxIi0ZebZ8j0U4q1QLrnoAqeA==
+X-Google-Smtp-Source: AMrXdXtimzxWwdAam5pUjv6lnc370dF1DqEq+lHlc6Ucv3r0ITCLyfKNu6YkXfF2piMkkorsB+TRlnbtQAkbkc0H55Q=
+X-Received: by 2002:a25:cc7:0:b0:6e0:c7d3:f026 with SMTP id
+ 190-20020a250cc7000000b006e0c7d3f026mr8920588ybm.275.1673638311180; Fri, 13
+ Jan 2023 11:31:51 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
+References: <20230108195336.388349-1-they@mint.lgbt> <20230108195336.388349-4-they@mint.lgbt>
 In-Reply-To: <20230108195336.388349-4-they@mint.lgbt>
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Date: Fri, 13 Jan 2023 21:31:40 +0200
+Message-ID: <CAA8EJpp-RwPOv61MtoXYb3Tuy5LDWWBCvYSrGUOvg8vWhid_tw@mail.gmail.com>
+Subject: Re: [PATCH v6 3/6] phy: qcom-qmp: Add SM6125 UFS PHY support
+To: Lux Aliaga <they@mint.lgbt>
+Cc: agross@kernel.org, andersson@kernel.org, konrad.dybcio@linaro.org, 
+	robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org, vkoul@kernel.org, 
+	kishon@kernel.org, alim.akhtar@samsung.com, avri.altman@wdc.com, 
+	bvanassche@acm.org, keescook@chromium.org, tony.luck@intel.com, 
+	gpiccoli@igalia.com, ~postmarketos/upstreaming@lists.sr.ht, 
+	linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
+	linux-scsi@vger.kernel.org, linux-hardening@vger.kernel.org, 
+	phone-devel@vger.kernel.org, martin.botka@somainline.org, 
+	marijn.suijten@somainline.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230113_182149_447266_E3B48C69 
-X-CRM114-Status: UNSURE (   8.19  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230113_113154_253564_8F29A075 
+X-CRM114-Status: GOOD (  15.89  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,15 +93,54 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 08-01-23, 16:53, Lux Aliaga wrote:
+On Sun, 8 Jan 2023 at 21:54, Lux Aliaga <they@mint.lgbt> wrote:
+>
 > The SM6125 UFS PHY is compatible with the one from SM6115. Add a
 > compatible for it and modify the config from SM6115 to make them
 > compatible with the SC8280XP binding
+>
+> Signed-off-by: Lux Aliaga <they@mint.lgbt>
+> Reviewed-by: Martin Botka <martin.botka@somainline.org>
+> ---
+>  drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 5 +++++
+>  1 file changed, 5 insertions(+)
+>
+> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+> index 318eea35b972..f33c84578940 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+> @@ -693,6 +693,8 @@ static const struct qmp_phy_cfg sdm845_ufsphy_cfg = {
+>  static const struct qmp_phy_cfg sm6115_ufsphy_cfg = {
+>         .lanes                  = 1,
+>
+> +       .offsets                = &qmp_ufs_offsets_v5,
 
-Applied, thanks
+Please don't randomly reuse generation-specific structures. This
+structure is clearly related to v5, while the PHY is from the v2
+generation.
+
+> +
+>         .serdes_tbl             = sm6115_ufsphy_serdes_tbl,
+>         .serdes_tbl_num         = ARRAY_SIZE(sm6115_ufsphy_serdes_tbl),
+>         .tx_tbl                 = sm6115_ufsphy_tx_tbl,
+> @@ -1172,6 +1174,9 @@ static const struct of_device_id qmp_ufs_of_match_table[] = {
+>         }, {
+>                 .compatible = "qcom,sm6115-qmp-ufs-phy",
+>                 .data = &sm6115_ufsphy_cfg,
+> +       }, {
+> +               .compatible = "qcom,sm6125-qmp-ufs-phy",
+> +               .data = &sm6115_ufsphy_cfg,
+>         }, {
+>                 .compatible = "qcom,sm6350-qmp-ufs-phy",
+>                 .data = &sdm845_ufsphy_cfg,
+> --
+> 2.39.0
+>
+
 
 -- 
-~Vinod
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
