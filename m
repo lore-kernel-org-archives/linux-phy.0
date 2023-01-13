@@ -4,61 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E933DC3DA78
-	for <linux-phy@archiver.kernel.org>; Fri, 13 Jan 2023 18:08:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 24F1CC3DA78
+	for <linux-phy@archiver.kernel.org>; Fri, 13 Jan 2023 18:11:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=daahBxRL78OdhieJLqUVREdkOGCqukpI8v/P3Rv3N+s=; b=HTHJM/2J5jB0sj
-	Sw96GWvOR8D+yDmqsZVls3RwtCaigELDlbWH9WWcwcO2B/IcqtKl3ZmepMjme2vFO/rEFNjm/dLsh
-	thcOXJKB9B2a7dugf+xuUJdAapQQ14Hs/nwmwRUv7g+6clUfDMyvXeBXBsLbME48ehXyjLJUsPyV8
-	fatxHRdYyV5tNC23A8hzNtXMWtA2QIRIDUjbNJWLhg4w7Edf4lPboWwSFMy3Fe0sSd1ZzA9AXGQr9
-	Bdn3jiava9scqcevpYYIynbqBq5nMXFeHAJeoTm0g/CTzednwPYj8S5Iuy5YvsR+ym8qd79powKmT
-	adsJl2Q7z24Cc9WSr5Ug==;
+	List-Owner; bh=UrVkoBhek0EkcAaciabQNpVuU38reIvem/02/UfIoZ8=; b=eZXnJr3HQuc9cd
+	SWWkQdNZ9pNTdRBbZwUNxPHFJzKgyrr+Agw0EUl29Tl5Ua/fdJ4ReNSK11bn7qGPx+VCylDCA0XUR
+	uhrFaX9X6qBvn6Xi89XKMhUTPsT3h2KnAkCpgQ/mS7Gnr+vaEas5lUE2nxrdsN6P6eVJS1Jg67g08
+	stblNmm+Qbmkw/VNsDj9gzG5B9Ms5JlXbqn3p08U+K1Z3AOBMsxI79Z1w0rD1FgH74whMPZCGClmI
+	uu/gLCQbdP2NbrbT5qWg0bI3kupTgAmzGKoT2DVPGVwqV5u2x6u9B76qcHSgXtbloGv/RS2CSQlZg
+	JJejkJEOhcA6/KMx+mSQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pGOTb-003yG9-At; Fri, 13 Jan 2023 18:08:27 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1pGOW6-003zHm-Ig; Fri, 13 Jan 2023 18:11:02 +0000
+Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pGOTN-003y9t-EY; Fri, 13 Jan 2023 18:08:15 +0000
+	id 1pGOW4-003zGC-5Q
+	for linux-phy@lists.infradead.org; Fri, 13 Jan 2023 18:11:01 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id B8CF7622D5;
-	Fri, 13 Jan 2023 18:08:11 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A44ADC433D2;
-	Fri, 13 Jan 2023 18:08:10 +0000 (UTC)
+	by ams.source.kernel.org (Postfix) with ESMTPS id 8734BB82097;
+	Fri, 13 Jan 2023 18:10:58 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 42CC1C433EF;
+	Fri, 13 Jan 2023 18:10:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1673633291;
-	bh=/AOabS0gzSJrsANTEfB1Kjc/Gs5HwKZqsKiGn38jFWM=;
+	s=k20201202; t=1673633457;
+	bh=El6zsbjfdaa104rFExh3mMvqh+hk+3xX+6KrXRNYuWk=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=DJ7ZuRIXkhsUlY1TuCjTHLnWmEQpqClIv/XQ445+CZEKSojWM6V9El6DgHXapUxqG
-	 nUj65/qqkvZQIJS/kqAQmfbb+74pcNJIhpBdcgGSH3fMWSo5U5cmgn7hynWH2EED4N
-	 LhrX6fqeiQxkWg8/7ZIdbxqF/KKYc2zv3utmse8f7ishSUfJwQCGKb6SeTmwwQHnPI
-	 EoeMpVLXur7jebEC75XFjV2NkLrGpEMdGbuy6Oy6zQP64F6pEZB2TdFPukWXbaOfuL
-	 L/oJ+mMjfo18g0xrQUjWV0NEViYOhgMEClAOMlt24U3wdzx5AHRj/FeEDUXo+zx2Gr
-	 lgg5corXEsM/A==
-Date: Fri, 13 Jan 2023 23:38:07 +0530
+	b=nRlu2mjlU4JQyt0ARmm5dutVyGeFuuTpNXBMr1+HosWMv/PTAnVMEk3f2iKZ+pNXP
+	 7VqRxNDdbpJF8oUjgWq9pFMD950sH0vU39UYYP2cRgZfGQJdNJ/5YrtgKm0fkQJIXg
+	 /pF/THG6SNsZHN+PTwK3XZ9KebL5PZIbA+jt+wqwzvCB8pj/mcNf/Dmdu8KB/u6QAM
+	 xoFC+zw2aW9oJG3toEuxDWgQAVWqDjAFXw/Yx4AaqTRp3CRqmx0/JWTatzpFRdz+G7
+	 PCjz/GGKU8scwBtfbEilna7cMtMOygrT9TkGzlULa3pRct4N/vkP39z6hLb4q5vBwU
+	 j0tuGG360TRNg==
+Date: Fri, 13 Jan 2023 23:40:53 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Johan Jonker <jbx6244@gmail.com>
-Cc: heiko@sntech.de, robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org, linux-phy@lists.infradead.org,
-	kishon@kernel.org
-Subject: Re: [PATCH v2 1/2] dt-bindings: phy: rockchip: convert
- rockchip-dp-phy.txt to yaml
-Message-ID: <Y8GeBzNJvhMeh3sn@matsya>
-References: <aa6fe473-71f2-edba-f009-994a3dbc9802@gmail.com>
+To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Wesley Cheng <quic_wcheng@quicinc.com>,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 1/4] dt-bindings: phy: qcom,usb-snps-femto-v2: use
+ fallback compatibles
+Message-ID: <Y8GerZ2LweryNauI@matsya>
+References: <20221223161835.112079-1-krzysztof.kozlowski@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <aa6fe473-71f2-edba-f009-994a3dbc9802@gmail.com>
+In-Reply-To: <20221223161835.112079-1-krzysztof.kozlowski@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230113_100813_580278_1F38AF11 
-X-CRM114-Status: GOOD (  21.21  )
+X-CRM114-CacheID: sfid-20230113_101100_379916_01393CD2 
+X-CRM114-Status: UNSURE (   9.68  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,110 +80,18 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 29-12-22, 10:44, Johan Jonker wrote:
-> Convert rockchip-dp-phy.txt to yaml.
+On 23-12-22, 17:18, Krzysztof Kozlowski wrote:
+> Document SoC-specific compatibles with generic fallback (e.g.
+> qcom,usb-snps-hs-7nm-phy) already used in DTSI.  Add SoC-specific
+> compatibles for PHY on SDX55 and SDX65.
+> 
+> This disallows usage of the qcom,usb-snps-hs-5nm-phy and
+> qcom,usb-snps-hs-7nm-phy generic compatibles alone.  Do not touch
+> remaining two compatibles - qcom,usb-snps-femto-v2-phy and
+> qcom,sc8180x-usb-hs-phy - because there are no upstream users, so not
+> sure what was the intention for them.
 
-This series fails to apply, pls rebase
-> 
-> Changed:
->   rename file name
-
-This should not be in change log but after the --- line
-
-> 
-> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
-> ---
-> 
-> Changed V2:
->   Use the compatible as filename.
-> ---
->  .../bindings/phy/rockchip,rk3288-dp-phy.yaml  | 41 +++++++++++++++++++
->  .../bindings/phy/rockchip-dp-phy.txt          | 26 ------------
->  2 files changed, 41 insertions(+), 26 deletions(-)
->  create mode 100644 Documentation/devicetree/bindings/phy/rockchip,rk3288-dp-phy.yaml
->  delete mode 100644 Documentation/devicetree/bindings/phy/rockchip-dp-phy.txt
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/rockchip,rk3288-dp-phy.yaml b/Documentation/devicetree/bindings/phy/rockchip,rk3288-dp-phy.yaml
-> new file mode 100644
-> index 000000000..2538235c5
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/rockchip,rk3288-dp-phy.yaml
-> @@ -0,0 +1,41 @@
-> +# SPDX-License-Identifier: GPL-2.0
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/rockchip,rk3288-dp-phy.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Rockchip specific extensions to the Analogix Display Port PHY
-> +
-> +maintainers:
-> +  - Heiko Stuebner <heiko@sntech.de>
-> +
-> +properties:
-> +  compatible:
-> +    const: rockchip,rk3288-dp-phy
-> +
-> +  clocks:
-> +    maxItems: 1
-> +
-> +  clock-names:
-> +    const: 24m
-> +
-> +  "#phy-cells":
-> +    const: 0
-> +
-> +required:
-> +  - compatible
-> +  - clocks
-> +  - clock-names
-> +  - "#phy-cells"
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/clock/rk3288-cru.h>
-> +    edp-phy {
-> +      compatible = "rockchip,rk3288-dp-phy";
-> +      clocks = <&cru SCLK_EDP_24M>;
-> +      clock-names = "24m";
-> +      #phy-cells = <0>;
-> +    };
-> diff --git a/Documentation/devicetree/bindings/phy/rockchip-dp-phy.txt b/Documentation/devicetree/bindings/phy/rockchip-dp-phy.txt
-> deleted file mode 100644
-> index e3b4809fb..000000000
-> --- a/Documentation/devicetree/bindings/phy/rockchip-dp-phy.txt
-> +++ /dev/null
-> @@ -1,26 +0,0 @@
-> -Rockchip specific extensions to the Analogix Display Port PHY
-> -------------------------------------
-> -
-> -Required properties:
-> -- compatible : should be one of the following supported values:
-> -	 - "rockchip.rk3288-dp-phy"
-> -- clocks: from common clock binding: handle to dp clock.
-> -	of memory mapped region.
-> -- clock-names: from common clock binding:
-> -	Required elements: "24m"
-> -- #phy-cells : from the generic PHY bindings, must be 0;
-> -
-> -Example:
-> -
-> -grf: syscon@ff770000 {
-> -	compatible = "rockchip,rk3288-grf", "syscon", "simple-mfd";
-> -
-> -...
-> -
-> -	edp_phy: edp-phy {
-> -		compatible = "rockchip,rk3288-dp-phy";
-> -		clocks = <&cru SCLK_EDP_24M>;
-> -		clock-names = "24m";
-> -		#phy-cells = <0>;
-> -	};
-> -};
-> --
-> 2.20.1
+Applied, thanks
 
 -- 
 ~Vinod
