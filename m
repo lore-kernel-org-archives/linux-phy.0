@@ -4,76 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7F5F0C54EBD
-	for <linux-phy@archiver.kernel.org>; Fri, 13 Jan 2023 18:36:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AFF49C54EBD
+	for <linux-phy@archiver.kernel.org>; Fri, 13 Jan 2023 18:43:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jWVgjaFullP/0e5B9QUHGMpvE1C82zUSlfyCxn1uc6c=; b=qnHMVuq++SxqGg
-	ETSzckfs0PTNBJfjrd4am/U2iMiYSBc1TsFkeraX8gxmT+iWPoahuXX11DEu7kqOkMmq3ZrAK3y+Y
-	9M7Y+nVpD2N4KND6DH4lNIsQkH5YvjfafFnxqDTryssBHp2kyk0kgMXcZABQ+PBVdJKYETDmWZOMS
-	3+hwJfzCEka6LiQRJLVRVXGlHPlLBDnZmor2jGXxuZlX0e0+dIfrl22f22m7Vd01M5SIcdF3qD6jg
-	c46bhFh/LRqwVgogh2WH0+D62r+6sP/jNdNZcvROIXmfrhJQjQBVOBu5jeiDpwVb5IcZ4H3gJRH6b
-	cKckxf4RC84wAYKZNXFA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=0QEeRLd9tannDxZrc5hsFQxQXqnU57+o0bzMLuzAPaA=; b=Qo3uqKgoVM4p10
+	4KnOxnz5r2bG+eSu+zEpQqZ4m5KizNPPdiDrNq6FAsxbauuO35FhJp+Wex/7yj5EswlIpcFukkvW8
+	cDjdAqQcdyAMcwZuem/SASy9DVJJkv/cAluGLb6IUrqmhCLISSrJAe5goOx0Rhg+xWyiNf2jvPbAm
+	gJ+Bc3FILmLH34Ng+SdxbR2BAujfwQKx0cxBf5P8IJXoPmkwu78pBqhlT2pmdHMbNsGf/a6E8W9Eb
+	LZF4xWdpTsmSNGhAGm+SxGyhwXJNch8FwhAz6vSzPWJ98ioFGte+nsGVGXz3KP9z3DK2pRTiC/Upc
+	ySUDnepcnxlE/MkKh7oA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pGOv5-0044F9-Uy; Fri, 13 Jan 2023 18:36:51 +0000
-Received: from mail-pj1-x1031.google.com ([2607:f8b0:4864:20::1031])
+	id 1pGP1D-0045Dc-WC; Fri, 13 Jan 2023 18:43:12 +0000
+Received: from mail-ej1-x630.google.com ([2a00:1450:4864:20::630])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pGOuu-0044BO-Cm
-	for linux-phy@lists.infradead.org; Fri, 13 Jan 2023 18:36:42 +0000
-Received: by mail-pj1-x1031.google.com with SMTP id dw9so21824852pjb.5
-        for <linux-phy@lists.infradead.org>; Fri, 13 Jan 2023 10:36:39 -0800 (PST)
+	id 1pGLfB-0036d2-Fn
+	for linux-phy@lists.infradead.org; Fri, 13 Jan 2023 15:08:18 +0000
+Received: by mail-ej1-x630.google.com with SMTP id ud5so53030552ejc.4
+        for <linux-phy@lists.infradead.org>; Fri, 13 Jan 2023 07:08:12 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=google.com; s=20210112;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=j4F3gMakR5EjuEaFBMZ7D8qgSZpXpMhQV5Lb3h6YkX4=;
-        b=sqwP3bvcIkIkHlOHuaj7PzhrogErMceNfkIz1l7wmrEJ52RKt1ZoLaNFxbpOSA3UpL
-         wq1sh1ojD/X7Iy6a9obxqvPAX82NCW94JSqZoXJ4VPostzzk8OBUzRW2QZCxPsty/wXb
-         9IXClLbv/GxUW9SLkr6zfzlHZd7HpiTaZ8Yvy9soWUs1OemOk/v/NO8MYlwrCl9zXF5+
-         HCfWR+ud6GaZDcvdGETTwikzINdoumIpGP5pl8ezxXEzc3zwN5BIhZBeMaQiCdi43Xmr
-         yAQ8h9uEbmzXOuUyEHA/9lDV/SU+Yesi9ACAmnts4FF2odbDNYPf5Uon+/q/RdhTXpub
-         HMJw==
+        d=gmail.com; s=20210112;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=9vS7zEGbpIgjIQ3EyeViyWuTY2mWIBtCQOuRrZSPD3s=;
+        b=HrwRVNZ7ixTnri5loHVg982lJTmM/hdAhy9QVAolJOo0iQg3BzspYi62ff/Gdj3Y58
+         gqV58VuUKr5BZ5B7LLeCckAY8WAFW7Oc/aYywztLMn8waJZQnIDZCBMsZYy8dSFycbhD
+         03ArRqDscJjLJ4kNyamuT2XT2BwvRdWo7QSnxR1YOlnalfS8nngPhGXouYNi6PsOTt+L
+         URcNWZtFm+KekTA8b1MMRAiqfUzIifVsR0S8O1ylw2e6izckXmz5SowHfpW7SZnVfOs1
+         wlcNAJodo/fBicyVl445Df8BY1G53pETRJcdI6H4aFbDTLnoec1cMelADAPxjAXveJCN
+         RUbw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=j4F3gMakR5EjuEaFBMZ7D8qgSZpXpMhQV5Lb3h6YkX4=;
-        b=ZGknOgVr/SDK2jUrh/I0oNukQ1MTezGTuaRDMlMVNE/9QfyZbyeEz7VijoCuyaDpKk
-         E6FQ4ce2Ygeirgwhwcx8TbI1aZrKgfk/GKDPcJnH1c21UwrNgCDuHW0d9MM36SEm0/o8
-         /tti0ZLXzuFCbAUAJeaXchsvbB11/nbRYlubgUC+YdvJCwaJfKpT6tbl6/e3Ca/yep3Q
-         W7fqvcbJJ+mwouq2s9SSYhA4Pvp0N0psS+PfKfDLZqxAXLJO/bTDhJrZAtXyWC4B/eVb
-         hsobdsETTKpzhzedW/5YyCrlP38iCTRIFyKjmVnEbCPzk1Yrh3F1k4shLMBAznsdqnVL
-         9Cwg==
-X-Gm-Message-State: AFqh2kpd9j5FUQcN0KijE5btlsTh1gxbrNsxmnb4epvwgXErgDCV88pb
-	ZmDDBMu7GcFQQ+RjBCAdNIyb3ZoYYyonWNKG09tdhA==
-X-Google-Smtp-Source: AMrXdXut+ZVz9p9DBkW4zfz3GUwV90SnmUswJaW85cGYlU4XXpHCwXHrnm3bYtlfE6P1Eb4qY9jWr4Npr5okcAdcplU=
-X-Received: by 2002:a17:90a:488a:b0:226:b5f4:d420 with SMTP id
- b10-20020a17090a488a00b00226b5f4d420mr3958048pjh.102.1673634998456; Fri, 13
- Jan 2023 10:36:38 -0800 (PST)
+        bh=9vS7zEGbpIgjIQ3EyeViyWuTY2mWIBtCQOuRrZSPD3s=;
+        b=LtKzlFnt0wJtXxrluFgQeKJAzHX9+w/n8l/BGMFQ8N9y2S4uzHscNGTFzPFZT1SpKY
+         EW6kJ1TRn7I+4fgdvlI9X3YbF6MUsPdqe3/65BW9e9Kg2trP9YfdETr9B8xHtnZBsFo8
+         SY0Z1bfORkiAiy1S5pIOKvj4ljiy+iwhlalVZT59cdIL7j3IjCrHEaXvP/muoIzGR/Wt
+         Ob8SFFERKTOfkgY5QuOPdsjpHpIuZRV6+NwsaNLN7CYIJJqNRaXL2O/yMelS9kfDZHV6
+         QLQhlf+3CQOTFPUQhSIyUEGu+faASG7G/vmPC7QmVsA0KZ3OmeZItG9r0tdjxTwAeYGp
+         sg3A==
+X-Gm-Message-State: AFqh2kqu4i37Oby/S4gMs+u3OuJP8ivVJ4Ax1c+yjEPetdayw/Db3EbK
+	Cbb3TBs9x9OLAoipNhKTfdoD1z2pDlQ=
+X-Google-Smtp-Source: AMrXdXsbgLwRwoYENPaYHij2D9fX7nASczURLeKaUMSU8OkOXUf/EfjDnm4rEydv2Ef1xja6fnfoaA==
+X-Received: by 2002:a17:906:d9c7:b0:84d:4923:366d with SMTP id qk7-20020a170906d9c700b0084d4923366dmr17939118ejb.44.1673622489277;
+        Fri, 13 Jan 2023 07:08:09 -0800 (PST)
+Received: from localhost (p200300e41f201d00f22f74fffe1f3a53.dip0.t-ipconnect.de. [2003:e4:1f20:1d00:f22f:74ff:fe1f:3a53])
+        by smtp.gmail.com with ESMTPSA id h10-20020a1709070b0a00b0084d4e9a13cbsm5468631ejl.221.2023.01.13.07.08.08
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 13 Jan 2023 07:08:08 -0800 (PST)
+From: Thierry Reding <thierry.reding@gmail.com>
+To: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
+Cc: Jon Hunter <jonathanh@nvidia.com>,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-tegra@vger.kernel.org
+Subject: [PATCH v3] dt-bindings: phy: tegra-xusb: Convert to json-schema
+Date: Fri, 13 Jan 2023 16:08:04 +0100
+Message-Id: <20230113150804.1272555-1-thierry.reding@gmail.com>
+X-Mailer: git-send-email 2.39.0
 MIME-Version: 1.0
-References: <20230104132646.7100-1-chunfeng.yun@mediatek.com>
-In-Reply-To: <20230104132646.7100-1-chunfeng.yun@mediatek.com>
-From: Nick Desaulniers <ndesaulniers@google.com>
-Date: Fri, 13 Jan 2023 10:36:27 -0800
-Message-ID: <CAKwvOdnMF4LRhTnQ3Rg+q3hd7jm2tS0aTHmwU6isKJHL2u9Q-g@mail.gmail.com>
-Subject: Re: [PATCH v6 1/3] phy: mediatek: fix build warning caused by clang
-To: Chunfeng Yun <chunfeng.yun@mediatek.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
-	Matthias Brugger <matthias.bgg@gmail.com>, Nathan Chancellor <nathan@kernel.org>, Tom Rix <trix@redhat.com>, 
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, 
-	linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org, 
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
-	llvm@lists.linux.dev, Eddie Hung <eddie.hung@mediatek.com>, 
-	kernel test robot <lkp@intel.com>, Arnd Bergmann <arnd@arndb.de>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230113_103640_450589_60390157 
-X-CRM114-Status: GOOD (  22.17  )
+X-Mailman-Approved-At: Fri, 13 Jan 2023 10:43:11 -0800
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,67 +90,3462 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Jan 4, 2023 at 5:26 AM Chunfeng Yun <chunfeng.yun@mediatek.com> wrote:
->
-> Remove the temporary @mask_, this may cause build warning when use clang
-> compiler for powerpc, but can't reproduce it when compile for arm64.
-> the build warning is -Wtautological-constant-out-of-range-compare, and
-> caused by
-> "BUILD_BUG_ON_MSG(__bf_cast_unsigned(_mask, _mask)"
+From: Thierry Reding <treding@nvidia.com>
 
-Can you please include the text of the observed warning?
+Convert the Tegra XUSB pad controller bindings from free-form text
+format to json-schema.
 
->
-> After removing @mask_, there is a "CHECK:MACRO_ARG_REUSE" when run
-> checkpatch.pl, due to @mask is constant, no reuse problem will happen.
->
-> Fixes: 84513eccd678 ("phy: mediatek: fix build warning of FIELD_PREP()")
+Signed-off-by: Thierry Reding <treding@nvidia.com>
+---
+Changes in v3:
+- use | to keep paragraphs in multi-paragraph descriptions
+- move additionalProperties to improve readability
+- clarify that "status" can also be absent
+- drop phandle and status properties
+- remove quotes around references
+- use dual licensing
 
-Uh, why was 84513eccd678 sent/reviewed/merged if it didn't fix the
-issue correctly in the first place?
+Changes in v2:
+- split up into multiple schemas
 
-Is the issue perhaps that your mask isn't wide enough in the first
-place, and should be?  See:
-commit cfd6fb45cfaf ("crypto: ccree - avoid out-of-range warnings from clang")
-for inspiration.
+ .../phy/nvidia,tegra124-xusb-padctl.txt       | 779 -----------------
+ .../phy/nvidia,tegra124-xusb-padctl.yaml      | 654 +++++++++++++++
+ .../phy/nvidia,tegra186-xusb-padctl.yaml      | 544 ++++++++++++
+ .../phy/nvidia,tegra194-xusb-padctl.yaml      | 630 ++++++++++++++
+ .../phy/nvidia,tegra210-xusb-padctl.yaml      | 786 ++++++++++++++++++
+ 5 files changed, 2614 insertions(+), 779 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/phy/nvidia,tegra124-xusb-padctl.txt
+ create mode 100644 Documentation/devicetree/bindings/phy/nvidia,tegra124-xusb-padctl.yaml
+ create mode 100644 Documentation/devicetree/bindings/phy/nvidia,tegra186-xusb-padctl.yaml
+ create mode 100644 Documentation/devicetree/bindings/phy/nvidia,tegra194-xusb-padctl.yaml
+ create mode 100644 Documentation/devicetree/bindings/phy/nvidia,tegra210-xusb-padctl.yaml
 
-> Reported-by: kernel test robot <lkp@intel.com>
-
-Can you please include the Link: tag to the lore URL of the report?
-
-> Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
-> ---
-> v6: modify the title
-> v5: no changes
-> v4 new patch, I'm not sure it can fix build warning, due to I don't cross compile
->     it for powerpc using clang in office.
-> ---
->  drivers/phy/mediatek/phy-mtk-io.h | 4 ++--
->  1 file changed, 2 insertions(+), 2 deletions(-)
->
-> diff --git a/drivers/phy/mediatek/phy-mtk-io.h b/drivers/phy/mediatek/phy-mtk-io.h
-> index d20ad5e5be81..58f06db822cb 100644
-> --- a/drivers/phy/mediatek/phy-mtk-io.h
-> +++ b/drivers/phy/mediatek/phy-mtk-io.h
-> @@ -39,8 +39,8 @@ static inline void mtk_phy_update_bits(void __iomem *reg, u32 mask, u32 val)
->  /* field @mask shall be constant and continuous */
->  #define mtk_phy_update_field(reg, mask, val) \
->  ({ \
-> -       typeof(mask) mask_ = (mask);    \
-> -       mtk_phy_update_bits(reg, mask_, FIELD_PREP(mask_, val)); \
-> +       BUILD_BUG_ON_MSG(!__builtin_constant_p(mask), "mask is not constant"); \
-> +       mtk_phy_update_bits(reg, mask, FIELD_PREP(mask, val)); \
->  })
->
->  #endif
-> --
-> 2.18.0
->
-
-
+diff --git a/Documentation/devicetree/bindings/phy/nvidia,tegra124-xusb-padctl.txt b/Documentation/devicetree/bindings/phy/nvidia,tegra124-xusb-padctl.txt
+deleted file mode 100644
+index b62397d2bb0c..000000000000
+--- a/Documentation/devicetree/bindings/phy/nvidia,tegra124-xusb-padctl.txt
++++ /dev/null
+@@ -1,779 +0,0 @@
+-Device tree binding for NVIDIA Tegra XUSB pad controller
+-========================================================
+-
+-The Tegra XUSB pad controller manages a set of I/O lanes (with differential
+-signals) which connect directly to pins/pads on the SoC package. Each lane
+-is controlled by a HW block referred to as a "pad" in the Tegra hardware
+-documentation. Each such "pad" may control either one or multiple lanes,
+-and thus contains any logic common to all its lanes. Each lane can be
+-separately configured and powered up.
+-
+-Some of the lanes are high-speed lanes, which can be used for PCIe, SATA or
+-super-speed USB. Other lanes are for various types of low-speed, full-speed
+-or high-speed USB (such as UTMI, ULPI and HSIC). The XUSB pad controller
+-contains a software-configurable mux that sits between the I/O controller
+-ports (e.g. PCIe) and the lanes.
+-
+-In addition to per-lane configuration, USB 3.0 ports may require additional
+-settings on a per-board basis.
+-
+-Pads will be represented as children of the top-level XUSB pad controller
+-device tree node. Each lane exposed by the pad will be represented by its
+-own subnode and can be referenced by users of the lane using the standard
+-PHY bindings, as described by the phy-bindings.txt file in this directory.
+-
+-The Tegra hardware documentation refers to the connection between the XUSB
+-pad controller and the XUSB controller as "ports". This is confusing since
+-"port" is typically used to denote the physical USB receptacle. The device
+-tree binding in this document uses the term "port" to refer to the logical
+-abstraction of the signals that are routed to a USB receptacle (i.e. a PHY
+-for the USB signal, the VBUS power supply, the USB 2.0 companion port for
+-USB 3.0 receptacles, ...).
+-
+-Required properties:
+---------------------
+-- compatible: Must be:
+-  - Tegra124: "nvidia,tegra124-xusb-padctl"
+-  - Tegra132: "nvidia,tegra132-xusb-padctl", "nvidia,tegra124-xusb-padctl"
+-  - Tegra210: "nvidia,tegra210-xusb-padctl"
+-  - Tegra186: "nvidia,tegra186-xusb-padctl"
+-  - Tegra194: "nvidia,tegra194-xusb-padctl"
+-- reg: Physical base address and length of the controller's registers.
+-- resets: Must contain an entry for each entry in reset-names.
+-- reset-names: Must include the following entries:
+-  - "padctl"
+-
+-For Tegra124:
+-- avdd-pll-utmip-supply: UTMI PLL power supply. Must supply 1.8 V.
+-- avdd-pll-erefe-supply: PLLE reference PLL power supply. Must supply 1.05 V.
+-- avdd-pex-pll-supply: PCIe/USB3 PLL power supply. Must supply 1.05 V.
+-- hvdd-pex-pll-e-supply: High-voltage PLLE power supply. Must supply 3.3 V.
+-
+-For Tegra210:
+-- avdd-pll-utmip-supply: UTMI PLL power supply. Must supply 1.8 V.
+-- avdd-pll-uerefe-supply: PLLE reference PLL power supply. Must supply 1.05 V.
+-- dvdd-pex-pll-supply: PCIe/USB3 PLL power supply. Must supply 1.05 V.
+-- hvdd-pex-pll-e-supply: High-voltage PLLE power supply. Must supply 1.8 V.
+-- nvidia,pmc: phandle and specifier referring to the Tegra210 PMC node.
+-
+-For Tegra186:
+-- avdd-pll-erefeut-supply: UPHY brick and reference clock as well as UTMI PHY
+-  power supply. Must supply 1.8 V.
+-- avdd-usb-supply: USB I/Os, VBUS, ID, REXT, D+/D- power supply. Must supply
+-  3.3 V.
+-- vclamp-usb-supply: Bias rail for USB pad. Must supply 1.8 V.
+-- vddio-hsic-supply: HSIC PHY power supply. Must supply 1.2 V.
+-
+-For Tegra194:
+-- avdd-usb-supply: USB I/Os, VBUS, ID, REXT, D+/D- power supply. Must supply
+-  3.3 V.
+-- vclamp-usb-supply: Bias rail for USB pad. Must supply 1.8 V.
+-
+-Pad nodes:
+-==========
+-
+-A required child node named "pads" contains a list of subnodes, one for each
+-of the pads exposed by the XUSB pad controller. Each pad may need additional
+-resources that can be referenced in its pad node.
+-
+-The "status" property is used to enable or disable the use of a pad. If set
+-to "disabled", the pad will not be used on the given board. In order to use
+-the pad and any of its lanes, this property must be set to "okay".
+-
+-For Tegra124 and Tegra132, the following pads exist: usb2, ulpi, hsic, pcie
+-and sata. No extra resources are required for operation of these pads.
+-
+-For Tegra210, the following pads exist: usb2, hsic, pcie and sata. Below is
+-a description of the properties of each pad.
+-
+-UTMI pad:
+----------
+-
+-Required properties:
+-- clocks: Must contain an entry for each entry in clock-names.
+-- clock-names: Must contain the following entries:
+-  - "trk": phandle and specifier referring to the USB2 tracking clock
+-
+-HSIC pad:
+----------
+-
+-Required properties:
+-- clocks: Must contain an entry for each entry in clock-names.
+-- clock-names: Must contain the following entries:
+-  - "trk": phandle and specifier referring to the HSIC tracking clock
+-
+-PCIe pad:
+----------
+-
+-Required properties:
+-- clocks: Must contain an entry for each entry in clock-names.
+-- clock-names: Must contain the following entries:
+-  - "pll": phandle and specifier referring to the PLLE
+-- resets: Must contain an entry for each entry in reset-names.
+-- reset-names: Must contain the following entries:
+-  - "phy": reset for the PCIe UPHY block
+-
+-SATA pad:
+----------
+-
+-Required properties:
+-- resets: Must contain an entry for each entry in reset-names.
+-- reset-names: Must contain the following entries:
+-  - "phy": reset for the SATA UPHY block
+-
+-
+-PHY nodes:
+-==========
+-
+-Each pad node has a child named "lanes" that contains one or more children of
+-its own, each representing one of the lanes controlled by the pad.
+-
+-Required properties:
+---------------------
+-- status: Defines the operation status of the PHY. Valid values are:
+-  - "disabled": the PHY is disabled
+-  - "okay": the PHY is enabled
+-- #phy-cells: Should be 0. Since each lane represents a single PHY, there is
+-  no need for an additional specifier.
+-- nvidia,function: The output function of the PHY. See below for a list of
+-  valid functions per SoC generation.
+-
+-For Tegra124 and Tegra132, the list of valid PHY nodes is given below:
+-- usb2: usb2-0, usb2-1, usb2-2
+-  - functions: "snps", "xusb", "uart"
+-- ulpi: ulpi-0
+-  - functions: "snps", "xusb"
+-- hsic: hsic-0, hsic-1
+-  - functions: "snps", "xusb"
+-- pcie: pcie-0, pcie-1, pcie-2, pcie-3, pcie-4
+-  - functions: "pcie", "usb3-ss"
+-- sata: sata-0
+-  - functions: "usb3-ss", "sata"
+-
+-For Tegra210, the list of valid PHY nodes is given below:
+-- usb2: usb2-0, usb2-1, usb2-2, usb2-3
+-  - functions: "snps", "xusb", "uart"
+-- hsic: hsic-0, hsic-1
+-  - functions: "snps", "xusb"
+-- pcie: pcie-0, pcie-1, pcie-2, pcie-3, pcie-4, pcie-5, pcie-6
+-  - functions: "pcie-x1", "usb3-ss", "pcie-x4"
+-- sata: sata-0
+-  - functions: "usb3-ss", "sata"
+-
+-For Tegra194, the list of valid PHY nodes is given below:
+-- usb2: usb2-0, usb2-1, usb2-2, usb2-3
+-  - functions: "xusb"
+-- usb3: usb3-0, usb3-1, usb3-2, usb3-3
+-  - functions: "xusb"
+-
+-Port nodes:
+-===========
+-
+-A required child node named "ports" contains a list of all the ports exposed
+-by the XUSB pad controller. Per-port configuration is only required for USB.
+-
+-USB2 ports:
+------------
+-
+-Required properties:
+-- status: Defines the operation status of the port. Valid values are:
+-  - "disabled": the port is disabled
+-  - "okay": the port is enabled
+-- mode: A string that determines the mode in which to run the port. Valid
+-  values are:
+-  - "host": for USB host mode
+-  - "device": for USB device mode
+-  - "otg": for USB OTG mode
+-
+-Required properties for OTG/Peripheral capable USB2 ports:
+-- usb-role-switch: Boolean property to indicate that the port support OTG or
+-  peripheral mode. If present, the port supports switching between USB host
+-  and peripheral roles. Connector should be added as subnode.
+-  See usb/usb-conn-gpio.txt.
+-
+-Optional properties:
+-- nvidia,internal: A boolean property whose presence determines that a port
+-  is internal. In the absence of this property the port is considered to be
+-  external.
+-- vbus-supply: phandle to a regulator supplying the VBUS voltage.
+-
+-ULPI ports:
+------------
+-
+-Optional properties:
+-- status: Defines the operation status of the port. Valid values are:
+-  - "disabled": the port is disabled
+-  - "okay": the port is enabled
+-- nvidia,internal: A boolean property whose presence determines that a port
+-  is internal. In the absence of this property the port is considered to be
+-  external.
+-- vbus-supply: phandle to a regulator supplying the VBUS voltage.
+-
+-HSIC ports:
+------------
+-
+-Required properties:
+-- status: Defines the operation status of the port. Valid values are:
+-  - "disabled": the port is disabled
+-  - "okay": the port is enabled
+-
+-Optional properties:
+-- vbus-supply: phandle to a regulator supplying the VBUS voltage.
+-
+-Super-speed USB ports:
+-----------------------
+-
+-Required properties:
+-- status: Defines the operation status of the port. Valid values are:
+-  - "disabled": the port is disabled
+-  - "okay": the port is enabled
+-- nvidia,usb2-companion: A single cell that specifies the physical port number
+-  to map this super-speed USB port to. The range of valid port numbers varies
+-  with the SoC generation:
+-  - 0-2: for Tegra124 and Tegra132
+-  - 0-3: for Tegra210
+-
+-Optional properties:
+-- nvidia,internal: A boolean property whose presence determines that a port
+-  is internal. In the absence of this property the port is considered to be
+-  external.
+-
+-- maximum-speed: Only for Tegra194. A string property that specifies maximum
+-  supported speed of a usb3 port. Valid values are:
+-  - "super-speed-plus": default, the usb3 port supports USB 3.1 Gen 2 speed.
+-  - "super-speed": the usb3 port supports USB 3.1 Gen 1 speed only.
+-
+-For Tegra124 and Tegra132, the XUSB pad controller exposes the following
+-ports:
+-- 3x USB2: usb2-0, usb2-1, usb2-2
+-- 1x ULPI: ulpi-0
+-- 2x HSIC: hsic-0, hsic-1
+-- 2x super-speed USB: usb3-0, usb3-1
+-
+-For Tegra210, the XUSB pad controller exposes the following ports:
+-- 4x USB2: usb2-0, usb2-1, usb2-2, usb2-3
+-- 2x HSIC: hsic-0, hsic-1
+-- 4x super-speed USB: usb3-0, usb3-1, usb3-2, usb3-3
+-
+-For Tegra194, the XUSB pad controller exposes the following ports:
+-- 4x USB2: usb2-0, usb2-1, usb2-2, usb2-3
+-- 4x super-speed USB: usb3-0, usb3-1, usb3-2, usb3-3
+-
+-Examples:
+-=========
+-
+-Tegra124 and Tegra132:
+-----------------------
+-
+-SoC include:
+-
+-	padctl@7009f000 {
+-		/* for Tegra124 */
+-		compatible = "nvidia,tegra124-xusb-padctl";
+-		/* for Tegra132 */
+-		compatible = "nvidia,tegra132-xusb-padctl",
+-			     "nvidia,tegra124-xusb-padctl";
+-		reg = <0x0 0x7009f000 0x0 0x1000>;
+-		resets = <&tegra_car 142>;
+-		reset-names = "padctl";
+-
+-		pads {
+-			usb2 {
+-				status = "disabled";
+-
+-				lanes {
+-					usb2-0 {
+-						status = "disabled";
+-						#phy-cells = <0>;
+-					};
+-
+-					usb2-1 {
+-						status = "disabled";
+-						#phy-cells = <0>;
+-					};
+-
+-					usb2-2 {
+-						status = "disabled";
+-						#phy-cells = <0>;
+-					};
+-				};
+-			};
+-
+-			ulpi {
+-				status = "disabled";
+-
+-				lanes {
+-					ulpi-0 {
+-						status = "disabled";
+-						#phy-cells = <0>;
+-					};
+-				};
+-			};
+-
+-			hsic {
+-				status = "disabled";
+-
+-				lanes {
+-					hsic-0 {
+-						status = "disabled";
+-						#phy-cells = <0>;
+-					};
+-
+-					hsic-1 {
+-						status = "disabled";
+-						#phy-cells = <0>;
+-					};
+-				};
+-			};
+-
+-			pcie {
+-				status = "disabled";
+-
+-				lanes {
+-					pcie-0 {
+-						status = "disabled";
+-						#phy-cells = <0>;
+-					};
+-
+-					pcie-1 {
+-						status = "disabled";
+-						#phy-cells = <0>;
+-					};
+-
+-					pcie-2 {
+-						status = "disabled";
+-						#phy-cells = <0>;
+-					};
+-
+-					pcie-3 {
+-						status = "disabled";
+-						#phy-cells = <0>;
+-					};
+-
+-					pcie-4 {
+-						status = "disabled";
+-						#phy-cells = <0>;
+-					};
+-				};
+-			};
+-
+-			sata {
+-				status = "disabled";
+-
+-				lanes {
+-					sata-0 {
+-						status = "disabled";
+-						#phy-cells = <0>;
+-					};
+-				};
+-			};
+-		};
+-
+-		ports {
+-			usb2-0 {
+-				status = "disabled";
+-			};
+-
+-			usb2-1 {
+-				status = "disabled";
+-			};
+-
+-			usb2-2 {
+-				status = "disabled";
+-			};
+-
+-			ulpi-0 {
+-				status = "disabled";
+-			};
+-
+-			hsic-0 {
+-				status = "disabled";
+-			};
+-
+-			hsic-1 {
+-				status = "disabled";
+-			};
+-
+-			usb3-0 {
+-				status = "disabled";
+-			};
+-
+-			usb3-1 {
+-				status = "disabled";
+-			};
+-		};
+-	};
+-
+-Board file:
+-
+-	padctl@7009f000 {
+-		status = "okay";
+-
+-		pads {
+-			usb2 {
+-				status = "okay";
+-
+-				lanes {
+-					usb2-0 {
+-						nvidia,function = "xusb";
+-						status = "okay";
+-					};
+-
+-					usb2-1 {
+-						nvidia,function = "xusb";
+-						status = "okay";
+-					};
+-
+-					usb2-2 {
+-						nvidia,function = "xusb";
+-						status = "okay";
+-					};
+-				};
+-			};
+-
+-			pcie {
+-				status = "okay";
+-
+-				lanes {
+-					pcie-0 {
+-						nvidia,function = "usb3-ss";
+-						status = "okay";
+-					};
+-
+-					pcie-2 {
+-						nvidia,function = "pcie";
+-						status = "okay";
+-					};
+-
+-					pcie-4 {
+-						nvidia,function = "pcie";
+-						status = "okay";
+-					};
+-				};
+-			};
+-
+-			sata {
+-				status = "okay";
+-
+-				lanes {
+-					sata-0 {
+-						nvidia,function = "sata";
+-						status = "okay";
+-					};
+-				};
+-			};
+-		};
+-
+-		ports {
+-			/* Micro A/B */
+-			usb2-0 {
+-				status = "okay";
+-				mode = "otg";
+-			};
+-
+-			/* Mini PCIe */
+-			usb2-1 {
+-				status = "okay";
+-				mode = "host";
+-			};
+-
+-			/* USB3 */
+-			usb2-2 {
+-				status = "okay";
+-				mode = "host";
+-
+-				vbus-supply = <&vdd_usb3_vbus>;
+-			};
+-
+-			usb3-0 {
+-				nvidia,port = <2>;
+-				status = "okay";
+-			};
+-		};
+-	};
+-
+-Tegra210:
+----------
+-
+-SoC include:
+-
+-	padctl@7009f000 {
+-		compatible = "nvidia,tegra210-xusb-padctl";
+-		reg = <0x0 0x7009f000 0x0 0x1000>;
+-		resets = <&tegra_car 142>;
+-		reset-names = "padctl";
+-
+-		status = "disabled";
+-
+-		pads {
+-			usb2 {
+-				clocks = <&tegra_car TEGRA210_CLK_USB2_TRK>;
+-				clock-names = "trk";
+-				status = "disabled";
+-
+-				lanes {
+-					usb2-0 {
+-						status = "disabled";
+-						#phy-cells = <0>;
+-					};
+-
+-					usb2-1 {
+-						status = "disabled";
+-						#phy-cells = <0>;
+-					};
+-
+-					usb2-2 {
+-						status = "disabled";
+-						#phy-cells = <0>;
+-					};
+-
+-					usb2-3 {
+-						status = "disabled";
+-						#phy-cells = <0>;
+-					};
+-				};
+-			};
+-
+-			hsic {
+-				clocks = <&tegra_car TEGRA210_CLK_HSIC_TRK>;
+-				clock-names = "trk";
+-				status = "disabled";
+-
+-				lanes {
+-					hsic-0 {
+-						status = "disabled";
+-						#phy-cells = <0>;
+-					};
+-
+-					hsic-1 {
+-						status = "disabled";
+-						#phy-cells = <0>;
+-					};
+-				};
+-			};
+-
+-			pcie {
+-				clocks = <&tegra_car TEGRA210_CLK_PLL_E>;
+-				clock-names = "pll";
+-				resets = <&tegra_car 205>;
+-				reset-names = "phy";
+-				status = "disabled";
+-
+-				lanes {
+-					pcie-0 {
+-						status = "disabled";
+-						#phy-cells = <0>;
+-					};
+-
+-					pcie-1 {
+-						status = "disabled";
+-						#phy-cells = <0>;
+-					};
+-
+-					pcie-2 {
+-						status = "disabled";
+-						#phy-cells = <0>;
+-					};
+-
+-					pcie-3 {
+-						status = "disabled";
+-						#phy-cells = <0>;
+-					};
+-
+-					pcie-4 {
+-						status = "disabled";
+-						#phy-cells = <0>;
+-					};
+-
+-					pcie-5 {
+-						status = "disabled";
+-						#phy-cells = <0>;
+-					};
+-
+-					pcie-6 {
+-						status = "disabled";
+-						#phy-cells = <0>;
+-					};
+-				};
+-			};
+-
+-			sata {
+-				clocks = <&tegra_car TEGRA210_CLK_PLL_E>;
+-				clock-names = "pll";
+-				resets = <&tegra_car 204>;
+-				reset-names = "phy";
+-				status = "disabled";
+-
+-				lanes {
+-					sata-0 {
+-						status = "disabled";
+-						#phy-cells = <0>;
+-					};
+-				};
+-			};
+-		};
+-
+-		ports {
+-			usb2-0 {
+-				status = "disabled";
+-			};
+-
+-			usb2-1 {
+-				status = "disabled";
+-			};
+-
+-			usb2-2 {
+-				status = "disabled";
+-			};
+-
+-			usb2-3 {
+-				status = "disabled";
+-			};
+-
+-			hsic-0 {
+-				status = "disabled";
+-			};
+-
+-			hsic-1 {
+-				status = "disabled";
+-			};
+-
+-			usb3-0 {
+-				status = "disabled";
+-			};
+-
+-			usb3-1 {
+-				status = "disabled";
+-			};
+-
+-			usb3-2 {
+-				status = "disabled";
+-			};
+-
+-			usb3-3 {
+-				status = "disabled";
+-			};
+-		};
+-	};
+-
+-Board file:
+-
+-	padctl@7009f000 {
+-		status = "okay";
+-
+-		pads {
+-			usb2 {
+-				status = "okay";
+-
+-				lanes {
+-					usb2-0 {
+-						nvidia,function = "xusb";
+-						status = "okay";
+-					};
+-
+-					usb2-1 {
+-						nvidia,function = "xusb";
+-						status = "okay";
+-					};
+-
+-					usb2-2 {
+-						nvidia,function = "xusb";
+-						status = "okay";
+-					};
+-
+-					usb2-3 {
+-						nvidia,function = "xusb";
+-						status = "okay";
+-					};
+-				};
+-			};
+-
+-			pcie {
+-				status = "okay";
+-
+-				lanes {
+-					pcie-0 {
+-						nvidia,function = "pcie-x1";
+-						status = "okay";
+-					};
+-
+-					pcie-1 {
+-						nvidia,function = "pcie-x4";
+-						status = "okay";
+-					};
+-
+-					pcie-2 {
+-						nvidia,function = "pcie-x4";
+-						status = "okay";
+-					};
+-
+-					pcie-3 {
+-						nvidia,function = "pcie-x4";
+-						status = "okay";
+-					};
+-
+-					pcie-4 {
+-						nvidia,function = "pcie-x4";
+-						status = "okay";
+-					};
+-
+-					pcie-5 {
+-						nvidia,function = "usb3-ss";
+-						status = "okay";
+-					};
+-
+-					pcie-6 {
+-						nvidia,function = "usb3-ss";
+-						status = "okay";
+-					};
+-				};
+-			};
+-
+-			sata {
+-				status = "okay";
+-
+-				lanes {
+-					sata-0 {
+-						nvidia,function = "sata";
+-						status = "okay";
+-					};
+-				};
+-			};
+-		};
+-
+-		ports {
+-			usb2-0 {
+-				status = "okay";
+-				mode = "otg";
+-			};
+-
+-			usb2-1 {
+-				status = "okay";
+-				vbus-supply = <&vdd_5v0_rtl>;
+-				mode = "host";
+-			};
+-
+-			usb2-2 {
+-				status = "okay";
+-				vbus-supply = <&vdd_usb_vbus>;
+-				mode = "host";
+-			};
+-
+-			usb2-3 {
+-				status = "okay";
+-				mode = "host";
+-			};
+-
+-			usb3-0 {
+-				status = "okay";
+-				nvidia,lanes = "pcie-6";
+-				nvidia,port = <1>;
+-			};
+-
+-			usb3-1 {
+-				status = "okay";
+-				nvidia,lanes = "pcie-5";
+-				nvidia,port = <2>;
+-			};
+-		};
+-	};
+diff --git a/Documentation/devicetree/bindings/phy/nvidia,tegra124-xusb-padctl.yaml b/Documentation/devicetree/bindings/phy/nvidia,tegra124-xusb-padctl.yaml
+new file mode 100644
+index 000000000000..33b41b6b2fd5
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/nvidia,tegra124-xusb-padctl.yaml
+@@ -0,0 +1,654 @@
++# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/nvidia,tegra124-xusb-padctl.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: NVIDIA Tegra124 XUSB pad controller
++
++maintainers:
++  - Thierry Reding <thierry.reding@gmail.com>
++  - Jon Hunter <jonathanh@nvidia.com>
++
++description: |
++  The Tegra XUSB pad controller manages a set of I/O lanes (with differential
++  signals) which connect directly to pins/pads on the SoC package. Each lane
++  is controlled by a HW block referred to as a "pad" in the Tegra hardware
++  documentation. Each such "pad" may control either one or multiple lanes,
++  and thus contains any logic common to all its lanes. Each lane can be
++  separately configured and powered up.
++
++  Some of the lanes are high-speed lanes, which can be used for PCIe, SATA or
++  super-speed USB. Other lanes are for various types of low-speed, full-speed
++  or high-speed USB (such as UTMI, ULPI and HSIC). The XUSB pad controller
++  contains a software-configurable mux that sits between the I/O controller
++  ports (e.g. PCIe) and the lanes.
++
++  In addition to per-lane configuration, USB 3.0 ports may require additional
++  settings on a per-board basis.
++
++  Pads will be represented as children of the top-level XUSB pad controller
++  device tree node. Each lane exposed by the pad will be represented by its
++  own subnode and can be referenced by users of the lane using the standard
++  PHY bindings, as described by the phy-bindings.txt file in this directory.
++
++  The Tegra hardware documentation refers to the connection between the XUSB
++  pad controller and the XUSB controller as "ports". This is confusing since
++  "port" is typically used to denote the physical USB receptacle. The device
++  tree binding in this document uses the term "port" to refer to the logical
++  abstraction of the signals that are routed to a USB receptacle (i.e. a PHY
++  for the USB signal, the VBUS power supply, the USB 2.0 companion port for
++  USB 3.0 receptacles, ...).
++
++properties:
++  compatible:
++    oneOf:
++      - enum:
++          - nvidia,tegra124-xusb-padctl
++
++      - items:
++          - const: nvidia,tegra132-xusb-padctl
++          - const: nvidia,tegra124-xusb-padctl
++
++  reg:
++    maxItems: 1
++
++  interrupts:
++    items:
++      - description: XUSB pad controller interrupt
++
++  resets:
++    items:
++      - description: pad controller reset
++
++  reset-names:
++    items:
++      - const: padctl
++
++  avdd-pll-utmip-supply:
++    description: UTMI PLL power supply. Must supply 1.8 V.
++
++  avdd-pll-erefe-supply:
++    description: PLLE reference PLL power supply. Must supply 1.05 V.
++
++  avdd-pex-pll-supply:
++    description: PCIe/USB3 PLL power supply. Must supply 1.05 V.
++
++  hvdd-pex-pll-e-supply:
++    description: High-voltage PLLE power supply. Must supply 3.3 V.
++
++  pads:
++    description: A required child node named "pads" contains a list of
++      subnodes, one for each of the pads exposed by the XUSB pad controller.
++      Each pad may need additional resources that can be referenced in its
++      pad node.
++
++      The "status" property is used to enable or disable the use of a pad.
++      If set to "disabled", the pad will not be used on the given board. In
++      order to use the pad and any of its lanes, this property must be set
++      to "okay" or be absent.
++    type: object
++    additionalProperties: false
++    properties:
++      usb2:
++        type: object
++        additionalProperties: false
++        properties:
++          clocks:
++            items:
++              - description: USB2 tracking clock
++
++          clock-names:
++            items:
++              - const: trk
++
++          lanes:
++            type: object
++            additionalProperties: false
++            properties:
++              usb2-0:
++                type: object
++                additionalProperties: false
++                properties:
++                  "#phy-cells":
++                    const: 0
++
++                  nvidia,function:
++                    description: Function selection for this lane.
++                    $ref: /schemas/types.yaml#/definitions/string
++                    enum: [ snps, xusb, uart ]
++
++              usb2-1:
++                type: object
++                additionalProperties: false
++                properties:
++                  "#phy-cells":
++                    const: 0
++
++                  nvidia,function:
++                    description: Function selection for this lane.
++                    $ref: /schemas/types.yaml#/definitions/string
++                    enum: [ snps, xusb, uart ]
++
++              usb2-2:
++                type: object
++                additionalProperties: false
++                properties:
++                  "#phy-cells":
++                    const: 0
++
++                  nvidia,function:
++                    description: Function selection for this lane.
++                    $ref: /schemas/types.yaml#/definitions/string
++                    enum: [ snps, xusb, uart ]
++
++      ulpi:
++        type: object
++        additionalProperties: false
++        properties:
++          lanes:
++            type: object
++            additionalProperties: false
++            properties:
++              ulpi-0:
++                type: object
++                additionalProperties: false
++                properties:
++                  "#phy-cells":
++                    const: 0
++
++                  nvidia,function:
++                    description: Function selection for this lane.
++                    $ref: /schemas/types.yaml#/definitions/string
++                    enum: [ snps, xusb ]
++
++      hsic:
++        type: object
++        additionalProperties: false
++        properties:
++          clocks:
++            items:
++              - description: HSIC tracking clock
++
++          clock-names:
++            items:
++              - const: trk
++
++          lanes:
++            type: object
++            additionalProperties: false
++            properties:
++              hsic-0:
++                type: object
++                additionalProperties: false
++                properties:
++                  "#phy-cells":
++                    const: 0
++
++                  nvidia,function:
++                    description: Function selection for this lane.
++                    $ref: /schemas/types.yaml#/definitions/string
++                    enum: [ snps, xusb ]
++
++              hsic-1:
++                type: object
++                additionalProperties: false
++                properties:
++                  "#phy-cells":
++                    const: 0
++
++                  nvidia,function:
++                    description: Function selection for this lane.
++                    $ref: /schemas/types.yaml#/definitions/string
++                    enum: [ snps, xusb ]
++
++      pcie:
++        type: object
++        additionalProperties: false
++        properties:
++          clocks:
++            items:
++              - description: PLLE clock
++
++          clock-names:
++            items:
++              - const: pll
++
++          resets:
++            items:
++              - description: reset for the PCIe UPHY block
++
++          reset-names:
++            items:
++              - const: phy
++
++          lanes:
++            type: object
++            additionalProperties: false
++            properties:
++              pcie-0:
++                type: object
++                additionalProperties: false
++                properties:
++                  "#phy-cells":
++                    const: 0
++
++                  nvidia,function:
++                    description: Function selection for this lane.
++                    $ref: /schemas/types.yaml#/definitions/string
++                    enum: [ pcie, usb3-ss ]
++
++              pcie-1:
++                type: object
++                additionalProperties: false
++                properties:
++                  "#phy-cells":
++                    const: 0
++
++                  nvidia,function:
++                    description: Function selection for this lane.
++                    $ref: /schemas/types.yaml#/definitions/string
++                    enum: [ pcie, usb3-ss ]
++
++              pcie-2:
++                type: object
++                additionalProperties: false
++                properties:
++                  "#phy-cells":
++                    const: 0
++
++                  nvidia,function:
++                    description: Function selection for this lane.
++                    $ref: /schemas/types.yaml#/definitions/string
++                    enum: [ pcie, usb3-ss ]
++
++              pcie-3:
++                type: object
++                additionalProperties: false
++                properties:
++                  "#phy-cells":
++                    const: 0
++
++                  nvidia,function:
++                    description: Function selection for this lane.
++                    $ref: /schemas/types.yaml#/definitions/string
++                    enum: [ pcie, usb3-ss ]
++
++              pcie-4:
++                type: object
++                additionalProperties: false
++                properties:
++                  "#phy-cells":
++                    const: 0
++
++                  nvidia,function:
++                    description: Function selection for this lane.
++                    $ref: /schemas/types.yaml#/definitions/string
++                    enum: [ pcie, usb3-ss ]
++
++      sata:
++        type: object
++        additionalProperties: false
++        properties:
++          resets:
++            items:
++              - description: reset for the SATA UPHY block
++
++          reset-names:
++            items:
++              - const: phy
++
++          lanes:
++            type: object
++            additionalProperties: false
++            properties:
++              sata-0:
++                type: object
++                additionalProperties: false
++                properties:
++                  "#phy-cells":
++                    const: 0
++
++                  nvidia,function:
++                    description: Function selection for this lane.
++                    $ref: /schemas/types.yaml#/definitions/string
++                    enum: [ sata, usb3-ss ]
++
++  ports:
++    description: A required child node named "ports" contains a list of
++      subnodes, one for each of the ports exposed by the XUSB pad controller.
++      Each port may need additional resources that can be referenced in its
++      port node.
++
++      The "status" property is used to enable or disable the use of a port.
++      If set to "disabled", the port will not be used on the given board. In
++      order to use the port, this property must be set to "okay".
++    type: object
++    additionalProperties: false
++    properties:
++      usb2-0:
++        type: object
++        additionalProperties: false
++        properties:
++          # no need to further describe this because the connector will
++          # match on gpio-usb-b-connector or usb-b-connector and cause
++          # that binding to be selected for the subnode
++          connector:
++            type: object
++
++          mode:
++            description: A string that determines the mode in which to
++              run the port.
++            $ref: /schemas/types.yaml#/definitions/string
++            enum: [ host, peripheral, otg ]
++
++          nvidia,internal:
++            description: A boolean property whose presence determines
++              that a port is internal. In the absence of this property
++              the port is considered to be external.
++            $ref: /schemas/types.yaml#/definitions/flag
++
++          usb-role-switch:
++            description: |
++              A boolean property whole presence indicates that the port
++              supports OTG or peripheral mode. If present, the port
++              supports switching between USB host and peripheral roles.
++              A connector must be added as a subnode in that case.
++
++              See ../connector/usb-connector.yaml.
++
++          vbus-supply:
++            description: A phandle to the regulator supplying the VBUS
++              voltage.
++
++      usb2-1:
++        type: object
++        additionalProperties: false
++        properties:
++          # no need to further describe this because the connector will
++          # match on gpio-usb-b-connector or usb-b-connector and cause
++          # that binding to be selected for the subnode
++          connector:
++            type: object
++
++          mode:
++            description: A string that determines the mode in which to
++              run the port.
++            $ref: /schemas/types.yaml#/definitions/string
++            enum: [ host, peripheral, otg ]
++
++          nvidia,internal:
++            description: A boolean property whose presence determines
++              that a port is internal. In the absence of this property
++              the port is considered to be external.
++            $ref: /schemas/types.yaml#/definitions/flag
++
++          usb-role-switch:
++            description: |
++              A boolean property whole presence indicates that the port
++              supports OTG or peripheral mode. If present, the port
++              supports switching between USB host and peripheral roles.
++              A connector must be added as a subnode in that case.
++
++              See ../connector/usb-connector.yaml.
++
++          vbus-supply:
++            description: A phandle to the regulator supplying the VBUS
++              voltage.
++
++      usb2-2:
++        type: object
++        additionalProperties: false
++        properties:
++          # no need to further describe this because the connector will
++          # match on gpio-usb-b-connector or usb-b-connector and cause
++          # that binding to be selected for the subnode
++          connector:
++            type: object
++
++          mode:
++            description: A string that determines the mode in which to
++              run the port.
++            $ref: /schemas/types.yaml#/definitions/string
++            enum: [ host, peripheral, otg ]
++
++          nvidia,internal:
++            description: A boolean property whose presence determines
++              that a port is internal. In the absence of this property
++              the port is considered to be external.
++            $ref: /schemas/types.yaml#/definitions/flag
++
++          usb-role-switch:
++            description: |
++              A boolean property whole presence indicates that the port
++              supports OTG or peripheral mode. If present, the port
++              supports switching between USB host and peripheral roles.
++              A connector must be added as a subnode in that case.
++
++              See ../connector/usb-connector.yaml.
++
++          vbus-supply:
++            description: A phandle to the regulator supplying the VBUS
++              voltage.
++
++      ulpi-0:
++        type: object
++        additionalProperties: false
++        properties:
++          nvidia,internal:
++            description: A boolean property whose presence determines
++              that a port is internal. In the absence of this property
++              the port is considered to be external.
++            $ref: /schemas/types.yaml#/definitions/flag
++
++          vbus-supply:
++            description: A phandle to the regulator supplying the VBUS
++              voltage.
++
++      hsic-0:
++        type: object
++        additionalProperties: false
++        properties:
++          vbus-supply:
++            description: A phandle to the regulator supplying the VBUS
++              voltage.
++
++      hsic-1:
++        type: object
++        additionalProperties: false
++        properties:
++          vbus-supply:
++            description: A phandle to the regulator supplying the VBUS
++              voltage.
++
++      usb3-0:
++        type: object
++        additionalProperties: false
++        properties:
++          nvidia,internal:
++            description: A boolean property whose presence determines
++              that a port is internal. In the absence of this property
++              the port is considered to be external.
++            $ref: /schemas/types.yaml#/definitions/flag
++
++          nvidia,usb2-companion:
++            description: A single cell that specifies the physical port
++              number to map this super-speed USB port to. The range of
++              valid port numbers varies with the SoC generation.
++            $ref: /schemas/types.yaml#/definitions/uint32
++            enum: [ 0, 1, 2 ]
++
++          vbus-supply:
++            description: A phandle to the regulator supplying the VBUS
++              voltage.
++
++      usb3-1:
++        type: object
++        additionalProperties: false
++        properties:
++          nvidia,internal:
++            description: A boolean property whose presence determines
++              that a port is internal. In the absence of this property
++              the port is considered to be external.
++            $ref: /schemas/types.yaml#/definitions/flag
++
++          nvidia,usb2-companion:
++            description: A single cell that specifies the physical port
++              number to map this super-speed USB port to. The range of
++              valid port numbers varies with the SoC generation.
++            $ref: /schemas/types.yaml#/definitions/uint32
++            enum: [ 0, 1, 2 ]
++
++          vbus-supply:
++            description: A phandle to the regulator supplying the VBUS
++              voltage.
++
++additionalProperties: false
++
++required:
++  - compatible
++  - reg
++  - resets
++  - reset-names
++  - avdd-pll-utmip-supply
++  - avdd-pll-erefe-supply
++  - avdd-pex-pll-supply
++  - hvdd-pex-pll-e-supply
++
++examples:
++  # Tegra124 and Tegra132
++  - |
++    #include <dt-bindings/interrupt-controller/arm-gic.h>
++
++    padctl@7009f000 {
++        compatible = "nvidia,tegra124-xusb-padctl";
++        reg = <0x7009f000 0x1000>;
++        interrupts = <GIC_SPI 20 IRQ_TYPE_LEVEL_HIGH>;
++        resets = <&tegra_car 142>;
++        reset-names = "padctl";
++
++        avdd-pll-utmip-supply = <&vddio_1v8>;
++        avdd-pll-erefe-supply = <&avdd_1v05_run>;
++        avdd-pex-pll-supply = <&vdd_1v05_run>;
++        hvdd-pex-pll-e-supply = <&vdd_3v3_lp0>;
++
++        pads {
++            usb2 {
++                lanes {
++                    usb2-0 {
++                        nvidia,function = "xusb";
++                        #phy-cells = <0>;
++                    };
++
++                    usb2-1 {
++                        nvidia,function = "xusb";
++                        #phy-cells = <0>;
++                    };
++
++                    usb2-2 {
++                        nvidia,function = "xusb";
++                        #phy-cells = <0>;
++                    };
++                };
++            };
++
++            ulpi {
++                lanes {
++                    ulpi-0 {
++                        status = "disabled";
++                        #phy-cells = <0>;
++                    };
++                };
++            };
++
++            hsic {
++                lanes {
++                    hsic-0 {
++                        status = "disabled";
++                        #phy-cells = <0>;
++                    };
++
++                    hsic-1 {
++                        status = "disabled";
++                        #phy-cells = <0>;
++                    };
++                };
++            };
++
++            pcie {
++                lanes {
++                    pcie-0 {
++                        nvidia,function = "usb3-ss";
++                        #phy-cells = <0>;
++                    };
++
++                    pcie-1 {
++                        status = "disabled";
++                        #phy-cells = <0>;
++                    };
++
++                    pcie-2 {
++                        nvidia,function = "pcie";
++                        #phy-cells = <0>;
++                    };
++
++                    pcie-3 {
++                        status = "disabled";
++                        #phy-cells = <0>;
++                    };
++
++                    pcie-4 {
++                        nvidia,function = "pcie";
++                        #phy-cells = <0>;
++                    };
++                };
++            };
++
++            sata {
++                lanes {
++                    sata-0 {
++                        nvidia,function = "sata";
++                        #phy-cells = <0>;
++                    };
++                };
++            };
++        };
++
++        ports {
++            /* Micro A/B */
++            usb2-0 {
++                mode = "otg";
++            };
++
++            /* Mini PCIe */
++            usb2-1 {
++                mode = "host";
++            };
++
++            /* USB3 */
++            usb2-2 {
++                vbus-supply = <&vdd_usb3_vbus>;
++                mode = "host";
++            };
++
++            ulpi-0 {
++                status = "disabled";
++            };
++
++            hsic-0 {
++                status = "disabled";
++            };
++
++            hsic-1 {
++                status = "disabled";
++            };
++
++            usb3-0 {
++                nvidia,usb2-companion = <2>;
++            };
++
++            usb3-1 {
++                status = "disabled";
++            };
++        };
++    };
+diff --git a/Documentation/devicetree/bindings/phy/nvidia,tegra186-xusb-padctl.yaml b/Documentation/devicetree/bindings/phy/nvidia,tegra186-xusb-padctl.yaml
+new file mode 100644
+index 000000000000..8b1d5a8529e3
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/nvidia,tegra186-xusb-padctl.yaml
+@@ -0,0 +1,544 @@
++# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/nvidia,tegra186-xusb-padctl.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: NVIDIA Tegra186 XUSB pad controller
++
++maintainers:
++  - Thierry Reding <thierry.reding@gmail.com>
++  - Jon Hunter <jonathanh@nvidia.com>
++
++description: |
++  The Tegra XUSB pad controller manages a set of I/O lanes (with differential
++  signals) which connect directly to pins/pads on the SoC package. Each lane
++  is controlled by a HW block referred to as a "pad" in the Tegra hardware
++  documentation. Each such "pad" may control either one or multiple lanes,
++  and thus contains any logic common to all its lanes. Each lane can be
++  separately configured and powered up.
++
++  Some of the lanes are high-speed lanes, which can be used for PCIe, SATA or
++  super-speed USB. Other lanes are for various types of low-speed, full-speed
++  or high-speed USB (such as UTMI, ULPI and HSIC). The XUSB pad controller
++  contains a software-configurable mux that sits between the I/O controller
++  ports (e.g. PCIe) and the lanes.
++
++  In addition to per-lane configuration, USB 3.0 ports may require additional
++  settings on a per-board basis.
++
++  Pads will be represented as children of the top-level XUSB pad controller
++  device tree node. Each lane exposed by the pad will be represented by its
++  own subnode and can be referenced by users of the lane using the standard
++  PHY bindings, as described by the phy-bindings.txt file in this directory.
++
++  The Tegra hardware documentation refers to the connection between the XUSB
++  pad controller and the XUSB controller as "ports". This is confusing since
++  "port" is typically used to denote the physical USB receptacle. The device
++  tree binding in this document uses the term "port" to refer to the logical
++  abstraction of the signals that are routed to a USB receptacle (i.e. a PHY
++  for the USB signal, the VBUS power supply, the USB 2.0 companion port for
++  USB 3.0 receptacles, ...).
++
++properties:
++  compatible:
++    const: nvidia,tegra186-xusb-padctl
++
++  reg:
++    items:
++      - description: pad controller registers
++      - description: AO registers
++
++  interrupts:
++    items:
++      - description: XUSB pad controller interrupt
++
++  reg-names:
++    items:
++      - const: padctl
++      - const: ao
++
++  resets:
++    items:
++      - description: pad controller reset
++
++  reset-names:
++    items:
++      - const: padctl
++
++  avdd-pll-erefeut-supply:
++    description: UPHY brick and reference clock as well as UTMI PHY
++      power supply. Must supply 1.8 V.
++
++  avdd-usb-supply:
++    description: USB I/Os, VBUS, ID, REXT, D+/D- power supply. Must
++      supply 3.3 V.
++
++  vclamp-usb-supply:
++    description: Bias rail for USB pad. Must supply 1.8 V.
++
++  vddio-hsic-supply:
++    description: HSIC PHY power supply. Must supply 1.2 V.
++
++  pads:
++    description: A required child node named "pads" contains a list of
++      subnodes, one for each of the pads exposed by the XUSB pad controller.
++      Each pad may need additional resources that can be referenced in its
++      pad node.
++
++      The "status" property is used to enable or disable the use of a pad.
++      If set to "disabled", the pad will not be used on the given board. In
++      order to use the pad and any of its lanes, this property must be set
++      to "okay" or be absent.
++    type: object
++    additionalProperties: false
++    properties:
++      usb2:
++        type: object
++        additionalProperties: false
++        properties:
++          clocks:
++            items:
++              - description: USB2 tracking clock
++
++          clock-names:
++            items:
++              - const: trk
++
++          lanes:
++            type: object
++            additionalProperties: false
++            properties:
++              usb2-0:
++                type: object
++                additionalProperties: false
++                properties:
++                  "#phy-cells":
++                    const: 0
++
++                  nvidia,function:
++                    description: Function selection for this lane.
++                    $ref: /schemas/types.yaml#/definitions/string
++                    enum: [ xusb ]
++
++              usb2-1:
++                type: object
++                additionalProperties: false
++                properties:
++                  "#phy-cells":
++                    const: 0
++
++                  nvidia,function:
++                    description: Function selection for this lane.
++                    $ref: /schemas/types.yaml#/definitions/string
++                    enum: [ xusb ]
++
++              usb2-2:
++                type: object
++                additionalProperties: false
++                properties:
++                  "#phy-cells":
++                    const: 0
++
++                  nvidia,function:
++                    description: Function selection for this lane.
++                    $ref: /schemas/types.yaml#/definitions/string
++                    enum: [ xusb ]
++
++      hsic:
++        type: object
++        additionalProperties: false
++        properties:
++          clocks:
++            items:
++              - description: HSIC tracking clock
++
++          clock-names:
++            items:
++              - const: trk
++
++          lanes:
++            type: object
++            additionalProperties: false
++            properties:
++              hsic-0:
++                type: object
++                additionalProperties: false
++                properties:
++                  "#phy-cells":
++                    const: 0
++
++                  nvidia,function:
++                    description: Function selection for this lane.
++                    $ref: /schemas/types.yaml#/definitions/string
++                    enum: [ xusb ]
++
++      usb3:
++        type: object
++        additionalProperties: false
++        properties:
++          lanes:
++            type: object
++            additionalProperties: false
++            properties:
++              usb3-0:
++                type: object
++                additionalProperties: false
++                properties:
++                  "#phy-cells":
++                    const: 0
++
++                  nvidia,function:
++                    description: Function selection for this lane.
++                    $ref: /schemas/types.yaml#/definitions/string
++                    enum: [ xusb ]
++
++              usb3-1:
++                type: object
++                additionalProperties: false
++                properties:
++                  "#phy-cells":
++                    const: 0
++
++                  nvidia,function:
++                    description: Function selection for this lane.
++                    $ref: /schemas/types.yaml#/definitions/string
++                    enum: [ xusb ]
++
++              usb3-2:
++                type: object
++                additionalProperties: false
++                properties:
++                  "#phy-cells":
++                    const: 0
++
++                  nvidia,function:
++                    description: Function selection for this lane.
++                    $ref: /schemas/types.yaml#/definitions/string
++                    enum: [ xusb ]
++
++  ports:
++    description: A required child node named "ports" contains a list of
++      subnodes, one for each of the ports exposed by the XUSB pad controller.
++      Each port may need additional resources that can be referenced in its
++      port node.
++
++      The "status" property is used to enable or disable the use of a port.
++      If set to "disabled", the port will not be used on the given board. In
++      order to use the port, this property must be set to "okay".
++    type: object
++    additionalProperties: false
++    properties:
++      usb2-0:
++        type: object
++        additionalProperties: false
++        properties:
++          # no need to further describe this because the connector will
++          # match on gpio-usb-b-connector or usb-b-connector and cause
++          # that binding to be selected for the subnode
++          connector:
++            type: object
++
++          mode:
++            description: A string that determines the mode in which to
++              run the port.
++            $ref: /schemas/types.yaml#/definitions/string
++            enum: [ host, peripheral, otg ]
++
++          nvidia,internal:
++            description: A boolean property whose presence determines
++              that a port is internal. In the absence of this property
++              the port is considered to be external.
++            $ref: /schemas/types.yaml#/definitions/flag
++
++          usb-role-switch:
++            description: |
++              A boolean property whole presence indicates that the port
++              supports OTG or peripheral mode. If present, the port
++              supports switching between USB host and peripheral roles.
++              A connector must be added as a subnode in that case.
++
++              See ../connector/usb-connector.yaml.
++
++          vbus-supply:
++            description: A phandle to the regulator supplying the VBUS
++              voltage.
++
++        dependencies:
++          usb-role-switch: [ connector ]
++
++      usb2-1:
++        type: object
++        additionalProperties: false
++        properties:
++          # no need to further describe this because the connector will
++          # match on gpio-usb-b-connector or usb-b-connector and cause
++          # that binding to be selected for the subnode
++          connector:
++            type: object
++
++          mode:
++            description: A string that determines the mode in which to
++              run the port.
++            $ref: /schemas/types.yaml#/definitions/string
++            enum: [ host, peripheral, otg ]
++
++          nvidia,internal:
++            description: A boolean property whose presence determines
++              that a port is internal. In the absence of this property
++              the port is considered to be external.
++            $ref: /schemas/types.yaml#/definitions/flag
++
++          usb-role-switch:
++            description: |
++              A boolean property whole presence indicates that the port
++              supports OTG or peripheral mode. If present, the port
++              supports switching between USB host and peripheral roles.
++              A connector must be added as a subnode in that case.
++
++              See ../connector/usb-connector.yaml.
++
++          vbus-supply:
++            description: A phandle to the regulator supplying the VBUS
++              voltage.
++
++        dependencies:
++          usb-role-switch: [ connector ]
++
++      usb2-2:
++        type: object
++        additionalProperties: false
++        properties:
++          # no need to further describe this because the connector will
++          # match on gpio-usb-b-connector or usb-b-connector and cause
++          # that binding to be selected for the subnode
++          connector:
++            type: object
++
++          mode:
++            description: A string that determines the mode in which to
++              run the port.
++            $ref: /schemas/types.yaml#/definitions/string
++            enum: [ host, peripheral, otg ]
++
++          nvidia,internal:
++            description: A boolean property whose presence determines
++              that a port is internal. In the absence of this property
++              the port is considered to be external.
++            $ref: /schemas/types.yaml#/definitions/flag
++
++          usb-role-switch:
++            description: |
++              A boolean property whole presence indicates that the port
++              supports OTG or peripheral mode. If present, the port
++              supports switching between USB host and peripheral roles.
++              A connector must be added as a subnode in that case.
++
++              See ../connector/usb-connector.yaml.
++
++          vbus-supply:
++            description: A phandle to the regulator supplying the VBUS
++              voltage.
++
++        dependencies:
++          usb-role-switch: [ connector ]
++
++      hsic-0:
++        type: object
++        additionalProperties: false
++
++      usb3-0:
++        type: object
++        additionalProperties: false
++        properties:
++          nvidia,internal:
++            description: A boolean property whose presence determines
++              that a port is internal. In the absence of this property
++              the port is considered to be external.
++            $ref: /schemas/types.yaml#/definitions/flag
++
++          nvidia,usb2-companion:
++            description: A single cell that specifies the physical port
++              number to map this super-speed USB port to. The range of
++              valid port numbers varies with the SoC generation.
++            $ref: /schemas/types.yaml#/definitions/uint32
++            enum: [ 0, 1, 2, 3 ]
++
++          vbus-supply:
++            description: A phandle to the regulator supplying the VBUS
++              voltage.
++
++      usb3-1:
++        type: object
++        additionalProperties: false
++        properties:
++          nvidia,internal:
++            description: A boolean property whose presence determines
++              that a port is internal. In the absence of this property
++              the port is considered to be external.
++            $ref: /schemas/types.yaml#/definitions/flag
++
++          nvidia,usb2-companion:
++            description: A single cell that specifies the physical port
++              number to map this super-speed USB port to. The range of
++              valid port numbers varies with the SoC generation.
++            $ref: /schemas/types.yaml#/definitions/uint32
++            enum: [ 0, 1, 2, 3 ]
++
++          vbus-supply:
++            description: A phandle to the regulator supplying the VBUS
++              voltage.
++
++      usb3-2:
++        type: object
++        additionalProperties: false
++        properties:
++          nvidia,internal:
++            description: A boolean property whose presence determines
++              that a port is internal. In the absence of this property
++              the port is considered to be external.
++            $ref: /schemas/types.yaml#/definitions/flag
++
++          nvidia,usb2-companion:
++            description: A single cell that specifies the physical port
++              number to map this super-speed USB port to. The range of
++              valid port numbers varies with the SoC generation.
++            $ref: /schemas/types.yaml#/definitions/uint32
++            enum: [ 0, 1, 2, 3 ]
++
++          vbus-supply:
++            description: A phandle to the regulator supplying the VBUS
++              voltage.
++
++additionalProperties: false
++
++required:
++  - compatible
++  - reg
++  - resets
++  - reset-names
++  - avdd-pll-erefeut-supply
++  - avdd-usb-supply
++  - vclamp-usb-supply
++  - vddio-hsic-supply
++
++examples:
++  - |
++    #include <dt-bindings/clock/tegra186-clock.h>
++    #include <dt-bindings/gpio/tegra186-gpio.h>
++    #include <dt-bindings/interrupt-controller/arm-gic.h>
++    #include <dt-bindings/reset/tegra186-reset.h>
++
++    padctl@3520000 {
++        compatible = "nvidia,tegra186-xusb-padctl";
++        reg = <0x03520000 0x1000>,
++              <0x03540000 0x1000>;
++        reg-names = "padctl", "ao";
++        interrupts = <GIC_SPI 167 IRQ_TYPE_LEVEL_HIGH>;
++
++        resets = <&bpmp TEGRA186_RESET_XUSB_PADCTL>;
++        reset-names = "padctl";
++
++        avdd-pll-erefeut-supply = <&vdd_1v8_pll>;
++        avdd-usb-supply = <&vdd_3v3_sys>;
++        vclamp-usb-supply = <&vdd_1v8>;
++        vddio-hsic-supply = <&gnd>;
++
++        pads {
++            usb2 {
++                clocks = <&bpmp TEGRA186_CLK_USB2_TRK>;
++                clock-names = "trk";
++
++                lanes {
++                    usb2-0 {
++                        nvidia,function = "xusb";
++                        #phy-cells = <0>;
++                    };
++
++                    usb2-1 {
++                        nvidia,function = "xusb";
++                        #phy-cells = <0>;
++                    };
++
++                    usb2-2 {
++                        nvidia,function = "xusb";
++                        #phy-cells = <0>;
++                    };
++                };
++            };
++
++            hsic {
++                clocks = <&bpmp TEGRA186_CLK_HSIC_TRK>;
++                clock-names = "trk";
++                status = "disabled";
++
++                lanes {
++                    hsic-0 {
++                        status = "disabled";
++                        #phy-cells = <0>;
++                    };
++                };
++            };
++
++            usb3 {
++                lanes {
++                    usb3-0 {
++                        nvidia,function = "xusb";
++                        #phy-cells = <0>;
++                    };
++
++                    usb3-1 {
++                        nvidia,function = "xusb";
++                        #phy-cells = <0>;
++                    };
++
++                    usb3-2 {
++                        nvidia,function = "xusb";
++                        #phy-cells = <0>;
++                    };
++                };
++            };
++        };
++
++        ports {
++            usb2-0 {
++                mode = "otg";
++                vbus-supply = <&vdd_usb0>;
++                usb-role-switch;
++
++                connector {
++                    compatible = "gpio-usb-b-connector",
++                                 "usb-b-connector";
++                    label = "micro-USB";
++                    type = "micro";
++                    vbus-gpios = <&gpio TEGRA186_MAIN_GPIO(X, 7) GPIO_ACTIVE_LOW>;
++                    id-gpios = <&pmic 0 GPIO_ACTIVE_HIGH>;
++                };
++            };
++
++            usb2-1 {
++                vbus-supply = <&vdd_usb1>;
++                mode = "host";
++            };
++
++            usb2-2 {
++                status = "disabled";
++            };
++
++            hsic-0 {
++                status = "disabled";
++            };
++
++            usb3-0 {
++                nvidia,usb2-companion = <1>;
++            };
++
++            usb3-1 {
++                status = "disabled";
++            };
++
++            usb3-2 {
++                status = "disabled";
++            };
++        };
++    };
+diff --git a/Documentation/devicetree/bindings/phy/nvidia,tegra194-xusb-padctl.yaml b/Documentation/devicetree/bindings/phy/nvidia,tegra194-xusb-padctl.yaml
+new file mode 100644
+index 000000000000..9d4eb7e6fbb7
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/nvidia,tegra194-xusb-padctl.yaml
+@@ -0,0 +1,630 @@
++# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/nvidia,tegra194-xusb-padctl.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: NVIDIA Tegra194 XUSB pad controller
++
++maintainers:
++  - Thierry Reding <thierry.reding@gmail.com>
++  - Jon Hunter <jonathanh@nvidia.com>
++
++description: |
++  The Tegra XUSB pad controller manages a set of I/O lanes (with differential
++  signals) which connect directly to pins/pads on the SoC package. Each lane
++  is controlled by a HW block referred to as a "pad" in the Tegra hardware
++  documentation. Each such "pad" may control either one or multiple lanes,
++  and thus contains any logic common to all its lanes. Each lane can be
++  separately configured and powered up.
++
++  Some of the lanes are high-speed lanes, which can be used for PCIe, SATA or
++  super-speed USB. Other lanes are for various types of low-speed, full-speed
++  or high-speed USB (such as UTMI, ULPI and HSIC). The XUSB pad controller
++  contains a software-configurable mux that sits between the I/O controller
++  ports (e.g. PCIe) and the lanes.
++
++  In addition to per-lane configuration, USB 3.0 ports may require additional
++  settings on a per-board basis.
++
++  Pads will be represented as children of the top-level XUSB pad controller
++  device tree node. Each lane exposed by the pad will be represented by its
++  own subnode and can be referenced by users of the lane using the standard
++  PHY bindings, as described by the phy-bindings.txt file in this directory.
++
++  The Tegra hardware documentation refers to the connection between the XUSB
++  pad controller and the XUSB controller as "ports". This is confusing since
++  "port" is typically used to denote the physical USB receptacle. The device
++  tree binding in this document uses the term "port" to refer to the logical
++  abstraction of the signals that are routed to a USB receptacle (i.e. a PHY
++  for the USB signal, the VBUS power supply, the USB 2.0 companion port for
++  USB 3.0 receptacles, ...).
++
++properties:
++  compatible:
++    const: nvidia,tegra194-xusb-padctl
++
++  reg:
++    items:
++      - description: pad controller registers
++      - description: AO registers
++
++  reg-names:
++    items:
++      - const: padctl
++      - const: ao
++
++  interrupts:
++    items:
++      - description: XUSB pad controller interrupt
++
++  resets:
++    items:
++      - description: pad controller reset
++
++  reset-names:
++    items:
++      - const: padctl
++
++  avdd-usb-supply:
++    description: USB I/Os, VBUS, ID, REXT, D+/D- power supply. Must
++      supply 3.3 V.
++
++  vclamp-usb-supply:
++    description: Bias rail for USB pad. Must supply 1.8 V.
++
++  pads:
++    description: A required child node named "pads" contains a list of
++      subnodes, one for each of the pads exposed by the XUSB pad controller.
++      Each pad may need additional resources that can be referenced in its
++      pad node.
++
++      The "status" property is used to enable or disable the use of a pad.
++      If set to "disabled", the pad will not be used on the given board. In
++      order to use the pad and any of its lanes, this property must be set
++      to "okay" or absent.
++    type: object
++    additionalProperties: false
++    properties:
++      usb2:
++        type: object
++        additionalProperties: false
++        properties:
++          clocks:
++            items:
++              - description: USB2 tracking clock
++
++          clock-names:
++            items:
++              - const: trk
++
++          lanes:
++            type: object
++            additionalProperties: false
++            properties:
++              usb2-0:
++                type: object
++                additionalProperties: false
++                properties:
++                  "#phy-cells":
++                    const: 0
++
++                  nvidia,function:
++                    description: Function selection for this lane.
++                    $ref: /schemas/types.yaml#/definitions/string
++                    enum: [ xusb ]
++
++              usb2-1:
++                type: object
++                additionalProperties: false
++                properties:
++                  "#phy-cells":
++                    const: 0
++
++                  nvidia,function:
++                    description: Function selection for this lane.
++                    $ref: /schemas/types.yaml#/definitions/string
++                    enum: [ xusb ]
++
++              usb2-2:
++                type: object
++                additionalProperties: false
++                properties:
++                  "#phy-cells":
++                    const: 0
++
++                  nvidia,function:
++                    description: Function selection for this lane.
++                    $ref: /schemas/types.yaml#/definitions/string
++                    enum: [ xusb ]
++
++              usb2-3:
++                type: object
++                additionalProperties: false
++                properties:
++                  "#phy-cells":
++                    const: 0
++
++                  nvidia,function:
++                    description: Function selection for this lane.
++                    $ref: /schemas/types.yaml#/definitions/string
++                    enum: [ xusb ]
++
++      usb3:
++        type: object
++        additionalProperties: false
++        properties:
++          lanes:
++            type: object
++            additionalProperties: false
++            properties:
++              usb3-0:
++                type: object
++                additionalProperties: false
++                properties:
++                  "#phy-cells":
++                    const: 0
++
++                  nvidia,function:
++                    description: Function selection for this lane.
++                    $ref: /schemas/types.yaml#/definitions/string
++                    enum: [ xusb ]
++
++              usb3-1:
++                type: object
++                additionalProperties: false
++                properties:
++                  "#phy-cells":
++                    const: 0
++
++                  nvidia,function:
++                    description: Function selection for this lane.
++                    $ref: /schemas/types.yaml#/definitions/string
++                    enum: [ xusb ]
++
++              usb3-2:
++                type: object
++                additionalProperties: false
++                properties:
++                  "#phy-cells":
++                    const: 0
++
++                  nvidia,function:
++                    description: Function selection for this lane.
++                    $ref: /schemas/types.yaml#/definitions/string
++                    enum: [ xusb ]
++
++              usb3-3:
++                type: object
++                additionalProperties: false
++                properties:
++                  "#phy-cells":
++                    const: 0
++
++                  nvidia,function:
++                    description: Function selection for this lane.
++                    $ref: /schemas/types.yaml#/definitions/string
++                    enum: [ xusb ]
++
++  ports:
++    description: A required child node named "ports" contains a list of
++      subnodes, one for each of the ports exposed by the XUSB pad controller.
++      Each port may need additional resources that can be referenced in its
++      port node.
++
++      The "status" property is used to enable or disable the use of a port.
++      If set to "disabled", the port will not be used on the given board. In
++      order to use the port, this property must be set to "okay".
++    type: object
++    additionalProperties: false
++    properties:
++      usb2-0:
++        type: object
++        additionalProperties: false
++        properties:
++          # no need to further describe this because the connector will
++          # match on gpio-usb-b-connector or usb-b-connector and cause
++          # that binding to be selected for the subnode
++          connector:
++            type: object
++
++          mode:
++            description: A string that determines the mode in which to
++              run the port.
++            $ref: /schemas/types.yaml#/definitions/string
++            enum: [ host, peripheral, otg ]
++
++          nvidia,internal:
++            description: A boolean property whose presence determines
++              that a port is internal. In the absence of this property
++              the port is considered to be external.
++            $ref: /schemas/types.yaml#/definitions/flag
++
++          usb-role-switch:
++            description: |
++              A boolean property whole presence indicates that the port
++              supports OTG or peripheral mode. If present, the port
++              supports switching between USB host and peripheral roles.
++              A connector must be added as a subnode in that case.
++
++              See ../connector/usb-connector.yaml.
++
++          vbus-supply:
++            description: A phandle to the regulator supplying the VBUS
++              voltage.
++
++        dependencies:
++          usb-role-switch: [ connector ]
++
++      usb2-1:
++        type: object
++        additionalProperties: false
++        properties:
++          # no need to further describe this because the connector will
++          # match on gpio-usb-b-connector or usb-b-connector and cause
++          # that binding to be selected for the subnode
++          connector:
++            type: object
++
++          mode:
++            description: A string that determines the mode in which to
++              run the port.
++            $ref: /schemas/types.yaml#/definitions/string
++            enum: [ host, peripheral, otg ]
++
++          nvidia,internal:
++            description: A boolean property whose presence determines
++              that a port is internal. In the absence of this property
++              the port is considered to be external.
++            $ref: /schemas/types.yaml#/definitions/flag
++
++          usb-role-switch:
++            description: |
++              A boolean property whole presence indicates that the port
++              supports OTG or peripheral mode. If present, the port
++              supports switching between USB host and peripheral roles.
++              A connector must be added as a subnode in that case.
++
++              See ../connector/usb-connector.yaml.
++
++          vbus-supply:
++            description: A phandle to the regulator supplying the VBUS
++              voltage.
++
++        dependencies:
++          usb-role-switch: [ connector ]
++
++      usb2-2:
++        type: object
++        additionalProperties: false
++        properties:
++          # no need to further describe this because the connector will
++          # match on gpio-usb-b-connector or usb-b-connector and cause
++          # that binding to be selected for the subnode
++          connector:
++            type: object
++
++          mode:
++            description: A string that determines the mode in which to
++              run the port.
++            $ref: /schemas/types.yaml#/definitions/string
++            enum: [ host, peripheral, otg ]
++
++          nvidia,internal:
++            description: A boolean property whose presence determines
++              that a port is internal. In the absence of this property
++              the port is considered to be external.
++            $ref: /schemas/types.yaml#/definitions/flag
++
++          usb-role-switch:
++            description: |
++              A boolean property whole presence indicates that the port
++              supports OTG or peripheral mode. If present, the port
++              supports switching between USB host and peripheral roles.
++              A connector must be added as a subnode in that case.
++
++              See ../connector/usb-connector.yaml.
++
++          vbus-supply:
++            description: A phandle to the regulator supplying the VBUS
++              voltage.
++
++        dependencies:
++          usb-role-switch: [ connector ]
++
++      usb2-3:
++        type: object
++        additionalProperties: false
++        properties:
++          # no need to further describe this because the connector will
++          # match on gpio-usb-b-connector or usb-b-connector and cause
++          # that binding to be selected for the subnode
++          connector:
++            type: object
++
++          mode:
++            description: A string that determines the mode in which to
++              run the port.
++            $ref: /schemas/types.yaml#/definitions/string
++            enum: [ host, peripheral, otg ]
++
++          nvidia,internal:
++            description: A boolean property whose presence determines
++              that a port is internal. In the absence of this property
++              the port is considered to be external.
++            $ref: /schemas/types.yaml#/definitions/flag
++
++          usb-role-switch:
++            description: |
++              A boolean property whole presence indicates that the port
++              supports OTG or peripheral mode. If present, the port
++              supports switching between USB host and peripheral roles.
++              A connector must be added as a subnode in that case.
++
++              See ../connector/usb-connector.yaml.
++
++          vbus-supply:
++            description: A phandle to the regulator supplying the VBUS
++              voltage.
++
++        dependencies:
++          usb-role-switch: [ connector ]
++
++      usb3-0:
++        type: object
++        additionalProperties: false
++        properties:
++          maximum-speed:
++            description: A string property that specifies the maximum
++              supported speed of a USB3 port.
++            $ref: /schemas/types.yaml#/definitions/string
++            oneOf:
++              - description: The USB3 port supports USB 3.1 Gen 2 speed.
++                  This is the default.
++                const: super-speed-plus
++              - description: The USB3 port supports USB 3.1 Gen 1 speed
++                  only.
++                const: super-speed
++
++          nvidia,internal:
++            description: A boolean property whose presence determines
++              that a port is internal. In the absence of this property
++              the port is considered to be external.
++            $ref: /schemas/types.yaml#/definitions/flag
++
++          nvidia,usb2-companion:
++            description: A single cell that specifies the physical port
++              number to map this super-speed USB port to. The range of
++              valid port numbers varies with the SoC generation.
++            $ref: /schemas/types.yaml#/definitions/uint32
++            enum: [ 0, 1, 2, 3 ]
++
++          vbus-supply:
++            description: A phandle to the regulator supplying the VBUS
++              voltage.
++
++      usb3-1:
++        type: object
++        additionalProperties: false
++        properties:
++          maximum-speed:
++            description: A string property that specifies the maximum
++              supported speed of a USB3 port.
++            $ref: /schemas/types.yaml#/definitions/string
++            oneOf:
++              - description: The USB3 port supports USB 3.1 Gen 2 speed.
++                  This is the default.
++                const: super-speed-plus
++              - description: The USB3 port supports USB 3.1 Gen 1 speed
++                  only.
++                const: super-speed
++
++          nvidia,internal:
++            description: A boolean property whose presence determines
++              that a port is internal. In the absence of this property
++              the port is considered to be external.
++            $ref: /schemas/types.yaml#/definitions/flag
++
++          nvidia,usb2-companion:
++            description: A single cell that specifies the physical port
++              number to map this super-speed USB port to. The range of
++              valid port numbers varies with the SoC generation.
++            $ref: /schemas/types.yaml#/definitions/uint32
++            enum: [ 0, 1, 2, 3 ]
++
++          vbus-supply:
++            description: A phandle to the regulator supplying the VBUS
++              voltage.
++
++      usb3-2:
++        type: object
++        additionalProperties: false
++        properties:
++          maximum-speed:
++            description: A string property that specifies the maximum
++              supported speed of a USB3 port.
++            $ref: /schemas/types.yaml#/definitions/string
++            oneOf:
++              - description: The USB3 port supports USB 3.1 Gen 2 speed.
++                  This is the default.
++                const: super-speed-plus
++              - description: The USB3 port supports USB 3.1 Gen 1 speed
++                  only.
++                const: super-speed
++
++          nvidia,internal:
++            description: A boolean property whose presence determines
++              that a port is internal. In the absence of this property
++              the port is considered to be external.
++            $ref: /schemas/types.yaml#/definitions/flag
++
++          nvidia,usb2-companion:
++            description: A single cell that specifies the physical port
++              number to map this super-speed USB port to. The range of
++              valid port numbers varies with the SoC generation.
++            $ref: /schemas/types.yaml#/definitions/uint32
++            enum: [ 0, 1, 2, 3 ]
++
++          vbus-supply:
++            description: A phandle to the regulator supplying the VBUS
++              voltage.
++
++      usb3-3:
++        type: object
++        additionalProperties: false
++        properties:
++          maximum-speed:
++            description: A string property that specifies the maximum
++              supported speed of a USB3 port.
++            $ref: /schemas/types.yaml#/definitions/string
++            oneOf:
++              - description: The USB3 port supports USB 3.1 Gen 2 speed.
++                  This is the default.
++                const: super-speed-plus
++              - description: The USB3 port supports USB 3.1 Gen 1 speed
++                  only.
++                const: super-speed
++
++          nvidia,internal:
++            description: A boolean property whose presence determines
++              that a port is internal. In the absence of this property
++              the port is considered to be external.
++            $ref: /schemas/types.yaml#/definitions/flag
++
++          nvidia,usb2-companion:
++            description: A single cell that specifies the physical port
++              number to map this super-speed USB port to. The range of
++              valid port numbers varies with the SoC generation.
++            $ref: /schemas/types.yaml#/definitions/uint32
++            enum: [ 0, 1, 2, 3 ]
++
++          vbus-supply:
++            description: A phandle to the regulator supplying the VBUS
++              voltage.
++
++additionalProperties: false
++
++required:
++  - compatible
++  - reg
++  - resets
++  - reset-names
++  - avdd-usb-supply
++  - vclamp-usb-supply
++
++examples:
++  - |
++    #include <dt-bindings/clock/tegra194-clock.h>
++    #include <dt-bindings/gpio/tegra194-gpio.h>
++    #include <dt-bindings/interrupt-controller/arm-gic.h>
++    #include <dt-bindings/reset/tegra194-reset.h>
++
++    padctl@3520000 {
++        compatible = "nvidia,tegra194-xusb-padctl";
++        reg = <0x03520000 0x1000>,
++              <0x03540000 0x1000>;
++        reg-names = "padctl", "ao";
++        interrupts = <GIC_SPI 167 IRQ_TYPE_LEVEL_HIGH>;
++
++        resets = <&bpmp TEGRA194_RESET_XUSB_PADCTL>;
++        reset-names = "padctl";
++
++        avdd-usb-supply = <&vdd_usb_3v3>;
++        vclamp-usb-supply = <&vdd_1v8ao>;
++
++        pads {
++            usb2 {
++                clocks = <&bpmp TEGRA194_CLK_USB2_TRK>;
++                clock-names = "trk";
++
++                lanes {
++                    usb2-0 {
++                        nvidia,function = "xusb";
++                        status = "disabled";
++                        #phy-cells = <0>;
++                    };
++
++                    usb2-1 {
++                        nvidia,function = "xusb";
++                        #phy-cells = <0>;
++                    };
++
++                    usb2-2 {
++                        nvidia,function = "xusb";
++                        status = "disabled";
++                        #phy-cells = <0>;
++                    };
++
++                    usb2-3 {
++                        nvidia,function = "xusb";
++                        #phy-cells = <0>;
++                    };
++                };
++            };
++
++            usb3 {
++                lanes {
++                    usb3-0 {
++                        nvidia,function = "xusb";
++                        #phy-cells = <0>;
++                    };
++
++                    usb3-1 {
++                        nvidia,function = "xusb";
++                        status = "disabled";
++                        #phy-cells = <0>;
++                    };
++
++                    usb3-2 {
++                        nvidia,function = "xusb";
++                        status = "disabled";
++                        #phy-cells = <0>;
++                    };
++
++                    usb3-3 {
++                        nvidia,function = "xusb";
++                        #phy-cells = <0>;
++                    };
++                };
++            };
++        };
++
++        ports {
++            usb2-0 {
++                status = "disabled";
++            };
++
++            usb2-1 {
++                vbus-supply = <&vdd_5v0_sys>;
++                mode = "host";
++            };
++
++            usb2-2 {
++                status = "disabled";
++            };
++
++            usb2-3 {
++                vbus-supply = <&vdd_5v_sata>;
++                mode = "host";
++            };
++
++            usb3-0 {
++                vbus-supply = <&vdd_5v0_sys>;
++                nvidia,usb2-companion = <1>;
++            };
++
++            usb3-1 {
++                status = "disabled";
++            };
++
++            usb3-2 {
++                status = "disabled";
++            };
++
++            usb3-3 {
++                maximum-speed = "super-speed";
++                vbus-supply = <&vdd_5v0_sys>;
++                nvidia,usb2-companion = <3>;
++            };
++        };
++    };
+diff --git a/Documentation/devicetree/bindings/phy/nvidia,tegra210-xusb-padctl.yaml b/Documentation/devicetree/bindings/phy/nvidia,tegra210-xusb-padctl.yaml
+new file mode 100644
+index 000000000000..d16bd6e47f90
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/nvidia,tegra210-xusb-padctl.yaml
+@@ -0,0 +1,786 @@
++# SPDX-License-Identifier: GPL-2.0-only or BSD-2-Clause
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/nvidia,tegra210-xusb-padctl.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: NVIDIA Tegra210 XUSB pad controller
++
++maintainers:
++  - Thierry Reding <thierry.reding@gmail.com>
++  - Jon Hunter <jonathanh@nvidia.com>
++
++description: |
++  The Tegra XUSB pad controller manages a set of I/O lanes (with differential
++  signals) which connect directly to pins/pads on the SoC package. Each lane
++  is controlled by a HW block referred to as a "pad" in the Tegra hardware
++  documentation. Each such "pad" may control either one or multiple lanes,
++  and thus contains any logic common to all its lanes. Each lane can be
++  separately configured and powered up.
++
++  Some of the lanes are high-speed lanes, which can be used for PCIe, SATA or
++  super-speed USB. Other lanes are for various types of low-speed, full-speed
++  or high-speed USB (such as UTMI, ULPI and HSIC). The XUSB pad controller
++  contains a software-configurable mux that sits between the I/O controller
++  ports (e.g. PCIe) and the lanes.
++
++  In addition to per-lane configuration, USB 3.0 ports may require additional
++  settings on a per-board basis.
++
++  Pads will be represented as children of the top-level XUSB pad controller
++  device tree node. Each lane exposed by the pad will be represented by its
++  own subnode and can be referenced by users of the lane using the standard
++  PHY bindings, as described by the phy-bindings.txt file in this directory.
++
++  The Tegra hardware documentation refers to the connection between the XUSB
++  pad controller and the XUSB controller as "ports". This is confusing since
++  "port" is typically used to denote the physical USB receptacle. The device
++  tree binding in this document uses the term "port" to refer to the logical
++  abstraction of the signals that are routed to a USB receptacle (i.e. a PHY
++  for the USB signal, the VBUS power supply, the USB 2.0 companion port for
++  USB 3.0 receptacles, ...).
++
++properties:
++  compatible:
++    const: nvidia,tegra210-xusb-padctl
++
++  reg:
++    maxItems: 1
++
++  resets:
++    items:
++      - description: pad controller reset
++
++  interrupts:
++    items:
++      - description: XUSB pad controller interrupt
++
++  reset-names:
++    items:
++      - const: padctl
++
++  avdd-pll-utmip-supply:
++    description: UTMI PLL power supply. Must supply 1.8 V.
++
++  avdd-pll-uerefe-supply:
++    description: PLLE reference PLL power supply. Must supply 1.05 V.
++
++  dvdd-pex-pll-supply:
++    description: PCIe/USB3 PLL power supply. Must supply 1.05 V.
++
++  hvdd-pex-pll-e-supply:
++    description: High-voltage PLLE power supply. Must supply 1.8 V.
++
++  nvidia,pmc:
++    description: phandle to the Tegra Power Management Controller (PMC) node
++    $ref: /schemas/types.yaml#/definitions/phandle
++
++  pads:
++    description: A required child node named "pads" contains a list of
++      subnodes, one for each of the pads exposed by the XUSB pad controller.
++      Each pad may need additional resources that can be referenced in its
++      pad node.
++
++      The "status" property is used to enable or disable the use of a pad.
++      If set to "disabled", the pad will not be used on the given board. In
++      order to use the pad and any of its lanes, this property must be set
++      to "okay" or be absent.
++    type: object
++    additionalProperties: false
++    properties:
++      usb2:
++        type: object
++        additionalProperties: false
++        properties:
++          clocks:
++            items:
++              - description: USB2 tracking clock
++
++          clock-names:
++            items:
++              - const: trk
++
++          lanes:
++            type: object
++            additionalProperties: false
++            properties:
++              usb2-0:
++                type: object
++                additionalProperties: false
++                properties:
++                  "#phy-cells":
++                    const: 0
++
++                  nvidia,function:
++                    description: Function selection for this lane.
++                    $ref: /schemas/types.yaml#/definitions/string
++                    enum: [ snps, xusb, uart ]
++
++              usb2-1:
++                type: object
++                additionalProperties: false
++                properties:
++                  "#phy-cells":
++                    const: 0
++
++                  nvidia,function:
++                    description: Function selection for this lane.
++                    $ref: /schemas/types.yaml#/definitions/string
++                    enum: [ snps, xusb, uart ]
++
++              usb2-2:
++                type: object
++                additionalProperties: false
++                properties:
++                  "#phy-cells":
++                    const: 0
++
++                  nvidia,function:
++                    description: Function selection for this lane.
++                    $ref: /schemas/types.yaml#/definitions/string
++                    enum: [ snps, xusb, uart ]
++
++              usb2-3:
++                type: object
++                additionalProperties: false
++                properties:
++                  "#phy-cells":
++                    const: 0
++
++                  nvidia,function:
++                    description: Function selection for this lane.
++                    $ref: /schemas/types.yaml#/definitions/string
++                    enum: [ snps, xusb, uart ]
++
++      hsic:
++        type: object
++        additionalProperties: false
++        properties:
++          clocks:
++            items:
++              - description: HSIC tracking clock
++
++          clock-names:
++            items:
++              - const: trk
++
++          lanes:
++            type: object
++            additionalProperties: false
++            properties:
++              hsic-0:
++                type: object
++                additionalProperties: false
++                properties:
++                  "#phy-cells":
++                    const: 0
++
++                  nvidia,function:
++                    description: Function selection for this lane.
++                    $ref: /schemas/types.yaml#/definitions/string
++                    enum: [ snps, xusb ]
++
++              hsic-1:
++                type: object
++                additionalProperties: false
++                properties:
++                  "#phy-cells":
++                    const: 0
++
++                  nvidia,function:
++                    description: Function selection for this lane.
++                    $ref: /schemas/types.yaml#/definitions/string
++                    enum: [ snps, xusb ]
++
++      pcie:
++        type: object
++        additionalProperties: false
++        properties:
++          clocks:
++            items:
++              - description: PCIe PLL clock source
++
++          clock-names:
++            items:
++              - const: pll
++
++          resets:
++            items:
++              - description: PCIe PHY reset
++
++          reset-names:
++            items:
++              - const: phy
++
++          lanes:
++            type: object
++            additionalProperties: false
++            properties:
++              pcie-0:
++                type: object
++                additionalProperties: false
++                properties:
++                  "#phy-cells":
++                    const: 0
++
++                  nvidia,function:
++                    description: Function selection for this lane.
++                    $ref: /schemas/types.yaml#/definitions/string
++                    enum: [ pcie-x1, usb3-ss, pcie-x4 ]
++
++              pcie-1:
++                type: object
++                additionalProperties: false
++                properties:
++                  "#phy-cells":
++                    const: 0
++
++                  nvidia,function:
++                    description: Function selection for this lane.
++                    $ref: /schemas/types.yaml#/definitions/string
++                    enum: [ pcie-x1, usb3-ss, pcie-x4 ]
++
++              pcie-2:
++                type: object
++                additionalProperties: false
++                properties:
++                  "#phy-cells":
++                    const: 0
++
++                  nvidia,function:
++                    description: Function selection for this lane.
++                    $ref: /schemas/types.yaml#/definitions/string
++                    enum: [ pcie-x1, usb3-ss, pcie-x4 ]
++
++              pcie-3:
++                type: object
++                additionalProperties: false
++                properties:
++                  "#phy-cells":
++                    const: 0
++
++                  nvidia,function:
++                    description: Function selection for this lane.
++                    $ref: /schemas/types.yaml#/definitions/string
++                    enum: [ pcie-x1, usb3-ss, pcie-x4 ]
++
++              pcie-4:
++                type: object
++                additionalProperties: false
++                properties:
++                  "#phy-cells":
++                    const: 0
++
++                  nvidia,function:
++                    description: Function selection for this lane.
++                    $ref: /schemas/types.yaml#/definitions/string
++                    enum: [ pcie-x1, usb3-ss, pcie-x4 ]
++
++              pcie-5:
++                type: object
++                additionalProperties: false
++                properties:
++                  "#phy-cells":
++                    const: 0
++
++                  nvidia,function:
++                    description: Function selection for this lane.
++                    $ref: /schemas/types.yaml#/definitions/string
++                    enum: [ pcie-x1, usb3-ss, pcie-x4 ]
++
++              pcie-6:
++                type: object
++                additionalProperties: false
++                properties:
++                  "#phy-cells":
++                    const: 0
++
++                  nvidia,function:
++                    description: Function selection for this lane.
++                    $ref: /schemas/types.yaml#/definitions/string
++                    enum: [ pcie-x1, usb3-ss, pcie-x4 ]
++
++      sata:
++        type: object
++        additionalProperties: false
++        properties:
++          clocks:
++            items:
++              - description: SATA PLL clock source
++
++          clock-names:
++            items:
++              - const: pll
++
++          resets:
++            items:
++              - description: SATA PHY reset
++
++          reset-names:
++            items:
++              - const: phy
++
++          lanes:
++            type: object
++            additionalProperties: false
++            properties:
++              sata-0:
++                type: object
++                additionalProperties: false
++                properties:
++                  "#phy-cells":
++                    const: 0
++
++                  nvidia,function:
++                    description: Function selection for this lane.
++                    $ref: /schemas/types.yaml#/definitions/string
++                    enum: [ usb3-ss, sata ]
++
++  ports:
++    description: A required child node named "ports" contains a list of
++      subnodes, one for each of the ports exposed by the XUSB pad controller.
++      Each port may need additional resources that can be referenced in its
++      port node.
++
++      The "status" property is used to enable or disable the use of a port.
++      If set to "disabled", the port will not be used on the given board. In
++      order to use the port, this property must be set to "okay".
++    type: object
++    additionalProperties: false
++    properties:
++      usb2-0:
++        type: object
++        additionalProperties: false
++        properties:
++          # no need to further describe this because the connector will
++          # match on gpio-usb-b-connector or usb-b-connector and cause
++          # that binding to be selected for the subnode
++          connector:
++            type: object
++
++          mode:
++            description: A string that determines the mode in which to
++              run the port.
++            $ref: /schemas/types.yaml#/definitions/string
++            enum: [ host, peripheral, otg ]
++
++          nvidia,internal:
++            description: A boolean property whose presence determines
++              that a port is internal. In the absence of this property
++              the port is considered to be external.
++            $ref: /schemas/types.yaml#/definitions/flag
++
++          usb-role-switch:
++            description: |
++              A boolean property whole presence indicates that the port
++              supports OTG or peripheral mode. If present, the port
++              supports switching between USB host and peripheral roles.
++              A connector must be added as a subnode in that case.
++
++              See ../connector/usb-connector.yaml.
++
++          vbus-supply:
++            description: A phandle to the regulator supplying the VBUS
++              voltage.
++
++        dependencies:
++          usb-role-switch: [ connector ]
++
++      usb2-1:
++        type: object
++        additionalProperties: false
++        properties:
++          # no need to further describe this because the connector will
++          # match on gpio-usb-b-connector or usb-b-connector and cause
++          # that binding to be selected for the subnode
++          connector:
++            type: object
++
++          mode:
++            description: A string that determines the mode in which to
++              run the port.
++            $ref: /schemas/types.yaml#/definitions/string
++            enum: [ host, peripheral, otg ]
++
++          nvidia,internal:
++            description: A boolean property whose presence determines
++              that a port is internal. In the absence of this property
++              the port is considered to be external.
++            $ref: /schemas/types.yaml#/definitions/flag
++
++          usb-role-switch:
++            description: |
++              A boolean property whole presence indicates that the port
++              supports OTG or peripheral mode. If present, the port
++              supports switching between USB host and peripheral roles.
++              A connector must be added as a subnode in that case.
++
++              See ../connector/usb-connector.yaml.
++
++          vbus-supply:
++            description: A phandle to the regulator supplying the VBUS
++              voltage.
++
++        dependencies:
++          usb-role-switch: [ connector ]
++
++      usb2-2:
++        type: object
++        additionalProperties: false
++        properties:
++          # no need to further describe this because the connector will
++          # match on gpio-usb-b-connector or usb-b-connector and cause
++          # that binding to be selected for the subnode
++          connector:
++            type: object
++
++          mode:
++            description: A string that determines the mode in which to
++              run the port.
++            $ref: /schemas/types.yaml#/definitions/string
++            enum: [ host, peripheral, otg ]
++
++          nvidia,internal:
++            description: A boolean property whose presence determines
++              that a port is internal. In the absence of this property
++              the port is considered to be external.
++            $ref: /schemas/types.yaml#/definitions/flag
++
++          usb-role-switch:
++            description: |
++              A boolean property whole presence indicates that the port
++              supports OTG or peripheral mode. If present, the port
++              supports switching between USB host and peripheral roles.
++              A connector must be added as a subnode in that case.
++
++              See ../connector/usb-connector.yaml.
++
++          vbus-supply:
++            description: A phandle to the regulator supplying the VBUS
++              voltage.
++
++        dependencies:
++          usb-role-switch: [ connector ]
++
++      usb2-3:
++        type: object
++        additionalProperties: false
++        properties:
++          # no need to further describe this because the connector will
++          # match on gpio-usb-b-connector or usb-b-connector and cause
++          # that binding to be selected for the subnode
++          connector:
++            type: object
++
++          mode:
++            description: A string that determines the mode in which to
++              run the port.
++            $ref: /schemas/types.yaml#/definitions/string
++            enum: [ host, peripheral, otg ]
++
++          nvidia,internal:
++            description: A boolean property whose presence determines
++              that a port is internal. In the absence of this property
++              the port is considered to be external.
++            $ref: /schemas/types.yaml#/definitions/flag
++
++          usb-role-switch:
++            description: |
++              A boolean property whole presence indicates that the port
++              supports OTG or peripheral mode. If present, the port
++              supports switching between USB host and peripheral roles.
++              A connector must be added as a subnode in that case.
++
++              See ../connector/usb-connector.yaml.
++
++          vbus-supply:
++            description: A phandle to the regulator supplying the VBUS
++              voltage.
++
++        dependencies:
++          usb-role-switch: [ connector ]
++
++      hsic-0:
++        type: object
++        additionalProperties: false
++        properties:
++          vbus-supply:
++            description: A phandle to the regulator supplying the VBUS
++              voltage.
++
++      hsic-1:
++        type: object
++        additionalProperties: false
++        properties:
++          vbus-supply:
++            description: A phandle to the regulator supplying the VBUS
++              voltage.
++
++      usb3-0:
++        type: object
++        additionalProperties: false
++        properties:
++          nvidia,internal:
++            description: A boolean property whose presence determines
++              that a port is internal. In the absence of this property
++              the port is considered to be external.
++            $ref: /schemas/types.yaml#/definitions/flag
++
++          nvidia,usb2-companion:
++            description: A single cell that specifies the physical port
++              number to map this super-speed USB port to. The range of
++              valid port numbers varies with the SoC generation.
++            $ref: /schemas/types.yaml#/definitions/uint32
++            enum: [ 0, 1, 2, 3 ]
++
++          vbus-supply:
++            description: A phandle to the regulator supplying the VBUS
++              voltage.
++
++      usb3-1:
++        type: object
++        additionalProperties: false
++        properties:
++          nvidia,internal:
++            description: A boolean property whose presence determines
++              that a port is internal. In the absence of this property
++              the port is considered to be external.
++            $ref: /schemas/types.yaml#/definitions/flag
++
++          nvidia,usb2-companion:
++            description: A single cell that specifies the physical port
++              number to map this super-speed USB port to. The range of
++              valid port numbers varies with the SoC generation.
++            $ref: /schemas/types.yaml#/definitions/uint32
++            enum: [ 0, 1, 2, 3 ]
++
++          vbus-supply:
++            description: A phandle to the regulator supplying the VBUS
++              voltage.
++
++      usb3-2:
++        type: object
++        additionalProperties: false
++        properties:
++          nvidia,internal:
++            description: A boolean property whose presence determines
++              that a port is internal. In the absence of this property
++              the port is considered to be external.
++            $ref: /schemas/types.yaml#/definitions/flag
++
++          nvidia,usb2-companion:
++            description: A single cell that specifies the physical port
++              number to map this super-speed USB port to. The range of
++              valid port numbers varies with the SoC generation.
++            $ref: /schemas/types.yaml#/definitions/uint32
++            enum: [ 0, 1, 2, 3 ]
++
++          vbus-supply:
++            description: A phandle to the regulator supplying the VBUS
++              voltage.
++
++      usb3-3:
++        type: object
++        additionalProperties: false
++        properties:
++          nvidia,internal:
++            description: A boolean property whose presence determines
++              that a port is internal. In the absence of this property
++              the port is considered to be external.
++            $ref: /schemas/types.yaml#/definitions/flag
++
++          nvidia,usb2-companion:
++            description: A single cell that specifies the physical port
++              number to map this super-speed USB port to. The range of
++              valid port numbers varies with the SoC generation.
++            $ref: /schemas/types.yaml#/definitions/uint32
++            enum: [ 0, 1, 2, 3 ]
++
++          vbus-supply:
++            description: A phandle to the regulator supplying the VBUS
++              voltage.
++
++additionalProperties: false
++
++required:
++  - avdd-pll-utmip-supply
++  - avdd-pll-uerefe-supply
++  - dvdd-pex-pll-supply
++  - hvdd-pex-pll-e-supply
++
++examples:
++  - |
++    #include <dt-bindings/clock/tegra210-car.h>
++    #include <dt-bindings/gpio/tegra-gpio.h>
++    #include <dt-bindings/interrupt-controller/arm-gic.h>
++
++    padctl@7009f000 {
++        compatible = "nvidia,tegra210-xusb-padctl";
++        reg = <0x7009f000 0x1000>;
++        interrupts = <GIC_SPI 49 IRQ_TYPE_LEVEL_HIGH>;
++        resets = <&tegra_car 142>;
++        reset-names = "padctl";
++
++        avdd-pll-utmip-supply = <&vdd_1v8>;
++        avdd-pll-uerefe-supply = <&vdd_pex_1v05>;
++        dvdd-pex-pll-supply = <&vdd_pex_1v05>;
++        hvdd-pex-pll-e-supply = <&vdd_1v8>;
++
++        pads {
++            usb2 {
++                clocks = <&tegra_car TEGRA210_CLK_USB2_TRK>;
++                clock-names = "trk";
++
++                lanes {
++                    usb2-0 {
++                        nvidia,function = "xusb";
++                        #phy-cells = <0>;
++                    };
++
++                    usb2-1 {
++                        nvidia,function = "xusb";
++                        #phy-cells = <0>;
++                    };
++
++                    usb2-2 {
++                        nvidia,function = "xusb";
++                        #phy-cells = <0>;
++                    };
++
++                    usb2-3 {
++                        nvidia,function = "xusb";
++                        #phy-cells = <0>;
++                    };
++                };
++            };
++
++            hsic {
++                clocks = <&tegra_car TEGRA210_CLK_HSIC_TRK>;
++                clock-names = "trk";
++                status = "disabled";
++
++                lanes {
++                    hsic-0 {
++                        status = "disabled";
++                        #phy-cells = <0>;
++                    };
++
++                    hsic-1 {
++                        status = "disabled";
++                        #phy-cells = <0>;
++                    };
++                };
++            };
++
++            pcie {
++                clocks = <&tegra_car TEGRA210_CLK_PLL_E>;
++                clock-names = "pll";
++                resets = <&tegra_car 205>;
++                reset-names = "phy";
++
++                lanes {
++                    pcie-0 {
++                        nvidia,function = "pcie-x1";
++                        #phy-cells = <0>;
++                    };
++
++                    pcie-1 {
++                        nvidia,function = "pcie-x4";
++                        #phy-cells = <0>;
++                    };
++
++                    pcie-2 {
++                        nvidia,function = "pcie-x4";
++                        #phy-cells = <0>;
++                    };
++
++                    pcie-3 {
++                        nvidia,function = "pcie-x4";
++                        #phy-cells = <0>;
++                    };
++
++                    pcie-4 {
++                        nvidia,function = "pcie-x4";
++                        #phy-cells = <0>;
++                    };
++
++                    pcie-5 {
++                        nvidia,function = "usb3-ss";
++                        #phy-cells = <0>;
++                    };
++
++                    pcie-6 {
++                        nvidia,function = "usb3-ss";
++                        #phy-cells = <0>;
++                    };
++                };
++            };
++
++            sata {
++                clocks = <&tegra_car TEGRA210_CLK_PLL_E>;
++                clock-names = "pll";
++                resets = <&tegra_car 204>;
++                reset-names = "phy";
++
++                lanes {
++                    sata-0 {
++                        nvidia,function = "sata";
++                        #phy-cells = <0>;
++                    };
++                };
++            };
++        };
++
++        ports {
++            usb2-0 {
++                mode = "peripheral";
++                usb-role-switch;
++
++                connector {
++                    compatible = "gpio-usb-b-connector",
++                                 "usb-b-connector";
++                    label = "micro-USB";
++                    type = "micro";
++                    vbus-gpios = <&gpio TEGRA_GPIO(CC, 4) GPIO_ACTIVE_LOW>;
++                };
++            };
++
++            usb2-1 {
++                vbus-supply = <&vdd_5v0_rtl>;
++                mode = "host";
++            };
++
++            usb2-2 {
++                vbus-supply = <&vdd_usb_vbus>;
++                mode = "host";
++            };
++
++            usb2-3 {
++                mode = "host";
++            };
++
++            hsic-0 {
++                status = "disabled";
++            };
++
++            hsic-1 {
++                status = "disabled";
++            };
++
++            usb3-0 {
++                nvidia,usb2-companion = <1>;
++            };
++
++            usb3-1 {
++                nvidia,usb2-companion = <2>;
++            };
++
++            usb3-2 {
++                status = "disabled";
++            };
++
++            usb3-3 {
++                status = "disabled";
++            };
++        };
++    };
 -- 
-Thanks,
-~Nick Desaulniers
+2.39.0
+
 
 -- 
 linux-phy mailing list
