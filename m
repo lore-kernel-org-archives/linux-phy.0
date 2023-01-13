@@ -4,63 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4CB9EC54EBE
-	for <linux-phy@archiver.kernel.org>; Fri, 13 Jan 2023 15:07:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 70E71C61DB3
+	for <linux-phy@archiver.kernel.org>; Fri, 13 Jan 2023 15:07:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hjrO387rPePB7BRdDKE/5/CD614a6FZmhr7Qh+783vg=; b=Vc2ubHkFWl+0aq
-	K20QKEn6GjqlD5nQKikl4OPBxeI2ffHJfqsyX+D7AH4EsyegGdi8zSalEjHGFKd9iPdmM2/bb38qe
-	3/TNAJEnAMB/kuGujJv9ge6HA3vO6PfAKbD8DvOf0ZhNsLspu/IT8LxcuZOiOjFEdrc5nnH8uwUfn
-	Mg6v6Lz7UG+tgj5O1eT8/Aztv8iKsZeyAc2rAANTTmVMtjhsN/ysZfCKKYDvGM/FjCr1GBhHF8nor
-	PYyDlsBHwWZeoj9cw1SrxvH/j+jQ/uapS7rfID0OBl5W0B8s8CUL+9P5dA2ZPRH+dthnwR/S0POhX
-	RbQljmmlWDluM857rR2w==;
+	List-Owner; bh=FP4Kk3Du1S+Zn/nuIU9aLp4z0wXlTjIydYpMYaUs77Y=; b=AvO9Sf5BsHtnag
+	AvoLYYukJ7klThglTN7POeyyNphmvBNRppxhP6Lua/sFBSisrApVnf8ZF7JY57SOn3LWNp5NH8IJQ
+	spWPcU7HhQzT/zXAm8g4yVnUTYiEb9bJv+WhWI2hk8DoGfif9XC8Hwy8C8kkkB+Pds+rkufqffnNn
+	FZmrYsLNzuNN0OuvNnCoAA5yb6pDxY07WHD6j4Wbc5LErmIrXzpnVIBjtGRRHqyqnmFKSRphciZKf
+	o+mOFifOEgG5wnPAklgEAbiot6rfv5mDP8yk3aCWzIqqpCpF+rGUDoEZ+F4BMH0N7en+Udcri0q1U
+	9KOSTQap3bebFLEQl06A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pGLeD-0036Ry-O5; Fri, 13 Jan 2023 15:07:13 +0000
+	id 1pGLeF-0036Sa-Sv; Fri, 13 Jan 2023 15:07:15 +0000
 Received: from egress-ip33b.ess.de.barracuda.com ([18.185.115.237])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pGLeA-0036Pq-RH
-	for linux-phy@lists.infradead.org; Fri, 13 Jan 2023 15:07:12 +0000
-Received: from mail-pj1-f71.google.com (mail-pj1-f71.google.com [209.85.216.71]) by mx-outbound23-220.eu-central-1b.ess.aws.cudaops.com (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO); Fri, 13 Jan 2023 15:07:06 +0000
-Received: by mail-pj1-f71.google.com with SMTP id x8-20020a17090a1f8800b0022153149290so10103211pja.5
-        for <linux-phy@lists.infradead.org>; Fri, 13 Jan 2023 07:07:06 -0800 (PST)
+	id 1pGLeC-0036Qz-T8
+	for linux-phy@lists.infradead.org; Fri, 13 Jan 2023 15:07:14 +0000
+Received: from mail-pg1-f198.google.com (mail-pg1-f198.google.com [209.85.215.198]) by mx-outbound23-220.eu-central-1b.ess.aws.cudaops.com (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO); Fri, 13 Jan 2023 15:07:10 +0000
+Received: by mail-pg1-f198.google.com with SMTP id f132-20020a636a8a000000b00473d0b600ebso9934698pgc.14
+        for <linux-phy@lists.infradead.org>; Fri, 13 Jan 2023 07:07:10 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=mistralsolutions.com; s=google;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=Z+NSHccOtsCvHIJa85NeQChFC1UztUbiKQ4lP4DgpYE=;
-        b=W9+BtAl08PRQpEb9/gbIViu7QsPYIAff+i6FpkK4mdaCYS6DY0+6/aufc6tFCweI2o
-         9P1DKxBQCY5CluMNnBoYx55P+Sa+okGBGBsDdaqJod/93s66g0BvXZHdH4HHkXIrIntF
-         ght67/8qciMtcCtM5OUjR7QDf0AOo+hbFd8Xk=
+        bh=HbRGp4p8llZk1W2l8huKtE8ynztaxnnEWZGQtpnZTOI=;
+        b=dGvYv+WYBC50wTVzwAJTgsk5pyoEsceJdZ5OMbvQDoXU4V7Hf4vLyvB7VAezKtAVvp
+         g72OaNcztylGRqgPXeq5Rn7UbFMWQnOq3uR8saS0VYfapBZhfCY1RTzU4c/AY69o8yi4
+         ryPIITSLRq+At6HIGHBXXp6MnvR12GITn5aro=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=Z+NSHccOtsCvHIJa85NeQChFC1UztUbiKQ4lP4DgpYE=;
-        b=eX6CrHCduRF1MywZ2tM78MjNvNYnKixWcR0Hf/OdaLf0XbroINWYP6eac8ctz9XIzV
-         NoTnGnuHhOeduyMbcO6qNwif5Hj8xwPsf4U37EHvxK0H8eToMXyyN1Amg9wKHUnl0voE
-         DxFe9I4xmaUxKOhuSDn0AGnKe6lWAsuyOPMgu8ghokBbCogUzD7RFSxaye+fQWha+JnQ
-         dyQnjl5Q/kgp7+ceb2ih4DBost05psn3gx8RsEXhDGGG8q1XWviBGKhaXxrwDlsyOEZE
-         Yh8NfFE3n23QPTPOK3IBPZcqUBRawV+gCf594haYJhWgmVb6VnAOWmoXnvhMjC7FcCYc
-         FgHQ==
-X-Gm-Message-State: AFqh2krGRTvGhN+msmTvNvxsNXEIbk1tnvMbCifHX5D2k00YBLxoGz9V
-	fTDpRoy5XlHxywJIORL2PKAUEzG0Zt7ZSTVBuf3XIrBhisPbvDTTzrKEUtE6oYYBNoP+mMeJzlm
-	WxA4m7IV2nWjFbSVzLxuLwYvsqzinG8i/6dNNq/FNUKyIojh/wN8dBLaYwwFy2Q==
-X-Received: by 2002:a17:903:2447:b0:191:1a7c:ef9f with SMTP id l7-20020a170903244700b001911a7cef9fmr114145357pls.1.1673622425259;
-        Fri, 13 Jan 2023 07:07:05 -0800 (PST)
-X-Google-Smtp-Source: AMrXdXusrPlnaK+wmzYGKRbXYOFMSqbu96oB8HP0e7TOKd6vguQ6K8ok85JPWB7jm/g9wf1EWy8T0A==
-X-Received: by 2002:a17:903:2447:b0:191:1a7c:ef9f with SMTP id l7-20020a170903244700b001911a7cef9fmr114145330pls.1.1673622424972;
-        Fri, 13 Jan 2023 07:07:04 -0800 (PST)
+        bh=HbRGp4p8llZk1W2l8huKtE8ynztaxnnEWZGQtpnZTOI=;
+        b=E3I8gtht5mzJ3LX766kqYmANT871Qopwu8aKFgOWnm4VCXxgqUmx4b/VCC5ozNxTgs
+         Hwp4HiJI3Pj8zSfYK+tzJf+BY/g7bSN9YqxXr9Ga3ksvumrV+p4B2ozGPCkr97cX5uqp
+         MuSx9UP4S7dkC2sr1kto4MqLVdNHIZQ0hb91V4K8vILb2EvgOmaeomlG2WpY8YEe5V8l
+         X9+1NRCXEiyNHoo7rimzWdxT7zj22Lck1wnE1C2pq8LKlJ/AZ85hNvgXaD3EBwlRLYw3
+         TUMx4yb/KMCW0QSKqbRteGmDF/TxujBxh/uILJbVWtkRK6LKPweQGpnZCUYGYlRJwj+U
+         B2Ww==
+X-Gm-Message-State: AFqh2kqQEiBuwoLVGliq0NeNLWqfGk1wtFLRif5LHHN7erj/+6Z8ZjrV
+	ni3NoUdr5wbqAIrJXmm/UJgOAla6Ggy32OJA9yxBENeqj5gVqoUarBXQLEN9c/H+9oZemnM50SH
+	XA0ciViGMbT9d7SLoQ2ay3ldj0nISUAYULkHbBGArVJSh9Xrn/m4Q3vnd5wVdig==
+X-Received: by 2002:a17:902:bb85:b0:189:8ca1:e641 with SMTP id m5-20020a170902bb8500b001898ca1e641mr80498987pls.60.1673622429056;
+        Fri, 13 Jan 2023 07:07:09 -0800 (PST)
+X-Google-Smtp-Source: AMrXdXscZmErgOwVL6tBvKuitY7Ib1z13zgRMu2ttD4v7LZfAmey7RhM9DZ9ozf9VslikARPV/ITGQ==
+X-Received: by 2002:a17:902:bb85:b0:189:8ca1:e641 with SMTP id m5-20020a170902bb8500b001898ca1e641mr80498971pls.60.1673622428746;
+        Fri, 13 Jan 2023 07:07:08 -0800 (PST)
 Received: from LAP568U.mistral.in ([106.51.227.150])
-        by smtp.gmail.com with ESMTPSA id v11-20020a170902f0cb00b00180033438a0sm14325723pla.106.2023.01.13.07.07.01
+        by smtp.gmail.com with ESMTPSA id v11-20020a170902f0cb00b00180033438a0sm14325723pla.106.2023.01.13.07.07.05
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 13 Jan 2023 07:07:04 -0800 (PST)
+        Fri, 13 Jan 2023 07:07:08 -0800 (PST)
 From: Sinthu Raja <sinthu.raja@mistralsolutions.com>
 X-Google-Original-From: Sinthu Raja <sinthu.raja@ti.com>
 To: Roger Quadros <rogerq@kernel.org>,
@@ -71,29 +71,29 @@ Cc: Vignesh Raghavendra <vigneshr@ti.com>,
 	linux-phy@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
 	Sinthu Raja <sinthu.raja@ti.com>
-Subject: [PATCH V4 1/2] phy: ti: j721e-wiz: Manage TypeC lane swap if typec-dir-gpios not specified
-Date: Fri, 13 Jan 2023 20:36:14 +0530
-Message-Id: <20230113150615.19375-2-sinthu.raja@ti.com>
+Subject: [PATCH V4 2/2] phy: ti: j721e-wiz: Add support to enable LN23 Type-C swap
+Date: Fri, 13 Jan 2023 20:36:15 +0530
+Message-Id: <20230113150615.19375-3-sinthu.raja@ti.com>
 X-Mailer: git-send-email 2.36.1
 In-Reply-To: <20230113150615.19375-1-sinthu.raja@ti.com>
 References: <20230113150615.19375-1-sinthu.raja@ti.com>
 MIME-Version: 1.0
-X-BESS-ID: 1673622425-306108-5562-20503-1
+X-BESS-ID: 1673622429-306108-5560-20416-1
 X-BESS-VER: 2019.1_20221214.2106
-X-BESS-Apparent-Source-IP: 209.85.216.71
+X-BESS-Apparent-Source-IP: 209.85.215.198
 X-BESS-Outbound-Spam-Score: 0.00
 X-BESS-Outbound-Spam-Report: Code version 3.2, rules version 3.2.2.245440 [from 
-	cloudscan14-215.eu-central-1a.ess.aws.cudaops.com]
+	cloudscan16-188.eu-central-1b.ess.aws.cudaops.com]
 	Rule breakdown below
 	 pts rule name              description
 	---- ---------------------- --------------------------------
-	0.00 BSF_BESS_OUTBOUND      META: BESS Outbound 
 	0.00 BSF_SC0_MISMATCH_TO    META: Envelope rcpt doesn't match header 
-X-BESS-Outbound-Spam-Status: SCORE=0.00 using account:ESS91090 scores of KILL_LEVEL=7.0 tests=BSF_BESS_OUTBOUND, BSF_SC0_MISMATCH_TO
+	0.00 BSF_BESS_OUTBOUND      META: BESS Outbound 
+X-BESS-Outbound-Spam-Status: SCORE=0.00 using account:ESS91090 scores of KILL_LEVEL=7.0 tests=BSF_SC0_MISMATCH_TO, BSF_BESS_OUTBOUND
 X-BESS-BRTS-Status: 1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230113_070711_051754_C2F93678 
-X-CRM114-Status: GOOD (  19.34  )
+X-CRM114-CacheID: sfid-20230113_070713_111376_9C583F13 
+X-CRM114-Status: GOOD (  19.27  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,111 +105,78 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Sinthu Raja <sinthu.raja@ti.com>
-
-It's possible that the Type-C plug orientation on the DIR line will be
-implemented through hardware design. In that situation, there won't be
-an external GPIO line available, but the driver still needs to address
-this since the DT won't use the typec-dir-gpios property.
-
-Add code to handle LN10 Type-C swap if typec-dir-gpios property is not
-specified in DT.
-
-Signed-off-by: Sinthu Raja <sinthu.raja@ti.com>
-Reviewed-by: Roger Quadros <rogerq@kernel.org>
----
-
-No changes in V4.
-
-Changes in V3:
-=============
-- Added Reviewed-by tag.
-
-Changes in V2:
-=============
-Address review comments:
-- Update commit description as per review comments.
-- Restore code to check only debounce delay only if typec-dir-gpios property is specified in DT.
-- Rename lane_phy_reg variable as master_lane_num.
-- Update inline comments.
-
- drivers/phy/ti/phy-j721e-wiz.c | 38 +++++++++++++++++++++++++---------
- 1 file changed, 28 insertions(+), 10 deletions(-)
-
-diff --git a/drivers/phy/ti/phy-j721e-wiz.c b/drivers/phy/ti/phy-j721e-wiz.c
-index ddce5ef7711c..b5c1b82e99a6 100644
---- a/drivers/phy/ti/phy-j721e-wiz.c
-+++ b/drivers/phy/ti/phy-j721e-wiz.c
-@@ -376,6 +376,7 @@ struct wiz {
- 	struct gpio_desc	*gpio_typec_dir;
- 	int			typec_dir_delay;
- 	u32 lane_phy_type[WIZ_MAX_LANES];
-+	u32 master_lane_num[WIZ_MAX_LANES];
- 	struct clk		*input_clks[WIZ_MAX_INPUT_CLOCKS];
- 	struct clk		*output_clks[WIZ_MAX_OUTPUT_CLOCKS];
- 	struct clk_onecell_data	clk_data;
-@@ -1234,15 +1235,30 @@ static int wiz_phy_reset_deassert(struct reset_controller_dev *rcdev,
- 	struct wiz *wiz = dev_get_drvdata(dev);
- 	int ret;
- 
--	/* if typec-dir gpio was specified, set LN10 SWAP bit based on that */
--	if (id == 0 && wiz->gpio_typec_dir) {
--		if (wiz->typec_dir_delay)
--			msleep_interruptible(wiz->typec_dir_delay);
--
--		if (gpiod_get_value_cansleep(wiz->gpio_typec_dir))
--			regmap_field_write(wiz->typec_ln10_swap, 1);
--		else
--			regmap_field_write(wiz->typec_ln10_swap, 0);
-+	if (id == 0) {
-+		/* if typec-dir gpio was specified, set LN10 SWAP bit based on that */
-+		if (wiz->gpio_typec_dir) {
-+			if (wiz->typec_dir_delay)
-+				msleep_interruptible(wiz->typec_dir_delay);
-+
-+			if (gpiod_get_value_cansleep(wiz->gpio_typec_dir))
-+				regmap_field_write(wiz->typec_ln10_swap, 1);
-+			else
-+				regmap_field_write(wiz->typec_ln10_swap, 0);
-+		} else {
-+			/* if no typec-dir gpio was specified and PHY type is
-+			 * USB3 with master lane number is '0', set LN10 SWAP
-+			 * bit to '1'
-+			 */
-+			u32 num_lanes = wiz->num_lanes;
-+			int i;
-+
-+			for (i = 0; i < num_lanes; i++) {
-+				if (wiz->lane_phy_type[i] == PHY_TYPE_USB3)
-+					if (wiz->master_lane_num[i] == 0)
-+						regmap_field_write(wiz->typec_ln10_swap, 1);
-+			}
-+		}
- 	}
- 
- 	if (id == 0) {
-@@ -1386,8 +1402,10 @@ static int wiz_get_lane_phy_types(struct device *dev, struct wiz *wiz)
- 		dev_dbg(dev, "%s: Lanes %u-%u have phy-type %u\n", __func__,
- 			reg, reg + num_lanes - 1, phy_type);
- 
--		for (i = reg; i < reg + num_lanes; i++)
-+		for (i = reg; i < reg + num_lanes; i++) {
-+			wiz->master_lane_num[i] = reg;
- 			wiz->lane_phy_type[i] = phy_type;
-+		}
- 	}
- 
- 	return 0;
--- 
-2.36.1
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+RnJvbTogU2ludGh1IFJhamEgPHNpbnRodS5yYWphQHRpLmNvbT4KClRoZcKgV0laIGFjdHMgYXMg
+YSB3cmFwcGVyIGZvciBTZXJEZXMgYW5kwqBoYXPCoExhbmVzIDAgYW5kwqAyIHJlc2VydmVkCmZv
+ciBVU0IgZm9yIHR5cGUtQyBsYW5lIHN3YXAgaWYgTGFuZSAxIGFuZCBMYW5lIDMgYXJlIGxpbmtl
+ZCB0byB0aGUKVVNCIFBIWSB0aGF0IGlzIGludGVncmF0ZWQgaW50byB0aGUgU2VyRGVzIElQLiBU
+aGUgV0laIGNvbnRyb2wgcmVnaXN0ZXIKaGFzIHRvIGJlIGNvbmZpZ3VyZWQgdG8gc3VwcG9ydCB0
+aGlzIGxhbmUgc3dhcCBmZWF0dXJlLgoKVGhlIHN1cHBvcnQgZm9yIHN3YXBwaW5nIGxhbmVzIDIg
+YW5kIDMgaXMgbWlzc2luZyBhbmQgdGhlcmVmb3JlCmFkZCBzdXBwb3J0IHRvIGNvbmZpZ3VyZSB0
+aGUgY29udHJvbCByZWdpc3RlciB0byBzd2FwIGJldHdlZW4KbGFuZXMgMiBhbmQgMyBpZiBQSFkg
+dHlwZSBpcyBVU0IuCgpTaWduZWQtb2ZmLWJ5OiBTaW50aHUgUmFqYSA8c2ludGh1LnJhamFAdGku
+Y29tPgpSZXZpZXdlZC1ieTogUm9nZXIgUXVhZHJvcyA8cm9nZXJxQGtlcm5lbC5vcmc+Ci0tLQoK
+Q2hhbmdlcyBpbiBWNDoKPT09PT09PT09PT09Ci0gQWRkIFJldmlldyB0YWcuCi0gRml4IGNoZWNr
+cGF0Y2ggQ0hFQ0sgZXJyb3JzLgogKiBSZW1vdmUgdW5uZWNlc3NhcnkgcGFyYW50aGVzaXMuCiAq
+IEF2b2lkIGxvZ2ljYWwgY29udGludWF0aW9ucyBpbiBtdWx0aXBsZSBsaW5lcy4KCkNoYW5nZXMg
+aW4gVjM6Cj09PT09PT09PT09PT0KQWRkcmVzcyByZXZpZXcgY29tbWVudHM6Ci0gVXBkYXRlIGNv
+bW1lbnQgdG8gbWVudGlvbiB0aGUgTE4yMyBTV0FQIGFsb25nIHdpdGggdGhlIExOMTAKCkNoYW5n
+ZXMgaW4gVjI6Cj09PT09PT09PT09PT0KQWRkcmVzcyByZXZpZXcgY29tbWVudHM6Ci0gVXBkYXRl
+IGNvbW1pdCBkZXNjcmlwdGlvbi4KLSBSZW5hbWUgZW51bSB2YXJpYWJsZSBuYW1lIGZyb20gd2l6
+X2xhbmVfdHlwZWNfc3dhcF9tb2RlIHRvIHdpel90eXBlY19tYXN0ZXJfbGFuZS4KLSBSZW5hbWUg
+ZW51bWVyYXRvcnMgbmFtZSBzcGVjaWZpYyB0byBsaXN0IG9mIG1hc3RlciBsYW5lcyB1c2VkIGZv
+ciBsYW5lIHN3YXBwaW5nLgotIEFkZCBpbmxpbmUgY29tbWVudHMuCgogZHJpdmVycy9waHkvdGkv
+cGh5LWo3MjFlLXdpei5jIHwgMzggKysrKysrKysrKysrKysrKysrKysrKysrKysrKystLS0tLQog
+MSBmaWxlIGNoYW5nZWQsIDMzIGluc2VydGlvbnMoKyksIDUgZGVsZXRpb25zKC0pCgpkaWZmIC0t
+Z2l0IGEvZHJpdmVycy9waHkvdGkvcGh5LWo3MjFlLXdpei5jIGIvZHJpdmVycy9waHkvdGkvcGh5
+LWo3MjFlLXdpei5jCmluZGV4IGI1YzFiODJlOTlhNi4uMWI4M2M5OGE3OGYwIDEwMDY0NAotLS0g
+YS9kcml2ZXJzL3BoeS90aS9waHktajcyMWUtd2l6LmMKKysrIGIvZHJpdmVycy9waHkvdGkvcGh5
+LWo3MjFlLXdpei5jCkBAIC01OCw2ICs1OCwxNCBAQCBlbnVtIHdpel9sYW5lX3N0YW5kYXJkX21v
+ZGUgewogCUxBTkVfTU9ERV9HRU40LAogfTsKIAorLyoKKyAqIExpc3Qgb2YgbWFzdGVyIGxhbmVz
+IHVzZWQgZm9yIGxhbmUgc3dhcHBpbmcKKyAqLworZW51bSB3aXpfdHlwZWNfbWFzdGVyX2xhbmUg
+eworCUxBTkUwID0gMCwKKwlMQU5FMiA9IDIsCit9OworCiBlbnVtIHdpel9yZWZjbGtfbXV4X3Nl
+bCB7CiAJUExMMF9SRUZDTEssCiAJUExMMV9SRUZDTEssCkBAIC0xOTQsNiArMjAyLDkgQEAgc3Rh
+dGljIGNvbnN0IHN0cnVjdCByZWdfZmllbGQgcF9tYWNfZGl2X3NlbDFbV0laX01BWF9MQU5FU10g
+PSB7CiBzdGF0aWMgY29uc3Qgc3RydWN0IHJlZ19maWVsZCB0eXBlY19sbjEwX3N3YXAgPQogCQkJ
+CQlSRUdfRklFTEQoV0laX1NFUkRFU19UWVBFQywgMzAsIDMwKTsKIAorc3RhdGljIGNvbnN0IHN0
+cnVjdCByZWdfZmllbGQgdHlwZWNfbG4yM19zd2FwID0KKwkJCQkJUkVHX0ZJRUxEKFdJWl9TRVJE
+RVNfVFlQRUMsIDMxLCAzMSk7CisKIHN0cnVjdCB3aXpfY2xrX211eCB7CiAJc3RydWN0IGNsa19o
+dwkJaHc7CiAJc3RydWN0IHJlZ21hcF9maWVsZAkqZmllbGQ7CkBAIC0zNjcsNiArMzc4LDcgQEAg
+c3RydWN0IHdpeiB7CiAJc3RydWN0IHJlZ21hcF9maWVsZAkqbXV4X3NlbF9maWVsZFtXSVpfTVVY
+X05VTV9DTE9DS1NdOwogCXN0cnVjdCByZWdtYXBfZmllbGQJKmRpdl9zZWxfZmllbGRbV0laX0RJ
+Vl9OVU1fQ0xPQ0tTXzE2R107CiAJc3RydWN0IHJlZ21hcF9maWVsZAkqdHlwZWNfbG4xMF9zd2Fw
+OworCXN0cnVjdCByZWdtYXBfZmllbGQJKnR5cGVjX2xuMjNfc3dhcDsKIAlzdHJ1Y3QgcmVnbWFw
+X2ZpZWxkCSpzdXBfbGVnYWN5X2Nsa19vdmVycmlkZTsKIAogCXN0cnVjdCBkZXZpY2UJCSpkZXY7
+CkBAIC02NzYsNiArNjg4LDEzIEBAIHN0YXRpYyBpbnQgd2l6X3JlZ2ZpZWxkX2luaXQoc3RydWN0
+IHdpeiAqd2l6KQogCQlyZXR1cm4gUFRSX0VSUih3aXotPnR5cGVjX2xuMTBfc3dhcCk7CiAJfQog
+CisJd2l6LT50eXBlY19sbjIzX3N3YXAgPSBkZXZtX3JlZ21hcF9maWVsZF9hbGxvYyhkZXYsIHJl
+Z21hcCwKKwkJCQkJCSAgICAgICB0eXBlY19sbjIzX3N3YXApOworCWlmIChJU19FUlIod2l6LT50
+eXBlY19sbjIzX3N3YXApKSB7CisJCWRldl9lcnIoZGV2LCAiTE4yM19TV0FQIHJlZyBmaWVsZCBp
+bml0IGZhaWxlZFxuIik7CisJCXJldHVybiBQVFJfRVJSKHdpei0+dHlwZWNfbG4yM19zd2FwKTsK
+Kwl9CisKIAl3aXotPnBoeV9lbl9yZWZjbGsgPSBkZXZtX3JlZ21hcF9maWVsZF9hbGxvYyhkZXYs
+IHJlZ21hcCwgcGh5X2VuX3JlZmNsayk7CiAJaWYgKElTX0VSUih3aXotPnBoeV9lbl9yZWZjbGsp
+KSB7CiAJCWRldl9lcnIoZGV2LCAiUEhZX0VOX1JFRkNMSyByZWcgZmllbGQgaW5pdCBmYWlsZWRc
+biIpOwpAQCAtMTI0NiwxNyArMTI2NSwyNiBAQCBzdGF0aWMgaW50IHdpel9waHlfcmVzZXRfZGVh
+c3NlcnQoc3RydWN0IHJlc2V0X2NvbnRyb2xsZXJfZGV2ICpyY2RldiwKIAkJCWVsc2UKIAkJCQly
+ZWdtYXBfZmllbGRfd3JpdGUod2l6LT50eXBlY19sbjEwX3N3YXAsIDApOwogCQl9IGVsc2Ugewot
+CQkJLyogaWYgbm8gdHlwZWMtZGlyIGdwaW8gd2FzIHNwZWNpZmllZCBhbmQgUEhZIHR5cGUgaXMK
+LQkJCSAqIFVTQjMgd2l0aCBtYXN0ZXIgbGFuZSBudW1iZXIgaXMgJzAnLCBzZXQgTE4xMCBTV0FQ
+Ci0JCQkgKiBiaXQgdG8gJzEnCisJCQkvKiBpZiBubyB0eXBlYy1kaXIgZ3BpbyBpcyBzcGVjaWZp
+ZWQgYW5kIFBIWSB0eXBlIGlzIFVTQjMKKwkJCSAqIHdpdGggbWFzdGVyIGxhbmUgbnVtYmVyIGlz
+ICcwJyBvciAnMicsIHRoZW4gc2V0IExOMTAgb3IKKwkJCSAqIExOMjMgU1dBUCBiaXQgdG8gJzEn
+IHJlc3BlY3RpdmVseS4KIAkJCSAqLwogCQkJdTMyIG51bV9sYW5lcyA9IHdpei0+bnVtX2xhbmVz
+OwogCQkJaW50IGk7CiAKIAkJCWZvciAoaSA9IDA7IGkgPCBudW1fbGFuZXM7IGkrKykgewotCQkJ
+CWlmICh3aXotPmxhbmVfcGh5X3R5cGVbaV0gPT0gUEhZX1RZUEVfVVNCMykKLQkJCQkJaWYgKHdp
+ei0+bWFzdGVyX2xhbmVfbnVtW2ldID09IDApCisJCQkJaWYgKHdpei0+bGFuZV9waHlfdHlwZVtp
+XSA9PSBQSFlfVFlQRV9VU0IzKSB7CisJCQkJCXN3aXRjaCAod2l6LT5tYXN0ZXJfbGFuZV9udW1b
+aV0pIHsKKwkJCQkJY2FzZSBMQU5FMDoKIAkJCQkJCXJlZ21hcF9maWVsZF93cml0ZSh3aXotPnR5
+cGVjX2xuMTBfc3dhcCwgMSk7CisJCQkJCQlicmVhazsKKwkJCQkJY2FzZSBMQU5FMjoKKwkJCQkJ
+CXJlZ21hcF9maWVsZF93cml0ZSh3aXotPnR5cGVjX2xuMjNfc3dhcCwgMSk7CisJCQkJCQlicmVh
+azsKKwkJCQkJZGVmYXVsdDoKKwkJCQkJCWJyZWFrOworCQkJCQl9CisJCQkJfQogCQkJfQogCQl9
+CiAJfQotLSAKMi4zNi4xCgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxp
+c3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlz
+dGluZm8vbGludXgtcGh5Cg==
