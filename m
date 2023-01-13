@@ -4,61 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 42264C3DA78
-	for <linux-phy@archiver.kernel.org>; Fri, 13 Jan 2023 17:56:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9E2F3C3DA78
+	for <linux-phy@archiver.kernel.org>; Fri, 13 Jan 2023 17:58:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KM7pa3kSmgEKVk3xV76uFP1jYuwPekXtsWLlh/YNoOU=; b=fxBIY+6Ib+2OtB
-	oVDbBtallrAVcXA2Wlbsy+Bd3bnprsCETnkEmjE3fKkKeDlZw5WZ6RcoQ7gDO3snkHdwrtmOGadBw
-	sMwrY3Lqibyg/fjMpdW5WoqpQzyLEdWzRvw+dccEXvtC5Tl7wClyEuWLVHTfPGux/Sz8xHEOKVc57
-	T5QUloF6yTcg4OlodSShnhBhPY7EByov9oH0T+XrWLj5PWy6KWlSBK6KITXhAMC/Ja5eeMKwOBIEF
-	hC63g+hdNfdsEdkkvhIntDLeFbyWi/Dm/NzzQy7kEmqjmEKGRCgHYjY/4yug4z8DGBd7Cp0gow6h+
-	NYFNBst5FcrpQfsq72bQ==;
+	List-Owner; bh=TsGyjb08UIU2Lf/aMdcO56+KFavkhZ6PUsKpkXipDqM=; b=RH6eYPPIEnHKSR
+	g0y8kucwjFEIVIU8EOgsgwjK8H9IgQ6/2EdYvPwGLzc+6MDZrobEOTfTDLW35SSsPD1S3oQGZjkJV
+	IWY/RJdET5d27pBzTg2ThatpjVBji8mRU/skP7d4qnVxV4lg6G9JvQ9INxWYCpdvZJW3PAf7n2Nqs
+	xljQnW6qfWbgI6pfZ51Kb7nP/9TL3XxZassX5epfnF3z27WzEZj11bf/znZrBuFqi1Ni4uvULCAZA
+	o+8B7kcfnL29nhvljus+AbEcGpZ/NUQiYPwS3dCVo2Ao6TXaKJUEawcWs4AXtpuqW7J4WS6xyeBTi
+	dnufE++68RHJpeAR2LSA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pGOHn-003uht-Ir; Fri, 13 Jan 2023 17:56:15 +0000
+	id 1pGOJy-003v88-1Y; Fri, 13 Jan 2023 17:58:30 +0000
 Received: from ams.source.kernel.org ([145.40.68.75])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pGOHc-003uef-Hg; Fri, 13 Jan 2023 17:56:05 +0000
+	id 1pGOJn-003v4D-Cj; Fri, 13 Jan 2023 17:58:20 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id 309B7B821AB;
-	Fri, 13 Jan 2023 17:56:03 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 42882C433F2;
-	Fri, 13 Jan 2023 17:56:01 +0000 (UTC)
+	by ams.source.kernel.org (Postfix) with ESMTPS id 09DDBB821AA;
+	Fri, 13 Jan 2023 17:58:18 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0BFFFC433F0;
+	Fri, 13 Jan 2023 17:58:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1673632561;
-	bh=/GVEUUP4mneSnkfi1l5t3SvPf2grhVDkhm+ADUOZSSU=;
+	s=k20201202; t=1673632696;
+	bh=JuFDRpf2cgQra4Jmh7Rp/roiRRmIQ+8USu0y4bvm8KA=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=VQeBHaXMo4Uk/lpbKxlqnYw4NsWX0pCjG1cQVCXsH4LnfMzh71XvmD4Gsjjwylsy/
-	 LV41D+ZF3biawMYobpadCEwVC+32G+lrY+boQkcOoL6SBgNCkvPrzMxTZsIaPrsBVO
-	 3JlEK+pTtiiQJs4rk5OjRVFoT+6+FvHEg4aOsks3NYcnEGF8zI10yxsyNqhhK6XKZ9
-	 x64sSj2jfYkXSehP6/vrti0vFyG6TGiUYnaSyNPFUhu2CiJByHtAqknChCumZKv3Jj
-	 apy1RxZ+PwYc5xdD2RL2kdWgQdIKcSqEiqrv0nvsNboJgSMdsbgRCwq4kw1uPxDzTK
-	 bypQTdQL2kFuA==
-Date: Fri, 13 Jan 2023 23:25:58 +0530
+	b=RkzR17B3MqmFD3UDolrzkWFgVQxhTgJ+4mIBUVVNY+/xkKk5diJ1opON8eqkEMhs8
+	 56NpBBuZXT0z1eov1BtFLHwQbVq7pZQDfLDmHe9msV4+HlUoBra7C35UT54dmiJ/gK
+	 I1PeMTqmdr8gQ4978vdbOXvc7PZ0whaLOhhHuMROJiFm/4AZiws4TVlDUiUf86aDGk
+	 x4fdw0aL6q3xuuyxREb6gubPmU5zMZzolXC/K6ft33MfIN971TxVhZMBbkY7ON5C82
+	 El2Tp/2Lhy6ANr8J4O8V6cctEBXUyKemnbT2XRdS7k4SEw6v+NDC9c+dmUfmCZslMQ
+	 o87sG7uo5PfJQ==
+Date: Fri, 13 Jan 2023 23:28:12 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Richard Zhu <hongxing.zhu@nxp.com>
-Cc: marex@denx.de, alexander.stein@ew.tq-group.com,
-	lorenzo.pieralisi@arm.com, linux-phy@lists.infradead.org,
-	linux-pci@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org, kernel@pengutronix.de,
-	linux-imx@nxp.com
-Subject: Re: [PATCH] phy: freescale: imx8m-pcie: Add one missing error return
-Message-ID: <Y8GbLuI7pSar9P2y@matsya>
-References: <1671433941-2037-1-git-send-email-hongxing.zhu@nxp.com>
+To: Michael Trimarchi <michael@amarulasolutions.com>
+Cc: Sandy Huang <hjc@rock-chips.com>,
+	Heiko =?iso-8859-1?Q?St=FCbner?= <heiko@sntech.de>,
+	David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
+	Kishon Vijay Abraham I <kishon@ti.com>,
+	dri-devel@lists.freedesktop.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org, linux-amarula@amarulasolutions.com
+Subject: Re: [RFC PATCH 2/4] phy: rockchip: Add inno_is_valid_phy_mode
+Message-ID: <Y8GbtA7+xHtBEpRs@matsya>
+References: <20221002064540.2500257-1-michael@amarulasolutions.com>
+ <20221002064540.2500257-3-michael@amarulasolutions.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1671433941-2037-1-git-send-email-hongxing.zhu@nxp.com>
+In-Reply-To: <20221002064540.2500257-3-michael@amarulasolutions.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230113_095604_749431_611D153A 
-X-CRM114-Status: UNSURE (   6.94  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230113_095819_595680_466A45DB 
+X-CRM114-Status: GOOD (  19.85  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,11 +78,57 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 19-12-22, 15:12, Richard Zhu wrote:
-> There should be one error return when fail to fetch the perst reset.
-> Add the missing error return.
+On 02-10-22, 08:45, Michael Trimarchi wrote:
+> The function is used to avoid to enable clock on the hardware
+> if the mode requested is invalid
+> 
+> Signed-off-by: Michael Trimarchi <michael@amarulasolutions.com>
+> ---
+>  .../phy/rockchip/phy-rockchip-inno-dsidphy.c  | 19 +++++++++++++++++++
+>  1 file changed, 19 insertions(+)
+> 
+> diff --git a/drivers/phy/rockchip/phy-rockchip-inno-dsidphy.c b/drivers/phy/rockchip/phy-rockchip-inno-dsidphy.c
+> index 630e01b5c19b..644cf73cfd53 100644
+> --- a/drivers/phy/rockchip/phy-rockchip-inno-dsidphy.c
+> +++ b/drivers/phy/rockchip/phy-rockchip-inno-dsidphy.c
+> @@ -217,6 +217,20 @@ static void phy_update_bits(struct inno_dsidphy *inno,
+>  	writel(tmp, inno->phy_base + reg);
+>  }
+>  
+> +static int inno_is_valid_phy_mode(struct inno_dsidphy *inno)
+> +{
+> +	switch (inno->mode) {
+> +	case PHY_MODE_MIPI_DPHY:
+> +		break;
+> +	case PHY_MODE_LVDS:
+> +		break;
+> +	default:
+> +		return -EINVAL;
+> +	}
+> +
+> +	return 0;
+> +};
+> +
+>  static unsigned long inno_dsidphy_pll_calc_rate(struct inno_dsidphy *inno,
+>  						unsigned long rate)
+>  {
+> @@ -495,6 +509,11 @@ static void inno_dsidphy_lvds_mode_enable(struct inno_dsidphy *inno)
+>  static int inno_dsidphy_power_on(struct phy *phy)
+>  {
+>  	struct inno_dsidphy *inno = phy_get_drvdata(phy);
+> +	int ret = 0;
 
-Applied, thanks
+this initialization is superfluous
+
+> +
+> +	ret = inno_is_valid_phy_mode(inno);
+> +	if (ret)
+> +		return ret;
+>  
+>  	clk_prepare_enable(inno->pclk_phy);
+>  	clk_prepare_enable(inno->ref_clk);
+> -- 
+> 2.34.1
 
 -- 
 ~Vinod
