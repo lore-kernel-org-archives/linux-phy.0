@@ -4,62 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2604FC54EBD
-	for <linux-phy@archiver.kernel.org>; Fri, 13 Jan 2023 15:07:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4CB9EC54EBE
+	for <linux-phy@archiver.kernel.org>; Fri, 13 Jan 2023 15:07:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=rFGULNeR56YUXVEizkBYtpJXuVJujVEd7BvrPw5q0g0=; b=okvWesx0kt14SK
-	8yUT3YE0mKIJfUabonvhXFSeKcgB3eOZPHDh36WMgQcUMt8VoF7CckuvP6UmtjMFlA75E/eX9dxIP
-	zT8+tK0t6S5Ythg7tFChuwSMRJzBhsyWY5IQQPPFYDQ2wcK5KQcDuFzYLgDAzB2YZYWlxOcWlshhC
-	DnT3Osnlam3N4GndC5abOtTztIMNS8h0hKLH8beZDb0hao8TBfw/z8nAxc/G0ehNid7ZudqojgH3M
-	pgZCTFeeUSGKdMfX86fokNoGtHm3JC75dLfkE/8IlTTWUA1yLxTn8dcX1UdKhsFVS17mG9eJK+jks
-	Ko0eUaWG/zaYsOXS9vEA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=hjrO387rPePB7BRdDKE/5/CD614a6FZmhr7Qh+783vg=; b=Vc2ubHkFWl+0aq
+	K20QKEn6GjqlD5nQKikl4OPBxeI2ffHJfqsyX+D7AH4EsyegGdi8zSalEjHGFKd9iPdmM2/bb38qe
+	3/TNAJEnAMB/kuGujJv9ge6HA3vO6PfAKbD8DvOf0ZhNsLspu/IT8LxcuZOiOjFEdrc5nnH8uwUfn
+	Mg6v6Lz7UG+tgj5O1eT8/Aztv8iKsZeyAc2rAANTTmVMtjhsN/ysZfCKKYDvGM/FjCr1GBhHF8nor
+	PYyDlsBHwWZeoj9cw1SrxvH/j+jQ/uapS7rfID0OBl5W0B8s8CUL+9P5dA2ZPRH+dthnwR/S0POhX
+	RbQljmmlWDluM857rR2w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pGLeC-0036R5-Jg; Fri, 13 Jan 2023 15:07:12 +0000
-Received: from egress-ip4a.ess.de.barracuda.com ([18.184.203.227])
+	id 1pGLeD-0036Ry-O5; Fri, 13 Jan 2023 15:07:13 +0000
+Received: from egress-ip33b.ess.de.barracuda.com ([18.185.115.237])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pGLe9-0036PU-1G
-	for linux-phy@lists.infradead.org; Fri, 13 Jan 2023 15:07:10 +0000
-Received: from mail-pl1-f199.google.com (mail-pl1-f199.google.com [209.85.214.199]) by mx-outbound12-28.eu-central-1a.ess.aws.cudaops.com (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO); Fri, 13 Jan 2023 15:07:03 +0000
-Received: by mail-pl1-f199.google.com with SMTP id l15-20020a170903244f00b001927c3a0055so14863265pls.6
-        for <linux-phy@lists.infradead.org>; Fri, 13 Jan 2023 07:07:03 -0800 (PST)
+	id 1pGLeA-0036Pq-RH
+	for linux-phy@lists.infradead.org; Fri, 13 Jan 2023 15:07:12 +0000
+Received: from mail-pj1-f71.google.com (mail-pj1-f71.google.com [209.85.216.71]) by mx-outbound23-220.eu-central-1b.ess.aws.cudaops.com (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO); Fri, 13 Jan 2023 15:07:06 +0000
+Received: by mail-pj1-f71.google.com with SMTP id x8-20020a17090a1f8800b0022153149290so10103211pja.5
+        for <linux-phy@lists.infradead.org>; Fri, 13 Jan 2023 07:07:06 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=mistralsolutions.com; s=google;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=ITl3Ff1g4Vokba4zPtv+9Lr8JadVrsPfIWw8DVJ0Tmo=;
-        b=O+CkNbuNNMU9MJjz94I5hXaXIOh2mta8hvBgc25UEGwo5IUb29L0q5bnDYwpIpsrW6
-         0sSBfBBMV+tBFkXO51S3ej40727zkl/S++x4cyz8jxKYN0MUKST/OMGR+N3b1T4RMfZs
-         rGRcZJeaB94JuiSpAM3I3iOKmbMKIXt/YN0d0=
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=Z+NSHccOtsCvHIJa85NeQChFC1UztUbiKQ4lP4DgpYE=;
+        b=W9+BtAl08PRQpEb9/gbIViu7QsPYIAff+i6FpkK4mdaCYS6DY0+6/aufc6tFCweI2o
+         9P1DKxBQCY5CluMNnBoYx55P+Sa+okGBGBsDdaqJod/93s66g0BvXZHdH4HHkXIrIntF
+         ght67/8qciMtcCtM5OUjR7QDf0AOo+hbFd8Xk=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=ITl3Ff1g4Vokba4zPtv+9Lr8JadVrsPfIWw8DVJ0Tmo=;
-        b=cvObKC+eh+LZ1IOTFkeaul6jr+X9ag3gpEliKmjspe3+EwLmHsenWtapCU+hZ/QTRr
-         yguO/wl8/g+VD4ZRnGuYKy/OWiPKjfdvYNlF3/BL69/jtUfwpdmdiH4NPm2jSUN3UYyP
-         zjBIKXPZDy9/ULTrQ7V/ZNiN4L7t0FlZ6c7PDPvs0AMi+LRKHmZRNYjD391ZLwJy7PFh
-         42nC5l0jQfSKtQ1SBlJ9tyJUdZz8WfOK6s/GsB5V3wTbH6z/TM1s1bbyrJK1/BtDhEhB
-         ghaTaC9I54rz8m46DxvarJRwlsQf8Yrc5ryrQb4RtTn9aUrxU/rCpRC1VeK7pg7r9HQM
-         UiZw==
-X-Gm-Message-State: AFqh2kosxH2vJpqndnJr1jh/51xELmcbUcVO8v2Ad70jLnacd2qvgVwF
-	PokjMYvJklWN5/6nh4SZcol9mmqukQ471nRw443TOQdlqPhQK6GfXzdzKqeLxx+CpxTeJZEN8gb
-	JAsZgMyZJI5vs2WuhYryy9ClpmwULjMNhHojtTIuBqobAnNix8OAIOkzzB9/DEg==
-X-Received: by 2002:a17:902:9a93:b0:192:9e13:a4ba with SMTP id w19-20020a1709029a9300b001929e13a4bamr52541827plp.34.1673622422092;
-        Fri, 13 Jan 2023 07:07:02 -0800 (PST)
-X-Google-Smtp-Source: AMrXdXtwrIHP9dW0hF1a9tF5ZM09LhODKShZitSOnNk0gkOBZaWby8FrTww3ZqFTZXZ65yuuxu6HcQ==
-X-Received: by 2002:a17:902:9a93:b0:192:9e13:a4ba with SMTP id w19-20020a1709029a9300b001929e13a4bamr52541789plp.34.1673622421582;
-        Fri, 13 Jan 2023 07:07:01 -0800 (PST)
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=Z+NSHccOtsCvHIJa85NeQChFC1UztUbiKQ4lP4DgpYE=;
+        b=eX6CrHCduRF1MywZ2tM78MjNvNYnKixWcR0Hf/OdaLf0XbroINWYP6eac8ctz9XIzV
+         NoTnGnuHhOeduyMbcO6qNwif5Hj8xwPsf4U37EHvxK0H8eToMXyyN1Amg9wKHUnl0voE
+         DxFe9I4xmaUxKOhuSDn0AGnKe6lWAsuyOPMgu8ghokBbCogUzD7RFSxaye+fQWha+JnQ
+         dyQnjl5Q/kgp7+ceb2ih4DBost05psn3gx8RsEXhDGGG8q1XWviBGKhaXxrwDlsyOEZE
+         Yh8NfFE3n23QPTPOK3IBPZcqUBRawV+gCf594haYJhWgmVb6VnAOWmoXnvhMjC7FcCYc
+         FgHQ==
+X-Gm-Message-State: AFqh2krGRTvGhN+msmTvNvxsNXEIbk1tnvMbCifHX5D2k00YBLxoGz9V
+	fTDpRoy5XlHxywJIORL2PKAUEzG0Zt7ZSTVBuf3XIrBhisPbvDTTzrKEUtE6oYYBNoP+mMeJzlm
+	WxA4m7IV2nWjFbSVzLxuLwYvsqzinG8i/6dNNq/FNUKyIojh/wN8dBLaYwwFy2Q==
+X-Received: by 2002:a17:903:2447:b0:191:1a7c:ef9f with SMTP id l7-20020a170903244700b001911a7cef9fmr114145357pls.1.1673622425259;
+        Fri, 13 Jan 2023 07:07:05 -0800 (PST)
+X-Google-Smtp-Source: AMrXdXusrPlnaK+wmzYGKRbXYOFMSqbu96oB8HP0e7TOKd6vguQ6K8ok85JPWB7jm/g9wf1EWy8T0A==
+X-Received: by 2002:a17:903:2447:b0:191:1a7c:ef9f with SMTP id l7-20020a170903244700b001911a7cef9fmr114145330pls.1.1673622424972;
+        Fri, 13 Jan 2023 07:07:04 -0800 (PST)
 Received: from LAP568U.mistral.in ([106.51.227.150])
-        by smtp.gmail.com with ESMTPSA id v11-20020a170902f0cb00b00180033438a0sm14325723pla.106.2023.01.13.07.06.58
+        by smtp.gmail.com with ESMTPSA id v11-20020a170902f0cb00b00180033438a0sm14325723pla.106.2023.01.13.07.07.01
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 13 Jan 2023 07:07:00 -0800 (PST)
+        Fri, 13 Jan 2023 07:07:04 -0800 (PST)
 From: Sinthu Raja <sinthu.raja@mistralsolutions.com>
 X-Google-Original-From: Sinthu Raja <sinthu.raja@ti.com>
 To: Roger Quadros <rogerq@kernel.org>,
@@ -70,28 +71,29 @@ Cc: Vignesh Raghavendra <vigneshr@ti.com>,
 	linux-phy@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
 	Sinthu Raja <sinthu.raja@ti.com>
-Subject: [PATCH V4 0/2] phy: ti: j721e-wiz: Add support to manage type-C swap on Lane2 and lane3 
-Date: Fri, 13 Jan 2023 20:36:13 +0530
-Message-Id: <20230113150615.19375-1-sinthu.raja@ti.com>
+Subject: [PATCH V4 1/2] phy: ti: j721e-wiz: Manage TypeC lane swap if typec-dir-gpios not specified
+Date: Fri, 13 Jan 2023 20:36:14 +0530
+Message-Id: <20230113150615.19375-2-sinthu.raja@ti.com>
 X-Mailer: git-send-email 2.36.1
+In-Reply-To: <20230113150615.19375-1-sinthu.raja@ti.com>
+References: <20230113150615.19375-1-sinthu.raja@ti.com>
 MIME-Version: 1.0
-X-BESS-ID: 1673622422-303100-5448-19119-1
+X-BESS-ID: 1673622425-306108-5562-20503-1
 X-BESS-VER: 2019.1_20221214.2106
-X-BESS-Apparent-Source-IP: 209.85.214.199
-X-BESS-Outbound-Spam-Score: 0.40
+X-BESS-Apparent-Source-IP: 209.85.216.71
+X-BESS-Outbound-Spam-Score: 0.00
 X-BESS-Outbound-Spam-Report: Code version 3.2, rules version 3.2.2.245440 [from 
-	cloudscan16-188.eu-central-1b.ess.aws.cudaops.com]
+	cloudscan14-215.eu-central-1a.ess.aws.cudaops.com]
 	Rule breakdown below
 	 pts rule name              description
 	---- ---------------------- --------------------------------
-	0.00 BSF_SC0_MISMATCH_TO    META: Envelope rcpt doesn't match header 
-	0.40 BSF_SC0_SA085b         META: Custom Rule SA085b 
 	0.00 BSF_BESS_OUTBOUND      META: BESS Outbound 
-X-BESS-Outbound-Spam-Status: SCORE=0.40 using account:ESS91090 scores of KILL_LEVEL=7.0 tests=BSF_SC0_MISMATCH_TO, BSF_SC0_SA085b, BSF_BESS_OUTBOUND
+	0.00 BSF_SC0_MISMATCH_TO    META: Envelope rcpt doesn't match header 
+X-BESS-Outbound-Spam-Status: SCORE=0.00 using account:ESS91090 scores of KILL_LEVEL=7.0 tests=BSF_BESS_OUTBOUND, BSF_SC0_MISMATCH_TO
 X-BESS-BRTS-Status: 1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230113_070709_358906_84F48F2F 
-X-CRM114-Status: GOOD (  10.43  )
+X-CRM114-CacheID: sfid-20230113_070711_051754_C2F93678 
+X-CRM114-Status: GOOD (  19.34  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -110,47 +112,99 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Sinthu Raja <sinthu.raja@ti.com>
 
-Hi All,
-This series of patch add support to enable lanes 2 and 3 swap by
-configuring the LN23 bit of the SerDes WIZ control register. Also,
-it's possible that the Type-C plug orientation on the DIR line will
-be implemented through hardware design. In that situation, there
-won't be an external GPIO line available, but the driver still needs
-to address this since the DT won't use the typec-dir-gpios property.
-Update code to handle if typec-dir-gpios property is not specified in DT.
+It's possible that the Type-C plug orientation on the DIR line will be
+implemented through hardware design. In that situation, there won't be
+an external GPIO line available, but the driver still needs to address
+this since the DT won't use the typec-dir-gpios property.
 
-Changes in V4:
-=============
-- Fixe checkpatch CHECK errors.
- * Remove unnecessary paranthesis.
- * Avoid logical continuations in multiple lines.
+Add code to handle LN10 Type-C swap if typec-dir-gpios property is not
+specified in DT.
+
+Signed-off-by: Sinthu Raja <sinthu.raja@ti.com>
+Reviewed-by: Roger Quadros <rogerq@kernel.org>
+---
+
+No changes in V4.
 
 Changes in V3:
 =============
-Address review comments:
-- Update comment to mention the LN23 SWAP along with the LN10
+- Added Reviewed-by tag.
 
 Changes in V2:
 =============
 Address review comments:
 - Update commit description as per review comments.
 - Restore code to check only debounce delay only if typec-dir-gpios property is specified in DT.
-- Rename enum variable name from wiz_lane_typec_swap_mode to wiz_typec_master_lane.
 - Rename lane_phy_reg variable as master_lane_num.
 - Update inline comments.
 
-V1: https://lore.kernel.org/lkml/20221213124854.3779-2-sinthu.raja@ti.com/T/
-V2: https://lore.kernel.org/lkml/20230106071714.30562-1-sinthu.raja@ti.com/
-V3: https://lore.kernel.org/lkml/20230111111356.17392-1-sinthu.raja@ti.com/ 
+ drivers/phy/ti/phy-j721e-wiz.c | 38 +++++++++++++++++++++++++---------
+ 1 file changed, 28 insertions(+), 10 deletions(-)
 
-Sinthu Raja (2):
-  phy: ti: j721e-wiz: Manage TypeC lane swap if typec-dir-gpios not
-    specified
-  phy: ti: j721e-wiz: Add support to enable LN23 Type-C swap
-
- drivers/phy/ti/phy-j721e-wiz.c | 66 ++++++++++++++++++++++++++++------
- 1 file changed, 56 insertions(+), 10 deletions(-)
-
+diff --git a/drivers/phy/ti/phy-j721e-wiz.c b/drivers/phy/ti/phy-j721e-wiz.c
+index ddce5ef7711c..b5c1b82e99a6 100644
+--- a/drivers/phy/ti/phy-j721e-wiz.c
++++ b/drivers/phy/ti/phy-j721e-wiz.c
+@@ -376,6 +376,7 @@ struct wiz {
+ 	struct gpio_desc	*gpio_typec_dir;
+ 	int			typec_dir_delay;
+ 	u32 lane_phy_type[WIZ_MAX_LANES];
++	u32 master_lane_num[WIZ_MAX_LANES];
+ 	struct clk		*input_clks[WIZ_MAX_INPUT_CLOCKS];
+ 	struct clk		*output_clks[WIZ_MAX_OUTPUT_CLOCKS];
+ 	struct clk_onecell_data	clk_data;
+@@ -1234,15 +1235,30 @@ static int wiz_phy_reset_deassert(struct reset_controller_dev *rcdev,
+ 	struct wiz *wiz = dev_get_drvdata(dev);
+ 	int ret;
+ 
+-	/* if typec-dir gpio was specified, set LN10 SWAP bit based on that */
+-	if (id == 0 && wiz->gpio_typec_dir) {
+-		if (wiz->typec_dir_delay)
+-			msleep_interruptible(wiz->typec_dir_delay);
+-
+-		if (gpiod_get_value_cansleep(wiz->gpio_typec_dir))
+-			regmap_field_write(wiz->typec_ln10_swap, 1);
+-		else
+-			regmap_field_write(wiz->typec_ln10_swap, 0);
++	if (id == 0) {
++		/* if typec-dir gpio was specified, set LN10 SWAP bit based on that */
++		if (wiz->gpio_typec_dir) {
++			if (wiz->typec_dir_delay)
++				msleep_interruptible(wiz->typec_dir_delay);
++
++			if (gpiod_get_value_cansleep(wiz->gpio_typec_dir))
++				regmap_field_write(wiz->typec_ln10_swap, 1);
++			else
++				regmap_field_write(wiz->typec_ln10_swap, 0);
++		} else {
++			/* if no typec-dir gpio was specified and PHY type is
++			 * USB3 with master lane number is '0', set LN10 SWAP
++			 * bit to '1'
++			 */
++			u32 num_lanes = wiz->num_lanes;
++			int i;
++
++			for (i = 0; i < num_lanes; i++) {
++				if (wiz->lane_phy_type[i] == PHY_TYPE_USB3)
++					if (wiz->master_lane_num[i] == 0)
++						regmap_field_write(wiz->typec_ln10_swap, 1);
++			}
++		}
+ 	}
+ 
+ 	if (id == 0) {
+@@ -1386,8 +1402,10 @@ static int wiz_get_lane_phy_types(struct device *dev, struct wiz *wiz)
+ 		dev_dbg(dev, "%s: Lanes %u-%u have phy-type %u\n", __func__,
+ 			reg, reg + num_lanes - 1, phy_type);
+ 
+-		for (i = reg; i < reg + num_lanes; i++)
++		for (i = reg; i < reg + num_lanes; i++) {
++			wiz->master_lane_num[i] = reg;
+ 			wiz->lane_phy_type[i] = phy_type;
++		}
+ 	}
+ 
+ 	return 0;
 -- 
 2.36.1
 
