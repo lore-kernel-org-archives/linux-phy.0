@@ -4,76 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A452FC54EBE
-	for <linux-phy@archiver.kernel.org>; Fri, 13 Jan 2023 13:02:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 55F02C54EBE
+	for <linux-phy@archiver.kernel.org>; Fri, 13 Jan 2023 13:14:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DIcEglhbKFrCtbeINY74V9/4KQ7soNrwTmfxbXhgJhk=; b=MI7//J/eW6hZ68
-	bS9ymvm+s3aZuC3a5PTU/R4JrwIJAW7MpJJog+QU3DXG3zJSJbtCvXMVk8TFYmc/tSWv4+Xgd09On
-	hBzDF3bCjcPIg9OArBMmmJOkAWlscl38v8RhrGA/YMKwKCzKSbKaOKLzghXo/ZoSEo2ng3+JkmCfY
-	Am7Ym190cM+o3DdN+sq2rvkzzovR/iqDk0kecnF1Id/5Zygbj5c5qpun1FX92FlWRu63/MzrPUdpq
-	LYq0z3RvHEqF+9BAOeBDXtTeB39sqfQYIPBiRXpgoMvs7uFmRmYXW/zxMfjoExsoRo7t85veKzeEv
-	Qe6s4VnnxRV5IndJipNA==;
+	List-Owner; bh=PbNstC20Dyjr4RcEaW4inMgL7stUOfI80W7EABN1MzY=; b=ih0DZ94BUXZ6Kb
+	hm818+IDGX5vno0tN3GHyaxmkzMiroQQGmcRW1O/TqVcWO9yL/a6Omt40r9BoAC3HVAeKy4u2nMmF
+	5aGfYW2Z3UEV+7L0Kx5JcLE7/jwSlPUXWbBnd/W6IuPMs39C9YNAPxytRzrYzhnL0w//YqD0j2SnI
+	JofGoMMkmk3ynAeSXFNxoR+BDMr4dko4pMX2UvYj/F1tjK1aCykm0HdsaxmkZmtjWHKZxHyQOSZG1
+	MC/xKk39r8j3Ee0IRuhb9u2tbGclUNOWbrbNUhG9go8pxBDidENf+mTpFYlxFOPC0hrJxfCHQXVR7
+	wtU8iP7/IMZLrPkiy9ag==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pGJh1-002ei7-RA; Fri, 13 Jan 2023 13:01:59 +0000
-Received: from mail-yw1-x112d.google.com ([2607:f8b0:4864:20::112d])
+	id 1pGJsh-002glz-Mk; Fri, 13 Jan 2023 13:14:03 +0000
+Received: from mail-wm1-x332.google.com ([2a00:1450:4864:20::332])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pGJgx-002eha-R7
-	for linux-phy@lists.infradead.org; Fri, 13 Jan 2023 13:01:57 +0000
-Received: by mail-yw1-x112d.google.com with SMTP id 00721157ae682-4d19b2686a9so155747827b3.6
-        for <linux-phy@lists.infradead.org>; Fri, 13 Jan 2023 05:01:53 -0800 (PST)
+	id 1pGJsK-002gZr-8Y; Fri, 13 Jan 2023 13:13:42 +0000
+Received: by mail-wm1-x332.google.com with SMTP id j34-20020a05600c1c2200b003da1b054057so3033986wms.5;
+        Fri, 13 Jan 2023 05:13:37 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=eGYWQmNHYzBdoQRygVglKx5yAwCnlfXDS08gHugHenM=;
-        b=QMHQpYbG1zxr3p3UKJ+wgp+CpyAGbvXD5qnPCovIbUovAAHioJ31d7eksVwBcNhbDM
-         Vy+AclT+9o3C6V3i9n/BCuW9Nf/KbvnR3/lnyzd3xueCE96WMzArNSKsxfW2myhj3sDj
-         V4CPuIHuwgp2SGpf2TuT+pI1AwrUVzpuGlBnC2QPMfEkxtuJ3dBWEDryZkx6XIAjmKNq
-         qPIri36oDxH+gqeoQZw8u3MzLVfLLQQg7LUa78WmNZ6D6my8+UgtGM4cjfb2qgLfXjKu
-         7IYgaFC604WKwUE7jb+GGSQ0j/EGcekLMysgir6AElQ7zexJCvbqt/M8mbI4+APGTJva
-         SobQ==
+        d=gmail.com; s=20210112;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=w6Sfv3GzCAn5QrrBImbkAkIsyNCdyXbe2wptVAXtxE8=;
+        b=mEjxQu5xNEJXSIjn7Gw/9XTq7+F4SJA697N5ndHL5HEfIF6EvBweh2FGJk4jcSqDBW
+         tQOClYxi6kB9gLtETqfTr+oOURZiVexae//HuMiH1dUYZlQXkifJRHdzZlvKbYqf6FRL
+         JNoCXbTQVF5kolOjAg8r+eZXD+1Y/UB/PRPt5sZxJXJmOSXRiWxIGC2GCdTr76+0hoLq
+         2A0Xv6YSH19JvvfhVlrsXOz/cAzUfwOlpatMI3VNCUc0Vzh7+hFTgzuttV2VCgKQStme
+         RnEYovaCkdclkTT+znCwsBNPuLxrMsmI2QRSGmvpqvPcH5bv3l6cOSFrgRXXJF1ahvUR
+         /mDQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=eGYWQmNHYzBdoQRygVglKx5yAwCnlfXDS08gHugHenM=;
-        b=sS1laWUuCBWKnvEzy0xMMnF31I1JsdAl3iJDVI6PXvTr6589j6rrZyifx0Tmyf5tin
-         hxD11NCsPZYA98zI/50TY4vKqGDWYc8nXI0OA5/zax4a45PO5803U2Jvo1YYd7OFQWoy
-         XzYrgrzq+hx9E87sTk5rvZ7Mym18EUu0G/r9hHUG2CsgCdbjUI1yvJ4c2xLiYBUThoLo
-         84/WFF/1NLreutcT9eoxaVFmaTy6XNx3YugRsarZLP2MEh+5YsZyQV+Md5cQ7rv1fGwW
-         PRH0Q6UmVrGikUflndExGVU1zjFyu07vNVd5FcaqbmefLG2AzqGs7xLE5+sKewRQlHJo
-         HJOw==
-X-Gm-Message-State: AFqh2kqALfufmkdus+EWdc+fO3h/LJZk0cwUhjL4xKNv3AC1IzLRYkUD
-	JSOAxwEZFDuSFpz7ELO4Lf0yzDm0sa8HXfa5juNwRQ==
-X-Google-Smtp-Source: AMrXdXsddOWoGnFZQINZnkBaGOB3nb1k2Yj3MDGckb0nfDcLAZ4K2UfHWcQKNw3CEaoMTFNvm5Ci0yiwpQSZqrZAhZ4=
-X-Received: by 2002:a0d:e3c3:0:b0:432:2458:f6ca with SMTP id
- m186-20020a0de3c3000000b004322458f6camr3760074ywe.138.1673614912824; Fri, 13
- Jan 2023 05:01:52 -0800 (PST)
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=w6Sfv3GzCAn5QrrBImbkAkIsyNCdyXbe2wptVAXtxE8=;
+        b=joY8+MWlKb87XH/cQoZVAUM3k9ynCG6b4X/L6Wd6bXnbz/euyjwZoDECqfcuVRzvZ3
+         dnJGaa5ao/yncsK3ZKraR1PHTNJuV5TsdCqYAXT0+0XBPcf1focdCfrFpYHY/K4DVd3R
+         RFTwr4M8d5qKqWN2vX+K82l+Ud1ktgc4LmCHpg1MFPF7bqi7td+fuyq6kWH+YdwKcS5m
+         qbZm10NbNST6K89RaHxTmoBwvmdYFmdEDcByOWb6BvdXlxeq7dhdsLnANJ6vC//tejdS
+         AlZdWyAALYrxFWSXSTGYJP01UMW9yfBHPso8hJmgoRDtfZlxYmH+widz0rq2C7tGBK/s
+         8DbQ==
+X-Gm-Message-State: AFqh2kqDCQz2P3r4lZEBU4wY631Jx0/CgrjlkbgV+tFcqXI94IzUAYBZ
+	54wOeHXzy1eimprm+wynLBs=
+X-Google-Smtp-Source: AMrXdXvLVIxqSzD18MgX3l3OlYJF5CvyJ3znHiB469r4ldiU7TKcm5zbYT3oyuirc1nRYXo/fO/1Iw==
+X-Received: by 2002:a05:600c:3b82:b0:3cf:900c:de6b with SMTP id n2-20020a05600c3b8200b003cf900cde6bmr58678762wms.15.1673615616233;
+        Fri, 13 Jan 2023 05:13:36 -0800 (PST)
+Received: from [192.168.0.30] ([37.222.254.155])
+        by smtp.gmail.com with ESMTPSA id 2-20020a05600c228200b003d9e00dfccfsm21796387wmf.8.2023.01.13.05.13.34
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 13 Jan 2023 05:13:35 -0800 (PST)
+Message-ID: <0054c6aa-da0d-ecb3-47a9-ef99caec0da3@gmail.com>
+Date: Fri, 13 Jan 2023 14:13:34 +0100
 MIME-Version: 1.0
-References: <20221130081430.67831-1-luca.weiss@fairphone.com>
- <20221130081430.67831-2-luca.weiss@fairphone.com> <Y6xP4YRAp68TfxFi@hovoldconsulting.com>
- <Y8BIX+js1ircJyb9@matsya> <cf968a25-02f7-d402-530b-eb379b707e54@linaro.org> <CPR2LS3SJQ3I.Z7UY505COG3@otso>
-In-Reply-To: <CPR2LS3SJQ3I.Z7UY505COG3@otso>
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Fri, 13 Jan 2023 15:01:41 +0200
-Message-ID: <CAA8EJpoOMMALHz7ysft6KvQaYhGWPD+xZiUjOTrC8CA_y81n-w@mail.gmail.com>
-Subject: Re: [PATCH v3 2/3] phy: qcom-qmp-combo: Add config for SM6350
-To: Luca Weiss <luca.weiss@fairphone.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Johan Hovold <johan@kernel.org>, linux-arm-msm@vger.kernel.org, 
-	~postmarketos/upstreaming@lists.sr.ht, phone-devel@vger.kernel.org, 
-	Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
-	Konrad Dybcio <konrad.dybcio@linaro.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.6.1
+Subject: Re: [PATCH v9 0/5] Add BananaPi R3
+Content-Language: en-US
+To: Frank Wunderlich <linux@fw-web.de>, linux-mediatek@lists.infradead.org
+Cc: Frank Wunderlich <frank-w@public-files.de>,
+ Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring
+ <robh+dt@kernel.org>, Krzysztof Kozlowski
+ <krzysztof.kozlowski+dt@linaro.org>, linux-arm-kernel@lists.infradead.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org
+References: <20230106152845.88717-1-linux@fw-web.de>
+From: Matthias Brugger <matthias.bgg@gmail.com>
+In-Reply-To: <20230106152845.88717-1-linux@fw-web.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230113_050155_946660_312D6840 
-X-CRM114-Status: GOOD (  31.13  )
+X-CRM114-CacheID: sfid-20230113_051340_381633_BDC3FABA 
+X-CRM114-Status: GOOD (  19.85  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,100 +91,103 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, 13 Jan 2023 at 14:44, Luca Weiss <luca.weiss@fairphone.com> wrote:
->
-> Hi Dmitry,
->
-> On Thu Jan 12, 2023 at 8:33 PM CET, Dmitry Baryshkov wrote:
-> > On 12/01/2023 19:50, Vinod Koul wrote:
-> > > On 28-12-22, 15:17, Johan Hovold wrote:
-> > >> Luca, Vinod,
-> > >>
-> > >> On Wed, Nov 30, 2022 at 09:14:28AM +0100, Luca Weiss wrote:
-> > >>> Add the tables and config for the combo phy found on SM6350.
-> > >>>
-> > >>> Signed-off-by: Luca Weiss <luca.weiss@fairphone.com>
-> > >>> ---
-> > >>> Changes since v2:
-> > >>> * Drop dp_txa/dp_txb changes, not required
-> > >>> * Fix dp_dp_phy offset
-> > >>>
-> > >>>   drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 126 ++++++++++++++++++++++
-> > >>>   1 file changed, 126 insertions(+)
-> > >>>
-> > >>> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-> > >>> index 77052c66cf70..6ac0c68269dc 100644
-> > >>> --- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-> > >>> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-> > >>
-> > >>> @@ -975,6 +1039,19 @@ static const char * const sc7180_usb3phy_reset_l[] = {
-> > >>>           "phy",
-> > >>>   };
-> > >>>
-> > >>> +static const struct qmp_combo_offsets qmp_combo_offsets_v3 = {
-> > >>> + .com            = 0x0000,
-> > >>> + .txa            = 0x1200,
-> > >>> + .rxa            = 0x1400,
-> > >>> + .txb            = 0x1600,
-> > >>> + .rxb            = 0x1800,
-> > >>> + .usb3_serdes    = 0x1000,
-> > >>> + .usb3_pcs_misc  = 0x1a00,
-> > >>> + .usb3_pcs       = 0x1c00,
-> > >>> + .dp_serdes      = 0x1000,
-> > >>
-> > >> I would have expected this to be 0x2000 as that's what the older
-> > >> platforms have been using for the dp serdes table so far. Without access
-> > >> to any documentation it's hard to tell whether everyone's just been
-> > >> cargo-culting all along or if there's actually something there at offset
-> > >> 0x2000.
-> >
-> > usb3_serdes is 0x1000, so dp_serdes equal to 0x1000 is definitely an typo.
-> >
-> > Judging from the downstream dtsi, the DP PHY starts at offset 0x2000. So
-> > dp_serdes is equal to 0x2000, dp_phy = 0x2a00, ln_tx1 = 0x2200, ln_tx2 =
-> > 0x2600.
->
-> Can you share how you got to the 0x2000 offset? You can see my
-> (potentially wrong) reasoning for 0x1000 a few messages ago[0].
->
-> The only 0x2000-something I could find now while looking at it again is
-> "#define USB3_DP_PHY_DP_DP_PHY_PD_CTL 0x2a18" which becomes
-> USB3_DP_DP_PHY_PD_CTL in the driver but this is seemingly not used at
-> all in my msm-4.19 tree.
+Patches 2-5 applied!
 
-Quite simple: see [1]. DP_PLL is at +0x2000
+Thanks!
 
-[1] https://android.googlesource.com/kernel/msm-extra/devicetree/+/refs/heads/android-msm-bramble-4.19-android11-qpr1/qcom/lagoon-sde-pll.dtsi#27
-
-Anyway, having DP serdes at the space as USB3 serdes would mean that
-one would be setting USB3 PLL when trying to enable DP. So I could
-have said even w/o looking at the dtsi that dp serdes can _not_ be at
-0x1000.
-
->
-> Also if you have any idea on how to test it at runtime without actually
-> having to get all the type-C functionality up I'd be happy to try that.
-> Unfortunately I believe there's still quite some bits missing to
-> actually get DP out via the USB-C port - which I imagine would trigger
-> the PHY setup.
-
-Unfortunately, I don't have a recipe to test this.
-
->
-> [0] https://lore.kernel.org/linux-arm-msm/CPDIYQ3SSY3E.I0Y0NMIED0WO@otso/
->
-> Regards
-> Luca
-
-
--- 
-With best wishes
-Dmitry
+On 06/01/2023 16:28, Frank Wunderlich wrote:
+> From: Frank Wunderlich <frank-w@public-files.de>
+> 
+> This Series adds some Nodes to mt7986 devicetree and the BananaPi R3
+> 
+> This version is rebased on linux 6.2-rc1 and i dropped already applied
+> Patches from v7.
+> 
+> i had run full dtbs-check but i end up with some strange warnings in
+> ethernet-node that should not come up as phy-handle and sfp/managed
+> properties are already defined. These errors also came up for mt7986a-rfb.
+> 
+> phy-handle made optional
+> https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/devicetree/bindings/net/mediatek,net.yaml#n265
+> 
+> property sfp/managed (which is included for mac subnode in yaml above):
+> https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/devicetree/bindings/net/ethernet-controller.yaml#n137
+> 
+> changes:
+> v9:
+> - drop model string override in sd-dtso
+> 
+> v8:
+> - drop model string override in emmc-dtso
+> - drop cs-gpios from spi-nodes
+> - add interrupt-settings for mt7531 switch
+> 
+> v7:
+> - rebase on next so dropped already applied patches
+> - squashed overlay-patch into the bpi-r3 base support
+> - moved regulators from mmc-dts to common dtsi
+> - changed dtsi to dts (as board base dtb) and mmc-dts to overlays
+> - renamed overlays to dtso
+> - removed angelos RB because of changes in bpi-r3 patch
+> 
+> v6:
+> - dropped regulators from usb-patch as suggested by chunfeng yun
+> - moved 3v3 regulator to mmc-patch as it is needed for emmc to work
+>    rfbs were tested by sam shih, r3 by me
+> - dropped RB from AngeloGioacchino from mmc-patch due to this change
+> - fixed links in coverletter which were broken in v5
+> - i hope this series is sent without errors now (my mailprovider limited
+>    mails last 2 times while sending part 10)
+> 
+> v5:
+> - changed usb ranges/reg/unit-adress
+> - added reviewd-by's except usb-part due to changes
+> 
+> v4:
+> - dropped RFC prefix
+> - rebase on matthias' mtk dts-next (for 6.2) branch
+> - added author information to overlays
+> - fixed sfp binding error
+> - added fix for moving wed_pcie node
+> - readded missing compatible patches
+> 
+> v3:
+> - changed mmc pull-ups
+> - added patch for board binding (sent separately before)
+> - added pcie node in mt7986 (not yet again in r3)
+> - added dt overlays
+> 
+> Frank Wunderlich (2):
+>    dt-bindings: phy: mediatek,tphy: add support for mt7986
+>    arm64: dts: mt7986: add Bananapi R3
+> 
+> Sam Shih (3):
+>    arm64: dts: mt7986: add usb related device nodes
+>    arm64: dts: mt7986: add mmc related device nodes
+>    arm64: dts: mt7986: add pcie related device nodes
+> 
+>   .../bindings/phy/mediatek,tphy.yaml           |   1 +
+>   arch/arm64/boot/dts/mediatek/Makefile         |   5 +
+>   .../mt7986a-bananapi-bpi-r3-emmc.dtso         |  29 ++
+>   .../mt7986a-bananapi-bpi-r3-nand.dtso         |  55 +++
+>   .../mediatek/mt7986a-bananapi-bpi-r3-nor.dtso |  68 +++
+>   .../mediatek/mt7986a-bananapi-bpi-r3-sd.dtso  |  23 +
+>   .../dts/mediatek/mt7986a-bananapi-bpi-r3.dts  | 450 ++++++++++++++++++
+>   arch/arm64/boot/dts/mediatek/mt7986a-rfb.dts  | 120 +++++
+>   arch/arm64/boot/dts/mediatek/mt7986a.dtsi     | 122 +++++
+>   arch/arm64/boot/dts/mediatek/mt7986b-rfb.dts  |   8 +
+>   10 files changed, 881 insertions(+)
+>   create mode 100644 arch/arm64/boot/dts/mediatek/mt7986a-bananapi-bpi-r3-emmc.dtso
+>   create mode 100644 arch/arm64/boot/dts/mediatek/mt7986a-bananapi-bpi-r3-nand.dtso
+>   create mode 100644 arch/arm64/boot/dts/mediatek/mt7986a-bananapi-bpi-r3-nor.dtso
+>   create mode 100644 arch/arm64/boot/dts/mediatek/mt7986a-bananapi-bpi-r3-sd.dtso
+>   create mode 100644 arch/arm64/boot/dts/mediatek/mt7986a-bananapi-bpi-r3.dts
+> 
 
 -- 
 linux-phy mailing list
