@@ -4,75 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 56993C54EBE
-	for <linux-phy@archiver.kernel.org>; Sat, 14 Jan 2023 00:09:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 35FBBC3DA78
+	for <linux-phy@archiver.kernel.org>; Sat, 14 Jan 2023 03:07:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Cy/POehS10PYTSRZHfg9Sl6hz62tvmKlenen0n3M7XA=; b=K+tafoa6JAvSoE
-	CKaynikdTx5ee2kq5pbuDvDG+o0PIzJanJOUJ+cG6f3Sh8P8VQx3VCTzR4gzOR8TsLPZ4qL1jSsku
-	62KvE68PPJDNxqMqCaFjOFdT5hXzH+yjegkjQwfbHJHen4CDE8pRhkyHc89oewrxfpsVQi+uCo9d7
-	9suHOOEOZtY0j7l0izsrN6wHxQokvI491h92kygsx0gwAovrXMeOA+rJtjAQ4fJJLdVTcgGPSZoiU
-	Cbev6sb6NDr950V4dcN0sCBmCS3rRgXRE8VA8mtdsBlRoMkunzJUQxtHyhliszRAmu+wLOTKoecxI
-	vcEjmjv8Kf65j1yBDS3w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=nj68TLi3pmN0pjI/doMfV5UrRmcjNgZdwmBphbN6+Hk=; b=efBgIWDIX8nfWn
+	EoSUZyOa9cXIg50dpaGQyXZ/q5QELDcooDB9sOXNQwffZjiBUfrdmj8auNixbclcXdxszhTz95fE2
+	HFhkXjZ29vADciTfHbg8vX03tIffKfLFO8SV19doksT3vb8F9U4K6letSfT39KQzYA/1wJdBV8/U9
+	MLC/P4AAD3QJtrejQTsXN7ZS9/kzOHvlL5V45wAv4cnk8OXoYmf+zC59X6Bv4ygYBbRCRsFoSmacF
+	V5U6cXxGWqdq+9c+WGRGDH3y11m+UbpvsoPu0yq5esmOEH198CiahpcaRTbgm8/m/QfP74Z59gewX
+	yVTWx0wmrYedaqSrDu5w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pGU6q-004s61-KW; Sat, 14 Jan 2023 00:09:20 +0000
-Received: from mail-pl1-x632.google.com ([2607:f8b0:4864:20::632])
+	id 1pGWt8-00578q-Ct; Sat, 14 Jan 2023 03:07:22 +0000
+Received: from mx0a-00069f02.pphosted.com ([205.220.165.32])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pGU6n-004s5A-5c
-	for linux-phy@lists.infradead.org; Sat, 14 Jan 2023 00:09:18 +0000
-Received: by mail-pl1-x632.google.com with SMTP id k12so2919350plk.0
-        for <linux-phy@lists.infradead.org>; Fri, 13 Jan 2023 16:09:12 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=chromium.org; s=google;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=iCt1TVcQGT69o0NxFcLxxxAse3ihgOBwig0LVJHKNSQ=;
-        b=PbPnpcZ8eF/CwYhed0OtyJu8Vmo2IAckT9ykkO30Wp2z+MDwWjyn/lhG4KDd0f171G
-         qP5MTty7fpLNF1p7JwY3jjwkYxy9Bikgc7JsJBqj4XvvfhK+f1Y0DBZgOddOIO/4xHNf
-         wo+du5YEL8RN8nKdgGHhfMUzV749F4sCl1kh8=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=iCt1TVcQGT69o0NxFcLxxxAse3ihgOBwig0LVJHKNSQ=;
-        b=y3PME1EyLe3T4wp9doMbgK3hIoK49sbgLmSpy3eufWmUqtj3+vG+L9qd1vSw6eCuEC
-         F2COT8zIrBZZ8b+3+QFWSbZt08AG0bpepM6WbWCrNaquJyuK3xdIW4AEmcULx1ebDIzU
-         eDWFN9zyX/LrZob2KnXu02CcbK+OHMxOkAm1lXld56GFCBGJahN4sbp8yUVFfQdtx8Em
-         1MUuoMBz6XD8TxxcfjbU0FDtzLV1mVxaxABGNTwcKNUAjUPCSB8bovJmvCYvdHNc8rLf
-         A6iKJ8cNGmo1ZdVKbl5FT9DyPrSqDktMz8zjGla5jFs0zQXNOe8OYPemwCeb7lkjjREV
-         Oghg==
-X-Gm-Message-State: AFqh2kpJAz8GW/kRX5c/vXGwSdpHPd0/OIhKL5d8ksldwPMI54I16CnH
-	54E9R7QkR8zthKVbUC7wK2iPqQ==
-X-Google-Smtp-Source: AMrXdXvx17AIp+ECFymjutA1xBaxl0yWe14V9QyFLYnxxmH8Bd1cQLvxABFqH5ZfQYMYlm2zXzKovg==
-X-Received: by 2002:a17:902:8d81:b0:194:4339:f12e with SMTP id v1-20020a1709028d8100b001944339f12emr13815441plo.1.1673654952381;
-        Fri, 13 Jan 2023 16:09:12 -0800 (PST)
-Received: from smtp.gmail.com ([2620:15c:11a:201:4652:3752:b9b7:29f9])
-        by smtp.gmail.com with ESMTPSA id n15-20020a170902d2cf00b0018963b8e131sm14637072plc.290.2023.01.13.16.09.11
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 13 Jan 2023 16:09:11 -0800 (PST)
-From: Stephen Boyd <swboyd@chromium.org>
-To: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@ti.com>
-Cc: linux-kernel@vger.kernel.org,
-	patches@lists.linux.dev,
-	linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
-	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH] phy: qcom-qmp: Introduce Kconfig symbols for discrete drivers
-Date: Fri, 13 Jan 2023 16:09:10 -0800
-Message-Id: <20230114000910.1256462-1-swboyd@chromium.org>
-X-Mailer: git-send-email 2.39.0.314.g84b9a713c41-goog
+	id 1pGWt4-00577M-OZ
+	for linux-phy@lists.infradead.org; Sat, 14 Jan 2023 03:07:20 +0000
+Received: from pps.filterd (m0333521.ppops.net [127.0.0.1])
+	by mx0b-00069f02.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 30E2wNNT023855;
+	Sat, 14 Jan 2023 03:07:09 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com; h=from : to : cc :
+ subject : date : message-id : in-reply-to : references : mime-version :
+ content-type : content-transfer-encoding; s=corp-2022-7-12;
+ bh=FqBQjREvcACjBzDkIhCAkhf57aXLYf5/WwuqqldkKiI=;
+ b=mrVXInI9EN+EES05LTP4C+nza58a0R8xZYXjSwUkoaB7ToaXwxbckIZdf7VxybybU9NC
+ LweBF4iDZoaSXWbn2cybWT3jFpUM+gsyTCi0AL27r+e7xDdlvEidieyJokAuHnpnhGo5
+ DTULO3MmbO0rtBetqnNXhwWiSnkinJZ6byJBAhXCTrs2JhScjdVCvixlKcr2d5/fML5P
+ wLqG3fuhGgg4liegee4ZF2DGT0cbTve62xoScc5gORDy0vwnHdT2B3rI8jXF/dP9AgGc
+ Y1A9Dpd/kIoH8LpDqadK1Md0N7rFfDbAjOI8Wcfnhbiy0aP7NsniTL2JU3wymjM6yAUG qQ== 
+Received: from iadpaimrmta02.imrmtpd1.prodappiadaev1.oraclevcn.com (iadpaimrmta02.appoci.oracle.com [147.154.18.20])
+	by mx0b-00069f02.pphosted.com (PPS) with ESMTPS id 3n3kaa80vy-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+	Sat, 14 Jan 2023 03:07:09 +0000
+Received: from pps.filterd (iadpaimrmta02.imrmtpd1.prodappiadaev1.oraclevcn.com [127.0.0.1])
+	by iadpaimrmta02.imrmtpd1.prodappiadaev1.oraclevcn.com (8.17.1.5/8.17.1.5) with ESMTP id 30E2xIfM018721;
+	Sat, 14 Jan 2023 03:07:07 GMT
+Received: from pps.reinject (localhost [127.0.0.1])
+	by iadpaimrmta02.imrmtpd1.prodappiadaev1.oraclevcn.com (PPS) with ESMTPS id 3n3m3d85tb-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+	Sat, 14 Jan 2023 03:07:07 +0000
+Received: from iadpaimrmta02.imrmtpd1.prodappiadaev1.oraclevcn.com (iadpaimrmta02.imrmtpd1.prodappiadaev1.oraclevcn.com [127.0.0.1])
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 30E375hH035466;
+	Sat, 14 Jan 2023 03:07:06 GMT
+Received: from ca-mkp2.ca.oracle.com.com (mpeterse-ol9.allregionaliads.osdevelopmeniad.oraclevcn.com [100.100.251.135])
+	by iadpaimrmta02.imrmtpd1.prodappiadaev1.oraclevcn.com (PPS) with ESMTP id 3n3m3d85sp-4;
+	Sat, 14 Jan 2023 03:07:06 +0000
+From: "Martin K. Petersen" <martin.petersen@oracle.com>
+To: jejb@linux.ibm.com, andersson@kernel.org, vkoul@kernel.org,
+        Manivannan Sadhasivam <mani@kernel.org>
+Cc: "Martin K . Petersen" <martin.petersen@oracle.com>, quic_cang@quicinc.com,
+        quic_asutoshd@quicinc.com, linux-arm-msm@vger.kernel.org,
+        linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+        linux-scsi@vger.kernel.org, dmitry.baryshkov@linaro.org,
+        ahalaney@redhat.com, abel.vesa@linaro.org, alim.akhtar@samsung.com,
+        avri.altman@wdc.com, bvanassche@acm.org
+Subject: Re: (subset) [PATCH v5 00/23] ufs: qcom: Add HS-G4 support
+Date: Fri, 13 Jan 2023 22:06:42 -0500
+Message-Id: <167366469091.3069139.11760332738434847058.b4-ty@oracle.com>
+X-Mailer: git-send-email 2.38.1
+In-Reply-To: <20221222141001.54849-1-manivannan.sadhasivam@linaro.org>
+References: <20221222141001.54849-1-manivannan.sadhasivam@linaro.org>
 MIME-Version: 1.0
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.219,Aquarius:18.0.923,Hydra:6.0.562,FMLib:17.11.122.1
+ definitions=2023-01-13_12,2023-01-13_02,2022-06-22_01
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0 adultscore=0 phishscore=0
+ mlxscore=0 mlxlogscore=999 bulkscore=0 suspectscore=0 malwarescore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2212070000
+ definitions=main-2301140019
+X-Proofpoint-GUID: 2Pb_fdYL-h4NF2yuk3MPFoRKBCY-MtfP
+X-Proofpoint-ORIG-GUID: 2Pb_fdYL-h4NF2yuk3MPFoRKBCY-MtfP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230113_160917_273159_9CCACD34 
-X-CRM114-Status: GOOD (  12.41  )
+X-CRM114-CacheID: sfid-20230113_190718_826886_8C95278F 
+X-CRM114-Status: GOOD (  16.70  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,117 +98,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Introduce a config option for each QMP PHY driver now that the QMP PHY
-mega-driver has been split up into different modules. This allows kernel
-configurators to limit the binary size of the kernel by only compiling
-in the QMP PHY driver that they need, or to split the module up into one
-per PHY driver instead of one module for all the QMP PHY drivers.
+On Thu, 22 Dec 2022 19:39:38 +0530, Manivannan Sadhasivam wrote:
 
-Leave the old config QCOM_QMP in place and make it into a menuconfig so
-that 'make olddefconfig' continues to work. Furthermore, set the default
-of the new Kconfig symbols to be QCOM_QMP so that the transition is
-smooth.
+> This series adds HS-G4 support to the Qcom UFS driver and PHY driver.
+> The newer Qcom platforms support configuring the UFS controller and PHY
+> in dual gears (i.e., controller/PHY can be configured to run in two gear
+> speeds). This is accomplished by adding two different PHY init sequences
+> to the PHY driver and the UFS driver requesting the one that's required
+> based on the platform configuration.
+> 
+> [...]
 
-Cc: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Cc: Johan Hovold <johan+linaro@kernel.org>
-Signed-off-by: Stephen Boyd <swboyd@chromium.org>
----
- drivers/phy/qualcomm/Kconfig  | 50 ++++++++++++++++++++++++++++++++---
- drivers/phy/qualcomm/Makefile | 12 ++++-----
- 2 files changed, 52 insertions(+), 10 deletions(-)
+Applied to 6.3/scsi-queue, thanks!
 
-diff --git a/drivers/phy/qualcomm/Kconfig b/drivers/phy/qualcomm/Kconfig
-index 5c98850f5a36..1d3a8062e651 100644
---- a/drivers/phy/qualcomm/Kconfig
-+++ b/drivers/phy/qualcomm/Kconfig
-@@ -50,13 +50,55 @@ config PHY_QCOM_PCIE2
- 	  Enable this to support the Qualcomm PCIe PHY, used with the Synopsys
- 	  based PCIe controller.
- 
--config PHY_QCOM_QMP
--	tristate "Qualcomm QMP PHY Driver"
-+menuconfig PHY_QCOM_QMP
-+	tristate "Qualcomm QMP PHY Drivers"
- 	depends on OF && COMMON_CLK && (ARCH_QCOM || COMPILE_TEST)
-+
-+if PHY_QCOM_QMP
-+
-+config PHY_QCOM_QMP_COMBO
-+	tristate "Qualcomm QMP Combo PHY Driver"
-+	default PHY_QCOM_QMP
-+	select GENERIC_PHY
-+	help
-+	  Enable this to support the QMP Combo PHY transceiver that is used
-+	  with USB3 and DisplayPort controllers on Qualcomm chips.
-+
-+config PHY_QCOM_QMP_PCIE
-+	tristate "Qualcomm QMP PCIe PHY Driver"
-+	depends on PCI || COMPILE_TEST
-+	select GENERIC_PHY
-+	default PHY_QCOM_QMP
-+	help
-+	  Enable this to support the QMP PCIe PHY transceiver that is used
-+	  with PCIe controllers on Qualcomm chips.
-+
-+config PHY_QCOM_QMP_PCIE_8996
-+	tristate "Qualcomm QMP PCIe 8996 PHY Driver"
-+	depends on PCI || COMPILE_TEST
- 	select GENERIC_PHY
-+	default PHY_QCOM_QMP
- 	help
--	  Enable this to support the QMP PHY transceiver that is used
--	  with controllers such as PCIe, UFS, and USB on Qualcomm chips.
-+	  Enable this to support the QMP PCIe PHY transceiver that is used
-+	  with PCIe controllers on Qualcomm msm8996 chips.
-+
-+config PHY_QCOM_QMP_UFS
-+	tristate "Qualcomm QMP UFS PHY Driver"
-+	select GENERIC_PHY
-+	default PHY_QCOM_QMP
-+	help
-+	  Enable this to support the QMP UFS PHY transceiver that is used
-+	  with UFS controllers on Qualcomm chips.
-+
-+config PHY_QCOM_QMP_USB
-+	tristate "Qualcomm QMP USB PHY Driver"
-+	select GENERIC_PHY
-+	default PHY_QCOM_QMP
-+	help
-+	  Enable this to support the QMP USB PHY transceiver that is used
-+	  with USB3 controllers on Qualcomm chips.
-+
-+endif # PHY_QCOM_QMP
- 
- config PHY_QCOM_QUSB2
- 	tristate "Qualcomm QUSB2 PHY Driver"
-diff --git a/drivers/phy/qualcomm/Makefile b/drivers/phy/qualcomm/Makefile
-index 65f6c30a3e93..79dd4e507961 100644
---- a/drivers/phy/qualcomm/Makefile
-+++ b/drivers/phy/qualcomm/Makefile
-@@ -5,12 +5,12 @@ obj-$(CONFIG_PHY_QCOM_EDP)		+= phy-qcom-edp.o
- obj-$(CONFIG_PHY_QCOM_IPQ4019_USB)	+= phy-qcom-ipq4019-usb.o
- obj-$(CONFIG_PHY_QCOM_IPQ806X_SATA)	+= phy-qcom-ipq806x-sata.o
- obj-$(CONFIG_PHY_QCOM_PCIE2)		+= phy-qcom-pcie2.o
--obj-$(CONFIG_PHY_QCOM_QMP)		+= \
--	phy-qcom-qmp-combo.o \
--	phy-qcom-qmp-pcie.o \
--	phy-qcom-qmp-pcie-msm8996.o \
--	phy-qcom-qmp-ufs.o \
--	phy-qcom-qmp-usb.o
-+
-+obj-$(CONFIG_PHY_QCOM_QMP_COMBO)	+= phy-qcom-qmp-combo.o
-+obj-$(CONFIG_PHY_QCOM_QMP_PCIE)		+= phy-qcom-qmp-pcie.o
-+obj-$(CONFIG_PHY_QCOM_QMP_PCIE_8996)	+= phy-qcom-qmp-pcie-msm8996.o
-+obj-$(CONFIG_PHY_QCOM_QMP_UFS)		+= phy-qcom-qmp-ufs.o
-+obj-$(CONFIG_PHY_QCOM_QMP_USB)		+= phy-qcom-qmp-usb.o
- 
- obj-$(CONFIG_PHY_QCOM_QUSB2)		+= phy-qcom-qusb2.o
- obj-$(CONFIG_PHY_QCOM_USB_HS) 		+= phy-qcom-usb-hs.o
+[13/23] scsi: ufs: ufs-qcom: Remove un-necessary goto statements
+        https://git.kernel.org/mkp/scsi/c/031312dbc695
+[14/23] scsi: ufs: ufs-qcom: Remove un-necessary WARN_ON()
+        https://git.kernel.org/mkp/scsi/c/a98c2183e81d
+[15/23] scsi: ufs: ufs-qcom: Use bitfields where appropriate
+        https://git.kernel.org/mkp/scsi/c/18fe2ab79bcf
+[16/23] scsi: ufs: ufs-qcom: Use dev_err_probe() for printing probe error
+        https://git.kernel.org/mkp/scsi/c/132b027205ef
+[17/23] scsi: ufs: ufs-qcom: Fix the Qcom register name for offset 0xD0
+        https://git.kernel.org/mkp/scsi/c/7959587f3284
+[18/23] scsi: ufs: core: Add reinit_notify() callback
+        https://git.kernel.org/mkp/scsi/c/c2c38c573a2e
+[19/23] scsi: ufs: core: Add support for reinitializing the UFS device
+        https://git.kernel.org/mkp/scsi/c/96a7141da332
+[20/23] scsi: ufs: ufs-qcom: Factor out the logic finding the HS Gear
+        https://git.kernel.org/mkp/scsi/c/c270986527f9
+[21/23] scsi: ufs: ufs-qcom: Add support for reinitializing the UFS device
+        https://git.kernel.org/mkp/scsi/c/baf5ddac90dc
+[22/23] scsi: ufs: ufs-qcom: Add support for finding max gear on new platforms
+        https://git.kernel.org/mkp/scsi/c/2c407fe97015
+[23/23] MAINTAINERS: Add myself as the maintainer for Qcom UFS drivers
+        https://git.kernel.org/mkp/scsi/c/39beef59128f
 
-base-commit: 30a0b95b1335e12efef89dd78518ed3e4a71a763
 -- 
-https://chromeos.dev
-
+Martin K. Petersen	Oracle Linux Engineering
 
 -- 
 linux-phy mailing list
