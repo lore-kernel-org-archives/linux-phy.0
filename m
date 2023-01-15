@@ -4,82 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E079AC46467
-	for <linux-phy@archiver.kernel.org>; Sat, 14 Jan 2023 07:11:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F2620C46467
+	for <linux-phy@archiver.kernel.org>; Sun, 15 Jan 2023 14:24:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zwJkwX3D2saiEegOwAxlVrE7G2VWrCxKL1p6cH0XLBw=; b=xu2XF0axCuidf3
-	y+4xY1r6vtbHEJh4b2qHoEcVTEnDEvQCprOLUbeA+OF9CloIc4rWP7DDg+N+5IaglX6Q5rM07fKuP
-	7Rw4jnKlKpL8Gq9Negnl/nshuOZgEXxBYGSAHtTWQH4AhRj8UdrxHdCFVLlTM1z38dAryAGO172ag
-	gF8Ml0KGQOdho6N4uydYyu1j9upXPGg0qS0pUXywol47r+11u5GGzZzhu3cWs0L+G4JO/hvGje9mF
-	NKjgkYe9lPQnq9/ByszW8aUT2QrRkF56siIZVX7Fc5Qsny67HU/jDDAojXaW6+KVLsiZFK99c8PAn
-	BnfD+KdGSXn0T79CLw4g==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:From:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=oUsGFfcUS9r5WQyInCUSzJNtEYY5499WyVoRtNo7onE=; b=j8Tv2HviBP/ohL
+	a4aHRFvF0x+fzo1hH/OpthUB1eLksSHvBiXgKiT/0+I4y9wlmVuB2wPVpeCoPPaj7rlwphKYr69Nq
+	8m03UAWGfTeu+NkECO9MxdBhTLue+yCL10ujgUfOxUlbHUIYckjGE9rB8N+IFm5nLPiC9fZozpYHo
+	wHiSuhxrRVhcz+GN0UZbZrvAgwLzUxAm+0s/eBIFBXjckvzC22eLaGNmfvJeV6XjY+CDMeWU/VMyj
+	eimSXg7X1oKTcBY3BegVIoW0wkRs2iNIPx0WUysB7uiGhFPrNMI7eI3GEa16X/wv+6L3wVvM0bpLM
+	pHgDg82U8Rhh3w+Spixg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pGahS-005OK2-Bg; Sat, 14 Jan 2023 07:11:34 +0000
-Received: from mail-pl1-x62a.google.com ([2607:f8b0:4864:20::62a])
+	id 1pH3vu-007RRi-3d; Sun, 15 Jan 2023 14:24:26 +0000
+Received: from mail-wm1-x32f.google.com ([2a00:1450:4864:20::32f])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pGahQ-005OJZ-7e
-	for linux-phy@lists.infradead.org; Sat, 14 Jan 2023 07:11:33 +0000
-Received: by mail-pl1-x62a.google.com with SMTP id k18so1527570pll.5
-        for <linux-phy@lists.infradead.org>; Fri, 13 Jan 2023 23:11:31 -0800 (PST)
+	id 1pH3vq-007RQu-PX; Sun, 15 Jan 2023 14:24:24 +0000
+Received: by mail-wm1-x32f.google.com with SMTP id z8-20020a05600c220800b003d33b0bda11so2820720wml.0;
+        Sun, 15 Jan 2023 06:24:22 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=in-reply-to:content-transfer-encoding:content-disposition
-         :mime-version:references:message-id:subject:cc:to:from:date:from:to
-         :cc:subject:date:message-id:reply-to;
-        bh=1hhoYOhdFd/1XWBMyQAS/0V7h4xRZx/EixJ0JzHFu+g=;
-        b=s/rwqXRQRrL287PIModN2dUSPDh/Rdn5QjNd5Xp+Axm/oMwq7OfgSfuDuisdK92Hq5
-         MTLo1kefENmoT+Q58au/HYoJ7/OhtfVipv0+5dmgr8+c4+Q7Hvxbxjsj+5nOA0MLeWVN
-         DZR+h96VSYYvWFA2l9s8uXTAmA8dvCNTT6eoE8OZ4jbckdImpMl0O4UCDnMxY3h9cCNC
-         6rOTpmW/MGaeggiUS23KBUei63wgqnewzos/1PZYDzseOX5DojemX+yAlGmZW6kx2Hok
-         3qYLB75spkgntclw0xXCtIluVmHzwlWYz9Gx4TPqTBOz1t/vZa0Xd/p/WDU0cOXB9M7d
-         THVA==
+        d=gmail.com; s=20210112;
+        h=content-transfer-encoding:content-language:cc:to:subject:from
+         :user-agent:mime-version:date:message-id:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=zPB9krp6eiC7JbYL+IhgTGE/R+STIoi/Z4Ow6TqzdnE=;
+        b=p16Cx1eLPV5Q9j8Bf/WMOcz2U66PM1w/fra68F60TnFnXzJ4vZQJgZYY3RSU/fCM7A
+         CQKRFtbL0/F1WRCL2h035+w8yYHtHLTcFAvYoTLgqyKZykntxaAl/uB/O63id+MOFQ5D
+         W6jQNnMjIAwDyj5b4ntxWIE7FeniUlyW2a6JiRiKSXRg5Y0T9n+H6GbyZ9/SoluX+Mib
+         vSJRGESJt4fpkew78EQnBUb4CQhSFri5JAwj5LBxxNBrz18xCt3oy7h/+iduNoU+4OyO
+         JmFvlCeLe1w3r8auSl/+rV/SjSXUZ9VyiDjZhtjRp0XgK5lbc2Khhfk0+D1C3rB1aa8N
+         ouKA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=in-reply-to:content-transfer-encoding:content-disposition
-         :mime-version:references:message-id:subject:cc:to:from:date
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=1hhoYOhdFd/1XWBMyQAS/0V7h4xRZx/EixJ0JzHFu+g=;
-        b=CsSt3+LaQGCXrHkumfrASPKSshe2eJhoyymp79AD4o8L3NCAEGNAeBbT4SV71wzmcB
-         wVbNDlkgloSjRBXNBH/DqfmaRvGR3zJNrugFGMfrh08QP9eum8ktj2Fix9LA5WIh144L
-         o0CW+HnLDIA7XiJylwVIEySnXxwrLH7YwTzppJrB4j0nJqpwZC9jnW+X38L2B/jg8qp0
-         ZHSWJg+xhXE9OM3tsbw8rr0D3S7xVqnevObgj9lW6tjhMykoUt1L6ZoA4H1npneHDflq
-         c8XwNEzmm0XfjwLQ6i5x526jVI5IiU4FfKIk19HlLzZAFSwFy2aTvVnn16sOgMwCLCD4
-         nCVA==
-X-Gm-Message-State: AFqh2kroIJ2uCHE7ZHLH0Ci+GjEN+0yhSHIXgHdeJ9lxMXZAjv2EJDwx
-	nA/auYwQlGJmJYw+B9Yvu/dj
-X-Google-Smtp-Source: AMrXdXuRiszNGrahdiih775tFedEbPuYrEDVDujrhEjX5i2q3iO2KN2NrvpKq7SntYHOH003BwajVw==
-X-Received: by 2002:a17:902:e5cd:b0:192:9140:ee76 with SMTP id u13-20020a170902e5cd00b001929140ee76mr86976458plf.37.1673680290585;
-        Fri, 13 Jan 2023 23:11:30 -0800 (PST)
-Received: from thinkpad ([220.158.159.156])
-        by smtp.gmail.com with ESMTPSA id n6-20020a170903110600b00192d9258532sm15316913plh.150.2023.01.13.23.11.25
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 13 Jan 2023 23:11:29 -0800 (PST)
-Date: Sat, 14 Jan 2023 12:41:24 +0530
-From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-To: Vinod Koul <vkoul@kernel.org>
-Cc: martin.petersen@oracle.com, jejb@linux.ibm.com, andersson@kernel.org,
-	quic_cang@quicinc.com, quic_asutoshd@quicinc.com,
-	linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org, linux-scsi@vger.kernel.org,
-	dmitry.baryshkov@linaro.org, ahalaney@redhat.com,
-	abel.vesa@linaro.org, alim.akhtar@samsung.com, avri.altman@wdc.com,
-	bvanassche@acm.org
-Subject: Re: [PATCH v5 00/23] ufs: qcom: Add HS-G4 support
-Message-ID: <20230114071124.GA6992@thinkpad>
-References: <20221222141001.54849-1-manivannan.sadhasivam@linaro.org>
- <Y8BNQZ/CFljuxsSL@matsya>
+        h=content-transfer-encoding:content-language:cc:to:subject:from
+         :user-agent:mime-version:date:message-id:x-gm-message-state:from:to
+         :cc:subject:date:message-id:reply-to;
+        bh=zPB9krp6eiC7JbYL+IhgTGE/R+STIoi/Z4Ow6TqzdnE=;
+        b=DO7c1c7VQPDymlY909aklbrOKqUHc1nVpmAmQAs1OzjOelSqUaXjzMYWK9oWtnwwk8
+         tXgqLJa/vJyzHCiUC9iLCDasgEwMBaXOZ8sSOErbld38V1bnFDXnxAadxSUXyBSZum6G
+         xIoWtfrnOzdc1aEpWZ1LoFVZaMM7r2OYtGkwwzaeVkm68jxTaxEp2z4P4GiVA+79n1LS
+         Hb3eTnZqhLJALHjAOyw4JofiBzeORMep3e7yrDyXFxmiGTo59+oLp8/6a62wOXEj5X1l
+         uobVvXZZqCYUo4WgEBiHunZSROLqTPtmHOXv39DsS5aU7RYnpmRGO6B+U1W3dfLISXFe
+         nbgw==
+X-Gm-Message-State: AFqh2kpEFRmOTbpUmbupTSOvvE32j12O7AyT8LGZP8XNHX4yuW+Xn1lt
+	BbrxAmLCt736u4Sre34cUAWVRX2wuC0=
+X-Google-Smtp-Source: AMrXdXsmQNYKO1JhaPJuv6ZlUsDcHrE/7WIDXiMd0eEr5+aDL7G2VdCUVsIMrhS22a+F0WvvkF4wHg==
+X-Received: by 2002:a05:600c:a4f:b0:3d2:196c:270c with SMTP id c15-20020a05600c0a4f00b003d2196c270cmr67053230wmq.31.1673792661012;
+        Sun, 15 Jan 2023 06:24:21 -0800 (PST)
+Received: from ?IPV6:2a01:c22:6e61:8c00:154f:326e:8d45:8ce7? (dynamic-2a01-0c22-6e61-8c00-154f-326e-8d45-8ce7.c22.pool.telefonica.de. [2a01:c22:6e61:8c00:154f:326e:8d45:8ce7])
+        by smtp.googlemail.com with ESMTPSA id o14-20020a5d58ce000000b002879c013b8asm23699826wrf.42.2023.01.15.06.24.20
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sun, 15 Jan 2023 06:24:20 -0800 (PST)
+Message-ID: <fae86fd4-40f0-ce6f-f3ab-d5e0cff019c4@gmail.com>
+Date: Sun, 15 Jan 2023 15:19:31 +0100
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <Y8BNQZ/CFljuxsSL@matsya>
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.6.1
+From: Heiner Kallweit <hkallweit1@gmail.com>
+Subject: [PATCH] dt-bindings: phy: g12a-usb2-phy: fix compatible string
+ documentation
+To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
+ <kishon@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Neil Armstrong <neil.armstrong@linaro.org>,
+ Kevin Hilman <khilman@baylibre.com>, Jerome Brunet <jbrunet@baylibre.com>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Cc: linux-phy@lists.infradead.org,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>,
+ "open list:ARM/Amlogic Meson..." <linux-amlogic@lists.infradead.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230113_231132_310961_9F741984 
-X-CRM114-Status: GOOD (  19.42  )
+X-CRM114-CacheID: sfid-20230115_062422_882750_CDF864DD 
+X-CRM114-Status: UNSURE (   7.07  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,33 +94,55 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gVGh1LCBKYW4gMTIsIDIwMjMgYXQgMTE6NDE6MTNQTSArMDUzMCwgVmlub2QgS291bCB3cm90
-ZToKPiBPbiAyMi0xMi0yMiwgMTk6MzksIE1hbml2YW5uYW4gU2FkaGFzaXZhbSB3cm90ZToKPiA+
-IEhlbGxvLAo+ID4gCj4gPiBUaGlzIHNlcmllcyBhZGRzIEhTLUc0IHN1cHBvcnQgdG8gdGhlIFFj
-b20gVUZTIGRyaXZlciBhbmQgUEhZIGRyaXZlci4KPiA+IFRoZSBuZXdlciBRY29tIHBsYXRmb3Jt
-cyBzdXBwb3J0IGNvbmZpZ3VyaW5nIHRoZSBVRlMgY29udHJvbGxlciBhbmQgUEhZCj4gPiBpbiBk
-dWFsIGdlYXJzIChpLmUuLCBjb250cm9sbGVyL1BIWSBjYW4gYmUgY29uZmlndXJlZCB0byBydW4g
-aW4gdHdvIGdlYXIKPiA+IHNwZWVkcykuIFRoaXMgaXMgYWNjb21wbGlzaGVkIGJ5IGFkZGluZyB0
-d28gZGlmZmVyZW50IFBIWSBpbml0IHNlcXVlbmNlcwo+ID4gdG8gdGhlIFBIWSBkcml2ZXIgYW5k
-IHRoZSBVRlMgZHJpdmVyIHJlcXVlc3RpbmcgdGhlIG9uZSB0aGF0J3MgcmVxdWlyZWQKPiA+IGJh
-c2VkIG9uIHRoZSBwbGF0Zm9ybSBjb25maWd1cmF0aW9uLgo+ID4gCj4gPiBJbml0aWFsbHkgdGhl
-IHVmcy1xY29tIGRyaXZlciB3aWxsIHVzZSB0aGUgZGVmYXVsdCBnZWFyIEcyIGZvciBlbnVtZXJh
-dGluZwo+ID4gdGhlIFVGUyBkZXZpY2UuIEFmZXIgZW51bWVyYXRpb24sIHRoZSBtYXggZ2VhciBz
-dXBwb3J0ZWQgYnkgYm90aCB0aGUKPiA+IGNvbnRyb2xsZXIgYW5kIGRldmljZSB3b3VsZCBiZSBm
-b3VuZCBvdXQgYW5kIHRoYXQgd2lsbCBiZSB1c2VkIHRoZXJlYWZ0ZXIuCj4gPiBCdXQgZm9yIHVz
-aW5nIHRoZSBtYXggZ2VhciBhZnRlciBlbnVtZXJhdGlvbiwgdGhlIHVmcy1xY29tIGRyaXZlciBy
-ZXF1aXJlcwo+ID4gdGhlIFVGUyBkZXZpY2UgdG8gYmUgcmVpbml0aWFsaXplZC4gRm9yIHRoaXMg
-cHVycG9zZSwgYSBzZXBhcmF0ZSBxdWlyayBoYXMKPiA+IGJlZW4gaW50cm9kdWNlZCBpbiB0aGUg
-VUZTIGNvcmUgYWxvbmcgd2l0aCBhIGNhbGxiYWNrIGFuZCB0aG9zZSB3aWxsIGJlIHVzZWQKPiA+
-IGJ5IHRoZSB1ZnMtcWNvbSBkcml2ZXIuCj4gCj4gVGhlIHNlcmllcyBsZ3RtLiBUaGlzIGZhaWxz
-IGZvciBtZSB0byBhcHBseSB0aG91Z2ggZHVlIHRvIG90aGVyIHBhdGNoZXMKPiBJIGhhdmUgcGlj
-a2VkIHVwLgo+IAo+IENhbiB5b3UgcGxlYXNlIHJlYmFzZSB0aGUgcGh5IHBhdGNoZXMgYW5kIHNl
-bmQgdGhvc2UgCj4gCgpEb25lIQoKVGhhbmtzLApNYW5pCgo+IC0tIAo+IH5WaW5vZAoKLS0gCuCu
-ruCuo+Cuv+CuteCuo+CvjeCuo+CuqeCvjSDgrprgrqTgrr7grprgrr/grrXgrq7gr40KCi0tIAps
-aW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBz
-Oi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+The compatible strings in the driver don't have the meson prefix.
+Fix this in the documentation and rename the file accordingly.
+
+Fixes: da86d286cce8 ("dt-bindings: phy: meson-g12a-usb2-phy: convert to yaml")
+Cc: stable@vger.kernel.org
+Signed-off-by: Heiner Kallweit <hkallweit1@gmail.com>
+---
+ ...,meson-g12a-usb2-phy.yaml => amlogic,g12a-usb2-phy.yaml} | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+ rename Documentation/devicetree/bindings/phy/{amlogic,meson-g12a-usb2-phy.yaml => amlogic,g12a-usb2-phy.yaml} (91%)
+
+diff --git a/Documentation/devicetree/bindings/phy/amlogic,meson-g12a-usb2-phy.yaml b/Documentation/devicetree/bindings/phy/amlogic,g12a-usb2-phy.yaml
+similarity index 91%
+rename from Documentation/devicetree/bindings/phy/amlogic,meson-g12a-usb2-phy.yaml
+rename to Documentation/devicetree/bindings/phy/amlogic,g12a-usb2-phy.yaml
+index f3a5fbabb..19a0ddab0 100644
+--- a/Documentation/devicetree/bindings/phy/amlogic,meson-g12a-usb2-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/amlogic,g12a-usb2-phy.yaml
+@@ -13,8 +13,8 @@ maintainers:
+ properties:
+   compatible:
+     enum:
+-      - amlogic,meson-g12a-usb2-phy
+-      - amlogic,meson-a1-usb2-phy
++      - amlogic,g12a-usb2-phy
++      - amlogic,a1-usb2-phy
+ 
+   reg:
+     maxItems: 1
+@@ -68,7 +68,7 @@ additionalProperties: false
+ examples:
+   - |
+     phy@36000 {
+-          compatible = "amlogic,meson-g12a-usb2-phy";
++          compatible = "amlogic,g12a-usb2-phy";
+           reg = <0x36000 0x2000>;
+           clocks = <&xtal>;
+           clock-names = "xtal";
+-- 
+2.39.0
+
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
