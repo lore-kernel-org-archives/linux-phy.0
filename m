@@ -4,84 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 13D54C46467
-	for <linux-phy@archiver.kernel.org>; Mon, 16 Jan 2023 14:24:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0D23AC678D6
+	for <linux-phy@archiver.kernel.org>; Mon, 16 Jan 2023 16:36:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Date:Subject:Message-Id:References:
+	In-Reply-To:Cc:To:From:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gXKU6pPitZHYcD9nsvRjNvigbxbmXxEPF2eBewCStj0=; b=jN6gYL+OIwSC5f
-	7QvpMq/LEVNhfQ47JsbMu4zoUdavYSdGBrPq/WwI6M0a1dTf7H4jRbANIS29wCtzf9d0gycbZZ7lt
-	KeuKJJn440L5IFmj9wszrbHAeuA7x+U6m3UvqSndSo8lmUOQ+IDUN2/An1a6DpN+91pMj12K3ALlU
-	KX4e4Qisr9QnL//lUm14MggM13U3I496MyM89AML++Ez9u5NWKwlhOmBP0fOLU27BVsOuaMEtj4gY
-	FBvlCI+pdaYjvNP5FDCbtPIvbhrT1WeU4DKvT3fE+apeE32L9NLxS7ZbpTPzMWUmrpTN824q67649
-	Dv3okaB8LkGzti8XA7Fw==;
+	List-Owner; bh=qW07wvbIgAoNxqvSLG5jOWl+J6MTyvBSie2NGBy88es=; b=OITTcp74HmtjsQ
+	cdNtSysIcL66dn9/S6/BVvp8RyYzfOQENMcSc261sd5V2oyCgvOpphRA5uSvvBJ2wWeU7/miI4Jye
+	EavkAKqASX7Qlf/7TwV/2ujBiRiuL5dRERWHN49N1SyD08pa37+tnJhJTu4cZL8uXtAIiRngDi4aR
+	7RCxmEE/IZM/TA4QGZUImGSyp8XXkUV8p/dNKM5DeXc+eSr6PavLrOXl/rciYujJnIUH5/19SCD4C
+	wbqGVFDN7ozMel407yEdk6GvdcI4ach93ANW7l6vnPzKB6EzvQ4N9/Lq9r6NqO69p6theQoZejopO
+	YCsXaVUsOXTFTggtCqCQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pHQP7-00Arw0-9P; Mon, 16 Jan 2023 14:24:05 +0000
-Received: from mail-ed1-x52a.google.com ([2a00:1450:4864:20::52a])
+	id 1pHST7-00BOk5-DL; Mon, 16 Jan 2023 16:36:21 +0000
+Received: from mail-oi1-f175.google.com ([209.85.167.175])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pHQGL-00AnZr-4V
-	for linux-phy@lists.infradead.org; Mon, 16 Jan 2023 14:15:03 +0000
-Received: by mail-ed1-x52a.google.com with SMTP id m21so40876535edc.3
-        for <linux-phy@lists.infradead.org>; Mon, 16 Jan 2023 06:14:58 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=PxWXmWcLQ+ZIknAtpo/VTrs5PfqFx9sefku166Jyecw=;
-        b=lG2jWb+J5HLvrWszvvybXPjb7IPaErSAiwIUBVWb5qlcA3I8+l6J0mmbat/04JWP0E
-         UrRKrpCVDgDq2VCdHtDOnzuRSLtthlJ6JtAyZNA+LqpF/gUMH1BV9WqMwFdVVGgOhxCv
-         wgMNLiti//slLJWlUiF1wZmOvosdEde6WHcR5zoXYppXGMj9sMcchC6Y8KPcsUCYLTbx
-         iKPwej56sTot2iQVIEeFaCskeJV2VJACzJGr/qpnhjMJ9+9ZTSsjk09NdoV1et3xIvDx
-         nCTVfBlkGt9cMWCifaek42Mi8aSdMb+q2HQu9CXB3dcL6+mXz9DIURyP3xCdfOYrXncG
-         tQFw==
+	id 1pHST4-00BOhm-1l; Mon, 16 Jan 2023 16:36:19 +0000
+Received: by mail-oi1-f175.google.com with SMTP id i5so5582519oih.11;
+        Mon, 16 Jan 2023 08:36:14 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=PxWXmWcLQ+ZIknAtpo/VTrs5PfqFx9sefku166Jyecw=;
-        b=dReErONjdAjAisi5roGoB0ksixNYNnraONDjKfk2qgLxWuop+ITJTdVmqIcyYySJs0
-         ET3oIlHqyx90zFNITJeVYVpiyVnE8M8wFZU56PFaZxwqAzeTGQ3ubBn0Bh2vet7Dz77k
-         XcrRL7EyO7muf9eekRjTfZwaSSELkLCoLy1DKywvdpmdXqm0wvO+KA3EaU/THJMPK829
-         vnrUEu841RVCQZdaf5CaSskovqqUlVTHrF5Fq0IlU5/p3UQ7cSbd84mN295GSXgfneWG
-         l72qM1T0QWvXoXg6KYgAF09zamRYEmswwe6SMOc0CfaeWgsZzIDb+I+GYnp0l85MuhSF
-         Ug6g==
-X-Gm-Message-State: AFqh2kqyijSGxWSEasgGWLQfrGCWalG/11w02ubua6zrFWWg4U3tP1Xb
-	pOdAye77uVvy8BAWh6njuXGadA==
-X-Google-Smtp-Source: AMrXdXtKQkmYiR8b4sgoBLLQVNlMUBW4jlnwYSbaHNAIN+T0Fhw2pI/kQSEyKvuC2H5sGY6b5pBcRA==
-X-Received: by 2002:a50:cc4c:0:b0:463:e2cd:a8b5 with SMTP id n12-20020a50cc4c000000b00463e2cda8b5mr81548431edi.11.1673878496707;
-        Mon, 16 Jan 2023 06:14:56 -0800 (PST)
-Received: from linaro.org ([94.52.112.99])
-        by smtp.gmail.com with ESMTPSA id o7-20020aa7d3c7000000b0045bd14e241csm11586818edr.76.2023.01.16.06.14.55
+        h=date:subject:message-id:references:in-reply-to:cc:to:from
+         :mime-version:content-transfer-encoding:x-gm-message-state:from:to
+         :cc:subject:date:message-id:reply-to;
+        bh=0hnUZ60mVRJhXUg94NvWH4Vacuvk8BAE/8ADy6vgTsQ=;
+        b=1/S9IdzQwATZ4y5YW9xLka5ZqpuqycWFE/OMcJhGxyMhP4eOewTvfkl8UfM9NODPVM
+         oYkRQtptYf1KkjQT/RcwQxceB619rxK057sT8TdwTs4QPEcb3mbrwrsU6OlG4Azy14nj
+         Vop5uM/nafx+BpRAdUxawIVmg9/Znok60KWX4Htk0tfFB4UWuArLJWp61J2Z3021QYB4
+         dDdo5GDFQSDfMSjBInyWPctBYSq3AtvGtuAR7/xg9a5fWU1N9nKm/18zwZgpLpgaINlB
+         eyiwYlT4Sm3UOR27SVNlzKUbLNxPPXVsqWQ2IcSUSPPyN+6T6WmupHkp6/AfxO/7NW8F
+         VxRw==
+X-Gm-Message-State: AFqh2kojsinpRvvIvjH7q1hPvGxBYD44NiGWTuEcBsXCIK9K5hdm14gP
+	OA1gLGWOTrKm6a4mUC4L3L7EHyqdMQ==
+X-Google-Smtp-Source: AMrXdXuK0z8g2M52j0b3QBVJOrcC5GBevcSNZ828P23dAscXDIb9r3LrG8OccvrQIzRmTnN3zLnsAQ==
+X-Received: by 2002:a05:6808:ec6:b0:35e:df32:64b1 with SMTP id q6-20020a0568080ec600b0035edf3264b1mr12091899oiv.21.1673886973800;
+        Mon, 16 Jan 2023 08:36:13 -0800 (PST)
+Received: from robh_at_kernel.org (66-90-144-107.dyn.grandenetworks.net. [66.90.144.107])
+        by smtp.gmail.com with ESMTPSA id e26-20020a0568301f3a00b006770e855c61sm5535920oth.31.2023.01.16.08.36.12
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 16 Jan 2023 06:14:56 -0800 (PST)
-Date: Mon, 16 Jan 2023 16:14:54 +0200
-From: Abel Vesa <abel.vesa@linaro.org>
-To: Vinod Koul <vkoul@kernel.org>
-Cc: mani@kernel.org, Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
-Subject: Re: [PATCH v2 6/6] phy: qcom-qmp-ufs: Add SM8550 support
-Message-ID: <Y8Vb3jBR2AtAJlWQ@linaro.org>
-References: <20230112130542.1399921-1-abel.vesa@linaro.org>
- <20230112130542.1399921-7-abel.vesa@linaro.org>
- <Y8GkZKwvOc5nPSjI@matsya>
+        Mon, 16 Jan 2023 08:36:13 -0800 (PST)
+Received: (nullmailer pid 606179 invoked by uid 1000);
+	Mon, 16 Jan 2023 16:36:12 -0000
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <Y8GkZKwvOc5nPSjI@matsya>
+From: Rob Herring <robh@kernel.org>
+To: Heiner Kallweit <hkallweit1@gmail.com>
+Cc: Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, "open list:ARM/Amlogic Meson..." <linux-amlogic@lists.infradead.org>, Kevin Hilman <khilman@baylibre.com>, linux-phy@lists.infradead.org, Vinod Koul <vkoul@kernel.org>, Martin Blumenstingl <martin.blumenstingl@googlemail.com>, Kishon Vijay Abraham I <kishon@kernel.org>, "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>, Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh+dt@kernel.org>, Jerome Brunet <jbrunet@baylibre.com>, "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>
+In-Reply-To: <fae86fd4-40f0-ce6f-f3ab-d5e0cff019c4@gmail.com>
+References: <fae86fd4-40f0-ce6f-f3ab-d5e0cff019c4@gmail.com>
+Message-Id: <167388663660.594049.3734030156353623535.robh@kernel.org>
+Subject: Re: [PATCH] dt-bindings: phy: g12a-usb2-phy: fix compatible string
+ documentation
+Date: Mon, 16 Jan 2023 10:36:12 -0600
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230116_061501_236051_9D7E32E7 
-X-CRM114-Status: GOOD (  18.62  )
+X-CRM114-CacheID: sfid-20230116_083618_110404_04606EA3 
+X-CRM114-Status: GOOD (  13.34  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,174 +78,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 23-01-14 00:05:16, Vinod Koul wrote:
-> On 12-01-23, 15:05, Abel Vesa wrote:
-> > Add SM8550 specific register layout and table configs.
-> 
-> Not related, but was this tested with the UFS Gear 4 support from Mani?
-> It would be great to have that added (here or separately)
 
-I mentioned both Mani's and Dmitry's patchsets in the cover letter.
-This patchset is based on both those patchsets.
+On Sun, 15 Jan 2023 15:19:31 +0100, Heiner Kallweit wrote:
+> The compatible strings in the driver don't have the meson prefix.
+> Fix this in the documentation and rename the file accordingly.
+> 
+> Fixes: da86d286cce8 ("dt-bindings: phy: meson-g12a-usb2-phy: convert to yaml")
+> Cc: stable@vger.kernel.org
+> Signed-off-by: Heiner Kallweit <hkallweit1@gmail.com>
+> ---
+>  ...,meson-g12a-usb2-phy.yaml => amlogic,g12a-usb2-phy.yaml} | 6 +++---
+>  1 file changed, 3 insertions(+), 3 deletions(-)
+>  rename Documentation/devicetree/bindings/phy/{amlogic,meson-g12a-usb2-phy.yaml => amlogic,g12a-usb2-phy.yaml} (91%)
+> 
 
-> 
-> > 
-> > Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
-> > ---
-> >  drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 100 ++++++++++++++++++++++++
-> >  1 file changed, 100 insertions(+)
-> > 
-> > diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-> > index 5936a3a05002..a9b666f32f59 100644
-> > --- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-> > +++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-> > @@ -95,6 +95,13 @@ static const unsigned int sm8150_ufsphy_regs_layout[QPHY_LAYOUT_SIZE] = {
-> >  	[QPHY_PCS_POWER_DOWN_CONTROL]	= QPHY_V4_PCS_UFS_POWER_DOWN_CONTROL,
-> >  };
-> >  
-> > +static const unsigned int sm8550_ufsphy_regs_layout[QPHY_LAYOUT_SIZE] = {
-> > +	[QPHY_START_CTRL]		= QPHY_V6_PCS_UFS_PHY_START,
-> > +	[QPHY_PCS_READY_STATUS]		= QPHY_V6_PCS_UFS_READY_STATUS,
-> > +	[QPHY_SW_RESET]			= QPHY_V6_PCS_UFS_SW_RESET,
-> > +	[QPHY_PCS_POWER_DOWN_CONTROL]	= QPHY_V6_PCS_UFS_POWER_DOWN_CONTROL,
-> > +};
-> > +
-> >  static const struct qmp_phy_init_tbl msm8996_ufsphy_serdes[] = {
-> >  	QMP_PHY_INIT_CFG(QSERDES_COM_CMN_CONFIG, 0x0e),
-> >  	QMP_PHY_INIT_CFG(QSERDES_COM_SYSCLK_EN_SEL, 0xd7),
-> > @@ -599,6 +606,61 @@ static const struct qmp_phy_init_tbl sm8350_ufsphy_g4_pcs[] = {
-> >  	QMP_PHY_INIT_CFG(QPHY_V5_PCS_UFS_BIST_FIXED_PAT_CTRL, 0x0a),
-> >  };
-> >  
-> > +static const struct qmp_phy_init_tbl sm8550_ufsphy_serdes[] = {
-> > +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SYSCLK_EN_SEL, 0xd9),
-> > +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CMN_CONFIG_1, 0x16),
-> > +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_HSCLK_SEL_1, 0x11),
-> > +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_HSCLK_HS_SWITCH_SEL_1, 0x00),
-> > +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP_EN, 0x01),
-> > +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_VCO_TUNE_MAP, 0x04),
-> > +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_IVCO, 0x0f),
-> > +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_VCO_TUNE_INITVAL2, 0x00),
-> > +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DEC_START_MODE0, 0x41),
-> > +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CP_CTRL_MODE0, 0x0a),
-> > +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_RCTRL_MODE0, 0x18),
-> > +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_CCTRL_MODE0, 0x14),
-> > +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP1_MODE0, 0x7f),
-> > +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP2_MODE0, 0x06),
-> > +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DEC_START_MODE0, 0x4c),
-> > +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CP_CTRL_MODE0, 0x0a),
-> > +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_RCTRL_MODE0, 0x18),
-> > +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_CCTRL_MODE0, 0x14),
-> > +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP1_MODE0, 0x99),
-> > +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP2_MODE0, 0x07),
-> > +};
-> > +
-> > +static const struct qmp_phy_init_tbl sm8550_ufsphy_tx[] = {
-> > +	QMP_PHY_INIT_CFG(QSERDES_V6_TX_LANE_MODE_1, 0x05),
-> > +	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_TX_RES_CODE_LANE_OFFSET_TX, 0x07),
-> > +};
-> > +
-> > +static const struct qmp_phy_init_tbl sm8550_ufsphy_rx[] = {
-> > +	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_RX_UCDR_FO_GAIN_RATE2, 0x0c),
-> > +	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_RX_UCDR_FO_GAIN_RATE4, 0x0f),
-> > +	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_RX_VGA_CAL_MAN_VAL, 0x0e),
-> > +
-> > +	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_RX_MODE_RATE_0_1_B0, 0xc2),
-> > +	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_RX_MODE_RATE_0_1_B1, 0xc2),
-> > +	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_RX_MODE_RATE_0_1_B3, 0x1a),
-> > +	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_RX_MODE_RATE_0_1_B6, 0x60),
-> > +
-> > +	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_RX_MODE_RATE2_B3, 0x9e),
-> > +	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_RX_MODE_RATE2_B6, 0x60),
-> > +
-> > +	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_RX_MODE_RATE3_B3, 0x9e),
-> > +	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_RX_MODE_RATE3_B4, 0x0e),
-> > +	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_RX_MODE_RATE3_B5, 0x36),
-> > +	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_RX_MODE_RATE3_B8, 0x02),
-> > +};
-> > +
-> > +static const struct qmp_phy_init_tbl sm8550_ufsphy_pcs[] = {
-> > +	QMP_PHY_INIT_CFG(QPHY_V6_PCS_UFS_RX_SIGDET_CTRL2, 0x69),
-> > +	QMP_PHY_INIT_CFG(QPHY_V6_PCS_UFS_TX_LARGE_AMP_DRV_LVL, 0x0f),
-> > +	QMP_PHY_INIT_CFG(QPHY_V6_PCS_UFS_TX_MID_TERM_CTRL1, 0x43),
-> > +	QMP_PHY_INIT_CFG(QPHY_V6_PCS_UFS_PLL_CNTL, 0x2b),
-> > +	QMP_PHY_INIT_CFG(QPHY_V6_PCS_UFS_MULTI_LANE_CTRL1, 0x02),
-> > +};
-> > +
-> >  struct qmp_ufs_offsets {
-> >  	u16 serdes;
-> >  	u16 pcs;
-> > @@ -703,6 +765,10 @@ static const char * const sm8450_ufs_phy_clk_l[] = {
-> >  	"qref", "ref", "ref_aux",
-> >  };
-> >  
-> > +static const char * const sm8550_ufs_phy_clk_l[] = {
-> > +	"qref", "ref",
-> > +};
-> > +
-> >  static const char * const sdm845_ufs_phy_clk_l[] = {
-> >  	"ref", "ref_aux",
-> >  };
-> > @@ -721,6 +787,15 @@ static const struct qmp_ufs_offsets qmp_ufs_offsets_v5 = {
-> >  	.rx2		= 0xa00,
-> >  };
-> >  
-> > +static const struct qmp_ufs_offsets qmp_ufs_offsets_v6 = {
-> > +	.serdes		= 0,
-> > +	.pcs		= 0x400,
-> > +	.tx		= 0x1000,
-> > +	.rx		= 0x1200,
-> > +	.tx2		= 0x1800,
-> > +	.rx2		= 0x1a00,
-> > +};
-> > +
-> >  static const struct qmp_phy_cfg msm8996_ufsphy_cfg = {
-> >  	.lanes			= 1,
-> >  
-> > @@ -958,6 +1033,28 @@ static const struct qmp_phy_cfg sm8450_ufsphy_cfg = {
-> >  	.regs			= sm8150_ufsphy_regs_layout,
-> >  };
-> >  
-> > +static const struct qmp_phy_cfg sm8550_ufsphy_cfg = {
-> > +	.lanes			= 2,
-> > +
-> > +	.offsets		= &qmp_ufs_offsets_v6,
-> > +
-> > +	.tbls = {
-> > +		.serdes		= sm8550_ufsphy_serdes,
-> > +		.serdes_num	= ARRAY_SIZE(sm8550_ufsphy_serdes),
-> > +		.tx		= sm8550_ufsphy_tx,
-> > +		.tx_num		= ARRAY_SIZE(sm8550_ufsphy_tx),
-> > +		.rx		= sm8550_ufsphy_rx,
-> > +		.rx_num		= ARRAY_SIZE(sm8550_ufsphy_rx),
-> > +		.pcs		= sm8550_ufsphy_pcs,
-> > +		.pcs_num	= ARRAY_SIZE(sm8550_ufsphy_pcs),
-> > +	},
-> > +	.clk_list		= sm8550_ufs_phy_clk_l,
-> > +	.num_clks		= ARRAY_SIZE(sm8550_ufs_phy_clk_l),
-> > +	.vreg_list		= qmp_phy_vreg_l,
-> > +	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
-> > +	.regs			= sm8550_ufsphy_regs_layout,
-> > +};
-> > +
-> >  static void qmp_ufs_configure_lane(void __iomem *base,
-> >  					const struct qmp_phy_init_tbl tbl[],
-> >  					int num,
-> > @@ -1467,6 +1564,9 @@ static const struct of_device_id qmp_ufs_of_match_table[] = {
-> >  	}, {
-> >  		.compatible = "qcom,sm8450-qmp-ufs-phy",
-> >  		.data = &sm8450_ufsphy_cfg,
-> > +	}, {
-> > +		.compatible = "qcom,sm8550-qmp-ufs-phy",
-> > +		.data = &sm8550_ufsphy_cfg,
-> >  	},
-> >  	{ },
-> >  };
-> > -- 
-> > 2.34.1
-> 
-> -- 
-> ~Vinod
+My bot found errors running 'make DT_CHECKER_FLAGS=-m dt_binding_check'
+on your patch (DT_CHECKER_FLAGS is new in v5.13):
+
+yamllint warnings/errors:
+
+dtschema/dtc warnings/errors:
+./Documentation/devicetree/bindings/phy/amlogic,g12a-usb2-phy.yaml: $id: relative path/filename doesn't match actual path or filename
+	expected: http://devicetree.org/schemas/phy/amlogic,g12a-usb2-phy.yaml#
+
+doc reference errors (make refcheckdocs):
+
+See https://patchwork.ozlabs.org/project/devicetree-bindings/patch/fae86fd4-40f0-ce6f-f3ab-d5e0cff019c4@gmail.com
+
+The base for the series is generally the latest rc1. A different dependency
+should be noted in *this* patch.
+
+If you already ran 'make dt_binding_check' and didn't see the above
+error(s), then make sure 'yamllint' is installed and dt-schema is up to
+date:
+
+pip3 install dtschema --upgrade
+
+Please check and re-submit after running the above command yourself. Note
+that DT_SCHEMA_FILES can be set to your schema file to speed up checking
+your schema. However, it must be unset to test all examples with your schema.
+
 
 -- 
 linux-phy mailing list
