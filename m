@@ -4,64 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0CA89C54EBE
-	for <linux-phy@archiver.kernel.org>; Mon, 16 Jan 2023 16:36:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4C515C54EBE
+	for <linux-phy@archiver.kernel.org>; Mon, 16 Jan 2023 19:01:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Date:Subject:Message-Id:References:
-	In-Reply-To:Cc:To:From:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:From:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7nfMstuXkHmbpaPFVmtajLUgaX4qGrshxhcmIIuH/aw=; b=ZLXiQ0ROgeagq5
-	eczZ6qitMUkmg3W2cqbMO25Vg3/32IbnWn6d1PeUYB9eA0/0VNKPtr5qxG18rdpFbEL4d2XQKnjZe
-	bNJR24XfPUq/4nuIHepV7g69GVriSj4HXIsjVoy64peHNJ/P3BYluYdX84o/AFcQQzSZoMYq16+Z0
-	2LADF7beLqpT+3EmqZ23YX8PIg2fXfN/s5sP8xhHOg5s85J2EhovjU4YQetQTZey7aMWExOb9L5kX
-	skdUo9r4S5mcCVjXNW1UPtL8T9wJDSy6d+rGmdmBvfpBq8roKsR3dfdtY5fSDoeUYkKtfYy2N7ebX
-	HH6mHaqUfFYN2swPld3g==;
+	List-Owner; bh=7nMS2r3DsBpHf1+FKg9cQfgujZTxuHv+cuRN2X5Ut9c=; b=cmuaOCixthBb5c
+	42HbkazjZKANePvgEDNFt9LeRP55ACBLrd+zxEDsnUkTtIBeqxl80GXR/Rd8ICK1/gMp+eOrLjS7F
+	MFPQxGrnMpsLYg4jH4grvCJ6Diq0COD937uz+IZY41WkTnH3rbCyjDj4pZNQJPSfjKbihj7GD/7Jq
+	M2jgrKGMt/yAU220rGL3N1fE2aMnGu9COPkeAf99zRx4Ff6nS4gmA0rM/kNQ/ur0QEb2UzY+xzuEp
+	vwKrqBUHKyEckPb4RaZiMzV7b3IW6OacK6o0KrFEtKaHvIfsaJwkdGgs9vFxx8mMsjqYcehxi1SYO
+	EwR+2nNmDAIrEIJ846EA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pHSTG-00BOnV-Fg; Mon, 16 Jan 2023 16:36:30 +0000
-Received: from mail-oa1-f50.google.com ([209.85.160.50])
+	id 1pHUjn-00Bo0t-P0; Mon, 16 Jan 2023 19:01:43 +0000
+Received: from mail-ed1-x52f.google.com ([2a00:1450:4864:20::52f])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pHST4-00BOig-Uf; Mon, 16 Jan 2023 16:36:20 +0000
-Received: by mail-oa1-f50.google.com with SMTP id 586e51a60fabf-15eec491b40so8394214fac.12;
-        Mon, 16 Jan 2023 08:36:17 -0800 (PST)
+	id 1pHUjl-00BnzN-IZ
+	for linux-phy@lists.infradead.org; Mon, 16 Jan 2023 19:01:42 +0000
+Received: by mail-ed1-x52f.google.com with SMTP id 18so41934505edw.7
+        for <linux-phy@lists.infradead.org>; Mon, 16 Jan 2023 11:01:41 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google;
+        h=content-transfer-encoding:in-reply-to:references:cc:to:from
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=gV8YKiyC4XQgkQ8HT5ZnhD72I1bcdeHNkkR8d7l2kAc=;
+        b=wz590QBZ9n7SqAT6woa8JJ7aMqVrAi1iq7PTbO49b5ZEoG5TTC5TO+CM6KFQcBIz9R
+         Jz2Lx5t/3kRWyvalT6zFMM41kM3ZNuIoyYFOK4HWFNhGG72+Eu0L7woT0PJ7SzsBGOBu
+         1kaA02IcS9qNf/qWPDheFuy/wOQSc5R//+zuXI2dd9Vty5vc/9CgRuBNLVQ+AAnCt8RK
+         8Vqx7V5PJJOy9Ay/qhJHNTkywSqF1theCFkxlMlB3eh8xRWRjaqajxEEYNbAbvDBRhkD
+         zym5L9urPFU8uILfNUNPJwGkpqFMefnZGUNtdVc7EDPV0v3J8c5JWjP6JV0KBqrESkmj
+         Y6+w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=date:subject:message-id:references:in-reply-to:cc:to:from
-         :mime-version:content-transfer-encoding:x-gm-message-state:from:to
-         :cc:subject:date:message-id:reply-to;
-        bh=1RrHwWKYfkgAWCmUrBIFJh6tv8lG1nhX54ZLrdcxVA8=;
-        b=c1UHJBT9M5+L0OmmlrV6dYoZozFQHXngZ9nV+MUiyET3vaDrknJ2ANcKgE5GnOKWGE
-         +wrlO3mBe6iWYo5GGeUt/kSlOEbPsd0lcJ+K33cxb1GHyJ7MhIvdABefXKUY5c4mFic7
-         xgr90mbhiIOdEjsEbISmoxt7C7iw1AU8FJ+aDVlzY8kwdtCYJ6luEA27yLJ1Gugzv+6P
-         pyg+nfzrsOt1LMOtGH4PtxzGi1HeV2hVOoKObbVzIB+sKG3QAFA9lSE/QhMzF+bEk8sn
-         19XfjxsbnVqmZjr5aLt4313efgwR7LvDTP2I570iHwaCIIbagB1j2xkuAOXq5GWkiip1
-         bfKA==
-X-Gm-Message-State: AFqh2krOZIXZfI7ig5D32KT5ERohpnx6qzSXjGZq6qRq53DXbnCNxC0G
-	O5wrvjXcvdnn+uvLHl0Bfm+xR7woLw==
-X-Google-Smtp-Source: AMrXdXuc2YR5XFDh+BjrSj9yCrSVAIET0KBbsCaLktdP4migZ/Nls+xg84R7aLjh9w7bkzh9R1hoTw==
-X-Received: by 2002:a05:6870:348f:b0:15f:2854:3c69 with SMTP id n15-20020a056870348f00b0015f28543c69mr268945oah.29.1673886976626;
-        Mon, 16 Jan 2023 08:36:16 -0800 (PST)
-Received: from robh_at_kernel.org (66-90-144-107.dyn.grandenetworks.net. [66.90.144.107])
-        by smtp.gmail.com with ESMTPSA id r18-20020a05687080d200b0012763819bcasm14590181oab.50.2023.01.16.08.36.15
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 16 Jan 2023 08:36:16 -0800 (PST)
-Received: (nullmailer pid 606182 invoked by uid 1000);
-	Mon, 16 Jan 2023 16:36:12 -0000
+        h=content-transfer-encoding:in-reply-to:references:cc:to:from
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=gV8YKiyC4XQgkQ8HT5ZnhD72I1bcdeHNkkR8d7l2kAc=;
+        b=jua7MPZE/ZVgrZS1oOLFtm1vIrJ0RU63DjdohKaFvOqEG7yjFBnLcO5kO2s4VZUmyV
+         gW/fnyR5YVdZN+YTmhqJ+T53ZoKisgW9doyANy8mPed4EhVvowoH2X93B5yx070XidPZ
+         MsuAhaEqQGnCqNgB43YX8Yow1rfJJhMa6/dZUdKQHbdfFzVB1frIH75UkMeL5Q8iaUQO
+         svY9RTF0dInXtuVJcejyW/ab7J8qD/SYujlGuuXKnUzg4RiGDLnRyvHfNz36mb6snJHC
+         PZoVGvFnfR3kh+CN3oN//g6InsmhLAvF+0iRvr+yNd0On4YAdOyerp1zmWNvCq9W9iq7
+         Qcxg==
+X-Gm-Message-State: AFqh2kqAcwlGnpF+whdM12OZrC4P14Ig9hlPe7EREjsQr0qpRIOPBpGd
+	ghqHJ9+0iNb3jDpXEkafjEQEZw==
+X-Google-Smtp-Source: AMrXdXsmXfiFB/4Secti9mKyegCCIxsGpBAPMb+KlSGitXE5MGm6OdBqWGLVy1ca67ivp1/3f/1I8Q==
+X-Received: by 2002:a05:6402:35c1:b0:46f:f36b:a471 with SMTP id z1-20020a05640235c100b0046ff36ba471mr469094edc.22.1673895698702;
+        Mon, 16 Jan 2023 11:01:38 -0800 (PST)
+Received: from [192.168.1.109] ([178.197.216.144])
+        by smtp.gmail.com with ESMTPSA id l12-20020aa7cacc000000b0048a31c1743asm11686821edt.25.2023.01.16.11.01.37
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 16 Jan 2023 11:01:38 -0800 (PST)
+Message-ID: <ecb38da8-ce40-7b26-2fb3-088d859af814@linaro.org>
+Date: Mon, 16 Jan 2023 20:01:36 +0100
 MIME-Version: 1.0
-From: Rob Herring <robh@kernel.org>
-To: Heiner Kallweit <hkallweit1@gmail.com>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>, linux-phy@lists.infradead.org, Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Neil Armstrong <neil.armstrong@linaro.org>, "open list:ARM/Amlogic Meson..." <linux-amlogic@lists.infradead.org>, Martin Blumenstingl <martin.blumenstingl@googlemail.com>, Rob Herring <robh+dt@kernel.org>, Jerome Brunet <jbrunet@baylibre.com>, Kevin Hilman <khilman@baylibre.com>
-In-Reply-To: <8f1b2db3-f17d-f192-c28e-cb34dfcaf63d@gmail.com>
-References: <8f1b2db3-f17d-f192-c28e-cb34dfcaf63d@gmail.com>
-Message-Id: <167388663742.594124.9073960952096608319.robh@kernel.org>
-Subject: Re: [PATCH] dt-bindings: phy: g12a-usb3-pcie-phy: fix compatible
- string documentation
-Date: Mon, 16 Jan 2023 10:36:12 -0600
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.6.1
+Subject: Re: [PATCH] dt-bindings: phy: g12a-usb2-phy: fix compatible string
+ documentation
+Content-Language: en-US
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+To: Heiner Kallweit <hkallweit1@gmail.com>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring
+ <robh+dt@kernel.org>, Krzysztof Kozlowski
+ <krzysztof.kozlowski+dt@linaro.org>,
+ Neil Armstrong <neil.armstrong@linaro.org>,
+ Kevin Hilman <khilman@baylibre.com>, Jerome Brunet <jbrunet@baylibre.com>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Cc: linux-phy@lists.infradead.org,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>,
+ "open list:ARM/Amlogic Meson..." <linux-amlogic@lists.infradead.org>
+References: <fae86fd4-40f0-ce6f-f3ab-d5e0cff019c4@gmail.com>
+ <ba8104e3-efb0-e092-573c-0e1ac57f1052@linaro.org>
+In-Reply-To: <ba8104e3-efb0-e092-573c-0e1ac57f1052@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230116_083619_004199_7E08ECC3 
-X-CRM114-Status: GOOD (  13.13  )
+X-CRM114-CacheID: sfid-20230116_110141_662221_A1B752EC 
+X-CRM114-Status: UNSURE (   8.82  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,45 +104,23 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-On Sun, 15 Jan 2023 15:24:12 +0100, Heiner Kallweit wrote:
-> The compatible string in the driver doesn't have the meson prefix.
-> Fix this in the documentation and rename the file accordingly.
+On 15/01/2023 15:53, Krzysztof Kozlowski wrote:
+> On 15/01/2023 15:19, Heiner Kallweit wrote:
+>> The compatible strings in the driver don't have the meson prefix.
+>> Fix this in the documentation and rename the file accordingly.
+>>
+>> Fixes: da86d286cce8 ("dt-bindings: phy: meson-g12a-usb2-phy: convert to yaml")
+>> Cc: stable@vger.kernel.org
+>> Signed-off-by: Heiner Kallweit <hkallweit1@gmail.com>
+>> ---
 > 
-> Fixes: 87a55485f2fc ("dt-bindings: phy: meson-g12a-usb3-pcie-phy: convert to yaml")
-> Cc: stable@vger.kernel.org
-> Signed-off-by: Heiner Kallweit <hkallweit1@gmail.com>
-> ---
->  ...12a-usb3-pcie-phy.yaml => amlogic,g12a-usb3-pcie-phy.yaml} | 4 ++--
->  1 file changed, 2 insertions(+), 2 deletions(-)
->  rename Documentation/devicetree/bindings/phy/{amlogic,meson-g12a-usb3-pcie-phy.yaml => amlogic,g12a-usb3-pcie-phy.yaml} (90%)
-> 
+> Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
-My bot found errors running 'make DT_CHECKER_FLAGS=-m dt_binding_check'
-on your patch (DT_CHECKER_FLAGS is new in v5.13):
+and un-reviewed. As robot pointed - please test the bindings before
+sending. :(
 
-yamllint warnings/errors:
-
-dtschema/dtc warnings/errors:
-./Documentation/devicetree/bindings/phy/amlogic,g12a-usb3-pcie-phy.yaml: $id: relative path/filename doesn't match actual path or filename
-	expected: http://devicetree.org/schemas/phy/amlogic,g12a-usb3-pcie-phy.yaml#
-
-doc reference errors (make refcheckdocs):
-
-See https://patchwork.ozlabs.org/project/devicetree-bindings/patch/8f1b2db3-f17d-f192-c28e-cb34dfcaf63d@gmail.com
-
-The base for the series is generally the latest rc1. A different dependency
-should be noted in *this* patch.
-
-If you already ran 'make dt_binding_check' and didn't see the above
-error(s), then make sure 'yamllint' is installed and dt-schema is up to
-date:
-
-pip3 install dtschema --upgrade
-
-Please check and re-submit after running the above command yourself. Note
-that DT_SCHEMA_FILES can be set to your schema file to speed up checking
-your schema. However, it must be unset to test all examples with your schema.
+Best regards,
+Krzysztof
 
 
 -- 
