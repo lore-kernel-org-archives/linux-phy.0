@@ -4,165 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2B13CC63797
-	for <linux-phy@archiver.kernel.org>; Tue, 17 Jan 2023 09:38:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 18732C3DA78
+	for <linux-phy@archiver.kernel.org>; Tue, 17 Jan 2023 11:11:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:CC:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5oWUitglvcW0NzMSTpt6eoD7DUNnSJNzWGtIzWKOEOk=; b=ER5DVuBI5KsSAQ
-	OwEklFZScbr4pCrgRW9DJ4trEvwm/hQ2uzXllN0mP+9erKR3H28DN37QEiXOYfZjxB8eer8QkOhIS
-	gGyxtRSjwUDEOuorg8QYeJ69jnAzZZGe4f+aB2K9ZAff+fBPUpYr9zlCTfjwlqArp3kx2ng9fI0mK
-	Wu2nQbwFTutgtayk06r5qtieRzMQFkDmGXJGajVSS1j6J/ndzoaLwSOLbTzEm+K9ucE0ApNWZhp4U
-	Fg5dXreoxr1GGGrMota2RuMVhubDXQptLQdZeKpnKfm/bqjuCKwOfNfE7fvYrVI1ll9PawSwGpb9Q
-	AwBendqssplbgZ/yeamw==;
+	List-Owner; bh=TUaoNmKJQdi+kVbYBKOGm2vAQ7I2Arng8EBrJ9oBFc0=; b=lZc7Ez7Mv6J2f5
+	cEDWdAk78GR7MQofwu0DjJF4w+VkxzYVSspZ7IL9kYh7+0UrAg8l2NozJt56VSvNjSGDBtHdQLwDu
+	Pm/AxBtrvLXIwI/8jdeMXrqbxnhDk0vSxWE1WhSuHH6eWmDJYiOadgCDiyFSn8zYRaR0DWRqz4dh7
+	yf5//koffRaa2tADsBrJ82udsp0fcmeYWy0I/UOgDoA6lUbTqUSbL+E58p2jJXb3jsSmXcxWgdOpF
+	zl9mE5ZVsWCVhFFHSCvXf+05lL8SipQ3RAeRvEKiN3yvEADR0hVDEuziCO+j7tuXTQA04xFVKJMvy
+	QWnHKQhJMbTFcqlOuhmA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pHiQQ-00DcBC-Jy; Tue, 17 Jan 2023 09:38:38 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1pHjsF-00DxIt-Fn; Tue, 17 Jan 2023 11:11:27 +0000
+Received: from mail-wm1-x331.google.com ([2a00:1450:4864:20::331])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pHiQN-00Dc9g-Tb; Tue, 17 Jan 2023 09:38:37 +0000
-X-UUID: b2443c84964a11eda08d4d6090ec5a5c-20230117
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
-	h=MIME-Version:Content-Transfer-Encoding:Content-ID:Content-Type:In-Reply-To:References:Message-ID:Date:Subject:CC:To:From; bh=EWunvZN7zCgBmYzeiBRAwM8WDfLUhyXbf3vU4WKxA0A=;
-	b=cNq50ALg6wci3KB7rovdD55UuiBGPaO2Ar43lvTnRTovu+RuxGLPTvJQTjNZ3X7/qE2IZwv54zKeZrSA+680ncNwqZuofoN+tKxFaTHHVwpWTitDzNOSKK6zXYDygtre7QKPVI7G2m3vpDI6wHothFWvAdGG0vXDlq/J06ev9oQ=;
-X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.1.18,REQID:220c3d3c-0b81-44a5-98d6-2c93c872baaa,IP:0,U
-	RL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:
-	release,TS:0
-X-CID-META: VersionHash:3ca2d6b,CLOUDID:e10b0ef6-ff42-4fb0-b929-626456a83c14,B
-	ulkID:nil,BulkQuantity:0,Recheck:0,SF:102,TC:nil,Content:0,EDM:-3,IP:nil,U
-	RL:11|1,File:nil,Bulk:nil,QS:nil,BEC:nil,COL:0,OSI:0,OSA:0
-X-CID-BVR: 0,NGT
-X-UUID: b2443c84964a11eda08d4d6090ec5a5c-20230117
-Received: from mtkmbs11n1.mediatek.inc [(172.21.101.185)] by mailgw02.mediatek.com
-	(envelope-from <chunfeng.yun@mediatek.com>)
-	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
-	with ESMTP id 375507357; Tue, 17 Jan 2023 02:38:28 -0700
-Received: from mtkmbs10n2.mediatek.inc (172.21.101.183) by
- mtkmbs10n1.mediatek.inc (172.21.101.34) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.792.15; Tue, 17 Jan 2023 17:17:51 +0800
-Received: from APC01-SG2-obe.outbound.protection.outlook.com (172.21.101.239)
- by mtkmbs10n2.mediatek.inc (172.21.101.183) with Microsoft SMTP Server id
- 15.2.792.3 via Frontend Transport; Tue, 17 Jan 2023 17:17:50 +0800
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=HJYbY2Mv5TEjbqVqEc+3Od8mWwBggmvopa5thh6Y3FcL5HACLid09IhKF24LaNCLNCp5CNwYBsn71EJbAdKb5qrfqQDq+DGM/2N/HsMgw0UeLCaqRkSHQazSTCWp7aHKjYdytSJWreKhIc0bgTpmkFk3byH4xd+jrAYNpHH+Kc/BbIfAE8iDKtDEaWIO49aLkmCxVlY9GhuSWXvQspbdb33bLF13vDTAphP8nlyO9kxGABVO97VmpCrj+Di3oBljn1uQLSKzXPqwSL+ju00pjhukLFPTzv3wEwFcNjTQ/EpSnl8FV/BB/0IYHKGPjE8kRZgdQkcPqCmycDGm5Hv56Q==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=EWunvZN7zCgBmYzeiBRAwM8WDfLUhyXbf3vU4WKxA0A=;
- b=SrqTZtBZZoo/GoZ/p6673Jd4W5eN3EQnxZjjCgB313EYYfLmsAh/2WE5CB50JleI2KuRuQ3z8pwyh9/Ty8Y0d+7IgBdR+uzd0T1ws4GxRRGbsXlg78yGwvHtzaNfZ8MpPm9xOknp7uzRVJbFHMhPEQnVVsvHVirsPZByHm2tyQdNzrd/Dq8+K7ACzdInU3amjw7QunQ18PMMjcudOiLh0W+fULfgpXZpb/K9c+WOdDdy8FEFhy6+mhRXWHc10UbJo/+XRzgmInduUIZ9zhs2G66zlUy+G2Xyj9xcnZ2BPEuyet0GrEsz9hjX5GFbvBAiidHxmHey0FtYC5M/VllZwQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=mediatek.com; dmarc=pass action=none header.from=mediatek.com;
- dkim=pass header.d=mediatek.com; arc=none
+	id 1pHjsB-00Dx6V-TM
+	for linux-phy@lists.infradead.org; Tue, 17 Jan 2023 11:11:25 +0000
+Received: by mail-wm1-x331.google.com with SMTP id k16so1297307wms.2
+        for <linux-phy@lists.infradead.org>; Tue, 17 Jan 2023 03:11:23 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=mediateko365.onmicrosoft.com; s=selector2-mediateko365-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=EWunvZN7zCgBmYzeiBRAwM8WDfLUhyXbf3vU4WKxA0A=;
- b=Hu3b0B4m+pToVQs4VwGUv12sivf5Cl9aOyXPAZXCspHXXKmVEiKNZ+aW99c6w3/COX+ciUcvRHZanMtN/em1xRVAgdyfnIB9fMPk3vTw5Ktec3waw8GLSJfRMspB/Y+o8ZkLYQ6ap4FTeyt6SgP8WSdgyEmZJEw554b5c7QaGw4=
-Received: from KL1PR03MB5062.apcprd03.prod.outlook.com (2603:1096:820:1a::22)
- by PSAPR03MB5414.apcprd03.prod.outlook.com (2603:1096:301:47::9) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5986.23; Tue, 17 Jan
- 2023 09:17:48 +0000
-Received: from KL1PR03MB5062.apcprd03.prod.outlook.com
- ([fe80::5e9b:f4cf:8d7f:60d1]) by KL1PR03MB5062.apcprd03.prod.outlook.com
- ([fe80::5e9b:f4cf:8d7f:60d1%3]) with mapi id 15.20.5986.023; Tue, 17 Jan 2023
- 09:17:47 +0000
-From: =?utf-8?B?Q2h1bmZlbmcgWXVuICjkupHmmKXls7Ap?= <Chunfeng.Yun@mediatek.com>
-To: "vkoul@kernel.org" <vkoul@kernel.org>
-CC: "llvm@lists.linux.dev" <llvm@lists.linux.dev>,
-	"linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
-	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
-	"nathan@kernel.org" <nathan@kernel.org>, "kishon@kernel.org"
-	<kishon@kernel.org>, =?utf-8?B?RWRkaWUgSHVuZyAo5rSq5q2j6ZGrKQ==?=
-	<Eddie.Hung@mediatek.com>, "linux-arm-kernel@lists.infradead.org"
-	<linux-arm-kernel@lists.infradead.org>, "matthias.bgg@gmail.com"
-	<matthias.bgg@gmail.com>, "linux-phy@lists.infradead.org"
-	<linux-phy@lists.infradead.org>, "trix@redhat.com" <trix@redhat.com>,
-	"angelogioacchino.delregno@collabora.com"
-	<angelogioacchino.delregno@collabora.com>, "ndesaulniers@google.com"
-	<ndesaulniers@google.com>
-Subject: Re: [PATCH v6 3/3] phy: mediatek: tphy: add debugfs files
-Thread-Topic: [PATCH v6 3/3] phy: mediatek: tphy: add debugfs files
-Thread-Index: AQHZIEA44YFL/mrrbEuqD9Ku1qRfkq6ctaeAgAWy8YA=
-Date: Tue, 17 Jan 2023 09:17:42 +0000
-Message-ID: <68b343d25e3b297f78209c48097d7093ce1d88ff.camel@mediatek.com>
-References: <20230104132646.7100-1-chunfeng.yun@mediatek.com>
-	 <20230104132646.7100-3-chunfeng.yun@mediatek.com> <Y8Gf2xxq7iaV/+ax@matsya>
-In-Reply-To: <Y8Gf2xxq7iaV/+ax@matsya>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
-authentication-results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=mediatek.com;
-x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: KL1PR03MB5062:EE_|PSAPR03MB5414:EE_
-x-ms-office365-filtering-correlation-id: 0ad84add-9b06-4704-424d-08daf86bafd4
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: 3sbpRu+e/tNyvTvivmuQgAVZhsJrir3kgZft94gP/sxIkg/9WIX2AaCgMd9gEV61nKSh3p9C/p477RKl8VNv/mq6dOzVw3R4+9MXJDIh4KNT1BxbKfkQD+Sa3mB+dz8+r8x3m/w4P5w+oShf1NzJzJuN2XsrxWd+pFs5QoVdfGOvVPojSyIV1qSRIkwSdKrn/nA6Hv7WVzlL5C8ypq8SZ1XE6rnWhHwbbg5qL0cmtIf9acKNJz2P9gs2ZSq5/tufeSf6EZxPCwK/gD9Xi28HmH02cjNYQfxcSgtuAyT/dL2xPv3KcWpnHTLW2ftfVKkStl3PZF/xMdUbrOf5FQvvkrQBYeCoTV10+9VGHIL4W919XIlRD4M7ojPM3Hv66MycV1so89i/yofj/4RxzcCCGlVQ4oaQcjE10sj2yc31X1NWYu2529Sddf1ZLXymtDPU6c+M20fgk2ZRgFNhot6SIrR/skPEojG2Lar424CinwPc2DNTldqNKCzsuhu/f5ZaJGu/bM9HIb7fYo09whwE1Ja+QPgF98m/NsBUNGX1JpyvIg9xUbpSuf0DetCSRKGpYQP2z3+cln4PWo16GT38QFIcSNJP/C1fUmQzmyPJucO6j7sRItyJNjfnrvR7hCivjy7/otcJqQT9Sg3MDImmtTaicYrJ1UQMud5xFUZ+txcYWa9wvyUwlLD+fpYsI/xVUSU9N8JJuHTHIr2IrCIWTbjKJalRyvgwD77RjWztQCAX2n9wlAav+iN27MhszKHX7zmd6Q9J3jpCQk0FY7giCw==
-x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:KL1PR03MB5062.apcprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230022)(4636009)(346002)(366004)(136003)(376002)(39860400002)(396003)(451199015)(38100700002)(38070700005)(85182001)(36756003)(86362001)(6486002)(66446008)(6512007)(76116006)(26005)(64756008)(66476007)(8676002)(6916009)(4326008)(186003)(66556008)(478600001)(66946007)(71200400001)(91956017)(2616005)(54906003)(53546011)(316002)(6506007)(122000001)(41300700001)(8936002)(2906002)(7416002)(5660300002)(6666004)(83380400001)(99106002);DIR:OUT;SFP:1102;
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?utf-8?B?YXQvMXl2aTFFSzRmcUEvb09vY0dreFVrUTlaR3JHVnRkZC9zOXd5QldpNHkv?=
- =?utf-8?B?SmIzbTh6cU1WMEZQb0hQTDRkMUc0UmtuWUltKzF4dXgrZm90ZVNVVm1TalEw?=
- =?utf-8?B?dnJ6MXU4aDd4Njc4L2NPbDlibmkxaHphK3Y2NXkvTTVpMHJVQ3ZSa1A0eTB5?=
- =?utf-8?B?OFZ6OUR4TU51YW5FYkNCalBiR21NdytLNXV0UmlyWVFoMlJ3NU9vUzdkODBP?=
- =?utf-8?B?T2FReWZCQTNaMktZaFR5UWp0VkhVYlZDQlZvWER1TkROY1V5R1RrR3lTSEEy?=
- =?utf-8?B?UENxazhUNGRHem5NbExkYmhTYm9zUis5b0Y4VGVuUUpTOUZvMWJNT3RjZzRp?=
- =?utf-8?B?d0YvY0NDNVBabnoybVNidlFVNE56NHNiWjRjdnlhYmlEelRpVFIweUtiek4w?=
- =?utf-8?B?bGh0UElwWW13bkNPcjhJeDZZdlVpL2p3emxTTTM1ZlFMT2hPV0NCMitmekFy?=
- =?utf-8?B?Nmw1aG5JL1MvdVovZG04MzZMZ1VKT244S0pjeEhrekZnWHB5UUhEVUVNSlFK?=
- =?utf-8?B?bGFUQ21TdFo1QlgzcU9JSTJnakRLRlFTZEZwNG43aXdrOFg5cncrRlY5Si9s?=
- =?utf-8?B?MWtleXgwUk9HQ1JGR0VVUUFDc0tiWk9WekVTMkZmT2ZVbzVRd2RxRG1vaUt5?=
- =?utf-8?B?RHZxL3N0bkVWQk9IN09UQkorbGtMOXpiSE5FUWhrZTk1Y0xRcFBPMGppTGFn?=
- =?utf-8?B?Q0ZyWGZCVjQ1MCtKUExlc1BsaWdlT285T2NMeDladGo4UlBNNlIwM1lvYzVI?=
- =?utf-8?B?T3A3cFpKQVlvL2Z5ZUdaNDdsR21vVlFhTzZ5aHo4RW8yc2ljeHRUdkYxQzRB?=
- =?utf-8?B?c2MrdkdvU3VMUWg1ZmVDSVBXdUVvYko0Q2d5YmJZZG9CNWYvZGdVV3kxU3lN?=
- =?utf-8?B?UkhwZkhIcVlFakd1WWc2aXQ1TDhuNDQ3Ym42d0NVWUgzeFR1SFk4THgrbFN1?=
- =?utf-8?B?ZkZQYjlubGU1NnVDZ1BrZXZ1YVQxaEo0ZEwxUHlESTFYYVp0V1o5WU5SaStP?=
- =?utf-8?B?eUVmL0lWbVVtRnc5bDlTUEc2enNrSU1jSlZDZ1ByZEM0em5pcVhBSzJHOXJZ?=
- =?utf-8?B?OTcxMld5a1VPMnRrN05jNzlNcVJDc1lpNkNRc054VVJaek90UFRhTWdhOGNS?=
- =?utf-8?B?WlJvWW9vV1NWQWNCLzEwdk91SGkyTEZkbjZvRW9NejRJalNKRjM2MjFIdEZO?=
- =?utf-8?B?TVFDWTZOR1JNeTR5TDZHTGIyNjhjWTNSNys1Nm1ONHFYdGhxdGdPeGVZTGg5?=
- =?utf-8?B?SUxzbWRqS2RSL2J5cHIvMENOVmZBWDZtOXhycUNLNndxdWRKekxwSEk1NnRT?=
- =?utf-8?B?OVlPdTV1YjR5MlRSMmt5VEVhbGFQMlE0Y1ZheE8xTU54bXQveDl6azRPNHNT?=
- =?utf-8?B?aUpFeFh4T0JvZWZlWWlsZ0U1TmU2a1c0aU9pbDVXVFI3eThqZ0RiMURkOHRk?=
- =?utf-8?B?V2o4MmdYL1BjOUtwTy9WTDFSaDgrbS9KckJ1Mmp6VWxOV2dDbFhJdDBLRThQ?=
- =?utf-8?B?d2pHUmRWZ3FpblhBOXYzeDF2UWRwNWNjS3BVR2ErRG16aEdoU0FFTTA4bElY?=
- =?utf-8?B?OFR4NGR0WHNMYlR5TGZUTlB6cjRWUkFtS2kzUytDUHNEaHNuSlBGSjlUdzdE?=
- =?utf-8?B?WXcyeHZVUE1HTFRGSjlZR2dadElyUW5iRjRoL0hYUWJ0TVcwc211UzJva3hQ?=
- =?utf-8?B?LzZDTnpKcTBaSDNiN09yaWQzMGNNbjgvLyt6VWVMZ3JRZUNvTjAvSzRvYVJx?=
- =?utf-8?B?cFI2Nnp3QXV4SExKTUVmTXdBb1RFY0EwRmlyS284RmVVTWg0TWpqbEhUT3la?=
- =?utf-8?B?all4OGJvdGNoNzl2cFlrdVhITTF1VEVWOTBlMjZROE5TazI0eUFxaUFKQlNt?=
- =?utf-8?B?K3U3NzBid2hVY0k2R0FUZk5ud0wvRVB3dE5ITFhicy9ZTHJPMlczSU5xZDVi?=
- =?utf-8?B?TTcyQ3NsNW41cHlnM0I0eHBMTjlzWlVySVBXQ3ZLNkJVM0FxSmdDaDNqWm55?=
- =?utf-8?B?a1B1RHBpRGlOL1JSU1E1NTJzdjdSUHpJZ1dPeTM0dVplWEpEeHJrUlg4Q0hl?=
- =?utf-8?B?N3o3d0JUUjN1eERQWER1Y1d4M3R6YVVqdWsvSHd1NkdJZHZqSXFsSGVYUHlK?=
- =?utf-8?B?dWRvM1NOOVRDaXcyTS8wOHdhVU5HT3l4WGVROFVtTFB6am9KUnVPajBMcFI1?=
- =?utf-8?B?K0E9PQ==?=
-Content-ID: <C5CBC10B2B823447BB8440B6C9014572@apcprd03.prod.outlook.com>
+        d=linaro.org; s=google;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=eVVUT1Q4w+D+zjJ+MiLQ59DPUvO4ysJ+YcXuATrHiJs=;
+        b=CXeZZRxS4jC43glzVH/2z0SjiwAkbUsBvimovm5amrSvyk17OPsSzKDm3JM8TeCz+Z
+         gUnHOWsSe8QgkVUgSW3lVHHN8fDztRBI4D3HAdLkdUqIMWaLjUbLXR4xV7FIX7j2ATYn
+         5LR9N3Idr349gXRCZQG02llwChla7jrApV4U9w5GjdnZ/2qs1R1bwsR+/coj83Yxs3ip
+         1lm53QsAfktx1SEs/wk5hZXidzsZJu+HKwWeMTZfdeylwvlw53Wfxc5VKiYSx8P8GH0b
+         XdKP8J3qhpsW2zPoZkgfoHUhdtUEpkue2OJJdjulm3A6IwfuiC6FTTNUCYmLbIQOrN8Z
+         SsCw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=eVVUT1Q4w+D+zjJ+MiLQ59DPUvO4ysJ+YcXuATrHiJs=;
+        b=XueeFLwqDSnOC5/HkWFcKssJoNWLnEJh5sbP9iTfiO0QewWmdYSZRjdJDxldGm7qGZ
+         GOO7+qMgdaolkxG6QlQZAraHahIPJZbaVX/zuQiSeE5MNd9QAdHG0raR7jxFNvZm9t8P
+         k6Q3zz/yEijwlD96qqAjBWhWwhpURBYMi7w64raEyC8Ux9l7+pm8tC95NN4E0pg5V3s3
+         wBNz0CHxEKrv8NqSa+1uYrNzuSvdo3N+ONUKoHlRhszO97ZVvV15YSEe3G7y0yGJbpQT
+         D1I2yFoBzAnEF+/9B5dxzwtc5J6uZmS8iQHi8I5RGhyau3H6L9nB6qI4EhAIgNn0SIy9
+         5jdg==
+X-Gm-Message-State: AFqh2korbuNCbkm+6LP0cVISGLEbeMG9wRhuS0Tl06dXVzyOvLhlsopJ
+	V2GWgFHhNCmkCzEEW9aQcbvld38TtCZQiosB
+X-Google-Smtp-Source: AMrXdXuUabHO5lLE6KouCS8wBlrsFWHoTEk3jyDJN0IOVg2Bw8mJLK0zsPjEjxwnd4RVjwRBKyFmkA==
+X-Received: by 2002:a1c:7417:0:b0:3da:fcd:7dfe with SMTP id p23-20020a1c7417000000b003da0fcd7dfemr11450545wmc.10.1673953883421;
+        Tue, 17 Jan 2023 03:11:23 -0800 (PST)
+Received: from [192.168.1.109] ([178.197.216.144])
+        by smtp.gmail.com with ESMTPSA id d6-20020a05600c3ac600b003da0dc39872sm18839767wms.6.2023.01.17.03.11.21
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 17 Jan 2023 03:11:22 -0800 (PST)
+Message-ID: <503abc21-7122-b820-65ed-f99d2db1eb21@linaro.org>
+Date: Tue, 17 Jan 2023 12:11:20 +0100
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: KL1PR03MB5062.apcprd03.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 0ad84add-9b06-4704-424d-08daf86bafd4
-X-MS-Exchange-CrossTenant-originalarrivaltime: 17 Jan 2023 09:17:42.0834
- (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: a7687ede-7a6b-4ef6-bace-642f677fbe31
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: K6PvnLJ726g31QZ/6duzHSiLarFB2mQajTgi0m4gKWnhlaYiFazLt32OmwrR4C5HOe/smxEa9V8VRZMOfAEnVSkY4lPfLggT904+H8mjmUc=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PSAPR03MB5414
-X-MTK: N
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.6.1
+Subject: Re: [PATCH v2] dt-bindings: phy: g12a-usb3-pcie-phy: fix compatible
+ string documentation
+Content-Language: en-US
+To: Heiner Kallweit <hkallweit1@gmail.com>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring
+ <robh+dt@kernel.org>, Krzysztof Kozlowski
+ <krzysztof.kozlowski+dt@linaro.org>,
+ Neil Armstrong <neil.armstrong@linaro.org>,
+ Kevin Hilman <khilman@baylibre.com>, Jerome Brunet <jbrunet@baylibre.com>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Cc: linux-phy@lists.infradead.org,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>,
+ "open list:ARM/Amlogic Meson..." <linux-amlogic@lists.infradead.org>
+References: <0a82be92-ce85-da34-9d6f-4b33034473e5@gmail.com>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <0a82be92-ce85-da34-9d6f-4b33034473e5@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230117_013835_992130_75F7E3D3 
-X-CRM114-Status: GOOD (  21.53  )
+X-CRM114-CacheID: sfid-20230117_031124_011258_D9F26236 
+X-CRM114-Status: UNSURE (   8.83  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -179,93 +103,23 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, 2023-01-13 at 23:45 +0530, Vinod Koul wrote:
-> On 04-01-23, 21:26, Chunfeng Yun wrote:
-> > These debugfs files are mainly used to make eye diagram test
-> > easier,
-> > especially helpful to do HQA test for a new IC without efuse
-> > enabled.
-> > 
-> > Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
-> > ---
-> > v6: no changes
-> > 
-> > v5: using common debugfs config CONFIG_DEBUG_FS
-> > 
-> > v4: fix build warning of sometimes uninitialized variable
-> > 
-> > v3: fix typo of "debugfs" suggested by AngeloGioacchino
-> > 
-> > v2: add CONFIG_PHY_MTK_TPHY_DEBUGFS suggested by AngeloGioacchino
-> > ---
-> >  drivers/phy/mediatek/phy-mtk-tphy.c | 405
-> > +++++++++++++++++++++++++++-
-> >  1 file changed, 404 insertions(+), 1 deletion(-)
-> > 
-> > diff --git a/drivers/phy/mediatek/phy-mtk-tphy.c
-> > b/drivers/phy/mediatek/phy-mtk-tphy.c
-> > index e906a82791bd..923e5ee119f3 100644
-> > --- a/drivers/phy/mediatek/phy-mtk-tphy.c
-> > +++ b/drivers/phy/mediatek/phy-mtk-tphy.c
-> > @@ -7,6 +7,7 @@
-> >  <skip>
-> > +
-> > +static void tphy_debugfs_init(struct mtk_tphy *tphy, struct
-> > mtk_phy_instance *inst)
-> > +{
-> > +	char name[16];
-> > +
-> > +	snprintf(name, sizeof(name) - 1, "phy.%d", inst->index);
+On 16/01/2023 21:19, Heiner Kallweit wrote:
+> The compatible string in the driver doesn't have the meson prefix.
+> Fix this in the documentation and rename the file accordingly.
 > 
-> I wouold suggest driver name/ device name rather than phy.foo...
-> again
-> folks needs to see what is foo
-> 
-The driver creates a root folder by its device name, e.g. 
-t-phy@11290000, it has two subphy, when use dev_name(&phy->dev) to
-create folder for each phy, it will be:
+> Fixes: 87a55485f2fc ("dt-bindings: phy: meson-g12a-usb3-pcie-phy: convert to yaml")
+> Cc: stable@vger.kernel.org
+> Signed-off-by: Heiner Kallweit <hkallweit1@gmail.com>
+> ---
+> v2:
 
-# ls /sys/kernel/debug/phy/t-phy@11290000/
-phy-t-phy@11290000.0  phy-t-phy@11290000.1
 
-the phy's device name is created by
-"dev_set_name(&phy->dev, "phy-%s.%d", dev_name(dev), id)"
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
-dev_name(dev) is the parent name, it's t-phy@11290000 in example,
-id is the phy->id.
+Best regards,
+Krzysztof
 
-due to the root folder already provide its parent device name, seems no
-need provide it again in each phy's folder.
 
-How about create the phy's folder by : "snprintf(name, sizeof(name) -
-1, "phy-%d", inst->phy->id);"
-
-then it becomes as below, seems brief:
-# ls /sys/kernel/debug/phy/t-phy@11290000/
-phy-0  phy-1
-
-Thanks a lot
-
-> 
-> > +	inst->dbgfs = debugfs_create_dir(name, tphy->dbgfs_root);
-> > +
-> > +	debugfs_create_file("type", 0444, inst->dbgfs, inst,
-> > &tphy_type_fops);
-> > +
-> > +	switch (inst->type) {
-> > +	case PHY_TYPE_USB2:
-> > +		u2_phy_dbgfs_files_create(inst);
-> > +		break;
-> > +	case PHY_TYPE_USB3:
-> > +	case PHY_TYPE_PCIE:
-> > +		u3_phy_dbgfs_files_create(inst);
-> > +		break;
-> > +	default:
-> > +		break;
-> > +	}
-> > +}
-> > +
-<skip>
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
