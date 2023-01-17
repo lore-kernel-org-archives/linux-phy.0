@@ -4,87 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 96D7BC3DA78
-	for <linux-phy@archiver.kernel.org>; Tue, 17 Jan 2023 14:25:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CB8B4C63797
+	for <linux-phy@archiver.kernel.org>; Tue, 17 Jan 2023 14:28:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JwCebnriNCTSmq3ETVa1Mwtg4eqRkNsiTK3qn46YGPM=; b=lpPT29mfbK5SBL
-	HvWhzT62I5Hc7gqZDI0dcZUJKloj2R+lLZRmAVFtH5E9Yh9mwclyMwvrj/rBLm+rNms36EsGEnKP7
-	W2rIECrWrILOHuJs+J8WP7kACMagTOEgFzs69Zx/EDUCzno4DnDWaPP3enq9MWVW7reTLy3MFs2ZV
-	KQU2XecqajIqCfVEi8w/NCjnOhW4RdFKlBKYoWNpdQyC+lbkNtawIhXFWjjDBDa/OOFlY4F7EbJdD
-	L+lJ7F6i6ePZRqd4L7qutd7ZccsZx1ogp/i+XB2KOKz7mURJwUNRKGm3C8bDGL21L60VWR5vTCh1X
-	OBx3yhLcU3sF7YQRZyiw==;
+	List-Owner; bh=eAy8E7QLZa9ywGPM3N/Vp7X5VLs9HWq7zOGsv3xqJKU=; b=AZZMCK5n8SaRnG
+	2mcmPWl56dWTpXD/tJL4J0h5NsiaKhlRd2wuiecA4bN6jdZt0+aPhYcO2xdX8ymljA3IU1sSJ46n4
+	9dpFhDk2Wx3B+qs2RJ+iXnb4iZwPMoDiWlRVonZF0eEmPFWcjfJoh/d6/IzDBcF0F83lcamMvUDBi
+	GfuvLiea3plTqRQN40CM9UqdinMVSkPjUY2/Y1Ny2SFmQKHhble6AWWORrX317L8DQ8uhOhu0IMgK
+	ljXYNY49heJscPBQcGMhm83YwLXf8I7gt4jmA/tAeZlYH1O0kpmqxDXYfvi8NhKwnLqh3Sm5yL1oZ
+	hoLGq3NwvbD0A7a8Zqgg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pHmth-00Ebnt-UG; Tue, 17 Jan 2023 14:25:09 +0000
-Received: from mail-wm1-x332.google.com ([2a00:1450:4864:20::332])
+	id 1pHmxN-00Ecel-7a; Tue, 17 Jan 2023 14:28:57 +0000
+Received: from mail-ed1-x532.google.com ([2a00:1450:4864:20::532])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pHmtf-00EbmS-Te
-	for linux-phy@lists.infradead.org; Tue, 17 Jan 2023 14:25:09 +0000
-Received: by mail-wm1-x332.google.com with SMTP id g10so22373175wmo.1
-        for <linux-phy@lists.infradead.org>; Tue, 17 Jan 2023 06:25:07 -0800 (PST)
+	id 1pHmxK-00EccZ-0y
+	for linux-phy@lists.infradead.org; Tue, 17 Jan 2023 14:28:55 +0000
+Received: by mail-ed1-x532.google.com with SMTP id s3so7139468edd.4
+        for <linux-phy@lists.infradead.org>; Tue, 17 Jan 2023 06:28:51 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=0o5JKqHA2jE2pZCqpewPRuIPIvKyqcaqw+l6676pGJY=;
-        b=Xt4JgcY4xB0r7T92IzDEDPjSB5vXfr00+YuDT1ZcYsxdhY22g+XGDHlWzWHw9EVfF/
-         glqP6b1I/M3w5Juepr1Bl0RkPLkE8LxIDMXphUZbGPfetM9yFlRvujF3XZrc0qY3+0Od
-         5ZEi738PWLGo4On8nvLAx8455u1MDkvtXUP170YCS4vlwXE2hfsNHuM0krmr86SE8QP7
-         5XV2c7tv7PDTPR79ox7PqF0mlon5JlVS+qW2kl54+SWj9TltiGQtQ5co3SfiwRffgR7u
-         BRXsh6Wn0j+nB1Zs05uXqcIOAS9hbqQaLK+0ejZ+6+qpspKMqapmjgbzx3JEYU6nVfMv
-         OxVA==
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=NaZ0IlVdh+q7MBEpI5jBa+K8Ee5vJI/lj2dgRFdnnfc=;
+        b=TunKgBrKl0nB1l1mnTlj9qfcrW7V7u2hmKrKebfgF7hNWS5OAtUPFGLW6NE4aRMG61
+         KgR6XPx76BJWkR/4/jxt6g1jNHayqp8cq6f3DZW6fpbsMuSKvQH4K6uLjaFGtAQQADbK
+         Rn/JMzaSFZM4eGJ6yvQIkFy4IkZzGkyxTIjuLMVudMn5N6BS8rD7sKbbH+c8YpAC0lel
+         hSxs7RUJ6yM+1TK/SUy/T9Flz5edcthPI/TsDvZKbb7Uipg7zJ4S2LaAaWns6zRDFZ1g
+         ODA7NJLDAteg/y2gsw77M6T8yRqynFSIH+fSD7cdCifYADENymasX9n25ZqLkSJ8uwKb
+         F4KA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=0o5JKqHA2jE2pZCqpewPRuIPIvKyqcaqw+l6676pGJY=;
-        b=n1wzWq06q/rxwdJiuEvfkqg883RVQIzKP+pcdFUQkjXFKL/rotq2ctPz/0sGoCtPh5
-         ab1ooYtU5Q5KrQELPaZeErsYp9O6SeYOcyKrBSQ6ECp5xO7BV/wg2MQxKeGZMqArjQ6B
-         bs4w15rjl7JpB5lGs+WwdsqsCIP8C2PkzHG8tdJfABfrQ4t5Hse96cHravurXhTUetqN
-         jpfuEDTiV1xHUKYmxlzYH4fuj4TFafpVq2tUBRjh6uATKMpdzP08mP13E//qS+tsxD7s
-         gtstvmhVbnidry0wAC/VMh+EcXdwu3tw52sDPr6TLW33Ayf1OOEUL4FM0ajB66lQWRk+
-         JQRg==
-X-Gm-Message-State: AFqh2kqTDepkq/+RKGJY/VN/a/1CFVptaNdHflIX7VlGA80i0ZL97OHF
-	dQTyS3GU0AHfK+4ag1Amx0jFIA==
-X-Google-Smtp-Source: AMrXdXvUiyE7TTzBBUfTs4/cb9g/hSrNJbSFCgye8F3KowhvGTrU+ni8vLPEN0p9Wn24H5f8GY1x9Q==
-X-Received: by 2002:a05:600c:181b:b0:3da:ff1f:e8d3 with SMTP id n27-20020a05600c181b00b003daff1fe8d3mr3255753wmp.15.1673965506462;
-        Tue, 17 Jan 2023 06:25:06 -0800 (PST)
-Received: from linaro.org ([94.52.112.99])
-        by smtp.gmail.com with ESMTPSA id n6-20020a05600c3b8600b003db012d49b7sm5854466wms.2.2023.01.17.06.25.05
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 17 Jan 2023 06:25:05 -0800 (PST)
-Date: Tue, 17 Jan 2023 16:25:04 +0200
-From: Abel Vesa <abel.vesa@linaro.org>
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
-	"vkoul@kernel.org" <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
-	Johan Hovold <johan@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Subject: Re: [PATCH v3 1/6] dt-bindings: phy: Add QMP UFS PHY comptible for
- SM8550
-Message-ID: <Y8avwNKKQYwbgmRX@linaro.org>
-References: <20230117125555.163087-1-abel.vesa@linaro.org>
- <20230117125555.163087-2-abel.vesa@linaro.org>
- <33eda50c-c70f-1bb6-0917-22b6fdb4a2ca@linaro.org>
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=NaZ0IlVdh+q7MBEpI5jBa+K8Ee5vJI/lj2dgRFdnnfc=;
+        b=0cjXKs20GkxjBct6HahD4AEanPe8iGhehs+0pbKXUhPQMfLJmp5YYS5XmBzWxgZ1yr
+         KRRJhfdmUqfvxrIREP6zs4iE5WCosD9lZW2dhvjAkITXjWZNZ/jUWnZvy6h4/zlu3UGy
+         Wfg81+At13IqSU19Zi3hjdNelDEc00qS7GIcY9cUOZh5IfUKZrWdrWyGWSSY0zx9kQls
+         CJ2lroJsembYdPhPQupp1L2dMvBK8eu7JH+ARqtv3kwEl2CBUN57/wi6yB5PcN8bjfv3
+         vpWud8L1S3otw57AWQn7jK/ItA1ewnIRx2x2JgjDLw8eccaUoVPNIxPPKTjP6ayrDF83
+         hwgA==
+X-Gm-Message-State: AFqh2kp7R6EgP1QDx4xCaTC4SDGOWuU0UQa0DwKwB7pfdFXxJMOMdr+j
+	NMjU65b1NFOgXUWl9jDNOorq4g==
+X-Google-Smtp-Source: AMrXdXsYfQvUo/LDJi+qTb01CAhI9LdxAJJZGKIxi9fU1dJzQV7GO0zUblV27hUr3bg/El7pIE+qeQ==
+X-Received: by 2002:a05:6402:1944:b0:49c:1fe4:9f17 with SMTP id f4-20020a056402194400b0049c1fe49f17mr13597246edz.37.1673965730355;
+        Tue, 17 Jan 2023 06:28:50 -0800 (PST)
+Received: from ?IPV6:2001:14ba:a085:4d00::8a5? (dzccz6yyyyyyyyyyybcwt-3.rev.dnainternet.fi. [2001:14ba:a085:4d00::8a5])
+        by smtp.gmail.com with ESMTPSA id gh9-20020a170906e08900b0086f4b8f9e42sm3384284ejb.65.2023.01.17.06.28.49
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 17 Jan 2023 06:28:50 -0800 (PST)
+Message-ID: <5d15d855-c239-7d4c-34eb-726577d53546@linaro.org>
+Date: Tue, 17 Jan 2023 16:28:48 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <33eda50c-c70f-1bb6-0917-22b6fdb4a2ca@linaro.org>
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.6.0
+Subject: Re: [PATCH v4 2/6] phy: qcom-qmp: qserdes-com: Add v6 register
+ offsets
+Content-Language: en-GB
+To: Abel Vesa <abel.vesa@linaro.org>, Andy Gross <agross@kernel.org>,
+ Bjorn Andersson <andersson@kernel.org>,
+ Konrad Dybcio <konrad.dybcio@linaro.org>, "vkoul@kernel.org"
+ <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Johan Hovold <johan@kernel.org>
+References: <20230117142015.509675-1-abel.vesa@linaro.org>
+ <20230117142015.509675-3-abel.vesa@linaro.org>
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+In-Reply-To: <20230117142015.509675-3-abel.vesa@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230117_062507_973541_00621A6C 
-X-CRM114-Status: GOOD (  14.29  )
+X-CRM114-CacheID: sfid-20230117_062854_095492_4C2BA709 
+X-CRM114-Status: GOOD (  10.16  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,45 +96,29 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 23-01-17 16:09:12, Dmitry Baryshkov wrote:
-> On 17/01/2023 14:55, Abel Vesa wrote:
-> > Document the QMP UFS PHY compatible for SM8550.
-> > 
-> > Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
-> > Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-> > ---
-> >   .../devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml       | 1 +
-> >   1 file changed, 1 insertion(+)
-> > 
-> > diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
-> > index 760791de0869..44745a5c64cd 100644
-> > --- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
-> > +++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
-> > @@ -17,6 +17,7 @@ properties:
-> >     compatible:
-> >       enum:
-> >         - qcom,sc8280xp-qmp-ufs-phy
-> > +      - qcom,sm8550-qmp-ufs-phy
-> >         - qcom,sm6125-qmp-ufs-phy
+On 17/01/2023 16:20, Abel Vesa wrote:
+> The new SM8550 SoC bumps up the HW version of QMP phy to v6 for USB,
+> UFS and PCIE g3x2. Add the new qserdes com offsets in a dedicated
+> header file.
 > 
-> Please keep the list sorted
+> Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
+> ---
+>   .../qualcomm/phy-qcom-qmp-qserdes-com-v6.h    | 82 +++++++++++++++++++
+>   drivers/phy/qualcomm/phy-qcom-qmp.h           |  2 +
+>   2 files changed, 84 insertions(+)
+>   create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-qserdes-com-v6.h
 
-Ugh.
+Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 
-I sent a new version.
+-- 
+With best wishes
+Dmitry
 
-> 
-> >     reg:
-> 
-> -- 
-> With best wishes
-> Dmitry
-> 
 
 -- 
 linux-phy mailing list
