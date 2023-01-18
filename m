@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9EA5EC32793
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 93775C38159
 	for <linux-phy@archiver.kernel.org>; Wed, 18 Jan 2023 10:17:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,31 +12,31 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dyJscV9Tn3E9Bx+oakBnZPvmahIpHNz+d158VZxSNmQ=; b=MNEDXkSKB/StCx
-	XokQqA7a4ca9NkcRzad1rlrElcgB6jw99h5OtyyKeawxgEoO1uWFjR3l9nssmxx33xIMKACQx5ENt
-	MUehp+96al6Csk6E7App8To+Na2k7ZI0ExepjzLHnxSyK8OvhzFawJ2xyDLt8QWqBJzNFfV2tWgy9
-	UPPtH/9DnTnUGZIFwrkK9Qcg2kD8idy6ilTzuMAHAb6ctQrgb0kw5J5TnKwNnX3eVs6P7RZIg8mhi
-	h07Nn+I9MTsCjXm49+5rJO4kzxIfebcVy+WsW4f5tN6P4AneSTujOmZBVIyTjb3WlKcDstTKzciQK
-	BbY2XViCPFOKux9PCFeQ==;
+	List-Owner; bh=vxlRLQNMOe+QRrIynqOHkpHljpDjYE4KNyGV8c0A6QY=; b=q8ALTivvGMBpWH
+	ODVQ5glvVFF/CkOmtotrY/3hccJij9/gogw4ad/Oa11bzv3pffr/u0IRr4tViLHHtxKk6iBzl4Uia
+	2BzWwqTglyxVeNSoQrc/VZnop8mQRwc1g2659r2mlBff2TlO4T7oH269E0qI1cFD3IYFQ9472B0lU
+	w3njPIWYKi003BAnMQyKIiSSyYhozmmPsEd7/QHoMfoYIQjUc2OLPAjGTMrh3tyfmHA0DQPeF44Wt
+	MZoaQalGbrMt8WIk5+mNL3K7PS5OFsvCvHFDNI3L56JedJwa0dqn+HkMp/Y7qARm436zR2udND6Lj
+	tA/p/O3xHs7/E9XSY7DQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pI5VQ-000JJX-VB; Wed, 18 Jan 2023 10:17:20 +0000
+	id 1pI5VQ-000JJQ-RX; Wed, 18 Jan 2023 10:17:20 +0000
 Received: from albert.telenet-ops.be ([2a02:1800:110:4::f00:1a])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pI5U2-000Iff-SZ
-	for linux-phy@lists.infradead.org; Wed, 18 Jan 2023 10:15:59 +0000
+	id 1pI5U2-000Ife-Sa
+	for linux-phy@lists.infradead.org; Wed, 18 Jan 2023 10:15:58 +0000
 Received: from ramsan.of.borg ([IPv6:2a02:1810:ac12:ed50:4745:2e6d:e3a6:3327])
 	by albert.telenet-ops.be with bizsmtp
-	id AAFN290022zf9gW06AFN2Z; Wed, 18 Jan 2023 11:15:46 +0100
+	id AAFN290052zf9gW06AFN2a; Wed, 18 Jan 2023 11:15:46 +0100
 Received: from rox.of.borg ([192.168.97.57])
 	by ramsan.of.borg with esmtp (Exim 4.95)
 	(envelope-from <geert@linux-m68k.org>)
-	id 1pI5TQ-005aIM-Lz;
+	id 1pI5TQ-005aIZ-Ni;
 	Wed, 18 Jan 2023 11:15:22 +0100
 Received: from geert by rox.of.borg with local (Exim 4.95)
 	(envelope-from <geert@linux-m68k.org>)
-	id 1pI5TV-001JVj-W5;
-	Wed, 18 Jan 2023 11:15:21 +0100
+	id 1pI5TW-001JVv-27;
+	Wed, 18 Jan 2023 11:15:22 +0100
 From: Geert Uytterhoeven <geert+renesas@glider.be>
 To: Madalin Bucur <madalin.bucur@nxp.com>,
 	"David S . Miller" <davem@davemloft.net>,
@@ -67,16 +67,16 @@ Cc: netdev@vger.kernel.org,
 	linux-arm-kernel@lists.infradead.org,
 	linux-samsung-soc@vger.kernel.org,
 	Geert Uytterhoeven <geert+renesas@glider.be>
-Subject: [PATCH 1/7] phy: Add devm_of_phy_optional_get() helper
-Date: Wed, 18 Jan 2023 11:15:14 +0100
-Message-Id: <f53a1bcca637ceeafb04ce3540a605532d3bc34a.1674036164.git.geert+renesas@glider.be>
+Subject: [PATCH 4/7] net: ethernet: ti: am65-cpsw: Convert to devm_of_phy_optional_get()
+Date: Wed, 18 Jan 2023 11:15:17 +0100
+Message-Id: <63433d4641e4dd21b12232a6d72427cb62f3e987.1674036164.git.geert+renesas@glider.be>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <cover.1674036164.git.geert+renesas@glider.be>
 References: <cover.1674036164.git.geert+renesas@glider.be>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230118_021555_176351_530B9281 
-X-CRM114-Status: GOOD (  13.50  )
+X-CRM114-CacheID: sfid-20230118_021555_097722_2D8EC17B 
+X-CRM114-Status: GOOD (  10.59  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,79 +93,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add an optional variant of devm_of_phy_get(), so drivers no longer have
-to open-code this operation.
+Use the new devm_of_phy_optional_get() helper instead of open-coding the
+same operation.
+
+While at it, fix handling of other error codes (e.g. -EPROBE_DEFER).
 
 Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
 ---
- drivers/phy/phy-core.c  | 26 ++++++++++++++++++++++++++
- include/linux/phy/phy.h |  9 ++++++++
- 2 files changed, 35 insertions(+)
+ drivers/net/ethernet/ti/am65-cpsw-nuss.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
-index d93ddf1262c5178b..ea009a611e19c705 100644
---- a/drivers/phy/phy-core.c
-+++ b/drivers/phy/phy-core.c
-@@ -879,6 +879,32 @@ struct phy *devm_of_phy_get(struct device *dev, struct device_node *np,
- }
- EXPORT_SYMBOL_GPL(devm_of_phy_get);
+diff --git a/drivers/net/ethernet/ti/am65-cpsw-nuss.c b/drivers/net/ethernet/ti/am65-cpsw-nuss.c
+index 5cac982841845369..794f228c8d632f7a 100644
+--- a/drivers/net/ethernet/ti/am65-cpsw-nuss.c
++++ b/drivers/net/ethernet/ti/am65-cpsw-nuss.c
+@@ -1460,9 +1460,9 @@ static int am65_cpsw_init_serdes_phy(struct device *dev, struct device_node *por
+ 	struct phy *phy;
+ 	int ret;
  
-+/**
-+ * devm_of_phy_optional_get() - lookup and obtain a reference to an optional
-+ * phy.
-+ * @dev: device that requests this phy
-+ * @np: node containing the phy
-+ * @con_id: name of the phy from device's point of view
-+ *
-+ * Gets the phy using of_phy_get(), and associates a device with it using
-+ * devres. On driver detach, release function is invoked on the devres data,
-+ * then, devres data is freed.  This differs to devm_of_phy_get() in
-+ * that if the phy does not exist, it is not considered an error and
-+ * -ENODEV will not be returned. Instead the NULL phy is returned,
-+ * which can be passed to all other phy consumer calls.
-+ */
-+struct phy *devm_of_phy_optional_get(struct device *dev, struct device_node *np,
-+				     const char *con_id)
-+{
-+	struct phy *phy = devm_of_phy_get(dev, np, con_id);
-+
-+	if (PTR_ERR(phy) == -ENODEV)
-+		phy = NULL;
-+
-+	return phy;
-+}
-+EXPORT_SYMBOL_GPL(devm_of_phy_optional_get);
-+
- /**
-  * devm_of_phy_get_by_index() - lookup and obtain a reference to a phy by index.
-  * @dev: device that requests this phy
-diff --git a/include/linux/phy/phy.h b/include/linux/phy/phy.h
-index 559c3da515073697..5f6e669b616da0b0 100644
---- a/include/linux/phy/phy.h
-+++ b/include/linux/phy/phy.h
-@@ -255,6 +255,8 @@ struct phy *devm_phy_get(struct device *dev, const char *string);
- struct phy *devm_phy_optional_get(struct device *dev, const char *string);
- struct phy *devm_of_phy_get(struct device *dev, struct device_node *np,
- 			    const char *con_id);
-+struct phy *devm_of_phy_optional_get(struct device *dev, struct device_node *np,
-+				     const char *con_id);
- struct phy *devm_of_phy_get_by_index(struct device *dev, struct device_node *np,
- 				     int index);
- void of_phy_put(struct phy *phy);
-@@ -450,6 +452,13 @@ static inline struct phy *devm_of_phy_get(struct device *dev,
- 	return ERR_PTR(-ENOSYS);
- }
+-	phy = devm_of_phy_get(dev, port_np, name);
+-	if (PTR_ERR(phy) == -ENODEV)
+-		return 0;
++	phy = devm_of_phy_optional_get(dev, port_np, name);
++	if (IS_ERR_OR_NULL(phy))
++		return PTR_ERR_OR_ZERO(phy);
  
-+static inline struct phy *devm_of_phy_optional_get(struct device *dev,
-+						   struct device_node *np,
-+						   const char *con_id)
-+{
-+	return NULL;
-+}
-+
- static inline struct phy *devm_of_phy_get_by_index(struct device *dev,
- 						   struct device_node *np,
- 						   int index)
+ 	/* Serdes PHY exists. Store it. */
+ 	port->slave.serdes_phy = phy;
 -- 
 2.34.1
 
