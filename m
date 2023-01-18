@@ -4,62 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 948E5C38159
-	for <linux-phy@archiver.kernel.org>; Wed, 18 Jan 2023 17:01:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BECA7C38159
+	for <linux-phy@archiver.kernel.org>; Wed, 18 Jan 2023 17:02:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PakB+8SU6i2ObXrNHlQVKLn9cyabPEhJleBdPkvX5fw=; b=lWf4RiozEy4N9m
-	3a1OxGTCVvgakFWc1hem0SAURL+fZ3L58VazjWElkA84jvn3hxQ9Rh7SSh/jik0Cp/YALlHr9WXMm
-	TtU6oVC98VnGARbiAAYpnJXRFUycS0VXOcisKZ3u3OXsyUGKctdcsSqkvB1WmP42borj8nI75BWzc
-	/Xq1KBnHw8fntuUHDq8B1JzzYXd4XDZN0R+3Oq2LdF93Kg0OZv5b1EQ4jJ/nALmBG5xiVnzYDNEUv
-	MGJX3YQdOnlovECemqx+BIsoddlxu/bu8P4UrAP0nyI9t3r+maipr27blM4C17jv3TLDtu8cA9TbZ
-	FSzeMLMzh5p5TJLwzLeQ==;
+	List-Owner; bh=M6g6QpXMzZXGCAQwQOQUNMuN78iqRtXOI73nFppKvlE=; b=sknq1ENwGBHlrY
+	NRMv/hufcwBgSfK6MPngQ5s1rKaatwYiiGDUUUafe5Zh0tC+mXP94IM55hsmncOPYLwpzJAoO/klp
+	LOSZP2Gmpio1Nsr1PGTRmqdr8VOPi4SqFRfh0NT+Hy/4WRG6v5YNNBLd/Sxt3vT8mUhVtzQq2eqvA
+	jUJ9YCH98wamtF4w8MOVqKb4HElgIlOrXQj9Mj3QcjgHB1GhJ/5MIgNWMlqdqJreOHJOtzfsAV7lU
+	lhlSv+jYEUxz4M5+2jgleRkjPbWGEdm++/wVb5ZzLR1J6XgDcNbZ9njLbLocwcSGVA6CxvIgenHr1
+	9pYUKql1AwMrR8vBcyHg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pIBoV-001wc4-0i; Wed, 18 Jan 2023 17:01:27 +0000
-Received: from netrider.rowland.org ([192.131.102.5])
-	by bombadil.infradead.org with smtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pIBoJ-001wYC-EF
-	for linux-phy@lists.infradead.org; Wed, 18 Jan 2023 17:01:17 +0000
-Received: (qmail 214419 invoked by uid 1000); 18 Jan 2023 12:01:13 -0500
-Date: Wed, 18 Jan 2023 12:01:13 -0500
-From: Alan Stern <stern@rowland.harvard.edu>
-To: Geert Uytterhoeven <geert@linux-m68k.org>
-Cc: Madalin Bucur <madalin.bucur@nxp.com>,
-  "David S . Miller" <davem@davemloft.net>,
-  Eric Dumazet <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>,
-  Paolo Abeni <pabeni@redhat.com>,
-  Horatiu Vultur <horatiu.vultur@microchip.com>, UNGLinuxDriver@microchip.com,
-  Thierry Reding <thierry.reding@gmail.com>,
-  Lorenzo Pieralisi <lpieralisi@kernel.org>, Rob Herring <robh@kernel.org>,
-  Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
-  Bjorn Helgaas <bhelgaas@google.com>, Jonathan Hunter <jonathanh@nvidia.com>,
-  Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
-  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-  Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
-  Alim Akhtar <alim.akhtar@samsung.com>,
-  Siddharth Vadapalli <s-vadapalli@ti.com>,
-  Russell King <linux@armlinux.org.uk>, netdev@vger.kernel.org,
-  linux-tegra@vger.kernel.org, linux-pci@vger.kernel.org,
-  linux-phy@lists.infradead.org, linux-usb@vger.kernel.org,
-  linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org
-Subject: Re: [PATCH 7/7] usb: host: ohci-exynos: Convert to
- devm_of_phy_optional_get()
-Message-ID: <Y8gl2bLxqWwXPMfS@rowland.harvard.edu>
-References: <cover.1674036164.git.geert+renesas@glider.be>
- <cd685d8e4d6754c384acfc1796065d539a2c3ea8.1674036164.git.geert+renesas@glider.be>
- <Y8gb8l18XzYOPhoD@rowland.harvard.edu>
- <CAMuHMdUsULA0PM26Y8WL2bGiBHGAGADS6eYLUp0CDVgm4N5kow@mail.gmail.com>
+	id 1pIBpD-001wmQ-1C; Wed, 18 Jan 2023 17:02:11 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
+	id 1pIBp1-001wjH-Uf; Wed, 18 Jan 2023 17:02:01 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 5090F6191D;
+	Wed, 18 Jan 2023 17:01:59 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E6ACBC433EF;
+	Wed, 18 Jan 2023 17:01:57 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1674061318;
+	bh=a84FGLCSP4PpD8EGf1sRH+8aTGt6Fj6ydtWWlmpcOz8=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=L+8hO2MhIPUNgLfP48afah90W+Xs8YWIoEM837iIGMbMTL70AX7vhr44TyV2s1iwJ
+	 nwrwhv+UDdojkiAXIHJEB8GlLE3fRrC7rmQNU7rbR8FlgTAtxBIpPUXpn37rCmx9JR
+	 eiAq8sPtnW5wl0afAiEZ1q7kB0aQUpUbh5EU/NJgXVwzemSUk8K0+M+MNMrDI/IDel
+	 HwrUAmr0LJ4cwisZKlI3rvezNllGf1+VS0fO9FhCOnNKuZJwjpBu1XdDPdwJr3ZSKP
+	 lzuy4C+gLABq6/Op0lsxSY4ciwQS0XGnniAku5nEmV7tnVuE6VvSjA7xIrCMnjjHvz
+	 I3c2Zw+bOqyGA==
+Date: Wed, 18 Jan 2023 22:31:54 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Johan Jonker <jbx6244@gmail.com>
+Cc: heiko@sntech.de, robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org, linux-phy@lists.infradead.org,
+	kishon@kernel.org
+Subject: Re: [PATCH v2 1/2] dt-bindings: phy: rockchip: convert
+ rockchip-dp-phy.txt to yaml
+Message-ID: <Y8gmAiHMcU4ekkUk@matsya>
+References: <aa6fe473-71f2-edba-f009-994a3dbc9802@gmail.com>
+ <Y8GeBzNJvhMeh3sn@matsya>
+ <8eca0d59-8db3-b66e-f219-0a256a9b0c79@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAMuHMdUsULA0PM26Y8WL2bGiBHGAGADS6eYLUp0CDVgm4N5kow@mail.gmail.com>
+In-Reply-To: <8eca0d59-8db3-b66e-f219-0a256a9b0c79@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230118_090115_660594_C31114D8 
-X-CRM114-Status: GOOD (  14.09  )
+X-CRM114-CacheID: sfid-20230118_090200_061232_198E53BB 
+X-CRM114-Status: UNSURE (   9.85  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,30 +78,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Jan 18, 2023 at 05:50:00PM +0100, Geert Uytterhoeven wrote:
-> Hi Alan,
+On 13-01-23, 20:58, Johan Jonker wrote:
 > 
-> On Wed, Jan 18, 2023 at 5:26 PM Alan Stern <stern@rowland.harvard.edu> wrote:
-> > On Wed, Jan 18, 2023 at 11:15:20AM +0100, Geert Uytterhoeven wrote:
-> > > Use the new devm_of_phy_optional_get() helper instead of open-coding the
-> > > same operation.
-> > >
-> > > This lets us drop several checks for IS_ERR(), as phy_power_{on,off}()
-> > > handle NULL parameters fine.
-> >
-> > The patch ignores a possible -ENOSYS error return.  Is it known that
-> > this will never happen?
 > 
-> While some phy_*() dummies in include/linux/phy/phy.h do return -ENOSYS
-> if CONFIG_GENERIC_PHY is not enabled, devm_of_phy_optional_get()
-> returns NULL in that case, so I think this cannot happen.
+> On 1/13/23 19:08, Vinod Koul wrote:
+> > On 29-12-22, 10:44, Johan Jonker wrote:
+> >> Convert rockchip-dp-phy.txt to yaml.
+> > 
+> > This series fails to apply, pls rebase
+> 
+> Hi Vinod, Heiko,
+> 
+> This serie and others must be combined in the right order to grf.yaml.
+> Maybe better that Heiko does that with your ACK.
 
-You could mention that in the patch description.  Apart from this one 
-issue:
+Sure:
 
-Acked-by: Alan Stern <stern@rowland.harvard.edu>
+Acked-By: Vinod Koul <vkoul@kernel.org>
 
-Alan Stern
+-- 
+~Vinod
 
 -- 
 linux-phy mailing list
