@@ -4,68 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9BC89C004D4
-	for <linux-phy@archiver.kernel.org>; Wed, 18 Jan 2023 08:14:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1ACCEC32793
+	for <linux-phy@archiver.kernel.org>; Wed, 18 Jan 2023 08:44:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YR/ZAHPoeoPyatrghQaJKwe17WcJ7tl+PCqiqBDVqBM=; b=1HNQdY+Lu/7L/M
-	J0yyvKC0du1cPsieE1A8IPybsJr+6oevXiC+HDLrpPHrukpsi1osdgazXrbn2oKdqIAz2eOMg8FIK
-	+eNsVgBIHYYms3mu7p7dgycOh8C1xZSFmtbidGIec0VkpsFLaxLvoakVs9YmeiRbpqSYMPoZgwZhT
-	s4JVzBpmZMyAAmLD0AY6SkkzA7PmnzU5hOiZVVlQSDliQYQ9LPZdSkHw0p31gUMMFtXJHLF12Pyl2
-	DQbrdLUxDBifU+/RDU3T5s6chaXDOUTkcVxbFlXeJ8F7H32UtyYpfiMizPS/q1Vms5W79/LZ+5aB4
-	LcZ/nklxh9b+g6CJOQ/w==;
+	List-Owner; bh=b/c4sxNyFs6jRb5AVtfRcPYp32h/2nOE5eyO5WFWEhU=; b=THpWUjclKPlFaa
+	VuFUnDSen6iGwMQn/CB1UZFxFtt46slGAtiHhV/8jdoxRGE/SNkRi5oVNsZ1bTrsDZJTA2JLvvIxB
+	CToB1LuHQgbgG3FAn2g4h+UWL0QmzlsHt63sIX3A5gKUCgdc4MqbZwPIFKm7cxRr+CUS4hKtu1rAh
+	+W4hdufsKTq8quX+No4Cj5nmjGJTsgQYSDw3yrwLDFpfoU4JJ8BgExiTNErpR9LkVRLpEMBjWnzOL
+	TpUrCy62QvQXCVhHp/b+ael5J4QSx3wdsnulbROUiPQgv93ZHqmxktSu9pT+RkbMiVn4z6Y7SDVK0
+	IKRJNeqkwiI/YTChxRCA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pI3aW-00HR3x-2X; Wed, 18 Jan 2023 08:14:28 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1pI442-00HWqr-D4; Wed, 18 Jan 2023 08:44:58 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pI3aT-00HR34-L8
-	for linux-phy@lists.infradead.org; Wed, 18 Jan 2023 08:14:26 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id CECCC615AF;
-	Wed, 18 Jan 2023 08:14:21 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 36169C433EF;
-	Wed, 18 Jan 2023 08:14:21 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1674029661;
-	bh=8D9nmC7N4QZK4djbEGofw2hmIQwwUhoPJgAYCdbVOE0=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=qcuLxoCwml0jHIWjn2IRUWc/ebuzIGcZG6cKlz9MnVeM885zAyim3Yl0pN+Nt7iKi
-	 rTdHC6hf9RQYpdju3Vfw8xgmk8+hWqWYCShcpdT3k4zVYK4cdTlzFg30tWYh1b7sT+
-	 z+7tOUwOwZakbPZTnNMW7uVENEgnflUvF4JNHdWw6g9ALVwnUxVcUWqKLf4VmAU/p0
-	 ZK1NzeKKi2tVhRwNKsoxygiOzSvZmK1mGmhhdyQKMpG0jTU3bbkRAYCRpZ3vs5s1bz
-	 CEfLqPDlb52exL+EozFvyQ23ZiweznSKfI73s1M63Jfvro36wEqlOYCIrXaVXJ5hSq
-	 44SNYL8ehsREg==
-Received: from johan by xi.lan with local (Exim 4.94.2)
-	(envelope-from <johan@kernel.org>)
-	id 1pI3an-0000cb-AM; Wed, 18 Jan 2023 09:14:45 +0100
-Date: Wed, 18 Jan 2023 09:14:45 +0100
-From: Johan Hovold <johan@kernel.org>
-To: Abel Vesa <abel.vesa@linaro.org>
-Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
-	"vkoul@kernel.org" <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
-Subject: Re: [PATCH v5 0/6] phy: qualcomm: Add UFS support for SM8550
-Message-ID: <Y8eqdcLthEaYq/Pp@hovoldconsulting.com>
-References: <20230117224148.1914627-1-abel.vesa@linaro.org>
+	id 1pI441-00HWps-KS; Wed, 18 Jan 2023 08:44:57 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Type:Content-Transfer-Encoding
+	:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From:
+	Sender:Reply-To:Content-ID:Content-Description;
+	bh=wi5UY5wYjAKEw29TcABVtPFmRKOtecoPlbXcffhZgNI=; b=ebZ6KoEGShQNBA33HsAKtmzH/w
+	eNDz0P75Dp+6jz5tXXbUfmPQmnhaPUUER/PDJz8BUKMCuDhvVsPHCLE9Bo/fCzvzB81ykVHvWzHdt
+	DtxeAl7HIFlDy6P1kkKY4XMBo4INk6xu20IR8Ydj0z0idTHKGAzcpdCMAeKpFl11lr9+1rx/DK2mj
+	DhuOLO5coyioB3UGYnltT7yeb6fJWk4GaZ00rqgyFSGvGEXvtJWrajnoPggdeG+wxBpBKl/R+cvVN
+	NZwwCZMvxhLuONsH1aA2ZaK8itltU0UX0dhBvoPIcWr1T7t7y3TSKbJteufhe1qrLK1fJ4IAveHqT
+	w5njw+rA==;
+Received: from mailgw01.mediatek.com ([216.200.240.184])
+	by desiato.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
+	id 1pI43k-006D8E-2g;
+	Wed, 18 Jan 2023 08:44:45 +0000
+X-UUID: 4e07386c970c11edbbe3f76fe852e059-20230118
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
+	h=Content-Type:Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From; bh=wi5UY5wYjAKEw29TcABVtPFmRKOtecoPlbXcffhZgNI=;
+	b=iEv9E3nu+evn1OmvvtcF4nKJs2jE19GxwyafyYyScnt0hoKKEJxPeLMAhvCYCsaaFRmSGo/IOr0hNUi07s8JJ+VkApsNn45CeZ2wv/BP1GqW0Q7vkX2vxs53J3gLv7ZAWpIJqMdXV35s/riLjd/j1jNzoVhyLfbVt26rSyclmog=;
+X-CID-P-RULE: Release_Ham
+X-CID-O-INFO: VERSION:1.1.18,REQID:f0d1d66b-4208-4fcd-8612-5ea2eea9db09,IP:0,U
+	RL:0,TC:0,Content:0,EDM:0,RT:0,SF:95,FILE:0,BULK:0,RULE:Release_Ham,ACTION
+	:release,TS:95
+X-CID-INFO: VERSION:1.1.18,REQID:f0d1d66b-4208-4fcd-8612-5ea2eea9db09,IP:0,URL
+	:0,TC:0,Content:0,EDM:0,RT:0,SF:95,FILE:0,BULK:0,RULE:Spam_GS981B3D,ACTION
+	:quarantine,TS:95
+X-CID-META: VersionHash:3ca2d6b,CLOUDID:4c1429f6-ff42-4fb0-b929-626456a83c14,B
+	ulkID:230118164424Z3J4NDM8,BulkQuantity:0,Recheck:0,SF:28|17|19|48,TC:nil,
+	Content:0,EDM:-3,IP:nil,URL:11|1,File:nil,Bulk:nil,QS:nil,BEC:nil,COL:0,OS
+	I:0,OSA:0
+X-CID-BVR: 0
+X-UUID: 4e07386c970c11edbbe3f76fe852e059-20230118
+Received: from mtkmbs13n1.mediatek.inc [(172.21.101.193)] by mailgw01.mediatek.com
+	(envelope-from <chunfeng.yun@mediatek.com>)
+	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
+	with ESMTP id 7653553; Wed, 18 Jan 2023 01:44:22 -0700
+Received: from mtkmbs11n1.mediatek.inc (172.21.101.185) by
+ mtkmbs10n2.mediatek.inc (172.21.101.183) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.792.3;
+ Wed, 18 Jan 2023 16:43:46 +0800
+Received: from mhfsdcap04.gcn.mediatek.inc (10.17.3.154) by
+ mtkmbs11n1.mediatek.inc (172.21.101.73) with Microsoft SMTP Server id
+ 15.2.792.15 via Frontend Transport; Wed, 18 Jan 2023 16:43:45 +0800
+From: Chunfeng Yun <chunfeng.yun@mediatek.com>
+To: Vinod Koul <vkoul@kernel.org>
+CC: Chunfeng Yun <chunfeng.yun@mediatek.com>, Kishon Vijay Abraham I
+	<kishon@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>, "Nathan
+ Chancellor" <nathan@kernel.org>, Nick Desaulniers <ndesaulniers@google.com>,
+	Tom Rix <trix@redhat.com>, AngeloGioacchino Del Regno
+	<angelogioacchino.delregno@collabora.com>,
+	<linux-arm-kernel@lists.infradead.org>, <linux-mediatek@lists.infradead.org>,
+	<linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+	<llvm@lists.linux.dev>, Eddie Hung <eddie.hung@mediatek.com>
+Subject: [PATCH v7 2/3] phy: core: add debugfs root
+Date: Wed, 18 Jan 2023 16:43:42 +0800
+Message-ID: <20230118084343.26913-2-chunfeng.yun@mediatek.com>
+X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20230118084343.26913-1-chunfeng.yun@mediatek.com>
+References: <20230118084343.26913-1-chunfeng.yun@mediatek.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20230117224148.1914627-1-abel.vesa@linaro.org>
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230118_001425_747317_269677E1 
-X-CRM114-Status: GOOD (  13.37  )
+X-CRM114-CacheID: sfid-20230118_084442_392542_DC5272F4 
+X-CRM114-Status: GOOD (  11.57  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,20 +103,64 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Jan 18, 2023 at 12:41:42AM +0200, Abel Vesa wrote:
-> The v4 of this patchset is:
-> https://lore.kernel.org/all/20230117142015.509675-1-abel.vesa@linaro.org/
-> 
-> Changes since v4:
->  * Renamed QSERDES_UFS_V6_RX_UCDR_FO_GAIN_RATE[24] to
->    QSERDES_UFS_V6_RX_UCDR_FASTLOCK_FO_GAIN_RATE[24] in patch #4
->  * Added Dmitry's R-b tag to patches 2, 3, 5 and 6
+Add a debugfs root for phy class, then phy drivers can add debugfs files
+under this folder.
 
-In the future, please include the full changelog here even if you
-provide a link to the previous version. No need to make it harder than
-it has to be for reviewers.
+Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+---
+v2~v7: no changes
+---
+ drivers/phy/phy-core.c  | 6 ++++++
+ include/linux/phy/phy.h | 2 ++
+ 2 files changed, 8 insertions(+)
 
-Johan
+diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
+index d93ddf1262c5..2f9f69190519 100644
+--- a/drivers/phy/phy-core.c
++++ b/drivers/phy/phy-core.c
+@@ -11,6 +11,7 @@
+ #include <linux/export.h>
+ #include <linux/module.h>
+ #include <linux/err.h>
++#include <linux/debugfs.h>
+ #include <linux/device.h>
+ #include <linux/slab.h>
+ #include <linux/of.h>
+@@ -1204,6 +1205,9 @@ void devm_of_phy_provider_unregister(struct device *dev,
+ }
+ EXPORT_SYMBOL_GPL(devm_of_phy_provider_unregister);
+ 
++struct dentry *phy_debug_root;
++EXPORT_SYMBOL_GPL(phy_debug_root);
++
+ /**
+  * phy_release() - release the phy
+  * @dev: the dev member within phy
+@@ -1233,6 +1237,8 @@ static int __init phy_core_init(void)
+ 
+ 	phy_class->dev_release = phy_release;
+ 
++	phy_debug_root = debugfs_create_dir("phy", NULL);
++
+ 	return 0;
+ }
+ device_initcall(phy_core_init);
+diff --git a/include/linux/phy/phy.h b/include/linux/phy/phy.h
+index b1413757fcc3..c398749d49b9 100644
+--- a/include/linux/phy/phy.h
++++ b/include/linux/phy/phy.h
+@@ -205,6 +205,8 @@ struct phy_lookup {
+ #define devm_of_phy_provider_register_full(dev, children, xlate) \
+ 	__devm_of_phy_provider_register(dev, children, THIS_MODULE, xlate)
+ 
++extern struct dentry *phy_debug_root;
++
+ static inline void phy_set_drvdata(struct phy *phy, void *data)
+ {
+ 	dev_set_drvdata(&phy->dev, data);
+-- 
+2.18.0
+
 
 -- 
 linux-phy mailing list
