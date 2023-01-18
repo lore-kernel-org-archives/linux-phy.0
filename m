@@ -4,61 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0129AC38147
-	for <linux-phy@archiver.kernel.org>; Wed, 18 Jan 2023 17:26:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 837EAC32793
+	for <linux-phy@archiver.kernel.org>; Wed, 18 Jan 2023 17:27:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XmgSgZBoKRtYyB4hgTTGpUBz4i2Lk2dEu9q5XP8Q/P8=; b=CfQeKRRDF0UOph
-	7Ho9os0td27WyseBDN/JqA8EpWUN4VdDU/MG/Ar93CccKHekEqt6RxrfvIA2GEGVnnKoYLfXrum++
-	idsO7aaGpa5NHRk1GVHhXCeCmzPmbRBlXjCuLSCmD/qVrBD9eyH5+j2dKPUdmhIFOafTjBnNT0uNH
-	sRj1OPRqk1e9CGRfY169Yt695nh+5p2oJXaQ9YuzLd/1Ikmdu6inDigQONN16u4LDj5fuMvgY2+TI
-	DpVm3gKMOb9C32mJAH79iQH6wZj1ZfNx+iZyqHY7HbZtIHESy1m7D/6BXTLlBVQrypkhHmcY+977m
-	l68QUyRvrswt2Rs0KeLQ==;
+	List-Owner; bh=arx6goSnT4fQ3VjNV4UW5IJQcbdC84AgOELbloGT33k=; b=2vkpB5jpGhRQaQ
+	3wKRzwBheJmFrvMIdNGQVvUtSQceWgkqJm4DZdQsmbZGZVUh27Tv6izibXxf7pwdvfrm5m6D8aSAD
+	tJXF0NpewLuAIIc9Whh/RUp5/zm+OEBw2URCUxbsWdlXYOjvIuGF6PgYOYEEwrnSEEsnHDtGlgucA
+	43pRALg+oNDpbRH2CVxOomzhHWcsXBlCl35wzUZ7WBvSWfBeX5qK2zoe7azXiIZvF4cSzg3z03ynn
+	ELJcgyPWdosd5sUhG3Lji4F9Mm5iPsvvUmzKYsEf/VelSRPM/Wx/7+YeSACwGuW3gJqYcL5qPzIco
+	AIuA63Rwhq6wcPnJgPEw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pICCn-00213m-Ex; Wed, 18 Jan 2023 17:26:33 +0000
-Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
+	id 1pICDR-0021Bz-VR; Wed, 18 Jan 2023 17:27:13 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pICCk-00212i-VC
-	for linux-phy@lists.infradead.org; Wed, 18 Jan 2023 17:26:32 +0000
+	id 1pICDG-00218D-6k; Wed, 18 Jan 2023 17:27:03 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by sin.source.kernel.org (Postfix) with ESMTPS id A3A3CCE1C4D;
-	Wed, 18 Jan 2023 17:26:26 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6F421C433EF;
-	Wed, 18 Jan 2023 17:26:24 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 6E2FA61789;
+	Wed, 18 Jan 2023 17:27:01 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3C8A2C433EF;
+	Wed, 18 Jan 2023 17:26:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1674062785;
-	bh=Ie8gYGGf5+xcu1uU0rnQr9KYWVko0DdTHmrDJiqVhVs=;
+	s=k20201202; t=1674062820;
+	bh=BvKSOudmvgU0WLOSTyYGHObuB3lNc/Lj3KUEm5JfhTM=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=N9YJdpRKAsc+RIFHGEI11cQ1FSgRNsehYucyNBBuGzvp7wwHeweHsBroVChj3fvkD
-	 c5mar+fT5cKko4SLHwkJKlIUzSPbjMYCfFG6jPgeRHIXOruzZbuCn/aWRNLSQNuHJ4
-	 /j1aFJg+y5NP1EsPUCpzVPZLtxjTy3TJ4jC4s+GkZ87S5HTZkeys8qZsUajydGcFSc
-	 0BpwHuUT1ETF7jW3sYdq3R5tzjkt5ri4aIYs2Qwa0VeunCAiF+yY3CHPS2POWT8/W+
-	 k/j6mEXj+FSUgH20NjJzOKoIXOl9q4QkQudKzfaD5bn0T/I2p23X0KsCsZuSZT+yYm
-	 d8KeHVHGVXnjw==
-Date: Wed, 18 Jan 2023 22:56:21 +0530
+	b=Z7LYo9K16WhEtP5lNaeMXkZm3bCgX7DKPkaiXQsJf0VN7JwtWc3z/t9WDADgjk+Qo
+	 hv9GVL6uNp7M5+a1LOm018oQyPg1/eyavh7p4wd1LCcEEBT9VyMJh1kSKOQ1ppyysQ
+	 P0cYwSkqFyu4V2rE1BKkR7uxX8te5t1336tmbmvRmCYX44WAxG1Qs+n83eiv5UXr8f
+	 MO+xEb52Dqi1aQdjUg/iHr5cuS8WeCTPkjxJjCllRuYTkAb0dlIjHYDLLP6hTy14rz
+	 YAsxV/3r1KTtH0ngKlUC+WvTpMHFnbgCk0WccgYmlec1zUlEecWZdumK+ET1xB9ZDL
+	 F5iDouwSVl4cw==
+Date: Wed, 18 Jan 2023 22:56:57 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Thierry Reding <thierry.reding@gmail.com>
+To: Heiner Kallweit <hkallweit1@gmail.com>
 Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
 	Rob Herring <robh+dt@kernel.org>,
 	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Jon Hunter <jonathanh@nvidia.com>, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-tegra@vger.kernel.org
-Subject: Re: [PATCH v3] dt-bindings: phy: tegra-xusb: Convert to json-schema
-Message-ID: <Y8grvSQa7raCn8q5@matsya>
-References: <20230113150804.1272555-1-thierry.reding@gmail.com>
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Kevin Hilman <khilman@baylibre.com>,
+	Jerome Brunet <jbrunet@baylibre.com>,
+	Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+	linux-phy@lists.infradead.org,
+	"devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+	"linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+	"open list:ARM/Amlogic Meson..." <linux-amlogic@lists.infradead.org>
+Subject: Re: [PATCH v2] dt-bindings: phy: g12a-usb3-pcie-phy: fix compatible
+ string documentation
+Message-ID: <Y8gr4dJSNBitl9ze@matsya>
+References: <0a82be92-ce85-da34-9d6f-4b33034473e5@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20230113150804.1272555-1-thierry.reding@gmail.com>
+In-Reply-To: <0a82be92-ce85-da34-9d6f-4b33034473e5@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230118_092631_205809_2E5A8086 
-X-CRM114-Status: UNSURE (   7.43  )
+X-CRM114-CacheID: sfid-20230118_092702_303672_7F639A76 
+X-CRM114-Status: UNSURE (   8.11  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -76,11 +82,9 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 13-01-23, 16:08, Thierry Reding wrote:
-> From: Thierry Reding <treding@nvidia.com>
-> 
-> Convert the Tegra XUSB pad controller bindings from free-form text
-> format to json-schema.
+On 16-01-23, 21:19, Heiner Kallweit wrote:
+> The compatible string in the driver doesn't have the meson prefix.
+> Fix this in the documentation and rename the file accordingly.
 
 Applied, thanks
 
