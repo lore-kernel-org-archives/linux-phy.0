@@ -4,63 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 58396C46467
-	for <linux-phy@archiver.kernel.org>; Wed, 18 Jan 2023 17:16:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8A1A3C32793
+	for <linux-phy@archiver.kernel.org>; Wed, 18 Jan 2023 17:23:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HRa4dhbGlLwImVsD7a187/nYDPB0jD+/ae2HfWQDGNg=; b=Qd2ZyZ0ilN+Eh0
-	obsgDgm1wPVvou/npWn+5zBhqU56zt2pvTG9bxyTR8I3536zxijwgdgFBAcM4KzjnOR2X8loZ/osP
-	wUKQm4aFRHSwecKI6xYTn38mSm25aVt4v7A0Nx2ZK29jANCUCsuMU/AYa381ocJvgR7rK9IguNn+F
-	+vFYSuU/n86Irt5+KyCGZi7E726AnTqBTS5Mk9pY8BL89BzvFKaNoiZBVWj+pvQv+hCdRgmOPdc5r
-	l4ZEEiFsRbbBoRxwl+ObQTL31eYwhE2mbCUPthz2BSpaHPtFqS4v2BixAIOyODariGJE1W7VVAIvA
-	ukM4qxHMHmCsTzzJXh+A==;
+	List-Owner; bh=TgGjcNfatsOAul66+RK6gziKkGw4roMl9/DL5I13zKw=; b=a5qFxA95zGvdRS
+	DUqw0Ns4ip2JkgIzrJWWwMaDGQAArFGVkioXaFYrMlQA9TC2yZGVyj2si8j56drx8uw/Tq+oS6d7n
+	8pq8rENH3ShPJ6KKKKDmK2HWepsiCMAiugezqzV87SPXZr52GfpaXcos0mFKLv0KZPv5F0LTE1ZTo
+	C0/oIxgmnMKJQIJCIIPMydDHMGdj0Ca4A9q7rqnQ4eFo27Tl42k1MZ36xtJlLc0B47bxuf2kx14M4
+	nUlOaUBpPdJbnkfdbPXVAxH3fJ4kkRTWm4X8vVbaM0+70cd1BmYFuEN+4WcVGEqteVQfvWBj5Ides
+	7KPpcWCx7q4Hkg3zSq/w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pIC33-001zku-Ov; Wed, 18 Jan 2023 17:16:29 +0000
-Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
+	id 1pIC9g-0020cU-0h; Wed, 18 Jan 2023 17:23:20 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pIC30-001zji-J4
-	for linux-phy@lists.infradead.org; Wed, 18 Jan 2023 17:16:27 +0000
+	id 1pIC9d-0020bs-4Z
+	for linux-phy@lists.infradead.org; Wed, 18 Jan 2023 17:23:18 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id 2F298B81DE6;
-	Wed, 18 Jan 2023 17:16:23 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 21F59C433EF;
-	Wed, 18 Jan 2023 17:16:20 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 7E0FA6192D;
+	Wed, 18 Jan 2023 17:23:16 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0A0F0C433A8;
+	Wed, 18 Jan 2023 17:23:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1674062181;
-	bh=7Rm4jQdN1OkFflN97SFAbA4tT29tk5E2fWswez94coM=;
+	s=k20201202; t=1674062595;
+	bh=kqjntvaC3IW0Pm52FaSq0u0ith02r034hWtEr8MgTfs=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=Fjz+B5WxgjkfjR6nAztq5No92inuDPAf6rMkn0T2Vaz0E1nc9JTl41HUXItM+/cX2
-	 Ayqc5eq84USh2Wbyv1BgNaJOKQliXBGRXkMDAgtuBYhCtvDYxlA/ldVplW1Yp5igKS
-	 bcFUk+uQ0RbAkRqr21G4Sd9VTqnOv/bM5nHVWni6hH60KIKFFU1ZeSwDQaHUkzfJSQ
-	 XeCxE3lJdrMDOm5IlB8SfZioGXRJsYqhmZlHKTdmPvVbFpWwAY2R00BxNcgQ1ahFqO
-	 SDUoVqJrfLBwA1M9osIp5iYc2a8h+z6amBJdeW6kHlPkXUHo+Fql+oXp2/9At32uP1
-	 z+TmUYWiwkV3A==
-Date: Wed, 18 Jan 2023 22:45:44 +0530
+	b=HSx99UocAPIQtvAMOel77IRG3PTc4syzWvQ3RZCzvvZTlz00L5OeZR9StrtgL0Pqe
+	 lu1MvuZHgDh5WUa2gPXX9tnINqptgxalGpFwM4FExGrxEzwQ39bfIBHgTt8Z1h7ALz
+	 ogDI0zRWq8hwNvtDjbeINTuOa7PvCYF0GDeXgDgaKijr//P9cfbORs4kBEP6QUi5WM
+	 MXoO/KNS3LeFBYTjcI1iErosjr5kvGP5K8oQm6TfKTqUoTK8EKPsQuakzIcMdi69kx
+	 f4G8zsPXbPizhINXlntj88VMtvTLMU3H1dZACvSuekb9OF45wsSmwSOz+y29pRE4iZ
+	 d6RvJLQ23iaZQ==
+Date: Wed, 18 Jan 2023 22:53:11 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Sinthu Raja <sinthu.raja@mistralsolutions.com>
-Cc: Roger Quadros <rogerq@kernel.org>,
-	Ravi Gunasekaran <r-gunasekaran@ti.com>,
-	Siddharth Vadapalli <s-vadapalli@ti.com>,
-	Vignesh Raghavendra <vigneshr@ti.com>,
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
-	Sinthu Raja <sinthu.raja@ti.com>
-Subject: Re: [PATCH V4 0/2] phy: ti: j721e-wiz: Add support to manage type-C
- swap on Lane2 and lane3
-Message-ID: <Y8gpQExHEVPe0g9j@matsya>
-References: <20230113150615.19375-1-sinthu.raja@ti.com>
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org
+Subject: Re: [PATCH] phy: qualcomm: qmp-ufs: rename qmp_ufs_offsets_v5 to
+ qmp_ufs_offsets
+Message-ID: <Y8gq/zsVIzAeHwRU@matsya>
+References: <20230113195515.407866-1-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20230113150615.19375-1-sinthu.raja@ti.com>
+In-Reply-To: <20230113195515.407866-1-dmitry.baryshkov@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230118_091626_790135_D0B3F6B0 
-X-CRM114-Status: GOOD (  12.40  )
+X-CRM114-CacheID: sfid-20230118_092317_237152_4DD4665C 
+X-CRM114-Status: UNSURE (   7.15  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,17 +77,10 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 13-01-23, 20:36, Sinthu Raja wrote:
-> From: Sinthu Raja <sinthu.raja@ti.com>
-> 
-> Hi All,
-> This series of patch add support to enable lanes 2 and 3 swap by
-> configuring the LN23 bit of the SerDes WIZ control register. Also,
-> it's possible that the Type-C plug orientation on the DIR line will
-> be implemented through hardware design. In that situation, there
-> won't be an external GPIO line available, but the driver still needs
-> to address this since the DT won't use the typec-dir-gpios property.
-> Update code to handle if typec-dir-gpios property is not specified in DT.
+On 13-01-23, 21:55, Dmitry Baryshkov wrote:
+> All currently known QMP UFS PHYs have the same offsets for register
+> sub-regions. Instead of using qmp_ufs_offsets_v5 for older generations
+> of PHYs, rename the offsets struct instance to remove _v5 suffix.
 
 Applied, thanks
 
