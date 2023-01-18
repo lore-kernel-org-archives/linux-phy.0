@@ -4,77 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 30107C38147
-	for <linux-phy@archiver.kernel.org>; Wed, 18 Jan 2023 19:49:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AF4DBC32793
+	for <linux-phy@archiver.kernel.org>; Wed, 18 Jan 2023 21:25:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=X9cWSJfpZMU1QqHsuIrnOyrfpnkrg8o66JfcK+2eBHw=; b=YEC6nERbW+jtAs
-	oRKryS0bPhyYwBZ+Gaigm6752s2/wsTqDBVZTXxEpG9d5NIXIa7HCRD0c9P2ohFk5yenPSzGhMUMk
-	Uv0Fj82tKZjRuKNbLFCyJ2XOpA3fRrXbKdAKLSi46z4C+DuXzltuGZ4bdy1kcFmhRxHYBc2eCWYjw
-	a6W+h0p/hawhP87+5FSKDJDvcNJVcloflMjCZ5kWAu9hJ948v9C6phnhvPRrddke0osQgIw1teoMe
-	5koNVJRKuCACu7faIxfiUDzudsgm0FBX3MdtC5+Ri0Qubh1UR6MrZt5rxW1JGd/XifamFe5GWh7t5
-	z/gfU31tNpAVmwOFINIA==;
+	List-Owner; bh=IkwuLzIaFquNvF04kfGCKyz6BD9bPFiRx3eMmAUQ/M8=; b=ic1DQXSvfUtJbn
+	xj6k4Fe20uXBTyHkkyi7wGRvirg9et2/5Ye25xC1YRIdG6+3YNAR351WHqt6+c9pbd6lKs5CQkbz3
+	ThJ73ajhqpDRdNGjwLWfKsOla5MTzQgacAbAU8TNl+k+hHh/YdLgqbhdtjKjNDnWNgAbZka/b08db
+	vgAQ1T3777xjQK4Dvt0R7bzNSf6Ne2Mg4UAgPFNyofq57lc1G+EkzfcC0/PYTiPETfOqogQi1egR7
+	tDY5bjcaC28U4rLgFGrAQxLg/nYNbFVY3pEKdVLVCBN9fTnKVpPwZJpC19sOH1yoaFDk9Ew+PkhtX
+	ndvkI2gvVR7SbOpo26fg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pIERE-002YD0-Iz; Wed, 18 Jan 2023 19:49:36 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1pIFwE-002j1E-44; Wed, 18 Jan 2023 21:25:42 +0000
+Received: from mail-wm1-x335.google.com ([2a00:1450:4864:20::335])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pIER4-002YB6-94; Wed, 18 Jan 2023 19:49:27 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 88343619C5;
-	Wed, 18 Jan 2023 19:49:25 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B94ADC433AC;
-	Wed, 18 Jan 2023 19:49:23 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1674071363;
-	bh=K9VHfqO8vnfOpGdnzgN383P6tlz0U6lpjZAgw4IA3to=;
-	h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
-	b=kbOI3g4szAhkbjyPLWIrMcmWNNwFJ0g35IV5pexIYtnRQzmpc6XLoxO3dWPHZa4Zb
-	 E48U15W3+cSWmi6hg+WMzMljLBW7pwCAM04xaJPDceliuUTfFeXfsH9kUAunhCoTr9
-	 +bdAEvIjTYB5y73gnxe836ayYwyUeU0B9WLrC5DjWSOtRdEns4yK3vTsZsp21SF0fX
-	 2iPX55g9IADXlVGJEdA7Nm5f9y2+aEySxxq6wHzFKSixbrz3GmCUld00KyFRtbxBoD
-	 kJrh7tYKMgulqDnN16gxiBmgJ8CzlRWgSm2T9aZnl0F9TDvvA0gmph2XCY4gE57Ekc
-	 oAjAYQ8ACtIwA==
-Received: by mail-vs1-f45.google.com with SMTP id 187so6241509vsv.10;
-        Wed, 18 Jan 2023 11:49:23 -0800 (PST)
-X-Gm-Message-State: AFqh2kpYlQL4kJ8cEwiUd8+5z1ilGfsSBCRbTwg2QjoqGv4Zn9gl1xFy
-	5dUIArBC4v8fyb1dQDV1XgH7tmRQZpgunfkMXw==
-X-Google-Smtp-Source: AMrXdXuCIq0Ww65rdCS464DY9dHcawHDeCICiNnnkYP7sB4H6h1MeXyWffA52VxKBtwikHq5ZggppMVlMdvTHaeZRZE=
-X-Received: by 2002:a67:ef8a:0:b0:3d0:b955:e0af with SMTP id
- r10-20020a67ef8a000000b003d0b955e0afmr1201488vsp.26.1674071362247; Wed, 18
- Jan 2023 11:49:22 -0800 (PST)
+	id 1pIFwA-002ixi-JW
+	for linux-phy@lists.infradead.org; Wed, 18 Jan 2023 21:25:40 +0000
+Received: by mail-wm1-x335.google.com with SMTP id bg13-20020a05600c3c8d00b003d9712b29d2so2324654wmb.2
+        for <linux-phy@lists.infradead.org>; Wed, 18 Jan 2023 13:25:35 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=z02Zvvp9rnIkTMvPcvojjoIGvGA32x4pRLqSn0d/D5Q=;
+        b=WuH8yHOnPzQoxp37uCaoXhkR8AFCaoD9ntbQBJvKk8ZtPIeEcYZVR5qT6UAp5aRPot
+         mlbY4K3BqNnsCZ97fG90dQkBZlN6outU5tX37EGrBjWLGl7uywKzK8/XHMZoEY0BfHVx
+         F2KcRJe1D8ufmhm8335igfOfvrRKA+1l9rAwa/XoU1FyTU5HtO+M+9Ml0aFGCJqt/FYf
+         h6Rxl6/02buJf40lSCX1T0SfHP3zs4/MtBbK7yYjyRz0IeEQAkpeRe/62ghQ303CxBUD
+         DhA5bvQWwfbr5mX5VwBj9jrYy2wtOS43fgXSe+353LHS1rn3DW5kYwepZ6k3lOHak6DG
+         6ZlQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=z02Zvvp9rnIkTMvPcvojjoIGvGA32x4pRLqSn0d/D5Q=;
+        b=8DYyOINj743ntpXfB+zeRQL97IjViIBDB1IB/ByyhGybfODjePm5veDj7WlB3MXEFg
+         UHLqkAlIrmiXW8NVn1tMdyoKxbJtj4LNOcgX1nhj5Zjr3hi9/pzq24D6goXJTfW32OpT
+         Oq4jH9ZIj0r5mWyq3TCUYvPENqDZ/YW0FljZ2xa7On35I2TaPQerEd6UH30dZ5d/BjwD
+         SBqIxG25b61c0CwpurQeX5m40bdNCg8bwmFHBZtS+L8b8FkuMkBubO4M1pvn5TBJMutZ
+         pVPPsTJ/i094fspwslieG0nIv7EK5rRUbesQmKth2jN1K6z7YA3UzGCXrIohK8lBjpG6
+         Pbhg==
+X-Gm-Message-State: AFqh2kp5cIBpQR9GeQMdxnXctzDkjvMCugJ+Hhg7huUmXfvn/Kmno2KA
+	frS89rfb4y9r+r6143UT8Fy7kQ==
+X-Google-Smtp-Source: AMrXdXuuRUr63ls7wGR56IMAO/i/q4UibvwoBS2SM+hobzTQCYLskiXJ88gBrX2HslVcG5iGqJLhcQ==
+X-Received: by 2002:a05:600c:b90:b0:3d8:e0d3:ee24 with SMTP id fl16-20020a05600c0b9000b003d8e0d3ee24mr8339211wmb.37.1674077134046;
+        Wed, 18 Jan 2023 13:25:34 -0800 (PST)
+Received: from linaro.org ([94.52.112.99])
+        by smtp.gmail.com with ESMTPSA id n19-20020a05600c4f9300b003d1d5a83b2esm3349230wmq.35.2023.01.18.13.25.31
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 18 Jan 2023 13:25:32 -0800 (PST)
+Date: Wed, 18 Jan 2023 23:25:31 +0200
+From: Abel Vesa <abel.vesa@linaro.org>
+To: Johan Hovold <johan@kernel.org>
+Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	"vkoul@kernel.org" <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
+Subject: Re: [PATCH v3 1/8] dt-bindings: phy: Add QMP PCIe PHY comptible for
+ SM8550
+Message-ID: <Y8hjy8WRpPh8DVvG@linaro.org>
+References: <20230118005328.2378792-1-abel.vesa@linaro.org>
+ <20230118005328.2378792-2-abel.vesa@linaro.org>
+ <Y8giHJMtPu4wTlmA@hovoldconsulting.com>
 MIME-Version: 1.0
-References: <cover.1674036164.git.geert+renesas@glider.be> <cd685d8e4d6754c384acfc1796065d539a2c3ea8.1674036164.git.geert+renesas@glider.be>
- <CAL_JsqJS2JTZ1BxMbG_2zgzu5xtxMFPqjxc_vUjuZp3k1xUmaQ@mail.gmail.com> <CAMuHMdXGsmNjYy-ofmuHLkr8yaDEzy+SGnhtbmc_2ezbEKAMjw@mail.gmail.com>
-In-Reply-To: <CAMuHMdXGsmNjYy-ofmuHLkr8yaDEzy+SGnhtbmc_2ezbEKAMjw@mail.gmail.com>
-From: Rob Herring <robh@kernel.org>
-Date: Wed, 18 Jan 2023 13:49:10 -0600
-X-Gmail-Original-Message-ID: <CAL_JsqJWEzb_hxi0_sSj-5F0q4A9UcJEhwcSArWT6eAffpeqHA@mail.gmail.com>
-Message-ID: <CAL_JsqJWEzb_hxi0_sSj-5F0q4A9UcJEhwcSArWT6eAffpeqHA@mail.gmail.com>
-Subject: Re: [PATCH 7/7] usb: host: ohci-exynos: Convert to devm_of_phy_optional_get()
-To: Geert Uytterhoeven <geert@linux-m68k.org>
-Cc: Madalin Bucur <madalin.bucur@nxp.com>, "David S . Miller" <davem@davemloft.net>, 
-	Eric Dumazet <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, 
-	Horatiu Vultur <horatiu.vultur@microchip.com>, UNGLinuxDriver@microchip.com, 
-	Thierry Reding <thierry.reding@gmail.com>, Lorenzo Pieralisi <lpieralisi@kernel.org>, 
-	=?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?= <kw@linux.com>, 
-	Bjorn Helgaas <bhelgaas@google.com>, Jonathan Hunter <jonathanh@nvidia.com>, 
-	Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
-	Alan Stern <stern@rowland.harvard.edu>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
-	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, Alim Akhtar <alim.akhtar@samsung.com>, 
-	Siddharth Vadapalli <s-vadapalli@ti.com>, Russell King <linux@armlinux.org.uk>, netdev@vger.kernel.org, 
-	linux-tegra@vger.kernel.org, linux-pci@vger.kernel.org, 
-	linux-phy@lists.infradead.org, linux-usb@vger.kernel.org, 
-	linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org
+Content-Disposition: inline
+In-Reply-To: <Y8giHJMtPu4wTlmA@hovoldconsulting.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230118_114926_411552_6DCBA463 
-X-CRM114-Status: GOOD (  27.78  )
+X-CRM114-CacheID: sfid-20230118_132538_687505_A68411A8 
+X-CRM114-Status: GOOD (  19.79  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,69 +99,53 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Jan 18, 2023 at 12:28 PM Geert Uytterhoeven
-<geert@linux-m68k.org> wrote:
->
-> Hi Rob,
->
-> On Wed, Jan 18, 2023 at 6:30 PM Rob Herring <robh@kernel.org> wrote:
-> > On Wed, Jan 18, 2023 at 4:15 AM Geert Uytterhoeven
-> > <geert+renesas@glider.be> wrote:
-> > > Use the new devm_of_phy_optional_get() helper instead of open-coding the
-> > > same operation.
-> > >
-> > > This lets us drop several checks for IS_ERR(), as phy_power_{on,off}()
-> > > handle NULL parameters fine.
-> > >
-> > > Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
-> > > ---
-> > >  drivers/usb/host/ohci-exynos.c | 24 +++++++-----------------
-> > >  1 file changed, 7 insertions(+), 17 deletions(-)
-> > >
-> > > diff --git a/drivers/usb/host/ohci-exynos.c b/drivers/usb/host/ohci-exynos.c
-> > > index 8d7977fd5d3bd502..8dd9c3b2411c383f 100644
-> > > --- a/drivers/usb/host/ohci-exynos.c
-> > > +++ b/drivers/usb/host/ohci-exynos.c
-> > > @@ -69,19 +69,12 @@ static int exynos_ohci_get_phy(struct device *dev,
-> > >                         return -EINVAL;
-> > >                 }
-> > >
-> > > -               phy = devm_of_phy_get(dev, child, NULL);
-> > > +               phy = devm_of_phy_optional_get(dev, child, NULL);
-> > >                 exynos_ohci->phy[phy_number] = phy;
-> > >                 if (IS_ERR(phy)) {
-> > > -                       ret = PTR_ERR(phy);
-> > > -                       if (ret == -EPROBE_DEFER) {
-> > > -                               of_node_put(child);
-> > > -                               return ret;
-> > > -                       } else if (ret != -ENOSYS && ret != -ENODEV) {
-> > > -                               dev_err(dev,
-> > > -                                       "Error retrieving usb2 phy: %d\n", ret);
-> > > -                               of_node_put(child);
-> > > -                               return ret;
-> > > -                       }
-> > > +                       of_node_put(child);
-> > > +                       return dev_err_probe(dev, PTR_ERR(phy),
-> > > +                                            "Error retrieving usb2 phy\n");
-> >
-> > Optional is really the only reason for the caller to decide whether to
-> > print an error message or not. If we have both flavors of 'get', then
-> > really the 'get' functions should print an error message.
->
-> In case of a real error, both should print an error message, right?
->
-> Anyway, I understand that's a three step operation:
->   1. Introduce and convert to the _optional variant,
->   2. Add error printing to callees.
->   3. Remove error printing from callers.
+On 23-01-18 17:45:16, Johan Hovold wrote:
+> On Wed, Jan 18, 2023 at 02:53:21AM +0200, Abel Vesa wrote:
+> > Document the QMP PCIe PHY compatible for SM8550.
+> > 
+> > Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
+> > ---
+> >  .../devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml     | 2 ++
+> >  1 file changed, 2 insertions(+)
+> > 
+> > diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
+> > index 8a85318d9c92..65f26cfff3fb 100644
+> > --- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
+> > +++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
+> > @@ -20,6 +20,8 @@ properties:
+> >        - qcom,sc8280xp-qmp-gen3x2-pcie-phy
+> >        - qcom,sc8280xp-qmp-gen3x4-pcie-phy
+> >        - qcom,sm8350-qmp-gen3x1-pcie-phy
+> > +      - qcom,sm8550-qmp-gen3x2-pcie-phy
+> > +      - qcom,sm8550-qmp-gen4x2-pcie-phy
+> >  
+> >    reg:
+> >      minItems: 1
+> 
+> I don't think I'll have time to look at this week, but I did notice that
+> you fail do describe the clocks, regulators, and resets (as you also
+> did for the UFS PHY binding) which are currently different from
+> sc8280xp.
 
-I think you only need 2 out of 3 steps depending on the situation. In
-this case, you can add error printing in the _optional variant when
-you introduce it and then convert callers to it.
+Hmm, sorry about that. I will double check against the pcie phy nodes I
+have for sm8550.
 
-Where we already have an optional variant, then you need steps 2 and 3.
+As for the UFS, if your are referring to the following patchset [1], the phy
+node looks exactly the same as on sc8280xp, therefore no other binding
+update, other than compatible, was needed.
 
-Rob
+[1] https://lore.kernel.org/all/20230117224148.1914627-2-abel.vesa@linaro.org/
+
+> 
+> Please be more careful when adding compatible strings so we get this
+> right. You should also double check that the differences are really
+> warranted and not just due the vendor using different names for the same
+> resource.
+> 
+> At least the reset must be renamed ("pcie_1_nocsr_com_phy_reset", e.g.
+> drop 'pcie' and 'reset', maybe more).
+> 
+> Johan
 
 -- 
 linux-phy mailing list
