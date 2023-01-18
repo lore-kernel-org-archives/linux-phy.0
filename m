@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 78BBAC32793
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7F58CC38147
 	for <linux-phy@archiver.kernel.org>; Wed, 18 Jan 2023 12:32:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
@@ -12,41 +12,41 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=c+ZduADZeO6f9O4vYWzUi466ylLLSwmSVqa+OqaxoY4=; b=jv5nAA9zVPl/3C
-	Ag7LIq1rjNEJUoY197PXIUN6bl0x7ilruxdP0pxZob9VExP//R7UxPn/nRu9NUehNfTQlt33xypl1
-	NtMvZ4EaHuE2YjedrhsAhc/OIdiT0u0k1YM4cCuF4+nNEMsTxcv/Gjk3k3brxZR5ecfQuKCJVf0uZ
-	Jl884jsveAKdJbszhGwgCzvTycrcMS425zh/8dvczVd28pidzB+AS6EvfoYOZjDq9rR9j8OLCHOAZ
-	VrXn1hfwb+3OSREayPakPakl7hH9jhWcgY2m1ykaZ/i4UEbtaaFjunmf7sXaJ6ixOAQHgihSFarAb
-	blrSesUXiXiEvezmW9Hw==;
+	List-Owner; bh=ZyKVYzapjanIl0uYfjkMharFnp+z2SfP3sZS2vqIxuI=; b=B4qv9X2x8YTsDx
+	wBHjzUJW1fJkv+0y4cSl3kUPMYLdIkGeUkVnXe2yTdOzuYkviEcr2iOVsCB+8uGggDS++t+mI1OqG
+	mGwxSbJKHGiRstsBdTBw9NIi4UNSmHVMPcajlw29JPbm62Da/x1PRQrSV5EeaSMTSsmAJwSsfpVRc
+	BAYoo4HPqT2OLe+omIfNQ8bQoZjHRQoX1kE3wL42YSYixVC5bVsUGJK0zRdnGegvmwDuEHBbxuQE3
+	FI1LOqimFL0Py+FRLlFcQIlqQfhwo9PdME0qsOO3tKF9mudtuvkD0FWbMd5vuaqwr2Rzpl7taTXwK
+	2bNRzjeSY7M6n81F956Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pI7c0-000qaF-OO; Wed, 18 Jan 2023 12:32:16 +0000
+	id 1pI7c0-000qaT-Uu; Wed, 18 Jan 2023 12:32:16 +0000
 Received: from madras.collabora.co.uk ([46.235.227.172])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pI7Zo-000pWx-GP; Wed, 18 Jan 2023 12:30:01 +0000
+	id 1pI7Zo-000pVO-GQ; Wed, 18 Jan 2023 12:30:02 +0000
 Received: from [192.168.1.100] (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
 	(No client certificate requested)
 	(Authenticated sender: kholk11)
-	by madras.collabora.co.uk (Postfix) with ESMTPSA id A1C716602E0C;
-	Wed, 18 Jan 2023 12:29:58 +0000 (GMT)
+	by madras.collabora.co.uk (Postfix) with ESMTPSA id 1A1856602E0A;
+	Wed, 18 Jan 2023 12:29:56 +0000 (GMT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1674044999;
-	bh=6p/64nw8PXl+X9QJy4hTb/VBdr6sXx/MwSeGLFalBW8=;
+	s=mail; t=1674044996;
+	bh=H1zVPKEUhT12KA+z/uL5nxzOq/6vUtEisSOkrk4sRng=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=WRHLelcE7uuAQ38Ksr/IUc7kpuAes0PTTFqQnHzN15ZN2qedk18yUh+rHZ6P7TdGC
-	 QnhNgbsXDQOTpKlCFaRIVjC84jH2DW6a1i4kbsLfgLg+ap/RlXYZx1kG1BQBbvRb9d
-	 VTSmBFGx708x7+HIZ6dz6NKirJk++PMpq9aYGVoYueflJ3VQEG8glCC3hj13Y3S9T+
-	 RlsKDHvTuJm0bBuNqdf72wshfCBfvgS1r8EobYzpzxt+GagVbqmYBP+iebZPBeN92C
-	 JL1G7om9yY7jnTKYf3GBffwgTYFp9mBE3eT/mysn0y9If+atO1RZLzVNmNo5Xrn1Yj
-	 l1mjPSumwHoMA==
-Message-ID: <2b349501-7a13-b4b2-7479-210440e0dda7@collabora.com>
-Date: Wed, 18 Jan 2023 13:29:55 +0100
+	b=PBM15/5Vdko7sJkmjzn5UvO5R/i6DsAxS/gdop6RrtvbvYZXNbdOKvKjPfmqlyfIB
+	 NLmPQYdMn+coV4Mna13TpjHq7bSSedDsiAgLVA1LHzj1mpfMtapHOUo3NJBkyc9tTE
+	 SxOsW9mWOR1g7iPrLoEPvDlijfVXRaq7VyInxsKqqnl0jzqVCh8/5AAzpMT+idd6d+
+	 YmbCfYNdwSuXugiLHA8Nzjq95RuikIN08x4tI2gGo8EbzEuEzBWoMefyteKaVj0C3x
+	 qXJkmmiq2Ajr1CNHKZoqk2qKKZnxEnFrpi12WP0Oh3wL+aUH8HGD3fVPhYCym8VgfJ
+	 JdmwnX+URYbQg==
+Message-ID: <f48c29ed-9154-0936-64c9-d5aa8dc9cae3@collabora.com>
+Date: Wed, 18 Jan 2023 13:29:53 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.6.0
-Subject: Re: [PATCH v7 2/3] phy: core: add debugfs root
+Subject: Re: [PATCH v7 3/3] phy: mediatek: tphy: add debugfs files
 Content-Language: en-US
 To: Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>
 Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
@@ -57,12 +57,12 @@ Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
  linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
  llvm@lists.linux.dev, Eddie Hung <eddie.hung@mediatek.com>
 References: <20230118084343.26913-1-chunfeng.yun@mediatek.com>
- <20230118084343.26913-2-chunfeng.yun@mediatek.com>
+ <20230118084343.26913-3-chunfeng.yun@mediatek.com>
 From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-In-Reply-To: <20230118084343.26913-2-chunfeng.yun@mediatek.com>
+In-Reply-To: <20230118084343.26913-3-chunfeng.yun@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230118_043000_719374_35468773 
-X-CRM114-Status: UNSURE (   6.18  )
+X-CRM114-CacheID: sfid-20230118_043000_746592_F0CEC4AD 
+X-CRM114-Status: UNSURE (   6.14  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -81,13 +81,12 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 Il 18/01/23 09:43, Chunfeng Yun ha scritto:
-> Add a debugfs root for phy class, then phy drivers can add debugfs files
-> under this folder.
+> These debugfs files are mainly used to make eye diagram test easier,
+> especially helpful to do HQA test for a new IC without efuse enabled.
 > 
 > Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
 
 Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-
 
 
 -- 
