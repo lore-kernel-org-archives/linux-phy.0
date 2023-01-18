@@ -4,62 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D20A8C38147
-	for <linux-phy@archiver.kernel.org>; Wed, 18 Jan 2023 17:25:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0129AC38147
+	for <linux-phy@archiver.kernel.org>; Wed, 18 Jan 2023 17:26:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vB/Ky3l/GuoDn3gxcA20NERHPPubhlRVQRn/I3Vmk2w=; b=3r+JjEFtUWCTmA
-	7Usya61/dIMxEmRMIbITThtSVAZQCgSOKiNOpyvGCGg+eg5I//IVRdgKCYBWmOAToj7SSbFkqYKS+
-	U6g7uJ+2MR/y0HSDzGgMAyKFu0WUi6QY9lfWnSc6+1tUuBx1y2VLDbX8JRBdQpG5krqCgf9OfxBz8
-	9kMvC6AVUCsvABwf5dHy3V2tO4+WkeZHPveWHcIQjpG2F5tuGWis9yAgkl/FPtyG8NqfIyS/RiTP1
-	QZ0GAMTKeVngQY9niI+E5gHqAsgrgi+BYU8/ltaDVPf/zmnKJ3Oza+sMo5mxsa8s4U2mELr1jXBUA
-	jf57vIvmIdecdlLBINDg==;
+	List-Owner; bh=XmgSgZBoKRtYyB4hgTTGpUBz4i2Lk2dEu9q5XP8Q/P8=; b=CfQeKRRDF0UOph
+	7Ho9os0td27WyseBDN/JqA8EpWUN4VdDU/MG/Ar93CccKHekEqt6RxrfvIA2GEGVnnKoYLfXrum++
+	idsO7aaGpa5NHRk1GVHhXCeCmzPmbRBlXjCuLSCmD/qVrBD9eyH5+j2dKPUdmhIFOafTjBnNT0uNH
+	sRj1OPRqk1e9CGRfY169Yt695nh+5p2oJXaQ9YuzLd/1Ikmdu6inDigQONN16u4LDj5fuMvgY2+TI
+	DpVm3gKMOb9C32mJAH79iQH6wZj1ZfNx+iZyqHY7HbZtIHESy1m7D/6BXTLlBVQrypkhHmcY+977m
+	l68QUyRvrswt2Rs0KeLQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pICC8-0020xY-7o; Wed, 18 Jan 2023 17:25:52 +0000
-Received: from ams.source.kernel.org ([145.40.68.75])
+	id 1pICCn-00213m-Ex; Wed, 18 Jan 2023 17:26:33 +0000
+Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pICC5-0020wf-Ms
-	for linux-phy@lists.infradead.org; Wed, 18 Jan 2023 17:25:50 +0000
+	id 1pICCk-00212i-VC
+	for linux-phy@lists.infradead.org; Wed, 18 Jan 2023 17:26:32 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id 1E51BB81E0C;
-	Wed, 18 Jan 2023 17:25:48 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E99BFC433D2;
-	Wed, 18 Jan 2023 17:25:45 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTPS id A3A3CCE1C4D;
+	Wed, 18 Jan 2023 17:26:26 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6F421C433EF;
+	Wed, 18 Jan 2023 17:26:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1674062746;
-	bh=nbhFEkTRawXa27CXBBIvDMnrHC17HIfBOrRgIXMDf70=;
+	s=k20201202; t=1674062785;
+	bh=Ie8gYGGf5+xcu1uU0rnQr9KYWVko0DdTHmrDJiqVhVs=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=KyhfcvNuwuxE3OsCwtJoWAp/DYCB/IJPegelC3qX6RhEyWFhr2nNip15QRf/WPZUS
-	 G6/4due6FUXQBzp2fWMLPmZtymf6qDM9MYEbDhs6ejRKzFiUDd9Lqr5J3fZFkEZyeZ
-	 W0Y6wHwR8dZvPfBwbq9Wti8rBu54CjX5TIzYTg3Wr00q4X0aswonO1XYCLDZlXswQk
-	 ZSXcBayBPFBR/G8RxwWEECguelA2f+b6k37AbBt3AiKuVE6JHMkhGg97MwvPMr8zWb
-	 8fJFNCuYZOAk7TGkFsreU/woCva4Z40Youbot2LuqsKfN3+D8g0gFB7pYOgDv2H1nJ
-	 /LgddBC2sIpaQ==
-Date: Wed, 18 Jan 2023 22:55:43 +0530
+	b=N9YJdpRKAsc+RIFHGEI11cQ1FSgRNsehYucyNBBuGzvp7wwHeweHsBroVChj3fvkD
+	 c5mar+fT5cKko4SLHwkJKlIUzSPbjMYCfFG6jPgeRHIXOruzZbuCn/aWRNLSQNuHJ4
+	 /j1aFJg+y5NP1EsPUCpzVPZLtxjTy3TJ4jC4s+GkZ87S5HTZkeys8qZsUajydGcFSc
+	 0BpwHuUT1ETF7jW3sYdq3R5tzjkt5ri4aIYs2Qwa0VeunCAiF+yY3CHPS2POWT8/W+
+	 k/j6mEXj+FSUgH20NjJzOKoIXOl9q4QkQudKzfaD5bn0T/I2p23X0KsCsZuSZT+yYm
+	 d8KeHVHGVXnjw==
+Date: Wed, 18 Jan 2023 22:56:21 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org
-Subject: Re: [PATCH 1/2] phy: qcom-qmp-pcie: fix the regs layout table for
- sm8450 gen3x1 PHY
-Message-ID: <Y8grl2UjkGTOo/Y5@matsya>
-References: <20230113212138.421583-1-dmitry.baryshkov@linaro.org>
+To: Thierry Reding <thierry.reding@gmail.com>
+Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Jon Hunter <jonathanh@nvidia.com>, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-tegra@vger.kernel.org
+Subject: Re: [PATCH v3] dt-bindings: phy: tegra-xusb: Convert to json-schema
+Message-ID: <Y8grvSQa7raCn8q5@matsya>
+References: <20230113150804.1272555-1-thierry.reding@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20230113212138.421583-1-dmitry.baryshkov@linaro.org>
+In-Reply-To: <20230113150804.1272555-1-thierry.reding@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230118_092549_908361_66A1BB51 
-X-CRM114-Status: UNSURE (   8.24  )
+X-CRM114-CacheID: sfid-20230118_092631_205809_2E5A8086 
+X-CRM114-Status: UNSURE (   7.43  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -77,14 +76,13 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 13-01-23, 23:21, Dmitry Baryshkov wrote:
-> The sm8450 gen3x1 PHY references the pciephy_v4_regs_layout while the
-> PHY itself uses v5 regs. While there are only minor differences between
-> v4 and v5 regs and none of them concerns registers mentions in
-> regs_layout, switch the PHY to use pciephy_v5_regs_layout to remove
-> possible confusion.
+On 13-01-23, 16:08, Thierry Reding wrote:
+> From: Thierry Reding <treding@nvidia.com>
+> 
+> Convert the Tegra XUSB pad controller bindings from free-form text
+> format to json-schema.
 
-Applied both, thanks
+Applied, thanks
 
 -- 
 ~Vinod
