@@ -4,39 +4,39 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5FA0DC004D4
-	for <linux-phy@archiver.kernel.org>; Wed, 18 Jan 2023 10:16:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0D082C004D4
+	for <linux-phy@archiver.kernel.org>; Wed, 18 Jan 2023 10:16:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SgWqKQPMikdqF+1eo8EM7MtP3L3T36TyK78s54CmTRE=; b=mZuLKvvVaD8u7L
-	x0/COLdU0WgFPcFzvqPSKcyJoVEqj7mrbMd58xF93ublgGsj0udcb/9ZgTnZHDNO3S/VMduJRRfen
-	lm3HqMO2mnMhJwMGgbXLahgaA/Chlq2YjjL5cecBkUzEjtbn7HUjHJqBZ+BQV8UlOGIsaCMnK3Ku2
-	bv2jVAgc8MNg7lb1JAmEialvQpb8Pd7hZ6b9EdLmF+O8p3ZBPGoetxb5gD4SBg+AJUaFbBdep/Y8U
-	My3dGvbbC788XrXFPky1Qf7paDpOiAlcSAQ4NCIYN9+OdaxWByLtbWaDYwZbWUzIbZgBgOOfoxDRL
-	DFNFaVNwHXzTVjT1LBcA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=9FWDpM/UpYFmp2SiBgMcT6qBSBB6PwAoW0xRdUhmXQY=; b=t8nkvs2B1yCHtp
+	AiiLqZCO0h/2rhvjI5aTzx4Zkm1oCgx/arPVIo6fAQvcmYA6jfXS9xWM6Nnchu/DwYM6B9AcalMnt
+	ZGitM7GE3aB4QdWqVF8VSpvBOWepK30KLr2g1XxIBfusoEnqgQHHyLfYrh4oHyR+aqDFwl7blbbOi
+	TrjTwGzL/0E2jYfOPoe8piZ17GVj6igchfDlaHQspkTAVIaeeUV3gLcxpSkVxnqNPL+CVgI3B7bT/
+	I+cxjqWTwnmaCz/QGvy6PcIDs2RuQqFt5tWmaWCIUHEmXDib2eT2dP0RAkQd9H0PQgoJluEslrmkf
+	8Nl+Xlu6ScECm/4hZnFw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pI5UC-000Ilp-O8; Wed, 18 Jan 2023 10:16:04 +0000
-Received: from baptiste.telenet-ops.be ([2a02:1800:120:4::f00:13])
+	id 1pI5UU-000Iqz-Fe; Wed, 18 Jan 2023 10:16:22 +0000
+Received: from xavier.telenet-ops.be ([2a02:1800:120:4::f00:14])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pI5U0-000If4-Au
+	id 1pI5U0-000IfC-Au
 	for linux-phy@lists.infradead.org; Wed, 18 Jan 2023 10:15:55 +0000
 Received: from ramsan.of.borg ([IPv6:2a02:1810:ac12:ed50:4745:2e6d:e3a6:3327])
-	by baptiste.telenet-ops.be with bizsmtp
-	id AAFN2900E2zf9gW01AFN4M; Wed, 18 Jan 2023 11:15:42 +0100
+	by xavier.telenet-ops.be with bizsmtp
+	id AAFN290042zf9gW01AFNxL; Wed, 18 Jan 2023 11:15:42 +0100
 Received: from rox.of.borg ([192.168.97.57])
 	by ramsan.of.borg with esmtp (Exim 4.95)
 	(envelope-from <geert@linux-m68k.org>)
-	id 1pI5TQ-005aIV-N1;
+	id 1pI5TQ-005aIN-M1;
 	Wed, 18 Jan 2023 11:15:22 +0100
 Received: from geert by rox.of.borg with local (Exim 4.95)
 	(envelope-from <geert@linux-m68k.org>)
-	id 1pI5TW-001JVp-1J;
-	Wed, 18 Jan 2023 11:15:22 +0100
+	id 1pI5TV-001JVg-Uw;
+	Wed, 18 Jan 2023 11:15:21 +0100
 From: Geert Uytterhoeven <geert+renesas@glider.be>
 To: Madalin Bucur <madalin.bucur@nxp.com>,
 	"David S . Miller" <davem@davemloft.net>,
@@ -67,16 +67,14 @@ Cc: netdev@vger.kernel.org,
 	linux-arm-kernel@lists.infradead.org,
 	linux-samsung-soc@vger.kernel.org,
 	Geert Uytterhoeven <geert+renesas@glider.be>
-Subject: [PATCH 3/7] net: lan966x: Convert to devm_of_phy_optional_get()
-Date: Wed, 18 Jan 2023 11:15:16 +0100
-Message-Id: <a8673e0ed97d41721bb9718d3338fa6957a7f0f7.1674036164.git.geert+renesas@glider.be>
+Subject: [PATCH treewide 0/7] phy: Add devm_of_phy_optional_get() helper
+Date: Wed, 18 Jan 2023 11:15:13 +0100
+Message-Id: <cover.1674036164.git.geert+renesas@glider.be>
 X-Mailer: git-send-email 2.34.1
-In-Reply-To: <cover.1674036164.git.geert+renesas@glider.be>
-References: <cover.1674036164.git.geert+renesas@glider.be>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230118_021552_622103_FD003897 
-X-CRM114-Status: GOOD (  10.33  )
+X-CRM114-CacheID: sfid-20230118_021552_601781_20944CDF 
+X-CRM114-Status: GOOD (  15.64  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,33 +91,52 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Use the new devm_of_phy_optional_get() helper instead of open-coding the
-same operation.
+	Hi all,
 
-Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
----
- drivers/net/ethernet/microchip/lan966x/lan966x_main.c | 5 ++---
- 1 file changed, 2 insertions(+), 3 deletions(-)
+While there exist several optional_get() PHY helper functions, there is
+no optional variant of devm_of_phy_get(), leading to several drivers
+implementing this theirselves, sometimes in buggy ways.
 
-diff --git a/drivers/net/ethernet/microchip/lan966x/lan966x_main.c b/drivers/net/ethernet/microchip/lan966x/lan966x_main.c
-index cadde20505ba0689..d64a525cdc9ea18b 100644
---- a/drivers/net/ethernet/microchip/lan966x/lan966x_main.c
-+++ b/drivers/net/ethernet/microchip/lan966x/lan966x_main.c
-@@ -1147,9 +1147,8 @@ static int lan966x_probe(struct platform_device *pdev)
- 		lan966x->ports[p]->config.portmode = phy_mode;
- 		lan966x->ports[p]->fwnode = fwnode_handle_get(portnp);
- 
--		serdes = devm_of_phy_get(lan966x->dev, to_of_node(portnp), NULL);
--		if (PTR_ERR(serdes) == -ENODEV)
--			serdes = NULL;
-+		serdes = devm_of_phy_optional_get(lan966x->dev,
-+						  to_of_node(portnp), NULL);
- 		if (IS_ERR(serdes)) {
- 			err = PTR_ERR(serdes);
- 			goto cleanup_ports;
+Hence this series introduces a devm_of_phy_optional_get() helper(), and
+converts existing users of devm_of_phy_get() where appropriate.
+
+This series been compile-tested only, but the new helper itself has been
+tested with a new user I am about to submit.
+
+Thanks for your comments!
+
+Geert Uytterhoeven (7):
+  phy: Add devm_of_phy_optional_get() helper
+  net: fman: memac: Convert to devm_of_phy_optional_get()
+  net: lan966x: Convert to devm_of_phy_optional_get()
+  net: ethernet: ti: am65-cpsw: Convert to devm_of_phy_optional_get()
+  PCI: tegra: Convert to devm_of_phy_optional_get()
+  usb: host: ehci-exynos: Convert to devm_of_phy_optional_get()
+  usb: host: ohci-exynos: Convert to devm_of_phy_optional_get()
+
+ .../net/ethernet/freescale/fman/fman_memac.c  |  8 +++---
+ .../ethernet/microchip/lan966x/lan966x_main.c |  5 ++--
+ drivers/net/ethernet/ti/am65-cpsw-nuss.c      |  6 ++---
+ drivers/pci/controller/pci-tegra.c            |  5 +---
+ drivers/phy/phy-core.c                        | 26 +++++++++++++++++++
+ drivers/usb/host/ehci-exynos.c                | 24 +++++------------
+ drivers/usb/host/ohci-exynos.c                | 24 +++++------------
+ include/linux/phy/phy.h                       |  9 ++++++
+ 8 files changed, 59 insertions(+), 48 deletions(-)
+
 -- 
 2.34.1
 
+Gr{oetje,eeting}s,
+
+						Geert
+
+--
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+							    -- Linus Torvalds
 
 -- 
 linux-phy mailing list
