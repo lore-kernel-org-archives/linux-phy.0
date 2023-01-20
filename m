@@ -4,59 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CC596C05027
-	for <linux-phy@archiver.kernel.org>; Fri, 20 Jan 2023 07:11:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0D7E6C54737
+	for <linux-phy@archiver.kernel.org>; Fri, 20 Jan 2023 07:34:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ep/YzOfhok/9fGJZd/TEX3v9I2iyF/gKwhryhWPwvKU=; b=wIrZpJNwc21I0h
-	cdEb4U3wrXQJix9EPCMT2Y3W9J5p+AwhtL6sc9wRqRSq3vUeV1jR2yd5vGlHIa1EhtTODCpb+vHnY
-	s1ONa14DfLX3OAOoRjTzZYIV9Rc9nXvnmR0DDa0MGnO7OGb2cC6c7SjFS+evNg55Kfw6dTkcx0uDt
-	bFULkUGHPuEfeXX0OI6SLDkjLGjIEeuEkUXJu7gQux9KsZ62X83JKSL02i5cCNs8fBkGoibQPaWmW
-	cl+w+WVZDk17ojvJMIuZamIcXEsjtg7RerSxs6qTd7oZctk8ySosb7m3LDliR+0Kfq5vt/S4Hw7oW
-	Kbr6PTsesNymGSOD1o1Q==;
+	List-Owner; bh=WYgNSueVxW1nC1rgehryjGnULJn9T8YszHDKf3aJCtI=; b=JJZeAYD5fwlx4u
+	c/xYEOb/iR1MxbjOfVlhzPXKkTvmc0fvQN/g+yE1IyIPHJ1dC132qGzPEre9ViQO2FdwDi/YuZuRH
+	wBnRdMRL2rxiy3F1JHiorE6Id2hEVknlHOKrjxiL79ZBkxnhwAfK0RfjxW/sciAI1GiIfMLJKQBCF
+	q0C1TSX3I2cE2aytm/ffTVn6qYzR8mm+WbG7gCOD8WF1i4y+Nu9yCC10blqq9yF4GFx+8X9Oo/s+h
+	NYlvRFv9y66dDTg6msO/Ew+H5UPof79aiSKR48yW1oSFUqs+ibYnz6afe++UOMhH5AezSWe14Yrkh
+	+ETkKRUDb4RWPz7WRTmg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pIlYx-008jq7-6O; Fri, 20 Jan 2023 07:11:47 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1pIla4-008k2b-6M; Fri, 20 Jan 2023 07:12:56 +0000
+Received: from ams.source.kernel.org ([145.40.68.75])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pIlYj-008jky-Lu
-	for linux-phy@lists.infradead.org; Fri, 20 Jan 2023 07:11:39 +0000
+	id 1pIla1-008k24-UY
+	for linux-phy@lists.infradead.org; Fri, 20 Jan 2023 07:12:55 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 69D1C61DD8;
-	Fri, 20 Jan 2023 07:11:16 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 104FEC433D2;
-	Fri, 20 Jan 2023 07:11:14 +0000 (UTC)
+	by ams.source.kernel.org (Postfix) with ESMTPS id 9298BB81FB5;
+	Fri, 20 Jan 2023 07:12:52 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 781F6C433D2;
+	Fri, 20 Jan 2023 07:12:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1674198675;
-	bh=ruN1axoeesLkwpizVlQSezOYj0g97Z2CA0toTiAowkg=;
+	s=k20201202; t=1674198771;
+	bh=UsDA/WXXNha7D3X3zm4UCLPWxcyELkZ9SDumqg8hpLE=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=s4Nc3EDdT9+NsuR0dqwZmho96bwdIryMHGcPgkzRX8rIixs38DtpJk4qpO6NjNKQO
-	 AlCLw/1l8gFrahmjqQuMn8LM4NptHXP73DYwSfmWEiV5QhCKclRsShybPQ8qOE4JiM
-	 fT5x/wntGrk7AF3XD7hPLjKBqvi889HsIe1OwLu77/yrdpnD7T4FaD1R77gKiSoAIU
-	 iWS4fmY9DVjnqoi5oWzqW+MUPlGf4jPAw948oLkU0EzI0mAOQWXmmAW1Vn1u9im/BR
-	 nAFgFhKf3EkNE+vBF+vHXkzl1lgnMgVauTKYt1cbCca5GRoKZZiyGtKNpmO8BCUuox
-	 TQ9WCCRWN1VJQ==
-Date: Fri, 20 Jan 2023 12:41:11 +0530
+	b=PS4AnRROOKLjgxLXubQPsnJZuVuMFSIwCaAv+ybwgIj3/XDtt/Yg/CiK7U6zIDXuJ
+	 mj3Bu3vKONgS7GReATPBTfS9JxFKERIoSVW6M9BbmdJLBL08BqJ2Au+/o7JA5q9s87
+	 eUlsouoYOMeqnvy9uIMyiZLQnUwkBDy1/VM78Q2PG9Q7m0DrWchHc+kRQqO4GX3Q12
+	 qTVy9bDWOik3JzbcYX6fzDHz7kMfO169im0PT6f6SbrFY+j9TlftBzCYrWxN80viKG
+	 3JHTkoboAdvpMtjhE2XCSlgWd+qm8ZnV13/C2+J4qdClAGh+VqoJuG7TjnVnxB3OtW
+	 FfLDJVJ3ZbmmQ==
+Date: Fri, 20 Jan 2023 12:42:46 +0530
 From: Vinod Koul <vkoul@kernel.org>
 To: Geert Uytterhoeven <geert+renesas@glider.be>
-Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
-	Maxime Ripard <mripard@kernel.org>, Andrew Lunn <andrew@lunn.ch>,
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] phy: Return NULL if the PHY is optional (part two)
-Message-ID: <Y8o+j8lyyANpFSvz@matsya>
-References: <663dfcec9f703c41759dcd4cd824d00caa2dd5fb.1674036031.git.geert+renesas@glider.be>
+Cc: Wolfgang Grandegger <wg@grandegger.com>,
+	Marc Kleine-Budde <mkl@pengutronix.de>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Aswath Govindraju <a-govindraju@ti.com>,
+	Wolfram Sang <wsa+renesas@sang-engineering.com>,
+	linux-can@vger.kernel.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-renesas-soc@vger.kernel.org
+Subject: Re: [PATCH 0/2] phy: Add support for NXP TJR1443 CAN Transceiver
+Message-ID: <Y8o+7iuWgYGtZshM@matsya>
+References: <cover.1674037830.git.geert+renesas@glider.be>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <663dfcec9f703c41759dcd4cd824d00caa2dd5fb.1674036031.git.geert+renesas@glider.be>
+In-Reply-To: <cover.1674037830.git.geert+renesas@glider.be>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230119_231133_789951_AF57B3D2 
-X-CRM114-Status: GOOD (  21.92  )
+X-CRM114-CacheID: sfid-20230119_231254_160894_7F7114FF 
+X-CRM114-Status: GOOD (  10.53  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,45 +79,15 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 18-01-23, 11:02, Geert Uytterhoeven wrote:
-> If we're trying to get a handle to an optional PHY, then the PHY
-> framework being disabled shouldn't return a hard error.
+On 18-01-23, 11:39, Geert Uytterhoeven wrote:
+> 	Hi all,
 > 
-> Instead, return NULL just like phy_optional_get() does when there's no
-> PHY provided in the DT.
-> 
-> Based on commit 11a6e41c0ee503ff ("phy: Return NULL if the phy is
-> optional"), which did the same thing for devm_phy_optional_get().
-> 
-> Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
-> ---
-> It seems there were never any in-tree users of this function since its
-> introduction in 788a4d56ff378bff ("drivers: phy: Add support for
-> optional phys") in v3.14.
-> Perhaps it should be removed?
+> The NXP TJR1443 High-speed CAN transceiver with Sleep mode is a
+> pin-compatible alternative for the TI TCAN1043.  Hence this patch series
+> adds support for it to the existing TI TCAN1043 DT bindings and to the
+> generic CAN Transceiver PHY driver.
 
-Ack, devm_phy_optional_get() is used by bunch of folks, but not this
-one, so lets retire this
-
-> ---
->  include/linux/phy/phy.h | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/include/linux/phy/phy.h b/include/linux/phy/phy.h
-> index b1413757fcc3b89b..559c3da515073697 100644
-> --- a/include/linux/phy/phy.h
-> +++ b/include/linux/phy/phy.h
-> @@ -429,7 +429,7 @@ static inline struct phy *phy_get(struct device *dev, const char *string)
->  static inline struct phy *phy_optional_get(struct device *dev,
->  					   const char *string)
->  {
-> -	return ERR_PTR(-ENOSYS);
-> +	return NULL;
->  }
->  
->  static inline struct phy *devm_phy_get(struct device *dev, const char *string)
-> -- 
-> 2.34.1
+Applied, thanks
 
 -- 
 ~Vinod
