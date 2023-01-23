@@ -4,74 +4,102 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 274EBC25B50
-	for <linux-phy@archiver.kernel.org>; Mon, 23 Jan 2023 09:43:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E0740C38142
+	for <linux-phy@archiver.kernel.org>; Mon, 23 Jan 2023 09:46:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Kmmd6J/TLTjVKU2loxfZMLRwhyDI/Vaa6aCCyiEzBXY=; b=M16QZdbWPtMnu7
-	L3K/T4vE4c585CWadFrUd2eYNBsi7TC8NiyNhLXYifz/MlqeJBGZC+z4Xy2cNQwWXhYwTfIaHXIE1
-	wlGjt9IBPBfNJ/KIIHAWAx42bRheiJvR5ixSIwGjF60eRTcZc7Rg3Z6pV7HpJ5zKgc49pELzuQqbZ
-	vU+yZT9keax4f/iq20N5boklvXQo+BsHZdD/RYlHFExRVHglUAg2ttm+T12vrRaKl8PolBylaAlVs
-	LUdLJ2CRTmeHv6Ut6oStw70DdLw4SsbQ6fSbobZIThip7/PFdCt7GFoWqWScWFlzckP9qDSl33WwV
-	3fh4XYg4RS9s+9Tpi8QA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
+	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=9v3jLe+A5cYPrTWus9JzVBk8BtoMw+p59hxNlvY3uYY=; b=xYvaHD59sXkPV61T2MIAZDaUh3
+	Um450wo5/3F7whSvUkE50oKuvbDaU1iCDrPdIBw7Uz9nsWOyagjqRBp0kZfsmkliBekAqYTvOg5t4
+	rJ4J/S0lUFXonaEPXuoms4kATe8nxV4EIyaDRtga9ZEXoCGEhcHIYRplXW7GA+5Eynfeq4IgY/OWF
+	GJywyG7gc6LbA8EK7f5OloPBuuYIqNp/xr8hMilYjnG2YOKMQVjMhVnJaqFQTycKbdwonDwZ0V5KA
+	ukyUE+9dyNtCRzkaPVolUfxI/KklPDR+NeQiSy9MHiM5K8PZ+RCLmlIj6mhctlQMlNTXCoe9HzY0e
+	SLhSD6pg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pJtMI-00GYl4-Db; Mon, 23 Jan 2023 09:43:22 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1pJtPB-00GZQ1-AN; Mon, 23 Jan 2023 09:46:21 +0000
+Received: from mail-wr1-x42d.google.com ([2a00:1450:4864:20::42d])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pJtM5-00GYfj-3w
-	for linux-phy@lists.infradead.org; Mon, 23 Jan 2023 09:43:10 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 5291E60DF6;
-	Mon, 23 Jan 2023 09:43:08 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id ADD88C433D2;
-	Mon, 23 Jan 2023 09:43:07 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1674466987;
-	bh=zqDlD4UopnwoyaNHYVa7uoZaLDHyVvELIS4k830a3tE=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=cQck51QSo8S3o8L0jiTiWU/KpeSoiVyZcK+f7dn56i9J8+qhqem70UnLO8vXJSPPS
-	 MOdxE5M0Wd/Ptvrkhv7VfpzcMxs9Lm6UJ7bGVyI1jII0C9XM2eTgZ9Qs6IoJ0khLcn
-	 c2/+3OctjRN9iQWnGfLZyQuUgoNMXcfLZOr5m5ts86o8deD5axtsAD8mqCgrqWXdD7
-	 xQCVXHedeCqIqYv089jZIu6gFkfITQ7YI0v/h6OczP74sRn2v+YaU1UnBhlHncT7M0
-	 N6BKpWRzW/5y3pcD4QfnmVSuR/jFHHmtZEKF2zZvIbHBxppNrd+R8HLPByyzH/8BMY
-	 3qrAU6OFlJF+Q==
-Received: from johan by xi.lan with local (Exim 4.94.2)
-	(envelope-from <johan@kernel.org>)
-	id 1pJtM0-0000GF-SP; Mon, 23 Jan 2023 10:43:04 +0100
-Date: Mon, 23 Jan 2023 10:43:04 +0100
-From: Johan Hovold <johan@kernel.org>
-To: Luca Weiss <luca.weiss@fairphone.com>
-Cc: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
-	Vinod Koul <vkoul@kernel.org>, linux-arm-msm@vger.kernel.org,
-	~postmarketos/upstreaming@lists.sr.ht, phone-devel@vger.kernel.org,
-	Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v3 2/3] phy: qcom-qmp-combo: Add config for SM6350
-Message-ID: <Y85WqDrGXAXp7gS/@hovoldconsulting.com>
-References: <20221130081430.67831-1-luca.weiss@fairphone.com>
- <20221130081430.67831-2-luca.weiss@fairphone.com>
- <Y6xP4YRAp68TfxFi@hovoldconsulting.com>
- <Y8BIX+js1ircJyb9@matsya>
- <cf968a25-02f7-d402-530b-eb379b707e54@linaro.org>
- <CPR2LS3SJQ3I.Z7UY505COG3@otso>
- <CAA8EJpoOMMALHz7ysft6KvQaYhGWPD+xZiUjOTrC8CA_y81n-w@mail.gmail.com>
- <CPX2VVT5EUDV.2LH6VI2586F02@otso>
+	id 1pJtP8-00GZOb-QA
+	for linux-phy@lists.infradead.org; Mon, 23 Jan 2023 09:46:20 +0000
+Received: by mail-wr1-x42d.google.com with SMTP id r9so10195018wrw.4
+        for <linux-phy@lists.infradead.org>; Mon, 23 Jan 2023 01:46:18 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google;
+        h=content-transfer-encoding:in-reply-to:organization:references:cc:to
+         :content-language:subject:reply-to:from:user-agent:mime-version:date
+         :message-id:from:to:cc:subject:date:message-id:reply-to;
+        bh=60INGmxwRr+8yD/I9JtxQHZJy+MthHAPjebxgVXSq4A=;
+        b=F1RmlI6Jr+ymKyy8lqwEzZBkmqqB13nNXYBYvHtOeWRGeqsuz7xzXBmaWhSw3I8Ebm
+         TcBhF+tktlNXSXYa7GGd+4cSp7Mx1MA292zlI/YBhsesf8m2OPtOBU4CzkRYYDY+VJKD
+         rZKktCGYO6MieFBnhFrnXP96yNjjCazN4NtubEGY3US83//z/ammPRj/L4Pxrc2Z6tmr
+         QKPZ+KdqFIhF4uxc434VoygrrqrdBU0wTWSgMlQyI+fyCqgR08BCpwX5nBT4NXsRkGFu
+         8nu27yExklJVwN9h22VU1oVuSZqcQ+pTlG/IoT6VZa6i92mv0KfUGLb3dqJ4/aHoExHh
+         cArg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=content-transfer-encoding:in-reply-to:organization:references:cc:to
+         :content-language:subject:reply-to:from:user-agent:mime-version:date
+         :message-id:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=60INGmxwRr+8yD/I9JtxQHZJy+MthHAPjebxgVXSq4A=;
+        b=FMb0NhGMQpnliGo62lrbweB+P4IzHQUBe5En+fBKyekrieR86UywZM/YplvUxlDS58
+         +a2vCWcxMqdk2QAYhnObk/uZ9e94Sr7pLGAIVRSnwLkjgvTc7dA7ygNW6Z4tUhajaLOP
+         yfkZ569S4IXZn03c+FshFGUVpd2Vu0bIsQeBkhPhJuiVst8U0Vt+u+BdBuXCxF/WVQC/
+         uxq6TXriotxvZ3DvJezP6VsZ9leX2yzc4YLUc6FWNG6v6J5G8IFeCGgI8oQJg//1czgH
+         YWpcTY2URXCuPC7vtXTXPyXdv28I6bS+Atc60dPW/2bkT34AW6535RxJ0yCclLQEJVVE
+         q9eA==
+X-Gm-Message-State: AFqh2krsT7mckzkiXyjMz+A3agOy4k3OeoJuXjrhgiJwuDlOoozQln47
+	GbUP5Fk6mLuIDS+gh2VuWEUgCg==
+X-Google-Smtp-Source: AMrXdXuHEVHo54bmjGJT3gC7SenPuHW6sVZSyn52AJ8UqKixwTSKOJoGk+qB0zPe/lhc1Ohi58pW5Q==
+X-Received: by 2002:a05:6000:98d:b0:2bd:c6ce:7bfb with SMTP id by13-20020a056000098d00b002bdc6ce7bfbmr23917833wrb.28.1674467177213;
+        Mon, 23 Jan 2023 01:46:17 -0800 (PST)
+Received: from [192.168.7.111] (679773502.box.freepro.com. [212.114.21.58])
+        by smtp.gmail.com with ESMTPSA id q12-20020adff50c000000b002bc83b85180sm7139415wro.114.2023.01.23.01.46.15
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 23 Jan 2023 01:46:16 -0800 (PST)
+Message-ID: <c590a842-0074-8f19-6bc7-5de101a88661@linaro.org>
+Date: Mon, 23 Jan 2023 10:46:15 +0100
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CPX2VVT5EUDV.2LH6VI2586F02@otso>
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.6.0
+From: Neil Armstrong <neil.armstrong@linaro.org>
+Subject: Re: [PATCH v2 10/11] dt-bindings: PCI: convert amlogic,meson-pcie.txt
+ to dt-schema
+Content-Language: en-US
+To: Bjorn Helgaas <helgaas@kernel.org>
+Cc: Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Kevin Hilman <khilman@baylibre.com>, Jerome Brunet <jbrunet@baylibre.com>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
+ Wim Van Sebroeck <wim@linux-watchdog.org>, Guenter Roeck
+ <linux@roeck-us.net>, Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Alessandro Zummo <a.zummo@towertech.it>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Thomas Gleixner <tglx@linutronix.de>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ Ulf Hansson <ulf.hansson@linaro.org>, Bjorn Helgaas <bhelgaas@google.com>,
+ "David S. Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>,
+ Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
+ Andrew Lunn <andrew@lunn.ch>, Heiner Kallweit <hkallweit1@gmail.com>,
+ Russell King <linux@armlinux.org.uk>, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-watchdog@vger.kernel.org,
+ linux-media@vger.kernel.org, linux-rtc@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-mmc@vger.kernel.org,
+ linux-pci@vger.kernel.org, netdev@vger.kernel.org,
+ Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+References: <20230110150328.GA1502381@bhelgaas>
+Organization: Linaro Developer Services
+In-Reply-To: <20230110150328.GA1502381@bhelgaas>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230123_014309_286070_C674842C 
-X-CRM114-Status: GOOD (  42.52  )
+X-CRM114-CacheID: sfid-20230123_014618_899173_88C9DC41 
+X-CRM114-Status: GOOD (  17.65  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,118 +111,66 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
+Reply-To: neil.armstrong@linaro.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Jan 20, 2023 at 03:13:46PM +0100, Luca Weiss wrote:
-> On Fri Jan 13, 2023 at 2:01 PM CET, Dmitry Baryshkov wrote:
-> > On Fri, 13 Jan 2023 at 14:44, Luca Weiss <luca.weiss@fairphone.com> wrote:
-> > >
-> > > Hi Dmitry,
-> > >
-> > > On Thu Jan 12, 2023 at 8:33 PM CET, Dmitry Baryshkov wrote:
-> > > > On 12/01/2023 19:50, Vinod Koul wrote:
-> > > > > On 28-12-22, 15:17, Johan Hovold wrote:
-> > > > >> Luca, Vinod,
-> > > > >>
-> > > > >> On Wed, Nov 30, 2022 at 09:14:28AM +0100, Luca Weiss wrote:
-> > > > >>> Add the tables and config for the combo phy found on SM6350.
-> > > > >>>
-> > > > >>> Signed-off-by: Luca Weiss <luca.weiss@fairphone.com>
-> > > > >>> ---
-> > > > >>> Changes since v2:
-> > > > >>> * Drop dp_txa/dp_txb changes, not required
-> > > > >>> * Fix dp_dp_phy offset
-> > > > >>>
-> > > > >>>   drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 126 ++++++++++++++++++++++
-> > > > >>>   1 file changed, 126 insertions(+)
-> > > > >>>
-> > > > >>> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-> > > > >>> index 77052c66cf70..6ac0c68269dc 100644
-> > > > >>> --- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-> > > > >>> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-> > > > >>
-> > > > >>> @@ -975,6 +1039,19 @@ static const char * const sc7180_usb3phy_reset_l[] = {
-> > > > >>>           "phy",
-> > > > >>>   };
-> > > > >>>
-> > > > >>> +static const struct qmp_combo_offsets qmp_combo_offsets_v3 = {
-> > > > >>> + .com            = 0x0000,
-> > > > >>> + .txa            = 0x1200,
-> > > > >>> + .rxa            = 0x1400,
-> > > > >>> + .txb            = 0x1600,
-> > > > >>> + .rxb            = 0x1800,
-> > > > >>> + .usb3_serdes    = 0x1000,
-> > > > >>> + .usb3_pcs_misc  = 0x1a00,
-> > > > >>> + .usb3_pcs       = 0x1c00,
-> > > > >>> + .dp_serdes      = 0x1000,
-> > > > >>
-> > > > >> I would have expected this to be 0x2000 as that's what the older
-> > > > >> platforms have been using for the dp serdes table so far. Without access
-> > > > >> to any documentation it's hard to tell whether everyone's just been
-> > > > >> cargo-culting all along or if there's actually something there at offset
-> > > > >> 0x2000.
-> > > >
-> > > > usb3_serdes is 0x1000, so dp_serdes equal to 0x1000 is definitely an typo.
-> > > >
-> > > > Judging from the downstream dtsi, the DP PHY starts at offset 0x2000. So
-> > > > dp_serdes is equal to 0x2000, dp_phy = 0x2a00, ln_tx1 = 0x2200, ln_tx2 =
-> > > > 0x2600.
-> > >
-> > > Can you share how you got to the 0x2000 offset? You can see my
-> > > (potentially wrong) reasoning for 0x1000 a few messages ago[0].
-> > >
-> > > The only 0x2000-something I could find now while looking at it again is
-> > > "#define USB3_DP_PHY_DP_DP_PHY_PD_CTL 0x2a18" which becomes
-> > > USB3_DP_DP_PHY_PD_CTL in the driver but this is seemingly not used at
-> > > all in my msm-4.19 tree.
-> >
-> > Quite simple: see [1]. DP_PLL is at +0x2000
-> >
-> > [1] https://android.googlesource.com/kernel/msm-extra/devicetree/+/refs/heads/android-msm-bramble-4.19-android11-qpr1/qcom/lagoon-sde-pll.dtsi#27
+On 10/01/2023 16:03, Bjorn Helgaas wrote:
+> Is this the same sort of conversion done by one of these?
 > 
-> I still disagree from what I see.
+>    e4dffb674cfd ("dt-bindings: PCI: tegra194: Convert to json-schema")
+>    075a9d55932e ("dt-bindings: PCI: qcom: Convert to YAML")
 > 
-> E.g. this part of the dp_serdes init table in mainline:
-> 
-> static const struct qmp_phy_init_tbl qmp_v3_dp_serdes_tbl_rbr[] = {
-> 	QMP_PHY_INIT_CFG(QSERDES_V3_COM_HSCLK_SEL, 0x0c),
-> 
-> With this one:
-> #define QSERDES_V3_COM_HSCLK_SEL                     0x13c
-> 
-> To write this config qmp->dp_serdes gets used which is set at:
-> 	qmp->dp_serdes = base + offs->dp_serdes;
-> 
-> So if offs->dp_serdes is 0x2000, this write will go to 0x213c.
-> 
-> If we go back to msm-4.19 downstream the equivalent define is
-> #define USB3_DP_QSERDES_COM_HSCLK_SEL				0x113c
-> 
-> So there we are at offset 0x1000. And this define is used in
-> qcom,qmp-phy-init-seq which I already went to in detail in a previous
-> email in this thread.
+> It's helpful to non-experts like me if the subject lines use similar
+> style (capitalized) and similar terminology ("dt-schema" vs
+> "json-schema" vs "YAML").
 
-From what I've heard, the PHY driver in the vendor kernel only deals
-with the USB part of the PHY, while some display driver accesses the DP
-part directly. So the fact that the Qualcomm USB PHY driver init
-sequences don't seem to use the DP regions (apart from that
-USB3_DP_PHY_DP_DP_PHY_PD_CTL register) is to be expected.
+Yes and honestly, I don't know what's the right name to use.
 
-IIRC the v3 layout was also used by the SoC for which DP support was
-first implemented. Presumably, the separate USB and DP regions do exist
-and you should include them also for SM6350 even if you can't test it
-currently.
+I use dt-schema since it's the "official" name of the tool
+used to validate those.
 
-We'll convert the older platforms over to use the new binding scheme
-soon and then we'd need this anyway. And if it turns out later that this
-was all bogus, at least we only need to fix the driver (and not worry
-about dts backward compatibility as we had to with the old style
-bindings).
+> 
+> On Mon, Jan 09, 2023 at 01:53:34PM +0100, Neil Armstrong wrote:
+>> Convert the Amlogic Meson AXG DWC PCIE SoC controller bindings to
+>> dt-schema.
+> 
+> Some references here and below are "PCIE" (inherited from the
+> original) and others are "PCIe".  Could be made consistent here.
 
-Johan
+Ack
+
+> 
+>> Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+>> Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
+>> ---
+>>   .../devicetree/bindings/pci/amlogic,axg-pcie.yaml  | 134 +++++++++++++++++++++
+>>   .../devicetree/bindings/pci/amlogic,meson-pcie.txt |  70 -----------
+>>   2 files changed, 134 insertions(+), 70 deletions(-)
+>>
+>> diff --git a/Documentation/devicetree/bindings/pci/amlogic,axg-pcie.yaml b/Documentation/devicetree/bindings/pci/amlogic,axg-pcie.yaml
+>> new file mode 100644
+>> index 000000000000..a08f15fe9a9a
+>> --- /dev/null
+>> +++ b/Documentation/devicetree/bindings/pci/amlogic,axg-pcie.yaml
+>> @@ -0,0 +1,134 @@
+>> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+>> +%YAML 1.2
+>> +---
+>> +$id: http://devicetree.org/schemas/pci/amlogic,axg-pcie.yaml#
+>> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+>> +
+>> +title: Amlogic Meson AXG DWC PCIE SoC controller
+>> +
+>> +maintainers:
+>> +  - Neil Armstrong <neil.armstrong@linaro.org>
+>> +
+>> +description:
+>> +  Amlogic Meson PCIe host controller is based on the Synopsys DesignWare PCI core.
+>> ...
+
 
 -- 
 linux-phy mailing list
