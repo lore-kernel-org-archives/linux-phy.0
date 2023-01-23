@@ -4,75 +4,103 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 285A1C05027
-	for <linux-phy@archiver.kernel.org>; Mon, 23 Jan 2023 08:51:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 28F2AC25B50
+	for <linux-phy@archiver.kernel.org>; Mon, 23 Jan 2023 09:42:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rHZAfSX8h674WeEpp7hqHy7XkKE1MgLWB1KO+meqBNg=; b=cmMRvmtvm/CrNr
-	6jTEM/9P4J0mEQOFEu89im3M8GXU08NGy8buhlHVd/YZtV+miFSqBWA79Ntz8YOod65GlQq3STboe
-	2AE03r8l7NlEak6fmSubKiJUwWcSlEy94v4cUoYtDNh21WgDegvTmKAqGz5zCl8CByDYo0kFHxut1
-	JAmmJvbGQIPrATKYHhfbfwn3nsI0nTMjb2p0EAaOdZVBGe+OtaFfB1cJLGExPuleEA9VQdDMx57jx
-	2EwOccDrRUwjzgIF+ZaPEZ1ociSjgMbNN0+kTSBhJR1tD/ZsT+EUGm9q0LPsPVWPAiSdoNUuEF3Me
-	h72EIQyOyXMsHd0xnOVg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
+	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=mNSlqb3dC2ccNQRtzrjg4i7Gkeal8affP2bz3dO6e6w=; b=yuQYgzWQBuvAyYixMiK6gxq+TM
+	SD4SD+5WbJwDzlEqeTVMSfPpkQCpFETRNXBc1mFUulpJD55dFF8xpztl49cpQZc2pFosQmZvbFJim
+	gL8fKjC0cIsNnFRbP3642JMywHiLE2vfEz0ABirkFbIXsgPntvxyJJiFA/A1rWwSc5nC6/tHwbOss
+	dAwmCdrGhHHbQtOOzokTXC4fs3/MiSIveliKswzDg7kiwlP/obv7heLkrJ1wqFTy9OemhTNM98EhJ
+	L4WCbAa6GTUAQA30YooniPJ2K9pk4P6I0EBeYYwp6StoaDsf0+gQfR/ImvFIHQZSSwhUJU7SS76Wz
+	7p0dE6yA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pJsY6-00GPbs-H3; Mon, 23 Jan 2023 08:51:30 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1pJtLN-00GYUB-Gk; Mon, 23 Jan 2023 09:42:25 +0000
+Received: from mail-wm1-x32c.google.com ([2a00:1450:4864:20::32c])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pJsY1-00GPZu-3a
-	for linux-phy@lists.infradead.org; Mon, 23 Jan 2023 08:51:27 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 6760660DEA;
-	Mon, 23 Jan 2023 08:51:24 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 09460C4339B;
-	Mon, 23 Jan 2023 08:51:24 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1674463884;
-	bh=5R0r5RNGt2ey5hflF/jJTiQCb4o00CqqvdoXWE5GF6U=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=ifPKWQaCBY0RDEsj8Cf2hBAR/vYoIJIEwiVSsgv35TRYdmLEKiJIffr/TSrZyLv90
-	 a4DXPNCsPl+lXlMLm5tBWspXlD3YUlhrj/Gxj7OLLmA3xsIYm4bBq24dr+g9VSo1J8
-	 j3roIXvPBjrfcjY7clZWy6wnpLAzTqLpsHmRJrv1xiWcogs5UPwennVUomeLtl5OI0
-	 A/ri8H6S6QENz9vlYTFTYhfZpAFiWpoAcfFlt3TX7HXG9US+4uKqhXnl3k2PjNuoWT
-	 zgNT2zZPUjL6wNcTKRgo2a9oWDMbl7pA0sWmVXV3mHP9Wul1j8IroCfAK0slySZcFc
-	 ID1vsbPXMLHSQ==
-Received: from johan by xi.lan with local (Exim 4.94.2)
-	(envelope-from <johan@kernel.org>)
-	id 1pJsXw-00086s-5c; Mon, 23 Jan 2023 09:51:20 +0100
-Date: Mon, 23 Jan 2023 09:51:20 +0100
-From: Johan Hovold <johan@kernel.org>
-To: Abel Vesa <abel.vesa@linaro.org>
-Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
-	Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
-	Bjorn Helgaas <bhelgaas@google.com>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Lorenzo Pieralisi <lpieralisi@kernel.org>,
-	"vkoul@kernel.org" <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
-Subject: Re: [PATCH v4 11/12] arm64: dts: qcom: sm8550: Add PCIe PHYs and
- controllers nodes
-Message-ID: <Y85KiKD+iQamchB5@hovoldconsulting.com>
-References: <20230119140453.3942340-1-abel.vesa@linaro.org>
- <20230119140453.3942340-12-abel.vesa@linaro.org>
+	id 1pJtLK-00GYSq-RV
+	for linux-phy@lists.infradead.org; Mon, 23 Jan 2023 09:42:24 +0000
+Received: by mail-wm1-x32c.google.com with SMTP id l41-20020a05600c1d2900b003daf986faaeso8062554wms.3
+        for <linux-phy@lists.infradead.org>; Mon, 23 Jan 2023 01:42:22 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google;
+        h=content-transfer-encoding:in-reply-to:organization:references:cc:to
+         :content-language:subject:reply-to:from:user-agent:mime-version:date
+         :message-id:from:to:cc:subject:date:message-id:reply-to;
+        bh=bb3ehCbsmnDNOeIeuOp9X6FACVdZxwB9flFsEny7tkU=;
+        b=dV+vmkhPJupVDkDKPKw/2uJe9dhCfz2931ZZfmSlTiTucpZhV2Dz+B6f9Fv3oiI5Qg
+         xdALFShfLxjvVlVQ2K1bLQ5/4uPa6Q7gCQlFkO7bDQBoW/r8L1iBLX9dM/ZknvefkDGC
+         6iJRk6CRvJJo7qipP+9FC4RrGHDwX//qae/qj8wJurKg8c+1OHYsm56cHw4p7MWRyk1K
+         nfquz3KQcfaO9EzCTs/SUKrcWz3tEvEos7SFv6WhgRiugJpJ3DnoGoOyT8+BCgVZIzQS
+         gVFXE4RIK7gcAlT4NdXcPy1iZVBPSkMbc+B1+QYLkW51SQ6p0ODeYa+m2ek55Zj8+RQZ
+         DWEQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=content-transfer-encoding:in-reply-to:organization:references:cc:to
+         :content-language:subject:reply-to:from:user-agent:mime-version:date
+         :message-id:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=bb3ehCbsmnDNOeIeuOp9X6FACVdZxwB9flFsEny7tkU=;
+        b=LzlQUpTioKhDe9Qix3tepTMEc4MGybDcO7VADuXIUyEwej/Gv0pdo8bXW3zdaAmNoL
+         Ad4ojiqCcvRzkqPf76Dr5Wv19YyR7RcrB948p3ozCyQK1WsJZnFRszY+EYovBEum1huK
+         S0aRO6acWMLQ5E4ZMZqTfHzzuNye2hrhp24qSDpZALdMLpqvCBF7BtlsQCbRZUILUFrp
+         QWTC9OI15AvtPbxGKfV9x034CNStNhYDWTg/bhT7wORbSHLc2OMHbBe2TVgSeH0KGauc
+         /dOU8nKrsOHrCYvLaDPwkrZunoIrMgQocOH2/G1hrXa1jj7Dq1db2h/z+Nb3/9gFGuV/
+         Xr0w==
+X-Gm-Message-State: AFqh2kpuED+4dxnfyAYRhc5VCqs/LETCkXag+RyatEyPCRTjA9Y2HIro
+	CPRaLN9Ofs7NfGGMaFKlk5QeAw==
+X-Google-Smtp-Source: AMrXdXsm6TcBoxPPxS02VMNxznfImdfA7EnRpT/eJPmFB8AVCLXvlWQuATnvGBXA13pmaGAeWzaHKQ==
+X-Received: by 2002:a05:600c:1d12:b0:3db:53f:baea with SMTP id l18-20020a05600c1d1200b003db053fbaeamr23030706wms.6.1674466941329;
+        Mon, 23 Jan 2023 01:42:21 -0800 (PST)
+Received: from [192.168.7.111] (679773502.box.freepro.com. [212.114.21.58])
+        by smtp.gmail.com with ESMTPSA id t13-20020a1c770d000000b003db1ca20170sm9963482wmi.37.2023.01.23.01.42.19
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 23 Jan 2023 01:42:20 -0800 (PST)
+Message-ID: <d8f78a24-398c-8bb0-8964-778d8a0e8998@linaro.org>
+Date: Mon, 23 Jan 2023 10:42:19 +0100
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20230119140453.3942340-12-abel.vesa@linaro.org>
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.6.0
+From: Neil Armstrong <neil.armstrong@linaro.org>
+Subject: Re: [PATCH v2 04/11] dt-bindings: watchdog: convert meson-wdt.txt to
+ dt-schema
+Content-Language: en-US
+To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Cc: Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Kevin Hilman <khilman@baylibre.com>, Jerome Brunet <jbrunet@baylibre.com>,
+ Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
+ Wim Van Sebroeck <wim@linux-watchdog.org>, Guenter Roeck
+ <linux@roeck-us.net>, Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Alessandro Zummo <a.zummo@towertech.it>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Thomas Gleixner <tglx@linutronix.de>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ Ulf Hansson <ulf.hansson@linaro.org>, Bjorn Helgaas <bhelgaas@google.com>,
+ "David S. Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>,
+ Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
+ Andrew Lunn <andrew@lunn.ch>, Heiner Kallweit <hkallweit1@gmail.com>,
+ Russell King <linux@armlinux.org.uk>, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-watchdog@vger.kernel.org,
+ linux-media@vger.kernel.org, linux-rtc@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-mmc@vger.kernel.org,
+ linux-pci@vger.kernel.org, netdev@vger.kernel.org,
+ Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+References: <20221117-b4-amlogic-bindings-convert-v2-0-36ad050bb625@linaro.org>
+ <20221117-b4-amlogic-bindings-convert-v2-4-36ad050bb625@linaro.org>
+ <CAFBinCDd1MJEmSHR1XPsfBoRasBq+cV1F+66sCBXALtCCmoyUA@mail.gmail.com>
+Organization: Linaro Developer Services
+In-Reply-To: <CAFBinCDd1MJEmSHR1XPsfBoRasBq+cV1F+66sCBXALtCCmoyUA@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230123_005125_271099_A9842750 
-X-CRM114-Status: GOOD (  32.80  )
+X-CRM114-CacheID: sfid-20230123_014222_949889_521A0B0A 
+X-CRM114-Status: GOOD (  19.41  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,231 +112,47 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
+Reply-To: neil.armstrong@linaro.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Jan 19, 2023 at 04:04:52PM +0200, Abel Vesa wrote:
-> Add PCIe controllers and PHY nodes.
+On 10/01/2023 22:48, Martin Blumenstingl wrote:
+> Hi Neil,
 > 
-> Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
-> ---
+> On Mon, Jan 9, 2023 at 1:53 PM Neil Armstrong <neil.armstrong@linaro.org> wrote:
+> [...]
+>> +  compatible:
+>> +    oneOf:
+>> +      - enum:
+>> +          - amlogic,meson6-wdt
+>> +          - amlogic,meson8-wdt
+> Technically this is not an identical representation of what we had
+> before which was:
+> -       "amlogic,meson8-wdt" and "amlogic,meson6-wdt" on Meson8 SoCs
 > 
-> This patch does not have a v3, but since it is now part of the same
-> patchset with the controller and the phy drivers patches, I had to
-> bump the version to 4.
+> We're not using the "amlogic,meson8-wdt" compatible anywhere at the moment.
+> In the meson_wdt driver it's defined with the same per-SoC data as
+> "amlogic,meson6-wdt".
 > 
-> Latest version was here (v2):
-> https://lore.kernel.org/all/20230118230526.1499328-2-abel.vesa@linaro.org/
-> 
-> Changes since latest version (v2):
->  * renamed the pcie_1_link_down_reset to simply link_down
->  * dropped the pipe from clock-names
->  * renamed aggre clock-names to noc_aggr_4
->  * dropped the _pcie infix from cnoc_pcie_sf_axi
->  * dropped the aux_phy clock from the pcie1
-> 
-> Changes since v1:
->  * ordered pcie related nodes alphabetically in MTP dts
->  * dropped the pipe_mux, phy_pipe and ref clocks from the pcie nodes
->  * dropped the child node from the phy nodes, like Johan suggested,
->    and updated to use the sc8280xp binding scheme
->  * changed "pcie_1_nocsr_com_phy_reset" 2nd reset name of pcie1_phy
->    to "nocsr"
->  * reordered all pcie nodes properties to look similar to the ones
->    from sc8280xp
+> Long story short: In my opinion there's no need to change what you
+> have right now.
+> If you have to re-spin this then maybe you can add a note to the patch
+> description.
+> Please add my:
+> Reviewed-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+
+Sorry I was distracted, I'll add a node on the commit message.
+
+Thanks,
+Neil
+
 > 
 > 
->  arch/arm64/boot/dts/qcom/sm8550.dtsi | 207 ++++++++++++++++++++++++++-
->  1 file changed, 204 insertions(+), 3 deletions(-)
-> 
-> diff --git a/arch/arm64/boot/dts/qcom/sm8550.dtsi b/arch/arm64/boot/dts/qcom/sm8550.dtsi
-> index 3d47281a276b..8df226530d76 100644
-> --- a/arch/arm64/boot/dts/qcom/sm8550.dtsi
-> +++ b/arch/arm64/boot/dts/qcom/sm8550.dtsi
-> @@ -646,9 +646,9 @@ gcc: clock-controller@100000 {
->  			#reset-cells = <1>;
->  			#power-domain-cells = <1>;
->  			clocks = <&bi_tcxo_div2>, <&sleep_clk>,
-> -				 <0>,
-> -				 <0>,
-> -				 <0>,
-> +				 <&pcie0_phy>,
-> +				 <&pcie1_phy>,
-> +				 <&pcie_1_phy_aux_clk>,
->  				 <&ufs_mem_phy 0>,
->  				 <&ufs_mem_phy 1>,
->  				 <&ufs_mem_phy 2>,
-> @@ -1547,6 +1547,207 @@ mmss_noc: interconnect@1780000 {
->  			qcom,bcm-voters = <&apps_bcm_voter>;
->  		};
->  
-> +		pcie0: pci@1c00000 {
-> +			device_type = "pci";
-> +			compatible = "qcom,pcie-sm8550";
-> +			reg = <0 0x01c00000 0 0x3000>,
-> +			      <0 0x60000000 0 0xf1d>,
-> +			      <0 0x60000f20 0 0xa8>,
-> +			      <0 0x60001000 0 0x1000>,
-> +			      <0 0x60100000 0 0x100000>;
-> +			reg-names = "parf", "dbi", "elbi", "atu", "config";
-> +			#address-cells = <3>;
-> +			#size-cells = <2>;
-> +			ranges = <0x01000000 0x0 0x60200000 0 0x60200000 0x0 0x100000>,
-> +				 <0x02000000 0x0 0x60300000 0 0x60300000 0x0 0x3d00000>;
-> +			bus-range = <0x00 0xff>;
-> +
-> +			dma-coherent;
-> +
-> +			linux,pci-domain = <0>;
-> +			num-lanes = <2>;
-> +
-> +			interrupts = <GIC_SPI 141 IRQ_TYPE_LEVEL_HIGH>;
-> +			interrupt-names = "msi";
-> +
-> +			#interrupt-cells = <1>;
-> +			interrupt-map-mask = <0 0 0 0x7>;
-> +			interrupt-map = <0 0 0 1 &intc 0 0 0 149 IRQ_TYPE_LEVEL_HIGH>, /* int_a */
-> +					<0 0 0 2 &intc 0 0 0 150 IRQ_TYPE_LEVEL_HIGH>, /* int_b */
-> +					<0 0 0 3 &intc 0 0 0 151 IRQ_TYPE_LEVEL_HIGH>, /* int_c */
-> +					<0 0 0 4 &intc 0 0 0 152 IRQ_TYPE_LEVEL_HIGH>; /* int_d */
-> +
-> +			clocks = <&gcc GCC_PCIE_0_AUX_CLK>,
-> +				 <&gcc GCC_PCIE_0_CFG_AHB_CLK>,
-> +				 <&gcc GCC_PCIE_0_MSTR_AXI_CLK>,
-> +				 <&gcc GCC_PCIE_0_SLV_AXI_CLK>,
-> +				 <&gcc GCC_PCIE_0_SLV_Q2A_AXI_CLK>,
-> +				 <&gcc GCC_DDRSS_PCIE_SF_QTB_CLK>,
-> +				 <&gcc GCC_AGGRE_NOC_PCIE_AXI_CLK>;
-> +			clock-names = "aux",
-> +				      "cfg",
-> +				      "bus_master",
-> +				      "bus_slave",
-> +				      "slave_q2a",
-> +				      "ddrss_sf_tbu",
+> Best regards,
+> Martin
 
-You're reusing a clock name which doesn't seem to match this SoC. I
-don't know what "QTB" refers to here and if it's just some Qualcomm
-alternate name for "TBU" which could make this ok.
-
-> +				      "noc_aggr_4";
-
-The 4 here comes from the fact that the clock was named this way on
-sc8280xp. Perhaps 'noc_aggr' would have been a better generic name for
-the interconnect clock.
-
-> +
-> +			interconnects = <&pcie_noc MASTER_PCIE_0 0 &mc_virt SLAVE_EBI1 0>;
-> +			interconnect-names = "pcie-mem";
-> +
-> +			iommus = <&apps_smmu 0x1400 0x7f>;
-> +			iommu-map = <0x0   &apps_smmu 0x1400 0x1>,
-> +				    <0x100 &apps_smmu 0x1401 0x1>;
-> +
-> +			resets = <&gcc GCC_PCIE_0_BCR>;
-> +			reset-names = "pci";
-> +
-> +			power-domains = <&gcc PCIE_0_GDSC>;
-> +
-> +			phys = <&pcie0_phy>;
-> +			phy-names = "pciephy";
-> +
-> +			perst-gpios = <&tlmm 94 GPIO_ACTIVE_LOW>;
-> +			wake-gpios = <&tlmm 96 GPIO_ACTIVE_HIGH>;
-> +
-> +			pinctrl-names = "default";
-> +			pinctrl-0 = <&pcie0_default_state>;
-
-For sc8280xp we decided to keep all pin configuration (and the gpios
-properties above) in the dts file. I believe this should be done also
-for any new SoCs.
-
-Either way, the pin nodes should be added along with the consumer.
-
-> +
-> +			status = "disabled";
-> +		};
-> +
-> +		pcie0_phy: phy@1c06000 {
-> +			compatible = "qcom,sm8550-qmp-gen3x2-pcie-phy";
-> +			reg = <0 0x01c06000 0 0x2000>;
-> +
-> +			clocks = <&gcc GCC_PCIE_0_AUX_CLK>,
-> +				 <&gcc GCC_PCIE_0_CFG_AHB_CLK>,
-> +				 <&tcsr TCSR_PCIE_0_CLKREF_EN>,
-> +				 <&gcc GCC_PCIE_0_PHY_RCHNG_CLK>,
-> +				 <&gcc GCC_PCIE_0_PIPE_CLK>;
-> +			clock-names = "aux", "cfg_ahb", "ref", "rchng",
-> +				      "pipe";
-> +
-> +			resets = <&gcc GCC_PCIE_0_PHY_BCR>;
-> +			reset-names = "phy";
-> +
-> +			assigned-clocks = <&gcc GCC_PCIE_0_PHY_RCHNG_CLK>;
-> +			assigned-clock-rates = <100000000>;
-> +
-> +			power-domains = <&gcc PCIE_0_PHY_GDSC>;
-> +
-> +			#clock-cells = <0>;
-> +			clock-output-names = "pcie0_pipe_clk";
-> +
-> +			#phy-cells = <0>;
-> +
-> +			status = "disabled";
-> +		};
-
-> +		pcie1_phy: phy@1c0e000 {
-> +			compatible = "qcom,sm8550-qmp-gen4x2-pcie-phy";
-> +			reg = <0x0 0x01c0e000 0x0 0x2000>;
-> +
-> +			clocks = <&gcc GCC_PCIE_1_PHY_AUX_CLK>,
-> +				 <&gcc GCC_PCIE_1_CFG_AHB_CLK>,
-> +				 <&tcsr TCSR_PCIE_1_CLKREF_EN>,
-> +				 <&gcc GCC_PCIE_1_PHY_RCHNG_CLK>,
-> +				 <&gcc GCC_PCIE_1_PIPE_CLK>;
-> +			clock-names = "aux", "cfg_ahb", "ref", "rchng",
-> +				      "pipe";
-> +
-> +			resets = <&gcc GCC_PCIE_1_PHY_BCR>,
-> +				 <&gcc GCC_PCIE_1_NOCSR_COM_PHY_BCR>;
-> +			reset-names = "phy", "nocsr";
-
-Do you know why only the second PHY uses two resets here? Did you intend
-to add it also for the first PHY?
-
-Both of these resets exists also on sc8280xp, and I believe downstream
-used the NOCSR_COM variant, which does not reset all registers in the
-PHY so you could unknowingly be relying on firmware to setup things up
-for you.
-
-I did a fair bit of reverse engineering to determine the init sequences
-and opted to use the full reset for the PHYs here in the end.
-
-I don't think you should be using both, but someone with access to
-documentation may provide more insight.
-
-Have you tested both pci0 and 1 by the way?
-
-> +
-> +			assigned-clocks = <&gcc GCC_PCIE_1_PHY_RCHNG_CLK>;
-> +			assigned-clock-rates = <100000000>;
-> +
-> +			power-domains = <&gcc PCIE_1_PHY_GDSC>;
-> +
-> +			#clock-cells = <0>;
-> +			clock-output-names = "pcie1_pipe_clk";
-> +
-> +			#phy-cells = <0>;
-> +
-> +			status = "disabled";
-> +		};
-> +
->  		cryptobam: dma-controller@1dc4000 {
->  			compatible = "qcom,bam-v1.7.0";
->  			reg = <0x0 0x01dc4000 0x0 0x28000>;
-
-Johan
 
 -- 
 linux-phy mailing list
