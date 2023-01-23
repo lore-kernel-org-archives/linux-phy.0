@@ -4,76 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BCB8BC05027
-	for <linux-phy@archiver.kernel.org>; Mon, 23 Jan 2023 12:06:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 590C0C05027
+	for <linux-phy@archiver.kernel.org>; Mon, 23 Jan 2023 12:08:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oGkiwZ8EWFg0c/4wfZj+B75zo3GmT7rY0/tj/VltqGc=; b=5A1FUT1gKaSbdm
-	ajLTJdwWYBi/Pc68wmFfnP/19EJqWitCqXyihGUSLFDz1LWLsWSnTORT61l058u3YltNptloCxk62
-	xf1jPs97IlVjQgcLYpv/r8EXgY33M3yZ3uXray9bLL/sWYrVt7wphCqty6UxeOZmkfS9P57ilGQRC
-	Pin8sYQcOdNQE5aM1zW44Gv2qlTZRGS45dQcD2wOmLqwcfHI6IFl0dtIbYtocIHA88gnESizMPB1Z
-	aEGi2yN0V9JWC0lJKp1mPJj3eIHPmP9MuxDN1tQtTL+QLePB3U7KKWqVIR7Y2NZOrU2ISb95eDiCf
-	gpn+jkZYREGQLjSq01Yw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=bhacAQ6liS7vuhso0I9o/3jeMhwigMjnnMyECp9tRu8=; b=ssp9LC1LbKV5qh
+	D/XTifEa33BSVsS4I93kV1pkpriKQ+bld5KwZhv7E5lTDvGe+Qo0Rmd0/IqrUlDD0QFBOmWQYC0F0
+	WvK8T6gl8oiIYrIFtkIlXDTBew6P0LEAzcBAgM5U2074tp8AFFtJbOeENKB/S7GXWj/jbJm81FTS+
+	4aLB+Ke8Wr18X2A1W6MgAnjPtNcwcF+77l7Bdn5zn8VWRYiEbL7s0TUVyvYaeNbb+TXxq1XbTUf1V
+	JW20Ov/DgzwQp5Zv1TYfD/cS9TwnRD7zqIHuex6b8eNWr3Q69XX0MIGc5gq7CO8ACFeeLIlx+RGi3
+	zo7hqIOS2AXerIAifvXA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pJvaP-00H1z9-5D; Mon, 23 Jan 2023 12:06:05 +0000
-Received: from ams.source.kernel.org ([145.40.68.75])
+	id 1pJvcV-00H2Et-OG; Mon, 23 Jan 2023 12:08:15 +0000
+Received: from mail-lf1-x136.google.com ([2a00:1450:4864:20::136])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pJvaM-00H1xh-OL
-	for linux-phy@lists.infradead.org; Mon, 23 Jan 2023 12:06:04 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id E9E09B80D5C;
-	Mon, 23 Jan 2023 12:05:58 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8900BC433D2;
-	Mon, 23 Jan 2023 12:05:57 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1674475557;
-	bh=xomCv4fVScuMgRQPunTMEDlZt86y3oPZFGZ9j/BTOXE=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=USEasJXMz7HT7THL5/juE79zj86m04PeEMqm6Cf5U3n47ahStCAEKgrrzGxptY/gK
-	 VPqDP+QaoSIt8m9HlZaiqvdjh73XDYAK2w0Oc5vE86Y8VYf0c4cTggAEsv4OrBq3hG
-	 boCmwC3mBd7bdpOH+KBUsOCvuDKTW1m9q41N3PvEWnVKsr+n2sKqO0E5bGUBEGHIbQ
-	 vBC+W1wHK98FZMZM+0bXxTC+WzrWlx9Mrk0EbUQEaAz8Azi/ELsN1w8gRgv4iXINA8
-	 ZCqUzpStGzI7EIFPLtvQSLVk71io/fHAFoRx3O7WOKkWyPwt4tGSIBU8kqPB3ritj1
-	 Pt7gKgm9eeWDw==
-Received: from johan by xi.lan with local (Exim 4.94.2)
-	(envelope-from <johan@kernel.org>)
-	id 1pJvaF-000225-2P; Mon, 23 Jan 2023 13:05:55 +0100
-Date: Mon, 23 Jan 2023 13:05:55 +0100
-From: Johan Hovold <johan@kernel.org>
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Cc: Luca Weiss <luca.weiss@fairphone.com>, Vinod Koul <vkoul@kernel.org>,
-	linux-arm-msm@vger.kernel.org,
-	~postmarketos/upstreaming@lists.sr.ht, phone-devel@vger.kernel.org,
-	Andy Gross <agross@kernel.org>,
+	id 1pJvcS-00H2EG-K7
+	for linux-phy@lists.infradead.org; Mon, 23 Jan 2023 12:08:14 +0000
+Received: by mail-lf1-x136.google.com with SMTP id x40so17800276lfu.12
+        for <linux-phy@lists.infradead.org>; Mon, 23 Jan 2023 04:08:10 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=5r1RWWmyZelW8ciLojcTUHVYQJpMERt0jy6Bio8UjhY=;
+        b=lNjbFbUv7QFGjGr9tLAAkDAiVMiRIpalBuHXHX9HKKj4Gi+xLKd1FGb/GoaegoVisL
+         VQWqq9Z2E1Nu5rTlAOFqcdOSe8gQ6k8Slzl838to6aIUxB4S4iDpS75NA641J1lU0C5P
+         +htBqdP2g/1Sc0DAIKz5YK8IX/wmxi6kLvXp7iwIPWc324BDs34+Z9lbRsWPR2/q5ztS
+         es2BU7lk1kiuqSHZE+65ORiYd8X1PX/p7aFgpbHfR0KDnLbO/8P/17YqTHbZMlv9n2jl
+         6kEioLaauD3f3i303y4+Q6jxn7hZUg00Qlgobpu4yuRnJyS11tTHZwG7NHi5FkWkwNw3
+         z5mg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=5r1RWWmyZelW8ciLojcTUHVYQJpMERt0jy6Bio8UjhY=;
+        b=YwB/WdmdAuB0+EurrEVulFhzbahO7IvOPCCuG44Mh3DvnT9wdCIN3LfeW+H9tESFeP
+         rfRdUUGC+MGAJ6e/q9tW/ADuLEFiUi+IpqK3pIcXT8tc9dXMu82sPUSfluB8nuP30jat
+         /w2fcfBP2zdnnwjktMDXdBtmeMav8aaoWIBdFEng03QtY3ipeu47hD+zXscC76chRyOD
+         7lHoo9rR9Es/LwmgkeL5Pbi4a/bn58z2DlghzKMMYKZQvbr7fq361a4yb2oOismRpFIQ
+         Y08se8hxRYiLKOLzPN5OdI0XsZelzBAihuDpjrKwGUtyNAM4UKzCl5E/MdNyGAT6NZC+
+         YWMQ==
+X-Gm-Message-State: AFqh2krtziwVgOwVnuVxa0D6o/4R4qb1EUbHF/6Q89wtAwhWrxFsqY6p
+	7EWQ1etazvtn4L09iXGV4GMNOQi66YAfTl++
+X-Google-Smtp-Source: AMrXdXtpQST401RG/1EsTOF0LomgSYPyj18Cx1+eQ2yHiNLFVYKo4k1GY1MmR9WgjVB6CG8rnZ9DzA==
+X-Received: by 2002:a05:6512:3988:b0:4ca:fac4:5a34 with SMTP id j8-20020a056512398800b004cafac45a34mr6816378lfu.61.1674475688850;
+        Mon, 23 Jan 2023 04:08:08 -0800 (PST)
+Received: from eriador.lan ([37.153.55.125])
+        by smtp.gmail.com with ESMTPSA id t24-20020ac25498000000b004d39af98b04sm2588486lfk.19.2023.01.23.04.08.08
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 23 Jan 2023 04:08:08 -0800 (PST)
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+To: Andy Gross <agross@kernel.org>,
 	Bjorn Andersson <andersson@kernel.org>,
 	Konrad Dybcio <konrad.dybcio@linaro.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v3 2/3] phy: qcom-qmp-combo: Add config for SM6350
-Message-ID: <Y854Iz7gG6/APILo@hovoldconsulting.com>
-References: <20221130081430.67831-1-luca.weiss@fairphone.com>
- <20221130081430.67831-2-luca.weiss@fairphone.com>
- <Y6xP4YRAp68TfxFi@hovoldconsulting.com>
- <Y8BIX+js1ircJyb9@matsya>
- <cf968a25-02f7-d402-530b-eb379b707e54@linaro.org>
- <CPR2LS3SJQ3I.Z7UY505COG3@otso>
- <CAA8EJpoOMMALHz7ysft6KvQaYhGWPD+xZiUjOTrC8CA_y81n-w@mail.gmail.com>
- <CPX2VVT5EUDV.2LH6VI2586F02@otso>
- <Y85WqDrGXAXp7gS/@hovoldconsulting.com>
- <a18359f8-6495-dbea-2323-8ab73bbfc472@linaro.org>
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>
+Cc: Philipp Zabel <p.zabel@pengutronix.de>,
+	linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	Johan Hovold <johan+linaro@kernel.org>
+Subject: [PATCH] phy: qcom-qmp-combo: correct DP register offsets
+Date: Mon, 23 Jan 2023 14:08:07 +0200
+Message-Id: <20230123120807.3101313-1-dmitry.baryshkov@linaro.org>
+X-Mailer: git-send-email 2.39.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <a18359f8-6495-dbea-2323-8ab73bbfc472@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230123_040602_971644_5DD53A45 
-X-CRM114-Status: GOOD (  15.64  )
+X-CRM114-CacheID: sfid-20230123_040812_769782_818DF57D 
+X-CRM114-Status: GOOD (  10.37  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,23 +93,56 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Jan 23, 2023 at 01:15:52PM +0200, Dmitry Baryshkov wrote:
-> On 23/01/2023 11:43, Johan Hovold wrote:
+Correct DP register offsets used with new DT bindings scheme. First, DP
+TX registers reside in separate regions, not in the same regions as USB
+TX registers do. Second, correct DP_PHY region offset to follow the
+offset used for earlier generations/bindings.
 
-> > We'll convert the older platforms over to use the new binding scheme
-> > soon and then we'd need this anyway. And if it turns out later that this
-> > was all bogus, at least we only need to fix the driver (and not worry
-> > about dts backward compatibility as we had to with the old style
-> > bindings).
-> 
-> As you mentioned this. Do you have plans to work on this conversion? If 
-> not, I'll probably take a look during next development window.
+Cc: Johan Hovold <johan+linaro@kernel.org>
+Fixes: 83a0bbe39b17 ("phy: qcom-qmp-combo: add support for updated sc8280xp binding")
+Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+---
+ drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 10 +++++++---
+ 1 file changed, 7 insertions(+), 3 deletions(-)
 
-Yes, I was planning on looking at this after Luca's series is merged. I
-have some higher prio stuff to get out the door these next couple of
-weeks first, though.
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+index 1f022e580407..c6634f92de19 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+@@ -807,6 +807,8 @@ struct qmp_combo_offsets {
+ 	u16 usb3_pcs;
+ 	u16 usb3_pcs_usb;
+ 	u16 dp_serdes;
++	u16 dp_txa;
++	u16 dp_txb;
+ 	u16 dp_dp_phy;
+ };
+ 
+@@ -984,7 +986,9 @@ static const struct qmp_combo_offsets qmp_combo_offsets_v5 = {
+ 	.usb3_pcs	= 0x1400,
+ 	.usb3_pcs_usb	= 0x1700,
+ 	.dp_serdes	= 0x2000,
+-	.dp_dp_phy	= 0x2200,
++	.dp_txa		= 0x2200,
++	.dp_txa		= 0x2600,
++	.dp_dp_phy	= 0x2a00,
+ };
+ 
+ static const struct qmp_phy_cfg sc7180_usb3dpphy_cfg = {
+@@ -2639,8 +2643,8 @@ static int qmp_combo_parse_dt(struct qmp_combo *qmp)
+ 	qmp->pcs_usb = base + offs->usb3_pcs_usb;
+ 
+ 	qmp->dp_serdes = base + offs->dp_serdes;
+-	qmp->dp_tx = base + offs->txa;
+-	qmp->dp_tx2 = base + offs->txb;
++	qmp->dp_tx = base + offs->dp_txa;
++	qmp->dp_tx2 = base + offs->dp_txb;
+ 	qmp->dp_dp_phy = base + offs->dp_dp_phy;
+ 
+ 	qmp->pipe_clk = devm_clk_get(dev, "usb3_pipe");
+-- 
+2.39.0
 
-Johan
 
 -- 
 linux-phy mailing list
