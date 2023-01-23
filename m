@@ -4,102 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E0740C38142
-	for <linux-phy@archiver.kernel.org>; Mon, 23 Jan 2023 09:46:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 263BEC54EB4
+	for <linux-phy@archiver.kernel.org>; Mon, 23 Jan 2023 09:48:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
-	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=9v3jLe+A5cYPrTWus9JzVBk8BtoMw+p59hxNlvY3uYY=; b=xYvaHD59sXkPV61T2MIAZDaUh3
-	Um450wo5/3F7whSvUkE50oKuvbDaU1iCDrPdIBw7Uz9nsWOyagjqRBp0kZfsmkliBekAqYTvOg5t4
-	rJ4J/S0lUFXonaEPXuoms4kATe8nxV4EIyaDRtga9ZEXoCGEhcHIYRplXW7GA+5Eynfeq4IgY/OWF
-	GJywyG7gc6LbA8EK7f5OloPBuuYIqNp/xr8hMilYjnG2YOKMQVjMhVnJaqFQTycKbdwonDwZ0V5KA
-	ukyUE+9dyNtCRzkaPVolUfxI/KklPDR+NeQiSy9MHiM5K8PZ+RCLmlIj6mhctlQMlNTXCoe9HzY0e
-	SLhSD6pg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=oOoZrXeQ1uE2aYX6dyXyyMx87h+qv/1EuMMC8s8jJZU=; b=kByD3raYRiBRg6
+	O9rMgaojnQ3zRbGjtvlGS9BlFw6B1IK+1V+s7W1dYRTW1FupGqmoSFi/79KNMld3C4geAYe+pug8G
+	+bFXKqLTa1dJkBGcHmda9Ji6ByRB8FxbOtgq5Km6vTh3sQfu2VZbEU8693YzCVlhSwetH9FADIKSR
+	GiFhmwXeVOLcmx/ky38YJ6l2EAQXBfFTgvJD9u94wcAFvrvh/wEwo4MMT1Vd8k+cWDtRCUZs4oceA
+	cW8vdLGXKQAlEXXkMZOPg/9V7ySlmI7cI1iw28qV3RG4tV9rvW+FRSGp2AOIiYivmd7p0nh3aWvHf
+	NdhYw/809yKqF0TsQrJA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pJtPB-00GZQ1-AN; Mon, 23 Jan 2023 09:46:21 +0000
-Received: from mail-wr1-x42d.google.com ([2a00:1450:4864:20::42d])
+	id 1pJtR8-00GZxM-K3; Mon, 23 Jan 2023 09:48:22 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pJtP8-00GZOb-QA
-	for linux-phy@lists.infradead.org; Mon, 23 Jan 2023 09:46:20 +0000
-Received: by mail-wr1-x42d.google.com with SMTP id r9so10195018wrw.4
-        for <linux-phy@lists.infradead.org>; Mon, 23 Jan 2023 01:46:18 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=content-transfer-encoding:in-reply-to:organization:references:cc:to
-         :content-language:subject:reply-to:from:user-agent:mime-version:date
-         :message-id:from:to:cc:subject:date:message-id:reply-to;
-        bh=60INGmxwRr+8yD/I9JtxQHZJy+MthHAPjebxgVXSq4A=;
-        b=F1RmlI6Jr+ymKyy8lqwEzZBkmqqB13nNXYBYvHtOeWRGeqsuz7xzXBmaWhSw3I8Ebm
-         TcBhF+tktlNXSXYa7GGd+4cSp7Mx1MA292zlI/YBhsesf8m2OPtOBU4CzkRYYDY+VJKD
-         rZKktCGYO6MieFBnhFrnXP96yNjjCazN4NtubEGY3US83//z/ammPRj/L4Pxrc2Z6tmr
-         QKPZ+KdqFIhF4uxc434VoygrrqrdBU0wTWSgMlQyI+fyCqgR08BCpwX5nBT4NXsRkGFu
-         8nu27yExklJVwN9h22VU1oVuSZqcQ+pTlG/IoT6VZa6i92mv0KfUGLb3dqJ4/aHoExHh
-         cArg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=content-transfer-encoding:in-reply-to:organization:references:cc:to
-         :content-language:subject:reply-to:from:user-agent:mime-version:date
-         :message-id:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=60INGmxwRr+8yD/I9JtxQHZJy+MthHAPjebxgVXSq4A=;
-        b=FMb0NhGMQpnliGo62lrbweB+P4IzHQUBe5En+fBKyekrieR86UywZM/YplvUxlDS58
-         +a2vCWcxMqdk2QAYhnObk/uZ9e94Sr7pLGAIVRSnwLkjgvTc7dA7ygNW6Z4tUhajaLOP
-         yfkZ569S4IXZn03c+FshFGUVpd2Vu0bIsQeBkhPhJuiVst8U0Vt+u+BdBuXCxF/WVQC/
-         uxq6TXriotxvZ3DvJezP6VsZ9leX2yzc4YLUc6FWNG6v6J5G8IFeCGgI8oQJg//1czgH
-         YWpcTY2URXCuPC7vtXTXPyXdv28I6bS+Atc60dPW/2bkT34AW6535RxJ0yCclLQEJVVE
-         q9eA==
-X-Gm-Message-State: AFqh2krsT7mckzkiXyjMz+A3agOy4k3OeoJuXjrhgiJwuDlOoozQln47
-	GbUP5Fk6mLuIDS+gh2VuWEUgCg==
-X-Google-Smtp-Source: AMrXdXuHEVHo54bmjGJT3gC7SenPuHW6sVZSyn52AJ8UqKixwTSKOJoGk+qB0zPe/lhc1Ohi58pW5Q==
-X-Received: by 2002:a05:6000:98d:b0:2bd:c6ce:7bfb with SMTP id by13-20020a056000098d00b002bdc6ce7bfbmr23917833wrb.28.1674467177213;
-        Mon, 23 Jan 2023 01:46:17 -0800 (PST)
-Received: from [192.168.7.111] (679773502.box.freepro.com. [212.114.21.58])
-        by smtp.gmail.com with ESMTPSA id q12-20020adff50c000000b002bc83b85180sm7139415wro.114.2023.01.23.01.46.15
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 23 Jan 2023 01:46:16 -0800 (PST)
-Message-ID: <c590a842-0074-8f19-6bc7-5de101a88661@linaro.org>
-Date: Mon, 23 Jan 2023 10:46:15 +0100
+	id 1pJtR5-00GZw9-Do
+	for linux-phy@lists.infradead.org; Mon, 23 Jan 2023 09:48:20 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id F33E160DFD;
+	Mon, 23 Jan 2023 09:48:18 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5D95AC433D2;
+	Mon, 23 Jan 2023 09:48:18 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1674467298;
+	bh=Gtrawd7V+PvigCRX4HDB9clZlq6pOWl9bC5qYU/+HLo=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=PfWR0NTjvuDZ6i0n+Rb8fjNYeA0IjRNI9+763/zPi9X0gJTlndXoEa3kU7DzZz4wf
+	 zBT6ZZ7Pyy/nXgf71EEV88AoI6MBbMn+Bx+M+BBzWozs6Fqb+5lXyHtjsc7TJjMVnq
+	 IvJ7B9x3wa5j0tFuiULBreBkzHTvO18Fc2VsKi8yYffzmrvYciBhn84fwn23YFVw3i
+	 v882rT+ctchnhWcL4gXiI+kDqb+24tahQXhnfNve7dSw3x3U4eLVQWTmii+s+m6mWZ
+	 01e3Hw/qKpdy8v15QQ781QJsEQF/9CaPLYmqM6PudqdEf7VhJsMZtR8wOKTuoc4lmZ
+	 YjWJBwpxMkTjw==
+Received: from johan by xi.lan with local (Exim 4.94.2)
+	(envelope-from <johan@kernel.org>)
+	id 1pJtR1-0000JK-I7; Mon, 23 Jan 2023 10:48:15 +0100
+Date: Mon, 23 Jan 2023 10:48:15 +0100
+From: Johan Hovold <johan@kernel.org>
+To: Abel Vesa <abel.vesa@linaro.org>
+Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	"vkoul@kernel.org" <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Subject: Re: [PATCH v4 1/6] dt-bindings: phy: Add QMP UFS PHY comptible for
+ SM8550
+Message-ID: <Y85X3whxGRhFZjtP@hovoldconsulting.com>
+References: <20230117142015.509675-1-abel.vesa@linaro.org>
+ <20230117142015.509675-2-abel.vesa@linaro.org>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.6.0
-From: Neil Armstrong <neil.armstrong@linaro.org>
-Subject: Re: [PATCH v2 10/11] dt-bindings: PCI: convert amlogic,meson-pcie.txt
- to dt-schema
-Content-Language: en-US
-To: Bjorn Helgaas <helgaas@kernel.org>
-Cc: Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Kevin Hilman <khilman@baylibre.com>, Jerome Brunet <jbrunet@baylibre.com>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
- Wim Van Sebroeck <wim@linux-watchdog.org>, Guenter Roeck
- <linux@roeck-us.net>, Mauro Carvalho Chehab <mchehab@kernel.org>,
- Alessandro Zummo <a.zummo@towertech.it>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- Thomas Gleixner <tglx@linutronix.de>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>,
- Ulf Hansson <ulf.hansson@linaro.org>, Bjorn Helgaas <bhelgaas@google.com>,
- "David S. Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>,
- Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
- Andrew Lunn <andrew@lunn.ch>, Heiner Kallweit <hkallweit1@gmail.com>,
- Russell King <linux@armlinux.org.uk>, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-watchdog@vger.kernel.org,
- linux-media@vger.kernel.org, linux-rtc@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-mmc@vger.kernel.org,
- linux-pci@vger.kernel.org, netdev@vger.kernel.org,
- Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-References: <20230110150328.GA1502381@bhelgaas>
-Organization: Linaro Developer Services
-In-Reply-To: <20230110150328.GA1502381@bhelgaas>
+Content-Disposition: inline
+In-Reply-To: <20230117142015.509675-2-abel.vesa@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230123_014618_899173_88C9DC41 
-X-CRM114-Status: GOOD (  17.65  )
+X-CRM114-CacheID: sfid-20230123_014819_558457_D707888B 
+X-CRM114-Status: GOOD (  14.77  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -111,66 +80,34 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: neil.armstrong@linaro.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 10/01/2023 16:03, Bjorn Helgaas wrote:
-> Is this the same sort of conversion done by one of these?
+On Tue, Jan 17, 2023 at 04:20:10PM +0200, Abel Vesa wrote:
+> Document the QMP UFS PHY compatible for SM8550.
 > 
->    e4dffb674cfd ("dt-bindings: PCI: tegra194: Convert to json-schema")
->    075a9d55932e ("dt-bindings: PCI: qcom: Convert to YAML")
+> Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
+> Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+> ---
+>  .../devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml       | 1 +
+>  1 file changed, 1 insertion(+)
 > 
-> It's helpful to non-experts like me if the subject lines use similar
-> style (capitalized) and similar terminology ("dt-schema" vs
-> "json-schema" vs "YAML").
+> diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
+> index 760791de0869..64ed331880f6 100644
+> --- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
+> @@ -18,6 +18,7 @@ properties:
+>      enum:
+>        - qcom,sc8280xp-qmp-ufs-phy
+>        - qcom,sm6125-qmp-ufs-phy
+> +      - qcom,sm8550-qmp-ufs-phy
+>  
+>    reg:
+>      maxItems: 1
 
-Yes and honestly, I don't know what's the right name to use.
-
-I use dt-schema since it's the "official" name of the tool
-used to validate those.
-
-> 
-> On Mon, Jan 09, 2023 at 01:53:34PM +0100, Neil Armstrong wrote:
->> Convert the Amlogic Meson AXG DWC PCIE SoC controller bindings to
->> dt-schema.
-> 
-> Some references here and below are "PCIE" (inherited from the
-> original) and others are "PCIe".  Could be made consistent here.
-
-Ack
-
-> 
->> Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
->> Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
->> ---
->>   .../devicetree/bindings/pci/amlogic,axg-pcie.yaml  | 134 +++++++++++++++++++++
->>   .../devicetree/bindings/pci/amlogic,meson-pcie.txt |  70 -----------
->>   2 files changed, 134 insertions(+), 70 deletions(-)
->>
->> diff --git a/Documentation/devicetree/bindings/pci/amlogic,axg-pcie.yaml b/Documentation/devicetree/bindings/pci/amlogic,axg-pcie.yaml
->> new file mode 100644
->> index 000000000000..a08f15fe9a9a
->> --- /dev/null
->> +++ b/Documentation/devicetree/bindings/pci/amlogic,axg-pcie.yaml
->> @@ -0,0 +1,134 @@
->> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
->> +%YAML 1.2
->> +---
->> +$id: http://devicetree.org/schemas/pci/amlogic,axg-pcie.yaml#
->> +$schema: http://devicetree.org/meta-schemas/core.yaml#
->> +
->> +title: Amlogic Meson AXG DWC PCIE SoC controller
->> +
->> +maintainers:
->> +  - Neil Armstrong <neil.armstrong@linaro.org>
->> +
->> +description:
->> +  Amlogic Meson PCIe host controller is based on the Synopsys DesignWare PCI core.
->> ...
-
+Reviewed-by: Johan Hovold <johan+linaro@kernel.org>
 
 -- 
 linux-phy mailing list
