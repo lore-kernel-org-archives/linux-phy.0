@@ -4,48 +4,48 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A61E1C61D97
-	for <linux-phy@archiver.kernel.org>; Mon, 23 Jan 2023 14:24:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id ADBCBC05027
+	for <linux-phy@archiver.kernel.org>; Mon, 23 Jan 2023 15:03:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=g8ch3IpnhLP90G440Fr6zCGYIVVvxdnr5UjA3z3IdD8=; b=Dj+Sn2rUibjzN2
-	De4FCTjvgQUMv/ALGwElx6oKyQ4E5Qv5P5ROBiw1EyN0/Ev/OqIkfJ6YrUjR0vCjfCHO5UyH/GlPF
-	hLaJcEFH0rtZh5AMZXrpjGES8NOxb2XGtu+Pk/sPaw3SH1KvRbPyT8ZDP5Mo4D3GXskDLnBidK+IT
-	61YOr6BaYOTXvBLOvN68Q3QbIdDroyfT3aHgmhH1ASPg66IyTb//wzNisXVth+uOGy+VnUJDe8sFN
-	rxLUgHfIHzZe441ixo6MZBwK1/H9kihLybbColdEoMMgDU3ukVzZ/NZhCTGvobh/RC4cy/5lp5nA0
-	t+tE8lymu1tD8rjp+tpg==;
+	List-Owner; bh=JxK/6xB9sUwUZdE623pIo/qVzo8LdvwREjH6X6UehLk=; b=cOpg87F1z7Efpt
+	XTl+E3sp0FD5XyArfK9h0GZzEwGuLjv7F2MYlAQ1EjcNvF0JtwJRY1Ngem1IWwlhMfZOM+Abpb9xY
+	uXRXnNNyiGlLuzBrMvloqNobhODNaPGNGS21ses7eakxByhTEsfGHetk+1tO5api1Nw055sRv8VJP
+	NqsdTQBpie+uMhaCobWZcCTRx+2t/okY1ofafkTAsWSYTI3JoHaO3QnQt4ahWeBZh7CJllYWp+gPg
+	P8NVFPZUCvBnkfdT2bIdwKstfM6RdysepBOegN4hlVD5pRD/QYP9ZFEs+sxlM6qaJs53N5xlJAomw
+	yzOLCdHLD25pmHyRzZaA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pJxkT-00HZB5-2n; Mon, 23 Jan 2023 14:24:37 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1pJyMV-0003PI-Va; Mon, 23 Jan 2023 15:03:56 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pJxkP-00HZAf-Vg
-	for linux-phy@lists.infradead.org; Mon, 23 Jan 2023 14:24:35 +0000
+	id 1pJyMS-0003OG-Js
+	for linux-phy@lists.infradead.org; Mon, 23 Jan 2023 15:03:54 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 82FEF60F31;
-	Mon, 23 Jan 2023 14:24:32 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id DAECFC433EF;
-	Mon, 23 Jan 2023 14:24:31 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 15AC660F52;
+	Mon, 23 Jan 2023 15:03:52 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 500E4C433D2;
+	Mon, 23 Jan 2023 15:03:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1674483871;
-	bh=ebj5u9dzYTnqnlc6aYkM6fkr6bAweecaoU1qF2KA9ow=;
+	s=k20201202; t=1674486231;
+	bh=sO5ySKuSsq9MUqxlGYVWya0q9jimaA/5HNl8GVliyBQ=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=RgjmabJGqw1ELqa2NhEcYDmnv9A+oZ7Jeoe9tjjYxnArTElg9uV49XTPjcZqKt8x4
-	 yRq//o7h8iv2Dm1Fa+1LROKmU5jLMf5PVL3QIcYwWhBPYwlTRZzR3x5gQfOF0YAT+K
-	 S/a0OjPr47JrZFVSXDO5NUsxChgjY/6juNkrn1ZUNmHMtdiRIf6ReWDef2nFqytE6f
-	 greUtAF/btPyWKuE7k+2j1QR158+15cGvqqqHqIzHzYaLbUbKd5IxqGruJyRWYUM7G
-	 mZflMGn0ezQ+1YCVcCzo/UCxF4NSip2beVVwmMYk242fZYCwrJ+CelMdttPkXHpj1M
-	 LHDjhQhortKww==
+	b=bSCiKKkWfQZqRCSVgNT0tBqX+zT3VZk+LbCaYULG7G4qYGC4fVlwbGzLMk/r03ZlC
+	 BlmVNClUdStc2s1FrkhNA7qOUDtek7hWuWRNUrM6Aufw2B9ZuPYzttG8V2hZIZjznQ
+	 NvNRBBNaPUApQqUN5wwepVN9viHS5/urM+3oYAJqVIa2RwgoqwIRAsj2GQED/roYqZ
+	 B7L4QCM6W4Oxlu8V+gVoFKQqhKb3MOTT/+Yo1jcIbQ1UCS6cWTpEHGiQwC0c03zSZX
+	 tIK+RHrPHA1vdjnxVaLoH3FbM5ErRxSsknJIfBc+UbYkHlGXc9W1AkOuzGv9o32sai
+	 O3OECYLsYZr1w==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan@kernel.org>)
-	id 1pJxkK-0003jJ-TX; Mon, 23 Jan 2023 15:24:29 +0100
-Date: Mon, 23 Jan 2023 15:24:28 +0100
+	id 1pJyMO-0000Io-VQ; Mon, 23 Jan 2023 16:03:49 +0100
+Date: Mon, 23 Jan 2023 16:03:48 +0100
 From: Johan Hovold <johan@kernel.org>
 To: Abel Vesa <abel.vesa@linaro.org>
 Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
@@ -61,21 +61,20 @@ Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
 	Manivannan Sadhasivam <mani@kernel.org>,
 	linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
 	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
-Subject: Re: [PATCH v4 11/12] arm64: dts: qcom: sm8550: Add PCIe PHYs and
- controllers nodes
-Message-ID: <Y86YnAxmTcQTmqwH@hovoldconsulting.com>
+	Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Subject: Re: [PATCH v4 08/12] phy: qcom-qmp-pcie: Add support for SM8550 g3x2
+ and g4x2 PCIEs
+Message-ID: <Y86h1FDuHFu3mImq@hovoldconsulting.com>
 References: <20230119140453.3942340-1-abel.vesa@linaro.org>
- <20230119140453.3942340-12-abel.vesa@linaro.org>
- <Y85KiKD+iQamchB5@hovoldconsulting.com>
- <Y86AG7ev++wYiza4@linaro.org>
- <Y86WqGW6pj5re3FU@hovoldconsulting.com>
+ <20230119140453.3942340-9-abel.vesa@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <Y86WqGW6pj5re3FU@hovoldconsulting.com>
+In-Reply-To: <20230119140453.3942340-9-abel.vesa@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230123_062434_130775_1BF6656D 
-X-CRM114-Status: GOOD (  23.70  )
+X-CRM114-CacheID: sfid-20230123_070352_797936_C768E20B 
+X-CRM114-Status: GOOD (  38.13  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,47 +91,304 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Jan 23, 2023 at 03:16:09PM +0100, Johan Hovold wrote:
-> On Mon, Jan 23, 2023 at 02:39:55PM +0200, Abel Vesa wrote:
-> > On 23-01-23 09:51:20, Johan Hovold wrote:
- 
-> > > > +		pcie1_phy: phy@1c0e000 {
-> > > > +			compatible = "qcom,sm8550-qmp-gen4x2-pcie-phy";
-> > > > +			reg = <0x0 0x01c0e000 0x0 0x2000>;
-> > > > +
-> > > > +			clocks = <&gcc GCC_PCIE_1_PHY_AUX_CLK>,
-> > > > +				 <&gcc GCC_PCIE_1_CFG_AHB_CLK>,
-> > > > +				 <&tcsr TCSR_PCIE_1_CLKREF_EN>,
-> > > > +				 <&gcc GCC_PCIE_1_PHY_RCHNG_CLK>,
-> > > > +				 <&gcc GCC_PCIE_1_PIPE_CLK>;
-> > > > +			clock-names = "aux", "cfg_ahb", "ref", "rchng",
-> > > > +				      "pipe";
-> > > > +
-> > > > +			resets = <&gcc GCC_PCIE_1_PHY_BCR>,
-> > > > +				 <&gcc GCC_PCIE_1_NOCSR_COM_PHY_BCR>;
-> > > > +			reset-names = "phy", "nocsr";
-> > > 
-> > > Do you know why only the second PHY uses two resets here? Did you intend
-> > > to add it also for the first PHY?
-> > 
-> > Please notice that this is a g4x2 phy. The documentation specifically
-> > says that both the pciephy_reset and pciephy_nocsr_reset should be
-> > asserted on power-up. Now, even the g3x2 has the nocsr reset (at least
-> > in GCC) but its documentation doesn't seem to say anything about
-> > nocsr needed to be asserted (ever).
+On Thu, Jan 19, 2023 at 04:04:49PM +0200, Abel Vesa wrote:
+> Add the SM8550 both g4 and g3 configurations. In addition, there is a
+> new "lane shared" table that needs to be configured for g4, along with
+> the No-CSR list of resets.
 > 
-> Ok. Thanks for confirming. I did not notice the difference in generation
-> at first.
+> Co-developed-by: Neil Armstrong <neil.armstrong@linaro.org>
+> Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
+> Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
+> Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+> ---
 > 
-> > > Both of these resets exists also on sc8280xp, and I believe downstream
-> > > used the NOCSR_COM variant, which does not reset all registers in the
-> > > PHY so you could unknowingly be relying on firmware to setup things up
-> > > for you.
-> > 
-> > That is also the case for the g3x2 phy on sm8550.
+> This patchset relies on the following patchset:
+> https://lore.kernel.org/all/20230117224148.1914627-1-abel.vesa@linaro.org/
+> 
+> The v3 of this patchset is:
+> https://lore.kernel.org/all/20230118005328.2378792-1-abel.vesa@linaro.org/
+> 
+> Changes since v3:
+>  * added Dmitry's R-b tag
+> 
+> Changes since v2:
+>  * none
+> 
+> Changes since v1:
+>  * split all the offsets into separate patches, like Vinod suggested
+> 
+> 
+>  drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 365 +++++++++++++++++++++++
+>  1 file changed, 365 insertions(+)
+> 
+> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+> index bffb9e138715..48d179d8d8d6 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+> @@ -1506,6 +1506,234 @@ static const struct qmp_phy_init_tbl sm8450_qmp_gen4x2_pcie_ep_pcs_misc_tbl[] =
+>  	QMP_PHY_INIT_CFG(QPHY_V5_20_PCS_PCIE_OSC_DTCT_MODE2_CONFIG5, 0x08),
+>  };
+>  
+> +static const struct qmp_phy_init_tbl sm8550_qmp_gen4x2_pcie_serdes_ln_shrd_tbl[] = {
 
-One more thing: Shouldn't the second reset be named 'nocsr_com' or
-similar?
+Perhaps you can drop the '_serdes' infix here as it is mostly redundant
+and not included in the names of the other tables/resources.
+
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_LN_SHRD_RXCLK_DIV2_CTRL, 0x01),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_LN_SHRD_RX_Q_EN_RATES, 0xe),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_LN_SHRD_DFE_DAC_ENABLE1, 0x00),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_LN_SHRD_TX_ADAPT_POST_THRESH1, 0x00),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_LN_SHRD_TX_ADAPT_POST_THRESH2, 0x1f),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_LN_SHRD_RX_MODE_RATE_0_1_B0, 0x12),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_LN_SHRD_RX_MODE_RATE_0_1_B1, 0x12),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_LN_SHRD_RX_MODE_RATE_0_1_B2, 0xdb),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_LN_SHRD_RX_MODE_RATE_0_1_B3, 0x9a),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_LN_SHRD_RX_MODE_RATE_0_1_B4, 0x38),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_LN_SHRD_RX_MODE_RATE_0_1_B5, 0xb6),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_LN_SHRD_RX_MODE_RATE_0_1_B6, 0x64),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_LN_SHRD_RX_MARG_COARSE_THRESH1_RATE210, 0x1f),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_LN_SHRD_RX_MARG_COARSE_THRESH1_RATE3, 0x1f),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_LN_SHRD_RX_MARG_COARSE_THRESH2_RATE210, 0x1f),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_LN_SHRD_RX_MARG_COARSE_THRESH2_RATE3, 0x1f),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_LN_SHRD_RX_MARG_COARSE_THRESH3_RATE210, 0x1f),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_LN_SHRD_RX_MARG_COARSE_THRESH3_RATE3, 0x1f),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_LN_SHRD_RX_MARG_COARSE_THRESH4_RATE3, 0x1f),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_LN_SHRD_RX_MARG_COARSE_THRESH5_RATE3, 0x1f),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_LN_SHRD_RX_MARG_COARSE_THRESH6_RATE3, 0x1f),
+> +};
+> +
+> +static const struct qmp_phy_init_tbl sm8550_qmp_gen4x2_pcie_tx_tbl[] = {
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_20_TX_RES_CODE_LANE_OFFSET_TX, 0x1d),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_20_TX_RES_CODE_LANE_OFFSET_RX, 0x03),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_20_TX_LANE_MODE_1, 0x01),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_20_TX_LANE_MODE_2, 0x00),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_20_TX_LANE_MODE_3, 0x51),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_20_TX_TRAN_DRVR_EMP_EN, 0x34),
+> +};
+
+>  struct qmp_pcie_offsets {
+>  	u16 serdes;
+>  	u16 pcs;
+> @@ -1514,11 +1742,14 @@ struct qmp_pcie_offsets {
+>  	u16 rx;
+>  	u16 tx2;
+>  	u16 rx2;
+> +	u16 ln_shrd;
+>  };
+>  
+>  struct qmp_phy_cfg_tbls {
+>  	const struct qmp_phy_init_tbl *serdes;
+>  	int serdes_num;
+> +	const struct qmp_phy_init_tbl *ln_shrd_serdes;
+> +	int ln_shrd_serdes_num;
+>  	const struct qmp_phy_init_tbl *tx;
+>  	int tx_num;
+>  	const struct qmp_phy_init_tbl *rx;
+> @@ -1556,6 +1787,9 @@ struct qmp_phy_cfg {
+>  	/* resets to be requested */
+>  	const char * const *reset_list;
+>  	int num_resets;
+> +	/* no CSR resets to be requested */
+
+Add a hyphen between 'no' and 'CSR' to make it a bit more readable.
+
+> +	const char * const *nocsr_reset_list;
+> +	int num_nocsr_resets;
+>  	/* regulators to be requested */
+>  	const char * const *vreg_list;
+>  	int num_vregs;
+> @@ -1569,6 +1803,9 @@ struct qmp_phy_cfg {
+>  
+>  	bool skip_start_delay;
+>  
+> +	/* true, if PHY has lane shared serdes table */
+> +	bool has_ln_shrd_serdes_tbl;
+> +
+
+Can't you just check the table pointer directly?
+
+>  	/* QMP PHY pipe clock interface rate */
+>  	unsigned long pipe_clock_rate;
+>  };
+> @@ -1580,6 +1817,7 @@ struct qmp_pcie {
+>  	bool tcsr_4ln_config;
+>  
+>  	void __iomem *serdes;
+> +	void __iomem *ln_shrd_serdes;
+
+Drop '_serdes'.
+
+>  	void __iomem *pcs;
+>  	void __iomem *pcs_misc;
+>  	void __iomem *tx;
+> @@ -1594,6 +1832,7 @@ struct qmp_pcie {
+>  	int num_pipe_clks;
+>  
+>  	struct reset_control_bulk_data *resets;
+> +	struct reset_control_bulk_data *nocsr_resets;
+>  	struct regulator_bulk_data *vregs;
+>  
+>  	struct phy *phy;
+> @@ -1648,6 +1887,10 @@ static const char * const qmp_phy_vreg_l[] = {
+>  	"vdda-phy", "vdda-pll",
+>  };
+>  
+> +static const char * const sm8550_qmp_phy_vreg_l[] = {
+> +	"vdda-phy", "vdda-pll", "vdda-qref",
+> +};
+> +
+>  /* list of resets */
+>  static const char * const ipq8074_pciephy_reset_l[] = {
+>  	"phy", "common",
+> @@ -1657,6 +1900,10 @@ static const char * const sdm845_pciephy_reset_l[] = {
+>  	"phy",
+>  };
+>  
+> +static const char * const sm8550_pciephy_nocsr_reset_l[] = {
+> +	"nocsr",
+> +};
+> +
+>  static const struct qmp_pcie_offsets qmp_pcie_offsets_v5 = {
+>  	.serdes		= 0,
+>  	.pcs		= 0x0200,
+> @@ -1667,6 +1914,17 @@ static const struct qmp_pcie_offsets qmp_pcie_offsets_v5 = {
+>  	.rx2		= 0x1800,
+>  };
+>  
+> +static const struct qmp_pcie_offsets qmp_pcie_offsets_v6_20 = {
+> +	.tx		= 0x0,
+> +	.rx		= 0x0200,
+> +	.tx2		= 0x0800,
+> +	.rx2		= 0x0a00,
+> +	.ln_shrd	= 0x0e00,
+> +	.serdes		= 0x1000,
+> +	.pcs		= 0x1200,
+> +	.pcs_misc	= 0x1400,
+> +};
+
+I did not notice before, but perhaps you should use the order from the
+struct definition instead of sorting by offset. That should make it
+easier to spot SoC differences, missing fields, etc.
+
+> +
+>  static const struct qmp_phy_cfg ipq8074_pciephy_cfg = {
+>  	.lanes			= 1,
+>  
+
+> @@ -2262,6 +2583,7 @@ static void qmp_pcie_init_registers(struct qmp_pcie *qmp, const struct qmp_phy_c
+>  {
+>  	const struct qmp_phy_cfg *cfg = qmp->cfg;
+>  	void __iomem *serdes = qmp->serdes;
+> +	void __iomem *ln_shrd_serdes = qmp->ln_shrd_serdes;
+
+ln_shrd should do.
+
+>  	void __iomem *tx = qmp->tx;
+>  	void __iomem *rx = qmp->rx;
+>  	void __iomem *tx2 = qmp->tx2;
+> @@ -2289,6 +2611,10 @@ static void qmp_pcie_init_registers(struct qmp_pcie *qmp, const struct qmp_phy_c
+>  		qmp_pcie_configure(serdes, cfg->serdes_4ln_tbl, cfg->serdes_4ln_num);
+>  		qmp_pcie_init_port_b(qmp, tbls);
+>  	}
+> +
+> +	if (cfg->has_ln_shrd_serdes_tbl)
+
+So you could check tbls->ln_shrd here, or just call unconditionally as
+qmp_pcie_configure() already handles that.
+
+> +		qmp_pcie_configure(ln_shrd_serdes, tbls->ln_shrd_serdes,
+> +				       tbls->ln_shrd_serdes_num);
+>  }
+>  
+>  static int qmp_pcie_init(struct phy *phy)
+> @@ -2309,6 +2635,14 @@ static int qmp_pcie_init(struct phy *phy)
+>  		goto err_disable_regulators;
+>  	}
+>  
+> +	if (qmp->nocsr_resets) {
+> +		ret = reset_control_bulk_assert(cfg->num_nocsr_resets, qmp->nocsr_resets);
+> +		if (ret) {
+> +			dev_err(qmp->dev, "no-csr reset assert failed\n");
+> +			goto err_disable_regulators;
+> +		}
+> +	}
+> +
+>  	usleep_range(200, 300);
+>  
+>  	ret = reset_control_bulk_deassert(cfg->num_resets, qmp->resets);
+
+Should you really leave the reset asserted on errors here and below?
+
+> @@ -2370,6 +2704,14 @@ static int qmp_pcie_power_on(struct phy *phy)
+>  	if (ret)
+>  		return ret;
+>  
+> +	if (qmp->nocsr_resets) {
+> +		ret = reset_control_bulk_deassert(cfg->num_nocsr_resets, qmp->nocsr_resets);
+> +		if (ret) {
+> +			dev_err(qmp->dev, "no-csr reset deassert failed\n");
+> +			goto err_disable_pipe_clk;
+> +		}
+> +	}
+
+Is this the documented reset sequence? To keep the nocsr reset asserted
+from init() to power_on() and during programming of the PHY registers?
+
+What if power_on() is never called, etc? (I know we always call
+power_on() after init() currently, but that may change.)
+
+Could you explain a bit how this reset is supposed work and be used?
+
+> +
+>  	/* Pull PHY out of reset state */
+>  	qphy_clrbits(pcs, cfg->regs[QPHY_SW_RESET], SW_RESET);
+>  
+> @@ -2503,6 +2845,21 @@ static int qmp_pcie_reset_init(struct qmp_pcie *qmp)
+>  	if (ret)
+>  		return dev_err_probe(dev, ret, "failed to get resets\n");
+>  
+> +	if (cfg->nocsr_reset_list) {
+> +		qmp->nocsr_resets = devm_kcalloc(dev, cfg->num_nocsr_resets,
+> +				   sizeof(*qmp->nocsr_resets), GFP_KERNEL);
+> +		if (!qmp->nocsr_resets)
+> +			return -ENOMEM;
+> +
+> +		for (i = 0; i < cfg->num_nocsr_resets; i++)
+> +			qmp->nocsr_resets[i].id = cfg->nocsr_reset_list[i];
+> +
+> +		ret = devm_reset_control_bulk_get_exclusive(dev, cfg->num_nocsr_resets,
+> +								qmp->nocsr_resets);
+> +		if (ret)
+> +			return dev_err_probe(dev, ret, "failed to get no CSR resets\n");
+
+hyphen after 'no'
+
+> +	}
+> +
+>  	return 0;
+>  }
+>  
+> @@ -2713,6 +3070,8 @@ static int qmp_pcie_parse_dt(struct qmp_pcie *qmp)
+>  	qmp->pcs_misc = base + offs->pcs_misc;
+>  	qmp->tx = base + offs->tx;
+>  	qmp->rx = base + offs->rx;
+> +	if (cfg->has_ln_shrd_serdes_tbl)
+> +		qmp->ln_shrd_serdes = base + offs->ln_shrd;
+
+Odd placement here in between tx/rx and tx2/rx2.
+
+Doesn't hurt setting the pointer whenever this block exists, so perhaps
+just do
+
+	if (offs->ln_shrd)
+		qmp->ln_shrd = base + offs->ln_shrd;
+
+and move this after the port_b initialisation (e.g. to follow the order
+in the offset struct and programming sequence above)?
+
+>  
+>  	if (cfg->lanes >= 2) {
+>  		qmp->tx2 = base + offs->tx2;
 
 Johan
 
