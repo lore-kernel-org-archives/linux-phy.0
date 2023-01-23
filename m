@@ -4,91 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 101EFC54EED
-	for <linux-phy@archiver.kernel.org>; Mon, 23 Jan 2023 13:11:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C51CBC61D97
+	for <linux-phy@archiver.kernel.org>; Mon, 23 Jan 2023 13:30:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qPbu/SgLykc9rSbrDIgg0xgOK2khfewmeBMhkL/yMiU=; b=pqM8k13TQySklx
-	1k4yIp9nbN3q0ofaKOkFTTmEjqfkR5eaSeouO+8y2419HJ3rkx7KmToRfc2CuDyEYpsOm09Wyd9Ct
-	ZRuwHKZNGVD4MHeA6IEJpMBqtutu8CH72TbAWeMxzrimF2w2Vx29F66o+dvmZiGuK2/t2f4Npy6Zs
-	lbpoF03iLAOS8GbMFAdoyUShx/aN5B6O8YxBXjmEnjjwJocUWdX++/idDYN1+RlRKp4MRTB/35AEC
-	bwkJZ1PVwZynRhstfVRFx88rHL/WmrZmppV5q7tnUdYWaylesNUDAL+N9Ar0UcvdWFNawu6QGEww7
-	NJB4Em6Lu/wCw95vAnow==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=rtXIgf3TNxeFsAUO0O8nGpo9fYGEvRrPkS4f7Ac12zY=; b=tmH6GNY5TgmPY/
+	7MPaGqpZ8PbHWT6EssVnHLe+TZA9Bfc12Mb5vjfy317UZQN0mcWCU5X6g0AGcu962EqMf/j/qZBUI
+	6G8rOqKgpdQuShl6LbAPs1FuFxhxH/gMhR8272XZY5BdoReGXhEl9pFpdY528nUajI2XDTZw3JCjE
+	4eKQwqkMoTYuVqe0JnSMQhkgdLkRyYO3GKmNJJWPZoyYSqzEzQyQFQuU85n+7/X/T3dCA56CeBSPr
+	wTR5Hjd+uI9FXm6Dck7oB6i1EDm5EsVw3IgQU4JZycDBwgY91FkJDOS9/RJuNN8mXSF2ge0K/YOkv
+	moFQDrcJHEmQ9MqYJrOg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pJwc2-00HLFk-Au; Mon, 23 Jan 2023 13:11:50 +0000
-Received: from mail-wr1-x430.google.com ([2a00:1450:4864:20::430])
+	id 1pJwu5-00HMXi-2G; Mon, 23 Jan 2023 13:30:29 +0000
+Received: from mail-ej1-x633.google.com ([2a00:1450:4864:20::633])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pJwbw-00HLEA-Rh
-	for linux-phy@lists.infradead.org; Mon, 23 Jan 2023 13:11:49 +0000
-Received: by mail-wr1-x430.google.com with SMTP id y1so6262513wru.2
-        for <linux-phy@lists.infradead.org>; Mon, 23 Jan 2023 05:11:43 -0800 (PST)
+	id 1pJwu2-00HMW5-Cw
+	for linux-phy@lists.infradead.org; Mon, 23 Jan 2023 13:30:27 +0000
+Received: by mail-ej1-x633.google.com with SMTP id tz11so30565386ejc.0
+        for <linux-phy@lists.infradead.org>; Mon, 23 Jan 2023 05:30:23 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=w/AVZqKYJPhB1IgEjQqVLXeAr1QmdPIDGqi6YTfDVfg=;
-        b=pa0rvwaVjh1GbmPyHesRPaXOqagD2w086apAWe2BiBXmXFnrgr1IjNGuRHMIfUFHtq
-         OKkItUjbZq6yJMIaQrOfgj3duwK2NW5TjmjUkAW9p7Y6VgeU2/5xslhTUW6uG9EDuDe5
-         7omAMPzUJlFc8cJSNY4IY/drOtInSbTqLstGthHf15PkyWv191xLoVj6oFm1QmlqTcAL
-         MQcstSErovY5BepyyQTPpVilnfEcUJL4eRA77JiqRGi76ER51+ofjgS2Sb6aMoAvhgBp
-         ejjOajgcs9A28s85Iu5YaXs9rr+xg5tu+jDR07XY/fmGW8sxDBSiHZDS5oUNkezOp0jq
-         oYLA==
+        d=fairphone.com; s=fair;
+        h=cc:to:content-transfer-encoding:mime-version:message-id:date
+         :subject:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=GNbLj/XmOS18lcQ6X8VOqWOavPYN+fm3m3tQOx//CQY=;
+        b=y1I2hXpHlXyGKsjZYDgisHlHbdrEFWMrdHw+LbJUg2u9PZkEeKin8vq7vzHQ5KTcRw
+         AwLhJQZ2Ld5yppC0c3LhRYB1CaJibzMyuDPe93tQfyVIJnK4HQ5ZeYlsHQqPFxA4+8pZ
+         IYgvWu3JrRyj4qZwRXWyZeV19HzqrLgp8m3t06I1/szGtrp4wxVcdU5ljdVuvUP6n0mm
+         pnZr+lzBGgT0nEcV9UekpHf6E4BRgHKjiyMXfZ4RLEvpuIw4/Xkjw1fhs33y0jSyAzTm
+         qcBRVahxjqq+IRiVe/abu+UHvm/ar293kZjtI2z8KrJnL6WnV0fzUHCPPyDN5T1S/9Wh
+         hXmQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=w/AVZqKYJPhB1IgEjQqVLXeAr1QmdPIDGqi6YTfDVfg=;
-        b=APDVdoiW+QGQI2le1hgm8nyuHVs+otI4QYewjOTxDnWckwUH/u2KseNpyFuTmtH4nj
-         i2dG+lYZHES0r0qJdJUNLd6t1o6mYsf+EsniAwI7we4oegGh3RQy82MgZ7qd1K6UKeVx
-         baiPxXfIgTGNpMxHXdWSJ1StqkLEKvq85k9vkbqtB4KNgrN7oHjr5X9L4Ednw8qbB0P8
-         uvOfdmDErHsxQ94faiI92iCb5vkLaAZeK2AC16uYNK9YFvVt8BNyatKw/Krrw6yasROW
-         ejdk1No96rT82TBUyKvLqNmiCxVqN+3EwzsOrKsEYj0wHBng+XCKo5vP1+jYI/C+E+Jf
-         UmVg==
-X-Gm-Message-State: AFqh2kqixNzraZfhvdTCi8TjfgSZXWLoT3jMeYg15zUlrEw7edqr4Rn5
-	g1L7UkSvQb6IfIvgj8hY+Ptl7A==
-X-Google-Smtp-Source: AMrXdXuv3hbBpncAXxs+zhxVZ/FQql5srkViXmGbKHE5QJLMFR9HvQw0R44vSneQcYM4zrQheMwfHg==
-X-Received: by 2002:a05:6000:120f:b0:2bd:befd:2061 with SMTP id e15-20020a056000120f00b002bdbefd2061mr21757702wrx.21.1674479502485;
-        Mon, 23 Jan 2023 05:11:42 -0800 (PST)
-Received: from linaro.org ([94.52.112.99])
-        by smtp.gmail.com with ESMTPSA id ba29-20020a0560001c1d00b002b065272da2sm21569090wrb.13.2023.01.23.05.11.40
+        h=cc:to:content-transfer-encoding:mime-version:message-id:date
+         :subject:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=GNbLj/XmOS18lcQ6X8VOqWOavPYN+fm3m3tQOx//CQY=;
+        b=u2CP4P/Qdx2suoWBWnGqK7e2CWlu0SLWS1Y1RJGhhBA6aDIem2kAUDcFU82yIRl7ei
+         267+CneQCIGr5QKU7U5AfUiTmKi+FJ0JY0dVU8yVBTsVMLNgShUXeR1qCVUwlac6Ezks
+         pR9eJfH4xv9411ttnV8muB01ki9MKMunLJau4fx5Q6Lm1usyIy9bsiWvgnwxBCLHfD4d
+         97UCJEUyCV7ko9kd/yMbmuYajzSKqjYzR/dRlM8ZnrQb6ccgDINFfKo8qwC8KZxnnEtN
+         2UO7yjGf3xjVhHSlcqI+g7MinuShiZX06a3wJk/ktVtwExCx0+YdEjuqHXcM108HQygL
+         uUBA==
+X-Gm-Message-State: AFqh2kr9f6AAA9MA9z4423ZEu9j75LanWuL65AAX3u0moGhSSuP4LSrB
+	O8YrvK3qN6Cn/C0hmP35PQ7TMw==
+X-Google-Smtp-Source: AMrXdXsO2W7vTKmldyNi2VluWAXyWgl/FTLpjx5ljjPpjsV580GO1FHx9OHRarQY2voFWBfv9iIenA==
+X-Received: by 2002:a17:906:5417:b0:877:5dbc:da84 with SMTP id q23-20020a170906541700b008775dbcda84mr19849609ejo.72.1674480622737;
+        Mon, 23 Jan 2023 05:30:22 -0800 (PST)
+Received: from [172.16.220.87] (144-178-202-138.static.ef-service.nl. [144.178.202.138])
+        by smtp.gmail.com with ESMTPSA id s5-20020a170906c30500b008552bc8399dsm18410066ejz.172.2023.01.23.05.30.21
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 23 Jan 2023 05:11:41 -0800 (PST)
-Date: Mon, 23 Jan 2023 15:11:40 +0200
-From: Abel Vesa <abel.vesa@linaro.org>
-To: Johan Hovold <johan@kernel.org>
-Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
-	Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
-	Bjorn Helgaas <bhelgaas@google.com>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Lorenzo Pieralisi <lpieralisi@kernel.org>,
-	"vkoul@kernel.org" <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
-Subject: Re: [PATCH v4 11/12] arm64: dts: qcom: sm8550: Add PCIe PHYs and
- controllers nodes
-Message-ID: <Y86HjPwj2Fb3t09r@linaro.org>
-References: <20230119140453.3942340-1-abel.vesa@linaro.org>
- <20230119140453.3942340-12-abel.vesa@linaro.org>
- <Y85KiKD+iQamchB5@hovoldconsulting.com>
- <Y86AG7ev++wYiza4@linaro.org>
+        Mon, 23 Jan 2023 05:30:22 -0800 (PST)
+From: Luca Weiss <luca.weiss@fairphone.com>
+Subject: [PATCH v4 0/3] Add USB/DP combo PHY config for SM6350
+Date: Mon, 23 Jan 2023 14:29:48 +0100
+Message-Id: <20230120-sm6350-usbphy-v4-0-4d700a90ba16@fairphone.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <Y86AG7ev++wYiza4@linaro.org>
+X-B4-Tracking: v=1; b=H4sIAMyLzmMC/zWNywrDIBBFf6W47oRR85Cu+h+lC2PHKiQanKYPQ
+ v69UujyXDjnboKpRGJxOmyi0DNyzKlCezwIF2y6E8RbZaFQaZQKgededwgrj0v4gBlcR9qjkoZ
+ EdUbLBGOxyYVqpXWa6rgU8vH9O7lcK/uSZ3iEQvafVlJqRCNbjU0/GC1BwrQ627woMp+9jWUJO
+ VHj8iz2/QtItfVgtgAAAA==
+To: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
+ Konrad Dybcio <konrad.dybcio@linaro.org>, Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Rob Herring <robh+dt@kernel.org>, 
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
+Cc: ~postmarketos/upstreaming@lists.sr.ht, phone-devel@vger.kernel.org, 
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ Luca Weiss <luca.weiss@fairphone.com>, 
+ Johan Hovold <johan+linaro@kernel.org>, 
+ Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+X-Mailer: b4 0.12.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230123_051144_987840_E5BD6E93 
-X-CRM114-Status: GOOD (  49.69  )
+X-CRM114-CacheID: sfid-20230123_053026_490010_F74D318B 
+X-CRM114-Status: UNSURE (   7.83  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,263 +100,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 23-01-23 14:39:55, Abel Vesa wrote:
-> On 23-01-23 09:51:20, Johan Hovold wrote:
-> > On Thu, Jan 19, 2023 at 04:04:52PM +0200, Abel Vesa wrote:
-> > > Add PCIe controllers and PHY nodes.
-> > > 
-> > > Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
-> > > ---
-> > > 
-> > > This patch does not have a v3, but since it is now part of the same
-> > > patchset with the controller and the phy drivers patches, I had to
-> > > bump the version to 4.
-> > > 
-> > > Latest version was here (v2):
-> > > https://lore.kernel.org/all/20230118230526.1499328-2-abel.vesa@linaro.org/
-> > > 
-> > > Changes since latest version (v2):
-> > >  * renamed the pcie_1_link_down_reset to simply link_down
-> > >  * dropped the pipe from clock-names
-> > >  * renamed aggre clock-names to noc_aggr_4
-> > >  * dropped the _pcie infix from cnoc_pcie_sf_axi
-> > >  * dropped the aux_phy clock from the pcie1
-> > > 
-> > > Changes since v1:
-> > >  * ordered pcie related nodes alphabetically in MTP dts
-> > >  * dropped the pipe_mux, phy_pipe and ref clocks from the pcie nodes
-> > >  * dropped the child node from the phy nodes, like Johan suggested,
-> > >    and updated to use the sc8280xp binding scheme
-> > >  * changed "pcie_1_nocsr_com_phy_reset" 2nd reset name of pcie1_phy
-> > >    to "nocsr"
-> > >  * reordered all pcie nodes properties to look similar to the ones
-> > >    from sc8280xp
-> > > 
-> > > 
-> > >  arch/arm64/boot/dts/qcom/sm8550.dtsi | 207 ++++++++++++++++++++++++++-
-> > >  1 file changed, 204 insertions(+), 3 deletions(-)
-> > > 
-> > > diff --git a/arch/arm64/boot/dts/qcom/sm8550.dtsi b/arch/arm64/boot/dts/qcom/sm8550.dtsi
-> > > index 3d47281a276b..8df226530d76 100644
-> > > --- a/arch/arm64/boot/dts/qcom/sm8550.dtsi
-> > > +++ b/arch/arm64/boot/dts/qcom/sm8550.dtsi
-> > > @@ -646,9 +646,9 @@ gcc: clock-controller@100000 {
-> > >  			#reset-cells = <1>;
-> > >  			#power-domain-cells = <1>;
-> > >  			clocks = <&bi_tcxo_div2>, <&sleep_clk>,
-> > > -				 <0>,
-> > > -				 <0>,
-> > > -				 <0>,
-> > > +				 <&pcie0_phy>,
-> > > +				 <&pcie1_phy>,
-> > > +				 <&pcie_1_phy_aux_clk>,
-> > >  				 <&ufs_mem_phy 0>,
-> > >  				 <&ufs_mem_phy 1>,
-> > >  				 <&ufs_mem_phy 2>,
-> > > @@ -1547,6 +1547,207 @@ mmss_noc: interconnect@1780000 {
-> > >  			qcom,bcm-voters = <&apps_bcm_voter>;
-> > >  		};
-> > >  
-> > > +		pcie0: pci@1c00000 {
-> > > +			device_type = "pci";
-> > > +			compatible = "qcom,pcie-sm8550";
-> > > +			reg = <0 0x01c00000 0 0x3000>,
-> > > +			      <0 0x60000000 0 0xf1d>,
-> > > +			      <0 0x60000f20 0 0xa8>,
-> > > +			      <0 0x60001000 0 0x1000>,
-> > > +			      <0 0x60100000 0 0x100000>;
-> > > +			reg-names = "parf", "dbi", "elbi", "atu", "config";
-> > > +			#address-cells = <3>;
-> > > +			#size-cells = <2>;
-> > > +			ranges = <0x01000000 0x0 0x60200000 0 0x60200000 0x0 0x100000>,
-> > > +				 <0x02000000 0x0 0x60300000 0 0x60300000 0x0 0x3d00000>;
-> > > +			bus-range = <0x00 0xff>;
-> > > +
-> > > +			dma-coherent;
-> > > +
-> > > +			linux,pci-domain = <0>;
-> > > +			num-lanes = <2>;
-> > > +
-> > > +			interrupts = <GIC_SPI 141 IRQ_TYPE_LEVEL_HIGH>;
-> > > +			interrupt-names = "msi";
-> > > +
-> > > +			#interrupt-cells = <1>;
-> > > +			interrupt-map-mask = <0 0 0 0x7>;
-> > > +			interrupt-map = <0 0 0 1 &intc 0 0 0 149 IRQ_TYPE_LEVEL_HIGH>, /* int_a */
-> > > +					<0 0 0 2 &intc 0 0 0 150 IRQ_TYPE_LEVEL_HIGH>, /* int_b */
-> > > +					<0 0 0 3 &intc 0 0 0 151 IRQ_TYPE_LEVEL_HIGH>, /* int_c */
-> > > +					<0 0 0 4 &intc 0 0 0 152 IRQ_TYPE_LEVEL_HIGH>; /* int_d */
-> > > +
-> > > +			clocks = <&gcc GCC_PCIE_0_AUX_CLK>,
-> > > +				 <&gcc GCC_PCIE_0_CFG_AHB_CLK>,
-> > > +				 <&gcc GCC_PCIE_0_MSTR_AXI_CLK>,
-> > > +				 <&gcc GCC_PCIE_0_SLV_AXI_CLK>,
-> > > +				 <&gcc GCC_PCIE_0_SLV_Q2A_AXI_CLK>,
-> > > +				 <&gcc GCC_DDRSS_PCIE_SF_QTB_CLK>,
-> > > +				 <&gcc GCC_AGGRE_NOC_PCIE_AXI_CLK>;
-> > > +			clock-names = "aux",
-> > > +				      "cfg",
-> > > +				      "bus_master",
-> > > +				      "bus_slave",
-> > > +				      "slave_q2a",
-> > > +				      "ddrss_sf_tbu",
-> > 
-> > You're reusing a clock name which doesn't seem to match this SoC. I
-> > don't know what "QTB" refers to here and if it's just some Qualcomm
-> > alternate name for "TBU" which could make this ok.
-> 
-> I'll come back later with an answer here, once I know exactly what QTB
-> means.
+While this patchset started out as just adding a dedicated init sequence
+for SM6350 since USB PHY init didn't work in some cases, now it's also
+migrating the phy config and dts over to a new format.
 
-So, AFAICT, they replaced the TBU with QTB, which basically does the
-same thing. It is part of the SMMU. So, yes, it is just an alternate
-name, at least from the clock point of view.
+Also note, that the DP portions are pratically untested since TCPM
+(type-C port manager) and possibly other components aren't brought up
+yet.
 
-> 
-> > 
-> > > +				      "noc_aggr_4";
-> > 
-> > The 4 here comes from the fact that the clock was named this way on
-> > sc8280xp. Perhaps 'noc_aggr' would have been a better generic name for
-> > the interconnect clock.
-> > 
-> 
-> So should I rename it to noc_aggr as part of this patchset then?
-> 
-> > > +
-> > > +			interconnects = <&pcie_noc MASTER_PCIE_0 0 &mc_virt SLAVE_EBI1 0>;
-> > > +			interconnect-names = "pcie-mem";
-> > > +
-> > > +			iommus = <&apps_smmu 0x1400 0x7f>;
-> > > +			iommu-map = <0x0   &apps_smmu 0x1400 0x1>,
-> > > +				    <0x100 &apps_smmu 0x1401 0x1>;
-> > > +
-> > > +			resets = <&gcc GCC_PCIE_0_BCR>;
-> > > +			reset-names = "pci";
-> > > +
-> > > +			power-domains = <&gcc PCIE_0_GDSC>;
-> > > +
-> > > +			phys = <&pcie0_phy>;
-> > > +			phy-names = "pciephy";
-> > > +
-> > > +			perst-gpios = <&tlmm 94 GPIO_ACTIVE_LOW>;
-> > > +			wake-gpios = <&tlmm 96 GPIO_ACTIVE_HIGH>;
-> > > +
-> > > +			pinctrl-names = "default";
-> > > +			pinctrl-0 = <&pcie0_default_state>;
-> > 
-> > For sc8280xp we decided to keep all pin configuration (and the gpios
-> > properties above) in the dts file. I believe this should be done also
-> > for any new SoCs.
-> 
-> Right, I'll move the pinctrl properties to the dts node instead.
-> 
-> > 
-> > Either way, the pin nodes should be added along with the consumer.
-> > 
-> 
-> The pin nodes have been added already, back when the initial dtsi was sent.
-> 
-> > > +
-> > > +			status = "disabled";
-> > > +		};
-> > > +
-> > > +		pcie0_phy: phy@1c06000 {
-> > > +			compatible = "qcom,sm8550-qmp-gen3x2-pcie-phy";
-> > > +			reg = <0 0x01c06000 0 0x2000>;
-> > > +
-> > > +			clocks = <&gcc GCC_PCIE_0_AUX_CLK>,
-> > > +				 <&gcc GCC_PCIE_0_CFG_AHB_CLK>,
-> > > +				 <&tcsr TCSR_PCIE_0_CLKREF_EN>,
-> > > +				 <&gcc GCC_PCIE_0_PHY_RCHNG_CLK>,
-> > > +				 <&gcc GCC_PCIE_0_PIPE_CLK>;
-> > > +			clock-names = "aux", "cfg_ahb", "ref", "rchng",
-> > > +				      "pipe";
-> > > +
-> > > +			resets = <&gcc GCC_PCIE_0_PHY_BCR>;
-> > > +			reset-names = "phy";
-> > > +
-> > > +			assigned-clocks = <&gcc GCC_PCIE_0_PHY_RCHNG_CLK>;
-> > > +			assigned-clock-rates = <100000000>;
-> > > +
-> > > +			power-domains = <&gcc PCIE_0_PHY_GDSC>;
-> > > +
-> > > +			#clock-cells = <0>;
-> > > +			clock-output-names = "pcie0_pipe_clk";
-> > > +
-> > > +			#phy-cells = <0>;
-> > > +
-> > > +			status = "disabled";
-> > > +		};
-> > 
-> > > +		pcie1_phy: phy@1c0e000 {
-> > > +			compatible = "qcom,sm8550-qmp-gen4x2-pcie-phy";
-> > > +			reg = <0x0 0x01c0e000 0x0 0x2000>;
-> > > +
-> > > +			clocks = <&gcc GCC_PCIE_1_PHY_AUX_CLK>,
-> > > +				 <&gcc GCC_PCIE_1_CFG_AHB_CLK>,
-> > > +				 <&tcsr TCSR_PCIE_1_CLKREF_EN>,
-> > > +				 <&gcc GCC_PCIE_1_PHY_RCHNG_CLK>,
-> > > +				 <&gcc GCC_PCIE_1_PIPE_CLK>;
-> > > +			clock-names = "aux", "cfg_ahb", "ref", "rchng",
-> > > +				      "pipe";
-> > > +
-> > > +			resets = <&gcc GCC_PCIE_1_PHY_BCR>,
-> > > +				 <&gcc GCC_PCIE_1_NOCSR_COM_PHY_BCR>;
-> > > +			reset-names = "phy", "nocsr";
-> > 
-> > Do you know why only the second PHY uses two resets here? Did you intend
-> > to add it also for the first PHY?
-> 
-> Please notice that this is a g4x2 phy. The documentation specifically
-> says that both the pciephy_reset and pciephy_nocsr_reset should be
-> asserted on power-up. Now, even the g3x2 has the nocsr reset (at least
-> in GCC) but its documentation doesn't seem to say anything about
-> nocsr needed to be asserted (ever).
-> 
-> > 
-> > Both of these resets exists also on sc8280xp, and I believe downstream
-> > used the NOCSR_COM variant, which does not reset all registers in the
-> > PHY so you could unknowingly be relying on firmware to setup things up
-> > for you.
-> 
-> That is also the case for the g3x2 phy on sm8550.
-> 
-> > 
-> > I did a fair bit of reverse engineering to determine the init sequences
-> > and opted to use the full reset for the PHYs here in the end.
-> > 
-> > I don't think you should be using both, but someone with access to
-> > documentation may provide more insight.
-> 
-> Again, the documentation I have access to, seems to suggest otherwise.
-> 
-> > 
-> > Have you tested both pci0 and 1 by the way?
-> 
-> Only the pcie0 can be tested with the MTP I have access to. So only
-> pcie0 was tested.
-> 
-> > 
-> > > +
-> > > +			assigned-clocks = <&gcc GCC_PCIE_1_PHY_RCHNG_CLK>;
-> > > +			assigned-clock-rates = <100000000>;
-> > > +
-> > > +			power-domains = <&gcc PCIE_1_PHY_GDSC>;
-> > > +
-> > > +			#clock-cells = <0>;
-> > > +			clock-output-names = "pcie1_pipe_clk";
-> > > +
-> > > +			#phy-cells = <0>;
-> > > +
-> > > +			status = "disabled";
-> > > +		};
-> > > +
-> > >  		cryptobam: dma-controller@1dc4000 {
-> > >  			compatible = "qcom,bam-v1.7.0";
-> > >  			reg = <0x0 0x01dc4000 0x0 0x28000>;
-> > 
-> > Johan
+Signed-off-by: Luca Weiss <luca.weiss@fairphone.com>
+---
+Changes in v4:
+- Fix dp_serdes offsets in driver, add dp_txa & dp_txb fields (as in v2)
+- Fix order of resets in dtsi
+- Link to v3: https://lore.kernel.org/r/20221130081430.67831-1-luca.weiss@fairphone.com
+
+---
+Luca Weiss (3):
+      dt-bindings: phy: qcom,qmp-usb3-dp: Add sm6350 compatible
+      phy: qcom-qmp-combo: Add config for SM6350
+      arm64: dts: qcom: sm6350: Use specific qmpphy compatible
+
+ .../phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml         |   1 +
+ arch/arm64/boot/dts/qcom/sm6350.dtsi               |  54 +++-----
+ drivers/phy/qualcomm/phy-qcom-qmp-combo.c          | 139 ++++++++++++++++++++-
+ 3 files changed, 154 insertions(+), 40 deletions(-)
+---
+base-commit: d514392f17fd4d386cfadde7f849d97db4ca1fb0
+change-id: 20230120-sm6350-usbphy-87c5e3f0218e
+
+Best regards,
+-- 
+Luca Weiss <luca.weiss@fairphone.com>
+
 
 -- 
 linux-phy mailing list
