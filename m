@@ -4,38 +4,38 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DFCBFC25B50
-	for <linux-phy@archiver.kernel.org>; Tue, 24 Jan 2023 19:45:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3AAE8C25B4E
+	for <linux-phy@archiver.kernel.org>; Tue, 24 Jan 2023 19:45:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OKTq5ZoW3DeADbx7VYuBHhqf+axJu0fkwdtpBBsL8AE=; b=zEqm77caBb4l1Q
-	BloyAPoRqbm2uCRdNFbnhr4seyTb+qjOkBYhnm67E+sp3HYMx0U4y3neCB54zI8cqERXiL2BC+GXi
-	ybOGH97/28vHhclqoInjDIo5aNYJNIH3YGlQmxP/SN/lBXkTPeHXDTeqh2G4YjrdVgxVtR7fhKEBd
-	2t7accjEz5lyvwYjQIPBY1Vsjq2xRi9JtO2tbC0b1YJx5ymtt0BbDq3MJDphyAwU9JyN7L43LClzn
-	Yi0NZeWU89e2q5chhuH2qctrYA+un4yIQNKjN+nJjc/2547K8SWUHotmtqqSqBthNJlQ6Yco0KfNw
-	wrvkoXg048VWZ06tnuJA==;
+	List-Owner; bh=Ec8OtQ/uAaOooQOZ/0vR8DnOPFquhp/2/fWKzu09sAY=; b=vNYvffxRPp2eKH
+	0EXVOLcmaI8ju9U5lMbaXfgM95enCFk8HQmFAUArKAhWHACI1OqoW6q999D2nLVWzRep4ijXLXIBt
+	YFUkj8DGMrQp6O6vUAKBkrfRbZwn3UROvPz86mYfSVaK09eFDqYc/hmI5t4R/frBHZK4qiCuc/8WV
+	HB5cAdpnH1nCfqFge7gCOumNOZfapSpMhQBCga6DGMO0c1j2HyTnxPVCMaU3uZ2ayED1iZe6Na4fT
+	dTLR95LaNgPMi69Es2mQtLZHUyJZyUiqEwba6OcTUMtcgpUbGLoccUZiJ6jvKmne6nPRWYiOtE1nN
+	HffMUVgTUhKfsWaEFhlg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pKPEr-0053j9-4e; Tue, 24 Jan 2023 19:45:49 +0000
-Received: from albert.telenet-ops.be ([2a02:1800:110:4::f00:1a])
+	id 1pKPEy-0053kK-M2; Tue, 24 Jan 2023 19:45:56 +0000
+Received: from michel.telenet-ops.be ([2a02:1800:110:4::f00:18])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pKOBD-004xj6-LZ
-	for linux-phy@lists.infradead.org; Tue, 24 Jan 2023 18:38:02 +0000
+	id 1pKOBE-004xjC-OK
+	for linux-phy@lists.infradead.org; Tue, 24 Jan 2023 18:38:04 +0000
 Received: from ramsan.of.borg ([IPv6:2a02:1810:ac12:ed50:2f4a:8573:c294:b2ce])
-	by albert.telenet-ops.be with bizsmtp
-	id CidZ2900356uRqi06idZVY; Tue, 24 Jan 2023 19:37:55 +0100
+	by michel.telenet-ops.be with bizsmtp
+	id CidZ2900956uRqi06idZyD; Tue, 24 Jan 2023 19:37:57 +0100
 Received: from rox.of.borg ([192.168.97.57])
 	by ramsan.of.borg with esmtp (Exim 4.95)
 	(envelope-from <geert@linux-m68k.org>)
-	id 1pKOAe-007HCO-Ho;
+	id 1pKOAe-007HCh-L0;
 	Tue, 24 Jan 2023 19:37:33 +0100
 Received: from geert by rox.of.borg with local (Exim 4.95)
 	(envelope-from <geert@linux-m68k.org>)
-	id 1pKOAn-002n0c-1h;
+	id 1pKOAn-002n0t-5c;
 	Tue, 24 Jan 2023 19:37:33 +0100
 From: Geert Uytterhoeven <geert+renesas@glider.be>
 To: Vinod Koul <vkoul@kernel.org>,
@@ -69,16 +69,16 @@ Cc: linux-phy@lists.infradead.org,
 	linux-arm-kernel@lists.infradead.org,
 	linux-samsung-soc@vger.kernel.org,
 	Geert Uytterhoeven <geert+renesas@glider.be>
-Subject: [PATCH v2 2/9] doc: phy: Document devm_of_phy_get()
-Date: Tue, 24 Jan 2023 19:37:21 +0100
-Message-Id: <768d5845668f081620098a0b4479d1481e212bac.1674584626.git.geert+renesas@glider.be>
+Subject: [PATCH v2 6/9] net: ethernet: ti: am65-cpsw: Convert to devm_of_phy_optional_get()
+Date: Tue, 24 Jan 2023 19:37:25 +0100
+Message-Id: <3d612c95031cf5c6d5af4ec35f40121288a2c1c6.1674584626.git.geert+renesas@glider.be>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <cover.1674584626.git.geert+renesas@glider.be>
 References: <cover.1674584626.git.geert+renesas@glider.be>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230124_103759_872947_376989BB 
-X-CRM114-Status: GOOD (  13.52  )
+X-CRM114-CacheID: sfid-20230124_103801_056544_033117AB 
+X-CRM114-Status: GOOD (  11.62  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,45 +95,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add the missing documentation for devm_of_phy_get(), which was forgotten
-when the function was introduced.
+Use the new devm_of_phy_optional_get() helper instead of open-coding the
+same operation.
 
 Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
 ---
 v2:
-  - New.
+  - Rebase on top of commit 854617f52ab42418 ("net: ethernet: ti:
+    am65-cpsw: Handle -EPROBE_DEFER for Serdes PHY") in net-next
+    (next-20230123 and later).
 ---
- Documentation/driver-api/phy/phy.rst | 10 ++++++----
- 1 file changed, 6 insertions(+), 4 deletions(-)
+ drivers/net/ethernet/ti/am65-cpsw-nuss.c | 8 +++-----
+ 1 file changed, 3 insertions(+), 5 deletions(-)
 
-diff --git a/Documentation/driver-api/phy/phy.rst b/Documentation/driver-api/phy/phy.rst
-index 26467dd4f291505e..6cadc58f4ce07ce4 100644
---- a/Documentation/driver-api/phy/phy.rst
-+++ b/Documentation/driver-api/phy/phy.rst
-@@ -106,6 +106,8 @@ it. This framework provides the following APIs to get a reference to the PHY.
- 	struct phy *devm_phy_get(struct device *dev, const char *string);
- 	struct phy *devm_phy_optional_get(struct device *dev,
- 					  const char *string);
-+	struct phy *devm_of_phy_get(struct device *dev, struct device_node *np,
-+				    const char *con_id);
- 	struct phy *devm_of_phy_get_by_index(struct device *dev,
- 					     struct device_node *np,
- 					     int index);
-@@ -119,10 +121,10 @@ successful PHY get. On driver detach, release function is invoked on
- the devres data and devres data is freed.
- devm_phy_optional_get should be used when the phy is optional. This
- function will never return -ENODEV, but instead returns NULL when
--the phy cannot be found.Some generic drivers, such as ehci, may use multiple
--phys and for such drivers referencing phy(s) by name(s) does not make sense. In
--this case, devm_of_phy_get_by_index can be used to get a phy reference based on
--the index.
-+the phy cannot be found.
-+Some generic drivers, such as ehci, may use multiple phys. In this case,
-+devm_of_phy_get or devm_of_phy_get_by_index can be used to get a phy
-+reference based on name or index.
+diff --git a/drivers/net/ethernet/ti/am65-cpsw-nuss.c b/drivers/net/ethernet/ti/am65-cpsw-nuss.c
+index c696da89962f1ae3..794f228c8d632f7a 100644
+--- a/drivers/net/ethernet/ti/am65-cpsw-nuss.c
++++ b/drivers/net/ethernet/ti/am65-cpsw-nuss.c
+@@ -1460,11 +1460,9 @@ static int am65_cpsw_init_serdes_phy(struct device *dev, struct device_node *por
+ 	struct phy *phy;
+ 	int ret;
  
- It should be noted that NULL is a valid phy reference. All phy
- consumer calls on the NULL phy become NOPs. That is the release calls,
+-	phy = devm_of_phy_get(dev, port_np, name);
+-	if (PTR_ERR(phy) == -ENODEV)
+-		return 0;
+-	if (IS_ERR(phy))
+-		return PTR_ERR(phy);
++	phy = devm_of_phy_optional_get(dev, port_np, name);
++	if (IS_ERR_OR_NULL(phy))
++		return PTR_ERR_OR_ZERO(phy);
+ 
+ 	/* Serdes PHY exists. Store it. */
+ 	port->slave.serdes_phy = phy;
 -- 
 2.34.1
 
