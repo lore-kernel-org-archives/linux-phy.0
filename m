@@ -4,60 +4,100 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 84DCCC54E94
-	for <linux-phy@archiver.kernel.org>; Tue, 24 Jan 2023 20:45:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A5F5CC54E94
+	for <linux-phy@archiver.kernel.org>; Wed, 25 Jan 2023 05:13:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Tux407ejr9cv6tT//WZRFJ4fhPAIFasHHjGJmpTqYZ8=; b=19UctwgGY19Qoh
-	DAeVrxCUPBiq0oeR/tDfRelreX+mjzzz6OMw3By2+G3DmPzo2rXKMmlXxKKtaV3xxDhuNQENOFv7i
-	R2aEzTgoThesTbBwak0U2+iEP+YX9kWdOmcJdG+eN5zelSTnmjZ8zTj4Nhq9lugx8YxRWRfzOaEat
-	mXltg2Zixt1S7veMTmhYNwGsVDRs6P3N4VYT00YWUatNRr1u2/yCJ1gicg+jgEHSyIm7AdMhfmfMA
-	KV/9RMVJ45/sF3Mbee/3xbAkXkRu8k8BoIqf2u2Z0xVhGPi0ZCsQYiAHLxTn21DAyGUnoR6o9NuAm
-	kUPX9QtUUQmqvMa/aNmw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
+	CC:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5d24kk5rP676eIGykAyNko/2W0XLaXP0ADTL07R7uwc=; b=gC8SXn6sMxSS/4
+	N75r6F4MTfgb8le3P6pHGhH6hvIJWO1WTpCqDqfJqOgULnFcK7s0StErQhIhes5Vujja2wKcnhxAy
+	Xwk6BJo7XwnLk8u4FsR5h1qFnDdungEm2nJ+/IJRETfCEnx705ZhSGrQuUt6MuiybK9+NMwWMh+nd
+	qzVpLD1xotXg7ZqH37ULYISoMnMgJnozUsL5DK43GqqI3//PTbH94HIkqM98WYd8ihuxYlCRs2X53
+	7tGCo6s2oEFw71pkwWlDiDk+hSyrwTLn++rB2sV0QrtaiTQhA4ay7YqrkUTxbttjhJrrCHnqGSxjT
+	EIAqZ1J8FLb+EAmv0IFQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pKQAS-005F29-Pc; Tue, 24 Jan 2023 20:45:20 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1pKY6R-0062zf-VA; Wed, 25 Jan 2023 05:13:43 +0000
+Received: from lelv0143.ext.ti.com ([198.47.23.248])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pKQAE-005Ewp-NR
-	for linux-phy@lists.infradead.org; Tue, 24 Jan 2023 20:45:08 +0000
-Received: from drehscheibe.grey.stw.pengutronix.de ([2a0a:edc0:0:c01:1d::a2])
-	by metis.ext.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
-	(Exim 4.92)
-	(envelope-from <mgr@pengutronix.de>)
-	id 1pKQAD-0003eQ-9t; Tue, 24 Jan 2023 21:45:05 +0100
-Received: from [2a0a:edc0:0:1101:1d::ac] (helo=dude04.red.stw.pengutronix.de)
-	by drehscheibe.grey.stw.pengutronix.de with esmtp (Exim 4.94.2)
-	(envelope-from <mgr@pengutronix.de>)
-	id 1pKQAB-000BhY-Fl; Tue, 24 Jan 2023 21:45:02 +0100
-Received: from mgr by dude04.red.stw.pengutronix.de with local (Exim 4.94.2)
-	(envelope-from <mgr@pengutronix.de>)
-	id 1pKQA9-00EhDd-TW; Tue, 24 Jan 2023 21:45:01 +0100
-From: Michael Grzeschik <m.grzeschik@pengutronix.de>
-To: linux-arm-kernel@lists.infradead.org
-Cc: linux-phy@lists.infradead.org,
-	vkoul@kernel.org,
-	kishon@kernel.org,
-	mcoquelin.stm32@gmail.com,
-	alexandre.torgue@foss.st.com,
-	error27@gmail.com,
-	kernel@pengutronix.de
-Subject: [PATCH] phy: stm32-usphyc: add mdelay(1) to fix timeout on some machines
-Date: Tue, 24 Jan 2023 21:45:00 +0100
-Message-Id: <20230124204500.3502665-1-m.grzeschik@pengutronix.de>
-X-Mailer: git-send-email 2.30.2
+	id 1pKY6P-0062yp-6M; Wed, 25 Jan 2023 05:13:42 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+	by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 30P5DFVr110850;
+	Tue, 24 Jan 2023 23:13:15 -0600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+	s=ti-com-17Q1; t=1674623595;
+	bh=re1yuXRG1QzWfbml926PUa+KfAnb805uYLtXy/6QWZ0=;
+	h=Date:CC:Subject:To:References:From:In-Reply-To;
+	b=NDsjfut0T3p7vR3aO6ByE4gg3fZjdYpYkxKVaFHEcN9DDymNkY7sXGQtuQde/NpN+
+	 s1DBVVXRJ/7e2buVzRva7Rka8C40zLivnm/eYg6QS5go1r5KUVx0c2umJXiMSl8r0b
+	 npSY3OTjeIyWPydyJhIPNy0X5L+qrfNUJ7i83FYU=
+Received: from DLEE105.ent.ti.com (dlee105.ent.ti.com [157.170.170.35])
+	by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 30P5DFDk056971
+	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+	Tue, 24 Jan 2023 23:13:15 -0600
+Received: from DLEE114.ent.ti.com (157.170.170.25) by DLEE105.ent.ti.com
+ (157.170.170.35) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.16; Tue, 24
+ Jan 2023 23:13:15 -0600
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE114.ent.ti.com
+ (157.170.170.25) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.16 via
+ Frontend Transport; Tue, 24 Jan 2023 23:13:15 -0600
+Received: from [172.24.145.61] (ileaxei01-snat2.itg.ti.com [10.180.69.6])
+	by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 30P5D6Wo061117;
+	Tue, 24 Jan 2023 23:13:07 -0600
+Message-ID: <c2626bd5-93bb-690d-6c19-d32e40f55dc0@ti.com>
+Date: Wed, 25 Jan 2023 10:43:06 +0530
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 2a0a:edc0:0:c01:1d::a2
-X-SA-Exim-Mail-From: mgr@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de); SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-phy@lists.infradead.org
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.4.2
+CC: <linux-phy@lists.infradead.org>, <linux-doc@vger.kernel.org>,
+        <netdev@vger.kernel.org>, <linux-tegra@vger.kernel.org>,
+        <linux-pci@vger.kernel.org>, <linux-usb@vger.kernel.org>,
+        <linux-arm-kernel@lists.infradead.org>,
+        <linux-samsung-soc@vger.kernel.org>, <s-vadapalli@ti.com>
+Subject: Re: [PATCH v2 6/9] net: ethernet: ti: am65-cpsw: Convert to
+ devm_of_phy_optional_get()
+Content-Language: en-US
+To: Geert Uytterhoeven <geert+renesas@glider.be>,
+        Vinod Koul
+	<vkoul@kernel.org>, Jonathan Corbet <corbet@lwn.net>,
+        Madalin Bucur
+	<madalin.bucur@nxp.com>,
+        "David S . Miller" <davem@davemloft.net>,
+        Eric
+ Dumazet <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>,
+        Paolo Abeni
+	<pabeni@redhat.com>,
+        Horatiu Vultur <horatiu.vultur@microchip.com>,
+        <UNGLinuxDriver@microchip.com>,
+        Thierry Reding <thierry.reding@gmail.com>,
+        Lorenzo Pieralisi <lpieralisi@kernel.org>,
+        Rob Herring <robh@kernel.org>,
+        =?UTF-8?Q?Krzysztof_Wilczy=c5=84ski?= <kw@linux.com>,
+        Bjorn Helgaas
+	<bhelgaas@google.com>,
+        Jonathan Hunter <jonathanh@nvidia.com>,
+        Kishon Vijay
+ Abraham I <kishon@kernel.org>,
+        Alan Stern <stern@rowland.harvard.edu>,
+        Greg
+ Kroah-Hartman <gregkh@linuxfoundation.org>,
+        Krzysztof Kozlowski
+	<krzysztof.kozlowski@linaro.org>,
+        Alim Akhtar <alim.akhtar@samsung.com>,
+        Russell King <linux@armlinux.org.uk>
+References: <cover.1674584626.git.geert+renesas@glider.be>
+ <3d612c95031cf5c6d5af4ec35f40121288a2c1c6.1674584626.git.geert+renesas@glider.be>
+From: Siddharth Vadapalli <s-vadapalli@ti.com>
+In-Reply-To: <3d612c95031cf5c6d5af4ec35f40121288a2c1c6.1674584626.git.geert+renesas@glider.be>
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230124_124506_806639_04720789 
-X-CRM114-Status: GOOD (  11.98  )
+X-CRM114-CacheID: sfid-20230124_211341_433325_1C8B8001 
+X-CRM114-Status: GOOD (  17.09  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,39 +114,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-An mdelay of 1 seems to be necessary on some machines, since
-the monsel status does not seem to be accurate. On rare occasions just
-working with the phy after this pll check lead to no functional usb.
-With this short mdelay this issue was not reported again.
 
-Signed-off-by: Michael Grzeschik <m.grzeschik@pengutronix.de>
----
- drivers/phy/st/phy-stm32-usbphyc.c | 9 +++++++++
- 1 file changed, 9 insertions(+)
 
-diff --git a/drivers/phy/st/phy-stm32-usbphyc.c b/drivers/phy/st/phy-stm32-usbphyc.c
-index 5bb9647b078f12..c452a0caceb9fa 100644
---- a/drivers/phy/st/phy-stm32-usbphyc.c
-+++ b/drivers/phy/st/phy-stm32-usbphyc.c
-@@ -353,6 +353,15 @@ static int stm32_usbphyc_phy_init(struct phy *phy)
- 		goto pll_disable;
- 	}
- 
-+	/* This mdelay seems to be necessary on some machines, since the
-+	 * monsel status does not seem to be accurate. On rare occasions
-+	 * just working with the phy after this pll check the usb
-+	 * peripheral (e.g. on the dwc2) run into timeout issues and
-+	 * leading to no functional usb. With this short mdelay this
-+	 * issue was not reported again.
-+	 */
-+	mdelay(1);
-+
- 	usbphyc_phy->active = true;
- 
- 	return 0;
--- 
-2.30.2
+On 25/01/23 00:07, Geert Uytterhoeven wrote:
+> Use the new devm_of_phy_optional_get() helper instead of open-coding the
+> same operation.
+> 
+> Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
+> ---
+> v2:
+>   - Rebase on top of commit 854617f52ab42418 ("net: ethernet: ti:
+>     am65-cpsw: Handle -EPROBE_DEFER for Serdes PHY") in net-next
+>     (next-20230123 and later).
+> ---
+>  drivers/net/ethernet/ti/am65-cpsw-nuss.c | 8 +++-----
+>  1 file changed, 3 insertions(+), 5 deletions(-)
+> 
+> diff --git a/drivers/net/ethernet/ti/am65-cpsw-nuss.c b/drivers/net/ethernet/ti/am65-cpsw-nuss.c
+> index c696da89962f1ae3..794f228c8d632f7a 100644
+> --- a/drivers/net/ethernet/ti/am65-cpsw-nuss.c
+> +++ b/drivers/net/ethernet/ti/am65-cpsw-nuss.c
+> @@ -1460,11 +1460,9 @@ static int am65_cpsw_init_serdes_phy(struct device *dev, struct device_node *por
+>  	struct phy *phy;
+>  	int ret;
+>  
+> -	phy = devm_of_phy_get(dev, port_np, name);
+> -	if (PTR_ERR(phy) == -ENODEV)
+> -		return 0;
+> -	if (IS_ERR(phy))
+> -		return PTR_ERR(phy);
+> +	phy = devm_of_phy_optional_get(dev, port_np, name);
+> +	if (IS_ERR_OR_NULL(phy))
+> +		return PTR_ERR_OR_ZERO(phy);
 
+Reviewed-by: Siddharth Vadapalli <s-vadapalli@ti.com>
+
+Regards,
+Siddharth.
 
 -- 
 linux-phy mailing list
