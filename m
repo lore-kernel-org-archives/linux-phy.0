@@ -4,77 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DD03BC54E94
-	for <linux-phy@archiver.kernel.org>; Wed, 25 Jan 2023 14:42:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A6B69C54E94
+	for <linux-phy@archiver.kernel.org>; Wed, 25 Jan 2023 19:58:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GdPUDGEKJMh5iMLt06pbdWaYN8A3P8+BT7URQwsfLv0=; b=D4srfdvTzIYNlD
-	hIrQ7cqKJ2utuEh3/tXYkArHamnutOkJyUKf7MbB4zaKCcACKSN7y5Iwxwc9/ivCc/J+zcseYBo4K
-	eGV8gjKlJISLGbIrbl3rYothJhUoaPPqSwh6wt2zeCzp03gpNw9MmrK5oRlrbNThCKbJPByG+01Dw
-	rliaTxt7H5KuDeQiepqM65VsWzYts3++CLPJVGsXyR9WCIEu9bIVE+KACrD7oNLT0Qdjjj9iGK3rq
-	FdsoufPrFmR/zb1rkWTqqoGZkmX8LMXSMFQ8XRv80/NXOmmWYsnHuc/9KgNUojY/NJF+FCr1wZKgt
-	CMfQzMRQokn/Zvqjw4Iw==;
+	List-Owner; bh=tQndUpz0VVwadP9eiDQiJtsHe4unvzYUpV41rGbRI9A=; b=n3temIRXQ6+UoT
+	fdhhDytJOGBCQxZuU/pXuw8FsHbLyDese4u/CUusG8NlS2TPrkBsPTPKN63oPIMpXhZWJLx1ms6Z+
+	KCCWQnIHNeTPhLIwHAmUP36yjUdaT4dHVDfdY3KI6iLKZ9UawdQ6Oz5IoTtROBnnbO1VtAlw06VCT
+	nGjJ+SckLroeDDLNmPtv6zJeIH1BpF5SvC0Guyvn/jaNyu/Ft7Szn7F1TCQyd7938N8c6PlRcZu0d
+	2monJ7hEDICzcxds/fgBhUiUGawiapbpg3hyxeFX++xjalpkLtnPyBL7FyaIT9nFLPa3/qSLj0FEC
+	iJQpag7KQW+pyY1ebSVQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pKgz0-007dAP-NB; Wed, 25 Jan 2023 14:42:38 +0000
-Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
+	id 1pKluv-008WYf-1b; Wed, 25 Jan 2023 19:58:45 +0000
+Received: from mail-ot1-f53.google.com ([209.85.210.53])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pKgv3-007bCl-AW; Wed, 25 Jan 2023 14:38:34 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id 02FC4B81A10;
-	Wed, 25 Jan 2023 14:38:32 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 29564C433EF;
-	Wed, 25 Jan 2023 14:38:31 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=linuxfoundation.org;
-	s=korg; t=1674657511;
-	bh=IoSzOBYb/BV5JDLbRJWFIgSOplOI4fyYUdKcUEbQnYY=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=noibiVqfCvyFZg2ChVkUuFfQ6DRsQ8wekHQa2Gk352QS4PwyKuDa55AhvQAUIm13Q
-	 vn9QAG8SPB9/a7oZ+v/x7EytPKNQlJ4wboXRe0OX40yGABLZW1ZhmBe/EaUYTah0A/
-	 7GoO4F+taI2Z+4FlF8mHesav5c5G0dIhiR64XQTc=
-Date: Wed, 25 Jan 2023 15:38:29 +0100
-From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-To: Geert Uytterhoeven <geert+renesas@glider.be>
-Cc: Vinod Koul <vkoul@kernel.org>, Jonathan Corbet <corbet@lwn.net>,
-	Madalin Bucur <madalin.bucur@nxp.com>,
-	"David S . Miller" <davem@davemloft.net>,
-	Eric Dumazet <edumazet@google.com>,
-	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
-	Horatiu Vultur <horatiu.vultur@microchip.com>,
-	UNGLinuxDriver@microchip.com,
-	Thierry Reding <thierry.reding@gmail.com>,
-	Lorenzo Pieralisi <lpieralisi@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
-	Bjorn Helgaas <bhelgaas@google.com>,
-	Jonathan Hunter <jonathanh@nvidia.com>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Alan Stern <stern@rowland.harvard.edu>,
-	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
-	Alim Akhtar <alim.akhtar@samsung.com>,
-	Siddharth Vadapalli <s-vadapalli@ti.com>,
-	Russell King <linux@armlinux.org.uk>, linux-phy@lists.infradead.org,
-	linux-doc@vger.kernel.org, netdev@vger.kernel.org,
-	linux-tegra@vger.kernel.org, linux-pci@vger.kernel.org,
-	linux-usb@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	linux-samsung-soc@vger.kernel.org
-Subject: Re: [PATCH v2 8/9] usb: host: ehci-exynos: Convert to
- devm_of_phy_optional_get()
-Message-ID: <Y9E+5UspiYoNNaKd@kroah.com>
-References: <cover.1674584626.git.geert+renesas@glider.be>
- <a28baf4e07e464c43aff9e52263b5a902f5da9a0.1674584626.git.geert+renesas@glider.be>
+	id 1pKlus-008WXB-38; Wed, 25 Jan 2023 19:58:43 +0000
+Received: by mail-ot1-f53.google.com with SMTP id a1-20020a056830008100b006864df3b1f8so11775475oto.3;
+        Wed, 25 Jan 2023 11:58:38 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=2okyASH/JCrvQKLi2NuQ+QA06bfjxbFJqRj6dFE5tQM=;
+        b=sLFxBO3bGXmU0uXId83qdrXIC5GbavWmMgGOyfu/8d4XuLlJvu5doZiAbv395eXfKt
+         R6dnWX5YQXbYJkPaS3nE5ZBmQ562urBbSulzRwT0VrO7zgCr/pJ+aRxjqTl5JAEh1p+J
+         Pj183b4gnN5DMSgv5HYDLfjt09li4aQLub1Q8auFbYTpEzh6b33rkkjVe/X7CMhtqtUt
+         Um86y4yq8wNx+u/g4KxpPcHXZvi9r/bQo3lgriGmlLyudlOZmluIt1nTpZFtPku3XGIZ
+         VeYDDq4UfDbRKcxZZjxCjCoiJGAvPwBp/0tZLyiyaPQta7Ph0lZmHXspQLUnkwL9uJVV
+         /jww==
+X-Gm-Message-State: AO0yUKWs0hcmyCfCPRHoqP9PPyz+XGeidbBl2NVufFMlH5oGndh07V8R
+	vVw5ShtYl43biQyDJYi3tQ==
+X-Google-Smtp-Source: AK7set9d1LiSdqBsy5DLQ2ic1F6Uy2cyrnOE/ZpKtoJx+XfCn0Ca8jvBCpbuk+lmAZEFdBwjVA88DA==
+X-Received: by 2002:a05:6830:3487:b0:688:4c3c:71a3 with SMTP id c7-20020a056830348700b006884c3c71a3mr2890062otu.30.1674676717739;
+        Wed, 25 Jan 2023 11:58:37 -0800 (PST)
+Received: from robh_at_kernel.org (66-90-144-107.dyn.grandenetworks.net. [66.90.144.107])
+        by smtp.gmail.com with ESMTPSA id g1-20020a9d5f81000000b0068687c98725sm2540366oti.62.2023.01.25.11.58.36
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 25 Jan 2023 11:58:37 -0800 (PST)
+Received: (nullmailer pid 2755057 invoked by uid 1000);
+	Wed, 25 Jan 2023 19:58:36 -0000
+Date: Wed, 25 Jan 2023 13:58:36 -0600
+From: Rob Herring <robh@kernel.org>
+To: rashmi.a@intel.com
+Cc: mgross@linux.intel.com, linux-kernel@vger.kernel.org, nandhini.srikandan@intel.com, vkoul@kernel.org, adrian.hunter@intel.com, linux-phy@lists.infradead.org, kenchappa.demakkanavar@intel.com, furong.zhou@intel.com, mallikarjunappa.sangannavar@intel.com, vasavi.v.itha@intel.com, robh+dt@kernel.org, kishon@ti.com, andriy.shevchenko@linux.intel.com, linux-arm-kernel@lists.infradead.org, linux-mmc@vger.kernel.org, ulf.hansson@linaro.org, devicetree@vger.kernel.org, mahesh.r.vaidya@intel.com, michal.simek@xilinx.com, kris.pan@linux.intel.com
+Subject: Re: [PATCH v1 4/4] Revert "dt-bindings: phy: intel: Add Thunder Bay
+ eMMC PHY bindings"
+Message-ID: <167467671590.2755018.3180084098513210344.robh@kernel.org>
+References: <20230124054427.28808-1-rashmi.a@intel.com>
+ <20230124054427.28808-4-rashmi.a@intel.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <a28baf4e07e464c43aff9e52263b5a902f5da9a0.1674584626.git.geert+renesas@glider.be>
+In-Reply-To: <20230124054427.28808-4-rashmi.a@intel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230125_063833_536850_626E2711 
-X-CRM114-Status: GOOD (  14.22  )
+X-CRM114-CacheID: sfid-20230125_115842_148929_AD364846 
+X-CRM114-Status: UNSURE (   9.90  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,21 +81,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Jan 24, 2023 at 07:37:27PM +0100, Geert Uytterhoeven wrote:
-> Use the new devm_of_phy_optional_get() helper instead of open-coding the
-> same operation.
-> 
-> As devm_of_phy_optional_get() returns NULL if either the PHY cannot be
-> found, or if support for the PHY framework is not enabled, it is no
-> longer needed to check for -ENODEV or -ENOSYS.
-> 
-> This lets us drop several checks for IS_ERR(), as phy_power_{on,off}()
-> handle NULL parameters fine.
-> 
-> Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
-> Reviewed-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 
-Acked-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+On Tue, 24 Jan 2023 11:14:27 +0530, rashmi.a@intel.com wrote:
+> From: "A, Rashmi" <rashmi.a@intel.com>
+> 
+> This reverts commit efb6935dd786a9d213ee542ed77d47ece700357c.
+> 
+> Revert Thunder Bay specific code as the product got cancelled
+> and there are no end customers.
+> 
+> Signed-off-by: A, Rashmi <rashmi.a@intel.com>
+> Reviewed-by: Hunter, Adrian <adrian.hunter@intel.com>
+> ---
+>  .../phy/intel,phy-thunderbay-emmc.yaml        | 45 -------------------
+>  MAINTAINERS                                   |  7 ---
+>  2 files changed, 52 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/phy/intel,phy-thunderbay-emmc.yaml
+> 
+
+Acked-by: Rob Herring <robh@kernel.org>
 
 -- 
 linux-phy mailing list
