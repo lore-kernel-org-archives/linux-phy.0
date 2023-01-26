@@ -4,63 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B3721C54EED
-	for <linux-phy@archiver.kernel.org>; Thu, 26 Jan 2023 08:10:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C5937C05027
+	for <linux-phy@archiver.kernel.org>; Thu, 26 Jan 2023 11:03:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=auKl//7QGOrBrthzcvASwmS7DS0p8bdyfmp3YME6bso=; b=2+GzLdE9WCaAnq
-	/1y0wd7dpNGt1GitWIS7mwuYqNZMWi/0aPcwx4dZ8yjIFzbink25jV7CVy57Bj3LZJqTyJbWE5OFS
-	NTFKE2ZRyqpRmpBbTbKKF0FlYtz29ZjkxDHEiVAjLP1IolM9sBQNx1ElSiLsccFHsRtk6JjXRYlqM
-	NPexmKqtsh9R+7FQAC/7ru6YwkwLgj1zocXMJcRDI0ag+Yh/CR2SdiPp2hj2IyWLzxxxFyw8Sutkz
-	krNEVTmT7cwU7oaYvBVMbUBfpgLaORUZBmprKaA8GGGfAT96SN4eUSs9OUo4RS8sJMRKKd9RgFFzC
-	T8a761O+nZnDBFhuv8Sg==;
+	List-Owner; bh=kAX5Ty/i0jk0zPO+5ctUWq/nCv2M33bTvDLMpXrYnus=; b=vkVCLh856lhuwU
+	69kFHWqu3YsgGzwhfPskvvhIeng84HGWAEZFKPJoaYxwvvTEPnLdSzUtYwmoU4cfzkSlVZtGx8Cpd
+	UK0SRfItDhUrGb8yjORmMkl2ottHZG9XN+56GOkddBCCz3KeHjYpTREWdQBwmHM+ojoXthn6Hc/6i
+	LLryh/5s8SFsCP78x1OdElDtPaOZnWSIvu7xdpiD4MAm8YSA24cH2l5ZJbXVERHR2vd8GBOofOQfM
+	lBdw/jjqcFEf8DXnLWFmQV79+qRj55hUpVD/akNW+zGZaG0iScd8u6+e6iCNDFhnIXTWKqqRqdHSi
+	kHkAaluaEk2LpcdZQz6w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pKxKn-009x5s-Vw; Thu, 26 Jan 2023 08:10:14 +0000
-Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
+	id 1pL02O-00AdMe-00; Thu, 26 Jan 2023 11:03:24 +0000
+Received: from mail-wr1-x42d.google.com ([2a00:1450:4864:20::42d])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pKxKk-009x5D-W5
-	for linux-phy@lists.infradead.org; Thu, 26 Jan 2023 08:10:12 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id 9D13FB81CB7;
-	Thu, 26 Jan 2023 08:10:09 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 26FD7C433EF;
-	Thu, 26 Jan 2023 08:10:05 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1674720608;
-	bh=8N0004Ksl54/+9j2hPsSyRkAcDEsg7JhyNVs9HdSx/U=;
-	h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
-	b=Nb1qE0LYFJSdahhI/hjhx4Bn+9N0xfzHaKzF78swyiLpJLX+Ja5NgGpNlqrQjZxE7
-	 lajWN3P8d3tnkP8Pku3FZZX55RKBdvsgA6OYgr0RnnNntPOd98VD2/AYwgUD2Qkp/Z
-	 Vd9C13vVHavMCWQWtYJBwPgmKQyawP5YBNTQvgkMkIfBs2Oslzh8n9H9uqQh9pgDGG
-	 IA/5TLw7ug62ADl9GJ0GPI/y90j0msxPH4yVfmKi2/c5zDAozBGOCfS7A4FSWUZU2N
-	 Llgp5rveODYs0zWCgaYCamrtbi++OVn16f1MHH3EtHmk9dnGECdk5/FIu10YzSAvVC
-	 kucg3GPA1sbnw==
-Date: Thu, 26 Jan 2023 09:10:02 +0100
-From: Mauro Carvalho Chehab <mchehab@kernel.org>
-To: Rob Herring <robh@kernel.org>
-Cc: Yu Chen <chenyu56@huawei.com>, Binghui Wang <wangbinghui@hisilicon.com>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Carvalho Chehab
- <mchehab+huawei@kernel.org>, linux-usb@vger.kernel.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] dt-bindings: phy: hisilicon: Fix
- 'hisilicon,eye-diagram-param' differing types
-Message-ID: <20230126091002.01f58b94@coco.lan>
-In-Reply-To: <20230125221444.3058631-1-robh@kernel.org>
-References: <20230125221444.3058631-1-robh@kernel.org>
-X-Mailer: Claws Mail 4.1.1 (GTK 3.24.36; x86_64-redhat-linux-gnu)
+	id 1pL02L-00AdLp-F0
+	for linux-phy@lists.infradead.org; Thu, 26 Jan 2023 11:03:22 +0000
+Received: by mail-wr1-x42d.google.com with SMTP id z5so1369574wrt.6
+        for <linux-phy@lists.infradead.org>; Thu, 26 Jan 2023 03:03:18 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=u7vCrE7q/VPLeTXLg6KW/8CfPxh94AhXp/Mdu/doGko=;
+        b=Ocn7Y8wYq1w5CE2BQNmoD7/PgjoqMViaN5x/i/CG2nzNDplo2dw1NyjE6D8lOd20If
+         XDGwpwhkiGSUsqs/HZWFJ5/TFs2RLZZT9TVl5taOHEoRGbFevexTH1RI3spP1/LIU9xK
+         SNNjnEdyfGFKSylVbyWs3xZy+zZXoIPnOo/GO+WytDe45RUa2+L/+k3pzhqJquXo8/Ze
+         iQP1Ci72opixlb/HHh8UKVuTvsAyPU6qHEGGQWmsSRW0K9jlMwQyVoESvuTgwT3Acww6
+         NiSqVmKyy1d8zq2BnBXufJKDMvvXBtCVBYOm0E0dRT5z2RHucMuWl+7kpSbgTIIDNAx7
+         +eQw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=u7vCrE7q/VPLeTXLg6KW/8CfPxh94AhXp/Mdu/doGko=;
+        b=a2WwNGxX523cp6BtBUrZ/zqcOC5vt0P0sIVxZ2HYaZkeQWpSA5eamo4LHY1l+g4Mio
+         H2ICxk0BH8ndzGEIs0E4Lvv6LuLAXpvcAp/Xv9/CSTZ12Iqoq9PmK1rCeVcXM9sbL77B
+         NXzS7re8capR1aO2qcUwum3WxOgJfIZSJqq9zwOeagNOw5Vz2xqrzqcvHLMj5RPUE5VZ
+         xK38ph3kPS3bI8v8ktP3Ylvi4stW/vACBRoMGfkz08VK0qAr6H4GAebL801AfnauK46L
+         LGL6vBtM9S8xHu8yx6s3/GLxyY18/lgphz3rVqZ7T42eiD3yNZ9sRz6kv7BT8Sn0xwPM
+         z33A==
+X-Gm-Message-State: AFqh2kpqzyvhMMj+qnF0XRRsUAL4watC9F9B5haAIX9xttfx4LDNyVLe
+	uLoQAu1WoDvpvOPA/7WDxI3aaQ==
+X-Google-Smtp-Source: AMrXdXvqpDZOxx5pX8SxZSPMgEW0upg3chd+5e2q4Gd1AURW4q3uxbcLqtlr0+GZqZJ25qGwXEd4yw==
+X-Received: by 2002:adf:edd1:0:b0:2bd:c6ce:7bfc with SMTP id v17-20020adfedd1000000b002bdc6ce7bfcmr32384945wro.42.1674730997639;
+        Thu, 26 Jan 2023 03:03:17 -0800 (PST)
+Received: from [192.168.1.109] ([178.197.216.144])
+        by smtp.gmail.com with ESMTPSA id b14-20020adff90e000000b002be34f87a34sm1061340wrr.1.2023.01.26.03.03.15
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 26 Jan 2023 03:03:17 -0800 (PST)
+Message-ID: <184f6a3a-63a5-7247-535c-ac7a1654528e@linaro.org>
+Date: Thu, 26 Jan 2023 12:03:14 +0100
 MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.7.0
+Subject: Re: [PATCH v5 01/12] dt-bindings: phy: Add QMP PCIe PHY comptible for
+ SM8550
+Content-Language: en-US
+To: Abel Vesa <abel.vesa@linaro.org>, Andy Gross <agross@kernel.org>,
+ Bjorn Andersson <andersson@kernel.org>,
+ Konrad Dybcio <konrad.dybcio@linaro.org>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Rob Herring
+ <robh@kernel.org>, =?UTF-8?Q?Krzysztof_Wilczy=c5=84ski?= <kw@linux.com>,
+ Bjorn Helgaas <bhelgaas@google.com>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ "vkoul@kernel.org" <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ Manivannan Sadhasivam <mani@kernel.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>
+Cc: linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
+ devicetree@vger.kernel.org,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ linux-phy@lists.infradead.org
+References: <20230124124714.3087948-1-abel.vesa@linaro.org>
+ <20230124124714.3087948-2-abel.vesa@linaro.org>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <20230124124714.3087948-2-abel.vesa@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230126_001011_184724_23444935 
-X-CRM114-Status: GOOD (  14.68  )
+X-CRM114-CacheID: sfid-20230126_030321_531145_05A47D61 
+X-CRM114-Status: UNSURE (   7.67  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,54 +107,20 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Em Wed, 25 Jan 2023 16:14:43 -0600
-Rob Herring <robh@kernel.org> escreveu:
-
-> 'hisilicon,eye-diagram-param' is also defined in
-> hisilicon,phy-hi3670-pcie.yaml as a 'uint32-array'. Unify it to use
-> 'uint32-array' everywhere.
+On 24/01/2023 13:47, Abel Vesa wrote:
+> Document the QMP PCIe PHY compatible for SM8550.
 > 
-> Signed-off-by: Rob Herring <robh@kernel.org>
-Reviewed-by: Mauro Carvalho Chehab <mchehab@kernel.org>
-
+> Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
 > ---
->  .../devicetree/bindings/phy/hisilicon,hi3660-usb3.yaml         | 3 ++-
->  .../devicetree/bindings/phy/hisilicon,hi3670-usb3.yaml         | 3 ++-
->  2 files changed, 4 insertions(+), 2 deletions(-)
 > 
-> diff --git a/Documentation/devicetree/bindings/phy/hisilicon,hi3660-usb3.yaml b/Documentation/devicetree/bindings/phy/hisilicon,hi3660-usb3.yaml
-> index 20b79e2e8b82..b11d9873854a 100644
-> --- a/Documentation/devicetree/bindings/phy/hisilicon,hi3660-usb3.yaml
-> +++ b/Documentation/devicetree/bindings/phy/hisilicon,hi3660-usb3.yaml
-> @@ -27,7 +27,8 @@ properties:
->      description: phandle of syscon used to control usb tcxo.
->  
->    hisilicon,eye-diagram-param:
-> -    $ref: /schemas/types.yaml#/definitions/uint32
-> +    $ref: /schemas/types.yaml#/definitions/uint32-array
-> +    maxItems: 1
->      description: Eye diagram for phy.
->  
->  required:
-> diff --git a/Documentation/devicetree/bindings/phy/hisilicon,hi3670-usb3.yaml b/Documentation/devicetree/bindings/phy/hisilicon,hi3670-usb3.yaml
-> index 1cb00dbcd4c5..3c69aca6c7eb 100644
-> --- a/Documentation/devicetree/bindings/phy/hisilicon,hi3670-usb3.yaml
-> +++ b/Documentation/devicetree/bindings/phy/hisilicon,hi3670-usb3.yaml
-> @@ -32,7 +32,8 @@ properties:
->      description: phandle of syscon used to control phy deep sleep.
->  
->    hisilicon,eye-diagram-param:
-> -    $ref: /schemas/types.yaml#/definitions/uint32
-> +    $ref: /schemas/types.yaml#/definitions/uint32-array
-> +    maxItems: 1
->      description: Eye diagram for phy.
->  
->    hisilicon,tx-vboost-lvl:
+> This patchset relies on the following patchset:
 
 
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
-Thanks,
-Mauro
+Best regards,
+Krzysztof
+
 
 -- 
 linux-phy mailing list
