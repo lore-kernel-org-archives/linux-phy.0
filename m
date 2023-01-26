@@ -4,62 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2385AC05027
-	for <linux-phy@archiver.kernel.org>; Thu, 26 Jan 2023 13:59:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8C8F9C54E94
+	for <linux-phy@archiver.kernel.org>; Thu, 26 Jan 2023 13:59:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZRQkWwoCAScXlIfMOF8L9htnqcf9wImx3pY48oJrTD0=; b=ICMkf/Ju+MZm1X
-	+i2O49VYLOgyfPr7rY+IEbN7mdzYLeERyHMwiHl4RgHhoiSetWqUF9r47c6bCPdrkqwZE57Rj7Hmm
-	SjI4e9WvlJRG4E1utN2n23qdJnVPv8S8ROciX76U8p3740bdGQyeuMLupJp5kVAnF8PMndf0X3gbI
-	kl5swcSIiGSwbZdFOJmc//kjanXoi9c3eXOyz8adPt6qQhsIFzmSct0iCpJ/J75F0Xcwa2hoWBjLH
-	P6euYgtR5kt9rQQjjInlIzLrEtdp9sZ0gmDF3wri8aG3l36WJAZuPU/1sgcExK17QWWJlLP6tscWk
-	h5ddBakMJnLy5RP6DLjA==;
+	List-Owner; bh=m/G9i4yKYIIcA7MyAVVijZij5Tsj7XrMutCi4fH5bVQ=; b=kDzz1kGUbLMtxJ
+	HlAjQB68Bn8AFjPIiurAzVrN60iLnfeNhyrvwTyjx0WlJ3lbb39FdO7LaBOofzo9t44KKoXg09rQe
+	Ouy33cjMawZGabp4jpTFmDGAXG3v+PbzRig9E7vLtdRg27cWgaaFt1y74TgUkiYz9nONGvNOmg/EU
+	XAPILl/UKfnSOSQP3Fp99TjHUoXrOolHdLpjc2btScTuTFgDaLV2IFIOD0qLDx091njwjFsZ62D30
+	emkDQalzCT4haooYgTYali119LvTEWRPHKTc84B6Jmrn+mnk3ibK37NUoEkCCto7W72KOKwTRtYWP
+	7avPSFd34fcCeWXW+8+g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pL2mh-00B5Sk-C7; Thu, 26 Jan 2023 13:59:23 +0000
-Received: from mail-wr1-x435.google.com ([2a00:1450:4864:20::435])
+	id 1pL2mj-00B5UV-LL; Thu, 26 Jan 2023 13:59:25 +0000
+Received: from mail-wr1-x42b.google.com ([2a00:1450:4864:20::42b])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pL2mc-00B5Nx-Vq
-	for linux-phy@lists.infradead.org; Thu, 26 Jan 2023 13:59:20 +0000
-Received: by mail-wr1-x435.google.com with SMTP id d14so1847517wrr.9
-        for <linux-phy@lists.infradead.org>; Thu, 26 Jan 2023 05:59:16 -0800 (PST)
+	id 1pL2me-00B5OY-7F
+	for linux-phy@lists.infradead.org; Thu, 26 Jan 2023 13:59:21 +0000
+Received: by mail-wr1-x42b.google.com with SMTP id n7so1860179wrx.5
+        for <linux-phy@lists.infradead.org>; Thu, 26 Jan 2023 05:59:17 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=9yxu9ED25jI4YsnaXumV3Ax7b6QC/J0yJHopprA5xIo=;
-        b=tVjYD9WT4Va5NNtVX6RP6snlZAIg/T/dWyfEhIobdh59a76Za3x00mWJlt5izQ59aL
-         4Us4qHv+WQfqOA/hSrtIZOtea6eBCPM+qE1xSXjwGW0dJqNZcS85er8RKJ5o9GphJATE
-         Az/dfucI8PmLzih7dG41iGvFwrDDVKg/O7RY7gyStHd0VmHmE0bn9hMdhTot4PpvFBP+
-         Bkb6Cq8jwadM1USTHeI5tC8XzaZWGM+4NTwR7pXXB3+MT6CwJNK4jbjgx6exnXG/q5hR
-         L6UIcsz8kchWk0InEm94v72DzMuMwSoB3vxekx1FvB1aBnd4hLryUQ1B86SRGGwabKmW
-         VP7w==
+        bh=JwXf2047+hi/AeAqI5m/w1YUk4KylbD2BCgLR+1i3CE=;
+        b=dSXKZWJcgPLKm97z6OFwwrz6aIf1Vx+18WpyiKVwo8JaUo0wJK8s1GqdhgWKhzJgBC
+         Dd0PvI1W3PsQ5JVMvs7W+DpzAqeexYc6SGD5jGkqth4Ui7pQFH5smH+9fEy36obFB5/d
+         l1dSrW4jT1WLZnPgX9orXg/0UZ6Sj6/ASatTi+MxOTeyonMosiNIAQIeyREsSzb7Ru61
+         22HSlRuwfrXWLO+QDnybLmmKaEvTfTxTt4FqhfqlyJryu0Z/Kna8RGreyZexKrfawqOb
+         KHIEIVFj04Arc1CCos8KloHZ5/GSdVr3LnyXk+nNHjKruCDDj032COQjThxkbqXP34L2
+         9b2Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=9yxu9ED25jI4YsnaXumV3Ax7b6QC/J0yJHopprA5xIo=;
-        b=p7sd4sozv0R6Np0OOB0zsGFOGck6K08LNcD3oZoUjRpLt+Iprx3m930LSolhwY9cbD
-         Ro/GKoBYvW9HpE4lSIYv54g2xjKjhw5axLbJ5ykOFHeIcVowusKEZEkos2R/Rtf0nYVJ
-         cx/5Pqr/OHfsxSEBXzdATIRHJmEPBHCWVOoBe3mq4yxbFLus20KpFGN7og7NJchqK/hA
-         dyiyrcpnnGSV5V+qcPI8HbdTQrm73bILAArDHS6s6gDQZnZHpY9Y8g7E7Y3z/MSQ1X6f
-         gzBITprm6ezeBA2eL8hS29l4qSxEM0i07xfsfTZLoFDQFhaiiTCB22SgNOW/VrDlvQ55
-         ZskQ==
-X-Gm-Message-State: AFqh2kqeYjBsHI8c9TMKdQbYEs4QpN9T93wfY4nrwn5RmgWiPw2Lb/6H
-	l20HngqWaNfi3ntkCvyucJm2hA==
-X-Google-Smtp-Source: AMrXdXsDK3DWCPIRP6iehIYsLBlDFOqDTH3kObw33/RQ4aaajCqfjj+naQDb3pmd097JUAdNv7HtJQ==
-X-Received: by 2002:a05:6000:3c9:b0:2bc:7f32:e6ae with SMTP id b9-20020a05600003c900b002bc7f32e6aemr30290460wrg.64.1674741555300;
-        Thu, 26 Jan 2023 05:59:15 -0800 (PST)
+        bh=JwXf2047+hi/AeAqI5m/w1YUk4KylbD2BCgLR+1i3CE=;
+        b=KE1Li7omzIDjDX5E+a0bF/KApcGBZF6HiZmK53/lrAdXRNrIeDGbcKftv6Wbi2LTgq
+         Axnz+KyCWKA3hsRq0QbOdGntzh2MJv9KwWIDlipeeuArMjRjylMsPH4rnp/+40EZHyA+
+         gfha715159NFmRcxPY0BYGoW6esA0qo27B6HaMRlr6b8ZWydarYSm2j6mLpX25xPkWXS
+         7MUApZ8HtAH0Z65/9pGa3Ex/8IVSkzEw2IL+5d5yC18P5c3K4jUmDQ3qkdJSPJwdKphS
+         zDdmrln9T1IIBILva9hOauNaEfT0jPBIgMP7gBXFcMCmf+qPevh7UbJvSMTciNVzjzjS
+         Amuw==
+X-Gm-Message-State: AFqh2krD6BgYwW03ccQFzrByIyJNteqQ8BSvqzoe+R/fw+HFABVtFZHU
+	5REilWqU/GeDISUMagLJGCmWjoZO8AdmWiMt
+X-Google-Smtp-Source: AMrXdXv1sxQUxwm9hhjE+Mpz3hy15gKvu4QtgIEtWRnt22nyf7jTGEttFz2syjCVSyAg6tHiucbzDg==
+X-Received: by 2002:adf:e18c:0:b0:2be:493f:3b34 with SMTP id az12-20020adfe18c000000b002be493f3b34mr29630818wrb.26.1674741556524;
+        Thu, 26 Jan 2023 05:59:16 -0800 (PST)
 Received: from hackbox.lan ([94.52.112.99])
-        by smtp.gmail.com with ESMTPSA id l15-20020a5d6d8f000000b002bfb37497a8sm1594067wrs.31.2023.01.26.05.59.14
+        by smtp.gmail.com with ESMTPSA id l15-20020a5d6d8f000000b002bfb37497a8sm1594067wrs.31.2023.01.26.05.59.15
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 26 Jan 2023 05:59:14 -0800 (PST)
+        Thu, 26 Jan 2023 05:59:16 -0800 (PST)
 From: Abel Vesa <abel.vesa@linaro.org>
 To: Andy Gross <agross@kernel.org>,
 	Bjorn Andersson <andersson@kernel.org>,
@@ -73,16 +73,17 @@ Cc: linux-arm-msm@vger.kernel.org,
 	devicetree@vger.kernel.org,
 	Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
 	linux-phy@lists.infradead.org
-Subject: [RFC v2 1/7] dt-bindings: phy: Add qcom,snps-eusb2-repeater schema file
-Date: Thu, 26 Jan 2023 15:59:03 +0200
-Message-Id: <20230126135909.1624890-2-abel.vesa@linaro.org>
+Subject: [RFC v2 2/7] dt-bindings: phy: qcom,snps-eusb2-repeater: Add phy related properties
+Date: Thu, 26 Jan 2023 15:59:04 +0200
+Message-Id: <20230126135909.1624890-3-abel.vesa@linaro.org>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20230126135909.1624890-1-abel.vesa@linaro.org>
 References: <20230126135909.1624890-1-abel.vesa@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230126_055919_065075_E5470F13 
-X-CRM114-Status: GOOD (  12.44  )
+X-CRM114-CacheID: sfid-20230126_055920_293088_67F35440 
+X-CRM114-Status: UNSURE (   8.67  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,69 +100,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The SM8550 SoC uses Synopsis eUSB2 repeater found in PM8550b.
-Add a dt-binding schema for the new driver.
+The phy properties are used for allowing the eusb2 to interface
+with the repeater, which is modelled as a phy driver. Add the phys
+and phy-names properties.
 
 Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
 ---
- .../phy/qcom,snps-eusb2-repeater.yaml         | 48 +++++++++++++++++++
- 1 file changed, 48 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml
+ .../devicetree/bindings/phy/qcom,snps-eusb2-phy.yaml     | 9 +++++++++
+ 1 file changed, 9 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml b/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml
-new file mode 100644
-index 000000000000..3b99038be74e
---- /dev/null
-+++ b/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml
-@@ -0,0 +1,48 @@
-+# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/phy/qcom,snps-eusb2-repeater.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Qualcomm Synopsis eUSB2 to USB 2.0 repeater
-+
-+maintainers:
-+  - Abel Vesa <abel.vesa@linaro.org>
-+
-+properties:
-+  compatible:
-+    const: qcom,pm8550b-eusb2-repeater
-+
-+  reg:
+diff --git a/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-phy.yaml
+index 49a5dad486c2..3279ed0fd44f 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-phy.yaml
+@@ -36,6 +36,15 @@ properties:
+     description:
+       Phandle to reset to phy block.
+ 
++  phys:
 +    maxItems: 1
++    description:
++      Phandle to eUSB2 to USB 2.0 repeater
 +
-+  "#phy-cells":
-+    const: 0
++  phy-names:
++    items:
++      - const: eusb2-repeater
 +
-+  vdd18-supply: true
-+
-+  vdd3-supply: true
-+
-+required:
-+  - compatible
-+  - reg
-+  - "#phy-cells"
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    #include <dt-bindings/spmi/spmi.h>
-+    pm8550b: pmic@7 {
-+        compatible = "qcom,pm8550", "qcom,spmi-pmic";
-+        reg = <0x7 SPMI_USID>;
-+        #address-cells = <1>;
-+        #size-cells = <0>;
-+
-+        pm8550b_eusb2_repeater: phy@fd00 {
-+          compatible = "qcom,pm8550b-eusb2-repeater";
-+          reg = <0xfd00>;
-+          #phy-cells = <0>;
-+        };
-+    };
-+...
+   vdd-supply:
+     description:
+       Phandle to 0.88V regulator supply to PHY digital circuit.
 -- 
 2.34.1
 
