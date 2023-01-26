@@ -4,68 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6D0A5C54E94
-	for <linux-phy@archiver.kernel.org>; Wed, 25 Jan 2023 23:49:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B3721C54EED
+	for <linux-phy@archiver.kernel.org>; Thu, 26 Jan 2023 08:10:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eV8pJOg4Z19cCwIE2eppzmKzLiF8E1/Vm1cBv7VI8lY=; b=3csQokwkxwwjK8
-	SsnoIBdvzqSApK/KFg/kdRGIIxYjPcb46CsENtsJ7d9AOqcNC/gmXHx86MhI4fZBwyGmT9rnF1jEA
-	fo8xj9fYKBx1iwIuX+PsL19wBh+Q5NdPrbysD2BwpReA5vCLk1zt2RIwrkpbJ13jW1vMKg/7h6cq8
-	ctQO5aAwTHBhSo1jM8u3QEbVUmsjAcsEr3VfLS4ziObRs/vHp2NoMAd5X8nXsKZOPFxEj2aqWH4vS
-	zHwXMmDUFH90bwEDdV1Bvs5d658Cf8HBF1KimVtNCtVxB4d88Ey14EqrvYnjCRZHyDlsNgHJ6J4zN
-	hki6/Fk7HNmG3NglRHrQ==;
+	List-Owner; bh=auKl//7QGOrBrthzcvASwmS7DS0p8bdyfmp3YME6bso=; b=2+GzLdE9WCaAnq
+	/1y0wd7dpNGt1GitWIS7mwuYqNZMWi/0aPcwx4dZ8yjIFzbink25jV7CVy57Bj3LZJqTyJbWE5OFS
+	NTFKE2ZRyqpRmpBbTbKKF0FlYtz29ZjkxDHEiVAjLP1IolM9sBQNx1ElSiLsccFHsRtk6JjXRYlqM
+	NPexmKqtsh9R+7FQAC/7ru6YwkwLgj1zocXMJcRDI0ag+Yh/CR2SdiPp2hj2IyWLzxxxFyw8Sutkz
+	krNEVTmT7cwU7oaYvBVMbUBfpgLaORUZBmprKaA8GGGfAT96SN4eUSs9OUo4RS8sJMRKKd9RgFFzC
+	T8a761O+nZnDBFhuv8Sg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pKpVr-0095iC-SM; Wed, 25 Jan 2023 23:49:07 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1pKxKn-009x5s-Vw; Thu, 26 Jan 2023 08:10:14 +0000
+Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pKpVg-0095fa-LA; Wed, 25 Jan 2023 23:48:58 +0000
+	id 1pKxKk-009x5D-W5
+	for linux-phy@lists.infradead.org; Thu, 26 Jan 2023 08:10:12 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 05FA7616A8;
-	Wed, 25 Jan 2023 23:48:56 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id DB6B3C433D2;
-	Wed, 25 Jan 2023 23:48:51 +0000 (UTC)
+	by ams.source.kernel.org (Postfix) with ESMTPS id 9D13FB81CB7;
+	Thu, 26 Jan 2023 08:10:09 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 26FD7C433EF;
+	Thu, 26 Jan 2023 08:10:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1674690535;
-	bh=XEe8zkYl5BVybaU3QY5R7IM0pyPQXzr1kJej+KUlLj4=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=gDWtAfWb3BXcxxlGNhh9AdTAPGhupaDp/wf6H+M9VheIaTriDe0fg+q4s6R3byKQN
-	 BaJPXnM1w/51P50L0Bo+2Gv3SAm52g51NVPi2L2yn3MrDd+FoXmOdngr0/idJUCKQ2
-	 yZTTcIS4iRErb4dVBNSwuhQrqGa6YgTvYyzwm6YV6j5vOhjwzmHLENdxd8occSHlt7
-	 MHtgsIQkjvBLlE5snAAko0z7clXa3T42JcCyYuZxGKVutzoh7sUSC5nLh1qVKAJWmi
-	 V7vZp4GjNy/fKzgR1VwodgzkTRQCe/+hy29bcjJjDayaqzrwStKk72GOoVVln6/24a
-	 2jUTkEPIe0v9w==
-Date: Thu, 26 Jan 2023 07:48:46 +0800
-From: Shawn Guo <shawnguo@kernel.org>
-To: Sean Anderson <sean.anderson@seco.com>
-Cc: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
-	Camelia Alexandra Groza <camelia.groza@nxp.com>,
-	Madalin Bucur <madalin.bucur@nxp.com>,
-	Bagas Sanjaya <bagasdotme@gmail.com>,
-	Rob Herring <robh+dt@kernel.org>,
-	Ioana Ciornei <ioana.ciornei@nxp.com>,
-	linuxppc-dev@lists.ozlabs.org, devicetree@vger.kernel.org,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Li Yang <leoyang.li@nxp.com>
-Subject: Re: [PATCH v9 08/10] arm64: dts: ls1088a: Add serdes bindings
-Message-ID: <20230125234845.GE20713@T480>
-References: <20221230000139.2846763-1-sean.anderson@seco.com>
- <20221230000139.2846763-9-sean.anderson@seco.com>
+	s=k20201202; t=1674720608;
+	bh=8N0004Ksl54/+9j2hPsSyRkAcDEsg7JhyNVs9HdSx/U=;
+	h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+	b=Nb1qE0LYFJSdahhI/hjhx4Bn+9N0xfzHaKzF78swyiLpJLX+Ja5NgGpNlqrQjZxE7
+	 lajWN3P8d3tnkP8Pku3FZZX55RKBdvsgA6OYgr0RnnNntPOd98VD2/AYwgUD2Qkp/Z
+	 Vd9C13vVHavMCWQWtYJBwPgmKQyawP5YBNTQvgkMkIfBs2Oslzh8n9H9uqQh9pgDGG
+	 IA/5TLw7ug62ADl9GJ0GPI/y90j0msxPH4yVfmKi2/c5zDAozBGOCfS7A4FSWUZU2N
+	 Llgp5rveODYs0zWCgaYCamrtbi++OVn16f1MHH3EtHmk9dnGECdk5/FIu10YzSAvVC
+	 kucg3GPA1sbnw==
+Date: Thu, 26 Jan 2023 09:10:02 +0100
+From: Mauro Carvalho Chehab <mchehab@kernel.org>
+To: Rob Herring <robh@kernel.org>
+Cc: Yu Chen <chenyu56@huawei.com>, Binghui Wang <wangbinghui@hisilicon.com>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Carvalho Chehab
+ <mchehab+huawei@kernel.org>, linux-usb@vger.kernel.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org
+Subject: Re: [PATCH] dt-bindings: phy: hisilicon: Fix
+ 'hisilicon,eye-diagram-param' differing types
+Message-ID: <20230126091002.01f58b94@coco.lan>
+In-Reply-To: <20230125221444.3058631-1-robh@kernel.org>
+References: <20230125221444.3058631-1-robh@kernel.org>
+X-Mailer: Claws Mail 4.1.1 (GTK 3.24.36; x86_64-redhat-linux-gnu)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20221230000139.2846763-9-sean.anderson@seco.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230125_154856_758721_2F7FFDAA 
-X-CRM114-Status: GOOD (  17.15  )
+X-CRM114-CacheID: sfid-20230126_001011_184724_23444935 
+X-CRM114-Status: GOOD (  14.68  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,62 +77,54 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Dec 29, 2022 at 07:01:37PM -0500, Sean Anderson wrote:
-> This adds bindings for the SerDes devices. They are disabled by default
-> to prevent any breakage on existing boards.
+Em Wed, 25 Jan 2023 16:14:43 -0600
+Rob Herring <robh@kernel.org> escreveu:
+
+> 'hisilicon,eye-diagram-param' is also defined in
+> hisilicon,phy-hi3670-pcie.yaml as a 'uint32-array'. Unify it to use
+> 'uint32-array' everywhere.
 > 
-> Signed-off-by: Sean Anderson <sean.anderson@seco.com>
+> Signed-off-by: Rob Herring <robh@kernel.org>
+Reviewed-by: Mauro Carvalho Chehab <mchehab@kernel.org>
+
 > ---
+>  .../devicetree/bindings/phy/hisilicon,hi3660-usb3.yaml         | 3 ++-
+>  .../devicetree/bindings/phy/hisilicon,hi3670-usb3.yaml         | 3 ++-
+>  2 files changed, 4 insertions(+), 2 deletions(-)
 > 
-> (no changes since v4)
-> 
-> Changes in v4:
-> - Convert to new bindings
-> 
-> Changes in v3:
-> - New
-> 
->  arch/arm64/boot/dts/freescale/fsl-ls1088a.dtsi | 18 ++++++++++++++++++
->  1 file changed, 18 insertions(+)
-> 
-> diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1088a.dtsi b/arch/arm64/boot/dts/freescale/fsl-ls1088a.dtsi
-> index 260d045dbd9a..ecf9d830e36f 100644
-> --- a/arch/arm64/boot/dts/freescale/fsl-ls1088a.dtsi
-> +++ b/arch/arm64/boot/dts/freescale/fsl-ls1088a.dtsi
-> @@ -238,6 +238,24 @@ reset: syscon@1e60000 {
->  			reg = <0x0 0x1e60000 0x0 0x10000>;
->  		};
+> diff --git a/Documentation/devicetree/bindings/phy/hisilicon,hi3660-usb3.yaml b/Documentation/devicetree/bindings/phy/hisilicon,hi3660-usb3.yaml
+> index 20b79e2e8b82..b11d9873854a 100644
+> --- a/Documentation/devicetree/bindings/phy/hisilicon,hi3660-usb3.yaml
+> +++ b/Documentation/devicetree/bindings/phy/hisilicon,hi3660-usb3.yaml
+> @@ -27,7 +27,8 @@ properties:
+>      description: phandle of syscon used to control usb tcxo.
 >  
-> +		serdes1: serdes@1ea0000 {
-> +			#address-cells = <1>;
-> +			#size-cells = <0>;
-> +			#clock-cells = <1>;
-> +			compatible = "fsl,ls1088a-serdes", "fsl,lynx-10g";
-> +			reg = <0x0 0x1ea0000 0x0 0x2000>;
+>    hisilicon,eye-diagram-param:
+> -    $ref: /schemas/types.yaml#/definitions/uint32
+> +    $ref: /schemas/types.yaml#/definitions/uint32-array
+> +    maxItems: 1
+>      description: Eye diagram for phy.
+>  
+>  required:
+> diff --git a/Documentation/devicetree/bindings/phy/hisilicon,hi3670-usb3.yaml b/Documentation/devicetree/bindings/phy/hisilicon,hi3670-usb3.yaml
+> index 1cb00dbcd4c5..3c69aca6c7eb 100644
+> --- a/Documentation/devicetree/bindings/phy/hisilicon,hi3670-usb3.yaml
+> +++ b/Documentation/devicetree/bindings/phy/hisilicon,hi3670-usb3.yaml
+> @@ -32,7 +32,8 @@ properties:
+>      description: phandle of syscon used to control phy deep sleep.
+>  
+>    hisilicon,eye-diagram-param:
+> -    $ref: /schemas/types.yaml#/definitions/uint32
+> +    $ref: /schemas/types.yaml#/definitions/uint32-array
+> +    maxItems: 1
+>      description: Eye diagram for phy.
+>  
+>    hisilicon,tx-vboost-lvl:
 
-Can we start the properties with compatible (and reg) like most of other
-device nodes?
 
-Shawn
 
-> +			status = "disabled";
-> +		};
-> +
-> +		serdes2: serdes@1eb0000 {
-> +			#address-cells = <1>;
-> +			#size-cells = <0>;
-> +			#clock-cells = <1>;
-> +			compatible = "fsl,ls1088a-serdes", "fsl,lynx-10g";
-> +			reg = <0x0 0x1eb0000 0x0 0x2000>;
-> +			status = "disabled";
-> +		};
-> +
->  		isc: syscon@1f70000 {
->  			compatible = "fsl,ls1088a-isc", "syscon";
->  			reg = <0x0 0x1f70000 0x0 0x10000>;
-> -- 
-> 2.35.1.1320.gc452695387.dirty
-> 
+Thanks,
+Mauro
 
 -- 
 linux-phy mailing list
