@@ -4,65 +4,137 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A639CC54EED
-	for <linux-phy@archiver.kernel.org>; Thu, 26 Jan 2023 15:39:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 16EBFC52D11
+	for <linux-phy@archiver.kernel.org>; Thu, 26 Jan 2023 16:52:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Date:Subject:Message-Id:References:
-	In-Reply-To:Cc:To:From:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DyvfpRPARANN0uLT8Qnn8aiozZt/jm6NqVpkPyDXkQY=; b=T0pQn7XjYvdRoa
-	AgJlEoFpfehvZKPKaj+iZWPeDWw4W970NlirAK12+X4pjQDdAzCjZbDzTYbs30cR591VwjBxkQs5M
-	+1K0XlHtdT8CHGk+wT73smwS3ov2+2aGxqmC+4wx91o3zJiy4vJqwkXQtysVxekNa5cp2lGkvLHD0
-	cpstsIzeYpZTqArGj/1SwpKGLEThZszaH1UwXsk7Ix6i1dcFgWytrk7NAUXSRNCM5gzDeD7vPSOCT
-	d2X5JLtgw8uhVhEXCD3vBxCZqXYXH2ks9nKmb/Npo4vZSmhNaSl7fciRWiH/bsBhksw5WG+h4GGsF
-	4ZvvdFVPuP544OLUCkYQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:
+	References:Cc:To:Subject:Date:Message-ID:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=+rF1/MW4yJvjfcUqGFZelmECfPLq64gtQfNmBZvT4Nw=; b=j6+q3ZanmIUZG9llUtSIMDgkn7
+	gZsWmjV5MclUw05TsXw8Q1/wQPSrLmFSmxPrkiQ4S3XI1/HJ7YynLd/zmJajr1FdDZTFLsAnvCI8U
+	0Uv/RR+evXCFCFf5w2hM0rbaXF7sSVLBS7s+CVGmbTHqdImOXcIvj5WV/gtnQBs8eaqRm9EHqDNmW
+	RFcAxdOiqENRBdGWzmN5wJSqyhfWcal8kfPxj4yD+bLMnviv2MGTFnvx5PUjZJNGkHoH7QC49ULbZ
+	n4duw3EvU+ZzOUOnHN1gjei0cQWODP5OwFJzhZf+60kjqneWC2uPzWTdrl3zWtVsTq1yDvpqzfgah
+	EKUkrBpA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pL4Ld-00BZx9-N8; Thu, 26 Jan 2023 15:39:33 +0000
-Received: from mail-oo1-f46.google.com ([209.85.161.46])
+	id 1pL5Tr-00Bsn7-Vf; Thu, 26 Jan 2023 16:52:08 +0000
+Received: from mail-he1eur04on2073.outbound.protection.outlook.com ([40.107.7.73] helo=EUR04-HE1-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pL4LZ-00BZuV-O3
-	for linux-phy@lists.infradead.org; Thu, 26 Jan 2023 15:39:31 +0000
-Received: by mail-oo1-f46.google.com with SMTP id z12-20020a4a490c000000b004f21c72be42so272174ooa.8
-        for <linux-phy@lists.infradead.org>; Thu, 26 Jan 2023 07:39:29 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=date:subject:message-id:references:in-reply-to:cc:to:from
-         :mime-version:content-transfer-encoding:x-gm-message-state:from:to
-         :cc:subject:date:message-id:reply-to;
-        bh=8OyUzZZcNDwmAtXS1x+xMHt5sX1Ua0I8k7dbZu+PLxI=;
-        b=BCnA/wthfONTIqA3fdLViU+ThbJls9tenplSfzXcGS0TUBIxo9DUxCu5ZPePoIxZA8
-         6uZu+Drki+yf7mu04WHsMBhZ3Iw0l50gTo85D1w4rweVousR91hxcj8mFEWDTimrgfUt
-         qjTBklqEKn7egyHfmAnyVyg6TxcSpZZ+p01Fcb2iay/ZxSXbKlSKFHeqJFitzsG8qFSN
-         QI741mzWpHxRp3NjOYbD7vr/wFw1YeItOcCej6S/Y23G9J7A8EfJkH5KVe0Qmx/J9JpB
-         urdkqJjbCl6tNnRmGteccdYzLcqaJ5STstv5EfLsMpEOdvkTX55Q6DwAVicj2Jdjt9tl
-         ZAeg==
-X-Gm-Message-State: AFqh2kpVlxaBFJzLSjC0qIdtSL/YA8+AmwylD7USTPX+XSHvtOEX4vWX
-	PSeye4QDJDT6wJRYZ2kUXlOS5eOSpA==
-X-Google-Smtp-Source: AMrXdXuzl12U2eZ6cBhuAvI3012MMIRRpbGZ866zX4YAmcPm4utJKeTyVgTyrj2wbI4b32brKc1sDQ==
-X-Received: by 2002:a4a:d6d8:0:b0:4f2:2e05:4fe0 with SMTP id j24-20020a4ad6d8000000b004f22e054fe0mr17851159oot.4.1674747568485;
-        Thu, 26 Jan 2023 07:39:28 -0800 (PST)
-Received: from robh_at_kernel.org (66-90-144-107.dyn.grandenetworks.net. [66.90.144.107])
-        by smtp.gmail.com with ESMTPSA id k26-20020a4ad11a000000b004f29c6fb6besm630136oor.31.2023.01.26.07.39.27
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 26 Jan 2023 07:39:28 -0800 (PST)
-Received: (nullmailer pid 1544999 invoked by uid 1000);
-	Thu, 26 Jan 2023 15:39:25 -0000
+	id 1pL5Lf-00BqG0-5M; Thu, 26 Jan 2023 16:43:41 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=B09D3/hOqLMRC4T/F515GPVwSMiGqBB9oSLv7UJqIyTjbJxv9zg+N7sdEzqTEjAfw/UNJkbLtko9rCEsFGDONTVtq2MmMpe5BUkqzmf/9WFtfNidSahuBBhvKrT0FhnExia2cehBcAryuHp4tALYneUwmXlSeAGnPeYg+nrtbd0G3Cllil3THXGxHP/x2w5X6AaQMsXB+pt6LmC/XMgYU2gylV1SqXuMGkTu4dZcKCeMbJXxCSNk8AuplyMEZMipzXIhwMI/t+Tp5BbGMndcOgmWS90PHq1qbU9k6KWtEmeQBC6WepfyqGRogOUPOXJ6HGoUzuF7DVQZtF/2X+7ZLg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=E2BnJYGi01KmqLdKa03xOZnEVuDd9ppG1HeBpRW5lbU=;
+ b=QEeQKxv5a+G7bXTRXxL4kFwe6wr/VP4mYLqQjKlpT71cNMUg+B2BS9eHGaMLjZPXrkW2ISrvGWxo8HO32+cMxkLWN6RPQ71F+bfgIK4Ph6RLnM6XuSCwvUQGjHI3ZZ4iT27Q7VzBHzYELp3P4cmj7o9N0eScRFC0ncMsJ/B8yRopnsVgqLKKdCC5Rn7+gQFIzxAl6M/6R67gwCFcbwY519bsc9IoGwts3XGSMvLOkS7+U7/QPJkzzeSwTvCdq/4v7iNsedEjzWZC8cwZLffcWkP+d0GV6Hks+O0sInpT/jniWMAGlMXE9jZKKktm6TXN6aFm3VYL0TF8E612M8J4wA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=seco.com; dmarc=pass action=none header.from=seco.com;
+ dkim=pass header.d=seco.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=seco.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=E2BnJYGi01KmqLdKa03xOZnEVuDd9ppG1HeBpRW5lbU=;
+ b=EpXUKGM+OBPobR917v2dFGYHBsDFJAuSJhSxk36kvS9G0jzetldhC2G415AUL6/ILbkz5stfneCGuoSYGU5kyC08LXtRvrDfL0iP46g8HdRIQAGWNyGbgG9jZ9ELDzg8nPACmd3KhC8+m4GY6ZoUV/BcGpgF43ogHgB7ZQJoCLkWRMz5pmEyifDx/W5NuNhuL1dtvZd6YCXl1lBSUwKplNQcwh1gpKUME9rY1OLhGe9jOuISUSZMxNNP0zTtgzaoOtP9B/dxap7oXXjMoOovKFhcE34vLh4sitY3+GsVrom+aRvnLQxn1ezI2zuZFwszMSc8YBhKG+2uG/l+1U5aEQ==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=seco.com;
+Received: from DB9PR03MB8847.eurprd03.prod.outlook.com (2603:10a6:10:3dd::13)
+ by DU0PR03MB8244.eurprd03.prod.outlook.com (2603:10a6:10:31d::13) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6002.33; Thu, 26 Jan
+ 2023 16:43:31 +0000
+Received: from DB9PR03MB8847.eurprd03.prod.outlook.com
+ ([fe80::6b03:ac16:24b5:9166]) by DB9PR03MB8847.eurprd03.prod.outlook.com
+ ([fe80::6b03:ac16:24b5:9166%2]) with mapi id 15.20.6043.022; Thu, 26 Jan 2023
+ 16:43:31 +0000
+Message-ID: <aa602661-f7f6-ca63-d8a7-d6de0e924259@seco.com>
+Date: Thu, 26 Jan 2023 11:43:26 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.4.0
+Subject: Re: [PATCH v9 06/10] arm64: dts: ls1046a: Add serdes bindings
+Content-Language: en-US
+To: Shawn Guo <shawnguo@kernel.org>
+Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
+ <kishon@kernel.org>, linux-phy@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org,
+ Camelia Alexandra Groza <camelia.groza@nxp.com>,
+ Madalin Bucur <madalin.bucur@nxp.com>, Bagas Sanjaya <bagasdotme@gmail.com>,
+ Rob Herring <robh+dt@kernel.org>, Ioana Ciornei <ioana.ciornei@nxp.com>,
+ linuxppc-dev@lists.ozlabs.org, devicetree@vger.kernel.org,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Li Yang <leoyang.li@nxp.com>
+References: <20221230000139.2846763-1-sean.anderson@seco.com>
+ <20221230000139.2846763-7-sean.anderson@seco.com>
+ <20230125234638.GD20713@T480>
+From: Sean Anderson <sean.anderson@seco.com>
+In-Reply-To: <20230125234638.GD20713@T480>
+X-ClientProxiedBy: BLAPR03CA0085.namprd03.prod.outlook.com
+ (2603:10b6:208:329::30) To DB9PR03MB8847.eurprd03.prod.outlook.com
+ (2603:10a6:10:3dd::13)
 MIME-Version: 1.0
-From: Rob Herring <robh@kernel.org>
-To: Abel Vesa <abel.vesa@linaro.org>
-Cc: linux-phy@lists.infradead.org, Konrad Dybcio <konrad.dybcio@linaro.org>, Rob Herring <robh+dt@kernel.org>, Bjorn Andersson <andersson@kernel.org>, "vkoul@kernel.org" <vkoul@kernel.org>, Andy Gross <agross@kernel.org>, Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, devicetree@vger.kernel.org, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Lee Jones <lee@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, linux-arm-msm@vger.kernel.org
-In-Reply-To: <20230126135909.1624890-2-abel.vesa@linaro.org>
-References: <20230126135909.1624890-1-abel.vesa@linaro.org>
- <20230126135909.1624890-2-abel.vesa@linaro.org>
-Message-Id: <167474700388.1532445.1638627474554677881.robh@kernel.org>
-Subject:  Re: [RFC v2 1/7] dt-bindings: phy: Add qcom,snps-eusb2-repeater schema file
-Date: Thu, 26 Jan 2023 09:39:25 -0600
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: DB9PR03MB8847:EE_|DU0PR03MB8244:EE_
+X-MS-Office365-Filtering-Correlation-Id: 9b69d7fe-cde0-4951-2d03-08daffbc7543
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: 	SbEECGG/AZnuhFK0nw5enJjRYsjA04qGzAsumim0OZTh1oNThNoo/f+R4lVrnb2h4tqtfeIbk8+JZoHBHfGjZ+nN7xSbrX2j7oiT5NouJoNeLYI5bjy1IlA9c9FWfgPGwOEmIHYi0rBscFFILI/i9M/eLfoM4W4V6TekqBQxtNVWXpsfAAsQyq+ZZIQeXTT7jMG0p4vKRHcmgMsmZmkneoech0mKgSu2yJysLkmq2aEjKYd85DMeSyUGJBeFnW+pyJ4f2mM9Oxx26bX4IvZsPANjGtfED7kzCdOsHzPM26TE/I+OPMr66WuUKSqks6K7PRL86o4crvDTgq+/L/3oQw76kIuM0m4X7fzQW4mQKKWNySDapX140M3395/00364nzrJPvoLEGNFwlSNf7L1hfdKuQ4t9JyfOi3OcygmB04+Pv1fg9frNMqfb0GLmp6Vi1+abrnShHrsV/LBLRsx6hXWqKG9X/iPRy8CQqv51mkiBSqjA9jXfMfYzsckA9+2ASw/2mooR6hECZYcXtYxC8Kyvlk7oS3LPzX6CMQs8SDmjrMaxUB8KTz4sDYXdtAnZZmK8MLOFcCYaYaTAj6niBKL93R2hvzNpX44sAAwhyfrh3XmjbWNxDg4kavTb4LiyBxm7oeL1VPxR+Hd+1KaAw1bVl7aDRdpfbI/Rwn6ezf7lFWB5yf2hrGk9luIgo662GffoYJ6HuHGCfz0cxPxmgdoD8M0eTfReItlYq8KffRu0LLO0WAKj65uo2QM3noI
+X-Forefront-Antispam-Report: 	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DB9PR03MB8847.eurprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230025)(136003)(346002)(39850400004)(366004)(396003)(376002)(451199018)(5660300002)(66476007)(66556008)(6916009)(8676002)(36756003)(4326008)(54906003)(66946007)(2616005)(316002)(86362001)(38350700002)(31696002)(38100700002)(8936002)(6666004)(41300700001)(83380400001)(478600001)(7416002)(26005)(6486002)(44832011)(52116002)(53546011)(31686004)(186003)(6512007)(2906002)(6506007)(45980500001)(43740500002);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: 	=?utf-8?B?c3pRVkg2clpoUjF3TjNWVVVlYW44cm56eFhtTDBWZEUrUVJTb25kdFRta01S?=
+ =?utf-8?B?WkIvZklnWWRGMytmeFJ4b0wzcnk5ejhva1FmaWx2VENYRlNHRXZkdDB4NTFN?=
+ =?utf-8?B?WFg4VVdxc2VWclJlbDdod3pyTnBCc0gvcElCQjc5dVVTR3pBc2toUC9IbnVT?=
+ =?utf-8?B?ejVJR1ZFazZvcXk5MFhwbkRCeFlwVGVvc1U5REgrQjdKOVp2QXI1WUFHdE5G?=
+ =?utf-8?B?ZjNKaHFuZ1BkN2hmdEhmaVRvSEt5VzJnU3c1MTVEdDlzbjhRSitkWVlvWUlu?=
+ =?utf-8?B?ZkpTNXhWdjlxRG5jV1hHdDFLdFpKY0VRZjcrTFZDK2lXbi9LR05VSThKVDBk?=
+ =?utf-8?B?N3JacHhNQ1I4UERBRUZCekJnN3pMSUhmbEVXVXd5cFI3UEhidXlXQkZEMEUv?=
+ =?utf-8?B?QVZwOUNsdVpOSVBqRGpSdjl4eURRSHpHZWVCcWlOT1dmVzRPRmtxdmNJSG5V?=
+ =?utf-8?B?QlhyVHhCdVlmV1Ezb3g3K1hUWTlHQ1JwNVdDL05NQW4wZ1BabXVkUEF3MFE3?=
+ =?utf-8?B?ckxQNDJyTDR0RU15YjdneTdQSWNjSzZ2V2JGVTE0VkEwVTU4VytxMDNCd2dl?=
+ =?utf-8?B?QlJna3pla0pHM2puQ3dDVHpSMnRRQVIzNXdDQzd6TFdPZnV6MVJLbmROWXNt?=
+ =?utf-8?B?UU1xQU5ZSTN1SlQ4bGpLNlR5MmxSYWp0a3Z3S0dZTFJHa3dJY3J5SEVMRWwy?=
+ =?utf-8?B?ZllWVFNVWjBJUXZuNmRWTkZib3ZOVzh4Wkk5NXNaeitTRTgrNlJLWjFjbEJU?=
+ =?utf-8?B?V3EycWYwc2k2TUd0WTkwcGo1ei8yZCtsMVR5MHdGNlVGQ1JvaWM2cXZKd1or?=
+ =?utf-8?B?MkNGRml3V3NwZXEyWHBKUTZzdFlyQ1VVVE5mRno4L0tWUEYraGlXN3Bpdkl3?=
+ =?utf-8?B?QlA1SFBmWnZsMkpDNUhNRmVENWFxVVovb3NMSGNHVWJyK2h1S0xDNG1tNmRa?=
+ =?utf-8?B?TjNJTVpKcUtDU1ROb2pJOW82QndOTVh0eVBYMTM3bE9NTUdIOERvalZOMHBm?=
+ =?utf-8?B?STl2YzF0cVpNNlprNExIQmdBMUdvcGF4V3pESEhQZVRGTzRQejBsaEx5YnFC?=
+ =?utf-8?B?dGtLT0RYV1E5U3ZkV0hkem5KYm9BSG9tTTRqNXBMNDdXMUJBRm1oaytEUjcx?=
+ =?utf-8?B?bUVVT0Vmd3FOT3k5L1FJdGI2aU80Q0RRbEJQdURISDBFNVJETHdWZ0Vmd2hz?=
+ =?utf-8?B?d29Ed2E0NnlFMDdBbVlkQm5kUjJVQWZXRkk2aDVKVzhSVnhGekZ3cExOQXNp?=
+ =?utf-8?B?S3ozYzBvdTNsbWwrWXYzdWVQaTArMUNjSzFwbUZUbnREMmdaZ29wYUVHZzFL?=
+ =?utf-8?B?enZLbmVINmhOQkt6ZlRHeHdUZjhQQk1tWXZBSm9waDlwNFA2Z2w1UEs5NEhn?=
+ =?utf-8?B?U0hCaTN5S0lKNTF5ZlVyc1JOYmdHMjJpYkk2NVE5eUoxbm5IV3RSTzhhN3NO?=
+ =?utf-8?B?cU5tejN5ZXJ4eE1TSlZUQng2VW5EUHdDei9kcTlDeEZuSHdjZkJYeDZSNU91?=
+ =?utf-8?B?MDBXYkdZaU5ZVVdyV3R3TE1VUWZ0bXZMMFVvMWVycUVYR1RnV0d5S09XVlFY?=
+ =?utf-8?B?Z3ZvYkNVaThQSHdOZkxLZlZzQWljVXNVMHU1ZW5MYWhLK0RZY1dWZG5IMkxZ?=
+ =?utf-8?B?UVVhU3k5MXI3aTdUTVVRYVdFTStjRkIyZmtGWkNyMC90VWgzcGRDbXZTN1lm?=
+ =?utf-8?B?dy9PLzUvamxXWng5MFh3ZHMxZmhMWDlDTVdqMmlDSW03UkFWZXdvTGN0WG40?=
+ =?utf-8?B?NTRHTGpPRWpvenFtNzhIV0U3QUVFSEVjZmJUT0V1bU1JbzBnRkt3M29VYXg5?=
+ =?utf-8?B?dU9QRXRJdjFEdmJLbENHQ0hrT0QxZk9KbHluRG1Ia3RQemFmcVlRKzRKejlm?=
+ =?utf-8?B?emNPd3FZc2JReXZxdWE0b3RGR01KVlAxTGpKdGFRUGQwdHRyNDNhVWM5MDhq?=
+ =?utf-8?B?UDEzY1FDRXYrOXUybWhDZ0hFL1ROQVlXQ2JHZTloa29EUi9ZekRjemNuQVlK?=
+ =?utf-8?B?SStTZ1lFYUZ6aFhLZi9BQWlzN1U3dnVSb1BiWnF6b2p0Sno3QjhHZVRXSGVU?=
+ =?utf-8?B?MHIwRW5Vc0JJZmZxVHgvdHlRWXpiNnd3NFZ3S1dKRHVTY0JBSExRRFB1THJJ?=
+ =?utf-8?B?L0g0Vm9acFVVZ0RXTU5hdEp6aXBiUG5kQXdTaFlvYzEyOWlqdGVZU29GVHd1?=
+ =?utf-8?B?Qnc9PQ==?=
+X-OriginatorOrg: seco.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 9b69d7fe-cde0-4951-2d03-08daffbc7543
+X-MS-Exchange-CrossTenant-AuthSource: DB9PR03MB8847.eurprd03.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 26 Jan 2023 16:43:31.4470
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: bebe97c3-6438-442e-ade3-ff17aa50e733
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: xXkyxwn4LFhqpPsIltJdpm7cC9e3RlIeCfl1MbKTZl6zQW4VPO4GtbA/eA0JtDmjQAcHw2qMGsicAVHGXY1HKw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DU0PR03MB8244
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230126_073929_808602_E4590858 
-X-CRM114-Status: GOOD (  13.64  )
+X-CRM114-CacheID: sfid-20230126_084339_343186_06A35ED0 
+X-CRM114-Status: GOOD (  15.76  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,46 +151,73 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-On Thu, 26 Jan 2023 15:59:03 +0200, Abel Vesa wrote:
-> The SM8550 SoC uses Synopsis eUSB2 repeater found in PM8550b.
-> Add a dt-binding schema for the new driver.
+On 1/25/23 18:46, Shawn Guo wrote:
+> On Thu, Dec 29, 2022 at 07:01:35PM -0500, Sean Anderson wrote:
+>> This adds bindings for the SerDes devices. They are disabled by default
 > 
-> Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
-> ---
->  .../phy/qcom,snps-eusb2-repeater.yaml         | 48 +++++++++++++++++++
->  1 file changed, 48 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml
+> s/bindings/descriptions?
 > 
+> The term "bindings" generally means the schema/doc in
+> Documentation/devicetree/bindings/.
 
-My bot found errors running 'make DT_CHECKER_FLAGS=-m dt_binding_check'
-on your patch (DT_CHECKER_FLAGS is new in v5.13):
+How about "nodes"?
 
-yamllint warnings/errors:
+--Sean
 
-dtschema/dtc warnings/errors:
-/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.example.dtb: pmic@7: compatible:0: 'qcom,pm8550' is not one of ['qcom,pm6125', 'qcom,pm6150', 'qcom,pm6150l', 'qcom,pm6350', 'qcom,pm660', 'qcom,pm660l', 'qcom,pm7250b', 'qcom,pm7325', 'qcom,pm8004', 'qcom,pm8005', 'qcom,pm8009', 'qcom,pm8019', 'qcom,pm8028', 'qcom,pm8110', 'qcom,pm8150', 'qcom,pm8150b', 'qcom,pm8150c', 'qcom,pm8150l', 'qcom,pm8226', 'qcom,pm8350', 'qcom,pm8350b', 'qcom,pm8350c', 'qcom,pm8841', 'qcom,pm8909', 'qcom,pm8916', 'qcom,pm8941', 'qcom,pm8950', 'qcom,pm8953', 'qcom,pm8994', 'qcom,pm8998', 'qcom,pma8084', 'qcom,pmd9635', 'qcom,pmi8950', 'qcom,pmi8962', 'qcom,pmi8994', 'qcom,pmi8998', 'qcom,pmk8002', 'qcom,pmk8350', 'qcom,pmm8155au', 'qcom,pmp8074', 'qcom,pmr735a', 'qcom,pmr735b', 'qcom,pms405', 'qcom,pmx55', 'qcom,pmx65', 'qcom,smb2351']
-	From schema: /builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/mfd/qcom,spmi-pmic.yaml
-/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.example.dtb: pmic@7: 'phy@fd00' does not match any of the regexes: '(.*)?(wled|leds)@[0-9a-f]+$', '^adc-tm@[0-9a-f]+$', '^adc@[0-9a-f]+$', '^audio-codec@[0-9a-f]+$', '^charger@[0-9a-f]+$', '^mpps@[0-9a-f]+$', '^rtc@[0-9a-f]+$', '^temp-alarm@[0-9a-f]+$', '^usb-detect@[0-9a-f]+$', '^usb-vbus-regulator@[0-9a-f]+$', '^vibrator@[0-9a-f]+$', 'gpio@[0-9a-f]+$', 'pinctrl-[0-9]+', 'pon@[0-9a-f]+$'
-	From schema: /builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/mfd/qcom,spmi-pmic.yaml
-Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.example.dtb: /example-0/pmic@7: failed to match any schema with compatible: ['qcom,pm8550', 'qcom,spmi-pmic']
-
-doc reference errors (make refcheckdocs):
-
-See https://patchwork.ozlabs.org/project/devicetree-bindings/patch/20230126135909.1624890-2-abel.vesa@linaro.org
-
-The base for the series is generally the latest rc1. A different dependency
-should be noted in *this* patch.
-
-If you already ran 'make dt_binding_check' and didn't see the above
-error(s), then make sure 'yamllint' is installed and dt-schema is up to
-date:
-
-pip3 install dtschema --upgrade
-
-Please check and re-submit after running the above command yourself. Note
-that DT_SCHEMA_FILES can be set to your schema file to speed up checking
-your schema. However, it must be unset to test all examples with your schema.
+> Shawn
+> 
+>> to prevent any breakage on existing boards.
+>> 
+>> Signed-off-by: Sean Anderson <sean.anderson@seco.com>
+>> ---
+>> 
+>> (no changes since v4)
+>> 
+>> Changes in v4:
+>> - Convert to new bindings
+>> 
+>> Changes in v3:
+>> - Describe modes in device tree
+>> 
+>> Changes in v2:
+>> - Use one phy cell for SerDes1, since no lanes can be grouped
+>> - Disable SerDes by default to prevent breaking boards inadvertently.
+>> 
+>>  arch/arm64/boot/dts/freescale/fsl-ls1046a.dtsi | 18 ++++++++++++++++++
+>>  1 file changed, 18 insertions(+)
+>> 
+>> diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1046a.dtsi b/arch/arm64/boot/dts/freescale/fsl-ls1046a.dtsi
+>> index a01e3cfec77f..12adccd5caae 100644
+>> --- a/arch/arm64/boot/dts/freescale/fsl-ls1046a.dtsi
+>> +++ b/arch/arm64/boot/dts/freescale/fsl-ls1046a.dtsi
+>> @@ -424,6 +424,24 @@ sfp: efuse@1e80000 {
+>>  			clock-names = "sfp";
+>>  		};
+>>  
+>> +		serdes1: serdes@1ea0000 {
+>> +			#address-cells = <1>;
+>> +			#size-cells = <0>;
+>> +			#clock-cells = <1>;
+>> +			compatible = "fsl,ls1046a-serdes", "fsl,lynx-10g";
+>> +			reg = <0x0 0x1ea0000 0x0 0x2000>;
+>> +			status = "disabled";
+>> +		};
+>> +
+>> +		serdes2: serdes@1eb0000 {
+>> +			#address-cells = <1>;
+>> +			#size-cells = <0>;
+>> +			#clock-cells = <1>;
+>> +			compatible = "fsl,ls1046a-serdes", "fsl,lynx-10g";
+>> +			reg = <0x0 0x1eb0000 0x0 0x2000>;
+>> +			status = "disabled";
+>> +		};
+>> +
+>>  		dcfg: dcfg@1ee0000 {
+>>  			compatible = "fsl,ls1046a-dcfg", "syscon";
+>>  			reg = <0x0 0x1ee0000 0x0 0x1000>;
+>> -- 
+>> 2.35.1.1320.gc452695387.dirty
+>> 
 
 
 -- 
