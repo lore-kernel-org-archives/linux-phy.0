@@ -4,92 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 175D2C61DA2
-	for <linux-phy@archiver.kernel.org>; Thu, 26 Jan 2023 11:05:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A14DAC54E94
+	for <linux-phy@archiver.kernel.org>; Thu, 26 Jan 2023 12:47:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OTB/KMIiRiwO6FJqqH+nrLO5Iiu7B+Jx++PtEMbnO2k=; b=T7PKJTXUjDODCR
-	wDLSMMQU6oWvQr7W1AUYEY3Y/F2Nl2hZfi5MVwp1ULcvSAAlfI1p+N4VH5nLxRNxadNJvOlcDKCqO
-	iAaYTVuxtCjNJeVGfMMiA+kBmmfxNhVge4+C1+MTucIhUnKXt05vGi/DHJ9B7IrjgAGKfzRIRO9J5
-	EFgmzD4ceQVI0mPE88QuGds8G+XSksocyDJejTheMt58jm+Pnaxk7W0bGmKcI317kfQFZ3mCl4SKr
-	cNHbj+oefK4vMzU2u7cA8g9J8hx8zKtCc9sB70Xi0WOzYR7QXyyyKGqnTdjLy+5HcEDfmFN5ZcQDx
-	pT1d65k+m47I9XUr4bQw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=C6wMsAcj0nACUG5xwbFgn1vNZiYE6QXdK4/HEaUb1C0=; b=3f3FuG9rvfytvr
+	zT4Zndq5BB3mOXSZq+54Xu9N+Hl50NYvtVHgfft/HWmBTFYFgDX85uSyIOzLlDvhyxkP37x8EHgO5
+	CdqqEjz2Q7TaHnKjwBdRGbfrCC8aXOx1JGKKoBHGDpUHNiGhVb+fwYfNbcAQtFWjyCUh+RMJpisx/
+	4mQYO93VS/j2/5pSXwI6kxmn90+WBGJ0MuZM7vWXI5f4XOe3HTwatVbtpyYZvXUmZ6iTwFHrjZPvY
+	Hd7RsUxT7jimZod+xYvieOfmNqt52o0X6jhhSdOBskQ9lVMt1if6lGWQU4D27yaOyEEq+1TvKQ/0g
+	XAUh8s0WLsjxLCMhcsEA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pL04p-00AdjS-FX; Thu, 26 Jan 2023 11:05:55 +0000
-Received: from mail-wm1-x336.google.com ([2a00:1450:4864:20::336])
+	id 1pL1ep-00AsCr-WA; Thu, 26 Jan 2023 12:47:12 +0000
+Received: from mail-wm1-x335.google.com ([2a00:1450:4864:20::335])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pL04m-00Adic-9V
-	for linux-phy@lists.infradead.org; Thu, 26 Jan 2023 11:05:53 +0000
-Received: by mail-wm1-x336.google.com with SMTP id l41-20020a05600c1d2900b003daf986faaeso862145wms.3
-        for <linux-phy@lists.infradead.org>; Thu, 26 Jan 2023 03:05:50 -0800 (PST)
+	id 1pL1em-00As5L-0B
+	for linux-phy@lists.infradead.org; Thu, 26 Jan 2023 12:47:09 +0000
+Received: by mail-wm1-x335.google.com with SMTP id fl11-20020a05600c0b8b00b003daf72fc844so3195456wmb.0
+        for <linux-phy@lists.infradead.org>; Thu, 26 Jan 2023 04:46:58 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=heZJw59T2BEIPcQJQ4uYDF/GEiW8kKbaj33CVJ4j0QA=;
-        b=OGHW+YWFhgFliomeTrCvXab/b3ztik8IkLjKZrHCJPgZPJEHLNFlEWIsIs9obDB+4h
-         qooeXwfrAccrxy0oVyS43oDAfvwjg5eahrRVHlcm7WR0QZbpNObdzPwi5N7RpzC+Paiz
-         ugeJJDCKAZJqHcK3WSht20960TThpI74MvA6Z3juB0fb486A3gR9ExR6iubOwTz78VEw
-         jaz/by3NaHMxtuEeCqFtviLmWEJzRXqnbGA5JnOcgT23kYEuwVpHufJyBVgeYd8nT+aL
-         m7SSJ9cD6ig3rrZ7yUyf56wiBn5j53eVA9AHiwoReUR2qhTJUacNEGIpqgtOW7MMzMuQ
-         SI8A==
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=aEwl4rXqwP7HFZuGGS8GvTs9Re4pfspXDU7w3TmmVI0=;
+        b=jQY5FDIzJd/D5AfxGaPGYIZIrxbmpQCSjcWGkffpFvIaQgR1klTO6ENQ754svYLOvG
+         BgXcfe0ulf+BwgcCGkM5hZNZaQlx44wuZNZFwCtdb5sctz49e3b8MWpTqoKNlJBBYxFf
+         xeI4WSgPevD+nwPzpdKkG4b4XbiAcdMg3JjWI/1RH95g6BcACOdoyL5+PNGEIR3FrBqA
+         /x3HKYRA0nx62uKk8xJHGODcAZR/swdp2I6CFbRI1RxYZT/6ec/5TI0+JqZwuh78zrGc
+         /LXemjExKf5HwgiJBROMkOK34NfNYjn0OMLOYCNiPJyw3rG9GwvPx9ssRj1PpEZ7oIK9
+         xtww==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=heZJw59T2BEIPcQJQ4uYDF/GEiW8kKbaj33CVJ4j0QA=;
-        b=Dx5npFk9mrmCZTA5WF2RcD2GMbUTfOkWnOhkpFHTiRrMLvk7s5t0iVKWhwP83sLLtL
-         Vkcb1CFpsrSo/3TojwFkIKXBv8PotNijHqc0XajInZu9qLlsnqvdFOWsjwYiO0bFXxWX
-         k7PPxRTfcrd5RHV2bEJ2Cnw1b0RtHjHyvLA8gta3p4hZxugdjclQcxfbT8nfjWo2iKay
-         TM0+3AGou9fMelcplNOxqdzSPB7Oav4VUvIU6F6wO9LyMS36Qh+hIUqbcZzhfSfkIVZo
-         4Hr5q1G2HWJLcKYWV466NL1z3PLB8jMIZ/oW7vokGJza1eukhrP9v62nnIHPF2AKF63d
-         UrTw==
-X-Gm-Message-State: AFqh2kqsxRqs70mtzZDKcF3Wy2jQFY4LRUph9F1HzoCDdlkplyb0k7ke
-	sp+swQpgl34bwENTfARm023WYQ==
-X-Google-Smtp-Source: AMrXdXvm+/munbFIM9dMJkjNlLF8RunOzyerbBIAKGs4KuqxNnxcHriBwiL0Tytcq9WgMoOagu8Dag==
-X-Received: by 2002:a05:600c:304a:b0:3d9:8635:a916 with SMTP id n10-20020a05600c304a00b003d98635a916mr36734444wmh.9.1674731149736;
-        Thu, 26 Jan 2023 03:05:49 -0800 (PST)
-Received: from [192.168.1.109] ([178.197.216.144])
-        by smtp.gmail.com with ESMTPSA id m14-20020a05600c4f4e00b003a3442f1229sm5016139wmq.29.2023.01.26.03.05.48
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 26 Jan 2023 03:05:49 -0800 (PST)
-Message-ID: <64c5cd0d-86ef-2b98-36f4-62106edd657a@linaro.org>
-Date: Thu, 26 Jan 2023 12:05:47 +0100
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=aEwl4rXqwP7HFZuGGS8GvTs9Re4pfspXDU7w3TmmVI0=;
+        b=e8GY1vqEc1va2GV2RgQbQzMUdtqekevBBWbR3+Bwm2UOfUkNNLGPhQ2CMOc8x9PSWA
+         imduq2DfnVWzAlP9GDjkErKVvjD8vb6dCpq9i4M/SZyugr04p5ALufqdcuXonLMOrL2t
+         cFfteirblgCOrdFtgLq3+APPyc6o4hdF3gkeZXZ/Q5WgKcsaYlvAPBryS3+8Vvu24m1C
+         HsfOBIa+CV1bgyarz141T8SuxS6pa2GtlcWXK3T+buNoO5xt1EPrBbdVXaOa8WhYflvi
+         48t5kBdzXyxrzxgfnM/VldjSvkgIDMRtweXKEMvq/F/KSfFXFPXwnfI+hpepNIbws9oS
+         a5eQ==
+X-Gm-Message-State: AFqh2kq42VndzuhpZPEWxpF2+PiQN8vKar3Obx4k+vNbCRHvzRRcMW17
+	Yrs4Jvb7u3BM54JKqXRZnbFQ5Q==
+X-Google-Smtp-Source: AMrXdXslJr4J5js/ytBZ7wAvx3rO670yMpHaS8sIaBr7oBWzofte/ymYVVnVFGDtLY2OAxvkzY7S8g==
+X-Received: by 2002:a1c:f317:0:b0:3d0:480b:ac53 with SMTP id q23-20020a1cf317000000b003d0480bac53mr35697160wmq.12.1674737217607;
+        Thu, 26 Jan 2023 04:46:57 -0800 (PST)
+Received: from hackbox.lan ([94.52.112.99])
+        by smtp.gmail.com with ESMTPSA id v11-20020adff68b000000b002bfb8f829eesm1198681wrp.71.2023.01.26.04.46.56
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 26 Jan 2023 04:46:57 -0800 (PST)
+From: Abel Vesa <abel.vesa@linaro.org>
+To: Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	"vkoul@kernel.org"  <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>
+Cc: linux-arm-msm@vger.kernel.org,
+	devicetree@vger.kernel.org,
+	Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+	linux-phy@lists.infradead.org
+Subject: [PATCH v2 0/8] sm8550: Add USB HC and PHYs support
+Date: Thu, 26 Jan 2023 14:46:43 +0200
+Message-Id: <20230126124651.1362533-1-abel.vesa@linaro.org>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.7.0
-Subject: Re: [PATCH v5 09/12] dt-bindings: PCI: qcom: Add SM8550 compatible
-Content-Language: en-US
-To: Abel Vesa <abel.vesa@linaro.org>, Andy Gross <agross@kernel.org>,
- Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konrad.dybcio@linaro.org>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Rob Herring
- <robh@kernel.org>, =?UTF-8?Q?Krzysztof_Wilczy=c5=84ski?= <kw@linux.com>,
- Bjorn Helgaas <bhelgaas@google.com>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- "vkoul@kernel.org" <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>,
- Manivannan Sadhasivam <mani@kernel.org>,
- Philipp Zabel <p.zabel@pengutronix.de>
-Cc: linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
- devicetree@vger.kernel.org,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- linux-phy@lists.infradead.org
-References: <20230124124714.3087948-1-abel.vesa@linaro.org>
- <20230124124714.3087948-10-abel.vesa@linaro.org>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20230124124714.3087948-10-abel.vesa@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230126_030552_363920_A1E4E703 
-X-CRM114-Status: UNSURE (   7.27  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230126_044708_058926_85C7AC9A 
+X-CRM114-Status: GOOD (  10.75  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,18 +96,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 24/01/2023 13:47, Abel Vesa wrote:
-> Add the SM8550 platform to the binding.
-> 
-> Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
-> ---
-> 
+This patchset adds support for USB for Qualcomm SM8550 platform.
 
+This patchset is based on top of the following patchset:
+https://lore.kernel.org/all/20230124124714.3087948-1-abel.vesa@linaro.org/
 
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+For changelogs please look at each patch individually.
 
-Best regards,
-Krzysztof
+Abel Vesa (8):
+  dt-bindings: phy: Add qcom,snps-eusb2-phy schema file
+  phy: qcom: Add QCOM SNPS eUSB2 driver
+  dt-bindings: phy: qcom,qmp-usb: Document SM8550 compatible
+  phy: qcom-qmp: pcs-usb: Add v6 register offsets
+  phy: qcom-qmp: Add v6 DP register offsets
+  phy: qcom-qmp-combo: Add support for SM8550
+  arm64: dts: qcom: sm8550: Add USB PHYs and controller nodes
+  arm64: dts: qcom: sm8550-mtp: Add USB PHYs and HC nodes
+
+ .../phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml    |   1 +
+ .../bindings/phy/qcom,snps-eusb2-phy.yaml     |  78 ++++
+ arch/arm64/boot/dts/qcom/sm8550-mtp.dts       |  22 +
+ arch/arm64/boot/dts/qcom/sm8550.dtsi          |  92 +++-
+ drivers/phy/qualcomm/Kconfig                  |   9 +
+ drivers/phy/qualcomm/Makefile                 |   1 +
+ drivers/phy/qualcomm/phy-qcom-qmp-combo.c     | 406 ++++++++++++++++-
+ .../phy/qualcomm/phy-qcom-qmp-pcs-usb-v6.h    |  31 ++
+ drivers/phy/qualcomm/phy-qcom-qmp.h           |   4 +
+ drivers/phy/qualcomm/phy-qcom-snps-eusb2.c    | 421 ++++++++++++++++++
+ 10 files changed, 1061 insertions(+), 4 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/phy/qcom,snps-eusb2-phy.yaml
+ create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-pcs-usb-v6.h
+ create mode 100644 drivers/phy/qualcomm/phy-qcom-snps-eusb2.c
+
+-- 
+2.34.1
 
 
 -- 
