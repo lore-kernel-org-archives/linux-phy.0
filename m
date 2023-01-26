@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3834EC61DA2
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1C7C1C61D97
 	for <linux-phy@archiver.kernel.org>; Thu, 26 Jan 2023 12:47:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,54 +12,54 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OktBHZAf1EWjLRt6SpS3Vd5CYzud11+arQ7Bi5G3L8c=; b=J3IQRGaoUJSXs3
-	IziuOK967ZyvuY4tW4GxgEsEksD1+fbyvJd3z+XfCTmoFHRVDK4UMT7ll+ztO4inE1NWITVg1yn6o
-	BRm00G1rVHYKyoitF6DtC3sOhoLjvzAnGIhMvEhfUdnQclcFuhYFSBAG+0wTGfxhg+cF4cgKz45fi
-	DtILTjk47Jkp6qFe7vRhjKS8Esgcmc9UOm5WdJNnscdI69I5I5Qv1G0DeYlSJvPsb7HxggCUg0gFH
-	B5qaTrNbUEInN/l6MRtLgy2FZnlR2FccirTg2Ay6fjUhyjHDuglhEpLh/fR8YDGCGE4b4rBERM0Gq
-	z8nJZ9SFYN1KsWg6Jllw==;
+	List-Owner; bh=HdKyA17QT+AvDUEGTe1TuFHSMlVs6vaNeypp7n6oPME=; b=dsC3sn1/nGz3T8
+	f9up7obYi35SLEAMw1kxous3zJMmQ1uqBZMmmXRQR0y/iOlj6Mo8VHQT2SEQyobP3nf59jSXmyT2C
+	sLpbSKWNTojjU0ajLPULVjlqdlmrIlM5LKidnmgUDlfM/BaWWT+395lctuvG3NIgMMnzJhiRhvofS
+	WlRohuBNESi463qZCVCI7QYED6vNGfSYptpFCUSI3+evUGW8Anf5crLJX6r8MDoBpUma94I/V4RKj
+	KQI6EHlZ/7uGoYmws0F2l51G0b3x2tVwWSPV0AXcYjWCDcbqIfhIGIdQgAnjKgNm8a0LD2MiigSvQ
+	SC79gWC35aOVZtzhC6Rg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pL1et-00AsFq-J6; Thu, 26 Jan 2023 12:47:15 +0000
-Received: from mail-wr1-x433.google.com ([2a00:1450:4864:20::433])
+	id 1pL1et-00AsFT-5y; Thu, 26 Jan 2023 12:47:15 +0000
+Received: from mail-wm1-x32b.google.com ([2a00:1450:4864:20::32b])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pL1eo-00As7g-5g
+	id 1pL1em-00As5O-KD
 	for linux-phy@lists.infradead.org; Thu, 26 Jan 2023 12:47:13 +0000
-Received: by mail-wr1-x433.google.com with SMTP id d14so1642681wrr.9
-        for <linux-phy@lists.infradead.org>; Thu, 26 Jan 2023 04:47:07 -0800 (PST)
+Received: by mail-wm1-x32b.google.com with SMTP id m5-20020a05600c4f4500b003db03b2559eso1030049wmq.5
+        for <linux-phy@lists.infradead.org>; Thu, 26 Jan 2023 04:47:00 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=u16Q/10dUAiJnPHRN7rZ/LQzB/Z00hmLxF5RI+QozW4=;
-        b=gVAU+g208Bc+N7E9I6ST/Un/+oBKKoekGq22v27ilYzdL5RT+hQuku2qf0Kg3fReYC
-         yEUlqSZwP2y9Tu4tkvBNxrylgWB3SKvTa84ioW/gLK1C85zsT3jyOWC6TzD21amJM0FA
-         QmzfMn0dx8Kg458E1DoZ4eVUIeCkvaHlBZqiOWPB7kjN/IiulQmf7+qHkF03sCbUnW+r
-         ojB2Z47BfsqWrIPByoQDjN3+pb0VzBhprppBpvtapx/aukpcbVnyIqeQqfpxfjU5/L3n
-         GlsMdR8OJhTRPoLHBPuju/4b7UdHXpAmTo4RMLNBSPBuT5JIfFFDlmEXQzjHJBvf53lV
-         ECyQ==
+        bh=VjmcWStl2IK8Csyv+ogApgFtuhkeFvtifhYRNf2NN2I=;
+        b=kzjvcAcAB2RjA9S5XCpP7nHDFDr7BuTfnVSOLmo6KgowHfAFalacR5ofYf87fLc1cQ
+         TDVy870YjmZjvDx10A4pmaelSqJXEXT+RZmPQ5+vKYNxiWvYcELNCDIpXtszCc5rmehP
+         oycdFLWLIyVet6m1rzauYnIvJWxH82QGeceIUKXxaw1XS+R8p8+lxpBeaY7Mx5IVQ58e
+         tMwvS36vS9oHC6GTb0n6l7Rbzu8BXnFxdeYojubLE+pDb2UwYPNRNkSjfJC1FuLAQHrn
+         GEi0i46Vv0aqiEvSOU0YhVyAGqRMApkYkWja6yNKUuub5dJK6U/6jEso2N0vJRrbBn0b
+         RGXQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=u16Q/10dUAiJnPHRN7rZ/LQzB/Z00hmLxF5RI+QozW4=;
-        b=OuccF6f98Y+1py3DZzfVurVJavEHC/FqURAeUrpZ9tgZ2Wdry2lQj1l29dW86i7UUN
-         1OxJU2SzcvJAZNgtCaqTwoDG5nY5l5UW6U5L9sNjOyBz56SJTXrC/Zb2uEQzrfqqlVii
-         pdGl3iIHSmAuG7VbnEDehAeBcCYd36gQSzSFttp7LDXiWjd5RIk/FrbCzNjplDy897Bj
-         M7405UR4aitec2IAIj4Hy8mI1dLe8aRqmVexcUp4SJtSJoj0YI3vCPoeGUSsHEtfXs8f
-         bp406SEqWpuhFOffqHAv0pbTzoF9ZyaMG4pmAlrkQtBg4BIeZyorw7Rgd04GfVwuyIuD
-         j6Xw==
-X-Gm-Message-State: AO0yUKVpyzynDzu8jRNOJunf0SeDv/YMzZTdDi8KiqHNBdEEPKl4seiz
-	mp4PccBYEsmOTMY5NTuz3lwPag==
-X-Google-Smtp-Source: AK7set+cTl4MgW8hiaCowW7x72Q9W4kmydO2WFy72x1ft9MbHMw8MZRArXYUI00qlR0i/OXUXqnBcQ==
-X-Received: by 2002:a5d:4e86:0:b0:2bf:bfc1:f626 with SMTP id e6-20020a5d4e86000000b002bfbfc1f626mr3396304wru.41.1674737226577;
-        Thu, 26 Jan 2023 04:47:06 -0800 (PST)
+        bh=VjmcWStl2IK8Csyv+ogApgFtuhkeFvtifhYRNf2NN2I=;
+        b=6luUsbZyxMoNa56esjYVudGzC75WOpQD6P/kDUmeZlSX5AYssheloyMSMx4UwOOWtK
+         GNBfPAeAfRCRD6V7D3zf0h1wfymx5k6JbfrAuQFS+2Fua3SUcPWGvw0H0gWTnuI6QN6m
+         9q7HAeO2vyI0gJhbIrueacuTV3UoEgYQhaUvQ+ipIca4b0S+Jf2r4MrgYqgQ9Yr1jqRe
+         53Yo9Ihrc3OYap9GqrCJERjZUSQ3R3FMpNJ1Vdjp76NV7zhlgYNmL2JlJYbV8KCAZn1m
+         CnqzFqCyC34TYFHw584f24iA5BIS2AklY5/9MS0HdDLqIcd93LFWXw6m9vPIliyq3xN2
+         f+uQ==
+X-Gm-Message-State: AFqh2kpZjciDT+RK1E6k0iRFn60Tcwdar15W+hotrF6rd+qefSEzPG2H
+	/P0Tanh3YegDdxyVTLZt67p3CA==
+X-Google-Smtp-Source: AMrXdXsr/oD5McSggzW4QbpaCFefSS/ge1kqNAbrsKAOykCF4kgn2GXYcE4oS6NJo48qFaXxzQnyaA==
+X-Received: by 2002:a05:600c:5028:b0:3db:1dea:75c9 with SMTP id n40-20020a05600c502800b003db1dea75c9mr27352292wmr.28.1674737218879;
+        Thu, 26 Jan 2023 04:46:58 -0800 (PST)
 Received: from hackbox.lan ([94.52.112.99])
-        by smtp.gmail.com with ESMTPSA id v11-20020adff68b000000b002bfb8f829eesm1198681wrp.71.2023.01.26.04.47.05
+        by smtp.gmail.com with ESMTPSA id v11-20020adff68b000000b002bfb8f829eesm1198681wrp.71.2023.01.26.04.46.57
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 26 Jan 2023 04:47:06 -0800 (PST)
+        Thu, 26 Jan 2023 04:46:58 -0800 (PST)
 From: Abel Vesa <abel.vesa@linaro.org>
 To: Andy Gross <agross@kernel.org>,
 	Bjorn Andersson <andersson@kernel.org>,
@@ -73,16 +73,16 @@ Cc: linux-arm-msm@vger.kernel.org,
 	devicetree@vger.kernel.org,
 	Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
 	linux-phy@lists.infradead.org
-Subject: [PATCH v2 7/8] arm64: dts: qcom: sm8550: Add USB PHYs and controller nodes
-Date: Thu, 26 Jan 2023 14:46:50 +0200
-Message-Id: <20230126124651.1362533-8-abel.vesa@linaro.org>
+Subject: [PATCH v2 1/8] dt-bindings: phy: Add qcom,snps-eusb2-phy schema file
+Date: Thu, 26 Jan 2023 14:46:44 +0200
+Message-Id: <20230126124651.1362533-2-abel.vesa@linaro.org>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20230126124651.1362533-1-abel.vesa@linaro.org>
 References: <20230126124651.1362533-1-abel.vesa@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230126_044710_304384_FCAE897C 
-X-CRM114-Status: GOOD (  12.37  )
+X-CRM114-CacheID: sfid-20230126_044708_773217_B551783F 
+X-CRM114-Status: GOOD (  12.91  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,135 +99,107 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add USB host controller and PHY nodes.
+The SM8550 SoC uses Synopsis eUSB2 PHY. Add a dt-binding schema
+for the new driver.
 
 Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
 ---
 
-NOTE: This patch has been already merged. It is here only to provide
-context for the rest of the patchset. There is a change with respect to the
-clocks, but that will be sent as a separate/individual fix patch.
+The v1 version of this patch was here:
+https://lore.kernel.org/all/20221116120157.2706810-9-abel.vesa@linaro.org/
 
- arch/arm64/boot/dts/qcom/sm8550.dtsi | 92 +++++++++++++++++++++++++++-
- 1 file changed, 91 insertions(+), 1 deletion(-)
+Changes since v1:
+ * dropped the "ref src" clock
+ * dropped the usb-repeater property
 
-diff --git a/arch/arm64/boot/dts/qcom/sm8550.dtsi b/arch/arm64/boot/dts/qcom/sm8550.dtsi
-index 4daf1f03d79f..6801454bbe10 100644
---- a/arch/arm64/boot/dts/qcom/sm8550.dtsi
-+++ b/arch/arm64/boot/dts/qcom/sm8550.dtsi
-@@ -13,6 +13,7 @@
- #include <dt-bindings/mailbox/qcom-ipcc.h>
- #include <dt-bindings/power/qcom-rpmpd.h>
- #include <dt-bindings/soc/qcom,rpmh-rsc.h>
-+#include <dt-bindings/phy/phy-qcom-qmp.h>
- #include <dt-bindings/thermal/thermal.h>
- 
- / {
-@@ -652,7 +653,7 @@ gcc: clock-controller@100000 {
- 				 <&ufs_mem_phy 0>,
- 				 <&ufs_mem_phy 1>,
- 				 <&ufs_mem_phy 2>,
--				 <0>;
-+				 <&usb_dp_qmpphy QMP_USB43DP_USB3_PIPE_CLK>;
- 		};
- 
- 		ipcc: mailbox@408000 {
-@@ -1924,6 +1925,95 @@ opp-202000000 {
- 			};
- 		};
- 
-+		usb_1_hsphy: phy@88e3000 {
-+			compatible = "qcom,sm8550-snps-eusb2-phy";
-+			reg = <0x0 0x088e3000 0x0 0x154>;
-+			#phy-cells = <0>;
+ .../bindings/phy/qcom,snps-eusb2-phy.yaml     | 78 +++++++++++++++++++
+ 1 file changed, 78 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/qcom,snps-eusb2-phy.yaml
+
+diff --git a/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-phy.yaml
+new file mode 100644
+index 000000000000..49a5dad486c2
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-phy.yaml
+@@ -0,0 +1,78 @@
++# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
 +
-+			clocks = <&tcsr TCSR_USB2_CLKREF_EN>;
-+			clock-names = "ref";
++%YAML 1.2
++---
++$id: "http://devicetree.org/schemas/phy/qcom,snps-eusb2-phy.yaml#"
++$schema: "http://devicetree.org/meta-schemas/core.yaml#"
 +
-+			resets = <&gcc GCC_QUSB2PHY_PRIM_BCR>;
++title: Qualcomm SNPS eUSB2 phy controller
 +
-+			status = "disabled";
-+		};
++maintainers:
++  - Abel Vesa <abel.vesa@linaro.org>
 +
-+		usb_dp_qmpphy: phy@88e8000 {
-+			compatible = "qcom,sm8550-qmp-usb3-dp-phy";
-+			reg = <0x0 0x088e8000 0x0 0x3000>;
++description:
++  eUSB2 controller supports LS/FS/HS usb connectivity on Qualcomm chipsets.
 +
-+			clocks = <&gcc GCC_USB3_PRIM_PHY_AUX_CLK>,
-+				 <&rpmhcc RPMH_CXO_CLK>,
-+				 <&gcc GCC_USB3_PRIM_PHY_COM_AUX_CLK>,
-+				 <&gcc GCC_USB3_PRIM_PHY_PIPE_CLK>;
-+			clock-names = "aux", "ref", "com_aux", "usb3_pipe";
++properties:
++  compatible:
++    const: qcom,sm8550-snps-eusb2-phy
 +
-+			power-domains = <&gcc USB3_PHY_GDSC>;
++  reg:
++    maxItems: 1
 +
-+			resets = <&gcc GCC_USB3_DP_PHY_PRIM_BCR>,
-+				 <&gcc GCC_USB3_PHY_PRIM_BCR>;
-+			reset-names = "phy", "common";
++  "#phy-cells":
++    const: 0
 +
-+			#clock-cells = <1>;
-+			#phy-cells = <1>;
++  clocks:
++    items:
++      - description: ref
 +
-+			status = "disabled";
-+		};
++  clock-names:
++    items:
++      - const: ref
 +
-+		usb_1: usb@a6f8800 {
-+			compatible = "qcom,sm8550-dwc3", "qcom,dwc3";
-+			reg = <0x0 0x0a6f8800 0x0 0x400>;
-+			#address-cells = <2>;
-+			#size-cells = <2>;
-+			ranges;
++  resets:
++    maxItems: 1
++    description:
++      Phandle to reset to phy block.
 +
-+			clocks = <&gcc GCC_CFG_NOC_USB3_PRIM_AXI_CLK>,
-+				 <&gcc GCC_USB30_PRIM_MASTER_CLK>,
-+				 <&gcc GCC_AGGRE_USB3_PRIM_AXI_CLK>,
-+				 <&gcc GCC_USB30_PRIM_SLEEP_CLK>,
-+				 <&gcc GCC_USB30_PRIM_MOCK_UTMI_CLK>,
-+				 <&rpmhcc TCSR_USB3_CLKREF_EN>;
-+			clock-names = "cfg_noc",
-+				      "core",
-+				      "iface",
-+				      "sleep",
-+				      "mock_utmi",
-+				      "xo";
++  vdd-supply:
++    description:
++      Phandle to 0.88V regulator supply to PHY digital circuit.
 +
-+			assigned-clocks = <&gcc GCC_USB30_PRIM_MOCK_UTMI_CLK>,
-+					  <&gcc GCC_USB30_PRIM_MASTER_CLK>;
-+			assigned-clock-rates = <19200000>, <200000000>;
++  vdda12-supply:
++    description:
++      Phandle to 1.2V regulator supply to PHY refclk pll block.
 +
-+			interrupts-extended = <&intc GIC_SPI 130 IRQ_TYPE_LEVEL_HIGH>,
-+					      <&pdc 17 IRQ_TYPE_LEVEL_HIGH>,
-+					      <&pdc 15 IRQ_TYPE_EDGE_RISING>,
-+					      <&pdc 14 IRQ_TYPE_EDGE_RISING>;
-+			interrupt-names = "hs_phy_irq",
-+					  "ss_phy_irq",
-+					  "dm_hs_phy_irq",
-+					  "dp_hs_phy_irq";
++required:
++  - compatible
++  - reg
++  - "#phy-cells"
++  - clocks
++  - clock-names
++  - vdd-supply
++  - vdda12-supply
++  - resets
 +
-+			power-domains = <&gcc USB30_PRIM_GDSC>;
-+			required-opps = <&rpmhpd_opp_nom>;
++additionalProperties: false
 +
-+			resets = <&gcc GCC_USB30_PRIM_BCR>;
++examples:
++  - |
++    #include <dt-bindings/clock/qcom,gcc-sm8550.h>
++    #include <dt-bindings/clock/qcom,rpmh.h>
++    #include <dt-bindings/clock/qcom,tcsrcc-sm8550.h>
 +
-+			status = "disabled";
++    usb_1_hsphy: phy@88e3000 {
++        compatible = "qcom,sm8550-snps-eusb2-phy";
++        reg = <0x88e3000 0x154>;
++        #phy-cells = <0>;
 +
-+			usb_1_dwc3: usb@a600000 {
-+				compatible = "snps,dwc3";
-+				reg = <0x0 0x0a600000 0x0 0xcd00>;
-+				interrupts = <GIC_SPI 133 IRQ_TYPE_LEVEL_HIGH>;
-+				iommus = <&apps_smmu 0x40 0x0>;
-+				snps,dis_u2_susphy_quirk;
-+				snps,dis_enblslpm_quirk;
-+				snps,usb3_lpm_capable;
-+				phys = <&usb_1_hsphy>,
-+				       <&usb_dp_qmpphy QMP_USB43DP_USB3_PHY>;
-+				phy-names = "usb2-phy", "usb3-phy";
-+			};
-+		};
++        clocks = <&rpmhcc RPMH_CXO_PAD_CLK>,
++                 <&tcsrcc TCSR_USB2_CLKREF_EN>;
++        clock-names = "ref_src", "ref";
 +
- 		pdc: interrupt-controller@b220000 {
- 			compatible = "qcom,sm8550-pdc", "qcom,pdc";
- 			reg = <0 0x0b220000 0 0x30000>, <0 0x174000f0 0 0x64>;
++        vdd-supply = <&vreg_l1e_0p88>;
++        vdda12-supply = <&vreg_l3e_1p2>;
++
++        resets = <&gcc GCC_QUSB2PHY_PRIM_BCR>;
++    };
 -- 
 2.34.1
 
