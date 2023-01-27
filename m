@@ -4,142 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2776CC54EAA
-	for <linux-phy@archiver.kernel.org>; Fri, 27 Jan 2023 16:43:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 30F1EC38142
+	for <linux-phy@archiver.kernel.org>; Fri, 27 Jan 2023 16:44:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:
-	References:Cc:To:Subject:Date:Message-ID:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=rW+5VNeca+DYyDJgvwPHcBNVfFBKiIcdNn7HAE0tedQ=; b=k8uVYSFvgLVdMrK0HTK30pYYoM
-	OFfOKpMP7sOOzkFU15dp5EbelEaFrX77lJF4U4d3VH70v5J3DBpCTyKl0aH8/wdkzBv/XZg5Objgd
-	K03YDR7cnneEOGdpGJALR7zCmq9qG9tWN/hczT75sLDhJoQDA2eZ4kI0/M1m6b/AfOmAjCe54UzCT
-	wD/MHzVvr51jYrJMgH03PNmEugXt2XwC+FwywUlLHDpXufyDvpU9wrURXaAFbpCES8y/2Cfa/c3ha
-	+FXHfTolgsB1jP3+7iYx+o80GcgG2JfqqS8fGnjHF0GWRfwjQ3Iw2gxKlMbp/UGnXLZSFxYYpSVs6
-	dpyDBGng==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=gUf3FiwdJjnX/NI6KAOxbks3pa2usBEcQqjFx/a/VY4=; b=DCYjQ9yI+cH2bH
+	sanuTSgsYESR9TAqRRRJT32dOSbtV/6WqWENbmo1L5TM0PcRzxdJE2U2NNvibZczeZwg0+VONofhi
+	Aok/yNvgJfqfjsuOEXEU+Tae0rSQUs/Fh0FEiVG5CSAZjBhSblfqMcc5oIJ2iHjdtusdXiDCNDak6
+	kFUKnS3uPVQe/wA/MUqPZcVuJGoo4sUX0jv4VYg5Sa/IkzDRgnFFiA/aLPSxIpu87cOip/tL/R5eT
+	smw/0uAqGUDxSYqir6a1Pxep409V2MuydQTEhZVZLB2x0ZkG40nEDPEMg+StHz/Kc4UkWclfvnfCn
+	UAXDPn1oPfICqtraD+fw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pLRpN-00FlxY-5b; Fri, 27 Jan 2023 16:43:49 +0000
-Received: from mail-he1eur04on2052.outbound.protection.outlook.com ([40.107.7.52] helo=EUR04-HE1-obe.outbound.protection.outlook.com)
+	id 1pLRpq-00FmBN-Ut; Fri, 27 Jan 2023 16:44:19 +0000
+Received: from mx07-00178001.pphosted.com ([185.132.182.106])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pLRo4-00FlR4-LI; Fri, 27 Jan 2023 16:42:30 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=kVfO6WP00NtQK4CQ22FHvjrxpODHl7X5YM9yNLT+YYDCvUc2TajEWL8q/4KRKxX3fnX00ZnQCe2qrDAa7JVwgbJfitg4hRD0X8b+IjFJuESgUTjCqyqNX2qYt2t65vMf+r4CahYqZaphZb1qBSxwTQ9XjRIHbGynDOYHrpIKlNY8IBeoiI2pzUndXybDcbGaRY4wkOSLI4kr2cNnVaglv+SSKe7WGDLweKt+SBSNQ9JLPiMFbxdBcaIyvmDZoDwILqPorzjpG6ZtG847IbhcxJyW0gsDmm6SfK8n9ChrvOCy9vO7F9p22m8JF1MAFHCy/NZXCyW4HQoSDFcrsmXCkQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=2cLTzsOXzM0m5QASMXn7q4xN/UWBIvVsUctaplkBqhI=;
- b=JC+n0MNp++YCvVTYWW+h3SLGTKSMj1v0qcNbAWKE8AF2uf7dreBzqtsgAJXD9jRdzlJY/BP5fb0Yu2beELWlsyBpggBzP845qTbFqYE6z/1VWb1qgW3voPZ6Fb4fZ4Bz4Tb4MLVtHS9GykC+ckaudYVD8VHbXlx+d6GzNEjr3rDDql445T25bmiHZfFfoVLIMQGZSWPRXWtvIyCYBKv78C+UNeQ0yd2Ttu+oKrRhlZQ/BzaVM5W96AJetUaee5aLWXybENuLKCtfz6a83c6YWB4xVJYNtRzeC9Vqq3YuH6Hp7YqOOAqfYQ2/fSfwrsIMgFbsZ+xSPe14C7btk+Woyw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=seco.com; dmarc=pass action=none header.from=seco.com;
- dkim=pass header.d=seco.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=seco.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=2cLTzsOXzM0m5QASMXn7q4xN/UWBIvVsUctaplkBqhI=;
- b=kdLS8JZEe6lry5X305H19Fo1L91NK7lj4a0uTKpEHSx2t7YwfkVIb9odo2TVtGfMnt133L2wanTEXavCr9SYlXCpwcJgz3N5eMXSHVM5pemy8SQ38U3ej82uqR2mfhFgSHXadL8T0m62N3/0efhnhZgbENxlnoCHP/vF428me+MlpA7ZuW8oSVXwml8UTLPar9/qMOJ0w1f4LaDdM3fw2OFX3yeE5zRnz4TXXeIuuimBd4VihpihsFIbH3lXUgkel1n6/E0rF+WdXK7Bw/g3BtEGRPzyll1le4EWeNkMkKfxeOOXcjFTfrnDPZvDIF0vyaDPcWXOHVLGPJb3oNotIQ==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=seco.com;
-Received: from DB9PR03MB8847.eurprd03.prod.outlook.com (2603:10a6:10:3dd::13)
- by AS8PR03MB10084.eurprd03.prod.outlook.com (2603:10a6:20b:628::7) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6002.28; Fri, 27 Jan
- 2023 16:42:23 +0000
-Received: from DB9PR03MB8847.eurprd03.prod.outlook.com
- ([fe80::6b03:ac16:24b5:9166]) by DB9PR03MB8847.eurprd03.prod.outlook.com
- ([fe80::6b03:ac16:24b5:9166%2]) with mapi id 15.20.6043.022; Fri, 27 Jan 2023
- 16:42:23 +0000
-Message-ID: <01d344a6-5e54-9762-3737-05b930fc2fd7@seco.com>
-Date: Fri, 27 Jan 2023 11:42:19 -0500
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.4.0
-Subject: Re: [PATCH v9 07/10] arm64: dts: ls1046ardb: Add serdes bindings
-Content-Language: en-US
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
- Shawn Guo <shawnguo@kernel.org>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
- <kishon@kernel.org>, linux-phy@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org,
- Camelia Alexandra Groza <camelia.groza@nxp.com>,
- Madalin Bucur <madalin.bucur@nxp.com>, Bagas Sanjaya <bagasdotme@gmail.com>,
- Rob Herring <robh+dt@kernel.org>, Ioana Ciornei <ioana.ciornei@nxp.com>,
- linuxppc-dev@lists.ozlabs.org, devicetree@vger.kernel.org,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Li Yang <leoyang.li@nxp.com>
-References: <20221230000139.2846763-1-sean.anderson@seco.com>
- <20221230000139.2846763-8-sean.anderson@seco.com>
- <20230125234335.GC20713@T480> <8074f0be-8a70-a937-49f2-123e0bfc6218@seco.com>
- <20230127075248.GL20713@T480> <20a9070f-9673-2f51-97df-68e78c37d894@seco.com>
- <a3c3603f-7401-aeb2-4b58-86c3ca778c6c@linaro.org>
- <6ad9bc2a-910a-357c-fd7a-cf4ffe13ddb0@seco.com>
- <8da6b154-f799-4a33-d455-f42e30ad8940@linaro.org>
-From: Sean Anderson <sean.anderson@seco.com>
-In-Reply-To: <8da6b154-f799-4a33-d455-f42e30ad8940@linaro.org>
-X-ClientProxiedBy: MN2PR13CA0017.namprd13.prod.outlook.com
- (2603:10b6:208:160::30) To DB9PR03MB8847.eurprd03.prod.outlook.com
- (2603:10a6:10:3dd::13)
+	id 1pLRoW-00FlaQ-Sk; Fri, 27 Jan 2023 16:42:58 +0000
+Received: from pps.filterd (m0288072.ppops.net [127.0.0.1])
+	by mx07-00178001.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 30RE2pQv007570;
+	Fri, 27 Jan 2023 17:41:26 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com; h=from : to : cc :
+ subject : date : message-id : mime-version : content-transfer-encoding :
+ content-type; s=selector1;
+ bh=A6zmRHSUYsMdoUpGI6Iqs9zAp5mpTn+BpeTwOOm0jbw=;
+ b=BjQh+a2gyUS4e2SpUe5ml/kLj/8c9clCSCwi7aRP7AfCw04Pmir3sHq9cWxy19gdvaOD
+ k7WUOuAelYrcmDrWnNql4fYwM4Apin41sR4xT98In5iqcF6saiUKNUMTgqBMC+C3A5T/
+ CWd+hHq68z8T3crOhn8JapMJUB7jDWW+oyRtGNmTSAENesaTuuDRFs2bnNiU8IMfD9SL
+ zX42yPG7ub5KpvjONC5tW4gIZ5uDLT22oKWNxPMXauTIepQ7QzlWt/MUg968XhG5bHL+
+ 5EDrIBWYQ/gYrYVVXBUdsPeZp8Fv9BB0ypr14IBausynlfE7/9Yzy504zHV9Rqi1z4Cq /A== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+	by mx07-00178001.pphosted.com (PPS) with ESMTPS id 3n89eqdd7n-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 27 Jan 2023 17:41:26 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+	by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 33B7310002A;
+	Fri, 27 Jan 2023 17:41:21 +0100 (CET)
+Received: from Webmail-eu.st.com (shfdag1node1.st.com [10.75.129.69])
+	by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 15A4421D3EF;
+	Fri, 27 Jan 2023 17:41:21 +0100 (CET)
+Received: from localhost (10.201.21.177) by SHFDAG1NODE1.st.com (10.75.129.69)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.13; Fri, 27 Jan
+ 2023 17:41:20 +0100
+From: Gatien Chevallier <gatien.chevallier@foss.st.com>
+To: <Oleksii_Moisieiev@epam.com>, <gregkh@linuxfoundation.org>,
+        <herbert@gondor.apana.org.au>, <davem@davemloft.net>,
+        <robh+dt@kernel.org>, <krzysztof.kozlowski+dt@linaro.org>,
+        <alexandre.torgue@foss.st.com>, <vkoul@kernel.org>, <jic23@kernel.org>,
+        <olivier.moysan@foss.st.com>, <arnaud.pouliquen@foss.st.com>,
+        <mchehab@kernel.org>, <fabrice.gasnier@foss.st.com>,
+        <ulf.hansson@linaro.org>, <edumazet@google.com>, <kuba@kernel.org>,
+        <pabeni@redhat.com>
+CC: <linux-crypto@vger.kernel.org>, <devicetree@vger.kernel.org>,
+        <linux-stm32@st-md-mailman.stormreply.com>,
+        <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+        <dmaengine@vger.kernel.org>, <linux-i2c@vger.kernel.org>,
+        <linux-iio@vger.kernel.org>, <alsa-devel@alsa-project.org>,
+        <linux-media@vger.kernel.org>, <linux-mmc@vger.kernel.org>,
+        <netdev@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+        <linux-serial@vger.kernel.org>, <linux-spi@vger.kernel.org>,
+        <linux-usb@vger.kernel.org>,
+        Gatien Chevallier
+	<gatien.chevallier@foss.st.com>
+Subject: [PATCH v3 0/6] Introduce STM32 system bus
+Date: Fri, 27 Jan 2023 17:40:34 +0100
+Message-ID: <20230127164040.1047583-1-gatien.chevallier@foss.st.com>
+X-Mailer: git-send-email 2.35.3
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: DB9PR03MB8847:EE_|AS8PR03MB10084:EE_
-X-MS-Office365-Filtering-Correlation-Id: 4568b238-e7cd-4bbe-c793-08db00857752
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 	gsOCVLo7wqbHYCTUrJlZmus5kkQf+WFyWDhVA/nv81ltFqDTf5cJpT7Fg9+skOyLUP6VPoQ42n3B9WFfmmez+/hJDoxk06mDtDUb60bZVjtl0GgFUOUBncVIKv4wEsPsHVj4c5Sv6x6re/rNQQhHGvmWguKnNh/Kpnlb9pSbF3ehRvQ6NN4/fBYaQSDjH+YIeqHt8vH9me9d0Jq/Rck0AtlnvZr0GT8yYQkvuioIBz4XTrjmaqkL2IUYFF3ir2TTqN8mqvZjnu4htFlJt60sMeL91hTH/gUM7eaxohCtDOP5jNBpVxVr9Pbcrr1Lm6J4BzMkiBKgMhNTEyUNhN/Ll3PaCEHp+tZLUS5yCUwcN+XokC8P/CoAQ1Lr04JC3LmQqVQxKshyZ7YDPPNMm/J2f/sbFcdyMqhhR7kN9z4ntQrw/nwYCCRGyKSjk8d2xHYjYjh3XJt8ZLnxBReCclADE5vE8WQTRh4d2zh9VG0dH+h08WV6rauhYfo3BaCG/HD9RdpAKBRncX81umDgIZbWz/5Vcxt3jQSTu/sWgCBmlDZXNhZJzBcrpqTAPYpMYXIcQo1OgRATRWtAFdMwnnIvlxSJ1OIQ2CPuu8JiTUI+JWlj2mDX/JFjR53mM7Sgg6tsRZu1pPtq+BE7kdb3BwgDu6DEq2nhQj4Ul6wI3bvr+SmSzlB25DC1GyL6qq1m0oVzCnWfkTLrVk7/Y4i6xi9Q218dmMi5Vkq6GsURBf9t5KOT5zqr0RHhb2AlN87DF60TCspUs2bbWVKnJycb/MOidg==
-X-Forefront-Antispam-Report: 	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DB9PR03MB8847.eurprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230025)(366004)(39850400004)(396003)(376002)(346002)(136003)(451199018)(2616005)(86362001)(31696002)(38100700002)(44832011)(4326008)(186003)(5660300002)(26005)(478600001)(66946007)(8676002)(66556008)(6486002)(52116002)(54906003)(6666004)(6512007)(6506007)(110136005)(66476007)(38350700002)(53546011)(2906002)(41300700001)(316002)(8936002)(7416002)(36756003)(83380400001)(31686004)(45980500001)(43740500002);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: 	=?utf-8?B?WENRejY2dXpyS3QxaUVDRkdwaU1TcEtsNWdLSjRkb2lHdHlSa3d2NnpRYnpO?=
- =?utf-8?B?UTJBNU1GSGZGSmdMUGt4dFNqNW1jQzlXQ3B5TXVISksyOWxNd1IwY25ncnhj?=
- =?utf-8?B?NGZZL3l1THBCRmR2U1BjK0pIOVh0SjVNb2loQjNNNHQraDhZTzVZSDlUK0xT?=
- =?utf-8?B?c1F3c2xNTlUwdVZjb2xRMW9NNEhVWGtMN2Z3N0prSW41cjBZMFh1am1UaXpi?=
- =?utf-8?B?THkwOE00NWlENlhxaTc3VGFYdG16UFlCV0tjMXprUTlQQTRwRkl1ZkdtVE9k?=
- =?utf-8?B?Wm4wZkV1RCthU25DSlB4YlRlaG1qTkdwUW96OXVyekw4WXNnVGZpdjFpWDE3?=
- =?utf-8?B?QXhUdFA0YTZZQkxwUWNiOVR2Qks4SWxZdUtWSVB3RmtXd1YwMDZlRUlRUlgr?=
- =?utf-8?B?NWR3S0VoR2xHT2ZVUHZIZDdPQ0NNTlhRWkladmRsWURJTzdTYTNzc3BFc2dC?=
- =?utf-8?B?TGsrK0RiRXEyMFRUZnhmbnJ6c0NWMW1UUkFnTjhBY2h2UnhDc0ZKcEdCTEs0?=
- =?utf-8?B?aVpEK0k3RkJrcDk3dGs2NVNQNVJVaDRDVW1zMjE3UGVkekNTV2xTZ0VuYTN3?=
- =?utf-8?B?RzZOTEFSbGdDVHJVQzB2aTlabmRnRXhLQWhRTDRPZFJYVk80ZGdsK3R1Rll2?=
- =?utf-8?B?Zy9EQW14UWc3UlFkQzRKVldIOXhVNjVyWDdjZm81OXM1bGZkZnJuV1dVSU1i?=
- =?utf-8?B?ejdVTnAwUm5NS2pYTUhtZGZwWCtwNnZWdUdPd1lGczhKSFZSVTZrREVidDdk?=
- =?utf-8?B?VXhkUjVOTUNXeG5LN2VkUWo1cnpKajlXTUNCd0JsaFAzc3pTZ21NOUIrY0pE?=
- =?utf-8?B?bUpqNEVtdnZ4clFPcHdFUzA4c29XM0ZZd2VGTXF6REV6dGY4WVIvZkovbERB?=
- =?utf-8?B?cmZKNTB1UkJXOWZlYkxLTy9LekVGVmlkR1VUY1dUc081c1ArY3NHdlhyOUhi?=
- =?utf-8?B?d3MxMFlTRnUxdElFR2ZMWGJOVkhQakpnQTVEOFJOZWtHOVVMSXYwb3YwMUVK?=
- =?utf-8?B?czNnUldFK3Ntck9kM3h4Q1Jza08vb3N0L2JKVVdMdzFRL0NzTHcxQWFmTWxw?=
- =?utf-8?B?REFYeDdGT3EvZHdXQmVBTUlQUkw0MDdPUEFHNldSMU9XL1JnUUN3RFpOeW1q?=
- =?utf-8?B?WkhjMThEaVQzK2o2OXZ3dTlFVGJ4eDRES0VDd0VvaTI0a3N1L2gyK2lNa3Fw?=
- =?utf-8?B?T2MzOVk5aFU0dHBrZW1zOWU2Yk4wY2hEQW15ZnIwa1VPWE1KalRXNzlHMHI5?=
- =?utf-8?B?RnorcHc2VVdxcDJjZEZmR3lqNTBZU3AwL29Zd0Q2cTZoOHdYSHlVajN0RHFp?=
- =?utf-8?B?cHRRWVJEa2pMdGZtTGtaVTFQTGxsakR5bEk2cUFuR3JYS3FSdXpGakRaUnhv?=
- =?utf-8?B?YVk2YlIzQUJZMDBJaVArdlFFTEZuWm5va2lHcHdoZm0vZnhvZk9KYmJWam1U?=
- =?utf-8?B?Ni9NMkxNTmJMbjhRWjQrd2tzNm1iSERJeGdxcjhuODVmNWFER0E3NWhqOE8y?=
- =?utf-8?B?eUNKRm9uQURKTkY0d0UzTXg0bXYybnNENU9vT05kbkdDcy9rWGcvbkhVRWhx?=
- =?utf-8?B?K2FtK2VVa3BVejAycjVROTVqcUJ0YTBGVzJoMDJCY3pOQ0ZpWWxPclJ2TXoy?=
- =?utf-8?B?TU0vS1R0ZklwS0x1d3M1MmNJcGEvUUdSOXRWZFRoQXU5U1hUMkJWMzZPb0Vq?=
- =?utf-8?B?ZTRhMVVwR0g1M0x0bmU0b2pOWU5tRWVCSm94MTlzeXpxSFI5c2pYZGNwZXla?=
- =?utf-8?B?VjNJSElweDJOTWhrdEl6R1JQTHh4cDk2SFJaOHVnY0JCbE1oU2Q3R3Y5TVcx?=
- =?utf-8?B?cUpuV2R1T0haeitNdURmR29vMC90QVJ1dHNLUEZHYmdLb0VUZUljMUg0Mk5p?=
- =?utf-8?B?aVhyNjFSZnRIc1NuU0IvalRWMGdLUWpEWTZVWWlBdzhtbGFjNnNxU1VOWDFv?=
- =?utf-8?B?T3lqckxtZGQvem5vWmx2ekkwM0RvUUR0OUwvbzFIZ2lvOVBIZ0FxTHFVNjk0?=
- =?utf-8?B?aUNwYW1PYjlRcDdVVVBzdWJIVVRJd2NIS2t0VmQ0TTI2SVNJeEk0THhFalA1?=
- =?utf-8?B?NmNhSkYrRk0vY0hSY3pmR0pMSkZ6Nm5QbzZLb1ZnQ2VJYkZ2NXpWNzFLOWRV?=
- =?utf-8?B?b3Boa0xsbjczcGZFdEczYVBVWEJia3BkTHJ6WlRKU1hGMmxUYzhISFdPZy9i?=
- =?utf-8?B?VUE9PQ==?=
-X-OriginatorOrg: seco.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 4568b238-e7cd-4bbe-c793-08db00857752
-X-MS-Exchange-CrossTenant-AuthSource: DB9PR03MB8847.eurprd03.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 27 Jan 2023 16:42:23.7183
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: bebe97c3-6438-442e-ade3-ff17aa50e733
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: Ilm3/oL8ohP7ADTNP7NpjkAkaWuJD8xsznvZpKIC1J/hdNo2c+oXQ19ZfJugGCxvM9Xx55Ds9yk0+RMaj7n+9g==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS8PR03MB10084
+X-Originating-IP: [10.201.21.177]
+X-ClientProxiedBy: EQNCAS1NODE3.st.com (10.75.129.80) To SHFDAG1NODE1.st.com
+ (10.75.129.69)
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.219,Aquarius:18.0.930,Hydra:6.0.562,FMLib:17.11.122.1
+ definitions=2023-01-27_10,2023-01-27_01,2022-06-22_01
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230127_084229_071206_3E087064 
-X-CRM114-Status: GOOD (  18.58  )
+X-CRM114-CacheID: sfid-20230127_084257_238811_9ECF1D18 
+X-CRM114-Status: GOOD (  19.46  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -156,46 +100,103 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 1/27/23 11:41, Krzysztof Kozlowski wrote:
-> On 27/01/2023 17:22, Sean Anderson wrote:
->> On 1/27/23 11:15, Krzysztof Kozlowski wrote:
->>> On 27/01/2023 17:11, Sean Anderson wrote:
->>>>>>>>
->>>>>>>>  .../boot/dts/freescale/fsl-ls1046a-rdb.dts    | 112 ++++++++++++++++++
->>>>>>>>  drivers/phy/freescale/Kconfig                 |   1 +
->>>>>>>
->>>>>>> The phy driver Kconfig change shouldn't be part of this patch.
->>>>>>
->>>>>> I put it here for bisectability, since this is the point where we need
->>>>>> to enable it. But I can do this in a separate patch if you want.
->>>>>
->>>>> From DT ABI perspective, it's already broken anyway if you need to change
->>>>> kernel and DT atomically.
->>>>
->>>> AIUI new kernels must work with old device trees, but new device trees need not
->>>> work with old kernels. So a change like this is fine, since the kernel won't
->>>> touch the serdes if it isn't supplied.
->>>
->>> You used the argument "bisectability". If the patchset is not
->>> bisectable, the ABI is broken.
->> 
->> Well, because Shawn wants it in a separate patch I am just going to enable
->> the driver by default on Layerscape before adding the device nodes. That way we have
->> 
->> 1. Base state, driver not enabled and node is disabled
->> 2. Driver enabled but not used because the node is disabled
->> 3. Driver enabled and bound to node
->> 
->> So there is never a case where the node is bound but the driver isn't enabled
->> (which would cause the ethernet drivers to fail to probe).
-> 
-> Then there is no bisectability issues and the Kconfig patch should have
-> been squashed here... Mentioning bisectability and that squash just
-> confuses.
+Document STM32 System Bus. This bus is intended to control firewall
+access for the peripherals connected to it.
 
-The Kconfig is currently squashed, but I am going to split it off as requested.
+For every peripheral, the bus checks the firewall registers to see
+if the peripheral is configured as non-secure. If the peripheral
+is configured as secure, the node is marked populated, so the
+device won't be probed.
 
---Sean
+This is useful as a firewall configuration sanity check and avoid
+platform crashes in case peripherals are incorrectly configured.
+
+The STM32 System Bus implements the feature-domain-controller
+bindings. It is used by peripherals to reference a domain
+controller, in this case the firewall feature domain.
+The bus uses the ID referenced by the feature-domains property to
+know where to look in the firewall to get the security configuration
+for the peripheral. This allows a device tree description rather
+than a hardcoded peripheral table in the bus driver.
+
+On STM32MP13/15 platforms, the firewall bus is represented by the
+ETZPC node, which is responsible for the securing / MCU isolating
+the capable peripherals.
+
+STM32MP13/15 device trees are updated in this series to implement
+the bus. All peripherals that are securable or MCU isolation capable
+by the ETZPC are connected to the bus.
+
+Changes in V2:
+	- Corrected YAMLS errors highlighted by Rob's robot
+	- Re-ordered Signed-off-by tags in two patches
+
+Changes in V3:
+	- Document feature-domains property in YAML documentation for
+	concerned periperals under the System Bus
+	- Fix STM32 System Bus YAML documentation
+	- Remove STM32 System bus bindings that were currently used
+	as helpers for device tree
+	- Correct few errors in driver
+	- Add missing peripherals under the System Bus that were in
+	SoC variation device tree files
+	- Fix node names
+
+Gatien Chevallier (5):
+  dt-bindings: treewide: add feature-domains description in binding
+    files
+  dt-bindings: bus: add STM32 System Bus
+  bus: stm32_sys_bus: add support for STM32MP15 and STM32MP13 system bus
+  ARM: dts: stm32: add ETZPC as a system bus for STM32MP15x boards
+  ARM: dts: stm32: add ETZPC as a system bus for STM32MP13x boards
+
+Oleksii Moisieiev (1):
+  dt-bindings: Document common device controller bindings
+
+ .../devicetree/bindings/bus/st,sys-bus.yaml   |  127 +
+ .../bindings/crypto/st,stm32-hash.yaml        |    5 +
+ .../devicetree/bindings/dma/st,stm32-dma.yaml |    5 +
+ .../bindings/dma/st,stm32-dmamux.yaml         |    5 +
+ .../feature-domain-controller.yaml            |   84 +
+ .../devicetree/bindings/i2c/st,stm32-i2c.yaml |    5 +
+ .../bindings/iio/adc/st,stm32-adc.yaml        |    5 +
+ .../bindings/iio/adc/st,stm32-dfsdm-adc.yaml  |    5 +
+ .../bindings/iio/dac/st,stm32-dac.yaml        |    5 +
+ .../bindings/media/st,stm32-cec.yaml          |    5 +
+ .../bindings/media/st,stm32-dcmi.yaml         |    5 +
+ .../memory-controllers/st,stm32-fmc2-ebi.yaml |    5 +
+ .../bindings/mfd/st,stm32-lptimer.yaml        |    5 +
+ .../bindings/mfd/st,stm32-timers.yaml         |    6 +
+ .../devicetree/bindings/mmc/arm,pl18x.yaml    |    5 +
+ .../devicetree/bindings/net/stm32-dwmac.yaml  |    5 +
+ .../bindings/phy/phy-stm32-usbphyc.yaml       |    5 +
+ .../bindings/regulator/st,stm32-vrefbuf.yaml  |    5 +
+ .../devicetree/bindings/rng/st,stm32-rng.yaml |    5 +
+ .../bindings/serial/st,stm32-uart.yaml        |    5 +
+ .../bindings/sound/st,stm32-i2s.yaml          |    5 +
+ .../bindings/sound/st,stm32-sai.yaml          |    5 +
+ .../bindings/sound/st,stm32-spdifrx.yaml      |    5 +
+ .../bindings/spi/st,stm32-qspi.yaml           |    5 +
+ .../devicetree/bindings/spi/st,stm32-spi.yaml |    5 +
+ .../devicetree/bindings/usb/dwc2.yaml         |    5 +
+ MAINTAINERS                                   |    6 +
+ arch/arm/boot/dts/stm32mp131.dtsi             |  407 +--
+ arch/arm/boot/dts/stm32mp133.dtsi             |   51 +-
+ arch/arm/boot/dts/stm32mp13xc.dtsi            |   19 +-
+ arch/arm/boot/dts/stm32mp13xf.dtsi            |   18 +-
+ arch/arm/boot/dts/stm32mp151.dtsi             | 2722 +++++++++--------
+ arch/arm/boot/dts/stm32mp153.dtsi             |   52 +-
+ arch/arm/boot/dts/stm32mp15xc.dtsi            |   19 +-
+ drivers/bus/Kconfig                           |    9 +
+ drivers/bus/Makefile                          |    1 +
+ drivers/bus/stm32_sys_bus.c                   |  168 +
+ 37 files changed, 2208 insertions(+), 1596 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/bus/st,sys-bus.yaml
+ create mode 100644 Documentation/devicetree/bindings/feature-controllers/feature-domain-controller.yaml
+ create mode 100644 drivers/bus/stm32_sys_bus.c
+
+-- 
+2.35.3
 
 
 -- 
