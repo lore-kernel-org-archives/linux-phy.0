@@ -4,68 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5DAE8C38142
-	for <linux-phy@archiver.kernel.org>; Fri, 27 Jan 2023 12:49:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 19059C54EAA
+	for <linux-phy@archiver.kernel.org>; Fri, 27 Jan 2023 12:51:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6gOKyqsKK5os1URlnJzy35UuwTEqiCMnMBpU55s/v7U=; b=O/rg01jzxYCYFt
-	/MLk6P47wn4JPD04raQF2ig1tT+ZdCwjhE4SD6z0vZuz5lBh2GCGQX889eO1HHHkvK+32JxObWaZs
-	St27E0JcowefD4667ObR7lCZoyet5tZGkTrpgcGbGTu05dYXKxcyVtie4UknwT8W9W+aNU1rixdCe
-	dBTl2O0+CWpfrYUi0DM5YCvxwaBmJxGdzlac1ZoWkaoo/p9qE3X7gMPBB7AW9sj17o8QRaJEmK0Q3
-	69ZO6xbopPNrSmHjsLjsjPNn9vBf9nkDC2Z+3WkuDB3zEpqyH6rZ1XVxlEyhxgZDr1pllsSFdvrGP
-	8ZhlY5aImUZXQz/Sf0pQ==;
+	List-Owner; bh=3QLrqxoGau7hQJrWaTRPTA7teIBAcXyLFKmikL98IAI=; b=zV+hK1vDb3elwX
+	sA8w0H2qE7FhpW7C8Ntp/RqZYPoO0mDaxcspJ4621f+gSMZIZ3T5KxcjI/PpkPA5vlkwJK83jW7iZ
+	lxsS66MzrZJLBumSDul/eR6dvqEymWNVL93MGR96eDZkyGpj+GecTzdibGWXwaejfZzZ3oGAm6/K+
+	1WZJMwqGXhcPh1/CrayXwYnp+01CuRxTpbDOq+8rgG82fvkQfpAArwzuGjch76GshnSzI33B8lJnn
+	xx3bjmFNCMiJZaV1L58zkPyLzgFKbVX041QRZmtPCY/EVyj1/AxbO9Y8ujwLskjruQYjpnNda9E5c
+	h1hSWMzdhvLlk7X/1cGA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pLOAa-00Ei3Z-4l; Fri, 27 Jan 2023 12:49:28 +0000
-Received: from mail-wm1-x329.google.com ([2a00:1450:4864:20::329])
+	id 1pLOCn-00Ej0R-RQ; Fri, 27 Jan 2023 12:51:45 +0000
+Received: from mail-wr1-x42e.google.com ([2a00:1450:4864:20::42e])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pLNEf-00EH7T-C6
-	for linux-phy@lists.infradead.org; Fri, 27 Jan 2023 11:49:39 +0000
-Received: by mail-wm1-x329.google.com with SMTP id fl24so3271005wmb.1
-        for <linux-phy@lists.infradead.org>; Fri, 27 Jan 2023 03:49:37 -0800 (PST)
+	id 1pLNGC-00EHpq-9Q
+	for linux-phy@lists.infradead.org; Fri, 27 Jan 2023 11:51:16 +0000
+Received: by mail-wr1-x42e.google.com with SMTP id d14so4727985wrr.9
+        for <linux-phy@lists.infradead.org>; Fri, 27 Jan 2023 03:51:08 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=IXd1Cay0PuoVNLquWy4+5A9Hje1OZ6HIZgO3KYLNKCU=;
-        b=EM+BulHUseAsmgsDpFK679ddP8Z3AeuM8tLmktr0DE2abRVZJ5wKMKNsz/nK3VPE30
-         OHzifBu8lcuElJLZ/r83ZfXSGbz/jju0ZVtRUuyOodRDgKYRUJVg3dmfiVfNWyqrSvpB
-         Vhyu2yeRGICk4vclE5hwkNNByXgNlwuDEHwlaD+n5oYnkWqIBkDPYKPqmnW8l4vBli1y
-         jRkIWbUUIFh5eIHXaIBIBByJk7zDU7ESsYtndEVGMKz8BBWorqXSuhHZq4Kysc314DI7
-         wWUFay+YPLrKHhMn3KMex813AlP9Q25mxEHDb3rI11K6+kC6SuquhPHXrjKZVaHQHIfJ
-         sChQ==
+        bh=VUxkjbPI2hGs2bTAnhOWhZx0Y3u570fRt/MEL0+XvDc=;
+        b=nPrIxS6CM21G3+sUYx9go7df0QKfN3/Dtsq+WpA/kOh5cKqckydPi/hrYpQrqkUKAZ
+         QIgTraYG/K8jnwZsSQq8ymhiarXYxgGcNmaXEJBiuZUy1gEgkcb0aRm8TbSfLwCGOz8Z
+         IyoTBq5NwNaOPQdwoVrKMQAOHmUdK/7LjNJmKRHYMLnTlqvY+slLeTtIXtOu/GWf766p
+         Taxs8meQgkIFyjj22jSYK0We4LS0nKuMo01qrQ2CR2DCa6d7qGQ2OmG4ax8pb+3vpTRK
+         mfQe5Tewu6PrfbGmvyFSLdx480x+SOLB8FTvch5JebZVHMbGryve27Q325tOj62McMmS
+         3QpQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=IXd1Cay0PuoVNLquWy4+5A9Hje1OZ6HIZgO3KYLNKCU=;
-        b=jGtnljJKD+qSs8g7DDW/qfldizkoZuhpzj+ndi2uhQdgTreuge0qm4Unjp+bXTMTKB
-         C3EFNmYVrcHYv4hchM8fx0q5YrEg7xFQ0MTVBlh5OPr22GxGtnIvC+SCEu3CBxPujglM
-         y49mQrYjsFRNNc/oHvjYjtagSQU5jS3P1ROtG3rWiXJ0SszSMCEOHf4fyPqsu8g4v2TC
-         TqJTmHwAFCJNfIVU8oITWeW6ktrvAR0sv8M5HkjO+ReT63ejcVqEzp7ONY6Aq5Wu+CfU
-         VzWebZJNQcT2i/eiC/zxRZ517ccE5bRztq+uIuDSwltYYN4bsH/eNr61N4cmcsRvUArv
-         nRQQ==
-X-Gm-Message-State: AFqh2kpEjFi2OHnBJYSzwQipDPHWUCUSHzXZHgxAXjk2XdRes+yZqhao
-	ekf+h20WkvTTR2WYRn38YgiD5A==
-X-Google-Smtp-Source: AMrXdXs1krk+6o/FfFny7AmBPlSTXvn2eo0l3icgMKTakzX2LZT41di38a+DLnWs8FhhuiSaNmhY8g==
-X-Received: by 2002:a05:600c:4e16:b0:3db:15b1:fafd with SMTP id b22-20020a05600c4e1600b003db15b1fafdmr32933179wmq.24.1674820175891;
-        Fri, 27 Jan 2023 03:49:35 -0800 (PST)
+        bh=VUxkjbPI2hGs2bTAnhOWhZx0Y3u570fRt/MEL0+XvDc=;
+        b=iLrMgpui+eEahnF0hrjCpNVwE65PohJzAX/254uL104gRa3EU6WJFTHXtwT0yLttNF
+         SGcpOxltJbKY5dd3YNmJ25IrVvIxt8QeeFAZ1/3rDROb+4/vbnjxBAp95hQaSNsi5JKU
+         YcfGzauz+qsEJbXDy6LwOMnCTPZGmnfK9epNdJN8u7yl2H83OHZTx4DL1sRVxaUZCTs8
+         sdrFGQoS+PfUbO0gVXaOq9H+fPdVafVofiklDn52Z3UkXYN0LbJXK72paWRgCVA2cET/
+         kxFuqd4cz57RQpX4E3oNQqULpSEhZG0bVsm7QvnYVweaimwkx72WeFl1oXXwOSzVMEJ4
+         BrNA==
+X-Gm-Message-State: AFqh2kqUv5Ob5HG+gt7POvIfcehuOSa30i93Hnxea0UJZOB4pYenNg3Q
+	+zhVq6g6LrrrtCa0Ndt1Z/tw5A==
+X-Google-Smtp-Source: AMrXdXu/ppR95kNTQmFZaEgCcnWnz2FywoDoW01+9eBW7RnHLZ/01Gr9HpcBmhdtrkOjZiIM+x1cyw==
+X-Received: by 2002:adf:e18c:0:b0:2be:493f:3b34 with SMTP id az12-20020adfe18c000000b002be493f3b34mr33144295wrb.26.1674820267487;
+        Fri, 27 Jan 2023 03:51:07 -0800 (PST)
 Received: from [192.168.1.109] ([178.197.216.144])
-        by smtp.gmail.com with ESMTPSA id p20-20020a05600c2e9400b003d9862ec435sm4075479wmn.20.2023.01.27.03.49.33
+        by smtp.gmail.com with ESMTPSA id p2-20020a5d4582000000b002b6bcc0b64dsm3804434wrq.4.2023.01.27.03.51.05
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 27 Jan 2023 03:49:35 -0800 (PST)
-Message-ID: <9f4666db-9b0b-77d4-e02b-708c2a1ebb4e@linaro.org>
-Date: Fri, 27 Jan 2023 12:49:33 +0100
+        Fri, 27 Jan 2023 03:51:07 -0800 (PST)
+Message-ID: <2d368c6f-5240-8aec-ef27-a86b2a361856@linaro.org>
+Date: Fri, 27 Jan 2023 12:51:05 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.7.1
-Subject: Re: [PATCH v3 7/8] arm64: dts: qcom: sm8550: Add USB PHYs and
+Subject: Re: [PATCH v2 7/8] arm64: dts: qcom: sm8550: Add USB PHYs and
  controller nodes
 Content-Language: en-US
 To: Abel Vesa <abel.vesa@linaro.org>, Andy Gross <agross@kernel.org>,
@@ -78,14 +78,13 @@ To: Abel Vesa <abel.vesa@linaro.org>, Andy Gross <agross@kernel.org>,
 Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
  linux-phy@lists.infradead.org
-References: <20230126131415.1453741-1-abel.vesa@linaro.org>
- <20230126131415.1453741-8-abel.vesa@linaro.org>
+References: <20230126124651.1362533-1-abel.vesa@linaro.org>
+ <20230126124651.1362533-8-abel.vesa@linaro.org>
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20230126131415.1453741-8-abel.vesa@linaro.org>
+In-Reply-To: <20230126124651.1362533-8-abel.vesa@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230127_034937_623713_5A7A81F6 
-X-CRM114-Status: UNSURE (   8.67  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230127_035112_409359_6DE4A6EC 
+X-CRM114-Status: GOOD (  18.48  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,15 +101,79 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 26/01/2023 14:14, Abel Vesa wrote:
+On 26/01/2023 13:46, Abel Vesa wrote:
 > Add USB host controller and PHY nodes.
 > 
 > Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
 > ---
-
-
-(...)
-
+> 
+> NOTE: This patch has been already merged. It is here only to provide
+> context for the rest of the patchset. There is a change with respect to the
+> clocks, but that will be sent as a separate/individual fix patch.
+> 
+>  arch/arm64/boot/dts/qcom/sm8550.dtsi | 92 +++++++++++++++++++++++++++-
+>  1 file changed, 91 insertions(+), 1 deletion(-)
+> 
+> diff --git a/arch/arm64/boot/dts/qcom/sm8550.dtsi b/arch/arm64/boot/dts/qcom/sm8550.dtsi
+> index 4daf1f03d79f..6801454bbe10 100644
+> --- a/arch/arm64/boot/dts/qcom/sm8550.dtsi
+> +++ b/arch/arm64/boot/dts/qcom/sm8550.dtsi
+> @@ -13,6 +13,7 @@
+>  #include <dt-bindings/mailbox/qcom-ipcc.h>
+>  #include <dt-bindings/power/qcom-rpmpd.h>
+>  #include <dt-bindings/soc/qcom,rpmh-rsc.h>
+> +#include <dt-bindings/phy/phy-qcom-qmp.h>
+>  #include <dt-bindings/thermal/thermal.h>
+>  
+>  / {
+> @@ -652,7 +653,7 @@ gcc: clock-controller@100000 {
+>  				 <&ufs_mem_phy 0>,
+>  				 <&ufs_mem_phy 1>,
+>  				 <&ufs_mem_phy 2>,
+> -				 <0>;
+> +				 <&usb_dp_qmpphy QMP_USB43DP_USB3_PIPE_CLK>;
+>  		};
+>  
+>  		ipcc: mailbox@408000 {
+> @@ -1924,6 +1925,95 @@ opp-202000000 {
+>  			};
+>  		};
+>  
+> +		usb_1_hsphy: phy@88e3000 {
+> +			compatible = "qcom,sm8550-snps-eusb2-phy";
+> +			reg = <0x0 0x088e3000 0x0 0x154>;
+> +			#phy-cells = <0>;
+> +
+> +			clocks = <&tcsr TCSR_USB2_CLKREF_EN>;
+> +			clock-names = "ref";
+> +
+> +			resets = <&gcc GCC_QUSB2PHY_PRIM_BCR>;
+> +
+> +			status = "disabled";
+> +		};
+> +
+> +		usb_dp_qmpphy: phy@88e8000 {
+> +			compatible = "qcom,sm8550-qmp-usb3-dp-phy";
+> +			reg = <0x0 0x088e8000 0x0 0x3000>;
+> +
+> +			clocks = <&gcc GCC_USB3_PRIM_PHY_AUX_CLK>,
+> +				 <&rpmhcc RPMH_CXO_CLK>,
+> +				 <&gcc GCC_USB3_PRIM_PHY_COM_AUX_CLK>,
+> +				 <&gcc GCC_USB3_PRIM_PHY_PIPE_CLK>;
+> +			clock-names = "aux", "ref", "com_aux", "usb3_pipe";
+> +
+> +			power-domains = <&gcc USB3_PHY_GDSC>;
+> +
+> +			resets = <&gcc GCC_USB3_DP_PHY_PRIM_BCR>,
+> +				 <&gcc GCC_USB3_PHY_PRIM_BCR>;
+> +			reset-names = "phy", "common";
+> +
+> +			#clock-cells = <1>;
+> +			#phy-cells = <1>;
+> +
+> +			status = "disabled";
+> +		};
+> +
 > +		usb_1: usb@a6f8800 {
 > +			compatible = "qcom,sm8550-dwc3", "qcom,dwc3";
 > +			reg = <0x0 0x0a6f8800 0x0 0x400>;
@@ -147,10 +210,10 @@ On 26/01/2023 14:14, Abel Vesa wrote:
 > +			power-domains = <&gcc USB30_PRIM_GDSC>;
 > +			required-opps = <&rpmhpd_opp_nom>;
 
-This is not accepted, so far. Can we drop it?
+This part was merged but it is not correct without [1]. Are we going to
+revive [1] or should we drop it?
 
-Or revive:
-https://lore.kernel.org/all/YXcBK7zqny0s4gd4@ripper/
+[1] https://lore.kernel.org/all/YXcBK7zqny0s4gd4@ripper/
 
 Best regards,
 Krzysztof
