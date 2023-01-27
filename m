@@ -4,83 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2557FC54EAA
-	for <linux-phy@archiver.kernel.org>; Fri, 27 Jan 2023 16:19:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 353CEC54EAA
+	for <linux-phy@archiver.kernel.org>; Fri, 27 Jan 2023 16:22:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:
-	MIME-Version:In-Reply-To:References:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=OL3yCYMToxou6IMyFYbsXeAI6Js672iNvm2aY14xgzo=; b=JFrV5Gq8a8w11R8c9980SEZ6gY
-	U9NjlliNCG6PKhkGWAt9FdCge+ZefKrEtd9q6T0XLb8NTKz2GxN617PnunsaimUkt8PMGlMuLV5lt
-	b8IF8XlPni/lz9pLQ7v4qUrSj6+Phb7qkZ+8eMTkn0F25BTCmGrNIsoZodW1VznJeS50NCtsDJ7vM
-	pmLNWAl4qGPh5kxC7V5m722cvUdjrQDjIcVDrMpHv4VYiUtyGB5SGI96IRaWeyQ4J0RNpwajKBPcy
-	sRlnP+OyDjlQ8R/oDvGaTre33MRCAqgPZzlGcQA/bF/HVKd7JK+MfHtEZ8tIaXpPftIVILD6BTDtG
-	wlNOv1BA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=AHah3uBZJaP9lYrivdt/Vg86H/WwwbNADue48GuoEj4=; b=ijEJRWEL/L6nOVYgHPDWyC6bZJ
+	vqJUnxODywgU21aj8pF8H7g+igL3BtOgoaJkGYq3TedasyM/4KN5uwmE1sqFEwSFIIHdFXJ2ZO4qZ
+	IXjk3B4QZmmFhAA2ioKOrTNjCkwCWJFOYcSNEffxrgObxvFpEK0kU6vd5bSkzSUXYb5Io1Ulj9pUg
+	tQ1wsWCret8e5lsUabD3TzWkPd8YKxOYXC1F7R8x1DJih3y03v22m4Ly49yw3eYDEC4xtyhF9Me1k
+	trapFxzyxI+q5fLD9UC9BHRevW6+NHw3wtzbZsLmKHehNPUWTXhk3v6A8Ws4OXg1SG+hJiPNQz4UM
+	NXJiC18Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pLRRb-00FdoJ-HH; Fri, 27 Jan 2023 16:19:15 +0000
-Received: from mail-qv1-xf32.google.com ([2607:f8b0:4864:20::f32])
+	id 1pLRUo-00Fef3-D0; Fri, 27 Jan 2023 16:22:34 +0000
+Received: from mail-ej1-x633.google.com ([2a00:1450:4864:20::633])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pLRRH-00Fdex-Vc
-	for linux-phy@lists.infradead.org; Fri, 27 Jan 2023 16:18:58 +0000
-Received: by mail-qv1-xf32.google.com with SMTP id ll10so3054274qvb.6
-        for <linux-phy@lists.infradead.org>; Fri, 27 Jan 2023 08:18:51 -0800 (PST)
+	id 1pLRUi-00Fece-7Q
+	for linux-phy@lists.infradead.org; Fri, 27 Jan 2023 16:22:29 +0000
+Received: by mail-ej1-x633.google.com with SMTP id vw16so15013479ejc.12
+        for <linux-phy@lists.infradead.org>; Fri, 27 Jan 2023 08:22:24 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=baylibre-com.20210112.gappssmtp.com; s=20210112;
-        h=cc:to:subject:message-id:date:mime-version:in-reply-to:references
-         :user-agent:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=DpbM6dulHZ17ZJk7sIXX1zvUQ+2CFayGo452JEZsUgA=;
-        b=sei4Ur3/qhUD7eRtizMwsp9T6XeunKIuHWi7/1xW5YiSHAAZjfGiFrjmNroi5Enj8P
-         0NXdDYvUlkxkZFSZ8QC7MWX3UVc/1D/PRzdEIy1zPa+ac+P8OcshmPccSYKmoPj+8upz
-         bF1cYyx+wYqWTI3M2ZRA5rjQB3IvJhBtMjBcFST1UKVHNS5ge2jDw381/jn/TPNUG8Ig
-         Utt08poel4blMMcW/0fHg3xTtshN+h7KVP6YlUQEUfgC7IHcdXOtmL/qzdXFI1Oxa/+4
-         qPu9X7fftgdEcwoRI/zPhtWiwy4+hJQS7bTws88fySVHeWezQCCBy0QU30+wduA64yFS
-         uaIQ==
+        d=gmail.com; s=20210112;
+        h=user-agent:in-reply-to:content-disposition:mime-version:references
+         :message-id:subject:cc:to:from:date:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=y4OTyOhq5ph49i2Sy9LKLfnqL2EM/Rj+cmCGMdBMlfw=;
+        b=gDkOvsj4AhTDhnfA/Kn+Keq9CFS5AmQp8SUXAJ8gb48RU0fjRQwfo+R08Yjx5rfp1u
+         A0+zAslnSpWmUaMoOsonoenmeLthUY3aJ85PiRMUJ3JikBfOfHSsg9h2OLphc5w5uW1G
+         smtHqMYI10XofhnqWSpYG4io9JpXpHwf/tJIGIp91dC2N7Roby/nC/lGjc/Uf1EzOZnv
+         2kBwYZjEoVF60meKfDKkqC3UofRq8moWDuKJODsTVVUEtuW/tIhvkhN7SnO6RR8LMzfb
+         hbdno94WAfN+nSO597u2TwnM1bLVaCczr/KSZpRefNZfHscCnTGfd4iVuB0T/meWU05x
+         lsLw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=cc:to:subject:message-id:date:mime-version:in-reply-to:references
-         :user-agent:from:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=DpbM6dulHZ17ZJk7sIXX1zvUQ+2CFayGo452JEZsUgA=;
-        b=zmFdszhJhMpYEy/Nt0DXM9VK2h2MjW4rwo3Xr41PSzvkqEMZXjp4nVt3hriIxm14rB
-         PpLViiIrIyfqcto2tNEiGxy/u0WXpQUXvuoMFgyK9/q8aWNf5BcExPzHpZkSHGPmWcIc
-         Bla/pbzeelhOYnkRgV58skJeGMO9LoA5Mj27YTZ8XEse8JMyX/Dz4C3ll5mqJOV16FXO
-         Ri3CP07PFxwKvQ8agkjc4YOTJtLC777apclf4G8ZH03zGl12PYZSAy6RdEFV4FWT4xMk
-         HQE4wXR4Iv4wN3pnBMQZaUFB8HoET0AnLTP1H0b81MkWyXQWpPApBNwJyyBmxoINx0+J
-         YzKQ==
-X-Gm-Message-State: AFqh2ko/dn2aQrkNZpt9p2L2Waap9pYqXzscRlzwTuRjI30QroYr9LqC
-	8XTXiyOle7+ZkZWtiGbkj40z6LvDPbDNaKP0TEDkZA==
-X-Google-Smtp-Source: AMrXdXvLZ3tb9o4k4+Rdt+X24aNNL4DoFTd5UeyiqztwmluRV4eW2iDC4NLWecpVdMZnnv+GzK2PKeAqcPJnnUgMp0M=
-X-Received: by 2002:a05:6214:5c42:b0:534:1fd4:72ec with SMTP id
- lz2-20020a0562145c4200b005341fd472ecmr2080182qvb.65.1674836331103; Fri, 27
- Jan 2023 08:18:51 -0800 (PST)
-Received: from 753933720722 named unknown by gmailapi.google.com with
- HTTPREST; Fri, 27 Jan 2023 11:18:50 -0500
-From: Guillaume Ranquet <granquet@baylibre.com>
-User-Agent: meli 0.7.2
-References: <20220919-v5-0-cfb0e5ad29b2@baylibre.com>
-In-Reply-To: <20220919-v5-0-cfb0e5ad29b2@baylibre.com>
+        h=user-agent:in-reply-to:content-disposition:mime-version:references
+         :message-id:subject:cc:to:from:date:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=y4OTyOhq5ph49i2Sy9LKLfnqL2EM/Rj+cmCGMdBMlfw=;
+        b=xKbbvkukmBlds8xqw+eLhdysUK9viUU3jLrdJERnoLMEQf90KbAIUKU36Cnn4MslrE
+         feLvcze0Ll77gDYB6/nHHF9FurbtiV74nyKsjbkhjil1TBRCF6qpQmwhcyd2cT1sEOMt
+         j/UkxsyhkV4PEtZz4bY5j2YHKNqiRLg1Lf7qquD4BmggtBpnKW1qaHMPm+odYeTENqte
+         Y/DAV2FIv65EAor4cslOZNTYqSkBUsMM+2jcN8IWA0AwkBXVunEuqBwW8SBKzAPqBnEW
+         5RGsIR6axSiP6fX4MTN5cqNclZA8QuaNHqBTfXLpKGsJXFCWhQDKk0bk9P+pWzcxYA7p
+         7Wag==
+X-Gm-Message-State: AFqh2krhAP5tJ0aRaS1/xcbx95m75RhzmrQMOJePc+AU5FAHYGXAgrxs
+	ZTbFWvRHe3C00Y+lycd3BS4=
+X-Google-Smtp-Source: AMrXdXt2OhjgoI53tjT3nvzAVMGrKi73ulioqKoNtQWBcgvgIEJFCLLgKNEfR5QSlEe4xYwFMFtj4g==
+X-Received: by 2002:a17:907:6c16:b0:86f:3dfa:4016 with SMTP id rl22-20020a1709076c1600b0086f3dfa4016mr47989890ejc.7.1674836542928;
+        Fri, 27 Jan 2023 08:22:22 -0800 (PST)
+Received: from orome (p200300e41f201d00f22f74fffe1f3a53.dip0.t-ipconnect.de. [2003:e4:1f20:1d00:f22f:74ff:fe1f:3a53])
+        by smtp.gmail.com with ESMTPSA id ja23-20020a170907989700b00872c0bccab2sm2524552ejc.35.2023.01.27.08.22.22
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 27 Jan 2023 08:22:22 -0800 (PST)
+Date: Fri, 27 Jan 2023 17:22:20 +0100
+From: Thierry Reding <thierry.reding@gmail.com>
+To: Jon Hunter <jonathanh@nvidia.com>
+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Vinod Koul <vkoul@kernel.org>, linux-usb@vger.kernel.org,
+	devicetree@vger.kernel.org, linux-tegra@vger.kernel.org,
+	linux-phy@lists.infradead.org, waynec@nvidia.com,
+	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Subject: Re: [PATCH V6 2/6] dt-bindings: phy: tegra-xusb: Add support for
+ Tegra234
+Message-ID: <Y9P6PJ9xPVst/um2@orome>
+References: <20230111110450.24617-1-jonathanh@nvidia.com>
+ <20230111110450.24617-3-jonathanh@nvidia.com>
 MIME-Version: 1.0
-Date: Fri, 27 Jan 2023 11:18:50 -0500
-Message-ID: <CABnWg9u02duwaM3zWAdM9ZLw03Z53j0aCSWYXWpz=WM8zm-Ynw@mail.gmail.com>
-Subject: Re: [PATCH v5 0/3] Add MT8195 HDMI phy support
-To: CK Hu <ck.hu@mediatek.com>, Vinod Koul <vkoul@kernel.org>, 
-	Jitao shi <jitao.shi@mediatek.com>, Kishon Vijay Abraham I <kishon@ti.com>, Daniel Vetter <daniel@ffwll.ch>, 
-	Matthias Brugger <matthias.bgg@gmail.com>, Chunfeng Yun <chunfeng.yun@mediatek.com>, 
-	Chun-Kuang Hu <chunkuang.hu@kernel.org>, 
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, David Airlie <airlied@gmail.com>, 
-	Philipp Zabel <p.zabel@pengutronix.de>, Rob Herring <robh+dt@kernel.org>
-Cc: linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
-	linux-kernel@vger.kernel.org, mac.shen@mediatek.com, 
-	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, linux-phy@lists.infradead.org, 
-	Guillaume Ranquet <granquet@baylibre.com>, devicetree@vger.kernel.org, 
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, stuart.lee@mediatek.com
+In-Reply-To: <20230111110450.24617-3-jonathanh@nvidia.com>
+User-Agent: Mutt/2.2.9 (2022-11-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230127_081856_026871_F4447F13 
-X-CRM114-Status: GOOD (  10.06  )
+X-CRM114-CacheID: sfid-20230127_082228_308311_CFFA2B47 
+X-CRM114-Status: GOOD (  13.21  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,101 +92,77 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============6971508081613097672=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, 27 Jan 2023 16:55, Guillaume Ranquet <granquet@baylibre.com> wrote:
->Add support for HDMI phy on MT8195.
->
 
-Please disregard this, as I meant to send v6 and not a new v5...
-link to the actual v6 is here:
-https://lore.kernel.org/linux-mediatek/20220919-v6-0-2f641c422cb6@baylibre.com/
+--===============6971508081613097672==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="b0gkupGM8zWoxRNZ"
+Content-Disposition: inline
 
-Sorry for spamming your inboxes,
-Guillaume.
 
->This is split from the previous v3 to contain only the phy related
->changes to the HDMI support for mt8195 as suggested by Vinod.
->
->This is based on top of next-20221121
->
->To: Chunfeng Yun <chunfeng.yun@mediatek.com>
->To: Kishon Vijay Abraham I <kishon@ti.com>
->To: Vinod Koul <vkoul@kernel.org>
->To: Rob Herring <robh+dt@kernel.org>
->To: Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
->To: Matthias Brugger <matthias.bgg@gmail.com>
->To: Chun-Kuang Hu <chunkuang.hu@kernel.org>
->To: Philipp Zabel <p.zabel@pengutronix.de>
->To: David Airlie <airlied@gmail.com>
->To: Daniel Vetter <daniel@ffwll.ch>
->To: CK Hu <ck.hu@mediatek.com>
->To: Jitao shi <jitao.shi@mediatek.com>
->Cc: linux-arm-kernel@lists.infradead.org
->Cc: linux-mediatek@lists.infradead.org
->Cc: linux-phy@lists.infradead.org
->Cc: devicetree@vger.kernel.org
->Cc: linux-kernel@vger.kernel.org
->Cc: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
->Cc: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
->Cc: mac.shen@mediatek.com
->CC: stuart.lee@mediatek.com
->Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
->---
->Changes in v5:
->- Adapt clock bit ratio when TMDS is over 340M
->- Used sized integers for register read/writes
->- Removed useless comments
->- Shortened function names
->- Link to v4: https://lore.kernel.org/r/20220919-v4-0-bdc21e1307e9@baylibre.com
->
->Changes in v4:
->- Dedicated series for HDMI phy support (without the drm/ related
->  changes)
->- Removed useless variable initializations in phy driver
->- Link to v3: https://lore.kernel.org/r/20220919-v3-0-a803f2660127@baylibre.com
->
->Changes in v3:
->- phy: Grouped register and bit definition together to add clarity
->- dt-bindings: Addressed comments
->- Link to v2: https://lore.kernel.org/r/20220919-v2-0-8419dcf4f09d@baylibre.com
->
->Changes in v2:
->- Removed syscon requirement from the hdmi node
->- Use as much as possible bit FIELD_PREP/FIELD_GET macros across all the
->  patches
->- Make cec optional dynamically instead of hardcoded with a flag
->- Renamed hdmi variants to v1 (legacy) and v2 (mt8195) while waiting for
->  a better name
->- Rework hdmi v2 code to use a connector (same as v1)
->- Remove "magic" 0x43 addr special handling in hdmi ddc code
->- Link to v1: https://lore.kernel.org/r/20220919-v1-0-4844816c9808@baylibre.com
->
->---
->Guillaume Ranquet (3):
->      dt-bindings: phy: mediatek: hdmi-phy: Add mt8195 compatible
->      phy: phy-mtk-hdmi: Add generic phy configure callback
->      phy: mediatek: add support for phy-mtk-hdmi-mt8195
->
-> .../devicetree/bindings/phy/mediatek,hdmi-phy.yaml |   1 +
-> drivers/phy/mediatek/Makefile                      |   1 +
-> drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c         | 523 +++++++++++++++++++++
-> drivers/phy/mediatek/phy-mtk-hdmi-mt8195.h         | 111 +++++
-> drivers/phy/mediatek/phy-mtk-hdmi.c                |  15 +
-> drivers/phy/mediatek/phy-mtk-hdmi.h                |   3 +
-> 6 files changed, 654 insertions(+)
->---
->base-commit: e2f86c02fdc96ca29ced53221a3cbf50aa6f8b49
->change-id: 20220919-hdmi_mtk
->
->Best regards,
->--
->Guillaume Ranquet <granquet@baylibre.com>
+--b0gkupGM8zWoxRNZ
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Wed, Jan 11, 2023 at 11:04:46AM +0000, Jon Hunter wrote:
+> Add the compatible string for the Tegra234 XUSB PHY.
+>=20
+> Signed-off-by: Jon Hunter <jonathanh@nvidia.com>
+> Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+> ---
+> V5 -> V6: Added Krzysztof's ACK=20
+> V3 -> V5: Fixed compatible string
+> V3 -> V4: Added patch
+>=20
+>  .../devicetree/bindings/phy/nvidia,tegra194-xusb-padctl.yaml  | 4 +++-
+>  1 file changed, 3 insertions(+), 1 deletion(-)
+
+Hi Vinod,
+
+can you pick this up into your tree? This applies on top of the
+conversion patch ("dt-bindings: phy: tegra-xusb: Convert to
+json-schema") that's aready in your next branch.
+
+Thanks,
+Thierry
+
+--b0gkupGM8zWoxRNZ
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAmPT+jwACgkQ3SOs138+
+s6EmYA/9FJsPyQ6dWaqhDXMyzc1HR5Pr1gLqJZksMN7R4k/xvryrwbYCO19IfrD0
+gilOAeiniIpxcKV4CMr0dvMGI/o9UbrAOcxE85oP2sBiLiUhBQ0QEAFKAQskQOOl
+o8r422cr/CJYDC9OAW1xITSvuWwamJAec7n/lqyYvWr4urMlsT6mDZEpNlKCVfNQ
+lQSfQcN7mnGjzKwycbt5GMVpupDhPRvmNLSVUey6owxULZBdcrPC0b/K5hVElX6o
+rWAkcwh77s3nhwJuPOrREIhnyNBiK3K8x5FM6ncP6l9ndlTHQU4yFVyze0jFPH8c
+QQaFAPTn/axKu+mSZxjUK3OEsGy+ybAplBivH6pY3qEX6D2oYUJ4Ie6Jx1GqGPzh
+Nkv914gkdMfmB4HdaQOELyYseKrLaEmy6AmTNMOpumKv0/8ucV/19s+cqdLWNlOh
+ELjd4CLeOzvYxpA0u1OlOBLNEeBHeg3KY0C9ted8q1RJSOnxLzF4C1ujj+0kFp8U
+/zp6FoLkbchfc50rIxLszh9hfRcyoG25H3jXYDY1xenxhv4Iba5sAILts5/IvI9c
+ZyenKl3sU/pyQDrv8DhFJluIJotQ606moVk1PxJhRv0Yt34Eaa6+TNszezcPnPWU
+kkEf5UXWBofFCYl0f8XVqcFDGmo0tdYTfbi4pK6RSEehe100xVI=
+=wD/W
+-----END PGP SIGNATURE-----
+
+--b0gkupGM8zWoxRNZ--
+
+
+--===============6971508081613097672==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============6971508081613097672==--
+
