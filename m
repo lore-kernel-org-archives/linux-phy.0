@@ -4,68 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8AA3DC38142
-	for <linux-phy@archiver.kernel.org>; Fri, 27 Jan 2023 22:17:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3E846C54EAA
+	for <linux-phy@archiver.kernel.org>; Fri, 27 Jan 2023 22:54:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:From:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hKA1NXEiLbQkPNXaY7J8czrgSXJojbSmNvZni3P9/HA=; b=jh11/2PPCt+eas
-	m5tJBnG0eDrRqioOtVTc22qjnVum8s8s/UvOF3H4QO9cKJBrAOl2QDNrwBJ3rpRzQi1PzGxaMM2vD
-	oAsumQX/WN68nMXfeCUAJ0gsOdWUiwo7Rgywcr/qx1d1pjJigUe1Z50rwRI9tRkrzsyc/fubm/0ja
-	fBjZ5n6yJ+3laa+ZapKmhiUzafqXAn87StrdiM8iAx9SeqQq6n17JcHt7/lX8Zj/vEXrnsMzInV+S
-	RgOtUBhWUUIQYkUd8Cp10Uvd6CwnU6GMmbQHAH9P9weaeN+rO8tWqioY0YzyEPInOFH88rLeYlH3I
-	tBv/FWoo7trlxvAF8KzA==;
+	List-Owner; bh=ApIDZzh54uyEw7lKBG5Bt/A0rPS0v203kov3RsdCU/8=; b=E0dh8LyQed4G5y
+	dzccJfiKKmlsTLaIme1doyQWzx8c7ROtUHq3/riiGOVXXsbdhUsU5Olmr8olf6vbdnq7P0zbchqj/
+	bnTK0wkTvTC0PyvQyvjtmLfID+3M8/9uwr0mH96HHO0MUtNOdnwSzbUZ8vgtTVLihtFC8XLSWgxoX
+	kNBNWbtBqymwboxENBOyQp23m5XYRF4Q6+YjOSJG61ZBxdFj2TpurSKzDDQpM2jveZvQJ2B2l2pvK
+	iIXbShr0P4yKwCy63hZwPjiASSWPFI1zhxa7pISisrzQVAxRAa+E26DHogDTCScEJJilYqydEXMsP
+	Frn40tYUzircrQo7XxPQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pLX1s-00Gg5S-Ti; Fri, 27 Jan 2023 22:17:04 +0000
+	id 1pLXbj-00GkQg-Cv; Fri, 27 Jan 2023 22:54:07 +0000
 Received: from mailout1.w1.samsung.com ([210.118.77.11])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pLX1g-00Gg14-J5
-	for linux-phy@lists.infradead.org; Fri, 27 Jan 2023 22:16:54 +0000
+	id 1pLXbR-00GkIN-Np
+	for linux-phy@lists.infradead.org; Fri, 27 Jan 2023 22:53:53 +0000
 Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
-	by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id 20230127221645euoutp019f2be8075a439cb03f9af12c4118ae74~_SkzIeHcH1380413804euoutp01S
-	for <linux-phy@lists.infradead.org>; Fri, 27 Jan 2023 22:16:45 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com 20230127221645euoutp019f2be8075a439cb03f9af12c4118ae74~_SkzIeHcH1380413804euoutp01S
+	by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id 20230127225338euoutp01f68a64dc9f736149915e59ddd0d593a2~_TFANcI3c1800318003euoutp01C
+	for <linux-phy@lists.infradead.org>; Fri, 27 Jan 2023 22:53:38 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com 20230127225338euoutp01f68a64dc9f736149915e59ddd0d593a2~_TFANcI3c1800318003euoutp01C
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
-	s=mail20170921; t=1674857805;
-	bh=EtfKma/Lxeex/Fy3hraePlaRMxLT4YpzyN2J0Leb17k=;
+	s=mail20170921; t=1674860018;
+	bh=VZOH4jIUdq2gOgALK8fM+qFCpqJUr5QB0gQLCS2apvE=;
 	h=Date:Subject:To:Cc:From:In-Reply-To:References:From;
-	b=j66X8wq0dsRyG+7lOghasWWPWIUnOaHrFpDM1mxI0he1gwYI207wNv8H7vpSWxgPM
-	 RpWej3YFmgINrDOCWLBb1lYgIBVXsoIkA/aHNjLClotRybFYCXuAPErS9IZseSi2l8
-	 crOE8cRB3ABIvRmEmLweNo+yl2T9mvucIfaSqAsI=
+	b=ikYW7in9CNR++//ClodTGCVBPbhqu/7JG5A+nMSjejVH8vXG4/wPPWmI6dy5/1m5+
+	 lznygzFW75wz5S3yojoqkdbeK9wzVuiLAnB1u2zX/qcaXH1GzXMPPajjg5dr7kx9gB
+	 UbvVvBhIoP4mqFV9dP+xtOPondK9RvSLZts9xJKg=
 Received: from eusmges1new.samsung.com (unknown [203.254.199.242]) by
-	eucas1p1.samsung.com (KnoxPortal) with ESMTP id
-	20230127221644eucas1p1a3e977ed198e77a9818172a6ec492bb0~_SkypCr1w1221112211eucas1p1Z;
-	Fri, 27 Jan 2023 22:16:44 +0000 (GMT)
-Received: from eucas1p1.samsung.com ( [182.198.249.206]) by
-	eusmges1new.samsung.com (EUCPMTA) with SMTP id 71.39.01471.C4D44D36; Fri, 27
-	Jan 2023 22:16:44 +0000 (GMT)
+	eucas1p2.samsung.com (KnoxPortal) with ESMTP id
+	20230127225337eucas1p27174f5bf1578c697c3a94a6b7e5c0e79~_TE-2HYay2426024260eucas1p2Q;
+	Fri, 27 Jan 2023 22:53:37 +0000 (GMT)
+Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
+	eusmges1new.samsung.com (EUCPMTA) with SMTP id A5.FA.01471.1F554D36; Fri, 27
+	Jan 2023 22:53:37 +0000 (GMT)
 Received: from eusmtrp2.samsung.com (unknown [182.198.249.139]) by
-	eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
-	20230127221643eucas1p107fdae814ec00a7a4169893b2af94c4a~_SkyAN5QD1111511115eucas1p1V;
-	Fri, 27 Jan 2023 22:16:43 +0000 (GMT)
+	eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
+	20230127225337eucas1p2f4f0d1df2b1d3d08aecb01f9bf66ef17~_TE-eGz5W2173921739eucas1p2_;
+	Fri, 27 Jan 2023 22:53:37 +0000 (GMT)
 Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
 	eusmtrp2.samsung.com (KnoxPortal) with ESMTP id
-	20230127221643eusmtrp2e7ca78664bf622ab3c84f5f9727597e0~_Skx-f1D21379413794eusmtrp2C;
-	Fri, 27 Jan 2023 22:16:43 +0000 (GMT)
-X-AuditID: cbfec7f2-2b1ff700000105bf-dd-63d44d4c86c6
-Received: from eusmtip1.samsung.com ( [203.254.199.221]) by
-	eusmgms2.samsung.com (EUCPMTA) with SMTP id 1B.51.00518.B4D44D36; Fri, 27
-	Jan 2023 22:16:43 +0000 (GMT)
+	20230127225337eusmtrp22bfc54dc693ecc310664c002f5729cc0~_TE-cBkl43034330343eusmtrp2M;
+	Fri, 27 Jan 2023 22:53:37 +0000 (GMT)
+X-AuditID: cbfec7f2-29bff700000105bf-b2-63d455f1e52c
+Received: from eusmtip2.samsung.com ( [203.254.199.222]) by
+	eusmgms2.samsung.com (EUCPMTA) with SMTP id 39.B1.00518.1F554D36; Fri, 27
+	Jan 2023 22:53:37 +0000 (GMT)
 Received: from [106.210.134.192] (unknown [106.210.134.192]) by
-	eusmtip1.samsung.com (KnoxPortal) with ESMTPA id
-	20230127221642eusmtip176a03f21bb1442bd3faffd5172c8982f~_SkxGO75p3074430744eusmtip1O;
-	Fri, 27 Jan 2023 22:16:42 +0000 (GMT)
-Message-ID: <e2bca7ec-4e0d-e4b5-9933-a5be81d63f2b@samsung.com>
-Date: Fri, 27 Jan 2023 23:16:43 +0100
+	eusmtip2.samsung.com (KnoxPortal) with ESMTPA id
+	20230127225336eusmtip2dc8fca4793414a01f31cd39f696f2e7b~_TE_ny5mP0138201382eusmtip2t;
+	Fri, 27 Jan 2023 22:53:36 +0000 (GMT)
+Message-ID: <efc36b04-9362-0987-05e0-3a989c8e3958@samsung.com>
+Date: Fri, 27 Jan 2023 23:53:37 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0)
 	Gecko/20100101 Thunderbird/102.6.1
-Subject: Re: [PATCH 8/8] arm64: dts: exynos: move MIPI phy to PMU node in
- Exynos5433
+Subject: Re: [PATCH 7/8] ARM: dts: exynos: move DP and MIPI phys to PMU node
+ in Exynos5250
 Content-Language: en-US
 To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, Vinod Koul
 	<vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring
@@ -79,54 +79,54 @@ Cc: replicant@osuosl.org, phone-devel@vger.kernel.org,
 	<martin.juecker@gmail.com>, Henrik Grimler <henrik@grimler.se>, Chanwoo Choi
 	<cw00.choi@samsung.com>
 From: Marek Szyprowski <m.szyprowski@samsung.com>
-In-Reply-To: <20230127194057.186458-9-krzysztof.kozlowski@linaro.org>
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFnrKKsWRmVeSWpSXmKPExsWy7djPc7o+vleSDQ4ekbB4MG8bm8X1L89Z
+In-Reply-To: <20230127194057.186458-8-krzysztof.kozlowski@linaro.org>
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFnrKKsWRmVeSWpSXmKPExsWy7djP87ofQ68kG7zsV7N4MG8bm8X1L89Z
 	LeYfOcdq8XbJLkaLo63/mS36Xjxkttj7eiu7xabH11gtLu+aw2YxYdU3FosZ5/cxWZz5N5XF
 	YsEfO4t1awQtWvceYbc4/Kad1WLnnRPMFpu//2V0EPLYOesuu8fRK/dYPTat6mTzuHNtD5vH
-	5iX1Hv/vrGX3+NLczerRt2UVo8fnTXIBnFFcNimpOZllqUX6dglcGa86L7MVfBSsuHL6PVsD
-	4zK+LkYODgkBE4kv7626GLk4hARWMEq8OLafHcL5wiix6/sVVgjnM6PEyd79TF2MnGAdF5pn
-	sEAkljNKPP14DarqI6PEqWdnmUGqeAXsJHZ8v8YIYrMIqEq0zjvCBBEXlDg58wkLyG5RgRSJ
-	TX/KQMLCAmESjcves4PYzALiEreezGcCmSki8IBZ4t62N1CJ54wSt/+ygdhsAoYSXW+7wGxO
-	AVeJ83tOMELUyEtsfzuHGaRZQuASp8TahaugznaR2HnkKCOELSzx6vgWdghbRuL/TohtEgLt
-	jBILft+HciYwSjQ8vwXVYS1x59wvNpCzmQU0Jdbv0oeEnqPE6usRECafxI23ghA38ElM2jad
-	GSLMK9HRJgQxQ01i1vF1cFsPXrjEPIFRaRZSqMxC8v4sJN/MQli7gJFlFaN4amlxbnpqsWFe
-	arlecWJucWleul5yfu4mRmBKPP3v+KcdjHNffdQ7xMjEwXiIUYKDWUmEd6vjpWQh3pTEyqrU
-	ovz4otKc1OJDjNIcLErivNq2J5OFBNITS1KzU1MLUotgskwcnFINTD4Ltr1jPRfz9WevzftH
-	PBbeHxaZhc5ceG7jwVchNhYMEe/DTbonKP1mrpc33bhdzN7Tgj+h9JCxwZKEwyZi+YWuTl8V
-	4l77+WcZlbLNiQy6mVV/Jf6lBeuSczmpSjdYuNbJfZBU7153TO1pr75j8sKWDXO3tVYKGmSX
-	x/XM9rQ5znKyhaP1j+hHJelu0XcFXkcFWpxOib+LKc47lLNzSvtEBuW3fHHbE/fM3/s7MTg9
-	/RfvltsTeiJD2+u1CopnCwo9PJH7l6vnzPN1R/3P9Z/Qmd7isORk0b8PQkfvShp1n5yr9lNA
-	554HY1ES/wyuF9kralhlNtf82vzV4uOcY6vz32Q/vv7nw/IInmP9SizFGYmGWsxFxYkAhh7q
-	hvgDAAA=
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFvrNIsWRmVeSWpSXmKPExsVy+t/xu7revleSDb7N1bd4MG8bm8X1L89Z
-	LeYfOcdq8XbJLkaLo63/mS36Xjxkttj7eiu7xabH11gtLu+aw2YxYdU3FosZ5/cxWZz5N5XF
-	YsEfO4t1awQtWvceYbc4/Kad1WLnnRPMFpu//2V0EPLYOesuu8fRK/dYPTat6mTzuHNtD5vH
-	5iX1Hv/vrGX3+NLczerRt2UVo8fnTXIBnFF6NkX5pSWpChn5xSW2StGGFkZ6hpYWekYmlnqG
-	xuaxVkamSvp2NimpOZllqUX6dgl6Ga86L7MVfBSsuHL6PVsD4zK+LkZODgkBE4kLzTNYuhi5
-	OIQEljJKHHu2jAkiISNxcloDK4QtLPHnWhcbRNF7Rok3xw4wgyR4Bewkdny/xghiswioSrTO
-	O8IEEReUODnzCQuILSqQItH8/CTYIGGBMInGZe/ZQWxmAXGJW0/mM4EMFRF4xCyxec4XsDOY
-	BZ4zStzf2sQKse4yo0Tvsh1g69gEDCW63oLcwcnBKeAqcX7PCUaIUWYSXVu7oGx5ie1v5zBP
-	YBSaheSSWUg2zkLSMgtJywJGllWMIqmlxbnpucVGesWJucWleel6yfm5mxiBqWDbsZ9bdjCu
-	fPVR7xAjEwfjIUYJDmYlEd6tjpeShXhTEiurUovy44tKc1KLDzGaAoNjIrOUaHI+MBnllcQb
-	mhmYGpqYWRqYWpoZK4nzehZ0JAoJpCeWpGanphakFsH0MXFwSjUwzXZY5+13KSrlDGfnGc4M
-	s9srWljWbGdKSjoR6bLB6qkKN3v1vHcqofomunke+XVFpTGLrmsuKiv1dHH8/Cd9wlnZV/Nm
-	3im+0NJ+J2tdV/oZX83VW3/lrQl+Utd4w2DhqilFrgdj+IOW/eVbKLGsq8Fp6sKorm+ZZzee
-	XHyG+26N1g2jFxl+0oK7vyX/9gliMeXJ/Dh/B6+z36N5G8wu//18YU/k/QlPXDNZe1cVnLf9
-	d9f6yvJ7R74G+C3/yrzjc/E6xqfzpj/nC1N9kjwldnqN22H29+eu7+l+UvXcX2/3M7tWy/Dl
-	LxczprbLOAcb12y8OLcm4bDPTOEpz7bNf3TXrUqz7OOe7OldjKU7vyixFGckGmoxFxUnAgCC
-	Kw09jgMAAA==
-X-CMS-MailID: 20230127221643eucas1p107fdae814ec00a7a4169893b2af94c4a
+	5iX1Hv/vrGX3+NLczerRt2UVo8fnTXIBnFFcNimpOZllqUX6dglcGUef7mAseChUcW7FNOYG
+	xnd8XYycHBICJhJ3lraxgNhCAisYJTbeDe9i5AKyvzBKbJ5whAXC+cwo8XH7XuYuRg6wjkvv
+	iyHiyxklZr78zAjhfGSUWN+4ihVkFK+AncTpoxvYQGwWAVWJ9mUX2CDighInZz5hARkkKpAi
+	selPGUhYWCBG4v+nE0wgNrOAuMStJ/OZQGaKCDxglri37Q07ROI5o8Ttv2Bz2AQMJbredoHZ
+	nAKuEjsn7ISqkZfY/nYOM0izhMAlTolDTcdZIP50kfj2ZQ0rhC0s8er4FnYIW0bi/06IbRIC
+	7YwSC37fh3ImMEo0PL/FCFFlLXHn3C82kLOZBTQl1u/Shwg7SrTMa2WCBAufxI23ghBH8ElM
+	2jYdGlq8Eh1tQhDVahKzjq+DW3vwwiXmCYxKs5CCZRaS/2cheWcWwt4FjCyrGMVTS4tz01OL
+	DfNSy/WKE3OLS/PS9ZLzczcxAlPi6X/HP+1gnPvqo94hRiYOxkOMEhzMSiK8Wx0vJQvxpiRW
+	VqUW5ccXleakFh9ilOZgURLn1bY9mSwkkJ5YkpqdmlqQWgSTZeLglGpgSsvQaK7ddj1pXumG
+	t9b7I6dWrZ6/u9r6W2v0ir1tD22yZH7fTYnazjtRPTPun6faR99pjI8jGHSXFhYIuLG8+nDg
+	xJOWpA411dh5O5JvFnUfitu94o78iklL/sSyGpZH/HzEGf32k6HC3a3TJ7zkWMy7JdS65e0n
+	Hc9HDWzT5s5k/bms6pr7tbmLyrg/2cz6r/37nK3L/v7GHTxfvd+Ec8qlayys8S81Xda1WVzy
+	6POQdp1elVOZ19pX/umfqqHusmLBNevJnY5zJsnW8pkry8vOksw6t/KYtuu916pJ3h8XCWaa
+	zhTYfewlwwb/K0nsBW94fn6vOPfgqdaEKPGwzKN9yxZPtjny9cFjEbUMJiWW4oxEQy3mouJE
+	AK58ZOL4AwAA
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFvrFIsWRmVeSWpSXmKPExsVy+t/xe7ofQ68kGyxfwm/xYN42NovrX56z
+	Wsw/co7V4u2SXYwWR1v/M1v0vXjIbLH39VZ2i02Pr7FaXN41h81iwqpvLBYzzu9jsjjzbyqL
+	xYI/dhbr1ghatO49wm5x+E07q8XOOyeYLTZ//8voIOSxc9Zddo+jV+6xemxa1cnmcefaHjaP
+	zUvqPf7fWcvu8aW5m9Wjb8sqRo/Pm+QCOKP0bIryS0tSFTLyi0tslaINLYz0DC0t9IxMLPUM
+	jc1jrYxMlfTtbFJSczLLUov07RL0Mo4+3cFY8FCo4tyKacwNjO/4uhg5OCQETCQuvS/uYuTi
+	EBJYyihx5dJD1i5GTqC4jMTJaQ1QtrDEn2tdbBBF7xklzr2bzQyS4BWwkzh9dAMbiM0ioCrR
+	vuwCG0RcUOLkzCcsILaoQIpE8/OTYIOEBWIk/n86wQRiMwuIS9x6Mp8JZKiIwCNmic1zvrCA
+	OMwCzxkl7m9tYoVYd5lRYlXjFrB1bAKGEl1vu8BWcAq4SuycsJMdYpSZRNfWLkYIW15i+9s5
+	zBMYhWYhuWQWko2zkLTMQtKygJFlFaNIamlxbnpusZFecWJucWleul5yfu4mRmAi2Hbs55Yd
+	jCtffdQ7xMjEwXiIUYKDWUmEd6vjpWQh3pTEyqrUovz4otKc1OJDjKbA4JjILCWanA9MRXkl
+	8YZmBqaGJmaWBqaWZsZK4ryeBR2JQgLpiSWp2ampBalFMH1MHJxSDUzTWFM0H6cwlLWdunV6
+	8rVixqXrr9awPrnBFzz1+bNqyXtxdm/er6joNT33LvbWDuc9ljFd/AtUPu+P/rLimmJooPp/
+	9raNqSncfpZvDwfFO0WIC56ySb07sdU1usbmojObtOh1ebWW4lr9RS5nm57NWz5bQ4n5fOC5
+	3Kbi5Vde611neqgZLHvfL21ygO78iTeunnuxfIWHzdPj1W9T8w6ejdr3xZkrd26//8SY1opv
+	LdXCes7FsXu5+3atEzo5o+7L6z3uzAGvegr+Zz5I/FV/JIV9nsiCTXEfT387ImNS83bZL52k
+	7Zs01nQ6e++9oD3FZNaHxYXTJD9nhWu+iRLksj4Sa2KyynT/jx2O/bpKLMUZiYZazEXFiQAh
+	RgA1jQMAAA==
+X-CMS-MailID: 20230127225337eucas1p2f4f0d1df2b1d3d08aecb01f9bf66ef17
 X-Msg-Generator: CA
-X-RootMTR: 20230127194124eucas1p1c50cfe8e10e61e6718913dc00e4db0bd
+X-RootMTR: 20230127194122eucas1p240a9b4959e4690652862753354681232
 X-EPHeader: CA
 CMS-TYPE: 201P
-X-CMS-RootMailID: 20230127194124eucas1p1c50cfe8e10e61e6718913dc00e4db0bd
+X-CMS-RootMailID: 20230127194122eucas1p240a9b4959e4690652862753354681232
 References: <20230127194057.186458-1-krzysztof.kozlowski@linaro.org>
-	<CGME20230127194124eucas1p1c50cfe8e10e61e6718913dc00e4db0bd@eucas1p1.samsung.com>
-	<20230127194057.186458-9-krzysztof.kozlowski@linaro.org>
+	<CGME20230127194122eucas1p240a9b4959e4690652862753354681232@eucas1p2.samsung.com>
+	<20230127194057.186458-8-krzysztof.kozlowski@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230127_141652_906074_44AA5993 
-X-CRM114-Status: GOOD (  13.32  )
+X-CRM114-CacheID: sfid-20230127_145350_046840_6E0B01C2 
+X-CRM114-Status: GOOD (  14.39  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -144,61 +144,68 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 27.01.2023 20:40, Krzysztof Kozlowski wrote:
-> The MIPI phy is actually part of the Power Management Unit system
-> controller.  It does not have own address space, thus keeping the node
-> under soc causes warnings:
+> The DisplayPort and MIPI phys are actually part of the Power Management
+> Unit system controller.  They do not have their own address space, thus
+> keeping the nodes under soc causes warnings:
 >
->    exynos5433-tm2e.dtb: soc@0: video-phy: {'compatible': ['samsung,exynos5433-mipi-video-phy'], ...
->      should not be valid under {'type': 'object'}
+>    exynos5250-arndale.dtb: soc: video-phy-0: {'compatible': ['samsung,exynos5250-dp-video-phy'],
+>      'samsung,pmu-syscon': [[20]], '#phy-cells': [[0]], 'phandle': [[24]]} should not be valid under {'type': 'object'}
 >
 > Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 Tested-by: Marek Szyprowski <m.szyprowski@samsung.com>
 > ---
->   arch/arm64/boot/dts/exynos/exynos5433.dtsi | 19 +++++++++----------
->   1 file changed, 9 insertions(+), 10 deletions(-)
+>   arch/arm/boot/dts/exynos5250.dtsi | 24 +++++++++++-------------
+>   1 file changed, 11 insertions(+), 13 deletions(-)
 >
-> diff --git a/arch/arm64/boot/dts/exynos/exynos5433.dtsi b/arch/arm64/boot/dts/exynos/exynos5433.dtsi
-> index 9da24fe958a3..842976addbd9 100644
-> --- a/arch/arm64/boot/dts/exynos/exynos5433.dtsi
-> +++ b/arch/arm64/boot/dts/exynos/exynos5433.dtsi
-> @@ -911,12 +911,20 @@ pinctrl_touch: pinctrl@14ce0000 {
+> diff --git a/arch/arm/boot/dts/exynos5250.dtsi b/arch/arm/boot/dts/exynos5250.dtsi
+> index 97e89859ba3d..a35c00f055a3 100644
+> --- a/arch/arm/boot/dts/exynos5250.dtsi
+> +++ b/arch/arm/boot/dts/exynos5250.dtsi
+> @@ -290,7 +290,7 @@ pinctrl_3: pinctrl@3860000 {
 >   		};
 >   
->   		pmu_system_controller: system-controller@105c0000 {
-> -			compatible = "samsung,exynos5433-pmu", "syscon";
-> +			compatible = "samsung,exynos5433-pmu", "simple-mfd", "syscon";
->   			reg = <0x105c0000 0x5008>;
->   			#clock-cells = <1>;
+>   		pmu_system_controller: system-controller@10040000 {
+> -			compatible = "samsung,exynos5250-pmu", "syscon";
+> +			compatible = "samsung,exynos5250-pmu", "simple-mfd", "syscon";
+>   			reg = <0x10040000 0x5000>;
 >   			clock-names = "clkout16";
->   			clocks = <&xxti>;
->   
-> +			mipi_phy: mipi-phy {
-> +				compatible = "samsung,exynos5433-mipi-video-phy";
-> +				#phy-cells = <1>;
-> +				samsung,cam0-sysreg = <&syscon_cam0>;
-> +				samsung,cam1-sysreg = <&syscon_cam1>;
-> +				samsung,disp-sysreg = <&syscon_disp>;
+>   			clocks = <&clock CLK_FIN_PLL>;
+> @@ -298,6 +298,16 @@ pmu_system_controller: system-controller@10040000 {
+>   			interrupt-controller;
+>   			#interrupt-cells = <3>;
+>   			interrupt-parent = <&gic>;
+> +
+> +			dp_phy: dp-phy {
+> +				compatible = "samsung,exynos5250-dp-video-phy";
+> +				#phy-cells = <0>;
 > +			};
 > +
->   			reboot: syscon-reboot {
->   				compatible = "syscon-reboot";
->   				regmap = <&pmu_system_controller>;
-> @@ -936,15 +944,6 @@ gic: interrupt-controller@11001000 {
->   			interrupts = <GIC_PPI 9 0xf04>;
+> +			mipi_phy: mipi-phy {
+> +				compatible = "samsung,s5pv210-mipi-video-phy";
+> +				#phy-cells = <1>;
+> +			};
 >   		};
 >   
-> -		mipi_phy: video-phy {
-> -			compatible = "samsung,exynos5433-mipi-video-phy";
-> -			#phy-cells = <1>;
+>   		watchdog@101d0000 {
+> @@ -810,18 +820,6 @@ mixer: mixer@14450000 {
+>   			status = "disabled";
+>   		};
+>   
+> -		dp_phy: video-phy-0 {
+> -			compatible = "samsung,exynos5250-dp-video-phy";
 > -			samsung,pmu-syscon = <&pmu_system_controller>;
-> -			samsung,cam0-sysreg = <&syscon_cam0>;
-> -			samsung,cam1-sysreg = <&syscon_cam1>;
-> -			samsung,disp-sysreg = <&syscon_disp>;
+> -			#phy-cells = <0>;
 > -		};
 > -
->   		decon: decon@13800000 {
->   			compatible = "samsung,exynos5433-decon";
->   			reg = <0x13800000 0x2104>;
+> -		mipi_phy: video-phy-1 {
+> -			compatible = "samsung,s5pv210-mipi-video-phy";
+> -			#phy-cells = <1>;
+> -			syscon = <&pmu_system_controller>;
+> -		};
+> -
+>   		dsi_0: dsi@14500000 {
+>   			compatible = "samsung,exynos4210-mipi-dsi";
+>   			reg = <0x14500000 0x10000>;
 
 Best regards
 -- 
