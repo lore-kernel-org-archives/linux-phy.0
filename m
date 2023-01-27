@@ -4,88 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 31DA2C54EAA
-	for <linux-phy@archiver.kernel.org>; Fri, 27 Jan 2023 16:15:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6F492C38142
+	for <linux-phy@archiver.kernel.org>; Fri, 27 Jan 2023 16:16:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sZHgeqw1vXNZtMoyFGBv2N+7c4FLFz9tRoNx7qYbxEY=; b=mM0VU4hRzqUq74
-	WtfQgiAPjwuTkY7m0l1zVj3rD+gt1h2SnbhBp1jIV/F0mQKxjVYY/pN8pBYk13U9d8NrkIhpE4FJH
-	PzfDZ7et5qvAOQdp8drjAAUg4xdb4Z83yUj5rqWpeDYdhe6YpVzLCXJeZyAxpuA/dpUnwvdA4j39r
-	pscbX0VB9vqp7iPKee2LMj085omYG1Mc0WX8v4pSux333WhnSTiD3u8V00G6oEX/0alxXoITc+f39
-	z22nAm4caSL8N0f81qxaQ6WbydqtfGB5SIiZEyG3N6V3YKZd/DQP8q+l8dQO1giW20YU6BwlccMR1
-	buI+5bNaDsRQgaZNoxew==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:Date:From:MIME-Version
+	:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=RkMnI0xGxyi+h7+vmymvJAHJxF+42jDu+0MoystZPwU=; b=Qwh4t0A3fHUyoy
+	+JpG92eshUlJ150Sxb0yaDbw0b8Z0EzRLpf5cxzloptxi7zjss/0TvoJnMG1+TskoqxQxqEujdKZX
+	vb+Nc+6Tjw8orY2UFHExTK23/ABw8z7QdorY0FNLmk6j9yKickvwGhamcF3IDXer/dULGJDQhc+Lq
+	PlEl31TNxsbLJspQ7HJmeTFX6D9WjscLjhL3a2tl9/Kl/S+7zGX0mi0VHPNwUzYo06xwlOu1IUqfM
+	UfM93o5SiZ752GfCnqxGkDcPCUQD9yg9nbIbpuhBdLNrxO/DFi2C64kQv9CB38Dd2U0T0t6E0qZGH
+	cPlRl4Z+f5ZCohweVlFw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pLRO1-00FcRY-I3; Fri, 27 Jan 2023 16:15:33 +0000
-Received: from mail-wm1-x329.google.com ([2a00:1450:4864:20::329])
+	id 1pLROo-00FccO-N0; Fri, 27 Jan 2023 16:16:22 +0000
+Received: from mail-wm1-x330.google.com ([2a00:1450:4864:20::330])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pLRNy-00FcQH-0n
-	for linux-phy@lists.infradead.org; Fri, 27 Jan 2023 16:15:31 +0000
-Received: by mail-wm1-x329.google.com with SMTP id q10-20020a1cf30a000000b003db0edfdb74so5705503wmq.1
-        for <linux-phy@lists.infradead.org>; Fri, 27 Jan 2023 08:15:28 -0800 (PST)
+	id 1pLROk-00FcYw-2e
+	for linux-phy@lists.infradead.org; Fri, 27 Jan 2023 16:16:20 +0000
+Received: by mail-wm1-x330.google.com with SMTP id k16so3819788wms.2
+        for <linux-phy@lists.infradead.org>; Fri, 27 Jan 2023 08:16:17 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=pgZz+6PWFo4uW0VORVf3OBAL6wZ6DYjbjKUyaSSYmLM=;
-        b=Ort+m9TbQelr2tInwYyQ8i8qHQ9blNIDw8TmQjGTYoR4bUs7fMU1NnbQrZhKPmY7OY
-         bnGaPQLEplLrNuPt25RBJHdyb55D63iCHX2SOipQ5m2HVMHZFV1vsn+vdQxU3ZFuFOjv
-         3ggvXdOihf0ZvuO7ZituWSGczgLzkhUcp4AdTYssg9RFpXJZg6WqnkyaHR7GzfOzDO6Z
-         uZtGy2pVmhKEFQnUtBTDX8Rja8TwXTShtIEIWgM21CKC1YsVaY9gPdQ6wKAZFqgeiMoj
-         pADxQ3X+LeP1plXK4RroYiQbxr473gHm9Q3suLR68ArUmJN5R61LknbGQP1KSdt6dNqo
-         O8uw==
+        d=baylibre-com.20210112.gappssmtp.com; s=20210112;
+        h=cc:to:message-id:date:from:content-transfer-encoding:mime-version
+         :subject:from:to:cc:subject:date:message-id:reply-to;
+        bh=LD2mVmTYVkgVFaby6r4EipeMY5amZrRMiimJ3O/2RrU=;
+        b=5seBXzzPgAeLvHuN9wPZVB6vmQFDHRfeQT+yEEifWtgG1OEyoAI8qCCWDB+eAYBjJt
+         kw1UiK+Sko5zfe32q8ksuqAK3DJZg80mFqkRae2Y27vmECvHzrYBoS6wd/pXpT4PZGHj
+         S7hTqxrketXSov7vmhY3DoTy6WRjkqO7XyxR/c4bApyUcyrN62VS4E89kY/Dfyczoqk0
+         /Qml15BPIxlw70zpH802Gwn3j0DECyHP4sw80t/gxE+eq8uY9F9EswFBFPC/gnZAjSfD
+         8rbXCSfltXoI25jlvp33H/24Dz+2OW2ryZtYk8iSEk8N96sXn4Se5JzSMYDf2o3UZxtV
+         cDfA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=pgZz+6PWFo4uW0VORVf3OBAL6wZ6DYjbjKUyaSSYmLM=;
-        b=vaZjKy6hXDQDMnsYTdXsvkjTf2rpAVn/1iZJO2N34Jrukt1N0+T72V6zGOUg62zrHi
-         +Yo4nfCZkB/19h0EPDmdKXxFy6r/FXujfyMhbkkOBbBTL9orkOeHjuFbmbbTruqexyZQ
-         OyfjS/M0zr8wuNEIMU/uJ1DLx3I5cRAr/s9ugKab+FFN2ZA27uTi5yCCF1vKcQdn9Anq
-         2NOi6giR7i9PiwYTi/XEzwdPGmxpiUxtszADNjPfH/CdTX+7omDrJTW1ehmnN2kVguWv
-         n6KpFaKykswSxL/IXkv5Xl9FAhOQtBNGmgRdzYhXvd0b9n8ghLOtHgUHhJGuRNDWVlb6
-         jsNg==
-X-Gm-Message-State: AO0yUKUrPFw6Fy459jL9HYvBtsmdd25HJ1ofQgxUTQVrepmMufUnqkWC
-	VHPrrUIu49ywGWcDRviWQo+ApKtlNh6K4qx9
-X-Google-Smtp-Source: AK7set8XGssyTqlV8J4exzGzcFmE8vvc7miQvlQUvYrj/PoNPn4D2LcsEEXmO53TfG7v3RdzI+/L8Q==
-X-Received: by 2002:a05:600c:4f4a:b0:3dc:16d4:a99f with SMTP id m10-20020a05600c4f4a00b003dc16d4a99fmr13556737wmq.8.1674836127152;
-        Fri, 27 Jan 2023 08:15:27 -0800 (PST)
-Received: from [192.168.1.109] ([178.197.216.144])
-        by smtp.gmail.com with ESMTPSA id ip7-20020a05600ca68700b003dc433bb5e1sm427854wmb.9.2023.01.27.08.15.25
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 27 Jan 2023 08:15:26 -0800 (PST)
-Message-ID: <a3c3603f-7401-aeb2-4b58-86c3ca778c6c@linaro.org>
-Date: Fri, 27 Jan 2023 17:15:24 +0100
+        h=cc:to:message-id:date:from:content-transfer-encoding:mime-version
+         :subject:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=LD2mVmTYVkgVFaby6r4EipeMY5amZrRMiimJ3O/2RrU=;
+        b=BvO/W1OwWMkbXPSLhWZDQnCzOF6MJCrB+ghCkXAv+whgWLa9el0vsy+x7/FeJE1VxL
+         T7OeefF0A/4hshBo+v2/v536w8oIuYG7pOMzYypjNNa2tjMVSWvCZHyjJZKWNpPy4zOM
+         9Qo6v+HXfLDMcyudJiXXekk2DUK5C8gvk1jUN6Taz9/Hle7hDRk3n7vqAfp3noe+rRmV
+         f0Lggo7/wQAHnrwjqMrU20dQ3RyiBYsYshDwqF+Kb5lbjOqezV49XioNhgdPSH0L6pJe
+         eebMjrQtpAYENrirnur58iCbe4jHwHfht+UHkVXRuihi8tztkqA8/FBWiV0ydogd/6Wb
+         DwYQ==
+X-Gm-Message-State: AFqh2koW/2m4IM8ESs3dTKMriu0bE9TkxTELGEdRs6FO8ODal4XWe3QO
+	QuytNCiFtN4PdKeIokGSkGWzZw==
+X-Google-Smtp-Source: AMrXdXtOR4HuyLKvrKjT1o730urF+dKgb/mtCV6kH3TJ6KcijSkrbqDijR+KMDRiCxTlZwoNuU1aSQ==
+X-Received: by 2002:a05:600c:d3:b0:3da:23a4:627e with SMTP id u19-20020a05600c00d300b003da23a4627emr38891278wmm.6.1674836176508;
+        Fri, 27 Jan 2023 08:16:16 -0800 (PST)
+Received: from [127.0.0.1] ([2a01:cb19:85c2:1100:7fe1:513:212f:568e])
+        by smtp.gmail.com with ESMTPSA id e19-20020a05600c439300b003cfd4e6400csm4744566wmn.19.2023.01.27.08.16.15
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 27 Jan 2023 08:16:16 -0800 (PST)
+Subject: [PATCH v6 0/3] Add MT8195 HDMI phy support
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.7.1
-Subject: Re: [PATCH v9 07/10] arm64: dts: ls1046ardb: Add serdes bindings
-Content-Language: en-US
-To: Sean Anderson <sean.anderson@seco.com>, Shawn Guo <shawnguo@kernel.org>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
- <kishon@kernel.org>, linux-phy@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org,
- Camelia Alexandra Groza <camelia.groza@nxp.com>,
- Madalin Bucur <madalin.bucur@nxp.com>, Bagas Sanjaya <bagasdotme@gmail.com>,
- Rob Herring <robh+dt@kernel.org>, Ioana Ciornei <ioana.ciornei@nxp.com>,
- linuxppc-dev@lists.ozlabs.org, devicetree@vger.kernel.org,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Li Yang <leoyang.li@nxp.com>
-References: <20221230000139.2846763-1-sean.anderson@seco.com>
- <20221230000139.2846763-8-sean.anderson@seco.com>
- <20230125234335.GC20713@T480> <8074f0be-8a70-a937-49f2-123e0bfc6218@seco.com>
- <20230127075248.GL20713@T480> <20a9070f-9673-2f51-97df-68e78c37d894@seco.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20a9070f-9673-2f51-97df-68e78c37d894@seco.com>
+X-b4-tracking: H4sIALX302MC/23MywrCMBAF0F+RrI3kMU0TV/6HiORVG+wDEi1I6b87uBFCV8O93DMrKTGnWMj5sJ
+ Icl1TSPGFQxwPxvZ0ekaaAmQgmBDPc0D6M6T6+ngQXzpZIXbaT73EzvYcByz6V15w/v48Lx3P944VT
+ RkEDaK680UxfnP0MyeV48vNIbsgXURGBRAM3wXfQMRN2iKyIRGI1k51QinHR7hCoCCBxwQseuWRtND ukqUiDpJOgAMB5aGqybdsXGnUs+14BAAA=
+From: Guillaume Ranquet <granquet@baylibre.com>
+Date: Fri, 27 Jan 2023 17:11:33 +0100
+Message-Id: <20220919-v6-0-2f641c422cb6@baylibre.com>
+To: David Airlie <airlied@gmail.com>, Philipp Zabel <p.zabel@pengutronix.de>, CK Hu <ck.hu@mediatek.com>,
+ Chunfeng Yun <chunfeng.yun@mediatek.com>, Matthias Brugger <matthias.bgg@gmail.com>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Jitao shi <jitao.shi@mediatek.com>,
+ Rob Herring <robh+dt@kernel.org>, Daniel Vetter <daniel@ffwll.ch>, Chun-Kuang Hu <chunkuang.hu@kernel.org>,
+ Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>
+Cc: linux-kernel@vger.kernel.org, Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
+ AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, linux-arm-kernel@lists.infradead.org,
+ linux-mediatek@lists.infradead.org, stuart.lee@mediatek.com, Guillaume Ranquet <granquet@baylibre.com>,
+ mac.shen@mediatek.com, kernel test robot <lkp@intel.com>, devicetree@vger.kernel.org, linux-phy@lists.infradead.org
+X-Mailer: b4 0.11.0-dev
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230127_081530_120063_A092D014 
-X-CRM114-Status: GOOD (  12.11  )
+X-CRM114-CacheID: sfid-20230127_081618_372936_B49E629E 
+X-CRM114-Status: GOOD (  13.42  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,29 +96,87 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 27/01/2023 17:11, Sean Anderson wrote:
->>>>>
->>>>>  .../boot/dts/freescale/fsl-ls1046a-rdb.dts    | 112 ++++++++++++++++++
->>>>>  drivers/phy/freescale/Kconfig                 |   1 +
->>>>
->>>> The phy driver Kconfig change shouldn't be part of this patch.
->>>
->>> I put it here for bisectability, since this is the point where we need
->>> to enable it. But I can do this in a separate patch if you want.
->>
->> From DT ABI perspective, it's already broken anyway if you need to change
->> kernel and DT atomically.
-> 
-> AIUI new kernels must work with old device trees, but new device trees need not
-> work with old kernels. So a change like this is fine, since the kernel won't
-> touch the serdes if it isn't supplied.
+Add support for HDMI phy on MT8195.
 
-You used the argument "bisectability". If the patchset is not
-bisectable, the ABI is broken.
+This is based on top of next-20221128
+
+To: Chunfeng Yun <chunfeng.yun@mediatek.com>
+To: Kishon Vijay Abraham I <kishon@ti.com>
+To: Vinod Koul <vkoul@kernel.org>
+To: Rob Herring <robh+dt@kernel.org>
+To: Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
+To: Matthias Brugger <matthias.bgg@gmail.com>
+To: Chun-Kuang Hu <chunkuang.hu@kernel.org>
+To: Philipp Zabel <p.zabel@pengutronix.de>
+To: David Airlie <airlied@gmail.com>
+To: Daniel Vetter <daniel@ffwll.ch>
+To: CK Hu <ck.hu@mediatek.com>
+To: Jitao shi <jitao.shi@mediatek.com>
+Cc: linux-arm-kernel@lists.infradead.org
+Cc: linux-mediatek@lists.infradead.org
+Cc: linux-phy@lists.infradead.org
+Cc: devicetree@vger.kernel.org
+Cc: linux-kernel@vger.kernel.org
+Cc: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Cc: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Cc: mac.shen@mediatek.com
+CC: stuart.lee@mediatek.com
+Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
+---
+Changes in v6:
+- Adapt clock bit ratio when TMDS is over 340M
+- Used sized integers for register read/writes
+- Removed useless comments
+- Shortened function names
+- Link to v5: https://lore.kernel.org/r/20220919-v5-0-f346444bc459@baylibre.com
+
+Changes in v5:
+- Fix compilation errors on 32 bits platform with no support for __udivdi3.
+    Compile tested on mips with gcc-12
+- Link to v4: https://lore.kernel.org/r/20220919-v4-0-bdc21e1307e9@baylibre.com
+
+Changes in v4:
+- Dedicated series for HDMI phy support (without the drm/ related
+  changes)
+- Removed useless variable initializations in phy driver
+- Link to v3: https://lore.kernel.org/r/20220919-v3-0-a803f2660127@baylibre.com
+
+Changes in v3:
+- phy: Grouped register and bit definition together to add clarity
+- dt-bindings: Addressed comments
+- Link to v2: https://lore.kernel.org/r/20220919-v2-0-8419dcf4f09d@baylibre.com
+
+Changes in v2:
+- Removed syscon requirement from the hdmi node
+- Use as much as possible bit FIELD_PREP/FIELD_GET macros across all the
+  patches
+- Make cec optional dynamically instead of hardcoded with a flag
+- Renamed hdmi variants to v1 (legacy) and v2 (mt8195) while waiting for
+  a better name
+- Rework hdmi v2 code to use a connector (same as v1)
+- Remove "magic" 0x43 addr special handling in hdmi ddc code
+- Link to v1: https://lore.kernel.org/r/20220919-v1-0-4844816c9808@baylibre.com
+
+---
+Guillaume Ranquet (3):
+      dt-bindings: phy: mediatek: hdmi-phy: Add mt8195 compatible
+      phy: phy-mtk-hdmi: Add generic phy configure callback
+      phy: mediatek: add support for phy-mtk-hdmi-mt8195
+
+ .../devicetree/bindings/phy/mediatek,hdmi-phy.yaml |   1 +
+ drivers/phy/mediatek/Makefile                      |   1 +
+ drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c         | 517 +++++++++++++++++++++
+ drivers/phy/mediatek/phy-mtk-hdmi-mt8195.h         | 111 +++++
+ drivers/phy/mediatek/phy-mtk-hdmi.c                |  15 +
+ drivers/phy/mediatek/phy-mtk-hdmi.h                |   3 +
+ 6 files changed, 648 insertions(+)
+---
+base-commit: e2f86c02fdc96ca29ced53221a3cbf50aa6f8b49
+change-id: 20220919-hdmi_mtk
 
 Best regards,
-Krzysztof
-
+-- 
+Guillaume Ranquet <granquet@baylibre.com>
 
 -- 
 linux-phy mailing list
