@@ -4,67 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CE6FEC38142
-	for <linux-phy@archiver.kernel.org>; Fri, 27 Jan 2023 16:16:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C1D2CC54EAA
+	for <linux-phy@archiver.kernel.org>; Fri, 27 Jan 2023 16:17:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0xRY1r1GdY4PEXUtx8evuU9QdmJ5ISN0pgtAxoPdc0s=; b=rmlUJcPKvtRKNZ
-	7xlRtwKbfGxj9VzYXdmIGiOr88QVWkpDCLjSCzKUHIdL698Zb+NYxBcciW9p/Xnc8GbV6P4MfvTkn
-	OykshiIwKDeqxI23zdILF2oszKeX1bn8ZeDUW2mtY4qzciaU7H2u4NL5wRbo10luBxn37ubtfTFBG
-	ssvLXgVrCe0bQZfbX+OrIHn/pobuTgPIYSMVoRbUAjzhMfP8T/2EMyEeH8+5WN8YPyV6JxwJg/P/7
-	i0CEcDEAIXhsawxGGLyJOdiLzRCHFsf3qWCFoRHDvfS5IF4Lr0vS7Qb5CYswo0y7yy04LMF8lGhg3
-	Y2WGRlKACgfWbisMvAKQ==;
+	List-Owner; bh=LeSlZbcq8SbdlHErQ5nqwXV+8EL8gfErUNwlLdkEerM=; b=B5A9H5UHL0lawu
+	G9+YjNZH2jRPjiGZFRbyjSKC/PNu8CbXkIDC45WC15mm9LQk8fa3ZUh4j2y6JtpdqF7eXeTCL0auT
+	C0WKY0tzYeDgcUVlo3iKbvy25iPx/rdEmEHtR3SM4gom5xS9NJUnqssfygIfG9u7J1nd+u7hKTfk1
+	zYS7Ix2371o4AuX298zNM0F58aNU5UuM87F+8+9N4SmIX/711JBwoFrmyoBuNqF5DowJWb5tclOUh
+	g5M1qU1E36fbkeANgtpzxol3FGH6klZXTKLkwte9bo/siFZbHKjIldDoGlFa0OtQ4AZabm9khTYdG
+	P7XULF1YtgB2cYDHvN6w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pLRP2-00FchV-4d; Fri, 27 Jan 2023 16:16:36 +0000
-Received: from mail-wm1-x335.google.com ([2a00:1450:4864:20::335])
+	id 1pLRPV-00Fcre-UL; Fri, 27 Jan 2023 16:17:06 +0000
+Received: from mail-wm1-x32a.google.com ([2a00:1450:4864:20::32a])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pLROk-00FcZ9-PW
-	for linux-phy@lists.infradead.org; Fri, 27 Jan 2023 16:16:22 +0000
-Received: by mail-wm1-x335.google.com with SMTP id d4-20020a05600c3ac400b003db1de2aef0so3862942wms.2
-        for <linux-phy@lists.infradead.org>; Fri, 27 Jan 2023 08:16:18 -0800 (PST)
+	id 1pLROn-00FcaH-G4
+	for linux-phy@lists.infradead.org; Fri, 27 Jan 2023 16:16:25 +0000
+Received: by mail-wm1-x32a.google.com with SMTP id m16-20020a05600c3b1000b003dc4050c94aso1025484wms.4
+        for <linux-phy@lists.infradead.org>; Fri, 27 Jan 2023 08:16:19 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=baylibre-com.20210112.gappssmtp.com; s=20210112;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=7Uam+EfbMJvYSMYj1PNEm4eMKYS9JSHriCql+8aR0/Y=;
-        b=FBohCa2b8WdTVp7MGVRDS3dLRaOrbrBi2uuIZf966p4bOyGhSJrUVBkAnB6x53m/tg
-         VFV5p3BR5QIP0KDyXiuxRd9nI/A8W2Wwjl0p5aVV1a5catHDsxLcXVznB40owoyHVpsH
-         7B4RzoNfs1IBKgCCtaya/LHcJSdk3M/U61O5XwOxlFBSJaYrn7XkbngYgHEhVIJl7byF
-         7s3j7P7nw7jNa5Vvnd2v+0z2gn+1rKfozE6NFBAixu+f4ELSkxL5qH/2vp29jjr2yM/w
-         jjvsgLCRzXAh2gEBTID1HnBUIegUbh/AfMrR0jLG3se0tuPvIcmyW5JoM/m2VvQiKlIU
-         K0BQ==
+        bh=op30N8VplB3ypI088BE1DuG6HdC3ZVERGlwL+v56hF8=;
+        b=SZmfIny3U/S8qG+e/WnJPW4Ssp//fHLsfmZRnuGKIjQTiMoUmWHXcxyZjYy1KVA7QS
+         oaCB2QrEooTl9JsCGk5BX2yDzWNkkiEWfQKklWElFXvT5LuTZ8bl6PA8gvRxnJiuFQCQ
+         ys/gWBK0HZXF0WohL0y6qH1/kbm86bd0lvIE5rIwCVnNwBXpou+1efVA4qJxT0PBMkNz
+         uUqCAIDiXkYYJoRn+34edZorjJOJ8YWGQ7jt1oNyZ1865LL63dXK3s4fGMeaRKCwlFFL
+         WzgoOyT8vV2UQ4rOZYkBaUxxGTudg8Ca3ay0+6v2g4tpfg5b0E8kHpd1HDjOaU0sE3o9
+         uxpA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=7Uam+EfbMJvYSMYj1PNEm4eMKYS9JSHriCql+8aR0/Y=;
-        b=tOXuKSC1XH+rYC9jZ18x4oF5QvFpsjkMHeKQ02CGhtQ33inWGcBlleQLxFagUFOKEE
-         5Rf7Iv/1uS4woxfqnf5brvlXgvZzJqLUe4i+58Ffi8EOrrktHBYkbCb9RBje3AVpBHvh
-         X7vpI4DE85OORrIBLcIgwBcbCeYTEL7bvWd0u0LL7o8PvMPNob337K3neUGBxO283zCs
-         WH7LgMBQNJdrKqlnkhiRemL18TCW+blHSj//98oETR/rC6h/oxG7bo9R6msmBsR/wXj6
-         d9B/FRmfJqJu4ZXrpBqzGihKDqgz+6v0PgJN46iqo1QWkx1/nIRwC6SCDmadA91k7Pny
-         OUEg==
-X-Gm-Message-State: AO0yUKU2LvEPrAxpQxz+y+9jaXbhwLN1bSMBlKyR0lAw36NCG95ekyQ8
-	6BUHBL2gn6zJfmmvJDm5WeAggQ==
-X-Google-Smtp-Source: AK7set9Qn6JT80gbgEpgbkrZBDPOZ76VGGhfU4VDXCnUQBx/8KZXu0IA+WUdtlaq99ASdKMUN1G1Kw==
-X-Received: by 2002:a05:600c:17c6:b0:3dc:3b1a:5d1f with SMTP id y6-20020a05600c17c600b003dc3b1a5d1fmr2527696wmo.0.1674836177641;
-        Fri, 27 Jan 2023 08:16:17 -0800 (PST)
+        bh=op30N8VplB3ypI088BE1DuG6HdC3ZVERGlwL+v56hF8=;
+        b=T3tG36vEr2RaaaFZX5NwHJ4/MQ260uighSjP9S5yHZb6tn60vVjxU0n8PauLIhyJSX
+         6pu5l65LFKCbmHYKUSUpjdeAYwLnmLsE+MsqwnsOOVt3rKt3IhaYBmMKpRwFzBrATYPd
+         RATlsR1TwvchdcTVu+p0ymM+e86WGREUnsCJw3aWNFScuYzvzeCxsK2LY/ZONC0ZyLBV
+         Wt9Dvb/jjeCnf7GdayLNQ2lbSksEoSz+LAX2miiMGFlvrhLuVqLoKLbJ4TpIhz5cfI2m
+         G9hpINcTUcEYRUy8OLwXDgDnNN20oVMuZfxEDPlZE1APKpbftA45oDRJSGMmMgDODRgJ
+         8ydA==
+X-Gm-Message-State: AFqh2kpx4kGGYllW/7p2Cn2u+assOdqFgYEFsZ/R/7YF8vT/TrfAE5ND
+	Hui799I465padEZFrHTD1IMv6w==
+X-Google-Smtp-Source: AMrXdXuordLziVYmuuVYBeA7Bkt5b1HbFTqNvAAo/MRucQWcpaadudaJmH5tq/D7Ta4P+ZjFAaTv7A==
+X-Received: by 2002:a05:600c:21c4:b0:3da:fcf1:d4cc with SMTP id x4-20020a05600c21c400b003dafcf1d4ccmr40404327wmj.30.1674836178781;
+        Fri, 27 Jan 2023 08:16:18 -0800 (PST)
 Received: from [127.0.0.1] ([2a01:cb19:85c2:1100:7fe1:513:212f:568e])
-        by smtp.gmail.com with ESMTPSA id e19-20020a05600c439300b003cfd4e6400csm4744566wmn.19.2023.01.27.08.16.16
+        by smtp.gmail.com with ESMTPSA id e19-20020a05600c439300b003cfd4e6400csm4744566wmn.19.2023.01.27.08.16.17
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 27 Jan 2023 08:16:17 -0800 (PST)
+        Fri, 27 Jan 2023 08:16:18 -0800 (PST)
 From: Guillaume Ranquet <granquet@baylibre.com>
-Date: Fri, 27 Jan 2023 17:11:34 +0100
-Subject: [PATCH v6 1/3] dt-bindings: phy: mediatek: hdmi-phy: Add mt8195 compatible
+Date: Fri, 27 Jan 2023 17:11:35 +0100
+Subject: [PATCH v6 2/3] phy: phy-mtk-hdmi: Add generic phy configure callback
 MIME-Version: 1.0
-Message-Id: <20220919-v6-1-2f641c422cb6@baylibre.com>
+Message-Id: <20220919-v6-2-2f641c422cb6@baylibre.com>
 References: <20220919-v6-0-2f641c422cb6@baylibre.com>
 In-Reply-To: <20220919-v6-0-2f641c422cb6@baylibre.com>
 To: David Airlie <airlied@gmail.com>, Philipp Zabel <p.zabel@pengutronix.de>, CK Hu <ck.hu@mediatek.com>,
@@ -78,9 +78,8 @@ Cc: linux-kernel@vger.kernel.org, Krzysztof Kozlowski <krzysztof.kozlowski@linar
  mac.shen@mediatek.com, kernel test robot <lkp@intel.com>, devicetree@vger.kernel.org, linux-phy@lists.infradead.org
 X-Mailer: b4 0.11.0-dev
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230127_081618_846547_864A5E0D 
-X-CRM114-Status: UNSURE (   7.89  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230127_081621_573262_A13AFCCC 
+X-CRM114-Status: GOOD (  10.73  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,28 +96,62 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add a compatible for the HDMI PHY on MT8195
+Some phys, such as mt8195, needs to have a configure callback defined.
 
-Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 Reviewed-by: Matthias Brugger <matthias.bgg@gmail.com>
 Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
 ---
- Documentation/devicetree/bindings/phy/mediatek,hdmi-phy.yaml | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/phy/mediatek/phy-mtk-hdmi.c | 12 ++++++++++++
+ drivers/phy/mediatek/phy-mtk-hdmi.h |  1 +
+ 2 files changed, 13 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/phy/mediatek,hdmi-phy.yaml b/Documentation/devicetree/bindings/phy/mediatek,hdmi-phy.yaml
-index 6cfdaadec085..f3a8b0b745d1 100644
---- a/Documentation/devicetree/bindings/phy/mediatek,hdmi-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/mediatek,hdmi-phy.yaml
-@@ -28,6 +28,7 @@ properties:
-           - const: mediatek,mt2701-hdmi-phy
-       - const: mediatek,mt2701-hdmi-phy
-       - const: mediatek,mt8173-hdmi-phy
-+      - const: mediatek,mt8195-hdmi-phy
+diff --git a/drivers/phy/mediatek/phy-mtk-hdmi.c b/drivers/phy/mediatek/phy-mtk-hdmi.c
+index b16d437d6721..32f713301768 100644
+--- a/drivers/phy/mediatek/phy-mtk-hdmi.c
++++ b/drivers/phy/mediatek/phy-mtk-hdmi.c
+@@ -8,10 +8,12 @@
  
-   reg:
-     maxItems: 1
+ static int mtk_hdmi_phy_power_on(struct phy *phy);
+ static int mtk_hdmi_phy_power_off(struct phy *phy);
++static int mtk_hdmi_phy_configure(struct phy *phy, union phy_configure_opts *opts);
+ 
+ static const struct phy_ops mtk_hdmi_phy_dev_ops = {
+ 	.power_on = mtk_hdmi_phy_power_on,
+ 	.power_off = mtk_hdmi_phy_power_off,
++	.configure = mtk_hdmi_phy_configure,
+ 	.owner = THIS_MODULE,
+ };
+ 
+@@ -43,6 +45,16 @@ static int mtk_hdmi_phy_power_off(struct phy *phy)
+ 	return 0;
+ }
+ 
++static int mtk_hdmi_phy_configure(struct phy *phy, union phy_configure_opts *opts)
++{
++	struct mtk_hdmi_phy *hdmi_phy = phy_get_drvdata(phy);
++
++	if (hdmi_phy->conf->hdmi_phy_configure)
++		return hdmi_phy->conf->hdmi_phy_configure(phy, opts);
++
++	return 0;
++}
++
+ static const struct phy_ops *
+ mtk_hdmi_phy_dev_get_ops(const struct mtk_hdmi_phy *hdmi_phy)
+ {
+diff --git a/drivers/phy/mediatek/phy-mtk-hdmi.h b/drivers/phy/mediatek/phy-mtk-hdmi.h
+index c7fa65cff989..f5aac9d352d8 100644
+--- a/drivers/phy/mediatek/phy-mtk-hdmi.h
++++ b/drivers/phy/mediatek/phy-mtk-hdmi.h
+@@ -24,6 +24,7 @@ struct mtk_hdmi_phy_conf {
+ 	const struct clk_ops *hdmi_phy_clk_ops;
+ 	void (*hdmi_phy_enable_tmds)(struct mtk_hdmi_phy *hdmi_phy);
+ 	void (*hdmi_phy_disable_tmds)(struct mtk_hdmi_phy *hdmi_phy);
++	int (*hdmi_phy_configure)(struct phy *phy, union phy_configure_opts *opts);
+ };
+ 
+ struct mtk_hdmi_phy {
 
 -- 
 2.39.0
