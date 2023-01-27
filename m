@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4E84DC54EAA
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9CD2CC38142
 	for <linux-phy@archiver.kernel.org>; Fri, 27 Jan 2023 20:46:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,54 +12,54 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sXqxIWijMDDfJmCiDeRa8gmNLCcEqFenNDOyk9v37iI=; b=zcOesSjf7Z2rt5
-	0Gq8Q2UEYVNuXik6VJ/74/peZ7OjL23Qi839F0RIp6cltuD8eja8meP7+gJB8OdylAn3YBnJDy5Gh
-	VjzVz1zvgCzzvZEcq58iHYE72YFa5DoDThvp+SQZD4li9Bwv5ybwHhd+VTHTD891YLFEkD7FXK9+8
-	AvSVJgJ0C/AeSQSs4cd5kUPtaEbY6DCi1NHMHAaZszKFAifqgSXFa71I5pYvBbivMa7DY1tzLtcVR
-	D4x4T2Zgj2h0QRNFFFNsKq7wdq2epKIiOPHV9WQj+yDPsELG+sxUXW1/+yIggFBZR9i6QhPqYONL0
-	8v4zbEpc/1kB2x4ZdvXA==;
+	List-Owner; bh=ztO1ztQEk9N1N0xAVSpBxSEX8YytyKMj6eV2fVNbvjU=; b=jsuyExuV3yXxRM
+	UXxGh/mWeOHIb0rJ4jV5vBK7bzkjBU95V6Z2QEx1Fpg6uUG4DHxW8Ij6L9r6PvuemvudUH3GR//gr
+	zb4QYevjknnh6T/x0UDQST3Bcg+Hpak4TV6oip311A+PnMWn2rRq34tFnDUPKNswjM9Gqi0SuwBnO
+	ZgYXij/FTJsjcSLbkYUMYCq3Sd20e/OivcuISWdJYegc/JCKo0qj3aRC8YPnRg+eBEzkF9ze7wL2b
+	tybJTGRx1tWErdo94MGuGJSsc/q0+apj8so0plrDGLBidufhS+Mf96joQJlB6ZRMMa2AX+qicmTWg
+	OcdUKX9Hlrrcqf6hDydg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pLVcG-00GR9H-LA; Fri, 27 Jan 2023 20:46:32 +0000
-Received: from mail-wr1-x435.google.com ([2a00:1450:4864:20::435])
+	id 1pLVcG-00GR9N-Rf; Fri, 27 Jan 2023 20:46:32 +0000
+Received: from mail-wr1-x42b.google.com ([2a00:1450:4864:20::42b])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pLUb0-00G8v2-1s
+	id 1pLUb2-00G8vS-QE
 	for linux-phy@lists.infradead.org; Fri, 27 Jan 2023 19:41:14 +0000
-Received: by mail-wr1-x435.google.com with SMTP id q10so5912621wrm.4
-        for <linux-phy@lists.infradead.org>; Fri, 27 Jan 2023 11:41:09 -0800 (PST)
+Received: by mail-wr1-x42b.google.com with SMTP id bk16so5887778wrb.11
+        for <linux-phy@lists.infradead.org>; Fri, 27 Jan 2023 11:41:11 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=OTbIA/qsw+iEJ2j+G0MzDhcSxbI2hiwezMO1CX++Hek=;
-        b=UiNtolU4E4LMirZ4Bc6hCbF2Jcz5w1QeiV10veN90X6hOIKK6DxgcHncK03SxrGbJm
-         /sKRRXKFATHToB6UbvzOI6DakGvCBirwe1kIXq/2TgIYNH6wmNJijrbE9FDSYzHQN6/l
-         7OSjUm4C8UrSXDLHi2D2oWYMcrIk8xYxY0Kjfr/y1HOuMlCbtilFiPYiQf9e2y55r7yX
-         ghfx0IWmgbsvSZcPtiuvRPp6De5wdvuVrGDXfVqn92uOUfyWQrnB7Q4OcK4TGqN29mUC
-         X0URPMHiV9YBbge0/mJIrfUgH6wuXfK3YEUKnmCoyZz0RiHwmlvgPSzbFqCspJwiJQbf
-         lj0A==
+        bh=pXcEOV+ikhaaev3YUpdV3LTjyGNwDAC89LChkvoW52Y=;
+        b=ECGkYC22kGhYCVIAgJfs1kwNkbHusNO0OIv7monN00IxJ/o2bSlbuNHUJze5Ozrt/M
+         ujaHYFsD/x9rlkGuD+eWGdVwmMPJM4zpZD/SkU7AtFYhB2aQHfkN35l5Zw9ykEasQDBX
+         7zihqPGLiYXL432GMeBiWsG5IKcqyRrynqy3bSa7f3VShNqilVQ4CMz6eV1ALCYNpLrP
+         wepGiVaixK8VgQAjQUC6eWm7qUnwtBj4RaodXkl3Q0YEhL7QuRNtbs1T57/gXikIz/n0
+         BI7ydf2oiSjn0OoOnPtaMh+wtpBVpw9s2XgkClagH/8gU6K1DrlKCcdlliWnqWq/Nkbs
+         rTJw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=OTbIA/qsw+iEJ2j+G0MzDhcSxbI2hiwezMO1CX++Hek=;
-        b=nfkTDtJzEig0tm1A/uZySRXnKTCB1II8XFE610bpbf+nXiU1jgCo3WLWu11CdaXpg3
-         rPpHG6o2nhPpZKZMygJIwWwAbnVnwHj3CaSnwE5FmsRpliwBLbURqSxvDSohum6LT4Mt
-         b9tIjTSQXE1dBC6f5r8NFeUhwdaQRHeGptE/gnFopdNHJZ3REC8aweFhBy+0ibITv3Hg
-         Eqgx0B8q42ri7mjVzX2V/tdYlTWjZJLZ+Gb0+Rmgwzpg2R9y/4wTEmW3srJY9jIdNE+8
-         El60ggI7WLrMn3sBy/vLG1QtRhNX/mG/LHUFLHHCHbtKtbrsXTCpRfTx/wEaVdJwrON8
-         1M+A==
-X-Gm-Message-State: AO0yUKWOvy9fKz85O3CuEJKJGD8x4kxsglkNjDQ4xAetUTD29me0X4dY
-	hSR6alWUvXBMnQ6ROvpf/PQpaw==
-X-Google-Smtp-Source: AK7set8phgbSxSEwh8u2STG/34e8GAiaEpnPycQ0+6PFVjzYXOkOdLXAox+v4Bj7Ov9boXJSQBqgbw==
-X-Received: by 2002:a05:6000:1001:b0:2bf:dafe:43d7 with SMTP id a1-20020a056000100100b002bfdafe43d7mr129204wrx.16.1674848468608;
-        Fri, 27 Jan 2023 11:41:08 -0800 (PST)
+        bh=pXcEOV+ikhaaev3YUpdV3LTjyGNwDAC89LChkvoW52Y=;
+        b=dPVi0WGZ8xc+fr4d2ecEgchfuf91dnAWA4+oYJoGw99ugT/biy3acKSWppXTu65aTq
+         z2ye3kF4lE7Xs/YoG2wdlIYCYVVbh7pLIfZD7NthFVc/6g2i7pq6qD+YOJNhGXScp4dG
+         8BLm9xe9lsVfHOSkh0EFIaCBoQ6lbvjH1IgrOQSGDJJyhVggUwQb97OW+l+UIcZaThoy
+         jKFaPJJsoQ+JqAyae02ZEoVc/w+8sL9yC8dBYg/djdl1rEu7ulnL3P4TRuwVnQKMI/kV
+         5KZ3X2eE+HEG1+nJOUHsGKy0J4ypS+RjFrrEBu/iVMS2J2MdL4O1ucCHt60EVmRdnAq2
+         SswQ==
+X-Gm-Message-State: AFqh2krWEvdMUvZeFu+5Ndf1gZufVzUnfXyDA4PU7KvAmODTjcDyRs94
+	X9QAm0G0i5FsvY8cJsuHPE9Kiw==
+X-Google-Smtp-Source: AMrXdXtnxP2pNNbbdNfNhQSvTB/2VE/w9WDZOg/rAZpkuBD5arji3hv5ReYPbhPestFCp0q1weUkqw==
+X-Received: by 2002:a05:6000:8d:b0:2be:3a6a:f565 with SMTP id m13-20020a056000008d00b002be3a6af565mr27343065wrx.38.1674848470759;
+        Fri, 27 Jan 2023 11:41:10 -0800 (PST)
 Received: from krzk-bin.. ([178.197.216.144])
-        by smtp.gmail.com with ESMTPSA id y17-20020adffa51000000b002238ea5750csm5822417wrr.72.2023.01.27.11.41.07
+        by smtp.gmail.com with ESMTPSA id y17-20020adffa51000000b002238ea5750csm5822417wrr.72.2023.01.27.11.41.09
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 27 Jan 2023 11:41:08 -0800 (PST)
+        Fri, 27 Jan 2023 11:41:10 -0800 (PST)
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 To: Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
@@ -80,16 +80,16 @@ Cc: replicant@osuosl.org,
 	Henrik Grimler <henrik@grimler.se>,
 	Chanwoo Choi <cw00.choi@samsung.com>,
 	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Subject: [PATCH 1/8] dt-bindings: soc: samsung: exynos-pmu: allow phys as child
-Date: Fri, 27 Jan 2023 20:40:50 +0100
-Message-Id: <20230127194057.186458-2-krzysztof.kozlowski@linaro.org>
+Subject: [PATCH 2/8] dt-bindings: phy: samsung,dp-video-phy: deprecate syscon phandle
+Date: Fri, 27 Jan 2023 20:40:51 +0100
+Message-Id: <20230127194057.186458-3-krzysztof.kozlowski@linaro.org>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20230127194057.186458-1-krzysztof.kozlowski@linaro.org>
 References: <20230127194057.186458-1-krzysztof.kozlowski@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230127_114110_113602_5FDD8FAC 
-X-CRM114-Status: UNSURE (   9.48  )
+X-CRM114-CacheID: sfid-20230127_114112_975011_A52B5B6D 
+X-CRM114-Status: UNSURE (   9.43  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -107,122 +107,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The MIPI and DisplayPort phys are actually part of the Power Management
-Unit system controller, thus allow them as its children, instead of
-specifying as separate device nodes with syscon phandle.
+The DisplayPort phy is actually part of the Power Management Unit system
+controller, thus it should be its child, instead of sibling node with
+syscon phandle.
 
 Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 ---
- .../bindings/soc/samsung/exynos-pmu.yaml      | 71 +++++++++++++++----
- 1 file changed, 57 insertions(+), 14 deletions(-)
+ .../devicetree/bindings/phy/samsung,dp-video-phy.yaml        | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/soc/samsung/exynos-pmu.yaml b/Documentation/devicetree/bindings/soc/samsung/exynos-pmu.yaml
-index 13bb8dfcefe6..f7c141dd11ec 100644
---- a/Documentation/devicetree/bindings/soc/samsung/exynos-pmu.yaml
-+++ b/Documentation/devicetree/bindings/soc/samsung/exynos-pmu.yaml
-@@ -31,20 +31,28 @@ select:
+diff --git a/Documentation/devicetree/bindings/phy/samsung,dp-video-phy.yaml b/Documentation/devicetree/bindings/phy/samsung,dp-video-phy.yaml
+index b03b2f00cc5b..3bee3f8733f7 100644
+--- a/Documentation/devicetree/bindings/phy/samsung,dp-video-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/samsung,dp-video-phy.yaml
+@@ -22,13 +22,13 @@ properties:
  
- properties:
-   compatible:
--    items:
--      - enum:
--          - samsung,exynos3250-pmu
--          - samsung,exynos4210-pmu
--          - samsung,exynos4412-pmu
--          - samsung,exynos5250-pmu
--          - samsung,exynos5260-pmu
--          - samsung,exynos5410-pmu
--          - samsung,exynos5420-pmu
--          - samsung,exynos5433-pmu
--          - samsung,exynos7-pmu
--          - samsung,exynos850-pmu
--          - samsung-s5pv210-pmu
--      - const: syscon
-+    oneOf:
-+      - items:
-+          - enum:
-+              - samsung,exynos3250-pmu
-+              - samsung,exynos4210-pmu
-+              - samsung,exynos4412-pmu
-+              - samsung,exynos5250-pmu
-+              - samsung,exynos5260-pmu
-+              - samsung,exynos5410-pmu
-+              - samsung,exynos5420-pmu
-+              - samsung,exynos5433-pmu
-+              - samsung,exynos7-pmu
-+              - samsung,exynos850-pmu
-+              - samsung-s5pv210-pmu
-+          - const: syscon
-+      - items:
-+          - enum:
-+              - samsung,exynos5250-pmu
-+              - samsung,exynos5420-pmu
-+              - samsung,exynos5433-pmu
-+          - const: simple-mfd
-+          - const: syscon
- 
-   reg:
-     maxItems: 1
-@@ -64,6 +72,10 @@ properties:
-     minItems: 1
-     maxItems: 32
- 
-+  dp-phy:
-+    $ref: /schemas/phy/samsung,dp-video-phy.yaml
-+    unevaluatedProperties: false
-+
-   interrupt-controller:
+   samsung,pmu-syscon:
+     $ref: /schemas/types.yaml#/definitions/phandle
++    deprecated: true
      description:
-       Some PMUs are capable of behaving as an interrupt controller (mostly
-@@ -74,6 +86,10 @@ properties:
-       Must be identical to the that of the parent interrupt controller.
-     const: 3
+-      Phandle to PMU system controller interface.
++      Phandle to PMU system controller interface (if not a child of PMU).
  
-+  mipi-phy:
-+    $ref: /schemas/phy/samsung,mipi-video-phy.yaml
-+    unevaluatedProperties: false
-+
-   reboot-mode:
-     $ref: /schemas/power/reset/syscon-reboot-mode.yaml
-     type: object
-@@ -117,6 +133,23 @@ allOf:
-         - clock-names
-         - clocks
+ required:
+   - compatible
+   - "#phy-cells"
+-  - samsung,pmu-syscon
  
-+  - if:
-+      properties:
-+        compatible:
-+          contains:
-+            enum:
-+              - samsung,exynos5250-pmu
-+              - samsung,exynos5420-pmu
-+              - samsung,exynos5433-pmu
-+    then:
-+      properties:
-+        dp-phy: true
-+        mipi-phy: true
-+    else:
-+      properties:
-+        dp-phy: false
-+        mipi-phy: false
-+
- examples:
+ additionalProperties: false
+ 
+@@ -36,6 +36,5 @@ examples:
    - |
-     #include <dt-bindings/clock/exynos5250.h>
-@@ -130,4 +163,14 @@ examples:
-         #clock-cells = <1>;
-         clock-names = "clkout16";
-         clocks = <&clock CLK_FIN_PLL>;
-+
-+        dp-phy {
-+            compatible = "samsung,exynos5250-dp-video-phy";
-+            #phy-cells = <0>;
-+        };
-+
-+        mipi-phy {
-+            compatible = "samsung,s5pv210-mipi-video-phy";
-+            #phy-cells = <1>;
-+        };
+     phy {
+         compatible = "samsung,exynos5420-dp-video-phy";
+-        samsung,pmu-syscon = <&pmu_system_controller>;
+         #phy-cells = <0>;
      };
 -- 
 2.34.1
