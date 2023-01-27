@@ -4,62 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C8164C38142
-	for <linux-phy@archiver.kernel.org>; Fri, 27 Jan 2023 20:46:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F1CC1C54EAA
+	for <linux-phy@archiver.kernel.org>; Fri, 27 Jan 2023 20:46:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NddY3JIQKDQUl6Zt0GSFubwqEsUjbi2h5JLGQA6Ykos=; b=mvTp8TZSYWk8bq
-	qAkwMfcF69X+Pu1KSq5/tJbW1+PPU8IYxdJgwUCEem0Vbj0oEECohsZ+EDnTOkHMW5cnZvT8ZBZgN
-	DnFJKMFQng/JiBLr+prkcjT4km77noqMAim4GxsLrM7iLDtKtDHxwjdm7bPNHoBMJGfZxfA/7ZLm1
-	syGJaC8a4bPdKOnM38Su6lgw1EdbEG0PxVD3uoSfo1TDHBizOtNBVt9gh7Qx+fKNsaFGdvGZuyzrZ
-	yuOv24FYrKByTzw/ugiiNtEtNCMz1UID4F4CCyu+NmwjTvqOFGKfSCLLZEIv7ml7yIwDvLD7fD5P4
-	E/h6meX8bZLJMsDlkWdg==;
+	List-Owner; bh=J4vjvZCCYSQEdL6WzBGoxLvop3zIgkT4o5l5lqFQNY0=; b=2cqdhYkt49SfCX
+	OU3mQ+bZKbkNCqR/+jeiAHYtZLdb/4MkS5o07/bSis/Ydaxl6V7rp6ylE/VbgrJYWCDXRW4iKFaUB
+	nj1osUeKNb+/ZXC3VTPpI8avd+pt2CJJBjDLjy5cgvqINeJcpKmJL4Q3lgPZnRSj1xIdG+3cq7Cs5
+	xGsA0/18EZeTIiNtASbxlAX/Z1zyEyWb6p5L6fRq5S4FUecS3ZoQb1E0WQdkCQOqdOfr3mvavNb7i
+	gVxia6Wo7A79wyQs3bacinwH+Au+EIP3DmyZU8Zza+dn1YgwfMYaoauocGWJ/6fHA8Up6SRfHHoTs
+	28JX331fLEboVTsmkXMQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pLVcP-00GRBW-3D; Fri, 27 Jan 2023 20:46:41 +0000
-Received: from mail-wr1-x42e.google.com ([2a00:1450:4864:20::42e])
+	id 1pLVcY-00GRDM-2x; Fri, 27 Jan 2023 20:46:50 +0000
+Received: from mail-wr1-x430.google.com ([2a00:1450:4864:20::430])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pLUb3-00G8vW-K3
-	for linux-phy@lists.infradead.org; Fri, 27 Jan 2023 19:41:15 +0000
-Received: by mail-wr1-x42e.google.com with SMTP id t18so5930468wro.1
-        for <linux-phy@lists.infradead.org>; Fri, 27 Jan 2023 11:41:13 -0800 (PST)
+	id 1pLUb5-00G8ub-1u
+	for linux-phy@lists.infradead.org; Fri, 27 Jan 2023 19:41:16 +0000
+Received: by mail-wr1-x430.google.com with SMTP id h16so5870913wrz.12
+        for <linux-phy@lists.infradead.org>; Fri, 27 Jan 2023 11:41:14 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=Ndc/iaR7jbpFClfbGd4ofgtC3FYEzqRlKdVRxlgp+PA=;
-        b=gMwA6nngkfIZpPGhH4Lg/vrN9j2ELujkTuJqBUSU0s9NpnlZLPoQnnLWHJ+VMshPmf
-         0ArZIdo133rszRVf0iJ2GO63/wyxGgraKhAkhxVfZ/Jt4p4yM8rodnooVDmEZLgrWw2m
-         23R2CkmGjix/NtD0tDEvjzBwq/EDjm87xVWKfZElSSAhJjP/t/rsszjrU9B/+21CKGU4
-         DOhc7gnw0m778fPEPCma2jSv0z4yRfhpBRchmtpriTsKcmpd90a5xrTIIRcBCmEH9fnQ
-         fZEsDS/bvvYNstFae5exsHqllPmbfDrjUJnZUZpYarguFuMJ05V4vEeIk8xO7wyD4xjB
-         hhuw==
+        bh=vhTZHhvTWH45tyGI0x4uU2VUFxdCNkd8qxpKaMX6L7Y=;
+        b=e2dWa8i6qb8eJW7sdxfl584eKltFPVaJgKseQk3WtgyJ2cNt2DYBn4SO9SH9qgJ2Qo
+         CuzoNnqcjvgl61vDlxJtdCpGstjCbazcEZRpImRp4VnaoVkjfCuMcZ8TPq4++jKBaC/0
+         KZIA+CrKB1cgKIwsSE1jviGl4AJ+5sSq6pC5hpH3Q+0JmpqV8HUyY29YAUKSa+oyzJzt
+         Cygsv1TnrWb9rsyGZIgMh1B2aaiWNuOMsLIFQUXdDDby4m2iKqeUs1Fjv6ZFAtfwKgTV
+         6H2u7SyKE2n7W8C9Obf+NdVoZgPWNsK7QxuYi1B0LaeynW+OypgQPfNhM8DcTTiNdwOu
+         //8g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=Ndc/iaR7jbpFClfbGd4ofgtC3FYEzqRlKdVRxlgp+PA=;
-        b=WPkLTNzOUVrvzIndVgsqLEX3Boh6thTwfXLLJny7eXZCH3ksGSWGj4ttoo9vuiLZ88
-         a/DdO70Xqf3FAf/iQlRS3FVyvKs6qArUsXPiblECnBuPNmdIhZnJvBypqf2rYEMmbt5B
-         fupqPiciSNJ3cyFr+b573wz13S5u8VC1tBM6r0ArDXFWlVNP7X8lwtb3I2aaSePAurJV
-         4c3x2pS7LQ1USB0wkuTN0qgfTlBcvMbrl4AZ9TSHUuoBjzC5BBp6jTW5tfNlh8Kd2Y0T
-         Oog7oN47Fua1PArue/LvXc0+S7/j4Ljms77zYtDbHuO3VZgEG0gQAReu5pANdbyTJMrS
-         j//w==
-X-Gm-Message-State: AO0yUKUISBAsiujY+eVaz1zitlPfmcfBLYaIdccbFp4HcFgp34pZ+Sw7
-	hUoGB/baRVy1DJspVdhOic7sTA==
-X-Google-Smtp-Source: AK7set+pMclzg8jxiXChlpxrY5YQXujzRSx2mjUjSxo2KkccFdEEzPo3yaBlRtyHd8d+lw/pLZGQCg==
-X-Received: by 2002:adf:a153:0:b0:2bf:b710:c0b with SMTP id r19-20020adfa153000000b002bfb7100c0bmr10540460wrr.1.1674848472491;
-        Fri, 27 Jan 2023 11:41:12 -0800 (PST)
+        bh=vhTZHhvTWH45tyGI0x4uU2VUFxdCNkd8qxpKaMX6L7Y=;
+        b=1D8U3joLelAfe/p0xau17XjpNYw9Aydgdyjoo5bV6q7ZOrJX9BvEgXYAT70KQ6X877
+         CYS6YseXc5uN+aHNKqzqZKV8QT0A5/8ezjsC8Uo0OFv5fj8J4D4u/YU9ck9xg/hZPoiZ
+         tRvKqx/3ZU3Fw2xQZVvYr0xYvW/9fTPKAxxv31Bj4nNulZY86NggPAvykoqGu19rddLf
+         dmdCtv5L3QdoRzSkFX/LZad6tGVn/oYnIbes9cD7ltiDYvUKZajtNOHPMaoWHeg9/PDp
+         Yi5xUOxoiQ4xv3ULGHyIl89gcoC+bBxTq0usBfDhetJg37zKvOfNAf2XpwB1stFYhBmy
+         GlQA==
+X-Gm-Message-State: AFqh2kroBCV8/xMuN38plUwZr/csJJDqMrQx5x2oEMdPgspEJ2UC8R5H
+	559Pean/PC9Sw799XoRtFKv8tA==
+X-Google-Smtp-Source: AMrXdXs/PEB2tM0xo4K7W3J5nfYXPFlm8AtlFcItNJ0CV+x2XgfOEpsh96Tz7hnOXLSKgop7CBJGFA==
+X-Received: by 2002:a5d:4ec7:0:b0:236:6c33:2130 with SMTP id s7-20020a5d4ec7000000b002366c332130mr30059728wrv.68.1674848474651;
+        Fri, 27 Jan 2023 11:41:14 -0800 (PST)
 Received: from krzk-bin.. ([178.197.216.144])
-        by smtp.gmail.com with ESMTPSA id y17-20020adffa51000000b002238ea5750csm5822417wrr.72.2023.01.27.11.41.10
+        by smtp.gmail.com with ESMTPSA id y17-20020adffa51000000b002238ea5750csm5822417wrr.72.2023.01.27.11.41.12
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 27 Jan 2023 11:41:12 -0800 (PST)
+        Fri, 27 Jan 2023 11:41:14 -0800 (PST)
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 To: Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
@@ -80,17 +80,16 @@ Cc: replicant@osuosl.org,
 	Henrik Grimler <henrik@grimler.se>,
 	Chanwoo Choi <cw00.choi@samsung.com>,
 	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Subject: [PATCH 3/8] dt-bindings: phy: samsung,mipi-video-phy: deprecate syscon phandle
-Date: Fri, 27 Jan 2023 20:40:52 +0100
-Message-Id: <20230127194057.186458-4-krzysztof.kozlowski@linaro.org>
+Subject: [PATCH 4/8] phy: samsung,dp-video-phy: deprecate syscon phandle
+Date: Fri, 27 Jan 2023 20:40:53 +0100
+Message-Id: <20230127194057.186458-5-krzysztof.kozlowski@linaro.org>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20230127194057.186458-1-krzysztof.kozlowski@linaro.org>
 References: <20230127194057.186458-1-krzysztof.kozlowski@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230127_114113_696667_B81A5C30 
-X-CRM114-Status: UNSURE (   9.51  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230127_114115_131844_B5A4A488 
+X-CRM114-Status: GOOD (  11.21  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -107,62 +106,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The MIPI phy is actually part of the Power Management Unit system
+The DisplayPort phy is actually part of the Power Management Unit system
 controller, thus it should be its child, instead of sibling node with
 syscon phandle.
 
 Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
----
- .../bindings/phy/samsung,mipi-video-phy.yaml          | 11 +++++------
- 1 file changed, 5 insertions(+), 6 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/phy/samsung,mipi-video-phy.yaml b/Documentation/devicetree/bindings/phy/samsung,mipi-video-phy.yaml
-index 415440aaad89..b2250e4a6b1b 100644
---- a/Documentation/devicetree/bindings/phy/samsung,mipi-video-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/samsung,mipi-video-phy.yaml
-@@ -35,15 +35,18 @@ properties:
+---
+---
+ drivers/phy/samsung/phy-exynos-dp-video.c | 7 +++++--
+ 1 file changed, 5 insertions(+), 2 deletions(-)
+
+diff --git a/drivers/phy/samsung/phy-exynos-dp-video.c b/drivers/phy/samsung/phy-exynos-dp-video.c
+index 2b670ef91deb..6069fedbd8f3 100644
+--- a/drivers/phy/samsung/phy-exynos-dp-video.c
++++ b/drivers/phy/samsung/phy-exynos-dp-video.c
+@@ -83,8 +83,11 @@ static int exynos_dp_video_phy_probe(struct platform_device *pdev)
+ 	if (!state)
+ 		return -ENOMEM;
  
-   syscon:
-     $ref: /schemas/types.yaml#/definitions/phandle
-+    deprecated: true
-     description:
-       Phandle to PMU system controller interface, valid only for
--      samsung,s5pv210-mipi-video-phy and samsung,exynos5420-mipi-video-phy.
-+      samsung,s5pv210-mipi-video-phy and samsung,exynos5420-mipi-video-phy (if
-+      not a child of PMU).
- 
-   samsung,pmu-syscon:
-     $ref: /schemas/types.yaml#/definitions/phandle
-+    deprecated: true
-     description:
-       Phandle to PMU system controller interface, valid for
--      samsung,exynos5433-mipi-video-phy.
-+      samsung,exynos5433-mipi-video-phy (if not a child of PMU).
- 
-   samsung,disp-sysreg:
-     $ref: /schemas/types.yaml#/definitions/phandle
-@@ -81,13 +84,10 @@ allOf:
-         samsung,disp-sysreg: false
-         samsung,cam0-sysreg: false
-         samsung,cam1-sysreg: false
--      required:
--        - syscon
-     else:
-       properties:
-         syscon: false
-       required:
--        - samsung,pmu-syscon
-         - samsung,disp-sysreg
-         - samsung,cam0-sysreg
-         - samsung,cam1-sysreg
-@@ -99,7 +99,6 @@ examples:
-     phy {
-         compatible = "samsung,exynos5433-mipi-video-phy";
-         #phy-cells = <1>;
--        samsung,pmu-syscon = <&pmu_system_controller>;
-         samsung,cam0-sysreg = <&syscon_cam0>;
-         samsung,cam1-sysreg = <&syscon_cam1>;
-         samsung,disp-sysreg = <&syscon_disp>;
+-	state->regs = syscon_regmap_lookup_by_phandle(dev->of_node,
+-						      "samsung,pmu-syscon");
++	state->regs = syscon_node_to_regmap(dev->parent->of_node);
++	if (IS_ERR(state->regs))
++		/* Backwards compatible way */
++		state->regs = syscon_regmap_lookup_by_phandle(dev->of_node,
++							      "samsung,pmu-syscon");
+ 	if (IS_ERR(state->regs)) {
+ 		dev_err(dev, "Failed to lookup PMU regmap\n");
+ 		return PTR_ERR(state->regs);
 -- 
 2.34.1
 
