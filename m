@@ -4,92 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F1CC1C54EAA
-	for <linux-phy@archiver.kernel.org>; Fri, 27 Jan 2023 20:46:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 81D86C54EAA
+	for <linux-phy@archiver.kernel.org>; Fri, 27 Jan 2023 20:59:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Date:To:Cc:From:Subject:References:
+	In-Reply-To:MIME-Version:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=J4vjvZCCYSQEdL6WzBGoxLvop3zIgkT4o5l5lqFQNY0=; b=2cqdhYkt49SfCX
-	OU3mQ+bZKbkNCqR/+jeiAHYtZLdb/4MkS5o07/bSis/Ydaxl6V7rp6ylE/VbgrJYWCDXRW4iKFaUB
-	nj1osUeKNb+/ZXC3VTPpI8avd+pt2CJJBjDLjy5cgvqINeJcpKmJL4Q3lgPZnRSj1xIdG+3cq7Cs5
-	xGsA0/18EZeTIiNtASbxlAX/Z1zyEyWb6p5L6fRq5S4FUecS3ZoQb1E0WQdkCQOqdOfr3mvavNb7i
-	gVxia6Wo7A79wyQs3bacinwH+Au+EIP3DmyZU8Zza+dn1YgwfMYaoauocGWJ/6fHA8Up6SRfHHoTs
-	28JX331fLEboVTsmkXMQ==;
+	List-Owner; bh=ayz1ybS72YzY4TT69qMX0Rtu33aGkE5oroCdAK1ufmM=; b=wmK4okahlyxIcP
+	Px+6dvsOdfOpuFn1VsdDDHUe/gPX12fB8P/1QEb15RozxlBEf+ei3MAh038kxOXbDRdWO/xGMSNj3
+	Y4316rZoYv8KRqK9FK04Uj7cq1iGsti1Z9dOETSCs3fHtKyxjqAaKmPtVEX8gTSU9Hc3y6MtJwYTs
+	5zNbkA9jdwn9nzQLe2kXIg8yHSBwQeR0f3ReuwTIcHRPI2xrs5yvb/mdc+C4Tbys++BqUeC9NBodr
+	+m5p0hP0pVuoZdn9GAYsO0qwyeAuQs2eK4OIrU7xSLfwgpvHxuUYFXN1gERB6VCcEEInaTnO4Pq/Y
+	mK3fm7M0OdD7xQM1D9RA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pLVcY-00GRDM-2x; Fri, 27 Jan 2023 20:46:50 +0000
-Received: from mail-wr1-x430.google.com ([2a00:1450:4864:20::430])
+	id 1pLVpC-00GSxq-RR; Fri, 27 Jan 2023 20:59:54 +0000
+Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pLUb5-00G8ub-1u
-	for linux-phy@lists.infradead.org; Fri, 27 Jan 2023 19:41:16 +0000
-Received: by mail-wr1-x430.google.com with SMTP id h16so5870913wrz.12
-        for <linux-phy@lists.infradead.org>; Fri, 27 Jan 2023 11:41:14 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=vhTZHhvTWH45tyGI0x4uU2VUFxdCNkd8qxpKaMX6L7Y=;
-        b=e2dWa8i6qb8eJW7sdxfl584eKltFPVaJgKseQk3WtgyJ2cNt2DYBn4SO9SH9qgJ2Qo
-         CuzoNnqcjvgl61vDlxJtdCpGstjCbazcEZRpImRp4VnaoVkjfCuMcZ8TPq4++jKBaC/0
-         KZIA+CrKB1cgKIwsSE1jviGl4AJ+5sSq6pC5hpH3Q+0JmpqV8HUyY29YAUKSa+oyzJzt
-         Cygsv1TnrWb9rsyGZIgMh1B2aaiWNuOMsLIFQUXdDDby4m2iKqeUs1Fjv6ZFAtfwKgTV
-         6H2u7SyKE2n7W8C9Obf+NdVoZgPWNsK7QxuYi1B0LaeynW+OypgQPfNhM8DcTTiNdwOu
-         //8g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=vhTZHhvTWH45tyGI0x4uU2VUFxdCNkd8qxpKaMX6L7Y=;
-        b=1D8U3joLelAfe/p0xau17XjpNYw9Aydgdyjoo5bV6q7ZOrJX9BvEgXYAT70KQ6X877
-         CYS6YseXc5uN+aHNKqzqZKV8QT0A5/8ezjsC8Uo0OFv5fj8J4D4u/YU9ck9xg/hZPoiZ
-         tRvKqx/3ZU3Fw2xQZVvYr0xYvW/9fTPKAxxv31Bj4nNulZY86NggPAvykoqGu19rddLf
-         dmdCtv5L3QdoRzSkFX/LZad6tGVn/oYnIbes9cD7ltiDYvUKZajtNOHPMaoWHeg9/PDp
-         Yi5xUOxoiQ4xv3ULGHyIl89gcoC+bBxTq0usBfDhetJg37zKvOfNAf2XpwB1stFYhBmy
-         GlQA==
-X-Gm-Message-State: AFqh2kroBCV8/xMuN38plUwZr/csJJDqMrQx5x2oEMdPgspEJ2UC8R5H
-	559Pean/PC9Sw799XoRtFKv8tA==
-X-Google-Smtp-Source: AMrXdXs/PEB2tM0xo4K7W3J5nfYXPFlm8AtlFcItNJ0CV+x2XgfOEpsh96Tz7hnOXLSKgop7CBJGFA==
-X-Received: by 2002:a5d:4ec7:0:b0:236:6c33:2130 with SMTP id s7-20020a5d4ec7000000b002366c332130mr30059728wrv.68.1674848474651;
-        Fri, 27 Jan 2023 11:41:14 -0800 (PST)
-Received: from krzk-bin.. ([178.197.216.144])
-        by smtp.gmail.com with ESMTPSA id y17-20020adffa51000000b002238ea5750csm5822417wrr.72.2023.01.27.11.41.12
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 27 Jan 2023 11:41:14 -0800 (PST)
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-To: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Alim Akhtar <alim.akhtar@samsung.com>,
-	Marek Szyprowski <m.szyprowski@samsung.com>,
-	Sylwester Nawrocki <s.nawrocki@samsung.com>,
-	linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-samsung-soc@vger.kernel.org
-Cc: replicant@osuosl.org,
-	phone-devel@vger.kernel.org,
-	~postmarketos/upstreaming@lists.sr.ht,
-	=?UTF-8?q?Martin=20J=C3=BCcker?= <martin.juecker@gmail.com>,
-	Henrik Grimler <henrik@grimler.se>,
-	Chanwoo Choi <cw00.choi@samsung.com>,
-	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Subject: [PATCH 4/8] phy: samsung,dp-video-phy: deprecate syscon phandle
-Date: Fri, 27 Jan 2023 20:40:53 +0100
-Message-Id: <20230127194057.186458-5-krzysztof.kozlowski@linaro.org>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20230127194057.186458-1-krzysztof.kozlowski@linaro.org>
-References: <20230127194057.186458-1-krzysztof.kozlowski@linaro.org>
+	id 1pLVp0-00GSvm-Rj; Fri, 27 Jan 2023 20:59:44 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by ams.source.kernel.org (Postfix) with ESMTPS id 65A37B821E5;
+	Fri, 27 Jan 2023 20:59:40 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 07923C433D2;
+	Fri, 27 Jan 2023 20:59:38 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1674853179;
+	bh=FbspLM+vVBO9mDTKwIH/H9Vo9+TcQEpyjeZ++JdvmYY=;
+	h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
+	b=sSzu4f/njpGW4l6cY9QQQ7I4+piHZz8sJkwXqdpbS3YQfcTmC5kegxJpCafTM3FmV
+	 ElsP97xeiEoPaAV7Y2jZYCt5Xemu4l/ZgFkENHExJ4pZN5Uki2/TIQerUPqQ6nRrwp
+	 DlDiZeXO2Itj1byAiuK1cuE/f78qlvAzNS/eobYg7bpyMKGqbcAg+eu0T9Dcx1/Fzy
+	 qoN2VjU7wYYsRzDmmspI9r6VBa+v47tVprK9jznQcihlctRjdyAhdEl+7xKyIZqQmy
+	 m54MCJK5XDQJdx0lvOXe+/YKvzUR7MvzhqYODSjKhWZifE/iKOlQOHROdRTW1ap15g
+	 pm4dTV2VacJwA==
+Message-ID: <1abf9cb3e1fb1f01976c903cd8723b0f.sboyd@kernel.org>
 MIME-Version: 1.0
+In-Reply-To: <20221230000139.2846763-5-sean.anderson@seco.com>
+References: <20221230000139.2846763-1-sean.anderson@seco.com> <20221230000139.2846763-5-sean.anderson@seco.com>
+Subject: Re: [PATCH v9 04/10] clk: Add Lynx 10G SerDes PLL driver
+From: Stephen Boyd <sboyd@kernel.org>
+Cc: linux-arm-kernel@lists.infradead.org, Camelia Alexandra Groza <camelia.groza@nxp.com>, Madalin Bucur <madalin.bucur@nxp.com>, Bagas Sanjaya <bagasdotme@gmail.com>, Rob Herring <robh+dt@kernel.org>, Ioana Ciornei <ioana.ciornei@nxp.com>, linuxppc-dev@lists.ozlabs.org, devicetree@vger.kernel.org, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Sean Anderson <sean.anderson@seco.com>, Michael Turquette <mturquette@baylibre.com>, linux-clk@vger.kernel.org
+To: Kishon Vijay Abraham I <kishon@kernel.org>, Sean Anderson <sean.anderson@seco.com>, Vinod Koul <vkoul@kernel.org>, linux-phy@lists.infradead.org
+Date: Fri, 27 Jan 2023 12:59:36 -0800
+User-Agent: alot/0.10
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230127_114115_131844_B5A4A488 
-X-CRM114-Status: GOOD (  11.21  )
+X-CRM114-CacheID: sfid-20230127_125943_233307_75A83A9F 
+X-CRM114-Status: GOOD (  36.87  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,38 +70,121 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The DisplayPort phy is actually part of the Power Management Unit system
-controller, thus it should be its child, instead of sibling node with
-syscon phandle.
+Quoting Sean Anderson (2022-12-29 16:01:33)
+> This adds support for the PLLs found in Lynx 10G "SerDes" devices found on
+> various NXP QorIQ SoCs. There are two PLLs in each SerDes. This driver has
+> been split from the main PHY driver to allow for better review, even though
+> these PLLs are not present anywhere else besides the SerDes. An auxiliary
+> device is not used as it offers no benefits over a function call (and there
+> is no need to have a separate device).
+> 
+> The PLLs are modeled as clocks proper to let us take advantage of the
+> existing clock infrastructure.
 
-Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+What advantage do we gain?
 
----
----
- drivers/phy/samsung/phy-exynos-dp-video.c | 7 +++++--
- 1 file changed, 5 insertions(+), 2 deletions(-)
+> I have not given the same treatment to the
+> per-lane clocks because they need to be programmed in-concert with the rest
+> of the lane settings. One tricky thing is that the VCO (PLL) rate exceeds
+> 2^32 (maxing out at around 5GHz). This will be a problem on 32-bit
+> platforms, since clock rates are stored as unsigned longs. To work around
+> this, the pll clock rate is generally treated in units of kHz.
 
-diff --git a/drivers/phy/samsung/phy-exynos-dp-video.c b/drivers/phy/samsung/phy-exynos-dp-video.c
-index 2b670ef91deb..6069fedbd8f3 100644
---- a/drivers/phy/samsung/phy-exynos-dp-video.c
-+++ b/drivers/phy/samsung/phy-exynos-dp-video.c
-@@ -83,8 +83,11 @@ static int exynos_dp_video_phy_probe(struct platform_device *pdev)
- 	if (!state)
- 		return -ENOMEM;
- 
--	state->regs = syscon_regmap_lookup_by_phandle(dev->of_node,
--						      "samsung,pmu-syscon");
-+	state->regs = syscon_node_to_regmap(dev->parent->of_node);
-+	if (IS_ERR(state->regs))
-+		/* Backwards compatible way */
-+		state->regs = syscon_regmap_lookup_by_phandle(dev->of_node,
-+							      "samsung,pmu-syscon");
- 	if (IS_ERR(state->regs)) {
- 		dev_err(dev, "Failed to lookup PMU regmap\n");
- 		return PTR_ERR(state->regs);
--- 
-2.34.1
+This looks like a disadvantage. Are we reporting the frequency in kHz to
+the clk framework?
 
+> 
+> The PLLs are configured rather interestingly. Instead of the usual direct
+> programming of the appropriate divisors, the input and output clock rates
+> are selected directly. Generally, the only restriction is that the input
+> and output must be integer multiples of each other. This suggests some kind
+> of internal look-up table. The datasheets generally list out the supported
+> combinations explicitly, and not all input/output combinations are
+> documented. I'm not sure if this is due to lack of support, or due to an
+> oversight. If this becomes an issue, then some combinations can be
+> blacklisted (or whitelisted). This may also be necessary for other SoCs
+> which have more stringent clock requirements.
+
+I'm wondering if a clk provider should be created at all here. Who is
+the consumer of the clk? The phy driver itself? Does the clk provided
+need to interact with other clks in the system? Or is the clk tree
+wholly self-contained?
+
+Can the phy consumer configure the output frequency directly via
+phy_configure() or when the phy is enabled? I'm thinking the phy driver
+can call clk_set_rate() on the parent 'rfclk' before or after setting
+the bits to control the output rate, and use clk_round_rate() to figure
+out what input frequencies are supported for the output frequency
+desired. This would avoid kHz overflowing 32-bits, and the big clk lock
+getting blocked on some other clk in the system changing rates.
+
+BTW, what sort of phy is this? Some networking device?
+
+> 
+> diff --git a/drivers/clk/clk-fsl-lynx-10g.c b/drivers/clk/clk-fsl-lynx-10g.c
+> new file mode 100644
+> index 000000000000..61f68b5ae675
+> --- /dev/null
+> +++ b/drivers/clk/clk-fsl-lynx-10g.c
+> @@ -0,0 +1,509 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +/*
+> + * Copyright (C) 2022 Sean Anderson <sean.anderson@seco.com>
+> + *
+> + * This file contains the implementation for the PLLs found on Lynx 10G phys.
+> + *
+> + * XXX: The VCO rate of the PLLs can exceed ~4GHz, which is the maximum rate
+> + * expressable in an unsigned long. To work around this, rates are specified in
+> + * kHz. This is as if there was a division by 1000 in the PLL.
+> + */
+> +
+> +#include <linux/clk.h>
+
+Is this include used? If not, please remove.
+
+> +#include <linux/clk-provider.h>
+> +#include <linux/device.h>
+> +#include <linux/bitfield.h>
+> +#include <linux/math64.h>
+> +#include <linux/phy/lynx-10g.h>
+> +#include <linux/regmap.h>
+> +#include <linux/slab.h>
+> +#include <linux/units.h>
+> +#include <dt-bindings/clock/fsl,lynx-10g.h>
+> +
+> +#define PLL_STRIDE     0x20
+> +#define PLLa(a, off)   ((a) * PLL_STRIDE + (off))
+> +#define PLLaRSTCTL(a)  PLLa(a, 0x00)
+> +#define PLLaCR0(a)     PLLa(a, 0x04)
+> +
+> +#define PLLaRSTCTL_RSTREQ      BIT(31)
+> +#define PLLaRSTCTL_RST_DONE    BIT(30)
+> +#define PLLaRSTCTL_RST_ERR     BIT(29)
+[...]
+> +
+> +static int lynx_clk_init(struct clk_hw_onecell_data *hw_data,
+> +                        struct device *dev, struct regmap *regmap,
+> +                        unsigned int index)
+> +{
+> +       const struct clk_hw *ex_dly_parents;
+> +       struct clk_parent_data pll_parents[1] = { };
+> +       struct clk_init_data pll_init = {
+> +               .ops = &lynx_pll_clk_ops,
+> +               .parent_data = pll_parents,
+> +               .num_parents = 1,
+> +               .flags = CLK_GET_RATE_NOCACHE | CLK_SET_RATE_PARENT |
+
+Why is the nocache flag used?
+
+> +                        CLK_OPS_PARENT_ENABLE,
+> +       };
+> +       struct clk_init_data ex_dly_init = {
+> +               .ops = &lynx_ex_dly_clk_ops,
+> +               .parent_hws = &ex_dly_parents,
+> +               .num_parents = 1,
+> +       };
+> +       struct lynx_clk *clk;
+> +       int ret;
 
 -- 
 linux-phy mailing list
