@@ -4,92 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4C9A1C54EAA
-	for <linux-phy@archiver.kernel.org>; Fri, 27 Jan 2023 17:02:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6F585C61DA4
+	for <linux-phy@archiver.kernel.org>; Fri, 27 Jan 2023 19:41:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=i7iOmFmOuD+Pp84/hGIDg//mUOB0n8zvg7lg0LAS6gk=; b=dZF0LsT3IKGEK8
-	CpUNOoaKkqyJ8WmM4E801SVUe4F3Blhfe+5Vf8o1WnNlH4vZwLcVx1b/Jfin4a8BQGeW/muunLdR6
-	ZGx6MlQ9FvZNCr8/0QRfua1tpIjG+uHEIpLjZfTgTC2YlEdPRXbULI8lP6t4YCK+KG5JBlGFXYQ0g
-	wykgFfbhxpJaxNDp/lHNjuIXBiccw40qJQB/WzvcawVLNWYAlPplFniJSoFSXGrkRkLwCXc1q4J1q
-	LnZBM5WZ7JiHLfoTYRbkqsODgfuyS4aG9YY8qEMy2A+cBDlqRycGioOPeEYebFItc6lJMuBh9nfzC
-	6eR41JXe8a+vBSnlKHEw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=xA92dXrNpAAE3RePFwfSHRNUz7wBp9vTIdgX613Rv/k=; b=Zw/GULCCzLGztH
+	fUjcEErILMRkbctRMQbTi5FplFIEy8cLCXWTMe69wDhY+bTkKm1Cn9aZTP6LM3lwWbJIV+2VwGr/o
+	b5lbg9fLXcguQ/OM8Yt3SOPdISckumGutZmX767WOzNCWoypAApQFlxvyqjrgxQa0IKRkGMD4gqS9
+	b5xeW4cKsFUEiWIrdGTVY8MtpalsN5jTVMJwRUfUUJ1if4Y51+0UPpmVK0LT9XlI+8jwsC2iRu8nU
+	Co+5CkYrFPMQ9B5o7ItflVJ0rUgMLYydkuRAYybF8uJFjOcvjJR45Av8DVrrJFjrnvd2D1PTcgAcK
+	AmiCXbWVzEtdbdl/493g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pLS72-00FrNI-MW; Fri, 27 Jan 2023 17:02:04 +0000
-Received: from mx07-00178001.pphosted.com ([185.132.182.106])
+	id 1pLUbG-00G92t-MX; Fri, 27 Jan 2023 19:41:26 +0000
+Received: from mail-wr1-x430.google.com ([2a00:1450:4864:20::430])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pLS6y-00FrM4-JL; Fri, 27 Jan 2023 17:02:02 +0000
-Received: from pps.filterd (m0241204.ppops.net [127.0.0.1])
-	by mx07-00178001.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 30REGmZ8019692;
-	Fri, 27 Jan 2023 18:01:06 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com; h=message-id : date :
- mime-version : subject : to : cc : references : from : in-reply-to :
- content-type : content-transfer-encoding; s=selector1;
- bh=QNH1ux7cYrF5KW+Ey5DCbKnkWudemJAed1CdOisOzwU=;
- b=aWrFglN6WN9lJ9UfkuNRCOf+eZLqOK/K/MwebDvkvlJ9BbraR7IaDQjfWJsuxG3qEl+w
- /zcbla1ATkb34/cgfv+jY98hV15W4tnl5ImuyPNlwMV+YJAdJjbH1aopG15aLRkh8wmM
- l4dhdDRjV+hC6xAWQteP9ugkWvZRUn+2SbiSOelz6JrhmEzzjMybo5hBxA3Bcimg9qnY
- zdsENVEPxj6CymobQqyNOE70uQpKyrM9lu7NqbOzhejcg3jASSLXeSHG2+UOFLtTC114
- gDpaZ6/KFUEeQG46+8MaDOHr4QDhzeheFE/3snJXRXDYFzO0erPQuMETrlvse78cpBw2 ww== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
-	by mx07-00178001.pphosted.com (PPS) with ESMTPS id 3n89chde7x-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 27 Jan 2023 18:01:06 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
-	by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 8FD5D100039;
-	Fri, 27 Jan 2023 18:00:43 +0100 (CET)
-Received: from Webmail-eu.st.com (shfdag1node1.st.com [10.75.129.69])
-	by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 6F28D21F0C6;
-	Fri, 27 Jan 2023 18:00:43 +0100 (CET)
-Received: from [10.201.21.177] (10.201.21.177) by SHFDAG1NODE1.st.com
- (10.75.129.69) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.13; Fri, 27 Jan
- 2023 18:00:40 +0100
-Message-ID: <179fe90c-0ac9-bb43-6e49-8b1d7ec520df@foss.st.com>
-Date: Fri, 27 Jan 2023 18:00:39 +0100
+	id 1pLUay-00G8ub-QQ
+	for linux-phy@lists.infradead.org; Fri, 27 Jan 2023 19:41:12 +0000
+Received: by mail-wr1-x430.google.com with SMTP id h16so5870679wrz.12
+        for <linux-phy@lists.infradead.org>; Fri, 27 Jan 2023 11:41:07 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=laJbzm3hNFvKVQdtgilxX5HQETMASKmZLxjfb/658O4=;
+        b=nI6Ug6W8ctMCQtI1vVqDWj8MpjBhnWeeT31JylQQfqpiYHv2PIYko9EILdTGUMfHun
+         BV7C4e6AAanGxKd7QxFGz+11XVELz2+slWa28dZ+PhwvPC/xB38end1xN7C1jAPghC+4
+         Ti3PlMCgNRCz8JK07atg7xAtsDuCaG5gGwiS8rR8UrN7WYRAYQOTSAkwiHWviWYP0iKa
+         5ClGwzCxxtcm3FdBL4Mh03InXChGiUDmVL0UzT0vnUkKiZQEFCibj37cuwbirsQhDbX9
+         WNxhw85wenI0Fhc3ler070sioGpH0o+6Yamb5V/OORturTxwSie1BBaAInjRQ6lAASUJ
+         gF7g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=laJbzm3hNFvKVQdtgilxX5HQETMASKmZLxjfb/658O4=;
+        b=kWPYppcGIJRRd4U94Bz0bX0Z4M/VEr3Y8F6pJOIG700fUE6QvW0vRyaSPDPvFRxuGB
+         OgcSCCbxBCBhwRMbFw0flNmY93m0fmSX4tWFxa2wMUAhyLXF0y0cc7IHqBPcrQWCxcvq
+         Qt6QE/byLZc53nlihKq2fcrjLDEKLUsmx1HFBIixhmHPSziaQEIZcR8fkCM6LR6g0/rH
+         vAb6pJMAcmmAf7D5729SXhdd68Eq1oumbHOWFP/Q96K4p6dTeGkNsmBEpQcr0f+P+f++
+         UDa3jiY4M85gzm58DZ/CVaGDQqw9mt5vua/ADfUH5Eg16+E5WNm1shlV05jOjO0cf5mu
+         drTA==
+X-Gm-Message-State: AO0yUKUywrvEadaiHsYVDgQ8psVSgjQ2EJum0GEstjAb5Ox6TnbpSCL2
+	FM/SmkbbmFXlT44A/0YwR4t/yA==
+X-Google-Smtp-Source: AK7set8N28+EX6KUi96o3PeCOm9vKAuOFZYK3aIRSmt7I8LzRlQeQ5HFryKL/vW3McfrcWRpm4j0NA==
+X-Received: by 2002:a5d:658d:0:b0:2bf:ae43:108d with SMTP id q13-20020a5d658d000000b002bfae43108dmr14352920wru.28.1674848466678;
+        Fri, 27 Jan 2023 11:41:06 -0800 (PST)
+Received: from krzk-bin.. ([178.197.216.144])
+        by smtp.gmail.com with ESMTPSA id y17-20020adffa51000000b002238ea5750csm5822417wrr.72.2023.01.27.11.41.05
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 27 Jan 2023 11:41:06 -0800 (PST)
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+To: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Alim Akhtar <alim.akhtar@samsung.com>,
+	Marek Szyprowski <m.szyprowski@samsung.com>,
+	Sylwester Nawrocki <s.nawrocki@samsung.com>,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-samsung-soc@vger.kernel.org
+Cc: replicant@osuosl.org,
+	phone-devel@vger.kernel.org,
+	~postmarketos/upstreaming@lists.sr.ht,
+	=?UTF-8?q?Martin=20J=C3=BCcker?= <martin.juecker@gmail.com>,
+	Henrik Grimler <henrik@grimler.se>,
+	Chanwoo Choi <cw00.choi@samsung.com>,
+	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Subject: [PATCH 0/8] dt-bindings: phy/samsung: move MIPI and DP phys under PMU
+Date: Fri, 27 Jan 2023 20:40:49 +0100
+Message-Id: <20230127194057.186458-1-krzysztof.kozlowski@linaro.org>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.4.2
-Subject: Re: [PATCH v3 1/6] dt-bindings: Document common device controller
- bindings
-Content-Language: en-US
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
-        <Oleksii_Moisieiev@epam.com>, <gregkh@linuxfoundation.org>,
-        <herbert@gondor.apana.org.au>, <davem@davemloft.net>,
-        <robh+dt@kernel.org>, <krzysztof.kozlowski+dt@linaro.org>,
-        <alexandre.torgue@foss.st.com>, <vkoul@kernel.org>, <jic23@kernel.org>,
-        <olivier.moysan@foss.st.com>, <arnaud.pouliquen@foss.st.com>,
-        <mchehab@kernel.org>, <fabrice.gasnier@foss.st.com>,
-        <ulf.hansson@linaro.org>, <edumazet@google.com>, <kuba@kernel.org>,
-        <pabeni@redhat.com>
-CC: <linux-crypto@vger.kernel.org>, <devicetree@vger.kernel.org>,
-        <linux-stm32@st-md-mailman.stormreply.com>,
-        <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
-        <dmaengine@vger.kernel.org>, <linux-i2c@vger.kernel.org>,
-        <linux-iio@vger.kernel.org>, <alsa-devel@alsa-project.org>,
-        <linux-media@vger.kernel.org>, <linux-mmc@vger.kernel.org>,
-        <netdev@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-        <linux-serial@vger.kernel.org>, <linux-spi@vger.kernel.org>,
-        <linux-usb@vger.kernel.org>
-References: <20230127164040.1047583-1-gatien.chevallier@foss.st.com>
- <20230127164040.1047583-2-gatien.chevallier@foss.st.com>
- <1e498b93-d3bd-bd12-e991-e3f4bedf632d@linaro.org>
-From: Gatien CHEVALLIER <gatien.chevallier@foss.st.com>
-In-Reply-To: <1e498b93-d3bd-bd12-e991-e3f4bedf632d@linaro.org>
-X-Originating-IP: [10.201.21.177]
-X-ClientProxiedBy: EQNCAS1NODE3.st.com (10.75.129.80) To SHFDAG1NODE1.st.com
- (10.75.129.69)
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.219,Aquarius:18.0.930,Hydra:6.0.562,FMLib:17.11.122.1
- definitions=2023-01-27_10,2023-01-27_01,2022-06-22_01
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230127_090200_934637_BCDCF78B 
-X-CRM114-Status: GOOD (  18.55  )
+X-CRM114-CacheID: sfid-20230127_114108_896017_6CD62144 
+X-CRM114-Status: UNSURE (   7.41  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,47 +99,49 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hello Krzysztof,
+The MIPI and DisplayPort phys are actually part of the Power Management
+Unit system controller, thus allow them as its children, instead of
+specifying as separate device nodes with syscon phandle.
 
-On 1/27/23 17:49, Krzysztof Kozlowski wrote:
-> On 27/01/2023 17:40, Gatien Chevallier wrote:
->> From: Oleksii Moisieiev <Oleksii_Moisieiev@epam.com>
->>
->> Introducing of the common device controller bindings for the controller
->> provider and consumer devices. Those bindings are intended to allow
->> divided system on chip into muliple domains, that can be used to
->> configure hardware permissions.
->>
->> Signed-off-by: Oleksii Moisieiev <oleksii_moisieiev@epam.com>
->> ---
->>
->> No change since V1. I'm letting this patch for dependency with bindings to
->> avoid noise with dt/bindings checks. Therefore, it should be reviewed on the
->> appropriate thread.
-> 
-> There was a v6 already, this is v3 and I don't understand this comment.
-> What do you let? Whom? If it is not for review and not for merging,
-> please annotate it in the title ([IGNORE PATCH] or something).
-> 
-
-Sorry for not being clear in the previous comment.
-
-I meant I'm letting this patch in this patch set so the dependencies on 
-the feature-domain-controller.yaml file are satisfied.
-
-I will annotate it with [IGNORE PATCH], as you suggest.
-
-> Best regards,
-> Krzysztof
-> 
+Dependencies
+============
+If entire patchset is okay, then it can go via separate trees:
+A. I will take first soc patch.
+B. phy patches #2-#5 are independent and can go via phy tree.
+C. DTS patches depend on (B above), thus they will wait one cycle and get
+   applied later.
 
 Best regards,
-Gatien
+Krzysztof
+
+Krzysztof Kozlowski (8):
+  dt-bindings: soc: samsung: exynos-pmu: allow phys as child
+  dt-bindings: phy: samsung,dp-video-phy: deprecate syscon phandle
+  dt-bindings: phy: samsung,mipi-video-phy: deprecate syscon phandle
+  phy: samsung,dp-video-phy: deprecate syscon phandle
+  phy: samsung,mipi-video-phy: deprecate syscon phandle
+  ARM: dts: exynos: move DP and MIPI phys to PMU node in Exynos5420
+  ARM: dts: exynos: move DP and MIPI phys to PMU node in Exynos5250
+  arm64: dts: exynos: move MIPI phy to PMU node in Exynos5433
+
+ .../bindings/phy/samsung,dp-video-phy.yaml    |  5 +-
+ .../bindings/phy/samsung,mipi-video-phy.yaml  | 11 ++-
+ .../bindings/soc/samsung/exynos-pmu.yaml      | 71 +++++++++++++++----
+ arch/arm/boot/dts/exynos5250.dtsi             | 24 +++----
+ arch/arm/boot/dts/exynos5420.dtsi             | 24 +++----
+ arch/arm64/boot/dts/exynos/exynos5433.dtsi    | 19 +++--
+ drivers/phy/samsung/phy-exynos-dp-video.c     |  7 +-
+ drivers/phy/samsung/phy-exynos-mipi-video.c   |  7 +-
+ 8 files changed, 105 insertions(+), 63 deletions(-)
+
+-- 
+2.34.1
+
 
 -- 
 linux-phy mailing list
