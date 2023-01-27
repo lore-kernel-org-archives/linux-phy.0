@@ -4,67 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6094FC61DA4
-	for <linux-phy@archiver.kernel.org>; Fri, 27 Jan 2023 21:19:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 74499C54EAA
+	for <linux-phy@archiver.kernel.org>; Fri, 27 Jan 2023 21:23:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0fs7CZyCob8cAG6GZOAmhtjZlTbhLCaQZbDuq914lhw=; b=FYU6MzLlhJY9+D
-	I1CbbGuhAg93nWWz5vY8EOuqz4QyvU0g70PvK3KZiiKF5WkUCx0kXcSqyE0or29JU6xv9XoI9gB6H
-	AqPtHatQbwzIahLJsEAYfxnXjtZGOLeqpaMIdD7e0uwLChxWXWygOR9nMKsO9jlF98x/2OfhAHG2n
-	/AqDYVBR/C72bXHpvaaVEif4iicBLo3RUkFkixohdwi9srLpbF2Q7ZlBr0VTy3Ga+wdHyCSXDrkHO
-	0dQLoW2dEV8+SU7YUHVTM40qjc8EyU/uSjBmt/G5CcWH1CVmc1RPsWU13C5d41918FI5BNVgh1AwI
-	Lfb7G56jDRQR6bKf6pMw==;
+	List-Owner; bh=RFu5Iwxcek98V8yzCyrT+LQax4fVLileTSWU6Uaj1uQ=; b=hXSfxR/NlmNC/a
+	9uNz7K4AeuXjUU9CV2LxsjnOFA+nnME7/KLh9Yd0MMgcB6WdnQFG5ghZFPpiEZHTR/VuZDIpZbaSK
+	catKfZnNuqN3Q/Gndo7lcXlEr6md+nmtSOWMCyJpKYQZ61ZOJdKR9+LG/6D8msm5hoKJFjgub7tvr
+	WDL8REKxgJbyvUE2AdbEhgbvJ/v1KjRqrz5UOt/k6KRN9l9ezOwT/Q3RcPATWPe14xngVfJo2Hwrc
+	7VZp722HNLVBZtNZFyPSL+pjv0RNNpn63/HCeapHtGhAbRkRZ7DzZe7pxvDZCESXl83lrLUJitzjX
+	0eanrPenTjcsephja48g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pLW8W-00GWXb-FU; Fri, 27 Jan 2023 21:19:52 +0000
-Received: from mail-ot1-f44.google.com ([209.85.210.44])
+	id 1pLWCR-00GXSU-P9; Fri, 27 Jan 2023 21:23:55 +0000
+Received: from mail-ot1-f49.google.com ([209.85.210.49])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pLW8S-00GWVM-9y
-	for linux-phy@lists.infradead.org; Fri, 27 Jan 2023 21:19:50 +0000
-Received: by mail-ot1-f44.google.com with SMTP id r17-20020a056830449100b0068bb088317aso794704otv.12
-        for <linux-phy@lists.infradead.org>; Fri, 27 Jan 2023 13:19:46 -0800 (PST)
+	id 1pLWCF-00GXP1-30; Fri, 27 Jan 2023 21:23:44 +0000
+Received: by mail-ot1-f49.google.com with SMTP id e21-20020a9d5615000000b006884e5dce99so2608762oti.5;
+        Fri, 27 Jan 2023 13:23:36 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=zMBH4OaEcfhMng/uMsZ7qj6zrdL3KO0FA5Oo+Mfrzqk=;
-        b=FpLj09NpI4tQb0AFgYS0JeQRKCyB2bFzAMiDdds2i+Rz7+DEUyWxrSAkU8YRyEguj9
-         BhxeB20P/CJPv5Pg1olLSN2zy3rdfT3Ru+RAFHb5P4BqF3TJZPIgsCPcpI1ybGPp+Wzm
-         3DMX/KgJlgI8Ip9/otuKYDB6CRoDGBX6zYBCs6Bov+SeQq1vj/mTJiB5O1OQM2P7uMi2
-         TVwZgl+x4e1C4DkU/H7gLSJrr8RrsOmEZ6QTXZ5oPtGh65sAwycJtFR6ItU7FtmswFYK
-         wFi0RVNLTnT/ZNVzahak2eq1AdGbopl8VXf2rLX78jiHAnD57/DIQAlUkBWuDL7mUumM
-         9EBg==
-X-Gm-Message-State: AFqh2ko9oZMaO3yQnUhg45CMuRKX8c4DAAaEAIQMujRlN/kzGaXhyK/b
-	Lh/mL+HtWS/4rXL47JKCgw==
-X-Google-Smtp-Source: AMrXdXthH4OPTLyVNiYD9/v8bT3CTUREw48g/jXBA27Bcqp8oBqcG1VsOfg0TD/wsmn6S/zokuyvkw==
-X-Received: by 2002:a9d:4c8a:0:b0:670:6419:c3ee with SMTP id m10-20020a9d4c8a000000b006706419c3eemr20672876otf.16.1674854385834;
-        Fri, 27 Jan 2023 13:19:45 -0800 (PST)
+        bh=cyNyx9MRAGwe4fu5uXWV7BSlMqMk0+yLaGW1dutDc6o=;
+        b=jIbTDyeNJfwJsofeSwNXOcx73fw1oHeXeUENYQ/iGbB/AAwEPyqYZs+wflRanQDACd
+         gnBZ99MaMLA2xElYokohF25Ewc+5AlRt51GVRgTybfNczjZNrR4gBlICnqws5p0oGuR/
+         8pJEvWe40G//E1p5sKNwGY6rrQVX0mMakMNCFMTL6uGjvQmrXpQKkr7HWNfGX0il4vuy
+         zJjdTPhE9lTpfbhAdlgMpJ5sDSqe6OYWQSKIRW5xHQCHNs7q/BOs7QMsYPsJqLLyPc0r
+         EvqTQVO60QVo2rm3XxADIU3JZoEbeQEblXyKoHcNfUydfbT0l/QwsdJCwpMNm+SnbMr1
+         Dccw==
+X-Gm-Message-State: AO0yUKV/3upYkmjILjrQwMbwlaqx2DHNqWV15/ij0mH1obSXZvrkguc+
+	g3x0weEpztnt/b95qisgkhhh/3/BeQ==
+X-Google-Smtp-Source: AK7set9hoFnAHHCAH5ojVpwXzh1BY1WWbz9NHe8AkgB3/OjD6iE1GIHKEd1c+U+9Fx68eEdgROItRg==
+X-Received: by 2002:a9d:5c84:0:b0:686:4860:fa2f with SMTP id a4-20020a9d5c84000000b006864860fa2fmr3572939oti.29.1674854616198;
+        Fri, 27 Jan 2023 13:23:36 -0800 (PST)
 Received: from robh_at_kernel.org (66-90-144-107.dyn.grandenetworks.net. [66.90.144.107])
-        by smtp.gmail.com with ESMTPSA id z5-20020a9d62c5000000b0068bba70ab10sm143815otk.62.2023.01.27.13.19.44
+        by smtp.gmail.com with ESMTPSA id k4-20020a9d7dc4000000b00684d5bd56dbsm2246654otn.66.2023.01.27.13.23.35
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 27 Jan 2023 13:19:45 -0800 (PST)
-Received: (nullmailer pid 699757 invoked by uid 1000);
-	Fri, 27 Jan 2023 21:19:44 -0000
-Date: Fri, 27 Jan 2023 15:19:44 -0600
+        Fri, 27 Jan 2023 13:23:35 -0800 (PST)
+Received: (nullmailer pid 705463 invoked by uid 1000);
+	Fri, 27 Jan 2023 21:23:34 -0000
+Date: Fri, 27 Jan 2023 15:23:34 -0600
 From: Rob Herring <robh@kernel.org>
-To: Abel Vesa <abel.vesa@linaro.org>
-Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>, Konrad Dybcio <konrad.dybcio@linaro.org>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, "vkoul@kernel.org" <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>, linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org, Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, linux-phy@lists.infradead.org
-Subject: Re: [PATCH v3 1/8] dt-bindings: phy: Add qcom,snps-eusb2-phy schema
- file
-Message-ID: <20230127211944.GA696408-robh@kernel.org>
-References: <20230126131415.1453741-1-abel.vesa@linaro.org>
- <20230126131415.1453741-2-abel.vesa@linaro.org>
+To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Cc: phone-devel@vger.kernel.org, replicant@osuosl.org, Sylwester Nawrocki <s.nawrocki@samsung.com>, Marek Szyprowski <m.szyprowski@samsung.com>, linux-arm-kernel@lists.infradead.org, Rob Herring <robh+dt@kernel.org>, linux-samsung-soc@vger.kernel.org, Martin =?iso-8859-1?Q?J=FCcker?= <martin.juecker@gmail.com>, Henrik Grimler <henrik@grimler.se>, Chanwoo Choi <cw00.choi@samsung.com>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Vinod Koul <vkoul@kernel.org>, linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, Alim Akhtar <alim.akhtar@samsung.com>, ~postmarketos/upstreaming@lists.sr.ht, devicetree@vger.kernel.org, Kishon Vijay Abraham I <kishon@kernel.org>
+Subject: Re: [PATCH 1/8] dt-bindings: soc: samsung: exynos-pmu: allow phys as
+ child
+Message-ID: <167485461395.705377.3305250197466853388.robh@kernel.org>
+References: <20230127194057.186458-1-krzysztof.kozlowski@linaro.org>
+ <20230127194057.186458-2-krzysztof.kozlowski@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20230126131415.1453741-2-abel.vesa@linaro.org>
+In-Reply-To: <20230127194057.186458-2-krzysztof.kozlowski@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230127_131948_366680_9C49A635 
-X-CRM114-Status: GOOD (  18.39  )
+X-CRM114-CacheID: sfid-20230127_132343_152321_03044727 
+X-CRM114-Status: UNSURE (   9.22  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,126 +81,19 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Jan 26, 2023 at 03:14:08PM +0200, Abel Vesa wrote:
-> The SM8550 SoC uses Synopsis eUSB2 PHY. Add a dt-binding schema
-> for the new driver.
+
+On Fri, 27 Jan 2023 20:40:50 +0100, Krzysztof Kozlowski wrote:
+> The MIPI and DisplayPort phys are actually part of the Power Management
+> Unit system controller, thus allow them as its children, instead of
+> specifying as separate device nodes with syscon phandle.
 > 
-> Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
+> Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 > ---
+>  .../bindings/soc/samsung/exynos-pmu.yaml      | 71 +++++++++++++++----
+>  1 file changed, 57 insertions(+), 14 deletions(-)
 > 
-> The v2 version of this patch was here:
-> https://lore.kernel.org/all/20230126124651.1362533-2-abel.vesa@linaro.org/
-> 
-> Changes since v2:
->  * none
-> 
-> Changes since v1:
->  * dropped the "ref src" clock
->  * dropped the usb-repeater property
-> 
->  .../bindings/phy/qcom,snps-eusb2-phy.yaml     | 78 +++++++++++++++++++
->  1 file changed, 78 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/qcom,snps-eusb2-phy.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-phy.yaml
-> new file mode 100644
-> index 000000000000..49a5dad486c2
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-phy.yaml
-> @@ -0,0 +1,78 @@
-> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> +
 
-Remove blank line
-
-> +%YAML 1.2
-> +---
-> +$id: "http://devicetree.org/schemas/phy/qcom,snps-eusb2-phy.yaml#"
-> +$schema: "http://devicetree.org/meta-schemas/core.yaml#"
-
-Drop quotes
-
-> +
-> +title: Qualcomm SNPS eUSB2 phy controller
-> +
-> +maintainers:
-> +  - Abel Vesa <abel.vesa@linaro.org>
-> +
-> +description:
-> +  eUSB2 controller supports LS/FS/HS usb connectivity on Qualcomm chipsets.
-> +
-> +properties:
-> +  compatible:
-> +    const: qcom,sm8550-snps-eusb2-phy
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  "#phy-cells":
-> +    const: 0
-> +
-> +  clocks:
-> +    items:
-> +      - description: ref
-> +
-> +  clock-names:
-> +    items:
-> +      - const: ref
-> +
-> +  resets:
-> +    maxItems: 1
-> +    description:
-> +      Phandle to reset to phy block.
-
-Drop description.
-
-> +
-> +  vdd-supply:
-> +    description:
-> +      Phandle to 0.88V regulator supply to PHY digital circuit.
-> +
-> +  vdda12-supply:
-> +    description:
-> +      Phandle to 1.2V regulator supply to PHY refclk pll block.
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - "#phy-cells"
-> +  - clocks
-> +  - clock-names
-> +  - vdd-supply
-> +  - vdda12-supply
-> +  - resets
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/clock/qcom,gcc-sm8550.h>
-> +    #include <dt-bindings/clock/qcom,rpmh.h>
-> +    #include <dt-bindings/clock/qcom,tcsrcc-sm8550.h>
-> +
-> +    usb_1_hsphy: phy@88e3000 {
-> +        compatible = "qcom,sm8550-snps-eusb2-phy";
-> +        reg = <0x88e3000 0x154>;
-> +        #phy-cells = <0>;
-> +
-> +        clocks = <&rpmhcc RPMH_CXO_PAD_CLK>,
-> +                 <&tcsrcc TCSR_USB2_CLKREF_EN>;
-> +        clock-names = "ref_src", "ref";
-
-Doesn't match the schema.
-
-> +
-> +        vdd-supply = <&vreg_l1e_0p88>;
-> +        vdda12-supply = <&vreg_l3e_1p2>;
-> +
-> +        resets = <&gcc GCC_QUSB2PHY_PRIM_BCR>;
-> +    };
-> -- 
-> 2.34.1
-> 
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 -- 
 linux-phy mailing list
