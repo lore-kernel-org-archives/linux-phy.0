@@ -4,129 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F1894C38142
-	for <linux-phy@archiver.kernel.org>; Fri, 27 Jan 2023 22:54:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C7ABDC27C76
+	for <linux-phy@archiver.kernel.org>; Sat, 28 Jan 2023 15:31:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:From:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=34HpHbjeZSwF1bKTCUkn09PiNVfznCcP10DaLVxBxyk=; b=ZfPpgkxF5Ef3sr
-	U4ahCiGoBZ/zkgLwmF6I7T3k/Ht80nhTCQZ3VXJNkwwBq809eW3y9P8uZbpGUeJiUReF0j5nRQn/a
-	MqM3JvYqqbQL9W5Lp+hSqUyPyzsymGfw+aoeeqxgk+8zfSTT9HmGbJ7D+CC5UF6psLsUQ6BrCJdzN
-	oS9UZKgC9pZ4e0Fw64M7tODYOUwotH49xMeq/2QS3th7ndUvX0RV8w9MigfrC3428irxmPRazggGj
-	MXMycTn4Osv6j93R+yMDNC3iA+meSdZ/3HKXUpiYxDcxM1XH1KSjzu3c/uWRfhQdRAaoZwI0xfzrf
-	lmokE2YyRY+QLdLaw8vg==;
+	List-Owner; bh=Wjl7PjENLQSelVV18A18EfZCtw0Sai8LeerT/3ymXTA=; b=GswaDZynP2WQ5U
+	NtmoTnBclqy3/JZEouSyEvy/mE7anUB9Yq/i3DsJisha/Dr8Bc6LYDkQIN6Dv0T6J0zzXYjTnSVbU
+	2dQxQxnh08tif2Lsxccj04nJS1NVSUjn9wGe+9olGbhenF4b/3mHZ7wrZuwap0h+ECV+MjZRSZAue
+	f2sUNtRZypowxXY/LJWACeiKTsIgHsyRihmf2nu2pnNC/RYh48jvEE4wncbUv63kLkkASZuaAgrMY
+	jx73SRrHK29U16kBqBIlAt/P2BBOaHgGvvmTDe0GdShovU+vYe0pljV9j+Nn1JrF9lzZXGTV6zo/l
+	qfJD01xfL5MDfcCOOQJA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pLXc8-00GkXy-U0; Fri, 27 Jan 2023 22:54:33 +0000
-Received: from mailout2.w1.samsung.com ([210.118.77.12])
+	id 1pLnAZ-000LTQ-3t; Sat, 28 Jan 2023 15:31:07 +0000
+Received: from mga07.intel.com ([134.134.136.100])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pLXbn-00GkS8-Ik
-	for linux-phy@lists.infradead.org; Fri, 27 Jan 2023 22:54:17 +0000
-Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
-	by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id 20230127225410euoutp02aaa5007e7372a7b446a6e6d9e0d348fe~_TFeILeCz0332303323euoutp02H
-	for <linux-phy@lists.infradead.org>; Fri, 27 Jan 2023 22:54:10 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com 20230127225410euoutp02aaa5007e7372a7b446a6e6d9e0d348fe~_TFeILeCz0332303323euoutp02H
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
-	s=mail20170921; t=1674860050;
-	bh=RcZRPw8Plnj7wdfMl/nmohlZX1lhH2EoBGUja9QNHmc=;
-	h=Date:Subject:To:Cc:From:In-Reply-To:References:From;
-	b=he9cFyIceuh9lu+yqoBGy2IBXxKObX9iK7NkARaoyT5Xd/7fONTfFPLEZIY2vOL8b
-	 qsgX2puIAd63GeUMLHGf+3r6f/UypWmBY1QZFoWfQ9A7O8AQXDyAytf/i1VupIDOkt
-	 N5MuWrVjWKy/ATyuBxQtVsZy8CzIHT1LPDAvQCYY=
-Received: from eusmges3new.samsung.com (unknown [203.254.199.245]) by
-	eucas1p1.samsung.com (KnoxPortal) with ESMTP id
-	20230127225409eucas1p15ced1a7c6787daa75313bbaa99b79a3f~_TFd09akD2015820158eucas1p1m;
-	Fri, 27 Jan 2023 22:54:09 +0000 (GMT)
-Received: from eucas1p1.samsung.com ( [182.198.249.206]) by
-	eusmges3new.samsung.com (EUCPMTA) with SMTP id 31.0C.61197.11654D36; Fri, 27
-	Jan 2023 22:54:09 +0000 (GMT)
-Received: from eusmtrp1.samsung.com (unknown [182.198.249.138]) by
-	eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
-	20230127225409eucas1p1eb01de4567daf6830bfadf1d6c5ead1e~_TFdR_oxw2285022850eucas1p1k;
-	Fri, 27 Jan 2023 22:54:09 +0000 (GMT)
-Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
-	eusmtrp1.samsung.com (KnoxPortal) with ESMTP id
-	20230127225409eusmtrp18dfe73480062b1e07f44ddeffcfe80c3~_TFdQPCVM0787007870eusmtrp18;
-	Fri, 27 Jan 2023 22:54:09 +0000 (GMT)
-X-AuditID: cbfec7f5-7dbff7000000ef0d-8d-63d45611352e
-Received: from eusmtip2.samsung.com ( [203.254.199.222]) by
-	eusmgms2.samsung.com (EUCPMTA) with SMTP id BB.B1.00518.11654D36; Fri, 27
-	Jan 2023 22:54:09 +0000 (GMT)
-Received: from [106.210.134.192] (unknown [106.210.134.192]) by
-	eusmtip2.samsung.com (KnoxPortal) with ESMTPA id
-	20230127225408eusmtip24a5ca7d29fefbaef246bdf66e8d92080~_TFcZ328I0135501355eusmtip21;
-	Fri, 27 Jan 2023 22:54:08 +0000 (GMT)
-Message-ID: <bc5d8c21-dad4-a24e-f8bf-e24611600b01@samsung.com>
-Date: Fri, 27 Jan 2023 23:54:09 +0100
+	id 1pLnAN-000LQf-Jz; Sat, 28 Jan 2023 15:30:57 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1674919855; x=1706455855;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=qynek6zoefEm+bgckY3vlCkUxIOmlSiLUfKkdp0MrNA=;
+  b=AaFOor58iPyMoJaO1wXgo0QRrLtZEJpHSHTQGC9BFTmXMvWxZ3ozDz+g
+   L8mk6BlYCYlQNtxEW1IO/jVV3CEX46OGOuejiQNEDNphVLmkZskN+m79M
+   0T2sFOTy637qSIv1+Pq0oukwGRXWQr8wSCAGFw311gmyCAv3BM+h6Fieg
+   PceHWZs3jDCAYSwqgm18GM/pbCFbjjalT4nvekR7ITqXdXTtNGE7WD/Gn
+   AxVeO61etNgBf8QNnmYxvJPLHaI9Xkdko0FF8wLw8yCeOrLjT23w50SsM
+   YCqpNrDKRXRQr+nFvVRewyZJy+TjZ1aVB7O1JwsmAogcLaSic6rHLdt4A
+   A==;
+X-IronPort-AV: E=McAfee;i="6500,9779,10604"; a="391853990"
+X-IronPort-AV: E=Sophos;i="5.97,254,1669104000"; 
+   d="scan'208";a="391853990"
+Received: from orsmga005.jf.intel.com ([10.7.209.41])
+  by orsmga105.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 28 Jan 2023 07:30:44 -0800
+X-ExtLoop1: 1
+X-IronPort-AV: E=McAfee;i="6500,9779,10604"; a="837491300"
+X-IronPort-AV: E=Sophos;i="5.97,254,1669104000"; 
+   d="scan'208";a="837491300"
+Received: from lkp-server01.sh.intel.com (HELO ffa7f14d1d0f) ([10.239.97.150])
+  by orsmga005.jf.intel.com with ESMTP; 28 Jan 2023 07:30:38 -0800
+Received: from kbuild by ffa7f14d1d0f with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1pLnA5-0000qX-2w;
+	Sat, 28 Jan 2023 15:30:37 +0000
+Date: Sat, 28 Jan 2023 23:30:12 +0800
+From: kernel test robot <lkp@intel.com>
+To: Guillaume Ranquet <granquet@baylibre.com>,
+	Vinod Koul <vkoul@kernel.org>, Jitao shi <jitao.shi@mediatek.com>,
+	Kishon Vijay Abraham I <kishon@ti.com>,
+	Daniel Vetter <daniel@ffwll.ch>,
+	Matthias Brugger <matthias.bgg@gmail.com>,
+	Chunfeng Yun <chunfeng.yun@mediatek.com>,
+	Chun-Kuang Hu <chunkuang.hu@kernel.org>,
+	Krzysztof Kozlowski <krzk@kernel.org>,
+	David Airlie <airlied@gmail.com>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Rob Herring <robh+dt@kernel.org>, CK Hu <ck.hu@mediatek.com>
+Cc: oe-kbuild-all@lists.linux.dev, linux-mediatek@lists.infradead.org,
+	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+	mac.shen@mediatek.com, linux-phy@lists.infradead.org,
+	Guillaume Ranquet <granquet@baylibre.com>,
+	devicetree@vger.kernel.org,
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	stuart.lee@mediatek.com
+Subject: Re: [PATCH v5 3/3] phy: mediatek: add support for phy-mtk-hdmi-mt8195
+Message-ID: <202301282319.Z1Kqm6bN-lkp@intel.com>
+References: <20220919-v5-3-cfb0e5ad29b2@baylibre.com>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0)
-	Gecko/20100101 Thunderbird/102.6.1
-Subject: Re: [PATCH 6/8] ARM: dts: exynos: move DP and MIPI phys to PMU node
- in Exynos5420
-Content-Language: en-US
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, Vinod Koul
-	<vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring
-	<robh+dt@kernel.org>, Krzysztof Kozlowski
-	<krzysztof.kozlowski+dt@linaro.org>, Alim Akhtar <alim.akhtar@samsung.com>,
-	Sylwester Nawrocki <s.nawrocki@samsung.com>, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org
-Cc: replicant@osuosl.org, phone-devel@vger.kernel.org,
-	~postmarketos/upstreaming@lists.sr.ht, =?UTF-8?Q?Martin_J=c3=bccker?=
-	<martin.juecker@gmail.com>, Henrik Grimler <henrik@grimler.se>, Chanwoo Choi
-	<cw00.choi@samsung.com>
-From: Marek Szyprowski <m.szyprowski@samsung.com>
-In-Reply-To: <20230127194057.186458-7-krzysztof.kozlowski@linaro.org>
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFnrEKsWRmVeSWpSXmKPExsWy7djPc7qCYVeSDZ6sMbR4MG8bm8X1L89Z
-	LeYfOcdq8XbJLkaLo63/mS36Xjxkttj7eiu7xabH11gtLu+aw2YxYdU3FosZ5/cxWZz5N5XF
-	YsEfO4t1awQtWvceYbc4/Kad1WLnnRPMFpu//2V0EPLYOesuu8fRK/dYPTat6mTzuHNtD5vH
-	5iX1Hv/vrGX3+NLczerRt2UVo8fnTXIBnFFcNimpOZllqUX6dglcGQf2mBS8FKo4dqWBuYHx
-	K18XIyeHhICJxNwNLaxdjFwcQgIrGCX+/N8N5XxhlLhx5DsLhPOZUWLnlD1MXYwcYC2b5uVB
-	xJczSkxb388E4XxklLh/+z47SBGvgJ3Eze8WICaLgKrEuvNRINt4BQQlTs58wgISFhVIkdj0
-	pwwkLCwQI3Hs7WRmEJtZQFzi1pP5YBNFBB4wS9zb9oYdIvGcUeL2XzYQm03AUKLrbReYzSng
-	KnHzxzRGiBp5ie1v5zBDfHaOU2JrZw2E7SJx+9trNghbWOLV8S3sELaMxOnJPWA/Sgi0M0os
-	+H2fCcKZwCjR8PwWI0SVtcSdc7/YQK5mFtCUWL9LHyLsKDF93zs2SJjwSdx4KwhxA5/EpG3T
-	mSHCvBIdbUIQ1WoSs46vg1t78MIl5gmMSrOQQmUWkvdnIflmFsLeBYwsqxjFU0uLc9NTi43z
-	Usv1ihNzi0vz0vWS83M3MQKT4el/x7/uYFzx6qPeIUYmDsZDjBIczEoivFsdLyUL8aYkVlal
-	FuXHF5XmpBYfYpTmYFES59W2PZksJJCeWJKanZpakFoEk2Xi4JRqYFIXidxWv+ascvjqzUs7
-	vF4dYUwTiPmXbaVZwGtbn/4r1tNJ3PrFwi+RYsJxK0VzVn4LEVyxQXl3s8J+zn/GcpW//28I
-	jnDfz2H2prbwU1nrCYYpt6//bs7h+vPouL9g2kHNCvP6K09DLe4IV+gc9QrZ4Rh3yHjCNOdL
-	/Ooq0hvnH3+1b6+GdPmtrQdT+zkT84V+HsvL3vgx9kLMld23+eoPuUwx3n2zVFFOMsrBKX8Z
-	d0igev3eNoupS/RCL/2yrXn3P+jGf96dXZHLHx6pkC88826D/cZJWRMq7T6IZx7hq+1fG9fQ
-	OsGpXOwrf/rjj88SPc7FWB1Z/Mts2rnuCzJP3+1SPcp2994C7qavv5RYijMSDbWYi4oTAcBl
-	8hX1AwAA
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFvrGIsWRmVeSWpSXmKPExsVy+t/xe7qCYVeSDTb081s8mLeNzeL6l+es
-	FvOPnGO1eLtkF6PF0db/zBZ9Lx4yW+x9vZXdYtPja6wWl3fNYbOYsOobi8WM8/uYLM78m8pi
-	seCPncW6NYIWrXuPsFscftPOarHzzglmi83f/zI6CHnsnHWX3ePolXusHptWdbJ53Lm2h81j
-	85J6j/931rJ7fGnuZvXo27KK0ePzJrkAzig9m6L80pJUhYz84hJbpWhDCyM9Q0sLPSMTSz1D
-	Y/NYKyNTJX07m5TUnMyy1CJ9uwS9jAN7TApeClUcu9LA3MD4la+LkYNDQsBEYtO8vC5GLg4h
-	gaWMEjNvPGDtYuQEistInJzWAGULS/y51sUGYgsJvGeUmP6NE6SXV8BO4uZ3CxCTRUBVYt35
-	KJAKXgFBiZMzn7CA2KICKRLNz0+CTREWiJE49nYyM4jNLCAucevJfCaQtSICj5glNs/5wgLi
-	MAs8Z5S4v7WJFeKgy4wSu69dARvFJmAo0fUW4ghOAVeJmz+mMUKMMpPo2toFZctLbH87h3kC
-	o9AsJJfMQrJxFpKWWUhaFjCyrGIUSS0tzk3PLTbSK07MLS7NS9dLzs/dxAhMANuO/dyyg3Hl
-	q496hxiZOBgPMUpwMCuJ8G51vJQsxJuSWFmVWpQfX1Sak1p8iNEUGBoTmaVEk/OBKSivJN7Q
-	zMDU0MTM0sDU0sxYSZzXs6AjUUggPbEkNTs1tSC1CKaPiYNTqoGpskjK9+HiBwWqqVPV/7n+
-	eWfsVVKS//anpcNFWY/jCu4mR0PVL5pcE3516MjW1G0/hevbMlwev1pnJb/otYJ66vrOe486
-	N7/5Ht5ya/8SR4/9hQefq6/05vg7+4gxv9wP4/4nGkc/HjqU83D384lrUwOyn7O37RYWOhjJ
-	c97J3Jd/+/KNtlKFEz4/XhsmtO/Vyy18/p5a9+ubcis8HySw5L+p+hmUHTFr2SZzA7vP97+X
-	Pw5t0pOfcfhCTgCn6haD/eW8zHM+hki7xxxk6mtuFxFIVN+QPTnW7FlEm8ecJxXRjKsjOR96
-	dBUx/yxe//bj/yS5j+t+vtWRtmnfzWT7VO7WyaqZ52Wya1UiU54rsRRnJBpqMRcVJwIA6Eer
-	84kDAAA=
-X-CMS-MailID: 20230127225409eucas1p1eb01de4567daf6830bfadf1d6c5ead1e
-X-Msg-Generator: CA
-X-RootMTR: 20230127194123eucas1p20a54329d03b2e5c0c2b1089ab2db2673
-X-EPHeader: CA
-CMS-TYPE: 201P
-X-CMS-RootMailID: 20230127194123eucas1p20a54329d03b2e5c0c2b1089ab2db2673
-References: <20230127194057.186458-1-krzysztof.kozlowski@linaro.org>
-	<CGME20230127194123eucas1p20a54329d03b2e5c0c2b1089ab2db2673@eucas1p2.samsung.com>
-	<20230127194057.186458-7-krzysztof.kozlowski@linaro.org>
+Content-Disposition: inline
+In-Reply-To: <20220919-v5-3-cfb0e5ad29b2@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230127_145411_970894_F37EE7D2 
-X-CRM114-Status: GOOD (  13.76  )
+X-CRM114-CacheID: sfid-20230128_073055_731078_7954E4C0 
+X-CRM114-Status: GOOD (  15.60  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -143,75 +97,200 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 27.01.2023 20:40, Krzysztof Kozlowski wrote:
-> The DisplayPort and MIPI phys are actually part of the Power Management
-> Unit system controller.  They do not have their own address space, thus
-> keeping the nodes under soc causes warnings:
->
->    exynos5420-smdk5420.dtb: soc: dp-video-phy: {'compatible': ['samsung,exynos5420-dp-video-phy'],
->      'samsung,pmu-syscon': [[11]], '#phy-cells': [[0]], 'phandle': [[16]]} should not be valid under {'type': 'object'}
->
-> Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Tested-by: Marek Szyprowski <m.szyprowski@samsung.com>
-> ---
->   arch/arm/boot/dts/exynos5420.dtsi | 24 +++++++++++-------------
->   1 file changed, 11 insertions(+), 13 deletions(-)
->
-> diff --git a/arch/arm/boot/dts/exynos5420.dtsi b/arch/arm/boot/dts/exynos5420.dtsi
-> index b1051a7d07af..6cdb1a832fb9 100644
-> --- a/arch/arm/boot/dts/exynos5420.dtsi
-> +++ b/arch/arm/boot/dts/exynos5420.dtsi
-> @@ -585,18 +585,6 @@ spi_2: spi@12d40000 {
->   			status = "disabled";
->   		};
->   
-> -		dp_phy: dp-video-phy {
-> -			compatible = "samsung,exynos5420-dp-video-phy";
-> -			samsung,pmu-syscon = <&pmu_system_controller>;
-> -			#phy-cells = <0>;
-> -		};
-> -
-> -		mipi_phy: mipi-video-phy {
-> -			compatible = "samsung,exynos5420-mipi-video-phy";
-> -			syscon = <&pmu_system_controller>;
-> -			#phy-cells = <1>;
-> -		};
-> -
->   		dsi: dsi@14500000 {
->   			compatible = "samsung,exynos5410-mipi-dsi";
->   			reg = <0x14500000 0x10000>;
-> @@ -822,7 +810,7 @@ jpeg_1: jpeg@11f60000 {
->   		};
->   
->   		pmu_system_controller: system-controller@10040000 {
-> -			compatible = "samsung,exynos5420-pmu", "syscon";
-> +			compatible = "samsung,exynos5420-pmu", "simple-mfd", "syscon";
->   			reg = <0x10040000 0x5000>;
->   			clock-names = "clkout16";
->   			clocks = <&clock CLK_FIN_PLL>;
-> @@ -830,6 +818,16 @@ pmu_system_controller: system-controller@10040000 {
->   			interrupt-controller;
->   			#interrupt-cells = <3>;
->   			interrupt-parent = <&gic>;
-> +
-> +			dp_phy: dp-phy {
-> +				compatible = "samsung,exynos5420-dp-video-phy";
-> +				#phy-cells = <0>;
-> +			};
-> +
-> +			mipi_phy: mipi-phy {
-> +				compatible = "samsung,exynos5420-mipi-video-phy";
-> +				#phy-cells = <1>;
-> +			};
->   		};
->   
->   		tmu_cpu0: tmu@10060000 {
+Hi Guillaume,
 
-Best regards
+Thank you for the patch! Perhaps something to improve:
+
+[auto build test WARNING on e2f86c02fdc96ca29ced53221a3cbf50aa6f8b49]
+
+url:    https://github.com/intel-lab-lkp/linux/commits/Guillaume-Ranquet/dt-bindings-phy-mediatek-hdmi-phy-Add-mt8195-compatible/20230128-160522
+base:   e2f86c02fdc96ca29ced53221a3cbf50aa6f8b49
+patch link:    https://lore.kernel.org/r/20220919-v5-3-cfb0e5ad29b2%40baylibre.com
+patch subject: [PATCH v5 3/3] phy: mediatek: add support for phy-mtk-hdmi-mt8195
+config: arc-randconfig-r043-20230123 (https://download.01.org/0day-ci/archive/20230128/202301282319.Z1Kqm6bN-lkp@intel.com/config)
+compiler: arceb-elf-gcc (GCC) 12.1.0
+reproduce (this is a W=1 build):
+        wget https://raw.githubusercontent.com/intel/lkp-tests/master/sbin/make.cross -O ~/bin/make.cross
+        chmod +x ~/bin/make.cross
+        # https://github.com/intel-lab-lkp/linux/commit/2cc45518a7fd551117426c770070d93acb31166e
+        git remote add linux-review https://github.com/intel-lab-lkp/linux
+        git fetch --no-tags linux-review Guillaume-Ranquet/dt-bindings-phy-mediatek-hdmi-phy-Add-mt8195-compatible/20230128-160522
+        git checkout 2cc45518a7fd551117426c770070d93acb31166e
+        # save the config file
+        mkdir build_dir && cp config build_dir/.config
+        COMPILER_INSTALL_PATH=$HOME/0day COMPILER=gcc-12.1.0 make.cross W=1 O=build_dir ARCH=arc olddefconfig
+        COMPILER_INSTALL_PATH=$HOME/0day COMPILER=gcc-12.1.0 make.cross W=1 O=build_dir ARCH=arc SHELL=/bin/bash drivers/phy/mediatek/
+
+If you fix the issue, kindly add following tag where applicable
+| Reported-by: kernel test robot <lkp@intel.com>
+
+All warnings (new ones prefixed by >>):
+
+   In file included from include/linux/bits.h:6,
+                    from include/linux/bitops.h:6,
+                    from include/linux/log2.h:12,
+                    from include/asm-generic/div64.h:55,
+                    from ./arch/arc/include/generated/asm/div64.h:1,
+                    from include/linux/math.h:6,
+                    from include/linux/delay.h:22,
+                    from drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c:6:
+   drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c: In function 'mtk_hdmi_pll_calc':
+>> include/vdso/bits.h:7:40: warning: left shift count >= width of type [-Wshift-count-overflow]
+       7 | #define BIT(nr)                 (UL(1) << (nr))
+         |                                        ^~
+   drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c:299:20: note: in expansion of macro 'BIT'
+     299 |         if ((pcw / BIT(32)) > 1) {
+         |                    ^~~
+>> drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c:299:18: warning: division by zero [-Wdiv-by-zero]
+     299 |         if ((pcw / BIT(32)) > 1) {
+         |                  ^
+>> include/vdso/bits.h:7:40: warning: left shift count >= width of type [-Wshift-count-overflow]
+       7 | #define BIT(nr)                 (UL(1) << (nr))
+         |                                        ^~
+   drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c:301:27: note: in expansion of macro 'BIT'
+     301 |         } else if ((pcw / BIT(32)) == 1) {
+         |                           ^~~
+   drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c:301:25: warning: division by zero [-Wdiv-by-zero]
+     301 |         } else if ((pcw / BIT(32)) == 1) {
+         |                         ^
+>> include/vdso/bits.h:7:40: warning: left shift count >= width of type [-Wshift-count-overflow]
+       7 | #define BIT(nr)                 (UL(1) << (nr))
+         |                                        ^~
+   drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c:303:36: note: in expansion of macro 'BIT'
+     303 |                 fbkdiv_low = pcw % BIT(32);
+         |                                    ^~~
+   drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c:303:34: warning: division by zero [-Wdiv-by-zero]
+     303 |                 fbkdiv_low = pcw % BIT(32);
+         |                                  ^
+
+
+vim +299 drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c
+
+   211	
+   212	static int mtk_hdmi_pll_calc(struct mtk_hdmi_phy *hdmi_phy, struct clk_hw *hw,
+   213						 unsigned long rate, unsigned long parent_rate)
+   214	{
+   215		int i = 0;
+   216		int ret;
+   217		u64 tmds_clk;
+   218		u64 pixel_clk;
+   219		/* pll input source frequency */
+   220		u64 da_hdmitx21_ref_ck;
+   221		/* ICO output clk */
+   222		u64 ns_hdmipll_ck;
+   223		/* source clk for Display digital */
+   224		u64 ad_hdmipll_pixel_ck;
+   225		u64 pcw;
+   226		u32 fbkdiv_low;
+   227		u8 digital_div;
+   228		u8 txprediv;
+   229		u8 txposdiv;
+   230		u8 fbkdiv_high;
+   231		u8 posdiv1;
+   232		u8 posdiv2;
+   233		/* prediv is always 1 */
+   234		u8 prediv = 1;
+   235		/* fbkdiv_hs3 is always 1 */
+   236		u8 fbkdiv_hs3 = 1;
+   237		u8 txpredivs[4] = { 2, 4, 6, 12 };
+   238	
+   239		pixel_clk = rate;
+   240		tmds_clk = pixel_clk;
+   241	
+   242		if (tmds_clk < 25000000 || tmds_clk > 594000000)
+   243			return -EINVAL;
+   244	
+   245		if (tmds_clk >= 340000000)
+   246			hdmi_phy->tmds_over_340M = true;
+   247		else
+   248			hdmi_phy->tmds_over_340M = false;
+   249	
+   250		/* in Hz */
+   251		da_hdmitx21_ref_ck = 26000000UL;
+   252	
+   253		/*  TXPOSDIV stage treatment:
+   254		 *	0M  <  TMDS clk  < 54M		  /8
+   255		 *	54M <= TMDS clk  < 148.35M    /4
+   256		 *	148.35M <=TMDS clk < 296.7M   /2
+   257		 *	296.7 <=TMDS clk <= 594M	  /1
+   258		 */
+   259		if (tmds_clk < 54000000UL)
+   260			txposdiv = 8;
+   261		else if (tmds_clk >= 54000000UL && tmds_clk < 148350000UL)
+   262			txposdiv = 4;
+   263		else if (tmds_clk >= 148350000UL && tmds_clk < 296700000UL)
+   264			txposdiv = 2;
+   265		else if (tmds_clk >= 296700000UL && tmds_clk <= 594000000UL)
+   266			txposdiv = 1;
+   267		else
+   268			return -EINVAL;
+   269	
+   270		/* calculate txprediv: can be 2, 4, 6, 12
+   271		 * ICO clk = 5*TMDS_CLK*TXPOSDIV*TXPREDIV
+   272		 * ICO clk constraint: 5G =< ICO clk <= 12G
+   273		 */
+   274		for (i = 0; i < ARRAY_SIZE(txpredivs); i++) {
+   275			ns_hdmipll_ck = 5 * tmds_clk * txposdiv * txpredivs[i];
+   276			if (ns_hdmipll_ck >= 5000000000UL &&
+   277			    ns_hdmipll_ck <= 12000000000UL)
+   278				break;
+   279		}
+   280		if (i == (ARRAY_SIZE(txpredivs) - 1) &&
+   281		    (ns_hdmipll_ck < 5000000000UL || ns_hdmipll_ck > 12000000000UL)) {
+   282			return -EINVAL;
+   283		}
+   284		if (i == ARRAY_SIZE(txpredivs))
+   285			return -EINVAL;
+   286	
+   287		txprediv = txpredivs[i];
+   288	
+   289		/* PCW calculation: FBKDIV
+   290		 * formula: pcw=(frequency_out*2^pcw_bit) / frequency_in / FBKDIV_HS3;
+   291		 * RG_HDMITXPLL_FBKDIV[32:0]:
+   292		 * [32,24] 9bit integer, [23,0]:24bit fraction
+   293		 */
+   294		pcw = ns_hdmipll_ck;
+   295		pcw = pcw << PCW_DECIMAL_WIDTH;
+   296		pcw = pcw / da_hdmitx21_ref_ck;
+   297		pcw = pcw / fbkdiv_hs3;
+   298	
+ > 299		if ((pcw / BIT(32)) > 1) {
+   300			return -EINVAL;
+   301		} else if ((pcw / BIT(32)) == 1) {
+   302			fbkdiv_high = 1;
+   303			fbkdiv_low = pcw % BIT(32);
+   304		} else {
+   305			fbkdiv_high = 0;
+   306			fbkdiv_low = pcw;
+   307		}
+   308	
+   309		/* posdiv1:
+   310		 * posdiv1 stage treatment according to color_depth:
+   311		 * 24bit -> posdiv1 /10, 30bit -> posdiv1 /12.5,
+   312		 * 36bit -> posdiv1 /15, 48bit -> posdiv1 /10
+   313		 */
+   314		posdiv1 = 10;
+   315		posdiv2 = 1;
+   316		ad_hdmipll_pixel_ck = (ns_hdmipll_ck / 10) / 1;
+   317	
+   318		/* Digital clk divider, max /32 */
+   319		digital_div = ad_hdmipll_pixel_ck / pixel_clk;
+   320		if (!(digital_div <= 32 && digital_div >= 1))
+   321			return -EINVAL;
+   322	
+   323		mtk_hdmi_pll_set_hw(hw, prediv, fbkdiv_high, fbkdiv_low,
+   324					  fbkdiv_hs3, posdiv1, posdiv2, txprediv,
+   325					  txposdiv, digital_div);
+   326		if (ret)
+   327			return -EINVAL;
+   328	
+   329		return 0;
+   330	}
+   331	
+
 -- 
-Marek Szyprowski, PhD
-Samsung R&D Institute Poland
-
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests
 
 -- 
 linux-phy mailing list
