@@ -4,73 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1D294C38142
-	for <linux-phy@archiver.kernel.org>; Sat, 28 Jan 2023 15:58:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1F9FAC27C76
+	for <linux-phy@archiver.kernel.org>; Sat, 28 Jan 2023 18:58:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qyl1OSS0IalEHFjUFw+X912A+/DV3hdp0TWvdFkcPKg=; b=F3Kd3aF01vkanR
-	bNbmfQbXVqxDWpSVgzXM/ZAsOznTB22Jw3FTXjt27rzFiyEaGT+Hy9ppd17RiO6OroydgVSuoslIL
-	HCTW7IxHg3BPXGketRbN0qJWclLnVk93TUIdYwQ6jXHG7mO4sVcY0JdygqwxdkWJ4JE06fXjgkOl9
-	WxqC5JYMyrKBxaQ+rU0QTMeKBnEm4ETspsEUJ3wUAyL0DIKnoyPnsRTQcmXWFevR8fl39Y9NZ6NoW
-	rGwpJ6ip+i1eGf0We1M0ehe3H7hdbuDruWYnQ8mslOnG+m5s9sShlDcxUiye0fGkSYqE6KyE5tG16
-	hiOMrMj45jDMi1e3GVIQ==;
+	List-Owner; bh=k1Bzy2wNPDf+Wm6oR0WweB4s4O7LQkWsRbG9YGpoqGQ=; b=ygv46SlH733jyT
+	nuxyvj4yzju3JVdgswGUvhOZ4x+zA2/N5EHb/8CjrKq77+57EyTUYp+5w6d2shjpDjpPM0K1scxBr
+	xW0Usyiy3pP/nBB/jPTxR+8gjR4mIlno2BVyUsXseJuvitHSLyS3dcnkGjYqVAF2Vv8aHhLWm6ePU
+	qrRsBOHmzs1UunGZ5pIbmKVnPXKPXT5zjVI2s1lhhPLNDF8HV8keKwr7SOcQxAC9aZIn7PbTHbP1N
+	XYbQa7CxvBAIS7j1caazhz5kbgk8uUDWAvMqGqaCE+0Bz63g6I2mvF5maUhV2JTDUcCelg6tHGrJB
+	9LoiapuURg1uJLtmMUhA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pLnbJ-000Nb6-SL; Sat, 28 Jan 2023 15:58:45 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1pLqOu-000YLJ-H0; Sat, 28 Jan 2023 18:58:08 +0000
+Received: from mga11.intel.com ([192.55.52.93])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pLnb8-000NZ7-K3; Sat, 28 Jan 2023 15:58:36 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 728A460B4D;
-	Sat, 28 Jan 2023 15:58:29 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3DC8FC433D2;
-	Sat, 28 Jan 2023 15:58:23 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1674921508;
-	bh=7R+Y0pFZ9qQaQE2Of8Zyt01fF+w51NH/3ezIsAynqvk=;
-	h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
-	b=d4enHA5MJ371GrPucjk++EVvYqWfJUb0Rmdj7ygsHD6FdJSuKLpmLKZObRmyoduRb
-	 F7/rgXbXthLnxMVJdAyroI/3tQf7IL+wc3TYMiY9DLLWZ9lgFPGplKFOxflb3tFuNt
-	 UtYcUlsjz0il95gmiB3mk4Bvk/TbRiYPJ9FjEivIPmpDedLPGd1WcinaLHdellNT7Y
-	 g/L7fp8K98T+nO5sT29tqenfN8c3UVjvN0Ncbjl4SfTpSGVwHHakRtS6Y7/70MN4yc
-	 AsRCXMaJ9yLeFgwHKcot/dcC5xFelUPaBwh2MZkhTt1C1Gr3icbGZaQVBWurLjEUVb
-	 0mCC0mntbHQgQ==
-Date: Sat, 28 Jan 2023 16:12:17 +0000
-From: Jonathan Cameron <jic23@kernel.org>
-To: Gatien Chevallier <gatien.chevallier@foss.st.com>
-Cc: <Oleksii_Moisieiev@epam.com>, <gregkh@linuxfoundation.org>,
- <herbert@gondor.apana.org.au>, <davem@davemloft.net>, <robh+dt@kernel.org>,
- <krzysztof.kozlowski+dt@linaro.org>, <alexandre.torgue@foss.st.com>,
- <vkoul@kernel.org>, <olivier.moysan@foss.st.com>,
- <arnaud.pouliquen@foss.st.com>, <mchehab@kernel.org>,
- <fabrice.gasnier@foss.st.com>, <ulf.hansson@linaro.org>,
- <edumazet@google.com>, <kuba@kernel.org>, <pabeni@redhat.com>,
- <linux-crypto@vger.kernel.org>, <devicetree@vger.kernel.org>,
- <linux-stm32@st-md-mailman.stormreply.com>,
- <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
- <dmaengine@vger.kernel.org>, <linux-i2c@vger.kernel.org>,
- <linux-iio@vger.kernel.org>, <alsa-devel@alsa-project.org>,
- <linux-media@vger.kernel.org>, <linux-mmc@vger.kernel.org>,
- <netdev@vger.kernel.org>, <linux-phy@lists.infradead.org>,
- <linux-serial@vger.kernel.org>, <linux-spi@vger.kernel.org>,
- <linux-usb@vger.kernel.org>, Loic PALLARDY <loic.pallardy@st.com>
-Subject: Re: [PATCH v3 4/6] bus: stm32_sys_bus: add support for STM32MP15
- and STM32MP13 system bus
-Message-ID: <20230128161217.0e79436e@jic23-huawei>
-In-Reply-To: <20230127164040.1047583-5-gatien.chevallier@foss.st.com>
-References: <20230127164040.1047583-1-gatien.chevallier@foss.st.com>
-	<20230127164040.1047583-5-gatien.chevallier@foss.st.com>
-X-Mailer: Claws Mail 4.1.1 (GTK 3.24.36; x86_64-pc-linux-gnu)
+	id 1pLqOi-000YHr-LT; Sat, 28 Jan 2023 18:57:58 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1674932276; x=1706468276;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=C/Fj/U8MY72zX0xzMfuMhE7ROEG03cf3gcA25/GnMq4=;
+  b=ldLgtIu5X1m/oWzLfJVcfmijWVWsr8Im2uIA3x9AsxxFQfI7D4AvB4KS
+   B4LJKCJ3tZKHH8qNGUmOiIu+UEiBlIsGQP3DaNESGH5kLZdbb2BSTGI3y
+   CKLragBRlRpQzOCwGcMKn6auP7Z90Bv7WdrYSRCl29pv0p/Y6R1PxrCeS
+   DzFZadgIYFK9PLpNH9LUVwh9jp0DY+84xk95/sa/Yh9KJK97+6KX6plLd
+   x2+3DHCv7xtvQ3+v6Htwn2ZZuOqRZ7a4C7Wl7jV34vufpJVa5UcBkIC7o
+   Y/YZUYtVveqa8PtmK9bbOhSsWoFQp5QdO2mKxsWQbMtb9IZ9MYCYBLaU0
+   A==;
+X-IronPort-AV: E=McAfee;i="6500,9779,10604"; a="325015354"
+X-IronPort-AV: E=Sophos;i="5.97,254,1669104000"; 
+   d="scan'208";a="325015354"
+Received: from fmsmga002.fm.intel.com ([10.253.24.26])
+  by fmsmga102.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 28 Jan 2023 10:57:53 -0800
+X-ExtLoop1: 1
+X-IronPort-AV: E=McAfee;i="6500,9779,10604"; a="771960911"
+X-IronPort-AV: E=Sophos;i="5.97,254,1669104000"; 
+   d="scan'208";a="771960911"
+Received: from lkp-server01.sh.intel.com (HELO ffa7f14d1d0f) ([10.239.97.150])
+  by fmsmga002.fm.intel.com with ESMTP; 28 Jan 2023 10:57:47 -0800
+Received: from kbuild by ffa7f14d1d0f with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1pLqOY-000109-2z;
+	Sat, 28 Jan 2023 18:57:46 +0000
+Date: Sun, 29 Jan 2023 02:57:39 +0800
+From: kernel test robot <lkp@intel.com>
+To: Guillaume Ranquet <granquet@baylibre.com>,
+	Vinod Koul <vkoul@kernel.org>, Jitao shi <jitao.shi@mediatek.com>,
+	Kishon Vijay Abraham I <kishon@ti.com>,
+	Daniel Vetter <daniel@ffwll.ch>,
+	Matthias Brugger <matthias.bgg@gmail.com>,
+	Chunfeng Yun <chunfeng.yun@mediatek.com>,
+	Chun-Kuang Hu <chunkuang.hu@kernel.org>,
+	Krzysztof Kozlowski <krzk@kernel.org>,
+	David Airlie <airlied@gmail.com>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Rob Herring <robh+dt@kernel.org>, CK Hu <ck.hu@mediatek.com>
+Cc: oe-kbuild-all@lists.linux.dev, linux-mediatek@lists.infradead.org,
+	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+	mac.shen@mediatek.com, linux-phy@lists.infradead.org,
+	Guillaume Ranquet <granquet@baylibre.com>,
+	devicetree@vger.kernel.org,
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	stuart.lee@mediatek.com
+Subject: Re: [PATCH v5 3/3] phy: mediatek: add support for phy-mtk-hdmi-mt8195
+Message-ID: <202301290245.KWRXz5OS-lkp@intel.com>
+References: <20220919-v5-3-cfb0e5ad29b2@baylibre.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20220919-v5-3-cfb0e5ad29b2@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230128_075834_747103_689256FF 
-X-CRM114-Status: GOOD (  32.29  )
+X-CRM114-CacheID: sfid-20230128_105756_787645_27C34078 
+X-CRM114-Status: GOOD (  12.90  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,202 +97,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, 27 Jan 2023 17:40:38 +0100
-Gatien Chevallier <gatien.chevallier@foss.st.com> wrote:
+Hi Guillaume,
 
-> This driver is checking the access rights of the different
-> peripherals connected to the system bus. If access is denied,
-> the associated device tree node is skipped so the platform bus
-> does not probe it.
-> 
-> Signed-off-by: Gatien Chevallier <gatien.chevallier@foss.st.com>
-> Signed-off-by: Loic PALLARDY <loic.pallardy@st.com>
+Thank you for the patch! Yet something to improve:
 
-Hi Gatien,
+[auto build test ERROR on e2f86c02fdc96ca29ced53221a3cbf50aa6f8b49]
 
-A few comments inline,
+url:    https://github.com/intel-lab-lkp/linux/commits/Guillaume-Ranquet/dt-bindings-phy-mediatek-hdmi-phy-Add-mt8195-compatible/20230128-160522
+base:   e2f86c02fdc96ca29ced53221a3cbf50aa6f8b49
+patch link:    https://lore.kernel.org/r/20220919-v5-3-cfb0e5ad29b2%40baylibre.com
+patch subject: [PATCH v5 3/3] phy: mediatek: add support for phy-mtk-hdmi-mt8195
+config: arm-buildonly-randconfig-r005-20230129 (https://download.01.org/0day-ci/archive/20230129/202301290245.KWRXz5OS-lkp@intel.com/config)
+compiler: arm-linux-gnueabi-gcc (GCC) 12.1.0
+reproduce (this is a W=1 build):
+        wget https://raw.githubusercontent.com/intel/lkp-tests/master/sbin/make.cross -O ~/bin/make.cross
+        chmod +x ~/bin/make.cross
+        # https://github.com/intel-lab-lkp/linux/commit/2cc45518a7fd551117426c770070d93acb31166e
+        git remote add linux-review https://github.com/intel-lab-lkp/linux
+        git fetch --no-tags linux-review Guillaume-Ranquet/dt-bindings-phy-mediatek-hdmi-phy-Add-mt8195-compatible/20230128-160522
+        git checkout 2cc45518a7fd551117426c770070d93acb31166e
+        # save the config file
+        mkdir build_dir && cp config build_dir/.config
+        COMPILER_INSTALL_PATH=$HOME/0day COMPILER=gcc-12.1.0 make.cross W=1 O=build_dir ARCH=arm olddefconfig
+        COMPILER_INSTALL_PATH=$HOME/0day COMPILER=gcc-12.1.0 make.cross W=1 O=build_dir ARCH=arm SHELL=/bin/bash
 
-Thanks,
+If you fix the issue, kindly add following tag where applicable
+| Reported-by: kernel test robot <lkp@intel.com>
 
-Jonathan
+All errors (new ones prefixed by >>, old ones prefixed by <<):
 
-> diff --git a/drivers/bus/stm32_sys_bus.c b/drivers/bus/stm32_sys_bus.c
-> new file mode 100644
-> index 000000000000..c12926466bae
-> --- /dev/null
-> +++ b/drivers/bus/stm32_sys_bus.c
-> @@ -0,0 +1,168 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +/*
-> + * Copyright (C) 2023, STMicroelectronics - All Rights Reserved
-> + */
-> +
-> +#include <linux/bitfield.h>
-> +#include <linux/bits.h>
-> +#include <linux/device.h>
-> +#include <linux/err.h>
-> +#include <linux/io.h>
-> +#include <linux/init.h>
-> +#include <linux/kernel.h>
-> +#include <linux/module.h>
-> +#include <linux/of.h>
-> +#include <linux/of_platform.h>
-> +#include <linux/platform_device.h>
-> +
-> +/* ETZPC peripheral as firewall bus */
-> +/* ETZPC registers */
-> +#define ETZPC_DECPROT			0x10
-> +
-> +/* ETZPC miscellaneous */
-> +#define ETZPC_PROT_MASK			GENMASK(1, 0)
-> +#define ETZPC_PROT_A7NS			0x3
-> +#define ETZPC_DECPROT_SHIFT		1
+>> ERROR: modpost: "__aeabi_uldivmod" [drivers/phy/mediatek/phy-mtk-hdmi-drv.ko] undefined!
+>> ERROR: modpost: "__aeabi_ldivmod" [drivers/phy/mediatek/phy-mtk-hdmi-drv.ko] undefined!
 
-This define makes the code harder to read.  What we care about is
-the number of bits in the register divided by number of entries.
-(which is 2) hence the shift by 1. See below for more on this.
-
-
-> +
-> +#define IDS_PER_DECPROT_REGS		16
-
-> +#define STM32MP15_ETZPC_ENTRIES		96
-> +#define STM32MP13_ETZPC_ENTRIES		64
-
-These defines just make the code harder to check.
-They aren't magic numbers, but rather just telling us how many
-entries there are, so I would just put them in the structures directly.
-Their use make it clear what they are without needing to give them a name.
-
-
-> +struct stm32_sys_bus_match_data {
-
-Comment on naming of this below.
-
-> +	unsigned int max_entries;
-> +};
-> +
-
-+static int stm32_etzpc_get_access(struct sys_bus_data *pdata, struct device_node *np)
-+{
-+	int err;
-+	u32 offset, reg_offset, sec_val, id;
-+
-+	err = stm32_sys_bus_get_periph_id(pdata, np, &id);
-+	if (err)
-+		return err;
-+
-+	/* Check access configuration, 16 peripherals per register */
-+	reg_offset = ETZPC_DECPROT + 0x4 * (id / IDS_PER_DECPROT_REGS);
-+	offset = (id % IDS_PER_DECPROT_REGS) << ETZPC_DECPROT_SHIFT;
-
-Use of defines in here is actively unhelpful when it comes to review. I would suggest letting
-the maths be self explanatory (even if it's more code).
-
-	offset = (id % IDS_PER_DECPROT_REGS) * (sizeof(u32) * BITS_PER_BYTE / IDS_PER_DECPROT_REGS);
-
-Or if you prefer have a define of
-
-#define DECPROT_BITS_PER_ID (sizeof(u32) * BITS_PER_BYTE / IDS_PER_DECPROT_REGS)
-
-and
-	offset = (id % IDS_PER_DECPROT_REGS) * DECPROT_BITS_PER_ID;
-
-+
-+	/* Verify peripheral is non-secure and attributed to cortex A7 */
-+	sec_val = (readl(pdata->sys_bus_base + reg_offset) >> offset) & ETZPC_PROT_MASK;
-+	if (sec_val != ETZPC_PROT_A7NS) {
-+		dev_dbg(pdata->dev, "Invalid bus configuration: reg_offset %#x, value %d\n",
-+			reg_offset, sec_val);
-+		return -EACCES;
-+	}
-+
-+	return 0;
-+}
-+
-...
-
-> +static int stm32_sys_bus_probe(struct platform_device *pdev)
-> +{
-> +	struct sys_bus_data *pdata;
-> +	void __iomem *mmio;
-> +	struct device_node *np = pdev->dev.of_node;
-
-I'd be consistent. You use dev_of_node() accessor elsewhere, so should
-use it here as well.
-
-> +
-> +	pdata = devm_kzalloc(&pdev->dev, sizeof(*pdata), GFP_KERNEL);
-> +	if (!pdata)
-> +		return -ENOMEM;
-> +
-> +	mmio = devm_platform_ioremap_resource(pdev, 0);
-> +	if (IS_ERR(mmio))
-> +		return PTR_ERR(mmio);
-> +
-> +	pdata->sys_bus_base = mmio;
-> +	pdata->pconf = of_device_get_match_data(&pdev->dev);
-> +	pdata->dev = &pdev->dev;
-> +
-> +	platform_set_drvdata(pdev, pdata);
-
-Does this get used? I can't immediately spot where but maybe I just
-missed it.
-
-> +
-> +	stm32_sys_bus_populate(pdata);
-> +
-> +	/* Populate all available nodes */
-> +	return of_platform_populate(np, NULL, NULL, &pdev->dev);
-
-As np only used here, I'd not bother with the local variable in this function.
-
-> +}
-> +
-> +static const struct stm32_sys_bus_match_data stm32mp15_sys_bus_data = {
-
-Naming a structure after where it comes from is a little unusual and
-confusion when a given call gets it from somewhere else.
-
-I'd expect it to be named after what sort of thing it contains.
-stm32_sys_bus_info or something like that.
-
-> +	.max_entries = STM32MP15_ETZPC_ENTRIES,
-> +};
-> +
-> +static const struct stm32_sys_bus_match_data stm32mp13_sys_bus_data = {
-> +	.max_entries = STM32MP13_ETZPC_ENTRIES,
-> +};
-> +
-> +static const struct of_device_id stm32_sys_bus_of_match[] = {
-> +	{ .compatible = "st,stm32mp15-sys-bus", .data = &stm32mp15_sys_bus_data },
-> +	{ .compatible = "st,stm32mp13-sys-bus", .data = &stm32mp13_sys_bus_data },
-
-Alphabetical order usually preferred when there isn't a strong reason for
-another choice.
-
-> +	{}
-> +};
-> +MODULE_DEVICE_TABLE(of, stm32_sys_bus_of_match);
-> +
-> +static struct platform_driver stm32_sys_bus_driver = {
-> +	.probe  = stm32_sys_bus_probe,
-> +	.driver = {
-> +		.name = "stm32-sys-bus",
-> +		.of_match_table = stm32_sys_bus_of_match,
-> +	},
-> +};
-> +
-> +static int __init stm32_sys_bus_init(void)
-> +{
-> +	return platform_driver_register(&stm32_sys_bus_driver);
-> +}
-> +arch_initcall(stm32_sys_bus_init);
-> +
-
-Unwanted trailing blank line.
-
-
+-- 
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests
 
 -- 
 linux-phy mailing list
