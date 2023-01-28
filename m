@@ -4,44 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F3BBFC61D97
-	for <linux-phy@archiver.kernel.org>; Sat, 28 Jan 2023 15:34:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1D294C38142
+	for <linux-phy@archiver.kernel.org>; Sat, 28 Jan 2023 15:58:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ol6VZnSeVGm0V3dsT21glft+ErWvUWBjgzZ+SCktBcU=; b=RJ/d0D836dmS+J
-	4pCQnospRxx4F979FOWar1NqowEuXrCdNJyKBohBg35g5ICVVx0XZqPZLU45V2Ycfg51JhX3f+YN/
-	u6yaqTqToiRtOtN/IcYdYn2+kVXJsQBEeGiO6OEYetw3of7+KtAtulEi2bJpiLrfVhKrXKbOJzHVa
-	XSliZeFNes8Q6ZV1ssEwOOePFNqyx5Vt0ZK0/MY5vjFPezDCGBnNM9bxecACRDQ1CsL2nNgRSCS+T
-	py4nQIBYs4reO7K+DDHdrSfsU44qBnXoTNB8R7Zk8Fmpv8ltkAE88jJd3S2e9LpEDuUnw8Rfz1OIy
-	2qdFLfMN+SHqpDpgO1ZQ==;
+	List-Owner; bh=qyl1OSS0IalEHFjUFw+X912A+/DV3hdp0TWvdFkcPKg=; b=F3Kd3aF01vkanR
+	bNbmfQbXVqxDWpSVgzXM/ZAsOznTB22Jw3FTXjt27rzFiyEaGT+Hy9ppd17RiO6OroydgVSuoslIL
+	HCTW7IxHg3BPXGketRbN0qJWclLnVk93TUIdYwQ6jXHG7mO4sVcY0JdygqwxdkWJ4JE06fXjgkOl9
+	WxqC5JYMyrKBxaQ+rU0QTMeKBnEm4ETspsEUJ3wUAyL0DIKnoyPnsRTQcmXWFevR8fl39Y9NZ6NoW
+	rGwpJ6ip+i1eGf0We1M0ehe3H7hdbuDruWYnQ8mslOnG+m5s9sShlDcxUiye0fGkSYqE6KyE5tG16
+	hiOMrMj45jDMi1e3GVIQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pLnEA-000Lys-Dz; Sat, 28 Jan 2023 15:34:50 +0000
+	id 1pLnbJ-000Nb6-SL; Sat, 28 Jan 2023 15:58:45 +0000
 Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pLnDz-000Lwf-F6; Sat, 28 Jan 2023 15:34:40 +0000
+	id 1pLnb8-000NZ7-K3; Sat, 28 Jan 2023 15:58:36 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 004CC60C1E;
-	Sat, 28 Jan 2023 15:34:39 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id CD3AFC433D2;
-	Sat, 28 Jan 2023 15:34:32 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 728A460B4D;
+	Sat, 28 Jan 2023 15:58:29 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3DC8FC433D2;
+	Sat, 28 Jan 2023 15:58:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1674920078;
-	bh=9p78P6cXR1b4UU7LmDHxucqXQwLRZGC/wmG/lLypzGo=;
+	s=k20201202; t=1674921508;
+	bh=7R+Y0pFZ9qQaQE2Of8Zyt01fF+w51NH/3ezIsAynqvk=;
 	h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
-	b=Sy0kkDvx7E1gVGfY9fcdg6jg5BXRuQjvDhZ65C8k3WA9gemy6YC6wX3Gx8hJ6J27H
-	 8x4NyS2i9dc7yo7IjeKLfkJbdrwJvnmDYjTa4VHC3ZyoFewAW5vk21MiodWH4XZwsX
-	 hne0KUqKUSiitaWQeznzMa5EsGNKQWvl+kY3QxWw+anNiuYxGsLpiX903y2CKtuGcp
-	 1fpsi44mIXd51SeVfoW/J74LAmTLYdVHs6Gm3e4i8FSUlAL+oM3JvIYVMzXpMO2fFv
-	 E1feNPP7OEIcUHmrswPBcbUTonWBEPjeef08rq4yiie66P9WWGcsokUtwiNIK3F1g9
-	 /JHmxQiRyr/aQ==
-Date: Sat, 28 Jan 2023 15:48:27 +0000
+	b=d4enHA5MJ371GrPucjk++EVvYqWfJUb0Rmdj7ygsHD6FdJSuKLpmLKZObRmyoduRb
+	 F7/rgXbXthLnxMVJdAyroI/3tQf7IL+wc3TYMiY9DLLWZ9lgFPGplKFOxflb3tFuNt
+	 UtYcUlsjz0il95gmiB3mk4Bvk/TbRiYPJ9FjEivIPmpDedLPGd1WcinaLHdellNT7Y
+	 g/L7fp8K98T+nO5sT29tqenfN8c3UVjvN0Ncbjl4SfTpSGVwHHakRtS6Y7/70MN4yc
+	 AsRCXMaJ9yLeFgwHKcot/dcC5xFelUPaBwh2MZkhTt1C1Gr3icbGZaQVBWurLjEUVb
+	 0mCC0mntbHQgQ==
+Date: Sat, 28 Jan 2023 16:12:17 +0000
 From: Jonathan Cameron <jic23@kernel.org>
 To: Gatien Chevallier <gatien.chevallier@foss.st.com>
 Cc: <Oleksii_Moisieiev@epam.com>, <gregkh@linuxfoundation.org>,
@@ -60,16 +60,17 @@ Cc: <Oleksii_Moisieiev@epam.com>, <gregkh@linuxfoundation.org>,
  <netdev@vger.kernel.org>, <linux-phy@lists.infradead.org>,
  <linux-serial@vger.kernel.org>, <linux-spi@vger.kernel.org>,
  <linux-usb@vger.kernel.org>, Loic PALLARDY <loic.pallardy@st.com>
-Subject: Re: [PATCH v3 3/6] dt-bindings: bus: add STM32 System Bus
-Message-ID: <20230128154827.4f23534e@jic23-huawei>
-In-Reply-To: <20230127164040.1047583-4-gatien.chevallier@foss.st.com>
+Subject: Re: [PATCH v3 4/6] bus: stm32_sys_bus: add support for STM32MP15
+ and STM32MP13 system bus
+Message-ID: <20230128161217.0e79436e@jic23-huawei>
+In-Reply-To: <20230127164040.1047583-5-gatien.chevallier@foss.st.com>
 References: <20230127164040.1047583-1-gatien.chevallier@foss.st.com>
-	<20230127164040.1047583-4-gatien.chevallier@foss.st.com>
+	<20230127164040.1047583-5-gatien.chevallier@foss.st.com>
 X-Mailer: Claws Mail 4.1.1 (GTK 3.24.36; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230128_073439_577123_7049C894 
-X-CRM114-Status: GOOD (  10.53  )
+X-CRM114-CacheID: sfid-20230128_075834_747103_689256FF 
+X-CRM114-Status: GOOD (  32.29  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,49 +87,202 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, 27 Jan 2023 17:40:37 +0100
+On Fri, 27 Jan 2023 17:40:38 +0100
 Gatien Chevallier <gatien.chevallier@foss.st.com> wrote:
 
-> Document STM32 System Bus. This bus is intended to control firewall
-> access for the peripherals connected to it.
+> This driver is checking the access rights of the different
+> peripherals connected to the system bus. If access is denied,
+> the associated device tree node is skipped so the platform bus
+> does not probe it.
 > 
 > Signed-off-by: Gatien Chevallier <gatien.chevallier@foss.st.com>
 > Signed-off-by: Loic PALLARDY <loic.pallardy@st.com>
-Trivial comment on formatting.
+
+Hi Gatien,
+
+A few comments inline,
+
+Thanks,
+
+Jonathan
+
+> diff --git a/drivers/bus/stm32_sys_bus.c b/drivers/bus/stm32_sys_bus.c
+> new file mode 100644
+> index 000000000000..c12926466bae
+> --- /dev/null
+> +++ b/drivers/bus/stm32_sys_bus.c
+> @@ -0,0 +1,168 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +/*
+> + * Copyright (C) 2023, STMicroelectronics - All Rights Reserved
+> + */
+> +
+> +#include <linux/bitfield.h>
+> +#include <linux/bits.h>
+> +#include <linux/device.h>
+> +#include <linux/err.h>
+> +#include <linux/io.h>
+> +#include <linux/init.h>
+> +#include <linux/kernel.h>
+> +#include <linux/module.h>
+> +#include <linux/of.h>
+> +#include <linux/of_platform.h>
+> +#include <linux/platform_device.h>
+> +
+> +/* ETZPC peripheral as firewall bus */
+> +/* ETZPC registers */
+> +#define ETZPC_DECPROT			0x10
+> +
+> +/* ETZPC miscellaneous */
+> +#define ETZPC_PROT_MASK			GENMASK(1, 0)
+> +#define ETZPC_PROT_A7NS			0x3
+> +#define ETZPC_DECPROT_SHIFT		1
+
+This define makes the code harder to read.  What we care about is
+the number of bits in the register divided by number of entries.
+(which is 2) hence the shift by 1. See below for more on this.
+
 
 > +
-> +examples:
-> +  - |
-> +    // In this example, the rng1 device refers to etzpc as its domain controller.
-> +    // Same goes for fmc.
-> +    // Access rights are verified before creating devices.
-> +
-> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
-> +    #include <dt-bindings/clock/stm32mp1-clks.h>
-> +    #include <dt-bindings/reset/stm32mp1-resets.h>
-> +
-> +    etzpc: bus@5c007000 {
-> +        compatible = "st,stm32mp15-sys-bus";
-> +        reg = <0x5c007000 0x400>;
-> +        #address-cells = <1>;
-> +        #size-cells = <1>;
-> +        ranges;
-> +        feature-domain-controller;
-> +        #feature-domain-cells = <1>;
-> +
-> +        rng1: rng@54003000 {
+> +#define IDS_PER_DECPROT_REGS		16
 
-Odd mixture of 4 spacing and 2 spacing in this example.
-I'd suggest one or the other (slight preference for 4 space indents).
+> +#define STM32MP15_ETZPC_ENTRIES		96
+> +#define STM32MP13_ETZPC_ENTRIES		64
+
+These defines just make the code harder to check.
+They aren't magic numbers, but rather just telling us how many
+entries there are, so I would just put them in the structures directly.
+Their use make it clear what they are without needing to give them a name.
 
 
-> +          compatible = "st,stm32-rng";
-> +          reg = <0x54003000 0x400>;
-> +          clocks = <&rcc RNG1_K>;
-> +          resets = <&rcc RNG1_R>;
-> +          feature-domains = <&etzpc 7>;
-> +          status = "disabled";
-> +        };
+> +struct stm32_sys_bus_match_data {
+
+Comment on naming of this below.
+
+> +	unsigned int max_entries;
+> +};
+> +
+
++static int stm32_etzpc_get_access(struct sys_bus_data *pdata, struct device_node *np)
++{
++	int err;
++	u32 offset, reg_offset, sec_val, id;
++
++	err = stm32_sys_bus_get_periph_id(pdata, np, &id);
++	if (err)
++		return err;
++
++	/* Check access configuration, 16 peripherals per register */
++	reg_offset = ETZPC_DECPROT + 0x4 * (id / IDS_PER_DECPROT_REGS);
++	offset = (id % IDS_PER_DECPROT_REGS) << ETZPC_DECPROT_SHIFT;
+
+Use of defines in here is actively unhelpful when it comes to review. I would suggest letting
+the maths be self explanatory (even if it's more code).
+
+	offset = (id % IDS_PER_DECPROT_REGS) * (sizeof(u32) * BITS_PER_BYTE / IDS_PER_DECPROT_REGS);
+
+Or if you prefer have a define of
+
+#define DECPROT_BITS_PER_ID (sizeof(u32) * BITS_PER_BYTE / IDS_PER_DECPROT_REGS)
+
+and
+	offset = (id % IDS_PER_DECPROT_REGS) * DECPROT_BITS_PER_ID;
+
++
++	/* Verify peripheral is non-secure and attributed to cortex A7 */
++	sec_val = (readl(pdata->sys_bus_base + reg_offset) >> offset) & ETZPC_PROT_MASK;
++	if (sec_val != ETZPC_PROT_A7NS) {
++		dev_dbg(pdata->dev, "Invalid bus configuration: reg_offset %#x, value %d\n",
++			reg_offset, sec_val);
++		return -EACCES;
++	}
++
++	return 0;
++}
++
+...
+
+> +static int stm32_sys_bus_probe(struct platform_device *pdev)
+> +{
+> +	struct sys_bus_data *pdata;
+> +	void __iomem *mmio;
+> +	struct device_node *np = pdev->dev.of_node;
+
+I'd be consistent. You use dev_of_node() accessor elsewhere, so should
+use it here as well.
+
+> +
+> +	pdata = devm_kzalloc(&pdev->dev, sizeof(*pdata), GFP_KERNEL);
+> +	if (!pdata)
+> +		return -ENOMEM;
+> +
+> +	mmio = devm_platform_ioremap_resource(pdev, 0);
+> +	if (IS_ERR(mmio))
+> +		return PTR_ERR(mmio);
+> +
+> +	pdata->sys_bus_base = mmio;
+> +	pdata->pconf = of_device_get_match_data(&pdev->dev);
+> +	pdata->dev = &pdev->dev;
+> +
+> +	platform_set_drvdata(pdev, pdata);
+
+Does this get used? I can't immediately spot where but maybe I just
+missed it.
+
+> +
+> +	stm32_sys_bus_populate(pdata);
+> +
+> +	/* Populate all available nodes */
+> +	return of_platform_populate(np, NULL, NULL, &pdev->dev);
+
+As np only used here, I'd not bother with the local variable in this function.
+
+> +}
+> +
+> +static const struct stm32_sys_bus_match_data stm32mp15_sys_bus_data = {
+
+Naming a structure after where it comes from is a little unusual and
+confusion when a given call gets it from somewhere else.
+
+I'd expect it to be named after what sort of thing it contains.
+stm32_sys_bus_info or something like that.
+
+> +	.max_entries = STM32MP15_ETZPC_ENTRIES,
+> +};
+> +
+> +static const struct stm32_sys_bus_match_data stm32mp13_sys_bus_data = {
+> +	.max_entries = STM32MP13_ETZPC_ENTRIES,
+> +};
+> +
+> +static const struct of_device_id stm32_sys_bus_of_match[] = {
+> +	{ .compatible = "st,stm32mp15-sys-bus", .data = &stm32mp15_sys_bus_data },
+> +	{ .compatible = "st,stm32mp13-sys-bus", .data = &stm32mp13_sys_bus_data },
+
+Alphabetical order usually preferred when there isn't a strong reason for
+another choice.
+
+> +	{}
+> +};
+> +MODULE_DEVICE_TABLE(of, stm32_sys_bus_of_match);
+> +
+> +static struct platform_driver stm32_sys_bus_driver = {
+> +	.probe  = stm32_sys_bus_probe,
+> +	.driver = {
+> +		.name = "stm32-sys-bus",
+> +		.of_match_table = stm32_sys_bus_of_match,
+> +	},
+> +};
+> +
+> +static int __init stm32_sys_bus_init(void)
+> +{
+> +	return platform_driver_register(&stm32_sys_bus_driver);
+> +}
+> +arch_initcall(stm32_sys_bus_init);
+> +
+
+Unwanted trailing blank line.
+
+
 
 -- 
 linux-phy mailing list
