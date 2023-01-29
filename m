@@ -4,83 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1F9FAC27C76
-	for <linux-phy@archiver.kernel.org>; Sat, 28 Jan 2023 18:58:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 129E1C61D97
+	for <linux-phy@archiver.kernel.org>; Sun, 29 Jan 2023 10:40:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=k1Bzy2wNPDf+Wm6oR0WweB4s4O7LQkWsRbG9YGpoqGQ=; b=ygv46SlH733jyT
-	nuxyvj4yzju3JVdgswGUvhOZ4x+zA2/N5EHb/8CjrKq77+57EyTUYp+5w6d2shjpDjpPM0K1scxBr
-	xW0Usyiy3pP/nBB/jPTxR+8gjR4mIlno2BVyUsXseJuvitHSLyS3dcnkGjYqVAF2Vv8aHhLWm6ePU
-	qrRsBOHmzs1UunGZ5pIbmKVnPXKPXT5zjVI2s1lhhPLNDF8HV8keKwr7SOcQxAC9aZIn7PbTHbP1N
-	XYbQa7CxvBAIS7j1caazhz5kbgk8uUDWAvMqGqaCE+0Bz63g6I2mvF5maUhV2JTDUcCelg6tHGrJB
-	9LoiapuURg1uJLtmMUhA==;
+	List-Owner; bh=jXqNnzOXkm5fxJq1znLuPiDUcBftXcgB096rfnW+Jyk=; b=R254VbYS8B2ckj
+	hktyy6D742iXCJ8H8YWhzkI1//5QCxBHBPV2x9BaQLO7tWmAT6u+ERyWgq6mvWqK/20RgatAqLX00
+	VVejo+b9LLVLPxoxCsNLgAPIwU2mA32OYH3x2craPz7TpyUjsRq7AtZxd2sDgRXlf4bqaK+XEnv+q
+	tb+afCv+wg9Snyx2ly8hu/uEcQl9bjXfAcxsO+I5IaKF2toGhMPBwe39XMB+GzNC33gT4dcAdhLXn
+	1OrFmnPVR/XmAZcasUDYm6ttygptGbXZfswSHQIL5f2BPuklGhgFxV4P4Wk0mWZ/mJgY3pFqa0wqW
+	uWqtQ0AAYbHVbNKnYANg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pLqOu-000YLJ-H0; Sat, 28 Jan 2023 18:58:08 +0000
-Received: from mga11.intel.com ([192.55.52.93])
+	id 1pM57A-001JQR-Gd; Sun, 29 Jan 2023 10:40:48 +0000
+Received: from mail-wr1-x42d.google.com ([2a00:1450:4864:20::42d])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pLqOi-000YHr-LT; Sat, 28 Jan 2023 18:57:58 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1674932276; x=1706468276;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=C/Fj/U8MY72zX0xzMfuMhE7ROEG03cf3gcA25/GnMq4=;
-  b=ldLgtIu5X1m/oWzLfJVcfmijWVWsr8Im2uIA3x9AsxxFQfI7D4AvB4KS
-   B4LJKCJ3tZKHH8qNGUmOiIu+UEiBlIsGQP3DaNESGH5kLZdbb2BSTGI3y
-   CKLragBRlRpQzOCwGcMKn6auP7Z90Bv7WdrYSRCl29pv0p/Y6R1PxrCeS
-   DzFZadgIYFK9PLpNH9LUVwh9jp0DY+84xk95/sa/Yh9KJK97+6KX6plLd
-   x2+3DHCv7xtvQ3+v6Htwn2ZZuOqRZ7a4C7Wl7jV34vufpJVa5UcBkIC7o
-   Y/YZUYtVveqa8PtmK9bbOhSsWoFQp5QdO2mKxsWQbMtb9IZ9MYCYBLaU0
-   A==;
-X-IronPort-AV: E=McAfee;i="6500,9779,10604"; a="325015354"
-X-IronPort-AV: E=Sophos;i="5.97,254,1669104000"; 
-   d="scan'208";a="325015354"
-Received: from fmsmga002.fm.intel.com ([10.253.24.26])
-  by fmsmga102.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 28 Jan 2023 10:57:53 -0800
-X-ExtLoop1: 1
-X-IronPort-AV: E=McAfee;i="6500,9779,10604"; a="771960911"
-X-IronPort-AV: E=Sophos;i="5.97,254,1669104000"; 
-   d="scan'208";a="771960911"
-Received: from lkp-server01.sh.intel.com (HELO ffa7f14d1d0f) ([10.239.97.150])
-  by fmsmga002.fm.intel.com with ESMTP; 28 Jan 2023 10:57:47 -0800
-Received: from kbuild by ffa7f14d1d0f with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1pLqOY-000109-2z;
-	Sat, 28 Jan 2023 18:57:46 +0000
-Date: Sun, 29 Jan 2023 02:57:39 +0800
-From: kernel test robot <lkp@intel.com>
-To: Guillaume Ranquet <granquet@baylibre.com>,
-	Vinod Koul <vkoul@kernel.org>, Jitao shi <jitao.shi@mediatek.com>,
-	Kishon Vijay Abraham I <kishon@ti.com>,
-	Daniel Vetter <daniel@ffwll.ch>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	Chunfeng Yun <chunfeng.yun@mediatek.com>,
-	Chun-Kuang Hu <chunkuang.hu@kernel.org>,
-	Krzysztof Kozlowski <krzk@kernel.org>,
-	David Airlie <airlied@gmail.com>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Rob Herring <robh+dt@kernel.org>, CK Hu <ck.hu@mediatek.com>
-Cc: oe-kbuild-all@lists.linux.dev, linux-mediatek@lists.infradead.org,
-	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
-	mac.shen@mediatek.com, linux-phy@lists.infradead.org,
-	Guillaume Ranquet <granquet@baylibre.com>,
+	id 1pM578-001JPp-5y
+	for linux-phy@lists.infradead.org; Sun, 29 Jan 2023 10:40:47 +0000
+Received: by mail-wr1-x42d.google.com with SMTP id m14so8170616wrg.13
+        for <linux-phy@lists.infradead.org>; Sun, 29 Jan 2023 02:40:45 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=AKh+XybqNbJwTS+RVODYj3gQs42RNsq1kxtqGoR4Kjk=;
+        b=TDnhKPPsYH68DdPdxnsqSr8n2hNmvFXcfEVfz3DRssMOaF1ISTuReRrEw0vxsvr2JS
+         QXA48RrhxZuBSBI1o3SchuI6LsmRZVnke1HqdIn0Z7En2J+FBoPKeF4JcZquIZGUzLEC
+         lIlMIBv+hVLzyDeEJdUGeuzzxma3mPSJuzWm+PJw9Db2V7nYarrCQeIzyGVIqt/PzVrv
+         cenwFGpTCk9C9+uuZq/emINhDuabB9r4zNvOzSYQUzLxMbNAInKLVhaKVSlDirmYE1KQ
+         ENtjpbASmu2zAK//iJ9i2Xjgfv5JtiFMAilSyWVqySPuTz1O+/U92/s3ceH4yKziOaOg
+         muiQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=AKh+XybqNbJwTS+RVODYj3gQs42RNsq1kxtqGoR4Kjk=;
+        b=t+GeFlvvWqSThKfhPW1bkcoQ5GkJ7xjkW/MeLbDCbLEpXkZgWjG+t5p55jydUR1DTQ
+         Ix7rTZZrWQqDoPmPEkGui7qzIxL1QOvW91ZAQOGJNlv/GUzwOPAeW7Cvv+64aG7nmXqF
+         phSsy3uPVeP6wmWEOvEsu23wa2JB9kroub9sLnn+GaCBvsc1k8sir+tCe0tCRc3IW47g
+         GXGwSQgs6N0lzbLAZ2vGpAzV+Rj0iPZa9FkDpBMiTQe+0hZEXz6UuOzAV+C58+2iuS7c
+         PE3Xq06753Q4qZVKwktDNzI+u0XQxfy/eo2PfrzxRGd1DKwGRpR/lBtFflyM/k+3P7C6
+         Dwmg==
+X-Gm-Message-State: AO0yUKXrsbYQmx1LzKeTptxaHYzIlljFoFJfNmyOMqpviwPR8snxSPq1
+	GcCJNdbDv89+Kfp5c3K2d15XQQ==
+X-Google-Smtp-Source: AK7set8aaEjSgjREY25nSXIG/U6o5JXvwCrhED8l4ohr7GN6TUNZeYgiRV5y6JEEVt4naNnwzQSrZg==
+X-Received: by 2002:adf:eb04:0:b0:2bf:bc75:1730 with SMTP id s4-20020adfeb04000000b002bfbc751730mr12200577wrn.70.1674988844225;
+        Sun, 29 Jan 2023 02:40:44 -0800 (PST)
+Received: from krzk-bin.. ([178.197.216.144])
+        by smtp.gmail.com with ESMTPSA id m2-20020a056000180200b002bfb5618ee7sm8803443wrh.91.2023.01.29.02.40.42
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sun, 29 Jan 2023 02:40:43 -0800 (PST)
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+To: Vinod Koul <vkoul@kernel.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	linux-kernel@vger.kernel.org,
+	Marek Szyprowski <m.szyprowski@samsung.com>,
+	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
+	Sylwester Nawrocki <s.nawrocki@samsung.com>,
+	linux-phy@lists.infradead.org,
 	devicetree@vger.kernel.org,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	stuart.lee@mediatek.com
-Subject: Re: [PATCH v5 3/3] phy: mediatek: add support for phy-mtk-hdmi-mt8195
-Message-ID: <202301290245.KWRXz5OS-lkp@intel.com>
-References: <20220919-v5-3-cfb0e5ad29b2@baylibre.com>
+	linux-arm-kernel@lists.infradead.org,
+	linux-samsung-soc@vger.kernel.org,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Alim Akhtar <alim.akhtar@samsung.com>,
+	Kishon Vijay Abraham I <kishon@kernel.org>
+Cc: replicant@osuosl.org,
+	~postmarketos/upstreaming@lists.sr.ht,
+	=?UTF-8?q?Martin=20J=C3=BCcker?= <martin.juecker@gmail.com>,
+	Chanwoo Choi <cw00.choi@samsung.com>,
+	phone-devel@vger.kernel.org,
+	Henrik Grimler <henrik@grimler.se>
+Subject: Re: (subset) [PATCH 1/8] dt-bindings: soc: samsung: exynos-pmu: allow phys as child
+Date: Sun, 29 Jan 2023 11:40:39 +0100
+Message-Id: <167498882911.7239.17446486264996020803.b4-ty@linaro.org>
+X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20230127194057.186458-2-krzysztof.kozlowski@linaro.org>
+References: <20230127194057.186458-1-krzysztof.kozlowski@linaro.org> <20230127194057.186458-2-krzysztof.kozlowski@linaro.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20220919-v5-3-cfb0e5ad29b2@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230128_105756_787645_27C34078 
-X-CRM114-Status: GOOD (  12.90  )
+X-CRM114-CacheID: sfid-20230129_024046_259212_9A4AF207 
+X-CRM114-Status: UNSURE (   6.32  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,41 +107,21 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Guillaume,
+On Fri, 27 Jan 2023 20:40:50 +0100, Krzysztof Kozlowski wrote:
+> The MIPI and DisplayPort phys are actually part of the Power Management
+> Unit system controller, thus allow them as its children, instead of
+> specifying as separate device nodes with syscon phandle.
+> 
+> 
 
-Thank you for the patch! Yet something to improve:
+Applied, thanks!
 
-[auto build test ERROR on e2f86c02fdc96ca29ced53221a3cbf50aa6f8b49]
+[1/8] dt-bindings: soc: samsung: exynos-pmu: allow phys as child
+      https://git.kernel.org/krzk/linux/c/fe6a952b567f6a771d087d2e969914f31574d6ab
 
-url:    https://github.com/intel-lab-lkp/linux/commits/Guillaume-Ranquet/dt-bindings-phy-mediatek-hdmi-phy-Add-mt8195-compatible/20230128-160522
-base:   e2f86c02fdc96ca29ced53221a3cbf50aa6f8b49
-patch link:    https://lore.kernel.org/r/20220919-v5-3-cfb0e5ad29b2%40baylibre.com
-patch subject: [PATCH v5 3/3] phy: mediatek: add support for phy-mtk-hdmi-mt8195
-config: arm-buildonly-randconfig-r005-20230129 (https://download.01.org/0day-ci/archive/20230129/202301290245.KWRXz5OS-lkp@intel.com/config)
-compiler: arm-linux-gnueabi-gcc (GCC) 12.1.0
-reproduce (this is a W=1 build):
-        wget https://raw.githubusercontent.com/intel/lkp-tests/master/sbin/make.cross -O ~/bin/make.cross
-        chmod +x ~/bin/make.cross
-        # https://github.com/intel-lab-lkp/linux/commit/2cc45518a7fd551117426c770070d93acb31166e
-        git remote add linux-review https://github.com/intel-lab-lkp/linux
-        git fetch --no-tags linux-review Guillaume-Ranquet/dt-bindings-phy-mediatek-hdmi-phy-Add-mt8195-compatible/20230128-160522
-        git checkout 2cc45518a7fd551117426c770070d93acb31166e
-        # save the config file
-        mkdir build_dir && cp config build_dir/.config
-        COMPILER_INSTALL_PATH=$HOME/0day COMPILER=gcc-12.1.0 make.cross W=1 O=build_dir ARCH=arm olddefconfig
-        COMPILER_INSTALL_PATH=$HOME/0day COMPILER=gcc-12.1.0 make.cross W=1 O=build_dir ARCH=arm SHELL=/bin/bash
-
-If you fix the issue, kindly add following tag where applicable
-| Reported-by: kernel test robot <lkp@intel.com>
-
-All errors (new ones prefixed by >>, old ones prefixed by <<):
-
->> ERROR: modpost: "__aeabi_uldivmod" [drivers/phy/mediatek/phy-mtk-hdmi-drv.ko] undefined!
->> ERROR: modpost: "__aeabi_ldivmod" [drivers/phy/mediatek/phy-mtk-hdmi-drv.ko] undefined!
-
+Best regards,
 -- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests
+Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
 -- 
 linux-phy mailing list
