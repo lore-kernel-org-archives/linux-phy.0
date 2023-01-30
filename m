@@ -4,41 +4,41 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EEA1EC54EED
-	for <linux-phy@archiver.kernel.org>; Mon, 30 Jan 2023 14:04:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6A3DEC54EAA
+	for <linux-phy@archiver.kernel.org>; Mon, 30 Jan 2023 14:10:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gOYeTeI2PkbvlGv7qRLy9TM/hk04OphGT0ZustFNsuQ=; b=RbFqc6oU/q4LSE
-	ZEavlgy4+QAt7r4RB//5sjQjFS1arvw2T6Fm8koseayWjQ0dpKT/YQQdMRY88qFRoFFYWhXt5+Cjt
-	45QDIlcGkzYZivOZb0NHfrwRfK6j3ttmNadY0JN6q4Nj/6uB+CzMjszi83iOQnWoEifwgyDxXMTwR
-	CRpDdycNCQlhrVyzOkwrqHvCMb5zda8aAu00GfXVYsPsWjx7QEMT0dxWjkk0X7A3sD1okwG8X4795
-	bjNIUJGLE33p9BbjLmU0x5cGKJ22NEA+ZlgGrIuhLTgpZvdbw2YsUNWolen2oltPZa8zbNPsbCMHq
-	HJQiSG5h96xLIcjDhGpg==;
+	List-Owner; bh=gOYeTeI2PkbvlGv7qRLy9TM/hk04OphGT0ZustFNsuQ=; b=u/DLfk1Wpcg3M0
+	6MpaSAh8U5FH7V+xpdC8Nvg7JIMAs/khktqgvoM/GmGG3z1NLHnBUQyiZXQiFCMqaHihcD9X6wePV
+	U9VPpFzflJs47aBBCLWbFAZCEacPBrUujE4pnfUSQLwwoZU41qkib+7Xp3bXQ+rWJyMoLjk0TcOJn
+	ohgvwZSyuuXJV2lM6Rkm1hTSxsyslVRDxPfJ46uCfrAbMG+G4UjmBXsrhThUU6BYt44jhlPUWEXR2
+	XZ/D7FKk5dwjrSCUfmNEydrEzpnHc8eVpa9VK9rdgfLbOA1rrLn8G7bHAvWQAvRwhaHMms//5tuqS
+	MwkzJJW6CZGxtR1xAEtw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pMUlf-003npY-TL; Mon, 30 Jan 2023 14:04:19 +0000
-Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
+	id 1pMUs6-003pYo-By; Mon, 30 Jan 2023 14:10:58 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pMUl0-003neF-4B
-	for linux-phy@lists.infradead.org; Mon, 30 Jan 2023 14:03:40 +0000
+	id 1pMUs3-003pXc-EM
+	for linux-phy@lists.infradead.org; Mon, 30 Jan 2023 14:10:56 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id D0688B81151;
-	Mon, 30 Jan 2023 13:56:13 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1F6EAC433D2;
-	Mon, 30 Jan 2023 13:56:12 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id A0E5061089;
+	Mon, 30 Jan 2023 14:10:54 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A50A3C433D2;
+	Mon, 30 Jan 2023 14:10:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=linuxfoundation.org;
-	s=korg; t=1675086973;
+	s=korg; t=1675087854;
 	bh=UeGqHrvCWKj5EAXMF8Sn6n5DCLBy4MFpPvC5d4V2EpE=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=HGU6jLjkgx5I3tPU8yki/ASbFDFWTpdSD0iqzkIR30xqBAy/ruF8pCpyZoa8Mo3NA
-	 +3iqqOYN+/296FBqZztQPbloVDBQ9KWxtscCCOkb1DUeVOhrEtLW9/MK3YFu50IsDU
-	 DBM/oEKRhZfvb6VhYJtqO8iyGe7V7aLoyR9aChM4=
+	b=PLXk1z/NpT/pE+lVcq96GnD/V0O1CiXvcDGAUSUyswt4w0G+OwROAQ9ErEBUx+u+d
+	 TKm0FUjFomP3JWi2lc/i+2eo1Xw9IYDTRIaVx2pLxLfbnA0VUuMezMUyL7U9p7QuCe
+	 Xv2Yd97g5td0GvyUC3zbYOuE1NALODOvXxQoQSWA=
 From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 To: stable@vger.kernel.org
 Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
@@ -49,16 +49,16 @@ Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
 	linux-phy@lists.infradead.org,
 	Arnd Bergmann <arnd@arndb.de>,
 	Sasha Levin <sashal@kernel.org>
-Subject: [PATCH 6.1 057/313] phy: ti: fix Kconfig warning and operator precedence
-Date: Mon, 30 Jan 2023 14:48:12 +0100
-Message-Id: <20230130134339.344522391@linuxfoundation.org>
+Subject: [PATCH 5.15 031/204] phy: ti: fix Kconfig warning and operator precedence
+Date: Mon, 30 Jan 2023 14:49:56 +0100
+Message-Id: <20230130134317.684944945@linuxfoundation.org>
 X-Mailer: git-send-email 2.39.1
-In-Reply-To: <20230130134336.532886729@linuxfoundation.org>
-References: <20230130134336.532886729@linuxfoundation.org>
+In-Reply-To: <20230130134316.327556078@linuxfoundation.org>
+References: <20230130134316.327556078@linuxfoundation.org>
 User-Agent: quilt/0.67
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230130_060338_309724_42B1A303 
+X-CRM114-CacheID: sfid-20230130_061055_524782_48A5F27D 
 X-CRM114-Status: GOOD (  13.76  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
