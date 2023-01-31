@@ -4,62 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 395DEC636CC
-	for <linux-phy@archiver.kernel.org>; Tue, 31 Jan 2023 11:00:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E2098C636CC
+	for <linux-phy@archiver.kernel.org>; Tue, 31 Jan 2023 17:32:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iuWbwtQ+8a7mdpgi3tEeffFiUNgo1jKOQ394VxPRyso=; b=o6rrMMfU4+iAzl
-	AWpAj+3awksjq0R8yeo5PtX+O0Z+Iiffko83uG5FRXy+7a8Vb1cC9VpKubqyP0Azn5AU1AQByAug9
-	inEJzNBMWUnRBAml1Stffpe0Ce8+EvLCepLkdPSw2tAXpA9bZtzggQG0LliWmcXbGnjpSpUEEKk5D
-	ZbjOv8QBx9w38I4Rk9pmh0F8dDYG4hx/ydvhmm07KyRyEtcFCJP5/kfwwXc5g88iwonHzg1zvrwDi
-	sB8UbFcfMSmHs2LNwuSaDki3dNe/o7+LAj430+MW9RHL917I2dqQPufX4gLj+/OBt32kr7hhnCPGu
-	hMG2fanIQbBSV+tJeC1Q==;
+	List-Owner; bh=6+LQN/kQIWhZSakT6UuqC0s3nXj9kzHwkSd6ODN1rf4=; b=CPl4JChNSSbhvC
+	y21VJxPG2yOAPdEGFZh2hZzP81PJgXy2TTsBTdfwFR1tz14Ugzvuh6oP8cVQ64b2hZN9HPfpg6HFF
+	nIeiyI6czNmop+NqDwfGFm349K144uUcvZdTG7EpIgLR606wlTG5ZAYFfTwLfF0c8zGvI9SWueBUV
+	u1uJvODmTs1YnoEC+5m1SQaZa5gck0ruotaIiPFrOK99vCP2aY3FrPeazAVYj1LarMJGBWfDI4j9q
+	yWNvUGQA0iE1PGWNNXdXsHIlTYL73FokwbligV9HzvbyrGRyXj1JH+vylmFVVB69cI+iixGNTdOwO
+	Ri/EygHdpqHV5HVXbHWw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pMoN9-007cXV-Ii; Tue, 31 Jan 2023 11:00:19 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1pMuUY-008rN2-7D; Tue, 31 Jan 2023 17:32:22 +0000
+Received: from mail-wr1-x436.google.com ([2a00:1450:4864:20::436])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pMoMT-007cFC-2v; Tue, 31 Jan 2023 10:59:38 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id F2853614B3;
-	Tue, 31 Jan 2023 10:59:35 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 39B50C4339B;
-	Tue, 31 Jan 2023 10:59:34 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1675162775;
-	bh=KizWfdLaJoHcpqoGQCUVz2SlSQqe8gsl8o7bCmMfKTI=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=tc4D1sGpb3hOZBqC9mmXKOGlkigoH/LAkb317owIQWQmGQIW0CouS7STd22cFllnn
-	 9sxW25UMMQDJLKSGqpeJpyVYA8HZRHmuYJZtksQGCMMW8BBg2jl7vztd3X4HzM64UP
-	 OLunRf+rQxRTFZbFFrBrybRFihauckL3jIBhzaLjoG0u7rxt6FRu7oK3wdUbphvWPf
-	 a08zUV+9tfgQmQq+8xlnekSElE4KJW4/83RKS0ug3br4+5FwXfR3TE7RkME5we2sQk
-	 pCRQFBYdoggHCPwEOQgIhTNdv2Bd6l5qCcOu6tqHWlTT6igk8Yvg1SKu2w1xuGy201
-	 mQR9LaHcI5cVg==
-Date: Tue, 31 Jan 2023 16:29:31 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Johan Jonker <jbx6244@gmail.com>
-Cc: linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
-	robh+dt@kernel.org, linux-rockchip@lists.infradead.org,
-	linux-arm-kernel@lists.infradead.org, heiko@sntech.de,
-	linux-phy@lists.infradead.org, krzysztof.kozlowski+dt@linaro.org,
-	Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH v1] dt-bindings: phy: rename phy-rockchip-inno-usb2.yaml
-Message-ID: <Y9j0k4hTCsB6vo6v@matsya>
-References: <99794484-d67e-ee1f-4e76-200de20a879c@gmail.com>
- <167320365145.195794.14991903357914132463.robh@kernel.org>
- <8c33967b-1b91-42d2-879b-fa73dd8ecbeb@gmail.com>
+	id 1pMuUO-008rL1-6A
+	for linux-phy@lists.infradead.org; Tue, 31 Jan 2023 17:32:13 +0000
+Received: by mail-wr1-x436.google.com with SMTP id q5so14982003wrv.0
+        for <linux-phy@lists.infradead.org>; Tue, 31 Jan 2023 09:32:09 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=9CuHKps70Th0JGwhWBmGqTShgEX6rGAigmrTuj9OLyU=;
+        b=q5rHNABBlkdhViPW0OuYkpf6eOtoWTpfUk7Ka4ALSx978K1Mhc99XVzE9YfJG3JaTT
+         Eeh6e6ZMxaXJn4cIU+KnxSQG5O4ek7y6gmv3BrjQCLPIqpo5g/fE6y81H9de/UsNE38v
+         YksWjO8LSaOb1GQjTdFg6tvdjvDml897KbL1fs+XwpL+gTZCdORr8RMQwbBSDY6XI5nv
+         hpWBhhedi4YdlUCg/i6cvkS+RVkBN6fmKVVtXcQrzhqyYLLeWz4MXhrORZX4NHVil9hc
+         BA+OjWESMp0WUR75LZkmNhsT2btJwUWI+Yyg7MjJhI8oZq0SfHS61CTaxRuiuGm628Dc
+         A/qg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=9CuHKps70Th0JGwhWBmGqTShgEX6rGAigmrTuj9OLyU=;
+        b=HKGfRorYiPqQOqpXoda6vvaq/Je1yDqMCJXRe1Ys14bliyhEpPyg4AVGsWsv0p/tTp
+         zJvHuKC8HN+vv7VARp1Zp2fqDQ+z/2xEmXSFl0Ljsty2AvGJdY9kB2rRoQ0Iek1TP2iY
+         JU+kT9NNZ1toSLDKvQLnBubfDsbCjOzI5PHD2lHbAnyi7eCusxcWQJbaQpofZoaKaxj1
+         TJAFx86AdEa6rJW0HRF/NE4Xam5d6FH4ajr8rYEU60mj/6LBD5jq+djvXPX0Klt3O6UE
+         IoIeBSrZuOdYbpPD6f27+BAQ4loIm7E6mpOffTNSXtYijv8Szkq686zLQkV7kPlOlT3m
+         6aJA==
+X-Gm-Message-State: AFqh2koh0bGgDVLq6Gq5Srx32MoIHWqqBAD6fulh0SUchypwlwHyLBvc
+	SPPz1Kkhu7hA0TmeSQoVhfXiBw==
+X-Google-Smtp-Source: AMrXdXv8k8Tg3vIs2xhUZQj7w1uQ9ulfgatRSOVAT/xBwk1bew0zK3kfBW/5yEUINCGGSH/H+7iinw==
+X-Received: by 2002:a5d:6a47:0:b0:2be:64bb:1d84 with SMTP id t7-20020a5d6a47000000b002be64bb1d84mr34046276wrw.24.1675186328393;
+        Tue, 31 Jan 2023 09:32:08 -0800 (PST)
+Received: from [192.168.1.109] ([178.197.216.144])
+        by smtp.gmail.com with ESMTPSA id c13-20020adffb0d000000b002bfd190fd60sm14563771wrr.108.2023.01.31.09.32.06
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 31 Jan 2023 09:32:07 -0800 (PST)
+Message-ID: <a3fdb1a7-0585-6282-0b84-27c82a35244b@linaro.org>
+Date: Tue, 31 Jan 2023 18:32:05 +0100
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <8c33967b-1b91-42d2-879b-fa73dd8ecbeb@gmail.com>
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.7.1
+Subject: Re: [PATCH 2/8] dt-bindings: phy: samsung,dp-video-phy: deprecate
+ syscon phandle
+Content-Language: en-US
+To: Vinod Koul <vkoul@kernel.org>
+Cc: Alim Akhtar <alim.akhtar@samsung.com>,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ devicetree@vger.kernel.org, linux-phy@lists.infradead.org,
+ replicant@osuosl.org, Sylwester Nawrocki <s.nawrocki@samsung.com>,
+ linux-arm-kernel@lists.infradead.org, phone-devel@vger.kernel.org,
+ linux-samsung-soc@vger.kernel.org, ~postmarketos/upstreaming@lists.sr.ht,
+ =?UTF-8?Q?Martin_J=c3=bccker?= <martin.juecker@gmail.com>,
+ Henrik Grimler <henrik@grimler.se>, Chanwoo Choi <cw00.choi@samsung.com>,
+ linux-kernel@vger.kernel.org, Marek Szyprowski <m.szyprowski@samsung.com>,
+ Rob Herring <robh+dt@kernel.org>
+References: <20230127194057.186458-1-krzysztof.kozlowski@linaro.org>
+ <20230127194057.186458-3-krzysztof.kozlowski@linaro.org>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <20230127194057.186458-3-krzysztof.kozlowski@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230131_025937_203621_65D2C3BC 
-X-CRM114-Status: GOOD (  14.30  )
+X-CRM114-CacheID: sfid-20230131_093212_280642_93AD5857 
+X-CRM114-Status: GOOD (  10.45  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,33 +103,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 31-01-23, 11:39, Johan Jonker wrote:
+On 27/01/2023 20:40, Krzysztof Kozlowski wrote:
+> The DisplayPort phy is actually part of the Power Management Unit system
+> controller, thus it should be its child, instead of sibling node with
+> syscon phandle.
 > 
-> 
-> On 1/8/23 19:48, Rob Herring wrote:
-> > 
-> > On Thu, 29 Dec 2022 12:39:17 +0100, Johan Jonker wrote:
-> >> Rename phy-rockchip-inno-usb2.yaml to a more common format of
-> >> rockchip,inno-usb2phy.yaml
-> >>
-> >> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
-> >> ---
-> >>
-> 
-> >> Apply after:
-> >>   dt-bindings: soc: rockchip: grf: add rockchip,rk3288-dp-phy.yaml
-> 
-> Hi Vinod, Heiko,
-> 
-> This patch has been acked from the device tree side.
-> If it suits you is there Ack from the phy side possible, so that Heiko can merge it to grf.yaml in the order that he likes.
+> Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+> ---
+>  .../devicetree/bindings/phy/samsung,dp-video-phy.yaml        | 5 ++---
+>  1 file changed, 2 insertions(+), 3 deletions(-)
 
-Yes, lgtm:
+Hi Vinod,
 
-Acked-By: Vinod Koul <vkoul@kernel.org>
+It turns out, my previous patch (1/8, which I took via Samsung SoC)
+actually depends on these here. Without these here it causes warning.
+That 1/8 patch is already in soc tree and will be for v6.3. Will you be
+taking these for v6.3? If not, could you Ack and I will take them.
 
--- 
-~Vinod
+Best regards,
+Krzysztof
+
 
 -- 
 linux-phy mailing list
