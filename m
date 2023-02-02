@@ -4,66 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 00EAAC61DA4
-	for <linux-phy@archiver.kernel.org>; Thu,  2 Feb 2023 13:12:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A6756C05027
+	for <linux-phy@archiver.kernel.org>; Thu,  2 Feb 2023 13:17:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Twz4kcReKR0TKSIl6zt6XwSrXZRNVB9PQ7zC1fz20ug=; b=tHs8kz+uqi3gzE
-	C0usgT0i72RLtl14vA0uL26FJdfsLoMb0OMQQOgUYZx8EI6Hh/Q5Dl8lMD8dirUzgxXofAuVUHBFP
-	g1ZurVzh2SLhplnVU5DQmVUzmkuxiISngmIhQA6/Ng9TnJmOo0RZlJsTdFbfuzbIyG9VqUuxeIEPl
-	UekzJ07tyUwT54USFyeScRKorErvefR63HdM4GKoX71uKg3E4a2w5wIXQtu9OJSfuXlspBIxJCUta
-	B3DvsLmiel27mI/hm+ZDx3p00ZjE/MrHn0YwKdK8QTebTKWRA01qolyL0ZYay0ZKYplFDo0TB+zha
-	VQotJqOSYEb8Wvdr5kpA==;
+	List-Owner; bh=SIpXgownf9yNu/3vFuemv40ExCXkHcVtjWrJ9J6TpGU=; b=0SlcumR5v+2dVU
+	XWI4rSDla/6GWwr17bPqXu8//ZSPwJ7vJW0TkLPOokmWZub5E2ZGrdeweDphXtA+9wj0IHAebtxG9
+	Nuf5lVHHnKPgBuz9O3qVm9XDC2Sa9chCYGZV+/tY1XL9405o03zZ9iBEfhYwrZkTeAoR+xdvBsxnU
+	7zqrZv4VJG7myJozzqIQqa2ZTD5qkHrdGr9xmoTe7gn94M7lJjFrDCh+cUwKj/pd3g80f0tN6kGnG
+	S4pf2kpAqlk+f+YNloPInwxmfHDAzlv2Z9CipiyZp0O2H/tofLULzPAqs/7bbkCT2ZgVh5crHyVNY
+	8kcgq91SUZc91NyNNB3A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pNZNv-00Fy29-A4; Thu, 02 Feb 2023 13:12:15 +0000
+	id 1pNZSw-00FzAg-1M; Thu, 02 Feb 2023 13:17:26 +0000
 Received: from ams.source.kernel.org ([145.40.68.75])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pNZNk-00Fxy8-9z; Thu, 02 Feb 2023 13:12:06 +0000
+	id 1pNZSp-00Fz9P-EW
+	for linux-phy@lists.infradead.org; Thu, 02 Feb 2023 13:17:23 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id B3A11B825EB;
-	Thu,  2 Feb 2023 13:12:02 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D2B56C433D2;
-	Thu,  2 Feb 2023 13:12:00 +0000 (UTC)
+	by ams.source.kernel.org (Postfix) with ESMTPS id DD893B82653;
+	Thu,  2 Feb 2023 13:17:17 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id BBE2AC433EF;
+	Thu,  2 Feb 2023 13:17:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1675343521;
-	bh=zBEt+ydmvHBvN52hjYw69vZAZo4+rEDjKXF7/GOL6Kk=;
+	s=k20201202; t=1675343836;
+	bh=De028cR7PVHoyYdcF5i0QwrAwqMYfKncZh1sUh5zT24=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=Ddi1ar+LWs2TEOznZjmMMeRHzkxfprlNIDaooFBnbYEKmHiNgZocyMM0A9Txfc9nb
-	 Hho5fGs4jYiN057Q8aG5qW7Sp2yz4HHbGWeaZRyHXjEQSttA7x6gdQ+jMkSKcSeWnT
-	 JLOUHsmZqKnayHSfqiO3kVRvkr96C/dLfkpRsEsV5HXeuEjQ9WLRqM+i+KLGKm2A3S
-	 FA8O5GwAr7ADrtxxYRBzi6vk/ml4HqtmYMuh82FdHIe0NnQr7hOszSVqbocnV8Q4sm
-	 D4tHAIkrAISQACYrjPMvhZSmOF7Kruo8kmwgcjEPLJsC97Tfu4iaBsP09oy9vtM09j
-	 NQkpGY6bohs/g==
-Date: Thu, 2 Feb 2023 18:41:57 +0530
+	b=H1QFO4STGBmxjWLD+cv7+ywCbat758EcHsuAayI1uXp6uVvcjuVPVUjw6QbFnHAUn
+	 GEjaFK1v2DEQAXBQVFEIHIPI5kSzuzNHUy06zalDtmJBpVBHqU4llRx186nJOxImeU
+	 Gu1P5iEBxnqj5IlHyhY1FYPfKEtb6mCvH1YPIOzmOTCurg6U9heaYBg+lSHvGPdxhh
+	 ggO4ySp+OI8JqNd5l/hVzcgAtH2UFcKZ1lkTfGSvql4lNpWPOWk0cAL899kB1eKRwS
+	 TAn7O3Wh4G7VILzSaLYyH397Avw1tW2nQn7xMBQbOV/0vER4vVhwAkZCJ+rTJcIwkY
+	 qjDpad7H6Hm6A==
+Date: Thu, 2 Feb 2023 18:47:12 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Chunfeng Yun <chunfeng.yun@mediatek.com>
-Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	Nathan Chancellor <nathan@kernel.org>,
-	Nick Desaulniers <ndesaulniers@google.com>,
-	Tom Rix <trix@redhat.com>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	linux-arm-kernel@lists.infradead.org,
-	linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org, llvm@lists.linux.dev,
-	Eddie Hung <eddie.hung@mediatek.com>
-Subject: Re: [PATCH v7 2/3] phy: core: add debugfs root
-Message-ID: <Y9u2nTgCcb/Et60d@matsya>
-References: <20230118084343.26913-1-chunfeng.yun@mediatek.com>
- <20230118084343.26913-2-chunfeng.yun@mediatek.com>
+To: Stephen Boyd <swboyd@chromium.org>
+Cc: Kishon Vijay Abraham I <kishon@ti.com>, linux-kernel@vger.kernel.org,
+	patches@lists.linux.dev, linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+	Johan Hovold <johan+linaro@kernel.org>
+Subject: Re: [PATCH] phy: qcom-qmp: Introduce Kconfig symbols for discrete
+ drivers
+Message-ID: <Y9u32P3u4nuAiBnT@matsya>
+References: <20230114000910.1256462-1-swboyd@chromium.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20230118084343.26913-2-chunfeng.yun@mediatek.com>
+In-Reply-To: <20230114000910.1256462-1-swboyd@chromium.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230202_051204_510794_2B772692 
-X-CRM114-Status: GOOD (  18.81  )
+X-CRM114-CacheID: sfid-20230202_051719_655079_1F9AD4EA 
+X-CRM114-Status: GOOD (  12.78  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,68 +76,19 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 18-01-23, 16:43, Chunfeng Yun wrote:
-> Add a debugfs root for phy class, then phy drivers can add debugfs files
-> under this folder.
+On 13-01-23, 16:09, Stephen Boyd wrote:
+> Introduce a config option for each QMP PHY driver now that the QMP PHY
+> mega-driver has been split up into different modules. This allows kernel
+> configurators to limit the binary size of the kernel by only compiling
+> in the QMP PHY driver that they need, or to split the module up into one
+> per PHY driver instead of one module for all the QMP PHY drivers.
 > 
-> Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
-> ---
-> v2~v7: no changes
-> ---
->  drivers/phy/phy-core.c  | 6 ++++++
->  include/linux/phy/phy.h | 2 ++
->  2 files changed, 8 insertions(+)
-> 
-> diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
-> index d93ddf1262c5..2f9f69190519 100644
-> --- a/drivers/phy/phy-core.c
-> +++ b/drivers/phy/phy-core.c
-> @@ -11,6 +11,7 @@
->  #include <linux/export.h>
->  #include <linux/module.h>
->  #include <linux/err.h>
-> +#include <linux/debugfs.h>
->  #include <linux/device.h>
->  #include <linux/slab.h>
->  #include <linux/of.h>
-> @@ -1204,6 +1205,9 @@ void devm_of_phy_provider_unregister(struct device *dev,
->  }
->  EXPORT_SYMBOL_GPL(devm_of_phy_provider_unregister);
->  
-> +struct dentry *phy_debug_root;
-> +EXPORT_SYMBOL_GPL(phy_debug_root);
+> Leave the old config QCOM_QMP in place and make it into a menuconfig so
+> that 'make olddefconfig' continues to work. Furthermore, set the default
+> of the new Kconfig symbols to be QCOM_QMP so that the transition is
+> smooth.
 
-Please make this a member of struct phy, that way all phy drivers have access
-to this and we wont need to export this!
-
-> +
->  /**
->   * phy_release() - release the phy
->   * @dev: the dev member within phy
-> @@ -1233,6 +1237,8 @@ static int __init phy_core_init(void)
->  
->  	phy_class->dev_release = phy_release;
->  
-> +	phy_debug_root = debugfs_create_dir("phy", NULL);
-> +
->  	return 0;
->  }
->  device_initcall(phy_core_init);
-> diff --git a/include/linux/phy/phy.h b/include/linux/phy/phy.h
-> index b1413757fcc3..c398749d49b9 100644
-> --- a/include/linux/phy/phy.h
-> +++ b/include/linux/phy/phy.h
-> @@ -205,6 +205,8 @@ struct phy_lookup {
->  #define devm_of_phy_provider_register_full(dev, children, xlate) \
->  	__devm_of_phy_provider_register(dev, children, THIS_MODULE, xlate)
->  
-> +extern struct dentry *phy_debug_root;
-> +
->  static inline void phy_set_drvdata(struct phy *phy, void *data)
->  {
->  	dev_set_drvdata(&phy->dev, data);
-> -- 
-> 2.18.0
+This fails to apply for me, can you please rebase
 
 -- 
 ~Vinod
