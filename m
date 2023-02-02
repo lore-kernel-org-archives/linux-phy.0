@@ -4,62 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CA0AAC64EC3
-	for <linux-phy@archiver.kernel.org>; Thu,  2 Feb 2023 13:38:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E5DD8C05027
+	for <linux-phy@archiver.kernel.org>; Thu,  2 Feb 2023 13:38:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5T69Xjr6KsN9DJ4zY7yxV51hoWFo4TcZVhbTtCGoml0=; b=BPKotJchW+ImTn
-	wuR9OMyuuBIBNufX3KqblQF5xnvDhm75oMAbcgM6d1ZmILf4pfJFmGBEk3T2iuSIYl8ucsFPLgxCM
-	btkEmTGpNM4mLgnWBsfs+jd4XZsw2YzxzcLzRPp3U4OF0WficSPEf/m8PUF5LEvcx3aNIe6SRD8Qa
-	vhxlrfJXqexrCo46nzObZEGv9U0NhBgjM/Q/LEhiO5/yoEcAk994Rpn9YTW0yjnH9zIDnDjdQOIF0
-	MdG+iwLvRKGoffaegbKWYD36Vdr89eJMNbYZOhin6l9wIebNDareIf6dGgp/+EONYsuHzWx++o/e8
-	7bpEbLYICfS8PT0XBOHw==;
+	List-Owner; bh=D3mqeiamwLXow8A4c+o4XZUAyexuLQ+oTXMC4B3I8xQ=; b=W+b6qfaj9RRMd6
+	d373mN07XmSpnNIRBOoTSzkEElOzSwYT+pArRCqpFfh0k9ZPwdqQ3tmfUr1spl+P6V1XHnhPPVTdX
+	2C/QY5PBGYfyu/ANFZWn4VONVxLIiXN71mCabAF+K6PfWB/PBm+6+5cR3dnm/8YfWCR6rfLhhxRIe
+	aTONtcbm0voTXrxnuIyKdC1SJz8jbw81E8bXGOBGeytWyRzJllYnBismG5WLj7E4QzQMluEjkyMAt
+	64B1UdtnaTXyi8Ftt/0gpmUJDVtbsmt52ohHc83XY36MWrG27tDwpo168MsaWnoDbZyVjNou+AmXp
+	YiRTU31cGpEQxtr39N1A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pNZnQ-00G2YW-7r; Thu, 02 Feb 2023 13:38:36 +0000
-Received: from mail-wm1-x329.google.com ([2a00:1450:4864:20::329])
+	id 1pNZnR-00G2ZG-C0; Thu, 02 Feb 2023 13:38:37 +0000
+Received: from mail-wm1-x32c.google.com ([2a00:1450:4864:20::32c])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pNZnM-00G2Vg-Uw
-	for linux-phy@lists.infradead.org; Thu, 02 Feb 2023 13:38:34 +0000
-Received: by mail-wm1-x329.google.com with SMTP id c10-20020a05600c0a4a00b003db0636ff84so1441928wmq.0
-        for <linux-phy@lists.infradead.org>; Thu, 02 Feb 2023 05:38:32 -0800 (PST)
+	id 1pNZnP-00G2Wj-6C
+	for linux-phy@lists.infradead.org; Thu, 02 Feb 2023 13:38:36 +0000
+Received: by mail-wm1-x32c.google.com with SMTP id c10-20020a05600c0a4a00b003db0636ff84so1442008wmq.0
+        for <linux-phy@lists.infradead.org>; Thu, 02 Feb 2023 05:38:34 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=dYq4wMK5S1ToRqdSUp6ntH/ifz+iAM/Bt7zCv5RvtcM=;
-        b=eHYTVMwewQIgJLDgdmmQ39EuRBV6oOFmNs9rKUC8Hj0ekzPBkGdNoQYn6tkS5FUWYE
-         32HawtIWDWayxQLK+QEw71fuuBpRE9oQRsOlv5DAP/zG3kW+WHcplS+X+kgORX2TjXUe
-         VW/kOFXz65Ht37GBsQ34x/kstCKFiQGy7RMNiRS/xuSWHmZhKwZl1L3D63kyqHp2VGXs
-         NLTiQTWrl/kJtjWoMtWEeY7t2E1TTou2AuuKv0xAuzU1WTluUCo0SvrAjybei4Xgk+wl
-         MHVNoBWfBwawvRqAU7he5E9pT0wwoRuKQ2gJr8x2O18WR4Cgv473HWOtCSZN7HsLoEzJ
-         SynA==
+        bh=5Muj0r5cS4dp6xC+TSUuMKKW1WBd70kMvR15aSo0LNU=;
+        b=GuFGabF19GTVDUCzru/UnbKSvOS9B/ICt6k9ACww5VSGO3p0hFqaTrHma6/TGzYSoN
+         NYiaq9tSFPdR9ThkGaW4oVbEVxekMtXvSDApd4/FFjMJh2b+FhR+M1BINi/SkWKb6rTb
+         GmDUxS9r7WTuunBrDRWhQ2bzAsaznuZO36UZahYbZpexZyfWnasIOdmx6YaG6a5qFb+r
+         xREZc3YRSB1vhAz2fyZpLG6yMgBnxgEUUlvEkG/xguXU2a1LCffINx5jEbRYWHl7mvsF
+         YhpcSYiKOsBKpDNubjWgVPgGlLczGa9iDzFVTNWgdHjNUFKdP5QLAkUz5QMk61ApNb1T
+         SWvA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=dYq4wMK5S1ToRqdSUp6ntH/ifz+iAM/Bt7zCv5RvtcM=;
-        b=7iYrpXXSgJe0PiKw6dfVDflUhhgGPBeGBZHXG+6XbG4EnlWW7cUnKW24HAOvu1joba
-         2b6F0e6LWEKdmRzlWhOXuDJNpd5elwgFqpwlf/cCYrt7KM0NSzcYHCw1IaViUpeqSzfc
-         8J9z9E7uaySqqGimFWmbU9zzWStK1xOpI+tImU9PU8G32GscnM9q7f/OcdPHlIXels+r
-         PUkJyVrNb0fEwgGX32slCuOp0ih578QN1nL8Vjq+MUhEuH57eOhKXj4AGCE6J0JumRIR
-         vRK3mtGqJN1thqMz/2SZFknMjvZqssL+F1TXlp/GsRcqMkGDJzXg9WvsP/nhFLzb+ktc
-         Y/6w==
-X-Gm-Message-State: AO0yUKUwM3A+BspeZTo2A2hxcfMO1NGOmJbvhWL/9T7U7d0Wa6CIUvN4
-	3KaDdJT44k3DphT3rp97/wOIEQ==
-X-Google-Smtp-Source: AK7set8KLjWbFuqx8VUDsCZQ29h3vaNWmOft7ynsWBxGW0E92Sj2X5vagOQKxHFeaa63il6TWvZfHQ==
-X-Received: by 2002:a05:600c:b86:b0:3db:2dbb:d70e with SMTP id fl6-20020a05600c0b8600b003db2dbbd70emr6013790wmb.6.1675345111680;
-        Thu, 02 Feb 2023 05:38:31 -0800 (PST)
+        bh=5Muj0r5cS4dp6xC+TSUuMKKW1WBd70kMvR15aSo0LNU=;
+        b=fUNxquFCUhb1GhpsF0ibJFyKyS3ejm+jjT4u1dj6VQszK0y6b0vs2f0fgnHMpJI9gT
+         2QVmeGKV8rc9us964FqLi1mtw99arLZDQLw05yZRm3BPbTo63eQYCRntqjOktjTUkkHC
+         6DGulQH/sgdVgTEgOd8ArYqCLs7Llb7I09vHc3nSypi0Fs+Yy/7cf228Mt1UmTALpD8V
+         HmTHgveebTEM+g34Q0Ke+AcOF0/QuXX0NdX/cUeVC5jhTRKWB536Xgd5oqaz0CnzhAL9
+         Pwmj3D4EQwAye2U8uy/xPxaLBV/fzd/UkiXAhn0E/QclVCiAAT66A6Mz5jA/gG3BIAR7
+         7I0Q==
+X-Gm-Message-State: AO0yUKUwBKa9Mcpzr7wGdQPS6yswLatEQlnXE/QqAeB/48I/zXv2Xsj/
+	rz9BQ5Mp1vjepGPD5RZ38BALog==
+X-Google-Smtp-Source: AK7set8R4MkWRBydiDyX6RpsFozs0TBOeL0BRfzRO4g6tMz1cuywexaGfc1xJsDWiBomfrRoXqdnBA==
+X-Received: by 2002:a05:600c:6018:b0:3dc:1ad6:55fd with SMTP id az24-20020a05600c601800b003dc1ad655fdmr5936251wmb.32.1675345112971;
+        Thu, 02 Feb 2023 05:38:32 -0800 (PST)
 Received: from hackbox.lan ([94.52.112.99])
-        by smtp.gmail.com with ESMTPSA id y10-20020a05600c364a00b003daf7721bb3sm4672657wmq.12.2023.02.02.05.38.30
+        by smtp.gmail.com with ESMTPSA id y10-20020a05600c364a00b003daf7721bb3sm4672657wmq.12.2023.02.02.05.38.31
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 02 Feb 2023 05:38:31 -0800 (PST)
+        Thu, 02 Feb 2023 05:38:32 -0800 (PST)
 From: Abel Vesa <abel.vesa@linaro.org>
 To: Andy Gross <agross@kernel.org>,
 	Bjorn Andersson <andersson@kernel.org>,
@@ -72,17 +72,18 @@ To: Andy Gross <agross@kernel.org>,
 Cc: linux-arm-msm@vger.kernel.org,
 	devicetree@vger.kernel.org,
 	Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
-	linux-phy@lists.infradead.org
-Subject: [RFC v3 4/7] phy: qcom: Add QCOM SNPS eUSB2 repeater driver
-Date: Thu,  2 Feb 2023 15:38:13 +0200
-Message-Id: <20230202133816.4026990-5-abel.vesa@linaro.org>
+	linux-phy@lists.infradead.org,
+	Neil Armstrong <neil.armstrong@linaro.org>
+Subject: [RFC v3 5/7] phy: qcom: phy-qcom-snps-eusb2: Add support for eUSB2 repeater
+Date: Thu,  2 Feb 2023 15:38:14 +0200
+Message-Id: <20230202133816.4026990-6-abel.vesa@linaro.org>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20230202133816.4026990-1-abel.vesa@linaro.org>
 References: <20230202133816.4026990-1-abel.vesa@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230202_053833_040201_935E7780 
-X-CRM114-Status: GOOD (  27.10  )
+X-CRM114-CacheID: sfid-20230202_053835_252089_3313A510 
+X-CRM114-Status: GOOD (  14.68  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,334 +100,75 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-PM8550B contains a eUSB2 repeater used for making the eUSB2 from
-SM8550 USB 2.0 compliant. This can be modelled SW-wise as a Phy.
-So add a new phy driver for it.
+From: Neil Armstrong <neil.armstrong@linaro.org>
 
+For USB 2.0 compliance, eUSB2 needs a repeater. The PHY needs to
+initialize and reset it. So add repeater support
+
+Co-developed-by: Abel Vesa <abel.vesa@linaro.org>
 Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
+Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
 ---
- drivers/phy/qualcomm/Kconfig                  |   9 +
- drivers/phy/qualcomm/Makefile                 |   1 +
- .../phy/qualcomm/phy-qcom-eusb2-repeater.c    | 278 ++++++++++++++++++
- 3 files changed, 288 insertions(+)
- create mode 100644 drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c
+ drivers/phy/qualcomm/phy-qcom-snps-eusb2.c | 18 +++++++++++++++++-
+ 1 file changed, 17 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/phy/qualcomm/Kconfig b/drivers/phy/qualcomm/Kconfig
-index 27b5a2a3637d..a70631b04522 100644
---- a/drivers/phy/qualcomm/Kconfig
-+++ b/drivers/phy/qualcomm/Kconfig
-@@ -79,6 +79,15 @@ config PHY_QCOM_SNPS_EUSB2
- 	  chipsets. The PHY is paired with a Synopsys DWC3 USB controller
- 	  on Qualcomm SOCs.
+diff --git a/drivers/phy/qualcomm/phy-qcom-snps-eusb2.c b/drivers/phy/qualcomm/phy-qcom-snps-eusb2.c
+index 23ec162cc3bd..8d972d49732b 100644
+--- a/drivers/phy/qualcomm/phy-qcom-snps-eusb2.c
++++ b/drivers/phy/qualcomm/phy-qcom-snps-eusb2.c
+@@ -128,6 +128,8 @@ struct qcom_snps_eusb2_hsphy {
+ 	struct regulator_bulk_data vregs[EUSB2_NUM_VREGS];
  
-+config PHY_QCOM_EUSB2_REPEATER
-+	tristate "Qualcomm SNPS eUSB2 Repeater Driver"
-+	depends on OF && (ARCH_QCOM || COMPILE_TEST)
-+	select GENERIC_PHY
-+	help
-+	  Enable support for the USB high-speed SNPS eUSB2 repeater on Qualcomm
-+	  PMICs. The repeater is paired with a Synopsys eUSB2 Phy
-+	  on Qualcomm SOCs.
+ 	enum phy_mode mode;
 +
- config PHY_QCOM_USB_HS
- 	tristate "Qualcomm USB HS PHY module"
- 	depends on USB_ULPI_BUS
-diff --git a/drivers/phy/qualcomm/Makefile b/drivers/phy/qualcomm/Makefile
-index 3ee118f4dfc7..7dcba9537b69 100644
---- a/drivers/phy/qualcomm/Makefile
-+++ b/drivers/phy/qualcomm/Makefile
-@@ -14,6 +14,7 @@ obj-$(CONFIG_PHY_QCOM_QMP)		+= \
++	struct phy *repeater;
+ };
  
- obj-$(CONFIG_PHY_QCOM_QUSB2)		+= phy-qcom-qusb2.o
- obj-$(CONFIG_PHY_QCOM_SNPS_EUSB2)	+= phy-qcom-snps-eusb2.o
-+obj-$(CONFIG_PHY_QCOM_EUSB2_REPEATER)	+= phy-qcom-eusb2-repeater.o
- obj-$(CONFIG_PHY_QCOM_USB_HS) 		+= phy-qcom-usb-hs.o
- obj-$(CONFIG_PHY_QCOM_USB_HSIC) 	+= phy-qcom-usb-hsic.o
- obj-$(CONFIG_PHY_QCOM_USB_HS_28NM)	+= phy-qcom-usb-hs-28nm.o
-diff --git a/drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c b/drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c
-new file mode 100644
-index 000000000000..f7f822f2973f
---- /dev/null
-+++ b/drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c
-@@ -0,0 +1,278 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Copyright (c) 2023, Linaro Limited
-+ */
-+
-+#include <linux/module.h>
-+#include <linux/platform_device.h>
-+#include <linux/regulator/consumer.h>
-+#include <linux/regmap.h>
-+#include <linux/of.h>
-+#include <linux/of_device.h>
-+#include <linux/phy/phy.h>
-+
-+/* eUSB2 status registers */
-+#define EUSB2_RPTR_STATUS		0x08
-+#define	RPTR_OK				BIT(7)
-+
-+/* eUSB2 control registers */
-+#define EUSB2_EN_CTL1			0x46
-+#define EUSB2_RPTR_EN			BIT(7)
-+
-+#define PHY_HOST_MODE			BIT(0)
-+#define EUSB2_FORCE_EN_5		0xE8
-+#define F_CLK_19P2M_EN			BIT(6)
-+#define F_CLK_19P2M_EN_SHIFT		6
-+
-+#define EUSB2_FORCE_VAL_5		0xED
-+#define V_CLK_19P2M_EN			BIT(6)
-+#define V_CLK_19P2M_EN_SHIFT		6
-+
-+#define EUSB2_TUNE_IUSB2		0x51
-+#define EUSB2_TUNE_SQUELCH_U		0x54
-+#define EUSB2_TUNE_USB2_PREEM		0x57
-+
-+#define QCOM_EUSB2_REPEATER_INIT_CFG(o, v)	\
-+	{					\
-+		.offset = o,			\
-+		.val = v,			\
+ static int qcom_snps_eusb2_hsphy_set_mode(struct phy *p, enum phy_mode mode, int submode)
+@@ -136,7 +138,7 @@ static int qcom_snps_eusb2_hsphy_set_mode(struct phy *p, enum phy_mode mode, int
+ 
+ 	phy->mode = mode;
+ 
+-	return 0;
++	return phy_set_mode_ext(phy->repeater, mode, submode);
+ }
+ 
+ static void qcom_snps_eusb2_hsphy_write_mask(void __iomem *base, u32 offset,
+@@ -235,6 +237,12 @@ static int qcom_snps_eusb2_hsphy_init(struct phy *p)
+ 	if (ret)
+ 		return ret;
+ 
++	ret = phy_init(phy->repeater);
++	if (ret) {
++		dev_err(&p->dev, "repeater init failed. %d\n", ret);
++		goto disable_vreg;
 +	}
 +
-+enum repeater_mode {
-+	REPEATER_HOST_MODE,
-+	REPEATER_PERIPH_MODE,
-+};
+ 	ret = clk_prepare_enable(phy->ref_clk);
+ 	if (ret) {
+ 		dev_err(&p->dev, "failed to enable ref clock, %d\n", ret);
+@@ -342,6 +350,8 @@ static int qcom_snps_eusb2_hsphy_exit(struct phy *p)
+ 
+ 	regulator_bulk_disable(ARRAY_SIZE(phy->vregs), phy->vregs);
+ 
++	phy_exit(phy->repeater);
 +
-+struct eusb2_repeater_init_tbl {
-+	unsigned int offset;
-+	unsigned int val;
-+};
+ 	return 0;
+ }
+ 
+@@ -386,6 +396,12 @@ static int qcom_snps_eusb2_hsphy_probe(struct platform_device *pdev)
+ 	if (ret)
+ 		return dev_err_probe(dev, ret,
+ 				     "failed to get regulator supplies\n");
 +
-+struct eusb2_repeater_cfg {
-+	const struct eusb2_repeater_init_tbl *init_tbl;
-+	int init_tbl_num;
-+	/* regulators to be requested */
-+	const char * const *vreg_list;
-+	int num_vregs;
-+};
++	phy->repeater = devm_phy_get(dev, "eusb2-repeater");
++	if (IS_ERR(phy->repeater))
++		return dev_err_probe(dev, PTR_ERR(phy->repeater),
++				     "failed to get repeater\n");
 +
-+struct eusb2_repeater {
-+	struct device *dev;
-+	struct regmap *regmap;
-+	struct phy *phy;
-+	struct regulator_bulk_data *vregs;
-+	const struct eusb2_repeater_cfg *cfg;
-+	u16 base;
-+	enum phy_mode mode;
-+};
-+
-+static const char * const pm8550b_vreg_l[] = {
-+	"vdd18", "vdd3",
-+};
-+
-+static const struct eusb2_repeater_init_tbl pm8550b_init_tbl[] = {
-+	QCOM_EUSB2_REPEATER_INIT_CFG(EUSB2_TUNE_IUSB2, 0x8),
-+	QCOM_EUSB2_REPEATER_INIT_CFG(EUSB2_TUNE_SQUELCH_U, 0x3),
-+	QCOM_EUSB2_REPEATER_INIT_CFG(EUSB2_TUNE_USB2_PREEM, 0x5),
-+};
-+
-+static const struct eusb2_repeater_cfg pm8550b_eusb2_cfg = {
-+	.init_tbl	= pm8550b_init_tbl,
-+	.init_tbl_num	= ARRAY_SIZE(pm8550b_init_tbl),
-+	.vreg_list	= pm8550b_vreg_l,
-+	.num_vregs	= ARRAY_SIZE(pm8550b_vreg_l),
-+};
-+
-+static int eusb2_repeater_init_vregs(struct eusb2_repeater *rptr)
-+{
-+	int num = rptr->cfg->num_vregs;
-+	struct device *dev = rptr->dev;
-+	int i;
-+
-+	rptr->vregs = devm_kcalloc(dev, num, sizeof(*rptr->vregs), GFP_KERNEL);
-+	if (!rptr->vregs)
-+		return -ENOMEM;
-+
-+	for (i = 0; i < num; i++)
-+		rptr->vregs[i].supply = rptr->cfg->vreg_list[i];
-+
-+	return devm_regulator_bulk_get(dev, num, rptr->vregs);
-+}
-+
-+static int eusb2_repeater_init(struct phy *phy)
-+{
-+	struct eusb2_repeater *rptr = phy_get_drvdata(phy);
-+	const struct eusb2_repeater_init_tbl *init_tbl = rptr->cfg->init_tbl;
-+	int num = rptr->cfg->init_tbl_num;
-+	int ret = 0;
-+	u32 val;
-+	int i;
-+
-+	ret = regulator_bulk_enable(rptr->cfg->num_vregs, rptr->vregs);
-+	if (ret)
-+		return ret;
-+
-+	regmap_update_bits(rptr->regmap, rptr->base + EUSB2_EN_CTL1,
-+				EUSB2_RPTR_EN, EUSB2_RPTR_EN);
-+
-+	for (i = 0; i < num; i++)
-+		regmap_update_bits(rptr->regmap,
-+					rptr->base + init_tbl[i].offset,
-+					init_tbl[i].val, init_tbl[i].val);
-+
-+	ret = regmap_read_poll_timeout(rptr->regmap,
-+					rptr->base + EUSB2_RPTR_STATUS, val,
-+					val & RPTR_OK, 10, 5);
-+	if (ret)
-+		dev_err(rptr->dev, "initialization timed-out\n");
-+
-+	return ret;
-+}
-+
-+static int eusb2_repeater_set_mode(struct phy *phy,
-+					enum phy_mode mode, int submode)
-+{
-+	struct eusb2_repeater *rptr = phy_get_drvdata(phy);
-+
-+	switch (mode) {
-+	case PHY_MODE_USB_HOST:
-+		/*
-+		 * CM.Lx is prohibited when repeater is already into Lx state as
-+		 * per eUSB 1.2 Spec. Below implement software workaround until
-+		 * PHY and controller is fixing seen observation.
-+		 */
-+		regmap_update_bits(rptr->regmap, rptr->base + EUSB2_FORCE_EN_5,
-+				F_CLK_19P2M_EN, F_CLK_19P2M_EN);
-+		regmap_update_bits(rptr->regmap, rptr->base + EUSB2_FORCE_VAL_5,
-+				V_CLK_19P2M_EN, V_CLK_19P2M_EN);
-+		break;
-+	case PHY_MODE_USB_DEVICE:
-+		/*
-+		 * In device mode clear host mode related workaround as there
-+		 * is no repeater reset available, and enable/disable of
-+		 * repeater doesn't clear previous value due to shared
-+		 * regulators (say host <-> device mode switch).
-+		 */
-+		regmap_update_bits(rptr->regmap, rptr->base + EUSB2_FORCE_EN_5,
-+				F_CLK_19P2M_EN, 0);
-+		regmap_update_bits(rptr->regmap, rptr->base + EUSB2_FORCE_VAL_5,
-+				V_CLK_19P2M_EN, 0);
-+		break;
-+	default:
-+		return -EINVAL;
-+	}
-+
-+	return 0;
-+}
-+
-+static int eusb2_repeater_exit(struct phy *phy)
-+{
-+	struct eusb2_repeater *rptr = phy_get_drvdata(phy);
-+
-+	return regulator_bulk_disable(rptr->cfg->num_vregs, rptr->vregs);
-+}
-+
-+
-+static const struct phy_ops eusb2_repeater_ops = {
-+	.init		= eusb2_repeater_init,
-+	.exit		= eusb2_repeater_exit,
-+	.set_mode	= eusb2_repeater_set_mode,
-+	.owner		= THIS_MODULE,
-+};
-+
-+static int eusb2_repeater_probe(struct platform_device *pdev)
-+{
-+	struct eusb2_repeater *rptr;
-+	struct device *dev = &pdev->dev;
-+	struct phy_provider *phy_provider;
-+	struct device_node *np;
-+	u32 res;
-+	int ret;
-+
-+	np = of_node_get(dev->of_node);
-+
-+	rptr = devm_kzalloc(dev, sizeof(*rptr), GFP_KERNEL);
-+	if (!rptr)
-+		goto err_node_put;
-+
-+	rptr->dev = dev;
-+	dev_set_drvdata(dev, rptr);
-+
-+	rptr->cfg = of_device_get_match_data(dev);
-+	if (!rptr->cfg)
-+		goto err_node_put;
-+
-+	rptr->regmap = dev_get_regmap(dev->parent, NULL);
-+	if (!rptr->regmap)
-+		goto err_node_put;
-+
-+	ret = of_property_read_u32(np, "reg", &res);
-+	if (ret < 0)
-+		goto err_node_put;
-+
-+	rptr->base = res;
-+
-+	ret = eusb2_repeater_init_vregs(rptr);
-+	if (ret < 0) {
-+		dev_err(dev, "unable to get supplies\n");
-+		goto err_node_put;
-+	}
-+
-+	rptr->phy = devm_phy_create(dev, np, &eusb2_repeater_ops);
-+	if (IS_ERR(rptr->phy)) {
-+		ret = PTR_ERR(rptr->phy);
-+		dev_err(dev, "failed to create PHY: %d\n", ret);
-+		goto err_node_put;
-+	}
-+
-+	phy_set_drvdata(rptr->phy, rptr);
-+
-+	of_node_put(np);
-+
-+	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
-+	if (IS_ERR(phy_provider))
-+		return PTR_ERR(phy_provider);
-+
-+	dev_info(dev, "Registered Qcom-eUSB2 repeater\n");
-+
-+	return 0;
-+
-+err_node_put:
-+	of_node_put(np);
-+	return ret;
-+}
-+
-+static int eusb2_repeater_remove(struct platform_device *pdev)
-+{
-+	struct eusb2_repeater *rptr = platform_get_drvdata(pdev);
-+
-+	if (!rptr)
-+		return 0;
-+
-+	eusb2_repeater_exit(rptr->phy);
-+	return 0;
-+}
-+
-+
-+static const struct of_device_id eusb2_repeater_of_match_table[] = {
-+	{
-+		.compatible = "qcom,pm8550b-eusb2-repeater",
-+		.data = &pm8550b_eusb2_cfg,
-+	},
-+	{ },
-+};
-+MODULE_DEVICE_TABLE(of, eusb2_repeater_of_match_table);
-+
-+static struct platform_driver eusb2_repeater_driver = {
-+	.probe		= eusb2_repeater_probe,
-+	.remove		= eusb2_repeater_remove,
-+	.driver = {
-+		.name	= "qcom-eusb2-repeater",
-+		.of_match_table = eusb2_repeater_of_match_table,
-+	},
-+};
-+
-+module_platform_driver(eusb2_repeater_driver);
-+
-+MODULE_DESCRIPTION("Qualcomm PMIC eUSB2 Repeater driver");
-+MODULE_LICENSE("GPL v2");
+ 	generic_phy = devm_phy_create(dev, NULL, &qcom_snps_eusb2_hsphy_ops);
+ 	if (IS_ERR(generic_phy)) {
+ 		dev_err(dev, "failed to create phy %d\n", ret);
 -- 
 2.34.1
 
