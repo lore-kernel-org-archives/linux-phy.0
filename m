@@ -4,89 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3A127C636D7
-	for <linux-phy@archiver.kernel.org>; Thu,  2 Feb 2023 12:39:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EB63EC05027
+	for <linux-phy@archiver.kernel.org>; Thu,  2 Feb 2023 13:03:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YQh5a25Pr7y92XmCqvjJJ4qxrUI6wnY4cC34gV0KKFo=; b=rpbVdR5iSr+K7a
-	7EyyeQEi5nGlfmCQdi8Qya/3PMWAplrICZ3z+GQpxzk5ZgVHipxNkN8VsPjjUzdryDpDnCQz32GHj
-	a7R0Fem1lGAzRYo8GalywV9JMtNXyqW9Oyl7e+w/PjwTUiyWbVs3Vd5XpKFRrQ782ylB0Hi79d5m7
-	pWk9glrdeocOX0sDXrz+av6frSBlW9xOsMwtB4MyFDvRg8CUZaovU4FjvIepo7n/w/NPK0f1pDSC2
-	tjmg9ecyUJmu8lpzqJFXo9HdPkaktihMGaRND1VUio35LPoU0YMYXQFyGK+pM7rn4ZKoHoanE0D6q
-	q2P/BhFo0FliK6ZeaR1g==;
+	List-Owner; bh=N/0fGZSfgW0GA+I6BJbH+uckpkO3IcM5ndc1PbK5Aig=; b=dzo19gIl9fFR7J
+	FiPMsEhNx4oJ+CUwn4MlHmFfglpc1/YbJygeZKUPXS8B5P4nVDDT3T1n/8XYBQa0BEGo7goIMg8zt
+	vW/qgCL5jiHpkGPDbg9WHF6QdqiDAr06Hxf26f8LXY8Jp3xQWPQbQa2I95XUvisRqcNxiLIAP+vm/
+	VIhbpa9PZA7lOvOrvhEl2DYqRQCMfiwBCg9UZFcT6VwuA8a+PHd9dJJAhEY9kI6FT5Mzo7+MZafga
+	Xvgt7aCkEH4uMv2ph0T04eQAPKgFKkfi6tWELIjNgj7a9qCP57e9FKlYnYlGLoNCKiPEuCMtf/Fsr
+	1HmyFYyi1plbUa+8o0hQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pNYsH-00FpON-Mg; Thu, 02 Feb 2023 12:39:33 +0000
-Received: from mail-wm1-x32e.google.com ([2a00:1450:4864:20::32e])
+	id 1pNZFf-00FwGS-Dc; Thu, 02 Feb 2023 13:03:43 +0000
+Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pNYsF-00FpLQ-7W
-	for linux-phy@lists.infradead.org; Thu, 02 Feb 2023 12:39:33 +0000
-Received: by mail-wm1-x32e.google.com with SMTP id k16so1287151wms.2
-        for <linux-phy@lists.infradead.org>; Thu, 02 Feb 2023 04:39:28 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=XhFH3MDoVM8IW/Ed3e+Mv5/+oaq5exzhbtIWnhMIQjc=;
-        b=r6xeXLdCcolXS6zn4ApecLvKhYNRU61nSKqfY5Pm2ugyONdv1B1SES/MGoP78w0aVg
-         aOGhVZ89oVAUObaoWYD3pm4ACNcApZcDknTjQOOqyOSfC9y5LvUJya/1Y4bYk51XECAO
-         mge3uFpkbi25+2kFeudHQrkjnSo/0eDAOtdOJ91sBXrwtK+tmJC9sPRerJfXLG0HJKDD
-         HoL9iW+WLwIcUl1pxES5XQAklTOdzSprspc1pNLj4yAuLc610pbUwlqv2Oedzgkp4yVl
-         SUszEMNFFEKbMG/zox3tpo65HSbK4Gka9lbUnqMpiWgNR7m/udFFdYyloal0R/TRw/K5
-         t26A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=XhFH3MDoVM8IW/Ed3e+Mv5/+oaq5exzhbtIWnhMIQjc=;
-        b=Az+CXn0xlBb08A5Y+tWg89kHNeOYYOB3phGfQstf8qJPfrSaQDc3vKPESq7vt40ak9
-         3ylwF1jgyuS5mf71b7BDD5p3k9Zb3PGBGPJC7D6MTF4EvRTNaKufLdKYPUceKbdeYGzQ
-         tnFjByteeOcL8n4UrohYelBpJ8q6ssyTOBHXiUHtumpf2Hh0Qw7bd5Gzzk6UcbBp6VD3
-         C6SoortTlSUsBK+xW9wohNaAUSFErNGjU1b7tHv64ufzYGQQHQSLA1WgRdH9d+x6sytv
-         yyNX5PuD3XZ6LVqX+CIzz+ZJOjE70dLICInkwXd2DvdHkVD+/sPiVuul+7k1esJzzAkr
-         whhQ==
-X-Gm-Message-State: AO0yUKWr2GEdUR0zaY5OHtjf05A/tCA6O2FEO16TgeJvz3MdtN68pD+6
-	6h3DcgtgC5Z8CqFRlXM+fQvFZA==
-X-Google-Smtp-Source: AK7set9OA/7/3Qbq98spBzscKJwjoQpg8hsnAJfsRx/b4NqpY4XkkIqylJF9l3HQvdNFWvtCO3GQ/Q==
-X-Received: by 2002:a05:600c:4ec7:b0:3dc:5e0d:4ce7 with SMTP id g7-20020a05600c4ec700b003dc5e0d4ce7mr5800182wmq.11.1675341567455;
-        Thu, 02 Feb 2023 04:39:27 -0800 (PST)
-Received: from hackbox.lan ([94.52.112.99])
-        by smtp.gmail.com with ESMTPSA id j5-20020adff005000000b002bddd75a83fsm19525644wro.8.2023.02.02.04.39.26
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 02 Feb 2023 04:39:26 -0800 (PST)
-From: Abel Vesa <abel.vesa@linaro.org>
-To: Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
+	id 1pNZFc-00FwEV-Lw
+	for linux-phy@lists.infradead.org; Thu, 02 Feb 2023 13:03:42 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by ams.source.kernel.org (Postfix) with ESMTPS id 83905B82629;
+	Thu,  2 Feb 2023 13:03:36 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6BDCCC433EF;
+	Thu,  2 Feb 2023 13:03:34 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1675343015;
+	bh=7nZ7vEEU2cxHmgw1TBI/DSL6WgN09SclwXUQVkPAxgE=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=nvB/5NpzbUUoLHtHm/UWgpeUECI8ScoRC6lISPFfwj3n0GlUUZZeBNE9zpx7J7faU
+	 kGPDt0+B2bGD7IPZjwGdZGzCCzOx8zpjXQTBLCpptA/AK1SYdCi29OQNKTiBn/uWGi
+	 5GVgln+H6ZtqwJ/0nN4A1A4m2s3NscKpdFdBgspK3EaEcnJnPzfdKYu40q5yLGvM0H
+	 g6TGiRUl8Go4eL1UD1U5lNythuSfXV0FsdxmOrpYf5i5I4soFuiP5K2gT0xsIGIusj
+	 MXC+QuV8gCX0eTdRckMMMq9F3cmn9bOSzQ6GEs1iYn5apeLYS3KGTWhr3fuETyb79V
+	 QnGbvUbKG0qGw==
+Date: Thu, 2 Feb 2023 18:33:30 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Abel Vesa <abel.vesa@linaro.org>
+Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
 	Konrad Dybcio <konrad.dybcio@linaro.org>,
-	Rob Herring <robh@kernel.org>,
-	=?UTF-8?q?Krzysztof=20Wilczy=C5=84ski?= <kw@linux.com>,
-	Bjorn Helgaas <bhelgaas@google.com>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Lorenzo Pieralisi <lpieralisi@kernel.org>,
-	"vkoul@kernel.org"  <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Manivannan Sadhasivam <mani@kernel.org>
-Cc: linux-arm-msm@vger.kernel.org,
-	linux-pci@vger.kernel.org,
-	linux-phy@lists.infradead.org,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
 	devicetree@vger.kernel.org,
-	Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
-Subject: [PATCH v6 11/12] arm64: dts: qcom: sm8550: Add PCIe PHYs and controllers nodes
-Date: Thu,  2 Feb 2023 14:39:01 +0200
-Message-Id: <20230202123902.3831491-12-abel.vesa@linaro.org>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20230202123902.3831491-1-abel.vesa@linaro.org>
-References: <20230202123902.3831491-1-abel.vesa@linaro.org>
+	Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+	Johan Hovold <johan@kernel.org>
+Subject: Re: [PATCH v5 0/6] phy: qualcomm: Add UFS support for SM8550
+Message-ID: <Y9u0oo597Y1YaSxo@matsya>
+References: <20230117224148.1914627-1-abel.vesa@linaro.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20230117224148.1914627-1-abel.vesa@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230202_043931_291202_0B79CC6C 
-X-CRM114-Status: GOOD (  12.95  )
+X-CRM114-CacheID: sfid-20230202_050340_898753_15481893 
+X-CRM114-Status: UNSURE (   7.84  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,271 +80,14 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add PCIe controllers and PHY nodes.
+On 18-01-23, 00:41, Abel Vesa wrote:
+> The v4 of this patchset is:
+> https://lore.kernel.org/all/20230117142015.509675-1-abel.vesa@linaro.org/
 
-Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
----
+Applied, thanks
 
-This patch does not have a v3, but since it is now part of the same
-patchset with the controller and the phy drivers patches, I had to
-bump the version to 4.
-
-The v5 was here:
-https://lore.kernel.org/all/20230124124714.3087948-12-abel.vesa@linaro.org/
-
-Changes since v5:
- * renamed nocsr_com to phy_nocsr as discussed off-list with Bjorn and Johan
-
-Changes since v4:
- * renamed noc_aggr_4 back to noc_aggr
- * moved pinctrl properties out to MTP dts
- * renamed nocsr to nocsr_com
-
-Changes since v2:
- * renamed the pcie_1_link_down_reset to simply link_down
- * dropped the pipe from clock-names
- * renamed aggre clock-names to noc_aggr_4
- * dropped the _pcie infix from cnoc_pcie_sf_axi
- * dropped the aux_phy clock from the pcie1
- 
-Changes since v1:
- * ordered pcie related nodes alphabetically in MTP dts
- * dropped the pipe_mux, phy_pipe and ref clocks from the pcie nodes
- * dropped the child node from the phy nodes, like Johan suggested,
-   and updated to use the sc8280xp binding scheme
- * changed "pcie_1_nocsr_com_phy_reset" 2nd reset name of pcie1_phy
-   to "nocsr"
- * reordered all pcie nodes properties to look similar to the ones
-   from sc8280xp
-
-
- arch/arm64/boot/dts/qcom/sm8550.dtsi | 203 ++++++++++++++++++++++++++-
- 1 file changed, 200 insertions(+), 3 deletions(-)
-
-diff --git a/arch/arm64/boot/dts/qcom/sm8550.dtsi b/arch/arm64/boot/dts/qcom/sm8550.dtsi
-index be2d85ee1f20..a85d2ae7d155 100644
---- a/arch/arm64/boot/dts/qcom/sm8550.dtsi
-+++ b/arch/arm64/boot/dts/qcom/sm8550.dtsi
-@@ -740,9 +740,9 @@ gcc: clock-controller@100000 {
- 			#reset-cells = <1>;
- 			#power-domain-cells = <1>;
- 			clocks = <&bi_tcxo_div2>, <&sleep_clk>,
--				 <0>,
--				 <0>,
--				 <0>,
-+				 <&pcie0_phy>,
-+				 <&pcie1_phy>,
-+				 <&pcie_1_phy_aux_clk>,
- 				 <&ufs_mem_phy 0>,
- 				 <&ufs_mem_phy 1>,
- 				 <&ufs_mem_phy 2>,
-@@ -1641,6 +1641,203 @@ mmss_noc: interconnect@1780000 {
- 			qcom,bcm-voters = <&apps_bcm_voter>;
- 		};
- 
-+		pcie0: pci@1c00000 {
-+			device_type = "pci";
-+			compatible = "qcom,pcie-sm8550";
-+			reg = <0 0x01c00000 0 0x3000>,
-+			      <0 0x60000000 0 0xf1d>,
-+			      <0 0x60000f20 0 0xa8>,
-+			      <0 0x60001000 0 0x1000>,
-+			      <0 0x60100000 0 0x100000>;
-+			reg-names = "parf", "dbi", "elbi", "atu", "config";
-+			#address-cells = <3>;
-+			#size-cells = <2>;
-+			ranges = <0x01000000 0x0 0x60200000 0 0x60200000 0x0 0x100000>,
-+				 <0x02000000 0x0 0x60300000 0 0x60300000 0x0 0x3d00000>;
-+			bus-range = <0x00 0xff>;
-+
-+			dma-coherent;
-+
-+			linux,pci-domain = <0>;
-+			num-lanes = <2>;
-+
-+			interrupts = <GIC_SPI 141 IRQ_TYPE_LEVEL_HIGH>;
-+			interrupt-names = "msi";
-+
-+			#interrupt-cells = <1>;
-+			interrupt-map-mask = <0 0 0 0x7>;
-+			interrupt-map = <0 0 0 1 &intc 0 0 0 149 IRQ_TYPE_LEVEL_HIGH>, /* int_a */
-+					<0 0 0 2 &intc 0 0 0 150 IRQ_TYPE_LEVEL_HIGH>, /* int_b */
-+					<0 0 0 3 &intc 0 0 0 151 IRQ_TYPE_LEVEL_HIGH>, /* int_c */
-+					<0 0 0 4 &intc 0 0 0 152 IRQ_TYPE_LEVEL_HIGH>; /* int_d */
-+
-+			clocks = <&gcc GCC_PCIE_0_AUX_CLK>,
-+				 <&gcc GCC_PCIE_0_CFG_AHB_CLK>,
-+				 <&gcc GCC_PCIE_0_MSTR_AXI_CLK>,
-+				 <&gcc GCC_PCIE_0_SLV_AXI_CLK>,
-+				 <&gcc GCC_PCIE_0_SLV_Q2A_AXI_CLK>,
-+				 <&gcc GCC_DDRSS_PCIE_SF_QTB_CLK>,
-+				 <&gcc GCC_AGGRE_NOC_PCIE_AXI_CLK>;
-+			clock-names = "aux",
-+				      "cfg",
-+				      "bus_master",
-+				      "bus_slave",
-+				      "slave_q2a",
-+				      "ddrss_sf_tbu",
-+				      "noc_aggr";
-+
-+			interconnects = <&pcie_noc MASTER_PCIE_0 0 &mc_virt SLAVE_EBI1 0>,
-+					<&gem_noc MASTER_APPSS_PROC 0 &cnoc_main SLAVE_PCIE_0 0>;
-+			interconnect-names = "pcie-mem", "cpu-pcie";
-+
-+			iommus = <&apps_smmu 0x1400 0x7f>;
-+			iommu-map = <0x0   &apps_smmu 0x1400 0x1>,
-+				    <0x100 &apps_smmu 0x1401 0x1>;
-+
-+			resets = <&gcc GCC_PCIE_0_BCR>;
-+			reset-names = "pci";
-+
-+			power-domains = <&gcc PCIE_0_GDSC>;
-+
-+			phys = <&pcie0_phy>;
-+			phy-names = "pciephy";
-+
-+			perst-gpios = <&tlmm 94 GPIO_ACTIVE_LOW>;
-+			wake-gpios = <&tlmm 96 GPIO_ACTIVE_HIGH>;
-+
-+			status = "disabled";
-+		};
-+
-+		pcie0_phy: phy@1c06000 {
-+			compatible = "qcom,sm8550-qmp-gen3x2-pcie-phy";
-+			reg = <0 0x01c06000 0 0x2000>;
-+
-+			clocks = <&gcc GCC_PCIE_0_AUX_CLK>,
-+				 <&gcc GCC_PCIE_0_CFG_AHB_CLK>,
-+				 <&tcsr TCSR_PCIE_0_CLKREF_EN>,
-+				 <&gcc GCC_PCIE_0_PHY_RCHNG_CLK>,
-+				 <&gcc GCC_PCIE_0_PIPE_CLK>;
-+			clock-names = "aux", "cfg_ahb", "ref", "rchng",
-+				      "pipe";
-+
-+			resets = <&gcc GCC_PCIE_0_PHY_BCR>;
-+			reset-names = "phy";
-+
-+			assigned-clocks = <&gcc GCC_PCIE_0_PHY_RCHNG_CLK>;
-+			assigned-clock-rates = <100000000>;
-+
-+			power-domains = <&gcc PCIE_0_PHY_GDSC>;
-+
-+			#clock-cells = <0>;
-+			clock-output-names = "pcie0_pipe_clk";
-+
-+			#phy-cells = <0>;
-+
-+			status = "disabled";
-+		};
-+
-+		pcie1: pci@1c08000 {
-+			device_type = "pci";
-+			compatible = "qcom,pcie-sm8550";
-+			reg = <0x0 0x01c08000 0x0 0x3000>,
-+			      <0x0 0x40000000 0x0 0xf1d>,
-+			      <0x0 0x40000f20 0x0 0xa8>,
-+			      <0x0 0x40001000 0x0 0x1000>,
-+			      <0x0 0x40100000 0x0 0x100000>;
-+			reg-names = "parf", "dbi", "elbi", "atu", "config";
-+			#address-cells = <3>;
-+			#size-cells = <2>;
-+			ranges = <0x01000000 0x0 0x40200000 0 0x40200000 0x0 0x100000>,
-+				 <0x02000000 0x0 0x40300000 0 0x40300000 0x0 0x1fd00000>;
-+			bus-range = <0x00 0xff>;
-+
-+			dma-coherent;
-+
-+			linux,pci-domain = <1>;
-+			num-lanes = <2>;
-+
-+			interrupts = <GIC_SPI 307 IRQ_TYPE_LEVEL_HIGH>;
-+			interrupt-names = "msi";
-+
-+			#interrupt-cells = <1>;
-+			interrupt-map-mask = <0 0 0 0x7>;
-+			interrupt-map = <0 0 0 1 &intc 0 0 0 434 IRQ_TYPE_LEVEL_HIGH>, /* int_a */
-+					<0 0 0 2 &intc 0 0 0 435 IRQ_TYPE_LEVEL_HIGH>, /* int_b */
-+					<0 0 0 3 &intc 0 0 0 438 IRQ_TYPE_LEVEL_HIGH>, /* int_c */
-+					<0 0 0 4 &intc 0 0 0 439 IRQ_TYPE_LEVEL_HIGH>; /* int_d */
-+
-+			clocks = <&gcc GCC_PCIE_1_AUX_CLK>,
-+				 <&gcc GCC_PCIE_1_CFG_AHB_CLK>,
-+				 <&gcc GCC_PCIE_1_MSTR_AXI_CLK>,
-+				 <&gcc GCC_PCIE_1_SLV_AXI_CLK>,
-+				 <&gcc GCC_PCIE_1_SLV_Q2A_AXI_CLK>,
-+				 <&gcc GCC_DDRSS_PCIE_SF_QTB_CLK>,
-+				 <&gcc GCC_AGGRE_NOC_PCIE_AXI_CLK>,
-+				 <&gcc GCC_CNOC_PCIE_SF_AXI_CLK>;
-+			clock-names = "aux",
-+				      "cfg",
-+				      "bus_master",
-+				      "bus_slave",
-+				      "slave_q2a",
-+				      "ddrss_sf_tbu",
-+				      "noc_aggr",
-+				      "cnoc_sf_axi";
-+
-+			assigned-clocks = <&gcc GCC_PCIE_1_AUX_CLK>;
-+			assigned-clock-rates = <19200000>;
-+
-+			interconnects = <&pcie_noc MASTER_PCIE_1 0 &mc_virt SLAVE_EBI1 0>,
-+					<&gem_noc MASTER_APPSS_PROC 0 &cnoc_main SLAVE_PCIE_1 0>;
-+			interconnect-names = "pcie-mem", "cpu-pcie";
-+
-+			iommus = <&apps_smmu 0x1480 0x7f>;
-+			iommu-map = <0x0   &apps_smmu 0x1480 0x1>,
-+				    <0x100 &apps_smmu 0x1481 0x1>;
-+
-+			resets = <&gcc GCC_PCIE_1_BCR>,
-+				<&gcc GCC_PCIE_1_LINK_DOWN_BCR>;
-+			reset-names = "pci", "link_down";
-+
-+			power-domains = <&gcc PCIE_1_GDSC>;
-+
-+			phys = <&pcie1_phy>;
-+			phy-names = "pciephy";
-+
-+			perst-gpios = <&tlmm 97 GPIO_ACTIVE_LOW>;
-+			enable-gpios = <&tlmm 99 GPIO_ACTIVE_HIGH>;
-+
-+			status = "disabled";
-+		};
-+
-+		pcie1_phy: phy@1c0e000 {
-+			compatible = "qcom,sm8550-qmp-gen4x2-pcie-phy";
-+			reg = <0x0 0x01c0e000 0x0 0x2000>;
-+
-+			clocks = <&gcc GCC_PCIE_1_PHY_AUX_CLK>,
-+				 <&gcc GCC_PCIE_1_CFG_AHB_CLK>,
-+				 <&tcsr TCSR_PCIE_1_CLKREF_EN>,
-+				 <&gcc GCC_PCIE_1_PHY_RCHNG_CLK>,
-+				 <&gcc GCC_PCIE_1_PIPE_CLK>;
-+			clock-names = "aux", "cfg_ahb", "ref", "rchng",
-+				      "pipe";
-+
-+			resets = <&gcc GCC_PCIE_1_PHY_BCR>,
-+				 <&gcc GCC_PCIE_1_NOCSR_COM_PHY_BCR>;
-+			reset-names = "phy", "phy_nocsr";
-+
-+			assigned-clocks = <&gcc GCC_PCIE_1_PHY_RCHNG_CLK>;
-+			assigned-clock-rates = <100000000>;
-+
-+			power-domains = <&gcc PCIE_1_PHY_GDSC>;
-+
-+			#clock-cells = <0>;
-+			clock-output-names = "pcie1_pipe_clk";
-+
-+			#phy-cells = <0>;
-+
-+			status = "disabled";
-+		};
-+
- 		cryptobam: dma-controller@1dc4000 {
- 			compatible = "qcom,bam-v1.7.0";
- 			reg = <0x0 0x01dc4000 0x0 0x28000>;
 -- 
-2.34.1
-
+~Vinod
 
 -- 
 linux-phy mailing list
