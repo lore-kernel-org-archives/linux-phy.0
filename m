@@ -4,66 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C7DDFC61DA4
-	for <linux-phy@archiver.kernel.org>; Thu,  2 Feb 2023 15:03:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B9338C61DA4
+	for <linux-phy@archiver.kernel.org>; Thu,  2 Feb 2023 17:00:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Date:Subject:Message-Id:References:
-	In-Reply-To:Cc:To:From:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9r5DxHiurhd0Dg8M9iCVAXQCGc306p8WdFfcaxkDj0o=; b=mZCm/8vWsv6lzA
-	hgTvPsl8FKoE6vry6rXFK/AXILqzOB3L4FTPaG2LRaLgbqQAEpnVqJwwlsl+pZ4/5MoSW1aKNq65C
-	3d29fCrZvwx7e11Q+0MNUFBHsN+tJswL4/bOBgY2Dp2u0lXCNOzeFDH0tH2ltCff2Of7VtiER1JK9
-	WAMWH7zmsYoZodp+2NH/5Y6hlFM9EwXOfigUPFlki7wrLLzPdq9+HxAWZ7D/jjgqZJsz9nzGQDEMV
-	qRKkv8/am0bfQeNVgssfU/WnikY+nSr+Iw12YOMxCpPEP+cWPRYyQ3cx0xA2CKXI3vJ3H5Aqg4C/j
-	ZpWcdqS3Bz5i/faIwHFg==;
+	List-Owner; bh=irNNI+OFFWVShfuTYYy4jWQL+nZn0H5BQXKb+C1Qj3I=; b=yJ+PGiHoRbVoDj
+	Ohzwz7XfgaLqcuq0hY2pePyBjoRj/HXiD1AR3N0vgvI2dR8eCbnZ65r0mqlzoRxjzKUrm2pDMHp+3
+	o2ZdL7Encbma9TSLBkhbOzhDZjeNfQkE+mFkknalXszwREdJVk388O3X5povxx4w9dk4OgVidtZAo
+	9w6z3bvA6pJRcKH+EGs1T9CKBCYCON0PTGwU0V4kd8GZm1wZyeD0wjZlF4MCZ10fPP01qMG6U0lxb
+	nr56YgsaW2WKEpwJ2AE9zSQF8pc2wx9GM7P3cUfvPgwC+WJKm88N7QEk4yexauCeI0aLCk9MbmwLW
+	A8I7469l9Tp33lTGBOYg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pNb7t-00GEgV-7y; Thu, 02 Feb 2023 15:03:49 +0000
-Received: from mail-oi1-f171.google.com ([209.85.167.171])
+	id 1pNcwY-00Gk4h-5P; Thu, 02 Feb 2023 17:00:14 +0000
+Received: from mail-wm1-x332.google.com ([2a00:1450:4864:20::332])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pNb7h-00GEZl-NC
-	for linux-phy@lists.infradead.org; Thu, 02 Feb 2023 15:03:39 +0000
-Received: by mail-oi1-f171.google.com with SMTP id bx13so1617604oib.13
-        for <linux-phy@lists.infradead.org>; Thu, 02 Feb 2023 07:03:37 -0800 (PST)
+	id 1pNcwR-00Gk0T-C5
+	for linux-phy@lists.infradead.org; Thu, 02 Feb 2023 17:00:08 +0000
+Received: by mail-wm1-x332.google.com with SMTP id f47-20020a05600c492f00b003dc584a7b7eso4191702wmp.3
+        for <linux-phy@lists.infradead.org>; Thu, 02 Feb 2023 09:00:03 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=RhWcv5ExWaP3//OnTLElwVyp8DmK2Pshcf2EZSENjBg=;
+        b=S59BU50BWaDwXZXUjhHPMPQGa7RFaMvglYDORCeXz5DaTmSlUJ2pEeHpVpvG1odNcn
+         2/pJ/ApUNg8czmIkCXmqq94V4vHr0lpDUY1HXzt63FSvGvTx/543eX5t3veDdyCnIfAk
+         5/6DMQ9TqnW/4suGIJVNiXNXj1ypi5g3KnXflobuo6jM3mSUP69IEQxmPX0K0dZF7Bec
+         5UJUrww+pMs2a7TzET06rDEcgb+YhC+41FHr1MlwZAeobNe7ABaVjgqsFEAoLElR58SP
+         TtJ7XRHL8jHflHSjoptLYiEFMOf6TltMRO3uKW653hr0XZv25puj4uxx0hS0nXvs17vg
+         idFA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=date:subject:message-id:references:in-reply-to:cc:to:from
-         :mime-version:content-transfer-encoding:x-gm-message-state:from:to
-         :cc:subject:date:message-id:reply-to;
-        bh=eaGBuW2eiAUWLAbhvcH7sX8zp4za8aw/4jDrYwgHmCA=;
-        b=Hs92HPQEBD8M04lweS8YOPa/EM0x0DvXlnfEO4DE1CW0q/RP9tMf211xszZcMA13gD
-         PVq/oGacoJu2y3d6qyYlCFsIq37CqWuIpBXeaNFLkaV0OjSYAmOzKMoePaFVfBtgwgZl
-         rDviMX4l8Zik04fD1eF705O3uplT3tA1FP61FvNrIor2bMi5wb2uYvcMLzTo6iRJnZnm
-         mwadAXMHqT8eGcTTdlYMmlf2HYLaCBH1CGhPAxergUt1SJBN2MG2LQf7GQP83WA4TRp9
-         Ax5xsPxvS9GMvPEqD8bCEOnA6r+VirGH3LM+veMRcVoux+uLSdMACqftp2uDsSrM2Ote
-         k0UA==
-X-Gm-Message-State: AO0yUKXn7ck/i9aHodI0rsbwTOL94AM0zyhlWg9hLqlqy9FjTPAcU2dN
-	fpX6oQDMzDm4YKmSkrOo4g==
-X-Google-Smtp-Source: AK7set/zJDHBmEsnM2EiuNQ+EOQRgpUewV4nbZTL+K+udzmJHwcrQzAad3Em6PvVUuZy6oh+DZt6ig==
-X-Received: by 2002:a05:6808:221b:b0:365:367:7c7a with SMTP id bd27-20020a056808221b00b0036503677c7amr4142713oib.11.1675350216914;
-        Thu, 02 Feb 2023 07:03:36 -0800 (PST)
-Received: from robh_at_kernel.org (66-90-144-107.dyn.grandenetworks.net. [66.90.144.107])
-        by smtp.gmail.com with ESMTPSA id g131-20020acab689000000b0036e9160f57csm8075076oif.20.2023.02.02.07.03.35
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 02 Feb 2023 07:03:36 -0800 (PST)
-Received: (nullmailer pid 1858082 invoked by uid 1000);
-	Thu, 02 Feb 2023 15:03:31 -0000
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=RhWcv5ExWaP3//OnTLElwVyp8DmK2Pshcf2EZSENjBg=;
+        b=T7vxuybuymmwcZ/4mTIbTKbZkP1wAtnxySXnTdCseE3akmBnzI9DMnghhejwi4NXqL
+         asGt4joiCjaLSb9GdC0m8V/UjpGxLUTo93NbdHOnha9lKbbbILTS0QA3c7XOMKAXKI/l
+         eTHha+yd91Emd+H/RvxtvT9jxFml+4TC1H60jExQNgAIfpcDG6h1HMxjxGCZiiA5ekVj
+         TU2RxAFj8hGy/rE9rRNe1dVT2usF2JuwUU5rGu8g9WefksNTJBitmjMDjK68j4jxIUBz
+         tpCmBA3Hyx9BygF+F9ARega5CDRbyGdqxsQkM0Xf+s4/0qvbqIS1SzaVHTHISgNo2TDa
+         ziew==
+X-Gm-Message-State: AO0yUKXWo2V4j33939AO4JIyWTikmYNZRKXUr0hY6aCrkSKeIBILwRgB
+	6t+l57d7h5k2He8v+ekd5+SDtA==
+X-Google-Smtp-Source: AK7set8Mz6f9IAFqisS/S6MhfAxrzntIV6lhfSiMTdk8c1G+CNehf5jH9DotPDB/8tObaNdLMHytCw==
+X-Received: by 2002:a05:600c:1e13:b0:3d9:f836:3728 with SMTP id ay19-20020a05600c1e1300b003d9f8363728mr6856891wmb.11.1675357202092;
+        Thu, 02 Feb 2023 09:00:02 -0800 (PST)
+Received: from [192.168.1.109] ([178.197.216.144])
+        by smtp.gmail.com with ESMTPSA id he7-20020a05600c540700b003df5be8987esm3632611wmb.20.2023.02.02.09.00.00
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 02 Feb 2023 09:00:01 -0800 (PST)
+Message-ID: <9bc34d9a-e4f3-272e-1ebd-c717509b709b@linaro.org>
+Date: Thu, 2 Feb 2023 18:00:00 +0100
 MIME-Version: 1.0
-From: Rob Herring <robh@kernel.org>
-To: Abel Vesa <abel.vesa@linaro.org>
-Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org, Rob Herring <robh+dt@kernel.org>, vkoul@kernel.org, Kishon Vijay Abraham I <kishon@kernel.org>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Konrad Dybcio <konrad.dybcio@linaro.org>, Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>, Lee Jones <lee@kernel.org>, linux-phy@lists.infradead.org, Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
-In-Reply-To: <20230202133816.4026990-3-abel.vesa@linaro.org>
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.7.1
+Subject: Re: [RFC v3 1/7] dt-bindings: mfd: qcom,spmi-pmic: Add pattern
+ property for phy
+Content-Language: en-US
+To: Abel Vesa <abel.vesa@linaro.org>, Andy Gross <agross@kernel.org>,
+ Bjorn Andersson <andersson@kernel.org>,
+ Konrad Dybcio <konrad.dybcio@linaro.org>, Lee Jones <lee@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ "vkoul@kernel.org" <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>
+Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ linux-phy@lists.infradead.org
 References: <20230202133816.4026990-1-abel.vesa@linaro.org>
- <20230202133816.4026990-3-abel.vesa@linaro.org>
-Message-Id: <167535003913.1854224.16066209140007684917.robh@kernel.org>
-Subject: Re: [RFC v3 2/7] dt-bindings: phy: Add qcom,snps-eusb2-repeater
- schema file
-Date: Thu, 02 Feb 2023 09:03:31 -0600
+ <20230202133816.4026990-2-abel.vesa@linaro.org>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <20230202133816.4026990-2-abel.vesa@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230202_070337_783749_C389EE92 
-X-CRM114-Status: GOOD (  13.43  )
+X-CRM114-CacheID: sfid-20230202_090007_513412_4FBF3551 
+X-CRM114-Status: UNSURE (   9.24  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,46 +102,18 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-On Thu, 02 Feb 2023 15:38:11 +0200, Abel Vesa wrote:
-> The SM8550 SoC uses Synopsis eUSB2 repeater found in PM8550b.
-> Add a dt-binding schema for the new driver.
+On 02/02/2023 14:38, Abel Vesa wrote:
+> The phy pattern property will be used for providing eUSB2 repeater
+> functionality. This will be modelled as a Qualcomm PHY driver.
 > 
 > Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
 > ---
->  .../phy/qcom,snps-eusb2-repeater.yaml         | 48 +++++++++++++++++++
->  1 file changed, 48 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml
-> 
+>  Documentation/devicetree/bindings/mfd/qcom,spmi-pmic.yaml | 4 ++++
 
-My bot found errors running 'make DT_CHECKER_FLAGS=-m dt_binding_check'
-on your patch (DT_CHECKER_FLAGS is new in v5.13):
+You need to re-order your patches to keep everything bisectable.
 
-yamllint warnings/errors:
-
-dtschema/dtc warnings/errors:
-/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.example.dtb: pmic@7: compatible:0: 'qcom,pm8550' is not one of ['qcom,pm6125', 'qcom,pm6150', 'qcom,pm6150l', 'qcom,pm6350', 'qcom,pm660', 'qcom,pm660l', 'qcom,pm7250b', 'qcom,pm7325', 'qcom,pm8004', 'qcom,pm8005', 'qcom,pm8009', 'qcom,pm8019', 'qcom,pm8028', 'qcom,pm8110', 'qcom,pm8150', 'qcom,pm8150b', 'qcom,pm8150c', 'qcom,pm8150l', 'qcom,pm8226', 'qcom,pm8350', 'qcom,pm8350b', 'qcom,pm8350c', 'qcom,pm8841', 'qcom,pm8909', 'qcom,pm8916', 'qcom,pm8941', 'qcom,pm8950', 'qcom,pm8953', 'qcom,pm8994', 'qcom,pm8998', 'qcom,pma8084', 'qcom,pmd9635', 'qcom,pmi8950', 'qcom,pmi8962', 'qcom,pmi8994', 'qcom,pmi8998', 'qcom,pmk8002', 'qcom,pmk8350', 'qcom,pmm8155au', 'qcom,pmp8074', 'qcom,pmr735a', 'qcom,pmr735b', 'qcom,pms405', 'qcom,pmx55', 'qcom,pmx65', 'qcom,smb2351']
-	From schema: /builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/mfd/qcom,spmi-pmic.yaml
-/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.example.dtb: pmic@7: 'phy@fd00' does not match any of the regexes: '(.*)?(wled|leds)@[0-9a-f]+$', '^adc-tm@[0-9a-f]+$', '^adc@[0-9a-f]+$', '^audio-codec@[0-9a-f]+$', '^charger@[0-9a-f]+$', '^mpps@[0-9a-f]+$', '^rtc@[0-9a-f]+$', '^temp-alarm@[0-9a-f]+$', '^usb-detect@[0-9a-f]+$', '^usb-vbus-regulator@[0-9a-f]+$', '^vibrator@[0-9a-f]+$', 'gpio@[0-9a-f]+$', 'pinctrl-[0-9]+', 'pon@[0-9a-f]+$'
-	From schema: /builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/mfd/qcom,spmi-pmic.yaml
-Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.example.dtb: /example-0/pmic@7: failed to match any schema with compatible: ['qcom,pm8550', 'qcom,spmi-pmic']
-
-doc reference errors (make refcheckdocs):
-
-See https://patchwork.ozlabs.org/project/devicetree-bindings/patch/20230202133816.4026990-3-abel.vesa@linaro.org
-
-The base for the series is generally the latest rc1. A different dependency
-should be noted in *this* patch.
-
-If you already ran 'make dt_binding_check' and didn't see the above
-error(s), then make sure 'yamllint' is installed and dt-schema is up to
-date:
-
-pip3 install dtschema --upgrade
-
-Please check and re-submit after running the above command yourself. Note
-that DT_SCHEMA_FILES can be set to your schema file to speed up checking
-your schema. However, it must be unset to test all examples with your schema.
+Best regards,
+Krzysztof
 
 
 -- 
