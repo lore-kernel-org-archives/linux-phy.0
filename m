@@ -4,90 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EEDE4C05027
-	for <linux-phy@archiver.kernel.org>; Thu,  2 Feb 2023 19:51:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DC93FC636D3
+	for <linux-phy@archiver.kernel.org>; Thu,  2 Feb 2023 21:53:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=j5Av1AKpkISLnO+7mAdGoAC15Dj4GWLTxTvNe35VqUM=; b=yCGLm+KjqhIIBF
-	wKv3xLpNTf8Ih6pDzU/X/cMYYtCY3fvsYrOL5pePrhcpvEgxad4QxUzOcWbNugH6iihV2vhwEVBBj
-	YHLO+zLQFXYBZI0vqtuzAVWyWkqRufFAlpHDgSbLV9yEQJXcXbhdgKbtdNf1PYjDpcDwdGMLGG7Kq
-	RWxPSYaFmyRyB9WiBN4OOp1lVOuoLlS7mkJ1pZAH0KHa9/aaNAGsDsCT2L2eVgKnxxKv9uqQYGQ+b
-	eWE3kLDA3hU9N83fSPrrqQ2yom3+ayJP2YWuOjsjzCYIgqJk+NdyuvygrqQnATdGbpiwAB3wIGm3E
-	CFxoszNE2/7moxs00wsw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=gdqFua+ycBoMMn7ET5fbqFo7WtdiZzNvXM0HMhAz8ho=; b=gRavF4y6S+U5Mx
+	9AGKMHtLa3CkPAn+3Kl3XCqgKtJHMVv6+Xbd8hY8jH0xXc8v2C747Yxq6IenCFgRzMjwbI34Njs7W
+	WMsgz0TMxF6rLc0FrYX5l5iOeDCnZvMCD1Z0HqwQwPv/8wwm2zGkQb6DsqjUwobjmibBNOOQqa6fq
+	tQ4xyAoT+lYWWAgQfkjCsrA5z8ER5Bw7W1TTayRGnCVIKZFZ7ijyyh6zKPhm4HWSS0pMeIgrnx/iU
+	IElLL2JH/d8kMmrXW6O0YGBQwrg3hitz5/O/lZeMgZ4OdTlHcTgoTiEG69d4hsjrCI5fmgrdybBJO
+	7TZPb5pQUIYdqtO/3Exw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pNfbo-00H6Bt-39; Thu, 02 Feb 2023 19:51:00 +0000
-Received: from mail-ed1-x52d.google.com ([2a00:1450:4864:20::52d])
+	id 1pNhWV-00HHEd-9T; Thu, 02 Feb 2023 21:53:39 +0000
+Received: from mail-pf1-x42b.google.com ([2607:f8b0:4864:20::42b])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pNfbk-00H6Ac-VR
-	for linux-phy@lists.infradead.org; Thu, 02 Feb 2023 19:50:58 +0000
-Received: by mail-ed1-x52d.google.com with SMTP id x7so3231473edr.0
-        for <linux-phy@lists.infradead.org>; Thu, 02 Feb 2023 11:50:54 -0800 (PST)
+	id 1pNhWS-00HHD9-H5
+	for linux-phy@lists.infradead.org; Thu, 02 Feb 2023 21:53:38 +0000
+Received: by mail-pf1-x42b.google.com with SMTP id bd15so2212883pfb.8
+        for <linux-phy@lists.infradead.org>; Thu, 02 Feb 2023 13:53:32 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=vU6b1/DyW9VF99p038CT5rL7cz19rU/zHJDhT4ApbFc=;
-        b=qFo6Zs4zc/E7ttK81jaTeAILjmRH5v3tgoYVgjr6j/geeokXq8B3VKC1pad3rpZa5z
-         Hx9aluvyOeNlG/2t/IxUqJKbWmnWj8CdxyMA1jK8k/tj9FveSRBkAaYJC2Ks7QmLpinM
-         ho7p6AP7jt5VbSWhkHP8/2a0cLQP/b98mdx9WZGKea13BendXKvIiiLPwEp4sQg8W9Kr
-         4kPHEyZP2DzxfUYQpUpP7nLPaXwQ3NPYdyzX29/ZCFhWw1uNQqzcOktQep/WzBX59D0r
-         YeVPI49AW2fyIGS8rPUAfXPADxjZXADDlQGjJGGpUbZ+TB2SMs0YW4F/lM/HadrYG4Rr
-         S93Q==
+        d=chromium.org; s=google;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=0MCj0cFQfLc6l+F+joHSy2ngku9zmGXjqJjBuWdwnqo=;
+        b=THonEsNsrNwwDbGNAqMP0NR+bqP30aRxRaMPF9aTDsX2pPqFLiPILalesYfvBvM2gD
+         e9miAlWLqAArGKWpKox5efYs1QYJxBieHICLgKW7iip0R14dfj6wlAwQ4oF2dIrH10vc
+         FD57j/5KRh7NE3/TpOqv9remFAGIp720df5UQ=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=vU6b1/DyW9VF99p038CT5rL7cz19rU/zHJDhT4ApbFc=;
-        b=GPOv771qCLVxT7kKnAs8SmsymI8Gvpc5+7MfPzalN0QQxRH7dGg1e6QbnrKDJ6p7Me
-         O6JGt+GQkwwf2VofABpcJg6gzg+sNrA94u8WdGDNzAb6Stmq0PCF9cYpYsuiqgA2faDN
-         F8npWxf0LYL7mamfZ9GtLilf3XgoH9P7GtERhLA8M/iW/+AJuWGdimj8X9Hj913z1LL+
-         btX3k4zdU7Zx8SmIlZ2nCd16Oby79DKhrychylqCVUjnY1PPwZFNlvKC09gs+XFa8Tzf
-         npUNq6YcSH7xhyKtQKqlbWF0SROX63JIfaQ8hHHOLJVch85tI03IYxdCQGhneNhNogqO
-         rrgw==
-X-Gm-Message-State: AO0yUKX45fUbAFkp7cy497okvsFjb49jKLzYPzr0UrVBeSAuAM6xd+kp
-	qFotOvI8FCLYjIplDAppMlT5Yw==
-X-Google-Smtp-Source: AK7set9amC5pThCDH+9E/vyf4TogzP4SRLeuHMPo01KOUugOmYukuiSJFsLqp102YzKiW0olzQcJrQ==
-X-Received: by 2002:a05:6402:22a7:b0:4a2:2d79:dce2 with SMTP id cx7-20020a05640222a700b004a22d79dce2mr7371719edb.10.1675367453255;
-        Thu, 02 Feb 2023 11:50:53 -0800 (PST)
-Received: from ?IPV6:2001:14ba:a085:4d00::8a5? (dzccz6yyyyyyyyyyybcwt-3.rev.dnainternet.fi. [2001:14ba:a085:4d00::8a5])
-        by smtp.gmail.com with ESMTPSA id er18-20020a056402449200b0046892e493dcsm150837edb.26.2023.02.02.11.50.51
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 02 Feb 2023 11:50:52 -0800 (PST)
-Message-ID: <093a50dc-8f9e-39c9-ba31-906628e54e35@linaro.org>
-Date: Thu, 2 Feb 2023 21:50:51 +0200
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=0MCj0cFQfLc6l+F+joHSy2ngku9zmGXjqJjBuWdwnqo=;
+        b=5IEOd6QZRtyW6yhjDjLLGXbuBCbUqxs8dRia7RwtT1IeOt37mHEGexnNE64CG0kktk
+         U2oNRhgyeTfOq8GGx9BtDJbmLQ/3DhjsOYSraeL///pHd+NWWzJgIRO9m27FYztDVNYK
+         llq94zuEhOdLEvXExBzwdLOloKJEqmAH4agXxi0zMIdJiJOlT+NbdEn/kF6MosIpdFbz
+         M9ZT070P/q9tqPfhBZY5cBu0DXfghnHK0L7VVnkejYreea519RMXoQv+DdLw8i+1kwEl
+         HVEDCadcOmOtmm5NkgMDtZVdGyYVWyCNqopVwR2sGuRwjedm4NuqNc2qdjyFkuqEiNDx
+         yQ7w==
+X-Gm-Message-State: AO0yUKWh5RMv8E27BGJ+0zTrC6o5/oDXuVQo8JJyLIQ72gCK471RYCnY
+	6PpSANz0sPGje0pq5JkCPp0VzA==
+X-Google-Smtp-Source: AK7set+QJxtFkEvINMG9wGwgRXKwCl9zJpvCZ3GD62ypGcPQW9TH9CoPBFotF6iO9/XlA9iDu4OdOA==
+X-Received: by 2002:a62:4ecc:0:b0:593:c41e:474 with SMTP id c195-20020a624ecc000000b00593c41e0474mr6856838pfb.9.1675374812326;
+        Thu, 02 Feb 2023 13:53:32 -0800 (PST)
+Received: from smtp.gmail.com ([2620:15c:11a:201:4d8f:351:ff3d:e8eb])
+        by smtp.gmail.com with ESMTPSA id j22-20020a62b616000000b00594235980e4sm147447pff.181.2023.02.02.13.53.31
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 02 Feb 2023 13:53:31 -0800 (PST)
+From: Stephen Boyd <swboyd@chromium.org>
+To: Vinod Koul <vkoul@kernel.org>
+Cc: linux-kernel@vger.kernel.org,
+	patches@lists.linux.dev,
+	linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+	Johan Hovold <johan+linaro@kernel.org>
+Subject: [PATCH v2] phy: qcom-qmp: Introduce Kconfig symbols for discrete drivers
+Date: Thu,  2 Feb 2023 13:53:29 -0800
+Message-Id: <20230202215330.2152726-1-swboyd@chromium.org>
+X-Mailer: git-send-email 2.39.1.519.gcb327c4b5f-goog
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.7.1
-Subject: Re: [PATCH v6 11/12] arm64: dts: qcom: sm8550: Add PCIe PHYs and
- controllers nodes
-To: Abel Vesa <abel.vesa@linaro.org>, Andy Gross <agross@kernel.org>,
- Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konrad.dybcio@linaro.org>, Rob Herring <robh@kernel.org>,
- =?UTF-8?Q?Krzysztof_Wilczy=c5=84ski?= <kw@linux.com>,
- Bjorn Helgaas <bhelgaas@google.com>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Lorenzo Pieralisi <lpieralisi@kernel.org>,
- "vkoul@kernel.org" <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>,
- Manivannan Sadhasivam <mani@kernel.org>
-Cc: linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
-References: <20230202123902.3831491-1-abel.vesa@linaro.org>
- <20230202123902.3831491-12-abel.vesa@linaro.org>
-Content-Language: en-GB
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-In-Reply-To: <20230202123902.3831491-12-abel.vesa@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230202_115057_050358_3586D001 
-X-CRM114-Status: GOOD (  23.79  )
+X-CRM114-CacheID: sfid-20230202_135336_588805_52C5F05B 
+X-CRM114-Status: GOOD (  13.11  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,151 +83,127 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 02/02/2023 14:39, Abel Vesa wrote:
-> Add PCIe controllers and PHY nodes.
-> 
-> Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
-> ---
-> 
-> This patch does not have a v3, but since it is now part of the same
-> patchset with the controller and the phy drivers patches, I had to
-> bump the version to 4.
-> 
-> The v5 was here:
-> https://lore.kernel.org/all/20230124124714.3087948-12-abel.vesa@linaro.org/
-> 
-> Changes since v5:
->   * renamed nocsr_com to phy_nocsr as discussed off-list with Bjorn and Johan
-> 
-> Changes since v4:
->   * renamed noc_aggr_4 back to noc_aggr
->   * moved pinctrl properties out to MTP dts
->   * renamed nocsr to nocsr_com
-> 
-> Changes since v2:
->   * renamed the pcie_1_link_down_reset to simply link_down
->   * dropped the pipe from clock-names
->   * renamed aggre clock-names to noc_aggr_4
->   * dropped the _pcie infix from cnoc_pcie_sf_axi
->   * dropped the aux_phy clock from the pcie1
->   
-> Changes since v1:
->   * ordered pcie related nodes alphabetically in MTP dts
->   * dropped the pipe_mux, phy_pipe and ref clocks from the pcie nodes
->   * dropped the child node from the phy nodes, like Johan suggested,
->     and updated to use the sc8280xp binding scheme
->   * changed "pcie_1_nocsr_com_phy_reset" 2nd reset name of pcie1_phy
->     to "nocsr"
->   * reordered all pcie nodes properties to look similar to the ones
->     from sc8280xp
-> 
-> 
->   arch/arm64/boot/dts/qcom/sm8550.dtsi | 203 ++++++++++++++++++++++++++-
->   1 file changed, 200 insertions(+), 3 deletions(-)
-> 
-> diff --git a/arch/arm64/boot/dts/qcom/sm8550.dtsi b/arch/arm64/boot/dts/qcom/sm8550.dtsi
-> index be2d85ee1f20..a85d2ae7d155 100644
-> --- a/arch/arm64/boot/dts/qcom/sm8550.dtsi
-> +++ b/arch/arm64/boot/dts/qcom/sm8550.dtsi
-> @@ -740,9 +740,9 @@ gcc: clock-controller@100000 {
->   			#reset-cells = <1>;
->   			#power-domain-cells = <1>;
->   			clocks = <&bi_tcxo_div2>, <&sleep_clk>,
-> -				 <0>,
-> -				 <0>,
-> -				 <0>,
-> +				 <&pcie0_phy>,
-> +				 <&pcie1_phy>,
-> +				 <&pcie_1_phy_aux_clk>,
->   				 <&ufs_mem_phy 0>,
->   				 <&ufs_mem_phy 1>,
->   				 <&ufs_mem_phy 2>,
-> @@ -1641,6 +1641,203 @@ mmss_noc: interconnect@1780000 {
->   			qcom,bcm-voters = <&apps_bcm_voter>;
->   		};
->   
-> +		pcie0: pci@1c00000 {
-> +			device_type = "pci";
-> +			compatible = "qcom,pcie-sm8550";
-> +			reg = <0 0x01c00000 0 0x3000>,
-> +			      <0 0x60000000 0 0xf1d>,
-> +			      <0 0x60000f20 0 0xa8>,
-> +			      <0 0x60001000 0 0x1000>,
-> +			      <0 0x60100000 0 0x100000>;
-> +			reg-names = "parf", "dbi", "elbi", "atu", "config";
-> +			#address-cells = <3>;
-> +			#size-cells = <2>;
-> +			ranges = <0x01000000 0x0 0x60200000 0 0x60200000 0x0 0x100000>,
-> +				 <0x02000000 0x0 0x60300000 0 0x60300000 0x0 0x3d00000>;
-> +			bus-range = <0x00 0xff>;
-> +
-> +			dma-coherent;
-> +
-> +			linux,pci-domain = <0>;
-> +			num-lanes = <2>;
-> +
-> +			interrupts = <GIC_SPI 141 IRQ_TYPE_LEVEL_HIGH>;
-> +			interrupt-names = "msi";
-> +
-> +			#interrupt-cells = <1>;
-> +			interrupt-map-mask = <0 0 0 0x7>;
-> +			interrupt-map = <0 0 0 1 &intc 0 0 0 149 IRQ_TYPE_LEVEL_HIGH>, /* int_a */
-> +					<0 0 0 2 &intc 0 0 0 150 IRQ_TYPE_LEVEL_HIGH>, /* int_b */
-> +					<0 0 0 3 &intc 0 0 0 151 IRQ_TYPE_LEVEL_HIGH>, /* int_c */
-> +					<0 0 0 4 &intc 0 0 0 152 IRQ_TYPE_LEVEL_HIGH>; /* int_d */
-> +
-> +			clocks = <&gcc GCC_PCIE_0_AUX_CLK>,
-> +				 <&gcc GCC_PCIE_0_CFG_AHB_CLK>,
-> +				 <&gcc GCC_PCIE_0_MSTR_AXI_CLK>,
-> +				 <&gcc GCC_PCIE_0_SLV_AXI_CLK>,
-> +				 <&gcc GCC_PCIE_0_SLV_Q2A_AXI_CLK>,
-> +				 <&gcc GCC_DDRSS_PCIE_SF_QTB_CLK>,
-> +				 <&gcc GCC_AGGRE_NOC_PCIE_AXI_CLK>;
-> +			clock-names = "aux",
-> +				      "cfg",
-> +				      "bus_master",
-> +				      "bus_slave",
-> +				      "slave_q2a",
-> +				      "ddrss_sf_tbu",
-> +				      "noc_aggr";
-> +
-> +			interconnects = <&pcie_noc MASTER_PCIE_0 0 &mc_virt SLAVE_EBI1 0>,
-> +					<&gem_noc MASTER_APPSS_PROC 0 &cnoc_main SLAVE_PCIE_0 0>;
-> +			interconnect-names = "pcie-mem", "cpu-pcie";
-> +
-> +			iommus = <&apps_smmu 0x1400 0x7f>;
-> +			iommu-map = <0x0   &apps_smmu 0x1400 0x1>,
-> +				    <0x100 &apps_smmu 0x1401 0x1>;
-> +
-> +			resets = <&gcc GCC_PCIE_0_BCR>;
-> +			reset-names = "pci";
-> +
-> +			power-domains = <&gcc PCIE_0_GDSC>;
-> +
-> +			phys = <&pcie0_phy>;
-> +			phy-names = "pciephy";
-> +
-> +			perst-gpios = <&tlmm 94 GPIO_ACTIVE_LOW>;
-> +			wake-gpios = <&tlmm 96 GPIO_ACTIVE_HIGH>;
+Introduce a config option for each QMP PHY driver now that the QMP PHY
+mega-driver has been split up into different modules. This allows kernel
+configurators to limit the binary size of the kernel by only compiling
+in the QMP PHY driver that they need.
 
-As we have moved pinctrl to board files, it would be logical to also 
-move these gpios to the board file too. Following the same logic, each 
-board can use it's own set of perst/wake gpios for PCIe.
+Leave the old config QCOM_QMP in place and make it into a menuconfig so
+that 'make olddefconfig' continues to work. Furthermore, set the default
+of the new Kconfig symbols to be QCOM_QMP so that the transition is
+smooth.
 
-> +
-> +			status = "disabled";
-> +		};
-> +
-[skipped the rest]
+Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Reviewed-by: Johan Hovold <johan+linaro@kernel.org>
+Signed-off-by: Stephen Boyd <swboyd@chromium.org>
+---
 
+Changes from v1 (https://lore.kernel.org/r/20230114000910.1256462-1-swboyd@chromium.org):
+ * Pick up review tags
+ * Update commit text to better reflect reality
+ * Rebase to phy tree's next branch
+
+ drivers/phy/qualcomm/Kconfig  | 50 ++++++++++++++++++++++++++++++++---
+ drivers/phy/qualcomm/Makefile | 12 ++++-----
+ 2 files changed, 52 insertions(+), 10 deletions(-)
+
+diff --git a/drivers/phy/qualcomm/Kconfig b/drivers/phy/qualcomm/Kconfig
+index eb9ddc685b38..62cf51aab1b8 100644
+--- a/drivers/phy/qualcomm/Kconfig
++++ b/drivers/phy/qualcomm/Kconfig
+@@ -50,14 +50,56 @@ config PHY_QCOM_PCIE2
+ 	  Enable this to support the Qualcomm PCIe PHY, used with the Synopsys
+ 	  based PCIe controller.
+ 
+-config PHY_QCOM_QMP
+-	tristate "Qualcomm QMP PHY Driver"
++menuconfig PHY_QCOM_QMP
++	tristate "Qualcomm QMP PHY Drivers"
+ 	depends on OF && COMMON_CLK && (ARCH_QCOM || COMPILE_TEST)
++
++if PHY_QCOM_QMP
++
++config PHY_QCOM_QMP_COMBO
++	tristate "Qualcomm QMP Combo PHY Driver"
++	default PHY_QCOM_QMP
+ 	select GENERIC_PHY
+ 	select MFD_SYSCON
+ 	help
+-	  Enable this to support the QMP PHY transceiver that is used
+-	  with controllers such as PCIe, UFS, and USB on Qualcomm chips.
++	  Enable this to support the QMP Combo PHY transceiver that is used
++	  with USB3 and DisplayPort controllers on Qualcomm chips.
++
++config PHY_QCOM_QMP_PCIE
++	tristate "Qualcomm QMP PCIe PHY Driver"
++	depends on PCI || COMPILE_TEST
++	select GENERIC_PHY
++	default PHY_QCOM_QMP
++	help
++	  Enable this to support the QMP PCIe PHY transceiver that is used
++	  with PCIe controllers on Qualcomm chips.
++
++config PHY_QCOM_QMP_PCIE_8996
++	tristate "Qualcomm QMP PCIe 8996 PHY Driver"
++	depends on PCI || COMPILE_TEST
++	select GENERIC_PHY
++	default PHY_QCOM_QMP
++	help
++	  Enable this to support the QMP PCIe PHY transceiver that is used
++	  with PCIe controllers on Qualcomm msm8996 chips.
++
++config PHY_QCOM_QMP_UFS
++	tristate "Qualcomm QMP UFS PHY Driver"
++	select GENERIC_PHY
++	default PHY_QCOM_QMP
++	help
++	  Enable this to support the QMP UFS PHY transceiver that is used
++	  with UFS controllers on Qualcomm chips.
++
++config PHY_QCOM_QMP_USB
++	tristate "Qualcomm QMP USB PHY Driver"
++	select GENERIC_PHY
++	default PHY_QCOM_QMP
++	help
++	  Enable this to support the QMP USB PHY transceiver that is used
++	  with USB3 controllers on Qualcomm chips.
++
++endif # PHY_QCOM_QMP
+ 
+ config PHY_QCOM_QUSB2
+ 	tristate "Qualcomm QUSB2 PHY Driver"
+diff --git a/drivers/phy/qualcomm/Makefile b/drivers/phy/qualcomm/Makefile
+index 65f6c30a3e93..79dd4e507961 100644
+--- a/drivers/phy/qualcomm/Makefile
++++ b/drivers/phy/qualcomm/Makefile
+@@ -5,12 +5,12 @@ obj-$(CONFIG_PHY_QCOM_EDP)		+= phy-qcom-edp.o
+ obj-$(CONFIG_PHY_QCOM_IPQ4019_USB)	+= phy-qcom-ipq4019-usb.o
+ obj-$(CONFIG_PHY_QCOM_IPQ806X_SATA)	+= phy-qcom-ipq806x-sata.o
+ obj-$(CONFIG_PHY_QCOM_PCIE2)		+= phy-qcom-pcie2.o
+-obj-$(CONFIG_PHY_QCOM_QMP)		+= \
+-	phy-qcom-qmp-combo.o \
+-	phy-qcom-qmp-pcie.o \
+-	phy-qcom-qmp-pcie-msm8996.o \
+-	phy-qcom-qmp-ufs.o \
+-	phy-qcom-qmp-usb.o
++
++obj-$(CONFIG_PHY_QCOM_QMP_COMBO)	+= phy-qcom-qmp-combo.o
++obj-$(CONFIG_PHY_QCOM_QMP_PCIE)		+= phy-qcom-qmp-pcie.o
++obj-$(CONFIG_PHY_QCOM_QMP_PCIE_8996)	+= phy-qcom-qmp-pcie-msm8996.o
++obj-$(CONFIG_PHY_QCOM_QMP_UFS)		+= phy-qcom-qmp-ufs.o
++obj-$(CONFIG_PHY_QCOM_QMP_USB)		+= phy-qcom-qmp-usb.o
+ 
+ obj-$(CONFIG_PHY_QCOM_QUSB2)		+= phy-qcom-qusb2.o
+ obj-$(CONFIG_PHY_QCOM_USB_HS) 		+= phy-qcom-usb-hs.o
+
+base-commit: b41499a1085b9278d73c6132d49849a6a86a81bc
 -- 
-With best wishes
-Dmitry
+https://chromeos.dev
 
 
 -- 
