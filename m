@@ -4,62 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5980FC636D7
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 68F2BC636D6
 	for <linux-phy@archiver.kernel.org>; Thu,  2 Feb 2023 13:25:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8AOF/Oa4Ay102Q+AaPcgcRofO7BF4uiT831qCzd00is=; b=fdCNOMmWVWe34/
-	AZYCrVrhNvNSm5MqaMtfxEyFu2sYojG4U4+vnRnrEs049FSeIJhNpGHvpY5TPlrEQ/v2bCc4KVqWv
-	MTKnWwKtZE9u2lJOHIIxSIWJzocbzf9B0LyhTDNYUfh67/uodi6eRgf3deRMqQy46kGAFJ6VIhlkG
-	lT9papIwiQIZ+PX7l8hmcir3CRq+80JX/5bzQriRNzzyLG23eCInVCMQa0WHuasBHI+V7SS4nrhqj
-	ThsM87cjcFTcNknrYkNN0JWfskky/o6Y1DeFgv/X9AVtxPHtgJ8bGDca7euTctf9SZ5Hl/zGl0rAT
-	8U90rAfhCnbmXD3Yyu3A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=LmTf+LMNSg9jf82NYz8KN60iRU/Q2rXrbcOFRjHxdBg=; b=Bjvg2AFJ+BNNhw
+	0fGjHJ6NsweCW4WheTCPZRJk15U4E/FZPmsKKtlbnKOZxcGkcNmS43Kn4KRrYIyp+NOOkOs3gwe+c
+	qw+OOlnGlvX+cFhIwbVqzyhiEtJoGZmnk/ryNDrqHCa9pRgMavi4iZlXLO2tbgyxysu3jpuV0M2V7
+	//Mk5GieVF5XoxCLiLxIaCSO7it0BWmI+3qooHvuHagMBex7LlcXPiDXRc1sNvKJ0rQI8OuyJlysd
+	yYtM+VOd1V+J2PcSy1E13g/WLxL/8DK4QgeEE2lS0kC6akmTfyZyS8ZA/1h2jppn5Q0kqR7qBA2/o
+	f58XBRSEDY5Tyl7uRv0Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pNZaZ-00G08g-PW; Thu, 02 Feb 2023 13:25:19 +0000
-Received: from mail-wm1-x331.google.com ([2a00:1450:4864:20::331])
+	id 1pNZaZ-00G08n-RX; Thu, 02 Feb 2023 13:25:19 +0000
+Received: from mail-wm1-x32d.google.com ([2a00:1450:4864:20::32d])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pNZaX-00G06w-2h
+	id 1pNZaX-00G06a-7D
 	for linux-phy@lists.infradead.org; Thu, 02 Feb 2023 13:25:18 +0000
-Received: by mail-wm1-x331.google.com with SMTP id c10-20020a05600c0a4a00b003db0636ff84so1410652wmq.0
-        for <linux-phy@lists.infradead.org>; Thu, 02 Feb 2023 05:25:16 -0800 (PST)
+Received: by mail-wm1-x32d.google.com with SMTP id c10-20020a05600c0a4a00b003db0636ff84so1410623wmq.0
+        for <linux-phy@lists.infradead.org>; Thu, 02 Feb 2023 05:25:15 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=X4nzyARZIT5i7ouqU6zm4IdSHZXgc31pmaeYmYVbTxo=;
-        b=edWm92Yyv5rpe0OMlXAGEqX9M7qPhSHvx8rRM3NrQvxE3juveK8cHgBusvXG615lGl
-         lTsNI1COW0Yk1CHplrOfeCj1oc7jAe/SUoZGBT6JEvrjqo0F2UxaKT9KUCnOcRJmT2iY
-         VPpFcZBQvipAmmtDi20wNFcETX8DvZ6FFtShLJUVYOvXNHOw67Bz0T9j6ex8jUt9jKNO
-         QVm6ZhOHIRn8Px53zlMyDCXG/dumGNgopxXVwiEAe2F9oaUH/Lp6NQmfKQAICU7D0CfM
-         g96NOAxOF2Kaz7kISli93v+OjGZb53GGArMKXZPjjtBBwhGt/P3xJtrOqb5z4UPabMvY
-         DZtQ==
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=kW5GxFMKVLm3HHfRK3v8PPMjbddlT4O3IPT99HE/Mdc=;
+        b=CBIqXA7Kgxrf8BHQf5K/34k0csj53P975JOjOt0SDNjojgK3zm6MlxAIjprO/6JQvh
+         18ArNoWT+GZTk5CWBXr7gaoehYMyWpAN0Vc/lcTpGf+Ym/Zf08hyaPA93XYZvPfNiLxF
+         eJHMcGk2sqvgYFBmj3+JK7huj4YSiuhvnz/W7jvyimf/eAtstRhhMdNHJU4QW7QEaksR
+         e1imYZm9BoUYw/2YPiRdB6/+kqZCuCzf/OaNKZlGwUpW4V+QLH1S2+lbppyAWOuDtx7x
+         6qJM9SZmaLkA8Y2jcYwDsJzZVfJHYOG4sdTDuvDHAHW8PHq+6jaud66JtGDUGfp72i0z
+         ur+Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=X4nzyARZIT5i7ouqU6zm4IdSHZXgc31pmaeYmYVbTxo=;
-        b=QrgpJQ1o7NhnqdOJ0k5FKW8LnCtEOMw66uDvujlF7+Y+Xa69eDXwy5sxcFWlDjV1qy
-         izR7pE0/qfnPm10G5bHT9afxe8oMWaBS3VfHpzDo9d3vWKQ/jxW9HqcqXEFA1CL6uALf
-         qOhSLvT7/c5/m+qfwhc8cLjBBCFxYOVADTBI7iLOUcnvAEYLyzCsg6vrsDI3UNemTQuK
-         6XX77Mo1XMPzGm706drp8vyY7j6T52NLZBfJjVducXqDTQtiRYufNlLZLt3/hS2zIgRD
-         diS5r9jBu2wl3EV/6ZUySInzx8edF41rmtsTF66B2YG2mfODzXrdHitWZ0jlvjK70xWn
-         ET+w==
-X-Gm-Message-State: AO0yUKWluegsXzbUblKURwaiiBnUlXrG9wHAlBZls+SIjW15NtKEEm2x
-	dZ5Ck8V+2Hjsaa3ytmDGG4zBLg==
-X-Google-Smtp-Source: AK7set/oOtvBEcXPpH5zeExLI+TqxHKlGL5dOV9fGiNzrYmpI7B1dGpyB8EKAwBYhmMfl3Xl6Bjh4A==
-X-Received: by 2002:a05:600c:4e4e:b0:3d2:bca5:10a2 with SMTP id e14-20020a05600c4e4e00b003d2bca510a2mr5804230wmq.22.1675344315624;
-        Thu, 02 Feb 2023 05:25:15 -0800 (PST)
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=kW5GxFMKVLm3HHfRK3v8PPMjbddlT4O3IPT99HE/Mdc=;
+        b=UegPDWHvFOjiKJ5IX2YKqHrQe8cQgGGEVI/n78SK7qdUGTQpcZehzxeMxj3XuaVzn+
+         CDTCEqP3lvRjYIkO603MjH0XX37v0kZOEDmudayYsjDGyOj7cNFVZs2hxcWaVVZFjjGr
+         OUbK/OOm2QBT+frYtJhx9Sxg/vPdrjMCrjEZXgOfeSDNl7ObEwvPzFjC17YjErFVvgQ1
+         WxStngox7Ius0+I1TPisXsZ7OnoJLtcCuIFQMv2A1IcnbysuczMIUHhw9MD1+yerTQI6
+         ocBY8Idt+a0SOmBEe/GLiF3P8MztYPxCltdxW7YybrWDCCFKcMABUYw5bFkuJeTVZqbw
+         wjyQ==
+X-Gm-Message-State: AO0yUKXSMMuYlltYtygPOOeDdbJ3/nef9w5mEiL480sJBFsKwDZmBnZT
+	wVZsasileL0Eo5e+/qDawHPkvw==
+X-Google-Smtp-Source: AK7set/umYm3AxRIMiTJLCmzwgUPXHfzHXF9tHlRDDK11lrloBCjQJgDoa+gvL7INbbSCP7tQZIbCA==
+X-Received: by 2002:a05:600c:b8e:b0:3da:fa42:bbf2 with SMTP id fl14-20020a05600c0b8e00b003dafa42bbf2mr6088694wmb.28.1675344314431;
+        Thu, 02 Feb 2023 05:25:14 -0800 (PST)
 Received: from hackbox.lan ([94.52.112.99])
-        by smtp.gmail.com with ESMTPSA id e22-20020a05600c449600b003db06224953sm4690943wmo.41.2023.02.02.05.25.14
+        by smtp.gmail.com with ESMTPSA id e22-20020a05600c449600b003db06224953sm4690943wmo.41.2023.02.02.05.25.13
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 02 Feb 2023 05:25:15 -0800 (PST)
+        Thu, 02 Feb 2023 05:25:13 -0800 (PST)
 From: Abel Vesa <abel.vesa@linaro.org>
 To: Andy Gross <agross@kernel.org>,
 	Bjorn Andersson <andersson@kernel.org>,
@@ -72,16 +71,14 @@ Cc: linux-arm-msm@vger.kernel.org,
 	linux-phy@lists.infradead.org,
 	devicetree@vger.kernel.org,
 	Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
-Subject: [PATCH v4 1/8] dt-bindings: phy: Add qcom,snps-eusb2-phy schema file
-Date: Thu,  2 Feb 2023 15:25:04 +0200
-Message-Id: <20230202132511.3983095-2-abel.vesa@linaro.org>
+Subject: [PATCH v4 0/8] sm8550: Add USB HC and PHYs support
+Date: Thu,  2 Feb 2023 15:25:03 +0200
+Message-Id: <20230202132511.3983095-1-abel.vesa@linaro.org>
 X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20230202132511.3983095-1-abel.vesa@linaro.org>
-References: <20230202132511.3983095-1-abel.vesa@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230202_052517_145992_803D96A8 
-X-CRM114-Status: GOOD (  13.06  )
+X-CRM114-CacheID: sfid-20230202_052517_278029_D5C41305 
+X-CRM114-Status: GOOD (  11.06  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,114 +95,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The SM8550 SoC uses Synopsis eUSB2 PHY. Add a dt-binding schema
-for the new driver.
+This patchset adds support for USB for Qualcomm SM8550 platform.
 
-Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
----
+This patchset is based on top of the following patchset:
+https://lore.kernel.org/all/20230202123902.3831491-1-abel.vesa@linaro.org/
 
-The v3 version of this patch was here:
-https://lore.kernel.org/all/20230126131415.1453741-2-abel.vesa@linaro.org/
+Abel Vesa (8):
+  dt-bindings: phy: Add qcom,snps-eusb2-phy schema file
+  phy: qcom: Add QCOM SNPS eUSB2 driver
+  dt-bindings: phy: qcom,qmp-usb: Document SM8550 compatible
+  phy: qcom-qmp: pcs-usb: Add v6 register offsets
+  phy: qcom-qmp: Add v6 DP register offsets
+  phy: qcom-qmp-combo: Add support for SM8550
+  arm64: dts: qcom: sm8550: Add USB PHYs and controller nodes
+  arm64: dts: qcom: sm8550-mtp: Add USB PHYs and HC nodes
 
-Changes since v3:
- * removed blank line, like Rob suggested
- * dropped quotes and reset description, like Rob suggested
- * dropped the RPMH_CXO_PAD_CLK clock and the ref_src clock name
-   to match the schema
- * fixed filenames of the includes in the example (sm8550-gcc and
-   sm8550-tcsr)
-
-Changes since v2:
- * none
-
-Changes since v1:
- * dropped the "ref src" clock
- * dropped the usb-repeater property
-
- .../bindings/phy/qcom,snps-eusb2-phy.yaml     | 74 +++++++++++++++++++
- 1 file changed, 74 insertions(+)
+ .../phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml    |   1 +
+ .../bindings/phy/qcom,snps-eusb2-phy.yaml     |  74 +++
+ arch/arm64/boot/dts/qcom/sm8550-mtp.dts       |  22 +
+ arch/arm64/boot/dts/qcom/sm8550.dtsi          |  92 +++-
+ drivers/phy/qualcomm/Kconfig                  |   9 +
+ drivers/phy/qualcomm/Makefile                 |   1 +
+ drivers/phy/qualcomm/phy-qcom-qmp-combo.c     | 410 ++++++++++++++++-
+ .../phy/qualcomm/phy-qcom-qmp-pcs-usb-v6.h    |  31 ++
+ drivers/phy/qualcomm/phy-qcom-qmp.h           |   4 +
+ drivers/phy/qualcomm/phy-qcom-snps-eusb2.c    | 423 ++++++++++++++++++
+ 10 files changed, 1061 insertions(+), 6 deletions(-)
  create mode 100644 Documentation/devicetree/bindings/phy/qcom,snps-eusb2-phy.yaml
+ create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-pcs-usb-v6.h
+ create mode 100644 drivers/phy/qualcomm/phy-qcom-snps-eusb2.c
 
-diff --git a/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-phy.yaml
-new file mode 100644
-index 000000000000..de72577e34a4
---- /dev/null
-+++ b/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-phy.yaml
-@@ -0,0 +1,74 @@
-+# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/phy/qcom,snps-eusb2-phy.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Qualcomm SNPS eUSB2 phy controller
-+
-+maintainers:
-+  - Abel Vesa <abel.vesa@linaro.org>
-+
-+description:
-+  eUSB2 controller supports LS/FS/HS usb connectivity on Qualcomm chipsets.
-+
-+properties:
-+  compatible:
-+    const: qcom,sm8550-snps-eusb2-phy
-+
-+  reg:
-+    maxItems: 1
-+
-+  "#phy-cells":
-+    const: 0
-+
-+  clocks:
-+    items:
-+      - description: ref
-+
-+  clock-names:
-+    items:
-+      - const: ref
-+
-+  resets:
-+    maxItems: 1
-+
-+  vdd-supply:
-+    description:
-+      Phandle to 0.88V regulator supply to PHY digital circuit.
-+
-+  vdda12-supply:
-+    description:
-+      Phandle to 1.2V regulator supply to PHY refclk pll block.
-+
-+required:
-+  - compatible
-+  - reg
-+  - "#phy-cells"
-+  - clocks
-+  - clock-names
-+  - vdd-supply
-+  - vdda12-supply
-+  - resets
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    #include <dt-bindings/clock/qcom,sm8550-gcc.h>
-+    #include <dt-bindings/clock/qcom,rpmh.h>
-+    #include <dt-bindings/clock/qcom,sm8550-tcsr.h>
-+
-+    usb_1_hsphy: phy@88e3000 {
-+        compatible = "qcom,sm8550-snps-eusb2-phy";
-+        reg = <0x88e3000 0x154>;
-+        #phy-cells = <0>;
-+
-+        clocks = <&tcsrcc TCSR_USB2_CLKREF_EN>;
-+        clock-names = "ref";
-+
-+        vdd-supply = <&vreg_l1e_0p88>;
-+        vdda12-supply = <&vreg_l3e_1p2>;
-+
-+        resets = <&gcc GCC_QUSB2PHY_PRIM_BCR>;
-+    };
 -- 
 2.34.1
 
