@@ -4,44 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A414CC636D4
-	for <linux-phy@archiver.kernel.org>; Thu,  2 Feb 2023 13:05:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 00EAAC61DA4
+	for <linux-phy@archiver.kernel.org>; Thu,  2 Feb 2023 13:12:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SfedJ6PMyZgfloo/+e9VxPrTwSXVdTLUfeV9BmeyNmQ=; b=BCRLYas/FXXWDW
-	pE/v6QNTd09L9UJXw3VTUquR2sBhMuDW6m2vHVu2cMjIBzSgyo7PMlM8N1LM49kJEuDdF0pDA1g6L
-	UVTD1ibaaVbcwq6UENKT88hUbumPNq1TRgD1aQ2svE7dKej1xmnx+0G0qaX+5V5lr7X0FfUKyBiKp
-	xNtboPZXLXvz06lE2ej+1RK8JRGCjImOCot0zDw2Iun3TXpFIbvT5Hb27heR6dHSFzHcC/E/RBuI0
-	5Y8PxlIONrCjDNWnUWFLBwc7Osm4WaV76617WS8CFSQkqtW+WBMMnvLnXVb8C23WADA8UBFNtkAvP
-	6m2Kz9mZ++mVQxgl2dtw==;
+	List-Owner; bh=Twz4kcReKR0TKSIl6zt6XwSrXZRNVB9PQ7zC1fz20ug=; b=tHs8kz+uqi3gzE
+	C0usgT0i72RLtl14vA0uL26FJdfsLoMb0OMQQOgUYZx8EI6Hh/Q5Dl8lMD8dirUzgxXofAuVUHBFP
+	g1ZurVzh2SLhplnVU5DQmVUzmkuxiISngmIhQA6/Ng9TnJmOo0RZlJsTdFbfuzbIyG9VqUuxeIEPl
+	UekzJ07tyUwT54USFyeScRKorErvefR63HdM4GKoX71uKg3E4a2w5wIXQtu9OJSfuXlspBIxJCUta
+	B3DvsLmiel27mI/hm+ZDx3p00ZjE/MrHn0YwKdK8QTebTKWRA01qolyL0ZYay0ZKYplFDo0TB+zha
+	VQotJqOSYEb8Wvdr5kpA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pNZHi-00Fwjb-0c; Thu, 02 Feb 2023 13:05:50 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1pNZNv-00Fy29-A4; Thu, 02 Feb 2023 13:12:15 +0000
+Received: from ams.source.kernel.org ([145.40.68.75])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pNZHS-00FwgD-L6; Thu, 02 Feb 2023 13:05:39 +0000
+	id 1pNZNk-00Fxy8-9z; Thu, 02 Feb 2023 13:12:06 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 0538E61B20;
-	Thu,  2 Feb 2023 13:05:34 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D3600C433D2;
-	Thu,  2 Feb 2023 13:05:32 +0000 (UTC)
+	by ams.source.kernel.org (Postfix) with ESMTPS id B3A11B825EB;
+	Thu,  2 Feb 2023 13:12:02 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id D2B56C433D2;
+	Thu,  2 Feb 2023 13:12:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1675343133;
-	bh=KfapbWZaHoGL2lh75PlRq+/iMY1cexe2VdJrOWRjZsk=;
+	s=k20201202; t=1675343521;
+	bh=zBEt+ydmvHBvN52hjYw69vZAZo4+rEDjKXF7/GOL6Kk=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=YK13koIN2gnXc469qf/9k9La3ph+csCibap5vcuqGJE+8Hy2LrBEf4B2yAPV/w7h6
-	 Nuf3QpHGm+Wn16/BIrp/mrc3meqhMvRZO/bPon0zGydLMWw2C6xzOQ2NkUD/+KGmut
-	 QWUIdocqn55FkMzRI5oY6y12uxx497Lkt4a9n1QvhzaWZOVBcg+lQ4tPqYALwL5pfY
-	 AORJMBJsJ1NmStBnwAAS1gaBjc5GwM4QQl2UsdlrS3kYdyy1N9dGEWAxIfEYs3Xu0E
-	 a3vvbscn8VK1P8ciiKCuUhUk54YdUGVOOzPI5TFTCbbiW6D175bmVkvb4nI3BCYHov
-	 AkChSan7JfKqw==
-Date: Thu, 2 Feb 2023 18:35:29 +0530
+	b=Ddi1ar+LWs2TEOznZjmMMeRHzkxfprlNIDaooFBnbYEKmHiNgZocyMM0A9Txfc9nb
+	 Hho5fGs4jYiN057Q8aG5qW7Sp2yz4HHbGWeaZRyHXjEQSttA7x6gdQ+jMkSKcSeWnT
+	 JLOUHsmZqKnayHSfqiO3kVRvkr96C/dLfkpRsEsV5HXeuEjQ9WLRqM+i+KLGKm2A3S
+	 FA8O5GwAr7ADrtxxYRBzi6vk/ml4HqtmYMuh82FdHIe0NnQr7hOszSVqbocnV8Q4sm
+	 D4tHAIkrAISQACYrjPMvhZSmOF7Kruo8kmwgcjEPLJsC97Tfu4iaBsP09oy9vtM09j
+	 NQkpGY6bohs/g==
+Date: Thu, 2 Feb 2023 18:41:57 +0530
 From: Vinod Koul <vkoul@kernel.org>
 To: Chunfeng Yun <chunfeng.yun@mediatek.com>
 Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
@@ -53,18 +53,17 @@ Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
 	linux-arm-kernel@lists.infradead.org,
 	linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org,
 	linux-kernel@vger.kernel.org, llvm@lists.linux.dev,
-	Eddie Hung <eddie.hung@mediatek.com>,
-	kernel test robot <lkp@intel.com>
-Subject: Re: [PATCH v7 1/3] phy: mediatek: remove temporary variable @mask_
-Message-ID: <Y9u1GXaVJ0FKXWnu@matsya>
+	Eddie Hung <eddie.hung@mediatek.com>
+Subject: Re: [PATCH v7 2/3] phy: core: add debugfs root
+Message-ID: <Y9u2nTgCcb/Et60d@matsya>
 References: <20230118084343.26913-1-chunfeng.yun@mediatek.com>
+ <20230118084343.26913-2-chunfeng.yun@mediatek.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20230118084343.26913-1-chunfeng.yun@mediatek.com>
+In-Reply-To: <20230118084343.26913-2-chunfeng.yun@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230202_050534_760559_01AECE42 
-X-CRM114-Status: UNSURE (   9.12  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230202_051204_510794_2B772692 
+X-CRM114-Status: GOOD (  18.81  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,20 +81,67 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 18-01-23, 16:43, Chunfeng Yun wrote:
-> Remove the temporary @mask_, this may cause build warning when use clang
-> compiler for powerpc, but can't reproduce it when compile for arm64.
-> the build warning is caused by:
+> Add a debugfs root for phy class, then phy drivers can add debugfs files
+> under this folder.
 > 
-> "warning: result of comparison of constant 18446744073709551615 with
-> expression of type (aka 'unsigned long') is always false
-> [-Wtautological-constant-out-of-range-compare]"
+> Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+> ---
+> v2~v7: no changes
+> ---
+>  drivers/phy/phy-core.c  | 6 ++++++
+>  include/linux/phy/phy.h | 2 ++
+>  2 files changed, 8 insertions(+)
 > 
-> More information provided in below lore link.
-> 
-> After removing @mask_, there is a "CHECK:MACRO_ARG_REUSE" when run
-> checkpatch.pl, but due to @mask is constant, no reuse problem will happen.
+> diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
+> index d93ddf1262c5..2f9f69190519 100644
+> --- a/drivers/phy/phy-core.c
+> +++ b/drivers/phy/phy-core.c
+> @@ -11,6 +11,7 @@
+>  #include <linux/export.h>
+>  #include <linux/module.h>
+>  #include <linux/err.h>
+> +#include <linux/debugfs.h>
+>  #include <linux/device.h>
+>  #include <linux/slab.h>
+>  #include <linux/of.h>
+> @@ -1204,6 +1205,9 @@ void devm_of_phy_provider_unregister(struct device *dev,
+>  }
+>  EXPORT_SYMBOL_GPL(devm_of_phy_provider_unregister);
+>  
+> +struct dentry *phy_debug_root;
+> +EXPORT_SYMBOL_GPL(phy_debug_root);
 
-Applied, thanks
+Please make this a member of struct phy, that way all phy drivers have access
+to this and we wont need to export this!
+
+> +
+>  /**
+>   * phy_release() - release the phy
+>   * @dev: the dev member within phy
+> @@ -1233,6 +1237,8 @@ static int __init phy_core_init(void)
+>  
+>  	phy_class->dev_release = phy_release;
+>  
+> +	phy_debug_root = debugfs_create_dir("phy", NULL);
+> +
+>  	return 0;
+>  }
+>  device_initcall(phy_core_init);
+> diff --git a/include/linux/phy/phy.h b/include/linux/phy/phy.h
+> index b1413757fcc3..c398749d49b9 100644
+> --- a/include/linux/phy/phy.h
+> +++ b/include/linux/phy/phy.h
+> @@ -205,6 +205,8 @@ struct phy_lookup {
+>  #define devm_of_phy_provider_register_full(dev, children, xlate) \
+>  	__devm_of_phy_provider_register(dev, children, THIS_MODULE, xlate)
+>  
+> +extern struct dentry *phy_debug_root;
+> +
+>  static inline void phy_set_drvdata(struct phy *phy, void *data)
+>  {
+>  	dev_set_drvdata(&phy->dev, data);
+> -- 
+> 2.18.0
 
 -- 
 ~Vinod
