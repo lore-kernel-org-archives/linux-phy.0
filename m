@@ -4,77 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F2497C6379F
-	for <linux-phy@archiver.kernel.org>; Fri,  3 Feb 2023 09:56:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E83F9C61DA4
+	for <linux-phy@archiver.kernel.org>; Fri,  3 Feb 2023 09:58:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ck9w6YuNRAlOHi0ov/4+5uQgnUM//3THR+VVKgz59ZE=; b=IpKrf7DDW2qxwH
-	1qE4d4gfV0bQPXiNjbBbhJPK4ks5qr/ETgB7rUZM5UO5Ixc9VDT16HEIKnvtK2ESpOVWSVzfHP/JP
-	6dKvdCh0Bw8ZqR2di992aTgIXFbN787Ohn7H25BLmQC455DvaYKbCDz+dXfOvuZaNpHja7zbmXUyB
-	6lKWTWouL2jhQC1k1MTXvJ0CK9LRf33yKDeDvAO4Jpk1GGh/5h591/jLJS9vo6+OI66OIIhWt+doG
-	8N4Jvf7KeBR51KEIvsL7XQUqko2eIbOgKqzDdha5tQEgfIf7s7ya/oc8jloaqVhMahfuaHFxnqLTS
-	twKSHZ3K3AQV3+NnOaEw==;
+	List-Owner; bh=8b5jFaNlnRSr7z74iqX8XjhPFVsLFl46YJoLUIV8xD4=; b=En7TDhew2PJUYM
+	rR9DVGa8ZMcLG1fTxIWN9SDQuz9L/MXAoySd5RsbxeRayiDldkPQ9PiGpjwmfL7/7OTNDjDKU3wah
+	wsLeKyjWmhHUBodRjGj/UwXAsY8xzuy+UGC0TTOD6+hud85OZDPPSkrovBDjaY/2g+PnekFpecSmF
+	n2LAk17I3ueA6O69JT9lSEZIq739ZUfpdkjzCoJXIKjw20gEi3HkiOqeKoLThAfEcWbE5YgERmtaW
+	DF8P7h/VLS1d8Q+XubgexTcjbUEIMcfGsT4vPnZAZwkbDbC2v/zcScMUVEmUxO+0wlp5S1D4hZZ2V
+	vITRbkE8X9WTIIcVkFGg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pNsnj-001GT6-8V; Fri, 03 Feb 2023 09:56:11 +0000
-Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
+	id 1pNspo-001H53-Ca; Fri, 03 Feb 2023 09:58:20 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pNsnf-001GR8-NU
-	for linux-phy@lists.infradead.org; Fri, 03 Feb 2023 09:56:09 +0000
+	id 1pNspd-001H1B-Sh; Fri, 03 Feb 2023 09:58:11 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id 04AFBB82A2B;
-	Fri,  3 Feb 2023 09:56:06 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 999E2C433D2;
-	Fri,  3 Feb 2023 09:56:04 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 1CBD461E54;
+	Fri,  3 Feb 2023 09:58:09 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 801DBC4339B;
+	Fri,  3 Feb 2023 09:58:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1675418164;
-	bh=yPF/H334aRuYt2PAUE0Uo8r9edAIWn91teehfMtnynI=;
+	s=k20201202; t=1675418288;
+	bh=Ofw7oV9zxqty9gholG27cDWDW7iU77SQ0HdVlwkckzQ=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=ge/JZVwJ7decyTDjG4hMAZxaLwf3c2fgVwYslq5qanp+rAkgTbVFHcX6KKJICZVir
-	 eDjq6nxlNpeJx2kOI9kGnwkxRq2F4CqTYgCikpHMTvBI2vEHDk36kYTvMJcxZb/kWU
-	 srH4sd6m7G4yLc6fEVgZY+eRduHDqFPfFG3kQ37wU1mM7bbM4qDD3noZCOLSugC2w3
-	 i1Yh5esCfzNVRSu9LvtDgqdUFGqmht0ZXBv6skq5hk46VE9I9Apx5fam8UNria8shJ
-	 gUp31ZRD1+0I6b1QIwca9PiY1qwjiQT903FAB9yP0umBn+sCJ5YDtTLF+o3gJHl8TE
-	 mXoIXnYQm4FjA==
-Received: from johan by xi.lan with local (Exim 4.94.2)
-	(envelope-from <johan@kernel.org>)
-	id 1pNso3-0000zZ-7v; Fri, 03 Feb 2023 10:56:31 +0100
-Date: Fri, 3 Feb 2023 10:56:31 +0100
-From: Johan Hovold <johan@kernel.org>
-To: Abel Vesa <abel.vesa@linaro.org>
-Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	b=RVue34tDdm/aW2chH57gJ28Oc1QoGGR4RG5AOUBqJ3sjvf8oDf9uLJN9rpfToHFkj
+	 hJD/RlcWEfIjO131ze4pIEccdi07sDDEu2TQMok7v5lb1MN/aM5Ph+ozs0Wc2HFS2m
+	 B0XWPl3bhdlCLaraxkDqP/nZ+3hNAT9uPOTMJlTnyVLMcYz5wA9qKMKi7fRQr8rcDB
+	 A+ruoHx5WaExJWwgMV+4NF6q+cQg823jpOn9JRhYTQDva3FlzyFJ6gOveT/XEICGkC
+	 HHw34pdSV7UBPxDgme6WZQJzOO9qWgANgAzpxgN4JW1kG1vRlfIBdHpT4kpVT3JWum
+	 KheWuf8augFWw==
+Date: Fri, 3 Feb 2023 15:28:04 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Geert Uytterhoeven <geert@linux-m68k.org>
+Cc: Jonathan Corbet <corbet@lwn.net>, Madalin Bucur <madalin.bucur@nxp.com>,
+	"David S . Miller" <davem@davemloft.net>,
+	Eric Dumazet <edumazet@google.com>,
+	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
+	Horatiu Vultur <horatiu.vultur@microchip.com>,
+	UNGLinuxDriver@microchip.com,
+	Thierry Reding <thierry.reding@gmail.com>,
+	Lorenzo Pieralisi <lpieralisi@kernel.org>,
 	Rob Herring <robh@kernel.org>,
 	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
 	Bjorn Helgaas <bhelgaas@google.com>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Lorenzo Pieralisi <lpieralisi@kernel.org>,
-	"vkoul@kernel.org" <vkoul@kernel.org>,
+	Jonathan Hunter <jonathanh@nvidia.com>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Johan Hovold <johan+linaro@kernel.org>,
-	linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>
-Subject: Re: [PATCH v7 12/12] arm64: dts: qcom: sm8550-mtp: Add PCIe PHYs and
- controllers nodes
-Message-ID: <Y9zaT0SA5yahuBoW@hovoldconsulting.com>
-References: <20230203081807.2248625-1-abel.vesa@linaro.org>
- <20230203081807.2248625-13-abel.vesa@linaro.org>
+	Alan Stern <stern@rowland.harvard.edu>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
+	Alim Akhtar <alim.akhtar@samsung.com>,
+	Siddharth Vadapalli <s-vadapalli@ti.com>,
+	Russell King <linux@armlinux.org.uk>, linux-phy@lists.infradead.org,
+	linux-doc@vger.kernel.org, netdev@vger.kernel.org,
+	linux-tegra@vger.kernel.org, linux-pci@vger.kernel.org,
+	linux-usb@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-samsung-soc@vger.kernel.org
+Subject: Re: [PATCH v2 6/9] net: ethernet: ti: am65-cpsw: Convert to
+ devm_of_phy_optional_get()
+Message-ID: <Y9zarDUw7fWYw53U@matsya>
+References: <cover.1674584626.git.geert+renesas@glider.be>
+ <3d612c95031cf5c6d5af4ec35f40121288a2c1c6.1674584626.git.geert+renesas@glider.be>
+ <Y9ybPmWub43JpMUb@matsya>
+ <CAMuHMdVJo3aRLh4BCSvOrX+4KMNC=WoQCHMzdiWOmdjSSESxbg@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20230203081807.2248625-13-abel.vesa@linaro.org>
+In-Reply-To: <CAMuHMdVJo3aRLh4BCSvOrX+4KMNC=WoQCHMzdiWOmdjSSESxbg@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230203_015607_933035_91DC36EC 
-X-CRM114-Status: UNSURE (   9.78  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230203_015809_982327_6CD87AA4 
+X-CRM114-Status: GOOD (  18.68  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,63 +96,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Feb 03, 2023 at 10:18:07AM +0200, Abel Vesa wrote:
-> Enable PCIe controllers and PHYs nodes on SM8550 MTP board.
+On 03-02-23, 09:04, Geert Uytterhoeven wrote:
+> Hi Vinod,
 > 
-> Co-developed-by: Neil Armstrong <neil.armstrong@linaro.org>
-> Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
-> Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
-> ---
+> On Fri, Feb 3, 2023 at 6:27 AM Vinod Koul <vkoul@kernel.org> wrote:
+> > On 24-01-23, 19:37, Geert Uytterhoeven wrote:
+> > > Use the new devm_of_phy_optional_get() helper instead of open-coding the
+> > > same operation.
+> > >
+> > > Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
+> > > ---
+> > > v2:
+> > >   - Rebase on top of commit 854617f52ab42418 ("net: ethernet: ti:
+> > >     am65-cpsw: Handle -EPROBE_DEFER for Serdes PHY") in net-next
+> > >     (next-20230123 and later).
+> >
+> > I was trying to apply this on rc1, so ofcourse this fails for me? How do
+> > we resolve this?
+> >
+> > I can skip this patch, provide a tag for this to be pulled into -net
+> > tree
+> 
+> Thanks, that's one option.
+> The other option is to postpone this patch, and apply it after v6.3-rc1.
 
-> +&pcie_1_phy_aux_clk {
-> +	clock-frequency = <1000>;
-> +};
-> +
-> +&pcie0 {
-> +	wake-gpios = <&tlmm 96 GPIO_ACTIVE_HIGH>;
-> +	perst-gpios = <&tlmm 94 GPIO_ACTIVE_LOW>;
-> +
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pcie0_default_state>;
-> +
-> +	status = "okay";
-> +};
-> +
-> +&pcie0_phy {
-> +	vdda-phy-supply = <&vreg_l1e_0p88>;
-> +	vdda-pll-supply = <&vreg_l3e_1p2>;
+Okay, done
 
-Super nit: add newline for consistency.
-
-> +	status = "okay";
-> +};
-> +
-> +&pcie1 {
-> +	wake-gpios = <&tlmm 99 GPIO_ACTIVE_HIGH>;
-> +	perst-gpios = <&tlmm 97 GPIO_ACTIVE_LOW>;
-
-Neither controller needs the new enable gpio?
-
-> +
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pcie1_default_state>;
-> +
-> +	status = "okay";
-> +};
-> +
-> +&pcie1_phy {
-> +	vdda-phy-supply = <&vreg_l3c_0p91>;
-> +	vdda-pll-supply = <&vreg_l3e_1p2>;
-> +	vdda-qref-supply = <&vreg_l1e_0p88>;
-> +
-> +	status = "okay";
-> +};
-> +
->  &pm8550_gpios {
->  	sdc2_card_det_n: sdc2-card-det-state {
->  		pins = "gpio12";
-
-Johan
+-- 
+~Vinod
 
 -- 
 linux-phy mailing list
