@@ -4,67 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 93EEFC05027
-	for <linux-phy@archiver.kernel.org>; Fri,  3 Feb 2023 13:48:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CD214C05027
+	for <linux-phy@archiver.kernel.org>; Fri,  3 Feb 2023 13:51:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4wtwQy7G3aviv/GoLJ+sk5yoyKpT+VpXPhDuDecNqbo=; b=Wu7yv85PgYBiAf
-	KEWRanH0nD24AOpaEiA7gpxZ5k5IXaBmtBewxkvTV3W+CSIxbRQwt7vw1Px+fgMMSLwIwYSVDP5CO
-	w2sSUX1Hyw9ToGshwlatVB8eCpGBJWlC6DizsA0cij7kHh3rnn8EbkwZsoX2ZCYUFK8ub9UgsoS7r
-	3CiKlw2yqo+37lX7zMxuUejtd3oOuLyHKbJ14X0YN4BbSfZBUtsUldLCN7KK6Hl9zmNrkizLrzVGR
-	eqPRm6EYOmptwP/WlAtevEx8lny6pf1v3oqbu6mVekqP5dbdtKd40Wdl9NYVuAXQnrn/5GSEw0zDe
-	UEXPXY+r2cS4B/MVIvSg==;
+	List-Owner; bh=PcX4PiOj/umxEsk2tiMrIzlB5IZV9pULnBu19mnNje4=; b=PHH2JWU/BMxq0n
+	6tdW4Jzp79WE96TE6WlvnLylRCdE/EhjFTCm+NlLf+bVXywoP1cohtpVXP0zKizL4g88fmr0q2SE3
+	ShHf7XYUkQn5Hjd04ArJLs+wS8S2RXZVRAuEDiHMg2H2XW3AcQNvsg9kSVxUSzSw4u2rm5FhJ17Be
+	rmTQq6ZXoKxqfQfcfzUD3BnNSWSTzCN2myOKyfXdRDcwKJdDZwRY6Ch0QS7G8PX5dcEiXYjlUD5Mq
+	tg0pnF5VUxf90ChuyOOtXAlFr38tC1ElWrS7Eagdw92UgvkoCSMve0JauCjfL2Cy5Msr6PTLfbQNl
+	iL8wgh6NlAnp/gsLz96w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pNwR0-002926-Ej; Fri, 03 Feb 2023 13:48:58 +0000
-Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
+	id 1pNwT7-0029hg-7J; Fri, 03 Feb 2023 13:51:09 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pNwFV-0025YW-Qo
-	for linux-phy@lists.infradead.org; Fri, 03 Feb 2023 13:37:07 +0000
+	id 1pNwH4-0026DV-VW; Fri, 03 Feb 2023 13:38:44 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id 609A6B82A85;
-	Fri,  3 Feb 2023 13:37:04 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 44020C433D2;
-	Fri,  3 Feb 2023 13:37:01 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 57D9261ED2;
+	Fri,  3 Feb 2023 13:38:42 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2CED9C433D2;
+	Fri,  3 Feb 2023 13:38:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1675431423;
-	bh=ZZx3nGqH4qzHtCTP7gc5u4gXwhafYjW64wFE9xehQZI=;
+	s=k20201202; t=1675431521;
+	bh=BqaOPD7dtW+RNHVp4mgKLBVQpvvG60YANreOlI0gJxg=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=PC8VNj+wZkDfbJoqNkderv9knz5Oo+pT3sfm3c1cr77Ubyjs3yab0Mav8a2YbJY6k
-	 jtpvCnCaaokAr5EWzY1ykc0vHUHVXMKsc0ycKRc/iRKUvLCGFXt0IMzaa0uBP3dgNv
-	 FXJkGaYYb9Aw3ZUGbMEgz94uHmKcGarBi78/BLR8/aI2/t+6ZmVV6F4yJsg3P8AORq
-	 vspHZ51eKSajiXxbw2vZTv8NlI0QdrLKoAxh1XB+3/GAIQE7IcDzpY7u0c/XMPvrww
-	 yongZFEgBem0zD3pu82swgRGLsa4ByrzeEAB6xQFtaHAhivstR5Bft9aRFXKNbFBGV
-	 Sc407wctcLSEw==
-Date: Fri, 3 Feb 2023 19:06:58 +0530
+	b=evKiwZSWWHq/qBOOG0ag4W1iOjACpWe36QHwp8aizUTnsxnR1+MetWq3qDf6/cAmF
+	 BIlDSLxJj27+Xx/j14ggrXENJ10kGmiFxOiYPZOEWv73XL7lckK4lttRXbx6yLmWBU
+	 hwSHfI6XPrp/SXz7v5LixhNp5bNv7jA3KZVKzxz5UjWAyCbulnutb5+7AncRuo8dnm
+	 PBIpi+tYEVPJeO++fjxN5t7q6H6nQhJmgFB1qRwjl+fi6owKGM8p0DMDiZecebCt7W
+	 0J562Lda99U9aC85GuwtRUbyKcvR6CLzA9kyItTEbbF0L8UUDrcEINWEpzBrsOc6lN
+	 odKbmnsDv6uRw==
+Date: Fri, 3 Feb 2023 19:08:37 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Thierry Reding <thierry.reding@gmail.com>
-Cc: Jon Hunter <jonathanh@nvidia.com>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
 	Rob Herring <robh+dt@kernel.org>,
 	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	linux-usb@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-tegra@vger.kernel.org, linux-phy@lists.infradead.org,
-	waynec@nvidia.com,
-	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Subject: Re: [PATCH V6 2/6] dt-bindings: phy: tegra-xusb: Add support for
- Tegra234
-Message-ID: <Y90N+v0Qo0zdYdNS@matsya>
-References: <20230111110450.24617-1-jonathanh@nvidia.com>
- <20230111110450.24617-3-jonathanh@nvidia.com>
- <Y9P6PJ9xPVst/um2@orome>
+	Alim Akhtar <alim.akhtar@samsung.com>,
+	Marek Szyprowski <m.szyprowski@samsung.com>,
+	Sylwester Nawrocki <s.nawrocki@samsung.com>,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-samsung-soc@vger.kernel.org, replicant@osuosl.org,
+	phone-devel@vger.kernel.org, ~postmarketos/upstreaming@lists.sr.ht,
+	Martin =?iso-8859-1?Q?J=FCcker?= <martin.juecker@gmail.com>,
+	Henrik Grimler <henrik@grimler.se>,
+	Chanwoo Choi <cw00.choi@samsung.com>
+Subject: Re: [PATCH 2/8] dt-bindings: phy: samsung,dp-video-phy: deprecate
+ syscon phandle
+Message-ID: <Y90OXce5NRgt8HWn@matsya>
+References: <20230127194057.186458-1-krzysztof.kozlowski@linaro.org>
+ <20230127194057.186458-3-krzysztof.kozlowski@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <Y9P6PJ9xPVst/um2@orome>
+In-Reply-To: <20230127194057.186458-3-krzysztof.kozlowski@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230203_053706_041796_07119A6F 
-X-CRM114-Status: GOOD (  15.19  )
+X-CRM114-CacheID: sfid-20230203_053843_099983_9EBCCC75 
+X-CRM114-Status: UNSURE (   7.27  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,27 +85,12 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 27-01-23, 17:22, Thierry Reding wrote:
-> On Wed, Jan 11, 2023 at 11:04:46AM +0000, Jon Hunter wrote:
-> > Add the compatible string for the Tegra234 XUSB PHY.
-> > 
-> > Signed-off-by: Jon Hunter <jonathanh@nvidia.com>
-> > Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-> > ---
-> > V5 -> V6: Added Krzysztof's ACK 
-> > V3 -> V5: Fixed compatible string
-> > V3 -> V4: Added patch
-> > 
-> >  .../devicetree/bindings/phy/nvidia,tegra194-xusb-padctl.yaml  | 4 +++-
-> >  1 file changed, 3 insertions(+), 1 deletion(-)
-> 
-> Hi Vinod,
-> 
-> can you pick this up into your tree? This applies on top of the
-> conversion patch ("dt-bindings: phy: tegra-xusb: Convert to
-> json-schema") that's aready in your next branch.
+On 27-01-23, 20:40, Krzysztof Kozlowski wrote:
+> The DisplayPort phy is actually part of the Power Management Unit system
+> controller, thus it should be its child, instead of sibling node with
+> syscon phandle.
 
-Applied now, thanks for pinging
+Acked-By: Vinod Koul <vkoul@kernel.org>
 
 -- 
 ~Vinod
