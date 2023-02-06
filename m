@@ -4,66 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E95D7C05027
-	for <linux-phy@archiver.kernel.org>; Fri,  3 Feb 2023 20:58:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C2C9AC05027
+	for <linux-phy@archiver.kernel.org>; Mon,  6 Feb 2023 09:59:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=m4N9Xg2OyakoD+vb502/d5scLPfpckW2VGDfOMjc3pY=; b=O3QTLoSNcrp/qv
-	xlCDacWbGg9kls7CXXwm8ysaYUqC7I4C/zL29GT/UwWBSBG9HbXyRsQ6LEKNQxrUoBnP2IpuHwHmm
-	uwABCswxootTfGnQLwRnMnfH7YirHFbNzMblosaZdP/33/x60xyw6jSzmLkCDfpIu/EzshOCaCrSz
-	Nwph5ymdUr4NRv5nhA6oiLJRuRj4g731E+tirzV8U501Ea92XKxpnvoDvTNHeTKquYmUpJ3jj4Ot8
-	So8ZGtgx9za8Qj6WC6bq3kCBIISQaIRIB6qn5h4vJBRGVLbQvFXL8yG7sTJqoyzwYPhZmhqGsgdXK
-	uF/4qEeS2r+79gHQqSNQ==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=SX5OAraCCG0DtFzlpYisNcoEoX7/rtZqGtQqsK6eyXI=; b=40qekbP45rbt0I
+	ybhfEMJOSANIhFOMPm0aTz07MNzOZJSRu+3ZoCF1DPmY/9Hp4va8qAlT7GFMNaj//sPHVfWLHVu65
+	wSjZIttur0abdGLfsINxfB6mUo6m51Uf/KBNC6WNOQS/1NCGS/NVgK0lfzF10EHbqqy8a2F7TmTCS
+	EaRlhL3oV8GcPTEa75yirlRlBnlZV5JWMTZvZZkQmrdNj2IC7AAgxxmAS50XW5keY/q1B4I6+jBAb
+	Lj49xla9nuYBQHFiklRRd6rEIvFm2dPJuUb2RlpjHmLPU+LlQlfEBY3sfhCeLCILD9x2jBF7gzmhW
+	JSastWeTwsEu1e137HTQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pO38K-003ZOg-05; Fri, 03 Feb 2023 20:58:08 +0000
-Received: from mail-ot1-f52.google.com ([209.85.210.52])
+	id 1pOyHB-007yfX-7i; Mon, 06 Feb 2023 09:59:05 +0000
+Received: from mail-wr1-x42a.google.com ([2a00:1450:4864:20::42a])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pO383-003ZKK-J2; Fri, 03 Feb 2023 20:57:56 +0000
-Received: by mail-ot1-f52.google.com with SMTP id e12-20020a0568301e4c00b0068bc93e7e34so1745903otj.4;
-        Fri, 03 Feb 2023 12:57:50 -0800 (PST)
+	id 1pOyH8-007yd7-Bx
+	for linux-phy@lists.infradead.org; Mon, 06 Feb 2023 09:59:03 +0000
+Received: by mail-wr1-x42a.google.com with SMTP id i5so2622712wrc.0
+        for <linux-phy@lists.infradead.org>; Mon, 06 Feb 2023 01:59:00 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google;
+        h=cc:to:content-transfer-encoding:mime-version:message-id:date
+         :subject:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=QjrenaW0UoS+7aeZaLJfjkMywdu9OcZmza4GA92KqhU=;
+        b=BdsqYPuquByq/fZMeZEU46FAGdmns0+K+kVSr8LUz6V8HyFKIMMdxXqSgzK8bmTtwX
+         ZHjJbl2TZqjvzHU+MP/HQXeBugOyniaFYKdhxHM5m0ObUdWJmLj6UXLifdUz/RRKVC/r
+         fI8jyS4ERR5tmSmLtLrfX4M6N+gdprXPuEQGjHIecn9qastU52WU4vD40lyaKRVSqY/5
+         El+IP7sk17yhnXMoau6gFOLrWSUjumafKtCq/NV6Eszlajjsf43bPimVU11GtpUQU472
+         UVuGY256W99xZj2dHkshY/NJebRI5UHgfkU5luu+2ylm5wxCUuGhyeyhVSTMDdoQkQWp
+         2Skw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=DTUpcYkNxPIlJHACYCYR7pDb1Buy+e4lFP4bk5Zgp34=;
-        b=DZDjnoi9XT9ajcLaMCbM/fzZ8y/GakfMdy65VvRRHYvZ5kK2Y6nxmIs1Op13dkf23F
-         DjVuH8GR0Tlg2ewqIlnNLKwWGBj9jEPKaghCjPIv0QDtBTljJp8A06k7uLSwcmQ7Ap+Z
-         OeKasFPWGXvSZDCCZH7tXMIzy3dOJVQoXvb+yHL+Ga0iNhyntZf7amcCmcTOeizPoTMA
-         +TZ3BvlOcmGKJg8H8esWbjvAXd2Oq2MnVOGa2Ih5erJAlOmQJCgx9fcpRhoSf0HtgRnD
-         FwU7QRGT/k7/HfvEZSSHdWsgRNJW2uGpKEotBvHeGYe7kVu6xkY3JSsTjQRhK6UJ7c4E
-         M/GA==
-X-Gm-Message-State: AO0yUKWoDnipPafcxcENer6h4lDJrewhC8q8TR2CXnGpVL03Bz9VBSWj
-	4itc+hx/Ybc/qIHz9SWiYA==
-X-Google-Smtp-Source: AK7set/idxy63+ygBDyPnMqtJWkCkCzx9MyU4A+nT1Br4FymPkR4Z0JILK7N/Htqiz/3btTinW8cgQ==
-X-Received: by 2002:a05:6830:1e57:b0:68b:b721:8f1c with SMTP id e23-20020a0568301e5700b0068bb7218f1cmr6718583otj.27.1675457869992;
-        Fri, 03 Feb 2023 12:57:49 -0800 (PST)
-Received: from robh_at_kernel.org (66-90-144-107.dyn.grandenetworks.net. [66.90.144.107])
-        by smtp.gmail.com with ESMTPSA id c22-20020a9d6856000000b0068bd5af9b82sm1611458oto.43.2023.02.03.12.57.48
+        h=cc:to:content-transfer-encoding:mime-version:message-id:date
+         :subject:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=QjrenaW0UoS+7aeZaLJfjkMywdu9OcZmza4GA92KqhU=;
+        b=rfd8rhAAl+vWSVW+TlDRp8wLlg7lRjcdpuHAftqWBqaDPkr+REeuRA5D4PsxcBmpvT
+         CK3TheDhtQWYGPrLTvzJaSTeCLxOaRrEtBSiG4dZcaMQb78YrYqo9BhTV/C4KMVmWfy2
+         wsGcimwEJ3YZ9lTpx0V7xsmxzpJY2h5CG9/ei/6mu622ClwltKNBbAwFQbxECz4Dj7bd
+         m6MKFauAnl5MDDta9+xSi95dXfpymP5HEDVceePDaU41/qKIm/5d/771/GLCy+utooH7
+         xE1LqKMFiH8u5aPwaeVfUBT8gPMsIsEtVJrDjGRrHVXfWh/6gmKMuXgqQtCXD7vASKAT
+         d1rA==
+X-Gm-Message-State: AO0yUKW3m3hph9Jq0I2TaU27I1v21DlgmW1ylIPWigMJWq36cZFqSeRx
+	d2rQZBfFDToSJ86ZLMXVZlaxJg==
+X-Google-Smtp-Source: AK7set9zMlWqyCjnJTiT9EC8eFVwaiTRfh81JnSuFOVKXPMjU7KCv01VroQXJAHxuofdEmblLO49SA==
+X-Received: by 2002:adf:e192:0:b0:2bd:fa1d:5291 with SMTP id az18-20020adfe192000000b002bdfa1d5291mr21204836wrb.67.1675677539111;
+        Mon, 06 Feb 2023 01:58:59 -0800 (PST)
+Received: from arrakeen.starnux.net ([2a01:e0a:982:cbb0:8261:5fff:fe11:bdda])
+        by smtp.gmail.com with ESMTPSA id i14-20020a0560001ace00b002bfb8f829eesm8839304wry.71.2023.02.06.01.58.57
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 03 Feb 2023 12:57:49 -0800 (PST)
-Received: (nullmailer pid 873929 invoked by uid 1000);
-	Fri, 03 Feb 2023 20:57:48 -0000
-Date: Fri, 3 Feb 2023 14:57:48 -0600
-From: Rob Herring <robh@kernel.org>
-To: Gatien Chevallier <gatien.chevallier@foss.st.com>
-Cc: Oleksii_Moisieiev@epam.com, gregkh@linuxfoundation.org, herbert@gondor.apana.org.au, davem@davemloft.net, krzysztof.kozlowski+dt@linaro.org, alexandre.torgue@foss.st.com, vkoul@kernel.org, jic23@kernel.org, olivier.moysan@foss.st.com, arnaud.pouliquen@foss.st.com, mchehab@kernel.org, fabrice.gasnier@foss.st.com, ulf.hansson@linaro.org, edumazet@google.com, kuba@kernel.org, pabeni@redhat.com, linux-crypto@vger.kernel.org, devicetree@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, dmaengine@vger.kernel.org, linux-i2c@vger.kernel.org, linux-iio@vger.kernel.org, alsa-devel@alsa-project.org, linux-media@vger.kernel.org, linux-mmc@vger.kernel.org, netdev@vger.kernel.org, linux-phy@lists.infradead.org, linux-serial@vger.kernel.org, linux-spi@vger.kernel.org, linux-usb@vger.kernel.org
-Subject: Re: [PATCH v3 2/6] dt-bindings: treewide: add feature-domains
- description in binding files
-Message-ID: <20230203205748.GA860175-robh@kernel.org>
-References: <20230127164040.1047583-1-gatien.chevallier@foss.st.com>
- <20230127164040.1047583-3-gatien.chevallier@foss.st.com>
+        Mon, 06 Feb 2023 01:58:58 -0800 (PST)
+From: Neil Armstrong <neil.armstrong@linaro.org>
+Subject: [PATCH 0/2] phy: qcom: qmp-combo: add SM8350 & SM8450 support for
+ combo USB3/DP PHY
+Date: Mon, 06 Feb 2023 10:58:55 +0100
+Message-Id: <20230206-topic-sm8350-upstream-usb-dp-combo-phy-v1-0-ed849ae6b849@linaro.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20230127164040.1047583-3-gatien.chevallier@foss.st.com>
+X-B4-Tracking: v=1; b=H4sIAF/P4GMC/x2Nyw7CIBAAf6XZs5sgqKi/YjwAXYSkPMIWo2n67
+ xKPM4eZDZhaJIb7tEGjd+RY8oDjYQIXTH4RxnkwSCGVkOKCa6nRIaerOgvslddGJmFni3NFV5I
+ tWMMXldI3RV6ftJcwYtYwoW0muzByuS/LkLWRj5///fHc9x+qEC4EjQAAAA==
+To: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
+ Konrad Dybcio <konrad.dybcio@linaro.org>, Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Rob Herring <robh+dt@kernel.org>, 
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ Neil Armstrong <neil.armstrong@linaro.org>
+X-Mailer: b4 0.12.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230203_125752_677362_2F45FEF4 
-X-CRM114-Status: GOOD (  19.67  )
+X-CRM114-CacheID: sfid-20230206_015902_459533_1385903C 
+X-CRM114-Status: UNSURE (   5.52  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,74 +97,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Jan 27, 2023 at 05:40:36PM +0100, Gatien Chevallier wrote:
-> feature-domains is an optional property that allows a peripheral to
-> refer to one or more feature domain controller(s).
-> 
-> Description of this property is added to all peripheral binding files of
-> the peripheral under the STM32 System Bus. It allows an accurate
-> representation of the hardware, where various peripherals are connected
-> to this firewall bus. The firewall can then check the peripheral accesses
-> before allowing it to probe.
-> 
-> Signed-off-by: Gatien Chevallier <gatien.chevallier@foss.st.com>
-> ---
-> 
-> Patch not present in V1 and V2.
-> 
->  Documentation/devicetree/bindings/crypto/st,stm32-hash.yaml | 5 +++++
->  Documentation/devicetree/bindings/dma/st,stm32-dma.yaml     | 5 +++++
->  Documentation/devicetree/bindings/dma/st,stm32-dmamux.yaml  | 5 +++++
->  Documentation/devicetree/bindings/i2c/st,stm32-i2c.yaml     | 5 +++++
->  Documentation/devicetree/bindings/iio/adc/st,stm32-adc.yaml | 5 +++++
->  .../devicetree/bindings/iio/adc/st,stm32-dfsdm-adc.yaml     | 5 +++++
->  Documentation/devicetree/bindings/iio/dac/st,stm32-dac.yaml | 5 +++++
->  Documentation/devicetree/bindings/media/st,stm32-cec.yaml   | 5 +++++
->  Documentation/devicetree/bindings/media/st,stm32-dcmi.yaml  | 5 +++++
->  .../bindings/memory-controllers/st,stm32-fmc2-ebi.yaml      | 5 +++++
->  Documentation/devicetree/bindings/mfd/st,stm32-lptimer.yaml | 5 +++++
->  Documentation/devicetree/bindings/mfd/st,stm32-timers.yaml  | 6 ++++++
->  Documentation/devicetree/bindings/mmc/arm,pl18x.yaml        | 5 +++++
->  Documentation/devicetree/bindings/net/stm32-dwmac.yaml      | 5 +++++
->  .../devicetree/bindings/phy/phy-stm32-usbphyc.yaml          | 5 +++++
->  .../devicetree/bindings/regulator/st,stm32-vrefbuf.yaml     | 5 +++++
->  Documentation/devicetree/bindings/rng/st,stm32-rng.yaml     | 5 +++++
->  Documentation/devicetree/bindings/serial/st,stm32-uart.yaml | 5 +++++
->  Documentation/devicetree/bindings/sound/st,stm32-i2s.yaml   | 5 +++++
->  Documentation/devicetree/bindings/sound/st,stm32-sai.yaml   | 5 +++++
->  .../devicetree/bindings/sound/st,stm32-spdifrx.yaml         | 5 +++++
->  Documentation/devicetree/bindings/spi/st,stm32-qspi.yaml    | 5 +++++
->  Documentation/devicetree/bindings/spi/st,stm32-spi.yaml     | 5 +++++
->  Documentation/devicetree/bindings/usb/dwc2.yaml             | 5 +++++
->  24 files changed, 121 insertions(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/crypto/st,stm32-hash.yaml b/Documentation/devicetree/bindings/crypto/st,stm32-hash.yaml
-> index 4ccb335e8063..cb2ad7d5fdb5 100644
-> --- a/Documentation/devicetree/bindings/crypto/st,stm32-hash.yaml
-> +++ b/Documentation/devicetree/bindings/crypto/st,stm32-hash.yaml
-> @@ -41,6 +41,11 @@ properties:
->      maximum: 2
->      default: 0
->  
-> +  feature-domains:
-> +    $ref: /schemas/feature-controllers/feature-domain-controller.yaml#/properties/feature-domains
+Document compatibles and add missing tables to support the USB3/DP PHY
+on the SM8350/SM8450 SoCs.
 
-Not how common properties work. Consumer properties should be in a 
-schema with 'select: true' (the one you are referencing) and here you 
-just need to define the entries. Like clocks, power-domains, etc.
+Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
+---
+Neil Armstrong (2):
+      dt-bindings: phy: qcom,qmp-usb3-dp: document sm8350 & sm8450 compatible
+      phy: qcom: com-qmp-combo: add SM8350 & SM8450 support
 
-> +    minItems: 1
-> +    maxItems: 3
+ .../phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml         |   2 +
+ drivers/phy/qualcomm/phy-qcom-qmp-combo.c          | 170 +++++++++++++++++++++
+ 2 files changed, 172 insertions(+)
+---
+base-commit: 27bc895137496cc5f83c40c58b1da2504ff04a0b
+change-id: 20230206-topic-sm8350-upstream-usb-dp-combo-phy-33793ef747f2
 
-Why is this variable and what is each entry?
+Best regards,
+-- 
+Neil Armstrong <neil.armstrong@linaro.org>
 
-I still don't like the naming. Everything is a feature and a domain... 
-
-It might be a bit easier to come up with a name with multiple users of 
-this binding presented. I'm hesistant to define any new common binding 
-with only 1 user as I've said multiple times on this binding.
-
-Rob
 
 -- 
 linux-phy mailing list
