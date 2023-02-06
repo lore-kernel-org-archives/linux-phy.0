@@ -4,62 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 90233C05027
-	for <linux-phy@archiver.kernel.org>; Mon,  6 Feb 2023 14:05:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C257AC64EC3
+	for <linux-phy@archiver.kernel.org>; Mon,  6 Feb 2023 15:11:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xvhXQO00TPkRct9eo89cIBOoyEUj5hSZ37bpPHl97ig=; b=ByvgIZpTEGzNSi
-	s8uJSIMhqL//ExKUxrno7X9NZLT8qtxhJCR5BbWQxwSPpnnjZSABhUmAn9rzQIxy8m01OQQyc5+6r
-	vQhflpYbBB5EhtOG+Y7GzAFnV5EzjRbtP0z28R/ti/4NsC5xFVBdfc70RDeYywPgEFelR6G+SKFpP
-	tqr2J0fbhEy0OfLHlqv2BY2pw6t3XFaABzmS8UqCQ4Jtkwda5GPGdCYVjtw5zmMBku2mnNyKfKTym
-	YN+QEa46MJzynJVh6PEPaOUz5YgMW/U/zgU8oShyV/k+v4oCpgl4++4jzAtYloQwjvOd2eTQeHBVd
-	uAY2FBP2/QxfGU9T1WTg==;
+	List-Owner; bh=eY2dDXetIL0Bq43fvmnq8Uw+dtJnHzm//g5VBy1j8ho=; b=HuMGroR6TEiO0x
+	F5DFaFFehM2rq2I983EGiFhCAPu1try9Y3VLc1EKiBRA8OTeRH5QFepQrHcOQNEZc7tHywfsKMOtc
+	wdqTUDaT+j+zzjf5qmd71JZwXzfwt/+BV9630H6Yfejs1nZPAUNknIQ9zujHHVtwVjEflrR3ak4bc
+	5RYmAI7vSPDAAgfLSYjakGW6FVTewn3PaGOt/57eE0Vf8dvJYffkXq1/zw78MNMiJpvdT0EbFLB4O
+	8QnqMhi5SIBpgj/eSgdXeC/KkcbRHPAerKc1FelMXrZm1A2fJNR30fLCb44azxi2a3GC2hVVoFP2v
+	n+eWiuQ858H43kTHp5qA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pP27L-008iV3-Uo; Mon, 06 Feb 2023 14:05:11 +0000
-Received: from mail-wm1-x330.google.com ([2a00:1450:4864:20::330])
+	id 1pP39D-008ryD-5t; Mon, 06 Feb 2023 15:11:11 +0000
+Received: from mail-wm1-x331.google.com ([2a00:1450:4864:20::331])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pP27I-008iS4-DD
-	for linux-phy@lists.infradead.org; Mon, 06 Feb 2023 14:05:10 +0000
-Received: by mail-wm1-x330.google.com with SMTP id bg26so8776068wmb.0
-        for <linux-phy@lists.infradead.org>; Mon, 06 Feb 2023 06:05:05 -0800 (PST)
+	id 1pP399-008rxC-Rb
+	for linux-phy@lists.infradead.org; Mon, 06 Feb 2023 15:11:10 +0000
+Received: by mail-wm1-x331.google.com with SMTP id az4-20020a05600c600400b003dff767a1f1so3801690wmb.2
+        for <linux-phy@lists.infradead.org>; Mon, 06 Feb 2023 07:11:05 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=l1sBDHSdASz4ecLzalMdlfELS8RCcYMZ2sk1AegZ7C4=;
-        b=gUDkn0Nk6osoDg6kBIqb4HgThjeRoU3B4yStY9UPgtkSB4y1icRX/nUz/3C0iAIpEm
-         MEDJnt9vnKjADTSJTi/kI8xh0D1PAvXE7gH5tvVQcf8lgVPHzvsc5HnaQOH1XCzK8HqA
-         iLF14vnXPg2R+rqK6qe3qmaCI98vVcpebABOShNnLKS3xsvXq448T7tqXjuyVVxuKx9g
-         yMS5bniysbumzLDbyVXjr/7YPXLCHBoUeOW+P4N/JovSFBu+zje1qoxWataFiEkxgOE+
-         ofZGWBbvJfP+qu1nMsNHPX/6rHYDCqnit3Br9d1aFXvJkdUEMDG8tGXoizjtkjstYorr
-         zWKQ==
+        bh=wsmqt8kIE1pV9yLifDH7YFY8cOiugwYigL4n9E1qUpU=;
+        b=nFYl/hg4p7H1jfTK4TwO3Yu9DPxL+DnMFR01XOkVcUrHOucZ3Hrvr01EWJOMh2k7FF
+         iVgRXvlnzQZZLfd6KkQvb+yKidfaH1kkX5alW9W4SY/TFQDvPlRj1xsW/kZssZTs/Owo
+         R1T2FE3tB96gaBmE6Y28MklSLhrwd95r2px655TwLQJ9/J0AtDnLA7PZCRzJibxJ6y6r
+         m70vLYV3BZWRnBeArgLo+f+qNWNO2xt4JC2xU3tm5cbdnUFgW5MzhjNl9nJlIqEYTt5y
+         lR9nnDh5TYtcKyQ5o8RaSgEjQsmu8AICaOvOtyTy13weiTU/ihG/plKmaNY6EIqt7PWw
+         AbRw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=l1sBDHSdASz4ecLzalMdlfELS8RCcYMZ2sk1AegZ7C4=;
-        b=Ny/mvd7I1ES1HxF9KvdQJkJ/jBCwgsMmNhNI1TkdEe64KIUWu0oEunsC6dY7jeAMos
-         5Bt0igC8KrchPp2dLRvL7juXzQPQ8pJo1QwqIR5F2ysQ1S2kC36Wui2idELjjymCWnd+
-         Ooa4ZyiiOcoq6JdZB7z1mgKT4+MPJSwg6kfqNBL6ho1uxBZj6xER8D5MRa20COAdRR9G
-         s71Q63ubZLA0ykcvNc2FzGjPP5CR5OCxxtK+fI0PGAnoHoxtAGyabd/bbJDNyFhPfF/v
-         7pjuNNSuUz6kghy1buTut7Ei3VNe3Gu8pMULoa/chSa0GOgX9KnnaY4qYpWgPPQ4n53c
-         ETQg==
-X-Gm-Message-State: AO0yUKX9r1m5GAM8RL5j09YJy3qiFl7YVHc9SH3kjo3yuBCtIG8bM1rb
-	I0bvpDNxNbsgvkqd+f6Uu8gzfw==
-X-Google-Smtp-Source: AK7set8CdDqbiahcj1npFpmbebayGsvVRXrv4P1LiTprnhax7cXuxebkMZ+iX0ubTVrxQMT9rjIupw==
-X-Received: by 2002:a05:600c:3849:b0:3d5:365b:773e with SMTP id s9-20020a05600c384900b003d5365b773emr20826426wmr.39.1675692304690;
-        Mon, 06 Feb 2023 06:05:04 -0800 (PST)
+        bh=wsmqt8kIE1pV9yLifDH7YFY8cOiugwYigL4n9E1qUpU=;
+        b=kJ9Yymqz7eq5T6DB6xfvNimbsf203s/PphRBY4KsUdO+6Ne2t2gZnMG+vSr5LJpAZK
+         RpS9pSVk0u2qw4N4XGpg1e3T8ZlqnRPwr2dMYg6YI2OdJ+WY5xeaacIfCpxDKNWX9tks
+         5ng5s5w03gF2WXs+YQa7amLlB6P2xNmcn5zubAbQsE9jqdR0GNzY45bRnijcWc5Y4Jn5
+         A7PKTzphMB9DHfIBzIPYXJ4wFPhJlrw2YV2VTA9winHqcsFVv9PICsNqg7Zmc5WBuYF/
+         DbhHMeAp7QuiOoNLKVA80hmjM9N17YtMNUcNCAUVjpv1MnLxk3yBJvecYFoxKi5Z/Tmh
+         HccQ==
+X-Gm-Message-State: AO0yUKXicH5OcS32x67GLAOn7JO8MiKD/9IbF295wuEm/FuzUnGdO0gw
+	xWrTN5yEA++XGyXxrRZLUivfcA==
+X-Google-Smtp-Source: AK7set+nhWu+5YwsvDv/YaOf4rTRghGKDOHvVvOC7ROvQmFPq2VEHAhuvijJyVtOg2nmHTpdCqXIkQ==
+X-Received: by 2002:a05:600c:3485:b0:3db:2df0:f2b8 with SMTP id a5-20020a05600c348500b003db2df0f2b8mr1705148wmq.36.1675696263771;
+        Mon, 06 Feb 2023 07:11:03 -0800 (PST)
 Received: from linaro.org ([94.52.112.99])
-        by smtp.gmail.com with ESMTPSA id q9-20020a1ce909000000b003dc34edacf8sm15917337wmc.31.2023.02.06.06.05.03
+        by smtp.gmail.com with ESMTPSA id k32-20020a05600c1ca000b003ddf2865aeasm17641122wms.41.2023.02.06.07.11.02
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 06 Feb 2023 06:05:04 -0800 (PST)
-Date: Mon, 6 Feb 2023 16:05:02 +0200
+        Mon, 06 Feb 2023 07:11:02 -0800 (PST)
+Date: Mon, 6 Feb 2023 17:11:01 +0200
 From: Abel Vesa <abel.vesa@linaro.org>
 To: Johan Hovold <johan@kernel.org>
 Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
@@ -75,21 +75,18 @@ Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
 	Johan Hovold <johan+linaro@kernel.org>,
 	linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
 	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Subject: Re: [PATCH v7 08/12] phy: qcom-qmp-pcie: Add support for SM8550 g3x2
- and g4x2 PCIEs
-Message-ID: <Y+EJDofgt6I/abyp@linaro.org>
+	Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
+Subject: Re: [PATCH v7 10/12] PCI: qcom: Add SM8550 PCIe support
+Message-ID: <Y+EYhe/xYSFpI1Yn@linaro.org>
 References: <20230203081807.2248625-1-abel.vesa@linaro.org>
- <20230203081807.2248625-9-abel.vesa@linaro.org>
- <Y9zU2jBdSD72W28F@hovoldconsulting.com>
+ <20230203081807.2248625-11-abel.vesa@linaro.org>
+ <Y9zYpE/GnxUqnIyq@hovoldconsulting.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <Y9zU2jBdSD72W28F@hovoldconsulting.com>
+In-Reply-To: <Y9zYpE/GnxUqnIyq@hovoldconsulting.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230206_060508_477793_F14FB5E7 
-X-CRM114-Status: GOOD (  36.76  )
+X-CRM114-CacheID: sfid-20230206_071107_920470_95B0FD4A 
+X-CRM114-Status: GOOD (  27.04  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,128 +103,130 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 23-02-03 10:33:14, Johan Hovold wrote:
-> On Fri, Feb 03, 2023 at 10:18:03AM +0200, Abel Vesa wrote:
-> > Add the SM8550 both g4 and g3 configurations. In addition, there is a
-> > new "lane shared" table that needs to be configured for g4, along with
-> > the No-CSR list of resets.
+On 23-02-03 10:49:24, Johan Hovold wrote:
+> On Fri, Feb 03, 2023 at 10:18:05AM +0200, Abel Vesa wrote:
+> > Add compatible for both PCIe found on SM8550.
+> > Also add the cnoc_pcie_sf_axi clock needed by the SM8550.
 > 
-> Could you add a comment about the new nocsr reset and how it is used
-> here?
->  
-> > Co-developed-by: Neil Armstrong <neil.armstrong@linaro.org>
-> > Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
+> nit: You're now also adding 'noc_aggr'
+> 
 > > Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
-> > Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+> > Reviewed-by: Konrad Dybcio <konrad.dybcio@linaro.org>
+> > Reviewed-by: Manivannan Sadhasivam <mani@kernel.org>
 > > ---
 > > 
-> > This patchset relies on the following patchset:
-> > https://lore.kernel.org/all/20230117224148.1914627-1-abel.vesa@linaro.org/
-> > 
-> > The v6 of this patch is:
-> > https://lore.kernel.org/all/20230202123902.3831491-9-abel.vesa@linaro.org/
+> > The v6 of this patchset is:
+> > https://lore.kernel.org/all/20230202123902.3831491-11-abel.vesa@linaro.org/
 > > 
 > > Changes since v6:
 > >  * none
 > > 
 > > Changes since v5:
-> >  * renmaed the no-CSR reset to "phy_nocsr" as discussed off-list with
-> >    Bjorn and Johan
+> >  * none
 > > 
 > > Changes since v4:
-> >  * dropped _serdes infix from ln_shrd table name and from every ln_shrd
-> >    variable name
-> >  * added hyphen between "no CSR" in both places
-> >  * dropped has_ln_shrd_serdes_tbl
-> >  * reordered qmp_pcie_offsets_v6_20 by struct members
-> >  * added rollback for no-CSR reset in qmp_pcie_init fail path
-> >  * moved ln_shrd offset calculation after port_b
+> >  * added Mani's R-b tag
 > > 
 > > Changes since v3:
-> >  * added Dmitry's R-b tag
+> >  * renamed cnoc_pcie_sf_axi to cnoc_sf_axi
 > > 
 > > Changes since v2:
 > >  * none
 > > 
 > > Changes since v1:
-> >  * split all the offsets into separate patches, like Vinod suggested
+> >  * changed the subject line prefix for the patch to match the history,
+> >    like Bjorn Helgaas suggested.
+> >  * added Konrad's R-b tag
 > > 
+> >  drivers/pci/controller/dwc/pcie-qcom.c | 25 ++++++++++++++-----------
+> >  1 file changed, 14 insertions(+), 11 deletions(-)
 > > 
-> >  drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 367 ++++++++++++++++++++++-
-> >  1 file changed, 365 insertions(+), 2 deletions(-)
-> > 
-> > diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-> > index 907f3f236f05..ff6c0b526fde 100644
-> > --- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-> > +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-> > @@ -1506,6 +1506,234 @@ static const struct qmp_phy_init_tbl sm8450_qmp_gen4x2_pcie_ep_pcs_misc_tbl[] =
-> >  	QMP_PHY_INIT_CFG(QPHY_V5_20_PCS_PCIE_OSC_DTCT_MODE2_CONFIG5, 0x08),
-> >  };
-> 
-[...]
-> 
+> > diff --git a/drivers/pci/controller/dwc/pcie-qcom.c b/drivers/pci/controller/dwc/pcie-qcom.c
+> > index a232b04af048..6a70c9c6f98d 100644
+> > --- a/drivers/pci/controller/dwc/pcie-qcom.c
+> > +++ b/drivers/pci/controller/dwc/pcie-qcom.c
+> > @@ -182,10 +182,10 @@ struct qcom_pcie_resources_2_3_3 {
 > >  
-> > @@ -2214,6 +2469,68 @@ static const struct qmp_phy_cfg sm8450_qmp_gen4x2_pciephy_cfg = {
-> >  	.phy_status		= PHYSTATUS_4_20,
+> >  /* 6 clocks typically, 7 for sm8250 */
+> >  struct qcom_pcie_resources_2_7_0 {
+> > -	struct clk_bulk_data clks[12];
+> > +	struct clk_bulk_data clks[14];
+> >  	int num_clks;
+> >  	struct regulator_bulk_data supplies[2];
+> > -	struct reset_control *pci_reset;
+> > +	struct reset_control *rst;
+> 
+> Please name this one 'reset' or 'resets' (e.g. to avoid hard to parse
+> things like res->rst below).
+
+Well, it would then be inconsitent with 2_3_3 and 2_9_0, which both use
+rst.
+
+> 
 > >  };
 > >  
-> > +static const struct qmp_phy_cfg sm8550_qmp_gen3x2_pciephy_cfg = {
-> > +	.lanes = 2,
-> > +
-> > +	.offsets		= &qmp_pcie_offsets_v5,
+> >  struct qcom_pcie_resources_2_9_0 {
+> > @@ -1177,9 +1177,9 @@ static int qcom_pcie_get_resources_2_7_0(struct qcom_pcie *pcie)
+> >  	unsigned int idx;
+> >  	int ret;
+> >  
+> > -	res->pci_reset = devm_reset_control_get_exclusive(dev, "pci");
+> > -	if (IS_ERR(res->pci_reset))
+> > -		return PTR_ERR(res->pci_reset);
+> > +	res->rst = devm_reset_control_array_get_exclusive(dev);
+> > +	if (IS_ERR(res->rst))
+> > +		return PTR_ERR(res->rst);
 > 
-> Did you really intend to use the v5 offsets here? It seems you use v6.20
-> defines in the tables below. This may work but it looks a little strange
-> and does not match how we name and use these resources for the other
-> SoCs (e.g. reusing structures and defines from older IP revisions is
-> fine, but not necessarily the other way round).
+> So the reset array implementation apparently both asserts and deasserts
+> the resets in the order specified in DT (i.e. does not deassert in
+> reverse order).
+> 
+> Is that ok also for the new "pci" and "link_down" resets?
 
-So here is what is happening here. The actual IP block version is 6 for
-the g3x2. The offsets of the tables are the same as on v5, but the
-actual offsets of some of the registers within those tables are
-entirely different. Now, if you compare the PCS PCIe offsets (v5 vs v6)
-you'll notice that all v6 registers currently added are the same as v5
-(both names and values). With that in mind, we still need to keep the v6
-offsets for the case when a new register, that might not be in v5, might
-be added later on. As for the table offsets, since they look the same we
-should probably not add a dedicated v6 one.
-> 
-> I assume this means that the gen3 PHY is really is really v5 and using
-> a subset of the v6.20 defines happens to works as they are in fact
-> identical with respect to that subset?
-> 
-> As you have dedicated gen3x2 tables, perhaps those should use the v5
-> defines?
-> 
-> And at least add a comment about this in the commit message.
-> 
-> > +
-> > +	.tbls = {
-> > +		.serdes		= sm8550_qmp_gen3x2_pcie_serdes_tbl,
-> > +		.serdes_num	= ARRAY_SIZE(sm8550_qmp_gen3x2_pcie_serdes_tbl),
-> > +		.tx		= sm8550_qmp_gen3x2_pcie_tx_tbl,
-> > +		.tx_num		= ARRAY_SIZE(sm8550_qmp_gen3x2_pcie_tx_tbl),
-> > +		.rx		= sm8550_qmp_gen3x2_pcie_rx_tbl,
-> > +		.rx_num		= ARRAY_SIZE(sm8550_qmp_gen3x2_pcie_rx_tbl),
-> > +		.pcs		= sm8550_qmp_gen3x2_pcie_pcs_tbl,
-> > +		.pcs_num	= ARRAY_SIZE(sm8550_qmp_gen3x2_pcie_pcs_tbl),
-> > +		.pcs_misc	= sm8550_qmp_gen3x2_pcie_pcs_misc_tbl,
-> > +		.pcs_misc_num	= ARRAY_SIZE(sm8550_qmp_gen3x2_pcie_pcs_misc_tbl),
-> > +	},
-> > +	.clk_list		= sc8280xp_pciephy_clk_l,
-> > +	.num_clks		= ARRAY_SIZE(sc8280xp_pciephy_clk_l),
-> > +	.reset_list		= sdm845_pciephy_reset_l,
-> > +	.num_resets		= ARRAY_SIZE(sdm845_pciephy_reset_l),
-> > +	.vreg_list		= qmp_phy_vreg_l,
-> > +	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
-> > +	.regs			= pciephy_v5_regs_layout,
-> > +
-> > +	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
-> > +	.phy_status		= PHYSTATUS,
-> > +};
-> > +
+According to the HPG, yes, this is perfectly fine. It specifically says
+to assert the pcie reset and then continues saying to assert the
+link_down reset.
 
-[...]
+> 
+> >  	res->supplies[0].supply = "vdda";
+> >  	res->supplies[1].supply = "vddpe-3v3";
+> > @@ -1205,9 +1205,11 @@ static int qcom_pcie_get_resources_2_7_0(struct qcom_pcie *pcie)
+> >  	res->clks[idx++].id = "ddrss_sf_tbu";
+> >  	res->clks[idx++].id = "aggre0";
+> >  	res->clks[idx++].id = "aggre1";
+> > +	res->clks[idx++].id = "noc_aggr";
+> >  	res->clks[idx++].id = "noc_aggr_4";
+> >  	res->clks[idx++].id = "noc_aggr_south_sf";
+> >  	res->clks[idx++].id = "cnoc_qx";
+> > +	res->clks[idx++].id = "cnoc_sf_axi";
+> >  
+> >  	num_opt_clks = idx - num_clks;
+> >  	res->num_clks = idx;
+> > @@ -1237,17 +1239,17 @@ static int qcom_pcie_init_2_7_0(struct qcom_pcie *pcie)
+> >  	if (ret < 0)
+> >  		goto err_disable_regulators;
+> >  
+> > -	ret = reset_control_assert(res->pci_reset);
+> > -	if (ret < 0) {
+> > -		dev_err(dev, "cannot assert pci reset\n");
+> > +	ret = reset_control_assert(res->rst);
+> > +	if (ret) {
+> > +		dev_err(dev, "reset assert failed (%d)\n", ret);
+> >  		goto err_disable_clocks;
+> >  	}
+> >  
+> >  	usleep_range(1000, 1500);
+> >  
+> > -	ret = reset_control_deassert(res->pci_reset);
+> > -	if (ret < 0) {
+> > -		dev_err(dev, "cannot deassert pci reset\n");
+> > +	ret = reset_control_deassert(res->rst);
+> > +	if (ret) {
+> > +		dev_err(dev, "reset deassert failed (%d)\n", ret);
+> >  		goto err_disable_clocks;
+> >  	}
+> 
+> Johan
 
 -- 
 linux-phy mailing list
