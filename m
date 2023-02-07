@@ -4,91 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9E826C636CC
-	for <linux-phy@archiver.kernel.org>; Tue,  7 Feb 2023 13:32:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 46EC2C636CC
+	for <linux-phy@archiver.kernel.org>; Tue,  7 Feb 2023 13:56:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BT69V0qEfGmSMl+uz7Zv+aWN9gsHmcxEa3/UgXD0hWc=; b=3PMrg+VASvXEDx
-	+H3gA9c5WY+9WPu0r0XRGY/qOQAb1zHMwf6NpIEuauB9mbJiCy1B99s1J26mTxmv0stMrmqFVwPPI
-	fkqu8QfFxgbLGR6TwtiZdlVCo05RWpmHcXFjgGyIV9/84HBHVR61oZeK1mGbLHKxqghs+pJRC93Qx
-	VuFHKPc7ch+9cWMUkDaJNmFlbftOsodvAreT0UBQ6x3Igy6UN+AQ2J6wsJ/VWdxYlppqPwFz2R4js
-	AA9ieWiioDsKn+SbKo2ivgN6vsUO8ef1mCdJ6TJasUWnl36bdfI3n03j4mcCUhR3VM2eFxeM+VRi0
-	UpESrrED9KPMoC8Qtcpg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=KUvzPbn54BYIp1ytxMeWUqvkzJBEvZq+vEyiKHE2xxg=; b=IoS53WbMGGNOwj
+	ksO69PG0QLz1ZDFV5kZAx2nSQ/9yFLBWvGS16J3CrFqvUAP/ZwVDEOCqJ49//Xn1v68USzP5cCSrA
+	TDjIjZjfVJCBnzyFhZDwDxXbyV+oLjB1PgoT6x+fSGB5ki4evYIX15lH0Z7bymiJJuB8GTAeExzAo
+	hiKMi0i0/O6HAwNvJvH4z+zdBFevSMpdX3IXyVOGN9NJc+/gRmHvDFz0Ymc46SBjZPxfssEXIvzcQ
+	8KidV9rmIDpsQd69Y+oTi9/JNGb6YJg7EXkoUf+EVB/zQNwLdiBuXuOIKIct5911RI37la+UFya1U
+	JVJuSUOd+QGp2rV7lMIg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pPO4x-00CIhj-3I; Tue, 07 Feb 2023 13:32:11 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93] helo=mx07-00178001.pphosted.com)
+	id 1pPORz-00CMni-LD; Tue, 07 Feb 2023 13:55:59 +0000
+Received: from mail-wr1-x432.google.com ([2a00:1450:4864:20::432])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pPO4t-00CIeu-EY; Tue, 07 Feb 2023 13:32:09 +0000
-Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
-	by mx07-00178001.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 317ArI1e008460;
-	Tue, 7 Feb 2023 14:31:34 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com; h=message-id : date :
- mime-version : subject : to : cc : references : from : in-reply-to :
- content-type : content-transfer-encoding; s=selector1;
- bh=DvaNpdrSgE+lHP2IkmzvxSLVAaIdRRvLf0BwPPBEci4=;
- b=aQaSbkCpRXS5PTBvs/7A4rURHj3O8ll9TldW/dJbYL96OW9dyidgNbpqQ2IMwlJcHYfV
- PCVnikmHA0+/GU/YHrkk37G8Rh1vwsakP87ID7Au4i9IPIaHZeIDNhs3YvOTq1WTSruH
- P/8HpNo2WO25T81982igFgAtil5zgYjG1s7tQEMU059ZhJ/Ri0m3Ps7/HUr6/6js0yXH
- 74wlbwkqH4zm93ascw8YJ8mG5y0V5j0ZKxb4kjWICzncOKYOnHM36Ik5nhtQdo8YyV1/
- CkELeSEYnoaCyUnTE4l4Y2LIuOvGfr53WsS7P8Z1L0NcrxY6EwxnjvkuyxgzkO+gacI9 kw== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
-	by mx07-00178001.pphosted.com (PPS) with ESMTPS id 3nhdcfk48x-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 07 Feb 2023 14:31:34 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
-	by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id B91DA10002A;
-	Tue,  7 Feb 2023 14:31:21 +0100 (CET)
-Received: from Webmail-eu.st.com (shfdag1node1.st.com [10.75.129.69])
-	by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id F17372194F5;
-	Tue,  7 Feb 2023 14:31:20 +0100 (CET)
-Received: from [10.201.20.249] (10.201.20.249) by SHFDAG1NODE1.st.com
- (10.75.129.69) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.16; Tue, 7 Feb
- 2023 14:31:19 +0100
-Message-ID: <d283ef50-7807-b928-83a5-63ef4565f9e4@foss.st.com>
-Date: Tue, 7 Feb 2023 14:31:18 +0100
+	id 1pPORx-00CMmo-Ec
+	for linux-phy@lists.infradead.org; Tue, 07 Feb 2023 13:55:59 +0000
+Received: by mail-wr1-x432.google.com with SMTP id k13so6225878wrh.8
+        for <linux-phy@lists.infradead.org>; Tue, 07 Feb 2023 05:55:56 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=JZVy6UETjo48T8sbWkjn8fWSpf7jaH8RRC1DRDpNkX8=;
+        b=DXafruirc1KWzQxIKCu5wqiV6RseMKBRfEAUw6h4nDf9bvj5qF5DuxctY42EIn8PBP
+         DSF11ev9bfgds55L88Umbi5Vx1TS4tH1Hgu2PTu2NubZUUJFquouZ5qadV9tl0Dcm6Vq
+         2fQfVkxkHGCX4wqK1ViBYx950Rfp2WZt1/o89xbICzO+1RwerYLAxtfM3cAO0LJIYRgG
+         FH/XGH3YOfCnViE5eqhxuxToliylvf9d/M+ivvvR8u86cPZhJGkWlz4WhD+PHBNbjXeW
+         lrSkvlCF9MjmDIYBbr+/YPUXTkQBm5Ufs4jNai3TWNXn4m3WvXXrEYW+XVJo4bB/oTy8
+         1Hqw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=JZVy6UETjo48T8sbWkjn8fWSpf7jaH8RRC1DRDpNkX8=;
+        b=m+7FhbIa0wUhXxYtpOeIyiPBXa/lLBSBAnaQ0ROVENopP97IEP0QL0RPZ2ZV8iv6N1
+         ymJ7mOWTM3Z2fsLRcqq8+s0GavgQW17jRKa3ABk2Y/iEFRxOc5IlTF7JdzaiIEPkxFWe
+         bmGJwMijs9EjUlUQdDaLvkwlwoYWXCb/icRvKd4OLDxdomUEABy10lRpdPrtXP2YOXX8
+         75zw5xZ727UOzp5LeGOHaKEI4MomVCz0tSGjWONqAacSPUznTcnzFQSWsYGxba0AfPgE
+         6gbaMNujrOin9uEMHCyb40iVT/0/aFRGLj0sPSc9D1Z0PvVImMXtkaQHR0CGv2tdCtr9
+         KrLg==
+X-Gm-Message-State: AO0yUKXEwfMLghZM2EXGDzGk8GMkj7x8eW0UlkewFnXSKuHDyj4z7iPs
+	y1omnZu2g8c4ijdPExwnULupIg==
+X-Google-Smtp-Source: AK7set91Op9UQN4lc/XoWrfKxdUUccdREuCUJsx0iI1vqbpMl3cZEbxrNCdDV0wR7zpkr7cLv4vfsw==
+X-Received: by 2002:a5d:5745:0:b0:2bf:e528:336b with SMTP id q5-20020a5d5745000000b002bfe528336bmr2881141wrw.38.1675778155250;
+        Tue, 07 Feb 2023 05:55:55 -0800 (PST)
+Received: from hackbox.lan ([94.52.112.99])
+        by smtp.gmail.com with ESMTPSA id p10-20020a5d59aa000000b002be5401ef5fsm11611312wrr.39.2023.02.07.05.55.53
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 07 Feb 2023 05:55:54 -0800 (PST)
+From: Abel Vesa <abel.vesa@linaro.org>
+To: Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Lee Jones <lee@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	"vkoul@kernel.org"  <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Johan Hovold <johan+linaro@kernel.org>
+Cc: linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
+Subject: [PATCH v4 0/7] sm8550: Add support for eUSB2 repeater
+Date: Tue,  7 Feb 2023 15:55:44 +0200
+Message-Id: <20230207135551.1418637-1-abel.vesa@linaro.org>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.7.1
-Subject: Re: [PATCH v3 3/6] dt-bindings: bus: add STM32 System Bus
-To: Jonathan Cameron <jic23@kernel.org>
-CC: <Oleksii_Moisieiev@epam.com>, <gregkh@linuxfoundation.org>,
-        <herbert@gondor.apana.org.au>, <davem@davemloft.net>,
-        <robh+dt@kernel.org>, <krzysztof.kozlowski+dt@linaro.org>,
-        <alexandre.torgue@foss.st.com>, <vkoul@kernel.org>,
-        <olivier.moysan@foss.st.com>, <arnaud.pouliquen@foss.st.com>,
-        <mchehab@kernel.org>, <fabrice.gasnier@foss.st.com>,
-        <ulf.hansson@linaro.org>, <edumazet@google.com>, <kuba@kernel.org>,
-        <pabeni@redhat.com>, <linux-crypto@vger.kernel.org>,
-        <devicetree@vger.kernel.org>,
-        <linux-stm32@st-md-mailman.stormreply.com>,
-        <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
-        <dmaengine@vger.kernel.org>, <linux-i2c@vger.kernel.org>,
-        <linux-iio@vger.kernel.org>, <alsa-devel@alsa-project.org>,
-        <linux-media@vger.kernel.org>, <linux-mmc@vger.kernel.org>,
-        <netdev@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-        <linux-serial@vger.kernel.org>, <linux-spi@vger.kernel.org>,
-        <linux-usb@vger.kernel.org>, Loic PALLARDY <loic.pallardy@st.com>
-References: <20230127164040.1047583-1-gatien.chevallier@foss.st.com>
- <20230127164040.1047583-4-gatien.chevallier@foss.st.com>
- <20230128154827.4f23534e@jic23-huawei>
-Content-Language: en-US
-From: Gatien CHEVALLIER <gatien.chevallier@foss.st.com>
-In-Reply-To: <20230128154827.4f23534e@jic23-huawei>
-X-Originating-IP: [10.201.20.249]
-X-ClientProxiedBy: EQNCAS1NODE3.st.com (10.75.129.80) To SHFDAG1NODE1.st.com
- (10.75.129.69)
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.219,Aquarius:18.0.930,Hydra:6.0.562,FMLib:17.11.122.1
- definitions=2023-02-07_05,2023-02-06_03,2022-06-22_01
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230207_053207_816558_27A559D5 
-X-CRM114-Status: GOOD (  14.82  )
+X-CRM114-CacheID: sfid-20230207_055557_518282_CC751177 
+X-CRM114-Status: GOOD (  14.39  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,63 +92,63 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hello Jonathan,
+This patchset adds support for the eUSB2 repeater found in pmic PM8550B,
+used along with SM8550. Since there is no dedicated generic framework
+for eUSB2 repeaters, the most appropriate subsystem to model it is the
+generic phy. This patchset also adds support for such repeater to the
+eUSB2 PHY found in SM8550. Basically, the eUSB2 PHY will have its own
+"phy" which is actually a repeater.
 
-On 1/28/23 16:48, Jonathan Cameron wrote:
-> On Fri, 27 Jan 2023 17:40:37 +0100
-> Gatien Chevallier <gatien.chevallier@foss.st.com> wrote:
-> 
->> Document STM32 System Bus. This bus is intended to control firewall
->> access for the peripherals connected to it.
->>
->> Signed-off-by: Gatien Chevallier <gatien.chevallier@foss.st.com>
->> Signed-off-by: Loic PALLARDY <loic.pallardy@st.com>
-> Trivial comment on formatting.
-> 
->> +
->> +examples:
->> +  - |
->> +    // In this example, the rng1 device refers to etzpc as its domain controller.
->> +    // Same goes for fmc.
->> +    // Access rights are verified before creating devices.
->> +
->> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
->> +    #include <dt-bindings/clock/stm32mp1-clks.h>
->> +    #include <dt-bindings/reset/stm32mp1-resets.h>
->> +
->> +    etzpc: bus@5c007000 {
->> +        compatible = "st,stm32mp15-sys-bus";
->> +        reg = <0x5c007000 0x400>;
->> +        #address-cells = <1>;
->> +        #size-cells = <1>;
->> +        ranges;
->> +        feature-domain-controller;
->> +        #feature-domain-cells = <1>;
->> +
->> +        rng1: rng@54003000 {
-> 
-> Odd mixture of 4 spacing and 2 spacing in this example.
-> I'd suggest one or the other (slight preference for 4 space indents).
-> 
+This patchset is based on the following patchset:
+https://lore.kernel.org/all/20230207114024.944314-1-abel.vesa@linaro.org
 
-Thank you for spotting this, I'll change to 4 space indents
+Changes since v3:
+ * This time is a normal patchset, rather than an RFC
+ * reversed the order of patches 1 and 2, in order to make the repeater
+   schema available for the pmic schema update
 
-> 
->> +          compatible = "st,stm32-rng";
->> +          reg = <0x54003000 0x400>;
->> +          clocks = <&rcc RNG1_K>;
->> +          resets = <&rcc RNG1_R>;
->> +          feature-domains = <&etzpc 7>;
->> +          status = "disabled";
->> +        };
+Changes since v2:
+ * moved the bindings qcom,spmi-pmic patch before the repeater schema
+   patch in order to avoid the repeater schema validation failure due to
+   phy pattern property not being found in qcom,spmi-pmic schema
 
-Best regards,
-Gatien
+Changes since v1:
+ * the repeater driver is implemented now as a PHY rather than adding
+   a new generic framework for USB repeaters
+
+Abel Vesa (5):
+  dt-bindings: phy: Add qcom,snps-eusb2-repeater schema file
+  dt-bindings: mfd: qcom,spmi-pmic: Add pattern property for phy
+  dt-bindings: phy: qcom,snps-eusb2-phy: Add phys property for the
+    repeater
+  phy: qcom: Add QCOM SNPS eUSB2 repeater driver
+  arm64: dts: qcom: sm8550-mtp: Add eUSB2 repeater node
+
+Neil Armstrong (2):
+  phy: qcom: phy-qcom-snps-eusb2: Add support for eUSB2 repeater
+  arm64: dts: qcom: pm8550b: Add eUSB2 repeater node
+
+ .../bindings/mfd/qcom,spmi-pmic.yaml          |   4 +
+ .../bindings/phy/qcom,snps-eusb2-phy.yaml     |   5 +
+ .../phy/qcom,snps-eusb2-repeater.yaml         |  48 ++++
+ arch/arm64/boot/dts/qcom/pm8550b.dtsi         |   6 +
+ arch/arm64/boot/dts/qcom/sm8550-mtp.dts       |   7 +
+ drivers/phy/qualcomm/Kconfig                  |   9 +
+ drivers/phy/qualcomm/Makefile                 |   1 +
+ .../phy/qualcomm/phy-qcom-eusb2-repeater.c    | 259 ++++++++++++++++++
+ drivers/phy/qualcomm/phy-qcom-snps-eusb2.c    |  19 +-
+ 9 files changed, 357 insertions(+), 1 deletion(-)
+ create mode 100644 Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml
+ create mode 100644 drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c
+
+-- 
+2.34.1
+
 
 -- 
 linux-phy mailing list
