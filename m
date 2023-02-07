@@ -4,87 +4,92 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 300F5C636CC
-	for <linux-phy@archiver.kernel.org>; Tue,  7 Feb 2023 13:56:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CAE0CC636CC
+	for <linux-phy@archiver.kernel.org>; Tue,  7 Feb 2023 14:14:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NWOeKzowPPbyV1Ym6Jjxae3SEByGtodl3ioqUJcp6fQ=; b=AkWgx8krZ3JSlD
-	QvC/c7Lxl2jQhmLl/b5YeowMlwGiOhx87ULkicblz3R+PkqKStmMFG5hUfw2IePXy1VaHKWoklHnH
-	ULk0bgf0M04h0vJZ2F2qYIcLH3/3qZhfi66jLARcsrtvGiVldlosFBZiBz1xDasEgxT2oI+jlk8bw
-	TlT1cGVKGQmjkDEuMTLaacvTb5+d3IfJbcVyN/oIM1iohU+Q+2LVVHuAx//S6g6R4eUSgNbkht2Xg
-	K0wj0/xgkJShQz9KRtPQS1/vwpq8vP5rHJ5q2LMlbJc+ZuR4iY2dcGF4JDimq1dkd9Muqku2O6daZ
-	Yn6FnMetwSodwMLRJt0g==;
+	List-Owner; bh=Xm7bxTpdS61o4YNI80LHf0YtR+2VBX55hMsUKm1GDHk=; b=lsIkcVj/dMxBIR
+	hTzxNfMy4TppUtL/V/rlktLUI5ElM4gzEHfIOX57LOzDtHQeROKCDgwYaVXRQeE99Mfe23mVTQTkZ
+	LrmRwlHV96vcrwoKh6i1tHDwTKMPiVCjMe5stBOqihPP9qdaAcC0BTyiABf2xGOQoLGITYSmDcuD0
+	Og1LMmJetUYfV0fyN8Aplu1mRbWTprVxcknd5ENL/NHENeE3GotpgImdZXc1us5J+83wSZSMYN9ss
+	6GEpW1PgBQl8cM3nl834xaFR8hWVLDxtq0ybJIf03ZOjVjgemPZpGrQicoYbwN68tEtVWmsZ5LBAj
+	8PKMxA+P1vupgA0Mtliw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pPOSA-00CMsV-KU; Tue, 07 Feb 2023 13:56:10 +0000
-Received: from mail-wr1-x435.google.com ([2a00:1450:4864:20::435])
+	id 1pPOkF-00CPax-8g; Tue, 07 Feb 2023 14:14:51 +0000
+Received: from mx07-00178001.pphosted.com ([185.132.182.106])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pPOS8-00CMqE-3S
-	for linux-phy@lists.infradead.org; Tue, 07 Feb 2023 13:56:09 +0000
-Received: by mail-wr1-x435.google.com with SMTP id g6so5648299wrv.1
-        for <linux-phy@lists.infradead.org>; Tue, 07 Feb 2023 05:56:05 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=V1aUOJzlnvog/gfPWV5JW0Qf9tdncCWCmWydTboOvKw=;
-        b=bO5sg5C5vYk9TdSOnLjR4vlhtn9sPiCyuwTtqnTTgWRlpu6ZIHi2AuSfyxwDUhH1E3
-         7iIfij9Fjz7f1MYJpQy2hjG1h8vjsYElgJEhcWCYbarfC1ZcxdyLCyd/IPGwYUz+3Mde
-         oqQp5TY/prn2vOHVAiD4YbRNxJmoIEX9aMEGWawsmNYceIIZqF3dZuYM8TqTJFLpiItC
-         gUZj8ZewAg+J/0uxy84V7Sd9T7B9STa6We5Gn5QUkuDdBa0eSe6ZESufOyJ8RqKi93Fd
-         zZeqp4/kmqKAY2c8yu6aJKqcT81K8WZv25+Y4RCXZ0TR+A81ExbJ+Ite5QCLES6P4aWw
-         A8eA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=V1aUOJzlnvog/gfPWV5JW0Qf9tdncCWCmWydTboOvKw=;
-        b=U2m9AyI5JxMdSiIPF4eqydkwBxBjDVmsvbUlgRNjFyqoJkyqLqW89T79pOjBwRyE0l
-         KY8hh0ooeFHv5WpKKISVqqvnoHIpIAeIZG5R9H45Wxp4ukJQqLwwaBKDlzM73UtboBmy
-         olTCd9mNr/PXgDNM1WOjtH1VzrTnR+3766thW/2OczYePjikIXdcd7+hTzyZKxg45NHn
-         bWWGbncVrhqwWQCHMmmh4md4nHsv2VnfuA8vXmGrQ/pMHd201Ls4AW6aGm7YYnLJK262
-         rUxfE+KdThuM1oUaOZcz0LTOENf5qvtKkeLghCwK2i4nFb+NsQYL3woaIk2h0Dx81xat
-         IyIw==
-X-Gm-Message-State: AO0yUKVImOuLo7Fu/CaajvRe2mkeHU/JI0EuNAeLWWhZJVjZIoz72VNn
-	tO7O6dGQ7YoskQbboU4q03Y4XQ==
-X-Google-Smtp-Source: AK7set8/7pguR2nkrh5sfxWhRMJoc0cANOCX7qiQNTzv4aIYl17VUb020gXBfptdCuTi7LOG4aoGAA==
-X-Received: by 2002:a5d:6d82:0:b0:2c3:c138:e52d with SMTP id l2-20020a5d6d82000000b002c3c138e52dmr14202450wrs.4.1675778164473;
-        Tue, 07 Feb 2023 05:56:04 -0800 (PST)
-Received: from hackbox.lan ([94.52.112.99])
-        by smtp.gmail.com with ESMTPSA id p10-20020a5d59aa000000b002be5401ef5fsm11611312wrr.39.2023.02.07.05.56.03
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 07 Feb 2023 05:56:03 -0800 (PST)
-From: Abel Vesa <abel.vesa@linaro.org>
-To: Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
-	Lee Jones <lee@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	"vkoul@kernel.org"  <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Johan Hovold <johan+linaro@kernel.org>
-Cc: linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
-Subject: [PATCH v4 7/7] arm64: dts: qcom: sm8550-mtp: Add eUSB2 repeater node
-Date: Tue,  7 Feb 2023 15:55:51 +0200
-Message-Id: <20230207135551.1418637-8-abel.vesa@linaro.org>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20230207135551.1418637-1-abel.vesa@linaro.org>
-References: <20230207135551.1418637-1-abel.vesa@linaro.org>
+	id 1pPOkC-00CPZq-Nj; Tue, 07 Feb 2023 14:14:50 +0000
+Received: from pps.filterd (m0241204.ppops.net [127.0.0.1])
+	by mx07-00178001.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 317ArBxI023356;
+	Tue, 7 Feb 2023 15:12:28 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com; h=message-id : date :
+ mime-version : subject : to : cc : references : from : in-reply-to :
+ content-type : content-transfer-encoding; s=selector1;
+ bh=bRPLjENYLm4EkeQxpcXBxnDMwaCRtrrOyJyCcEKFKwM=;
+ b=v+r2Y+dW5qpe2evs4+p2Rph0HUeYJkhrIakAtRF4fJW7pf/iMoA2BrjUcXOgAS4O+JMl
+ IXKV7Hp74w1KJP0PvEekg8P/i3SR3P0AwBgPlA+9ojsAnk0s7LDy3CWyXOWlKcwqqPfu
+ wPE7CdTQ6u+DTonaxS8J7QYwU2uD3eROQ4b0UVJqA3TaS3QYgy35kLMkIT8d6Z2toWJ5
+ tMeMMxNPT8PXIpemJJgIQyZVYQ9Vv2xTMUAyQ8CNlfu2WPa6wKy9p9vIs1O/gAb/LlqC
+ 1+7jKtxsEn7AYZrcWlego6inAn0ozOi+IQs8ea9RiHb5iRVStFIyQmQyADvaliPIL6nK lw== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+	by mx07-00178001.pphosted.com (PPS) with ESMTPS id 3nhfk72dkh-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 07 Feb 2023 15:12:28 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+	by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 763D6100034;
+	Tue,  7 Feb 2023 15:12:27 +0100 (CET)
+Received: from Webmail-eu.st.com (shfdag1node1.st.com [10.75.129.69])
+	by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 48EEA21B516;
+	Tue,  7 Feb 2023 15:12:27 +0100 (CET)
+Received: from [10.201.20.249] (10.201.20.249) by SHFDAG1NODE1.st.com
+ (10.75.129.69) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.16; Tue, 7 Feb
+ 2023 15:12:24 +0100
+Message-ID: <d6c659d8-2e5c-cb60-d950-685c4ba319e2@foss.st.com>
+Date: Tue, 7 Feb 2023 15:12:23 +0100
 MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.7.1
+Subject: Re: [PATCH v3 4/6] bus: stm32_sys_bus: add support for STM32MP15 and
+ STM32MP13 system bus
+Content-Language: en-US
+To: Jonathan Cameron <jic23@kernel.org>
+CC: <Oleksii_Moisieiev@epam.com>, <gregkh@linuxfoundation.org>,
+        <herbert@gondor.apana.org.au>, <davem@davemloft.net>,
+        <robh+dt@kernel.org>, <krzysztof.kozlowski+dt@linaro.org>,
+        <alexandre.torgue@foss.st.com>, <vkoul@kernel.org>,
+        <olivier.moysan@foss.st.com>, <arnaud.pouliquen@foss.st.com>,
+        <mchehab@kernel.org>, <fabrice.gasnier@foss.st.com>,
+        <ulf.hansson@linaro.org>, <edumazet@google.com>, <kuba@kernel.org>,
+        <pabeni@redhat.com>, <linux-crypto@vger.kernel.org>,
+        <devicetree@vger.kernel.org>,
+        <linux-stm32@st-md-mailman.stormreply.com>,
+        <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+        <dmaengine@vger.kernel.org>, <linux-i2c@vger.kernel.org>,
+        <linux-iio@vger.kernel.org>, <alsa-devel@alsa-project.org>,
+        <linux-media@vger.kernel.org>, <linux-mmc@vger.kernel.org>,
+        <netdev@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+        <linux-serial@vger.kernel.org>, <linux-spi@vger.kernel.org>,
+        <linux-usb@vger.kernel.org>, Loic PALLARDY <loic.pallardy@st.com>
+References: <20230127164040.1047583-1-gatien.chevallier@foss.st.com>
+ <20230127164040.1047583-5-gatien.chevallier@foss.st.com>
+ <20230128161217.0e79436e@jic23-huawei>
+From: Gatien CHEVALLIER <gatien.chevallier@foss.st.com>
+In-Reply-To: <20230128161217.0e79436e@jic23-huawei>
+X-Originating-IP: [10.201.20.249]
+X-ClientProxiedBy: EQNCAS1NODE3.st.com (10.75.129.80) To SHFDAG1NODE1.st.com
+ (10.75.129.69)
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.219,Aquarius:18.0.930,Hydra:6.0.562,FMLib:17.11.122.1
+ definitions=2023-02-07_05,2023-02-06_03,2022-06-22_01
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230207_055608_158519_BE12CAF1 
-X-CRM114-Status: UNSURE (   8.95  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230207_061449_078297_E26155D8 
+X-CRM114-Status: GOOD (  42.65  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,55 +101,234 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add the PMIC eUSB2 repeater node and add the usb-repeater
-property to the eUSB2 PHY to allow it to be controlled by the
-PHY driver.
+Hi Jonathan,
 
-Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
----
+On 1/28/23 17:12, Jonathan Cameron wrote:
+> On Fri, 27 Jan 2023 17:40:38 +0100
+> Gatien Chevallier <gatien.chevallier@foss.st.com> wrote:
+> 
+>> This driver is checking the access rights of the different
+>> peripherals connected to the system bus. If access is denied,
+>> the associated device tree node is skipped so the platform bus
+>> does not probe it.
+>>
+>> Signed-off-by: Gatien Chevallier <gatien.chevallier@foss.st.com>
+>> Signed-off-by: Loic PALLARDY <loic.pallardy@st.com>
+> 
+> Hi Gatien,
+> 
+> A few comments inline,
+> 
+> Thanks,
+> 
+> Jonathan
+> 
+>> diff --git a/drivers/bus/stm32_sys_bus.c b/drivers/bus/stm32_sys_bus.c
+>> new file mode 100644
+>> index 000000000000..c12926466bae
+>> --- /dev/null
+>> +++ b/drivers/bus/stm32_sys_bus.c
+>> @@ -0,0 +1,168 @@
+>> +// SPDX-License-Identifier: GPL-2.0
+>> +/*
+>> + * Copyright (C) 2023, STMicroelectronics - All Rights Reserved
+>> + */
+>> +
+>> +#include <linux/bitfield.h>
+>> +#include <linux/bits.h>
+>> +#include <linux/device.h>
+>> +#include <linux/err.h>
+>> +#include <linux/io.h>
+>> +#include <linux/init.h>
+>> +#include <linux/kernel.h>
+>> +#include <linux/module.h>
+>> +#include <linux/of.h>
+>> +#include <linux/of_platform.h>
+>> +#include <linux/platform_device.h>
+>> +
+>> +/* ETZPC peripheral as firewall bus */
+>> +/* ETZPC registers */
+>> +#define ETZPC_DECPROT			0x10
+>> +
+>> +/* ETZPC miscellaneous */
+>> +#define ETZPC_PROT_MASK			GENMASK(1, 0)
+>> +#define ETZPC_PROT_A7NS			0x3
+>> +#define ETZPC_DECPROT_SHIFT		1
+> 
+> This define makes the code harder to read.  What we care about is
+> the number of bits in the register divided by number of entries.
+> (which is 2) hence the shift by 1. See below for more on this.
+> 
+> 
+>> +
+>> +#define IDS_PER_DECPROT_REGS		16
+> 
+>> +#define STM32MP15_ETZPC_ENTRIES		96
+>> +#define STM32MP13_ETZPC_ENTRIES		64
+> 
+> These defines just make the code harder to check.
+> They aren't magic numbers, but rather just telling us how many
+> entries there are, so I would just put them in the structures directly.
+> Their use make it clear what they are without needing to give them a name.
+> 
 
-The v3 (rfc) is here:
-https://lore.kernel.org/all/20230202133816.4026990-8-abel.vesa@linaro.org/
+Honestly, I'd rather read the hardware configuration registers to get 
+this information instead of differentiating MP13/15. Would you agree on 
+that?
 
-Changes since v3:
- * Dropped the phy-names property from usb_1_hsphy, like Dmitry suggested
+> 
+>> +struct stm32_sys_bus_match_data {
+> 
+> Comment on naming of this below.
+> 
+>> +	unsigned int max_entries;
+>> +};
+>> +
+> 
+> +static int stm32_etzpc_get_access(struct sys_bus_data *pdata, struct device_node *np)
+> +{
+> +	int err;
+> +	u32 offset, reg_offset, sec_val, id;
+> +
+> +	err = stm32_sys_bus_get_periph_id(pdata, np, &id);
+> +	if (err)
+> +		return err;
+> +
+> +	/* Check access configuration, 16 peripherals per register */
+> +	reg_offset = ETZPC_DECPROT + 0x4 * (id / IDS_PER_DECPROT_REGS);
+> +	offset = (id % IDS_PER_DECPROT_REGS) << ETZPC_DECPROT_SHIFT;
+> 
+> Use of defines in here is actively unhelpful when it comes to review. I would suggest letting
+> the maths be self explanatory (even if it's more code).
+> 
+> 	offset = (id % IDS_PER_DECPROT_REGS) * (sizeof(u32) * BITS_PER_BYTE / IDS_PER_DECPROT_REGS);
+> 
+> Or if you prefer have a define of
+> 
+> #define DECPROT_BITS_PER_ID (sizeof(u32) * BITS_PER_BYTE / IDS_PER_DECPROT_REGS)
+> 
+> and
+> 	offset = (id % IDS_PER_DECPROT_REGS) * DECPROT_BITS_PER_ID;
+> 
 
- arch/arm64/boot/dts/qcom/sm8550-mtp.dts | 7 +++++++
- 1 file changed, 7 insertions(+)
+Ok I'll rework this for better understanding. Your suggestion seems fine
 
-diff --git a/arch/arm64/boot/dts/qcom/sm8550-mtp.dts b/arch/arm64/boot/dts/qcom/sm8550-mtp.dts
-index 56aab7cafcbc..6b6ec0fe5e5e 100644
---- a/arch/arm64/boot/dts/qcom/sm8550-mtp.dts
-+++ b/arch/arm64/boot/dts/qcom/sm8550-mtp.dts
-@@ -457,6 +457,11 @@ sdc2_card_det_n: sdc2-card-det-state {
- 	};
- };
- 
-+&pm8550b_eusb2_repeater {
-+	vdd18-supply = <&vreg_l15b_1p8>;
-+	vdd3-supply = <&vreg_l5b_3p1>;
-+};
-+
- &qupv3_id_0 {
- 	status = "okay";
- };
-@@ -563,6 +568,8 @@ &usb_1_hsphy {
- 	vdd-supply = <&vreg_l1e_0p88>;
- 	vdda12-supply = <&vreg_l3e_1p2>;
- 
-+	phys = <&pm8550b_eusb2_repeater>;
-+
- 	status = "okay";
- };
- 
--- 
-2.34.1
+> +
+> +	/* Verify peripheral is non-secure and attributed to cortex A7 */
+> +	sec_val = (readl(pdata->sys_bus_base + reg_offset) >> offset) & ETZPC_PROT_MASK;
+> +	if (sec_val != ETZPC_PROT_A7NS) {
+> +		dev_dbg(pdata->dev, "Invalid bus configuration: reg_offset %#x, value %d\n",
+> +			reg_offset, sec_val);
+> +		return -EACCES;
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+> ...
+> 
+>> +static int stm32_sys_bus_probe(struct platform_device *pdev)
+>> +{
+>> +	struct sys_bus_data *pdata;
+>> +	void __iomem *mmio;
+>> +	struct device_node *np = pdev->dev.of_node;
+> 
+> I'd be consistent. You use dev_of_node() accessor elsewhere, so should
+> use it here as well >> +
+>> +	pdata = devm_kzalloc(&pdev->dev, sizeof(*pdata), GFP_KERNEL);
+>> +	if (!pdata)
+>> +		return -ENOMEM;
+>> +
+>> +	mmio = devm_platform_ioremap_resource(pdev, 0);
+>> +	if (IS_ERR(mmio))
+>> +		return PTR_ERR(mmio);
+>> +
+>> +	pdata->sys_bus_base = mmio;
+>> +	pdata->pconf = of_device_get_match_data(&pdev->dev);
+>> +	pdata->dev = &pdev->dev;
+>> +
+>> +	platform_set_drvdata(pdev, pdata);
+> 
+> Does this get used? I can't immediately spot where but maybe I just
+> missed it.
+> 
 
+Not for now :)
+
+>> +
+>> +	stm32_sys_bus_populate(pdata);
+>> +
+>> +	/* Populate all available nodes */
+>> +	return of_platform_populate(np, NULL, NULL, &pdev->dev);
+> 
+> As np only used here, I'd not bother with the local variable in this function.
+> 
+
+Agreed
+
+>> +}
+>> +
+>> +static const struct stm32_sys_bus_match_data stm32mp15_sys_bus_data = {
+> 
+> Naming a structure after where it comes from is a little unusual and
+> confusion when a given call gets it from somewhere else.
+> 
+> I'd expect it to be named after what sort of thing it contains.
+> stm32_sys_bus_info or something like that.
+> 
+
+Then, this shall be removed thanks to the read to hardware registers.
+
+>> +	.max_entries = STM32MP15_ETZPC_ENTRIES,
+>> +};
+>> +
+>> +static const struct stm32_sys_bus_match_data stm32mp13_sys_bus_data = {
+>> +	.max_entries = STM32MP13_ETZPC_ENTRIES,
+>> +};
+>> +
+>> +static const struct of_device_id stm32_sys_bus_of_match[] = {
+>> +	{ .compatible = "st,stm32mp15-sys-bus", .data = &stm32mp15_sys_bus_data },
+>> +	{ .compatible = "st,stm32mp13-sys-bus", .data = &stm32mp13_sys_bus_data },
+> 
+> Alphabetical order usually preferred when there isn't a strong reason for
+> another choice.
+> 
+
+I second that
+
+>> +	{}
+>> +};
+>> +MODULE_DEVICE_TABLE(of, stm32_sys_bus_of_match);
+>> +
+>> +static struct platform_driver stm32_sys_bus_driver = {
+>> +	.probe  = stm32_sys_bus_probe,
+>> +	.driver = {
+>> +		.name = "stm32-sys-bus",
+>> +		.of_match_table = stm32_sys_bus_of_match,
+>> +	},
+>> +};
+>> +
+>> +static int __init stm32_sys_bus_init(void)
+>> +{
+>> +	return platform_driver_register(&stm32_sys_bus_driver);
+>> +}
+>> +arch_initcall(stm32_sys_bus_init);
+>> +
+> 
+> Unwanted trailing blank line.
+> 
+
+Good spot, thanks
+
+> 
+
+Best regards,
+Gatien
 
 -- 
 linux-phy mailing list
