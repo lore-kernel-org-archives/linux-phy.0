@@ -4,62 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E8D6EC636CC
-	for <linux-phy@archiver.kernel.org>; Tue,  7 Feb 2023 13:56:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 09B5AC6379F
+	for <linux-phy@archiver.kernel.org>; Tue,  7 Feb 2023 13:56:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RZS92pNrqm8wgoAfwv/6twval9AJ42tD+MbE9TzeNsg=; b=zxxMccYrHnspWa
-	ZMqfK+Xit1XhzOrCGovzRyF2rdQuwJo//dGGWyCrfA7rcy8uRTPEhoEm1ufwMP4gNCVRyfaR16DQl
-	82g9d/LQ78nlfmsho3xZETtu67ijq1jisqeToaKMi8VlaBAwwK55xkvMUSPJSrVj2KOExYH7KwT24
-	FwFgJYnskjGbxhjNMnRbCYkr3GPP5pWfuNAC9A/kmJXPkQYMNaE9YPZfhEc4MBI3h8mu8xTFQtRv7
-	Iy5Mq7gZA5pMlD+gsXODSYR+zY8OdbyjloFY0HQJ9o6dJ9L5wEaYtpsm7KOn3vUvzpryQv1eArsqJ
-	VX5R7HPvsevyr61Z0OXA==;
+	List-Owner; bh=qcquYlzTVs1ogrd492Xy4FmJY7a0MSdR/YHmNoSGo6A=; b=LbaH91PooDxUqP
+	aUVEQQwP6sxyJW3cqGp21/vbkr6skki6rP+WGeM/ArpF0jl90288FSYdqxKr4LXWob+GqG9oZKL6w
+	zqg0J7GxOHoT/UwXvn+3xj1O7w+03mfKZG/o0kXbIhibxc6jR8kaKeEV355ON2RtCEeddhX3ZwQKx
+	NT/zUThuuNAp3HYizSvvgVsKp3MljvkooND3Q/uioPjwqIiqC9IT5H+09orUlsf3cUVaQao8q8Ehd
+	97nvrXK+fGHOJCpJJxQtRZJY+2PckQwLexCv47vjxWluFy5RcAPoLzVq/wW1x9J4MtWnHRvFaoXD5
+	Oth/6tvanCc2w5Vs6Yag==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pPOS7-00CMrD-C9; Tue, 07 Feb 2023 13:56:07 +0000
-Received: from mail-wm1-x332.google.com ([2a00:1450:4864:20::332])
+	id 1pPOS8-00CMrl-Fs; Tue, 07 Feb 2023 13:56:08 +0000
+Received: from mail-wr1-x42a.google.com ([2a00:1450:4864:20::42a])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pPOS4-00CMpk-ET
-	for linux-phy@lists.infradead.org; Tue, 07 Feb 2023 13:56:05 +0000
-Received: by mail-wm1-x332.google.com with SMTP id c4-20020a1c3504000000b003d9e2f72093so13246492wma.1
-        for <linux-phy@lists.infradead.org>; Tue, 07 Feb 2023 05:56:04 -0800 (PST)
+	id 1pPOS4-00CMp7-Rp
+	for linux-phy@lists.infradead.org; Tue, 07 Feb 2023 13:56:06 +0000
+Received: by mail-wr1-x42a.google.com with SMTP id r2so13628126wrv.7
+        for <linux-phy@lists.infradead.org>; Tue, 07 Feb 2023 05:56:02 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=kE+AxQUwOxA1DoNBo9L3Bq1W/VtJeoaV/fW1FjliOjc=;
-        b=AXNPNIpXWGRFXmVvnNyBaX3EUaHtz5imfr2Kc2AD4XzXrTayE70iIYQFWo7gi7/vaB
-         ZuplajGB2GW4JSSMA8hYQJbJBf7pUSzb5+ilXMwY1WYl+jqm4LFvl6CZiiAdFXVnXXZ2
-         A+GCL3cp9W2GviQruhIqWMioQ2m1ATFWr3lVbhHBxoFDY4FJyAcmiDapk/5xyzOGsvOK
-         xIX16EfERwN9r/GBHDjTum7EHzk5vbYPi/SaOPlTRSFlxmHkLhYU6dJMYN2z9UTicq30
-         Vr1zsArjd0KRjatg1r9i9WKhNoAYpPlnmLoMOHr4wZT+UfigRJsrDGC6II8wGPWDIAHf
-         QihA==
+        bh=5nP2A5i34h6FhI1PmIGZwHqThelkL340fyNZ8uWjSxo=;
+        b=VdzEKUA+I7BR/04OKzVJQzQLbpCpYeLoYwT+7MbmJwBzCXC8/Wz9dBXpicw1nu5t7K
+         wPcXLo7jpe4VQnBgW6nM+ByBemVBAgt747KHH8XpV1yCtZedPB9s2ntVMAlVkvVOzGWJ
+         bVhhWQkLCxPhB3zAJgXi57guzJWqe/gdNWLZsd5Ar9hLs6L+4zD4vJZmPsiJL4YvGWNq
+         UgeGd21VezuELwjDjCuqUxM+GVIdrj1AOeIq5D98I4RmPqJ50zwKPFC9dqlitzTy/ZlT
+         QHieExN+/CjvvdfwBMdpxpLH12Cu9I8mf7kbPFi47Px4LXJSY89ahz2E/hl6kkUiGyUl
+         JyVw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=kE+AxQUwOxA1DoNBo9L3Bq1W/VtJeoaV/fW1FjliOjc=;
-        b=ZghCYR9KmgQBpM2Os0H94TH+15tPH6Q1tj2KIwTZQlJHzs3qo87mwPzPZ/MEEAlflO
-         juC5bWz1OsY59tqhIpuFVHFM3dscDj0B4CiYdiNm/VwK4ordfSnHxUlHriSoHqA/KKJ3
-         spyFFmdQEy6/FULS59ZR4ImVOS/lQAFTDBG5rmzsmaHtjS2QUxull6SJ3bUG9boeyA0+
-         nh52y2RlcUpXdeHcuM0OqBzphgJJTRkl2CvlPCcQZVWbL7UsRvYcTRq49Ii2gbuM+3pS
-         7X4aqbWyV2nl+YxgmyDX3ruOA6K/+VmAlvIODI+4acxuKVTLppEJMYZFZ2Js0lg6l72a
-         NTkg==
-X-Gm-Message-State: AO0yUKWnloJZqqVqAmDF6dmmkZUFuH8mjSv1lNmgoe5vZWXkb+pX+286
-	xQbTiMte3mQ8IF6c5t2D9Y88Iw==
-X-Google-Smtp-Source: AK7set/0VFvjfWv6VFXsQD+RR8iooJZ7MrlzClaN0ljfreU4ICsHnB9bcDH781X3XLtXeWSkncAZnA==
-X-Received: by 2002:a05:600c:4b1b:b0:3d9:f836:3728 with SMTP id i27-20020a05600c4b1b00b003d9f8363728mr3209658wmp.11.1675778163004;
-        Tue, 07 Feb 2023 05:56:03 -0800 (PST)
+        bh=5nP2A5i34h6FhI1PmIGZwHqThelkL340fyNZ8uWjSxo=;
+        b=761daWqttw8KYuf/3WduET4peCzegNdPfEe3Yrv1H2ofQjQihwFgcUjD+oiha6PGjm
+         CoWvQ6qqJd9E2UkQNh3wK0GP5cRITG2cVLSOBAqnjaSpfDgeQ5oFtE09j5FxLtHT0bzl
+         VOkkE/SQlsGw5v//bR43LV+bKhIs+fOB6xIkLnZWhMKXbrAd6dwsBwkgea4m+Ivg/cbN
+         LCM/AbkejIsH71MnSEwryFNroXflDmnLZ4jbw6Gx/y4C/Dvr3dkYVw/JHcrjqXPXupkS
+         5pMPV5BY5N/Sks0ChOBDcS5y3+MAWlzjRK0fr73uG/Z2krJs0xoB1tXBLhMk7YuEfNmI
+         zN5g==
+X-Gm-Message-State: AO0yUKUJpi2xPivrpCiS+irOraYPw1EwHbs+JnL+2g3Jba2B8zXJq02g
+	txSIWIvaWW7RNY3vsb15FaXPxA==
+X-Google-Smtp-Source: AK7set+L3zQVDlpG8ELGNddTYFVEar45muQRLY/0lkqS/38deLKHfGuV5eXNxsjES2KHz4jIs6x/Zg==
+X-Received: by 2002:adf:f3cc:0:b0:2c3:ea59:a8b with SMTP id g12-20020adff3cc000000b002c3ea590a8bmr2878259wrp.24.1675778161731;
+        Tue, 07 Feb 2023 05:56:01 -0800 (PST)
 Received: from hackbox.lan ([94.52.112.99])
-        by smtp.gmail.com with ESMTPSA id p10-20020a5d59aa000000b002be5401ef5fsm11611312wrr.39.2023.02.07.05.56.01
+        by smtp.gmail.com with ESMTPSA id p10-20020a5d59aa000000b002be5401ef5fsm11611312wrr.39.2023.02.07.05.56.00
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 07 Feb 2023 05:56:02 -0800 (PST)
+        Tue, 07 Feb 2023 05:56:01 -0800 (PST)
 From: Abel Vesa <abel.vesa@linaro.org>
 To: Andy Gross <agross@kernel.org>,
 	Bjorn Andersson <andersson@kernel.org>,
@@ -75,17 +75,16 @@ Cc: linux-arm-msm@vger.kernel.org,
 	devicetree@vger.kernel.org,
 	Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
 	Neil Armstrong <neil.armstrong@linaro.org>
-Subject: [PATCH v4 6/7] arm64: dts: qcom: pm8550b: Add eUSB2 repeater node
-Date: Tue,  7 Feb 2023 15:55:50 +0200
-Message-Id: <20230207135551.1418637-7-abel.vesa@linaro.org>
+Subject: [PATCH v4 5/7] phy: qcom: phy-qcom-snps-eusb2: Add support for eUSB2 repeater
+Date: Tue,  7 Feb 2023 15:55:49 +0200
+Message-Id: <20230207135551.1418637-6-abel.vesa@linaro.org>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20230207135551.1418637-1-abel.vesa@linaro.org>
 References: <20230207135551.1418637-1-abel.vesa@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230207_055604_504172_794945A4 
-X-CRM114-Status: UNSURE (   9.07  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230207_055604_926740_8685B84A 
+X-CRM114-Status: GOOD (  16.06  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,37 +103,88 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Neil Armstrong <neil.armstrong@linaro.org>
 
-Add nodes for the eUSB2 repeater found on the pm8550b SPMI PMIC.
+For USB 2.0 compliance, eUSB2 needs a repeater. The PHY needs to
+initialize and reset it. So add repeater support
 
-Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
+Co-developed-by: Abel Vesa <abel.vesa@linaro.org>
 Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
+Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
 ---
 
 The v3 (rfc) is here:
-https://lore.kernel.org/all/20230202133816.4026990-7-abel.vesa@linaro.org/
+https://lore.kernel.org/all/20230202133816.4026990-6-abel.vesa@linaro.org/
 
 Changes since v3:
  * none
 
- arch/arm64/boot/dts/qcom/pm8550b.dtsi | 6 ++++++
- 1 file changed, 6 insertions(+)
+ drivers/phy/qualcomm/phy-qcom-snps-eusb2.c | 19 ++++++++++++++++++-
+ 1 file changed, 18 insertions(+), 1 deletion(-)
 
-diff --git a/arch/arm64/boot/dts/qcom/pm8550b.dtsi b/arch/arm64/boot/dts/qcom/pm8550b.dtsi
-index 16bcfb64d735..72609f31c890 100644
---- a/arch/arm64/boot/dts/qcom/pm8550b.dtsi
-+++ b/arch/arm64/boot/dts/qcom/pm8550b.dtsi
-@@ -55,5 +55,11 @@ pm8550b_gpios: gpio@8800 {
- 			interrupt-controller;
- 			#interrupt-cells = <2>;
- 		};
+diff --git a/drivers/phy/qualcomm/phy-qcom-snps-eusb2.c b/drivers/phy/qualcomm/phy-qcom-snps-eusb2.c
+index 23ec162cc3bd..703e2f23ea00 100644
+--- a/drivers/phy/qualcomm/phy-qcom-snps-eusb2.c
++++ b/drivers/phy/qualcomm/phy-qcom-snps-eusb2.c
+@@ -128,6 +128,8 @@ struct qcom_snps_eusb2_hsphy {
+ 	struct regulator_bulk_data vregs[EUSB2_NUM_VREGS];
+ 
+ 	enum phy_mode mode;
 +
-+		pm8550b_eusb2_repeater: phy@fd00 {
-+			compatible = "qcom,pm8550b-eusb2-repeater";
-+			reg = <0xfd00>;
-+			#phy-cells = <0>;
-+		};
- 	};
++	struct phy *repeater;
  };
+ 
+ static int qcom_snps_eusb2_hsphy_set_mode(struct phy *p, enum phy_mode mode, int submode)
+@@ -136,7 +138,7 @@ static int qcom_snps_eusb2_hsphy_set_mode(struct phy *p, enum phy_mode mode, int
+ 
+ 	phy->mode = mode;
+ 
+-	return 0;
++	return phy_set_mode_ext(phy->repeater, mode, submode);
+ }
+ 
+ static void qcom_snps_eusb2_hsphy_write_mask(void __iomem *base, u32 offset,
+@@ -235,6 +237,12 @@ static int qcom_snps_eusb2_hsphy_init(struct phy *p)
+ 	if (ret)
+ 		return ret;
+ 
++	ret = phy_init(phy->repeater);
++	if (ret) {
++		dev_err(&p->dev, "repeater init failed. %d\n", ret);
++		goto disable_vreg;
++	}
++
+ 	ret = clk_prepare_enable(phy->ref_clk);
+ 	if (ret) {
+ 		dev_err(&p->dev, "failed to enable ref clock, %d\n", ret);
+@@ -342,6 +350,8 @@ static int qcom_snps_eusb2_hsphy_exit(struct phy *p)
+ 
+ 	regulator_bulk_disable(ARRAY_SIZE(phy->vregs), phy->vregs);
+ 
++	phy_exit(phy->repeater);
++
+ 	return 0;
+ }
+ 
+@@ -355,6 +365,7 @@ static const struct phy_ops qcom_snps_eusb2_hsphy_ops = {
+ static int qcom_snps_eusb2_hsphy_probe(struct platform_device *pdev)
+ {
+ 	struct device *dev = &pdev->dev;
++	struct device_node *np = dev->of_node;
+ 	struct qcom_snps_eusb2_hsphy *phy;
+ 	struct phy_provider *phy_provider;
+ 	struct phy *generic_phy;
+@@ -386,6 +397,12 @@ static int qcom_snps_eusb2_hsphy_probe(struct platform_device *pdev)
+ 	if (ret)
+ 		return dev_err_probe(dev, ret,
+ 				     "failed to get regulator supplies\n");
++
++	phy->repeater = devm_of_phy_get_by_index(dev, np, 0);
++	if (IS_ERR(phy->repeater))
++		return dev_err_probe(dev, PTR_ERR(phy->repeater),
++				     "failed to get repeater\n");
++
+ 	generic_phy = devm_phy_create(dev, NULL, &qcom_snps_eusb2_hsphy_ops);
+ 	if (IS_ERR(generic_phy)) {
+ 		dev_err(dev, "failed to create phy %d\n", ret);
 -- 
 2.34.1
 
