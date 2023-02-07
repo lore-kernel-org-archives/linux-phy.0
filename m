@@ -4,166 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4925FC636CC
-	for <linux-phy@archiver.kernel.org>; Tue,  7 Feb 2023 09:38:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8F257C636CC
+	for <linux-phy@archiver.kernel.org>; Tue,  7 Feb 2023 11:03:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:CC:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=A65QzaV0/c2ioZRdegBro2rJxVeV1r4h18TkXDJlpQM=; b=vr6cSuCFeJMObe
-	XSPdoyfE/wkjQadmfTtVEe7VCGZqEA/yNVkeJzIxEw/U7XjfAT3nDTtO8khWlWtNHJ8+NddFTk9FG
-	/SP8y3NifP9haWu23mtkzNWdRbnsLfvmsvycxZo9VyHTpxos95ztKXT87Y6bS0HTrP2WQ8Z9ZmmJA
-	zqb+wIUmTVVLoRLMVLoWxhWX+hvfx1BF9uBiAXMCUHh2Yozeod7X8AiZM+Y7aoya8P4Wm5/iV1RST
-	sUXEX9unWA3Sz1eloHpckZHdLbXkaHO58DTzCOx9peqHP9RqF2j8cfFx5PxGhSvbesGS0V4T/qIIQ
-	86lbFpgdg0xcNIFenmDQ==;
+	List-Owner; bh=tRQ/G5a4hbaRH5e1HQc6PaoRJuiOv8p1QI4vQSOruwg=; b=d4YT3W0V3TOgnK
+	ONo5TJGXl0NAItR1iFCcabWe6SYOf4uO+ACfrJsNWbfuxOI4MXhmdPRox7O55KqYZ/ns4FG6svURr
+	EjcrDu05KxX7q64v3/aVBB5Bm4Qn1P8JqL7dcX71IgcQa4CJDwsG6h5tGprxfGwU0HqSWX27b9iaq
+	7byUoxypG3KrxfPySFgQNULH4Mg7fc7qmfqkGqix3w7GjXlV+l+2g9vnml8S7cWI5wjjzuNIPF0bu
+	/dgYk7S+VTFQIVaOiytLwS9V2uBXf92WFwTeCpcWq0m7QCh4DO4yh7D/wFu+GgKWFxs9Sfw4/COE0
+	gleX79nY2+1WMHWNMaFg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pPKQK-00BW0W-Nw; Tue, 07 Feb 2023 09:38:00 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1pPLl7-00BrnI-0W; Tue, 07 Feb 2023 11:03:33 +0000
+Received: from mail-wm1-x329.google.com ([2a00:1450:4864:20::329])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pPKQI-00BVy7-2F; Tue, 07 Feb 2023 09:37:59 +0000
-X-UUID: 15f3fe78a6cb11eda08d4d6090ec5a5c-20230207
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
-	h=MIME-Version:Content-Transfer-Encoding:Content-ID:Content-Type:In-Reply-To:References:Message-ID:Date:Subject:CC:To:From; bh=UXklP6hvH81dLp4vjHEjJRE+LeaTeSNVLCBwDLz9l/c=;
-	b=TE7ZuIXWh+2B9V76+RFJ0bJOCuvov3iuSytyQ/YiZRwrc4dGQ7vy9PNUAfgLbOKxRgvd/e4A+HDfRG7HIl7o5Q9LbwVN1G2KzWZCXQbMfkRus1Z5WqitnsXJib3Ls+i4DHN/WwqlOgTx8+IHJmZc6N/Le/vXgAm3RcNKjQj6RVk=;
-X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.1.19,REQID:ef0def7c-62aa-4834-a6ef-19fd437207ab,IP:0,U
-	RL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:
-	release,TS:0
-X-CID-META: VersionHash:885ddb2,CLOUDID:4bb48d56-dd49-462e-a4be-2143a3ddc739,B
-	ulkID:nil,BulkQuantity:0,Recheck:0,SF:102,TC:nil,Content:0,EDM:-3,IP:nil,U
-	RL:11|1,File:nil,Bulk:nil,QS:nil,BEC:nil,COL:0,OSI:0,OSA:0,AV:0
-X-CID-BVR: 0,NGT
-X-UUID: 15f3fe78a6cb11eda08d4d6090ec5a5c-20230207
-Received: from mtkmbs13n2.mediatek.inc [(172.21.101.108)] by mailgw02.mediatek.com
-	(envelope-from <chunfeng.yun@mediatek.com>)
-	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
-	with ESMTP id 18002740; Tue, 07 Feb 2023 02:37:49 -0700
-Received: from mtkmbs10n1.mediatek.inc (172.21.101.34) by
- mtkmbs11n2.mediatek.inc (172.21.101.187) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.792.15; Tue, 7 Feb 2023 17:37:13 +0800
-Received: from APC01-TYZ-obe.outbound.protection.outlook.com (172.21.101.239)
- by mtkmbs10n1.mediatek.com (172.21.101.34) with Microsoft SMTP Server id
- 15.2.792.15 via Frontend Transport; Tue, 7 Feb 2023 17:37:10 +0800
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=RCMr2kNQTkXMV1ythWQc32nmnx/KPCopidn3nGmGZMEoldFFn4wrazDN7QP0EJcQWIqPwYKpjkLPGN3pztB/V4ku7OmYoQPcgSM05NerXiO7x+Xb1PwqzGReCjImWqDSyxlMwMS5USeOA5Bog/9Xc8m2EjcA8JqdKyJGZxDxbj0fJlvxjFyJcT8xMRJVZbXZiVTy99H6QPMaVb1+xzmgggRJjDSJHdD0Sg9BDvnKtrrjCH1UQRCu4EE0zS90Y6ryJ9+f3OaVdpAUuXzA7QrE2elMyiieg4WexmboHtNE4X7/tre0RKjELDNUiqIbSMG+hk4Q0sMH60rW+juPICyuoQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=UXklP6hvH81dLp4vjHEjJRE+LeaTeSNVLCBwDLz9l/c=;
- b=Ut3b/awtE9rfu7eBsEu1mRv0uREfSEAOjOtDnItnikFKxlAyuNjtvHG9O5u0s8hmWs9c76lB0Bio/EhdlS9VZsBH98WtLFpwi+BWJdtjm4V+mWsv+C6jKTR7hkt1rEFakp7iWARrI3+N4S/zaZ979c/Q5VQRH5Me0Z0gw2lBm0/DSbxdGwnX8ydNZETsLx7X+7kgFxQhZ/3DKmkXBt41JQEsyLgjDaiQKc4abCWlDsdc2QznC8MrwoqLp0wCszwpLrRJp7izjbNVcF6MvFfBvDS0XkqFlWhLmgjIH5cFFrEgQEHDGlDqYWhK42YQFuBaoQ7RNm2QwM7CuqJSnBDPow==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=mediatek.com; dmarc=pass action=none header.from=mediatek.com;
- dkim=pass header.d=mediatek.com; arc=none
+	id 1pPLl3-00BrmK-RR
+	for linux-phy@lists.infradead.org; Tue, 07 Feb 2023 11:03:31 +0000
+Received: by mail-wm1-x329.google.com with SMTP id q8so10741415wmo.5
+        for <linux-phy@lists.infradead.org>; Tue, 07 Feb 2023 03:03:29 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=mediateko365.onmicrosoft.com; s=selector2-mediateko365-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=UXklP6hvH81dLp4vjHEjJRE+LeaTeSNVLCBwDLz9l/c=;
- b=ZtOdtalE6HI4cB6pwHZ8o8tj+jp6wo4nsLR71MJcafvRQdW5lK255UBtLmPr+9mVEcHR8H06Azs1iMlET3Brr4Bvps63TzKIvyHx3GMJqET6Rs5vUX8r8PQ0D1UsR4QLkukFl3Q3dfTNn8CySePKxX6k2iSZs+Cr7gg9ZKRwTvw=
-Received: from KL1PR03MB5062.apcprd03.prod.outlook.com (2603:1096:820:1a::22)
- by SI2PR03MB6784.apcprd03.prod.outlook.com (2603:1096:4:1ed::9) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6064.27; Tue, 7 Feb
- 2023 09:37:08 +0000
-Received: from KL1PR03MB5062.apcprd03.prod.outlook.com
- ([fe80::5e9b:f4cf:8d7f:60d1]) by KL1PR03MB5062.apcprd03.prod.outlook.com
- ([fe80::5e9b:f4cf:8d7f:60d1%3]) with mapi id 15.20.6064.034; Tue, 7 Feb 2023
- 09:37:08 +0000
-From: =?utf-8?B?Q2h1bmZlbmcgWXVuICjkupHmmKXls7Ap?= <Chunfeng.Yun@mediatek.com>
-To: "vkoul@kernel.org" <vkoul@kernel.org>
-CC: "llvm@lists.linux.dev" <llvm@lists.linux.dev>,
-	"linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
-	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
-	"nathan@kernel.org" <nathan@kernel.org>, "kishon@kernel.org"
-	<kishon@kernel.org>, =?utf-8?B?RWRkaWUgSHVuZyAo5rSq5q2j6ZGrKQ==?=
-	<Eddie.Hung@mediatek.com>, "linux-arm-kernel@lists.infradead.org"
-	<linux-arm-kernel@lists.infradead.org>, "matthias.bgg@gmail.com"
-	<matthias.bgg@gmail.com>, "linux-phy@lists.infradead.org"
-	<linux-phy@lists.infradead.org>, "trix@redhat.com" <trix@redhat.com>,
-	"angelogioacchino.delregno@collabora.com"
-	<angelogioacchino.delregno@collabora.com>, "ndesaulniers@google.com"
-	<ndesaulniers@google.com>
-Subject: Re: [PATCH v7 2/3] phy: core: add debugfs root
-Thread-Topic: [PATCH v7 2/3] phy: core: add debugfs root
-Thread-Index: AQHZKxj7fxkP5kQWUUCaWx8rB9jLMa67uaiAgAefooA=
-Date: Tue, 7 Feb 2023 09:37:08 +0000
-Message-ID: <f63868b6510eb2ec9c99925062dd0ab1c669f555.camel@mediatek.com>
-References: <20230118084343.26913-1-chunfeng.yun@mediatek.com>
-	 <20230118084343.26913-2-chunfeng.yun@mediatek.com>
-	 <Y9u2nTgCcb/Et60d@matsya>
-In-Reply-To: <Y9u2nTgCcb/Et60d@matsya>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
-authentication-results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=mediatek.com;
-x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: KL1PR03MB5062:EE_|SI2PR03MB6784:EE_
-x-ms-office365-filtering-correlation-id: e42b9cf9-58e5-41ec-1fcc-08db08eee1bf
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: e6MZZwuCx1xOq5TsUEdhr1wZqa0UklKtXB9R8yJ6xg9vGzWpPD4zXtlGpYZsFfnffmT1vNilDIAkBAinsJxmyl5n1sQLWR66WtkRYW4Xe1MUOhJUw1t04T8UzVkd5zAhB5EiWS5zwT2uIcasysbk4B5hGClxYbnd2R631P3E6xjnfE9hCbbzdGh3VXt+vCWAh6vvSIq8fJK2gLubrPbbG7IDIpXPHAOg7kQe0li9f5COPTmZDTA8jn5MvMNE4oZt8G8zqqVhPXpFIRnWYbymxfdV05MRyT95ZV6pibk5QOlv6tgzGWYAh1oEv6UH0oxipCOF3QFV0X+Ir3yOj03L0YrjsmTu4Yw5ulh3ntj7f5qF7R68RuAFGiJNTPv98g1lxADpcxTClYUegkcRlLa1VAKBafnSDeteQH3wX6Z5xA3XrG0p9u2DHGuNIuy/RjiaMWxQ40C051DSD8Se9ffz1lyTtkpOzxsS+Sq4+dhgDoBCtQEflQMjpuCB6gfFSgEtjg03AxRrc3mci0XNBlGNa0BLWanW1tt7k+Cy7uPDhLnDTsDRCnMJ6cHZH7UgFApA4BHiNz+AcHZyHTgB6gwHEPA9ZIDUXYxMe/X7VdFTZlLQav4LxJU7tDYgXE03w41XgYDKZ1rsDvgtwOYqVt/wFAtoS9yNOQBHLcVOnuePXpfXEcHDfwApdMW/UAaXKv6OzsjgVKbGpWNus5QwegrPRYNmflxmZ5NqY5aTtqXFqj04hqRnoA+vXlkqwj+msacSGL3DpzkBOLRwjYQgdaff/g==
-x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:KL1PR03MB5062.apcprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230025)(4636009)(136003)(376002)(346002)(39860400002)(396003)(366004)(451199018)(2906002)(86362001)(36756003)(85182001)(478600001)(7416002)(26005)(186003)(6506007)(6512007)(8936002)(91956017)(71200400001)(6486002)(2616005)(38070700005)(53546011)(41300700001)(5660300002)(66556008)(66946007)(316002)(76116006)(4326008)(64756008)(83380400001)(122000001)(6916009)(8676002)(66476007)(54906003)(38100700002)(66446008)(99106002);DIR:OUT;SFP:1102;
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?utf-8?B?d0tHZVkyQTVOVWpFVXZWNnpYaDNKUnptaElTUGVFVUk3dEpTNGdlNS9CaTJH?=
- =?utf-8?B?blFFeWhLM2FIWnUvMGc1N3NCaE9IdysyK1VWUFpNaDNwM0t5REZ0bHhmTVk4?=
- =?utf-8?B?MkpxakoxTWluNko0anlaaWNBNTZieHNXOFVKaHpzU2t4dHRhTTlzdWZHU2dE?=
- =?utf-8?B?SE5wd3dDSGh6K0l1blM5OXhHTmZPMlorZTRXYk5OKy9aTEhGaUhCak9LTTlm?=
- =?utf-8?B?Znl2ZzdnaXJ5OWd6VmhMUHRlLzg5Y2VlakNkYWRDWlYxam1hWVlCWGhIcHY1?=
- =?utf-8?B?T3hqSHV1UEFMbVBwTnhhQzVGS0lDNm5sRVhQTkFXSGM0VGdZaW9LenlLQ3JJ?=
- =?utf-8?B?c0VGUDhnenlGYW9Xbko5RHMydlNTcXAvbU5JRlQvUjdxUnZFaUYxbnBiLzhI?=
- =?utf-8?B?OUd6QW53NmRGRjRTc01uVTlNb3BZUmJXUTdLbWRDR2hRQzFFTGplZC8rVlZx?=
- =?utf-8?B?c2I4RHlSRXk4ZzNyUHlFa3FlN1doZHpZaXhFZkJhQVdOSSs4OU5iRVZKZFBx?=
- =?utf-8?B?MjVDUldoSUt4ZzFPTzRXZFkyUk5mMmxTL2FDWDJLYVlZMnNubXo1MUpFZE02?=
- =?utf-8?B?RC9IYzIycS9LdWZkQ0lwNGMyOVE3NTV0MytBMHAwMGQrL09IOGgxUWlFMG5x?=
- =?utf-8?B?VmtleDd3MjZZSjRUZ3dhOUw2eGFFRWlQcWdYZzIvV2hNS0RZdFVVNE9CdUlz?=
- =?utf-8?B?MFlBODVDb3oxdzZPdzBYVlpFcUxPTjNPcmw2U3ZITGlyVUZPbXdDWllaOEdQ?=
- =?utf-8?B?SlFJNUZJY2piM0VhdXB0T1AxaWUvUVFFUDZiU0FLTTdxN3MyTXN5anhrTVNZ?=
- =?utf-8?B?NVdtL0UrZm5NcVREYzB2ZWlVZ1NOSHArYktMWnB1aGpjWlRFNE5BV3VRMGtI?=
- =?utf-8?B?NkUvSS92OXprQTRCekJHMlpyU2NiUlJHY2hJbnZ4M25JdTdRZ0dJQ2JLUDFS?=
- =?utf-8?B?NVBndFBaZWRFczRIeldPelBNWStWK21Ldnl4TzRQNzdGQjlHZ2VxdjVMM0Ix?=
- =?utf-8?B?bEtUbEZvSXpiQkx5Ry9vQWtDMjdBOTlkRTV2cU1McGlsNFF4Mk9xdmtLZzBP?=
- =?utf-8?B?UTZKZ0RUMWlMVTBKWGFYQXFvOUJUakl3cjdRTE94cThuYVBsSGlZUXlvdlo0?=
- =?utf-8?B?RXUrYUNRYVhPdnE4UEJYN3NFUGFlMDhnT1M4a3lQMHJXWHZlVXhsYkhocVhU?=
- =?utf-8?B?ei9waXlxVGl1bTk3L2dra0VLVm9KUkRYOG44OVhmelFJbk8zT2IrY2JGU2ty?=
- =?utf-8?B?Z3Z1ZUFSejZnNEZqamF5NGVEdXU0Tk82dGd6M2phaDY2UGdhcS9Oa2x4bFFr?=
- =?utf-8?B?R3VjbHMydkZ4WkllWmFQSlpwbGVzOStzcklDUDdIRWtnb1A5VEJCZ1RpOGhE?=
- =?utf-8?B?eWRRWmV3ZlRuOFpuTHNhbzhtNEZmNmc1bFlUYXlPN1Myb0Q2RldrN2s5bUpG?=
- =?utf-8?B?SU5FbWxYUGJ6enN4UkQxK0ZVV1UrQWRKeHNEd1o1aGJCWmY1L2NPcWlhdnA4?=
- =?utf-8?B?V1I5VURsV0ZCNDRQbG11Z3JhVlpaUURsVlVkb1Y3ZGFwd0RWQVhzbitSR3JK?=
- =?utf-8?B?aSs1TlFKcFNHTTZRWXJ1QW1jSUtQbFdKVXNVeDF4R1hFbGwwWTlnZGk1SmhN?=
- =?utf-8?B?L1JlWWNLdkVrN3YvS2VBSHo5dklUaDlYcllwZ1FCVFExUFNjL0l1UVBGSGV6?=
- =?utf-8?B?YVpldUNCbVBNdXNVV2U4OUtPcmp3UUlhZG9aUTNGY3FQT2NBaXk3VU5RVFBZ?=
- =?utf-8?B?MG1lM1Z1M2xkTzhlUmxjOEJER1l6QzlpdXBMV0pWT3lLcGRCUmtKTzdqdzRj?=
- =?utf-8?B?MGszUGkrUnlIRThsNDdnNjVWVEpka2kveHVpaEJBS1Z0a0dFcVIyMWx4TUVk?=
- =?utf-8?B?OWNrNXFmajJjWEl5UGptUmFaSkdTRkpiVHY2d1F4WVNvdld2VU5rV3FENDNE?=
- =?utf-8?B?QmE0eUxDSjhSZUs2RUxIWkJCb21jK3ZUZHdZdkNsdCt5N2ttS0Rqc1Vta29R?=
- =?utf-8?B?a3F4ZGd0ZDNrcXdpWWZZVGFOR0MrY1lTam0raWVKNHBFZmtZUklMd3NuT1Rr?=
- =?utf-8?B?bitHclR4VUhMNG12aUF1aEx4c3k3R2tkby9uNkR0eDFpL1dOV1dRZUIrOUM0?=
- =?utf-8?B?RktnQStFRnZQMWZrRU53b09WYWY3ako1UE9XK2twOTdzVnRkQ2J4YURPQURk?=
- =?utf-8?B?REE9PQ==?=
-Content-ID: <2671CB407A4477499D424E0C575038E7@apcprd03.prod.outlook.com>
+        d=linaro.org; s=google;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=WJ93a5Pn7pV9qf9vPyQI+os80WkoEdvC0T6foUnk8Mg=;
+        b=INmIU2NouIzVm1jjPfdrm53AB5JjOg8/iz3jZE+fI1b7pLAYBvKC7TMLsXvXEmMnZQ
+         tvcX16TPZzl8SlvyqiF5TxNKUMYyM5yxTebfEAX2rlWAA+HUitsAujtgmlJ4a0OcbvKp
+         8E5zmSXqfdwXT0d4KY3ZDO9k4vXuXxN9PyBOyRPm+3wnJPCfpXAh5V/4V8UB4b9tOHuU
+         K7pSJDwrBk41FSY187xils4uDkG/6SBfJQGcBUbIf4WTIakcMUO5FDDxVvwxRqszTNr5
+         oK/eoxuZQpvWPGGUUZgVSbTt9YU2fw93GINQrZoiQBQZRluPERuKlrOsol0IIiu+xtLd
+         k0pA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=WJ93a5Pn7pV9qf9vPyQI+os80WkoEdvC0T6foUnk8Mg=;
+        b=RH08WUGlGiX4PgDndF4onzcCBfSnqTXkCnnpQkxGqeQkgmPdAlvDoC9NhNoyzijhKi
+         mCEPKsPP+2mssoYKqo2212X2h3rqlP2DCWnuYN+ucqWSqeGOcXu4xYMCAPfpwbuH0pPB
+         080KT9d3IRYQEKyyTPNdZW0rJzIIsAyuvOokan7mz/0MUxt50YwR7RX+f8HTuPWK4uWd
+         G2iYTlx/NFCoKdGNrIo0Xh4jVFlIQmDnzcYBWBPmogcFOysIGXXXMpyj3asaM7HulC0X
+         hT/fYVbFWkKenXR6NyAae1ex9PFs8zsMC2GCGvxjDQbDTNaTXu0f1c5sacln/ODeMkML
+         5zGA==
+X-Gm-Message-State: AO0yUKUOL/fFOFvyEJc+AkRWtcb1ghElwdgm2U9YoHoImBjZ2pQANrvQ
+	HU0kxj3bmZkFimF79QpbbOUtpw==
+X-Google-Smtp-Source: AK7set+9m5mhPHjw7qowGtSxwYkGbks55ol9xKSpV7ArSxwhymRP73uRItp25IcvPAhrZonE5E9JbA==
+X-Received: by 2002:a05:600c:4da2:b0:3dc:51f6:8f58 with SMTP id v34-20020a05600c4da200b003dc51f68f58mr2766884wmp.6.1675767808312;
+        Tue, 07 Feb 2023 03:03:28 -0800 (PST)
+Received: from linaro.org ([94.52.112.99])
+        by smtp.gmail.com with ESMTPSA id s22-20020a1cf216000000b003dffe312925sm6761960wmc.15.2023.02.07.03.03.27
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 07 Feb 2023 03:03:27 -0800 (PST)
+Date: Tue, 7 Feb 2023 13:03:26 +0200
+From: Abel Vesa <abel.vesa@linaro.org>
+To: Johan Hovold <johan@kernel.org>
+Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	"vkoul@kernel.org" <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
+Subject: Re: [PATCH v4 7/8] arm64: dts: qcom: sm8550: Add USB PHYs and
+ controller nodes
+Message-ID: <Y+Iv/s7V5PYkRI8D@linaro.org>
+References: <20230202132511.3983095-1-abel.vesa@linaro.org>
+ <20230202132511.3983095-8-abel.vesa@linaro.org>
+ <Y9zoD/eVG8zjMYNx@hovoldconsulting.com>
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: KL1PR03MB5062.apcprd03.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: e42b9cf9-58e5-41ec-1fcc-08db08eee1bf
-X-MS-Exchange-CrossTenant-originalarrivaltime: 07 Feb 2023 09:37:08.5382
- (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: a7687ede-7a6b-4ef6-bace-642f677fbe31
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: aIcNV0mEdobW8S1f0S4KJfOcWGLEk+IE0KbsTcjbkZXwTbR5iebLOYnHEA2KHD/+/Ex/P/WPet7NWYNbRCfiRdLb9us1kBUCGHCfCbgE3dk=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SI2PR03MB6784
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <Y9zoD/eVG8zjMYNx@hovoldconsulting.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230207_013758_138286_A5551F25 
-X-CRM114-Status: GOOD (  20.59  )
+X-CRM114-CacheID: sfid-20230207_030329_908110_50D17967 
+X-CRM114-Status: GOOD (  20.79  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -180,77 +99,95 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, 2023-02-02 at 18:41 +0530, Vinod Koul wrote:
-> On 18-01-23, 16:43, Chunfeng Yun wrote:
-> > Add a debugfs root for phy class, then phy drivers can add debugfs
-> > files
-> > under this folder.
+On 23-02-03 11:55:11, Johan Hovold wrote:
+> On Thu, Feb 02, 2023 at 03:25:10PM +0200, Abel Vesa wrote:
+> > Add USB host controller and PHY nodes.
 > > 
-> > Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+> > Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
 > > ---
-> > v2~v7: no changes
-> > ---
-> >  drivers/phy/phy-core.c  | 6 ++++++
-> >  include/linux/phy/phy.h | 2 ++
-> >  2 files changed, 8 insertions(+)
 > > 
-> > diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
-> > index d93ddf1262c5..2f9f69190519 100644
-> > --- a/drivers/phy/phy-core.c
-> > +++ b/drivers/phy/phy-core.c
-> > @@ -11,6 +11,7 @@
-> >  #include <linux/export.h>
-> >  #include <linux/module.h>
-> >  #include <linux/err.h>
-> > +#include <linux/debugfs.h>
-> >  #include <linux/device.h>
-> >  #include <linux/slab.h>
-> >  #include <linux/of.h>
-> > @@ -1204,6 +1205,9 @@ void devm_of_phy_provider_unregister(struct
-> > device *dev,
-> >  }
-> >  EXPORT_SYMBOL_GPL(devm_of_phy_provider_unregister);
-> >  
-> > +struct dentry *phy_debug_root;
-> > +EXPORT_SYMBOL_GPL(phy_debug_root);
+> > Changes since v3:
+> >  * none
+> > 
+> > Changes since v2:
+> >  * none
+> > 
+> > NOTE: This patch has been already merged. It is here only to provide
+> > context for the rest of the patchset. There is a change with respect to
+> > the clocks, but that will be sent as a separate/individual fix patch.
 > 
-> Please make this a member of struct phy, that way all phy drivers
-> have access
-> to this and we wont need to export this!
-Ok, I'll modify it, thanks
+> I believe it was because of the 'phy' and 'common' resets, which have
+> been switched below.
+
+No, the resets haven't been switched, at least not compared to the
+already merged version.
 
 > 
-> > +
-> >  /**
-> >   * phy_release() - release the phy
-> >   * @dev: the dev member within phy
-> > @@ -1233,6 +1237,8 @@ static int __init phy_core_init(void)
+> >  arch/arm64/boot/dts/qcom/sm8550.dtsi | 92 +++++++++++++++++++++++++++-
+> >  1 file changed, 91 insertions(+), 1 deletion(-)
+> > 
+> > diff --git a/arch/arm64/boot/dts/qcom/sm8550.dtsi b/arch/arm64/boot/dts/qcom/sm8550.dtsi
+> > index a85d2ae7d155..0262193e2ffe 100644
+> > --- a/arch/arm64/boot/dts/qcom/sm8550.dtsi
+> > +++ b/arch/arm64/boot/dts/qcom/sm8550.dtsi
+> > @@ -14,6 +14,7 @@
+> >  #include <dt-bindings/mailbox/qcom-ipcc.h>
+> >  #include <dt-bindings/power/qcom-rpmpd.h>
+> >  #include <dt-bindings/soc/qcom,rpmh-rsc.h>
+> > +#include <dt-bindings/phy/phy-qcom-qmp.h>
+> >  #include <dt-bindings/thermal/thermal.h>
 > >  
-> >  	phy_class->dev_release = phy_release;
+> >  / {
+> > @@ -746,7 +747,7 @@ gcc: clock-controller@100000 {
+> >  				 <&ufs_mem_phy 0>,
+> >  				 <&ufs_mem_phy 1>,
+> >  				 <&ufs_mem_phy 2>,
+> > -				 <0>;
+> > +				 <&usb_dp_qmpphy QMP_USB43DP_USB3_PIPE_CLK>;
+> >  		};
 > >  
-> > +	phy_debug_root = debugfs_create_dir("phy", NULL);
-> > +
-> >  	return 0;
-> >  }
-> >  device_initcall(phy_core_init);
-> > diff --git a/include/linux/phy/phy.h b/include/linux/phy/phy.h
-> > index b1413757fcc3..c398749d49b9 100644
-> > --- a/include/linux/phy/phy.h
-> > +++ b/include/linux/phy/phy.h
-> > @@ -205,6 +205,8 @@ struct phy_lookup {
-> >  #define devm_of_phy_provider_register_full(dev, children, xlate) \
-> >  	__devm_of_phy_provider_register(dev, children, THIS_MODULE,
-> > xlate)
+> >  		ipcc: mailbox@408000 {
+> > @@ -2060,6 +2061,95 @@ opp-202000000 {
+> >  			};
+> >  		};
 > >  
-> > +extern struct dentry *phy_debug_root;
+> > +		usb_1_hsphy: phy@88e3000 {
+> > +			compatible = "qcom,sm8550-snps-eusb2-phy";
+> > +			reg = <0x0 0x088e3000 0x0 0x154>;
+> > +			#phy-cells = <0>;
 > > +
-> >  static inline void phy_set_drvdata(struct phy *phy, void *data)
-> >  {
-> >  	dev_set_drvdata(&phy->dev, data);
-> > -- 
-> > 2.18.0
+> > +			clocks = <&tcsr TCSR_USB2_CLKREF_EN>;
+> > +			clock-names = "ref";
+> > +
+> > +			resets = <&gcc GCC_QUSB2PHY_PRIM_BCR>;
+> > +
+> > +			status = "disabled";
+> > +		};
+> > +
+> > +		usb_dp_qmpphy: phy@88e8000 {
+> > +			compatible = "qcom,sm8550-qmp-usb3-dp-phy";
+> > +			reg = <0x0 0x088e8000 0x0 0x3000>;
+> > +
+> > +			clocks = <&gcc GCC_USB3_PRIM_PHY_AUX_CLK>,
+> > +				 <&rpmhcc RPMH_CXO_CLK>,
+> > +				 <&gcc GCC_USB3_PRIM_PHY_COM_AUX_CLK>,
+> > +				 <&gcc GCC_USB3_PRIM_PHY_PIPE_CLK>;
+> > +			clock-names = "aux", "ref", "com_aux", "usb3_pipe";
+> > +
+> > +			power-domains = <&gcc USB3_PHY_GDSC>;
+> > +
+> > +			resets = <&gcc GCC_USB3_DP_PHY_PRIM_BCR>,
+> > +				 <&gcc GCC_USB3_PHY_PRIM_BCR>;
+> > +			reset-names = "phy", "common";
+> > +
+> > +			#clock-cells = <1>;
+> > +			#phy-cells = <1>;
+> > +
+> > +			status = "disabled";
+> > +		};
 > 
-> 
+> Johan
+
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
