@@ -4,62 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0BDB1C677F1
-	for <linux-phy@archiver.kernel.org>; Wed,  8 Feb 2023 19:02:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EBE47C64ED8
+	for <linux-phy@archiver.kernel.org>; Wed,  8 Feb 2023 19:02:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7oWZ1VbABZEOvzys/7QvsGJQlV39x21IGVvs+qBpbQE=; b=C6iG7ODen6SIky
-	cmuEsokxSdm5jUosrdb+UyJOcvKdkCPtO9OGmyB4oQhmTF6Ouehieo/yg0dxTZClHIa6NZNGDPBhz
-	ivE3VOWIKb4flZN4sELvYATUJDQEw1a0Gb7XXEV1+64xbGWD+1iGmqyuLDmdCjia9Lzh1X3oi8phV
-	u/fismgPK/9OCuRINp+oMGi9YC4tDZQ/7HOCsk0X2xrATYi6AyFvwX70YPP5VpoiErhofP0LXa40Y
-	xo2nQ8xWO6A/RB1QBTjJPZoq+vpDGOsMFz8JRF5ilqDxCtRjX0jiGiOeFc+kmEmEQ+MxOjuCKEVNO
-	7lee4TYgV6N2J6rXn1Eg==;
+	List-Owner; bh=bu98wCuWFnrbv5B2cxyhFUg8ixMFjfCYuS8bRRWmh/s=; b=GBhNKkLczJGJD8
+	Im3o/FJohtf3LSFJNzYMhoXKZZ+B+jtMn8EsvhacOmzgbQaqENFbl0CDqtUEUuRdPYzh0j2Av+GgL
+	1qzpSS9dlNviZODzX6HKQVXdXEb+PLUoKtFXxcFYYQq+ApVGt6+XvaBvpfQLxuWvfuBeq8pDr5sTu
+	A3TT+HbiJRDKBTdKmIFM/V/DkwVGKUcfUmafUAwIjb/WSzTYt1e6J/fn66kAbOM19ybcl8+A0BWvT
+	1wrKKfUwM00talGZdMwEW+IouROaq2BVNWzNd4H4Z7vSIgkG4y0FJiaG5EUp3eHgYgbvYHl0gg7Lv
+	9sxJ5OOK0IW4dxlk5B5Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pPpht-00GhN5-FY; Wed, 08 Feb 2023 19:02:13 +0000
-Received: from mail-wm1-x32c.google.com ([2a00:1450:4864:20::32c])
+	id 1pPpht-00GhMw-DN; Wed, 08 Feb 2023 19:02:13 +0000
+Received: from mail-wm1-x334.google.com ([2a00:1450:4864:20::334])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pPphq-00GhKg-PF
+	id 1pPphq-00GhLK-PH
 	for linux-phy@lists.infradead.org; Wed, 08 Feb 2023 19:02:12 +0000
-Received: by mail-wm1-x32c.google.com with SMTP id az4-20020a05600c600400b003dff767a1f1so2248561wmb.2
-        for <linux-phy@lists.infradead.org>; Wed, 08 Feb 2023 11:02:08 -0800 (PST)
+Received: by mail-wm1-x334.google.com with SMTP id j29-20020a05600c1c1d00b003dc52fed235so2254302wms.1
+        for <linux-phy@lists.infradead.org>; Wed, 08 Feb 2023 11:02:09 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=thW52RtRlGncxJVAXaAffrOQRfnK09M5G6J/HHLJxeo=;
-        b=IJPQzDtDJMNd14JAQMKLtLY0kTY8n5Is09xQPcIVEtMbkHyV9QqiYVqGqzyEMjttkR
-         OV254jWle7m64ztlPT3PLDLNKjeVus/L1jr8TwaQ9mekCou0BdxzVJZk3CIIFeXHLWJP
-         f1S8AgBtpLmTUIzhgNIHDbUuIGr1sYzQ6H45SHwGxtiEfVti6MA4b9lCnW/IXCJQmY++
-         +I89ebBBTD9wkKeozRNmT8HPeoUmdZ4/2Lox6mkFoxm4K+xOSCe3ECFtMXL90+1DagmG
-         OBEIyUpgy9+qjfvU9wejt9VZ73EAzSfxKGZ9H2f3c4zaz8bpQ9lgF/DhynpHSxNUbGRD
-         rgAA==
+        bh=PXn1ogE9xf12HQp/S/g01Ga91SzlSkMt5w5+myYC8Ik=;
+        b=DnNvwM1HNT74gz4mLjUKMjUfy6FtNoVMpbWVmwiMxRZfP80MPZf28EsGdwnVhFbaKN
+         nCJP/V94VRMv1jACM1Y7TzBLsfP2o+54GoChiOJRwXAEfVzSeJ5i/NZkLXP4D/Go+/Ck
+         zc/YDc7u0ENrJ19WTRFYDIOnTWMvLq363AMG9pU9XSRM1MOT747eD0SNQbvRvGFm0S5j
+         09e4Guzk3Jl++8263r27MgXn6COt8vydfpdBGEYIlU1d2aNNyucxTpy0/f9q9zknBap4
+         m99KpzFQdiY5S20lSYYu1TyX0VUKRy9JChNwwl5tnILECMP3LXNk5/HGDi8I3ksXi4EU
+         t9/w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=thW52RtRlGncxJVAXaAffrOQRfnK09M5G6J/HHLJxeo=;
-        b=VVgNE4Ddjq3juIXcXnqwQ6nrceSm2OkvzCdoHGw17+5odQQcNyNCNpPK86BpOuBagA
-         8ePagZ8HaXNAXwDmuE2g92kjcTY8nYqDbXLBC4KnEzx3LoGwdMUErdCLHAINQKQX3BQI
-         BkXzixobVHldK7wHguK7Billtvn51xpE87AFYvw8ih3rIyT4XpLpBi+byZx3vVgcoBoj
-         qDiuvGWQnlBPpk+ebfHpH6aZCrPS8al6RnjE7PGD9fTEuAThRgOX9AHI/TCIElKDEISv
-         aTENFYt6lAVi6xyTecSQC14E4dVZ4PtZHbBfUNrUqggmLMh5nrxJNDNMXhH9LC5F4U1b
-         4AUw==
-X-Gm-Message-State: AO0yUKXfyw80x9wRslIxkx9i1mloSXuXvqG/doquHEc6eASb2zSfhb/h
-	wAp+UDwNeyOcilj/6jNpr7TkPw==
-X-Google-Smtp-Source: AK7set++X4dMzU1+TglBhBaz5aGpsMTEVRAyv1rwdkeuctCDcJF350WikbhtaW9nWta1HACpDwG+ng==
-X-Received: by 2002:a05:600c:991:b0:3dc:489e:1867 with SMTP id w17-20020a05600c099100b003dc489e1867mr2320129wmp.36.1675882927171;
-        Wed, 08 Feb 2023 11:02:07 -0800 (PST)
+        bh=PXn1ogE9xf12HQp/S/g01Ga91SzlSkMt5w5+myYC8Ik=;
+        b=rAe7yLuff+K9jLx7BoMAFKj77oWMzjerBRWHoTh3/68tzSBWmcfANvpuKknw2Xy/om
+         eq5URXWm7+TgXt/9jxxvuKaBqQukQQ0TWORN1/566OqziZwSh1y/VBPgVnGw1l9IxRju
+         eTgEad5XWil2/BzXRaguPtOjGwR/T3YkgImDAcxMebayITMSMv4WitCy3s/WFpksRnMd
+         pcB11VM/Q5yfC4pp+A7sy/vAaIKh4M7e6NElIkNA+PDbOGtq19t4h3LGYwvoxNpdnDb2
+         Tbrhh/DyogGu6Z/rV399LTJRdQVPIXD/55UV6upWfsj7epCTsxOfNxi0172lajRsUeru
+         oGVA==
+X-Gm-Message-State: AO0yUKXKp6HvqCBsUi7rTdpANa90jqAXe4+Q8AOAZ4YZ62m7HALjeIIA
+	YBHlM8OCs7AGR9b7ul0GI00Gew==
+X-Google-Smtp-Source: AK7set9lb9+Qa05MNpj+m+C25BEZGPxEGNgImF2JJzfKCaEdItzhfXwChMvflZhKFxUV1ACea0WteA==
+X-Received: by 2002:a05:600c:43c4:b0:3dc:5302:ad9 with SMTP id f4-20020a05600c43c400b003dc53020ad9mr10116874wmn.27.1675882928813;
+        Wed, 08 Feb 2023 11:02:08 -0800 (PST)
 Received: from hackbox.lan ([94.52.112.99])
-        by smtp.gmail.com with ESMTPSA id n16-20020a1c7210000000b003dc1d668866sm2650327wmc.10.2023.02.08.11.02.05
+        by smtp.gmail.com with ESMTPSA id n16-20020a1c7210000000b003dc1d668866sm2650327wmc.10.2023.02.08.11.02.07
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 08 Feb 2023 11:02:06 -0800 (PST)
+        Wed, 08 Feb 2023 11:02:08 -0800 (PST)
 From: Abel Vesa <abel.vesa@linaro.org>
 To: Andy Gross <agross@kernel.org>,
 	Bjorn Andersson <andersson@kernel.org>,
@@ -73,17 +73,18 @@ To: Andy Gross <agross@kernel.org>,
 Cc: linux-arm-msm@vger.kernel.org,
 	linux-phy@lists.infradead.org,
 	devicetree@vger.kernel.org,
-	Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
-Subject: [PATCH v5 2/7] dt-bindings: mfd: qcom,spmi-pmic: Add pattern property for phy
-Date: Wed,  8 Feb 2023 21:01:55 +0200
-Message-Id: <20230208190200.2966723-3-abel.vesa@linaro.org>
+	Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Subject: [PATCH v5 3/7] dt-bindings: phy: qcom,snps-eusb2-phy: Add phys property for the repeater
+Date: Wed,  8 Feb 2023 21:01:56 +0200
+Message-Id: <20230208190200.2966723-4-abel.vesa@linaro.org>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20230208190200.2966723-1-abel.vesa@linaro.org>
 References: <20230208190200.2966723-1-abel.vesa@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230208_110210_839372_47C77A24 
-X-CRM114-Status: UNSURE (   9.61  )
+X-CRM114-CacheID: sfid-20230208_110210_839696_17A38DBF 
+X-CRM114-Status: UNSURE (   9.00  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -101,39 +102,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The phy pattern property will be used for providing eUSB2 repeater
-functionality. This will be modelled as a Qualcomm PHY driver.
+The phys property is used for allowing the eusb2 to interface
+with the repeater, which is modelled as a phy driver.
 
 Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
+Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 ---
 
 The v4 is here:
-https://lore.kernel.org/all/20230207135551.1418637-3-abel.vesa@linaro.org/
+https://lore.kernel.org/all/20230207135551.1418637-4-abel.vesa@linaro.org/
 
 Changes since v4:
- * none
+ * added Krzysztof's A-b tag
 
 Changes since v3:
- * made this the second patch rather than the first in the series
+ * dropped the phy-names property and changed the commit message
+   accordingly
 
- Documentation/devicetree/bindings/mfd/qcom,spmi-pmic.yaml | 4 ++++
- 1 file changed, 4 insertions(+)
+ .../devicetree/bindings/phy/qcom,snps-eusb2-phy.yaml         | 5 +++++
+ 1 file changed, 5 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/mfd/qcom,spmi-pmic.yaml b/Documentation/devicetree/bindings/mfd/qcom,spmi-pmic.yaml
-index adf88245c409..1e6fadec1301 100644
---- a/Documentation/devicetree/bindings/mfd/qcom,spmi-pmic.yaml
-+++ b/Documentation/devicetree/bindings/mfd/qcom,spmi-pmic.yaml
-@@ -135,6 +135,10 @@ patternProperties:
-     type: object
-     $ref: /schemas/pinctrl/qcom,pmic-gpio.yaml#
+diff --git a/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-phy.yaml
+index de72577e34a4..c53bab107b6d 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-phy.yaml
+@@ -33,6 +33,11 @@ properties:
+   resets:
+     maxItems: 1
  
-+  "phy@[0-9a-f]+$":
-+    type: object
-+    $ref: /schemas/phy/qcom,snps-eusb2-repeater.yaml#
++  phys:
++    maxItems: 1
++    description:
++      Phandle to eUSB2 to USB 2.0 repeater
 +
-   "pon@[0-9a-f]+$":
-     type: object
-     $ref: /schemas/power/reset/qcom,pon.yaml#
+   vdd-supply:
+     description:
+       Phandle to 0.88V regulator supply to PHY digital circuit.
 -- 
 2.34.1
 
