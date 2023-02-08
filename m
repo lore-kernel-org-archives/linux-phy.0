@@ -4,75 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C92E6C636D3
-	for <linux-phy@archiver.kernel.org>; Wed,  8 Feb 2023 18:54:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E7348C636D7
+	for <linux-phy@archiver.kernel.org>; Wed,  8 Feb 2023 19:02:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UEM0q07k7wt6RWp2gMN7DPIusAwtdmnoSRIqPKJ8MVE=; b=PYp70fB7bTQ8cP
-	P1LDijzOobUxhMc/ea9uk3P4nr+2e2KZJI8jAIH6w+FWNAZjj3H8azc0QUJmgxFgPtNPIZnY6eWSO
-	QGrOXEdv0H1Dbbe98GmpEpoTSusXaJQ6+ZCvDKmD6scDAkGndaotSZ0yC7xlJt2SmWmjgKIVN7/nG
-	WITWFnW/CwPwxtD39AyAN6YnGJ3LpwSbJzNvacsZKVwIEMDt0OmcPa+aefzu7vKGAhjUJTe5PHjaB
-	SRVhsFBAMvBq6pBXOZeyjDyVvXq1O9AfoihtU4rj6wMtL/gro/m33xPBOIox7XDBTG8WfPCQPPxnx
-	GYp34fAn+P720vLBYW9A==;
+	List-Owner; bh=dNaBdY1GpSmLlKbvW+v/hI8JNpILrQToDAE04/QdaR4=; b=g05QyVQntkelbj
+	iwO6IOtdb2TmwSqEoaPLVYQC3hh+Fl+GX5DMdAVX3k+9hcXvFra25GPqVMp8hkL7X1zi47xpSGejY
+	IfYUVxwm2UTU0dv4DhKT55m/oJwy4IMeDufYz9gM7a0oFcGX3Yh1Y6LNLNqpxs4s4BshQcJ1eQ00e
+	tFBo8tTEwy4+RuV8qWpOQ6leuKWyheTz/kzv7k7HZP4f7SspBgOFyFJyoTD1fxWrtS6/6T2HblUIp
+	GdvQAnq6ObK4KFvyuXiJu1nXz5VO9TZGhyfZvkXtOaBgqrotrqW8O7/vfoL7MDruPMKhTt4Q16OK8
+	7Xl8K4S4ev2LZa1QDrXg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pPpak-00GgDw-7b; Wed, 08 Feb 2023 18:54:50 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1pPphr-00GhM4-84; Wed, 08 Feb 2023 19:02:11 +0000
+Received: from mail-wm1-x32f.google.com ([2a00:1450:4864:20::32f])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pPpaZ-00Gg9u-EH; Wed, 08 Feb 2023 18:54:40 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 4DC2A617B8;
-	Wed,  8 Feb 2023 18:54:34 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0CB21C433D2;
-	Wed,  8 Feb 2023 18:54:27 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1675882473;
-	bh=xTtM9WlSf7bwExmahb6XOjPHbEjpNPb+C9ZLErT3mV8=;
-	h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
-	b=kJN28UveNEt23ZFALxkKRAduymcXqKXXhl5ZE6krYfbalb6HMbzHo9qeVzvcHI7Wm
-	 H7S6jcL16vD7PqCbUM676t6Ujn2JFJPW6F8SYQEY0t+JColJ5tdmzL8HnmWP59Mv+N
-	 h1XG21jruiC7Pqu0lZhIHvhdf8KfE3r2XiOfPuEIw7UtbGW+1gt8cYhRh3sZd6iQB0
-	 OKQT0joBdQfoYqU3AXs0x+0ro+BNaKQvYiFcCdFS93pX8FTqdLs62iSLZQceti8ikH
-	 8vqlPouh7hbFMq94LAL+5Wj+RTZZwiFzYMUZ+IE2R0duumYDsHSZLH3uCg57RDgxC5
-	 5i80rfFHy/R9Q==
-Date: Wed, 8 Feb 2023 19:08:33 +0000
-From: Jonathan Cameron <jic23@kernel.org>
-To: Gatien CHEVALLIER <gatien.chevallier@foss.st.com>
-Cc: <Oleksii_Moisieiev@epam.com>, <gregkh@linuxfoundation.org>,
- <herbert@gondor.apana.org.au>, <davem@davemloft.net>, <robh+dt@kernel.org>,
- <krzysztof.kozlowski+dt@linaro.org>, <alexandre.torgue@foss.st.com>,
- <vkoul@kernel.org>, <olivier.moysan@foss.st.com>,
- <arnaud.pouliquen@foss.st.com>, <mchehab@kernel.org>,
- <fabrice.gasnier@foss.st.com>, <ulf.hansson@linaro.org>,
- <edumazet@google.com>, <kuba@kernel.org>, <pabeni@redhat.com>,
- <linux-crypto@vger.kernel.org>, <devicetree@vger.kernel.org>,
- <linux-stm32@st-md-mailman.stormreply.com>,
- <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
- <dmaengine@vger.kernel.org>, <linux-i2c@vger.kernel.org>,
- <linux-iio@vger.kernel.org>, <alsa-devel@alsa-project.org>,
- <linux-media@vger.kernel.org>, <linux-mmc@vger.kernel.org>,
- <netdev@vger.kernel.org>, <linux-phy@lists.infradead.org>,
- <linux-serial@vger.kernel.org>, <linux-spi@vger.kernel.org>,
- <linux-usb@vger.kernel.org>, Loic PALLARDY <loic.pallardy@st.com>
-Subject: Re: [PATCH v3 4/6] bus: stm32_sys_bus: add support for STM32MP15
- and STM32MP13 system bus
-Message-ID: <20230208190833.532cd60c@jic23-huawei>
-In-Reply-To: <d6c659d8-2e5c-cb60-d950-685c4ba319e2@foss.st.com>
-References: <20230127164040.1047583-1-gatien.chevallier@foss.st.com>
-	<20230127164040.1047583-5-gatien.chevallier@foss.st.com>
-	<20230128161217.0e79436e@jic23-huawei>
-	<d6c659d8-2e5c-cb60-d950-685c4ba319e2@foss.st.com>
-X-Mailer: Claws Mail 4.1.1 (GTK 3.24.36; x86_64-pc-linux-gnu)
+	id 1pPphn-00GhKd-TW
+	for linux-phy@lists.infradead.org; Wed, 08 Feb 2023 19:02:09 +0000
+Received: by mail-wm1-x32f.google.com with SMTP id c4-20020a1c3504000000b003d9e2f72093so2206933wma.1
+        for <linux-phy@lists.infradead.org>; Wed, 08 Feb 2023 11:02:06 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=GhtvTc0wPw9laaTqlmODS/yBpdBNKxTbcXiqXHtjESY=;
+        b=zT9GNWsi2Eh65XAFphieS0a8tZNQzjSKc4PCJfFPHIY33SjGnUfmWhSqzO3uBUuEwt
+         lVxnR1rAo6CQXV2go0Sz91z4C1jB20za+7KIM3Okj4YopSpcZ/SxWAWgCmP3I1MRO4Py
+         FiNJJLj1JyehKZaMs5xAyuzNPVGKz7QoqQhiBPotovIsNFHVZ/KUrOEjUUabgnMurPeB
+         WWwUqgzhOJdmBAIHwhKIV63PBHdbs+hedPNuxmXG37v6DCczn6++QhJAyAKcNCo4J0xi
+         zsoBuv1OXY2GRPcCIa9xf+axAtOOhPWmXsK2iiXqzYb4Sknltn/AjyBvTv+3xvOiW7jK
+         inPA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=GhtvTc0wPw9laaTqlmODS/yBpdBNKxTbcXiqXHtjESY=;
+        b=r7TFztaBcG6CyMaReVnhqzPmPQAxArB9yvjkzYLYnTTANmtlg8JIQdZ+D5nKm+kou/
+         Muuo30FlHVGDkjjbPi15Byc/9K06mOuTcrcBUm/yc/sVHUODLn6FD5TGl7xhSYIbkIL5
+         b3AgVnjvBsAhNLjksCQ1qwZYEBPJtLJdkGMwHfw5GmxKb7X2hfxbGsZbxjV+0wb7O4Ek
+         3Jtil+M1PxzLmQDAeVE9Ltoe7RLCYLYAymPlY2BD4zobrEzlWEwq9hi2PKt2wwvO9zgh
+         hMQwQWxjxpgRfp3auX751opu2kqA1aU84hHHJs3CnRZfwhH1J8UscGuji1PadwZT9B0E
+         qtCA==
+X-Gm-Message-State: AO0yUKUtirERex20Q+aIYnQZQ4+hjlf40wzfsWPVDTPMrXfcHUJLOENd
+	IAa8rTkg2MRiRfLhqCB50LtnYg==
+X-Google-Smtp-Source: AK7set9aUTj24uA+NR/+P2LWDraZ1w/dDHyU0hwmFvER4RpzwAZoG/Q/4tFqRjtwQNJpfjWGiEuruQ==
+X-Received: by 2002:a05:600c:3412:b0:3e0:481:c88f with SMTP id y18-20020a05600c341200b003e00481c88fmr10051103wmp.30.1675882925676;
+        Wed, 08 Feb 2023 11:02:05 -0800 (PST)
+Received: from hackbox.lan ([94.52.112.99])
+        by smtp.gmail.com with ESMTPSA id n16-20020a1c7210000000b003dc1d668866sm2650327wmc.10.2023.02.08.11.02.04
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 08 Feb 2023 11:02:05 -0800 (PST)
+From: Abel Vesa <abel.vesa@linaro.org>
+To: Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Lee Jones <lee@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	"vkoul@kernel.org"  <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Johan Hovold <johan+linaro@kernel.org>
+Cc: linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Subject: [PATCH v5 1/7] dt-bindings: phy: Add qcom,snps-eusb2-repeater schema file
+Date: Wed,  8 Feb 2023 21:01:54 +0200
+Message-Id: <20230208190200.2966723-2-abel.vesa@linaro.org>
+X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20230208190200.2966723-1-abel.vesa@linaro.org>
+References: <20230208190200.2966723-1-abel.vesa@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230208_105439_614660_21AB1724 
-X-CRM114-Status: GOOD (  27.29  )
+X-CRM114-CacheID: sfid-20230208_110208_072628_5544B399 
+X-CRM114-Status: GOOD (  15.33  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,86 +101,91 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, 7 Feb 2023 15:12:23 +0100
-Gatien CHEVALLIER <gatien.chevallier@foss.st.com> wrote:
+The SM8550 SoC uses Synopsis eUSB2 repeater found in PM8550b.
+Add a dt-binding schema for the new driver.
 
-> Hi Jonathan,
-> 
-> On 1/28/23 17:12, Jonathan Cameron wrote:
-> > On Fri, 27 Jan 2023 17:40:38 +0100
-> > Gatien Chevallier <gatien.chevallier@foss.st.com> wrote:
-> >   
-> >> This driver is checking the access rights of the different
-> >> peripherals connected to the system bus. If access is denied,
-> >> the associated device tree node is skipped so the platform bus
-> >> does not probe it.
-> >>
-> >> Signed-off-by: Gatien Chevallier <gatien.chevallier@foss.st.com>
-> >> Signed-off-by: Loic PALLARDY <loic.pallardy@st.com>  
-> > 
-> > Hi Gatien,
-> > 
-> > A few comments inline,
-> > 
-> > Thanks,
-> > 
-> > Jonathan
-> >   
-> >> diff --git a/drivers/bus/stm32_sys_bus.c b/drivers/bus/stm32_sys_bus.c
-> >> new file mode 100644
-> >> index 000000000000..c12926466bae
-> >> --- /dev/null
-> >> +++ b/drivers/bus/stm32_sys_bus.c
-> >> @@ -0,0 +1,168 @@
-> >> +// SPDX-License-Identifier: GPL-2.0
-> >> +/*
-> >> + * Copyright (C) 2023, STMicroelectronics - All Rights Reserved
-> >> + */
-> >> +
-> >> +#include <linux/bitfield.h>
-> >> +#include <linux/bits.h>
-> >> +#include <linux/device.h>
-> >> +#include <linux/err.h>
-> >> +#include <linux/io.h>
-> >> +#include <linux/init.h>
-> >> +#include <linux/kernel.h>
-> >> +#include <linux/module.h>
-> >> +#include <linux/of.h>
-> >> +#include <linux/of_platform.h>
-> >> +#include <linux/platform_device.h>
-> >> +
-> >> +/* ETZPC peripheral as firewall bus */
-> >> +/* ETZPC registers */
-> >> +#define ETZPC_DECPROT			0x10
-> >> +
-> >> +/* ETZPC miscellaneous */
-> >> +#define ETZPC_PROT_MASK			GENMASK(1, 0)
-> >> +#define ETZPC_PROT_A7NS			0x3
-> >> +#define ETZPC_DECPROT_SHIFT		1  
-> > 
-> > This define makes the code harder to read.  What we care about is
-> > the number of bits in the register divided by number of entries.
-> > (which is 2) hence the shift by 1. See below for more on this.
-> > 
-> >   
-> >> +
-> >> +#define IDS_PER_DECPROT_REGS		16  
-> >   
-> >> +#define STM32MP15_ETZPC_ENTRIES		96
-> >> +#define STM32MP13_ETZPC_ENTRIES		64  
-> > 
-> > These defines just make the code harder to check.
-> > They aren't magic numbers, but rather just telling us how many
-> > entries there are, so I would just put them in the structures directly.
-> > Their use make it clear what they are without needing to give them a name.
-> >   
-> 
-> Honestly, I'd rather read the hardware configuration registers to get 
-> this information instead of differentiating MP13/15. Would you agree on 
-> that?
+Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+---
 
-Sure, if they are discoverable even better.
+The v4 is here:
+https://lore.kernel.org/all/20230207135551.1418637-2-abel.vesa@linaro.org/
 
+Changes since v4:
+ * added Krzysztof R-b tag
+ * added description about what the eUSB repeater does
+
+Changes since v3:
+ * made this patch the first one in the series to fix the binding check
+   for the 2nd patch.
+ * dropped the compatible for pmic in the example. This is due to the
+   dependency between this patch and the next one.
+
+
+ .../phy/qcom,snps-eusb2-repeater.yaml         | 52 +++++++++++++++++++
+ 1 file changed, 52 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml
+
+diff --git a/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml b/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml
+new file mode 100644
+index 000000000000..083fda530b48
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml
+@@ -0,0 +1,52 @@
++# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/qcom,snps-eusb2-repeater.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Qualcomm Synopsis eUSB2 to USB 2.0 repeater
++
++maintainers:
++  - Abel Vesa <abel.vesa@linaro.org>
++
++description:
++  eUSB2 repeater converts between eUSB2 and USB 2.0 signaling levels and
++  allows a eUSB2 PHY to connect to legacy USB 2.0 products
++
++properties:
++  compatible:
++    const: qcom,pm8550b-eusb2-repeater
++
++  reg:
++    maxItems: 1
++
++  "#phy-cells":
++    const: 0
++
++  vdd18-supply: true
++
++  vdd3-supply: true
++
++required:
++  - compatible
++  - reg
++  - "#phy-cells"
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/spmi/spmi.h>
++
++    pmic@7 {
++      reg = <0x7 SPMI_USID>;
++      #address-cells = <1>;
++      #size-cells = <0>;
++
++      pm8550b_eusb2_repeater: phy@fd00 {
++        compatible = "qcom,pm8550b-eusb2-repeater";
++        reg = <0xfd00>;
++        #phy-cells = <0>;
++      };
++    };
++...
+-- 
+2.34.1
 
 
 -- 
