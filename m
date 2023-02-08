@@ -4,62 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0B747C636D7
-	for <linux-phy@archiver.kernel.org>; Wed,  8 Feb 2023 18:01:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 220F2C636CC
+	for <linux-phy@archiver.kernel.org>; Wed,  8 Feb 2023 18:01:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=H8D4tDL9K+CShmufOEjju/IuqYl/6FQjBI0Y8v3b5UU=; b=jUo8L8xbOIJrCK
-	6bubzw578MJSDVfAiDirefXGNbkninrejwP0fkMLErl5rswUgFwMYN1r2wqV2OBBK9XMB2ysj607C
-	W8u2iOAiE6At9T+zJMhmUht34LDTXRJ7vwDo2EfokQrl8LiPxKJ14HrcVi7kbRikdOKT3EPA2hhYT
-	el+XYa0BMIl8Ltc70nc9TmdEvv6cm7XT1zqdxmr83JIoFe1WFIWUs5ZTSvkoVBlgLIvX38RvJePuL
-	cupSewME5mBj9ZdhO8w/WtyTKzzkjl9hy0Rtfb7tJsTGsFzsQwo3TP9Tlf/sX7YKeKuiMI7gp1gIV
-	jvUmeRaLGqerK9jKiM2g==;
+	List-Owner; bh=LIby4yQEp93rTLAm0FkHTwpd0reYN4u/2QxlpZp2rM0=; b=XAD5YuvWl6fy0z
+	ZQYScn5hLg1XqH1ew5I1z247tfCqwQYXbfogi6015NrCz3zCOUcJLwrzegI+h4ox09KahwAQVDAGC
+	BZE1L+jvnvz6g2eliudo3y4qHnv7jGygPjogKk7xRvPFyS/2tZ6Hg0rYG1/29NoVmqgFv557YdY+X
+	QNr2mg52JLqASikfWPNf6yc2a4x/pJ8ynmcmN45FsTYjd84Gl6H/4WnmizwHyk7OAoCfqwKs/AsuS
+	xkLWHV4EYMjoKKDQGT50gZH3KGCmmfGYNZI3qSjMjJsZjsoPr60RFMqj+3E2sX31dBTtsMV9ieKe0
+	vS7yGaH3BlN7wc3gETgQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pPoki-00GXYp-DU; Wed, 08 Feb 2023 18:01:04 +0000
-Received: from mail-wm1-x329.google.com ([2a00:1450:4864:20::329])
+	id 1pPokk-00GXaO-IR; Wed, 08 Feb 2023 18:01:06 +0000
+Received: from mail-wm1-x332.google.com ([2a00:1450:4864:20::332])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pPoke-00GXUm-3w
-	for linux-phy@lists.infradead.org; Wed, 08 Feb 2023 18:01:01 +0000
-Received: by mail-wm1-x329.google.com with SMTP id l21-20020a05600c1d1500b003dfe462b7e4so2950087wms.0
-        for <linux-phy@lists.infradead.org>; Wed, 08 Feb 2023 10:00:59 -0800 (PST)
+	id 1pPokh-00GXWr-6u
+	for linux-phy@lists.infradead.org; Wed, 08 Feb 2023 18:01:04 +0000
+Received: by mail-wm1-x332.google.com with SMTP id z13so6442392wmp.2
+        for <linux-phy@lists.infradead.org>; Wed, 08 Feb 2023 10:01:03 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=hOfyfk7Q5d8ZuEReqcuZAbA5feFof3LHf7PR/qaCNGw=;
-        b=snxiqbD2t0eIQqzcB/zOrs8/m7MUstDCuKWn56QYMLhnYrPORnUhAZCJCQeuazcDd8
-         h6er5kso1tORG85oyMm9J+/fcKJZXXO+gtOz6EKuf3iydFTAmi2IBVUnqvcXNLFNHcUc
-         G3j/GEt8ozBuozH+RUUzekKcKSL0mArGlHhu86b+eccP0sOwZb2TrEzGPb//HHpYN26I
-         xNJI9JuC45dntIlh3xs+Iatcpdt0Eb9Anhc9eZGbFzps5ICWuLn/ZV06BxyWwHKg/o/r
-         t4M/CTnQbLoFtuXUPYpfF9KXdUkQYjKhULsCwJCtKPaGNAV5zlM6vdnB+jAzz/UdIvyi
-         KK/w==
+        bh=DchZl1hRN+unSUjI498glgMmNXbQQ3rhvnKiCTqoT90=;
+        b=y0EyDKDULMF3MQ5MiWgTHzzSH5iCL6MUojqJ2JX7JF4MBIKHFRUpGmVbxVtTRB8csq
+         Qr/XxgKwrumNbIrdT+dpwn8UJWSu7SCiDUpV2oW3mtdkNWBngJQYy7lpTLQl8ab9sVeF
+         245J9n+IrUM58f+ktlWkipzFHZUi+bYHY2uDzeDGguqXMoavQ/cXTy6m2tNzE510At4C
+         mN1zo1SzjkQJxvjVhSmPFOu15rJ6xsZkE8tptlsQ/SirVqpg0VSY10MbEQc25C279TGX
+         PDEIL+ramo9ePa31OYt8nS14i1QOwQRrKJJ4WJsvygZOb7YYTymqFDM3i8CvgD2j4SgI
+         +61Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=hOfyfk7Q5d8ZuEReqcuZAbA5feFof3LHf7PR/qaCNGw=;
-        b=VA+SIPnjO9qqQxcosvnApCVdK5bSzl8+6dW2Dx+q9njouG1lfa2zIkqKshO2FEQEOq
-         LPA4WygrDHMNBUHrata2PCt58QxY1yXtdimwtkYrC2pgrRWS6t/K4gK+LjZ3fciVRD8K
-         DkG4RzFHPG8RUqed73ckoeRyuz1LRwHi5NBjIxCvGGl34uWWDVsO2zRdizXI6/GxwbiA
-         kn9dwImHhiYsMVOv9ldlT0mLSjA894CtJZyGGbA2LdLbkYfl23IERUIl8HdyBrGs5b8e
-         Qlxo/uxXsc1tari5I3RZalbA37AOxWV6tOEhUipN2OH9vSHiw00N1vgZzp9RKu4dNGVa
-         CBww==
-X-Gm-Message-State: AO0yUKXUF2CV/ImiNRc/HDiLLfhOP/SHhkJlwAImzakZPV6oKkr1B64Z
-	Lxw41MYivKrPLdxhuiCUQD/gPQ==
-X-Google-Smtp-Source: AK7set/hcDLTQlcyzvVtt++cAAZnC7FIrcoMBPsXzzIJhtny3cZPsVg4IerdSaXXrgRq2/qQdCRMgg==
-X-Received: by 2002:a05:600c:a68f:b0:3da:db4:6105 with SMTP id ip15-20020a05600ca68f00b003da0db46105mr7353259wmb.37.1675879258579;
-        Wed, 08 Feb 2023 10:00:58 -0800 (PST)
+        bh=DchZl1hRN+unSUjI498glgMmNXbQQ3rhvnKiCTqoT90=;
+        b=pOfSwe5P2hu6Bbe/n0rTtKLfSvHxeV9PxTzC6nb9t9+ZtlhudrojDdD4FMGbjjncaH
+         jXM38zW11QpJK3BYIJg7bgCHybE+/5SFRTF1PdwrEjhi76maD2Vao73ScdtpDhuGmJAy
+         AiS8ZkmYupQO81OIH2i+61ltcSY/ExyOLmcT9SL8SI4qoKRovYDptz8fKMh/w4w8+Hhi
+         7ESAQQ7R3fGpQcHJ/vpvmHA27+MSJi4RKR97xd3+Wg52bJ0gt3FPa4QFmQhqSdBQ8ao0
+         RXqhCHShp3wo8n3yrIVUaEWTMt29yuZU0igfHu0SSASHMH8FetFrW/dK/MkMbuv5D0Lc
+         UILw==
+X-Gm-Message-State: AO0yUKVP59iGWy9n8EqZ9GD9fC3NdLDuFWrPBBIVPjraq441bN5nyII7
+	+Gi8Xrj5Rn+99qGJ2poPPOq5FQ==
+X-Google-Smtp-Source: AK7set+pbIZz3u99onv03D2Ht7ybFjFuSc4mKOSLvm/6h89UJxkhUSf97Zm/x6UitFe6ZP5Of1de8Q==
+X-Received: by 2002:a05:600c:2e89:b0:3e1:bfc:d16e with SMTP id p9-20020a05600c2e8900b003e10bfcd16emr3539924wmn.39.1675879262077;
+        Wed, 08 Feb 2023 10:01:02 -0800 (PST)
 Received: from hackbox.lan ([94.52.112.99])
-        by smtp.gmail.com with ESMTPSA id k20-20020a05600c169400b003dc54eef495sm2370286wmn.24.2023.02.08.10.00.56
+        by smtp.gmail.com with ESMTPSA id k20-20020a05600c169400b003dc54eef495sm2370286wmn.24.2023.02.08.10.01.00
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 08 Feb 2023 10:00:58 -0800 (PST)
+        Wed, 08 Feb 2023 10:01:01 -0800 (PST)
 From: Abel Vesa <abel.vesa@linaro.org>
 To: Andy Gross <agross@kernel.org>,
 	Bjorn Andersson <andersson@kernel.org>,
@@ -77,17 +77,18 @@ Cc: linux-arm-msm@vger.kernel.org,
 	linux-pci@vger.kernel.org,
 	linux-phy@lists.infradead.org,
 	devicetree@vger.kernel.org,
-	Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
-Subject: [PATCH v9 07/11] phy: qcom-qmp: qserdes-lane-shared: Add v6 register offsets
-Date: Wed,  8 Feb 2023 20:00:16 +0200
-Message-Id: <20230208180020.2761766-8-abel.vesa@linaro.org>
+	Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Subject: [PATCH v9 09/11] dt-bindings: PCI: qcom: Add SM8550 compatible
+Date: Wed,  8 Feb 2023 20:00:18 +0200
+Message-Id: <20230208180020.2761766-10-abel.vesa@linaro.org>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20230208180020.2761766-1-abel.vesa@linaro.org>
 References: <20230208180020.2761766-1-abel.vesa@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230208_100100_176310_7125E711 
-X-CRM114-Status: GOOD (  12.74  )
+X-CRM114-CacheID: sfid-20230208_100103_286420_903E0DC7 
+X-CRM114-Status: GOOD (  11.03  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,96 +105,146 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The new SM8550 SoC bumps up the HW version of QMP phy to v6.20 for
-PCIE g4x2. Add the new lane shared PCIE specific offsets in a dedicated
-header file.
+Add the SM8550 platform to the binding.
 
 Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Reviewed-by: Johan Hovold <johan+linaro@kernel.org>
 ---
 
 The v8 of this patch is:
-https://lore.kernel.org/all/20230206212619.3218741-8-abel.vesa@linaro.org/
+https://lore.kernel.org/all/20230206212619.3218741-10-abel.vesa@linaro.org/
 
 Changes since v8:
  * none
 
 Changes since v7:
- * none
+ * dropped the enable-gpios property as it is not used
+ * added Johan's R-b tag
 
 Changes since v6:
  * none
 
 Changes since v5:
- * none
+ * added Krzysztof's R-b tag
 
 Changes since v4:
- * none
+ * dropped _serdes infix from ln_shrd table name and from every ln_shrd
+   variable name
+ * added hyphen between "no CSR" in both places
+ * dropped has_ln_shrd_serdes_tbl
+ * reordered qmp_pcie_offsets_v6_20 by struct members
+ * added rollback for no-CSR reset in qmp_pcie_init fail path
+ * moved ln_shrd offset calculation after port_b
+ * dropped the minItems for interconnects
+ * made iommu related properties global
+ * renamed noc_aggr_4 back to noc_aggr
 
 Changes since v3:
- * none
+ * renamed noc_aggr to noc_aggr_4, as found in the driver
 
 Changes since v2:
- * none
+ * dropped the pipe from clock-names
+ * removed the pcie instance number from aggre clock-names comment
+ * renamed aggre clock-names to noc_aggr
+ * dropped the _pcie infix from cnoc_pcie_sf_axi
+ * renamed pcie_1_link_down_reset to simply link_down
+ * added enable-gpios back, since pcie1 node will use it
 
 Changes since v1:
- * split all the offsets into separate patches, like Vinod suggested
+ * Switched to single compatible for both PCIes (qcom,pcie-sm8550)
+ * dropped enable-gpios property
+ * dropped interconnects related properties, the power-domains
+ * properties
+   and resets related properties the sm8550 specific allOf:if:then
+ * dropped pipe_mux, phy_pipe and ref clocks from the sm8550 specific
+   allOf:if:then clock-names array and decreased the minItems and
+   maxItems for clocks property accordingly
+ * added "minItems: 1" to interconnects, since sm8550 pcie uses just one,
+   same for interconnect-names
 
+ .../devicetree/bindings/pci/qcom,pcie.yaml    | 40 +++++++++++++++++++
+ 1 file changed, 40 insertions(+)
 
- .../phy-qcom-qmp-qserdes-ln-shrd-v6.h         | 32 +++++++++++++++++++
- drivers/phy/qualcomm/phy-qcom-qmp.h           |  1 +
- 2 files changed, 33 insertions(+)
- create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-qserdes-ln-shrd-v6.h
-
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-ln-shrd-v6.h b/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-ln-shrd-v6.h
-new file mode 100644
-index 000000000000..86d7d796d5d7
---- /dev/null
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-ln-shrd-v6.h
-@@ -0,0 +1,32 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+/*
-+ * Copyright (c) 2023, Linaro Limited
-+ */
-+
-+#ifndef QCOM_PHY_QMP_QSERDES_LN_SHRD_V6_H_
-+#define QCOM_PHY_QMP_QSERDES_LN_SHRD_V6_H_
-+
-+#define QSERDES_V6_LN_SHRD_RXCLK_DIV2_CTRL			0xa0
-+#define QSERDES_V6_LN_SHRD_RX_Q_EN_RATES			0xb0
-+#define QSERDES_V6_LN_SHRD_DFE_DAC_ENABLE1			0xb4
-+#define QSERDES_V6_LN_SHRD_TX_ADAPT_POST_THRESH1		0xc4
-+#define QSERDES_V6_LN_SHRD_TX_ADAPT_POST_THRESH2		0xc8
-+#define QSERDES_V6_LN_SHRD_RX_MODE_RATE_0_1_B0			0xd4
-+#define QSERDES_V6_LN_SHRD_RX_MODE_RATE_0_1_B1			0xd8
-+#define QSERDES_V6_LN_SHRD_RX_MODE_RATE_0_1_B2			0xdc
-+#define QSERDES_V6_LN_SHRD_RX_MODE_RATE_0_1_B3			0xe0
-+#define QSERDES_V6_LN_SHRD_RX_MODE_RATE_0_1_B4			0xe4
-+#define QSERDES_V6_LN_SHRD_RX_MODE_RATE_0_1_B5			0xe8
-+#define QSERDES_V6_LN_SHRD_RX_MODE_RATE_0_1_B6			0xec
-+#define QSERDES_V6_LN_SHRD_RX_MARG_COARSE_THRESH1_RATE210	0xf0
-+#define QSERDES_V6_LN_SHRD_RX_MARG_COARSE_THRESH1_RATE3		0xf4
-+#define QSERDES_V6_LN_SHRD_RX_MARG_COARSE_THRESH2_RATE210	0xf8
-+#define QSERDES_V6_LN_SHRD_RX_MARG_COARSE_THRESH2_RATE3		0xfc
-+#define QSERDES_V6_LN_SHRD_RX_MARG_COARSE_THRESH3_RATE210	0x100
-+#define QSERDES_V6_LN_SHRD_RX_MARG_COARSE_THRESH3_RATE3		0x104
-+#define QSERDES_V6_LN_SHRD_RX_MARG_COARSE_THRESH4_RATE3		0x10c
-+#define QSERDES_V6_LN_SHRD_RX_MARG_COARSE_THRESH5_RATE3		0x114
-+#define QSERDES_V6_LN_SHRD_RX_MARG_COARSE_THRESH6_RATE3		0x11c
-+#define QSERDES_V6_LN_SHRD_RX_SUMMER_CAL_SPD_MODE		0x128
-+
-+#endif
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp.h b/drivers/phy/qualcomm/phy-qcom-qmp.h
-index e5974e6caf51..148663ee713a 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp.h
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp.h
-@@ -24,6 +24,7 @@
- #include "phy-qcom-qmp-qserdes-com-v6.h"
- #include "phy-qcom-qmp-qserdes-txrx-v6.h"
- #include "phy-qcom-qmp-qserdes-txrx-v6_20.h"
-+#include "phy-qcom-qmp-qserdes-ln-shrd-v6.h"
+diff --git a/Documentation/devicetree/bindings/pci/qcom,pcie.yaml b/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
+index 872817d6d2bd..eb7f5a9aef2c 100644
+--- a/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
++++ b/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
+@@ -38,6 +38,7 @@ properties:
+           - qcom,pcie-sm8350
+           - qcom,pcie-sm8450-pcie0
+           - qcom,pcie-sm8450-pcie1
++          - qcom,pcie-sm8550
+       - items:
+           - const: qcom,pcie-msm8996
+           - const: qcom,pcie-msm8998
+@@ -58,6 +59,12 @@ properties:
+     minItems: 1
+     maxItems: 8
  
- #include "phy-qcom-qmp-qserdes-pll.h"
++  iommus:
++    maxItems: 1
++
++  iommu-map:
++    maxItems: 2
++
+   # Common definitions for clocks, clock-names and reset.
+   # Platform constraints are described later.
+   clocks:
+@@ -205,6 +212,7 @@ allOf:
+               - qcom,pcie-sm8350
+               - qcom,pcie-sm8450-pcie0
+               - qcom,pcie-sm8450-pcie1
++              - qcom,pcie-sm8550
+     then:
+       properties:
+         reg:
+@@ -639,6 +647,37 @@ allOf:
+           items:
+             - const: pci # PCIe core reset
  
++  - if:
++      properties:
++        compatible:
++          contains:
++            enum:
++              - qcom,pcie-sm8550
++    then:
++      properties:
++        clocks:
++          minItems: 7
++          maxItems: 8
++        clock-names:
++          minItems: 7
++          items:
++            - const: aux # Auxiliary clock
++            - const: cfg # Configuration clock
++            - const: bus_master # Master AXI clock
++            - const: bus_slave # Slave AXI clock
++            - const: slave_q2a # Slave Q2A clock
++            - const: ddrss_sf_tbu # PCIe SF TBU clock
++            - const: noc_aggr # Aggre NoC PCIe AXI clock
++            - const: cnoc_sf_axi # Config NoC PCIe1 AXI clock
++        resets:
++          minItems: 1
++          maxItems: 2
++        reset-names:
++          minItems: 1
++          items:
++            - const: pci # PCIe core reset
++            - const: link_down # PCIe link down reset
++
+   - if:
+       properties:
+         compatible:
+@@ -724,6 +763,7 @@ allOf:
+               - qcom,pcie-sm8350
+               - qcom,pcie-sm8450-pcie0
+               - qcom,pcie-sm8450-pcie1
++              - qcom,pcie-sm8550
+     then:
+       oneOf:
+         - properties:
 -- 
 2.34.1
 
