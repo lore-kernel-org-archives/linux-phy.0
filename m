@@ -4,86 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B5969C636D6
-	for <linux-phy@archiver.kernel.org>; Wed,  8 Feb 2023 19:02:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A2D42C05027
+	for <linux-phy@archiver.kernel.org>; Wed,  8 Feb 2023 23:46:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WSVmdQik3RliNVyiMHxFI1sdzJ66woZwYsJc9UxckTw=; b=4fYqMasKKBhjxz
-	UU4kosZsujbb3YlLyuzdk7rvIrya+/4vrwnPp3gHup3ioOkS9i71lQ85Sr9SJLAn7ZxrSY24vcF1R
-	WidXTPwfRVi6WyYLB2RXoZEyrbNiZA2zDohFKOqEGFQLxfiZ1josow5D63E1ihFHaXqIXq0Q+jQvE
-	Q/3bRywp+vsyuijjz8dc3WskQ4XUGd2CpTC/VO64sI8FItTEkQLtQKHdzkc1vi5MI2CcVITN1T1lc
-	VTRsJiX2+a0J0MhDW7VUdtOVmvXp/G+aMoh4kfZDmS59LIk62uEP0Ah0y8U+u+HGW4ei3CvWSL3US
-	Iwvagv8qyDdMJfDfRxJA==;
+	List-Owner; bh=pmPBG7DWAYnHw9XJeOorCb+0Z7JsiZ+P+I3xuncWUCc=; b=3d4/d+ndB79ZaY
+	59208JdqoOzhX2xl2AjdBx69IPzI5SVOX/agsKArTV1FiaCIsn3aoX47dRMBpNU2vf9hwNawbAHKG
+	5n8Zajb2n3fPN2d1ogMK7rHQDqqbXMsGmwwf4TFgWz+5mukrfv36/3CpBCC6r9RiL3oeis6wYd242
+	oB/fV031Kcy6195K9vpq+HmG9PkRBAsvrXJaMGzeQbZKn0e209Rp/80TwXaB4yX8Jq7r1bO41m9tB
+	7Etad0+WW3KJO1QGXZm2G/kMncGh95LxGvDpnvrCspnnWFV0IVLJOJQqONeskCOdQtAM/JcKvUQBA
+	g2lSrfxoQYTVOAEUDg5A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pPpi1-00GhRq-4O; Wed, 08 Feb 2023 19:02:21 +0000
-Received: from mail-wr1-x431.google.com ([2a00:1450:4864:20::431])
+	id 1pPu9R-00HEDw-0A; Wed, 08 Feb 2023 23:46:57 +0000
+Received: from mail-oi1-f169.google.com ([209.85.167.169])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pPphy-00GhOB-C6
-	for linux-phy@lists.infradead.org; Wed, 08 Feb 2023 19:02:19 +0000
-Received: by mail-wr1-x431.google.com with SMTP id r2so17797817wrv.7
-        for <linux-phy@lists.infradead.org>; Wed, 08 Feb 2023 11:02:15 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=MhSD2EYMzeYmp4lc7JlIcu+kMhKbNZUjdV/v58pmN/I=;
-        b=LMc4BxAQ7oZVRUuNxPjR5pWqTFbCCwaFhO5KTA1zkMPBzmtlm55CRbxr9bIFtwBe0g
-         AVN1/LfqbG4JeWn/7ROoyQ4GBvJIXVffmWosMBZxFm3FvrcNIApzBlGpv0KqSqeRA1Zc
-         T+Agpkmlfwa5Xx2ifhi4bVx/D+QsWBHTgYR7kQa75kQwmc1NoHDLuPRNzFY+GESJcgZH
-         5nJ79Uv3NLy7NWhJq8+vMg3yItAXxejZoLzXGct0etsyVJcTS0SM2Fn+D1kNcET/nfMf
-         4mDgdDyBugnux9n4VG9nrK3yDKLWwn3nb7+nT/+bHXTBLm0FQ9DVs41juW8Kiv9cZSSm
-         Ifag==
+	id 1pPu9O-00HEBE-CW
+	for linux-phy@lists.infradead.org; Wed, 08 Feb 2023 23:46:55 +0000
+Received: by mail-oi1-f169.google.com with SMTP id n132so263560oih.7
+        for <linux-phy@lists.infradead.org>; Wed, 08 Feb 2023 15:46:52 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=MhSD2EYMzeYmp4lc7JlIcu+kMhKbNZUjdV/v58pmN/I=;
-        b=gXM2HHnIOFlH2C8sJMrGsCt5lvGT1qGSmm9rRpwx3SsuWksk0vfZSHNHVJv6f6K0gV
-         RNBFJ1tdzd8WA8L8pd6MyWtQeINBLUvtsbSdN3N9P9z8Gr+Dy7/GQImZDEFBtdTD93m/
-         7LmEp28cEuutFf0ZCnlY2BeCjwCrljrIkicHvx+5pm+tEX7rBCY1yr09RgisT9h16Jhf
-         +9Di3mnN/Ru/v6G2z65WSpb0rL5mURWe3QYGa7OlGnVAUNVv359FsJusUsx4ghwCSnqF
-         kNthCYgO2Uw9d/cce2pb80nUlw9d85rHhctf/319QkFkBvd85lUgAY26M2ZBCG9uNZt4
-         9fhQ==
-X-Gm-Message-State: AO0yUKU7C1ZqEG35otyvPbQV4JlTGssUJDevPeFYjS9bnJzOOzrZYfT7
-	o05KsaCTv5isEu3ZQP/aD35VTw==
-X-Google-Smtp-Source: AK7set+q01pJi05o5iDlEX6osfNZc0O0qfck2gCOu6I3wlt9jssBIk9OXQNFKR95bJ9+q3PIQi2utw==
-X-Received: by 2002:a5d:60d0:0:b0:2bd:ee0c:26a3 with SMTP id x16-20020a5d60d0000000b002bdee0c26a3mr7632764wrt.8.1675882934685;
-        Wed, 08 Feb 2023 11:02:14 -0800 (PST)
-Received: from hackbox.lan ([94.52.112.99])
-        by smtp.gmail.com with ESMTPSA id n16-20020a1c7210000000b003dc1d668866sm2650327wmc.10.2023.02.08.11.02.13
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=C+icIdKslGvMFTYoNpZsRusMzcE34hYdnJpALIQzixk=;
+        b=xoCx+y3nd76w2SnYflat2kfROS8RfS2BgpDYIGB8USceNOJ+OV/uD+i1gGsgvpU1b5
+         wWYzjqVL2qme1ACAXGO8Kb1+u1/n/sDUNFcFFJjyXnBvnjON534Wr6dykEIc8LsEY36J
+         YpV6D0C0kFLJUYuddmasuu0U9iwiJ605zCGiECpi4+rYR66G+OaRJ01FmdNuY+MHN7FT
+         yRgV88gGTsqyOCuZ4RkWalUi0sr9RBVcoTwpF1DuRyR8AinGHGyolmbG4uDA4dMx3nVV
+         AtdJ8uI5ne13dbn3wMokIwMMGV3szXRkaeODeUzRmRexCh0fNB32RlDcIU3ohM7wJ5UL
+         m87A==
+X-Gm-Message-State: AO0yUKW3fvOvoCHAX3TaHCCuG6d0Zfr5yO8M0mOpp9x3N1FUIgc8QJA9
+	o6U2ymO1OGQsiaugBnC9MQ==
+X-Google-Smtp-Source: AK7set+t4lw5gVcug+Sb9ZM+igBFEHDv4+leQDcKVRz+QrmI0qjbrl7Y7T8tHpaaJA9Cfjk7F+5V3w==
+X-Received: by 2002:aca:1015:0:b0:36d:ea30:7bdf with SMTP id 21-20020aca1015000000b0036dea307bdfmr3728234oiq.49.1675900012280;
+        Wed, 08 Feb 2023 15:46:52 -0800 (PST)
+Received: from robh_at_kernel.org (66-90-144-107.dyn.grandenetworks.net. [66.90.144.107])
+        by smtp.gmail.com with ESMTPSA id s83-20020acac256000000b003785a948b27sm47788oif.16.2023.02.08.15.46.51
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 08 Feb 2023 11:02:14 -0800 (PST)
-From: Abel Vesa <abel.vesa@linaro.org>
-To: Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
-	Lee Jones <lee@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	"vkoul@kernel.org"  <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Johan Hovold <johan+linaro@kernel.org>
-Cc: linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
-Subject: [PATCH v5 7/7] arm64: dts: qcom: sm8550-mtp: Add eUSB2 repeater node
-Date: Wed,  8 Feb 2023 21:02:00 +0200
-Message-Id: <20230208190200.2966723-8-abel.vesa@linaro.org>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20230208190200.2966723-1-abel.vesa@linaro.org>
-References: <20230208190200.2966723-1-abel.vesa@linaro.org>
+        Wed, 08 Feb 2023 15:46:51 -0800 (PST)
+Received: (nullmailer pid 2935262 invoked by uid 1000);
+	Wed, 08 Feb 2023 23:46:51 -0000
+Date: Wed, 8 Feb 2023 17:46:51 -0600
+From: Rob Herring <robh@kernel.org>
+To: Neil Armstrong <neil.armstrong@linaro.org>
+Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>, Rob Herring <robh+dt@kernel.org>, devicetree@vger.kernel.org, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Vinod Koul <vkoul@kernel.org>, linux-kernel@vger.kernel.org, Kishon Vijay Abraham I <kishon@kernel.org>, linux-phy@lists.infradead.org
+Subject: Re: [PATCH] dt-bindings: phy: amlogic,g12a-usb3-pcie-phy: add
+ missing optional phy-supply property
+Message-ID: <167590001058.2935209.9991726555575605805.robh@kernel.org>
+References: <20230207-b4-amlogic-amlogic-g12a-usb3-pcie-phy-fix-v1-1-3e437b759549@linaro.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20230207-b4-amlogic-amlogic-g12a-usb3-pcie-phy-fix-v1-1-3e437b759549@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230208_110218_430471_08488452 
-X-CRM114-Status: UNSURE (   8.87  )
+X-CRM114-CacheID: sfid-20230208_154654_470132_0145E42A 
+X-CRM114-Status: UNSURE (   8.45  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -101,52 +81,18 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add the PMIC eUSB2 repeater node and add the usb-repeater
-property to the eUSB2 PHY to allow it to be controlled by the
-PHY driver.
 
-Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
----
+On Tue, 07 Feb 2023 16:03:53 +0100, Neil Armstrong wrote:
+> Add missing optional phy-supply property used to power up PHY regulators.
+> 
+> Fixes: 87a55485f2fc ("dt-bindings: phy: meson-g12a-usb3-pcie-phy: convert to yaml")
+> Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
+> ---
+>  .../devicetree/bindings/phy/amlogic,g12a-usb3-pcie-phy.yaml          | 5 +++++
+>  1 file changed, 5 insertions(+)
+> 
 
-The v4 is here:
-https://lore.kernel.org/all/20230207135551.1418637-8-abel.vesa@linaro.org/
-
-Changes since v4:
- * none
-
-Changes since v3:
- * Dropped the phy-names property from usb_1_hsphy, like Dmitry suggested
-
- arch/arm64/boot/dts/qcom/sm8550-mtp.dts | 7 +++++++
- 1 file changed, 7 insertions(+)
-
-diff --git a/arch/arm64/boot/dts/qcom/sm8550-mtp.dts b/arch/arm64/boot/dts/qcom/sm8550-mtp.dts
-index 56aab7cafcbc..6b6ec0fe5e5e 100644
---- a/arch/arm64/boot/dts/qcom/sm8550-mtp.dts
-+++ b/arch/arm64/boot/dts/qcom/sm8550-mtp.dts
-@@ -457,6 +457,11 @@ sdc2_card_det_n: sdc2-card-det-state {
- 	};
- };
- 
-+&pm8550b_eusb2_repeater {
-+	vdd18-supply = <&vreg_l15b_1p8>;
-+	vdd3-supply = <&vreg_l5b_3p1>;
-+};
-+
- &qupv3_id_0 {
- 	status = "okay";
- };
-@@ -563,6 +568,8 @@ &usb_1_hsphy {
- 	vdd-supply = <&vreg_l1e_0p88>;
- 	vdda12-supply = <&vreg_l3e_1p2>;
- 
-+	phys = <&pm8550b_eusb2_repeater>;
-+
- 	status = "okay";
- };
- 
--- 
-2.34.1
+Acked-by: Rob Herring <robh@kernel.org>
 
 
 -- 
