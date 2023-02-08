@@ -4,79 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5ACACC636CC
-	for <linux-phy@archiver.kernel.org>; Wed,  8 Feb 2023 17:14:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3A14AC64EC7
+	for <linux-phy@archiver.kernel.org>; Wed,  8 Feb 2023 18:00:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ek4YKXPnV978Eqc8vLnIzLzSKwjLKHSBqlK25jhV0t4=; b=Bw0gTUJtJZbjp3
-	ex6Yv0HFGM+lqNFwu5bqPbSldgonAn/txPiC+NUsZ+yq3wdobleNgs+UPATF3rASkqjQSwxFVNwKC
-	DyhAVFubqM8ppz44GlunQc8tksWZxvIMUsjHgSPemLNmIJPzOYZtCwSBAAhhxarmK61OYVOXHzqbr
-	abNt1ljJ+mHstqcGrxjoRCYN0oZRORmPCLdULVmqAOeJLVvmDKQq2XfDW77DN1P78illrhaBEXPdn
-	Q7nvtF7ST1Fmcd5CojUU8sBCYNQ0AXRPzCZ7Xw2CZOsyhNE1rh3f3a39o4vvzMvF0S+xhrkhjIPqr
-	Yliop2vHuq6su27QF1bQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=MFS4RLL6QhFbc4sDIwQy5c4Icrv5zmd7kulOCWcy9lw=; b=YxFBAijmVInoq7
+	i6H5FuEMzXgQjWSW4ClOFRqW9pcXLm3Up5BiuCyBjmw3eINnU2i16oNobkRqcI4puPKVzp+s7kbft
+	+e4eJ8RbuueF/kp0GbQgEfXScEaKJdAjuisUf5XpJCevYZpY4XOR2n0u12ug3Kbv/OW7goD8gfvKl
+	keB/gLmwNefWtHYbyi+R5K5NWX2/72uLy9aBsCPLJxBvzY8KzSw4trpIosQGEXvlq/GStHZRwqmwj
+	OFicvUtQTiHSIaj7sKqzdKQ+Z89Yjh/8jrDV5EJHfd1j9673jy1oWXVdEPWsfkWuqCvgTxxBRWepu
+	Gl1gvpb30NGN7SNrK5XA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pPo1C-00GQ2h-Pm; Wed, 08 Feb 2023 17:14:02 +0000
-Received: from ams.source.kernel.org ([145.40.68.75])
+	id 1pPokX-00GXQj-Go; Wed, 08 Feb 2023 18:00:53 +0000
+Received: from mail-wm1-x332.google.com ([2a00:1450:4864:20::332])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pPo1A-00GQ1w-3l
-	for linux-phy@lists.infradead.org; Wed, 08 Feb 2023 17:14:01 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id 778A1B81EAD;
-	Wed,  8 Feb 2023 17:13:58 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 22341C433EF;
-	Wed,  8 Feb 2023 17:13:57 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1675876437;
-	bh=uIn14lKQnE4MQMzWpMduYFj1ngI5uQm7hYWdO129A20=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=RN8YOLUV8gEKc+AyiCT/ftGUAoXNDT0DJ5CuGmHCjLmYz6q2zJx9NqcKNV+F9Q6//
-	 XYXRPH8Jf9yxUbCsJCrU0a570yg7EtEfoxiDm0ZwLcxEg4x+1J3Xz/P557zioileje
-	 EcSmxfxsZHFuzgVVy5RNrvZe00FE7rK9MHWWi+x461gN1RHEzoCg6QUIBfaOE02h2H
-	 ox4gMmAtd5YvB+9JxT6k9vd5Kmoaz7Obj9l4CoGZjF78CPFFwzSH265At2annbgD3u
-	 HvaG0ZdKKB1rOxTlagS/AU3vHagQoCDRiaWRYPVjQ4rRJUSe71LnQlTcWQINaSc/+8
-	 A/y+n8r+/cUJA==
-Received: from johan by xi.lan with local (Exim 4.94.2)
-	(envelope-from <johan@kernel.org>)
-	id 1pPo1h-00068l-QX; Wed, 08 Feb 2023 18:14:33 +0100
-Date: Wed, 8 Feb 2023 18:14:33 +0100
-From: Johan Hovold <johan@kernel.org>
-To: Abel Vesa <abel.vesa@linaro.org>
-Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
+	id 1pPokU-00GXOi-DX
+	for linux-phy@lists.infradead.org; Wed, 08 Feb 2023 18:00:51 +0000
+Received: by mail-wm1-x332.google.com with SMTP id u10so10858486wmj.3
+        for <linux-phy@lists.infradead.org>; Wed, 08 Feb 2023 10:00:47 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=JM97LRzJuNIDSLoCISaLbKYkgeCT4D6L+oW9RVZ90Yk=;
+        b=AhK6w+HaNN9UcUU9RClSrVf/MNf3cBzGVk1j/L/hIllRp/hGqKN2c785P5ZvV2M4HF
+         glhT2PFlq/5knVylSOKQZH02xFnxnxj1nGCMgEKP0ld90BWvS/qhKK1V7TsVXGrrpkW4
+         LRYIBOdPOeDA7TnL5z2imhnxyQHUiVpP+bb92NHbEbrxZUK1E9KW1lcdLsf6bsNZoyHX
+         5Te/MV+LWIpLnGro18mO90JkeZJ6JQxE1KDQnU2iHbjWnAqy1MxSvCBXnkDvaGCIFVB9
+         EogvRjNOUJWsobUduJ7b6CUAYll0c6EDP0HyZbLva0R1Sb/bcUbrVdcuoc+iHuOWtz65
+         tNBg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=JM97LRzJuNIDSLoCISaLbKYkgeCT4D6L+oW9RVZ90Yk=;
+        b=nuuwtNxu7tZJhQ1uYTe5z/d101M8KJKl0N8M7sxE6kFwWs97jLCrH+wljjXikgxQbQ
+         HCX5sxzvAnWbHPXGgkRplqn5MRgJKc2RdJAEcRjgBTd4rzOiws7Ag1jCIRixawY+OkZR
+         HxbjNoJas/yA6/HOUaAfDaif075ddrm8Z1Gv+JmdVT///YN40pt5ME+dDjzUWm1DY04e
+         MZ+b66vjUppUixfADPaIfvx95trCwrr7Y0THB5JWaKRNqu3xoh4D32s0cnutbwDqWYhR
+         wNaUIrdheCDjER1pzwDx2YSOyw/MWi85sEvRegv5K9xQuSrkWE5ntjipaEL/apy+rgdu
+         fnOA==
+X-Gm-Message-State: AO0yUKVxGinaeh4omE6B9MkKUKN7RUtfGuVUjv9WI74HLv5HxqHzDKE6
+	fsxaiwZgGZ/nqBZyBiBwOgNszg==
+X-Google-Smtp-Source: AK7set8Y152Z3sTAFY7YTLliHoMt3ktxih4kVHF3bHkaEDdbrPJEuvTVoUiiwlapKRteWSDw4GPGCA==
+X-Received: by 2002:a05:600c:713:b0:3df:e4b4:de69 with SMTP id i19-20020a05600c071300b003dfe4b4de69mr7318950wmn.27.1675879246674;
+        Wed, 08 Feb 2023 10:00:46 -0800 (PST)
+Received: from hackbox.lan ([94.52.112.99])
+        by smtp.gmail.com with ESMTPSA id k20-20020a05600c169400b003dc54eef495sm2370286wmn.24.2023.02.08.10.00.45
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 08 Feb 2023 10:00:45 -0800 (PST)
+From: Abel Vesa <abel.vesa@linaro.org>
+To: Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
 	Konrad Dybcio <konrad.dybcio@linaro.org>,
 	Rob Herring <robh@kernel.org>,
-	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
+	=?UTF-8?q?Krzysztof=20Wilczy=C5=84ski?= <kw@linux.com>,
 	Bjorn Helgaas <bhelgaas@google.com>,
 	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
 	Lorenzo Pieralisi <lpieralisi@kernel.org>,
-	"vkoul@kernel.org" <vkoul@kernel.org>,
+	"vkoul@kernel.org"  <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
 	Manivannan Sadhasivam <mani@kernel.org>,
-	Johan Hovold <johan+linaro@kernel.org>,
-	linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	Johan Hovold <johan+linaro@kernel.org>
+Cc: linux-arm-msm@vger.kernel.org,
+	linux-pci@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
 	Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
-Subject: Re: [PATCH v7 10/12] PCI: qcom: Add SM8550 PCIe support
-Message-ID: <Y+PYeRo8X8ugXyoi@hovoldconsulting.com>
-References: <20230203081807.2248625-1-abel.vesa@linaro.org>
- <20230203081807.2248625-11-abel.vesa@linaro.org>
- <Y9zYpE/GnxUqnIyq@hovoldconsulting.com>
- <Y+EYhe/xYSFpI1Yn@linaro.org>
- <Y+PQYxh4t/ytOe3+@hovoldconsulting.com>
- <Y+PXeYrBBL3QaznM@linaro.org>
- <Y+PXrFxobTf/+X+U@linaro.org>
+Subject: [PATCH v9 00/11] sm8550: Add PCIe HC and PHY support
+Date: Wed,  8 Feb 2023 20:00:09 +0200
+Message-Id: <20230208180020.2761766-1-abel.vesa@linaro.org>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <Y+PXrFxobTf/+X+U@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230208_091400_474034_2E0244C9 
-X-CRM114-Status: GOOD (  33.26  )
+X-CRM114-CacheID: sfid-20230208_100050_482707_49503E4B 
+X-CRM114-Status: UNSURE (   9.23  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,84 +102,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Feb 08, 2023 at 07:11:08PM +0200, Abel Vesa wrote:
-> On 23-02-08 19:10:17, Abel Vesa wrote:
-> > On 23-02-08 17:40:03, Johan Hovold wrote:
-> > > On Mon, Feb 06, 2023 at 05:11:01PM +0200, Abel Vesa wrote:
-> > > > On 23-02-03 10:49:24, Johan Hovold wrote:
-> > > > > On Fri, Feb 03, 2023 at 10:18:05AM +0200, Abel Vesa wrote:
-> > > > > > Add compatible for both PCIe found on SM8550.
-> > > > > > Also add the cnoc_pcie_sf_axi clock needed by the SM8550.
-> > > > > 
-> > > > > nit: You're now also adding 'noc_aggr'
-> > > > > 
-> > > > > > Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
-> > > > > > Reviewed-by: Konrad Dybcio <konrad.dybcio@linaro.org>
-> > > > > > Reviewed-by: Manivannan Sadhasivam <mani@kernel.org>
-> > > > > > ---
-> > > 
-> > > > > > @@ -182,10 +182,10 @@ struct qcom_pcie_resources_2_3_3 {
-> > > > > >  
-> > > > > >  /* 6 clocks typically, 7 for sm8250 */
-> > > > > >  struct qcom_pcie_resources_2_7_0 {
-> > > > > > -	struct clk_bulk_data clks[12];
-> > > > > > +	struct clk_bulk_data clks[14];
-> > > > > >  	int num_clks;
-> > > > > >  	struct regulator_bulk_data supplies[2];
-> > > > > > -	struct reset_control *pci_reset;
-> > > > > > +	struct reset_control *rst;
-> > > > > 
-> > > > > Please name this one 'reset' or 'resets' (e.g. to avoid hard to parse
-> > > > > things like res->rst below).
-> > > > 
-> > > > Well, it would then be inconsitent with 2_3_3 and 2_9_0, which both use
-> > > > rst.
-> > > 
-> > > Yeah, I saw that. Fortunately these resources are completely
-> > > independent, but whatever.
-> > 
-> > Will do it in the next version then.
+For changelogs please look at each patch individually.
 
-Or just leave it as is.
+Abel Vesa (11):
+  dt-bindings: phy: Add QMP PCIe PHY comptible for SM8550
+  phy: qcom-qmp: pcs: Add v6 register offsets
+  phy: qcom-qmp: pcs: Add v6.20 register offsets
+  phy: qcom-qmp: pcs-pcie: Add v6 register offsets
+  phy: qcom-qmp: pcs-pcie: Add v6.20 register offsets
+  phy: qcom-qmp: qserdes-txrx: Add v6.20 register offsets
+  phy: qcom-qmp: qserdes-lane-shared: Add v6 register offsets
+  phy: qcom-qmp-pcie: Add support for SM8550 g3x2 and g4x2 PCIEs
+  dt-bindings: PCI: qcom: Add SM8550 compatible
+  PCI: qcom: Add SM8550 PCIe support
+  arm64: dts: qcom: sm8550: Fix PCIe PHYs and controllers nodes
 
-> > > > > >  };
-> > > > > >  
-> > > > > >  struct qcom_pcie_resources_2_9_0 {
-> > > > > > @@ -1177,9 +1177,9 @@ static int qcom_pcie_get_resources_2_7_0(struct qcom_pcie *pcie)
-> > > > > >  	unsigned int idx;
-> > > > > >  	int ret;
-> > > > > >  
-> > > > > > -	res->pci_reset = devm_reset_control_get_exclusive(dev, "pci");
-> > > > > > -	if (IS_ERR(res->pci_reset))
-> > > > > > -		return PTR_ERR(res->pci_reset);
-> > > > > > +	res->rst = devm_reset_control_array_get_exclusive(dev);
-> > > > > > +	if (IS_ERR(res->rst))
-> > > > > > +		return PTR_ERR(res->rst);
-> > > > > 
-> > > > > So the reset array implementation apparently both asserts and deasserts
-> > > > > the resets in the order specified in DT (i.e. does not deassert in
-> > > > > reverse order).
-> > > > > 
-> > > > > Is that ok also for the new "pci" and "link_down" resets?
-> > > > 
-> > > > According to the HPG, yes, this is perfectly fine. It specifically says
-> > > > to assert the pcie reset and then continues saying to assert the
-> > > > link_down reset.
-> > > 
-> > > Ok, but that doesn't really say anything about whether it's ok to
-> > > *deassert* them in the same order, which was what I asked about.
-> > 
-> > Actually, what I wanted to say is that the HPG says something like this:
-> > 
-> > "assert pcie reset, then assert link_down"
-> > 
-> > and then at the end it literaly repeats the same phrase.
-> 
-> but uses deassert instead of assert ...
+ .../devicetree/bindings/pci/qcom,pcie.yaml    |  40 ++
+ .../phy/qcom,sc8280xp-qmp-pcie-phy.yaml       |  30 +-
+ arch/arm64/boot/dts/qcom/sm8550-mtp.dts       |  10 +
+ arch/arm64/boot/dts/qcom/sm8550.dtsi          |  52 +--
+ drivers/pci/controller/dwc/pcie-qcom.c        |  25 +-
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c      | 346 +++++++++++++++++-
+ .../phy/qualcomm/phy-qcom-qmp-pcs-pcie-v6.h   |  15 +
+ .../qualcomm/phy-qcom-qmp-pcs-pcie-v6_20.h    |  23 ++
+ drivers/phy/qualcomm/phy-qcom-qmp-pcs-v6.h    |  16 +
+ drivers/phy/qualcomm/phy-qcom-qmp-pcs-v6_20.h |  18 +
+ .../phy-qcom-qmp-qserdes-ln-shrd-v6.h         |  32 ++
+ .../phy-qcom-qmp-qserdes-txrx-v6_20.h         |  45 +++
+ drivers/phy/qualcomm/phy-qcom-qmp.h           |   6 +
+ 13 files changed, 611 insertions(+), 47 deletions(-)
+ create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v6.h
+ create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v6_20.h
+ create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-pcs-v6.h
+ create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-pcs-v6_20.h
+ create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-qserdes-ln-shrd-v6.h
+ create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-v6_20.h
 
-Ok, then it seems to match the implementation. Thanks for clarifying.
+-- 
+2.34.1
 
-Johan
 
 -- 
 linux-phy mailing list
