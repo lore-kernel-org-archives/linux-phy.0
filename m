@@ -4,78 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 752C7C05027
-	for <linux-phy@archiver.kernel.org>; Thu,  9 Feb 2023 14:35:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AEDDEC05027
+	for <linux-phy@archiver.kernel.org>; Fri, 10 Feb 2023 06:18:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5j+ld4G9pOXg7lWc9o86pvTIuPpkPBwGNOWpi74kAtY=; b=jnhTRFHHUE24t6
-	LV8yUYZQyc5BGLL3Sp/I7OBgk1Eh2+bTZYTcnR/uY2bS5cHb/yraK19MzRvor9M/hNDeiTp/1y/W9
-	a5HG4sIn6rP5SXRetb9bXAq8t7n0fzZzPhHtYB6Bz9zNqqRXxZP9TLgPCLdRZ+Y6josWwqV04/ZqN
-	bk9F3mVon1VTYT6myuv1dPCf7kVBXLpNTAF5Q+vk5AnyIz5t6LlmTmnXNtGd2VjQB/0iB6VRgYrOE
-	p8BjXUDbIMJG7suixtIWLNpVl597SyawjPCLSs3gVlSS9+zoS/kFiQEHbz0SUCT8taCcLAnvcCpEp
-	BAN7L4Tjr3ga+oBJ/o9A==;
+	List-Owner; bh=U7mW71UkbjgccS6WoAux3L1x3WeJMJnmk8JKve8qYCg=; b=Kc/DYT/D8Mms5r
+	mDbWSgyrxpWDPAZIpq3LHTBUCTZz9+MxrgVjDK/P5poh/cYWpeXvw0LQCSCVAFHw1cZi8Bp4DuHtX
+	vvFgmKt6GXdbwH2/wLc078uhpuVsdQ4fhWI/hTdVrsBEdKH7jLI0xtGGC8WfvwFtA5rHiIAOxbs1F
+	c8sYZrK0g/hyVKQ86TircwL2bTDb2bGyhGhd4koicRdkr12sL2+qI4Bos4SF+XvgolzIfzKCQeYsp
+	Sbsk5UVs7jXd2LEZ5k9kyJnSjMB8s+Ygbwf8g6ocYQXdwpndfBbeXOF6M9EC6GmN6Qqz2iPQbzb7h
+	h7fa/twdToe3GYnHMjEQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pQ80w-001zwv-VY; Thu, 09 Feb 2023 14:35:06 +0000
-Received: from vmi888983.contaboserver.net ([149.102.157.145] helo=amity.mint.lgbt)
-	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pQ80t-001zuF-G3
-	for linux-phy@lists.infradead.org; Thu, 09 Feb 2023 14:35:05 +0000
-Received: from amity.mint.lgbt (mx.mint.lgbt [127.0.0.1])
-	by amity.mint.lgbt (Postfix) with ESMTP id 4PCKBx3gntz1S5HL
-	for <linux-phy@lists.infradead.org>; Thu,  9 Feb 2023 09:34:49 -0500 (EST)
-Authentication-Results: amity.mint.lgbt (amavisd-new);
-	dkim=pass (2048-bit key) reason="pass (just generated, assumed good)"
-	header.d=mint.lgbt
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=mint.lgbt; h=
-	content-transfer-encoding:content-type:in-reply-to:from
-	:references:to:content-language:subject:user-agent:mime-version
-	:date:message-id; s=dkim; t=1675953288; x=1676817289; bh=OtwHaQd
-	43ev0CTnwqIm/FUCsnnqbo5VRlxBW82fmyng=; b=H45rGLKnOkvzxImDk3fnZ7B
-	PaQmSau8WRULXMxDKa2GyRi0GarWzEdFJm6F234o6B1a1pSKi/NGa8vap4goDoQG
-	RoLr4F4qpmeWfor/YEdkU8RqEdgt/rh5I0FnuYt1af0u0bp4/WRXvdI3/qkF+bQT
-	RGIrEs/k5zE2wbVid1TkcQFJ0aPmuuWo+K0J03jhijsN5U0UC5AM79z3PC019cN0
-	FReRT4iwjQyZax9lEdnIZggVjpt42L1vum6bewMifqlXBdUgm9ByVRFuRIXiLVgd
-	QyI+LReM82T+ip68VXqcbtDFig+3Nk66rfLhHi3VSIcDOEwS3ZIQnjJ98UVyvAg=
-	=
-X-Virus-Scanned: amavisd-new at amity.mint.lgbt
-Received: from amity.mint.lgbt ([127.0.0.1])
-	by amity.mint.lgbt (amity.mint.lgbt [127.0.0.1]) (amavisd-new, port 10026)
-	with ESMTP id kmM-3n9Ur5Lm for <linux-phy@lists.infradead.org>;
-	Thu,  9 Feb 2023 09:34:48 -0500 (EST)
-Received: from [192.168.4.25] (unknown [190.196.95.28])
-	by amity.mint.lgbt (Postfix) with ESMTPSA id 4PCKBY4Xnbz1S5Gh;
-	Thu,  9 Feb 2023 09:34:21 -0500 (EST)
-Message-ID: <bb6f8a51-cec8-02cc-8ac1-3cd714a2e59a@mint.lgbt>
-Date: Thu, 9 Feb 2023 11:34:17 -0300
+	id 1pQMjZ-004Qrq-3y; Fri, 10 Feb 2023 06:18:09 +0000
+Received: from ex01.ufhost.com ([61.152.239.75])
+	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
+	id 1pQMjT-004Qk8-Li; Fri, 10 Feb 2023 06:18:07 +0000
+Received: from EXMBX165.cuchost.com (unknown [175.102.18.54])
+	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
+	(Client CN "EXMBX165", Issuer "EXMBX165" (not verified))
+	by ex01.ufhost.com (Postfix) with ESMTP id 3866124E26A;
+	Fri, 10 Feb 2023 14:17:17 +0800 (CST)
+Received: from EXMBX162.cuchost.com (172.16.6.72) by EXMBX165.cuchost.com
+ (172.16.6.75) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Fri, 10 Feb
+ 2023 14:17:17 +0800
+Received: from ubuntu.localdomain (183.27.96.33) by EXMBX162.cuchost.com
+ (172.16.6.72) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Fri, 10 Feb
+ 2023 14:17:16 +0800
+From: Changhuang Liang <changhuang.liang@starfivetech.com>
+To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh+dt@kernel.org>, Krzysztof Kozlowski
+	<krzysztof.kozlowski+dt@linaro.org>, Emil Renner Berthing <kernel@esmil.dk>,
+	Conor Dooley <conor@kernel.org>, Paul Walmsley <paul.walmsley@sifive.com>,
+	Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>,
+	Philipp Zabel <p.zabel@pengutronix.de>
+CC: Jack Zhu <jack.zhu@starfivetech.com>, Changhuang Liang
+	<changhuang.liang@starfivetech.com>, <linux-phy@lists.infradead.org>,
+	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+	<linux-riscv@lists.infradead.org>
+Subject: [PATCH v1 1/4] riscv: dts: starfive: jh7110: Add aon syscon node
+Date: Thu, 9 Feb 2023 22:17:10 -0800
+Message-ID: <20230210061713.6449-2-changhuang.liang@starfivetech.com>
+X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20230210061713.6449-1-changhuang.liang@starfivetech.com>
+References: <20230210061713.6449-1-changhuang.liang@starfivetech.com>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.7.1
-Subject: Re: [PATCH v6 3/6] phy: qcom-qmp: Add SM6125 UFS PHY support
-Content-Language: en-US
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Cc: agross@kernel.org, andersson@kernel.org, konrad.dybcio@linaro.org,
- robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org, vkoul@kernel.org,
- kishon@kernel.org, alim.akhtar@samsung.com, avri.altman@wdc.com,
- bvanassche@acm.org, keescook@chromium.org, tony.luck@intel.com,
- gpiccoli@igalia.com, ~postmarketos/upstreaming@lists.sr.ht,
- linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-scsi@vger.kernel.org, linux-hardening@vger.kernel.org,
- phone-devel@vger.kernel.org, martin.botka@somainline.org,
- marijn.suijten@somainline.org
-References: <20230108195336.388349-1-they@mint.lgbt>
- <20230108195336.388349-4-they@mint.lgbt>
- <CAA8EJpp-RwPOv61MtoXYb3Tuy5LDWWBCvYSrGUOvg8vWhid_tw@mail.gmail.com>
-From: Lux Aliaga <they@mint.lgbt>
-In-Reply-To: <CAA8EJpp-RwPOv61MtoXYb3Tuy5LDWWBCvYSrGUOvg8vWhid_tw@mail.gmail.com>
+X-Originating-IP: [183.27.96.33]
+X-ClientProxiedBy: EXCAS064.cuchost.com (172.16.6.24) To EXMBX162.cuchost.com
+ (172.16.6.72)
+X-YovoleRuleAgent: yovoleflag
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230209_063503_726256_A1A27FFC 
-X-CRM114-Status: GOOD (  17.79  )
+X-CRM114-CacheID: sfid-20230209_221804_309354_899301CB 
+X-CRM114-Status: UNSURE (   9.10  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,63 +72,37 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 13/01/2023 16:31, Dmitry Baryshkov wrote:
+Add aon syscon node for the Starfive JH7110 SoC. It can be used by
+other modules such as DPHY.
 
-> On Sun, 8 Jan 2023 at 21:54, Lux Aliaga <they@mint.lgbt> wrote:
->> The SM6125 UFS PHY is compatible with the one from SM6115. Add a
->> compatible for it and modify the config from SM6115 to make them
->> compatible with the SC8280XP binding
->>
->> Signed-off-by: Lux Aliaga <they@mint.lgbt>
->> Reviewed-by: Martin Botka <martin.botka@somainline.org>
->> ---
->>   drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 5 +++++
->>   1 file changed, 5 insertions(+)
->>
->> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
->> index 318eea35b972..f33c84578940 100644
->> --- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
->> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
->> @@ -693,6 +693,8 @@ static const struct qmp_phy_cfg sdm845_ufsphy_cfg = {
->>   static const struct qmp_phy_cfg sm6115_ufsphy_cfg = {
->>          .lanes                  = 1,
->>
->> +       .offsets                = &qmp_ufs_offsets_v5,
-> Please don't randomly reuse generation-specific structures. This
-> structure is clearly related to v5, while the PHY is from the v2
-> generation.
+Signed-off-by: Changhuang Liang <changhuang.liang@starfivetech.com>
+---
+ arch/riscv/boot/dts/starfive/jh7110.dtsi | 5 +++++
+ 1 file changed, 5 insertions(+)
 
-I'm a bit confused here. When referencing back to downstream the driver 
-used has the suffix "v3-660". Should I use that suffix to name these 
-offsets? Because I'm not too sure if this is from the v2 generation due 
-to how it's named there.
-
->> +
->>          .serdes_tbl             = sm6115_ufsphy_serdes_tbl,
->>          .serdes_tbl_num         = ARRAY_SIZE(sm6115_ufsphy_serdes_tbl),
->>          .tx_tbl                 = sm6115_ufsphy_tx_tbl,
->> @@ -1172,6 +1174,9 @@ static const struct of_device_id qmp_ufs_of_match_table[] = {
->>          }, {
->>                  .compatible = "qcom,sm6115-qmp-ufs-phy",
->>                  .data = &sm6115_ufsphy_cfg,
->> +       }, {
->> +               .compatible = "qcom,sm6125-qmp-ufs-phy",
->> +               .data = &sm6115_ufsphy_cfg,
->>          }, {
->>                  .compatible = "qcom,sm6350-qmp-ufs-phy",
->>                  .data = &sdm845_ufsphy_cfg,
->> --
->> 2.39.0
->>
->
+diff --git a/arch/riscv/boot/dts/starfive/jh7110.dtsi b/arch/riscv/boot/dts/starfive/jh7110.dtsi
+index cfbaff4ea64b..bce3e407ab60 100644
+--- a/arch/riscv/boot/dts/starfive/jh7110.dtsi
++++ b/arch/riscv/boot/dts/starfive/jh7110.dtsi
+@@ -251,6 +251,11 @@ soc {
+ 		#size-cells = <2>;
+ 		ranges;
+ 
++		aon_syscon: aon_syscon@17010000 {
++			compatible = "syscon";
++			reg = <0x0 0x17010000 0x0 0x1000>;
++		};
++
+ 		clint: clint@2000000 {
+ 			compatible = "starfive,jh7110-clint", "sifive,clint0";
+ 			reg = <0x0 0x2000000 0x0 0x10000>;
 -- 
-Lux Aliaga
-https://nixgoat.me/
+2.25.1
 
 
 -- 
