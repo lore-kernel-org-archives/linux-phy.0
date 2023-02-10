@@ -4,65 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F2BC1C636CD
-	for <linux-phy@archiver.kernel.org>; Fri, 10 Feb 2023 18:29:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7A694C05027
+	for <linux-phy@archiver.kernel.org>; Fri, 10 Feb 2023 22:43:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DRcyFpXM56MFTA7VpRl2j+yCJ7xXjHquZCQR0a/JxXQ=; b=3B6Pcpnj9Ppcp6
-	9lfgHApn43ZqnaRj7DFHLWo/pV8PQVQJhFb84rz83S1dy4FPVg3gSQEHkHGK+9xPMjalNfYm9vRko
-	UkFXsDuePoAUdq0+RK+5bZCugZRFwLq1E7dvyKEjUZ+00ObW3y5chCI63W4z0+4VjM+QZQSe9rgXN
-	DaM/kNfkbHyZkDiRepuTJoqMaFatq4yStuZip61Mo0z9thupx3Tmqa/zj+4fExmCmhBJ9IAs7qFex
-	ifIR+zLI2iRa5eyQPN4ceizxTZ1vuQYKAIua/gNlxoLqIIHr+X2uCPmdr8Vvizj4uWloc6Wxw6T07
-	Hf8iDU2ts1ETiOu4HMzw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=J8cAa/gmi0BAPNjzIhjFWa7A2I8Dz0Yr8gAEWYNMC/0=; b=GS58cjVu6ws5Cy
+	IXvn8a/N59lsWrIeEF2P0qwCsZHF4Wtf5YSDD1ZV6j44mxIRclcImzJW2Aso+b+vk7B4qCJYG+VKG
+	knkhbRoVqx+WOGsx3470qzbIvIG7u8u0hE9oaEFgxrHhYUho7hMWSht5e81TkA8aXE/CuqExuyqbN
+	gI/8MmFhvWEind4NltRriIO9g9jHUghHeW13h4DJ6TNuQh5kUlIIV9Tq2oT8kmUFfZz8RlmUiCGkJ
+	ZNFY1X3aZMndr3DHqFwZtxjywP+ui9q2m7xbcBzFbqm+UQtIDlrfgsbJa5FudtPNjaKYDy14dRiCR
+	3TDbgKqzGOgZ0pXy51vg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pQY9b-006wcl-9Z; Fri, 10 Feb 2023 18:29:47 +0000
-Received: from mail-oi1-f176.google.com ([209.85.167.176])
+	id 1pQc78-007oX6-FI; Fri, 10 Feb 2023 22:43:30 +0000
+Received: from pv50p00im-zteg10021301.me.com ([17.58.6.46])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pQY9X-006waZ-GU; Fri, 10 Feb 2023 18:29:45 +0000
-Received: by mail-oi1-f176.google.com with SMTP id dt8so5222030oib.0;
-        Fri, 10 Feb 2023 10:29:42 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=wGTEo37sO/PejdrEzawXo41Wh2Us1e4LKILpN2RdcKM=;
-        b=uL8aowhiiu42u/k7uIse6dN36Q2C0gYTOK0sbu1g92TKoPaafDfjenjhaGeewrKVvR
-         8Ww6F/D6XtZT1AuCuzmrXaC8nulRWvMNASKvBk3WhzaFI5QMWqJ16XIuJ3wrtq1Y8XBd
-         pOLQTPlcV93xhg0q+K8p4pW812QxcJpeX86k16Yr1PnhrxgKbQGRMwwWillzAdi0aJ7L
-         Fqywz10Bd02RgKEG/faHYewg0Dkc7h3Pyb5742+3H4HymXNzAHdeKOn9CtG5cL9zNnma
-         Mi10zLFalaGatsZa4ey6IeRSpgIvwEMTy77cM4ORIk5NBelUb/3WRRh4mFC+aWkeo7IE
-         HhoQ==
-X-Gm-Message-State: AO0yUKXOPv4S1e2nkZfAriNNYyFhsMSA1THq9SiFJEvntcWBoIopBBUj
-	Icbd3+lDMLUBNAHUi8cdOQ==
-X-Google-Smtp-Source: AK7set/47StQR2IteFFtY5K4A8e4jlFxeqFxgq613Kt0yzg/tmsRzIzQLGKF92qW8nmFbDRMVTy8Vw==
-X-Received: by 2002:a05:6808:616:b0:364:862d:29c5 with SMTP id y22-20020a056808061600b00364862d29c5mr7107671oih.26.1676053776722;
-        Fri, 10 Feb 2023 10:29:36 -0800 (PST)
-Received: from robh_at_kernel.org (66-90-144-107.dyn.grandenetworks.net. [66.90.144.107])
-        by smtp.gmail.com with ESMTPSA id q2-20020a0568080ec200b0037d6c3fc8aasm616760oiv.45.2023.02.10.10.29.35
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 10 Feb 2023 10:29:36 -0800 (PST)
-Received: (nullmailer pid 2916782 invoked by uid 1000);
-	Fri, 10 Feb 2023 18:29:35 -0000
-Date: Fri, 10 Feb 2023 12:29:35 -0600
-From: Rob Herring <robh@kernel.org>
-To: Changhuang Liang <changhuang.liang@starfivetech.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Emil Renner Berthing <kernel@esmil.dk>, Conor Dooley <conor@kernel.org>, Paul Walmsley <paul.walmsley@sifive.com>, Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>, Philipp Zabel <p.zabel@pengutronix.de>, Jack Zhu <jack.zhu@starfivetech.com>, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, linux-riscv@lists.infradead.org
-Subject: Re: [PATCH v1 2/4] dt-bindings: phy: Add starfive,jh7110-dphy-rx
-Message-ID: <20230210182935.GA2914589-robh@kernel.org>
-References: <20230210061713.6449-1-changhuang.liang@starfivetech.com>
- <20230210061713.6449-3-changhuang.liang@starfivetech.com>
+	id 1pQc75-007oWF-Bx
+	for linux-phy@lists.infradead.org; Fri, 10 Feb 2023 22:43:28 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=me.com; s=1a1hai;
+	t=1676069004; bh=Fv7mdRF7zrNYaJl5woVp1AOj9fUSqYs11PzimZb+a/g=;
+	h=From:To:Subject:Date:Message-Id:MIME-Version;
+	b=qZZ3sezLnixcvTQCrbSIpe0uyU1jvFK2NdrLRDb1UniXiboT5EyHcdp1Yoid5ynpS
+	 F4u3tyJkRxuUcgazaQv5rPj1Nd2vdKr4QtbJDRupifBsEmAcsWysdBaVKq7Xk6qyX5
+	 2dBU2hCc6tFLqd48HurfVGiL44vHX+02BQ2M5Peu2vxNDcb0Dkli9Zk774lns3eCag
+	 3NnLg0TSBhaJZhgMPOto0zqXHv7BhiNVep4CjmTnHnpwFlClO0ukFk+zkkW2/t3DEt
+	 5pyQ1hLECpNbimMFRvRGfpCQigAZ+8TnM6y24B7kdJ01csKm/OALCcfD4ppo0QqnDG
+	 SzvcGeLGeReRw==
+Received: from localhost (pv50p00im-dlb-asmtp-mailmevip.me.com [17.56.9.10])
+	by pv50p00im-zteg10021301.me.com (Postfix) with ESMTPSA id 7FFF95005A5;
+	Fri, 10 Feb 2023 22:43:23 +0000 (UTC)
+From: Alain Volmat <avolmat@me.com>
+To: Patrice Chotard <patrice.chotard@foss.st.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>
+Cc: Alain Volmat <avolmat@me.com>,
+	linux-arm-kernel@lists.infradead.org,
+	linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH] phy: st: miphy28lp: use _poll_timeout functions for waits
+Date: Fri, 10 Feb 2023 23:43:08 +0100
+Message-Id: <20230210224309.98452-1-avolmat@me.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20230210061713.6449-3-changhuang.liang@starfivetech.com>
+X-Proofpoint-ORIG-GUID: rwSaJ4iJr33dmSTHIojCHJT7tlX8GQwb
+X-Proofpoint-GUID: rwSaJ4iJr33dmSTHIojCHJT7tlX8GQwb
+X-Proofpoint-Virus-Version: =?UTF-8?Q?vendor=3Dfsecure_engine=3D1.1.170-22c6f66c430a71ce266a39bfe25bc?=
+ =?UTF-8?Q?2903e8d5c8f:6.0.138,18.0.883,17.0.605.474.0000000_definitions?=
+ =?UTF-8?Q?=3D2022-06-21=5F08:2020-02-14=5F02,2022-06-21=5F08,2020-01-23?=
+ =?UTF-8?Q?=5F02_signatures=3D0?=
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0 bulkscore=0 clxscore=1011
+ mlxscore=0 suspectscore=0 malwarescore=0 phishscore=0 mlxlogscore=851
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2209130000 definitions=main-2302100195
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230210_102943_571937_0EAA4223 
-X-CRM114-Status: GOOD (  19.63  )
+X-CRM114-CacheID: sfid-20230210_144327_451389_0C20C0B1 
+X-CRM114-Status: GOOD (  10.93  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,118 +79,106 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Feb 09, 2023 at 10:17:11PM -0800, Changhuang Liang wrote:
-> Starfive SoC like the jh7110 use a MIPI D-PHY RX controller based on
-> a M31 IP. Add a binding for it.
-> 
-> Signed-off-by: Changhuang Liang <changhuang.liang@starfivetech.com>
-> ---
->  .../bindings/phy/starfive,jh7110-dphy-rx.yaml | 78 +++++++++++++++++++
->  1 file changed, 78 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-rx.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-rx.yaml b/Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-rx.yaml
-> new file mode 100644
-> index 000000000000..1c1e5c7cbee2
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-rx.yaml
-> @@ -0,0 +1,78 @@
-> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/starfive,jh7110-dphy-rx.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Starfive SoC MIPI D-PHY Rx Controller
-> +
-> +maintainers:
-> +  - Jack Zhu <jack.zhu@starfivetech.com>
-> +  - Changhuang Liang <changhuang.liang@starfivetech.com>
-> +
-> +description: |
+This commit introduces _poll_timeout functions usage instead of
+wait loops waiting for a status bit.
 
-Don't need '|'
+Signed-off-by: Alain Volmat <avolmat@me.com>
+---
+ drivers/phy/st/phy-miphy28lp.c | 42 ++++++++--------------------------
+ 1 file changed, 10 insertions(+), 32 deletions(-)
 
-> +  The Starfive SOC has a MIPI CSI D-PHY based on M31 IP use to transfer
-> +  the CSI cameras data.
-> +
-> +properties:
-> +  compatible:
-> +    items:
-> +      - const: "starfive,jh7110-dphy-rx"
+diff --git a/drivers/phy/st/phy-miphy28lp.c b/drivers/phy/st/phy-miphy28lp.c
+index 068160a34f5c..e30305b77f0d 100644
+--- a/drivers/phy/st/phy-miphy28lp.c
++++ b/drivers/phy/st/phy-miphy28lp.c
+@@ -9,6 +9,7 @@
+ 
+ #include <linux/platform_device.h>
+ #include <linux/io.h>
++#include <linux/iopoll.h>
+ #include <linux/kernel.h>
+ #include <linux/module.h>
+ #include <linux/of.h>
+@@ -484,19 +485,11 @@ static inline void miphy28lp_pcie_config_gen(struct miphy28lp_phy *miphy_phy)
+ 
+ static inline int miphy28lp_wait_compensation(struct miphy28lp_phy *miphy_phy)
+ {
+-	unsigned long finish = jiffies + 5 * HZ;
+ 	u8 val;
+ 
+ 	/* Waiting for Compensation to complete */
+-	do {
+-		val = readb_relaxed(miphy_phy->base + MIPHY_COMP_FSM_6);
+-
+-		if (time_after_eq(jiffies, finish))
+-			return -EBUSY;
+-		cpu_relax();
+-	} while (!(val & COMP_DONE));
+-
+-	return 0;
++	return readb_relaxed_poll_timeout(miphy_phy->base + MIPHY_COMP_FSM_6,
++					  val, val & COMP_DONE, 1, 5 * USEC_PER_SEC);
+ }
+ 
+ 
+@@ -805,7 +798,6 @@ static inline void miphy28lp_configure_usb3(struct miphy28lp_phy *miphy_phy)
+ 
+ static inline int miphy_is_ready(struct miphy28lp_phy *miphy_phy)
+ {
+-	unsigned long finish = jiffies + 5 * HZ;
+ 	u8 mask = HFC_PLL | HFC_RDY;
+ 	u8 val;
+ 
+@@ -816,21 +808,14 @@ static inline int miphy_is_ready(struct miphy28lp_phy *miphy_phy)
+ 	if (miphy_phy->type == PHY_TYPE_SATA)
+ 		mask |= PHY_RDY;
+ 
+-	do {
+-		val = readb_relaxed(miphy_phy->base + MIPHY_STATUS_1);
+-		if ((val & mask) != mask)
+-			cpu_relax();
+-		else
+-			return 0;
+-	} while (!time_after_eq(jiffies, finish));
+-
+-	return -EBUSY;
++	return readb_relaxed_poll_timeout(miphy_phy->base + MIPHY_STATUS_1,
++					  val, (val & mask) == mask, 1,
++					  5 * USEC_PER_SEC);
+ }
+ 
+ static int miphy_osc_is_ready(struct miphy28lp_phy *miphy_phy)
+ {
+ 	struct miphy28lp_dev *miphy_dev = miphy_phy->phydev;
+-	unsigned long finish = jiffies + 5 * HZ;
+ 	u32 val;
+ 
+ 	if (!miphy_phy->osc_rdy)
+@@ -839,17 +824,10 @@ static int miphy_osc_is_ready(struct miphy28lp_phy *miphy_phy)
+ 	if (!miphy_phy->syscfg_reg[SYSCFG_STATUS])
+ 		return -EINVAL;
+ 
+-	do {
+-		regmap_read(miphy_dev->regmap,
+-				miphy_phy->syscfg_reg[SYSCFG_STATUS], &val);
+-
+-		if ((val & MIPHY_OSC_RDY) != MIPHY_OSC_RDY)
+-			cpu_relax();
+-		else
+-			return 0;
+-	} while (!time_after_eq(jiffies, finish));
+-
+-	return -EBUSY;
++	return regmap_read_poll_timeout(miphy_dev->regmap,
++					miphy_phy->syscfg_reg[SYSCFG_STATUS],
++					val, val & MIPHY_OSC_RDY, 1,
++					5 * USEC_PER_SEC);
+ }
+ 
+ static int miphy28lp_get_resource_byname(struct device_node *child,
+-- 
+2.34.1
 
-Drop quotes.
-
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    minItems: 3
-> +    maxItems: 3
-
-Just maxItems is enough.
-
-> +
-> +  clock-names:
-> +    items:
-> +      - const: cfg
-> +      - const: ref
-> +      - const: tx
-> +
-> +  resets:
-> +    minItems: 2
-> +    maxItems: 2
-
-Need to define what each reset is.
-
-> +
-> +  starfive,aon-syscon:
-> +    $ref: '/schemas/types.yaml#/definitions/phandle-array'
-
-Drop quotes.
-
-> +    items:
-> +      items:
-> +        - description: phandle of AON SYSCON
-> +        - description: register offset
-> +    description: The register of dphy rx driver can be configured
-> +      by AON SYSCON in this property.
-> +
-> +  "#phy-cells":
-> +    const: 0
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - clocks
-> +  - clock-names
-> +  - resets
-> +  - starfive,aon-syscon
-> +  - "#phy-cells"
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/clock/starfive,jh7110-crg.h>
-> +    #include <dt-bindings/reset/starfive,jh7110-crg.h>
-> +
-> +    dphy@19820000 {
-> +      compatible = "starfive,jh7110-dphy-rx";
-> +      reg = <0x19820000 0x10000>;
-> +      clocks = <&ispcrg JH7110_ISPCLK_M31DPHY_CFGCLK_IN>,
-> +               <&ispcrg JH7110_ISPCLK_M31DPHY_REFCLK_IN>,
-> +               <&ispcrg JH7110_ISPCLK_M31DPHY_TXCLKESC_LAN0>;
-> +      clock-names = "cfg", "ref", "tx";
-> +      resets = <&ispcrg JH7110_ISPRST_M31DPHY_HW>,
-> +               <&ispcrg JH7110_ISPRST_M31DPHY_B09_ALWAYS_ON>;
-> +      starfive,aon-syscon = <&aon_syscon 0x00>;
-> +      #phy-cells = <0>;
-> +    };
-> -- 
-> 2.25.1
-> 
 
 -- 
 linux-phy mailing list
