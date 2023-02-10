@@ -4,63 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 17EB6C636CD
-	for <linux-phy@archiver.kernel.org>; Fri, 10 Feb 2023 17:07:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F2BC1C636CD
+	for <linux-phy@archiver.kernel.org>; Fri, 10 Feb 2023 18:29:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KUomf9pyP6wUKGLCOmoog6yU+G5GazI3hbf8pza7pGY=; b=SzkV/T+ZTTZU2O
-	WgidmXsiv5yC7nf3skDoN7KHFw+PT0zUImnxbJz6KHsk3WAfpZAEvN0oKLCLI2tSFR3P0t9OoM9Sw
-	0cKQCeEaCL3NDk7fhH/9cDlTc5A1iDqkETbw4M8NrX0JTPi0G1QHKVYjCCsC3ezfgWTKkql5uWlab
-	bfHPJv8Yt0nAcqP0fNvcBoEYaBVD3pKUIWIIjK64s9v4pD7y0Etatkazai1MiddZhnRwO+pq3Bkd4
-	PGWNqWcxzOilyValSPsn6M3HrmJdJe7vgwCBz8yFgtYdcPGojmEOq76eGVQfZ0bC4lcj7LSdtPzei
-	s7fxT08Qzkc8Cgy3s4Hw==;
+	List-Owner; bh=DRcyFpXM56MFTA7VpRl2j+yCJ7xXjHquZCQR0a/JxXQ=; b=3B6Pcpnj9Ppcp6
+	9lfgHApn43ZqnaRj7DFHLWo/pV8PQVQJhFb84rz83S1dy4FPVg3gSQEHkHGK+9xPMjalNfYm9vRko
+	UkFXsDuePoAUdq0+RK+5bZCugZRFwLq1E7dvyKEjUZ+00ObW3y5chCI63W4z0+4VjM+QZQSe9rgXN
+	DaM/kNfkbHyZkDiRepuTJoqMaFatq4yStuZip61Mo0z9thupx3Tmqa/zj+4fExmCmhBJ9IAs7qFex
+	ifIR+zLI2iRa5eyQPN4ceizxTZ1vuQYKAIua/gNlxoLqIIHr+X2uCPmdr8Vvizj4uWloc6Wxw6T07
+	Hf8iDU2ts1ETiOu4HMzw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pQWru-006fds-HK; Fri, 10 Feb 2023 17:07:26 +0000
-Received: from sin.source.kernel.org ([145.40.73.55])
+	id 1pQY9b-006wcl-9Z; Fri, 10 Feb 2023 18:29:47 +0000
+Received: from mail-oi1-f176.google.com ([209.85.167.176])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pQWrr-006fcr-T9
-	for linux-phy@lists.infradead.org; Fri, 10 Feb 2023 17:07:25 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by sin.source.kernel.org (Postfix) with ESMTPS id 28E02CE2780;
-	Fri, 10 Feb 2023 17:07:22 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 739A5C433EF;
-	Fri, 10 Feb 2023 17:07:19 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1676048840;
-	bh=8xnEbUe384hDQfmy0gkujDdHwEJmlYJhWIVvttyg4zQ=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=Ouvjvsjfj6FEcd9NqZXZ8enkDcwx7PSljl8SoNYZ3XdcejU2Ioq59FBZk72pqEde5
-	 1XTXzIZQu1jXtC0GOrtJrAz/PDEtzcgwiCzXqnNJtu24eMSn2Ka51C94Q9+mgsBSgi
-	 aW2CsNuMiDqio4/OPNh7kL1Gu/9NgYfenf+xycqfo614duwKZak+U8NJrKkfD3O5tp
-	 VA1FhFw+z2CKlRgLZNt7E4CvmDA84ZH7aZfcTiWWaciYGDYIgyucYLIetUpkA3ptys
-	 bFD/bIWp1VQOZozNk7ahP68U197WBLrXTFcd3fachMu5SAb8w+XC4GQpvoT//MouvD
-	 +hd/0ivyVbzeg==
-Date: Fri, 10 Feb 2023 22:37:16 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Neil Armstrong <neil.armstrong@linaro.org>
-Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
-	Rob Herring <robh@kernel.org>, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] dt-bindings: phy: amlogic,g12a-usb3-pcie-phy: add
- missing optional phy-supply property
-Message-ID: <Y+Z5xOlAeqO6JyIj@matsya>
-References: <20230207-b4-amlogic-amlogic-g12a-usb3-pcie-phy-fix-v1-1-3e437b759549@linaro.org>
+	id 1pQY9X-006waZ-GU; Fri, 10 Feb 2023 18:29:45 +0000
+Received: by mail-oi1-f176.google.com with SMTP id dt8so5222030oib.0;
+        Fri, 10 Feb 2023 10:29:42 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=wGTEo37sO/PejdrEzawXo41Wh2Us1e4LKILpN2RdcKM=;
+        b=uL8aowhiiu42u/k7uIse6dN36Q2C0gYTOK0sbu1g92TKoPaafDfjenjhaGeewrKVvR
+         8Ww6F/D6XtZT1AuCuzmrXaC8nulRWvMNASKvBk3WhzaFI5QMWqJ16XIuJ3wrtq1Y8XBd
+         pOLQTPlcV93xhg0q+K8p4pW812QxcJpeX86k16Yr1PnhrxgKbQGRMwwWillzAdi0aJ7L
+         Fqywz10Bd02RgKEG/faHYewg0Dkc7h3Pyb5742+3H4HymXNzAHdeKOn9CtG5cL9zNnma
+         Mi10zLFalaGatsZa4ey6IeRSpgIvwEMTy77cM4ORIk5NBelUb/3WRRh4mFC+aWkeo7IE
+         HhoQ==
+X-Gm-Message-State: AO0yUKXOPv4S1e2nkZfAriNNYyFhsMSA1THq9SiFJEvntcWBoIopBBUj
+	Icbd3+lDMLUBNAHUi8cdOQ==
+X-Google-Smtp-Source: AK7set/47StQR2IteFFtY5K4A8e4jlFxeqFxgq613Kt0yzg/tmsRzIzQLGKF92qW8nmFbDRMVTy8Vw==
+X-Received: by 2002:a05:6808:616:b0:364:862d:29c5 with SMTP id y22-20020a056808061600b00364862d29c5mr7107671oih.26.1676053776722;
+        Fri, 10 Feb 2023 10:29:36 -0800 (PST)
+Received: from robh_at_kernel.org (66-90-144-107.dyn.grandenetworks.net. [66.90.144.107])
+        by smtp.gmail.com with ESMTPSA id q2-20020a0568080ec200b0037d6c3fc8aasm616760oiv.45.2023.02.10.10.29.35
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 10 Feb 2023 10:29:36 -0800 (PST)
+Received: (nullmailer pid 2916782 invoked by uid 1000);
+	Fri, 10 Feb 2023 18:29:35 -0000
+Date: Fri, 10 Feb 2023 12:29:35 -0600
+From: Rob Herring <robh@kernel.org>
+To: Changhuang Liang <changhuang.liang@starfivetech.com>
+Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Emil Renner Berthing <kernel@esmil.dk>, Conor Dooley <conor@kernel.org>, Paul Walmsley <paul.walmsley@sifive.com>, Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>, Philipp Zabel <p.zabel@pengutronix.de>, Jack Zhu <jack.zhu@starfivetech.com>, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, linux-riscv@lists.infradead.org
+Subject: Re: [PATCH v1 2/4] dt-bindings: phy: Add starfive,jh7110-dphy-rx
+Message-ID: <20230210182935.GA2914589-robh@kernel.org>
+References: <20230210061713.6449-1-changhuang.liang@starfivetech.com>
+ <20230210061713.6449-3-changhuang.liang@starfivetech.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20230207-b4-amlogic-amlogic-g12a-usb3-pcie-phy-fix-v1-1-3e437b759549@linaro.org>
+In-Reply-To: <20230210061713.6449-3-changhuang.liang@starfivetech.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230210_090724_151537_84047502 
-X-CRM114-Status: GOOD (  15.63  )
+X-CRM114-CacheID: sfid-20230210_102943_571937_0EAA4223 
+X-CRM114-Status: GOOD (  19.63  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,45 +79,118 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 07-02-23, 16:03, Neil Armstrong wrote:
-> Add missing optional phy-supply property used to power up PHY regulators.
+On Thu, Feb 09, 2023 at 10:17:11PM -0800, Changhuang Liang wrote:
+> Starfive SoC like the jh7110 use a MIPI D-PHY RX controller based on
+> a M31 IP. Add a binding for it.
 > 
-> Fixes: 87a55485f2fc ("dt-bindings: phy: meson-g12a-usb3-pcie-phy: convert to yaml")
-> Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
+> Signed-off-by: Changhuang Liang <changhuang.liang@starfivetech.com>
 > ---
->  .../devicetree/bindings/phy/amlogic,g12a-usb3-pcie-phy.yaml          | 5 +++++
-
-I dont have this file in my tree, what was this based on?
-
->  1 file changed, 5 insertions(+)
+>  .../bindings/phy/starfive,jh7110-dphy-rx.yaml | 78 +++++++++++++++++++
+>  1 file changed, 78 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-rx.yaml
 > 
-> diff --git a/Documentation/devicetree/bindings/phy/amlogic,g12a-usb3-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/amlogic,g12a-usb3-pcie-phy.yaml
-> index 129d26e99776..3314711292d6 100644
-> --- a/Documentation/devicetree/bindings/phy/amlogic,g12a-usb3-pcie-phy.yaml
-> +++ b/Documentation/devicetree/bindings/phy/amlogic,g12a-usb3-pcie-phy.yaml
-> @@ -35,6 +35,11 @@ properties:
->    "#phy-cells":
->      const: 1
->  
-> +  phy-supply:
-> +    description:
-> +      Phandle to a regulator that provides power to the PHY. This
-> +      regulator will be managed during the PHY power on/off sequence.
+> diff --git a/Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-rx.yaml b/Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-rx.yaml
+> new file mode 100644
+> index 000000000000..1c1e5c7cbee2
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-rx.yaml
+> @@ -0,0 +1,78 @@
+> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/phy/starfive,jh7110-dphy-rx.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
 > +
->  required:
->    - compatible
->    - reg
-> 
-> ---
-> base-commit: 49a8133221c71b935f36a7c340c0271c2a9ee2db
-> change-id: 20230207-b4-amlogic-amlogic-g12a-usb3-pcie-phy-fix-b5daf54fb7d6
-> 
-> Best regards,
-> -- 
-> Neil Armstrong <neil.armstrong@linaro.org>
+> +title: Starfive SoC MIPI D-PHY Rx Controller
+> +
+> +maintainers:
+> +  - Jack Zhu <jack.zhu@starfivetech.com>
+> +  - Changhuang Liang <changhuang.liang@starfivetech.com>
+> +
+> +description: |
 
--- 
-~Vinod
+Don't need '|'
+
+> +  The Starfive SOC has a MIPI CSI D-PHY based on M31 IP use to transfer
+> +  the CSI cameras data.
+> +
+> +properties:
+> +  compatible:
+> +    items:
+> +      - const: "starfive,jh7110-dphy-rx"
+
+Drop quotes.
+
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    minItems: 3
+> +    maxItems: 3
+
+Just maxItems is enough.
+
+> +
+> +  clock-names:
+> +    items:
+> +      - const: cfg
+> +      - const: ref
+> +      - const: tx
+> +
+> +  resets:
+> +    minItems: 2
+> +    maxItems: 2
+
+Need to define what each reset is.
+
+> +
+> +  starfive,aon-syscon:
+> +    $ref: '/schemas/types.yaml#/definitions/phandle-array'
+
+Drop quotes.
+
+> +    items:
+> +      items:
+> +        - description: phandle of AON SYSCON
+> +        - description: register offset
+> +    description: The register of dphy rx driver can be configured
+> +      by AON SYSCON in this property.
+> +
+> +  "#phy-cells":
+> +    const: 0
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - clocks
+> +  - clock-names
+> +  - resets
+> +  - starfive,aon-syscon
+> +  - "#phy-cells"
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/clock/starfive,jh7110-crg.h>
+> +    #include <dt-bindings/reset/starfive,jh7110-crg.h>
+> +
+> +    dphy@19820000 {
+> +      compatible = "starfive,jh7110-dphy-rx";
+> +      reg = <0x19820000 0x10000>;
+> +      clocks = <&ispcrg JH7110_ISPCLK_M31DPHY_CFGCLK_IN>,
+> +               <&ispcrg JH7110_ISPCLK_M31DPHY_REFCLK_IN>,
+> +               <&ispcrg JH7110_ISPCLK_M31DPHY_TXCLKESC_LAN0>;
+> +      clock-names = "cfg", "ref", "tx";
+> +      resets = <&ispcrg JH7110_ISPRST_M31DPHY_HW>,
+> +               <&ispcrg JH7110_ISPRST_M31DPHY_B09_ALWAYS_ON>;
+> +      starfive,aon-syscon = <&aon_syscon 0x00>;
+> +      #phy-cells = <0>;
+> +    };
+> -- 
+> 2.25.1
+> 
 
 -- 
 linux-phy mailing list
