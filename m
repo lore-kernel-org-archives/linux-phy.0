@@ -4,65 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7A694C05027
-	for <linux-phy@archiver.kernel.org>; Fri, 10 Feb 2023 22:43:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 49CFFC636CC
+	for <linux-phy@archiver.kernel.org>; Sat, 11 Feb 2023 13:49:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=J8cAa/gmi0BAPNjzIhjFWa7A2I8Dz0Yr8gAEWYNMC/0=; b=GS58cjVu6ws5Cy
-	IXvn8a/N59lsWrIeEF2P0qwCsZHF4Wtf5YSDD1ZV6j44mxIRclcImzJW2Aso+b+vk7B4qCJYG+VKG
-	knkhbRoVqx+WOGsx3470qzbIvIG7u8u0hE9oaEFgxrHhYUho7hMWSht5e81TkA8aXE/CuqExuyqbN
-	gI/8MmFhvWEind4NltRriIO9g9jHUghHeW13h4DJ6TNuQh5kUlIIV9Tq2oT8kmUFfZz8RlmUiCGkJ
-	ZNFY1X3aZMndr3DHqFwZtxjywP+ui9q2m7xbcBzFbqm+UQtIDlrfgsbJa5FudtPNjaKYDy14dRiCR
-	3TDbgKqzGOgZ0pXy51vg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=bd5FlSCG9VbwUcZ+FKOB+bS9Uf6yk12lMSSZBL5pKNo=; b=UIWm4kRP1sqXLa
+	z7RC47WdhNX8mZShljLxZgosO7aKZyeFxItvp6Unlh7xABELU8uZjxW+JX7Np2ysptxDAjvJUrACE
+	FHJDj81XE/Cfd0QtQEbNoQMq8kyaAjUB/ko7VgQzY4aJo50N3p2VlyG9yLivK8PGiY4nYTy48Qe4i
+	EWwkhSwYYBXsHe5hz9DC5uelpfZm5F6AGvbEmyzRJ4wlRsSRMFcPKpA2o2Xn2h6VRdq19zGemfJc0
+	V3fYn79JuinW0otJjBS+LU+ku9ffzbhm7LmvFYDqrG3ASpp4gXNMzfJ7MM5ZBE8IJJjuTh8o/2W+H
+	w0DweX0jyvrcSWe2Am0g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pQc78-007oX6-FI; Fri, 10 Feb 2023 22:43:30 +0000
-Received: from pv50p00im-zteg10021301.me.com ([17.58.6.46])
+	id 1pQqFp-009ap0-Hx; Sat, 11 Feb 2023 13:49:25 +0000
+Received: from mail-wm1-x32e.google.com ([2a00:1450:4864:20::32e])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pQc75-007oWF-Bx
-	for linux-phy@lists.infradead.org; Fri, 10 Feb 2023 22:43:28 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=me.com; s=1a1hai;
-	t=1676069004; bh=Fv7mdRF7zrNYaJl5woVp1AOj9fUSqYs11PzimZb+a/g=;
-	h=From:To:Subject:Date:Message-Id:MIME-Version;
-	b=qZZ3sezLnixcvTQCrbSIpe0uyU1jvFK2NdrLRDb1UniXiboT5EyHcdp1Yoid5ynpS
-	 F4u3tyJkRxuUcgazaQv5rPj1Nd2vdKr4QtbJDRupifBsEmAcsWysdBaVKq7Xk6qyX5
-	 2dBU2hCc6tFLqd48HurfVGiL44vHX+02BQ2M5Peu2vxNDcb0Dkli9Zk774lns3eCag
-	 3NnLg0TSBhaJZhgMPOto0zqXHv7BhiNVep4CjmTnHnpwFlClO0ukFk+zkkW2/t3DEt
-	 5pyQ1hLECpNbimMFRvRGfpCQigAZ+8TnM6y24B7kdJ01csKm/OALCcfD4ppo0QqnDG
-	 SzvcGeLGeReRw==
-Received: from localhost (pv50p00im-dlb-asmtp-mailmevip.me.com [17.56.9.10])
-	by pv50p00im-zteg10021301.me.com (Postfix) with ESMTPSA id 7FFF95005A5;
-	Fri, 10 Feb 2023 22:43:23 +0000 (UTC)
-From: Alain Volmat <avolmat@me.com>
-To: Patrice Chotard <patrice.chotard@foss.st.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>
-Cc: Alain Volmat <avolmat@me.com>,
-	linux-arm-kernel@lists.infradead.org,
-	linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: [PATCH] phy: st: miphy28lp: use _poll_timeout functions for waits
-Date: Fri, 10 Feb 2023 23:43:08 +0100
-Message-Id: <20230210224309.98452-1-avolmat@me.com>
-X-Mailer: git-send-email 2.34.1
+	id 1pQqFj-009amS-LL
+	for linux-phy@lists.infradead.org; Sat, 11 Feb 2023 13:49:23 +0000
+Received: by mail-wm1-x32e.google.com with SMTP id az4-20020a05600c600400b003dff767a1f1so5972937wmb.2
+        for <linux-phy@lists.infradead.org>; Sat, 11 Feb 2023 05:49:18 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=MnfzBiktksQsGYvw/qPfvChM1tKpn2xHHEtb2ZxpH3A=;
+        b=x1gnL8NKsVz5ZGzWVr/mJF13Vjl3h7Rwmz5oYj5ywVWD4HAFKr2BzYSEfIWbMG4vYz
+         CDYQMgrEGV9FIr4E1OuD6rk7BNROlyjz3Yc16SY6quecz1i5BjrXGplAjrsbFHtjb/8q
+         Wq+sQ249kCvAB0xQM8YfCLwhBA1ipOlztN+gTAsfijIi8AAi29NAWuicCvd8JiM3sIpf
+         D+eGJWOqYtkD0kRRUrgJJgJwFBfv4kM7rcRsZZQm1thFBThFmLxogORlpI21uVq5+bfa
+         Flm6UQ5HaUFTKVkC6HMljqP+javiJ+chQWbdOJ2nG/qpkYEPW3WpwJWak1fcSlIGW0DA
+         iJ2A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=MnfzBiktksQsGYvw/qPfvChM1tKpn2xHHEtb2ZxpH3A=;
+        b=m/cgptDiWEHRBqSNvhqJg4i3wbX/zeYyANdrvjmuIFWU3GJvmj/mx4zFATtYjnWRL8
+         rEiPsXG1Flbg9g2ST83BE3+ijCqrMvG8vkodXYcz+BPrXtOrsNtwBXqs1kJ/Dut+Djs1
+         nYJXbPMD4WHuSa3i2CEMQlYD6Ixt0mttnHO9zMUD9M0bw1SpavftSexQW+BNRGqjYgsg
+         7tkLy8yQeGsyV6bPDHyd3E3nAlTy14HnTHMbT7Grdi1rNc0MT/rq/uYsb71chSqLmM3q
+         /XVRdGvlxrDiD2RkakMp9VmEbDXLRTIJK0VCt5Kqs68zDvHxSfS497SrQubOGu2Qk4In
+         TE/w==
+X-Gm-Message-State: AO0yUKVn5DKi7XqGvGQNPXTOsA0xNpm4htHQl5fqgHEFxEhuMfmPzL9y
+	k9aksBp2LXm3mR9KpeDDK6nZMg==
+X-Google-Smtp-Source: AK7set/LsuYodEEOcidXf0D4o0B3LrUM3jAixoxUL02Fyge8P3l4XD+91MwFH+ek7E8+PWPC0x1n3g==
+X-Received: by 2002:a05:600c:4d97:b0:3e0:c75:7071 with SMTP id v23-20020a05600c4d9700b003e00c757071mr15266644wmp.5.1676123357077;
+        Sat, 11 Feb 2023 05:49:17 -0800 (PST)
+Received: from ?IPV6:2a01:e0a:982:cbb0:e13f:18ce:8394:3c66? ([2a01:e0a:982:cbb0:e13f:18ce:8394:3c66])
+        by smtp.gmail.com with ESMTPSA id t15-20020a5d534f000000b002c55306f6edsm135154wrv.54.2023.02.11.05.49.14
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 11 Feb 2023 05:49:16 -0800 (PST)
+Message-ID: <f727dd7d-08a8-acdf-316c-d571e36a4b1e@linaro.org>
+Date: Sat, 11 Feb 2023 14:49:12 +0100
 MIME-Version: 1.0
-X-Proofpoint-ORIG-GUID: rwSaJ4iJr33dmSTHIojCHJT7tlX8GQwb
-X-Proofpoint-GUID: rwSaJ4iJr33dmSTHIojCHJT7tlX8GQwb
-X-Proofpoint-Virus-Version: =?UTF-8?Q?vendor=3Dfsecure_engine=3D1.1.170-22c6f66c430a71ce266a39bfe25bc?=
- =?UTF-8?Q?2903e8d5c8f:6.0.138,18.0.883,17.0.605.474.0000000_definitions?=
- =?UTF-8?Q?=3D2022-06-21=5F08:2020-02-14=5F02,2022-06-21=5F08,2020-01-23?=
- =?UTF-8?Q?=5F02_signatures=3D0?=
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0 bulkscore=0 clxscore=1011
- mlxscore=0 suspectscore=0 malwarescore=0 phishscore=0 mlxlogscore=851
- adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2209130000 definitions=main-2302100195
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:102.0)
+ Gecko/20100101 Thunderbird/102.6.1
+Subject: Re: [PATCH] dt-bindings: phy: amlogic,g12a-usb3-pcie-phy: add missing
+ optional phy-supply property
+Content-Language: fr, en-GB
+To: Vinod Koul <vkoul@kernel.org>
+Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Rob Herring <robh@kernel.org>, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+References: <20230207-b4-amlogic-amlogic-g12a-usb3-pcie-phy-fix-v1-1-3e437b759549@linaro.org>
+ <Y+Z5xOlAeqO6JyIj@matsya>
+From: Neil Armstrong <neil.armstrong@linaro.org>
+In-Reply-To: <Y+Z5xOlAeqO6JyIj@matsya>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230210_144327_451389_0C20C0B1 
-X-CRM114-Status: GOOD (  10.93  )
+X-CRM114-CacheID: sfid-20230211_054920_626443_C52B683B 
+X-CRM114-Status: GOOD (  11.87  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,113 +93,38 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This commit introduces _poll_timeout functions usage instead of
-wait loops waiting for a status bit.
-
-Signed-off-by: Alain Volmat <avolmat@me.com>
----
- drivers/phy/st/phy-miphy28lp.c | 42 ++++++++--------------------------
- 1 file changed, 10 insertions(+), 32 deletions(-)
-
-diff --git a/drivers/phy/st/phy-miphy28lp.c b/drivers/phy/st/phy-miphy28lp.c
-index 068160a34f5c..e30305b77f0d 100644
---- a/drivers/phy/st/phy-miphy28lp.c
-+++ b/drivers/phy/st/phy-miphy28lp.c
-@@ -9,6 +9,7 @@
- 
- #include <linux/platform_device.h>
- #include <linux/io.h>
-+#include <linux/iopoll.h>
- #include <linux/kernel.h>
- #include <linux/module.h>
- #include <linux/of.h>
-@@ -484,19 +485,11 @@ static inline void miphy28lp_pcie_config_gen(struct miphy28lp_phy *miphy_phy)
- 
- static inline int miphy28lp_wait_compensation(struct miphy28lp_phy *miphy_phy)
- {
--	unsigned long finish = jiffies + 5 * HZ;
- 	u8 val;
- 
- 	/* Waiting for Compensation to complete */
--	do {
--		val = readb_relaxed(miphy_phy->base + MIPHY_COMP_FSM_6);
--
--		if (time_after_eq(jiffies, finish))
--			return -EBUSY;
--		cpu_relax();
--	} while (!(val & COMP_DONE));
--
--	return 0;
-+	return readb_relaxed_poll_timeout(miphy_phy->base + MIPHY_COMP_FSM_6,
-+					  val, val & COMP_DONE, 1, 5 * USEC_PER_SEC);
- }
- 
- 
-@@ -805,7 +798,6 @@ static inline void miphy28lp_configure_usb3(struct miphy28lp_phy *miphy_phy)
- 
- static inline int miphy_is_ready(struct miphy28lp_phy *miphy_phy)
- {
--	unsigned long finish = jiffies + 5 * HZ;
- 	u8 mask = HFC_PLL | HFC_RDY;
- 	u8 val;
- 
-@@ -816,21 +808,14 @@ static inline int miphy_is_ready(struct miphy28lp_phy *miphy_phy)
- 	if (miphy_phy->type == PHY_TYPE_SATA)
- 		mask |= PHY_RDY;
- 
--	do {
--		val = readb_relaxed(miphy_phy->base + MIPHY_STATUS_1);
--		if ((val & mask) != mask)
--			cpu_relax();
--		else
--			return 0;
--	} while (!time_after_eq(jiffies, finish));
--
--	return -EBUSY;
-+	return readb_relaxed_poll_timeout(miphy_phy->base + MIPHY_STATUS_1,
-+					  val, (val & mask) == mask, 1,
-+					  5 * USEC_PER_SEC);
- }
- 
- static int miphy_osc_is_ready(struct miphy28lp_phy *miphy_phy)
- {
- 	struct miphy28lp_dev *miphy_dev = miphy_phy->phydev;
--	unsigned long finish = jiffies + 5 * HZ;
- 	u32 val;
- 
- 	if (!miphy_phy->osc_rdy)
-@@ -839,17 +824,10 @@ static int miphy_osc_is_ready(struct miphy28lp_phy *miphy_phy)
- 	if (!miphy_phy->syscfg_reg[SYSCFG_STATUS])
- 		return -EINVAL;
- 
--	do {
--		regmap_read(miphy_dev->regmap,
--				miphy_phy->syscfg_reg[SYSCFG_STATUS], &val);
--
--		if ((val & MIPHY_OSC_RDY) != MIPHY_OSC_RDY)
--			cpu_relax();
--		else
--			return 0;
--	} while (!time_after_eq(jiffies, finish));
--
--	return -EBUSY;
-+	return regmap_read_poll_timeout(miphy_dev->regmap,
-+					miphy_phy->syscfg_reg[SYSCFG_STATUS],
-+					val, val & MIPHY_OSC_RDY, 1,
-+					5 * USEC_PER_SEC);
- }
- 
- static int miphy28lp_get_resource_byname(struct device_node *child,
--- 
-2.34.1
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+TGUgMTAvMDIvMjAyMyDDoCAxODowNywgVmlub2QgS291bCBhIMOpY3JpdMKgOgo+IE9uIDA3LTAy
+LTIzLCAxNjowMywgTmVpbCBBcm1zdHJvbmcgd3JvdGU6Cj4+IEFkZCBtaXNzaW5nIG9wdGlvbmFs
+IHBoeS1zdXBwbHkgcHJvcGVydHkgdXNlZCB0byBwb3dlciB1cCBQSFkgcmVndWxhdG9ycy4KPj4K
+Pj4gRml4ZXM6IDg3YTU1NDg1ZjJmYyAoImR0LWJpbmRpbmdzOiBwaHk6IG1lc29uLWcxMmEtdXNi
+My1wY2llLXBoeTogY29udmVydCB0byB5YW1sIikKPj4gU2lnbmVkLW9mZi1ieTogTmVpbCBBcm1z
+dHJvbmcgPG5laWwuYXJtc3Ryb25nQGxpbmFyby5vcmc+Cj4+IC0tLQo+PiAgIC4uLi9kZXZpY2V0
+cmVlL2JpbmRpbmdzL3BoeS9hbWxvZ2ljLGcxMmEtdXNiMy1wY2llLXBoeS55YW1sICAgICAgICAg
+IHwgNSArKysrKwo+IAo+IEkgZG9udCBoYXZlIHRoaXMgZmlsZSBpbiBteSB0cmVlLCB3aGF0IHdh
+cyB0aGlzIGJhc2VkIG9uPwoKSXQgaGFzIGJlZW4gcmVuYW1lZCBpbiBhIHByZXZpb3VzIHBhdGNo
+IGJ5IEhlaW5lcjogaHR0cHM6Ly9sb3JlLmtlcm5lbC5vcmcvYWxsLzhkOTYwMDI5LWU5NGQtMjI0
+Yi05MTFmLTAzZTVkZWI0N2ViY0BnbWFpbC5jb20vCgpOZWlsCgo+IAo+PiAgIDEgZmlsZSBjaGFu
+Z2VkLCA1IGluc2VydGlvbnMoKykKPj4KPj4gZGlmZiAtLWdpdCBhL0RvY3VtZW50YXRpb24vZGV2
+aWNldHJlZS9iaW5kaW5ncy9waHkvYW1sb2dpYyxnMTJhLXVzYjMtcGNpZS1waHkueWFtbCBiL0Rv
+Y3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9waHkvYW1sb2dpYyxnMTJhLXVzYjMtcGNp
+ZS1waHkueWFtbAo+PiBpbmRleCAxMjlkMjZlOTk3NzYuLjMzMTQ3MTEyOTJkNiAxMDA2NDQKPj4g
+LS0tIGEvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3BoeS9hbWxvZ2ljLGcxMmEt
+dXNiMy1wY2llLXBoeS55YW1sCj4+ICsrKyBiL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5k
+aW5ncy9waHkvYW1sb2dpYyxnMTJhLXVzYjMtcGNpZS1waHkueWFtbAo+PiBAQCAtMzUsNiArMzUs
+MTEgQEAgcHJvcGVydGllczoKPj4gICAgICIjcGh5LWNlbGxzIjoKPj4gICAgICAgY29uc3Q6IDEK
+Pj4gICAKPj4gKyAgcGh5LXN1cHBseToKPj4gKyAgICBkZXNjcmlwdGlvbjoKPj4gKyAgICAgIFBo
+YW5kbGUgdG8gYSByZWd1bGF0b3IgdGhhdCBwcm92aWRlcyBwb3dlciB0byB0aGUgUEhZLiBUaGlz
+Cj4+ICsgICAgICByZWd1bGF0b3Igd2lsbCBiZSBtYW5hZ2VkIGR1cmluZyB0aGUgUEhZIHBvd2Vy
+IG9uL29mZiBzZXF1ZW5jZS4KPj4gKwo+PiAgIHJlcXVpcmVkOgo+PiAgICAgLSBjb21wYXRpYmxl
+Cj4+ICAgICAtIHJlZwo+Pgo+PiAtLS0KPj4gYmFzZS1jb21taXQ6IDQ5YTgxMzMyMjFjNzFiOTM1
+ZjM2YTdjMzQwYzAyNzFjMmE5ZWUyZGIKPj4gY2hhbmdlLWlkOiAyMDIzMDIwNy1iNC1hbWxvZ2lj
+LWFtbG9naWMtZzEyYS11c2IzLXBjaWUtcGh5LWZpeC1iNWRhZjU0ZmI3ZDYKPj4KPj4gQmVzdCBy
+ZWdhcmRzLAo+PiAtLSAKPj4gTmVpbCBBcm1zdHJvbmcgPG5laWwuYXJtc3Ryb25nQGxpbmFyby5v
+cmc+Cj4gCgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJh
+ZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGlu
+dXgtcGh5Cg==
