@@ -4,81 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4D29CC05027
-	for <linux-phy@archiver.kernel.org>; Tue, 14 Feb 2023 06:17:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B3FA9C6379F
+	for <linux-phy@archiver.kernel.org>; Tue, 14 Feb 2023 07:49:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3nx78Pd3dXsYqu4DtgsbVysAwlXHsr0/4mj/LbWTFHg=; b=coBuadLk28f+5i
-	C64HCA9R37FoL07roKuqXGAGnQz8O01KRD7qtW0QLO/YGeeVrQEcg8OiObQWJdaWseM2ISEdetVLs
-	Ry8BPhdPEYjdQoMhXFGd1vNc4AXCReaAMgEp+8edI9E+3VUl+siskuApkSP0hU6HTKsi8vDEfYnKL
-	kIWReRBvldOQwGB3t1Zutq/+cQwYfnLmclas+11I/vET27X3sLzLF/li+Tz+kiB+85w/TvaOcGyCo
-	uA5uOePk2GEBSJHEtA6dcGTW6TZClZYjZhbDzrBlQcxhaY2Tp9c2lw12jCi2BV6206z5shEBzBBVq
-	3HdgcqpQ3f3/sKcNzw9Q==;
+	List-Owner; bh=cvM1IJBl3cNZYBPOC0hHGFKxwFHS1eaV+Bxtk8inn6A=; b=mU9EKMwT+c6aRW
+	HrQ1qdsTAy426iNbsulikBGSmCBZ4BJueyFe9Si9zPP3+xYEPdnDcHDATi5882yTzO++6D3W08T4V
+	NPBUvaFZYMzlckBFiseQk07OufBu50655PWuTUTbUnX5Z4VX2wXZe1FjjAOaKaxs26t3N+fELlaLs
+	ZaxQV9MXsXGq2O7zV+bBg8YaoJqytwNKImlLVSfz/LFU9BzA58jjurLJU/HtZaJ0hmbmo35/bhYhC
+	bZjIIO2+GAi+1ZwlZmJRfo6L8xhZPmzsF+UtIRszk3VUrwhxyh+SlCqcwpdCtucWgH46qo3evhMTP
+	cqPjpJB5Tm01x8gKE5/Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pRocs-00023b-Jy; Tue, 14 Feb 2023 06:17:14 +0000
-Received: from mga07.intel.com ([134.134.136.100])
+	id 1pRq4Y-000Kbx-3g; Tue, 14 Feb 2023 07:49:54 +0000
+Received: from mail-wr1-x436.google.com ([2a00:1450:4864:20::436])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pRoch-00020r-DI; Tue, 14 Feb 2023 06:17:04 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1676355423; x=1707891423;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=03gfl7nTjTP9LJuGUTYnI/DE/HmA7cJs/uy9X6zRFt0=;
-  b=OHUSG18lLw3qaD/f2TiQRtZYogrTVOMo1ZtzfhIiW4D21N6rnPu/rYgW
-   4bQb9xwKql9wxBKaCwqGB4YCQf8bsLMOq/Y47aY1gJlNSOTBixK7PE5bS
-   TYzCHyG6aEehalYwv3bSFoRXjbLwnLBwCzmITiruedg3jdkUfavOEhmLC
-   JxAt5y40UVtU7doweJTEKZ/hiUseoGZK8xDp1VlCaRdEiTk3TXBrq/WzO
-   88cK9f9uO/Ng5o0aMNRJoLby4rcLId2ymRU1fjV0rIUdkKGrvJsdkVmch
-   Ih1XlBZLldIlf72J430V1TIHq6YDphAzi/S6K5cUvMulINWdW6bmXlGxJ
-   g==;
-X-IronPort-AV: E=McAfee;i="6500,9779,10620"; a="395705130"
-X-IronPort-AV: E=Sophos;i="5.97,294,1669104000"; 
-   d="scan'208";a="395705130"
-Received: from fmsmga007.fm.intel.com ([10.253.24.52])
-  by orsmga105.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 13 Feb 2023 22:17:02 -0800
-X-ExtLoop1: 1
-X-IronPort-AV: E=McAfee;i="6500,9779,10620"; a="671122290"
-X-IronPort-AV: E=Sophos;i="5.97,294,1669104000"; 
-   d="scan'208";a="671122290"
-Received: from lkp-server01.sh.intel.com (HELO 4455601a8d94) ([10.239.97.150])
-  by fmsmga007.fm.intel.com with ESMTP; 13 Feb 2023 22:16:58 -0800
-Received: from kbuild by 4455601a8d94 with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1pRocb-0008GS-1Q;
-	Tue, 14 Feb 2023 06:16:57 +0000
-Date: Tue, 14 Feb 2023 14:16:27 +0800
-From: kernel test robot <lkp@intel.com>
-To: Guillaume Ranquet <granquet@baylibre.com>,
-	Chunfeng Yun <chunfeng.yun@mediatek.com>,
-	Kishon Vijay Abraham I <kishon@ti.com>,
-	Vinod Koul <vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzk@kernel.org>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	Chun-Kuang Hu <chunkuang.hu@kernel.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
-	CK Hu <ck.hu@mediatek.com>, Jitao shi <jitao.shi@mediatek.com>
-Cc: oe-kbuild-all@lists.linux.dev, linux-arm-kernel@lists.infradead.org,
-	linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	mac.shen@mediatek.com, stuart.lee@mediatek.com,
-	Guillaume Ranquet <granquet@baylibre.com>
-Subject: Re: [PATCH v7 3/3] phy: mediatek: add support for phy-mtk-hdmi-mt8195
-Message-ID: <202302141356.VMQ4kOvN-lkp@intel.com>
-References: <20220919-v7-3-b5b58c5ccc07@baylibre.com>
+	id 1pRq49-000KP9-Oc
+	for linux-phy@lists.infradead.org; Tue, 14 Feb 2023 07:49:31 +0000
+Received: by mail-wr1-x436.google.com with SMTP id a2so14682035wrd.6
+        for <linux-phy@lists.infradead.org>; Mon, 13 Feb 2023 23:49:27 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=5BZXiTCaWioPvbzbBAn0oxPR1rxdWEb2vlLnjqL27XI=;
+        b=z7VCsH7jRGtqAalXsHjnqDbnJOwUgIqohKEWtJYdaBpvEM8ZcOz18wY4L9+9f0BJ2c
+         5W8msteK1ebdaW3JZF9n4zQS2XEAZI6/oaEfzgkTNjgp7q/cbQFU4xcEL1UkCFxNW/mJ
+         08beHsOZ+M2W+4l5WgvjEhtFgc+tpy3keeQCRDZd0BKtAv1tb8WWUIajjjzblZD5W0g1
+         DFcLfVhdhcILkd191aO8VMnkTK1WG+qromM1jOYmCp2ZypIBWdVxkoJYsCuAeNwoSHCW
+         oFR3gEXws74PSwnlakA/rnYrzB+xrVkyRXlv1zjEhSn2NjnA6HrQmvmJy8gOMYtTFBUT
+         gcug==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=5BZXiTCaWioPvbzbBAn0oxPR1rxdWEb2vlLnjqL27XI=;
+        b=wITyikxdIRLLGZQtZxA4n20pbERVv4y1ybNb/q+LvTMFMXxb/D6zyJYI+FIIvcOpcB
+         1YecH3/zOwct0eRr2FWQA8x3Yz9uYGJfBMJTlGTlykkl/MuBPGDiS9YxLGA0krnz3ein
+         NJz4we0FZ+kbwVgJ5WBMDm8BA4ycSfk5+vjK0jgsgPRXBEKwWq6Wu8HpFPO6eKCE/DZC
+         /LZQhDFxbfq62APQiQKGKyQ9usQsqJwD4TvEZyLOjWMujnAbAvzAp3VQxw9HwzLoR0vo
+         5BR5t0vnMCxkbUyACJnb7iona3pfZ5STc+UYxciBuNGQa4bCHukUKKADGqnEDgQosL3S
+         Jnow==
+X-Gm-Message-State: AO0yUKVUn0GHm1Q/R+7HUg8a05AlG5yJqmzcyK3LhByliBX/tylp2uY3
+	osGDWduohNj3Df5C/z/9idAdVA==
+X-Google-Smtp-Source: AK7set+/dHZHc/900rumb6+GH5YIHrWHNb+LKx6xsaclyywsxaqdMh//Qe83ReJXXScxKeONvq95dA==
+X-Received: by 2002:adf:e40f:0:b0:2c5:4c1f:3c9 with SMTP id g15-20020adfe40f000000b002c54c1f03c9mr1102927wrm.49.1676360965977;
+        Mon, 13 Feb 2023 23:49:25 -0800 (PST)
+Received: from [192.168.1.109] ([178.197.216.144])
+        by smtp.gmail.com with ESMTPSA id v2-20020a5d6102000000b002be5bdbe40csm12330171wrt.27.2023.02.13.23.49.24
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 13 Feb 2023 23:49:25 -0800 (PST)
+Message-ID: <80d16935-dad6-8087-c1b2-1d5b1c3f738e@linaro.org>
+Date: Tue, 14 Feb 2023 08:49:23 +0100
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20220919-v7-3-b5b58c5ccc07@baylibre.com>
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.7.1
+Subject: Re: [PATCH v1 2/4] dt-bindings: phy: Add starfive,jh7110-dphy-rx
+Content-Language: en-US
+To: Changhuang Liang <changhuang.liang@starfivetech.com>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Emil Renner Berthing <kernel@esmil.dk>, Conor Dooley <conor@kernel.org>,
+ Paul Walmsley <paul.walmsley@sifive.com>, Palmer Dabbelt
+ <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>,
+ Philipp Zabel <p.zabel@pengutronix.de>
+Cc: Jack Zhu <jack.zhu@starfivetech.com>, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-riscv@lists.infradead.org
+References: <20230210061713.6449-1-changhuang.liang@starfivetech.com>
+ <20230210061713.6449-3-changhuang.liang@starfivetech.com>
+ <3fc07187-f5a0-86d1-a0fd-ba18a2baf555@linaro.org>
+ <f33f3ce0-ca0f-b24e-eab6-4fb9a6ae6d4a@starfivetech.com>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <f33f3ce0-ca0f-b24e-eab6-4fb9a6ae6d4a@starfivetech.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230213_221703_509973_95D3AD9A 
-X-CRM114-Status: GOOD (  10.50  )
+X-CRM114-CacheID: sfid-20230213_234929_840955_B01C0A42 
+X-CRM114-Status: GOOD (  11.80  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,59 +103,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Guillaume,
+On 14/02/2023 04:07, Changhuang Liang wrote:
+> 
+> OK, will drop quotes
+> 
+>>> +    items:
+>>> +      items:
+>>> +        - description: phandle of AON SYSCON
+>>> +        - description: register offset
+>>> +    description: The register of dphy rx driver can be configured
+>>> +      by AON SYSCON in this property.
+>>
+>> Can be? So does not have to? But you made it a required property....
+>>
+> 
+> Maybe I described it wrong.
+> I will change to:
+> 	description: The power of dphy rx can be configured by AON SYSCON
+> 	  in this property.
+> It is like AON SYSCON is the power switch of the dphy rx, it is necessary to
+> configure the AON SYSCON register, so I made it a required property.
 
-Thank you for the patch! Yet something to improve:
+Then do not use "can be". Can is optional: I can jump but I don't have
+to. :)
 
-[auto build test ERROR on 09e41676e35ab06e4bce8870ea3bf1f191c3cb90]
+Best regards,
+Krzysztof
 
-url:    https://github.com/intel-lab-lkp/linux/commits/Guillaume-Ranquet/dt-bindings-phy-mediatek-hdmi-phy-Add-mt8195-compatible/20230213-193958
-base:   09e41676e35ab06e4bce8870ea3bf1f191c3cb90
-patch link:    https://lore.kernel.org/r/20220919-v7-3-b5b58c5ccc07%40baylibre.com
-patch subject: [PATCH v7 3/3] phy: mediatek: add support for phy-mtk-hdmi-mt8195
-config: mips-allyesconfig (https://download.01.org/0day-ci/archive/20230214/202302141356.VMQ4kOvN-lkp@intel.com/config)
-compiler: mips-linux-gcc (GCC) 12.1.0
-reproduce (this is a W=1 build):
-        wget https://raw.githubusercontent.com/intel/lkp-tests/master/sbin/make.cross -O ~/bin/make.cross
-        chmod +x ~/bin/make.cross
-        # https://github.com/intel-lab-lkp/linux/commit/94dbdd48a9476284394fe686b9d3f8d9277281db
-        git remote add linux-review https://github.com/intel-lab-lkp/linux
-        git fetch --no-tags linux-review Guillaume-Ranquet/dt-bindings-phy-mediatek-hdmi-phy-Add-mt8195-compatible/20230213-193958
-        git checkout 94dbdd48a9476284394fe686b9d3f8d9277281db
-        # save the config file
-        mkdir build_dir && cp config build_dir/.config
-        COMPILER_INSTALL_PATH=$HOME/0day COMPILER=gcc-12.1.0 make.cross W=1 O=build_dir ARCH=mips olddefconfig
-        COMPILER_INSTALL_PATH=$HOME/0day COMPILER=gcc-12.1.0 make.cross W=1 O=build_dir ARCH=mips SHELL=/bin/bash
-
-If you fix the issue, kindly add following tag where applicable
-| Reported-by: kernel test robot <lkp@intel.com>
-| Link: https://lore.kernel.org/oe-kbuild-all/202302141356.VMQ4kOvN-lkp@intel.com/
-
-All errors (new ones prefixed by >>):
-
-   arch/mips/kernel/head.o: in function `kernel_entry':
-   (.ref.text+0xac): relocation truncated to fit: R_MIPS_26 against `start_kernel'
-   init/main.o: in function `set_reset_devices':
-   main.c:(.init.text+0x20): relocation truncated to fit: R_MIPS_26 against `_mcount'
-   main.c:(.init.text+0x30): relocation truncated to fit: R_MIPS_26 against `__sanitizer_cov_trace_pc'
-   init/main.o: in function `debug_kernel':
-   main.c:(.init.text+0xa4): relocation truncated to fit: R_MIPS_26 against `_mcount'
-   main.c:(.init.text+0xb4): relocation truncated to fit: R_MIPS_26 against `__sanitizer_cov_trace_pc'
-   init/main.o: in function `quiet_kernel':
-   main.c:(.init.text+0x128): relocation truncated to fit: R_MIPS_26 against `_mcount'
-   main.c:(.init.text+0x138): relocation truncated to fit: R_MIPS_26 against `__sanitizer_cov_trace_pc'
-   init/main.o: in function `warn_bootconfig':
-   main.c:(.init.text+0x1ac): relocation truncated to fit: R_MIPS_26 against `_mcount'
-   main.c:(.init.text+0x1bc): relocation truncated to fit: R_MIPS_26 against `__sanitizer_cov_trace_pc'
-   init/main.o: in function `init_setup':
-   main.c:(.init.text+0x234): relocation truncated to fit: R_MIPS_26 against `_mcount'
-   main.c:(.init.text+0x254): additional relocation overflows omitted from the output
-   mips-linux-ld: drivers/phy/mediatek/phy-mtk-hdmi-mt8195.o: in function `mtk_hdmi_pll_set_rate':
->> phy-mtk-hdmi-mt8195.c:(.text.mtk_hdmi_pll_set_rate+0x450): undefined reference to `__udivdi3'
-
--- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests
 
 -- 
 linux-phy mailing list
