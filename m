@@ -4,66 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CAB70C636D4
-	for <linux-phy@archiver.kernel.org>; Tue, 14 Feb 2023 03:07:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C9EFCC05027
+	for <linux-phy@archiver.kernel.org>; Tue, 14 Feb 2023 04:25:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2Gb+fdvc1QI1laK2Klr0yBwlvSWC+BEvVYDXRT+MgNU=; b=kiMas5g8IyHvsR
-	FpC4tDH/I6ZGGQesa3u22GSCFILpFziobeUnzVauhNWOKYv++aiSiwq0EuQeTxPWN5KyKfUltaTzs
-	H/aCZivCKqNtYtjyP5ou3cJv8CbA9UX3GYXGuf9mwWQLRY+kgj+ptnm+00bGa1vtOTgaXsUgxX/Jx
-	38MpVrIC++mBgzvYmFtjAnnzDdHe9jUY80391t89REZFtziW2yKPDMXRsKDyqMY5eGSzwyufB7fc+
-	2Yf16uHYwRcwLLNkoKaE7lcXRKSkpytkV6rGPyD+AV7N1P4DCHZVfdL4FdYQrWM+DdRKmeH96faie
-	HNqPj7pk813rhjUOHNqA==;
+	List-Owner; bh=rp25sTmuED4sTGTATOGng+VTdVsCSWWDmXo5Wc5mDEU=; b=dDlsh7unT+YG26
+	MYB02B9bktaFBS0cGG17KePGfph+FCUL+SMR+46nDRHZIm4yCwRWHYYpot/xVvIq+1c9YJ6Z+9xZp
+	X62K79fCa4p+SRR8cEKGA7JMb8MGDMPS1bejVi7bR48PdIZaHCNcTouuaPlfw+XMOq30N5s6RVuz/
+	4xfzW8qU3UCa76WHYZy7hrXAC7w3dIONHHGRQYbYbahPJx7n/JJqTQsMNByR9Y5ZV+1LfaQhHSRur
+	6yyWZAi5uib8hmxEN79VdhET0KyQYV/9ow316ZIDOIrARhtl+q1YY1tw5o9NWTsv/Px+VUk2NH/S2
+	3hleTr+mBxeuJ/F2deRw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pRlfV-00HCZK-Rz; Tue, 14 Feb 2023 03:07:46 +0000
-Received: from ex01.ufhost.com ([61.152.239.75])
-	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pRlfS-00HCYL-Dn; Tue, 14 Feb 2023 03:07:44 +0000
-Received: from EXMBX166.cuchost.com (unknown [175.102.18.54])
-	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
-	(Client CN "EXMBX166", Issuer "EXMBX166" (not verified))
-	by ex01.ufhost.com (Postfix) with ESMTP id EF3A624E235;
-	Tue, 14 Feb 2023 11:07:29 +0800 (CST)
-Received: from EXMBX162.cuchost.com (172.16.6.72) by EXMBX166.cuchost.com
- (172.16.6.76) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Tue, 14 Feb
- 2023 11:07:29 +0800
-Received: from [192.168.1.100] (183.27.97.168) by EXMBX162.cuchost.com
- (172.16.6.72) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Tue, 14 Feb
- 2023 11:07:29 +0800
-Message-ID: <f33f3ce0-ca0f-b24e-eab6-4fb9a6ae6d4a@starfivetech.com>
-Date: Tue, 14 Feb 2023 11:07:27 +0800
+	id 1pRmsa-00HPtg-58; Tue, 14 Feb 2023 04:25:20 +0000
+Received: from mga06b.intel.com ([134.134.136.31] helo=mga06.intel.com)
+	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
+	id 1pRmsO-00HPsC-V3; Tue, 14 Feb 2023 04:25:10 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1676348708; x=1707884708;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=qS9r1+DDeebaYhT1Tf6BMORix1uHV7srDyqZtYE5TnQ=;
+  b=PgKK3twkC++HqqTc1Pp03IMHXvoLj72oY6rzyUjCdGCVOgvclH+kc82x
+   iExufEQfd/rBw8cd2It8Kw2c8inUxmW3kSetxkrvzeujbK0x/DJC8+lAD
+   egT3g9kluMHlaBPMtzwmgg9j8YVl7zbVM/jBFJZBdcM/AWSvSK4lo2Z7U
+   9KopezFEhJ6LfmaysoH5hQ0f1vrJfyvl8VPTwR7KzhoyaZRFatfgTGkTD
+   SXF9g5kN1c4NJ/gjcVLxOZWNib2JWpxzfpZIZlBCxWcfplGLSgKE/Ou4x
+   v4lU/ZBJK3bl1sYmr9romF+S4SFmKaZWyw6C7rMEveViRXtPE3Bih+iTW
+   Q==;
+X-IronPort-AV: E=McAfee;i="6500,9779,10620"; a="393475391"
+X-IronPort-AV: E=Sophos;i="5.97,294,1669104000"; 
+   d="scan'208";a="393475391"
+Received: from orsmga001.jf.intel.com ([10.7.209.18])
+  by orsmga104.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 13 Feb 2023 20:25:00 -0800
+X-ExtLoop1: 1
+X-IronPort-AV: E=McAfee;i="6500,9779,10620"; a="701522522"
+X-IronPort-AV: E=Sophos;i="5.97,294,1669104000"; 
+   d="scan'208";a="701522522"
+Received: from lkp-server01.sh.intel.com (HELO 4455601a8d94) ([10.239.97.150])
+  by orsmga001.jf.intel.com with ESMTP; 13 Feb 2023 20:24:54 -0800
+Received: from kbuild by 4455601a8d94 with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1pRmsA-0008DA-0U;
+	Tue, 14 Feb 2023 04:24:54 +0000
+Date: Tue, 14 Feb 2023 12:24:45 +0800
+From: kernel test robot <lkp@intel.com>
+To: Guillaume Ranquet <granquet@baylibre.com>,
+	Chunfeng Yun <chunfeng.yun@mediatek.com>,
+	Kishon Vijay Abraham I <kishon@ti.com>,
+	Vinod Koul <vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzk@kernel.org>,
+	Matthias Brugger <matthias.bgg@gmail.com>,
+	Chun-Kuang Hu <chunkuang.hu@kernel.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
+	CK Hu <ck.hu@mediatek.com>, Jitao shi <jitao.shi@mediatek.com>
+Cc: oe-kbuild-all@lists.linux.dev, linux-arm-kernel@lists.infradead.org,
+	linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	mac.shen@mediatek.com, stuart.lee@mediatek.com,
+	Guillaume Ranquet <granquet@baylibre.com>
+Subject: Re: [PATCH v7 3/3] phy: mediatek: add support for phy-mtk-hdmi-mt8195
+Message-ID: <202302141253.tAssz6h3-lkp@intel.com>
+References: <20220919-v7-3-b5b58c5ccc07@baylibre.com>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.7.2
-Subject: Re: [PATCH v1 2/4] dt-bindings: phy: Add starfive,jh7110-dphy-rx
-Content-Language: en-US
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, Vinod Koul
-	<vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring
-	<robh+dt@kernel.org>, Krzysztof Kozlowski
-	<krzysztof.kozlowski+dt@linaro.org>, Emil Renner Berthing <kernel@esmil.dk>,
-	Conor Dooley <conor@kernel.org>, Paul Walmsley <paul.walmsley@sifive.com>,
-	Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>,
-	Philipp Zabel <p.zabel@pengutronix.de>
-CC: Jack Zhu <jack.zhu@starfivetech.com>, <linux-phy@lists.infradead.org>,
-	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-	<linux-riscv@lists.infradead.org>
-References: <20230210061713.6449-1-changhuang.liang@starfivetech.com>
- <20230210061713.6449-3-changhuang.liang@starfivetech.com>
- <3fc07187-f5a0-86d1-a0fd-ba18a2baf555@linaro.org>
-From: Changhuang Liang <changhuang.liang@starfivetech.com>
-In-Reply-To: <3fc07187-f5a0-86d1-a0fd-ba18a2baf555@linaro.org>
-X-Originating-IP: [183.27.97.168]
-X-ClientProxiedBy: EXCAS061.cuchost.com (172.16.6.21) To EXMBX162.cuchost.com
- (172.16.6.72)
-X-YovoleRuleAgent: yovoleflag
+Content-Disposition: inline
+In-Reply-To: <20220919-v7-3-b5b58c5ccc07@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230213_190742_781901_3D29393A 
-X-CRM114-Status: GOOD (  16.65  )
+X-CRM114-CacheID: sfid-20230213_202509_066929_5D0F13B9 
+X-CRM114-Status: GOOD (  11.37  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,155 +95,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Hi Guillaume,
 
+Thank you for the patch! Yet something to improve:
 
-On 2023/2/13 17:30, Krzysztof Kozlowski wrote:
-> On 10/02/2023 07:17, Changhuang Liang wrote:
->> Starfive SoC like the jh7110 use a MIPI D-PHY RX controller based on
->> a M31 IP. Add a binding for it.
->>
->> Signed-off-by: Changhuang Liang <changhuang.liang@starfivetech.com>
->> ---
->>  .../bindings/phy/starfive,jh7110-dphy-rx.yaml | 78 +++++++++++++++++++
->>  1 file changed, 78 insertions(+)
->>  create mode 100644 Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-rx.yaml
->>
->> diff --git a/Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-rx.yaml b/Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-rx.yaml
->> new file mode 100644
->> index 000000000000..1c1e5c7cbee2
->> --- /dev/null
->> +++ b/Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-rx.yaml
->> @@ -0,0 +1,78 @@
->> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
->> +%YAML 1.2
->> +---
->> +$id: http://devicetree.org/schemas/phy/starfive,jh7110-dphy-rx.yaml#
->> +$schema: http://devicetree.org/meta-schemas/core.yaml#
->> +
->> +title: Starfive SoC MIPI D-PHY Rx Controller
->> +
->> +maintainers:
->> +  - Jack Zhu <jack.zhu@starfivetech.com>
->> +  - Changhuang Liang <changhuang.liang@starfivetech.com>
->> +
->> +description: |
->> +  The Starfive SOC has a MIPI CSI D-PHY based on M31 IP use to transfer
->> +  the CSI cameras data.
->> +
->> +properties:
->> +  compatible:
->> +    items:
-> 
-> Drop items
-> 
+[auto build test ERROR on 09e41676e35ab06e4bce8870ea3bf1f191c3cb90]
 
-OK, will fix it
+url:    https://github.com/intel-lab-lkp/linux/commits/Guillaume-Ranquet/dt-bindings-phy-mediatek-hdmi-phy-Add-mt8195-compatible/20230213-193958
+base:   09e41676e35ab06e4bce8870ea3bf1f191c3cb90
+patch link:    https://lore.kernel.org/r/20220919-v7-3-b5b58c5ccc07%40baylibre.com
+patch subject: [PATCH v7 3/3] phy: mediatek: add support for phy-mtk-hdmi-mt8195
+config: m68k-allmodconfig (https://download.01.org/0day-ci/archive/20230214/202302141253.tAssz6h3-lkp@intel.com/config)
+compiler: m68k-linux-gcc (GCC) 12.1.0
+reproduce (this is a W=1 build):
+        wget https://raw.githubusercontent.com/intel/lkp-tests/master/sbin/make.cross -O ~/bin/make.cross
+        chmod +x ~/bin/make.cross
+        # https://github.com/intel-lab-lkp/linux/commit/94dbdd48a9476284394fe686b9d3f8d9277281db
+        git remote add linux-review https://github.com/intel-lab-lkp/linux
+        git fetch --no-tags linux-review Guillaume-Ranquet/dt-bindings-phy-mediatek-hdmi-phy-Add-mt8195-compatible/20230213-193958
+        git checkout 94dbdd48a9476284394fe686b9d3f8d9277281db
+        # save the config file
+        mkdir build_dir && cp config build_dir/.config
+        COMPILER_INSTALL_PATH=$HOME/0day COMPILER=gcc-12.1.0 make.cross W=1 O=build_dir ARCH=m68k olddefconfig
+        COMPILER_INSTALL_PATH=$HOME/0day COMPILER=gcc-12.1.0 make.cross W=1 O=build_dir ARCH=m68k SHELL=/bin/bash
 
->> +      - const: "starfive,jh7110-dphy-rx"
-> 
-> Drop quotes
-> 
+If you fix the issue, kindly add following tag where applicable
+| Reported-by: kernel test robot <lkp@intel.com>
+| Link: https://lore.kernel.org/oe-kbuild-all/202302141253.tAssz6h3-lkp@intel.com/
 
-OK, will drop quotes
+All errors (new ones prefixed by >>, old ones prefixed by <<):
 
->> +
->> +  reg:
->> +    maxItems: 1
->> +
->> +  clocks:
->> +    minItems: 3
-> 
-> Drop minItems
-> 
+>> ERROR: modpost: "__udivdi3" [drivers/phy/mediatek/phy-mtk-hdmi-drv.ko] undefined!
 
-OK, will drop minItems
+Kconfig warnings: (for reference only)
+   WARNING: unmet direct dependencies detected for PM
+   Depends on [n]: !MMU [=y]
+   Selected by [y]:
+   - SUN20I_PPU [=y] && (ARCH_SUNXI || COMPILE_TEST [=y])
 
->> +    maxItems: 3
->> +
->> +  clock-names:
->> +    items:
->> +      - const: cfg
->> +      - const: ref
->> +      - const: tx
->> +
->> +  resets:
->> +    minItems: 2
-> 
-> Ditto
-> 
-
-here i will change to define each reset is.
-Refer to the Rob Herring's comment.
-
->> +    maxItems: 2
->> +
->> +  starfive,aon-syscon:
->> +    $ref: '/schemas/types.yaml#/definitions/phandle-array'
-> 
-> Drop quotes
-> 
-
-OK, will drop quotes
-
->> +    items:
->> +      items:
->> +        - description: phandle of AON SYSCON
->> +        - description: register offset
->> +    description: The register of dphy rx driver can be configured
->> +      by AON SYSCON in this property.
-> 
-> Can be? So does not have to? But you made it a required property....
-> 
-
-Maybe I described it wrong.
-I will change to:
-	description: The power of dphy rx can be configured by AON SYSCON
-	  in this property.
-It is like AON SYSCON is the power switch of the dphy rx, it is necessary to
-configure the AON SYSCON register, so I made it a required property.
-
->> +
->> +  "#phy-cells":
->> +    const: 0
->> +
->> +required:
->> +  - compatible
->> +  - reg
->> +  - clocks
->> +  - clock-names
->> +  - resets
->> +  - starfive,aon-syscon
->> +  - "#phy-cells"
->> +
->> +additionalProperties: false
->> +
->> +examples:
->> +  - |
->> +    #include <dt-bindings/clock/starfive,jh7110-crg.h>
->> +    #include <dt-bindings/reset/starfive,jh7110-crg.h>
->> +
->> +    dphy@19820000 {
-> 
-> just phy@......
-> 
-
-OK, will fix it.
-
->> +      compatible = "starfive,jh7110-dphy-rx";
->> +      reg = <0x19820000 0x10000>;
->> +      clocks = <&ispcrg JH7110_ISPCLK_M31DPHY_CFGCLK_IN>,
->> +               <&ispcrg JH7110_ISPCLK_M31DPHY_REFCLK_IN>,
->> +               <&ispcrg JH7110_ISPCLK_M31DPHY_TXCLKESC_LAN0>;
->> +      clock-names = "cfg", "ref", "tx";
->> +      resets = <&ispcrg JH7110_ISPRST_M31DPHY_HW>,
->> +               <&ispcrg JH7110_ISPRST_M31DPHY_B09_ALWAYS_ON>;
->> +      starfive,aon-syscon = <&aon_syscon 0x00>;
->> +      #phy-cells = <0>;
->> +    };
-> 
-> Best regards,
-> Krzysztof
-> 
+-- 
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests
 
 -- 
 linux-phy mailing list
