@@ -4,132 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 76602C636CC
-	for <linux-phy@archiver.kernel.org>; Thu, 16 Feb 2023 07:53:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EFF6BC636CC
+	for <linux-phy@archiver.kernel.org>; Thu, 16 Feb 2023 08:30:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zdPEoA77i5z8vP1zntZa2lWSfhiJcMprnyRduvNTtsw=; b=D6R+efMJ+rBSOw
-	RlnEwRsV0EJ9+vV5tdBaxxBwzHvCkYGttl5MiA/Irc0RTVrWIVGY9P8I4Vx0pbs1QnGn+SBTyUHVc
-	a9UEcximDjm5ijou/ONaVxQKmqlHAzJ5uJnThSGbxBFUbRg/tPRaYBXMNXTLBJ7oI3hYEiDZCKMpI
-	fM6+5p+6jN7+NSDl6n0xYxHpLp64doeqoiUKtf4XcfuZJRA31aJF9wWCWIvt92kMRm102dDtmf3Zr
-	p6a3baN2Sp1/kGtGtHStNzxM3JoQOmyGDPlibEx5FwgohJWTYQw1uFJD6Ekwnle6iNJKJVnTqxGfd
-	Mt/2eWfXLBOGq5nZuP/Q==;
+	List-Owner; bh=RlSruWYtryjGK71mVxksCqNjwpaIfqKUx1o/SECKggs=; b=BYOun+Mo/el5Pd
+	MyVgs0AylmiPBPlfUJeEyPC6WEa8CcmC4YKj1fCkJtiHUMxaKaSiezJHy8q6MMl2wPyWNJex1krsG
+	y0sGlFnvBmHQaiDv36j5f4o6cduVeIPEVDRYkvDS/YMa9CRBY44X2s2ULMqD9QP6hh6Xi3bGckMcJ
+	9NZGewAFtr3I74P6e+5kUCu/DR4lwSrKjI93pCFphtXA/ZIhN6LNoi2YgNJSOynOIk6tvlPeb3Bck
+	ncr2hAX2AotP+WYT2KzNQnUHJP+9eBsrqfoJD7GqVXgAB1wCw/IBE4z0EZngExTXMmWBowr5hdvCh
+	bupmBJnUOgg/kOykpkvQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pSZ5W-008sa5-U2; Thu, 16 Feb 2023 07:53:54 +0000
-Received: from mail-dm6nam12on20723.outbound.protection.outlook.com ([2a01:111:f400:fe59::723] helo=NAM12-DM6-obe.outbound.protection.outlook.com)
+	id 1pSZfE-0091w2-CE; Thu, 16 Feb 2023 08:30:48 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93] helo=mx07-00178001.pphosted.com)
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pSZ5T-008sSO-1p
-	for linux-phy@lists.infradead.org; Thu, 16 Feb 2023 07:53:53 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=S9myIf5R6adMgeLSEDQ7Zhvh99VBRj/PrKvoo71z5ml5TvgUrFGM0NLTNzYbelqWNc7BGaB0yaFAt6VVgD7ddfzCVOcWqYNv9LkZ/Zsb95VTkgAyJRZTPOvdyqoHyt2mJsU2EFRwQW0SeQ+Dw0K3vWHqCyZM65ojnQagemFlPuqwgd2L/abQj3HYxj5brucmm8XLfXJJZHHhWoZLx8nLyO3umhyNxBAzHdDKSrLv5dFleVt6/Zlkyuc+ykAZj+JW4yA3oLPslWaH/46Eid+rPGNAuyZt6wJLIZaFRcyEMdPqv+8l0vMktG6whH8yHKMzmDFIjFKSeNiKhL7F2DC2lA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=EXASoJEFaftM0o1PvA9J4RpnlwHgOL8maWN5ZGyU6iI=;
- b=WirR/VHsWHPd5YPt/bjmx2wuWVu/1NZHEy8bp+RUIYkfQy3m5Muqim6MC5l0/Z5MWUdrqAO2G9wBGxL41pvbAPdApkebVptyl99VIA+Uxh6TQXhFzmMjv/rdNe+UeheAlx541uFJmBS1LPy6G2mUSKIGb6SsOaMpiJRC49Vc0y8YV7IqCQiHexguAv4aPsMHzPzuHMvuYcqlBKcxbRLH1sbkuNycojPijjVN5UU8riQ/VyW8+X47JZ9hzw0NyCDZxqlP61+BoqSDXLSOVkFI0fyHCCNMbdpnBa7N5tT7NjeyCj4Qx5IbPQm7VjoUDgQ7tUyFV7lhEFeXlP+EFVB5Zw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=in-advantage.com; dmarc=pass action=none
- header.from=in-advantage.com; dkim=pass header.d=in-advantage.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=inadvantage.onmicrosoft.com; s=selector2-inadvantage-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=EXASoJEFaftM0o1PvA9J4RpnlwHgOL8maWN5ZGyU6iI=;
- b=RFO+DSUGAUoZ/fBqOyxwNDUNigeRrNfrMXTUHu/iAAfPP70FUw91VADhv4b/nUxDdZj/LD5n8POUACsMrOurcn5G3RG2oVpwsgdyiqrt+0aBC2wcwuJ8uQuCuZ4rhkIoyYdeDNQRTasLXRt6HbXgKgxiaay4kCQBeMd5AExV63w=
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=in-advantage.com;
-Received: from MWHPR1001MB2351.namprd10.prod.outlook.com
- (2603:10b6:301:35::37) by IA1PR10MB5993.namprd10.prod.outlook.com
- (2603:10b6:208:3ef::20) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6111.10; Thu, 16 Feb
- 2023 07:53:44 +0000
-Received: from MWHPR1001MB2351.namprd10.prod.outlook.com
- ([fe80::1897:6663:87ba:c8fa]) by MWHPR1001MB2351.namprd10.prod.outlook.com
- ([fe80::1897:6663:87ba:c8fa%4]) with mapi id 15.20.6111.010; Thu, 16 Feb 2023
- 07:53:44 +0000
-From: Colin Foster <colin.foster@in-advantage.com>
-To: linux-phy@lists.infradead.org,
-	netdev@vger.kernel.org,
-	linux-kernel@vger.kernel.org
-Cc: Russell King <linux@armlinux.org.uk>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Paolo Abeni <pabeni@redhat.com>,
-	Jakub Kicinski <kuba@kernel.org>,
-	Eric Dumazet <edumazet@google.com>,
-	"David S. Miller" <davem@davemloft.net>,
-	Florian Fainelli <f.fainelli@gmail.com>,
-	Andrew Lunn <andrew@lunn.ch>,
-	UNGLinuxDriver@microchip.com,
-	Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Claudiu Manoil <claudiu.manoil@nxp.com>,
-	Vladimir Oltean <vladimir.oltean@nxp.com>,
-	Lee Jones <lee@kernel.org>
-Subject: [RFC v1 net-next 7/7] net: dsa: ocelot_ext: add support for external phys
-Date: Wed, 15 Feb 2023 23:53:21 -0800
-Message-Id: <20230216075321.2898003-8-colin.foster@in-advantage.com>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20230216075321.2898003-1-colin.foster@in-advantage.com>
-References: <20230216075321.2898003-1-colin.foster@in-advantage.com>
-X-ClientProxiedBy: BY3PR05CA0019.namprd05.prod.outlook.com
- (2603:10b6:a03:254::24) To MWHPR1001MB2351.namprd10.prod.outlook.com
- (2603:10b6:301:35::37)
+	id 1pSZfA-0091ri-CH; Thu, 16 Feb 2023 08:30:47 +0000
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
+	by mx07-00178001.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 31G7A6jW019252;
+	Thu, 16 Feb 2023 09:30:30 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com; h=message-id : date :
+ mime-version : subject : to : cc : references : from : in-reply-to :
+ content-type : content-transfer-encoding; s=selector1;
+ bh=oFF19V1qChX1uFanjZoirlqswMOsuDm26/CB0vat3/M=;
+ b=x263OlNGHMQ1z8eAlvhczx/yNUyUHW+aGtW3caT1ohYyYKaeLE1iiUs1qiaEKJP6nUyz
+ DL678KhmH7UEwxD8BVZQgas44aNwI5748a7dB2JOl4hNIRBX45MrSFzyJxkirBh6Xyq9
+ Mh+HWR8ulmn3ZyaSXmP4p1DDL+iL4ANTVBVL6sfuWqjNj0UlO8yqLBVlwugG/nEBkoeG
+ oi4eoAGtbh2wcS0BSaNxrSyRWey3nUuYnCduKfSp5FwgPUdNDgukno/nLE8mcAoV8WWI
+ VqRghVMhXCycfAvXb0JOeXUKpVYduFfaWFiAjA3yM9KJuh5uUsMcRLFObmXYRFJiQTDh 9w== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+	by mx07-00178001.pphosted.com (PPS) with ESMTPS id 3nrwucxbu0-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 16 Feb 2023 09:30:30 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+	by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id BE86A10002A;
+	Thu, 16 Feb 2023 09:30:28 +0100 (CET)
+Received: from Webmail-eu.st.com (shfdag1node2.st.com [10.75.129.70])
+	by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id A83EF211F3C;
+	Thu, 16 Feb 2023 09:30:28 +0100 (CET)
+Received: from [10.48.1.102] (10.48.1.102) by SHFDAG1NODE2.st.com
+ (10.75.129.70) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.17; Thu, 16 Feb
+ 2023 09:30:27 +0100
+Message-ID: <1869feff-06b1-17f1-4628-b433c858ad79@foss.st.com>
+Date: Thu, 16 Feb 2023 09:30:26 +0100
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: MWHPR1001MB2351:EE_|IA1PR10MB5993:EE_
-X-MS-Office365-Filtering-Correlation-Id: 2c0e3ce2-439e-49f9-3f9b-08db0ff2ed3f
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 	LuU3L6a5G4gpMJJa5gIrBAc+npbeGvNAd/qfW9cxMGEo+gNgpfnem4QbD2Mo02iiCMEzimDnuLzoSuf02brgonUFy+gQKOeR9LUn/wqaM/FDHXHj2q2adp5WuzUdt8CZOpXWi47h2eXO/RetgpVCOtAAhVFa5qEUo29zp4t2w8iPBuZYE7YTZjjowDVOdkFlo/bhnCs5B2tTpo+YDePgJOkNm3mjRuFbvf+zjGVa7Naswxyi+xDnkXEEyaarGs2VkMAkURgNT7thcWx8fsGqtvmnQrl5GfKKoVfpD9p4A79s1oQEw13GzK44rEXpQhZIvLGgSOjawtoNTWu42wVuFEzxOcQ+LwactXm2BsNBFr/L7t/YHNL0ixnLe/2IhVSYvLUWekJoXTfnPU6LFAhocnOwI/5W8KAPXwu3qeHEOMdRuEUGDGfg+Y0Ge71HP6cl8IRiyCWxXV/tqRCk9pRLkTWLOiBxpId8v2FQWKJAu9v/zDXBSnMMb+rq50y34VOt5+nrWmmHLQMMkhpjf+csmr93sRsptd7FflcCs+E3PdcZbxx9/7xmjO9jwcpKBmMUANr2Ixxb8XgrLfB1vAxQIlmmJinlAbjLIGOI9F0UyZmR3xJEPZhaEzt5BFzB3rGbBZV5bXquCdIRt0AyM9f06tK2xX+sDh9cSuJHz5GNTvAjD+p0D6at4Uy/Y9DE03q6iovirY4eTx0kSIXFRlwP9g==
-X-Forefront-Antispam-Report: 	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:MWHPR1001MB2351.namprd10.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230025)(136003)(39830400003)(396003)(366004)(346002)(376002)(451199018)(83380400001)(5660300002)(38350700002)(41300700001)(2906002)(8936002)(38100700002)(2616005)(6506007)(26005)(6512007)(186003)(6666004)(478600001)(66899018)(52116002)(6486002)(30864003)(44832011)(1076003)(86362001)(316002)(66476007)(66946007)(54906003)(4326008)(8676002)(66556008)(7416002)(36756003);DIR:OUT;SFP:1102;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: 	=?us-ascii?Q?ctaF2cFn8buXG/8kHSPVZsZKp4sBgeS36pGUCmoCT9MhYnTZBw3mfXLTgGKw?=
- =?us-ascii?Q?rKOWzuK5s1pIEWebavoP+jVjXvGL0u9GpUQaYVaxDubUbkNYYGILEjTVlqaK?=
- =?us-ascii?Q?ecJXd/98LBHtB8oOXHbOTHGaBOOv5cg6VbmPYLjCSIwZ69R33RtsCJmjuvzm?=
- =?us-ascii?Q?WHIJ1e38qncJLjVwSiosvmIS9fTf+0uluia2ktKjApPtcgBfXyekdAZNu3G9?=
- =?us-ascii?Q?RU410GAyQj7wcm6OWY9xw4KH2sXZrZBqBCLsgSV78cdVCucalOqoOqRUOHuG?=
- =?us-ascii?Q?nvqICdhLLl1yR8uRYn0DYT3XhL9GqgufURkG3jfJBofaKexVhVY9G6Nfl00w?=
- =?us-ascii?Q?IkZ/+bCedcMLB0vLQMi5mBND36+IbbsDwUtAJX9hmFpqFZ9R4I/oQkv/Ox6A?=
- =?us-ascii?Q?p3HEW9WjmEKoHomBkcHnlL7m/W9Y3Ru3E3X0ZRcV5ZrvZgCua8EpxXrcLSlJ?=
- =?us-ascii?Q?P6wVEKthk3gCPfsxMWYtnHkZTHU0I+9g6NzjhMwVR0K4oub5eR8i9EjRLdaC?=
- =?us-ascii?Q?nJMfjYvyIyZYZeoHVNBQMtVPJ215XXxe3BWUHyXJ04WC0JoJnfvaZM0E6OqY?=
- =?us-ascii?Q?uMJamaEJ2IHEFiszNb5Mpp+aBR8tbL5WflyFYFYDD/Fij40Edz6c6M+EJdx7?=
- =?us-ascii?Q?BQUYsNYsrpAh3BXSGcpkiDbmd0szvfAu/i1AMqZIbQRuH6ZdCKmdeRWiE8Jb?=
- =?us-ascii?Q?V7fvBhKZCVDrDQ39Hck7nRT9oUHI0sSK8e5LikNr21Z+hhcbayCOj5DE4M+w?=
- =?us-ascii?Q?tZ9BnWFtUPiflRXhB+XB7WoeGHyWABpkMpsdTyjGX11InYCIpyaDwxlNLFZR?=
- =?us-ascii?Q?AUnIa+i+2iHeoSpGOvi4mnkUOtNj8aCsoQ6f1+7iFQvkOQa9DwcInh9P1pHq?=
- =?us-ascii?Q?TNvBAkf0IvnOYkf0u4z2+ghcgKoL43955EdX/WHW+oJjgYHIAulxRnPnNXLM?=
- =?us-ascii?Q?EP0weIa8lKnhsxUCAiXmshtLfMUth0XaIfGo+s4nytgrBWpuC8TvUHbDBs00?=
- =?us-ascii?Q?Vh/jfRwH9beM+BNOxkKRFwnwaK4jTWgfBw9vmFxG2OwRxBAHA37vZlJOhGQJ?=
- =?us-ascii?Q?77IsQcgS72bMcVxCwBjtAieUJt+dUakRpgRrKrCee3R91XAH84WVCZoD2Mo+?=
- =?us-ascii?Q?F+9a1H74wePQQ7jDaM71/AlBoZZNgJbc9oydJUOcqncsF2/EYYrMYBNW1abU?=
- =?us-ascii?Q?gMMWmi9caFvVqkifp5nrYbw2imxyAV1XxBSwa4SCBOVjGA2S6RlBx02EUZ5b?=
- =?us-ascii?Q?Xb6Q0C8V7zULPretmeSF3sgyZAxhsZjhlkeiGruCseIITTy37d2+5B8HgNd+?=
- =?us-ascii?Q?7uERV/QShAtQm3iTirHB1TXi186fQ2bsgXQf5gSdP3MCvoosJZ9WcQK/2tdS?=
- =?us-ascii?Q?kAggenh07z2CbSXhdgjV+LLmBjygkw4il4C5lBl+hEt1T6GEBKCpVn46cX12?=
- =?us-ascii?Q?TvgcXbY60Fnv8QvkTN/ABkovR6anrMnG26LvfmRzyOlUfYIvs22yw7RFB0pE?=
- =?us-ascii?Q?lWH8TS/7m2JqQ+eO2fR+q4dMqDMYg6BnEl9JNAJElCriN5c46REgnnxe7Je+?=
- =?us-ascii?Q?vYe6G3DAFLNjg7bT8pzgUWMVhrwlPY0EXC3TPa88AU6sJLju6TjxfFHB20HI?=
- =?us-ascii?Q?xGwxO4n/yM2ahi28RUJDyGo=3D?=
-X-OriginatorOrg: in-advantage.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 2c0e3ce2-439e-49f9-3f9b-08db0ff2ed3f
-X-MS-Exchange-CrossTenant-AuthSource: MWHPR1001MB2351.namprd10.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 16 Feb 2023 07:53:44.3341
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 48e842ca-fbd8-4633-a79d-0c955a7d3aae
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: kyKsNffDssYjTln8wjgxVSZ+4cvNGj8H7H8brpUZRNYxL5f0MMNwB0JGd3m1r71jM5LO/OWWtbDtFZ4hh4XcxhyOm3lOg45tZN1BgVElgMU=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: IA1PR10MB5993
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.7.1
+Subject: Re: [PATCH] phy: stm32-usphyc: add mdelay(1) to fix timeout on some
+ machines
+To: Michael Grzeschik <mgr@pengutronix.de>
+CC: <linux-arm-kernel@lists.infradead.org>, <linux-phy@lists.infradead.org>,
+        <vkoul@kernel.org>, <kishon@kernel.org>, <mcoquelin.stm32@gmail.com>,
+        <alexandre.torgue@foss.st.com>, <error27@gmail.com>,
+        <kernel@pengutronix.de>, <linux-stm32@st-md-mailman.stormreply.com>,
+        Amelie DELAUNAY
+	<amelie.delaunay@foss.st.com>
+References: <20230124204500.3502665-1-m.grzeschik@pengutronix.de>
+ <ce8efcd8-fade-5328-8f21-3583e076b266@foss.st.com>
+ <20230213145915.GA20628@pengutronix.de>
+Content-Language: en-US
+From: Fabrice Gasnier <fabrice.gasnier@foss.st.com>
+In-Reply-To: <20230213145915.GA20628@pengutronix.de>
+X-Originating-IP: [10.48.1.102]
+X-ClientProxiedBy: EQNCAS1NODE4.st.com (10.75.129.82) To SHFDAG1NODE2.st.com
+ (10.75.129.70)
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.219,Aquarius:18.0.930,Hydra:6.0.562,FMLib:17.11.170.22
+ definitions=2023-02-16_06,2023-02-15_01,2023-02-09_01
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230215_235351_126012_74EA8ECA 
-X-CRM114-Status: GOOD (  18.97  )
+X-CRM114-CacheID: sfid-20230216_003045_050502_32BA5924 
+X-CRM114-Status: GOOD (  46.43  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -141,446 +90,110 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The VSC7512 has four internal copper ports, and can be configured to work
-in various configurations with up to six additional ports. Support for the
-initial four ports was added in commit 3d7316ac81ac ("net: dsa: ocelot: add
-external ocelot switch control"). This patch adds support for the
-additional ports.
-
-The specific hardware configuration for this development uses a QSGMII link
-between a VSC7512 and a VSC8514. The VSC8514 offers connection to four RJ45
-ports, all of which are verified functional.
-
-Signed-off-by: Colin Foster <colin.foster@in-advantage.com>
----
- drivers/net/dsa/ocelot/felix.h      |   1 +
- drivers/net/dsa/ocelot/ocelot_ext.c | 319 ++++++++++++++++++++++++++--
- 2 files changed, 305 insertions(+), 15 deletions(-)
-
-diff --git a/drivers/net/dsa/ocelot/felix.h b/drivers/net/dsa/ocelot/felix.h
-index ffb60bcf1817..fdd402305925 100644
---- a/drivers/net/dsa/ocelot/felix.h
-+++ b/drivers/net/dsa/ocelot/felix.h
-@@ -6,6 +6,7 @@
- 
- #define ocelot_to_felix(o)		container_of((o), struct felix, ocelot)
- #define FELIX_MAC_QUIRKS		OCELOT_QUIRK_PCS_PERFORMS_RATE_ADAPTATION
-+#define OCELOT_EXT_MAC_QUIRKS		OCELOT_QUIRK_QSGMII_PORTS_MUST_BE_UP
- 
- #define OCELOT_PORT_MODE_NONE		0
- #define OCELOT_PORT_MODE_INTERNAL	BIT(0)
-diff --git a/drivers/net/dsa/ocelot/ocelot_ext.c b/drivers/net/dsa/ocelot/ocelot_ext.c
-index 14efa6387bd7..f10271b973b2 100644
---- a/drivers/net/dsa/ocelot/ocelot_ext.c
-+++ b/drivers/net/dsa/ocelot/ocelot_ext.c
-@@ -4,10 +4,13 @@
-  */
- 
- #include <linux/mfd/ocelot.h>
-+#include <linux/of_net.h>
-+#include <linux/phy/phy.h>
- #include <linux/phylink.h>
- #include <linux/platform_device.h>
- #include <linux/regmap.h>
- #include <soc/mscc/ocelot.h>
-+#include <soc/mscc/ocelot_dev.h>
- #include <soc/mscc/vsc7514_regs.h>
- #include "felix.h"
- 
-@@ -16,20 +19,283 @@
- #define OCELOT_PORT_MODE_SERDES		(OCELOT_PORT_MODE_SGMII | \
- 					 OCELOT_PORT_MODE_QSGMII)
- 
-+#define phylink_config_to_ocelot_port(config) \
-+	container_of(config, struct ocelot_ext_port_priv, phylink_config)
-+#define phylink_pcs_to_ocelot_port(pl_pcs) \
-+	container_of(pl_pcs, struct ocelot_ext_port_priv, pcs)
-+
-+struct ocelot_ext_port_priv {
-+	struct device_node *node;
-+	struct phylink_config phylink_config;
-+	struct phylink *phylink;
-+	struct ocelot *ocelot;
-+	int chip_port;
-+	struct phylink_pcs pcs;
-+};
-+
-+struct ocelot_ext_priv {
-+	struct felix felix;
-+	struct ocelot_ext_port_priv *port_priv[VSC7514_NUM_PORTS];
-+};
-+
-+static struct ocelot_ext_priv *felix_to_ocelot_ext_priv(struct felix *felix)
-+{
-+	return container_of(felix, struct ocelot_ext_priv, felix);
-+}
-+
- static const u32 vsc7512_port_modes[VSC7514_NUM_PORTS] = {
- 	OCELOT_PORT_MODE_INTERNAL,
- 	OCELOT_PORT_MODE_INTERNAL,
- 	OCELOT_PORT_MODE_INTERNAL,
- 	OCELOT_PORT_MODE_INTERNAL,
--	OCELOT_PORT_MODE_NONE,
--	OCELOT_PORT_MODE_NONE,
--	OCELOT_PORT_MODE_NONE,
--	OCELOT_PORT_MODE_NONE,
--	OCELOT_PORT_MODE_NONE,
--	OCELOT_PORT_MODE_NONE,
--	OCELOT_PORT_MODE_NONE,
-+	OCELOT_PORT_MODE_SERDES,
-+	OCELOT_PORT_MODE_SERDES,
-+	OCELOT_PORT_MODE_SERDES,
-+	OCELOT_PORT_MODE_SERDES,
-+	OCELOT_PORT_MODE_SERDES,
-+	OCELOT_PORT_MODE_SGMII,
-+	OCELOT_PORT_MODE_SERDES,
-+};
-+
-+static void ocelot_ext_phylink_of_cleanup(struct ocelot *ocelot)
-+{
-+	struct felix *felix = ocelot_to_felix(ocelot);
-+	struct ocelot_ext_priv *ocelot_ext_priv;
-+	int i;
-+
-+	ocelot_ext_priv = felix_to_ocelot_ext_priv(felix);
-+	for (i = 0; i < VSC7514_NUM_PORTS; i++) {
-+		struct ocelot_ext_port_priv *port_priv;
-+
-+		port_priv = ocelot_ext_priv->port_priv[i];
-+		if (port_priv && port_priv->node)
-+			of_node_put(port_priv->node);
-+	}
-+}
-+
-+static void ocelot_ext_phylink_mac_config(struct phylink_config *config,
-+					  unsigned int link_an_mode,
-+					  const struct phylink_link_state *state)
-+{
-+	struct ocelot_ext_port_priv *priv =
-+		phylink_config_to_ocelot_port(config);
-+	struct ocelot *ocelot = priv->ocelot;
-+	int port = priv->chip_port;
-+
-+	ocelot_phylink_mac_config(ocelot, port, link_an_mode, state);
-+}
-+
-+static void ocelot_ext_phylink_mac_link_down(struct phylink_config *config,
-+					     unsigned int link_an_mode,
-+					     phy_interface_t interface)
-+{
-+	struct ocelot_ext_port_priv *priv =
-+		phylink_config_to_ocelot_port(config);
-+	struct ocelot *ocelot = priv->ocelot;
-+	struct felix *felix = ocelot_to_felix(ocelot);
-+	int port = priv->chip_port;
-+
-+	ocelot_phylink_mac_link_down(ocelot, port, link_an_mode, interface,
-+				     felix->info->quirks);
-+}
-+
-+static void ocelot_ext_phylink_mac_link_up(struct phylink_config *config,
-+					   struct phy_device *phydev,
-+					   unsigned int link_an_mode,
-+					   phy_interface_t interface,
-+					   int speed, int duplex,
-+					   bool tx_pause, bool rx_pause)
-+{
-+	struct ocelot_ext_port_priv *priv =
-+		phylink_config_to_ocelot_port(config);
-+	struct ocelot *ocelot = priv->ocelot;
-+	struct felix *felix = ocelot_to_felix(ocelot);
-+	int port = priv->chip_port;
-+
-+	ocelot_phylink_mac_link_up(ocelot, port, phydev, link_an_mode,
-+				   interface, speed, duplex, tx_pause, rx_pause,
-+				   felix->info->quirks);
-+}
-+
-+static const struct phylink_mac_ops ocelot_ext_phylink_ops = {
-+	.validate		= phylink_generic_validate,
-+	.mac_config		= ocelot_ext_phylink_mac_config,
-+	.mac_link_down		= ocelot_ext_phylink_mac_link_down,
-+	.mac_link_up		= ocelot_ext_phylink_mac_link_up,
-+};
-+
-+static void ocelot_ext_pcs_get_state(struct phylink_pcs *pcs,
-+				     struct phylink_link_state *state)
-+{
-+	struct ocelot_ext_port_priv *port_priv =
-+		phylink_pcs_to_ocelot_port(pcs);
-+
-+	/* TODO: Determine state from hardware? */
-+}
-+
-+static int ocelot_ext_pcs_config(struct phylink_pcs *pcs, unsigned int mode,
-+				 phy_interface_t interface,
-+				 const unsigned long *advertising,
-+				 bool permit_pause_to_mac)
-+{
-+	struct ocelot_ext_port_priv *port_priv =
-+		phylink_pcs_to_ocelot_port(pcs);
-+
-+	switch (interface) {
-+	case PHY_INTERFACE_MODE_QSGMII:
-+		ocelot_ext_phylink_mac_config(&port_priv->phylink_config, mode,
-+					      NULL);
-+		break;
-+	default:
-+		break;
-+	}
-+
-+	return 0;
-+}
-+
-+static void ocelot_ext_pcs_an_restart(struct phylink_pcs *pcs)
-+{
-+	/* TODO: Restart autonegotiaion process */
-+}
-+
-+static void ocelot_ext_pcs_link_up(struct phylink_pcs *pcs, unsigned int mode,
-+				   phy_interface_t interface, int speed,
-+				   int duplex)
-+{
-+	struct ocelot_ext_port_priv *port_priv =
-+		phylink_pcs_to_ocelot_port(pcs);
-+
-+	ocelot_ext_phylink_mac_link_up(&port_priv->phylink_config, NULL, mode,
-+				       interface, speed, duplex, false, false);
-+}
-+
-+static const struct phylink_pcs_ops ocelot_ext_pcs_ops = {
-+	.pcs_get_state = ocelot_ext_pcs_get_state,
-+	.pcs_config = ocelot_ext_pcs_config,
-+	.pcs_an_restart = ocelot_ext_pcs_an_restart,
-+	.pcs_link_up = ocelot_ext_pcs_link_up,
- };
- 
-+static int ocelot_ext_parse_port_node(struct ocelot *ocelot,
-+				      struct device_node *ports_node,
-+				      phy_interface_t phy_mode, int port)
-+{
-+	struct ocelot_ext_port_priv *ocelot_ext_port_priv;
-+	struct felix *felix = ocelot_to_felix(ocelot);
-+	struct ocelot_ext_priv *ocelot_ext_priv;
-+
-+	ocelot_ext_priv = felix_to_ocelot_ext_priv(felix);
-+
-+	ocelot_ext_port_priv = devm_kzalloc(ocelot->dev,
-+					    sizeof(*ocelot_ext_port_priv),
-+					    GFP_KERNEL);
-+	if (!ocelot_ext_port_priv)
-+		return -ENOMEM;
-+
-+	ocelot_ext_port_priv->ocelot = ocelot;
-+	ocelot_ext_port_priv->chip_port = port;
-+	ocelot_ext_port_priv->pcs.ops = &ocelot_ext_pcs_ops;
-+
-+	if (!felix->pcs)
-+		felix->pcs = devm_kcalloc(ocelot->dev, felix->info->num_ports,
-+					  sizeof(struct phylink_pcs *),
-+					  GFP_KERNEL);
-+
-+	if (!felix->pcs)
-+		return -ENOMEM;
-+
-+	felix->pcs[port] = &ocelot_ext_port_priv->pcs;
-+
-+	ocelot_ext_priv->port_priv[port] = ocelot_ext_port_priv;
-+
-+	ocelot_ext_port_priv->node = of_node_get(ports_node);
-+
-+	return 0;
-+}
-+
-+static int ocelot_ext_phylink_create(struct ocelot *ocelot, int port)
-+{
-+	struct ocelot_ext_port_priv *ocelot_ext_port_priv;
-+	struct felix *felix = ocelot_to_felix(ocelot);
-+	struct ocelot_ext_priv *ocelot_ext_priv;
-+	struct device *dev = ocelot->dev;
-+	struct ocelot_port *ocelot_port;
-+	struct device_node *portnp;
-+	phy_interface_t phy_mode;
-+	struct phylink *phylink;
-+	int err;
-+
-+	ocelot_ext_priv = felix_to_ocelot_ext_priv(felix);
-+	ocelot_port = ocelot->ports[port];
-+	ocelot_ext_port_priv = ocelot_ext_priv->port_priv[port];
-+
-+	if (!ocelot_ext_port_priv)
-+		return 0;
-+
-+	portnp = ocelot_ext_port_priv->node;
-+	phy_mode = ocelot_port->phy_mode;
-+
-+	/* Break out early if we're internal...? */
-+	if (phy_mode == PHY_INTERFACE_MODE_INTERNAL)
-+		return 0;
-+
-+	if (phy_mode == PHY_INTERFACE_MODE_QSGMII)
-+		ocelot_port_rmwl(ocelot_port, 0,
-+				 DEV_CLOCK_CFG_MAC_TX_RST |
-+				 DEV_CLOCK_CFG_MAC_RX_RST,
-+				 DEV_CLOCK_CFG);
-+
-+	if (phy_mode != PHY_INTERFACE_MODE_INTERNAL) {
-+		struct phy *serdes = of_phy_get(portnp, NULL);
-+
-+		if (IS_ERR(serdes)) {
-+			err = PTR_ERR(serdes);
-+			dev_err_probe(dev, err,
-+				      "missing SerDes phys for port %d\n",
-+				      port);
-+			return err;
-+		}
-+
-+		err = phy_set_mode_ext(serdes, PHY_MODE_ETHERNET, phy_mode);
-+		of_phy_put(serdes);
-+		if (err) {
-+			dev_err(dev,
-+				"Could not set SerDes mode on port %d: %pe\n",
-+				port, ERR_PTR(err));
-+			return err;
-+		}
-+	}
-+
-+	ocelot_ext_port_priv->phylink_config.dev = dev;
-+	ocelot_ext_port_priv->phylink_config.type = PHYLINK_DEV;
-+	ocelot_ext_port_priv->phylink_config.mac_capabilities = MAC_ASYM_PAUSE |
-+		MAC_SYM_PAUSE | MAC_10 | MAC_100 | MAC_1000FD | MAC_2500FD;
-+
-+	__set_bit(ocelot_port->phy_mode,
-+		  ocelot_ext_port_priv->phylink_config.supported_interfaces);
-+
-+	phylink = phylink_create(&ocelot_ext_port_priv->phylink_config,
-+				 of_fwnode_handle(portnp),
-+				 phy_mode, &ocelot_ext_phylink_ops);
-+	if (IS_ERR(phylink)) {
-+		err = PTR_ERR(phylink);
-+		dev_err(dev, "Could not create phylink (%pe)\n", phylink);
-+		return err;
-+	}
-+
-+	ocelot_ext_port_priv->phylink = phylink;
-+
-+	err = phylink_of_phy_connect(phylink, portnp, 0);
-+	if (err) {
-+		dev_err(dev, "Could not connect to PHY: %pe\n", ERR_PTR(err));
-+		phylink_destroy(phylink);
-+		ocelot_ext_port_priv->phylink = NULL;
-+		return err;
-+	}
-+
-+	return 0;
-+}
-+
- static const struct ocelot_ops ocelot_ext_ops = {
- 	.reset		= ocelot_reset,
- 	.wm_enc		= ocelot_wm_enc,
-@@ -48,6 +314,7 @@ static const char * const vsc7512_resource_names[TARGET_MAX] = {
- 	[QS] = "qs",
- 	[QSYS] = "qsys",
- 	[ANA] = "ana",
-+	[HSIO] = "hsio",
- };
- 
- static const struct felix_info vsc7512_info = {
-@@ -56,25 +323,32 @@ static const struct felix_info vsc7512_info = {
- 	.map				= vsc7514_regmap,
- 	.ops				= &ocelot_ext_ops,
- 	.vcap				= vsc7514_vcap_props,
-+	.quirks				= OCELOT_EXT_MAC_QUIRKS,
- 	.num_mact_rows			= 1024,
- 	.num_ports			= VSC7514_NUM_PORTS,
- 	.num_tx_queues			= OCELOT_NUM_TC,
- 	.port_modes			= vsc7512_port_modes,
-+	.parse_port_node		= ocelot_ext_parse_port_node,
-+	.phylink_create			= ocelot_ext_phylink_create,
-+	.phylink_of_cleanup		= ocelot_ext_phylink_of_cleanup,
- };
- 
- static int ocelot_ext_probe(struct platform_device *pdev)
- {
-+	struct ocelot_ext_priv *ocelot_ext_priv;
- 	struct device *dev = &pdev->dev;
- 	struct dsa_switch *ds;
- 	struct ocelot *ocelot;
- 	struct felix *felix;
- 	int err;
- 
--	felix = kzalloc(sizeof(*felix), GFP_KERNEL);
--	if (!felix)
-+	ocelot_ext_priv = kzalloc(sizeof(*ocelot_ext_priv), GFP_KERNEL);
-+	if (!ocelot_ext_priv)
- 		return -ENOMEM;
- 
--	dev_set_drvdata(dev, felix);
-+	dev_set_drvdata(dev, ocelot_ext_priv);
-+
-+	felix = &ocelot_ext_priv->felix;
- 
- 	ocelot = &felix->ocelot;
- 	ocelot->dev = dev;
-@@ -116,28 +390,43 @@ static int ocelot_ext_probe(struct platform_device *pdev)
- 
- static int ocelot_ext_remove(struct platform_device *pdev)
- {
--	struct felix *felix = dev_get_drvdata(&pdev->dev);
-+	struct ocelot_ext_priv *ocelot_ext_priv = dev_get_drvdata(&pdev->dev);
-+	struct felix *felix;
- 
--	if (!felix)
-+	if (!ocelot_ext_priv)
- 		return 0;
- 
-+	felix = &ocelot_ext_priv->felix;
-+
- 	dsa_unregister_switch(felix->ds);
- 
- 	kfree(felix->ds);
--	kfree(felix);
-+	kfree(ocelot_ext_priv);
- 
- 	return 0;
- }
- 
- static void ocelot_ext_shutdown(struct platform_device *pdev)
- {
--	struct felix *felix = dev_get_drvdata(&pdev->dev);
-+	struct ocelot_ext_priv *ocelot_ext_priv = dev_get_drvdata(&pdev->dev);
-+	struct ocelot_ext_port_priv *port_priv;
-+	struct felix *felix;
-+	int i;
- 
--	if (!felix)
-+	if (!ocelot_ext_priv)
- 		return;
- 
-+	felix = &ocelot_ext_priv->felix;
-+
- 	dsa_switch_shutdown(felix->ds);
- 
-+	for (i = 0; i < felix->info->num_ports; i++) {
-+		port_priv = ocelot_ext_priv->port_priv[i];
-+
-+		if (port_priv && port_priv->phylink)
-+			phylink_destroy(port_priv->phylink);
-+	}
-+
- 	dev_set_drvdata(&pdev->dev, NULL);
- }
- 
--- 
-2.25.1
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gMi8xMy8yMyAxNTo1OSwgTWljaGFlbCBHcnplc2NoaWsgd3JvdGU6Cj4gSGkgRmFicmljZSwK
+PiAKPiBPbiBXZWQsIEZlYiAwMSwgMjAyMyBhdCAwNToyMDoxMVBNICswMTAwLCBGYWJyaWNlIEdh
+c25pZXIgd3JvdGU6Cj4+IE9uIDEvMjQvMjMgMjE6NDUsIE1pY2hhZWwgR3J6ZXNjaGlrIHdyb3Rl
+Ogo+Pj4gQW4gbWRlbGF5IG9mIDEgc2VlbXMgdG8gYmUgbmVjZXNzYXJ5IG9uIHNvbWUgbWFjaGlu
+ZXMsIHNpbmNlCj4+Cj4+IEhpIE1pY2hhZWwsCj4+Cj4+IENvdWxkIHlvdSBwcmVjaXNlIG9uIHdo
+aWNoIGJvYXJkID8KPiAKPiBJdCB3YXMgcmVwcm9kdWNpYmxlIG9uIG9uZSBvZiBvdXIgbHhhLW1j
+MSBib2FyZHMuCj4gCj4+PiB0aGUgbW9uc2VsIHN0YXR1cyBkb2VzIG5vdCBzZWVtIHRvIGJlIGFj
+Y3VyYXRlLiBPbiByYXJlIG9jY2FzaW9ucyBqdXN0Cj4+PiB3b3JraW5nIHdpdGggdGhlIHBoeSBh
+ZnRlciB0aGlzIHBsbCBjaGVjayBsZWFkIHRvIG5vIGZ1bmN0aW9uYWwgdXNiLgo+Pgo+PiBDb3Vs
+ZCB5b3UgZWxhYm9yYXRlIG9uIHRoZSBzeW1wdG9tcyAocHJvdmlkZSBzb21lIGVycm9yIGxvZ3Mp
+ID8KPiAKPiBUaGUgc3ltcHRvbSB3YXMsIHRoYXQgdGhlIGR3YzIgY29udHJvbGxlciB3YXMgbm90
+IHJlc3VtaW5nIGZyb20gcG9sbGluZwo+IG9uIHRoZSBzb2Z0IHJlc2V0IGRvbmUgYml0IGFuZCBz
+byByYW4gaW50byBhIHRpbWVvdXQuIChkd2MyOgo+IEdSU1RDVExfQ1NGVFJTVChHUlNUQ1RMX0NT
+RlRSU1RfRE9ORSkpCj4gCj4gV2hpbGUgZGVidWdnaW5nIHdlIGZvdW5kIHRoYXQgdGhlIHN0bSB2
+ZW5kb3IgdWJvb3QgcGh5IGRyaXZlcgo+IHdhcyBqdXN0IGFkZGluZyBhbiBwcmVkZWZpbmVkIHdh
+aXQgb2YgMjAwdXMgYWZ0ZXIgc2V0dGluZwo+IHRoZSBwbGwuCj4gCj4gaHR0cHM6Ly9naXRodWIu
+Y29tL1NUTWljcm9lbGVjdHJvbmljcy91LWJvb3QvYmxvYi92MjAyMS4xMC1zdG0zMm1wL2RyaXZl
+cnMvcGh5L3BoeS1zdG0zMi11c2JwaHljLmMjTDI1Nwo+IAo+IFRoZSBjb21tZW50IGZvciB0aGUg
+UExMX0lOSVRfVElNRV9VUyBzYXlzIHRoYXQgdGhlIHZhbHVlIGlzIGJhc2VkIG9uIHRoZQo+IHBv
+c3NpYmxlIG1heCBwbGwgbG9jayBsYXRlbmN5IGFuZCBhbiBhZGRpdGlvbmFsIHBoeSBpbml0IGRl
+bGF5Ogo+IAo+IMKgLyogbWF4IDEwMCB1cyBmb3IgUExMIGxvY2sgYW5kIDEwMCB1cyBmb3IgUEhZ
+IGluaXQgKi8KPiDCoCNkZWZpbmUgUExMX0lOSVRfVElNRV9VU8KgwqDCoCAyMDAKPiAKPiBSZWFk
+aW5nIHRoZSBkYXRhc2hlZXQgb2YgdGhlIHN0bTMybXAxLCB0aGUgMTAwIHVzIHN1cmUgY29tZSBm
+cm9tCj4gdExPQ0sgaW4gVGFibGUgNDEuIFVTQl9QTEwgY2hhcmFjdGVyaXN0aWNzLiAoUGFnZSAx
+NTkpCj4gCj4gaHR0cHM6Ly93d3cuc3QuY29tL3Jlc291cmNlL2VuL2RhdGFzaGVldC9zdG0zMm1w
+MTU3Yy5wZGYKPiAKPiAKPiBJbiB0aGUgbWFpbmxpbmUgS2VybmVsIHdlIGhhdmUgdGhlIHNldCBv
+ZiBsb2NrIG1vbml0b3IKPiBiaXRzIHRoYXQgYXJlIGFjdHVhbGx5IHVuZGVmaW5lZCBpbiBhbnkg
+cmVnaXN0ZXIgc3BlY3MKPiB3ZSByZWFkIHNvIGZhci4KPiAKPiDCoC8qIFNUTTMyX1VTQlBIWUNf
+TU9OSVRPUiBiaXQgZmllbGRzICovCj4gwqAjZGVmaW5lIFNUTTMyX1VTQlBIWUNfTU9OX09VVMKg
+wqAgR0VOTUFTSygzLCAwKQo+IMKgI2RlZmluZSBTVE0zMl9VU0JQSFlDX01PTl9TRUzCoMKgIEdF
+Tk1BU0soOCwgNCkKPiDCoCNkZWZpbmUgU1RNMzJfVVNCUEhZQ19NT05fU0VMX0xPQ0tQIDB4MUYK
+PiDCoCNkZWZpbmUgU1RNMzJfVVNCUEhZQ19NT05fT1VUX0xPQ0tQIEJJVCgzKQo+IAo+IFNvIHRo
+aXMgd2lsbCBicmluZyB0aGUgbWF4aW11bSBsb2NrIGRlbGF5IHRvIGl0cyByZWFsCj4gZGVsYXku
+CgoKSGkgTWljaGFlbCwKClRoYW5rcyBmb3IgYWxsIGRldGFpbGVkIGV4cGxhbmF0aW9uLgpJIGFz
+a2VkIHNvbWUgaW1wcm92ZW1lbnRzIGluIHRoZSBkb2N1bWVudGF0aW9ucyBpbiB0aGlzIGFyZWEu
+Cgo+IAo+IEJ1dCBmb3IgdGhlIGFkZGl0aW9uYWwgcGh5IGluaXQgZGVsYXksIHdlIGFyZSB1bnN1
+cmUgd2hlcmUgdGhlIDEwMHVzIGFyZQo+IGNvbWluZyBmcm9tLiBTbyB3ZSBjb3VsZCBub3QgcmVh
+bGx5IHRlbGwgaWYgdGhlIHZhbHVlIG1ha2VzIHNlbnNlIGF0Cj4gYWxsLiBUaGUgYXNzdW1wdGlv
+biB3YXMgdG8gaW5jcmVhc2UgdGhlIGRlbGF5LCBqdXN0IHRvIG1ha2Ugc3VyZSB0aGF0Cj4gdGhp
+cyB3aWxsIHNvbHZlIHRoZSBpc3N1ZSBmb3IgZ29vZC4KPiAKPj4+IFdpdGggdGhpcyBzaG9ydCBt
+ZGVsYXkgdGhpcyBpc3N1ZSB3YXMgbm90IHJlcG9ydGVkIGFnYWluLgo+Pj4KPj4+IFNpZ25lZC1v
+ZmYtYnk6IE1pY2hhZWwgR3J6ZXNjaGlrIDxtLmdyemVzY2hpa0BwZW5ndXRyb25peC5kZT4KPj4+
+IC0tLQo+Pj4gwqBkcml2ZXJzL3BoeS9zdC9waHktc3RtMzItdXNicGh5Yy5jIHwgOSArKysrKysr
+KysKPj4+IMKgMSBmaWxlIGNoYW5nZWQsIDkgaW5zZXJ0aW9ucygrKQo+Pj4KPj4+IGRpZmYgLS1n
+aXQgYS9kcml2ZXJzL3BoeS9zdC9waHktc3RtMzItdXNicGh5Yy5jCj4+PiBiL2RyaXZlcnMvcGh5
+L3N0L3BoeS1zdG0zMi11c2JwaHljLmMKPj4+IGluZGV4IDViYjk2NDdiMDc4ZjEyLi5jNDUyYTBj
+YWNlYjlmYSAxMDA2NDQKPj4+IC0tLSBhL2RyaXZlcnMvcGh5L3N0L3BoeS1zdG0zMi11c2JwaHlj
+LmMKPj4+ICsrKyBiL2RyaXZlcnMvcGh5L3N0L3BoeS1zdG0zMi11c2JwaHljLmMKPj4+IEBAIC0z
+NTMsNiArMzUzLDE1IEBAIHN0YXRpYyBpbnQgc3RtMzJfdXNicGh5Y19waHlfaW5pdChzdHJ1Y3Qg
+cGh5ICpwaHkpCj4+PiDCoMKgwqDCoMKgwqDCoMKgIGdvdG8gcGxsX2Rpc2FibGU7Cj4+PiDCoMKg
+wqDCoCB9Cj4+Pgo+Pj4gK8KgwqDCoCAvKiBUaGlzIG1kZWxheSBzZWVtcyB0byBiZSBuZWNlc3Nh
+cnkgb24gc29tZSBtYWNoaW5lcywgc2luY2UgdGhlCj4+PiArwqDCoMKgwqAgKiBtb25zZWwgc3Rh
+dHVzIGRvZXMgbm90IHNlZW0gdG8gYmUgYWNjdXJhdGUuIE9uIHJhcmUgb2NjYXNpb25zCj4+PiAr
+wqDCoMKgwqAgKiBqdXN0IHdvcmtpbmcgd2l0aCB0aGUgcGh5IGFmdGVyIHRoaXMgcGxsIGNoZWNr
+IHRoZSB1c2IKPj4+ICvCoMKgwqDCoCAqIHBlcmlwaGVyYWwgKGUuZy4gb24gdGhlIGR3YzIpIHJ1
+biBpbnRvIHRpbWVvdXQgaXNzdWVzIGFuZAo+Pj4gK8KgwqDCoMKgICogbGVhZGluZyB0byBubyBm
+dW5jdGlvbmFsIHVzYi4gV2l0aCB0aGlzIHNob3J0IG1kZWxheSB0aGlzCj4+PiArwqDCoMKgwqAg
+KiBpc3N1ZSB3YXMgbm90IHJlcG9ydGVkIGFnYWluLgo+Pj4gK8KgwqDCoMKgICovCj4+PiArwqDC
+oMKgIG1kZWxheSgxKTsKPj4+ICsKPj4KPj4gVGhlIFVTQlBIWUMgcHJvdmlkZXMgdHdvIFBIWSBp
+bnRlcmZhY2VzOgo+PiAtIFBIWSBwb3J0IzEgaXMgZm9yIFVTQkgKPj4gLSBQSFkgcG9ydCMyIGNh
+biBiZSBhc3NpZ25lZCB0byBVU0JIIG9yIERXQzIuCj4+Cj4+IEFkZGluZyBzb21lIGRlbGF5IGhl
+cmUsIHdlJ2xsIGhpdCB0d2ljZSB0aGlzIHBlbmFsdHkgKGUuZy4gZm9yIFVTQkggKwo+PiBEV0My
+IG9yIGR1YWwgVVNCSCkgb24gYWxsIE1QMSAoTVAxMyAmIE1QMTUpIHBsYXRmb3Jtcy4KPj4KPj4g
+Q291bGQgeW91IHRyeSB0byBuYXJyb3cgZG93biB0aGUgaXNzdWUgYnkgYWRkaW5nIHNvbWUgZGVi
+dWcgbG9nIGluOgo+PiAtIHN0bTMyX3VzYnBoeWNfcGh5X2luaXQKPj4gLSBzdG0zMl91c2JwaHlj
+X2NsazQ4X3ByZXBhcmUKPiAKPiBUaGUgd2hvbGUgaXNzdWUgaXMgYWN0dWFsbHkgdmVyeSBlYXN5
+IHRvIHJlcHJvZHVjZSBpbiB0aGUgYm9vdGxvYWRlci4KPiBTbyB3ZSBhbHJlYWR5IG1haW5saW5l
+ZCB0aGlzIHBhdGNoIHRvIHRoZSBiYXJlYm94IGJvb3Rsb2FkZXIuCj4gCj4gU28gdGhpcyBwYXRj
+aCBpcyBhY3R1YWxseSBhIHBvcnQgZnJvbSB0aGUgYm9vdGxvYWRlciB0byBtYWtlIHN1cmUKPiB0
+aGF0IHRoZSBrZXJuZWwgZG9lcyBub3QgcnVuIGludG8gdGhlIGlzc3VlIGFzIHdlbGwuCgpLZXJu
+ZWwgYW5kIHUtYm9vdCBkcml2ZXJzIGFyZSBib3RoIHJlZ2lzdGVyaW5nOgotIGEgY2xvY2sgcHJv
+dmlkZXIKICBjbGtfcHJlcGFyZSAuLi4gLT4gc3RtMzJfdXNicGh5Y19jbGs0OF9wcmVwYXJlKCkK
+ICBDdXJyZW50bHksIHRoZXJlJ3Mgbm8gd2FpdCBsb29wIE5PUiBkZWxheSBoZXJlCgotIGEgUEhZ
+IHByb3ZpZGVyICgyIFBIWXMsIGUuZy4gMiBwb3J0cykKICBhZGRpdGlvbmFsIG1kZWxheSgxKSB3
+aWxsIGJlIGhpdCB0d2ljZSwgb25lIHRpbWUgZm9yIERXQzIsIG9uZSBmb3IKRUhDSS9PSENJCgpC
+b3RoIGluIGtlcm5lbCBhbmQgdS1ib290IHRoZSBjbGtfcHJlcGFyZSgpIGxpa2VseSBoYXBwZW5z
+IDFzdCwgdGhlbgpwaHlfaW5pdCgpLgoKVGhpcyBpcyBzdGlsbCB1bmNsZWFyIHRvIG1lIHdoeSBh
+biBhZGRpdGlvbmFsIGRlbGF5IGluIFBIWSBpbml0LCB3b3VsZApiZSBuZWNlc3NhcnkgaW4geW91
+ciBlbnZpcm9ubWVudCwgd2l0aCB0aGUga2VybmVsLiBJcyB0aGVyZSBhIHJlYWwgaXNzdWUKaW4g
+a2VybmVsID8gT3IgaXMgaXQgbW9yZSBhIGNhdXRpb24sIHRoZW9yZXRpY2FsIHBvcnQgZnJvbSBi
+YXJlYm94ID8KClN0aWxsLCBJZiBuZWVkZWQsIEknZCBhZHZpY2UgdGhlIGRlbGF5IHRvIGJlIGFw
+cGxpZWQgb25seSBvbmNlLCBlLmcuIGluCnN0bTMyX3VzYnBoeWNfcGxsX2VuYWJsZSgpLCBqdXN0
+IGFmdGVyIFBMTEVOIGJpdCBoYXMgYmVlbiBzZXQgKGFzIGluCnUtYm9vdCkuIEFuZCByZWx5IG9u
+IE1PTiBiaXRzIGZvciBlYWNoIFBIWSBpbml0LgoKUmVnYXJkaW5nIG1kZWxheSgpOiBJdCB3b3Vs
+ZCBhbHNvIGJlIGJldHRlciB0byBhZG9wdCB1c2xlZXBfcmFuZ2UoKQppbnN0ZWFkIG9mIGJ1c3kg
+bG9vcC4KCiAJc3RtMzJfdXNicGh5Y19zZXRfYml0cyhwbGxfcmVnLCBQTExFTik7CgorCS8qIFdh
+aXQgZm9yIG1heGltdW0gbG9jayB0aW1lICovCisJdXNsZWVwX3JhbmdlKDIwMCwgMzAwKTsKKwog
+CXJldHVybiAwOwoKVGhpcyB3YXksIGRlbGF5IHdpbGwgYmUgaGl0IHVwb24gY2xrX3ByZXBhcmUs
+IHRoZW4gcG9sbGluZyB0aGUgTU9OIGJpdHMKaW4gcGh5X2luaXQoKSBtYXkgYmVjb21lIGEgbm8t
+b3AuIFNvLCB0aGUgZGVsYXkgd291bGQgYmUgaGl0IG9ubHkgb25jZQooaW5zdGVhZCBvZiB0d28g
+dGltZXMpLiBJZiBldmVyIHRoZSBwaHlfaW5pdCgpIGNvbWVzIGZpcnN0IGluIHRoZQpmdXR1cmUs
+IG9ubHkgdGhlIDFzdCBjYWxsIHRvIG9uZSBvZiB0aGUgQVBJcyB3aWxsIGhpdCB0aGlzIGRlbGF5
+LgoKQ291bGQgeW91IGNoZWNrIGlmIHRoaXMgc29sdmVzIHRoZSBpc3N1ZSBhdCB5b3VyIGVuZCA/
+CgpJIGhhZCBhIGxvb2sgYXQgYmFyZWJveCBkcml2ZXIsIHNhbWUgbG9naWMgY291bGQgYXBwbHkg
+dGhlcmUgZXZlbiBpZiBubwpjbG9jayBwcm92aWRlciBpcyByZWdpc3RlcmVkLgoKPiAKPiBJIGJl
+dCB5b3VyIHRlYW0gYXQgc3QgY2FuIGZpZ3VyZSBvdXQgYSBtb3JlIHJlYXNvbmFibGUgdmFsdWUg
+Zm9yIHRoZQo+IGRlbGF5LgoKSSdkIHJlY29tbWVuZCAyMDDCtXMgKG1pbikgYXMgaW4gdS1ib290
+LgoKUmVnYXJkcywKRmFicmljZQo+IAo+Pj4gwqDCoMKgwqAgdXNicGh5Y19waHktPmFjdGl2ZSA9
+IHRydWU7Cj4+Pgo+Pj4gwqDCoMKgwqAgcmV0dXJuIDA7Cj4+Cj4gCj4gUmVnYXJkcywKPiBNaWNo
+YWVsCj4gCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFk
+ZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51
+eC1waHkK
