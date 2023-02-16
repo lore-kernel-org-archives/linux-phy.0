@@ -4,74 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5D201C61DA4
-	for <linux-phy@archiver.kernel.org>; Thu, 16 Feb 2023 11:20:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 83C90C61DA4
+	for <linux-phy@archiver.kernel.org>; Thu, 16 Feb 2023 11:39:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fYkkQMBESi/jUfN8ndcF+VC3V3LsncttS/xyLSZxtdo=; b=NpR8GD4YfzwLb3
-	ojzWOmSuVmsL/2k07j/Y5jKgler984jYCmgz1yNO2yySaFkmi1q5kXwqQPAoZE2JjzVp03wa0cShU
-	avJWGFBpnbqJEILLvQUbQX0j00Kref6OwM0w0qE6UZTHujOUXmF9d6YMzjMhet8nLYTHVmxWWGjnI
-	3NOWaSTPLbVUgBLEOAEuFkmvM/L28AdhUnFwnIMS9OkB5rWxigBrdtsDflVgIf+EW9lomM3rUF7CD
-	tOv9hN5gj3LKlRlrJqmQRyazrWEKZIuq6b4eplo9VOT8nmOchl/dcZKQzxOiw+q5RFBX+d53/BvJE
-	UE/Nvna+HBsrohlGZoBw==;
+	List-Owner; bh=kg4qFpdVW8ClZ2PopurJ6h2WhBaoThpmn582FoA9//g=; b=oXijeluGez4U9h
+	02fu4hUebAHrJLFQEM6mexlhSGgjBAgMr10kKQNaldGM7lpg5AsLW8KWyYr5Z62kPrMCBxA8QYJdy
+	qWL9CDKiXkkxEMsNIieYWPPcdK5cHJjb+aBFBvVH6YebJXNVYuqUt67xybzH97qKs3dmZEBN8EdxK
+	Cum62/EdNH8qhjp4vkOrS5x1/HfxSZBUqfInErpFLZGskAaLruwJPLrf+mypf77k3uqEYjUn3Ecj8
+	OVTuRXYSU8i73VhcZFKpTLdyU0ZPh5kiPX1XtTk85nMQ8eE/OmA5hczsW6SAwfeDii65cfUZKELOC
+	dGqDphKmVTqKyGdHLr8Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pScJ4-009vAE-R1; Thu, 16 Feb 2023 11:20:06 +0000
-Received: from pandora.armlinux.org.uk ([2001:4d48:ad52:32c8:5054:ff:fe00:142])
+	id 1pScbm-009z1U-TT; Thu, 16 Feb 2023 11:39:26 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pScIz-009uYX-DT
-	for linux-phy@lists.infradead.org; Thu, 16 Feb 2023 11:20:03 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
-	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
-	List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
-	bh=c3W/OHTUSIK1upohG2aWJfs7KtAZo7Enbm4Kuliw+kw=; b=ieZsLaCw8lRD+19/eiwDK5f0E3
-	Jp/NRXrB/W8uGw9zuydF8wcqJY/SOSuRCPJTrtagWxVOTi1axuH+JEMZuUglxUkH+AMqyWmevdxn/
-	6SBU/q9Q+8lnXju+k0Cr9FLG9YgzzF2AB97siXsvNydJvbBUU9iYJyJvXktGDn7eNVv7qnZaCZE/+
-	k4LP3Gk7oZHE0fCgVN1udZJTmlRcKuAMqEUTaudXmkBLJAQffrTP3cu3ysZKH0XQrysmPtVsQPoi/
-	TfaDqv9uE4dzTRrfyvuZdWGbnd7ClDA5EYhahbOf9hGzfzh9SgrmvorrNqI9fC3+4F5O54u5Bummu
-	5n5P8/qg==;
-Received: from shell.armlinux.org.uk ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:55348)
-	by pandora.armlinux.org.uk with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.94.2)
-	(envelope-from <linux@armlinux.org.uk>)
-	id 1pScGu-0007xe-6H; Thu, 16 Feb 2023 11:17:52 +0000
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.94.2)
-	(envelope-from <linux@shell.armlinux.org.uk>)
-	id 1pScGq-0005na-3K; Thu, 16 Feb 2023 11:17:48 +0000
-Date: Thu, 16 Feb 2023 11:17:48 +0000
-From: "Russell King (Oracle)" <linux@armlinux.org.uk>
-To: Colin Foster <colin.foster@in-advantage.com>
-Cc: linux-phy@lists.infradead.org, netdev@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Vinod Koul <vkoul@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
-	Jakub Kicinski <kuba@kernel.org>,
-	Eric Dumazet <edumazet@google.com>,
-	"David S. Miller" <davem@davemloft.net>,
-	Florian Fainelli <f.fainelli@gmail.com>,
-	Andrew Lunn <andrew@lunn.ch>, UNGLinuxDriver@microchip.com,
-	Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Claudiu Manoil <claudiu.manoil@nxp.com>,
-	Vladimir Oltean <vladimir.oltean@nxp.com>,
-	Lee Jones <lee@kernel.org>
-Subject: Re: [RFC v1 net-next 7/7] net: dsa: ocelot_ext: add support for
- external phys
-Message-ID: <Y+4Q3PDlj+lVQAPx@shell.armlinux.org.uk>
-References: <20230216075321.2898003-1-colin.foster@in-advantage.com>
- <20230216075321.2898003-8-colin.foster@in-advantage.com>
+	id 1pScbj-009yzd-Eq
+	for linux-phy@lists.infradead.org; Thu, 16 Feb 2023 11:39:25 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 31G8cWKG021972;
+	Thu, 16 Feb 2023 11:39:07 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
+ mime-version : subject : to : cc : references : from : in-reply-to :
+ content-type : content-transfer-encoding; s=qcppdkim1;
+ bh=uVOo0wi1aHKMoaXZgIN5GZV7uFyg9xnchXiFYkyFCdI=;
+ b=GCQjX6a9WKQn70jzXJSRUdTNWoEjTYnkaTfBGgngwTzMSmsr50iGsY05BmkyEz4eWMPE
+ cuYdQG/yVvDQF5B7X9WZEmUmeRPVxgBpTjDNdQk5NQPEknuImyY1tYJNyn3vfeejfU8k
+ XZqjJx3zGECzkQMJaI4TwBfHW8ofEMowksm+x3KE+tp+y53qWoFr4fyoCBAh0pHR3/mI
+ 4qrMu9q8NL4+LHCgG9mnbcClAi0UqbRh0IZQORk74UIXWXjAv+0KaSs2G2xZE/duGkVA
+ FuH/RZl1MP2iYjLQeOXr++SZ1o3QmPobVtBq90nhohJiXIWQjt6qja++tCK5yt1mHrQK 2Q== 
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3ns0hkjwrg-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 16 Feb 2023 11:39:07 +0000
+Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
+	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 31GBd5Xe031736
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 16 Feb 2023 11:39:05 GMT
+Received: from [10.242.242.255] (10.80.80.8) by nalasex01c.na.qualcomm.com
+ (10.47.97.35) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.986.41; Thu, 16 Feb
+ 2023 03:38:56 -0800
+Message-ID: <6ea43d8d-7b9c-5a11-097f-906e10ac3627@quicinc.com>
+Date: Thu, 16 Feb 2023 17:08:52 +0530
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20230216075321.2898003-8-colin.foster@in-advantage.com>
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) Gecko/20100101
+ Thunderbird/91.8.0
+Subject: Re: [PATCH 2/7] PCI: qcom: Add IPQ9574 PCIe support
+Content-Language: en-US
+To: Devi Priya <quic_devipriy@quicinc.com>, <agross@kernel.org>,
+        <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
+        <lpieralisi@kernel.org>, <kw@linux.com>, <robh@kernel.org>,
+        <bhelgaas@google.com>, <krzysztof.kozlowski+dt@linaro.org>,
+        <vkoul@kernel.org>, <kishon@kernel.org>, <mturquette@baylibre.com>,
+        <sboyd@kernel.org>, <mani@kernel.org>, <p.zabel@pengutronix.de>,
+        <svarbanov@mm-sol.com>, <linux-arm-msm@vger.kernel.org>,
+        <linux-pci@vger.kernel.org>, <devicetree@vger.kernel.org>,
+        <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+        <linux-clk@vger.kernel.org>
+CC: <quic_gokulsri@quicinc.com>, <quic_sjaganat@quicinc.com>,
+        <quic_kathirav@quicinc.com>, <quic_arajkuma@quicinc.com>,
+        <quic_anusha@quicinc.com>
+References: <20230214164135.17039-1-quic_devipriy@quicinc.com>
+ <20230214164135.17039-3-quic_devipriy@quicinc.com>
+From: Sricharan Ramabadhran <quic_srichara@quicinc.com>
+In-Reply-To: <20230214164135.17039-3-quic_devipriy@quicinc.com>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01c.na.qualcomm.com (10.47.97.35)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: sGl2UNFWHiU0g3pN-jS9I8SkIK4q0k2T
+X-Proofpoint-GUID: sGl2UNFWHiU0g3pN-jS9I8SkIK4q0k2T
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.219,Aquarius:18.0.930,Hydra:6.0.562,FMLib:17.11.170.22
+ definitions=2023-02-16_08,2023-02-16_01,2023-02-09_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0
+ lowpriorityscore=0 spamscore=0 clxscore=1011 impostorscore=0 adultscore=0
+ mlxscore=0 priorityscore=1501 suspectscore=0 phishscore=0 mlxlogscore=999
+ bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2212070000 definitions=main-2302160099
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230216_032001_644943_28A247CF 
-X-CRM114-Status: GOOD (  19.27  )
+X-CRM114-CacheID: sfid-20230216_033923_545441_2C4B9A00 
+X-CRM114-Status: GOOD (  25.30  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,196 +102,191 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Colin,
+Hi Devi,
 
-On Wed, Feb 15, 2023 at 11:53:21PM -0800, Colin Foster wrote:
-> +static const struct phylink_mac_ops ocelot_ext_phylink_ops = {
-> +	.validate		= phylink_generic_validate,
-
-There is no need to set this anymore.
-
-> +	.mac_config		= ocelot_ext_phylink_mac_config,
-> +	.mac_link_down		= ocelot_ext_phylink_mac_link_down,
-> +	.mac_link_up		= ocelot_ext_phylink_mac_link_up,
+On 2/14/2023 10:11 PM, Devi Priya wrote:
+> Adding PCIe support for IPQ9574 SoC
+> 
+> Co-developed-by: Anusha Rao <quic_anusha@quicinc.com>
+> Signed-off-by: Anusha Rao <quic_anusha@quicinc.com>
+> Signed-off-by: Devi Priya <quic_devipriy@quicinc.com>
+> ---
+>   drivers/pci/controller/dwc/pcie-qcom.c | 119 +++++++++++++++++++++++++
+>   1 file changed, 119 insertions(+)
+> 
+> diff --git a/drivers/pci/controller/dwc/pcie-qcom.c b/drivers/pci/controller/dwc/pcie-qcom.c
+> index a232b04af048..57606c113d45 100644
+> --- a/drivers/pci/controller/dwc/pcie-qcom.c
+> +++ b/drivers/pci/controller/dwc/pcie-qcom.c
+> @@ -193,6 +193,12 @@ struct qcom_pcie_resources_2_9_0 {
+>   	struct reset_control *rst;
+>   };
+>   
+> +struct qcom_pcie_resources_1_27_0 {
+> +	struct clk_bulk_data *clks;
+> +	struct reset_control *rst;
+> +	int num_clks;
 > +};
 > +
-> +static void ocelot_ext_pcs_get_state(struct phylink_pcs *pcs,
-> +				     struct phylink_link_state *state)
+>   union qcom_pcie_resources {
+>   	struct qcom_pcie_resources_1_0_0 v1_0_0;
+>   	struct qcom_pcie_resources_2_1_0 v2_1_0;
+> @@ -201,6 +207,7 @@ union qcom_pcie_resources {
+>   	struct qcom_pcie_resources_2_4_0 v2_4_0;
+>   	struct qcom_pcie_resources_2_7_0 v2_7_0;
+>   	struct qcom_pcie_resources_2_9_0 v2_9_0;
+> +	struct qcom_pcie_resources_1_27_0 v1_27_0;
+>   };
+>   
+>   struct qcom_pcie;
+> @@ -1409,6 +1416,104 @@ static int qcom_pcie_post_init_2_9_0(struct qcom_pcie *pcie)
+>   	return 0;
+>   }
+>   
+> +static int qcom_pcie_get_resources_1_27_0(struct qcom_pcie *pcie)
 > +{
-> +	struct ocelot_ext_port_priv *port_priv =
-> +		phylink_pcs_to_ocelot_port(pcs);
+> +	struct qcom_pcie_resources_1_27_0 *res = &pcie->res.v1_27_0;
+> +	struct dw_pcie *pci = pcie->pci;
+> +	struct device *dev = pci->dev;
 > +
-> +	/* TODO: Determine state from hardware? */
-> +}
+> +	res->num_clks = devm_clk_bulk_get_all(dev, &res->clks);
+> +	if (res->clks < 0)
+> +		return res->num_clks;
 > +
-> +static int ocelot_ext_pcs_config(struct phylink_pcs *pcs, unsigned int mode,
-> +				 phy_interface_t interface,
-> +				 const unsigned long *advertising,
-> +				 bool permit_pause_to_mac)
-> +{
-> +	struct ocelot_ext_port_priv *port_priv =
-> +		phylink_pcs_to_ocelot_port(pcs);
-> +
-> +	switch (interface) {
-> +	case PHY_INTERFACE_MODE_QSGMII:
-> +		ocelot_ext_phylink_mac_config(&port_priv->phylink_config, mode,
-> +					      NULL);
-
-Why are you calling a "mac" operation from a "pcs" operation? If this
-PCS is attached to the same phylink instance as the MAC, you'll get
-the .mac_config method called along with the .pcs_config, so calling
-one from the other really isn't necessary.
-
-> +		break;
-> +	default:
-> +		break;
-> +	}
+> +	res->rst = devm_reset_control_array_get_exclusive(dev);
+> +	if (IS_ERR(res->rst))
+> +		return PTR_ERR(res->rst);
 > +
 > +	return 0;
 > +}
 > +
-> +static void ocelot_ext_pcs_an_restart(struct phylink_pcs *pcs)
+> +static void qcom_pcie_deinit_1_27_0(struct qcom_pcie *pcie)
 > +{
-> +	/* TODO: Restart autonegotiaion process */
+> +	struct qcom_pcie_resources_1_27_0 *res = &pcie->res.v1_27_0;
+> +
+> +	clk_bulk_disable_unprepare(res->num_clks, res->clks);
 > +}
 > +
-> +static void ocelot_ext_pcs_link_up(struct phylink_pcs *pcs, unsigned int mode,
-> +				   phy_interface_t interface, int speed,
-> +				   int duplex)
+> +static int qcom_pcie_init_1_27_0(struct qcom_pcie *pcie)
 > +{
-> +	struct ocelot_ext_port_priv *port_priv =
-> +		phylink_pcs_to_ocelot_port(pcs);
+> +	struct qcom_pcie_resources_1_27_0 *res = &pcie->res.v1_27_0;
+> +	struct device *dev = pcie->pci->dev;
+> +	int ret;
 > +
-> +	ocelot_ext_phylink_mac_link_up(&port_priv->phylink_config, NULL, mode,
-> +				       interface, speed, duplex, false, false);
-
-Same here... and I fail to see why any of these need to be implemented
-or what the purpose of providing this pcs code is.
-
+> +	ret = reset_control_assert(res->rst);
+> +	if (ret) {
+> +		dev_err(dev, "reset assert failed (%d)\n", ret);
+> +		return ret;
+> +	}
+> +
+> +	/*
+> +	 * Delay periods before and after reset deassert are working values
+> +	 * from downstream Codeaurora kernel
+> +	 */
+> +	usleep_range(2000, 2500);
+> +
+> +	ret = reset_control_deassert(res->rst);
+> +	if (ret) {
+> +		dev_err(dev, "reset deassert failed (%d)\n", ret);
+> +		return ret;
+> +	}
+> +
+> +	usleep_range(2000, 2500);
+> +
+> +	return clk_bulk_prepare_enable(res->num_clks, res->clks);
 > +}
 > +
-> +static const struct phylink_pcs_ops ocelot_ext_pcs_ops = {
-> +	.pcs_get_state = ocelot_ext_pcs_get_state,
-> +	.pcs_config = ocelot_ext_pcs_config,
-> +	.pcs_an_restart = ocelot_ext_pcs_an_restart,
-> +	.pcs_link_up = ocelot_ext_pcs_link_up,
->  };
->  
-> +static int ocelot_ext_parse_port_node(struct ocelot *ocelot,
-> +				      struct device_node *ports_node,
-> +				      phy_interface_t phy_mode, int port)
+> +static int qcom_pcie_post_init_1_27_0(struct qcom_pcie *pcie)
 > +{
-> +	struct ocelot_ext_port_priv *ocelot_ext_port_priv;
-> +	struct felix *felix = ocelot_to_felix(ocelot);
-> +	struct ocelot_ext_priv *ocelot_ext_priv;
+> +	struct dw_pcie *pci = pcie->pci;
+> +	u16 offset = dw_pcie_find_capability(pci, PCI_CAP_ID_EXP);
+> +	u32 val;
+> +	int i;
 > +
-> +	ocelot_ext_priv = felix_to_ocelot_ext_priv(felix);
+> +	writel(0x8000000, pcie->parf + PCIE20_v3_PARF_SLV_ADDR_SPACE_SIZE);
 > +
-> +	ocelot_ext_port_priv = devm_kzalloc(ocelot->dev,
-> +					    sizeof(*ocelot_ext_port_priv),
-> +					    GFP_KERNEL);
-> +	if (!ocelot_ext_port_priv)
-> +		return -ENOMEM;
+> +	val = readl(pcie->parf + PCIE20_PARF_PHY_CTRL);
+> +	val &= ~BIT(0);
+> +	writel(val, pcie->parf + PCIE20_PARF_PHY_CTRL);
 > +
-> +	ocelot_ext_port_priv->ocelot = ocelot;
-> +	ocelot_ext_port_priv->chip_port = port;
-> +	ocelot_ext_port_priv->pcs.ops = &ocelot_ext_pcs_ops;
+> +	writel(0, pcie->parf + PCIE20_PARF_DBI_BASE_ADDR);
 > +
-> +	if (!felix->pcs)
-> +		felix->pcs = devm_kcalloc(ocelot->dev, felix->info->num_ports,
-> +					  sizeof(struct phylink_pcs *),
-> +					  GFP_KERNEL);
+> +	writel(DEVICE_TYPE_RC, pcie->parf + PCIE20_PARF_DEVICE_TYPE);
+> +	writel(BYPASS | MSTR_AXI_CLK_EN | AHB_CLK_EN,
+> +	       pcie->parf + PCIE20_PARF_MHI_CLOCK_RESET_CTRL);
+> +	writel(GEN3_RELATED_OFF_RXEQ_RGRDLESS_RXTS |
+> +	       GEN3_RELATED_OFF_GEN3_ZRXDC_NONCOMPL,
+> +	       pci->dbi_base + GEN3_RELATED_OFF);
 > +
-> +	if (!felix->pcs)
-> +		return -ENOMEM;
+> +	writel(MST_WAKEUP_EN | SLV_WAKEUP_EN | MSTR_ACLK_CGC_DIS |
+> +	       SLV_ACLK_CGC_DIS | CORE_CLK_CGC_DIS |
+> +	       AUX_PWR_DET | L23_CLK_RMV_DIS | L1_CLK_RMV_DIS,
+> +	       pcie->parf + PCIE20_PARF_SYS_CTRL);
 > +
-> +	felix->pcs[port] = &ocelot_ext_port_priv->pcs;
+> +	writel(0, pcie->parf + PCIE20_PARF_Q2A_FLUSH);
 > +
-> +	ocelot_ext_priv->port_priv[port] = ocelot_ext_port_priv;
+> +	dw_pcie_dbi_ro_wr_en(pci);
+> +	writel(PCIE_CAP_SLOT_VAL, pci->dbi_base + offset + PCI_EXP_SLTCAP);
 > +
-> +	ocelot_ext_port_priv->node = of_node_get(ports_node);
+> +	val = readl(pci->dbi_base + offset + PCI_EXP_LNKCAP);
+> +	val &= ~PCI_EXP_LNKCAP_ASPMS;
+> +	writel(val, pci->dbi_base + offset + PCI_EXP_LNKCAP);
+> +
+> +	writel(PCI_EXP_DEVCTL2_COMP_TMOUT_DIS, pci->dbi_base + offset +
+> +	       PCI_EXP_DEVCTL2);
+> +
+> +	for (i = 0; i < 256; i++)
+> +		writel(0, pcie->parf + PCIE20_PARF_BDF_TO_SID_TABLE_N + (4 * i));
 > +
 > +	return 0;
 > +}
 > +
-> +static int ocelot_ext_phylink_create(struct ocelot *ocelot, int port)
-> +{
-> +	struct ocelot_ext_port_priv *ocelot_ext_port_priv;
-> +	struct felix *felix = ocelot_to_felix(ocelot);
-> +	struct ocelot_ext_priv *ocelot_ext_priv;
-> +	struct device *dev = ocelot->dev;
-> +	struct ocelot_port *ocelot_port;
-> +	struct device_node *portnp;
-> +	phy_interface_t phy_mode;
-> +	struct phylink *phylink;
-> +	int err;
+>   static int qcom_pcie_link_up(struct dw_pcie *pci)
+>   {
+>   	u16 offset = dw_pcie_find_capability(pci, PCI_CAP_ID_EXP);
+> @@ -1620,6 +1725,15 @@ static const struct qcom_pcie_ops ops_2_9_0 = {
+>   	.ltssm_enable = qcom_pcie_2_3_2_ltssm_enable,
+>   };
+>   
+> +/* Qcom IP rev.: 1.27.0 Synopsys IP rev.: 5.80a */
+> +static const struct qcom_pcie_ops ops_1_27_0 = {
+> +	.get_resources = qcom_pcie_get_resources_1_27_0,
+> +	.init = qcom_pcie_init_1_27_0,
+> +	.post_init = qcom_pcie_post_init_1_27_0,
+> +	.deinit = qcom_pcie_deinit_1_27_0,
+> +	.ltssm_enable = qcom_pcie_2_3_2_ltssm_enable,
+> +};
 > +
-> +	ocelot_ext_priv = felix_to_ocelot_ext_priv(felix);
-> +	ocelot_port = ocelot->ports[port];
-> +	ocelot_ext_port_priv = ocelot_ext_priv->port_priv[port];
+>   static const struct qcom_pcie_cfg cfg_1_0_0 = {
+>   	.ops = &ops_1_0_0,
+>   };
+> @@ -1652,6 +1766,10 @@ static const struct qcom_pcie_cfg cfg_2_9_0 = {
+>   	.ops = &ops_2_9_0,
+>   };
+>   
+> +static const struct qcom_pcie_cfg cfg_1_27_0 = {
+> +	.ops = &ops_1_27_0,
+> +};
 > +
-> +	if (!ocelot_ext_port_priv)
-> +		return 0;
-> +
-> +	portnp = ocelot_ext_port_priv->node;
-> +	phy_mode = ocelot_port->phy_mode;
-> +
-> +	/* Break out early if we're internal...? */
-> +	if (phy_mode == PHY_INTERFACE_MODE_INTERNAL)
-> +		return 0;
-> +
-> +	if (phy_mode == PHY_INTERFACE_MODE_QSGMII)
-> +		ocelot_port_rmwl(ocelot_port, 0,
-> +				 DEV_CLOCK_CFG_MAC_TX_RST |
-> +				 DEV_CLOCK_CFG_MAC_RX_RST,
-> +				 DEV_CLOCK_CFG);
-> +
-> +	if (phy_mode != PHY_INTERFACE_MODE_INTERNAL) {
-> +		struct phy *serdes = of_phy_get(portnp, NULL);
-> +
-> +		if (IS_ERR(serdes)) {
-> +			err = PTR_ERR(serdes);
-> +			dev_err_probe(dev, err,
-> +				      "missing SerDes phys for port %d\n",
-> +				      port);
-> +			return err;
-> +		}
-> +
-> +		err = phy_set_mode_ext(serdes, PHY_MODE_ETHERNET, phy_mode);
-> +		of_phy_put(serdes);
-> +		if (err) {
-> +			dev_err(dev,
-> +				"Could not set SerDes mode on port %d: %pe\n",
-> +				port, ERR_PTR(err));
-> +			return err;
-> +		}
-> +	}
-> +
-> +	ocelot_ext_port_priv->phylink_config.dev = dev;
-> +	ocelot_ext_port_priv->phylink_config.type = PHYLINK_DEV;
-> +	ocelot_ext_port_priv->phylink_config.mac_capabilities = MAC_ASYM_PAUSE |
-> +		MAC_SYM_PAUSE | MAC_10 | MAC_100 | MAC_1000FD | MAC_2500FD;
-> +
-> +	__set_bit(ocelot_port->phy_mode,
-> +		  ocelot_ext_port_priv->phylink_config.supported_interfaces);
-> +
-> +	phylink = phylink_create(&ocelot_ext_port_priv->phylink_config,
-> +				 of_fwnode_handle(portnp),
-> +				 phy_mode, &ocelot_ext_phylink_ops);
+>   static const struct dw_pcie_ops dw_pcie_ops = {
+>   	.link_up = qcom_pcie_link_up,
+>   	.start_link = qcom_pcie_start_link,
+> @@ -1829,6 +1947,7 @@ static const struct of_device_id qcom_pcie_match[] = {
+>   	{ .compatible = "qcom,pcie-ipq8064-v2", .data = &cfg_2_1_0 },
+>   	{ .compatible = "qcom,pcie-ipq8074", .data = &cfg_2_3_3 },
+>   	{ .compatible = "qcom,pcie-ipq8074-gen3", .data = &cfg_2_9_0 },
+> +	{ .compatible = "qcom,pcie-ipq9574", .data = &cfg_1_27_0 },
 
-I'm confused. DSA already sets up a phylink instance per port, so why
-do you need another one?
+   I do not see much difference between 2_9_0 and 1_27_0. Is this patch
+   really required. Can you check if it works with 2_9_0 itself ?
 
-Thanks.
-
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTP is here! 40Mbps down 10Mbps up. Decent connectivity at last!
+Regards,
+  Sricharan
 
 -- 
 linux-phy mailing list
