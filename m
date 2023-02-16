@@ -4,93 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 83C90C61DA4
-	for <linux-phy@archiver.kernel.org>; Thu, 16 Feb 2023 11:39:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 529EFC636D6
+	for <linux-phy@archiver.kernel.org>; Thu, 16 Feb 2023 12:14:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kg4qFpdVW8ClZ2PopurJ6h2WhBaoThpmn582FoA9//g=; b=oXijeluGez4U9h
-	02fu4hUebAHrJLFQEM6mexlhSGgjBAgMr10kKQNaldGM7lpg5AsLW8KWyYr5Z62kPrMCBxA8QYJdy
-	qWL9CDKiXkkxEMsNIieYWPPcdK5cHJjb+aBFBvVH6YebJXNVYuqUt67xybzH97qKs3dmZEBN8EdxK
-	Cum62/EdNH8qhjp4vkOrS5x1/HfxSZBUqfInErpFLZGskAaLruwJPLrf+mypf77k3uqEYjUn3Ecj8
-	OVTuRXYSU8i73VhcZFKpTLdyU0ZPh5kiPX1XtTk85nMQ8eE/OmA5hczsW6SAwfeDii65cfUZKELOC
-	dGqDphKmVTqKyGdHLr8Q==;
+	List-Owner; bh=B+qbvg6+ZyoGGuik04wFShcpjKXqYPKd4juEqDn59vs=; b=s39F6wm3Sc7L61
+	1y5eLpUT2XBiGXKk38kmpmCLgRWyZQEHMkRzUXWbykmM0ckHYoisZBsBglPlYAbU6Em7hU3/M/pjk
+	HROWFvIZAIU8mVeSjvhG4rmqtbeivQmfGeGyLvAQsYtAGUYFFE7c2AktgMXhkjm0+tk2PEpmQHFMk
+	GCmW2yfhxGnC4G2jApeuqVbO6F3RQp5PXUi4jS+37aa5yTdj1XDvdI0U0+HdfsSIrn4CHDBJds724
+	VriVCHk80nSsvXGEzkT1PjeCpyA9TU90xm2Fm4E+XCA3jz45r/GlubK1qvGMVuUmXb+G3kXuE9cOR
+	hONP8PfDyAZh+oCMCH7w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pScbm-009z1U-TT; Thu, 16 Feb 2023 11:39:26 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1pSdA0-00A7ac-Oh; Thu, 16 Feb 2023 12:14:48 +0000
+Received: from pandora.armlinux.org.uk ([2001:4d48:ad52:32c8:5054:ff:fe00:142])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pScbj-009yzd-Eq
-	for linux-phy@lists.infradead.org; Thu, 16 Feb 2023 11:39:25 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 31G8cWKG021972;
-	Thu, 16 Feb 2023 11:39:07 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
- mime-version : subject : to : cc : references : from : in-reply-to :
- content-type : content-transfer-encoding; s=qcppdkim1;
- bh=uVOo0wi1aHKMoaXZgIN5GZV7uFyg9xnchXiFYkyFCdI=;
- b=GCQjX6a9WKQn70jzXJSRUdTNWoEjTYnkaTfBGgngwTzMSmsr50iGsY05BmkyEz4eWMPE
- cuYdQG/yVvDQF5B7X9WZEmUmeRPVxgBpTjDNdQk5NQPEknuImyY1tYJNyn3vfeejfU8k
- XZqjJx3zGECzkQMJaI4TwBfHW8ofEMowksm+x3KE+tp+y53qWoFr4fyoCBAh0pHR3/mI
- 4qrMu9q8NL4+LHCgG9mnbcClAi0UqbRh0IZQORk74UIXWXjAv+0KaSs2G2xZE/duGkVA
- FuH/RZl1MP2iYjLQeOXr++SZ1o3QmPobVtBq90nhohJiXIWQjt6qja++tCK5yt1mHrQK 2Q== 
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3ns0hkjwrg-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 16 Feb 2023 11:39:07 +0000
-Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
-	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 31GBd5Xe031736
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 16 Feb 2023 11:39:05 GMT
-Received: from [10.242.242.255] (10.80.80.8) by nalasex01c.na.qualcomm.com
- (10.47.97.35) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.986.41; Thu, 16 Feb
- 2023 03:38:56 -0800
-Message-ID: <6ea43d8d-7b9c-5a11-097f-906e10ac3627@quicinc.com>
-Date: Thu, 16 Feb 2023 17:08:52 +0530
+	id 1pSd9y-00A7Zw-1Y
+	for linux-phy@lists.infradead.org; Thu, 16 Feb 2023 12:14:47 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+	List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=jXVXv+gMvR8vAGRweMPPnCLdrzntR/BT09IoSKaeNek=; b=Gg7lbHJlh80SoTt5vF3lfnYtbC
+	ee8SuciTUSmAa6J/7ILuVvBETYViroI6jqIVcW2OzThG98/oSh7X9mOfRUvq3j9jdsw5sV1drrAP2
+	Os7viU81YxERtw2SiGSEmiPGj8JTDquIPPVOGBf22J8XQ1x6tJUm+9ZHP2iYshE85i6gKE/Mod14i
+	LOh1aSkwmrCIRoxL6IPmMovm+9I5bAd2IO7JsItBA/kPQ6Yf9Jas/IGdLNTfvsjJ+pZV8paAyvE2t
+	EgIMTTLq7i3dORB3J4Gsgwkw3OabyoSzJ2a4XntZQMrFBt6+klUwvnn2bjcDbPNanDMGsxpfv3mJp
+	lR9VpmrA==;
+Received: from shell.armlinux.org.uk ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:49696)
+	by pandora.armlinux.org.uk with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.94.2)
+	(envelope-from <linux@armlinux.org.uk>)
+	id 1pSd9t-00082N-QS; Thu, 16 Feb 2023 12:14:41 +0000
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.94.2)
+	(envelope-from <linux@shell.armlinux.org.uk>)
+	id 1pSd9q-0005pl-Rl; Thu, 16 Feb 2023 12:14:38 +0000
+Date: Thu, 16 Feb 2023 12:14:38 +0000
+From: "Russell King (Oracle)" <linux@armlinux.org.uk>
+To: Colin Foster <colin.foster@in-advantage.com>
+Cc: linux-phy@lists.infradead.org, netdev@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Vinod Koul <vkoul@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
+	Jakub Kicinski <kuba@kernel.org>,
+	Eric Dumazet <edumazet@google.com>,
+	"David S. Miller" <davem@davemloft.net>,
+	Florian Fainelli <f.fainelli@gmail.com>,
+	Andrew Lunn <andrew@lunn.ch>, UNGLinuxDriver@microchip.com,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Claudiu Manoil <claudiu.manoil@nxp.com>,
+	Vladimir Oltean <vladimir.oltean@nxp.com>,
+	Lee Jones <lee@kernel.org>
+Subject: Re: [RFC v1 net-next 0/7] add support for ocelot external ports
+Message-ID: <Y+4eLmpX9oX3JBVJ@shell.armlinux.org.uk>
+References: <20230216075321.2898003-1-colin.foster@in-advantage.com>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) Gecko/20100101
- Thunderbird/91.8.0
-Subject: Re: [PATCH 2/7] PCI: qcom: Add IPQ9574 PCIe support
-Content-Language: en-US
-To: Devi Priya <quic_devipriy@quicinc.com>, <agross@kernel.org>,
-        <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
-        <lpieralisi@kernel.org>, <kw@linux.com>, <robh@kernel.org>,
-        <bhelgaas@google.com>, <krzysztof.kozlowski+dt@linaro.org>,
-        <vkoul@kernel.org>, <kishon@kernel.org>, <mturquette@baylibre.com>,
-        <sboyd@kernel.org>, <mani@kernel.org>, <p.zabel@pengutronix.de>,
-        <svarbanov@mm-sol.com>, <linux-arm-msm@vger.kernel.org>,
-        <linux-pci@vger.kernel.org>, <devicetree@vger.kernel.org>,
-        <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-        <linux-clk@vger.kernel.org>
-CC: <quic_gokulsri@quicinc.com>, <quic_sjaganat@quicinc.com>,
-        <quic_kathirav@quicinc.com>, <quic_arajkuma@quicinc.com>,
-        <quic_anusha@quicinc.com>
-References: <20230214164135.17039-1-quic_devipriy@quicinc.com>
- <20230214164135.17039-3-quic_devipriy@quicinc.com>
-From: Sricharan Ramabadhran <quic_srichara@quicinc.com>
-In-Reply-To: <20230214164135.17039-3-quic_devipriy@quicinc.com>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01c.na.qualcomm.com (10.47.97.35)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: sGl2UNFWHiU0g3pN-jS9I8SkIK4q0k2T
-X-Proofpoint-GUID: sGl2UNFWHiU0g3pN-jS9I8SkIK4q0k2T
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.219,Aquarius:18.0.930,Hydra:6.0.562,FMLib:17.11.170.22
- definitions=2023-02-16_08,2023-02-16_01,2023-02-09_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0
- lowpriorityscore=0 spamscore=0 clxscore=1011 impostorscore=0 adultscore=0
- mlxscore=0 priorityscore=1501 suspectscore=0 phishscore=0 mlxlogscore=999
- bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2212070000 definitions=main-2302160099
+Content-Disposition: inline
+In-Reply-To: <20230216075321.2898003-1-colin.foster@in-advantage.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230216_033923_545441_2C4B9A00 
-X-CRM114-Status: GOOD (  25.30  )
+X-CRM114-CacheID: sfid-20230216_041446_107604_4F7F7E8F 
+X-CRM114-Status: GOOD (  21.01  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,191 +81,64 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Devi,
-
-On 2/14/2023 10:11 PM, Devi Priya wrote:
-> Adding PCIe support for IPQ9574 SoC
+On Wed, Feb 15, 2023 at 11:53:14PM -0800, Colin Foster wrote:
+> Part 3 will, at a minimum, add support for ports 4-7, which are
+> configured to use QSGMII to an external phy (Return Of The QSGMII). With
+> any luck, and some guidance, support for SGMII, SFPs, etc. will also be
+> part of this series.
 > 
-> Co-developed-by: Anusha Rao <quic_anusha@quicinc.com>
-> Signed-off-by: Anusha Rao <quic_anusha@quicinc.com>
-> Signed-off-by: Devi Priya <quic_devipriy@quicinc.com>
-> ---
->   drivers/pci/controller/dwc/pcie-qcom.c | 119 +++++++++++++++++++++++++
->   1 file changed, 119 insertions(+)
 > 
-> diff --git a/drivers/pci/controller/dwc/pcie-qcom.c b/drivers/pci/controller/dwc/pcie-qcom.c
-> index a232b04af048..57606c113d45 100644
-> --- a/drivers/pci/controller/dwc/pcie-qcom.c
-> +++ b/drivers/pci/controller/dwc/pcie-qcom.c
-> @@ -193,6 +193,12 @@ struct qcom_pcie_resources_2_9_0 {
->   	struct reset_control *rst;
->   };
->   
-> +struct qcom_pcie_resources_1_27_0 {
-> +	struct clk_bulk_data *clks;
-> +	struct reset_control *rst;
-> +	int num_clks;
-> +};
-> +
->   union qcom_pcie_resources {
->   	struct qcom_pcie_resources_1_0_0 v1_0_0;
->   	struct qcom_pcie_resources_2_1_0 v2_1_0;
-> @@ -201,6 +207,7 @@ union qcom_pcie_resources {
->   	struct qcom_pcie_resources_2_4_0 v2_4_0;
->   	struct qcom_pcie_resources_2_7_0 v2_7_0;
->   	struct qcom_pcie_resources_2_9_0 v2_9_0;
-> +	struct qcom_pcie_resources_1_27_0 v1_27_0;
->   };
->   
->   struct qcom_pcie;
-> @@ -1409,6 +1416,104 @@ static int qcom_pcie_post_init_2_9_0(struct qcom_pcie *pcie)
->   	return 0;
->   }
->   
-> +static int qcom_pcie_get_resources_1_27_0(struct qcom_pcie *pcie)
-> +{
-> +	struct qcom_pcie_resources_1_27_0 *res = &pcie->res.v1_27_0;
-> +	struct dw_pcie *pci = pcie->pci;
-> +	struct device *dev = pci->dev;
-> +
-> +	res->num_clks = devm_clk_bulk_get_all(dev, &res->clks);
-> +	if (res->clks < 0)
-> +		return res->num_clks;
-> +
-> +	res->rst = devm_reset_control_array_get_exclusive(dev);
-> +	if (IS_ERR(res->rst))
-> +		return PTR_ERR(res->rst);
-> +
-> +	return 0;
-> +}
-> +
-> +static void qcom_pcie_deinit_1_27_0(struct qcom_pcie *pcie)
-> +{
-> +	struct qcom_pcie_resources_1_27_0 *res = &pcie->res.v1_27_0;
-> +
-> +	clk_bulk_disable_unprepare(res->num_clks, res->clks);
-> +}
-> +
-> +static int qcom_pcie_init_1_27_0(struct qcom_pcie *pcie)
-> +{
-> +	struct qcom_pcie_resources_1_27_0 *res = &pcie->res.v1_27_0;
-> +	struct device *dev = pcie->pci->dev;
-> +	int ret;
-> +
-> +	ret = reset_control_assert(res->rst);
-> +	if (ret) {
-> +		dev_err(dev, "reset assert failed (%d)\n", ret);
-> +		return ret;
-> +	}
-> +
-> +	/*
-> +	 * Delay periods before and after reset deassert are working values
-> +	 * from downstream Codeaurora kernel
-> +	 */
-> +	usleep_range(2000, 2500);
-> +
-> +	ret = reset_control_deassert(res->rst);
-> +	if (ret) {
-> +		dev_err(dev, "reset deassert failed (%d)\n", ret);
-> +		return ret;
-> +	}
-> +
-> +	usleep_range(2000, 2500);
-> +
-> +	return clk_bulk_prepare_enable(res->num_clks, res->clks);
-> +}
-> +
-> +static int qcom_pcie_post_init_1_27_0(struct qcom_pcie *pcie)
-> +{
-> +	struct dw_pcie *pci = pcie->pci;
-> +	u16 offset = dw_pcie_find_capability(pci, PCI_CAP_ID_EXP);
-> +	u32 val;
-> +	int i;
-> +
-> +	writel(0x8000000, pcie->parf + PCIE20_v3_PARF_SLV_ADDR_SPACE_SIZE);
-> +
-> +	val = readl(pcie->parf + PCIE20_PARF_PHY_CTRL);
-> +	val &= ~BIT(0);
-> +	writel(val, pcie->parf + PCIE20_PARF_PHY_CTRL);
-> +
-> +	writel(0, pcie->parf + PCIE20_PARF_DBI_BASE_ADDR);
-> +
-> +	writel(DEVICE_TYPE_RC, pcie->parf + PCIE20_PARF_DEVICE_TYPE);
-> +	writel(BYPASS | MSTR_AXI_CLK_EN | AHB_CLK_EN,
-> +	       pcie->parf + PCIE20_PARF_MHI_CLOCK_RESET_CTRL);
-> +	writel(GEN3_RELATED_OFF_RXEQ_RGRDLESS_RXTS |
-> +	       GEN3_RELATED_OFF_GEN3_ZRXDC_NONCOMPL,
-> +	       pci->dbi_base + GEN3_RELATED_OFF);
-> +
-> +	writel(MST_WAKEUP_EN | SLV_WAKEUP_EN | MSTR_ACLK_CGC_DIS |
-> +	       SLV_ACLK_CGC_DIS | CORE_CLK_CGC_DIS |
-> +	       AUX_PWR_DET | L23_CLK_RMV_DIS | L1_CLK_RMV_DIS,
-> +	       pcie->parf + PCIE20_PARF_SYS_CTRL);
-> +
-> +	writel(0, pcie->parf + PCIE20_PARF_Q2A_FLUSH);
-> +
-> +	dw_pcie_dbi_ro_wr_en(pci);
-> +	writel(PCIE_CAP_SLOT_VAL, pci->dbi_base + offset + PCI_EXP_SLTCAP);
-> +
-> +	val = readl(pci->dbi_base + offset + PCI_EXP_LNKCAP);
-> +	val &= ~PCI_EXP_LNKCAP_ASPMS;
-> +	writel(val, pci->dbi_base + offset + PCI_EXP_LNKCAP);
-> +
-> +	writel(PCI_EXP_DEVCTL2_COMP_TMOUT_DIS, pci->dbi_base + offset +
-> +	       PCI_EXP_DEVCTL2);
-> +
-> +	for (i = 0; i < 256; i++)
-> +		writel(0, pcie->parf + PCIE20_PARF_BDF_TO_SID_TABLE_N + (4 * i));
-> +
-> +	return 0;
-> +}
-> +
->   static int qcom_pcie_link_up(struct dw_pcie *pci)
->   {
->   	u16 offset = dw_pcie_find_capability(pci, PCI_CAP_ID_EXP);
-> @@ -1620,6 +1725,15 @@ static const struct qcom_pcie_ops ops_2_9_0 = {
->   	.ltssm_enable = qcom_pcie_2_3_2_ltssm_enable,
->   };
->   
-> +/* Qcom IP rev.: 1.27.0 Synopsys IP rev.: 5.80a */
-> +static const struct qcom_pcie_ops ops_1_27_0 = {
-> +	.get_resources = qcom_pcie_get_resources_1_27_0,
-> +	.init = qcom_pcie_init_1_27_0,
-> +	.post_init = qcom_pcie_post_init_1_27_0,
-> +	.deinit = qcom_pcie_deinit_1_27_0,
-> +	.ltssm_enable = qcom_pcie_2_3_2_ltssm_enable,
-> +};
-> +
->   static const struct qcom_pcie_cfg cfg_1_0_0 = {
->   	.ops = &ops_1_0_0,
->   };
-> @@ -1652,6 +1766,10 @@ static const struct qcom_pcie_cfg cfg_2_9_0 = {
->   	.ops = &ops_2_9_0,
->   };
->   
-> +static const struct qcom_pcie_cfg cfg_1_27_0 = {
-> +	.ops = &ops_1_27_0,
-> +};
-> +
->   static const struct dw_pcie_ops dw_pcie_ops = {
->   	.link_up = qcom_pcie_link_up,
->   	.start_link = qcom_pcie_start_link,
-> @@ -1829,6 +1947,7 @@ static const struct of_device_id qcom_pcie_match[] = {
->   	{ .compatible = "qcom,pcie-ipq8064-v2", .data = &cfg_2_1_0 },
->   	{ .compatible = "qcom,pcie-ipq8074", .data = &cfg_2_3_3 },
->   	{ .compatible = "qcom,pcie-ipq8074-gen3", .data = &cfg_2_9_0 },
-> +	{ .compatible = "qcom,pcie-ipq9574", .data = &cfg_1_27_0 },
+> This patch series is absolutely an RFC at this point. While all 8 copper
+> ports on the VSC7512 are currently functional, I recognize there are a
+> couple empty function callbacks in the last patch that likely need to be
+> implemented.
+> 
+...
+> 
+> Also, with patch 7 ("net: dsa: ocelot_ext: add support for external phys")
+> my basis was the function mscc_ocelot_init_ports(), but there were several
+> changes I had to make for DSA / Phylink. Are my implementations of
+> ocelot_ext_parse_port_node() and ocelot_ext_phylink_create() barking up
+> the right tree?
 
-   I do not see much difference between 2_9_0 and 1_27_0. Is this patch
-   really required. Can you check if it works with 2_9_0 itself ?
+DSA already creates phylink instances per DSA port, and provides many
+of the phylink MAC operations to the DSA driver via the .phylink_*
+operations in the dsa_switch_ops structure, and this phylink instance
+should be used for managing the status and configuring the port
+according to phylink's callbacks. The core felix code already makes
+use of this, implementing the mac_link_down() and mac_link_up()
+operations to handle when the link comes up or goes down.
 
-Regards,
-  Sricharan
+I don't see why one would need to create a separate phylink instance
+to support external PHYs, SFPs, etc on a DSA switch. The phylink
+instance created by DSA is there for the DSA driver to make use of
+for the port, and should be sufficient for this.
+
+I think if you use the DSA-created phylink instance, then you don't
+need any of patch 6. I'm not yet convinced that you need anything
+from patch 7, but maybe you could explain what patch 7 provides that
+the existing felix phylink implementation doesn't already provide.
+
+I do get the impression that the use of the PCS instance in patch 7
+is an attempt to work around the use of a private instance,
+redirecting the pcs_config and pcs_link_up methods to the
+corresponding MAC operations as a workaround for having the private
+instance.
+
+It looks like you need to hook into the mac_config(), mac_link_up()
+and mac_link_down() methods at the core felix layer, so I would
+suggest looking at the felix_info structure, adding methods there for
+each of these, and arranging for the core felix code to forward these
+calls down to the implementation as required.
+
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTP is here! 40Mbps down 10Mbps up. Decent connectivity at last!
 
 -- 
 linux-phy mailing list
