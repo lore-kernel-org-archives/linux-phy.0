@@ -4,90 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2CC61C61DA4
-	for <linux-phy@archiver.kernel.org>; Thu, 16 Feb 2023 10:30:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5D201C61DA4
+	for <linux-phy@archiver.kernel.org>; Thu, 16 Feb 2023 11:20:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NzpfZ+VZ/PvyXsX8wYWXVvTBvzrKyzI6PjHdODHNKBM=; b=p7VFTrlCRZOExz
-	X0HoTTQ/nuSXFE0OpZzwH8m339SVt0xJKt6JXgjJiY1j3PhPB2CQNnZuEZ7sNXcWlRUHfx8L+9TrL
-	t0vIhv/Jvrm0SV4NmifCidOB+vDW2ffHqzzHvUEFM1WUlzPgN3tb9sylJMMSU7VGR2MkBwgRFsnFZ
-	4ApH6jn2GgQO5EaAbHftYfRcRgwWYYKH+57Rv76z+/5Tbt6t90Pj6lYu48tq4Pni2DbxMn62cAaW1
-	hNyWcNRAWBqFrfJc8ltIyAReBiCjyd/AzWxwvrt5PkSq+3QdpJGUt2+w1osloumpLox5iz3NhLJM0
-	ORVOh/20Lhh2UUOdvOYA==;
+	List-Owner; bh=fYkkQMBESi/jUfN8ndcF+VC3V3LsncttS/xyLSZxtdo=; b=NpR8GD4YfzwLb3
+	ojzWOmSuVmsL/2k07j/Y5jKgler984jYCmgz1yNO2yySaFkmi1q5kXwqQPAoZE2JjzVp03wa0cShU
+	avJWGFBpnbqJEILLvQUbQX0j00Kref6OwM0w0qE6UZTHujOUXmF9d6YMzjMhet8nLYTHVmxWWGjnI
+	3NOWaSTPLbVUgBLEOAEuFkmvM/L28AdhUnFwnIMS9OkB5rWxigBrdtsDflVgIf+EW9lomM3rUF7CD
+	tOv9hN5gj3LKlRlrJqmQRyazrWEKZIuq6b4eplo9VOT8nmOchl/dcZKQzxOiw+q5RFBX+d53/BvJE
+	UE/Nvna+HBsrohlGZoBw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pSbWn-009ZYY-JG; Thu, 16 Feb 2023 10:30:13 +0000
-Received: from mail-ed1-x52e.google.com ([2a00:1450:4864:20::52e])
+	id 1pScJ4-009vAE-R1; Thu, 16 Feb 2023 11:20:06 +0000
+Received: from pandora.armlinux.org.uk ([2001:4d48:ad52:32c8:5054:ff:fe00:142])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pSbWk-009ZX9-UL
-	for linux-phy@lists.infradead.org; Thu, 16 Feb 2023 10:30:12 +0000
-Received: by mail-ed1-x52e.google.com with SMTP id u21so2136799edv.3
-        for <linux-phy@lists.infradead.org>; Thu, 16 Feb 2023 02:30:05 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=trMy19lCfoNQKMYhTv+urc84CG0y8L9modeItMkODVw=;
-        b=Mv8q6XBJEV3iD/szEGMfFVC45l6lbFtsFxQmNKoFSQsOLucCqN9WzaOlpGx5dyuTRh
-         Rx7N0AfF1nCubrdjTYIKfn8ygSA63Bie+E49HgVYrMVAcfd9Xl94ltPW/+p1RF33MVKK
-         YnTLvV+y6ogWtctt4qk4tQRscpRXtgMyp2FwhlWqtBRC0w2wEkFYBEdd0ZtiHHrf5Nc1
-         3NCJQNb2SXbeqMisY+SbUN8yWn+whlhJIysz8rb7MnkdtXKzf36ry5ndLhZBNSZKVnq7
-         xepfCLyzHpxvmBk6PITESzTxtOz1ITo34HUUlgpuefwN37dVY1JzXrOJi1bc0d5NEhbh
-         NCpA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=trMy19lCfoNQKMYhTv+urc84CG0y8L9modeItMkODVw=;
-        b=Md/rQG3sidIYR2W+GD+JJ6lhkLhzl8Rs0oDVdoUZzMGs+PknHPbZbSzDgSaQlg8d3I
-         Sx8YyfZ1CXzxWymyW/j3Bc35Apt0ObTmL+lMMMGpQcPKhc/oW2ksT0l+zOA89MoZaOt+
-         gOdF+7TFZl5B600PjQJFs2X3v6iT+/F/KJZKc1Cj8OaM51SO1+Tm33iuw8CRFZX4VYql
-         M2sAfwUnQ9D78UAQiwUrlXBuAVde/XxHZ3cHTFYscuytKP+e2llP0mgWzrhu8pPZ2V+e
-         kdKcwe71WFnk8HOGxhsiFda/WPl2TzUMCWBKw4FbzWd/8XvBobG11aQEfOrX9Q2G6e0d
-         qIDw==
-X-Gm-Message-State: AO0yUKUOQlDWUhSF2rsySxlssHzqMBxDhq1cylsk/uErUfmFMcaRacEn
-	V5WibZjSbfjxZiO7BQnUSFR41w==
-X-Google-Smtp-Source: AK7set+e6/QJL3lGLViNLI1RrrQJkAnhpGCZU/48DSywTKjOFl3uP6B32GFpz+Yqmal9PtkGNSwEkw==
-X-Received: by 2002:aa7:da88:0:b0:4aa:f910:c21c with SMTP id q8-20020aa7da88000000b004aaf910c21cmr4671262eds.3.1676543404709;
-        Thu, 16 Feb 2023 02:30:04 -0800 (PST)
-Received: from [192.168.1.109] ([178.197.216.144])
-        by smtp.gmail.com with ESMTPSA id v9-20020a509549000000b004acc6cbc451sm643303eda.36.2023.02.16.02.30.02
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 16 Feb 2023 02:30:04 -0800 (PST)
-Message-ID: <a1d93b17-ccd5-fc90-1450-b0b900e00916@linaro.org>
-Date: Thu, 16 Feb 2023 11:30:01 +0100
+	id 1pScIz-009uYX-DT
+	for linux-phy@lists.infradead.org; Thu, 16 Feb 2023 11:20:03 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+	List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=c3W/OHTUSIK1upohG2aWJfs7KtAZo7Enbm4Kuliw+kw=; b=ieZsLaCw8lRD+19/eiwDK5f0E3
+	Jp/NRXrB/W8uGw9zuydF8wcqJY/SOSuRCPJTrtagWxVOTi1axuH+JEMZuUglxUkH+AMqyWmevdxn/
+	6SBU/q9Q+8lnXju+k0Cr9FLG9YgzzF2AB97siXsvNydJvbBUU9iYJyJvXktGDn7eNVv7qnZaCZE/+
+	k4LP3Gk7oZHE0fCgVN1udZJTmlRcKuAMqEUTaudXmkBLJAQffrTP3cu3ysZKH0XQrysmPtVsQPoi/
+	TfaDqv9uE4dzTRrfyvuZdWGbnd7ClDA5EYhahbOf9hGzfzh9SgrmvorrNqI9fC3+4F5O54u5Bummu
+	5n5P8/qg==;
+Received: from shell.armlinux.org.uk ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:55348)
+	by pandora.armlinux.org.uk with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.94.2)
+	(envelope-from <linux@armlinux.org.uk>)
+	id 1pScGu-0007xe-6H; Thu, 16 Feb 2023 11:17:52 +0000
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.94.2)
+	(envelope-from <linux@shell.armlinux.org.uk>)
+	id 1pScGq-0005na-3K; Thu, 16 Feb 2023 11:17:48 +0000
+Date: Thu, 16 Feb 2023 11:17:48 +0000
+From: "Russell King (Oracle)" <linux@armlinux.org.uk>
+To: Colin Foster <colin.foster@in-advantage.com>
+Cc: linux-phy@lists.infradead.org, netdev@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Vinod Koul <vkoul@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
+	Jakub Kicinski <kuba@kernel.org>,
+	Eric Dumazet <edumazet@google.com>,
+	"David S. Miller" <davem@davemloft.net>,
+	Florian Fainelli <f.fainelli@gmail.com>,
+	Andrew Lunn <andrew@lunn.ch>, UNGLinuxDriver@microchip.com,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Claudiu Manoil <claudiu.manoil@nxp.com>,
+	Vladimir Oltean <vladimir.oltean@nxp.com>,
+	Lee Jones <lee@kernel.org>
+Subject: Re: [RFC v1 net-next 7/7] net: dsa: ocelot_ext: add support for
+ external phys
+Message-ID: <Y+4Q3PDlj+lVQAPx@shell.armlinux.org.uk>
+References: <20230216075321.2898003-1-colin.foster@in-advantage.com>
+ <20230216075321.2898003-8-colin.foster@in-advantage.com>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.7.1
-Subject: Re: [PATCH 3/7] dt-bindings: phy: qcom,qmp-pcie: Add ipq9574
- compatible
-Content-Language: en-US
-To: Devi Priya <quic_devipriy@quicinc.com>, agross@kernel.org,
- andersson@kernel.org, konrad.dybcio@linaro.org, lpieralisi@kernel.org,
- kw@linux.com, robh@kernel.org, bhelgaas@google.com,
- krzysztof.kozlowski+dt@linaro.org, vkoul@kernel.org, kishon@kernel.org,
- mturquette@baylibre.com, sboyd@kernel.org, mani@kernel.org,
- p.zabel@pengutronix.de, svarbanov@mm-sol.com, linux-arm-msm@vger.kernel.org,
- linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-clk@vger.kernel.org
-Cc: quic_srichara@quicinc.com, quic_gokulsri@quicinc.com,
- quic_sjaganat@quicinc.com, quic_kathirav@quicinc.com,
- quic_arajkuma@quicinc.com, quic_anusha@quicinc.com
-References: <20230214164135.17039-1-quic_devipriy@quicinc.com>
- <20230214164135.17039-4-quic_devipriy@quicinc.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20230214164135.17039-4-quic_devipriy@quicinc.com>
+Content-Disposition: inline
+In-Reply-To: <20230216075321.2898003-8-colin.foster@in-advantage.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230216_023011_012346_90D6A60F 
-X-CRM114-Status: UNSURE (   6.24  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230216_032001_644943_28A247CF 
+X-CRM114-Status: GOOD (  19.27  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,18 +88,191 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 14/02/2023 17:41, Devi Priya wrote:
-> Add the compatible for the PCIe QMP PHYs found on IPQ9574
-> 
-> Signed-off-by: Devi Priya <quic_devipriy@quicinc.com>
-> ---
+Hi Colin,
 
+On Wed, Feb 15, 2023 at 11:53:21PM -0800, Colin Foster wrote:
+> +static const struct phylink_mac_ops ocelot_ext_phylink_ops = {
+> +	.validate		= phylink_generic_validate,
 
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+There is no need to set this anymore.
 
-Best regards,
-Krzysztof
+> +	.mac_config		= ocelot_ext_phylink_mac_config,
+> +	.mac_link_down		= ocelot_ext_phylink_mac_link_down,
+> +	.mac_link_up		= ocelot_ext_phylink_mac_link_up,
+> +};
+> +
+> +static void ocelot_ext_pcs_get_state(struct phylink_pcs *pcs,
+> +				     struct phylink_link_state *state)
+> +{
+> +	struct ocelot_ext_port_priv *port_priv =
+> +		phylink_pcs_to_ocelot_port(pcs);
+> +
+> +	/* TODO: Determine state from hardware? */
+> +}
+> +
+> +static int ocelot_ext_pcs_config(struct phylink_pcs *pcs, unsigned int mode,
+> +				 phy_interface_t interface,
+> +				 const unsigned long *advertising,
+> +				 bool permit_pause_to_mac)
+> +{
+> +	struct ocelot_ext_port_priv *port_priv =
+> +		phylink_pcs_to_ocelot_port(pcs);
+> +
+> +	switch (interface) {
+> +	case PHY_INTERFACE_MODE_QSGMII:
+> +		ocelot_ext_phylink_mac_config(&port_priv->phylink_config, mode,
+> +					      NULL);
 
+Why are you calling a "mac" operation from a "pcs" operation? If this
+PCS is attached to the same phylink instance as the MAC, you'll get
+the .mac_config method called along with the .pcs_config, so calling
+one from the other really isn't necessary.
+
+> +		break;
+> +	default:
+> +		break;
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+> +static void ocelot_ext_pcs_an_restart(struct phylink_pcs *pcs)
+> +{
+> +	/* TODO: Restart autonegotiaion process */
+> +}
+> +
+> +static void ocelot_ext_pcs_link_up(struct phylink_pcs *pcs, unsigned int mode,
+> +				   phy_interface_t interface, int speed,
+> +				   int duplex)
+> +{
+> +	struct ocelot_ext_port_priv *port_priv =
+> +		phylink_pcs_to_ocelot_port(pcs);
+> +
+> +	ocelot_ext_phylink_mac_link_up(&port_priv->phylink_config, NULL, mode,
+> +				       interface, speed, duplex, false, false);
+
+Same here... and I fail to see why any of these need to be implemented
+or what the purpose of providing this pcs code is.
+
+> +}
+> +
+> +static const struct phylink_pcs_ops ocelot_ext_pcs_ops = {
+> +	.pcs_get_state = ocelot_ext_pcs_get_state,
+> +	.pcs_config = ocelot_ext_pcs_config,
+> +	.pcs_an_restart = ocelot_ext_pcs_an_restart,
+> +	.pcs_link_up = ocelot_ext_pcs_link_up,
+>  };
+>  
+> +static int ocelot_ext_parse_port_node(struct ocelot *ocelot,
+> +				      struct device_node *ports_node,
+> +				      phy_interface_t phy_mode, int port)
+> +{
+> +	struct ocelot_ext_port_priv *ocelot_ext_port_priv;
+> +	struct felix *felix = ocelot_to_felix(ocelot);
+> +	struct ocelot_ext_priv *ocelot_ext_priv;
+> +
+> +	ocelot_ext_priv = felix_to_ocelot_ext_priv(felix);
+> +
+> +	ocelot_ext_port_priv = devm_kzalloc(ocelot->dev,
+> +					    sizeof(*ocelot_ext_port_priv),
+> +					    GFP_KERNEL);
+> +	if (!ocelot_ext_port_priv)
+> +		return -ENOMEM;
+> +
+> +	ocelot_ext_port_priv->ocelot = ocelot;
+> +	ocelot_ext_port_priv->chip_port = port;
+> +	ocelot_ext_port_priv->pcs.ops = &ocelot_ext_pcs_ops;
+> +
+> +	if (!felix->pcs)
+> +		felix->pcs = devm_kcalloc(ocelot->dev, felix->info->num_ports,
+> +					  sizeof(struct phylink_pcs *),
+> +					  GFP_KERNEL);
+> +
+> +	if (!felix->pcs)
+> +		return -ENOMEM;
+> +
+> +	felix->pcs[port] = &ocelot_ext_port_priv->pcs;
+> +
+> +	ocelot_ext_priv->port_priv[port] = ocelot_ext_port_priv;
+> +
+> +	ocelot_ext_port_priv->node = of_node_get(ports_node);
+> +
+> +	return 0;
+> +}
+> +
+> +static int ocelot_ext_phylink_create(struct ocelot *ocelot, int port)
+> +{
+> +	struct ocelot_ext_port_priv *ocelot_ext_port_priv;
+> +	struct felix *felix = ocelot_to_felix(ocelot);
+> +	struct ocelot_ext_priv *ocelot_ext_priv;
+> +	struct device *dev = ocelot->dev;
+> +	struct ocelot_port *ocelot_port;
+> +	struct device_node *portnp;
+> +	phy_interface_t phy_mode;
+> +	struct phylink *phylink;
+> +	int err;
+> +
+> +	ocelot_ext_priv = felix_to_ocelot_ext_priv(felix);
+> +	ocelot_port = ocelot->ports[port];
+> +	ocelot_ext_port_priv = ocelot_ext_priv->port_priv[port];
+> +
+> +	if (!ocelot_ext_port_priv)
+> +		return 0;
+> +
+> +	portnp = ocelot_ext_port_priv->node;
+> +	phy_mode = ocelot_port->phy_mode;
+> +
+> +	/* Break out early if we're internal...? */
+> +	if (phy_mode == PHY_INTERFACE_MODE_INTERNAL)
+> +		return 0;
+> +
+> +	if (phy_mode == PHY_INTERFACE_MODE_QSGMII)
+> +		ocelot_port_rmwl(ocelot_port, 0,
+> +				 DEV_CLOCK_CFG_MAC_TX_RST |
+> +				 DEV_CLOCK_CFG_MAC_RX_RST,
+> +				 DEV_CLOCK_CFG);
+> +
+> +	if (phy_mode != PHY_INTERFACE_MODE_INTERNAL) {
+> +		struct phy *serdes = of_phy_get(portnp, NULL);
+> +
+> +		if (IS_ERR(serdes)) {
+> +			err = PTR_ERR(serdes);
+> +			dev_err_probe(dev, err,
+> +				      "missing SerDes phys for port %d\n",
+> +				      port);
+> +			return err;
+> +		}
+> +
+> +		err = phy_set_mode_ext(serdes, PHY_MODE_ETHERNET, phy_mode);
+> +		of_phy_put(serdes);
+> +		if (err) {
+> +			dev_err(dev,
+> +				"Could not set SerDes mode on port %d: %pe\n",
+> +				port, ERR_PTR(err));
+> +			return err;
+> +		}
+> +	}
+> +
+> +	ocelot_ext_port_priv->phylink_config.dev = dev;
+> +	ocelot_ext_port_priv->phylink_config.type = PHYLINK_DEV;
+> +	ocelot_ext_port_priv->phylink_config.mac_capabilities = MAC_ASYM_PAUSE |
+> +		MAC_SYM_PAUSE | MAC_10 | MAC_100 | MAC_1000FD | MAC_2500FD;
+> +
+> +	__set_bit(ocelot_port->phy_mode,
+> +		  ocelot_ext_port_priv->phylink_config.supported_interfaces);
+> +
+> +	phylink = phylink_create(&ocelot_ext_port_priv->phylink_config,
+> +				 of_fwnode_handle(portnp),
+> +				 phy_mode, &ocelot_ext_phylink_ops);
+
+I'm confused. DSA already sets up a phylink instance per port, so why
+do you need another one?
+
+Thanks.
+
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTP is here! 40Mbps down 10Mbps up. Decent connectivity at last!
 
 -- 
 linux-phy mailing list
