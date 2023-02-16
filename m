@@ -4,57 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5A759C05027
-	for <linux-phy@archiver.kernel.org>; Wed, 15 Feb 2023 03:25:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BBB8CC636D4
+	for <linux-phy@archiver.kernel.org>; Thu, 16 Feb 2023 01:37:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:Cc:To:From:Mime-Version:
-	Message-ID:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=5FHmDbta1cc2Ul8qYk3svkr/PAXf369cxHDL2bTIaEw=; b=xDi
-	0qrBLx+gyGrYNM0RU4vC1CJ9+nfiodGHysYthcU9OijPJ6i35+3uMQG6LlWdmAyeMg8J444wwlUG9
-	1mowYiSg0dZWSW/4M2LDwdYXVk1u5Re5XYRbwKKoaN1/5F6+CDzfTvQWWyQKZzNYCilPU47zn1FqI
-	mBdkMTGERGIIjDn78PqULjvnfkKk+jPzU4P7Lp4qXSQhBJRRFgy7x+9JbjJ+R5N+ponP4aZ2Rfzce
-	T8JAtvUVQDHi/cHuDn9tBxe1oBxT2NBmod6foxexdgos0Xs/JfuZ/kkT+mAjWBR27ZXnLXKeB/A05
-	OicLlx4xL91uD7DiRLwTDH2NaLGbQyw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ndV74/loIKr0te6S8vEbPiBIv8CBsCukPpLj42hGLao=; b=C39fZ9N8ANtRF2
+	MiEChdgN0HXEQEXDDqT2oGLGmT/uPWqKGRUuc34/yWPubYXDjHQA8ZMLPlOBtlcuqbthGsVOhgQXl
+	t0tT72BI9fUSpq4mXDzEvknzNSJSn4hpGzcV0lL28HG0uNFNMNuhMqdebATeVWmcCe7T7ndgJ1uwq
+	q6tq/YwksvbrqyvLTsf05VHfe4IrHMAzvqrfgogk+2PqYeIpVAoIHXLFHKdNBNncScp1PNi1QDbkO
+	LmJZYf4DdvACKIiKWZ8QKcLkJc1TSs8XI51Gqwgf5xZZGaFWO5tcOef8ZUCJnzWiJde6lG8z88ZFL
+	TPVTknAoDCDLePNjWPsQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pS8QI-004VvN-Pq; Wed, 15 Feb 2023 03:25:34 +0000
-Received: from mxct.zte.com.cn ([183.62.165.209])
+	id 1pSTDO-008Dbo-K7; Thu, 16 Feb 2023 01:37:39 +0000
+Received: from mail-pg1-x52f.google.com ([2607:f8b0:4864:20::52f])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pS8QF-004Vsr-Fi
-	for linux-phy@lists.infradead.org; Wed, 15 Feb 2023 03:25:33 +0000
-Received: from mse-fl2.zte.com.cn (unknown [10.5.228.133])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by mxct.zte.com.cn (FangMail) with ESMTPS id 4PGk3k2kVdz4xyCY;
-	Wed, 15 Feb 2023 11:25:22 +0800 (CST)
-Received: from xaxapp01.zte.com.cn ([10.88.99.176])
-	by mse-fl2.zte.com.cn with SMTP id 31F3P6TP010713;
-	Wed, 15 Feb 2023 11:25:06 +0800 (+08)
-	(envelope-from ye.xingchen@zte.com.cn)
-Received: from mapi (xaxapp01[null])
-	by mapi (Zmail) with MAPI id mid31;
-	Wed, 15 Feb 2023 11:25:07 +0800 (CST)
-Date: Wed, 15 Feb 2023 11:25:07 +0800 (CST)
-X-Zmail-TransId: 2af963ec50933a968cfb
-X-Mailer: Zmail v1.0
-Message-ID: <202302151125076179524@zte.com.cn>
-Mime-Version: 1.0
-From: <ye.xingchen@zte.com.cn>
-To: <vkoul@kernel.org>
-Cc: <nandhini.srikandan@intel.com>, <rashmi.a@intel.com>, <kishon@kernel.org>,
-        <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>
-Subject: =?UTF-8?B?W1BBVENIXSBwaHk6IGludGVsOiBVc2UgZGV2bV9wbGF0Zm9ybV9nZXRfYW5kX2lvcmVtYXBfcmVzb3VyY2UoKQ==?=
-X-MAIL: mse-fl2.zte.com.cn 31F3P6TP010713
-X-Fangmail-Gw-Spam-Type: 0
-X-Fangmail-Anti-Spam-Filtered: true
-X-Fangmail-MID-QID: 63EC50A2.000/4PGk3k2kVdz4xyCY
+	id 1pSTDM-008DXb-9b
+	for linux-phy@lists.infradead.org; Thu, 16 Feb 2023 01:37:37 +0000
+Received: by mail-pg1-x52f.google.com with SMTP id x31so322559pgl.6
+        for <linux-phy@lists.infradead.org>; Wed, 15 Feb 2023 17:37:27 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20210112;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=LRWndtf1MfAj2ZhkN4PTYCt6BLCOsDbhtwenSf5gYEI=;
+        b=ikG9wYqSon6yeDIZ8/HLH4K6l7GUwJqTSDldmDtiKk0LOcz/BTS7VNLwZoloroz2D9
+         oVD4AbiML29i1GxpgZcL46osr4lSsMHnVRsQ9rS+Z00YM67x3toEHXEhCosCp5yKIetC
+         RAzHf54kGMjYljwDklADhRgK3YCRYr16I/5zF/1MaWjG9eNDuNPaslKSPphPunImAR+a
+         oaf+yIO4Ok0fCJG5J3RlumUqzJAPzUj+FWROrmGx5xRLlffpFh5TPoILkmt+d9EBmE91
+         cyIDe7TuwHBO9FB7Hv2qo/8Ft1+cdysWkUrvNOLsPJbtErLjd3ypuvyMbhF0uduCZxzB
+         ShOQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=LRWndtf1MfAj2ZhkN4PTYCt6BLCOsDbhtwenSf5gYEI=;
+        b=OdPfT42hFwJd2iu1g+MerlhjQixh9d+f/Z/aFjOkNvN7VqvbOaRxe1vsFxapqPYx2l
+         JzRFj5/R/HTS62yOPj3d2YYXUkDOJRxxs0iSpGYJ3rLIGc1rkyIQyI6A5Mby1D7OJ8rk
+         gajr/hMLt+If4QL13Fw069/Hx8D9joOrgFfLXYUFWun/h0t7TEESMwSCmaR+AH8T4uMt
+         xdInpsOVS2V8KLOzD3nBuJVUd3dNXRWsl2tCNouLr/T4zRuYG+fujMF28StS6224JNyy
+         2axoZPW9LlZsn8C8y8g9yY1m+wMC9EU926nCB1AZ+dqlgzl9dwdzxaz+76UF/p8tP+xT
+         mbFQ==
+X-Gm-Message-State: AO0yUKWDMb5B6RLObtqlmNcJ1Jx/aaUibL3dWCqcIYxAgYPdYYCuFZ6q
+	lf36DrT0v/obTEouivLSP7Q=
+X-Google-Smtp-Source: AK7set9LEj/YDhRySm8fzqHdYGLT65Td4y7Y6NmEb9R0Bmc5pY2UTnMI0BsHDKrk54W56G/6crxcQA==
+X-Received: by 2002:a62:1b52:0:b0:583:9b05:d1f0 with SMTP id b79-20020a621b52000000b005839b05d1f0mr3588869pfb.33.1676511446969;
+        Wed, 15 Feb 2023 17:37:26 -0800 (PST)
+Received: from y.home.mmyangfl.win ([104.28.245.200])
+        by smtp.gmail.com with ESMTPSA id p19-20020aa78613000000b005a8d3d311b8sm22620pfn.22.2023.02.15.17.37.22
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 15 Feb 2023 17:37:26 -0800 (PST)
+From: David Yang <mmyangfl@gmail.com>
+To: mmyangfl@gmail.com
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH] phy: hisilicon: Adopt phy-hisi-inno-usb2 to ARM
+Date: Thu, 16 Feb 2023 09:37:13 +0800
+Message-Id: <20230216013714.1480736-1-mmyangfl@gmail.com>
+X-Mailer: git-send-email 2.39.1
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230214_192531_748497_17BF9AAD 
-X-CRM114-Status: UNSURE (   9.67  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230215_173736_351494_34E6A178 
+X-CRM114-Status: GOOD (  11.21  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,41 +89,71 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Ye Xingchen <ye.xingchen@zte.com.cn>
+Hisilicon also uses phy-hisi-inno-usb2 on some ARM32-only SoCs (for
+example, Hi3798), with a slightly different register convention.
 
-Convert platform_get_resource(), devm_ioremap_resource() to a single
-call to devm_platform_get_and_ioremap_resource(), as this is exactly
-what this function does.
-
-Signed-off-by: Ye Xingchen <ye.xingchen@zte.com.cn>
+Signed-off-by: David Yang <mmyangfl@gmail.com>
 ---
- drivers/phy/intel/phy-intel-thunderbay-emmc.c | 4 +---
- 1 file changed, 1 insertion(+), 3 deletions(-)
+ drivers/phy/hisilicon/Kconfig              |  2 +-
+ drivers/phy/hisilicon/phy-hisi-inno-usb2.c | 16 ++++++++++++++--
+ 2 files changed, 15 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/phy/intel/phy-intel-thunderbay-emmc.c b/drivers/phy/intel/phy-intel-thunderbay-emmc.c
-index 593f6970b81e..4fe63240779f 100644
---- a/drivers/phy/intel/phy-intel-thunderbay-emmc.c
-+++ b/drivers/phy/intel/phy-intel-thunderbay-emmc.c
-@@ -461,7 +461,6 @@ static int thunderbay_emmc_phy_probe(struct platform_device *pdev)
- 	struct device *dev = &pdev->dev;
- 	const struct of_device_id *id;
- 	struct phy *generic_phy;
--	struct resource *res;
-
- 	if (!dev->of_node)
- 		return -ENODEV;
-@@ -470,8 +469,7 @@ static int thunderbay_emmc_phy_probe(struct platform_device *pdev)
- 	if (!tbh_phy)
- 		return -ENOMEM;
-
--	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
--	tbh_phy->reg_base = devm_ioremap_resource(&pdev->dev, res);
-+	tbh_phy->reg_base = devm_platform_get_and_ioremap_resource(pdev, 0, NULL);
- 	if (IS_ERR(tbh_phy->reg_base))
- 		return PTR_ERR(tbh_phy->reg_base);
-
+diff --git a/drivers/phy/hisilicon/Kconfig b/drivers/phy/hisilicon/Kconfig
+index d3b92c288..6c89136fc 100644
+--- a/drivers/phy/hisilicon/Kconfig
++++ b/drivers/phy/hisilicon/Kconfig
+@@ -54,7 +54,7 @@ config PHY_HISTB_COMBPHY
+ 
+ config PHY_HISI_INNO_USB2
+ 	tristate "HiSilicon INNO USB2 PHY support"
+-	depends on (ARCH_HISI && ARM64) || COMPILE_TEST
++	depends on ARCH_HISI || COMPILE_TEST
+ 	select GENERIC_PHY
+ 	select MFD_SYSCON
+ 	help
+diff --git a/drivers/phy/hisilicon/phy-hisi-inno-usb2.c b/drivers/phy/hisilicon/phy-hisi-inno-usb2.c
+index b133ae067..624899536 100644
+--- a/drivers/phy/hisilicon/phy-hisi-inno-usb2.c
++++ b/drivers/phy/hisilicon/phy-hisi-inno-usb2.c
+@@ -20,12 +20,24 @@
+ #define PHY_CLK_STABLE_TIME	2	/* unit:ms */
+ #define UTMI_RST_COMPLETE_TIME	2	/* unit:ms */
+ #define POR_RST_COMPLETE_TIME	300	/* unit:us */
++
+ #define PHY_TEST_DATA		GENMASK(7, 0)
++#define PHY_TEST_ADDR_OFFSET	8
++#ifdef CONFIG_ARM64
+ #define PHY_TEST_ADDR		GENMASK(15, 8)
++#define PHY_TEST_PORT_OFFSET	16
+ #define PHY_TEST_PORT		GENMASK(18, 16)
+ #define PHY_TEST_WREN		BIT(21)
+ #define PHY_TEST_CLK		BIT(22)	/* rising edge active */
+ #define PHY_TEST_RST		BIT(23)	/* low active */
++#else
++#define PHY_TEST_ADDR		GENMASK(11, 8)
++#define PHY_TEST_PORT_OFFSET	12
++#define PHY_TEST_PORT		BIT(12)
++#define PHY_TEST_WREN		BIT(13)
++#define PHY_TEST_CLK		BIT(14)	/* rising edge active */
++#define PHY_TEST_RST		BIT(15)	/* low active */
++#endif
+ #define PHY_CLK_ENABLE		BIT(2)
+ 
+ struct hisi_inno_phy_port {
+@@ -47,8 +59,8 @@ static void hisi_inno_phy_write_reg(struct hisi_inno_phy_priv *priv,
+ 	u32 val;
+ 
+ 	val = (data & PHY_TEST_DATA) |
+-	      ((addr << 8) & PHY_TEST_ADDR) |
+-	      ((port << 16) & PHY_TEST_PORT) |
++	      ((addr << PHY_TEST_ADDR_OFFSET) & PHY_TEST_ADDR) |
++	      ((port << PHY_TEST_PORT_OFFSET) & PHY_TEST_PORT) |
+ 	      PHY_TEST_WREN | PHY_TEST_RST;
+ 	writel(val, reg);
+ 
 -- 
-2.25.1
+2.39.1
+
 
 -- 
 linux-phy mailing list
