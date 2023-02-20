@@ -4,92 +4,139 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6E044C636CC
-	for <linux-phy@archiver.kernel.org>; Mon, 20 Feb 2023 13:48:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 80599C05027
+	for <linux-phy@archiver.kernel.org>; Mon, 20 Feb 2023 14:12:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=q+ya6HxZBTozFbExOA68KFlfJkgXYKwFFWCpKc47DOI=; b=qqnBcOP+rRKEui
-	+jhshtkG8MBY/K3aaCXeOws+MirBrL1jjTDvpMM9YQ7dJNjawPG2SOjALpDZgIYb94XcEhB7+cHhD
-	c7JVrDbY2v9r7u05Z2SiOWr9PQYYQNTxK+HxbSME5IjUveiBgj4XvgkyRy0JO346FDUSh2DnUz/p3
-	dXR7ppuIIsBssHFDlIJeST6VBoN5uS2eQwHT9x3qjQie60Q1uCUeJ/Zy2qZkX3ERkcyIycqVSUMab
-	778hCJ6vLMxLE5ZRHjlZaEpxw+jChP5jtkNOmM7m+fm33PW52piw3rWhPGJA8ZdKm6OP4Cjf/lqOY
-	m1kiEhWcIjNVD6y2tp5Q==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=MnCojCSx+/fwbtTRNmz0M7QGO46aS4D1/xlfpOn0UFo=; b=d3gJU5D7OLubud
+	auLlHRF7SstzAFp4SzeVmkWPeL+2TOylNfjmIu/PU0eoon9/p1ApXCPSdDJwQd8YcjFQw8KQ8U2gR
+	lioY9xk1dYeoolm/4lQenQFEKLa37FF5Mvl7fwpp8E2LxYRDbviIUf6FbRY3qUtqVV7K5teSmnHwR
+	UrF0a05yDzgGyNhn/0nct+0jxV+zP3dHl8QdhK1EiCL1wesSzNdTb4Udounps0aqutEHB3k3zvnRs
+	CFVktzbOKcoBHHnxn62hjUMXAppn31DL/col4Src94phrpVTkEu1h4OE+l5Y+glGazrB0thA0eIcL
+	d6ebtVJT1PfgFi31NF+Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pU6X4-004EGP-Ry; Mon, 20 Feb 2023 13:48:42 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1pU6uQ-004I4h-SW; Mon, 20 Feb 2023 14:12:50 +0000
+Received: from mx0b-0014ca01.pphosted.com ([208.86.201.193] helo=mx0a-0014ca01.pphosted.com)
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pU6X1-004EFW-VE
-	for linux-phy@lists.infradead.org; Mon, 20 Feb 2023 13:48:41 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 31KCEMj2006715;
-	Mon, 20 Feb 2023 13:48:33 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
- mime-version : subject : to : cc : references : from : in-reply-to :
- content-type : content-transfer-encoding; s=qcppdkim1;
- bh=ORSU/Kgrr5YXCnp8lyw5sWPwL7mXbpJ3GoH/DEN7i44=;
- b=p3qOn7D/rpccX+D2Qv2gOgr2XXdtpcSFzBTGi6gTa1/Tz5BN7ZYnE/yKhBMuJ1QjY0Hb
- CXxikNM0i54V2SOq2XHhzphBiFWrgEWyw9+99ZSPPyKN2NGl5NLTrNo3P3OcuZcmDnBW
- LSgAzzCfCzG9S74ey0RCmfCiJg/lkHVC03jnR99i24zlZ6jIamNu7Fv7O8/aqOiQjUil
- 3T0O2PpKtplWxiZPhMVfOui0kU68I8EOcDsp4a5pTkx/fVYJbMp6VXY44Fb8JVlZdJot
- VNC5nTmscRuHo6uXCeFXYoqfA7M09z802f8QrOLz6t5gT0gZ8K6jutCAzXgnD1RoxT2Q mQ== 
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3ntp98d916-1
+	id 1pU6uK-004I1j-2p
+	for linux-phy@lists.infradead.org; Mon, 20 Feb 2023 14:12:49 +0000
+Received: from pps.filterd (m0042333.ppops.net [127.0.0.1])
+	by mx0b-0014ca01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 31KCN4bD031472;
+	Mon, 20 Feb 2023 06:12:24 -0800
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cadence.com; h=from : to : cc :
+ subject : date : message-id : mime-version : content-type; s=proofpoint;
+ bh=315+u0s8VUcCrITuFKOJZxuHWFtogM/2gdxMWtnB0mI=;
+ b=AEeaQ9ax98vzFcMfBfdp7uz4zQ82/2+tn65tM8lYLJA5q5AfuUe7ZEmzv1I9WG/TS8LL
+ 6ZVHczAxy8MEKargVb3A5HCPD5htEC/Y1XtQheYVpjV+NpFlLWOnBHj51ESas7vGqmi6
+ ShCKiUszOcyTiijJ8kL0Zu884FGfFGU2f/6aT4j9Nftbd1BIo42odBykLUkTu1lUDeqj
+ iK+9fQ8/XedzlNqUmqDMfqZVxE2AZMbL2+5tw7Jr32uzkYXM134dq44mZRZ+1Wl2zF9/
+ Sy6kuAvafYslXBG9dVlQa2K4ViRRbUvYsgfzS3PsokpYYR9/f6rURhuN75YaE3vHDKZq yw== 
+Received: from nam12-bn8-obe.outbound.protection.outlook.com (mail-bn8nam12lp2173.outbound.protection.outlook.com [104.47.55.173])
+	by mx0b-0014ca01.pphosted.com (PPS) with ESMTPS id 3ntu546kk3-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 20 Feb 2023 13:48:33 +0000
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 31KDmWXQ014742
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 20 Feb 2023 13:48:32 GMT
-Received: from [10.216.11.20] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.986.41; Mon, 20 Feb
- 2023 05:48:24 -0800
-Message-ID: <989e460a-b92c-e056-75e5-4e2d36885ac3@quicinc.com>
-Date: Mon, 20 Feb 2023 19:18:21 +0530
+	Mon, 20 Feb 2023 06:12:24 -0800
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=fYd40pBv/GQTyEZ7aazquBSe0VsRecvpHwwEBP1xXJC1quycB5UCoVuFxmTvwTzhkPxB350NmqYCfYXsRITT1PFdY9kxVobokzg+njlAFZWnn5PX/xOAoV8BXA865AWlZ5LrAIwq9QT2TG/RBXmTxYIWfznFQyGgJfPn19mRzUnBHhnGR6DFfGG6Ouq6cC6jy0VUCquG79zpANvgaKZMbpgXpInCy+mNw7+7TWxivlsotnGhx6MpMfSTx2pzjVLIbXYu1+UPAdBn5BHzVLpXrZinyWvZp+63o6Wqc9jrL0HGySvMKtnfai9EjwaMYHHS8YEoTKjTAuOZnAeTK6daNQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=315+u0s8VUcCrITuFKOJZxuHWFtogM/2gdxMWtnB0mI=;
+ b=OYsdsegBWcc3tndVUPHm6/zVmf3wffDZlJ6f5WD7rqU93wg8zoQ9ze600RNyBx3XTH/Xohn5UIjsu4HNB4o7oA7l9nVLZBlMnfuCtzNRhnrrLSGbVnWEpuM5Vu0eRrzNngN3m3+qSz5GkQba/DLbVyPq9kHYpiW9icoDsKX1KrpiBq4odi/4TJyi4B67eOjw0UGIs2fLPDxk5VoXRtGFwzfchLBS+zQPnHH3jfkL19sZGjLgGuUxTugNJAFdr0mhC5uMLIaFSEKkdLtQnn7pmTCUrTNjHUEjrHXWfRkLw2K/yv4Y8ND3A17eVJpQcS/kGa/2XnXNpb5UDI/ADK2Gow==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 158.140.1.147) smtp.rcpttodomain=kernel.org smtp.mailfrom=cadence.com;
+ dmarc=pass (p=none sp=none pct=100) action=none header.from=cadence.com;
+ dkim=none (message not signed); arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cadence.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=315+u0s8VUcCrITuFKOJZxuHWFtogM/2gdxMWtnB0mI=;
+ b=cG53lbZNdiqRoIdk5DOzWMRteJDC4piZrlNzCnswmE45niT+ipZVDd7uOLMfQrkMvuwwemdO5/bKmQ7WY3DkDNzgRH+vxtaVZ3NFZeYoheaRlGALCLs/iJPJcaOOJnElv+WME2NlMtBUws78+rh2rfiEssW0jyBpJ/jMdC6HdtA=
+Received: from MW4PR03CA0072.namprd03.prod.outlook.com (2603:10b6:303:b6::17)
+ by DM6PR07MB4778.namprd07.prod.outlook.com (2603:10b6:5:a3::11) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6111.12; Mon, 20 Feb
+ 2023 14:12:20 +0000
+Received: from MW2NAM12FT092.eop-nam12.prod.protection.outlook.com
+ (2603:10b6:303:b6:cafe::fe) by MW4PR03CA0072.outlook.office365.com
+ (2603:10b6:303:b6::17) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6111.20 via Frontend
+ Transport; Mon, 20 Feb 2023 14:12:20 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 158.140.1.147)
+ smtp.mailfrom=cadence.com; dkim=none (message not signed)
+ header.d=none;dmarc=pass action=none header.from=cadence.com;
+Received-SPF: Pass (protection.outlook.com: domain of cadence.com designates
+ 158.140.1.147 as permitted sender) receiver=protection.outlook.com;
+ client-ip=158.140.1.147; helo=sjmaillnx1.cadence.com; pr=C
+Received: from sjmaillnx1.cadence.com (158.140.1.147) by
+ MW2NAM12FT092.mail.protection.outlook.com (10.13.181.163) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.6134.17 via Frontend Transport; Mon, 20 Feb 2023 14:12:20 +0000
+Received: from maileu5.global.cadence.com (eudvw-maileu5.cadence.com [10.160.110.202])
+	by sjmaillnx1.cadence.com (8.14.4/8.14.4) with ESMTP id 31KECIIS003498
+	(version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256 verify=OK);
+	Mon, 20 Feb 2023 06:12:19 -0800
+Received: from maileu4.global.cadence.com (10.160.110.201) by
+ maileu5.global.cadence.com (10.160.110.202) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.2375.24; Mon, 20 Feb 2023 15:12:17 +0100
+Received: from vleu-orange.cadence.com (10.160.88.83) by
+ maileu4.global.cadence.com (10.160.110.201) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2375.7
+ via Frontend Transport; Mon, 20 Feb 2023 15:12:17 +0100
+Received: from vleu-orange.cadence.com (localhost.localdomain [127.0.0.1])
+	by vleu-orange.cadence.com (8.14.4/8.14.4) with ESMTP id 31KECHLC025372;
+	Mon, 20 Feb 2023 15:12:17 +0100
+Received: (from sjakhade@localhost)
+	by vleu-orange.cadence.com (8.14.4/8.14.4/Submit) id 31KECGPm025366;
+	Mon, 20 Feb 2023 15:12:16 +0100
+From: Swapnil Jakhade <sjakhade@cadence.com>
+To: <vkoul@kernel.org>, <kishon@kernel.org>, <linux-phy@lists.infradead.org>,
+        <linux-kernel@vger.kernel.org>
+CC: <mparab@cadence.com>, <sjakhade@cadence.com>, <rogerq@kernel.org>
+Subject: [PATCH] phy: cadence: Sierra: Add PCIe + SGMII PHY multilink configuration
+Date: Mon, 20 Feb 2023 15:12:16 +0100
+Message-ID: <20230220141216.25326-1-sjakhade@cadence.com>
+X-Mailer: git-send-email 2.15.0
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.6.1
-Subject: Re: [PATCH 0/7] Add PCIe support for IPQ9574
-Content-Language: en-US
-To: Sricharan Ramabadhran <quic_srichara@quicinc.com>, <agross@kernel.org>,
-        <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
-        <lpieralisi@kernel.org>, <kw@linux.com>, <robh@kernel.org>,
-        <bhelgaas@google.com>, <krzysztof.kozlowski+dt@linaro.org>,
-        <vkoul@kernel.org>, <kishon@kernel.org>, <mturquette@baylibre.com>,
-        <sboyd@kernel.org>, <mani@kernel.org>, <p.zabel@pengutronix.de>,
-        <linux-arm-msm@vger.kernel.org>, <linux-pci@vger.kernel.org>,
-        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-        <linux-phy@lists.infradead.org>, <linux-clk@vger.kernel.org>
-CC: <quic_gokulsri@quicinc.com>, <quic_sjaganat@quicinc.com>,
-        <quic_kathirav@quicinc.com>, <quic_arajkuma@quicinc.com>,
-        <quic_anusha@quicinc.com>
-References: <20230214164135.17039-1-quic_devipriy@quicinc.com>
- <a987fc17-3924-7ece-59e2-3fa1d000afc1@quicinc.com>
-From: Devi Priya <quic_devipriy@quicinc.com>
-In-Reply-To: <a987fc17-3924-7ece-59e2-3fa1d000afc1@quicinc.com>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: RcJZbM2r-nlb2Q96w9jR_KwfenFL0kh4
-X-Proofpoint-ORIG-GUID: RcJZbM2r-nlb2Q96w9jR_KwfenFL0kh4
+X-CrossPremisesHeadersFilteredBySendConnector: maileu5.global.cadence.com
+X-OrganizationHeadersPreserved: maileu5.global.cadence.com
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: MW2NAM12FT092:EE_|DM6PR07MB4778:EE_
+X-MS-Office365-Filtering-Correlation-Id: 2c4dab64-2b2b-4170-4b75-08db134c7aef
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: 	9q+dAYxZruVC0CIzSxNBneyj0A2r3lfEYksSmNj3DRkaTszriStC/3PvAzsBUo05FdMqrp9c8IzYgl1GnYmH85SmGr+YJkZA3jHGR6UYZqOXspoSHfJsgKN8hlq6AzI8TC3E9cuph1BcvK7n2ipNW0gMKhlEmU84smJOPOm8H9QGgwIdHAzRLHEML+nUwSHYUxVWAkk8sJsOFFmBDvbdcf09vcek3gtvKTIzza4Fb1nwxPpQZhV0P0q0BHlU9qgDUUEwUnMlldYph4wCw9oDvKiaJRNhJTBo7n3fyKZ67Vv+UruUEB08K5mxbKt4fxxBByub+dXtLidPKe3VSGrE1vXvM7HAi26w1hgD4hUYg3j/jFSuR4p0H0ldDEmCIrKRYuw+/9JTyhNOpANXmKdZFK89U5pNgIY+xBycMyaT6+YxAwpHiEH7W7/t8RmOab6/sJ3sxizQkv7qHl11jZD9J+3ekWvngzgwkCQmx7I9VKXx4sXGxCHhv8h0w/cbSjNvX+QAKIiZgVW7149KC34nxg+gtQFSB93NIKrWB629lPTwsGQ08I0t0fTW7AZfq27ZxMiMHT0B3DtPkl5r4DE/pTQoWFVTU84DuGBpJUq09FFqSeeikujhURZMigSQNWC5/GMlOyeIh48BRKScRqLPiEsIC1Br4xJV6BQbMynFGL8PXyaAgLr6QRDGEgaNM1U8RhKaTzQ75+t+MFSU699l0w==
+X-Forefront-Antispam-Report: 	CIP:158.140.1.147;CTRY:US;LANG:en;SCL:1;SRV:;IPV:CAL;SFV:NSPM;H:sjmaillnx1.cadence.com;PTR:unknown.Cadence.COM;CAT:NONE;SFS:(13230025)(4636009)(39860400002)(376002)(346002)(136003)(396003)(36092001)(451199018)(36840700001)(40470700004)(46966006)(41300700001)(83380400001)(7636003)(8676002)(4326008)(82740400003)(356005)(47076005)(8936002)(70206006)(426003)(316002)(42186006)(54906003)(70586007)(36860700001)(5660300002)(110136005)(82310400005)(2616005)(336012)(478600001)(26005)(86362001)(40480700001)(186003)(2906002)(40460700003)(36756003)(1076003);DIR:OUT;SFP:1101;
+X-OriginatorOrg: cadence.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 20 Feb 2023 14:12:20.3533
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 2c4dab64-2b2b-4170-4b75-08db134c7aef
+X-MS-Exchange-CrossTenant-Id: d36035c5-6ce6-4662-a3dc-e762e61ae4c9
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=d36035c5-6ce6-4662-a3dc-e762e61ae4c9;Ip=[158.140.1.147];Helo=[sjmaillnx1.cadence.com]
+X-MS-Exchange-CrossTenant-AuthSource: 	MW2NAM12FT092.eop-nam12.prod.protection.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR07MB4778
+X-Proofpoint-GUID: BRH5eyLJkCtPZdMNPo2qWd5MUNiHoxgS
+X-Proofpoint-ORIG-GUID: BRH5eyLJkCtPZdMNPo2qWd5MUNiHoxgS
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.219,Aquarius:18.0.930,Hydra:6.0.562,FMLib:17.11.170.22
- definitions=2023-02-20_11,2023-02-20_02,2023-02-09_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=755 mlxscore=0
- adultscore=0 priorityscore=1501 malwarescore=0 suspectscore=0
- lowpriorityscore=0 bulkscore=0 clxscore=1015 impostorscore=0 spamscore=0
- phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2212070000 definitions=main-2302200125
+ definitions=2023-02-20_12,2023-02-20_02,2023-02-09_01
+X-Proofpoint-Spam-Details: rule=outbound_check_notspam policy=outbound_check score=0 impostorscore=0
+ lowpriorityscore=0 priorityscore=1501 mlxscore=0 spamscore=0 bulkscore=0
+ phishscore=0 clxscore=1011 mlxlogscore=999 suspectscore=0 malwarescore=0
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2212070000 definitions=main-2302200129
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230220_054840_150333_AB7BF99E 
-X-CRM114-Status: GOOD (  10.77  )
+X-CRM114-CacheID: sfid-20230220_061245_301570_273C35DB 
+X-CRM114-Status: GOOD (  17.15  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,19 +148,296 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-CgpPbiAyLzE3LzIwMjMgMjoxOCBQTSwgU3JpY2hhcmFuIFJhbWFiYWRocmFuIHdyb3RlOgo+IAo+
-IAo+IE9uIDIvMTQvMjAyMyAxMDoxMSBQTSwgRGV2aSBQcml5YSB3cm90ZToKPj4gUENJZTAsIFBD
-SWUxLCBQQ0llMiwgUENJZTMgKGFuZCBjb3JyZXNwb25kaW5nIFBIWSkgZGV2aWNlcwo+PiBhcmUg
-Zm91bmQgb24gSVBROTU3NCBwbGF0Zm9ybS4gVGhlIFBDSWUwICYgUENJZTEgYXJlIDEtbGFuZQo+
-PiBHZW4zIGhvc3Qgd2hlcmVhcyBQQ0llMiAmIFBDSWUzIGFyZSAyLWxhbmUgR2VuMyBob3N0Lgo+
-Pgo+PiBUaGlzIHNlcmllcyBhZGRzIHN1cHBvcnQgZm9yIGVuYWJsaW5nIHRoZSBzYW1lCj4+Cj4g
-Cj4gCj4gPHN2YXJiYW5vdkBtbS1zb2wuY29tPsKgIC0tPiBUaGlzIGlzIGJvdW5jaW5nLCBwbGVh
-c2UgcmVtb3ZlIGl0Cj4gClN1cmUsIG9rYXkKCj4gUmVnYXJkcywKPiAgwqBTcmljaGFyYW4KCkJl
-c3QgUmVnYXJkcywKRGV2aSBQcml5YQoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgt
-cGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxt
-YW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+Add register sequences for PCIe + SGMII PHY multilink configuration.
+This has been validated on TI J7 platforms.
+
+Signed-off-by: Swapnil Jakhade <sjakhade@cadence.com>
+---
+ drivers/phy/cadence/phy-cadence-sierra.c | 141 ++++++++++++++++++++++-
+ 1 file changed, 139 insertions(+), 2 deletions(-)
+
+diff --git a/drivers/phy/cadence/phy-cadence-sierra.c b/drivers/phy/cadence/phy-cadence-sierra.c
+index 6e86a6517f37..7c0daf3e8880 100644
+--- a/drivers/phy/cadence/phy-cadence-sierra.c
++++ b/drivers/phy/cadence/phy-cadence-sierra.c
+@@ -24,7 +24,7 @@
+ #include <dt-bindings/phy/phy-cadence.h>
+ 
+ #define NUM_SSC_MODE		3
+-#define NUM_PHY_TYPE		4
++#define NUM_PHY_TYPE		5
+ 
+ /* PHY register offsets */
+ #define SIERRA_COMMON_CDB_OFFSET			0x0
+@@ -46,7 +46,9 @@
+ #define SIERRA_CMN_REFRCV_PREG				0x98
+ #define SIERRA_CMN_REFRCV1_PREG				0xB8
+ #define SIERRA_CMN_PLLLC1_GEN_PREG			0xC2
++#define SIERRA_CMN_PLLLC1_FBDIV_INT_PREG		0xC3
+ #define SIERRA_CMN_PLLLC1_LF_COEFF_MODE0_PREG		0xCA
++#define SIERRA_CMN_PLLLC1_CLK0_PREG			0xCE
+ #define SIERRA_CMN_PLLLC1_BWCAL_MODE0_PREG		0xD0
+ #define SIERRA_CMN_PLLLC1_SS_TIME_STEPSIZE_MODE_PREG	0xE2
+ 
+@@ -74,6 +76,7 @@
+ #define SIERRA_PSC_RX_A1_PREG				0x031
+ #define SIERRA_PSC_RX_A2_PREG				0x032
+ #define SIERRA_PSC_RX_A3_PREG				0x033
++#define SIERRA_PLLCTRL_FBDIV_MODE01_PREG		0x039
+ #define SIERRA_PLLCTRL_SUBRATE_PREG			0x03A
+ #define SIERRA_PLLCTRL_GEN_A_PREG			0x03B
+ #define SIERRA_PLLCTRL_GEN_D_PREG			0x03E
+@@ -298,6 +301,7 @@ enum cdns_sierra_phy_type {
+ 	TYPE_NONE,
+ 	TYPE_PCIE,
+ 	TYPE_USB,
++	TYPE_SGMII,
+ 	TYPE_QSGMII
+ };
+ 
+@@ -936,6 +940,9 @@ static int cdns_sierra_get_optional(struct cdns_sierra_inst *inst,
+ 	case PHY_TYPE_USB3:
+ 		inst->phy_type = TYPE_USB;
+ 		break;
++	case PHY_TYPE_SGMII:
++		inst->phy_type = TYPE_SGMII;
++		break;
+ 	case PHY_TYPE_QSGMII:
+ 		inst->phy_type = TYPE_QSGMII;
+ 		break;
+@@ -1339,7 +1346,7 @@ static int cdns_sierra_phy_configure_multilink(struct cdns_sierra_phy *sp)
+ 			}
+ 		}
+ 
+-		if (phy_t1 == TYPE_QSGMII)
++		if (phy_t1 == TYPE_SGMII || phy_t1 == TYPE_QSGMII)
+ 			reset_control_deassert(sp->phys[node].lnk_rst);
+ 	}
+ 
+@@ -1537,6 +1544,71 @@ static int cdns_sierra_phy_remove(struct platform_device *pdev)
+ 	return 0;
+ }
+ 
++/* SGMII PHY PMA lane configuration */
++static struct cdns_reg_pairs sgmii_phy_pma_ln_regs[] = {
++	{0x9010, SIERRA_PHY_PMA_XCVR_CTRL}
++};
++
++static struct cdns_sierra_vals sgmii_phy_pma_ln_vals = {
++	.reg_pairs = sgmii_phy_pma_ln_regs,
++	.num_regs = ARRAY_SIZE(sgmii_phy_pma_ln_regs),
++};
++
++/* SGMII refclk 100MHz, no ssc, opt3 and GE1 links using PLL LC1 */
++static const struct cdns_reg_pairs sgmii_100_no_ssc_plllc1_opt3_cmn_regs[] = {
++	{0x002D, SIERRA_CMN_PLLLC1_FBDIV_INT_PREG},
++	{0x2085, SIERRA_CMN_PLLLC1_LF_COEFF_MODE0_PREG},
++	{0x1005, SIERRA_CMN_PLLLC1_CLK0_PREG},
++	{0x0000, SIERRA_CMN_PLLLC1_BWCAL_MODE0_PREG},
++	{0x0800, SIERRA_CMN_PLLLC1_SS_TIME_STEPSIZE_MODE_PREG}
++};
++
++static const struct cdns_reg_pairs sgmii_100_no_ssc_plllc1_opt3_ln_regs[] = {
++	{0x688E, SIERRA_DET_STANDEC_D_PREG},
++	{0x0004, SIERRA_PSC_LN_IDLE_PREG},
++	{0x0FFE, SIERRA_PSC_RX_A0_PREG},
++	{0x0106, SIERRA_PLLCTRL_FBDIV_MODE01_PREG},
++	{0x0013, SIERRA_PLLCTRL_SUBRATE_PREG},
++	{0x0003, SIERRA_PLLCTRL_GEN_A_PREG},
++	{0x0106, SIERRA_PLLCTRL_GEN_D_PREG},
++	{0x5231, SIERRA_PLLCTRL_CPGAIN_MODE_PREG },
++	{0x0000, SIERRA_DRVCTRL_ATTEN_PREG},
++	{0x9702, SIERRA_DRVCTRL_BOOST_PREG},
++	{0x0051, SIERRA_RX_CREQ_FLTR_A_MODE0_PREG},
++	{0x3C0E, SIERRA_CREQ_CCLKDET_MODE01_PREG},
++	{0x3220, SIERRA_CREQ_FSMCLK_SEL_PREG},
++	{0x0000, SIERRA_CREQ_EQ_CTRL_PREG},
++	{0x0002, SIERRA_DEQ_PHALIGN_CTRL},
++	{0x0186, SIERRA_DEQ_GLUT0},
++	{0x0186, SIERRA_DEQ_GLUT1},
++	{0x0186, SIERRA_DEQ_GLUT2},
++	{0x0186, SIERRA_DEQ_GLUT3},
++	{0x0186, SIERRA_DEQ_GLUT4},
++	{0x0861, SIERRA_DEQ_ALUT0},
++	{0x07E0, SIERRA_DEQ_ALUT1},
++	{0x079E, SIERRA_DEQ_ALUT2},
++	{0x071D, SIERRA_DEQ_ALUT3},
++	{0x03F5, SIERRA_DEQ_DFETAP_CTRL_PREG},
++	{0x0C01, SIERRA_DEQ_TAU_CTRL1_FAST_MAINT_PREG},
++	{0x3C40, SIERRA_DEQ_TAU_CTRL1_SLOW_MAINT_PREG},
++	{0x1C04, SIERRA_DEQ_TAU_CTRL2_PREG},
++	{0x0033, SIERRA_DEQ_PICTRL_PREG},
++	{0x0000, SIERRA_CPI_OUTBUF_RATESEL_PREG},
++	{0x0B6D, SIERRA_CPI_RESBIAS_BIN_PREG},
++	{0x0102, SIERRA_RXBUFFER_CTLECTRL_PREG},
++	{0x0002, SIERRA_RXBUFFER_RCDFECTRL_PREG}
++};
++
++static struct cdns_sierra_vals sgmii_100_no_ssc_plllc1_opt3_cmn_vals = {
++	.reg_pairs = sgmii_100_no_ssc_plllc1_opt3_cmn_regs,
++	.num_regs = ARRAY_SIZE(sgmii_100_no_ssc_plllc1_opt3_cmn_regs),
++};
++
++static struct cdns_sierra_vals sgmii_100_no_ssc_plllc1_opt3_ln_vals = {
++	.reg_pairs = sgmii_100_no_ssc_plllc1_opt3_ln_regs,
++	.num_regs = ARRAY_SIZE(sgmii_100_no_ssc_plllc1_opt3_ln_regs),
++};
++
+ /* QSGMII PHY PMA lane configuration */
+ static struct cdns_reg_pairs qsgmii_phy_pma_ln_regs[] = {
+ 	{0x9010, SIERRA_PHY_PMA_XCVR_CTRL}
+@@ -2363,6 +2435,11 @@ static const struct cdns_sierra_data cdns_map_sierra = {
+ 				[EXTERNAL_SSC] = &pcie_phy_pcs_cmn_vals,
+ 				[INTERNAL_SSC] = &pcie_phy_pcs_cmn_vals,
+ 			},
++			[TYPE_SGMII] = {
++				[NO_SSC] = &pcie_phy_pcs_cmn_vals,
++				[EXTERNAL_SSC] = &pcie_phy_pcs_cmn_vals,
++				[INTERNAL_SSC] = &pcie_phy_pcs_cmn_vals,
++			},
+ 			[TYPE_QSGMII] = {
+ 				[NO_SSC] = &pcie_phy_pcs_cmn_vals,
+ 				[EXTERNAL_SSC] = &pcie_phy_pcs_cmn_vals,
+@@ -2377,6 +2454,11 @@ static const struct cdns_sierra_data cdns_map_sierra = {
+ 				[EXTERNAL_SSC] = &pcie_100_ext_ssc_cmn_vals,
+ 				[INTERNAL_SSC] = &pcie_100_int_ssc_cmn_vals,
+ 			},
++			[TYPE_SGMII] = {
++				[NO_SSC] = &pcie_100_no_ssc_plllc_cmn_vals,
++				[EXTERNAL_SSC] = &pcie_100_ext_ssc_plllc_cmn_vals,
++				[INTERNAL_SSC] = &pcie_100_int_ssc_plllc_cmn_vals,
++			},
+ 			[TYPE_QSGMII] = {
+ 				[NO_SSC] = &pcie_100_no_ssc_plllc_cmn_vals,
+ 				[EXTERNAL_SSC] = &pcie_100_ext_ssc_plllc_cmn_vals,
+@@ -2388,6 +2470,13 @@ static const struct cdns_sierra_data cdns_map_sierra = {
+ 				[EXTERNAL_SSC] = &usb_100_ext_ssc_cmn_vals,
+ 			},
+ 		},
++		[TYPE_SGMII] = {
++			[TYPE_PCIE] = {
++				[NO_SSC] = &sgmii_100_no_ssc_plllc1_opt3_cmn_vals,
++				[EXTERNAL_SSC] = &sgmii_100_no_ssc_plllc1_opt3_cmn_vals,
++				[INTERNAL_SSC] = &sgmii_100_no_ssc_plllc1_opt3_cmn_vals,
++			},
++		},
+ 		[TYPE_QSGMII] = {
+ 			[TYPE_PCIE] = {
+ 				[NO_SSC] = &qsgmii_100_no_ssc_plllc1_cmn_vals,
+@@ -2403,6 +2492,11 @@ static const struct cdns_sierra_data cdns_map_sierra = {
+ 				[EXTERNAL_SSC] = &pcie_100_ext_ssc_ln_vals,
+ 				[INTERNAL_SSC] = &pcie_100_int_ssc_ln_vals,
+ 			},
++			[TYPE_SGMII] = {
++				[NO_SSC] = &ml_pcie_100_no_ssc_ln_vals,
++				[EXTERNAL_SSC] = &ml_pcie_100_ext_ssc_ln_vals,
++				[INTERNAL_SSC] = &ml_pcie_100_int_ssc_ln_vals,
++			},
+ 			[TYPE_QSGMII] = {
+ 				[NO_SSC] = &ml_pcie_100_no_ssc_ln_vals,
+ 				[EXTERNAL_SSC] = &ml_pcie_100_ext_ssc_ln_vals,
+@@ -2414,6 +2508,13 @@ static const struct cdns_sierra_data cdns_map_sierra = {
+ 				[EXTERNAL_SSC] = &usb_100_ext_ssc_ln_vals,
+ 			},
+ 		},
++		[TYPE_SGMII] = {
++			[TYPE_PCIE] = {
++				[NO_SSC] = &sgmii_100_no_ssc_plllc1_opt3_ln_vals,
++				[EXTERNAL_SSC] = &sgmii_100_no_ssc_plllc1_opt3_ln_vals,
++				[INTERNAL_SSC] = &sgmii_100_no_ssc_plllc1_opt3_ln_vals,
++			},
++		},
+ 		[TYPE_QSGMII] = {
+ 			[TYPE_PCIE] = {
+ 				[NO_SSC] = &qsgmii_100_no_ssc_plllc1_ln_vals,
+@@ -2435,6 +2536,11 @@ static const struct cdns_sierra_data cdns_ti_map_sierra = {
+ 				[EXTERNAL_SSC] = &pcie_phy_pcs_cmn_vals,
+ 				[INTERNAL_SSC] = &pcie_phy_pcs_cmn_vals,
+ 			},
++			[TYPE_SGMII] = {
++				[NO_SSC] = &pcie_phy_pcs_cmn_vals,
++				[EXTERNAL_SSC] = &pcie_phy_pcs_cmn_vals,
++				[INTERNAL_SSC] = &pcie_phy_pcs_cmn_vals,
++			},
+ 			[TYPE_QSGMII] = {
+ 				[NO_SSC] = &pcie_phy_pcs_cmn_vals,
+ 				[EXTERNAL_SSC] = &pcie_phy_pcs_cmn_vals,
+@@ -2443,6 +2549,13 @@ static const struct cdns_sierra_data cdns_ti_map_sierra = {
+ 		},
+ 	},
+ 	.phy_pma_ln_vals = {
++		[TYPE_SGMII] = {
++			[TYPE_PCIE] = {
++				[NO_SSC] = &sgmii_phy_pma_ln_vals,
++				[EXTERNAL_SSC] = &sgmii_phy_pma_ln_vals,
++				[INTERNAL_SSC] = &sgmii_phy_pma_ln_vals,
++			},
++		},
+ 		[TYPE_QSGMII] = {
+ 			[TYPE_PCIE] = {
+ 				[NO_SSC] = &qsgmii_phy_pma_ln_vals,
+@@ -2458,6 +2571,11 @@ static const struct cdns_sierra_data cdns_ti_map_sierra = {
+ 				[EXTERNAL_SSC] = &pcie_100_ext_ssc_cmn_vals,
+ 				[INTERNAL_SSC] = &pcie_100_int_ssc_cmn_vals,
+ 			},
++			[TYPE_SGMII] = {
++				[NO_SSC] = &pcie_100_no_ssc_plllc_cmn_vals,
++				[EXTERNAL_SSC] = &pcie_100_ext_ssc_plllc_cmn_vals,
++				[INTERNAL_SSC] = &pcie_100_int_ssc_plllc_cmn_vals,
++			},
+ 			[TYPE_QSGMII] = {
+ 				[NO_SSC] = &pcie_100_no_ssc_plllc_cmn_vals,
+ 				[EXTERNAL_SSC] = &pcie_100_ext_ssc_plllc_cmn_vals,
+@@ -2469,6 +2587,13 @@ static const struct cdns_sierra_data cdns_ti_map_sierra = {
+ 				[EXTERNAL_SSC] = &usb_100_ext_ssc_cmn_vals,
+ 			},
+ 		},
++		[TYPE_SGMII] = {
++			[TYPE_PCIE] = {
++				[NO_SSC] = &sgmii_100_no_ssc_plllc1_opt3_cmn_vals,
++				[EXTERNAL_SSC] = &sgmii_100_no_ssc_plllc1_opt3_cmn_vals,
++				[INTERNAL_SSC] = &sgmii_100_no_ssc_plllc1_opt3_cmn_vals,
++			},
++		},
+ 		[TYPE_QSGMII] = {
+ 			[TYPE_PCIE] = {
+ 				[NO_SSC] = &qsgmii_100_no_ssc_plllc1_cmn_vals,
+@@ -2484,6 +2609,11 @@ static const struct cdns_sierra_data cdns_ti_map_sierra = {
+ 				[EXTERNAL_SSC] = &pcie_100_ext_ssc_ln_vals,
+ 				[INTERNAL_SSC] = &pcie_100_int_ssc_ln_vals,
+ 			},
++			[TYPE_SGMII] = {
++				[NO_SSC] = &ti_ml_pcie_100_no_ssc_ln_vals,
++				[EXTERNAL_SSC] = &ti_ml_pcie_100_ext_ssc_ln_vals,
++				[INTERNAL_SSC] = &ti_ml_pcie_100_int_ssc_ln_vals,
++			},
+ 			[TYPE_QSGMII] = {
+ 				[NO_SSC] = &ti_ml_pcie_100_no_ssc_ln_vals,
+ 				[EXTERNAL_SSC] = &ti_ml_pcie_100_ext_ssc_ln_vals,
+@@ -2495,6 +2625,13 @@ static const struct cdns_sierra_data cdns_ti_map_sierra = {
+ 				[EXTERNAL_SSC] = &usb_100_ext_ssc_ln_vals,
+ 			},
+ 		},
++		[TYPE_SGMII] = {
++			[TYPE_PCIE] = {
++				[NO_SSC] = &sgmii_100_no_ssc_plllc1_opt3_ln_vals,
++				[EXTERNAL_SSC] = &sgmii_100_no_ssc_plllc1_opt3_ln_vals,
++				[INTERNAL_SSC] = &sgmii_100_no_ssc_plllc1_opt3_ln_vals,
++			},
++		},
+ 		[TYPE_QSGMII] = {
+ 			[TYPE_PCIE] = {
+ 				[NO_SSC] = &qsgmii_100_no_ssc_plllc1_ln_vals,
+-- 
+2.34.1
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
