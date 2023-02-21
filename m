@@ -4,62 +4,49 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 02309C05027
-	for <linux-phy@archiver.kernel.org>; Mon, 20 Feb 2023 16:20:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E945BC6379F
+	for <linux-phy@archiver.kernel.org>; Tue, 21 Feb 2023 07:42:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wG4fAz6EYCr24rjY/WB3yp9/bBdMypi1PzUjEUPAyOM=; b=G1dC/qxISaM2+6
-	n+DeypfdqYOyARM7thZhD6VZfXcU22ufcSew26p53SbI4ADteEZ5RvxZjXaq6utdXumTOEiIyvXKj
-	h+72ySdkzXejyAet6viFKnHy7NqVFxNNuqfYmnHicYnRsMsyyhBSrz+U/Jon92BOIKUO/i/YvnXPs
-	RDfVxHS+G6NReYapwWTj5JuFz109nBj+FavQPwR7B5pqg7xHPTCh7tN2o5OuoDmMmN/u0VsXMxl+t
-	QXp59ndmFpLJ9HVY2ftWZE+2NNlHa1rAqck9iPa+gg78r7eqQUWUN3hX/h9NQpNwHB05zpjJzTvYp
-	IR7JYk1hoy7QtoBI1SPw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=z2tExvjlDaCWqQSwpKGARmgthpKyMnLOszZDr4oFo6I=; b=faqDoKEIoQ4bO9
+	JfFDH3oFgtIivDiNDzrLuiXzbaSOCdBS52gkVtOgr0IQdBaQH+avDjrbRHUZUh0YmAnpVeBDaVu3M
+	teqRal/dvUYyQaZVoR/S1I6siVqyBlLIF5GpJyZAFHVoOZF3CIih6eJLWKhnpYYfWB7+ERvLnpaRH
+	DAqFeouPAUhpXc47M8WOdIRmTZ3Y7aBp7D7Gw14y87aGRa0O7YjsJDAyMAPWipgsQEVqHSHO3euoD
+	CDWSFRWk9STdGAsVZVLaiwptnCrnOYy7t4IsEdqQs049YMTc/8qH0XVaTlBRPXo+IfbvN52R/IpOe
+	gSn95mWKBvn3W7VoS/yg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pU8u6-004rLy-73; Mon, 20 Feb 2023 16:20:38 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1pUNI8-006vRc-8S; Tue, 21 Feb 2023 07:42:24 +0000
+Received: from out30-100.freemail.mail.aliyun.com ([115.124.30.100])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pU8u3-004rLd-WC
-	for linux-phy@lists.infradead.org; Mon, 20 Feb 2023 16:20:37 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id BF0C260C85;
-	Mon, 20 Feb 2023 16:20:34 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id BA5D4C433EF;
-	Mon, 20 Feb 2023 16:20:32 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1676910034;
-	bh=GugI1KTqWeJVvUyOogjWDktfwoNGBavCoLV6GdN8qsc=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=mkJRVa8mY/VCQYWMTYkp32KrFyOEpyGMQ9PAktnv65UqNwY6FW3HgNMb8GSNN8PKC
-	 gIbi3BgsMHVLWhw0olblPpOXH+1I5CvAftFH7QaHeWTwp0KQ62e2upIax2qOaMPfh4
-	 jPPL+fWh+27uQE7IRuC35rpYSPNwPiBC6oM6cE79g7eJ3LscY/G1+foTJArNaE1pX6
-	 9z7huhzdsmjSJnDpwEUq1vjjrO4GleRNhBuLpo9toauOX2HPt5/5KAmDlyDHLD1yy0
-	 Huk7b0pJu1InzeDdPyFMTyYfMwFHYde4y8WWSUXEHBio3Qe/Q5xIriaMI69UngI9ey
-	 LtgamDtIIyKxA==
-Message-ID: <c7bdaf8f-d377-9fdc-c11a-747c65775b3c@kernel.org>
-Date: Mon, 20 Feb 2023 18:20:29 +0200
+	id 1pUNHw-006vPC-VC; Tue, 21 Feb 2023 07:42:15 +0000
+X-Alimail-AntiSpam: AC=PASS;BC=-1|-1;BR=01201311R181e4;CH=green;DM=||false|;DS=||;FP=0|-1|-1|-1|0|-1|-1|-1;HT=ay29a033018045168;MF=jiapeng.chong@linux.alibaba.com;NM=1;PH=DS;RN=10;SR=0;TI=SMTPD_---0VcBNpl2_1676965304;
+Received: from localhost(mailfrom:jiapeng.chong@linux.alibaba.com fp:SMTPD_---0VcBNpl2_1676965304)
+          by smtp.aliyun-inc.com;
+          Tue, 21 Feb 2023 15:41:57 +0800
+From: Jiapeng Chong <jiapeng.chong@linux.alibaba.com>
+To: vkoul@kernel.org
+Cc: kishon@kernel.org,
+	heiko@sntech.de,
+	p.zabel@pengutronix.de,
+	linux-phy@lists.infradead.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	Jiapeng Chong <jiapeng.chong@linux.alibaba.com>,
+	Abaci Robot <abaci@linux.alibaba.com>
+Subject: [PATCH] phy: rockchip-pcie: Remove the unused function phy_wr_cfg()
+Date: Tue, 21 Feb 2023 15:41:42 +0800
+Message-Id: <20230221074142.5935-1-jiapeng.chong@linux.alibaba.com>
+X-Mailer: git-send-email 2.20.1.7.g153144c
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.7.1
-Subject: Re: [PATCH] phy: cadence: Sierra: Add PCIe + SGMII PHY multilink
- configuration
-To: Swapnil Jakhade <sjakhade@cadence.com>, vkoul@kernel.org,
- kishon@kernel.org, linux-phy@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Cc: mparab@cadence.com
-References: <20230220141216.25326-1-sjakhade@cadence.com>
-Content-Language: en-US
-From: Roger Quadros <rogerq@kernel.org>
-In-Reply-To: <20230220141216.25326-1-sjakhade@cadence.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230220_082036_123549_796AEC31 
-X-CRM114-Status: UNSURE (   7.27  )
+X-CRM114-CacheID: sfid-20230220_234213_281312_1742A72E 
+X-CRM114-Status: UNSURE (   5.99  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -77,15 +64,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+The function phy_wr_cfg is defined in the phy-rockchip-pcie.c file, but
+not called elsewhere, so remove this unused function.
 
+drivers/phy/rockchip/phy-rockchip-pcie.c:122:19: warning: unused function 'phy_rd_cfg'.
 
-On 20/02/2023 16:12, Swapnil Jakhade wrote:
-> Add register sequences for PCIe + SGMII PHY multilink configuration.
-> This has been validated on TI J7 platforms.
-> 
-> Signed-off-by: Swapnil Jakhade <sjakhade@cadence.com>
+Reported-by: Abaci Robot <abaci@linux.alibaba.com>
+Link: https://bugzilla.openanolis.cn/show_bug.cgi?id=4130
+Signed-off-by: Jiapeng Chong <jiapeng.chong@linux.alibaba.com>
+---
+ drivers/phy/rockchip/phy-rockchip-pcie.c | 15 ---------------
+ 1 file changed, 15 deletions(-)
 
-Reviewed-by: Roger Quadros <rogerq@kernel.org>
+diff --git a/drivers/phy/rockchip/phy-rockchip-pcie.c b/drivers/phy/rockchip/phy-rockchip-pcie.c
+index 75216091d901..8234b83fdd88 100644
+--- a/drivers/phy/rockchip/phy-rockchip-pcie.c
++++ b/drivers/phy/rockchip/phy-rockchip-pcie.c
+@@ -119,21 +119,6 @@ static inline void phy_wr_cfg(struct rockchip_pcie_phy *rk_phy,
+ 				   PHY_CFG_WR_SHIFT));
+ }
+ 
+-static inline u32 phy_rd_cfg(struct rockchip_pcie_phy *rk_phy,
+-			     u32 addr)
+-{
+-	u32 val;
+-
+-	regmap_write(rk_phy->reg_base, rk_phy->phy_data->pcie_conf,
+-		     HIWORD_UPDATE(addr,
+-				   PHY_CFG_RD_MASK,
+-				   PHY_CFG_ADDR_SHIFT));
+-	regmap_read(rk_phy->reg_base,
+-		    rk_phy->phy_data->pcie_status,
+-		    &val);
+-	return val;
+-}
+-
+ static int rockchip_pcie_phy_power_off(struct phy *phy)
+ {
+ 	struct phy_pcie_instance *inst = phy_get_drvdata(phy);
+-- 
+2.20.1.7.g153144c
+
 
 -- 
 linux-phy mailing list
