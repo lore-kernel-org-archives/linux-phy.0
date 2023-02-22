@@ -4,82 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CBB0EC636D6
-	for <linux-phy@archiver.kernel.org>; Wed, 22 Feb 2023 16:04:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D2FE0C64EC7
+	for <linux-phy@archiver.kernel.org>; Wed, 22 Feb 2023 16:45:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tcZwJ+fqo2exaFJwpOP5b/JUeGP987E0GB9j7ydINmw=; b=ZpbRVqNTE9+Peb
-	amgnIZC1bwM9D7um7bhBf6pP7bYaqbk0KhRT03/9ws37Lh8/rmN8OvvMXxT5dsVoQw1N+2FG5l7/6
-	weuf5SJ6naEXwDK1wdSWVZogIh9j+7cXRnlVDxTQWSkG6S+QqV8ae/yICzKze7ceKkmLrgrRW1xfS
-	ZuCE11LXCY03P5kl18R1aOtpWxC4Ms8t6HdY1wM9NOkwT8v2a0rCwFHulO3PeWhBbKVxbUXcXOqxr
-	ycZIjAR68NcYdciGZhm2lipcdkS1/dM0hQi4Exu6J1tYOMXkxJ3lAp/WPFKPFCjAk3F+sQDp6wD8h
-	B+McT2YSiru1MzFPEQrw==;
+	List-Owner; bh=LYz6pfBMpdcX0aqnHH8ic2i4Y+wNXqkq3vc/02CITwc=; b=bBASdYF9l+1k1v
+	iXj4fnn5Hmj9q2uN/5HxmuGWUlNK2za9oD9OY813WyTXoDQCGQtKgbno871UVux7J1AxfIMORtjgl
+	DQj+w8fBjl4UrgoyOozs3cnprioNKzCaGU0BsFtwl3pc1XXMvxSkTVPzGWYjKd3wfyH9MfjDbSdSq
+	Y3HNL8IePnvUsj71NgtZIgz3AuziLahFXpL/zY1qInKtjEztXA1y5jhvtZB8XM6d9nPsPnr3LKCni
+	Q7aZLdha+NzN8GqSCCMt7ZO9TNOMlcsCyeF3V+u66SgG1yJijQx3yqkLiEKQo6NVX2vuowzH30MiZ
+	VgUtIk0HSxyswqi2ZBeg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pUrbz-00Cxr1-8c; Wed, 22 Feb 2023 16:04:55 +0000
-Received: from mail-lf1-x12e.google.com ([2a00:1450:4864:20::12e])
+	id 1pUsFR-00D4tL-8W; Wed, 22 Feb 2023 16:45:41 +0000
+Received: from mail-pl1-x632.google.com ([2607:f8b0:4864:20::632])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pUrbw-00Cxp6-70
-	for linux-phy@lists.infradead.org; Wed, 22 Feb 2023 16:04:53 +0000
-Received: by mail-lf1-x12e.google.com with SMTP id w27so10718703lfu.4
-        for <linux-phy@lists.infradead.org>; Wed, 22 Feb 2023 08:04:48 -0800 (PST)
+	id 1pUr7J-00CsQx-Fk
+	for linux-phy@lists.infradead.org; Wed, 22 Feb 2023 15:33:14 +0000
+Received: by mail-pl1-x632.google.com with SMTP id z10so6022760ple.6
+        for <linux-phy@lists.infradead.org>; Wed, 22 Feb 2023 07:33:11 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=BvtXsgYaNMgfCwPa3NcjCA/fALryuRunmE0yTYigCgo=;
-        b=qoW4bUeWwS3k/GeJaiLUn+XPhE41MVVyIyPtGkL2v5O83xBjix2Li2DkYmR1Ku3+V0
-         6pZ4CHdTYNIxyAV4MxYwmrCKG9yvLX2uPBgEmz/EEpWva9Gngw36j5MLkX50UAG/phaV
-         orIrc8mVF8QtEI7vBIROBOQwHU/l/0938GUTpX20WIXFLnhwl2ujow0uJkBomUFAEhT6
-         aqIWpsGuUQMRZlKET39VjpzeuREyMxAHynJFxpMPW0v1wLFqI2/+z+GpqNVZz230UXIU
-         8p3fyxSTQNKRsUniIGrRo2fm1meAtoCveeLqYAi1UGsKO8RZgbB/pUYO9AS9+jqN9npv
-         n3xg==
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=Gl2oK6m3W4idoG0++YXdR0eH/S7JB1Clcx3ixNJBnNA=;
+        b=nX0UqMMW/E/UxVR2q2VD0VyQdZv/U42NNCRZwdTFx0DjM8Qyqtsg7ufdwoour0UicS
+         wq1ZzUObu+TF5PHoVoH5zuoCj+k+M6DRqLhhkkmn11eyzeyNegyeA3TmxNu/ogBgVA7/
+         TF6RzsorxQ8e8lMsigtdFHwEpXi4mTgucncArvai3O1Lug3RECeqg3q1w+2xQxjjTM08
+         teK5+it+Nt0pXvwNWzSSGnmX4jp+A2iKSt2gOCmG4oEctC65y5rN8zZXxifQ/K7yhbDd
+         ph25MXMBSO8ZE6ZiZljWEha52/6TxAARJJRyadNQgbnrkgBwtnt4RH+jiGVf5rh+jEGs
+         ckbA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=BvtXsgYaNMgfCwPa3NcjCA/fALryuRunmE0yTYigCgo=;
-        b=W3R2XFBOnbE09AB1U177OezzT4DaxuhIpncCOzo5dkIGuLiAPpRcvF72ecloWTV9KD
-         5f9PjAY/j+5gagzBukHbMMZT97G6mqhujFs9Qgi88A9TCXf1cgJPa3HBcroE1PblJG8r
-         253UrNrsWGZuzbcuxkNzTPKpbV+A/ecbfDJNXa350sorVUlDUE6v7dZSWwvcFuHnRmYm
-         Nch9QAB7RNNaDGo/DeI/iT02tfAkzkSrRe30MWWkM/ZVml3HfMOw+M340ToghMH0QyiD
-         GFLD3zLas1bsiqrKfprTWj8EZM9UggfKuNTmsJQT6XMNgHjx9clW6Ry7oTgw6inzSCH7
-         rJ/g==
-X-Gm-Message-State: AO0yUKVdEFjWbK5uBD0N6HcpoqFtFNvcJzgY4/v+/4huFpQ0lbeBMDXg
-	x3E2SwMmt2fd+m3fML4z/54JJg==
-X-Google-Smtp-Source: AK7set9PDpRvUR4ICYarWP/6Zlh9mGyGPgoNTdoaMGmA0Ed4tTtpS9C8shCpz0IFX+FNFdEYYwfy+w==
-X-Received: by 2002:a19:f609:0:b0:4b5:b06d:4300 with SMTP id x9-20020a19f609000000b004b5b06d4300mr2917956lfe.29.1677081886617;
-        Wed, 22 Feb 2023 08:04:46 -0800 (PST)
-Received: from [192.168.1.101] (abxi151.neoplus.adsl.tpnet.pl. [83.9.2.151])
-        by smtp.gmail.com with ESMTPSA id f14-20020ac251ae000000b004db3eff4b12sm2203398lfk.171.2023.02.22.08.04.45
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 22 Feb 2023 08:04:46 -0800 (PST)
-Message-ID: <ac05fec4-138c-2f1e-a953-8d498d3bb598@linaro.org>
-Date: Wed, 22 Feb 2023 17:04:44 +0100
-MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.8.0
-Subject: Re: [PATCH 08/11] ARM: dts: qcom: sdx55-t55: Enable PCIe RC support
-Content-Language: en-US
-To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
- andersson@kernel.org, lpieralisi@kernel.org, robh@kernel.org, kw@linux.com,
- krzysztof.kozlowski+dt@linaro.org, vkoul@kernel.org
-Cc: bhelgaas@google.com, kishon@kernel.org, linux-arm-msm@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-pci@vger.kernel.org, devicetree@vger.kernel.org
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=Gl2oK6m3W4idoG0++YXdR0eH/S7JB1Clcx3ixNJBnNA=;
+        b=lTw0INR0G+PwClXbtYUx25wkuBBX43I1GbXr5fDCV9ZNJ7ulGXN4loUJMLdMIF2ggk
+         CAPdpl209JhCtIFyKEwwlLZoVQgwFniXSPUK6ftrsMg1PUxOesZFcVo19ldhfiBtBQSl
+         kNXgf9Fu1IHWRI/jjhyQYnsPprXLNt0eTzKLZaFOmSJRcJpMyPy76eA4XWDEzhfaygGf
+         Bc0U816jJcwx+RU90XELSdcbyv+AWKxPegvLSbk6xXsRBvjmwAP5xV6WKXHYHZT6iOpS
+         lEBLYgcsh2FKfIVAkuHXmNjEe4atsrcxw2xKeMRE/lhFoNrQs0HWjS+Du28hGSx6Gg1P
+         bKkA==
+X-Gm-Message-State: AO0yUKVZp8oOwFI9JUM4GWnUUqVcunXEb8fC155pIw+pwD1Y8V/uM31G
+	1MPg9XVSqhAISHhz+gxX3MZ+
+X-Google-Smtp-Source: AK7set9WVD42hOyS9N9jO61XZ88ae5caQzTdmddlRBoTHPQZ+QttHFEtj2SdZp7EPHxzDn9YD9Gb/Q==
+X-Received: by 2002:a05:6a20:671a:b0:cb:7ae6:b42f with SMTP id q26-20020a056a20671a00b000cb7ae6b42fmr5975151pzh.62.1677079990532;
+        Wed, 22 Feb 2023 07:33:10 -0800 (PST)
+Received: from localhost.localdomain ([117.216.123.15])
+        by smtp.gmail.com with ESMTPSA id f15-20020aa78b0f000000b005ac419804d3sm5222482pfd.186.2023.02.22.07.33.06
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 22 Feb 2023 07:33:10 -0800 (PST)
+From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+To: andersson@kernel.org,
+	lpieralisi@kernel.org,
+	robh@kernel.org,
+	kw@linux.com,
+	krzysztof.kozlowski+dt@linaro.org,
+	vkoul@kernel.org
+Cc: konrad.dybcio@linaro.org,
+	bhelgaas@google.com,
+	kishon@kernel.org,
+	linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	linux-pci@vger.kernel.org,
+	devicetree@vger.kernel.org,
+	Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+Subject: [PATCH 01/11] dt-bindings: PCI: qcom: Update maintainers entry
+Date: Wed, 22 Feb 2023 21:02:41 +0530
+Message-Id: <20230222153251.254492-2-manivannan.sadhasivam@linaro.org>
+X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20230222153251.254492-1-manivannan.sadhasivam@linaro.org>
 References: <20230222153251.254492-1-manivannan.sadhasivam@linaro.org>
- <20230222153251.254492-9-manivannan.sadhasivam@linaro.org>
-From: Konrad Dybcio <konrad.dybcio@linaro.org>
-In-Reply-To: <20230222153251.254492-9-manivannan.sadhasivam@linaro.org>
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230222_080452_290524_8A65DB20 
-X-CRM114-Status: GOOD (  13.31  )
+X-CRM114-CacheID: sfid-20230222_073313_543278_63D4CBDA 
+X-CRM114-Status: UNSURE (   9.92  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,83 +103,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Stan is no longer working with MMSOL and expressed his interest to not
+continue maintaining Qcom PCIe driver. Since I took over the driver
+maintainership, I'm stepping in to maintain the binding also.
 
+Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+---
+ Documentation/devicetree/bindings/pci/qcom,pcie.yaml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-On 22.02.2023 16:32, Manivannan Sadhasivam wrote:
-> Enable PCIe RC support on Thundercomm T55 board.
-> 
-> Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-> ---
->  arch/arm/boot/dts/qcom-sdx55-t55.dts | 42 ++++++++++++++++++++++++++++
->  1 file changed, 42 insertions(+)
-> 
-> diff --git a/arch/arm/boot/dts/qcom-sdx55-t55.dts b/arch/arm/boot/dts/qcom-sdx55-t55.dts
-> index 7ed8feb99afb..fb5b9264077c 100644
-> --- a/arch/arm/boot/dts/qcom-sdx55-t55.dts
-> +++ b/arch/arm/boot/dts/qcom-sdx55-t55.dts
-> @@ -242,6 +242,23 @@ &ipa {
->  	memory-region = <&ipa_fw_mem>;
->  };
->  
-> +&pcie_phy {
-> +	status = "okay";
-'status' should go last. Since you're introducing new nodes,
-changing the order in the existing ones would be appreciated.
+diff --git a/Documentation/devicetree/bindings/pci/qcom,pcie.yaml b/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
+index a5859bb3dc28..a3639920fcbb 100644
+--- a/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
++++ b/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
+@@ -8,7 +8,7 @@ title: Qualcomm PCI express root complex
+ 
+ maintainers:
+   - Bjorn Andersson <bjorn.andersson@linaro.org>
+-  - Stanimir Varbanov <svarbanov@mm-sol.com>
++  - Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+ 
+ description: |
+   Qualcomm PCIe root complex controller is based on the Synopsys DesignWare
+-- 
+2.25.1
 
-> +
-> +	vdda-phy-supply = <&vreg_l1e_bb_1p2>;
-> +	vdda-pll-supply = <&vreg_l4e_bb_0p875>;
-> +};
-> +
-> +&pcie_rc {
-> +	status = "okay";
-> +
-> +	perst-gpios = <&tlmm 57 GPIO_ACTIVE_LOW>;
-> +	wake-gpios = <&tlmm 53 GPIO_ACTIVE_HIGH>;
-> +
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pcie_default>;
-property-
-property-names
-
-Konrad
-> +};
-> +
->  &qpic_bam {
->  	status = "ok";
->  };
-> @@ -265,6 +282,31 @@ &remoteproc_mpss {
->  	memory-region = <&mpss_adsp_mem>;
->  };
->  
-> +&tlmm {
-> +	pcie_default: pcie-default-state {
-> +		clkreq-pins {
-> +			pins = "gpio56";
-> +			function = "pcie_clkreq";
-> +			drive-strength = <2>;
-> +			bias-pull-up;
-> +		};
-> +
-> +		perst-pins {
-> +			pins = "gpio57";
-> +			function = "gpio";
-> +			drive-strength = <2>;
-> +			bias-pull-down;
-> +		};
-> +
-> +		wake-pins {
-> +		       pins = "gpio53";
-> +		       function = "gpio";
-> +		       drive-strength = <2>;
-> +		       bias-pull-up;
-> +	       };
-> +	};
-> +};
-> +
->  &usb_hsphy {
->  	status = "okay";
->  	vdda-pll-supply = <&vreg_l4e_bb_0p875>;
 
 -- 
 linux-phy mailing list
