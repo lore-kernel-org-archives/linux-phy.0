@@ -4,83 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 446A4C636D6
-	for <linux-phy@archiver.kernel.org>; Wed, 22 Feb 2023 16:45:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2CF63C61DA4
+	for <linux-phy@archiver.kernel.org>; Thu, 23 Feb 2023 02:00:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=T7su1tczckqsoAlEPxPh06NAB7/Q/GiAZHTDqlIiKCE=; b=HHYZr0mWrly1rw
-	z/7XLGdE6yz9Ah0A7X0zprGC+uzsRA5eo65kCCwm1zUXcW/2gEd3pppYBv1ZfkuGZshuXs+5J9yNj
-	15aB4woGivmzCgH/QRmo0OQIBtb7GXBouUJu9QLiZzytqNLAkzRAU0lq7/4lOKuAW1M6peMwZ8WDy
-	H8nMoBd+jJQCZD+KxGjmYG5AfNLNvJAmpKcMrnYgzM3eeISqgjwKPDB4ZamtdgmyvfffTzThRTYQ0
-	QX9QZKAf1dVFadbl1maIAx/03j7iyWEoGzCxewMwKksewTk3jo4/pRu/bpVYmwzx3Mr/Okm+wMuv2
-	rIMYdsrTQd4kgSQQF/OQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=iPI6kh+mii40+Nj0BD2uVz6yn/qpihdgmmNUt3OGiog=; b=ho70bSflEhZHqk
+	5vvon+ZB5mwoAp7HIz1j/S0s00t5pOkJ2/7apcyTa4MA6ncqxImsqApWPs1Ju48TaU4tiTkTZsqck
+	LJlUItInMR/l6j44dmVpd0IxuEPQ6yyJBrRa98xBVQii81qJAlCadpvVR4mLQJnEBYd58+BUcsqQF
+	YR+hAEatM1k/L7W/AA9jXWKJCjIPqCETZ8U+ihvPoo28RnK6uhbUOSlhoJzIJ0R5gYMny+ReqP4e4
+	zZCUXY1ZNdNB07p+sBte4ooy3MuBf+E96zEp1pWUbj4ugqnO2Fmhjp3xGJl/sB/e8yNOavMweluMg
+	O2ax9IEmnMLu9mnGX+1g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pUsFa-00D4wR-PU; Wed, 22 Feb 2023 16:45:50 +0000
-Received: from mail-lf1-x12b.google.com ([2a00:1450:4864:20::12b])
-	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pUsFX-00D4vS-Rj
-	for linux-phy@lists.infradead.org; Wed, 22 Feb 2023 16:45:49 +0000
-Received: by mail-lf1-x12b.google.com with SMTP id m6so10915459lfq.5
-        for <linux-phy@lists.infradead.org>; Wed, 22 Feb 2023 08:45:47 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=Xf8IY83kNm9ZLdtrAMlzH0BWdysIJ0EtE4QkPWoDYMs=;
-        b=iR9IHWtk+Ko+B/NToRrxElbe2NzAzxbQd3SlLe4qK4hFAoa91S/pZ0irPFW0tY0cQ1
-         NqT1a8fELf4fKaC2XwpZN6Urq8yodxAkRfDE5e4hQa3tyP74cM6tOGqICfP0k491XO6E
-         YeTUzilnoBUE2kPANVC0WyKX6hAwFNor1PGHNxn/J9SKveFZRj/TOwKlqo2JsLEbqTRG
-         DWSwP8JBxhSm2yxzzerqHLVlMLvVpV7VymvkiY4Gg2spZd5CMGRqyL76OCQxBVJw5I1M
-         p94XNvZ6FkuYBAs+xuGfy6piCQwPcuqnwJVVO+CM2ibczsv0j4hQ8WQdI0gtiOkCww42
-         2RNg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=Xf8IY83kNm9ZLdtrAMlzH0BWdysIJ0EtE4QkPWoDYMs=;
-        b=T4BIkIbKd2ngwMo9hwaIYeN4qVEN4YEIiRnuwJvc9tatCqjvBOhf/x6BSNTgi3i4UU
-         4ai2jOJ7U5t5cOJ6sXYUQotelrBaGXJBrH0kZBo1aeYgAdIJife13BYnzodkEsyTiQx+
-         k8BKjdtQ6dvSrZItvpwwhoa6hETIKksDArVCoJptDXdlScjQVu56LhvtunOc0G4/+VC3
-         1HY4EBFqPe62m9AwS7BlyyR/cLlIdi/awLrH4WhDm2VADQTVeeyZpktmf8uJL/bkeCyO
-         MLMSRrq0hMNZtv4ii4I+HdPVaVbYQYukWk1kLkXI6nxrYJ0NmHnZ8OaWgoxcxsSoTq4C
-         cReg==
-X-Gm-Message-State: AO0yUKUEM5f25lUoxIwIGtoa22V3l+89CHpL0U96ZmKC1RIVvUvng5FR
-	8cdG68wzxwV3yL4sbetOl5cF3A==
-X-Google-Smtp-Source: AK7set9t/nSuuaKdA16dsR+NcfmJqnzDAcj0o9WtZkAkWK3/yNkQ5lBR2aCr8By5catJHiIdFRk8wg==
-X-Received: by 2002:ac2:5582:0:b0:4db:2978:e32c with SMTP id v2-20020ac25582000000b004db2978e32cmr3141176lfg.11.1677084345809;
-        Wed, 22 Feb 2023 08:45:45 -0800 (PST)
-Received: from [192.168.1.101] (abxi151.neoplus.adsl.tpnet.pl. [83.9.2.151])
-        by smtp.gmail.com with ESMTPSA id w7-20020ac24427000000b004db3e03e201sm1013276lfl.6.2023.02.22.08.45.44
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 22 Feb 2023 08:45:45 -0800 (PST)
-Message-ID: <69259bca-5618-7590-07b0-494041d83823@linaro.org>
-Date: Wed, 22 Feb 2023 17:45:43 +0100
+	id 1pV0uP-00EiHg-I1; Thu, 23 Feb 2023 02:00:33 +0000
+Received: from fd01.gateway.ufhost.com ([61.152.239.71])
+	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
+	id 1pV0uL-00EiD5-3N; Thu, 23 Feb 2023 02:00:32 +0000
+Received: from EXMBX165.cuchost.com (unknown [175.102.18.54])
+	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
+	(Client CN "EXMBX165", Issuer "EXMBX165" (not verified))
+	by fd01.gateway.ufhost.com (Postfix) with ESMTP id 9418B24DE73;
+	Thu, 23 Feb 2023 09:59:54 +0800 (CST)
+Received: from EXMBX162.cuchost.com (172.16.6.72) by EXMBX165.cuchost.com
+ (172.16.6.75) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Thu, 23 Feb
+ 2023 09:59:54 +0800
+Received: from ubuntu.localdomain (113.72.147.165) by EXMBX162.cuchost.com
+ (172.16.6.72) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Thu, 23 Feb
+ 2023 09:59:53 +0800
+From: Changhuang Liang <changhuang.liang@starfivetech.com>
+To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh+dt@kernel.org>, Krzysztof Kozlowski
+	<krzysztof.kozlowski+dt@linaro.org>, Emil Renner Berthing <kernel@esmil.dk>,
+	Conor Dooley <conor@kernel.org>, Paul Walmsley <paul.walmsley@sifive.com>,
+	Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>,
+	Philipp Zabel <p.zabel@pengutronix.de>
+CC: Jack Zhu <jack.zhu@starfivetech.com>, Changhuang Liang
+	<changhuang.liang@starfivetech.com>, <linux-phy@lists.infradead.org>,
+	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+	<linux-riscv@lists.infradead.org>
+Subject: [PATCH v2 0/3] Add JH7110 MIPI DPHY RX support
+Date: Wed, 22 Feb 2023 17:59:49 -0800
+Message-ID: <20230223015952.201841-1-changhuang.liang@starfivetech.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.8.0
-Subject: Re: [PATCH 06/11] ARM: dts: qcom: sdx55: Rename pcie0_{phy/lane} to
- pcie_{phy/lane}
-Content-Language: en-US
-To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
- andersson@kernel.org, lpieralisi@kernel.org, robh@kernel.org, kw@linux.com,
- krzysztof.kozlowski+dt@linaro.org, vkoul@kernel.org
-Cc: bhelgaas@google.com, kishon@kernel.org, linux-arm-msm@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-pci@vger.kernel.org, devicetree@vger.kernel.org
-References: <20230222153251.254492-1-manivannan.sadhasivam@linaro.org>
- <20230222153251.254492-7-manivannan.sadhasivam@linaro.org>
-From: Konrad Dybcio <konrad.dybcio@linaro.org>
-In-Reply-To: <20230222153251.254492-7-manivannan.sadhasivam@linaro.org>
+X-Originating-IP: [113.72.147.165]
+X-ClientProxiedBy: EXCAS062.cuchost.com (172.16.6.22) To EXMBX162.cuchost.com
+ (172.16.6.72)
+X-YovoleRuleAgent: yovoleflag
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230222_084547_935966_8EE8C843 
-X-CRM114-Status: GOOD (  14.58  )
+X-CRM114-CacheID: sfid-20230222_180029_462151_502DB483 
+X-CRM114-Status: GOOD (  11.41  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,66 +74,98 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+This patchset adds mipi dphy rx driver for the StarFive JH7110 SoC.
+It is used to transfer CSI camera data. The series has been tested on
+the VisionFive 2 board.
+
+This patchset should be applied after the patchset [1] and patch [2]:
+[1] https://lore.kernel.org/all/20230221083323.302471-1-xingyu.wu@starfivetech.com/
+[2] https://lore.kernel.org/all/20230215113249.47727-4-william.qiu@starfivetech.com/
+
+changes since v1:
+- Rebased on tag v6.2.
+- Dropped patch 1, it will be added by the patch [2].
+
+patch 1:
+- Changed the node name 'dphy' to 'phy'.
+- Changed the "starfive,aon-syscon" description.
+- Changed the MIPI DPHY RX IP description.
+- Add description to resets.
+- Update devicetree binding examples.
+
+patch 2:
+- Changed the commit message.
+
+patch 3:
+- Changed the commit message.
+- Changed the node name 'dphy' to 'phy'.
+- Sorted the node by address.
+
+v1: https://lore.kernel.org/all/20230210061713.6449-1-changhuang.liang@starfivetech.com/
+
+Changhuang Liang (3):
+  dt-bindings: phy: Add starfive,jh7110-dphy-rx
+  phy: starfive: Add mipi dphy rx support
+  riscv: dts: starfive: Add dphy rx node
+
+ .../bindings/phy/starfive,jh7110-dphy-rx.yaml |  74 ++++
+ MAINTAINERS                                   |   7 +
+ arch/riscv/boot/dts/starfive/jh7110.dtsi      |  13 +
+ drivers/phy/Kconfig                           |   1 +
+ drivers/phy/Makefile                          |   1 +
+ drivers/phy/starfive/Kconfig                  |  13 +
+ drivers/phy/starfive/Makefile                 |   2 +
+ drivers/phy/starfive/phy-starfive-dphy-rx.c   | 362 ++++++++++++++++++
+ 8 files changed, 473 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-rx.yaml
+ create mode 100644 drivers/phy/starfive/Kconfig
+ create mode 100644 drivers/phy/starfive/Makefile
+ create mode 100644 drivers/phy/starfive/phy-starfive-dphy-rx.c
 
 
-On 22.02.2023 16:32, Manivannan Sadhasivam wrote:
-> There is only one PCIe PHY in this SoC, so there is no need to add an
-> index to the suffix. This also matches the naming convention of the PCIe
-> controller.
-> 
-> Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-> ---
-Reviewed-by: Konrad Dybcio <konrad.dybcio@linaro.org>
-
-Konrad
->  arch/arm/boot/dts/qcom-sdx55-telit-fn980-tlb.dts | 2 +-
->  arch/arm/boot/dts/qcom-sdx55.dtsi                | 6 +++---
->  2 files changed, 4 insertions(+), 4 deletions(-)
-> 
-> diff --git a/arch/arm/boot/dts/qcom-sdx55-telit-fn980-tlb.dts b/arch/arm/boot/dts/qcom-sdx55-telit-fn980-tlb.dts
-> index ac8b4626ae9a..b7ee0237608f 100644
-> --- a/arch/arm/boot/dts/qcom-sdx55-telit-fn980-tlb.dts
-> +++ b/arch/arm/boot/dts/qcom-sdx55-telit-fn980-tlb.dts
-> @@ -242,7 +242,7 @@ &ipa {
->  	memory-region = <&ipa_fw_mem>;
->  };
->  
-> -&pcie0_phy {
-> +&pcie_phy {
->  	status = "okay";
->  
->  	vdda-phy-supply = <&vreg_l1e_bb_1p2>;
-> diff --git a/arch/arm/boot/dts/qcom-sdx55.dtsi b/arch/arm/boot/dts/qcom-sdx55.dtsi
-> index e84ca795cae6..a1f4a7b0904a 100644
-> --- a/arch/arm/boot/dts/qcom-sdx55.dtsi
-> +++ b/arch/arm/boot/dts/qcom-sdx55.dtsi
-> @@ -334,7 +334,7 @@ pcie_ep: pcie-ep@1c00000 {
->  			resets = <&gcc GCC_PCIE_BCR>;
->  			reset-names = "core";
->  			power-domains = <&gcc PCIE_GDSC>;
-> -			phys = <&pcie0_lane>;
-> +			phys = <&pcie_lane>;
->  			phy-names = "pciephy";
->  			max-link-speed = <3>;
->  			num-lanes = <2>;
-> @@ -342,7 +342,7 @@ pcie_ep: pcie-ep@1c00000 {
->  			status = "disabled";
->  		};
->  
-> -		pcie0_phy: phy@1c07000 {
-> +		pcie_phy: phy@1c07000 {
->  			compatible = "qcom,sdx55-qmp-pcie-phy";
->  			reg = <0x01c07000 0x1c4>;
->  			#address-cells = <1>;
-> @@ -362,7 +362,7 @@ pcie0_phy: phy@1c07000 {
->  
->  			status = "disabled";
->  
-> -			pcie0_lane: lanes@1c06000 {
-> +			pcie_lane: lanes@1c06000 {
->  				reg = <0x01c06000 0x104>, /* tx0 */
->  				      <0x01c06200 0x328>, /* rx0 */
->  				      <0x01c07200 0x1e8>, /* pcs */
+base-commit: c9c3395d5e3dcc6daee66c6908354d47bf98cb0c
+prerequisite-patch-id: 4dc515731ce237184553c1606ffb3afaeb51c3d8
+prerequisite-patch-id: ac150a8c622e858e088df8121093d448df49c245
+prerequisite-patch-id: a4255724d4698f1238663443024de56de38d717b
+prerequisite-patch-id: a798370d170dc2bcc79ed86f741c21c1e6d87c78
+prerequisite-patch-id: 203d2500cadc112bd20fefc56eabf1470d3d2d2d
+prerequisite-patch-id: 315303931e4b6499de7127a88113763f86e97e16
+prerequisite-patch-id: 40cb8212ddb024c20593f73d8b87d9894877e172
+prerequisite-patch-id: a1673a9e9f19d6fab5a51abb721e54e36636f067
+prerequisite-patch-id: 94860423c7acc9025249d4bb36652a585bd0a797
+prerequisite-patch-id: b5084253283929d9a6d0e66c350400c7c85d034d
+prerequisite-patch-id: a428ed7a2aa45abab86923dc467e1e6b08427e85
+prerequisite-patch-id: d4f80829fca7ce370a6fad766593cdcb502fa245
+prerequisite-patch-id: e3490e19e089fe284334db300ee189b619a61628
+prerequisite-patch-id: 34298e3882261bc2d72955b1570cc9612ab7d662
+prerequisite-patch-id: 377c5c282a0776feee9acd10b565adbd5275a67e
+prerequisite-patch-id: 3ccee718de0750adbf8d0b77d553a2778a344f64
+prerequisite-patch-id: 4710f2ac22dca0bdd9ff5d744d2c37cab3c74515
+prerequisite-patch-id: 65f2aed865d88e6fa468d2923527b523d4313857
+prerequisite-patch-id: 258ea5f9b8bf41b6981345dcc81795f25865d38f
+prerequisite-patch-id: 8b6f2c9660c0ac0ee4e73e4c21aca8e6b75e81b9
+prerequisite-patch-id: e3b986b9c60b2b93b7812ec174c9e1b4cfb14c97
+prerequisite-patch-id: a2b3a9cff8a683422eb0ccf3a0850091401812d4
+prerequisite-patch-id: dbb0c0151b8bdf093e6ce79fd2fe3f60791a6e0b
+prerequisite-patch-id: ea9a6d0313dd3936c8de0239dc2072c3360a2f6b
+prerequisite-patch-id: d57e95d31686772abc4c4d5aa1cadc344dc293cd
+prerequisite-patch-id: 29aab7148bf56a20acddcb8a11f290705fcc97f6
+prerequisite-patch-id: eeecb5367bea99627210b661986ca5b49e2a9d63
+prerequisite-patch-id: c02658f677990683d4c4957e06c19ed3a3a0cfab
+prerequisite-patch-id: 2ddada18ab6ea5cd1da14212aaf59632f5203d40
+prerequisite-patch-id: 55b80c069faccc7dede15748d888bb13c7120a30
+prerequisite-patch-id: 7acbc9c924e802712d3574dd74a6b3576089f78c
+prerequisite-patch-id: 35b9e27cc439a35eebc18cbe375ea65da94653be
+prerequisite-patch-id: d426704849c21687b4ef32c7d399081706e34c51
+prerequisite-patch-id: 9f71c539a241baf1e73c7e7dfde5b0b04c66a502
+prerequisite-patch-id: 5acc7f9a7547a301014071f446685e21779cb5f7
+prerequisite-patch-id: 9fddcb61301b615ad6f0102f2235265a01ccc2a2
+prerequisite-patch-id: 0c04762f1d20f09cd2a1356334a86e520907d111
+prerequisite-patch-id: 04d1167facdccfd6c737bf64d83cfd6ed1d74099
+prerequisite-patch-id: ff5bca2dbaafaa14248f5f9a6ddc5d26d827cf50
+prerequisite-patch-id: 2bc43b375b470f7e8bbe937b78678ba3856e3b8f
+--
+2.25.1
 
 -- 
 linux-phy mailing list
