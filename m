@@ -4,84 +4,94 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 537CCC677F1
-	for <linux-phy@archiver.kernel.org>; Thu, 23 Feb 2023 13:04:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6EA89C677F1
+	for <linux-phy@archiver.kernel.org>; Fri, 24 Feb 2023 06:58:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bZE+b3JpOZ/lyncnXYe0+NUS1Fz4FFvDZP12DMKhND0=; b=Oz4Ppb3D0tbk9F
-	E+UtD/92SOXcZUG7VQq8NPm8HwQsHg7KGFBtq4yQgzhyNWUW1wYg3nHi9AebhYCxtwl012fFK9yDg
-	ohPwOuEH5ogbNev7Yk6PanCsyHu5Ch6xhrthYJJlHM8FsCZsYR9v4rSkvAEp49VIlxsNvD1Yoirrd
-	WdrqOC4CJLKkP6Wdh5iv2d5FKxMuzEKzICqz25Vy4J23fRM03lq46JoqqkMqcISSgMJalZDYwjPxq
-	REArLvtvkZl4LlNY+dogIX2bPElhFitGtxGKS9nDkGXMSZRv+UXg+LuO9Y4HBnOgBXIv5k4rnwg5e
-	Bc5EBfbwVgbvpGkpS/6g==;
+	List-Owner; bh=EzG1FRxf/pfxMWQzE2MOOCkRnN+mqMYcGvhYj2u2uK0=; b=EA+1ktsPzKjbRt
+	nB8WIHJCBk6GtYNFFJG1UsVRf20CH6qe12mjQxYcIEJ0QaFrwBaL/1rTdWnEsLXqek2Hb33Dr0WQ5
+	oXWs8yB2H7SHcnfYs0T28NJhut95x7Hwsrx4c8v+4JfkunbCUoRUa2zeuFDPdWM+nbLCRLv0zg1yH
+	qO8FFTF6+O1xZZQ9uIJROCqY13XlrWcu/2PM79vw8wsm4U2EFwAP/VSNed7zgGii5GODkgzpUWyQU
+	Yt6bVUHgpcOJmfQiivkdf1QfCUIY6aOo0dRHlSVbq05Z5gGs/K2ONYosqNYzJaE85pcUleP+8F5vi
+	Dnmu1BOJJMhqJGZfce5Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pVBHH-00GOsm-Lf; Thu, 23 Feb 2023 13:04:51 +0000
-Received: from mail-pj1-x1031.google.com ([2607:f8b0:4864:20::1031])
+	id 1pVS26-001NMV-SB; Fri, 24 Feb 2023 06:58:18 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pVBHE-00GOrq-8h
-	for linux-phy@lists.infradead.org; Thu, 23 Feb 2023 13:04:50 +0000
-Received: by mail-pj1-x1031.google.com with SMTP id y2so8608537pjg.3
-        for <linux-phy@lists.infradead.org>; Thu, 23 Feb 2023 05:04:46 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=user-agent:in-reply-to:content-disposition:mime-version:references
-         :message-id:subject:cc:to:from:date:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=JDkAyTl4e5Pg7c9IntJyDDk2YT+I/mT8i4BOda6y2xY=;
-        b=nBsez7fHRRIiINSdFLPvlrg8TZchD4wKhnS1nlLN1Hk9OXSJ19hvMaV/2ZF/XX0WDk
-         kdCw9easfSZyFfb0Qu51theWgnSRm54ROwWtJySpxSlhhJhx0xfU2u1zT54zrOWdmc9Y
-         a9AUkEp2t4ZRy2QeSiEOTNCmQDJwGqBLgSFTL9YfTZYp57i8r1l/W+1EA01VDVkLeHJw
-         3zHh3UaTFkbrlT+chwl/6mOIumbi/97rhE4pntxkc/T1cZ9lXW4MeCQQkvacJwzbB7Pf
-         pZkCyU2uT3Y5Ed9s5swPMNScYpw8LY4G9MORJ/huzHTesbnSRvVs2IRnGyq/11VFR4cv
-         UQYg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=user-agent:in-reply-to:content-disposition:mime-version:references
-         :message-id:subject:cc:to:from:date:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=JDkAyTl4e5Pg7c9IntJyDDk2YT+I/mT8i4BOda6y2xY=;
-        b=A2gdXzrurlg+2ELY+LZlrMGZCKDJ/ZAW3fToNiZKLaD9SLmZcXRM1/PPQkFx3PA/lk
-         yOQu+qAzT7kEMjqTUoVH0oT5JDez7fIEz9YcY41k7NvdjuEN9Q/CG/L/6A3o2jNysiqs
-         oIVFfpzTGFu5CkkWdCatj30/dNj6fz2zDfNk8pQv1mKaoUDZXeuj+RPAlSVIjZN2fXk+
-         kHhDaz/Sj6JLTT7om1nU/lfoLREDz6rRJHGAw+KKbzcRARru2p2zTNI5r7vMv+QmIP4s
-         ieM8V4SaOnc8aHZLnu10didiBrO4AMuLR0WEGgyiD8Vp4E4WjtpiegvBDSy2Oz+a3erG
-         Hb7A==
-X-Gm-Message-State: AO0yUKU/oa7QpzGNmEiNDv3jG5NLcH/B3FxaUCijCtF3/YeUsHLOmnd/
-	ol2/deUkbrQiReTBcJJHcgzd
-X-Google-Smtp-Source: AK7set9yzaubAFiFFmxHybxYsis4ROkd2GJ3XyKkK0PglYAtJDCPH1KeLOw8n7C3jddbCjDO/uWWjw==
-X-Received: by 2002:a17:902:dac7:b0:19a:aa9c:c66f with SMTP id q7-20020a170902dac700b0019aaa9cc66fmr14188841plx.21.1677157486080;
-        Thu, 23 Feb 2023 05:04:46 -0800 (PST)
-Received: from workstation ([59.97.53.124])
-        by smtp.gmail.com with ESMTPSA id e1-20020a170902b78100b001967580f60fsm8675022pls.260.2023.02.23.05.04.41
-        (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
-        Thu, 23 Feb 2023 05:04:45 -0800 (PST)
-Date: Thu, 23 Feb 2023 18:34:40 +0530
-From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-To: Konrad Dybcio <konrad.dybcio@linaro.org>
-Cc: andersson@kernel.org, lpieralisi@kernel.org, robh@kernel.org,
-	kw@linux.com, krzysztof.kozlowski+dt@linaro.org, vkoul@kernel.org,
-	bhelgaas@google.com, kishon@kernel.org,
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org,
-	devicetree@vger.kernel.org
-Subject: Re: [PATCH 05/11] ARM: dts: qcom: sdx55: Fix the unit address of
- PCIe EP node
-Message-ID: <20230223130440.GB6422@workstation>
-References: <20230222153251.254492-1-manivannan.sadhasivam@linaro.org>
- <20230222153251.254492-6-manivannan.sadhasivam@linaro.org>
- <4e61522d-075d-c77d-b1f6-c9f4c25e1cf2@linaro.org>
+	id 1pVS22-001NLx-Lm
+	for linux-phy@lists.infradead.org; Fri, 24 Feb 2023 06:58:16 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 31O2NUsO030509;
+	Fri, 24 Feb 2023 06:58:06 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
+ mime-version : subject : to : cc : references : from : in-reply-to :
+ content-type : content-transfer-encoding; s=qcppdkim1;
+ bh=ExYGv7uD0WZzY2ho0BwFRS07UTaJZxj71lOvMF39JVY=;
+ b=V4YlBVnHKYYJ22OJV2cyL1Z6lKp9M60dmCWQtloQXFegllNUw3XnlYMXOebclvhA9oIT
+ RcZdTdy97hzk/AFiuUY/Z82xC8epjV+BNOEtC1ZQcCR08WZji6j0tz9QZTF5zOZZEkF2
+ +gBLPgVt/UwiFG7j2RG6qs+lVBaWVzsB94CFm52NLnDIG3pTfB8Fzs3VqydXAPh5uWeO
+ R7ViDH7lgJJv6ouy/q0NuMpvN9wahmerPu679mGrUkWbS3u0LaQ8ofIdpNiFlINqf9Ni
+ t/Trkl5wE2u9484Icz4MvgNw2bSWFCStCBWh6cSt10htnPwTlBEWxpdOCs+PlGP3Z5ot /w== 
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3nwycnkqpr-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 24 Feb 2023 06:58:05 +0000
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 31O6w4dX002510
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 24 Feb 2023 06:58:04 GMT
+Received: from [10.50.30.238] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.986.41; Thu, 23 Feb
+ 2023 22:57:55 -0800
+Message-ID: <d3403424-4adc-26d6-3a98-1807361fe0fc@quicinc.com>
+Date: Fri, 24 Feb 2023 12:27:52 +0530
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <4e61522d-075d-c77d-b1f6-c9f4c25e1cf2@linaro.org>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.7.0
+Subject: Re: [PATCH 7/7] arm64: dts: qcom: ipq9574: Add PCIe PHYs and
+ controller nodes
+To: Devi Priya <quic_devipriy@quicinc.com>, <agross@kernel.org>,
+        <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
+        <lpieralisi@kernel.org>, <kw@linux.com>, <robh@kernel.org>,
+        <bhelgaas@google.com>, <krzysztof.kozlowski+dt@linaro.org>,
+        <vkoul@kernel.org>, <kishon@kernel.org>, <mturquette@baylibre.com>,
+        <sboyd@kernel.org>, <mani@kernel.org>, <p.zabel@pengutronix.de>,
+        <svarbanov@mm-sol.com>, <linux-arm-msm@vger.kernel.org>,
+        <linux-pci@vger.kernel.org>, <devicetree@vger.kernel.org>,
+        <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+        <linux-clk@vger.kernel.org>
+CC: <quic_srichara@quicinc.com>, <quic_gokulsri@quicinc.com>,
+        <quic_sjaganat@quicinc.com>, <quic_arajkuma@quicinc.com>,
+        <quic_anusha@quicinc.com>
+References: <20230214164135.17039-1-quic_devipriy@quicinc.com>
+ <20230214164135.17039-8-quic_devipriy@quicinc.com>
+Content-Language: en-US
+From: Kathiravan T <quic_kathirav@quicinc.com>
+In-Reply-To: <20230214164135.17039-8-quic_devipriy@quicinc.com>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: zEjx_kquJH8OKG_6ysX1stIhuddtfRsj
+X-Proofpoint-GUID: zEjx_kquJH8OKG_6ysX1stIhuddtfRsj
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.219,Aquarius:18.0.930,Hydra:6.0.562,FMLib:17.11.170.22
+ definitions=2023-02-24_03,2023-02-23_01,2023-02-09_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 impostorscore=0
+ suspectscore=0 lowpriorityscore=0 phishscore=0 adultscore=0 spamscore=0
+ clxscore=1015 mlxlogscore=999 priorityscore=1501 malwarescore=0
+ bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2212070000 definitions=main-2302240057
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230223_050448_705520_312EA15A 
-X-CRM114-Status: GOOD (  17.69  )
+X-CRM114-CacheID: sfid-20230223_225814_758979_6317F868 
+X-CRM114-Status: GOOD (  19.68  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,136 +103,353 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Feb 22, 2023 at 05:02:08PM +0100, Konrad Dybcio wrote:
-> 
-> 
-> On 22.02.2023 16:32, Manivannan Sadhasivam wrote:
-> > Unit address of PCIe EP node should be 0x1c00000 as it has to match the
-> > first address specified in the reg property.
-> > 
-> > This also requires sorting the node in the ascending order.
-> > 
-> > Fixes: 31c9ef002580 ("dt-bindings: PCI: Add Qualcomm PCIe Endpoint controller")
-> Unsure, we aren't fixing the bindings..
-> 
 
-Err... will fix the tag in next version.
+On 2/14/2023 10:11 PM, Devi Priya wrote:
+> Add PCIe0, PCIe1, PCIe2, PCIe3 (and corresponding PHY) devices
+> found on IPQ9574 platform. The PCIe0 & PCIe1 are 1-lane Gen3
+> host whereas PCIe2 & PCIe3 are 2-lane Gen3 host.
+>
+> Co-developed-by: Anusha Rao <quic_anusha@quicinc.com>
+> Signed-off-by: Anusha Rao <quic_anusha@quicinc.com>
+> Signed-off-by: Devi Priya <quic_devipriy@quicinc.com>
+> ---
+>   arch/arm64/boot/dts/qcom/ipq9574-al02-c7.dts |  28 ++
+>   arch/arm64/boot/dts/qcom/ipq9574.dtsi        | 477 ++++++++++++++++++-
+>   2 files changed, 499 insertions(+), 6 deletions(-)
+>
+> diff --git a/arch/arm64/boot/dts/qcom/ipq9574-al02-c7.dts b/arch/arm64/boot/dts/qcom/ipq9574-al02-c7.dts
+> index 2c8430197ec0..21b53f34ce84 100644
+> --- a/arch/arm64/boot/dts/qcom/ipq9574-al02-c7.dts
+> +++ b/arch/arm64/boot/dts/qcom/ipq9574-al02-c7.dts
+> @@ -8,6 +8,7 @@
+>   
+>   /dts-v1/;
+>   
+> +#include <dt-bindings/gpio/gpio.h>
+>   #include "ipq9574.dtsi"
+>   
+>   / {
+> @@ -29,6 +30,33 @@
+>   	status = "okay";
+>   };
+>   
+> +&pcie1_phy {
+> +	status = "okay";
+> +};
+> +
+> +&pcie1_x1 {
+> +	perst-gpios = <&tlmm 26 GPIO_ACTIVE_LOW>;
+> +	status = "okay";
+> +};
+> +
+> +&pcie2_phy {
+> +	status = "okay";
+> +};
+> +
+> +&pcie2_x2 {
+> +	perst-gpios = <&tlmm 29 GPIO_ACTIVE_LOW>;
+> +	status = "okay";
+> +};
+> +
+> +&pcie3_phy {
+> +	status = "okay";
+> +};
+> +
+> +&pcie3_x2 {
+> +	perst-gpios = <&tlmm 32 GPIO_ACTIVE_LOW>;
+> +	status = "okay";
+> +};
+> +
+>   &sdhc_1 {
+>   	pinctrl-0 = <&sdc_default_state>;
+>   	pinctrl-names = "default";
+> diff --git a/arch/arm64/boot/dts/qcom/ipq9574.dtsi b/arch/arm64/boot/dts/qcom/ipq9574.dtsi
+> index 062f80798ebb..a32dbdeb5bed 100644
+> --- a/arch/arm64/boot/dts/qcom/ipq9574.dtsi
+> +++ b/arch/arm64/boot/dts/qcom/ipq9574.dtsi
+> @@ -6,8 +6,8 @@
+>    * Copyright (c) 2023, Qualcomm Innovation Center, Inc. All rights reserved.
+>    */
+>   
+> -#include <dt-bindings/interrupt-controller/arm-gic.h>
+>   #include <dt-bindings/clock/qcom,ipq9574-gcc.h>
+> +#include <dt-bindings/interrupt-controller/arm-gic.h>
+>   #include <dt-bindings/reset/qcom,ipq9574-gcc.h>
+>   
+>   / {
+> @@ -22,11 +22,41 @@
+>   			#clock-cells = <0>;
+>   		};
+>   
+> +		pcie30_phy0_pipe_clk: pcie30_phy0_pipe_clk {
+> +			compatible = "fixed-clock";
+> +			clock-frequency = <250000000>;
+> +			#clock-cells = <0>;
+> +		};
+> +
+> +		pcie30_phy1_pipe_clk: pcie30_phy1_pipe_clk {
+> +			compatible = "fixed-clock";
+> +			clock-frequency = <250000000>;
+> +			#clock-cells = <0>;
+> +		};
+> +
+> +		pcie30_phy2_pipe_clk: pcie30_phy2_pipe_clk {
+> +			compatible = "fixed-clock";
+> +			clock-frequency = <250000000>;
+> +			#clock-cells = <0>;
+> +		};
+> +
+> +		pcie30_phy3_pipe_clk: pcie30_phy3_pipe_clk {
+> +			compatible = "fixed-clock";
+> +			clock-frequency = <250000000>;
+> +			#clock-cells = <0>;
+> +		};
+> +
+>   		sleep_clk: sleep-clk {
+>   			compatible = "fixed-clock";
+>   			#clock-cells = <0>;
+>   		};
+>   
+> +		usb3phy_0_cc_pipe_clk: usb3phy_0_cc_pipe_clk {
+> +			compatible = "fixed-clock";
+> +			clock-frequency = <125000000>;
+> +			#clock-cells = <0>;
+> +		};
+> +
+>   		xo_board_clk: xo-board-clk {
+>   			compatible = "fixed-clock";
+>   			#clock-cells = <0>;
+> @@ -121,6 +151,155 @@
+>   		#size-cells = <1>;
+>   		ranges = <0 0 0 0xffffffff>;
+>   
+> +		pcie0_phy: phy@84000 {
+> +			compatible = "qcom,ipq9574-qmp-gen3x1-pcie-phy";
+> +			reg = <0x00084000 0x1bc>; /* Serdes PLL */
+> +			#address-cells = <1>;
+> +			#size-cells = <1>;
+> +			ranges;
+> +			clocks = <&gcc GCC_PCIE0_AUX_CLK>,
+> +				 <&gcc GCC_PCIE0_AHB_CLK>,
+> +				 <&gcc GCC_ANOC_PCIE0_1LANE_M_CLK>,
+> +				 <&gcc GCC_SNOC_PCIE0_1LANE_S_CLK>;
+> +			clock-names = "aux", "cfg_ahb", "anoc_lane", "snoc_lane";
+> +
+> +			assigned-clocks = <&gcc GCC_PCIE0_AUX_CLK>;
+> +			assigned-clock-rates = <20000000>;
+> +
+> +			resets = <&gcc GCC_PCIE0_PHY_BCR>,
+> +				 <&gcc GCC_PCIE0PHY_PHY_BCR>;
+> +			reset-names = "phy", "common";
+> +
+> +			status = "disabled";
+> +
+> +			pcie0_lane: phy@84200 {
+> +				reg = <0x00084200 0x16c>, /* Serdes Tx */
+> +				      <0x00084400 0x200>, /* Serdes Rx */
+> +				      <0x00084800 0x1f0>, /* PCS: Lane0, COM, PCIE */
+> +				      <0x00084c00 0xf4>;  /* pcs_misc */
+> +				#phy-cells = <0>;
+> +
+> +				clocks = <&gcc GCC_PCIE0_PIPE_CLK>;
+> +				clock-names = "pipe0";
+> +				clock-output-names = "gcc_pcie0_pipe_clk_src";
+> +				#clock-cells = <0>;
+> +			};
+> +		};
+> +
+> +		pcie2_phy: phy@8c000 {
+> +			compatible = "qcom,ipq9574-qmp-gen3x2-pcie-phy";
+> +			reg = <0x0008c000 0x1bc>; /* Serdes PLL */
+> +			#address-cells = <1>;
+> +			#size-cells = <1>;
+> +			ranges;
+> +
+> +			clocks = <&gcc GCC_PCIE2_AUX_CLK>,
+> +				 <&gcc GCC_PCIE2_AHB_CLK>,
+> +				 <&gcc GCC_ANOC_PCIE2_2LANE_M_CLK>,
+> +				 <&gcc GCC_SNOC_PCIE2_2LANE_S_CLK>;
+> +			clock-names = "aux", "cfg_ahb", "anoc_lane", "snoc_lane";
+> +
+> +			assigned-clocks = <&gcc GCC_PCIE2_AUX_CLK>;
+> +			assigned-clock-rates = <20000000>;
+> +
+> +			resets = <&gcc GCC_PCIE2_PHY_BCR>,
+> +				 <&gcc GCC_PCIE2PHY_PHY_BCR>;
+> +			reset-names = "phy", "common";
+> +
+> +			status = "disabled";
+> +
+> +			pcie2_lanes: phy@8c200 {
+> +				reg = <0x0008c200 0x16c>, /* Serdes Tx0 */
+> +				      <0x0008c400 0x200>, /* Serdes Rx0 */
+> +				      <0x0008d000 0x1f0>, /* PCS: Lane0, COM, PCIE */
+> +				      <0x0008c600 0x16c>, /* Serdes Tx1 */
+> +				      <0x0008c800 0x200>, /* Serdes Rx1 */
+> +				      <0x0008d400 0x0f8>; /* pcs_misc */
+> +
+> +				#phy-cells = <0>;
+> +
+> +				clocks = <&gcc GCC_PCIE2_PIPE_CLK>;
+> +				clock-names = "pipe0";
+> +				clock-output-names = "gcc_pcie2_pipe_clk_src";
+> +				#clock-cells = <0>;
+> +			};
+> +		};
+> +
+> +		pcie3_phy: phy@f4000 {
+> +			compatible = "qcom,ipq9574-qmp-gen3x2-pcie-phy";
+> +			reg = <0x000f4000 0x1bc>; /* Serdes PLL */
+> +			#address-cells = <1>;
+> +			#size-cells = <1>;
+> +			ranges;
+> +
+> +			clocks = <&gcc GCC_PCIE3_AUX_CLK>,
+> +				 <&gcc GCC_PCIE3_AHB_CLK>,
+> +				 <&gcc GCC_ANOC_PCIE3_2LANE_M_CLK>,
+> +				 <&gcc GCC_SNOC_PCIE3_2LANE_S_CLK>;
+> +			clock-names = "aux", "cfg_ahb", "anoc_lane", "snoc_lane";
+> +
+> +			assigned-clocks = <&gcc GCC_PCIE3_AUX_CLK>;
+> +			assigned-clock-rates = <20000000>;
+> +
+> +			resets = <&gcc GCC_PCIE3_PHY_BCR>,
+> +				 <&gcc GCC_PCIE3PHY_PHY_BCR>;
+> +			reset-names = "phy", "common";
+> +
+> +			status = "disabled";
+> +
+> +			pcie3_lanes: phy@f4200 {
+> +				reg = <0x000f4200 0x16c>, /* Serdes Tx0 */
+> +				      <0x000f4400 0x200>, /* Serdes Rx0 */
+> +				      <0x000f5000 0x1f0>, /* PCS: Lane0, COM, PCIE */
+> +				      <0x000f4600 0x16c>, /* Serdes Tx1 */
+> +				      <0x000f4800 0x200>, /* Serdes Rx1 */
+> +				      <0x000f5400 0x0f8>; /* pcs_misc */
+> +
+> +				#phy-cells = <0>;
+> +
+> +				clocks = <&gcc GCC_PCIE3_PIPE_CLK>;
+> +				clock-names = "pipe0";
+> +				clock-output-names = "gcc_pcie3_pipe_clk_src";
+> +				#clock-cells = <0>;
+> +			};
+> +		};
+> +
+> +		pcie1_phy: phy@fc000 {
+> +			compatible = "qcom,ipq9574-qmp-gen3x1-pcie-phy";
+> +			reg = <0x000fc000 0x1bc>; /* Serdes PLL */
+> +			#address-cells = <1>;
+> +			#size-cells = <1>;
+> +			ranges;
+> +
+> +			clocks = <&gcc GCC_PCIE1_AUX_CLK>,
+> +				 <&gcc GCC_PCIE1_AHB_CLK>,
+> +				 <&gcc GCC_ANOC_PCIE1_1LANE_M_CLK>,
+> +				 <&gcc GCC_SNOC_PCIE1_1LANE_S_CLK>;
+> +			clock-names = "aux", "cfg_ahb", "anoc_lane", "snoc_lane";
+> +
+> +			assigned-clocks = <&gcc GCC_PCIE1_AUX_CLK>;
+> +			assigned-clock-rates = <20000000>;
+> +
+> +			resets = <&gcc GCC_PCIE1_PHY_BCR>,
+> +				 <&gcc GCC_PCIE1PHY_PHY_BCR>;
+> +			reset-names = "phy", "common";
+> +
+> +			status = "disabled";
+> +
+> +			pcie1_lane: phy@fc200 {
+> +				reg = <0x000fc200 0x16c>, /* Serdes Tx */
+> +				      <0x000fc400 0x200>, /* Serdes Rx */
+> +				      <0x000fc800 0x1f0>, /* PCS: Lane0, COM, PCIE */
+> +				      <0x000fcc00 0xf4>;  /* pcs_misc */
+> +				#phy-cells = <0>;
+> +
+> +				clocks = <&gcc GCC_PCIE1_PIPE_CLK>;
+> +				clock-names = "pipe0";
+> +				clock-output-names = "gcc_pcie1_pipe_clk_src";
+> +				#clock-cells = <0>;
+> +			};
+> +		};
+> +
+>   		tlmm: pinctrl@1000000 {
+>   			compatible = "qcom,ipq9574-tlmm";
+>   			reg = <0x01000000 0x300000>;
+> @@ -145,11 +324,11 @@
+>   			clocks = <&xo_board_clk>,
+>   				 <&sleep_clk>,
+>   				 <&bias_pll_ubi_nc_clk>,
+> -				 <0>,
+> -				 <0>,
+> -				 <0>,
+> -				 <0>,
+> -				 <0>;
+> +				 <&pcie30_phy0_pipe_clk>,
+> +				 <&pcie30_phy1_pipe_clk>,
+> +				 <&pcie30_phy2_pipe_clk>,
+> +				 <&pcie30_phy3_pipe_clk>,
+> +				 <&usb3phy_0_cc_pipe_clk>;
 
-Thanks,
-Mani
 
-> 
-> > Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-> > ---
-> For the dt change:
-> 
-> Reviewed-by: Konrad Dybcio <konrad.dybcio@linaro.org>
-> 
-> Konrad
-> >  arch/arm/boot/dts/qcom-sdx55.dtsi | 78 +++++++++++++++----------------
-> >  1 file changed, 39 insertions(+), 39 deletions(-)
-> > 
-> > diff --git a/arch/arm/boot/dts/qcom-sdx55.dtsi b/arch/arm/boot/dts/qcom-sdx55.dtsi
-> > index 93d71aff3fab..e84ca795cae6 100644
-> > --- a/arch/arm/boot/dts/qcom-sdx55.dtsi
-> > +++ b/arch/arm/boot/dts/qcom-sdx55.dtsi
-> > @@ -303,6 +303,45 @@ qpic_nand: nand-controller@1b30000 {
-> >  			status = "disabled";
-> >  		};
-> >  
-> > +		pcie_ep: pcie-ep@1c00000 {
-> > +			compatible = "qcom,sdx55-pcie-ep";
-> > +			reg = <0x01c00000 0x3000>,
-> > +			      <0x40000000 0xf1d>,
-> > +			      <0x40000f20 0xc8>,
-> > +			      <0x40001000 0x1000>,
-> > +			      <0x40200000 0x100000>,
-> > +			      <0x01c03000 0x3000>;
-> > +			reg-names = "parf", "dbi", "elbi", "atu", "addr_space",
-> > +				    "mmio";
-> > +
-> > +			qcom,perst-regs = <&tcsr 0xb258 0xb270>;
-> > +
-> > +			clocks = <&gcc GCC_PCIE_AUX_CLK>,
-> > +				 <&gcc GCC_PCIE_CFG_AHB_CLK>,
-> > +				 <&gcc GCC_PCIE_MSTR_AXI_CLK>,
-> > +				 <&gcc GCC_PCIE_SLV_AXI_CLK>,
-> > +				 <&gcc GCC_PCIE_SLV_Q2A_AXI_CLK>,
-> > +				 <&gcc GCC_PCIE_SLEEP_CLK>,
-> > +				 <&gcc GCC_PCIE_0_CLKREF_CLK>;
-> > +			clock-names = "aux", "cfg", "bus_master", "bus_slave",
-> > +				      "slave_q2a", "sleep", "ref";
-> > +
-> > +			interrupts = <GIC_SPI 140 IRQ_TYPE_LEVEL_HIGH>,
-> > +				     <GIC_SPI 145 IRQ_TYPE_LEVEL_HIGH>;
-> > +			interrupt-names = "global", "doorbell";
-> > +			reset-gpios = <&tlmm 57 GPIO_ACTIVE_LOW>;
-> > +			wake-gpios = <&tlmm 53 GPIO_ACTIVE_LOW>;
-> > +			resets = <&gcc GCC_PCIE_BCR>;
-> > +			reset-names = "core";
-> > +			power-domains = <&gcc PCIE_GDSC>;
-> > +			phys = <&pcie0_lane>;
-> > +			phy-names = "pciephy";
-> > +			max-link-speed = <3>;
-> > +			num-lanes = <2>;
-> > +
-> > +			status = "disabled";
-> > +		};
-> > +
-> >  		pcie0_phy: phy@1c07000 {
-> >  			compatible = "qcom,sdx55-qmp-pcie-phy";
-> >  			reg = <0x01c07000 0x1c4>;
-> > @@ -400,45 +439,6 @@ sdhc_1: mmc@8804000 {
-> >  			status = "disabled";
-> >  		};
-> >  
-> > -		pcie_ep: pcie-ep@40000000 {
-> > -			compatible = "qcom,sdx55-pcie-ep";
-> > -			reg = <0x01c00000 0x3000>,
-> > -			      <0x40000000 0xf1d>,
-> > -			      <0x40000f20 0xc8>,
-> > -			      <0x40001000 0x1000>,
-> > -			      <0x40200000 0x100000>,
-> > -			      <0x01c03000 0x3000>;
-> > -			reg-names = "parf", "dbi", "elbi", "atu", "addr_space",
-> > -				    "mmio";
-> > -
-> > -			qcom,perst-regs = <&tcsr 0xb258 0xb270>;
-> > -
-> > -			clocks = <&gcc GCC_PCIE_AUX_CLK>,
-> > -				 <&gcc GCC_PCIE_CFG_AHB_CLK>,
-> > -				 <&gcc GCC_PCIE_MSTR_AXI_CLK>,
-> > -				 <&gcc GCC_PCIE_SLV_AXI_CLK>,
-> > -				 <&gcc GCC_PCIE_SLV_Q2A_AXI_CLK>,
-> > -				 <&gcc GCC_PCIE_SLEEP_CLK>,
-> > -				 <&gcc GCC_PCIE_0_CLKREF_CLK>;
-> > -			clock-names = "aux", "cfg", "bus_master", "bus_slave",
-> > -				      "slave_q2a", "sleep", "ref";
-> > -
-> > -			interrupts = <GIC_SPI 140 IRQ_TYPE_LEVEL_HIGH>,
-> > -				     <GIC_SPI 145 IRQ_TYPE_LEVEL_HIGH>;
-> > -			interrupt-names = "global", "doorbell";
-> > -			reset-gpios = <&tlmm 57 GPIO_ACTIVE_LOW>;
-> > -			wake-gpios = <&tlmm 53 GPIO_ACTIVE_LOW>;
-> > -			resets = <&gcc GCC_PCIE_BCR>;
-> > -			reset-names = "core";
-> > -			power-domains = <&gcc PCIE_GDSC>;
-> > -			phys = <&pcie0_lane>;
-> > -			phy-names = "pciephy";
-> > -			max-link-speed = <3>;
-> > -			num-lanes = <2>;
-> > -
-> > -			status = "disabled";
-> > -		};
-> > -
-> >  		remoteproc_mpss: remoteproc@4080000 {
-> >  			compatible = "qcom,sdx55-mpss-pas";
-> >  			reg = <0x04080000 0x4040>;
+pipe clock source is PHY. So should we add the pcie_phy phandle here and 
+use it like how it is done in other targets, ex: sm8550.dtsi?
+
+
+>   			#clock-cells = <1>;
+>   			#reset-cells = <1>;
+>   			#power-domain-cells = <1>;
+> @@ -282,6 +461,292 @@
+>   				status = "disabled";
+>   			};
+>   		};
+> +
+> +		pcie1_x1: pci@10000000 {
+> +			compatible = "qcom,pcie-ipq9574";
+> +			reg =  <0x10000000 0xf1d>,
+> +			       <0x10000F20 0xa8>,
+> +			       <0x10001000 0x1000>,
+> +			       <0x000F8000 0x4000>,
+> +			       <0x10100000 0x1000>,
+> +			       <0x00618108 0x4>;
+> +			reg-names = "dbi", "elbi", "atu", "parf", "config", "aggr_noc";
+> +			device_type = "pci";
+> +			linux,pci-domain = <2>;
+> +			bus-range = <0x00 0xff>;
+> +			num-lanes = <1>;
+> +			#address-cells = <3>;
+> +			#size-cells = <2>;
+> +
+> +			ranges = <0x81000000 0 0x10200000 0x10200000
+> +				  0 0x00100000   /* downstream I/O */
+> +				  0x82000000 0 0x10300000 0x10300000
+> +				  0 0x07d00000>; /* non-prefetchable memory */
+> +
+> +			#interrupt-cells = <1>;
+> +			interrupt-map-mask = <0 0 0 0x7>;
+> +			interrupt-map = <0 0 0 1 &intc 0 35
+> +					IRQ_TYPE_LEVEL_HIGH>, /* int_a */
+> +					<0 0 0 2 &intc 0 49
+> +					IRQ_TYPE_LEVEL_HIGH>, /* int_b */
+> +					<0 0 0 3 &intc 0 84
+> +					IRQ_TYPE_LEVEL_HIGH>, /* int_c */
+> +					<0 0 0 4 &intc 0 85
+> +					IRQ_TYPE_LEVEL_HIGH>; /* int_d */
+> +
+> +			interrupts = <GIC_SPI 25 IRQ_TYPE_LEVEL_HIGH>;
+> +			interrupt-names = "global_irq";
+
+
+Controller driver doesn't support the "global_irq" yet. Please correct 
+me If I am wrong.
+
+
+Thanks, Kathiravan T.
+
 
 -- 
 linux-phy mailing list
