@@ -4,62 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DFA90C64ED8
-	for <linux-phy@archiver.kernel.org>; Fri, 24 Feb 2023 10:59:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 36539C64ED8
+	for <linux-phy@archiver.kernel.org>; Fri, 24 Feb 2023 10:59:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=N78P6wOwwUJfCglPpWk6ZEBSmDEmRwImpM4rY3RSN8E=; b=AbB901yNZby5Gw
-	hr/Bb3PYLWc/rGBpmW78q64jvuK6udHEEMCtrg/0O59wL5m7+LDdPxjFGDAAYw42sCK4QgKeb7uOA
-	mBHsh2k3/DJyFolQq9i4yDnj2Q/V8KVf8F0z7pJB5FwxKo3GenxxuY2QK0Exv47M7ZFZ3lsBg3D31
-	UKpcbnPEIhJiVScKOXhqvbz9QuFJ1bGp42uuxG0JMed2/71cG4xp3bnglRdFn+QJij3WzcGZ0+rjL
-	Ys7FSthcdNMK2r2y1vxzfXkj4oLbPxLTLlS2kYp8fAIm1pdJPbmWMOrOvbzQpCmvrGjG1pB3sMniQ
-	z+/pFU7+wQa5xlJ/Uxyg==;
+	List-Owner; bh=oMCdRswXSffXXB+ZnBa6KbffvrM4npgjjpECuDYS7PQ=; b=sPkZhQE7t+OXKT
+	cKSka2H8VFTqJW6E7/kRKwNeg99LS3WGlNTmSs62zV2ydj3IFSQyUPwL2wphudexHphHWa+31E88/
+	BKbPUh/syc29JtxEygusTF97s4XCGBS13ANppIvQRweBe1FznmmBt9X30QLAgZcjE/mTgBg2fHzYl
+	/Tt0wgIeThKEThw9IwSrFweNKF+Dfb+f7PaN37rH8H9T/cwy1fAQsG/AkKwttSs+4jXUlpbECnPpL
+	vya6Eag2mAAqKbeXiWMcjACCQE7dL+5ZTgYZEmKDemxiikS3x1DZJ+b2+Htj811JftwiBycDXeQNB
+	KIHSRV9IdBaDD0EgSn6Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pVVnf-0029NJ-8W; Fri, 24 Feb 2023 10:59:39 +0000
-Received: from mail-pj1-x102d.google.com ([2607:f8b0:4864:20::102d])
+	id 1pVVnj-0029PR-LC; Fri, 24 Feb 2023 10:59:43 +0000
+Received: from mail-pj1-x1031.google.com ([2607:f8b0:4864:20::1031])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pVVnb-0029Kc-Oo
-	for linux-phy@lists.infradead.org; Fri, 24 Feb 2023 10:59:37 +0000
-Received: by mail-pj1-x102d.google.com with SMTP id c23so11198729pjo.4
-        for <linux-phy@lists.infradead.org>; Fri, 24 Feb 2023 02:59:34 -0800 (PST)
+	id 1pVVng-0029NR-IW
+	for linux-phy@lists.infradead.org; Fri, 24 Feb 2023 10:59:42 +0000
+Received: by mail-pj1-x1031.google.com with SMTP id m8-20020a17090a4d8800b002377bced051so2550854pjh.0
+        for <linux-phy@lists.infradead.org>; Fri, 24 Feb 2023 02:59:39 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=VslRr6K7dtSVjJZa6fQapZMGTntHaQJdO/Shpvvg0kE=;
-        b=MGOUmbwJgUA1fRVJZwgB9pWpXSaFDZdqmuK/QbXECACx5ema5PaJeJLtueCdGflZWD
-         +iVRSxClMuj4nGtJLHvDdO6Q9QcpOyBQab03jB0Fi5EH6oBo+cTRex1svC3RQpI+FRtV
-         BwH7n/u/g0zlgDqs4+hnb1sz43b7+alo7Vf5gHBXbYBFt16snBeALQccZPXSGxIN3P57
-         skmZO/QNwavAugcQZXxwYqr5tLJYtgeN6XJ+z9GhF8WX+UQlzPkAUzLzaXLM9qk3nTRx
-         WeXHm0rRlwL93rLX51fJGDc1bj26EJS8vetwl82uGpYQh17dTbTGfQr59idAdiPKpg+d
-         Jzfg==
+        bh=HWzirrIvAlApajl/8IV1ns6ZR5N3zHdUYEWFW4EUTxg=;
+        b=WgOeZtrMpNQF82N0RyIc81DA7VMhg2aTHO705wMUkzAOKMcpPDq4HnFy+6rJ79goQl
+         XNaMXIDP0Dt9f9O4gKyK5whJQajwOWI4heuAtMtu0MHIFvQMjxIB6o2qm3iu0+P3NuoT
+         iCr3q7PM0ssSOC1j7dlYZT5IeubFl+m/ew+OKFzWDK+N+5+c/EttEfavRQozx7z+Ur9s
+         o06VmypjZOtiMx9hOaHGxCu4Bnk0vutR2HNR/3yC3dIjqNmDvjuYzTqGuRq5tsr6K5Js
+         XHvbuWZQoS9UQRGDxo8tpJnceeWCyB59Cp/Qw874Yuxc4HwOeQ3MgLuw+FUmlSudVMNT
+         AhQg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=VslRr6K7dtSVjJZa6fQapZMGTntHaQJdO/Shpvvg0kE=;
-        b=YzX4N/zLx95h1MRqyv6cwVfvuteUq1xUsMEXVoTi182muV8EgzvtRud1Jm5aMVMCbY
-         SoOFJz6ISmDQBNkGQgwtoOBwwC9qJ74tzXgGJEgkQvgFStOA+L2sj6y3ZY6po5Kfh3Bj
-         4/5x75i1DxO9tYP8X1VbdOjU3cY+u6Y5c5GiWAykp/3sU538oS3T24ww8I/tU5PIO3ZU
-         VLcexfuKYFw12yiZDh2Mv1FsH/LOe+ka5DU8icrbQ3ozriA64RZ5YecXp7382wj/Uuvs
-         mJv3waKmm+kLMLkoxpq7tIBgsN1T/iY8TxSuneromEbvNyBw748PKMfGttsxrRzSPLee
-         sObw==
-X-Gm-Message-State: AO0yUKUODPpN1AirV4RJInt5yo90r2bKwSE5j1CodtCaR7vn/KJl+jWV
-	RCBXicqFgtzufL7rRIq4xLv+AhwiD4jaNFA=
-X-Google-Smtp-Source: AK7set+r4n315Ty6V+j5fxdDXOFOvEcth9W92yPHLkj3kMcik/XkG7t/jrX6t5of1AEnZduZqIlfgA==
-X-Received: by 2002:a17:90a:57:b0:237:161d:f5ac with SMTP id 23-20020a17090a005700b00237161df5acmr13869044pjb.36.1677236374349;
-        Fri, 24 Feb 2023 02:59:34 -0800 (PST)
+        bh=HWzirrIvAlApajl/8IV1ns6ZR5N3zHdUYEWFW4EUTxg=;
+        b=6txBOGPCjiQ7RiF0vBMlHZI9r/I+PiUQ1R+IHUP3BwZPONPW/ERyEFVQ2trJjq4XJe
+         Dg7gt3HRReWzzV8eJo6FKeGibeo5Mt//+sIqFWOpEVCU6oI/sLqevu9tDYMcF2FenA2N
+         25Bf1OZULsE2R2eq0MRciPGmxjL9e4or9QPz57VznKJ4Adkuds9+oNgdTmbwUeLWcsAJ
+         Rnr7M+F3b1SrkJVCZHTZrRlkxXPkIWrmBe7/LUooKAD17YZQzrAsI3N3loRm2xKrcrbU
+         lQfUH8rHzgHjBbzqGgkpoQ1qDz0hQXdLZgccsLEvyUc2+R8sGXeng+Wg5GWGUbMf04iC
+         jVsA==
+X-Gm-Message-State: AO0yUKWuZB7wYh40gb8WeZgbyx0zsdOpKbb3aD1ZdjoplrjtYE/0iukO
+	UEKj+XpFt1k4MvPXDDZR8s2J
+X-Google-Smtp-Source: AK7set+l3dhsbG5Ta+Ua0gyUgpw/rOM23btJEBVdGna8A6wwbUpMKgPonBx504ritBoktuwXOwg9CQ==
+X-Received: by 2002:a17:90b:4d09:b0:233:b849:7e79 with SMTP id mw9-20020a17090b4d0900b00233b8497e79mr18207543pjb.4.1677236378979;
+        Fri, 24 Feb 2023 02:59:38 -0800 (PST)
 Received: from localhost.localdomain ([117.217.187.3])
-        by smtp.gmail.com with ESMTPSA id gd5-20020a17090b0fc500b00233cde36909sm1263853pjb.21.2023.02.24.02.59.30
+        by smtp.gmail.com with ESMTPSA id gd5-20020a17090b0fc500b00233cde36909sm1263853pjb.21.2023.02.24.02.59.34
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 24 Feb 2023 02:59:34 -0800 (PST)
+        Fri, 24 Feb 2023 02:59:38 -0800 (PST)
 From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 To: andersson@kernel.org,
 	lpieralisi@kernel.org,
@@ -75,18 +75,18 @@ Cc: konrad.dybcio@linaro.org,
 	linux-kernel@vger.kernel.org,
 	linux-pci@vger.kernel.org,
 	devicetree@vger.kernel.org,
-	Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Subject: [PATCH v2 04/13] dt-bindings: PCI: qcom-ep: Fix the unit address used in example
-Date: Fri, 24 Feb 2023 16:28:57 +0530
-Message-Id: <20230224105906.16540-5-manivannan.sadhasivam@linaro.org>
+	Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+Subject: [PATCH v2 05/13] ARM: dts: qcom: sdx55: Fix the unit address of PCIe EP node
+Date: Fri, 24 Feb 2023 16:28:58 +0530
+Message-Id: <20230224105906.16540-6-manivannan.sadhasivam@linaro.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20230224105906.16540-1-manivannan.sadhasivam@linaro.org>
 References: <20230224105906.16540-1-manivannan.sadhasivam@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230224_025935_835176_6FA28986 
-X-CRM114-Status: GOOD (  10.37  )
+X-CRM114-CacheID: sfid-20230224_025940_687015_3F437EB1 
+X-CRM114-Status: UNSURE (   9.98  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,26 +106,111 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 Unit address of PCIe EP node should be 0x1c00000 as it has to match the
 first address specified in the reg property.
 
-Fixes: 31c9ef002580 ("dt-bindings: PCI: Add Qualcomm PCIe Endpoint controller")
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+This also requires sorting the node in the ascending order.
+
+Fixes: e6b69813283f ("ARM: dts: qcom: sdx55: Add support for PCIe EP")
+Reviewed-by: Konrad Dybcio <konrad.dybcio@linaro.org>
 Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 ---
- Documentation/devicetree/bindings/pci/qcom,pcie-ep.yaml | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ arch/arm/boot/dts/qcom-sdx55.dtsi | 78 +++++++++++++++----------------
+ 1 file changed, 39 insertions(+), 39 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/pci/qcom,pcie-ep.yaml b/Documentation/devicetree/bindings/pci/qcom,pcie-ep.yaml
-index 8d7eb51edcb4..c1800e44f3da 100644
---- a/Documentation/devicetree/bindings/pci/qcom,pcie-ep.yaml
-+++ b/Documentation/devicetree/bindings/pci/qcom,pcie-ep.yaml
-@@ -164,7 +164,7 @@ examples:
-     #include <dt-bindings/clock/qcom,gcc-sdx55.h>
-     #include <dt-bindings/gpio/gpio.h>
-     #include <dt-bindings/interrupt-controller/arm-gic.h>
--    pcie_ep: pcie-ep@40000000 {
-+    pcie_ep: pcie-ep@1c00000 {
-         compatible = "qcom,sdx55-pcie-ep";
-         reg = <0x01c00000 0x3000>,
-               <0x40000000 0xf1d>,
+diff --git a/arch/arm/boot/dts/qcom-sdx55.dtsi b/arch/arm/boot/dts/qcom-sdx55.dtsi
+index 93d71aff3fab..e84ca795cae6 100644
+--- a/arch/arm/boot/dts/qcom-sdx55.dtsi
++++ b/arch/arm/boot/dts/qcom-sdx55.dtsi
+@@ -303,6 +303,45 @@ qpic_nand: nand-controller@1b30000 {
+ 			status = "disabled";
+ 		};
+ 
++		pcie_ep: pcie-ep@1c00000 {
++			compatible = "qcom,sdx55-pcie-ep";
++			reg = <0x01c00000 0x3000>,
++			      <0x40000000 0xf1d>,
++			      <0x40000f20 0xc8>,
++			      <0x40001000 0x1000>,
++			      <0x40200000 0x100000>,
++			      <0x01c03000 0x3000>;
++			reg-names = "parf", "dbi", "elbi", "atu", "addr_space",
++				    "mmio";
++
++			qcom,perst-regs = <&tcsr 0xb258 0xb270>;
++
++			clocks = <&gcc GCC_PCIE_AUX_CLK>,
++				 <&gcc GCC_PCIE_CFG_AHB_CLK>,
++				 <&gcc GCC_PCIE_MSTR_AXI_CLK>,
++				 <&gcc GCC_PCIE_SLV_AXI_CLK>,
++				 <&gcc GCC_PCIE_SLV_Q2A_AXI_CLK>,
++				 <&gcc GCC_PCIE_SLEEP_CLK>,
++				 <&gcc GCC_PCIE_0_CLKREF_CLK>;
++			clock-names = "aux", "cfg", "bus_master", "bus_slave",
++				      "slave_q2a", "sleep", "ref";
++
++			interrupts = <GIC_SPI 140 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 145 IRQ_TYPE_LEVEL_HIGH>;
++			interrupt-names = "global", "doorbell";
++			reset-gpios = <&tlmm 57 GPIO_ACTIVE_LOW>;
++			wake-gpios = <&tlmm 53 GPIO_ACTIVE_LOW>;
++			resets = <&gcc GCC_PCIE_BCR>;
++			reset-names = "core";
++			power-domains = <&gcc PCIE_GDSC>;
++			phys = <&pcie0_lane>;
++			phy-names = "pciephy";
++			max-link-speed = <3>;
++			num-lanes = <2>;
++
++			status = "disabled";
++		};
++
+ 		pcie0_phy: phy@1c07000 {
+ 			compatible = "qcom,sdx55-qmp-pcie-phy";
+ 			reg = <0x01c07000 0x1c4>;
+@@ -400,45 +439,6 @@ sdhc_1: mmc@8804000 {
+ 			status = "disabled";
+ 		};
+ 
+-		pcie_ep: pcie-ep@40000000 {
+-			compatible = "qcom,sdx55-pcie-ep";
+-			reg = <0x01c00000 0x3000>,
+-			      <0x40000000 0xf1d>,
+-			      <0x40000f20 0xc8>,
+-			      <0x40001000 0x1000>,
+-			      <0x40200000 0x100000>,
+-			      <0x01c03000 0x3000>;
+-			reg-names = "parf", "dbi", "elbi", "atu", "addr_space",
+-				    "mmio";
+-
+-			qcom,perst-regs = <&tcsr 0xb258 0xb270>;
+-
+-			clocks = <&gcc GCC_PCIE_AUX_CLK>,
+-				 <&gcc GCC_PCIE_CFG_AHB_CLK>,
+-				 <&gcc GCC_PCIE_MSTR_AXI_CLK>,
+-				 <&gcc GCC_PCIE_SLV_AXI_CLK>,
+-				 <&gcc GCC_PCIE_SLV_Q2A_AXI_CLK>,
+-				 <&gcc GCC_PCIE_SLEEP_CLK>,
+-				 <&gcc GCC_PCIE_0_CLKREF_CLK>;
+-			clock-names = "aux", "cfg", "bus_master", "bus_slave",
+-				      "slave_q2a", "sleep", "ref";
+-
+-			interrupts = <GIC_SPI 140 IRQ_TYPE_LEVEL_HIGH>,
+-				     <GIC_SPI 145 IRQ_TYPE_LEVEL_HIGH>;
+-			interrupt-names = "global", "doorbell";
+-			reset-gpios = <&tlmm 57 GPIO_ACTIVE_LOW>;
+-			wake-gpios = <&tlmm 53 GPIO_ACTIVE_LOW>;
+-			resets = <&gcc GCC_PCIE_BCR>;
+-			reset-names = "core";
+-			power-domains = <&gcc PCIE_GDSC>;
+-			phys = <&pcie0_lane>;
+-			phy-names = "pciephy";
+-			max-link-speed = <3>;
+-			num-lanes = <2>;
+-
+-			status = "disabled";
+-		};
+-
+ 		remoteproc_mpss: remoteproc@4080000 {
+ 			compatible = "qcom,sdx55-mpss-pas";
+ 			reg = <0x04080000 0x4040>;
 -- 
 2.25.1
 
