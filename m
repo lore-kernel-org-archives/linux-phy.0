@@ -4,69 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8D88DC678DB
-	for <linux-phy@archiver.kernel.org>; Fri, 24 Feb 2023 08:59:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D4E8FC61DA3
+	for <linux-phy@archiver.kernel.org>; Fri, 24 Feb 2023 10:59:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=au9MJVYLgz3RI9R/8gjbBaSCFHpdGyg+dYZEIA96NvI=; b=O1P/IeGuZ9L0sP
-	Sc4NUcdwO72oUwYUbuQH8MHKJzW31g7jpsWM8Kl1tq/cMAmnz5tAMBZJizxBEyD8FQEcXXcFgGkjm
-	6fL2mwSV+F5eMSIjgwVQb2DFbqmRlzWpnrzQggzUEsed6ohdeHAUnS70e6TVOLgeg39bNR6fR5oDO
-	sYLHWEa0WKrarpzQ/GjAjBMQoxA4tX5QAPWHxDfrCx/H8iuclhiM0wA/bCkKRBSrNafqBE5DWAibO
-	83GObq7UketSDvTdUCQi+UAUWleDPpCei42mXLUZK9QZJV9KwqVJs62Oo0Sawfwq5YySwFozXqZN7
-	MBc3K5T6Xgh441MFC/Kg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=F+0qfgWNY3N9/QwUjWEBUCrqqAg3q0DmNcm2hyCTKPM=; b=QrrxfqoMOQ8DmO
+	uU+klQusZ2niSbiJ4zkyIaIwcIowycoMKq+hcT8wmGi4hzYivm474jobOjrmtJdX/PesF489rvCYF
+	gzl/bv7E8clQJLIaYsKUFGMCTkFCIIHpVXRTJC+2dtGx8POv2flHSLXcidkYMAEcyXxyuNfqdJtco
+	dEg5zUtMxK5YJyDYtalv5K+dYJU9ojDG3S+aE2pd2BQkKnz/9FaB9w9yqJ9zHykh53QCWFNn7jIyn
+	iJZcU12ufnLtVWTpE+4wxZ/NsyjACHQvXje7MP2saelvRijHCboLUKQDSNjXF1gjFCKZEyRGLO1FN
+	fMLfgFn59D82uUduoQsw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pVTvS-001c97-WC; Fri, 24 Feb 2023 08:59:35 +0000
-Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
+	id 1pVVnN-0029CO-69; Fri, 24 Feb 2023 10:59:21 +0000
+Received: from mail-pl1-x635.google.com ([2607:f8b0:4864:20::635])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pVTvL-001c6I-PG
-	for linux-phy@lists.infradead.org; Fri, 24 Feb 2023 08:59:29 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by sin.source.kernel.org (Postfix) with ESMTPS id CBC38CE22D6;
-	Fri, 24 Feb 2023 08:59:22 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E8A13C433EF;
-	Fri, 24 Feb 2023 08:59:12 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1677229161;
-	bh=BdEOv9GBB4KCQQLXMvFqv+qlZjrO7lS8bLUCH+Njj00=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=FXy7x4hLS6gaaLrSr8BZQA5XQEo6n9cZ9ZwbJKKpwij9i1q2FelbmfYOY1K+7p+A+
-	 6MSbMle6I7Dzh8p1Fse5t538FvSu/FE0exqkbKdzc7zPuOW5IUBJ7A7vznHh/W+zpb
-	 Kt3Dkmq0OOmeu1dPXggyM5Qn5d1wRFF5+Xjcu4Ax2D+44HjG7/pjd+o4IOqqTQLa/7
-	 Q56wrnhnoxek/Sl067G2lQbYs+YB2BqR96+Evex4oo3gLhK/Xokfy823D4OJc5orUL
-	 NbKgcicgM1Jii+czOY0CEJYACSjCSa7VJ/XyAFxEdIMZ+2BuxBaAAZ5ZdhO/bJ0TJm
-	 SO0Ja63MUpuhA==
-Date: Fri, 24 Feb 2023 14:29:02 +0530
-From: Manivannan Sadhasivam <mani@kernel.org>
-To: Devi Priya <quic_devipriy@quicinc.com>
-Cc: agross@kernel.org, andersson@kernel.org, konrad.dybcio@linaro.org,
-	lpieralisi@kernel.org, kw@linux.com, robh@kernel.org,
-	bhelgaas@google.com, krzysztof.kozlowski+dt@linaro.org,
-	vkoul@kernel.org, kishon@kernel.org, mturquette@baylibre.com,
-	sboyd@kernel.org, p.zabel@pengutronix.de, svarbanov@mm-sol.com,
-	linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org, linux-clk@vger.kernel.org,
-	quic_srichara@quicinc.com, quic_gokulsri@quicinc.com,
-	quic_sjaganat@quicinc.com, quic_kathirav@quicinc.com,
-	quic_arajkuma@quicinc.com, quic_anusha@quicinc.com
-Subject: Re: [PATCH 7/7] arm64: dts: qcom: ipq9574: Add PCIe PHYs and
- controller nodes
-Message-ID: <20230224085902.GC5443@thinkpad>
-References: <20230214164135.17039-1-quic_devipriy@quicinc.com>
- <20230214164135.17039-8-quic_devipriy@quicinc.com>
+	id 1pVVnJ-00299X-Tt
+	for linux-phy@lists.infradead.org; Fri, 24 Feb 2023 10:59:19 +0000
+Received: by mail-pl1-x635.google.com with SMTP id q11so16683642plx.5
+        for <linux-phy@lists.infradead.org>; Fri, 24 Feb 2023 02:59:16 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=4nUiMlzdFVdylVAwvGF2mzTH+MQ8jxdhSSAuOwiDOrk=;
+        b=sD8fpV1iBm1gOL4hX7ssWFPYQXWuJgQM8zfQlrHHNH7z4u/zl+ABhh3jZ9pqJ1wVj0
+         B2vre9cVycIC8F/bA4JpHy3L9p4kxWrr1DAGUo7LNSZeIlOGA68QahK65J/W34IjD4aW
+         txEgU8+p3DQaH/gFVaGvmVbba0SofD0L49Z23g3ywpEmWZsyv99YcS/9RAAx3P+/BAYa
+         J/Nxq3++RIozCHDwOm+WIHfuEA/Ji7ud0cjY/xYFjubCxZLu9QA2Lka1F4jxN5LMG7iN
+         ZMFlit9zuVRtpx0vpb19qfbkT/3YkzQLseDNNBRnD7eNE1tIH/lS1VoNnOoHCkiCweTA
+         hV+w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=4nUiMlzdFVdylVAwvGF2mzTH+MQ8jxdhSSAuOwiDOrk=;
+        b=aY0bdV6syD5w1GUHTnaumLD0SCjcxLAWzClJbuvfpAcTPfUrBzcMkOgaoLUUcHgmak
+         FqOBT2zVPMmL/3VZix9hHWO/YY2dr8hO5cvzOe4RtJG2ZkACzv+UsvureMFEgMYNCIJu
+         OT4BZ5SjXUjD4IldhWxpi7rKr9xrq4uXIJL6AwxEUcpquProOwpHIj81sb9QaL7nlWKX
+         uNPm1WrP1n+m7dpWBWsykItnB0zFfgD/aq7bU19zxc9eIkXkJlcF64mJTUwBG1cWgl9s
+         zC1ylyXnNWBi9k9lakVAjWygxRQ5Ng/0peKm5MyHB4qdgIjCy+6ziHDgZDoRHhfugP1L
+         KX8w==
+X-Gm-Message-State: AO0yUKUgd5IJzo5c+qkBAiTBLgU2dK4RXZkGBrID6f3ieBQPub68zCrm
+	gZXjnUBHS2oqUgPBq4GsIHjd
+X-Google-Smtp-Source: AK7set/S+ZygCYuCUKF9LEBR1rJYfsKfJShN1QO28O1CvLDthNfwy1uzHl2p2i6zudrTi6g/rOYYrw==
+X-Received: by 2002:a17:90b:388f:b0:234:6b7e:d016 with SMTP id mu15-20020a17090b388f00b002346b7ed016mr15132219pjb.22.1677236355675;
+        Fri, 24 Feb 2023 02:59:15 -0800 (PST)
+Received: from localhost.localdomain ([117.217.187.3])
+        by smtp.gmail.com with ESMTPSA id gd5-20020a17090b0fc500b00233cde36909sm1263853pjb.21.2023.02.24.02.59.11
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 24 Feb 2023 02:59:15 -0800 (PST)
+From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+To: andersson@kernel.org,
+	lpieralisi@kernel.org,
+	robh@kernel.org,
+	kw@linux.com,
+	krzysztof.kozlowski+dt@linaro.org,
+	vkoul@kernel.org
+Cc: konrad.dybcio@linaro.org,
+	bhelgaas@google.com,
+	kishon@kernel.org,
+	linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	linux-pci@vger.kernel.org,
+	devicetree@vger.kernel.org,
+	Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+Subject: [PATCH v2 00/13] Add PCIe RC support to Qcom SDX55 SoC
+Date: Fri, 24 Feb 2023 16:28:53 +0530
+Message-Id: <20230224105906.16540-1-manivannan.sadhasivam@linaro.org>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20230214164135.17039-8-quic_devipriy@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230224_005928_261998_D7847C4B 
-X-CRM114-Status: GOOD (  21.81  )
+X-CRM114-CacheID: sfid-20230224_025917_999253_3C3C3616 
+X-CRM114-Status: GOOD (  11.69  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,151 +94,74 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gVHVlLCBGZWIgMTQsIDIwMjMgYXQgMTA6MTE6MzVQTSArMDUzMCwgRGV2aSBQcml5YSB3cm90
-ZToKPiBBZGQgUENJZTAsIFBDSWUxLCBQQ0llMiwgUENJZTMgKGFuZCBjb3JyZXNwb25kaW5nIFBI
-WSkgZGV2aWNlcwo+IGZvdW5kIG9uIElQUTk1NzQgcGxhdGZvcm0uIFRoZSBQQ0llMCAmIFBDSWUx
-IGFyZSAxLWxhbmUgR2VuMwo+IGhvc3Qgd2hlcmVhcyBQQ0llMiAmIFBDSWUzIGFyZSAyLWxhbmUg
-R2VuMyBob3N0Lgo+IAoKUGxlYXNlIHNwbGl0IHRoZSBib2FyZCBkZXZpY2V0cmVlIGNoYW5nZXMg
-aW50byBhIHNlcGFyYXRlIHBhdGNoLgoKPiBDby1kZXZlbG9wZWQtYnk6IEFudXNoYSBSYW8gPHF1
-aWNfYW51c2hhQHF1aWNpbmMuY29tPgo+IFNpZ25lZC1vZmYtYnk6IEFudXNoYSBSYW8gPHF1aWNf
-YW51c2hhQHF1aWNpbmMuY29tPgo+IFNpZ25lZC1vZmYtYnk6IERldmkgUHJpeWEgPHF1aWNfZGV2
-aXByaXlAcXVpY2luYy5jb20+Cj4gLS0tCj4gIGFyY2gvYXJtNjQvYm9vdC9kdHMvcWNvbS9pcHE5
-NTc0LWFsMDItYzcuZHRzIHwgIDI4ICsrCj4gIGFyY2gvYXJtNjQvYm9vdC9kdHMvcWNvbS9pcHE5
-NTc0LmR0c2kgICAgICAgIHwgNDc3ICsrKysrKysrKysrKysrKysrKy0KPiAgMiBmaWxlcyBjaGFu
-Z2VkLCA0OTkgaW5zZXJ0aW9ucygrKSwgNiBkZWxldGlvbnMoLSkKPiAKPiBkaWZmIC0tZ2l0IGEv
-YXJjaC9hcm02NC9ib290L2R0cy9xY29tL2lwcTk1NzQtYWwwMi1jNy5kdHMgYi9hcmNoL2FybTY0
-L2Jvb3QvZHRzL3Fjb20vaXBxOTU3NC1hbDAyLWM3LmR0cwo+IGluZGV4IDJjODQzMDE5N2VjMC4u
-MjFiNTNmMzRjZTg0IDEwMDY0NAo+IC0tLSBhL2FyY2gvYXJtNjQvYm9vdC9kdHMvcWNvbS9pcHE5
-NTc0LWFsMDItYzcuZHRzCj4gKysrIGIvYXJjaC9hcm02NC9ib290L2R0cy9xY29tL2lwcTk1NzQt
-YWwwMi1jNy5kdHMKPiBAQCAtOCw2ICs4LDcgQEAKPiAgCj4gIC9kdHMtdjEvOwo+ICAKPiArI2lu
-Y2x1ZGUgPGR0LWJpbmRpbmdzL2dwaW8vZ3Bpby5oPgo+ICAjaW5jbHVkZSAiaXBxOTU3NC5kdHNp
-Igo+ICAKPiAgLyB7Cj4gQEAgLTI5LDYgKzMwLDMzIEBACj4gIAlzdGF0dXMgPSAib2theSI7Cj4g
-IH07Cj4gIAo+ICsmcGNpZTFfcGh5IHsKPiArCXN0YXR1cyA9ICJva2F5IjsKCk5vIFBIWSBwb3dl
-ciBzdXBwbHkgbmVlZGVkPyBTYW1lIGNvbW1lbnQgZm9yIHJlc3Qgb2YgdGhlIFBIWSBub2Rlcy4K
-Cj4gK307Cj4gKwo+ICsmcGNpZTFfeDEgewoKTm8gbmVlZCB0byBhZGQgYSBzdWZmaXggdG8gbm9k
-ZSBsYWJlbCBpbmRpY2F0aW5nIHRoZSBsYW5lIGNvbmZpZy4KCj4gKwlwZXJzdC1ncGlvcyA9IDwm
-dGxtbSAyNiBHUElPX0FDVElWRV9MT1c+OwoKV2hhdCBhYm91dCAid2FrZSIgcGluPyBEb24ndCB5
-b3UgbmVlZCBwaW5jdHJsIGRlZmluaXRpb25zIGZvciB0aGVzZSBHUElPcz8KU2FtZSBjb21tZW50
-IGZvciByZXN0IG9mIHRoZSBQQ0llIG5vZGVzLgoKPiArCXN0YXR1cyA9ICJva2F5IjsKPiArfTsK
-PiArCj4gKyZwY2llMl9waHkgewo+ICsJc3RhdHVzID0gIm9rYXkiOwo+ICt9Owo+ICsKPiArJnBj
-aWUyX3gyIHsKPiArCXBlcnN0LWdwaW9zID0gPCZ0bG1tIDI5IEdQSU9fQUNUSVZFX0xPVz47Cj4g
-KwlzdGF0dXMgPSAib2theSI7Cj4gK307Cj4gKwo+ICsmcGNpZTNfcGh5IHsKPiArCXN0YXR1cyA9
-ICJva2F5IjsKPiArfTsKPiArCj4gKyZwY2llM194MiB7Cj4gKwlwZXJzdC1ncGlvcyA9IDwmdGxt
-bSAzMiBHUElPX0FDVElWRV9MT1c+Owo+ICsJc3RhdHVzID0gIm9rYXkiOwo+ICt9Owo+ICsKPiAg
-JnNkaGNfMSB7Cj4gIAlwaW5jdHJsLTAgPSA8JnNkY19kZWZhdWx0X3N0YXRlPjsKPiAgCXBpbmN0
-cmwtbmFtZXMgPSAiZGVmYXVsdCI7Cj4gZGlmZiAtLWdpdCBhL2FyY2gvYXJtNjQvYm9vdC9kdHMv
-cWNvbS9pcHE5NTc0LmR0c2kgYi9hcmNoL2FybTY0L2Jvb3QvZHRzL3Fjb20vaXBxOTU3NC5kdHNp
-Cj4gaW5kZXggMDYyZjgwNzk4ZWJiLi5hMzJkYmRlYjViZWQgMTAwNjQ0Cj4gLS0tIGEvYXJjaC9h
-cm02NC9ib290L2R0cy9xY29tL2lwcTk1NzQuZHRzaQo+ICsrKyBiL2FyY2gvYXJtNjQvYm9vdC9k
-dHMvcWNvbS9pcHE5NTc0LmR0c2kKPiBAQCAtNiw4ICs2LDggQEAKPiAgICogQ29weXJpZ2h0IChj
-KSAyMDIzLCBRdWFsY29tbSBJbm5vdmF0aW9uIENlbnRlciwgSW5jLiBBbGwgcmlnaHRzIHJlc2Vy
-dmVkLgo+ICAgKi8KPiAgCj4gLSNpbmNsdWRlIDxkdC1iaW5kaW5ncy9pbnRlcnJ1cHQtY29udHJv
-bGxlci9hcm0tZ2ljLmg+Cj4gICNpbmNsdWRlIDxkdC1iaW5kaW5ncy9jbG9jay9xY29tLGlwcTk1
-NzQtZ2NjLmg+Cj4gKyNpbmNsdWRlIDxkdC1iaW5kaW5ncy9pbnRlcnJ1cHQtY29udHJvbGxlci9h
-cm0tZ2ljLmg+Cj4gICNpbmNsdWRlIDxkdC1iaW5kaW5ncy9yZXNldC9xY29tLGlwcTk1NzQtZ2Nj
-Lmg+Cj4gIAo+ICAvIHsKPiBAQCAtMjIsMTEgKzIyLDQxIEBACj4gIAkJCSNjbG9jay1jZWxscyA9
-IDwwPjsKPiAgCQl9Owo+ICAKPiArCQlwY2llMzBfcGh5MF9waXBlX2NsazogcGNpZTMwX3BoeTBf
-cGlwZV9jbGsgewo+ICsJCQljb21wYXRpYmxlID0gImZpeGVkLWNsb2NrIjsKPiArCQkJY2xvY2st
-ZnJlcXVlbmN5ID0gPDI1MDAwMDAwMD47Cj4gKwkJCSNjbG9jay1jZWxscyA9IDwwPjsKPiArCQl9
-Owo+ICsKPiArCQlwY2llMzBfcGh5MV9waXBlX2NsazogcGNpZTMwX3BoeTFfcGlwZV9jbGsgewo+
-ICsJCQljb21wYXRpYmxlID0gImZpeGVkLWNsb2NrIjsKPiArCQkJY2xvY2stZnJlcXVlbmN5ID0g
-PDI1MDAwMDAwMD47Cj4gKwkJCSNjbG9jay1jZWxscyA9IDwwPjsKPiArCQl9Owo+ICsKPiArCQlw
-Y2llMzBfcGh5Ml9waXBlX2NsazogcGNpZTMwX3BoeTJfcGlwZV9jbGsgewo+ICsJCQljb21wYXRp
-YmxlID0gImZpeGVkLWNsb2NrIjsKPiArCQkJY2xvY2stZnJlcXVlbmN5ID0gPDI1MDAwMDAwMD47
-Cj4gKwkJCSNjbG9jay1jZWxscyA9IDwwPjsKPiArCQl9Owo+ICsKPiArCQlwY2llMzBfcGh5M19w
-aXBlX2NsazogcGNpZTMwX3BoeTNfcGlwZV9jbGsgewo+ICsJCQljb21wYXRpYmxlID0gImZpeGVk
-LWNsb2NrIjsKPiArCQkJY2xvY2stZnJlcXVlbmN5ID0gPDI1MDAwMDAwMD47Cj4gKwkJCSNjbG9j
-ay1jZWxscyA9IDwwPjsKPiArCQl9OwoKV2h5IFBJUEUgY2xvY2tzIGFyZSBtb2RlbGVkIGFzIGZp
-eGVkIGNsb2NrcyB1bmxpa2Ugb3RoZXIgU29Dcz8KCj4gKwo+ICAJCXNsZWVwX2Nsazogc2xlZXAt
-Y2xrIHsKPiAgCQkJY29tcGF0aWJsZSA9ICJmaXhlZC1jbG9jayI7Cj4gIAkJCSNjbG9jay1jZWxs
-cyA9IDwwPjsKPiAgCQl9Owo+ICAKPiArCQl1c2IzcGh5XzBfY2NfcGlwZV9jbGs6IHVzYjNwaHlf
-MF9jY19waXBlX2NsayB7Cj4gKwkJCWNvbXBhdGlibGUgPSAiZml4ZWQtY2xvY2siOwo+ICsJCQlj
-bG9jay1mcmVxdWVuY3kgPSA8MTI1MDAwMDAwPjsKPiArCQkJI2Nsb2NrLWNlbGxzID0gPDA+Owo+
-ICsJCX07CgpTcHVyaW91cz8KCj4gKwo+ICAJCXhvX2JvYXJkX2NsazogeG8tYm9hcmQtY2xrIHsK
-PiAgCQkJY29tcGF0aWJsZSA9ICJmaXhlZC1jbG9jayI7Cj4gIAkJCSNjbG9jay1jZWxscyA9IDww
-PjsKPiBAQCAtMTIxLDYgKzE1MSwxNTUgQEAKPiAgCQkjc2l6ZS1jZWxscyA9IDwxPjsKPiAgCQly
-YW5nZXMgPSA8MCAwIDAgMHhmZmZmZmZmZj47Cj4gIAo+ICsJCXBjaWUwX3BoeTogcGh5QDg0MDAw
-IHsKPiArCQkJY29tcGF0aWJsZSA9ICJxY29tLGlwcTk1NzQtcW1wLWdlbjN4MS1wY2llLXBoeSI7
-Cj4gKwkJCXJlZyA9IDwweDAwMDg0MDAwIDB4MWJjPjsgLyogU2VyZGVzIFBMTCAqLwo+ICsJCQkj
-YWRkcmVzcy1jZWxscyA9IDwxPjsKPiArCQkJI3NpemUtY2VsbHMgPSA8MT47Cj4gKwkJCXJhbmdl
-czsKPiArCQkJY2xvY2tzID0gPCZnY2MgR0NDX1BDSUUwX0FVWF9DTEs+LAo+ICsJCQkJIDwmZ2Nj
-IEdDQ19QQ0lFMF9BSEJfQ0xLPiwKPiArCQkJCSA8JmdjYyBHQ0NfQU5PQ19QQ0lFMF8xTEFORV9N
-X0NMSz4sCj4gKwkJCQkgPCZnY2MgR0NDX1NOT0NfUENJRTBfMUxBTkVfU19DTEs+Owo+ICsJCQlj
-bG9jay1uYW1lcyA9ICJhdXgiLCAiY2ZnX2FoYiIsICJhbm9jX2xhbmUiLCAic25vY19sYW5lIjsK
-CkNhcmUgdG8gZXhwbGFpbiB3aGF0IHRoZXNlIGFub2NfbGFuZSBhbmQgc25vY19sYW5lIGNsb2Nr
-cyBhcmU/Cgo+ICsKPiArCQkJYXNzaWduZWQtY2xvY2tzID0gPCZnY2MgR0NDX1BDSUUwX0FVWF9D
-TEs+Owo+ICsJCQlhc3NpZ25lZC1jbG9jay1yYXRlcyA9IDwyMDAwMDAwMD47Cj4gKwo+ICsJCQly
-ZXNldHMgPSA8JmdjYyBHQ0NfUENJRTBfUEhZX0JDUj4sCj4gKwkJCQkgPCZnY2MgR0NDX1BDSUUw
-UEhZX1BIWV9CQ1I+Owo+ICsJCQlyZXNldC1uYW1lcyA9ICJwaHkiLCAiY29tbW9uIjsKPiArCj4g
-KwkJCXN0YXR1cyA9ICJkaXNhYmxlZCI7Cj4gKwo+ICsJCQlwY2llMF9sYW5lOiBwaHlAODQyMDAg
-ewo+ICsJCQkJcmVnID0gPDB4MDAwODQyMDAgMHgxNmM+LCAvKiBTZXJkZXMgVHggKi8KPiArCQkJ
-CSAgICAgIDwweDAwMDg0NDAwIDB4MjAwPiwgLyogU2VyZGVzIFJ4ICovCj4gKwkJCQkgICAgICA8
-MHgwMDA4NDgwMCAweDFmMD4sIC8qIFBDUzogTGFuZTAsIENPTSwgUENJRSAqLwo+ICsJCQkJICAg
-ICAgPDB4MDAwODRjMDAgMHhmND47ICAvKiBwY3NfbWlzYyAqLwo+ICsJCQkJI3BoeS1jZWxscyA9
-IDwwPjsKPiArCj4gKwkJCQljbG9ja3MgPSA8JmdjYyBHQ0NfUENJRTBfUElQRV9DTEs+Owo+ICsJ
-CQkJY2xvY2stbmFtZXMgPSAicGlwZTAiOwo+ICsJCQkJY2xvY2stb3V0cHV0LW5hbWVzID0gImdj
-Y19wY2llMF9waXBlX2Nsa19zcmMiOwo+ICsJCQkJI2Nsb2NrLWNlbGxzID0gPDA+Owo+ICsJCQl9
-Owo+ICsJCX07Cj4gKwoKWy4uLl0KCj4gKwkJcGNpZTFfeDE6IHBjaUAxMDAwMDAwMCB7Cj4gKwkJ
-CWNvbXBhdGlibGUgPSAicWNvbSxwY2llLWlwcTk1NzQiOwo+ICsJCQlyZWcgPSAgPDB4MTAwMDAw
-MDAgMHhmMWQ+LAo+ICsJCQkgICAgICAgPDB4MTAwMDBGMjAgMHhhOD4sCj4gKwkJCSAgICAgICA8
-MHgxMDAwMTAwMCAweDEwMDA+LAo+ICsJCQkgICAgICAgPDB4MDAwRjgwMDAgMHg0MDAwPiwKPiAr
-CQkJICAgICAgIDwweDEwMTAwMDAwIDB4MTAwMD4sCj4gKwkJCSAgICAgICA8MHgwMDYxODEwOCAw
-eDQ+Owo+ICsJCQlyZWctbmFtZXMgPSAiZGJpIiwgImVsYmkiLCAiYXR1IiwgInBhcmYiLCAiY29u
-ZmlnIiwgImFnZ3Jfbm9jIjsKCkFzIEkgYXNrZWQgaW4gdGhlIGJpbmRpbmcgcGF0Y2gsIHdoeSAi
-YWdncl9ub2MiIHJlZ2lvbiBpcyByZXF1aXJlZD8KCj4gKwkJCWRldmljZV90eXBlID0gInBjaSI7
-Cj4gKwkJCWxpbnV4LHBjaS1kb21haW4gPSA8Mj47Cj4gKwkJCWJ1cy1yYW5nZSA9IDwweDAwIDB4
-ZmY+Owo+ICsJCQludW0tbGFuZXMgPSA8MT47Cj4gKwkJCSNhZGRyZXNzLWNlbGxzID0gPDM+Owo+
-ICsJCQkjc2l6ZS1jZWxscyA9IDwyPjsKPiArCj4gKwkJCXJhbmdlcyA9IDwweDgxMDAwMDAwIDAg
-MHgxMDIwMDAwMCAweDEwMjAwMDAwCj4gKwkJCQkgIDAgMHgwMDEwMDAwMCAgIC8qIGRvd25zdHJl
-YW0gSS9PICovCj4gKwkJCQkgIDB4ODIwMDAwMDAgMCAweDEwMzAwMDAwIDB4MTAzMDAwMDAKPiAr
-CQkJCSAgMCAweDA3ZDAwMDAwPjsgLyogbm9uLXByZWZldGNoYWJsZSBtZW1vcnkgKi8KCkRvbid0
-IHNwbGl0IHRoZSByYW5nZXMgYW5kIGVuY29kZSB0aGVtIGluIGEgc2luZ2xlIGxpbmUuCgpBbHNv
-LCB0aGUgSSdtIG5vdCBzdXJlIHdoeSB5b3UgaGF2ZSBzZXQgdGhlIHJlbG9jYXRhYmxlIGZsYWcg
-KG4pIGZvciBib3RoCnJhbmdlcyBpLmUuLCBpbiAweDgxMDAwMDAwIGFuZCAweDgyMDAwMDAwLgoK
-PiArCj4gKwkJCSNpbnRlcnJ1cHQtY2VsbHMgPSA8MT47Cj4gKwkJCWludGVycnVwdC1tYXAtbWFz
-ayA9IDwwIDAgMCAweDc+Owo+ICsJCQlpbnRlcnJ1cHQtbWFwID0gPDAgMCAwIDEgJmludGMgMCAz
-NQo+ICsJCQkJCUlSUV9UWVBFX0xFVkVMX0hJR0g+LCAvKiBpbnRfYSAqLwo+ICsJCQkJCTwwIDAg
-MCAyICZpbnRjIDAgNDkKPiArCQkJCQlJUlFfVFlQRV9MRVZFTF9ISUdIPiwgLyogaW50X2IgKi8K
-PiArCQkJCQk8MCAwIDAgMyAmaW50YyAwIDg0Cj4gKwkJCQkJSVJRX1RZUEVfTEVWRUxfSElHSD4s
-IC8qIGludF9jICovCj4gKwkJCQkJPDAgMCAwIDQgJmludGMgMCA4NQo+ICsJCQkJCUlSUV9UWVBF
-X0xFVkVMX0hJR0g+OyAvKiBpbnRfZCAqLwo+ICsKCkFnYWluLCB3cmFwIHRoZSBpbnRlcnJ1cHRz
-IGluIGEgc2luZ2xlIGxpbmUuCgo+ICsJCQlpbnRlcnJ1cHRzID0gPEdJQ19TUEkgMjUgSVJRX1RZ
-UEVfTEVWRUxfSElHSD47Cj4gKwkJCWludGVycnVwdC1uYW1lcyA9ICJnbG9iYWxfaXJxIjsKPiAr
-CgpMaW51eCBkb2Vzbid0IHN1cHBvcnQgZ2xvYmFsX2lycSB5ZXQuIEJ1dCBzaW5jZSBkZXZpY2V0
-cmVlIGlzIHN1cHBvc2VkIHRvCmRlc2NyaWJlIHRoZSBoYXJkd2FyZSwgeW91IGNhbiBrZWVwIGl0
-LgoKQWJvdmUgY29tbWVudCBhcHBsaWVzIHRvIHJlc3Qgb2YgdGhlIFBDSWUgbm9kZXMuCgo+ICsJ
-CQkvKiBjbG9ja3MgYW5kIGNsb2NrLW5hbWVzIGFyZSB1c2VkIHRvIGVuYWJsZSB0aGUgY2xvY2sg
-aW4gQ0JDUiAqLwo+ICsJCQljbG9ja3MgPSA8JmdjYyBHQ0NfUENJRTFfQUhCX0NMSz4sCj4gKwkJ
-CQkgPCZnY2MgR0NDX1BDSUUxX0FVWF9DTEs+LAo+ICsJCQkJIDwmZ2NjIEdDQ19QQ0lFMV9BWElf
-TV9DTEs+LAo+ICsJCQkJIDwmZ2NjIEdDQ19QQ0lFMV9BWElfU19DTEs+LAo+ICsJCQkJIDwmZ2Nj
-IEdDQ19QQ0lFMV9BWElfU19CUklER0VfQ0xLPiwKPiArCQkJCSA8JmdjYyBHQ0NfUENJRTFfUkNI
-TkdfQ0xLPjsKPiArCQkJY2xvY2stbmFtZXMgPSAiYWhiIiwKPiArCQkJCSAgICAgICJhdXgiLAo+
-ICsJCQkJICAgICAgImF4aV9tIiwKPiArCQkJCSAgICAgICJheGlfcyIsCj4gKwkJCQkgICAgICAi
-YXhpX2JyaWRnZSIsCj4gKwkJCQkgICAgICAicmNobmciOwo+ICsKPiArCQkJcmVzZXRzID0gPCZn
-Y2MgR0NDX1BDSUUxX1BJUEVfQVJFUz4sCj4gKwkJCQkgPCZnY2MgR0NDX1BDSUUxX0NPUkVfU1RJ
-Q0tZX0FSRVM+LAo+ICsJCQkJIDwmZ2NjIEdDQ19QQ0lFMV9BWElfU19TVElDS1lfQVJFUz4sCj4g
-KwkJCQkgPCZnY2MgR0NDX1BDSUUxX0FYSV9TX0FSRVM+LAo+ICsJCQkJIDwmZ2NjIEdDQ19QQ0lF
-MV9BWElfTV9TVElDS1lfQVJFUz4sCj4gKwkJCQkgPCZnY2MgR0NDX1BDSUUxX0FYSV9NX0FSRVM+
-LAo+ICsJCQkJIDwmZ2NjIEdDQ19QQ0lFMV9BVVhfQVJFUz4sCj4gKwkJCQkgPCZnY2MgR0NDX1BD
-SUUxX0FIQl9BUkVTPjsKPiArCQkJcmVzZXQtbmFtZXMgPSAicGlwZSIsCj4gKwkJCQkgICAgICAi
-c3RpY2t5IiwKPiArCQkJCSAgICAgICJheGlfc19zdGlja3kiLAo+ICsJCQkJICAgICAgImF4aV9z
-IiwKPiArCQkJCSAgICAgICJheGlfbV9zdGlja3kiLAo+ICsJCQkJICAgICAgImF4aV9tIiwKPiAr
-CQkJCSAgICAgICJhdXgiLAo+ICsJCQkJICAgICAgImFoYiI7Cj4gKwo+ICsJCQlwaHlzID0gPCZw
-Y2llMV9sYW5lPjsKPiArCQkJcGh5LW5hbWVzID0gInBjaWVwaHkiOwo+ICsJCQltc2ktcGFyZW50
-ID0gPCZ2Mm0wPjsKPiArCQkJc3RhdHVzID0gImRpc2FibGVkIjsKPiArCQl9Owo+ICsKClsuLi5d
-Cgo+ICsJCXBjaWUyX3gyOiBwY2lAMjAwMDAwMDAgewo+ICsJCQljb21wYXRpYmxlID0gInFjb20s
-cGNpZS1pcHE5NTc0IjsKPiArCQkJcmVnID0gIDwweDIwMDAwMDAwIDB4ZjFkPiwKPiArCQkJICAg
-ICAgIDwweDIwMDAwRjIwIDB4YTg+LAo+ICsJCQkgICAgICAgPDB4MjAwMDEwMDAgMHgxMDAwPiwK
-PiArCQkJICAgICAgIDwweDAwMDg4MDAwIDB4NDAwMD4sCj4gKwkJCSAgICAgICA8MHgyMDEwMDAw
-MCAweDEwMDA+Owo+ICsJCQlyZWctbmFtZXMgPSAiZGJpIiwgImVsYmkiLCAiYXR1IiwgInBhcmYi
-LCAiY29uZmlnIjsKPiArCQkJZGV2aWNlX3R5cGUgPSAicGNpIjsKPiArCQkJbGludXgscGNpLWRv
-bWFpbiA9IDwzPjsKPiArCQkJYnVzLXJhbmdlID0gPDB4MDAgMHhmZj47Cj4gKwkJCW51bS1sYW5l
-cyA9PDI+OwoKU3BhY2UgYWZ0ZXIgPQoKVGhhbmtzLApNYW5pCgotLSAK4K6u4K6j4K6/4K614K6j
-4K+N4K6j4K6p4K+NIOCumuCupOCuvuCumuCuv+CuteCuruCvjQoKLS0gCmxpbnV4LXBoeSBtYWls
-aW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZy
-YWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+Hi,
+
+This series adds PCIe RC support to the Qcom SDX55 SoC. The PCIe controller
+in SDX55 can act as both Root Complex and Endpoint but only one mode at a
+time i.e., the mode cannot be switched during runtime.
+
+This series has been tested on Thundercomm T55 board having QCA6390 WLAN
+chipset connected to the PCIe controller. For powering up the WLAN chipset,
+an out-of-tree patch has been used since we do not have a proper driver in
+mainline to handle the power supplies.
+
+NOTE: Even with this series, I couldn't get network connectivity using
+QCA6390. But that's due to ath11k regression for which I've filed a bug
+report: https://bugzilla.kernel.org/show_bug.cgi?id=217070
+
+Merging strategy
+----------------
+
+PCI and binding patches through PCI tree
+PHY patches through PHY tree
+Devicetree patches through Qcom tree
+
+Thanks,
+Mani
+
+Changes in v2:
+
+* Added patche to move status property down
+* Added patch to list property values vertically
+* Addressed comments from Konrad
+* Collected review tags
+* Fixed review tag for dts patch
+
+Manivannan Sadhasivam (13):
+  dt-bindings: PCI: qcom: Update maintainers entry
+  dt-bindings: PCI: qcom: Add iommu properties
+  dt-bindings: PCI: qcom: Add SDX55 SoC
+  dt-bindings: PCI: qcom-ep: Fix the unit address used in example
+  ARM: dts: qcom: sdx55: Fix the unit address of PCIe EP node
+  ARM: dts: qcom: sdx55: Rename pcie0_{phy/lane} to pcie_{phy/lane}
+  ARM: dts: qcom: sdx55: Add support for PCIe RC controller
+  ARM: dts: qcom: sdx55: List the property values vertically
+  ARM: dts: qcom: sdx55-t55: Enable PCIe RC support
+  ARM: dts: qcom: sdx55-t55: Move "status" property down
+  phy: qcom-qmp-pcie: Split out EP related init sequence for SDX55
+  phy: qcom-qmp-pcie: Add RC init sequence for SDX55
+  PCI: qcom: Add support for SDX55 SoC
+
+ .../devicetree/bindings/pci/qcom,pcie-ep.yaml |   2 +-
+ .../devicetree/bindings/pci/qcom,pcie.yaml    |  35 +++-
+ arch/arm/boot/dts/qcom-sdx55-t55.dts          |  53 +++++-
+ .../boot/dts/qcom-sdx55-telit-fn980-tlb.dts   |   2 +-
+ arch/arm/boot/dts/qcom-sdx55.dtsi             | 179 ++++++++++++++----
+ drivers/pci/controller/dwc/pcie-qcom.c        |   4 +-
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c      |  91 +++++++--
+ .../qualcomm/phy-qcom-qmp-pcs-pcie-v4_20.h    |   2 +
+ 8 files changed, 303 insertions(+), 65 deletions(-)
+
+-- 
+2.25.1
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
