@@ -4,62 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 78D50C61DA3
-	for <linux-phy@archiver.kernel.org>; Fri, 24 Feb 2023 10:59:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DFA90C64ED8
+	for <linux-phy@archiver.kernel.org>; Fri, 24 Feb 2023 10:59:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Gpf0lHcqY7h8a4t65zKUn8inwxNoE1F4jhe7kLKdZy4=; b=HxgOLH4TzE8nAC
-	HqGoDbt9xQVxOvlPlI8+fefiWYNL+/NRZ45ofy4dHDWUWNmF4qwUF7pxwhRQ4FT9DLOizCKnyqnEx
-	1AOMGIlrH/ZkkQEF3lL+AGzXWYktMIyLfHa8LCQkj09HeEQyJhnkq/06KKX461iMU3cLSvqRwhZJ4
-	Ra7RCRSGZCD9hZ29RiONZXsccpsX9yn7sHCn5AVT0QKORSXJGn9/SMN2hluDxxo6nc3jiDjbUyT+H
-	uIsu7xAIemingsil1pGACwfqD13eFIqMVQDhkh2FY3JeiiHmA4q++BcbS8juPow+QLnIUdEUklXM9
-	6TmuZYD9FnPB00U3QJUg==;
+	List-Owner; bh=N78P6wOwwUJfCglPpWk6ZEBSmDEmRwImpM4rY3RSN8E=; b=AbB901yNZby5Gw
+	hr/Bb3PYLWc/rGBpmW78q64jvuK6udHEEMCtrg/0O59wL5m7+LDdPxjFGDAAYw42sCK4QgKeb7uOA
+	mBHsh2k3/DJyFolQq9i4yDnj2Q/V8KVf8F0z7pJB5FwxKo3GenxxuY2QK0Exv47M7ZFZ3lsBg3D31
+	UKpcbnPEIhJiVScKOXhqvbz9QuFJ1bGp42uuxG0JMed2/71cG4xp3bnglRdFn+QJij3WzcGZ0+rjL
+	Ys7FSthcdNMK2r2y1vxzfXkj4oLbPxLTLlS2kYp8fAIm1pdJPbmWMOrOvbzQpCmvrGjG1pB3sMniQ
+	z+/pFU7+wQa5xlJ/Uxyg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pVVnY-0029JW-Ss; Fri, 24 Feb 2023 10:59:32 +0000
-Received: from mail-pj1-x1034.google.com ([2607:f8b0:4864:20::1034])
+	id 1pVVnf-0029NJ-8W; Fri, 24 Feb 2023 10:59:39 +0000
+Received: from mail-pj1-x102d.google.com ([2607:f8b0:4864:20::102d])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pVVnW-0029Ht-Re
-	for linux-phy@lists.infradead.org; Fri, 24 Feb 2023 10:59:32 +0000
-Received: by mail-pj1-x1034.google.com with SMTP id cp7-20020a17090afb8700b0023756229427so2511155pjb.1
-        for <linux-phy@lists.infradead.org>; Fri, 24 Feb 2023 02:59:30 -0800 (PST)
+	id 1pVVnb-0029Kc-Oo
+	for linux-phy@lists.infradead.org; Fri, 24 Feb 2023 10:59:37 +0000
+Received: by mail-pj1-x102d.google.com with SMTP id c23so11198729pjo.4
+        for <linux-phy@lists.infradead.org>; Fri, 24 Feb 2023 02:59:34 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=wzdP0f8Dd/LfcCPdQr780PzK2RvZAJKB5vPc2XD3ufA=;
-        b=mByJV+JaU1+Ltx80aDVz38O8fe/liFVHft/qdrSEETLmITXc0LZv5kudxwrQJHEM4E
-         2RP0gsLabTBSZH79fsU3NEHMCeOW0Iqr1TcZhzUE9B7tGDss784ZxY3AotfpkL6jWX2/
-         6HMJBJEt7J+vIZ5LMgqVreWGU2Lcz8u/UgO9U8zBTWamxRmKNBZJP6YfXSnA2eN4iPk/
-         X15O/ck2XYbJCcauOyeuXxchQlLYNaOq7J6UOFE9O5V7S0FVHzlkswu9pzD1R5IausqO
-         535j2BWGe7lKIRbK/nef5No9zFZ7ku4gO34mFvnolSNCGNgFpU9xfpODylons+mkw7YN
-         tlQA==
+        bh=VslRr6K7dtSVjJZa6fQapZMGTntHaQJdO/Shpvvg0kE=;
+        b=MGOUmbwJgUA1fRVJZwgB9pWpXSaFDZdqmuK/QbXECACx5ema5PaJeJLtueCdGflZWD
+         +iVRSxClMuj4nGtJLHvDdO6Q9QcpOyBQab03jB0Fi5EH6oBo+cTRex1svC3RQpI+FRtV
+         BwH7n/u/g0zlgDqs4+hnb1sz43b7+alo7Vf5gHBXbYBFt16snBeALQccZPXSGxIN3P57
+         skmZO/QNwavAugcQZXxwYqr5tLJYtgeN6XJ+z9GhF8WX+UQlzPkAUzLzaXLM9qk3nTRx
+         WeXHm0rRlwL93rLX51fJGDc1bj26EJS8vetwl82uGpYQh17dTbTGfQr59idAdiPKpg+d
+         Jzfg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=wzdP0f8Dd/LfcCPdQr780PzK2RvZAJKB5vPc2XD3ufA=;
-        b=7jisqreauw894smnBEUvn8WQIjhJFNQvjsn8RnK4XkxQSK+yPpcqxeOTnerNOJXeoc
-         uoKRGUjQKx75aj/h2oV+sXkFDIjcXVVKcVQZJUZcyFhNw3G7lEfC3kR2KNqDwTkKwbAM
-         esIZX50QHzam8wD8BlMqV3Xfa9uBeT5rntBCS9Qt/XNBXOy5OixRjdc6sWDVttw+SKc3
-         ehKE/pWBYyao3hXoMkGqJjE9KP3pUfHQSRIe9N24VgYMfEoHMIKPkjIt0JB64iTuIz13
-         rUJESXMzlhVOiqOjyXYxXDNOup+3cqa82TC6tkD6kE1nFkSYEOPy9vXFfbLaenwxskta
-         aZJg==
-X-Gm-Message-State: AO0yUKWhdzMPVRmXtzqm1QKseHZQ/yoKvj5tWu76a9tWMXoOQTj5hAze
-	OTTeOCxSbD+T1EjbjIERhKNW
-X-Google-Smtp-Source: AK7set/00/XkHimswh8A/lTlMaf9uljLO9Xk++JlggP7Y2nYgIaIkn/kcVov3dPdmMzyvCxW50D7Yg==
-X-Received: by 2002:a17:90b:4a4d:b0:234:148:4b27 with SMTP id lb13-20020a17090b4a4d00b0023401484b27mr18089652pjb.17.1677236369819;
-        Fri, 24 Feb 2023 02:59:29 -0800 (PST)
+        bh=VslRr6K7dtSVjJZa6fQapZMGTntHaQJdO/Shpvvg0kE=;
+        b=YzX4N/zLx95h1MRqyv6cwVfvuteUq1xUsMEXVoTi182muV8EgzvtRud1Jm5aMVMCbY
+         SoOFJz6ISmDQBNkGQgwtoOBwwC9qJ74tzXgGJEgkQvgFStOA+L2sj6y3ZY6po5Kfh3Bj
+         4/5x75i1DxO9tYP8X1VbdOjU3cY+u6Y5c5GiWAykp/3sU538oS3T24ww8I/tU5PIO3ZU
+         VLcexfuKYFw12yiZDh2Mv1FsH/LOe+ka5DU8icrbQ3ozriA64RZ5YecXp7382wj/Uuvs
+         mJv3waKmm+kLMLkoxpq7tIBgsN1T/iY8TxSuneromEbvNyBw748PKMfGttsxrRzSPLee
+         sObw==
+X-Gm-Message-State: AO0yUKUODPpN1AirV4RJInt5yo90r2bKwSE5j1CodtCaR7vn/KJl+jWV
+	RCBXicqFgtzufL7rRIq4xLv+AhwiD4jaNFA=
+X-Google-Smtp-Source: AK7set+r4n315Ty6V+j5fxdDXOFOvEcth9W92yPHLkj3kMcik/XkG7t/jrX6t5of1AEnZduZqIlfgA==
+X-Received: by 2002:a17:90a:57:b0:237:161d:f5ac with SMTP id 23-20020a17090a005700b00237161df5acmr13869044pjb.36.1677236374349;
+        Fri, 24 Feb 2023 02:59:34 -0800 (PST)
 Received: from localhost.localdomain ([117.217.187.3])
-        by smtp.gmail.com with ESMTPSA id gd5-20020a17090b0fc500b00233cde36909sm1263853pjb.21.2023.02.24.02.59.25
+        by smtp.gmail.com with ESMTPSA id gd5-20020a17090b0fc500b00233cde36909sm1263853pjb.21.2023.02.24.02.59.30
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 24 Feb 2023 02:59:29 -0800 (PST)
+        Fri, 24 Feb 2023 02:59:34 -0800 (PST)
 From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 To: andersson@kernel.org,
 	lpieralisi@kernel.org,
@@ -77,17 +77,16 @@ Cc: konrad.dybcio@linaro.org,
 	devicetree@vger.kernel.org,
 	Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
 	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Subject: [PATCH v2 03/13] dt-bindings: PCI: qcom: Add SDX55 SoC
-Date: Fri, 24 Feb 2023 16:28:56 +0530
-Message-Id: <20230224105906.16540-4-manivannan.sadhasivam@linaro.org>
+Subject: [PATCH v2 04/13] dt-bindings: PCI: qcom-ep: Fix the unit address used in example
+Date: Fri, 24 Feb 2023 16:28:57 +0530
+Message-Id: <20230224105906.16540-5-manivannan.sadhasivam@linaro.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20230224105906.16540-1-manivannan.sadhasivam@linaro.org>
 References: <20230224105906.16540-1-manivannan.sadhasivam@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230224_025930_910889_E41A5F3C 
-X-CRM114-Status: UNSURE (   7.54  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230224_025935_835176_6FA28986 
+X-CRM114-Status: GOOD (  10.37  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,67 +103,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add support for the PCIe controller on the Qcom SDX55 SoC to the binding.
+Unit address of PCIe EP node should be 0x1c00000 as it has to match the
+first address specified in the reg property.
 
+Fixes: 31c9ef002580 ("dt-bindings: PCI: Add Qualcomm PCIe Endpoint controller")
 Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 ---
- .../devicetree/bindings/pci/qcom,pcie.yaml    | 28 +++++++++++++++++++
- 1 file changed, 28 insertions(+)
+ Documentation/devicetree/bindings/pci/qcom,pcie-ep.yaml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/Documentation/devicetree/bindings/pci/qcom,pcie.yaml b/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
-index f48d0792aa57..3bba1ef3cff5 100644
---- a/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
-+++ b/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
-@@ -30,6 +30,7 @@ properties:
-       - qcom,pcie-sc8180x
-       - qcom,pcie-sc8280xp
-       - qcom,pcie-sdm845
-+      - qcom,pcie-sdx55
-       - qcom,pcie-sm8150
-       - qcom,pcie-sm8250
-       - qcom,pcie-sm8450-pcie0
-@@ -199,6 +200,7 @@ allOf:
-               - qcom,pcie-sc7280
-               - qcom,pcie-sc8180x
-               - qcom,pcie-sc8280xp
-+              - qcom,pcie-sdx55
-               - qcom,pcie-sm8250
-               - qcom,pcie-sm8450-pcie0
-               - qcom,pcie-sm8450-pcie1
-@@ -646,6 +648,32 @@ allOf:
-           items:
-             - const: pci # PCIe core reset
- 
-+  - if:
-+      properties:
-+        compatible:
-+          contains:
-+            enum:
-+              - qcom,pcie-sdx55
-+    then:
-+      properties:
-+        clocks:
-+          minItems: 7
-+          maxItems: 7
-+        clock-names:
-+          items:
-+            - const: pipe # PIPE clock
-+            - const: aux # Auxiliary clock
-+            - const: cfg # Configuration clock
-+            - const: bus_master # Master AXI clock
-+            - const: bus_slave # Slave AXI clock
-+            - const: slave_q2a # Slave Q2A clock
-+            - const: sleep # PCIe Sleep clock
-+        resets:
-+          maxItems: 1
-+        reset-names:
-+          items:
-+            - const: pci # PCIe core reset
-+
-   - if:
-       properties:
-         compatible:
+diff --git a/Documentation/devicetree/bindings/pci/qcom,pcie-ep.yaml b/Documentation/devicetree/bindings/pci/qcom,pcie-ep.yaml
+index 8d7eb51edcb4..c1800e44f3da 100644
+--- a/Documentation/devicetree/bindings/pci/qcom,pcie-ep.yaml
++++ b/Documentation/devicetree/bindings/pci/qcom,pcie-ep.yaml
+@@ -164,7 +164,7 @@ examples:
+     #include <dt-bindings/clock/qcom,gcc-sdx55.h>
+     #include <dt-bindings/gpio/gpio.h>
+     #include <dt-bindings/interrupt-controller/arm-gic.h>
+-    pcie_ep: pcie-ep@40000000 {
++    pcie_ep: pcie-ep@1c00000 {
+         compatible = "qcom,sdx55-pcie-ep";
+         reg = <0x01c00000 0x3000>,
+               <0x40000000 0xf1d>,
 -- 
 2.25.1
 
