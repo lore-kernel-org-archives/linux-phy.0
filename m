@@ -4,66 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B8384C7EE30
-	for <linux-phy@archiver.kernel.org>; Sat, 25 Feb 2023 01:38:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DE3FDC6FA8E
+	for <linux-phy@archiver.kernel.org>; Sat, 25 Feb 2023 16:41:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:Date:Message-Id:
-	References:In-Reply-To:From:Subject:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=owR0tl4DZwT3f0j5ZDwEgnE+KNHGtbsynGF1BZu4eC8=; b=NVurfORR9yAS7/
-	cFVOACterwkduOhMHOSNk+pXmfrkuFOMaNsghFkIR+QAB1V0gO8Bsoq4EYaGcCPJ0vH3Qxnb0BX2V
-	/9KPPV0CtRNNLVCwr9RUB7C3tIO/xYsVyIqOJYOh+k7r74UuQIQttxgOhnOrUdAIc9rCAvzqyRBzi
-	S8hjUyB6+z+YVL1FrBL8+wFFIMSpfHGb5f+GhST0vq/5/3wgtopVvQxDqhQfm9qWiIJ6eJDu+sQiO
-	w8yr095cU5k8P6Sd76SW2B8ON/ybRbOoTn9jCQT/lU6Fk4/TqJ9lPDBRiytZ6O8Dke0HFETpATsRu
-	BUKttWzsHXoAvxDBbpGQ==;
+	List-Owner; bh=NU/jfHRU54mixPlEx5wucQIrlAVhOVBCN9TWwauGXrk=; b=fLk/MUrrXLpzqQ
+	dplBwKkrnPSyUOBgRP1GUqUAo81pr8SL0cP7Jyl4ur56sZJWUQVluk6bTgwPdSmQuzVvhrslIT6H2
+	d7jDvoJUwYvvgz8RZxcNpOzYity7KhCnhcQFwE3J6deVcihtxMGRT5UEyJYs+y1nuVZ3mrRnD2hEs
+	GKu7Og9SIiIrqeOoTGwazFqts8YVtl/OZVmLp7WU8ssvSroQp/qjYPwKB0H0WDCCC3HYteuC1K2V5
+	vPwBOddJGKWPEdfhU9w4eFbB5Txcp7vxIBzdm/Rk3VW5BM2hfwZ2AKmefttsfkeAynhkUZWIfcSe+
+	pwrtdszrzcIZrGOIsDOA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pVjVf-004Yd1-V1; Sat, 25 Feb 2023 01:37:59 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1pVxcU-0061aL-RX; Sat, 25 Feb 2023 16:41:58 +0000
+Received: from mail-oa1-x2c.google.com ([2001:4860:4864:20::2c])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pVjVd-004YcQ-2S
-	for linux-phy@lists.infradead.org; Sat, 25 Feb 2023 01:37:58 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 9749B61912;
-	Sat, 25 Feb 2023 01:37:55 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id 08ABBC4339E;
-	Sat, 25 Feb 2023 01:37:55 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1677289075;
-	bh=4jayJUebCMjDp6THBy6SHTCNXR/U37FXifVzlOzX59o=;
-	h=Subject:From:In-Reply-To:References:Date:To:Cc:From;
-	b=Kza/Gb+S5DAvIOeDXA/1HkT2va5gEDikSsUQcD49+rbpxmsd7b+4wqbUMHHrkwFBq
-	 Pck96k175zntty7y1dqSZpM2CsPb5DzI53l031Zd5bvfxvWXoSV4IS7tz6YWRZWTS2
-	 2hL2HDcjj+JD6yTd/bHY3w4+tS1wZvwPrOL4zJ7oTrX/mkemk7zDUzbPayMKXtWReq
-	 7cD3F/Yly+G/DcMs54f8NntNKx7WNPrrE/EdKdMl7YH9H1Q+523yKQ5ayLNTeaUtKt
-	 vgpH17WnswnKC/puo++O2zpzXQrq6gHV5RFUNcYi+y98ChPYUrtWMTFXJ6IFpgX2rH
-	 5f/Ge3J8/xWTA==
-Received: from aws-us-west-2-korg-oddjob-1.ci.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by aws-us-west-2-korg-oddjob-1.ci.codeaurora.org (Postfix) with ESMTP id EC5EEC43151;
-	Sat, 25 Feb 2023 01:37:54 +0000 (UTC)
-Subject: Re: [GIT PULL]: Generic phy updates for v6.3
-From: pr-tracker-bot@kernel.org
-In-Reply-To: <Y/i/dVFrB855ADjV@matsya>
-References: <Y/i/dVFrB855ADjV@matsya>
-X-PR-Tracked-List-Id: <linux-kernel.vger.kernel.org>
-X-PR-Tracked-Message-Id: <Y/i/dVFrB855ADjV@matsya>
-X-PR-Tracked-Remote: git://git.kernel.org/pub/scm/linux/kernel/git/phy/linux-phy.git tags/phy-for-6.3
-X-PR-Tracked-Commit-Id: 3584f6392f09440769246d4936e1fcbff76ac3bc
-X-PR-Merge-Tree: torvalds/linux.git
-X-PR-Merge-Refname: refs/heads/master
-X-PR-Merge-Commit-Id: 8ff99ad04c2ebacb272ff9e4f6155c35be136b3d
-Message-Id: <167728907496.28954.935929983155164636.pr-tracker-bot@kernel.org>
-Date: Sat, 25 Feb 2023 01:37:54 +0000
-To: Vinod Koul <vkoul@kernel.org>
-Cc: Linus Torvalds <torvalds@linux-foundation.org>, Linux Phy <linux-phy@lists.infradead.org>, LKML <linux-kernel@vger.kernel.org>
+	id 1pVxcG-0061PT-Cs; Sat, 25 Feb 2023 16:41:46 +0000
+Received: by mail-oa1-x2c.google.com with SMTP id 586e51a60fabf-1723ab0375eso3108615fac.1;
+        Sat, 25 Feb 2023 08:41:36 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20210112;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:sender:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=rmn+cqYTvDT85OGvCMKkjTNE8FVd8ZGTaREnVmw8Y5k=;
+        b=JeAIBpYUvNiXAA121YTlLRE7xs6FpBBdLcnKmViFAKnx0CAyuikX7hInf+ybRgcPU2
+         +qxGszBkgPNH4cJ4wAI4569+t1Xqf6fh5xaaQD98MO1fYRYlLG3zyXte2pP0cX/Oe5DZ
+         iSk5+0t1cywz6YkzojDiSA0c2orMUnZLEtqT/+iPn16CmlC3iLxUIKNnWvmULxuDanUC
+         jFwxulUiH4rLfylMJcybmUuXmvj6jcewXl5auogL9CVK1z8HLdut85UvNOLa2AdE3QPn
+         RjZzs+2BDhqeqYVEVmdYunlYeDNE0J71QG7PZ4iKjxXy3svG2dNR7jHcKrEGsF4WxZQ1
+         Qbmw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:sender:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=rmn+cqYTvDT85OGvCMKkjTNE8FVd8ZGTaREnVmw8Y5k=;
+        b=xeab8X3VV71w5QTAKOCAusxl1X0fE99AUAPDZMPGnfNUWSZ4ap2PCvaKlA+hN3YOVX
+         YyoIZa3r+pWtozHGiXcJiU5Vx97g5C5nuPeVvuHLZLBpvfWYoINTm/atyi89U2YR034Q
+         1Tjml4od7vD69jVg4It18lFekeQXZ4nMw0cd+Zy33HrpoV6IshQJbxRfTFKnWuvXWe96
+         vAJQ0DAQdVvXZ9JuhNCOhrFiFej/psTubzhTw5kyGztzBjpM7RjkUxe4ueLNi6yoA61f
+         OoXIilR5hQp+RY6OkNHpPtESGNlpFm0jz80JPI6JAwBRqdPKJ6lw1bWCibVJQGzTOzK3
+         orrw==
+X-Gm-Message-State: AO0yUKUg3ZYtd1Xr1UNlAtcxG0Kz8rbUvSibVFk1M2Ksk1R2ttbYnMPD
+	hFCo08RcBN4B3FjRv3KdqR8=
+X-Google-Smtp-Source: AK7set9nFJwgKU2JNnNF/RkpGiT2OOeIvv/dN+67jI23lAI/UoG09P6nrZwOJLRbeHtMWkberKCg4w==
+X-Received: by 2002:a05:6870:910c:b0:16d:c18d:4074 with SMTP id o12-20020a056870910c00b0016dc18d4074mr15754800oae.12.1677343294607;
+        Sat, 25 Feb 2023 08:41:34 -0800 (PST)
+Received: from server.roeck-us.net ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
+        by smtp.gmail.com with ESMTPSA id t2-20020a05687044c200b001726cfeea97sm718811oai.29.2023.02.25.08.41.33
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sat, 25 Feb 2023 08:41:33 -0800 (PST)
+Date: Sat, 25 Feb 2023 08:41:32 -0800
+From: Guenter Roeck <linux@roeck-us.net>
+To: Fabien Parent <fparent@baylibre.com>
+Cc: robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org, vkoul@kernel.org,
+	qii.wang@mediatek.com, matthias.bgg@gmail.com, jic23@kernel.org,
+	chaotian.jing@mediatek.com, ulf.hansson@linaro.org,
+	srinivas.kandagatla@linaro.org, chunfeng.yun@mediatek.com,
+	broonie@kernel.org, wim@linux-watchdog.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	dmaengine@vger.kernel.org, linux-i2c@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-mediatek@lists.infradead.org, linux-iio@vger.kernel.org,
+	linux-mmc@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-serial@vger.kernel.org, linux-spi@vger.kernel.org,
+	linux-usb@vger.kernel.org, linux-watchdog@vger.kernel.org
+Subject: Re: [PATCH 08/17] dt-bindings: watchdog: mtk-wdt: Add MT8365 SoC
+ bindings
+Message-ID: <20230225164132.GA2905933@roeck-us.net>
+References: <20220531135026.238475-1-fparent@baylibre.com>
+ <20220531135026.238475-9-fparent@baylibre.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20220531135026.238475-9-fparent@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230224_173757_191920_362241F6 
-X-CRM114-Status: UNSURE (   4.46  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230225_084144_459784_C7F43F01 
+X-CRM114-Status: GOOD (  13.25  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,24 +96,39 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The pull request you sent on Fri, 24 Feb 2023 19:15:25 +0530:
+On Tue, May 31, 2022 at 03:50:17PM +0200, Fabien Parent wrote:
+> Add binding documentation for the MT8365 SoC.
+> 
+> Signed-off-by: Fabien Parent <fparent@baylibre.com>
 
-> git://git.kernel.org/pub/scm/linux/kernel/git/phy/linux-phy.git tags/phy-for-6.3
+Going through my old e-mails:
 
-has been merged into torvalds/linux.git:
-https://git.kernel.org/torvalds/c/8ff99ad04c2ebacb272ff9e4f6155c35be136b3d
+This patch never made it upstream and would have to be rewritten to apply
+to Documentation/devicetree/bindings/watchdog/mediatek,mtk-wdt.yaml.
 
-Thank you!
+Guenter
 
--- 
-Deet-doot-dot, I am a bot.
-https://korg.docs.kernel.org/prtracker.html
+> ---
+>  Documentation/devicetree/bindings/watchdog/mtk-wdt.txt | 1 +
+>  1 file changed, 1 insertion(+)
+> 
+> diff --git a/Documentation/devicetree/bindings/watchdog/mtk-wdt.txt b/Documentation/devicetree/bindings/watchdog/mtk-wdt.txt
+> index a97418c74f6b..0e63c4ba3785 100644
+> --- a/Documentation/devicetree/bindings/watchdog/mtk-wdt.txt
+> +++ b/Documentation/devicetree/bindings/watchdog/mtk-wdt.txt
+> @@ -19,6 +19,7 @@ Required properties:
+>  	"mediatek,mt8516-wdt", "mediatek,mt6589-wdt": for MT8516
+>  	"mediatek,mt8192-wdt": for MT8192
+>  	"mediatek,mt8195-wdt", "mediatek,mt6589-wdt": for MT8195
+> +	"mediatek,mt8365-wdt", "mediatek,mt6589-wdt": for MT8365
+>  
+>  - reg : Specifies base physical address and size of the registers.
+>  
 
 -- 
 linux-phy mailing list
