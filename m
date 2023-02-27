@@ -4,87 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DE3FDC6FA8E
-	for <linux-phy@archiver.kernel.org>; Sat, 25 Feb 2023 16:41:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0B128C64ED6
+	for <linux-phy@archiver.kernel.org>; Mon, 27 Feb 2023 08:46:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NU/jfHRU54mixPlEx5wucQIrlAVhOVBCN9TWwauGXrk=; b=fLk/MUrrXLpzqQ
-	dplBwKkrnPSyUOBgRP1GUqUAo81pr8SL0cP7Jyl4ur56sZJWUQVluk6bTgwPdSmQuzVvhrslIT6H2
-	d7jDvoJUwYvvgz8RZxcNpOzYity7KhCnhcQFwE3J6deVcihtxMGRT5UEyJYs+y1nuVZ3mrRnD2hEs
-	GKu7Og9SIiIrqeOoTGwazFqts8YVtl/OZVmLp7WU8ssvSroQp/qjYPwKB0H0WDCCC3HYteuC1K2V5
-	vPwBOddJGKWPEdfhU9w4eFbB5Txcp7vxIBzdm/Rk3VW5BM2hfwZ2AKmefttsfkeAynhkUZWIfcSe+
-	pwrtdszrzcIZrGOIsDOA==;
+	List-Owner; bh=+Msxrc1uqhpKQ4dYhw/MHiE5IItqMeC2jwVGX5V29G0=; b=36n1yzmPDi2A9X
+	ftCPxkHuR4NjMmw0giGA87PqGZt2ii5r8eG6BdVbgJ5X1ZTWNLYsUD0fAszdGQ07Cxne5k/lNAfG8
+	E/N00+hGf0bo3UApLfFezoFiVUnQPV3qHnfjuX6WrYuT95NpzHQM8ganlsmw5kC7yXOmbBSW6IXKF
+	t12PQBI8NHBVMlkOzNQjyOIvtsX/rGOFBx5QSizxI2jhNsYc3iG+Y/CDDFz04aSeA6HKxnJh8Em4p
+	QUlxIAJQfJO9omXkLmhIt1KJQbNU+v6BXCjPvDxUofg9uq2deup4BVxpvSjzN5Df2SOaFcsLDkf9t
+	u114KMOGETUprmqaFCmg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pVxcU-0061aL-RX; Sat, 25 Feb 2023 16:41:58 +0000
-Received: from mail-oa1-x2c.google.com ([2001:4860:4864:20::2c])
+	id 1pWZ95-008u3G-4m; Mon, 27 Feb 2023 08:46:07 +0000
+Received: from mail-lf1-x133.google.com ([2a00:1450:4864:20::133])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pVxcG-0061PT-Cs; Sat, 25 Feb 2023 16:41:46 +0000
-Received: by mail-oa1-x2c.google.com with SMTP id 586e51a60fabf-1723ab0375eso3108615fac.1;
-        Sat, 25 Feb 2023 08:41:36 -0800 (PST)
+	id 1pWZ92-008u2Z-CB
+	for linux-phy@lists.infradead.org; Mon, 27 Feb 2023 08:46:06 +0000
+Received: by mail-lf1-x133.google.com with SMTP id t11so7538565lfr.1
+        for <linux-phy@lists.infradead.org>; Mon, 27 Feb 2023 00:46:03 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20210112;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:sender:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=rmn+cqYTvDT85OGvCMKkjTNE8FVd8ZGTaREnVmw8Y5k=;
-        b=JeAIBpYUvNiXAA121YTlLRE7xs6FpBBdLcnKmViFAKnx0CAyuikX7hInf+ybRgcPU2
-         +qxGszBkgPNH4cJ4wAI4569+t1Xqf6fh5xaaQD98MO1fYRYlLG3zyXte2pP0cX/Oe5DZ
-         iSk5+0t1cywz6YkzojDiSA0c2orMUnZLEtqT/+iPn16CmlC3iLxUIKNnWvmULxuDanUC
-         jFwxulUiH4rLfylMJcybmUuXmvj6jcewXl5auogL9CVK1z8HLdut85UvNOLa2AdE3QPn
-         RjZzs+2BDhqeqYVEVmdYunlYeDNE0J71QG7PZ4iKjxXy3svG2dNR7jHcKrEGsF4WxZQ1
-         Qbmw==
+        d=linaro.org; s=google; t=1677487562;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=B5cnbxDoA2z8MMgKZ1eEkxvfArrqRjqqI/vz4psVOcA=;
+        b=yZVHYgInDdKw7SFqoNG4WC29qlgwZeZEcCLWyKjfcjW2FgaNKXJvogsPvrsDmHlciJ
+         WEPDu3YiHzojV5x5fIdIob0SrzQlBk2b35+LgI6+kIbxp58/lEnEIHcV5LtYN/Iu3JBe
+         vHT/fuSvDp+J3mue8KBfBsE9r9B6JCBVN0CqFPetAGcr9FhA3PfA1i/3/ukl4WSQeRVu
+         vTvGphTDB8nv9FoPnV/c7wI8mblZsOjKaHWbq+gVURqg1hk4q248St7f+P4Nh0OCMkQh
+         QFG0xl3fimxqSeOYwXYwhmXNotSeetIdMxq/xvI4/XFPkkkG559m67z/v+plBx8X3UMH
+         +JYg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:sender:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=rmn+cqYTvDT85OGvCMKkjTNE8FVd8ZGTaREnVmw8Y5k=;
-        b=xeab8X3VV71w5QTAKOCAusxl1X0fE99AUAPDZMPGnfNUWSZ4ap2PCvaKlA+hN3YOVX
-         YyoIZa3r+pWtozHGiXcJiU5Vx97g5C5nuPeVvuHLZLBpvfWYoINTm/atyi89U2YR034Q
-         1Tjml4od7vD69jVg4It18lFekeQXZ4nMw0cd+Zy33HrpoV6IshQJbxRfTFKnWuvXWe96
-         vAJQ0DAQdVvXZ9JuhNCOhrFiFej/psTubzhTw5kyGztzBjpM7RjkUxe4ueLNi6yoA61f
-         OoXIilR5hQp+RY6OkNHpPtESGNlpFm0jz80JPI6JAwBRqdPKJ6lw1bWCibVJQGzTOzK3
-         orrw==
-X-Gm-Message-State: AO0yUKUg3ZYtd1Xr1UNlAtcxG0Kz8rbUvSibVFk1M2Ksk1R2ttbYnMPD
-	hFCo08RcBN4B3FjRv3KdqR8=
-X-Google-Smtp-Source: AK7set9nFJwgKU2JNnNF/RkpGiT2OOeIvv/dN+67jI23lAI/UoG09P6nrZwOJLRbeHtMWkberKCg4w==
-X-Received: by 2002:a05:6870:910c:b0:16d:c18d:4074 with SMTP id o12-20020a056870910c00b0016dc18d4074mr15754800oae.12.1677343294607;
-        Sat, 25 Feb 2023 08:41:34 -0800 (PST)
-Received: from server.roeck-us.net ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
-        by smtp.gmail.com with ESMTPSA id t2-20020a05687044c200b001726cfeea97sm718811oai.29.2023.02.25.08.41.33
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 25 Feb 2023 08:41:33 -0800 (PST)
-Date: Sat, 25 Feb 2023 08:41:32 -0800
-From: Guenter Roeck <linux@roeck-us.net>
-To: Fabien Parent <fparent@baylibre.com>
-Cc: robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org, vkoul@kernel.org,
-	qii.wang@mediatek.com, matthias.bgg@gmail.com, jic23@kernel.org,
-	chaotian.jing@mediatek.com, ulf.hansson@linaro.org,
-	srinivas.kandagatla@linaro.org, chunfeng.yun@mediatek.com,
-	broonie@kernel.org, wim@linux-watchdog.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	dmaengine@vger.kernel.org, linux-i2c@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-mediatek@lists.infradead.org, linux-iio@vger.kernel.org,
-	linux-mmc@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-serial@vger.kernel.org, linux-spi@vger.kernel.org,
-	linux-usb@vger.kernel.org, linux-watchdog@vger.kernel.org
-Subject: Re: [PATCH 08/17] dt-bindings: watchdog: mtk-wdt: Add MT8365 SoC
- bindings
-Message-ID: <20230225164132.GA2905933@roeck-us.net>
-References: <20220531135026.238475-1-fparent@baylibre.com>
- <20220531135026.238475-9-fparent@baylibre.com>
+        d=1e100.net; s=20210112; t=1677487562;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=B5cnbxDoA2z8MMgKZ1eEkxvfArrqRjqqI/vz4psVOcA=;
+        b=4ObsxhHqKk7Vg9M8ICRO5XClMNnYpWJsaql9gPuHKlhvC4SPW9i33RAj59KHcSg/Xv
+         6zZn1wGB91U2Zov+TTrjeYwVGxcMvbTUctil1yLRLMBB7YJQBc51S161f4aayvfpQXUe
+         GDR3kLDyznk5NO8xbt2GYxIp4/IgmnFI/VjebPMw32yffKzZnq5ECbU1OQ8m76fn2RDk
+         PwIp+nCy1LjJ/vRhFQhgkigHLmghNLLPttqoCuB3yJWWa/63jF0WlZD5bsi6Dz43pq+F
+         ruOj6zkk6EQcEwo32JtKkaRn8tKQnXGTGvRHxUrYbhm10QznVK2trorhAcaROOEmbXRl
+         5nZA==
+X-Gm-Message-State: AO0yUKX1sQkqrgrgZiDzvV1rwg3z8QLzqV1BSOnpu+yJldv/KaDV1sCv
+	R8ClQPaSoBB7grWapDU+vOJoqw==
+X-Google-Smtp-Source: AK7set+uDR44/fHZYQGtb1Be/hr0MUEZ7D+9d8xERTULeFzAjJTqVdI2RwfOqTEFNKv2uNDRqSPsPg==
+X-Received: by 2002:a05:6512:684:b0:4db:971:82cd with SMTP id t4-20020a056512068400b004db097182cdmr2258950lfe.17.1677487562589;
+        Mon, 27 Feb 2023 00:46:02 -0800 (PST)
+Received: from [192.168.1.101] (abym99.neoplus.adsl.tpnet.pl. [83.9.32.99])
+        by smtp.gmail.com with ESMTPSA id q10-20020ac25fca000000b004dafde0e7b7sm827471lfg.279.2023.02.27.00.46.01
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 27 Feb 2023 00:46:02 -0800 (PST)
+Message-ID: <cb50e3a9-0187-5894-cb0f-de477713922b@linaro.org>
+Date: Mon, 27 Feb 2023 09:46:00 +0100
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20220531135026.238475-9-fparent@baylibre.com>
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.8.0
+Subject: Re: [PATCH v2 07/13] ARM: dts: qcom: sdx55: Add support for PCIe RC
+ controller
+Content-Language: en-US
+To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+ andersson@kernel.org, lpieralisi@kernel.org, robh@kernel.org, kw@linux.com,
+ krzysztof.kozlowski+dt@linaro.org, vkoul@kernel.org
+Cc: bhelgaas@google.com, kishon@kernel.org, linux-arm-msm@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-pci@vger.kernel.org, devicetree@vger.kernel.org
+References: <20230224105906.16540-1-manivannan.sadhasivam@linaro.org>
+ <20230224105906.16540-8-manivannan.sadhasivam@linaro.org>
+From: Konrad Dybcio <konrad.dybcio@linaro.org>
+In-Reply-To: <20230224105906.16540-8-manivannan.sadhasivam@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230225_084144_459784_C7F43F01 
-X-CRM114-Status: GOOD (  13.25  )
+X-CRM114-CacheID: sfid-20230227_004604_458621_CBC1C2AF 
+X-CRM114-Status: GOOD (  13.91  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,34 +97,113 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, May 31, 2022 at 03:50:17PM +0200, Fabien Parent wrote:
-> Add binding documentation for the MT8365 SoC.
+
+
+On 24.02.2023 11:59, Manivannan Sadhasivam wrote:
+> The PCIe controller in SDX55 can act as the RC controller also. Let's
+> add support for it.
 > 
-> Signed-off-by: Fabien Parent <fparent@baylibre.com>
-
-Going through my old e-mails:
-
-This patch never made it upstream and would have to be rewritten to apply
-to Documentation/devicetree/bindings/watchdog/mediatek,mtk-wdt.yaml.
-
-Guenter
-
+> Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 > ---
->  Documentation/devicetree/bindings/watchdog/mtk-wdt.txt | 1 +
->  1 file changed, 1 insertion(+)
+Reviewed-by: Konrad Dybcio <konrad.dybcio@linaro.org>
+
+Konrad
+>  arch/arm/boot/dts/qcom-sdx55.dtsi | 82 +++++++++++++++++++++++++++++++
+>  1 file changed, 82 insertions(+)
 > 
-> diff --git a/Documentation/devicetree/bindings/watchdog/mtk-wdt.txt b/Documentation/devicetree/bindings/watchdog/mtk-wdt.txt
-> index a97418c74f6b..0e63c4ba3785 100644
-> --- a/Documentation/devicetree/bindings/watchdog/mtk-wdt.txt
-> +++ b/Documentation/devicetree/bindings/watchdog/mtk-wdt.txt
-> @@ -19,6 +19,7 @@ Required properties:
->  	"mediatek,mt8516-wdt", "mediatek,mt6589-wdt": for MT8516
->  	"mediatek,mt8192-wdt": for MT8192
->  	"mediatek,mt8195-wdt", "mediatek,mt6589-wdt": for MT8195
-> +	"mediatek,mt8365-wdt", "mediatek,mt6589-wdt": for MT8365
+> diff --git a/arch/arm/boot/dts/qcom-sdx55.dtsi b/arch/arm/boot/dts/qcom-sdx55.dtsi
+> index a1f4a7b0904a..b411c4ae34c3 100644
+> --- a/arch/arm/boot/dts/qcom-sdx55.dtsi
+> +++ b/arch/arm/boot/dts/qcom-sdx55.dtsi
+> @@ -303,6 +303,88 @@ qpic_nand: nand-controller@1b30000 {
+>  			status = "disabled";
+>  		};
 >  
->  - reg : Specifies base physical address and size of the registers.
->  
+> +		pcie_rc: pcie@1c00000 {
+> +			compatible = "qcom,pcie-sdx55";
+> +			reg = <0x01c00000 0x3000>,
+> +			      <0x40000000 0xf1d>,
+> +			      <0x40000f20 0xc8>,
+> +			      <0x40001000 0x1000>,
+> +			      <0x40100000 0x100000>;
+> +			reg-names = "parf",
+> +				    "dbi",
+> +				    "elbi",
+> +				    "atu",
+> +				    "config";
+> +			device_type = "pci";
+> +			linux,pci-domain = <0>;
+> +			bus-range = <0x00 0xff>;
+> +			num-lanes = <1>;
+> +
+> +			#address-cells = <3>;
+> +			#size-cells = <2>;
+> +
+> +			ranges = <0x01000000 0x0 0x40200000 0x40200000 0x0 0x100000>,
+> +				 <0x02000000 0x0 0x40300000 0x40300000 0x0 0x3fd00000>;
+> +
+> +			interrupts = <GIC_SPI 119 IRQ_TYPE_LEVEL_HIGH>,
+> +				     <GIC_SPI 120 IRQ_TYPE_LEVEL_HIGH>,
+> +				     <GIC_SPI 121 IRQ_TYPE_LEVEL_HIGH>,
+> +				     <GIC_SPI 122 IRQ_TYPE_LEVEL_HIGH>,
+> +				     <GIC_SPI 123 IRQ_TYPE_LEVEL_HIGH>,
+> +				     <GIC_SPI 124 IRQ_TYPE_LEVEL_HIGH>,
+> +				     <GIC_SPI 125 IRQ_TYPE_LEVEL_HIGH>,
+> +				     <GIC_SPI 126 IRQ_TYPE_LEVEL_HIGH>;
+> +			interrupt-names = "msi",
+> +					  "msi2",
+> +					  "msi3",
+> +					  "msi4",
+> +					  "msi5",
+> +					  "msi6",
+> +					  "msi7",
+> +					  "msi8";
+> +			#interrupt-cells = <1>;
+> +			interrupt-map-mask = <0 0 0 0x7>;
+> +			interrupt-map = <0 0 0 1 &intc 0 0 0 141 IRQ_TYPE_LEVEL_HIGH>, /* int_a */
+> +					<0 0 0 2 &intc 0 0 0 142 IRQ_TYPE_LEVEL_HIGH>, /* int_b */
+> +					<0 0 0 3 &intc 0 0 0 143 IRQ_TYPE_LEVEL_HIGH>, /* int_c */
+> +					<0 0 0 4 &intc 0 0 0 144 IRQ_TYPE_LEVEL_HIGH>; /* int_d */
+> +
+> +			clocks = <&gcc GCC_PCIE_PIPE_CLK>,
+> +				 <&gcc GCC_PCIE_AUX_CLK>,
+> +				 <&gcc GCC_PCIE_CFG_AHB_CLK>,
+> +				 <&gcc GCC_PCIE_MSTR_AXI_CLK>,
+> +				 <&gcc GCC_PCIE_SLV_AXI_CLK>,
+> +				 <&gcc GCC_PCIE_SLV_Q2A_AXI_CLK>,
+> +				 <&gcc GCC_PCIE_SLEEP_CLK>;
+> +			clock-names = "pipe",
+> +				      "aux",
+> +				      "cfg",
+> +				      "bus_master",
+> +				      "bus_slave",
+> +				      "slave_q2a",
+> +				      "sleep";
+> +
+> +			assigned-clocks = <&gcc GCC_PCIE_AUX_CLK>;
+> +			assigned-clock-rates = <19200000>;
+> +
+> +			iommus = <&apps_smmu 0x0200 0x0f>;
+> +			iommu-map = <0x0   &apps_smmu 0x0200 0x1>,
+> +				    <0x100 &apps_smmu 0x0201 0x1>,
+> +				    <0x200 &apps_smmu 0x0202 0x1>,
+> +				    <0x300 &apps_smmu 0x0203 0x1>,
+> +				    <0x400 &apps_smmu 0x0204 0x1>;
+> +
+> +			resets = <&gcc GCC_PCIE_BCR>;
+> +			reset-names = "pci";
+> +
+> +			power-domains = <&gcc PCIE_GDSC>;
+> +
+> +			phys = <&pcie_lane>;
+> +			phy-names = "pciephy";
+> +
+> +			status = "disabled";
+> +		};
+> +
+>  		pcie_ep: pcie-ep@1c00000 {
+>  			compatible = "qcom,sdx55-pcie-ep";
+>  			reg = <0x01c00000 0x3000>,
 
 -- 
 linux-phy mailing list
