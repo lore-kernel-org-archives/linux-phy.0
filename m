@@ -4,141 +4,142 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D9464C64ED6
-	for <linux-phy@archiver.kernel.org>; Mon, 27 Feb 2023 13:31:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 20331C7EE23
+	for <linux-phy@archiver.kernel.org>; Mon, 27 Feb 2023 13:31:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rmee3t6Z8fE6ZRlDVQBth9cpQt9EktqsHvtcdCo3h9s=; b=1YbyrmipovGZhp
-	6DSSWqZd5ou0QaZCF4H6+yCB6aq83EOKWZhaEPPaLx85d5Nqe2U8IZY6YN/X6fcLFrZAKNMOYKgtk
-	nRzZWiPyadnPllSJCt0oUAj3zWCmvcmLJ0EUlI50MePQtkfEMhQLyMan+gmLqda3FwkapkOuEHGsw
-	Ohl+1wpJmgqV4VZiF98SHeVMlEZ9KxqLPGSXS95eIEaZK3OlDAAbHsVDHBpaPmJIhM1Iu6uhSn5CZ
-	9lwWdW35eUyKLwcYvSZHPPLrNDJlPY1LM2JCfF35qcxn+REAJ9t28B3c7y8Cb3ozLsa3GGqqBvNHC
-	AabrTEVZN2pI70OIOSiw==;
+	List-Owner; bh=B1GdbP130uQsTytRzf/eCgXZ6Sut9DsTP66W8T8El9U=; b=tXRyuyIfjjPBV5
+	Cv4YGMqmtQdUz5Q4hCqfHL4mT9dLZEHaAXwUZCd/lZJLMJbMwTVH7EOCsKdOCFJ2/us9mGPSbYynQ
+	PL2eBSOYnBidMQn2xvrGEa1pRGH6lo1Ah3XjozzutYFgMZEhmrKOMvImXmERplflF/vmjZBFn5Ag4
+	Kfer+zaI7w6pKnUHBuIj57DF5mkvZzkHcsI3kvXeo/WxpMw0bdpLut+W6Q3ShzyK27DqKALT+Lqcu
+	DKt4NOWDDQxRBR2Z0J+4bkcY4UE2hCooyBBg5+F2H2lnrcnRaKwic63mO0fc5K3w4+rcxiolJtfYw
+	3pWj/ouK5ii2LgzIKYRg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pWdbH-009lbT-8r; Mon, 27 Feb 2023 13:31:31 +0000
-Received: from mx0a-0014ca01.pphosted.com ([208.84.65.235])
+	id 1pWdbJ-009lcE-Ie; Mon, 27 Feb 2023 13:31:33 +0000
+Received: from mx0b-0014ca01.pphosted.com ([208.86.201.193] helo=mx0a-0014ca01.pphosted.com)
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pWdbC-009lZn-CW
-	for linux-phy@lists.infradead.org; Mon, 27 Feb 2023 13:31:30 +0000
-Received: from pps.filterd (m0042385.ppops.net [127.0.0.1])
-	by mx0a-0014ca01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 31R9eNb1009851;
-	Mon, 27 Feb 2023 05:31:17 -0800
+	id 1pWdbD-009lZh-77
+	for linux-phy@lists.infradead.org; Mon, 27 Feb 2023 13:31:31 +0000
+Received: from pps.filterd (m0042333.ppops.net [127.0.0.1])
+	by mx0b-0014ca01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 31RD2WNX024666;
+	Mon, 27 Feb 2023 05:31:15 -0800
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cadence.com; h=from : to : cc :
  subject : date : message-id : in-reply-to : references : mime-version :
  content-type; s=proofpoint;
- bh=LotoLEBc5EZRhqHDOwbl71ULstg1Sl6rYn8VRK43HzY=;
- b=LG8lJTzld6lIAfqwQWf9t+pvYJ6jGilhO6sUb5YBCrIa1QeTv+Pr9dGH9ORGDqLOzImZ
- PLsxmpGIY8SlU44WE0DaqgcMCOBrkp8Pw9B+mtvplQbgNwROmEBWX91uOyC2HljjtoA9
- 0386QDPrvHrAm/SOr/YCBawy5EWvIjNbXpOuA9kZQPVLFNxKDK+tPSD8FRIUtKDo9oUV
- qkoejQ82QxH8PNIfLzTf5nJtizTZ3VWD8rD2hVsr1Kdz3iLvVNqFqgtD4cFqELuS2KvA
- aywjtofBYq9LN7UF7GXieMqFZka8LYzfNa+znvfM2XDpPKvPVGiglFrKw0O4H3XHk25v xQ== 
-Received: from nam10-bn7-obe.outbound.protection.outlook.com (mail-bn7nam10lp2106.outbound.protection.outlook.com [104.47.70.106])
-	by mx0a-0014ca01.pphosted.com (PPS) with ESMTPS id 3nyfs56yxu-1
+ bh=iwlyNUErb0IfKCnR6P9pvMvv/8iZPWOlThozo16uQqw=;
+ b=BZwJZ7OGcWFe4mMLih5umzkxrd6Sxi7+GNUOw6Rill54YD/qcVDT/3281/9tnuk75uwW
+ j2UFyk/Q6x2iHQNEMNQDMsIINCodLsWwsHwPfTIvXPsA1kCuewEf2uaZ9V6vP2vKZ8xJ
+ iqThurafHblt7055J65gK4fp8a5GOJKEvnmu23dt2Lc5AvbPtU3kZXgOlhv8lkpkrgKG
+ uYZS+xXmTOz7Vg/ptQgQZKYn6MSy6te1//ImnnGElhPg11dkdnJcgGS4MbF8LxiJcDex
+ xvnK1m2MkX5W7s9YlRDuLK6V5m/ynq8/4t1C0tNmRi5aiHLEUN8QiB9U3ns7/+D6EWdG /Q== 
+Received: from nam10-bn7-obe.outbound.protection.outlook.com (mail-bn7nam10lp2100.outbound.protection.outlook.com [104.47.70.100])
+	by mx0b-0014ca01.pphosted.com (PPS) with ESMTPS id 3nyet6ys5a-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 27 Feb 2023 05:31:16 -0800
+	Mon, 27 Feb 2023 05:31:14 -0800
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=QdHwNEjkU5ixSX4S8DyysGR3ZCCEcrirHfOm6fUR1blHSsCagv7AUDVvXzsr3MrnVJ7L2ocu01YqpPJbWAgWclcUKegP8A1ifDCGoSOSvyGmb/0HwVTUlsfvpUBFVP1Hr5KlYGfuJ3eFx/BZs2MFUG3pTbbQPp7a65CkV2iF0/P3hwru0ezCSnKzrzYE2UORPaviZz4LKMj53J6P+nFwbJDySQ7h4mDexQcTi0Mwzg6K1bw9XF6ARvCMGFu+np9jFIZ3FOu+pCUD+7WZyfeTZPK0sZfJ3r+23E6rtRU/HQgmsKuD4IWEZHqV61b/MjsO55yz4ZMBD89Sl6nTJW7XlA==
+ b=jyLWJXwmW05GYbGrzL9bbKaCacsxwHJaD/NpQp5m27ioOe267CUZzEXKv3XnodUjZaMclZiKBf6rCUJY7hqOQtut7WL40W37ZURS8IofGzHN9mBxkAX3TAYG8sZhnVOWLzaapg04Q2QYQN+0c+vTTl9n8HiQzpRGU2RMZysBMSzYg0iCs8pdyTvJ/604J18nlIoxgo2EVYO5mCRPWZFoJfHmOQ7agpv1U8zsjFzjT+pYVIJnF8CEfa9ER8Lvc9XErva0/5TAvbFCxjJzaDLABUz0Qb8rf3L3o8cOKVN5PYPNohkLAC7nnWFPTlhgszfotJCYxMoTONpCtfAd9jv1fw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=LotoLEBc5EZRhqHDOwbl71ULstg1Sl6rYn8VRK43HzY=;
- b=k8cAqvhsqlY7YNhpYYX191Lb8yZs+mv4Wep9oAn1D7Uc2WFxhrxayryW1ZCTv3ucaKUk8skDCo1dpluZVoauv/ATgS6wLMaeHeQdULu06gUE/oG+bW2V1wrUWyZouFghDv2Qkeudx4SwD36tXyyjBXHko3v0TkoUWEz3h4JBvO5c7ZgdVrYPuAilh/22hF49YUslFZSrUdRb+DiWBLwL+g8HoE2OD9HTIKwZb0SGtQaJSQr+Xgir6lfk9x8dFpcY2LqGDEt1J9jCt6oZeL69B+Mvdi2JDUW7BwbwDXXailEHM9U3J/3k+nZrdE/673ffeYLZb0BsGOSR17N/lRR3SA==
+ bh=iwlyNUErb0IfKCnR6P9pvMvv/8iZPWOlThozo16uQqw=;
+ b=Hc2bzcLHpvlH37bOE6EavxHmNkyyxhiWxCJRaOfqtOU/t/mWlZiUjeA8tLxRK/Vixu/WUunIMCtQkeBViITuq4S+ci85jGSpbELbNuvkgjzDgnjkayj1zyaqK+1f8hTUHBtxOEOmJdxS1jS/1BpC8zu/CQb5ySUMEFr5f8OAFvUs/r0Y330A5OuMPr7ZaHSW670RKMJ5CM0swHZKkmuu2MABRxJlmGPKfpmaiTl5/3aN8aSUPOuTt+YUJ1u5nFLdgJVGKIc2se3dP3ikWmjay+57hpq7289smgh4DQBbdwffNvf/kmwOngVkK4RGehunh/Ghs/ib2T8kSPUQdT2GJg==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 64.207.220.244) smtp.rcpttodomain=ti.com smtp.mailfrom=cadence.com;
- dmarc=pass (p=none sp=none pct=100) action=none header.from=cadence.com;
- dkim=none (message not signed); arc=none
+ 158.140.1.147) smtp.rcpttodomain=ti.com smtp.mailfrom=cadence.com; dmarc=pass
+ (p=none sp=none pct=100) action=none header.from=cadence.com; dkim=none
+ (message not signed); arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cadence.com;
  s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=LotoLEBc5EZRhqHDOwbl71ULstg1Sl6rYn8VRK43HzY=;
- b=umzUx094UwLtwlZQT8Hr2FkuT0RP96pxJcwMuBw1WTcTzTg5tUbFhx169Rt9CZxsTZCaB9mQHfSia/nuZvRAKUtCo9Mr2H5GHvUSfDZ69v5L8qOXFbYFtdDFb5cAxpIrzTdMN7bRbZb8ECp9IoZW9908y5IbujICOojyDCXGzVQ=
-Received: from DS7PR03CA0031.namprd03.prod.outlook.com (2603:10b6:5:3b5::6) by
- CY8PR07MB9641.namprd07.prod.outlook.com (2603:10b6:930:56::17) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.6134.26; Mon, 27 Feb 2023 13:31:12 +0000
-Received: from DM6NAM12FT083.eop-nam12.prod.protection.outlook.com
- (2603:10b6:5:3b5:cafe::6c) by DS7PR03CA0031.outlook.office365.com
- (2603:10b6:5:3b5::6) with Microsoft SMTP Server (version=TLS1_2,
+ bh=iwlyNUErb0IfKCnR6P9pvMvv/8iZPWOlThozo16uQqw=;
+ b=s+bAY99QVgvJNOLGTUCYn4fj1tqEe7W9Ow6briy1Ed2Ysv/kMBib82Hzr8xHFrDzBHxc8vnbggtK7G7h3c0CE5dCIq980ViVEdMdWmg4IAv00AZZ3KMvPnZ8aqaqBf5d8bWAU6X5OM3QfD/AOiUwEqfS7T6TmS0XKzZ9zPM4fZQ=
+Received: from DM6PR14CA0040.namprd14.prod.outlook.com (2603:10b6:5:18f::17)
+ by SJ0PR07MB9089.namprd07.prod.outlook.com (2603:10b6:a03:3f1::12) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6134.29; Mon, 27 Feb
+ 2023 13:31:11 +0000
+Received: from DM6NAM12FT024.eop-nam12.prod.protection.outlook.com
+ (2603:10b6:5:18f:cafe::d1) by DM6PR14CA0040.outlook.office365.com
+ (2603:10b6:5:18f::17) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6134.29 via Frontend
- Transport; Mon, 27 Feb 2023 13:31:12 +0000
-X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 64.207.220.244)
+ Transport; Mon, 27 Feb 2023 13:31:11 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 158.140.1.147)
  smtp.mailfrom=cadence.com; dkim=none (message not signed)
  header.d=none;dmarc=pass action=none header.from=cadence.com;
 Received-SPF: Pass (protection.outlook.com: domain of cadence.com designates
- 64.207.220.244 as permitted sender) receiver=protection.outlook.com;
- client-ip=64.207.220.244; helo=wcmailrelayl01.cadence.com; pr=C
-Received: from wcmailrelayl01.cadence.com (64.207.220.244) by
- DM6NAM12FT083.mail.protection.outlook.com (10.13.178.199) with Microsoft SMTP
+ 158.140.1.147 as permitted sender) receiver=protection.outlook.com;
+ client-ip=158.140.1.147; helo=sjmaillnx1.cadence.com; pr=C
+Received: from sjmaillnx1.cadence.com (158.140.1.147) by
+ DM6NAM12FT024.mail.protection.outlook.com (10.13.179.216) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
  15.20.6156.16 via Frontend Transport; Mon, 27 Feb 2023 13:31:11 +0000
-Received: from maileu5.global.cadence.com (eudvw-maileu5.cadence.com [10.160.110.202])
-	by wcmailrelayl01.cadence.com (8.14.7/8.14.4) with ESMTP id 31RDV7PL136144
-	(version=TLSv1/SSLv3 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=OK);
-	Mon, 27 Feb 2023 05:31:08 -0800
+Received: from maileu4.global.cadence.com (eudvw-maileu4.cadence.com [10.160.110.201])
+	by sjmaillnx1.cadence.com (8.14.4/8.14.4) with ESMTP id 31RDV74k019544
+	(version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256 verify=OK);
+	Mon, 27 Feb 2023 05:31:10 -0800
 Received: from maileu4.global.cadence.com (10.160.110.201) by
- maileu5.global.cadence.com (10.160.110.202) with Microsoft SMTP Server
+ maileu4.global.cadence.com (10.160.110.201) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.2375.24; Mon, 27 Feb 2023 14:31:06 +0100
+ 15.1.2375.7; Mon, 27 Feb 2023 14:31:08 +0100
 Received: from vleu-orange.cadence.com (10.160.88.83) by
  maileu4.global.cadence.com (10.160.110.201) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2375.7
- via Frontend Transport; Mon, 27 Feb 2023 14:31:06 +0100
+ via Frontend Transport; Mon, 27 Feb 2023 14:31:08 +0100
 Received: from vleu-orange.cadence.com (localhost.localdomain [127.0.0.1])
-	by vleu-orange.cadence.com (8.14.4/8.14.4) with ESMTP id 31RDV6IZ029854;
-	Mon, 27 Feb 2023 14:31:06 +0100
+	by vleu-orange.cadence.com (8.14.4/8.14.4) with ESMTP id 31RDV7nE029877;
+	Mon, 27 Feb 2023 14:31:07 +0100
 Received: (from sjakhade@localhost)
-	by vleu-orange.cadence.com (8.14.4/8.14.4/Submit) id 31RDV669029853;
-	Mon, 27 Feb 2023 14:31:06 +0100
+	by vleu-orange.cadence.com (8.14.4/8.14.4/Submit) id 31RDV7Gs029871;
+	Mon, 27 Feb 2023 14:31:07 +0100
 From: Swapnil Jakhade <sjakhade@cadence.com>
 To: <vkoul@kernel.org>, <kishon@kernel.org>, <linux-phy@lists.infradead.org>,
         <linux-kernel@vger.kernel.org>
 CC: <mparab@cadence.com>, <sjakhade@cadence.com>, <r-ravikumar@ti.com>
-Subject: [PATCH v2 1/4] phy: cadence-torrent: Add function to get PLL to be configured for DP
-Date: Mon, 27 Feb 2023 14:31:01 +0100
-Message-ID: <20230227133104.29788-2-sjakhade@cadence.com>
+Subject: [PATCH v2 4/4] phy: cadence-torrent: Add USB + DP multilink configuration
+Date: Mon, 27 Feb 2023 14:31:04 +0100
+Message-ID: <20230227133104.29788-5-sjakhade@cadence.com>
 X-Mailer: git-send-email 2.15.0
 In-Reply-To: <20230227133104.29788-1-sjakhade@cadence.com>
 References: <20230227133104.29788-1-sjakhade@cadence.com>
 MIME-Version: 1.0
-X-CrossPremisesHeadersFilteredBySendConnector: maileu5.global.cadence.com
-X-OrganizationHeadersPreserved: maileu5.global.cadence.com
+X-CrossPremisesHeadersFilteredBySendConnector: maileu4.global.cadence.com
+X-OrganizationHeadersPreserved: maileu4.global.cadence.com
 X-EOPAttributedMessage: 0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: DM6NAM12FT083:EE_|CY8PR07MB9641:EE_
-X-MS-Office365-Filtering-Correlation-Id: 32693176-0cb9-4567-b3c7-08db18c6e418
+X-MS-TrafficTypeDiagnostic: DM6NAM12FT024:EE_|SJ0PR07MB9089:EE_
+X-MS-Office365-Filtering-Correlation-Id: 49ddddb7-4c44-432b-5242-08db18c6e401
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 	1Fty4kHD2u//GLuB4AhvXRf2Duc+OU2JT6/o0Taq3pZm+5oqGNatJa4IUrt2jL62KwERLuKCH5G8PNtakzVvUnjavg7JHAEOaYkHXRGkZj1AZP24i3GKOfLKxlwVTiwA7EmKvjlbAVu8ARKXxtPTtmMQ2Dp8zzskjTNNlcHFoloBYzTKk8zoW1XVua9HrpCVb9pbFXMq2wvHLnoZUvDnIybuSXirWv5Rjdsdu6TwwW5LGzP3U1+jfQu07A4X3zVR2UeZCxOSOzzeAhJjB+7HWyYmmAJ5SL8bWzgCAU9szca8TT30AxzkfiQAWYASAQYp9cx7EkmiUyHSpfhfAGQwMPIYjtVTp7pH36D9Jgf6+lHSeGT9siNc0RxAL/s1hSKAkvG8XQAxLXHr1x62uJRV/JirJoiRqo84lZ1Qe3gOG73qkEDutvGRW/lcAxRECBug+OxqIdQI3IgoMdutpHmXW4iLsxp1xZXN03zO/zfMca/7HvJS6wEzl12wlV4bnrOvGgSFv2kanbeQDKUXbfe4SA/WtKOibX9Puuzn5C/aN2QBOFp4ZDS/1F0LWTZau+rBSOCpVu5oOKXm459Tz8IQ25Nhqd+4x1NUDSl6Gid92gZvS3JXvRQRPe8N9Dc4OCBaXpunguA0D0WHTzHqukwGVvnDWoDNpHr5Z/nphsgiuzuINoeG44Y7xYyX1K5IFlSyuHRkb37dWjoV443uoFIgB28Dr8cu5aI8+TofI5inGTA=
-X-Forefront-Antispam-Report: 	CIP:64.207.220.244;CTRY:US;LANG:en;SCL:1;SRV:;IPV:CAL;SFV:NSPM;H:wcmailrelayl01.cadence.com;PTR:ErrorRetry;CAT:NONE;SFS:(13230025)(4636009)(396003)(376002)(346002)(39860400002)(136003)(36092001)(451199018)(46966006)(40470700004)(36840700001)(36756003)(40460700003)(6666004)(1076003)(336012)(2616005)(26005)(186003)(70586007)(316002)(54906003)(41300700001)(4326008)(8676002)(70206006)(110136005)(42186006)(2906002)(8936002)(81166007)(82740400003)(36860700001)(86362001)(356005)(82310400005)(478600001)(5660300002)(40480700001)(426003)(47076005)(83380400001)(36900700001);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam-Message-Info: 	xMIctd1tXrbFofGNR/MYk4fXLUHPUk/v0nWhTxqr6k41TpO5fNjI+49QV3j1ESh8ajnOaBxTPc3Yhd4sOqR13KcNNlRJqMK30ZqUzGMpA9QDRqzbqF4qPAI36+Na7s7PBX7/ziGE9lnLshLaRcGfxtmi9EVwuiJmaeaNOZOjTllN6AcKeusck7GPKGCDhCnWjx+eIL7ZpBu8CUMI1igoxxamD5oQTBJxWi7NdAs0JhIWj+jOsAOYJ3T+I1Tv5+jZSQilvwoKX9E2R6h3CT6mZEXVi9hsN1acfn4aSdUDPomWzh039/d7nFx7klwpSwsYzaF5ErUPapdJDgj7sOwQ8GObthLGEpCFbUdl/sG7SY+nPONdcB7l71ILeGxllPYDFqgUFEo89Y35dNCc8K/Z2BlvAlP13AzuzMb/hBS96c0OFMxPi5rQlfr6gwDtSNCV1YHvssS6UKUWPW6Bwx0/FTUaFsR8m+T3eZkZOaMmScr0U8vONDvoivNMe2djnrNN3kmS+jYUE7QZ9Tyd8dwOSa9vfugUl9ZtTiAq2PHQYO025JmjkoTWhSZdkzyFAkOolvQSpp1RzltB5EeQKqcAgvuGFAh0MrlKZ+6DRl+KILgYh+/xZhNCqmrit7b70v+kjLd7S2Z7njplq3qn3Qt8MF1OK0LJxgqXVa8t0536sqmQlkKkSKskcMDeQiR2/WC2EehvLJnaxFeUnH6/IF1t8A==
+X-Forefront-Antispam-Report: 	CIP:158.140.1.147;CTRY:US;LANG:en;SCL:1;SRV:;IPV:CAL;SFV:NSPM;H:sjmaillnx1.cadence.com;PTR:unknown.Cadence.COM;CAT:NONE;SFS:(13230025)(4636009)(396003)(136003)(346002)(39860400002)(376002)(36092001)(451199018)(40470700004)(46966006)(36840700001)(26005)(186003)(1076003)(6666004)(36860700001)(82310400005)(426003)(47076005)(356005)(40460700003)(82740400003)(86362001)(7636003)(40480700001)(36756003)(2616005)(336012)(41300700001)(70206006)(70586007)(4326008)(8676002)(2906002)(8936002)(5660300002)(42186006)(110136005)(316002)(54906003)(478600001);DIR:OUT;SFP:1101;
 X-OriginatorOrg: cadence.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 27 Feb 2023 13:31:11.0910
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 27 Feb 2023 13:31:11.0002
  (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 32693176-0cb9-4567-b3c7-08db18c6e418
+X-MS-Exchange-CrossTenant-Network-Message-Id: 49ddddb7-4c44-432b-5242-08db18c6e401
 X-MS-Exchange-CrossTenant-Id: d36035c5-6ce6-4662-a3dc-e762e61ae4c9
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=d36035c5-6ce6-4662-a3dc-e762e61ae4c9;Ip=[64.207.220.244];Helo=[wcmailrelayl01.cadence.com]
-X-MS-Exchange-CrossTenant-AuthSource: 	DM6NAM12FT083.eop-nam12.prod.protection.outlook.com
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=d36035c5-6ce6-4662-a3dc-e762e61ae4c9;Ip=[158.140.1.147];Helo=[sjmaillnx1.cadence.com]
+X-MS-Exchange-CrossTenant-AuthSource: 	DM6NAM12FT024.eop-nam12.prod.protection.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Anonymous
 X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CY8PR07MB9641
-X-Proofpoint-ORIG-GUID: m2iEBk0lJQgsYtymb1R-5iD3rKEzIKBH
-X-Proofpoint-GUID: m2iEBk0lJQgsYtymb1R-5iD3rKEzIKBH
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SJ0PR07MB9089
+X-Proofpoint-GUID: Qp7EkXZkHRBTByBFwjHyDuxdHOElZ99T
+X-Proofpoint-ORIG-GUID: Qp7EkXZkHRBTByBFwjHyDuxdHOElZ99T
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.219,Aquarius:18.0.930,Hydra:6.0.562,FMLib:17.11.170.22
  definitions=2023-02-27_10,2023-02-27_01,2023-02-09_01
-X-Proofpoint-Spam-Details: rule=outbound_check_notspam policy=outbound_check score=0 impostorscore=0
- mlxscore=0 mlxlogscore=999 spamscore=0 suspectscore=0 adultscore=0
- priorityscore=1501 bulkscore=0 clxscore=1015 phishscore=0 malwarescore=0
- lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+X-Proofpoint-Spam-Details: rule=outbound_check_notspam policy=outbound_check score=0 bulkscore=0
+ phishscore=0 priorityscore=1501 mlxscore=0 spamscore=0 lowpriorityscore=0
+ clxscore=1015 mlxlogscore=959 malwarescore=0 impostorscore=0 adultscore=0
+ suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.12.0-2212070000 definitions=main-2302270104
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230227_053128_715469_24C4E715 
-X-CRM114-Status: GOOD (  17.50  )
+X-CRM114-CacheID: sfid-20230227_053128_736168_0A4152F2 
+X-CRM114-Status: GOOD (  14.14  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -155,88 +156,276 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Torrent PHY PLL0 or PLL1 is used for DP depending on the single link or
-multilink protocol configuration for which PHY is configured. In multilink
-configurations with other protocols, either PLL0 or PLL1 will be used
-for DP. For single link DP, both PLLs need to be configured at POR.
+Add USB + DP no SSC multilink configuration sequences.
 
 Signed-off-by: Swapnil Jakhade <sjakhade@cadence.com>
 ---
- drivers/phy/cadence/phy-cadence-torrent.c | 33 +++++++++++++++++++++++
- 1 file changed, 33 insertions(+)
+ drivers/phy/cadence/phy-cadence-torrent.c | 98 +++++++++++++++++++++++
+ 1 file changed, 98 insertions(+)
 
 diff --git a/drivers/phy/cadence/phy-cadence-torrent.c b/drivers/phy/cadence/phy-cadence-torrent.c
-index f099053c583c..c54bafbc7c9d 100644
+index c8a204616cdd..8bab6f9b75d0 100644
 --- a/drivers/phy/cadence/phy-cadence-torrent.c
 +++ b/drivers/phy/cadence/phy-cadence-torrent.c
-@@ -38,6 +38,9 @@
- #define POLL_TIMEOUT_US		5000
- #define PLL_LOCK_TIMEOUT	100000
- 
-+#define DP_PLL0			BIT(0)
-+#define DP_PLL1			BIT(1)
-+
- #define TORRENT_COMMON_CDB_OFFSET	0x0
- 
- #define TORRENT_TX_LANE_CDB_OFFSET(ln, block_offset, reg_offset)	\
-@@ -323,6 +326,7 @@ struct cdns_torrent_phy {
- 	void __iomem *base;	/* DPTX registers base */
- 	void __iomem *sd_base; /* SD0801 registers base */
- 	u32 max_bit_rate; /* Maximum link bit rate to use (in Mbps) */
-+	u32 dp_pll;
- 	struct reset_control *phy_rst;
- 	struct reset_control *apb_rst;
- 	struct device *dev;
-@@ -977,6 +981,30 @@ void cdns_torrent_dp_pma_cmn_vco_cfg_100mhz(struct cdns_torrent_phy *cdns_phy,
- 	}
+@@ -2898,6 +2898,38 @@ static int cdns_torrent_phy_remove(struct platform_device *pdev)
+ 	return 0;
  }
  
-+/* Set PLL used for DP configuration */
-+static int cdns_torrent_dp_get_pll(struct cdns_torrent_phy *cdns_phy,
-+				   enum cdns_torrent_phy_type phy_t2)
-+{
-+	switch (phy_t2) {
-+	case TYPE_PCIE:
-+	case TYPE_USB:
-+		cdns_phy->dp_pll = DP_PLL1;
-+		break;
-+	case TYPE_SGMII:
-+	case TYPE_QSGMII:
-+		cdns_phy->dp_pll = DP_PLL0;
-+		break;
-+	case TYPE_NONE:
-+		cdns_phy->dp_pll = DP_PLL0 | DP_PLL1;
-+		break;
-+	default:
-+		dev_err(cdns_phy->dev, "Unsupported PHY configuration\n");
-+		return -EINVAL;
-+	}
++/* USB and DP link configuration */
++static struct cdns_reg_pairs usb_dp_link_cmn_regs[] = {
++	{0x0002, PHY_PLL_CFG},
++	{0x8600, CMN_PDIAG_PLL0_CLK_SEL_M0}
++};
 +
-+	return 0;
-+}
++static struct cdns_reg_pairs usb_dp_xcvr_diag_ln_regs[] = {
++	{0x0000, XCVR_DIAG_HSCLK_SEL},
++	{0x0001, XCVR_DIAG_HSCLK_DIV},
++	{0x0041, XCVR_DIAG_PLLDRC_CTRL}
++};
 +
- /*
-  * Enable or disable PLL for selected lanes.
-  */
-@@ -1627,6 +1655,7 @@ static int cdns_torrent_dp_init(struct phy *phy)
- {
- 	struct cdns_torrent_inst *inst = phy_get_drvdata(phy);
- 	struct cdns_torrent_phy *cdns_phy = dev_get_drvdata(phy->dev.parent);
-+	int ret;
- 
- 	switch (cdns_phy->ref_clk_rate) {
- 	case CLK_19_2_MHZ:
-@@ -1639,6 +1668,10 @@ static int cdns_torrent_dp_init(struct phy *phy)
- 		return -EINVAL;
- 	}
- 
-+	ret = cdns_torrent_dp_get_pll(cdns_phy, TYPE_NONE);
-+	if (ret)
-+		return ret;
++static struct cdns_reg_pairs dp_usb_xcvr_diag_ln_regs[] = {
++	{0x0001, XCVR_DIAG_HSCLK_SEL},
++	{0x0009, XCVR_DIAG_PLLDRC_CTRL}
++};
 +
- 	cdns_torrent_dp_common_init(cdns_phy, inst);
- 
- 	return cdns_torrent_dp_start(cdns_phy, inst, phy);
++static struct cdns_torrent_vals usb_dp_link_cmn_vals = {
++	.reg_pairs = usb_dp_link_cmn_regs,
++	.num_regs = ARRAY_SIZE(usb_dp_link_cmn_regs),
++};
++
++static struct cdns_torrent_vals usb_dp_xcvr_diag_ln_vals = {
++	.reg_pairs = usb_dp_xcvr_diag_ln_regs,
++	.num_regs = ARRAY_SIZE(usb_dp_xcvr_diag_ln_regs),
++};
++
++static struct cdns_torrent_vals dp_usb_xcvr_diag_ln_vals = {
++	.reg_pairs = dp_usb_xcvr_diag_ln_regs,
++	.num_regs = ARRAY_SIZE(dp_usb_xcvr_diag_ln_regs),
++};
++
+ /* PCIe and DP link configuration */
+ static struct cdns_reg_pairs pcie_dp_link_cmn_regs[] = {
+ 	{0x0003, PHY_PLL_CFG},
+@@ -3914,6 +3946,9 @@ static const struct cdns_torrent_data cdns_map_torrent = {
+ 			[TYPE_PCIE] = {
+ 				[NO_SSC] = &pcie_dp_link_cmn_vals,
+ 			},
++			[TYPE_USB] = {
++				[NO_SSC] = &usb_dp_link_cmn_vals,
++			},
+ 		},
+ 		[TYPE_PCIE] = {
+ 			[TYPE_NONE] = {
+@@ -3991,6 +4026,9 @@ static const struct cdns_torrent_data cdns_map_torrent = {
+ 				[EXTERNAL_SSC] = &usb_sgmii_link_cmn_vals,
+ 				[INTERNAL_SSC] = &usb_sgmii_link_cmn_vals,
+ 			},
++			[TYPE_DP] = {
++				[NO_SSC] = &usb_dp_link_cmn_vals,
++			},
+ 		},
+ 	},
+ 	.xcvr_diag_vals = {
+@@ -4001,6 +4039,9 @@ static const struct cdns_torrent_data cdns_map_torrent = {
+ 			[TYPE_PCIE] = {
+ 				[NO_SSC] = &dp_pcie_xcvr_diag_ln_vals,
+ 			},
++			[TYPE_USB] = {
++				[NO_SSC] = &dp_usb_xcvr_diag_ln_vals,
++			},
+ 		},
+ 		[TYPE_PCIE] = {
+ 			[TYPE_NONE] = {
+@@ -4078,6 +4119,9 @@ static const struct cdns_torrent_data cdns_map_torrent = {
+ 				[EXTERNAL_SSC] = &usb_sgmii_xcvr_diag_ln_vals,
+ 				[INTERNAL_SSC] = &usb_sgmii_xcvr_diag_ln_vals,
+ 			},
++			[TYPE_DP] = {
++				[NO_SSC] = &usb_dp_xcvr_diag_ln_vals,
++			},
+ 		},
+ 	},
+ 	.pcs_cmn_vals = {
+@@ -4102,6 +4146,9 @@ static const struct cdns_torrent_data cdns_map_torrent = {
+ 				[EXTERNAL_SSC] = &usb_phy_pcs_cmn_vals,
+ 				[INTERNAL_SSC] = &usb_phy_pcs_cmn_vals,
+ 			},
++			[TYPE_DP] = {
++				[NO_SSC] = &usb_phy_pcs_cmn_vals,
++			},
+ 		},
+ 	},
+ 	.cmn_vals = {
+@@ -4127,6 +4174,9 @@ static const struct cdns_torrent_data cdns_map_torrent = {
+ 				[TYPE_PCIE] = {
+ 					[NO_SSC] = &dp_100_no_ssc_cmn_vals,
+ 				},
++				[TYPE_USB] = {
++					[NO_SSC] = &sl_dp_100_no_ssc_cmn_vals,
++				},
+ 			},
+ 			[TYPE_PCIE] = {
+ 				[TYPE_NONE] = {
+@@ -4204,6 +4254,9 @@ static const struct cdns_torrent_data cdns_map_torrent = {
+ 					[EXTERNAL_SSC] = &sl_usb_100_no_ssc_cmn_vals,
+ 					[INTERNAL_SSC] = &sl_usb_100_int_ssc_cmn_vals,
+ 				},
++				[TYPE_DP] = {
++					[NO_SSC] = &usb_100_no_ssc_cmn_vals,
++				},
+ 			},
+ 		},
+ 	},
+@@ -4230,6 +4283,9 @@ static const struct cdns_torrent_data cdns_map_torrent = {
+ 				[TYPE_PCIE] = {
+ 					[NO_SSC] = &dp_100_no_ssc_tx_ln_vals,
+ 				},
++				[TYPE_USB] = {
++					[NO_SSC] = &dp_100_no_ssc_tx_ln_vals,
++				},
+ 			},
+ 			[TYPE_PCIE] = {
+ 				[TYPE_NONE] = {
+@@ -4307,6 +4363,9 @@ static const struct cdns_torrent_data cdns_map_torrent = {
+ 					[EXTERNAL_SSC] = &usb_100_no_ssc_tx_ln_vals,
+ 					[INTERNAL_SSC] = &usb_100_no_ssc_tx_ln_vals,
+ 				},
++				[TYPE_DP] = {
++					[NO_SSC] = &usb_100_no_ssc_tx_ln_vals,
++				},
+ 			},
+ 		},
+ 	},
+@@ -4333,6 +4392,9 @@ static const struct cdns_torrent_data cdns_map_torrent = {
+ 				[TYPE_PCIE] = {
+ 					[NO_SSC] = &dp_100_no_ssc_rx_ln_vals,
+ 				},
++				[TYPE_USB] = {
++					[NO_SSC] = &dp_100_no_ssc_rx_ln_vals,
++				},
+ 			},
+ 			[TYPE_PCIE] = {
+ 				[TYPE_NONE] = {
+@@ -4410,6 +4472,9 @@ static const struct cdns_torrent_data cdns_map_torrent = {
+ 					[EXTERNAL_SSC] = &usb_100_no_ssc_rx_ln_vals,
+ 					[INTERNAL_SSC] = &usb_100_no_ssc_rx_ln_vals,
+ 				},
++				[TYPE_DP] = {
++					[NO_SSC] = &usb_100_no_ssc_rx_ln_vals,
++				},
+ 			},
+ 		},
+ 	},
+@@ -4426,6 +4491,9 @@ static const struct cdns_torrent_data ti_j721e_map_torrent = {
+ 			[TYPE_PCIE] = {
+ 				[NO_SSC] = &pcie_dp_link_cmn_vals,
+ 			},
++			[TYPE_USB] = {
++				[NO_SSC] = &usb_dp_link_cmn_vals,
++			},
+ 		},
+ 		[TYPE_PCIE] = {
+ 			[TYPE_NONE] = {
+@@ -4503,6 +4571,9 @@ static const struct cdns_torrent_data ti_j721e_map_torrent = {
+ 				[EXTERNAL_SSC] = &usb_sgmii_link_cmn_vals,
+ 				[INTERNAL_SSC] = &usb_sgmii_link_cmn_vals,
+ 			},
++			[TYPE_DP] = {
++				[NO_SSC] = &usb_dp_link_cmn_vals,
++			},
+ 		},
+ 	},
+ 	.xcvr_diag_vals = {
+@@ -4513,6 +4584,9 @@ static const struct cdns_torrent_data ti_j721e_map_torrent = {
+ 			[TYPE_PCIE] = {
+ 				[NO_SSC] = &dp_pcie_xcvr_diag_ln_vals,
+ 			},
++			[TYPE_USB] = {
++				[NO_SSC] = &dp_usb_xcvr_diag_ln_vals,
++			},
+ 		},
+ 		[TYPE_PCIE] = {
+ 			[TYPE_NONE] = {
+@@ -4590,6 +4664,9 @@ static const struct cdns_torrent_data ti_j721e_map_torrent = {
+ 				[EXTERNAL_SSC] = &usb_sgmii_xcvr_diag_ln_vals,
+ 				[INTERNAL_SSC] = &usb_sgmii_xcvr_diag_ln_vals,
+ 			},
++			[TYPE_DP] = {
++				[NO_SSC] = &usb_dp_xcvr_diag_ln_vals,
++			},
+ 		},
+ 	},
+ 	.pcs_cmn_vals = {
+@@ -4614,6 +4691,9 @@ static const struct cdns_torrent_data ti_j721e_map_torrent = {
+ 				[EXTERNAL_SSC] = &usb_phy_pcs_cmn_vals,
+ 				[INTERNAL_SSC] = &usb_phy_pcs_cmn_vals,
+ 			},
++			[TYPE_DP] = {
++				[NO_SSC] = &usb_phy_pcs_cmn_vals,
++			},
+ 		},
+ 	},
+ 	.cmn_vals = {
+@@ -4639,6 +4719,9 @@ static const struct cdns_torrent_data ti_j721e_map_torrent = {
+ 				[TYPE_PCIE] = {
+ 					[NO_SSC] = &dp_100_no_ssc_cmn_vals,
+ 				},
++				[TYPE_USB] = {
++					[NO_SSC] = &sl_dp_100_no_ssc_cmn_vals,
++				},
+ 			},
+ 			[TYPE_PCIE] = {
+ 				[TYPE_NONE] = {
+@@ -4716,6 +4799,9 @@ static const struct cdns_torrent_data ti_j721e_map_torrent = {
+ 					[EXTERNAL_SSC] = &sl_usb_100_no_ssc_cmn_vals,
+ 					[INTERNAL_SSC] = &sl_usb_100_int_ssc_cmn_vals,
+ 				},
++				[TYPE_DP] = {
++					[NO_SSC] = &usb_100_no_ssc_cmn_vals,
++				},
+ 			},
+ 		},
+ 	},
+@@ -4742,6 +4828,9 @@ static const struct cdns_torrent_data ti_j721e_map_torrent = {
+ 				[TYPE_PCIE] = {
+ 					[NO_SSC] = &dp_100_no_ssc_tx_ln_vals,
+ 				},
++				[TYPE_USB] = {
++					[NO_SSC] = &dp_100_no_ssc_tx_ln_vals,
++				},
+ 			},
+ 			[TYPE_PCIE] = {
+ 				[TYPE_NONE] = {
+@@ -4819,6 +4908,9 @@ static const struct cdns_torrent_data ti_j721e_map_torrent = {
+ 					[EXTERNAL_SSC] = &usb_100_no_ssc_tx_ln_vals,
+ 					[INTERNAL_SSC] = &usb_100_no_ssc_tx_ln_vals,
+ 				},
++				[TYPE_DP] = {
++					[NO_SSC] = &usb_100_no_ssc_tx_ln_vals,
++				},
+ 			},
+ 		},
+ 	},
+@@ -4845,6 +4937,9 @@ static const struct cdns_torrent_data ti_j721e_map_torrent = {
+ 				[TYPE_PCIE] = {
+ 					[NO_SSC] = &dp_100_no_ssc_rx_ln_vals,
+ 				},
++				[TYPE_USB] = {
++					[NO_SSC] = &dp_100_no_ssc_rx_ln_vals,
++				},
+ 			},
+ 			[TYPE_PCIE] = {
+ 				[TYPE_NONE] = {
+@@ -4922,6 +5017,9 @@ static const struct cdns_torrent_data ti_j721e_map_torrent = {
+ 					[EXTERNAL_SSC] = &usb_100_no_ssc_rx_ln_vals,
+ 					[INTERNAL_SSC] = &usb_100_no_ssc_rx_ln_vals,
+ 				},
++				[TYPE_DP] = {
++					[NO_SSC] = &usb_100_no_ssc_rx_ln_vals,
++				},
+ 			},
+ 		},
+ 	},
 -- 
 2.34.1
 
