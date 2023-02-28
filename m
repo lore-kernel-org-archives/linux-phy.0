@@ -4,66 +4,94 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 23566C64ED6
-	for <linux-phy@archiver.kernel.org>; Mon, 27 Feb 2023 19:55:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 63E62C64EC7
+	for <linux-phy@archiver.kernel.org>; Tue, 28 Feb 2023 05:27:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7XChtoPcV+dDoH/NfwPQaznw7uhh5Ae2VlCfIw9qInY=; b=KKgNr9l+KNnWjf
-	SSBTW9p1uuNtBd+m6zXlegj26vkPs6OUSb1STFkkRvIVQDZZJrcd2NR/gnZGktfWP6Zng1i/FZ2+j
-	0jY2I6uKhETYY7V0HxynrwWd/Vi+ngHCJdFPhZFlw05UeuDc915DyDXZIyR7kpvfIhR/5tNFoKHzB
-	RgcrUhU+l+sPpD32QBmg/Uck3rdNdQ4FhPCrPrn7GydkTYExBEGNMdloYuxH4vZZ6jHkUw0kghknV
-	IY+KXMKAyijhf0Xr/z3HKAN/uzdugs9rpW7cY1BjTz+gX1up3SV/wV67+EaH2lDjQrWlmgQGoBm29
-	Qx+ORUNvbcR/V8TP0olA==;
+	List-Owner; bh=H+T45cmD01hWWxfWf2mBrpsfjyNd6BcPl2h/UifFVz4=; b=w4nLzTGpkBtJZm
+	VSInjzPHh2tyobg9VC9OHzDyfYH7BlBuwA/gEfbWDDfvqSQ0lsF0yOKJUOvo21jpg6qzcrf2e61yY
+	LSGUkw0DFr2Zl4sr7n+NpsrXtE4taGTsZlw+ZF7bf8zOOrQHaaCO4ncRGaioV5wcwAPi1kCIOE/7E
+	378W4CPwTNfYaXeJacjH5JiAUNg2hWhMV0WjIas1NGj7HBfKuMW2HxaeDiSzy5jfuobAtYxClt+Iw
+	oOEC7dvykLl13QTfUKQUstrrhr6S6iUueOn5aa8au/4pNv4wQqbRLgKzbtEeUkN7r/Qd+GoDb2HQt
+	9OxE+oTqAt6kPKl0Xi7w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pWjb3-00B41l-IA; Mon, 27 Feb 2023 19:55:41 +0000
-Received: from mail-oo1-f52.google.com ([209.85.161.52])
+	id 1pWsWZ-00C3cf-L7; Tue, 28 Feb 2023 05:27:39 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pWjaz-00B40N-SY
-	for linux-phy@lists.infradead.org; Mon, 27 Feb 2023 19:55:39 +0000
-Received: by mail-oo1-f52.google.com with SMTP id p6-20020a4ab386000000b005252182b0e0so1183544ooo.6
-        for <linux-phy@lists.infradead.org>; Mon, 27 Feb 2023 11:55:36 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=Bi77Q6Z8Ff9qsnZSuzIme0IaEFZzAF96yr6jKLT/oNY=;
-        b=5HuspH7fme8LLFI/DwljqU5AypLNsQlCuz7zZhR/Tj4u0k5jqteWEiYXPDxU5sHXkg
-         prfbBeMptXGd1jWNSzLHlBf/kA65SNo7+OefyX4BjlA1mvq4KO4j9RK4onIZjQe6Wejg
-         Xeadg+FMG2Vlgbe+9rC/dzUoz3MzymVQGOdxlfxTa0lv/veE3UO2hkrvpkOn0Yh//Qd0
-         pS8/dh/5V6SMQz4KS8oJD0bx2orQR+tcnKtVdVRfHL5RMNnDyn++KhT/S0tO0gxe3HvL
-         e787ErpLc/eLKF4kZ4JaA6B8zc7ct0BLuFN0eM5/mr0NOCaRZoGMDVYOvHL3PjXcV8Ab
-         j3Lw==
-X-Gm-Message-State: AO0yUKVga6oszGM/aUobDz06yonaNWwvgAaRryVe6/LofMPCk3hoqZPa
-	QvQwXS+UgCZaH35O+/gAyQ==
-X-Google-Smtp-Source: AK7set9GQuirZFd7o5uFL8Fk7mb03UTZ7Ig8Xe1KNoWVOrcBWkvbceDiwdjpSqwnJAwtKq6eclwsGw==
-X-Received: by 2002:a4a:5250:0:b0:51f:955a:ca37 with SMTP id d77-20020a4a5250000000b0051f955aca37mr12887637oob.8.1677527736308;
-        Mon, 27 Feb 2023 11:55:36 -0800 (PST)
-Received: from robh_at_kernel.org (66-90-144-107.dyn.grandenetworks.net. [66.90.144.107])
-        by smtp.gmail.com with ESMTPSA id h15-20020a4abb8f000000b00525398a1144sm2977105oop.32.2023.02.27.11.55.35
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 27 Feb 2023 11:55:36 -0800 (PST)
-Received: (nullmailer pid 754635 invoked by uid 1000);
-	Mon, 27 Feb 2023 19:55:35 -0000
-Date: Mon, 27 Feb 2023 13:55:35 -0600
-From: Rob Herring <robh@kernel.org>
-To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Cc: andersson@kernel.org, lpieralisi@kernel.org, kw@linux.com, krzysztof.kozlowski+dt@linaro.org, vkoul@kernel.org, konrad.dybcio@linaro.org, bhelgaas@google.com, kishon@kernel.org, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org, devicetree@vger.kernel.org
-Subject: Re: [PATCH v2 02/13] dt-bindings: PCI: qcom: Add iommu properties
-Message-ID: <20230227195535.GA749409-robh@kernel.org>
-References: <20230224105906.16540-1-manivannan.sadhasivam@linaro.org>
- <20230224105906.16540-3-manivannan.sadhasivam@linaro.org>
+	id 1pWsWW-00C3c6-47
+	for linux-phy@lists.infradead.org; Tue, 28 Feb 2023 05:27:37 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 31S1DeCf029148;
+	Tue, 28 Feb 2023 05:27:17 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
+ mime-version : subject : to : cc : references : from : in-reply-to :
+ content-type : content-transfer-encoding; s=qcppdkim1;
+ bh=i5bXA6ZKAB/LyxjgOJfForvyOfh4jgIzBHG/ngcVv1I=;
+ b=Ih1i8xGmnMlPC0nE7qWCM3tKNdT1pfpaZCCSS7TMbXwwWcx4UhVii0c22emhcrJN1dr7
+ OWJJGuxDMNx3YHuJgWv7wyuZfdhkvzuLana10o+O57knGkfBVLP4IyDSauEFgoifwWMP
+ IblRiqNWuy6qa7nbIR3rRL/QUwipTjGjLo7vaBkFYRObgrkWIL+pQXsuo/WyhsJjSEoQ
+ moXY/2f8gEh8tjJ2b0yEpiKC76oLFTEc1+JjtyJruy4lZYDIU1Fc8wlF7ElZi+q6xSSg
+ P9cNFbWxlbUUnNuazaiRzXZMNcDrcZ44nnnqLMGcbGLqrutZgCkhZyzBCVMttcDzZ4Dm wQ== 
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3p17ryrg7n-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 28 Feb 2023 05:27:17 +0000
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 31S5RF7k000879
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 28 Feb 2023 05:27:15 GMT
+Received: from [10.216.43.19] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.986.41; Mon, 27 Feb
+ 2023 21:27:06 -0800
+Message-ID: <bd153038-4427-1f11-1941-5f13fec01cf7@quicinc.com>
+Date: Tue, 28 Feb 2023 10:56:53 +0530
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20230224105906.16540-3-manivannan.sadhasivam@linaro.org>
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.6.1
+Subject: Re: [PATCH 1/7] dt-bindings: PCI: qcom: Add IPQ9574 specific
+ compatible
+To: Manivannan Sadhasivam <mani@kernel.org>
+CC: <agross@kernel.org>, <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
+        <lpieralisi@kernel.org>, <kw@linux.com>, <robh@kernel.org>,
+        <bhelgaas@google.com>, <krzysztof.kozlowski+dt@linaro.org>,
+        <vkoul@kernel.org>, <kishon@kernel.org>, <mturquette@baylibre.com>,
+        <sboyd@kernel.org>, <p.zabel@pengutronix.de>, <svarbanov@mm-sol.com>,
+        <linux-arm-msm@vger.kernel.org>, <linux-pci@vger.kernel.org>,
+        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+        <linux-phy@lists.infradead.org>, <linux-clk@vger.kernel.org>,
+        <quic_srichara@quicinc.com>, <quic_gokulsri@quicinc.com>,
+        <quic_sjaganat@quicinc.com>, <quic_kathirav@quicinc.com>,
+        <quic_arajkuma@quicinc.com>, <quic_anusha@quicinc.com>
+References: <20230214164135.17039-1-quic_devipriy@quicinc.com>
+ <20230214164135.17039-2-quic_devipriy@quicinc.com>
+ <20230224082332.GA5443@thinkpad>
+Content-Language: en-US
+From: Devi Priya <quic_devipriy@quicinc.com>
+In-Reply-To: <20230224082332.GA5443@thinkpad>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: oho-CgnQr-z4KvUVh1hmEyhzT-BU0gUB
+X-Proofpoint-GUID: oho-CgnQr-z4KvUVh1hmEyhzT-BU0gUB
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.219,Aquarius:18.0.930,Hydra:6.0.562,FMLib:17.11.170.22
+ definitions=2023-02-28_02,2023-02-27_01,2023-02-09_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=999
+ lowpriorityscore=0 bulkscore=0 priorityscore=1501 mlxscore=0 phishscore=0
+ adultscore=0 malwarescore=0 suspectscore=0 clxscore=1015 spamscore=0
+ impostorscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2212070000 definitions=main-2302280038
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230227_115537_954797_F0BE40D7 
-X-CRM114-Status: GOOD (  13.94  )
+X-CRM114-CacheID: sfid-20230227_212736_245127_BC585642 
+X-CRM114-Status: GOOD (  18.08  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,38 +103,171 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Feb 24, 2023 at 04:28:55PM +0530, Manivannan Sadhasivam wrote:
-> Most of the PCIe controllers require iommu support to function properly.
-> So let's add them to the binding.
-> 
-> Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-> ---
->  Documentation/devicetree/bindings/pci/qcom,pcie.yaml | 5 +++++
->  1 file changed, 5 insertions(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/pci/qcom,pcie.yaml b/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
-> index a3639920fcbb..f48d0792aa57 100644
-> --- a/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
-> +++ b/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
-> @@ -64,6 +64,11 @@ properties:
->  
->    dma-coherent: true
->  
-> +  iommus:
-> +    maxItems: 1
-> +
-> +  iommu-map: true
-> +
 
-I think both properties together doesn't make sense unless the PCI host 
-itself does DMA in addition to PCI bus devices doing DMA.
 
-Rob
+On 2/24/2023 1:53 PM, Manivannan Sadhasivam wrote:
+> On Tue, Feb 14, 2023 at 10:11:29PM +0530, Devi Priya wrote:
+>> Document the compatible for IPQ9574
+>>
+Hi Mani, Thanks for taking time to review the patch.
+> 
+> You didn't mention about the "msi-parent" property that is being added
+> by this patch
+Sure, will update the commit message in the next spin
+> 
+>> Signed-off-by: Devi Priya <quic_devipriy@quicinc.com>
+>> ---
+>>   .../devicetree/bindings/pci/qcom,pcie.yaml    | 72 ++++++++++++++++++-
+>>   1 file changed, 70 insertions(+), 2 deletions(-)
+>>
+>> diff --git a/Documentation/devicetree/bindings/pci/qcom,pcie.yaml b/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
+>> index 872817d6d2bd..dabdf2684e2d 100644
+>> --- a/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
+>> +++ b/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
+>> @@ -26,6 +26,7 @@ properties:
+>>             - qcom,pcie-ipq8064-v2
+>>             - qcom,pcie-ipq8074
+>>             - qcom,pcie-ipq8074-gen3
+>> +          - qcom,pcie-ipq9574
+>>             - qcom,pcie-msm8996
+>>             - qcom,pcie-qcs404
+>>             - qcom,pcie-sa8540p
+>> @@ -44,11 +45,11 @@ properties:
+>>   
+>>     reg:
+>>       minItems: 4
+>> -    maxItems: 5
+>> +    maxItems: 6
+>>   
+>>     reg-names:
+>>       minItems: 4
+>> -    maxItems: 5
+>> +    maxItems: 6
+>>   
+>>     interrupts:
+>>       minItems: 1
+>> @@ -105,6 +106,8 @@ properties:
+>>       items:
+>>         - const: pciephy
+>>   
+>> +  msi-parent: true
+>> +
+>>     power-domains:
+>>       maxItems: 1
+>>   
+>> @@ -173,6 +176,27 @@ allOf:
+>>               - const: parf # Qualcomm specific registers
+>>               - const: config # PCIe configuration space
+>>   
+>> +  - if:
+>> +      properties:
+>> +        compatible:
+>> +          contains:
+>> +            enum:
+>> +              - qcom,pcie-ipq9574
+>> +    then:
+>> +      properties:
+>> +        reg:
+>> +          minItems: 5
+>> +          maxItems: 6
+>> +        reg-names:
+>> +          minItems: 5
+>> +          items:
+>> +            - const: dbi # DesignWare PCIe registers
+>> +            - const: elbi # External local bus interface registers
+>> +            - const: atu # ATU address space
+>> +            - const: parf # Qualcomm specific registers
+>> +            - const: config # PCIe configuration space
+>> +            - const: aggr_noc #PCIe aggr_noc
+> 
+> Why do you need this region unlike other SoCs? Is the driver making use of it?
+We have the aggr_noc region in ipq9574 to achieve higher throughput & to 
+handle multiple PCIe instances. The driver uses it to rate adapt 1-lane 
+PCIe clocks. My bad, missed it. Will add the driver changes in V2.
+> 
+> Thanks,
+> Mani
+> 
+>> +
+>>     - if:
+>>         properties:
+>>           compatible:
+>> @@ -365,6 +389,39 @@ allOf:
+>>               - const: ahb # AHB Reset
+>>               - const: axi_m_sticky # AXI Master Sticky reset
+>>   
+>> +  - if:
+>> +      properties:
+>> +        compatible:
+>> +          contains:
+>> +            enum:
+>> +              - qcom,pcie-ipq9574
+>> +    then:
+>> +      properties:
+>> +        clocks:
+>> +          minItems: 6
+>> +          maxItems: 6
+>> +        clock-names:
+>> +          items:
+>> +            - const: ahb  # AHB clock
+>> +            - const: aux  # Auxiliary clock
+>> +            - const: axi_m # AXI Master clock
+>> +            - const: axi_s # AXI Slave clock
+>> +            - const: axi_bridge # AXI bridge clock
+>> +            - const: rchng
+>> +        resets:
+>> +          minItems: 8
+>> +          maxItems: 8
+>> +        reset-names:
+>> +          items:
+>> +            - const: pipe # PIPE reset
+>> +            - const: sticky # Core Sticky reset
+>> +            - const: axi_s_sticky # AXI Slave Sticky reset
+>> +            - const: axi_s # AXI Slave reset
+>> +            - const: axi_m_sticky # AXI Master Sticky reset
+>> +            - const: axi_m # AXI Master reset
+>> +            - const: aux # AUX Reset
+>> +            - const: ahb # AHB Reset
+>> +
+>>     - if:
+>>         properties:
+>>           compatible:
+>> @@ -681,6 +738,16 @@ allOf:
+>>           - interconnects
+>>           - interconnect-names
+>>   
+>> +  - if:
+>> +      properties:
+>> +        compatible:
+>> +          contains:
+>> +            enum:
+>> +              - qcom,pcie-ipq9574
+>> +    then:
+>> +      required:
+>> +        - msi-parent
+>> +
+>>     - if:
+>>         not:
+>>           properties:
+>> @@ -693,6 +760,7 @@ allOf:
+>>                   - qcom,pcie-ipq8064v2
+>>                   - qcom,pcie-ipq8074
+>>                   - qcom,pcie-ipq8074-gen3
+>> +                - qcom,pcie-ipq9574
+>>                   - qcom,pcie-qcs404
+>>       then:
+>>         required:
+>> -- 
+>> 2.17.1
+>>
+> 
+Thanks,
+Devi Priya
 
 -- 
 linux-phy mailing list
