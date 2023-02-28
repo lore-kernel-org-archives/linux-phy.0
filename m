@@ -4,93 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9D0E0C64EC7
-	for <linux-phy@archiver.kernel.org>; Tue, 28 Feb 2023 05:29:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1FB2DC6FA8E
+	for <linux-phy@archiver.kernel.org>; Tue, 28 Feb 2023 06:34:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ODEEmI7fbU82jJ2ulFB94ewYupaxniYYoMPSks2H+0Y=; b=0xRGvNnl9TRcGE
-	S6jyq7JVNWNdKfZTIyrIJKIdvZtbpa3F+mIg47SYQBvGg7LYq2O3jG8I42w6+0pURe1UOUSTFWXb3
-	1AAGHwDYiuKVRMJSu5m1sD+/B7s3n7IlYWXoUmG7fgVAGoJbSMPV5qqep4ImrQb1LTPqmY1GZtQoJ
-	IibPqbFsIKRTX6nlHuoF97QJBDf8DIfLinMGnsIXnBB4HKF1l6eQiwOY+wIGVrvfgo764ebgysXK5
-	WAgJ9jkrgSBwYhg2RY8kKg23zPTBfhMpLNRncU9ekpdRHq3qXlldOVtc9WOwgLjaT9HMJ9AhEPXsb
-	YzXqymR74M5q71fL1CIQ==;
+	List-Owner; bh=piG3TNgbTeg6fN4utKZz4DRoYDWrRTNBHaMglJrnuHI=; b=i0L6jP3OCn4afO
+	f/OJvtGai8WKErRSA0DeJDdSFpQCBGUXka16+WrZxEW3FitoUYvMSQMXm03nJXSZq6rmuMGocO7r6
+	Ld5/KVGeYgtppZ4T85/au6gisphRJ5Qbo7Uah55hTNC854GPWDDlpf0BYFbJ6Lf31G7Erkuy9e4Fo
+	ro2j5N3YwbXeCzAKjQbu5rAe4lCzhJZU0LUQhJf4ObPj/F2NztMewShAXLlBdqhNpmiRx1k7bzoeJ
+	aSiPL8T/GOzy7GXKVhBcd1hr479Z3ERef6yGw7z/F3rCPUGdqBDp9TWrmrJqQ7X+iS18uNK8moBms
+	Gfh0QtIWJRRBecZJ8Pfg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pWsXx-00C3hh-Uc; Tue, 28 Feb 2023 05:29:05 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1pWtZ5-00CA3p-Ec; Tue, 28 Feb 2023 06:34:19 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pWsXu-00C3hG-RZ
-	for linux-phy@lists.infradead.org; Tue, 28 Feb 2023 05:29:04 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 31S3Jp6k019028;
-	Tue, 28 Feb 2023 05:28:57 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
- mime-version : subject : to : cc : references : from : in-reply-to :
- content-type : content-transfer-encoding; s=qcppdkim1;
- bh=YBPeZ/vW6Xmc47vO686BRJCT/waEDbyD59nkhdxiJFo=;
- b=K16ahWNXsn6zYqwmdKN8zwOIICWBjoo73PNcC3GPKzvC5FgOYVtqpox5+fbJGBsmEvw7
- uXGJkmk9IFBDHcm5zWLUBKg0rASE5n+BxWOKBmgvnIKJ2fg8kSccSjifM6+DJ9ZoRUcg
- 34sq41tcajLqBAAWedGRq+0McfqrXM6ETSPw666hPLE4M32JpzEVdJboXIaRixSzr6H0
- 76LdODp8NfySOyqf+0rf9CLPCneqd96lr5hch+PFs8pOfZgYUwKcdi6rqtRIniVP4NP0
- wbWYwKny3mvvzna8oj55xSgqDKsNm5mlmoR2y9Xh7vebK1dwAGzEtTHuYeNPwM9X9jNi sg== 
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3p19m0g84d-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 28 Feb 2023 05:28:56 +0000
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 31S5St8Q025346
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 28 Feb 2023 05:28:55 GMT
-Received: from [10.216.43.19] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.986.41; Mon, 27 Feb
- 2023 21:28:46 -0800
-Message-ID: <0370cbb3-918f-9828-0b4c-6fac9fc3f992@quicinc.com>
-Date: Tue, 28 Feb 2023 10:58:43 +0530
-MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.6.1
-Subject: Re: [PATCH 2/7] PCI: qcom: Add IPQ9574 PCIe support
-Content-Language: en-US
-To: Manivannan Sadhasivam <mani@kernel.org>
-CC: <agross@kernel.org>, <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
-        <lpieralisi@kernel.org>, <kw@linux.com>, <robh@kernel.org>,
-        <bhelgaas@google.com>, <krzysztof.kozlowski+dt@linaro.org>,
-        <vkoul@kernel.org>, <kishon@kernel.org>, <mturquette@baylibre.com>,
-        <sboyd@kernel.org>, <p.zabel@pengutronix.de>, <svarbanov@mm-sol.com>,
-        <linux-arm-msm@vger.kernel.org>, <linux-pci@vger.kernel.org>,
-        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-        <linux-phy@lists.infradead.org>, <linux-clk@vger.kernel.org>,
-        <quic_srichara@quicinc.com>, <quic_gokulsri@quicinc.com>,
-        <quic_sjaganat@quicinc.com>, <quic_kathirav@quicinc.com>,
-        <quic_arajkuma@quicinc.com>, <quic_anusha@quicinc.com>
+	id 1pWtZ2-00CA1D-Je
+	for linux-phy@lists.infradead.org; Tue, 28 Feb 2023 06:34:18 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id E10E660FE1;
+	Tue, 28 Feb 2023 06:34:10 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id EFEC7C433D2;
+	Tue, 28 Feb 2023 06:34:02 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1677566050;
+	bh=Nc/tNHHbdZudxlnetoUB/Ahcg8UGlbT8CjlJknq5GZQ=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=SOQLaHlKIFhSg2REjjo7JokZ31rtl+qdIP25T9GE4WtL335pDCx+3dSn6aNcafSEM
+	 f6SBlJ8WU8PgpMRWnxgQhTUwOFy46puyoZvzH0HUTixO+WAEV+55itmCoKI2uxgTS4
+	 qEgsXNZdEMFcZ37jIpMa/ARegBS8tpl9CBBnPUrK4uTR1TzMOmUSDgHwNnUGT+8eWv
+	 vegFlfxxDxEnUZuBgSwOgGE5eR/1CHe2fRMcpGATGptXYE+0eJjs0Tp4sxIUqBlOBX
+	 C+F4veJujCfKt3RXTOObOO33XWNh8Vdo5YD/IFEHHEd93UWwwjoIFqCWbXqwq1XHJQ
+	 OKARpaN8Sx0ww==
+Date: Tue, 28 Feb 2023 12:03:58 +0530
+From: Manivannan Sadhasivam <mani@kernel.org>
+To: Devi Priya <quic_devipriy@quicinc.com>
+Cc: agross@kernel.org, andersson@kernel.org, konrad.dybcio@linaro.org,
+	lpieralisi@kernel.org, kw@linux.com, robh@kernel.org,
+	bhelgaas@google.com, krzysztof.kozlowski+dt@linaro.org,
+	vkoul@kernel.org, kishon@kernel.org, mturquette@baylibre.com,
+	sboyd@kernel.org, p.zabel@pengutronix.de, svarbanov@mm-sol.com,
+	linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org, linux-clk@vger.kernel.org,
+	quic_srichara@quicinc.com, quic_gokulsri@quicinc.com,
+	quic_sjaganat@quicinc.com, quic_kathirav@quicinc.com,
+	quic_arajkuma@quicinc.com, quic_anusha@quicinc.com
+Subject: Re: [PATCH 1/7] dt-bindings: PCI: qcom: Add IPQ9574 specific
+ compatible
+Message-ID: <20230228063358.GA4839@thinkpad>
 References: <20230214164135.17039-1-quic_devipriy@quicinc.com>
- <20230214164135.17039-3-quic_devipriy@quicinc.com>
- <20230224082904.GB5443@thinkpad>
-From: Devi Priya <quic_devipriy@quicinc.com>
-In-Reply-To: <20230224082904.GB5443@thinkpad>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: u2ytA25ZiY2eO8j8w_vXcQ_oqH1PPtH-
-X-Proofpoint-ORIG-GUID: u2ytA25ZiY2eO8j8w_vXcQ_oqH1PPtH-
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.219,Aquarius:18.0.930,Hydra:6.0.562,FMLib:17.11.170.22
- definitions=2023-02-28_02,2023-02-27_01,2023-02-09_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0
- lowpriorityscore=0 bulkscore=0 clxscore=1015 impostorscore=0 spamscore=0
- mlxscore=0 suspectscore=0 adultscore=0 mlxlogscore=999 priorityscore=1501
- phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2212070000 definitions=main-2302280039
+ <20230214164135.17039-2-quic_devipriy@quicinc.com>
+ <20230224082332.GA5443@thinkpad>
+ <bd153038-4427-1f11-1941-5f13fec01cf7@quicinc.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <bd153038-4427-1f11-1941-5f13fec01cf7@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230227_212902_956291_9D0BF0B2 
-X-CRM114-Status: GOOD (  27.59  )
+X-CRM114-CacheID: sfid-20230227_223416_787801_82B89727 
+X-CRM114-Status: GOOD (  22.43  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,212 +80,105 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-
-On 2/24/2023 1:59 PM, Manivannan Sadhasivam wrote:
-> On Tue, Feb 14, 2023 at 10:11:30PM +0530, Devi Priya wrote:
->> Adding PCIe support for IPQ9574 SoC
->>
-> 
-> Please add some information about the PCIe IP in the commit message.
-> Like, the Synopsys IP version, Gen speed etc... and how the support
-> is added (using existing config or a new one).
-> 
-> As others have mentioned, you could reuse the existing config. In that
-> case, add the info in commit message as I suggested above.
-> 
-> And the PCI patch should come last in the series after bindings and dts
-> patches.
-> 
-Sure, will update this accordingly in the next spin
-> Thanks,
-> Mani
-> 
->> Co-developed-by: Anusha Rao <quic_anusha@quicinc.com>
->> Signed-off-by: Anusha Rao <quic_anusha@quicinc.com>
->> Signed-off-by: Devi Priya <quic_devipriy@quicinc.com>
->> ---
->>   drivers/pci/controller/dwc/pcie-qcom.c | 119 +++++++++++++++++++++++++
->>   1 file changed, 119 insertions(+)
->>
->> diff --git a/drivers/pci/controller/dwc/pcie-qcom.c b/drivers/pci/controller/dwc/pcie-qcom.c
->> index a232b04af048..57606c113d45 100644
->> --- a/drivers/pci/controller/dwc/pcie-qcom.c
->> +++ b/drivers/pci/controller/dwc/pcie-qcom.c
->> @@ -193,6 +193,12 @@ struct qcom_pcie_resources_2_9_0 {
->>   	struct reset_control *rst;
->>   };
->>   
->> +struct qcom_pcie_resources_1_27_0 {
->> +	struct clk_bulk_data *clks;
->> +	struct reset_control *rst;
->> +	int num_clks;
->> +};
->> +
->>   union qcom_pcie_resources {
->>   	struct qcom_pcie_resources_1_0_0 v1_0_0;
->>   	struct qcom_pcie_resources_2_1_0 v2_1_0;
->> @@ -201,6 +207,7 @@ union qcom_pcie_resources {
->>   	struct qcom_pcie_resources_2_4_0 v2_4_0;
->>   	struct qcom_pcie_resources_2_7_0 v2_7_0;
->>   	struct qcom_pcie_resources_2_9_0 v2_9_0;
->> +	struct qcom_pcie_resources_1_27_0 v1_27_0;
->>   };
->>   
->>   struct qcom_pcie;
->> @@ -1409,6 +1416,104 @@ static int qcom_pcie_post_init_2_9_0(struct qcom_pcie *pcie)
->>   	return 0;
->>   }
->>   
->> +static int qcom_pcie_get_resources_1_27_0(struct qcom_pcie *pcie)
->> +{
->> +	struct qcom_pcie_resources_1_27_0 *res = &pcie->res.v1_27_0;
->> +	struct dw_pcie *pci = pcie->pci;
->> +	struct device *dev = pci->dev;
->> +
->> +	res->num_clks = devm_clk_bulk_get_all(dev, &res->clks);
->> +	if (res->clks < 0)
->> +		return res->num_clks;
->> +
->> +	res->rst = devm_reset_control_array_get_exclusive(dev);
->> +	if (IS_ERR(res->rst))
->> +		return PTR_ERR(res->rst);
->> +
->> +	return 0;
->> +}
->> +
->> +static void qcom_pcie_deinit_1_27_0(struct qcom_pcie *pcie)
->> +{
->> +	struct qcom_pcie_resources_1_27_0 *res = &pcie->res.v1_27_0;
->> +
->> +	clk_bulk_disable_unprepare(res->num_clks, res->clks);
->> +}
->> +
->> +static int qcom_pcie_init_1_27_0(struct qcom_pcie *pcie)
->> +{
->> +	struct qcom_pcie_resources_1_27_0 *res = &pcie->res.v1_27_0;
->> +	struct device *dev = pcie->pci->dev;
->> +	int ret;
->> +
->> +	ret = reset_control_assert(res->rst);
->> +	if (ret) {
->> +		dev_err(dev, "reset assert failed (%d)\n", ret);
->> +		return ret;
->> +	}
->> +
->> +	/*
->> +	 * Delay periods before and after reset deassert are working values
->> +	 * from downstream Codeaurora kernel
->> +	 */
->> +	usleep_range(2000, 2500);
->> +
->> +	ret = reset_control_deassert(res->rst);
->> +	if (ret) {
->> +		dev_err(dev, "reset deassert failed (%d)\n", ret);
->> +		return ret;
->> +	}
->> +
->> +	usleep_range(2000, 2500);
->> +
->> +	return clk_bulk_prepare_enable(res->num_clks, res->clks);
->> +}
->> +
->> +static int qcom_pcie_post_init_1_27_0(struct qcom_pcie *pcie)
->> +{
->> +	struct dw_pcie *pci = pcie->pci;
->> +	u16 offset = dw_pcie_find_capability(pci, PCI_CAP_ID_EXP);
->> +	u32 val;
->> +	int i;
->> +
->> +	writel(0x8000000, pcie->parf + PCIE20_v3_PARF_SLV_ADDR_SPACE_SIZE);
->> +
->> +	val = readl(pcie->parf + PCIE20_PARF_PHY_CTRL);
->> +	val &= ~BIT(0);
->> +	writel(val, pcie->parf + PCIE20_PARF_PHY_CTRL);
->> +
->> +	writel(0, pcie->parf + PCIE20_PARF_DBI_BASE_ADDR);
->> +
->> +	writel(DEVICE_TYPE_RC, pcie->parf + PCIE20_PARF_DEVICE_TYPE);
->> +	writel(BYPASS | MSTR_AXI_CLK_EN | AHB_CLK_EN,
->> +	       pcie->parf + PCIE20_PARF_MHI_CLOCK_RESET_CTRL);
->> +	writel(GEN3_RELATED_OFF_RXEQ_RGRDLESS_RXTS |
->> +	       GEN3_RELATED_OFF_GEN3_ZRXDC_NONCOMPL,
->> +	       pci->dbi_base + GEN3_RELATED_OFF);
->> +
->> +	writel(MST_WAKEUP_EN | SLV_WAKEUP_EN | MSTR_ACLK_CGC_DIS |
->> +	       SLV_ACLK_CGC_DIS | CORE_CLK_CGC_DIS |
->> +	       AUX_PWR_DET | L23_CLK_RMV_DIS | L1_CLK_RMV_DIS,
->> +	       pcie->parf + PCIE20_PARF_SYS_CTRL);
->> +
->> +	writel(0, pcie->parf + PCIE20_PARF_Q2A_FLUSH);
->> +
->> +	dw_pcie_dbi_ro_wr_en(pci);
->> +	writel(PCIE_CAP_SLOT_VAL, pci->dbi_base + offset + PCI_EXP_SLTCAP);
->> +
->> +	val = readl(pci->dbi_base + offset + PCI_EXP_LNKCAP);
->> +	val &= ~PCI_EXP_LNKCAP_ASPMS;
->> +	writel(val, pci->dbi_base + offset + PCI_EXP_LNKCAP);
->> +
->> +	writel(PCI_EXP_DEVCTL2_COMP_TMOUT_DIS, pci->dbi_base + offset +
->> +	       PCI_EXP_DEVCTL2);
->> +
->> +	for (i = 0; i < 256; i++)
->> +		writel(0, pcie->parf + PCIE20_PARF_BDF_TO_SID_TABLE_N + (4 * i));
->> +
->> +	return 0;
->> +}
->> +
->>   static int qcom_pcie_link_up(struct dw_pcie *pci)
->>   {
->>   	u16 offset = dw_pcie_find_capability(pci, PCI_CAP_ID_EXP);
->> @@ -1620,6 +1725,15 @@ static const struct qcom_pcie_ops ops_2_9_0 = {
->>   	.ltssm_enable = qcom_pcie_2_3_2_ltssm_enable,
->>   };
->>   
->> +/* Qcom IP rev.: 1.27.0 Synopsys IP rev.: 5.80a */
->> +static const struct qcom_pcie_ops ops_1_27_0 = {
->> +	.get_resources = qcom_pcie_get_resources_1_27_0,
->> +	.init = qcom_pcie_init_1_27_0,
->> +	.post_init = qcom_pcie_post_init_1_27_0,
->> +	.deinit = qcom_pcie_deinit_1_27_0,
->> +	.ltssm_enable = qcom_pcie_2_3_2_ltssm_enable,
->> +};
->> +
->>   static const struct qcom_pcie_cfg cfg_1_0_0 = {
->>   	.ops = &ops_1_0_0,
->>   };
->> @@ -1652,6 +1766,10 @@ static const struct qcom_pcie_cfg cfg_2_9_0 = {
->>   	.ops = &ops_2_9_0,
->>   };
->>   
->> +static const struct qcom_pcie_cfg cfg_1_27_0 = {
->> +	.ops = &ops_1_27_0,
->> +};
->> +
->>   static const struct dw_pcie_ops dw_pcie_ops = {
->>   	.link_up = qcom_pcie_link_up,
->>   	.start_link = qcom_pcie_start_link,
->> @@ -1829,6 +1947,7 @@ static const struct of_device_id qcom_pcie_match[] = {
->>   	{ .compatible = "qcom,pcie-ipq8064-v2", .data = &cfg_2_1_0 },
->>   	{ .compatible = "qcom,pcie-ipq8074", .data = &cfg_2_3_3 },
->>   	{ .compatible = "qcom,pcie-ipq8074-gen3", .data = &cfg_2_9_0 },
->> +	{ .compatible = "qcom,pcie-ipq9574", .data = &cfg_1_27_0 },
->>   	{ .compatible = "qcom,pcie-msm8996", .data = &cfg_2_3_2 },
->>   	{ .compatible = "qcom,pcie-qcs404", .data = &cfg_2_4_0 },
->>   	{ .compatible = "qcom,pcie-sa8540p", .data = &cfg_1_9_0 },
->> -- 
->> 2.17.1
->>
-> 
-Thanks,
-Devi Priya
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gVHVlLCBGZWIgMjgsIDIwMjMgYXQgMTA6NTY6NTNBTSArMDUzMCwgRGV2aSBQcml5YSB3cm90
+ZToKPiAKPiAKPiBPbiAyLzI0LzIwMjMgMTo1MyBQTSwgTWFuaXZhbm5hbiBTYWRoYXNpdmFtIHdy
+b3RlOgo+ID4gT24gVHVlLCBGZWIgMTQsIDIwMjMgYXQgMTA6MTE6MjlQTSArMDUzMCwgRGV2aSBQ
+cml5YSB3cm90ZToKPiA+ID4gRG9jdW1lbnQgdGhlIGNvbXBhdGlibGUgZm9yIElQUTk1NzQKPiA+
+ID4gCj4gSGkgTWFuaSwgVGhhbmtzIGZvciB0YWtpbmcgdGltZSB0byByZXZpZXcgdGhlIHBhdGNo
+Lgo+ID4gCj4gPiBZb3UgZGlkbid0IG1lbnRpb24gYWJvdXQgdGhlICJtc2ktcGFyZW50IiBwcm9w
+ZXJ0eSB0aGF0IGlzIGJlaW5nIGFkZGVkCj4gPiBieSB0aGlzIHBhdGNoCj4gU3VyZSwgd2lsbCB1
+cGRhdGUgdGhlIGNvbW1pdCBtZXNzYWdlIGluIHRoZSBuZXh0IHNwaW4KPiA+IAo+ID4gPiBTaWdu
+ZWQtb2ZmLWJ5OiBEZXZpIFByaXlhIDxxdWljX2Rldmlwcml5QHF1aWNpbmMuY29tPgo+ID4gPiAt
+LS0KPiA+ID4gICAuLi4vZGV2aWNldHJlZS9iaW5kaW5ncy9wY2kvcWNvbSxwY2llLnlhbWwgICAg
+fCA3MiArKysrKysrKysrKysrKysrKystCj4gPiA+ICAgMSBmaWxlIGNoYW5nZWQsIDcwIGluc2Vy
+dGlvbnMoKyksIDIgZGVsZXRpb25zKC0pCj4gPiA+IAo+ID4gPiBkaWZmIC0tZ2l0IGEvRG9jdW1l
+bnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3BjaS9xY29tLHBjaWUueWFtbCBiL0RvY3VtZW50
+YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9wY2kvcWNvbSxwY2llLnlhbWwKPiA+ID4gaW5kZXgg
+ODcyODE3ZDZkMmJkLi5kYWJkZjI2ODRlMmQgMTAwNjQ0Cj4gPiA+IC0tLSBhL0RvY3VtZW50YXRp
+b24vZGV2aWNldHJlZS9iaW5kaW5ncy9wY2kvcWNvbSxwY2llLnlhbWwKPiA+ID4gKysrIGIvRG9j
+dW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3BjaS9xY29tLHBjaWUueWFtbAo+ID4gPiBA
+QCAtMjYsNiArMjYsNyBAQCBwcm9wZXJ0aWVzOgo+ID4gPiAgICAgICAgICAgICAtIHFjb20scGNp
+ZS1pcHE4MDY0LXYyCj4gPiA+ICAgICAgICAgICAgIC0gcWNvbSxwY2llLWlwcTgwNzQKPiA+ID4g
+ICAgICAgICAgICAgLSBxY29tLHBjaWUtaXBxODA3NC1nZW4zCj4gPiA+ICsgICAgICAgICAgLSBx
+Y29tLHBjaWUtaXBxOTU3NAo+ID4gPiAgICAgICAgICAgICAtIHFjb20scGNpZS1tc204OTk2Cj4g
+PiA+ICAgICAgICAgICAgIC0gcWNvbSxwY2llLXFjczQwNAo+ID4gPiAgICAgICAgICAgICAtIHFj
+b20scGNpZS1zYTg1NDBwCj4gPiA+IEBAIC00NCwxMSArNDUsMTEgQEAgcHJvcGVydGllczoKPiA+
+ID4gICAgIHJlZzoKPiA+ID4gICAgICAgbWluSXRlbXM6IDQKPiA+ID4gLSAgICBtYXhJdGVtczog
+NQo+ID4gPiArICAgIG1heEl0ZW1zOiA2Cj4gPiA+ICAgICByZWctbmFtZXM6Cj4gPiA+ICAgICAg
+IG1pbkl0ZW1zOiA0Cj4gPiA+IC0gICAgbWF4SXRlbXM6IDUKPiA+ID4gKyAgICBtYXhJdGVtczog
+Ngo+ID4gPiAgICAgaW50ZXJydXB0czoKPiA+ID4gICAgICAgbWluSXRlbXM6IDEKPiA+ID4gQEAg
+LTEwNSw2ICsxMDYsOCBAQCBwcm9wZXJ0aWVzOgo+ID4gPiAgICAgICBpdGVtczoKPiA+ID4gICAg
+ICAgICAtIGNvbnN0OiBwY2llcGh5Cj4gPiA+ICsgIG1zaS1wYXJlbnQ6IHRydWUKPiA+ID4gKwo+
+ID4gPiAgICAgcG93ZXItZG9tYWluczoKPiA+ID4gICAgICAgbWF4SXRlbXM6IDEKPiA+ID4gQEAg
+LTE3Myw2ICsxNzYsMjcgQEAgYWxsT2Y6Cj4gPiA+ICAgICAgICAgICAgICAgLSBjb25zdDogcGFy
+ZiAjIFF1YWxjb21tIHNwZWNpZmljIHJlZ2lzdGVycwo+ID4gPiAgICAgICAgICAgICAgIC0gY29u
+c3Q6IGNvbmZpZyAjIFBDSWUgY29uZmlndXJhdGlvbiBzcGFjZQo+ID4gPiArICAtIGlmOgo+ID4g
+PiArICAgICAgcHJvcGVydGllczoKPiA+ID4gKyAgICAgICAgY29tcGF0aWJsZToKPiA+ID4gKyAg
+ICAgICAgICBjb250YWluczoKPiA+ID4gKyAgICAgICAgICAgIGVudW06Cj4gPiA+ICsgICAgICAg
+ICAgICAgIC0gcWNvbSxwY2llLWlwcTk1NzQKPiA+ID4gKyAgICB0aGVuOgo+ID4gPiArICAgICAg
+cHJvcGVydGllczoKPiA+ID4gKyAgICAgICAgcmVnOgo+ID4gPiArICAgICAgICAgIG1pbkl0ZW1z
+OiA1Cj4gPiA+ICsgICAgICAgICAgbWF4SXRlbXM6IDYKPiA+ID4gKyAgICAgICAgcmVnLW5hbWVz
+Ogo+ID4gPiArICAgICAgICAgIG1pbkl0ZW1zOiA1Cj4gPiA+ICsgICAgICAgICAgaXRlbXM6Cj4g
+PiA+ICsgICAgICAgICAgICAtIGNvbnN0OiBkYmkgIyBEZXNpZ25XYXJlIFBDSWUgcmVnaXN0ZXJz
+Cj4gPiA+ICsgICAgICAgICAgICAtIGNvbnN0OiBlbGJpICMgRXh0ZXJuYWwgbG9jYWwgYnVzIGlu
+dGVyZmFjZSByZWdpc3RlcnMKPiA+ID4gKyAgICAgICAgICAgIC0gY29uc3Q6IGF0dSAjIEFUVSBh
+ZGRyZXNzIHNwYWNlCj4gPiA+ICsgICAgICAgICAgICAtIGNvbnN0OiBwYXJmICMgUXVhbGNvbW0g
+c3BlY2lmaWMgcmVnaXN0ZXJzCj4gPiA+ICsgICAgICAgICAgICAtIGNvbnN0OiBjb25maWcgIyBQ
+Q0llIGNvbmZpZ3VyYXRpb24gc3BhY2UKPiA+ID4gKyAgICAgICAgICAgIC0gY29uc3Q6IGFnZ3Jf
+bm9jICNQQ0llIGFnZ3Jfbm9jCj4gPiAKPiA+IFdoeSBkbyB5b3UgbmVlZCB0aGlzIHJlZ2lvbiB1
+bmxpa2Ugb3RoZXIgU29Dcz8gSXMgdGhlIGRyaXZlciBtYWtpbmcgdXNlIG9mIGl0Pwo+IFdlIGhh
+dmUgdGhlIGFnZ3Jfbm9jIHJlZ2lvbiBpbiBpcHE5NTc0IHRvIGFjaGlldmUgaGlnaGVyIHRocm91
+Z2hwdXQgJiB0bwo+IGhhbmRsZSBtdWx0aXBsZSBQQ0llIGluc3RhbmNlcy4gVGhlIGRyaXZlciB1
+c2VzIGl0IHRvIHJhdGUgYWRhcHQgMS1sYW5lIFBDSWUKPiBjbG9ja3MuIE15IGJhZCwgbWlzc2Vk
+IGl0LiBXaWxsIGFkZCB0aGUgZHJpdmVyIGNoYW5nZXMgaW4gVjIuCgpIbW0sIHRoaXMgaXMgc29t
+ZXRoaW5nIG5ldy4gSG93IGNhbiB5b3UgYWNoaWV2ZSBoaWdoZXIgdGhyb3VnaHB1dCB3aXRoIHRo
+aXMKcmVnaW9uPyBDYW4geW91IGV4cGxhaW4gbW9yZSBvbiBob3cgaXQgaXMgdXNlZD8KClRoYW5r
+cywKTWFuaQoKPiA+IAo+ID4gVGhhbmtzLAo+ID4gTWFuaQo+ID4gCj4gPiA+ICsKPiA+ID4gICAg
+IC0gaWY6Cj4gPiA+ICAgICAgICAgcHJvcGVydGllczoKPiA+ID4gICAgICAgICAgIGNvbXBhdGli
+bGU6Cj4gPiA+IEBAIC0zNjUsNiArMzg5LDM5IEBAIGFsbE9mOgo+ID4gPiAgICAgICAgICAgICAg
+IC0gY29uc3Q6IGFoYiAjIEFIQiBSZXNldAo+ID4gPiAgICAgICAgICAgICAgIC0gY29uc3Q6IGF4
+aV9tX3N0aWNreSAjIEFYSSBNYXN0ZXIgU3RpY2t5IHJlc2V0Cj4gPiA+ICsgIC0gaWY6Cj4gPiA+
+ICsgICAgICBwcm9wZXJ0aWVzOgo+ID4gPiArICAgICAgICBjb21wYXRpYmxlOgo+ID4gPiArICAg
+ICAgICAgIGNvbnRhaW5zOgo+ID4gPiArICAgICAgICAgICAgZW51bToKPiA+ID4gKyAgICAgICAg
+ICAgICAgLSBxY29tLHBjaWUtaXBxOTU3NAo+ID4gPiArICAgIHRoZW46Cj4gPiA+ICsgICAgICBw
+cm9wZXJ0aWVzOgo+ID4gPiArICAgICAgICBjbG9ja3M6Cj4gPiA+ICsgICAgICAgICAgbWluSXRl
+bXM6IDYKPiA+ID4gKyAgICAgICAgICBtYXhJdGVtczogNgo+ID4gPiArICAgICAgICBjbG9jay1u
+YW1lczoKPiA+ID4gKyAgICAgICAgICBpdGVtczoKPiA+ID4gKyAgICAgICAgICAgIC0gY29uc3Q6
+IGFoYiAgIyBBSEIgY2xvY2sKPiA+ID4gKyAgICAgICAgICAgIC0gY29uc3Q6IGF1eCAgIyBBdXhp
+bGlhcnkgY2xvY2sKPiA+ID4gKyAgICAgICAgICAgIC0gY29uc3Q6IGF4aV9tICMgQVhJIE1hc3Rl
+ciBjbG9jawo+ID4gPiArICAgICAgICAgICAgLSBjb25zdDogYXhpX3MgIyBBWEkgU2xhdmUgY2xv
+Y2sKPiA+ID4gKyAgICAgICAgICAgIC0gY29uc3Q6IGF4aV9icmlkZ2UgIyBBWEkgYnJpZGdlIGNs
+b2NrCj4gPiA+ICsgICAgICAgICAgICAtIGNvbnN0OiByY2huZwo+ID4gPiArICAgICAgICByZXNl
+dHM6Cj4gPiA+ICsgICAgICAgICAgbWluSXRlbXM6IDgKPiA+ID4gKyAgICAgICAgICBtYXhJdGVt
+czogOAo+ID4gPiArICAgICAgICByZXNldC1uYW1lczoKPiA+ID4gKyAgICAgICAgICBpdGVtczoK
+PiA+ID4gKyAgICAgICAgICAgIC0gY29uc3Q6IHBpcGUgIyBQSVBFIHJlc2V0Cj4gPiA+ICsgICAg
+ICAgICAgICAtIGNvbnN0OiBzdGlja3kgIyBDb3JlIFN0aWNreSByZXNldAo+ID4gPiArICAgICAg
+ICAgICAgLSBjb25zdDogYXhpX3Nfc3RpY2t5ICMgQVhJIFNsYXZlIFN0aWNreSByZXNldAo+ID4g
+PiArICAgICAgICAgICAgLSBjb25zdDogYXhpX3MgIyBBWEkgU2xhdmUgcmVzZXQKPiA+ID4gKyAg
+ICAgICAgICAgIC0gY29uc3Q6IGF4aV9tX3N0aWNreSAjIEFYSSBNYXN0ZXIgU3RpY2t5IHJlc2V0
+Cj4gPiA+ICsgICAgICAgICAgICAtIGNvbnN0OiBheGlfbSAjIEFYSSBNYXN0ZXIgcmVzZXQKPiA+
+ID4gKyAgICAgICAgICAgIC0gY29uc3Q6IGF1eCAjIEFVWCBSZXNldAo+ID4gPiArICAgICAgICAg
+ICAgLSBjb25zdDogYWhiICMgQUhCIFJlc2V0Cj4gPiA+ICsKPiA+ID4gICAgIC0gaWY6Cj4gPiA+
+ICAgICAgICAgcHJvcGVydGllczoKPiA+ID4gICAgICAgICAgIGNvbXBhdGlibGU6Cj4gPiA+IEBA
+IC02ODEsNiArNzM4LDE2IEBAIGFsbE9mOgo+ID4gPiAgICAgICAgICAgLSBpbnRlcmNvbm5lY3Rz
+Cj4gPiA+ICAgICAgICAgICAtIGludGVyY29ubmVjdC1uYW1lcwo+ID4gPiArICAtIGlmOgo+ID4g
+PiArICAgICAgcHJvcGVydGllczoKPiA+ID4gKyAgICAgICAgY29tcGF0aWJsZToKPiA+ID4gKyAg
+ICAgICAgICBjb250YWluczoKPiA+ID4gKyAgICAgICAgICAgIGVudW06Cj4gPiA+ICsgICAgICAg
+ICAgICAgIC0gcWNvbSxwY2llLWlwcTk1NzQKPiA+ID4gKyAgICB0aGVuOgo+ID4gPiArICAgICAg
+cmVxdWlyZWQ6Cj4gPiA+ICsgICAgICAgIC0gbXNpLXBhcmVudAo+ID4gPiArCj4gPiA+ICAgICAt
+IGlmOgo+ID4gPiAgICAgICAgIG5vdDoKPiA+ID4gICAgICAgICAgIHByb3BlcnRpZXM6Cj4gPiA+
+IEBAIC02OTMsNiArNzYwLDcgQEAgYWxsT2Y6Cj4gPiA+ICAgICAgICAgICAgICAgICAgIC0gcWNv
+bSxwY2llLWlwcTgwNjR2Mgo+ID4gPiAgICAgICAgICAgICAgICAgICAtIHFjb20scGNpZS1pcHE4
+MDc0Cj4gPiA+ICAgICAgICAgICAgICAgICAgIC0gcWNvbSxwY2llLWlwcTgwNzQtZ2VuMwo+ID4g
+PiArICAgICAgICAgICAgICAgIC0gcWNvbSxwY2llLWlwcTk1NzQKPiA+ID4gICAgICAgICAgICAg
+ICAgICAgLSBxY29tLHBjaWUtcWNzNDA0Cj4gPiA+ICAgICAgIHRoZW46Cj4gPiA+ICAgICAgICAg
+cmVxdWlyZWQ6Cj4gPiA+IC0tIAo+ID4gPiAyLjE3LjEKPiA+ID4gCj4gPiAKPiBUaGFua3MsCj4g
+RGV2aSBQcml5YQoKLS0gCuCuruCuo+Cuv+CuteCuo+CvjeCuo+CuqeCvjSDgrprgrqTgrr7grprg
+rr/grrXgrq7gr40KCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5p
+bmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZv
+L2xpbnV4LXBoeQo=
