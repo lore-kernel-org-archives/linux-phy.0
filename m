@@ -4,66 +4,95 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B2B54C64EC7
-	for <linux-phy@archiver.kernel.org>; Tue, 28 Feb 2023 08:58:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D25BDC64EC7
+	for <linux-phy@archiver.kernel.org>; Tue, 28 Feb 2023 11:50:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dA7mxLsPSDU/uWR0HjQluIWnmiA5nwilE92hiLR02nQ=; b=EKC5AcY1FZq5/R
-	4e2U7y+2LLgJ77vdzE4IuFBHo92tN+2HV62PweGvNy4R/ro3Y8R4M8/byu7qhQoNe4loTlfPEhCD2
-	LyYw3TKlFDO0m3l5Hsdd1m7jnl4u0Q95wgK+hksgUrV63uEVmueWC54DoknaWy/o7ELRbgQ9HE7wE
-	75j6KmWp3CC+qJ5GzFlgLQyWa5/CtiB0YgtdzqnDKdlYY+sui7PS1z3nLh77/8qpx41tHmq0s+j3I
-	x6uT94fNwtCYzz2zd74PoHnpv49ERnYmmmGzxTE051AtkLSACJdjWH1cX4tQ3B+IIQNfMmXBj3oAh
-	5wd8dtXNhov0Y0rPgvFA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=QqsMZCHQNnXqzykfnNTnZsR1sh4JJAnhYkS+yAtkNNo=; b=FVzfLveMaJPHa0
+	7WdYLjTORN/8HpjtgW5/6NOAvXRLCPY5P8S7sKXTVlDOdpbG/sXwdvrPXbXEEJbqttuQPtApjJYxr
+	z0YlLzQ0u6Wtd6kQVFa8KGSZckLOfQGxCUbNNhOcjyRKGar9uH6qTmw6jIYMIZGCI5Snv7YenjNex
+	Z8SZRjtrG8Km2hXbwACsicvWcbTNqzEXAzGmJnbuDUvbe4G/StisymYD3NsG2A/eTmnAdDvEnAsau
+	Qlpj2iQYpUQPop+6jUZnQxMv+d84TcHR9PtlswxKp3ItoumMaIgLoZ/NW3YaJ0osI4/cOb03lg5FE
+	Gaq3C+c+f326GflLqlWA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pWvoj-00CR3l-14; Tue, 28 Feb 2023 08:58:37 +0000
-Received: from fd01.gateway.ufhost.com ([61.152.239.71])
-	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pWvof-00CR0h-Dw; Tue, 28 Feb 2023 08:58:35 +0000
-Received: from EXMBX166.cuchost.com (unknown [175.102.18.54])
-	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
-	(Client CN "EXMBX166", Issuer "EXMBX166" (not verified))
-	by fd01.gateway.ufhost.com (Postfix) with ESMTP id F169A24E46D;
-	Tue, 28 Feb 2023 16:57:58 +0800 (CST)
-Received: from EXMBX162.cuchost.com (172.16.6.72) by EXMBX166.cuchost.com
- (172.16.6.76) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Tue, 28 Feb
- 2023 16:55:09 +0800
-Received: from [192.168.125.68] (113.72.145.171) by EXMBX162.cuchost.com
- (172.16.6.72) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Tue, 28 Feb
- 2023 16:55:08 +0800
-Message-ID: <6aaebbc4-9d60-6445-7066-a9a60c50c6dd@starfivetech.com>
-Date: Tue, 28 Feb 2023 16:55:06 +0800
-MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.8.0
-Subject: Re: [PATCH v2 1/3] dt-bindings: phy: Add starfive,jh7110-dphy-rx
-To: Rob Herring <robh@kernel.org>
-CC: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Emil Renner Berthing
-	<kernel@esmil.dk>, Conor Dooley <conor@kernel.org>, Paul Walmsley
-	<paul.walmsley@sifive.com>, Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou
-	<aou@eecs.berkeley.edu>, Philipp Zabel <p.zabel@pengutronix.de>, Jack Zhu
-	<jack.zhu@starfivetech.com>, <linux-phy@lists.infradead.org>,
-	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-	<linux-riscv@lists.infradead.org>
-References: <20230223015952.201841-1-changhuang.liang@starfivetech.com>
- <20230223015952.201841-2-changhuang.liang@starfivetech.com>
- <20230227183434.GA642331-robh@kernel.org>
-Content-Language: en-US
-From: Changhuang Liang <changhuang.liang@starfivetech.com>
-In-Reply-To: <20230227183434.GA642331-robh@kernel.org>
-X-Originating-IP: [113.72.145.171]
-X-ClientProxiedBy: EXCAS064.cuchost.com (172.16.6.24) To EXMBX162.cuchost.com
- (172.16.6.72)
-X-YovoleRuleAgent: yovoleflag
+	id 1pWyUd-00D4Yb-1I; Tue, 28 Feb 2023 11:50:03 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
+	id 1pWyUa-00D4WX-5J
+	for linux-phy@lists.infradead.org; Tue, 28 Feb 2023 11:50:01 +0000
+Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 31S6Vr8P024430;
+	Tue, 28 Feb 2023 11:49:26 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
+ subject : date : message-id; s=qcppdkim1;
+ bh=RiKQxet1aV+aN1dp0TU54EAcebB+HyrH3HYWI54gMSk=;
+ b=My3zBjawpEp2W4HaP/3TCGFoH3c4bIEkmg6BgoNEtFQh5ecHJVL6qM//eawnKZsuTl9M
+ fsSDWAckTsxk2NHJsKOyTaLnF6cY2Q1kfYT399/P9pujmgzyjL9+qjU+dYlwmX2vdt0x
+ PrP0Oj1G0qtZtE/IyE5rt6ShFDWJCKUhCTVVJThbahZUE/nrCeqwFmnVpXBhLqSsNuLA
+ VqvidQm6nk7ZHsB2JNMmQU20gmCuKnS/lFr7kjPCfQu7y2zY35nho0ywlXEY06vWHT5V
+ SUZPgPfZmw+x4wewfhWC6O1z3/XGvVWtDtdhOsaMrtF4mUiV6fzcsL3PUj+OLSk4vPlv gg== 
+Received: from apblrppmta02.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3p1ccxgtb9-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 28 Feb 2023 11:49:25 +0000
+Received: from pps.filterd (APBLRPPMTA02.qualcomm.com [127.0.0.1])
+	by APBLRPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTP id 31SBnEW4004703;
+	Tue, 28 Feb 2023 11:49:21 GMT
+Received: from pps.reinject (localhost [127.0.0.1])
+	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTP id 3nybdkeaxb-1;
+	Tue, 28 Feb 2023 11:49:21 +0000
+Received: from APBLRPPMTA02.qualcomm.com (APBLRPPMTA02.qualcomm.com [127.0.0.1])
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 31SBnLcE006237;
+	Tue, 28 Feb 2023 11:49:21 GMT
+Received: from hu-sgudaval-hyd.qualcomm.com (hu-krichai-hyd.qualcomm.com [10.213.110.37])
+	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTP id 31SBnKX5006167;
+	Tue, 28 Feb 2023 11:49:21 +0000
+Received: by hu-sgudaval-hyd.qualcomm.com (Postfix, from userid 4058933)
+	id F027547B9; Tue, 28 Feb 2023 17:19:19 +0530 (+0530)
+From: Krishna chaitanya chundru <quic_krichai@quicinc.com>
+To: helgaas@kernel.org
+Cc: linux-pci@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+        linux-kernel@vger.kernel.org, mka@chromium.org,
+        quic_vbadigan@quicinc.com, quic_hemantk@quicinc.com,
+        quic_nitegupt@quicinc.com, quic_skananth@quicinc.com,
+        quic_ramkri@quicinc.com, manivannan.sadhasivam@linaro.org,
+        swboyd@chromium.org, dmitry.baryshkov@linaro.org, svarbanov@mm-sol.com,
+        agross@kernel.org, andersson@kernel.org, konrad.dybcio@somainline.org,
+        lpieralisi@kernel.org, robh@kernel.org, kw@linux.com,
+        bhelgaas@google.com, linux-phy@lists.infradead.org, vkoul@kernel.org,
+        kishon@ti.com, mturquette@baylibre.com, linux-clk@vger.kernel.org,
+        Krishna chaitanya chundru <quic_krichai@quicinc.com>,
+        stable@vger.kernel.org, Konrad Dybcio <konrad.dybcio@linaro.org>,
+        Rob Herring <robh+dt@kernel.org>,
+        Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+        Prasad Malisetty <pmaliset@codeaurora.org>,
+        devicetree@vger.kernel.org (open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS)
+Subject: [PATCH V2] arm64: dts: qcom: sc7280: Mark PCIe controller as cache coherent
+Date: Tue, 28 Feb 2023 17:19:12 +0530
+Message-Id: <1677584952-17496-1-git-send-email-quic_krichai@quicinc.com>
+X-Mailer: git-send-email 2.7.4
+X-QCInternal: smtphost
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: PJJOU_hZapybQxqINK46QQuT9oKQlc8V
+X-Proofpoint-ORIG-GUID: PJJOU_hZapybQxqINK46QQuT9oKQlc8V
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.219,Aquarius:18.0.930,Hydra:6.0.562,FMLib:17.11.170.22
+ definitions=2023-02-28_07,2023-02-28_01,2023-02-09_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
+ priorityscore=1501 spamscore=0 malwarescore=0 phishscore=0 adultscore=0
+ clxscore=1011 mlxlogscore=656 bulkscore=0 impostorscore=0 suspectscore=0
+ mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2212070000 definitions=main-2302280094
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230228_005833_782150_3FB9C105 
-X-CRM114-Status: UNSURE (   9.35  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230228_035000_404386_33A5FF2A 
+X-CRM114-Status: GOOD (  14.71  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,70 +104,45 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+If the controller is not marked as cache coherent, then kernel will
+try to ensure coherency during dma-ops and that may cause data corruption.
+So, mark the PCIe node as dma-coherent as the devices on PCIe bus are
+cache coherent.
 
+Cc: stable@vger.kernel.org
+Fixes: 92e0ee9f83b3 ("arm64: dts: qcom: sc7280: Add PCIe and PHY related node")
+Signed-off-by: Krishna chaitanya chundru <quic_krichai@quicinc.com>
+---
 
-On 2023/2/28 2:34, Rob Herring wrote:
-> On Wed, Feb 22, 2023 at 05:59:50PM -0800, Changhuang Liang wrote:
-[...]
->> +
->> +  clocks:
->> +    maxItems: 3
->> +
->> +  clock-names:
->> +    items:
->> +      - const: cfg
->> +      - const: ref
->> +      - const: tx
-> 
-> Should be 'rx' given this is the 'rx' block? A description of each clock 
-> in 'clocks' would be good.
-> 
+changes since v1:
+	- Updated the commit text.
+---
+---
+ arch/arm64/boot/dts/qcom/sc7280.dtsi | 2 ++
+ 1 file changed, 2 insertions(+)
 
-'tx': This clock is directly used to generate transmit escape sequences, 
-will add description of each clock in 'clocks'.
+diff --git a/arch/arm64/boot/dts/qcom/sc7280.dtsi b/arch/arm64/boot/dts/qcom/sc7280.dtsi
+index bdcb749..8f4ab6b 100644
+--- a/arch/arm64/boot/dts/qcom/sc7280.dtsi
++++ b/arch/arm64/boot/dts/qcom/sc7280.dtsi
+@@ -2131,6 +2131,8 @@
+ 			pinctrl-names = "default";
+ 			pinctrl-0 = <&pcie1_clkreq_n>;
+ 
++			dma-coherent;
++
+ 			iommus = <&apps_smmu 0x1c80 0x1>;
+ 
+ 			iommu-map = <0x0 &apps_smmu 0x1c80 0x1>,
+-- 
+2.7.4
 
->> +
->> +  resets:
->> +    items:
->> +      - description: DPHY_HW reset
->> +      - description: DPHY_B09_ALWAYS_ON reset
->> +
->> +  starfive,aon-syscon:
->> +    $ref: /schemas/types.yaml#/definitions/phandle-array
->> +    items:
->> +      items:
-> 
-> - items: ?
-> 
-> Otherwise, multiple 2 cell entries are allowed. Is that intended?
-> 
-
-Will change to:
-items:
-  - items:
-
->> +        - description: phandle of AON SYSCON
->> +        - description: register offset
->> +    description: The power of dphy rx is configured by AON SYSCON
->> +      in this property.
-> 
-> 
->> +
->> +  "#phy-cells":
->> +    const: 0
->> +
->> +required:
->> +  - compatible
->> +  - reg
-[...]
->> -- 
->> 2.25.1
->>
 
 -- 
 linux-phy mailing list
