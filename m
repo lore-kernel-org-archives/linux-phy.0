@@ -4,80 +4,143 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 87286C64EC7
-	for <linux-phy@archiver.kernel.org>; Tue, 28 Feb 2023 17:28:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6032FC64ED6
+	for <linux-phy@archiver.kernel.org>; Wed,  1 Mar 2023 13:11:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nMnFoECgEqcY4LOxGXYdAFg5OFfjl6xeGXADng3Gfzc=; b=guH5gLvb++fsdb
-	beV0Yv60A7ByUsoCDJeWzM70y5JV4EEW1EKz7nCtdY7eKVZ5Rpy7IZ9Z1w6zOXCdTc6JFCxyhP0cf
-	ij9AGPX1kXNmb1atSlsWANHOdiunfr50GwPu5a71H8EEtpLYIivQduBgGU6I4lin2zS4qc+ojbdNo
-	0weAYrDEKmuNx/0wWOUJITH9YUMEEyAHdBjn1dmPQioblyl7ock8+Q8y75HOBt9n2FjTG+Y7ky8ut
-	Ufj680qezKuDvq1uMMVaccpiPgwZar6QhpUngr+KQmM9XJFwaow9Ouz0KmdJ/0OBnBn5OLy45M5DL
-	b7ADMrVFdtCPT8P1csVw==;
+	List-Owner; bh=uyDB2tVdxl7HhXAKDDjobpS8VAyMD4owlXRTh7twBZ0=; b=WVvL+VY0pOtKl9
+	VlqnfOdAzq4QcsGpU3FFUPyqYiusDYwG+9mOWk1HHUxQ8whsH+450O13uJlIMj4zB9l6snQ48bPt2
+	cAZ04KveMkCEHcGGVBoSOoa6JaenjYqhqyQC3veqpY7ioWjbEr0Hq/tfalR1+HI5b7ybgmPGUoE4E
+	SIa2awFfkyGN9QVTg4XOQSzLZ0tAb/A0ClZcBhbj9ayOYPSsytCgnZh984yX+H4MfQReSPpuQovU2
+	8uTHolG5FroLMSB7bM2MP6GPLlDaH/5djvVgAm8YSJGhlmOTDJUN+VyacfZ3sDq3QHIsDOELk1OFA
+	6cFOYXnaayJ2Jx+3lCSQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pX3mQ-00DsSM-UL; Tue, 28 Feb 2023 17:28:46 +0000
-Received: from mx07-00178001.pphosted.com ([185.132.182.106])
+	id 1pXMFO-00GJn8-NH; Wed, 01 Mar 2023 13:11:54 +0000
+Received: from mx0b-0014ca01.pphosted.com ([208.86.201.193] helo=mx0a-0014ca01.pphosted.com)
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pX3mO-00DsRS-0f; Tue, 28 Feb 2023 17:28:45 +0000
-Received: from pps.filterd (m0288072.ppops.net [127.0.0.1])
-	by mx07-00178001.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 31SDbjhD009965;
-	Tue, 28 Feb 2023 18:28:25 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com; h=message-id : date :
- mime-version : subject : to : cc : references : from : in-reply-to :
- content-type : content-transfer-encoding; s=selector1;
- bh=5sU1MYw+h2bs1Kph7VN54clioQ5rOSLy/OOrJb/uFh4=;
- b=OyPmh8DgcXRNN/QBmFY7y6jcAOMIMksQSBwfdnKZhgzKmV5+KYYz/LIdu1WMTAs+mP5h
- X9BuyUD7neC/nkXnCl+fxwF4vihksf6lAdc8mIR/m2E3rP868x7qVQ+izCoTzf0P3rf/
- cyjmvghBIif9RZxgCZAC9PxWcYWaizDhTdkH8aXLWVLY8QKJOUSSFWLNZhSCCGaGn0sb
- QdNpxVEwvD0E8x2ft4iLx9V7TDnf22uB4iSQr9FCtVqZbb/PfmbAr15Eu1eKZzOC5sEA
- hN5vlnQ1Xy6bVOvVMi9z1UI5e8lg1P638xh2IijenuBv7K5AdvSbCsc6JJFtoqaXuVHg FA== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
-	by mx07-00178001.pphosted.com (PPS) with ESMTPS id 3ny8mr3a3x-1
+	id 1pXMFL-00GJkU-23
+	for linux-phy@lists.infradead.org; Wed, 01 Mar 2023 13:11:53 +0000
+Received: from pps.filterd (m0042333.ppops.net [127.0.0.1])
+	by mx0b-0014ca01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 321AXfEW018556;
+	Wed, 1 Mar 2023 05:11:36 -0800
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cadence.com; h=from : to : cc :
+ subject : date : message-id : in-reply-to : references : mime-version :
+ content-type; s=proofpoint;
+ bh=fG0iZ5BMv90Ts8iEkPl0EXZ6iwuYU+tfmWRPVVMod90=;
+ b=X1aETLAh1O9DhvJTFvhsVCMz9yrSiLEASF2e11KE88C5eRASwxUIJobQXTSy9nQarOoR
+ TnM2dd02YShaSoLSsgyBtyhcfRB5dolv8i1VStlfabMGMeboFNAWMa4wyP+k58J9J1ph
+ VhUp7mxcMhloJ6pW/RzE3SuhZnjFo1FDKOftECUXBia8pWMIye+BPvTla7CUKgwWq8V2
+ gd9rL0wKVnfPHrWiFshq4dwoDKpJYWjDRtAOVMMh9Ito0fVd4T2hIV3kRV2Rtyqzy6uu
+ g1A6EOPYIvRu8eezTewPAP+TPP/UoGpPITKMFv+27knE6VP/qkQl9rR7MqNUkLPKexKX Ow== 
+Received: from nam12-dm6-obe.outbound.protection.outlook.com (mail-dm6nam12lp2177.outbound.protection.outlook.com [104.47.59.177])
+	by mx0b-0014ca01.pphosted.com (PPS) with ESMTPS id 3p25280kxg-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 28 Feb 2023 18:28:25 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
-	by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 9AAB410002A;
-	Tue, 28 Feb 2023 18:28:23 +0100 (CET)
-Received: from Webmail-eu.st.com (shfdag1node2.st.com [10.75.129.70])
-	by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 93D942291A1;
-	Tue, 28 Feb 2023 18:28:23 +0100 (CET)
-Received: from [10.48.1.102] (10.48.1.102) by SHFDAG1NODE2.st.com
- (10.75.129.70) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.17; Tue, 28 Feb
- 2023 18:28:22 +0100
-Message-ID: <27b9e057-bdd7-b4e6-445c-8da700423600@foss.st.com>
-Date: Tue, 28 Feb 2023 18:28:21 +0100
+	Wed, 01 Mar 2023 05:11:36 -0800
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=mzDNI7c2A4AbVFjCmtgBlj1ODxMDMgjZ9dC3yNrLZ8U9tHzESVpf4ZBNv8+e2BFix/ABTzcJ5U5g3ITvsj1OCjh6PnvSMGU/5RUejze56AWhme0/aEcsf+fg5QbhjpTCkxZlpGvb0WsWhNBS/xh+G57F71UpnI8PdoO1qo5bk2OLBhy07kbW6DE8epDePLTL1gpDljWW2BxL+xLN+RlCsOfq4wZ4BZSGiSqumbjimSSTT3GPx+KlZTqgWphYaY9HyfirgS5urXRXU68yL0BtIpTEqt7EC3IfPZDuOK62Hr+ZKrs32JOLGxsc89Wjk7cGAaTbHzuSZrUARgQinDimwA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=fG0iZ5BMv90Ts8iEkPl0EXZ6iwuYU+tfmWRPVVMod90=;
+ b=fDsPXy2G2TeqqdqUEcN3e69uChJxP74KA3D3mhDtK076RQd8Now6igFqSSey45K/fLBA2UiEYxXipxcxJdaw/oxgM+eUd5kGDqjKL4yTbcudyQpQxdzzR7UgBJ+0C3WUbzPy+Ugri2oNimYUOLCi0aD9azc9lR3en1DMlrjtzdyH8oK3bCgzh4p2Vj3NkZYW0bq68zKHO+ILWvD+kTYfQ2sWh2TqthkWnm37CWluQEOgqWIN0wq67WBzgc4NM4uFpIXMkhuB0d1CgNgmEKLMjTgjmeYFx0dtVt148ReGjj0oEnyM3z4JyG3SsGzGnvkzQrWJr/rEvzBDG/1AkBb6KQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 158.140.1.148) smtp.rcpttodomain=kernel.org smtp.mailfrom=cadence.com;
+ dmarc=pass (p=none sp=none pct=100) action=none header.from=cadence.com;
+ dkim=none (message not signed); arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cadence.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=fG0iZ5BMv90Ts8iEkPl0EXZ6iwuYU+tfmWRPVVMod90=;
+ b=k8IpLYPUIhagwh9iHNd049A+d1agp+MkbnWRqSGHAa2StCtQEoqwA+f+uZI7TRnp18rioHDHJ/9HLE58lS7PatFjR/9mq2fWLil3NWY/7DYMidg21HPXHkEjFMdk+zl9u1dj/CGIRcMQol9gnHgBSmuijAXJ0AFd7yOej9FET/M=
+Received: from BN9PR03CA0864.namprd03.prod.outlook.com (2603:10b6:408:13d::29)
+ by SN6PR07MB8206.namprd07.prod.outlook.com (2603:10b6:805:e8::33) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6134.24; Wed, 1 Mar
+ 2023 13:11:33 +0000
+Received: from BN8NAM12FT062.eop-nam12.prod.protection.outlook.com
+ (2603:10b6:408:13d:cafe::c4) by BN9PR03CA0864.outlook.office365.com
+ (2603:10b6:408:13d::29) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6156.18 via Frontend
+ Transport; Wed, 1 Mar 2023 13:11:32 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 158.140.1.148)
+ smtp.mailfrom=cadence.com; dkim=none (message not signed)
+ header.d=none;dmarc=pass action=none header.from=cadence.com;
+Received-SPF: Pass (protection.outlook.com: domain of cadence.com designates
+ 158.140.1.148 as permitted sender) receiver=protection.outlook.com;
+ client-ip=158.140.1.148; helo=sjmaillnx2.cadence.com; pr=C
+Received: from sjmaillnx2.cadence.com (158.140.1.148) by
+ BN8NAM12FT062.mail.protection.outlook.com (10.13.183.65) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.6156.12 via Frontend Transport; Wed, 1 Mar 2023 13:11:32 +0000
+Received: from maileu5.global.cadence.com (eudvw-maileu5.cadence.com [10.160.110.202])
+	by sjmaillnx2.cadence.com (8.14.4/8.14.4) with ESMTP id 321DBTih021365
+	(version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256 verify=OK);
+	Wed, 1 Mar 2023 05:11:31 -0800
+Received: from maileu4.global.cadence.com (10.160.110.201) by
+ maileu5.global.cadence.com (10.160.110.202) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.2375.24; Wed, 1 Mar 2023 14:11:29 +0100
+Received: from vleu-orange.cadence.com (10.160.88.83) by
+ maileu4.global.cadence.com (10.160.110.201) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2375.7
+ via Frontend Transport; Wed, 1 Mar 2023 14:11:29 +0100
+Received: from vleu-orange.cadence.com (localhost.localdomain [127.0.0.1])
+	by vleu-orange.cadence.com (8.14.4/8.14.4) with ESMTP id 321DBTCp006160;
+	Wed, 1 Mar 2023 14:11:29 +0100
+Received: (from sjakhade@localhost)
+	by vleu-orange.cadence.com (8.14.4/8.14.4/Submit) id 321DBTdF006154;
+	Wed, 1 Mar 2023 14:11:29 +0100
+From: Swapnil Jakhade <sjakhade@cadence.com>
+To: <vkoul@kernel.org>, <kishon@kernel.org>, <robh+dt@kernel.org>,
+        <krzysztof.kozlowski+dt@linaro.org>, <linux-phy@lists.infradead.org>,
+        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>
+CC: <mparab@cadence.com>, <sjakhade@cadence.com>, <rogerq@kernel.org>
+Subject: [PATCH 3/7] dt-bindings: phy: cadence-torrent: Add bindings to support dual input reference clock configurations
+Date: Wed, 1 Mar 2023 14:11:21 +0100
+Message-ID: <20230301131125.6084-4-sjakhade@cadence.com>
+X-Mailer: git-send-email 2.15.0
+In-Reply-To: <20230301131125.6084-1-sjakhade@cadence.com>
+References: <20230301131125.6084-1-sjakhade@cadence.com>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.7.1
-Subject: Re: [PATCH v2] phy: stm32-usphyc: add 200 to 300 us delay to fix
- timeout on some machines
-Content-Language: en-US
-To: Michael Grzeschik <m.grzeschik@pengutronix.de>,
-        <linux-arm-kernel@lists.infradead.org>
-CC: <linux-phy@lists.infradead.org>, <vkoul@kernel.org>, <kishon@kernel.org>,
-        <mcoquelin.stm32@gmail.com>, <alexandre.torgue@foss.st.com>,
-        <error27@gmail.com>, <kernel@pengutronix.de>,
-        <linux-stm32@st-md-mailman.stormreply.com>,
-        <amelie.delaunay@foss.st.com>
-References: <1869feff-06b1-17f1-4628-b433c858ad79@foss.st.com>
- <20230227151318.1894938-1-m.grzeschik@pengutronix.de>
-From: Fabrice Gasnier <fabrice.gasnier@foss.st.com>
-In-Reply-To: <20230227151318.1894938-1-m.grzeschik@pengutronix.de>
-X-Originating-IP: [10.48.1.102]
-X-ClientProxiedBy: EQNCAS1NODE3.st.com (10.75.129.80) To SHFDAG1NODE2.st.com
- (10.75.129.70)
+X-CrossPremisesHeadersFilteredBySendConnector: maileu5.global.cadence.com
+X-OrganizationHeadersPreserved: maileu5.global.cadence.com
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: BN8NAM12FT062:EE_|SN6PR07MB8206:EE_
+X-MS-Office365-Filtering-Correlation-Id: 0b14cbee-fc35-4852-e9e4-08db1a567a7b
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: 	drGmVgeYlvKBn0LqWAGYl8n7xWX7OxgdK+tpyBSv4tU8SkTiZjEV9/yIrNFQUnHBVqQCjz+UfD2sHJwsuQJ1brMKxtNLXgA1KA1RPuDX9PFujGSWFqJsD14u9Wsi6DSbzHJ2b4x6XKjKLT96nR2o5hNE6zGFo1ASBaGv430v8Q9+BUnHC9vpXy1bqzBQAJdpMJPEbF9cZ/LmkLPM/rB1gKQCUFRiSXkHet9LMqWsOQhBiGidyLDi73p7Xx2/osvTaUQdZcXa9gwrK0uGgu+5u+LVgDYp3I2LkKNohihVhZ+gSwVYibBmb64+4FfY2nk+HM6A1cRWMI8cjrRFFOIS5Q3DZfBOGDziv6PgJ5MZ4n+KhtHsrEF0a8KfkDFK0TNJeUJnpfkEciHKMGiF3/dIy6m8lAieKeBJr5S+6w4wqAkyZe7U6oCgUTMWUWKTUogy4WCGtm+gK2M0MsSZAJ5IdpGAdOUNiM9b2k4RUx/NY4Jnvii6gbeGhjyaIBIdTA0GdLmAEIylIjou7LWcIxzWr8SnKtr/ivQ1Og7sAE5eZTovg56vMCU2BUIJdfrxJOMU7goKmN2VQcCRF4mXUTsfXuzigNrbBdbnKCrd5422KzesP3yJTH4JmLPLJEAuDmbrKbfmuLH8deiiQLiRxPzNkqYrD25caNCyx+vDCeQKUN0IAqMST/rZK4XXQrtU8XY5wvcfdRl7ZfNFefFEGZ3uYg==
+X-Forefront-Antispam-Report: 	CIP:158.140.1.148;CTRY:US;LANG:en;SCL:1;SRV:;IPV:CAL;SFV:NSPM;H:sjmaillnx2.cadence.com;PTR:unknown.Cadence.COM;CAT:NONE;SFS:(13230025)(4636009)(346002)(136003)(39860400002)(396003)(376002)(36092001)(451199018)(46966006)(40470700004)(36840700001)(478600001)(8936002)(5660300002)(110136005)(186003)(54906003)(2906002)(4326008)(70586007)(70206006)(41300700001)(42186006)(8676002)(316002)(40460700003)(6666004)(40480700001)(2616005)(1076003)(26005)(336012)(36756003)(356005)(47076005)(426003)(36860700001)(82310400005)(82740400003)(7636003)(86362001)(83380400001);DIR:OUT;SFP:1101;
+X-OriginatorOrg: cadence.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 01 Mar 2023 13:11:32.5940
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 0b14cbee-fc35-4852-e9e4-08db1a567a7b
+X-MS-Exchange-CrossTenant-Id: d36035c5-6ce6-4662-a3dc-e762e61ae4c9
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=d36035c5-6ce6-4662-a3dc-e762e61ae4c9;Ip=[158.140.1.148];Helo=[sjmaillnx2.cadence.com]
+X-MS-Exchange-CrossTenant-AuthSource: 	BN8NAM12FT062.eop-nam12.prod.protection.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN6PR07MB8206
+X-Proofpoint-GUID: Wp0-dJHUBjasDIgbs-c34d6EGqNb8wqU
+X-Proofpoint-ORIG-GUID: Wp0-dJHUBjasDIgbs-c34d6EGqNb8wqU
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.219,Aquarius:18.0.942,Hydra:6.0.573,FMLib:17.11.170.22
- definitions=2023-02-28_15,2023-02-28_03,2023-02-09_01
+ definitions=2023-03-01_09,2023-03-01_01,2023-02-09_01
+X-Proofpoint-Spam-Details: rule=outbound_check_notspam policy=outbound_check score=0 malwarescore=0
+ mlxlogscore=999 suspectscore=0 bulkscore=0 phishscore=0 lowpriorityscore=0
+ clxscore=1015 adultscore=0 impostorscore=0 spamscore=0 priorityscore=1501
+ mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2212070000 definitions=main-2303010111
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230228_092844_619430_956ECE6B 
-X-CRM114-Status: GOOD (  20.96  )
+X-CRM114-CacheID: sfid-20230301_051151_681064_A43C0064 
+X-CRM114-Status: GOOD (  13.66  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,47 +157,66 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 2/27/23 16:13, Michael Grzeschik wrote:
-> An minimum udelay of 200 us seems to be necessary on some machines. After
-> the setup of the pll, which needs about 100 us to be locked there seem
-> to be additional 100 us to get the phy really functional. Without this
-> delay the usb runs not functional. With this additional short udelay
-> this issue was not reported again.
-> 
-> Signed-off-by: Michael Grzeschik <m.grzeschik@pengutronix.de>
-> 
+Torrent(SD0801) PHY supports one external and one internal reference
+clocks. Update bindings to support dual reference clock multilink
+configurations.
 
-Hi Michael,
+Signed-off-by: Swapnil Jakhade <sjakhade@cadence.com>
+---
+ .../bindings/phy/phy-cadence-torrent.yaml     | 35 ++++++++++++++-----
+ 1 file changed, 26 insertions(+), 9 deletions(-)
 
-Thank you for the updates,
+diff --git a/Documentation/devicetree/bindings/phy/phy-cadence-torrent.yaml b/Documentation/devicetree/bindings/phy/phy-cadence-torrent.yaml
+index 2ad1faadda2a..711097e167bc 100644
+--- a/Documentation/devicetree/bindings/phy/phy-cadence-torrent.yaml
++++ b/Documentation/devicetree/bindings/phy/phy-cadence-torrent.yaml
+@@ -32,17 +32,34 @@ properties:
+     const: 1
+ 
+   clocks:
+-    minItems: 1
+-    maxItems: 2
+-    description:
+-      PHY reference clock for 1 item. Must contain an entry in clock-names.
+-      Optional Parent to enable output reference clock.
++    anyOf:
++      - items:
++          - description: PHY input reference clock. Must contain an entry in clock-names.
++      - items:
++          - description: PHY input reference clock. Must contain an entry in clock-names.
++          - description: Optional Parent to enable output reference clock.
++      - items:
++          - description: PHY input reference clock. Must contain an entry in clock-names.
++          - description: Second optional input reference clock. Must contain an entry in clock-names.
++      - items:
++          - description: PHY input reference clock. Must contain an entry in clock-names.
++          - description: Second optional input reference clock. Must contain an entry in clock-names.
++          - description: Optional Parent to enable output reference clock.
+ 
+   clock-names:
+-    minItems: 1
+-    items:
+-      - const: refclk
+-      - const: phy_en_refclk
++    oneOf:
++      - items:
++          - const: refclk
++      - items:
++          - const: refclk
++          - const: phy_en_refclk
++      - items:
++          - const: refclk
++          - const: refclk1
++      - items:
++          - const: refclk
++          - const: refclk1
++          - const: phy_en_refclk
+ 
+   assigned-clocks:
+     maxItems: 3
+-- 
+2.34.1
 
-Fell free to add my:
-Reviewed-by: Fabrice Gasnier <fabrice.gasnier@foss.st.com>
-
-Best Regards,
-Fabrice
-
-> ---
-> v1 -> v2: - changed the mdelay to udelay_range(200, 300), like suggested by fabrice
->           - moved the delay to pll enable so it will only be triggered once
-> 
->  drivers/phy/st/phy-stm32-usbphyc.c | 3 +++
->  1 file changed, 3 insertions(+)
-> 
-> diff --git a/drivers/phy/st/phy-stm32-usbphyc.c b/drivers/phy/st/phy-stm32-usbphyc.c
-> index 5bb9647b078f12..dd469f57fba7eb 100644
-> --- a/drivers/phy/st/phy-stm32-usbphyc.c
-> +++ b/drivers/phy/st/phy-stm32-usbphyc.c
-> @@ -317,6 +317,9 @@ static int stm32_usbphyc_pll_enable(struct stm32_usbphyc *usbphyc)
->  
->  	stm32_usbphyc_set_bits(pll_reg, PLLEN);
->  
-> +	/* Wait for maximum lock time */
-> +	usleep_range(200, 300);
-> +
->  	return 0;
->  
->  reg_disable:
 
 -- 
 linux-phy mailing list
