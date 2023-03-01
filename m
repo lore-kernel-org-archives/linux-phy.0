@@ -4,142 +4,140 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A6A08C7EE2F
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E4B0BC7EE32
 	for <linux-phy@archiver.kernel.org>; Wed,  1 Mar 2023 13:11:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YGhVfeS4wgJ/W9AJffskoBtS4QwOvbBQfKh1mHzv/+U=; b=OVn2LISDmIXWqa
-	Gypvt51bPBfTB8z4pxkHbPqGuV0tLXE88W+IZJ1WD1NTVbjy+ozQCtVwCROKVTs0cw6WN1YQGX6lN
-	zf76HmtKRwKdFkK83pTpBve1MI7fHNK1fwYP22R7stW6h8pImT6Usqv2wLKXYKxuBhVJcFVxP3fB+
-	UAm8cB0eArXuVfqkPNxQ0fgbKpgQm5X471M3SvPtXln9Ed3QbpWxE/FDxADaeIJLv5E6qeG/P2uux
-	9tPMJWh+plu8TcMOK8NOBKtrZZupRY1xe10NXJWFAWbmPWncoCU0BMCpWfraVmhSwHukODe4iPsTh
-	EtI/58gRtBXI55hMnpng==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=MkzNu2Mr6VI25MgrBWBZkAnhSsoiFUwUIuyODU2KvlY=; b=ZuqwN0QhO3MHM0
+	Onuc1TX2MpUknQkY11WpF8qxns8Ym3P8Enk9ffWSCJaQ9E65KQuudiqt9zdtnql0zIemeO230KIaE
+	6oP8reGPKoYS0VLSAdrlg6d4r+0GCY5LBFT0Bk6o7d9bw2cNn1p51VyizvE/2UMytPBObmzxkJyJQ
+	m688X7Ex4tSCvnWp98DDeY+LFnWXIJyAEPnm+UvJ+6LoYoHGA2oeKbBNsf3BmlLzs3FxOoo0wOG2K
+	nxuZzAK7zk9v38tvj1TPzfb/IdABz+AuyzCpq/BykukzNiZ8NA4y+NGyou2fit3Zc8d0C4gNEDCzh
+	f46gDvG85KgJGYLyIdNg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pXMFQ-00GJnh-25; Wed, 01 Mar 2023 13:11:56 +0000
+	id 1pXMFQ-00GJnu-7z; Wed, 01 Mar 2023 13:11:56 +0000
 Received: from mx0b-0014ca01.pphosted.com ([208.86.201.193] helo=mx0a-0014ca01.pphosted.com)
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pXMFL-00GJkZ-Ln
+	id 1pXMFM-00GJlQ-4X
 	for linux-phy@lists.infradead.org; Wed, 01 Mar 2023 13:11:54 +0000
 Received: from pps.filterd (m0042333.ppops.net [127.0.0.1])
-	by mx0b-0014ca01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 321AXgnb018604;
-	Wed, 1 Mar 2023 05:11:40 -0800
+	by mx0b-0014ca01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 321AXgXm018614;
+	Wed, 1 Mar 2023 05:11:48 -0800
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cadence.com; h=from : to : cc :
- subject : date : message-id : in-reply-to : references : mime-version :
- content-type; s=proofpoint;
- bh=DwSCptbdo1s3M6bj4pJDiCwDapfJ8vd8K6tzajKHMSE=;
- b=dP5hZH3NA++YVwYfVp7Ydq0MJB9Vwe+GvHEIVi7FhERFbtt16tRl5Kj1d/U0n2XgWrTS
- gzoYPRyAzkkKjAt++Uh/de0xqvp1y2Bg7sst5+xBH0q/OND8/OTimPaRE8AkMNZ0ryCP
- 2AmNW4B4FekSrd+UIyzZrDatnwoZS5MOxCIvrpOqD7sPmD59+SmzmaNFPqFRYKqvt1KL
- O93orSCz08/l+QF+ikz4wRvQSI8WzyU3bIhqZaFFSHFhtTXnde66VVbzhnECnpoIS9mv
- fG0EXCC3AjYQuxu7ucv2eGlvdQzu9i+/BpvRUY8jeRiJD1C6bQs8Ww3lHsbGuY53pztQ RQ== 
-Received: from nam12-bn8-obe.outbound.protection.outlook.com (mail-bn8nam12lp2172.outbound.protection.outlook.com [104.47.55.172])
-	by mx0b-0014ca01.pphosted.com (PPS) with ESMTPS id 3p25280ky9-1
+ subject : date : message-id : mime-version : content-type; s=proofpoint;
+ bh=Hbqx1Sh/+668yO6FdmK/sWvFgeCxN2Kdo3QK41KFHkQ=;
+ b=O82D50Qh5b5m4ah6G1PzJbaa9jMFsdTFqCmPlHVvovpMZ1MiemQrNOeF9jQ8JsvUVpAC
+ X234h9n2SmPGZB5Vh1QDqv3D3nnmAyAriH7rrf8BH22/C+Fax3SHtGxNdzSAxQPDuIjO
+ AGbmsfDOGkMKnTt4hc1+C0CiMJbs0bwJHruOahYN+z30nhx0bdP6rCt22EVuu6oOvIXH
+ jVmhTk1INTe+CvnVv0L4meSVBj2wDD4cCPUTgMBxiqQTvkw1I7NMO6Adg2Yx8XpTNiXG
+ rrlwGpjU98eqsezXHBkaFGKf1pxTrBi9gh/XirYK9KBAn2LBP9l1et7+rBhTWEJb4pQj lA== 
+Received: from nam10-bn7-obe.outbound.protection.outlook.com (mail-bn7nam10lp2108.outbound.protection.outlook.com [104.47.70.108])
+	by mx0b-0014ca01.pphosted.com (PPS) with ESMTPS id 3p25280m00-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 01 Mar 2023 05:11:40 -0800
+	Wed, 01 Mar 2023 05:11:48 -0800
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=bOYcx24Noh0j1GloLbNelPJMA7XPFVb51ZtNA+4t/DgnbUIGeLl5ZVzwlTX4+8MkjLbwp6iQuwYJ281rXe3PYBks3HygLz9TYzBQYV2CQhnPeYztT09j7rjb8btnZuUbJa06kHsBydcji8OveH1mSgcfkK1rBjaoNvN3U3bUIgefoHxggMXtU1FnZlN+04iYOyOZXYW4JNk3QvnEvsszapMh3xyIxiTf1+21aHzGgtGW+wX0NzPWBdHzlxyHZQk2TtIN8jODJZHtBEf/LMeZ+GDfNqtRkt6iYVIpzv1PaLuyyYnB9/Io9Foh/SubrwplYmXjGaMO4AbSdS/BLXAyGg==
+ b=XQVIGJeAqD7t9p3plOX8v433eGIClajHD4xY2NQJM7jU13Q+gwnDz6qARS/2EeyUIV/GK+Z8wFZCrifCUMyhZ1xdm568KnI25k4fFV7appg5DoxW4q3DXgZAingBOQxPPomocrOV98d10NAiJmADkgHTulPy/4wXJ1jEZ9bw/0nSGcdmYxyE0dDivXPNjrYSEumhksB3WkXYFfZWkKO8+s4zcU+HQqnI/iMXW9xZrCf5jU01aZKpYXIdZFDUiCI8LMiQ3cOHo3eZSMUFgS1udEMfB3b8q40roDroS7jkLsWJpoBEY/vC77e/pNfqVg8lrBOW49jsNlRt/WXdiwBGCg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=DwSCptbdo1s3M6bj4pJDiCwDapfJ8vd8K6tzajKHMSE=;
- b=Dirn/WyMrb0OFP28IqftdJ6HCBcMgQVB8wmey/+c/QizCCU5he8NOprLUs20uvJnukdpXZmGnRph/6sXL7NaGbwYt5a1vz5dC/V1aGDuUC1vCfsW9OLuCBw1IcnensUejjPzBjOj2uIqvQOjPBfuulYklQzJsrsW/1+GJ5NujRUPhkS8a8auaGh1Ln9IJfefEWhC8zDPV3WwhIOCZyMzihv0JIDsQGUoemvSIiQlaWTG47oVmZ6BJp7J4Gs7wumG4zgKZdU+tefmbyWOeMqlyN8E8SguCUnGsM88hAiejcLOA/zi5Djg/L1R/X9frVvATTtOWH16Jo+pKiMGQ4rhBw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=temperror (sender ip
- is 158.140.1.148) smtp.rcpttodomain=kernel.org smtp.mailfrom=cadence.com;
- dmarc=temperror action=none header.from=cadence.com; dkim=none (message not
- signed); arc=none
+ bh=Hbqx1Sh/+668yO6FdmK/sWvFgeCxN2Kdo3QK41KFHkQ=;
+ b=ogiCpEFTeO68h3txdG8Ra7l4QDkDOvQXvXdf4ffMtTv0kFvOzKW2l8QJM8c046uOptmnNTrE6+lKDHlQihAbcvnfQQ9RbSN2mgbmJxhu/pdfUUyB0u53ED8K2D1I7yxiiHRMnUgNqxgOuwAW7Tra8rVWKa8zvvKAnkTzBxZnz0tWLIqQXsy2hWaIywOkAWOLfLcbsWXyv0eINCGr4+hulxt6p8MYbL4zpPeo3ZO/k6YlbINJtxdB1lcNIsC3k4/8SUVkOc7fdSYlr+I7FLKGF8I6j4gwOM3Xz4pLUZC/A/0Tw0jQd2MOJE6NLI9lRpPNDQgHKl7W1uXeLtnBgyffug==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 158.140.1.147) smtp.rcpttodomain=kernel.org smtp.mailfrom=cadence.com;
+ dmarc=pass (p=none sp=none pct=100) action=none header.from=cadence.com;
+ dkim=none (message not signed); arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cadence.com;
  s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=DwSCptbdo1s3M6bj4pJDiCwDapfJ8vd8K6tzajKHMSE=;
- b=Za2TvWK2z70OSfH97xQFwhb2SRbwVny/VQ6wyUtaKbhupHqHj0xwBM6o+iMr4WeZWGw8hGTfqfn+A86+ezB6jQ6h+05QYq3uHnIt6EU1HWMROSAA1Uw2qUTJ8sma/2cLgyG7NYI5ffWeHjInjMZ66MahxPY/I3dqCBoCtYeRdU4=
-Received: from BN0PR07CA0017.namprd07.prod.outlook.com (2603:10b6:408:141::31)
- by SJ0PR07MB9793.namprd07.prod.outlook.com (2603:10b6:a03:4d6::11) with
+ bh=Hbqx1Sh/+668yO6FdmK/sWvFgeCxN2Kdo3QK41KFHkQ=;
+ b=hwxEuG7mVQ4BuW4vqqKjM5Qp9JcgYdT5CwWlbSyrgb1g79Mm1FBSKjm+I/9RGRbDQvtWpxi8VwG6V39FbNEP1jJhqetLa0Qr5RSppE8Ow5Lh/IigeG0/mOm/cpgPbrSPXyqx32n/dHwUjjz4yvcHEayqV71M770HItY+nwkCYew=
+Received: from BN9PR03CA0491.namprd03.prod.outlook.com (2603:10b6:408:130::16)
+ by BYAPR07MB5766.namprd07.prod.outlook.com (2603:10b6:a03:9a::25) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6134.30; Wed, 1 Mar
- 2023 13:11:36 +0000
-Received: from BN8NAM12FT035.eop-nam12.prod.protection.outlook.com
- (2603:10b6:408:141:cafe::ea) by BN0PR07CA0017.outlook.office365.com
- (2603:10b6:408:141::31) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6134.25; Wed, 1 Mar
+ 2023 13:11:43 +0000
+Received: from BN8NAM12FT068.eop-nam12.prod.protection.outlook.com
+ (2603:10b6:408:130:cafe::b5) by BN9PR03CA0491.outlook.office365.com
+ (2603:10b6:408:130::16) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6156.18 via Frontend
- Transport; Wed, 1 Mar 2023 13:11:36 +0000
-X-MS-Exchange-Authentication-Results: spf=temperror (sender IP is
- 158.140.1.148) smtp.mailfrom=cadence.com; dkim=none (message not signed)
- header.d=none;dmarc=temperror action=none header.from=cadence.com;
-Received-SPF: TempError (protection.outlook.com: error in processing during
- lookup of cadence.com: DNS Timeout)
-Received: from sjmaillnx2.cadence.com (158.140.1.148) by
- BN8NAM12FT035.mail.protection.outlook.com (10.13.182.203) with Microsoft SMTP
+ Transport; Wed, 1 Mar 2023 13:11:43 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 158.140.1.147)
+ smtp.mailfrom=cadence.com; dkim=none (message not signed)
+ header.d=none;dmarc=pass action=none header.from=cadence.com;
+Received-SPF: Pass (protection.outlook.com: domain of cadence.com designates
+ 158.140.1.147 as permitted sender) receiver=protection.outlook.com;
+ client-ip=158.140.1.147; helo=sjmaillnx1.cadence.com; pr=C
+Received: from sjmaillnx1.cadence.com (158.140.1.147) by
+ BN8NAM12FT068.mail.protection.outlook.com (10.13.182.160) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.6178.6 via Frontend Transport; Wed, 1 Mar 2023 13:11:34 +0000
+ 15.20.6178.6 via Frontend Transport; Wed, 1 Mar 2023 13:11:43 +0000
 Received: from maileu5.global.cadence.com (eudvw-maileu5.cadence.com [10.160.110.202])
-	by sjmaillnx2.cadence.com (8.14.4/8.14.4) with ESMTP id 321DBTij021365
+	by sjmaillnx1.cadence.com (8.14.4/8.14.4) with ESMTP id 321DBff2005228
 	(version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256 verify=OK);
-	Wed, 1 Mar 2023 05:11:32 -0800
+	Wed, 1 Mar 2023 05:11:42 -0800
 Received: from maileu4.global.cadence.com (10.160.110.201) by
  maileu5.global.cadence.com (10.160.110.202) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.2375.24; Wed, 1 Mar 2023 14:11:30 +0100
+ 15.1.2375.24; Wed, 1 Mar 2023 14:11:28 +0100
 Received: from vleu-orange.cadence.com (10.160.88.83) by
  maileu4.global.cadence.com (10.160.110.201) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2375.7
- via Frontend Transport; Wed, 1 Mar 2023 14:11:30 +0100
+ via Frontend Transport; Wed, 1 Mar 2023 14:11:28 +0100
 Received: from vleu-orange.cadence.com (localhost.localdomain [127.0.0.1])
-	by vleu-orange.cadence.com (8.14.4/8.14.4) with ESMTP id 321DBUoI006173;
-	Wed, 1 Mar 2023 14:11:30 +0100
+	by vleu-orange.cadence.com (8.14.4/8.14.4) with ESMTP id 321DBSEl006143;
+	Wed, 1 Mar 2023 14:11:28 +0100
 Received: (from sjakhade@localhost)
-	by vleu-orange.cadence.com (8.14.4/8.14.4/Submit) id 321DBT5C006172;
-	Wed, 1 Mar 2023 14:11:29 +0100
+	by vleu-orange.cadence.com (8.14.4/8.14.4/Submit) id 321DBPv8006126;
+	Wed, 1 Mar 2023 14:11:25 +0100
 From: Swapnil Jakhade <sjakhade@cadence.com>
 To: <vkoul@kernel.org>, <kishon@kernel.org>, <robh+dt@kernel.org>,
         <krzysztof.kozlowski+dt@linaro.org>, <linux-phy@lists.infradead.org>,
         <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>
 CC: <mparab@cadence.com>, <sjakhade@cadence.com>, <rogerq@kernel.org>
-Subject: [PATCH 6/7] dt-bindings: phy: cadence-torrent: Add a separate compatible for TI J7200
-Date: Wed, 1 Mar 2023 14:11:24 +0100
-Message-ID: <20230301131125.6084-7-sjakhade@cadence.com>
+Subject: [PATCH 0/7] PHY: Add support for USXGMII and dual refclk configurations in Cadence Torrent PHY
+Date: Wed, 1 Mar 2023 14:11:18 +0100
+Message-ID: <20230301131125.6084-1-sjakhade@cadence.com>
 X-Mailer: git-send-email 2.15.0
-In-Reply-To: <20230301131125.6084-1-sjakhade@cadence.com>
-References: <20230301131125.6084-1-sjakhade@cadence.com>
 MIME-Version: 1.0
 X-CrossPremisesHeadersFilteredBySendConnector: maileu5.global.cadence.com
 X-OrganizationHeadersPreserved: maileu5.global.cadence.com
 X-EOPAttributedMessage: 0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: BN8NAM12FT035:EE_|SJ0PR07MB9793:EE_
-X-MS-Office365-Filtering-Correlation-Id: fbe48067-b4d3-49b7-5c4c-08db1a567bc9
+X-MS-TrafficTypeDiagnostic: BN8NAM12FT068:EE_|BYAPR07MB5766:EE_
+X-MS-Office365-Filtering-Correlation-Id: e85440d1-3bd5-4585-cf35-08db1a568108
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 	YNfE+H53dPY/expFvpTajdfMxS8PpO21eIgdJoe+oZokJ2v7Tpdo+6soIWOBk6po3HDWCQ8YNQ0PQCIjvG/I8FWnzlbuEhqcQkq1TZejHaR9HqLm2alP9RvkvlmQzUlB0W78jY4ZKaxuA6FGgz5P0gwEiuISF6VP4j2rLl/1XC/UCLleQ/cBTq2czOyoJcsgz2027vgev/yY3iX3lXYIwjMUOIvYim+IoG0AdJDk7NwNrymwR+nPaIQ/SWRcuVQeUIrTyssepqYVlTq9dK253V6PavbmFTj6YoQ3roAL0gD20ym10YN2eVRa/3toHjXcTgom3i1QBmLTA1f/X86A5KVJhDDQ3zhy2VP/KVNcJAKEYRR6CT6ubQ4PHC2agvCRAqlm8unxc98moqBxdVn8panyY3n5pm0W5EkYUnTzudQ0m+8cNNqCQ7H89qXIZIAhgp/x3pLApsu2U9eemtpfOneGcROGTv6wYKbj57vGjv4bCOWJxqs7PmKaiT3Uxxze8Blzvd4ji7AT5QwsB6K0nd6/7075JA/VDPBYsu5XS2CxtieKOD1CRPDw+MQekxk8zBcXkkVI3mIXrPOoIlOo8t0RQee8IlwvoOBrLocbuI5a/SxZbaUVNBXlcn4F9u5qNX1gWwmW0ZDTrWHoqtFWzEcaL+e+F9xe9rt7KpjAqQoOHSTRkiRo7M45gqHWvJzRP5c0EAFhevpleFO3+FDLSw==
-X-Forefront-Antispam-Report: 	CIP:158.140.1.148;CTRY:US;LANG:en;SCL:1;SRV:;IPV:CAL;SFV:NSPM;H:sjmaillnx2.cadence.com;PTR:unknown.Cadence.COM;CAT:NONE;SFS:(13230025)(4636009)(346002)(376002)(39860400002)(396003)(136003)(36092001)(451199018)(40470700004)(46966006)(36840700001)(4744005)(8936002)(36860700001)(7636003)(5660300002)(82310400005)(41300700001)(63350400001)(83380400001)(63370400001)(8676002)(4326008)(47076005)(36756003)(82740400003)(70586007)(70206006)(356005)(2906002)(426003)(336012)(2616005)(40480700001)(478600001)(40460700003)(86362001)(54906003)(42186006)(110136005)(26005)(186003)(1076003)(6666004)(316002);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam-Message-Info: 	NaMerQg9RhccF8Difrq1meWh+HMXKbVc2mqQ+0DoqveyRtA+kZM/TelNMXIFd0CsF1vJm+ZXd1XeZqlNlP74OQDdR2Ec2sj9PTJu8dcV21Apgc2eP24y2hdgnn7xcjHda8JPKWyPqpasXFpcRjmrDtSLmz/xiP54xzqhsKEq0hmwPFrxE0wyC/zH3v5GMbAjzOdTaRLId7/QkKCH/2B5DHft1IYVt5cmSP+ZhFqdqqJ9m5IAmYBiRFn0u1bff3cW74G7yT0ku4wnMbs9N5E3KY367x2LIl4YVqw93XUk+8FpP1L0B0a2vigf8Fu9huNhTe9PyYRE0LDMdt/rZpsbErLfsSnhO9cTOfXR1k20sRv5e9vxQOZ8CmxOGjK1+VWOTQAU7IgZ45lZjfbC8muXp+8Fn+jGLcMOvr3hcaxrymYoZFmKKGmEcf3tHtmfXFf8gJeShjkgt0tq7iqDtUmMib7QhzDIPUWmCfLcCjkcdYsIsc4SsP3HGjcMmDgjE4xeUpfUhsJNgaMEhi7lDRc6qO7JeFZPXOwpa/Iew5rq7Ava3fr9ZfwDRsPirV0DvqelrpgJKodlA270SdvbThniXmesl9xGo0FvMY1iTWcVoHOsPRdVyhtdiXsgVv+0GQK2Bv4Oa7O1cs60+A7EOyiAhBhw1H/CVHDNWJYPWWHEgulVZiiSwh2Cj6jPAxrOZvHG
+X-Forefront-Antispam-Report: 	CIP:158.140.1.147;CTRY:US;LANG:en;SCL:1;SRV:;IPV:CAL;SFV:NSPM;H:sjmaillnx1.cadence.com;PTR:unknown.Cadence.COM;CAT:NONE;SFS:(13230025)(4636009)(136003)(396003)(39860400002)(346002)(376002)(36092001)(451199018)(36840700001)(46966006)(40470700004)(36860700001)(40460700003)(186003)(40480700001)(82740400003)(2906002)(7636003)(83380400001)(356005)(4326008)(41300700001)(70586007)(8936002)(336012)(1076003)(8676002)(70206006)(47076005)(426003)(478600001)(6666004)(5660300002)(26005)(2616005)(966005)(54906003)(110136005)(82310400005)(36756003)(86362001)(316002)(42186006);DIR:OUT;SFP:1101;
 X-OriginatorOrg: cadence.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 01 Mar 2023 13:11:34.7798
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 01 Mar 2023 13:11:43.5842
  (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: fbe48067-b4d3-49b7-5c4c-08db1a567bc9
+X-MS-Exchange-CrossTenant-Network-Message-Id: e85440d1-3bd5-4585-cf35-08db1a568108
 X-MS-Exchange-CrossTenant-Id: d36035c5-6ce6-4662-a3dc-e762e61ae4c9
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=d36035c5-6ce6-4662-a3dc-e762e61ae4c9;Ip=[158.140.1.148];Helo=[sjmaillnx2.cadence.com]
-X-MS-Exchange-CrossTenant-AuthSource: 	BN8NAM12FT035.eop-nam12.prod.protection.outlook.com
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=d36035c5-6ce6-4662-a3dc-e762e61ae4c9;Ip=[158.140.1.147];Helo=[sjmaillnx1.cadence.com]
+X-MS-Exchange-CrossTenant-AuthSource: 	BN8NAM12FT068.eop-nam12.prod.protection.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Anonymous
 X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SJ0PR07MB9793
-X-Proofpoint-GUID: hsVW-ZOJBQze9W4DcIzSiPUcTOXOJww-
-X-Proofpoint-ORIG-GUID: hsVW-ZOJBQze9W4DcIzSiPUcTOXOJww-
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR07MB5766
+X-Proofpoint-GUID: vRdovWnVAED0O7dqkhr-Au43zkosoaLF
+X-Proofpoint-ORIG-GUID: vRdovWnVAED0O7dqkhr-Au43zkosoaLF
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.219,Aquarius:18.0.942,Hydra:6.0.573,FMLib:17.11.170.22
  definitions=2023-03-01_09,2023-03-01_01,2023-02-09_01
 X-Proofpoint-Spam-Details: rule=outbound_check_notspam policy=outbound_check score=0 malwarescore=0
- mlxlogscore=981 suspectscore=0 bulkscore=0 phishscore=0 lowpriorityscore=0
+ mlxlogscore=858 suspectscore=0 bulkscore=0 phishscore=0 lowpriorityscore=0
  clxscore=1015 adultscore=0 impostorscore=0 spamscore=0 priorityscore=1501
  mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.12.0-2212070000 definitions=main-2303010111
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230301_051151_871424_5E6BBC95 
-X-CRM114-Status: GOOD (  12.30  )
+X-CRM114-CacheID: sfid-20230301_051152_332359_9DF5FEE3 
+X-CRM114-Status: GOOD (  14.25  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -156,28 +154,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-TI J7200 uses Torrent SD0805 version which is a special version
-derived from SD0801 that has two internal reference clocks along
-with one external reference clock. Add a separate compatible for
-TI J7200 platforms.
+This patch series extends Torrent PHY driver functionality to support
+dual input reference clocks by implementing key:value pair table for
+all settings instead of a 3D matrix.
+It also adds support for single and multilink USXGMII configurations.
 
-Signed-off-by: Swapnil Jakhade <sjakhade@cadence.com>
----
- Documentation/devicetree/bindings/phy/phy-cadence-torrent.yaml | 1 +
- 1 file changed, 1 insertion(+)
+The changes have been validated on TI J721E and J7200 platforms.
 
-diff --git a/Documentation/devicetree/bindings/phy/phy-cadence-torrent.yaml b/Documentation/devicetree/bindings/phy/phy-cadence-torrent.yaml
-index 711097e167bc..1906b6df6ebd 100644
---- a/Documentation/devicetree/bindings/phy/phy-cadence-torrent.yaml
-+++ b/Documentation/devicetree/bindings/phy/phy-cadence-torrent.yaml
-@@ -21,6 +21,7 @@ properties:
-     enum:
-       - cdns,torrent-phy
-       - ti,j721e-serdes-10g
-+      - ti,j7200-serdes-10g
- 
-   '#address-cells':
-     const: 1
+This patch series is dependent on [1] and should be applied on
+top of this.
+
+[1] https://lore.kernel.org/linux-phy/20230227133104.29788-1-sjakhade@cadence.com/
+
+Roger Quadros (1):
+  phy: cadence-torrent: Use key:value pair table for all settings
+
+Swapnil Jakhade (6):
+  phy: cadence-torrent: Add single link USXGMII configuration for
+    156.25MHz refclk
+  dt-bindings: phy: cadence-torrent: Add bindings to support dual input
+    reference clock configurations
+  phy: cadence-torrent: Add PCIe(100MHz) + USXGMII(156.25MHz) multilink
+    configuration
+  phy: cadence-torrent: Add USXGMII(156.25MHz) + SGMII/QSGMII(100MHz)
+    multilink configuration
+  dt-bindings: phy: cadence-torrent: Add a separate compatible for TI
+    J7200
+  phy: cadence-torrent: Add USXGMII(156.25MHz) + SGMII/QSGMII(100MHz)
+    multilink config for TI J7200
+
+ .../bindings/phy/phy-cadence-torrent.yaml     |   36 +-
+ drivers/phy/cadence/phy-cadence-torrent.c     | 2431 +++++++++--------
+ 2 files changed, 1358 insertions(+), 1109 deletions(-)
+
 -- 
 2.34.1
 
