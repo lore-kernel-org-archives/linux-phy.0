@@ -4,74 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 24AC7C6FA8E
-	for <linux-phy@archiver.kernel.org>; Thu,  2 Mar 2023 16:17:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 31848C6FA8E
+	for <linux-phy@archiver.kernel.org>; Thu,  2 Mar 2023 16:23:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=estUIdYeF2TXqUVmc7TH7tIUxDUU+7UiVsqLfqzhTO8=; b=QgRs6gC4CyCMOg
-	2uOefl8IAHNpQnJygmmN74Ag+YhOL/9zvllIkZxg+r+Iyqv0cAaxPFcM2Cwbdl6oSoULofNjF9VoU
-	mEhY1FzuvJKJAeK+pVvLTG4psSjwfFwgouyefsIZgmwO4f2DOW9eDRZcmOQEpywJoz6MsgLXVTMG9
-	NUbsskIFOXXWG7mYkDZuJAJux2MyyBNYSmUgMYUDMnnYykTMs4JB5qSFusyO5ucNRIOZa3+zzX/U/
-	8moUznnBZUlMsFTxrz/J6Z4psi/ikboWEP/zfk55Ig/wTTDm1Ey8ElP4mt3vZ7K7i1XL23P/eRiK7
-	DmycGPqDqYlR0Fnxf4kg==;
+	List-Owner; bh=Wgu9t/AtLRs87YjMnG9FFZJHMaqM1tW9X10BtxExbvM=; b=x4ZM1etVa88jJf
+	Yp3BuWzlemh/juMCu+Igr2j8lBdbftbSBB4GVer+GOq7qBF51b6E73T4DUC7uCyQ060Wz5WdfiEr4
+	X5N1VT9Kn3jbPcnlZ5yRZDD6R+A2OiRWeljFJDhgk755DZlaWlhxTVdhly+OesqjxzA27PUmwgHRn
+	qw2NEeK8tFESHsPuHwsmqj7lo5Lw4ZVPCNUQa7YsL9uyvcKsSzqlyRoDvf6F56KN6P2/jZVXAVS3v
+	NVJrrOHpYyoWpfhCppZ39lwb7dikc2aHoOSOC6UMh3lNCeIpD5Gmxlck7HgM44qi5CzVZrSdpbwhu
+	YbeRDRF7Gj2jgnRDcffg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pXlcd-002nVn-HE; Thu, 02 Mar 2023 16:17:35 +0000
-Received: from mail-yb1-xb2d.google.com ([2607:f8b0:4864:20::b2d])
+	id 1pXlij-002oNW-Fk; Thu, 02 Mar 2023 16:23:53 +0000
+Received: from mail-yb1-xb36.google.com ([2607:f8b0:4864:20::b36])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pXlca-002nUn-B0
-	for linux-phy@lists.infradead.org; Thu, 02 Mar 2023 16:17:33 +0000
-Received: by mail-yb1-xb2d.google.com with SMTP id e194so4076622ybf.1
-        for <linux-phy@lists.infradead.org>; Thu, 02 Mar 2023 08:17:31 -0800 (PST)
+	id 1pXlig-002oMI-05
+	for linux-phy@lists.infradead.org; Thu, 02 Mar 2023 16:23:51 +0000
+Received: by mail-yb1-xb36.google.com with SMTP id e194so4095416ybf.1
+        for <linux-phy@lists.infradead.org>; Thu, 02 Mar 2023 08:23:48 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=cc:to:subject:message-id:date:from:in-reply-to:references
          :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=NI0M23snSIlgG0WB5X2PNxAxhc5m0Un7hrDW0ghCa80=;
-        b=PTdLDVC2te44CKlxyoUIJr1Tf5LUFqgnjuh2ICOBH6DN95EnmZ7tlSIGlHOM7WLni4
-         erjAQCUS32nHlzuEgalmNxo+9TENi8HmIGol6VNKv8zT62nPlUzBhZLexSDnb2qp6XDR
-         3L6+dJchw7Z+4+Y0BglmIbMZNpVoO6XtgHOHpJy/BNp2hlVjIgAORw6ChiL+0Wogw8rt
-         66OIR7lXthImjRC441/C3M05HZiT+P/QqHHEl4jdlD/7n4C0kqU/mHHRKHe9xiT2uyFx
-         6PTeOLT5gZ/X5+cSZ+CrlxOEyKjFC6t8nscJnK11BG6dKL3/ZnMA8IHb/9G5TAD/Tamf
-         QNHQ==
+        bh=jAXUc+7igsVtJKU/EXqB4y9E7c4M7owmalEpng7fGGs=;
+        b=t6gIv8PG8O2JCb4Pja+OY1bAmy+QfmXrfFtERdyeosrITN34js2EPockt2g180hHYL
+         pWe1W6HXqOiwIu3072C5tKjIbRE/MQ1j7xJ4TsJHFq1YK0c/PGV8NNn2Gdb8F/kPyiKB
+         DZPNzj0Hy2QWF9GyHk814k/ytH4LbE+co0vOT3J8Aywg0nPGBBqJTU62HPyJmSQbwyGH
+         d0IfJXkkx/0sg4YTUmf3FaAYlryUzM+3+GqTUBgISA5CljcZCwHVbDNbJ2/pdkGjb/94
+         UVsGjY2qnEbneGUKY/ru2PhJ7HCHT0cbF61rjlWtfTDEbd6FobedpulmtiwrsvBjVhPf
+         PcGA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=cc:to:subject:message-id:date:from:in-reply-to:references
          :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=NI0M23snSIlgG0WB5X2PNxAxhc5m0Un7hrDW0ghCa80=;
-        b=zShFIC6i1v8tTePIN/f4T9zek3GUDNzvO9Xl23LuixYTyHXu6ZJ+4C9OF6iepku/ol
-         PywQxJtzO5bfp579AimM8vLlVb/wrvXfpA7blBVl6+CvvCh62Au38JwsljMZ1ki7lLyY
-         Sxwn7EVONRpO75jjVbUz4yXC2PmR4/3NshM8lJ4RuED+q6h9wa+vBKEjKxkXTo5IoAnz
-         FKgE/zY/mO2/rkaBp0eBS7yN6hn2AvQ4XQrwqWSGT3TIYyRgqIMfQKLRaadVKlruyvho
-         gllKBkABfZ+Mgyk1DDAzDAxZXMNE+UES/Lkc7+xrg0hOij+jvQwlOn0DniSHFsEWyfvh
-         ldEA==
-X-Gm-Message-State: AO0yUKX9/GRra0jG9j2gVychpOVeituHzJ+kLtuhepFQzVw/NySV/a+L
-	y3DUNtqb5dJ2iZNk8sStde+IGSOJywTKxnsIjq5jJA==
-X-Google-Smtp-Source: AK7set//Hf/uYZ6qY7gZ+y+C9vLjqGy41mZdgp9xBSwR+UQU8Q6plH3+dR/rhbu2vqltwmfL6OV8E+1WBVIFuRPVctM=
-X-Received: by 2002:a05:6902:10d:b0:a4a:a708:2411 with SMTP id
- o13-20020a056902010d00b00a4aa7082411mr5711651ybh.10.1677773850767; Thu, 02
- Mar 2023 08:17:30 -0800 (PST)
+        bh=jAXUc+7igsVtJKU/EXqB4y9E7c4M7owmalEpng7fGGs=;
+        b=I7nWJpNKzzN/6G8aXoSqB+XuPQXFrA390zbWr50WO9UnHLvIF3Ow9XmQ1b5oUHkHOM
+         i5JMSPaDNErYsSEnOfpaug0YemTqx/SKX7+IwkVVhgprFE9RH+BLCGwkiGsDTMNNhnpM
+         lvZA+HLgApgqeLcitBc3V1ott3nmfurj5GcIpltbZS5Xk30a5sLgzw6FA9dLa2qAGKJA
+         wLwqORZoKpSELgFXp1tkLBKmG+WLTsSpB6+KVBCg1mMQvNvok022hkbwVhrIcPC96TJ2
+         qts2sOE6fetzLC5HI6n1ATXUfLpwdTZL+93MLCzCIPSSAy1y+V72C3QDGaIQoGeseKfn
+         9N3w==
+X-Gm-Message-State: AO0yUKVnwpwzLef3EQThqGeBLr830VKFkSQHfggyDRYxF3/HbTUHwatm
+	es42xjAlaeXObt69voC2gaodIbAk6Mam3cW+S64cfw==
+X-Google-Smtp-Source: AK7set+RUYz2RLJUmCKAuN80E5C6LRyBdQu+UgKzzLI5prKcrosXVpbyJaqYOEnoLm71zPuAGfkUyepJH8UuFtbQ+Cg=
+X-Received: by 2002:a25:9983:0:b0:9f2:a18c:90ed with SMTP id
+ p3-20020a259983000000b009f2a18c90edmr4846033ybo.10.1677774227956; Thu, 02 Mar
+ 2023 08:23:47 -0800 (PST)
 MIME-Version: 1.0
-References: <cover.1677749625.git.quic_varada@quicinc.com> <8f62ea9941fdb425f63f8389e10a370d2ce0d117.1677749625.git.quic_varada@quicinc.com>
-In-Reply-To: <8f62ea9941fdb425f63f8389e10a370d2ce0d117.1677749625.git.quic_varada@quicinc.com>
+References: <cover.1677749625.git.quic_varada@quicinc.com> <70beab86eb21d1130e61f52753f514cfb433a4f2.1677749625.git.quic_varada@quicinc.com>
+In-Reply-To: <70beab86eb21d1130e61f52753f514cfb433a4f2.1677749625.git.quic_varada@quicinc.com>
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Thu, 2 Mar 2023 18:17:20 +0200
-Message-ID: <CAA8EJppArws0PO1XQKsYB1H9OjpsHDRPwKgHtTGUkvDe=mdq_Q@mail.gmail.com>
-Subject: Re: [PATCH 5/8] phy: qcom-qusb2: add QUSB2 support for IPQ9574
+Date: Thu, 2 Mar 2023 18:23:37 +0200
+Message-ID: <CAA8EJpq_B_f90W6ULk1q+ot8ACj68U0M8Yc8yXL-BGuF906xGA@mail.gmail.com>
+Subject: Re: [PATCH 2/8] dt-bindings: phy: qcom,qusb2: Document IPQ9574 compatible
 To: Varadarajan Narayanan <quic_varada@quicinc.com>
 Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
 	Konrad Dybcio <konrad.dybcio@linaro.org>, Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Sivaprakash Murugesan <sivaprak@codeaurora.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh+dt@kernel.org>, 
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Wesley Cheng <quic_wcheng@quicinc.com>, 
 	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
-	linux-kernel@vger.kernel.org
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230302_081732_413469_8D73C848 
-X-CRM114-Status: GOOD (  13.85  )
+X-CRM114-CacheID: sfid-20230302_082350_081101_4046B121 
+X-CRM114-Status: GOOD (  13.33  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,35 +89,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, 2 Mar 2023 at 11:57, Varadarajan Narayanan
+On Thu, 2 Mar 2023 at 11:56, Varadarajan Narayanan
 <quic_varada@quicinc.com> wrote:
 >
-> Add the phy init sequence for the Super Speed ports found
-> on IPQ9574.
+> Document the compatible string used for the qusb2 phy in IPQ9574.
 >
-> Signed-off-by: Sivaprakash Murugesan <sivaprak@codeaurora.org>
 > Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
 > ---
->  drivers/phy/qualcomm/phy-qcom-qusb2.c | 3 +++
->  1 file changed, 3 insertions(+)
+>  Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml | 1 +
+>  1 file changed, 1 insertion(+)
 >
-> diff --git a/drivers/phy/qualcomm/phy-qcom-qusb2.c b/drivers/phy/qualcomm/phy-qcom-qusb2.c
-> index 2ef638b..c59413b 100644
-> --- a/drivers/phy/qualcomm/phy-qcom-qusb2.c
-> +++ b/drivers/phy/qualcomm/phy-qcom-qusb2.c
-> @@ -915,6 +915,9 @@ static const struct of_device_id qusb2_phy_of_match_table[] = {
->                 .compatible     = "qcom,msm8953-qusb2-phy",
->                 .data           = &msm8996_phy_cfg,
->         }, {
-> +               .compatible     = "qcom,ipq9574-qusb2-phy",
-> +               .data           = &ipq6018_phy_cfg,
-> +       }, {
+> diff --git a/Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml
+> index 7f403e7..c426f78 100644
+> --- a/Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml
+> @@ -25,6 +25,7 @@ properties:
+>                - qcom,qcm2290-qusb2-phy
+>                - qcom,sdm660-qusb2-phy
+>                - qcom,ipq6018-qusb2-phy
 
-The table is sorted. Please keep it this way.
+Please movef ipq6018 to the proper place and then put ipq9574 next to it.
 
->                 .compatible     = "qcom,msm8996-qusb2-phy",
->                 .data           = &msm8996_phy_cfg,
->         }, {
+> +              - qcom,ipq9574-qusb2-phy
+>                - qcom,sm4250-qusb2-phy
+>                - qcom,sm6115-qusb2-phy
+>        - items:
 > --
 > 2.7.4
 >
