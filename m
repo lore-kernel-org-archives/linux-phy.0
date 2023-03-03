@@ -4,80 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E0E6AC61DA3
-	for <linux-phy@archiver.kernel.org>; Fri,  3 Mar 2023 23:01:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B4D3BC61DA4
+	for <linux-phy@archiver.kernel.org>; Fri,  3 Mar 2023 23:01:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=EgKQzloQjDMRgKYo9Qz/fhYblzQeshhGO0c6y5qcwqU=; b=RwB8hZwqvGitWQzhl3Q8ntyMQf
-	ktcidsTsmpRa+kz79LQCY3r8k6o+HliEGiVeYQJsPdYP6YIbWwDDykkHPOgGgjf8oazcRU748fBws
-	PL8eMq0imJSBXPYxObsrAG4tWcAP6RFpGHQN0vBiLpxhxeB3kJNYqLmwk62Ndy8XHPIoB3LDzLSsP
-	hGUwXOoyot/DbmFfc38lw4cHNERfoAFM/h7VpFA00n/WfmttVyxrhlm9P3tAvbWOuOi3qecLpiOZP
-	nZIuP/hPdzSitrgk55QklrpV7rsrb8Vd34BjWfhMcSLgGTgzXCNSMbcYP1l4gLUUy6uNrol4j+bjZ
-	dXJHegfQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=EoWHIX3dea4DRkfCvJkoW/WAfJPqoe1IqoL9RMKSbYM=; b=imPS+7wzJ+1F/+
+	I2E3ZLBt/gZTzd3Gc/3SMsbB2KrGHmqD2priyw6eZ8BJTq/59wYJij0BC982dG7heZbVqEUMjtQ/M
+	SL7A7nYp8pYYDVKjVw4DaKUqWUE+MjvMNzzLHzEvv7MPPXgRKO/KcANtjM8wcby8motA2K+KMCy5y
+	ZX8CZOMQ+/O5ZqcSaxMk+r9ql8nyUno9eumt13aRGckiTMcIjC8noPSKyuLYnMdo6VWh0D0aISCtW
+	Zbkz37iuFGsawbNg9bSwNRgw7OT1UTHtR7gZnyOf3MqDjZvk/QXH9SpfWtBo8/NBQaSutAgPgbTaX
+	yreJfdBwGTpqaN/CKYUg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pYEOd-007l83-5G; Fri, 03 Mar 2023 23:01:03 +0000
-Received: from ams.source.kernel.org ([145.40.68.75])
+	id 1pYEOm-007lA8-28; Fri, 03 Mar 2023 23:01:12 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pYDJE-007aYt-7z; Fri, 03 Mar 2023 21:51:26 +0000
+	id 1pYDOz-007dM4-8r
+	for linux-phy@lists.infradead.org; Fri, 03 Mar 2023 21:57:22 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id A5090B81A34;
-	Fri,  3 Mar 2023 21:51:22 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D5195C433EF;
-	Fri,  3 Mar 2023 21:51:14 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id E9ADF618F1;
+	Fri,  3 Mar 2023 21:57:19 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 589BDC433EF;
+	Fri,  3 Mar 2023 21:57:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1677880281;
-	bh=Br50V+ZnNhKeUVmf1H88XflaSYA3zbjNUSaOrfbHpWM=;
+	s=k20201202; t=1677880639;
+	bh=XKPieicA8mxBgDHfafnbiUGOdRZZfzDp6nuSYj8/TMk=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=L0Wgj2qDMYr7AQFFunxAnGexnwRXj41XfheavwO4sQNH9ThQWN7YWlj2Dp73Ahdw/
-	 2uXKlv/22ez+DVr7ejBSi69+v/MiAkOp+L5BIU6bdV3QorAgVbad15r3DUWG3n/DEN
-	 M10p5eVyq7bMRTBYHiwIAV7dwH08VMMfs8aaRdkMd/hoae6WtB50Y8/GEMWE9hfPsr
-	 X7GJJ+ZO9cmyRf0HO7C4myHQ+bm9TdwZkTHEpy9iYruGmrWIunUXZc3w5CkIZpxxYi
-	 kXKl6tYBhJNPTsNy5u9kGPM7Uf/kIR6xDR/XGWpONnVXpZwWkjJ02fE/UU6YbDF9O8
-	 LSMB76p+PtvfA==
-Date: Fri, 3 Mar 2023 21:51:12 +0000
-From: Conor Dooley <conor@kernel.org>
-To: Rob Herring <robh@kernel.org>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Stephen Boyd <sboyd@kernel.org>,
-	Herbert Xu <herbert@gondor.apana.org.au>,
-	"David S. Miller" <davem@davemloft.net>,
-	Rob Clark <robdclark@gmail.com>,
-	Abhinav Kumar <quic_abhinavk@quicinc.com>,
-	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
-	Sean Paul <sean@poorly.run>, Thomas Gleixner <tglx@linutronix.de>,
-	Marc Zyngier <maz@kernel.org>,
-	Mauro Carvalho Chehab <mchehab@kernel.org>,
-	Eric Dumazet <edumazet@google.com>,
-	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
-	Andrew Lunn <andrew@lunn.ch>,
-	Heiner Kallweit <hkallweit1@gmail.com>,
-	Vinod Koul <vkoul@kernel.org>,
+	b=uuw5J8gjl41jr3mJnjjeTHOf1wXLwDIe/tZButxgwNzM8tFPfkvKtsALhVyVpuZKr
+	 glridIdCQFjEt3otGwoxDtSpdkF6oCcp0cVHTN6W4z2KhwPT+wJLH/49bwm7r2N8dH
+	 vb+xF+EIqYM7q1ctW5Y6K6luz+UM7GZWXdyxL2aXegPF99VjzZwUjrxHcnnLwBCEoD
+	 D4WHJtmPowDlzs4J/oMYs2u72QEHX4zOFnp8Oy8XlGF9FDnfzprPxEH1JGjlJ1AepY
+	 pgKjzzpDCMTvARReHXB49XgkQ9aUuOhIjl/VAFa0L5+aToGC/4nER7Y+VrfVXENwkO
+	 jZHL0VwKjfgDA==
+Date: Fri, 3 Mar 2023 21:57:11 +0000
+From: Lee Jones <lee@kernel.org>
+To: Colin Foster <colin.foster@in-advantage.com>
+Cc: linux-phy@lists.infradead.org, netdev@vger.kernel.org,
+	linux-kernel@vger.kernel.org, Russell King <linux@armlinux.org.uk>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Mark Brown <broonie@kernel.org>,
-	Conor Dooley <conor.dooley@microchip.com>,
-	linux-clk@vger.kernel.org, linux-crypto@vger.kernel.org,
-	dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org,
-	linux-media@vger.kernel.org, netdev@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
-	linux-gpio@vger.kernel.org, alsa-devel@alsa-project.org,
-	linux-riscv@lists.infradead.org, linux-spi@vger.kernel.org
-Subject: Re: [PATCH] dt-bindings: yamllint: Require a space after a comment
- '#'
-Message-ID: <cdad5aa0-bd94-4137-9063-af45e94a25b7@spud>
-References: <20230303214223.49451-1-robh@kernel.org>
+	Vinod Koul <vkoul@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
+	Jakub Kicinski <kuba@kernel.org>,
+	Eric Dumazet <edumazet@google.com>,
+	"David S. Miller" <davem@davemloft.net>,
+	Florian Fainelli <f.fainelli@gmail.com>,
+	Andrew Lunn <andrew@lunn.ch>, UNGLinuxDriver@microchip.com,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Claudiu Manoil <claudiu.manoil@nxp.com>,
+	Vladimir Oltean <vladimir.oltean@nxp.com>
+Subject: Re: [RFC v1 net-next 2/7] mfd: ocelot: add ocelot-serdes capability
+Message-ID: <20230303215711.GR2420672@google.com>
+References: <20230216075321.2898003-1-colin.foster@in-advantage.com>
+ <20230216075321.2898003-3-colin.foster@in-advantage.com>
+ <20230303104807.GW2303077@google.com>
+ <ZAIOddFw//0VDoyw@MSI.localdomain>
 MIME-Version: 1.0
-In-Reply-To: <20230303214223.49451-1-robh@kernel.org>
+Content-Disposition: inline
+In-Reply-To: <ZAIOddFw//0VDoyw@MSI.localdomain>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230303_135124_647513_B1C739BB 
-X-CRM114-Status: GOOD (  16.71  )
+X-CRM114-CacheID: sfid-20230303_135721_420010_BDEBCC9E 
+X-CRM114-Status: GOOD (  17.42  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,78 +80,27 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============5120165930926004336=="
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
---===============5120165930926004336==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="mffVr3k4EP4yfp2t"
-Content-Disposition: inline
-
-
---mffVr3k4EP4yfp2t
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Fri, Mar 03, 2023 at 03:42:23PM -0600, Rob Herring wrote:
-> Enable yamllint to check the prefered commenting style of requiring a
-> space after a comment character '#'. Fix the cases in the tree which
-> have a warning with this enabled. Most cases just need a space after the
-> '#'. A couple of cases with comments which were not intended to be
-> comments are revealed. Those were in ti,sa2ul.yaml, ti,cal.yaml, and
-> brcm,bcmgenet.yaml.
->=20
-> Signed-off-by: Rob Herring <robh@kernel.org>
-> ---
-
-> Cc: Conor Dooley <conor.dooley@microchip.com>
-
-> diff --git a/Documentation/devicetree/bindings/spi/microchip,mpfs-spi.yam=
-l b/Documentation/devicetree/bindings/spi/microchip,mpfs-spi.yaml
-> index 1051690e3753..74a817cc7d94 100644
-> --- a/Documentation/devicetree/bindings/spi/microchip,mpfs-spi.yaml
-> +++ b/Documentation/devicetree/bindings/spi/microchip,mpfs-spi.yaml
-> @@ -22,7 +22,7 @@ properties:
->        - items:
->            - const: microchip,mpfs-qspi
->            - const: microchip,coreqspi-rtl-v2
-> -      - const: microchip,coreqspi-rtl-v2 #FPGA QSPI
-> +      - const: microchip,coreqspi-rtl-v2 # FPGA QSPI
->        - const: microchip,mpfs-spi
-
-I had to think for a minute as to what that comment even meant...
-Reviewed-by: Conor Dooley <conor.dooley@microchip.com>
-
-Thanks,
-Conor.
-
---mffVr3k4EP4yfp2t
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZAJr0AAKCRB4tDGHoIJi
-0rHgAP9euC+7Ztk0BIMgxdrJzAjogpoZQH6UzawtcdI6SIq2nQD/d5Bvci5DVqMV
-DWn8X2un+KM/vLbl8yUpHlGFB4QKwQY=
-=v1U9
------END PGP SIGNATURE-----
-
---mffVr3k4EP4yfp2t--
-
-
---===============5120165930926004336==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============5120165930926004336==--
-
+T24gRnJpLCAwMyBNYXIgMjAyMywgQ29saW4gRm9zdGVyIHdyb3RlOgoKPiBPbiBGcmksIE1hciAw
+MywgMjAyMyBhdCAxMDo0ODowN0FNICswMDAwLCBMZWUgSm9uZXMgd3JvdGU6Cj4gPiBPbiBXZWQs
+IDE1IEZlYiAyMDIzLCBDb2xpbiBGb3N0ZXIgd3JvdGU6Cj4gPiAKPiA+ID4gQWRkIHN1cHBvcnQg
+Zm9yIHRoZSBPY2Vsb3QgU0VSREVTIG1vZHVsZSB0byBzdXBwb3J0IGZ1bmN0aW9uYWxpdHkgb2Yg
+YWxsCj4gPiA+IG5vbi1pbnRlcm5hbCBwaHkgcG9ydHMuCj4gPiAKPiA+IExvb2tzIG5vbi1jb250
+cm92ZXJzaWFsLgo+ID4gCj4gPiBQbGVhc2UgcHJvdmlkZSBzb21lIGV4cGxhbmF0aW9uIG9mIHdo
+YXQgU0VSREVTIG1lYW5zIC8gaXMuCj4gCj4gV2lsbCBkby4KPiAKPiA+ICAKPiA+ID4gU2lnbmVk
+LW9mZi1ieTogQ29saW4gRm9zdGVyIDxjb2xpbi5mb3N0ZXJAaW4tYWR2YW50YWdlLmNvbT4KPiA+
+ID4gLS0tCj4gPiA+ICBkcml2ZXJzL21mZC9vY2Vsb3QtY29yZS5jIHwgMTMgKysrKysrKysrKysr
+Kwo+ID4gPiAgMSBmaWxlIGNoYW5nZWQsIDEzIGluc2VydGlvbnMoKykKPiA+IAo+ID4gSSdkIGV4
+cGVjdCB0aGlzIHRvIGdvIGluIHZpYSBNRkQgb25jZSBpdCBjb21lcyBvdXQgb2YgUkZDLgo+IAo+
+IFVuZGVyc3Rvb2QuIEknbGwgYmUgc3VyZSB0byBtYWtlIGl0IGNsZWFyIHRoYXQgc29tZSBzeW5j
+IHdpbGwgYmUgbmVlZGVkCj4gYmV0d2VlbiBNRkQgYW5kIG5ldC1uZXh0IGluIHRoZSBjb3ZlciBs
+ZXR0ZXIgdGhpcyB0aW1lLgoKVG8gYmUgaG9uZXN0LCBJIGRvbid0IHRoaW5rIHRoYXQncyByZXF1
+aXJlZCB0aGlzIHRpbWUuCgpUaGlzIHBhdGNoIGxvb2tzIG9ydGhvZ29uYWwsIHVubGVzcyB0aGVy
+ZSdzIHNvbWV0aGluZyBJJ20gbWlzc2luZy4KIAo+IFRoYW5rcyBMZWUhCgpOUAoKLS0gCkxlZSBK
+b25lcyBb5p2O55C85pavXQoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxp
+c3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlz
+dGluZm8vbGludXgtcGh5Cg==
