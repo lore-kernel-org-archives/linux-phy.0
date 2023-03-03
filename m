@@ -4,90 +4,91 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 51156C678D4
-	for <linux-phy@archiver.kernel.org>; Fri,  3 Mar 2023 09:20:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A8BA4C678D4
+	for <linux-phy@archiver.kernel.org>; Fri,  3 Mar 2023 09:37:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=t87/1K5SLrkgOe+bbnUIQTK5G4fil/OlTol9JS6nJko=; b=sw1aLK92UXD6wT
-	RS888TsVDrXcY7jBQnZKk/SgOapaXg4/+T2u7VrzSXoPD0Lk0fHSW0SLQxQm42gpv78UU3Sap0TCu
-	NWZHLRyMvV+6jMRzSElGGJsH9vpcU7u3URwH2Qhv+FUhyBPy0iCLcO9juKC7pmCYaUJnvjq2i1eNH
-	70YpTLBRYCqWLEl9fbI14/BvC1smTFf1GGytFPyvMA8lhbl/XTWFPFInF+jEr8mPjS+aeOGT8hnuY
-	wo4p5YZmKgExGJKTWfWpNA2gmQihD0BXDyGXdCaZR1mz7+uhfxLXGR7weIBvhWpw5US2q5LqSeKc4
-	pwIM8pQ3DgpMCl4KXLLw==;
+	List-Owner; bh=Dh1UP52V1rSRcJ3ZnEeqwfL3WAPFByC8JMuXixtkDu4=; b=nAyOxHZ4fht7YV
+	SV47K14m4DAzHpIWW9439OgSrYFrs8NOTWeUClAAru8AEaBVAYWK5+QZhrsfv8Mg9Woy5FkYnS6aH
+	+TSNOolGGcmYj7DUCnX/Awmldc7ENj5yQoyChpmaQTfiBG/st1bS9CQQnaFg6REXOHLX1g9cwAKwi
+	12OGcWNr4YDDaNI5MwqmBGtq5XR6tzCyefBU2esib5xZIAp09KYQgacHHsy74BwPY3IklTl7yheOa
+	yuUmAn5D83J45Y3BU6xeMSo7if6A7rZmz3ifqj7yRfyc0jsp4KPadk6zUofalO6IvQxsp26SjMUgl
+	/0ZMpejrs0pdRMsFWpXQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pY1aD-005drR-P3; Fri, 03 Mar 2023 09:20:09 +0000
+	id 1pY1qo-005onF-2f; Fri, 03 Mar 2023 09:37:18 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pY1aB-005dq0-QM
-	for linux-phy@lists.infradead.org; Fri, 03 Mar 2023 09:20:09 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3238YBsI029415;
-	Fri, 3 Mar 2023 09:19:39 GMT
+	id 1pY1qk-005olK-S9
+	for linux-phy@lists.infradead.org; Fri, 03 Mar 2023 09:37:17 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 323558ev031104;
+	Fri, 3 Mar 2023 09:36:46 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
  mime-version : subject : to : cc : references : from : in-reply-to :
  content-type : content-transfer-encoding; s=qcppdkim1;
- bh=O5vTVTIUN0fCaG6LkdfP9jsn9Um4thhPGwXy4duo6BY=;
- b=FbeCibHiLz6qmmfey1qhAqBsQjCR9rOfdh883+F0sE4r4mwQR5CFfWVNS1/MIYsGOk15
- BjeIyuWfE5ZWyzM1knawg9RrwL5ZP4PKUjQwRiR5ypcYGyDpfxlSGG6w6JEgLoHEc8iO
- ECc+Q8PvgVZuAfon2qxih/OYLl35ytJolxRCLNa+T7x5P/ZsSXlFmHmdQJtpjVdkJSU+
- HYgwKWptAc7RWt72nRAGBVUYEwvcfRCioqV8vQaKZ5dZYUAJY3ZCq4B4jvapQ+wBy6I2
- 2v926+KCWstKB7kxgIWIogZCDb6pIOH5bXQ6CO108LTmIZ0o24eNlg4AULxmXFUjHpxo Hw== 
-Received: from nasanppmta05.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3p3dfrg3q5-1
+ bh=lheN9skkunuL5x9zbUp2Cg+HoAU+Wq/RNkcIWKh77RQ=;
+ b=hO5MqkGSMLsHaGelrNRJ3dIqwZihLQmVdZzVOwtJxE/EDnZ6NIJkQbQ7SEJzToDGzqv5
+ AdPwl2yk3TG4rJfQhRV4OWJl4GFnyWjRAzdh0QMQT3MxwwEYopyBy8xUNGfMx458G3rv
+ ztJuKN0wLxag9Cf5YJKVUZYlpn0r1MepRvN6u92YHdVpsTgonW6kKbP19kvFYDriFDW9
+ 9C5/T4Pruhe5ZIgVEdrgdw4lb29VpJnX8owElR9dykLABafX3Y3VZFBMcZmD59Hm6WxM
+ lzQbRC13WQ0J5B9B12kJNO0oRMtKEtb1xHlZwO/DJDFTUkIehGlexgSAQ3G9fvnkrNFc 9g== 
+Received: from nasanppmta04.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3p2rbgbggu-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 03 Mar 2023 09:19:39 +0000
+	Fri, 03 Mar 2023 09:36:46 +0000
 Received: from nasanex01a.na.qualcomm.com ([10.52.223.231])
-	by NASANPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 3239JcIE028302
+	by NASANPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 3239ajSc011367
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 3 Mar 2023 09:19:38 GMT
+	Fri, 3 Mar 2023 09:36:45 GMT
 Received: from [10.50.35.127] (10.80.80.8) by nasanex01a.na.qualcomm.com
  (10.52.223.231) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.986.41; Fri, 3 Mar 2023
- 01:19:35 -0800
-Message-ID: <24d307a2-ea83-d9f3-95a2-42ec9ab3fc73@quicinc.com>
-Date: Fri, 3 Mar 2023 14:49:32 +0530
+ 01:36:42 -0800
+Message-ID: <862dc7eb-d599-ec1c-4c53-37898b1db906@quicinc.com>
+Date: Fri, 3 Mar 2023 15:06:34 +0530
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
  Thunderbird/102.7.1
-Subject: Re: [PATCH 5/8] phy: qcom-qusb2: add QUSB2 support for IPQ9574
+Subject: Re: [PATCH 6/8] phy: qcom: qmp: Update IPQ9574 USB Phy initialization
+ Sequence
 Content-Language: en-US
 To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 CC: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
         Konrad Dybcio <konrad.dybcio@linaro.org>,
         Vinod Koul <vkoul@kernel.org>,
         Kishon Vijay Abraham I <kishon@kernel.org>,
-        Sivaprakash Murugesan
-	<sivaprak@codeaurora.org>,
+        Praveenkumar I
+	<ipkumar@codeaurora.org>,
         <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
         <linux-kernel@vger.kernel.org>
 References: <cover.1677749625.git.quic_varada@quicinc.com>
- <8f62ea9941fdb425f63f8389e10a370d2ce0d117.1677749625.git.quic_varada@quicinc.com>
- <CAA8EJppArws0PO1XQKsYB1H9OjpsHDRPwKgHtTGUkvDe=mdq_Q@mail.gmail.com>
+ <b0f93b77e059791f6fe51a6c42535644cec90d70.1677749625.git.quic_varada@quicinc.com>
+ <CAA8EJpqn2gVcUiELAgGofZ9DS-L1BYU-WBir8NovQCUQ-7wWLQ@mail.gmail.com>
 From: Varadarajan Narayanan <quic_varada@quicinc.com>
-In-Reply-To: <CAA8EJppArws0PO1XQKsYB1H9OjpsHDRPwKgHtTGUkvDe=mdq_Q@mail.gmail.com>
+In-Reply-To: <CAA8EJpqn2gVcUiELAgGofZ9DS-L1BYU-WBir8NovQCUQ-7wWLQ@mail.gmail.com>
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nasanex01a.na.qualcomm.com (10.52.223.231)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: aAM-DA1wRtl-snieoF1_HRLx7Dweyvv3
-X-Proofpoint-ORIG-GUID: aAM-DA1wRtl-snieoF1_HRLx7Dweyvv3
+X-Proofpoint-GUID: Gr0GDPkBW9e2sH2MxQo3TXWuZuOg5NhL
+X-Proofpoint-ORIG-GUID: Gr0GDPkBW9e2sH2MxQo3TXWuZuOg5NhL
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.219,Aquarius:18.0.942,Hydra:6.0.573,FMLib:17.11.170.22
  definitions=2023-03-03_01,2023-03-02_02,2023-02-09_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 phishscore=0
- adultscore=0 impostorscore=0 bulkscore=0 mlxlogscore=999 clxscore=1015
- priorityscore=1501 malwarescore=0 lowpriorityscore=0 spamscore=0
- suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2212070000 definitions=main-2303030082
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 mlxlogscore=999
+ lowpriorityscore=0 suspectscore=0 priorityscore=1501 impostorscore=0
+ mlxscore=0 spamscore=0 malwarescore=0 adultscore=0 bulkscore=0
+ clxscore=1015 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2212070000 definitions=main-2303030084
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230303_012007_894911_D51487E7 
-X-CRM114-Status: GOOD (  14.80  )
+X-CRM114-CacheID: sfid-20230303_013714_974562_ABEE818C 
+X-CRM114-Status: GOOD (  20.02  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,45 +106,211 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On 3/2/2023 9:47 PM, Dmitry Baryshkov wrote:
+On 3/2/2023 9:46 PM, Dmitry Baryshkov wrote:
 > On Thu, 2 Mar 2023 at 11:57, Varadarajan Narayanan
 > <quic_varada@quicinc.com> wrote:
->> Add the phy init sequence for the Super Speed ports found
->> on IPQ9574.
+>> Updated USB QMP PHY Init sequence based on HPG for IPQ9574.
+>> Reused clock and reset list from existing targets.
 >>
->> Signed-off-by: Sivaprakash Murugesan <sivaprak@codeaurora.org>
+>> Signed-off-by: Praveenkumar I <ipkumar@codeaurora.org>
 >> Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
 >> ---
->>   drivers/phy/qualcomm/phy-qcom-qusb2.c | 3 +++
->>   1 file changed, 3 insertions(+)
+>>   drivers/phy/qualcomm/phy-qcom-qmp-usb.c | 130 ++++++++++++++++++++++++++++++++
+>>   1 file changed, 130 insertions(+)
 >>
->> diff --git a/drivers/phy/qualcomm/phy-qcom-qusb2.c b/drivers/phy/qualcomm/phy-qcom-qusb2.c
->> index 2ef638b..c59413b 100644
->> --- a/drivers/phy/qualcomm/phy-qcom-qusb2.c
->> +++ b/drivers/phy/qualcomm/phy-qcom-qusb2.c
->> @@ -915,6 +915,9 @@ static const struct of_device_id qusb2_phy_of_match_table[] = {
->>                  .compatible     = "qcom,msm8953-qusb2-phy",
->>                  .data           = &msm8996_phy_cfg,
+>> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
+>> index a49711c..a44c15b 100644
+>> --- a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
+>> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
+>> @@ -91,9 +91,15 @@ enum qphy_reg_layout {
+>>          /* PCS registers */
+>>          QPHY_SW_RESET,
+>>          QPHY_START_CTRL,
+>> +       QPHY_FLL_CNTRL1,
+>> +       QPHY_FLL_CNTRL2,
+>> +       QPHY_FLL_CNT_VAL_L,
+>> +       QPHY_FLL_CNT_VAL_H_TOL,
+>> +       QPHY_FLL_MAN_CODE,
+> You don't seem to be using indirect register addressing for these
+> registers, so these bits are unused and can be dropped.
+>
+>>          QPHY_PCS_STATUS,
+>>          QPHY_PCS_AUTONOMOUS_MODE_CTRL,
+>>          QPHY_PCS_LFPS_RXTERM_IRQ_CLEAR,
+>> +       QPHY_PCS_LFPS_RXTERM_IRQ_STATUS,
+>>          QPHY_PCS_POWER_DOWN_CONTROL,
+>>          /* Keep last to ensure regs_layout arrays are properly initialized */
+>>          QPHY_LAYOUT_SIZE
+>> @@ -139,6 +145,103 @@ static const unsigned int qmp_v5_usb3phy_regs_layout[QPHY_LAYOUT_SIZE] = {
+>>          [QPHY_PCS_LFPS_RXTERM_IRQ_CLEAR] = QPHY_V5_PCS_USB3_LFPS_RXTERM_IRQ_CLEAR,
+>>   };
+>>
+>> +static const unsigned int usb3phy_regs_layout[] = {
+>> +       [QPHY_FLL_CNTRL1]                       = 0xc0,
+>> +       [QPHY_FLL_CNTRL2]                       = 0xc4,
+>> +       [QPHY_FLL_CNT_VAL_L]                    = 0xc8,
+>> +       [QPHY_FLL_CNT_VAL_H_TOL]                = 0xcc,
+>> +       [QPHY_FLL_MAN_CODE]                     = 0xd0,
+>> +       [QPHY_SW_RESET]                         = 0x00,
+>> +       [QPHY_START_CTRL]                       = 0x08,
+>> +       [QPHY_PCS_STATUS]                       = 0x17c,
+>> +       [QPHY_PCS_AUTONOMOUS_MODE_CTRL]         = 0x0d4,
+>> +       [QPHY_PCS_LFPS_RXTERM_IRQ_CLEAR]        = 0x0d8,
+>> +       [QPHY_PCS_LFPS_RXTERM_IRQ_STATUS]       = 0x178,
+>> +       [QPHY_PCS_POWER_DOWN_CONTROL]           = 0x04,
+>> +};
+>> +
+>> +static const struct qmp_phy_init_tbl ipq9574_usb3_serdes_tbl[] = {
+>> +       QMP_PHY_INIT_CFG(QSERDES_COM_SYSCLK_EN_SEL, 0x1a),
+>> +       QMP_PHY_INIT_CFG(QSERDES_COM_BIAS_EN_CLKBUFLR_EN, 0x08),
+>> +       QMP_PHY_INIT_CFG(QSERDES_COM_CLK_SELECT, 0x30),
+>> +       QMP_PHY_INIT_CFG(QSERDES_COM_BG_TRIM, 0x0f),
+>> +       QMP_PHY_INIT_CFG(QSERDES_RX_UCDR_FASTLOCK_FO_GAIN, 0x0b),
+>> +       QMP_PHY_INIT_CFG(QSERDES_COM_SVS_MODE_CLK_SEL, 0x01),
+>> +       QMP_PHY_INIT_CFG(QSERDES_COM_HSCLK_SEL, 0x00),
+>> +       QMP_PHY_INIT_CFG(QSERDES_COM_CMN_CONFIG, 0x06),
+>> +       QMP_PHY_INIT_CFG(QSERDES_COM_PLL_IVCO, 0x0f),
+>> +       QMP_PHY_INIT_CFG(QSERDES_COM_SYS_CLK_CTRL, 0x06),
+>> +       /* PLL and Loop filter settings */
+>> +       QMP_PHY_INIT_CFG(QSERDES_COM_DEC_START_MODE0, 0x68),
+>> +       QMP_PHY_INIT_CFG(QSERDES_COM_DIV_FRAC_START1_MODE0, 0xAB),
+>> +       QMP_PHY_INIT_CFG(QSERDES_COM_DIV_FRAC_START2_MODE0, 0xAA),
+>> +       QMP_PHY_INIT_CFG(QSERDES_COM_DIV_FRAC_START3_MODE0, 0x02),
+>> +       QMP_PHY_INIT_CFG(QSERDES_COM_CP_CTRL_MODE0, 0x09),
+>> +       QMP_PHY_INIT_CFG(QSERDES_COM_PLL_RCTRL_MODE0, 0x16),
+>> +       QMP_PHY_INIT_CFG(QSERDES_COM_PLL_CCTRL_MODE0, 0x28),
+>> +       QMP_PHY_INIT_CFG(QSERDES_COM_INTEGLOOP_GAIN0_MODE0, 0xA0),
+>> +       QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP1_MODE0, 0xAA),
+>> +       QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP2_MODE0, 0x29),
+>> +       QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP3_MODE0, 0x00),
+>> +       QMP_PHY_INIT_CFG(QSERDES_COM_CORE_CLK_EN, 0x00),
+>> +       QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP_CFG, 0x00),
+>> +       QMP_PHY_INIT_CFG(QSERDES_COM_VCO_TUNE_MAP, 0x00),
+>> +       QMP_PHY_INIT_CFG(QSERDES_COM_BG_TIMER, 0x0a),
+>> +       /* SSC settings */
+>> +       QMP_PHY_INIT_CFG(QSERDES_COM_SSC_EN_CENTER, 0x01),
+>> +       QMP_PHY_INIT_CFG(QSERDES_COM_SSC_PER1, 0x7D),
+>> +       QMP_PHY_INIT_CFG(QSERDES_COM_SSC_PER2, 0x01),
+>> +       QMP_PHY_INIT_CFG(QSERDES_COM_SSC_ADJ_PER1, 0x00),
+>> +       QMP_PHY_INIT_CFG(QSERDES_COM_SSC_ADJ_PER2, 0x00),
+>> +       QMP_PHY_INIT_CFG(QSERDES_COM_SSC_STEP_SIZE1, 0x0A),
+>> +       QMP_PHY_INIT_CFG(QSERDES_COM_SSC_STEP_SIZE2, 0x05),
+>> +};
+>> +
+>> +static const struct qmp_phy_init_tbl ipq9574_usb3_tx_tbl[] = {
+>> +       QMP_PHY_INIT_CFG(QSERDES_TX_HIGHZ_TRANSCEIVEREN_BIAS_DRVR_EN, 0x45),
+>> +       QMP_PHY_INIT_CFG(QSERDES_TX_RCV_DETECT_LVL_2, 0x12),
+>> +       QMP_PHY_INIT_CFG(QSERDES_TX_LANE_MODE, 0x06),
+>> +};
+>> +
+>> +static const struct qmp_phy_init_tbl ipq9574_usb3_rx_tbl[] = {
+>> +       QMP_PHY_INIT_CFG(QSERDES_RX_UCDR_SO_GAIN, 0x06),
+>> +       QMP_PHY_INIT_CFG(QSERDES_RX_RX_EQU_ADAPTOR_CNTRL2, 0x02),
+>> +       QMP_PHY_INIT_CFG(QSERDES_RX_RX_EQU_ADAPTOR_CNTRL3, 0x6c),
+>> +       QMP_PHY_INIT_CFG(QSERDES_RX_RX_EQU_ADAPTOR_CNTRL3, 0x4c),
+>> +       QMP_PHY_INIT_CFG(QSERDES_RX_RX_EQU_ADAPTOR_CNTRL4, 0xb8),
+>> +       QMP_PHY_INIT_CFG(QSERDES_RX_RX_EQ_OFFSET_ADAPTOR_CNTRL1, 0x77),
+>> +       QMP_PHY_INIT_CFG(QSERDES_RX_RX_OFFSET_ADAPTOR_CNTRL2, 0x80),
+>> +       QMP_PHY_INIT_CFG(QSERDES_RX_SIGDET_CNTRL, 0x03),
+>> +       QMP_PHY_INIT_CFG(QSERDES_RX_SIGDET_DEGLITCH_CNTRL, 0x16),
+>> +       QMP_PHY_INIT_CFG(QSERDES_RX_SIGDET_ENABLES, 0x0c),
+>> +};
+>> +
+>> +static const struct qmp_phy_init_tbl ipq9574_usb3_pcs_tbl[] = {
+>> +       QMP_PHY_INIT_CFG(QPHY_V3_PCS_TXDEEMPH_M6DB_V0, 0x15),
+>> +       QMP_PHY_INIT_CFG(QPHY_V3_PCS_TXDEEMPH_M3P5DB_V0, 0x0e),
+>> +       QMP_PHY_INIT_CFG(QPHY_V3_PCS_FLL_CNTRL2, 0x83),
+>> +       QMP_PHY_INIT_CFG(QPHY_V3_PCS_FLL_CNTRL1, 0x02),
+>> +       QMP_PHY_INIT_CFG(QPHY_V3_PCS_FLL_CNT_VAL_L, 0x09),
+>> +       QMP_PHY_INIT_CFG(QPHY_V3_PCS_FLL_CNT_VAL_H_TOL, 0xa2),
+>> +       QMP_PHY_INIT_CFG(QPHY_V3_PCS_FLL_MAN_CODE, 0x85),
+>> +       QMP_PHY_INIT_CFG(QPHY_V3_PCS_LOCK_DETECT_CONFIG1, 0xd1),
+>> +       QMP_PHY_INIT_CFG(QPHY_V3_PCS_LOCK_DETECT_CONFIG2, 0x1f),
+>> +       QMP_PHY_INIT_CFG(QPHY_V3_PCS_LOCK_DETECT_CONFIG3, 0x47),
+>> +       QMP_PHY_INIT_CFG(QPHY_V3_PCS_POWER_STATE_CONFIG2, 0x1b),
+>> +       QMP_PHY_INIT_CFG(QPHY_V3_PCS_RXEQTRAINING_WAIT_TIME, 0x75),
+>> +       QMP_PHY_INIT_CFG(QPHY_V3_PCS_RXEQTRAINING_RUN_TIME, 0x13),
+>> +       QMP_PHY_INIT_CFG(QPHY_V3_PCS_LFPS_TX_ECSTART_EQTLOCK, 0x86),
+>> +       QMP_PHY_INIT_CFG(QPHY_V3_PCS_PWRUP_RESET_DLY_TIME_AUXCLK, 0x04),
+>> +       QMP_PHY_INIT_CFG(QPHY_V3_PCS_TSYNC_RSYNC_TIME, 0x44),
+>> +       QMP_PHY_INIT_CFG(QPHY_V3_PCS_RCVR_DTCT_DLY_P1U2_L, 0xe7),
+>> +       QMP_PHY_INIT_CFG(QPHY_V3_PCS_RCVR_DTCT_DLY_P1U2_H, 0x03),
+>> +       QMP_PHY_INIT_CFG(QPHY_V3_PCS_RCVR_DTCT_DLY_U3_L, 0x40),
+>> +       QMP_PHY_INIT_CFG(QPHY_V3_PCS_RCVR_DTCT_DLY_U3_H, 0x00),
+>> +       QMP_PHY_INIT_CFG(QPHY_V3_PCS_RX_SIGDET_LVL, 0x88),
+>> +       QMP_PHY_INIT_CFG(QPHY_V3_PCS_TXDEEMPH_M6DB_V0, 0x17),
+>> +       QMP_PHY_INIT_CFG(QPHY_V3_PCS_TXDEEMPH_M3P5DB_V0, 0x0f),
+>> +};
+>> +
+>>   static const struct qmp_phy_init_tbl ipq8074_usb3_serdes_tbl[] = {
+>>          QMP_PHY_INIT_CFG(QSERDES_COM_SYSCLK_EN_SEL, 0x1a),
+>>          QMP_PHY_INIT_CFG(QSERDES_COM_BIAS_EN_CLKBUFLR_EN, 0x08),
+>> @@ -1558,6 +1661,10 @@ static const char * const qmp_phy_vreg_l[] = {
+>>          "vdda-phy", "vdda-pll",
+>>   };
+>>
+>> +static const char * const ipq9574_phy_clk_l[] = {
+> Please move clocks to the clocks section.
+>
+>> +       "aux", "cfg_ahb",
+>> +};
+>> +
+>>   static const struct qmp_usb_offsets qmp_usb_offsets_v5 = {
+>>          .serdes         = 0,
+>>          .pcs            = 0x0200,
+>> @@ -1939,6 +2046,26 @@ static const struct qmp_phy_cfg qcm2290_usb3phy_cfg = {
+>>          .regs                   = qmp_v3_usb3phy_regs_layout,
+>>   };
+>>
+>> +static const struct qmp_phy_cfg ipq9574_usb3phy_cfg = {
+> Please keep the data sorted.
+>
+>> +       .lanes                  = 1,
+>> +
+>> +       .serdes_tbl             = ipq9574_usb3_serdes_tbl,
+>> +       .serdes_tbl_num         = ARRAY_SIZE(ipq9574_usb3_serdes_tbl),
+>> +       .tx_tbl                 = ipq9574_usb3_tx_tbl,
+>> +       .tx_tbl_num             = ARRAY_SIZE(ipq9574_usb3_tx_tbl),
+>> +       .rx_tbl                 = ipq9574_usb3_rx_tbl,
+>> +       .rx_tbl_num             = ARRAY_SIZE(ipq9574_usb3_rx_tbl),
+>> +       .pcs_tbl                = ipq9574_usb3_pcs_tbl,
+>> +       .pcs_tbl_num            = ARRAY_SIZE(ipq9574_usb3_pcs_tbl),
+>> +       .clk_list               = ipq9574_phy_clk_l,
+>> +       .num_clks               = ARRAY_SIZE(ipq9574_phy_clk_l),
+>> +       .reset_list             = msm8996_usb3phy_reset_l,
+>> +       .num_resets             = ARRAY_SIZE(msm8996_usb3phy_reset_l),
+>> +       .vreg_list              = qmp_phy_vreg_l,
+>> +       .num_vregs              = ARRAY_SIZE(qmp_phy_vreg_l),
+>> +       .regs                   = usb3phy_regs_layout,
+>> +};
+> You will get an undefined symbol error here.
+>
+>> +
+>>   static void qmp_usb_configure_lane(void __iomem *base,
+>>                                          const struct qmp_phy_init_tbl tbl[],
+>>                                          int num,
+>> @@ -2607,6 +2734,9 @@ static const struct of_device_id qmp_usb_of_match_table[] = {
+>>                  .compatible = "qcom,sc8280xp-qmp-usb3-uni-phy",
+>>                  .data = &sc8280xp_usb3_uniphy_cfg,
 >>          }, {
->> +               .compatible     = "qcom,ipq9574-qusb2-phy",
->> +               .data           = &ipq6018_phy_cfg,
+>> +               .compatible = "qcom,ipq9574-qmp-usb3-phy",
+>> +               .data = &ipq9574_usb3phy_cfg,
 >> +       }, {
-> The table is sorted. Please keep it this way.
+> Please choose a less random place for your driver data. The match
+> table is sorted, please keep it this way.
+>
+>>                  .compatible = "qcom,sdm845-qmp-usb3-phy",
+>>                  .data = &qmp_v3_usb3phy_cfg,
+>>          }, {
+>> --
+>> 2.7.4
 
-Sorry, didn't notice that. Will post a revised patch.
+Thanks for the feedback. Will make the corrections and post a revised patch.
 
 Thanks
 
 Varada
 
->
->>                  .compatible     = "qcom,msm8996-qusb2-phy",
->>                  .data           = &msm8996_phy_cfg,
->>          }, {
->> --
->> 2.7.4
->>
->
 
 -- 
 linux-phy mailing list
