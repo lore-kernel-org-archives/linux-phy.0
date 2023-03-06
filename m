@@ -4,77 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 653D7C61DA4
-	for <linux-phy@archiver.kernel.org>; Mon,  6 Mar 2023 17:01:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D20F9C6FD1C
+	for <linux-phy@archiver.kernel.org>; Mon,  6 Mar 2023 17:05:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:Subject:From:References:Cc:To:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rxxZ1dsLXjlByBIUE9qqy9D1EtZ/MMUJsDYEslmfaHI=; b=IbbJUmTe4LbIBa
-	scqu1g5kdS93rW7v05YJXbu/epF5Sfd/V5tbRXAIVqLMu6zkxo0aY0nyTrd4N9gOxgEbiq0jt9YS0
-	OOT74GnqonAB5210xFwGVIE+c3J4yGHbSTEq/xueDC4qRPsriI/ys1OJTTfTBO7r1Kn5sG53CTOBB
-	JgVAnFzJlezX6SU7ZZeUVDACejUOCiTKzPVB9ozXq8tg6JjnFUYUaHDiASH67ED8q7HMjuR/vcr8s
-	yuyQpsOBNqcZCQczf0+sqpgMjjx+QmT4O1IL5D77JLDrRqb9IRE7ZiNRMI8yPBeLxkbdylyYi9/Bv
-	ll/6svrjWbBjmjXbTqEQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:MIME-Version:Subject:
+	Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=I/sJSl1fVY1UbD7XY+RrwD68FaBm/CDoUrH1fpN/HPM=; b=zcnr+GupGGi0r3
+	uLUHgYqx25ELZ7taSb6WfuVj9K4YoCjNSOLqQC5p41DGoKqpm5ykNI49iW2LITDlfIfoAWyxkG6LI
+	x5ti50jbE/9xS/sk1uKrm0acvHoT9dQE2gUsS/qd1FqXNx3KekVPY+M1eA4KmYvD1OvQHYNthf9l+
+	cHIbOxHfMGcqbj5z0cFJGhs2o9DYD2M/5Idb4VXGMt3yYSnHkxkbTIDhfq343LHT4Ww5st7lRb1tn
+	a/bqjxy7cXZwjanHhBft7O7CF7xEnmw1o+Cknlirfz6OY22U3+SOROpTgJXqHwjnmkvwvyob0jOZO
+	Bb7JCbi+bPbNxbrl3zLg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pZEDF-00E2I2-Qx; Mon, 06 Mar 2023 17:01:25 +0000
-Received: from vmi888983.contaboserver.net ([149.102.157.145] helo=amity.mint.lgbt)
+	id 1pZEHX-00E38y-5i; Mon, 06 Mar 2023 17:05:51 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pZEDC-00E2H5-W4
-	for linux-phy@lists.infradead.org; Mon, 06 Mar 2023 17:01:24 +0000
-Received: from amity.mint.lgbt (mx.mint.lgbt [127.0.0.1])
-	by amity.mint.lgbt (Postfix) with ESMTP id 4PVlGT0QTlz1S5K2
-	for <linux-phy@lists.infradead.org>; Mon,  6 Mar 2023 12:01:20 -0500 (EST)
-Authentication-Results: amity.mint.lgbt (amavisd-new);
-	dkim=pass (2048-bit key) reason="pass (just generated, assumed good)"
-	header.d=mint.lgbt
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=mint.lgbt; h=
-	content-transfer-encoding:content-type:in-reply-to:subject:from
-	:references:to:content-language:user-agent:mime-version:date
-	:message-id; s=dkim; t=1678122079; x=1678986080; bh=bI8Q9ZobF/m/
-	5zL0TsX0t3zOLtFDXF74jdm5TmV+sTA=; b=lpxCcPVNSQsn8dJBRjkyDQ1UdPaf
-	VaX/X+bTeGV7/cqy814VOAUxrhgnRQETMJzMA/TFoGeaEyZoEsadDeO1vQepfriP
-	1aYShJZZtxowD72iVqkjCNYSGG08KsvkVb0Ci4uWXRrlc75dtwNSOzGUNXBRuPJM
-	u/gtxHoOlLIaGOWoebhoNLbFboZZRdvRAHlK1vgQS/EbemYjvp6dkJJ+Rajhli51
-	zZz2c9XuEhcVYpJ7GAbQhQG2EBAHsid1iQ6IndRf1KaQK7keEIHd5P1UxOZcMdWl
-	24hzwbv09h9kkCTEnd1MfpAG6fMvgqoXJ2/ud9Ak1Pq5TzygC6J2NRUaiw==
-X-Virus-Scanned: amavisd-new at amity.mint.lgbt
-Received: from amity.mint.lgbt ([127.0.0.1])
-	by amity.mint.lgbt (amity.mint.lgbt [127.0.0.1]) (amavisd-new, port 10026)
-	with ESMTP id 34goTn03cWgT for <linux-phy@lists.infradead.org>;
-	Mon,  6 Mar 2023 12:01:19 -0500 (EST)
-Received: from [192.168.1.90] (unknown [186.105.8.42])
-	by amity.mint.lgbt (Postfix) with ESMTPSA id 4PVlGC5d4jz1S5Fp;
-	Mon,  6 Mar 2023 12:01:07 -0500 (EST)
-Message-ID: <4670ddae-6b01-1e5c-b0ed-1f2f498a4f66@mint.lgbt>
-Date: Mon, 6 Mar 2023 14:01:04 -0300
+	id 1pZEHU-00E37h-3s
+	for linux-phy@lists.infradead.org; Mon, 06 Mar 2023 17:05:49 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 9C29461042
+	for <linux-phy@lists.infradead.org>; Mon,  6 Mar 2023 17:05:47 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id F0D6DC433D2;
+	Mon,  6 Mar 2023 17:05:45 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1678122347;
+	bh=Co92hpAVMlgBOmR5hA65uy5h05hdlthpq3qPqXsKyEg=;
+	h=From:Date:Subject:To:Cc:From;
+	b=XHDcSY6escgseT2VHhy5KBymKxWYu1vh/Swa3Ni53WQVO4NIBl0+FQ8pDVcfDsCeF
+	 h5nORZX+qmtDHfmJvnAwUwXEGRJxCDaKmazoEQtP4LY07+uIN/qd5QUhkRFR0eAn5n
+	 GoLhRtkgpJ8KLf3REmXF6iUq8Q8VpN8t6cZ74X05lV1/+kfQ+UyKHHO4kgyql4ldti
+	 v5h+uugKtnahoQRnAqE7mEduDw5ZJQ1WyN+9jMvVMxhC4KGgFtbmiiIafAWQ3jwHfP
+	 D0bCQwim3hQVJqRctVFqTdAoBIvi4vWSRVOLeTDXfGmrgwY4oCO4pif6QUR+dd5zGv
+	 CtvO+ZCzIN+EA==
+From: Mark Brown <broonie@kernel.org>
+Date: Mon, 06 Mar 2023 17:05:35 +0000
+Subject: [PATCH] phy: xgene: Depend on ARCH_XGENE rather than plain arm64
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.8.0
-Content-Language: en-US
-To: agross@kernel.org, andersson@kernel.org, konrad.dybcio@linaro.org,
- robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org, vkoul@kernel.org,
- kishon@kernel.org, alim.akhtar@samsung.com, avri.altman@wdc.com,
- bvanassche@acm.org, keescook@chromium.org, tony.luck@intel.com,
- gpiccoli@igalia.com
-Cc: ~postmarketos/upstreaming@lists.sr.ht, linux-arm-msm@vger.kernel.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-scsi@vger.kernel.org,
- linux-hardening@vger.kernel.org, phone-devel@vger.kernel.org,
- martin.botka@somainline.org, marijn.suijten@somainline.org,
- Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-References: <20230306165246.14782-1-they@mint.lgbt>
- <20230306165246.14782-2-they@mint.lgbt>
-From: Lux Aliaga <they@mint.lgbt>
-Subject: Re: [PATCH v7 1/6] dt-bindings: ufs: qcom: Add SM6125 compatible
- string
-In-Reply-To: <20230306165246.14782-2-they@mint.lgbt>
+Message-Id: <20230221-phy-build-deps-v1-1-7091bcbd16b0@kernel.org>
+X-B4-Tracking: v=1; b=H4sIAF4dBmQC/x2NywrCQAwAf6XkbCBdi6K/Ih72Ed2gbJeEqqX03
+ 7v1OAPDLGCswgbXbgHlj5iMpUF/6CBmX56MkhqDI3ck53qsecYwyTth4mp4PhE5SpeB4gAtCt4
+ Yg/oS8559R33tuio/5Pf/3O7rugH/ojXIdwAAAA==
+To: Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>
+Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ Mark Brown <broonie@kernel.org>
+X-Mailer: b4 0.13-dev-bd1bf
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1141; i=broonie@kernel.org;
+ h=from:subject:message-id; bh=Co92hpAVMlgBOmR5hA65uy5h05hdlthpq3qPqXsKyEg=;
+ b=owEBbQGS/pANAwAKASTWi3JdVIfQAcsmYgBkBh1oUJDveQFe6Wogi93Pxnal4K2K87wkzdDnPgio
+ gfPtyrqJATMEAAEKAB0WIQSt5miqZ1cYtZ/in+ok1otyXVSH0AUCZAYdaAAKCRAk1otyXVSH0ANCB/
+ 0QLCg/luyzP39lzGYdJEFAzJLmIoe7sb+FyMPHoM4jtIJVueM2XKMtHEC9WOY8Xslo04d12mRtf95J
+ Mb2BadxWKtg8fevAvlRyGcZo8fjMPS6ktXFNgoqUP9ftZsh3JuZaQbtRc7JuCgOUxhzWy2iU/3gLQ+
+ Hh7haWz0DJWHYvC0UAKyxUCCs5JB3XE89oF7vgy/q3mVUNtjGuPIQCO3HvByv31y+XqxSoJGJeVvOp
+ D8JmQEQ+pN9nGFuFsHmkz84HMFxgMMtwQuJSo2E0UxZeCsxGUMkbojHyt4log5DfOmPi4pH7bwRBbn
+ FG7DvD8gp5+7kW5G4+jLXZSqQRkGTz
+X-Developer-Key: i=broonie@kernel.org; a=openpgp;
+ fpr=3F2568AAC26998F9E813A1C5C3F436CA30F5D8EB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230306_090123_189370_CBE312D8 
-X-CRM114-Status: GOOD (  12.07  )
+X-CRM114-CacheID: sfid-20230306_090548_233495_446E03D1 
+X-CRM114-Status: GOOD (  12.46  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,50 +80,43 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+The X-Gene PHY driver is unlikely to be useful on a kernel without general
+X-Gene support enabled but currently only depends on arm64 rather than the
+specific platform support. Narrow the dependency to ARCH_XGENE like we do
+for other X-Gene specific drivers to ensure that users who have configured
+down the set of platforms enabled don't see the option.
 
-On 06/03/2023 13:52, Lux Aliaga wrote:
-> Document the compatible for UFS found on the SM6125.
->
-> Signed-off-by: Lux Aliaga <they@mint.lgbt>
-> Reviewed-by: Martin Botka <martin.botka@somainline.org>
-> Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-> ---
->   Documentation/devicetree/bindings/ufs/qcom,ufs.yaml | 2 ++
->   1 file changed, 2 insertions(+)
->
-> diff --git a/Documentation/devicetree/bindings/ufs/qcom,ufs.yaml b/Documentation/devicetree/bindings/ufs/qcom,ufs.yaml
-> index b517d76215e3..42422f3471b3 100644
-> --- a/Documentation/devicetree/bindings/ufs/qcom,ufs.yaml
-> +++ b/Documentation/devicetree/bindings/ufs/qcom,ufs.yaml
-> @@ -29,6 +29,7 @@ properties:
->             - qcom,sc8280xp-ufshc
->             - qcom,sdm845-ufshc
->             - qcom,sm6115-ufshc
-> +          - qcom,sm6125-ufshc
->             - qcom,sm6350-ufshc
->             - qcom,sm8150-ufshc
->             - qcom,sm8250-ufshc
-> @@ -185,6 +186,7 @@ allOf:
->             contains:
->               enum:
->                 - qcom,sm6115-ufshc
-> +              - qcom,sm6125-ufshc
->       then:
->         properties:
->           clocks:
-I have to apologize. I worked on a changelog for this patchset but I 
-skipped the subject header, therefore it didn't send, and as I realized 
-this I interrupted the process, leaving the patchset incomplete. I'll 
-retry sending it, this time correctly.
+Signed-off-by: Mark Brown <broonie@kernel.org>
+---
+ drivers/phy/Kconfig | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
+diff --git a/drivers/phy/Kconfig b/drivers/phy/Kconfig
+index 7bd00a11d074..f46e3148d286 100644
+--- a/drivers/phy/Kconfig
++++ b/drivers/phy/Kconfig
+@@ -44,7 +44,7 @@ config PHY_PISTACHIO_USB
+ 
+ config PHY_XGENE
+ 	tristate "APM X-Gene 15Gbps PHY support"
+-	depends on HAS_IOMEM && OF && (ARM64 || COMPILE_TEST)
++	depends on HAS_IOMEM && OF && (ARCH_XGENE || COMPILE_TEST)
+ 	select GENERIC_PHY
+ 	help
+ 	  This option enables support for APM X-Gene SoC multi-purpose PHY.
+
+---
+base-commit: fe15c26ee26efa11741a7b632e9f23b01aca4cc6
+change-id: 20230221-phy-build-deps-760020d940c4
+
+Best regards,
 -- 
-Lux Aliaga
-https://nixgoat.me/
+Mark Brown <broonie@kernel.org>
 
 
 -- 
