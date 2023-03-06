@@ -4,84 +4,138 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9361AC61DA4
-	for <linux-phy@archiver.kernel.org>; Mon,  6 Mar 2023 16:53:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7A473C6FD1D
+	for <linux-phy@archiver.kernel.org>; Mon,  6 Mar 2023 19:16:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=d1uO+oP5h6NHJWlmXRwegM3gUWrMYbV2leDYDmXwoXw=; b=mSXIusRLBSDmdQ
-	XmKoz1/LneE8yEd2fxV5tyeypG8k9W2hdmlBAT1u+W2EuswH25W/VWt2DfCHslMj4dUTYQDu88fCq
-	cqq3jUTXSdurfOA8+0wdDayOTSOsaaplsIwdSA4H4CL3ubGAf/wgcd5cUPO44DyGBxyv9UKJQJ24C
-	MRasJNH6VY9s435ZqDySKqsMRTE7VmsOv5gpwnANmr1Ljpcvk+la6v9NHHEqovYncJiz9K/OBdE9h
-	9LGdtg3SPtwyQOveHZPApFhCs7z6mOaIjLmwHiL7IQUAiSRZbKOvqS1viQ8o2q+TdhWvzX8Wffnr0
-	O/0D0SNsUE/LeeIgCacw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=OILcQGnJNIYL3R5ubpVCCemczVkIiMa3PbNAaDL+UdA=; b=4omy8L4ocQdDAJ
+	zSAsgedN1QcyZqWTRfzFkUQmpixADqTTe0zOvm3nMSaeDcrGttDpRZ+sa7Wk73BdU+732YW+WYDNL
+	8sMs4bHh9hWUyCiSww1Z2XuB/WDdEMVaswezXm82zgQal47sADSBaJp/9m4OuIcBO8dylPoH5zzhT
+	ypYhwz6dPV5bHJy56Gl7W/zXcVRmVB/H95azanFP8x7TIf0AoP0Gv1pkt9zgPLuIqDS1Ap8vKP0vL
+	gPF1iwk0dqQoOguk130AiE8LS3Cm+W1dKdJJnECVcJG/eIjl5N7oiAsN8tIcMxP6+je5s/78iFuxx
+	bIOOavTBWt6okQ2Ix79Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pZE5f-00E0pL-UV; Mon, 06 Mar 2023 16:53:35 +0000
-Received: from vmi888983.contaboserver.net ([149.102.157.145] helo=amity.mint.lgbt)
+	id 1pZGK5-00EWM3-RZ; Mon, 06 Mar 2023 19:16:37 +0000
+Received: from mail-vi1eur05hn20305.outbound.protection.outlook.com ([2a01:111:f400:7d00::305] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pZE5c-00E0lr-8o
-	for linux-phy@lists.infradead.org; Mon, 06 Mar 2023 16:53:33 +0000
-Received: from amity.mint.lgbt (mx.mint.lgbt [127.0.0.1])
-	by amity.mint.lgbt (Postfix) with ESMTP id 4PVl5941fyz1S5Jg
-	for <linux-phy@lists.infradead.org>; Mon,  6 Mar 2023 11:53:17 -0500 (EST)
-Authentication-Results: amity.mint.lgbt (amavisd-new);
-	dkim=pass (2048-bit key) reason="pass (just generated, assumed good)"
-	header.d=mint.lgbt
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=mint.lgbt; h=
-	content-transfer-encoding:mime-version:x-mailer:message-id:date
-	:subject:to:from; s=dkim; t=1678121596; x=1678985597; bh=uK+glyg
-	nD/QeqUlfo72/hfCeJTh8hcZKk6WDctNDr6Q=; b=QooJAV7RsPaTGv8Zc0TrfZE
-	cRlzON5oP+5lkcuvSOFrn+Nv8JD1ECOPfgr/0eE1eIbguPeAm6Kgp4cex/+AuOyY
-	8/9LEMHUucTTsWwP0SOaB80g0andIrQkzckkxYXfyi6B4HipXHp6+ESliz6vZ1Ca
-	9h/AQdSjkQhcx3XYLN5IfGyCMDSnuTio7wPoSKzQL7Vn3rKgwG5x4Kot/YASsEbO
-	tzigEkJEnl5R1vd0ZZhWEmylLBo/9iHk5jqKshaIzi5k312a0FdHPNnxGZ5ZVip9
-	mW9AToTkhvqzpIH/6qQOYbzt5UIp4eb7VE5mvrnncUEcq6XqH9adbZN49CsrDlA=
-	=
-X-Virus-Scanned: amavisd-new at amity.mint.lgbt
-Received: from amity.mint.lgbt ([127.0.0.1])
-	by amity.mint.lgbt (amity.mint.lgbt [127.0.0.1]) (amavisd-new, port 10026)
-	with ESMTP id CcXvrYZm_o_B for <linux-phy@lists.infradead.org>;
-	Mon,  6 Mar 2023 11:53:16 -0500 (EST)
-Received: from dorothy.. (unknown [186.105.8.42])
-	by amity.mint.lgbt (Postfix) with ESMTPSA id 4PVl4p1NzFz1S4vb;
-	Mon,  6 Mar 2023 11:52:57 -0500 (EST)
-From: Lux Aliaga <they@mint.lgbt>
-To: agross@kernel.org,
-	andersson@kernel.org,
-	konrad.dybcio@linaro.org,
-	robh+dt@kernel.org,
-	krzysztof.kozlowski+dt@linaro.org,
-	vkoul@kernel.org,
-	kishon@kernel.org,
-	alim.akhtar@samsung.com,
-	avri.altman@wdc.com,
-	bvanassche@acm.org,
-	keescook@chromium.org,
-	tony.luck@intel.com,
-	gpiccoli@igalia.com
-Cc: ~postmarketos/upstreaming@lists.sr.ht,
-	linux-arm-msm@vger.kernel.org,
+	id 1pZGJn-00EWDF-80; Mon, 06 Mar 2023 19:16:21 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=seco.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=nHfrKvIf6uhW+PIvN7eGwoBrowmdKIkqx5wJ0m5ZL2o=;
+ b=VJTwDkzk0UwCeNUB9U1vfq9kLn2UP5Gr4TXAbLhjnW/6UMyyPguGV4qqFQw8S1qq01J9a9IDOfaj+LFDcx1iBuUtYFLelQ8aLmeB6z974KOHmm9R1GN1qbH3jDkL0M55vwzD+puDcSYgoAw6u0jp6pXbV1/XHR/xeOfF5ys6hmPLvfiShWxM+3XI0ymqM8tPL8xY+FXhoJ0oA3x6dCHHm6YOV045EZ6CmOioz20XT786Ja0/MehpS1kBtkMLVs3U8fVa1GzZUGFGSTtmbwIvFMBgSC7jBxFN/LlVO0TT5GAC5ZSdZJ/Mbl3dXr3TfA72cOw3a53EYbcoRplGNQGEvA==
+Received: from AM6P192CA0072.EURP192.PROD.OUTLOOK.COM (2603:10a6:209:82::49)
+ by PA4PR03MB8224.eurprd03.prod.outlook.com (2603:10a6:102:26e::10) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6156.28; Mon, 6 Mar
+ 2023 19:16:13 +0000
+Received: from AM6EUR05FT006.eop-eur05.prod.protection.outlook.com
+ (2603:10a6:209:82:cafe::9) by AM6P192CA0072.outlook.office365.com
+ (2603:10a6:209:82::49) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6156.28 via Frontend
+ Transport; Mon, 6 Mar 2023 19:16:13 +0000
+X-MS-Exchange-Authentication-Results: spf=fail (sender IP is 20.160.56.83)
+ smtp.mailfrom=seco.com; dkim=pass (signature was verified)
+ header.d=seco.com;dmarc=pass action=none header.from=seco.com;
+Received-SPF: Fail (protection.outlook.com: domain of seco.com does not
+ designate 20.160.56.83 as permitted sender) receiver=protection.outlook.com;
+ client-ip=20.160.56.83; helo=inpost-eu.tmcas.trendmicro.com;
+Received: from inpost-eu.tmcas.trendmicro.com (20.160.56.83) by
+ AM6EUR05FT006.mail.protection.outlook.com (10.233.241.54) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.6178.16 via Frontend Transport; Mon, 6 Mar 2023 19:16:13 +0000
+Received: from outmta (unknown [192.168.82.132])
+	by inpost-eu.tmcas.trendmicro.com (Trend Micro CAS) with ESMTP id EAAC82008026C;
+	Mon,  6 Mar 2023 19:16:12 +0000 (UTC)
+Received: from EUR05-VI1-obe.outbound.protection.outlook.com (unknown [104.47.17.177])
+	by repre.tmcas.trendmicro.com (Trend Micro CAS) with ESMTPS id 9D0D62008006F;
+	Mon,  6 Mar 2023 19:15:13 +0000 (UTC)
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=XiK5d2GtXaSoZ07NB2xysc4rCsLG3ldOSU0BVo4jk5m9iUdGPswnxSUHejOAFAqpuUsdp0dTh7Rmbm/dFiwTodysfXTs6qMW9mifAUK5yxM4MnLmbbTvajpPE+WIQMvFM1SGmwWmfekz16PDZEBUO2ltPl2UFhfsKSDM3fSLBPKq/0HVoD2WE8+cLPewBqFPQ4rOFYId2+q9QSVt6urXlOEjsNEVbaUiH0dbX3dnqt7JkK93MJXlaze46ZImc0G3H61hk0UWBZPAizTP+tYVKU01hHMhXHmQpIHP5Q2K6euTPYCJsKTpaZl7KOnqlY85o/l/lKTxidgu4k23fMFlMg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=nHfrKvIf6uhW+PIvN7eGwoBrowmdKIkqx5wJ0m5ZL2o=;
+ b=P2cHHyiXGmCMuAhSyCcjtYqFSlCAwaIGVkIruXnzDfo5DIDgrjvuVc+zGnWQ4IDVBMkqi/urWONaH+WZVWYh9fjNONiAes+EuM42W/w2ZoNQqZNG+S+h7uc0iDI+wTJfwui13ycIwmiK8M0al+ODFa9vd/XVhy2bZSZOHRiJQjFXKRcdNEPX/NSMWhQR88V3BWBohwh0DTfTp77qjvBYkSTxPBd8VrV8vhqpGMwd2ODQtQrp3ziZ6V1axntAJoKsGhPTmB7tuLWPwHqzGkHHCkeHbcSYKXFvyHWt7/1yfYu6XrEJ4ct6oknr5XaHwAK/hOcnjM/W0TEItv4bdEOrSw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=seco.com; dmarc=pass action=none header.from=seco.com;
+ dkim=pass header.d=seco.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=seco.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=nHfrKvIf6uhW+PIvN7eGwoBrowmdKIkqx5wJ0m5ZL2o=;
+ b=VJTwDkzk0UwCeNUB9U1vfq9kLn2UP5Gr4TXAbLhjnW/6UMyyPguGV4qqFQw8S1qq01J9a9IDOfaj+LFDcx1iBuUtYFLelQ8aLmeB6z974KOHmm9R1GN1qbH3jDkL0M55vwzD+puDcSYgoAw6u0jp6pXbV1/XHR/xeOfF5ys6hmPLvfiShWxM+3XI0ymqM8tPL8xY+FXhoJ0oA3x6dCHHm6YOV045EZ6CmOioz20XT786Ja0/MehpS1kBtkMLVs3U8fVa1GzZUGFGSTtmbwIvFMBgSC7jBxFN/LlVO0TT5GAC5ZSdZJ/Mbl3dXr3TfA72cOw3a53EYbcoRplGNQGEvA==
+Authentication-Results-Original: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=seco.com;
+Received: from DB9PR03MB8847.eurprd03.prod.outlook.com (2603:10a6:10:3dd::13)
+ by AS8PR03MB9511.eurprd03.prod.outlook.com (2603:10a6:20b:5a6::19) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6156.28; Mon, 6 Mar
+ 2023 19:16:03 +0000
+Received: from DB9PR03MB8847.eurprd03.prod.outlook.com
+ ([fe80::dbcf:1089:3242:614e]) by DB9PR03MB8847.eurprd03.prod.outlook.com
+ ([fe80::dbcf:1089:3242:614e%5]) with mapi id 15.20.6156.027; Mon, 6 Mar 2023
+ 19:16:03 +0000
+From: Sean Anderson <sean.anderson@seco.com>
+To: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	linux-phy@lists.infradead.org
+Cc: Madalin Bucur <madalin.bucur@nxp.com>,
+	linuxppc-dev@lists.ozlabs.org,
 	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-scsi@vger.kernel.org,
-	linux-hardening@vger.kernel.org,
-	phone-devel@vger.kernel.org,
-	martin.botka@somainline.org,
-	marijn.suijten@somainline.org
-Subject: 
-Date: Mon,  6 Mar 2023 13:52:39 -0300
-Message-Id: <20230306165246.14782-1-they@mint.lgbt>
-X-Mailer: git-send-email 2.39.2
+	Ioana Ciornei <ioana.ciornei@nxp.com>,
+	Rob Herring <robh+dt@kernel.org>,
+	Camelia Alexandra Groza <camelia.groza@nxp.com>,
+	linux-arm-kernel@lists.infradead.org,
+	Bagas Sanjaya <bagasdotme@gmail.com>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Sean Anderson <sean.anderson@seco.com>,
+	Rob Herring <robh@kernel.org>,
+	Michael Turquette <mturquette@baylibre.com>,
+	Stephen Boyd <sboyd@kernel.org>,
+	linux-clk@vger.kernel.org
+Subject: [PATCH v10 05/13] dt-bindings: clock: Add ids for Lynx 10g PLLs
+Date: Mon,  6 Mar 2023 14:15:27 -0500
+Message-Id: <20230306191535.1917656-6-sean.anderson@seco.com>
+X-Mailer: git-send-email 2.35.1.1320.gc452695387.dirty
+In-Reply-To: <20230306191535.1917656-1-sean.anderson@seco.com>
+References: <20230306191535.1917656-1-sean.anderson@seco.com>
+X-ClientProxiedBy: MN2PR11CA0015.namprd11.prod.outlook.com
+ (2603:10b6:208:23b::20) To DB9PR03MB8847.eurprd03.prod.outlook.com
+ (2603:10a6:10:3dd::13)
 MIME-Version: 1.0
+X-MS-TrafficTypeDiagnostic: 	DB9PR03MB8847:EE_|AS8PR03MB9511:EE_|AM6EUR05FT006:EE_|PA4PR03MB8224:EE_
+X-MS-Office365-Filtering-Correlation-Id: 2a8c0b28-95e9-45e8-c3d6-08db1e774042
+X-TrendMicro-CAS-OUT-LOOP-IDENTIFIER: 656f966764b7fb185830381c646b41a1
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam-Untrusted: BCL:0;
+X-Microsoft-Antispam-Message-Info-Original:  /kOnJjo4mIs7IotZ5j7wse/uABanvMLHKvVsLwWYLrjufQrxadeg+0rEkfePgxu3wAm9MVeUfHz7kh/m6f8xFYU0UwsH2o9UDDAojU1afFqusxz7xtfmrZxS1lZay8DNxujHH6ExYYwYGxL7XiqL4FexsdDpGt+vmIyolPZgJW9D6RTbraGWR6q1sMYNoifd0J9OkJvPZVnJWCvKj7sOO1Vt6kaNicAvv8K0RsZ5PXHeoJRXjr5too/RTNO5sfIlpyzweootMlqvutxkICo2RHMqJLD51gWfUpJ20/pkL8rFXmhVSrwHfubS1B/+vfrnZlrbPbLi7kD+61YqrvoXW7slQT9fbSDtHcJS5ZsA5bPYgV0gbO5HjaDSrf0OEuuzElPapNnfzFEgUx/d8w5vCNFzbQo+hdLMx+MBiRQvKg5KR5F73t9ip0jSJofDWRivrRSd7oF9MWHP2IACooE6K36iheyHygfYvamlA3IKd7UGAMMu02TfjwdnZgK+Nyt2Ml5RQvK2RHyYwsod9/yQ8rsHpokK/PG3joOksAxBrR2a54yXzxCqwtj+hHgFzUDzHZ9Pgj2M8KifaYDwPFpdLvJ6wyrPdj5rRsgMrg2/zmqYl9hZmAYcXIV1rZRDoA3grzE3GDgeG0kYEwS2fmuYoLutgaUBwE+I509sCogBeNKVWT2G5y0LTX7qXpP4SBNQwWu8G0oyjkii+cSFxYn3JA==
+X-Forefront-Antispam-Report-Untrusted:  CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DB9PR03MB8847.eurprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230025)(346002)(376002)(39850400004)(396003)(136003)(366004)(451199018)(110136005)(54906003)(36756003)(316002)(83380400001)(86362001)(6486002)(6506007)(186003)(2906002)(5660300002)(66476007)(4326008)(8936002)(66946007)(41300700001)(8676002)(478600001)(44832011)(26005)(6512007)(1076003)(2616005)(7416002)(52116002)(66556008)(6666004)(38100700002)(38350700002);DIR:OUT;SFP:1101;
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS8PR03MB9511
+X-EOPAttributedMessage: 0
+X-MS-Exchange-Transport-CrossTenantHeadersStripped:  AM6EUR05FT006.eop-eur05.prod.protection.outlook.com
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id-Prvs: 	12d1f6bc-a45c-4cbd-4374-08db1e773a2a
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: 	0FJDGNsiuKWewzLykns0u7jA0SqHv3AnaVrIstmylST4NNt4nyqdosH8731nCC5iGimInG5Hn42KpaGgY1O2jRNl7qvKYif1F0mbA9q8CfxM+DXusAgkBteD2J/0drfzdW4zturkdG+HSEBd6Kqp6oiafC3CjHvSyKUyQ5J8Vfrpp88GG3ZHdK2NFsMs+zO72Mj+87KM1EzHEryqZR2CzVwCYWlRHcOPrkK9h0QwsIr/Xu/p3F9Gn62vRNoDpXoygUfSidqCz5LXHYkDfLjdRFIpCM4uJPWcpzZOJhrMMUfDgB1XvlFDaB8KxAWzECJxHUPW5H4ZroORe0MYX0KsBfzhaJlp7N0CSG60X0fy2jIMEquNrwUpc8Deln2Qo4yq/6z/LH4WRCAgrN/PN8EESQPtbsVMs+2zb7sxXcZw7L2eyHEOWK1wRvrpLeunDvoYWWoRjSxqQdCzlU6ZLs1CEYvAsPv7nDWjtvVyXuYUlzi4SO61M8XWBwz6aKjHCD6rzRsesIqIpYCpGIsjEjpHUrqckVRUGDrdNst86cYVv9kEuA4dOee0/LQda5QZKd/Z/gR4bBtqIoy2I8mTXzDw1ONHq3FrlM6WLYKSHMbyjv2o102qqncynG8o2pyidbwWCnNe+sa/zJ77hmL74VGVM9oziOnUiHhNyliqx6RFMB9OZI2mXBDz/n6pLX5tmJUZz9VgssAOACL9yBPggeYzZvxinzPRBGJUoyMfyyl1oFYSf7ew1YdnNZyjxcgCxGn9e5FMNSR9RMPa5Q5MGZR76w==
+X-Forefront-Antispam-Report: 	CIP:20.160.56.83;CTRY:NL;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:inpost-eu.tmcas.trendmicro.com;PTR:inpost-eu.tmcas.trendmicro.com;CAT:NONE;SFS:(13230025)(39850400004)(396003)(376002)(136003)(346002)(451199018)(5400799012)(46966006)(40470700004)(36840700001)(36860700001)(34020700004)(7636003)(356005)(86362001)(7596003)(82740400003)(36756003)(7416002)(2906002)(44832011)(5660300002)(4326008)(70586007)(70206006)(40480700001)(8936002)(8676002)(41300700001)(82310400005)(40460700003)(336012)(2616005)(186003)(26005)(47076005)(6506007)(6512007)(83380400001)(110136005)(478600001)(316002)(6666004)(6486002)(1076003)(54906003)(12100799021);DIR:OUT;SFP:1501;
+X-OriginatorOrg: seco.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 06 Mar 2023 19:16:13.0647
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 2a8c0b28-95e9-45e8-c3d6-08db1e774042
+X-MS-Exchange-CrossTenant-Id: bebe97c3-6438-442e-ade3-ff17aa50e733
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=bebe97c3-6438-442e-ade3-ff17aa50e733;Ip=[20.160.56.83];Helo=[inpost-eu.tmcas.trendmicro.com]
+X-MS-Exchange-CrossTenant-AuthSource: 	AM6EUR05FT006.eop-eur05.prod.protection.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PA4PR03MB8224
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230306_085332_548977_5F428ECE 
-X-CRM114-Status: UNSURE (   3.96  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230306_111619_852611_A7BD0BE8 
+X-CRM114-Status: GOOD (  11.53  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,19 +152,54 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Introduce Universal Flash Storage support on SM6125 and add support for the Xiaomi Mi A3 based on the former platform.
+This adds ids for the Lynx 10g SerDes's internal PLLs. These may be used
+with assigned-clock* to specify a particular frequency to use. For
+example, to set the second PLL (at offset 0x20)'s frequency, use
+LYNX10G_PLLa(1). These are for use only in the device tree, and are not
+otherwise used by the driver.
 
-Changes since v6:
-- Add struct for v3-660 UFS PHY offsets and modify sm6115 UFS PHY to use it
-- Set ufs_mem_phy reg size to 0xdb8 in sm6125.dtsi
-- Drop "#address-cells" and "#size-cells" properties on reserved-memory node in xiaomi-laurel-sprout dts
-- Move "status" last on &pon_resin node in xiaomi-laurel-sprout dts
-- Modify "&pm6125_gpio" pointer to "&pm6125_gpios" in xiaomi-laurel-sprout dts
+Signed-off-by: Sean Anderson <sean.anderson@seco.com>
+Acked-by: Rob Herring <robh@kernel.org>
+---
 
-v6: https://lore.kernel.org/linux-devicetree/20230108195336.388349-1-they@mint.lgbt/
-v5: https://lore.kernel.org/linux-devicetree/20221231222420.75233-2-they@mint.lgbt/
+(no changes since v6)
 
+Changes in v6:
+- frequence -> frequency
 
+Changes in v5:
+- Update commit description
+- Dual id header
+
+Changes in v4:
+- New
+
+ include/dt-bindings/clock/fsl,lynx-10g.h | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
+ create mode 100644 include/dt-bindings/clock/fsl,lynx-10g.h
+
+diff --git a/include/dt-bindings/clock/fsl,lynx-10g.h b/include/dt-bindings/clock/fsl,lynx-10g.h
+new file mode 100644
+index 000000000000..15362ae85304
+--- /dev/null
++++ b/include/dt-bindings/clock/fsl,lynx-10g.h
+@@ -0,0 +1,14 @@
++/* SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause */
++/*
++ * Copyright (C) 2022 Sean Anderson <sean.anderson@seco.com>
++ */
++
++#ifndef __DT_BINDINGS_CLK_LYNX_10G_H
++#define __DT_BINDINGS_CLK_LYNX_10G_H
++
++#define LYNX10G_CLKS_PER_PLL 2
++
++#define LYNX10G_PLLa(a)		((a) * LYNX10G_CLKS_PER_PLL)
++#define LYNX10G_PLLa_EX_DLY(a)	((a) * LYNX10G_CLKS_PER_PLL + 1)
++
++#endif /* __DT_BINDINGS_CLK_LYNX_10G_H */
+-- 
+2.35.1.1320.gc452695387.dirty
 
 
 -- 
