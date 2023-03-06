@@ -4,51 +4,51 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B7B33C61DA4
-	for <linux-phy@archiver.kernel.org>; Mon,  6 Mar 2023 16:53:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7679EC64EC4
+	for <linux-phy@archiver.kernel.org>; Mon,  6 Mar 2023 16:53:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JADJTJ28N1KGv2fgSCHd6eAQxfc7O3EI3cezNvdKsPQ=; b=VRMIDaf57Nx4Iq
-	b1Re2OJWP7GjPCyudOk5EudoS8ozqcLZYeHyUfdBF+K4Ku7xUhl5O5KgQSdW7lWwEsHGplyAXeteZ
-	5dU4BSg03aGGoXlXEtUCYThLyv9xS2JDZLNL5L6uNqELn12RfoLVi/Ua4F0vZYiOg/Tqt5qTLoO6t
-	bDSi7sOPgy7oo9nuHGt+nr83/gLD3g5E/WfDsn95Ce9LfH/JLVOjgS2zfDb6/rqnMqzQrWLGFQaMw
-	8g4Sq2JlXG2cC4DBJeyZC7Z9RjacniJUpTTCkJGZtLN8v8b0f1LkUW5TFGvejjGQQDcypepA/9jif
-	MNgzNGM1UvfNI/W12cDQ==;
+	List-Owner; bh=z79t43FULFbTGZOe51spVXfQryr9H3WfTGMkMfW5o0I=; b=IESSzrntOPr28l
+	JjLV+49u0PlP6tySHVwktU+OcVCy1/8UMYZCw1AbSa3QQ4uahZdKjKeelu2F/FN6XjOkx5P6tSTcs
+	tMl6C/yEGuuFxfd6iQJuuIBO3EHhuXultSajS7LOqyfLfyr6lJVGDeO1bHD2vVw2SVEUu65iBFA2w
+	svXqjP5T01HKZMoqinr2k0ymquVnCUFrg6YOvC7kRPGE7BsYrl2hxb4y4OKPiNpHlLvirMGUGo8ts
+	ubwRznbxeK8S3KeYT/bSkgZzx8MIwsPcJgSyFtNA/9+FDNq7/IyDhdUl4yQnNjjdu+/fn+5vKD+qq
+	sUXyn3A6sZNu6Dwb8kQg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pZE5j-00E0rF-HV; Mon, 06 Mar 2023 16:53:39 +0000
+	id 1pZE5t-00E0tQ-Tv; Mon, 06 Mar 2023 16:53:49 +0000
 Received: from vmi888983.contaboserver.net ([149.102.157.145] helo=amity.mint.lgbt)
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pZE5g-00E0pK-OW
-	for linux-phy@lists.infradead.org; Mon, 06 Mar 2023 16:53:38 +0000
+	id 1pZE5q-00E0sH-W5
+	for linux-phy@lists.infradead.org; Mon, 06 Mar 2023 16:53:48 +0000
 Received: from amity.mint.lgbt (mx.mint.lgbt [127.0.0.1])
-	by amity.mint.lgbt (Postfix) with ESMTP id 4PVl5W2Zwcz1S4yx
-	for <linux-phy@lists.infradead.org>; Mon,  6 Mar 2023 11:53:35 -0500 (EST)
+	by amity.mint.lgbt (Postfix) with ESMTP id 4PVl5h2w3gz1S5K0
+	for <linux-phy@lists.infradead.org>; Mon,  6 Mar 2023 11:53:44 -0500 (EST)
 Authentication-Results: amity.mint.lgbt (amavisd-new);
 	dkim=pass (2048-bit key) reason="pass (just generated, assumed good)"
 	header.d=mint.lgbt
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=mint.lgbt; h=
 	content-transfer-encoding:mime-version:references:in-reply-to
-	:x-mailer:message-id:date:subject:to:from; s=dkim; t=1678121614;
-	 x=1678985615; bh=aZvyOxr+cceertzklNMJveGEzeMKKnPjb24BJXnn514=; b=
-	ne30ztt31+w+FcPs9qBE9sT+v8lbKjYl8TjIeaqUOzyNFP8DV1OcV06OOms+NsR6
-	5BQbDiBxDzaBJomirNNM4ejbjM2WS60qQrXdY1Hluqw/fn3dffkVps1jM80/8SfZ
-	VqesAEHug0hNeAhuEQVtm/uX7E6ZEjRWuG6NXk/M+S8a2iTuX36P2jtx+Na+7WfO
-	Xo6pm/VBOKoJ2S1L2J44/vtzubT87ZBBwbO3/Ke/UffXQ5pXTskovxYa46sRXncZ
-	wdjDYQFvdRy+XiPJOmm/+p+9D3UV0MGGboQZ5+2bjCMPFcahiXSkEUnEJT1sJSaN
-	d+zFZAI4NCQHVd2tTGwV1g==
+	:x-mailer:message-id:date:subject:to:from; s=dkim; t=1678121623;
+	 x=1678985624; bh=XBMOf7rDZmk1/gq6Hnv29VSjIdHlkH5Ie/sn9RbtUDE=; b=
+	BRVzbO6l6vt57Zy7gxI2a2W2Q01HjeY2T9jvQuvCr+ePNsDE6y1YlZxSL2i5UY4Q
+	NUqQ6rpVzZbWAoO4OxtMzVHBnGAYFx6PwXRG6dT6xAf9BDOTkNlFrzKFp0d2RS+5
+	I0+bFpClxhKAk6y65uuPC+qfARRexUAQIi8o8eTAlEL4ESl3ogBxXbvjaxQ2PdKI
+	gOM2XJg8CDdudNhInf+gXKrIj5uEIfYSRgzmcLK6SKCOLWo7uSpy938HyE/B2Hzk
+	TaV2j1dtVn7iC6q2GhnkrT0uOogKpM5VFePpUsjyTaBbeKp3ltfutbKHudysiGdK
+	v6lhQnakrZAHB4q90d1gQw==
 X-Virus-Scanned: amavisd-new at amity.mint.lgbt
 Received: from amity.mint.lgbt ([127.0.0.1])
 	by amity.mint.lgbt (amity.mint.lgbt [127.0.0.1]) (amavisd-new, port 10026)
-	with ESMTP id viDfxm8x6sqJ for <linux-phy@lists.infradead.org>;
-	Mon,  6 Mar 2023 11:53:34 -0500 (EST)
+	with ESMTP id BRMJDKap3Ran for <linux-phy@lists.infradead.org>;
+	Mon,  6 Mar 2023 11:53:43 -0500 (EST)
 Received: from dorothy.. (unknown [186.105.8.42])
-	by amity.mint.lgbt (Postfix) with ESMTPSA id 4PVl5D2jH2z1S5Jp;
-	Mon,  6 Mar 2023 11:53:19 -0500 (EST)
+	by amity.mint.lgbt (Postfix) with ESMTPSA id 4PVl5R43X3z1S4vb;
+	Mon,  6 Mar 2023 11:53:31 -0500 (EST)
 From: Lux Aliaga <they@mint.lgbt>
 To: agross@kernel.org,
 	andersson@kernel.org,
@@ -73,20 +73,17 @@ Cc: ~postmarketos/upstreaming@lists.sr.ht,
 	phone-devel@vger.kernel.org,
 	martin.botka@somainline.org,
 	marijn.suijten@somainline.org,
-	Lux Aliaga <they@mint.lgbt>,
-	Dhruva Gole <d-gole@ti.com>,
-	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
-	Rob Herring <robh@kernel.org>
-Subject: [PATCH v7 2/6] dt-bindings: phy: Add QMP UFS PHY compatible for SM6125
-Date: Mon,  6 Mar 2023 13:52:41 -0300
-Message-Id: <20230306165246.14782-3-they@mint.lgbt>
+	Lux Aliaga <they@mint.lgbt>
+Subject: [PATCH v7 3/6] phy: qcom-qmp: Add SM6125 UFS PHY support
+Date: Mon,  6 Mar 2023 13:52:42 -0300
+Message-Id: <20230306165246.14782-4-they@mint.lgbt>
 X-Mailer: git-send-email 2.39.2
 In-Reply-To: <20230306165246.14782-1-they@mint.lgbt>
 References: <20230306165246.14782-1-they@mint.lgbt>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230306_085336_949480_12245B8F 
-X-CRM114-Status: UNSURE (   5.81  )
+X-CRM114-CacheID: sfid-20230306_085347_239166_7EFBE332 
+X-CRM114-Status: UNSURE (   9.09  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -104,29 +101,53 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Document the QMP UFS PHY compatible for SM6125.
+The SM6125 UFS PHY is compatible with the one from SM6115. Add a
+compatible for it and modify the config from SM6115 to make them
+compatible with the SC8280XP binding
 
 Signed-off-by: Lux Aliaga <they@mint.lgbt>
 Reviewed-by: Martin Botka <martin.botka@somainline.org>
-Acked-by: Dhruva Gole <d-gole@ti.com>
-Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Acked-by: Rob Herring <robh@kernel.org>
 ---
- .../devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml       | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
-index dde86a19f792..a7af57931f32 100644
---- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
-@@ -17,6 +17,7 @@ properties:
-   compatible:
-     enum:
-       - qcom,sc8280xp-qmp-ufs-phy
-+      - qcom,sm6125-qmp-ufs-phy
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+index 318eea35b972..44c29fdfc551 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+@@ -620,6 +620,13 @@ static const char * const qmp_phy_vreg_l[] = {
+ 	"vdda-phy", "vdda-pll",
+ };
  
-   reg:
-     maxItems: 1
++static const struct qmp_ufs_offsets qmp_ufs_offsets_v3_660 = {
++	.serdes		= 0,
++	.pcs		= 0xc00,
++	.tx		= 0x400,
++	.rx		= 0x600,
++};
++
+ static const struct qmp_ufs_offsets qmp_ufs_offsets_v5 = {
+ 	.serdes		= 0,
+ 	.pcs		= 0xc00,
+@@ -693,6 +700,8 @@ static const struct qmp_phy_cfg sdm845_ufsphy_cfg = {
+ static const struct qmp_phy_cfg sm6115_ufsphy_cfg = {
+ 	.lanes			= 1,
+ 
++	.offsets		= &qmp_ufs_offsets_v3_660,
++
+ 	.serdes_tbl		= sm6115_ufsphy_serdes_tbl,
+ 	.serdes_tbl_num		= ARRAY_SIZE(sm6115_ufsphy_serdes_tbl),
+ 	.tx_tbl			= sm6115_ufsphy_tx_tbl,
+@@ -1172,6 +1181,9 @@ static const struct of_device_id qmp_ufs_of_match_table[] = {
+ 	}, {
+ 		.compatible = "qcom,sm6115-qmp-ufs-phy",
+ 		.data = &sm6115_ufsphy_cfg,
++	}, {
++		.compatible = "qcom,sm6125-qmp-ufs-phy",
++		.data = &sm6115_ufsphy_cfg,
+ 	}, {
+ 		.compatible = "qcom,sm6350-qmp-ufs-phy",
+ 		.data = &sdm845_ufsphy_cfg,
 -- 
 2.39.2
 
