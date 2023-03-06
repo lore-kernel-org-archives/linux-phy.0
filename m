@@ -4,82 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1397DC6FD19
-	for <linux-phy@archiver.kernel.org>; Mon,  6 Mar 2023 08:40:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 81929C678D4
+	for <linux-phy@archiver.kernel.org>; Mon,  6 Mar 2023 09:52:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=McwHq9vD5CUNrc1getHLOHxBBxL6ltueJlo0RPepRyM=; b=Whw57x3GSrxclz
-	OdVK2NZnqUCylHj8CLg89B8ruWfuHFEpRz8vuXOU30XISlc/bvvnrtPpKvU0GVwa4Y8PPj2PmYMKc
-	S6SpViuAv++OcxVNlobP2XBdAX55Qb8g65pQS6ysGoeB/IqqNrU8AlV8NosVjEnVZmVt0mAw9VSwV
-	2t4MFoS0SPF63lWojKo0gJ3o8lj7KobBOYNNKpsDoJ6NpnZHalQ3B2BsvosvPMe9JJ3n3q1I9UcVH
-	NOwL/PuhRGszMRfigZgHBnjKFeW4P6JQfa7C3hX7CQdvAC8sWbasz8VCQVInKzZaMO/R3KyikTLZi
-	jbNfprBn33vtGcWyBEcA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=BW5mP9fCi11/UGP+fVhMoxLPvPsR/u5SMkA1nhzrrtw=; b=UrcSLWc1kSrhMH
+	gcOFn0RoS3cuvcIx9APrJAcPFs2DZpkViostRiyQQnvjW/2ERMW3NcAU8KzMC8IJyptzoM08rUaDw
+	05IXOs/KdQcFOyT+zIEq0OrSqFHM2PR846Tk2CxWzfXWI8hl84xQBXrHNQOTPx4uAMEr5S/4HBmch
+	ebl5ESN5fN9SGiXcHB9AYZ3136lkdz5smJLhQW+ZmRlv4rMm2/Jlfp+wxiXQNOenoKjG/ffOBAr1P
+	j51aj1jlVAv3dFhxpzMVvTvGY31t+4leAG+z+adUQyzJy4nPYQ6VIvV9gEwfg3zK6JaWmwcq9E3qF
+	JWN8LJkbUkdM4lHav+xQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pZ6Or-00BwKA-Nd; Mon, 06 Mar 2023 08:40:54 +0000
-Received: from mail-ed1-x534.google.com ([2a00:1450:4864:20::534])
-	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pZ6Ok-00BwFC-FV
-	for linux-phy@lists.infradead.org; Mon, 06 Mar 2023 08:40:51 +0000
-Received: by mail-ed1-x534.google.com with SMTP id a25so35428516edb.0
-        for <linux-phy@lists.infradead.org>; Mon, 06 Mar 2023 00:40:43 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=qQ0kCNRvnlBPGo3zFijI80Fs5ytanhlw1wiiBbqnEfM=;
-        b=Ea6pV7O954GCjZZnA876T0Bb4Qg5OupjdBek5ck1JbEIMJ4b7kEXiDEzcbL8rSTvnA
-         oaIzWTe5Lw2yxeK+XboKU72Tqs/YlVcmW37a80e0z2+xz5GhiWsXwYcgIDhgn5KkZO4E
-         +HlkicDKmizcb7yP8KJqos2OJ7Kzsappz6vcJeuzl3qWYb7SLiqAvrwIvtvB2yGVD14M
-         MFldyS5c1rzHRBSD/oc2Ox9lLuvEvi4IrTthJjWCDFjY+VGhaumc9H7AD5TTdHzh4ZjM
-         T3O3k5OVPn9FsEn4C6dqFQ6149aKjGOS1IxWx9XbqKjrNUdAoBYGDqludp806OVGOSqQ
-         uFsA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=qQ0kCNRvnlBPGo3zFijI80Fs5ytanhlw1wiiBbqnEfM=;
-        b=4FYcmUyqaI6NshNzR6lLMGytxKngK3b7Eqn0ixYEbmsTXRF6tjSFkHRNlmFVBnHepD
-         bsNhQUqYQ6l+ghkh0Uo2z5/s6AOBdcq1mnYTV8qvBRTG8EPgSc0rI6VsSulolMrqxs+7
-         nupL/3hB7UXR8O/Vl8UhM5Tq/Kbz1LK3JYdDh5gSWbZhfWEWLcDYoEPK/U9uuZ2T/6NQ
-         lrMMoSkb0f2mdZXbQFquq893TnoTtnscqVdP1cACWysiJ03i/l/upMprGLzec2FZ559P
-         MIl4it/25EQ3XtQaER3uhBoMaapxdjZQwKk47SHoyXpn7acE610g7djFUY2MZhlX1sYm
-         NZ5Q==
-X-Gm-Message-State: AO0yUKXA8DKXQ14Q0U5CXlUXh88rHqFwWTQBvPmcZSJaSJ+Gnc3fYhsF
-	NqqvEoiQEt1hNfS6u4opCGAcMkBtw3U8g8gUbQ0zTA==
-X-Google-Smtp-Source: AK7set//ASnOu0ofB+sAvHW9PfcCZXmE6A9lrbCDAjj9FiQCBEuJ8PvkwlD3i0mN6IIJvOdE0LHw3Q==
-X-Received: by 2002:a17:906:3141:b0:8b1:7b10:61d5 with SMTP id e1-20020a170906314100b008b17b1061d5mr9872711eje.33.1678092041758;
-        Mon, 06 Mar 2023 00:40:41 -0800 (PST)
-Received: from [10.203.3.194] ([185.202.34.81])
-        by smtp.gmail.com with ESMTPSA id s23-20020a50d497000000b004c8948162e8sm4370855edi.67.2023.03.06.00.40.40
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 06 Mar 2023 00:40:40 -0800 (PST)
-Message-ID: <18e507e2-4159-d2aa-1945-4c06651d91a1@linaro.org>
-Date: Mon, 6 Mar 2023 10:40:39 +0200
+	id 1pZ7WY-00CAuO-MU; Mon, 06 Mar 2023 09:52:54 +0000
+Received: from ex01.ufhost.com ([61.152.239.75])
+	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
+	id 1pZ7WU-00CAq3-5Q; Mon, 06 Mar 2023 09:52:53 +0000
+Received: from EXMBX166.cuchost.com (unknown [175.102.18.54])
+	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
+	(Client CN "EXMBX166", Issuer "EXMBX166" (not verified))
+	by ex01.ufhost.com (Postfix) with ESMTP id C283D24E01A;
+	Mon,  6 Mar 2023 17:52:15 +0800 (CST)
+Received: from EXMBX071.cuchost.com (172.16.6.81) by EXMBX166.cuchost.com
+ (172.16.6.76) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Mon, 6 Mar
+ 2023 17:52:15 +0800
+Received: from ubuntu.localdomain (183.27.97.46) by EXMBX071.cuchost.com
+ (172.16.6.81) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Mon, 6 Mar
+ 2023 17:52:14 +0800
+From: Minda Chen <minda.chen@starfivetech.com>
+To: Emil Renner Berthing <kernel@esmil.dk>, Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Pawel Laszczak
+	<pawell@cadence.com>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>, "Peter
+ Chen" <peter.chen@kernel.org>, Roger Quadros <rogerq@kernel.org>, "Aswath
+ Govindraju" <a-govindraju@ti.com>, Philipp Zabel <p.zabel@pengutronix.de>,
+	Conor Dooley <conor@kernel.org>, Paul Walmsley <paul.walmsley@sifive.com>,
+	Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>
+CC: <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+	<linux-phy@lists.infradead.org>, <linux-usb@vger.kernel.org>,
+	<linux-riscv@lists.infradead.org>, Minda Chen <minda.chen@starfivetech.com>
+Subject: [PATCH 0/3] Add JH7110 USB driver support
+Date: Mon, 6 Mar 2023 17:52:12 +0800
+Message-ID: <20230306095212.25840-1-minda.chen@starfivetech.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.8.0
-Subject: Re: [PATCH 1/2] dt-bindings: phy: qcom,qmp: Add SDX65 QMP PHY binding
-Content-Language: en-GB
-To: Rohit Agarwal <quic_rohiagar@quicinc.com>, agross@kernel.org,
- andersson@kernel.org, konrad.dybcio@linaro.org, vkoul@kernel.org,
- kishon@kernel.org, robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
- manivannan.sadhasivam@linaro.org
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-References: <1678079913-27945-1-git-send-email-quic_rohiagar@quicinc.com>
- <1678079913-27945-2-git-send-email-quic_rohiagar@quicinc.com>
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-In-Reply-To: <1678079913-27945-2-git-send-email-quic_rohiagar@quicinc.com>
+X-Originating-IP: [183.27.97.46]
+X-ClientProxiedBy: EXCAS064.cuchost.com (172.16.6.24) To EXMBX071.cuchost.com
+ (172.16.6.81)
+X-YovoleRuleAgent: yovoleflag
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230306_004046_627087_6330802C 
-X-CRM114-Status: GOOD (  10.30  )
+X-CRM114-CacheID: sfid-20230306_015250_494487_52324CA4 
+X-CRM114-Status: GOOD (  11.86  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,31 +70,86 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 06/03/2023 07:18, Rohit Agarwal wrote:
-> Add devicetree YAML binding for Qualcomm QMP Super Speed (SS) PHY found
-> in SDX65.
-> 
-> Signed-off-by: Rohit Agarwal <quic_rohiagar@quicinc.com>
-> ---
->   Documentation/devicetree/bindings/phy/qcom,ipq8074-qmp-pcie-phy.yaml | 3 +++
->   1 file changed, 3 insertions(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/qcom,ipq8074-qmp-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,ipq8074-qmp-pcie-phy.yaml
-> index 62045dc..d877589 100644
-> --- a/Documentation/devicetree/bindings/phy/qcom,ipq8074-qmp-pcie-phy.yaml
-> +++ b/Documentation/devicetree/bindings/phy/qcom,ipq8074-qmp-pcie-phy.yaml
+This patchset adds USB driver for the StarFive JH7110 SoC.
+USB work mode is peripheral and using USB 2.0 PHY in VisionFive 2 board.
+The patch has been tested on the VisionFive 2 board.
 
-Please use new PCIe bindings from qcom,sc8280xp-qmp-pcie-phy.yaml
+This patchset should be applied after the patchset [1] and patch [2]:
+[1] https://lore.kernel.org/all/20230221083323.302471-1-xingyu.wu@starfivetech.com/
+[2] https://lore.kernel.org/all/20230215113249.47727-4-william.qiu@starfivetech.com/
+
+patch 1 is usb phy dt-binding document.
+patch 2 is the glue layer of Cadence USB3 and USB phy
+setting. USB controller IP is Cadence USB3. 
+patch 3 is USB device tree configuration.
+
+Minda Chen (3):
+  dt-bindings: phy: Add StarFive JH7110 USB dt-binding
+  usb: cdns3: add StarFive JH7110 USB glue layer
+  dts: usb: add StarFive JH7110 USB dts configuration.
+
+ .../bindings/phy/starfive,jh7110-usb-phy.yaml | 116 +++++
+ MAINTAINERS                                   |   7 +
+ .../jh7110-starfive-visionfive-2.dtsi         |   6 +
+ arch/riscv/boot/dts/starfive/jh7110.dtsi      |  39 ++
+ drivers/usb/cdns3/Kconfig                     |  11 +
+ drivers/usb/cdns3/Makefile                    |   1 +
+ drivers/usb/cdns3/cdns3-starfive.c            | 399 ++++++++++++++++++
+ 7 files changed, 579 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy.yaml
+ create mode 100644 drivers/usb/cdns3/cdns3-starfive.c
 
 
+base-commit: c9c3395d5e3dcc6daee66c6908354d47bf98cb0c
+prerequisite-patch-id: 54ce870d6ea747466474b5d4105cfbc05e1b01ab
+prerequisite-patch-id: ac150a8c622e858e088df8121093d448df49c245
+prerequisite-patch-id: 044263ef2fb9f1e5a586edbf85d5f67814a28430
+prerequisite-patch-id: 057fa35870d8d7d22a57c13362588ffb9e9df316
+prerequisite-patch-id: 848332ca483b026a755639b9eefb0bf8f3fcf8be
+prerequisite-patch-id: 1b2d0982b18da060c82134f05bf3ce16425bac8d
+prerequisite-patch-id: 090ba4b78d47bc19204916e76fdbc70021785388
+prerequisite-patch-id: a5d9e0f7d4f8163f566678894cf693015119f2d9
+prerequisite-patch-id: 87cb528acd9a7f1ffe7475d7261553f6a4de5753
+prerequisite-patch-id: 417736eb958e1158c60a5ed74bc2350394321a80
+prerequisite-patch-id: ff9fe0b043a5f7f74a1f6af5cebc4793c6f14ce7
+prerequisite-patch-id: 290602062703e666191c20ca02f2840471a6bf4f
+prerequisite-patch-id: f0b29adbb18edffbfeec7292c5f33e2bbeb30945
+prerequisite-patch-id: fccfad539d8455777988b709171ad97729e1a97c
+prerequisite-patch-id: 929ebaffab0df158ea801661d0da74e8b5ef138c
+prerequisite-patch-id: 0d9ddcaa8a867fcbc790b41d6d0349796e0c44b0
+prerequisite-patch-id: 5f539ac7c96023b36489c6da7c70c31eaf64a25b
+prerequisite-patch-id: 65f2aed865d88e6fa468d2923527b523d4313857
+prerequisite-patch-id: 258ea5f9b8bf41b6981345dcc81795f25865d38f
+prerequisite-patch-id: 8b6f2c9660c0ac0ee4e73e4c21aca8e6b75e81b9
+prerequisite-patch-id: e3b986b9c60b2b93b7812ec174c9e1b4cfb14c97
+prerequisite-patch-id: 2e03eeb766aefd5d38f132d091618e9fa19a37b6
+prerequisite-patch-id: dbb0c0151b8bdf093e6ce79fd2fe3f60791a6e0b
+prerequisite-patch-id: ea9a6d0313dd3936c8de0239dc2072c3360a2f6b
+prerequisite-patch-id: d57e95d31686772abc4c4d5aa1cadc344dc293cd
+prerequisite-patch-id: 602c3cf8f42c8c88125defa0a8a301da51f8af49
+prerequisite-patch-id: 82d2d2bc302045505a51f4ab2bf607a904d4b2d1
+prerequisite-patch-id: a6df0f7d8fc2d534c06d85f17578c9134913d01b
+prerequisite-patch-id: 2ddada18ab6ea5cd1da14212aaf59632f5203d40
+prerequisite-patch-id: b9b8fda5e8cd2dd4c9101ec03f4c8fb8e8caa573
+prerequisite-patch-id: 7acbc9c924e802712d3574dd74a6b3576089f78c
+prerequisite-patch-id: f9ce88e490c2473c3c94ad63fa26bc91829ce2cc
+prerequisite-patch-id: ce8a6557564ba04bd90bb41d34f520347f399887
+prerequisite-patch-id: 9f71c539a241baf1e73c7e7dfde5b0b04c66a502
+prerequisite-patch-id: 378a6ccc643a8bf51918cdd61876af813564c638
+prerequisite-patch-id: bb8e071ed43998874b9d98292c0dcdeedc0760ca
+prerequisite-patch-id: 0c04762f1d20f09cd2a1356334a86e520907d111
+prerequisite-patch-id: 8867ef35e4d555491a97106db7834149309426b7
+prerequisite-patch-id: bab410c96a073b6f9f66f4934a3d9ac4d5b93398
+prerequisite-patch-id: 2bc43b375b470f7e8bbe937b78678ba3856e3b8f
+prerequisite-patch-id: 9b423b2a1f371b8b18eac9e3280ebb556f329bbd
+prerequisite-patch-id: dd3a3e086a7532fe99d46fec4d4938e9bcdb7d1f
 -- 
-With best wishes
-Dmitry
+2.17.1
 
 
 -- 
