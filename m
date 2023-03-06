@@ -4,86 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C36C0C61DA4
-	for <linux-phy@archiver.kernel.org>; Mon,  6 Mar 2023 17:09:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 35A55C64EC4
+	for <linux-phy@archiver.kernel.org>; Mon,  6 Mar 2023 17:09:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JodacRgJBB1sMsb7twEqId46tY0bRa58UySMRczOemQ=; b=cPBl4pIP21D0DX
-	okIgGpbVzyI7sSUEfCP1lmVSSbhNUqyGPsopNEVj+KVcpS947CDLqkEZN+t65Asq+qo+G2czmbuK6
-	tUbQiDtKdRGWZBCa9b2GtKXEyXjdqdGcf9zp9HGMj/NQBNNTjBTIy3QyrCMTuoecV4s18D/8m8xHG
-	va6Tm8iOM+QoaHGM555gaxGE5H6qJcFI3+gp1wO02wTz2Xr344UAm420wlYdrB7i0jnyAELsVpwPc
-	TQ7+2WeLWnVXEgFWFpmv8jWMHBXlF2sivvlR0Y65bCliXw0krwqoON42GE9PHa7ZLY1eKjktKR7Pj
-	YQKrbB6U7teQ3Nrkzotg==;
+	List-Owner; bh=dO6TAJr7HZMOkcSBhe/VtytUUuEImbKC2e2gapn6/34=; b=i2Kl5sGtyq5QgW
+	2hnLQSmkQx3XObQpl4uUtvZQDj/YRanOiWzgouaRk/9nXBp50sk7r0VrF/j0FHyaCGw+26tJ5JElb
+	qMfjVLbHNkhE6BbkJQk5ONSktyB553/txqJzwiQQZF36Z9qw9y4U1lzZ/H7o6/8iMC+zl3WWeYvgF
+	9pbk/Zkj1Tr2/fH68t4LqI5xY7Z4TDf9gChciB2u4iLb1t+hOcOHYLd8jJTzo6wmejsViN7qnNtzP
+	aSvNuLlKMm5Ccd0+OHWO5fXxKosifYO7UAJRlrFX4URfU6qH5AMACeN8tFSZGCbPUVruvYFVloKW5
+	ux4x/hCjeuamjA+XqGdA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pZEL5-00E3ve-RH; Mon, 06 Mar 2023 17:09:31 +0000
-Received: from vmi888983.contaboserver.net ([149.102.157.145] helo=amity.mint.lgbt)
+	id 1pZELG-00E3xP-Ky; Mon, 06 Mar 2023 17:09:42 +0000
+Received: from mail-lf1-x130.google.com ([2a00:1450:4864:20::130])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pZEL2-00E3uq-8r
-	for linux-phy@lists.infradead.org; Mon, 06 Mar 2023 17:09:30 +0000
-Received: from amity.mint.lgbt (mx.mint.lgbt [127.0.0.1])
-	by amity.mint.lgbt (Postfix) with ESMTP id 4PVlRp4K2wz1S5KY
-	for <linux-phy@lists.infradead.org>; Mon,  6 Mar 2023 12:09:26 -0500 (EST)
-Authentication-Results: amity.mint.lgbt (amavisd-new);
-	dkim=pass (2048-bit key) reason="pass (just generated, assumed good)"
-	header.d=mint.lgbt
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=mint.lgbt; h=
-	content-transfer-encoding:mime-version:references:in-reply-to
-	:x-mailer:message-id:date:subject:to:from; s=dkim; t=1678122565;
-	 x=1678986566; bh=2zBjlW2RfFUNor9tBkFnpnAtnXeIE0/7aP/gy90Q0B4=; b=
-	tg3AXkzF6JtPno5jWYUWra9bO2KsRYOjFFGn33/SEcOeWDj3Rk6ofQBg9m20XXc9
-	IBF2QwlrtRbPBV09BU7oBIClFmc4nkV7OcmlKzUZu+0A5PGs0Nc3xI3b+ECAkqKQ
-	faGkKn6hMcOYV9EQmu/yelf4Co68KWVfxmx1W9WclRt2sA9qFWcoH3iyXqV3IJ/h
-	GnJ2apx9CAn99Sr076rcdqptmPZ3pXwVGszVt12Qc+cnKH9OCgIx9ulF9HZQJ9s+
-	JrYZddRb5iMNEdFIZ0rqlIv8zIk54ErGi1v9ro9ms2UJqzrtIwgoMIimtfYQY5Wq
-	UeDOjxURrdpCiEO5++j/Xg==
-X-Virus-Scanned: amavisd-new at amity.mint.lgbt
-Received: from amity.mint.lgbt ([127.0.0.1])
-	by amity.mint.lgbt (amity.mint.lgbt [127.0.0.1]) (amavisd-new, port 10026)
-	with ESMTP id ILN_Q8VcWsq8 for <linux-phy@lists.infradead.org>;
-	Mon,  6 Mar 2023 12:09:25 -0500 (EST)
-Received: from dorothy.. (unknown [186.105.8.42])
-	by amity.mint.lgbt (Postfix) with ESMTPSA id 4PVlRb36jGz1S52d;
-	Mon,  6 Mar 2023 12:09:15 -0500 (EST)
-From: Lux Aliaga <they@mint.lgbt>
-To: agross@kernel.org,
-	andersson@kernel.org,
-	konrad.dybcio@linaro.org,
-	robh+dt@kernel.org,
-	krzysztof.kozlowski+dt@linaro.org,
-	vkoul@kernel.org,
-	kishon@kernel.org,
-	alim.akhtar@samsung.com,
-	avri.altman@wdc.com,
-	bvanassche@acm.org,
-	keescook@chromium.org,
-	tony.luck@intel.com,
-	gpiccoli@igalia.com
-Cc: ~postmarketos/upstreaming@lists.sr.ht,
-	linux-arm-msm@vger.kernel.org,
-	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-scsi@vger.kernel.org,
-	linux-hardening@vger.kernel.org,
-	phone-devel@vger.kernel.org,
-	martin.botka@somainline.org,
-	marijn.suijten@somainline.org,
-	Lux Aliaga <they@mint.lgbt>
-Subject: [PATCH v7 6/6] arm64: dts: qcom: sm6125: Initial support for xiaomi-laurel-sprout
-Date: Mon,  6 Mar 2023 14:08:16 -0300
-Message-Id: <20230306170817.3806-7-they@mint.lgbt>
-X-Mailer: git-send-email 2.39.2
-In-Reply-To: <20230306170817.3806-1-they@mint.lgbt>
-References: <20230306170817.3806-1-they@mint.lgbt>
+	id 1pZELC-00E3wF-OQ
+	for linux-phy@lists.infradead.org; Mon, 06 Mar 2023 17:09:40 +0000
+Received: by mail-lf1-x130.google.com with SMTP id j11so13640984lfg.13
+        for <linux-phy@lists.infradead.org>; Mon, 06 Mar 2023 09:09:37 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1678122576;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=9qYKcnlpWdMlBpcagLtIlBclO/koVb4A2hugmwuDjQQ=;
+        b=K/ALNyiVmwk2B7FaiVr9+CnGKCB/lcBSgTRyxUeKfghmfQ3LfkadXwYITQfgwcIYec
+         yjLbnMfJ3Y5IcIHbvOSl0YxygbcPkImfyfF3A+daz2LzVPW5u/4J5vPm/5tQEFILCaUh
+         WIg/nIbiQWKn450exLKg18eyoDQDd+A+VKIimnJd80kN1/NU6uuVcML52mI8fWP08JAw
+         xlycx5pHeYzmF5FEiOmVmHyUN40f0U2Dw1GfbIStj1/0Pzf0DsZ0V0osDVJMRw53sgEf
+         uafbaitDMcI/Gj7p0Emovr44UvrTN4G03BCks7HKCrIOLCewObrOT6IiwpTYtCTE00XI
+         F53Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112; t=1678122576;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=9qYKcnlpWdMlBpcagLtIlBclO/koVb4A2hugmwuDjQQ=;
+        b=EJ9hyKJXMQrgpZSRjNxhC3g2BBqSofNdTrBGE0odDQji1TVY9GZZ9Uk4tzVl43TBy1
+         sIF1//d6QRq7LfIm5CyybGHsMeGQ7LwiCBiNhbEU2FNUC/gGUQnUJo64KcIEvgvJA/l+
+         ebByZAqH52bLh0Lqa2aU7jZzTcQLDFVVazISNzA1ICqGdu4S2QX3kD4FNYSERJqYcdoc
+         YWEnfyAN3XtKYUjxhcVosfTlCWy0vkvJyHcKo7j/bn8VLCpjvaTIhCju0zdkYjuilVOz
+         KglTngjLnVYAqTYGeyyvQLPfzYoWDpfR39BIQBMvwLzrKZFFQbGZ/l9Cy2POTVjOWljK
+         bfrQ==
+X-Gm-Message-State: AO0yUKW/c6diw619T4yK7HMsqA+IXtbp7D4xp8ilK2+ObKpyHxPMzQcF
+	y08h2IkUuxjue7JM0EYbKscZwQ==
+X-Google-Smtp-Source: AK7set/Go5uO6Ko/jxC1RRWHo5FHKFy68YfXEpfah8KL+MgdxvhaMrkjjPKYCkUBXnHCDbX3tV62AA==
+X-Received: by 2002:ac2:558d:0:b0:4db:3882:8f42 with SMTP id v13-20020ac2558d000000b004db38828f42mr3558231lfg.45.1678122576059;
+        Mon, 06 Mar 2023 09:09:36 -0800 (PST)
+Received: from [192.168.1.101] (abym99.neoplus.adsl.tpnet.pl. [83.9.32.99])
+        by smtp.gmail.com with ESMTPSA id x19-20020a19f613000000b004db1cd5efcesm1692927lfe.241.2023.03.06.09.09.34
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 06 Mar 2023 09:09:35 -0800 (PST)
+Message-ID: <dfd1d81e-76a0-f8eb-e529-9f8ea1e927b6@linaro.org>
+Date: Mon, 6 Mar 2023 18:09:33 +0100
 MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.8.0
+Subject: Re: [PATCH v7 1/6] dt-bindings: ufs: qcom: Add SM6125 compatible
+ string
+Content-Language: en-US
+To: Lux Aliaga <they@mint.lgbt>, agross@kernel.org, andersson@kernel.org,
+ robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org, vkoul@kernel.org,
+ kishon@kernel.org, alim.akhtar@samsung.com, avri.altman@wdc.com,
+ bvanassche@acm.org, keescook@chromium.org, tony.luck@intel.com,
+ gpiccoli@igalia.com
+Cc: ~postmarketos/upstreaming@lists.sr.ht, linux-arm-msm@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-scsi@vger.kernel.org,
+ linux-hardening@vger.kernel.org, phone-devel@vger.kernel.org,
+ martin.botka@somainline.org, marijn.suijten@somainline.org,
+ Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+References: <20230306165246.14782-1-they@mint.lgbt>
+ <20230306165246.14782-2-they@mint.lgbt>
+ <4670ddae-6b01-1e5c-b0ed-1f2f498a4f66@mint.lgbt>
+From: Konrad Dybcio <konrad.dybcio@linaro.org>
+In-Reply-To: <4670ddae-6b01-1e5c-b0ed-1f2f498a4f66@mint.lgbt>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230306_090928_475568_ACD42275 
-X-CRM114-Status: GOOD (  11.37  )
+X-CRM114-CacheID: sfid-20230306_090939_220954_37CC12D6 
+X-CRM114-Status: GOOD (  10.40  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,475 +98,40 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add support for the Xiaomi Mi A3 (xiaomi-laurel-sprout). Here's a
-summary on what's defined.
-
-- dmesg output to bootloader preconfigured display
-- USB
-- UFS
-- SD card
-- SMD RPM regulators
-- Volume Up, Down and Power buttons
-- Thermistors
-
-Signed-off-by: Lux Aliaga <they@mint.lgbt>
-Reviewed-by: Konrad Dybcio <konrad.dybcio@linaro.org>
-Reviewed-by: Marijn Suijten <marijn.suijten@somainline.org>
----
- arch/arm64/boot/dts/qcom/Makefile             |   1 +
- .../dts/qcom/sm6125-xiaomi-laurel-sprout.dts  | 421 ++++++++++++++++++
- 2 files changed, 422 insertions(+)
- create mode 100644 arch/arm64/boot/dts/qcom/sm6125-xiaomi-laurel-sprout.dts
-
-diff --git a/arch/arm64/boot/dts/qcom/Makefile b/arch/arm64/boot/dts/qcom/Makefile
-index 3e79496292e7..2b2a0170db14 100644
---- a/arch/arm64/boot/dts/qcom/Makefile
-+++ b/arch/arm64/boot/dts/qcom/Makefile
-@@ -157,6 +157,7 @@ dtb-$(CONFIG_ARCH_QCOM)	+= sdm850-lenovo-yoga-c630.dtb
- dtb-$(CONFIG_ARCH_QCOM)	+= sdm850-samsung-w737.dtb
- dtb-$(CONFIG_ARCH_QCOM)	+= sm4250-oneplus-billie2.dtb
- dtb-$(CONFIG_ARCH_QCOM)	+= sm6125-sony-xperia-seine-pdx201.dtb
-+dtb-$(CONFIG_ARCH_QCOM)	+= sm6125-xiaomi-laurel-sprout.dtb
- dtb-$(CONFIG_ARCH_QCOM)	+= sm6350-sony-xperia-lena-pdx213.dtb
- dtb-$(CONFIG_ARCH_QCOM)	+= sm6375-sony-xperia-murray-pdx225.dtb
- dtb-$(CONFIG_ARCH_QCOM)	+= sm7225-fairphone-fp4.dtb
-diff --git a/arch/arm64/boot/dts/qcom/sm6125-xiaomi-laurel-sprout.dts b/arch/arm64/boot/dts/qcom/sm6125-xiaomi-laurel-sprout.dts
-new file mode 100644
-index 000000000000..b1038eb8cebc
---- /dev/null
-+++ b/arch/arm64/boot/dts/qcom/sm6125-xiaomi-laurel-sprout.dts
-@@ -0,0 +1,421 @@
-+// SPDX-License-Identifier: BSD-3-Clause
-+/*
-+ * Copyright (c) 2022, Lux Aliaga <they@mint.lgbt>
-+ */
-+
-+/dts-v1/;
-+
-+#include <dt-bindings/gpio/gpio.h>
-+#include <dt-bindings/input/input.h>
-+#include <dt-bindings/input/gpio-keys.h>
-+#include <dt-bindings/pinctrl/qcom,pmic-gpio.h>
-+#include "sm6125.dtsi"
-+#include "pm6125.dtsi"
-+
-+/ {
-+	model = "Xiaomi Mi A3";
-+	compatible = "xiaomi,laurel-sprout", "qcom,sm6125";
-+	chassis-type = "handset";
-+
-+	/* required for bootloader to select correct board */
-+	qcom,msm-id = <394 0>; /* sm6125 v1 */
-+	qcom,board-id = <11 0>;
-+
-+	chosen {
-+		#address-cells = <2>;
-+		#size-cells = <2>;
-+		ranges;
-+
-+		framebuffer0: framebuffer@5c000000 {
-+			compatible = "simple-framebuffer";
-+			reg = <0 0x5c000000 0 (1560 * 720 * 4)>;
-+			width = <720>;
-+			height = <1560>;
-+			stride = <(720 * 4)>;
-+			format = "a8r8g8b8";
-+		};
-+	};
-+
-+	reserved-memory {
-+		debug_mem: debug@ffb00000 {
-+			reg = <0x0 0xffb00000 0x0 0xc0000>;
-+			no-map;
-+		};
-+
-+		last_log_mem: lastlog@ffbc0000 {
-+			reg = <0x0 0xffbc0000 0x0 0x80000>;
-+			no-map;
-+		};
-+
-+		pstore_mem: ramoops@ffc00000 {
-+			compatible = "ramoops";
-+			reg = <0x0 0xffc40000 0x0 0xc0000>;
-+			record-size = <0x1000>;
-+			console-size = <0x40000>;
-+			msg-size = <0x20000 0x20000>;
-+		};
-+
-+		cmdline_mem: memory@ffd00000 {
-+			reg = <0x0 0xffd40000 0x0 0x1000>;
-+			no-map;
-+		};
-+	};
-+
-+	extcon_usb: usb-id {
-+		compatible = "linux,extcon-usb-gpio";
-+		id-gpio = <&tlmm 102 GPIO_ACTIVE_HIGH>;
-+	};
-+
-+	gpio-keys {
-+		compatible = "gpio-keys";
-+
-+		pinctrl-0 = <&vol_up_n>;
-+		pinctrl-names = "default";
-+
-+		key-volume-up {
-+			label = "Volume Up";
-+			gpios = <&pm6125_gpios 5 GPIO_ACTIVE_LOW>;
-+			linux,code = <KEY_VOLUMEUP>;
-+			debounce-interval = <15>;
-+			linux,can-disable;
-+			wakeup-source;
-+		};
-+	};
-+
-+	thermal-zones {
-+		rf-pa0-thermal {
-+			polling-delay-passive = <0>;
-+			polling-delay = <0>;
-+			thermal-sensors = <&pm6125_adc_tm 0>;
-+
-+			trips {
-+				active-config0 {
-+					temperature = <125000>;
-+					hysteresis = <1000>;
-+					type = "critical";
-+				};
-+			};
-+		};
-+
-+		quiet-thermal {
-+			polling-delay-passive = <0>;
-+			polling-delay = <5000>;
-+			thermal-sensors = <&pm6125_adc_tm 1>;
-+
-+			trips {
-+				active-config0 {
-+					temperature = <125000>;
-+					hysteresis = <1000>;
-+					type = "critical";
-+				};
-+			};
-+		};
-+
-+		xo-thermal {
-+			polling-delay-passive = <0>;
-+			polling-delay = <0>;
-+			thermal-sensors = <&pm6125_adc_tm 2>;
-+
-+			trips {
-+				active-config0 {
-+					temperature = <125000>;
-+					hysteresis = <1000>;
-+					type = "critical";
-+				};
-+			};
-+		};
-+	};
-+};
-+
-+&hsusb_phy1 {
-+	vdd-supply = <&vreg_l7a>;
-+	vdda-pll-supply = <&vreg_l10a>;
-+	vdda-phy-dpdm-supply = <&vreg_l15a>;
-+	status = "okay";
-+};
-+
-+&pm6125_adc {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&camera_flash_therm &emmc_ufs_therm>;
-+
-+	adc-chan@4d {
-+		reg = <ADC5_AMUX_THM1_100K_PU>;
-+		qcom,ratiometric;
-+		qcom,hw-settle-time = <200>;
-+		qcom,pre-scaling = <1 1>;
-+		label = "rf_pa0_therm";
-+	};
-+
-+	adc-chan@4e {
-+		reg = <ADC5_AMUX_THM2_100K_PU>;
-+		qcom,ratiometric;
-+		qcom,hw-settle-time = <200>;
-+		qcom,pre-scaling = <1 1>;
-+		label = "quiet_therm";
-+	};
-+
-+	adc-chan@52 {
-+		reg = <ADC5_GPIO1_100K_PU>;
-+		qcom,ratiometric;
-+		qcom,hw-settle-time = <200>;
-+		qcom,pre-scaling = <1 1>;
-+		label = "camera_flash_therm";
-+	};
-+
-+	adc-chan@54 {
-+		reg = <ADC5_GPIO3_100K_PU>;
-+		qcom,ratiometric;
-+		qcom,hw-settle-time = <200>;
-+		qcom,pre-scaling = <1 1>;
-+		label = "emmc_ufs_therm";
-+	};
-+};
-+
-+&pm6125_adc_tm {
-+	status = "okay";
-+
-+	rf-pa0-therm@0 {
-+		reg = <0>;
-+		io-channels = <&pm6125_adc ADC5_AMUX_THM1_100K_PU>;
-+		qcom,ratiometric;
-+		qcom,hw-settle-time-us = <200>;
-+	};
-+
-+	quiet-therm@1 {
-+		reg = <1>;
-+		io-channels = <&pm6125_adc ADC5_AMUX_THM2_100K_PU>;
-+		qcom,ratiometric;
-+		qcom,hw-settle-time-us = <200>;
-+	};
-+
-+	xo-therm@2 {
-+		reg = <2>;
-+		io-channels = <&pm6125_adc ADC5_XO_THERM_100K_PU>;
-+		qcom,ratiometric;
-+		qcom,hw-settle-time-us = <200>;
-+	};
-+};
-+
-+&pm6125_gpios {
-+	camera_flash_therm: camera-flash-therm-state {
-+		pins = "gpio3";
-+		function = PMIC_GPIO_FUNC_NORMAL;
-+		bias-high-impedance;
-+	};
-+
-+	emmc_ufs_therm: emmc-ufs-therm-state {
-+		pins = "gpio6";
-+		function = PMIC_GPIO_FUNC_NORMAL;
-+		bias-high-impedance;
-+	};
-+
-+	vol_up_n: vol-up-n-state {
-+		pins = "gpio5";
-+		function = PMIC_GPIO_FUNC_NORMAL;
-+		input-enable;
-+		bias-pull-up;
-+	};
-+};
-+
-+&pon_pwrkey {
-+	status = "okay";
-+};
-+
-+&pon_resin {
-+	linux,code = <KEY_VOLUMEDOWN>;
-+	status = "okay";
-+};
-+
-+&rpm_requests {
-+	regulators-0 {
-+		compatible = "qcom,rpm-pm6125-regulators";
-+
-+		vreg_s6a: s6 {
-+			regulator-min-microvolt = <936000>;
-+			regulator-max-microvolt = <1422000>;
-+		};
-+
-+		vreg_l1a: l1 {
-+			regulator-min-microvolt = <1200000>;
-+			regulator-max-microvolt = <1256000>;
-+		};
-+
-+		vreg_l2a: l2 {
-+			regulator-min-microvolt = <1000000>;
-+			regulator-max-microvolt = <1056000>;
-+		};
-+
-+		vreg_l3a: l3 {
-+			regulator-min-microvolt = <1000000>;
-+			regulator-max-microvolt = <1064000>;
-+		};
-+
-+		vreg_l4a: l4 {
-+			regulator-min-microvolt = <872000>;
-+			regulator-max-microvolt = <976000>;
-+			regulator-allow-set-load;
-+		};
-+
-+		vreg_l5a: l5 {
-+			regulator-min-microvolt = <1648000>;
-+			regulator-max-microvolt = <2950000>;
-+			regulator-allow-set-load;
-+		};
-+
-+		vreg_l6a: l6 {
-+			regulator-min-microvolt = <576000>;
-+			regulator-max-microvolt = <656000>;
-+		};
-+
-+		vreg_l7a: l7 {
-+			regulator-min-microvolt = <872000>;
-+			regulator-max-microvolt = <976000>;
-+		};
-+
-+		vreg_l8a: l8 {
-+			regulator-min-microvolt = <400000>;
-+			regulator-max-microvolt = <728000>;
-+		};
-+
-+		vreg_l9a: l9 {
-+			regulator-min-microvolt = <1800000>;
-+			regulator-max-microvolt = <1896000>;
-+		};
-+
-+		vreg_l10a: l10 {
-+			regulator-min-microvolt = <1800000>;
-+			regulator-max-microvolt = <1896000>;
-+			regulator-allow-set-load;
-+		};
-+
-+		vreg_l11a: l11 {
-+			regulator-min-microvolt = <1800000>;
-+			regulator-max-microvolt = <1952000>;
-+			regulator-allow-set-load;
-+		};
-+
-+		vreg_l12a: l12 {
-+			regulator-min-microvolt = <1800000>;
-+			regulator-max-microvolt = <1996000>;
-+		};
-+
-+		vreg_l13a: l13 {
-+			regulator-min-microvolt = <1800000>;
-+			regulator-max-microvolt = <1832000>;
-+		};
-+
-+		vreg_l14a: l14 {
-+			regulator-min-microvolt = <1800000>;
-+			regulator-max-microvolt = <1904000>;
-+		};
-+
-+		vreg_l15a: l15 {
-+			regulator-min-microvolt = <3104000>;
-+			regulator-max-microvolt = <3232000>;
-+		};
-+
-+		vreg_l16a: l16 {
-+			regulator-min-microvolt = <1800000>;
-+			regulator-max-microvolt = <1904000>;
-+		};
-+
-+		vreg_l17a: l17 {
-+			regulator-min-microvolt = <1248000>;
-+			regulator-max-microvolt = <1304000>;
-+		};
-+
-+		vreg_l18a: l18 {
-+			regulator-min-microvolt = <1200000>;
-+			regulator-max-microvolt = <1264000>;
-+			regulator-allow-set-load;
-+		};
-+
-+		vreg_l19a: l19 {
-+			regulator-min-microvolt = <1648000>;
-+			regulator-max-microvolt = <2952000>;
-+		};
-+
-+		vreg_l20a: l20 {
-+			regulator-min-microvolt = <1648000>;
-+			regulator-max-microvolt = <2952000>;
-+		};
-+
-+		vreg_l21a: l21 {
-+			regulator-min-microvolt = <2600000>;
-+			regulator-max-microvolt = <2856000>;
-+		};
-+
-+		vreg_l22a: l22 {
-+			regulator-min-microvolt = <2944000>;
-+			regulator-max-microvolt = <2950000>;
-+			regulator-allow-set-load;
-+		};
-+
-+		vreg_l23a: l23 {
-+			regulator-min-microvolt = <3000000>;
-+			regulator-max-microvolt = <3400000>;
-+		};
-+
-+		vreg_l24a: l24 {
-+			regulator-min-microvolt = <2944000>;
-+			regulator-max-microvolt = <2950000>;
-+			regulator-allow-set-load;
-+		};
-+	};
-+};
-+
-+&sdc2_off_state {
-+	sd-cd-pins {
-+		pins = "gpio98";
-+		function = "gpio";
-+		drive-strength = <2>;
-+		bias-disable;
-+	};
-+};
-+
-+&sdc2_on_state {
-+	sd-cd-pins {
-+		pins = "gpio98";
-+		function = "gpio";
-+		drive-strength = <2>;
-+		bias-pull-up;
-+	};
-+};
-+
-+&sdhc_2 {
-+	cd-gpios = <&tlmm 98 GPIO_ACTIVE_HIGH>;
-+	vmmc-supply = <&vreg_l22a>;
-+	vqmmc-supply = <&vreg_l5a>;
-+	no-sdio;
-+	no-mmc;
-+	status = "okay";
-+};
-+
-+&tlmm {
-+	gpio-reserved-ranges = <22 2>, <28 6>;
-+};
-+
-+&ufs_mem_hc {
-+	vcc-supply = <&vreg_l24a>;
-+	vccq2-supply = <&vreg_l11a>;
-+	vcc-max-microamp = <600000>;
-+	vccq2-max-microamp = <600000>;
-+	status = "okay";
-+};
-+
-+&ufs_mem_phy {
-+	vdda-phy-supply = <&vreg_l4a>;
-+	vdda-pll-supply = <&vreg_l10a>;
-+	vdda-phy-max-microamp = <51400>;
-+	vdda-pll-max-microamp = <14200>;
-+	vddp-ref-clk-supply = <&vreg_l18a>;
-+	status = "okay";
-+};
-+
-+&usb3 {
-+	status = "okay";
-+};
-+
-+&usb3_dwc3 {
-+	extcon = <&extcon_usb>;
-+};
--- 
-2.39.2
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+CgpPbiA2LjAzLjIwMjMgMTg6MDEsIEx1eCBBbGlhZ2Egd3JvdGU6Cj4gCj4gT24gMDYvMDMvMjAy
+MyAxMzo1MiwgTHV4IEFsaWFnYSB3cm90ZToKPj4gRG9jdW1lbnQgdGhlIGNvbXBhdGlibGUgZm9y
+IFVGUyBmb3VuZCBvbiB0aGUgU002MTI1Lgo+Pgo+PiBTaWduZWQtb2ZmLWJ5OiBMdXggQWxpYWdh
+IDx0aGV5QG1pbnQubGdidD4KPj4gUmV2aWV3ZWQtYnk6IE1hcnRpbiBCb3RrYSA8bWFydGluLmJv
+dGthQHNvbWFpbmxpbmUub3JnPgo+PiBBY2tlZC1ieTogS3J6eXN6dG9mIEtvemxvd3NraSA8a3J6
+eXN6dG9mLmtvemxvd3NraUBsaW5hcm8ub3JnPgo+PiAtLS0KPj4gwqAgRG9jdW1lbnRhdGlvbi9k
+ZXZpY2V0cmVlL2JpbmRpbmdzL3Vmcy9xY29tLHVmcy55YW1sIHwgMiArKwo+PiDCoCAxIGZpbGUg
+Y2hhbmdlZCwgMiBpbnNlcnRpb25zKCspCj4+Cj4+IGRpZmYgLS1naXQgYS9Eb2N1bWVudGF0aW9u
+L2RldmljZXRyZWUvYmluZGluZ3MvdWZzL3Fjb20sdWZzLnlhbWwgYi9Eb2N1bWVudGF0aW9uL2Rl
+dmljZXRyZWUvYmluZGluZ3MvdWZzL3Fjb20sdWZzLnlhbWwKPj4gaW5kZXggYjUxN2Q3NjIxNWUz
+Li40MjQyMmYzNDcxYjMgMTAwNjQ0Cj4+IC0tLSBhL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9i
+aW5kaW5ncy91ZnMvcWNvbSx1ZnMueWFtbAo+PiArKysgYi9Eb2N1bWVudGF0aW9uL2RldmljZXRy
+ZWUvYmluZGluZ3MvdWZzL3Fjb20sdWZzLnlhbWwKPj4gQEAgLTI5LDYgKzI5LDcgQEAgcHJvcGVy
+dGllczoKPj4gwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAtIHFjb20sc2M4MjgweHAtdWZzaGMKPj4g
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAtIHFjb20sc2RtODQ1LXVmc2hjCj4+IMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqAgLSBxY29tLHNtNjExNS11ZnNoYwo+PiArwqDCoMKgwqDCoMKgwqDCoMKgIC0g
+cWNvbSxzbTYxMjUtdWZzaGMKPj4gwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAtIHFjb20sc202MzUw
+LXVmc2hjCj4+IMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgLSBxY29tLHNtODE1MC11ZnNoYwo+PiDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgIC0gcWNvbSxzbTgyNTAtdWZzaGMKPj4gQEAgLTE4NSw2ICsx
+ODYsNyBAQCBhbGxPZjoKPj4gwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBjb250YWluczoKPj4gwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgZW51bToKPj4gwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgIC0gcWNvbSxzbTYxMTUtdWZzaGMKPj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+IC0gcWNvbSxzbTYxMjUtdWZzaGMKPj4gwqDCoMKgwqDCoCB0aGVuOgo+PiDCoMKgwqDCoMKgwqDC
+oCBwcm9wZXJ0aWVzOgo+PiDCoMKgwqDCoMKgwqDCoMKgwqAgY2xvY2tzOgo+IEkgaGF2ZSB0byBh
+cG9sb2dpemUuIEkgd29ya2VkIG9uIGEgY2hhbmdlbG9nIGZvciB0aGlzIHBhdGNoc2V0IGJ1dCBJ
+IHNraXBwZWQgdGhlIHN1YmplY3QgaGVhZGVyLCB0aGVyZWZvcmUgaXQgZGlkbid0IHNlbmQsIGFu
+ZCBhcyBJIHJlYWxpemVkIHRoaXMgSSBpbnRlcnJ1cHRlZCB0aGUgcHJvY2VzcywgbGVhdmluZyB0
+aGUgcGF0Y2hzZXQgaW5jb21wbGV0ZS4gSSdsbCByZXRyeSBzZW5kaW5nIGl0LCB0aGlzIHRpbWUg
+Y29ycmVjdGx5LgpIYXBwZW5zLCBuZXh0IHRpbWUgcmVzZW5kIGl0IHdpdGggYSBSRVNFTkQgcHJl
+Zml4LCBlLmcuIFtSRVNFTkQgUEFUQ0ggMS8yXQoKS29ucmFkCj4gCgotLSAKbGludXgtcGh5IG1h
+aWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmlu
+ZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
