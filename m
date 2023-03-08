@@ -4,66 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7BCBEC678D5
-	for <linux-phy@archiver.kernel.org>; Wed,  8 Mar 2023 18:12:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BE5EBC64EC4
+	for <linux-phy@archiver.kernel.org>; Wed,  8 Mar 2023 23:11:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YpmdZVlO3bhrXUEUYgg3O6lAo9s/xI/OAc6uNZDR07I=; b=B0NPvGmMNC5SF2
-	PPqpoMxK8XEsgyioL+ZW4OMEqVV973ukI4atGA6gjPVkzC/PhUcIRwWyRES3q9N5THIhISbLJLFZD
-	W9KO2kkImWvl25y1La72Oweo952eV914jwQCZCbc0ykCVDk+DxeEY1VD8csp+622/1cMXVtw7I5j+
-	ZNrqyIA3JK4QvWM5PpQGsuqhfc1DQVLYBBjxszJVkCKUIoh/Nss5UIEhLzS3F7ZNqY5qZ/zk8D/WS
-	RpZOXGpHXkhytaeNUDAUrdj5fAIn3BNZarUF0zh4Da1JIc5HkcqcDJPGzgwmvNm1+RK7RzO4dKgbz
-	dwM/ixka4Q5WkYId4gaw==;
+	List-Owner; bh=6Sm13mQjRYGzIPHjtZ30Vp2Ob2RlfnuFo2r5eRpmlNY=; b=NeWmfse6foJAAI
+	9a8+K0suvbDa4kYyO9uCliPRCevg5OKbXvFU03kLZ3IHRvrJYTMDLXB5A6lbPG/k1gwMKsMs8lk5S
+	3PZLoz6hU17ptYBkPWshTl0ZoOd9rhOZUAgpvY+n/F4FVUOCRIld/ritLuhFhIn2uCoQhh80+ywNj
+	lgsBQwnpSpyH8FP6kmHrwGV0RG0g/NhD3koP5qIWdxEZg0El80ssbGwv8Ttg6EmWxNdDWK3S0P/Er
+	YuB+VY67vaJRL2gtVVA/VhfnDiwIUQFOPpER2qJD7zrCoqJ1EM+R/SghU597E9Igv5RVhsGpGiG5+
+	sbVRs5twTrXLDhAbggDw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pZyHK-006KH7-UQ; Wed, 08 Mar 2023 18:12:42 +0000
-Received: from mail-ot1-f53.google.com ([209.85.210.53])
+	id 1pa2w0-0072k8-Tf; Wed, 08 Mar 2023 23:11:00 +0000
+Received: from mail-oo1-f52.google.com ([209.85.161.52])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pZyHH-006KEn-RT; Wed, 08 Mar 2023 18:12:41 +0000
-Received: by mail-ot1-f53.google.com with SMTP id q11-20020a056830440b00b00693c1a62101so9487684otv.0;
-        Wed, 08 Mar 2023 10:12:38 -0800 (PST)
+	id 1pa2vX-0072Mi-RQ; Wed, 08 Mar 2023 23:10:35 +0000
+Received: by mail-oo1-f52.google.com with SMTP id n27-20020a4ad63b000000b005252709efdbso28299oon.4;
+        Wed, 08 Mar 2023 15:10:20 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112; t=1678299158;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=7v3Me2y7t7dCURwLEAGtEDEw0TqjC7V3ocAkq0mf58g=;
-        b=Qvn1oE8XiD1294TRiktxDuCxMpiXB9SJzFS3XvVwUHr6bmfzeVU9lNcPXd2XOmulEJ
-         KMUZ8qR6572cq1ArObGHyPrQLH7I+J/0PT78WLXhbPPDoGnrv+XXLwXG++2BB+Fab91d
-         oMz5njjcSwGM0/UnLe2sLuNEw1cl9mIroIXHzILWeNt7Pd4tIuHDv+1wP8IfbWPyJG/5
-         LMLCnB1yVlDa9DWXcgeYRAEmmnat9bD3gz+4Tfyc1zs0ml9sYrfYMgDdf4ONX/9LWXRK
-         Rs0gmbS43kEe1RBlNNVhfu5zWxNV4DB8VMn8NZnk4rM0GUPypbl17Q5tmdw758fG3zhq
-         D+4A==
-X-Gm-Message-State: AO0yUKUoqJQkSXCTzt9Q0CQHERJaUB5PazfyfrhhqYVUSGW1bIaW86MS
-	fAPUqJFLLfvqmWcDsambcA==
-X-Google-Smtp-Source: AK7set+9aSSHh9EYLXwvCVkULUEr9F1S3fp5AOhM216juwlOAQ55mt9toBGuxByRpZcKPLlBVPwBlQ==
-X-Received: by 2002:a05:6830:920:b0:68b:c60c:de58 with SMTP id v32-20020a056830092000b0068bc60cde58mr11918010ott.7.1678299157654;
-        Wed, 08 Mar 2023 10:12:37 -0800 (PST)
+        d=1e100.net; s=20210112; t=1678317020;
+        h=in-reply-to:content-transfer-encoding:content-disposition
+         :mime-version:references:message-id:subject:cc:to:from:date
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=XD0ikGmSsZrvW4Icaq2NiBnGVE41WkYau9ANqfCeE4g=;
+        b=Tkx01vxFe9CcOUoZyRtsr328h++jZZSTCOQ1nTgZxdd0cxdfpaEex8PA7IwvmIovRR
+         wjoWZhVHFAlQZMer2REi55ncJCXEfLHOO7qo1hW0bAVFrfQo/qh3ZoAwim7dJNyNRjDC
+         v8Yt4fMAgqmhBItBD933Yb7t+UT0EDUl8i/eFrFeyBYNH09oOcEG6Nko/r8BxkZ1dv2l
+         4B7REq64ZtiMBQYdRJ2sD/YKviiKHuhVmbXmuhXrgBu7qKi5Xw2lvpKTDchey1hsjilZ
+         VpvFoOLoTqmEaElrRS9XjsriZ6qgiWCGGKiEKe75CAZJpciBY6VL5c+DgwWioWQSbNgh
+         nVfg==
+X-Gm-Message-State: AO0yUKV3Spthqg0jelPquYWpWbF6k1rFNtQApqMgp+ZAFtkzblbYpZTK
+	Pd95y5OQI0pL01BCrfLi+g==
+X-Google-Smtp-Source: AK7set8A0SF0DbY+UQqrMG/aKU7uVszgRiyuv7wgsb0tBBXkzXbyyzJllVMOKOb47Lq8JItYy/gAMw==
+X-Received: by 2002:a4a:8685:0:b0:525:4b8b:8f38 with SMTP id x5-20020a4a8685000000b005254b8b8f38mr46622ooh.3.1678317019733;
+        Wed, 08 Mar 2023 15:10:19 -0800 (PST)
 Received: from robh_at_kernel.org (66-90-144-107.dyn.grandenetworks.net. [66.90.144.107])
-        by smtp.gmail.com with ESMTPSA id t20-20020a056830083400b0068bbf5f2e49sm6678351ots.37.2023.03.08.10.12.36
+        by smtp.gmail.com with ESMTPSA id d29-20020a9d72dd000000b0068bcef4f543sm3066374otk.21.2023.03.08.15.10.18
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 08 Mar 2023 10:12:37 -0800 (PST)
-Received: (nullmailer pid 3527197 invoked by uid 1000);
-	Wed, 08 Mar 2023 18:12:36 -0000
-Date: Wed, 8 Mar 2023 12:12:36 -0600
+        Wed, 08 Mar 2023 15:10:19 -0800 (PST)
+Received: (nullmailer pid 4046807 invoked by uid 1000);
+	Wed, 08 Mar 2023 23:10:18 -0000
+Date: Wed, 8 Mar 2023 17:10:18 -0600
 From: Rob Herring <robh@kernel.org>
-To: Minda Chen <minda.chen@starfivetech.com>
-Cc: Emil Renner Berthing <emil.renner.berthing@canonical.com>, Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Pawel Laszczak <pawell@cadence.com>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Peter Chen <peter.chen@kernel.org>, Roger Quadros <rogerq@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>, Conor Dooley <conor@kernel.org>, Paul Walmsley <paul.walmsley@sifive.com>, Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, linux-usb@vger.kernel.org, linux-riscv@lists.infradead.org
-Subject: Re: [PATCH v2 1/3] dt-bindings: phy: Add StarFive JH7110 USB
- dt-binding
-Message-ID: <20230308181236.GA3512870-robh@kernel.org>
-References: <20230308082800.3008-1-minda.chen@starfivetech.com>
- <20230308082800.3008-2-minda.chen@starfivetech.com>
+To: Sean Anderson <sean.anderson@seco.com>
+Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, linux-phy@lists.infradead.org, Madalin Bucur <madalin.bucur@nxp.com>, linuxppc-dev@lists.ozlabs.org, devicetree@vger.kernel.org, Ioana Ciornei <ioana.ciornei@nxp.com>, Camelia Alexandra Groza <camelia.groza@nxp.com>, linux-arm-kernel@lists.infradead.org, Bagas Sanjaya <bagasdotme@gmail.com>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Bartosz Golaszewski <brgl@bgdev.pl>, =?iso-8859-1?Q?Fern=E1ndez?= Rojas <noltari@gmail.com>, Jonas Gorski <jonas.gorski@gmail.com>, Linus Walleij <linus.walleij@linaro.org>, linux-gpio@vger.kernel.org
+Subject: Re: [PATCH v10 03/13] dt-bindings: Convert gpio-mmio to yaml
+Message-ID: <20230308231018.GA4039466-robh@kernel.org>
+References: <20230306191535.1917656-1-sean.anderson@seco.com>
+ <20230306191535.1917656-4-sean.anderson@seco.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20230308082800.3008-2-minda.chen@starfivetech.com>
+In-Reply-To: <20230306191535.1917656-4-sean.anderson@seco.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230308_101239_911928_F1E32521 
-X-CRM114-Status: GOOD (  22.58  )
+X-CRM114-CacheID: sfid-20230308_151031_930985_A19032C7 
+X-CRM114-Status: GOOD (  36.75  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,222 +74,370 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Mar 08, 2023 at 04:27:58PM +0800, Minda Chen wrote:
-> Add StarFive JH7110 SoC USB 3.0 phy dt-binding.
-> USB controller is cadence USB 3.0 IP.
-> 
-> Signed-off-by: Minda Chen <minda.chen@starfivetech.com>
+On Mon, Mar 06, 2023 at 02:15:25PM -0500, Sean Anderson wrote:
+> This is a generic binding for simple MMIO GPIO controllers. Although we
+> have a single driver for these controllers, they were previously spread
+> over several files. Consolidate them. The register descriptions are
+> adapted from the comments in the source. There is no set order for the
+> registers, so I have not specified one.
+> =
+
+> Signed-off-by: Sean Anderson <sean.anderson@seco.com>
 > ---
->  .../bindings/phy/starfive,jh7110-usb-phy.yaml | 158 ++++++++++++++++++
->  1 file changed, 158 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy.yaml b/Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy.yaml
+> =
+
+> Changes in v10:
+> - New
+> =
+
+>  .../bindings/gpio/brcm,bcm6345-gpio.yaml      |  16 +--
+>  .../devicetree/bindings/gpio/gpio-mmio.yaml   | 136 ++++++++++++++++++
+>  .../bindings/gpio/ni,169445-nand-gpio.txt     |  38 -----
+>  .../devicetree/bindings/gpio/wd,mbl-gpio.txt  |  38 -----
+>  4 files changed, 137 insertions(+), 91 deletions(-)
+>  create mode 100644 Documentation/devicetree/bindings/gpio/gpio-mmio.yaml
+>  delete mode 100644 Documentation/devicetree/bindings/gpio/ni,169445-nand=
+-gpio.txt
+>  delete mode 100644 Documentation/devicetree/bindings/gpio/wd,mbl-gpio.txt
+> =
+
+> diff --git a/Documentation/devicetree/bindings/gpio/brcm,bcm6345-gpio.yam=
+l b/Documentation/devicetree/bindings/gpio/brcm,bcm6345-gpio.yaml
+> index 4d69f79df859..e11f4af49c52 100644
+> --- a/Documentation/devicetree/bindings/gpio/brcm,bcm6345-gpio.yaml
+> +++ b/Documentation/devicetree/bindings/gpio/brcm,bcm6345-gpio.yaml
+> @@ -4,7 +4,7 @@
+>  $id: http://devicetree.org/schemas/gpio/brcm,bcm6345-gpio.yaml#
+>  $schema: http://devicetree.org/meta-schemas/core.yaml#
+>  =
+
+> -title: Broadcom BCM6345 GPIO controller
+> +title: Broadcom BCM63xx GPIO controller
+>  =
+
+>  maintainers:
+>    - =C1lvaro Fern=E1ndez Rojas <noltari@gmail.com>
+> @@ -18,8 +18,6 @@ description: |+
+>  =
+
+>    BCM6338 have 8-bit data and dirout registers, where GPIO state can be =
+read
+>    and/or written, and the direction changed from input to output.
+> -  BCM6345 have 16-bit data and dirout registers, where GPIO state can be=
+ read
+> -  and/or written, and the direction changed from input to output.
+>    BCM6318, BCM6328, BCM6358, BCM6362, BCM6368 and BCM63268 have 32-bit d=
+ata
+>    and dirout registers, where GPIO state can be read and/or written, and=
+ the
+>    direction changed from input to output.
+> @@ -29,7 +27,6 @@ properties:
+>      enum:
+>        - brcm,bcm6318-gpio
+>        - brcm,bcm6328-gpio
+> -      - brcm,bcm6345-gpio
+>        - brcm,bcm6358-gpio
+>        - brcm,bcm6362-gpio
+>        - brcm,bcm6368-gpio
+> @@ -63,17 +60,6 @@ required:
+>  additionalProperties: false
+>  =
+
+>  examples:
+> -  - |
+> -    gpio@fffe0406 {
+> -      compatible =3D "brcm,bcm6345-gpio";
+> -      reg-names =3D "dirout", "dat";
+> -      reg =3D <0xfffe0406 2>, <0xfffe040a 2>;
+> -      native-endian;
+> -
+> -      gpio-controller;
+> -      #gpio-cells =3D <2>;
+> -    };
+> -
+>    - |
+>      gpio@0 {
+>        compatible =3D "brcm,bcm63268-gpio";
+> diff --git a/Documentation/devicetree/bindings/gpio/gpio-mmio.yaml b/Docu=
+mentation/devicetree/bindings/gpio/gpio-mmio.yaml
 > new file mode 100644
-> index 000000000000..daa88d065deb
+> index 000000000000..fd5c7055d542
 > --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy.yaml
-
-Filename should match the compatible. The filename seems more correct 
-than the compatible...
-
-> @@ -0,0 +1,158 @@
+> +++ b/Documentation/devicetree/bindings/gpio/gpio-mmio.yaml
+> @@ -0,0 +1,136 @@
 > +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
 > +%YAML 1.2
 > +---
-> +$id: http://devicetree.org/schemas/phy/starfive,jh7110-usb-phy.yaml#
+> +$id: http://devicetree.org/schemas/gpio/gpio-mmio.yaml#
 > +$schema: http://devicetree.org/meta-schemas/core.yaml#
 > +
-> +title: StarFive USB 2.0 and 3.0 PHY
+> +title: Generic MMIO GPIO
 > +
 > +maintainers:
-> +  - Minda Chen<minda.chen@starfivetech.com>
+> +  - Linus Walleij <linus.walleij@linaro.org>
+> +  - Bartosz Golaszewski <brgl@bgdev.pl>
+> +
+> +description: |
+
+Don't need '|' unless you want line endings preserved. Elsewhere too.
+
+> +  Some simple GPIO controllers may consist of a single data register or =
+a pair
+> +  of set/clear-bit registers. Such controllers are common for glue logic=
+ in
+> +  FPGAs or ASICs. Commonly, these controllers are accessed over memory-m=
+apped
+> +  NAND-style parallel busses.
 > +
 > +properties:
-> +  compatible:
-> +    items:
-> +      - const: starfive,jh7110-usb
+> +  big-endian:
+> +    true
 
-What's the USB controller called?
+big-endian: true
+
+> +
+> +  compatible:
+> +    enum:
+> +      - brcm,bcm6345-gpio # Broadcom BCM6345 GPIO controller
+> +      - wd,mbl-gpio # Western Digital MyBook Live memory-mapped GPIO con=
+troller
+> +      - ni,169445-nand-gpio # National Instruments 169445 GPIO NAND cont=
+roller
+> +
+> +  '#gpio-cells':
+> +    const: 2
+> +
+> +  gpio-controller:
+> +    true
+
+ditto.
 
 > +
 > +  reg:
-> +    maxItems: 2
+> +    minItems: 1
+> +    description: |
+> +      A list of registers in the controller. The width of each register =
+is
+> +      determined by its size. All registers must have the same width. Th=
+e number
+> +      of GPIOs is set by the width, with bit 0 corresponding to GPIO 0.
+> +    items:
+> +      - description: |
+> +          Register to READ the value of the GPIO lines. If GPIO line is =
+high,
+> +          the bit will be set. If the GPIO line is low, the bit will be =
+cleared.
+> +          This register may also be used to drive GPIOs if the SET regis=
+ter is
+> +          omitted.
+> +      - description: |
+> +          Register to SET the value of the GPIO lines. Setting a bit in =
+this
+> +          register will drive the GPIO line high.
+> +      - description: |
+> +          Register to CLEAR the value of the GPIO lines. Setting a bit i=
+n this
+> +          register will drive the GPIO line low. If this register is omi=
+tted,
+> +          the SET register will be used to clear the GPIO lines as well,=
+ by
+> +          actively writing the line with 0.
+> +      - description: |
+> +          Register to set the line as OUTPUT. Setting a bit in this regi=
+ster
+> +          will turn that line into an output line. Conversely, clearing =
+a bit
+> +          will turn that line into an input.
+> +      - description: |
+> +          Register to set this line as INPUT. Setting a bit in this regi=
+ster
+> +          will turn that line into an input line. Conversely, clearing a=
+ bit
+> +          will turn that line into an output.
 > +
 > +  reg-names:
+> +    minItems: 1
+> +    maxItems: 5
 > +    items:
-> +      - const: usb3
-> +      - const: usb2
+> +      enum:
+> +        - dat
+> +        - set
+> +        - clr
+> +        - dirout
+> +        - dirin
 > +
-> +  clocks:
-> +    items:
-> +      - description: usb 125m clock
-> +      - description: app 125m clock
-> +      - description: lpm clock
-> +      - description: stb clock
-> +      - description: apb clock
-> +      - description: axi clock
-> +      - description: utmi apb clock
+> +  native-endian:
+> +    true
 > +
-> +  clock-names:
-> +    items:
-> +      - const: usb_125m
-> +      - const: usb0_app_125
-> +      - const: usb0_lpm
-> +      - const: usb0_stb
-> +      - const: usb0_apb
-> +      - const: usb0_axi
-> +      - const: usb0_utmi_apb
-
-usb_ and usb0_ is redundant, drop.
-
-> +
-> +  resets:
-> +    items:
-> +      - description: USB0_PWRUP reset
-> +      - description: USB0_APB reset
-> +      - description: USB0_AXI reset
-> +      - description: USB0_UTMI_APB reset
-> +
-> +  starfive,sys-syscon:
-> +    $ref: /schemas/types.yaml#/definitions/phandle-array
-> +    items:
-> +      items:
-
-Are there multiple entries of phandle+offset because this says there 
-are. You want '- items:' here to limit it to 1 phandle+offset.
-
-> +        - description: phandle to System Register Controller sys_syscon node.
-> +        - description: offset of SYS_SYSCONSAIF__SYSCFG register for USB.
-> +    description:
-> +      The phandle to System Register Controller syscon node and the offset
-> +      of SYS_SYSCONSAIF__SYSCFG register for USB.
-> +
-> +  starfive,stg-syscon:
-> +    $ref: /schemas/types.yaml#/definitions/phandle-array
-> +    items:
-> +      items:
-
-Same here.
-
-> +        - description: phandle to System Register Controller stg_syscon node.
-> +        - description: register0 offset of STG_SYSCONSAIF__SYSCFG register for USB.
-> +        - description: register1 offset of STG_SYSCONSAIF__SYSCFG register for USB.
-> +        - description: register2 offset of STG_SYSCONSAIF__SYSCFG register for USB.
-> +        - description: register3 offset of STG_SYSCONSAIF__SYSCFG register for USB.
-> +    description:
-> +      The phandle to System Register Controller syscon node and the offset
-> +      of STG_SYSCONSAIF__SYSCFG register for USB. Total 4 regsisters offset
-> +      for USB.
-> +
-> +  dr_mode:
-
-Usually this belongs in the controller node.
-
-> +    description: PHY mode.
-> +    enum:
-> +      - host
-> +      - peripheral
-> +      - otg
-> +
-> +  "#address-cells":
-> +    maximum: 2
-> +
-> +  "#size-cells":
-> +    maximum: 2
-> +
-> +  ranges: true
-> +
-> +  starfive,usb2-only:
-> +    type: boolean
-> +    description: Set USB using usb 2.0 phy. Supprt USB 2.0 only
-
-The 'maximum-speed' property in the controller should be enough. Why is 
-this needed.
-
-Being a PHY, you are missing #phy-cells.
-
+> +  no-output:
+> +    $ref: /schemas/types.yaml#/definitions/flag
+> +    description: |
+> +      If this property is present, the controller cannot drive the GPIO =
+lines.
 > +
 > +required:
 > +  - compatible
 > +  - reg
 > +  - reg-names
-> +  - clocks
-> +  - clock-names
-> +  - resets
-> +  - starfive,sys-syscon
-> +  - starfive,stg-syscon
-> +  - dr_mode
-> +  - "#address-cells"
-> +  - "#size-cells"
-> +  - ranges
-> +
-> +patternProperties:
-> +  "^usb@[0-9a-f]+$":
-> +    type: object
-> +    description: |
-> +      usbphy node should have '1' usb controller subnode.
-> +      It could be Cadence USB3 DRD controller.
-> +      Cadence USB3 should follow the bindings specified in
-> +      Documentation/devicetree/bindings/usb/cdns,usb3.yaml
-
-Why is the controller a child of the phy?
-
+> +  - '#gpio-cells'
+> +  - gpio-controller
 > +
 > +additionalProperties: false
 > +
 > +examples:
 > +  - |
-> +    usbphy@10200000 {
-> +      compatible = "starfive,jh7110-usb";
-> +      reg = <0x10210000 0x1000>,
-> +            <0x10200000 0x1000>;
-> +      reg-names = "usb3", "usb2";
-> +      clocks = <&syscrg 95>,
-> +               <&stgcrg 6>,
-> +               <&stgcrg 4>,
-> +               <&stgcrg 5>,
-> +               <&stgcrg 1>,
-> +               <&stgcrg 3>,
-> +               <&stgcrg 2>;
-> +      clock-names = "usb_125m", "usb0_app_125", "usb0_lpm",
-> +                    "usb0_stb", "usb0_apb", "usb0_axi", "usb0_utmi_apb";
-> +      resets = <&stgcrg 10>,
-> +               <&stgcrg 8>,
-> +               <&stgcrg 7>,
-> +               <&stgcrg 9>;
-> +      starfive,stg-syscon = <&stg_syscon 0x4 0xc4 0x148 0x1f4>;
-> +      starfive,sys-syscon = <&sys_syscon 0x18>;
-> +      dr_mode = "host";
-> +      #address-cells = <1>;
-> +      #size-cells = <1>;
-> +      ranges;
-> +
-> +      usb@10100000 {
-> +        compatible = "cdns,usb3";
+> +    nand-gpio-out@1f300010 {
 
-This needs a platform specific compatible.
+Use generic node name:
 
-> +        reg = <0x10100000 0x10000>,
-> +              <0x10110000 0x10000>,
-> +              <0x10120000 0x10000>;
-> +        reg-names = "otg", "xhci", "dev";
-> +        interrupts = <100>, <108>, <110>;
-> +        interrupt-names = "host", "peripheral", "otg";
-> +        phy-names = "cdns3,usb3-phy", "cnds3,usb2-phy";
-> +        maximum-speed = "super-speed";
-> +      };
+gpio@...
+
+> +      compatible =3D "ni,169445-nand-gpio";
+> +      reg =3D <0x1f300010 0x4>;
+> +      reg-names =3D "dat";
+> +      gpio-controller;
+> +      #gpio-cells =3D <2>;
 > +    };
-> -- 
-> 2.17.1
-> 
+> +
+> +    nand-gpio-in@1f300014 {
+> +      compatible =3D "ni,169445-nand-gpio";
+> +      reg =3D <0x1f300014 0x4>;
+> +      reg-names =3D "dat";
+> +      gpio-controller;
+> +      #gpio-cells =3D <2>;
+> +      no-output;
+> +    };
+> +
+> +    gpio0@e0000000 {
+> +      compatible =3D "wd,mbl-gpio";
+> +      reg-names =3D "dat";
+> +      reg =3D <0xe0000000 0x1>;
+> +      #gpio-cells =3D <2>;
+> +      gpio-controller;
+> +    };
+> +
+> +    gpio1@e0100000 {
+> +      compatible =3D "wd,mbl-gpio";
+> +      reg-names =3D "dat";
+> +      reg =3D <0xe0100000 0x1>;
+> +      #gpio-cells =3D <2>;
+> +      gpio-controller;
+> +      no-output;
+> +    };
+> +
+> +    gpio@fffe0406 {
+> +      compatible =3D "brcm,bcm6345-gpio";
+> +      reg-names =3D "dirout", "dat";
+> +      reg =3D <0xfffe0406 2>, <0xfffe040a 2>;
+> +      native-endian;
+> +
+> +      gpio-controller;
+> +      #gpio-cells =3D <2>;
+> +    };
+> diff --git a/Documentation/devicetree/bindings/gpio/ni,169445-nand-gpio.t=
+xt b/Documentation/devicetree/bindings/gpio/ni,169445-nand-gpio.txt
+> deleted file mode 100644
+> index ca2f8c745a27..000000000000
+> --- a/Documentation/devicetree/bindings/gpio/ni,169445-nand-gpio.txt
+> +++ /dev/null
+> @@ -1,38 +0,0 @@
+> -Bindings for the National Instruments 169445 GPIO NAND controller
+> -
+> -The 169445 GPIO NAND controller has two memory mapped GPIO registers, one
+> -for input (the ready signal) and one for output (control signals).  It is
+> -intended to be used with the GPIO NAND driver.
+> -
+> -Required properties:
+> -	- compatible: should be "ni,169445-nand-gpio"
+> -	- reg-names: must contain
+> -		"dat" - data register
+> -	- reg: address + size pairs describing the GPIO register sets;
+> -		order must correspond with the order of entries in reg-names
+> -	- #gpio-cells: must be set to 2. The first cell is the pin number and
+> -			the second cell is used to specify the gpio polarity:
+> -			0 =3D active high
+> -			1 =3D active low
+> -	- gpio-controller: Marks the device node as a gpio controller.
+> -
+> -Optional properties:
+> -	- no-output: disables driving output on the pins
+> -
+> -Examples:
+> -	gpio1: nand-gpio-out@1f300010 {
+> -		compatible =3D "ni,169445-nand-gpio";
+> -		reg =3D <0x1f300010 0x4>;
+> -		reg-names =3D "dat";
+> -		gpio-controller;
+> -		#gpio-cells =3D <2>;
+> -	};
+> -
+> -	gpio2: nand-gpio-in@1f300014 {
+> -		compatible =3D "ni,169445-nand-gpio";
+> -		reg =3D <0x1f300014 0x4>;
+> -		reg-names =3D "dat";
+> -		gpio-controller;
+> -		#gpio-cells =3D <2>;
+> -		no-output;
+> -	};
+> diff --git a/Documentation/devicetree/bindings/gpio/wd,mbl-gpio.txt b/Doc=
+umentation/devicetree/bindings/gpio/wd,mbl-gpio.txt
+> deleted file mode 100644
+> index 038c3a6a1f4d..000000000000
+> --- a/Documentation/devicetree/bindings/gpio/wd,mbl-gpio.txt
+> +++ /dev/null
+> @@ -1,38 +0,0 @@
+> -Bindings for the Western Digital's MyBook Live memory-mapped GPIO contro=
+llers.
+> -
+> -The Western Digital MyBook Live has two memory-mapped GPIO controllers.
+> -Both GPIO controller only have a single 8-bit data register, where GPIO
+> -state can be read and/or written.
+> -
+> -Required properties:
+> -	- compatible: should be "wd,mbl-gpio"
+> -	- reg-names: must contain
+> -		"dat" - data register
+> -	- reg: address + size pairs describing the GPIO register sets;
+> -		order must correspond with the order of entries in reg-names
+> -	- #gpio-cells: must be set to 2. The first cell is the pin number and
+> -			the second cell is used to specify the gpio polarity:
+> -			0 =3D active high
+> -			1 =3D active low
+> -	- gpio-controller: Marks the device node as a gpio controller.
+> -
+> -Optional properties:
+> -	- no-output: GPIOs are read-only.
+> -
+> -Examples:
+> -	gpio0: gpio0@e0000000 {
+> -		compatible =3D "wd,mbl-gpio";
+> -		reg-names =3D "dat";
+> -		reg =3D <0xe0000000 0x1>;
+> -		#gpio-cells =3D <2>;
+> -		gpio-controller;
+> -	};
+> -
+> -	gpio1: gpio1@e0100000 {
+> -		compatible =3D "wd,mbl-gpio";
+> -		reg-names =3D "dat";
+> -		reg =3D <0xe0100000 0x1>;
+> -		#gpio-cells =3D <2>;
+> -		gpio-controller;
+> -		no-output;
+> -	};
+> -- =
 
--- 
+> 2.35.1.1320.gc452695387.dirty
+> =
+
+
+-- =
+
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
