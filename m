@@ -4,64 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0BD2AC6FD1E
-	for <linux-phy@archiver.kernel.org>; Wed,  8 Mar 2023 08:28:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 21E93C64EC4
+	for <linux-phy@archiver.kernel.org>; Wed,  8 Mar 2023 08:48:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=niEOnE916W7MfIGuiF+xokS0m5bIcK06e6LZmuUS8a0=; b=xXPrtsHX5w4b2M
-	UmZk93TypAP4lsf8ioqJR38hTflzOeQJccfgSGXHJEFbLchAYsEyLapOJSmIq0KvjvqiLDQ6rkrTz
-	GR8lvTWnZ0aNd+kxqhGf6j+2+qWxNitUaYanLJn9BIM0jiwdKdcgMJWvAgJcvRuNHt541PAjqG3GW
-	Tq0v7KArD9Jt0e7wRU0t7Rek790bZDN1KoTutFhA/AOUhN5tSOSNHLLTzQ/0Qf/0DeGWCkMY/BNSe
-	p86ANunLc2XPOM5GGrSxGHu6FXWXvgNo/JDMbne1cZBSgXVM86km/wZJncGbFAwXcto3tU2hp6Brp
-	PZLuqT2bRl1Q6E5a13Rw==;
+	List-Owner; bh=Geyifi7/w/mSfBnd3XflsOcM/Dbk0kVB+maZOkvwzRo=; b=hp9DTE3cRDdExn
+	u4XzstXaCDzxMyVAr1kHJ4abucaG17Ycv2uInt5ZaPH1xtO++mi5fWjiAWBZ57eD7wjawZy1iwlQz
+	nF/pq9t5e7DF/cr0jSoszAll/QWHIJe0qJEbTBKNOhq9LL/MOFz2tinMQenBslAzkp7JBdr45fp+4
+	+LQBiMbg0qplEp5cKtn/FbIfltSU1bWXiaQJpw8PVjRZVeckrnEbFIigznxQdQ1rY8BijriuA0lQb
+	IyqkBAyS+3hYNPZxCRI7taWVMhUH6B7oZWz5L5buqHHLapJ5YQmxXkunDHqRb5lXwf4Nxsu1vYJsc
+	pSn07cmITEFj07vFqEIw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pZpAL-003yZ1-Es; Wed, 08 Mar 2023 08:28:53 +0000
-Received: from fd01.gateway.ufhost.com ([61.152.239.71])
-	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pZpAI-003yLX-Th; Wed, 08 Mar 2023 08:28:52 +0000
-Received: from EXMBX165.cuchost.com (unknown [175.102.18.54])
-	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
-	(Client CN "EXMBX165", Issuer "EXMBX165" (not verified))
-	by fd01.gateway.ufhost.com (Postfix) with ESMTP id 01B1024E33E;
-	Wed,  8 Mar 2023 16:28:04 +0800 (CST)
-Received: from EXMBX071.cuchost.com (172.16.6.81) by EXMBX165.cuchost.com
- (172.16.6.75) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Wed, 8 Mar
- 2023 16:28:04 +0800
-Received: from ubuntu.localdomain (183.27.97.46) by EXMBX071.cuchost.com
- (172.16.6.81) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Wed, 8 Mar
- 2023 16:28:02 +0800
-From: Minda Chen <minda.chen@starfivetech.com>
-To: Emil Renner Berthing <emil.renner.berthing@canonical.com>, Vinod Koul
-	<vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring
-	<robh+dt@kernel.org>, Krzysztof Kozlowski
-	<krzysztof.kozlowski+dt@linaro.org>, Pawel Laszczak <pawell@cadence.com>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Peter Chen
-	<peter.chen@kernel.org>, Roger Quadros <rogerq@kernel.org>, Philipp Zabel
-	<p.zabel@pengutronix.de>, Conor Dooley <conor@kernel.org>, Paul Walmsley
-	<paul.walmsley@sifive.com>, Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou
-	<aou@eecs.berkeley.edu>
-CC: <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-	<linux-phy@lists.infradead.org>, <linux-usb@vger.kernel.org>,
-	<linux-riscv@lists.infradead.org>, Minda Chen <minda.chen@starfivetech.com>
-Subject: [PATCH v2 1/3] dt-bindings: phy: Add StarFive JH7110 USB dt-binding
-Date: Wed, 8 Mar 2023 16:27:58 +0800
-Message-ID: <20230308082800.3008-2-minda.chen@starfivetech.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20230308082800.3008-1-minda.chen@starfivetech.com>
-References: <20230308082800.3008-1-minda.chen@starfivetech.com>
+	id 1pZpTO-00436A-Ik; Wed, 08 Mar 2023 08:48:34 +0000
+Received: from mx07-00178001.pphosted.com ([185.132.182.106])
+	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
+	id 1pZpTK-00432h-ND; Wed, 08 Mar 2023 08:48:32 +0000
+Received: from pps.filterd (m0288072.ppops.net [127.0.0.1])
+	by mx07-00178001.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 32879V4P019611;
+	Wed, 8 Mar 2023 09:48:10 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com; h=message-id : date :
+ mime-version : subject : to : cc : references : from : in-reply-to :
+ content-type : content-transfer-encoding; s=selector1;
+ bh=iuAQdYFKTGYmPSS5SLf5c/qCK6pWGs2MRbmLc5fNhG4=;
+ b=xzsQqRmdDMHYsL1kZ0hQQoCD8+B+TIPM3ukBpktDxODZXDj8b6++c+mLA5kI46FB7UAQ
+ RsomBZT9ZGevmulS/wpqOr6w5hBFobsobYml/+9tEOS8d21fyFLSI+auk7C2RNqZ0iZB
+ Kp0JpHKLLT2HeuUyXyTMoJ94VFvA4zaBw9aeYGdvcPnX+t/nz5DntwoTeTUxYttag6vP
+ otMSn2x3+ClabYdHoCitkugbcjW/3dfYPGk+CCYpXOST4xLvlHvAZS875w/Xke0bUjFc
+ ypkBjM2QtWxvOCpKcs/X15TsNXZp5/pqVjeVjsfOvP1tSb5ggmoMTLvR62+6YFu4zgJV OQ== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+	by mx07-00178001.pphosted.com (PPS) with ESMTPS id 3p6fdrjkhn-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 08 Mar 2023 09:48:10 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+	by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 1425910002A;
+	Wed,  8 Mar 2023 09:48:09 +0100 (CET)
+Received: from Webmail-eu.st.com (shfdag1node1.st.com [10.75.129.69])
+	by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 3CFCD210F7E;
+	Wed,  8 Mar 2023 09:48:09 +0100 (CET)
+Received: from [10.201.21.26] (10.201.21.26) by SHFDAG1NODE1.st.com
+ (10.75.129.69) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.17; Wed, 8 Mar
+ 2023 09:48:08 +0100
+Message-ID: <d422fd7b-05e8-c29b-90f6-f2a4742411f1@foss.st.com>
+Date: Wed, 8 Mar 2023 09:48:08 +0100
 MIME-Version: 1.0
-X-Originating-IP: [183.27.97.46]
-X-ClientProxiedBy: EXCAS064.cuchost.com (172.16.6.24) To EXMBX071.cuchost.com
- (172.16.6.81)
-X-YovoleRuleAgent: yovoleflag
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.7.1
+Subject: Re: [PATCH] phy: st: miphy28lp: use _poll_timeout functions for waits
+To: Alain Volmat <avolmat@me.com>, Vinod Koul <vkoul@kernel.org>,
+        Kishon Vijay
+ Abraham I <kishon@kernel.org>
+CC: <linux-arm-kernel@lists.infradead.org>, <linux-phy@lists.infradead.org>,
+        <linux-kernel@vger.kernel.org>
+References: <20230210224309.98452-1-avolmat@me.com>
+Content-Language: en-US
+From: Patrice CHOTARD <patrice.chotard@foss.st.com>
+In-Reply-To: <20230210224309.98452-1-avolmat@me.com>
+X-Originating-IP: [10.201.21.26]
+X-ClientProxiedBy: EQNCAS1NODE4.st.com (10.75.129.82) To SHFDAG1NODE1.st.com
+ (10.75.129.69)
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.254,Aquarius:18.0.942,Hydra:6.0.573,FMLib:17.11.170.22
+ definitions=2023-03-08_04,2023-03-08_01,2023-02-09_01
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230308_002851_293073_1D77B60E 
-X-CRM114-Status: GOOD (  14.38  )
+X-CRM114-CacheID: sfid-20230308_004831_371592_57D79228 
+X-CRM114-Status: GOOD (  20.63  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,182 +90,111 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add StarFive JH7110 SoC USB 3.0 phy dt-binding.
-USB controller is cadence USB 3.0 IP.
+Hi Alain
 
-Signed-off-by: Minda Chen <minda.chen@starfivetech.com>
----
- .../bindings/phy/starfive,jh7110-usb-phy.yaml | 158 ++++++++++++++++++
- 1 file changed, 158 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy.yaml
+On 2/10/23 23:43, Alain Volmat wrote:
+> This commit introduces _poll_timeout functions usage instead of
+> wait loops waiting for a status bit.
+> 
+> Signed-off-by: Alain Volmat <avolmat@me.com>
+> ---
+>  drivers/phy/st/phy-miphy28lp.c | 42 ++++++++--------------------------
+>  1 file changed, 10 insertions(+), 32 deletions(-)
+> 
+> diff --git a/drivers/phy/st/phy-miphy28lp.c b/drivers/phy/st/phy-miphy28lp.c
+> index 068160a34f5c..e30305b77f0d 100644
+> --- a/drivers/phy/st/phy-miphy28lp.c
+> +++ b/drivers/phy/st/phy-miphy28lp.c
+> @@ -9,6 +9,7 @@
+>  
+>  #include <linux/platform_device.h>
+>  #include <linux/io.h>
+> +#include <linux/iopoll.h>
+>  #include <linux/kernel.h>
+>  #include <linux/module.h>
+>  #include <linux/of.h>
+> @@ -484,19 +485,11 @@ static inline void miphy28lp_pcie_config_gen(struct miphy28lp_phy *miphy_phy)
+>  
+>  static inline int miphy28lp_wait_compensation(struct miphy28lp_phy *miphy_phy)
+>  {
+> -	unsigned long finish = jiffies + 5 * HZ;
+>  	u8 val;
+>  
+>  	/* Waiting for Compensation to complete */
+> -	do {
+> -		val = readb_relaxed(miphy_phy->base + MIPHY_COMP_FSM_6);
+> -
+> -		if (time_after_eq(jiffies, finish))
+> -			return -EBUSY;
+> -		cpu_relax();
+> -	} while (!(val & COMP_DONE));
+> -
+> -	return 0;
+> +	return readb_relaxed_poll_timeout(miphy_phy->base + MIPHY_COMP_FSM_6,
+> +					  val, val & COMP_DONE, 1, 5 * USEC_PER_SEC);
+>  }
+>  
+>  
+> @@ -805,7 +798,6 @@ static inline void miphy28lp_configure_usb3(struct miphy28lp_phy *miphy_phy)
+>  
+>  static inline int miphy_is_ready(struct miphy28lp_phy *miphy_phy)
+>  {
+> -	unsigned long finish = jiffies + 5 * HZ;
+>  	u8 mask = HFC_PLL | HFC_RDY;
+>  	u8 val;
+>  
+> @@ -816,21 +808,14 @@ static inline int miphy_is_ready(struct miphy28lp_phy *miphy_phy)
+>  	if (miphy_phy->type == PHY_TYPE_SATA)
+>  		mask |= PHY_RDY;
+>  
+> -	do {
+> -		val = readb_relaxed(miphy_phy->base + MIPHY_STATUS_1);
+> -		if ((val & mask) != mask)
+> -			cpu_relax();
+> -		else
+> -			return 0;
+> -	} while (!time_after_eq(jiffies, finish));
+> -
+> -	return -EBUSY;
+> +	return readb_relaxed_poll_timeout(miphy_phy->base + MIPHY_STATUS_1,
+> +					  val, (val & mask) == mask, 1,
+> +					  5 * USEC_PER_SEC);
+>  }
+>  
+>  static int miphy_osc_is_ready(struct miphy28lp_phy *miphy_phy)
+>  {
+>  	struct miphy28lp_dev *miphy_dev = miphy_phy->phydev;
+> -	unsigned long finish = jiffies + 5 * HZ;
+>  	u32 val;
+>  
+>  	if (!miphy_phy->osc_rdy)
+> @@ -839,17 +824,10 @@ static int miphy_osc_is_ready(struct miphy28lp_phy *miphy_phy)
+>  	if (!miphy_phy->syscfg_reg[SYSCFG_STATUS])
+>  		return -EINVAL;
+>  
+> -	do {
+> -		regmap_read(miphy_dev->regmap,
+> -				miphy_phy->syscfg_reg[SYSCFG_STATUS], &val);
+> -
+> -		if ((val & MIPHY_OSC_RDY) != MIPHY_OSC_RDY)
+> -			cpu_relax();
+> -		else
+> -			return 0;
+> -	} while (!time_after_eq(jiffies, finish));
+> -
+> -	return -EBUSY;
+> +	return regmap_read_poll_timeout(miphy_dev->regmap,
+> +					miphy_phy->syscfg_reg[SYSCFG_STATUS],
+> +					val, val & MIPHY_OSC_RDY, 1,
+> +					5 * USEC_PER_SEC);
+>  }
+>  
+>  static int miphy28lp_get_resource_byname(struct device_node *child,
 
-diff --git a/Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy.yaml b/Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy.yaml
-new file mode 100644
-index 000000000000..daa88d065deb
---- /dev/null
-+++ b/Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy.yaml
-@@ -0,0 +1,158 @@
-+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/phy/starfive,jh7110-usb-phy.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: StarFive USB 2.0 and 3.0 PHY
-+
-+maintainers:
-+  - Minda Chen<minda.chen@starfivetech.com>
-+
-+properties:
-+  compatible:
-+    items:
-+      - const: starfive,jh7110-usb
-+
-+  reg:
-+    maxItems: 2
-+
-+  reg-names:
-+    items:
-+      - const: usb3
-+      - const: usb2
-+
-+  clocks:
-+    items:
-+      - description: usb 125m clock
-+      - description: app 125m clock
-+      - description: lpm clock
-+      - description: stb clock
-+      - description: apb clock
-+      - description: axi clock
-+      - description: utmi apb clock
-+
-+  clock-names:
-+    items:
-+      - const: usb_125m
-+      - const: usb0_app_125
-+      - const: usb0_lpm
-+      - const: usb0_stb
-+      - const: usb0_apb
-+      - const: usb0_axi
-+      - const: usb0_utmi_apb
-+
-+  resets:
-+    items:
-+      - description: USB0_PWRUP reset
-+      - description: USB0_APB reset
-+      - description: USB0_AXI reset
-+      - description: USB0_UTMI_APB reset
-+
-+  starfive,sys-syscon:
-+    $ref: /schemas/types.yaml#/definitions/phandle-array
-+    items:
-+      items:
-+        - description: phandle to System Register Controller sys_syscon node.
-+        - description: offset of SYS_SYSCONSAIF__SYSCFG register for USB.
-+    description:
-+      The phandle to System Register Controller syscon node and the offset
-+      of SYS_SYSCONSAIF__SYSCFG register for USB.
-+
-+  starfive,stg-syscon:
-+    $ref: /schemas/types.yaml#/definitions/phandle-array
-+    items:
-+      items:
-+        - description: phandle to System Register Controller stg_syscon node.
-+        - description: register0 offset of STG_SYSCONSAIF__SYSCFG register for USB.
-+        - description: register1 offset of STG_SYSCONSAIF__SYSCFG register for USB.
-+        - description: register2 offset of STG_SYSCONSAIF__SYSCFG register for USB.
-+        - description: register3 offset of STG_SYSCONSAIF__SYSCFG register for USB.
-+    description:
-+      The phandle to System Register Controller syscon node and the offset
-+      of STG_SYSCONSAIF__SYSCFG register for USB. Total 4 regsisters offset
-+      for USB.
-+
-+  dr_mode:
-+    description: PHY mode.
-+    enum:
-+      - host
-+      - peripheral
-+      - otg
-+
-+  "#address-cells":
-+    maximum: 2
-+
-+  "#size-cells":
-+    maximum: 2
-+
-+  ranges: true
-+
-+  starfive,usb2-only:
-+    type: boolean
-+    description: Set USB using usb 2.0 phy. Supprt USB 2.0 only
-+
-+required:
-+  - compatible
-+  - reg
-+  - reg-names
-+  - clocks
-+  - clock-names
-+  - resets
-+  - starfive,sys-syscon
-+  - starfive,stg-syscon
-+  - dr_mode
-+  - "#address-cells"
-+  - "#size-cells"
-+  - ranges
-+
-+patternProperties:
-+  "^usb@[0-9a-f]+$":
-+    type: object
-+    description: |
-+      usbphy node should have '1' usb controller subnode.
-+      It could be Cadence USB3 DRD controller.
-+      Cadence USB3 should follow the bindings specified in
-+      Documentation/devicetree/bindings/usb/cdns,usb3.yaml
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    usbphy@10200000 {
-+      compatible = "starfive,jh7110-usb";
-+      reg = <0x10210000 0x1000>,
-+            <0x10200000 0x1000>;
-+      reg-names = "usb3", "usb2";
-+      clocks = <&syscrg 95>,
-+               <&stgcrg 6>,
-+               <&stgcrg 4>,
-+               <&stgcrg 5>,
-+               <&stgcrg 1>,
-+               <&stgcrg 3>,
-+               <&stgcrg 2>;
-+      clock-names = "usb_125m", "usb0_app_125", "usb0_lpm",
-+                    "usb0_stb", "usb0_apb", "usb0_axi", "usb0_utmi_apb";
-+      resets = <&stgcrg 10>,
-+               <&stgcrg 8>,
-+               <&stgcrg 7>,
-+               <&stgcrg 9>;
-+      starfive,stg-syscon = <&stg_syscon 0x4 0xc4 0x148 0x1f4>;
-+      starfive,sys-syscon = <&sys_syscon 0x18>;
-+      dr_mode = "host";
-+      #address-cells = <1>;
-+      #size-cells = <1>;
-+      ranges;
-+
-+      usb@10100000 {
-+        compatible = "cdns,usb3";
-+        reg = <0x10100000 0x10000>,
-+              <0x10110000 0x10000>,
-+              <0x10120000 0x10000>;
-+        reg-names = "otg", "xhci", "dev";
-+        interrupts = <100>, <108>, <110>;
-+        interrupt-names = "host", "peripheral", "otg";
-+        phy-names = "cdns3,usb3-phy", "cnds3,usb2-phy";
-+        maximum-speed = "super-speed";
-+      };
-+    };
--- 
-2.17.1
+Reviewed-by: Patrice Chotard <patrice.chotard@foss.st.com>
 
+Thanks
+Patrice
 
 -- 
 linux-phy mailing list
