@@ -4,87 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6AAC8C64EC4
-	for <linux-phy@archiver.kernel.org>; Wed,  8 Mar 2023 13:55:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 85121C64EC4
+	for <linux-phy@archiver.kernel.org>; Wed,  8 Mar 2023 14:06:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Date:Subject:Message-Id:References:
+	In-Reply-To:Cc:To:From:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UCRlniodb3kT8qM3jt6tHGFj+E/oqE2nLeBLjShNeoU=; b=xBa2cLZX2CAOY1
-	CXtVsux1oLbtMKylKEPSCj1RTqt3G97RxMeuv1onvOsxwWIPIqdtPcgs0iMATrwVsjddkvKCespfd
-	TGzHkXunaQdNVXc8mwKm1cPK554PxjkIN5aqSTSOpW9qH1XKNvQYJXs5MDdzAg5vlvZQMfGr1n1AE
-	m750jKOe06JChOsRrPup5KgZBIGhdNVEqxeDtNBV2y2h3nrZJgfpk25oDzFpgixDSnXRYjuW038lN
-	+ZqE/dHHiSqzQ9qnMEUfFFRTcuYN5H6sRbfecocq2ls12Z2gFQFWcfEaObw6b7djXdVciABm9wz4B
-	YFBISB3rBFtlTMA/Xhhg==;
+	List-Owner; bh=E5AJl/M71P3eKj/xmNli9i6s9S7SJwc/lJxjQDhnKdM=; b=KdewY83Q7aLS0i
+	tWIk28A48u9wAfV1+31JnE4Sbtlxfz/LQoQUg/IZJWcSlDbgjsXmODS1tDe/Xi5Y15Icp6bT/MrAA
+	K+Sl0H1ZyHjoILxP9PuBWpD49AoiDk/zSuFAotjzr73wTHB2nJgsXNZzdlUlAiXVStF46kjIOF7Vr
+	mdNWUWrXmsKtPs5CljMtRiqnMGOEk4MwJUQD0gyBqLyPPFcWOPLYD4j/kkyDC87M1GK9+faPBT5EA
+	KbbHQC+G33GwrO3di+zFlYOuCkf+9jWh6qljes7XRu5jKQTns5TgDpO30c2wNrlCFVYOtHviUcgPD
+	N7O0mR/XxhbsIYDn/x3Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pZuG5-005JsC-SI; Wed, 08 Mar 2023 13:55:09 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1pZuR8-005NIE-VE; Wed, 08 Mar 2023 14:06:34 +0000
+Received: from mail-ot1-f52.google.com ([209.85.210.52])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pZuG2-005Jny-Lh
-	for linux-phy@lists.infradead.org; Wed, 08 Mar 2023 13:55:08 +0000
-Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 328Cr6Ye032562;
-	Wed, 8 Mar 2023 13:54:55 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
- subject : date : message-id : in-reply-to : references; s=qcppdkim1;
- bh=Vs7mxsCEkf/+03q8VRmUQ8HNRYhsUv6j5YDPMlR8fmc=;
- b=RX1Luk5PcoZm4BvSH1n58kJX7NqzzA9VwDsjIwPuArBxn0oaFG70O/rU15715i6HURfT
- WJedntagOLAkUMXm2olRrEZO5tcQstqSNR3sJkJwKbFlUWJUppFqbRAcqWTL1T7jyka4
- hfkrOzojL/xJn5q82DXsrAstztVDHBykHdHWHS1Ov1zR9OdkqrqvkNzibvK3wRVAgP0N
- 02CZRMjR03+vp9UDd8tIgs1yA9GfMd4EpV7KbSgQ52EM2TCrn6jGJxy2Ha1TznQl1KPB
- hxBQR1Y21tGvT0NY8ymF1Gbiy8qfZFZI/kD1GE6hmXZ9FF+73veED3aovdNDuD/DKSZq eA== 
-Received: from apblrppmta02.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3p6ffksu7r-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 08 Mar 2023 13:54:55 +0000
-Received: from pps.filterd (APBLRPPMTA02.qualcomm.com [127.0.0.1])
-	by APBLRPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTP id 328DspDj004222;
-	Wed, 8 Mar 2023 13:54:51 GMT
-Received: from pps.reinject (localhost [127.0.0.1])
-	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTPS id 3p4fftc0fy-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
-	Wed, 08 Mar 2023 13:54:51 +0000
-Received: from APBLRPPMTA02.qualcomm.com (APBLRPPMTA02.qualcomm.com [127.0.0.1])
-	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 328DspmY004210;
-	Wed, 8 Mar 2023 13:54:51 GMT
-Received: from hu-sgudaval-hyd.qualcomm.com (hu-rohiagar-hyd.qualcomm.com [10.213.106.138])
-	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTP id 328Dspxk004204;
-	Wed, 08 Mar 2023 13:54:51 +0000
-Received: by hu-sgudaval-hyd.qualcomm.com (Postfix, from userid 3970568)
-	id 7851D4FB3; Wed,  8 Mar 2023 19:24:50 +0530 (+0530)
-From: Rohit Agarwal <quic_rohiagar@quicinc.com>
-To: agross@kernel.org, andersson@kernel.org, konrad.dybcio@linaro.org,
-        vkoul@kernel.org, kishon@kernel.org, robh+dt@kernel.org,
-        krzysztof.kozlowski+dt@linaro.org, manivannan.sadhasivam@linaro.org
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-        Rohit Agarwal <quic_rohiagar@quicinc.com>
-Subject: [PATCH v2 1/2] dt-bindings: phy: qcom,qmp: Add SDX65 QMP PHY binding
-Date: Wed,  8 Mar 2023 19:24:47 +0530
-Message-Id: <1678283688-4020-2-git-send-email-quic_rohiagar@quicinc.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1678283688-4020-1-git-send-email-quic_rohiagar@quicinc.com>
-References: <1678283688-4020-1-git-send-email-quic_rohiagar@quicinc.com>
-X-QCInternal: smtphost
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: Q3sy0maGa20uF_gYSw1mwGTYVJgBdzFu
-X-Proofpoint-ORIG-GUID: Q3sy0maGa20uF_gYSw1mwGTYVJgBdzFu
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.254,Aquarius:18.0.942,Hydra:6.0.573,FMLib:17.11.170.22
- definitions=2023-03-08_08,2023-03-08_03,2023-02-09_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
- adultscore=0 malwarescore=0 spamscore=0 phishscore=0 impostorscore=0
- priorityscore=1501 clxscore=1015 bulkscore=0 mlxlogscore=780
- suspectscore=0 mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2212070000 definitions=main-2303080118
+	id 1pZuR4-005NFQ-Gd; Wed, 08 Mar 2023 14:06:32 +0000
+Received: by mail-ot1-f52.google.com with SMTP id r23-20020a05683001d700b00690eb18529fso9032011ota.1;
+        Wed, 08 Mar 2023 06:06:28 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112; t=1678284387;
+        h=date:subject:message-id:references:in-reply-to:cc:to:from
+         :mime-version:content-transfer-encoding:x-gm-message-state:from:to
+         :cc:subject:date:message-id:reply-to;
+        bh=W3V1JTSU4mAasV6Yy4rBnCyWxykGtCx/CwR52o/KvEc=;
+        b=arMMqNBBseCSyLknjmFYzCZX2TlwdHZ/DipiZaUHxFXmT2V9Q1zwPpndCxilJeeJb6
+         xc7wkJYqgeZ58dHFJ98cie4w6ugNhWR0vLaVV6yoH+NtNMO5lUYau+yJxmUt6ACVsmXc
+         NQPQfICPWbsM727vtxH/wxeOLgtSVEdvj15xayHE2VUrMPyGcoD7BwMbNek6BIMXmRD9
+         s4vcEOGpxTxdp930JTATw27iJKOeCRLdW5Mw3eSE/+NLiyEEHmUl6UD2I8OdoPTF9ju3
+         cyNdQ3R6iISnjjuBYvsy6Lh0IqY6E0kN1LEQpla8ZRYUtHRzuNk0EIojssnIU7HqHLua
+         YLZA==
+X-Gm-Message-State: AO0yUKXG2uDL7uoPPhUZzZnT5eRKQgt+uFfC0J0tnpI2PPYgRXrheiGU
+	if7sDxHnfvXRWO6oQt4VP5KHEO581g==
+X-Google-Smtp-Source: AK7set+6pXcrDnyjZYZJ0PqF6YB97KGKOLOLPb2e+N3hu1Ms1rlAgf+tDK3agSRy0jFFRDTN4/rVRQ==
+X-Received: by 2002:a9d:18f:0:b0:690:e7f9:bb61 with SMTP id e15-20020a9d018f000000b00690e7f9bb61mr8863276ote.26.1678284387420;
+        Wed, 08 Mar 2023 06:06:27 -0800 (PST)
+Received: from robh_at_kernel.org (66-90-144-107.dyn.grandenetworks.net. [66.90.144.107])
+        by smtp.gmail.com with ESMTPSA id y22-20020a056830071600b0068d4dda3d61sm6434064ots.39.2023.03.08.06.06.25
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 08 Mar 2023 06:06:26 -0800 (PST)
+Received: (nullmailer pid 2666451 invoked by uid 1000);
+	Wed, 08 Mar 2023 14:06:21 -0000
+MIME-Version: 1.0
+From: Rob Herring <robh@kernel.org>
+To: Minda Chen <minda.chen@starfivetech.com>
+Cc: Pawel Laszczak <pawell@cadence.com>, Vinod Koul <vkoul@kernel.org>, Albert Ou <aou@eecs.berkeley.edu>, Kishon Vijay Abraham I <kishon@kernel.org>, Peter Chen <peter.chen@kernel.org>, Roger Quadros <rogerq@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>, devicetree@vger.kernel.org, Paul Walmsley <paul.walmsley@sifive.com>, linux-kernel@vger.kernel.org, linux-riscv@lists.infradead.org, linux-phy@lists.infradead.org, Emil Renner Berthing <emil.renner.berthing@canonical.com>, linux-usb@vger.kernel.org, Rob Herring <robh+dt@kernel.org>, Palmer Dabbelt <palmer@dabbelt.com>, Conor Dooley <conor@kernel.org>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+In-Reply-To: <20230308082800.3008-2-minda.chen@starfivetech.com>
+References: <20230308082800.3008-1-minda.chen@starfivetech.com>
+ <20230308082800.3008-2-minda.chen@starfivetech.com>
+Message-Id: <167828360080.2613078.14112010625330944896.robh@kernel.org>
+Subject: Re: [PATCH v2 1/3] dt-bindings: phy: Add StarFive JH7110 USB
+ dt-binding
+Date: Wed, 08 Mar 2023 08:06:21 -0600
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230308_055506_868224_3D0EFE1E 
-X-CRM114-Status: GOOD (  11.59  )
+X-CRM114-CacheID: sfid-20230308_060630_591104_594B0C05 
+X-CRM114-Status: GOOD (  11.21  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,34 +74,52 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add devicetree YAML binding for Qualcomm QMP Super Speed (SS) PHY found
-in SDX65.
 
-Signed-off-by: Rohit Agarwal <quic_rohiagar@quicinc.com>
----
- Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml | 1 +
- 1 file changed, 1 insertion(+)
+On Wed, 08 Mar 2023 16:27:58 +0800, Minda Chen wrote:
+> Add StarFive JH7110 SoC USB 3.0 phy dt-binding.
+> USB controller is cadence USB 3.0 IP.
+> 
+> Signed-off-by: Minda Chen <minda.chen@starfivetech.com>
+> ---
+>  .../bindings/phy/starfive,jh7110-usb-phy.yaml | 158 ++++++++++++++++++
+>  1 file changed, 158 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy.yaml
+> 
 
-diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
-index ef49efb..a0407fc 100644
---- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
-@@ -19,6 +19,7 @@ properties:
-       - qcom,sc8280xp-qmp-gen3x1-pcie-phy
-       - qcom,sc8280xp-qmp-gen3x2-pcie-phy
-       - qcom,sc8280xp-qmp-gen3x4-pcie-phy
-+      - qcom,sdx65-qmp-gen4x2-pcie-phy
-       - qcom,sm8350-qmp-gen3x1-pcie-phy
-       - qcom,sm8550-qmp-gen3x2-pcie-phy
-       - qcom,sm8550-qmp-gen4x2-pcie-phy
--- 
-2.7.4
+My bot found errors running 'make DT_CHECKER_FLAGS=-m dt_binding_check'
+on your patch (DT_CHECKER_FLAGS is new in v5.13):
+
+yamllint warnings/errors:
+
+dtschema/dtc warnings/errors:
+/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy.example.dtb: usb@10100000: phy-names:1: 'anyOf' conditional failed, one must be fixed:
+	'cdns3,usb2-phy' was expected
+	'cdns3,usb3-phy' was expected
+	From schema: /builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/usb/cdns,usb3.yaml
+/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy.example.dtb: usb@10100000: 'phys' is a dependency of 'phy-names'
+	From schema: /usr/local/lib/python3.10/dist-packages/dtschema/schemas/phy/phy-consumer.yaml
+
+doc reference errors (make refcheckdocs):
+
+See https://patchwork.ozlabs.org/project/devicetree-bindings/patch/20230308082800.3008-2-minda.chen@starfivetech.com
+
+The base for the series is generally the latest rc1. A different dependency
+should be noted in *this* patch.
+
+If you already ran 'make dt_binding_check' and didn't see the above
+error(s), then make sure 'yamllint' is installed and dt-schema is up to
+date:
+
+pip3 install dtschema --upgrade
+
+Please check and re-submit after running the above command yourself. Note
+that DT_SCHEMA_FILES can be set to your schema file to speed up checking
+your schema. However, it must be unset to test all examples with your schema.
 
 
 -- 
