@@ -4,108 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 42B43C64EC4
-	for <linux-phy@archiver.kernel.org>; Thu,  9 Mar 2023 06:17:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 53EA0C6FD1F
+	for <linux-phy@archiver.kernel.org>; Thu,  9 Mar 2023 06:23:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
 	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=aq1EYqoYC92UdfmOlmVuuLUREDAwe0rOOiK64PO4SIw=; b=a7pvDgLRehm3td
-	wvg+N6UYieRksA/FHw//VGALttA8bxToiqGvWCKpFSO5rFjwruD3G51nq1eZ6jNdxWPyCkvoNGuzb
-	lCHiruF1m/zGGcSfGIdNmQ3nsNtUA2f5X+891OmPpJgQuiSBKyzG48+MoGn9/pqx6PsZNqWyQbu6k
-	CbZrnauaRxYqLUdDCO8rxb4/NlTBqsW5/d/FcocpWPhBZHA7IB5t9dqMsMRDDy/GSxBcmHdwci7Zx
-	dbPvfHl+5FLTL1VEl0Eipfjh5a3kbZMINFNgjPjYH7+yRmVg+SH7ubZJwCPO3dhCHqFZm5WagNXcs
-	S7w1p1o3xMgg/fUcdBpw==;
+	List-Owner; bh=J4w2875t+BgfzyMYhncDXnasdx4Z2jgkMrI8dpJL3cU=; b=EgtjpIsUSvpsDA
+	PJQo9NdbvtelQC2HwwHtQ4i6qaLFGh6gqC14XhvtThBHGHiDqNVWuOWEMS+IjdzYiZMzcghnM81sh
+	9K8OVsTrGT66KDtLW8cG5tIYLCnsw0fyadGv0Iru0N9it2+Rf4K0umbubuyd+xzw3HR7qZJ+TH/J2
+	j7JTkz6E0SI1G+Yv0Mow4Ux6a+OCyTIaP8gYUiVXPPl0zjlJj4l3IkSubb20CpcVS70BmJiuU1oSs
+	CYm7VpG8ajGgXiSSoZDtoQdfo9NlAHF67gu+vgBKw+eksc2OKbf7P+wGbRiHD14UcEWPlVYkPS6Ga
+	ozsfNp4M9PFu9kSPhrew==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pa9bC-0082my-KH; Thu, 09 Mar 2023 06:17:58 +0000
-Received: from mail-mw2nam12on20618.outbound.protection.outlook.com ([2a01:111:f400:fe5a::618] helo=NAM12-MW2-obe.outbound.protection.outlook.com)
+	id 1pa9g6-0083zD-PK; Thu, 09 Mar 2023 06:23:02 +0000
+Received: from lelv0143.ext.ti.com ([198.47.23.248])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pa9b8-0082mC-Fm
-	for linux-phy@lists.infradead.org; Thu, 09 Mar 2023 06:17:57 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=VcjHJlGnilQ4tUrAlGpN6GSh+pGb68u6owLUzvD2cBb2d3xgFtIFloJXmN2PhzbJUO9VYmwAJTcaCEgYHq6HDFpdH0dwzD0uX+EyJ7/jn6XKZZ4/7Ix7PGBWMs6sdm3wODRACwkM0AIwVsmt7akJx+7W6Jd4PD3r5usM7+BLcndEAsyGT1IgJmvfDTzAIeP2oZOF+KOU0M3V0LQo3wmoBpCmOUOHG+itPNCbJtRI1nEATMFWB+Y6O32jypn7VPk2LrJ6+p8wAS20ox3a6LuXNK1WNoFDk5+i5lYoTCSdJLRIQOnUvQCuIG6K4rb1KivFu2Ez1X1L/7dKFxoGURM24A==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=N/w0fpVorq0Ul+NeMg1CUoIQdPfqxM6d1zbiK3ggKDE=;
- b=XT8G5qQxj2ax4l1gsJaopIs6oNFp9rQA57QoHli+OkK+Dfs1Zv3SlS+DocoOebAqbXLpBwdwvPm8kZdt1Pa48r9rQpQrt3/rDuFYmNW9KY+CESvG4R1GOfOZCDgM7alPAaI1is7x1/eoS3kr62Gvkf38EyvJkQ09OO30xZ/z2ymfoVhMBMGy1/Cy68vb8bJMbxUqfy/oYU+k+5fIr691w6eFFjpFJGETVvLloQl9zeeVgNSxKTpkUhP1+KGvIN+jl7O4fw6nvmCrNfKEsOv2b9E3D2EsyDK8OaJsBebBdomVl88se6Bg4ITam4W58iyJHRnFhZdofkxvYLqP0UTpnA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 216.228.117.161) smtp.rcpttodomain=kernel.org smtp.mailfrom=nvidia.com;
- dmarc=pass (p=reject sp=reject pct=100) action=none header.from=nvidia.com;
- dkim=none (message not signed); arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=N/w0fpVorq0Ul+NeMg1CUoIQdPfqxM6d1zbiK3ggKDE=;
- b=rvdgJS14Tcz4/VuWRDUXnKIbxMdZLBW7hZrgFcZQc5pFIhwkbYiOQkNA2HaTfv5CQKIN0kzUTzo3zLUdVbXsjzA6GWXwNxkAyLKky/xYR3+FIOjcyIfl6X/EWnO8Tsx1ja9z0kWzuFu5vrRGMKj56cVghy5oTZwSZSGWeDgF7OLkraZQg9J1Oz72hPPvJYv3w+ZkLe+UaZLBviYBFPxagDahA7jcT+qVy8AXzcasUweeNQbod+QK0+OSVAxxY8wDV4xGvnZApS7Sqxa0VLId7gRdikzZi5D/2VmgjPoBsSN2pNoqAdMf5uEZoDTh5an5ZAl5Lga2f4LGBY9iwy38UQ==
-Received: from MN2PR05CA0038.namprd05.prod.outlook.com (2603:10b6:208:236::7)
- by CH0PR12MB5059.namprd12.prod.outlook.com (2603:10b6:610:e2::6) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6178.19; Thu, 9 Mar
- 2023 06:17:47 +0000
-Received: from BL02EPF0000EE3F.namprd05.prod.outlook.com
- (2603:10b6:208:236:cafe::d6) by MN2PR05CA0038.outlook.office365.com
- (2603:10b6:208:236::7) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6178.19 via Frontend
- Transport; Thu, 9 Mar 2023 06:17:47 +0000
-X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 216.228.117.161)
- smtp.mailfrom=nvidia.com; dkim=none (message not signed)
- header.d=none;dmarc=pass action=none header.from=nvidia.com;
-Received-SPF: Pass (protection.outlook.com: domain of nvidia.com designates
- 216.228.117.161 as permitted sender) receiver=protection.outlook.com;
- client-ip=216.228.117.161; helo=mail.nvidia.com; pr=C
-Received: from mail.nvidia.com (216.228.117.161) by
- BL02EPF0000EE3F.mail.protection.outlook.com (10.167.241.133) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.6178.12 via Frontend Transport; Thu, 9 Mar 2023 06:17:47 +0000
-Received: from rnnvmail201.nvidia.com (10.129.68.8) by mail.nvidia.com
- (10.129.200.67) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.986.5; Wed, 8 Mar 2023
- 22:17:31 -0800
-Received: from 0e64808-lcelt.nvidia.com (10.126.230.37) by
- rnnvmail201.nvidia.com (10.129.68.8) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.986.37; Wed, 8 Mar 2023 22:17:28 -0800
-From: Haotien Hsu <haotienh@nvidia.com>
-To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>
-CC: JC Kuo <jckuo@nvidia.com>, Thierry Reding <thierry.reding@gmail.com>,
-	Jonathan Hunter <jonathanh@nvidia.com>, Wayne Chang <waynec@nvidia.com>,
-	<linux-phy@lists.infradead.org>, <linux-tegra@vger.kernel.org>,
-	<linux-kernel@vger.kernel.org>, Henry Lin <henryl@nvidia.com>, Haotien Hsu
-	<haotienh@nvidia.com>
-Subject: [PATCH] phy: tegra: xusb: Support sleepwalk for Tegra234
-Date: Thu, 9 Mar 2023 14:17:08 +0800
-Message-ID: <20230309061708.4156383-1-haotienh@nvidia.com>
+	id 1pa9ft-0083uC-95; Thu, 09 Mar 2023 06:22:53 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+	by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 3296MfrU086170;
+	Thu, 9 Mar 2023 00:22:41 -0600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+	s=ti-com-17Q1; t=1678342961;
+	bh=KNT+wy4RDHbbcn7KtlaJoGk0uuKRypZmes/R0EO1Tig=;
+	h=From:To:CC:Subject:Date;
+	b=lH43B+H8U9CmZO7o4t1rR2bcptNaQK09e44ygjm7JDTYtIfeTadCCG5spOvvuwxkO
+	 /IGzEDioqwjdBBNso6O3fm1oOS74GOXstXfgs507vNumZAYomzMPh1pDBnh6J/1y/2
+	 uXtSzT9Bi/AKA3ZXz4gDjP8LkfGzb+obLugXr8DY=
+Received: from DLEE106.ent.ti.com (dlee106.ent.ti.com [157.170.170.36])
+	by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 3296MfOV004272
+	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+	Thu, 9 Mar 2023 00:22:41 -0600
+Received: from DLEE100.ent.ti.com (157.170.170.30) by DLEE106.ent.ti.com
+ (157.170.170.36) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.16; Thu, 9
+ Mar 2023 00:22:41 -0600
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE100.ent.ti.com
+ (157.170.170.30) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.16 via
+ Frontend Transport; Thu, 9 Mar 2023 00:22:41 -0600
+Received: from uda0492258.dhcp.ti.com (ileaxei01-snat2.itg.ti.com [10.180.69.6])
+	by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 3296Mca1088683;
+	Thu, 9 Mar 2023 00:22:38 -0600
+From: Siddharth Vadapalli <s-vadapalli@ti.com>
+To: <vkoul@kernel.org>, <kishon@kernel.org>, <rogerq@kernel.org>
+CC: <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+        <linux-arm-kernel@lists.infradead.org>, <srk@ti.com>,
+        <s-vadapalli@ti.com>
+Subject: [PATCH 0/3] PHY-GMII-SEL: Add support for SGMII mode
+Date: Thu, 9 Mar 2023 11:52:34 +0530
+Message-ID: <20230309062237.389444-1-s-vadapalli@ti.com>
 X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-X-Originating-IP: [10.126.230.37]
-X-ClientProxiedBy: rnnvmail202.nvidia.com (10.129.68.7) To
- rnnvmail201.nvidia.com (10.129.68.8)
-X-EOPAttributedMessage: 0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: BL02EPF0000EE3F:EE_|CH0PR12MB5059:EE_
-X-MS-Office365-Filtering-Correlation-Id: b6eb8e1f-00a3-4c24-ce7f-08db206600c7
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 	zVsDxBMT6aPJI4iguKuU94gTyY4VNPXJoJIh16kX99UXlkxRLqdWSYGx8C/MW1dVqtKcsJoBbBFb9nK/67npAAU87i4E/Q7M1OHglYJpbRTDZTtqiDWm7G3/mUkt49tJyz4M7LoQ4PQRTeNUmfejaH+ioO4lkeqAUC31psr3BQyRwfDDqLzpdHitIl6o6PIQIbV/bd1WIibXSYgEMJAJvBvmie0bxSDYLgzYRZWsYcHWclN347Kws1KTH8oJYUuIGhBYU6703h5lGia39wZolo7x2gLu7/8EDC0cObwiBEw63c3W3xVVzKIa6R7vTOXTJZWHXe0LiJ+oleWJoHLAar3FrS/rAVu/++yko4KsV+jbGdhHFzdgGWxAQN0nxappU1f6yMWImQop9hdSArb7ap+C0M69leSW0xdZHLMbTAosWZT8k1uJPUwpakynz9g3vNHumc4RLGA0ZZNOIsa9f9YSHrnrixdB+4H7IYuwC2xY9Yoy7tdna+6W2jRaGwwyKaP2CekI64tfKaQ1fwLB66YJHYsERTcvX8SDAzhnVgHWkdsAe0hrz06UxcGltV0QBRYXhbcMIe6uNZEwP0A75t/y9oJLvhIy55+QgZyrx3EPVd8DF1gOp5zxR5YGF9oe14mv/X3LIetPRJiBTUSbcmWERneu9RbnRYEPS4UP/RBGtd+e0n1CIY5AkM5w5zCh1j3TrNvxv72Y/5MQBncicrV5IqLWpQeB/M7bu1SrSenBDlEhRTQnR4CYoLHW6AU5
-X-Forefront-Antispam-Report: 	CIP:216.228.117.161;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc6edge2.nvidia.com;CAT:NONE;SFS:(13230025)(4636009)(346002)(136003)(39860400002)(376002)(396003)(451199018)(40470700004)(46966006)(36840700001)(83380400001)(47076005)(426003)(336012)(2906002)(82310400005)(2616005)(70586007)(70206006)(8676002)(7696005)(5660300002)(36860700001)(186003)(26005)(16526019)(41300700001)(7636003)(82740400003)(36756003)(107886003)(6666004)(40460700003)(1076003)(478600001)(4326008)(54906003)(356005)(8936002)(86362001)(110136005)(316002)(40480700001);DIR:OUT;SFP:1101;
-X-OriginatorOrg: Nvidia.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 09 Mar 2023 06:17:47.3029
- (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: b6eb8e1f-00a3-4c24-ce7f-08db206600c7
-X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[216.228.117.161];Helo=[mail.nvidia.com]
-X-MS-Exchange-CrossTenant-AuthSource: 	BL02EPF0000EE3F.namprd05.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Anonymous
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH0PR12MB5059
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230308_221754_767994_76BDCFCA 
-X-CRM114-Status: GOOD (  11.84  )
+X-CRM114-CacheID: sfid-20230308_222249_447111_244EA5A8 
+X-CRM114-Status: UNSURE (   7.69  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -122,114 +80,19 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Henry Lin <henryl@nvidia.com>
+Hello,
 
-Add new registers programming in sleepwalk sequence for Tegra234:
-MASTER_ENABLE_A/B/C/D in XUSB_AO_UTMIP_SLEEPWALK.
+This series adds support to configure the CPSW MAC's PHY in SGMII mode.
+Also, SGMII mode is enabled for TI's J7200 and J721E SoCs.
 
-Signed-off-by: Henry Lin <henryl@nvidia.com>
-Signed-off-by: Haotien Hsu <haotienh@nvidia.com>
----
- drivers/phy/tegra/xusb-tegra186.c | 20 ++++++++++++++++++++
- drivers/phy/tegra/xusb.h          |  1 +
- 2 files changed, 21 insertions(+)
+Siddharth Vadapalli (3):
+  phy: ti: phy-gmii-sel: Add support for SGMII mode
+  phy: ti: gmii-sel: Enable SGMII mode for J7200
+  phy: ti: gmii-sel: Enable SGMII mode for J721E
 
-diff --git a/drivers/phy/tegra/xusb-tegra186.c b/drivers/phy/tegra/xusb-tegra186.c
-index 1aae8535f452..0f60d5d1c167 100644
---- a/drivers/phy/tegra/xusb-tegra186.c
-+++ b/drivers/phy/tegra/xusb-tegra186.c
-@@ -145,6 +145,8 @@
- #define   MODE_HS				MODE(0)
- #define   MODE_RST				MODE(1)
- 
-+#define XUSB_AO_UTMIP_SLEEPWALK_STATUS(x)	(0xa0 + (x) * 4)
-+
- #define XUSB_AO_UTMIP_SLEEPWALK_CFG(x)		(0xd0 + (x) * 4)
- #define XUSB_AO_UHSIC_SLEEPWALK_CFG(x)		(0xf0 + (x) * 4)
- #define   FAKE_USBOP_VAL			BIT(0)
-@@ -172,24 +174,30 @@
- #define   AP_A					BIT(4)
- #define   AN_A					BIT(5)
- #define   HIGHZ_A				BIT(6)
-+#define   MASTER_ENABLE_A			BIT(7)
- /* phase B */
- #define   USBOP_RPD_B				BIT(8)
- #define   USBON_RPD_B				BIT(9)
- #define   AP_B					BIT(12)
- #define   AN_B					BIT(13)
- #define   HIGHZ_B				BIT(14)
-+#define   MASTER_ENABLE_B			BIT(15)
- /* phase C */
- #define   USBOP_RPD_C				BIT(16)
- #define   USBON_RPD_C				BIT(17)
- #define   AP_C					BIT(20)
- #define   AN_C					BIT(21)
- #define   HIGHZ_C				BIT(22)
-+#define   MASTER_ENABLE_C			BIT(23)
- /* phase D */
- #define   USBOP_RPD_D				BIT(24)
- #define   USBON_RPD_D				BIT(25)
- #define   AP_D					BIT(28)
- #define   AN_D					BIT(29)
- #define   HIGHZ_D				BIT(30)
-+#define   MASTER_ENABLE_D			BIT(31)
-+#define   MASTER_ENABLE_B_C_D					\
-+	 (MASTER_ENABLE_B | MASTER_ENABLE_C | MASTER_ENABLE_D)
- 
- #define XUSB_AO_UHSIC_SLEEPWALK(x)		(0x120 + (x) * 4)
- /* phase A */
-@@ -417,6 +425,8 @@ static int tegra186_utmi_enable_phy_sleepwalk(struct tegra_xusb_lane *lane,
- 		value |= HIGHZ_A;
- 		value |= AP_A;
- 		value |= AN_B | AN_C | AN_D;
-+		if (padctl->soc->supports_lp_cfg_en)
-+			value |= MASTER_ENABLE_B_C_D;
- 		break;
- 
- 	case USB_SPEED_LOW:
-@@ -424,6 +434,8 @@ static int tegra186_utmi_enable_phy_sleepwalk(struct tegra_xusb_lane *lane,
- 		value |= HIGHZ_A;
- 		value |= AN_A;
- 		value |= AP_B | AP_C | AP_D;
-+		if (padctl->soc->supports_lp_cfg_en)
-+			value |= MASTER_ENABLE_B_C_D;
- 		break;
- 
- 	default:
-@@ -488,6 +500,13 @@ static int tegra186_utmi_disable_phy_sleepwalk(struct tegra_xusb_lane *lane)
- 	value |= WAKE_VAL_NONE;
- 	ao_writel(priv, value, XUSB_AO_UTMIP_SLEEPWALK_CFG(index));
- 
-+	if (padctl->soc->supports_lp_cfg_en) {
-+		/* disable the four stages of sleepwalk */
-+		value = ao_readl(priv, XUSB_AO_UTMIP_SLEEPWALK(index));
-+		value &= ~(MASTER_ENABLE_A | MASTER_ENABLE_B_C_D);
-+		ao_writel(priv, value, XUSB_AO_UTMIP_SLEEPWALK(index));
-+	}
-+
- 	/* power down the line state detectors of the port */
- 	value = ao_readl(priv, XUSB_AO_UTMIP_PAD_CFG(index));
- 	value |= USBOP_VAL_PD | USBON_VAL_PD;
-@@ -1673,6 +1692,7 @@ const struct tegra_xusb_padctl_soc tegra234_xusb_padctl_soc = {
- 	.supports_gen2 = true,
- 	.poll_trk_completed = true,
- 	.trk_hw_mode = true,
-+	.supports_lp_cfg_en = true,
- };
- EXPORT_SYMBOL_GPL(tegra234_xusb_padctl_soc);
- #endif
-diff --git a/drivers/phy/tegra/xusb.h b/drivers/phy/tegra/xusb.h
-index 71b8dcedb646..6bbd88245b9d 100644
---- a/drivers/phy/tegra/xusb.h
-+++ b/drivers/phy/tegra/xusb.h
-@@ -434,6 +434,7 @@ struct tegra_xusb_padctl_soc {
- 	bool need_fake_usb3_port;
- 	bool poll_trk_completed;
- 	bool trk_hw_mode;
-+	bool supports_lp_cfg_en;
- };
- 
- struct tegra_xusb_padctl {
+ drivers/phy/ti/phy-gmii-sel.c | 10 ++++++++--
+ 1 file changed, 8 insertions(+), 2 deletions(-)
+
 -- 
 2.25.1
 
