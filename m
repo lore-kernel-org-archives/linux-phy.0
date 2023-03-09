@@ -4,75 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3AFE9C61DA4
-	for <linux-phy@archiver.kernel.org>; Thu,  9 Mar 2023 20:52:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 09A1BC6FD19
+	for <linux-phy@archiver.kernel.org>; Thu,  9 Mar 2023 21:31:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=34wLX7JhB5wAD7sPmJFD/poP5y8OzJtUp+8wTKID7PE=; b=rnRePN5OuC9rJt
-	5aU38/PlW7gg2/KMcyb9uheM9yUo5PB/0aOA975ZrsSuzAme5RNMiXgzxPI3KMT5Ocb9OtFNcVKIZ
-	tL9F4gFFnspO1HOzPWsge3Ph3bo+rjoRv93ZzmwAxm10ieI8kitFNYjax05pTfnNTK84gsn2KwwFE
-	tqzSuhvSn1HqFfLet5w1xqNFIt/TPv7RTV/xdpDiMDYMahjyFb8csCnRn4Inmyd0+bHmzTd78tCKr
-	qtRvdRPWklwbx1oth09Nl3rBLajpE7xaFEVBh6FK0ZJgnh+QmLfU/9gRUUFv4xXPhwt70B1Nzm78S
-	dVPk2sn4wlEG+UkPSPWw==;
+	List-Owner; bh=bOCxcuwU8qZJX+jGUvkPjc7t9p2jGnlPL+MAQrjYVPE=; b=3+DRiNQQZXrh1A
+	vEmAA36FdEXFDVPmB8pKQG381OUQRQWLXfejfnUO1FsjhPwcEE9J3AcYinN7Zx00EECXlxybZC2KV
+	AMFb4Va3t6vTB+yPqvRgjRjugYmPvrrF7eCzOYBnrmP2gYltSJTLZ0C7vREkdt9N0PvZMgnLENLtO
+	tsw5RcXBXwnJL/ag2jtHhsl1dhVlW5TyK95gzeJD6S9u8kVPVaO0lX6+9bvoDstpoMwslSU/zvZBj
+	vs0PbYcU3NE9Iw1IjbI75maFLVT5+i+Bm/t0dwoErREofz0ASjgWvAt6OifqzfGt8YU/8hTAT6fDg
+	DPBYvzY33fPWS8m3t+2w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1paNF1-00BrLL-AB
-	for linux-phy@archiver.kernel.org; Thu, 09 Mar 2023 20:51:59 +0000
-Received: from mail-yw1-x1131.google.com ([2607:f8b0:4864:20::1131])
+	id 1paNrZ-00C0Aa-6r
+	for linux-phy@archiver.kernel.org; Thu, 09 Mar 2023 21:31:49 +0000
+Received: from mga02.intel.com ([134.134.136.20])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1paNEk-00Br9h-W4
-	for linux-phy@lists.infradead.org; Thu, 09 Mar 2023 20:51:44 +0000
-Received: by mail-yw1-x1131.google.com with SMTP id 00721157ae682-536c02c9dfbso57779107b3.11
-        for <linux-phy@lists.infradead.org>; Thu, 09 Mar 2023 12:51:40 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1678395099;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=DVyH5Scagmn8M2FdEHJJzRQ2otfZzX/LecF/bU29usc=;
-        b=ewFOH5yb72RmNHDiCx2HOTeujA5fnIty0yxunY0lGAcd5g7kjRh4En8fmjKnQJNym0
-         d7XYzGg57wrG7c71v5pe1yCYRuyBjZYBzfU0N1rgVETVgzgkDgSuj940AjslAexq/OxV
-         D+/pVLl83zJw6ZZVh97KLNX3ZcAlf6X23uQ6yIhbyveXNg7TzBfrmfrVlxwy/yt5xPqB
-         Fx22rHLXWeQJRYnnTC0cmuhXSxpf4Ax+4wEralzv5ROXr4qO8X/QseDHTUJh0pyxAXMa
-         7OoBzsW3GE+AlpADzjE+4a+O8VkrcAbcADtbqe2xQBO0vJxWjA/U5TpbD64WQSvuSpIa
-         pzZg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112; t=1678395099;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=DVyH5Scagmn8M2FdEHJJzRQ2otfZzX/LecF/bU29usc=;
-        b=4smArLPMjaKcZ+2LxDDAIj+ylxWq/F6mKcgVcClEhkslpMVm2W5Qqn9PZIyDNjsfVP
-         I3R3+lPWoWj0eyStLEqIzKT7iun3Bkwn50QhyLvE5et6O8SvFZe2OgnAZhyV1soeCpko
-         yd8z4zi6ihF4+tzaYyGiqv9lOdSxElzaZ5lMVo8qDaonTCjNGxnbH20JwqJX30Ii8guL
-         9rTON1PI6uT12g86Dmf5Holiz47uo+rQVfOrEmuNQF0TBw6kegAjZPiACu8+HRu1Wt3k
-         rD3Q6l2Tf+vJyeSYX9VXC3F1oeUUnvJ7zQ7YkfE1iSWxWv2qPjDCxVajrQGTc3GAsV31
-         cTYA==
-X-Gm-Message-State: AO0yUKWyoObGkkfbjrgsjoZd0uuVYz5rhewgcTkbcrgZoqbdDiMZlx+C
-	7QV0TOCJIpqVE9PgqnwuPmM61uYByJPTSEITGgsJtQ==
-X-Google-Smtp-Source: AK7set+IGWJTWMpcZhF0FcDlsEsg14MwUcebqHQCLXHDdzScK2lva1JI9YbEyAFi319Z87T+SK2+6OFgE1BOX9ELMLA=
-X-Received: by 2002:a81:b285:0:b0:533:99bb:c296 with SMTP id
- q127-20020a81b285000000b0053399bbc296mr14235206ywh.5.1678395099441; Thu, 09
- Mar 2023 12:51:39 -0800 (PST)
-MIME-Version: 1.0
-References: <20230309185049.170878-1-danila@jiaxyga.com> <20230309185049.170878-3-danila@jiaxyga.com>
-In-Reply-To: <20230309185049.170878-3-danila@jiaxyga.com>
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Thu, 9 Mar 2023 22:51:28 +0200
-Message-ID: <CAA8EJpq14e0+-d4m8bZTsQGiOifPr6HU7WNRL+FKGVMDx6YDQw@mail.gmail.com>
+	id 1paNrW-00C09m-2o
+	for linux-phy@lists.infradead.org; Thu, 09 Mar 2023 21:31:47 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1678397506; x=1709933506;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=fuhD00gZ/JN8iEBEai4g97h2vmgpf08x/wSh/QlgdRg=;
+  b=EoIhTCqlpoBrMiDsXR/fSRlC7ueQO7iQ9nNK5MTOHp8loxqOzL1oqWYx
+   L5QJIcWhoD3QypABYWhhTkbjszPDK0kh3HmtH5fFkr16i3SlQOE8hbROt
+   WaNv08A3gmuHysxn5ieSeShyiBafcaJrbQPCK8aTk1Xlsr6hn2FDpDjME
+   z2zrg0NWSQAizeQn2RIG3Yi+A8eDp0VUDLNcWp70kZR8jxY15EnpoX6fG
+   n8Yeo3aqjZqd20YtBoVKZgpjI9QRpGLoW0wSfAaO8CyKC0GWkmNk3xhbH
+   YWKi0uiNeklUKlAXmaYUPUAiLxCe2tY3XoxcPOMVVoTZqmRchxrlreE7x
+   g==;
+X-IronPort-AV: E=McAfee;i="6500,9779,10644"; a="324924270"
+X-IronPort-AV: E=Sophos;i="5.98,247,1673942400"; 
+   d="scan'208";a="324924270"
+Received: from fmsmga004.fm.intel.com ([10.253.24.48])
+  by orsmga101.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 09 Mar 2023 13:31:44 -0800
+X-ExtLoop1: 1
+X-IronPort-AV: E=McAfee;i="6500,9779,10644"; a="746474002"
+X-IronPort-AV: E=Sophos;i="5.98,247,1673942400"; 
+   d="scan'208";a="746474002"
+Received: from lkp-server01.sh.intel.com (HELO b613635ddfff) ([10.239.97.150])
+  by fmsmga004.fm.intel.com with ESMTP; 09 Mar 2023 13:31:41 -0800
+Received: from kbuild by b613635ddfff with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1paNrQ-0003EP-08;
+	Thu, 09 Mar 2023 21:31:40 +0000
+Date: Fri, 10 Mar 2023 05:31:05 +0800
+From: kernel test robot <lkp@intel.com>
+To: Danila Tikhonov <danila@jiaxyga.com>, agross@kernel.org,
+	andersson@kernel.org, konrad.dybcio@linaro.org, vkoul@kernel.org,
+	kishon@kernel.org, robh+dt@kernel.org,
+	krzysztof.kozlowski+dt@linaro.org
+Cc: oe-kbuild-all@lists.linux.dev, linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, davidwronek@gmail.com,
+	Danila Tikhonov <danila@jiaxyga.com>
 Subject: Re: [PATCH 2/2] phy: qcom-qmp-ufs: Add SM7150 support
-To: Danila Tikhonov <danila@jiaxyga.com>
-Cc: agross@kernel.org, andersson@kernel.org, konrad.dybcio@linaro.org, 
-	vkoul@kernel.org, kishon@kernel.org, robh+dt@kernel.org, 
-	krzysztof.kozlowski+dt@linaro.org, linux-arm-msm@vger.kernel.org, 
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, davidwronek@gmail.com
+Message-ID: <202303100518.rMD2XKLn-lkp@intel.com>
+References: <20230309185049.170878-3-danila@jiaxyga.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20230309185049.170878-3-danila@jiaxyga.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230309_125143_071231_0A43F71F 
-X-CRM114-Status: GOOD (  17.70  )
+X-CRM114-CacheID: sfid-20230309_133146_208661_892A9CE1 
+X-CRM114-Status: GOOD (  15.78  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,124 +89,95 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, 9 Mar 2023 at 20:51, Danila Tikhonov <danila@jiaxyga.com> wrote:
->
-> From: David Wronek <davidwronek@gmail.com>
->
-> Add the tables and constants for init sequences for UFS QMP phy found in
-> SM7150 SoC.
->
-> Signed-off-by: David Wronek <davidwronek@gmail.com>
-> Signed-off-by: Danila Tikhonov <danila@jiaxyga.com>
-> ---
->  drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 57 +++++++++++++++++++++++++
->  1 file changed, 57 insertions(+)
->
-> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-> index 994ddd5d4a81..b4f2d6c63beb 100644
-> --- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-> @@ -349,6 +349,36 @@ static const struct qmp_phy_init_tbl sdm845_ufsphy_pcs[] = {
->         QMP_PHY_INIT_CFG(QPHY_V3_PCS_UFS_MULTI_LANE_CTRL1, 0x02),
->  };
->
-> +static const struct qmp_phy_init_tbl sm7150_ufsphy_rx[] = {
-> +       QMP_PHY_INIT_CFG(QSERDES_V3_RX_SIGDET_LVL, 0x24),
-> +       QMP_PHY_INIT_CFG(QSERDES_V3_RX_SIGDET_CNTRL, 0x0f),
-> +       QMP_PHY_INIT_CFG(QSERDES_V3_RX_SIGDET_DEGLITCH_CNTRL, 0x1e),
-> +       QMP_PHY_INIT_CFG(QSERDES_V3_RX_RX_INTERFACE_MODE, 0x40),
-> +       QMP_PHY_INIT_CFG(QSERDES_V3_RX_UCDR_FASTLOCK_FO_GAIN, 0x0b),
-> +       QMP_PHY_INIT_CFG(QSERDES_V3_RX_RX_TERM_BW, 0x5b),
-> +       QMP_PHY_INIT_CFG(QSERDES_V3_RX_RX_EQU_ADAPTOR_CNTRL2, 0x06),
-> +       QMP_PHY_INIT_CFG(QSERDES_V3_RX_RX_EQU_ADAPTOR_CNTRL3, 0x04),
-> +       QMP_PHY_INIT_CFG(QSERDES_V3_RX_RX_EQU_ADAPTOR_CNTRL4, 0x1b),
-> +       QMP_PHY_INIT_CFG(QSERDES_V3_RX_UCDR_SVS_SO_GAIN_HALF, 0x04),
-> +       QMP_PHY_INIT_CFG(QSERDES_V3_RX_UCDR_SVS_SO_GAIN_QUARTER, 0x04),
-> +       QMP_PHY_INIT_CFG(QSERDES_V3_RX_UCDR_SVS_SO_GAIN, 0x04),
-> +       QMP_PHY_INIT_CFG(QSERDES_V3_RX_UCDR_SO_SATURATION_AND_ENABLE, 0x5b),
+Hi Danila,
 
-It is a pity to duplicate the whole table just for the single register
-difference.
+Thank you for the patch! Yet something to improve:
 
-> +       QMP_PHY_INIT_CFG(QSERDES_V3_RX_UCDR_PI_CONTROLS, 0x81),
-> +       QMP_PHY_INIT_CFG(QSERDES_V3_RX_UCDR_FASTLOCK_COUNT_LOW, 0x80),
-> +       QMP_PHY_INIT_CFG(QSERDES_V3_RX_RX_MODE_00, 0x59),
-> +};
-> +
-> +static const struct qmp_phy_init_tbl sm7150_ufsphy_pcs[] = {
-> +       QMP_PHY_INIT_CFG(QPHY_V3_PCS_UFS_RX_SIGDET_CTRL2, 0x6f),
-> +       QMP_PHY_INIT_CFG(QPHY_V3_PCS_UFS_TX_LARGE_AMP_DRV_LVL, 0x0f),
-> +       QMP_PHY_INIT_CFG(QPHY_V3_PCS_UFS_TX_SMALL_AMP_DRV_LVL, 0x02),
-> +       QMP_PHY_INIT_CFG(QPHY_V3_PCS_UFS_RX_SYM_RESYNC_CTRL, 0x03),
-> +       QMP_PHY_INIT_CFG(QPHY_V3_PCS_UFS_TX_MID_TERM_CTRL1, 0x43),
-> +       QMP_PHY_INIT_CFG(QPHY_V3_PCS_UFS_RX_SIGDET_CTRL1, 0x0f),
-> +       QMP_PHY_INIT_CFG(QPHY_V3_PCS_UFS_RX_MIN_HIBERN8_TIME, 0xFF),
+[auto build test ERROR on robh/for-next]
+[also build test ERROR on linus/master v6.3-rc1 next-20230309]
+[If your patch is applied to the wrong git tree, kindly drop us a note.
+And when submitting patch, we suggest to use '--base' as documented in
+https://git-scm.com/docs/git-format-patch#_base_tree_information]
 
-s/0xFF/0xff/ , please
+url:    https://github.com/intel-lab-lkp/linux/commits/Danila-Tikhonov/dt-bindings-phy-Add-QMP-UFS-PHY-comptible-for-SM7150/20230310-025222
+base:   https://git.kernel.org/pub/scm/linux/kernel/git/robh/linux.git for-next
+patch link:    https://lore.kernel.org/r/20230309185049.170878-3-danila%40jiaxyga.com
+patch subject: [PATCH 2/2] phy: qcom-qmp-ufs: Add SM7150 support
+config: arc-randconfig-r043-20230308 (https://download.01.org/0day-ci/archive/20230310/202303100518.rMD2XKLn-lkp@intel.com/config)
+compiler: arc-elf-gcc (GCC) 12.1.0
+reproduce (this is a W=1 build):
+        wget https://raw.githubusercontent.com/intel/lkp-tests/master/sbin/make.cross -O ~/bin/make.cross
+        chmod +x ~/bin/make.cross
+        # https://github.com/intel-lab-lkp/linux/commit/95e826acacaf3b5ba79c06b481199a17abed44ba
+        git remote add linux-review https://github.com/intel-lab-lkp/linux
+        git fetch --no-tags linux-review Danila-Tikhonov/dt-bindings-phy-Add-QMP-UFS-PHY-comptible-for-SM7150/20230310-025222
+        git checkout 95e826acacaf3b5ba79c06b481199a17abed44ba
+        # save the config file
+        mkdir build_dir && cp config build_dir/.config
+        COMPILER_INSTALL_PATH=$HOME/0day COMPILER=gcc-12.1.0 make.cross W=1 O=build_dir ARCH=arc olddefconfig
+        COMPILER_INSTALL_PATH=$HOME/0day COMPILER=gcc-12.1.0 make.cross W=1 O=build_dir ARCH=arc SHELL=/bin/bash drivers/phy/qualcomm/
 
-> +       QMP_PHY_INIT_CFG(QPHY_V3_PCS_UFS_MULTI_LANE_CTRL1, 0x02),
-> +};)
-> +
->  static const struct qmp_phy_init_tbl sm8150_ufsphy_serdes[] = {
->         QMP_PHY_INIT_CFG(QSERDES_V4_COM_SYSCLK_EN_SEL, 0xd9),
->         QMP_PHY_INIT_CFG(QSERDES_V4_COM_HSCLK_SEL, 0x11),
-> @@ -911,6 +941,30 @@ static const struct qmp_phy_cfg sm6115_ufsphy_cfg = {
->         .no_pcs_sw_reset        = true,
->  };
->
-> +static const struct qmp_phy_cfg sm7150_ufsphy_cfg = {
+If you fix the issue, kindly add following tag where applicable
+| Reported-by: kernel test robot <lkp@intel.com>
+| Link: https://lore.kernel.org/oe-kbuild-all/202303100518.rMD2XKLn-lkp@intel.com/
 
-Please add offsets here. With that fixed:
+All errors (new ones prefixed by >>):
 
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+>> drivers/phy/qualcomm/phy-qcom-qmp-ufs.c:380:3: error: expected identifier or '(' before ')' token
+     380 | };)
+         |   ^
+>> drivers/phy/qualcomm/phy-qcom-qmp-ufs.c:972:35: error: 'sm8150_ufsphy_serdes' undeclared here (not in a function); did you mean 'sm8550_ufsphy_serdes'?
+     972 |                 .serdes         = sm8150_ufsphy_serdes,
+         |                                   ^~~~~~~~~~~~~~~~~~~~
+         |                                   sm8550_ufsphy_serdes
+   In file included from include/linux/container_of.h:5,
+                    from include/linux/kernel.h:21,
+                    from include/linux/clk.h:13,
+                    from drivers/phy/qualcomm/phy-qcom-qmp-ufs.c:6:
+   include/linux/build_bug.h:16:51: error: bit-field '<anonymous>' width not an integer constant
+      16 | #define BUILD_BUG_ON_ZERO(e) ((int)(sizeof(struct { int:(-!!(e)); })))
+         |                                                   ^
+   include/linux/compiler.h:232:33: note: in expansion of macro 'BUILD_BUG_ON_ZERO'
+     232 | #define __must_be_array(a)      BUILD_BUG_ON_ZERO(__same_type((a), &(a)[0]))
+         |                                 ^~~~~~~~~~~~~~~~~
+   include/linux/kernel.h:55:59: note: in expansion of macro '__must_be_array'
+      55 | #define ARRAY_SIZE(arr) (sizeof(arr) / sizeof((arr)[0]) + __must_be_array(arr))
+         |                                                           ^~~~~~~~~~~~~~~
+   drivers/phy/qualcomm/phy-qcom-qmp-ufs.c:973:35: note: in expansion of macro 'ARRAY_SIZE'
+     973 |                 .serdes_num     = ARRAY_SIZE(sm8150_ufsphy_serdes),
+         |                                   ^~~~~~~~~~
+   include/linux/build_bug.h:16:51: error: bit-field '<anonymous>' width not an integer constant
+      16 | #define BUILD_BUG_ON_ZERO(e) ((int)(sizeof(struct { int:(-!!(e)); })))
+         |                                                   ^
+   include/linux/compiler.h:232:33: note: in expansion of macro 'BUILD_BUG_ON_ZERO'
+     232 | #define __must_be_array(a)      BUILD_BUG_ON_ZERO(__same_type((a), &(a)[0]))
+         |                                 ^~~~~~~~~~~~~~~~~
+   include/linux/kernel.h:55:59: note: in expansion of macro '__must_be_array'
+      55 | #define ARRAY_SIZE(arr) (sizeof(arr) / sizeof((arr)[0]) + __must_be_array(arr))
+         |                                                           ^~~~~~~~~~~~~~~
+   drivers/phy/qualcomm/phy-qcom-qmp-ufs.c:1005:35: note: in expansion of macro 'ARRAY_SIZE'
+    1005 |                 .serdes_num     = ARRAY_SIZE(sm8150_ufsphy_serdes),
+         |                                   ^~~~~~~~~~
 
-> +       .lanes                  = 1,
-> +
-> +       .tbls = {
-> +               .serdes         = sdm845_ufsphy_serdes,
-> +               .serdes_num     = ARRAY_SIZE(sdm845_ufsphy_serdes),
-> +               .tx             = sdm845_ufsphy_tx,
-> +               .tx_num         = ARRAY_SIZE(sdm845_ufsphy_tx),
-> +               .rx             = sm7150_ufsphy_rx,
-> +               .rx_num         = ARRAY_SIZE(sm7150_ufsphy_rx),
-> +               .pcs            = sm7150_ufsphy_pcs,
-> +               .pcs_num        = ARRAY_SIZE(sm7150_ufsphy_pcs),
-> +       },
-> +       .tbls_hs_b = {
-> +               .serdes         = sdm845_ufsphy_hs_b_serdes,
-> +               .serdes_num     = ARRAY_SIZE(sdm845_ufsphy_hs_b_serdes),
-> +       },
-> +       .clk_list               = sdm845_ufs_phy_clk_l,
-> +       .num_clks               = ARRAY_SIZE(sdm845_ufs_phy_clk_l),
-> +       .vreg_list              = qmp_phy_vreg_l,
-> +       .num_vregs              = ARRAY_SIZE(qmp_phy_vreg_l),
-> +       .regs                   = ufsphy_v3_regs_layout,
 
-sdm845 has .no_pcs_sw_reset set to true. Do we need to set it for this PHY?
+vim +380 drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
 
-> +};
-> +
->  static const struct qmp_phy_cfg sm8150_ufsphy_cfg = {
->         .lanes                  = 2,
->
-> @@ -1560,6 +1614,9 @@ static const struct of_device_id qmp_ufs_of_match_table[] = {
->         }, {
->                 .compatible = "qcom,sm6350-qmp-ufs-phy",
->                 .data = &sdm845_ufsphy_cfg,
-> +       }, {
-> +               .compatible = "qcom,sm7150-qmp-ufs-phy",
-> +               .data = &sm7150_ufsphy_cfg,
->         }, {
->                 .compatible = "qcom,sm8150-qmp-ufs-phy",
->                 .data = &sm8150_ufsphy_cfg,
-> --
-> 2.39.2
->
-
+   370	
+   371	static const struct qmp_phy_init_tbl sm7150_ufsphy_pcs[] = {
+   372		QMP_PHY_INIT_CFG(QPHY_V3_PCS_UFS_RX_SIGDET_CTRL2, 0x6f),
+   373		QMP_PHY_INIT_CFG(QPHY_V3_PCS_UFS_TX_LARGE_AMP_DRV_LVL, 0x0f),
+   374		QMP_PHY_INIT_CFG(QPHY_V3_PCS_UFS_TX_SMALL_AMP_DRV_LVL, 0x02),
+   375		QMP_PHY_INIT_CFG(QPHY_V3_PCS_UFS_RX_SYM_RESYNC_CTRL, 0x03),
+   376		QMP_PHY_INIT_CFG(QPHY_V3_PCS_UFS_TX_MID_TERM_CTRL1, 0x43),
+   377		QMP_PHY_INIT_CFG(QPHY_V3_PCS_UFS_RX_SIGDET_CTRL1, 0x0f),
+   378		QMP_PHY_INIT_CFG(QPHY_V3_PCS_UFS_RX_MIN_HIBERN8_TIME, 0xFF),
+   379		QMP_PHY_INIT_CFG(QPHY_V3_PCS_UFS_MULTI_LANE_CTRL1, 0x02),
+ > 380	};)
+   381	
 
 -- 
-With best wishes
-Dmitry
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests
 
 -- 
 linux-phy mailing list
