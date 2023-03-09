@@ -4,59 +4,52 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7DC52C64EC4
-	for <linux-phy@archiver.kernel.org>; Thu,  9 Mar 2023 14:16:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BED76C64EC4
+	for <linux-phy@archiver.kernel.org>; Thu,  9 Mar 2023 15:15:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/MTIAx6HUqM9tuSWJ+Hu3o3UrtgrlJFLv7xsRziTiAo=; b=oFLUcDiUT/eHTC
-	1/Dae6UMMYXVJPq6zcUwWYtlPP0ZUZGOa5eFqZw0e45RBR1fvWTG7LdCuQNby58gDz7E8Y/4NW0gT
-	in8ZqUiX8CXP6FXJ1R7VllwCgs/8NuXKpz+B9yfry1KX86NWIbwHSbSfgbUmTNW59+Tudw5XRlg+P
-	vttyzm4KANudXRI7hAZPifvk0pzYHh6ZioPRGUvutRHZHJLr4ui9DUAiX+WqqB2QPPx0oNEAAEsvw
-	MFd+ojIjruZTXg0JdsKNKsSiJasMZid0I/RxEANkaIZkWeTaa6LgVYFhom4iqwmgYrFIDr/3MkLBM
-	UcK6gIE2ycCO/GREHuZA==;
+	List-Owner; bh=LIeLcB+Y2gnXsncYHaHKm2Jkkzsluj+vVa8aDJ9Ebsc=; b=trSml3pVsZsFjP
+	ltgPlUQexxS8xB1K9dfuKSPQlnViyBs9hLJK4VqFOeUquP/l2AXmo9KiO5CI4f/a5jgpo1HIImM0R
+	b0CF1f2wiMqrBS+Qb1agY65kXGdviJSYZfMu+z9R2ixQOXI4XJho52AX07+tEAswZy1yvKAY2LCU2
+	hfpchyCRUOl1L0W5QpcXsRXEDhi9VQ34RRzA4xS52PZkPxq0P/D/FYak1DMAE/KNoEjPGRBCGefYh
+	3FQ4bTbUGtUlwF7cdRq6jIsS6hvgpnpozTFfVmWl0lyppNMvmB2Glo+Z1OjQh2wwF0qWNFEzCI2TG
+	WAvTA/Xfb9ckUodHpwfQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1paH3x-00AQOa-Uw; Thu, 09 Mar 2023 14:16:09 +0000
-Received: from mga01.intel.com ([192.55.52.88])
+	id 1paHz2-00ApLT-Qf; Thu, 09 Mar 2023 15:15:08 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1paH15-00AP3w-Ay; Thu, 09 Mar 2023 14:13:13 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1678371191; x=1709907191;
-  h=message-id:date:mime-version:subject:to:cc:references:
-   from:in-reply-to:content-transfer-encoding;
-  bh=3A65IKB9d2IfLyHPo1ILLZ4ADkCpExI8AS30ua1GCVc=;
-  b=UU0daj3DMTVXDKihz8eWwYLNKxaQAKvDKaHJcY5NyNrTVTHnMD4KbIq8
-   Bavz26bSXuo3qCHOZt0FNGTR2/kyU7U86aQTbPdgsJ/y+afiDgy1I99me
-   j1k04llh7iPy9/xm8laGNSFQ/tZqRapMyzHbpV27OMLN43UV3PT/B/Sar
-   shN3uR5iyBTqFhzw5uq5fKw7kV2wQmtJeW/E7cZpiUfApImFdttMxvj0z
-   Tqu29HQeuKG0SfS479A+O40vD/dDrONF+arCChUz/FKRYxV9NdfHaQ2Gx
-   7w0G4OG6+NNApcOnG8jbWG9rb5Zqz6onxOHX5AmExM8GT8OhxL4uBnUW0
-   g==;
-X-IronPort-AV: E=McAfee;i="6500,9779,10643"; a="364093941"
-X-IronPort-AV: E=Sophos;i="5.98,246,1673942400"; 
-   d="scan'208";a="364093941"
-Received: from fmsmga002.fm.intel.com ([10.253.24.26])
-  by fmsmga101.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 09 Mar 2023 06:13:07 -0800
-X-ExtLoop1: 1
-X-IronPort-AV: E=McAfee;i="6500,9779,10643"; a="787575064"
-X-IronPort-AV: E=Sophos;i="5.98,246,1673942400"; 
-   d="scan'208";a="787575064"
-Received: from ahunter6-mobl1.ger.corp.intel.com (HELO [10.0.2.15]) ([10.251.219.30])
-  by fmsmga002-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 09 Mar 2023 06:13:01 -0800
-Message-ID: <ef2f8faf-76cc-d221-8281-cc7b8cb68485@intel.com>
-Date: Thu, 9 Mar 2023 16:12:55 +0200
+	id 1paHiC-00AjFI-9J; Thu, 09 Mar 2023 14:57:45 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 4F7BB61B80;
+	Thu,  9 Mar 2023 14:57:43 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id AE7DEC433EF;
+	Thu,  9 Mar 2023 14:57:38 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1678373862;
+	bh=lrCJhGy31REAFHmpoQYpEnNmpg1BxinPjcIzS4zLQwc=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=dwRK5TvFHEOjFA1gJxyzNNpaoZTlAyUA24jtVNCJCjO9bjjEnNS6Hzvbcwkj5rQ7U
+	 x6Aj/t6wb89PkNSrXXWha6lDESk8LQoGk/CTDCYQLZwj8b3CvyX9QknJmnWxAvCOEC
+	 dxB5eqLSRu9mRE0aKKL2AIrXGlKd7GIjoXdt9/Ou3bFB+NHs9VsMnOedyDU6C8Ub4V
+	 Z6MCKmDWKg0KGlhceC4CSE5Rlyy5SG+LNT4ZMFQHR2yeMUeOlBzJR8OmFEfFRxLrVl
+	 Wbn3CWxeMXstVI9B3TDgUR+0fwHdclevSCbytb0fwuwmsO3z2p72+4iB/kJ1UFhCVT
+	 qOAS9y0fJKdhg==
+Message-ID: <50c2b5de-4aed-ebd5-86e9-55813e740869@kernel.org>
+Date: Thu, 9 Mar 2023 15:57:36 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Firefox/102.0 Thunderbird/102.8.0
+ Thunderbird/102.8.0
 Subject: Re: [PATCH v1 2/4] Revert "dt-bindings: mmc: Add bindings for Intel
  Thunder Bay SoC"
 Content-Language: en-US
-To: Krzysztof Kozlowski <krzk@kernel.org>, rashmi.a@intel.com,
+To: Adrian Hunter <adrian.hunter@intel.com>, rashmi.a@intel.com,
  ulf.hansson@linaro.org, michal.simek@xilinx.com, linux-mmc@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, robh+dt@kernel.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, kishon@ti.com,
@@ -69,13 +62,12 @@ Cc: kris.pan@linux.intel.com, mahesh.r.vaidya@intel.com,
 References: <20230124054427.28808-1-rashmi.a@intel.com>
  <20230124054427.28808-2-rashmi.a@intel.com>
  <c850df25-57b8-3172-8e5c-c466dc8556cd@kernel.org>
-From: Adrian Hunter <adrian.hunter@intel.com>
-Organization: Intel Finland Oy, Registered Address: PL 281, 00181 Helsinki,
- Business Identity Code: 0357606 - 4, Domiciled in Helsinki
-In-Reply-To: <c850df25-57b8-3172-8e5c-c466dc8556cd@kernel.org>
+ <ef2f8faf-76cc-d221-8281-cc7b8cb68485@intel.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+In-Reply-To: <ef2f8faf-76cc-d221-8281-cc7b8cb68485@intel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230309_061311_540384_ACB614CE 
-X-CRM114-Status: GOOD (  18.80  )
+X-CRM114-CacheID: sfid-20230309_065744_457184_C9296F8F 
+X-CRM114-Status: GOOD (  16.32  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,49 +84,56 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 24/01/23 13:31, Krzysztof Kozlowski wrote:
-> On 24/01/2023 06:44, rashmi.a@intel.com wrote:
->> From: "A, Rashmi" <rashmi.a@intel.com>
+On 09/03/2023 15:12, Adrian Hunter wrote:
+> On 24/01/23 13:31, Krzysztof Kozlowski wrote:
+>> On 24/01/2023 06:44, rashmi.a@intel.com wrote:
+>>> From: "A, Rashmi" <rashmi.a@intel.com>
+>>>
+>>> This reverts commit ab991c05c42853f0b6110022db9bf30fcc6323dd.
 >>
->> This reverts commit ab991c05c42853f0b6110022db9bf30fcc6323dd.
-> 
-> Please use scripts/get_maintainers.pl to get a list of necessary people
-> and lists to CC.  It might happen, that command when run on an older
-> kernel, gives you outdated entries.  Therefore please be sure you base
-> your patches on recent Linux kernel.
-> 
+>> Please use scripts/get_maintainers.pl to get a list of necessary people
+>> and lists to CC.  It might happen, that command when run on an older
+>> kernel, gives you outdated entries.  Therefore please be sure you base
+>> your patches on recent Linux kernel.
 >>
->> Revert Thunder Bay specific code as the product got cancelled
->> and there are no end customers.
+>>>
+>>> Revert Thunder Bay specific code as the product got cancelled
+>>> and there are no end customers.
+>>>
+>>> Signed-off-by: A, Rashmi <rashmi.a@intel.com>
+>>> Reviewed-by: Hunter, Adrian <adrian.hunter@intel.com>wq
 >>
->> Signed-off-by: A, Rashmi <rashmi.a@intel.com>
->> Reviewed-by: Hunter, Adrian <adrian.hunter@intel.com>wq
-> 
-> Stray characters.
-> 
->> ---
->>  .../devicetree/bindings/mmc/arasan,sdhci.yaml | 25 -------------------
->>  1 file changed, 25 deletions(-)
+>> Stray characters.
 >>
->> diff --git a/Documentation/devicetree/bindings/mmc/arasan,sdhci.yaml b/Documentation/devicetree/bindings/mmc/arasan,sdhci.yaml
->> index 4053de758db6..0d5d21dd30bb 100644
->> --- a/Documentation/devicetree/bindings/mmc/arasan,sdhci.yaml
->> +++ b/Documentation/devicetree/bindings/mmc/arasan,sdhci.yaml
->> @@ -88,12 +88,6 @@ properties:
->>          description:
->>            For this device it is strongly suggested to include
->>            arasan,soc-ctl-syscon.
->> -      - items:
->> -          - const: intel,thunderbay-sdhci-5.1   # Intel Thunder Bay eMMC PHY
->> -          - const: arasan,sdhci-5.1
+>>> ---
+>>>  .../devicetree/bindings/mmc/arasan,sdhci.yaml | 25 -------------------
+>>>  1 file changed, 25 deletions(-)
+>>>
+>>> diff --git a/Documentation/devicetree/bindings/mmc/arasan,sdhci.yaml b/Documentation/devicetree/bindings/mmc/arasan,sdhci.yaml
+>>> index 4053de758db6..0d5d21dd30bb 100644
+>>> --- a/Documentation/devicetree/bindings/mmc/arasan,sdhci.yaml
+>>> +++ b/Documentation/devicetree/bindings/mmc/arasan,sdhci.yaml
+>>> @@ -88,12 +88,6 @@ properties:
+>>>          description:
+>>>            For this device it is strongly suggested to include
+>>>            arasan,soc-ctl-syscon.
+>>> -      - items:
+>>> -          - const: intel,thunderbay-sdhci-5.1   # Intel Thunder Bay eMMC PHY
+>>> -          - const: arasan,sdhci-5.1
+>>
+>> Instead should be made rather deprecated, unless you are sure there is
+>> no single person in the world using the bindings (e.g. with BSD or
+>> bootloader)?
 > 
-> Instead should be made rather deprecated, unless you are sure there is
-> no single person in the world using the bindings (e.g. with BSD or
-> bootloader)?
+> I am sorry but this is not clear to me.  As I understand it,
+> the hardware was never released, so the binding serves no
+> purpose.  Should it be removed or "deprecated"?
 
-I am sorry but this is not clear to me.  As I understand it,
-the hardware was never released, so the binding serves no
-purpose.  Should it be removed or "deprecated"?
+Hm, commit msg said cancelled and I understood that it was released and
+then got cancelled. But indeed maybe just remove it.
+
+Best regards,
+Krzysztof
 
 
 -- 
