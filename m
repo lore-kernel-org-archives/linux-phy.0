@@ -4,84 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C7528C742A7
-	for <linux-phy@archiver.kernel.org>; Thu,  9 Mar 2023 08:53:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6F995C64EC4
+	for <linux-phy@archiver.kernel.org>; Thu,  9 Mar 2023 09:16:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rVj9un+g9Je28h/MGMnwRFAgEmtPU7/3qkEx7alkKd4=; b=mn6vaE7K1y24p5
-	SkoNA6p3rdNkFaMhTxZhPscfebXHre1VtH5hggoliP0+TYV1b6hxvbgdr7aBHZYceFqabROBHdesV
-	3IXexlltqNikRrP4/1vqSIiPArsxyNZRvZ7b5CR4jxeY4MGN9bo1Um2hxda9wAMXtZKM2WYhyNnsl
-	l53sDOu/HHOPTZrYz7IkRV2pUXgixjEgmErwqAVhc+1xycx0UUSNnYYKB2gwfE+XxHlK2piCmbcww
-	FNce489GkXKR9RMmGdh9FP6TeIS4e8ZP61zHXMkBbvL3ltNmpExhmoHo14sAQuBjBzpq24Eh/n2d5
-	QvArVfm3z7I/bv5EXpMw==;
+	List-Owner; bh=AgCD6cBC0nvOdvUy3NVI/vbihaPpjI+LWbIAuo/65Hk=; b=RYD2B1O2Ki8nPH
+	nBXy7VWZ8gDWBRb0WsQXjtcxrnqzm45QoLHxQYSadYrRBcSu9Lf9ZuRKmfrJn9uMX4eAtB7nWhbrD
+	8y/fH3+RKHmXWtvOelhU8xk+4GxmT1PE5iwXXXzeLENJVVWCspB2fES0SHpj87+/MDKvF2dwIBrlf
+	EfAXdXD/Z42cVFnxoRu1Yh1it09tVuAdmFXiW/4zKZb0aoZfYe3/HDNFF8LlGyFuDpMYPI+jyD0qX
+	sIvzpDGHBcCcxL5ihk0Ct/byyI0P4AXi3ty9gOSajeAVix3ao91SGpi2M/lkKpXY0GocuKyr9gYUK
+	NRUyTxyaPpY63vfYDF3A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1paC1P-008eEO-3t; Thu, 09 Mar 2023 08:53:11 +0000
-Received: from mail-ed1-x535.google.com ([2a00:1450:4864:20::535])
+	id 1paCOC-008kGa-SO; Thu, 09 Mar 2023 09:16:44 +0000
+Received: from mail-yw1-x112b.google.com ([2607:f8b0:4864:20::112b])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1paC1N-008eD3-74
-	for linux-phy@lists.infradead.org; Thu, 09 Mar 2023 08:53:10 +0000
-Received: by mail-ed1-x535.google.com with SMTP id o12so3995720edb.9
-        for <linux-phy@lists.infradead.org>; Thu, 09 Mar 2023 00:53:08 -0800 (PST)
+	id 1paCNy-008kAk-5L
+	for linux-phy@lists.infradead.org; Thu, 09 Mar 2023 09:16:31 +0000
+Received: by mail-yw1-x112b.google.com with SMTP id 00721157ae682-536be69eadfso23750397b3.1
+        for <linux-phy@lists.infradead.org>; Thu, 09 Mar 2023 01:16:28 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1678351987;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=C/wZHW13/mQxhk8emF0uZdwKLstd4GE6HEzP/De9WH0=;
-        b=BG/dRpZ/NUnb1+JWPtygo8p1kSQMRnFW2N3kkWid/xyc/HkSTvmUk9LYLANpCKlu80
-         ijlTDK8PShVim5FqfPNEuvWWWlOQWrA5H8sQ8aIU48nfJcHbFNJf29KTMZuo+qQeW7bg
-         wBs8egBzAiYlDjlOXI+qwiNk9uASGbvRxSSXVujkHK+hc46k7l1Dev7tCEmh8dErpPaL
-         jr9rUJyU36yKdte7YsogC0NVMti0qtH9f5zTxw4vMzecpYwhRX5UA8j91xiswZBuZ23D
-         9uG3OR0bxFLXKVCXeyqf67frBAGwLSGKyYGl4TrQHd4vNDHPELSYELIQFaVQzOWMxrg6
-         lcOg==
+        d=linaro.org; s=google; t=1678353388;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=O4oOjO1iZqHHqppZpeEVZpEKQdPcmPUQRfadcX5/5t0=;
+        b=l62t2ivlUxilMsIapwCQyovxHKcjFK0D4LIQAKwW2mD7FsZY4aDwDtSxJ7m/K8NmKU
+         AJdQyIoT9ZWXji9+bD5ZurYVNpOiHzkB+kyAceWN/C+vqyHBsqWxFBIz0gIcXEU26XYP
+         bGq+xR7SNxzStcFc98oMENNMTFUqLRv00f4ca3YRP9hrFQ5iiAGTyWbVDmTPcBjDcaLh
+         IlfoxCyIw1UDxoTylhClVL/Kg3AcCk5cE9JmnflkYohAdEeI3uKYp9tbvftu+zZg/O4l
+         GFOJ7buxjOQ4QXp7E5LpS0pj8Nl26YP6QkXVQFvGPTiT3bw4KmkTs3rpR4wxRJBlc8UZ
+         KlQA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112; t=1678351987;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=C/wZHW13/mQxhk8emF0uZdwKLstd4GE6HEzP/De9WH0=;
-        b=lkK7Y2nSE4rW/iduIbvpUvqXt9AYcGzKlVKyBQ8Fkl6CM1sIlqSoWG5Yt/qqC95/zV
-         t0irxXBom8BqR6QYKJOzEbw24VFLhYCXIoNLmKLJoavO+yDkG8RegGk+jYzcJEL/3aGw
-         vVy9Jce1xWbcoBrfWQ8uza0YykY7XJrkQ8sLJ+tIBtXL6NXvvEdjll89RgkG09JAiY5G
-         hsxtzt9cNflj8ttV2yUfOTf9HVd3JjeBJSGaQjar2u2o+outlk4E6+CQRiidZ/WxOqPu
-         nFddStkx67KeAzS2ELGySTZ7zLY8rc2YF2IkUtRhKSjypuqUndcQUTa8QAzgLnnDGFzL
-         HgZw==
-X-Gm-Message-State: AO0yUKWWHUA5JoI3RHx7RH3jZGYa5jJeEZGWy8KUij2fo7M4hroSHHa6
-	rWqQ0DtHhED4ySUtnpYNZ42Pcg==
-X-Google-Smtp-Source: AK7set/N0j1iC6/UdLiys36rU0s0N5NOAh+G6YeJK2n83X4YAfEBPymjnqnnbCLmls9KsXDe+7w+Gg==
-X-Received: by 2002:a17:906:eecb:b0:8f1:4bef:b0e7 with SMTP id wu11-20020a170906eecb00b008f14befb0e7mr32604866ejb.1.1678351987755;
-        Thu, 09 Mar 2023 00:53:07 -0800 (PST)
-Received: from ?IPV6:2a02:810d:15c0:828:7ee2:e73e:802e:45c1? ([2a02:810d:15c0:828:7ee2:e73e:802e:45c1])
-        by smtp.gmail.com with ESMTPSA id s26-20020a50ab1a000000b004bf999f8e57sm9194133edc.19.2023.03.09.00.53.06
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 09 Mar 2023 00:53:07 -0800 (PST)
-Message-ID: <192a29e3-86d7-5592-f9b7-932e07e5f7bb@linaro.org>
-Date: Thu, 9 Mar 2023 09:53:06 +0100
+        d=1e100.net; s=20210112; t=1678353388;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=O4oOjO1iZqHHqppZpeEVZpEKQdPcmPUQRfadcX5/5t0=;
+        b=z0GsFzYU29qWPUqi6foBoRXCin02aX/gaS79bTbi66jtU/d2o4s3CrveYZBcSHCVWT
+         UCHob6g15GYF1ogqxSMaLZCQ2KnbjxRTgMmDDF6lZ/eJic/65w2F9AD8czjR9vPwaw2Y
+         zi+UQLK7w6rEcmAdkrvY1vLpwNS4EsECAv0Yf7L0ejYZR4VrorC3tbyUgOuO9pUSwoXH
+         FDJxeKk89O3I5wz2/z9Dv+UpKii0agUV1AqaLjxez+TDYbwTrPgGFe1ZqeW500clXIhH
+         7/eBS4ZIalU9Xe8lBFb9XQt0uTjLGa68pUbswZxhgrL7SpqYau8TdQwV8aP5nXs750aR
+         aRjQ==
+X-Gm-Message-State: AO0yUKXWn+sZFVaYUlHWtq4+1e5OGYZk2xXz3j6Rxqu4h23xkSKCsbaK
+	A8yjMX4KufshsZrUDLZCarCMxfZVFsAbWvS+43ZHww==
+X-Google-Smtp-Source: AK7set/xO9yLZW6FEwts8sv8BrRfJLxSKPDPCskVFgtuZJ0c4xCwq7UwoYUvM1OKfG5y166F1nne9p8uWnZAcO2Kp/8=
+X-Received: by 2002:a81:4312:0:b0:52e:b718:24d5 with SMTP id
+ q18-20020a814312000000b0052eb71824d5mr13578418ywa.9.1678353387956; Thu, 09
+ Mar 2023 01:16:27 -0800 (PST)
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.8.0
-Subject: Re: [PATCH v2 1/2] dt-bindings: phy: qcom,qmp: Add SDX65 QMP PHY
- binding
-Content-Language: en-US
-To: Rohit Agarwal <quic_rohiagar@quicinc.com>, agross@kernel.org,
- andersson@kernel.org, konrad.dybcio@linaro.org, vkoul@kernel.org,
- kishon@kernel.org, robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
- manivannan.sadhasivam@linaro.org
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-References: <1678283688-4020-1-git-send-email-quic_rohiagar@quicinc.com>
- <1678283688-4020-2-git-send-email-quic_rohiagar@quicinc.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <1678283688-4020-2-git-send-email-quic_rohiagar@quicinc.com>
+References: <20230306191535.1917656-1-sean.anderson@seco.com>
+ <20230306191535.1917656-4-sean.anderson@seco.com> <4c039e53-e3ca-29d7-e5ea-f24e385d28b0@linaro.org>
+ <42ccbac0-53e2-f599-fb3d-064b896bde4a@seco.com>
+In-Reply-To: <42ccbac0-53e2-f599-fb3d-064b896bde4a@seco.com>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Thu, 9 Mar 2023 10:16:16 +0100
+Message-ID: <CACRpkdaj-0dyqWdSbQbjyUed+khDLi-awgan1BnuDvuY2JBzFQ@mail.gmail.com>
+Subject: Re: [PATCH v10 03/13] dt-bindings: Convert gpio-mmio to yaml
+To: Sean Anderson <sean.anderson@seco.com>, Niall Leonard <nl250060@ncr.com>
+Cc: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, linux-phy@lists.infradead.org, 
+	Madalin Bucur <madalin.bucur@nxp.com>, linuxppc-dev@lists.ozlabs.org, 
+	devicetree@vger.kernel.org, Ioana Ciornei <ioana.ciornei@nxp.com>, 
+	Rob Herring <robh+dt@kernel.org>, Camelia Alexandra Groza <camelia.groza@nxp.com>, 
+	linux-arm-kernel@lists.infradead.org, Bagas Sanjaya <bagasdotme@gmail.com>, 
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Bartosz Golaszewski <brgl@bgdev.pl>, 
+	=?UTF-8?Q?Fern=C3=A1ndez_Rojas?= <noltari@gmail.com>, 
+	Jonas Gorski <jonas.gorski@gmail.com>, linux-gpio@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230309_005309_286919_DDC95976 
-X-CRM114-Status: UNSURE (   6.48  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230309_011630_264465_1605BBBC 
+X-CRM114-Status: GOOD (  11.28  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,29 +90,22 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 08/03/2023 14:54, Rohit Agarwal wrote:
-> Add devicetree YAML binding for Qualcomm QMP Super Speed (SS) PHY found
-
-Subject: drop second/last, redundant "binding". The "dt-bindings" prefix
-is already stating that these are bindings.
-
-> in SDX65.
-> 
-> Signed-off-by: Rohit Agarwal <quic_rohiagar@quicinc.com>
-
-With above:
-Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-
-Best regards,
-Krzysztof
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gVHVlLCBNYXIgNywgMjAyMyBhdCA0OjM14oCvUE0gU2VhbiBBbmRlcnNvbiA8c2Vhbi5hbmRl
+cnNvbkBzZWNvLmNvbT4gd3JvdGU6Cj4gT24gMy83LzIzIDAzOjQyLCBLcnp5c3p0b2YgS296bG93
+c2tpIHdyb3RlOgoKPiA+IGh0dHBzOi8vbG9yZS5rZXJuZWwub3JnL2FsbC8yMDIzMDEyNi1ncGlv
+LW1taW8tZml4LXYyLTEtMzgzOTdhYWNlMzQwQG5jci5jb20vCj4KPiBUaGFua3MgZm9yIGxpbmtp
+bmcgdG8gdGhhdC4KPgo+IEkgYmVsaWV2ZSB0aGlzIHBhdGNoIHNob3VsZCBiZSBhcHBsaWVkIGlu
+c3RlYWQgb2YgdGhhdCBvbmUgYmVjYXVzZQo+Cj4gLSBJdCBkb2N1bWVudHMgYWxsIHRoZSByZWdp
+c3RlcnMsIHdoaWNoIHdlcmUgcHJldmlvdXNseSBvbmx5IGRvY3VtZW50ZWQKPiAgIGluIHRoZSBk
+cml2ZXIKPiAtIEl0IGhhbmRsZXMgdGhlIGVuZGlhbm5lc3MgcHJvcGVydGllcy4KPiAtIEl0IGNv
+bnNvbGlkYXRlcyB0aGUgdmFyaW91cyBkZXNjcmlwdGlvbnMgb2YgdGhpcyBiaW5kaW5nIGludG8g
+b25lCj4gICBzY2hlbWEuCgpOaWFsbCBhcmUgeW91IHNlbmRpbmcgYSB2MyBvZiB0aGlzIHBhdGNo
+IHNvb24/CkluY2x1ZGUgU2VhbiBvbiB0aGUgcmV2aWV3ZXIgbGlzdCEKCllvdXJzLApMaW51cyBX
+YWxsZWlqCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFk
+ZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51
+eC1waHkK
