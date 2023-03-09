@@ -4,68 +4,108 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 572F0C64EC4
-	for <linux-phy@archiver.kernel.org>; Thu,  9 Mar 2023 04:10:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 42B43C64EC4
+	for <linux-phy@archiver.kernel.org>; Thu,  9 Mar 2023 06:17:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YxJLG5t4cRyoQ9HxYvslCCpAQSR7hnCNp73oYcJD9Cw=; b=Z4T2bRJlwFoGEJ
-	iARuJeZViLcySDmm1LAENLabKcYl2n/ymAKZ2x139sXkIcjU3s4LQ2COQcnofadiMoL2g6ugx96xQ
-	lGMwzoKGlGOoJG3az7J0Qmx9rFwBLGZm3SkaxjY3jQjSUTUDaAjpU2zzZQUwd9ITTLveOhSRHpD7P
-	6u0XoLYY3Wgwg7J0nKj/bsjIeKOkNw4FJ3guilm9CQTSO/I7GG2kHON9VVNeXWOW7V+/LMPc87Ek0
-	S4H/YWUL0qzM63kx5cke2iaGrLnvDXqO/LxwjmT0XUG1cXb+Gjb7hkLQ7vNpU9tJ3t5HUxTHj4oqX
-	zLRPc27pq244qif6v1iQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=aq1EYqoYC92UdfmOlmVuuLUREDAwe0rOOiK64PO4SIw=; b=a7pvDgLRehm3td
+	wvg+N6UYieRksA/FHw//VGALttA8bxToiqGvWCKpFSO5rFjwruD3G51nq1eZ6jNdxWPyCkvoNGuzb
+	lCHiruF1m/zGGcSfGIdNmQ3nsNtUA2f5X+891OmPpJgQuiSBKyzG48+MoGn9/pqx6PsZNqWyQbu6k
+	CbZrnauaRxYqLUdDCO8rxb4/NlTBqsW5/d/FcocpWPhBZHA7IB5t9dqMsMRDDy/GSxBcmHdwci7Zx
+	dbPvfHl+5FLTL1VEl0Eipfjh5a3kbZMINFNgjPjYH7+yRmVg+SH7ubZJwCPO3dhCHqFZm5WagNXcs
+	S7w1p1o3xMgg/fUcdBpw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pa7c7-007kvQ-Mj; Thu, 09 Mar 2023 04:10:47 +0000
-Received: from ex01.ufhost.com ([61.152.239.75])
-	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pa7c2-007ksO-PN; Thu, 09 Mar 2023 04:10:46 +0000
-Received: from EXMBX166.cuchost.com (unknown [175.102.18.54])
-	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
-	(Client CN "EXMBX166", Issuer "EXMBX166" (not verified))
-	by ex01.ufhost.com (Postfix) with ESMTP id CD73A24DC7D;
-	Thu,  9 Mar 2023 12:10:08 +0800 (CST)
-Received: from EXMBX071.cuchost.com (172.16.6.81) by EXMBX166.cuchost.com
- (172.16.6.76) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Thu, 9 Mar
- 2023 12:10:08 +0800
-Received: from [192.168.125.108] (183.27.96.115) by EXMBX071.cuchost.com
- (172.16.6.81) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Thu, 9 Mar
- 2023 12:10:07 +0800
-Message-ID: <e8462381-5006-18ab-cb98-91e2a6bc39e5@starfivetech.com>
-Date: Thu, 9 Mar 2023 12:10:06 +0800
+	id 1pa9bC-0082my-KH; Thu, 09 Mar 2023 06:17:58 +0000
+Received: from mail-mw2nam12on20618.outbound.protection.outlook.com ([2a01:111:f400:fe5a::618] helo=NAM12-MW2-obe.outbound.protection.outlook.com)
+	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
+	id 1pa9b8-0082mC-Fm
+	for linux-phy@lists.infradead.org; Thu, 09 Mar 2023 06:17:57 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=VcjHJlGnilQ4tUrAlGpN6GSh+pGb68u6owLUzvD2cBb2d3xgFtIFloJXmN2PhzbJUO9VYmwAJTcaCEgYHq6HDFpdH0dwzD0uX+EyJ7/jn6XKZZ4/7Ix7PGBWMs6sdm3wODRACwkM0AIwVsmt7akJx+7W6Jd4PD3r5usM7+BLcndEAsyGT1IgJmvfDTzAIeP2oZOF+KOU0M3V0LQo3wmoBpCmOUOHG+itPNCbJtRI1nEATMFWB+Y6O32jypn7VPk2LrJ6+p8wAS20ox3a6LuXNK1WNoFDk5+i5lYoTCSdJLRIQOnUvQCuIG6K4rb1KivFu2Ez1X1L/7dKFxoGURM24A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=N/w0fpVorq0Ul+NeMg1CUoIQdPfqxM6d1zbiK3ggKDE=;
+ b=XT8G5qQxj2ax4l1gsJaopIs6oNFp9rQA57QoHli+OkK+Dfs1Zv3SlS+DocoOebAqbXLpBwdwvPm8kZdt1Pa48r9rQpQrt3/rDuFYmNW9KY+CESvG4R1GOfOZCDgM7alPAaI1is7x1/eoS3kr62Gvkf38EyvJkQ09OO30xZ/z2ymfoVhMBMGy1/Cy68vb8bJMbxUqfy/oYU+k+5fIr691w6eFFjpFJGETVvLloQl9zeeVgNSxKTpkUhP1+KGvIN+jl7O4fw6nvmCrNfKEsOv2b9E3D2EsyDK8OaJsBebBdomVl88se6Bg4ITam4W58iyJHRnFhZdofkxvYLqP0UTpnA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 216.228.117.161) smtp.rcpttodomain=kernel.org smtp.mailfrom=nvidia.com;
+ dmarc=pass (p=reject sp=reject pct=100) action=none header.from=nvidia.com;
+ dkim=none (message not signed); arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=N/w0fpVorq0Ul+NeMg1CUoIQdPfqxM6d1zbiK3ggKDE=;
+ b=rvdgJS14Tcz4/VuWRDUXnKIbxMdZLBW7hZrgFcZQc5pFIhwkbYiOQkNA2HaTfv5CQKIN0kzUTzo3zLUdVbXsjzA6GWXwNxkAyLKky/xYR3+FIOjcyIfl6X/EWnO8Tsx1ja9z0kWzuFu5vrRGMKj56cVghy5oTZwSZSGWeDgF7OLkraZQg9J1Oz72hPPvJYv3w+ZkLe+UaZLBviYBFPxagDahA7jcT+qVy8AXzcasUweeNQbod+QK0+OSVAxxY8wDV4xGvnZApS7Sqxa0VLId7gRdikzZi5D/2VmgjPoBsSN2pNoqAdMf5uEZoDTh5an5ZAl5Lga2f4LGBY9iwy38UQ==
+Received: from MN2PR05CA0038.namprd05.prod.outlook.com (2603:10b6:208:236::7)
+ by CH0PR12MB5059.namprd12.prod.outlook.com (2603:10b6:610:e2::6) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6178.19; Thu, 9 Mar
+ 2023 06:17:47 +0000
+Received: from BL02EPF0000EE3F.namprd05.prod.outlook.com
+ (2603:10b6:208:236:cafe::d6) by MN2PR05CA0038.outlook.office365.com
+ (2603:10b6:208:236::7) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6178.19 via Frontend
+ Transport; Thu, 9 Mar 2023 06:17:47 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 216.228.117.161)
+ smtp.mailfrom=nvidia.com; dkim=none (message not signed)
+ header.d=none;dmarc=pass action=none header.from=nvidia.com;
+Received-SPF: Pass (protection.outlook.com: domain of nvidia.com designates
+ 216.228.117.161 as permitted sender) receiver=protection.outlook.com;
+ client-ip=216.228.117.161; helo=mail.nvidia.com; pr=C
+Received: from mail.nvidia.com (216.228.117.161) by
+ BL02EPF0000EE3F.mail.protection.outlook.com (10.167.241.133) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.6178.12 via Frontend Transport; Thu, 9 Mar 2023 06:17:47 +0000
+Received: from rnnvmail201.nvidia.com (10.129.68.8) by mail.nvidia.com
+ (10.129.200.67) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.986.5; Wed, 8 Mar 2023
+ 22:17:31 -0800
+Received: from 0e64808-lcelt.nvidia.com (10.126.230.37) by
+ rnnvmail201.nvidia.com (10.129.68.8) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.986.37; Wed, 8 Mar 2023 22:17:28 -0800
+From: Haotien Hsu <haotienh@nvidia.com>
+To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>
+CC: JC Kuo <jckuo@nvidia.com>, Thierry Reding <thierry.reding@gmail.com>,
+	Jonathan Hunter <jonathanh@nvidia.com>, Wayne Chang <waynec@nvidia.com>,
+	<linux-phy@lists.infradead.org>, <linux-tegra@vger.kernel.org>,
+	<linux-kernel@vger.kernel.org>, Henry Lin <henryl@nvidia.com>, Haotien Hsu
+	<haotienh@nvidia.com>
+Subject: [PATCH] phy: tegra: xusb: Support sleepwalk for Tegra234
+Date: Thu, 9 Mar 2023 14:17:08 +0800
+Message-ID: <20230309061708.4156383-1-haotienh@nvidia.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.8.0
-Subject: Re: [PATCH v2 1/3] dt-bindings: phy: Add StarFive JH7110 USB
- dt-binding
-Content-Language: en-US
-To: Rob Herring <robh@kernel.org>
-CC: Emil Renner Berthing <emil.renner.berthing@canonical.com>, Vinod Koul
-	<vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, "Krzysztof
- Kozlowski" <krzysztof.kozlowski+dt@linaro.org>, Pawel Laszczak
-	<pawell@cadence.com>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>, "Peter
- Chen" <peter.chen@kernel.org>, Roger Quadros <rogerq@kernel.org>, "Philipp
- Zabel" <p.zabel@pengutronix.de>, Conor Dooley <conor@kernel.org>, "Paul
- Walmsley" <paul.walmsley@sifive.com>, Palmer Dabbelt <palmer@dabbelt.com>,
-	Albert Ou <aou@eecs.berkeley.edu>, <devicetree@vger.kernel.org>,
-	<linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-	<linux-usb@vger.kernel.org>, <linux-riscv@lists.infradead.org>
-References: <20230308082800.3008-1-minda.chen@starfivetech.com>
- <20230308082800.3008-2-minda.chen@starfivetech.com>
- <20230308181236.GA3512870-robh@kernel.org>
-From: Minda Chen <minda.chen@starfivetech.com>
-In-Reply-To: <20230308181236.GA3512870-robh@kernel.org>
-X-Originating-IP: [183.27.96.115]
-X-ClientProxiedBy: EXCAS066.cuchost.com (172.16.6.26) To EXMBX071.cuchost.com
- (172.16.6.81)
-X-YovoleRuleAgent: yovoleflag
+X-Originating-IP: [10.126.230.37]
+X-ClientProxiedBy: rnnvmail202.nvidia.com (10.129.68.7) To
+ rnnvmail201.nvidia.com (10.129.68.8)
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: BL02EPF0000EE3F:EE_|CH0PR12MB5059:EE_
+X-MS-Office365-Filtering-Correlation-Id: b6eb8e1f-00a3-4c24-ce7f-08db206600c7
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: 	zVsDxBMT6aPJI4iguKuU94gTyY4VNPXJoJIh16kX99UXlkxRLqdWSYGx8C/MW1dVqtKcsJoBbBFb9nK/67npAAU87i4E/Q7M1OHglYJpbRTDZTtqiDWm7G3/mUkt49tJyz4M7LoQ4PQRTeNUmfejaH+ioO4lkeqAUC31psr3BQyRwfDDqLzpdHitIl6o6PIQIbV/bd1WIibXSYgEMJAJvBvmie0bxSDYLgzYRZWsYcHWclN347Kws1KTH8oJYUuIGhBYU6703h5lGia39wZolo7x2gLu7/8EDC0cObwiBEw63c3W3xVVzKIa6R7vTOXTJZWHXe0LiJ+oleWJoHLAar3FrS/rAVu/++yko4KsV+jbGdhHFzdgGWxAQN0nxappU1f6yMWImQop9hdSArb7ap+C0M69leSW0xdZHLMbTAosWZT8k1uJPUwpakynz9g3vNHumc4RLGA0ZZNOIsa9f9YSHrnrixdB+4H7IYuwC2xY9Yoy7tdna+6W2jRaGwwyKaP2CekI64tfKaQ1fwLB66YJHYsERTcvX8SDAzhnVgHWkdsAe0hrz06UxcGltV0QBRYXhbcMIe6uNZEwP0A75t/y9oJLvhIy55+QgZyrx3EPVd8DF1gOp5zxR5YGF9oe14mv/X3LIetPRJiBTUSbcmWERneu9RbnRYEPS4UP/RBGtd+e0n1CIY5AkM5w5zCh1j3TrNvxv72Y/5MQBncicrV5IqLWpQeB/M7bu1SrSenBDlEhRTQnR4CYoLHW6AU5
+X-Forefront-Antispam-Report: 	CIP:216.228.117.161;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc6edge2.nvidia.com;CAT:NONE;SFS:(13230025)(4636009)(346002)(136003)(39860400002)(376002)(396003)(451199018)(40470700004)(46966006)(36840700001)(83380400001)(47076005)(426003)(336012)(2906002)(82310400005)(2616005)(70586007)(70206006)(8676002)(7696005)(5660300002)(36860700001)(186003)(26005)(16526019)(41300700001)(7636003)(82740400003)(36756003)(107886003)(6666004)(40460700003)(1076003)(478600001)(4326008)(54906003)(356005)(8936002)(86362001)(110136005)(316002)(40480700001);DIR:OUT;SFP:1101;
+X-OriginatorOrg: Nvidia.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 09 Mar 2023 06:17:47.3029
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: b6eb8e1f-00a3-4c24-ce7f-08db206600c7
+X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[216.228.117.161];Helo=[mail.nvidia.com]
+X-MS-Exchange-CrossTenant-AuthSource: 	BL02EPF0000EE3F.namprd05.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH0PR12MB5059
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230308_201043_289345_28258074 
-X-CRM114-Status: GOOD (  25.07  )
+X-CRM114-CacheID: sfid-20230308_221754_767994_76BDCFCA 
+X-CRM114-Status: GOOD (  11.84  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,243 +122,117 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+From: Henry Lin <henryl@nvidia.com>
 
+Add new registers programming in sleepwalk sequence for Tegra234:
+MASTER_ENABLE_A/B/C/D in XUSB_AO_UTMIP_SLEEPWALK.
 
-On 2023/3/9 2:12, Rob Herring wrote:
-> On Wed, Mar 08, 2023 at 04:27:58PM +0800, Minda Chen wrote:
->> Add StarFive JH7110 SoC USB 3.0 phy dt-binding.
->> USB controller is cadence USB 3.0 IP.
->> 
->> Signed-off-by: Minda Chen <minda.chen@starfivetech.com>
->> ---
->>  .../bindings/phy/starfive,jh7110-usb-phy.yaml | 158 ++++++++++++++++++
->>  1 file changed, 158 insertions(+)
->>  create mode 100644 Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy.yaml
->> 
->> diff --git a/Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy.yaml b/Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy.yaml
->> new file mode 100644
->> index 000000000000..daa88d065deb
->> --- /dev/null
->> +++ b/Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy.yaml
-> 
-> Filename should match the compatible. The filename seems more correct 
-> than the compatible...
-> 
-[1] jh7110 USB dts configure is similar to  Documentation/devicetree/bindings/usb/ti,j721e-usb.yaml
-But we have PHY (10200000). So I will add  Documentation/devicetree/bindings/usb/starfive,jh7110-usb.yaml
-as a wrap level.
-starfive,jh7110-usb-phy.yaml contains only phy setting.
->> @@ -0,0 +1,158 @@
->> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
->> +%YAML 1.2
->> +---
->> +$id: http://devicetree.org/schemas/phy/starfive,jh7110-usb-phy.yaml#
->> +$schema: http://devicetree.org/meta-schemas/core.yaml#
->> +
->> +title: StarFive USB 2.0 and 3.0 PHY
->> +
->> +maintainers:
->> +  - Minda Chen<minda.chen@starfivetech.com>
->> +
->> +properties:
->> +  compatible:
->> +    items:
->> +      - const: starfive,jh7110-usb
-> 
-> What's the USB controller called?
-> 
-I will change to "starfive,jh7110-usb-phy"
->> +
->> +  reg:
->> +    maxItems: 2
->> +
->> +  reg-names:
->> +    items:
->> +      - const: usb3
->> +      - const: usb2
->> +
->> +  clocks:
->> +    items:
->> +      - description: usb 125m clock
->> +      - description: app 125m clock
->> +      - description: lpm clock
->> +      - description: stb clock
->> +      - description: apb clock
->> +      - description: axi clock
->> +      - description: utmi apb clock
->> +
->> +  clock-names:
->> +    items:
->> +      - const: usb_125m
->> +      - const: usb0_app_125
->> +      - const: usb0_lpm
->> +      - const: usb0_stb
->> +      - const: usb0_apb
->> +      - const: usb0_axi
->> +      - const: usb0_utmi_apb
-> 
-> usb_ and usb0_ is redundant, drop.
-> 
-ok
->> +
->> +  resets:
->> +    items:
->> +      - description: USB0_PWRUP reset
->> +      - description: USB0_APB reset
->> +      - description: USB0_AXI reset
->> +      - description: USB0_UTMI_APB reset
->> +
->> +  starfive,sys-syscon:
->> +    $ref: /schemas/types.yaml#/definitions/phandle-array
->> +    items:
->> +      items:
-> 
-ok
-> Are there multiple entries of phandle+offset because this says there 
-> are. You want '- items:' here to limit it to 1 phandle+offset.
-> 
->> +        - description: phandle to System Register Controller sys_syscon node.
->> +        - description: offset of SYS_SYSCONSAIF__SYSCFG register for USB.
->> +    description:
->> +      The phandle to System Register Controller syscon node and the offset
->> +      of SYS_SYSCONSAIF__SYSCFG register for USB.
->> +
->> +  starfive,stg-syscon:
->> +    $ref: /schemas/types.yaml#/definitions/phandle-array
->> +    items:
->> +      items:
-> 
-> Same here.
-> 
-ok
->> +        - description: phandle to System Register Controller stg_syscon node.
->> +        - description: register0 offset of STG_SYSCONSAIF__SYSCFG register for USB.
->> +        - description: register1 offset of STG_SYSCONSAIF__SYSCFG register for USB.
->> +        - description: register2 offset of STG_SYSCONSAIF__SYSCFG register for USB.
->> +        - description: register3 offset of STG_SYSCONSAIF__SYSCFG register for USB.
->> +    description:
->> +      The phandle to System Register Controller syscon node and the offset
->> +      of STG_SYSCONSAIF__SYSCFG register for USB. Total 4 regsisters offset
->> +      for USB.
->> +
->> +  dr_mode:
-> 
-> Usually this belongs in the controller node.
-> 
-cdns3 usb controller IP default set to host mode. If cdns3 usb controller "dr_mode"
-set to "peripheral", cdns3 controller can't be registered.
+Signed-off-by: Henry Lin <henryl@nvidia.com>
+Signed-off-by: Haotien Hsu <haotienh@nvidia.com>
+---
+ drivers/phy/tegra/xusb-tegra186.c | 20 ++++++++++++++++++++
+ drivers/phy/tegra/xusb.h          |  1 +
+ 2 files changed, 21 insertions(+)
 
-in driver/usb/cdns3/core.c
-132         } else if (cdns->dr_mode != dr_mode) {
-133                 dev_err(dev, "Incorrect DRD configuration\n");
-134                 return -EINVAL;
-135         }
+diff --git a/drivers/phy/tegra/xusb-tegra186.c b/drivers/phy/tegra/xusb-tegra186.c
+index 1aae8535f452..0f60d5d1c167 100644
+--- a/drivers/phy/tegra/xusb-tegra186.c
++++ b/drivers/phy/tegra/xusb-tegra186.c
+@@ -145,6 +145,8 @@
+ #define   MODE_HS				MODE(0)
+ #define   MODE_RST				MODE(1)
+ 
++#define XUSB_AO_UTMIP_SLEEPWALK_STATUS(x)	(0xa0 + (x) * 4)
++
+ #define XUSB_AO_UTMIP_SLEEPWALK_CFG(x)		(0xd0 + (x) * 4)
+ #define XUSB_AO_UHSIC_SLEEPWALK_CFG(x)		(0xf0 + (x) * 4)
+ #define   FAKE_USBOP_VAL			BIT(0)
+@@ -172,24 +174,30 @@
+ #define   AP_A					BIT(4)
+ #define   AN_A					BIT(5)
+ #define   HIGHZ_A				BIT(6)
++#define   MASTER_ENABLE_A			BIT(7)
+ /* phase B */
+ #define   USBOP_RPD_B				BIT(8)
+ #define   USBON_RPD_B				BIT(9)
+ #define   AP_B					BIT(12)
+ #define   AN_B					BIT(13)
+ #define   HIGHZ_B				BIT(14)
++#define   MASTER_ENABLE_B			BIT(15)
+ /* phase C */
+ #define   USBOP_RPD_C				BIT(16)
+ #define   USBON_RPD_C				BIT(17)
+ #define   AP_C					BIT(20)
+ #define   AN_C					BIT(21)
+ #define   HIGHZ_C				BIT(22)
++#define   MASTER_ENABLE_C			BIT(23)
+ /* phase D */
+ #define   USBOP_RPD_D				BIT(24)
+ #define   USBON_RPD_D				BIT(25)
+ #define   AP_D					BIT(28)
+ #define   AN_D					BIT(29)
+ #define   HIGHZ_D				BIT(30)
++#define   MASTER_ENABLE_D			BIT(31)
++#define   MASTER_ENABLE_B_C_D					\
++	 (MASTER_ENABLE_B | MASTER_ENABLE_C | MASTER_ENABLE_D)
+ 
+ #define XUSB_AO_UHSIC_SLEEPWALK(x)		(0x120 + (x) * 4)
+ /* phase A */
+@@ -417,6 +425,8 @@ static int tegra186_utmi_enable_phy_sleepwalk(struct tegra_xusb_lane *lane,
+ 		value |= HIGHZ_A;
+ 		value |= AP_A;
+ 		value |= AN_B | AN_C | AN_D;
++		if (padctl->soc->supports_lp_cfg_en)
++			value |= MASTER_ENABLE_B_C_D;
+ 		break;
+ 
+ 	case USB_SPEED_LOW:
+@@ -424,6 +434,8 @@ static int tegra186_utmi_enable_phy_sleepwalk(struct tegra_xusb_lane *lane,
+ 		value |= HIGHZ_A;
+ 		value |= AN_A;
+ 		value |= AP_B | AP_C | AP_D;
++		if (padctl->soc->supports_lp_cfg_en)
++			value |= MASTER_ENABLE_B_C_D;
+ 		break;
+ 
+ 	default:
+@@ -488,6 +500,13 @@ static int tegra186_utmi_disable_phy_sleepwalk(struct tegra_xusb_lane *lane)
+ 	value |= WAKE_VAL_NONE;
+ 	ao_writel(priv, value, XUSB_AO_UTMIP_SLEEPWALK_CFG(index));
+ 
++	if (padctl->soc->supports_lp_cfg_en) {
++		/* disable the four stages of sleepwalk */
++		value = ao_readl(priv, XUSB_AO_UTMIP_SLEEPWALK(index));
++		value &= ~(MASTER_ENABLE_A | MASTER_ENABLE_B_C_D);
++		ao_writel(priv, value, XUSB_AO_UTMIP_SLEEPWALK(index));
++	}
++
+ 	/* power down the line state detectors of the port */
+ 	value = ao_readl(priv, XUSB_AO_UTMIP_PAD_CFG(index));
+ 	value |= USBOP_VAL_PD | USBON_VAL_PD;
+@@ -1673,6 +1692,7 @@ const struct tegra_xusb_padctl_soc tegra234_xusb_padctl_soc = {
+ 	.supports_gen2 = true,
+ 	.poll_trk_completed = true,
+ 	.trk_hw_mode = true,
++	.supports_lp_cfg_en = true,
+ };
+ EXPORT_SYMBOL_GPL(tegra234_xusb_padctl_soc);
+ #endif
+diff --git a/drivers/phy/tegra/xusb.h b/drivers/phy/tegra/xusb.h
+index 71b8dcedb646..6bbd88245b9d 100644
+--- a/drivers/phy/tegra/xusb.h
++++ b/drivers/phy/tegra/xusb.h
+@@ -434,6 +434,7 @@ struct tegra_xusb_padctl_soc {
+ 	bool need_fake_usb3_port;
+ 	bool poll_trk_completed;
+ 	bool trk_hw_mode;
++	bool supports_lp_cfg_en;
+ };
+ 
+ struct tegra_xusb_padctl {
+-- 
+2.25.1
 
-
-If dr_mode is not set in int wrap level, peripheral mode can not be work.
-
-And I see other USB PHY contain dr-mode setting.
->> +    description: PHY mode.
->> +    enum:
->> +      - host
->> +      - peripheral
->> +      - otg
->> +
->> +  "#address-cells":
->> +    maximum: 2
->> +
->> +  "#size-cells":
->> +    maximum: 2
->> +
->> +  ranges: true
->> +
->> +  starfive,usb2-only:
->> +    type: boolean
->> +    description: Set USB using usb 2.0 phy. Supprt USB 2.0 only
-> 
-> The 'maximum-speed' property in the controller should be enough. Why is 
-> this needed.
-> 
-maybe I can delete this setting.
-> Being a PHY, you are missing #phy-cells.
-> 
-ok
->> +
->> +required:
->> +  - compatible
->> +  - reg
->> +  - reg-names
->> +  - clocks
->> +  - clock-names
->> +  - resets
->> +  - starfive,sys-syscon
->> +  - starfive,stg-syscon
->> +  - dr_mode
->> +  - "#address-cells"
->> +  - "#size-cells"
->> +  - ranges
->> +
->> +patternProperties:
->> +  "^usb@[0-9a-f]+$":
->> +    type: object
->> +    description: |
->> +      usbphy node should have '1' usb controller subnode.
->> +      It could be Cadence USB3 DRD controller.
->> +      Cadence USB3 should follow the bindings specified in
->> +      Documentation/devicetree/bindings/usb/cdns,usb3.yaml
-> 
-> Why is the controller a child of the phy?
-> 
-same as [1]. I will change this .
->> +
->> +additionalProperties: false
->> +
->> +examples:
->> +  - |
->> +    usbphy@10200000 {
->> +      compatible = "starfive,jh7110-usb";
->> +      reg = <0x10210000 0x1000>,
->> +            <0x10200000 0x1000>;
->> +      reg-names = "usb3", "usb2";
->> +      clocks = <&syscrg 95>,
->> +               <&stgcrg 6>,
->> +               <&stgcrg 4>,
->> +               <&stgcrg 5>,
->> +               <&stgcrg 1>,
->> +               <&stgcrg 3>,
->> +               <&stgcrg 2>;
->> +      clock-names = "usb_125m", "usb0_app_125", "usb0_lpm",
->> +                    "usb0_stb", "usb0_apb", "usb0_axi", "usb0_utmi_apb";
->> +      resets = <&stgcrg 10>,
->> +               <&stgcrg 8>,
->> +               <&stgcrg 7>,
->> +               <&stgcrg 9>;
->> +      starfive,stg-syscon = <&stg_syscon 0x4 0xc4 0x148 0x1f4>;
->> +      starfive,sys-syscon = <&sys_syscon 0x18>;
->> +      dr_mode = "host";
->> +      #address-cells = <1>;
->> +      #size-cells = <1>;
->> +      ranges;
->> +
->> +      usb@10100000 {
->> +        compatible = "cdns,usb3";
-> 
-> This needs a platform specific compatible.
-> 
-same as [1]
->> +        reg = <0x10100000 0x10000>,
->> +              <0x10110000 0x10000>,
->> +              <0x10120000 0x10000>;
->> +        reg-names = "otg", "xhci", "dev";
->> +        interrupts = <100>, <108>, <110>;
->> +        interrupt-names = "host", "peripheral", "otg";
->> +        phy-names = "cdns3,usb3-phy", "cnds3,usb2-phy";
->> +        maximum-speed = "super-speed";
->> +      };
->> +    };
->> -- 
->> 2.17.1
->> 
 
 -- 
 linux-phy mailing list
