@@ -4,91 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 00ECCC6FA99
-	for <linux-phy@archiver.kernel.org>; Fri, 10 Mar 2023 11:57:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 19382C6FD1F
+	for <linux-phy@archiver.kernel.org>; Fri, 10 Mar 2023 12:04:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Subject:Cc:To:From:Message-ID:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=k2/8Wkd7MK62zlzAnM7ILD8tdD/PV6/QmEmw5CdeH8c=; b=WWo/6IjInnkZM1
-	mKh8/OUj2+OZbH85vt8jWbe356Qtz7E2zN3Tdu5rR69U9oFMAZSfV5twsT7F/klP/LLaIAY9clH/9
-	zNvwV635zFFLT84Qttq1ABgxdln17HoCBcDWiT4ns+VY3dnCT1lcUYLvFNYeuVkoccG61hNTMaXfS
-	JGrrUKsHSpXcc5cHVlyMmhtOWSKGeaYp+7WnrNxexjB0ch8xwowNL+wmIDVDBBso/EecYLjulNtl3
-	dzWkGOJGLWPjDf+ArWg7Z+SogQb1okxdRUUw5Zb8XMpTYv9iZP3JoXLnkbXU8fanD+AXWpkBk3OHk
-	x3qF4sHXqJv3Cx1hTgyg==;
+	List-Owner; bh=o7pwQcMNdBMwvXtUvfjzHi1i1dM5HTmRR8k99OA0Jao=; b=Q6ViwQpTT/O1Wv
+	DgMY0H9lzj6KFnrFIm4mfIc5XaKP9EnGd3lz2RVECABBWw3CPVaA9qE0fWLoAoo9k9zpXOfKwgZB2
+	KzHlTS2iOqh0ugKnOvuXEIk/z631z2uooc6kmGkAQ2HKjLHNqwPRU58uQfpS5LkQLD0RCqxygzGxw
+	oYhzOW8UERbFH2D6ro/0Yh/IYH+DOK6fVh2XsKHYBn3FC0HVx+tfoDCBkj2HlhZWgfXNCSSL3c00Z
+	bcIz15Q8gh+KGE9KWdrldquDJEfDFz6eUdpWqu8ZcjzQU6b/X5drDJYa0LZp4RmUBHzCi+0nW3Ezv
+	TF51p8ouKeiAcfyUnjUw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pabNA-00EQyM-GZ
-	for linux-phy@archiver.kernel.org; Fri, 10 Mar 2023 11:57:20 +0000
-Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
+	id 1pabUA-00ESj4-GT
+	for linux-phy@archiver.kernel.org; Fri, 10 Mar 2023 12:04:34 +0000
+Received: from mail-ed1-x531.google.com ([2a00:1450:4864:20::531])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pabMz-00EQvD-PJ; Fri, 10 Mar 2023 11:57:12 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by sin.source.kernel.org (Postfix) with ESMTPS id 4B060CE28BF;
-	Fri, 10 Mar 2023 11:56:59 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 73C45C433EF;
-	Fri, 10 Mar 2023 11:56:57 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1678449417;
-	bh=7i/O5youjH9jNHfG2Dg9EU6CeFBIYVpumpfWkEMxXfU=;
-	h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
-	b=a46pcBzu9a477UOMmZuc+sSkhr6PUFGJwhE8oX4QMI/g4zvYUAbeYfBamCRRS6uGv
-	 Sh93VbL1dkUoaOapB6wyhvccd8w9n4+Ouuj/VUeQtIgEdQ6Z4ZosAYcfVeau9FYEUe
-	 mT1T1Ws0V3XxP/jj4VVw8ygHLIvVJceTyVKzB0gfCAjzxgO4e6o3M9H/3qD06pJQG0
-	 ehsCcwMEkqMR8sXQIObj0WvlwnvHphmJsRHGOhd6ENkoEQ6II6GLRAfVOZVhhqEyeM
-	 sWDEipfoaGI7d6RVEBj1sMqlLswIhXSGvgwQwQfilVq3LWQtMEuSpTSNh9ofl3/Qf2
-	 P5dNa1H/+ocEQ==
-Received: from sofa.misterjones.org ([185.219.108.64] helo=goblin-girl.misterjones.org)
-	by disco-boy.misterjones.org with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.95)
-	(envelope-from <maz@kernel.org>)
-	id 1pabMl-00Gan5-3J;
-	Fri, 10 Mar 2023 11:56:55 +0000
-Date: Fri, 10 Mar 2023 11:56:54 +0000
-Message-ID: <86v8j8yg3d.wl-maz@kernel.org>
-From: Marc Zyngier <maz@kernel.org>
-To: Peter Geis <pgwipeout@gmail.com>
-Cc: Lucas Tanure <lucas.tanure@collabora.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Heiko Stuebner <heiko@sntech.de>,
-	Thomas Gleixner <tglx@linutronix.de>,
-	Lorenzo Pieralisi <lpieralisi@kernel.org>,
-	Krzysztof Wilczynski <kw@linux.com>,
-	Bjorn Helgaas <bhelgaas@google.com>,
-	Qu Wenruo <wqu@suse.com>,
-	Piotr Oniszczuk <piotr.oniszczuk@gmail.com>,
-	Kever Yang <kever.yang@rock-chips.com>,
-	linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	linux-pci@vger.kernel.org,
-	kernel@collabora.com,
-	Robin Murphy <robin.murphy@arm.com>
-Subject: Re: [PATCH 1/7] irqchip/gic-v3: Add a DMA Non-Coherent flag
-In-Reply-To: <CAMdYzYpL7V6udw=T7ZChTFi0xOj1tb-5CVHb84u1pL4kj3eDZA@mail.gmail.com>
+	id 1pabU7-00EShV-R6; Fri, 10 Mar 2023 12:04:33 +0000
+Received: by mail-ed1-x531.google.com with SMTP id u9so19552238edd.2;
+        Fri, 10 Mar 2023 04:04:29 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20210112; t=1678449868;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=7JxCDIVzx63/0USvlw4b2PiFBo7GGlMiiEoXtp1Amu4=;
+        b=kqp/fj0uASTKrAmvf0lTJGWGKD9gFQlxmnqqS5X5AGk2553pxdR8KZp5V0XwHtybS7
+         2b3kqVkJThJ2G0PPuq9QoR2dPpVJU0SXpW601F1iydUt1zPutR3O1dinA0F1ADXPlnzF
+         ZrZCgfTNa3NwIDI9Bh2JErYh2ah738xo3qxQp6QniFND9su9bS0BQnBE+PEZQTjJdegp
+         vB7oKe3w1A5C7f5kKeODVg/B7rkdPJmwespxAUn7x6sHcdVJ35X1LCRoNR4Q7u7MRmIy
+         FGAk65pKIkPXaYFDOPNB7yVABgqfXka4n6BF8UEl7BcM2uKqr9Bl0zwsp4FtMcSG+Kru
+         P/Ig==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112; t=1678449868;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=7JxCDIVzx63/0USvlw4b2PiFBo7GGlMiiEoXtp1Amu4=;
+        b=iME0Q8LFqvK2ic/s4G6so7mQtpcBFLWeSQAzEQiZSsi7ClwlSzVfjkD8DvoM+a9xqF
+         PUIUIkUa1P+vr97q2VOjb8OL9TBAFc1tgxp6mfdC2BmeCDH+wR042kSZP2NoP+IE/EK+
+         5scXPycxf4DjjCwxRlWjN0XC4/qAQ/IbodCARoD3FXF6E9wO5D9j6+6CtPgQRCtt4hDv
+         1avR4rfI2yQesDYa3h+korWmWMqTJwYdGat+A+Iophg/XeGQQ5CvZDh+ivJqoj86ZOQz
+         D8xSxvHgW8q9D0TpImgkZ9yJmpdSmqRYo1jdugauDweWEKiQ4eJhZsg4hTzmMCC4S78a
+         v9oQ==
+X-Gm-Message-State: AO0yUKXPrbpbhpnPpwROeuIeAAZcME8vIYJyx2jv20S/8Yt1p4upz6PE
+	wIzugOD2ldp6jGe/R1JgRns5MRrtp7/AVK1Gg8k=
+X-Google-Smtp-Source: AK7set8NexWLnnznp47X6iexl2bquKGhMUmpmcoFxaD97rzeEbBrsEdy4xTtZDpmQ5EjrulWwvs76lPRcjQUNCkG/yg=
+X-Received: by 2002:a50:9b53:0:b0:4ae:f648:950b with SMTP id
+ a19-20020a509b53000000b004aef648950bmr13917661edj.7.1678449867835; Fri, 10
+ Mar 2023 04:04:27 -0800 (PST)
+MIME-Version: 1.0
 References: <20230310080518.78054-1-lucas.tanure@collabora.com>
-	<20230310080518.78054-2-lucas.tanure@collabora.com>
-	<CAMdYzYpL7V6udw=T7ZChTFi0xOj1tb-5CVHb84u1pL4kj3eDZA@mail.gmail.com>
-User-Agent: Wanderlust/2.15.9 (Almost Unreal) SEMI-EPG/1.14.7 (Harue)
- FLIM-LB/1.14.9 (=?UTF-8?B?R29qxY0=?=) APEL-LB/10.8 EasyPG/1.0.0 Emacs/28.2
- (aarch64-unknown-linux-gnu) MULE/6.0 (HANACHIRUSATO)
-MIME-Version: 1.0 (generated by SEMI-EPG 1.14.7 - "Harue")
-X-SA-Exim-Connect-IP: 185.219.108.64
-X-SA-Exim-Rcpt-To: pgwipeout@gmail.com, lucas.tanure@collabora.com, vkoul@kernel.org, kishon@kernel.org, robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org, heiko@sntech.de, tglx@linutronix.de, lpieralisi@kernel.org, kw@linux.com, bhelgaas@google.com, wqu@suse.com, piotr.oniszczuk@gmail.com, kever.yang@rock-chips.com, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org, kernel@collabora.com, robin.murphy@arm.com
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org); SAEximRunCond expanded to false
+ <20230310080518.78054-2-lucas.tanure@collabora.com> <CAMdYzYpL7V6udw=T7ZChTFi0xOj1tb-5CVHb84u1pL4kj3eDZA@mail.gmail.com>
+ <86v8j8yg3d.wl-maz@kernel.org>
+In-Reply-To: <86v8j8yg3d.wl-maz@kernel.org>
+From: Peter Geis <pgwipeout@gmail.com>
+Date: Fri, 10 Mar 2023 07:04:16 -0500
+Message-ID: <CAMdYzYo5FW6NT8zj8+4meAV-HVve+rVYybibVHy4GONC_PJ-6Q@mail.gmail.com>
+Subject: Re: [PATCH 1/7] irqchip/gic-v3: Add a DMA Non-Coherent flag
+To: Marc Zyngier <maz@kernel.org>
+Cc: Lucas Tanure <lucas.tanure@collabora.com>, Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh+dt@kernel.org>, 
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Heiko Stuebner <heiko@sntech.de>, 
+	Thomas Gleixner <tglx@linutronix.de>, Lorenzo Pieralisi <lpieralisi@kernel.org>, 
+	Krzysztof Wilczynski <kw@linux.com>, Bjorn Helgaas <bhelgaas@google.com>, Qu Wenruo <wqu@suse.com>, 
+	Piotr Oniszczuk <piotr.oniszczuk@gmail.com>, Kever Yang <kever.yang@rock-chips.com>, 
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+	linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
+	linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org, kernel@collabora.com, 
+	Robin Murphy <robin.murphy@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230310_035710_883402_0FF12DDA 
-X-CRM114-Status: GOOD (  20.69  )
+X-CRM114-CacheID: sfid-20230310_040431_900096_B2EA5735 
+X-CRM114-Status: GOOD (  18.82  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,33 +95,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, 10 Mar 2023 11:41:46 +0000,
-Peter Geis <pgwipeout@gmail.com> wrote:
-> 
-> On Fri, Mar 10, 2023 at 3:05 AM Lucas Tanure <lucas.tanure@collabora.com> wrote:
+On Fri, Mar 10, 2023 at 6:57 AM Marc Zyngier <maz@kernel.org> wrote:
+>
+> On Fri, 10 Mar 2023 11:41:46 +0000,
+> Peter Geis <pgwipeout@gmail.com> wrote:
 > >
-> > The GIC600 integration in RK356x, used in rk3588, doesn't support
-> > any of the shareability or cacheability attributes, and requires
-> > both values to be set to 0b00 for all the ITS and Redistributor
-> > tables.
+> > On Fri, Mar 10, 2023 at 3:05 AM Lucas Tanure <lucas.tanure@collabora.com> wrote:
+> > >
+> > > The GIC600 integration in RK356x, used in rk3588, doesn't support
+> > > any of the shareability or cacheability attributes, and requires
+> > > both values to be set to 0b00 for all the ITS and Redistributor
+> > > tables.
+> > >
+> > > This is loosely based on prior work from XiaoDong Huang and
+> > > Peter Geis fixing this issue specifically for Rockchip 356x.
 > >
-> > This is loosely based on prior work from XiaoDong Huang and
-> > Peter Geis fixing this issue specifically for Rockchip 356x.
-> 
-> Good Morning,
-> 
-> Since the gic is using dma, would it be reasonable to have all memory
-> allocations be requested with the GFP_DMA flag? Otherwise this doesn't
-> fully solve the problem for rk356x, where only the lower 4GB range is
-> DMA capable, but this tends to get allocated in the upper 4GB on 8GB
-> boards.
+> > Good Morning,
+> >
+> > Since the gic is using dma, would it be reasonable to have all memory
+> > allocations be requested with the GFP_DMA flag? Otherwise this doesn't
+> > fully solve the problem for rk356x, where only the lower 4GB range is
+> > DMA capable, but this tends to get allocated in the upper 4GB on 8GB
+> > boards.
+>
+> That's an erratum. Please treat as such.
 
-That's an erratum. Please treat as such.
+Good Morning,
 
-	M.
+Yes, believe me I'm fully aware of how broken rk356x is. I'm asking an
+educational question from a kernel standards point of view, absent the
+rk356x issues. Would it be reasonable that since the gic uses dma
+memory, allocations for the gic should be made with the GFP_DMA flag?
+Or is that a misuse of the flag?
 
--- 
-Without deviation from the norm, progress is not possible.
+Very Respectfully,
+Peter Geis
+
+>
+>         M.
+>
+> --
+> Without deviation from the norm, progress is not possible.
 
 -- 
 linux-phy mailing list
