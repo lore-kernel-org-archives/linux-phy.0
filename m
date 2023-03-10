@@ -4,70 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C6377C64EC4
-	for <linux-phy@archiver.kernel.org>; Fri, 10 Mar 2023 08:02:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 821C2C6FD19
+	for <linux-phy@archiver.kernel.org>; Fri, 10 Mar 2023 08:05:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VZHgXFVLggBlOsIxos2yXvBAjZA1IyTv5dUPto8ulmg=; b=urkx+4tUnhFNON
-	ymUqqwXXQ/nMjB3q4WHfwavDjuMNJIr4qrMbUd8JfTKxIdwr7Jy/c41PLahBxg3C0y7Lgp2eo0SAf
-	RNnEEh/lrUUW5frarJ4Q4kLClYYs6C9jO1Hr8Fb/E/rHrRrSQkQbPW09TAmpJYBIyUUV5YgEpJRNh
-	gireBTNlAsldLCWywSjBR17rZD4UydwTT3wqI+nI3FqnemDVBpjoSbWclgsIYHCmNIbRxvCsydyqd
-	Yh3LJByFwk2e2SfPSORxyom6nAQXZBIUz9iTIfeegxAliSy2jM7rkJP0RlriKiMMtCtC0LIvZtTS/
-	MgM0WZoHfBbDkD7NnqiA==;
+	List-Owner; bh=aqywN4TGkrKVxRsmWnw5ho9gW+eRJuzSIQYKfDLqtvI=; b=JwHp9fPit/1P1P
+	hXuphJrrVUCIjFdJC8iKWtXVanTDgqF6gnq17rp6B8hXnNF+9vyJdfqGmD9m0ET40Zmt4niF+AWRg
+	daqNzOnMGeZ99Geu2hX5HztyzrmGZsqE9PrAGVMB3vGT2UwUNNEbMEZhbDQEUO7LPz+ox+d9oVbuj
+	wsnrXitDH+a+f/o6LXoi6J7ggfg/KMvDLfuw8xHcS2c3WPDCjRf1/zH+YPk2Aphp+mvsNjXl2EvlN
+	hQnssMnhgGCWYKRoAp8y19Mngz7V/zPS2XiUbWhC0EcyfaDiOI1kA04vscujqXZRFz5sbWBF+iV0L
+	LZZz+q91+OcnMBhqA9zQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1paXi9-00DVXJ-6f
-	for linux-phy@archiver.kernel.org; Fri, 10 Mar 2023 08:02:45 +0000
-Received: from ex01.ufhost.com ([61.152.239.75])
-	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1paXi4-00DVR7-WE; Fri, 10 Mar 2023 08:02:43 +0000
-Received: from EXMBX166.cuchost.com (unknown [175.102.18.54])
-	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
-	(Client CN "EXMBX166", Issuer "EXMBX166" (not verified))
-	by ex01.ufhost.com (Postfix) with ESMTP id 19B0A24E1FE;
-	Fri, 10 Mar 2023 16:01:47 +0800 (CST)
-Received: from EXMBX071.cuchost.com (172.16.6.81) by EXMBX166.cuchost.com
- (172.16.6.76) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Fri, 10 Mar
- 2023 16:01:47 +0800
-Received: from [192.168.125.108] (183.27.96.115) by EXMBX071.cuchost.com
- (172.16.6.81) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Fri, 10 Mar
- 2023 16:01:45 +0800
-Message-ID: <5ebede90-7851-6b3b-adf7-81604f955817@starfivetech.com>
-Date: Fri, 10 Mar 2023 16:01:45 +0800
+	id 1paXlD-00DW9P-Sc
+	for linux-phy@archiver.kernel.org; Fri, 10 Mar 2023 08:05:55 +0000
+Received: from madras.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e5ab])
+	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
+	id 1paXl2-00DW2F-C6; Fri, 10 Mar 2023 08:05:46 +0000
+Received: from cryzen.lan (cpc87451-finc19-2-0-cust61.4-2.cable.virginm.net [82.11.51.62])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: tanureal)
+	by madras.collabora.co.uk (Postfix) with ESMTPSA id 770016603057;
+	Fri, 10 Mar 2023 08:05:42 +0000 (GMT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1678435542;
+	bh=ebCM08ufe5E1iAUMnwY8wnvvUUxgSIMI/R2bN0GLQpg=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=Maju10yWI03tnIoSxVSfo7QR92+4mOr9qV0DlC536arN4Em9X9GPJswonO7+I6phb
+	 B8uLGXv6E0EkEMIvpuUexz0S0XJMz+W+aMt5dX1IVcYnWM4gDItUq352e/IDfTaDZo
+	 3/lVnUNHECJm4h5IW/lPwb1ing4D5wMVUXzX8vgtNKbvUhbfHgaJCtTnty9fcRTSf4
+	 WZNW1/Nt4ctJwCgqe6N8dycf6jaORaV3YCGjYIbjyFlbptufWEzluAuojFw+DfNZvC
+	 K1wmtPOf2ocTJ5xpE553vZ8UCIK3VM/7fm8abE35VpJTIJlutSeTfo9P1R1jzw9hGm
+	 fG06Ni0L5hMKA==
+From: Lucas Tanure <lucas.tanure@collabora.com>
+To: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Heiko Stuebner <heiko@sntech.de>,
+	Thomas Gleixner <tglx@linutronix.de>,
+	Marc Zyngier <maz@kernel.org>,
+	Lorenzo Pieralisi <lpieralisi@kernel.org>,
+	Krzysztof Wilczynski <kw@linux.com>,
+	Bjorn Helgaas <bhelgaas@google.com>
+Cc: Qu Wenruo <wqu@suse.com>,
+	Piotr Oniszczuk <piotr.oniszczuk@gmail.com>,
+	Peter Geis <pgwipeout@gmail.com>,
+	Kever Yang <kever.yang@rock-chips.com>,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	linux-pci@vger.kernel.org,
+	Lucas Tanure <lucas.tanure@collabora.com>,
+	kernel@collabora.com,
+	Robin Murphy <robin.murphy@arm.com>
+Subject: [PATCH 1/7] irqchip/gic-v3: Add a DMA Non-Coherent flag
+Date: Fri, 10 Mar 2023 08:05:12 +0000
+Message-Id: <20230310080518.78054-2-lucas.tanure@collabora.com>
+X-Mailer: git-send-email 2.39.2
+In-Reply-To: <20230310080518.78054-1-lucas.tanure@collabora.com>
+References: <20230310080518.78054-1-lucas.tanure@collabora.com>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.8.0
-Subject: Re: [PATCH v2 1/3] dt-bindings: phy: Add StarFive JH7110 USB
- dt-binding
-Content-Language: en-US
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, Emil Renner Berthing
-	<emil.renner.berthing@canonical.com>, Vinod Koul <vkoul@kernel.org>, "Kishon
- Vijay Abraham I" <kishon@kernel.org>, Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Pawel Laszczak
-	<pawell@cadence.com>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>, "Peter
- Chen" <peter.chen@kernel.org>, Roger Quadros <rogerq@kernel.org>, "Philipp
- Zabel" <p.zabel@pengutronix.de>, Conor Dooley <conor@kernel.org>, "Paul
- Walmsley" <paul.walmsley@sifive.com>, Palmer Dabbelt <palmer@dabbelt.com>,
-	Albert Ou <aou@eecs.berkeley.edu>
-CC: <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-	<linux-phy@lists.infradead.org>, <linux-usb@vger.kernel.org>,
-	<linux-riscv@lists.infradead.org>
-References: <20230308082800.3008-1-minda.chen@starfivetech.com>
- <20230308082800.3008-2-minda.chen@starfivetech.com>
- <8124eed7-b9ab-046d-4eb2-9b853ce2bcdd@linaro.org>
-From: Minda Chen <minda.chen@starfivetech.com>
-In-Reply-To: <8124eed7-b9ab-046d-4eb2-9b853ce2bcdd@linaro.org>
-X-Originating-IP: [183.27.96.115]
-X-ClientProxiedBy: EXCAS061.cuchost.com (172.16.6.21) To EXMBX071.cuchost.com
- (172.16.6.81)
-X-YovoleRuleAgent: yovoleflag
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230310_000241_380941_42AB2A1A 
-X-CRM114-Status: GOOD (  16.64  )
+X-CRM114-CacheID: sfid-20230310_000544_693217_A1A97E92 
+X-CRM114-Status: GOOD (  13.71  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,163 +92,105 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+The GIC600 integration in RK356x, used in rk3588, doesn't support
+any of the shareability or cacheability attributes, and requires
+both values to be set to 0b00 for all the ITS and Redistributor
+tables.
 
+This is loosely based on prior work from XiaoDong Huang and
+Peter Geis fixing this issue specifically for Rockchip 356x.
 
-On 2023/3/9 18:07, Krzysztof Kozlowski wrote:
-> On 08/03/2023 09:27, Minda Chen wrote:
->> Add StarFive JH7110 SoC USB 3.0 phy dt-binding.
->> USB controller is cadence USB 3.0 IP.
-> 
-> Subject: drop second/last, redundant "binding". The "dt-bindings" prefix
-> is already stating that these are bindings.
-> 
->> 
->> Signed-off-by: Minda Chen <minda.chen@starfivetech.com>
->> ---
->>  .../bindings/phy/starfive,jh7110-usb-phy.yaml | 158 ++++++++++++++++++
->>  1 file changed, 158 insertions(+)
->>  create mode 100644 Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy.yaml
->> 
->> diff --git a/Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy.yaml b/Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy.yaml
->> new file mode 100644
->> index 000000000000..daa88d065deb
->> --- /dev/null
->> +++ b/Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy.yaml
->> @@ -0,0 +1,158 @@
->> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
->> +%YAML 1.2
->> +---
->> +$id: http://devicetree.org/schemas/phy/starfive,jh7110-usb-phy.yaml#
->> +$schema: http://devicetree.org/meta-schemas/core.yaml#
->> +
->> +title: StarFive USB 2.0 and 3.0 PHY
->> +
->> +maintainers:
->> +  - Minda Chen<minda.chen@starfivetech.com>
-> 
-> Missing space
-> 
->> +
->> +properties:
->> +  compatible:
->> +    items:
-> 
-> Drop items, it's just one item.
-> 
-> 
->> +      - const: starfive,jh7110-usb
->> +
->> +  reg:
->> +    maxItems: 2
->> +
->> +  reg-names:
->> +    items:
->> +      - const: usb3
->> +      - const: usb2
->> +
->> +  clocks:
->> +    items:
->> +      - description: usb 125m clock
->> +      - description: app 125m clock
->> +      - description: lpm clock
->> +      - description: stb clock
->> +      - description: apb clock
->> +      - description: axi clock
->> +      - description: utmi apb clock
->> +
->> +  clock-names:
->> +    items:
->> +      - const: usb_125m
->> +      - const: usb0_app_125
->> +      - const: usb0_lpm
->> +      - const: usb0_stb
->> +      - const: usb0_apb
->> +      - const: usb0_axi
->> +      - const: usb0_utmi_apb
->> +
->> +  resets:
->> +    items:
->> +      - description: USB0_PWRUP reset
->> +      - description: USB0_APB reset
->> +      - description: USB0_AXI reset
->> +      - description: USB0_UTMI_APB reset
->> +
->> +  starfive,sys-syscon:
->> +    $ref: /schemas/types.yaml#/definitions/phandle-array
->> +    items:
->> +      items:
->> +        - description: phandle to System Register Controller sys_syscon node.
->> +        - description: offset of SYS_SYSCONSAIF__SYSCFG register for USB.
->> +    description:
->> +      The phandle to System Register Controller syscon node and the offset
->> +      of SYS_SYSCONSAIF__SYSCFG register for USB.
->> +
->> +  starfive,stg-syscon:
->> +    $ref: /schemas/types.yaml#/definitions/phandle-array
->> +    items:
->> +      items:
->> +        - description: phandle to System Register Controller stg_syscon node.
->> +        - description: register0 offset of STG_SYSCONSAIF__SYSCFG register for USB.
->> +        - description: register1 offset of STG_SYSCONSAIF__SYSCFG register for USB.
->> +        - description: register2 offset of STG_SYSCONSAIF__SYSCFG register for USB.
->> +        - description: register3 offset of STG_SYSCONSAIF__SYSCFG register for USB.
->> +    description:
->> +      The phandle to System Register Controller syscon node and the offset
->> +      of STG_SYSCONSAIF__SYSCFG register for USB. Total 4 regsisters offset
->> +      for USB.
->> +
->> +  dr_mode:
->> +    description: PHY mode.
->> +    enum:
->> +      - host
->> +      - peripheral
->> +      - otg
->> +
->> +  "#address-cells":
->> +    maximum: 2
->> +
->> +  "#size-cells":
->> +    maximum: 2
->> +
->> +  ranges: true
->> +
->> +  starfive,usb2-only:
->> +    type: boolean
->> +    description: Set USB using usb 2.0 phy. Supprt USB 2.0 only
->> +
->> +required:
->> +  - compatible
->> +  - reg
->> +  - reg-names
->> +  - clocks
->> +  - clock-names
->> +  - resets
->> +  - starfive,sys-syscon
->> +  - starfive,stg-syscon
->> +  - dr_mode
->> +  - "#address-cells"
->> +  - "#size-cells"
->> +  - ranges
->> +
->> +patternProperties:
-> 
-> This goes before required block
-> 
->> +  "^usb@[0-9a-f]+$":
->> +    type: object
->> +    description: |
->> +      usbphy node should have '1' usb controller subnode.
->> +      It could be Cadence USB3 DRD controller.
->> +      Cadence USB3 should follow the bindings specified in
->> +      Documentation/devicetree/bindings/usb/cdns,usb3.yaml
-> 
-> $ref instead of free form text
-> 
-> 
-ok, thanks. Next version I will follow the comments to change.
-> Best regards,
-> Krzysztof
-> 
+Suggested-by: Robin Murphy <robin.murphy@arm.com>
+Signed-off-by: Lucas Tanure <lucas.tanure@collabora.com>
+---
+ drivers/irqchip/irq-gic-v3-its.c | 22 ++++++++++++++++++++++
+ 1 file changed, 22 insertions(+)
+
+diff --git a/drivers/irqchip/irq-gic-v3-its.c b/drivers/irqchip/irq-gic-v3-its.c
+index 973ede0197e3..1c334dfeb647 100644
+--- a/drivers/irqchip/irq-gic-v3-its.c
++++ b/drivers/irqchip/irq-gic-v3-its.c
+@@ -42,6 +42,7 @@
+ #define ITS_FLAGS_CMDQ_NEEDS_FLUSHING		(1ULL << 0)
+ #define ITS_FLAGS_WORKAROUND_CAVIUM_22375	(1ULL << 1)
+ #define ITS_FLAGS_WORKAROUND_CAVIUM_23144	(1ULL << 2)
++#define ITS_FLAGS_DMA_NON_COHERENT		(1ULL << 3)
+ 
+ #define RDIST_FLAGS_PROPBASE_NEEDS_FLUSHING	(1 << 0)
+ #define RDIST_FLAGS_RD_TABLES_PREALLOCATED	(1 << 1)
+@@ -2359,6 +2360,13 @@ static int its_setup_baser(struct its_node *its, struct its_baser *baser,
+ 	its_write_baser(its, baser, val);
+ 	tmp = baser->val;
+ 
++	if (its->flags & ITS_FLAGS_DMA_NON_COHERENT) {
++		if (tmp & GITS_BASER_SHAREABILITY_MASK)
++			tmp &= ~GITS_BASER_SHAREABILITY_MASK;
++		else
++			gic_flush_dcache_to_poc(base, PAGE_ORDER_TO_SIZE(order));
++	}
++
+ 	if ((val ^ tmp) & GITS_BASER_SHAREABILITY_MASK) {
+ 		/*
+ 		 * Shareability didn't stick. Just use
+@@ -3055,6 +3063,7 @@ static u64 its_clear_vpend_valid(void __iomem *vlpi_base, u64 clr, u64 set)
+ 
+ static void its_cpu_init_lpis(void)
+ {
++	struct its_node *its = list_first_entry(&its_nodes, struct its_node, entry);
+ 	void __iomem *rbase = gic_data_rdist_rd_base();
+ 	struct page *pend_page;
+ 	phys_addr_t paddr;
+@@ -3096,6 +3105,9 @@ static void its_cpu_init_lpis(void)
+ 	gicr_write_propbaser(val, rbase + GICR_PROPBASER);
+ 	tmp = gicr_read_propbaser(rbase + GICR_PROPBASER);
+ 
++	if (its->flags & ITS_FLAGS_DMA_NON_COHERENT)
++		tmp &= ~GICR_PROPBASER_SHAREABILITY_MASK;
++
+ 	if ((tmp ^ val) & GICR_PROPBASER_SHAREABILITY_MASK) {
+ 		if (!(tmp & GICR_PROPBASER_SHAREABILITY_MASK)) {
+ 			/*
+@@ -3120,6 +3132,9 @@ static void its_cpu_init_lpis(void)
+ 	gicr_write_pendbaser(val, rbase + GICR_PENDBASER);
+ 	tmp = gicr_read_pendbaser(rbase + GICR_PENDBASER);
+ 
++	if (its->flags & ITS_FLAGS_DMA_NON_COHERENT)
++		tmp &= ~GICR_PENDBASER_SHAREABILITY_MASK;
++
+ 	if (!(tmp & GICR_PENDBASER_SHAREABILITY_MASK)) {
+ 		/*
+ 		 * The HW reports non-shareable, we must remove the
+@@ -5005,6 +5020,7 @@ static int __init its_compute_its_list_map(struct resource *res,
+ static int __init its_probe_one(struct resource *res,
+ 				struct fwnode_handle *handle, int numa_node)
+ {
++	struct device_node *np = to_of_node(handle);
+ 	struct its_node *its;
+ 	void __iomem *its_base;
+ 	u64 baser, tmp, typer;
+@@ -5076,6 +5092,9 @@ static int __init its_probe_one(struct resource *res,
+ 	its->get_msi_base = its_irq_get_msi_base;
+ 	its->msi_domain_flags = IRQ_DOMAIN_FLAG_MSI_REMAP;
+ 
++	if (np && !of_dma_is_coherent(np))
++		its->flags |= ITS_FLAGS_DMA_NON_COHERENT;
++
+ 	its_enable_quirks(its);
+ 
+ 	err = its_alloc_tables(its);
+@@ -5095,6 +5114,9 @@ static int __init its_probe_one(struct resource *res,
+ 	gits_write_cbaser(baser, its->base + GITS_CBASER);
+ 	tmp = gits_read_cbaser(its->base + GITS_CBASER);
+ 
++	if (its->flags & ITS_FLAGS_DMA_NON_COHERENT)
++		tmp &= ~GITS_CBASER_SHAREABILITY_MASK;
++
+ 	if ((tmp ^ baser) & GITS_CBASER_SHAREABILITY_MASK) {
+ 		if (!(tmp & GITS_CBASER_SHAREABILITY_MASK)) {
+ 			/*
+-- 
+2.39.2
+
 
 -- 
 linux-phy mailing list
