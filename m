@@ -4,79 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2D32BC6FA99
-	for <linux-phy@archiver.kernel.org>; Fri, 10 Mar 2023 10:33:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 32E62C64EC4
+	for <linux-phy@archiver.kernel.org>; Fri, 10 Mar 2023 10:44:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dXmw4Kp70lc0Vczyfi0W9p70of4Ph68blf53IlxYZ4Q=; b=D6b6VVn6PjSZrQ
-	cl6ZlmytEvZbPhtBHFIyAnZ6ukWggvn73cfNUdeQIsCQpjD5WasdOmfl0zHJtSZ2jlYEEMLt2QVpW
-	8syUv7itSgD74DGov8ZZ23y5LP+W2V9+z+F9y4+9UFwikPQ2eq2CoOYCiJpsezpV6rSIVe+ToEFtY
-	GP+Oyk1xoXieyDSGixbJup2hHXBZbrgTn5e5IC4y7U8YecwCifeXH2jI4XRrduZ1JQ4fReqvP9sOK
-	hjeptpIzyVveUb6Uq9C4GJl22QVHhxxL15/9HLY10tFV0WjK0r6kKH3okis+y5WWymC0mfMA9Pt71
-	I137PhMWED6EKOYFKFbQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=DDsVQF9swjpNjRhSaJ5CSegu5MMdiLn66AYLa6/lTnc=; b=F22HrrT2C5foKrCPZt6tirskun
+	ysm98q7SKQbGXPn7fo+8U9ixuzc5z7pPSSvQET4I3eXJH2l/OcJfyrXqvDYxXAPpTuh0AkjoBpL+O
+	UZtppxzfiiQ3zVoesQi/iTBZwqFw8svxjdWMQuYiQUrm4PwFLVeTaKSri1bp71+fLZZhwPGOCu8Jl
+	FhqqUWtEnXKzXreu32JP+sCaEkoq3SLkAx1QB8pO9qjMO1p7oHDgJKG6WVQ8w9sn00wj7FKTd3K0/
+	Qnx8tAPxxLonhiwju/6HLsvDq0hKeXB9dtEqTnBdERvnTGZ/RmTNHhefzS5DWmDuo2sCt0IOlQv7p
+	ki6/D5Bw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1paa4I-00EC0v-FN
-	for linux-phy@archiver.kernel.org; Fri, 10 Mar 2023 10:33:46 +0000
-Received: from mail-pg1-x529.google.com ([2607:f8b0:4864:20::529])
+	id 1paaEz-00EERl-LG
+	for linux-phy@archiver.kernel.org; Fri, 10 Mar 2023 10:44:49 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1paa4D-00EByt-1l; Fri, 10 Mar 2023 10:33:45 +0000
-Received: by mail-pg1-x529.google.com with SMTP id s17so2777244pgv.4;
-        Fri, 10 Mar 2023 02:33:40 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20210112; t=1678444420;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=YrNzsS4yDEQMUDPv9ek+bekWTDdRMD0SzIqqeBsqXfs=;
-        b=j7yDOF4vjuMwEC50NwSCaNecKzZ2/3xLGtDe67+v5aE7gFEJV+8w+NQx8s0kvgTst5
-         +naqkoEiK0kI7PmpwOb5Z39aKZNATOodTn+e4rIODobgKz7qibnXmEGO/zSzsEwxaEJJ
-         Nya/2AXZC+NK7iLeBBktVHDwyoQAIODH98bn6kKcHWhTGloTdt3wjzwXQoip9pUe+SAx
-         S1gDd/X+962d6qPwwzxeYCGWzsx5BicoCCYEy0jICNUfQuZ41zQly40a/C1JQkQ+f45C
-         AAtJkeim9GRcRkFMG0hHD0Dvbfnm8eHHdMcarpnh5n/nKRsDyvu3YQLBU9/HVR3/9ruY
-         ZBQA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112; t=1678444420;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=YrNzsS4yDEQMUDPv9ek+bekWTDdRMD0SzIqqeBsqXfs=;
-        b=6YH32yoSN5Kk16tEcRbA1V6Aw7olq8Lxz6k5dgIJuI+n4fWIkbisx4PbSBWAQdgjE/
-         UaSa/ty+xUMvJDnDwqrENStPeuS8rjvqmoJ7hgE0LLcOZOYb4Gg9XjuwDZ/KlB2+aMp8
-         FQdaaYEaV1k7vasoai3jFTEzWAC55mgW7PzYCz2z+CaGMp1caCTSp+T63T+qgLsFQ/1E
-         H6Pmu+v4kbHjMjS9dv8I8hJkgLb5xFQQMmRsYmqixZIFCNWR+ZWyvfXN2gM44Idm4Cqx
-         rdRc2qr3y5FZVeNKWnqNa+kP/zXFXdxAof7t2uTIMoPHruuGYdIz+5Oe/bbhqbmz2xmU
-         uWeg==
-X-Gm-Message-State: AO0yUKWmrcDzsnPFxsGJc3mL8olqH7iQKoMZDbksLW85uQt7rtg0zVK7
-	j+5PmgUg1bNYQOlLaEv75rIXvfrodtHJat/2YHs=
-X-Google-Smtp-Source: AK7set8WnxbFY5oTrVIKnhdrvft3bVtLVrqnp8sLn5OeESTjitANPmUjpUeCrnOQfk59jWma/T/rN7BdO7v9GpO4T8o=
-X-Received: by 2002:a62:828e:0:b0:593:da6f:fb1c with SMTP id
- w136-20020a62828e000000b00593da6ffb1cmr10533664pfd.4.1678444419668; Fri, 10
- Mar 2023 02:33:39 -0800 (PST)
+	id 1paaEw-00EEPu-LV
+	for linux-phy@lists.infradead.org; Fri, 10 Mar 2023 10:44:48 +0000
+Received: from ptx.hi.pengutronix.de ([2001:67c:670:100:1d::c0])
+	by metis.ext.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
+	(Exim 4.92)
+	(envelope-from <mgr@pengutronix.de>)
+	id 1paaEp-00071Q-Df; Fri, 10 Mar 2023 11:44:39 +0100
+Received: from mgr by ptx.hi.pengutronix.de with local (Exim 4.92)
+	(envelope-from <mgr@pengutronix.de>)
+	id 1paaEo-0001df-34; Fri, 10 Mar 2023 11:44:38 +0100
+Date: Fri, 10 Mar 2023 11:44:38 +0100
+From: Michael Grzeschik <mgr@pengutronix.de>
+To: Fabrice Gasnier <fabrice.gasnier@foss.st.com>
+Cc: linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
+	vkoul@kernel.org, kishon@kernel.org, mcoquelin.stm32@gmail.com,
+	alexandre.torgue@foss.st.com, error27@gmail.com,
+	kernel@pengutronix.de, linux-stm32@st-md-mailman.stormreply.com,
+	amelie.delaunay@foss.st.com
+Subject: Re: [PATCH v2] phy: stm32-usphyc: add 200 to 300 us delay to fix
+ timeout on some machines
+Message-ID: <20230310104438.GB7352@pengutronix.de>
+References: <1869feff-06b1-17f1-4628-b433c858ad79@foss.st.com>
+ <20230227151318.1894938-1-m.grzeschik@pengutronix.de>
+ <27b9e057-bdd7-b4e6-445c-8da700423600@foss.st.com>
 MIME-Version: 1.0
-References: <20230306191535.1917656-1-sean.anderson@seco.com>
- <20230306191535.1917656-4-sean.anderson@seco.com> <CAOiHx=mcANqHTk9=b0TGHa2rk9nppnKa2EB1v05uHb5jhzoawA@mail.gmail.com>
- <49b24502-1b21-f05b-ef4a-18d5aa375f8d@seco.com>
-In-Reply-To: <49b24502-1b21-f05b-ef4a-18d5aa375f8d@seco.com>
-From: Jonas Gorski <jonas.gorski@gmail.com>
-Date: Fri, 10 Mar 2023 11:33:28 +0100
-Message-ID: <CAOiHx=k8f6irVChBOtSoUJZiW6VS3sdg_KWhTo+C+ZWoGmmfdQ@mail.gmail.com>
-Subject: Re: [PATCH v10 03/13] dt-bindings: Convert gpio-mmio to yaml
-To: Sean Anderson <sean.anderson@seco.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, linux-phy@lists.infradead.org, 
-	Madalin Bucur <madalin.bucur@nxp.com>, linuxppc-dev@lists.ozlabs.org, 
-	devicetree@vger.kernel.org, Ioana Ciornei <ioana.ciornei@nxp.com>, 
-	Rob Herring <robh+dt@kernel.org>, Camelia Alexandra Groza <camelia.groza@nxp.com>, 
-	linux-arm-kernel@lists.infradead.org, Bagas Sanjaya <bagasdotme@gmail.com>, 
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Bartosz Golaszewski <brgl@bgdev.pl>, 
-	=?UTF-8?Q?Fern=C3=A1ndez_Rojas?= <noltari@gmail.com>, 
-	Linus Walleij <linus.walleij@linaro.org>, linux-gpio@vger.kernel.org
+In-Reply-To: <27b9e057-bdd7-b4e6-445c-8da700423600@foss.st.com>
+X-Sent-From: Pengutronix Hildesheim
+X-URL: http://www.pengutronix.de/
+X-Accept-Language: de,en
+X-Accept-Content-Type: text/plain
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c0
+X-SA-Exim-Mail-From: mgr@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de); SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230310_023341_116870_35C6D6D1 
-X-CRM114-Status: GOOD (  22.28  )
+X-CRM114-CacheID: sfid-20230310_024446_722711_8D2FCE5B 
+X-CRM114-Status: GOOD (  23.39  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,57 +73,116 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============2600682190384073700=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, 6 Mar 2023 at 22:27, Sean Anderson <sean.anderson@seco.com> wrote:
->
-> On 3/6/23 15:51, Jonas Gorski wrote:
-> > Hi,
-> >
-> > On Mon, 6 Mar 2023 at 20:16, Sean Anderson <sean.anderson@seco.com> wrote:
-> >>
-> >> This is a generic binding for simple MMIO GPIO controllers. Although we
-> >> have a single driver for these controllers, they were previously spread
-> >> over several files. Consolidate them. The register descriptions are
-> >> adapted from the comments in the source. There is no set order for the
-> >> registers, so I have not specified one.
-> >>
-> >> Signed-off-by: Sean Anderson <sean.anderson@seco.com>
-> >> ---
-> >>
-> >> Changes in v10:
-> >> - New
-> >>
-> >>  .../bindings/gpio/brcm,bcm6345-gpio.yaml      |  16 +--
-> >>  .../devicetree/bindings/gpio/gpio-mmio.yaml   | 136 ++++++++++++++++++
-> >>  .../bindings/gpio/ni,169445-nand-gpio.txt     |  38 -----
-> >>  .../devicetree/bindings/gpio/wd,mbl-gpio.txt  |  38 -----
-> >>  4 files changed, 137 insertions(+), 91 deletions(-)
-> >>  create mode 100644 Documentation/devicetree/bindings/gpio/gpio-mmio.yaml
-> >>  delete mode 100644 Documentation/devicetree/bindings/gpio/ni,169445-nand-gpio.txt
-> >>  delete mode 100644 Documentation/devicetree/bindings/gpio/wd,mbl-gpio.txt
-> >>
-> >> diff --git a/Documentation/devicetree/bindings/gpio/brcm,bcm6345-gpio.yaml b/Documentation/devicetree/bindings/gpio/brcm,bcm6345-gpio.yaml
-> >> index 4d69f79df859..e11f4af49c52 100644
-> >> --- a/Documentation/devicetree/bindings/gpio/brcm,bcm6345-gpio.yaml
-> >> +++ b/Documentation/devicetree/bindings/gpio/brcm,bcm6345-gpio.yaml
-> >
-> > You are (re-)moving the compatible this file is named after, you might
-> > want to rename the file as well then. Going by age bcm6358 would be
-> > the next oldest one (bcm6318 would be the newest, despite the lowest
-> > number).
->
-> I can do that. Would it be fine to rename to e.g. brcm,bcm63xx-gpio.yaml?
 
-I'm not up to date with current naming policies (if there are any at
-all), but looking at what's currently there this should be fine.
+--===============2600682190384073700==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="Fba/0zbH8Xs+Fj9o"
+Content-Disposition: inline
 
-Jonas
+
+--Fba/0zbH8Xs+Fj9o
+Content-Type: text/plain; charset=us-ascii; format=flowed
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+Hi Fabrice,
+
+On Tue, Feb 28, 2023 at 06:28:21PM +0100, Fabrice Gasnier wrote:
+>On 2/27/23 16:13, Michael Grzeschik wrote:
+>> An minimum udelay of 200 us seems to be necessary on some machines. After
+>> the setup of the pll, which needs about 100 us to be locked there seem
+>> to be additional 100 us to get the phy really functional. Without this
+>> delay the usb runs not functional. With this additional short udelay
+>> this issue was not reported again.
+>>
+>> Signed-off-by: Michael Grzeschik <m.grzeschik@pengutronix.de>
+>>
+>
+>Hi Michael,
+>
+>Thank you for the updates,
+>
+>Fell free to add my:
+>Reviewed-by: Fabrice Gasnier <fabrice.gasnier@foss.st.com>
+
+Thanks!
+
+Trhough which tree will this be picked?
+Wil it be possible to add this to v6.3?
+
+Regards,
+Michael
+
+>> ---
+>> v1 -> v2: - changed the mdelay to udelay_range(200, 300), like suggested=
+ by fabrice
+>>           - moved the delay to pll enable so it will only be triggered o=
+nce
+>>
+>>  drivers/phy/st/phy-stm32-usbphyc.c | 3 +++
+>>  1 file changed, 3 insertions(+)
+>>
+>> diff --git a/drivers/phy/st/phy-stm32-usbphyc.c b/drivers/phy/st/phy-stm=
+32-usbphyc.c
+>> index 5bb9647b078f12..dd469f57fba7eb 100644
+>> --- a/drivers/phy/st/phy-stm32-usbphyc.c
+>> +++ b/drivers/phy/st/phy-stm32-usbphyc.c
+>> @@ -317,6 +317,9 @@ static int stm32_usbphyc_pll_enable(struct stm32_usb=
+phyc *usbphyc)
+>>
+>>  	stm32_usbphyc_set_bits(pll_reg, PLLEN);
+>>
+>> +	/* Wait for maximum lock time */
+>> +	usleep_range(200, 300);
+>> +
+>>  	return 0;
+>>
+>>  reg_disable:
+>
+
+--=20
+Pengutronix e.K.                           |                             |
+Steuerwalder Str. 21                       | http://www.pengutronix.de/  |
+31137 Hildesheim, Germany                  | Phone: +49-5121-206917-0    |
+Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
+
+--Fba/0zbH8Xs+Fj9o
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEElXvEUs6VPX6mDPT8C+njFXoeLGQFAmQLChUACgkQC+njFXoe
+LGSckg//ZonCarFQiaZdDZZ8dqltO/AmRY2Lu1k1HjsKZM7ROzxjjapPHtuMiuI2
+ZJGFrY/3OsHCT8MYlVKSvKLkzyvpnJ/y6aKmg65o2mou6n6ikFkg0Run9XbZypLL
+3O5/PZxg9p+y/FZSuoTMSHOgtD30kCxgnFQJd9UNjJMFS9IEha6Kyjy4lFuMnamA
+hE6yKxUH3g6rRa2mTYG9uCVHHEVrWuyItZ9v9Br8RxZiOATK1i1BzwxSGBCBxu/B
+iRPpjLtybUBuDkmkvQ5p+koYr6ZxrORxynlYyDWvKkEo+xoEXoOuXpSRv5P3zM1S
+f3m9izPLSOpFxQmGMT2iShdkawetuIQ6YFgTIAVBOIsP23KKEsa5r2DKQ2105KdV
+WmBWxjbhnRPfNWVyDj85xnHGGn+PO2RgeiFIVhIevCsEm6G8M2REqb4Oy/yULMe5
+cyCn65ZhMxsNxg80UEvOZSYnvkeDatYqi4Y68hgATCQku3U6nr9GJHWFSxax3lGC
+QydjjYwuyrRFj8R0pdJ1q+Tae3k9FMK7tIeZKbrTn3wJFE/QcNLWlrYcHwp2fVtp
+qVea+pLmA5T/rKZRV8IHOnh7yWu8BLVhnM0MslypbFN7Dwj3iNIagwF6E3UUzX+h
+EcyX71uL+FIQeomN+B6CBLgP/NVAbg0mfBfDq0y82zX+BBKqCvo=
+=GkzB
+-----END PGP SIGNATURE-----
+
+--Fba/0zbH8Xs+Fj9o--
+
+
+--===============2600682190384073700==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============2600682190384073700==--
+
