@@ -4,63 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 030F1C6FA99
-	for <linux-phy@archiver.kernel.org>; Fri, 10 Mar 2023 14:52:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 48D5DC7618E
+	for <linux-phy@archiver.kernel.org>; Sat, 11 Mar 2023 23:17:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=LFjlyW1r50Kd2Wyf886GCl20dBaMtlX8EgZywiqnrw8=; b=I7zR1zTQzItPtQ
-	ZrKj99CSg7Xl4pkONyu2VGqC+MQxd225cDbYj9QC7u4IHTuR+Lda1iKdpbdp1VYpxGIoy9znYWhvj
-	4NnUDBMvZ3dsYtoWXKH4Vorg1upAlhdo/rajIV4lnzd3QxdiXE9ZTv+3nfbKAHUQ6/WdyjVi0OII8
-	2nT8Bn0fd4y0fR7Hq9e59Z1yX1G3IsmSRAfDgZPKoiJHbIUBbES9TkShO+Vw5ckfykuFNkkin/FmO
-	EIV1ZI0nA7/J6+sO5m1/HNIBEam3suqqLSWMqPFxZ+tdw8a2x4QAxWsAbGwM95E9LHznmeD+IZQY6
-	+DcC+cBzjNgvqmm393UA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=0Ujr58VUxIHifRVFvEuIvJ1uRorYI/fQ0/0xNAwr9AE=; b=zNBPaRuA5ci2oy
+	Tu0bNWng33bjFnPSK0Why9g/3D9pUsMi7pncEnVuXLee4xFmwjC5HRV5CUHtdd0hIWGWUbrNvmxGM
+	mdlPNEDOYNjLQkOxS+EI7cliSdmvGvFOU5pfuIkuEgdC8yGDLW8utn3Ca51a2udEKJl2UD4u3CUiz
+	4aj0oaKNL6Ta1HhmvLnBTZMEwu05ROQDVmLycnk1X1K0PAKb+Eu/44A0gq20hdMY8APL7YXc9XYiJ
+	cXB9QY+IuHpDQlFeNnrU5Ydgd/Dg8H70+t1J2r+Yr4VjcXaTnstE97GVGjll1T19VqgmKncd0VYB3
+	yTP8pEHX1od05ZC/9VFQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pae6Q-00EpMP-76
-	for linux-phy@archiver.kernel.org; Fri, 10 Mar 2023 14:52:14 +0000
-Received: from mail-oa1-f50.google.com ([209.85.160.50])
+	id 1pb8TB-001SEC-Ja
+	for linux-phy@archiver.kernel.org; Sat, 11 Mar 2023 23:17:45 +0000
+Received: from smtp46.i.mail.ru ([95.163.41.84])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pae2u-00EnDP-NH; Fri, 10 Mar 2023 14:48:38 +0000
-Received: by mail-oa1-f50.google.com with SMTP id 586e51a60fabf-17671fb717cso6053642fac.8;
-        Fri, 10 Mar 2023 06:48:36 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112; t=1678459716;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=GQ2+PQGllxO2iVkzKima9jszwdEFIn3jQrBHflP9Onc=;
-        b=NPRspIYYwqZbCWLwYcphtrfzD6B8Y/CJCw3ofy3TxsOhf9HNKoglrAvzhj5sRyqTmk
-         T/RtQooZzmJNup/EUkZeuLICPBfoLMNXVjMhC2XKlJ4nwVFgv+jAAOUeyQKb45OVHWaH
-         omyaR4t+Ln9p3L+3TIT7AAA3sykVjHSCYH/zq21rfVDT5Q05Ccahg4KdCcCBwYVArHfd
-         p13FpXrdJ6GXxFPd0VxBCSM3M2jF808ZrhNoffzB5UbwsRcjTHLFosum7EnmAA4VzkrK
-         wvnoaHWC7QWPQ6SnbpFHX8m9uU55sZIcmOG1uJtZ3C82eGXNJaS+BW+xUaYenDi/ULo2
-         Klgg==
-X-Gm-Message-State: AO0yUKWyyi9yZJBhM8ZeKXj+Bau1Vh3b4YPAaVEyBFuzMI901lpXDEjt
-	jcGjtjHMQTaezrAw6T7WZw==
-X-Google-Smtp-Source: AK7set9dCtF6YjDNuDf/itnbkBqLEzqFi/95OtxgYDb7R2Ro64NdR9SeQyVNbDETqd4yarYgCX0wAg==
-X-Received: by 2002:a05:6870:2108:b0:16e:2d3f:187 with SMTP id f8-20020a056870210800b0016e2d3f0187mr17201161oae.11.1678459716307;
-        Fri, 10 Mar 2023 06:48:36 -0800 (PST)
-Received: from robh_at_kernel.org (66-90-144-107.dyn.grandenetworks.net. [66.90.144.107])
-        by smtp.gmail.com with ESMTPSA id e6-20020a056870920600b0017630fe87e5sm88853oaf.33.2023.03.10.06.48.35
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 10 Mar 2023 06:48:35 -0800 (PST)
-Received: (nullmailer pid 1544626 invoked by uid 1000);
-	Fri, 10 Mar 2023 14:47:20 -0000
-From: Rob Herring <robh@kernel.org>
-To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Chen-Yu Tsai <wens@csie.org>, Jernej Skrabec <jernej.skrabec@gmail.com>, Samuel Holland <samuel@sholland.org>
-Cc: devicetree@vger.kernel.org, linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev, linux-kernel@vger.kernel.org
-Subject: [PATCH] phy: Use of_property_present() for testing DT property presence
-Date: Fri, 10 Mar 2023 08:47:20 -0600
-Message-Id: <20230310144720.1544600-1-robh@kernel.org>
+	id 1pb8T7-001SDF-Un
+	for linux-phy@lists.infradead.org; Sat, 11 Mar 2023 23:17:44 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=jiaxyga.com; s=mailru;
+	h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:From:Subject:Content-Type:Content-Transfer-Encoding:To:Cc; bh=zZT7SzQItSXGsV/KQyC5x/5aIAx9EI9rLbBKcRq43u4=;
+	t=1678576662;x=1678666662; 
+	b=X3fFMhlnySTH1XCz2480agfZwY0VyFksEiKYFg3CUDYL79hZeAJk6UJ4gcZAMOwyb9qkksZq6V3ADecOnrRjHdXTu+7kbOHiIufc1B5ZXwUrakoZpurxV0j6w9eLrrNMBJGDIOP+MJuixtL6xtFOws4j5SQ4JRzp1EbD3/dlgTA=;
+Received: by smtp46.i.mail.ru with esmtpa (envelope-from <danila@jiaxyga.com>)
+	id 1pb8T2-00B9aE-QV; Sun, 12 Mar 2023 02:17:37 +0300
+From: Danila Tikhonov <danila@jiaxyga.com>
+To: agross@kernel.org,
+	andersson@kernel.org,
+	konrad.dybcio@linaro.org,
+	vkoul@kernel.org,
+	kishon@kernel.org,
+	robh+dt@kernel.org,
+	krzysztof.kozlowski+dt@linaro.org
+Cc: dmitry.baryshkov@linaro.org,
+	linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	davidwronek@gmail.com,
+	Danila Tikhonov <danila@jiaxyga.com>
+Subject: [PATCH v2 1/2] dt-bindings: phy: Add QMP UFS PHY comptible for SM7150
+Date: Sun, 12 Mar 2023 02:17:32 +0300
+Message-Id: <20230311231733.141806-2-danila@jiaxyga.com>
 X-Mailer: git-send-email 2.39.2
+In-Reply-To: <20230311231733.141806-1-danila@jiaxyga.com>
+References: <20230311231733.141806-1-danila@jiaxyga.com>
 MIME-Version: 1.0
+Authentication-Results: smtp46.i.mail.ru; auth=pass smtp.auth=danila@jiaxyga.com smtp.mailfrom=danila@jiaxyga.com
+X-Mailru-Src: smtp
+X-7564579A: B8F34718100C35BD
+X-77F55803: 4F1203BC0FB41BD9BCEC41593EBD83573328AE13154FE908333A02E638E8A8D8182A05F5380850404C463074FC77DC138E2B1AC6EE66EAB056DE8276EE1B4C0B37749537E00BFDDB
+X-7FA49CB5: FF5795518A3D127A4AD6D5ED66289B5278DA827A17800CE79D9C320A40CA82D4EA1F7E6F0F101C67BD4B6F7A4D31EC0BCC500DACC3FED6E28638F802B75D45FF8AA50765F79006378437B1752DAB1FC78638F802B75D45FF36EB9D2243A4F8B5A6FCA7DBDB1FC311F39EFFDF887939037866D6147AF826D82D64FD58ACC9660044F6CD9B640F7099117882F4460429724CE54428C33FAD305F5C1EE8F4F765FCF87214F1A954108EA471835C12D1D9774AD6D5ED66289B52BA9C0B312567BB23117882F4460429728776938767073520B28585415E75ADA9618001F51B5FD3F9D2E47CDBA5A96583BA9C0B312567BB2376E601842F6C81A19E625A9149C048EE7532CA1512B81981C0837EA9F3D197644AD6D5ED66289B52698AB9A7B718F8C46E0066C2D8992A16725E5C173C3A84C3FF30E5DF5FCA5605BA3038C0950A5D36B5C8C57E37DE458B330BD67F2E7D9AF16D1867E19FE14079C09775C1D3CA48CF3D321E7403792E342EB15956EA79C166A417C69337E82CC275ECD9A6C639B01B78DA827A17800CE7D283DE70228D6EEC731C566533BA786AA5CC5B56E945C8DA
+X-C1DE0DAB: 0D63561A33F958A53461CD82E4D7BF09B11436FC6533849E8763C17BAD019EE74EAF44D9B582CE87C8A4C02DF684249CC203C45FEA855C8F
+X-C8649E89: 4E36BF7865823D7055A7F0CF078B5EC49A30900B95165D34806D3522FB05EB398661A9A2C639ED650B7A1628F01AB333E78EB3C228D7F04ABCB358D55C3987C91D7E09C32AA3244C416EAA5C6103FFEF0CC09B718F715AB2F2F5F14F68F1805B0D282625F6E20647
+X-D57D3AED: 3ZO7eAau8CL7WIMRKs4sN3D3tLDjz0dLbV79QFUyzQ2Ujvy7cMT6pYYqY16iZVKkSc3dCLJ7zSJH7+u4VD18S7Vl4ZUrpaVfd2+vE6kuoey4m4VkSEu530nj6fImhcD4MUrOEAnl0W826KZ9Q+tr5ycPtXkTV4k65bRjmOUUP8cvGozZ33TWg5HZplvhhXbhDGzqmQDTd6OAevLeAnq3Ra9uf7zvY2zzsIhlcp/Y7m53TZgf2aB4JOg4gkr2biojEg2t1XEOuWGEAT+5cEw80A==
+X-Mailru-Sender: 9EB879F2C80682A09F26F806C73949814893C669902AB604585B4DD48715B08C5C8D7F440B56D7D3643683D8C0F3ED1CA3C71A376745D86BBE86167304C7680C3980CE5AAA35C7CD60F22E8815EDE5EAEAB4BC95F72C04283CDA0F3B3F5B9367
+X-Mras: Ok
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230310_064836_819150_64963372 
-X-CRM114-Status: GOOD (  12.95  )
+X-CRM114-CacheID: sfid-20230311_151742_571283_6B7A99A6 
+X-CRM114-Status: UNSURE (   5.81  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,45 +84,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-It is preferred to use typed property access functions (i.e.
-of_property_read_<type> functions) rather than low-level
-of_get_property/of_find_property functions for reading properties. As
-part of this, convert of_get_property/of_find_property calls to the
-recently added of_property_present() helper when we just want to test
-for presence of a property and nothing more.
+From: David Wronek <davidwronek@gmail.com>
 
-Signed-off-by: Rob Herring <robh@kernel.org>
+Document the QMP UFS PHY compatible for SM7150.
+
+Signed-off-by: David Wronek <davidwronek@gmail.com>
+Signed-off-by: Danila Tikhonov <danila@jiaxyga.com>
 ---
- drivers/phy/allwinner/phy-sun4i-usb.c  | 2 +-
- drivers/phy/broadcom/phy-bcm-ns-usb2.c | 2 +-
- 2 files changed, 2 insertions(+), 2 deletions(-)
+ .../devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml       | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/phy/allwinner/phy-sun4i-usb.c b/drivers/phy/allwinner/phy-sun4i-usb.c
-index fbcd7014ab43..fc9f6fb447a0 100644
---- a/drivers/phy/allwinner/phy-sun4i-usb.c
-+++ b/drivers/phy/allwinner/phy-sun4i-usb.c
-@@ -758,7 +758,7 @@ static int sun4i_usb_phy_probe(struct platform_device *pdev)
- 		return PTR_ERR(data->vbus_det_gpio);
- 	}
+diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
+index 64ed331880f6..cd0fbbd3593d 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
+@@ -18,6 +18,7 @@ properties:
+     enum:
+       - qcom,sc8280xp-qmp-ufs-phy
+       - qcom,sm6125-qmp-ufs-phy
++      - qcom,sm7150-qmp-ufs-phy
+       - qcom,sm8550-qmp-ufs-phy
  
--	if (of_find_property(np, "usb0_vbus_power-supply", NULL)) {
-+	if (of_property_present(np, "usb0_vbus_power-supply")) {
- 		data->vbus_power_supply = devm_power_supply_get_by_phandle(dev,
- 						     "usb0_vbus_power-supply");
- 		if (IS_ERR(data->vbus_power_supply)) {
-diff --git a/drivers/phy/broadcom/phy-bcm-ns-usb2.c b/drivers/phy/broadcom/phy-bcm-ns-usb2.c
-index 6a36e187d100..269564bdf687 100644
---- a/drivers/phy/broadcom/phy-bcm-ns-usb2.c
-+++ b/drivers/phy/broadcom/phy-bcm-ns-usb2.c
-@@ -107,7 +107,7 @@ static int bcm_ns_usb2_probe(struct platform_device *pdev)
- 		return -ENOMEM;
- 	usb2->dev = dev;
- 
--	if (of_find_property(dev->of_node, "brcm,syscon-clkset", NULL)) {
-+	if (of_property_present(dev->of_node, "brcm,syscon-clkset")) {
- 		usb2->base = devm_platform_ioremap_resource(pdev, 0);
- 		if (IS_ERR(usb2->base)) {
- 			dev_err(dev, "Failed to map control reg\n");
+   reg:
 -- 
 2.39.2
 
