@@ -4,69 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D956FC74A44
-	for <linux-phy@archiver.kernel.org>; Sat, 11 Mar 2023 23:17:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C4B5CC74A4B
+	for <linux-phy@archiver.kernel.org>; Sun, 12 Mar 2023 11:18:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fsm6kPOLrR4JWMln87ju0MDQoHunvy8gR34drmIF7Mg=; b=dsRlsuW2fFpeUL
-	5fcaBnWDKVe7H4zQ418NmZiWI7UOD1QDSnfza/fz0B+Vg/5I1U1XpHr3L6J2EZiM3M6+L3Z7mXYRP
-	2ZZfVn1BcgyvhxGL7qRYMPq00gva1hsmCZq+mqINUSjDsHEraLbnIXbyOLi80nxGo/AAfa7v2V5cP
-	u/37u1Gb0YcW8ZV8vqzPMLGc4qk238gRk+ZT++oaN4g5FBU3HMwFhY13wYo6pYNSJH2q63MFr3DHT
-	s88bxHJI/4jerqmEsYFlzeDa+fwZBuAIZ0tBXPTPMy8mvNlWRzwLonAzz5Wv/d6BGEBflsmO4bgjh
-	wvOM4GWPZs4ce+LWeAQA==;
+	List-Owner; bh=PRPVkBNA+kPk+nbhfLYsomSvXtgKGYYvzlo90MJfhWw=; b=hksyjnlFLNAbBV
+	TPJ7fP+OT4pOSbIZDfWtLUmMpLNv14Q97dk7GJLN6ZjI+wRb5pauqv7f6xahdtdumdk/n/poWMbNG
+	ZHa8mJ3wxOCc2Kp3j9PwMvJHeiFEViwn7cvcc0IcFgxZSvCtrCPK8Vmtgu8/f6ArsmQRkocN0xuEk
+	9moGKaV8S8x9ZG3MmQAOhhlf/GhlpcvuWyoT4rCvwjyK30kIRD1mccqG1yspZHTeaX8S7/Euk2s8e
+	I5sqI/8qCRrnMlFGlx8KdUOYjMXzOlhn+gGZCmz/k3EmUNAlpWc+sLVso1l1duE3EMGzRCF91y46M
+	Bp1XONKyOGuv4/WHWAwQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pb8TC-001SEa-QF
-	for linux-phy@archiver.kernel.org; Sat, 11 Mar 2023 23:17:46 +0000
-Received: from smtp46.i.mail.ru ([95.163.41.84])
+	id 1pbJiO-0028wv-Ow
+	for linux-phy@archiver.kernel.org; Sun, 12 Mar 2023 11:18:12 +0000
+Received: from mail-ed1-x52c.google.com ([2a00:1450:4864:20::52c])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pb8T9-001SDG-KO
-	for linux-phy@lists.infradead.org; Sat, 11 Mar 2023 23:17:45 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=jiaxyga.com; s=mailru;
-	h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:From:Subject:Content-Type:Content-Transfer-Encoding:To:Cc; bh=QO48h3iyjziRnrrdmGe5KOU6nkeMGcnN3EXvOgAiN+U=;
-	t=1678576663;x=1678666663; 
-	b=LNgSXyPecirwaGKSDdtFbGH5q9K6QNGrAGm8DF1iIbDMhDPQHF8Q2nRGbeSwG6G0PIITNfc/T39LhA42vKvrKx65C2uqb3EpCufyG4KGIAZ0t5z88bC3CZbSRNmGrZZgOZSejKaPiu4bh1o+V92SgC//VE3svz9Pd7O7R7/k3Zc=;
-Received: by smtp46.i.mail.ru with esmtpa (envelope-from <danila@jiaxyga.com>)
-	id 1pb8T5-00B9aE-Ed; Sun, 12 Mar 2023 02:17:39 +0300
-From: Danila Tikhonov <danila@jiaxyga.com>
-To: agross@kernel.org,
-	andersson@kernel.org,
-	konrad.dybcio@linaro.org,
-	vkoul@kernel.org,
-	kishon@kernel.org,
-	robh+dt@kernel.org,
-	krzysztof.kozlowski+dt@linaro.org
-Cc: dmitry.baryshkov@linaro.org,
-	linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	davidwronek@gmail.com,
-	Danila Tikhonov <danila@jiaxyga.com>
-Subject: [PATCH v2 2/2] phy: qcom-qmp-ufs: Add SM7150 support
-Date: Sun, 12 Mar 2023 02:17:33 +0300
-Message-Id: <20230311231733.141806-3-danila@jiaxyga.com>
-X-Mailer: git-send-email 2.39.2
-In-Reply-To: <20230311231733.141806-1-danila@jiaxyga.com>
-References: <20230311231733.141806-1-danila@jiaxyga.com>
+	id 1pbJiL-0028wS-0K
+	for linux-phy@lists.infradead.org; Sun, 12 Mar 2023 11:18:10 +0000
+Received: by mail-ed1-x52c.google.com with SMTP id j11so37926474edq.4
+        for <linux-phy@lists.infradead.org>; Sun, 12 Mar 2023 04:18:05 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1678619884;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=G853ILuu+sQv9a+0BB1tR04csQhtS3EQP3WsfLsCtaM=;
+        b=r6+3H18NaXCoJwmD1kOtzMr1pR5aWEHs8IGXEWpspHhQONeRwM2EbmME0NynGLzXWV
+         k5bOVKy64/Id15Ff1jOwjS4BfWxTip4OOoZ6sQ9FS+ahXLuBWDMRtHbeMN8CgHxbcelN
+         sD0IecGS+/Og3LLSXKbch/wsDwrxWXxNiq+FUDQG9+YuvRI2O/RWpkPcghK/sfNdrXrj
+         8wlOC/Ofscfjyi91VtMo4z/5Dc6f7B+f4Kp+ChqtVqisx0uij7/8D9u/JOySBQoyueW9
+         9SV0PXX1WgTr/XHwKhFc3+l7memXUrV8p5nVoORoWFDQL23If0uoN11xDxSdUwVq+jEZ
+         YtTg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112; t=1678619884;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=G853ILuu+sQv9a+0BB1tR04csQhtS3EQP3WsfLsCtaM=;
+        b=it6PcFVVtPErz4gSAKlgPAb6w3xcIJWa3eQR2Q4M8rEd2/O/UiGmTDrJCRHDspbjUd
+         Fmmx1CUIpRtibqixCi+GpMJppCgJ06rYpfPgR8wXd5MvWVcIhyJZZvLEdC0s+iFgvAvX
+         Kf5NylCbjqdRkOve5Zs381OiaRyj+vtr8Yu8U0VtQTg4L15rlg1zmtYgFDFZwHx+htD6
+         MZPO0WUddPoiKoZA/5XVMUtfKSy8zur7ZROfKvK9+BY0+Fkz9pLs0wsmEJU2PnvcSr7Y
+         Iq81ljppjl4UehzEH9OnW6aQsJFWRocloOPLF7dstEvR8aj4N7d5RdiMiP+If5tnI1WN
+         AdsA==
+X-Gm-Message-State: AO0yUKXuxhRCEn4UdwBcjHLUCJ7f+8YdQaW2rZPz1ZyH56KmNYfvuVRQ
+	b5X05Iy+gRUcZaMuWr9hEAypqg==
+X-Google-Smtp-Source: AK7set8V5euDVs9uhpdcYEjJ1CaThkXS/gSQkFc3mYuSUaaEMAByufxtLmQWsUvS2DZz/7M4EwaPHw==
+X-Received: by 2002:a17:907:2beb:b0:921:5cce:6599 with SMTP id gv43-20020a1709072beb00b009215cce6599mr3483259ejc.41.1678619884602;
+        Sun, 12 Mar 2023 04:18:04 -0700 (PDT)
+Received: from ?IPV6:2a02:810d:15c0:828:d9f6:3e61:beeb:295a? ([2a02:810d:15c0:828:d9f6:3e61:beeb:295a])
+        by smtp.gmail.com with ESMTPSA id g2-20020a1709062da200b008cf377e8795sm2106315eji.199.2023.03.12.04.18.03
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sun, 12 Mar 2023 04:18:04 -0700 (PDT)
+Message-ID: <85921a58-59f1-ab35-d3bf-3a6174e6121a@linaro.org>
+Date: Sun, 12 Mar 2023 12:18:03 +0100
 MIME-Version: 1.0
-Authentication-Results: smtp46.i.mail.ru; auth=pass smtp.auth=danila@jiaxyga.com smtp.mailfrom=danila@jiaxyga.com
-X-Mailru-Src: smtp
-X-7564579A: B8F34718100C35BD
-X-77F55803: 4F1203BC0FB41BD9BCEC41593EBD83573328AE13154FE908333A02E638E8A8D8182A05F538085040E47B8DD149DC85C3C72A6F5F18FE6429D83225F20968E8A2ADF0292AD4A17848
-X-7FA49CB5: FF5795518A3D127A4AD6D5ED66289B5278DA827A17800CE7FDD1BFA4357CD022EA1F7E6F0F101C67BD4B6F7A4D31EC0BCC500DACC3FED6E28638F802B75D45FF8AA50765F79006374FC20A811C01C5D18638F802B75D45FF36EB9D2243A4F8B5A6FCA7DBDB1FC311F39EFFDF887939037866D6147AF826D84BD2FA2A8924423DD3152A898AA11151117882F4460429724CE54428C33FAD305F5C1EE8F4F765FC990B2EB4F061288CA471835C12D1D9774AD6D5ED66289B52BA9C0B312567BB23117882F44604297287769387670735204B6963042765DA4BCB629EEF1311BF91D2E47CDBA5A96583BA9C0B312567BB2376E601842F6C81A19E625A9149C048EEC8105B04EFE0762803F1AB874ED890284AD6D5ED66289B52698AB9A7B718F8C46E0066C2D8992A16725E5C173C3A84C30B8BFB6E8AA51B81BA3038C0950A5D36B5C8C57E37DE458B330BD67F2E7D9AF16D1867E19FE14079C09775C1D3CA48CF17B107DEF921CE791DD303D21008E298D5E8D9A59859A8B6B372FE9A2E580EFC725E5C173C3A84C3D27EA2B1546FA1FC35872C767BF85DA2F004C90652538430E4A6367B16DE6309
-X-C1DE0DAB: 0D63561A33F958A5ED5362CFA9E2788CB11436FC6533849E002BE2113CD72BAE4EAF44D9B582CE87C8A4C02DF684249CC203C45FEA855C8F
-X-C8649E89: 4E36BF7865823D7055A7F0CF078B5EC49A30900B95165D34F1ADD4D8CD3C81CEF53DB103F9F4918CEFD7C80674CBC9317251820A3E5DF8F93E1F70502FC6EE161D7E09C32AA3244C147BE42BC16AAAF144038225B18CD04ED9ADFF0C0BDB8D1F0D282625F6E20647
-X-D57D3AED: 3ZO7eAau8CL7WIMRKs4sN3D3tLDjz0dLbV79QFUyzQ2Ujvy7cMT6pYYqY16iZVKkSc3dCLJ7zSJH7+u4VD18S7Vl4ZUrpaVfd2+vE6kuoey4m4VkSEu530nj6fImhcD4MUrOEAnl0W826KZ9Q+tr5ycPtXkTV4k65bRjmOUUP8cvGozZ33TWg5HZplvhhXbhDGzqmQDTd6OAevLeAnq3Ra9uf7zvY2zzsIhlcp/Y7m53TZgf2aB4JOg4gkr2biojEg2t1XEOuWFQnaahQOEpSA==
-X-Mailru-Sender: 9EB879F2C80682A09F26F806C73949814893C669902AB60468BCD63F9522B4FE84809385D925B1D0643683D8C0F3ED1CA3C71A376745D86BBE86167304C7680C3980CE5AAA35C7CD60F22E8815EDE5EAEAB4BC95F72C04283CDA0F3B3F5B9367
-X-Mras: Ok
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.8.0
+Subject: Re: [PATCH v2 1/2] dt-bindings: phy: Add QMP UFS PHY comptible for
+ SM7150
+Content-Language: en-US
+To: Danila Tikhonov <danila@jiaxyga.com>, agross@kernel.org,
+ andersson@kernel.org, konrad.dybcio@linaro.org, vkoul@kernel.org,
+ kishon@kernel.org, robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org
+Cc: dmitry.baryshkov@linaro.org, linux-arm-msm@vger.kernel.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, davidwronek@gmail.com
+References: <20230311231733.141806-1-danila@jiaxyga.com>
+ <20230311231733.141806-2-danila@jiaxyga.com>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <20230311231733.141806-2-danila@jiaxyga.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230311_151743_888503_FF16A293 
-X-CRM114-Status: UNSURE (   7.68  )
+X-CRM114-CacheID: sfid-20230312_041809_082851_D065360B 
+X-CRM114-Status: UNSURE (   7.34  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -84,106 +99,20 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: David Wronek <davidwronek@gmail.com>
+On 12/03/2023 00:17, Danila Tikhonov wrote:
+> From: David Wronek <davidwronek@gmail.com>
+> 
+> Document the QMP UFS PHY compatible for SM7150.
+> 
+> Signed-off-by: David Wronek <davidwronek@gmail.com>
+> Signed-off-by: Danila Tikhonov <danila@jiaxyga.com>
+> ---
 
-Add the tables and constants for init sequences for UFS QMP phy found in
-SM7150 SoC.
 
-Signed-off-by: David Wronek <davidwronek@gmail.com>
-Signed-off-by: Danila Tikhonov <danila@jiaxyga.com>
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
----
- drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 61 +++++++++++++++++++++++++
- 1 file changed, 61 insertions(+)
+Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-index 994ddd5d4a81..d58822049211 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-@@ -349,6 +349,36 @@ static const struct qmp_phy_init_tbl sdm845_ufsphy_pcs[] = {
- 	QMP_PHY_INIT_CFG(QPHY_V3_PCS_UFS_MULTI_LANE_CTRL1, 0x02),
- };
- 
-+static const struct qmp_phy_init_tbl sm7150_ufsphy_rx[] = {
-+	QMP_PHY_INIT_CFG(QSERDES_V3_RX_SIGDET_LVL, 0x24),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_RX_SIGDET_CNTRL, 0x0f),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_RX_SIGDET_DEGLITCH_CNTRL, 0x1e),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_RX_RX_INTERFACE_MODE, 0x40),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_RX_UCDR_FASTLOCK_FO_GAIN, 0x0b),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_RX_RX_TERM_BW, 0x5b),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_RX_RX_EQU_ADAPTOR_CNTRL2, 0x06),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_RX_RX_EQU_ADAPTOR_CNTRL3, 0x04),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_RX_RX_EQU_ADAPTOR_CNTRL4, 0x1b),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_RX_UCDR_SVS_SO_GAIN_HALF, 0x04),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_RX_UCDR_SVS_SO_GAIN_QUARTER, 0x04),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_RX_UCDR_SVS_SO_GAIN, 0x04),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_RX_UCDR_SO_SATURATION_AND_ENABLE, 0x5b),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_RX_UCDR_PI_CONTROLS, 0x81),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_RX_UCDR_FASTLOCK_COUNT_LOW, 0x80),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_RX_RX_MODE_00, 0x59),
-+};
-+
-+static const struct qmp_phy_init_tbl sm7150_ufsphy_pcs[] = {
-+	QMP_PHY_INIT_CFG(QPHY_V3_PCS_UFS_RX_SIGDET_CTRL2, 0x6f),
-+	QMP_PHY_INIT_CFG(QPHY_V3_PCS_UFS_TX_LARGE_AMP_DRV_LVL, 0x0f),
-+	QMP_PHY_INIT_CFG(QPHY_V3_PCS_UFS_TX_SMALL_AMP_DRV_LVL, 0x02),
-+	QMP_PHY_INIT_CFG(QPHY_V3_PCS_UFS_RX_SYM_RESYNC_CTRL, 0x03),
-+	QMP_PHY_INIT_CFG(QPHY_V3_PCS_UFS_TX_MID_TERM_CTRL1, 0x43),
-+	QMP_PHY_INIT_CFG(QPHY_V3_PCS_UFS_RX_SIGDET_CTRL1, 0x0f),
-+	QMP_PHY_INIT_CFG(QPHY_V3_PCS_UFS_RX_MIN_HIBERN8_TIME, 0xff),
-+	QMP_PHY_INIT_CFG(QPHY_V3_PCS_UFS_MULTI_LANE_CTRL1, 0x02),
-+};
-+
- static const struct qmp_phy_init_tbl sm8150_ufsphy_serdes[] = {
- 	QMP_PHY_INIT_CFG(QSERDES_V4_COM_SYSCLK_EN_SEL, 0xd9),
- 	QMP_PHY_INIT_CFG(QSERDES_V4_COM_HSCLK_SEL, 0x11),
-@@ -911,6 +941,34 @@ static const struct qmp_phy_cfg sm6115_ufsphy_cfg = {
- 	.no_pcs_sw_reset	= true,
- };
- 
-+static const struct qmp_phy_cfg sm7150_ufsphy_cfg = {
-+	.lanes			= 1,
-+
-+	.offsets		= &qmp_ufs_offsets,
-+
-+	.tbls = {
-+		.serdes		= sdm845_ufsphy_serdes,
-+		.serdes_num	= ARRAY_SIZE(sdm845_ufsphy_serdes),
-+		.tx		= sdm845_ufsphy_tx,
-+		.tx_num		= ARRAY_SIZE(sdm845_ufsphy_tx),
-+		.rx		= sm7150_ufsphy_rx,
-+		.rx_num		= ARRAY_SIZE(sm7150_ufsphy_rx),
-+		.pcs		= sm7150_ufsphy_pcs,
-+		.pcs_num	= ARRAY_SIZE(sm7150_ufsphy_pcs),
-+	},
-+	.tbls_hs_b = {
-+		.serdes		= sdm845_ufsphy_hs_b_serdes,
-+		.serdes_num	= ARRAY_SIZE(sdm845_ufsphy_hs_b_serdes),
-+	},
-+	.clk_list		= sdm845_ufs_phy_clk_l,
-+	.num_clks		= ARRAY_SIZE(sdm845_ufs_phy_clk_l),
-+	.vreg_list		= qmp_phy_vreg_l,
-+	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
-+	.regs			= ufsphy_v3_regs_layout,
-+
-+	.no_pcs_sw_reset	= true,
-+};
-+
- static const struct qmp_phy_cfg sm8150_ufsphy_cfg = {
- 	.lanes			= 2,
- 
-@@ -1560,6 +1618,9 @@ static const struct of_device_id qmp_ufs_of_match_table[] = {
- 	}, {
- 		.compatible = "qcom,sm6350-qmp-ufs-phy",
- 		.data = &sdm845_ufsphy_cfg,
-+	}, {
-+		.compatible = "qcom,sm7150-qmp-ufs-phy",
-+		.data = &sm7150_ufsphy_cfg,
- 	}, {
- 		.compatible = "qcom,sm8150-qmp-ufs-phy",
- 		.data = &sm8150_ufsphy_cfg,
--- 
-2.39.2
+Best regards,
+Krzysztof
 
 
 -- 
