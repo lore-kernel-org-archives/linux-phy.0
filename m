@@ -4,67 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4D9A6C6FD1F
-	for <linux-phy@archiver.kernel.org>; Tue, 14 Mar 2023 07:31:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 00AEFC6FD1C
+	for <linux-phy@archiver.kernel.org>; Tue, 14 Mar 2023 11:17:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=boW7b/g+sr4w/6j6SRpsHzl6v3MSx2XNGtvuu6ECQ6M=; b=pMSR7aCE2h9WXQ
-	Of71TRpyslLCse68A+V9OSCemgEBbTzvCKNBqU6gOM9d1JfracLvqDV0XoggWAOGmE4fimmLf7C2s
-	LYiFGdlrVATjAChUtpnLVyWK4Lw6+yBhdRHmH5D73jMCfdu84Qglit4/8Y8LPoWE8OuPoOBxN6XEq
-	aqqT3y1kb5G6lhTwZdsRq3p5+VeyLVUHMma9G2sgRLePwMYj2EaI4Hy6MQFowmyGmHRzYp2teTBBr
-	66zbfqQ7V/dOYCNMr01LW6pBr2RL7KS8aGpp4fl/7f/zUBMP4KNVfN2DLdd7yzEt7DFzyUAfXxMRe
-	dOSr4r1nJlp/kGRiJ7Sg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=+eZm+6alMc4be9r8KFFP5Ql7lby+KFYtpPyrg5awPvA=; b=T9TTfJLkK3bTWI
+	FPu5lYaseXxyBiPxUF5z6eHknk9qdIZLJ3/jLMhr+loylXRwIbRnJP2ZtnnmPUkYrwcApmWk1yp4A
+	uzFyfFmQj4qpifOisKsXJsAmNQ0D/LQVfpifcr3lc9w2ie6wY8uSgCKg7RwbACFGpNuUY8D9iNqPv
+	O3uOa8OVIAhjAOrvYdeZGFD6YypCxotvJbgKwJrD4i21YiTUpCJGHuZvXkCwCJPVSDH7vd7wAPKJs
+	2srwcNdI0/wDf1KYrzmDg2nw3CSnny+1NzK5sYvO21ZoJMYHUeRBzxTJfUg9AZT6SPXFKtLaEGvSX
+	HtNra7xQotCqlLr1gusA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
-	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pbz8U-009NEg-LF; Tue, 14 Mar 2023 07:31:54 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
-	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pbz8Q-009NDS-Vk
-	for linux-phy@lists.infradead.org; Tue, 14 Mar 2023 07:31:53 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
-	by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 32E7Vdgn049498;
-	Tue, 14 Mar 2023 02:31:39 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
-	s=ti-com-17Q1; t=1678779099;
-	bh=32Yd0EmcM73jx9u+iu/Ik61H9RGH4/tolyK6eCbwNqI=;
-	h=From:To:CC:Subject:Date;
-	b=xXc7uCPp8xMgqEKaD8pYtVL07KSSEs3vg0OKc+m6FF+H7TyS+/6TKSFQbhypsqKJh
-	 2JB6YZhBef8eZF52awlDXZwmsja323b4RJgzag9dm5bJZJvPuc653szLKvRUy1an5V
-	 5z3jIB9CYo2qUztMb6jqM0vIoTU0/LdcAsgVM+3g=
-Received: from DLEE112.ent.ti.com (dlee112.ent.ti.com [157.170.170.23])
-	by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 32E7VdVQ089133
-	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Tue, 14 Mar 2023 02:31:39 -0500
-Received: from DLEE110.ent.ti.com (157.170.170.21) by DLEE112.ent.ti.com
- (157.170.170.23) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.16; Tue, 14
- Mar 2023 02:31:39 -0500
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE110.ent.ti.com
- (157.170.170.21) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.16 via
- Frontend Transport; Tue, 14 Mar 2023 02:31:39 -0500
-Received: from localhost (ileaxei01-snat.itg.ti.com [10.180.69.5])
-	by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id 32E7VbVJ003849;
-	Tue, 14 Mar 2023 02:31:38 -0500
-From: Vaishnav Achath <vaishnav.a@ti.com>
-To: <linux-phy@lists.infradead.org>, <vkoul@kernel.org>, <kishon@kernel.org>
-CC: <linux-kernel@vger.kernel.org>, <j-luthra@ti.com>, <devarsht@ti.com>,
-        <tomi.valkeinen@ideasonboard.com>, <praneeth@ti.com>,
-        <u-kumar1@ti.com>, <vigneshr@ti.com>, <nm@ti.com>,
-        <sinthu.raja@ti.com>, <vaishnav.a@ti.com>
-Subject: [PATCH] phy: cadence: cdns-dphy-rx: Add common module reset support
-Date: Tue, 14 Mar 2023 13:01:37 +0530
-Message-ID: <20230314073137.2153-1-vaishnav.a@ti.com>
-X-Mailer: git-send-email 2.17.1
+	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
+	id 1pc2eU-009sVZ-1X;
+	Tue, 14 Mar 2023 11:17:10 +0000
+Received: from mail-ed1-x530.google.com ([2a00:1450:4864:20::530])
+	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
+	id 1pc2eP-009sTM-0I
+	for linux-phy@lists.infradead.org;
+	Tue, 14 Mar 2023 11:17:08 +0000
+Received: by mail-ed1-x530.google.com with SMTP id j11so60488738edq.4
+        for <linux-phy@lists.infradead.org>; Tue, 14 Mar 2023 04:17:02 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1678792621;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=VyMYTE8eRVWxXGxDN3qi6ovP5SN8DKhbGCFcirh8c68=;
+        b=gYVni5rS+U0D3XPXroPjMejaXjUCgJYQue+8nXmM0hbi6lhCI1VcxmbnKS+hiuTamt
+         RC2WeKXamlUyZ8HLt6b+G0enmZvwqk34qKNb2OswI1SlizapZY242VV4VpdgRK2zAfGm
+         Wr2hX1BB0yOy6KvMaF0CtOVuzxY4Pxpyn6Yi/IXic4Pfs27QQ29/aw/aXjdOlXJsS6XF
+         JR2T3I/DsYGTkVk5dy6Owqkm9qjkNtBoeJboMe3C6LDW2Q+//sYbFPpyxOlJ012bCxzT
+         86j+GjQy7rhOi7RAshikVzvFiXBYiXWy/rP0RFyb3t8vqfU+XR3xdCR0X3D0bfnDKuTu
+         +Gyw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112; t=1678792621;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=VyMYTE8eRVWxXGxDN3qi6ovP5SN8DKhbGCFcirh8c68=;
+        b=GNX9fFvVDhZZinJwr2eywUnBSNtlbanY3aW7azvJDO7Q3tAKB73KKiZVf8m5JpTvaE
+         9nT+EsltAehSNArf2LnxyxbMOr2wnlkj7lTJu34OmOyipzfYoLV9erTYOWulpFS7JiXQ
+         jSW+DDCg6r4UWxL2nEU/snZwSYwfPoo3RuzyL6wgKOP5qrEO7dNn/gDevHg7A77Brqtu
+         62lJ6tMdEB59w65llOmRp781gA5gLBTFTvkbTgLtQxh/vsx6ZcNnlM3eYpZxU+YCF23x
+         8UEr/dGRec1zPeuxwVH6JZhzj3CxdD+hoQgdHhN2cNTHM3URf/7UyP5lHhjZ4h0AVO9/
+         Dz9w==
+X-Gm-Message-State: AO0yUKUFhjMCXA2iDpn/dmL4+E78ok9/bjx+zrTB6yXiq8PtbvdjDBlD
+	uWO9kT7ITF0xQ7OQGNLLXiyn3w==
+X-Google-Smtp-Source: AK7set/G4w6NSTJvqWAmj5mHdKpnG7SBlJNvbb8K+gxbWYCEVR2R0MuarC2DZo6U0jwmmUYaFYUcug==
+X-Received: by 2002:a17:907:b9d4:b0:8b1:7eb4:6bea with SMTP id xa20-20020a170907b9d400b008b17eb46beamr2029236ejc.38.1678792620771;
+        Tue, 14 Mar 2023 04:17:00 -0700 (PDT)
+Received: from ?IPV6:2a02:810d:15c0:828:59be:4b3f:994b:e78c? ([2a02:810d:15c0:828:59be:4b3f:994b:e78c])
+        by smtp.gmail.com with ESMTPSA id r9-20020a50c009000000b004c13fe8fabfsm855903edb.84.2023.03.14.04.16.54
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 14 Mar 2023 04:16:56 -0700 (PDT)
+Message-ID: <d9f5a8da-575e-40b7-4871-b73374421245@linaro.org>
+Date: Tue, 14 Mar 2023 12:16:54 +0100
 MIME-Version: 1.0
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.8.0
+Subject: Re: [PATCH 2/4] PCI: rockchip-dwc: Add rk3588 compatible line
+To: Lucas Tanure <lucas.tanure@collabora.com>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring
+ <robh+dt@kernel.org>, Krzysztof Kozlowski
+ <krzysztof.kozlowski+dt@linaro.org>, Heiko Stuebner <heiko@sntech.de>,
+ Thomas Gleixner <tglx@linutronix.de>, Marc Zyngier <maz@kernel.org>,
+ Lorenzo Pieralisi <lpieralisi@kernel.org>,
+ Krzysztof Wilczynski <kw@linux.com>, Bjorn Helgaas <bhelgaas@google.com>
+Cc: Qu Wenruo <wqu@suse.com>, Piotr Oniszczuk <piotr.oniszczuk@gmail.com>,
+ Peter Geis <pgwipeout@gmail.com>, Kever Yang <kever.yang@rock-chips.com>,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org, kernel@collabora.com
+References: <20230313153953.422375-1-lucas.tanure@collabora.com>
+ <20230313153953.422375-3-lucas.tanure@collabora.com>
+Content-Language: en-US
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <20230313153953.422375-3-lucas.tanure@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230314_003151_191656_71CF50EF 
-X-CRM114-Status: GOOD (  13.55  )
+X-CRM114-CacheID: sfid-20230314_041705_134933_60FC8FE8 
+X-CRM114-Status: GOOD (  15.28  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,106 +104,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Sinthu Raja <sinthu.raja@ti.com>
+On 13/03/2023 16:39, Lucas Tanure wrote:
+> RK3588 can use the same PCIe driver as rk3568
+> 
+> Signed-off-by: Lucas Tanure <lucas.tanure@collabora.com>
+> ---
+>  drivers/pci/controller/dwc/pcie-dw-rockchip.c | 1 +
+>  1 file changed, 1 insertion(+)
+> 
+> diff --git a/drivers/pci/controller/dwc/pcie-dw-rockchip.c b/drivers/pci/controller/dwc/pcie-dw-rockchip.c
+> index c1e7653e508e..435b717e5bc6 100644
+> --- a/drivers/pci/controller/dwc/pcie-dw-rockchip.c
+> +++ b/drivers/pci/controller/dwc/pcie-dw-rockchip.c
+> @@ -354,6 +354,7 @@ static int rockchip_pcie_probe(struct platform_device *pdev)
+>  
+>  static const struct of_device_id rockchip_pcie_of_match[] = {
+>  	{ .compatible = "rockchip,rk3568-pcie", },
+> +	{ .compatible = "rockchip,rk3588-pcie", },
 
-DPHY RX module has a common module reset (RSTB_CMN) which is expected
-to be released during configuration. In J721E SR1.0 the RSTB_CMN is
-internally tied to CSI_RX_RST and is hardware controlled, for all
-other newer platforms the common module reset is software controlled.
-Add support to control common module reset during configuration and
-also skip common module reset based on soc_device_match() for J721E SR1.0.
+Why do you need new entry then?
 
-Signed-off-by: Sinthu Raja <sinthu.raja@ti.com>
-Co-developed-by: Vaishnav Achath <vaishnav.a@ti.com>
-Signed-off-by: Vaishnav Achath <vaishnav.a@ti.com>
----
-
-Tested on J721E SR1.0 and SR 1.1 by CSI2RX streaming,
-without this changes CSI2RX streaming fails on J721E SR1.1
-and all other newer TI platforms (J721S2, J784S4, AM62X).
-
-Logs: https://gist.github.com/vaishnavachath/3ecda7de0e63b13c6f765ae2c4f9c5ff
-
- drivers/phy/cadence/cdns-dphy-rx.c | 32 ++++++++++++++++++++++++++++++
- 1 file changed, 32 insertions(+)
-
-diff --git a/drivers/phy/cadence/cdns-dphy-rx.c b/drivers/phy/cadence/cdns-dphy-rx.c
-index 572c70089a94..c05b043893a9 100644
---- a/drivers/phy/cadence/cdns-dphy-rx.c
-+++ b/drivers/phy/cadence/cdns-dphy-rx.c
-@@ -11,10 +11,12 @@
- #include <linux/phy/phy.h>
- #include <linux/phy/phy-mipi-dphy.h>
- #include <linux/platform_device.h>
-+#include <linux/sys_soc.h>
- 
- #define DPHY_PMA_CMN(reg)		(reg)
- #define DPHY_PCS(reg)			(0xb00 + (reg))
- #define DPHY_ISO(reg)			(0xc00 + (reg))
-+#define DPHY_WRAP(reg)			(0x1000 + (reg))
- 
- #define DPHY_CMN_SSM			DPHY_PMA_CMN(0x20)
- #define DPHY_CMN_RX_MODE_EN		BIT(10)
-@@ -33,6 +35,9 @@
- #define DPHY_POWER_ISLAND_EN_CLK	DPHY_PCS(0xc)
- #define DPHY_POWER_ISLAND_EN_CLK_VAL	0xaa
- 
-+#define DPHY_LANE			DPHY_WRAP(0x0)
-+#define DPHY_LANE_RESET_CMN_EN		BIT(23)
-+
- #define DPHY_ISO_CL_CTRL_L		DPHY_ISO(0x10)
- #define DPHY_ISO_DL_CTRL_L0		DPHY_ISO(0x14)
- #define DPHY_ISO_DL_CTRL_L1		DPHY_ISO(0x20)
-@@ -57,6 +62,10 @@ struct cdns_dphy_rx_band {
- 	unsigned int max_rate;
- };
- 
-+struct cdns_dphy_soc_data {
-+	bool has_hw_cmn_rstb;
-+};
-+
- /* Order of bands is important since the index is the band number. */
- static const struct cdns_dphy_rx_band bands[] = {
- 	{ 80, 100 }, { 100, 120 }, { 120, 160 }, { 160, 200 }, { 200, 240 },
-@@ -142,13 +151,36 @@ static int cdns_dphy_rx_wait_lane_ready(struct cdns_dphy_rx *dphy,
- 	return 0;
- }
- 
-+static struct cdns_dphy_soc_data j721e_soc_data = {
-+	.has_hw_cmn_rstb = true,
-+};
-+
-+static const struct soc_device_attribute cdns_dphy_socinfo[] = {
-+	{
-+		.family = "J721E",
-+		.revision = "SR1.0",
-+		.data = &j721e_soc_data,
-+	},
-+	{/* sentinel */}
-+};
-+
- static int cdns_dphy_rx_configure(struct phy *phy,
- 				  union phy_configure_opts *opts)
- {
- 	struct cdns_dphy_rx *dphy = phy_get_drvdata(phy);
- 	unsigned int reg, lanes = opts->mipi_dphy.lanes;
-+	const struct cdns_dphy_soc_data *soc_data = NULL;
-+	const struct soc_device_attribute *soc;
- 	int band_ctrl, ret;
- 
-+	soc = soc_device_match(cdns_dphy_socinfo);
-+	if (soc && soc->data)
-+		soc_data = soc->data;
-+	if (!soc || (soc_data && !soc_data->has_hw_cmn_rstb)) {
-+		reg = DPHY_LANE_RESET_CMN_EN;
-+		writel(reg, dphy->regs + DPHY_LANE);
-+	}
-+
- 	/* Data lanes. Minimum one lane is mandatory. */
- 	if (lanes < DPHY_LANES_MIN || lanes > DPHY_LANES_MAX)
- 		return -EINVAL;
--- 
-2.17.1
+Best regards,
+Krzysztof
 
 
 -- 
