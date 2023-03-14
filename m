@@ -4,66 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 31A31C6FD1F
-	for <linux-phy@archiver.kernel.org>; Tue, 14 Mar 2023 15:35:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 20163C6FD1F
+	for <linux-phy@archiver.kernel.org>; Tue, 14 Mar 2023 17:57:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=ZFJffqDeZ4exXlfqoNkkAITe3GsdnW0Vcu1eKN5SgZw=; b=L+n93JkqPIkNafASl4djLRCcP7
-	4YK5lgDYX7g31/hwIqVkBh/POWxvh/FiV7Jrkf6v/LFPDnqzRellnxz5EWrVoqW/Nm/5uWoR3jJBl
-	+U+VFW47apQX6YtERsWNzrbPPjGN3OiPW6C3biDjSSrqxNSN97KX6iTokn7SzYIY1pRdJhdCZevhu
-	9O3lhkpri5s/Ay0OSHYaBVNhcSs7gJohihcAkKiNdFGwAVWjdVRHhDv45QvOjs8mNIPix1auO/trA
-	IkHVPVIf+1LD/knqmNcy0hcfmasb18r75C6lsITmRW+mc56tZadwHbP7kw5qJl7CjWykPrQRDVETo
-	lch5MVBg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=QZQnDpFxgVmWB/KcI4gdkJ8Frvs6/FN4EEMOhsri/8M=; b=aBY3aws75QJDeD
+	k/nvqXU5I68LU37zPggF/qCJ0Ar9uZKQORBlu2hS5o/7Ha8j6KNwDJWx24BtCVc6CPpTJB22bykWf
+	keFX0zOHg23v5CFMbLCp4aS55TOatILlUildJuvr1Fei63PuFSXItuVEu5pUUAJIClnw9jpEsk13W
+	ptu1WdGw5THD3lAT9OM8/sqH2o9ASkfaQWabOS9Ul+5abJNNDDivykwi/b0NtJPugBidcAUd8VsFT
+	ejm3RoZumms/GJCqri7wu8fHI4sy/hTKNJnWgjx6XmbS18djE5COS7Bcqf7vVy4Uv0SjA+Dd15WDH
+	gBfX4Bm3dtYc+eFAvvRA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pc6gP-00Acgc-2X;
-	Tue, 14 Mar 2023 15:35:25 +0000
-Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
+	id 1pc8tT-00B5AC-2P;
+	Tue, 14 Mar 2023 17:57:03 +0000
+Received: from mail-ed1-x534.google.com ([2a00:1450:4864:20::534])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pc6gN-00AcfK-0B
+	id 1pc8tD-00B57w-0O
 	for linux-phy@lists.infradead.org;
-	Tue, 14 Mar 2023 15:35:24 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id 80E0DB818B9;
-	Tue, 14 Mar 2023 15:35:21 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4E9B1C433EF;
-	Tue, 14 Mar 2023 15:35:18 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1678808120;
-	bh=lDxTSgsnXum9DYPXFxbGHFuMeuz70JNgYVKghxXniaQ=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=PCbHWZWFAJlaHmd0FT7vhDiC4wqizF5BpL3ect84f8v0e1UNTESM3LvnrzbhI2reT
-	 7nxR3gTkrhTS2uMmYZLDo7/oAbLUwrU+I6ajJIoot/l5bJRZabCymLbKPUgAY8qeSN
-	 9UWTeXhHicJV7fU/KCy8hxbBX3ULT1Mn9sPrCy9et4dcxWt604vKEMljxZeNPOpalB
-	 BvwLY0rIbr+cdaHOqr4D4Bs3512/5bn/mu0WNJMZp4QbA+QxwUp22TDWAlRnxWaEg1
-	 6gRU4p6ofq61DtVttGeFblrTs6dUFeGEeXbUzlCsdTeZb0U8z1wyje3Ia5Lqg6/jVN
-	 E+p+tHrGHwFcw==
-Date: Tue, 14 Mar 2023 15:35:15 +0000
-From: Conor Dooley <conor@kernel.org>
-To: Sakari Ailus <sakari.ailus@iki.fi>,
-	Nicolas Ferre <nicolas.ferre@microchip.com>
-Cc: Eugen Hristev <eugen.hristev@microchip.com>,
-	linux-media@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
-	luis.oliveira@synopsys.com,
-	Conor Dooley <conor.dooley@microchip.com>
-Subject: Re: [PATCH v5 3/4] media: platform: dwc: Add MIPI CSI-2 controller
- driver
-Message-ID: <97746427-c373-4e49-be8d-31a22ece30c7@spud>
-References: <20221216143717.1002015-1-eugen.hristev@microchip.com>
- <20221216143717.1002015-4-eugen.hristev@microchip.com>
- <ZBCCmWQ8lM/wfexr@valkosipuli.retiisi.eu>
+	Tue, 14 Mar 2023 17:57:00 +0000
+Received: by mail-ed1-x534.google.com with SMTP id da10so65552680edb.3
+        for <linux-phy@lists.infradead.org>; Tue, 14 Mar 2023 10:56:45 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1678816602;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=BBAdudaa5OwS68f0uZK/unstmFHq5M3zw+2tcO53Zq8=;
+        b=IQfJITGI5ZNI33OajIaXutN5rC2BX75h5a7QWvvS7cs+Bsd6qzJI8DIKrMv3iICbBL
+         VgyYu6jTKZedQHe3vQ7bXK9gqO/IT5LkTGA/lSNTLq8Vwtb9qJyAaChDD8v3vTBF3EkZ
+         fqY3FSWFi3DyJDtzlNjMcrZgHq6ohEC50aePxaHLZr9VDf/jdMGadDQKaRZ7s95sSxDR
+         ohvTlInGPaHJjFal0b6r/nRn+ezWiYRAyQV8b0yup8DjXt266T16rPY1w+hhs6Z+mYnh
+         LUUIs5HOzI2rT84gq0uu395D9OjbnmRgTRfB6OR4GthfN4uesaxKIqVSp/sIJkmToc21
+         ryzQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112; t=1678816602;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=BBAdudaa5OwS68f0uZK/unstmFHq5M3zw+2tcO53Zq8=;
+        b=tyriV/+XqJoevzI1+2Eggrr5gn4gs2L3T2vDXw1xrnATpCdSM/eaoR2KPUqitbrOTo
+         SR6lw4QOn2nX5pjPpcN856mf2S4Z1ml+URSnY6FvBH6jQk2z2HJ6jsJDjiBBCYz9+qvX
+         y5XL7VwW/hs4qmRMiGBkpXhLTpJk/zkjZ3w1YgRER5xrrQYJ8GZYuzBdmcZGAse4lOFz
+         xjeuvWPNVIldCYAQDXfrR8uhRgS1omvKEBM16jLiMULDdnYaLsHM5JyWgSuH6AcXMzw/
+         CrzxNidyzpd+Cwop8oGbWGqpvVYcjnwmN17KJ24yDF0DRZBRA5FmMaYOgjFIVHCI0U6c
+         8IlA==
+X-Gm-Message-State: AO0yUKVbYi+u6VsZOqIg19XOPIKT+ui5Mg4WLeLh8Nzx8HDyAdOIxkfb
+	AJDHt3m7qLeQa89gdRTPMg8cDw==
+X-Google-Smtp-Source: AK7set/VmYsgH6FiXcXVlsj6D3W7RyTlZ0vFACe6rXBooAVbxkCIYcdML6pkyiokc3OU1DDaaYwUAg==
+X-Received: by 2002:aa7:c508:0:b0:4ad:7a9f:a9f0 with SMTP id o8-20020aa7c508000000b004ad7a9fa9f0mr35568684edq.22.1678816602556;
+        Tue, 14 Mar 2023 10:56:42 -0700 (PDT)
+Received: from ?IPV6:2a02:810d:15c0:828:59be:4b3f:994b:e78c? ([2a02:810d:15c0:828:59be:4b3f:994b:e78c])
+        by smtp.gmail.com with ESMTPSA id i19-20020a508713000000b004af62273b66sm1392473edb.18.2023.03.14.10.56.41
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 14 Mar 2023 10:56:42 -0700 (PDT)
+Message-ID: <684eb04d-aeaa-07e1-34d6-783e85e379f0@linaro.org>
+Date: Tue, 14 Mar 2023 18:56:40 +0100
 MIME-Version: 1.0
-In-Reply-To: <ZBCCmWQ8lM/wfexr@valkosipuli.retiisi.eu>
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.8.0
+Subject: Re: [PATCH v11 03/13] dt-bindings: Convert gpio-mmio to yaml
+Content-Language: en-US
+To: Sean Anderson <sean.anderson@seco.com>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, linux-phy@lists.infradead.org
+Cc: Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ devicetree@vger.kernel.org, Camelia Alexandra Groza <camelia.groza@nxp.com>,
+ Madalin Bucur <madalin.bucur@nxp.com>, Bagas Sanjaya <bagasdotme@gmail.com>,
+ Ioana Ciornei <ioana.ciornei@nxp.com>, linuxppc-dev@lists.ozlabs.org,
+ Linus Walleij <linus.walleij@linaro.org>, Bartosz Golaszewski
+ <brgl@bgdev.pl>, =?UTF-8?Q?Fern=c3=a1ndez_Rojas?= <noltari@gmail.com>,
+ Jonas Gorski <jonas.gorski@gmail.com>, linux-gpio@vger.kernel.org
+References: <20230313161138.3598068-1-sean.anderson@seco.com>
+ <20230313161138.3598068-4-sean.anderson@seco.com>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <20230313161138.3598068-4-sean.anderson@seco.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230314_083523_371528_5786647A 
-X-CRM114-Status: GOOD (  19.37  )
+X-CRM114-CacheID: sfid-20230314_105657_781607_1DE81401 
+X-CRM114-Status: GOOD (  33.99  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,96 +97,188 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============1322572456564244039=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
---===============1322572456564244039==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="8J/HusImJ6ezRElp"
-Content-Disposition: inline
-
-
---8J/HusImJ6ezRElp
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Tue, Mar 14, 2023 at 04:20:09PM +0200, Sakari Ailus wrote:
-> Hi Eugen,
->=20
-> On Fri, Dec 16, 2022 at 04:37:16PM +0200, Eugen Hristev wrote:
-> > From: Luis Oliveira <Luis.Oliveira@synopsys.com>
-> >=20
-> > Add the Synopsys MIPI CSI-2 controller driver. This
-> > controller driver is divided in platform functions and core functions.
-> > This way it serves as platform for future DesignWare drivers.
-> >=20
-> > Signed-off-by: Luis Oliveira <luis.oliveira@synopsys.com>
-> > Co-developed-by: Eugen Hristev <eugen.hristev@microchip.com>
-> > [eugen.hristev@microchip.com:
-> > Add format SRGGB10 to supported format list.
-> > Write the data type to the correct register DATA_IDS_1.
-> > Changed dev_info to dev_dbg to remove extra chatty messages
-> > Avoid overwriting static array of formats]
-> > Signed-off-by: Eugen Hristev <eugen.hristev@microchip.com>
-> > [luis.oliveira@synopsys.com: Add MIPI CSI-2 platform data]
-> > Signed-off-by: Luis Oliveira <luis.oliveira@synopsys.com>
-> > [eugen.hristev@microchip.com:
-> > Add support for periph clock and phy clock
-> > Fix enum_mbus function
-> > Implement get_mbus_config
-> > Implement media controller
-> > Update to use fwnode API
-> > In s_stream, first start/stop the sensor
-> > remove chatty 'number of lanes' message]
-> > Signed-off-by: Eugen Hristev <eugen.hristev@microchip.com>
-> > [conor.dooley@microchip.com: fix potential uninitialized variable use]
-> > Signed-off-by: Conor Dooley <conor.dooley@microchip.com>
-> > [eugen.hristev@microchip.com: port to kernel 5.16, 5.17]
-> > Signed-off-by: Eugen Hristev <eugen.hristev@microchip.com>
->=20
-> Same comment than on the 4th patch, this isn't very readable or relevant.
-
-I'd imagine it can just be collapsed into a Co-developed-by & a signoff
-as we hardly need multiple w/ the same names & companies involved each
-time.
-My "contribution" here (initialising some variables) doesn't warrant
-inclusion IMO.
-
-Eugen doesn't work for Microchip anymore though, and I don't know what
-the plan for continuing the upstreaming of this driver is.
-
-@Nicolas, do you have a plan here?
-
-Cheers,
-Conor.
-
---8J/HusImJ6ezRElp
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZBCULgAKCRB4tDGHoIJi
-0iXuAP43K8ntq9hXNbCfFEVPAXip9/lwYTQwOWcfU6wbxAHrcwD/TZa0zkYCap0q
-qTYag3lIixUkXWo4nH8aVLD7SH3EngQ=
-=e0GH
------END PGP SIGNATURE-----
-
---8J/HusImJ6ezRElp--
+On 13/03/2023 17:11, Sean Anderson wrote:
+> This is a generic binding for simple MMIO GPIO controllers. Although we
+> have a single driver for these controllers, they were previously spread
+> over several files. Consolidate them. The register descriptions are
+> adapted from the comments in the source. There is no set order for the
+> registers, so I have not specified one.
+> 
+> Rename brcm,bcm6345-gpio to brcm,bcm63xx-gpio to reflect that bcm6345
+> has moved.
+> 
+> Signed-off-by: Sean Anderson <sean.anderson@seco.com>
+> Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
+> ---
+> Linus or Bartosz, feel free to pick this up as the rest of this series
+> may not be merged any time soon.
+> 
+> Changes in v11:
+> - Keep empty (or almost-empty) properties on a single line
+> - Don't use | unnecessarily
+> - Use gpio as the node name for examples
+> - Rename brcm,bcm6345-gpio.yaml to brcm,bcm63xx-gpio.yaml
+> 
+> Changes in v10:
+> - New
+> 
+>  ...m6345-gpio.yaml => brcm,bcm63xx-gpio.yaml} |  16 +--
+>  .../devicetree/bindings/gpio/gpio-mmio.yaml   | 134 ++++++++++++++++++
+>  .../bindings/gpio/ni,169445-nand-gpio.txt     |  38 -----
+>  .../devicetree/bindings/gpio/wd,mbl-gpio.txt  |  38 -----
+>  4 files changed, 135 insertions(+), 91 deletions(-)
+>  rename Documentation/devicetree/bindings/gpio/{brcm,bcm6345-gpio.yaml => brcm,bcm63xx-gpio.yaml} (78%)
+>  create mode 100644 Documentation/devicetree/bindings/gpio/gpio-mmio.yaml
+>  delete mode 100644 Documentation/devicetree/bindings/gpio/ni,169445-nand-gpio.txt
+>  delete mode 100644 Documentation/devicetree/bindings/gpio/wd,mbl-gpio.txt
+> 
+> diff --git a/Documentation/devicetree/bindings/gpio/brcm,bcm6345-gpio.yaml b/Documentation/devicetree/bindings/gpio/brcm,bcm63xx-gpio.yaml
+> similarity index 78%
+> rename from Documentation/devicetree/bindings/gpio/brcm,bcm6345-gpio.yaml
+> rename to Documentation/devicetree/bindings/gpio/brcm,bcm63xx-gpio.yaml
+> index 4d69f79df859..e11f4af49c52 100644
+> --- a/Documentation/devicetree/bindings/gpio/brcm,bcm6345-gpio.yaml
+> +++ b/Documentation/devicetree/bindings/gpio/brcm,bcm63xx-gpio.yaml
 
 
---===============1322572456564244039==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+> +
+> +description:
+> +  Some simple GPIO controllers may consist of a single data register or a pair
+> +  of set/clear-bit registers. Such controllers are common for glue logic in
+> +  FPGAs or ASICs. Commonly, these controllers are accessed over memory-mapped
+> +  NAND-style parallel busses.
+> +
+> +properties:
+> +  big-endian: true
+> +
+> +  compatible:
+
+Keep compatible as first property.
+
+> +    enum:
+> +      - brcm,bcm6345-gpio # Broadcom BCM6345 GPIO controller
+> +      - wd,mbl-gpio # Western Digital MyBook Live memory-mapped GPIO controller
+> +      - ni,169445-nand-gpio # National Instruments 169445 GPIO NAND controller
+
+I think you got comment that these comments are making things
+unreadable. I don't see here improvement.
+
+For example first comment is useless - you say the same as compatible.
+Same with last one. So only remaining WD comment should be made in new
+line so everything is nicely readable.
+
+BTW, order the enum by name.
+
+
+> +
+> +  '#gpio-cells':
+> +    const: 2
+> +
+> +  gpio-controller:
+> +    true
+
+I am sure I saw comments here...
+
+https://lore.kernel.org/all/20230308231018.GA4039466-robh@kernel.org/
+
+> +
+> +  reg:
+> +    minItems: 1
+> +    description:
+> +      A list of registers in the controller. The width of each register is
+> +      determined by its size.
+
+I don't understand this comment. Aren't you describing now what 'reg' is
+in DT spec? If so, drop. If not, please share more.
+
+>  All registers must have the same width. The number
+> +      of GPIOs is set by the width, with bit 0 corresponding to GPIO 0.
+> +    items:
+> +      - description:
+> +          Register to READ the value of the GPIO lines. If GPIO line is high,
+> +          the bit will be set. If the GPIO line is low, the bit will be cleared.
+> +          This register may also be used to drive GPIOs if the SET register is
+> +          omitted.
+> +      - description:
+> +          Register to SET the value of the GPIO lines. Setting a bit in this
+> +          register will drive the GPIO line high.
+> +      - description:
+> +          Register to CLEAR the value of the GPIO lines. Setting a bit in this
+> +          register will drive the GPIO line low. If this register is omitted,
+> +          the SET register will be used to clear the GPIO lines as well, by
+> +          actively writing the line with 0.
+> +      - description:
+> +          Register to set the line as OUTPUT. Setting a bit in this register
+> +          will turn that line into an output line. Conversely, clearing a bit
+> +          will turn that line into an input.
+> +      - description:
+> +          Register to set this line as INPUT. Setting a bit in this register
+> +          will turn that line into an input line. Conversely, clearing a bit
+> +          will turn that line into an output.
+> +
+> +  reg-names:
+> +    minItems: 1
+> +    maxItems: 5
+> +    items:
+> +      enum:
+
+Why this is in any order? Other bindings were here specific, your 'reg'
+is also specific/fixed.
+
+> +        - dat
+> +        - set
+> +        - clr
+> +        - dirout
+> +        - dirin
+> +
+> +  native-endian: true
+> +
+> +  no-output:
+> +    $ref: /schemas/types.yaml#/definitions/flag
+> +    description:
+> +      If this property is present, the controller cannot drive the GPIO lines.
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - reg-names
+> +  - '#gpio-cells'
+> +  - gpio-controller
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    gpio@1f300010 {
+> +      compatible = "ni,169445-nand-gpio";
+> +      reg = <0x1f300010 0x4>;
+> +      reg-names = "dat";
+> +      gpio-controller;
+> +      #gpio-cells = <2>;
+> +    };
+> +
+> +    gpio@1f300014 {
+> +      compatible = "ni,169445-nand-gpio";
+> +      reg = <0x1f300014 0x4>;
+> +      reg-names = "dat";
+> +      gpio-controller;
+> +      #gpio-cells = <2>;
+> +      no-output;
+> +    };
+
+No need to duplicate examples. Keep only one. Everything is the same.
+
+
+Best regards,
+Krzysztof
+
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============1322572456564244039==--
-
