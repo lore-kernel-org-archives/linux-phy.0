@@ -4,73 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 46B00C74A44
-	for <linux-phy@archiver.kernel.org>; Tue, 14 Mar 2023 18:33:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 22A63C05027
+	for <linux-phy@archiver.kernel.org>; Tue, 14 Mar 2023 18:51:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4Y0Q6Gzof6rOjX1h7rQMNq8/WCHdcrIKm7xuTJ8Okmw=; b=DVeJnK1hTtODai
-	CHnIXk7qJiur9ksxMhx0UV4CAP3fCst6DIOhtwSSevpxK1zX3aHk98LHNbmBMeCgIXuUePZ+ApY9m
-	kKPhBvFbiwDlcFxdAlHc51qArH2OTuuhIQ3NNd8cGVFgPR5LiyXhDGL8EC7fD6VIposnBDlQd2xZ9
-	5CoAvHwxSmhJsezpfLZvvwshXrJQ2VgPDYW6x5gxkyd/SQYsnS3nk13VsdNt+d12tfsY50YoKc0tg
-	3RBBjfEh0PBXNiS6CB5xTORTWPP5GENFlPdP0Xa66pWjEI5N4M/cp6NOYMg9ksggVwfWlc67ZSvYl
-	dtKNyGwSQwg8H3yapg+w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:
+	References:Cc:To:Subject:Date:Message-ID:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=1ZljpdpNEb2tLofiJ/x1aI81HZOwQTJGZMnVmpFu6KI=; b=3gj6ybTwxbmfyMJ4VMXDdwL8Fr
+	ZALoeom16JTZ8VAy/H710HjB5A9R0C5r8IWnCQMSJrByROwUT8FM1DV/3pTR6kYCpHU3Flj6+eOvj
+	LizfE8P3bcZ/Y3PePX1J43B16EmidakikQL2jcz25PTMmozywd62AhOyIHgh2I0F17W28lLprlqh2
+	LTm0MvG8pYIzrzSYjDYUc6ojZWWU3G2OWVa4GMz6Sk7ID+4tYlGGY2b+vOI2ePo/zJd06dOwlnXHt
+	v7kddHVsxoNJ3FvfJ+t2O8pDgKoAsdUVswy7a0RnQdc8L9bfDOcdFINVsCLIdnT7LaKZSlKKcRJn/
+	oxbL/ntA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pc9SQ-00BCVU-2h;
-	Tue, 14 Mar 2023 18:33:10 +0000
-Received: from mail-ed1-x52d.google.com ([2a00:1450:4864:20::52d])
+	id 1pc9jt-00BFZ5-0W;
+	Tue, 14 Mar 2023 18:51:15 +0000
+Received: from mail-dbaeur03hn2030f.outbound.protection.outlook.com ([2a01:111:f400:fe1a::30f] helo=EUR03-DBA-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pc9SL-00BCSR-1i
-	for linux-phy@lists.infradead.org;
-	Tue, 14 Mar 2023 18:33:09 +0000
-Received: by mail-ed1-x52d.google.com with SMTP id eh3so9954070edb.11
-        for <linux-phy@lists.infradead.org>; Tue, 14 Mar 2023 11:33:02 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1678818781;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=LQb9xNYiO/iqB9yTe53F4I/BNv5rnpqkcJdJqgkN/yI=;
-        b=HxjcSy4OLiuvU7KpwhzgoEB5+vnpfyRmdS7ArxIic+7EEC9GnyMN+AZM8pWM//Gpku
-         LrAkjV0Z7FjaM7saOQNwicIBzLsbJqJRtEH6Zr6UszMMoWH7t6wax2RIan73ksECyQTq
-         /B63PMOslJ9KVU/1NLlag3hImAh2lurBS7pLpwnLTBrQqLfCiLFTrIs7c9je1vOIJVar
-         SxM7jSU8QxyLrpQm5qiTtsUiBNihlNTiMN9fmZi1ChcBzoujsVrGZslE8NeTwu/+KTBi
-         fkUIynMfk6UeVG3sX92pa/z8Kv9+srHnnkAJcLc8KECyfy1kYPng7EGubiove5Xs0lEP
-         6l9A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112; t=1678818781;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=LQb9xNYiO/iqB9yTe53F4I/BNv5rnpqkcJdJqgkN/yI=;
-        b=7E/ykiEGTBRW4PuTxsKCHkWx6gc6iWH1ivg02UShvUV6N/3DiOIKogDnvkXLrU7iTP
-         im+IjjfJiTFvwjBw/wroUS6Bdfn2+rNqJldoGxkGYpPuDiCIK+q0/nR9IiBmIyLkGP59
-         0JODqdKSkw0brAEayCaXfNBqS6EZMsPW8wp/PL0ZTAlZmfKl6gPQEdvdJL/AlAhpQ4ur
-         gHc4ToB/mMDbMjsjrc7HPcC019U5bS4Lvq9NLQSKKLuRWvtiMP1JnbVVRgJK8M44cxeO
-         HShpGtnAutmafz7WOggYKKY3Sv7y3dDegsLsYFigqC4PvjH4MKVfQ+TLLsatMimOUFbx
-         HCOw==
-X-Gm-Message-State: AO0yUKXhP8cqQtncvHgbHZ8/oJESTOWpnv1rJnhD3+4+VlwZdRsjjiz8
-	+EO/Pu/JdQFDj1E5UXqM+vODuQ==
-X-Google-Smtp-Source: AK7set8E16Uwl1ox24Ycdl24SNjfY/EOBbiAWVFUEt7rR6u2ZMYnWft2fxxQv0yKGXq/Uqerghj//A==
-X-Received: by 2002:a17:906:fa15:b0:92b:a3fe:53ca with SMTP id lo21-20020a170906fa1500b0092ba3fe53camr3166775ejb.30.1678818770388;
-        Tue, 14 Mar 2023 11:32:50 -0700 (PDT)
-Received: from ?IPV6:2a02:810d:15c0:828:59be:4b3f:994b:e78c? ([2a02:810d:15c0:828:59be:4b3f:994b:e78c])
-        by smtp.gmail.com with ESMTPSA id m10-20020a170906848a00b008def483cf79sm1442158ejx.168.2023.03.14.11.32.49
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 14 Mar 2023 11:32:49 -0700 (PDT)
-Message-ID: <ad56ca5e-03f7-5e3d-6547-91c64fdb08d3@linaro.org>
-Date: Tue, 14 Mar 2023 19:32:48 +0100
-MIME-Version: 1.0
+	id 1pc9jn-00BFXd-2r;
+	Tue, 14 Mar 2023 18:51:11 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=seco.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=VLGcYkiiYF4doTj2qCswPYQXZC+6ClCjEmjxsdngwLs=;
+ b=oRrBs+3YqRhcdY5yX4oskCdRGQ2+QjMPuh32DmNUlCkmbkweaZ9qN1F+N8eQutJygerKqBr1CZc3UNIUCAjLxPDfgEnEfUpZbc7a8Mg+yOvibkSyrPoOnfMwOzil2RwjXQXVdXua5ci7sRylQ3ifiBoJSj0SAv+oqUq6owSu7KXm2zGOJHpBFY8ZdfhDkhREt1eVrSv2VYr26nkAFhFmKfoAFJrKtjqjaI1UPp5HwPjCAa295cT8y1emdqIne8eLGUZjAO26N9OgxlndHNrPH6vCMITE1Na3Oo6sMfFfkGGMHQcgwGrqQUuhAvWZfHxcG7L1GReMxMDvt4mmcIN3kw==
+Received: from AS9PR04CA0128.eurprd04.prod.outlook.com (2603:10a6:20b:531::10)
+ by AS8PR03MB8975.eurprd03.prod.outlook.com (2603:10a6:20b:5bb::14) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6178.24; Tue, 14 Mar
+ 2023 18:50:58 +0000
+Received: from AM6EUR05FT059.eop-eur05.prod.protection.outlook.com
+ (2603:10a6:20b:531:cafe::39) by AS9PR04CA0128.outlook.office365.com
+ (2603:10a6:20b:531::10) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6178.26 via Frontend
+ Transport; Tue, 14 Mar 2023 18:50:58 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 20.160.56.81)
+ smtp.mailfrom=seco.com; dkim=pass (signature was verified)
+ header.d=seco.com;dmarc=pass action=none header.from=seco.com;
+Received-SPF: Pass (protection.outlook.com: domain of seco.com designates
+ 20.160.56.81 as permitted sender) receiver=protection.outlook.com;
+ client-ip=20.160.56.81; helo=inpost-eu.tmcas.trendmicro.com; pr=C
+Received: from inpost-eu.tmcas.trendmicro.com (20.160.56.81) by
+ AM6EUR05FT059.mail.protection.outlook.com (10.233.240.99) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.6199.14 via Frontend Transport; Tue, 14 Mar 2023 18:50:58 +0000
+Received: from outmta (unknown [192.168.82.132])
+	by inpost-eu.tmcas.trendmicro.com (Trend Micro CAS) with ESMTP id 2BB3A2008088A;
+	Tue, 14 Mar 2023 18:50:58 +0000 (UTC)
+Received: from EUR05-AM6-obe.outbound.protection.outlook.com (unknown [104.47.18.112])
+	by repre.tmcas.trendmicro.com (Trend Micro CAS) with ESMTPS id 303322008006F;
+	Tue, 14 Mar 2023 18:49:12 +0000 (UTC)
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=XrVJ+5eyyLeKSTG1TrREdSQ2pq5ImXR0QqA79WDCQTwjCXMLUsEpViw+MviCkZ1Sb6z4f8Kff3pEBmsOzI4rNSDQk7ZKyiK6uiyJNNAslWd+Kms57hUrHU5NtJpDo/strNZIwZvYHy6mje++Sg5wf1z9AebQqbsuvDHp+9qOemZ2FceU0BWLa12p1Qq2e8BvEgQ/d/S2EJ/0S2n7I+MWygcSaiRriljSs52ja7ELJ9NYToveU0ygiVRrnJBJ878KLXzz2K3d1bE2Tv/ulq5MqkH3Rm2IyfasTxjuusNQAwg8KHesQRbY2QUBWzy/ktLZ1pZcXdbbv9uzsWorTfMDMA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=VLGcYkiiYF4doTj2qCswPYQXZC+6ClCjEmjxsdngwLs=;
+ b=F8BYQbdK8UR7g5TimwEqYi/n+4BEiHCL7xlrHrRKKAf15bPVs4CqwfwiUpeTcw7mzEgZGHot9rVmL1e/LViKG+619JF4GUb2RpIPFJgTT9nBru29dl55XikK4HzutHRz3bh0OWHsoYoIQHijnzL1+bE5lWC6GvDF9E+7RKxRFyslzOIVTm0dEKS90NIbAqnc7DY8VE3tmG+RThfe3Zy6KUUuXNh5LK3LLANQFN5uoK1jz7zFfLDV/dtDxiWozAnvdxoxxwWg+n1vxOqzUoa23hie2ZaGOQJJm4+KIfSWeyEaiKrepI0sr8Ya/Y0ag5lNCQX/PFcx7jl8YCPCZpL86g==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=seco.com; dmarc=pass action=none header.from=seco.com;
+ dkim=pass header.d=seco.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=seco.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=VLGcYkiiYF4doTj2qCswPYQXZC+6ClCjEmjxsdngwLs=;
+ b=oRrBs+3YqRhcdY5yX4oskCdRGQ2+QjMPuh32DmNUlCkmbkweaZ9qN1F+N8eQutJygerKqBr1CZc3UNIUCAjLxPDfgEnEfUpZbc7a8Mg+yOvibkSyrPoOnfMwOzil2RwjXQXVdXua5ci7sRylQ3ifiBoJSj0SAv+oqUq6owSu7KXm2zGOJHpBFY8ZdfhDkhREt1eVrSv2VYr26nkAFhFmKfoAFJrKtjqjaI1UPp5HwPjCAa295cT8y1emdqIne8eLGUZjAO26N9OgxlndHNrPH6vCMITE1Na3Oo6sMfFfkGGMHQcgwGrqQUuhAvWZfHxcG7L1GReMxMDvt4mmcIN3kw==
+Authentication-Results-Original: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=seco.com;
+Received: from DB9PR03MB8847.eurprd03.prod.outlook.com (2603:10a6:10:3dd::13)
+ by DU0PR03MB9055.eurprd03.prod.outlook.com (2603:10a6:10:47f::5) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6178.24; Tue, 14 Mar
+ 2023 18:50:53 +0000
+Received: from DB9PR03MB8847.eurprd03.prod.outlook.com
+ ([fe80::dbcf:1089:3242:614e]) by DB9PR03MB8847.eurprd03.prod.outlook.com
+ ([fe80::dbcf:1089:3242:614e%4]) with mapi id 15.20.6178.024; Tue, 14 Mar 2023
+ 18:50:53 +0000
+Message-ID: <7c7311ad-fbdf-3c7e-dab5-28a562fb7e8d@seco.com>
+Date: Tue, 14 Mar 2023 14:50:48 -0400
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.8.0
+ Thunderbird/102.4.0
 Subject: Re: [PATCH v11 03/13] dt-bindings: Convert gpio-mmio to yaml
 Content-Language: en-US
-To: Sean Anderson <sean.anderson@seco.com>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, linux-phy@lists.infradead.org
+To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ linux-phy@lists.infradead.org
 Cc: Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
  Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org,
  devicetree@vger.kernel.org, Camelia Alexandra Groza <camelia.groza@nxp.com>,
@@ -83,11 +103,42 @@ References: <20230313161138.3598068-1-sean.anderson@seco.com>
  <20230313161138.3598068-4-sean.anderson@seco.com>
  <684eb04d-aeaa-07e1-34d6-783e85e379f0@linaro.org>
  <3c19e6d2-4df2-6187-36d5-98ceef07235a@seco.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <3c19e6d2-4df2-6187-36d5-98ceef07235a@seco.com>
+ <ad56ca5e-03f7-5e3d-6547-91c64fdb08d3@linaro.org>
+From: Sean Anderson <sean.anderson@seco.com>
+In-Reply-To: <ad56ca5e-03f7-5e3d-6547-91c64fdb08d3@linaro.org>
+X-ClientProxiedBy: BLAPR05CA0032.namprd05.prod.outlook.com
+ (2603:10b6:208:335::13) To DB9PR03MB8847.eurprd03.prod.outlook.com
+ (2603:10a6:10:3dd::13)
+MIME-Version: 1.0
+X-MS-TrafficTypeDiagnostic: 	DB9PR03MB8847:EE_|DU0PR03MB9055:EE_|AM6EUR05FT059:EE_|AS8PR03MB8975:EE_
+X-MS-Office365-Filtering-Correlation-Id: ec775a9e-45d7-4b68-5021-08db24bd0cad
+X-TrendMicro-CAS-OUT-LOOP-IDENTIFIER: 656f966764b7fb185830381c646b41a1
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam-Untrusted: BCL:0;
+X-Microsoft-Antispam-Message-Info-Original:  Q3L1DzmApxWxrbNWF6Sz9PBBv3LUsn9fcSEdGF2PDn/rG08cpyQ57MMn4gqEyTP6uBg73L0lalhodcr+5t+QpFJThVWUGvKKVLqFZPCNd3i4bWoeDCyff36SL+G/s75kJNkUkD6+iCwLtuQOmUGewZD64TYlL8KSOeKEmGYToBgG2K2BY5SzXkOz83rqMhSaRvQGlOuzt55wiy08ZCDZMu1ZpEr0o5KrRLXuBVvl5hHmm58OmZZhbp3wTKaNkgsUa4bpAfLdzI8u89SUM4f9HI/Ug8ZWH1bIhZ28EwFl672Ya0VCH1DlC0ubrTsWTWhhLiva6ezT5DyTNZ+LbL/cx6KosXeNLGxr8olfxGPoH9o//8x1bTOR51akMePK5Upoywn7tI14e4jOypeHyV7qHyxPclH2eg4xyI/8xKAsEJ/PdJCvMwnWoDnkWp+jeNAjv+SXxUFeljiR0ITMgqgyd0Ds3xBp1rcubDHnzDM9DqVcxGIP1AEDF3RyZ+Xr57faQT0iAg7UDvxSQFDpX8GY1SEx1Oq1QF61jESBaDJ+P33paLj6tAgO2TGI09iTeGqH1gSpjIrLbYmlOobopl4Hs2H05woTIdNxAlBJzEIi2VhiZfQGpFk5MGwhj4ipxMSa6qAwywbmBmn7SAGAlCp1/tE0gthxsgSTiSWUMPfPaZHp2vJ5bQeOXfUwuIQbZFHDyQraz+CN05hI7XRfwk8MC1oSM2lZgg5fGM7SJNLlzvcuSsIrXUfipGZ/gNLDmPZ4QoxDXILgOCEAmIILLMqgXg==
+X-Forefront-Antispam-Report-Untrusted:  CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DB9PR03MB8847.eurprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230025)(376002)(366004)(136003)(39850400004)(396003)(346002)(451199018)(31686004)(8936002)(4326008)(5660300002)(7416002)(2616005)(26005)(6506007)(53546011)(186003)(6512007)(41300700001)(31696002)(36756003)(86362001)(44832011)(83380400001)(2906002)(66946007)(110136005)(66476007)(8676002)(66556008)(6486002)(6666004)(52116002)(316002)(478600001)(54906003)(38100700002)(38350700002)(43740500002)(45980500001);DIR:OUT;SFP:1101;
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DU0PR03MB9055
+X-EOPAttributedMessage: 0
+X-MS-Exchange-Transport-CrossTenantHeadersStripped:  AM6EUR05FT059.eop-eur05.prod.protection.outlook.com
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id-Prvs: 	7b27363c-9408-4958-b651-08db24bd09ac
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: 	t2/ri4tOPr5bDVx4Fuc373mgRtukkDeKY7OcazYBqy8SoPHfQab9CiwRpBddB75OCAenvKul2NhhpytZPltU9kr7KlrGj4JF1YX+BunjjrpnN3cPfU/1pxeSSQzPVzrVRV0tDgDqMWoVUZ4Y0DGqCYHN2B/bwyP9sBbZRNQwp0RsJGrNFkEgd4ydVgwBRyB9rUtFxpFTzQeAZ2WdiSnfMdTa1S43IY5jUZa36fYeM3GjkmSpkD1As4otoXzN72EbDxwvuHto+cJYwCD1KCuQ12p8NU0rfsncVA3n7SyALQyoTcCAu1B2BW2o/KEQ40jMqs/17hIu2gOyOEJcCfFuQ9sWESkyI5b6IWSSJLN28Oa3FJVBAwuYNFosE/S+9XyxLZ5ZwisAEgp+X3uDx70LGTesON2lBoPjBWHPkcTJzmX6oxGVX9+WkK/YZhxT41d4YpanhF/ZhYt8usP1xjSu6G2Dww2bi/aSWW6ZxxJQKeVJa5uokoItyvoimmlTHP6en1EvzKd8k5rCeh4N+8PhoqE2CmjVYaTce6nKJZ5DTkTk9uLWZjvSHxMJ7vCti3LokVo6UtitXQWQM+9KbhZSgbL8nDP5E11VYjPcK1vF/X2gUvguiHnRmo+RoYCm+YmMCgTDu+yOfkW14Y9XRTWAcMP/sjmUpRw/G/8iHJypSu3oEQgMKlwrgepL5Hetzu6/Dhm0UYtZpL2WKREex0YCgw25fDaHOruLwCBNsERb/zqjJTrvPpZK13MbHw0u1OIAAXawX/O8xN/9UAn4JnqYizmMpNANr4TsEqbL0c6PMes=
+X-Forefront-Antispam-Report: 	CIP:20.160.56.81;CTRY:NL;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:inpost-eu.tmcas.trendmicro.com;PTR:inpost-eu.tmcas.trendmicro.com;CAT:NONE;SFS:(13230025)(136003)(396003)(39850400004)(376002)(346002)(451199018)(5400799012)(40470700004)(46966006)(36840700001)(82310400005)(86362001)(356005)(31696002)(40480700001)(36860700001)(7596003)(7636003)(34020700004)(82740400003)(36756003)(40460700003)(110136005)(54906003)(8676002)(4326008)(8936002)(70586007)(70206006)(41300700001)(478600001)(6506007)(316002)(2906002)(44832011)(5660300002)(7416002)(336012)(47076005)(2616005)(83380400001)(186003)(26005)(6512007)(53546011)(6486002)(6666004)(31686004)(43740500002)(12100799021);DIR:OUT;SFP:1501;
+X-OriginatorOrg: seco.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 14 Mar 2023 18:50:58.2848
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: ec775a9e-45d7-4b68-5021-08db24bd0cad
+X-MS-Exchange-CrossTenant-Id: bebe97c3-6438-442e-ade3-ff17aa50e733
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=bebe97c3-6438-442e-ade3-ff17aa50e733;Ip=[20.160.56.81];Helo=[inpost-eu.tmcas.trendmicro.com]
+X-MS-Exchange-CrossTenant-AuthSource: 	AM6EUR05FT059.eop-eur05.prod.protection.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS8PR03MB8975
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230314_113305_579665_FCA2EF8D 
-X-CRM114-Status: GOOD (  39.05  )
+X-CRM114-CacheID: sfid-20230314_115108_229230_5CF82992 
+X-CRM114-Status: GOOD (  12.90  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,245 +155,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 14/03/2023 19:09, Sean Anderson wrote:
-> On 3/14/23 13:56, Krzysztof Kozlowski wrote:
->> On 13/03/2023 17:11, Sean Anderson wrote:
->>> This is a generic binding for simple MMIO GPIO controllers. Although we
->>> have a single driver for these controllers, they were previously spread
->>> over several files. Consolidate them. The register descriptions are
->>> adapted from the comments in the source. There is no set order for the
->>> registers, so I have not specified one.
->>>
->>> Rename brcm,bcm6345-gpio to brcm,bcm63xx-gpio to reflect that bcm6345
->>> has moved.
->>>
->>> Signed-off-by: Sean Anderson <sean.anderson@seco.com>
->>> Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
->>> ---
->>> Linus or Bartosz, feel free to pick this up as the rest of this series
->>> may not be merged any time soon.
->>>
->>> Changes in v11:
->>> - Keep empty (or almost-empty) properties on a single line
->>> - Don't use | unnecessarily
->>> - Use gpio as the node name for examples
->>> - Rename brcm,bcm6345-gpio.yaml to brcm,bcm63xx-gpio.yaml
->>>
->>> Changes in v10:
->>> - New
->>>
->>>  ...m6345-gpio.yaml => brcm,bcm63xx-gpio.yaml} |  16 +--
->>>  .../devicetree/bindings/gpio/gpio-mmio.yaml   | 134 ++++++++++++++++++
->>>  .../bindings/gpio/ni,169445-nand-gpio.txt     |  38 -----
->>>  .../devicetree/bindings/gpio/wd,mbl-gpio.txt  |  38 -----
->>>  4 files changed, 135 insertions(+), 91 deletions(-)
->>>  rename Documentation/devicetree/bindings/gpio/{brcm,bcm6345-gpio.yaml => brcm,bcm63xx-gpio.yaml} (78%)
->>>  create mode 100644 Documentation/devicetree/bindings/gpio/gpio-mmio.yaml
->>>  delete mode 100644 Documentation/devicetree/bindings/gpio/ni,169445-nand-gpio.txt
->>>  delete mode 100644 Documentation/devicetree/bindings/gpio/wd,mbl-gpio.txt
->>>
->>> diff --git a/Documentation/devicetree/bindings/gpio/brcm,bcm6345-gpio.yaml b/Documentation/devicetree/bindings/gpio/brcm,bcm63xx-gpio.yaml
->>> similarity index 78%
->>> rename from Documentation/devicetree/bindings/gpio/brcm,bcm6345-gpio.yaml
->>> rename to Documentation/devicetree/bindings/gpio/brcm,bcm63xx-gpio.yaml
->>> index 4d69f79df859..e11f4af49c52 100644
->>> --- a/Documentation/devicetree/bindings/gpio/brcm,bcm6345-gpio.yaml
->>> +++ b/Documentation/devicetree/bindings/gpio/brcm,bcm63xx-gpio.yaml
->>
->>
->>> +
->>> +description:
->>> +  Some simple GPIO controllers may consist of a single data register or a pair
->>> +  of set/clear-bit registers. Such controllers are common for glue logic in
->>> +  FPGAs or ASICs. Commonly, these controllers are accessed over memory-mapped
->>> +  NAND-style parallel busses.
->>> +
->>> +properties:
->>> +  big-endian: true
->>> +
->>> +  compatible:
->>
->> Keep compatible as first property.
-> 
-> I thought it was alphabetical.
-
-There is no clear rule, except that compatible is always first. In the
-DTS reg is second, in bindings usually as well but not always.
-
-> 
->>> +    enum:
->>> +      - brcm,bcm6345-gpio # Broadcom BCM6345 GPIO controller
->>> +      - wd,mbl-gpio # Western Digital MyBook Live memory-mapped GPIO controller
->>> +      - ni,169445-nand-gpio # National Instruments 169445 GPIO NAND controller
->>
->> I think you got comment that these comments are making things
->> unreadable. I don't see here improvement.
-> 
-> That was not the comment I got.
-
-OK
-
-> 
-> | I think you can inline description: statements in the enum instead of
-> | the # hash comments, however IIRC you have to use oneOf and
-> | const: to do it, like I do in
-> | Documentation/devicetree/bindings/input/touchscreen/cypress,cy8ctma340.yaml
-> | but don't overinvest in this if it is cumbersome.
-> 
-> I investigated this and determined it was cumbersome.
-
-So just :
-
-     # Western Digital MyBook Live memory-mapped GPIO controller
-     - wd,mbl-gpio
-
-> 
->> For example first comment is useless - you say the same as compatible.
->> Same with last one. So only remaining WD comment should be made in new
->> line so everything is nicely readable.
-> 
-> I don't understand what you mean by "made in new line". Anyway, I will
-> leave just the WD comment.
-> 
->> BTW, order the enum by name.
-> 
-> OK
-> 
->>> +
->>> +  '#gpio-cells':
->>> +    const: 2
->>> +
->>> +  gpio-controller:
->>> +    true
->>
->> I am sure I saw comments here...
->>
->> https://lore.kernel.org/all/20230308231018.GA4039466-robh@kernel.org/
-> 
-> OK
-> 
->>> +
->>> +  reg:
->>> +    minItems: 1
->>> +    description:
->>> +      A list of registers in the controller. The width of each register is
->>> +      determined by its size.
->>
->> I don't understand this comment. Aren't you describing now what 'reg' is
->> in DT spec? If so, drop. If not, please share more.
-> 
-> Each register describes exactly one hardware register. In some other
-> device, when you see `regs = <0x8000000 0x100>`, then you may have 64
-> 32-bit registers. But for this device, it would be one 2048-bit
-> register.
-
-Ah, so you do not mean here address space size? OK then, thanks for
-clarification.
-
-> 
->>>  All registers must have the same width. The number
->>> +      of GPIOs is set by the width, with bit 0 corresponding to GPIO 0.
->>> +    items:
->>> +      - description:
->>> +          Register to READ the value of the GPIO lines. If GPIO line is high,
->>> +          the bit will be set. If the GPIO line is low, the bit will be cleared.
->>> +          This register may also be used to drive GPIOs if the SET register is
->>> +          omitted.
->>> +      - description:
->>> +          Register to SET the value of the GPIO lines. Setting a bit in this
->>> +          register will drive the GPIO line high.
->>> +      - description:
->>> +          Register to CLEAR the value of the GPIO lines. Setting a bit in this
->>> +          register will drive the GPIO line low. If this register is omitted,
->>> +          the SET register will be used to clear the GPIO lines as well, by
->>> +          actively writing the line with 0.
->>> +      - description:
->>> +          Register to set the line as OUTPUT. Setting a bit in this register
->>> +          will turn that line into an output line. Conversely, clearing a bit
->>> +          will turn that line into an input.
->>> +      - description:
->>> +          Register to set this line as INPUT. Setting a bit in this register
->>> +          will turn that line into an input line. Conversely, clearing a bit
->>> +          will turn that line into an output.
->>> +
+On 3/14/23 14:32, Krzysztof Kozlowski wrote:
+> On 14/03/2023 19:09, Sean Anderson wrote:
+>> On 3/14/23 13:56, Krzysztof Kozlowski wrote:
+>>> On 13/03/2023 17:11, Sean Anderson wrote:
 >>> +  reg-names:
->>> +    minItems: 1
->>> +    maxItems: 5
->>> +    items:
->>> +      enum:
->>
->> Why this is in any order? Other bindings were here specific, your 'reg'
->> is also specific/fixed.
+>>>> +    minItems: 1
+>>>> +    maxItems: 5
+>>>> +    items:
+>>>> +      enum:
+>>>
+>>> Why this is in any order? Other bindings were here specific, your 'reg'
+>>> is also specific/fixed.
+>> 
+>> Some devicetrees have dirout first, and other have dat first. There is no
+>> mandatory order, and some registers can be included or left out as is
+>> convenient to the devicetree author.
+>> 
+>> reg is not specific/fixed either. It is just done that way for
+>> convenience (and to match the names here).
 > 
-> Some devicetrees have dirout first, and other have dat first. There is no
-> mandatory order, and some registers can be included or left out as is
-> convenient to the devicetree author.
-> 
-> reg is not specific/fixed either. It is just done that way for
-> convenience (and to match the names here).
+> The items have order and usually we require strict order from DTS,
+> unless there is a reason. If there is no reason, use fixed order and
+> then fix the DTS.
 
-The items have order and usually we require strict order from DTS,
-unless there is a reason. If there is no reason, use fixed order and
-then fix the DTS.
+The items do not have order. That is the whole point of having a
+separate names property. The DTs are not "broken" for taking advantage
+of a longstanding feature. There is no advantage to rewriting them to
+use a fixed order, especially when there is no precedent. This is just
+an area where json schema cannot completely validate devicetrees.
 
-> 
->>> +        - dat
->>> +        - set
->>> +        - clr
->>> +        - dirout
->>> +        - dirin
->>> +
->>> +  native-endian: true
->>> +
->>> +  no-output:
->>> +    $ref: /schemas/types.yaml#/definitions/flag
->>> +    description:
->>> +      If this property is present, the controller cannot drive the GPIO lines.
->>> +
->>> +required:
->>> +  - compatible
->>> +  - reg
->>> +  - reg-names
->>> +  - '#gpio-cells'
->>> +  - gpio-controller
->>> +
->>> +additionalProperties: false
->>> +
->>> +examples:
->>> +  - |
->>> +    gpio@1f300010 {
->>> +      compatible = "ni,169445-nand-gpio";
->>> +      reg = <0x1f300010 0x4>;
->>> +      reg-names = "dat";
->>> +      gpio-controller;
->>> +      #gpio-cells = <2>;
->>> +    };
->>> +
->>> +    gpio@1f300014 {
->>> +      compatible = "ni,169445-nand-gpio";
->>> +      reg = <0x1f300014 0x4>;
->>> +      reg-names = "dat";
->>> +      gpio-controller;
->>> +      #gpio-cells = <2>;
->>> +      no-output;
->>> +    };
->>
->> No need to duplicate examples. Keep only one.
-> 
-> OK
-> 
->> Everything is the same.
-> 
-> Except no-output.
-
-I would argue that even one example with no-output is enough, but sure,
-can be two in total.
-
-
-
-Best regards,
-Krzysztof
-
+--Sean
 
 -- 
 linux-phy mailing list
