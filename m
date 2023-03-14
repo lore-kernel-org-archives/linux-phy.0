@@ -4,45 +4,45 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5C075C6FD1D
-	for <linux-phy@archiver.kernel.org>; Tue, 14 Mar 2023 13:56:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D2096C6FD1D
+	for <linux-phy@archiver.kernel.org>; Tue, 14 Mar 2023 13:56:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=YDd62gUgsUuKb54wsygqCWQmX2xo1/air2gyACajzvA=; b=M5mRZMr6HWpBYn
-	5W40C5OnjM1LLgFOawFv57vx96MhMvj8c3wsb9fTeX7CQ5Y45pIVRk4YobUZiz2CTdjQAyQQk1EjV
-	o50/lKnLyoocyGiiZtu0hHypl4vwatr9Z1z/C9FZ3sY20UoF0QjBraE86RYil4QAu5SZEec0QB+JC
-	OWBs6Pn3CbwvKIFr866QMQK6Ih0upHWpOUUoJP5iIdOHp2wafHUGHG9HXFBkpnYzMzvnBIT0nl4+L
-	dnmL9/+qTbPNoz/ziIVy2yxpaqWnvyYZXwNyV+dteAy8oy0Shzw9A2jt/uLdEzMvVQfWE2XSlLMZn
-	+y3HCi2UN3FYZ5CY8iVg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=4RNlpQBRPogqKbE/xf3bzmsP3/GC26ALnAM2cBgLXhU=; b=BEGRwGSeoydYTZ
+	AJ4iChxeBIG7Jo84Iyy9NL102upReBZGsCbhA6oQf169Es2cA/2n2aEoLuINGAqCTplilL4mPQBTN
+	3iVartCFzuWuXpQtHx0tuSt1BYmTNJ9ARZHIlYPn8XLm21x8cT56f9DNBuK/p6FiBZBE6rA9mZpb8
+	Jp0V9JV1ZLdE0DLNMIZ3x5u1hCLsPfxXdT/wyvOCcGF39UQiOIhxEipqILEilpeh+uCceLrsCGQX6
+	+dNZ5jjhYQ3S5Lcc8gKb6FMBccJ/T+gZtOJQqFpz/aoWx+BVLJfBHJ2NTHsVwAE6IiMP8tpN8vShu
+	mVuH6r5SkBTYOGN5ttFQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pc58M-00AMkV-3C;
-	Tue, 14 Mar 2023 13:56:10 +0000
-Received: from madras.collabora.co.uk ([46.235.227.172])
+	id 1pc58W-00AMnx-1g;
+	Tue, 14 Mar 2023 13:56:20 +0000
+Received: from madras.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e5ab])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pc58D-00AMgg-2L;
-	Tue, 14 Mar 2023 13:56:06 +0000
+	id 1pc58G-00AMgh-0I;
+	Tue, 14 Mar 2023 13:56:11 +0000
 Received: from cryzen.lan (cpc87451-finc19-2-0-cust61.4-2.cable.virginm.net [82.11.51.62])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
 	(Authenticated sender: tanureal)
-	by madras.collabora.co.uk (Postfix) with ESMTPSA id 2B8C16603089;
+	by madras.collabora.co.uk (Postfix) with ESMTPSA id 9EA83660308F;
 	Tue, 14 Mar 2023 13:55:59 +0000 (GMT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
 	s=mail; t=1678802159;
-	bh=6DQmp7EOc/vZBH7Agp0m4MGPepgjsuaiBjh47b5ACbc=;
-	h=From:To:Cc:Subject:Date:From;
-	b=KFeu9bmgQCCt7vY17t9enfuXXo172EBdEpRc3cgQxMbZZM8OqdV7NsT2SzFUZWUul
-	 40mttmj1eCPqRUDLqu5oENEtn5xJS/eWk7CtmtnqBdr5Uj8yQ2QVqOi03zTm4UbDcl
-	 binjMFjerBQHYMUgxSkbzXRkUJnSx/yCsW2kFv3xj8dF9vugAAvqYoa8NMiLDrNHOG
-	 +xHUCWR034ujStkdwDIrcYnGLrTM6K/nGdxlSgaOVUlbhQng9aINSkrO0rf37qbueE
-	 XXjCHza1TJiIfzV7u1ZMcU9q2oGCRJ29YA/YlT07xW6LBiSU1OIB7O2X7cvbgrYk26
-	 cnTTZ+XO8aGkQ==
+	bh=37ljbgJkpZPvb9TsF+DacOqstVGArWpTYRb2PXFGvQY=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=KmTWq49ZrHWRELwwEFA6LQdTmWRrBo4rWKwqLzLaH6VuhUwqqXp/7LHr3IJfoMi5u
+	 2InmgkAPTh/0z8n8DHT7xIZAgGnfcLwItpM6MpRFB7DEsRY6sLxqNPwb6j/WS0Tty/
+	 v4tPcfuvnQaIrf/omYEVP902qgTIvtSGk5FXEu4ofr1tkG9RfdoAG348pg40DieZxa
+	 5CzkoHyLdvD5n458AOdMK+1yDgi+vrQdorxp9slEZ0jjFqTWPTdT94mJFZE10SDuHc
+	 XgOY05ppehOLpx6N2WBbjSaW0LmD5HhZj8c7llTZkEmlhk9FcABkZWUkAkVbRdG9NO
+	 XpKErX7e1g4pw==
 From: Lucas Tanure <lucas.tanure@collabora.com>
 To: Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
@@ -66,14 +66,16 @@ Cc: Qu Wenruo <wqu@suse.com>,
 	linux-pci@vger.kernel.org,
 	Lucas Tanure <lucas.tanure@collabora.com>,
 	kernel@collabora.com
-Subject: [PATCHv2 0/3] Add PCIe2 driver support for Rockchip
-Date: Tue, 14 Mar 2023 13:55:52 +0000
-Message-Id: <20230314135555.44162-1-lucas.tanure@collabora.com>
+Subject: [PATCHv2 1/3] dt-bindings: PCI: dwc: Add rk3588 compatible
+Date: Tue, 14 Mar 2023 13:55:53 +0000
+Message-Id: <20230314135555.44162-2-lucas.tanure@collabora.com>
 X-Mailer: git-send-email 2.39.2
+In-Reply-To: <20230314135555.44162-1-lucas.tanure@collabora.com>
+References: <20230314135555.44162-1-lucas.tanure@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230314_065601_942908_978501B9 
-X-CRM114-Status: UNSURE (   8.07  )
+X-CRM114-CacheID: sfid-20230314_065604_257247_2E5BD81B 
+X-CRM114-Status: UNSURE (   7.90  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -91,33 +93,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-I am assisting with PCIe and networking bring-up for Rock Pi 5B (RK3588).
-We sent this series a few days ago:
-https://lore.kernel.org/all/20230310080518.78054-1-lucas.tanure@collabora.com/
+PCIe for RK3588 is the same as RK3568.
 
-From that conversation we decided to send patches for Rockchip that don't
-require GIC/ITS implementation. We will send that in a separed series.
-Making easier for reviews and unblocking patches that don't require
-GIC/ITS implementation.
+Signed-off-by: Lucas Tanure <lucas.tanure@collabora.com>
+---
+ Documentation/devicetree/bindings/pci/rockchip-dw-pcie.yaml | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
 
-This is work based on prior work from XiaoDong Huang and
-Peter Geis fixing this issue specifically for Rockchip 356x.
-Plus comments of Robin Murphy about Non-Coherent properties.
-
-Since v1:
- - Don't add compatible string to PCIe driver, only to DT Bindings
- - Improve commit message for "Add rk3588 compatible"
-
-Lucas Tanure (3):
-  dt-bindings: PCI: dwc: Add rk3588 compatible
-  dt-bindings: phy: rockchip: Add rk3588 compatible
-  phy: rockchip: Add naneng combo phy support for RK3588
-
- .../bindings/pci/rockchip-dw-pcie.yaml        |   6 +-
- .../phy/phy-rockchip-naneng-combphy.yaml      |   1 +
- .../rockchip/phy-rockchip-naneng-combphy.c    | 184 ++++++++++++++++++
- 3 files changed, 190 insertions(+), 1 deletion(-)
-
+diff --git a/Documentation/devicetree/bindings/pci/rockchip-dw-pcie.yaml b/Documentation/devicetree/bindings/pci/rockchip-dw-pcie.yaml
+index 2be72ae1169f..24c88942e59e 100644
+--- a/Documentation/devicetree/bindings/pci/rockchip-dw-pcie.yaml
++++ b/Documentation/devicetree/bindings/pci/rockchip-dw-pcie.yaml
+@@ -21,8 +21,12 @@ allOf:
+ 
+ properties:
+   compatible:
+-    items:
++    oneOf:
+       - const: rockchip,rk3568-pcie
++      - items:
++          - enum:
++              - rockchip,rk3588-pcie
++          - const: rockchip,rk3568-pcie
+ 
+   reg:
+     items:
 -- 
 2.39.2
 
