@@ -4,79 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2B992C6FD1F
-	for <linux-phy@archiver.kernel.org>; Tue, 14 Mar 2023 20:03:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9CCACC05027
+	for <linux-phy@archiver.kernel.org>; Tue, 14 Mar 2023 20:11:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=O8dekd8g/L972VNPwpoe5ibKcNqxAi+3nwIsZeKkrzM=; b=3lRneTRZZje99G
-	Sq46FuhZwTv0B4Zq2FEV0+ASbe9tDB7463JtC0qjtqSAwjTqS3XS/c+YGVWjk5DUy08JKmBoCnh4D
-	S8NOjPiQYpcmVe58sfd77zUxRxlwLvqjNA+8PlOZG2iuolpGD5KmosDi2XahcPJkEkHYrNxfmqwze
-	50SbdFuIdPQ/acNhjiovbabsbG8NFFeETiCuYnFJp3CK4vHgLadY8bwgeiEzJjVU5yaliZscCrnCx
-	Q8f2Y64yBqXXMlxiusDc5YYgRtlV9JBzQINJgdqRU+at5/CGZ90/1FVMvNXGEt0w/+0g2ON+ili4u
-	ez7IsDPdDHkkJJTZzLPw==;
+	List-Owner; bh=XVGk1Suj9GQwbNQaXg8VRuOKzIuL51DFDXKgoHXnPNU=; b=iy64QTHMZB9psK
+	P1c5Yn6OHijU3lCocQP5ollp18v5hlFExXW+SUOkiV2l8sjZPtOmo4yAOj9cqC5d/McaQe44eWzE5
+	NS6LgfOUFqTKIPdiiTA3MOdiuU/M1WGZ2JZELQpExAeOILaaiAl1xSNIwIQmH5gl6Glss5N30zCIB
+	qTdjTqY3fgjArgGlucym/wajZN/tV6KPLFxMrwdRgERuTgxuHH0Kb4cGXfMX3Vpbd764bYMfQ4VM4
+	C84yXl9Gr8ad6yAmJxUeY/QR86iRneXHa7C9QbkM9wlbH6159z7t6vaoOlSEh25NXUvuUd/fjHLLM
+	WIGE3hPyaNzRAeRmzYLQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pcAra-00BQXn-2Y;
-	Tue, 14 Mar 2023 20:03:14 +0000
-Received: from mail-ed1-x52c.google.com ([2a00:1450:4864:20::52c])
+	id 1pcAzV-00BRnU-34;
+	Tue, 14 Mar 2023 20:11:25 +0000
+Received: from mail-ed1-x52a.google.com ([2a00:1450:4864:20::52a])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pcArX-00BQWD-0O;
-	Tue, 14 Mar 2023 20:03:12 +0000
-Received: by mail-ed1-x52c.google.com with SMTP id fd5so32961334edb.7;
-        Tue, 14 Mar 2023 13:03:10 -0700 (PDT)
+	id 1pcAzT-00BRmx-0M;
+	Tue, 14 Mar 2023 20:11:24 +0000
+Received: by mail-ed1-x52a.google.com with SMTP id cn21so36781066edb.0;
+        Tue, 14 Mar 2023 13:11:21 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20210112; t=1678824189;
+        d=gmail.com; s=20210112; t=1678824680;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=V84C+zNYhTlp2thKSex9zBHkOQB0B2Kt996/f1MwII0=;
-        b=pd2f42sABaBIjI1MNHhZXr6SfwcrVdAV3DKrfovymQ9je4mY71Nr9bPNeIWhMNPda4
-         Qeeh1t20fBxJqOxLei6KBdiRA0aGPv3pqBMW1kz0qlZ+1ceSdY5h3x7awC7KMsqYtt6Y
-         tH64mw5kqiO0OMloPkZ23HBMN7O/lmvSPy8EihuVcwCn2sgQkz+IqJW6s09He6njMcqH
-         5c2m7uFn9tICf4U3KZLmdL25Y59FLjOKIR5CJgnirSInsOVfc/rLmOJWQn66ysC+NES5
-         B/T7Tvbpiu7GXbDkv78MA97Ae1kQuj6riDeHwLQRk4EcFNl80RKXDYx1i11XyJccSOxU
-         2TBQ==
+        bh=uOmN2wxHAubP/wjFGXET4njJl/QO5fM/z9sdlvX83rU=;
+        b=CHhAm/7O/gstpGzq7X5DDLTXks05VMX04VZtP6IfWpvHV1BPITJBPtOZQzL9SfVrOP
+         K7nelNQDZ9fwxi+pliz4LX5qQ44yGJpAVVO3y+nV+piezOVBGBSSnPw47TMugdQuh8v/
+         QwWK4fQmvfOfvFByvx4fsvkgJv7c+eAE027MmoJjaf7Vc6TTC6t8SrAXj7g9hoR0PiMP
+         huzQ0bA05qJOPNg+B9W/Jf9ln49b41v935ouW7KI45o/owobC6yJhVdr3l7aQ3dmG+WU
+         qLoun8HykJR4mPX8w0DjwMEO48xJUazKN+cDziLEzfeRO3IzlWdCZek0a5pd8zhpHenA
+         afRA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112; t=1678824189;
+        d=1e100.net; s=20210112; t=1678824680;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=V84C+zNYhTlp2thKSex9zBHkOQB0B2Kt996/f1MwII0=;
-        b=BnSL/xk7868pA0srYUKUVM+DTmVj251UbX+clqhzQejVEFMnbRwAMIktDf8yHUfbow
-         WCY3Fo8uuf8KMdZBLHBypnFE9L3bB4BRKMvabtjgW9tZlaWs4r1rvu2GgziTAQvcfNo3
-         hYVXu9xuKbWmEY7QZ0+BP5JieIXLs+yOY9ADl1OcBQQtAZzLd2TCSLZ+2LIVSPtM1pww
-         vIybCqgkAT+Yrb+Th0BOE+z8bUxexi5cuxhkL5OGwbvoAGTg8wTDj0FnXOKis3ebdWZO
-         N+Xsep9EmVCaEyRwOL4LA52ISBFE0F11LYiOmmKt/ETyvZ5H8j978bAchWqtpBjOTQJJ
-         dvMg==
-X-Gm-Message-State: AO0yUKWSF7GbEXyG9t8EKbm8IByazPPwp+tENMFfBj6FQPNZIobqTV5C
-	w6okXFSBdb2Q/dH/q5eeyos=
-X-Google-Smtp-Source: AK7set/tGK3i4/wh7V/kGHlS+gxB46+6uCjikXR7Cf/3tLigyXQLtTyfHOLyi19AB/HefjV28ihqYA==
-X-Received: by 2002:a17:906:edcc:b0:928:a2:904e with SMTP id sb12-20020a170906edcc00b0092800a2904emr3708551ejb.54.1678824188955;
-        Tue, 14 Mar 2023 13:03:08 -0700 (PDT)
+        bh=uOmN2wxHAubP/wjFGXET4njJl/QO5fM/z9sdlvX83rU=;
+        b=6O9nHgnKlFyDpnnmHJ9mKya6YW7okEYcWb4cpO3PQHDj6dwUEZ5DUiWb9w2YGQuu6h
+         Hly7lj7bKn99yFoNamtvMsY4654oJ9rfc05TjutvHX+AxnZ8xNta/UHApTw0qruFWHp8
+         Jm6ZaM2sYhj+NfmRuK3Z8tEAfIlYNmF2mPQsA9UTcNNfORQTQUhDb7a1SMHqzXrdOiGt
+         X5urrGBlaKErZKyYQpKnJDatMNEayx5xMUC5feyHN1iPoCYiQRkt8da2DhxaGWxxUH5x
+         uC3x3Brrv7MotTl3J/oG9KYeo38Ej/ne4xizTcDxlTOXH9wghxw2SLeutib52diEaBJS
+         +uCg==
+X-Gm-Message-State: AO0yUKVKd9uL2ddhLHpFNh6EFd70OrqfEI14WovZSol9jAGDt3PyIQU8
+	wtJpwyE8zpiyhTdA4+KoCig=
+X-Google-Smtp-Source: AK7set+qCVKByxD7iuQXEmywLPaTa1vcwJ7G6XCqfhULVzCL/kVmJIdeJKzJeKK2tj317A2Zl/2klw==
+X-Received: by 2002:a17:907:9708:b0:878:711d:9310 with SMTP id jg8-20020a170907970800b00878711d9310mr4432767ejc.1.1678824679798;
+        Tue, 14 Mar 2023 13:11:19 -0700 (PDT)
 Received: from jernej-laptop.localnet (82-149-1-233.dynamic.telemach.net. [82.149.1.233])
-        by smtp.gmail.com with ESMTPSA id jw22-20020a17090776b600b00926a3155fd0sm1548733ejc.98.2023.03.14.13.03.07
+        by smtp.gmail.com with ESMTPSA id i16-20020a170906851000b008e8e9859905sm1540068ejx.184.2023.03.14.13.11.18
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 14 Mar 2023 13:03:08 -0700 (PDT)
+        Tue, 14 Mar 2023 13:11:19 -0700 (PDT)
 From: Jernej =?utf-8?B?xaBrcmFiZWM=?= <jernej.skrabec@gmail.com>
 To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
  Chen-Yu Tsai <wens@csie.org>, Samuel Holland <samuel@sholland.org>,
- Rob Herring <robh@kernel.org>
-Cc: devicetree@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
- linux-kernel@vger.kernel.org
-Subject:  Re: [PATCH] phy: Use of_property_present() for testing DT property presence
-Date: Tue, 14 Mar 2023 21:03:07 +0100
-Message-ID: <8191654.T7Z3S40VBb@jernej-laptop>
-In-Reply-To: <20230310144720.1544600-1-robh@kernel.org>
-References: <20230310144720.1544600-1-robh@kernel.org>
+ Andre Przywara <andre.przywara@arm.com>,
+ Wolfram Sang <wsa+renesas@sang-engineering.com>,
+ Icenowy Zheng <uwu@icenowy.me>,
+ Uwe =?ISO-8859-1?Q?Kleine=2DK=F6nig?= <u.kleine-koenig@pengutronix.de>
+Cc: linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ linux-sunxi@lists.linux.dev, kernel@pengutronix.de
+Subject:  Re: [PATCH 01/31] phy: allwinner: phy-sun4i-usb: Convert to platform remove
+ callback returning void
+Date: Tue, 14 Mar 2023 21:11:18 +0100
+Message-ID: <9076995.CDJkKcVGEf@jernej-laptop>
+In-Reply-To: <20230307115900.2293120-2-u.kleine-koenig@pengutronix.de>
+References:  <20230307115900.2293120-1-u.kleine-koenig@pengutronix.de>
+ <20230307115900.2293120-2-u.kleine-koenig@pengutronix.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230314_130311_158752_E20B3D69 
-X-CRM114-Status: GOOD (  16.19  )
+X-CRM114-CacheID: sfid-20230314_131123_189645_8161BB02 
+X-CRM114-Status: GOOD (  19.31  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,68 +92,80 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Dne petek, 10. marec 2023 ob 15:47:20 CET je Rob Herring napisal(a):
-> It is preferred to use typed property access functions (i.e.
-> of_property_read_<type> functions) rather than low-level
-> of_get_property/of_find_property functions for reading properties. As
-> part of this, convert of_get_property/of_find_property calls to the
-> recently added of_property_present() helper when we just want to test
-> for presence of a property and nothing more.
-> 
-> Signed-off-by: Rob Herring <robh@kernel.org>
-> ---
->  drivers/phy/allwinner/phy-sun4i-usb.c  | 2 +-
+Dne torek, 07. marec 2023 ob 12:58:30 CET je Uwe Kleine-K=F6nig napisal(a):
+> The .remove() callback for a platform driver returns an int which makes
+> many driver authors wrongly assume it's possible to do error handling by
+> returning an error code. However the value returned is (mostly) ignored
+> and this typically results in resource leaks. To improve here there is a
+> quest to make the remove callback return void. In the first step of this
+> quest all drivers are converted to .remove_new() which already returns
+> void.
+> =
 
-for sun4i:
-Reviewed-by: Jernej Skrabec <jernej.skrabec@gmail.com>
+> Trivially convert this driver from always returning zero in the remove
+> callback to the void returning variant.
+> =
+
+> Signed-off-by: Uwe Kleine-K=F6nig <u.kleine-koenig@pengutronix.de>
+> ---
+
+Acked-by: Jernej Skrabec <jernej.skrabec@gmail.com>
 
 Best regards,
 Jernej
 
->  drivers/phy/broadcom/phy-bcm-ns-usb2.c | 2 +-
->  2 files changed, 2 insertions(+), 2 deletions(-)
-> 
+>  drivers/phy/allwinner/phy-sun4i-usb.c | 6 ++----
+>  1 file changed, 2 insertions(+), 4 deletions(-)
+> =
+
 > diff --git a/drivers/phy/allwinner/phy-sun4i-usb.c
-> b/drivers/phy/allwinner/phy-sun4i-usb.c index fbcd7014ab43..fc9f6fb447a0
+> b/drivers/phy/allwinner/phy-sun4i-usb.c index fbcd7014ab43..6a74e5ce180a
 > 100644
 > --- a/drivers/phy/allwinner/phy-sun4i-usb.c
 > +++ b/drivers/phy/allwinner/phy-sun4i-usb.c
-> @@ -758,7 +758,7 @@ static int sun4i_usb_phy_probe(struct platform_device
-> *pdev) return PTR_ERR(data->vbus_det_gpio);
->  	}
-> 
-> -	if (of_find_property(np, "usb0_vbus_power-supply", NULL)) {
-> +	if (of_property_present(np, "usb0_vbus_power-supply")) {
->  		data->vbus_power_supply = 
-devm_power_supply_get_by_phandle(dev,
->  						     
-"usb0_vbus_power-supply");
->  		if (IS_ERR(data->vbus_power_supply)) {
-> diff --git a/drivers/phy/broadcom/phy-bcm-ns-usb2.c
-> b/drivers/phy/broadcom/phy-bcm-ns-usb2.c index 6a36e187d100..269564bdf687
-> 100644
-> --- a/drivers/phy/broadcom/phy-bcm-ns-usb2.c
-> +++ b/drivers/phy/broadcom/phy-bcm-ns-usb2.c
-> @@ -107,7 +107,7 @@ static int bcm_ns_usb2_probe(struct platform_device
-> *pdev) return -ENOMEM;
->  	usb2->dev = dev;
-> 
-> -	if (of_find_property(dev->of_node, "brcm,syscon-clkset", NULL)) {
-> +	if (of_property_present(dev->of_node, "brcm,syscon-clkset")) {
->  		usb2->base = devm_platform_ioremap_resource(pdev, 0);
->  		if (IS_ERR(usb2->base)) {
->  			dev_err(dev, "Failed to map control reg\n");
+> @@ -698,7 +698,7 @@ static struct phy *sun4i_usb_phy_xlate(struct device
+> *dev, return data->phys[args->args[0]].phy;
+>  }
+> =
+
+> -static int sun4i_usb_phy_remove(struct platform_device *pdev)
+> +static void sun4i_usb_phy_remove(struct platform_device *pdev)
+>  {
+>  	struct device *dev =3D &pdev->dev;
+>  	struct sun4i_usb_phy_data *data =3D dev_get_drvdata(dev);
+> @@ -711,8 +711,6 @@ static int sun4i_usb_phy_remove(struct platform_device
+> *pdev) devm_free_irq(dev, data->vbus_det_irq, data);
+> =
+
+>  	cancel_delayed_work_sync(&data->detect);
+> -
+> -	return 0;
+>  }
+> =
+
+>  static const unsigned int sun4i_usb_phy0_cable[] =3D {
+> @@ -1054,7 +1052,7 @@ MODULE_DEVICE_TABLE(of, sun4i_usb_phy_of_match);
+> =
+
+>  static struct platform_driver sun4i_usb_phy_driver =3D {
+>  	.probe	=3D sun4i_usb_phy_probe,
+> -	.remove	=3D sun4i_usb_phy_remove,
+> +	.remove_new =3D sun4i_usb_phy_remove,
+>  	.driver =3D {
+>  		.of_match_table	=3D sun4i_usb_phy_of_match,
+>  		.name  =3D "sun4i-usb-phy",
 
 
 
 
 
--- 
+-- =
+
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
