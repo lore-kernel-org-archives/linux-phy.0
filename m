@@ -4,52 +4,52 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id ABD31C6FD19
-	for <linux-phy@archiver.kernel.org>; Thu, 16 Mar 2023 12:06:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0E5E4C6FD1F
+	for <linux-phy@archiver.kernel.org>; Thu, 16 Mar 2023 12:06:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
 	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zMo3y6sMHcgMjiWopi5NcvFA4Us2VrR7DbpSHlyNFlY=; b=uatBs78WUDoJML
-	B0ya7646Ke6mFisy83ls/+GcwJRSFyUa7iFFE/WQ0EhWJrlCbji4Zzu0V912Nlh3YmfLZvSlWdA4T
-	75C2zzvO76iA2TPBGVWCY7WRfJg3op9MxX9ThIThdUVpTiYFKlQCHkp6CDsoiN7cuUw066tM6SAnB
-	7fWdgZaebjQXGp+1GRLtIXIMcmfG3IhbFPiro3alGcz4xXFUZvyqRA1d/r4fmyRXSpVHnmnM6jT+a
-	7k5xVVtbs/7GkiUjtZRo2BeYqGy0aV0ZbFlcSccOp9nkzLOtCFf2GS+ISOoFgEZyIX8bRVSzwPGVs
-	0VE/8VEqnpOPyDaUUvvQ==;
+	List-Owner; bh=UP8WqHiZcpPftIsQkDsH6YggTLTEHe/kM5l+PG0a8kw=; b=VIxGQwa7QM7frU
+	b1rQiWVX08NdcY1Mp76HdIa9q7gNpnjhn2mDcOQrOQIcVGyGteei7GSLsQxS+s/mNYo1amSnNtU2A
+	MLt+L+KxIycnqtZqR86cFoQ2x02Rzq9bGeBREwgjQHCvEQNOlrb9C3f7OtMMdoWu4uMicUC3P9gN5
+	Yn08YS+UKU2qgkCkiTeOu1rtzfHJPEhlS6SmDk5X3jTKgK5gC73crUpHnpd4VD1nYhiwWd5wkv4+f
+	XLIhiRsR4lEGBtCvk9cIRHeCzyOVSDc8b/SEoOmrhN0fNsFICgiYo27/QqGOf+RHKZXFX85iPzGf4
+	wmsuJP7rFN+MPR1qQTqg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pcmN0-00GKZp-0Z;
-	Thu, 16 Mar 2023 12:06:10 +0000
+	id 1pcmN9-00GKcq-1W;
+	Thu, 16 Mar 2023 12:06:19 +0000
 Received: from mga01.intel.com ([192.55.52.88])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pcmMu-00GKXA-0R;
-	Thu, 16 Mar 2023 12:06:05 +0000
+	id 1pcmMy-00GKYn-1l;
+	Thu, 16 Mar 2023 12:06:09 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1678968364; x=1710504364;
+  t=1678968368; x=1710504368;
   h=from:to:cc:subject:date:message-id:in-reply-to:
    references;
-  bh=oX16MPASgVn0QBxsOY4PclCdLg+myX80w1viNZawLes=;
-  b=cQ0EzP30CfWK+00zG1fVItiOkzd3hSWrZZDlOND+TfCP1pTCdMj9yaQG
-   RY9l0wBuOYCKyVpy7X3BXtMZxFT65FmCS9y/iKMWO/E9S6ReF0Sw3R9V3
-   RYKUvoPX/gupsHckl+itP5gPCIPxgchAw5Uhxz9Ox912BOz9HquYmEzIi
-   qqeSVGM/yJknzQlywgctLUZZEOKCDP0ZQ+wb/Ig635H5Um0u2g76rxrCY
-   w4uhXRoqlwzUo9eopXeAAvzhYco56KBXJtvebnW7hjR226lyhW/UeT1rV
-   p6lucHYT5QWDcrKCnfX3rDaP+qW9lkdmrEuC30rur210w3paayxGLC/94
-   A==;
-X-IronPort-AV: E=McAfee;i="6500,9779,10650"; a="365656999"
+  bh=AAkIyD03JWq98B5q2PySf/dtvQYYtxwz6wy6gqs1xJw=;
+  b=nBzlkq+0otQ8i85QyY5MeQdY88CntIiREIx+oDx6/vG4Qa+SUSoiVKSh
+   y1GLwpRX8JpJ29pbFqQZWPAXY6l2rmcpXBSSSqlrc+Gs7CXM1DNF/HyCV
+   PjMfB0N2y8fa+9SQWVRZjZu0f1voRCksHTy2B5Sn06UnJ2CzWjpXGb+24
+   rqoBPG6aRA2Qlgdbrpmqxw5qghrfp2xOHLjqf8xMKoXPS+4OXE1K9SkCS
+   H3yAzHdO6iSAvN0euObhtv94FKfkteXYuLLJ7EVLDrljAqwfPRd9t5/zb
+   pdIOUpd6qwi8dDW97APZPk0Jg/Xhz3ANptmlOlG0cX/8aZJZ6mtMHKBB7
+   g==;
+X-IronPort-AV: E=McAfee;i="6500,9779,10650"; a="365657027"
 X-IronPort-AV: E=Sophos;i="5.98,265,1673942400"; 
-   d="scan'208";a="365656999"
+   d="scan'208";a="365657027"
 Received: from fmsmga003.fm.intel.com ([10.253.24.29])
-  by fmsmga101.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 16 Mar 2023 05:06:01 -0700
+  by fmsmga101.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 16 Mar 2023 05:06:08 -0700
 X-ExtLoop1: 1
-X-IronPort-AV: E=McAfee;i="6500,9779,10650"; a="768911596"
+X-IronPort-AV: E=McAfee;i="6500,9779,10650"; a="768911674"
 X-IronPort-AV: E=Sophos;i="5.98,265,1673942400"; 
-   d="scan'208";a="768911596"
+   d="scan'208";a="768911674"
 Received: from coresw01.iind.intel.com ([10.106.46.194])
-  by FMSMGA003.fm.intel.com with ESMTP; 16 Mar 2023 05:05:55 -0700
+  by FMSMGA003.fm.intel.com with ESMTP; 16 Mar 2023 05:06:01 -0700
 From: rashmi.a@intel.com
 To: ulf.hansson@linaro.org,
 	michal.simek@xilinx.com,
@@ -75,15 +75,16 @@ Cc: kris.pan@linux.intel.com,
 	furong.zhou@intel.com,
 	mallikarjunappa.sangannavar@intel.com,
 	rashmi.a@intel.com
-Subject: [PATCH v2 1/4] mmc: sdhci-of-arasan: Remove Intel Thunder Bay SOC support
-Date: Thu, 16 Mar 2023 17:35:46 +0530
-Message-Id: <20230316120549.21486-2-rashmi.a@intel.com>
+Subject: [PATCH v2 2/4] dt-bindings: mmc: Remove bindings for Intel Thunder Bay SoC"
+Date: Thu, 16 Mar 2023 17:35:47 +0530
+Message-Id: <20230316120549.21486-3-rashmi.a@intel.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20230316120549.21486-1-rashmi.a@intel.com>
 References: <20230316120549.21486-1-rashmi.a@intel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230316_050604_257772_9ADFA060 
-X-CRM114-Status: GOOD (  13.45  )
+X-CRM114-CacheID: sfid-20230316_050608_598746_CDD6BCE5 
+X-CRM114-Status: UNSURE (   9.24  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -109,77 +110,49 @@ and there are no end customers or users.
 Signed-off-by: A, Rashmi <rashmi.a@intel.com>
 Reviewed-by: Hunter, Adrian <adrian.hunter@intel.com>
 ---
- drivers/mmc/host/sdhci-of-arasan.c | 29 +----------------------------
- 1 file changed, 1 insertion(+), 28 deletions(-)
+ .../devicetree/bindings/mmc/arasan,sdhci.yaml | 25 -------------------
+ 1 file changed, 25 deletions(-)
 
-diff --git a/drivers/mmc/host/sdhci-of-arasan.c b/drivers/mmc/host/sdhci-of-arasan.c
-index 89c431a34c43..fbafc87266aa 100644
---- a/drivers/mmc/host/sdhci-of-arasan.c
-+++ b/drivers/mmc/host/sdhci-of-arasan.c
-@@ -193,13 +193,6 @@ static const struct sdhci_arasan_soc_ctl_map intel_lgm_sdxc_soc_ctl_map = {
- 	.hiword_update = false,
- };
+diff --git a/Documentation/devicetree/bindings/mmc/arasan,sdhci.yaml b/Documentation/devicetree/bindings/mmc/arasan,sdhci.yaml
+index 8296c34cfa00..e8e8b48dc5e5 100644
+--- a/Documentation/devicetree/bindings/mmc/arasan,sdhci.yaml
++++ b/Documentation/devicetree/bindings/mmc/arasan,sdhci.yaml
+@@ -88,12 +88,6 @@ properties:
+         description:
+           For this device it is strongly suggested to include
+           arasan,soc-ctl-syscon.
+-      - items:
+-          - const: intel,thunderbay-sdhci-5.1   # Intel Thunder Bay eMMC PHY
+-          - const: arasan,sdhci-5.1
+-        description:
+-          For this device it is strongly suggested to include
+-          clock-output-names and '#clock-cells'.
  
--static const struct sdhci_arasan_soc_ctl_map thunderbay_soc_ctl_map = {
--	.baseclkfreq = { .reg = 0x0, .width = 8, .shift = 14 },
--	.clockmultiplier = { .reg = 0x4, .width = 8, .shift = 14 },
--	.support64b = { .reg = 0x4, .width = 1, .shift = 24 },
--	.hiword_update = false,
--};
+   reg:
+     maxItems: 1
+@@ -309,22 +303,3 @@ examples:
+                    <&scmi_clk KEEM_BAY_PSS_SD0>;
+           arasan,soc-ctl-syscon = <&sd0_phy_syscon>;
+     };
 -
- static const struct sdhci_arasan_soc_ctl_map intel_keembay_soc_ctl_map = {
- 	.baseclkfreq = { .reg = 0x0, .width = 8, .shift = 14 },
- 	.clockmultiplier = { .reg = 0x4, .width = 8, .shift = 14 },
-@@ -465,15 +458,6 @@ static const struct sdhci_pltfm_data sdhci_arasan_cqe_pdata = {
- 			SDHCI_QUIRK2_CLOCK_DIV_ZERO_BROKEN,
- };
- 
--static const struct sdhci_pltfm_data sdhci_arasan_thunderbay_pdata = {
--	.ops = &sdhci_arasan_cqe_ops,
--	.quirks = SDHCI_QUIRK_CAP_CLOCK_BASE_BROKEN | SDHCI_QUIRK_NO_ENDATTR_IN_NOPDESC,
--	.quirks2 = SDHCI_QUIRK2_PRESET_VALUE_BROKEN |
--		SDHCI_QUIRK2_CLOCK_DIV_ZERO_BROKEN |
--		SDHCI_QUIRK2_STOP_WITH_TC |
--		SDHCI_QUIRK2_CAPS_BIT63_FOR_HS400,
--};
--
- #ifdef CONFIG_PM_SLEEP
- /**
-  * sdhci_arasan_suspend - Suspend method for the driver
-@@ -1150,12 +1134,6 @@ static struct sdhci_arasan_of_data sdhci_arasan_generic_data = {
- 	.clk_ops = &arasan_clk_ops,
- };
- 
--static const struct sdhci_arasan_of_data sdhci_arasan_thunderbay_data = {
--	.soc_ctl_map = &thunderbay_soc_ctl_map,
--	.pdata = &sdhci_arasan_thunderbay_pdata,
--	.clk_ops = &arasan_clk_ops,
--};
--
- static const struct sdhci_pltfm_data sdhci_keembay_emmc_pdata = {
- 	.ops = &sdhci_arasan_cqe_ops,
- 	.quirks = SDHCI_QUIRK_CAP_CLOCK_BASE_BROKEN |
-@@ -1289,10 +1267,6 @@ static const struct of_device_id sdhci_arasan_of_match[] = {
- 		.compatible = "intel,keembay-sdhci-5.1-sdio",
- 		.data = &intel_keembay_sdio_data,
- 	},
--	{
--		.compatible = "intel,thunderbay-sdhci-5.1",
--		.data = &sdhci_arasan_thunderbay_data,
--	},
- 	/* Generic compatible below here */
- 	{
- 		.compatible = "arasan,sdhci-8.9a",
-@@ -1716,8 +1690,7 @@ static int sdhci_arasan_probe(struct platform_device *pdev)
- 
- 	if (of_device_is_compatible(np, "intel,keembay-sdhci-5.1-emmc") ||
- 	    of_device_is_compatible(np, "intel,keembay-sdhci-5.1-sd") ||
--	    of_device_is_compatible(np, "intel,keembay-sdhci-5.1-sdio") ||
--	    of_device_is_compatible(np, "intel,thunderbay-sdhci-5.1")) {
-+	    of_device_is_compatible(np, "intel,keembay-sdhci-5.1-sdio")) {
- 		sdhci_arasan_update_clockmultiplier(host, 0x0);
- 		sdhci_arasan_update_support64b(host, 0x0);
- 
+-  - |
+-    #define EMMC_XIN_CLK
+-    #define EMMC_AXI_CLK
+-    #define TBH_PSS_EMMC_RST_N
+-    mmc@80420000 {
+-          compatible = "intel,thunderbay-sdhci-5.1", "arasan,sdhci-5.1";
+-          interrupts = <GIC_SPI 714 IRQ_TYPE_LEVEL_HIGH>;
+-          reg = <0x80420000 0x400>;
+-          clocks = <&scmi_clk EMMC_XIN_CLK>,
+-                   <&scmi_clk EMMC_AXI_CLK>;
+-          clock-names = "clk_xin", "clk_ahb";
+-          phys = <&emmc_phy>;
+-          phy-names = "phy_arasan";
+-          assigned-clocks = <&scmi_clk EMMC_XIN_CLK>;
+-          clock-output-names = "emmc_cardclock";
+-          resets = <&rst_pss1 TBH_PSS_EMMC_RST_N>;
+-          #clock-cells = <0x0>;
+-    };
 -- 
 2.17.1
 
