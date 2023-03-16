@@ -4,70 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1E155C61DA4
-	for <linux-phy@archiver.kernel.org>; Thu, 16 Mar 2023 03:03:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D46A0C761A6
+	for <linux-phy@archiver.kernel.org>; Thu, 16 Mar 2023 03:17:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EBAWtjUJtQD8yD7RHD0sSXkWAm5wR3NJEcKQYjuoWn8=; b=OfRSWKA7dr1qUs
-	7XjgFOTmJpp9iy8Gn9Tf8xI48RHq4/n6GbYHFNAF+pDlkITKl9h1pvxfHrhIQUa6pBfPoi+lxZu53
-	9uuT4XYsKCaggxzQHwmPgBdJcQKOxTXIPvkgcUpKNhAhWafHwSOi2hfX+CYIwjfdBa8qvWRqt3tH/
-	HUsVydrcPKD3/V5yQxHYgFQ12oo+YEuZNTGVt51xs7kjdsGnIfljA48R5owm1oy64D7Z+5fjfGWyI
-	qp4udbZHQaTomsZEaluHegOQKXcwi1x0o+AZtmdwaRvJfeYKwV2eFVowt6CKTfvraaiG8U2jjddi2
-	K60eZgntYOv4Zd/n/GjQ==;
+	List-Owner; bh=37HozUc2S0DJcSK+7ozl/rAiziyTGYglWIz78yDR6EY=; b=a1N9E/CzeMTtnL
+	5jvIewUmA+f5qMeLgfVTy3l84dxfJJGBkqc5V520JqpQqYOmFAuClLIlWnWNdQF9zvoQx4W46db1g
+	qXyVdsqVFLFS8twYPwCfLiAz19S1a7dFwR8AxUTF5cLWGYaKWfkpiDFmbHxR7Uni2D+qyuGIHmkFL
+	LvOkuueFZkuqWcsqIeOgb5O+9sas9YHSvHHnNfefOmwA12XLD2pbtFVY1SfX+5oehbXBJAfgxlv4q
+	EM7xwfpMjbhS7XlaIWV4HlmYkD5jXSXwPod5qeM9kNZPzFm+Ef0q+q/S4tt31ZtRlW69/27HUzdVw
+	z4R2oxZOMqpuZxcu/bcg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pcdtL-00F2nH-2I;
-	Thu, 16 Mar 2023 03:02:59 +0000
-Received: from ex01.ufhost.com ([61.152.239.75])
-	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pcdtH-00F2jg-2S;
-	Thu, 16 Mar 2023 03:02:57 +0000
-Received: from EXMBX165.cuchost.com (unknown [175.102.18.54])
-	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
-	(Client CN "EXMBX165", Issuer "EXMBX165" (not verified))
-	by ex01.ufhost.com (Postfix) with ESMTP id 0463B24E208;
-	Thu, 16 Mar 2023 11:02:27 +0800 (CST)
-Received: from EXMBX071.cuchost.com (172.16.6.81) by EXMBX165.cuchost.com
- (172.16.6.75) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Thu, 16 Mar
- 2023 11:02:26 +0800
-Received: from [192.168.125.108] (113.72.145.194) by EXMBX071.cuchost.com
- (172.16.6.81) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Thu, 16 Mar
- 2023 11:02:25 +0800
-Message-ID: <7d573125-c751-3cb1-4506-a65c5705f590@starfivetech.com>
-Date: Thu, 16 Mar 2023 11:02:25 +0800
+	id 1pce7p-00F4jn-1S;
+	Thu, 16 Mar 2023 03:17:57 +0000
+Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
+	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
+	id 1pce7n-00F4j3-0g
+	for linux-phy@lists.infradead.org;
+	Thu, 16 Mar 2023 03:17:56 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by ams.source.kernel.org (Postfix) with ESMTPS id A1E97B81FB3;
+	Thu, 16 Mar 2023 03:17:53 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 148D1C4339B;
+	Thu, 16 Mar 2023 03:17:51 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1678936672;
+	bh=484wecaX4E5d+zm2WfN26QVdRPnNsyO2G41Wq7DM2y8=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=Gj99j3Y24VYJd/TMUGaWBlz3JK3pXgTlNjR4RIMiMuB3re4HRlXBqkvlhmMZnoKkT
+	 eBHYmch21HAr/z0nVjx0m+f+lYv3XtAtOoZ9GfJiTKUtPzFSYeAaCejDcNgxHat7PP
+	 +p3+N+LIsRM/0qZrcixzr6o5s4VM8HyWpYCuEw1htwgVX7mpEjo8k//0trz9Zp7xPW
+	 Vayg6d6rattLApJj/06hKtpM7EdSSEXMWogEgopS5TnhzecdvepRpQzQaLJe90iflY
+	 +mGZnNAq5tq4dJdqs09x27bSgV0wyaFV7tenzT/loQVfDbQy1nuYhTzpYIvBYPX3Gd
+	 TqdCa9SnaCG4A==
+From: Bjorn Andersson <andersson@kernel.org>
+To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+	lpieralisi@kernel.org,
+	vkoul@kernel.org,
+	kw@linux.com,
+	krzysztof.kozlowski+dt@linaro.org,
+	robh@kernel.org
+Cc: linux-kernel@vger.kernel.org,
+	kishon@kernel.org,
+	konrad.dybcio@linaro.org,
+	linux-arm-msm@vger.kernel.org,
+	devicetree@vger.kernel.org,
+	bhelgaas@google.com,
+	linux-phy@lists.infradead.org,
+	linux-pci@vger.kernel.org
+Subject: Re: (subset) [PATCH v3 00/13] Add PCIe RC support to Qcom SDX55 SoC
+Date: Wed, 15 Mar 2023 20:20:56 -0700
+Message-Id: <167893686410.303819.5208981481540188437.b4-ty@kernel.org>
+X-Mailer: git-send-email 2.39.2
+In-Reply-To: <20230308082424.140224-1-manivannan.sadhasivam@linaro.org>
+References: <20230308082424.140224-1-manivannan.sadhasivam@linaro.org>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.8.0
-Subject: Re: [PATCH v3 5/5] dts: usb: add StarFive JH7110 USB dts
- configuration.
-Content-Language: en-US
-To: Peter Chen <peter.chen@kernel.org>
-CC: Emil Renner Berthing <emil.renner.berthing@canonical.com>, Conor Dooley
-	<conor@kernel.org>, Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
-	<kishon@kernel.org>, Rob Herring <robh+dt@kernel.org>, Krzysztof Kozlowski
-	<krzysztof.kozlowski+dt@linaro.org>, Pawel Laszczak <pawell@cadence.com>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Roger Quadros
-	<rogerq@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>,
-	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-	<linux-phy@lists.infradead.org>, <linux-usb@vger.kernel.org>,
-	<linux-riscv@lists.infradead.org>, Paul Walmsley <paul.walmsley@sifive.com>,
-	Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>
-References: <20230315104411.73614-1-minda.chen@starfivetech.com>
- <20230315104411.73614-6-minda.chen@starfivetech.com>
- <20230316024305.GA2322573@nchen-desktop>
-From: Minda Chen <minda.chen@starfivetech.com>
-In-Reply-To: <20230316024305.GA2322573@nchen-desktop>
-X-Originating-IP: [113.72.145.194]
-X-ClientProxiedBy: EXCAS065.cuchost.com (172.16.6.25) To EXMBX071.cuchost.com
- (172.16.6.81)
-X-YovoleRuleAgent: yovoleflag
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230315_200256_085734_A289371F 
-X-CRM114-Status: GOOD (  11.92  )
+X-CRM114-CacheID: sfid-20230315_201755_389008_91FC69F7 
+X-CRM114-Status: GOOD (  12.88  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,119 +85,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-
-On 2023/3/16 10:43, Peter Chen wrote:
-> On 23-03-15 18:44:11, Minda Chen wrote:
->> USB Glue layer and Cadence USB subnode configuration,
->> also includes USB and PCIe phy dts configuration.
->> 
->> Signed-off-by: Minda Chen <minda.chen@starfivetech.com>
->> ---
->>  .../jh7110-starfive-visionfive-2.dtsi         |  7 +++
->>  arch/riscv/boot/dts/starfive/jh7110.dtsi      | 54 +++++++++++++++++++
->>  2 files changed, 61 insertions(+)
->> 
->> diff --git a/arch/riscv/boot/dts/starfive/jh7110-starfive-visionfive-2.dtsi b/arch/riscv/boot/dts/starfive/jh7110-starfive-visionfive-2.dtsi
->> index a132debb9b53..c64476aebc1a 100644
->> --- a/arch/riscv/boot/dts/starfive/jh7110-starfive-visionfive-2.dtsi
->> +++ b/arch/riscv/boot/dts/starfive/jh7110-starfive-visionfive-2.dtsi
->> @@ -236,3 +236,10 @@
->>  	pinctrl-0 = <&uart0_pins>;
->>  	status = "okay";
->>  };
->> +
->> +&usb0 {
->> +	status = "okay";
->> +	usbdrd_cdns3: usb@0 {
->> +		dr_mode = "peripheral";
->> +	};
->> +};
->> diff --git a/arch/riscv/boot/dts/starfive/jh7110.dtsi b/arch/riscv/boot/dts/starfive/jh7110.dtsi
->> index f70a4ed47eb4..17722fd1be62 100644
->> --- a/arch/riscv/boot/dts/starfive/jh7110.dtsi
->> +++ b/arch/riscv/boot/dts/starfive/jh7110.dtsi
->> @@ -362,6 +362,60 @@
->>  			status = "disabled";
->>  		};
->>  
->> +		usb0: usb@10100000 {
->> +			compatible = "starfive,jh7110-usb";
->> +			clocks = <&stgcrg JH7110_STGCLK_USB0_LPM>,
->> +				 <&stgcrg JH7110_STGCLK_USB0_STB>,
->> +				 <&stgcrg JH7110_STGCLK_USB0_APB>,
->> +				 <&stgcrg JH7110_STGCLK_USB0_AXI>,
->> +				 <&stgcrg JH7110_STGCLK_USB0_UTMI_APB>;
->> +			clock-names = "lpm", "stb", "apb", "axi", "utmi_apb";
->> +			resets = <&stgcrg JH7110_STGRST_USB0_PWRUP>,
->> +				 <&stgcrg JH7110_STGRST_USB0_APB>,
->> +				 <&stgcrg JH7110_STGRST_USB0_AXI>,
->> +				 <&stgcrg JH7110_STGRST_USB0_UTMI_APB>;
->> +			starfive,stg-syscon = <&stg_syscon 0x4 0xc4 0x148 0x1f4>;
->> +			starfive,sys-syscon = <&sys_syscon 0x18>;
->> +			status = "disabled";
->> +			#address-cells = <1>;
->> +			#size-cells = <1>;
->> +			ranges = <0x0 0x0 0x10100000 0x100000>;
+On Wed, 8 Mar 2023 13:54:11 +0530, Manivannan Sadhasivam wrote:
+> This series adds PCIe RC support to the Qcom SDX55 SoC. The PCIe controller
+> in SDX55 can act as both Root Complex and Endpoint but only one mode at a
+> time i.e., the mode cannot be switched during runtime.
 > 
-> Why it is four entry at ranges? Your address-cells and size-cells are
-> both 1, and your binding-doc is also three?
+> This series has been tested on Thundercomm T55 board having QCA6390 WLAN
+> chipset connected to the PCIe controller. For powering up the WLAN chipset,
+> an out-of-tree patch has been used since we do not have a proper driver in
+> mainline to handle the power supplies.
 > 
-> Peter
-Because the parent soc node address-cells is 2. So the local address is 2 entry.
-  	
-	soc {
-                compatible = "simple-bus";
-                interrupt-parent = <&plic>;
-                #address-cells = <2>;
-                #size-cells = <2>;
-                ranges;
-                ...
+> [...]
 
-So should I change the binding-doc ?
->> +
->> +			usbdrd_cdns3: usb@0 {
->> +				compatible = "cdns,usb3";
->> +				reg = <0x0 0x10000>,
->> +				      <0x10000 0x10000>,
->> +				      <0x20000 0x10000>;
->> +				reg-names = "otg", "xhci", "dev";
->> +				interrupts = <100>, <108>, <110>;
->> +				interrupt-names = "host", "peripheral", "otg";
->> +				phys = <&usbphy0>;
->> +				phy-names = "cdns3,usb2-phy";
->> +				maximum-speed = "super-speed";
->> +			};
->> +		};
->> +
->> +		usbphy0: phy@10200000 {
->> +			compatible = "starfive,jh7110-usb-phy";
->> +			reg = <0x0 0x10200000 0x0 0x10000>;
->> +			clocks = <&syscrg JH7110_SYSCLK_USB_125M>,
->> +				 <&stgcrg JH7110_STGCLK_USB0_APP_125>;
->> +			clock-names = "125m", "app_125";
->> +			#phy-cells = <0>;
->> +		};
->> +
->> +		pciephy0: phy@10210000 {
->> +			compatible = "starfive,jh7110-pcie-phy";
->> +			reg = <0x0 0x10210000 0x0 0x10000>;
->> +			#phy-cells = <0>;
->> +		};
->> +
->> +		pciephy1: phy@10220000 {
->> +			compatible = "starfive,jh7110-pcie-phy";
->> +			reg = <0x0 0x10220000 0x0 0x10000>;
->> +			#phy-cells = <0>;
->> +		};
->> +
->>  		stgcrg: clock-controller@10230000 {
->>  			compatible = "starfive,jh7110-stgcrg";
->>  			reg = <0x0 0x10230000 0x0 0x10000>;
->> -- 
->> 2.17.1
->> 
-> 
+Applied, thanks!
+
+[05/13] ARM: dts: qcom: sdx55: Fix the unit address of PCIe EP node
+        commit: 3b76b736cd9933ff88764ffec01cbd859c1475e7
+[06/13] ARM: dts: qcom: sdx55: Rename pcie0_{phy/lane} to pcie_{phy/lane}
+        commit: c9f30e3dd92ba779c9cb8bb694ed7a8e2c9f0bb3
+[07/13] ARM: dts: qcom: sdx55: Add support for PCIe RC controller
+        commit: 2b20437e67a4b74b990d19d3dbf55388e941f30f
+[08/13] ARM: dts: qcom: sdx55: List the property values vertically
+        commit: f9364a7ced5e6e36904c359cafe23cbf03645884
+[09/13] ARM: dts: qcom: sdx55-t55: Enable PCIe RC support
+        commit: 046392390884c9dead1d3703fa60dff97f22857a
+[10/13] ARM: dts: qcom: sdx55-t55: Move "status" property down
+        commit: 43743bfa36daed8f31860ad889a1413f239bb2f2
+
+Best regards,
+-- 
+Bjorn Andersson <andersson@kernel.org>
 
 -- 
 linux-phy mailing list
