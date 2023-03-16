@@ -4,70 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DD13AC7619A
-	for <linux-phy@archiver.kernel.org>; Wed, 15 Mar 2023 23:32:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DB64DC61DA4
+	for <linux-phy@archiver.kernel.org>; Thu, 16 Mar 2023 02:43:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VYp3hz76v0rjmJP0iSbfBgrEXhXIPH3C6z3hZkzOKPo=; b=xuOf1RoYLKwmYU
-	MHIMA9gXSCf3f78aLe/FCidy/LN9jik8nI6KNt4bKUVQ+XmKwXpDVCbv0kAYP9QDav53tUYeJpWY5
-	TFVm9zM5lMyKQfU3K6NF+xawg+1Q18gNFOzD38hmmpiQf6htXflZ89Kk1YF5xHWZIel2TExHW6/ZJ
-	Blh8Nlp51RVlUyHapdKNDz1r+/yXHKqoyrBLvtB8zNX5FWeiPfGxszmUKbxkEdCIBW1pGpcEhKbZO
-	Lgr9jXxnFJ8f5XMd5vPoI9npawS7rE1RYI78o0qTlnzGhE6jaGY/bBHTqUwSzPR7HMYL5mxDJbQDq
-	io/k2nLTSMYxCQ+/wWSw==;
+	List-Owner; bh=JDzSm5OnjeMqp9OY5piQ4cTroz9+pZnS3A7r2S8VSIY=; b=d7njvtSsSNy4Ac
+	X/9Wam4ZJ186ZZDvozmfz1Pevqe7pd1tH2wjZXJ97WTxe4e12XYh7joEKLf3r1lhaOIC/UeWQa6YT
+	9y9X7USeZyiDluTdO7oZZLdvaFVqepg7oI0m8G5C3pif0CGvPO4vW8klZJokx17nqYQwRLkA48mIz
+	z9PMsJKnznp4I7OMIaB5g+p5WYCDhCr0c2f+SYZHrC0LQRGaJiVeaQgCw22EMV5vjMXRCTaclWgT0
+	sWlIgCRKw6zwvX4m3d7jXJNqBQpQN2xX0dKHgc6qKLTJqyYN+QKfLakcnip7yYO4DEfIcvyvwaq+T
+	yl6dFY1ehCoJr7awi/Zw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pcabP-00EiWF-1m;
-	Wed, 15 Mar 2023 23:32:15 +0000
-Received: from ams.source.kernel.org ([145.40.68.75])
+	id 1pcdaT-00F0PV-1P;
+	Thu, 16 Mar 2023 02:43:29 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pcabM-00EiUt-0n
-	for linux-phy@lists.infradead.org;
-	Wed, 15 Mar 2023 23:32:13 +0000
+	id 1pcdaP-00F0Os-2X;
+	Thu, 16 Mar 2023 02:43:27 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id 5163BB81F99;
-	Wed, 15 Mar 2023 23:32:10 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id CBA8AC433D2;
-	Wed, 15 Mar 2023 23:32:07 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 4DEEF61EE3;
+	Thu, 16 Mar 2023 02:43:24 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0C1B3C433EF;
+	Thu, 16 Mar 2023 02:43:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1678923128;
-	bh=FEmtlcIqqS89abT0ssoEBTavV/1rty8NOhTw/nMtYX4=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=mgz6l6/MxdMd4DqHkEWJBJMf7ada+yO0vtLuy22PcKklMd82Ka6ixwwEGqJX1gugR
-	 nE21JSPVDDpAXp9CWsJkRBngGVIbfuNzm8ucDtDVOAWvsAOBvqzT+i7Hu9qLJ9hQIA
-	 mtLPc8bWd86yo1gmX0OGw8MAWeWfvSzDrk2dSbLG8h7GEhTYeaY/H1LC8NSurFm3vJ
-	 fCWYyq9MZbEXBh/+DZhKrctiiuEai4kUwBval2xzyzTUrz3OsEXNs/Gwqg8NCWksof
-	 InRGbzzv0o0lqT8VQytv22imatSjsJ6wjx72ZB2xnULWiAyz5RywrGesIX/Q1mAPME
-	 jUpq4mHf1yphw==
-From: Bjorn Andersson <andersson@kernel.org>
-To: Johan Hovold <johan+linaro@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	vkoul@kernel.org,
-	Rob Herring <robh@kernel.org>,
-	Lee Jones <lee@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
-	Abel Vesa <abel.vesa@linaro.org>,
+	s=k20201202; t=1678934603;
+	bh=hlf59lgFe76U502P48CKYTS/zJCgM/jPmrLWB70347s=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=f3h7PIgyfgeNyElhabHNoEYlOYoRLcMGVW+nFXb3XktUszGLs6stUnfws0GyV/k1N
+	 UmOQlmR/nlHeVrbU95zC49L3XdRGVLmDZ+xduhH4fTVtX2s3GvUhVCMAkOUGWp3fBW
+	 s0M/8wgrQw5JDRbc9eSe4E3RPeDpdFxoGgpRhYa7fr5RJqNqlxP/SFe28k20BuPCP2
+	 /kS2a9zVNsWXoy/1dIUJoIAADICebGUPDqpvyOQkIVnDSHVOci2my3f3a5GGI98gN5
+	 CTI8CiAQfgzvvsg4vo7iXH3VGrAMOhriM8KbSHD4BrhncHESVihfCWhnaL0JbczoTV
+	 sfW5x3/MF2bsg==
+Date: Thu, 16 Mar 2023 10:43:05 +0800
+From: Peter Chen <peter.chen@kernel.org>
+To: Minda Chen <minda.chen@starfivetech.com>
+Cc: Emil Renner Berthing <emil.renner.berthing@canonical.com>,
+	Conor Dooley <conor@kernel.org>, Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Andy Gross <agross@kernel.org>
-Cc: Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
-	devicetree@vger.kernel.org,
-	linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org
-Subject: Re: (subset) [PATCH v5 0/7] sm8550: Add support for eUSB2 repeater
-Date: Wed, 15 Mar 2023 16:34:38 -0700
-Message-Id: <167892332564.4030021.4228411970991027965.b4-ty@kernel.org>
-X-Mailer: git-send-email 2.39.2
-In-Reply-To: <20230208190200.2966723-1-abel.vesa@linaro.org>
-References: <20230208190200.2966723-1-abel.vesa@linaro.org>
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Pawel Laszczak <pawell@cadence.com>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Roger Quadros <rogerq@kernel.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-usb@vger.kernel.org, linux-riscv@lists.infradead.org,
+	Paul Walmsley <paul.walmsley@sifive.com>,
+	Palmer Dabbelt <palmer@dabbelt.com>,
+	Albert Ou <aou@eecs.berkeley.edu>
+Subject: Re: [PATCH v3 5/5] dts: usb: add StarFive JH7110 USB dts
+ configuration.
+Message-ID: <20230316024305.GA2322573@nchen-desktop>
+References: <20230315104411.73614-1-minda.chen@starfivetech.com>
+ <20230315104411.73614-6-minda.chen@starfivetech.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20230315104411.73614-6-minda.chen@starfivetech.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230315_163212_433589_A13BAD0D 
-X-CRM114-Status: GOOD (  12.15  )
+X-CRM114-CacheID: sfid-20230315_194325_925253_8E1FF750 
+X-CRM114-Status: GOOD (  14.58  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,26 +87,109 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, 8 Feb 2023 21:01:53 +0200, Abel Vesa wrote:
-> This patchset adds support for the eUSB2 repeater found in pmic PM8550B,
-> used along with SM8550. Since there is no dedicated generic framework
-> for eUSB2 repeaters, the most appropriate subsystem to model it is the
-> generic phy. This patchset also adds support for such repeater to the
-> eUSB2 PHY found in SM8550. Basically, the eUSB2 PHY will have its own
-> "phy" which is actually a repeater.
+On 23-03-15 18:44:11, Minda Chen wrote:
+> USB Glue layer and Cadence USB subnode configuration,
+> also includes USB and PCIe phy dts configuration.
 > 
-> [...]
+> Signed-off-by: Minda Chen <minda.chen@starfivetech.com>
+> ---
+>  .../jh7110-starfive-visionfive-2.dtsi         |  7 +++
+>  arch/riscv/boot/dts/starfive/jh7110.dtsi      | 54 +++++++++++++++++++
+>  2 files changed, 61 insertions(+)
+> 
+> diff --git a/arch/riscv/boot/dts/starfive/jh7110-starfive-visionfive-2.dtsi b/arch/riscv/boot/dts/starfive/jh7110-starfive-visionfive-2.dtsi
+> index a132debb9b53..c64476aebc1a 100644
+> --- a/arch/riscv/boot/dts/starfive/jh7110-starfive-visionfive-2.dtsi
+> +++ b/arch/riscv/boot/dts/starfive/jh7110-starfive-visionfive-2.dtsi
+> @@ -236,3 +236,10 @@
+>  	pinctrl-0 = <&uart0_pins>;
+>  	status = "okay";
+>  };
+> +
+> +&usb0 {
+> +	status = "okay";
+> +	usbdrd_cdns3: usb@0 {
+> +		dr_mode = "peripheral";
+> +	};
+> +};
+> diff --git a/arch/riscv/boot/dts/starfive/jh7110.dtsi b/arch/riscv/boot/dts/starfive/jh7110.dtsi
+> index f70a4ed47eb4..17722fd1be62 100644
+> --- a/arch/riscv/boot/dts/starfive/jh7110.dtsi
+> +++ b/arch/riscv/boot/dts/starfive/jh7110.dtsi
+> @@ -362,6 +362,60 @@
+>  			status = "disabled";
+>  		};
+>  
+> +		usb0: usb@10100000 {
+> +			compatible = "starfive,jh7110-usb";
+> +			clocks = <&stgcrg JH7110_STGCLK_USB0_LPM>,
+> +				 <&stgcrg JH7110_STGCLK_USB0_STB>,
+> +				 <&stgcrg JH7110_STGCLK_USB0_APB>,
+> +				 <&stgcrg JH7110_STGCLK_USB0_AXI>,
+> +				 <&stgcrg JH7110_STGCLK_USB0_UTMI_APB>;
+> +			clock-names = "lpm", "stb", "apb", "axi", "utmi_apb";
+> +			resets = <&stgcrg JH7110_STGRST_USB0_PWRUP>,
+> +				 <&stgcrg JH7110_STGRST_USB0_APB>,
+> +				 <&stgcrg JH7110_STGRST_USB0_AXI>,
+> +				 <&stgcrg JH7110_STGRST_USB0_UTMI_APB>;
+> +			starfive,stg-syscon = <&stg_syscon 0x4 0xc4 0x148 0x1f4>;
+> +			starfive,sys-syscon = <&sys_syscon 0x18>;
+> +			status = "disabled";
+> +			#address-cells = <1>;
+> +			#size-cells = <1>;
+> +			ranges = <0x0 0x0 0x10100000 0x100000>;
 
-Applied, thanks!
+Why it is four entry at ranges? Your address-cells and size-cells are
+both 1, and your binding-doc is also three?
 
-[6/7] arm64: dts: qcom: pm8550b: Add eUSB2 repeater node
-      commit: fdaa922585f4474c88fbfaa129f8114f38200660
-[7/7] arm64: dts: qcom: sm8550-mtp: Add eUSB2 repeater node
-      commit: 749078e38e1ee28357e8fdcd4eac382a465bd1e7
+Peter
+> +
+> +			usbdrd_cdns3: usb@0 {
+> +				compatible = "cdns,usb3";
+> +				reg = <0x0 0x10000>,
+> +				      <0x10000 0x10000>,
+> +				      <0x20000 0x10000>;
+> +				reg-names = "otg", "xhci", "dev";
+> +				interrupts = <100>, <108>, <110>;
+> +				interrupt-names = "host", "peripheral", "otg";
+> +				phys = <&usbphy0>;
+> +				phy-names = "cdns3,usb2-phy";
+> +				maximum-speed = "super-speed";
+> +			};
+> +		};
+> +
+> +		usbphy0: phy@10200000 {
+> +			compatible = "starfive,jh7110-usb-phy";
+> +			reg = <0x0 0x10200000 0x0 0x10000>;
+> +			clocks = <&syscrg JH7110_SYSCLK_USB_125M>,
+> +				 <&stgcrg JH7110_STGCLK_USB0_APP_125>;
+> +			clock-names = "125m", "app_125";
+> +			#phy-cells = <0>;
+> +		};
+> +
+> +		pciephy0: phy@10210000 {
+> +			compatible = "starfive,jh7110-pcie-phy";
+> +			reg = <0x0 0x10210000 0x0 0x10000>;
+> +			#phy-cells = <0>;
+> +		};
+> +
+> +		pciephy1: phy@10220000 {
+> +			compatible = "starfive,jh7110-pcie-phy";
+> +			reg = <0x0 0x10220000 0x0 0x10000>;
+> +			#phy-cells = <0>;
+> +		};
+> +
+>  		stgcrg: clock-controller@10230000 {
+>  			compatible = "starfive,jh7110-stgcrg";
+>  			reg = <0x0 0x10230000 0x0 0x10000>;
+> -- 
+> 2.17.1
+> 
 
-Best regards,
 -- 
-Bjorn Andersson <andersson@kernel.org>
+
+Thanks,
+Peter Chen
 
 -- 
 linux-phy mailing list
