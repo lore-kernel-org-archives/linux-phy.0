@@ -4,134 +4,138 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B5669C74A5B
-	for <linux-phy@archiver.kernel.org>; Fri, 17 Mar 2023 18:54:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 54581C6FD1D
+	for <linux-phy@archiver.kernel.org>; Fri, 17 Mar 2023 19:17:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rQeLPzqhNvultHXu2mLUQxo5WisXOxOd7hlJ2wfvCDo=; b=3nXi5mxjDXbeie
-	earxiC8HaT7BFXgWigfQs9ceNl6pHHcSIi+2Xrz5MyTGDNOiQCvp+3TkM36knCZxQlHFDJHoxe1vD
-	rLA+wOqn8dZGFg9vXtIz0F1hlP+hFN2NqYgJ5pfwc8EpM9KSZ3uPCGcW5fXFsvq8uscDItK9HRDYY
-	r5gQDa6/eBx5FtVz9vT7jOm93D7KBEoZSIkYCvjtoF3+R4gi++Htppq/F8yW9ByrpKCDZuzRsy+Lg
-	HuGv3Nt/8LtYprcl5zCuhaXz7aA6fMcHYFjkSRewa8s3VQyzBQvWS4kM/eO9y4I8oTQf/dqIIKpfD
-	n52+3/2RkPEhw0iz3IhQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:
+	References:Cc:To:Subject:Date:Message-ID:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=dELf/J6xXlSjpK1xPQYq2qLqFuO8kU+cR/RcXe5OVO4=; b=uQgt0QDsKQtotkALB9EzV09Zva
+	FGmdygHKVGlHxWVrty1CJA9cZdQ82t9SKpi9vsGFLdAc5BFZb+sCOznvj9vgQVrOAym29L6t9+ypq
+	INVkt89NeAQTuZ4pIwrHZFv+2gwjxsJ1xkdSNiNWTORBoythu4oVWFa7ovrGzO5oDyxUm+TiA7QH3
+	x7lM3p4X//4LQvNj6VxJys0+FYgtqWNe3kn3C5QR6rAVPis3P2pQMK1QMvG/HaGm5eWsJBF78oLcK
+	2UIShr6gbpY0FrSGexSMG1Grz1vOUCKNf11/I/pPSX2v5ipoTpq/EgGtRzhofGKkrCHn5Xt+aQMMW
+	B3xTBCrQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pdFDy-0034zS-1I;
-	Fri, 17 Mar 2023 18:54:46 +0000
-Received: from mail-bn8nam11on20700.outbound.protection.outlook.com ([2a01:111:f400:7eae::700] helo=NAM11-BN8-obe.outbound.protection.outlook.com)
+	id 1pdFaK-0039fO-37;
+	Fri, 17 Mar 2023 19:17:52 +0000
+Received: from mail-db8eur05hn20312.outbound.protection.outlook.com ([2a01:111:f400:7e1a::312] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pdFDv-0034ut-1u
-	for linux-phy@lists.infradead.org;
-	Fri, 17 Mar 2023 18:54:44 +0000
+	id 1pdFaG-0039e1-1p;
+	Fri, 17 Mar 2023 19:17:50 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=seco.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=3f0WXcZZ15q5DJVqmbm7QdVbBh9SvtiJMI5A72kzRdc=;
+ b=f1bCtATAruT/6mP4Mpl2aWwigqWSdBOzxgn6jJrDgRg9kmTCEyT7nFfTfMj6txsopO9B8b3cgk6jqkJUdNWejpP35lNjsEBm/uQiWq9fd+kSaZeFYHHhiaUiRw8rRo3UYCEfkFdzI6deuUjrY7qsgcPidNfNffLcfd6dNRzyvd8+r2Iu6akWUFlqykP2RbRVOaZKWD6XiP1aQcn5TGC/OAgHggVJv3MIbM62bLIRblGwqunCJYkM8mgkXNNioTCHlCDjFgZXdIDYn/xljrYsBFdbtVeOrro1QerHTgz4Ti51BQVQYSbSr2D/lPUWLWIP2yyJlDUvxcwXFZ7c09DFWw==
+Received: from FR0P281CA0053.DEUP281.PROD.OUTLOOK.COM (2603:10a6:d10:48::17)
+ by AM9PR03MB7867.eurprd03.prod.outlook.com (2603:10a6:20b:432::7) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6178.26; Fri, 17 Mar
+ 2023 19:17:44 +0000
+Received: from VI1EUR05FT033.eop-eur05.prod.protection.outlook.com
+ (2603:10a6:d10:48:cafe::7) by FR0P281CA0053.outlook.office365.com
+ (2603:10a6:d10:48::17) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6222.10 via Frontend
+ Transport; Fri, 17 Mar 2023 19:17:44 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 20.160.56.81)
+ smtp.mailfrom=seco.com; dkim=pass (signature was verified)
+ header.d=seco.com;dmarc=pass action=none header.from=seco.com;
+Received-SPF: Pass (protection.outlook.com: domain of seco.com designates
+ 20.160.56.81 as permitted sender) receiver=protection.outlook.com;
+ client-ip=20.160.56.81; helo=inpost-eu.tmcas.trendmicro.com; pr=C
+Received: from inpost-eu.tmcas.trendmicro.com (20.160.56.81) by
+ VI1EUR05FT033.mail.protection.outlook.com (10.233.243.184) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.6199.20 via Frontend Transport; Fri, 17 Mar 2023 19:17:43 +0000
+Received: from outmta (unknown [192.168.82.140])
+	by inpost-eu.tmcas.trendmicro.com (Trend Micro CAS) with ESMTP id 836652008088A;
+	Fri, 17 Mar 2023 19:17:43 +0000 (UTC)
+Received: from EUR02-DB5-obe.outbound.protection.outlook.com (unknown [104.47.11.110])
+	by repre.tmcas.trendmicro.com (Trend Micro CAS) with ESMTPS id 09CC92008006F;
+	Fri, 17 Mar 2023 19:15:49 +0000 (UTC)
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=fO5t4aDvwJA3Bf0AQ1LRifhtcJFlTFN/cIU3eGMxMhkQ+S6CHuz+B2z9k8w7c+4+0LR2cYbBiJZDemPDlg+sYhpt6+yBCn+X7kOZ/mouH61ME9gt6dYRO/Xhz3FXScuALlV5EP0Z/p37fB3HKi24lOWNqCa6SNe7FTptrHrGX/jjfbJJ0yolyVHBcyja5UQpY5PGitI8/JGabEwoEbvW7oDNJyPd2WvdPZQKpFRl9mSwNhgdHf0ckTRz3MKxTweDIY5aZtaWn8shjyJk2xTCpiWgnOTuXcFr4RdbJabnymjsuUvlq8+B/xkpJoKjDCL4wrDJ0tzhlE3Ac6giVveDgw==
+ b=d7wED6WI2Ru4ONfi0HM8TdPMh+DSC4SV7XrzxFwZNTz3jzoCEpSZWLOPRAoONAGttZh4jePW1h9WaT21/evYa4WNW5cEnP0ckwFWqAW8m+ZArJIQMtpsCciCvZFN8M4PdfESg/XNyekNqvwXvG1BlU0qQUYdh9gVMkJJ/EkTgqQqOgyBzx2J/yXmmURoM44qqaRFfFmoIjc/OOQsnH0DgqsFBBiSjL+xSxVGPyW1GGXvvAje7raxD+G0CIv7x9AMoiv7r9OI1ffvwXlzUYdqIN1tpVG0ri3u9l2Y6L7Xf9YfewDdzAmd0cJTCWBAKiFqYxVvfrpmYzM+SO771BakCQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=F+M2V038LGiL9tMIiom4sHLQO6ssagWlXVlL/2pPH9k=;
- b=XW7PTWfa2DyGECpWlp6R2fNd/PDwrcoZIh7pCKY/igwA4RoEX2UcvebmcSOzazHsQLXwuAuFQTn+v+lFl3yXhSg43ZYUpVKhKdzyVAgQtJmiti5uQaklX0rHCnAmvSf2QwnOHJ2aLz0yNGWfJMscAQWNY828TZPENqrjtHxR6VqLPRO9i+DUAtpGjCA3l7v3ZwiQPuud32bP2rdV67Fgg3qU0x/XehB9iVqbgMEFvarBKCuRKtJMz0vzuh269bRiv9fmfKm//hMW5g/RN9BhILoEU8fGBeP6ti2LR7lMBV8cM+yF99ROGoTA3bNRszDzfY2iTlGhuTa5Wi0z6ePJ8Q==
+ bh=3f0WXcZZ15q5DJVqmbm7QdVbBh9SvtiJMI5A72kzRdc=;
+ b=WLtY0+mvAsnxVi38/YWXG6wpnrt9zyRtaI6wmaSl7a9/AtfUY+wGUqGzSztNBvqFaRpOZV5RZuB2rZXKrxIJdUyFJa5emdquSQ1V7kwOTkIOYcxAVeelEzSMXQ/LNbex8KzZBYBWJqWBeXO35exESD1P6h4BSD0fAolEkYZfMiQtt1Pw38j3QxkBi40WHzg4MvzFY26D6HluO1LjpjeSjCt7QXK7hlXwO/EtSET2eiiItQQ5exq3GyJKo+DiX7zwVEbg8ZdbXRLv153Qx+dB/J5w0p/fWfal1SZXgUy+rrVfi5sU/e6H6aqzFkMfDGBN2aU2c5O8m4oTBujXP1QiVQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=in-advantage.com; dmarc=pass action=none
- header.from=in-advantage.com; dkim=pass header.d=in-advantage.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=inadvantage.onmicrosoft.com; s=selector2-inadvantage-onmicrosoft-com;
+ smtp.mailfrom=seco.com; dmarc=pass action=none header.from=seco.com;
+ dkim=pass header.d=seco.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=seco.com; s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=F+M2V038LGiL9tMIiom4sHLQO6ssagWlXVlL/2pPH9k=;
- b=B0S1Ta2o7d6v2RM4IFOl0SswL1cXaycP2vqgg0/zOBgXczBhKv3Cz/X9kVOQ0n1F7l8dhRJ2/GPxIWuNj99hZNChFe+bM69AO5Q/Ayr3dPSC/RUk+RgmxKJEL5gPrMtOnzjAykt9WPxulGeAnIkXFABuMeA57KSY7aFdhsscr2M=
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=in-advantage.com;
-Received: from MWHPR1001MB2351.namprd10.prod.outlook.com
- (2603:10b6:301:35::37) by CH0PR10MB5289.namprd10.prod.outlook.com
- (2603:10b6:610:d8::16) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6178.35; Fri, 17 Mar
- 2023 18:54:40 +0000
-Received: from MWHPR1001MB2351.namprd10.prod.outlook.com
- ([fe80::1897:6663:87ba:c8fa]) by MWHPR1001MB2351.namprd10.prod.outlook.com
- ([fe80::1897:6663:87ba:c8fa%4]) with mapi id 15.20.6178.035; Fri, 17 Mar 2023
- 18:54:40 +0000
-From: Colin Foster <colin.foster@in-advantage.com>
-To: linux-phy@lists.infradead.org,
-	netdev@vger.kernel.org,
-	linux-kernel@vger.kernel.org
-Cc: Russell King <linux@armlinux.org.uk>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Paolo Abeni <pabeni@redhat.com>,
-	Jakub Kicinski <kuba@kernel.org>,
-	Eric Dumazet <edumazet@google.com>,
-	"David S. Miller" <davem@davemloft.net>,
-	Florian Fainelli <f.fainelli@gmail.com>,
-	Andrew Lunn <andrew@lunn.ch>,
-	UNGLinuxDriver@microchip.com,
-	Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Claudiu Manoil <claudiu.manoil@nxp.com>,
-	Vladimir Oltean <vladimir.oltean@nxp.com>,
-	Lee Jones <lee@kernel.org>
-Subject: [PATCH v2 net-next 9/9] net: dsa: ocelot: add support for external phys
-Date: Fri, 17 Mar 2023 11:54:15 -0700
-Message-Id: <20230317185415.2000564-10-colin.foster@in-advantage.com>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20230317185415.2000564-1-colin.foster@in-advantage.com>
-References: <20230317185415.2000564-1-colin.foster@in-advantage.com>
-X-ClientProxiedBy: BY5PR16CA0025.namprd16.prod.outlook.com
- (2603:10b6:a03:1a0::38) To MWHPR1001MB2351.namprd10.prod.outlook.com
- (2603:10b6:301:35::37)
+ bh=3f0WXcZZ15q5DJVqmbm7QdVbBh9SvtiJMI5A72kzRdc=;
+ b=f1bCtATAruT/6mP4Mpl2aWwigqWSdBOzxgn6jJrDgRg9kmTCEyT7nFfTfMj6txsopO9B8b3cgk6jqkJUdNWejpP35lNjsEBm/uQiWq9fd+kSaZeFYHHhiaUiRw8rRo3UYCEfkFdzI6deuUjrY7qsgcPidNfNffLcfd6dNRzyvd8+r2Iu6akWUFlqykP2RbRVOaZKWD6XiP1aQcn5TGC/OAgHggVJv3MIbM62bLIRblGwqunCJYkM8mgkXNNioTCHlCDjFgZXdIDYn/xljrYsBFdbtVeOrro1QerHTgz4Ti51BQVQYSbSr2D/lPUWLWIP2yyJlDUvxcwXFZ7c09DFWw==
+Authentication-Results-Original: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=seco.com;
+Received: from DB9PR03MB8847.eurprd03.prod.outlook.com (2603:10a6:10:3dd::13)
+ by DU0PR03MB8390.eurprd03.prod.outlook.com (2603:10a6:10:3ba::5) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6178.30; Fri, 17 Mar
+ 2023 19:17:33 +0000
+Received: from DB9PR03MB8847.eurprd03.prod.outlook.com
+ ([fe80::dbcf:1089:3242:614e]) by DB9PR03MB8847.eurprd03.prod.outlook.com
+ ([fe80::dbcf:1089:3242:614e%5]) with mapi id 15.20.6178.035; Fri, 17 Mar 2023
+ 19:17:33 +0000
+Message-ID: <acc331ca-9d1c-ed98-9271-281ded976fbb@seco.com>
+Date: Fri, 17 Mar 2023 15:17:27 -0400
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.4.0
+Subject: Re: [PATCH v11 09/13] arm64: dts: ls1046a: Add serdes nodes
+Content-Language: en-US
+To: Shawn Guo <shawnguo@kernel.org>
+Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
+ <kishon@kernel.org>, linux-phy@lists.infradead.org,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ devicetree@vger.kernel.org, Camelia Alexandra Groza <camelia.groza@nxp.com>,
+ Madalin Bucur <madalin.bucur@nxp.com>, Bagas Sanjaya <bagasdotme@gmail.com>,
+ Ioana Ciornei <ioana.ciornei@nxp.com>, linuxppc-dev@lists.ozlabs.org,
+ Li Yang <leoyang.li@nxp.com>
+References: <20230313161138.3598068-1-sean.anderson@seco.com>
+ <20230313161138.3598068-10-sean.anderson@seco.com>
+ <20230314070848.GA143566@dragon>
+From: Sean Anderson <sean.anderson@seco.com>
+In-Reply-To: <20230314070848.GA143566@dragon>
+X-ClientProxiedBy: BLAPR03CA0098.namprd03.prod.outlook.com
+ (2603:10b6:208:32a::13) To DB9PR03MB8847.eurprd03.prod.outlook.com
+ (2603:10a6:10:3dd::13)
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: MWHPR1001MB2351:EE_|CH0PR10MB5289:EE_
-X-MS-Office365-Filtering-Correlation-Id: 322f3f0c-c9f7-4d37-1403-08db2719106d
+X-MS-TrafficTypeDiagnostic: 	DB9PR03MB8847:EE_|DU0PR03MB8390:EE_|VI1EUR05FT033:EE_|AM9PR03MB7867:EE_
+X-MS-Office365-Filtering-Correlation-Id: 6f726c91-be97-4a82-c98c-08db271c48f8
+X-TrendMicro-CAS-OUT-LOOP-IDENTIFIER: 656f966764b7fb185830381c646b41a1
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam-Untrusted: BCL:0;
+X-Microsoft-Antispam-Message-Info-Original:  xi2512uw26XhVnvbRlMtckWdR1kRuad94HoF0pwZX49KSSAkkrx322C5/jWeCSkk2TGMM/C3zU2IG0xJr23QuFPzvucH+m1ljlZWdbU33soVP6z5Pk4zyfk9GIVP4Y4CjfJaL9Xdttj7NFAYt7l3cGI2tyTS32+RbvE2jxJu+2mGMgHKwqBFS2R/aQJKanjyeTtyGDoZIUNoBuUTqyEF8K0+yaaPsQrMwP1EwBqfSmZ2C7Nwz809RMXd5P0/RksLQwhqP/kMBP73AS9Ddpjd7O4Sy95kC0rFh4nYDj1EwloYoQ5d/oXBo+X0plej+RVz9tFMMh210nEJd1Bhp6re3oEj59zfdqx0rvbhV2v7qQ63WOS4gtuVK6eNBhy3XKi9SLKtK326f76masaX1yfh1Ui4J8H6Gw1CzVK/FVsrPOPetBIqIJmt30iqOob6DrO/Fh07P/6masp4mvR52duFQtdmO1oywUYhfqjlu+rXL4rCkqD8eh9DIOP9NX2O3GAfoeF4fOJg2q1jXRNv+FaBFeM8NqjnQu2Q/kkAWwxxQyaTC5jx1/gxcMmQqBFS1O9lbu0lJGh7V70AeTozYbBDhaUFE2BuR8Us1nrPl1KlaTzFp4RFQv7ne+JmMZlvxOCRvvpe4PxfZdm44ayWzYW61Xeg1v9gj/eE2/9JTLsIIiq/Xe8ctS306ngRnuf8sUypnB8Bh+9447vDqX95T0QfpzX3LRBoP1ffrja3zIS3fTs3DPqQX0INg8LLUAxaZln342sWPABw8nhnCMQP8HHQLA==
+X-Forefront-Antispam-Report-Untrusted:  CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DB9PR03MB8847.eurprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230025)(396003)(136003)(39850400004)(366004)(376002)(346002)(451199018)(31696002)(86362001)(38100700002)(38350700002)(36756003)(2906002)(44832011)(41300700001)(4744005)(5660300002)(8936002)(7416002)(6512007)(6506007)(26005)(2616005)(4326008)(66476007)(83380400001)(53546011)(54906003)(186003)(316002)(8676002)(478600001)(6666004)(52116002)(66946007)(6916009)(6486002)(66556008)(31686004)(45980500001)(43740500002);DIR:OUT;SFP:1101;
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DU0PR03MB8390
+X-EOPAttributedMessage: 0
+X-MS-Exchange-Transport-CrossTenantHeadersStripped:  VI1EUR05FT033.eop-eur05.prod.protection.outlook.com
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id-Prvs: 	110ca56f-e50c-49e6-3e03-08db271c429c
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 	popmzIip9UHGPZJE7aV5zNB211ILC9egvT4AxDPMHTzhaEz1w5KDhFEzFczid/98G1qo1EvCZP0BBfonCSOGNsrFhmyNz1KpsDnxmC68nTewC2aeksZrMLZuUlc0aSCAnYuRgH3He9XLX/i2Aws44/4FRA9nO7HIeOq+lwejvx60FMIw5Su0/xRAi+dQEQb6s9ddCf8NSNUWln9XVfqO9auTY0z2AW/8/8cRomr078sxjqFcF8vh75TmGeIVbusxe5LmCd3hjVWpZCybwD6lVS2jwCVsM7zh/gehIlV1C6hUMlOKjbkZs/WPQXnGhqJmPkahZQN1nXoQrNnx+BT+FdADREzDs9VDyAne2orLc26NxvbdskKD93d5cWdYsMtICzqv+q/KVmrntWdL1QzFTJFAmQKJHvb2ptfES9OkOVDXmRnJFq3Mqao1AQZtLZqXrrl/D9yX8JlDTZlwg9TNUMgFfjMMb7bIgdhSAHAi1KL61BDTd/a2w0ireo8Z4JbfErT9dHLJDDy7ua5mw3C93sZxw2o5wH/jC+Gx7Qz+un459oesch9ImTi6DsvMYol1eVWUGUmDhZFMBDcGLxU9LH4D5LdogJm5hUmyMF2+d/FkPmMIvWyQsEgTzil4oUNs7Jrt24cnSnnsG4Ibc+Haa39+eA7jrjF8TkA2xPThTptBxxWMvbPwhgA4iyLJ/kWsCH929EZcporFrXZVihDVWA==
-X-Forefront-Antispam-Report: 	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:MWHPR1001MB2351.namprd10.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230025)(396003)(346002)(366004)(376002)(136003)(39840400004)(451199018)(44832011)(41300700001)(8936002)(5660300002)(2906002)(7416002)(86362001)(36756003)(38100700002)(38350700002)(478600001)(52116002)(8676002)(6666004)(66946007)(6486002)(66556008)(66476007)(1076003)(4326008)(83380400001)(54906003)(316002)(6506007)(26005)(2616005)(6512007)(186003);DIR:OUT;SFP:1102;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: 	=?us-ascii?Q?lQat/2bnXgHYUWkYE6KZO7xPtZUII3ODLLmjIp8a5Uq0YaGEqadA1gxUqBof?=
- =?us-ascii?Q?nwBhnP35U8iLQfRwKXiBBxqtt6/DI17XaOtt4YBbLLuaxnzSTFb3qgDU7dCZ?=
- =?us-ascii?Q?tR6VHdbcIKtbNCnA0LGEhvdt9E2PF8UANCHf3uGN+H/FKxAuX2bw2wC5Hi/0?=
- =?us-ascii?Q?7THuYmOqZAcVC9L8sI1pAI0lj41vhRG19rHfTpiHeUfAJix8H6XuGUivKYKm?=
- =?us-ascii?Q?+38aT2ushpXokoF5CIDHsBs5AfLbjC9tdtDPxgtq3CakRxgU3M2VPpPD7eMx?=
- =?us-ascii?Q?JoNx92WORTfFTW6q7kuSkhsUzpgrxlyIkefHBw0w4L285xlPKLX+QZbvxfCO?=
- =?us-ascii?Q?WnyDhgPdCloVDwJbkRXA5vF1bzmgU2zdexo4SJEjurar/mh8O8rTAJV/jCjo?=
- =?us-ascii?Q?n7d3vsN1CMZ0GjzURWIJI0GesG75Hjawl3QQvgwWKAXS/agmVRMztCycI2wA?=
- =?us-ascii?Q?gqtAo+DEyGy2SAYzTkv0oXGqRbFTt8oTHLQ7YpGcgsVymh5jLFe0aQtsWlDt?=
- =?us-ascii?Q?eDtlEHzOJ9rhriP21amlF2P7dB7Y6NwJUSG+BbcaMBWvrrna+33kx9UWaxrH?=
- =?us-ascii?Q?3iLSlG/yJiYel8vy4Kq543J+CmxwaAVFRyLHZNQY7aqRewhshVI2GAAxmuvX?=
- =?us-ascii?Q?KOLOS8nFBsTZi7riAfo3QXdk1tE8JJsUnAMKNCcjetQEKRjXlr4wr5r5Od2O?=
- =?us-ascii?Q?zdsu/p4FIFLKFEGy6SvgwWt3HzLG4TGbs+dd9xFpKgABSbBhm/Mb9U5u1k6J?=
- =?us-ascii?Q?qhlmsrNVyJylowvDLZz14vAkx9FHvLu/iyoAXsMlKu0Qp67s+EqH8eYi4zRU?=
- =?us-ascii?Q?0pZ1Y2t0Er46VXXFf9SaBHonHThQnrQgMGFBxMvP7IrTtASAE0DSsVl++T7q?=
- =?us-ascii?Q?wP9uer+3itWRQEv0k8WaNwWZeMqxnMHw50LfuRW0zN6RgC6rOO0CnHFgDdJw?=
- =?us-ascii?Q?5NR9HdiJOKtPcMBGBEsWJ6E3sIDDgldMtJWtQ07FqDtULLUmAQDwIBeEx20I?=
- =?us-ascii?Q?1+L7SnoClzYNev9zgJ7FU1Gagl0vGha6eJgJ9gcndxqNn3Zb+kFZ/SdTzn5Y?=
- =?us-ascii?Q?VeRSiN8AHizRl1N+lzV6vzKqfaOmTMBa0DyQ2lGizDHNvEDr4LUmFhw+JHNr?=
- =?us-ascii?Q?Ds1++S70JhbvRHqcsIok1eQUXnTP4iX4lYvKduUnPSBxfxUSxNMG4JbmiHw4?=
- =?us-ascii?Q?xW6E0FCSq1A6J2Nu3utV+vISVNtIjnssSyJCRlxeSsLM//iwIKnp7QOFh5Z9?=
- =?us-ascii?Q?AMUZKJ7p8nitAx2yb6m/9b3VupZip6RsTuMusxenxHIP8cJOi4kCiPlGdbD2?=
- =?us-ascii?Q?Rh7wakjtJ+wsqu/D5kp7Oc7/fp438Stzr4Oymnpy1bjvLqHa0bYGJeqhqhJV?=
- =?us-ascii?Q?m+rIpTJ2TQPqGRm2mqA6x3+KaVkKm+Pl6clUBOacvw1p4UBoehbGK1HYYUrb?=
- =?us-ascii?Q?8VAGsc8cXybuvrarEDHvx/U/Oz38rgMYoJaNq0vfeL/cuhw7dDegXVDb8Z03?=
- =?us-ascii?Q?IaKf3MPHH7ngCpbUqyhohhktgT/c8fX9B/ocgDXjGXKL2CpJavMGlKIGrUsQ?=
- =?us-ascii?Q?U7Vd6MDFgNJchMtJtD5Ts6D8pAGiTKhiJy77Zb0Zf7IKJaNUl8eWLEWrl1FQ?=
- =?us-ascii?Q?t8OQ4N2LP6YV4zLucZgbODo=3D?=
-X-OriginatorOrg: in-advantage.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 322f3f0c-c9f7-4d37-1403-08db2719106d
-X-MS-Exchange-CrossTenant-AuthSource: MWHPR1001MB2351.namprd10.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 17 Mar 2023 18:54:40.8181
+X-Microsoft-Antispam-Message-Info: 	fsO+zZFQvmYFu28f1JnrsTPoJykBfIs6k+LCg5IoTiXpxxJl4/Uwv4tH4XRSEeQNTRJm0rYaGohIvhfzeFVfu3qtqVOWGeOZM12M+iQq1jbIf1DGbBqAMONty3AjuzjXTaZ+C2j41LkzrdjunqPnqe0UWObVE21J7Ib6i8//8m0NHXA57JEFzyE7yx9peYoDo/zRla10gmaUGk4CUJSr195Fcl+gBR1LUaBrLJrkbEAxxEcItsS7lSvbTo+g5mmSOvAOgz5BOHKs5GO9xcDO6arDMKf6ryA0hnPaYlGqBaUaveW/MvIXgsEzUcPAU1JzGXXuHv7PX0MF3dYSdMXVVxNSOFjMK08fXhU5Avspk5J9asIwvsi4zSweBZw4ujojCfXJPirzoNBto4tRJSVrVYhAuFwt6XbOOh+znKoT3y9BqNk9usFz0XMcTzIiJhBbnfmHXSgtaUGG08QBmtGT70a4D1FeqPxEmUAMt4DYdmm8FXt3vFZU4gyHjbVTkXqn6NuDcOnYcucF+XXLohTmHSFthPjH2ZbtH7CQUOGY/gnKn8u85D7Z7uWsPrG1gXibYGTEtots1FBNsBjJmQfztasj78iAZbKar2R+JxxMTTyONDaF6Np8aqa0JVv5pmH/wA3ueuvodFncsSqqg+ZlMniQHljM4e+bv/Ol08Yerf/FjZjJyusZJc+kwcC5/Zd4P7K4mNQTeuLgmFIZgVE6BRaWUYVl/lhaWjoB+6+3qo0DR1FdfTngNWqDPU8hhAPuyjfE92D7RCr+Sg+O399oLjsOmgGQFCfcBO5fCVppgm4=
+X-Forefront-Antispam-Report: 	CIP:20.160.56.81;CTRY:NL;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:inpost-eu.tmcas.trendmicro.com;PTR:inpost-eu.tmcas.trendmicro.com;CAT:NONE;SFS:(13230025)(136003)(346002)(396003)(376002)(39850400004)(5400799012)(451199018)(36840700001)(46966006)(40470700004)(41300700001)(34070700002)(36860700001)(6916009)(4326008)(70206006)(8676002)(70586007)(356005)(40480700001)(4744005)(44832011)(40460700003)(8936002)(5660300002)(7416002)(7636003)(2906002)(7596003)(82740400003)(36756003)(2616005)(6486002)(47076005)(53546011)(6512007)(6506007)(26005)(82310400005)(186003)(336012)(31686004)(6666004)(316002)(478600001)(54906003)(86362001)(83380400001)(31696002)(43740500002)(12100799021);DIR:OUT;SFP:1501;
+X-OriginatorOrg: seco.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 17 Mar 2023 19:17:43.8951
  (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 48e842ca-fbd8-4633-a79d-0c955a7d3aae
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: mMpoDZSqM34l4CabOJMxVD9+kZDJFYvj5kwS4iADXr6ZH6yn3HADLYIQXzPfXbAu30GbMXXpbW00+7u0V7ohbJi2ogrcubyM42RMySuzMvU=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH0PR10MB5289
+X-MS-Exchange-CrossTenant-Network-Message-Id: 6f726c91-be97-4a82-c98c-08db271c48f8
+X-MS-Exchange-CrossTenant-Id: bebe97c3-6438-442e-ade3-ff17aa50e733
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=bebe97c3-6438-442e-ade3-ff17aa50e733;Ip=[20.160.56.81];Helo=[inpost-eu.tmcas.trendmicro.com]
+X-MS-Exchange-CrossTenant-AuthSource: 	VI1EUR05FT033.eop-eur05.prod.protection.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM9PR03MB7867
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230317_115443_633657_2879C2DA 
-X-CRM114-Status: GOOD (  11.22  )
+X-CRM114-CacheID: sfid-20230317_121749_141690_46A06335 
+X-CRM114-Status: UNSURE (   8.65  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -148,60 +152,19 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The VSC7512 has four ports with internal phys that are already supported.
-There are additional ports that can be configured to work with external
-phys.
+On 3/14/23 03:08, Shawn Guo wrote:
+> On Mon, Mar 13, 2023 at 12:11:33PM -0400, Sean Anderson wrote:
+>> This adds nodes for the SerDes devices. They are disabled by default
+>> to prevent any breakage on existing boards.
+>> 
+>> Signed-off-by: Sean Anderson <sean.anderson@seco.com>
+> 
+> The DTS patches look good to me.  Let me know if they are ready to be
+> applied.
 
-Add support for these additional ethernet ports.
+The main holdup is driver approval from Vinod/Kishon.
 
-Signed-off-by: Colin Foster <colin.foster@in-advantage.com>
----
-
-v1 -> v2
-    * Basically a new patch. V1 was off base, and the already
-      existing ocelot routines add all the needed functionality.
-
----
- drivers/net/dsa/ocelot/ocelot_ext.c | 16 +++++++++-------
- 1 file changed, 9 insertions(+), 7 deletions(-)
-
-diff --git a/drivers/net/dsa/ocelot/ocelot_ext.c b/drivers/net/dsa/ocelot/ocelot_ext.c
-index 228737a32080..c29bee5a5c48 100644
---- a/drivers/net/dsa/ocelot/ocelot_ext.c
-+++ b/drivers/net/dsa/ocelot/ocelot_ext.c
-@@ -20,13 +20,13 @@ static const u32 vsc7512_port_modes[VSC7514_NUM_PORTS] = {
- 	OCELOT_PORT_MODE_INTERNAL,
- 	OCELOT_PORT_MODE_INTERNAL,
- 	OCELOT_PORT_MODE_INTERNAL,
--	OCELOT_PORT_MODE_NONE,
--	OCELOT_PORT_MODE_NONE,
--	OCELOT_PORT_MODE_NONE,
--	OCELOT_PORT_MODE_NONE,
--	OCELOT_PORT_MODE_NONE,
--	OCELOT_PORT_MODE_NONE,
--	OCELOT_PORT_MODE_NONE,
-+	OCELOT_PORT_MODE_SERDES,
-+	OCELOT_PORT_MODE_SERDES,
-+	OCELOT_PORT_MODE_SERDES,
-+	OCELOT_PORT_MODE_SERDES,
-+	OCELOT_PORT_MODE_SERDES,
-+	OCELOT_PORT_MODE_SGMII,
-+	OCELOT_PORT_MODE_SERDES,
- };
- 
- static const struct ocelot_ops ocelot_ext_ops = {
-@@ -59,6 +59,8 @@ static const struct felix_info vsc7512_info = {
- 	.num_ports			= VSC7514_NUM_PORTS,
- 	.num_tx_queues			= OCELOT_NUM_TC,
- 	.port_modes			= vsc7512_port_modes,
-+	.phylink_mac_config		= ocelot_phylink_mac_config,
-+	.configure_serdes		= ocelot_port_configure_serdes,
- };
- 
- static int ocelot_ext_probe(struct platform_device *pdev)
--- 
-2.25.1
-
+--Sean
 
 -- 
 linux-phy mailing list
