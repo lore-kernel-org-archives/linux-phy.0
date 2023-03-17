@@ -4,55 +4,55 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 74E1EC74A5B
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 921DEC7618A
 	for <linux-phy@archiver.kernel.org>; Fri, 17 Mar 2023 18:54:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=3yCjMD7whuwi/fOcXt0D1J5tPK17s8Med6Ztrj2NjQw=; b=eBTk9OLKSDCpyk
-	XG82qSQnqRszKbsOBje3A44pSjwlgo7Vmvl9gt0cfLe2ucin/iuI9fmsuSHK+rYeTnnP5kRGrHSGs
-	5Fd0Pb6L5SLL+fngqR9yieoB3VHFO4NB2WnARTsdN7aJL1X3di/hx4Tm4A9gk8mExWAS99vJIb1QE
-	NPzQD4+VoSLGMfoPdWnSUvJEPAhC2UuKAIRNwFPQJ0DnLsck+Q8IGkDeub+oI7hoeGvhm+143LzmT
-	5vyZIQYumIcT+0lHLOu6IqBS5C+8GS0ZMm06pM4yP4sOuJ7vEweFEMbwEVu0GYsQwngUATyX9kkvv
-	eLgH+ERfZqWBvBdn5Haw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=9uXidoZ7mMyn5kh5MoaMTp2KG222WW+EqXD7ysfBzVQ=; b=n1x2zij+Z1gF7/
+	0g+TxGIyXlAmK2Faa8jUndfzMGv3QpbETF4EdK042hELCb5O0/vzXMIvf60z9oJ+JzCTW2EmAwBc1
+	LO8aySMImX0RR8E/hbEiUqlRIchp08NttYALeo7kiwfIDHrHiVjAm2YWPwZQWwNUoIGFB2pjw37oo
+	XD+zE5FEfEq3jyaB4GUaE03E63ab3BPqF1px3C/H1xK8hXBeVeK+jYWaztrJvKR6WTNVvfBoTjCRA
+	JQTHnK7LeAGLL9V57PJqUGrRHcD3uAHXvnkI9kXq/OFjhhiVcMImbtQe5y6kdVpxOgINaTNvi64ZR
+	ojEazGG9Jn95ZlUB/4+g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pdFDr-0034uY-33;
-	Fri, 17 Mar 2023 18:54:39 +0000
+	id 1pdFDs-0034v2-0j;
+	Fri, 17 Mar 2023 18:54:40 +0000
 Received: from mail-bn8nam11on20700.outbound.protection.outlook.com ([2a01:111:f400:7eae::700] helo=NAM11-BN8-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pdFDm-0034qo-1p
+	id 1pdFDp-0034t4-30
 	for linux-phy@lists.infradead.org;
-	Fri, 17 Mar 2023 18:54:38 +0000
+	Fri, 17 Mar 2023 18:54:39 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=YZpI+PZ+kGLZA5cPnpdufhRc86xEfe/NayCVg/X6QUiPHH8fd0R+uctxSix7TQD6yS/yr5TcHzwRLZ+Ti36m4rR5/pFkMinH9Nke6y3RXLY/abWDb0xVS1WmyFBTIrMDeN7x9pwKa1w7GZFL8w7zwkqDEP30gT+wfZJFKvhoYNCk6wFIzOqeMLgS6m8FXld7LvxNAK1uUVwAS3h07HZgvrLglkTnEYnpi2vWYzqCy0HbQUt3odd2brTEMG7oFHlriM6SAOY8ltmQvCW2O5Q6ozwjrKN3NepI350H9wyEihX/OAwoEY7ZHw5MUArAsMMgbEPeeOM5144cKdL0DV7SKg==
+ b=aMr8NKU5IA6ewurLyGFO693Y7GEIkGsENDaKEYVqf6OPcAeFkZ5gyCenbJp3Z3teqKyvJDrySyTG6lwWYZNqmwc7iAy+uO2ToJ/IS00Q+AE6VaD5nMud96X1YMP8rBjWUPRj7dmHdK6MU0eF0lrOxgOCbClxL+RuRjDJeIBaMrG7uzdeYklZqppjQMOBr+tGDH7zk7p/kOiVMOE0zhlN4e0b3KGCqlxbdTY/PoqwxAbg5gUPk5HfunzR+fGXSI36uoscjf15rF3bl6n0rEOxHd/+Fv7hcW6DLbpaRQiD4O0P7gTebG/40fBsitWN60oYck2LczlTO5fZBBVPscqopQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=X8zeH/y4ttbTMEXpDeS5xb035LqDhtV0Zh2f5BHOuyk=;
- b=c81x9Zalusb524JVab60CJ2cp7GsuM5rKAeK9w1fe5LrJ+fC5Hnd0GXb80AqbS1uT48H742KOObaMY7pVMoSji6DqRE7L6n879h/BFr3hrU4fOL+OPLZz0jQx379XOXvJ3jJRnA93P/xfsdERhWQisDcyeHLsZePkA/nhPIgYueTPFRMkB5Nd2f7sb6ESbWNpSniVYG7KWut9Stz54E3B4XA6St0zeWga0np1uAykKaHBXkjnXBZXKROt4Line/ti2dOC9C5BvKe3JBrdHWZcf4+OC1waE+h1O/MEmwRt5SxlCu6RYjZOuK68JxkuFa8o0WE/8CtNKWIfcndyXzwyA==
+ bh=+0ufdUKS0RnlyM+q4OcDc8qdZPRU3YB4wxPLaAJjtxM=;
+ b=g6X1PcqXnfXZh2PlifCnRk/YcWw4qrM4Zz1PIp2/MQ5gL/VNqKDGBJDGAZcp9reG8mOPtdMQN436uJb2aDPzACYgCaAuHLo5Wy5sVTN6JF1w5Dxryslo+rUCAZ6wZAiaFIeHGDOlYn7KjMay6T2qcEw9Hx+L7q7i1718uUw98qmvAFfemI/d63nfUa5JrlyFjthiuse09VU1As58afSwpKr0eSHGLKUbwrxSi/fv+8PsmdQkypNXh5rTLrmv7ZxxyY/TuKx8OANSTGly12p7AS68UlTAqjt6lRlQSOvrC/PcfZMrVXUDaPDEPJ4BHwkkptg6ZQ/7bRKfTubBsBuYmg==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=in-advantage.com; dmarc=pass action=none
  header.from=in-advantage.com; dkim=pass header.d=in-advantage.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=inadvantage.onmicrosoft.com; s=selector2-inadvantage-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=X8zeH/y4ttbTMEXpDeS5xb035LqDhtV0Zh2f5BHOuyk=;
- b=G8F7DrAnU0gm3iYwaCu/LE5gSjFajHXMc7oFoYoYQpfBLI637Fr6X0OwOJKyiDDJAvIa2T73mKUXofHdD0DagdSiMGfbJIEDcwujxDeJ6s4x4jkqsrIq/kFBU8+CpBJzo/z33eENXrdzij/9oe6hIiVYImWIM0K9nYqoHRCsxjY=
+ bh=+0ufdUKS0RnlyM+q4OcDc8qdZPRU3YB4wxPLaAJjtxM=;
+ b=YyezYYw84v/6OP5YSvPE76ufgy0PNJ0sWyJ+kiiIB6+0Wimxp/1IbJu0jKUThNF6aQLc2ZBwPhFRDdyw6+2R3JDJ53VMWIJPuwFQzvRfPeOngOLHbNki1TnRQsH3UJhm2/QjXPGxw7uIuB5Ucez1dvC5MUV+V3CkqQOTsps74u0=
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=in-advantage.com;
 Received: from MWHPR1001MB2351.namprd10.prod.outlook.com
- (2603:10b6:301:35::37) by IA1PR10MB7336.namprd10.prod.outlook.com
- (2603:10b6:208:3ff::15) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6178.24; Fri, 17 Mar
- 2023 18:54:29 +0000
+ (2603:10b6:301:35::37) by CH0PR10MB5289.namprd10.prod.outlook.com
+ (2603:10b6:610:d8::16) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6178.35; Fri, 17 Mar
+ 2023 18:54:34 +0000
 Received: from MWHPR1001MB2351.namprd10.prod.outlook.com
  ([fe80::1897:6663:87ba:c8fa]) by MWHPR1001MB2351.namprd10.prod.outlook.com
  ([fe80::1897:6663:87ba:c8fa%4]) with mapi id 15.20.6178.035; Fri, 17 Mar 2023
- 18:54:28 +0000
+ 18:54:34 +0000
 From: Colin Foster <colin.foster@in-advantage.com>
 To: linux-phy@lists.infradead.org,
 	netdev@vger.kernel.org,
@@ -71,65 +71,67 @@ Cc: Russell King <linux@armlinux.org.uk>,
 	Claudiu Manoil <claudiu.manoil@nxp.com>,
 	Vladimir Oltean <vladimir.oltean@nxp.com>,
 	Lee Jones <lee@kernel.org>
-Subject: [PATCH v2 net-next 0/9] add support for ocelot external ports
-Date: Fri, 17 Mar 2023 11:54:06 -0700
-Message-Id: <20230317185415.2000564-1-colin.foster@in-advantage.com>
+Subject: [PATCH v2 net-next 4/9] net: mscc: ocelot: expose generic phylink_mac_config routine
+Date: Fri, 17 Mar 2023 11:54:10 -0700
+Message-Id: <20230317185415.2000564-5-colin.foster@in-advantage.com>
 X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20230317185415.2000564-1-colin.foster@in-advantage.com>
+References: <20230317185415.2000564-1-colin.foster@in-advantage.com>
 X-ClientProxiedBy: BY5PR16CA0025.namprd16.prod.outlook.com
  (2603:10b6:a03:1a0::38) To MWHPR1001MB2351.namprd10.prod.outlook.com
  (2603:10b6:301:35::37)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: MWHPR1001MB2351:EE_|IA1PR10MB7336:EE_
-X-MS-Office365-Filtering-Correlation-Id: 44660ca9-850d-4096-f075-08db2719090c
+X-MS-TrafficTypeDiagnostic: MWHPR1001MB2351:EE_|CH0PR10MB5289:EE_
+X-MS-Office365-Filtering-Correlation-Id: 8d969a9d-5986-4a35-a3e6-08db27190c7c
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 	e7FVGngxAxzpRQWWhiPf9NEASGUOgdyU4SLuQ0U6brJXE/P7FXhYn2DQlK6+koh0Xx+65CxwsqUqWzsXsx2EWSq5sfgjjTPFQ7l9jbhQLY88V8NMPU+dcdhLu7+Gc7jWjuvraxx6IpCR/IfXTwdT2gJTATfbuXdlP/hjyFEj+2cqW/EonXxRrd00HDHXg5YKqL2CrNz4uOwQoB2JYSlBEPj51JilYjf4e90v8UKOdJB6N8q7HS9tA3oLr+Z9TJaSq6mw3ggdTT5qa3HQ4JlsUFNbbNYin2LtqgQ9J1pN5QB1mmWKWj2PE7ooNNenYBbbGPqy6tYTd7KRQFLkiTVlGMzgSskuNKSyLnd2JvDiACp9m+tkkgqUmSaqrjcxYwJLBLFpvwW6ZCMvPEVxvm2yZ8o3jWmi5c8VNos3eLO/zC/jqfBQexQxwiz3laQEp/tEpvMsJdfp4QlUE4HlMGvxzuNFwWTjb1KBXQvYNOD3QjVvOGbEXeoTTSNyWFDMSDuDPHE8VFNwCL3M2HO0Bk/sLqyvHlO/XDbMtho2PrysasYwkLIVd2/nfvtRtoBiL/NGJMReXHqASUn5Zf0f1NaWpl4oMTr8WkEjqxZHC4lh/po4lnL6CZSKytShfpNlaKFHtOLBhRrLUJvDJS5I6oEw0vndoIQp8zwIWQuxSFhAqagI07yfdS/x7YvpXSiJBAYi
-X-Forefront-Antispam-Report: 	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:MWHPR1001MB2351.namprd10.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230025)(39840400004)(136003)(396003)(376002)(366004)(346002)(451199018)(36756003)(38350700002)(86362001)(38100700002)(44832011)(5660300002)(6486002)(7416002)(8676002)(66476007)(54906003)(8936002)(4326008)(316002)(478600001)(66556008)(83380400001)(66946007)(2616005)(6512007)(966005)(6506007)(1076003)(41300700001)(186003)(66899018)(6666004)(26005)(2906002)(52116002);DIR:OUT;SFP:1102;
+X-Microsoft-Antispam-Message-Info: 	ss9/WuWuUcRlUEwiquVB47MHmZKl9g9GHz91K8MxTcU0OOqaEuh5+DzG5/XRyVZsdIYneyRfnmGiPJihNYY0yDsk83mlgyorvYHtW46ejyGE+xPTzgINgpcM0z9ga1zNGo+p7ZNWCrs5ReyXXO5RTksij5joJXl7RGok2YE1eQsw88Ycum27GaQr5eAe6bd+D5HBbliPhDHeuNHsUaHfotvUgCGvclutd1h5B+5IG8VswBZDOkVvgWNqFkoI7aB9jM8aaxg8DYM0j5W3V3TgVZkz/CJuiyYgzseyyvYUqR0mgS8udvr1qcFRrNW6MT7WqonGhfljfHBVzxmcjQ8zu5IUWORbCh9cxYnUrwgxs2GnCcfXBnT7if+/eQgvuCWpFVhVM27U6+NE/AIR2i1jf1ojbPECLhi+MBXZWfWrjL//suRe5gIOJGZCBu6JkYsLDq2FGkJ1K0n6mo06kdaF1f3EGOXTdhh5GlUP38oVryN9hDuEHZmwoXY7PTZOAX2q4hgy4Xt6vOxz+lYCN7QQGSfhmsJPkuBBSRCWEjqy/WLAgM8GBL2gLZm4Yv/fEjo9WRaaQxYS+EkElmZWHzaBRQU8MqR2W2qHbFaTX3VNKZ4kTFu7O4GGT36YIJNRaJkBV3MAZ3cFiNh24A56Wiub8RjQ4rcYK95Vo6dbi7uv5rI9QWYew4u/Zz7Tp9YhH/PiIARlC6blLVV+ae79B6dZ5KrzH1C6xBqsOxrWP0FedcM=
+X-Forefront-Antispam-Report: 	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:MWHPR1001MB2351.namprd10.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230025)(396003)(346002)(366004)(376002)(136003)(39840400004)(451199018)(44832011)(41300700001)(8936002)(5660300002)(2906002)(7416002)(86362001)(36756003)(38100700002)(38350700002)(478600001)(52116002)(8676002)(6666004)(66946007)(6486002)(66556008)(66476007)(1076003)(4326008)(83380400001)(54906003)(316002)(6506007)(26005)(2616005)(6512007)(186003)(41533002);DIR:OUT;SFP:1102;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: 	=?us-ascii?Q?pJ9QPsMFZ3zTSYG+bGM1NLwaiF1XeRPhPI6R2XpH1npB3/KXhLvC+aWBct8N?=
- =?us-ascii?Q?a8BmQ7Vp8JaQG/ll0voWcbnlpF+M4s7LaBnRPmLAEKNlZMlsf1OmL3mvgu4t?=
- =?us-ascii?Q?HVFjZNgbDc/aN7b26SucibovX+F1xo7B5MambKwqFJmaUA95AZbOBwObPmBY?=
- =?us-ascii?Q?UifdN9/CSA0dS+pDGR9Fwxdd3iS1nLcZ9nYr7P4cY5zu0bo/PDShJwH5usge?=
- =?us-ascii?Q?+xwZSL3LJ5ymJy1GTFeFDfjqLpvRF4lNs2XrISgTv//ZhkcjgWsIOyC32LF0?=
- =?us-ascii?Q?EgWxlE8j2PmTGGYszGUMdWVPBx2g6Tm3M66fKeLCWhkxmeUOaRhg44QL/pDm?=
- =?us-ascii?Q?Zsm5oVmVLSa1Ox3QiJZtCEOlzop10SSP71UqgFX4uptEgBKQHWYpis3IMmEz?=
- =?us-ascii?Q?I3Vikx31PzO+VQSWye4zfEkYrQ6JHR/Q7ops6CgfBfdNItaEOoGkwJ6zEuSr?=
- =?us-ascii?Q?DYf6rDKFQwlOVMwt0lAfV1Veqg+ly3Y5AEWrSvrsaimLxywYTghQ+dwRfspi?=
- =?us-ascii?Q?lbd4fACKXWb2p9NnMIlJc9ryn5nAdCIt8Qm0HLUb/Hr94gXirrPMaYUmBfzO?=
- =?us-ascii?Q?910Yo52nxNDNEzFivps37OEsVLfqLkE5JcIGISjKRpDC409DoC8zYLNe10gD?=
- =?us-ascii?Q?CK/tcHsmn2LbAWri4EH9/Q2RKPwipqFHamH62LsV7u1c8utn8Qykz4kF+Txx?=
- =?us-ascii?Q?Hdirg3JQE8KDyYBPaCqzUjRYKZOLHhe+dyQqshjGrzPJI5GcAvLSoRYRzeHU?=
- =?us-ascii?Q?xyUf4NlHbjC3pJfZQMcXoipR79qlMzNhfXTdCF59CxKfQHB62KITfjPCD7cU?=
- =?us-ascii?Q?jZHsHPylQk4jiuY8cUfYnx2rR07v81lydt83CcmkScc5CjN15aafdV9RaIC+?=
- =?us-ascii?Q?WCsTYnSb7G00qSWyH66KafcuVnVHOCErI9ztHbVqmgr50KqC1InHjRMvGIBO?=
- =?us-ascii?Q?g6k7hM9DwFsqGz0YCURmKQwNBZUzT+yR01RPYXAimB+Q92L5h48otdPtisfa?=
- =?us-ascii?Q?avZD0zMdBo7uuAMdoU9McEKVvCemPXNYhjfaV/0ftdU1W3kfDqFRjEAtjfN/?=
- =?us-ascii?Q?+PrYU0Q7EV1o6BoPdNW36y+K9OnV4RcvDMos1J49qm7rDJ4z3uBdqbzTareB?=
- =?us-ascii?Q?JG3S+7JWm7iOxa7mKFqIpAegs1oUbBTZ1Ija9OW7mOhNUkUgLzlu4xlA26ps?=
- =?us-ascii?Q?8PUlmhXI0tIox4Lr67w4+JLSd8tYlzxKxWQNyELSDm/DyxgYLwWoYuUEY5Lx?=
- =?us-ascii?Q?v8SdYGKZEkNSvugQTxahFBb4n9uX/nWlYsBSDksNKaLq2AAqPkRK1osa8Vds?=
- =?us-ascii?Q?KZ5nhohI6t3eTh43XR/rUpWD4uuuoae6owdZMeERdlVEIoCLBi7K2g5W2aOD?=
- =?us-ascii?Q?V8EdZU/hS1tRAQ7RmGIIrwxasiNcyfzqZCZaunqkR++bDzU19jitxQ5k+3uk?=
- =?us-ascii?Q?M+CXiHi5nWAuKEp78mYkqnfwro0ZwolddVyRURT5/2z2e/1h414YGOq325TA?=
- =?us-ascii?Q?vffYBBnVi/8+G8gs1DdHjaN6+SrdrlnbBTOIzU2pXzK8B8rm2JNEj77ctoK1?=
- =?us-ascii?Q?tvIog6C7p2YhTaKS+2oIrH2yybuifbVVZOZ59/ig/+P3qczE0l3whZvVd73X?=
- =?us-ascii?Q?bNRuZubQA0UG1ay8CwibDyQ=3D?=
+X-MS-Exchange-AntiSpam-MessageData-0: 	=?us-ascii?Q?E6/gKIXLXdVlJ+FS/53UwG0IV0CV/S9mKJoW9K+Dkmk+Ibb5S6ZWfOXzAKuy?=
+ =?us-ascii?Q?I8LXxB5Ia9HTq6hJr7LIBKPtb3Mw9cRG8i3l3TuVjR1umlBcnpwKLdYYwTdS?=
+ =?us-ascii?Q?U1egJPRy6DsIMfAs5GRSJxq4FZaQbiUG3bcAj1wRi0ggnWj/5bPBEKcCvZEQ?=
+ =?us-ascii?Q?XQeBtJ3w+7mhV7Ub+75aPFJCP2+Mzxg+1COsIT09CVskInK9j7AdfIpHV5c3?=
+ =?us-ascii?Q?ox/LVFYa35FV5I7M2W4+wN9BBSllXRIoVRh0hu8Jbu81eI7m+MWjak/UhLOP?=
+ =?us-ascii?Q?dFsPBcXweUZXuPZqhvQ1KOQUXkqWdB6/mqlbsJW9/MWN4x/l6D8tcDnyuGEs?=
+ =?us-ascii?Q?Pg/44lRoV6E7htoxsAaraSHnQ6RolwTRfRoFbxsOaNdTGL0ReVsASaNRhjF8?=
+ =?us-ascii?Q?MDniq+S6590AIoGSkYs+VaTfMdubzMAKJixaC1kdtr89RVdFsgiRCyb+KH3M?=
+ =?us-ascii?Q?Zb3Zo7A2HaYGugqYmbDoEW8oo3BlJkYASuFAmSVLk0sxIHMTBGUTBJYzncnT?=
+ =?us-ascii?Q?0AiWy6JDJij0F/zXx6A4ZvwwSMcRXoBZHkYWYZUvLAIPxPglQ5Tal8OLBbCk?=
+ =?us-ascii?Q?moUJDrUVMXlDUedpdPyHCOXViNujC0Yf8RhLO4x82b4w4i3fDlQkyfj2nHqB?=
+ =?us-ascii?Q?J6Nl3MA4w81wufgg7GS/TiZI7kBd48vghOqzF0n4aZhS5mFErqT70s9KU+9V?=
+ =?us-ascii?Q?jXqbDHW9r4VcDHnxu/IX2vqrWngwI+1YhQmqvDrQniQFfd7PAln+9c5Vr539?=
+ =?us-ascii?Q?0nsEqhZJYpkSFGuOYEezVHvQ3Q0YV2q5foI6t95ykwxzUsDB5gAtXyPbCiQO?=
+ =?us-ascii?Q?5rguRb4LLuA3BswP58opy7/+naW0UpbvQm6yfuO0G/j4RIgGS1MR6IEec975?=
+ =?us-ascii?Q?lvrmTUkXMPLzQ1eKialRKqmH7FTL4xH+6mkstLEpL6UGOW2YuwkoceXMI0jd?=
+ =?us-ascii?Q?ehyt3ud1pblhPZ0jLxEcUs7h6QqV7c8h2TVvrZt9CIQsQjtpR66G+udiCL+y?=
+ =?us-ascii?Q?xrS88Ciwn0pjk3vD2Ow104xhJKo8IMQCuKQz/wVlP/G2lfy+FUzs7ipHKsc4?=
+ =?us-ascii?Q?UyXhSXEDSz0iSLNEskwqoNpfyxzpSQhovzYCOXI5osnpl6rWRiN1YVjAbWLw?=
+ =?us-ascii?Q?UmK4SxfpRBIu/rDQhwv8PCINn01dB5h2HIqEurSvOMoBZmIVV3qmjuG2afHE?=
+ =?us-ascii?Q?VqaHr79kkkblW9PGGUUw+G5p6kxTnY2ItkCANUveprSb/i2KH7ft/+Xc30UJ?=
+ =?us-ascii?Q?tjZJX/c4vDt4QC0zo6bn9lk8MafalB+9kjnOD4BYOZ3hHqj48PP6xRXnSHbf?=
+ =?us-ascii?Q?/UKk3WPfAhzqVHeIawN8A+2tPfarAwaPuVovY4smEl4bqv0TglNzC7hX5tYE?=
+ =?us-ascii?Q?hUArcessnJEyqIIBE0exk4GBuN7zTj3ZezJovaAvmKrapXKb/Mp6kNE2+2x1?=
+ =?us-ascii?Q?JcxqZykOSTK0xpBpm63ltEzPLbXc6wt9ZbGygS2pfImwyseBwGKTwIffaEeD?=
+ =?us-ascii?Q?9YkMF2X+B7BnyOO1MS8MHutMQlR9ZqcDZzyX5RbqRzj/eHLznwdORN2tLqad?=
+ =?us-ascii?Q?/3BZhJDMUdBJ6Es2xKPm6LqOIZyoQOtlRqxEPI51RCbLItevGkK+0WOOXz5e?=
+ =?us-ascii?Q?mZcz9LG0HF7O2aXwGye5ZUo=3D?=
 X-OriginatorOrg: in-advantage.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 44660ca9-850d-4096-f075-08db2719090c
+X-MS-Exchange-CrossTenant-Network-Message-Id: 8d969a9d-5986-4a35-a3e6-08db27190c7c
 X-MS-Exchange-CrossTenant-AuthSource: MWHPR1001MB2351.namprd10.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 17 Mar 2023 18:54:28.5534
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 17 Mar 2023 18:54:34.2092
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 48e842ca-fbd8-4633-a79d-0c955a7d3aae
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: 5Ky1YGVixASFZ1nFCZVwCdQ1XdLqOyugYWJNfU0DET56PvmRM0Ud3y+qpWfQhU2PO/fZ6rbdHEzvEwUMJSmLDUpvEjw1Ziqnu7V1X83wIOU=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: IA1PR10MB7336
+X-MS-Exchange-CrossTenant-UserPrincipalName: 3LllJtHX5OQFFSvI1WY0rLiLvlf2v+krwT8g0bhQAPAx2FcNwhPcz+MJAYhfo9k27rhjkTghwTcMQyqIpbHQlF8bDasGqhpefSBZzLj+iag=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH0PR10MB5289
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230317_115434_885439_12679FE9 
-X-CRM114-Status: GOOD (  11.96  )
+X-CRM114-CacheID: sfid-20230317_115437_973600_62A4AFA8 
+X-CRM114-Status: GOOD (  12.69  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -146,84 +148,106 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This is the start of part 3 of what is hopefully a 3-part series to add
-Ethernet switching support to Ocelot chips.
+The ocelot-switch driver can utilize the phylink_mac_config routine. Move
+this to the ocelot library location and export the symbol to make this
+possible.
 
-Part 1 of the series (A New Chip) added general support for Ocelot chips
-that were controlled externally via SPI.
-https://lore.kernel.org/all/20220815005553.1450359-1-colin.foster@in-advantage.com/
-
-Part 2 of the series (The Ethernet Strikes Back) added DSA Ethernet
-support for ports 0-3, which are the four copper ports that are internal
-to the chip.
-https://lore.kernel.org/all/20230127193559.1001051-1-colin.foster@in-advantage.com/
-
-Part 3 will, at a minimum, add support for ports 4-7, which are
-configured to use QSGMII to an external phy (Return Of The QSGMII). With
-any luck, and some guidance, support for SGMII, SFPs, etc. will also be
-part of this series.
-
-
-V1 was submitted as an RFC - and that was rightly so. I suspected I
-wasn't doing something right, and that was certainly the case. V2 is
-much cleaner, so hopefully upgrading it to PATCH status is welcomed.
-
-Thanks to Russell and Vladimir for correcting my course from V1.
-
-
-In V1 I included a device tree snippet. I won't repeat that here, but
-I will include a boot log snippet, in case it is of use:
-
-[    3.212660] pinctrl-ocelot ocelot-pinctrl.0.auto: DMA mask not set
-[    3.222153] pinctrl-ocelot ocelot-pinctrl.0.auto: driver registered
-[    3.232112] pinctrl-microchip-sgpio ocelot-sgpio.1.auto: DMA mask not set
-[    3.251195] mscc-miim ocelot-miim0.2.auto: DMA mask not set
-[    3.778295] mscc-miim ocelot-miim1.3.auto: DMA mask not set
-[    3.816668] mscc,ocelot-serdes ocelot-serdes.4.auto: DMA mask not set
-[    3.831564] ocelot-ext-switch ocelot-ext-switch.5.auto: DMA mask not set
-[    5.058979] ocelot-ext-switch ocelot-ext-switch.5.auto: PHY [ocelot-miim0.2.auto-mii:00] driver [Generic PHY] (irq=POLL)
-[    5.070626] ocelot-ext-switch ocelot-ext-switch.5.auto: configuring for phy/internal link mode
-[    5.088558] ocelot-ext-switch ocelot-ext-switch.5.auto swp1 (uninitialized): PHY [ocelot-miim0.2.auto-mii:01] driver [Generic PHY] (irq=POLL)
-[    5.108095] ocelot-ext-switch ocelot-ext-switch.5.auto swp2 (uninitialized): PHY [ocelot-miim0.2.auto-mii:02] driver [Generic PHY] (irq=POLL)
-[    5.127379] ocelot-ext-switch ocelot-ext-switch.5.auto swp3 (uninitialized): PHY [ocelot-miim0.2.auto-mii:03] driver [Generic PHY] (irq=POLL)
-[    5.938382] ocelot-ext-switch ocelot-ext-switch.5.auto swp4 (uninitialized): PHY [ocelot-miim1.3.auto-mii:04] driver [Microsemi GE VSC8514 SyncE] (irq=POLL)
-[    6.118399] ocelot-ext-switch ocelot-ext-switch.5.auto swp5 (uninitialized): PHY [ocelot-miim1.3.auto-mii:05] driver [Microsemi GE VSC8514 SyncE] (irq=POLL)
-[    6.268432] ocelot-ext-switch ocelot-ext-switch.5.auto swp6 (uninitialized): PHY [ocelot-miim1.3.auto-mii:06] driver [Microsemi GE VSC8514 SyncE] (irq=POLL)
-[    6.448413] ocelot-ext-switch ocelot-ext-switch.5.auto swp7 (uninitialized): PHY [ocelot-miim1.3.auto-mii:07] driver [Microsemi GE VSC8514 SyncE] (irq=POLL)
-[    6.467007] cpsw-switch 4a100000.switch eth0: entered promiscuous mode
-[    6.473676] DSA: tree 0 setup
-
-
+Signed-off-by: Colin Foster <colin.foster@in-advantage.com>
+---
 
 v1 -> v2
-    * Remove complex and incorrect device tree parsing logic
-    * Add and utilize felix->info->phylink_mac_config() and
-      felix->info->configure_serdes().
+    * No change
 
+---
+ drivers/net/ethernet/mscc/ocelot.c     | 26 ++++++++++++++++++++++++++
+ drivers/net/ethernet/mscc/ocelot_net.c | 21 +++------------------
+ include/soc/mscc/ocelot.h              |  3 +++
+ 3 files changed, 32 insertions(+), 18 deletions(-)
 
-Colin Foster (9):
-  phy: phy-ocelot-serdes: add ability to be used in a non-syscon
-    configuration
-  mfd: ocelot: add ocelot-serdes capability
-  net: mscc: ocelot: expose ocelot_pll5_init routine
-  net: mscc: ocelot: expose generic phylink_mac_config routine
-  net: mscc: ocelot: expose serdes configuration function
-  net: dsa: felix: attempt to initialize internal hsio plls
-  net: dsa: felix: allow configurable phylink_mac_config
-  net: dsa: felix: allow serdes configuration for dsa ports
-  net: dsa: ocelot: add support for external phys
-
- drivers/mfd/ocelot-core.c                  | 13 +++
- drivers/net/dsa/ocelot/felix.c             | 19 +++++
- drivers/net/dsa/ocelot/felix.h             |  7 ++
- drivers/net/dsa/ocelot/ocelot_ext.c        | 16 ++--
- drivers/net/ethernet/mscc/ocelot.c         | 97 ++++++++++++++++++++++
- drivers/net/ethernet/mscc/ocelot_net.c     | 50 ++---------
- drivers/net/ethernet/mscc/ocelot_vsc7514.c | 30 -------
- drivers/phy/mscc/phy-ocelot-serdes.c       |  9 ++
- include/soc/mscc/ocelot.h                  |  9 ++
- 9 files changed, 169 insertions(+), 81 deletions(-)
-
+diff --git a/drivers/net/ethernet/mscc/ocelot.c b/drivers/net/ethernet/mscc/ocelot.c
+index 9b8403e29445..8292e93a3782 100644
+--- a/drivers/net/ethernet/mscc/ocelot.c
++++ b/drivers/net/ethernet/mscc/ocelot.c
+@@ -809,6 +809,32 @@ static int ocelot_port_flush(struct ocelot *ocelot, int port)
+ 	return err;
+ }
+ 
++void ocelot_phylink_mac_config(struct ocelot *ocelot, int port,
++			       unsigned int link_an_mode,
++			       const struct phylink_link_state *state)
++{
++	struct ocelot_port *ocelot_port = ocelot->ports[port];
++
++	/* Disable HDX fast control */
++	ocelot_port_writel(ocelot_port, DEV_PORT_MISC_HDX_FAST_DIS,
++			   DEV_PORT_MISC);
++
++	/* SGMII only for now */
++	ocelot_port_writel(ocelot_port, PCS1G_MODE_CFG_SGMII_MODE_ENA,
++			   PCS1G_MODE_CFG);
++	ocelot_port_writel(ocelot_port, PCS1G_SD_CFG_SD_SEL, PCS1G_SD_CFG);
++
++	/* Enable PCS */
++	ocelot_port_writel(ocelot_port, PCS1G_CFG_PCS_ENA, PCS1G_CFG);
++
++	/* No aneg on SGMII */
++	ocelot_port_writel(ocelot_port, 0, PCS1G_ANEG_CFG);
++
++	/* No loopback */
++	ocelot_port_writel(ocelot_port, 0, PCS1G_LB_CFG);
++}
++EXPORT_SYMBOL_GPL(ocelot_phylink_mac_config);
++
+ void ocelot_phylink_mac_link_down(struct ocelot *ocelot, int port,
+ 				  unsigned int link_an_mode,
+ 				  phy_interface_t interface,
+diff --git a/drivers/net/ethernet/mscc/ocelot_net.c b/drivers/net/ethernet/mscc/ocelot_net.c
+index ca4bde861397..590a2b2816ad 100644
+--- a/drivers/net/ethernet/mscc/ocelot_net.c
++++ b/drivers/net/ethernet/mscc/ocelot_net.c
+@@ -1675,25 +1675,10 @@ static void vsc7514_phylink_mac_config(struct phylink_config *config,
+ {
+ 	struct net_device *ndev = to_net_dev(config->dev);
+ 	struct ocelot_port_private *priv = netdev_priv(ndev);
+-	struct ocelot_port *ocelot_port = &priv->port;
+-
+-	/* Disable HDX fast control */
+-	ocelot_port_writel(ocelot_port, DEV_PORT_MISC_HDX_FAST_DIS,
+-			   DEV_PORT_MISC);
+-
+-	/* SGMII only for now */
+-	ocelot_port_writel(ocelot_port, PCS1G_MODE_CFG_SGMII_MODE_ENA,
+-			   PCS1G_MODE_CFG);
+-	ocelot_port_writel(ocelot_port, PCS1G_SD_CFG_SD_SEL, PCS1G_SD_CFG);
+-
+-	/* Enable PCS */
+-	ocelot_port_writel(ocelot_port, PCS1G_CFG_PCS_ENA, PCS1G_CFG);
+-
+-	/* No aneg on SGMII */
+-	ocelot_port_writel(ocelot_port, 0, PCS1G_ANEG_CFG);
++	struct ocelot *ocelot = priv->port.ocelot;
++	int port = priv->port.index;
+ 
+-	/* No loopback */
+-	ocelot_port_writel(ocelot_port, 0, PCS1G_LB_CFG);
++	ocelot_phylink_mac_config(ocelot, port, link_an_mode, state);
+ }
+ 
+ static void vsc7514_phylink_mac_link_down(struct phylink_config *config,
+diff --git a/include/soc/mscc/ocelot.h b/include/soc/mscc/ocelot.h
+index 751d9b250615..87ade87d3540 100644
+--- a/include/soc/mscc/ocelot.h
++++ b/include/soc/mscc/ocelot.h
+@@ -1111,6 +1111,9 @@ int ocelot_sb_occ_tc_port_bind_get(struct ocelot *ocelot, int port,
+ 				   enum devlink_sb_pool_type pool_type,
+ 				   u32 *p_cur, u32 *p_max);
+ 
++void ocelot_phylink_mac_config(struct ocelot *ocelot, int port,
++			       unsigned int link_an_mode,
++			       const struct phylink_link_state *state);
+ void ocelot_phylink_mac_link_down(struct ocelot *ocelot, int port,
+ 				  unsigned int link_an_mode,
+ 				  phy_interface_t interface,
 -- 
 2.25.1
 
