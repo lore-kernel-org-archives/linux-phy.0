@@ -4,71 +4,134 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6C97BC6FD1D
-	for <linux-phy@archiver.kernel.org>; Fri, 17 Mar 2023 10:59:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0957AC6FD1D
+	for <linux-phy@archiver.kernel.org>; Fri, 17 Mar 2023 18:54:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=etGYujPD+jBK72XYbgOgeV2eB93Fsv7OLfr4zrHryQA=; b=eyh8gaJJMrvHl6
-	SiaS1Mkky0MECB8lcehnvQndSs7nzKapPcQXho/B+v1RvzdlWi33kIZwJklbCfHLJquRCvloltpRu
-	vxTe3HnRZ7yCIM6K7/bb4z/4gg8BSsJfksYt2n03om0fbo54f30aGlyVvzjulStSKwBfQ/K/I3aP9
-	iiZi2lzgK0vzmxXXIln2d84Vki138wjnEmK2iAQOpCaTge+603c9SMTrmoq+mU2WgIxeJraHSq4sj
-	G+s6wCVKsy1tQ/MTjr+w820rv2C0MSaYW6muZ8xBQuz160QFRWtn636QLf3sHIYzZewPWRilFHiiK
-	7iI7+SoyHMFFqlbSYq0g==;
+	List-Owner; bh=gpHFhTlD4rPYNzUmzbtmJCIrF1CEVPUPcySBTw4M/C0=; b=v8KpvyXXBDm/2L
+	Zp6WY750eI3c1ntp+vgtrvmzYX080qohQIHZkJKD6r5Wb9a5rsHG5ZVa3ijjG1yRXPBNScbXbxU+A
+	+2t80tVy+WLBAiEo0G4v9HZW6qNX8NjD+bWZvWNjnSqj6rqxwwF8oW31X3qBMpfmIa23fjOpYNX/h
+	orWnpPmEk0Z6lDgwy3yORKbPhco5nUYbuLYnXiz4kCrP1MepbUjUx/RdFmuOpOKAQ6CQ8crNtH49U
+	qyCeH1Csm2iblC3Xw4MViJvVKMbDy4tc/wJ4vPEh9DTLnqrzK7hrbyafbYLdFUUZ3ztiTXDVeQAiJ
+	gWv3DeS4jYXZt6gtX+7g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pd7oG-001yZM-04;
-	Fri, 17 Mar 2023 10:59:44 +0000
-Received: from ex01.ufhost.com ([61.152.239.75])
-	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pd7oC-001yXi-25;
-	Fri, 17 Mar 2023 10:59:43 +0000
-Received: from EXMBX165.cuchost.com (unknown [175.102.18.54])
-	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
-	(Client CN "EXMBX165", Issuer "EXMBX165" (not verified))
-	by ex01.ufhost.com (Postfix) with ESMTP id 164C624DBC2;
-	Fri, 17 Mar 2023 18:59:27 +0800 (CST)
-Received: from EXMBX071.cuchost.com (172.16.6.81) by EXMBX165.cuchost.com
- (172.16.6.75) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Fri, 17 Mar
- 2023 18:59:27 +0800
-Received: from [192.168.125.108] (113.72.145.194) by EXMBX071.cuchost.com
- (172.16.6.81) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Fri, 17 Mar
- 2023 18:59:26 +0800
-Message-ID: <11873190-a8ff-e93d-5c08-8a24903c170d@starfivetech.com>
-Date: Fri, 17 Mar 2023 18:59:25 +0800
+	id 1pdFDr-0034uK-25;
+	Fri, 17 Mar 2023 18:54:39 +0000
+Received: from mail-dm6nam12on20708.outbound.protection.outlook.com ([2a01:111:f400:fe59::708] helo=NAM12-DM6-obe.outbound.protection.outlook.com)
+	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
+	id 1pdFDm-0034qm-39
+	for linux-phy@lists.infradead.org;
+	Fri, 17 Mar 2023 18:54:38 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=gAOhMrmooQTIfYqwxfp2O7MdI5qR8LSNp12QtnKgO+ET4u/68I/ejsy/jVBk3QpOGM/ol8qzmU42YtbRm8Dpn7FUULsZ1BnUyraC72LnbdExzYXqQR1WUKKqXIBD+7qVQG2aXzjo3uoEhn7VtkS3H4rxZpOlUejZff3h9MgHmCZCVLey0wkLpXF2BsS95tT9IRo+i7/5yxiQy+N2ZKao+ydrX4AThDjUXRwEKvRjCuZnXUj/FlTwhmLzwlpU/MiMcCD58yxYq/LsyVjiTl/+RJU1hC309DetbZM8irsKCy3ZghGi+fnPPkiyRfahdui6enldPbtXyVaZ8s+k1UjMDg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=9XmS4W4XcXKLTaWLZDu9UZjtQ1auKAN3lUz+O+ZHaW0=;
+ b=KEQpJCfTGI+RGgA58APZ4fLAK+nHZsUkCR1tpDT2H3Rmzq35rvHgumxh40e8not/632qgwVBIdX5QqBD1hCt3sv29UtRS0fsNDqyAtrsCS4UitMDlYLMOYlT7DLIqz8UwzEY+b23AoIGCXVvul0x12yx+5beohQJkHg9RxoJHSXSQGwhLuh3nN4/ZoDiysFf6fzDHWu+SZmOQXq2Vq4rrjlfXv1E4XG21VLhQKwcx8CfBmHgUB+mjFiHNGyciPj58XpaVLeHl2bvoREC2m9BfcHwZt+viJinY9Bt1i04mlCw/jC3ZkxZKJ9E0Pxv/E1NhCd0w962hOUaw8+5XPVRiw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=in-advantage.com; dmarc=pass action=none
+ header.from=in-advantage.com; dkim=pass header.d=in-advantage.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=inadvantage.onmicrosoft.com; s=selector2-inadvantage-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=9XmS4W4XcXKLTaWLZDu9UZjtQ1auKAN3lUz+O+ZHaW0=;
+ b=wSZR5Z0ToCL9bh5TF+/ZRU1Y+58071EUk4zl9hf7sm/krh3bG9N2yiG1TP8BHLcbUnSK7BiT2UHW3Np0uu9VTNQfQaCwxHXEAC9Ql5vWP6pMplP4V/pVbCZG9htAZIUjSGG4p/Cl2p9DBIfHy9LHDn43ty7ziUb+sGa9rqweyD8=
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=in-advantage.com;
+Received: from MWHPR1001MB2351.namprd10.prod.outlook.com
+ (2603:10b6:301:35::37) by MN0PR10MB5959.namprd10.prod.outlook.com
+ (2603:10b6:208:3cd::19) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6178.26; Fri, 17 Mar
+ 2023 18:54:30 +0000
+Received: from MWHPR1001MB2351.namprd10.prod.outlook.com
+ ([fe80::1897:6663:87ba:c8fa]) by MWHPR1001MB2351.namprd10.prod.outlook.com
+ ([fe80::1897:6663:87ba:c8fa%4]) with mapi id 15.20.6178.035; Fri, 17 Mar 2023
+ 18:54:30 +0000
+From: Colin Foster <colin.foster@in-advantage.com>
+To: linux-phy@lists.infradead.org,
+	netdev@vger.kernel.org,
+	linux-kernel@vger.kernel.org
+Cc: Russell King <linux@armlinux.org.uk>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Paolo Abeni <pabeni@redhat.com>,
+	Jakub Kicinski <kuba@kernel.org>,
+	Eric Dumazet <edumazet@google.com>,
+	"David S. Miller" <davem@davemloft.net>,
+	Florian Fainelli <f.fainelli@gmail.com>,
+	Andrew Lunn <andrew@lunn.ch>,
+	UNGLinuxDriver@microchip.com,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Claudiu Manoil <claudiu.manoil@nxp.com>,
+	Vladimir Oltean <vladimir.oltean@nxp.com>,
+	Lee Jones <lee@kernel.org>
+Subject: [PATCH v2 net-next 1/9] phy: phy-ocelot-serdes: add ability to be used in a non-syscon configuration
+Date: Fri, 17 Mar 2023 11:54:07 -0700
+Message-Id: <20230317185415.2000564-2-colin.foster@in-advantage.com>
+X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20230317185415.2000564-1-colin.foster@in-advantage.com>
+References: <20230317185415.2000564-1-colin.foster@in-advantage.com>
+X-ClientProxiedBy: BY5PR16CA0025.namprd16.prod.outlook.com
+ (2603:10b6:a03:1a0::38) To MWHPR1001MB2351.namprd10.prod.outlook.com
+ (2603:10b6:301:35::37)
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.8.0
-Subject: Re: [PATCH v3 5/5] dts: usb: add StarFive JH7110 USB dts
- configuration.
-Content-Language: en-US
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, Emil Renner Berthing
-	<emil.renner.berthing@canonical.com>, Conor Dooley <conor@kernel.org>, "Vinod
- Koul" <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, "Rob
- Herring" <robh+dt@kernel.org>, Krzysztof Kozlowski
-	<krzysztof.kozlowski+dt@linaro.org>, Pawel Laszczak <pawell@cadence.com>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Peter Chen
-	<peter.chen@kernel.org>, Roger Quadros <rogerq@kernel.org>, Philipp Zabel
-	<p.zabel@pengutronix.de>
-CC: <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-	<linux-phy@lists.infradead.org>, <linux-usb@vger.kernel.org>,
-	<linux-riscv@lists.infradead.org>, Paul Walmsley <paul.walmsley@sifive.com>,
-	Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>
-References: <20230315104411.73614-1-minda.chen@starfivetech.com>
- <20230315104411.73614-6-minda.chen@starfivetech.com>
- <79593668-6ded-7290-f39b-e226d30e6e95@linaro.org>
-From: Minda Chen <minda.chen@starfivetech.com>
-In-Reply-To: <79593668-6ded-7290-f39b-e226d30e6e95@linaro.org>
-X-Originating-IP: [113.72.145.194]
-X-ClientProxiedBy: EXCAS066.cuchost.com (172.16.6.26) To EXMBX071.cuchost.com
- (172.16.6.81)
-X-YovoleRuleAgent: yovoleflag
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: MWHPR1001MB2351:EE_|MN0PR10MB5959:EE_
+X-MS-Office365-Filtering-Correlation-Id: 459f9084-d41f-477d-e07e-08db27190a04
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: 	TtwkO2dk/E2z1C6qXkhY0NrR9opxtcbPBtdYgnMk+aktuHDAySgDe7mkGMbo6zNKhnEujQE5x5jS4GcLNnVNWQ0cI6wAc0/8AndzpGtlykAbAIfgTwKLw+QWJ9fPKi9qSy09+FR074FubLratdfnctnDZcmBuvCEAk2lmV3pAhvwxF9Z/3eR5IfHHBeZ9dMshFkVZCRuBElgi3fEhIbqnDkC7olAOIpBRCwnv2S610G6/yRhuClXsibn/vlJkuzCWT5Dls/UisO8qd1E5KG2FypIF6K7hzTdQuABeL94C528DvgvuBtP5qwWopoabQWBllwF5P57Nl5P03B6rPaAmn0xH/5fIwcoN6TXEI5IZ+RokKZDj7FznhAxONsbUY/WDAF2wHJX3aMZzu1W8HiKi2OhcUC6AdH6gRGKWMwUU/pmFbZ2kf1hAOVwKSrcjo9Vl0zuCoGMkPw4AoYmBadTAVPwmsDNeNN2hHe4fxSFH2jFxwWqp/AeEuLp36DJ3Y2h/uKs8/DfZJr4lGg7DlO1hfzXNBi4K2VHRxYd6acsdBR0E/jztDHyCpS9b7iTLSAp/VXNTY+0C6oZDKUed3eSm0cMdbGodxnYfyvdngDGnwjGKJX6eyp+lGp362U2jLnz2pJXMg9oK4QLPYJuISTr/9GAWgInR9A4//VORF9Kxej2XAJfdZusmTt2iutWGzJiBWCK1OfvhlmfV11GeOcBmQ==
+X-Forefront-Antispam-Report: 	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:MWHPR1001MB2351.namprd10.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230025)(396003)(346002)(376002)(39830400003)(136003)(366004)(451199018)(8676002)(86362001)(5660300002)(44832011)(7416002)(478600001)(66946007)(66556008)(2616005)(52116002)(186003)(38350700002)(6486002)(6666004)(2906002)(6512007)(1076003)(6506007)(26005)(36756003)(66476007)(38100700002)(316002)(41300700001)(54906003)(8936002)(4326008);DIR:OUT;SFP:1102;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: 	=?us-ascii?Q?KL41bgeV0Qse0KWxPaYRQHZNJXKORXa2OuiM8GA03uufeRwuRCBZHmMuPMiS?=
+ =?us-ascii?Q?pOeghW10dhEUaBU1p6GJg6D01pDcUvK7QV8mQVEfikxHtgAxWVrpr4Wn3Nhu?=
+ =?us-ascii?Q?AISIyMuX+IkzYVCOWoQXamvMAkNl1lDqXwRdotpxfhJF0V5WDQT6lrTWxYrD?=
+ =?us-ascii?Q?gxk12cJcNJok+jBAKAq6iXpKP6dNU2pDT06Z0aKxkCjpWCameBlzZfAlmy9u?=
+ =?us-ascii?Q?CaJ/0YwMbCiII7QuiTEiD+0wnaIITnlWi00JzBTF/bFRggxzmCTx35zjk6QS?=
+ =?us-ascii?Q?55jDVzw36qgqW5s/G6biVBR4whEhP3VxinCyFtE5Bk/IfzzhLg0vet3DLpF5?=
+ =?us-ascii?Q?KAQqY5EluA6uwPOnZuw9fIPi361CcA3tdVe9MgAOphquXPV+jtDTECWkSgSL?=
+ =?us-ascii?Q?qB+wfk7g5ETlI9aFjhZxYFp76WttVUyDiCzb/G40tp22h0FL4S04V2MUGD/C?=
+ =?us-ascii?Q?xRU2UyB5z9LhMMAXfKWked88toxLRpLcHSwKtoZAExigFGMCk4aE3LFYvd05?=
+ =?us-ascii?Q?d/Zwh/4QoyzX4AZ6qKlomzhKsfgB6cl486uT1GbYTaT+OVZi0u+LyGrYkDwP?=
+ =?us-ascii?Q?tbgtqXFSyfvdn/2Ki1BK8BLxbExC+AUJ4zO3TtxZzW3fCvmGSna5WNVOT5/n?=
+ =?us-ascii?Q?2BqFxjhtzD9mZ0NNnUSFTiZ6FfOdX+0MIessGwz8bd04rXe+Js+SI3f55jZa?=
+ =?us-ascii?Q?UecQEOmiwphLZf2GtDh6ybw2jNf3vKK0VdE3unB21RAcnPu4rPZGvnHqWaDo?=
+ =?us-ascii?Q?dXySylz2PyL0hnf+YjeDSjPHGBJ03jogxqvtQbJtUa9NUoX+bGRAveWmqP6N?=
+ =?us-ascii?Q?9pJh7E5KKguTKGwsh2oPj7j/kY2lHEtvpFXqQxU+RHCUSSACgNViBfrd3/VQ?=
+ =?us-ascii?Q?vKAYyACU/D+0RZZj7VtKt03ZUsbRwZ09ODgIXQ3oxuyfVNGOyVLONEG0ZMBO?=
+ =?us-ascii?Q?cFoBN4T9ThiR9ZEWW+aObNWulA27hB9dRG5uN7QD+YVHfJgqwEQMc+ULRVRF?=
+ =?us-ascii?Q?uLEk6cHEzDH3lsHhEDUv8jTrO7msboRKt3gUddGVL3UqGImTmEltHh4WMrsQ?=
+ =?us-ascii?Q?MActOI8UBED9g+HT4eX6wIPyZcGy6gile6RKvrxkID53vN1444ccEa2xCI9K?=
+ =?us-ascii?Q?QNkIxHR5rIGPJWXUL8tcY9WPJXy5oH4paAyxcK0H1/4CoRN09+8STAENsjwt?=
+ =?us-ascii?Q?JBXTekAw7dB2TNPwmy+mFEEYHvQOtnTHN/GE5oVdqQRsuwZ7+m7CpegfeJHk?=
+ =?us-ascii?Q?vy/skuQe52T3G42b60VI7mUubu2RX1/ozbLDGB/mSuSepM39ABBGBFcbswC0?=
+ =?us-ascii?Q?3z+Etx0ZNQOz1Q55G+UKwcBaVsM3DMApgtEnepcDbofADsNirZiQSrbDfxla?=
+ =?us-ascii?Q?Z9sV/ZAPLoOuAUxbaJuVmYTnI06HVEu+SFq0kvXzFvChtnqpDUvw8EiEKrf2?=
+ =?us-ascii?Q?WVtychcj23I16kmGVluZ+klBIFw4556gFNtQknbsNS5GMqMGuSALloZRTbTU?=
+ =?us-ascii?Q?uPtli43qvHCvzosdwtPL79HMPeXKNxvetyGmcfhnAQGdJo0siDBtSU3jw3xO?=
+ =?us-ascii?Q?UCsDJo3TLjfxgFetTV1BWk1ygETgXw2fMiwnII9FPalbolYdLi1JyyEWYOkA?=
+ =?us-ascii?Q?X7JVOj7lqm2D+ZPRHWBWQgQ=3D?=
+X-OriginatorOrg: in-advantage.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 459f9084-d41f-477d-e07e-08db27190a04
+X-MS-Exchange-CrossTenant-AuthSource: MWHPR1001MB2351.namprd10.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 17 Mar 2023 18:54:30.3657
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 48e842ca-fbd8-4633-a79d-0c955a7d3aae
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: rEXPcjF1HnD03HoxqaRpACb5RWhN4o0Le/Ha58Al8vzftE5RPHyavQKQ57M94wnGmE48elZT0RWiFEUuZiKP1yXB+hjPcNO6OQlvKLWZozs=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MN0PR10MB5959
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230317_035940_969276_8B180063 
-X-CRM114-Status: GOOD (  11.60  )
+X-CRM114-CacheID: sfid-20230317_115435_046892_85E69C3B 
+X-CRM114-Status: GOOD (  12.40  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,58 +143,62 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-CgpPbiAyMDIzLzMvMTcgMTY6NDQsIEtyenlzenRvZiBLb3psb3dza2kgd3JvdGU6Cj4gT24gMTUv
-MDMvMjAyMyAxMTo0NCwgTWluZGEgQ2hlbiB3cm90ZToKPj4gVVNCIEdsdWUgbGF5ZXIgYW5kIENh
-ZGVuY2UgVVNCIHN1Ym5vZGUgY29uZmlndXJhdGlvbiwKPj4gYWxzbyBpbmNsdWRlcyBVU0IgYW5k
-IFBDSWUgcGh5IGR0cyBjb25maWd1cmF0aW9uLgo+PiAKPj4gU2lnbmVkLW9mZi1ieTogTWluZGEg
-Q2hlbiA8bWluZGEuY2hlbkBzdGFyZml2ZXRlY2guY29tPgo+IAo+IFVzZSBzdWJqZWN0IHByZWZp
-eGVzIG1hdGNoaW5nIHRoZSBzdWJzeXN0ZW0gKHdoaWNoIHlvdSBjYW4gZ2V0IGZvcgo+IGV4YW1w
-bGUgd2l0aCBgZ2l0IGxvZyAtLW9uZWxpbmUgLS0gRElSRUNUT1JZX09SX0ZJTEVgIG9uIHRoZSBk
-aXJlY3RvcnkKPiB5b3VyIHBhdGNoIGlzIHRvdWNoaW5nKS4KPm9rCj4+IC0tLQo+PiAgLi4uL2po
-NzExMC1zdGFyZml2ZS12aXNpb25maXZlLTIuZHRzaSAgICAgICAgIHwgIDcgKysrCj4+ICBhcmNo
-L3Jpc2N2L2Jvb3QvZHRzL3N0YXJmaXZlL2poNzExMC5kdHNpICAgICAgfCA1NCArKysrKysrKysr
-KysrKysrKysrCj4+ICAyIGZpbGVzIGNoYW5nZWQsIDYxIGluc2VydGlvbnMoKykKPj4gCj4+IGRp
-ZmYgLS1naXQgYS9hcmNoL3Jpc2N2L2Jvb3QvZHRzL3N0YXJmaXZlL2poNzExMC1zdGFyZml2ZS12
-aXNpb25maXZlLTIuZHRzaSBiL2FyY2gvcmlzY3YvYm9vdC9kdHMvc3RhcmZpdmUvamg3MTEwLXN0
-YXJmaXZlLXZpc2lvbmZpdmUtMi5kdHNpCj4+IGluZGV4IGExMzJkZWJiOWI1My4uYzY0NDc2YWVi
-YzFhIDEwMDY0NAo+PiAtLS0gYS9hcmNoL3Jpc2N2L2Jvb3QvZHRzL3N0YXJmaXZlL2poNzExMC1z
-dGFyZml2ZS12aXNpb25maXZlLTIuZHRzaQo+PiArKysgYi9hcmNoL3Jpc2N2L2Jvb3QvZHRzL3N0
-YXJmaXZlL2poNzExMC1zdGFyZml2ZS12aXNpb25maXZlLTIuZHRzaQo+PiBAQCAtMjM2LDMgKzIz
-NiwxMCBAQAo+PiAgCXBpbmN0cmwtMCA9IDwmdWFydDBfcGlucz47Cj4+ICAJc3RhdHVzID0gIm9r
-YXkiOwo+PiAgfTsKPj4gKwo+PiArJnVzYjAgewo+PiArCXN0YXR1cyA9ICJva2F5IjsKPj4gKwl1
-c2JkcmRfY2RuczM6IHVzYkAwIHsKPiAKPiBZb3Ugc2hvdWxkIHJhdGhlciBvdmVycmlkZSBieSBw
-aGFuZGxlIHRoaXMgYXMgd2VsbC4KPiAKSSB3aWxsIHJlbW92ZSB0aGUgd3JhcHBlciBub2RlICd1
-c2IwJy4gCgpKdXN0IGxpa2UgdGhpcyA6CismdXNiZHJkX2NkbnMzIHsKKyAgICAgICBkcl9tb2Rl
-ID0gInBlcmlwaGVyYWwiOworfTsKCgrvvIhzaW1pbGFyIGNvbmZpZ3VyYXRpb24gaW4gYXJjaC9h
-cm02NC9ib290L2R0cy90aS9rMy1qNzIxZS1zay5kdHMsIHVzYjEgbm9kZSkKICAgJnVzYjEgewog
-ICAgICAgIGRyX21vZGUgPSAiaG9zdCI7CiAgICAgICAgLi4uLgogIAo+PiArCQlkcl9tb2RlID0g
-InBlcmlwaGVyYWwiOwo+PiArCX07Cj4+ICt9Owo+PiBkaWZmIC0tZ2l0IGEvYXJjaC9yaXNjdi9i
-b290L2R0cy9zdGFyZml2ZS9qaDcxMTAuZHRzaSBiL2FyY2gvcmlzY3YvYm9vdC9kdHMvc3RhcmZp
-dmUvamg3MTEwLmR0c2kKPj4gaW5kZXggZjcwYTRlZDQ3ZWI0Li4xNzcyMmZkMWJlNjIgMTAwNjQ0
-Cj4+IC0tLSBhL2FyY2gvcmlzY3YvYm9vdC9kdHMvc3RhcmZpdmUvamg3MTEwLmR0c2kKPj4gKysr
-IGIvYXJjaC9yaXNjdi9ib290L2R0cy9zdGFyZml2ZS9qaDcxMTAuZHRzaQo+PiBAQCAtMzYyLDYg
-KzM2Miw2MCBAQAo+PiAgCQkJc3RhdHVzID0gImRpc2FibGVkIjsKPj4gIAkJfTsKPj4gIAo+PiAr
-CQl1c2IwOiB1c2JAMTAxMDAwMDAgewo+PiArCQkJY29tcGF0aWJsZSA9ICJzdGFyZml2ZSxqaDcx
-MTAtdXNiIjsKPj4gKwkJCWNsb2NrcyA9IDwmc3RnY3JnIEpINzExMF9TVEdDTEtfVVNCMF9MUE0+
-LAo+PiArCQkJCSA8JnN0Z2NyZyBKSDcxMTBfU1RHQ0xLX1VTQjBfU1RCPiwKPj4gKwkJCQkgPCZz
-dGdjcmcgSkg3MTEwX1NUR0NMS19VU0IwX0FQQj4sCj4+ICsJCQkJIDwmc3RnY3JnIEpINzExMF9T
-VEdDTEtfVVNCMF9BWEk+LAo+PiArCQkJCSA8JnN0Z2NyZyBKSDcxMTBfU1RHQ0xLX1VTQjBfVVRN
-SV9BUEI+Owo+PiArCQkJY2xvY2stbmFtZXMgPSAibHBtIiwgInN0YiIsICJhcGIiLCAiYXhpIiwg
-InV0bWlfYXBiIjsKPj4gKwkJCXJlc2V0cyA9IDwmc3RnY3JnIEpINzExMF9TVEdSU1RfVVNCMF9Q
-V1JVUD4sCj4+ICsJCQkJIDwmc3RnY3JnIEpINzExMF9TVEdSU1RfVVNCMF9BUEI+LAo+PiArCQkJ
-CSA8JnN0Z2NyZyBKSDcxMTBfU1RHUlNUX1VTQjBfQVhJPiwKPj4gKwkJCQkgPCZzdGdjcmcgSkg3
-MTEwX1NUR1JTVF9VU0IwX1VUTUlfQVBCPjsKPj4gKwkJCXN0YXJmaXZlLHN0Zy1zeXNjb24gPSA8
-JnN0Z19zeXNjb24gMHg0IDB4YzQgMHgxNDggMHgxZjQ+Owo+PiArCQkJc3RhcmZpdmUsc3lzLXN5
-c2NvbiA9IDwmc3lzX3N5c2NvbiAweDE4PjsKPj4gKwkJCXN0YXR1cyA9ICJkaXNhYmxlZCI7Cj4+
-ICsJCQkjYWRkcmVzcy1jZWxscyA9IDwxPjsKPj4gKwkJCSNzaXplLWNlbGxzID0gPDE+Owo+PiAr
-CQkJcmFuZ2VzID0gPDB4MCAweDAgMHgxMDEwMDAwMCAweDEwMDAwMD47Cj4gCj4gcmVnIGFuZCBy
-YW5nZXMgc2hvdWxkIGJlIHNlY29uZCBwcm9wZXJ0eS4gVGhpcyBhbHNvIGFwcGxpZXMgdG8geW91
-cgo+IGJpbmRpbmcgZXhhbXBsZS4KPiAKPiAKb2ssIHRoYW5rcwo+IEJlc3QgcmVnYXJkcywKPiBL
-cnp5c3p0b2YKPiAKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5p
-bmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZv
-L2xpbnV4LXBoeQo=
+The phy-ocelot-serdes module has exclusively been used in a syscon setup,
+from an internal CPU. The addition of external control of ocelot switches
+via an existing MFD implementation means that syscon is no longer the only
+interface that phy-ocelot-serdes will see.
+
+In the MFD configuration, an IORESOURCE_REG resource will exist for the
+device. Utilize this resource to be able to function in both syscon and
+non-syscon configurations.
+
+Signed-off-by: Colin Foster <colin.foster@in-advantage.com>
+---
+
+v1 -> v2
+    * No change
+
+---
+ drivers/phy/mscc/phy-ocelot-serdes.c | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+diff --git a/drivers/phy/mscc/phy-ocelot-serdes.c b/drivers/phy/mscc/phy-ocelot-serdes.c
+index 76f596365176..d9443e865a78 100644
+--- a/drivers/phy/mscc/phy-ocelot-serdes.c
++++ b/drivers/phy/mscc/phy-ocelot-serdes.c
+@@ -494,6 +494,7 @@ static int serdes_probe(struct platform_device *pdev)
+ {
+ 	struct phy_provider *provider;
+ 	struct serdes_ctrl *ctrl;
++	struct resource *res;
+ 	unsigned int i;
+ 	int ret;
+ 
+@@ -503,6 +504,14 @@ static int serdes_probe(struct platform_device *pdev)
+ 
+ 	ctrl->dev = &pdev->dev;
+ 	ctrl->regs = syscon_node_to_regmap(pdev->dev.parent->of_node);
++	if (IS_ERR(ctrl->regs)) {
++		/* Fall back to using IORESOURCE_REG, if possible */
++		res = platform_get_resource(pdev, IORESOURCE_REG, 0);
++		if (res)
++			ctrl->regs = dev_get_regmap(ctrl->dev->parent,
++						    res->name);
++	}
++
+ 	if (IS_ERR(ctrl->regs))
+ 		return PTR_ERR(ctrl->regs);
+ 
+-- 
+2.25.1
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
