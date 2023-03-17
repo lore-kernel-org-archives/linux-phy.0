@@ -4,92 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EF5E6C74A5B
-	for <linux-phy@archiver.kernel.org>; Fri, 17 Mar 2023 08:44:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 111A1C74A5B
+	for <linux-phy@archiver.kernel.org>; Fri, 17 Mar 2023 10:29:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NgVXvYR0Jg2Z0wXanz1LeTFqOsPylRsJgSgpBbX8YZc=; b=AETwZgaAxhrbpi
-	Mc9Iw4wSV9+QKhwmJUXYrHL2orDdMU8YHcmucGMtkOKf4k62f6ML06bQxOBhMvf9B+pXAHDn31xch
-	ZcmD0wui3bRs+y3DUXTrPQOT8ncy4Ck2ljqewwgAU8PC/IFfAQKqkv7z1IFFWOxPEb+OImsfl9+hX
-	mo2RGQPW+RMIU8e65hddle6FCFhX8dsVu+lZqD6OaN3aRAkNafbpufNn3KsbR5dcPd7KkuN8BK+Nz
-	EQ410ZyGyeJ9/ItUV0jKdY8DQMZLAWwQ8+xMU8ZAOLEicQ4icFEBfFHQu+B2WdiFhMwSMx/WwK0AV
-	Na3DeoaA1F9W8j7nzc1A==;
+	List-Owner; bh=7+vn/Vn0eJZuBg4CLpJmucGw+JuNiGo+b1elgihRefE=; b=VWqcJ8z4ya2yTU
+	DGFmjiWPbxfCSWNFXJ9P2C80emzxVoTIDFHMn17GozVEatanF0QbCgWCGuNT6AKPVXspy25W2nFci
+	Po2vS7rSHCJq7wFF2VgaPsV+XiC7+SnsME10OCZb7zsOOpZ+UVJiyXo/Xzaf7GkFUkrNTDus9uUuV
+	nIB7W6n29FNllIq6SLz5u2AS7cRxiTiy3ZzuLs0zim2DcsAm3HhiZb+/YEx2AD5lvD/yInQe7xOIE
+	tcnciQ0CMotYDJn0qXJ0U00P8GRVALJAbIhfNb+Bhd6qB8yLEGqwQonBeD0qoBFFcqAt2B49qD/g0
+	zXwQfsZ8tJ7e/Egbra7A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pd5hZ-001Xnj-1z;
-	Fri, 17 Mar 2023 08:44:41 +0000
-Received: from mail-ed1-x52c.google.com ([2a00:1450:4864:20::52c])
-	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pd5hV-001Xlo-10
-	for linux-phy@lists.infradead.org;
-	Fri, 17 Mar 2023 08:44:40 +0000
-Received: by mail-ed1-x52c.google.com with SMTP id eg48so17345376edb.13
-        for <linux-phy@lists.infradead.org>; Fri, 17 Mar 2023 01:44:36 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1679042675;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=juFmrQz7oKZJRVloOKbAwgle6hn0N8TdFSrYHqJtuGs=;
-        b=alyQrUOzldXMFXcXM/xm57EnS7Biz1DBBOCfYjMGS+7LLhegBZpU9leCj5vcMtwmLE
-         HPYbUWzopVK2UWhT9Bx7o8W2KKqzOF217Tx1jZER1jkeAb+WEfIt1utEjhcXplxyfiXr
-         afYezteJUkdwfm/v7IsGnLl+azcWRjGVbhVTLeYnlgJ8dj7jozEzDh1WVtibhJlpbd2s
-         0cwY/4DtVZTvNe11Lusn/tfqI0zA/RUH3kdSWB+qpiluR41RRA6+VJmJXQjVJKw1u5BS
-         n/HdliYLBUZFLH9SseWrmT0axULEsZPJGH3m4b8zBoKFeI24PCS+QeULJ8TPc9wKv1d7
-         ZQYA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112; t=1679042675;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=juFmrQz7oKZJRVloOKbAwgle6hn0N8TdFSrYHqJtuGs=;
-        b=mwpaD/zKv1IJcW5SI2keXewdkaPALFDGvo9P9aYOcuXgcilMxEqr95VpPQjCvAMC4b
-         7UzVgiM+VDLZW+jJJ1E213PJuom9p8lM977RaWE/hShzSWhP90CUIXi5UPDrnwT+AxbT
-         tuowwm11kuWvQ93fPFK3PhPHh6XtgcJ7M0tXDAlj3cGqnaFBJJ5hFOb7z6kCLEtMzClh
-         +5FGBLiFVSS6LwDWJMwdmAEB5LiGwtpobxmbqnK1BBjtSRnWkWTRyQKB6g7BvZOm29Vr
-         akKyJ2Q1UD4XfKkRWsM8VNYlC0sk6WeYf9Hi7wY3qhZdwk7M3kolDz4EuCwF3I0LQnl5
-         0bVA==
-X-Gm-Message-State: AO0yUKUFLsrcWBPQE1ugltIaR0oDcDZhkzrYEmyQCWJRLoOYDa03dZAr
-	NK1MoqbNIBY8nRMytqsaEm3tig==
-X-Google-Smtp-Source: AK7set8TDDSh0NPwZz11d/QCnupF+zzxPhz66o7xVZyQ0Nwr55I5QWoofBSxOkS7LU7Suo6Z4CCdEw==
-X-Received: by 2002:a17:906:568a:b0:931:d8db:8a2f with SMTP id am10-20020a170906568a00b00931d8db8a2fmr1374810ejc.58.1679042675695;
-        Fri, 17 Mar 2023 01:44:35 -0700 (PDT)
-Received: from ?IPV6:2a02:810d:15c0:828:848a:1971:93e0:b465? ([2a02:810d:15c0:828:848a:1971:93e0:b465])
-        by smtp.gmail.com with ESMTPSA id lt11-20020a170906fa8b00b008e54ac90de1sm701978ejb.74.2023.03.17.01.44.34
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 17 Mar 2023 01:44:35 -0700 (PDT)
-Message-ID: <79593668-6ded-7290-f39b-e226d30e6e95@linaro.org>
-Date: Fri, 17 Mar 2023 09:44:34 +0100
+	id 1pd7L8-001uQ8-2G;
+	Fri, 17 Mar 2023 10:29:38 +0000
+Received: from ex01.ufhost.com ([61.152.239.75])
+	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
+	id 1pd7L4-001uO6-1g;
+	Fri, 17 Mar 2023 10:29:37 +0000
+Received: from EXMBX166.cuchost.com (unknown [175.102.18.54])
+	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
+	(Client CN "EXMBX166", Issuer "EXMBX166" (not verified))
+	by ex01.ufhost.com (Postfix) with ESMTP id CE24924E1E4;
+	Fri, 17 Mar 2023 18:29:07 +0800 (CST)
+Received: from EXMBX071.cuchost.com (172.16.6.81) by EXMBX166.cuchost.com
+ (172.16.6.76) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Fri, 17 Mar
+ 2023 18:29:07 +0800
+Received: from [192.168.125.108] (113.72.145.194) by EXMBX071.cuchost.com
+ (172.16.6.81) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Fri, 17 Mar
+ 2023 18:29:06 +0800
+Message-ID: <f836d98d-bb3b-64a5-1598-1ef489e62fb6@starfivetech.com>
+Date: Fri, 17 Mar 2023 18:29:06 +0800
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.9.0
-Subject: Re: [PATCH v3 5/5] dts: usb: add StarFive JH7110 USB dts
- configuration.
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.8.0
+Subject: Re: [PATCH v3 1/5] dt-bindings: phy: Add StarFive JH7110 USB/PCIe
+ document
 Content-Language: en-US
-To: Minda Chen <minda.chen@starfivetech.com>,
- Emil Renner Berthing <emil.renner.berthing@canonical.com>,
- Conor Dooley <conor@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring
- <robh+dt@kernel.org>, Krzysztof Kozlowski
- <krzysztof.kozlowski+dt@linaro.org>, Pawel Laszczak <pawell@cadence.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Peter Chen <peter.chen@kernel.org>, Roger Quadros <rogerq@kernel.org>,
- Philipp Zabel <p.zabel@pengutronix.de>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-usb@vger.kernel.org,
- linux-riscv@lists.infradead.org, Paul Walmsley <paul.walmsley@sifive.com>,
- Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>
+To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, Emil Renner Berthing
+	<emil.renner.berthing@canonical.com>, Conor Dooley <conor@kernel.org>, "Vinod
+ Koul" <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, "Rob
+ Herring" <robh+dt@kernel.org>, Krzysztof Kozlowski
+	<krzysztof.kozlowski+dt@linaro.org>, Pawel Laszczak <pawell@cadence.com>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Peter Chen
+	<peter.chen@kernel.org>, Roger Quadros <rogerq@kernel.org>, Philipp Zabel
+	<p.zabel@pengutronix.de>
+CC: <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+	<linux-phy@lists.infradead.org>, <linux-usb@vger.kernel.org>,
+	<linux-riscv@lists.infradead.org>, Paul Walmsley <paul.walmsley@sifive.com>,
+	Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>
 References: <20230315104411.73614-1-minda.chen@starfivetech.com>
- <20230315104411.73614-6-minda.chen@starfivetech.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20230315104411.73614-6-minda.chen@starfivetech.com>
+ <20230315104411.73614-2-minda.chen@starfivetech.com>
+ <f7752f68-11a6-cbf4-2f28-1de4c7ff9da2@linaro.org>
+From: Minda Chen <minda.chen@starfivetech.com>
+In-Reply-To: <f7752f68-11a6-cbf4-2f28-1de4c7ff9da2@linaro.org>
+X-Originating-IP: [113.72.145.194]
+X-ClientProxiedBy: EXCAS066.cuchost.com (172.16.6.26) To EXMBX071.cuchost.com
+ (172.16.6.81)
+X-YovoleRuleAgent: yovoleflag
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230317_014437_371787_45D76FBC 
-X-CRM114-Status: GOOD (  14.23  )
+X-CRM114-CacheID: sfid-20230317_032934_855977_BCA45EBB 
+X-CRM114-Status: GOOD (  12.81  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,73 +85,100 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 15/03/2023 11:44, Minda Chen wrote:
-> USB Glue layer and Cadence USB subnode configuration,
-> also includes USB and PCIe phy dts configuration.
+
+
+On 2023/3/17 16:39, Krzysztof Kozlowski wrote:
+> On 15/03/2023 11:44, Minda Chen wrote:
+>> Add StarFive JH7110 SoC USB 2.0/3.0 and PCIe 2.0 PHY dt-binding.
+>> PCIe 2.0 phy can use as USB 3.0 PHY.
+>> 
+>> Signed-off-by: Minda Chen <minda.chen@starfivetech.com>
+>> ---
+>>  .../phy/starfive,jh7110-usb-pcie-phy.yaml     | 62 +++++++++++++++++++
+>>  1 file changed, 62 insertions(+)
+>>  create mode 100644 Documentation/devicetree/bindings/phy/starfive,jh7110-usb-pcie-phy.yaml
+>> 
+>> diff --git a/Documentation/devicetree/bindings/phy/starfive,jh7110-usb-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/starfive,jh7110-usb-pcie-phy.yaml
+>> new file mode 100644
+>> index 000000000000..aa1c3fe93100
+>> --- /dev/null
+>> +++ b/Documentation/devicetree/bindings/phy/starfive,jh7110-usb-pcie-phy.yaml
+>> @@ -0,0 +1,62 @@
+>> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+>> +%YAML 1.2
+>> +---
+>> +$id: http://devicetree.org/schemas/phy/starfive,jh7110-usb-pcie-phy.yaml#
+>> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+>> +
+>> +title: StarFive USB 2.0 and PCIe 2.0 PHY
+>> +
+>> +maintainers:
+>> +  - Minda Chen <minda.chen@starfivetech.com>
+>> +
+>> +properties:
+>> +  compatible:
+>> +    enum:
+>> +      - starfive,jh7110-usb-phy
+>> +      - starfive,jh7110-pcie-phy
+>> +
+>> +  reg:
+>> +    maxItems: 1
+>> +
+>> +  "#phy-cells":
+>> +    const: 0
+>> +
+>> +  clocks:
+>> +    items:
+>> +      - description: usb 125m clock
+>> +      - description: app 125m clock
+>> +
+>> +  clock-names:
+>> +    items:
+>> +      - const: 125m
+>> +      - const: app_125
+>> +
+>> +required:
+>> +  - compatible
+>> +  - reg
+>> +  - "#phy-cells"
+>> +
 > 
-> Signed-off-by: Minda Chen <minda.chen@starfivetech.com>
-
-Use subject prefixes matching the subsystem (which you can get for
-example with `git log --oneline -- DIRECTORY_OR_FILE` on the directory
-your patch is touching).
-
-> ---
->  .../jh7110-starfive-visionfive-2.dtsi         |  7 +++
->  arch/riscv/boot/dts/starfive/jh7110.dtsi      | 54 +++++++++++++++++++
->  2 files changed, 61 insertions(+)
+> It seems pci phy does not take these clocks, thus you should have
+> allOf:if:then which will customize it per variant. Otherwise binding is
+> incorrect for the pci.
 > 
-> diff --git a/arch/riscv/boot/dts/starfive/jh7110-starfive-visionfive-2.dtsi b/arch/riscv/boot/dts/starfive/jh7110-starfive-visionfive-2.dtsi
-> index a132debb9b53..c64476aebc1a 100644
-> --- a/arch/riscv/boot/dts/starfive/jh7110-starfive-visionfive-2.dtsi
-> +++ b/arch/riscv/boot/dts/starfive/jh7110-starfive-visionfive-2.dtsi
-> @@ -236,3 +236,10 @@
->  	pinctrl-0 = <&uart0_pins>;
->  	status = "okay";
->  };
-> +
-> +&usb0 {
-> +	status = "okay";
-> +	usbdrd_cdns3: usb@0 {
-
-You should rather override by phandle this as well.
-
-> +		dr_mode = "peripheral";
-> +	};
-> +};
-> diff --git a/arch/riscv/boot/dts/starfive/jh7110.dtsi b/arch/riscv/boot/dts/starfive/jh7110.dtsi
-> index f70a4ed47eb4..17722fd1be62 100644
-> --- a/arch/riscv/boot/dts/starfive/jh7110.dtsi
-> +++ b/arch/riscv/boot/dts/starfive/jh7110.dtsi
-> @@ -362,6 +362,60 @@
->  			status = "disabled";
->  		};
->  
-> +		usb0: usb@10100000 {
-> +			compatible = "starfive,jh7110-usb";
-> +			clocks = <&stgcrg JH7110_STGCLK_USB0_LPM>,
-> +				 <&stgcrg JH7110_STGCLK_USB0_STB>,
-> +				 <&stgcrg JH7110_STGCLK_USB0_APB>,
-> +				 <&stgcrg JH7110_STGCLK_USB0_AXI>,
-> +				 <&stgcrg JH7110_STGCLK_USB0_UTMI_APB>;
-> +			clock-names = "lpm", "stb", "apb", "axi", "utmi_apb";
-> +			resets = <&stgcrg JH7110_STGRST_USB0_PWRUP>,
-> +				 <&stgcrg JH7110_STGRST_USB0_APB>,
-> +				 <&stgcrg JH7110_STGRST_USB0_AXI>,
-> +				 <&stgcrg JH7110_STGRST_USB0_UTMI_APB>;
-> +			starfive,stg-syscon = <&stg_syscon 0x4 0xc4 0x148 0x1f4>;
-> +			starfive,sys-syscon = <&sys_syscon 0x18>;
-> +			status = "disabled";
-> +			#address-cells = <1>;
-> +			#size-cells = <1>;
-> +			ranges = <0x0 0x0 0x10100000 0x100000>;
-
-reg and ranges should be second property. This also applies to your
-binding example.
-
-
-Best regards,
-Krzysztof
-
+ok
+>> +additionalProperties: false
+>> +
+>> +examples:
+>> +  - |
+>> +    phy@10200000 {
+>> +      compatible = "starfive,jh7110-usb-phy";
+>> +      reg = <0x10200000 0x10000>;
+>> +      clocks = <&syscrg 95>,
+>> +               <&stgcrg 6>;
+>> +      clock-names = "125m", "app_125";
+>> +      #phy-cells = <0>;
+>> +    };
+>> +
+>> +    phy@10210000 {
+>> +      compatible = "starfive,jh7110-pcie-phy";
+>> +      reg = <0x10210000 0x10000>;
+>> +      #phy-cells = <0>;
+>> +    };
+>> +
+>> +    phy@10220000 {
+>> +      compatible = "starfive,jh7110-pcie-phy";
+>> +      reg = <0x10220000 0x10000>;
+>> +      #phy-cells = <0>;
+>> +    };
+> 
+> Drop duplicated examples. Keep usb and maybe one phy.
+> 
+ok, thanks
+> Best regards,
+> Krzysztof
+> 
 
 -- 
 linux-phy mailing list
