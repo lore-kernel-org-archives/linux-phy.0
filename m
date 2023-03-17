@@ -4,45 +4,46 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A14CDC74A5B
-	for <linux-phy@archiver.kernel.org>; Fri, 17 Mar 2023 10:31:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6C97BC6FD1D
+	for <linux-phy@archiver.kernel.org>; Fri, 17 Mar 2023 10:59:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UyhVws+QkkeBCWIh3CU73ruXAQt7CDIt2ZmosNj5P0E=; b=gUPVnl0AcFi3IF
-	t8FRjjXFnadQlKlJQyGdhMJVYcbn2Mkqk8zSUFkPJSLwjDH1wWZ4bM/jBuC3SkKQLViP4enyw0IUa
-	WIW5mdD7WHtKkQ10Vem9jDg68tI0ciddTUwB1A2rMZ/IN8l7MCSb/QK80KtcHuz5D/Ty/VBcwdp1m
-	YBwPjScWSZeK51e8shRdqMPMzVehtaTMjS1fZtf0V51TA917VxfsumrvA72vxgMbmJ+KMSaRO7j0H
-	h/G7ThWuHteCIMyzVcdzCmBcjqYuTg81C4Q595gFvgXYJ7SXCcbmsrCBeH8/+/jI/04gx3qs0h3Yi
-	2XZLWFZ/rzMBxMNkpj7g==;
+	List-Owner; bh=etGYujPD+jBK72XYbgOgeV2eB93Fsv7OLfr4zrHryQA=; b=eyh8gaJJMrvHl6
+	SiaS1Mkky0MECB8lcehnvQndSs7nzKapPcQXho/B+v1RvzdlWi33kIZwJklbCfHLJquRCvloltpRu
+	vxTe3HnRZ7yCIM6K7/bb4z/4gg8BSsJfksYt2n03om0fbo54f30aGlyVvzjulStSKwBfQ/K/I3aP9
+	iiZi2lzgK0vzmxXXIln2d84Vki138wjnEmK2iAQOpCaTge+603c9SMTrmoq+mU2WgIxeJraHSq4sj
+	G+s6wCVKsy1tQ/MTjr+w820rv2C0MSaYW6muZ8xBQuz160QFRWtn636QLf3sHIYzZewPWRilFHiiK
+	7iI7+SoyHMFFqlbSYq0g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pd7Mi-001ubI-0n;
-	Fri, 17 Mar 2023 10:31:16 +0000
-Received: from fd01.gateway.ufhost.com ([61.152.239.71])
+	id 1pd7oG-001yZM-04;
+	Fri, 17 Mar 2023 10:59:44 +0000
+Received: from ex01.ufhost.com ([61.152.239.75])
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pd7Mf-001uZD-1F;
-	Fri, 17 Mar 2023 10:31:15 +0000
+	id 1pd7oC-001yXi-25;
+	Fri, 17 Mar 2023 10:59:43 +0000
 Received: from EXMBX165.cuchost.com (unknown [175.102.18.54])
 	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
 	(Client CN "EXMBX165", Issuer "EXMBX165" (not verified))
-	by fd01.gateway.ufhost.com (Postfix) with ESMTP id 50F1D24E289;
-	Fri, 17 Mar 2023 18:30:41 +0800 (CST)
+	by ex01.ufhost.com (Postfix) with ESMTP id 164C624DBC2;
+	Fri, 17 Mar 2023 18:59:27 +0800 (CST)
 Received: from EXMBX071.cuchost.com (172.16.6.81) by EXMBX165.cuchost.com
  (172.16.6.75) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Fri, 17 Mar
- 2023 18:30:41 +0800
+ 2023 18:59:27 +0800
 Received: from [192.168.125.108] (113.72.145.194) by EXMBX071.cuchost.com
  (172.16.6.81) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Fri, 17 Mar
- 2023 18:30:40 +0800
-Message-ID: <e304283e-c564-527a-b1a3-0a04b80604d0@starfivetech.com>
-Date: Fri, 17 Mar 2023 18:30:39 +0800
+ 2023 18:59:26 +0800
+Message-ID: <11873190-a8ff-e93d-5c08-8a24903c170d@starfivetech.com>
+Date: Fri, 17 Mar 2023 18:59:25 +0800
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
  Thunderbird/102.8.0
-Subject: Re: [PATCH v3 3/5] dt-binding: Add JH7110 USB wrapper layer doc.
+Subject: Re: [PATCH v3 5/5] dts: usb: add StarFive JH7110 USB dts
+ configuration.
 Content-Language: en-US
 To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, Emil Renner Berthing
 	<emil.renner.berthing@canonical.com>, Conor Dooley <conor@kernel.org>, "Vinod
@@ -57,17 +58,17 @@ CC: <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
 	<linux-riscv@lists.infradead.org>, Paul Walmsley <paul.walmsley@sifive.com>,
 	Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>
 References: <20230315104411.73614-1-minda.chen@starfivetech.com>
- <20230315104411.73614-4-minda.chen@starfivetech.com>
- <451c8112-c7f3-f435-5d90-840f01c60bd5@linaro.org>
+ <20230315104411.73614-6-minda.chen@starfivetech.com>
+ <79593668-6ded-7290-f39b-e226d30e6e95@linaro.org>
 From: Minda Chen <minda.chen@starfivetech.com>
-In-Reply-To: <451c8112-c7f3-f435-5d90-840f01c60bd5@linaro.org>
+In-Reply-To: <79593668-6ded-7290-f39b-e226d30e6e95@linaro.org>
 X-Originating-IP: [113.72.145.194]
 X-ClientProxiedBy: EXCAS066.cuchost.com (172.16.6.26) To EXMBX071.cuchost.com
  (172.16.6.81)
 X-YovoleRuleAgent: yovoleflag
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230317_033113_717367_E5A076C6 
-X-CRM114-Status: GOOD (  17.28  )
+X-CRM114-CacheID: sfid-20230317_035940_969276_8B180063 
+X-CRM114-Status: GOOD (  11.60  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,144 +80,58 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-
-On 2023/3/17 16:43, Krzysztof Kozlowski wrote:
-> On 15/03/2023 11:44, Minda Chen wrote:
->> The dt-binding doc of Cadence USBSS-DRD controller wrapper
->> layer.
-> 
-> Subject: drop full stop. It's not a sentence.
-> 
-> Use subject prefixes matching the subsystem (which you can get for
-> example with `git log --oneline -- DIRECTORY_OR_FILE` on the directory
-> your patch is touching).
-> 
-> 
-Thanks. I should check all the commits title and commit messages.
->> 
->> Signed-off-by: Minda Chen <minda.chen@starfivetech.com>
->> ---
->>  .../bindings/usb/starfive,jh7110-usb.yaml     | 119 ++++++++++++++++++
->>  1 file changed, 119 insertions(+)
->>  create mode 100644 Documentation/devicetree/bindings/usb/starfive,jh7110-usb.yaml
->> 
->> diff --git a/Documentation/devicetree/bindings/usb/starfive,jh7110-usb.yaml b/Documentation/devicetree/bindings/usb/starfive,jh7110-usb.yaml
->> new file mode 100644
->> index 000000000000..b1a8dc6d7b4b
->> --- /dev/null
->> +++ b/Documentation/devicetree/bindings/usb/starfive,jh7110-usb.yaml
->> @@ -0,0 +1,119 @@
->> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
->> +%YAML 1.2
->> +---
->> +$id: http://devicetree.org/schemas/usb/starfive,jh7110-usb.yaml#
->> +$schema: http://devicetree.org/meta-schemas/core.yaml#
->> +
->> +title: StarFive JH7110 wrapper module for the Cadence USBSS-DRD controller
->> +
->> +maintainers:
->> +  - Minda Chen <minda.chen@starfivetech.com>
->> +
->> +properties:
->> +  compatible:
->> +    const: starfive,jh7110-usb
->> +
->> +  clocks:
->> +    items:
->> +      - description: lpm clock
->> +      - description: stb clock
->> +      - description: apb clock
->> +      - description: axi clock
->> +      - description: utmi apb clock
->> +
->> +  clock-names:
->> +    items:
->> +      - const: lpm
->> +      - const: stb
->> +      - const: apb
->> +      - const: axi
->> +      - const: utmi_apb
->> +
->> +  resets:
->> +    items:
->> +      - description: PWRUP reset
->> +      - description: APB reset
->> +      - description: AXI reset
->> +      - description: UTMI_APB reset
->> +
->> +  starfive,sys-syscon:
->> +    $ref: /schemas/types.yaml#/definitions/phandle-array
->> +    items:
->> +      items:
->> +        - description: phandle to System Register Controller sys_syscon node.
->> +        - description: offset of SYS_SYSCONSAIF__SYSCFG register for USB.
->> +    description:
->> +      The phandle to System Register Controller syscon node and the offset
->> +      of SYS_SYSCONSAIF__SYSCFG register for USB.
->> +
->> +  starfive,stg-syscon:
->> +    $ref: /schemas/types.yaml#/definitions/phandle-array
->> +    items:
->> +      items:
->> +        - description: phandle to System Register Controller stg_syscon node.
->> +        - description: register0 offset of STG_SYSCONSAIF__SYSCFG register for USB.
->> +        - description: register1 offset of STG_SYSCONSAIF__SYSCFG register for USB.
->> +        - description: register2 offset of STG_SYSCONSAIF__SYSCFG register for USB.
->> +        - description: register3 offset of STG_SYSCONSAIF__SYSCFG register for USB.
->> +    description:
->> +      The phandle to System Register Controller syscon node and the offset
->> +      of STG_SYSCONSAIF__SYSCFG register for USB. Total 4 regsisters offset
->> +      for USB.
->> +
->> +  "#address-cells":
->> +    maximum: 2
-> 
-> enum: [ 1, 2 ]
-> (because 0 should not be valid for you)
-> 
->> +
->> +  "#size-cells":
->> +    maximum: 2
-> 
-> ditto
-> 
-ok
->> +
->> +  ranges: true
->> +
->> +patternProperties:
->> +  "^usb@[0-9a-f]+$":
->> +    type: object
-> 
-> missing $ref and unevaluatedProperties: false
-> 
-ok, thanks
->> +
->> +required:
->> +  - compatible
->> +  - clocks
->> +  - clock-names
->> +  - resets
->> +  - starfive,sys-syscon
->> +  - starfive,stg-syscon
->> +  - "#address-cells"
->> +  - "#size-cells"
->> +  - ranges
->> +
->> +additionalProperties: false
-> 
-> 
-> Best regards,
-> Krzysztof
-> 
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+CgpPbiAyMDIzLzMvMTcgMTY6NDQsIEtyenlzenRvZiBLb3psb3dza2kgd3JvdGU6Cj4gT24gMTUv
+MDMvMjAyMyAxMTo0NCwgTWluZGEgQ2hlbiB3cm90ZToKPj4gVVNCIEdsdWUgbGF5ZXIgYW5kIENh
+ZGVuY2UgVVNCIHN1Ym5vZGUgY29uZmlndXJhdGlvbiwKPj4gYWxzbyBpbmNsdWRlcyBVU0IgYW5k
+IFBDSWUgcGh5IGR0cyBjb25maWd1cmF0aW9uLgo+PiAKPj4gU2lnbmVkLW9mZi1ieTogTWluZGEg
+Q2hlbiA8bWluZGEuY2hlbkBzdGFyZml2ZXRlY2guY29tPgo+IAo+IFVzZSBzdWJqZWN0IHByZWZp
+eGVzIG1hdGNoaW5nIHRoZSBzdWJzeXN0ZW0gKHdoaWNoIHlvdSBjYW4gZ2V0IGZvcgo+IGV4YW1w
+bGUgd2l0aCBgZ2l0IGxvZyAtLW9uZWxpbmUgLS0gRElSRUNUT1JZX09SX0ZJTEVgIG9uIHRoZSBk
+aXJlY3RvcnkKPiB5b3VyIHBhdGNoIGlzIHRvdWNoaW5nKS4KPm9rCj4+IC0tLQo+PiAgLi4uL2po
+NzExMC1zdGFyZml2ZS12aXNpb25maXZlLTIuZHRzaSAgICAgICAgIHwgIDcgKysrCj4+ICBhcmNo
+L3Jpc2N2L2Jvb3QvZHRzL3N0YXJmaXZlL2poNzExMC5kdHNpICAgICAgfCA1NCArKysrKysrKysr
+KysrKysrKysrCj4+ICAyIGZpbGVzIGNoYW5nZWQsIDYxIGluc2VydGlvbnMoKykKPj4gCj4+IGRp
+ZmYgLS1naXQgYS9hcmNoL3Jpc2N2L2Jvb3QvZHRzL3N0YXJmaXZlL2poNzExMC1zdGFyZml2ZS12
+aXNpb25maXZlLTIuZHRzaSBiL2FyY2gvcmlzY3YvYm9vdC9kdHMvc3RhcmZpdmUvamg3MTEwLXN0
+YXJmaXZlLXZpc2lvbmZpdmUtMi5kdHNpCj4+IGluZGV4IGExMzJkZWJiOWI1My4uYzY0NDc2YWVi
+YzFhIDEwMDY0NAo+PiAtLS0gYS9hcmNoL3Jpc2N2L2Jvb3QvZHRzL3N0YXJmaXZlL2poNzExMC1z
+dGFyZml2ZS12aXNpb25maXZlLTIuZHRzaQo+PiArKysgYi9hcmNoL3Jpc2N2L2Jvb3QvZHRzL3N0
+YXJmaXZlL2poNzExMC1zdGFyZml2ZS12aXNpb25maXZlLTIuZHRzaQo+PiBAQCAtMjM2LDMgKzIz
+NiwxMCBAQAo+PiAgCXBpbmN0cmwtMCA9IDwmdWFydDBfcGlucz47Cj4+ICAJc3RhdHVzID0gIm9r
+YXkiOwo+PiAgfTsKPj4gKwo+PiArJnVzYjAgewo+PiArCXN0YXR1cyA9ICJva2F5IjsKPj4gKwl1
+c2JkcmRfY2RuczM6IHVzYkAwIHsKPiAKPiBZb3Ugc2hvdWxkIHJhdGhlciBvdmVycmlkZSBieSBw
+aGFuZGxlIHRoaXMgYXMgd2VsbC4KPiAKSSB3aWxsIHJlbW92ZSB0aGUgd3JhcHBlciBub2RlICd1
+c2IwJy4gCgpKdXN0IGxpa2UgdGhpcyA6CismdXNiZHJkX2NkbnMzIHsKKyAgICAgICBkcl9tb2Rl
+ID0gInBlcmlwaGVyYWwiOworfTsKCgrvvIhzaW1pbGFyIGNvbmZpZ3VyYXRpb24gaW4gYXJjaC9h
+cm02NC9ib290L2R0cy90aS9rMy1qNzIxZS1zay5kdHMsIHVzYjEgbm9kZSkKICAgJnVzYjEgewog
+ICAgICAgIGRyX21vZGUgPSAiaG9zdCI7CiAgICAgICAgLi4uLgogIAo+PiArCQlkcl9tb2RlID0g
+InBlcmlwaGVyYWwiOwo+PiArCX07Cj4+ICt9Owo+PiBkaWZmIC0tZ2l0IGEvYXJjaC9yaXNjdi9i
+b290L2R0cy9zdGFyZml2ZS9qaDcxMTAuZHRzaSBiL2FyY2gvcmlzY3YvYm9vdC9kdHMvc3RhcmZp
+dmUvamg3MTEwLmR0c2kKPj4gaW5kZXggZjcwYTRlZDQ3ZWI0Li4xNzcyMmZkMWJlNjIgMTAwNjQ0
+Cj4+IC0tLSBhL2FyY2gvcmlzY3YvYm9vdC9kdHMvc3RhcmZpdmUvamg3MTEwLmR0c2kKPj4gKysr
+IGIvYXJjaC9yaXNjdi9ib290L2R0cy9zdGFyZml2ZS9qaDcxMTAuZHRzaQo+PiBAQCAtMzYyLDYg
+KzM2Miw2MCBAQAo+PiAgCQkJc3RhdHVzID0gImRpc2FibGVkIjsKPj4gIAkJfTsKPj4gIAo+PiAr
+CQl1c2IwOiB1c2JAMTAxMDAwMDAgewo+PiArCQkJY29tcGF0aWJsZSA9ICJzdGFyZml2ZSxqaDcx
+MTAtdXNiIjsKPj4gKwkJCWNsb2NrcyA9IDwmc3RnY3JnIEpINzExMF9TVEdDTEtfVVNCMF9MUE0+
+LAo+PiArCQkJCSA8JnN0Z2NyZyBKSDcxMTBfU1RHQ0xLX1VTQjBfU1RCPiwKPj4gKwkJCQkgPCZz
+dGdjcmcgSkg3MTEwX1NUR0NMS19VU0IwX0FQQj4sCj4+ICsJCQkJIDwmc3RnY3JnIEpINzExMF9T
+VEdDTEtfVVNCMF9BWEk+LAo+PiArCQkJCSA8JnN0Z2NyZyBKSDcxMTBfU1RHQ0xLX1VTQjBfVVRN
+SV9BUEI+Owo+PiArCQkJY2xvY2stbmFtZXMgPSAibHBtIiwgInN0YiIsICJhcGIiLCAiYXhpIiwg
+InV0bWlfYXBiIjsKPj4gKwkJCXJlc2V0cyA9IDwmc3RnY3JnIEpINzExMF9TVEdSU1RfVVNCMF9Q
+V1JVUD4sCj4+ICsJCQkJIDwmc3RnY3JnIEpINzExMF9TVEdSU1RfVVNCMF9BUEI+LAo+PiArCQkJ
+CSA8JnN0Z2NyZyBKSDcxMTBfU1RHUlNUX1VTQjBfQVhJPiwKPj4gKwkJCQkgPCZzdGdjcmcgSkg3
+MTEwX1NUR1JTVF9VU0IwX1VUTUlfQVBCPjsKPj4gKwkJCXN0YXJmaXZlLHN0Zy1zeXNjb24gPSA8
+JnN0Z19zeXNjb24gMHg0IDB4YzQgMHgxNDggMHgxZjQ+Owo+PiArCQkJc3RhcmZpdmUsc3lzLXN5
+c2NvbiA9IDwmc3lzX3N5c2NvbiAweDE4PjsKPj4gKwkJCXN0YXR1cyA9ICJkaXNhYmxlZCI7Cj4+
+ICsJCQkjYWRkcmVzcy1jZWxscyA9IDwxPjsKPj4gKwkJCSNzaXplLWNlbGxzID0gPDE+Owo+PiAr
+CQkJcmFuZ2VzID0gPDB4MCAweDAgMHgxMDEwMDAwMCAweDEwMDAwMD47Cj4gCj4gcmVnIGFuZCBy
+YW5nZXMgc2hvdWxkIGJlIHNlY29uZCBwcm9wZXJ0eS4gVGhpcyBhbHNvIGFwcGxpZXMgdG8geW91
+cgo+IGJpbmRpbmcgZXhhbXBsZS4KPiAKPiAKb2ssIHRoYW5rcwo+IEJlc3QgcmVnYXJkcywKPiBL
+cnp5c3p0b2YKPiAKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5p
+bmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZv
+L2xpbnV4LXBoeQo=
