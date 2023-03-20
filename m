@@ -4,66 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BF48DC7618D
-	for <linux-phy@archiver.kernel.org>; Mon, 20 Mar 2023 09:20:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4EEF8C7618A
+	for <linux-phy@archiver.kernel.org>; Mon, 20 Mar 2023 09:25:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Date:
-	Message-Id:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=M5qOE9P0uCVG9V/0ZYZvpIukuONDcNZcM5X1h9vgndQ=; b=m4/LX1ZITlJ1yH
-	4N4Yr20mjCgi/v032J/+emXLzSz53zFp1sqJEkdSVpd27KFkR7FNGDtthyGJ4f/896Jhk6sE3pyFe
-	ohKFLOQkLmcpqbzcXROe00ZccoMmcpSk5he4VJfvjKSCligx2CcvjGz3caPuqfsOLMEOrvIz9c2lV
-	/GCGVpSo0imfXe7kYIjPMDdhYfGAB3M8LJBJq6KHvLAtjAcssEfa2ZTUNQqeoyEiyDd+CRyAUY2LO
-	TzeK4TlwcXJcScZovigGkmJ1Y+er5svxjSE1veHqTz0epwuye1p93WEztSKPQm64+cy3o0/D5AtTe
-	BzOOn3xcUVOqBO9Qp4FQ==;
+	List-Owner; bh=BvK8g4Z8DIsEF32QIGo9GCTgNT3DGG26mmLkfy4O1uA=; b=w/YDb2QHH/HZBR
+	xKHseetKgPm5JKwPED+abJ7pbz9QpvS8e+pI40Jo9+F/Jm2VP6FJcXKt8Y4RCasIb9e+AhBvsE7d1
+	Tr+/cpnhBTaEnzvD8l8oOFXA+IQwH/DRw+PjTV+wMXPj27KXza6Co1FDVEZeVp4QW8hesjBsixxe5
+	Wz3tEAUm/J7ktzAvJ8BVmp7kqG9KF14SBO4fVXWEIxE5EBas5/fbhxNigoRbyshATQeXSINuZ9nZA
+	EcFTaj9qtURakMH6M6IThPaYiHheq1vGL1UrTXsbN9+9e6PhST2vX42eBsCoLou3d+cYfqQdt7Ai6
+	up7/4OvSRWKds0SOfyrQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1peBgl-008SaI-1M;
-	Mon, 20 Mar 2023 09:20:23 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1peBlJ-008Tlr-3D;
+	Mon, 20 Mar 2023 09:25:06 +0000
+Received: from pandora.armlinux.org.uk ([2001:4d48:ad52:32c8:5054:ff:fe00:142])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1peBgj-008SZR-0M
+	id 1peBlE-008Tje-0o
 	for linux-phy@lists.infradead.org;
-	Mon, 20 Mar 2023 09:20:22 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 791A3612D7;
-	Mon, 20 Mar 2023 09:20:20 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id DB099C4339B;
-	Mon, 20 Mar 2023 09:20:19 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1679304019;
-	bh=aRfWzyfuMD/6LDTt48kesyPO7X9IlFJAhbBlvoIsV28=;
-	h=Subject:From:Date:References:In-Reply-To:To:Cc:From;
-	b=ZJnCPupcqPglYwWfYGoYPdwkoBIFV6ImH5xtJRdOe1+42ehZX/+VyoThZYrmNr5rk
-	 FpRlXbTTrbioNzykR0+8T2ACi4MVab1y6Azpczq4yJ1DkKQktK8q7fQtFhFHKr3yHg
-	 C96TsURdZOdpbTijCLHJYMofdnEQpro2d5BwuHJLLt2X4NmpQTNDxjVwzVoIJuLYKt
-	 jk2R4BHImjNl+3lzdQ+X4jUhMcNlSQQmHBPLmsURtEXvxfAokcyRUGBdPVU9d+JrI4
-	 Cmyb/QPWEF9kSA+3seyGDTLYNJ0DbICSEteFOEkggmoSGA0aA9NbqyxxJQJAt3xNyf
-	 Y4i1rDiJnkecA==
-Received: from aws-us-west-2-korg-oddjob-1.ci.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by aws-us-west-2-korg-oddjob-1.ci.codeaurora.org (Postfix) with ESMTP id C44D8C395F4;
-	Mon, 20 Mar 2023 09:20:19 +0000 (UTC)
-MIME-Version: 1.0
-Subject: Re: [PATCH v2 net-next 0/9] add support for ocelot external ports
-From: patchwork-bot+netdevbpf@kernel.org
-Message-Id:  <167930401979.16850.3612356547133103899.git-patchwork-notify@kernel.org>
-Date: Mon, 20 Mar 2023 09:20:19 +0000
+	Mon, 20 Mar 2023 09:25:02 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+	List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=V4Ic3CoIN3yLEDl4ZrFprKL8VDhfVNu/6xK0WkJsbGg=; b=oFFZpgYrVUmjwZ9Psb6fMcDoII
+	PI37y50wljwMMECGXJBNlGVGnBH150XU3raIqtWeWfSHWTRUNDDV/xTBg8B+ieE/448kN7u4cGQP4
+	GFWgPa65zXsK4aY32W2XigRxPBZQXm1KHfcSTXQBuLOQmzgUG2EKHrIR4Eatq3wRZw8no1FvuJFC6
+	GVajieQ5ejInjjkF92+q/ARLpPWGxp4bUszPu+K3tOINhEXJs0ALVq2jjRHwupUJPoV+cn/60Gc+r
+	n6oI+GnJSxAjpTJDt0+ybaGTrIaZrGc7Vv50y4hevmxuK/vqermAZmgo448gxAWl+mAuRtQ+1iNEQ
+	nrNG4Qzw==;
+Received: from shell.armlinux.org.uk ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:34076)
+	by pandora.armlinux.org.uk with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.94.2)
+	(envelope-from <linux@armlinux.org.uk>)
+	id 1peBl4-00075E-Af; Mon, 20 Mar 2023 09:24:50 +0000
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.94.2)
+	(envelope-from <linux@shell.armlinux.org.uk>)
+	id 1peBl0-0006P2-5A; Mon, 20 Mar 2023 09:24:46 +0000
+Date: Mon, 20 Mar 2023 09:24:46 +0000
+From: "Russell King (Oracle)" <linux@armlinux.org.uk>
+To: Vinod Koul <vkoul@kernel.org>
+Cc: Colin Foster <colin.foster@in-advantage.com>,
+	linux-phy@lists.infradead.org, netdev@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Paolo Abeni <pabeni@redhat.com>, Jakub Kicinski <kuba@kernel.org>,
+	Eric Dumazet <edumazet@google.com>,
+	"David S. Miller" <davem@davemloft.net>,
+	Florian Fainelli <f.fainelli@gmail.com>,
+	Andrew Lunn <andrew@lunn.ch>, UNGLinuxDriver@microchip.com,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Claudiu Manoil <claudiu.manoil@nxp.com>,
+	Vladimir Oltean <vladimir.oltean@nxp.com>,
+	Lee Jones <lee@kernel.org>
+Subject: Re: [PATCH v2 net-next 1/9] phy: phy-ocelot-serdes: add ability to
+ be used in a non-syscon configuration
+Message-ID: <ZBgmXplfA/Q3/1dC@shell.armlinux.org.uk>
 References: <20230317185415.2000564-1-colin.foster@in-advantage.com>
-In-Reply-To: <20230317185415.2000564-1-colin.foster@in-advantage.com>
-To: Colin Foster <colin.foster@in-advantage.com>
-Cc: linux-phy@lists.infradead.org, netdev@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux@armlinux.org.uk, kishon@kernel.org,
- vkoul@kernel.org, pabeni@redhat.com, kuba@kernel.org, edumazet@google.com,
- davem@davemloft.net, f.fainelli@gmail.com, andrew@lunn.ch,
- UNGLinuxDriver@microchip.com, alexandre.belloni@bootlin.com,
- claudiu.manoil@nxp.com, vladimir.oltean@nxp.com, lee@kernel.org
+ <20230317185415.2000564-2-colin.foster@in-advantage.com>
+ <ZBgeKM50e1vt+ho1@matsya>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <ZBgeKM50e1vt+ho1@matsya>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230320_022021_188988_4AAA5531 
-X-CRM114-Status: GOOD (  11.26  )
+X-CRM114-CacheID: sfid-20230320_022500_289876_87E997E6 
+X-CRM114-Status: GOOD (  13.22  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,47 +91,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hello:
-
-This series was applied to netdev/net-next.git (main)
-by David S. Miller <davem@davemloft.net>:
-
-On Fri, 17 Mar 2023 11:54:06 -0700 you wrote:
-> This is the start of part 3 of what is hopefully a 3-part series to add
-> Ethernet switching support to Ocelot chips.
+On Mon, Mar 20, 2023 at 02:19:44PM +0530, Vinod Koul wrote:
+> On 17-03-23, 11:54, Colin Foster wrote:
+> > The phy-ocelot-serdes module has exclusively been used in a syscon setup,
+> > from an internal CPU. The addition of external control of ocelot switches
+> > via an existing MFD implementation means that syscon is no longer the only
+> > interface that phy-ocelot-serdes will see.
+> > 
+> > In the MFD configuration, an IORESOURCE_REG resource will exist for the
+> > device. Utilize this resource to be able to function in both syscon and
+> > non-syscon configurations.
 > 
-> Part 1 of the series (A New Chip) added general support for Ocelot chips
-> that were controlled externally via SPI.
-> https://lore.kernel.org/all/20220815005553.1450359-1-colin.foster@in-advantage.com/
-> 
-> [...]
+> Applied to phy/next, thanks
 
-Here is the summary with links:
-  - [v2,net-next,1/9] phy: phy-ocelot-serdes: add ability to be used in a non-syscon configuration
-    https://git.kernel.org/netdev/net-next/c/672faa7bbf60
-  - [v2,net-next,2/9] mfd: ocelot: add ocelot-serdes capability
-    https://git.kernel.org/netdev/net-next/c/c21ff0939d1d
-  - [v2,net-next,3/9] net: mscc: ocelot: expose ocelot_pll5_init routine
-    https://git.kernel.org/netdev/net-next/c/fec53f449458
-  - [v2,net-next,4/9] net: mscc: ocelot: expose generic phylink_mac_config routine
-    https://git.kernel.org/netdev/net-next/c/69f7f89c0db5
-  - [v2,net-next,5/9] net: mscc: ocelot: expose serdes configuration function
-    https://git.kernel.org/netdev/net-next/c/dfca93ed51a7
-  - [v2,net-next,6/9] net: dsa: felix: attempt to initialize internal hsio plls
-    https://git.kernel.org/netdev/net-next/c/3821fd0107b0
-  - [v2,net-next,7/9] net: dsa: felix: allow configurable phylink_mac_config
-    https://git.kernel.org/netdev/net-next/c/544435c9346a
-  - [v2,net-next,8/9] net: dsa: felix: allow serdes configuration for dsa ports
-    https://git.kernel.org/netdev/net-next/c/6865ecee385b
-  - [v2,net-next,9/9] net: dsa: ocelot: add support for external phys
-    https://git.kernel.org/netdev/net-next/c/4c05e5ceecbb
+Please read the netdev FAQ. Patches sent to netdev contain the tree that
+the submitter wishes the patches to be applied to.
 
-You are awesome, thank you!
+As a result, I see davem has just picked up the *entire* series which
+means that all patches are in net-next now. net-next is immutable.
+
+In any case, IMHO if this kind of fly-by cherry-picking from patch
+series is intended, it should be mentioned during review to give a
+chance for other maintainers to respond and give feedback. Not all
+submitters will know how individual maintainers work. Not all
+maintainers know how other maintainers work.
+
 -- 
-Deet-doot-dot, I am a bot.
-https://korg.docs.kernel.org/patchwork/pwbot.html
-
-
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTP is here! 40Mbps down 10Mbps up. Decent connectivity at last!
 
 -- 
 linux-phy mailing list
