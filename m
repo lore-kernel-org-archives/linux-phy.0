@@ -4,61 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 59FB6C7618A
-	for <linux-phy@archiver.kernel.org>; Mon, 20 Mar 2023 12:28:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B5633C7618A
+	for <linux-phy@archiver.kernel.org>; Mon, 20 Mar 2023 12:29:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BYxE57RInloSABsEJF3O9FByYvRiXbtVFu4VBjpeSk4=; b=MP/roUOdNw3Buc
-	6zwuuscw0yupI1CTgVF1nl4XIjRGSZUWXPVPkdpxe8OgPR6DukR4iB3t25/l9WiBygk5AQRS9AFZo
-	Zd8uQ+kEiSQDsFVjefwz2Rq5u9Wa89Nhj/Ua1Ykb4MKMMvn8zLfVU1sONlwOxvY7hM/dRAQeg5fFv
-	wGBLQabu/VLaMEOHWsWxhNnjtueB6wSAVSp1njOFA8FWQp+Q7ABd2zzBPv3JpTDA3a2DNjnVdRqou
-	fxy69F7F70+Uat19Ss+9jTOn9QdGGsqco3p1ICARjSr/5rIpWVIltKvR+K36VKJjMLmubAchdbx7S
-	mVQmTUuE4+NFdFcw7qZA==;
+	List-Owner; bh=GxCOIt71sKR9Rd3E3MbfqaFgrUu156TRvHl1R1vn8qk=; b=2hJdYpmSVYjlCz
+	H2Ftlkqfelia/svf4UellLlOtqt6N5bPtLS6sS207CumYmR6JrzVObZMdQZVDV1PffckGesi0Sk49
+	QJ3KECmIt/p0utexpx0BxCmYyC6UqXev0bEdrryYLwcJyzjt1KvS4NXx8z3WjtVK/SHh6BtLevp2W
+	FUUYYkCi6gHAAdoRXDUszQJtI11/j7CgbQhGSKwyJ9f2IcXTQE1u2z+QIQmvGE7LlNNZxIaRrsow3
+	WqIsUMhkDJPgzP+wJ38vEXShJxDc2THpYy8anJfRDePZpMiDd98eaYcGgkpTRAxbMx+YhB1SQHMTa
+	UxmStcEi4HRRwjMtbtKA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1peEct-008y87-03;
-	Mon, 20 Mar 2023 12:28:35 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1peEe6-008yJE-1G;
+	Mon, 20 Mar 2023 12:29:50 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1peEcq-008y7X-0A;
-	Mon, 20 Mar 2023 12:28:33 +0000
+	id 1peEe3-008yIo-2j
+	for linux-phy@lists.infradead.org;
+	Mon, 20 Mar 2023 12:29:49 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 52D056147A;
-	Mon, 20 Mar 2023 12:28:31 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2DFEFC433EF;
-	Mon, 20 Mar 2023 12:28:29 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 1FF5D614C9
+	for <linux-phy@lists.infradead.org>; Mon, 20 Mar 2023 12:29:47 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 151FDC433EF;
+	Mon, 20 Mar 2023 12:29:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1679315310;
-	bh=yUkGfrDzv/jv1co34aVR1AP5xTMAmn01gRsBLr4S8GQ=;
+	s=k20201202; t=1679315386;
+	bh=20B73a8+yXiuP8j8PlkPoCncKWUYMWmPVxezsB7qHsw=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=CL/1HMM/X04RYvUGj7lqPfybLbi9BWzEw8B2gFbNCkFKw9nZ0I3X7sIa9ZfhERq1j
-	 o890phEUyQ/TknkCIuqfVxgzuHhhx5NZsGw52VVJCy7OnC9EoE/4Lmu4VPVoxR9xUv
-	 tKqhzzYKS6fh0xHBt4zd9XsmrRv/k9a6Y92tyjY2/WbBYl+d7N03CRcP4HJX7wJxWa
-	 uaGk+Xygx9qclppNZqqlTNSY7esbxbMte/dtOLqBpMHWdkPvoS13+CJs44T4R6v4FS
-	 0Rms5pYLzo+B8FuVCUz6GaCK7Qpe223UHEUstCmx02yHnYsCm7F7jqFxcLCRDA+NO0
-	 jbm/yB2bry3xA==
-Date: Mon, 20 Mar 2023 17:58:26 +0530
+	b=R5zDC6CGwSqgLluLLPP4iUC7e9Vc1LI8sV6Yn61vtSIvy5eA6KHYNSNCmRdre71oX
+	 q8aQViGvuyzN6tWvJeNEZiUDZlb5wt480KownBkWT0T9DNqwzUWLY/2Ui2KxOdkyvT
+	 E07Hk4KU0OrW4ZnGLzV9QIqgkmkywvrbSyII4jnotM3mfxRzOhDsoDjeEaH1y17mfO
+	 JSjAoBXYELYQxqCSvvRlt35acK5WaRODo2ROza5qbGv6b3iDMar/IfWHuEYfdeostN
+	 UgQ2bSRCr8WdthUQKJSuJbZVy3otLoJc38g19Azde8Tgjb1A9SXF+s/i8seP+R6+l9
+	 4GAGpNo4CxumA==
+Date: Mon, 20 Mar 2023 17:59:42 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Alain Volmat <avolmat@me.com>
-Cc: Patrice Chotard <patrice.chotard@foss.st.com>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] phy: st: miphy28lp: use _poll_timeout functions for waits
-Message-ID: <ZBhRal1CmLs6mIA3@matsya>
-References: <20230210224309.98452-1-avolmat@me.com>
+To: Mark Brown <broonie@kernel.org>
+Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
+	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH] phy: xgene: Depend on ARCH_XGENE rather than plain arm64
+Message-ID: <ZBhRtljJbBl2CKAj@matsya>
+References: <20230221-phy-build-deps-v1-1-7091bcbd16b0@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20230210224309.98452-1-avolmat@me.com>
+In-Reply-To: <20230221-phy-build-deps-v1-1-7091bcbd16b0@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230320_052832_131551_500E2CE5 
-X-CRM114-Status: UNSURE (   6.55  )
+X-CRM114-CacheID: sfid-20230320_052947_929079_5A8DABEA 
+X-CRM114-Status: UNSURE (   9.19  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -76,9 +75,12 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 10-02-23, 23:43, Alain Volmat wrote:
-> This commit introduces _poll_timeout functions usage instead of
-> wait loops waiting for a status bit.
+On 06-03-23, 17:05, Mark Brown wrote:
+> The X-Gene PHY driver is unlikely to be useful on a kernel without general
+> X-Gene support enabled but currently only depends on arm64 rather than the
+> specific platform support. Narrow the dependency to ARCH_XGENE like we do
+> for other X-Gene specific drivers to ensure that users who have configured
+> down the set of platforms enabled don't see the option.
 
 Applied, thanks
 
