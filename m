@@ -4,77 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4EEF8C7618A
-	for <linux-phy@archiver.kernel.org>; Mon, 20 Mar 2023 09:25:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 01C7DC7618A
+	for <linux-phy@archiver.kernel.org>; Mon, 20 Mar 2023 09:27:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BvK8g4Z8DIsEF32QIGo9GCTgNT3DGG26mmLkfy4O1uA=; b=w/YDb2QHH/HZBR
-	xKHseetKgPm5JKwPED+abJ7pbz9QpvS8e+pI40Jo9+F/Jm2VP6FJcXKt8Y4RCasIb9e+AhBvsE7d1
-	Tr+/cpnhBTaEnzvD8l8oOFXA+IQwH/DRw+PjTV+wMXPj27KXza6Co1FDVEZeVp4QW8hesjBsixxe5
-	Wz3tEAUm/J7ktzAvJ8BVmp7kqG9KF14SBO4fVXWEIxE5EBas5/fbhxNigoRbyshATQeXSINuZ9nZA
-	EcFTaj9qtURakMH6M6IThPaYiHheq1vGL1UrTXsbN9+9e6PhST2vX42eBsCoLou3d+cYfqQdt7Ai6
-	up7/4OvSRWKds0SOfyrQ==;
+	List-Owner; bh=Y/KE+xYHeXpeUUP+W+riAoQ+p43PA1GVyiGwTTWhRao=; b=QkpGzIadn23FN2
+	Ad2O4fknnDBgfK0RBPjgIR49i2VdCFa8dPAjcG8uVoVB/OSzn50g1E3FK3P08v0vHcYKV+ARkJ53H
+	dPO5WI8EMKbUXTS5DOHGsyLk4HJFEYrCBRtmvGKXBwGnYdaLWAM8/y2DeSoN6kORRAPAd9PfKHuqr
+	he0t/7ZBwBhmXCorz3lLUqjQMYUsDUOaFJW3o+azo2EnOdvRbf7728LHbAqEcXZnV5Jv8NK2Halor
+	1FCDa2mmFv6N9D+2PH9uB1meABnHfQ4Xo2wSdAjJdSBGbZ8xs6TTc/FLQtKz2NfMOLvSEwzK4KPaW
+	pRTVnNEgc+qsbda/alOA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1peBlJ-008Tlr-3D;
-	Mon, 20 Mar 2023 09:25:06 +0000
-Received: from pandora.armlinux.org.uk ([2001:4d48:ad52:32c8:5054:ff:fe00:142])
+	id 1peBnL-008U7R-1t;
+	Mon, 20 Mar 2023 09:27:11 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1peBlE-008Tje-0o
+	id 1peBnJ-008U6V-0Z
 	for linux-phy@lists.infradead.org;
-	Mon, 20 Mar 2023 09:25:02 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
-	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
-	List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
-	bh=V4Ic3CoIN3yLEDl4ZrFprKL8VDhfVNu/6xK0WkJsbGg=; b=oFFZpgYrVUmjwZ9Psb6fMcDoII
-	PI37y50wljwMMECGXJBNlGVGnBH150XU3raIqtWeWfSHWTRUNDDV/xTBg8B+ieE/448kN7u4cGQP4
-	GFWgPa65zXsK4aY32W2XigRxPBZQXm1KHfcSTXQBuLOQmzgUG2EKHrIR4Eatq3wRZw8no1FvuJFC6
-	GVajieQ5ejInjjkF92+q/ARLpPWGxp4bUszPu+K3tOINhEXJs0ALVq2jjRHwupUJPoV+cn/60Gc+r
-	n6oI+GnJSxAjpTJDt0+ybaGTrIaZrGc7Vv50y4hevmxuK/vqermAZmgo448gxAWl+mAuRtQ+1iNEQ
-	nrNG4Qzw==;
-Received: from shell.armlinux.org.uk ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:34076)
-	by pandora.armlinux.org.uk with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.94.2)
-	(envelope-from <linux@armlinux.org.uk>)
-	id 1peBl4-00075E-Af; Mon, 20 Mar 2023 09:24:50 +0000
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.94.2)
-	(envelope-from <linux@shell.armlinux.org.uk>)
-	id 1peBl0-0006P2-5A; Mon, 20 Mar 2023 09:24:46 +0000
-Date: Mon, 20 Mar 2023 09:24:46 +0000
-From: "Russell King (Oracle)" <linux@armlinux.org.uk>
-To: Vinod Koul <vkoul@kernel.org>
-Cc: Colin Foster <colin.foster@in-advantage.com>,
-	linux-phy@lists.infradead.org, netdev@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Paolo Abeni <pabeni@redhat.com>, Jakub Kicinski <kuba@kernel.org>,
-	Eric Dumazet <edumazet@google.com>,
-	"David S. Miller" <davem@davemloft.net>,
-	Florian Fainelli <f.fainelli@gmail.com>,
-	Andrew Lunn <andrew@lunn.ch>, UNGLinuxDriver@microchip.com,
-	Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Claudiu Manoil <claudiu.manoil@nxp.com>,
-	Vladimir Oltean <vladimir.oltean@nxp.com>,
-	Lee Jones <lee@kernel.org>
-Subject: Re: [PATCH v2 net-next 1/9] phy: phy-ocelot-serdes: add ability to
- be used in a non-syscon configuration
-Message-ID: <ZBgmXplfA/Q3/1dC@shell.armlinux.org.uk>
-References: <20230317185415.2000564-1-colin.foster@in-advantage.com>
- <20230317185415.2000564-2-colin.foster@in-advantage.com>
- <ZBgeKM50e1vt+ho1@matsya>
+	Mon, 20 Mar 2023 09:27:10 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id B7115612DF;
+	Mon, 20 Mar 2023 09:27:08 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8B7C7C433EF;
+	Mon, 20 Mar 2023 09:27:07 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1679304428;
+	bh=VzoV8gJ0BND3+ou5PUHHzjX5md7tjkjfvtMfbIyIeGI=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=Kf6nzbduO0QKxjvOJ9kB1OtkL6AKKYIhGpPJqUVKQBjAheZOe8KkyHY/MfPRXiowe
+	 XkSoNZlHqpdFgZDbP5d9YzwFWXv44j/KIkjnQBQMt+dfgx0pkhpIQ/y45A3P4mQ6wZ
+	 OZuhlvip+ZPcbVbCgwPJ7xuzSZWOsBbySL85EIduYa+pwo08dVN8/VBHls5+Ip04MR
+	 LfRheqihkH9fPy/JcQWbumI8k4cJE8QumhU0zuBwhLMu5AXgEbA2WfPyg0Igl7Yrlh
+	 b81sZ77BidakjiHKhOFQuz3XfwFehuENHjCKXvo76rfX0WpL4WjtE+3XU+zrvcIO1c
+	 lA6GrmJeOmwxA==
+Date: Mon, 20 Mar 2023 14:57:03 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+Cc: andersson@kernel.org, lpieralisi@kernel.org, robh@kernel.org,
+	kw@linux.com, krzysztof.kozlowski+dt@linaro.org,
+	konrad.dybcio@linaro.org, bhelgaas@google.com, kishon@kernel.org,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org,
+	devicetree@vger.kernel.org
+Subject: Re: [PATCH v3 11/13] phy: qcom-qmp-pcie: Split out EP related init
+ sequence for SDX55
+Message-ID: <ZBgm5zCth1L2pvJg@matsya>
+References: <20230308082424.140224-1-manivannan.sadhasivam@linaro.org>
+ <20230308082424.140224-12-manivannan.sadhasivam@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <ZBgeKM50e1vt+ho1@matsya>
+In-Reply-To: <20230308082424.140224-12-manivannan.sadhasivam@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230320_022500_289876_87E997E6 
-X-CRM114-Status: GOOD (  13.22  )
+X-CRM114-CacheID: sfid-20230320_022709_252847_D21D32D8 
+X-CRM114-Status: UNSURE (   6.76  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,34 +81,14 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Mar 20, 2023 at 02:19:44PM +0530, Vinod Koul wrote:
-> On 17-03-23, 11:54, Colin Foster wrote:
-> > The phy-ocelot-serdes module has exclusively been used in a syscon setup,
-> > from an internal CPU. The addition of external control of ocelot switches
-> > via an existing MFD implementation means that syscon is no longer the only
-> > interface that phy-ocelot-serdes will see.
-> > 
-> > In the MFD configuration, an IORESOURCE_REG resource will exist for the
-> > device. Utilize this resource to be able to function in both syscon and
-> > non-syscon configurations.
-> 
-> Applied to phy/next, thanks
+On 08-03-23, 13:54, Manivannan Sadhasivam wrote:
+> In preparation for adding RC support, let's split out the EP related init
+> sequence so that the common sequence could be reused by RC as well.
 
-Please read the netdev FAQ. Patches sent to netdev contain the tree that
-the submitter wishes the patches to be applied to.
-
-As a result, I see davem has just picked up the *entire* series which
-means that all patches are in net-next now. net-next is immutable.
-
-In any case, IMHO if this kind of fly-by cherry-picking from patch
-series is intended, it should be mentioned during review to give a
-chance for other maintainers to respond and give feedback. Not all
-submitters will know how individual maintainers work. Not all
-maintainers know how other maintainers work.
+Applied to phy/next, thanks
 
 -- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTP is here! 40Mbps down 10Mbps up. Decent connectivity at last!
+~Vinod
 
 -- 
 linux-phy mailing list
