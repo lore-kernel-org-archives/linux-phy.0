@@ -4,138 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3DDB0C6FD20
-	for <linux-phy@archiver.kernel.org>; Tue, 21 Mar 2023 20:19:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 268F1C6FD20
+	for <linux-phy@archiver.kernel.org>; Tue, 21 Mar 2023 22:33:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:
-	References:Cc:To:Subject:Date:Message-ID:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=9tm6Wnj56oFZxfbZm4HPmCpLTLUYvYpOIbpH0x6ttw8=; b=Zk1FVrc00BkLWEZ5KiS2AlcLU3
-	N2ccOezFOknc3rzVbBq69vlgzlBsR2AlXYM2Yg7lYq5h25CK9xlpwERq8JZ4sIv8lnPXTup296vpQ
-	sh9/7qBABRbW/NHQ058nzxWkwIRplVWYutUwsDXtXDyAh/ghvEBTr+k/1eeFh8XGAt/iOPBjCrBJq
-	911cRrcZSooBsGtPh0APaQgKbwZ3tqmuFumwq8ig/owTGu6/9TvpNtmd2Aizcc7qB0C+LuLrp/zsw
-	XBAsfMzYuWua1xsRRY9IC9bukGt3xwHSur+4ZL5QbjtgkOaVhX8xqB2fbmU9+FWsAufLQhofrglc4
-	Vp7TAq2g==;
+	List-Archive:List-Unsubscribe:List-Id:Date:Subject:Message-Id:References:
+	In-Reply-To:Cc:To:From:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=N7JLzA4iwTxSP28Tumau0xnvlM36r5Zjkm4Xq5DgiCE=; b=LwaWwvjmgGusJJ
+	lfM6lvifdmMxNdlGSlG5dFhA4hB8wZwtzkFXPhWk4Y1XX5qeMonyyWj0MWZk3flqYIROlo5KFFZVP
+	NnfJepyHmXgkYwCGJ0aLtprA+PNSSHd0N/PsGstqfwsf4KbbxV1QL+U8ffeNOmxXGYGKFp3JlCC/F
+	qOU14g2HfrDEUtWSva2YB8Y4icTOSLcNoYx5vGd0PDn+2lcLNI7Ftj8S4xcApXIUTQyL2QYLkQ39T
+	nI8nINUSZ79KhZWmI+CHgCpItwxHmXbrKE67T+ipdGU+2VULZpb7nDmshMzPHcwz67vS2qhudfJvm
+	aBZxkcFzOyUgToJBSuZw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1peiSQ-00DfAi-2G;
-	Tue, 21 Mar 2023 20:19:46 +0000
-Received: from mail-he1eur01hn0329.outbound.protection.outlook.com ([2a01:111:f400:fe1e::329] helo=EUR01-HE1-obe.outbound.protection.outlook.com)
+	id 1pekY5-00DytH-2D;
+	Tue, 21 Mar 2023 22:33:45 +0000
+Received: from mail-oi1-f176.google.com ([209.85.167.176])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1peiSL-00Df6m-0E;
-	Tue, 21 Mar 2023 20:19:43 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=seco.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=QsBYeAYE/RMBziy6MZeIKWp8Mmx6UC7ATwbuZYSz0a8=;
- b=IOfPN89K0fc9vG6nLKn+rhTc4wsR7CzIREFWiU5iqwrb/8Ydz/2YHcHJHQZKEl8UvfMzHCjvNBEydvfo7piLNQ43VonNQIeHaybtF5Ry4RJ4NIex7Dp8mcdvGdSfLHNQEyjkyU0RtCNlMtXqbdxdS+JVFC87cNE59Ws4hRNUVIVgVxSgNJJed4sOKrIMt+J5jML3PG9mlecwmO0a9vTeRfcp5ACLUZH2QfUse4eedLKkGh+EsH7NuRKz9nCdXJhGtY9oEDKidtOKiWNYtmIyDenTWEp7siaC2JEEsiePb8utRY1nGD5YVd1b267iTUOduFQ/DJTO0lLaEZfg3rYVbQ==
-Received: from DBBPR09CA0027.eurprd09.prod.outlook.com (2603:10a6:10:d4::15)
- by AS2PR03MB9930.eurprd03.prod.outlook.com (2603:10a6:20b:641::16) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6178.37; Tue, 21 Mar
- 2023 20:19:36 +0000
-Received: from DB8EUR05FT006.eop-eur05.prod.protection.outlook.com
- (2603:10a6:10:d4:cafe::c1) by DBBPR09CA0027.outlook.office365.com
- (2603:10a6:10:d4::15) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6178.37 via Frontend
- Transport; Tue, 21 Mar 2023 20:19:36 +0000
-X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 20.160.56.86)
- smtp.mailfrom=seco.com; dkim=pass (signature was verified)
- header.d=seco.com;dmarc=pass action=none header.from=seco.com;
-Received-SPF: Pass (protection.outlook.com: domain of seco.com designates
- 20.160.56.86 as permitted sender) receiver=protection.outlook.com;
- client-ip=20.160.56.86; helo=inpost-eu.tmcas.trendmicro.com; pr=C
-Received: from inpost-eu.tmcas.trendmicro.com (20.160.56.86) by
- DB8EUR05FT006.mail.protection.outlook.com (10.233.238.162) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.6222.16 via Frontend Transport; Tue, 21 Mar 2023 20:19:36 +0000
-Received: from outmta (unknown [192.168.82.133])
-	by inpost-eu.tmcas.trendmicro.com (Trend Micro CAS) with ESMTP id B46272008088A;
-	Tue, 21 Mar 2023 20:19:35 +0000 (UTC)
-Received: from EUR05-AM6-obe.outbound.protection.outlook.com (unknown [104.47.18.107])
-	by repre.tmcas.trendmicro.com (Trend Micro CAS) with ESMTPS id 3CD5620080075;
-	Tue, 21 Mar 2023 20:09:51 +0000 (UTC)
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=FemfmyCNxoPdAgF5gYZnIXXUDQYpDC/9/rJuCLJJCkDhlkCVjj6KzTV7aaukagAOr3N7xpX+4ZQCEA8EbTFocqfYLDzD4eGXE2JPnQZlWZUvL3MgCuAN0cfPTIOyXJwFFWbsW8m1EtjOhUpseNfyaf+heZ0kLgWNOi+yOcETJQXe1CMreT0tkjUtDBf4AtOHBNqPtrIm6HVWdGjlWWByjDtXTVEwDm9LYFPuvktidSRNnEVXB+sICbZKE3d51uNnxS+9TZI2La0Oz4kMIgWM2UHN0dI2qoL+vyP2YDY6QPfl1cPRRtKldiIs6M8XDW9aO9bAxuMoC3seYAZA+wPprA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=QsBYeAYE/RMBziy6MZeIKWp8Mmx6UC7ATwbuZYSz0a8=;
- b=Gx1jLfC3PkjWHv6SgKDliCiK1xAsKN3K1Vv+k5FoCCzRouLJGua6CUE/0KUsn+wsjHPmS40HKbS4/2SK/WuMj5vNIoqY6PAWNGnXzyHkpbmKKhy6eKnGIr0wVygm1VHyLPcZvuHwZTedFvtAZCryDzgHa3GWXcl0xnLnUKxrTjqdNlwxg49ohvPrq0qJwuin+29ttzZc150o0p6Irrehf6i/OmB6UYOOzqnkway65zFbbxDTbHlkbSzHM+WtQJ4lleigLUK+bpKOKIeNAEk4E3ehlei+umk/wdiECA/3x6b+deyt2Ub8I8sCGm4xl++UMYuISCInILeyw/xYDXM2Qg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=seco.com; dmarc=pass action=none header.from=seco.com;
- dkim=pass header.d=seco.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=seco.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=QsBYeAYE/RMBziy6MZeIKWp8Mmx6UC7ATwbuZYSz0a8=;
- b=IOfPN89K0fc9vG6nLKn+rhTc4wsR7CzIREFWiU5iqwrb/8Ydz/2YHcHJHQZKEl8UvfMzHCjvNBEydvfo7piLNQ43VonNQIeHaybtF5Ry4RJ4NIex7Dp8mcdvGdSfLHNQEyjkyU0RtCNlMtXqbdxdS+JVFC87cNE59Ws4hRNUVIVgVxSgNJJed4sOKrIMt+J5jML3PG9mlecwmO0a9vTeRfcp5ACLUZH2QfUse4eedLKkGh+EsH7NuRKz9nCdXJhGtY9oEDKidtOKiWNYtmIyDenTWEp7siaC2JEEsiePb8utRY1nGD5YVd1b267iTUOduFQ/DJTO0lLaEZfg3rYVbQ==
-Authentication-Results-Original: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=seco.com;
-Received: from DB9PR03MB8847.eurprd03.prod.outlook.com (2603:10a6:10:3dd::13)
- by GV2PR03MB8728.eurprd03.prod.outlook.com (2603:10a6:150:7c::13) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6178.37; Tue, 21 Mar
- 2023 20:19:22 +0000
-Received: from DB9PR03MB8847.eurprd03.prod.outlook.com
- ([fe80::dbcf:1089:3242:614e]) by DB9PR03MB8847.eurprd03.prod.outlook.com
- ([fe80::dbcf:1089:3242:614e%6]) with mapi id 15.20.6178.037; Tue, 21 Mar 2023
- 20:19:22 +0000
-Message-ID: <b0b5db38-cdbb-16eb-dfc0-cbc7e76d617c@seco.com>
-Date: Tue, 21 Mar 2023 16:19:06 -0400
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.4.0
-Subject: Re: [PATCH v12 03/13] dt-bindings: Convert gpio-mmio to yaml
-Content-Language: en-US
-To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
- <kishon@kernel.org>, linux-phy@lists.infradead.org
-Cc: Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- devicetree@vger.kernel.org, Madalin Bucur <madalin.bucur@nxp.com>,
- Camelia Alexandra Groza <camelia.groza@nxp.com>,
- Bagas Sanjaya <bagasdotme@gmail.com>, linux-arm-kernel@lists.infradead.org,
- linuxppc-dev@lists.ozlabs.org, Ioana Ciornei <ioana.ciornei@nxp.com>,
- Linus Walleij <linus.walleij@linaro.org>, Bartosz Golaszewski
- <brgl@bgdev.pl>, =?UTF-8?Q?Fern=c3=a1ndez_Rojas?= <noltari@gmail.com>,
- Jonas Gorski <jonas.gorski@gmail.com>, linux-gpio@vger.kernel.org
+	id 1pekY1-00DysH-0Z;
+	Tue, 21 Mar 2023 22:33:43 +0000
+Received: by mail-oi1-f176.google.com with SMTP id bj20so2871147oib.3;
+        Tue, 21 Mar 2023 15:33:39 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112; t=1679438018;
+        h=date:subject:message-id:references:in-reply-to:cc:to:from
+         :mime-version:content-transfer-encoding:x-gm-message-state:from:to
+         :cc:subject:date:message-id:reply-to;
+        bh=lq5IHN4ky6w3nFPQn7CkTtEA1+7XZPAY5dbicjXStOc=;
+        b=Q+JvJjmYOljo/QAw9xmrQLm0F4UZLoZCuUvDBQypbb5zhwCr4PgVCghoJ4giwzHMY8
+         Vf5ZssngRE3nqWUJCqwbG6uF5PMwDMOw6BkGWFMuXkgkzWq/+TXzxZ5lAqt551Jscol+
+         TygsURxxoOaCFSQoiDgraCgZpqO5pm7B4Q+ee4H0Ctp6WeTfyvXsXYJw005ZmPkEHJa4
+         iTRVSmBVVbPqRVKG16vNg0bntYKwLJz7YmZxyhn2WPPOPwlBrkN4D7GakZnV9zgzOyf+
+         MfpVMBJqryaZse4GxKd8pmkW0pYP1k4DG1d2BzhzP9qqANtw/+AlGPxAeMj8SHpo8WJK
+         HmoQ==
+X-Gm-Message-State: AO0yUKV7UJeC+wypiQh5s+//gk03mzMabKHn0jv44ARW3C2WTJ/++C2b
+	M9DthsVmr+GMgJP1xjRW8A==
+X-Google-Smtp-Source: AK7set+RTgO3GuSot4uEnORzZq3leOTPVHBZNtYNYKqkygCniCpnwFTc8h7YWpTGdM34MeQJSF3ztA==
+X-Received: by 2002:aca:1a09:0:b0:387:1e2d:f28c with SMTP id a9-20020aca1a09000000b003871e2df28cmr328398oia.40.1679438017104;
+        Tue, 21 Mar 2023 15:33:37 -0700 (PDT)
+Received: from robh_at_kernel.org (66-90-144-107.dyn.grandenetworks.net. [66.90.144.107])
+        by smtp.gmail.com with ESMTPSA id b20-20020a056870d1d400b001768b4759e5sm4681974oac.14.2023.03.21.15.33.35
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 21 Mar 2023 15:33:36 -0700 (PDT)
+Received: (nullmailer pid 1784094 invoked by uid 1000);
+	Tue, 21 Mar 2023 22:33:35 -0000
+MIME-Version: 1.0
+From: Rob Herring <robh@kernel.org>
+To: Sean Anderson <sean.anderson@seco.com>
+Cc: Camelia Alexandra Groza <camelia.groza@nxp.com>, linux-gpio@vger.kernel.org, Madalin Bucur <madalin.bucur@nxp.com>, linuxppc-dev@lists.ozlabs.org, Ioana Ciornei <ioana.ciornei@nxp.com>, Linus Walleij <linus.walleij@linaro.org>, Vinod Koul <vkoul@kernel.org>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, linux-phy@lists.infradead.org, Bagas Sanjaya <bagasdotme@gmail.com>, devicetree@vger.kernel.org, Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh+dt@kernel.org>, Bartosz Golaszewski <brgl@bgdev.pl>, Jonas Gorski <jonas.gorski@gmail.com>, linux-arm-kernel@lists.infradead.org, Fernández Rojas <noltari@gmail.com>
+In-Reply-To: <20230321201313.2507539-4-sean.anderson@seco.com>
 References: <20230321201313.2507539-1-sean.anderson@seco.com>
  <20230321201313.2507539-4-sean.anderson@seco.com>
-From: Sean Anderson <sean.anderson@seco.com>
-In-Reply-To: <20230321201313.2507539-4-sean.anderson@seco.com>
-X-ClientProxiedBy: MN2PR16CA0001.namprd16.prod.outlook.com
- (2603:10b6:208:134::14) To DB9PR03MB8847.eurprd03.prod.outlook.com
- (2603:10a6:10:3dd::13)
-MIME-Version: 1.0
-X-MS-TrafficTypeDiagnostic: 	DB9PR03MB8847:EE_|GV2PR03MB8728:EE_|DB8EUR05FT006:EE_|AS2PR03MB9930:EE_
-X-MS-Office365-Filtering-Correlation-Id: fa3f0b98-4e4e-4a3c-ac92-08db2a499765
-X-TrendMicro-CAS-OUT-LOOP-IDENTIFIER: 656f966764b7fb185830381c646b41a1
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam-Untrusted: BCL:0;
-X-Microsoft-Antispam-Message-Info-Original:  HgHuAedFiAxwhdmMvMEJq4+Lskskuf8vbSfKqZszpCtpg6zB7u0NA2WWpI+I4pP6+ULcl+nJrDGFJSoPTEj9DUIPyKUpPRtMAaa+8imwoCgBcIDcgXVr8bzOHpN0Fy4LVRy18fxyXeoiuFOvZ4oFomiKmcV84s4rOBh03CRRWtvvICs7vSBZS+tBve/1Z7FqVFJdtvQ0S7LbZxBIlUIY57rqNgkCJY1K6TzFoTRaZzO2FCjqyneQYreVtah7rGFr5tH2IWpb5x9SNWo/Dzdhb4wmhRtUtJEqtoWO8etinwrKV6QfG7CJA4sP7/2N9rMCAdviaPZpaq2Unnjiaf4b67P9JUrplU/5VZFs0mmJAGOpKyFsaqxAHFHk9Sp/hjC2cFlI+GTOmOSBuKr7XJQjqvh1TRVTowNrHrO9dUecq6UYYE3MZn8M8itSb5v2QzeIrv/KIIWdBsA34KNYRVlJX6cWRz7wL6CL/j54CrU9V/imMHqg19BQRicxPb8Xmb/FvTkyyYenZlBjf2mgakZOhZwNxF1bIEi3KlnBUIIUDZTqsPCemJmiooXQi3dmCxlOFi06jQ94J/qiR9VtNT5T2xNTugoNpT+gQl9dCgQVMRSLj6SbFq0BWW0mZbyRXh5YqovKTYAwhK9K9oJIJmLXQy8zXp5+2qbX1Vdh5ufeEbAmSngzekSVH/dN4XEWeR2Or/nic5MxXEdrkDJ/NWGyLI2zP9o8NLjitaXtxipi8Fx2XnpigzdExCkrYKC7rlIp
-X-Forefront-Antispam-Report-Untrusted:  CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DB9PR03MB8847.eurprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230025)(39860400002)(346002)(136003)(376002)(366004)(396003)(451199018)(6506007)(54906003)(2616005)(186003)(26005)(6486002)(6512007)(966005)(6666004)(316002)(66574015)(31686004)(4326008)(66476007)(52116002)(66556008)(53546011)(110136005)(66946007)(478600001)(8676002)(83380400001)(5660300002)(44832011)(7416002)(30864003)(41300700001)(8936002)(2906002)(38350700002)(38100700002)(31696002)(86362001)(36756003)(43740500002)(45980500001);DIR:OUT;SFP:1101;
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: GV2PR03MB8728
-X-EOPAttributedMessage: 0
-X-MS-Exchange-Transport-CrossTenantHeadersStripped:  DB8EUR05FT006.eop-eur05.prod.protection.outlook.com
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id-Prvs: 	ed0936b6-70ce-4e6f-01b1-08db2a498ee9
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 	mCatBZZSeZssREjYoeMzZYQuPBgq1cdLk8kh9D8EsvtzCFs5v5ccRmdLaOI8SHMUPtB2EZN8balnunDKAo5aXxwpiN38AABt5n+JyZ5nMXNqKk5+WopUpJAzI19D42yBw+Gc0/5PFPWeIXqIM+Tfd1O7SxjJeXrl9XWKypH6bRNa/G7KvE0Jora46HigFnTuc96FDRoCTgmFhbGG7vbfjs8AYKL4bzkyPrsbVID9hNpOus69HdRblXJcKZQ/dWu+Vh3UxNFagARLeN7bon/SL8I20WaBqC0yYFL1PXKhz4SPDGdOOZiojx0hd4beujzvf+xD8bsR8ZK5kZ7FS/fjlRl2y3O6iyWE9nOYh16Rv0rIFQLCtIOlWn+RC3jd65h9wJ1AbgTJ3fQ2GsN9ryyp+kT6CJ7nQBq4BLwojnzxRuey26I5Pr6tUxMx9Ucuf8mUVElz4u1wg+vmlbZV/n5C7LehNExsnAIoFvq7PA+psNiflyIH7Gw7uI+vRJ4fBiI31bi66ikp20n+TdRBeQw/iNs4eGoLXlNHYwj2g0J1+U52pq3kyrvvBW2Z4O6sXuQaoVpmnHvAVT406IqbB4cyQgYuMwGrl8ynE5ra6e3jwzQFUJek1a4oNWVhhxkvKma9lGRgS6h2URcvPOC/u5CcUoO6flqz84KIJF/1sXJY0BeRICmFmXDcELmX22ZbmiYo7LUT3gmFiwahpCjS9PH6RUMml7dEAmfB/x9ihE7nCRfBRQyFJvY5RZmLNXX9o78eofPenC2XVG4+w7BCWwRu0wSy3R6UGri0TIpmwtSZRn8=
-X-Forefront-Antispam-Report: 	CIP:20.160.56.86;CTRY:NL;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:inpost-eu.tmcas.trendmicro.com;PTR:inpost-eu.tmcas.trendmicro.com;CAT:NONE;SFS:(13230025)(396003)(136003)(376002)(346002)(39860400002)(5400799012)(451199018)(46966006)(36840700001)(40470700004)(30864003)(5660300002)(7416002)(336012)(6666004)(6486002)(966005)(66574015)(40480700001)(41300700001)(31696002)(47076005)(478600001)(83380400001)(316002)(54906003)(4326008)(110136005)(8936002)(70206006)(36756003)(82310400005)(86362001)(36860700001)(8676002)(70586007)(40460700003)(34070700002)(7636003)(7596003)(2906002)(356005)(82740400003)(2616005)(186003)(31686004)(44832011)(26005)(6512007)(53546011)(6506007)(43740500002)(12100799024);DIR:OUT;SFP:1501;
-X-OriginatorOrg: seco.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 21 Mar 2023 20:19:36.3121
- (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: fa3f0b98-4e4e-4a3c-ac92-08db2a499765
-X-MS-Exchange-CrossTenant-Id: bebe97c3-6438-442e-ade3-ff17aa50e733
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=bebe97c3-6438-442e-ade3-ff17aa50e733;Ip=[20.160.56.86];Helo=[inpost-eu.tmcas.trendmicro.com]
-X-MS-Exchange-CrossTenant-AuthSource: 	DB8EUR05FT006.eop-eur05.prod.protection.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Anonymous
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS2PR03MB9930
+Message-Id: <167943790379.1778436.6467675853920923217.robh@kernel.org>
+Subject: Re: [PATCH v12 03/13] dt-bindings: Convert gpio-mmio to yaml
+Date: Tue, 21 Mar 2023 17:33:35 -0500
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230321_131941_278295_6E6F7DBB 
-X-CRM114-Status: GOOD (  29.28  )
+X-CRM114-CacheID: sfid-20230321_153341_219467_D0885322 
+X-CRM114-Status: GOOD (  22.32  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -147,203 +75,103 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gMy8yMS8yMyAxNjoxMywgU2VhbiBBbmRlcnNvbiB3cm90ZToKPiBUaGlzIGlzIGEgZ2VuZXJp
-YyBiaW5kaW5nIGZvciBzaW1wbGUgTU1JTyBHUElPIGNvbnRyb2xsZXJzLiBBbHRob3VnaCB3ZQo+
-IGhhdmUgYSBzaW5nbGUgZHJpdmVyIGZvciB0aGVzZSBjb250cm9sbGVycywgdGhleSB3ZXJlIHBy
-ZXZpb3VzbHkgc3ByZWFkCj4gb3ZlciBzZXZlcmFsIGZpbGVzLiBDb25zb2xpZGF0ZSB0aGVtLiBU
-aGUgcmVnaXN0ZXIgZGVzY3JpcHRpb25zIGFyZQo+IGFkYXB0ZWQgZnJvbSB0aGUgY29tbWVudHMg
-aW4gdGhlIHNvdXJjZS4gVGhlcmUgaXMgbm8gc2V0IG9yZGVyIGZvciB0aGUKPiByZWdpc3RlcnMs
-IGFuZCBzb21lIHJlZ2lzdGVycyBtYXkgYmUgb21pdHRlZC4gQmVjYXVzZSBvZiB0aGlzLCByZWct
-bmFtZXMKPiBpcyBtYW5kYXRvcnksIGFuZCBubyBvcmRlciBpcyBzcGVjaWZpZWQuCj4gCj4gUmVu
-YW1lIGJyY20sYmNtNjM0NS1ncGlvIHRvIGJyY20sYmNtNjN4eC1ncGlvIHRvIHJlZmxlY3QgdGhh
-dCBiY202MzQ1Cj4gaGFzIG1vdmVkLgo+IAo+IFNpZ25lZC1vZmYtYnk6IFNlYW4gQW5kZXJzb24g
-PHNlYW4uYW5kZXJzb25Ac2Vjby5jb20+Cj4gUmV2aWV3ZWQtYnk6IExpbnVzIFdhbGxlaWogPGxp
-bnVzLndhbGxlaWpAbGluYXJvLm9yZz4KPiAtLS0KPiBMaW51cyBvciBCYXJ0b3N6LCBmZWVsIGZy
-ZWUgdG8gcGljayB0aGlzIHVwIGFzIHRoZSByZXN0IG9mIHRoaXMgc2VyaWVzCj4gbWF5IG5vdCBi
-ZSBtZXJnZWQgYW55IHRpbWUgc29vbi4KPiAKPiBDaGFuZ2VzIGluIHYxMjoKPiAtIFB1dCBjb21w
-YXRpYmxlIGZpcnN0Cj4gLSBLZWVwIGdwaW8tY29udHJvbGxlciB0byBvbmUgbGluZQo+IC0gQWRk
-IGxpdHRsZS1lbmRpYW4gcHJvcGVydHkKPiAtIEFscGhhYmV0aXplIGNvbXBhdGlibGVzCj4gLSBS
-ZW1vdmUgc29tZSBjb21tZW50cwo+IC0gUmVtb3ZlIHNvbWUgZXhhbXBsZXMgd2l0aCBpbnN1ZmZp
-Y2llbnQgbm92ZWx0eQo+IAo+IENoYW5nZXMgaW4gdjExOgo+IC0gS2VlcCBlbXB0eSAob3IgYWxt
-b3N0LWVtcHR5KSBwcm9wZXJ0aWVzIG9uIGEgc2luZ2xlIGxpbmUKPiAtIERvbid0IHVzZSB8IHVu
-bmVjZXNzYXJpbHkKPiAtIFVzZSBncGlvIGFzIHRoZSBub2RlIG5hbWUgZm9yIGV4YW1wbGVzCj4g
-LSBSZW5hbWUgYnJjbSxiY202MzQ1LWdwaW8ueWFtbCB0byBicmNtLGJjbTYzeHgtZ3Bpby55YW1s
-Cj4gCj4gQ2hhbmdlcyBpbiB2MTA6Cj4gLSBOZXcKPiAKPiAgLi4ubTYzNDUtZ3Bpby55YW1sID0+
-IGJyY20sYmNtNjN4eC1ncGlvLnlhbWx9IHwgIDE2ICstLQo+ICAuLi4vZGV2aWNldHJlZS9iaW5k
-aW5ncy9ncGlvL2dwaW8tbW1pby55YW1sICAgfCAxMTcgKysrKysrKysrKysrKysrKysrCj4gIC4u
-Li9iaW5kaW5ncy9ncGlvL25pLDE2OTQ0NS1uYW5kLWdwaW8udHh0ICAgICB8ICAzOCAtLS0tLS0K
-PiAgLi4uL2RldmljZXRyZWUvYmluZGluZ3MvZ3Bpby93ZCxtYmwtZ3Bpby50eHQgIHwgIDM4IC0t
-LS0tLQo+ICA0IGZpbGVzIGNoYW5nZWQsIDExOCBpbnNlcnRpb25zKCspLCA5MSBkZWxldGlvbnMo
-LSkKPiAgcmVuYW1lIERvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9ncGlvL3ticmNt
-LGJjbTYzNDUtZ3Bpby55YW1sID0+IGJyY20sYmNtNjN4eC1ncGlvLnlhbWx9ICg3OCUpCj4gIGNy
-ZWF0ZSBtb2RlIDEwMDY0NCBEb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvZ3Bpby9n
-cGlvLW1taW8ueWFtbAo+ICBkZWxldGUgbW9kZSAxMDA2NDQgRG9jdW1lbnRhdGlvbi9kZXZpY2V0
-cmVlL2JpbmRpbmdzL2dwaW8vbmksMTY5NDQ1LW5hbmQtZ3Bpby50eHQKPiAgZGVsZXRlIG1vZGUg
-MTAwNjQ0IERvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9ncGlvL3dkLG1ibC1ncGlv
-LnR4dAo+IAo+IGRpZmYgLS1naXQgYS9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3Mv
-Z3Bpby9icmNtLGJjbTYzNDUtZ3Bpby55YW1sIGIvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2Jp
-bmRpbmdzL2dwaW8vYnJjbSxiY202M3h4LWdwaW8ueWFtbAo+IHNpbWlsYXJpdHkgaW5kZXggNzgl
-Cj4gcmVuYW1lIGZyb20gRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2dwaW8vYnJj
-bSxiY202MzQ1LWdwaW8ueWFtbAo+IHJlbmFtZSB0byBEb2N1bWVudGF0aW9uL2RldmljZXRyZWUv
-YmluZGluZ3MvZ3Bpby9icmNtLGJjbTYzeHgtZ3Bpby55YW1sCgpJIGZvcmdvdCB0byB1cGRhdGUg
-cmVmZXJlbmNlcyB0byB0aGlzIGZpbGUuIFdpbGwgZml4IGZvciB2MTMuCgotLVNlYW4KCgo+IGlu
-ZGV4IDRkNjlmNzlkZjg1OS4uZTExZjRhZjQ5YzUyIDEwMDY0NAo+IC0tLSBhL0RvY3VtZW50YXRp
-b24vZGV2aWNldHJlZS9iaW5kaW5ncy9ncGlvL2JyY20sYmNtNjM0NS1ncGlvLnlhbWwKPiArKysg
-Yi9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvZ3Bpby9icmNtLGJjbTYzeHgtZ3Bp
-by55YW1sCj4gQEAgLTQsNyArNCw3IEBACj4gICRpZDogaHR0cDovL2RldmljZXRyZWUub3JnL3Nj
-aGVtYXMvZ3Bpby9icmNtLGJjbTYzNDUtZ3Bpby55YW1sIwo+ICAkc2NoZW1hOiBodHRwOi8vZGV2
-aWNldHJlZS5vcmcvbWV0YS1zY2hlbWFzL2NvcmUueWFtbCMKPiAgCj4gLXRpdGxlOiBCcm9hZGNv
-bSBCQ002MzQ1IEdQSU8gY29udHJvbGxlcgo+ICt0aXRsZTogQnJvYWRjb20gQkNNNjN4eCBHUElP
-IGNvbnRyb2xsZXIKPiAgCj4gIG1haW50YWluZXJzOgo+ICAgIC0gw4FsdmFybyBGZXJuw6FuZGV6
-IFJvamFzIDxub2x0YXJpQGdtYWlsLmNvbT4KPiBAQCAtMTgsOCArMTgsNiBAQCBkZXNjcmlwdGlv
-bjogfCsKPiAgCj4gICAgQkNNNjMzOCBoYXZlIDgtYml0IGRhdGEgYW5kIGRpcm91dCByZWdpc3Rl
-cnMsIHdoZXJlIEdQSU8gc3RhdGUgY2FuIGJlIHJlYWQKPiAgICBhbmQvb3Igd3JpdHRlbiwgYW5k
-IHRoZSBkaXJlY3Rpb24gY2hhbmdlZCBmcm9tIGlucHV0IHRvIG91dHB1dC4KPiAtICBCQ002MzQ1
-IGhhdmUgMTYtYml0IGRhdGEgYW5kIGRpcm91dCByZWdpc3RlcnMsIHdoZXJlIEdQSU8gc3RhdGUg
-Y2FuIGJlIHJlYWQKPiAtICBhbmQvb3Igd3JpdHRlbiwgYW5kIHRoZSBkaXJlY3Rpb24gY2hhbmdl
-ZCBmcm9tIGlucHV0IHRvIG91dHB1dC4KPiAgICBCQ002MzE4LCBCQ002MzI4LCBCQ002MzU4LCBC
-Q002MzYyLCBCQ002MzY4IGFuZCBCQ002MzI2OCBoYXZlIDMyLWJpdCBkYXRhCj4gICAgYW5kIGRp
-cm91dCByZWdpc3RlcnMsIHdoZXJlIEdQSU8gc3RhdGUgY2FuIGJlIHJlYWQgYW5kL29yIHdyaXR0
-ZW4sIGFuZCB0aGUKPiAgICBkaXJlY3Rpb24gY2hhbmdlZCBmcm9tIGlucHV0IHRvIG91dHB1dC4K
-PiBAQCAtMjksNyArMjcsNiBAQCBwcm9wZXJ0aWVzOgo+ICAgICAgZW51bToKPiAgICAgICAgLSBi
-cmNtLGJjbTYzMTgtZ3Bpbwo+ICAgICAgICAtIGJyY20sYmNtNjMyOC1ncGlvCj4gLSAgICAgIC0g
-YnJjbSxiY202MzQ1LWdwaW8KPiAgICAgICAgLSBicmNtLGJjbTYzNTgtZ3Bpbwo+ICAgICAgICAt
-IGJyY20sYmNtNjM2Mi1ncGlvCj4gICAgICAgIC0gYnJjbSxiY202MzY4LWdwaW8KPiBAQCAtNjMs
-MTcgKzYwLDYgQEAgcmVxdWlyZWQ6Cj4gIGFkZGl0aW9uYWxQcm9wZXJ0aWVzOiBmYWxzZQo+ICAK
-PiAgZXhhbXBsZXM6Cj4gLSAgLSB8Cj4gLSAgICBncGlvQGZmZmUwNDA2IHsKPiAtICAgICAgY29t
-cGF0aWJsZSA9ICJicmNtLGJjbTYzNDUtZ3BpbyI7Cj4gLSAgICAgIHJlZy1uYW1lcyA9ICJkaXJv
-dXQiLCAiZGF0IjsKPiAtICAgICAgcmVnID0gPDB4ZmZmZTA0MDYgMj4sIDwweGZmZmUwNDBhIDI+
-Owo+IC0gICAgICBuYXRpdmUtZW5kaWFuOwo+IC0KPiAtICAgICAgZ3Bpby1jb250cm9sbGVyOwo+
-IC0gICAgICAjZ3Bpby1jZWxscyA9IDwyPjsKPiAtICAgIH07Cj4gLQo+ICAgIC0gfAo+ICAgICAg
-Z3Bpb0AwIHsKPiAgICAgICAgY29tcGF0aWJsZSA9ICJicmNtLGJjbTYzMjY4LWdwaW8iOwo+IGRp
-ZmYgLS1naXQgYS9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvZ3Bpby9ncGlvLW1t
-aW8ueWFtbCBiL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9ncGlvL2dwaW8tbW1p
-by55YW1sCj4gbmV3IGZpbGUgbW9kZSAxMDA2NDQKPiBpbmRleCAwMDAwMDAwMDAwMDAuLmIzOTRl
-MDU4MjU2ZQo+IC0tLSAvZGV2L251bGwKPiArKysgYi9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUv
-YmluZGluZ3MvZ3Bpby9ncGlvLW1taW8ueWFtbAo+IEBAIC0wLDAgKzEsMTE3IEBACj4gKyMgU1BE
-WC1MaWNlbnNlLUlkZW50aWZpZXI6IChHUEwtMi4wLW9ubHkgT1IgQlNELTItQ2xhdXNlKQo+ICsl
-WUFNTCAxLjIKPiArLS0tCj4gKyRpZDogaHR0cDovL2RldmljZXRyZWUub3JnL3NjaGVtYXMvZ3Bp
-by9ncGlvLW1taW8ueWFtbCMKPiArJHNjaGVtYTogaHR0cDovL2RldmljZXRyZWUub3JnL21ldGEt
-c2NoZW1hcy9jb3JlLnlhbWwjCj4gKwo+ICt0aXRsZTogR2VuZXJpYyBNTUlPIEdQSU8KPiArCj4g
-K21haW50YWluZXJzOgo+ICsgIC0gTGludXMgV2FsbGVpaiA8bGludXMud2FsbGVpakBsaW5hcm8u
-b3JnPgo+ICsgIC0gQmFydG9zeiBHb2xhc3pld3NraSA8YnJnbEBiZ2Rldi5wbD4KPiArCj4gK2Rl
-c2NyaXB0aW9uOgo+ICsgIFNvbWUgc2ltcGxlIEdQSU8gY29udHJvbGxlcnMgbWF5IGNvbnNpc3Qg
-b2YgYSBzaW5nbGUgZGF0YSByZWdpc3RlciBvciBhIHBhaXIKPiArICBvZiBzZXQvY2xlYXItYml0
-IHJlZ2lzdGVycy4gU3VjaCBjb250cm9sbGVycyBhcmUgY29tbW9uIGZvciBnbHVlIGxvZ2ljIGlu
-Cj4gKyAgRlBHQXMgb3IgQVNJQ3MuIENvbW1vbmx5LCB0aGVzZSBjb250cm9sbGVycyBhcmUgYWNj
-ZXNzZWQgb3ZlciBtZW1vcnktbWFwcGVkCj4gKyAgTkFORC1zdHlsZSBwYXJhbGxlbCBidXNzZXMu
-Cj4gKwo+ICtwcm9wZXJ0aWVzOgo+ICsgIGNvbXBhdGlibGU6Cj4gKyAgICBlbnVtOgo+ICsgICAg
-ICAtIGJyY20sYmNtNjM0NS1ncGlvCj4gKyAgICAgIC0gbmksMTY5NDQ1LW5hbmQtZ3Bpbwo+ICsg
-ICAgICAtIHdkLG1ibC1ncGlvICMgV2VzdGVybiBEaWdpdGFsIE15Qm9vayBMaXZlIG1lbW9yeS1t
-YXBwZWQgR1BJTyBjb250cm9sbGVyCj4gKwo+ICsgIGJpZy1lbmRpYW46IHRydWUKPiArCj4gKyAg
-JyNncGlvLWNlbGxzJzoKPiArICAgIGNvbnN0OiAyCj4gKwo+ICsgIGdwaW8tY29udHJvbGxlcjog
-dHJ1ZQo+ICsKPiArICBsaXR0bGUtZW5kaWFuOiB0cnVlCj4gKwo+ICsgIHJlZzoKPiArICAgIG1p
-bkl0ZW1zOiAxCj4gKyAgICBkZXNjcmlwdGlvbjoKPiArICAgICAgQSBsaXN0IG9mIHJlZ2lzdGVy
-cyBpbiB0aGUgY29udHJvbGxlci4gVGhlIHdpZHRoIG9mIGVhY2ggcmVnaXN0ZXIgaXMKPiArICAg
-ICAgZGV0ZXJtaW5lZCBieSBpdHMgc2l6ZS4gQWxsIHJlZ2lzdGVycyBtdXN0IGhhdmUgdGhlIHNh
-bWUgd2lkdGguIFRoZSBudW1iZXIKPiArICAgICAgb2YgR1BJT3MgaXMgc2V0IGJ5IHRoZSB3aWR0
-aCwgd2l0aCBiaXQgMCBjb3JyZXNwb25kaW5nIHRvIEdQSU8gMC4KPiArICAgIGl0ZW1zOgo+ICsg
-ICAgICAtIGRlc2NyaXB0aW9uOgo+ICsgICAgICAgICAgUmVnaXN0ZXIgdG8gUkVBRCB0aGUgdmFs
-dWUgb2YgdGhlIEdQSU8gbGluZXMuIElmIEdQSU8gbGluZSBpcyBoaWdoLAo+ICsgICAgICAgICAg
-dGhlIGJpdCB3aWxsIGJlIHNldC4gSWYgdGhlIEdQSU8gbGluZSBpcyBsb3csIHRoZSBiaXQgd2ls
-bCBiZSBjbGVhcmVkLgo+ICsgICAgICAgICAgVGhpcyByZWdpc3RlciBtYXkgYWxzbyBiZSB1c2Vk
-IHRvIGRyaXZlIEdQSU9zIGlmIHRoZSBTRVQgcmVnaXN0ZXIgaXMKPiArICAgICAgICAgIG9taXR0
-ZWQuCj4gKyAgICAgIC0gZGVzY3JpcHRpb246Cj4gKyAgICAgICAgICBSZWdpc3RlciB0byBTRVQg
-dGhlIHZhbHVlIG9mIHRoZSBHUElPIGxpbmVzLiBTZXR0aW5nIGEgYml0IGluIHRoaXMKPiArICAg
-ICAgICAgIHJlZ2lzdGVyIHdpbGwgZHJpdmUgdGhlIEdQSU8gbGluZSBoaWdoLgo+ICsgICAgICAt
-IGRlc2NyaXB0aW9uOgo+ICsgICAgICAgICAgUmVnaXN0ZXIgdG8gQ0xFQVIgdGhlIHZhbHVlIG9m
-IHRoZSBHUElPIGxpbmVzLiBTZXR0aW5nIGEgYml0IGluIHRoaXMKPiArICAgICAgICAgIHJlZ2lz
-dGVyIHdpbGwgZHJpdmUgdGhlIEdQSU8gbGluZSBsb3cuIElmIHRoaXMgcmVnaXN0ZXIgaXMgb21p
-dHRlZCwKPiArICAgICAgICAgIHRoZSBTRVQgcmVnaXN0ZXIgd2lsbCBiZSB1c2VkIHRvIGNsZWFy
-IHRoZSBHUElPIGxpbmVzIGFzIHdlbGwsIGJ5Cj4gKyAgICAgICAgICBhY3RpdmVseSB3cml0aW5n
-IHRoZSBsaW5lIHdpdGggMC4KPiArICAgICAgLSBkZXNjcmlwdGlvbjoKPiArICAgICAgICAgIFJl
-Z2lzdGVyIHRvIHNldCB0aGUgbGluZSBhcyBPVVRQVVQuIFNldHRpbmcgYSBiaXQgaW4gdGhpcyBy
-ZWdpc3Rlcgo+ICsgICAgICAgICAgd2lsbCB0dXJuIHRoYXQgbGluZSBpbnRvIGFuIG91dHB1dCBs
-aW5lLiBDb252ZXJzZWx5LCBjbGVhcmluZyBhIGJpdAo+ICsgICAgICAgICAgd2lsbCB0dXJuIHRo
-YXQgbGluZSBpbnRvIGFuIGlucHV0Lgo+ICsgICAgICAtIGRlc2NyaXB0aW9uOgo+ICsgICAgICAg
-ICAgUmVnaXN0ZXIgdG8gc2V0IHRoaXMgbGluZSBhcyBJTlBVVC4gU2V0dGluZyBhIGJpdCBpbiB0
-aGlzIHJlZ2lzdGVyCj4gKyAgICAgICAgICB3aWxsIHR1cm4gdGhhdCBsaW5lIGludG8gYW4gaW5w
-dXQgbGluZS4gQ29udmVyc2VseSwgY2xlYXJpbmcgYSBiaXQKPiArICAgICAgICAgIHdpbGwgdHVy
-biB0aGF0IGxpbmUgaW50byBhbiBvdXRwdXQuCj4gKwo+ICsgIHJlZy1uYW1lczoKPiArICAgIG1p
-bkl0ZW1zOiAxCj4gKyAgICBtYXhJdGVtczogNQo+ICsgICAgaXRlbXM6Cj4gKyAgICAgIGVudW06
-Cj4gKyAgICAgICAgLSBkYXQKPiArICAgICAgICAtIHNldAo+ICsgICAgICAgIC0gY2xyCj4gKyAg
-ICAgICAgLSBkaXJvdXQKPiArICAgICAgICAtIGRpcmluCj4gKwo+ICsgIG5hdGl2ZS1lbmRpYW46
-IHRydWUKPiArCj4gKyAgbm8tb3V0cHV0Ogo+ICsgICAgJHJlZjogL3NjaGVtYXMvdHlwZXMueWFt
-bCMvZGVmaW5pdGlvbnMvZmxhZwo+ICsgICAgZGVzY3JpcHRpb246Cj4gKyAgICAgIElmIHRoaXMg
-cHJvcGVydHkgaXMgcHJlc2VudCwgdGhlIGNvbnRyb2xsZXIgY2Fubm90IGRyaXZlIHRoZSBHUElP
-IGxpbmVzLgo+ICsKPiArcmVxdWlyZWQ6Cj4gKyAgLSBjb21wYXRpYmxlCj4gKyAgLSByZWcKPiAr
-ICAtIHJlZy1uYW1lcwo+ICsgIC0gJyNncGlvLWNlbGxzJwo+ICsgIC0gZ3Bpby1jb250cm9sbGVy
-Cj4gKwo+ICthZGRpdGlvbmFsUHJvcGVydGllczogZmFsc2UKPiArCj4gK2V4YW1wbGVzOgo+ICsg
-IC0gfAo+ICsgICAgZ3Bpb0AxZjMwMDAxMCB7Cj4gKyAgICAgIGNvbXBhdGlibGUgPSAibmksMTY5
-NDQ1LW5hbmQtZ3BpbyI7Cj4gKyAgICAgIHJlZyA9IDwweDFmMzAwMDEwIDB4ND47Cj4gKyAgICAg
-IHJlZy1uYW1lcyA9ICJkYXQiOwo+ICsgICAgICBncGlvLWNvbnRyb2xsZXI7Cj4gKyAgICAgICNn
-cGlvLWNlbGxzID0gPDI+Owo+ICsgICAgfTsKPiArCj4gKyAgICBncGlvQGUwMTAwMDAwIHsKPiAr
-ICAgICAgY29tcGF0aWJsZSA9ICJ3ZCxtYmwtZ3BpbyI7Cj4gKyAgICAgIHJlZy1uYW1lcyA9ICJk
-YXQiOwo+ICsgICAgICByZWcgPSA8MHhlMDEwMDAwMCAweDE+Owo+ICsgICAgICAjZ3Bpby1jZWxs
-cyA9IDwyPjsKPiArICAgICAgZ3Bpby1jb250cm9sbGVyOwo+ICsgICAgICBuby1vdXRwdXQ7Cj4g
-KyAgICB9Owo+ICsKPiArICAgIGdwaW9AZmZmZTA0MDYgewo+ICsgICAgICBjb21wYXRpYmxlID0g
-ImJyY20sYmNtNjM0NS1ncGlvIjsKPiArICAgICAgcmVnLW5hbWVzID0gImRpcm91dCIsICJkYXQi
-Owo+ICsgICAgICByZWcgPSA8MHhmZmZlMDQwNiAyPiwgPDB4ZmZmZTA0MGEgMj47Cj4gKyAgICAg
-IG5hdGl2ZS1lbmRpYW47Cj4gKyAgICAgIGdwaW8tY29udHJvbGxlcjsKPiArICAgICAgI2dwaW8t
-Y2VsbHMgPSA8Mj47Cj4gKyAgICB9Owo+IGRpZmYgLS1naXQgYS9Eb2N1bWVudGF0aW9uL2Rldmlj
-ZXRyZWUvYmluZGluZ3MvZ3Bpby9uaSwxNjk0NDUtbmFuZC1ncGlvLnR4dCBiL0RvY3VtZW50YXRp
-b24vZGV2aWNldHJlZS9iaW5kaW5ncy9ncGlvL25pLDE2OTQ0NS1uYW5kLWdwaW8udHh0Cj4gZGVs
-ZXRlZCBmaWxlIG1vZGUgMTAwNjQ0Cj4gaW5kZXggY2EyZjhjNzQ1YTI3Li4wMDAwMDAwMDAwMDAK
-PiAtLS0gYS9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvZ3Bpby9uaSwxNjk0NDUt
-bmFuZC1ncGlvLnR4dAo+ICsrKyAvZGV2L251bGwKPiBAQCAtMSwzOCArMCwwIEBACj4gLUJpbmRp
-bmdzIGZvciB0aGUgTmF0aW9uYWwgSW5zdHJ1bWVudHMgMTY5NDQ1IEdQSU8gTkFORCBjb250cm9s
-bGVyCj4gLQo+IC1UaGUgMTY5NDQ1IEdQSU8gTkFORCBjb250cm9sbGVyIGhhcyB0d28gbWVtb3J5
-IG1hcHBlZCBHUElPIHJlZ2lzdGVycywgb25lCj4gLWZvciBpbnB1dCAodGhlIHJlYWR5IHNpZ25h
-bCkgYW5kIG9uZSBmb3Igb3V0cHV0IChjb250cm9sIHNpZ25hbHMpLiAgSXQgaXMKPiAtaW50ZW5k
-ZWQgdG8gYmUgdXNlZCB3aXRoIHRoZSBHUElPIE5BTkQgZHJpdmVyLgo+IC0KPiAtUmVxdWlyZWQg
-cHJvcGVydGllczoKPiAtCS0gY29tcGF0aWJsZTogc2hvdWxkIGJlICJuaSwxNjk0NDUtbmFuZC1n
-cGlvIgo+IC0JLSByZWctbmFtZXM6IG11c3QgY29udGFpbgo+IC0JCSJkYXQiIC0gZGF0YSByZWdp
-c3Rlcgo+IC0JLSByZWc6IGFkZHJlc3MgKyBzaXplIHBhaXJzIGRlc2NyaWJpbmcgdGhlIEdQSU8g
-cmVnaXN0ZXIgc2V0czsKPiAtCQlvcmRlciBtdXN0IGNvcnJlc3BvbmQgd2l0aCB0aGUgb3JkZXIg
-b2YgZW50cmllcyBpbiByZWctbmFtZXMKPiAtCS0gI2dwaW8tY2VsbHM6IG11c3QgYmUgc2V0IHRv
-IDIuIFRoZSBmaXJzdCBjZWxsIGlzIHRoZSBwaW4gbnVtYmVyIGFuZAo+IC0JCQl0aGUgc2Vjb25k
-IGNlbGwgaXMgdXNlZCB0byBzcGVjaWZ5IHRoZSBncGlvIHBvbGFyaXR5Ogo+IC0JCQkwID0gYWN0
-aXZlIGhpZ2gKPiAtCQkJMSA9IGFjdGl2ZSBsb3cKPiAtCS0gZ3Bpby1jb250cm9sbGVyOiBNYXJr
-cyB0aGUgZGV2aWNlIG5vZGUgYXMgYSBncGlvIGNvbnRyb2xsZXIuCj4gLQo+IC1PcHRpb25hbCBw
-cm9wZXJ0aWVzOgo+IC0JLSBuby1vdXRwdXQ6IGRpc2FibGVzIGRyaXZpbmcgb3V0cHV0IG9uIHRo
-ZSBwaW5zCj4gLQo+IC1FeGFtcGxlczoKPiAtCWdwaW8xOiBuYW5kLWdwaW8tb3V0QDFmMzAwMDEw
-IHsKPiAtCQljb21wYXRpYmxlID0gIm5pLDE2OTQ0NS1uYW5kLWdwaW8iOwo+IC0JCXJlZyA9IDww
-eDFmMzAwMDEwIDB4ND47Cj4gLQkJcmVnLW5hbWVzID0gImRhdCI7Cj4gLQkJZ3Bpby1jb250cm9s
-bGVyOwo+IC0JCSNncGlvLWNlbGxzID0gPDI+Owo+IC0JfTsKPiAtCj4gLQlncGlvMjogbmFuZC1n
-cGlvLWluQDFmMzAwMDE0IHsKPiAtCQljb21wYXRpYmxlID0gIm5pLDE2OTQ0NS1uYW5kLWdwaW8i
-Owo+IC0JCXJlZyA9IDwweDFmMzAwMDE0IDB4ND47Cj4gLQkJcmVnLW5hbWVzID0gImRhdCI7Cj4g
-LQkJZ3Bpby1jb250cm9sbGVyOwo+IC0JCSNncGlvLWNlbGxzID0gPDI+Owo+IC0JCW5vLW91dHB1
-dDsKPiAtCX07Cj4gZGlmZiAtLWdpdCBhL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5n
-cy9ncGlvL3dkLG1ibC1ncGlvLnR4dCBiL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5n
-cy9ncGlvL3dkLG1ibC1ncGlvLnR4dAo+IGRlbGV0ZWQgZmlsZSBtb2RlIDEwMDY0NAo+IGluZGV4
-IDAzOGMzYTZhMWY0ZC4uMDAwMDAwMDAwMDAwCj4gLS0tIGEvRG9jdW1lbnRhdGlvbi9kZXZpY2V0
-cmVlL2JpbmRpbmdzL2dwaW8vd2QsbWJsLWdwaW8udHh0Cj4gKysrIC9kZXYvbnVsbAo+IEBAIC0x
-LDM4ICswLDAgQEAKPiAtQmluZGluZ3MgZm9yIHRoZSBXZXN0ZXJuIERpZ2l0YWwncyBNeUJvb2sg
-TGl2ZSBtZW1vcnktbWFwcGVkIEdQSU8gY29udHJvbGxlcnMuCj4gLQo+IC1UaGUgV2VzdGVybiBE
-aWdpdGFsIE15Qm9vayBMaXZlIGhhcyB0d28gbWVtb3J5LW1hcHBlZCBHUElPIGNvbnRyb2xsZXJz
-Lgo+IC1Cb3RoIEdQSU8gY29udHJvbGxlciBvbmx5IGhhdmUgYSBzaW5nbGUgOC1iaXQgZGF0YSBy
-ZWdpc3Rlciwgd2hlcmUgR1BJTwo+IC1zdGF0ZSBjYW4gYmUgcmVhZCBhbmQvb3Igd3JpdHRlbi4K
-PiAtCj4gLVJlcXVpcmVkIHByb3BlcnRpZXM6Cj4gLQktIGNvbXBhdGlibGU6IHNob3VsZCBiZSAi
-d2QsbWJsLWdwaW8iCj4gLQktIHJlZy1uYW1lczogbXVzdCBjb250YWluCj4gLQkJImRhdCIgLSBk
-YXRhIHJlZ2lzdGVyCj4gLQktIHJlZzogYWRkcmVzcyArIHNpemUgcGFpcnMgZGVzY3JpYmluZyB0
-aGUgR1BJTyByZWdpc3RlciBzZXRzOwo+IC0JCW9yZGVyIG11c3QgY29ycmVzcG9uZCB3aXRoIHRo
-ZSBvcmRlciBvZiBlbnRyaWVzIGluIHJlZy1uYW1lcwo+IC0JLSAjZ3Bpby1jZWxsczogbXVzdCBi
-ZSBzZXQgdG8gMi4gVGhlIGZpcnN0IGNlbGwgaXMgdGhlIHBpbiBudW1iZXIgYW5kCj4gLQkJCXRo
-ZSBzZWNvbmQgY2VsbCBpcyB1c2VkIHRvIHNwZWNpZnkgdGhlIGdwaW8gcG9sYXJpdHk6Cj4gLQkJ
-CTAgPSBhY3RpdmUgaGlnaAo+IC0JCQkxID0gYWN0aXZlIGxvdwo+IC0JLSBncGlvLWNvbnRyb2xs
-ZXI6IE1hcmtzIHRoZSBkZXZpY2Ugbm9kZSBhcyBhIGdwaW8gY29udHJvbGxlci4KPiAtCj4gLU9w
-dGlvbmFsIHByb3BlcnRpZXM6Cj4gLQktIG5vLW91dHB1dDogR1BJT3MgYXJlIHJlYWQtb25seS4K
-PiAtCj4gLUV4YW1wbGVzOgo+IC0JZ3BpbzA6IGdwaW8wQGUwMDAwMDAwIHsKPiAtCQljb21wYXRp
-YmxlID0gIndkLG1ibC1ncGlvIjsKPiAtCQlyZWctbmFtZXMgPSAiZGF0IjsKPiAtCQlyZWcgPSA8
-MHhlMDAwMDAwMCAweDE+Owo+IC0JCSNncGlvLWNlbGxzID0gPDI+Owo+IC0JCWdwaW8tY29udHJv
-bGxlcjsKPiAtCX07Cj4gLQo+IC0JZ3BpbzE6IGdwaW8xQGUwMTAwMDAwIHsKPiAtCQljb21wYXRp
-YmxlID0gIndkLG1ibC1ncGlvIjsKPiAtCQlyZWctbmFtZXMgPSAiZGF0IjsKPiAtCQlyZWcgPSA8
-MHhlMDEwMDAwMCAweDE+Owo+IC0JCSNncGlvLWNlbGxzID0gPDI+Owo+IC0JCWdwaW8tY29udHJv
-bGxlcjsKPiAtCQluby1vdXRwdXQ7Cj4gLQl9OwoKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0
-CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9y
-Zy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+
+On Tue, 21 Mar 2023 16:13:02 -0400, Sean Anderson wrote:
+> This is a generic binding for simple MMIO GPIO controllers. Although we
+> have a single driver for these controllers, they were previously spread
+> over several files. Consolidate them. The register descriptions are
+> adapted from the comments in the source. There is no set order for the
+> registers, and some registers may be omitted. Because of this, reg-names
+> is mandatory, and no order is specified.
+> 
+> Rename brcm,bcm6345-gpio to brcm,bcm63xx-gpio to reflect that bcm6345
+> has moved.
+> 
+> Signed-off-by: Sean Anderson <sean.anderson@seco.com>
+> Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
+> ---
+> Linus or Bartosz, feel free to pick this up as the rest of this series
+> may not be merged any time soon.
+> 
+> Changes in v12:
+> - Put compatible first
+> - Keep gpio-controller to one line
+> - Add little-endian property
+> - Alphabetize compatibles
+> - Remove some comments
+> - Remove some examples with insufficient novelty
+> 
+> Changes in v11:
+> - Keep empty (or almost-empty) properties on a single line
+> - Don't use | unnecessarily
+> - Use gpio as the node name for examples
+> - Rename brcm,bcm6345-gpio.yaml to brcm,bcm63xx-gpio.yaml
+> 
+> Changes in v10:
+> - New
+> 
+>  ...m6345-gpio.yaml => brcm,bcm63xx-gpio.yaml} |  16 +--
+>  .../devicetree/bindings/gpio/gpio-mmio.yaml   | 117 ++++++++++++++++++
+>  .../bindings/gpio/ni,169445-nand-gpio.txt     |  38 ------
+>  .../devicetree/bindings/gpio/wd,mbl-gpio.txt  |  38 ------
+>  4 files changed, 118 insertions(+), 91 deletions(-)
+>  rename Documentation/devicetree/bindings/gpio/{brcm,bcm6345-gpio.yaml => brcm,bcm63xx-gpio.yaml} (78%)
+>  create mode 100644 Documentation/devicetree/bindings/gpio/gpio-mmio.yaml
+>  delete mode 100644 Documentation/devicetree/bindings/gpio/ni,169445-nand-gpio.txt
+>  delete mode 100644 Documentation/devicetree/bindings/gpio/wd,mbl-gpio.txt
+> 
+
+My bot found errors running 'make DT_CHECKER_FLAGS=-m dt_binding_check'
+on your patch (DT_CHECKER_FLAGS is new in v5.13):
+
+yamllint warnings/errors:
+
+dtschema/dtc warnings/errors:
+./Documentation/devicetree/bindings/gpio/brcm,bcm63xx-gpio.yaml: $id: relative path/filename doesn't match actual path or filename
+	expected: http://devicetree.org/schemas/gpio/brcm,bcm63xx-gpio.yaml#
+./Documentation/devicetree/bindings/mfd/brcm,bcm6318-gpio-sysctl.yaml: Unable to find schema file matching $id: http://devicetree.org/schemas/gpio/brcm,bcm6345-gpio.yaml
+./Documentation/devicetree/bindings/mfd/brcm,bcm63268-gpio-sysctl.yaml: Unable to find schema file matching $id: http://devicetree.org/schemas/gpio/brcm,bcm6345-gpio.yaml
+./Documentation/devicetree/bindings/mfd/brcm,bcm6362-gpio-sysctl.yaml: Unable to find schema file matching $id: http://devicetree.org/schemas/gpio/brcm,bcm6345-gpio.yaml
+./Documentation/devicetree/bindings/mfd/brcm,bcm6368-gpio-sysctl.yaml: Unable to find schema file matching $id: http://devicetree.org/schemas/gpio/brcm,bcm6345-gpio.yaml
+./Documentation/devicetree/bindings/mfd/brcm,bcm6328-gpio-sysctl.yaml: Unable to find schema file matching $id: http://devicetree.org/schemas/gpio/brcm,bcm6345-gpio.yaml
+./Documentation/devicetree/bindings/mfd/brcm,bcm6358-gpio-sysctl.yaml: Unable to find schema file matching $id: http://devicetree.org/schemas/gpio/brcm,bcm6345-gpio.yaml
+
+doc reference errors (make refcheckdocs):
+Warning: Documentation/devicetree/bindings/mfd/brcm,bcm6318-gpio-sysctl.yaml references a file that doesn't exist: Documentation/devicetree/bindings/gpio/brcm,bcm6345-gpio.yaml
+Warning: Documentation/devicetree/bindings/mfd/brcm,bcm63268-gpio-sysctl.yaml references a file that doesn't exist: Documentation/devicetree/bindings/gpio/brcm,bcm6345-gpio.yaml
+Warning: Documentation/devicetree/bindings/mfd/brcm,bcm6328-gpio-sysctl.yaml references a file that doesn't exist: Documentation/devicetree/bindings/gpio/brcm,bcm6345-gpio.yaml
+Warning: Documentation/devicetree/bindings/mfd/brcm,bcm6358-gpio-sysctl.yaml references a file that doesn't exist: Documentation/devicetree/bindings/gpio/brcm,bcm6345-gpio.yaml
+Warning: Documentation/devicetree/bindings/mfd/brcm,bcm6362-gpio-sysctl.yaml references a file that doesn't exist: Documentation/devicetree/bindings/gpio/brcm,bcm6345-gpio.yaml
+Warning: Documentation/devicetree/bindings/mfd/brcm,bcm6368-gpio-sysctl.yaml references a file that doesn't exist: Documentation/devicetree/bindings/gpio/brcm,bcm6345-gpio.yaml
+Documentation/devicetree/bindings/mfd/brcm,bcm6318-gpio-sysctl.yaml: Documentation/devicetree/bindings/gpio/brcm,bcm6345-gpio.yaml
+Documentation/devicetree/bindings/mfd/brcm,bcm63268-gpio-sysctl.yaml: Documentation/devicetree/bindings/gpio/brcm,bcm6345-gpio.yaml
+Documentation/devicetree/bindings/mfd/brcm,bcm6328-gpio-sysctl.yaml: Documentation/devicetree/bindings/gpio/brcm,bcm6345-gpio.yaml
+Documentation/devicetree/bindings/mfd/brcm,bcm6358-gpio-sysctl.yaml: Documentation/devicetree/bindings/gpio/brcm,bcm6345-gpio.yaml
+Documentation/devicetree/bindings/mfd/brcm,bcm6362-gpio-sysctl.yaml: Documentation/devicetree/bindings/gpio/brcm,bcm6345-gpio.yaml
+Documentation/devicetree/bindings/mfd/brcm,bcm6368-gpio-sysctl.yaml: Documentation/devicetree/bindings/gpio/brcm,bcm6345-gpio.yaml
+
+See https://patchwork.ozlabs.org/project/devicetree-bindings/patch/20230321201313.2507539-4-sean.anderson@seco.com
+
+The base for the series is generally the latest rc1. A different dependency
+should be noted in *this* patch.
+
+If you already ran 'make dt_binding_check' and didn't see the above
+error(s), then make sure 'yamllint' is installed and dt-schema is up to
+date:
+
+pip3 install dtschema --upgrade
+
+Please check and re-submit after running the above command yourself. Note
+that DT_SCHEMA_FILES can be set to your schema file to speed up checking
+your schema. However, it must be unset to test all examples with your schema.
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
