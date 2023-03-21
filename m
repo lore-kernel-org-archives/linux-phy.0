@@ -4,59 +4,137 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A8F96C74A5B
-	for <linux-phy@archiver.kernel.org>; Tue, 21 Mar 2023 17:45:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 671F1C6FD1D
+	for <linux-phy@archiver.kernel.org>; Tue, 21 Mar 2023 20:13:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Date:To:Cc:From:Subject:References:
-	In-Reply-To:MIME-Version:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QJXjOEZ4B+Gpi7a6eYZ2Ei285yLzHruqmzvz2fZVssY=; b=A/8ZpsYbN/fkXS
-	0Hb7Arqs9pXq2S0cClbTQDFKHoP6hAsYFAQOmgNag/Vx3V7kxZcIzjsP8W4ALW3+j7GJQv7E2QrYp
-	VrNSY+DuDsTIpdMnKOiUk5tSU72ww2lCoGCodTcq57hzDpAkXd9EZxJHDcMfJY2r3PWwvOEH3xPum
-	7Bugg+ZZL8eBoq3zT0WKvrxSNSyG/PnzozB1ccb584LMMJPHd8Sw0BKC3cLjmJJmSoA6uP2CfwDAy
-	jyY+T+dmQWgp5V95G4qG0Kk6UznX3PVR3mZhx2PtaIvTsTMlXXWGKRhNiZUzzK7oNOCA550ShXrpQ
-	8P/v5BAqY0k0tJyuiPRg==;
+	List-Owner; bh=W09BBUPyVCn2avhawP134YpnzQ15AgZu+7mn9XmiHd4=; b=4728hzUdrOvpM2
+	dHhbwZnH+GtOJveaKhUZyOsnRgW1gMknPI7V4xy7EG/KmdCA2O0b2znJBgXz26XsLfFYRQifBgkyG
+	Y9m++MJrJ1fJBS8jo60NQXQxO2fJmwkJ+yw+jEZK7UjzfWn6zcvElwu9kafzSGehhxAR1akw12Z0X
+	6N8k1nXhtMm7+oc/yvmNhwlZ96JE3hqg6NF54tNoDTphXu2VfKNRz+VdG0DDkX6aswIrEDslQMoJb
+	HHkJBvePAYxOeVxPPOcedpx6cN2u7G+fWc001puyUjv1vnBiwrjz52tsWbhcbIljfMxjMQGMu2kkT
+	wPh3+Tncop9GIRuwM+dA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1peg2x-00DGsJ-1i;
-	Tue, 21 Mar 2023 17:45:19 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1peiMg-00Dcb7-38;
+	Tue, 21 Mar 2023 20:13:50 +0000
+Received: from mail-db8eur05hn2212.outbound.protection.outlook.com ([52.100.20.212] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1peg2u-00DGrm-2k
-	for linux-phy@lists.infradead.org;
-	Tue, 21 Mar 2023 17:45:18 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 686FC61D70;
-	Tue, 21 Mar 2023 17:45:16 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B2931C433D2;
-	Tue, 21 Mar 2023 17:45:15 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1679420715;
-	bh=N3J1/tOTpmUVVtlZBsmsKwvceQFZJ+nVYVRndnoaBKc=;
-	h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
-	b=VIF/lRfRgRLDv9oGNCbhKz07Zf1QpSuheZkRJ2MVg7FQqLDg5eQGQDXRKn2WqNq+h
-	 n4ZHRqtdT1MvnAdm2aVgQlZRUPO2kgvoWUS/EDybdaLdR0rM8B7Q7Ux+3IPmoPlZyi
-	 2cqqEXrQxLNtYywSUpec6MidpatcMs+F8fEAWgfcYzLACVtRgPVBU4R4LvEMrbNP8w
-	 z0uwcfO59LQmRtT4OS9cpQ8Fxu1VaK/EjQttg82pJS9d86XBbSMV/1w/zuDG9p3eH/
-	 L/p4PMkS1nBpEbUIVWfiSrbGBhxF4sbMbWcmHsIiQHnf5XX1mH63KxRhHa7JlQWMWo
-	 jVi49K815wd7g==
-Message-ID: <a1a827bcdc4bc6ceb50bd1cc6d47df66.sboyd@kernel.org>
+	id 1peiMa-00DcYj-0Q;
+	Tue, 21 Mar 2023 20:13:48 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=seco.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=AV4YSLSWUEa6icuS3ElbSt+yZKjwyRoBMk3Gdh1j9EM=;
+ b=2UOdy6IOP2FgfalbTRspdS/6BUzYhUE6Jjk/rHm4G3JgaRrx7xz6pS6P8pfUMFc56zRe7hJQa0+BNd3w+B1rLOvaWdBJZwgplE3BjOF1hqnAu2v5szD9GC5Oqt8XwjOmcPj7qPy+5gA46jw41m91AReqJ9RYbBZkYNOhsCXSpUlDqNi3RNnecA64dM2RZoqM9/v2h80n2M4dbQcn0AgC380ouKXVL7nEwdxz0XRae+NdGpsMuT7f6kkKjxZfGmOckz8Y/TIDE124MegeuwfeFEQ8mKUtWhOT30BhIG6tcRUf4S7cIogHSUdPl6pMxaEoK99vsUk5i0E21tdwMwvM1A==
+Received: from FR3P281CA0077.DEUP281.PROD.OUTLOOK.COM (2603:10a6:d10:1f::10)
+ by AS8PR03MB7956.eurprd03.prod.outlook.com (2603:10a6:20b:427::20) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6178.37; Tue, 21 Mar
+ 2023 20:13:39 +0000
+Received: from VI1EUR05FT047.eop-eur05.prod.protection.outlook.com
+ (2603:10a6:d10:1f:cafe::fc) by FR3P281CA0077.outlook.office365.com
+ (2603:10a6:d10:1f::10) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6222.16 via Frontend
+ Transport; Tue, 21 Mar 2023 20:13:39 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 20.160.56.81)
+ smtp.mailfrom=seco.com; dkim=pass (signature was verified)
+ header.d=seco.com;dmarc=pass action=none header.from=seco.com;
+Received-SPF: Pass (protection.outlook.com: domain of seco.com designates
+ 20.160.56.81 as permitted sender) receiver=protection.outlook.com;
+ client-ip=20.160.56.81; helo=inpost-eu.tmcas.trendmicro.com; pr=C
+Received: from inpost-eu.tmcas.trendmicro.com (20.160.56.81) by
+ VI1EUR05FT047.mail.protection.outlook.com (10.233.243.5) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.6222.17 via Frontend Transport; Tue, 21 Mar 2023 20:13:39 +0000
+Received: from outmta (unknown [192.168.82.140])
+	by inpost-eu.tmcas.trendmicro.com (Trend Micro CAS) with ESMTP id F0E032008026E;
+	Tue, 21 Mar 2023 20:13:38 +0000 (UTC)
+Received: from EUR03-DBA-obe.outbound.protection.outlook.com (unknown [104.47.51.176])
+	by repre.tmcas.trendmicro.com (Trend Micro CAS) with ESMTPS id EFE582008006F;
+	Tue, 21 Mar 2023 20:11:44 +0000 (UTC)
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=XpPnHUHJA1B2Iyz+Vr7klsICDFwNHrtyxJRtWEAxsOAaSxjnQFWz/piRzt7dz1gEEAqJ95nDRio6gkEEBo732C4fNaD9dFW6eqVxccvFi0z24zBPzh3MrbqdOI0h8tdH8V4bRj36YIH/bn5qeFXfzD4wGFkyOjhaDZDPwF+s4ZNE4Q0YwMGOANzPub1ZSarAZGpLXxvpKP5u+ZohkmRUx3IzTZcsqVTZ7C2OT19PZWMkhFpqFj8EG/wZMy+eva+BWZhjJCQr5Bvp+xoTpHHBFifsqmlgvZjLOxc3YRMwfFu0KEWFpjPaW5Muo6dfN0atfEZ0l8SrJ3JkmJy+ZPDJVA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=AV4YSLSWUEa6icuS3ElbSt+yZKjwyRoBMk3Gdh1j9EM=;
+ b=MzGkrrb3Q6VubueQFPIkgqzRPBS3PEBkP4/uoos03sv+BiM3jFTqcoPjUFJHo6zN6xlyIjhZL+ltGoqickMzGrWCbyZzrPr1qlJOEg3kPrHygFaCFOLfmyDoUqbnt+cWAiiidgbmvIt8WEb5NMscIeTrYY0vxvc8A05f2jsB7iNG3hxV2t9DZbtCn6D78vceUvIKsdk+Io/rUrT8O7TMKzpKPxNz+8znv0miUFqPeO+rSktXjs22tuUnS2D/fGfVejEphYATVnY8BbrYpHmcBLdkyLzXVKM5gstioPp0YXD5j/VeiRtYxGXSofUkLbjtsk8RbOd944nQo4f/j1/CtA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=seco.com; dmarc=pass action=none header.from=seco.com;
+ dkim=pass header.d=seco.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=seco.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=AV4YSLSWUEa6icuS3ElbSt+yZKjwyRoBMk3Gdh1j9EM=;
+ b=2UOdy6IOP2FgfalbTRspdS/6BUzYhUE6Jjk/rHm4G3JgaRrx7xz6pS6P8pfUMFc56zRe7hJQa0+BNd3w+B1rLOvaWdBJZwgplE3BjOF1hqnAu2v5szD9GC5Oqt8XwjOmcPj7qPy+5gA46jw41m91AReqJ9RYbBZkYNOhsCXSpUlDqNi3RNnecA64dM2RZoqM9/v2h80n2M4dbQcn0AgC380ouKXVL7nEwdxz0XRae+NdGpsMuT7f6kkKjxZfGmOckz8Y/TIDE124MegeuwfeFEQ8mKUtWhOT30BhIG6tcRUf4S7cIogHSUdPl6pMxaEoK99vsUk5i0E21tdwMwvM1A==
+Authentication-Results-Original: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=seco.com;
+Received: from DB9PR03MB8847.eurprd03.prod.outlook.com (2603:10a6:10:3dd::13)
+ by AM9PR03MB7044.eurprd03.prod.outlook.com (2603:10a6:20b:2d9::9) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6178.37; Tue, 21 Mar
+ 2023 20:13:34 +0000
+Received: from DB9PR03MB8847.eurprd03.prod.outlook.com
+ ([fe80::dbcf:1089:3242:614e]) by DB9PR03MB8847.eurprd03.prod.outlook.com
+ ([fe80::dbcf:1089:3242:614e%6]) with mapi id 15.20.6178.037; Tue, 21 Mar 2023
+ 20:13:34 +0000
+From: Sean Anderson <sean.anderson@seco.com>
+To: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	linux-phy@lists.infradead.org
+Cc: Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	devicetree@vger.kernel.org,
+	Madalin Bucur <madalin.bucur@nxp.com>,
+	Camelia Alexandra Groza <camelia.groza@nxp.com>,
+	Bagas Sanjaya <bagasdotme@gmail.com>,
+	linux-arm-kernel@lists.infradead.org,
+	linuxppc-dev@lists.ozlabs.org,
+	Ioana Ciornei <ioana.ciornei@nxp.com>,
+	Sean Anderson <sean.anderson@seco.com>,
+	Rob Herring <robh@kernel.org>
+Subject: [PATCH v12 01/13] dt-bindings: phy: Add 2500BASE-X and 10GBASE-R
+Date: Tue, 21 Mar 2023 16:13:00 -0400
+Message-Id: <20230321201313.2507539-2-sean.anderson@seco.com>
+X-Mailer: git-send-email 2.35.1.1320.gc452695387.dirty
+In-Reply-To: <20230321201313.2507539-1-sean.anderson@seco.com>
+References: <20230321201313.2507539-1-sean.anderson@seco.com>
+X-ClientProxiedBy: MN2PR20CA0026.namprd20.prod.outlook.com
+ (2603:10b6:208:e8::39) To DB9PR03MB8847.eurprd03.prod.outlook.com
+ (2603:10a6:10:3dd::13)
 MIME-Version: 1.0
-In-Reply-To: <24293be77ccdcf5e9b1fa0fd219de6152f234616.1679388632.git.quic_varada@quicinc.com>
-References: <cover.1677749625.git.quic_varada@quicinc.com> <cover.1679388632.git.quic_varada@quicinc.com> <24293be77ccdcf5e9b1fa0fd219de6152f234616.1679388632.git.quic_varada@quicinc.com>
-Subject: Re: [PATCH v2 4/8] clk: qcom: gcc-ipq9574: Add USB related clocks
-From: Stephen Boyd <sboyd@kernel.org>
-Cc: Varadarajan Narayanan <quic_varada@quicinc.com>
-To: Varadarajan Narayanan <quic_varada@quicinc.com>, agross@kernel.org, andersson@kernel.org, devicetree@vger.kernel.org, gregkh@linuxfoundation.org, kishon@kernel.org, konrad.dybcio@linaro.org, krzysztof.kozlowski+dt@linaro.org, linux-arm-msm@vger.kernel.org, linux-clk@vger.kernel.org, linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, linux-usb@vger.kernel.org, mturquette@baylibre.com, quic_wcheng@quicinc.com, robh+dt@kernel.org, vkoul@kernel.org
-Date: Tue, 21 Mar 2023 10:45:13 -0700
-User-Agent: alot/0.10
+X-MS-TrafficTypeDiagnostic: 	DB9PR03MB8847:EE_|AM9PR03MB7044:EE_|VI1EUR05FT047:EE_|AS8PR03MB7956:EE_
+X-MS-Office365-Filtering-Correlation-Id: 12257c99-6966-40ea-556b-08db2a48c29a
+X-TrendMicro-CAS-OUT-LOOP-IDENTIFIER: 656f966764b7fb185830381c646b41a1
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam-Untrusted: BCL:0;
+X-Microsoft-Antispam-Message-Info-Original:  4nFn8dpquRAf0iVnYDPApN5nO8x2F9YFKCLgqSYAjK/h2NouvAcJyhVmkJKKWqaW53/VO9OUyzID986j90FRi9CkAujv+Yfxg0aZwQWsmWf406GP6d9mB0Q3zEwxdXwQjYj1N6SL+DBjUeEq8G5UnXATJb/epGi+9zbXdTL8n+QN/4oxURtaDkqBCCANdfs2619slIukK/9bZNmRLt5KRSKmBVqbu9/ABYPFZXr5okq+teCNZivT7aJ6fxw9nEEtt3vzCJZ1tfDoGd0bNotbLawwgiYrjzOmSZzWVtinvU0/mSw2eVwepEv+eT7PbazQ1zJOcooDITzPBbT5zk4VIqNa3NFxUQ5cuPZ7PEJCoDIFvKxONlTXzX/ycNa7LkNk3dQ7H8ZzGYsEVFkT6C7SLt5bX30XXuE+60VLiYr8cuifabXYNEj5PPVdx6HoFLXeKuqWoVW/CDZv0aNEDdELHl1nCbatOFdqkmw9XKTzy49aINF/kHRLfb+CZcdiJXUQGRzwxM+QUmYvlFrntDpCeEbtYL2pQRfXesw9/zli8R6xyzDKP2vL8EhaEKje8EZNpAu+lagpCODvqSyXqyui6k8BoACkSkeU+kPHtD3fSs8oXf6vVqMRmqEGNM3UtYAd3y5DcfnfzcGTg/Y0q1bd9tqWZGriMs3GQf6JCEzifzex3WhQaPvRVDWTQ5feiemc
+X-Forefront-Antispam-Report-Untrusted:  CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DB9PR03MB8847.eurprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230025)(376002)(396003)(346002)(39860400002)(366004)(136003)(451199018)(2616005)(54906003)(83380400001)(6512007)(7416002)(6506007)(6486002)(966005)(478600001)(316002)(1076003)(26005)(52116002)(5660300002)(6666004)(186003)(110136005)(86362001)(38350700002)(38100700002)(66946007)(41300700001)(44832011)(2906002)(8936002)(66476007)(66556008)(8676002)(4326008)(36756003);DIR:OUT;SFP:1101;
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM9PR03MB7044
+X-EOPAttributedMessage: 0
+X-MS-Exchange-Transport-CrossTenantHeadersStripped:  VI1EUR05FT047.eop-eur05.prod.protection.outlook.com
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id-Prvs: 	499bb582-e9b5-485f-f4ee-08db2a48bf5e
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: 	gICLEhQnMGpnLT7So+TpFmZRsCYoWSuCfBZoXHOVYB9Ctbtz6mMFI+eHXSwcQJdiJ17Ak15cWZRszq1vlxTrw8qkAFjvqv2DjZEE0GG36AV81BMG+tSztDGUK6cEOLUedbI1urXlTwxFDOn+Nj1YtAlM9VaDjD8X1aAoMpPQ1oIv30yIYwSd2sR5c62f9zZmwu8ye2pwsoVhKXqisc8r7byeiM/QIcaNOMmUBCbY+HXL5MbDAvg4MODm34i5Ls3KuIXrTOSpD44SDoq0LBN4xFU12zt6cFfSILyVMNHXh4bvkb2f0p4HADqTutcUg4Gmd29pUrKv5X4Q9E5DC1r7du/zEtzOIQ/SaEHkNvIwlj/BQ33yFlFnL9NfIeTmXiFURBKLyWA/HxV2a2TJWqF7OgR3iXO51KlvHAVXYrff0yW65EpNGBdtn6ilbj1qQ+UgcfarKN4kjzhiIOjJcsEGonWuDxxDVZRa/SmKDg3N1z8ZsODPRsjLKUzHnMbZM93nINXAigctFS2O7Dycf+i/GhIoyqDxQovjbwzt+fklR4/Y0iEmwtPmXF4ZFJNOE2p6GdrcNS7rEAS2CfY/WOnj+9ZzpFj3/vxIDBsb5VFdjBUPsLwBsnIziAMs4pV7xEOxqfEUpB5FhmAHIyKBrMGSwcuDT8qLivY6UORf9RCToqzlIg67zw8yGprNooGZAQRF6Iw5mqvXt3KKKs4J+IPKYidhvL1YG5hyRK2XKoWmBfLOlzEYsRlCdoC41uE/CT+y
+X-Forefront-Antispam-Report: 	CIP:20.160.56.81;CTRY:NL;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:inpost-eu.tmcas.trendmicro.com;PTR:inpost-eu.tmcas.trendmicro.com;CAT:NONE;SFS:(13230025)(39860400002)(346002)(136003)(376002)(396003)(5400799012)(451199018)(36840700001)(46966006)(40470700004)(2616005)(6666004)(336012)(6512007)(54906003)(26005)(6506007)(83380400001)(47076005)(966005)(6486002)(4326008)(316002)(1076003)(478600001)(70206006)(186003)(70586007)(110136005)(8676002)(44832011)(34070700002)(7416002)(5660300002)(41300700001)(7596003)(7636003)(82740400003)(8936002)(2906002)(36860700001)(356005)(40460700003)(86362001)(82310400005)(40480700001)(36756003)(12100799024);DIR:OUT;SFP:1501;
+X-OriginatorOrg: seco.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 21 Mar 2023 20:13:39.3182
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 12257c99-6966-40ea-556b-08db2a48c29a
+X-MS-Exchange-CrossTenant-Id: bebe97c3-6438-442e-ade3-ff17aa50e733
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=bebe97c3-6438-442e-ade3-ff17aa50e733;Ip=[20.160.56.81];Helo=[inpost-eu.tmcas.trendmicro.com]
+X-MS-Exchange-CrossTenant-AuthSource: 	VI1EUR05FT047.eop-eur05.prod.protection.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS8PR03MB7956
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230321_104516_954761_7426396C 
-X-CRM114-Status: UNSURE (   5.85  )
+X-CRM114-CacheID: sfid-20230321_131344_679057_2328C04A 
+X-CRM114-Status: UNSURE (   9.48  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -74,14 +152,51 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Quoting Varadarajan Narayanan (2023-03-21 01:54:22)
-> Add the clocks needed for enabling USB in IPQ9574
-> 
-> Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
-> 
-> ---
+This adds some modes necessary for Lynx 10G support. 2500BASE-X, also
+known as 2.5G SGMII, is 1000BASE-X/SGMII overclocked to 3.125 GHz, with
+autonegotiation disabled. 10GBASE-R, also known as XFI, is the protocol
+spoken between the PMA and PMD ethernet layers for 10GBASE-T and
+10GBASE-S/L/E. It is typically used to communicate directly with SFP+
+modules, or with 10GBASE-T phys.
 
-Acked-by: Stephen Boyd <sboyd@kernel.org>
+Signed-off-by: Sean Anderson <sean.anderson@seco.com>
+Acked-by: Rob Herring <robh@kernel.org>
+---
+PR increasing phy-type maximum [1].
+
+If this commit could be applied sooner rather than later, I'd appreciate
+it. This should help avoid another respin if someone else adds another
+phy type.
+
+[1] https://github.com/devicetree-org/dt-schema/pull/85
+
+(no changes since v6)
+
+Changes in v6:
+- Bump PHY_TYPE_2500BASEX to 13, since PHY_TYPE_USXGMII was added in the
+  meantime
+
+Changes in v4:
+- New
+
+ include/dt-bindings/phy/phy.h | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/include/dt-bindings/phy/phy.h b/include/dt-bindings/phy/phy.h
+index 6b901b342348..5b2b674d8d25 100644
+--- a/include/dt-bindings/phy/phy.h
++++ b/include/dt-bindings/phy/phy.h
+@@ -23,5 +23,7 @@
+ #define PHY_TYPE_DPHY		10
+ #define PHY_TYPE_CPHY		11
+ #define PHY_TYPE_USXGMII	12
++#define PHY_TYPE_2500BASEX	13
++#define PHY_TYPE_10GBASER	14
+ 
+ #endif /* _DT_BINDINGS_PHY */
+-- 
+2.35.1.1320.gc452695387.dirty
+
 
 -- 
 linux-phy mailing list
