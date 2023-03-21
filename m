@@ -4,84 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5DC93C7618D
-	for <linux-phy@archiver.kernel.org>; Tue, 21 Mar 2023 11:14:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B079DC7618D
+	for <linux-phy@archiver.kernel.org>; Tue, 21 Mar 2023 11:17:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:References:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KLTZjm8f1yNFd6gsD4B1K4/KT+C3GD1Omx8auhJjh+g=; b=Sd+M8KZECkaIk7
-	kAnlONSh9Ti1V0d1vMz/1zEUU0TgostrheglNty/pcBsLosqmhm/+GxUpFhynk21McHCpa62Ynero
-	QnDgv8sFXOjjCTh+KrZ47vkZNc9kSwAo8Bzwn0jjECyqpoah4E7p6+8V+xTtYt/gfai5RDDvMSnQG
-	6z0GSLP6oCXSWCSAv3M3rBVgL2YeKH50o80oVInIHrVdYtBEWA+czdD9uaki2i3/rG4wIqGedVUO8
-	Db3ax8BUJq6To5ZY058oZLoiC6ybIAYHO8QDin/9q2Gre7i4o7ZzXAqURBOQd327tIdsd4r7Zmm/Q
-	AsbITlwQ7y97YLARSGOQ==;
+	List-Owner; bh=CVec41zQ5Q0i05nJkHBqF4E/aVWoRXxNu26y3rQGxi4=; b=DWSbBe7Ntd/q3H
+	mcQJ7piK4x58tcKNOQKusPGSnrjNKvnMibWaAvPZYkCc6deWS6AsUsPr99bvfVU/KcxVNHOzgkZsy
+	pdU9Itcln9AHXnK8cieysdb2rE4pwuebh5SmKhI+JLVrSAq4LYL1fxb8ew9LkZeCsU9MN/Bbe4NCz
+	yENC+0WLR/quRpAEuX3GIE75cDqD7QXG/ukM8pfuotW5QBV88czn96kDEzQD0zvof7hB5i/XRjtkU
+	CFBpMvREf++ugqCN1UI+bBVkI4PU0l9T7Y1iwdD9PUqdOLuRRKKvfoVgkEEw5NsqT/K9bFDNWfr2T
+	QlT3vBDIi5mSJOzBCfBA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1peZwy-00C9vV-2U;
-	Tue, 21 Mar 2023 11:14:44 +0000
-Received: from pandora.armlinux.org.uk ([2001:4d48:ad52:32c8:5054:ff:fe00:142])
+	id 1peZzZ-00CAQy-0Y;
+	Tue, 21 Mar 2023 11:17:25 +0000
+Received: from mail-lf1-x131.google.com ([2a00:1450:4864:20::131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1peZwv-00C9ta-1C
+	id 1peZzW-00CAQ1-0z
 	for linux-phy@lists.infradead.org;
-	Tue, 21 Mar 2023 11:14:43 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
-	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
-	List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
-	bh=h7qXc+1aUFElkMSM91nEtKXu81XN+Wf79m4It5ZDBKw=; b=CyDe9t+sVOvK634r9Puu4qv7Tr
-	Ovj0TAOGTUpoKFToWqG4+NPCKSvoEhRDyP69OUfOz0VzdqjnrOiyHZCrz3aQrySDxCqb/1a228oEq
-	nZXa1tj0tcBupnyAq5zoAPqrUcqdVRxC75ISxNKA8Ggm05IjXYSuFnn1pRhMu971AiRNMPlTTAR7J
-	xFGXcziwSsMUnBKXRQ7bVHBnEchFcfmUoqaD4KFX4It3vH1JWHEiByTrpn4YKJ/0W3HqGGGc6x0Id
-	vT+U8Qa7tA83tkCiQBDFvvOdRN/69noCxit8ddctZnzokmhZQ3dZwvFfMSS0uOSwIMvVuLh6J3wyf
-	kI1GDoIA==;
-Received: from shell.armlinux.org.uk ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:41428)
-	by pandora.armlinux.org.uk with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.94.2)
-	(envelope-from <linux@armlinux.org.uk>)
-	id 1peZwm-0000xL-KC; Tue, 21 Mar 2023 11:14:32 +0000
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.94.2)
-	(envelope-from <linux@shell.armlinux.org.uk>)
-	id 1peZwk-0007gb-5R; Tue, 21 Mar 2023 11:14:30 +0000
-Date: Tue, 21 Mar 2023 11:14:30 +0000
-From: "Russell King (Oracle)" <linux@armlinux.org.uk>
-To: Lee Jones <lee@kernel.org>
-Cc: Vinod Koul <vkoul@kernel.org>,
-	Colin Foster <colin.foster@in-advantage.com>,
-	linux-phy@lists.infradead.org, netdev@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Paolo Abeni <pabeni@redhat.com>, Jakub Kicinski <kuba@kernel.org>,
-	Eric Dumazet <edumazet@google.com>,
-	"David S. Miller" <davem@davemloft.net>,
-	Florian Fainelli <f.fainelli@gmail.com>,
-	Andrew Lunn <andrew@lunn.ch>, UNGLinuxDriver@microchip.com,
-	Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Claudiu Manoil <claudiu.manoil@nxp.com>,
-	Vladimir Oltean <vladimir.oltean@nxp.com>
-Subject: Re: [PATCH v2 net-next 1/9] phy: phy-ocelot-serdes: add ability to
- be used in a non-syscon configuration
-Message-ID: <ZBmRlnCKt7oJ/w9J@shell.armlinux.org.uk>
-References: <20230317185415.2000564-2-colin.foster@in-advantage.com>
- <ZBgeKM50e1vt+ho1@matsya>
- <ZBgmXplfA/Q3/1dC@shell.armlinux.org.uk>
- <20230320133431.GB2673958@google.com>
- <ZBhtOw4Ftj3Sa3JU@shell.armlinux.org.uk>
- <20230320164136.GC2673958@google.com>
- <ZBiRFNAqd94tbEJ9@shell.armlinux.org.uk>
- <20230321082658.GD2673958@google.com>
- <ZBmD+7pinpTzayep@shell.armlinux.org.uk>
- <20230321110851.GE2673958@google.com>
+	Tue, 21 Mar 2023 11:17:23 +0000
+Received: by mail-lf1-x131.google.com with SMTP id t11so18644695lfr.1
+        for <linux-phy@lists.infradead.org>; Tue, 21 Mar 2023 04:17:19 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1679397438;
+        h=content-transfer-encoding:mime-version:message-id:references
+         :in-reply-to:user-agent:subject:to:from:date:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=NtKEJBNyunYjPawzF3HMbeki6+rSmdWQGFTeKC93lS8=;
+        b=xP7wVRu4n2NvCx9w5tgDPIrBrnDazF2rn1Ugs5zcZrJrmnsJDdrMMbTNPhVetL+qYt
+         VnXYrx/tiqxOrPDiXirqr9fFdv4Z3uYyekA5rBvoqzitMRmO4hULouTlzjUabHJYwH4h
+         05/kTRXg8apF86NYLPjVOxxS+mrOW61WidTtm9dGtJt8llPweUPdw4h9iCxFC7OOh1gq
+         f5S7HVqNGewrBO3/ocncSILrZDipu3g8Yv/XB6L9g8NEpRPWCuvOUCrN1omtuXyMrOgC
+         DTAShJuPqtuZ+TR+/MK7bc7UrldvM8h4BQsXMtGuvAtPQCZV159V5J05KzHOF4F4JJZD
+         4vgQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112; t=1679397438;
+        h=content-transfer-encoding:mime-version:message-id:references
+         :in-reply-to:user-agent:subject:to:from:date:x-gm-message-state:from
+         :to:cc:subject:date:message-id:reply-to;
+        bh=NtKEJBNyunYjPawzF3HMbeki6+rSmdWQGFTeKC93lS8=;
+        b=SfYN4ZmXE5op4skJacu1Z/Srgr55M6vRsIV9fzr1hXmJnLqiOlH8tON3I2OEU8iq6m
+         eeHjpmK7g3o8C/qMrRhSZDhBMmWkLK/Z7bVTFBb91ZLKYhmI2nmbGEmfDBJ9TdSeYPJU
+         FCCbsGL8KAUljrgqjvffURknzyCWcd6Sm+cyeWXfCejaJzCNIpphNQWP1meM7eso2o7R
+         UXM8ZCgRxeRQ3BKmtNoHKKkOXth/UnAiDzBCWSrkpiu49y+b1t9KUbnPxLhs0KLmyTqG
+         O8cYALT7bNE8GiJ4/KC4prbi/bx3zj3ejcHB3MzX0Q4YjhZUpQQ8xkj1x+Vup71d2vOj
+         EwHA==
+X-Gm-Message-State: AO0yUKVOebgqhDi9iZPWgme1mD8iGTZORZALTns91BORhe2Uboui19QM
+	FS/9D2o0k1O5icg9wI02K9qU8A==
+X-Google-Smtp-Source: AK7set/Cu17olUriB8ZQQHQ5Aoy/b9zxovXnsVmvUhfJhKT+otuqfADxe0j3tJFlQHz6V7oAyzVd3Q==
+X-Received: by 2002:a05:6512:3a8b:b0:4db:3846:f908 with SMTP id q11-20020a0565123a8b00b004db3846f908mr963454lfu.10.1679397438291;
+        Tue, 21 Mar 2023 04:17:18 -0700 (PDT)
+Received: from [127.0.0.1] ([37.153.55.125])
+        by smtp.gmail.com with ESMTPSA id m2-20020a2e9342000000b00295965f7495sm2174305ljh.0.2023.03.21.04.17.17
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 21 Mar 2023 04:17:17 -0700 (PDT)
+Date: Tue, 21 Mar 2023 14:17:13 +0300
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+To: Varadarajan Narayanan <quic_varada@quicinc.com>, agross@kernel.org,
+ andersson@kernel.org, konrad.dybcio@linaro.org, vkoul@kernel.org,
+ kishon@kernel.org, robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
+ gregkh@linuxfoundation.org, mturquette@baylibre.com, sboyd@kernel.org,
+ quic_wcheng@quicinc.com, linux-arm-msm@vger.kernel.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org,
+ linux-clk@vger.kernel.org
+Subject: =?US-ASCII?Q?Re=3A_=5BPATCH_v2_1/8=5D_dt-bindings=3A_phy=3A_q?= =?US-ASCII?Q?com=2Cqusb2=3A_Document_IPQ9574_compatible?=
+User-Agent: K-9 Mail for Android
+In-Reply-To: <ef5af2e581203e2101773863aa7e1667b4d1b705.1679388632.git.quic_varada@quicinc.com>
+References: <cover.1677749625.git.quic_varada@quicinc.com> <cover.1679388632.git.quic_varada@quicinc.com> <ef5af2e581203e2101773863aa7e1667b4d1b705.1679388632.git.quic_varada@quicinc.com>
+Message-ID: <69120CDC-19C5-4087-BF71-0ECAB87D018B@linaro.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20230321110851.GE2673958@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230321_041441_452871_F9DA7493 
-X-CRM114-Status: GOOD (  32.53  )
+X-CRM114-CacheID: sfid-20230321_041722_383668_3B161614 
+X-CRM114-Status: UNSURE (   9.22  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,79 +98,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Mar 21, 2023 at 11:08:51AM +0000, Lee Jones wrote:
-> On Tue, 21 Mar 2023, Russell King (Oracle) wrote:
-> 
-> > On Tue, Mar 21, 2023 at 08:26:58AM +0000, Lee Jones wrote:
-> > > On Mon, 20 Mar 2023, Russell King (Oracle) wrote:
-> > >
-> > > > On Mon, Mar 20, 2023 at 04:41:36PM +0000, Lee Jones wrote:
-> > > > > On Mon, 20 Mar 2023, Russell King (Oracle) wrote:
-> > > > >
-> > > > > > On Mon, Mar 20, 2023 at 01:34:31PM +0000, Lee Jones wrote:
-> > > > > > > Once again netdev seems to have applied patches from other subsystems
-> > > > > > > without review/ack.  What makes netdev different to any other kernel
-> > > > > > > subsystem?  What would happen if other random maintainers started
-> > > > > > > applying netdev patches without appropriate review?  I suspect someone
-> > > > > > > would become understandably grumpy.
-> > > > > >
-> > > > > > Why again are you addressing your whinge to me? I'm not one of the
-> > > > > > netdev maintainers, but I've pointed out what happens in netdev
-> > > > > > land. However, you seem to *not* want to discuss it directly with
-> > > > > > DaveM/Jakub/Paolo - as illustrated again with yet another response
-> > > > > > to *me* rather than addressing your concerns *to* the people who
-> > > > > > you have an issue with.
-> > > > > >
-> > > > > > This is not communication. Effectively, this is sniping, because
-> > > > > > rather than discussing it with the individuals concerned, you are
-> > > > > > instead preferring to discuss it with others.
-> > > > > >
-> > > > > > Please stop this.
-> > > > >
-> > > > > Read the above paragraph again.
-> > > >
-> > > > You sent your email _TO_ me, that means you addressed your comments
-> > > > primarily _to_ me. RFC2822:
-> > > >
-> > > >    The "To:" field contains the address(es) of the primary recipient(s)
-> > > >    of the message.
-> > > >
-> > > >    The "Cc:" field (where the "Cc" means "Carbon Copy" in the sense of
-> > > >    making a copy on a typewriter using carbon paper) contains the
-> > > >    addresses of others who are to receive the message, though the
-> > > >    content of the message may not be directed at them.
-> > >
-> > > You're over-thinking it.  I replied to all.
-> >
-> > I've been thinking about this entire situation and there's something
-> > that summarises it. Kettle. Pot. Black.
-> >
-> > You complain about how netdev is run, but you also complain about how
-> > people interpret your emails.
-> >
-> > Sorry, but no. I think you need to be more accomodating towards how
-> > others perceive your emails, especially when there are widespread
-> > accepted conventions. The fact that you are seemingly not even willing
-> > to entertain that someone _might_ interpret your emails according to
-> > standard normals is frankly a problem for you.
-> 
-> This conversion has gone completely off-track.
-> 
-> If you wish to continue talking about email headers offline (instead of
-> filling people's inboxes with unrelated ramblings), you know where to
-> find me.
 
-I would prefer not to. I would much prefer it that if _you_ have a
-problem with how netdev operates, that _you_ talk directly _to_ the
-netdev maintainers, rather than latching on to one of my emails and
-replying to it. That is a reasonable request that _you_ appear to be
-completely immune to comprehending, instead wishing to effectively
-tell me that I'm wrong to request that - and start this idiotic
-thread to debate it.
+
+On 21 March 2023 11:54:19 GMT+03:00, Varadarajan Narayanan <quic_varada@quicinc.com> wrote:
+>Document the compatible string used for the qusb2 phy in IPQ9574.
+>
+>Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+>Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
+>
+>---
+> Changes in v2:
+>	- Moved ipq6018 to the proper place and placed ipq9574
+>	  next to it as suggested by Dmitry
+>---
+> Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml | 3 ++-
+> 1 file changed, 2 insertions(+), 1 deletion(-)
+>
+>diff --git a/Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml
+>index 7f403e7..eaecf9b 100644
+>--- a/Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml
+>+++ b/Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml
+>@@ -19,12 +19,13 @@ properties:
+>       - items:
+>           - enum:
+>               - qcom,ipq8074-qusb2-phy
+>+              - qcom,ipq6018-qusb2-phy
+>+              - qcom,ipq9574-qusb2-phy
+
+This still isn't sorted
+
+>               - qcom,msm8953-qusb2-phy
+>               - qcom,msm8996-qusb2-phy
+>               - qcom,msm8998-qusb2-phy
+>               - qcom,qcm2290-qusb2-phy
+>               - qcom,sdm660-qusb2-phy
+>-              - qcom,ipq6018-qusb2-phy
+>               - qcom,sm4250-qusb2-phy
+>               - qcom,sm6115-qusb2-phy
+>       - items:
 
 -- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTP is here! 40Mbps down 10Mbps up. Decent connectivity at last!
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
