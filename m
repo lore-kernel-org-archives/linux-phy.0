@@ -4,67 +4,94 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 97B07C6FD1C
-	for <linux-phy@archiver.kernel.org>; Tue, 21 Mar 2023 02:10:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 75458C77B62
+	for <linux-phy@archiver.kernel.org>; Tue, 21 Mar 2023 05:50:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=znZOP9NCBsYZvsORl2SeZPAksSWaGHwbg5qszRtGfgM=; b=GvaPI3nPI41JT6
-	N99YnjcO0ISYCqsCBnNfc1lWEQY29HVRqbdvT6jkrmYTS+XXpW5vzCfiJeRAI2uuQDWXRhJ1AvbZl
-	slugV5tP74Gc85vCpY2E/EgNbuldpwFv7L9pMhPLqKyLSjz62g0gOJ1sxbf7uwla7BtQBaFAUxLjK
-	HdMa79VX566bDsHDGTlmf9SDaboHDmXjPOu+EB7C2UN933X1ovfL4PFj7nKI1ocvLzXU+7t4tYNCt
-	qr4ejAEfDDLA8CYg2zWE4Gj3OXJs5HusE95lglr4a4zkd8+PPbGWc8nxILZYcDSuIXunJ/qNoyMuF
-	3IL7fTRiu7YqEke2SWBQ==;
+	List-Owner; bh=F+0BqA8Gr957FJox+9HJ6DQrZAWu7ho8BXvqeCEREOs=; b=NJtfbPjH1/bZTj
+	6TJ1ltue7qBCQ60r7BXueZSD4DcpQbZeMvW8sXzkX5FZKpSZSEHOgwJWiiM7DH6O202T3geFE+52z
+	5O8xFW2RzfUbaKqJOTkfuIZecrKQ1xyPt4dosd5MY2OEwEhbLY+6W5pAo1FP5lj9aikCJq8M5LVPP
+	HHUWu0kKkAhm2yIo7n2OgibNxdj31dtnlBQRtdh1I/ZUhc/vrRfQFD5X23elgGILs3ttijFcsdDB6
+	8C/HC9PFXo3iUp0JNP1gMUWjP7H1k+Gkq0jntz6R2Wq9jS2oZ+apg+KEATSCpBoIvX4RULQhHycYv
+	B6RT9ea8q7hBf8Z7gRyg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1peRSE-00AzUA-0Q;
-	Tue, 21 Mar 2023 02:10:26 +0000
-Received: from ex01.ufhost.com ([61.152.239.75])
-	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1peRS9-00AzTi-1z;
-	Tue, 21 Mar 2023 02:10:23 +0000
-Received: from EXMBX166.cuchost.com (unknown [175.102.18.54])
-	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
-	(Client CN "EXMBX166", Issuer "EXMBX166" (not verified))
-	by ex01.ufhost.com (Postfix) with ESMTP id 8748F24E1FB;
-	Tue, 21 Mar 2023 10:10:00 +0800 (CST)
-Received: from EXMBX162.cuchost.com (172.16.6.72) by EXMBX166.cuchost.com
- (172.16.6.76) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Tue, 21 Mar
- 2023 10:10:00 +0800
-Received: from [192.168.125.82] (183.27.97.64) by EXMBX162.cuchost.com
- (172.16.6.72) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Tue, 21 Mar
- 2023 10:09:59 +0800
-Message-ID: <7f38d366-f3da-7441-3400-7719b0f33326@starfivetech.com>
-Date: Tue, 21 Mar 2023 10:09:57 +0800
+	id 1peUsr-00BIJP-37;
+	Tue, 21 Mar 2023 05:50:09 +0000
+Received: from mail-ot1-x332.google.com ([2607:f8b0:4864:20::332])
+	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
+	id 1peUsp-00BIIO-24;
+	Tue, 21 Mar 2023 05:50:08 +0000
+Received: by mail-ot1-x332.google.com with SMTP id 14-20020a9d010e000000b0069f1287f557so3597439otu.0;
+        Mon, 20 Mar 2023 22:50:05 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20210112; t=1679377804;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=PQRYTyJUcXjGIlb32K69CN7N/CfuacDHmOLvuVVkIeU=;
+        b=dvXZYzN833ztFsoJznnGxdR0/0KDzNzHYXwzXQT9/sNO5xkoJ+lNZq/os3qZoAT1wT
+         4ltJ90CCuSJ8X42Ogt8uA+Q3s2aGHigv7h+tgQul/G5CQe7uuJFxX1L6ZKKmpWzd7MRY
+         SVgWyoSI7Z077Drc4TD3uQOQGSMSM9xVxURJ7FsCVG0kK4KjVvfpKgb86P01KVQOTA95
+         4qwUwGifTLRgcCe+8BC77XrGhglPT8wIuoFHPpYmB7khakZnKYzlFm8PF7vrexs+9OtW
+         y7RErnsp1t30CYFI6Y7rbth9RiDeTgYGQHYsEoDtycNWHGdrLF/Nkwc+K/9YmFAq3SkK
+         lj/Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112; t=1679377804;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=PQRYTyJUcXjGIlb32K69CN7N/CfuacDHmOLvuVVkIeU=;
+        b=Ihheq+KgMrEdOMYg3Pa55mkI6s7i136Z81XbWoiZAiHEqJ2dr34xFPx9QtqD2owKT5
+         ikJ7mE938k46eT724KwkMHnv0c4CjC/EZuq1v6gvq0tqyNZM8rCKoOUUQwWsLNn7PLrH
+         g9ashzs/iEgiqXJgo7vRZOud/lok57yoCZ6+85pyalKQOjXBtJy0y59qL8jTP3eolHxA
+         IY4ijUzHZPSiDF1ZTCBUmMKJtJPeCHKWZ0bbg8XnmCi86LrGuxTarzW/MO+gLLpILI0M
+         KGo0hjijvtunsOPqmu8cCw0WFoKyjQi+tiLG89ECLjexBbcTsftts1O98le7qie0AXcV
+         n78g==
+X-Gm-Message-State: AO0yUKWLIjkGsmV6v9bRtJZ7BpPfrhyoFTjckvIdtsazZF5DCi1ZrLK+
+	ZyUHxk7yJNm9oH6GM6ak4Q9j77UQS+SmtEynhJ8=
+X-Google-Smtp-Source: AK7set9hGdm8jb3Zms52xIkHW02ezlDplA4s1W/5C+8w1fxRVUiCGMOX1ghjWbWe1rulG24xEDF5Rs78eQG2Vsd6oW8=
+X-Received: by 2002:a05:6830:13d3:b0:69e:24a7:e042 with SMTP id
+ e19-20020a05683013d300b0069e24a7e042mr409968otq.3.1679377801763; Mon, 20 Mar
+ 2023 22:50:01 -0700 (PDT)
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.9.0
-Subject: Re: [PATCH v2 0/3] Add JH7110 MIPI DPHY RX support
-Content-Language: en-US
-To: Vinod Koul <vkoul@kernel.org>
-CC: Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring
-	<robh+dt@kernel.org>, Krzysztof Kozlowski
-	<krzysztof.kozlowski+dt@linaro.org>, Emil Renner Berthing <kernel@esmil.dk>,
-	Conor Dooley <conor@kernel.org>, Paul Walmsley <paul.walmsley@sifive.com>,
-	Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>,
-	Philipp Zabel <p.zabel@pengutronix.de>, Jack Zhu <jack.zhu@starfivetech.com>,
-	<linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
-	<linux-kernel@vger.kernel.org>, <linux-riscv@lists.infradead.org>
-References: <20230223015952.201841-1-changhuang.liang@starfivetech.com>
- <7e525c7d-d534-adba-4aea-a485ba37bcc7@starfivetech.com>
- <ZBhT8tpBhdFugurm@matsya>
-From: Changhuang Liang <changhuang.liang@starfivetech.com>
-In-Reply-To: <ZBhT8tpBhdFugurm@matsya>
-X-Originating-IP: [183.27.97.64]
-X-ClientProxiedBy: EXCAS064.cuchost.com (172.16.6.24) To EXMBX162.cuchost.com
- (172.16.6.72)
-X-YovoleRuleAgent: yovoleflag
+References: <20230320233955.2921179-1-robh@kernel.org>
+In-Reply-To: <20230320233955.2921179-1-robh@kernel.org>
+From: Sergio Paracuellos <sergio.paracuellos@gmail.com>
+Date: Tue, 21 Mar 2023 06:49:49 +0100
+Message-ID: <CAMhs-H829e-QSwMXAVN6b4pYTB+_d-PLJxbEqdhd9oOrYnY-aQ@mail.gmail.com>
+Subject: Re: [PATCH] dt-bindings: phy: Drop unneeded quotes
+To: Rob Herring <robh@kernel.org>
+Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Chen-Yu Tsai <wens@csie.org>, 
+	Jernej Skrabec <jernej.skrabec@gmail.com>, Samuel Holland <samuel@sholland.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Kevin Hilman <khilman@baylibre.com>, 
+	Jerome Brunet <jbrunet@baylibre.com>, 
+	Martin Blumenstingl <martin.blumenstingl@googlemail.com>, Yu Chen <chenyu56@huawei.com>, 
+	Binghui Wang <wangbinghui@hisilicon.com>, Mauro Carvalho Chehab <mchehab@kernel.org>, 
+	Miquel Raynal <miquel.raynal@bootlin.com>, Chunfeng Yun <chunfeng.yun@mediatek.com>, 
+	Matthias Brugger <matthias.bgg@gmail.com>, 
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, 
+	Thierry Reding <thierry.reding@gmail.com>, Jonathan Hunter <jonathanh@nvidia.com>, 
+	Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
+	Konrad Dybcio <konrad.dybcio@linaro.org>, Robert Marko <robert.marko@sartura.hr>, 
+	Luka Perkov <luka.perkov@sartura.hr>, Alim Akhtar <alim.akhtar@samsung.com>, 
+	Vincent Shih <vincent.sunplus@gmail.com>, Wolfgang Grandegger <wg@grandegger.com>, 
+	Marc Kleine-Budde <mkl@pengutronix.de>, linux-phy@lists.infradead.org, 
+	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+	linux-sunxi@lists.linux.dev, linux-kernel@vger.kernel.org, 
+	linux-amlogic@lists.infradead.org, linux-usb@vger.kernel.org, 
+	linux-mediatek@lists.infradead.org, linux-tegra@vger.kernel.org, 
+	linux-arm-msm@vger.kernel.org, linux-samsung-soc@vger.kernel.org, 
+	linux-can@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230320_191021_990717_9734EA8F 
-X-CRM114-Status: GOOD (  11.27  )
+X-CRM114-CacheID: sfid-20230320_225007_693735_77432D3D 
+X-CRM114-Status: UNSURE (   8.30  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,43 +103,17 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-
-On 2023/3/20 20:39, Vinod Koul wrote:
-> On 03-03-23, 14:05, Changhuang Liang wrote:
->>
->>
->> On 2023/2/23 9:59, Changhuang Liang wrote:
->>> This patchset adds mipi dphy rx driver for the StarFive JH7110 SoC.
->>> It is used to transfer CSI camera data. The series has been tested on
->>> the VisionFive 2 board.
->>>
->>> This patchset should be applied after the patchset [1] and patch [2]:
->>> [1] https://lore.kernel.org/all/20230221083323.302471-1-xingyu.wu@starfivetech.com/
->>> [2] https://lore.kernel.org/all/20230215113249.47727-4-william.qiu@starfivetech.com/
->>>
->> Hi, Vinod and Kishon
->>
->> Could you please help to review and give me some suggestions
->> for this patch series? Thank you for your time.
-> 
-> There are already comments on dt-binding, please address them!
-> 
-
-I have address them on v3, and I am really looking forward to your comments. 
-Thank you so much for wasting your time.
-
->>
->> Best regards,
->> Changhuang
-> 
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gVHVlLCBNYXIgMjEsIDIwMjMgYXQgMTI6NDDigK9BTSBSb2IgSGVycmluZyA8cm9iaEBrZXJu
+ZWwub3JnPiB3cm90ZToKPgo+IENsZWFudXAgYmluZGluZ3MgZHJvcHBpbmcgdW5uZWVkZWQgcXVv
+dGVzLiBPbmNlIGFsbCB0aGVzZSBhcmUgZml4ZWQsCj4gY2hlY2tpbmcgZm9yIHRoaXMgY2FuIGJl
+IGVuYWJsZWQgaW4geWFtbGxpbnQuCj4KPiBTaWduZWQtb2ZmLWJ5OiBSb2IgSGVycmluZyA8cm9i
+aEBrZXJuZWwub3JnPgoKPiAgLi4uL2RldmljZXRyZWUvYmluZGluZ3MvcGh5L21lZGlhdGVrLG10
+NzYyMS1wY2ktcGh5LnlhbWwgICAgfCA0ICsrLS0KCkFja2VkLWJ5OiBTZXJnaW8gUGFyYWN1ZWxs
+b3MgPHNlcmdpby5wYXJhY3VlbGxvc0BnbWFpbC5jb20+CgotLSAKbGludXgtcGh5IG1haWxpbmcg
+bGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVh
+ZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
