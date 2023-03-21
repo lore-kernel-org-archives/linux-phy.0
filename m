@@ -4,90 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 977F7C74A5B
-	for <linux-phy@archiver.kernel.org>; Tue, 21 Mar 2023 07:15:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7E431C6FD1D
+	for <linux-phy@archiver.kernel.org>; Tue, 21 Mar 2023 08:27:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=tMT52eLrFzJNEnBR2Tk10fi4/sKzEKV0d8VK/VNQZ4A=; b=DPv3iyoaeYeFWwuoSBPLnaAjl8
-	NsVO6A4hftDdNYONSL4qOwoFkbEjJpvjh5cyRB8/HuAdEtyBW4B/IoQh6KvIJJTSxNuP11sfr6Gxp
-	fDLHOOErTshbOkzlbWVRhFmN/v0fHvyS5MNBMlduf8d9jvrT81gk8gOjfXcQMUwldhb71hgQSWn99
-	IsH8CU0xsdJ93BVgHQnAA6mdW4CDJkTmqvidKfgGZvnu0Ioc4ZlbpqG/voFeSkqlQ0jFRInKJ3Fv1
-	CFQ1vZEDHi3/IarJtkWWhsRXekisDVc/1YLEnFl7id9uhgLc9ZsyepngBw3EzkjDorKjDveHepENO
-	ZUoZ5Z/Q==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=p8U0WkiC92/WZYP1yFqA72dlIH9Ka9+zrTE4kijNSWc=; b=F61WvxOU1+A6QZ
+	3ugTHbzzCz42L8BsdXoHffobbeHZIfsbTMHJwNIPa12DlMA3NEUsS8mSIk277Cv9aWkmwer7qf3y4
+	QLJRFhyefJl0SdC0l/kOouKlPBBDjkQVDaj0qfofWShnsO7aK4BvfykNr6jCZdMFqbirBWxdidDv0
+	SYDK0Wn+ehhP+0kYVgyFBOSr5hXxb0/jtw/aPYnIq5WqtnsoCsPFD4dj8HseJuKXEVavtYAwkT5Hs
+	0F7/IVk4F6GF+iJ0REjnuAcafZuhpCr8b8/RbBG84/jP0/WWYBKE2VjHuM8nJbrzAf/z2ZK8NPdcx
+	SUQCDBmIBYx6Ylz6X1mQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1peWD5-00BUuZ-0c;
-	Tue, 21 Mar 2023 07:15:07 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1peXKo-00Bfp7-0F;
+	Tue, 21 Mar 2023 08:27:10 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1peWD0-00BUsR-2n
+	id 1peXKk-00BfoE-2J
 	for linux-phy@lists.infradead.org;
-	Tue, 21 Mar 2023 07:15:05 +0000
-Received: from moin.white.stw.pengutronix.de ([2a0a:edc0:0:b01:1d::7b] helo=bjornoya.blackshift.org)
-	by metis.ext.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
-	(Exim 4.92)
-	(envelope-from <mkl@pengutronix.de>)
-	id 1peWCD-0005ev-Co; Tue, 21 Mar 2023 08:14:13 +0100
-Received: from pengutronix.de (unknown [IPv6:2a01:4f8:1c1c:29e9:22:41ff:fe00:1400])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange ECDHE (prime256v1) server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(Client did not present a certificate)
-	(Authenticated sender: mkl-all@blackshift.org)
-	by smtp.blackshift.org (Postfix) with ESMTPSA id CFC9A19831D;
-	Tue, 21 Mar 2023 07:14:02 +0000 (UTC)
-Date: Tue, 21 Mar 2023 08:14:01 +0100
-From: Marc Kleine-Budde <mkl@pengutronix.de>
-To: Rob Herring <robh@kernel.org>
+	Tue, 21 Mar 2023 08:27:08 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 9511661A1D;
+	Tue, 21 Mar 2023 08:27:05 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id D1B79C433EF;
+	Tue, 21 Mar 2023 08:27:01 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1679387225;
+	bh=G8XymTXPHbxOnstyG63Kd2jgHhH5dsTlu9HPkRT19pw=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=tefxz2aFJsJSJAT9m2sxqO7z2PEBl56vSqPhmfiqxPVQQPuSX3hM9bwVWsUfBUbUV
+	 SN6w+Tb/vnoTpcHujhSOStnaApNS4VpEmgCNZ3oR72owoz5kYDnnFe/tydRB0rUNEX
+	 qamTvhKJA+FpyKbFOSzTV6ffMagjaw4JjCbDRMqPpGaM80RGOoNsRaXqvad0fjGnel
+	 kqLiqpg3nmO8RwbGwSGC6gDf6HcIuMdJpLxFuxwImT/ePCfGrMf3iPXyHfdPJHEskq
+	 GwBn7US73vVmOCe+1hL+JHJhm61brMjUu4/7bhOrOYUq+gMYjRx2f7OEOe5pK0JEI4
+	 C+O56sU2uY5IA==
+Date: Tue, 21 Mar 2023 08:26:58 +0000
+From: Lee Jones <lee@kernel.org>
+To: "Russell King (Oracle)" <linux@armlinux.org.uk>
 Cc: Vinod Koul <vkoul@kernel.org>,
+	Colin Foster <colin.foster@in-advantage.com>,
+	linux-phy@lists.infradead.org, netdev@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Chen-Yu Tsai <wens@csie.org>,
-	Jernej Skrabec <jernej.skrabec@gmail.com>,
-	Samuel Holland <samuel@sholland.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Kevin Hilman <khilman@baylibre.com>,
-	Jerome Brunet <jbrunet@baylibre.com>,
-	Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
-	Yu Chen <chenyu56@huawei.com>,
-	Binghui Wang <wangbinghui@hisilicon.com>,
-	Mauro Carvalho Chehab <mchehab@kernel.org>,
-	Miquel Raynal <miquel.raynal@bootlin.com>,
-	Chunfeng Yun <chunfeng.yun@mediatek.com>,
-	Sergio Paracuellos <sergio.paracuellos@gmail.com>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	Thierry Reding <thierry.reding@gmail.com>,
-	Jonathan Hunter <jonathanh@nvidia.com>,
-	Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
-	Robert Marko <robert.marko@sartura.hr>,
-	Luka Perkov <luka.perkov@sartura.hr>,
-	Alim Akhtar <alim.akhtar@samsung.com>,
-	Vincent Shih <vincent.sunplus@gmail.com>,
-	Wolfgang Grandegger <wg@grandegger.com>,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
-	linux-kernel@vger.kernel.org, linux-amlogic@lists.infradead.org,
-	linux-usb@vger.kernel.org, linux-mediatek@lists.infradead.org,
-	linux-tegra@vger.kernel.org, linux-arm-msm@vger.kernel.org,
-	linux-samsung-soc@vger.kernel.org, linux-can@vger.kernel.org
-Subject: Re: [PATCH] dt-bindings: phy: Drop unneeded quotes
-Message-ID: <20230321071401.tmzxmedhjtup3gil@pengutronix.de>
-References: <20230320233955.2921179-1-robh@kernel.org>
+	Paolo Abeni <pabeni@redhat.com>, Jakub Kicinski <kuba@kernel.org>,
+	Eric Dumazet <edumazet@google.com>,
+	"David S. Miller" <davem@davemloft.net>,
+	Florian Fainelli <f.fainelli@gmail.com>,
+	Andrew Lunn <andrew@lunn.ch>, UNGLinuxDriver@microchip.com,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Claudiu Manoil <claudiu.manoil@nxp.com>,
+	Vladimir Oltean <vladimir.oltean@nxp.com>
+Subject: Re: [PATCH v2 net-next 1/9] phy: phy-ocelot-serdes: add ability to
+ be used in a non-syscon configuration
+Message-ID: <20230321082658.GD2673958@google.com>
+References: <20230317185415.2000564-1-colin.foster@in-advantage.com>
+ <20230317185415.2000564-2-colin.foster@in-advantage.com>
+ <ZBgeKM50e1vt+ho1@matsya>
+ <ZBgmXplfA/Q3/1dC@shell.armlinux.org.uk>
+ <20230320133431.GB2673958@google.com>
+ <ZBhtOw4Ftj3Sa3JU@shell.armlinux.org.uk>
+ <20230320164136.GC2673958@google.com>
+ <ZBiRFNAqd94tbEJ9@shell.armlinux.org.uk>
 MIME-Version: 1.0
-In-Reply-To: <20230320233955.2921179-1-robh@kernel.org>
-X-SA-Exim-Connect-IP: 2a0a:edc0:0:b01:1d::7b
-X-SA-Exim-Mail-From: mkl@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de); SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-phy@lists.infradead.org
+Content-Disposition: inline
+In-Reply-To: <ZBiRFNAqd94tbEJ9@shell.armlinux.org.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230321_001502_931944_0010F13C 
-X-CRM114-Status: GOOD (  12.79  )
+X-CRM114-CacheID: sfid-20230321_012706_829989_05BFCB76 
+X-CRM114-Status: GOOD (  24.02  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,67 +88,42 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============0558851168567148396=="
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
---===============0558851168567148396==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="be3e4amne3fqyhxc"
-Content-Disposition: inline
-
-
---be3e4amne3fqyhxc
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On 20.03.2023 18:39:52, Rob Herring wrote:
-> Cleanup bindings dropping unneeded quotes. Once all these are fixed,
-> checking for this can be enabled in yamllint.
->=20
-> Signed-off-by: Rob Herring <robh@kernel.org>
-> ---
->  Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml  | 4 ++--
-
-Acked-by: Marc Kleine-Budde <mkl@pengutronix.de> # for ti,tcan104x-can.yaml
-
-Marc
-
---=20
-Pengutronix e.K.                 | Marc Kleine-Budde           |
-Embedded Linux                   | https://www.pengutronix.de  |
-Amtsgericht Hildesheim, HRA 2686 | Fax:   +49-5121-206917-5555 |
-
---be3e4amne3fqyhxc
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEDs2BvajyNKlf9TJQvlAcSiqKBOgFAmQZWTcACgkQvlAcSiqK
-BOhnJggArFl7SeXMUoTFqF4RAxiwJqkBFw93RzRXX0UR0G4PQJiS7lLHDZ7ouvtO
-rhXsWIOs5a6P/Ui5FqXcfmo19Lv0KoJY/qddMLlT/bZ5JkS5uAgrqbHe+nLos462
-41OBQby+tr3pxNThQcX8/sq6Od9GHQ5ZrbtiIV3yyd7z65cmR2WgRvomHEADY6uh
-m+x5woaXBVJqK5m1srOvvOs4gS+ruZdSbjMuVPNJJr4Kp7r05JRRGyaIhlAQ2zTV
-RjASaGhVK8Gq5uknd2s684jKIfcCeSxmN1P8JLNA3I2rwTmn5+b7XrawnbOWrKlS
-e56NNf6fuROlFhJVzNzl24yI+zqsyg==
-=Khyr
------END PGP SIGNATURE-----
-
---be3e4amne3fqyhxc--
-
-
---===============0558851168567148396==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============0558851168567148396==--
-
+T24gTW9uLCAyMCBNYXIgMjAyMywgUnVzc2VsbCBLaW5nIChPcmFjbGUpIHdyb3RlOgoKPiBPbiBN
+b24sIE1hciAyMCwgMjAyMyBhdCAwNDo0MTozNlBNICswMDAwLCBMZWUgSm9uZXMgd3JvdGU6Cj4g
+PiBPbiBNb24sIDIwIE1hciAyMDIzLCBSdXNzZWxsIEtpbmcgKE9yYWNsZSkgd3JvdGU6Cj4gPgo+
+ID4gPiBPbiBNb24sIE1hciAyMCwgMjAyMyBhdCAwMTozNDozMVBNICswMDAwLCBMZWUgSm9uZXMg
+d3JvdGU6Cj4gPiA+ID4gT25jZSBhZ2FpbiBuZXRkZXYgc2VlbXMgdG8gaGF2ZSBhcHBsaWVkIHBh
+dGNoZXMgZnJvbSBvdGhlciBzdWJzeXN0ZW1zCj4gPiA+ID4gd2l0aG91dCByZXZpZXcvYWNrLiAg
+V2hhdCBtYWtlcyBuZXRkZXYgZGlmZmVyZW50IHRvIGFueSBvdGhlciBrZXJuZWwKPiA+ID4gPiBz
+dWJzeXN0ZW0/ICBXaGF0IHdvdWxkIGhhcHBlbiBpZiBvdGhlciByYW5kb20gbWFpbnRhaW5lcnMg
+c3RhcnRlZAo+ID4gPiA+IGFwcGx5aW5nIG5ldGRldiBwYXRjaGVzIHdpdGhvdXQgYXBwcm9wcmlh
+dGUgcmV2aWV3PyAgSSBzdXNwZWN0IHNvbWVvbmUKPiA+ID4gPiB3b3VsZCBiZWNvbWUgdW5kZXJz
+dGFuZGFibHkgZ3J1bXB5Lgo+ID4gPgo+ID4gPiBXaHkgYWdhaW4gYXJlIHlvdSBhZGRyZXNzaW5n
+IHlvdXIgd2hpbmdlIHRvIG1lPyBJJ20gbm90IG9uZSBvZiB0aGUKPiA+ID4gbmV0ZGV2IG1haW50
+YWluZXJzLCBidXQgSSd2ZSBwb2ludGVkIG91dCB3aGF0IGhhcHBlbnMgaW4gbmV0ZGV2Cj4gPiA+
+IGxhbmQuIEhvd2V2ZXIsIHlvdSBzZWVtIHRvICpub3QqIHdhbnQgdG8gZGlzY3VzcyBpdCBkaXJl
+Y3RseSB3aXRoCj4gPiA+IERhdmVNL0pha3ViL1Bhb2xvIC0gYXMgaWxsdXN0cmF0ZWQgYWdhaW4g
+d2l0aCB5ZXQgYW5vdGhlciByZXNwb25zZQo+ID4gPiB0byAqbWUqIHJhdGhlciB0aGFuIGFkZHJl
+c3NpbmcgeW91ciBjb25jZXJucyAqdG8qIHRoZSBwZW9wbGUgd2hvCj4gPiA+IHlvdSBoYXZlIGFu
+IGlzc3VlIHdpdGguCj4gPiA+Cj4gPiA+IFRoaXMgaXMgbm90IGNvbW11bmljYXRpb24uIEVmZmVj
+dGl2ZWx5LCB0aGlzIGlzIHNuaXBpbmcsIGJlY2F1c2UKPiA+ID4gcmF0aGVyIHRoYW4gZGlzY3Vz
+c2luZyBpdCB3aXRoIHRoZSBpbmRpdmlkdWFscyBjb25jZXJuZWQsIHlvdSBhcmUKPiA+ID4gaW5z
+dGVhZCBwcmVmZXJyaW5nIHRvIGRpc2N1c3MgaXQgd2l0aCBvdGhlcnMuCj4gPiA+Cj4gPiA+IFBs
+ZWFzZSBzdG9wIHRoaXMuCj4gPgo+ID4gUmVhZCB0aGUgYWJvdmUgcGFyYWdyYXBoIGFnYWluLgo+
+Cj4gWW91IHNlbnQgeW91ciBlbWFpbCBfVE9fIG1lLCB0aGF0IG1lYW5zIHlvdSBhZGRyZXNzZWQg
+eW91ciBjb21tZW50cwo+IHByaW1hcmlseSBfdG9fIG1lLiBSRkMyODIyOgo+Cj4gICAgVGhlICJU
+bzoiIGZpZWxkIGNvbnRhaW5zIHRoZSBhZGRyZXNzKGVzKSBvZiB0aGUgcHJpbWFyeSByZWNpcGll
+bnQocykKPiAgICBvZiB0aGUgbWVzc2FnZS4KPgo+ICAgIFRoZSAiQ2M6IiBmaWVsZCAod2hlcmUg
+dGhlICJDYyIgbWVhbnMgIkNhcmJvbiBDb3B5IiBpbiB0aGUgc2Vuc2Ugb2YKPiAgICBtYWtpbmcg
+YSBjb3B5IG9uIGEgdHlwZXdyaXRlciB1c2luZyBjYXJib24gcGFwZXIpIGNvbnRhaW5zIHRoZQo+
+ICAgIGFkZHJlc3NlcyBvZiBvdGhlcnMgd2hvIGFyZSB0byByZWNlaXZlIHRoZSBtZXNzYWdlLCB0
+aG91Z2ggdGhlCj4gICAgY29udGVudCBvZiB0aGUgbWVzc2FnZSBtYXkgbm90IGJlIGRpcmVjdGVk
+IGF0IHRoZW0uCgpZb3UncmUgb3Zlci10aGlua2luZyBpdC4gIEkgcmVwbGllZCB0byBhbGwuCgot
+LQpMZWUgSm9uZXMgW+adjueQvOaWr10KCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4
+LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWls
+bWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
