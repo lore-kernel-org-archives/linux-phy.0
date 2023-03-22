@@ -4,71 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0695EC761AF
-	for <linux-phy@archiver.kernel.org>; Wed, 22 Mar 2023 21:52:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 88841C6FD1F
+	for <linux-phy@archiver.kernel.org>; Wed, 22 Mar 2023 21:53:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NiUXTE5StS+dIQyNbZ/hJxL7ETsY/S9ziBcnOGEdpmE=; b=b58BSzuDJoUWR+
-	RW45/KsILyQuPikSC1Q777PWp6ed7vjtWjESf/hGH8/0Qh4XZku8uitc6h9raIiBIa8Ix0DE7LZ19
-	EqPZ/YgTzCq0V2IH94O6FxOYxZcgL+YK9ReKkHuP5ZUzgeaaTg/tBqnVHgDzqWBLGOrhQ7fZ3eEEY
-	JeM/x+XpE9DgpB/+SzYg87PYHwKs1HtQtki41d7oKu93buA1QB1w3g3WxE9rHlOQsJjyLbGoxNZuN
-	0QkRlD/3iWcdgApSGDnXiV8oM6Gw6oS5Shukkx70quDsW8xHMuzn2hOCxSs0KtZD3DwXWzN/4CyLF
-	Y5cfXxKdRNnku2k0A93Q==;
+	List-Owner; bh=e5gaEkmhRHMCeE2a/2cm5/G1qQ3CI3Dfjp495aHNnzQ=; b=rutP5nXzqzvux3
+	tK9BgpCk2NzuleJP+hAIAYH3rMEFVuMij6o+TTL39lcD1xo+OJY9gXB9HF5H13KZoQeR1ab4U60yo
+	EuojV8Vj6kqQT2SNSaCnQI/Fv3/efwY6KkUYa56fyDHiMIhhZeTs0Ws4vXg2TETgtRnmg8gs7p/B/
+	OrGtWRIwiDV84hiqr0+yV5Zf1wU3rXHwYsMOEWZ5+iwfkoy8FosOtzIG22wNyQHcMvWEHioNu3u0I
+	Ppw2mhpVDmt/0llc2rCrGKLoOcDxMp0vgC0PJ/3NeLNhBUyxQVoNAhfzx9JNWwJawdx5aHUBCJuvq
+	fKUYI+kp48oJnI5AX/2Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pf6O4-00HWx9-0n;
-	Wed, 22 Mar 2023 21:52:52 +0000
-Received: from mail-ed1-x536.google.com ([2a00:1450:4864:20::536])
+	id 1pf6P7-00HXF9-0O;
+	Wed, 22 Mar 2023 21:53:57 +0000
+Received: from mail-ed1-x52b.google.com ([2a00:1450:4864:20::52b])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pf6O0-00HWvX-1M
+	id 1pf6P4-00HXE2-2c
 	for linux-phy@lists.infradead.org;
-	Wed, 22 Mar 2023 21:52:50 +0000
-Received: by mail-ed1-x536.google.com with SMTP id y4so78872046edo.2
-        for <linux-phy@lists.infradead.org>; Wed, 22 Mar 2023 14:52:47 -0700 (PDT)
+	Wed, 22 Mar 2023 21:53:56 +0000
+Received: by mail-ed1-x52b.google.com with SMTP id ew6so15817811edb.7
+        for <linux-phy@lists.infradead.org>; Wed, 22 Mar 2023 14:53:53 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1679521966;
+        d=linaro.org; s=google; t=1679522032;
         h=content-transfer-encoding:in-reply-to:from:references:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=ae1Fg1XrNO0U2G9oXfkthXql4Cz6bcgr28jd3JL36xQ=;
-        b=MhhTNWacisy6aVXWag8D/bV7u6OA1Z5BweJMma4y2nxaFetFPEd1946+0b+Ylqw2OC
-         Kq0bqlJVqcv+wj/EB+AR89gfXto7MWzPeQ06XW99ZVveKLV0jTKp/y923NdLqvt+vxFR
-         EvC+RZiHhkOoKODsvKtiG7i7dL/7U7Cy4wqFQCYgenxFfihZk8MbQGHtehsL37txDRmP
-         HaI/VNZRWWOE9cYic9BwSguWuef225+VL+y4CLBeK0EhhVQfEJQXazo9fB2vyvC7q+d/
-         M1zftfaWEuHy1y0n+E3dWI9/RF5noB59veAPSGQ8VjOn2dlZtoByfzbsf1UNLONrTLKg
-         Ofqw==
+        bh=xehrL2dgpZYyP/0AM2a+lXnXwn5PW3e0iW5W0VmPTqg=;
+        b=KI4TzoNHQxflEoUcBryC3LXEvMO9lxh2bsIloTZApwsunrsKsg/6DG3LYjPR5oFezI
+         5d8J3vnMlni6v+vzv9ACcW66GzUBcBw/K8sL01C5mAu3Sl/R6PDlECvjEAcR6l0oG9iI
+         3TAXYG4RGicppbFPS+KwYwga/aDWrOF6JisGaWjN6DkxOPEEmb2096NhC7ZlQdeu+XwH
+         6GILqbGa4V8HaiubNnE+t5cWZAP5TQQmCIdNdah2XT1/mPkplH0H6XKVLHOZGz+PbalS
+         SsQ02tae7TxAYj7DnzjObjMbDHUrMrzXtAmVblIqV5PpLUD86/Lz0S1/Oh+XmlAy3xkS
+         1j1w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112; t=1679521966;
+        d=1e100.net; s=20210112; t=1679522032;
         h=content-transfer-encoding:in-reply-to:from:references:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=ae1Fg1XrNO0U2G9oXfkthXql4Cz6bcgr28jd3JL36xQ=;
-        b=J/tqTdOX/Ky5MJuRAMRN51ITMdVK6gXLaozM/6I/LsvZndW/nQc3qgDHceUUD5hoLK
-         0bZc7y93bElpN9Rfa7u8KIjOI6UK++ziDItr3pbghNPZTrHIwVQH8YypxLBTvEVjR53g
-         uCEWaVDnmCWtP30gin4XTfFF32O11d9tGTXsVmdeDuOShECTbjE+tNRN0WtRlQSVt8o9
-         cfBFNMNoj+fdHXrCSwf8DiV2DU6fb9F2DP4NztlM+GuS8AQK+1z3dMe/CUUp3yCbgPWi
-         xA+VAVGMUrZ/NGZbE6zGuVKEoV27BVZhvv/jMBm+S7dTqKeGGmsU7/FsIiFyraM1dJPy
-         mXFw==
-X-Gm-Message-State: AO0yUKXGETaSw+sGAQJSDtH6ieDPxprylAatJa0qxgtcxLRUgQP4wWf7
-	kMUZiAObf27ZZh/80msGMKUG0g==
-X-Google-Smtp-Source: AK7set+36xqihcRaSbhw9EZd7MivK51J2wyj0FDKumen87LrblW3ZwyU1x5vO2IU1KXVqvSiIqgKkA==
-X-Received: by 2002:a17:907:1628:b0:878:6477:d7 with SMTP id hb40-20020a170907162800b00878647700d7mr9845624ejc.72.1679521966159;
-        Wed, 22 Mar 2023 14:52:46 -0700 (PDT)
+        bh=xehrL2dgpZYyP/0AM2a+lXnXwn5PW3e0iW5W0VmPTqg=;
+        b=bouJnx9pUThizFZTaY+KaKLgFXYbVDAhEwULT9hfpRnEysj1BD2A1YvHNwysmHAY/I
+         VwDeJ4aW1S52gYgyIaj63RlRIrYbO4CUBBwNsf8jkKaSFtt6Dq60pxxFOsCD8HchPMDz
+         qKaIMea1fip/TMKKxUoNDKg+llKzN5eYMosBDVQENrUMeEKLjLE7UHqWud13YB7fwzBy
+         s9vuOkshCyivhkENI0G0rwfpGY1meEi68IjBlLOcSIBPTYfzwu6y7SKqH7DmQY/wTiYZ
+         /ckFORdP6/xdfS6dp/sbqqY8mXFwnU+9Nt8/Qtzb10Qur13wB5iTq5EFkoq76cluiPJb
+         R5Rw==
+X-Gm-Message-State: AO0yUKXtBIbCsCUOhKra37WxN4T5hBPBeOeP3kVHvN6MTjvJeFpRJD4j
+	FpkwfkJ2AhqkziOtvG5153F5Ng==
+X-Google-Smtp-Source: AK7set+sdpyhZHcj4stGuQd5RDDcBiVcAch7q43+icvAAhA35KsTbJdpiWJDVoDcAHwDrvEpoPevgA==
+X-Received: by 2002:a17:906:46d7:b0:930:7164:e8e5 with SMTP id k23-20020a17090646d700b009307164e8e5mr7122905ejs.38.1679522032625;
+        Wed, 22 Mar 2023 14:53:52 -0700 (PDT)
 Received: from ?IPV6:2a02:810d:15c0:828:626d:5729:6e71:4c22? ([2a02:810d:15c0:828:626d:5729:6e71:4c22])
-        by smtp.gmail.com with ESMTPSA id t25-20020a170906065900b00939a61113d3sm2987235ejb.110.2023.03.22.14.52.44
+        by smtp.gmail.com with ESMTPSA id lk8-20020a170906cb0800b009311c9d33d7sm7656336ejb.184.2023.03.22.14.53.51
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 22 Mar 2023 14:52:45 -0700 (PDT)
-Message-ID: <c52a329d-8683-de82-9b55-209b99ac36c0@linaro.org>
-Date: Wed, 22 Mar 2023 22:52:44 +0100
+        Wed, 22 Mar 2023 14:53:52 -0700 (PDT)
+Message-ID: <4e1cc130-8bfb-96d1-1f93-f1389544b8e3@linaro.org>
+Date: Wed, 22 Mar 2023 22:53:51 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.9.0
-Subject: Re: [PATCH v3 2/8] dt-bindings: phy: qcom,qmp-usb: Add IPQ9574 USB3
- PHY
+Subject: Re: [PATCH v3 3/8] dt-bindings: usb: dwc3: Add IPQ9574 compatible
 Content-Language: en-US
 To: Varadarajan Narayanan <quic_varada@quicinc.com>, agross@kernel.org,
  andersson@kernel.org, konrad.dybcio@linaro.org, vkoul@kernel.org,
@@ -79,12 +78,12 @@ To: Varadarajan Narayanan <quic_varada@quicinc.com>, agross@kernel.org,
  linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org,
  linux-clk@vger.kernel.org
 References: <cover.1679479634.git.quic_varada@quicinc.com>
- <e34d8eddc1dda8bb0ff840a7dd18ca4dd6c62d22.1679479634.git.quic_varada@quicinc.com>
+ <2ef0959be2aba24b3e3017cd09af7cc63aea74ba.1679479634.git.quic_varada@quicinc.com>
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <e34d8eddc1dda8bb0ff840a7dd18ca4dd6c62d22.1679479634.git.quic_varada@quicinc.com>
+In-Reply-To: <2ef0959be2aba24b3e3017cd09af7cc63aea74ba.1679479634.git.quic_varada@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230322_145248_475204_CFA83729 
-X-CRM114-Status: GOOD (  13.12  )
+X-CRM114-CacheID: sfid-20230322_145354_860199_4589BBB2 
+X-CRM114-Status: GOOD (  12.00  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,40 +101,26 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 22/03/2023 11:44, Varadarajan Narayanan wrote:
-> Add dt-bindings for USB3 PHY found on Qualcomm IPQ9574
+> Document the IPQ9574 dwc3 compatible.
 > 
 > Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
-> 
 > ---
->  Changes in v2:
-> 	- Updated sections missed in previous patch
-> ---
->  .../bindings/phy/qcom,msm8996-qmp-usb3-phy.yaml    | 22 ++++++++++++++++++++++
->  1 file changed, 22 insertions(+)
+>  Documentation/devicetree/bindings/usb/qcom,dwc3.yaml | 1 +
+>  1 file changed, 1 insertion(+)
 > 
-> diff --git a/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-usb3-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-usb3-phy.yaml
-> index e81a382..beae44c 100644
-> --- a/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-usb3-phy.yaml
-> +++ b/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-usb3-phy.yaml
-> @@ -21,6 +21,7 @@ properties:
->      enum:
->        - qcom,ipq6018-qmp-usb3-phy
->        - qcom,ipq8074-qmp-usb3-phy
-> +      - qcom,ipq9574-qmp-usb3-phy
->        - qcom,msm8996-qmp-usb3-phy
->        - qcom,msm8998-qmp-usb3-phy
->        - qcom,qcm2290-qmp-usb3-phy
-> @@ -204,6 +205,27 @@ allOf:
->          compatible:
->            contains:
->              enum:
-> +              - qcom,ipq9574-qmp-usb3-phy
-> +    then:
-> +      properties:
-> +        clocks:
-> +          maxItems: 2
+> diff --git a/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml b/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
+> index a2aabda..3ae56d3 100644
+> --- a/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
+> +++ b/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
+> @@ -17,6 +17,7 @@ properties:
+>            - qcom,ipq6018-dwc3
+>            - qcom,ipq8064-dwc3
+>            - qcom,ipq8074-dwc3
+> +          - qcom,ipq9574-dwc3
+>            - qcom,msm8953-dwc3
+>            - qcom,msm8994-dwc3
 
-toplevel defines minItems as 3, so are you sure this works? Did you test it?
+No updates for clocks? Then disallow them for your variant.
 
 Best regards,
 Krzysztof
