@@ -4,53 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EABB7C7619A
-	for <linux-phy@archiver.kernel.org>; Wed, 22 Mar 2023 10:45:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 76DB5C6FD1C
+	for <linux-phy@archiver.kernel.org>; Wed, 22 Mar 2023 10:45:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lHFDQowilEuDIXTHKWaifY2jkEeUO78i4+dejk2P608=; b=z5xG5eZ06vyTi6
-	6WeyDgep6uFUrOjTXj7W0esKvicKnGOgGXU2SJC4Lk2TMW54kU50fCTgTWTTtgIWff/0BPXJR8Otl
-	zsGvH5jUXnluNpBO6C+50gMFymRyP5hUwfwgaIh1SvV8GRkTwOjIX2O/SUThpZtBm3Pwrwp4pd1fu
-	W8dxmu9ibv824sC/HpmGm4yOmfhszso7J+IfkMeyiJnlNb+t2O+jQjxtuHlPfwZyueRF5BsWDnhod
-	tVlyG0RYKiEwohd1Agz/gl4ha5ht/opBeB7Bz95kxPZUmFsfFzOUsJ1nKYBQiAo3ph/1olbale29n
-	a9P3L9NK0L8GmC3E6xLg==;
+	List-Owner; bh=adRMn1pz+bzdKcsxiPOWKWWSyYf/8W797yFZA6Iew2M=; b=FlTdvWTMantIyh
+	zx/RX42zW2ykzx3d1cgN5lPxMXhkdQHiTBh1fTBHU9m99uakgyCGHjV/mFcD8q0MpYv7xFQqp61Wt
+	QEjvnT9Qh+4XPRSpamV5vm6ry8P1Ev6gA//UFsBZncq1Kc7R22bz4oL/xe12teJiJlH1Q4a1fuvmx
+	vNI8W/iNILxFFGqbrTV7UM3K0wd1IjDHUSjppUamuDQwDNHr7E5O5X5kZAFgmz9F6lUljaQAORsQh
+	q4eJCNgze3koHg/eLknUKRTYD5+Nbbn6lWXPLJIY8KTXmHr8/gLqiv8kwoK8a2TowwGr6vcpeCe2R
+	ZWy8s2JFn6e9LZF+HdHg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pevy0-00FgUz-1t;
-	Wed, 22 Mar 2023 10:45:16 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1pevy6-00FgWh-0J;
+	Wed, 22 Mar 2023 10:45:22 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pevxy-00FgUH-0w
+	id 1pevy4-00FgWE-0o
 	for linux-phy@lists.infradead.org;
-	Wed, 22 Mar 2023 10:45:15 +0000
-Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 32M5YZKb008524;
-	Wed, 22 Mar 2023 10:45:10 GMT
+	Wed, 22 Mar 2023 10:45:21 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 32M6N8kZ012107;
+	Wed, 22 Mar 2023 10:45:16 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
  subject : date : message-id : in-reply-to : references : mime-version :
  content-type; s=qcppdkim1;
- bh=PaXXAiIBbXumCzRAUMNiY6+am3CE8ZPYLu4gPHSvc3M=;
- b=H7Mk8bxvL7amQ63Vy6ZRKsWZKX9tA2cOVEyl1hTjRRHY80POEEucXEbDyV0P0BC0XzAx
- SDDEGLPR242oacqiy/gDvkNA4jV/dZ2F8HuYwF4MQxaxTarIAFWbf+jbJeA+44iL9dRP
- DR7XSXkrFKygcSjlek7N4tjxsT2GS4AO20tzZuHFcDa4Onc/DBts2W4yRw5Cab3YHFFl
- mlcsOLXR6yvqEUS9A9RmBO6/OouNFzcrQFT37ouEU6lJ6b52ZOX2TLPCR0ndOa6YDkLV
- pHqEvJcsIaSrrpnfSptMKPYtlulm+h8svj/1mZNpn+64iV+xycEMVlf+s5SSEWS4Nea9 hg== 
+ bh=UeXobhQuUxBtmxtIt+NUx9SmgW6HEJLWgDvEBE80KEQ=;
+ b=mM3opq8RDP3ZLzDTxKLuQnc76SzUaZ7TMnJAo/CBg4fIA/LN5ZsPtdruVtBXL9XNe/ar
+ kSTFc+1V4o6KoURV4R6TCC26FuSVEx2SRSopKyA3Bso7sl3+RrCToZTdfdMLSHPn2j8v
+ Zra0mV9Hy09fSAaDf/8YUlJ3y5cxvqQ34bPLeLSVZWeeeY3IDz7/axP3ExsNbH/phIUo
+ 19p0U/n7RZaz7OOHcGwy5s25khNqyrlDiF0HcRRHlOGMUrTNMy3K8J71nIdmMAr9sbGs
+ avWoxxe6CCWkZ4oVWJE1pshZpiWJJmEfUWC2plWYfyF4UAmwzZh58VGVuwiNtVXOukb1 mw== 
 Received: from nasanppmta01.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3pfrk0s3kv-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3pfhnv1v67-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 22 Mar 2023 10:45:10 +0000
+	Wed, 22 Mar 2023 10:45:15 +0000
 Received: from nasanex01a.na.qualcomm.com (nasanex01a.na.qualcomm.com [10.52.223.231])
-	by NASANPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 32MAj9C2016279
+	by NASANPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 32MAjFte016348
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 22 Mar 2023 10:45:09 GMT
+	Wed, 22 Mar 2023 10:45:15 GMT
 Received: from varda-linux.qualcomm.com (10.80.80.8) by
  nasanex01a.na.qualcomm.com (10.52.223.231) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.986.41; Wed, 22 Mar 2023 03:45:00 -0700
+ 15.2.986.41; Wed, 22 Mar 2023 03:45:09 -0700
 From: Varadarajan Narayanan <quic_varada@quicinc.com>
 To: <agross@kernel.org>, <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
         <vkoul@kernel.org>, <kishon@kernel.org>, <robh+dt@kernel.org>,
@@ -61,9 +61,9 @@ To: <agross@kernel.org>, <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
         <linux-kernel@vger.kernel.org>, <linux-usb@vger.kernel.org>,
         <linux-clk@vger.kernel.org>
 CC: Varadarajan Narayanan <quic_varada@quicinc.com>
-Subject: [PATCH v3 3/8] dt-bindings: usb: dwc3: Add IPQ9574 compatible
-Date: Wed, 22 Mar 2023 16:14:07 +0530
-Message-ID: <2ef0959be2aba24b3e3017cd09af7cc63aea74ba.1679479634.git.quic_varada@quicinc.com>
+Subject: [PATCH v3 4/8] clk: qcom: gcc-ipq9574: Add USB related clocks
+Date: Wed, 22 Mar 2023 16:14:08 +0530
+Message-ID: <bef5c8a3164f6096665afd98eeb6f24a1e020142.1679479634.git.quic_varada@quicinc.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <cover.1679479634.git.quic_varada@quicinc.com>
 References: <cover.1679479634.git.quic_varada@quicinc.com>
@@ -73,19 +73,19 @@ X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nasanex01a.na.qualcomm.com (10.52.223.231)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: Prw4y8EsHTKc8-ZwmiCKWzBRzcfvCfE3
-X-Proofpoint-ORIG-GUID: Prw4y8EsHTKc8-ZwmiCKWzBRzcfvCfE3
+X-Proofpoint-GUID: w844ZuokQSe0QBCIaP6kk1y_1Gxa_TRh
+X-Proofpoint-ORIG-GUID: w844ZuokQSe0QBCIaP6kk1y_1Gxa_TRh
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.254,Aquarius:18.0.942,Hydra:6.0.573,FMLib:17.11.170.22
  definitions=2023-03-22_07,2023-03-22_01,2023-02-09_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 suspectscore=0
- bulkscore=0 priorityscore=1501 clxscore=1015 impostorscore=0 adultscore=0
- lowpriorityscore=0 spamscore=0 mlxlogscore=824 phishscore=0 malwarescore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2303150002
- definitions=main-2303220076
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0
+ mlxlogscore=999 clxscore=1015 mlxscore=0 phishscore=0 bulkscore=0
+ malwarescore=0 spamscore=0 adultscore=0 impostorscore=0 lowpriorityscore=0
+ priorityscore=1501 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2303150002 definitions=main-2303220077
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230322_034514_452276_76E7A011 
-X-CRM114-Status: GOOD (  13.38  )
+X-CRM114-CacheID: sfid-20230322_034520_300092_4C402F65 
+X-CRM114-Status: GOOD (  16.92  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,25 +102,84 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Document the IPQ9574 dwc3 compatible.
+Add the clocks needed for enabling USB in IPQ9574
 
+Acked-by: Stephen Boyd <sboyd@kernel.org>
 Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
 ---
- Documentation/devicetree/bindings/usb/qcom,dwc3.yaml | 1 +
- 1 file changed, 1 insertion(+)
+ Changes in v2:
+	- Fixed coding style issues
+---
+ drivers/clk/qcom/gcc-ipq9574.c               | 37 ++++++++++++++++++++++++++++
+ include/dt-bindings/clock/qcom,ipq9574-gcc.h |  2 ++
+ 2 files changed, 39 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml b/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
-index a2aabda..3ae56d3 100644
---- a/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
-+++ b/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
-@@ -17,6 +17,7 @@ properties:
-           - qcom,ipq6018-dwc3
-           - qcom,ipq8064-dwc3
-           - qcom,ipq8074-dwc3
-+          - qcom,ipq9574-dwc3
-           - qcom,msm8953-dwc3
-           - qcom,msm8994-dwc3
-           - qcom,msm8996-dwc3
+diff --git a/drivers/clk/qcom/gcc-ipq9574.c b/drivers/clk/qcom/gcc-ipq9574.c
+index 1bf33d5..06b724a 100644
+--- a/drivers/clk/qcom/gcc-ipq9574.c
++++ b/drivers/clk/qcom/gcc-ipq9574.c
+@@ -2041,6 +2041,41 @@ static struct clk_regmap_mux usb0_pipe_clk_src = {
+ 	},
+ };
+ 
++static struct clk_branch gcc_usb0_pipe_clk = {
++	.halt_reg = 0x2c054,
++	.halt_check = BRANCH_HALT_DELAY,
++	.clkr = {
++		.enable_reg = 0x2c054,
++		.enable_mask = BIT(0),
++		.hw.init = &(struct clk_init_data){
++			.name = "gcc_usb0_pipe_clk",
++			.parent_hws = (const struct clk_hw *[]) {
++				&usb0_pipe_clk_src.clkr.hw
++			},
++			.num_parents = 1,
++			.flags = CLK_SET_RATE_PARENT,
++			.ops = &clk_branch2_ops,
++		},
++	},
++};
++
++static struct clk_branch gcc_usb0_sleep_clk = {
++	.halt_reg = 0x2c058,
++	.clkr = {
++		.enable_reg = 0x2c058,
++		.enable_mask = BIT(0),
++		.hw.init = &(struct clk_init_data){
++			.name = "gcc_usb0_sleep_clk",
++			.parent_hws = (const struct clk_hw *[]) {
++				&gcc_sleep_clk_src.clkr.hw
++			},
++			.num_parents = 1,
++			.flags = CLK_SET_RATE_PARENT,
++			.ops = &clk_branch2_ops,
++		},
++	},
++};
++
+ static const struct freq_tbl ftbl_sdcc_apps_clk_src[] = {
+ 	F(144000, P_XO, 16, 12, 125),
+ 	F(400000, P_XO, 12, 1, 5),
+@@ -4008,6 +4043,8 @@ static struct clk_regmap *gcc_ipq9574_clks[] = {
+ 	[GCC_USB0_MOCK_UTMI_CLK] = &gcc_usb0_mock_utmi_clk.clkr,
+ 	[USB0_PIPE_CLK_SRC] = &usb0_pipe_clk_src.clkr,
+ 	[GCC_USB0_PHY_CFG_AHB_CLK] = &gcc_usb0_phy_cfg_ahb_clk.clkr,
++	[GCC_USB0_PIPE_CLK] = &gcc_usb0_pipe_clk.clkr,
++	[GCC_USB0_SLEEP_CLK] = &gcc_usb0_sleep_clk.clkr,
+ 	[SDCC1_APPS_CLK_SRC] = &sdcc1_apps_clk_src.clkr,
+ 	[GCC_SDCC1_APPS_CLK] = &gcc_sdcc1_apps_clk.clkr,
+ 	[SDCC1_ICE_CORE_CLK_SRC] = &sdcc1_ice_core_clk_src.clkr,
+diff --git a/include/dt-bindings/clock/qcom,ipq9574-gcc.h b/include/dt-bindings/clock/qcom,ipq9574-gcc.h
+index 14543a4..97a7b19 100644
+--- a/include/dt-bindings/clock/qcom,ipq9574-gcc.h
++++ b/include/dt-bindings/clock/qcom,ipq9574-gcc.h
+@@ -214,4 +214,6 @@
+ #define GCC_SNOC_PCIE1_1LANE_S_CLK			205
+ #define GCC_SNOC_PCIE2_2LANE_S_CLK			206
+ #define GCC_SNOC_PCIE3_2LANE_S_CLK			207
++#define GCC_USB0_PIPE_CLK				208
++#define GCC_USB0_SLEEP_CLK				209
+ #endif
 -- 
 2.7.4
 
