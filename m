@@ -4,53 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 73365C6FD1F
-	for <linux-phy@archiver.kernel.org>; Wed, 22 Mar 2023 06:17:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 197DAC6FD1F
+	for <linux-phy@archiver.kernel.org>; Wed, 22 Mar 2023 06:18:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5vlSSl1vDymZY/idHlEqYv5OXX5KUN+Q+dwyLmL+cOI=; b=pmIbRfaNf6TkpD
-	0nOK6JMeDjcJ/YOhIf4xTevjdXpgMKYdKFVHwwQ1bWoBDEIat2iHqdDaNTK49AxxG0NxKxArub/aY
-	DtbKoV2+vvpkooGgbRADSiDGrn9mw7+riXaoJ/aZ5UqDp3oe+IwXnAcqsO+OhRi8IVfl38WTGhJST
-	ARn4pjcR9IfRL4/dv2Kw6ByPQcawybQ54g0Peq8h+jptxQREtHXqHR6MU6Bc6RW/KZ5REZSPYPNH0
-	GV+TnHCJKjPvLKDywyOskWSWKHpTafpgJ/CG2NfmUhjuNqVJkZeiY8zqs9Nc8IqJXnAmlXgQb4pjB
-	eNUzngAG9wdPhd80+UmQ==;
+	List-Owner; bh=Px+/AQ/ynOLcfzHtmFDiiHqC4K42MExmaDEbyLJzf98=; b=BWOG4dV05UKIGf
+	ttOUd0yzF3rNWGZD775UDnxWUZav65OXEsrAymwwgrRMvsPx6UGbYGMCFyyzGdeqpZF5Sdz1Omvwh
+	Eq3LEh0kKjqSG1Xpa1g5LGigA9h6pBMd1LRKhfztns32mob+PD3UX/E7evUrY80RD2Vp7cuWgwcPk
+	ltnz+08koB7V0uT4stb3CNT//wBiJt0p7fo8Wj4SpHk1wfPnGy7VDjUK+1bYJmvZQ4w6jIbrxi4Jz
+	ru8Y0oomZLpzIJcCziqItCqYUYhxUAim1ktk++2Z7ixRz4yN214H03qhGDbCxVVCsqA3AOHKHu2Pm
+	LrbFdtvp4SfIf1GkwfPw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1permf-00EqhR-00;
-	Wed, 22 Mar 2023 06:17:17 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1pernr-00ErDN-1m;
+	Wed, 22 Mar 2023 06:18:31 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1perjO-00EpNg-2Y
+	id 1permO-00EqYX-0N
 	for linux-phy@lists.infradead.org;
-	Wed, 22 Mar 2023 06:13:56 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 32M4g94D007513;
-	Wed, 22 Mar 2023 06:13:49 GMT
+	Wed, 22 Mar 2023 06:17:01 +0000
+Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 32M42DMI001870;
+	Wed, 22 Mar 2023 06:16:53 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=date : from : to :
  cc : subject : message-id : references : mime-version : content-type :
- in-reply-to; s=qcppdkim1; bh=hHAfzpcHF2GEhMuQgofbcWV7RtabrQqEYW56Lla2qMc=;
- b=nhyS4LGbEPddSqVpG3cnXQZ8lT6ngzaelhuM0F+Q+IrOq+dYHDxpxe/fogzajudiXREJ
- ZFmcu5GJDTxksRqsJe+Z6hGPqNdcFPUWf8pgVYydxp5KHS26TgoKPxxIHu+I/xXK4b6d
- 1mGo0ZGFgISG3eSHHrj1Gcugw1tQOnPFXMTyMUxrawbRY5ut3MtjMKzcLD39zVNbnmop
- 7mK/ng2vF0RJwS7z42L3DljEsXv73ONmjbcrCXUzqejvpUnWu44i2G4sEXEP+76f7eFj
- HfDg72jGALqzaQvkZFTfvLulJz3oFBBhCYhHXBMdivwyCfB6CvEroBUqlsIcQ1KlmkT5 cA== 
-Received: from nasanppmta03.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3pfpfgrqhb-1
+ in-reply-to; s=qcppdkim1; bh=Mf2d6Sz7wrOJuW1Z0Lbpd9EAjHZgu67+yZwEj7PXPrQ=;
+ b=f/Or7ps2bj+ZZy9QvqQAjAWEWIX/GATsacAPtYjUrpcZmt5Ks9aBTXvz3pi/3JWEae5V
+ RfAUyajrPfxdaLqxk3RaJV44buGXqlunD3+fAxNGFVb7GJaq/b9I+rYESVykIZvhqvcI
+ DwSZckpypwRxTuTpGLdMZ7dDwYb5ORgYd509sXu8gSwspqU914Zi1oaeywJu6cp8pwmx
+ ppZCiOgn5h/6xOfBiYFvHKJdrfi/j/tZhmBmlD3WJVcvv7rfGA82ebf3vzHKhePUpuWU
+ T30WniQOe539vzCTrxh5GbXm+B5bgisy/zG76VTC6Akj/QaUN1wzyOJQ4F7o0iarKaac rA== 
+Received: from nasanppmta05.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3pfbjyakh2-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 22 Mar 2023 06:13:48 +0000
+	Wed, 22 Mar 2023 06:16:53 +0000
 Received: from nasanex01a.na.qualcomm.com (nasanex01a.na.qualcomm.com [10.52.223.231])
-	by NASANPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 32M6Dm0O013886
+	by NASANPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 32M6GqNL031171
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 22 Mar 2023 06:13:48 GMT
+	Wed, 22 Mar 2023 06:16:52 GMT
 Received: from varda-linux.qualcomm.com (10.80.80.8) by
  nasanex01a.na.qualcomm.com (10.52.223.231) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.986.41; Tue, 21 Mar 2023 23:13:42 -0700
-Date: Wed, 22 Mar 2023 11:43:38 +0530
+ 15.2.986.41; Tue, 21 Mar 2023 23:16:46 -0700
+Date: Wed, 22 Mar 2023 11:46:42 +0530
 From: Varadarajan Narayanan <quic_varada@quicinc.com>
 To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 CC: <agross@kernel.org>, <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
@@ -61,35 +61,34 @@ CC: <agross@kernel.org>, <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
         <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
         <linux-kernel@vger.kernel.org>, <linux-usb@vger.kernel.org>,
         <linux-clk@vger.kernel.org>
-Subject: Re: [PATCH v2 1/8] dt-bindings: phy: qcom,qusb2: Document IPQ9574
- compatible
-Message-ID: <20230322061337.GA12808@varda-linux.qualcomm.com>
+Subject: Re: [PATCH v2 7/8] arm64: dts: qcom: ipq9574: Add USB related nodes
+Message-ID: <20230322061641.GC12808@varda-linux.qualcomm.com>
 References: <cover.1677749625.git.quic_varada@quicinc.com>
  <cover.1679388632.git.quic_varada@quicinc.com>
- <ef5af2e581203e2101773863aa7e1667b4d1b705.1679388632.git.quic_varada@quicinc.com>
- <69120CDC-19C5-4087-BF71-0ECAB87D018B@linaro.org>
+ <644b4b0f17f72e109445a7b31f3e0d2e75dcc361.1679388632.git.quic_varada@quicinc.com>
+ <122A5E4F-2794-43AE-8DAC-CC2D51279AC6@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <69120CDC-19C5-4087-BF71-0ECAB87D018B@linaro.org>
+In-Reply-To: <122A5E4F-2794-43AE-8DAC-CC2D51279AC6@linaro.org>
 User-Agent: Mutt/1.5.24 (2015-08-30)
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nasanex01a.na.qualcomm.com (10.52.223.231)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: 1Fj7nyTG_scV7NoXTOnXufnv9wBUKIGf
-X-Proofpoint-ORIG-GUID: 1Fj7nyTG_scV7NoXTOnXufnv9wBUKIGf
+X-Proofpoint-GUID: zWCKW203mRt7RafU49ialX_iYSKlphF3
+X-Proofpoint-ORIG-GUID: zWCKW203mRt7RafU49ialX_iYSKlphF3
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.254,Aquarius:18.0.942,Hydra:6.0.573,FMLib:17.11.170.22
  definitions=2023-03-21_11,2023-03-21_01,2023-02-09_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 lowpriorityscore=0
- mlxlogscore=999 spamscore=0 suspectscore=0 impostorscore=0 bulkscore=0
- phishscore=0 priorityscore=1501 clxscore=1015 malwarescore=0 adultscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2303150002
- definitions=main-2303220044
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 impostorscore=0
+ lowpriorityscore=0 priorityscore=1501 adultscore=0 suspectscore=0
+ mlxlogscore=999 spamscore=0 clxscore=1015 malwarescore=0 phishscore=0
+ bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2303150002 definitions=main-2303220044
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230321_231354_840361_88D6A5F3 
-X-CRM114-Status: GOOD (  18.28  )
+X-CRM114-CacheID: sfid-20230321_231700_273540_BF2A419B 
+X-CRM114-Status: GOOD (  19.25  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,51 +105,133 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Mar 21, 2023 at 02:17:13PM +0300, Dmitry Baryshkov wrote:
+On Tue, Mar 21, 2023 at 02:23:26PM +0300, Dmitry Baryshkov wrote:
 >
 >
-> On 21 March 2023 11:54:19 GMT+03:00, Varadarajan Narayanan <quic_varada@quicinc.com> wrote:
-> >Document the compatible string used for the qusb2 phy in IPQ9574.
+> On 21 March 2023 11:54:25 GMT+03:00, Varadarajan Narayanan <quic_varada@quicinc.com> wrote:
+> >Add USB phy and controller related nodes
 > >
-> >Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 > >Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
 > >
 > >---
 > > Changes in v2:
-> >	- Moved ipq6018 to the proper place and placed ipq9574
-> >	  next to it as suggested by Dmitry
+> >	- Fixed issues flagged by Krzysztof
+> >	- Fix issues reported by make dtbs_check
+> >	- Remove NOC related clocks (to be added with proper
+> >	  interconnect support)
 > >---
-> > Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml | 3 ++-
-> > 1 file changed, 2 insertions(+), 1 deletion(-)
+> > arch/arm64/boot/dts/qcom/ipq9574.dtsi | 86 +++++++++++++++++++++++++++++++++++
+> > 1 file changed, 86 insertions(+)
 > >
-> >diff --git a/Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml
-> >index 7f403e7..eaecf9b 100644
-> >--- a/Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml
-> >+++ b/Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml
-> >@@ -19,12 +19,13 @@ properties:
-> >       - items:
-> >           - enum:
-> >               - qcom,ipq8074-qusb2-phy
-> >+              - qcom,ipq6018-qusb2-phy
-> >+              - qcom,ipq9574-qusb2-phy
+> >diff --git a/arch/arm64/boot/dts/qcom/ipq9574.dtsi b/arch/arm64/boot/dts/qcom/ipq9574.dtsi
+> >index 2bb4053..513da74 100644
+> >--- a/arch/arm64/boot/dts/qcom/ipq9574.dtsi
+> >+++ b/arch/arm64/boot/dts/qcom/ipq9574.dtsi
+> >@@ -829,6 +829,92 @@
+> > 			msi-parent = <&v2m0>;
+> > 			status = "disabled";
+> > 		};
 >
-> This still isn't sorted
+> The last device node is pci@28000000. Thus you are trying to
+> add all usb nodes at the wrong place. Please move them so that
+> all nodes are still sorted by the address part.
 
-Sorry. Will fix this.
+Ok. Will reorder them.
 
 Thanks
 Varada
 
 >
-> >               - qcom,msm8953-qusb2-phy
-> >               - qcom,msm8996-qusb2-phy
-> >               - qcom,msm8998-qusb2-phy
-> >               - qcom,qcm2290-qusb2-phy
-> >               - qcom,sdm660-qusb2-phy
-> >-              - qcom,ipq6018-qusb2-phy
-> >               - qcom,sm4250-qusb2-phy
-> >               - qcom,sm6115-qusb2-phy
-> >       - items:
+>
+> >+
+> >+		qusb_phy_0: phy@7b000 {
+> >+			compatible = "qcom,ipq9574-qusb2-phy";
+> >+			reg = <0x07b000 0x180>;
+> >+			#phy-cells = <0>;
+> >+
+> >+			clocks = <&gcc GCC_USB0_PHY_CFG_AHB_CLK>,
+> >+				<&xo_board_clk>;
+> >+			clock-names = "cfg_ahb", "ref";
+> >+
+> >+			resets = <&gcc GCC_QUSB2_0_PHY_BCR>;
+> >+			status = "disabled";
+> >+		};
+> >+
+> >+		ssphy_0: phy@7d000 {
+> >+			compatible = "qcom,ipq9574-qmp-usb3-phy";
+> >+			reg = <0x7d000 0x1c4>;
+> >+			#clock-cells = <1>;
+> >+			#address-cells = <1>;
+> >+			#size-cells = <1>;
+> >+			ranges;
+> >+
+> >+			clocks = <&gcc GCC_USB0_AUX_CLK>,
+> >+				 <&gcc GCC_USB0_PHY_CFG_AHB_CLK>;
+> >+			clock-names = "aux", "cfg_ahb";
+> >+
+> >+			resets =  <&gcc GCC_USB0_PHY_BCR>,
+> >+				 <&gcc GCC_USB3PHY_0_PHY_BCR>;
+> >+			reset-names = "phy","common";
+> >+			status = "disabled";
+> >+
+> >+			usb0_ssphy: phy@7d200 {
+> >+				reg = <0x0007d200 0x130>,	/* tx */
+> >+				      <0x0007d400 0x200>,	/* rx */
+> >+				      <0x0007d800 0x1f8>,	/* pcs  */
+> >+				      <0x0007d600 0x044>;	/* pcs misc */
+> >+				#phy-cells = <0>;
+> >+				clocks = <&gcc GCC_USB0_PIPE_CLK>;
+> >+				clock-names = "pipe0";
+> >+				clock-output-names = "usb0_pipe_clk";
+> >+			};
+> >+		};
+> >+
+> >+		usb3: usb3@8a00000 {
+> >+			compatible = "qcom,ipq9574-dwc3", "qcom,dwc3";
+> >+			reg = <0x8af8800 0x400>;
+> >+			#address-cells = <1>;
+> >+			#size-cells = <1>;
+> >+			ranges;
+> >+
+> >+			clocks = <&gcc GCC_SNOC_USB_CLK>,
+> >+				 <&gcc GCC_ANOC_USB_AXI_CLK>,
+> >+				 <&gcc GCC_USB0_MASTER_CLK>,
+> >+				 <&gcc GCC_USB0_SLEEP_CLK>,
+> >+				 <&gcc GCC_USB0_MOCK_UTMI_CLK>;
+> >+
+> >+			clock-names = "sys_noc_axi",
+> >+				      "anoc_axi",
+> >+				      "master",
+> >+				      "sleep",
+> >+				      "mock_utmi";
+> >+
+> >+			assigned-clocks = <&gcc GCC_USB0_MASTER_CLK>,
+> >+					  <&gcc GCC_USB0_MOCK_UTMI_CLK>;
+> >+			assigned-clock-rates = <200000000>,
+> >+					       <24000000>;
+> >+
+> >+			resets = <&gcc GCC_USB_BCR>;
+> >+			status = "disabled";
+> >+
+> >+			dwc_0: usb@8a00000 {
+> >+				compatible = "snps,dwc3";
+> >+				reg = <0x8a00000 0xcd00>;
+> >+				clocks = <&gcc GCC_USB0_MOCK_UTMI_CLK>;
+> >+				clock-names = "ref";
+> >+				interrupts = <GIC_SPI 140 IRQ_TYPE_LEVEL_HIGH>;
+> >+				phys = <&qusb_phy_0>, <&usb0_ssphy>;
+> >+				phy-names = "usb2-phy", "usb3-phy";
+> >+				tx-fifo-resize;
+> >+				snps,is-utmi-l1-suspend;
+> >+				snps,hird-threshold = /bits/ 8 <0x0>;
+> >+				snps,dis_u2_susphy_quirk;
+> >+				snps,dis_u3_susphy_quirk;
+> >+				dr_mode = "host";
+> >+			};
+> >+		};
+> > 	};
+> >
+> > 	rpm-glink {
 >
 > --
 > With best wishes
