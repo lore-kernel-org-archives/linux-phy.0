@@ -4,62 +4,92 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A677FC6FD20
-	for <linux-phy@archiver.kernel.org>; Wed, 22 Mar 2023 02:53:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 73365C6FD1F
+	for <linux-phy@archiver.kernel.org>; Wed, 22 Mar 2023 06:17:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:Cc:To:From:Mime-Version:
-	Message-ID:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=lD8NU4NAfNck5U5gl4g4iboqGhffzTydCq1UARHCOiI=; b=4hK
-	0XxDI7ZdX37ieYqXCjgrdGdLoSg4wt7oJ8GZ17RnZMeYeUx7TuSzBgOoKroQb4Gyucfm8zit/JlIx
-	adfWR9dd82cWz8GKvfXeflhjgR2eohiQn4A3sDwGP3dGlklOyqmVlh6Kw7BfF+M5MiZGc2Y5dmFEc
-	f9HSBWGTsgqvYZsDQI6Gy7TQasNzWy+3g3699SqODvgadxZaUZoakSW5p8cJt6vbv8FtIx7iUsTQG
-	yO/fbuSiapwoGy0UGBwofB/4khxpkdk+NTSFpZaszbtmNq2NYAXdOwsYzE1q+f/XMYmegr0fEhqAU
-	tddOwnNBDra6q03iI8+3aIuNQqq5ojg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5vlSSl1vDymZY/idHlEqYv5OXX5KUN+Q+dwyLmL+cOI=; b=pmIbRfaNf6TkpD
+	0nOK6JMeDjcJ/YOhIf4xTevjdXpgMKYdKFVHwwQ1bWoBDEIat2iHqdDaNTK49AxxG0NxKxArub/aY
+	DtbKoV2+vvpkooGgbRADSiDGrn9mw7+riXaoJ/aZ5UqDp3oe+IwXnAcqsO+OhRi8IVfl38WTGhJST
+	ARn4pjcR9IfRL4/dv2Kw6ByPQcawybQ54g0Peq8h+jptxQREtHXqHR6MU6Bc6RW/KZ5REZSPYPNH0
+	GV+TnHCJKjPvLKDywyOskWSWKHpTafpgJ/CG2NfmUhjuNqVJkZeiY8zqs9Nc8IqJXnAmlXgQb4pjB
+	eNUzngAG9wdPhd80+UmQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1peobs-00ENcf-0H;
-	Wed, 22 Mar 2023 02:53:56 +0000
-Received: from mxhk.zte.com.cn ([63.216.63.40])
+	id 1permf-00EqhR-00;
+	Wed, 22 Mar 2023 06:17:17 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1peobg-00ENb4-2b
+	id 1perjO-00EpNg-2Y
 	for linux-phy@lists.infradead.org;
-	Wed, 22 Mar 2023 02:53:52 +0000
-Received: from mse-fl1.zte.com.cn (unknown [10.5.228.132])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by mxhk.zte.com.cn (FangMail) with ESMTPS id 4PhCj01Pqwz8QrkZ;
-	Wed, 22 Mar 2023 10:53:40 +0800 (CST)
-Received: from xaxapp03.zte.com.cn ([10.88.97.17])
-	by mse-fl1.zte.com.cn with SMTP id 32M2rU6v070870;
-	Wed, 22 Mar 2023 10:53:30 +0800 (+08)
-	(envelope-from ye.xingchen@zte.com.cn)
-Received: from mapi (xaxapp02[null])
-	by mapi (Zmail) with MAPI id mid31;
-	Wed, 22 Mar 2023 10:53:32 +0800 (CST)
-Date: Wed, 22 Mar 2023 10:53:32 +0800 (CST)
-X-Zmail-TransId: 2afa641a6dacffffffffb99-65b9d
-X-Mailer: Zmail v1.0
-Message-ID: <202303221053321808222@zte.com.cn>
-Mime-Version: 1.0
-From: <ye.xingchen@zte.com.cn>
-To: <vkoul@kernel.org>
-Cc: <vincent.sunplus@gmail.com>, <kishon@kernel.org>,
-        <linux-usb@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-        <linux-kernel@vger.kernel.org>
-Subject: =?UTF-8?B?W1BBVENIXSBwaHk6IHVzYjogc3VucGx1czogdXNlwqBkZXZtX3BsYXRmb3JtX2lvcmVtYXBfcmVzb3VyY2VfYnluYW1lKCk=?=
-X-MAIL: mse-fl1.zte.com.cn 32M2rU6v070870
-X-Fangmail-Gw-Spam-Type: 0
-X-FangMail-Miltered: at cgslv5.04-192.168.250.137.novalocal with ID 641A6DB4.000 by FangMail milter!
-X-FangMail-Envelope: 1679453620/4PhCj01Pqwz8QrkZ/641A6DB4.000/10.5.228.132/[10.5.228.132]/mse-fl1.zte.com.cn/<ye.xingchen@zte.com.cn>
-X-Fangmail-Anti-Spam-Filtered: true
-X-Fangmail-MID-QID: 641A6DB4.000/4PhCj01Pqwz8QrkZ
+	Wed, 22 Mar 2023 06:13:56 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 32M4g94D007513;
+	Wed, 22 Mar 2023 06:13:49 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=date : from : to :
+ cc : subject : message-id : references : mime-version : content-type :
+ in-reply-to; s=qcppdkim1; bh=hHAfzpcHF2GEhMuQgofbcWV7RtabrQqEYW56Lla2qMc=;
+ b=nhyS4LGbEPddSqVpG3cnXQZ8lT6ngzaelhuM0F+Q+IrOq+dYHDxpxe/fogzajudiXREJ
+ ZFmcu5GJDTxksRqsJe+Z6hGPqNdcFPUWf8pgVYydxp5KHS26TgoKPxxIHu+I/xXK4b6d
+ 1mGo0ZGFgISG3eSHHrj1Gcugw1tQOnPFXMTyMUxrawbRY5ut3MtjMKzcLD39zVNbnmop
+ 7mK/ng2vF0RJwS7z42L3DljEsXv73ONmjbcrCXUzqejvpUnWu44i2G4sEXEP+76f7eFj
+ HfDg72jGALqzaQvkZFTfvLulJz3oFBBhCYhHXBMdivwyCfB6CvEroBUqlsIcQ1KlmkT5 cA== 
+Received: from nasanppmta03.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3pfpfgrqhb-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 22 Mar 2023 06:13:48 +0000
+Received: from nasanex01a.na.qualcomm.com (nasanex01a.na.qualcomm.com [10.52.223.231])
+	by NASANPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 32M6Dm0O013886
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 22 Mar 2023 06:13:48 GMT
+Received: from varda-linux.qualcomm.com (10.80.80.8) by
+ nasanex01a.na.qualcomm.com (10.52.223.231) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.986.41; Tue, 21 Mar 2023 23:13:42 -0700
+Date: Wed, 22 Mar 2023 11:43:38 +0530
+From: Varadarajan Narayanan <quic_varada@quicinc.com>
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+CC: <agross@kernel.org>, <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
+        <vkoul@kernel.org>, <kishon@kernel.org>, <robh+dt@kernel.org>,
+        <krzysztof.kozlowski+dt@linaro.org>, <gregkh@linuxfoundation.org>,
+        <mturquette@baylibre.com>, <sboyd@kernel.org>,
+        <quic_wcheng@quicinc.com>, <linux-arm-msm@vger.kernel.org>,
+        <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
+        <linux-kernel@vger.kernel.org>, <linux-usb@vger.kernel.org>,
+        <linux-clk@vger.kernel.org>
+Subject: Re: [PATCH v2 1/8] dt-bindings: phy: qcom,qusb2: Document IPQ9574
+ compatible
+Message-ID: <20230322061337.GA12808@varda-linux.qualcomm.com>
+References: <cover.1677749625.git.quic_varada@quicinc.com>
+ <cover.1679388632.git.quic_varada@quicinc.com>
+ <ef5af2e581203e2101773863aa7e1667b4d1b705.1679388632.git.quic_varada@quicinc.com>
+ <69120CDC-19C5-4087-BF71-0ECAB87D018B@linaro.org>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <69120CDC-19C5-4087-BF71-0ECAB87D018B@linaro.org>
+User-Agent: Mutt/1.5.24 (2015-08-30)
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nasanex01a.na.qualcomm.com (10.52.223.231)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: 1Fj7nyTG_scV7NoXTOnXufnv9wBUKIGf
+X-Proofpoint-ORIG-GUID: 1Fj7nyTG_scV7NoXTOnXufnv9wBUKIGf
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.254,Aquarius:18.0.942,Hydra:6.0.573,FMLib:17.11.170.22
+ definitions=2023-03-21_11,2023-03-21_01,2023-02-09_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 lowpriorityscore=0
+ mlxlogscore=999 spamscore=0 suspectscore=0 impostorscore=0 bulkscore=0
+ phishscore=0 priorityscore=1501 clxscore=1015 malwarescore=0 adultscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2303150002
+ definitions=main-2303220044
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230321_195351_732335_38E0D7D5 
-X-CRM114-Status: UNSURE (   9.12  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230321_231354_840361_88D6A5F3 
+X-CRM114-Status: GOOD (  18.28  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,33 +106,55 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Ye Xingchen <ye.xingchen@zte.com.cn>
+On Tue, Mar 21, 2023 at 02:17:13PM +0300, Dmitry Baryshkov wrote:
+>
+>
+> On 21 March 2023 11:54:19 GMT+03:00, Varadarajan Narayanan <quic_varada@quicinc.com> wrote:
+> >Document the compatible string used for the qusb2 phy in IPQ9574.
+> >
+> >Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+> >Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
+> >
+> >---
+> > Changes in v2:
+> >	- Moved ipq6018 to the proper place and placed ipq9574
+> >	  next to it as suggested by Dmitry
+> >---
+> > Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml | 3 ++-
+> > 1 file changed, 2 insertions(+), 1 deletion(-)
+> >
+> >diff --git a/Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml
+> >index 7f403e7..eaecf9b 100644
+> >--- a/Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml
+> >+++ b/Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml
+> >@@ -19,12 +19,13 @@ properties:
+> >       - items:
+> >           - enum:
+> >               - qcom,ipq8074-qusb2-phy
+> >+              - qcom,ipq6018-qusb2-phy
+> >+              - qcom,ipq9574-qusb2-phy
+>
+> This still isn't sorted
 
-Convert platform_get_resource_byname(),devm_ioremap_resource() to a single
-call to devm_platform_ioremap_resource_byname(), as this is exactly what
-this function does.
+Sorry. Will fix this.
 
-Signed-off-by: Ye Xingchen <ye.xingchen@zte.com.cn>
----
- drivers/phy/sunplus/phy-sunplus-usb2.c | 3 +--
- 1 file changed, 1 insertion(+), 2 deletions(-)
+Thanks
+Varada
 
-diff --git a/drivers/phy/sunplus/phy-sunplus-usb2.c b/drivers/phy/sunplus/phy-sunplus-usb2.c
-index 56de41091d63..a5d6a33b821e 100644
---- a/drivers/phy/sunplus/phy-sunplus-usb2.c
-+++ b/drivers/phy/sunplus/phy-sunplus-usb2.c
-@@ -248,8 +248,7 @@ static int sp_usb_phy_probe(struct platform_device *pdev)
-
- 	usbphy->dev = &pdev->dev;
-
--	usbphy->phy_res_mem = platform_get_resource_byname(pdev, IORESOURCE_MEM, "phy");
--	usbphy->phy_regs = devm_ioremap_resource(&pdev->dev, usbphy->phy_res_mem);
-+	usbphy->phy_regs = devm_platform_ioremap_resource_byname(pdev, "phy");
- 	if (IS_ERR(usbphy->phy_regs))
- 		return PTR_ERR(usbphy->phy_regs);
-
--- 
-2.25.1
+>
+> >               - qcom,msm8953-qusb2-phy
+> >               - qcom,msm8996-qusb2-phy
+> >               - qcom,msm8998-qusb2-phy
+> >               - qcom,qcm2290-qusb2-phy
+> >               - qcom,sdm660-qusb2-phy
+> >-              - qcom,ipq6018-qusb2-phy
+> >               - qcom,sm4250-qusb2-phy
+> >               - qcom,sm6115-qusb2-phy
+> >       - items:
+>
+> --
+> With best wishes
+> Dmitry
 
 -- 
 linux-phy mailing list
