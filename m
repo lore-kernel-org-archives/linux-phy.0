@@ -4,68 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0806EC6FD1C
-	for <linux-phy@archiver.kernel.org>; Thu, 23 Mar 2023 09:30:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 94E10C6FD1C
+	for <linux-phy@archiver.kernel.org>; Thu, 23 Mar 2023 10:27:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/SPhsiCvtqTBRgaLMjQFws+uoP/FCjAj/kgHCuAIxfw=; b=q3fECtKa1b68W1
-	kvdrfbyvqAjYpJCDkJ4t7Wqi/JIRUWSdELFtLBjE1I82wJVahFFkzql45apkZ0fqoXXbx5FC2KQUe
-	6xXWKAEpEh+c+OzjQqli1s2/NnBA4ikFBTKtgGibUBwy0+ChihkgpN/aeCLDbfz/LGkcNt/HwcMUX
-	wTpxad3IGNCeSQvFtybEKXVK1L5ObxmGVkCpZL4U5GfIS3q5oyKb9oPf4grAFIPHZBdYUhEzpAEwl
-	I2p9IB7xdcAidBQ+UZVeIpAbeaVDEk+6XxHRXGn+sd/n7RnkL4pAhT0wWZo0F46rAneAgsRsHkG8g
-	o3wBKsMMXsm3IxLvCarg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=SfZzF/QArBbZiqBB2XXqtnLUPA2gUdDm9s1lo9FgDCs=; b=f4ozEzuOLuhmol
+	BK8wNZizHfekvnVY7zifhLS1STQGT4T5BJK4I4bF4uE5V+x1oyVvimUSodSv/YEj7vJ1+wnJ+Etea
+	CFhTxKIMR3LXXZpTIOI+bLUGLzsFKem6ohWKmw3ZAgaOXjZ6JdqSwfxevfNtvztqmLo1h/0F7Yd6L
+	4vRYgBKgBcHOuKuNBHtjcczBvC/5hblsMROaowZi9Ixf+MDtLfAIB3VzsAER2bvkt0tsPTY9oSURQ
+	DGdoo8jOwjHltyqWGdCeCg+ICMsiIxonZ+bLRaH8q7CXbxeOwZmON3/n0czUtRX217+Ho5PEoH3kE
+	Q4MbcAnNZwa+XxBGPlLQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pfHGx-001TMQ-24;
-	Thu, 23 Mar 2023 09:30:15 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1pfIAB-001Zar-0i;
+	Thu, 23 Mar 2023 10:27:19 +0000
+Received: from relay2-d.mail.gandi.net ([2001:4b98:dc4:8::222])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pfHGu-001TKk-2n
+	id 1pfIA6-001ZYb-37
 	for linux-phy@lists.infradead.org;
-	Thu, 23 Mar 2023 09:30:14 +0000
-Received: from drehscheibe.grey.stw.pengutronix.de ([2a0a:edc0:0:c01:1d::a2])
-	by metis.ext.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
-	(Exim 4.92)
-	(envelope-from <p.zabel@pengutronix.de>)
-	id 1pfHGP-0005UF-IQ; Thu, 23 Mar 2023 10:29:41 +0100
-Received: from [2a0a:edc0:0:900:1d::4e] (helo=lupine)
-	by drehscheibe.grey.stw.pengutronix.de with esmtp (Exim 4.94.2)
-	(envelope-from <p.zabel@pengutronix.de>)
-	id 1pfHGM-0067Mm-BG; Thu, 23 Mar 2023 10:29:38 +0100
-Received: from pza by lupine with local (Exim 4.94.2)
-	(envelope-from <p.zabel@pengutronix.de>)
-	id 1pfHGL-0002ek-J2; Thu, 23 Mar 2023 10:29:37 +0100
-Message-ID: <2c99725a0bf259203a5b00f4c752eeb1b6596f59.camel@pengutronix.de>
-Subject: Re: [PATCH v3 4/5] usb: cdns3: add StarFive JH7110 USB driver.
-From: Philipp Zabel <p.zabel@pengutronix.de>
-To: Minda Chen <minda.chen@starfivetech.com>, Emil Renner Berthing
- <emil.renner.berthing@canonical.com>, Conor Dooley <conor@kernel.org>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Krzysztof Kozlowski
- <krzysztof.kozlowski+dt@linaro.org>,  Pawel Laszczak <pawell@cadence.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Peter Chen
- <peter.chen@kernel.org>, Roger Quadros <rogerq@kernel.org>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
-	linux-phy@lists.infradead.org, linux-usb@vger.kernel.org, 
-	linux-riscv@lists.infradead.org, Paul Walmsley <paul.walmsley@sifive.com>, 
-	Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>
-Date: Thu, 23 Mar 2023 10:29:37 +0100
-In-Reply-To: <20230315104411.73614-5-minda.chen@starfivetech.com>
-References: <20230315104411.73614-1-minda.chen@starfivetech.com>
-	 <20230315104411.73614-5-minda.chen@starfivetech.com>
-User-Agent: Evolution 3.38.3-1+deb11u1 
+	Thu, 23 Mar 2023 10:27:17 +0000
+Received: (Authenticated sender: herve.codina@bootlin.com)
+	by mail.gandi.net (Postfix) with ESMTPA id 2138B40002;
+	Thu, 23 Mar 2023 10:27:03 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
+	t=1679567227;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding;
+	bh=Bb2LaA5oKhmmtAZYLmsiQ/YaU0jciVROXMb0QSlP0Wg=;
+	b=VxFDk1btpm3I+lY27gnNS2ZFS9MfFuK69w+dHpGJzWzpWR45gsxG/km5LiGA2wHJLBaLg5
+	VK+K97/DL86knDX6Mke46XFjzerXEVRH/Zb93FgpPBaY8F7wk6J1AgSvyMu1tzuk8dHWz6
+	xrEgKll+w/M4VK1OG85PKzR2sOgHEFTx9oc+ivV39IX8d7A+Kx1+d0/2wBwB2dPZ3ZQdte
+	O+duzsRYbMcdgNBtMQpKLou3uaJu7N2ahGwixQe8z+OWcf1e6cGnb37vdxOxH8ZCklBNVI
+	VeYlf21rudf7mc+B1N60Wt0NTfnjRYXw13T+M37jn2YthgvBxNvOGQ6CArHBmg==
+From: Herve Codina <herve.codina@bootlin.com>
+To: Herve Codina <herve.codina@bootlin.com>,
+	"David S. Miller" <davem@davemloft.net>,
+	Eric Dumazet <edumazet@google.com>,
+	Jakub Kicinski <kuba@kernel.org>,
+	Paolo Abeni <pabeni@redhat.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>
+Cc: linux-kernel@vger.kernel.org,
+	netdev@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	Christophe Leroy <christophe.leroy@csgroup.eu>,
+	Thomas Petazzoni <thomas.petazzoni@bootlin.com>
+Subject: [RFC PATCH 0/4] Hi,
+Date: Thu, 23 Mar 2023 11:26:51 +0100
+Message-Id: <20230323102655.264115-1-herve.codina@bootlin.com>
+X-Mailer: git-send-email 2.39.2
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 2a0a:edc0:0:c01:1d::a2
-X-SA-Exim-Mail-From: p.zabel@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de); SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230323_023012_912876_B1E912DA 
-X-CRM114-Status: GOOD (  16.33  )
+X-CRM114-CacheID: sfid-20230323_032715_393653_B337B4D2 
+X-CRM114-Status: GOOD (  16.83  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,71 +73,58 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mi, 2023-03-15 at 18:44 +0800, Minda Chen wrote:
-> There is a Cadence USB3 core for JH7110 SoCs, the cdns
-> core is the child of this USB wrapper module device.
-> 
-> Signed-off-by: Minda Chen <minda.chen@starfivetech.com>
-> ---
-[...]
-> diff --git a/drivers/usb/cdns3/cdns3-starfive.c b/drivers/usb/cdns3/cdns3-starfive.c
-> new file mode 100644
-> index 000000000000..a99f98f85235
-> --- /dev/null
-> +++ b/drivers/usb/cdns3/cdns3-starfive.c
-> @@ -0,0 +1,305 @@
-[...]
-> +static int cdns_clk_rst_init(struct cdns_starfive *data)
-> +{
-> +	int ret;
-> +
-> +	data->num_clks = devm_clk_bulk_get_all(data->dev, &data->clks);
-> +	if (data->num_clks < 0)
-> +		return dev_err_probe(data->dev, -ENODEV,
-> +			"Failed to get clocks\n");
-> +
-> +	ret = clk_bulk_prepare_enable(data->num_clks, data->clks);
-> +	if (ret)
-> +		return dev_err_probe(data->dev, ret,
-> +			"failed to enable clocks\n");
-
-In general, it's better to acquire all resources first and only then
-start interacting with them, and to order all devm_ calls before non-
-devm calls to make sure cleanup is done in reverse order.
-
-In this case you can switch clk_bulk_prepare_enable() with
-devm_reset_control_array_get_exclusive() and simplify the error path.
-
-> +	data->resets = devm_reset_control_array_get_exclusive(data->dev);
-> +	if (IS_ERR(data->resets)) {
-> +		ret = dev_err_probe(data->dev, PTR_ERR(data->resets),
-> +			"Failed to get resets");
-> +		goto err_clk_init;
-> +	}
-> +
-> +	ret = reset_control_deassert(data->resets);
-> +	if (ret) {
-> +		ret = dev_err_probe(data->dev, ret,
-> +			"failed to reset clocks\n");
-> +		goto err_clk_init;
-> +	}
-> +
-> +	return ret;
-> +
-> +err_clk_init:
-> +	clk_bulk_disable_unprepare(data->num_clks, data->clks);
-> +	return ret;
-> +}
-
-regards
-Philipp
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+SSBoYXZlIGEgc3lzdGVtIHdoZXJlIEkgbmVlZCB0byBoYW5kbGUgYW4gSERMQyBpbnRlcmZhY2Uu
+CgpUaGUgSERMQyBkYXRhIGFyZSB0cmFuc2ZlcnJlZCB1c2luZyBhIFRETSBidXMgb24gd2hpY2gg
+YSBQRUYyMjU2IGlzCnByZXNlbnQuIFRoZSBQRUYyMjU2IHRyYW5zZmVycyBkYXRhIGZyb20vdG8g
+dGhlIFRETSBidXMgdG8vZnJvbSBFMSBsaW5lLgpUaGlzIFBFRjIyNTYgaXMgYWxzbyBjb25uZWN0
+ZWQgdG8gYSBQb3dlclFVSUNDIFNvQyBmb3IgdGhlIGNvbnRyb2wgcGF0aAphbmQgdGhlIFRETSBp
+cyBjb25uZWN0ZWQgdG8gdGhlIFNvQyAoUU1DIGNvbXBvbmVudCkgZm9yIHRoZSBkYXRhIHBhdGgu
+CgpGcm9tIHRoZSBIRExDIGRyaXZlciwgSSBuZWVkIHRvIGhhbmRsZSBkYXRhIHVzaW5nIHRoZSBR
+TUMgYW5kIGNhcnJpZXIKZGV0ZWN0aW9uIHVzaW5nIHRoZSBQRUYyMjU2IChFMSBsaW5lIGNhcnJp
+ZXIpLgoKVGhlIEhETEMgZHJpdmVyIGNvbnNpZGVyIHRoZSBQRUYyMjU2IGFzIGEgZ2VuZXJpYyBQ
+SFkuClNvLCB0aGUgZGVzaWduIGlzIHRoZSBmb2xsb3dpbmc6CgorLS0tLS0tLS0tLSsgICAgICAg
+ICAgKy0tLS0tLS0tLS0tLS0rICAgICAgICAgICAgICArLS0tLS0tLS0tKwp8IEhETEMgZHJ2IHwg
+PC1kYXRhLT4gfCBRTUMgY2hhbm5lbCB8IDwtLSBURE0gLS0+ICB8IFBFRjIyNTYgfAorLS0tLS0t
+LS0tLSsgICAgICAgICAgKy0tLS0tLS0tLS0tLS0rICAgICAgICAgICAgICB8ICAgICAgICAgfCA8
+LS0+IEUxCiAgIF4gICArLS0tLS0tLS0tKyAgICAgKy0tLS0tLS0tLSsgICAgICAgICAgICAgICAg
+IHwgICAgICAgICB8CiAgICstPiB8IEdlbiBQSFkgfCA8LT4gfCBQRUYyMjU2IHwgPC0gbG9jYWwg
+YnVzIC0+IHwgICAgICAgICB8CiAgICAgICArLS0tLS0tLS0tKyAgICAgfCBQSFkgZHJ2IHwgICAg
+ICAgICAgICAgICAgICstLS0tLS0tLS0rCiAgICAgICAgICAgICAgICAgICAgICAgKy0tLS0tLS0t
+LSsKCkluIG9yZGVyIHRvIGltcGxlbWVudCB0aGlzLCBJIGhhZCB0bzoKIDEgLSBFeHRlbmQgdGhl
+IGdlbmVyaWMgUEhZIEFQSSB0byBzdXBwb3J0IGdldF9zdGF0dXMoKSBhbmQgbm90aWZpY2F0aW9u
+CiAgICAgb24gc3RhdHVzIGNoYW5nZS4KIDIgLSBJbnRyb2R1Y2UgYSBuZXcga2luZCBvZiBnZW5l
+cmljIFBIWSBuYW1lZCAiYmFzaWMgcGh5Ii4gVGhpcyBQSFkKICAgICBmYW1pbGx5IGNhbiBwcm92
+aWRlIGEgbGluayBzdGF0dXMgaW4gdGhlIGdldF9zdGF0dXMoKSBkYXRhLgogMyAtIFN1cHBvcnQg
+dGhlIFBFRjIyNTYgUEhZIGFzIGEgImJhc2ljIHBoeSIKClRoZSBwdXJwb3NlIG9mIHRoaXMgUkZD
+IHNlcmllcyBpcyB0byBkaXNjdXNzIHRoaXMgZGVzaWduLgoKVGhlIFFNQyBkcml2ZXIgY29kZSBp
+cyBhdmFpbGFibGUgb24gbGludXgtbmV4dC4gSW4gdGhpcyBzZXJpZXM6Ci0gcGF0Y2ggMTogZHJp
+dmVyIEhETEMgdXNpbmcgdGhlIFFNQyBjaGFubmVsCi0gcGF0Y2ggMjogRXh0ZW5kIHRoZSBnZW5l
+cmljIFBIWSBBUEkKLSBwYXRjaCAzOiBVc2UgdGhlICJiYXNpYyBwaHkiIGluIHRoZSBIRExDIGRy
+aXZlcgotIHBhdGNoIDQ6IEltcGxlbWVudCB0aGUgUEVGMjI1NiBQSFkgZHJpdmVyCgpJIGRpZCAy
+IHBhdGNoZXMgZm9yIHRoZSBIRExDIGRyaXZlciBpbiBvcmRlciB0byBwb2ludCB0aGUgbmV3IFBI
+WSBmYW1pbHkKdXNhZ2UgaW4gdGhlIEhETEMgZHJpdmVyLiBJbiB0aGUgZW5kLCB0aGVzZSB0d28g
+cGF0Y2hlcyB3aWxsIGJlIHNxdWFzaGVkCmFuZCB0aGUgYmluZGluZ3Mgd2lsbCBiZSBhZGRlZC4K
+CkhvcGUgdG8gaGF2ZSBzb21lIGZlZWRiYWNrIG9uIHRoaXMgcHJvcG9zYWwuCgpCZXN0IHJlZ2Fy
+ZHMsCkhlcnbDqQoKSGVydmUgQ29kaW5hICg0KToKICBuZXQ6IHdhbjogQWRkIHN1cHBvcnQgZm9y
+IFFNQyBIRExDCiAgcGh5OiBFeHRlbmQgQVBJIHRvIHN1cHBvcnQgJ3N0YXR1cycgZ2V0IGFuZCBu
+b3RpZmljYXRpb24KICBuZXQ6IHdhbjogZnNsX3FtY19oZGxjOiBBZGQgUEhZIHN1cHBvcnQKICBw
+aHk6IGxhbnRpcTogQWRkIFBFRjIyNTYgUEhZIHN1cHBvcnQKCiBkcml2ZXJzL25ldC93YW4vS2Nv
+bmZpZyAgICAgICAgICAgICAgICAgfCAgMTIgKwogZHJpdmVycy9uZXQvd2FuL01ha2VmaWxlICAg
+ICAgICAgICAgICAgIHwgICAxICsKIGRyaXZlcnMvbmV0L3dhbi9mc2xfcW1jX2hkbGMuYyAgICAg
+ICAgICB8IDU1OCArKysrKysrKysrKysrKysrKysrKysrKysKIGRyaXZlcnMvcGh5L2xhbnRpcS9L
+Y29uZmlnICAgICAgICAgICAgICB8ICAxNSArCiBkcml2ZXJzL3BoeS9sYW50aXEvTWFrZWZpbGUg
+ICAgICAgICAgICAgfCAgIDEgKwogZHJpdmVycy9waHkvbGFudGlxL3BoeS1sYW50aXEtcGVmMjI1
+Ni5jIHwgMTMxICsrKysrKwogZHJpdmVycy9waHkvcGh5LWNvcmUuYyAgICAgICAgICAgICAgICAg
+IHwgIDg4ICsrKysKIGluY2x1ZGUvbGludXgvcGh5L3BoeS1iYXNpYy5oICAgICAgICAgICB8ICAy
+NyArKwogaW5jbHVkZS9saW51eC9waHkvcGh5LmggICAgICAgICAgICAgICAgIHwgIDg5ICsrKy0K
+IDkgZmlsZXMgY2hhbmdlZCwgOTIxIGluc2VydGlvbnMoKyksIDEgZGVsZXRpb24oLSkKIGNyZWF0
+ZSBtb2RlIDEwMDY0NCBkcml2ZXJzL25ldC93YW4vZnNsX3FtY19oZGxjLmMKIGNyZWF0ZSBtb2Rl
+IDEwMDY0NCBkcml2ZXJzL3BoeS9sYW50aXEvcGh5LWxhbnRpcS1wZWYyMjU2LmMKIGNyZWF0ZSBt
+b2RlIDEwMDY0NCBpbmNsdWRlL2xpbnV4L3BoeS9waHktYmFzaWMuaAoKLS0gCjIuMzkuMgoKCi0t
+IApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0
+dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
