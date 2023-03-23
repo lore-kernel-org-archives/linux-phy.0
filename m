@@ -4,44 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7EDC9C76195
-	for <linux-phy@archiver.kernel.org>; Thu, 23 Mar 2023 10:32:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 51FD2C6FD1C
+	for <linux-phy@archiver.kernel.org>; Thu, 23 Mar 2023 10:32:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9lJvoDJ4CsCSf5szzZAvkvXJ5ecETyFxSjnmns7cbus=; b=u3CnEBx/zD7mqu
-	VxHHPXKUSW7eYE7pHWm2yvEk91Or7rMdjvtC4pxDc5aUsanfx0ODZ5pLjguT0y81G/4USr1b0qmYE
-	eQvuoH9g+65JrbTsZRRLVfUoN3bO6lJ6dcwV31heBP0+GZFwFPBHA+gjzS+BI60TNO+S+XjKRx4fU
-	4YXC1b2pQm3ks5Rm/uGGAADpzHTG6n/el8v+6TerX/EqyaGcG+PC7JPiXpAkEJfpKFpFbSeHop7B2
-	1ElrXqTvPHNr5ts38zvt0QduZ+OwxMZKd+VNtJQcxVF4t9eMvOXwJVslQNGU8vEW48rxy8PfgwB1b
-	57TG//DJo7U3xEhcC6wg==;
+	List-Owner; bh=kFbMDQFFKIwxOucyxJ3pkAMVOl8Jfoi7yTkROv2Q6dk=; b=JLEwIEDz+WG/ZM
+	DeOZ3WjvMI4zIa8KUXSuEqrTGJeCrqUd1MCHpejAL67Eo1Z5M4QNXgMP0m6ncKN7f9QbE07T++bys
+	8tGuawpDafsBwXJ4NrOPhTbqJ4SvJ+8a876q8V0r6x4sXRroxPDC8pNlg6qB5Pa5x/JcHWF3sisY0
+	/88cR5PdsL44uymyHG6C3O6PWsA7ZNYaAOHTXrNpUxag4Fm5kMoUmeU7wmavN/5nPetBDdWc3kpTq
+	gNMooBqRkvSvlJXkJm3cG3mIwyfgmcNmON8Rk8UISjyHNB95dGGU/FATCQx9zH+Ez4bPmNnwZ9jT8
+	hOEHYBiUBg9AbMsNzeSA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pfIEz-001aLJ-0S;
-	Thu, 23 Mar 2023 10:32:17 +0000
+	id 1pfIF1-001aME-34;
+	Thu, 23 Mar 2023 10:32:19 +0000
 Received: from relay7-d.mail.gandi.net ([217.70.183.200])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pfIEv-001aIM-0u
+	id 1pfIEy-001aKF-0m
 	for linux-phy@lists.infradead.org;
-	Thu, 23 Mar 2023 10:32:15 +0000
+	Thu, 23 Mar 2023 10:32:18 +0000
 Received: (Authenticated sender: herve.codina@bootlin.com)
-	by mail.gandi.net (Postfix) with ESMTPA id 9D65620004;
-	Thu, 23 Mar 2023 10:32:08 +0000 (UTC)
+	by mail.gandi.net (Postfix) with ESMTPA id 2AD012000D;
+	Thu, 23 Mar 2023 10:32:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
-	t=1679567531;
+	t=1679567534;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:
 	 content-transfer-encoding:content-transfer-encoding:
 	 in-reply-to:in-reply-to:references:references;
-	bh=kyML+Tb93DHPPScUmVGGn4WAujJ7ZGz0ZkmMwXFTevo=;
-	b=iLe55/8pFo52jTWAs6NDIlCS8H8D7z4l1HeHHpJR2EjKrbOcKwa4U5t121/2PPnvVn0x2Z
-	nr3XRk+s3LxzGvyPMpGw1G33wnRDE0lT3pvHF0Z1BIzCBcVggHfBGpluB9uvJYWeMx5bON
-	Rj5Ij8I4qjb/2eKJDt9nQNsHXTY/Erj/3EWGXuUsXVPA/WsS1l+UbfjkVvFi5guNiogLh+
-	IbRhr58fnUWevEnjuW9gsIcOYRIPFG8Xl2QUeem2w+ru9kXjfPJHb1lVm0+TolLQ+HfLOO
-	Jyfms0aWek3xbYoQGGMLX9GUjGENKRSASOUsrEtp83guvC6lzw42uQ8G9eoFsA==
+	bh=0oqGErMkj5FkUfonUc1n/rq79xcUyJMxSW3w/JRA1mw=;
+	b=hrTbObETasuAWWQIvVmLlZSNu41RaG0vbCmb57cFoR1aOhMM+TCOY9krwYw4Y1cvbzLF7H
+	4j6C9jrD52fDEbctVDFqjJ1cRVVycdP4GRidAqFQs0d4kF/wXcDuwyPCVRzMJbQQKDTeoG
+	LZLIcSWZVk6utH9u0iR1f14oDWN13rytMBl/zGJ2UzhwmfqA3wn55wDEjVnKg6hZMYc9+J
+	vQPvdWv4jwcig+Z7SrRXL5yZ89VXCzjOjHOxpfgnrwxIMY+vMGKr8VMJs3M7xyt0pVrABe
+	IrWZuy4Jf8LBiONcX3v9LE16O8KAUsFubXaQNKN4rwF8tf10lxIbB9iPI/cjAw==
 From: Herve Codina <herve.codina@bootlin.com>
 To: Herve Codina <herve.codina@bootlin.com>,
 	"David S. Miller" <davem@davemloft.net>,
@@ -55,16 +55,16 @@ Cc: linux-kernel@vger.kernel.org,
 	linux-phy@lists.infradead.org,
 	Christophe Leroy <christophe.leroy@csgroup.eu>,
 	Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Subject: [RFC PATCH 2/4] phy: Extend API to support 'status' get and notification
-Date: Thu, 23 Mar 2023 11:31:52 +0100
-Message-Id: <20230323103154.264546-3-herve.codina@bootlin.com>
+Subject: [RFC PATCH 4/4] phy: lantiq: Add PEF2256 PHY support
+Date: Thu, 23 Mar 2023 11:31:54 +0100
+Message-Id: <20230323103154.264546-5-herve.codina@bootlin.com>
 X-Mailer: git-send-email 2.39.2
 In-Reply-To: <20230323103154.264546-1-herve.codina@bootlin.com>
 References: <20230323103154.264546-1-herve.codina@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230323_033213_583851_861D8A82 
-X-CRM114-Status: GOOD (  24.91  )
+X-CRM114-CacheID: sfid-20230323_033216_556235_F39E14CF 
+X-CRM114-Status: GOOD (  19.56  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,306 +81,194 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The PHY API provides functions to control and pass information from the
-PHY consumer to the PHY provider.
-There is no way for the consumer to get direct information from the PHY
-or be notified by the PHY.
+The Lantiq PEF2256, is a framer and line interface component designed to
+fulfill all required interfacing between an analog E1/T1/J1 line and the
+digital PCM system highway/H.100 bus.
 
-To fill this hole, two API function are provided:
-
-- phy_get_status()
-  This function can be used to get a "status" from the PHY. It is built
-  as the same ways as the configure() function. The status information
-  present in the status retrieved depends on the PHY's phy_mode.
-  This allows to get a "status" depending on the kind of PHY.
-
-- phy_atomic_notifier_(un)register()
-  These functions can be used to register/unregister an atomic notifier
-  block. The event available at this time is the PHY_EVENT_STATUS status
-  event which purpose is to signal some changes in the status available
-  using phy_get_status().
-
-An new kind of PHY is added: PHY_MODE_BASIC.
-This new kind of PHY represents a basic PHY offering a basic status This
-status contains a link state indication.
-With the new API, a link state indication can be retrieve using
-phy_get_status() and link state changes can be notified.
+The PHY support allows to provide the PEF2556 as a generic PHY and to
+use the PHY API to retrieve the E1 line carrier status from the PHY
+consumer.
 
 Signed-off-by: Herve Codina <herve.codina@bootlin.com>
 ---
- drivers/phy/phy-core.c        | 88 ++++++++++++++++++++++++++++++++++
- include/linux/phy/phy-basic.h | 27 +++++++++++
- include/linux/phy/phy.h       | 89 ++++++++++++++++++++++++++++++++++-
- 3 files changed, 203 insertions(+), 1 deletion(-)
- create mode 100644 include/linux/phy/phy-basic.h
+ drivers/phy/lantiq/Kconfig              |  15 +++
+ drivers/phy/lantiq/Makefile             |   1 +
+ drivers/phy/lantiq/phy-lantiq-pef2256.c | 131 ++++++++++++++++++++++++
+ 3 files changed, 147 insertions(+)
+ create mode 100644 drivers/phy/lantiq/phy-lantiq-pef2256.c
 
-diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
-index 9951efc03eaa..c7b568b99dce 100644
---- a/drivers/phy/phy-core.c
-+++ b/drivers/phy/phy-core.c
-@@ -551,6 +551,94 @@ int phy_validate(struct phy *phy, enum phy_mode mode, int submode,
- }
- EXPORT_SYMBOL_GPL(phy_validate);
- 
-+/**
-+ * phy_get_status() - Gets the phy status
-+ * @phy: the phy returned by phy_get()
-+ * @status: the status to retrieve
-+ *
-+ * Used to get the PHY status. phy_init() must have been called
-+ * on the phy. The status will be retrieved from the current phy mode,
-+ * that can be changed using phy_set_mode().
-+ *
-+ * Return: %0 if successful, a negative error code otherwise
-+ */
-+int phy_get_status(struct phy *phy, union phy_status *status)
-+{
-+	int ret;
+diff --git a/drivers/phy/lantiq/Kconfig b/drivers/phy/lantiq/Kconfig
+index c4df9709d53f..c87881255458 100644
+--- a/drivers/phy/lantiq/Kconfig
++++ b/drivers/phy/lantiq/Kconfig
+@@ -2,6 +2,21 @@
+ #
+ # Phy drivers for Lantiq / Intel platforms
+ #
++config PHY_LANTIQ_PEF2256
++	tristate "Lantiq PEF2256 PHY"
++	depends on MFD_PEF2256
++	select GENERIC_PHY
++	help
++	  Enable support for the Lantiq PEF2256 (FALC56) PHY.
++	  The PEF2256 is a framer and line interface between analog E1/T1/J1
++	  line and a digital PCM bus.
++	  This PHY support allows to consider the PEF2256 as a PHY.
 +
-+	if (!phy)
-+		return -EINVAL;
++	  If unsure, say N.
 +
-+	if (!phy->ops->get_status)
-+		return -EOPNOTSUPP;
++	  To compile this driver as a module, choose M here: the
++	  module will be called phy-lantiq-pef2256.
 +
-+	mutex_lock(&phy->mutex);
-+	ret = phy->ops->get_status(phy, status);
-+	mutex_unlock(&phy->mutex);
-+
-+	return ret;
-+}
-+EXPORT_SYMBOL_GPL(phy_get_status);
-+
-+/**
-+ * phy_atomic_notifier_register() - Registers an atomic notifier
-+ * @phy: the phy returned by phy_get()
-+ * @nb: the notifier block to register
-+ *
-+ * Used to register a notifier block on PHY events. phy_init() must have
-+ * been called on the phy.
-+ * The notifier function given in the notifier_block must not sleep.
-+ * The available PHY events are present in enum phy_events
-+ *
-+ * Return: %0 if successful, a negative error code otherwise
-+ */
-+int phy_atomic_notifier_register(struct phy *phy, struct notifier_block *nb)
-+{
-+	int ret;
-+
-+	if (!phy)
-+		return -EINVAL;
-+
-+	if (!phy->ops->atomic_notifier_register ||
-+	    !phy->ops->atomic_notifier_unregister)
-+		return -EOPNOTSUPP;
-+
-+	mutex_lock(&phy->mutex);
-+	ret = phy->ops->atomic_notifier_register(phy, nb);
-+	mutex_unlock(&phy->mutex);
-+
-+	return ret;
-+}
-+EXPORT_SYMBOL_GPL(phy_atomic_notifier_register);
-+
-+/**
-+ * phy_atomic_notifier_unregister() - Unregisters an atomic notifier
-+ * @phy: the phy returned by phy_get()
-+ * @nb: the notifier block to unregister
-+ *
-+ * Used to unregister a notifier block. phy_init() must have
-+ * been called on the phy.
-+ *
-+ * Return: %0 if successful, a negative error code otherwise
-+ */
-+int phy_atomic_notifier_unregister(struct phy *phy, struct notifier_block *nb)
-+{
-+	int ret;
-+
-+	if (!phy)
-+		return -EINVAL;
-+
-+	if (!phy->ops->atomic_notifier_unregister)
-+		return -EOPNOTSUPP;
-+
-+	mutex_lock(&phy->mutex);
-+	ret = phy->ops->atomic_notifier_unregister(phy, nb);
-+	mutex_unlock(&phy->mutex);
-+
-+	return ret;
-+}
-+EXPORT_SYMBOL_GPL(phy_atomic_notifier_unregister);
-+
- /**
-  * _of_phy_get() - lookup and obtain a reference to a phy by phandle
-  * @np: device_node for which to get the phy
-diff --git a/include/linux/phy/phy-basic.h b/include/linux/phy/phy-basic.h
+ config PHY_LANTIQ_VRX200_PCIE
+ 	tristate "Lantiq VRX200/ARX300 PCIe PHY"
+ 	depends on SOC_TYPE_XWAY || COMPILE_TEST
+diff --git a/drivers/phy/lantiq/Makefile b/drivers/phy/lantiq/Makefile
+index 7c14eb24ab73..6e501d865620 100644
+--- a/drivers/phy/lantiq/Makefile
++++ b/drivers/phy/lantiq/Makefile
+@@ -1,3 +1,4 @@
+ # SPDX-License-Identifier: GPL-2.0-only
++obj-$(CONFIG_PHY_LANTIQ_PEF2256)	+= phy-lantiq-pef2256.o
+ obj-$(CONFIG_PHY_LANTIQ_RCU_USB2)	+= phy-lantiq-rcu-usb2.o
+ obj-$(CONFIG_PHY_LANTIQ_VRX200_PCIE)	+= phy-lantiq-vrx200-pcie.o
+diff --git a/drivers/phy/lantiq/phy-lantiq-pef2256.c b/drivers/phy/lantiq/phy-lantiq-pef2256.c
 new file mode 100644
-index 000000000000..95668c610c78
+index 000000000000..1a1a4f66c102
 --- /dev/null
-+++ b/include/linux/phy/phy-basic.h
-@@ -0,0 +1,27 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
++++ b/drivers/phy/lantiq/phy-lantiq-pef2256.c
+@@ -0,0 +1,131 @@
++// SPDX-License-Identifier: GPL-2.0
 +/*
++ * PEF2256 phy support
++ *
 + * Copyright 2023 CS GROUP France
 + *
 + * Author: Herve Codina <herve.codina@bootlin.com>
 + */
 +
-+#ifndef __PHY_BASIC_H_
-+#define __PHY_BASIC_H_
++#include <linux/phy/phy.h>
++#include <linux/mfd/pef2256.h>
++#include <linux/module.h>
++#include <linux/notifier.h>
++#include <linux/platform_device.h>
++#include <linux/slab.h>
 +
-+#include <linux/types.h>
-+
-+/**
-+ * struct phy_status_basic - Basic PHY status
-+ *
-+ * This structure is used to represent the status of a Basic phy.
-+ */
-+struct phy_status_basic {
-+	/**
-+	 * @link_state:
-+	 *
-+	 * Link state. true, the link is on, false, the link is off.
-+	 */
-+	bool link_is_on;
++struct pef2256_phy {
++	struct phy *phy;
++	struct pef2256 *pef2256;
++	struct device *dev;
++	struct atomic_notifier_head event_notifier_list;
++	struct notifier_block nb;
 +};
 +
-+#endif /* __PHY_DP_H_ */
-diff --git a/include/linux/phy/phy.h b/include/linux/phy/phy.h
-index 3a570bc59fc7..40370d41012b 100644
---- a/include/linux/phy/phy.h
-+++ b/include/linux/phy/phy.h
-@@ -16,6 +16,7 @@
- #include <linux/pm_runtime.h>
- #include <linux/regulator/consumer.h>
- 
-+#include <linux/phy/phy-basic.h>
- #include <linux/phy/phy-dp.h>
- #include <linux/phy/phy-lvds.h>
- #include <linux/phy/phy-mipi-dphy.h>
-@@ -42,7 +43,8 @@ enum phy_mode {
- 	PHY_MODE_MIPI_DPHY,
- 	PHY_MODE_SATA,
- 	PHY_MODE_LVDS,
--	PHY_MODE_DP
-+	PHY_MODE_DP,
-+	PHY_MODE_BASIC,
- };
- 
- enum phy_media {
-@@ -67,6 +69,22 @@ union phy_configure_opts {
- 	struct phy_configure_opts_lvds		lvds;
- };
- 
-+/**
-+ * union phy_status - Opaque generic phy status
-+ *
-+ * @basic:	Status availbale phys supporting the Basic phy mode.
-+ */
-+union phy_status {
-+	struct phy_status_basic		basic;
++static int pef2256_carrier_notifier(struct notifier_block *nb, unsigned long action,
++				    void *data)
++{
++	struct pef2256_phy *pef2256 = container_of(nb, struct pef2256_phy, nb);
++
++	switch (action) {
++	case PEF2256_EVENT_CARRIER:
++		return atomic_notifier_call_chain(&pef2256->event_notifier_list,
++						  PHY_EVENT_STATUS,
++						  NULL);
++	default:
++		break;
++	}
++
++	return NOTIFY_DONE;
++}
++
++static int pef2256_phy_atomic_notifier_register(struct phy *phy, struct notifier_block *nb)
++{
++	struct pef2256_phy *pef2256 = phy_get_drvdata(phy);
++
++	return atomic_notifier_chain_register(&pef2256->event_notifier_list, nb);
++}
++
++static int pef2256_phy_atomic_notifier_unregister(struct phy *phy, struct notifier_block *nb)
++{
++	struct pef2256_phy *pef2256 = phy_get_drvdata(phy);
++
++	return atomic_notifier_chain_unregister(&pef2256->event_notifier_list, nb);
++}
++
++static int pef2256_phy_init(struct phy *phy)
++{
++	struct pef2256_phy *pef2256 = phy_get_drvdata(phy);
++
++	ATOMIC_INIT_NOTIFIER_HEAD(&pef2256->event_notifier_list);
++
++	pef2256->nb.notifier_call = pef2256_carrier_notifier;
++	return pef2256_register_event_notifier(pef2256->pef2256, &pef2256->nb);
++}
++
++static int pef2256_phy_exit(struct phy *phy)
++{
++	struct pef2256_phy *pef2256 = phy_get_drvdata(phy);
++
++	return pef2256_unregister_event_notifier(pef2256->pef2256, &pef2256->nb);
++}
++
++static int pef2256_phy_get_status(struct phy *phy, union phy_status *status)
++{
++	struct pef2256_phy *pef2256 = phy_get_drvdata(phy);
++
++	status->basic.link_is_on = pef2256_get_carrier(pef2256->pef2256);
++	return 0;
++}
++
++static const struct phy_ops pef2256_phy_ops = {
++	.owner = THIS_MODULE,
++	.init = pef2256_phy_init,
++	.exit = pef2256_phy_exit,
++	.get_status = pef2256_phy_get_status,
++	.atomic_notifier_register = pef2256_phy_atomic_notifier_register,
++	.atomic_notifier_unregister = pef2256_phy_atomic_notifier_unregister,
 +};
 +
-+/**
-+ * phy_event - event available for notification
-+ */
-+enum phy_event {
-+	PHY_EVENT_STATUS,	/* Event notified on phy_status changes */
++static int pef2256_phy_probe(struct platform_device *pdev)
++{
++	struct phy_provider *provider;
++	struct pef2256_phy *pef2256;
++
++	pef2256 = devm_kzalloc(&pdev->dev, sizeof(*pef2256), GFP_KERNEL);
++	if (!pef2256)
++		return -ENOMEM;
++
++	pef2256->dev = &pdev->dev;
++	pef2256->pef2256 = dev_get_drvdata(pef2256->dev->parent);
++
++	pef2256->phy = devm_phy_create(pef2256->dev, NULL, &pef2256_phy_ops);
++	if (IS_ERR(pef2256->phy))
++		return PTR_ERR(pef2256->phy);
++
++	phy_set_drvdata(pef2256->phy, pef2256);
++	pef2256->phy->attrs.mode = PHY_MODE_BASIC;
++
++	provider = devm_of_phy_provider_register(pef2256->dev, of_phy_simple_xlate);
++
++	return PTR_ERR_OR_ZERO(provider);
++}
++
++static const struct of_device_id pef2256_phy_of_match[] = {
++	{ .compatible = "lantiq,pef2256-phy" },
++	{} /* sentinel */
 +};
++MODULE_DEVICE_TABLE(of, pef2256_phy_of_match);
 +
- /**
-  * struct phy_ops - set of function pointers for performing phy operations
-  * @init: operation to be performed for initializing phy
-@@ -120,6 +138,45 @@ struct phy_ops {
- 	 */
- 	int	(*validate)(struct phy *phy, enum phy_mode mode, int submode,
- 			    union phy_configure_opts *opts);
++static struct platform_driver pef2256_phy_driver = {
++	.driver = {
++		.name = "lantiq-pef2256-phy",
++		.of_match_table = pef2256_phy_of_match,
++	},
++	.probe = pef2256_phy_probe,
++};
++module_platform_driver(pef2256_phy_driver);
 +
-+	/**
-+	 * @get_status:
-+	 *
-+	 * Optional.
-+	 *
-+	 * Used to get the PHY status. phy_init() must have
-+	 * been called on the phy.
-+	 *
-+	 * Returns: 0 if successful, an negative error code otherwise
-+	 */
-+	int	(*get_status)(struct phy *phy, union phy_status *status);
-+
-+	/**
-+	 * @atomic_notifier_register:
-+	 *
-+	 * Optional.
-+	 *
-+	 * Used to register a notifier block on PHY events. phy_init() must have
-+	 * been called on the phy.
-+	 * The notifier function given in the notifier_block must not sleep.
-+	 * The available PHY events are present in enum phy_events
-+	 *
-+	 * Returns: 0 if successful, an negative error code otherwise
-+	 */
-+	int	(*atomic_notifier_register)(struct phy *phy, struct notifier_block *nb);
-+
-+	/**
-+	 * @atomic_notifier_unregister:
-+	 *
-+	 * Mandatoty if @atomic_notifier_register is set.
-+	 *
-+	 * Used to unregister a notifier block on PHY events. phy_init() must have
-+	 * been called on the phy.
-+	 *
-+	 * Returns: 0 if successful, an negative error code otherwise
-+	 */
-+	int	(*atomic_notifier_unregister)(struct phy *phy, struct notifier_block *nb);
-+
- 	int	(*reset)(struct phy *phy);
- 	int	(*calibrate)(struct phy *phy);
- 	void	(*release)(struct phy *phy);
-@@ -234,6 +291,10 @@ int phy_set_speed(struct phy *phy, int speed);
- int phy_configure(struct phy *phy, union phy_configure_opts *opts);
- int phy_validate(struct phy *phy, enum phy_mode mode, int submode,
- 		 union phy_configure_opts *opts);
-+int phy_get_status(struct phy *phy, union phy_status *status);
-+int phy_atomic_notifier_register(struct phy *phy, struct notifier_block *nb);
-+int phy_atomic_notifier_unregister(struct phy *phy, struct notifier_block *nb);
-+
- 
- static inline enum phy_mode phy_get_mode(struct phy *phy)
- {
-@@ -412,6 +473,32 @@ static inline int phy_validate(struct phy *phy, enum phy_mode mode, int submode,
- 	return -ENOSYS;
- }
- 
-+static inline int phy_get_status(struct phy *phy, union phy_status *status)
-+{
-+	if (!phy)
-+		return 0;
-+
-+	return -ENOSYS;
-+}
-+
-+static inline int phy_atomic_notifier_register(struct phy *phy,
-+					       struct notifier_block *nb)
-+{
-+	if (!phy)
-+		return 0;
-+
-+	return -ENOSYS;
-+}
-+
-+static inline int phy_atomic_notifier_unregister(struct phy *phy,
-+						 struct notifier_block *nb)
-+{
-+	if (!phy)
-+		return 0;
-+
-+	return -ENOSYS;
-+}
-+
- static inline int phy_get_bus_width(struct phy *phy)
- {
- 	return -ENOSYS;
++MODULE_AUTHOR("Herve Codina <herve.codina@bootlin.com>");
++MODULE_DESCRIPTION("PEF2256 PHY driver");
++MODULE_LICENSE("GPL");
 -- 
 2.39.2
 
