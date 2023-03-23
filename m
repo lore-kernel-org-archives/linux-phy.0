@@ -4,43 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 94E10C6FD1C
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D7725C76195
 	for <linux-phy@archiver.kernel.org>; Thu, 23 Mar 2023 10:27:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=SfZzF/QArBbZiqBB2XXqtnLUPA2gUdDm9s1lo9FgDCs=; b=f4ozEzuOLuhmol
-	BK8wNZizHfekvnVY7zifhLS1STQGT4T5BJK4I4bF4uE5V+x1oyVvimUSodSv/YEj7vJ1+wnJ+Etea
-	CFhTxKIMR3LXXZpTIOI+bLUGLzsFKem6ohWKmw3ZAgaOXjZ6JdqSwfxevfNtvztqmLo1h/0F7Yd6L
-	4vRYgBKgBcHOuKuNBHtjcczBvC/5hblsMROaowZi9Ixf+MDtLfAIB3VzsAER2bvkt0tsPTY9oSURQ
-	DGdoo8jOwjHltyqWGdCeCg+ICMsiIxonZ+bLRaH8q7CXbxeOwZmON3/n0czUtRX217+Ho5PEoH3kE
-	Q4MbcAnNZwa+XxBGPlLQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=XnKAvRxZlrve7tCoqqLgsSKBdx0nQvDtNfEJQlELiW0=; b=ozXTsOiIbMg4VL
+	ff35mODwdQy0qgGdZGIIYGMiEn7oLImH7TKsjjEgBBeYh5v/EqSe29pjc2pEUuP0UIWsi28lta+L3
+	2Ph0Lju25gtpUV4k8qNm1P9smj2wf6JPprME04m5HfRNzxUiyJsVr6jQVjEZxhkw45czJNyn/zOmJ
+	692Edo5VtERubWTP394idHX+K7665rMseEi5HsKlyvKcURm/xAYmSX+r/69bT7CcQEpa9HBvoxjVa
+	3JyVr3dOalWE9NDvyVGKV51G6EtjR5PRHc8fcQx1mkSimE3qWzbPpONRPj5XHlvEgAnYoPQeD+f3I
+	5SoRNAHO2IQeFtyX+ydA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pfIAB-001Zar-0i;
+	id 1pfIAB-001ZbF-1d;
 	Thu, 23 Mar 2023 10:27:19 +0000
-Received: from relay2-d.mail.gandi.net ([2001:4b98:dc4:8::222])
+Received: from relay2-d.mail.gandi.net ([217.70.183.194])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pfIA6-001ZYb-37
+	id 1pfIA6-001ZYr-2w
 	for linux-phy@lists.infradead.org;
 	Thu, 23 Mar 2023 10:27:17 +0000
 Received: (Authenticated sender: herve.codina@bootlin.com)
-	by mail.gandi.net (Postfix) with ESMTPA id 2138B40002;
-	Thu, 23 Mar 2023 10:27:03 +0000 (UTC)
+	by mail.gandi.net (Postfix) with ESMTPA id C98CB40007;
+	Thu, 23 Mar 2023 10:27:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
-	t=1679567227;
+	t=1679567231;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding;
-	bh=Bb2LaA5oKhmmtAZYLmsiQ/YaU0jciVROXMb0QSlP0Wg=;
-	b=VxFDk1btpm3I+lY27gnNS2ZFS9MfFuK69w+dHpGJzWzpWR45gsxG/km5LiGA2wHJLBaLg5
-	VK+K97/DL86knDX6Mke46XFjzerXEVRH/Zb93FgpPBaY8F7wk6J1AgSvyMu1tzuk8dHWz6
-	xrEgKll+w/M4VK1OG85PKzR2sOgHEFTx9oc+ivV39IX8d7A+Kx1+d0/2wBwB2dPZ3ZQdte
-	O+duzsRYbMcdgNBtMQpKLou3uaJu7N2ahGwixQe8z+OWcf1e6cGnb37vdxOxH8ZCklBNVI
-	VeYlf21rudf7mc+B1N60Wt0NTfnjRYXw13T+M37jn2YthgvBxNvOGQ6CArHBmg==
+	 to:to:cc:cc:mime-version:mime-version:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=ZXghyFKbkBEH9/EKzDk+5w9Pp/aMwqnL/aCTRT1Laoo=;
+	b=LJTLbTwGPnQSRj8spEu6q0fcfKe1kXQvZU5lYdeDWKD6iV27Fom4Zonxo1imQoDv0rd5uq
+	claLSkqz5Om9N7BsV18vNOjhZeezZ7JBTNTdK6VUzQfkCsHKzSBcNFgdicF2SvAvfiof2b
+	zA59gj8Qm0h/wvaNVklyIL+cCSu/Uynyu7m/mCiyykcUXoA5OHAKgar82eUKb7H+DGlqMV
+	pjeCDKQ8us6XZPOeg+6efzlmiVn4ev0w06sYugUT7H7mHkXFqvVWL15xsh1powdkuCW7bF
+	4dQKnNjXDzoeAm8rjH7+CV+wtNN7rlCi1eBM3XuXTU+kOg8GyYusK8BEGCVn8w==
 From: Herve Codina <herve.codina@bootlin.com>
 To: Herve Codina <herve.codina@bootlin.com>,
 	"David S. Miller" <davem@davemloft.net>,
@@ -54,14 +55,16 @@ Cc: linux-kernel@vger.kernel.org,
 	linux-phy@lists.infradead.org,
 	Christophe Leroy <christophe.leroy@csgroup.eu>,
 	Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Subject: [RFC PATCH 0/4] Hi,
-Date: Thu, 23 Mar 2023 11:26:51 +0100
-Message-Id: <20230323102655.264115-1-herve.codina@bootlin.com>
+Subject: [RFC PATCH 3/4] net: wan: fsl_qmc_hdlc: Add PHY support
+Date: Thu, 23 Mar 2023 11:26:54 +0100
+Message-Id: <20230323102655.264115-4-herve.codina@bootlin.com>
 X-Mailer: git-send-email 2.39.2
+In-Reply-To: <20230323102655.264115-1-herve.codina@bootlin.com>
+References: <20230323102655.264115-1-herve.codina@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230323_032715_393653_B337B4D2 
-X-CRM114-Status: GOOD (  16.83  )
+X-CRM114-CacheID: sfid-20230323_032715_392586_123202E4 
+X-CRM114-Status: GOOD (  19.27  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,58 +76,246 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SSBoYXZlIGEgc3lzdGVtIHdoZXJlIEkgbmVlZCB0byBoYW5kbGUgYW4gSERMQyBpbnRlcmZhY2Uu
-CgpUaGUgSERMQyBkYXRhIGFyZSB0cmFuc2ZlcnJlZCB1c2luZyBhIFRETSBidXMgb24gd2hpY2gg
-YSBQRUYyMjU2IGlzCnByZXNlbnQuIFRoZSBQRUYyMjU2IHRyYW5zZmVycyBkYXRhIGZyb20vdG8g
-dGhlIFRETSBidXMgdG8vZnJvbSBFMSBsaW5lLgpUaGlzIFBFRjIyNTYgaXMgYWxzbyBjb25uZWN0
-ZWQgdG8gYSBQb3dlclFVSUNDIFNvQyBmb3IgdGhlIGNvbnRyb2wgcGF0aAphbmQgdGhlIFRETSBp
-cyBjb25uZWN0ZWQgdG8gdGhlIFNvQyAoUU1DIGNvbXBvbmVudCkgZm9yIHRoZSBkYXRhIHBhdGgu
-CgpGcm9tIHRoZSBIRExDIGRyaXZlciwgSSBuZWVkIHRvIGhhbmRsZSBkYXRhIHVzaW5nIHRoZSBR
-TUMgYW5kIGNhcnJpZXIKZGV0ZWN0aW9uIHVzaW5nIHRoZSBQRUYyMjU2IChFMSBsaW5lIGNhcnJp
-ZXIpLgoKVGhlIEhETEMgZHJpdmVyIGNvbnNpZGVyIHRoZSBQRUYyMjU2IGFzIGEgZ2VuZXJpYyBQ
-SFkuClNvLCB0aGUgZGVzaWduIGlzIHRoZSBmb2xsb3dpbmc6CgorLS0tLS0tLS0tLSsgICAgICAg
-ICAgKy0tLS0tLS0tLS0tLS0rICAgICAgICAgICAgICArLS0tLS0tLS0tKwp8IEhETEMgZHJ2IHwg
-PC1kYXRhLT4gfCBRTUMgY2hhbm5lbCB8IDwtLSBURE0gLS0+ICB8IFBFRjIyNTYgfAorLS0tLS0t
-LS0tLSsgICAgICAgICAgKy0tLS0tLS0tLS0tLS0rICAgICAgICAgICAgICB8ICAgICAgICAgfCA8
-LS0+IEUxCiAgIF4gICArLS0tLS0tLS0tKyAgICAgKy0tLS0tLS0tLSsgICAgICAgICAgICAgICAg
-IHwgICAgICAgICB8CiAgICstPiB8IEdlbiBQSFkgfCA8LT4gfCBQRUYyMjU2IHwgPC0gbG9jYWwg
-YnVzIC0+IHwgICAgICAgICB8CiAgICAgICArLS0tLS0tLS0tKyAgICAgfCBQSFkgZHJ2IHwgICAg
-ICAgICAgICAgICAgICstLS0tLS0tLS0rCiAgICAgICAgICAgICAgICAgICAgICAgKy0tLS0tLS0t
-LSsKCkluIG9yZGVyIHRvIGltcGxlbWVudCB0aGlzLCBJIGhhZCB0bzoKIDEgLSBFeHRlbmQgdGhl
-IGdlbmVyaWMgUEhZIEFQSSB0byBzdXBwb3J0IGdldF9zdGF0dXMoKSBhbmQgbm90aWZpY2F0aW9u
-CiAgICAgb24gc3RhdHVzIGNoYW5nZS4KIDIgLSBJbnRyb2R1Y2UgYSBuZXcga2luZCBvZiBnZW5l
-cmljIFBIWSBuYW1lZCAiYmFzaWMgcGh5Ii4gVGhpcyBQSFkKICAgICBmYW1pbGx5IGNhbiBwcm92
-aWRlIGEgbGluayBzdGF0dXMgaW4gdGhlIGdldF9zdGF0dXMoKSBkYXRhLgogMyAtIFN1cHBvcnQg
-dGhlIFBFRjIyNTYgUEhZIGFzIGEgImJhc2ljIHBoeSIKClRoZSBwdXJwb3NlIG9mIHRoaXMgUkZD
-IHNlcmllcyBpcyB0byBkaXNjdXNzIHRoaXMgZGVzaWduLgoKVGhlIFFNQyBkcml2ZXIgY29kZSBp
-cyBhdmFpbGFibGUgb24gbGludXgtbmV4dC4gSW4gdGhpcyBzZXJpZXM6Ci0gcGF0Y2ggMTogZHJp
-dmVyIEhETEMgdXNpbmcgdGhlIFFNQyBjaGFubmVsCi0gcGF0Y2ggMjogRXh0ZW5kIHRoZSBnZW5l
-cmljIFBIWSBBUEkKLSBwYXRjaCAzOiBVc2UgdGhlICJiYXNpYyBwaHkiIGluIHRoZSBIRExDIGRy
-aXZlcgotIHBhdGNoIDQ6IEltcGxlbWVudCB0aGUgUEVGMjI1NiBQSFkgZHJpdmVyCgpJIGRpZCAy
-IHBhdGNoZXMgZm9yIHRoZSBIRExDIGRyaXZlciBpbiBvcmRlciB0byBwb2ludCB0aGUgbmV3IFBI
-WSBmYW1pbHkKdXNhZ2UgaW4gdGhlIEhETEMgZHJpdmVyLiBJbiB0aGUgZW5kLCB0aGVzZSB0d28g
-cGF0Y2hlcyB3aWxsIGJlIHNxdWFzaGVkCmFuZCB0aGUgYmluZGluZ3Mgd2lsbCBiZSBhZGRlZC4K
-CkhvcGUgdG8gaGF2ZSBzb21lIGZlZWRiYWNrIG9uIHRoaXMgcHJvcG9zYWwuCgpCZXN0IHJlZ2Fy
-ZHMsCkhlcnbDqQoKSGVydmUgQ29kaW5hICg0KToKICBuZXQ6IHdhbjogQWRkIHN1cHBvcnQgZm9y
-IFFNQyBIRExDCiAgcGh5OiBFeHRlbmQgQVBJIHRvIHN1cHBvcnQgJ3N0YXR1cycgZ2V0IGFuZCBu
-b3RpZmljYXRpb24KICBuZXQ6IHdhbjogZnNsX3FtY19oZGxjOiBBZGQgUEhZIHN1cHBvcnQKICBw
-aHk6IGxhbnRpcTogQWRkIFBFRjIyNTYgUEhZIHN1cHBvcnQKCiBkcml2ZXJzL25ldC93YW4vS2Nv
-bmZpZyAgICAgICAgICAgICAgICAgfCAgMTIgKwogZHJpdmVycy9uZXQvd2FuL01ha2VmaWxlICAg
-ICAgICAgICAgICAgIHwgICAxICsKIGRyaXZlcnMvbmV0L3dhbi9mc2xfcW1jX2hkbGMuYyAgICAg
-ICAgICB8IDU1OCArKysrKysrKysrKysrKysrKysrKysrKysKIGRyaXZlcnMvcGh5L2xhbnRpcS9L
-Y29uZmlnICAgICAgICAgICAgICB8ICAxNSArCiBkcml2ZXJzL3BoeS9sYW50aXEvTWFrZWZpbGUg
-ICAgICAgICAgICAgfCAgIDEgKwogZHJpdmVycy9waHkvbGFudGlxL3BoeS1sYW50aXEtcGVmMjI1
-Ni5jIHwgMTMxICsrKysrKwogZHJpdmVycy9waHkvcGh5LWNvcmUuYyAgICAgICAgICAgICAgICAg
-IHwgIDg4ICsrKysKIGluY2x1ZGUvbGludXgvcGh5L3BoeS1iYXNpYy5oICAgICAgICAgICB8ICAy
-NyArKwogaW5jbHVkZS9saW51eC9waHkvcGh5LmggICAgICAgICAgICAgICAgIHwgIDg5ICsrKy0K
-IDkgZmlsZXMgY2hhbmdlZCwgOTIxIGluc2VydGlvbnMoKyksIDEgZGVsZXRpb24oLSkKIGNyZWF0
-ZSBtb2RlIDEwMDY0NCBkcml2ZXJzL25ldC93YW4vZnNsX3FtY19oZGxjLmMKIGNyZWF0ZSBtb2Rl
-IDEwMDY0NCBkcml2ZXJzL3BoeS9sYW50aXEvcGh5LWxhbnRpcS1wZWYyMjU2LmMKIGNyZWF0ZSBt
-b2RlIDEwMDY0NCBpbmNsdWRlL2xpbnV4L3BoeS9waHktYmFzaWMuaAoKLS0gCjIuMzkuMgoKCi0t
-IApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0
-dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+Add PHY support in the fsl_qmc_hdlc driver in order to be able to
+signal carrier changes to the network stack based on the PHY status.
+
+Signed-off-by: Herve Codina <herve.codina@bootlin.com>
+---
+ drivers/net/wan/fsl_qmc_hdlc.c | 152 ++++++++++++++++++++++++++++++++-
+ 1 file changed, 151 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/net/wan/fsl_qmc_hdlc.c b/drivers/net/wan/fsl_qmc_hdlc.c
+index f12d00c78497..edea0f678ffe 100644
+--- a/drivers/net/wan/fsl_qmc_hdlc.c
++++ b/drivers/net/wan/fsl_qmc_hdlc.c
+@@ -12,6 +12,7 @@
+ #include <linux/module.h>
+ #include <linux/of.h>
+ #include <linux/of_platform.h>
++#include <linux/phy/phy.h>
+ #include <linux/platform_device.h>
+ #include <linux/slab.h>
+ #include <soc/fsl/qe/qmc.h>
+@@ -27,6 +28,11 @@ struct qmc_hdlc {
+ 	struct device *dev;
+ 	struct qmc_chan *qmc_chan;
+ 	struct net_device *netdev;
++	struct phy *phy;
++	spinlock_t carrier_lock; /* Protect carrier detection */
++	struct notifier_block nb;
++	bool is_phy_notifier;
++	struct delayed_work phy_poll_task;
+ 	bool is_crc32;
+ 	spinlock_t tx_lock; /* Protect tx descriptors */
+ 	struct qmc_hdlc_desc tx_descs[8];
+@@ -39,6 +45,126 @@ static inline struct qmc_hdlc *netdev_to_qmc_hdlc(struct net_device *netdev)
+ 	return (struct qmc_hdlc *)dev_to_hdlc(netdev)->priv;
+ }
+ 
++static int qmc_hdlc_phy_set_carrier(struct qmc_hdlc *qmc_hdlc)
++{
++	union phy_status phy_status;
++	unsigned long flags;
++	int ret;
++
++	if (!qmc_hdlc->phy)
++		return 0;
++
++	spin_lock_irqsave(&qmc_hdlc->carrier_lock, flags);
++
++	ret = phy_get_status(qmc_hdlc->phy, &phy_status);
++	if (ret) {
++		dev_err(qmc_hdlc->dev, "get PHY status failed (%d)\n", ret);
++		goto end;
++	}
++	if (phy_status.basic.link_is_on)
++		netif_carrier_on(qmc_hdlc->netdev);
++	else
++		netif_carrier_off(qmc_hdlc->netdev);
++
++end:
++	spin_unlock_irqrestore(&qmc_hdlc->carrier_lock, flags);
++	return ret;
++}
++
++static int qmc_hdlc_phy_notifier(struct notifier_block *nb, unsigned long action,
++				 void *data)
++{
++	struct qmc_hdlc *qmc_hdlc = container_of(nb, struct qmc_hdlc, nb);
++	int ret;
++
++	if (action != PHY_EVENT_STATUS)
++		return NOTIFY_DONE;
++
++	ret = qmc_hdlc_phy_set_carrier(qmc_hdlc);
++	return ret ? NOTIFY_DONE : NOTIFY_OK;
++}
++
++static void qmc_hdlc_phy_poll_task(struct work_struct *work)
++{
++	struct qmc_hdlc *qmc_hdlc = container_of(work, struct qmc_hdlc, phy_poll_task.work);
++	int ret;
++
++	ret = qmc_hdlc_phy_set_carrier(qmc_hdlc);
++	if (ret) {
++		/* Should not happened but ...
++		 * On error, force carrier on and stop scheduling this task
++		 */
++		dev_err(qmc_hdlc->dev, "set carrier failed (%d) -> force carrier on\n",
++			ret);
++		netif_carrier_on(qmc_hdlc->netdev);
++		return;
++	}
++
++	/* Re-schedule task in 1 sec */
++	queue_delayed_work(system_power_efficient_wq, &qmc_hdlc->phy_poll_task, 1 * HZ);
++}
++
++static int qmc_hdlc_phy_init(struct qmc_hdlc *qmc_hdlc)
++{
++	union phy_status phy_status;
++	int ret;
++
++	if (!qmc_hdlc->phy)
++		return 0;
++
++	ret = phy_init(qmc_hdlc->phy);
++	if (ret) {
++		dev_err(qmc_hdlc->dev, "PHY init failed (%d)\n", ret);
++		return ret;
++	}
++
++	ret = phy_power_on(qmc_hdlc->phy);
++	if (ret) {
++		dev_err(qmc_hdlc->dev, "PHY power-on failed (%d)\n", ret);
++		goto phy_exit;
++	}
++
++	/* Be sure that get_status is supported */
++	ret = phy_get_status(qmc_hdlc->phy, &phy_status);
++	if (ret) {
++		dev_err(qmc_hdlc->dev, "get PHY status failed (%d)\n", ret);
++		goto phy_power_off;
++	}
++
++	qmc_hdlc->nb.notifier_call = qmc_hdlc_phy_notifier;
++	ret = phy_atomic_notifier_register(qmc_hdlc->phy, &qmc_hdlc->nb);
++	if (ret) {
++		qmc_hdlc->is_phy_notifier = false;
++
++		/* Cannot register a PHY notifier -> Use polling */
++		INIT_DELAYED_WORK(&qmc_hdlc->phy_poll_task, qmc_hdlc_phy_poll_task);
++		queue_delayed_work(system_power_efficient_wq, &qmc_hdlc->phy_poll_task, 1 * HZ);
++	} else {
++		qmc_hdlc->is_phy_notifier = true;
++	}
++
++	return 0;
++
++phy_power_off:
++	phy_power_off(qmc_hdlc->phy);
++phy_exit:
++	phy_exit(qmc_hdlc->phy);
++	return ret;
++}
++
++static void qmc_hdlc_phy_exit(struct qmc_hdlc *qmc_hdlc)
++{
++	if (!qmc_hdlc->phy)
++		return;
++
++	if (qmc_hdlc->is_phy_notifier)
++		phy_atomic_notifier_unregister(qmc_hdlc->phy, &qmc_hdlc->nb);
++	else
++		cancel_delayed_work_sync(&qmc_hdlc->phy_poll_task);
++	phy_power_off(qmc_hdlc->phy);
++	phy_exit(qmc_hdlc->phy);
++}
++
+ static int qmc_hdlc_recv_queue(struct qmc_hdlc *qmc_hdlc, struct qmc_hdlc_desc *desc, size_t size);
+ 
+ static void qmc_hcld_recv_complete(void *context, size_t length)
+@@ -192,10 +318,17 @@ static int qmc_hdlc_open(struct net_device *netdev)
+ 	int ret;
+ 	int i;
+ 
+-	ret = hdlc_open(netdev);
++	ret = qmc_hdlc_phy_init(qmc_hdlc);
+ 	if (ret)
+ 		return ret;
+ 
++	ret = hdlc_open(netdev);
++	if (ret)
++		goto phy_exit;
++
++	/* Update carrier */
++	qmc_hdlc_phy_set_carrier(qmc_hdlc);
++
+ 	chan_param.mode = QMC_HDLC;
+ 	/* HDLC_MAX_MRU + 4 for the CRC
+ 	 * HDLC_MAX_MRU + 4 + 8 for the CRC and some extraspace needed by the QMC
+@@ -245,6 +378,8 @@ static int qmc_hdlc_open(struct net_device *netdev)
+ 	}
+ hdlc_close:
+ 	hdlc_close(netdev);
++phy_exit:
++	qmc_hdlc_phy_exit(qmc_hdlc);
+ 	return ret;
+ }
+ 
+@@ -280,6 +415,7 @@ static int qmc_hdlc_close(struct net_device *netdev)
+ 	}
+ 
+ 	hdlc_close(netdev);
++	qmc_hdlc_phy_exit(qmc_hdlc);
+ 	return 0;
+ }
+ 
+@@ -318,6 +454,7 @@ static int qmc_hdlc_probe(struct platform_device *pdev)
+ 	struct device_node *np = pdev->dev.of_node;
+ 	struct qmc_hdlc *qmc_hdlc;
+ 	struct qmc_chan_info info;
++	enum phy_mode phy_mode;
+ 	hdlc_device *hdlc;
+ 	int ret;
+ 
+@@ -327,6 +464,7 @@ static int qmc_hdlc_probe(struct platform_device *pdev)
+ 
+ 	qmc_hdlc->dev = &pdev->dev;
+ 	spin_lock_init(&qmc_hdlc->tx_lock);
++	spin_lock_init(&qmc_hdlc->carrier_lock);
+ 
+ 	qmc_hdlc->qmc_chan = devm_qmc_chan_get_byphandle(qmc_hdlc->dev, np, "fsl,qmc-chan");
+ 	if (IS_ERR(qmc_hdlc->qmc_chan)) {
+@@ -348,6 +486,18 @@ static int qmc_hdlc_probe(struct platform_device *pdev)
+ 		return -EINVAL;
+ 	}
+ 
++	qmc_hdlc->phy = devm_of_phy_optional_get(qmc_hdlc->dev, np, NULL);
++	if (IS_ERR(qmc_hdlc->phy))
++		return PTR_ERR(qmc_hdlc->phy);
++	if (qmc_hdlc->phy) {
++		phy_mode = phy_get_mode(qmc_hdlc->phy);
++		if (phy_mode != PHY_MODE_BASIC) {
++			dev_err(qmc_hdlc->dev, "Unsupported PHY mode (%d)\n",
++				phy_mode);
++			return -EINVAL;
++		}
++	}
++
+ 	qmc_hdlc->netdev = alloc_hdlcdev(qmc_hdlc);
+ 	if (!qmc_hdlc->netdev) {
+ 		dev_err(qmc_hdlc->dev, "failed to alloc hdlc dev\n");
+-- 
+2.39.2
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
