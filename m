@@ -4,59 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 895C2C6FD1D
-	for <linux-phy@archiver.kernel.org>; Thu, 23 Mar 2023 07:46:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 54A81C6FD1D
+	for <linux-phy@archiver.kernel.org>; Thu, 23 Mar 2023 07:47:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:Cc:To:From:Mime-Version:
 	Message-ID:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=R5vThkMBbnRQgTN9F5QzpqnFTa5MlP6rz30ctCfg3MI=; b=T67
-	AJWrDCPQiJP+qR6HzH12rWvU6wHC6q2Dqg3MeCitdck4nYs/psUuAzv7q87ucWaA0NcMXY3lwuHMT
-	2YcBiZYyZQK1h95K01v4KbXzsVMr2Qxq7zcfClHoggmBXxG/wCdGo9tiSIiPI46lOgtb9PxL795On
-	mUMqbIFyj3i1yoO2JY+fGg132umrteus2TCm6XN7d8SQU9T5niNIlbIEX3NAhCpoLTcGFP9nmiws+
-	Anreh7EnHBHDo9K+rzAX4y080vn5/XWF9OmzPrzpQwWIlow9prOV7ajJq/WgdRSg5FXf1bWCJhfbq
-	0FjSsZIUsPyl1u61yp7e7lxBSQzVNLQ==;
+	References:List-Owner; bh=mAbQUAHL1JdzbFIP3nInuv8OSFeWizx2wGWqXU4LKRI=; b=24e
+	+YBe7InEHT28XTwH1yQT1N30+cAkgHWYKrJWybgSOajFXEz6SR7suI/Lzp6chrYXzBc816s6HPLhb
+	oNtxJINswwPSuAU8zp+xSguNhLslSqGsuZMqtP7fM7Fy2IEpf1dwH5DHIXMA60EsYoiuS/twnp9bc
+	bk0xYBjOSVEIogoV6U+h20vyX/OHd95+n5KgEaJRojG3qgAT7LEVwJLFtkwV9YOLp0WLUgIKeYPso
+	WjfuG8o9BBtMp1VLghV8IlOfCgs1GjlLpEBT8YhnWPZhYHWxSaUeTZP9vhCTkVakaXBHYTVEDqUS1
+	uQ8S7wHT5UY6pHV3XuHwIF9+Qz8+XGQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pfFe8-0018ia-0K;
-	Thu, 23 Mar 2023 07:46:04 +0000
+	id 1pfFfa-00190m-3C;
+	Thu, 23 Mar 2023 07:47:34 +0000
 Received: from mxct.zte.com.cn ([183.62.165.209])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pfFe5-0018hV-2T
+	id 1pfFfY-0018zs-1s
 	for linux-phy@lists.infradead.org;
-	Thu, 23 Mar 2023 07:46:03 +0000
+	Thu, 23 Mar 2023 07:47:33 +0000
 Received: from mse-fl2.zte.com.cn (unknown [10.5.228.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mxct.zte.com.cn (FangMail) with ESMTPS id 4Phy7q58x9z501Sn;
-	Thu, 23 Mar 2023 15:45:59 +0800 (CST)
-Received: from xaxapp03.zte.com.cn ([10.88.97.17])
-	by mse-fl2.zte.com.cn with SMTP id 32N7joU5090489;
-	Thu, 23 Mar 2023 15:45:50 +0800 (+08)
+	by mxct.zte.com.cn (FangMail) with ESMTPS id 4Phy9Z4wthz501Sl;
+	Thu, 23 Mar 2023 15:47:30 +0800 (CST)
+Received: from xaxapp01.zte.com.cn ([10.88.99.176])
+	by mse-fl2.zte.com.cn with SMTP id 32N7lBVN092219;
+	Thu, 23 Mar 2023 15:47:11 +0800 (+08)
 	(envelope-from ye.xingchen@zte.com.cn)
 Received: from mapi (xaxapp02[null])
 	by mapi (Zmail) with MAPI id mid31;
-	Thu, 23 Mar 2023 15:45:52 +0800 (CST)
-Date: Thu, 23 Mar 2023 15:45:52 +0800 (CST)
-X-Zmail-TransId: 2afa641c03b012f-8631f
+	Thu, 23 Mar 2023 15:47:13 +0800 (CST)
+Date: Thu, 23 Mar 2023 15:47:13 +0800 (CST)
+X-Zmail-TransId: 2afa641c04011bd-8a3a9
 X-Mailer: Zmail v1.0
-Message-ID: <202303231545522162256@zte.com.cn>
+Message-ID: <202303231547134442295@zte.com.cn>
 Mime-Version: 1.0
 From: <ye.xingchen@zte.com.cn>
-To: <vkoul@kernel.org>
-Cc: <kishon@kernel.org>, <u.kleine-koenig@pengutronix.de>,
-        <linmq006@gmail.com>, <linux-phy@lists.infradead.org>,
+To: <robert.marko@sartura.hr>
+Cc: <luka.perkov@sartura.hr>, <agross@kernel.org>, <andersson@kernel.org>,
+        <konrad.dybcio@linaro.org>, <vkoul@kernel.org>, <kishon@kernel.org>,
+        <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
         <linux-kernel@vger.kernel.org>
-Subject: =?UTF-8?B?W1BBVENIXSBwaHk6IG9tYXAtdXNiMi1waHk6IFVzZSBkZXZfZXJyX3Byb2JlKCk=?=
-X-MAIL: mse-fl2.zte.com.cn 32N7joU5090489
+Subject: =?UTF-8?B?W1BBVENIXSBwaHk6IHF1YWxjb21tOiBVc2UgZGV2X2Vycl9wcm9iZSgp?=
+X-MAIL: mse-fl2.zte.com.cn 32N7lBVN092219
 X-Fangmail-Gw-Spam-Type: 0
 X-Fangmail-Anti-Spam-Filtered: true
-X-Fangmail-MID-QID: 641C03B7.001/4Phy7q58x9z501Sn
+X-Fangmail-MID-QID: 641C0412.003/4Phy9Z4wthz501Sl
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230323_004602_051073_0C19F3DF 
-X-CRM114-Status: UNSURE (   9.53  )
+X-CRM114-CacheID: sfid-20230323_004732_786171_7B700CFD 
+X-CRM114-Status: UNSURE (   9.69  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -80,28 +81,27 @@ Replace the open-code with dev_err_probe() to simplify the code.
 
 Signed-off-by: Ye Xingchen <ye.xingchen@zte.com.cn>
 ---
- drivers/phy/ti/phy-omap-usb2.c | 8 +++-----
- 1 file changed, 3 insertions(+), 5 deletions(-)
+ drivers/phy/qualcomm/phy-qcom-ipq4019-usb.c | 7 ++-----
+ 1 file changed, 2 insertions(+), 5 deletions(-)
 
-diff --git a/drivers/phy/ti/phy-omap-usb2.c b/drivers/phy/ti/phy-omap-usb2.c
-index bbe5d25b0351..762d3de8b3c5 100644
---- a/drivers/phy/ti/phy-omap-usb2.c
-+++ b/drivers/phy/ti/phy-omap-usb2.c
-@@ -445,11 +445,9 @@ static int omap_usb2_probe(struct platform_device *pdev)
- 			 PTR_ERR(phy->wkupclk));
- 		phy->wkupclk = devm_clk_get(phy->dev, "usb_phy_cm_clk32k");
+diff --git a/drivers/phy/qualcomm/phy-qcom-ipq4019-usb.c b/drivers/phy/qualcomm/phy-qcom-ipq4019-usb.c
+index d3e7d5e1d1b6..190f12247235 100644
+--- a/drivers/phy/qualcomm/phy-qcom-ipq4019-usb.c
++++ b/drivers/phy/qualcomm/phy-qcom-ipq4019-usb.c
+@@ -110,11 +110,8 @@ static int ipq4019_usb_phy_probe(struct platform_device *pdev)
+ 	}
 
--		if (IS_ERR(phy->wkupclk)) {
--			if (PTR_ERR(phy->wkupclk) != -EPROBE_DEFER)
--				dev_err(&pdev->dev, "unable to get usb_phy_cm_clk32k\n");
--			return PTR_ERR(phy->wkupclk);
--		}
-+		if (IS_ERR(phy->wkupclk))
-+			return dev_err_probe(&pdev->dev, PTR_ERR(phy->wkupclk),
-+					     "unable to get usb_phy_cm_clk32k\n");
+ 	phy->por_rst = devm_reset_control_get(phy->dev, "por_rst");
+-	if (IS_ERR(phy->por_rst)) {
+-		if (PTR_ERR(phy->por_rst) != -EPROBE_DEFER)
+-			dev_err(dev, "POR reset is missing\n");
+-		return PTR_ERR(phy->por_rst);
+-	}
++	if (IS_ERR(phy->por_rst))
++		return dev_err_probe(dev, PTR_ERR(phy->por_rst), "POR reset is missing\n");
 
- 		dev_warn(&pdev->dev,
- 			 "found usb_phy_cm_clk32k, please fix DTS\n");
+ 	phy->srif_rst = devm_reset_control_get_optional(phy->dev, "srif_rst");
+ 	if (IS_ERR(phy->srif_rst))
 -- 
 2.25.1
 
