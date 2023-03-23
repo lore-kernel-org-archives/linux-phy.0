@@ -4,93 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6DAAEC6FD1C
-	for <linux-phy@archiver.kernel.org>; Thu, 23 Mar 2023 06:53:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 42B0BC6FD1C
+	for <linux-phy@archiver.kernel.org>; Thu, 23 Mar 2023 07:35:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EOZvAu9D28hFHdG9kBo2xL6ZfcUcDFyUMQ5jDt7x9SQ=; b=TlbW1rhwIhNOa0
-	WORJYJi8XhGVOeYTQltqE9qyZdGbNYevrnqrzlhmyAs9+wvw0jmwOHnGUPIJIn+Fug5ahhNEkx+AF
-	1KJdoZJoGUUcOeyo2Ilfidc6B6N9maaQxDrr3W3P4th3v+r1qr1JvWQEYPOzdah006OUBMcjy0359
-	j1eSIccZBxEjAUUbTqRJszIRqMCxVZYjnoHBwyr8Glwvo3WE8KdSIYkYHpAMYYLlI9eWTcG6SQuoL
-	kI94I/8w8bkeXHYqGitpVoPwDzxTN2WcW85sZHiI7G+P0Y6BotY6PZOO/IKXyyxmKCQc8BTxKU52i
-	1GCOauTtiKLauN8+pGbA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=9Pb5OPcREUsps+yaBDgFZToFYvjFbmB3U79n4q71FdM=; b=oPACd3H3aRhVvf
+	kGDpA/hHy8wCSst+PHhQipMWyXBFyJvfA7kx1u8Mh5FXnKnDQMj7unHK5cN+XxXOZuUmL9yr3yoa8
+	sk5diEEZKCJab+oT5Oj6pJFDEzfthdYWyn1wP8TF6dw9Otg2KKoVtw17Typsfzuzx+poEDBGaAhQq
+	Jscv2KU/jXZtjd5WfckuCf0HwNPorUy3qdOAYwZw4bJGixWP8UEh1SwGAv9QSbHWw1F973hUy4j/C
+	afBXiO/bRh8OZXQ7Kp0jFHljxHXKJUY5DnjmcrmXBIw81f/o20Vht6gfU1IHZZdFRF1fADvAPMVtt
+	0oitvkmb1qmnOpiVT83w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pfEp7-0012Rd-0A;
-	Thu, 23 Mar 2023 06:53:21 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1pfFUI-0017GQ-2x;
+	Thu, 23 Mar 2023 07:35:54 +0000
+Received: from out30-130.freemail.mail.aliyun.com ([115.124.30.130])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pfEp4-0012QS-0l
-	for linux-phy@lists.infradead.org;
-	Thu, 23 Mar 2023 06:53:19 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 32N6KDpa016196;
-	Thu, 23 Mar 2023 06:53:13 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=date : from : to :
- cc : subject : message-id : references : mime-version : content-type :
- in-reply-to; s=qcppdkim1; bh=2b/5067R9GHcy29L7fsJhopZDL7DjzKE9imXFmh9BrY=;
- b=mHeSVT3BslTA6jzuzvCq1F/UQQkrZR3kUGUreWCafnkQ8R1hqLpw3W1/ZMJMA8fNPtC0
- utT+uiiUG8i6XxLfX7nb59BiaLvDfOgNes2/XdBcq0oZvcdRYvQQ1pK9L2/7o+D5EdPa
- cYoK9XR6c8ZhQhrDjryfaAxo6w2mGO9dsnnA6HqFl/a+Uz0aR7mqzTuHBMBeET3b4gPL
- ec3Vhl5HZX48OysXWQhdCDxwLkEgQMScWye16Ud/3WSM+PUw6oClEErKy6AVU8P+fd1g
- Tuz0MQ+jg9i2RojsbKYXEqdb+6A5zXXSNMKOMzvHqxCzeBl40w33Amx2H8c9FW4Irg+g pA== 
-Received: from nasanppmta05.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3pg3c9a22c-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 23 Mar 2023 06:53:12 +0000
-Received: from nasanex01a.na.qualcomm.com (nasanex01a.na.qualcomm.com [10.52.223.231])
-	by NASANPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 32N6rBHI009152
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 23 Mar 2023 06:53:11 GMT
-Received: from varda-linux.qualcomm.com (10.80.80.8) by
- nasanex01a.na.qualcomm.com (10.52.223.231) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.986.41; Wed, 22 Mar 2023 23:53:05 -0700
-Date: Thu, 23 Mar 2023 12:23:01 +0530
-From: Varadarajan Narayanan <quic_varada@quicinc.com>
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-CC: <agross@kernel.org>, <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
-        <vkoul@kernel.org>, <kishon@kernel.org>, <robh+dt@kernel.org>,
-        <krzysztof.kozlowski+dt@linaro.org>, <gregkh@linuxfoundation.org>,
-        <mturquette@baylibre.com>, <sboyd@kernel.org>,
-        <quic_wcheng@quicinc.com>, <linux-arm-msm@vger.kernel.org>,
-        <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
-        <linux-kernel@vger.kernel.org>, <linux-usb@vger.kernel.org>,
-        <linux-clk@vger.kernel.org>
-Subject: Re: [PATCH v3 2/8] dt-bindings: phy: qcom,qmp-usb: Add IPQ9574 USB3
- PHY
-Message-ID: <20230323065300.GB19800@varda-linux.qualcomm.com>
-References: <cover.1679479634.git.quic_varada@quicinc.com>
- <e34d8eddc1dda8bb0ff840a7dd18ca4dd6c62d22.1679479634.git.quic_varada@quicinc.com>
- <c52a329d-8683-de82-9b55-209b99ac36c0@linaro.org>
- <20230323063705.GA19800@varda-linux.qualcomm.com>
- <a8c3f324-0231-2180-8464-a3bfc663f743@linaro.org>
+	id 1pfFUD-0017Dd-39;
+	Thu, 23 Mar 2023 07:35:52 +0000
+X-Alimail-AntiSpam: AC=PASS;BC=-1|-1;BR=01201311R151e4;CH=green;DM=||false|;DS=||;FP=0|-1|-1|-1|0|-1|-1|-1;HT=ay29a033018045192;MF=yang.lee@linux.alibaba.com;NM=1;PH=DS;RN=11;SR=0;TI=SMTPD_---0VeTb.bu_1679556935;
+Received: from localhost(mailfrom:yang.lee@linux.alibaba.com fp:SMTPD_---0VeTb.bu_1679556935)
+          by smtp.aliyun-inc.com;
+          Thu, 23 Mar 2023 15:35:36 +0800
+From: Yang Li <yang.lee@linux.alibaba.com>
+To: neil.armstrong@linaro.org
+Cc: khilman@baylibre.com,
+	vkoul@kernel.org,
+	kishon@kernel.org,
+	jbrunet@baylibre.com,
+	martin.blumenstingl@googlemail.com,
+	linux-phy@lists.infradead.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-amlogic@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	Yang Li <yang.lee@linux.alibaba.com>
+Subject: [PATCH -next] phy: dphy: Use devm_platform_ioremap_resource()
+Date: Thu, 23 Mar 2023 15:35:34 +0800
+Message-Id: <20230323073534.75037-1-yang.lee@linux.alibaba.com>
+X-Mailer: git-send-email 2.20.1.7.g153144c
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <a8c3f324-0231-2180-8464-a3bfc663f743@linaro.org>
-User-Agent: Mutt/1.5.24 (2015-08-30)
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nasanex01a.na.qualcomm.com (10.52.223.231)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: NA7dAzEcAnRdzB5xSAN5Zb_fXrFfX3BR
-X-Proofpoint-ORIG-GUID: NA7dAzEcAnRdzB5xSAN5Zb_fXrFfX3BR
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.254,Aquarius:18.0.942,Hydra:6.0.573,FMLib:17.11.170.22
- definitions=2023-03-22_21,2023-03-22_01,2023-02-09_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
- mlxlogscore=999 bulkscore=0 priorityscore=1501 mlxscore=0 malwarescore=0
- clxscore=1015 suspectscore=0 adultscore=0 impostorscore=0 phishscore=0
- spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2303150002 definitions=main-2303230052
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230322_235318_391158_8B3BDCAC 
-X-CRM114-Status: GOOD (  26.87  )
+X-CRM114-CacheID: sfid-20230323_003550_206907_2780A056 
+X-CRM114-Status: UNSURE (   8.85  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -107,76 +67,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Mar 23, 2023 at 07:42:37AM +0100, Krzysztof Kozlowski wrote:
-> On 23/03/2023 07:37, Varadarajan Narayanan wrote:
-> > On Wed, Mar 22, 2023 at 10:52:44PM +0100, Krzysztof Kozlowski wrote:
-> >> On 22/03/2023 11:44, Varadarajan Narayanan wrote:
-> >>> Add dt-bindings for USB3 PHY found on Qualcomm IPQ9574
-> >>>
-> >>> Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
-> >>>
-> >>> ---
-> >>>  Changes in v2:
-> >>> 	- Updated sections missed in previous patch
-> >>> ---
-> >>>  .../bindings/phy/qcom,msm8996-qmp-usb3-phy.yaml    | 22 ++++++++++++++++++++++
-> >>>  1 file changed, 22 insertions(+)
-> >>>
-> >>> diff --git a/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-usb3-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-usb3-phy.yaml
-> >>> index e81a382..beae44c 100644
-> >>> --- a/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-usb3-phy.yaml
-> >>> +++ b/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-usb3-phy.yaml
-> >>> @@ -21,6 +21,7 @@ properties:
-> >>>      enum:
-> >>>        - qcom,ipq6018-qmp-usb3-phy
-> >>>        - qcom,ipq8074-qmp-usb3-phy
-> >>> +      - qcom,ipq9574-qmp-usb3-phy
-> >>>        - qcom,msm8996-qmp-usb3-phy
-> >>>        - qcom,msm8998-qmp-usb3-phy
-> >>>        - qcom,qcm2290-qmp-usb3-phy
-> >>> @@ -204,6 +205,27 @@ allOf:
-> >>>          compatible:
-> >>>            contains:
-> >>>              enum:
-> >>> +              - qcom,ipq9574-qmp-usb3-phy
-> >>> +    then:
-> >>> +      properties:
-> >>> +        clocks:
-> >>> +          maxItems: 2
-> >>
-> >> toplevel defines minItems as 3, so are you sure this works? Did you test it?
-> >
-> > Yes, this is tested. Able to do I/O.
->
-> Bindings do not impact on whether you can or can not do IO, so I meant
-> tested as DTS is compliant with bindings. I assume it was not, so please
-> test bindings and DTS before sending new version.
-> see Documentation/devicetree/bindings/writing-schema.rst for instructions
+According to commit 7945f929f1a7 ("drivers: provide
+devm_platform_ioremap_resource()"), convert platform_get_resource(),
+devm_ioremap_resource() to a single call to use
+devm_platform_ioremap_resource(), as this is exactly what this function
+does.
 
-Sorry. Misunderstood the question. Yes, I ran make dtbs_check and
-got these messages. But couldn't relate them with the
-minItems/maxItems mismatch...
+Signed-off-by: Yang Li <yang.lee@linux.alibaba.com>
+---
+ drivers/phy/amlogic/phy-meson-axg-mipi-dphy.c | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
 
-	phy@7d000: clocks: [[8, 93], [8, 102]] is too short
-	phy@7d000: clock-names: ['aux', 'cfg_ahb'] is too short
+diff --git a/drivers/phy/amlogic/phy-meson-axg-mipi-dphy.c b/drivers/phy/amlogic/phy-meson-axg-mipi-dphy.c
+index 32d1ff09befb..6e9af79e152c 100644
+--- a/drivers/phy/amlogic/phy-meson-axg-mipi-dphy.c
++++ b/drivers/phy/amlogic/phy-meson-axg-mipi-dphy.c
+@@ -335,7 +335,6 @@ static int phy_meson_axg_mipi_dphy_probe(struct platform_device *pdev)
+ {
+ 	struct device *dev = &pdev->dev;
+ 	struct phy_provider *phy_provider;
+-	struct resource *res;
+ 	struct phy_meson_axg_mipi_dphy_priv *priv;
+ 	struct phy *phy;
+ 	void __iomem *base;
+@@ -348,8 +347,7 @@ static int phy_meson_axg_mipi_dphy_probe(struct platform_device *pdev)
+ 	priv->dev = dev;
+ 	platform_set_drvdata(pdev, priv);
+ 
+-	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+-	base = devm_ioremap_resource(dev, res);
++	base = devm_platform_ioremap_resource(pdev, 0);
+ 	if (IS_ERR(base))
+ 		return PTR_ERR(base);
+ 
+-- 
+2.20.1.7.g153144c
 
-Will fix it now. Thanks for the clarification.
-
-> > We only have 2 items. Is it ok change the minItems to 2?
->
-> Yes, because you must update top level (and maybe other) constraints to
-> correct ones. Just test the code...
-
-Ok.
-
-Thanks
-Varada
-
->
->
-> Best regards,
-> Krzysztof
->
 
 -- 
 linux-phy mailing list
