@@ -4,58 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 00C82C6FD1C
-	for <linux-phy@archiver.kernel.org>; Thu, 23 Mar 2023 09:19:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DA810C6FD1D
+	for <linux-phy@archiver.kernel.org>; Thu, 23 Mar 2023 09:25:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=El4xbSDzsCwvwg+VIyap4j8vueXiTz6EKQDOTmPtp1E=; b=Lmpl0ZoRG0yoNEbqY0D8f+Z3El
-	mPB7j1llpc8tbebndBlxvOAWCXf7ZvolglWoGn58ADAM5m6otEHALB//oGCOLd5qevQKQyyWRvr3O
-	d/YpD4NYA9N89ZqumtKlRGuz6ce631Qp8kGWyGdNr3CwhEyY2iHIZ2e9h7i00EUB/sByis5SwJo7F
-	NnSlBvum77UaH5EAzu26nablyda+sJ2oFa0y23WWtbnZpBt8bg2pamXjvwSuKt+T0C2Hg82ldJfaM
-	SEYvKEdnu0pGi9IvPgkiWuJhF2Wnc9iSJQ4f9wUNVglD4Gb6bOwH1JY7Ba4xJTvF1IlwB7ubfsnA2
-	G78+Quag==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=pIvOJHo816um0cmE4M+7JtV1ST2n7h8FKbrbE4pXvCE=; b=XL65RU3p2X8aAl
+	i35bCtWPyfWRpOS3KjZsgI81f4OI/Mp6NhshMyM2uyhitr+VZOdClRxYhY2czgxioHI2J9QMOViI5
+	Z7pMbuGPhcmKkzVsLlE3ZJVxKB8kVqFSaT/vAoZ/b8mS9D2Cr4ofzl+NRZPxTioKu/fq9fKTYIJzq
+	U52vJ4u+M1r4jvVffu6+lJYSx8Cm9c78+x2KdVABwhSGHtFBdKeUWq39t1bpy1QWrhgz4ZmUkfEy4
+	o7zWp9jfLv6yHYFw1ESbYkxCH44GEcZxdx3IiZw6RsEaVWuKH5TGJuYoQ6Q8HHa/K/H8K75St4B9l
+	huTFw6dpvwX7SnY09CKw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pfH6p-001Pjg-27;
-	Thu, 23 Mar 2023 09:19:47 +0000
+	id 1pfHBs-001RIr-1i;
+	Thu, 23 Mar 2023 09:25:00 +0000
 Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pfH6n-001PjE-0L
+	id 1pfHBp-001RHL-2v
 	for linux-phy@lists.infradead.org;
-	Thu, 23 Mar 2023 09:19:46 +0000
+	Thu, 23 Mar 2023 09:24:59 +0000
 Received: from drehscheibe.grey.stw.pengutronix.de ([2a0a:edc0:0:c01:1d::a2])
 	by metis.ext.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
 	(Exim 4.92)
-	(envelope-from <ukl@pengutronix.de>)
-	id 1pfH6a-00036U-HK; Thu, 23 Mar 2023 10:19:32 +0100
-Received: from [2a0a:edc0:0:900:1d::77] (helo=ptz.office.stw.pengutronix.de)
+	(envelope-from <p.zabel@pengutronix.de>)
+	id 1pfHAs-0003uL-Og; Thu, 23 Mar 2023 10:23:58 +0100
+Received: from [2a0a:edc0:0:900:1d::4e] (helo=lupine)
 	by drehscheibe.grey.stw.pengutronix.de with esmtp (Exim 4.94.2)
-	(envelope-from <ukl@pengutronix.de>)
-	id 1pfH6Z-0067Is-BO; Thu, 23 Mar 2023 10:19:31 +0100
-Received: from ukl by ptz.office.stw.pengutronix.de with local (Exim 4.94.2)
-	(envelope-from <ukl@pengutronix.de>)
-	id 1pfH6Y-007IMd-Jo; Thu, 23 Mar 2023 10:19:30 +0100
-Date: Thu, 23 Mar 2023 10:19:30 +0100
-From: Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
-To: ye.xingchen@zte.com.cn
-Cc: vkoul@kernel.org, kishon@kernel.org, linmq006@gmail.com,
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] phy: omap-usb2-phy: Use dev_err_probe()
-Message-ID: <20230323091930.svydywwm5t7kmrmh@pengutronix.de>
-References: <202303231545522162256@zte.com.cn>
+	(envelope-from <p.zabel@pengutronix.de>)
+	id 1pfHAm-0067Jh-Pk; Thu, 23 Mar 2023 10:23:52 +0100
+Received: from pza by lupine with local (Exim 4.94.2)
+	(envelope-from <p.zabel@pengutronix.de>)
+	id 1pfHAm-0002Yl-3Q; Thu, 23 Mar 2023 10:23:52 +0100
+Message-ID: <7799e176e73d1385322e5efba8479e56544c664b.camel@pengutronix.de>
+Subject: Re: [PATCH v3 3/5] dt-binding: Add JH7110 USB wrapper layer doc.
+From: Philipp Zabel <p.zabel@pengutronix.de>
+To: Minda Chen <minda.chen@starfivetech.com>, Emil Renner Berthing
+ <emil.renner.berthing@canonical.com>, Conor Dooley <conor@kernel.org>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Krzysztof Kozlowski
+ <krzysztof.kozlowski+dt@linaro.org>,  Pawel Laszczak <pawell@cadence.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Peter Chen
+ <peter.chen@kernel.org>, Roger Quadros <rogerq@kernel.org>
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	linux-phy@lists.infradead.org, linux-usb@vger.kernel.org, 
+	linux-riscv@lists.infradead.org, Paul Walmsley <paul.walmsley@sifive.com>, 
+	Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>
+Date: Thu, 23 Mar 2023 10:23:52 +0100
+In-Reply-To: <20230315104411.73614-4-minda.chen@starfivetech.com>
+References: <20230315104411.73614-1-minda.chen@starfivetech.com>
+	 <20230315104411.73614-4-minda.chen@starfivetech.com>
+User-Agent: Evolution 3.38.3-1+deb11u1 
 MIME-Version: 1.0
-In-Reply-To: <202303231545522162256@zte.com.cn>
 X-SA-Exim-Connect-IP: 2a0a:edc0:0:c01:1d::a2
-X-SA-Exim-Mail-From: ukl@pengutronix.de
+X-SA-Exim-Mail-From: p.zabel@pengutronix.de
 X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de); SAEximRunCond expanded to false
 X-PTX-Original-Recipient: linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230323_021945_152852_4C74400E 
-X-CRM114-Status: GOOD (  10.37  )
+X-CRM114-CacheID: sfid-20230323_022457_946469_6C4317E3 
+X-CRM114-Status: GOOD (  12.42  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -67,66 +77,42 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============1628262249584602976=="
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
---===============1628262249584602976==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="o3vanfobuja4yooz"
-Content-Disposition: inline
-
-
---o3vanfobuja4yooz
-Content-Type: text/plain; charset=iso-8859-1
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Thu, Mar 23, 2023 at 03:45:52PM +0800, ye.xingchen@zte.com.cn wrote:
-> From: Ye Xingchen <ye.xingchen@zte.com.cn>
->=20
-> Replace the open-code with dev_err_probe() to simplify the code.
->=20
-> Signed-off-by: Ye Xingchen <ye.xingchen@zte.com.cn>
-
-Acked-by: Uwe Kleine-K=F6nig <u.kleine-koenig@pengutronix.de>
-
-Best regards
-Uwe
-
---=20
-Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
-Industrial Linux Solutions                 | https://www.pengutronix.de/ |
-
---o3vanfobuja4yooz
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEP4GsaTp6HlmJrf7Tj4D7WH0S/k4FAmQcGaEACgkQj4D7WH0S
-/k414Qf9FL5ZtgkSSkD0Qzx1ffkcsHTCm/iQ4YXqWPX3zHJPsvjXZ2sPnfr/YsW/
-tz9cUYJD0XuCWk8OMflPm9W15suvyzZG5x78JCUDYevL/6FRANutjwMQhv/EaUyB
-jk5CQEf8AYUaYEib9nAOxxjTR21fAAt0rRjmdPtv1XBHLpnoB2b0hINVYufjjFIE
-UcegqN1D4QKWI6HBsLJr+8lqLcYkhzI3agEInoEMV5guMatTgFzXvo6S2Qij6R5S
-7C1pZoAWWT1GQCsfft9mcHSxF5mT2fnJG9fkq0LHLQEHogLysYatBDYeJPoLj24/
-k7E+mBkx/uHPIKOsQ/8x/xBbru0LbQ==
-=6ENB
------END PGP SIGNATURE-----
-
---o3vanfobuja4yooz--
-
-
---===============1628262249584602976==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============1628262249584602976==--
-
+T24gTWksIDIwMjMtMDMtMTUgYXQgMTg6NDQgKzA4MDAsIE1pbmRhIENoZW4gd3JvdGU6Cj4gVGhl
+IGR0LWJpbmRpbmcgZG9jIG9mIENhZGVuY2UgVVNCU1MtRFJEIGNvbnRyb2xsZXIgd3JhcHBlcgo+
+IGxheWVyLgo+IAo+IFNpZ25lZC1vZmYtYnk6IE1pbmRhIENoZW4gPG1pbmRhLmNoZW5Ac3RhcmZp
+dmV0ZWNoLmNvbT4KPiAtLS0KPiDCoC4uLi9iaW5kaW5ncy91c2Ivc3RhcmZpdmUsamg3MTEwLXVz
+Yi55YW1sICAgICB8IDExOSArKysrKysrKysrKysrKysrKysKPiDCoDEgZmlsZSBjaGFuZ2VkLCAx
+MTkgaW5zZXJ0aW9ucygrKQo+IMKgY3JlYXRlIG1vZGUgMTAwNjQ0IERvY3VtZW50YXRpb24vZGV2
+aWNldHJlZS9iaW5kaW5ncy91c2Ivc3RhcmZpdmUsamg3MTEwLXVzYi55YW1sCj4gCj4gZGlmZiAt
+LWdpdCBhL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy91c2Ivc3RhcmZpdmUsamg3
+MTEwLXVzYi55YW1sIGIvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3VzYi9zdGFy
+Zml2ZSxqaDcxMTAtdXNiLnlhbWwKPiBuZXcgZmlsZSBtb2RlIDEwMDY0NAo+IGluZGV4IDAwMDAw
+MDAwMDAwMC4uYjFhOGRjNmQ3YjRiCj4gLS0tIC9kZXYvbnVsbAo+ICsrKyBiL0RvY3VtZW50YXRp
+b24vZGV2aWNldHJlZS9iaW5kaW5ncy91c2Ivc3RhcmZpdmUsamg3MTEwLXVzYi55YW1sCj4gQEAg
+LTAsMCArMSwxMTkgQEAKPiArIyBTUERYLUxpY2Vuc2UtSWRlbnRpZmllcjogKEdQTC0yLjAtb25s
+eSBPUiBCU0QtMi1DbGF1c2UpCj4gKyVZQU1MIDEuMgo+ICstLS0KPiArJGlkOiBodHRwOi8vZGV2
+aWNldHJlZS5vcmcvc2NoZW1hcy91c2Ivc3RhcmZpdmUsamg3MTEwLXVzYi55YW1sIwo+ICskc2No
+ZW1hOiBodHRwOi8vZGV2aWNldHJlZS5vcmcvbWV0YS1zY2hlbWFzL2NvcmUueWFtbCMKPiArCj4g
+K3RpdGxlOiBTdGFyRml2ZSBKSDcxMTAgd3JhcHBlciBtb2R1bGUgZm9yIHRoZSBDYWRlbmNlIFVT
+QlNTLURSRCBjb250cm9sbGVyCj4gKwo+ICttYWludGFpbmVyczoKPiArICAtIE1pbmRhIENoZW4g
+PG1pbmRhLmNoZW5Ac3RhcmZpdmV0ZWNoLmNvbT4KPiArCj4gK3Byb3BlcnRpZXM6Cj4gKyAgY29t
+cGF0aWJsZToKPiArICAgIGNvbnN0OiBzdGFyZml2ZSxqaDcxMTAtdXNiCj4gKwo+ICsgIGNsb2Nr
+czoKPiArICAgIGl0ZW1zOgo+ICsgICAgICAtIGRlc2NyaXB0aW9uOiBscG0gY2xvY2sKPiArICAg
+ICAgLSBkZXNjcmlwdGlvbjogc3RiIGNsb2NrCj4gKyAgICAgIC0gZGVzY3JpcHRpb246IGFwYiBj
+bG9jawo+ICsgICAgICAtIGRlc2NyaXB0aW9uOiBheGkgY2xvY2sKPiArICAgICAgLSBkZXNjcmlw
+dGlvbjogdXRtaSBhcGIgY2xvY2sKPiArCj4gKyAgY2xvY2stbmFtZXM6Cj4gKyAgICBpdGVtczoK
+PiArICAgICAgLSBjb25zdDogbHBtCj4gKyAgICAgIC0gY29uc3Q6IHN0Ygo+ICsgICAgICAtIGNv
+bnN0OiBhcGIKPiArICAgICAgLSBjb25zdDogYXhpCj4gKyAgICAgIC0gY29uc3Q6IHV0bWlfYXBi
+Cj4gKwo+ICsgIHJlc2V0czoKPiArICAgIGl0ZW1zOgo+ICsgICAgICAtIGRlc2NyaXB0aW9uOiBQ
+V1JVUCByZXNldAo+ICsgICAgICAtIGRlc2NyaXB0aW9uOiBBUEIgcmVzZXQKPiArICAgICAgLSBk
+ZXNjcmlwdGlvbjogQVhJIHJlc2V0Cj4gKyAgICAgIC0gZGVzY3JpcHRpb246IFVUTUlfQVBCIHJl
+c2V0CgpJJ2QgYWRkIGEgInJlc2V0LW5hbWVzIiBwcm9wZXJ0eSwganVzdCBpbiBjYXNlIHRoZXJl
+IGlzIGV2ZXIgYSByZWFzb24KdG8gdHJpZ2dlciBhbnkgb2YgdGhlIHJlc2V0cyBpbmRlcGVuZGVu
+dGx5IGZyb20gdGhlIG90aGVycy4KCnJlZ2FyZHMKUGhpbGlwcAoKLS0gCmxpbnV4LXBoeSBtYWls
+aW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZy
+YWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
