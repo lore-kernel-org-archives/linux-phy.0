@@ -4,101 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 639F9C77B60
-	for <linux-phy@archiver.kernel.org>; Thu, 23 Mar 2023 19:01:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0D8C5C761AF
+	for <linux-phy@archiver.kernel.org>; Fri, 24 Mar 2023 00:18:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XWDgbhURQNYYXQTo0ERIyS2MoRoNu80JF/46Z4UG1VM=; b=ZGSrjHNzm53F6I
-	WrCFbtg9PV99MbXRTMzjxG0QvXM9xmyL97+LGIpjzdS3smmg2qBrViRPq4lGJB+7lw7kXGgc8Qcuo
-	PkZzEPOBzGQgRiajSR+IDzxquZawuRjXcUWhXLPNSzMLoVBZFQIlQTJ2ORIg1Bvo4k+UkHKIQjzzX
-	UwPYLJx575hw+X5Tpu/P2ZFBj1nzKKEnYwdSMuVcSygrCdBSXO1p1AayR1Pnpc2BVrCtI+Kn2tsKN
-	qqKA5KdgKM4bch9FG+nPp9Wwj940aTL2JlVCHMpb568QEDevf/kMeXfL6hyd98mFnV6eR80zYvNRF
-	w8p4grgPvf79GsvlEZIQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=91bpQVEm755CI9qEt+Dl0CaEnGYHohA2BI52eAKb0bM=; b=mvdn2brmEJy94r
+	fy1n1mEJWWIlzmKYhdrq4Uy2FhPa2XluhWYoRCbB7qZZJk9v83gI4qUbBXcFe4ncv3chs7IHRXDQy
+	s07Ingy0Y8ALtrTn/36/GZ4jH3JJYbG5sScj2zJBWj4TqNm0XxtxrKVe7HEZmmcZEOjuJ9YiJx80b
+	xGKrfAvYi+OsfBGSYYG2WpfGQ1s5SEYHGBEsFgfAFYYkpNpaT/sil+x03Ch1TXdMVMVlsKGUHqgzX
+	LTeCHfaGK89H/p722ByHHrxgwsAvhaiDZPW1X0eGSa3mNp/7DaHToq1fvD0Wr4/hhaq6rw8F9rjqt
+	mmS34rB0s5mFxFDHA1Qg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pfQC1-002mz0-31;
-	Thu, 23 Mar 2023 19:01:45 +0000
-Received: from mail-wm1-x329.google.com ([2a00:1450:4864:20::329])
+	id 1pfV88-003EnQ-0d;
+	Fri, 24 Mar 2023 00:18:04 +0000
+Received: from mail-lf1-x12e.google.com ([2a00:1450:4864:20::12e])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pfQBz-002mxU-0L;
-	Thu, 23 Mar 2023 19:01:44 +0000
-Received: by mail-wm1-x329.google.com with SMTP id bg16-20020a05600c3c9000b003eb34e21bdfso1890084wmb.0;
-        Thu, 23 Mar 2023 12:01:39 -0700 (PDT)
+	id 1pfV85-003Emp-26
+	for linux-phy@lists.infradead.org;
+	Fri, 24 Mar 2023 00:18:02 +0000
+Received: by mail-lf1-x12e.google.com with SMTP id t11so158114lfr.1
+        for <linux-phy@lists.infradead.org>; Thu, 23 Mar 2023 17:18:00 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20210112; t=1679598098;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=eLv+OdWP2/q4icqUygxqdKy5WVqm1CK1qz/X+1uMQ6s=;
-        b=cu5m+OlbboTOC7NIqSEcp8iW3kmX+jLP0i9ZshSDb0YwwsjhG1UnGQihGdnCsHvzxT
-         E5fzMruGiyGXORVsaVQVBbyi7036u7U5L4qTaq5l56LuyOE9nazVT64HJCGkSLuVN93r
-         1B4AKbmo7E/IH5irUJwFpldHtDZ0+Orn/pNa9BAq9838vXVb3y7SkxG89vediufY01gv
-         iT/xH+JDL/vm8bbKhZUAcxrvBAsVgYJLNDWRSp5CWvQ6mQIAPqudwQWWgSduywYWAvd6
-         ICah9KqPXqaujDhUvMUhzr0TOCO/Cv+vmxBx11QIL752t6GbzmIoKJBQf+QxYLTe/Kgd
-         cVoA==
+        d=linaro.org; s=google; t=1679617079;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=o5tZLMNjAh2M2jpyVusReltMpzTxxZzGAgNQbIiLgTM=;
+        b=FFZPxz5nrSq4c6yaE3oxJJUJsy8sQVI+WVJUq04IdYqGEXvP+Rn2O9m8tYPcOML8nd
+         0wxxkJK2HVVGUj3kYimU1Xb61uBqQHWNdw/8fqMG19Eza6gL27NEe99LcZ2t8ZeUUcMK
+         EgundMMpkoj4vJEkdoStfqAaTcyjeejFb1oevIaTcAlWmL/TWC7pEcLJnUbHjvLS1sfe
+         PRm0Z79q8Prb6zYjACojlNV2kOCOMxt6X0ftG5PIZdXZYxPYdFchlbau2dD7JxonnOGk
+         Dcfo8GZiwZvjB+e00Xz4V82ouLNhqID8R708SiS601u9yMmmyNY56K2b0bW8HYw0v+F5
+         3PVA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112; t=1679598098;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=eLv+OdWP2/q4icqUygxqdKy5WVqm1CK1qz/X+1uMQ6s=;
-        b=blAgajoCs/BC5Lo+e3pTdEdp8M+rTzSQpZgQu+cv2yFUd5SymSHXByFGF2rtfoTD79
-         6ZhzBCq/i7wx6lMbxWr/g+IfBmwBVIF0b7XkeaEXTmnrhm5EcdGAOw6N5Hy9nTqVqBmg
-         0i7/raXaIfhXwufcgAhvH/TRswGgds9C3vl0ZZZaj8eveVh6qxwzSD2In9GiRoSwh/Ox
-         1NwZJKsqncOKxH9W9tHXfPYZ0oykTTp0IuvxxJUYlWAxet1J2M/95eySipqIv4hf9O9z
-         Vf5T7Y9F//RMy+HF7NHAsPdQR8IUR3V0HX3TWNkcboZxm8Dz2gYZYTWCH6cJb5Ukrxt+
-         O60w==
-X-Gm-Message-State: AO0yUKUtAw1Oxro4Ai1oMNPoa745h8H1rEPSRGBiI8pLZ8wYV5MARNtC
-	xrxsJyl0tx/xAVHrsIu5/wU=
-X-Google-Smtp-Source: AK7set+rYnmeyHLDI8kRSWajUorF8AQNiBslvOhL1B8d1ZJbljrj8VFTESbYvCOCBRF9m/MSyyRPaw==
-X-Received: by 2002:a05:600c:22d4:b0:3ed:b56c:9496 with SMTP id 20-20020a05600c22d400b003edb56c9496mr523314wmg.31.1679598097756;
-        Thu, 23 Mar 2023 12:01:37 -0700 (PDT)
-Received: from jernej-laptop.localnet (82-149-1-233.dynamic.telemach.net. [82.149.1.233])
-        by smtp.gmail.com with ESMTPSA id x11-20020a05600c21cb00b003ede3e54ed7sm2724420wmj.6.2023.03.23.12.01.35
+        d=1e100.net; s=20210112; t=1679617079;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=o5tZLMNjAh2M2jpyVusReltMpzTxxZzGAgNQbIiLgTM=;
+        b=8HuNEnfS7hAKgdYqs8evO6OgGeXb+OVem+UudHpA8qeSJpgkMuQb3L68Qj+VdkW7Y7
+         +yW8j/L6kQ5NU4TZ963J6At0HBa+ITb6OA3Rm91iDiW74Hew7K2+150x3f9rR99zMeOr
+         643qH70Z8RbMmfSjUgY+/DPdeDYrUtkJvKdMsRtPSGHHD4AsLzFhhl6AIKy96WgE49xN
+         z/MUBnLLvgXTpL0xNF08H2m8xjuH/qmc+c0j/hV2hMvYPFIwsJ/BgCYFE9EkjqKeYC0m
+         ND03UGgsDd6n/aAT0XrDxAVSvaPJ9ZbpsKspOHEapRqGbxRQWy/FlB4k34IYpK6KvoS7
+         Z+QQ==
+X-Gm-Message-State: AAQBX9eZmwqK3I8bPHdgLb9GF0PFZexACjM+l24KtXMFNggn9+b4Ayf9
+	kSWkDfENmoKr9rF0LQOMxcmn3Q==
+X-Google-Smtp-Source: AKy350YQ8y0gnCHLyne/IGVn1UwNuRGJfuLNzshH+91SiARkQWHfJqp5Hfu1EixYG6IkUB75e6fOVw==
+X-Received: by 2002:ac2:548b:0:b0:4dd:af71:a5c3 with SMTP id t11-20020ac2548b000000b004ddaf71a5c3mr124106lfk.58.1679617074214;
+        Thu, 23 Mar 2023 17:17:54 -0700 (PDT)
+Received: from umbar.unikie.fi ([192.130.178.91])
+        by smtp.gmail.com with ESMTPSA id i17-20020ac25231000000b004eafa77e435sm569147lfl.146.2023.03.23.17.17.53
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 23 Mar 2023 12:01:37 -0700 (PDT)
-From: Jernej =?utf-8?B?xaBrcmFiZWM=?= <jernej.skrabec@gmail.com>
-To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Chen-Yu Tsai <wens@csie.org>, Samuel Holland <samuel@sholland.org>,
- Neil Armstrong <neil.armstrong@linaro.org>,
- Kevin Hilman <khilman@baylibre.com>, Jerome Brunet <jbrunet@baylibre.com>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Yu Chen <chenyu56@huawei.com>, Binghui Wang <wangbinghui@hisilicon.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Miquel Raynal <miquel.raynal@bootlin.com>,
- Chunfeng Yun <chunfeng.yun@mediatek.com>,
- Sergio Paracuellos <sergio.paracuellos@gmail.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
- Thierry Reding <thierry.reding@gmail.com>,
- Jonathan Hunter <jonathanh@nvidia.com>, Andy Gross <agross@kernel.org>,
- Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konrad.dybcio@linaro.org>,
- Robert Marko <robert.marko@sartura.hr>, Luka Perkov <luka.perkov@sartura.hr>,
- Alim Akhtar <alim.akhtar@samsung.com>,
- Vincent Shih <vincent.sunplus@gmail.com>,
- Wolfgang Grandegger <wg@grandegger.com>,
- Marc Kleine-Budde <mkl@pengutronix.de>, Rob Herring <robh@kernel.org>
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
- linux-kernel@vger.kernel.org, linux-amlogic@lists.infradead.org,
- linux-usb@vger.kernel.org, linux-mediatek@lists.infradead.org,
- linux-tegra@vger.kernel.org, linux-arm-msm@vger.kernel.org,
- linux-samsung-soc@vger.kernel.org, linux-can@vger.kernel.org
-Subject: Re: [PATCH] dt-bindings: phy: Drop unneeded quotes
-Date: Thu, 23 Mar 2023 20:01:34 +0100
-Message-ID: <4814446.31r3eYUQgx@jernej-laptop>
-In-Reply-To: <20230320233955.2921179-1-robh@kernel.org>
-References: <20230320233955.2921179-1-robh@kernel.org>
+        Thu, 23 Mar 2023 17:17:53 -0700 (PDT)
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+To: Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>
+Cc: linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	Johan Hovold <johan+linaro@kernel.org>
+Subject: [PATCH 1/2] phy: qcom-qmp-pcie: drop sdm845_qhp_pcie_rx_tbl
+Date: Fri, 24 Mar 2023 03:17:51 +0300
+Message-Id: <20230324001752.1768505-1-dmitry.baryshkov@linaro.org>
+X-Mailer: git-send-email 2.30.2
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230323_120143_226456_BA0D3D68 
-X-CRM114-Status: UNSURE (   9.80  )
+X-CRM114-CacheID: sfid-20230323_171801_739834_12FAFC8B 
+X-CRM114-Status: UNSURE (   6.96  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -116,57 +95,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Dne torek, 21. marec 2023 ob 00:39:52 CET je Rob Herring napisal(a):
-> Cleanup bindings dropping unneeded quotes. Once all these are fixed,
-> checking for this can be enabled in yamllint.
-> 
-> Signed-off-by: Rob Herring <robh@kernel.org>
-> ---
->  .../bindings/phy/allwinner,sun50i-h6-usb3-phy.yaml          | 4 ++--
->  .../bindings/phy/allwinner,sun6i-a31-mipi-dphy.yaml         | 2 +-
+The SDM845 QHP PHY doesn't have designated RX region. Corresponding RX
+table is empty, so we can drop it completely.
 
-For Allwinner:
-Acked-by: Jernej Skrabec <jernej.skrabec@gmail.com>
+Fixes: 94a407cc17a4 ("phy: qcom-qmp: create copies of QMP PHY driver")
+Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+---
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 5 -----
+ 1 file changed, 5 deletions(-)
 
-Best regards,
-Jernej
-
->  .../devicetree/bindings/phy/amlogic,axg-mipi-dphy.yaml      | 4 ++--
->  .../bindings/phy/amlogic,g12a-mipi-dphy-analog.yaml         | 4 ++--
->  .../devicetree/bindings/phy/amlogic,g12a-usb2-phy.yaml      | 4 ++--
->  .../devicetree/bindings/phy/amlogic,g12a-usb3-pcie-phy.yaml | 4 ++--
->  .../bindings/phy/amlogic,meson-axg-mipi-pcie-analog.yaml    | 4 ++--
->  .../devicetree/bindings/phy/amlogic,meson-axg-pcie.yaml     | 4 ++--
->  .../devicetree/bindings/phy/amlogic,meson8-hdmi-tx-phy.yaml | 4 ++--
->  .../devicetree/bindings/phy/amlogic,meson8b-usb2-phy.yaml   | 4 ++--
->  .../devicetree/bindings/phy/brcm,bcm63xx-usbh-phy.yaml      | 4 ++--
->  Documentation/devicetree/bindings/phy/brcm,sata-phy.yaml    | 4 ++--
->  Documentation/devicetree/bindings/phy/cdns,salvo-phy.yaml   | 4 ++--
->  .../devicetree/bindings/phy/hisilicon,hi3660-usb3.yaml      | 4 ++--
->  .../devicetree/bindings/phy/hisilicon,hi3670-usb3.yaml      | 6 +++---
->  .../bindings/phy/marvell,armada-3700-utmi-phy.yaml          | 4 ++--
->  .../bindings/phy/marvell,armada-cp110-utmi-phy.yaml         | 4 ++--
->  .../devicetree/bindings/phy/marvell,mmp3-hsic-phy.yaml      | 4 ++--
->  .../devicetree/bindings/phy/mediatek,mt7621-pci-phy.yaml    | 4 ++--
->  .../devicetree/bindings/phy/phy-cadence-sierra.yaml         | 4 ++--
->  .../devicetree/bindings/phy/phy-cadence-torrent.yaml        | 4 ++--
->  Documentation/devicetree/bindings/phy/phy-tegra194-p2u.yaml | 4 ++--
->  Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml     | 4 ++--
->  Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml   | 4 ++--
->  Documentation/devicetree/bindings/phy/qcom,usb-hs-28nm.yaml | 4 ++--
->  .../devicetree/bindings/phy/qcom,usb-snps-femto-v2.yaml     | 4 ++--
->  Documentation/devicetree/bindings/phy/qcom,usb-ss.yaml      | 4 ++--
->  .../devicetree/bindings/phy/qcom-usb-ipq4019-phy.yaml       | 4 ++--
->  .../devicetree/bindings/phy/samsung,exynos-pcie-phy.yaml    | 4 ++--
->  Documentation/devicetree/bindings/phy/samsung,ufs-phy.yaml  | 2 +-
->  .../devicetree/bindings/phy/sunplus,sp7021-usb2-phy.yaml    | 4 ++--
->  .../devicetree/bindings/phy/ti,phy-am654-serdes.yaml        | 4 ++--
->  Documentation/devicetree/bindings/phy/ti,phy-gmii-sel.yaml  | 4 ++--
->  Documentation/devicetree/bindings/phy/ti,phy-j721e-wiz.yaml | 4 ++--
->  Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml  | 4 ++--
->  35 files changed, 69 insertions(+), 69 deletions(-)
-
-
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+index d671748bc097..d580f3d3e221 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+@@ -725,9 +725,6 @@ static const struct qmp_phy_init_tbl sdm845_qhp_pcie_tx_tbl[] = {
+ 	QMP_PHY_INIT_CFG(PCIE_GEN3_QHP_L0_RSM_START, 0x01),
+ };
+ 
+-static const struct qmp_phy_init_tbl sdm845_qhp_pcie_rx_tbl[] = {
+-};
+-
+ static const struct qmp_phy_init_tbl sdm845_qhp_pcie_pcs_tbl[] = {
+ 	QMP_PHY_INIT_CFG(PCIE_GEN3_QHP_PHY_POWER_STATE_CONFIG, 0x3f),
+ 	QMP_PHY_INIT_CFG(PCIE_GEN3_QHP_PHY_PCS_TX_RX_CONFIG, 0x50),
+@@ -2079,8 +2076,6 @@ static const struct qmp_phy_cfg sdm845_qhp_pciephy_cfg = {
+ 		.serdes_num	= ARRAY_SIZE(sdm845_qhp_pcie_serdes_tbl),
+ 		.tx		= sdm845_qhp_pcie_tx_tbl,
+ 		.tx_num		= ARRAY_SIZE(sdm845_qhp_pcie_tx_tbl),
+-		.rx		= sdm845_qhp_pcie_rx_tbl,
+-		.rx_num		= ARRAY_SIZE(sdm845_qhp_pcie_rx_tbl),
+ 		.pcs		= sdm845_qhp_pcie_pcs_tbl,
+ 		.pcs_num	= ARRAY_SIZE(sdm845_qhp_pcie_pcs_tbl),
+ 	},
+-- 
+2.30.2
 
 
 -- 
