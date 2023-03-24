@@ -4,64 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E43F5C7619A
-	for <linux-phy@archiver.kernel.org>; Fri, 24 Mar 2023 00:18:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 59141C6FD1C
+	for <linux-phy@archiver.kernel.org>; Fri, 24 Mar 2023 02:25:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7GhtW2pvoS+Cp9jlZPAs3//0SA0eztbV32WHQG48ILk=; b=4Y8ucQsHjuIhX1
-	17+VLcRbX4GsIYsiVm5JPIt9caae3ik9DHuSj3+rJvLyOteE3qfgkBUnqxuf8s2FYbdF6YgqwTqoK
-	sgWa49h/QS4oaw77MoYdMXmQt5OqR6r/P7gKfYq6hQIm/cgYYTLSgRVdkt73eodDbAkbdVLAia0m1
-	BKHVm2oNxDurzdCQ+qWxHjkVH8KCqCcQ/8FGV7NLCMMeDIeOmgtviI6OvpZckpp7SnlHickeXvd87
-	jQ3dKq3pJEJTPTwhrzBtl/XE1m+6Cnq9FCzbmySY5hTo24YaUZXVzBbAB/EPLOJ2LRJyYRa61UjC6
-	8gqkenYNc4Um+PQ5iLRg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=XWZgyRUt1mj2Q2fDM15nNLuoigfpE5UcFwjwsV+jXVk=; b=ihETvVCN5Y/1Kl
+	SLkCt+t9RXB/WX+Vhv7Btpn+rRfYB6v2m78ow9gtFF1Tk84RAiJIR/gqm8IyMe8sJsskW8319Bm9b
+	nDDa/1qdZd81ddcIt1jF+ByXf9w9jfz9LTki3ByxxgbI5sH8M1SydEX+PNd6MzEZb4EU3KSPoSP65
+	2OoAmUT6AzAiLv6Pwa7uVreJ74J6GP+amo/OKpgqlsDHrYPy/XG/sFwexsLSwf8SDaS0sLnvqT2wn
+	m4tRAMP2RP6xpvlasb65N8EmyEYX0vqcsQ/rnXRqOg4WC871sglYlTuaWiFhD77ASCtlurZE1KM29
+	EbrnW/UGQ2CuQtq4Fqqw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pfV8A-003Enj-1j;
-	Fri, 24 Mar 2023 00:18:06 +0000
-Received: from mail-lf1-x131.google.com ([2a00:1450:4864:20::131])
+	id 1pfX7I-003O7G-30;
+	Fri, 24 Mar 2023 02:25:20 +0000
+Received: from mail-lf1-x132.google.com ([2a00:1450:4864:20::132])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pfV85-003Emq-2q
+	id 1pfX7G-003O6E-07
 	for linux-phy@lists.infradead.org;
-	Fri, 24 Mar 2023 00:18:03 +0000
-Received: by mail-lf1-x131.google.com with SMTP id t11so158147lfr.1
-        for <linux-phy@lists.infradead.org>; Thu, 23 Mar 2023 17:18:01 -0700 (PDT)
+	Fri, 24 Mar 2023 02:25:19 +0000
+Received: by mail-lf1-x132.google.com with SMTP id s8so395061lfr.8
+        for <linux-phy@lists.infradead.org>; Thu, 23 Mar 2023 19:25:16 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1679617080;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=YXZmNUbirnPFl8q9p2tBnc2aY6ycoSjw1TdsaS3/lsw=;
-        b=T1Tt6r+SaTosUqz5z3VgNeXtDbscpAc74aJN2MHovVEQkKKSgkAYsTLdOeD0+MYWrx
-         AmQwMb5LZ9mRoYLO9yNKgQXkDaGIyqef12DFJgBlIWos3U54eVgJrVsa/5AzzG9NM2tM
-         y26h8nPKwY55v0kZIPo4gFJs70Lvq3eVqwnDmBFXyFJC3pPhCiD+mOcTaWy4NpJVXLmV
-         KtbS3RnC75KtOmCxCy69r09he6vyAesZ+cLkAODzrWrRi9ry3bLLggq9P8MLcUru4ERj
-         eB7avTB6wQzs8tekSABNd3aE1fOIibrWgOpH0Jb+TpsS3YplbCoSUDvziKEL3YYPjsSW
-         Svyg==
+        d=linaro.org; s=google; t=1679624715;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=g4EHu4g4QU7EBCUNP4/kfBGYPPyOMibiZN9FLA8lfOI=;
+        b=hGenPXFRiPc/ybQCd7gYjYLvnCZDyMCvZ9kr04It7E7+unCq8UjOkk89RctiP770Xe
+         hyT1utLr2llhINSmBBxUs89TNF+Gb4pCS/xeBGsbpxlmFaOCl4zK7eT91qXJ6p2zVNa0
+         kSV/kSh1xP8rAHbL1ysIyAJiFHXwjNIFtckCVWkwktso7yOIQxKMQaShMxJkKzoK72c+
+         MrzK14AgJWFDrk1KpTPBltEMRxrrh+dKB8RMADaOv9iWWHahDoc+xdy5iVQBp/wlyaEf
+         crmvutqbwnOZ2li0E5GL8Zk7XOYPK2UejpN1KzaMsu1DpbvVQpL3THg9O/hUIO83QYuS
+         XHGA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112; t=1679617080;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=YXZmNUbirnPFl8q9p2tBnc2aY6ycoSjw1TdsaS3/lsw=;
-        b=AUWfZNqTNguP/yg3vXEIUlw4KasNPA35n5OixR61u3BPGf4Vp7KQ3aY3nLZ7us9s3B
-         LaM3DxU9pgq8e4sOuTwcfTecKKAwHYuGBI43b+ZadYBqpUh8vTffwTwoyOx05IsSNG23
-         Uj98HINqTGrHVh/zoU2PnBLGOJidRx8gW0mdXAZ8cCYUN1uiXYX+a/ASrgsirfZzdlA4
-         xZ2o1dJGMG/v4eHyBcw2kCyrFJ6k4Hdq1lSPCTtQcwiw8ML5ujc39U/PPAhG9LpdBDDT
-         NnQtC8GU7RFTG2HWQgfCmnd32utkUpEW3CS30Gu461IObxIeKQcEcVVLEsHauFvg3gmZ
-         Ex1g==
-X-Gm-Message-State: AAQBX9cbCNEWAq0aUYHTLe6g5gErWenSSIlfZ7qU5AbYrTsdX2aG/V06
-	/r0SIZm0Eea+G7XbOVzg9TvPJg==
-X-Google-Smtp-Source: AKy350YSxRS1teUyJh9xtRbHVhHJuHsZ9juqstlxDXX88PN1mDWISCguYaJ4FEcS5Udj8lLqkYUK5Q==
-X-Received: by 2002:ac2:5318:0:b0:4ea:fa26:2378 with SMTP id c24-20020ac25318000000b004eafa262378mr176332lfh.23.1679617079950;
-        Thu, 23 Mar 2023 17:17:59 -0700 (PDT)
+        d=1e100.net; s=20210112; t=1679624715;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=g4EHu4g4QU7EBCUNP4/kfBGYPPyOMibiZN9FLA8lfOI=;
+        b=XFVTwvWcnitemB7tcJJlHQhvNZTv0f+awsm6/IBwvrAy7VEkxbWDgDn+gYm82VZPVM
+         6nFw3awZKt9zBoNAE9FROJoZjmHs637c0lrNv3GSxDmcrhTS2gqxne2/LBBst6p3Dztb
+         ZCcoj49Iw7QutBqeEZbZySU0T9259yEXsxI8qfh1I5hTxrgLMGut7kSMF5MzFIKpainY
+         orflBamjHSzpDEpPRnP88y6qYcaAdFpfZLP5McIX6WziCtYiRkLLlIDy3cY4HoruskRy
+         C1lLAPvrj4jnOfeCDNUirWtmodGPJfElbsjPlv0C78/8NkrcqoSK1zlPFLixl6Urqz5K
+         2gpg==
+X-Gm-Message-State: AAQBX9d109/GzGaTV/AvAiyyjdqpC8FAg1SmgP4kge8AsYe+8HEZKgwG
+	QTXYrTd8oAXgk4zlOe1FHOdwRQ==
+X-Google-Smtp-Source: AKy350bEF0dydDWJPmj9mRPOm9Tt20Yx9HiCR1uB4Hn/l0cr1hw+oI88pMXt0Tn0G5xX+MSa7NO/Lg==
+X-Received: by 2002:ac2:488b:0:b0:4e9:bdd0:b667 with SMTP id x11-20020ac2488b000000b004e9bdd0b667mr209821lfc.0.1679624715415;
+        Thu, 23 Mar 2023 19:25:15 -0700 (PDT)
 Received: from umbar.unikie.fi ([192.130.178.91])
-        by smtp.gmail.com with ESMTPSA id i17-20020ac25231000000b004eafa77e435sm569147lfl.146.2023.03.23.17.17.59
+        by smtp.gmail.com with ESMTPSA id x4-20020a19f604000000b004db3aa3c542sm3162628lfe.47.2023.03.23.19.25.14
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 23 Mar 2023 17:17:59 -0700 (PDT)
+        Thu, 23 Mar 2023 19:25:14 -0700 (PDT)
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 To: Andy Gross <agross@kernel.org>,
 	Bjorn Andersson <andersson@kernel.org>,
@@ -71,16 +70,15 @@ To: Andy Gross <agross@kernel.org>,
 Cc: linux-arm-msm@vger.kernel.org,
 	linux-phy@lists.infradead.org,
 	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH 2/2] phy: qcom-qmp-pcie: sc8180x PCIe PHY has 2 lanes
-Date: Fri, 24 Mar 2023 03:17:52 +0300
-Message-Id: <20230324001752.1768505-2-dmitry.baryshkov@linaro.org>
+Subject: [PATCH 00/41] phy: qcom-qmp: convert to newer style of bindings
+Date: Fri, 24 Mar 2023 05:24:33 +0300
+Message-Id: <20230324022514.1800382-1-dmitry.baryshkov@linaro.org>
 X-Mailer: git-send-email 2.30.2
-In-Reply-To: <20230324001752.1768505-1-dmitry.baryshkov@linaro.org>
-References: <20230324001752.1768505-1-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230323_171801_918787_442BBEFE 
-X-CRM114-Status: GOOD (  10.07  )
+X-CRM114-CacheID: sfid-20230323_192518_076438_51958BFF 
+X-CRM114-Status: UNSURE (   9.39  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,28 +95,112 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-All PCIe PHYs on sc8180x platform have 2 lanes, so change the number of
-lanes to 2.
+Reviewing several patchsets for newer platforms made me understand that
+having two styles of QMP PHY bindings causes confusion. Despite binding
+documents having notes telling that old bindings should be used for
+older platforms, it is too easy to attempt adding new platform with
+older QMP PHY binding. Thus let's have just a single documented style of
+bindings.
 
-Fixes: 94a407cc17a4 ("phy: qcom-qmp: create copies of QMP PHY driver")
-Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
----
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+To facilitate this, migrate all the bindings, extend QMP PHY drivers
+with offset tables and update DTS files.
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-index d580f3d3e221..c95bf7ec2abe 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-@@ -2193,7 +2193,7 @@ static const struct qmp_phy_cfg msm8998_pciephy_cfg = {
- };
- 
- static const struct qmp_phy_cfg sc8180x_pciephy_cfg = {
--	.lanes			= 1,
-+	.lanes			= 2,
- 
- 	.tbls = {
- 		.serdes		= sc8180x_qmp_pcie_serdes_tbl,
+Dependencies: [1], [2], [3]:
+
+[1] https://lore.kernel.org/linux-arm-msm/20230323144726.1614344-1-dmitry.baryshkov@linaro.org
+[2] https://lore.kernel.org/linux-arm-msm/20230324021651.1799969-1-dmitry.baryshkov@linaro.org
+[3] https://lore.kernel.org/linux-arm-msm/20230324001752.1768505-1-dmitry.baryshkov@linaro.org
+
+
+Dmitry Baryshkov (41):
+  dt-bindings: phy: migrate QMP USB PHY bindings to
+    qcom,sc8280xp-qmp-usb3-uni-phy.yaml
+  dt-bindings: phy: migrate combo QMP PHY bindings to
+    qcom,sc8280xp-qmp-usb43dp-phy.yaml
+  dt-bindings: phy: migrate QMP UFS PHY bindings to
+    qcom,sc8280xp-qmp-ufs-phy.yaml
+  dt-bindings: phy: migrate QMP PCIe PHY bindings to
+    qcom,sc8280xp-qmp-pcie-phy.yaml
+  phy: qcom-qmp-usb: make QPHY_PCS_MISC_CLAMP_ENABLE access conditional
+  phy: qcom-qmp: move PCS MISC V4 registers to separate header
+  phy: qcom-qmp-usb: populate offsets configuration
+  phy: qcom-qmp-ufs: populate offsets configuration
+  phy: qcom-qmp-pcie: populate offsets configuration
+  arm64: dts: qcom: ipq6018: switch USB QMP PHY to new style of bindings
+  arm64: dts: qcom: ipq8074: switch USB QMP PHY to new style of bindings
+  arm64: dts: qcom: msm8996: switch USB QMP PHY to new style of bindings
+  arm64: dts: qcom: msm8998: switch USB QMP PHY to new style of bindings
+  arm64: dts: qcom: sdm845: switch USB QMP PHY to new style of bindings
+  arm64: dts: qcom: sm8150: switch USB QMP PHY to new style of bindings
+  arm64: dts: qcom: sm8250: switch USB QMP PHY to new style of bindings
+  arm64: dts: qcom: sm8350: switch USB QMP PHY to new style of bindings
+  arm64: dts: qcom: sc7180: switch USB+DP QMP PHY to new style of
+    bindings
+  arm64: dts: qcom: sc7280: switch USB+DP QMP PHY to new style of
+    bindings
+  arm64: dts: qcom: sdm845: switch USB+DP QMP PHY to new style of
+    bindings
+  arm64: dts: qcom: sm8250: switch USB+DP QMP PHY to new style of
+    bindings
+  arm64: dts: qcom: msm8996: switch UFS QMP PHY to new style of bindings
+  arm64: dts: qcom: msm8998: switch UFS QMP PHY to new style of bindings
+  arm64: dts: qcom: sdm845: switch UFS QMP PHY to new style of bindings
+  arm64: dts: qcom: sm6115: switch UFS QMP PHY to new style of bindings
+  arm64: dts: qcom: sm6350: switch UFS QMP PHY to new style of bindings
+  arm64: dts: qcom: sm8150: switch UFS QMP PHY to new style of bindings
+  arm64: dts: qcom: sm8250: switch UFS QMP PHY to new style of bindings
+  arm64: dts: qcom: sm8350: switch UFS QMP PHY to new style of bindings
+  arm64: dts: qcom: sm8450: switch UFS QMP PHY to new style of bindings
+  arm64: dts: qcom: ipq6018: switch PCIe QMP PHY to new style of
+    bindings
+  arm64: dts: qcom: ipq8074: switch PCIe QMP PHY to new style of
+    bindings
+  arm64: dts: qcom: msm8998: switch PCIe QMP PHY to new style of
+    bindings
+  arm64: dts: qcom: sc7280: switch PCIe QMP PHY to new style of bindings
+  arm64: dts: qcom: sdm845: switch PCIe QMP PHY to new style of bindings
+  arm64: dts: qcom: sm8150: switch PCIe QMP PHY to new style of bindings
+  arm64: dts: qcom: sm8250: switch PCIe QMP PHY to new style of bindings
+  arm64: dts: qcom: sm8450: switch PCIe QMP PHY to new style of bindings
+  ARM: dts: qcom-sdx55: switch USB QMP PHY to new style of bindings
+  ARM: dts: qcom-sdx65: switch USB QMP PHY to new style of bindings
+  ARM: dts: qcom-sdx55: switch PCIe QMP PHY to new style of bindings
+
+ .../phy/qcom,ipq8074-qmp-pcie-phy.yaml        | 299 -------------
+ .../phy/qcom,msm8996-qmp-ufs-phy.yaml         | 244 -----------
+ .../phy/qcom,msm8996-qmp-usb3-phy.yaml        | 394 ------------------
+ .../phy/qcom,sc7180-qmp-usb3-dp-phy.yaml      | 276 ------------
+ .../phy/qcom,sc8280xp-qmp-pcie-phy.yaml       | 213 ++++++++--
+ .../phy/qcom,sc8280xp-qmp-ufs-phy.yaml        |  94 ++++-
+ .../phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml   | 236 ++++++++++-
+ .../phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml    | 124 +++++-
+ arch/arm/boot/dts/qcom-sdx55.dtsi             |  57 +--
+ arch/arm/boot/dts/qcom-sdx65.dtsi             |  29 +-
+ arch/arm64/boot/dts/qcom/ipq6018.dtsi         |  63 ++-
+ arch/arm64/boot/dts/qcom/ipq8074.dtsi         | 123 +++---
+ arch/arm64/boot/dts/qcom/msm8996.dtsi         |  57 +--
+ arch/arm64/boot/dts/qcom/msm8998.dtsi         |  77 ++--
+ arch/arm64/boot/dts/qcom/sc7180.dtsi          |  55 +--
+ arch/arm64/boot/dts/qcom/sc7280.dtsi          |  90 ++--
+ arch/arm64/boot/dts/qcom/sdm845.dtsi          | 174 +++-----
+ arch/arm64/boot/dts/qcom/sm6115.dtsi          |  17 +-
+ arch/arm64/boot/dts/qcom/sm6350.dtsi          |  18 +-
+ arch/arm64/boot/dts/qcom/sm8150.dtsi          | 153 +++----
+ arch/arm64/boot/dts/qcom/sm8250.dtsi          | 211 ++++------
+ arch/arm64/boot/dts/qcom/sm8350.dtsi          |  60 +--
+ arch/arm64/boot/dts/qcom/sm8450.dtsi          | 110 ++---
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c      |  84 ++++
+ .../phy/qualcomm/phy-qcom-qmp-pcs-misc-v4.h   |  17 +
+ drivers/phy/qualcomm/phy-qcom-qmp-ufs.c       |  10 +
+ drivers/phy/qualcomm/phy-qcom-qmp-usb.c       | 122 +++++-
+ drivers/phy/qualcomm/phy-qcom-qmp.h           |   8 -
+ 28 files changed, 1316 insertions(+), 2099 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/phy/qcom,ipq8074-qmp-pcie-phy.yaml
+ delete mode 100644 Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-ufs-phy.yaml
+ delete mode 100644 Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-usb3-phy.yaml
+ delete mode 100644 Documentation/devicetree/bindings/phy/qcom,sc7180-qmp-usb3-dp-phy.yaml
+ create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-pcs-misc-v4.h
+
 -- 
 2.30.2
 
