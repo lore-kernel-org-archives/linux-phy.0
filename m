@@ -4,54 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BE5D0C6FD20
-	for <linux-phy@archiver.kernel.org>; Fri, 24 Mar 2023 20:44:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BFA1BC77B6C
+	for <linux-phy@archiver.kernel.org>; Fri, 24 Mar 2023 21:56:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZkrwHIdgVTgHkmuwbIRz58XvjIiBF6rYErFo1OzSvo8=; b=OEJz0qgO3y8VaF
-	X3ocCvpPKzZyvnxKpudjQ+4rfZh7sCQucsi2d8fODCI/Cv/3UEL21IUJwdlACORKKdt++vhyUyQyr
-	NUKTXxhI96fmDCRTxEdRGj+guFNm/euaenSXmh59emYrGfVqtS1IlthW+nYDol+EA0VhTClpM1ZPh
-	5wAOSuyljVuBCfwRRGUv7DErMmMjxEnHqJB8K4gcsBw1LTpVrVgxk8FGSwhpWmpRdkqf+zGtiiHp4
-	yhy4MjtUqrs2Qk4S2zvoDruxt1Yauko+VBx/19MW4xr/+GdkQJ85MxV3JaIb29VZdDCQRq12Py+Fb
-	t07+285GRpq3bPCLA9VQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=oBBsqgWg0Np3mZG532/uH72CYUsUVULLBqlWZLCwfDI=; b=wTAvAIaO0fGPRy
+	BFOVwabQMqJiloFPciwH8+u/3VJjm8PtoEow5/Ah4LLzyD+KD3b2F6NN2Iptm5DRICF2FTZ9EFZOx
+	WTGZ2RsGhANsn60kmkG/D4l/wJ1TCQ3nZt2wr3JiiO3WyVPAOMAmjZo0MSCIj8vxxv1D/Rb7p5kzi
+	jnj2SyEqFU7FPK+QEKGe1qqE/LvCpHLzhXUXA6a8mJ3WV7YEFvaIrOZ4yzb4FoT+fCd43fpm/pRy6
+	m36wduTgxCda01BcUBavpcxljz14xqubUebGmq+xId4VZh8m2sqab3khXMJ5VNzkTyFRA68MNuM1B
+	cpQ3aHYVutf7hVpLJbAA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pfoGZ-005ZhJ-11;
-	Fri, 24 Mar 2023 20:44:03 +0000
-Received: from perceval.ideasonboard.com ([213.167.242.64])
+	id 1pfpOC-005gk6-1W;
+	Fri, 24 Mar 2023 21:56:00 +0000
+Received: from mail-lf1-x12b.google.com ([2a00:1450:4864:20::12b])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pfoGV-005ZgF-2b;
-	Fri, 24 Mar 2023 20:44:01 +0000
-Received: from pendragon.ideasonboard.com (213-243-189-158.bb.dnainternet.fi [213.243.189.158])
-	by perceval.ideasonboard.com (Postfix) with ESMTPSA id D83D5A58;
-	Fri, 24 Mar 2023 21:43:56 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
-	s=mail; t=1679690637;
-	bh=DPS8aitjZuB3YdWtqamZnZNEefbvtVegFZpEpNFCGXk=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=ew23VkUl8ZFTEcq96y3KGxB75HxLGiGVEvGTUINqBuYp2HyplL5AoKIVfrDqdjiaL
-	 iQo/2CX6ta6HYuoTZR3VyDrT3YTJH6ts4Va35mGX1XeZCishpK1lwqyNQ3ao0bRZkb
-	 zaenu0RDO6Z/1ZTVmphFzdcQsnQ2W0xvYu8QgsCY=
-Date: Fri, 24 Mar 2023 22:44:02 +0200
-From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-To: Radhey Shyam Pandey <radhey.shyam.pandey@amd.com>
-Cc: vkoul@kernel.org, kishon@kernel.org, michal.simek@xilinx.com,
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-arm-kernel@lists.infradead.org, git@amd.com
-Subject: Re: [PATCH] phy: xilinx: phy-zynqmp: mention SGMII as supported
- protocol
-Message-ID: <20230324204402.GD23868@pendragon.ideasonboard.com>
-References: <1679660679-10409-1-git-send-email-radhey.shyam.pandey@amd.com>
+	id 1pfpO8-005ghH-2W
+	for linux-phy@lists.infradead.org;
+	Fri, 24 Mar 2023 21:55:59 +0000
+Received: by mail-lf1-x12b.google.com with SMTP id h25so3947129lfv.6
+        for <linux-phy@lists.infradead.org>; Fri, 24 Mar 2023 14:55:52 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1679694951;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=E6r6YUtJaIvDW9dxujuzmYnOokbQTzuDSN123E5tnr4=;
+        b=oEOS+ZAQa1GC4SxYIhpaEusTbfy5ZV6F3FCcs7hC2jJUGsQoVvkxcbJm0yXaliL3Tc
+         wIF4AGLwd8WlFmPbbrU/AB3ZbiYV9kC4bb+EJZ5/TpKpd405zDxvbb3GFPcMLDlU7gUE
+         kawDuc0LtIs7fXdZIBOxjZ2MZ24z/DZMNGjDtTOyQ4u3d1EPg4Scxb9doRyToSB81tAA
+         AXFCqiIvY9f4Kd6XqdNL6HvRNHeFtUaa3LJN61dyet4zkVjfIIikZzj68CQPCn1TrhAs
+         XzZ530n+wCWepmtHP/R3JPtm8B5+ywIfPIIF3inEqOZLyW90afRroeIVg54U4O83NuRK
+         2hIw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112; t=1679694951;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=E6r6YUtJaIvDW9dxujuzmYnOokbQTzuDSN123E5tnr4=;
+        b=2wKIs/elNka9D7mp+SlVPyWrbAi7cQ3OggcPQNY1bi1c43SojYVx0cySSRbsiIBjs5
+         MbkM1rG2r0pAidLsDHXDfCoqo5hgvP4TBT4rAnwbBZSkX6AijJ0HHGJOkMf5xupc7UpT
+         IflYdO1wHzYFDEwsIcKg3bSiuGydUuN4FdV4dN/gmvzz2DKS8usX0xb/HIctuPbQgWuS
+         8QGjxiWrMIt71/PCBS+HdKYv7aBbxXvc5hrZN/fGM/iiYlp+FzjYf5xRPXSnOl/fLshY
+         gHNqlr5xSjd3GcV7fWqw6Q4LzARiTRmDslpCJ+GaZ+4FR0GUigPFcaHnWorUSJeJQZ9Q
+         t08A==
+X-Gm-Message-State: AAQBX9cpXtkeQLsG93qy4vof9jHjiKzMdffbLdZdiPoe8IWfZrV77Lvv
+	3ngfSjMYgEsMe88iyzbJGmM2kQ==
+X-Google-Smtp-Source: AKy350Zpnx42ljFHPDrMpwccNeOv58XHYr/SgImc0QJ9S3YRUx9t36guHM0o14ghTq+AMnTzK/Y51g==
+X-Received: by 2002:ac2:428c:0:b0:4dd:a060:402d with SMTP id m12-20020ac2428c000000b004dda060402dmr1024035lfh.15.1679694951379;
+        Fri, 24 Mar 2023 14:55:51 -0700 (PDT)
+Received: from umbar.unikie.fi ([192.130.178.91])
+        by smtp.gmail.com with ESMTPSA id y1-20020a197501000000b004dcf20843efsm3488285lfe.239.2023.03.24.14.55.50
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 24 Mar 2023 14:55:50 -0700 (PDT)
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+To: Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
+Cc: linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	Johan Hovold <johan+linaro@kernel.org>,
+	devicetree@vger.kernel.org
+Subject: [PATCH 0/5] phy: qcom-qmp-usb: split away legacy USB+DP code
+Date: Sat, 25 Mar 2023 00:55:45 +0300
+Message-Id: <20230324215550.1966809-1-dmitry.baryshkov@linaro.org>
+X-Mailer: git-send-email 2.30.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1679660679-10409-1-git-send-email-radhey.shyam.pandey@amd.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230324_134359_987392_9F37891F 
-X-CRM114-Status: GOOD (  16.98  )
+X-CRM114-CacheID: sfid-20230324_145556_822677_FC1BB6EA 
+X-CRM114-Status: UNSURE (   9.65  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -68,52 +98,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Radhey,
+While working on the QMP binding cleanup, I noticed that USB QMP driver
+supports both simple USB PHYs (which should be updated) and USB-only
+part of USB+DP PHYs (which are largely legacy and don't need to be
+updated). To ease further cleanup perform a quick cleanup of the last
+remaining USB+DP PHY (on sm8150 platform) and split the legacy codepath
+from the USB QMP PHY driver.
 
-Thank you for the patch.
+Dmitry Baryshkov (5):
+  dt-bindings: phy: qcom,sc7180-qmp-usb3-dp-phy: add sm8150 USB+DP PHY
+  phy: qcom-qmp-combo: add support for the USB+DP PHY on SM8150 platform
+  arm64: dts: qcom: sm8150: turn first USB PHY into USB+DP PHY
+  dt-bindings: phy: qcom,msm8996-qmp-usb3-phy: drop legacy bindings
+  phy: qcom-qmp-usb: split off the legacy USB+dp_com support
 
-On Fri, Mar 24, 2023 at 05:54:39PM +0530, Radhey Shyam Pandey wrote:
-> SGMII is validated on kria KR260 robotics starter kit. So modify the
-> comment description to include it in supported controllers list.
-> 
-> Signed-off-by: Radhey Shyam Pandey <radhey.shyam.pandey@amd.com>
-> ---
->  drivers/phy/xilinx/phy-zynqmp.c | 6 +++---
->  1 file changed, 3 insertions(+), 3 deletions(-)
-> 
-> diff --git a/drivers/phy/xilinx/phy-zynqmp.c b/drivers/phy/xilinx/phy-zynqmp.c
-> index 9be9535ad7ab..ebe5ba730234 100644
-> --- a/drivers/phy/xilinx/phy-zynqmp.c
-> +++ b/drivers/phy/xilinx/phy-zynqmp.c
-> @@ -8,9 +8,9 @@
->   * Author: Subbaraya Sundeep <sundeep.lkml@gmail.com>
->   * Author: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
->   *
-> - * This driver is tested for USB, SATA and Display Port currently.
-> - * Other controllers PCIe and SGMII should also work but that is
-> - * experimental as of now.
-> + * This driver is tested for USB, SGMII, SATA and Display Port currently.
-> + * Other controller i.e PCIe should also work but that is experimental
-
-As only PCIe is left, I'd write
-
- * PCIe should also work but that is experimental as of now.
-
-With that,
-
-Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-
-Of course it would be even better if you could test PCIe ;-)
-
-> + * as of now.
->   */
->  
->  #include <linux/clk.h>
+ .../phy/qcom,msm8996-qmp-usb3-phy.yaml        |   80 -
+ .../phy/qcom,sc7180-qmp-usb3-dp-phy.yaml      |    2 +
+ arch/arm64/boot/dts/qcom/sm8150.dtsi          |   17 +-
+ drivers/phy/qualcomm/Kconfig                  |   10 +
+ drivers/phy/qualcomm/Makefile                 |    1 +
+ drivers/phy/qualcomm/phy-qcom-qmp-combo.c     |    4 +
+ .../phy/qualcomm/phy-qcom-qmp-usb-legacy.c    | 1407 +++++++++++++++++
+ drivers/phy/qualcomm/phy-qcom-qmp-usb.c       |  556 -------
+ 8 files changed, 1437 insertions(+), 640 deletions(-)
+ create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-usb-legacy.c
 
 -- 
-Regards,
+2.30.2
 
-Laurent Pinchart
 
 -- 
 linux-phy mailing list
