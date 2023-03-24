@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 01AFDC761AF
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B7863C7619A
 	for <linux-phy@archiver.kernel.org>; Fri, 24 Mar 2023 02:25:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,56 +12,56 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ij4yIwC4DQCh4PuVh0/PrhjUO2aWS2h+CdnD6yAoz6w=; b=udB5TPzI+Dg2Ct
-	9FP4QsiPFMP6LsIHmQ/8lMLmE4cA7Km3RyDkyFOgd1e5JfbxQIIh+koqZYiWN5LbYSgXdQAAMorHd
-	n2M2ahv2pdr8QY3eIn5lrG1n7+YOWYCHrZOmIJYkaqK8ngt3pTelI6vUuLN49hFxaBpmVfaBRBzWL
-	nguCPNAsRtC0fGXT+6W3FGPvWOqb9n28U8z8FOE9R1A5fgUPbC9NoHbGrnhkqB/vmUdlAvVK4ayz1
-	H+vcejO1CWWMF6DoicDziXzyevIdRgFDcj2FIevkrGXHzywmm0zi/TRfSDzxq+PR/wgRb9ooykfPB
-	vIutDYYye1UL5QhtWdhw==;
+	List-Owner; bh=AcElw/b1XYnc2FI/h+I5IvgUAk2LxQuu7K9YxQp6l8s=; b=GaStsfhVIAQcGB
+	Ovj1kvqHQrpoBTsFFaH13pGV2/fACEJClsDNswCn1FwOL8SmYprF2SFGauLFg3MxSE1qeM1j4NAJk
+	w0BCjQqihVF0uCR2gJMKEnkfDLfPTfyh2n5UhtBXwSypsdpqCwztGFyyTbBgkhASqecxDMyTCtwMM
+	2hAb2cW4rqbKQIXqI8Rf2dK3TPqr0yulNGQJhGyPRnJNpLlfMxVCKdK6cbP7IA+Dyte6upQ2qFmrq
+	RGL0JteXXw5E5DaZTObN3oFkk6rqaw82+yyuaVjT+s7U0PZZJvOJYPuArV145r06ZRN4QkXoux3WF
+	68gYrixgJw3ZePg8TViA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pfX7r-003OPJ-2A;
+	id 1pfX7r-003OP7-1J;
 	Fri, 24 Mar 2023 02:25:55 +0000
-Received: from mail-lf1-f52.google.com ([209.85.167.52])
+Received: from mail-lf1-x12d.google.com ([2a00:1450:4864:20::12d])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pfX7n-003OKw-1u
+	id 1pfX7m-003ODA-26
 	for linux-phy@lists.infradead.org;
-	Fri, 24 Mar 2023 02:25:52 +0000
-Received: by mail-lf1-f52.google.com with SMTP id h25so403468lfv.6
-        for <linux-phy@lists.infradead.org>; Thu, 23 Mar 2023 19:25:51 -0700 (PDT)
+	Fri, 24 Mar 2023 02:25:51 +0000
+Received: by mail-lf1-x12d.google.com with SMTP id q16so387237lfe.10
+        for <linux-phy@lists.infradead.org>; Thu, 23 Mar 2023 19:25:50 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1679624751;
+        d=linaro.org; s=google; t=1679624750;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=UzAlHITCzklZyxH5QcsRxcmP4Hg72quJXAG7V+AqE4E=;
-        b=YmvW1PdwnFkU2QcwpqJGZqEE0NluH29HCIwLYuS1Iv+NwDuTYE5/+syv+DGegYjbK3
-         1XhEvprOztgY4iqeFvZF2KbT9I4FG7ydwMl1nuh92zPDqVSF2lEgENxAKktUmRteqcK7
-         q5tlXGk4LRldz7iJmW/53vZmrAyDscppc+kRcwWAzxr/hPFldb3tYJJ7MToaQM66uanN
-         ni4ttzfgF6/FJFNZ0nrCJGaJrLU0TFlX+Ld8e6qz3p9pcW+tmF1yfARYu811s4IOvhGW
-         F69zJaOzJeMC6mZv+nPPz3n1ozJx5prR3J8JQtPxNIsWDN3faDEg0QvrDNQM4JWz6Odo
-         XR5w==
+        bh=tDMRxe5lO0BDqNSwVoHfn6VZH37WgUUYrngIiH3uSZM=;
+        b=S6WApY8IuUkybIY+ut33PuOuhmQk/8rpCbkYoQXdR3P1kZN+WuauwzI4k91roHn9Tn
+         IX/6o1ak3Nc5XMJUrs1OKoQ5NXxPii+ejNxpAFKfjvK02IUdp97G6g6OIrUvURjeqnvq
+         nu3KW4gCkICvEF5Xch/JBhXd88iNlYOlaMdUIV/LZqo6uQvB+idGbZ1L/CxtHhCvSDT2
+         F5iQfalNI5fkvadpQX74VLMzPmJxj72TSegFD4m6W9geoySewPspzRE5Yoyf8r8Ih0pz
+         whm0dg5D5i4bo8AsGrMuYwViKsyDyIuQ2W0VeEaeC9U/Jy/0jYYMHjvSlulWWf5sOEjW
+         17cQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112; t=1679624751;
+        d=1e100.net; s=20210112; t=1679624750;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=UzAlHITCzklZyxH5QcsRxcmP4Hg72quJXAG7V+AqE4E=;
-        b=TUg8OmxUf6pjsBggBegi8kp5uV9fG44mUWfSAs2riElTfOCijRiCu+HBTW3ArC/O6L
-         kw/Un5oATLBwkKd+e1HUxZh9/+VI8MYN96L1PJrcRycnz/mi13YvH5QHfA1pFfMdvAS+
-         5invnfn1oT5yim9OlKxwTppCHFcE4QQBr0O8ugXg4fO/hEJn9AC6t2AfjjyRVBuYnFv7
-         Nokme9/UQjDVznPZ3Fg1NuTxWBKCTll1+Q8RlvsVb2kiaacyOFbnqD/8Ldi/0W+xniWd
-         Rru+5ykil8sR5b3yOQCKuhkcvnusZJgv3IzVOtVWqUz9XPdvmnpJji/1VWi1Tyy8VDFo
-         xbtQ==
-X-Gm-Message-State: AAQBX9fXqn+mYwdX08iKPMZTO60Sj/PzfcAcFLAi4VllMMtiE7XbRtvn
-	0+1D6hi958rkhPhfURciFRFGTQ==
-X-Google-Smtp-Source: AKy350aZXDg/IZHtl5Lo+f1sU+zl/bL4NvL4UWTc+CR+h7VOWySDmVRzzhZevn7Y2tYf0g9IfqKC6Q==
-X-Received: by 2002:ac2:46f9:0:b0:4d8:57dc:fcdd with SMTP id q25-20020ac246f9000000b004d857dcfcddmr199460lfo.56.1679624751163;
-        Thu, 23 Mar 2023 19:25:51 -0700 (PDT)
-Received: from umbar.unikie.fi ([192.130.178.91])
-        by smtp.gmail.com with ESMTPSA id x4-20020a19f604000000b004db3aa3c542sm3162628lfe.47.2023.03.23.19.25.50
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        bh=tDMRxe5lO0BDqNSwVoHfn6VZH37WgUUYrngIiH3uSZM=;
+        b=xIZG3qONBSqOwqhP0dmsZmCwp6p9kWzE+l1BfikAtiYpzfFBCcVfIsRgNazdfYf2cT
+         xDqDfzJ9kU8O6lzDCGKgvtvLorLM88ZRU27TsvW9OPWUH0fj0nmbizbThPu5/wgpST9v
+         DUlkRK8pR0wnGZW6qeA3JIsLhGmkaUav5Bo+Mp1DJT4V9GlkDAFwvlC9ZZ0BajFchpcs
+         MU/iT3zX9O6RnOb6GxmTlIvsbd2XdwBewIWMWNgBYBzuxZ5uyslL3FmYLqQo8NLaoZJn
+         wN4dinY6t1kRLwyrWGKPGYc2vrRvEdiQRDnElt1zm407polS/faW4tbUdCSpPzbRPzbO
+         ed4Q==
+X-Gm-Message-State: AAQBX9d+psvulPAzuap8zIPcDN8lgd7GUY3v/e95BNgApQ637yNno05I
+	PKp9CVuPleLUWUMvk/sitCdlPA==
+X-Google-Smtp-Source: AKy350bvppPdjKfk2GacjVD6rpqI2EBJpdxO6atQjRnD2ihfzeTZiL4sOhNyVdhUFxi3DJjGMUKxVw==
+X-Received: by 2002:a05:6512:3b11:b0:4db:787:e43b with SMTP id f17-20020a0565123b1100b004db0787e43bmr2635056lfv.8.1679624750200;
         Thu, 23 Mar 2023 19:25:50 -0700 (PDT)
+Received: from umbar.unikie.fi ([192.130.178.91])
+        by smtp.gmail.com with ESMTPSA id x4-20020a19f604000000b004db3aa3c542sm3162628lfe.47.2023.03.23.19.25.49
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 23 Mar 2023 19:25:49 -0700 (PDT)
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 To: Andy Gross <agross@kernel.org>,
 	Bjorn Andersson <andersson@kernel.org>,
@@ -71,16 +71,16 @@ To: Andy Gross <agross@kernel.org>,
 Cc: linux-arm-msm@vger.kernel.org,
 	linux-phy@lists.infradead.org,
 	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH 34/41] arm64: dts: qcom: sc7280: switch PCIe QMP PHY to new style of bindings
-Date: Fri, 24 Mar 2023 05:25:07 +0300
-Message-Id: <20230324022514.1800382-35-dmitry.baryshkov@linaro.org>
+Subject: [PATCH 33/41] arm64: dts: qcom: msm8998: switch PCIe QMP PHY to new style of bindings
+Date: Fri, 24 Mar 2023 05:25:06 +0300
+Message-Id: <20230324022514.1800382-34-dmitry.baryshkov@linaro.org>
 X-Mailer: git-send-email 2.30.2
 In-Reply-To: <20230324022514.1800382-1-dmitry.baryshkov@linaro.org>
 References: <20230324022514.1800382-1-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230323_192551_642508_04BF44FA 
-X-CRM114-Status: UNSURE (   8.06  )
+X-CRM114-CacheID: sfid-20230323_192550_706123_02189310 
+X-CRM114-Status: UNSURE (   8.12  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -103,87 +103,67 @@ resource region, no per-PHY subnodes).
 
 Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 ---
- arch/arm64/boot/dts/qcom/sc7280.dtsi | 36 ++++++++++------------------
- 1 file changed, 12 insertions(+), 24 deletions(-)
+ arch/arm64/boot/dts/qcom/msm8998.dtsi | 30 ++++++++++++---------------
+ 1 file changed, 13 insertions(+), 17 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/qcom/sc7280.dtsi b/arch/arm64/boot/dts/qcom/sc7280.dtsi
-index 62885ac3f11e..9d28b087c47b 100644
---- a/arch/arm64/boot/dts/qcom/sc7280.dtsi
-+++ b/arch/arm64/boot/dts/qcom/sc7280.dtsi
-@@ -848,7 +848,7 @@ gcc: clock-controller@100000 {
- 			reg = <0 0x00100000 0 0x1f0000>;
- 			clocks = <&rpmhcc RPMH_CXO_CLK>,
- 				 <&rpmhcc RPMH_CXO_CLK_A>, <&sleep_clk>,
--				 <0>, <&pcie1_lane>,
-+				 <0>, <&pcie1_phy>,
- 				 <0>, <0>, <0>, <0>;
- 			clock-names = "bi_tcxo", "bi_tcxo_ao", "sleep_clk",
- 				      "pcie_0_pipe_clk", "pcie_1_pipe_clk",
-@@ -2099,7 +2099,7 @@ pcie1: pci@1c08000 {
- 
- 			clocks = <&gcc GCC_PCIE_1_PIPE_CLK>,
- 				 <&gcc GCC_PCIE_1_PIPE_CLK_SRC>,
--				 <&pcie1_lane>,
-+				 <&pcie1_phy>,
- 				 <&rpmhcc RPMH_CXO_CLK>,
- 				 <&gcc GCC_PCIE_1_AUX_CLK>,
- 				 <&gcc GCC_PCIE_1_CFG_AHB_CLK>,
-@@ -2133,7 +2133,7 @@ pcie1: pci@1c08000 {
- 
- 			power-domains = <&gcc GCC_PCIE_1_GDSC>;
- 
--			phys = <&pcie1_lane>;
-+			phys = <&pcie1_phy>;
+diff --git a/arch/arm64/boot/dts/qcom/msm8998.dtsi b/arch/arm64/boot/dts/qcom/msm8998.dtsi
+index 11e7d5b6f6d6..72221cd5fd1a 100644
+--- a/arch/arm64/boot/dts/qcom/msm8998.dtsi
++++ b/arch/arm64/boot/dts/qcom/msm8998.dtsi
+@@ -918,7 +918,7 @@ pcie0: pci@1c00000 {
+ 			#address-cells = <3>;
+ 			#size-cells = <2>;
+ 			num-lanes = <1>;
+-			phys = <&pciephy>;
++			phys = <&pcie_phy>;
  			phy-names = "pciephy";
+ 			status = "disabled";
  
- 			pinctrl-names = "default";
-@@ -2151,15 +2151,18 @@ pcie1: pci@1c08000 {
+@@ -948,32 +948,28 @@ pcie0: pci@1c00000 {
  
- 		pcie1_phy: phy@1c0e000 {
- 			compatible = "qcom,sm8250-qmp-gen3x2-pcie-phy";
--			reg = <0 0x01c0e000 0 0x1c0>;
--			#address-cells = <2>;
--			#size-cells = <2>;
+ 		pcie_phy: phy@1c06000 {
+ 			compatible = "qcom,msm8998-qmp-pcie-phy";
+-			reg = <0x01c06000 0x18c>;
+-			#address-cells = <1>;
+-			#size-cells = <1>;
++			reg = <0x01c06000 0x1000>;
+ 			status = "disabled";
 -			ranges;
-+			reg = <0 0x01c0e000 0 0x1000>;
- 			clocks = <&gcc GCC_PCIE_1_AUX_CLK>,
- 				 <&gcc GCC_PCIE_1_CFG_AHB_CLK>,
- 				 <&gcc GCC_PCIE_CLKREF_EN>,
--				 <&gcc GCC_PCIE1_PHY_RCHNG_CLK>;
--			clock-names = "aux", "cfg_ahb", "ref", "refgen";
-+				 <&gcc GCC_PCIE1_PHY_RCHNG_CLK>,
-+				 <&gcc GCC_PCIE_1_PIPE_CLK>;
-+			clock-names = "aux", "cfg_ahb", "ref", "refgen", "pipe";
+ 
+ 			clocks = <&gcc GCC_PCIE_PHY_AUX_CLK>,
+ 				 <&gcc GCC_PCIE_0_CFG_AHB_CLK>,
+-				 <&gcc GCC_PCIE_CLKREF_CLK>;
+-			clock-names = "aux", "cfg_ahb", "ref";
++				 <&gcc GCC_PCIE_CLKREF_CLK>,
++				 <&gcc GCC_PCIE_0_PIPE_CLK>;
++			clock-names = "aux",
++				      "cfg_ahb",
++				      "ref",
++				      "pipe";
 +
-+			clock-output-names = "pcie_1_pipe_clk";
++			clock-output-names = "pcie_0_pipe_clk_src";
 +			#clock-cells = <0>;
 +
 +			#phy-cells = <0>;
  
- 			resets = <&gcc GCC_PCIE_1_PHY_BCR>;
- 			reset-names = "phy";
-@@ -2168,21 +2171,6 @@ pcie1_phy: phy@1c0e000 {
- 			assigned-clock-rates = <100000000>;
+ 			resets = <&gcc GCC_PCIE_0_PHY_BCR>, <&gcc GCC_PCIE_PHY_BCR>;
+ 			reset-names = "phy", "common";
  
- 			status = "disabled";
+ 			vdda-phy-supply = <&vreg_l1a_0p875>;
+ 			vdda-pll-supply = <&vreg_l2a_1p2>;
 -
--			pcie1_lane: phy@1c0e200 {
--				reg = <0 0x01c0e200 0 0x170>,
--				      <0 0x01c0e400 0 0x200>,
--				      <0 0x01c0ea00 0 0x1f0>,
--				      <0 0x01c0e600 0 0x170>,
--				      <0 0x01c0e800 0 0x200>,
--				      <0 0x01c0ee00 0 0xf4>;
--				clocks = <&gcc GCC_PCIE_1_PIPE_CLK>;
--				clock-names = "pipe0";
--
+-			pciephy: phy@1c06800 {
+-				reg = <0x01c06200 0x128>, <0x01c06400 0x1fc>, <0x01c06800 0x20c>;
 -				#phy-cells = <0>;
+-
+-				clocks = <&gcc GCC_PCIE_0_PIPE_CLK>;
+-				clock-names = "pipe0";
+-				clock-output-names = "pcie_0_pipe_clk_src";
 -				#clock-cells = <0>;
--				clock-output-names = "pcie_1_pipe_clk";
 -			};
  		};
  
- 		ipa: ipa@1e40000 {
+ 		ufshc: ufshc@1da4000 {
 -- 
 2.30.2
 
