@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1C7F5C6FD20
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4C1E1C6FD1C
 	for <linux-phy@archiver.kernel.org>; Fri, 24 Mar 2023 21:56:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,54 +12,54 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7gkaRcdIf6WqKBQkiJ5CvBJhDP3jnR5GNbaWwGqj4LY=; b=LJhkU6Etz6wjzQ
-	35Kk8Kop72tfRmKSUTcko9CrFfi1ZykCpiVickAY+k55vpxTM8HmkES/cjlgO9g2e9/CKLdG6YBkh
-	Hk+G56wl+7/AfgGslgr/hyRnQ6P6XrJWc98gp5qu+eaoR1POds0AFFxBPK/2x8+OtJ+7Qi3nXARwA
-	Yd5HP51iFwd33wj5lnLWSDB56vsugWa50dcEGATG5+iadSCvO+Eipel2bqm71fbCKYw6rWjQxO8mk
-	jHXFOf4Ope3T8mDEoRRIIK2LG4yKfalgYK1ymJznzZt2RKdqRhx96xa2F8aZTRXFg8rL9oGpYL2SO
-	E7tqW63VVeidLPr9KhIQ==;
+	List-Owner; bh=m6VzDH7PDXevEDtnfyzYdqw4hi2t+Thi6o9TfuBn0/M=; b=r6yt69QigPQA28
+	TxdZ9pI2nhtkVFzjhlXc5Z83dkNFCPKaum/bCMC+CONmz4zXSsoDWmYhOEAw5cCmwoDIxC3+TuVOe
+	5xVzVGdzXsC2IHg/rYmbPu3sPL9Zk7vur/NQfPQk2KTV1I3QLf8vSR2gaRkxiwWeClcV6ednAhc83
+	0J9I3SBU8PlIK2OH9XjLNmjANEDQAtznUJNhTuzXPMWsPJv3kUzZi3W3QV6kiv+LWqg04vVtdHmk5
+	rD/NngcYihvDh3wP93q3rIFoXZ2nM5c/bE4xIj8nh0pkYWAYKqXHrZNO38n/Olw9BSSAihS1EKGpb
+	U+zg2w5AeGyWLVGXDHxw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pfpOI-005gmL-2R;
-	Fri, 24 Mar 2023 21:56:06 +0000
-Received: from mail-lf1-x12f.google.com ([2a00:1450:4864:20::12f])
+	id 1pfpOJ-005gmY-02;
+	Fri, 24 Mar 2023 21:56:07 +0000
+Received: from mail-lf1-x12c.google.com ([2a00:1450:4864:20::12c])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pfpOE-005gi5-15
+	id 1pfpOF-005giC-0z
 	for linux-phy@lists.infradead.org;
-	Fri, 24 Mar 2023 21:56:03 +0000
-Received: by mail-lf1-x12f.google.com with SMTP id k37so4003825lfv.0
-        for <linux-phy@lists.infradead.org>; Fri, 24 Mar 2023 14:55:55 -0700 (PDT)
+	Fri, 24 Mar 2023 21:56:04 +0000
+Received: by mail-lf1-x12c.google.com with SMTP id i13so3939743lfe.9
+        for <linux-phy@lists.infradead.org>; Fri, 24 Mar 2023 14:55:56 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1679694954;
+        d=linaro.org; s=google; t=1679694955;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=gDuXl+rlvE0S+MQ2OTZzIJEdMNUWgkN8TMRASNkhtuY=;
-        b=tionj0+vjUoh6Y9xW8aTtCN3pUnVzHGQLtOnnAEaOzOGaWZWyJT8/6lgQuujzj/8Z3
-         aPa7gOJlFzA3JCA5pX4caKefnjapXuzAiNp5o7+mCPl4Zssi3iGepCsBNMIuowWNEc+k
-         Zr6zUSxEsvJfaz0NmFw+kkORgfcwZG3YGTIlr5M5MgATjCB52UaNzRyIh4p4AuQ1LadV
-         B3ywXvhNsVpX+Flaj5oU0sc9SewHkG8gALbUMUmL48hj4JK70307RoQ2KWRnfLGeRZdr
-         LWb6FqzFktUr45pYZ8hf2L9il1h8ni/OGEUexRheUCzl/4WKEG0tHvjwYo3BaUodxM+O
-         NEUg==
+        bh=9HNNyuZvJvYKBcqK0/OMiX1YPg0B5MbtC1DLyTXAc5E=;
+        b=fFRJAs9EWXwN/qrRmNJmz/+erMATnV/P27agcQ1jrN4LzjyazyEOfHxJXW/tDstlC6
+         8LFWg2unfe5z9vXki4qvMFyVEzoTIqljG3hC1IxAfpPynqgjmveSGbWhwwiDpGeKBRAC
+         LRijO/XrAEOdUVR2CGaU5lHh0IDFfHC6r5sgMGwyupNHHKZltgBfJhIFs5gxfqU4es6N
+         DZBjaiedfm4B/3wx25l1AYFBu9zAUyUJYLQOE672UXKiN6LU3e1belfVIhwD1fweF+Bo
+         xz7CA3UAM8/b7KvNdW52LK98mnWRoXlv3qbJ5jdzqvUqHKPw+5DxC6DyRs+irCQGwf6R
+         JwFA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112; t=1679694954;
+        d=1e100.net; s=20210112; t=1679694955;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=gDuXl+rlvE0S+MQ2OTZzIJEdMNUWgkN8TMRASNkhtuY=;
-        b=OblwPpga6qMMbzdsnhgJb1rxFUbOXF83OmkDMQxLE75y7ezEOI3NE4wAf6M+MP1Tg4
-         5A0qM0uRgjyMXvCoMMKJGt9TX1PD7oQ8gF6WbnrESbmzJU8kjNdnDRwCUw73aIPqqIpb
-         +onI665M/7XfbKE47gRcjH/cV7Q8U6IT8OhPCee2BWPwKRkqBv9cLBZO2D4OEAbioBN4
-         IBZi9xyqPqp7RDV2Z3jwM7EnHD5v0FTtSUo7pHtUhTian2oWdykyEEH/8gn0HkhGS4bm
-         SD/1e3kTWr3nF1enhmss1ZfpwCccLul2Y57TbP1EkZ4LE5n509OmzOCJ+tq2k4b+ayGp
-         4x6Q==
-X-Gm-Message-State: AAQBX9e2EhwaVSlVjXyjty6P9EjXlM9/8RIs902LnMv47/e9wnMPSxWv
-	7UszHJZNnPeRUWSM+jwdk5Qmyg==
-X-Google-Smtp-Source: AKy350Y3737OLOidlbPQ2HUCI6UZEQUuCTbMWzspr7u0eqoMYD/wQkrEJ4aRp1VytTUsSZOQ8xh3TA==
-X-Received: by 2002:a19:7007:0:b0:4df:51a7:a92 with SMTP id h7-20020a197007000000b004df51a70a92mr1154724lfc.11.1679694954619;
-        Fri, 24 Mar 2023 14:55:54 -0700 (PDT)
+        bh=9HNNyuZvJvYKBcqK0/OMiX1YPg0B5MbtC1DLyTXAc5E=;
+        b=ZtEuA+XByC9ANHHVYsxdxK/2st+1xp516Dcukj+Gekrrs5XUfW+1VA0UKusm5oJLHS
+         gXRegXhTG1tusZjrv7mLWM6E8wKCYOacjnn5wAp7CM6EY9VAR/YE4a2/dCrt/yUgvLmR
+         5m+5neQHcZBQ+OBUhPns9pdqdB/T2BdRcbkgnFeFUR2GMSPX8lZrKeHJ1vrIHCd9kKbg
+         rf34vWTt6+bQ3dGTMRtpXubuOWpOUEI2ceJebrrGWAinFy8vj8pG0saAzvUWNuk2Ld2j
+         kC5AcwyL8vBF3pyrl988ZZy9JuhnrqW+9Be0KxOJxIAoLdQu2Ba7pnTkERC27EjkJqVA
+         OqCg==
+X-Gm-Message-State: AO0yUKXMbP5wYO78Ie6HJ+LYyV00ty3+9G8IAkGGoLG6Fiv+AT8NT6Af
+	VRXcuAAFNV7ZPFM9f3c/DuJRMw==
+X-Google-Smtp-Source: AK7set9xb4KyXpvMnmN8dL2Lhy7A90LsO+TVlgBZ0MH5VYUdS3f7PXM+yP/6NZxgkpNqDVzsPUTljQ==
+X-Received: by 2002:a19:9157:0:b0:4ea:e695:d116 with SMTP id y23-20020a199157000000b004eae695d116mr2493073lfj.32.1679694955438;
+        Fri, 24 Mar 2023 14:55:55 -0700 (PDT)
 Received: from umbar.unikie.fi ([192.130.178.91])
-        by smtp.gmail.com with ESMTPSA id y1-20020a197501000000b004dcf20843efsm3488285lfe.239.2023.03.24.14.55.53
+        by smtp.gmail.com with ESMTPSA id y1-20020a197501000000b004dcf20843efsm3488285lfe.239.2023.03.24.14.55.54
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
         Fri, 24 Mar 2023 14:55:54 -0700 (PDT)
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
@@ -74,16 +74,16 @@ Cc: linux-arm-msm@vger.kernel.org,
 	linux-phy@lists.infradead.org,
 	Johan Hovold <johan+linaro@kernel.org>,
 	devicetree@vger.kernel.org
-Subject: [PATCH 3/5] arm64: dts: qcom: sm8150: turn first USB PHY into USB+DP PHY
-Date: Sat, 25 Mar 2023 00:55:48 +0300
-Message-Id: <20230324215550.1966809-4-dmitry.baryshkov@linaro.org>
+Subject: [PATCH 4/5] dt-bindings: phy: qcom,msm8996-qmp-usb3-phy: drop legacy bindings
+Date: Sat, 25 Mar 2023 00:55:49 +0300
+Message-Id: <20230324215550.1966809-5-dmitry.baryshkov@linaro.org>
 X-Mailer: git-send-email 2.30.2
 In-Reply-To: <20230324215550.1966809-1-dmitry.baryshkov@linaro.org>
 References: <20230324215550.1966809-1-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230324_145602_374320_900A3C3E 
-X-CRM114-Status: UNSURE (   8.93  )
+X-CRM114-CacheID: sfid-20230324_145603_342201_EACC5242 
+X-CRM114-Status: UNSURE (   6.80  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -101,59 +101,157 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The first USB PHY on the sm8150 platform is really the USB+DP combo
-PHY. Add the DP part of the PHY.
+The qcom,msm8996-qmp-usb3-phy.yaml defines bindings for several PHYs
+which predate USB -> USB+DP migration. Now as sm8150 has been migrated,
+drop the legacy bindings completely. No device trees use them anymore.
+Newer USB+DP bindings should use combo bindings from the beginning.
 
 Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 ---
- arch/arm64/boot/dts/qcom/sm8150.dtsi | 17 +++++++++++++----
- 1 file changed, 13 insertions(+), 4 deletions(-)
+ .../phy/qcom,msm8996-qmp-usb3-phy.yaml        | 80 -------------------
+ 1 file changed, 80 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/qcom/sm8150.dtsi b/arch/arm64/boot/dts/qcom/sm8150.dtsi
-index 9491be4a6bf0..a618218f7b68 100644
---- a/arch/arm64/boot/dts/qcom/sm8150.dtsi
-+++ b/arch/arm64/boot/dts/qcom/sm8150.dtsi
-@@ -3392,20 +3392,19 @@ usb_2_hsphy: phy@88e3000 {
- 		};
+diff --git a/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-usb3-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-usb3-phy.yaml
+index e81a38281f8c..5684eaf170e4 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-usb3-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-usb3-phy.yaml
+@@ -24,26 +24,17 @@ properties:
+       - qcom,msm8996-qmp-usb3-phy
+       - qcom,msm8998-qmp-usb3-phy
+       - qcom,qcm2290-qmp-usb3-phy
+-      - qcom,sc7180-qmp-usb3-phy
+-      - qcom,sc8180x-qmp-usb3-phy
+-      - qcom,sdm845-qmp-usb3-phy
+       - qcom,sdm845-qmp-usb3-uni-phy
+       - qcom,sdx55-qmp-usb3-uni-phy
+       - qcom,sdx65-qmp-usb3-uni-phy
+       - qcom,sm6115-qmp-usb3-phy
+-      - qcom,sm8150-qmp-usb3-phy
+       - qcom,sm8150-qmp-usb3-uni-phy
+-      - qcom,sm8250-qmp-usb3-phy
+       - qcom,sm8250-qmp-usb3-uni-phy
+-      - qcom,sm8350-qmp-usb3-phy
+       - qcom,sm8350-qmp-usb3-uni-phy
+-      - qcom,sm8450-qmp-usb3-phy
  
- 		usb_1_qmpphy: phy@88e9000 {
--			compatible = "qcom,sm8150-qmp-usb3-phy";
-+			compatible = "qcom,sm8150-qmp-usb3-dp-phy";
- 			reg = <0 0x088e9000 0 0x18c>,
--			      <0 0x088e8000 0 0x10>;
-+			      <0 0x088e8000 0 0x38>,
-+			      <0 0x088ea000 0 0x40>;
- 			status = "disabled";
- 			#address-cells = <2>;
- 			#size-cells = <2>;
- 			ranges;
--
- 			clocks = <&gcc GCC_USB3_PRIM_PHY_AUX_CLK>,
- 				 <&rpmhcc RPMH_CXO_CLK>,
- 				 <&gcc GCC_USB3_PRIM_CLKREF_CLK>,
- 				 <&gcc GCC_USB3_PRIM_PHY_COM_AUX_CLK>;
- 			clock-names = "aux", "ref_clk_src", "ref", "com_aux";
--
- 			resets = <&gcc GCC_USB3_DP_PHY_PRIM_BCR>,
- 				 <&gcc GCC_USB3_PHY_PRIM_BCR>;
- 			reset-names = "phy", "common";
-@@ -3423,6 +3422,16 @@ usb_1_ssphy: phy@88e9200 {
- 				clock-names = "pipe0";
- 				clock-output-names = "usb3_phy_pipe_clk_src";
- 			};
-+
-+			usb_1_dpphy: phy@88ea200 {
-+				reg = <0 0x088ea200 0 0x200>,
-+				      <0 0x088ea400 0 0x200>,
-+				      <0 0x088eaa00 0 0x200>,
-+				      <0 0x088ea600 0 0x200>,
-+				      <0 0x088ea800 0 0x200>;
-+				#clock-cells = <1>;
-+				#phy-cells = <0>;
-+			};
- 		};
+   reg:
+-    minItems: 1
+     items:
+       - description: serdes
+-      - description: DP_COM
  
- 		usb_2_qmpphy: phy@88eb000 {
+   "#address-cells":
+     enum: [ 1, 2 ]
+@@ -128,28 +119,6 @@ required:
+ additionalProperties: false
+ 
+ allOf:
+-  - if:
+-      properties:
+-        compatible:
+-          contains:
+-            enum:
+-              - qcom,sc7180-qmp-usb3-phy
+-    then:
+-      properties:
+-        clocks:
+-          maxItems: 4
+-        clock-names:
+-          items:
+-            - const: aux
+-            - const: cfg_ahb
+-            - const: ref
+-            - const: com_aux
+-        resets:
+-          maxItems: 1
+-        reset-names:
+-          items:
+-            - const: phy
+-
+   - if:
+       properties:
+         compatible:
+@@ -204,7 +173,6 @@ allOf:
+         compatible:
+           contains:
+             enum:
+-              - qcom,sm8150-qmp-usb3-phy
+               - qcom,sm8150-qmp-usb3-uni-phy
+               - qcom,sm8250-qmp-usb3-uni-phy
+               - qcom,sm8350-qmp-usb3-uni-phy
+@@ -225,29 +193,6 @@ allOf:
+             - const: phy
+             - const: common
+ 
+-  - if:
+-      properties:
+-        compatible:
+-          contains:
+-            enum:
+-              - qcom,sm8250-qmp-usb3-phy
+-              - qcom,sm8350-qmp-usb3-phy
+-    then:
+-      properties:
+-        clocks:
+-          maxItems: 3
+-        clock-names:
+-          items:
+-            - const: aux
+-            - const: ref_clk_src
+-            - const: com_aux
+-        resets:
+-          maxItems: 2
+-        reset-names:
+-          items:
+-            - const: phy
+-            - const: common
+-
+   - if:
+       properties:
+         compatible:
+@@ -271,28 +216,6 @@ allOf:
+             - const: phy_phy
+             - const: phy
+ 
+-  - if:
+-      properties:
+-        compatible:
+-          contains:
+-            enum:
+-              - qcom,sdm845-qmp-usb3-phy
+-              - qcom,sm8150-qmp-usb3-phy
+-              - qcom,sm8350-qmp-usb3-phy
+-              - qcom,sm8450-qmp-usb3-phy
+-    then:
+-      patternProperties:
+-        "^phy@[0-9a-f]+$":
+-          properties:
+-            reg:
+-              items:
+-                - description: TX lane 1
+-                - description: RX lane 1
+-                - description: PCS
+-                - description: TX lane 2
+-                - description: RX lane 2
+-                - description: PCS_MISC
+-
+   - if:
+       properties:
+         compatible:
+@@ -319,13 +242,10 @@ allOf:
+               - qcom,ipq6018-qmp-usb3-phy
+               - qcom,ipq8074-qmp-usb3-phy
+               - qcom,qcm2290-qmp-usb3-phy
+-              - qcom,sc7180-qmp-usb3-phy
+-              - qcom,sc8180x-qmp-usb3-phy
+               - qcom,sdx55-qmp-usb3-uni-phy
+               - qcom,sdx65-qmp-usb3-uni-phy
+               - qcom,sm6115-qmp-usb3-phy
+               - qcom,sm8150-qmp-usb3-uni-phy
+-              - qcom,sm8250-qmp-usb3-phy
+     then:
+       patternProperties:
+         "^phy@[0-9a-f]+$":
 -- 
 2.30.2
 
