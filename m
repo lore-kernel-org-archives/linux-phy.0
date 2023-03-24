@@ -4,69 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7E048C6FD1C
-	for <linux-phy@archiver.kernel.org>; Fri, 24 Mar 2023 08:04:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 326ABC6FD1C
+	for <linux-phy@archiver.kernel.org>; Fri, 24 Mar 2023 08:50:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XLvK7YpybUPaXBsZ7q9rHUIDidDYG3wJVsLBK9eufkk=; b=ABmapVrTQADKwZ
-	cpJASFpWxhc9ih9lBakrJCCZJx+CHXGwguV6WFBO4AtlP44rvbJDcQv0Pmf1+ec5YSBXfgvzDHxc5
-	pW5Y31jc6xM3MaRz8OVdQU+/MfWTJ2+uMSdNHMglydDSOkM3VAj3MvN04n2T1x9Nbb/j0nK9ttxKg
-	OybTcqvAMYctRa2M8bluJVE/kY5MeXzDTLyM1WmWrcPdDZ77bObbfmrx4CXfPWkjnOKq3Rd2WfkGn
-	ahPhW6jtvK7pWC9LDdQHhih7+NJAAeTPzFBkWM4SIRqNvF9cneI92KyS7qqtaMYerAgpLY4wM2qcH
-	u3jh3GG0nApyPgWS97CQ==;
+	List-Owner; bh=Lg4fzlxLRe3tLY89KIkxtZolYegEsYkCL/OMd/SkS5Q=; b=X9Yf6wnm0uYliW
+	gIV7Xj8Ml+9KghTgGq7Vj8ztLpGQ+TOwxDvTYjMElAg/rxLjpMHW3y+6KQ0fIQ+AZbyhAAbCPlsvA
+	P3ZgLxD7arT7iA8XT0+8dokMhVn9sJUBVv4Kibt0mnHEhUY3QQI6U0DX6OnXEkPgffFeGLbRPLm0D
+	Axw7YRXV0q584B6jt/1SoNXZaiOz4D50mBD3tm7uJDTc57cxI7BVmZE5Gv8+7fJ8MGjja1DziAgq6
+	IImQwQCsruPLUOzhDy1o5k58sG77+oveT277nl9Gh/NRxrdqSSGK+KKeRZ0dIsJ4mf3oCKugo+q6Z
+	DpUisH48gfuMBAVsCYCA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pfcPM-003pLQ-0l;
-	Fri, 24 Mar 2023 08:04:20 +0000
-Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
+	id 1pfd7e-003uw6-2i;
+	Fri, 24 Mar 2023 08:50:06 +0000
+Received: from mail-ed1-x52a.google.com ([2a00:1450:4864:20::52a])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pfcPJ-003pKY-10
+	id 1pfd7Z-003uuz-20
 	for linux-phy@lists.infradead.org;
-	Fri, 24 Mar 2023 08:04:19 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id A40FFB822F4;
-	Fri, 24 Mar 2023 08:04:15 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3C987C433D2;
-	Fri, 24 Mar 2023 08:04:14 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1679645054;
-	bh=2K/slDnR4IfjpiOGtIogZtO+BX/WGlJNuHWsirhnpmY=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=kh7FhJf9qECLiGxLEzChbAa/IhiRDumUvlvOAjIZQ4GJRemH1OtpjngiLH/ys4jED
-	 2mPnbO/mv9nBw4EiyOO2QWH5YWUR1P+XbBRlnpFSOalLKuyxGUDI6Vf35pcrVI57rx
-	 D8gSluQExvNSizmYXBQCeiRVj8f4oIZBd/808ZdLYIFRnTn1aSRX74kmbJA/5rT59c
-	 cnApfkG4F79wdmlTmZ9fbSMapUJHQFFkfYzqkLarOr9LrFCNYBZwKfoVqM11BHgG+g
-	 5SznNTkPKUUQxGdguZMKeKLtU4ov6qkxdbTCmy4v1TOFpeJoC2eUWkTQa8RnjHipJk
-	 fQS7ubKvKKaqw==
-Received: from johan by xi.lan with local (Exim 4.94.2)
-	(envelope-from <johan@kernel.org>)
-	id 1pfcPF-0003Fo-F8; Fri, 24 Mar 2023 09:04:13 +0100
-Date: Fri, 24 Mar 2023 09:04:13 +0100
-From: Johan Hovold <johan@kernel.org>
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-	Johan Hovold <johan+linaro@kernel.org>
-Subject: Re: [PATCH 04/41] dt-bindings: phy: migrate QMP PCIe PHY bindings to
- qcom,sc8280xp-qmp-pcie-phy.yaml
-Message-ID: <ZB1ZfUCzgcd47VrM@hovoldconsulting.com>
-References: <20230324022514.1800382-1-dmitry.baryshkov@linaro.org>
- <20230324022514.1800382-5-dmitry.baryshkov@linaro.org>
+	Fri, 24 Mar 2023 08:50:02 +0000
+Received: by mail-ed1-x52a.google.com with SMTP id x3so4860823edb.10
+        for <linux-phy@lists.infradead.org>; Fri, 24 Mar 2023 01:49:58 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1679647797;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=DjhqcYRQohKWjL8txB/9vIdc1uHfeuQUOI0lOTwNUNg=;
+        b=J2SXK8WAFr9syAWNxzP9UEGgumD280cRNlVZyCO+9N7iFHr1B73zA9cUvLewnou//P
+         gFsyTvm6qUhFJTtw+qbOB1cHscEMO1v9t4G0+yKeeDToJgYJ4fh49v39Jk9xnLZpqT9p
+         vf9EqCHsSIkqeDAf57+YAE+LLg0Cmdb20JvAyFGj/nalNvz5L9C+sWaMfsi2s8FKC6Kt
+         nxJhLSPdvHUoftvneqrjoaXmwpx5heHOu3xIwGQU64r4iLVlpv7DIPZnVk7tiUX1Ht41
+         QCygOrlMj4BlB4Fo5/vsr95M8ICYt+t8SaBkjR9Hvu7tXUPoFWXW8uv41rxN8Ew1k1Uy
+         /N3Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112; t=1679647797;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=DjhqcYRQohKWjL8txB/9vIdc1uHfeuQUOI0lOTwNUNg=;
+        b=uxhfucAXw1GnsRGoAC4bwEhaR3wHsRr4E3BboktwkBwmwXdAUoNfmt4Ly+Fa3zQTe6
+         m7p/fqqEtFMT1Fnog4EVxB3Ev6ECF3ngph5gHq+F7pspy2bBXTfpmMs5RmTpf39f0niN
+         sSvdrP2P0grwTqiMM/7x5+5v4p2BDfeKHJyRi5j0wwNYlY01XPS7aK8J8iAeIKzY3EBO
+         uNY+SQjaoTRIcH3wSMY6+CawpLKXEAJ2NXS3PYKSt2FmVtG+Qa/tGCNL+U/7nRnvbJ71
+         JN0Zro+x9tvaC5S2l2cvDa0jkchKT/UatAHosj1/UtcWGcMcmnuvXRdW5j29588tBYn0
+         uhrQ==
+X-Gm-Message-State: AAQBX9csN0XzsAgkdnFDYAknU8wo+V5WCvCgrZB/dP+Ei84BMK0FptBS
+	o3994lv07MViYSVnKYbKLGXWOw==
+X-Google-Smtp-Source: AKy350Y+LY978FHmR3PiWftX2mZjZLU8WMQ1HS43y2EM2peLkGLhVhwK0ndpXL1vW0ugIcOfXsNRJw==
+X-Received: by 2002:a05:6402:10d8:b0:4fb:2296:30b3 with SMTP id p24-20020a05640210d800b004fb229630b3mr2327474edu.15.1679647797427;
+        Fri, 24 Mar 2023 01:49:57 -0700 (PDT)
+Received: from ?IPV6:2a02:810d:15c0:828:ce50:243f:54cc:5373? ([2a02:810d:15c0:828:ce50:243f:54cc:5373])
+        by smtp.gmail.com with ESMTPSA id x2-20020a50ba82000000b004fb30fc1dabsm10186429ede.96.2023.03.24.01.49.56
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 24 Mar 2023 01:49:57 -0700 (PDT)
+Message-ID: <cc26c4a6-a498-ebb8-1fe2-548b6a9ca58e@linaro.org>
+Date: Fri, 24 Mar 2023 09:49:55 +0100
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20230324022514.1800382-5-dmitry.baryshkov@linaro.org>
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.9.0
+Subject: Re: [PATCH v7 1/6] dt-bindings: ufs: qcom: Add SM6125 compatible
+ string
+Content-Language: en-US
+To: Lux Aliaga <they@mint.lgbt>, agross@kernel.org, andersson@kernel.org,
+ konrad.dybcio@linaro.org, robh+dt@kernel.org,
+ krzysztof.kozlowski+dt@linaro.org, vkoul@kernel.org, kishon@kernel.org,
+ alim.akhtar@samsung.com, avri.altman@wdc.com, bvanassche@acm.org,
+ keescook@chromium.org, tony.luck@intel.com, gpiccoli@igalia.com
+Cc: ~postmarketos/upstreaming@lists.sr.ht, linux-arm-msm@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-scsi@vger.kernel.org,
+ linux-hardening@vger.kernel.org, phone-devel@vger.kernel.org,
+ martin.botka@somainline.org, marijn.suijten@somainline.org
+References: <20230306170817.3806-1-they@mint.lgbt>
+ <20230306170817.3806-2-they@mint.lgbt>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <20230306170817.3806-2-they@mint.lgbt>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230324_010417_644155_844CE665 
-X-CRM114-Status: GOOD (  16.41  )
+X-CRM114-CacheID: sfid-20230324_015001_666203_C01A590C 
+X-CRM114-Status: UNSURE (   7.95  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,318 +104,21 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Mar 24, 2023 at 05:24:37AM +0300, Dmitry Baryshkov wrote:
-> Migrate legacy bindings (described in qcom,ipq8074-qmp-pcie-phy.yaml)
-> to qcom,sc8280xp-qmp-pcie-phy.yaml. This removes a need to declare
-> the child PHY node or split resource regions.
+On 06/03/2023 18:08, Lux Aliaga wrote:
+> Document the compatible for UFS found on the SM6125.
 > 
-> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-> ---
->  .../phy/qcom,ipq8074-qmp-pcie-phy.yaml        | 299 ------------------
->  .../phy/qcom,sc8280xp-qmp-pcie-phy.yaml       | 213 +++++++++++--
->  2 files changed, 187 insertions(+), 325 deletions(-)
->  delete mode 100644 Documentation/devicetree/bindings/phy/qcom,ipq8074-qmp-pcie-phy.yaml
+> Signed-off-by: Lux Aliaga <they@mint.lgbt>
+> Reviewed-by: Martin Botka <martin.botka@somainline.org>
+> Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
-> diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
-> index ef49efbd0a20..328588448c6b 100644
-> --- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
-> +++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
-> @@ -16,10 +16,23 @@ description:
->  properties:
->    compatible:
->      enum:
-> +      - qcom,ipq6018-qmp-pcie-phy
-> +      - qcom,ipq8074-qmp-gen3-pcie-phy
-> +      - qcom,ipq8074-qmp-pcie-phy
-> +      - qcom,msm8998-qmp-pcie-phy
-> +      - qcom,sc8180x-qmp-pcie-phy
->        - qcom,sc8280xp-qmp-gen3x1-pcie-phy
->        - qcom,sc8280xp-qmp-gen3x2-pcie-phy
->        - qcom,sc8280xp-qmp-gen3x4-pcie-phy
-> +      - qcom,sdm845-qhp-pcie-phy
-> +      - qcom,sdm845-qmp-pcie-phy
-> +      - qcom,sdx55-qmp-pcie-phy
-> +      - qcom,sm8250-qmp-gen3x1-pcie-phy
-> +      - qcom,sm8250-qmp-gen3x2-pcie-phy
-> +      - qcom,sm8250-qmp-modem-pcie-phy
->        - qcom,sm8350-qmp-gen3x1-pcie-phy
-> +      - qcom,sm8450-qmp-gen3x1-pcie-phy
-> +      - qcom,sm8450-qmp-gen4x2-pcie-phy
->        - qcom,sm8550-qmp-gen3x2-pcie-phy
->        - qcom,sm8550-qmp-gen4x2-pcie-phy
->  
-> @@ -28,18 +41,12 @@ properties:
->      maxItems: 2
->  
->    clocks:
-> -    minItems: 5
-> +    minItems: 3
->      maxItems: 6
->  
->    clock-names:
-> -    minItems: 5
-> -    items:
-> -      - const: aux
-> -      - const: cfg_ahb
-> -      - const: ref
-> -      - const: rchng
-> -      - const: pipe
-> -      - const: pipediv2
-> +    minItems: 3
-> +    maxItems: 6
->  
->    power-domains:
->      maxItems: 1
-> @@ -50,9 +57,7 @@ properties:
->  
->    reset-names:
->      minItems: 1
-> -    items:
-> -      - const: phy
-> -      - const: phy_nocsr
-> +    maxItems: 2
->  
->    vdda-phy-supply: true
->  
-> @@ -83,11 +88,8 @@ required:
->    - reg
->    - clocks
->    - clock-names
-> -  - power-domains
->    - resets
->    - reset-names
-> -  - vdda-phy-supply
-> -  - vdda-pll-supply
->    - "#clock-cells"
->    - clock-output-names
->    - "#phy-cells"
-> @@ -119,21 +121,116 @@ allOf:
->          compatible:
->            contains:
->              enum:
-> -              - qcom,sm8350-qmp-gen3x1-pcie-phy
-> -              - qcom,sm8550-qmp-gen3x2-pcie-phy
-> -              - qcom,sm8550-qmp-gen4x2-pcie-phy
-> +              - qcom,msm8998-qmp-pcie-phy
->      then:
->        properties:
->          clocks:
-> -          maxItems: 5
-> +          maxItems: 4
->          clock-names:
-> +          items:
-> +            - const: aux
-> +            - const: cfg_ahb
-> +            - const: ref
-> +            - const: pipe
-> +        resets:
-> +          maxItems: 2
-> +        reset-names:
-> +          items:
-> +            - const: phy
-> +            - const: common
+I have trouble understanding why this patch was not applied... I don't
+know, maybe it should not be send with other patches.
 
-Reset name looks wrong here too.
+Or maybe Rob can pick it up?
 
-> +      required:
-> +        - vdda-phy-supply
-> +        - vdda-pll-supply
-> +
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          contains:
-> +            enum:
-> +              - qcom,ipq6018-qmp-pcie-phy
-> +              - qcom,ipq8074-qmp-gen3-pcie-phy
-> +              - qcom,ipq8074-qmp-pcie-phy
-> +    then:
-> +      properties:
-> +        clocks:
-> +          maxItems: 3
-> +        clock-names:
-> +          items:
-> +            - const: aux
-> +            - const: cfg_ahb
-> +            - const: pipe
-> +        resets:
-> +          maxItems: 2
-> +        reset-names:
-> +          items:
-> +            - const: phy
-> +            - const: common
+Best regards,
+Krzysztof
 
-Same here.
-
-> +
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          contains:
-> +            enum:
-> +              - qcom,sc8180x-qmp-pcie-phy
-> +              - qcom,sdm845-qhp-pcie-phy
-> +              - qcom,sdm845-qmp-pcie-phy
-> +              - qcom,sdx55-qmp-pcie-phy
-> +              - qcom,sm8250-qmp-gen3x1-pcie-phy
-> +              - qcom,sm8250-qmp-gen3x2-pcie-phy
-> +              - qcom,sm8250-qmp-modem-pcie-phy
-> +              - qcom,sm8450-qmp-gen3x1-pcie-phy
-> +              - qcom,sm8450-qmp-gen4x2-pcie-phy
-> +    then:
-> +      properties:
-> +        clocks:
->            maxItems: 5
-> -    else:
-> +        clock-names:
-> +          items:
-> +            - const: aux
-> +            - const: cfg_ahb
-> +            - const: ref
-> +            - const: refgen
-
-This one should be named 'rchng' and this set a strict subset of the
-sc8280xp clocks.
-
-> +            - const: pipe
-> +        resets:
-> +          maxItems: 1
-> +        reset-names:
-> +          items:
-> +            - const: phy
-> +      required:
-> +        - vdda-phy-supply
-> +        - vdda-pll-supply
-> +
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          contains:
-> +            enum:
-> +              - qcom,sm8350-qmp-gen3x1-pcie-phy
-> +              - qcom,sm8550-qmp-gen3x2-pcie-phy
-> +        resets:
-> +          minItems: 1
-> +        reset-names:
-> +          items:
-> +            - const: phy
-> +    then:
->        properties:
->          clocks:
-> -          minItems: 6
-> +          maxItems: 5
->          clock-names:
-> -          minItems: 6
-> +          items:
-> +            - const: aux
-> +            - const: cfg_ahb
-> +            - const: ref
-> +            - const: rchng
-> +            - const: pipe
-> +        resets:
-> +          maxItems: 1
-> +        reset-names:
-> +          items:
-> +            - const: phy
-> +      required:
-> +        - vdda-phy-supply
-> +        - vdda-pll-supply
->  
->    - if:
->        properties:
-> @@ -143,16 +240,53 @@ allOf:
->                - qcom,sm8550-qmp-gen4x2-pcie-phy
->      then:
->        properties:
-> +        clocks:
-> +          maxItems: 5
-> +        clock-names:
-> +          items:
-> +            - const: aux
-> +            - const: cfg_ahb
-> +            - const: ref
-> +            - const: rchng
-> +            - const: pipe
->          resets:
->            minItems: 2
->          reset-names:
-> -          minItems: 2
-> -    else:
-> +          items:
-> +            - const: phy
-> +            - const: phy_nocsr
-> +      required:
-> +        - vdda-phy-supply
-> +        - vdda-pll-supply
-> +
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          contains:
-> +            enum:
-> +              - qcom,sc8280xp-qmp-gen3x1-pcie-phy
-> +              - qcom,sc8280xp-qmp-gen3x2-pcie-phy
-> +              - qcom,sc8280xp-qmp-gen3x4-pcie-phy
-> +    then:
->        properties:
-> +        clocks:
-> +          minItems: 6
-> +        clock-names:
-> +          items:
-> +            - const: aux
-> +            - const: cfg_ahb
-> +            - const: ref
-> +            - const: rchng
-> +            - const: pipe
-> +            - const: pipediv2
->          resets:
-> -          maxItems: 1
-> +          minItems: 1
->          reset-names:
-> -          maxItems: 1
-> +          items:
-> +            - const: phy
-> +      required:
-> +        - vdda-phy-supply
-> +        - vdda-pll-supply
->  
->  examples:
->    - |
-> @@ -213,3 +347,30 @@ examples:
->  
->        #phy-cells = <0>;
->      };
-> +  - |
-> +    #define GCC_PCIE1_PHY_REFGEN_CLK   47
-> +    #define GCC_PCIE_PHY_AUX_CLK       71
-> +    #define GCC_PCIE_WIGIG_CLKREF_EN   74
-> +
-> +    phy@1c0e000 {
-> +        compatible = "qcom,sm8250-qmp-gen3x2-pcie-phy";
-> +        reg = <0x01c0e000 0x1c0>;
-> +
-> +        clocks = <&gcc GCC_PCIE_PHY_AUX_CLK>,
-> +                 <&gcc GCC_PCIE_1_CFG_AHB_CLK>,
-> +                 <&gcc GCC_PCIE_WIGIG_CLKREF_EN>,
-> +                 <&gcc GCC_PCIE1_PHY_REFGEN_CLK>,
-> +                 <&gcc GCC_PCIE_1_PIPE_CLK>;
-> +        clock-names = "aux", "cfg_ahb", "ref", "refgen", "pipe";
-> +
-> +        resets = <&gcc GCC_PCIE_1_PHY_BCR>;
-> +        reset-names = "phy";
-> +
-> +        vdda-phy-supply = <&vreg_l10c_0p88>;
-> +        vdda-pll-supply = <&vreg_l6b_1p2>;
-> +
-> +        #clock-cells = <0>;
-> +        clock-output-names = "pcie_1_pipe_clk";
-> +
-> +        #phy-cells = <0>;
-> +    };
-
-This example also looks redundant.
-
-Johan
 
 -- 
 linux-phy mailing list
