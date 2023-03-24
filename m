@@ -4,110 +4,91 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8428BC6FD1C
-	for <linux-phy@archiver.kernel.org>; Fri, 24 Mar 2023 12:24:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1FAB2C6FD20
+	for <linux-phy@archiver.kernel.org>; Fri, 24 Mar 2023 13:27:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
 	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Ziayh9CVAqDSRwinz3tZp5U+39+B6lCeACQjbVmSmQc=; b=wD+/2Rf/sFPLSA
-	74Sf9p47GOvljDUWfRqIcIQMoZNfwbdhs5/rIzo5pRFj4ONdUC56hIBuOJYWJY/46Ues2qKTWilLH
-	WrAbzOn26vKV4DiSJlNXM/snHo6p6/ac6hJXe7mYmVZwo6pb3Sfch0AhB+a1V7paaLsSOXYOO/KnB
-	RsaS4Q8pS2Yimrk/zZ1/J9+LIBb5+O8fs+Ob4tSXkQUP9qVv4wsUoLsWUFvKOuVFgG6OvGkf9sZub
-	/F3LXaMYbZCcsS2y6u/g1r+A64twwmxC5fteIj5H9YLfdaOW5U72c72bRmj8nsvp6DzuvRepL9UKA
-	1DGUlE0I7+t0bLpecyaw==;
+	List-Owner; bh=vIriq6oO2QzehHhKNlXbmUEX9AYVAa2C/+ZCOXQwI2o=; b=e8Khd5knJ5yMO8
+	eM1VmrHqJ+nIP90aMkIKscHPLpv9xjIfV8ycsKI/pgRODIKdcNYVk7/tqbHOIiGiD8j+D2pvIQFTw
+	wNnN7MKMG3Y9s9T0JnbSA/wVmU4m/QiY0hg/yuxaxSH9YFCYJX3El4l4vG4e66r0yR3o/l+cbnSTh
+	QviFMltuQT1im8N/MjSUvCda0sSjqFFCPGxvIGSAGt26tXUGJCVqzhj6fUYF1hOlMlysCYTusAWl3
+	hVN67cqZ91SFP6Fe2IRGAgAtkCah3mKhPOAKPq695Obw81vYOtmCzA9QNsC33rcE3JIdwRFe5vciT
+	zbV9VchSbcbzUTKCV21g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pfgTX-004Lf1-0c;
-	Fri, 24 Mar 2023 12:24:55 +0000
-Received: from mail-mw2nam04on2060f.outbound.protection.outlook.com ([2a01:111:f400:7e8c::60f] helo=NAM04-MW2-obe.outbound.protection.outlook.com)
+	id 1pfhRh-004UPs-1n;
+	Fri, 24 Mar 2023 13:27:05 +0000
+Received: from us-smtp-delivery-124.mimecast.com ([170.10.133.124])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pfgTT-004LdM-2i;
-	Fri, 24 Mar 2023 12:24:53 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=BIW2NyLUGjIQMhVe/jlHjrax1frP9fwhSFHmvjX56TfJNCVJim2/p3Kcbk86H6m/sCvtrrm3aZ0w+meEWas3EQGDl1qUWO6eNCf8pjRtaIOu/e7H/JaZ18F0ptODIr/hV8c8nzRaiwirYUEn5ZA4xuW//uzmEz9Mhdiw7x343U/Yy2Wa1cbG0wFusM61aezUoL6YO8S5BKqGs8BKkJcbHOc4HIWPgVVhC6gzfjQLd38cLYWmE4QK/qALuT/ctJ/PW1dvGZSPVZfcBzGelt+ZcdMTDzUuAUk0qaEWvpm2s2F4BD7Q7uBmM2oJh1gsyCM7ri+Hdlxb94LxTRwOPyPyRw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=zrklw00+Zs69l5D6Gy/mRxDKEUobNt1PSN+cbHQIb68=;
- b=N0U6ExXETOwGEJ7pR450KxDR1Lq4+SBEnPweXFK/y35hQuDHA5HkBTwtFCsHACoEGCjSNuz69MP3qUqCJyI2apyDdf5y6kgQ0KzsVpRrvzqv0WLmNB3wjTBfa9iVq30ukpMYwu9iIIs55NJCLVEGvRUUiXa0uPFGGRUK9BB18GunceruwO2h74WonwcEPkZt8mARtKfaYqyrqH2r1ArcRNTjhhxffLJAOAAVai6QbozA/vVAPQ6pmKZDe8Fa1fLlQGrTp7NZVhk2JDA+FB56DaaudaLxdrzlXKEnegjI8veobMn9l9F4SMzSi9BW2An0aywJHwsVS8n3sdYiX0nR6g==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 149.199.62.198) smtp.rcpttodomain=amd.com smtp.mailfrom=xilinx.com;
- dmarc=fail (p=quarantine sp=quarantine pct=100) action=quarantine
- header.from=amd.com; dkim=none (message not signed); arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=zrklw00+Zs69l5D6Gy/mRxDKEUobNt1PSN+cbHQIb68=;
- b=Ka0+UUreaojAbM8xdyPpR5Wj5wWMMYp8bhmgKFZ27BO/PLYUngPzPMXshXYBJCytYbwXdF6yvcbGkoDUSLmuneUnJ8Q04qyhdSjW9u9HU4NMoJXt1tansU7j8+lSsG63fTzvLEr7iEarBIdIewLOiZmA+3b1yAJtKcFGohp+PnE=
-Received: from BN9PR03CA0655.namprd03.prod.outlook.com (2603:10b6:408:13b::30)
- by MW6PR02MB9814.namprd02.prod.outlook.com (2603:10b6:303:240::10) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6178.38; Fri, 24 Mar
- 2023 12:24:46 +0000
-Received: from BN1NAM02FT036.eop-nam02.prod.protection.outlook.com
- (2603:10b6:408:13b:cafe::a1) by BN9PR03CA0655.outlook.office365.com
- (2603:10b6:408:13b::30) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6178.38 via Frontend
- Transport; Fri, 24 Mar 2023 12:24:46 +0000
-X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 149.199.62.198)
- smtp.mailfrom=xilinx.com; dkim=none (message not signed)
- header.d=none;dmarc=fail action=quarantine header.from=amd.com;
-Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
- 149.199.62.198 as permitted sender) receiver=protection.outlook.com;
- client-ip=149.199.62.198; helo=xsj-pvapexch02.xlnx.xilinx.com; pr=C
-Received: from xsj-pvapexch02.xlnx.xilinx.com (149.199.62.198) by
- BN1NAM02FT036.mail.protection.outlook.com (10.13.2.147) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.20.6222.17 via Frontend Transport; Fri, 24 Mar 2023 12:24:46 +0000
-Received: from xsj-pvapexch02.xlnx.xilinx.com (172.19.86.41) by
- xsj-pvapexch02.xlnx.xilinx.com (172.19.86.41) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.2507.16; Fri, 24 Mar 2023 05:24:44 -0700
-Received: from smtp.xilinx.com (172.19.127.96) by
- xsj-pvapexch02.xlnx.xilinx.com (172.19.86.41) with Microsoft SMTP Server id
- 15.1.2507.16 via Frontend Transport; Fri, 24 Mar 2023 05:24:44 -0700
-Received: from [172.23.64.2] (port=36899 helo=xhdvnc102.xilinx.com)
-	by smtp.xilinx.com with esmtp (Exim 4.90)
-	(envelope-from <radhey.shyam.pandey@xilinx.com>)
-	id 1pfgTL-000FmK-VF; Fri, 24 Mar 2023 05:24:44 -0700
-Received: by xhdvnc102.xilinx.com (Postfix, from userid 13245)
-	id 2928F1045C1; Fri, 24 Mar 2023 17:54:43 +0530 (IST)
-From: Radhey Shyam Pandey <radhey.shyam.pandey@amd.com>
-To: <laurent.pinchart@ideasonboard.com>, <vkoul@kernel.org>,
-	<kishon@kernel.org>, <michal.simek@xilinx.com>
-CC: <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-	<linux-arm-kernel@lists.infradead.org>, <git@amd.com>, Radhey Shyam Pandey
-	<radhey.shyam.pandey@amd.com>
-Subject: [PATCH] phy: xilinx: phy-zynqmp: mention SGMII as supported protocol
-Date: Fri, 24 Mar 2023 17:54:39 +0530
-Message-ID: <1679660679-10409-1-git-send-email-radhey.shyam.pandey@amd.com>
-X-Mailer: git-send-email 2.1.1
+	id 1pfhRa-004UNk-1n
+	for linux-phy@lists.infradead.org;
+	Fri, 24 Mar 2023 13:27:03 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+	s=mimecast20190719; t=1679664417;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding;
+	bh=rqu3TJ9Us4tjFNY0o3zPlo/dxstIWcHIOGlWftNzUnQ=;
+	b=eh62+0trEr7F8Xo2fRLbctUumberdj0TmYkvEnAbOsM79hU/h4QrIDmEaWM9U86jUrntFl
+	FqborovT+Xkp8+0CP1CW+0HYZsSKbv74OQozKe8zxtkAc7tQDCCTkmyFl+FhTHDECSVKoT
+	sTE7qoPwCL2GfUatxBlFrawHpqRp9m0=
+Received: from mail-qk1-f197.google.com (mail-qk1-f197.google.com
+ [209.85.222.197]) by relay.mimecast.com with ESMTP with STARTTLS
+ (version=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384) id
+ us-mta-616-ss_sIntnPOKKnQuWusIZng-1; Fri, 24 Mar 2023 09:26:56 -0400
+X-MC-Unique: ss_sIntnPOKKnQuWusIZng-1
+Received: by mail-qk1-f197.google.com with SMTP id x80-20020a376353000000b0074681bc7f42so764734qkb.8
+        for <linux-phy@lists.infradead.org>; Fri, 24 Mar 2023 06:26:56 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112; t=1679664416;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=rqu3TJ9Us4tjFNY0o3zPlo/dxstIWcHIOGlWftNzUnQ=;
+        b=UEOvNDlmRBiDGDWjdx+15V8JBPd+bywv5Iut4/B0KCTVzfB+8IPSSZ23vjBu2yUFZh
+         k8ov7QFdNLUdnSSPB4WCdC8WoV01ZHTDQ2Fl/sGVM4W+evinPE3CZEsqVk+juZ6SizV8
+         y0uX1IONsCj2XX0VRE1196uig7r0jdThVZ6nB+ZjiCDjf8JjzteHHMTIz3R504eHeCOO
+         ChnhvHq4aydvPZiWcTVuv42R6R7DcyJsrPzKMR7b/27cqMLnHv9PLmqyX4HGlMeIAbV3
+         cYtnm5hMIqTWF5zS9qikSSnz3diEzzgTfM1dR5gaLy3vgTf/eVC/mIAn2lt6M6rldXsK
+         BPrA==
+X-Gm-Message-State: AAQBX9ek7zPdZmRSxVB7cTBlC2LHdZWroOTcosJLVgbbt2ZS8xf3NFYz
+	PNSya5V6iNGVl/OdCa9sIZ//M5zj0n1JQ8p4j5o57a/hDu835M1vEh1oBt+KxXBh724QdYpw/E1
+	kscc/VuYMiDrWRUODnk3w8/yxnw==
+X-Received: by 2002:a05:6214:d07:b0:5ad:1a83:8021 with SMTP id 7-20020a0562140d0700b005ad1a838021mr3926026qvh.49.1679664415745;
+        Fri, 24 Mar 2023 06:26:55 -0700 (PDT)
+X-Google-Smtp-Source: AKy350bWyV7OYeyD9u0w6iNh0EYkkwfo17tJz1C8lhIiQ8oaWqvEFwUsQXfvyFHVNhZAkqBx+PZ4Og==
+X-Received: by 2002:a05:6214:d07:b0:5ad:1a83:8021 with SMTP id 7-20020a0562140d0700b005ad1a838021mr3926002qvh.49.1679664415511;
+        Fri, 24 Mar 2023 06:26:55 -0700 (PDT)
+Received: from dell-per740-01.7a2m.lab.eng.bos.redhat.com (nat-pool-bos-t.redhat.com. [66.187.233.206])
+        by smtp.gmail.com with ESMTPSA id 123-20020a370381000000b00746a7945d87sm5095680qkd.52.2023.03.24.06.26.54
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 24 Mar 2023 06:26:55 -0700 (PDT)
+From: Tom Rix <trix@redhat.com>
+To: vkoul@kernel.org,
+	kishon@kernel.org,
+	heiko@sntech.de,
+	nathan@kernel.org,
+	ndesaulniers@google.com
+Cc: linux-phy@lists.infradead.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	llvm@lists.linux.dev,
+	Tom Rix <trix@redhat.com>
+Subject: [PATCH] phy: rockchip: remove unused hw_to_inno function
+Date: Fri, 24 Mar 2023 09:26:49 -0400
+Message-Id: <20230324132649.2649166-1-trix@redhat.com>
+X-Mailer: git-send-email 2.27.0
 MIME-Version: 1.0
-X-EOPAttributedMessage: 0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: BN1NAM02FT036:EE_|MW6PR02MB9814:EE_
-X-MS-Office365-Filtering-Correlation-Id: 5fe6467e-6632-4f58-6212-08db2c62c13a
-X-MS-Exchange-SenderADCheck: 0
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 	eF8RqhONaUZEf2h2PbvjRO6NQib0nuk/7JzWyFbWSlCYmOZs62IaqQi+JL5XAdsTRc/+LNByh6cxtIIEfO47aWsH6TTJeODTMd2Fg1ow/p0NRu4i/SJMtQe73HXN+tcf0020RqF+m7O4o30XD3kLikrJu0m8JHUqx5vC2N6QQitvFxHlhm3nNdZnDNbA/zNBuNb5pAb+HJPt4ZT0s1qDExIktbODuOgoFa5BB8FeRIBcKdHMH1SlWnolCZH4cBRH/e85T57jBXLLVu/w+Ar2jw+meM3qT/WLZEDfTDTQlS6McnN5zI369LyrBWI4JNtd3pLtzvUkPGsuaFQyvuqMwsN194sITKOqoraM7qK+eicXn6VINq0Gx/yZPlCaftfzyBx67LPu2TYafhZGUrmhJszVdnlu9WOW2PQuilYQ5vlBtVeE/uKk+aF09sb/qI9hx6cBpnmvmKWpgzNVWVyJkIRQ0AOhOLt2DO1bVeMdiuz1e9zx1N3MsW1piYquEyK6d/EyFkjYs3pilL63r1rwuv0hdkkFJma8hTysXvdYWq8wQwwKSStxh/JIHERyk2RDPlXAYeBljkGhjdkxtVCoyIRZ86jFTRUqnNZhdYX16XyCypQCknxtk1C5mZI1+ngvA95T212pelr8nPcUqZweTUBv785nYXglc8ukqWiOWsnunV5KPG2x4PX1GMSJuLl4dREG6tIvimDyYMXmQC1XeWqJU8EaDjse8tU0gwpKjYw=
-X-Forefront-Antispam-Report: 	CIP:149.199.62.198;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:xsj-pvapexch02.xlnx.xilinx.com;PTR:unknown-62-198.xilinx.com;CAT:NONE;SFS:(13230025)(376002)(136003)(346002)(39860400002)(396003)(451199018)(46966006)(36840700001)(40470700004)(83170400001)(40480700001)(356005)(2906002)(40460700003)(36756003)(83380400001)(2616005)(336012)(186003)(42882007)(6266002)(478600001)(82310400005)(110136005)(36860700001)(70586007)(8676002)(4326008)(4744005)(70206006)(54906003)(47076005)(8936002)(42186006)(6666004)(26005)(316002)(41300700001)(5660300002)(82740400003)(7636003)(102446001);DIR:OUT;SFP:1101;
-X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 24 Mar 2023 12:24:46.1897
- (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 5fe6467e-6632-4f58-6212-08db2c62c13a
-X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c;Ip=[149.199.62.198];Helo=[xsj-pvapexch02.xlnx.xilinx.com]
-X-MS-Exchange-CrossTenant-AuthSource: 	BN1NAM02FT036.eop-nam02.prod.protection.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Anonymous
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: MW6PR02MB9814
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230324_052451_882198_91DCF14C 
-X-CRM114-Status: UNSURE (   9.02  )
+X-CRM114-CacheID: sfid-20230324_062658_673597_34906022 
+X-CRM114-Status: UNSURE (   7.26  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -125,33 +106,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SGMII is validated on kria KR260 robotics starter kit. So modify the
-comment description to include it in supported controllers list.
+clang with W=1 reports
+drivers/phy/rockchip/phy-rockchip-inno-dsidphy.c:284:36: error:
+  unused function 'hw_to_inno' [-Werror,-Wunused-function]
+static inline struct inno_dsidphy *hw_to_inno(struct clk_hw *hw)
+                                   ^
+This function is not used so remove it.
 
-Signed-off-by: Radhey Shyam Pandey <radhey.shyam.pandey@amd.com>
+Signed-off-by: Tom Rix <trix@redhat.com>
 ---
- drivers/phy/xilinx/phy-zynqmp.c | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+ drivers/phy/rockchip/phy-rockchip-inno-dsidphy.c | 5 -----
+ 1 file changed, 5 deletions(-)
 
-diff --git a/drivers/phy/xilinx/phy-zynqmp.c b/drivers/phy/xilinx/phy-zynqmp.c
-index 9be9535ad7ab..ebe5ba730234 100644
---- a/drivers/phy/xilinx/phy-zynqmp.c
-+++ b/drivers/phy/xilinx/phy-zynqmp.c
-@@ -8,9 +8,9 @@
-  * Author: Subbaraya Sundeep <sundeep.lkml@gmail.com>
-  * Author: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-  *
-- * This driver is tested for USB, SATA and Display Port currently.
-- * Other controllers PCIe and SGMII should also work but that is
-- * experimental as of now.
-+ * This driver is tested for USB, SGMII, SATA and Display Port currently.
-+ * Other controller i.e PCIe should also work but that is experimental
-+ * as of now.
-  */
+diff --git a/drivers/phy/rockchip/phy-rockchip-inno-dsidphy.c b/drivers/phy/rockchip/phy-rockchip-inno-dsidphy.c
+index 726928ff1273..401b0aabb159 100644
+--- a/drivers/phy/rockchip/phy-rockchip-inno-dsidphy.c
++++ b/drivers/phy/rockchip/phy-rockchip-inno-dsidphy.c
+@@ -281,11 +281,6 @@ struct inno_mipi_dphy_timing inno_mipi_dphy_timing_table_max_2_5ghz[] = {
+ 	{2500000000, 0x15, 0x54, 0x7f, 0x15, 0x6a},
+ };
  
- #include <linux/clk.h>
+-static inline struct inno_dsidphy *hw_to_inno(struct clk_hw *hw)
+-{
+-	return container_of(hw, struct inno_dsidphy, pll.hw);
+-}
+-
+ static void phy_update_bits(struct inno_dsidphy *inno,
+ 			    u8 first, u8 second, u8 mask, u8 val)
+ {
 -- 
-2.25.1
+2.27.0
 
 
 -- 
