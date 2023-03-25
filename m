@@ -4,82 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1A9F8C77B62
-	for <linux-phy@archiver.kernel.org>; Sat, 25 Mar 2023 12:25:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9FFFEC6FD1C
+	for <linux-phy@archiver.kernel.org>; Sat, 25 Mar 2023 12:25:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=XUGwFNfM3uy4zBUbx9sHrJHZHHeWIjiMzwMB6hzKD8w=; b=ofU23paujavD1q
-	Kf6pIboqRINmzkFfM/eQfRFCVk4Oy99XthfzPgn3NfEJwFwtwkBls0V/Ucb8bAdQX1PJj7/2lVZwO
-	OEJp1jgKFIGVWabznnN6qoyXH9gBhwY1Ddm7KbDrkDMVU50d3Rmsqny0kRyqSAuMfUm4h3hTVJ25K
-	klEla/wGvHzf2urHyclfLDVK0tBTwTkfUizTQW+eUNd5zotsp4F50efrr1nVVcl2hzh13KGDUNpJ3
-	3tlZILChxJrkJx8n8LTfN8yBf/4VUzv9EtQrwLozLVG/xg9MASZfzd9K4VEuSLwMOp1X2oNAIIr/4
-	w1VMoqD84nCPeCDq6KGg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=rlZD+yuJuCwB0CAj3Ce9fme885JcSPFUTJkblKK1Dtg=; b=cTcYDEKsQQ1Jw8
+	pCAe8fuxxE7Zh5I0xO0jV2NxXP1YZiV+gDWdE8HHcMQKQkEjYQqcIhBpLw/XlgLvrrHDg9unaeMB1
+	HnZmFGV04zGo1Jcr8crid+vMKu/OETC269LEshql0DLVIiowQA68uWGR/JHuLx21TJIzbZZOUYcDU
+	AM5quyYZK4Cd5irHJ6xN/U4CQaMaWw+MBFlGkj1VXWsQBEEg6xXnLVdZnW/K25dUhYLUaV39VRqfc
+	Ty3I46cRAxN85K/dHFOOy01Ygb0eHhlKLSKT1OfpjJOmOL8ePk3NIWUJ7zzWP6CmabaLdojhUV0vo
+	H7GznYHihY21tVqDXdXw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pg2xC-006gF5-2A;
-	Sat, 25 Mar 2023 12:25:02 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1pg2xN-006gHn-0z;
+	Sat, 25 Mar 2023 12:25:13 +0000
+Received: from ams.source.kernel.org ([145.40.68.75])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pg2xA-006gDn-0i
+	id 1pg2xK-006gGd-2Q
 	for linux-phy@lists.infradead.org;
-	Sat, 25 Mar 2023 12:25:01 +0000
+	Sat, 25 Mar 2023 12:25:12 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id D90C260C37;
-	Sat, 25 Mar 2023 12:24:57 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 334BAC433D2;
-	Sat, 25 Mar 2023 12:24:49 +0000 (UTC)
+	by ams.source.kernel.org (Postfix) with ESMTPS id 4CC30B8075B;
+	Sat, 25 Mar 2023 12:25:09 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1B6E2C433EF;
+	Sat, 25 Mar 2023 12:25:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1679747097;
-	bh=1dklbVwFwR0zhMisSmK0/9gJpIfc7bnmRJm4tVTpEP4=;
-	h=From:To:Cc:Subject:Date:From;
-	b=kq+hukc6ikZx9SJzvxhdssupIjoLs/fpTfE4xWR1GCUAQf+ej4+CZPJ6As1nBx/Np
-	 LnTe6uwtqRqgrBX8wcFx7iA8t9RlLfsrIhHjEF5zws5SH1BNQEw5/apXO7k4iKqEPN
-	 Uy7pV/q9o/Dh1UqRs27VBKuLeF+QbeTJYbTLOInceRv5Os9TizexZ9yXkIxh/nxT68
-	 rKRgc/2/r6fPkD5tZD46tl9Fnb/ND04aN/xOju7u135zEC1uc4Nn4GKbm+20O4KZKj
-	 8x3BBE8d1WSRsffNs0PUWyactCPqtrXyQxPNcfK3Mi5YCLhNVrOxR7Sfku/eXrUcvl
-	 Io5wExRlyhzbw==
+	s=k20201202; t=1679747108;
+	bh=RdzOelXYvx3QrBd1xcpOZg6N+igw7RzYV0uefoNp8LM=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=QrEMnFWibBjZAzygarjfI5m4nhovuoNGCDAOMHa8TvroO2KulDMjLGt5B0a3Ayr+j
+	 3TurMLBJsqcgepxGy1/VK1a/HCjNf/J4RY1s2SeCipqGiqmY/DVgWUrKCpSph2UPQJ
+	 iELpBDWh9Kiq1R+F2JJmcgTR4eC9Kj3B5JBB+uyRkML6DlkW72Lops4VfW3S71xS4g
+	 NeyvIlNeg11F55qUgE30rCpimWet+1h+A9I4O3qxVCPw9846RJbYbjW3Mb/07TWojx
+	 Z497qZ5y4j6wzwBQ0I0LMtvO9pSoxpQq7fm9i20QV9MRjYm8EERnu5IvS6Vk1BrO46
+	 KzA1XwSQ2c/qQ==
 From: Vinod Koul <vkoul@kernel.org>
-To: Bjorn Andersson <andersson@kernel.org>,
-	Lorenzo Pieralisi <lpieralisi@kernel.org>,
-	Bjorn Helgaas <bhelgaas@google.com>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Georgi Djakov <djakov@kernel.org>,
-	Mark Brown <broonie@kernel.org>
+To: Bjorn Andersson <andersson@kernel.org>
 Cc: linux-arm-msm@vger.kernel.org,
 	Vinod Koul <vkoul@kernel.org>,
-	Alim Akhtar <alim.akhtar@samsung.com>,
-	Avri Altman <avri.altman@wdc.com>,
-	Bart Van Assche <bvanassche@acm.org>,
-	Thomas Gleixner <tglx@linutronix.de>,
-	Marc Zyngier <maz@kernel.org>,
 	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
 	Rob Herring <robh+dt@kernel.org>,
 	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	=?UTF-8?q?Krzysztof=20Wilczy=C5=84ski?= <kw@linux.com>,
-	linux-pci@vger.kernel.org,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
 	linux-phy@lists.infradead.org,
-	Wesley Cheng <quic_wcheng@quicinc.com>,
-	linux-usb@vger.kernel.org,
-	linux-pm@vger.kernel.org,
-	linux-scsi@vger.kernel.org,
-	Liam Girdwood <lgirdwood@gmail.com>
-Subject: [PATCH v2 00/12] Introduce the SC8180x devices
-Date: Sat, 25 Mar 2023 17:54:32 +0530
-Message-Id: <20230325122444.249507-1-vkoul@kernel.org>
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH v2 03/12] dt-bindings: phy: qcom,qmp-pcie: fix the sc8180x regs
+Date: Sat, 25 Mar 2023 17:54:35 +0530
+Message-Id: <20230325122444.249507-4-vkoul@kernel.org>
 X-Mailer: git-send-email 2.39.2
+In-Reply-To: <20230325122444.249507-1-vkoul@kernel.org>
+References: <20230325122444.249507-1-vkoul@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230325_052500_351741_BE888FE2 
-X-CRM114-Status: GOOD (  12.55  )
+X-CRM114-CacheID: sfid-20230325_052510_937376_F4AEF73F 
+X-CRM114-Status: GOOD (  10.79  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,56 +81,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This introduces Qualcomm SC8180x SoC which features in Lenovo Flex 5G
-laptop. This also adds support for Primus platform as well as Lenovo Flex 5G
-laptop.
+sc8180x pcie phy requires to describe six reg areas for the phy to work,
+so move the description to the correct place documenting tx, rx lane 1,
+2 and pcs and pcs misc.
 
-I would be great if submaintainers can ack the binding patch so that
-everything can go thru qcom tree
+Signed-off-by: Vinod Koul <vkoul@kernel.org>
+---
+ .../devicetree/bindings/phy/qcom,ipq8074-qmp-pcie-phy.yaml      | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-Changes in v2:
- - Fix the ufs pcie and phy bindings
- - Lots of error fixes for dtbs_check
- - Add few more missing compatiables
-
-Bjorn Andersson (3):
-  arm64: dts: qcom: Introduce the SC8180x platform
-  arm64: dts: qcom: sc8180x: Introduce Primus
-  arm64: dts: qcom: sc8180x: Introduce Lenovo Flex 5G
-
-Vinod Koul (9):
-  dt-bindings: firmware: document Qualcomm SC8180X SCM
-  dt-bindings: PCI: qcom: Document sc8180x properties
-  dt-bindings: phy: qcom,qmp-pcie: fix the sc8180x regs
-  dt-bindings: usb: qcom,dwc3: Add SC8180x binding
-  dt-bindings: interconnect: split SC8180x to own schema
-  scsi: ufs: dt-bindings: Add SC8180x binding
-  dt-bindings: phy: qcom,qmp-ufs: fix the sc8180x regs
-  regulator: dt-bindings: qcom,rpmh: Add compatible for PMC8180
-  dt-bindings: qcom,pdc: Add SC8180x compatible
-
- .../bindings/firmware/qcom,scm.yaml           |    1 +
- .../bindings/interconnect/qcom,rpmh.yaml      |   11 -
- .../interconnect/qcom,sc8180x-rpmh.yaml       |   76 +
- .../interrupt-controller/qcom,pdc.yaml        |    1 +
- .../devicetree/bindings/pci/qcom,pcie.yaml    |   49 +-
- .../phy/qcom,ipq8074-qmp-pcie-phy.yaml        |    2 +-
- .../phy/qcom,msm8996-qmp-ufs-phy.yaml         |   18 +-
- .../regulator/qcom,rpmh-regulator.yaml        |    4 +
- .../devicetree/bindings/ufs/qcom,ufs.yaml     |    2 +
- .../devicetree/bindings/usb/qcom,dwc3.yaml    |    2 +
- arch/arm64/boot/dts/qcom/Makefile             |    2 +
- .../boot/dts/qcom/sc8180x-lenovo-flex-5g.dts  |  590 +++
- arch/arm64/boot/dts/qcom/sc8180x-pmics.dtsi   |  326 ++
- arch/arm64/boot/dts/qcom/sc8180x-primus.dts   |  706 +++
- arch/arm64/boot/dts/qcom/sc8180x.dtsi         | 3950 +++++++++++++++++
- 15 files changed, 5709 insertions(+), 31 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/interconnect/qcom,sc8180x-rpmh.yaml
- create mode 100644 arch/arm64/boot/dts/qcom/sc8180x-lenovo-flex-5g.dts
- create mode 100644 arch/arm64/boot/dts/qcom/sc8180x-pmics.dtsi
- create mode 100644 arch/arm64/boot/dts/qcom/sc8180x-primus.dts
- create mode 100644 arch/arm64/boot/dts/qcom/sc8180x.dtsi
-
+diff --git a/Documentation/devicetree/bindings/phy/qcom,ipq8074-qmp-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,ipq8074-qmp-pcie-phy.yaml
+index 62045dcfb20c..3d42ee3901a1 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,ipq8074-qmp-pcie-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,ipq8074-qmp-pcie-phy.yaml
+@@ -203,6 +203,7 @@ allOf:
+         compatible:
+           contains:
+             enum:
++              - qcom,sc8180x-qmp-pcie-phy
+               - qcom,sm8250-qmp-gen3x2-pcie-phy
+               - qcom,sm8250-qmp-modem-pcie-phy
+               - qcom,sm8450-qmp-gen4x2-pcie-phy
+@@ -224,7 +225,6 @@ allOf:
+         compatible:
+           contains:
+             enum:
+-              - qcom,sc8180x-qmp-pcie-phy
+               - qcom,sdm845-qmp-pcie-phy
+               - qcom,sdx55-qmp-pcie-phy
+               - qcom,sm8250-qmp-gen3x1-pcie-phy
 -- 
 2.39.2
 
