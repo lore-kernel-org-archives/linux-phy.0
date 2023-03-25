@@ -4,120 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2720AC76196
-	for <linux-phy@archiver.kernel.org>; Fri, 24 Mar 2023 22:04:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1A9F8C77B62
+	for <linux-phy@archiver.kernel.org>; Sat, 25 Mar 2023 12:25:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-reply-to:
-	Date:Subject:Cc:To:From:References:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iPG5fFCJLKtJ5v/lVr1J5GTa3OLgXqO2d4AUPyi0YPA=; b=JuLL0x+q2HvCvA
-	oVwMeQuV0ipx/ceH/qbBT3/f7YE4Iibtb6u47S5MdPfxNvaA1MD0RMoXoJuPpcmXGEU+TRgNoizUN
-	saPbeMkORdwhWuadjNrTJrDK9lJWphecebUxy8N5SsV0q8ToE9jBy7wiCSgOAsuALGJD1JpD+1cQL
-	fw+vKRYyRaQKUIxdy6BEjvNBFS5+/Lwo1NOx4ire/g6fmJeuwpbkhFH+X5vBm6oYzdp2u3rntOlGU
-	DDVZe6RpMF979Tx7dTWoRWfFamKWojiO9QN0hdZX8bliROJj7orH6bbhN2Ado0PQekO4OQudZQJFB
-	LPLLqhufE1PCT3M7rXVA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=XUGwFNfM3uy4zBUbx9sHrJHZHHeWIjiMzwMB6hzKD8w=; b=ofU23paujavD1q
+	Kf6pIboqRINmzkFfM/eQfRFCVk4Oy99XthfzPgn3NfEJwFwtwkBls0V/Ucb8bAdQX1PJj7/2lVZwO
+	OEJp1jgKFIGVWabznnN6qoyXH9gBhwY1Ddm7KbDrkDMVU50d3Rmsqny0kRyqSAuMfUm4h3hTVJ25K
+	klEla/wGvHzf2urHyclfLDVK0tBTwTkfUizTQW+eUNd5zotsp4F50efrr1nVVcl2hzh13KGDUNpJ3
+	3tlZILChxJrkJx8n8LTfN8yBf/4VUzv9EtQrwLozLVG/xg9MASZfzd9K4VEuSLwMOp1X2oNAIIr/4
+	w1VMoqD84nCPeCDq6KGg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pfpW1-005hmp-2J;
-	Fri, 24 Mar 2023 22:04:05 +0000
-Received: from mail-wr1-x42d.google.com ([2a00:1450:4864:20::42d])
+	id 1pg2xC-006gF5-2A;
+	Sat, 25 Mar 2023 12:25:02 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pfpVv-005hlB-2u;
-	Fri, 24 Mar 2023 22:04:04 +0000
-Received: by mail-wr1-x42d.google.com with SMTP id h17so3124850wrt.8;
-        Fri, 24 Mar 2023 15:03:56 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20210112; t=1679695435;
-        h=mime-version:message-id:in-reply-to:date:subject:cc:to:from
-         :references:from:to:cc:subject:date:message-id:reply-to;
-        bh=eQ3RSbBi4GxRzlwFNletxU5cxz92xG3Lj6FTyrjdc0o=;
-        b=T3F8aNz2ox9uoURQlE0mq2sXW4z262BpvG7ZxRtAtIbFhPc/TQEpQM0a0SgR+TrqHO
-         CLYGJXT6hxHwzdY9UN32CZG2dOkIF2LFvXUPmwkIF/2GkwmMW7kb6axItHjQcEjAF96P
-         YoZ2Q3loL8sCvN2e52vHQqe+AQbmZyqmh9t2+HCpPytsWAA2sxbaBc61b92bJ1dDr0QQ
-         Tdx2iHxB/Aa/m/jyDHMcs00O0mdizZduxSlMQxMVQw/7cAeVdYgYGEV+MFN8ajK6+qK2
-         SFuRxlx0kY19AQ86OkmU5aCJ9GqDDqrZ45+h67Pz4nAn4V4ElL3E8abtemphkRCVy/gF
-         HzMg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112; t=1679695435;
-        h=mime-version:message-id:in-reply-to:date:subject:cc:to:from
-         :references:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=eQ3RSbBi4GxRzlwFNletxU5cxz92xG3Lj6FTyrjdc0o=;
-        b=XhDA4ltszStSg+DXIvZEt2WjSHucn+P03albY/NgcDihYDT5L7+3iNuYfmQmAMlv1O
-         9RzjikPW13X0xHp5YI21m5tR3IxQ6Pt1ElDLOIs7QSRZ9Sj9eDca7H7eQxmMevPXl7Nk
-         f3qOZfSM2AyZoeANGsHVGvWyVxCntSWRg4souJUazY9h/51/sjWiKOFaXG6EtTFJfe3m
-         JQbG0GVlh/fnpszknpA5fd4hp7wD68ooHrhbOOTvVKXy68XZJB96xVAMEbFm0qWCoDd7
-         vHiMmoSuG7d1TzShMQYQHGFpjL0OnzkM6WYt3HI5ftlomotNH/vW0NsMjkzfWb3WdF2Y
-         c5dw==
-X-Gm-Message-State: AAQBX9d51viBXAsOwbvzrm6bF6mmjQGTK5v2ATt9rPmh7WMFLMhpIWIL
-	RUlT/c2mKp+lfbwgzt6vcSE=
-X-Google-Smtp-Source: AKy350bTnEgVdoWb1kTWyTj04kbZ8RkYf2o8/EHnYZiiSg63myut6K0B/vHtQugbPkbZgvwsB8kF9A==
-X-Received: by 2002:adf:e905:0:b0:2ce:a096:3ff2 with SMTP id f5-20020adfe905000000b002cea0963ff2mr3187613wrm.63.1679695434807;
-        Fri, 24 Mar 2023 15:03:54 -0700 (PDT)
-Received: from localhost (94.197.5.156.threembb.co.uk. [94.197.5.156])
-        by smtp.gmail.com with ESMTPSA id e9-20020adffc49000000b002be5bdbe40csm19237361wrs.27.2023.03.24.15.03.53
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 24 Mar 2023 15:03:54 -0700 (PDT)
-References: <20221018-clk-range-checks-fixes-v2-0-f6736dec138e@cerno.tech>
- <20221018-clk-range-checks-fixes-v2-56-f6736dec138e@cerno.tech>
- <80VTKR.CE8RVN8M3ZYK3@crapouillou.net>
- <20221104145946.orsyrhiqvypisl5j@houat>
- <cp7Yh29ndlOOi1yW8KwCcpzoLPLxm1vR@localhost>
- <20221107085417.xrsh6xy3ouwdkp4z@houat>
- <ucJ6KSBqdPTxfxUQqLUr9C9RGiQRnY1I@localhost>
- <20221109110045.j24vwkaq3s4yzoy3@houat>
- <06a293adc75990ed3e297b076fc38d8a.sboyd@kernel.org>
- <xpKMzGb1sOsucWMTlJIMzrT5KjLlZ7JP@localhost>
- <20230324111959.frjf4neopbs67ugd@houat>
-From: Aidan MacDonald <aidanmacdonald.0x0@gmail.com>
-To: Maxime Ripard <maxime@cerno.tech>
-Cc: Stephen Boyd <sboyd@kernel.org>, Paul Cercueil <paul@crapouillou.net>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>, Chen-Yu Tsai <wens@csie.org>,
- Daniel Vetter <daniel@ffwll.ch>, Nicolas Ferre
- <nicolas.ferre@microchip.com>, Thierry Reding <thierry.reding@gmail.com>,
- Jaroslav Kysela <perex@perex.cz>, Shawn Guo <shawnguo@kernel.org>, Fabio
- Estevam <festevam@gmail.com>, Ulf Hansson <ulf.hansson@linaro.org>,
- Claudiu Beznea <claudiu.beznea@microchip.com>, Michael Turquette
- <mturquette@baylibre.com>, Dinh Nguyen <dinguyen@kernel.org>, Chunyan
- Zhang <zhang.lyra@gmail.com>, Manivannan Sadhasivam <mani@kernel.org>,
- Andreas =?utf-8?Q?F=C3=A4rber?= <afaerber@suse.de>, Jonathan Hunter
- <jonathanh@nvidia.com>,
- Abel Vesa <abelvesa@kernel.org>, Charles Keepax
- <ckeepax@opensource.cirrus.com>, Alessandro Zummo <a.zummo@towertech.it>,
- Peter De Schrijver <pdeschrijver@nvidia.com>, Orson Zhai
- <orsonzhai@gmail.com>, Alexandre Torgue <alexandre.torgue@foss.st.com>,
- Prashant Gaikwad <pgaikwad@nvidia.com>, Liam Girdwood
- <lgirdwood@gmail.com>, Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Samuel Holland <samuel@sholland.org>, Matthias Brugger
- <matthias.bgg@gmail.com>, Richard Fitzgerald <rf@opensource.cirrus.com>,
- Vinod Koul <vkoul@kernel.org>, NXP Linux Team <linux-imx@nxp.com>, Sekhar
- Nori <nsekhar@ti.com>, Kishon Vijay Abraham I <kishon@kernel.org>, Linus
- Walleij <linus.walleij@linaro.org>, Takashi Iwai <tiwai@suse.com>, David
- Airlie <airlied@gmail.com>, Luca Ceresoli <luca.ceresoli@bootlin.com>,
- Jernej Skrabec <jernej.skrabec@gmail.com>, Pengutronix Kernel Team
- <kernel@pengutronix.de>, Baolin Wang <baolin.wang@linux.alibaba.com>,
- David Lechner <david@lechnology.com>, Sascha Hauer
- <s.hauer@pengutronix.de>, Mark Brown <broonie@kernel.org>, Max Filippov
- <jcmvbkbc@gmail.com>, Geert Uytterhoeven <geert+renesas@glider.be>,
- linux-stm32@st-md-mailman.stormreply.com, alsa-devel@alsa-project.org,
- linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org,
- linux-mips@vger.kernel.org, linux-renesas-soc@vger.kernel.org,
- linux-actions@lists.infradead.org, linux-clk@vger.kernel.org,
- AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
- patches@opensource.cirrus.com, linux-tegra@vger.kernel.org,
- linux-rtc@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-sunxi@lists.linux.dev, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org
-Subject: Re: [PATCH v2 56/65] clk: ingenic: cgu: Switch to determine_rate
-Date: Fri, 24 Mar 2023 20:58:48 +0000
-In-reply-to: <20230324111959.frjf4neopbs67ugd@houat>
-Message-ID: <rTJKpeLOBeu3eOLW5z3P5fEpcOJJLrGs@localhost>
+	id 1pg2xA-006gDn-0i
+	for linux-phy@lists.infradead.org;
+	Sat, 25 Mar 2023 12:25:01 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id D90C260C37;
+	Sat, 25 Mar 2023 12:24:57 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 334BAC433D2;
+	Sat, 25 Mar 2023 12:24:49 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1679747097;
+	bh=1dklbVwFwR0zhMisSmK0/9gJpIfc7bnmRJm4tVTpEP4=;
+	h=From:To:Cc:Subject:Date:From;
+	b=kq+hukc6ikZx9SJzvxhdssupIjoLs/fpTfE4xWR1GCUAQf+ej4+CZPJ6As1nBx/Np
+	 LnTe6uwtqRqgrBX8wcFx7iA8t9RlLfsrIhHjEF5zws5SH1BNQEw5/apXO7k4iKqEPN
+	 Uy7pV/q9o/Dh1UqRs27VBKuLeF+QbeTJYbTLOInceRv5Os9TizexZ9yXkIxh/nxT68
+	 rKRgc/2/r6fPkD5tZD46tl9Fnb/ND04aN/xOju7u135zEC1uc4Nn4GKbm+20O4KZKj
+	 8x3BBE8d1WSRsffNs0PUWyactCPqtrXyQxPNcfK3Mi5YCLhNVrOxR7Sfku/eXrUcvl
+	 Io5wExRlyhzbw==
+From: Vinod Koul <vkoul@kernel.org>
+To: Bjorn Andersson <andersson@kernel.org>,
+	Lorenzo Pieralisi <lpieralisi@kernel.org>,
+	Bjorn Helgaas <bhelgaas@google.com>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Georgi Djakov <djakov@kernel.org>,
+	Mark Brown <broonie@kernel.org>
+Cc: linux-arm-msm@vger.kernel.org,
+	Vinod Koul <vkoul@kernel.org>,
+	Alim Akhtar <alim.akhtar@samsung.com>,
+	Avri Altman <avri.altman@wdc.com>,
+	Bart Van Assche <bvanassche@acm.org>,
+	Thomas Gleixner <tglx@linutronix.de>,
+	Marc Zyngier <maz@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	=?UTF-8?q?Krzysztof=20Wilczy=C5=84ski?= <kw@linux.com>,
+	linux-pci@vger.kernel.org,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	linux-phy@lists.infradead.org,
+	Wesley Cheng <quic_wcheng@quicinc.com>,
+	linux-usb@vger.kernel.org,
+	linux-pm@vger.kernel.org,
+	linux-scsi@vger.kernel.org,
+	Liam Girdwood <lgirdwood@gmail.com>
+Subject: [PATCH v2 00/12] Introduce the SC8180x devices
+Date: Sat, 25 Mar 2023 17:54:32 +0530
+Message-Id: <20230325122444.249507-1-vkoul@kernel.org>
+X-Mailer: git-send-email 2.39.2
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230324_150359_938678_6A1DE991 
-X-CRM114-Status: GOOD (  42.82  )
+X-CRM114-CacheID: sfid-20230325_052500_351741_BE888FE2 
+X-CRM114-Status: GOOD (  12.55  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -134,113 +96,59 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+This introduces Qualcomm SC8180x SoC which features in Lenovo Flex 5G
+laptop. This also adds support for Primus platform as well as Lenovo Flex 5G
+laptop.
 
-Maxime Ripard <maxime@cerno.tech> writes:
+I would be great if submaintainers can ack the binding patch so that
+everything can go thru qcom tree
 
-> On Thu, Mar 23, 2023 at 03:35:30PM +0000, Aidan MacDonald wrote:
->>
->> Stephen Boyd <sboyd@kernel.org> writes:
->>
->> > Quoting Maxime Ripard (2022-11-09 03:00:45)
->> >> On Mon, Nov 07, 2022 at 08:57:22PM +0000, Aidan MacDonald wrote:
->> >> >
->> >> > Maxime Ripard <maxime@cerno.tech> writes:
->> >> >
->> >> > > Hi,
->> >> > >
->> >> > > On Fri, Nov 04, 2022 at 05:35:29PM +0000, Aidan MacDonald wrote:
->> >> >
->> >> > Assigning the parent clock in the DT works once, at boot, but going off
->> >> > what you wrote in the commit message, if the clock driver has a
->> >> > .determine_rate() implementation that *can* reparent clocks then it
->> >> > probably *will* reparent them, and the DT assignment will be lost.
->> >>
->> >> Yes, indeed, but assigned-clock-parents never provided any sort of
->> >> guarantee on whether or not the clock was allowed to reparent or not.
->> >> It's just a one-off thing, right before probe, and a clk_set_parent()
->> >> call at probe will override that just fine.
->> >>
->> >> Just like assigned-clock-rates isn't permanent.
->> >>
->> >> > What I'm suggesting is a runtime constraint that the clock subsystem
->> >> > would enforce, and actively prevent drivers from changing the parent.
->> >> > Either explicitly with clk_set_parent() or due to .determine_rate().
->> >> >
->> >> > That way you could write a .determine_rate() implementation that *can*
->> >> > select a better parent, but if the DT applies a constraint to fix the
->> >> > clock to a particular parent, the clock subsystem will force that parent
->> >> > to be used so you can be sure the clock is never reparented by accident.
->> >>
->> >> Yeah, that sounds like a good idea, and CLK_SET_RATE_NO_REPARENT isn't
->> >> too far off from this, it's just ignored by clk_set_parent() for now. I
->> >> guess we could rename CLK_SET_RATE_NO_REPARENT to CLK_NO_REPARENT, make
->> >> clk_set_parent handle it, and set that flag whenever
->> >> assigned-clock-parents is set on a clock.
->> >>
->> >> It's out of scope for this series though, and I certainly don't want to
->> >> deal with all the regressions it might create :)
->> >>
->> >
->> > This sounds like a new dt binding that says the assigned parent should
->> > never change. It sounds sort of like gpio hogs. A clock-hogs binding?
->>
->> Ideally we want the clock driver to be able to reparent clocks freely
->> to get the best rate. But we also need some control over that to stop
->> consumers from being reparented in undesired ways. Eg. you might want
->> to make sure the GPU gets its own PLL so it can be reclocked easily,
->> and putting another device on the GPU's PLL could prevent that.
->>
->> The only way to achieve this today is (1) never do any reparenting in
->> the clock driver; and (2) use assigned-clock-parents in the DT to set
->> up the entire clock tree manually.
->>
->> Maxime said that (2) is basically wrong -- if assigned-clock-parents
->> provides no guarantee on what the OS does "after boot" then the OS is
->> pretty much free to ignore it.
->
-> I didn't really say it's wrong, just that it never provided the
-> guarantee you expect it to provide. I can't really say whether it's an
-> issue or not on your platform.
->
-> It's mostly unrelated to this series though, none of these patches
-> affect that behavior in one way or the other.
+Changes in v2:
+ - Fix the ufs pcie and phy bindings
+ - Lots of error fixes for dtbs_check
+ - Add few more missing compatiables
 
-I know. Sorry for derailing your patch :(
+Bjorn Andersson (3):
+  arm64: dts: qcom: Introduce the SC8180x platform
+  arm64: dts: qcom: sc8180x: Introduce Primus
+  arm64: dts: qcom: sc8180x: Introduce Lenovo Flex 5G
 
->> My suggestion: add a per-clock bitmap to keep track of which parents
->> are allowed. Any operation that would select a parent clock not on the
->> whitelist should fail. Automatic reparenting should only select from
->> clocks on the whitelist. And we need new DT bindings for controlling
->> the whitelist, for example:
->>
->>     clock-parents-0 = <&clk1>, <&pll_c>;
->>     clock-parents-1 = <&clk2>, <&pll_a>, <&pll_b>;
->>
->> This means that clk1 can only have pll_c as a parent, while clk2 can
->> have pll_a or pll_b as parents. By default every clock will be able
->> to use any parent, so a list is only needed if the machine needs a
->> more restrictive policy.
->>
->> assigned-clock-parents should disable automatic reparenting, but allow
->> explicit clk_set_parent(). This will allow clock drivers to start doing
->> reparenting without breaking old DTs.
->
-> I'm generally not a fan of putting all these policies in the device
-> tree. Do you have an example where it wouldn't be possible to do exactly
-> this from the driver itself?
->
-> Maxime
+Vinod Koul (9):
+  dt-bindings: firmware: document Qualcomm SC8180X SCM
+  dt-bindings: PCI: qcom: Document sc8180x properties
+  dt-bindings: phy: qcom,qmp-pcie: fix the sc8180x regs
+  dt-bindings: usb: qcom,dwc3: Add SC8180x binding
+  dt-bindings: interconnect: split SC8180x to own schema
+  scsi: ufs: dt-bindings: Add SC8180x binding
+  dt-bindings: phy: qcom,qmp-ufs: fix the sc8180x regs
+  regulator: dt-bindings: qcom,rpmh: Add compatible for PMC8180
+  dt-bindings: qcom,pdc: Add SC8180x compatible
 
-I'm confused. What's implicit in the example is clk1 and clk2 might
-have *other* possible choices of parent clock and the device tree is
-limiting what the OS is allowed to choose.
+ .../bindings/firmware/qcom,scm.yaml           |    1 +
+ .../bindings/interconnect/qcom,rpmh.yaml      |   11 -
+ .../interconnect/qcom,sc8180x-rpmh.yaml       |   76 +
+ .../interrupt-controller/qcom,pdc.yaml        |    1 +
+ .../devicetree/bindings/pci/qcom,pcie.yaml    |   49 +-
+ .../phy/qcom,ipq8074-qmp-pcie-phy.yaml        |    2 +-
+ .../phy/qcom,msm8996-qmp-ufs-phy.yaml         |   18 +-
+ .../regulator/qcom,rpmh-regulator.yaml        |    4 +
+ .../devicetree/bindings/ufs/qcom,ufs.yaml     |    2 +
+ .../devicetree/bindings/usb/qcom,dwc3.yaml    |    2 +
+ arch/arm64/boot/dts/qcom/Makefile             |    2 +
+ .../boot/dts/qcom/sc8180x-lenovo-flex-5g.dts  |  590 +++
+ arch/arm64/boot/dts/qcom/sc8180x-pmics.dtsi   |  326 ++
+ arch/arm64/boot/dts/qcom/sc8180x-primus.dts   |  706 +++
+ arch/arm64/boot/dts/qcom/sc8180x.dtsi         | 3950 +++++++++++++++++
+ 15 files changed, 5709 insertions(+), 31 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/interconnect/qcom,sc8180x-rpmh.yaml
+ create mode 100644 arch/arm64/boot/dts/qcom/sc8180x-lenovo-flex-5g.dts
+ create mode 100644 arch/arm64/boot/dts/qcom/sc8180x-pmics.dtsi
+ create mode 100644 arch/arm64/boot/dts/qcom/sc8180x-primus.dts
+ create mode 100644 arch/arm64/boot/dts/qcom/sc8180x.dtsi
 
-Why would you put such arbitrary limitations into the driver? They
-would be different from machine to machine, unless the clock tree is
-so simple there is only *one* meaningful way to configure it. Most
-SoCs are complicated enough that there will be tradeoffs depending
-on what peripherals you are using (typically a single machine will
-not use *every* peripheral device provided by the SoC).
+-- 
+2.39.2
+
 
 -- 
 linux-phy mailing list
