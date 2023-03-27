@@ -4,88 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 967D0C7619A
-	for <linux-phy@archiver.kernel.org>; Mon, 27 Mar 2023 08:14:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 61187C7619A
+	for <linux-phy@archiver.kernel.org>; Mon, 27 Mar 2023 09:08:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8/UQFgHjYmtQZ1Bpx4Gdv/UGzTbqyxX5saeTg1qpOOM=; b=xoKI2M4gzd6qyD
-	elRSYg0DsweNRamJ6/aggesn0w4wR3HAalxPYoWdMZLjkzucSe1PgSwv8iPnFM9YVa2oACD9j+bNn
-	KPFi6oHLzmSduFbA/rx/4F6Kzyv8SE+vSYw6JjrppDycf1yxSTbNee+So6QgmtPe3nOOG31tOLomz
-	b7NRWzDtSwSth9wxHEIkq/lou0ovgy3oIwox5YD7HbjZqlpvt3ZreieJqajDDK4W+fJ68WxXe3wnK
-	8tz7xLYhaRXRv7+6JkUbo70t4Mj/T8S8WK0JitiZ1OGXSZrWV7+poYDuiF4/+7GsSu4X6xCe1wguX
-	YpK9CwecFnVBXdo0YZzg==;
+	List-Owner; bh=SA/Zxnc74GBhTyH0+CrLD+zAWY4clcUYBvVb3mXwn8g=; b=xok6S26XYrYM0Y
+	jv1ryrs1nN0vkz3UgygsqJQCwqCg6VfEsFpBqrThtP/MReWIgKvTKs9F4wlxaqgeHmdPqyMY/cc3M
+	uSrmrbh9JG6rOD7tW4ISXnk9CmQYeKJHP/BukpnXZVw3/5VZ9PUpEd7VBVjieaTQbTGCI/3K3pHts
+	uOwU6KQirGMdj0Xkt1xf3+cW0ypxAs7SXUkjip1kB2BXXskjC6RfIt0hd4u48hAMoulOE2LC3oVnA
+	ykcxdOXHH2fh1U2tLsloH+hG8a2p2IEgwXps/Qufz+mnDsm/kiTmr7Ge0/okgVT0Kk6WDZ3vTixwj
+	1YA1KuZCCuiOKS39XIwg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pgi07-00AC04-0v;
-	Mon, 27 Mar 2023 08:14:47 +0000
-Received: from mail-wr1-x435.google.com ([2a00:1450:4864:20::435])
+	id 1pgiqF-00AQAP-2t;
+	Mon, 27 Mar 2023 09:08:39 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pgi03-00ABzW-2r
+	id 1pgiqD-00AQ8R-0N
 	for linux-phy@lists.infradead.org;
-	Mon, 27 Mar 2023 08:14:45 +0000
-Received: by mail-wr1-x435.google.com with SMTP id t4so2483254wra.7
-        for <linux-phy@lists.infradead.org>; Mon, 27 Mar 2023 01:14:43 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1679904882;
-        h=content-transfer-encoding:in-reply-to:organization:from:references
-         :cc:to:content-language:subject:reply-to:user-agent:mime-version
-         :date:message-id:from:to:cc:subject:date:message-id:reply-to;
-        bh=BwkvMWxvHh5fU55a9qvOz8SDqCvIon3uSNtLNbG8XOU=;
-        b=UdZf/oMr3KbsHSRAuiFvMMTDu8dpMZaZN2bBy2dMO8V5T8+1sTaltgiRhqYRiFdAwr
-         LJICXAl2CU5DZK4TdLlVNDH76/5RY1nnG8BocrmI6PkaIVYT4lBt8V8CMe5e+p7xSC2Q
-         xTrz0b8t3fmyY39xVSfxLyAsEY/Bf8qQolTrxjrTwTpj4WUkg8c1o0QOCtKlkBIYz+a5
-         DOBOVaGtloGM7HgNY4eweC5kPKfhVc6idPVY+QpIE8FvfZDWmkCPVKB7kJVueA2XI+Hr
-         v9QRIeZSKCp2huw1u0k0J0Uxg1aQJpm0GxLBx60LdzbjVZTS627QBMcs6IHhu33BfjHm
-         e5kQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112; t=1679904882;
-        h=content-transfer-encoding:in-reply-to:organization:from:references
-         :cc:to:content-language:subject:reply-to:user-agent:mime-version
-         :date:message-id:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=BwkvMWxvHh5fU55a9qvOz8SDqCvIon3uSNtLNbG8XOU=;
-        b=NH/Q8POXIKyK6eLMyWcoN7zfd+kj2ytcxopAYUzSgNPip+fyTcVR1mGh4cFKGEijQf
-         IcpPYKfF0lVE66QXLYqTyLkVXIZi31TwPI2KsC/xvF0yApt4LeKgG7hYyrNDIClS50wV
-         bNj1gDsgd2Kxi4spB28VmQO726+jYCQSYo3uNEJBhGt26I3ZZ3uxNxDYEfxSCqbiHey1
-         G3f4r8WhBBnAJNGAvXfY84b3licodTXkkOCLxuAXdoajvKAO/K/lnmmiCdcM0BlNBrMR
-         XJAzcC6CwdczPrU6cGSJ/VXQ+5nocn/3+PZVaVYQsq1r3Xc+f1As6TvUfM4D9q+ILYfR
-         mSWA==
-X-Gm-Message-State: AAQBX9eXrm//34+vyyKANIXx4z9tU2ux3vVLGW36Qf8j+AYBwmQFr1yX
-	+kg0aujgRtKlAP5n544xciwuDw==
-X-Google-Smtp-Source: AKy350a2SxlyTPUH28dY2TGWRWULx5I+GKY0+7voi0u99VBFWp8d4r2NCj/sVwhLwYgpMXiejLCLGA==
-X-Received: by 2002:adf:f1cb:0:b0:2cf:e8b2:4f76 with SMTP id z11-20020adff1cb000000b002cfe8b24f76mr9392235wro.66.1679904882405;
-        Mon, 27 Mar 2023 01:14:42 -0700 (PDT)
-Received: from [192.168.7.111] (679773502.box.freepro.com. [212.114.21.58])
-        by smtp.gmail.com with ESMTPSA id b3-20020a5d4d83000000b002dfca33ba36sm2907825wru.8.2023.03.27.01.14.41
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 27 Mar 2023 01:14:42 -0700 (PDT)
-Message-ID: <5366f182-854b-105c-be93-efed5ea18ab3@linaro.org>
-Date: Mon, 27 Mar 2023 10:14:41 +0200
+	Mon, 27 Mar 2023 09:08:38 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 32R5Y8fS026908;
+	Mon, 27 Mar 2023 09:08:29 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=date : from : to :
+ cc : subject : message-id : references : mime-version : content-type :
+ in-reply-to; s=qcppdkim1; bh=Mz5+ydCBLSGUFijUagdzN/aLYS95wkYCIdcaJQNrA24=;
+ b=PDwPrdHPhKtO4bMQ6VDYaBYrT1w+NXMb0WlaWbJxzokuit1p+tr9ARQqvK6CmSnLXRfX
+ Ynu4GeiaKdnU8U+zEOi8VThdSl+VS6IcQOLXS89XKINia+93WnzVU1cTsz+jcN1E2XkH
+ 4XzXYvFOgJ60F8aRMWDQJjSYF1KLYlZJYK39YqspYxrBwVThtIQJHelDZ4BF01/DUbPm
+ micKUIm5O7o3W/nfqeXLRKI6jelhe6OyaU+huitrFKTyD3AtFLS+ko6eJ+0iquNcBG8r
+ yZi92xBt9sh59wg3y2ogPvAmU9y37NCb5g+j9fd0/4AQUUqHpXKhSk/jF/YqoDdzWkYz rg== 
+Received: from nasanppmta01.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3pk53ygf8j-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 27 Mar 2023 09:08:29 +0000
+Received: from nasanex01a.na.qualcomm.com (nasanex01a.na.qualcomm.com [10.52.223.231])
+	by NASANPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 32R98SOx004751
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 27 Mar 2023 09:08:28 GMT
+Received: from varda-linux.qualcomm.com (10.80.80.8) by
+ nasanex01a.na.qualcomm.com (10.52.223.231) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.986.41; Mon, 27 Mar 2023 02:08:22 -0700
+Date: Mon, 27 Mar 2023 14:38:19 +0530
+From: Varadarajan Narayanan <quic_varada@quicinc.com>
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+CC: <agross@kernel.org>, <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
+        <vkoul@kernel.org>, <kishon@kernel.org>, <robh+dt@kernel.org>,
+        <krzysztof.kozlowski+dt@linaro.org>, <gregkh@linuxfoundation.org>,
+        <mturquette@baylibre.com>, <sboyd@kernel.org>,
+        <quic_wcheng@quicinc.com>, <linux-arm-msm@vger.kernel.org>,
+        <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
+        <linux-kernel@vger.kernel.org>, <linux-usb@vger.kernel.org>,
+        <linux-clk@vger.kernel.org>
+Subject: Re: [PATCH v3 7/8] arm64: dts: qcom: ipq9574: Add USB related nodes
+Message-ID: <20230327090818.GA28717@varda-linux.qualcomm.com>
+References: <cover.1679479634.git.quic_varada@quicinc.com>
+ <5b7213a4c402ee334ff48f2efe2b920858637ac5.1679479634.git.quic_varada@quicinc.com>
+ <CAA8EJppXuaGx4VhZ9fOBUkD8fECngzJ8pubNC4bm_0M9+64ZqQ@mail.gmail.com>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.8.0
-Subject: Re: [PATCH v2 9/9] arm64: dts: qcom: sm8250: switch USB+DP QMP PHY to
- new style of bindings
-Content-Language: en-US
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
- Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konrad.dybcio@linaro.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring
- <robh+dt@kernel.org>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- Johan Hovold <johan+linaro@kernel.org>, devicetree@vger.kernel.org
-References: <20230326005733.2166354-1-dmitry.baryshkov@linaro.org>
- <20230326005733.2166354-10-dmitry.baryshkov@linaro.org>
-From: Neil Armstrong <neil.armstrong@linaro.org>
-Organization: Linaro Developer Services
-In-Reply-To: <20230326005733.2166354-10-dmitry.baryshkov@linaro.org>
+Content-Disposition: inline
+In-Reply-To: <CAA8EJppXuaGx4VhZ9fOBUkD8fECngzJ8pubNC4bm_0M9+64ZqQ@mail.gmail.com>
+User-Agent: Mutt/1.5.24 (2015-08-30)
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nasanex01a.na.qualcomm.com (10.52.223.231)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: rX0kHCsWRrtF1mwp9NhQt_OYbZYQ4CTO
+X-Proofpoint-ORIG-GUID: rX0kHCsWRrtF1mwp9NhQt_OYbZYQ4CTO
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.254,Aquarius:18.0.942,Hydra:6.0.573,FMLib:17.11.170.22
+ definitions=2023-03-24_11,2023-03-24_01,2023-02-09_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 mlxlogscore=999
+ spamscore=0 clxscore=1015 impostorscore=0 phishscore=0 malwarescore=0
+ adultscore=0 bulkscore=0 suspectscore=0 priorityscore=1501
+ lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2303200000 definitions=main-2303270074
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230327_011443_924612_A0BC3AD6 
-X-CRM114-Status: GOOD (  13.19  )
+X-CRM114-CacheID: sfid-20230327_020837_272160_520BFA25 
+X-CRM114-Status: GOOD (  24.86  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,114 +99,169 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: neil.armstrong@linaro.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 26/03/2023 01:57, Dmitry Baryshkov wrote:
-> Change the USB QMP PHY to use newer style of QMP PHY bindings (single
-> resource region, no per-PHY subnodes).
-> 
-> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-> ---
->   arch/arm64/boot/dts/qcom/sm8250.dtsi | 49 ++++++++--------------------
->   1 file changed, 14 insertions(+), 35 deletions(-)
-> 
-> diff --git a/arch/arm64/boot/dts/qcom/sm8250.dtsi b/arch/arm64/boot/dts/qcom/sm8250.dtsi
-> index 7b78761f2041..24b51fb373b4 100644
-> --- a/arch/arm64/boot/dts/qcom/sm8250.dtsi
-> +++ b/arch/arm64/boot/dts/qcom/sm8250.dtsi
-> @@ -15,6 +15,7 @@
->   #include <dt-bindings/interconnect/qcom,osm-l3.h>
->   #include <dt-bindings/interconnect/qcom,sm8250.h>
->   #include <dt-bindings/mailbox/qcom-ipcc.h>
-> +#include <dt-bindings/phy/phy-qcom-qmp.h>
->   #include <dt-bindings/power/qcom-rpmpd.h>
->   #include <dt-bindings/soc/qcom,apr.h>
->   #include <dt-bindings/soc/qcom,rpmh-rsc.h>
-> @@ -3527,48 +3528,26 @@ usb_2_hsphy: phy@88e4000 {
->   			resets = <&gcc GCC_QUSB2PHY_SEC_BCR>;
->   		};
->   
-> -		usb_1_qmpphy: phy@88e9000 {
-> +		usb_1_qmpphy: phy@88e8000 {
->   			compatible = "qcom,sm8250-qmp-usb3-dp-phy";
-> -			reg = <0 0x088e9000 0 0x200>,
-> -			      <0 0x088e8000 0 0x40>,
-> -			      <0 0x088ea000 0 0x200>;
-> +			reg = <0 0x088e8000 0 0x3000>;
->   			status = "disabled";
-> -			#address-cells = <2>;
-> -			#size-cells = <2>;
-> -			ranges;
->   
->   			clocks = <&gcc GCC_USB3_PRIM_PHY_AUX_CLK>,
->   				 <&rpmhcc RPMH_CXO_CLK>,
-> -				 <&gcc GCC_USB3_PRIM_PHY_COM_AUX_CLK>;
-> -			clock-names = "aux", "ref_clk_src", "com_aux";
-> +				 <&gcc GCC_USB3_PRIM_PHY_COM_AUX_CLK>,
-> +				 <&gcc GCC_USB3_PRIM_PHY_PIPE_CLK>;
-> +			clock-names = "aux",
-> +				      "ref",
-> +				      "com_aux",
-> +				      "usb3_pipe";
->   
->   			resets = <&gcc GCC_USB3_DP_PHY_PRIM_BCR>,
->   				 <&gcc GCC_USB3_PHY_PRIM_BCR>;
->   			reset-names = "phy", "common";
->   
-> -			usb_1_ssphy: usb3-phy@88e9200 {
-> -				reg = <0 0x088e9200 0 0x200>,
-> -				      <0 0x088e9400 0 0x200>,
-> -				      <0 0x088e9c00 0 0x400>,
-> -				      <0 0x088e9600 0 0x200>,
-> -				      <0 0x088e9800 0 0x200>,
-> -				      <0 0x088e9a00 0 0x100>;
-> -				#clock-cells = <0>;
-> -				#phy-cells = <0>;
-> -				clocks = <&gcc GCC_USB3_PRIM_PHY_PIPE_CLK>;
-> -				clock-names = "pipe0";
-> -				clock-output-names = "usb3_phy_pipe_clk_src";
-> -			};
-> -
-> -			dp_phy: dp-phy@88ea200 {
-> -				reg = <0 0x088ea200 0 0x200>,
-> -				      <0 0x088ea400 0 0x200>,
-> -				      <0 0x088eaa00 0 0x200>,
-> -				      <0 0x088ea600 0 0x200>,
-> -				      <0 0x088ea800 0 0x200>;
-> -				#phy-cells = <0>;
-> -				#clock-cells = <1>;
-> -			};
-> +			#clock-cells = <1>;
-> +			#phy-cells = <1>;
->   		};
->   
->   		usb_2_qmpphy: phy@88eb000 {
-> @@ -3713,7 +3692,7 @@ usb_1_dwc3: usb@a600000 {
->   				iommus = <&apps_smmu 0x0 0x0>;
->   				snps,dis_u2_susphy_quirk;
->   				snps,dis_enblslpm_quirk;
-> -				phys = <&usb_1_hsphy>, <&usb_1_ssphy>;
-> +				phys = <&usb_1_hsphy>, <&usb_1_qmpphy QMP_USB43DP_USB3_PHY>;
->   				phy-names = "usb2-phy", "usb3-phy";
->   			};
->   		};
-> @@ -4403,8 +4382,8 @@ dispcc: clock-controller@af00000 {
->   				 <&dsi0_phy 1>,
->   				 <&dsi1_phy 0>,
->   				 <&dsi1_phy 1>,
-> -				 <&dp_phy 0>,
-> -				 <&dp_phy 1>;
-> +				 <&usb_1_qmpphy QMP_USB43DP_DP_LINK_CLK>,
-> +				 <&usb_1_qmpphy QMP_USB43DP_DP_VCO_DIV_CLK>;
->   			clock-names = "bi_tcxo",
->   				      "dsi0_phy_pll_out_byteclk",
->   				      "dsi0_phy_pll_out_dsiclk",
+On Wed, Mar 22, 2023 at 04:41:01PM +0200, Dmitry Baryshkov wrote:
+> On Wed, 22 Mar 2023 at 12:46, Varadarajan Narayanan
+> <quic_varada@quicinc.com> wrote:
+> >
+> > Add USB phy and controller related nodes
+> >
+> > Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
+> > ---
+> >  Changes in v3:
+> >         - Insert the nodes at proper location
+> >
+> >  Changes in v2:
+> >         - Fixed issues flagged by Krzysztof
+> >         - Fix issues reported by make dtbs_check
+> >         - Remove NOC related clocks (to be added with proper
+> >           interconnect support)
+> > ---
+> >  arch/arm64/boot/dts/qcom/ipq9574.dtsi | 86 +++++++++++++++++++++++++++++++++++
+> >  1 file changed, 86 insertions(+)
+> >
+> > diff --git a/arch/arm64/boot/dts/qcom/ipq9574.dtsi b/arch/arm64/boot/dts/qcom/ipq9574.dtsi
+> > index 2bb4053..0943901 100644
+> > --- a/arch/arm64/boot/dts/qcom/ipq9574.dtsi
+> > +++ b/arch/arm64/boot/dts/qcom/ipq9574.dtsi
+> > @@ -215,6 +215,48 @@
+> >                 #size-cells = <1>;
+> >                 ranges = <0 0 0 0xffffffff>;
+> >
+> > +               qusb_phy_0: phy@7b000 {
+> > +                       compatible = "qcom,ipq9574-qusb2-phy";
+> > +                       reg = <0x07b000 0x180>;
+>
+> Please pad addresses to 8 hex digits.
+>
+>
+> > +                       #phy-cells = <0>;
+> > +
+> > +                       clocks = <&gcc GCC_USB0_PHY_CFG_AHB_CLK>,
+> > +                               <&xo_board_clk>;
+> > +                       clock-names = "cfg_ahb", "ref";
+> > +
+> > +                       resets = <&gcc GCC_QUSB2_0_PHY_BCR>;
+> > +                       status = "disabled";
+> > +               };
+> > +
+> > +               ssphy_0: phy@7d000 {
+> > +                       compatible = "qcom,ipq9574-qmp-usb3-phy";
+> > +                       reg = <0x7d000 0x1c4>;
+> > +                       #clock-cells = <1>;
+> > +                       #address-cells = <1>;
+> > +                       #size-cells = <1>;
+> > +                       ranges;
+> > +
+> > +                       clocks = <&gcc GCC_USB0_AUX_CLK>,
+> > +                                <&gcc GCC_USB0_PHY_CFG_AHB_CLK>;
+>
+> Could you please check the indentation here? Vertical lists should be aligned
+>
+> > +                       clock-names = "aux", "cfg_ahb";
+>
+> One item per line
+>
+> > +
+> > +                       resets =  <&gcc GCC_USB0_PHY_BCR>,
+> > +                                <&gcc GCC_USB3PHY_0_PHY_BCR>;
+> > +                       reset-names = "phy","common";
+> > +                       status = "disabled";
+> > +
+> > +                       usb0_ssphy: phy@7d200 {
+>
+> Newer bindings please, without subnodes.
+>
+> > +                               reg = <0x0007d200 0x130>,       /* tx */
+> > +                                     <0x0007d400 0x200>,       /* rx */
+> > +                                     <0x0007d800 0x1f8>,       /* pcs  */
+> > +                                     <0x0007d600 0x044>;       /* pcs misc */
+> > +                               #phy-cells = <0>;
+> > +                               clocks = <&gcc GCC_USB0_PIPE_CLK>;
+> > +                               clock-names = "pipe0";
+> > +                               clock-output-names = "usb0_pipe_clk";
+> > +                       };
+> > +               };
+> > +
+> >                 pcie0_phy: phy@84000 {
+> >                         compatible = "qcom,ipq9574-qmp-gen3x1-pcie-phy";
+> >                         reg = <0x00084000 0x1bc>; /* Serdes PLL */
+> > @@ -436,6 +478,50 @@
+> >                         status = "disabled";
+> >                 };
+> >
+> > +               usb3: usb3@8a00000 {
+> > +                       compatible = "qcom,ipq9574-dwc3", "qcom,dwc3";
+> > +                       reg = <0x8af8800 0x400>;
+> > +                       #address-cells = <1>;
+> > +                       #size-cells = <1>;
+> > +                       ranges;
+> > +
+> > +                       clocks = <&gcc GCC_SNOC_USB_CLK>,
+> > +                                <&gcc GCC_ANOC_USB_AXI_CLK>,
+> > +                                <&gcc GCC_USB0_MASTER_CLK>,
+> > +                                <&gcc GCC_USB0_SLEEP_CLK>,
+> > +                                <&gcc GCC_USB0_MOCK_UTMI_CLK>;
+> > +
+> > +                       clock-names = "sys_noc_axi",
+> > +                                     "anoc_axi",
+> > +                                     "master",
+> > +                                     "sleep",
+> > +                                     "mock_utmi";
+> > +
+> > +                       assigned-clocks = <&gcc GCC_USB0_MASTER_CLK>,
+> > +                                         <&gcc GCC_USB0_MOCK_UTMI_CLK>;
+> > +                       assigned-clock-rates = <200000000>,
+> > +                                              <24000000>;
+>
+> Indentation?
 
-Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
+Will address the above and post.
+
+> > +
+> > +                       resets = <&gcc GCC_USB_BCR>;
+> > +                       status = "disabled";
+> > +
+> > +                       dwc_0: usb@8a00000 {
+> > +                               compatible = "snps,dwc3";
+> > +                               reg = <0x8a00000 0xcd00>;
+> > +                               clocks = <&gcc GCC_USB0_MOCK_UTMI_CLK>;
+> > +                               clock-names = "ref";
+> > +                               interrupts = <GIC_SPI 140 IRQ_TYPE_LEVEL_HIGH>;
+> > +                               phys = <&qusb_phy_0>, <&usb0_ssphy>;
+> > +                               phy-names = "usb2-phy", "usb3-phy";
+> > +                               tx-fifo-resize;
+> > +                               snps,is-utmi-l1-suspend;
+> > +                               snps,hird-threshold = /bits/ 8 <0x0>;
+> > +                               snps,dis_u2_susphy_quirk;
+> > +                               snps,dis_u3_susphy_quirk;
+> > +                               dr_mode = "host";
+>
+> Is dr_mode a property of the host or of the board?
+
+Board.
+
+Thanks
+Varada
+
+> > +                       };
+> > +               };
+> > +
+> >                 intc: interrupt-controller@b000000 {
+> >                         compatible = "qcom,msm-qgic2";
+> >                         reg = <0x0b000000 0x1000>,  /* GICD */
+> > --
+> > 2.7.4
+> >
+>
+>
+> --
+> With best wishes
+> Dmitry
 
 -- 
 linux-phy mailing list
