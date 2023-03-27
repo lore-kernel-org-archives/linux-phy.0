@@ -4,70 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E03E7C7619A
-	for <linux-phy@archiver.kernel.org>; Mon, 27 Mar 2023 11:05:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 592DEC6FD1D
+	for <linux-phy@archiver.kernel.org>; Mon, 27 Mar 2023 14:10:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XJ6GF93oR8PvLnubjgV23PFUcwXJbaNk3E4E2+6uYww=; b=RiVfPD+1dhmuUA
-	QqFPFDtqeZKZByAlSvOLAVLTc/eoNR0CNDB4JzqH60DyMEtWYwz3WvpXlt22ENCk4M5klXXPeMnuP
-	7UMojWP1zawG8WkED0B5ixtQHXL1KL4bgY+x+NeMPgCT2kiuHTOegT+dVaQmy5373rOd6tI1MfzJQ
-	a5hxZwI+V3wFHr5VDzWRccDP5iF/+7Ov+Tw/b+ZTiqcT65s0xaMOtOhMEUm3VsBEyo4r9+fsL79Ut
-	u9HgovXnN2B1khaC0QgJWh3HyxTc/GFMSYiioEZ87uUAB3PF3zwNhLphBxQzn4DsSmKgLXKooCXXY
-	emgnv4phVxTj6+JaeuGw==;
+	List-Owner; bh=0CPUqqf1152dNPlcGzfvqoCWUI5bqR+wXSiGc8g+IbQ=; b=y/K8mlOF+uE4S+
+	PZQUzjgyzFd9enEzBhFzQBV92u9BrvTXxgzxIESLYseNFYKohCuw8kVz13Hi2ko4ie+qGOd5wIv3f
+	8MIxi6R0f0bxO/NnjrSwDYva0qFuzMAhNe+kq80lfYguWT6k9n8MDp8Y56HhhORAmFQd7ARF2Sz7c
+	6RSvre1f4uGm9lSuhh2PutVRkywMbw6GSd61WHUNM3KxQ5+qLjg6ZsB+1NpATP4Dl5sNuKIi6mZOy
+	R1vnhdVLgkx6QWJF9gRiEYUv332sSQbALvwhQEz/tKC6sQe9UGpZtd/ri3UAzKkfYvXwrLrN5JYOL
+	DgGT6yCuBa0b89t0o5wQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pgkex-00Ahzz-1n;
-	Mon, 27 Mar 2023 11:05:07 +0000
-Received: from ex01.ufhost.com ([61.152.239.75])
-	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pgkev-00AhwG-0T;
-	Mon, 27 Mar 2023 11:05:06 +0000
-Received: from EXMBX165.cuchost.com (unknown [175.102.18.54])
-	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
-	(Client CN "EXMBX165", Issuer "EXMBX165" (not verified))
-	by ex01.ufhost.com (Postfix) with ESMTP id 99C8324E1BE;
-	Mon, 27 Mar 2023 19:04:38 +0800 (CST)
-Received: from EXMBX171.cuchost.com (172.16.6.91) by EXMBX165.cuchost.com
- (172.16.6.75) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Mon, 27 Mar
- 2023 19:04:38 +0800
-Received: from [192.168.125.108] (113.72.145.117) by EXMBX171.cuchost.com
- (172.16.6.91) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Mon, 27 Mar
- 2023 19:04:37 +0800
-Message-ID: <2d46a4ab-f5d3-60b2-6650-3a35395c0eb8@starfivetech.com>
-Date: Mon, 27 Mar 2023 19:04:37 +0800
+	id 1pgnXr-00BE2L-35;
+	Mon, 27 Mar 2023 14:09:59 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
+	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
+	id 1pgnXp-00BE1j-2B
+	for linux-phy@lists.infradead.org;
+	Mon, 27 Mar 2023 14:09:58 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 9FACF61297;
+	Mon, 27 Mar 2023 14:09:56 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2CE99C433EF;
+	Mon, 27 Mar 2023 14:09:54 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1679926196;
+	bh=qhleqvSXG55LxvL+uEa9mQ1uZqawiIM0nEiCIToDFzE=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=gyz3rDhZiVPqbbQYupLmUGWcI1BIvh3RYJcqWZuuFKl3ygJh3GXR3R1M9hWXUv9qY
+	 rdl/JEvArv34V2ryq0xWC7VFi2Z3tvIwOrl6AErokW4MQfmapOtZ3hQ6AM+GvSZx0z
+	 G/PEzJtXUyXAZJa8Fblso8ugrxIukM4NSndWNi7gCmlzGLqTnz3BUppmnsu5GvbMvJ
+	 WGA6Re0e5drIsKBQnbX5Ve737LcMqu3SjUOakQ9F402KcbNBT5mTXTPk49dBbziPOJ
+	 wuqFaaOUl+6yvAjkgskdkzv/Q8MhoD1XQ5NXjOpio67D6supKhRshqwW9nMMBUEtlg
+	 EjtXMFKw+HRjQ==
+Date: Mon, 27 Mar 2023 07:12:59 -0700
+From: Bjorn Andersson <andersson@kernel.org>
+To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Lorenzo Pieralisi <lpieralisi@kernel.org>,
+	Bjorn Helgaas <bhelgaas@google.com>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Georgi Djakov <djakov@kernel.org>, Mark Brown <broonie@kernel.org>,
+	linux-arm-msm@vger.kernel.org,
+	Alim Akhtar <alim.akhtar@samsung.com>,
+	Avri Altman <avri.altman@wdc.com>,
+	Bart Van Assche <bvanassche@acm.org>,
+	Thomas Gleixner <tglx@linutronix.de>, Marc Zyngier <maz@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
+	linux-pci@vger.kernel.org,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	linux-phy@lists.infradead.org,
+	Wesley Cheng <quic_wcheng@quicinc.com>, linux-usb@vger.kernel.org,
+	linux-pm@vger.kernel.org, linux-scsi@vger.kernel.org,
+	Liam Girdwood <lgirdwood@gmail.com>
+Subject: Re: [PATCH v2 00/12] Introduce the SC8180x devices
+Message-ID: <20230327141259.bjdtyvhilxuxts62@ripper>
+References: <20230325122444.249507-1-vkoul@kernel.org>
+ <6f6be544-48da-0c22-ea54-e07e35131ec9@linaro.org>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.8.0
-Subject: Re: [PATCH v3 3/5] dt-binding: Add JH7110 USB wrapper layer doc.
-Content-Language: en-US
-To: Philipp Zabel <p.zabel@pengutronix.de>, Emil Renner Berthing
-	<emil.renner.berthing@canonical.com>, Conor Dooley <conor@kernel.org>, "Vinod
- Koul" <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, "Rob
- Herring" <robh+dt@kernel.org>, Krzysztof Kozlowski
-	<krzysztof.kozlowski+dt@linaro.org>, Pawel Laszczak <pawell@cadence.com>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Peter Chen
-	<peter.chen@kernel.org>, Roger Quadros <rogerq@kernel.org>
-CC: <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-	<linux-phy@lists.infradead.org>, <linux-usb@vger.kernel.org>,
-	<linux-riscv@lists.infradead.org>, Paul Walmsley <paul.walmsley@sifive.com>,
-	Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>
-References: <20230315104411.73614-1-minda.chen@starfivetech.com>
- <20230315104411.73614-4-minda.chen@starfivetech.com>
- <7799e176e73d1385322e5efba8479e56544c664b.camel@pengutronix.de>
-From: Minda Chen <minda.chen@starfivetech.com>
-In-Reply-To: <7799e176e73d1385322e5efba8479e56544c664b.camel@pengutronix.de>
-X-Originating-IP: [113.72.145.117]
-X-ClientProxiedBy: EXCAS063.cuchost.com (172.16.6.23) To EXMBX171.cuchost.com
- (172.16.6.91)
-X-YovoleRuleAgent: yovoleflag
+Content-Disposition: inline
+In-Reply-To: <6f6be544-48da-0c22-ea54-e07e35131ec9@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230327_040505_495966_68AE7EF3 
-X-CRM114-Status: UNSURE (   9.77  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230327_070957_768731_9D03530C 
+X-CRM114-Status: GOOD (  14.06  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,44 +89,32 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-CgpPbiAyMDIzLzMvMjMgMTc6MjMsIFBoaWxpcHAgWmFiZWwgd3JvdGU6Cj4gT24gTWksIDIwMjMt
-MDMtMTUgYXQgMTg6NDQgKzA4MDAsIE1pbmRhIENoZW4gd3JvdGU6Cj4+IFRoZSBkdC1iaW5kaW5n
-IGRvYyBvZiBDYWRlbmNlIFVTQlNTLURSRCBjb250cm9sbGVyIHdyYXBwZXIKPj4gbGF5ZXIuCj4+
-IAo+PiBTaWduZWQtb2ZmLWJ5OiBNaW5kYSBDaGVuIDxtaW5kYS5jaGVuQHN0YXJmaXZldGVjaC5j
-b20+Cj4+IC0tLQo+PiDCoC4uLi9iaW5kaW5ncy91c2Ivc3RhcmZpdmUsamg3MTEwLXVzYi55YW1s
-ICAgICB8IDExOSArKysrKysrKysrKysrKysrKysKPj4gwqAxIGZpbGUgY2hhbmdlZCwgMTE5IGlu
-c2VydGlvbnMoKykKPj4gwqBjcmVhdGUgbW9kZSAxMDA2NDQgRG9jdW1lbnRhdGlvbi9kZXZpY2V0
-cmVlL2JpbmRpbmdzL3VzYi9zdGFyZml2ZSxqaDcxMTAtdXNiLnlhbWwKPj4gCj4+IGRpZmYgLS1n
-aXQgYS9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvdXNiL3N0YXJmaXZlLGpoNzEx
-MC11c2IueWFtbCBiL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy91c2Ivc3RhcmZp
-dmUsamg3MTEwLXVzYi55YW1sCj4+IG5ldyBmaWxlIG1vZGUgMTAwNjQ0Cj4+IGluZGV4IDAwMDAw
-MDAwMDAwMC4uYjFhOGRjNmQ3YjRiCj4+IC0tLSAvZGV2L251bGwKPj4gKysrIGIvRG9jdW1lbnRh
-dGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3VzYi9zdGFyZml2ZSxqaDcxMTAtdXNiLnlhbWwKPj4g
-QEAgLTAsMCArMSwxMTkgQEAKPj4gKyMgU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IChHUEwtMi4w
-LW9ubHkgT1IgQlNELTItQ2xhdXNlKQo+PiArJVlBTUwgMS4yCj4+ICstLS0KPj4gKyRpZDogaHR0
-cDovL2RldmljZXRyZWUub3JnL3NjaGVtYXMvdXNiL3N0YXJmaXZlLGpoNzExMC11c2IueWFtbCMK
-Pj4gKyRzY2hlbWE6IGh0dHA6Ly9kZXZpY2V0cmVlLm9yZy9tZXRhLXNjaGVtYXMvY29yZS55YW1s
-Iwo+PiArCj4+ICt0aXRsZTogU3RhckZpdmUgSkg3MTEwIHdyYXBwZXIgbW9kdWxlIGZvciB0aGUg
-Q2FkZW5jZSBVU0JTUy1EUkQgY29udHJvbGxlcgo+PiArCj4+ICttYWludGFpbmVyczoKPj4gKyAg
-LSBNaW5kYSBDaGVuIDxtaW5kYS5jaGVuQHN0YXJmaXZldGVjaC5jb20+Cj4+ICsKPj4gK3Byb3Bl
-cnRpZXM6Cj4+ICsgIGNvbXBhdGlibGU6Cj4+ICsgICAgY29uc3Q6IHN0YXJmaXZlLGpoNzExMC11
-c2IKPj4gKwo+PiArICBjbG9ja3M6Cj4+ICsgICAgaXRlbXM6Cj4+ICsgICAgICAtIGRlc2NyaXB0
-aW9uOiBscG0gY2xvY2sKPj4gKyAgICAgIC0gZGVzY3JpcHRpb246IHN0YiBjbG9jawo+PiArICAg
-ICAgLSBkZXNjcmlwdGlvbjogYXBiIGNsb2NrCj4+ICsgICAgICAtIGRlc2NyaXB0aW9uOiBheGkg
-Y2xvY2sKPj4gKyAgICAgIC0gZGVzY3JpcHRpb246IHV0bWkgYXBiIGNsb2NrCj4+ICsKPj4gKyAg
-Y2xvY2stbmFtZXM6Cj4+ICsgICAgaXRlbXM6Cj4+ICsgICAgICAtIGNvbnN0OiBscG0KPj4gKyAg
-ICAgIC0gY29uc3Q6IHN0Ygo+PiArICAgICAgLSBjb25zdDogYXBiCj4+ICsgICAgICAtIGNvbnN0
-OiBheGkKPj4gKyAgICAgIC0gY29uc3Q6IHV0bWlfYXBiCj4+ICsKPj4gKyAgcmVzZXRzOgo+PiAr
-ICAgIGl0ZW1zOgo+PiArICAgICAgLSBkZXNjcmlwdGlvbjogUFdSVVAgcmVzZXQKPj4gKyAgICAg
-IC0gZGVzY3JpcHRpb246IEFQQiByZXNldAo+PiArICAgICAgLSBkZXNjcmlwdGlvbjogQVhJIHJl
-c2V0Cj4+ICsgICAgICAtIGRlc2NyaXB0aW9uOiBVVE1JX0FQQiByZXNldAo+IAo+IEknZCBhZGQg
-YSAicmVzZXQtbmFtZXMiIHByb3BlcnR5LCBqdXN0IGluIGNhc2UgdGhlcmUgaXMgZXZlciBhIHJl
-YXNvbgo+IHRvIHRyaWdnZXIgYW55IG9mIHRoZSByZXNldHMgaW5kZXBlbmRlbnRseSBmcm9tIHRo
-ZSBvdGhlcnMuCj4gCk9LLCBUaGFua3MKPiByZWdhcmRzCj4gUGhpbGlwcAoKLS0gCmxpbnV4LXBo
-eSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0
-cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+On Mon, Mar 27, 2023 at 09:46:31AM +0200, Krzysztof Kozlowski wrote:
+> On 25/03/2023 13:24, Vinod Koul wrote:
+> > This introduces Qualcomm SC8180x SoC which features in Lenovo Flex 5G
+> > laptop. This also adds support for Primus platform as well as Lenovo Flex 5G
+> > laptop.
+> > 
+> > I would be great if submaintainers can ack the binding patch so that
+> > everything can go thru qcom tree
+> 
+> I think Bjorn recently was rejecting taking bindings patches, so what
+> changed?
+> 
+
+Nothing changed. In the interest of reducing the risk for merge
+conflicts I still think it's best if bindings goes via respective
+maintainer trees; so patch 1 is for me...
+
+Regards,
+Bjorn
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
