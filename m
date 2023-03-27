@@ -4,164 +4,94 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 326B9C7619A
-	for <linux-phy@archiver.kernel.org>; Mon, 27 Mar 2023 05:34:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9F78AC76195
+	for <linux-phy@archiver.kernel.org>; Mon, 27 Mar 2023 07:46:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oYQUg80IuDwxeBW3Qa91pJwtouM3IUkzEDD3uL8zfX4=; b=SIeUQox1XMVQx0
-	umyD0Pszu3ssF+vIHLWg+WCbkhyoejIyrn/silyAebRTHcQYK6Qc4ImH+sOyNbxqJ1FMdAM7S00Ua
-	bSl317cwFGFFtQtHWeOwYOvGyDHrfKdMcnCthAOGEubfwGsmhmjV8ajIHVXQ4R2OPjrONkFuZc9Es
-	PdRAbm4gTilSqfah9iotcqXi3qjxxJGntxkGkb6XFC+YtbXQ3nxrFTRfZbHuAoPthmGbImut2BQgv
-	+hduAr4TR1azrgGZmOafBUtWDja0Axcnkj2HeW3+BLPvxVvZLN0CkZPSVZaXxQ/sHlEH0tx1WFuPB
-	JUpddaBG2KJWPGt0CL5Q==;
+	List-Owner; bh=eFaWRE8LFZvweTUyD5zMnVuphI4PaToWrR0T3wBVdhY=; b=Tmxu9qpuglO1rE
+	9FY8+4dq95Xe3c71/2XkUb8EF2if7AaxTLZnPMJRnnzG5m7C+iRUUSw/VcSJRRBmFToX1Bet9FoZN
+	z0GAc6XyS+G3g2NwYH274BiLxWIhJYWQMGSBRF0n+V5rxGEoXNOpj2Ufru/UVBl3QUsNnJETEuhA3
+	27C8Ehb5yONByEM4cMzwEVud/wr7IRmxY5b5BUYJLzBhosfdR+M0FPk8qnK4Ih/1hyri1IC9EBLXP
+	ma6f02hBe39ej/FeE/HTg571QON+kvYwLdkgGsK44e5xw6PH7MLt76QNQSA4h/+eo92VkWq6afFu8
+	xvTnJVAZnvWxcEzbQGLg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pgfV6-009pJ3-2M;
-	Mon, 27 Mar 2023 05:34:36 +0000
-Received: from mx0b-0014ca01.pphosted.com ([208.86.201.193] helo=mx0a-0014ca01.pphosted.com)
+	id 1pghYu-00A6UI-0k;
+	Mon, 27 Mar 2023 07:46:40 +0000
+Received: from mail-ed1-x533.google.com ([2a00:1450:4864:20::533])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pgfV3-009pHp-0L
+	id 1pghYr-00A6TK-1P
 	for linux-phy@lists.infradead.org;
-	Mon, 27 Mar 2023 05:34:34 +0000
-Received: from pps.filterd (m0042333.ppops.net [127.0.0.1])
-	by mx0b-0014ca01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 32QLWGc0027719;
-	Sun, 26 Mar 2023 22:34:18 -0700
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cadence.com; h=from : to : cc :
- subject : date : message-id : references : in-reply-to : content-type :
- content-transfer-encoding : mime-version; s=proofpoint;
- bh=/81IUI0e5gw2xPqM1tw3Ys8Yy+ICOt08deLUtyoM+V0=;
- b=PcoSBMDiOxOY6U3qh7zWvRI99kW61Kuqkz6pxFMMqnz3xArfpIBOoanwA9d3ViRgHsqB
- 0NtgNKikU4fQdxskGg4Cfg0jMURgJudVE1/VB08BC/hkuGR8fF2e2PBrnm9btyTqY+2m
- MFOoIC9kiaVRwE15rv1MeUnv7vXALyzIdJIUL4BI8YACWaB/kwBXaZsGDPqVRuDm5AED
- Qqm3mJffjGadhODzwDmij0GzlAY/B5TGYmc434ByI4h0TdwdtPkw7VvM30yRtGX73FhR
- DsArW9MunGePaHqzaHikQIZdMneBijzey/Zne7p61JE2zEIINezZKPF2WgQCyZdODBPc kw== 
-Received: from nam11-bn8-obe.outbound.protection.outlook.com (mail-bn8nam11lp2169.outbound.protection.outlook.com [104.47.58.169])
-	by mx0b-0014ca01.pphosted.com (PPS) with ESMTPS id 3phvj0e1je-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Sun, 26 Mar 2023 22:34:18 -0700
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=HhG4bHS5Yq02xLT02sxwVtJnCWOWsY5kSgUqK6AyewUFV3rN7IlKcxVwI08QzPorciT/JoG8yBJfqAVS5csSFpltOaDaCro3qsh+D+buOmPNJsCTfKvmu8RlUBLI8E4LcgCuIY53JSxMo2lzLbz6gfbkcUJHT5FVimpZybQ3lEsjPYZRDSOjGJofu1Of8FaR3VFyRIfYqZMAogpBNCNwpUUejshuUtzV6UPW3GhQgoK5LSlYmkOEZvX99LQRhvBBmZMniJalsW6ebg9T2N8nL1xK+ZduNGM2ogmkKodtFxb8NxBYm+yZ6jstoS1nsILhxy+mlLMPsE3LVHzCkHyBBQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=/81IUI0e5gw2xPqM1tw3Ys8Yy+ICOt08deLUtyoM+V0=;
- b=eJWUIi73I9CrhWJKaKzmnwdkqs0skPl2M74n47UOwEF/l2G3zIhOfey6PTnllxA3kQIzpnljiIxDBLi24N/CobprKCQkDB7CduT6QteC+Ei6emf1ql+7pv4WWjtlD26su9rcOVZh6MJ7nIu8s0jRyyqmEkluaIAENTnlZOl3dutLyItpRCVd/q3S4CWOyXOyHb2Q1A/o73jEkoLDqsoEQo3W3J5BToxwM9c+jZ5rzqQPERr4YVILBwJzQx7wQI2O18H2l7G79zadtCDwrT8zGXvCI+KE/+QbuDqnJlTnZKrFlDXX1DMBZKu2/v6dt/XDdnDYtsJDZO4QcgvoePMamg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=cadence.com; dmarc=pass action=none header.from=cadence.com;
- dkim=pass header.d=cadence.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cadence.com;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=/81IUI0e5gw2xPqM1tw3Ys8Yy+ICOt08deLUtyoM+V0=;
- b=W8TUe14CgIwPctgH7oYH4DV5Y0y2YJzRjplrEgWhT3tqm+JQ8ZGB0jYWQSywMn6Yhy1p5G5BBQb6EaRFPrn2ATT4feCXJDv+WefukrWusrSUUvO3EXs2itPpWsWtN2QPyzZJL9E9gH0jVVqIHdraBXwBHY1DAvs+7XvdF99qz1Y=
-Received: from DM6PR07MB6154.namprd07.prod.outlook.com (2603:10b6:5:17e::20)
- by SJ0PR07MB9666.namprd07.prod.outlook.com (2603:10b6:a03:4e2::14) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6178.38; Mon, 27 Mar
- 2023 05:34:09 +0000
-Received: from DM6PR07MB6154.namprd07.prod.outlook.com
- ([fe80::6d9d:8f21:f49b:6acc]) by DM6PR07MB6154.namprd07.prod.outlook.com
- ([fe80::6d9d:8f21:f49b:6acc%5]) with mapi id 15.20.6178.041; Mon, 27 Mar 2023
- 05:34:08 +0000
-From: Swapnil Kashinath Jakhade <sjakhade@cadence.com>
-To: Roger Quadros <rogerq@kernel.org>, "vkoul@kernel.org" <vkoul@kernel.org>,
-        "kishon@kernel.org" <kishon@kernel.org>,
-        "linux-phy@lists.infradead.org"
-	<linux-phy@lists.infradead.org>,
-        "linux-kernel@vger.kernel.org"
-	<linux-kernel@vger.kernel.org>
-CC: Milind Parab <mparab@cadence.com>
-Subject: RE: [PATCH] phy: cadence: Sierra: Add PCIe + SGMII PHY multilink
- configuration
-Thread-Topic: [PATCH] phy: cadence: Sierra: Add PCIe + SGMII PHY multilink
- configuration
-Thread-Index: AQHZRTVZZt7PSGILJ0qEJdebsUpxC67YBBOAgDZMgeA=
-Date: Mon, 27 Mar 2023 05:34:08 +0000
-Message-ID:  <DM6PR07MB615438BAA6DA35E5FFE4737FC58B9@DM6PR07MB6154.namprd07.prod.outlook.com>
-References: <20230220141216.25326-1-sjakhade@cadence.com>
- <c7bdaf8f-d377-9fdc-c11a-747c65775b3c@kernel.org>
-In-Reply-To: <c7bdaf8f-d377-9fdc-c11a-747c65775b3c@kernel.org>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-dg-ref:  PG1ldGE+PGF0IG5tPSJib2R5LnR4dCIgcD0iYzpcdXNlcnNcc2pha2hhZGVcYXBwZGF0YVxyb2FtaW5nXDA5ZDg0OWI2LTMyZDMtNGE0MC04NWVlLTZiODRiYTI5ZTM1Ylxtc2dzXG1zZy1mZDhhN2ZjNS1jYzYwLTExZWQtODVlNC1jOGY3NTA0NDIyZDhcYW1lLXRlc3RcZmQ4YTdmYzctY2M2MC0xMWVkLTg1ZTQtYzhmNzUwNDQyMmQ4Ym9keS50eHQiIHN6PSI5NTEiIHQ9IjEzMzI0MzY4ODQ3MTI5MzAwNyIgaD0icU9ieGQwSTFSVlFuTXhBSU12QjRWVk5kZVR3PSIgaWQ9IiIgYmw9IjAiIGJvPSIxIi8+PC9tZXRhPg==
-x-dg-rorf: true
-x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: DM6PR07MB6154:EE_|SJ0PR07MB9666:EE_
-x-ms-office365-filtering-correlation-id: b3b97cdf-9837-4bea-4137-08db2e84e320
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info:  betnF/mc+RAopgT/vycFl+Nfo3Pkpg5oUrz/3UG59MoqqCRtcgi9akcC9zy8xZ69ivFEgnHgXvVbDV5Plh3gXkiXYdjduXJjallX8c1WOUo4YeHKVw4SAzVIhuaWnVGapS1dpif/D9VVPanuDIFGlXaQ0tvoT3iFgOEUxaT55qL1WGJlshu7BswBr6pCq9qduwr0K1WM/O4j38Vnpp1Vnlyz9Rm6PyjC1chth4P6njmb9nSOvVj9v3as5RUYmF1x5mPJ+XZrGGE5eUwWWhOQJbTUeQ7In2wBWJfLcLLVVL0FUtrb40DiWgYTGorfkvBXWgVuQv6PuGat3dAynCHailrv5Xz9wFhmNdK7DBy8FMY/jlheho7YqcTGVKv0WUhV5UG/Tdur3CSN3Xw/Ekgs7Fm4HCCo1KG0+X57eSdaHEZnDcFaHTLOlNl/h6O8AwnVLITq1Y36AM1Vkl8tn7MLOOdS3CwKCmzVIUhCsqWu06gKKVHhZ08tPO4VMetzm1KKeiL6xGX+gZ+V2koyp427XO1pam6bFb5ABk+4ccETrQQ4nyeqMH/VZqdTrH6KcUmWpYAmeL/I7akgqHaQMtHLz+ge17XY1Eln3NmTTEXctV71n1OBTfzkn24PYW92wPTR6b/Uwr/6oHnHFdp9X8wr/85hMoudfxLB5evlVfx+hc4=
-x-forefront-antispam-report:  CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DM6PR07MB6154.namprd07.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230028)(4636009)(366004)(346002)(136003)(396003)(39860400002)(376002)(36092001)(451199021)(8676002)(83380400001)(52536014)(4326008)(53546011)(26005)(6506007)(8936002)(7696005)(186003)(9686003)(478600001)(64756008)(33656002)(66476007)(86362001)(110136005)(71200400001)(66556008)(66946007)(4744005)(38070700005)(316002)(66446008)(55016003)(38100700002)(122000001)(41300700001)(2906002)(5660300002)(76116006)(107886003);DIR:OUT;SFP:1101;
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0:  =?utf-8?B?WXhPemJOYlhwRlNKTTJOTVRHWURveUxFQzlCcUxXOVRGVkZSU2lCaXVrc1FI?=
- =?utf-8?B?RmFzT2ZHUXhmcWZZQVhNTUhpUXdldGZMdGV1aGkvQUdNWEwyejk2dm9rSURr?=
- =?utf-8?B?WVVkclZtWWtRRXBCUHE3RGpWYStFbWFvZkNUbThORkp1M2E1dDJrYTZwT2NI?=
- =?utf-8?B?SjY2S3RTL29WcWVLanNaMlh6UnZFRjRPUUI4M3FNa3V3dTEyOHFtS1ZuZTRO?=
- =?utf-8?B?ZTVBSHNWQXJlWlVpdVNPY0lCNkM0YWxWYkFSOEpMTzNWS09DeEk2WEtncG44?=
- =?utf-8?B?a3YxeERGb0F4bDFseGwyVlJZZnJQZUxuSTFRTXN4VkZ0UGo1b0F0UGc4V0lv?=
- =?utf-8?B?OEFWdy9VSDNtclJRYVJUcDlOckRGd2xnOUZJTVhHbWt4dWx1VlJyL1NiL3R2?=
- =?utf-8?B?N1ZOdWpxT3N4Tk1WQmpuZlJmZFNlY3VQUFhLd3QwWlloMjFzdGJZdjlvWmlI?=
- =?utf-8?B?a0tQWm15Z1N5Z09MeUUrNnFiNWlqc3c5MktucktvbW5jcWI0TlIzVDJ1Y1NO?=
- =?utf-8?B?b3A4aHpiWVRneG1NOTdZOUlsb0V3T2R3anVhM001TEFvdVYwTUxxR24vQTQv?=
- =?utf-8?B?RkRicGNYWmxJU3RNMzA5dlR1aWtkS3hBQ2xLR0VncXF5Wi9tTzg4MjVqRURn?=
- =?utf-8?B?RWMxSG9QaDgrMWdIRVBocDZhSDkrc2EwUFhNcHVMOThhd2VYcGYzVnYzbWJR?=
- =?utf-8?B?ZU14dUp0K2NsYlBlV045WEc2NXFrYlM5Z0hLTUtzcWNmaVVCVnI0NTdZRFYy?=
- =?utf-8?B?ajV3RFpPL1d5dkNydlJQNmRMTXB2eE16d1VwMlZWS3BLWDdOczdKaURXWlN3?=
- =?utf-8?B?bHcreWlrVFFQNWdVZ21VQXBTZ1RzYzFwQXhMU0VOZkxpbW83UTNPYnhlWW1X?=
- =?utf-8?B?dHJ5MWsrMWJRUitRZ1Nkc09vdktMckFlRlllTmZxWVBXSlNQN0svSEZnK0sw?=
- =?utf-8?B?aSs3ZU8vQm1zbDE5REt3aWtlSXp6c0tidldEZ3BPSWJ6SFNWazRpWS9waUIv?=
- =?utf-8?B?WWtEZE5UVkQ1WTlwMURvU0ZWeGJoeWlGQzJkRDNORzhvaTgrQWE4L2xzQkNr?=
- =?utf-8?B?bDV3b05KV1NKa3VTK0JEWm0rYmNqUkd6UytoRDJkQlZNanNxR1FERlhORE42?=
- =?utf-8?B?anVnOTJGeHRWM2xqQjVCQVg1alBMeW5ERW44MEhGNjF5YWNnV2h6TUFlV25w?=
- =?utf-8?B?Q1ZLNUpFQXZMWEloUGNkTGlHRExOcG5QWnJqb1VBZWdVV2lFOThpYkVWTDI1?=
- =?utf-8?B?SWgrdzZDT2drOC90T29SSDFsS3JaaFcrOGdmSHZoc0dRRloveTl4dytZMjk1?=
- =?utf-8?B?Y09ydVp0cmtNZFRIUHk4SFIvMURBWVVFc2tDdkdsZjNpYmpldyt6NXRBRkd0?=
- =?utf-8?B?TDRXc1NPWFRyb0FWR1h3b1ErSTA2MWlpMDk3UnhWcVkyWnFVVmk1NmlsZTRw?=
- =?utf-8?B?QmczaHhzdVpRWFEyaTBRenZkdWJpQURuOVltaHlXcG5LcEVjQVV4bVR5Y25V?=
- =?utf-8?B?SDVDeFdnUkxRd0pRUnZwanhKNnRpbEt2N2lTT1AvNXpuR3FFZzJMODJOQWJ1?=
- =?utf-8?B?dzJtR0toQnRzR2JwbjBtV1lrZTJiZTdiRzdxRVlscDdFK1BEc0E1M0pBWmR2?=
- =?utf-8?B?NzVhVXN6UitBcHFVcHZydC80bXdPN2VRRUxuRmQxK0ZOWWRkd2ZEVFNWeG5Q?=
- =?utf-8?B?Tm5RZElXWGdiWjUwcFlZdlhpckdoVThFTnNJaTB3MmhTV0ZuYmRLRlFTNG1M?=
- =?utf-8?B?NkV5YVdhRklLVU5qZkl6OVB4aDlUSWxKbGRoVnRaaFNCanNOaSt6Tm9KQm9Y?=
- =?utf-8?B?VXRCRDZyc1FZTzgwS25LbXo3S2hpOUxpYkdrK0c3WWp3Y1hCUElaQUU4emZa?=
- =?utf-8?B?d21KWURsN0RDM25pWE5QMXJoZUN0ZkMxYUlCdG5OSEJRWmd1Nm82dmVMVTA1?=
- =?utf-8?B?eGVVZnlKR3NDSWZlOWJPTG0vYlF2UG1LTm9VbnFnclc1akl4azRLa0NjWUdC?=
- =?utf-8?B?TkZCRzI4V1UvVTVTdjlOczBYY2Z4U21WNE0xWjg5eHhkRXNJbUZ5Tjl6OHl5?=
- =?utf-8?B?MmZIVFF4cnFGblBQbUt2T3V2VWREYWxkNXdrVVNtRjNWdTJtSmVjTThDdlln?=
- =?utf-8?B?bXNOSndvNmx6aWhnVzZPMHR4Nm52VUhrWkg0ZFhueUlHem4zZlJwTXVRRUVQ?=
- =?utf-8?B?cXc9PQ==?=
+	Mon, 27 Mar 2023 07:46:38 +0000
+Received: by mail-ed1-x533.google.com with SMTP id er18so20789718edb.9
+        for <linux-phy@lists.infradead.org>; Mon, 27 Mar 2023 00:46:34 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1679903193;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=Bb4tmemzNzPfIOjPtgMNPF0CGomNiXxN8XvI9oRSmNI=;
+        b=VOfYyK9i6gZs8IWKGfI37YsIXxvoNnvPus05sLgBEuQYEVjULkcjsjyFNivEOsYqvf
+         FDYabVFqnS1vndkA7pAb61k2xYxFdDu2+xLecPJuE2FIXTU4bndsTakmFPrJAkt0E44c
+         NTJldoufbchjv82hpKqsFaXg5TmLrDoPsY/STlri88zmsTVABenlQmfHInDPDblJE1Ks
+         xgB/szC11Y2g8HBr0Fn1Q9A1/UHPMZI1v78/6S02XjYf9kgLd/WKyJFWmZ0XIbBI9FgR
+         bOsJzirVpDJMdkimwZM8u7Q7Bs4mmxcerQ3hC0PcKvea6cICA28v4JaWajIg7BsoYqNm
+         brMQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112; t=1679903193;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=Bb4tmemzNzPfIOjPtgMNPF0CGomNiXxN8XvI9oRSmNI=;
+        b=MGyY++Ix0IXN5nrAo6HIBplIB+FMNAOe4Ulc+c8mvkITOQ5PATCLeeY6+n8LdI2tJ+
+         XxrY5sxkERRBoGD97FJVABc/lZNlZT86LqxngetmSkkrSrNRvSWgkB/aiSUm9PtWIo/F
+         BHh5bAR4QLs/RyLghFGG3Z0heVg+RCFR/xL6h14g1DsX19vGnHA2JY7p5g0qXK8gzZCJ
+         eyBSrWo9tCCjpc7WiRzfa1M59UQWN5q1ULdHNFahjaXUv+DF7lkVIAhAFD+n1uAE0sRQ
+         s1LzA7MQFA1fjgHLz8GLFX7U1v011a5gj4Zf+VsZmrxEzp1XEDl1meRoOklSk7qith3R
+         jo7A==
+X-Gm-Message-State: AAQBX9cU9tS12nDIB4oUeAcSz6w3LeempG6wywa/aA8cSX+c8umvD6TW
+	KIeOZeFlRNxnFzB5EJPynu3Dxg==
+X-Google-Smtp-Source: AKy350ZNWA0feM++fE9Wdn2rh/TytZ36eDYbHVPI+fh8qG3pqwsASZFFXhljXwAi23S7uHcsc2ijNA==
+X-Received: by 2002:aa7:c646:0:b0:4a0:e305:a0de with SMTP id z6-20020aa7c646000000b004a0e305a0demr11834978edr.19.1679903193519;
+        Mon, 27 Mar 2023 00:46:33 -0700 (PDT)
+Received: from ?IPV6:2a02:810d:15c0:828:198e:c1a5:309b:d678? ([2a02:810d:15c0:828:198e:c1a5:309b:d678])
+        by smtp.gmail.com with ESMTPSA id v6-20020a50d086000000b004fb00831851sm14246435edd.66.2023.03.27.00.46.31
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 27 Mar 2023 00:46:33 -0700 (PDT)
+Message-ID: <6f6be544-48da-0c22-ea54-e07e35131ec9@linaro.org>
+Date: Mon, 27 Mar 2023 09:46:31 +0200
 MIME-Version: 1.0
-X-OriginatorOrg: cadence.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: DM6PR07MB6154.namprd07.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: b3b97cdf-9837-4bea-4137-08db2e84e320
-X-MS-Exchange-CrossTenant-originalarrivaltime: 27 Mar 2023 05:34:08.3534
- (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: d36035c5-6ce6-4662-a3dc-e762e61ae4c9
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: ze5zGTzRxzdGSdNi6C6qrCXqYBgr0qscvYRZQ90CgSUz3MvzY86EFslqEaWpl1k7wDJdrVZHzARhx9dQR5I8639kJ5okrE/Ig2vnrIIpnDI=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SJ0PR07MB9666
-X-Proofpoint-GUID: o39Dk0_if5inIDSMVdDH4Qn2TfDREtdO
-X-Proofpoint-ORIG-GUID: o39Dk0_if5inIDSMVdDH4Qn2TfDREtdO
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.254,Aquarius:18.0.942,Hydra:6.0.573,FMLib:17.11.170.22
- definitions=2023-03-24_11,2023-03-24_01,2023-02-09_01
-X-Proofpoint-Spam-Details: rule=outbound_check_notspam policy=outbound_check score=0 impostorscore=0
- priorityscore=1501 suspectscore=0 mlxlogscore=998 spamscore=0 mlxscore=0
- malwarescore=0 phishscore=0 adultscore=0 clxscore=1011 bulkscore=0
- lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2303200000 definitions=main-2303270046
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.9.0
+Subject: Re: [PATCH v2 00/12] Introduce the SC8180x devices
+Content-Language: en-US
+To: Vinod Koul <vkoul@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
+ Lorenzo Pieralisi <lpieralisi@kernel.org>,
+ Bjorn Helgaas <bhelgaas@google.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Georgi Djakov <djakov@kernel.org>, Mark Brown <broonie@kernel.org>
+Cc: linux-arm-msm@vger.kernel.org, Alim Akhtar <alim.akhtar@samsung.com>,
+ Avri Altman <avri.altman@wdc.com>, Bart Van Assche <bvanassche@acm.org>,
+ Thomas Gleixner <tglx@linutronix.de>, Marc Zyngier <maz@kernel.org>,
+ Konrad Dybcio <konrad.dybcio@linaro.org>, Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ =?UTF-8?Q?Krzysztof_Wilczy=c5=84ski?= <kw@linux.com>,
+ linux-pci@vger.kernel.org, Kishon Vijay Abraham I <kishon@kernel.org>,
+ linux-phy@lists.infradead.org, Wesley Cheng <quic_wcheng@quicinc.com>,
+ linux-usb@vger.kernel.org, linux-pm@vger.kernel.org,
+ linux-scsi@vger.kernel.org, Liam Girdwood <lgirdwood@gmail.com>
+References: <20230325122444.249507-1-vkoul@kernel.org>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <20230325122444.249507-1-vkoul@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230326_223433_748590_B6A9FBB6 
-X-CRM114-Status: GOOD (  14.16  )
+X-CRM114-CacheID: sfid-20230327_004637_474944_86A1D509 
+X-CRM114-Status: UNSURE (   9.70  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -178,35 +108,21 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Vinod,
+On 25/03/2023 13:24, Vinod Koul wrote:
+> This introduces Qualcomm SC8180x SoC which features in Lenovo Flex 5G
+> laptop. This also adds support for Primus platform as well as Lenovo Flex 5G
+> laptop.
+> 
+> I would be great if submaintainers can ack the binding patch so that
+> everything can go thru qcom tree
 
-> -----Original Message-----
-> From: Roger Quadros <rogerq@kernel.org>
-> Sent: Monday, February 20, 2023 9:50 PM
-> To: Swapnil Kashinath Jakhade <sjakhade@cadence.com>;
-> vkoul@kernel.org; kishon@kernel.org; linux-phy@lists.infradead.org; linux-
-> kernel@vger.kernel.org
-> Cc: Milind Parab <mparab@cadence.com>
-> Subject: Re: [PATCH] phy: cadence: Sierra: Add PCIe + SGMII PHY multilink
-> configuration
-> 
-> EXTERNAL MAIL
-> 
-> 
-> 
-> 
-> On 20/02/2023 16:12, Swapnil Jakhade wrote:
-> > Add register sequences for PCIe + SGMII PHY multilink configuration.
-> > This has been validated on TI J7 platforms.
-> >
-> > Signed-off-by: Swapnil Jakhade <sjakhade@cadence.com>
-> 
-> Reviewed-by: Roger Quadros <rogerq@kernel.org>
+I think Bjorn recently was rejecting taking bindings patches, so what
+changed?
 
-Could you please consider reviewing and merging this patch.
+Best regards,
+Krzysztof
 
-Thanks & regards,
-Swapnil
+
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
