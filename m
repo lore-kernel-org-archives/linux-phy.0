@@ -4,86 +4,164 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AD781C761AF
-	for <linux-phy@archiver.kernel.org>; Sun, 26 Mar 2023 02:01:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 326B9C7619A
+	for <linux-phy@archiver.kernel.org>; Mon, 27 Mar 2023 05:34:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rucMerKasmfwAwWjqpMOOWciJf/3Za3kBDuEYHsQD2Q=; b=BTFhGkdXrrPNj/
-	xN0U3NIcVQjVh9WkcDyxhrNeZree99yB5rs1IbMkBl3NEXR8HJFo93bzHxhg7t0y+tDkH47OTXX/9
-	Fq1AkUT4e+YsL4brXzW7DVsf8uC0bBh8oQ92a+0cRmC450brLsTo4L2mKVAT8g0K4GS7pFEB2qR6o
-	GEt0anQ/c5z5Dl5el9pC3DBF68aKIjmcS0Ph8OcvDHmRmNT7pgKaNUYOQhAlChaDd4RQTuhB1ozOb
-	F7B8xxDPvhEdxZECnQpOL9rFJOCIN11XhoJzMlXr4NUmbnDZnBg5doFgWSsP0U5MkkWHHwP2SLPVz
-	w4I+AoV3yHeXMntrtt2w==;
+	List-Owner; bh=oYQUg80IuDwxeBW3Qa91pJwtouM3IUkzEDD3uL8zfX4=; b=SIeUQox1XMVQx0
+	umyD0Pszu3ssF+vIHLWg+WCbkhyoejIyrn/silyAebRTHcQYK6Qc4ImH+sOyNbxqJ1FMdAM7S00Ua
+	bSl317cwFGFFtQtHWeOwYOvGyDHrfKdMcnCthAOGEubfwGsmhmjV8ajIHVXQ4R2OPjrONkFuZc9Es
+	PdRAbm4gTilSqfah9iotcqXi3qjxxJGntxkGkb6XFC+YtbXQ3nxrFTRfZbHuAoPthmGbImut2BQgv
+	+hduAr4TR1azrgGZmOafBUtWDja0Axcnkj2HeW3+BLPvxVvZLN0CkZPSVZaXxQ/sHlEH0tx1WFuPB
+	JUpddaBG2KJWPGt0CL5Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pgFhj-007pY9-0Q;
-	Sun, 26 Mar 2023 02:01:55 +0000
-Received: from mail-lf1-x12b.google.com ([2a00:1450:4864:20::12b])
+	id 1pgfV6-009pJ3-2M;
+	Mon, 27 Mar 2023 05:34:36 +0000
+Received: from mx0b-0014ca01.pphosted.com ([208.86.201.193] helo=mx0a-0014ca01.pphosted.com)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pgEhX-007jpU-0R
+	id 1pgfV3-009pHp-0L
 	for linux-phy@lists.infradead.org;
-	Sun, 26 Mar 2023 00:57:41 +0000
-Received: by mail-lf1-x12b.google.com with SMTP id y20so6960378lfj.2
-        for <linux-phy@lists.infradead.org>; Sat, 25 Mar 2023 17:57:36 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1679792255;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=GBv1pWYR15qOvcAYz4zjAq269yr5hF0uWbugrVtKVm4=;
-        b=W8dx0WC1Q/36S20wdXE+4B6TTxsmkeoPegGYirlmc6ePSehHhGHnnKbzNOMGbXP9i2
-         +cqCRSkoYkuSMSyzwB60t8cb0DaA1nOK+VFk0oAVGepOn7CBDkLSCJsqwlUG3K0gAl//
-         P9XlHjygOPf63/B29U63IuvRBW1tuZeYJwpjMjGbynLK3fZ2qCoVn13qqF1i83TKcLhN
-         D780oc9QaRM68QVe5gzrZEm0dZM7avcuXVE90Y6W9WmaCmJkvKPd8Y/B24iVZ/dzPol5
-         m3kM26idxlpR4SIIiyN+WySHzUetDwHrJXi0n9FvdZDXFBaSwpfttwLqaUv9W6Co0R/m
-         qPEw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112; t=1679792255;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=GBv1pWYR15qOvcAYz4zjAq269yr5hF0uWbugrVtKVm4=;
-        b=43FYQjBGgxT/ke/fmMGPwWnw5WHfRMMedizpxpFl4JG65nxp+mNNUpwGSKKMs7QQGe
-         BZVnxX3fGQOeyi8PKG0YUP8kPoUMt5i2CbuhTCxBkf8yHFBJUMQKAPOcfkWzxO3iTM1V
-         qFXvQVQZu78NMA4vFe04LCAQPqHL7pVWEriEweWHIA9c/fp0MdNPfru3hyrgZPfn0pno
-         1shlXWk/t71x5tms3LOuW1yDlZQ4SkOx4yJ5OeTN/yF/Kln33HYUM4DvjjI6tHEjlgcP
-         bQxWXqwPnF2A0U09txE7WzD5K8qW8Ryn4fKbhzTA7bKtf+UO59D0qj2TDxONOnH6vBqZ
-         MbJQ==
-X-Gm-Message-State: AAQBX9c2tJD7angtw7BkKBuD6dEUAta67dBI6lclZ7OkmoNYTFXt6v3a
-	L9PyvpTids3g6sA3hnqRW2NjuA==
-X-Google-Smtp-Source: AKy350YIEUYfsbuGCudfcH+H2jClJUfhXY9E08yBAaiu7I2GiCFALFkWuzbz4dSuD5xuSxAISz9DHg==
-X-Received: by 2002:ac2:5239:0:b0:4dd:afad:8afe with SMTP id i25-20020ac25239000000b004ddafad8afemr1973845lfl.27.1679792254798;
-        Sat, 25 Mar 2023 17:57:34 -0700 (PDT)
-Received: from umbar.unikie.fi ([192.130.178.91])
-        by smtp.gmail.com with ESMTPSA id n13-20020ac242cd000000b004e7fa99f3f4sm3996858lfl.265.2023.03.25.17.57.34
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 25 Mar 2023 17:57:34 -0700 (PDT)
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-To: Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
-Cc: linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	Johan Hovold <johan+linaro@kernel.org>,
-	devicetree@vger.kernel.org
-Subject: [PATCH v2 1/9] dt-bindings: phy: migrate combo QMP PHY bindings to qcom,sc8280xp-qmp-usb43dp-phy.yaml
-Date: Sun, 26 Mar 2023 03:57:25 +0300
-Message-Id: <20230326005733.2166354-2-dmitry.baryshkov@linaro.org>
-X-Mailer: git-send-email 2.30.2
-In-Reply-To: <20230326005733.2166354-1-dmitry.baryshkov@linaro.org>
-References: <20230326005733.2166354-1-dmitry.baryshkov@linaro.org>
+	Mon, 27 Mar 2023 05:34:34 +0000
+Received: from pps.filterd (m0042333.ppops.net [127.0.0.1])
+	by mx0b-0014ca01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 32QLWGc0027719;
+	Sun, 26 Mar 2023 22:34:18 -0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cadence.com; h=from : to : cc :
+ subject : date : message-id : references : in-reply-to : content-type :
+ content-transfer-encoding : mime-version; s=proofpoint;
+ bh=/81IUI0e5gw2xPqM1tw3Ys8Yy+ICOt08deLUtyoM+V0=;
+ b=PcoSBMDiOxOY6U3qh7zWvRI99kW61Kuqkz6pxFMMqnz3xArfpIBOoanwA9d3ViRgHsqB
+ 0NtgNKikU4fQdxskGg4Cfg0jMURgJudVE1/VB08BC/hkuGR8fF2e2PBrnm9btyTqY+2m
+ MFOoIC9kiaVRwE15rv1MeUnv7vXALyzIdJIUL4BI8YACWaB/kwBXaZsGDPqVRuDm5AED
+ Qqm3mJffjGadhODzwDmij0GzlAY/B5TGYmc434ByI4h0TdwdtPkw7VvM30yRtGX73FhR
+ DsArW9MunGePaHqzaHikQIZdMneBijzey/Zne7p61JE2zEIINezZKPF2WgQCyZdODBPc kw== 
+Received: from nam11-bn8-obe.outbound.protection.outlook.com (mail-bn8nam11lp2169.outbound.protection.outlook.com [104.47.58.169])
+	by mx0b-0014ca01.pphosted.com (PPS) with ESMTPS id 3phvj0e1je-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Sun, 26 Mar 2023 22:34:18 -0700
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=HhG4bHS5Yq02xLT02sxwVtJnCWOWsY5kSgUqK6AyewUFV3rN7IlKcxVwI08QzPorciT/JoG8yBJfqAVS5csSFpltOaDaCro3qsh+D+buOmPNJsCTfKvmu8RlUBLI8E4LcgCuIY53JSxMo2lzLbz6gfbkcUJHT5FVimpZybQ3lEsjPYZRDSOjGJofu1Of8FaR3VFyRIfYqZMAogpBNCNwpUUejshuUtzV6UPW3GhQgoK5LSlYmkOEZvX99LQRhvBBmZMniJalsW6ebg9T2N8nL1xK+ZduNGM2ogmkKodtFxb8NxBYm+yZ6jstoS1nsILhxy+mlLMPsE3LVHzCkHyBBQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=/81IUI0e5gw2xPqM1tw3Ys8Yy+ICOt08deLUtyoM+V0=;
+ b=eJWUIi73I9CrhWJKaKzmnwdkqs0skPl2M74n47UOwEF/l2G3zIhOfey6PTnllxA3kQIzpnljiIxDBLi24N/CobprKCQkDB7CduT6QteC+Ei6emf1ql+7pv4WWjtlD26su9rcOVZh6MJ7nIu8s0jRyyqmEkluaIAENTnlZOl3dutLyItpRCVd/q3S4CWOyXOyHb2Q1A/o73jEkoLDqsoEQo3W3J5BToxwM9c+jZ5rzqQPERr4YVILBwJzQx7wQI2O18H2l7G79zadtCDwrT8zGXvCI+KE/+QbuDqnJlTnZKrFlDXX1DMBZKu2/v6dt/XDdnDYtsJDZO4QcgvoePMamg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=cadence.com; dmarc=pass action=none header.from=cadence.com;
+ dkim=pass header.d=cadence.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cadence.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=/81IUI0e5gw2xPqM1tw3Ys8Yy+ICOt08deLUtyoM+V0=;
+ b=W8TUe14CgIwPctgH7oYH4DV5Y0y2YJzRjplrEgWhT3tqm+JQ8ZGB0jYWQSywMn6Yhy1p5G5BBQb6EaRFPrn2ATT4feCXJDv+WefukrWusrSUUvO3EXs2itPpWsWtN2QPyzZJL9E9gH0jVVqIHdraBXwBHY1DAvs+7XvdF99qz1Y=
+Received: from DM6PR07MB6154.namprd07.prod.outlook.com (2603:10b6:5:17e::20)
+ by SJ0PR07MB9666.namprd07.prod.outlook.com (2603:10b6:a03:4e2::14) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6178.38; Mon, 27 Mar
+ 2023 05:34:09 +0000
+Received: from DM6PR07MB6154.namprd07.prod.outlook.com
+ ([fe80::6d9d:8f21:f49b:6acc]) by DM6PR07MB6154.namprd07.prod.outlook.com
+ ([fe80::6d9d:8f21:f49b:6acc%5]) with mapi id 15.20.6178.041; Mon, 27 Mar 2023
+ 05:34:08 +0000
+From: Swapnil Kashinath Jakhade <sjakhade@cadence.com>
+To: Roger Quadros <rogerq@kernel.org>, "vkoul@kernel.org" <vkoul@kernel.org>,
+        "kishon@kernel.org" <kishon@kernel.org>,
+        "linux-phy@lists.infradead.org"
+	<linux-phy@lists.infradead.org>,
+        "linux-kernel@vger.kernel.org"
+	<linux-kernel@vger.kernel.org>
+CC: Milind Parab <mparab@cadence.com>
+Subject: RE: [PATCH] phy: cadence: Sierra: Add PCIe + SGMII PHY multilink
+ configuration
+Thread-Topic: [PATCH] phy: cadence: Sierra: Add PCIe + SGMII PHY multilink
+ configuration
+Thread-Index: AQHZRTVZZt7PSGILJ0qEJdebsUpxC67YBBOAgDZMgeA=
+Date: Mon, 27 Mar 2023 05:34:08 +0000
+Message-ID:  <DM6PR07MB615438BAA6DA35E5FFE4737FC58B9@DM6PR07MB6154.namprd07.prod.outlook.com>
+References: <20230220141216.25326-1-sjakhade@cadence.com>
+ <c7bdaf8f-d377-9fdc-c11a-747c65775b3c@kernel.org>
+In-Reply-To: <c7bdaf8f-d377-9fdc-c11a-747c65775b3c@kernel.org>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-dg-ref:  PG1ldGE+PGF0IG5tPSJib2R5LnR4dCIgcD0iYzpcdXNlcnNcc2pha2hhZGVcYXBwZGF0YVxyb2FtaW5nXDA5ZDg0OWI2LTMyZDMtNGE0MC04NWVlLTZiODRiYTI5ZTM1Ylxtc2dzXG1zZy1mZDhhN2ZjNS1jYzYwLTExZWQtODVlNC1jOGY3NTA0NDIyZDhcYW1lLXRlc3RcZmQ4YTdmYzctY2M2MC0xMWVkLTg1ZTQtYzhmNzUwNDQyMmQ4Ym9keS50eHQiIHN6PSI5NTEiIHQ9IjEzMzI0MzY4ODQ3MTI5MzAwNyIgaD0icU9ieGQwSTFSVlFuTXhBSU12QjRWVk5kZVR3PSIgaWQ9IiIgYmw9IjAiIGJvPSIxIi8+PC9tZXRhPg==
+x-dg-rorf: true
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: DM6PR07MB6154:EE_|SJ0PR07MB9666:EE_
+x-ms-office365-filtering-correlation-id: b3b97cdf-9837-4bea-4137-08db2e84e320
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info:  betnF/mc+RAopgT/vycFl+Nfo3Pkpg5oUrz/3UG59MoqqCRtcgi9akcC9zy8xZ69ivFEgnHgXvVbDV5Plh3gXkiXYdjduXJjallX8c1WOUo4YeHKVw4SAzVIhuaWnVGapS1dpif/D9VVPanuDIFGlXaQ0tvoT3iFgOEUxaT55qL1WGJlshu7BswBr6pCq9qduwr0K1WM/O4j38Vnpp1Vnlyz9Rm6PyjC1chth4P6njmb9nSOvVj9v3as5RUYmF1x5mPJ+XZrGGE5eUwWWhOQJbTUeQ7In2wBWJfLcLLVVL0FUtrb40DiWgYTGorfkvBXWgVuQv6PuGat3dAynCHailrv5Xz9wFhmNdK7DBy8FMY/jlheho7YqcTGVKv0WUhV5UG/Tdur3CSN3Xw/Ekgs7Fm4HCCo1KG0+X57eSdaHEZnDcFaHTLOlNl/h6O8AwnVLITq1Y36AM1Vkl8tn7MLOOdS3CwKCmzVIUhCsqWu06gKKVHhZ08tPO4VMetzm1KKeiL6xGX+gZ+V2koyp427XO1pam6bFb5ABk+4ccETrQQ4nyeqMH/VZqdTrH6KcUmWpYAmeL/I7akgqHaQMtHLz+ge17XY1Eln3NmTTEXctV71n1OBTfzkn24PYW92wPTR6b/Uwr/6oHnHFdp9X8wr/85hMoudfxLB5evlVfx+hc4=
+x-forefront-antispam-report:  CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DM6PR07MB6154.namprd07.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230028)(4636009)(366004)(346002)(136003)(396003)(39860400002)(376002)(36092001)(451199021)(8676002)(83380400001)(52536014)(4326008)(53546011)(26005)(6506007)(8936002)(7696005)(186003)(9686003)(478600001)(64756008)(33656002)(66476007)(86362001)(110136005)(71200400001)(66556008)(66946007)(4744005)(38070700005)(316002)(66446008)(55016003)(38100700002)(122000001)(41300700001)(2906002)(5660300002)(76116006)(107886003);DIR:OUT;SFP:1101;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0:  =?utf-8?B?WXhPemJOYlhwRlNKTTJOTVRHWURveUxFQzlCcUxXOVRGVkZSU2lCaXVrc1FI?=
+ =?utf-8?B?RmFzT2ZHUXhmcWZZQVhNTUhpUXdldGZMdGV1aGkvQUdNWEwyejk2dm9rSURr?=
+ =?utf-8?B?WVVkclZtWWtRRXBCUHE3RGpWYStFbWFvZkNUbThORkp1M2E1dDJrYTZwT2NI?=
+ =?utf-8?B?SjY2S3RTL29WcWVLanNaMlh6UnZFRjRPUUI4M3FNa3V3dTEyOHFtS1ZuZTRO?=
+ =?utf-8?B?ZTVBSHNWQXJlWlVpdVNPY0lCNkM0YWxWYkFSOEpMTzNWS09DeEk2WEtncG44?=
+ =?utf-8?B?a3YxeERGb0F4bDFseGwyVlJZZnJQZUxuSTFRTXN4VkZ0UGo1b0F0UGc4V0lv?=
+ =?utf-8?B?OEFWdy9VSDNtclJRYVJUcDlOckRGd2xnOUZJTVhHbWt4dWx1VlJyL1NiL3R2?=
+ =?utf-8?B?N1ZOdWpxT3N4Tk1WQmpuZlJmZFNlY3VQUFhLd3QwWlloMjFzdGJZdjlvWmlI?=
+ =?utf-8?B?a0tQWm15Z1N5Z09MeUUrNnFiNWlqc3c5MktucktvbW5jcWI0TlIzVDJ1Y1NO?=
+ =?utf-8?B?b3A4aHpiWVRneG1NOTdZOUlsb0V3T2R3anVhM001TEFvdVYwTUxxR24vQTQv?=
+ =?utf-8?B?RkRicGNYWmxJU3RNMzA5dlR1aWtkS3hBQ2xLR0VncXF5Wi9tTzg4MjVqRURn?=
+ =?utf-8?B?RWMxSG9QaDgrMWdIRVBocDZhSDkrc2EwUFhNcHVMOThhd2VYcGYzVnYzbWJR?=
+ =?utf-8?B?ZU14dUp0K2NsYlBlV045WEc2NXFrYlM5Z0hLTUtzcWNmaVVCVnI0NTdZRFYy?=
+ =?utf-8?B?ajV3RFpPL1d5dkNydlJQNmRMTXB2eE16d1VwMlZWS3BLWDdOczdKaURXWlN3?=
+ =?utf-8?B?bHcreWlrVFFQNWdVZ21VQXBTZ1RzYzFwQXhMU0VOZkxpbW83UTNPYnhlWW1X?=
+ =?utf-8?B?dHJ5MWsrMWJRUitRZ1Nkc09vdktMckFlRlllTmZxWVBXSlNQN0svSEZnK0sw?=
+ =?utf-8?B?aSs3ZU8vQm1zbDE5REt3aWtlSXp6c0tidldEZ3BPSWJ6SFNWazRpWS9waUIv?=
+ =?utf-8?B?WWtEZE5UVkQ1WTlwMURvU0ZWeGJoeWlGQzJkRDNORzhvaTgrQWE4L2xzQkNr?=
+ =?utf-8?B?bDV3b05KV1NKa3VTK0JEWm0rYmNqUkd6UytoRDJkQlZNanNxR1FERlhORE42?=
+ =?utf-8?B?anVnOTJGeHRWM2xqQjVCQVg1alBMeW5ERW44MEhGNjF5YWNnV2h6TUFlV25w?=
+ =?utf-8?B?Q1ZLNUpFQXZMWEloUGNkTGlHRExOcG5QWnJqb1VBZWdVV2lFOThpYkVWTDI1?=
+ =?utf-8?B?SWgrdzZDT2drOC90T29SSDFsS3JaaFcrOGdmSHZoc0dRRloveTl4dytZMjk1?=
+ =?utf-8?B?Y09ydVp0cmtNZFRIUHk4SFIvMURBWVVFc2tDdkdsZjNpYmpldyt6NXRBRkd0?=
+ =?utf-8?B?TDRXc1NPWFRyb0FWR1h3b1ErSTA2MWlpMDk3UnhWcVkyWnFVVmk1NmlsZTRw?=
+ =?utf-8?B?QmczaHhzdVpRWFEyaTBRenZkdWJpQURuOVltaHlXcG5LcEVjQVV4bVR5Y25V?=
+ =?utf-8?B?SDVDeFdnUkxRd0pRUnZwanhKNnRpbEt2N2lTT1AvNXpuR3FFZzJMODJOQWJ1?=
+ =?utf-8?B?dzJtR0toQnRzR2JwbjBtV1lrZTJiZTdiRzdxRVlscDdFK1BEc0E1M0pBWmR2?=
+ =?utf-8?B?NzVhVXN6UitBcHFVcHZydC80bXdPN2VRRUxuRmQxK0ZOWWRkd2ZEVFNWeG5Q?=
+ =?utf-8?B?Tm5RZElXWGdiWjUwcFlZdlhpckdoVThFTnNJaTB3MmhTV0ZuYmRLRlFTNG1M?=
+ =?utf-8?B?NkV5YVdhRklLVU5qZkl6OVB4aDlUSWxKbGRoVnRaaFNCanNOaSt6Tm9KQm9Y?=
+ =?utf-8?B?VXRCRDZyc1FZTzgwS25LbXo3S2hpOUxpYkdrK0c3WWp3Y1hCUElaQUU4emZa?=
+ =?utf-8?B?d21KWURsN0RDM25pWE5QMXJoZUN0ZkMxYUlCdG5OSEJRWmd1Nm82dmVMVTA1?=
+ =?utf-8?B?eGVVZnlKR3NDSWZlOWJPTG0vYlF2UG1LTm9VbnFnclc1akl4azRLa0NjWUdC?=
+ =?utf-8?B?TkZCRzI4V1UvVTVTdjlOczBYY2Z4U21WNE0xWjg5eHhkRXNJbUZ5Tjl6OHl5?=
+ =?utf-8?B?MmZIVFF4cnFGblBQbUt2T3V2VWREYWxkNXdrVVNtRjNWdTJtSmVjTThDdlln?=
+ =?utf-8?B?bXNOSndvNmx6aWhnVzZPMHR4Nm52VUhrWkg0ZFhueUlHem4zZlJwTXVRRUVQ?=
+ =?utf-8?B?cXc9PQ==?=
 MIME-Version: 1.0
+X-OriginatorOrg: cadence.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: DM6PR07MB6154.namprd07.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: b3b97cdf-9837-4bea-4137-08db2e84e320
+X-MS-Exchange-CrossTenant-originalarrivaltime: 27 Mar 2023 05:34:08.3534
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: d36035c5-6ce6-4662-a3dc-e762e61ae4c9
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: ze5zGTzRxzdGSdNi6C6qrCXqYBgr0qscvYRZQ90CgSUz3MvzY86EFslqEaWpl1k7wDJdrVZHzARhx9dQR5I8639kJ5okrE/Ig2vnrIIpnDI=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SJ0PR07MB9666
+X-Proofpoint-GUID: o39Dk0_if5inIDSMVdDH4Qn2TfDREtdO
+X-Proofpoint-ORIG-GUID: o39Dk0_if5inIDSMVdDH4Qn2TfDREtdO
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.254,Aquarius:18.0.942,Hydra:6.0.573,FMLib:17.11.170.22
+ definitions=2023-03-24_11,2023-03-24_01,2023-02-09_01
+X-Proofpoint-Spam-Details: rule=outbound_check_notspam policy=outbound_check score=0 impostorscore=0
+ priorityscore=1501 suspectscore=0 mlxlogscore=998 spamscore=0 mlxscore=0
+ malwarescore=0 phishscore=0 adultscore=0 clxscore=1011 bulkscore=0
+ lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2303200000 definitions=main-2303270046
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230325_175739_178301_107ACFA9 
-X-CRM114-Status: GOOD (  12.00  )
+X-CRM114-CacheID: sfid-20230326_223433_748590_B6A9FBB6 
+X-CRM114-Status: GOOD (  14.16  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,391 +178,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Migrate legacy bindings (described in qcom,sc7180-qmp-usb3-dp-phy.yaml)
-to qcom,sc8280xp-qmp-usb43dp-phy.yaml. This removes a need to declare
-the child PHY node or split resource regions.
+Hi Vinod,
 
-Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
----
- .../phy/qcom,sc7180-qmp-usb3-dp-phy.yaml      | 278 ------------------
- .../phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml    |  45 ++-
- 2 files changed, 43 insertions(+), 280 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/phy/qcom,sc7180-qmp-usb3-dp-phy.yaml
+> -----Original Message-----
+> From: Roger Quadros <rogerq@kernel.org>
+> Sent: Monday, February 20, 2023 9:50 PM
+> To: Swapnil Kashinath Jakhade <sjakhade@cadence.com>;
+> vkoul@kernel.org; kishon@kernel.org; linux-phy@lists.infradead.org; linux-
+> kernel@vger.kernel.org
+> Cc: Milind Parab <mparab@cadence.com>
+> Subject: Re: [PATCH] phy: cadence: Sierra: Add PCIe + SGMII PHY multilink
+> configuration
+> 
+> EXTERNAL MAIL
+> 
+> 
+> 
+> 
+> On 20/02/2023 16:12, Swapnil Jakhade wrote:
+> > Add register sequences for PCIe + SGMII PHY multilink configuration.
+> > This has been validated on TI J7 platforms.
+> >
+> > Signed-off-by: Swapnil Jakhade <sjakhade@cadence.com>
+> 
+> Reviewed-by: Roger Quadros <rogerq@kernel.org>
 
-diff --git a/Documentation/devicetree/bindings/phy/qcom,sc7180-qmp-usb3-dp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc7180-qmp-usb3-dp-phy.yaml
-deleted file mode 100644
-index a2ddf718ba76..000000000000
---- a/Documentation/devicetree/bindings/phy/qcom,sc7180-qmp-usb3-dp-phy.yaml
-+++ /dev/null
-@@ -1,278 +0,0 @@
--# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
--
--%YAML 1.2
-----
--$id: http://devicetree.org/schemas/phy/qcom,sc7180-qmp-usb3-dp-phy.yaml#
--$schema: http://devicetree.org/meta-schemas/core.yaml#
--
--title: Qualcomm QMP USB3 DP PHY controller (SC7180)
--
--description:
--  The QMP PHY controller supports physical layer functionality for a number of
--  controllers on Qualcomm chipsets, such as, PCIe, UFS and USB.
--
--  Note that these bindings are for SoCs up to SC8180X. For newer SoCs, see
--  qcom,sc8280xp-qmp-usb43dp-phy.yaml.
--
--maintainers:
--  - Wesley Cheng <quic_wcheng@quicinc.com>
--
--properties:
--  compatible:
--    oneOf:
--      - enum:
--          - qcom,sc7180-qmp-usb3-dp-phy
--          - qcom,sc8180x-qmp-usb3-dp-phy
--          - qcom,sdm845-qmp-usb3-dp-phy
--          - qcom,sm8150-qmp-usb3-dp-phy
--          - qcom,sm8250-qmp-usb3-dp-phy
--      - items:
--          - enum:
--              - qcom,sc7280-qmp-usb3-dp-phy
--          - const: qcom,sm8250-qmp-usb3-dp-phy
--
--  reg:
--    items:
--      - description: Address and length of PHY's USB serdes block.
--      - description: Address and length of the DP_COM control block.
--      - description: Address and length of PHY's DP serdes block.
--
--  reg-names:
--    items:
--      - const: usb
--      - const: dp_com
--      - const: dp
--
--  "#address-cells":
--    enum: [ 1, 2 ]
--
--  "#size-cells":
--    enum: [ 1, 2 ]
--
--  ranges: true
--
--  clocks:
--    minItems: 3
--    maxItems: 4
--
--  clock-names:
--    minItems: 3
--    maxItems: 4
--
--  power-domains:
--    maxItems: 1
--
--  resets:
--    items:
--      - description: reset of phy block.
--      - description: phy common block reset.
--
--  reset-names:
--    items:
--      - const: phy
--      - const: common
--
--  vdda-phy-supply:
--    description:
--      Phandle to a regulator supply to PHY core block.
--
--  vdda-pll-supply:
--    description:
--      Phandle to 1.8V regulator supply to PHY refclk pll block.
--
--  vddp-ref-clk-supply:
--    description:
--      Phandle to a regulator supply to any specific refclk pll block.
--
--# Required nodes:
--patternProperties:
--  "^usb3-phy@[0-9a-f]+$":
--    type: object
--    additionalProperties: false
--    description:
--      The USB3 PHY.
--
--    properties:
--      reg:
--        items:
--          - description: Address and length of TX.
--          - description: Address and length of RX.
--          - description: Address and length of PCS.
--          - description: Address and length of TX2.
--          - description: Address and length of RX2.
--          - description: Address and length of pcs_misc.
--
--      clocks:
--        items:
--          - description: pipe clock
--
--      clock-names:
--        deprecated: true
--        items:
--          - const: pipe0
--
--      clock-output-names:
--        items:
--          - const: usb3_phy_pipe_clk_src
--
--      '#clock-cells':
--        const: 0
--
--      '#phy-cells':
--        const: 0
--
--    required:
--      - reg
--      - clocks
--      - '#clock-cells'
--      - '#phy-cells'
--
--  "^dp-phy@[0-9a-f]+$":
--    type: object
--    additionalProperties: false
--    description:
--      The DP PHY.
--
--    properties:
--      reg:
--        items:
--          - description: Address and length of TX.
--          - description: Address and length of RX.
--          - description: Address and length of PCS.
--          - description: Address and length of TX2.
--          - description: Address and length of RX2.
--
--      '#clock-cells':
--        const: 1
--
--      '#phy-cells':
--        const: 0
--
--    required:
--      - reg
--      - '#clock-cells'
--      - '#phy-cells'
--
--required:
--  - compatible
--  - reg
--  - "#address-cells"
--  - "#size-cells"
--  - ranges
--  - clocks
--  - clock-names
--  - resets
--  - reset-names
--  - vdda-phy-supply
--  - vdda-pll-supply
--
--allOf:
--  - if:
--      properties:
--        compatible:
--          enum:
--            - qcom,sc7180-qmp-usb3-dp-phy
--            - qcom,sdm845-qmp-usb3-dp-phy
--    then:
--      properties:
--        clocks:
--          items:
--            - description: Phy aux clock
--            - description: Phy config clock
--            - description: 19.2 MHz ref clk
--            - description: Phy common block aux clock
--        clock-names:
--          items:
--            - const: aux
--            - const: cfg_ahb
--            - const: ref
--            - const: com_aux
--
--  - if:
--      properties:
--        compatible:
--          enum:
--            - qcom,sc8180x-qmp-usb3-dp-phy
--            - qcom,sm8150-qmp-usb3-dp-phy
--    then:
--      properties:
--        clocks:
--          items:
--            - description: Phy aux clock
--            - description: 19.2 MHz ref clk
--            - description: Phy common block aux clock
--        clock-names:
--          items:
--            - const: aux
--            - const: ref
--            - const: com_aux
--
--  - if:
--      properties:
--        compatible:
--          enum:
--            - qcom,sm8250-qmp-usb3-dp-phy
--    then:
--      properties:
--        clocks:
--          items:
--            - description: Phy aux clock
--            - description: Board XO source
--            - description: Phy common block aux clock
--        clock-names:
--          items:
--            - const: aux
--            - const: ref_clk_src
--            - const: com_aux
--
--additionalProperties: false
--
--examples:
--  - |
--    #include <dt-bindings/clock/qcom,gcc-sdm845.h>
--    usb_1_qmpphy: phy-wrapper@88e9000 {
--        compatible = "qcom,sdm845-qmp-usb3-dp-phy";
--        reg = <0x088e9000 0x18c>,
--              <0x088e8000 0x10>,
--              <0x088ea000 0x40>;
--        reg-names = "usb", "dp_com", "dp";
--        #address-cells = <1>;
--        #size-cells = <1>;
--        ranges = <0x0 0x088e9000 0x2000>;
--
--        clocks = <&gcc GCC_USB3_PRIM_PHY_AUX_CLK>,
--                 <&gcc GCC_USB_PHY_CFG_AHB2PHY_CLK>,
--                 <&gcc GCC_USB3_PRIM_CLKREF_CLK>,
--                 <&gcc GCC_USB3_PRIM_PHY_COM_AUX_CLK>;
--        clock-names = "aux", "cfg_ahb", "ref", "com_aux";
--
--        resets = <&gcc GCC_USB3_PHY_PRIM_BCR>,
--                 <&gcc GCC_USB3_DP_PHY_PRIM_BCR>;
--        reset-names = "phy", "common";
--
--        vdda-phy-supply = <&vdda_usb2_ss_1p2>;
--        vdda-pll-supply = <&vdda_usb2_ss_core>;
--
--        usb3-phy@200 {
--            reg = <0x200 0x128>,
--                  <0x400 0x200>,
--                  <0xc00 0x218>,
--                  <0x600 0x128>,
--                  <0x800 0x200>,
--                  <0xa00 0x100>;
--            #clock-cells = <0>;
--            #phy-cells = <0>;
--            clocks = <&gcc GCC_USB3_PRIM_PHY_PIPE_CLK>;
--            clock-output-names = "usb3_phy_pipe_clk_src";
--        };
--
--        dp-phy@88ea200 {
--            reg = <0xa200 0x200>,
--                  <0xa400 0x200>,
--                  <0xaa00 0x200>,
--                  <0xa600 0x200>,
--                  <0xa800 0x200>;
--            #clock-cells = <1>;
--            #phy-cells = <0>;
--        };
--    };
-diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
-index 3cd5fc3e8fab..93444e96b512 100644
---- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
-@@ -16,8 +16,14 @@ description:
- properties:
-   compatible:
-     enum:
-+      - qcom,sc7180-qmp-usb3-dp-phy
-+      - qcom,sc7280-qmp-usb3-dp-phy
-+      - qcom,sc8180x-qmp-usb3-dp-phy
-       - qcom,sc8280xp-qmp-usb43dp-phy
-+      - qcom,sdm845-qmp-usb3-dp-phy
-       - qcom,sm6350-qmp-usb3-dp-phy
-+      - qcom,sm8150-qmp-usb3-dp-phy
-+      - qcom,sm8250-qmp-usb3-dp-phy
-       - qcom,sm8350-qmp-usb3-dp-phy
-       - qcom,sm8450-qmp-usb3-dp-phy
-       - qcom,sm8550-qmp-usb3-dp-phy
-@@ -26,14 +32,17 @@ properties:
-     maxItems: 1
- 
-   clocks:
--    maxItems: 4
-+    minItems: 4
-+    maxItems: 5
- 
-   clock-names:
-+    minItems: 4
-     items:
-       - const: aux
-       - const: ref
-       - const: com_aux
-       - const: usb3_pipe
-+      - const: cfg_ahb
- 
-   power-domains:
-     maxItems: 1
-@@ -65,7 +74,6 @@ required:
-   - reg
-   - clocks
-   - clock-names
--  - power-domains
-   - resets
-   - reset-names
-   - vdda-phy-supply
-@@ -73,6 +81,39 @@ required:
-   - "#clock-cells"
-   - "#phy-cells"
- 
-+allOf:
-+  - if:
-+      properties:
-+        compatible:
-+          enum:
-+            - qcom,sc7180-qmp-usb3-dp-phy
-+            - qcom,sdm845-qmp-usb3-dp-phy
-+    then:
-+      properties:
-+        clocks:
-+          maxItems: 5
-+        clock-names:
-+          maxItems: 5
-+    else:
-+      properties:
-+        clocks:
-+          maxItems: 4
-+        clock-names:
-+          maxItems: 4
-+  - if:
-+      properties:
-+        compatible:
-+          enum:
-+            - qcom,sc8280xp-qmp-usb43dp-phy
-+            - qcom,sm6350-qmp-usb3-dp-phy
-+            - qcom,sm8550-qmp-usb3-dp-phy
-+    then:
-+      required:
-+        - power-domains
-+    else:
-+      properties:
-+        power-domains: false
-+
- additionalProperties: false
- 
- examples:
--- 
-2.30.2
+Could you please consider reviewing and merging this patch.
 
-
+Thanks & regards,
+Swapnil
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
