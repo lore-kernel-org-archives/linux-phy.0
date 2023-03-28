@@ -4,86 +4,128 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0969FC76196
-	for <linux-phy@archiver.kernel.org>; Tue, 28 Mar 2023 07:11:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 74E71C76195
+	for <linux-phy@archiver.kernel.org>; Tue, 28 Mar 2023 09:25:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZB1PJHRYCo4CdLFfQUk2jSLi6xpMXXJ424yccrwep4g=; b=tFweFrZN2/eZZs
-	HcX8wdJVFe22Nu0yppEjanxZlMeutprhEtjPSy3DpzIZlmGUrCGS3B8RgqlAfVwEQHFH8dZ5OpTyc
-	6YXpF1PeFO65GBONuOMilsDF33ALazaEpiraMptAFVVKZqEflEkCH1B0SlSNQOIsxOk8+zLEuxEXY
-	hSjshgzZtlt5YXswaruxbdKaOLAaC79l90Wz2MfKETOWn6oLtLn+bwVh0UXmzolls4LwS02Es8KSW
-	qhRKkztIfUuwsAH/h2jI0m7AD7k8Z3iK/WgHBrCVguE6ggzgx4UUwi6nzrpt7XcSf+WO8cI4XY2Yn
-	8DlLFyNde4tkIcMIJ3fw==;
+	List-Owner; bh=xMVO0EX6FIu0u3lddN/ERqke9BptlE/GN2NtmyadsHE=; b=iew6tpXqTcNx1t
+	6pYiq6ZjMrQ5KOb5rcpsdn8CTB7JpT01d7Q+m5lOmdzHr/DKKFWZ/pHzsF3I74Kmklr6nnFOspCFX
+	8X54OIFntop4nTVCydF7nMrKGdlEyywTTDe4tAENJtu54MNWZ5AYRpAGtItMdk8bYFLCthDwDZQIh
+	nxnL+3FXire+dqzd7rXu5NX+8RMcDomv0EmJvKrxusKNG+Yb59EwHv584tEStDR5imdO0CxquWdAy
+	DwLdLXUbX8FjEgGEzENw18eoUmekvuue+zlEOqUttQLyvSEsbtkUo4Uioe9ciicGz67eXQs7uHPTk
+	shqGINWLqV3+GBej9Kog==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1ph3Ue-00DP2D-23;
-	Tue, 28 Mar 2023 07:11:44 +0000
-Received: from mail-ed1-x536.google.com ([2a00:1450:4864:20::536])
+	id 1ph5aW-00DjjO-0S;
+	Tue, 28 Mar 2023 09:25:56 +0000
+Received: from mail-dbaeur03on2060a.outbound.protection.outlook.com ([2a01:111:f400:fe1a::60a] helo=EUR03-DBA-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1ph3Ub-00DP19-2I
-	for linux-phy@lists.infradead.org;
-	Tue, 28 Mar 2023 07:11:42 +0000
-Received: by mail-ed1-x536.google.com with SMTP id y4so45688796edo.2
-        for <linux-phy@lists.infradead.org>; Tue, 28 Mar 2023 00:11:40 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1679987499;
-        h=content-transfer-encoding:in-reply-to:from:references:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=a5fyW1eX1RAR+NBmwPpWJ9Jn0eMpcCTBleyehK3tanw=;
-        b=yUYRLQb9IVWEbo20PLorrGnjtm3zZiFX+UHX46vIe6ye583NOm04sdjQJF0ruYxHRO
-         0wltvHNA3PsMmTaKV7r/wcnE5B0u/pExzwBFBABJtuSlm4nhbXQ58ZrrFMLU5E5KkfT4
-         +De9QmNLjfzZ8c85rGnVqsW1mIiSXDoGYpRRDJt7tKagLlUPQ8jV9F33CCKtfUAx1p4T
-         JFTUt/iPM5pVFebaNmS7U/DXABCDUyyN8GRG82xvSFPxE/LG7HfnK5YuoEkl5nqEscps
-         j+7QIwwHdnLT5AF8F2VJRA2i9nJ34uekIaizThFaUCrtjrRvuZFZL7AlfnSVcaBCQnhF
-         m79A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112; t=1679987499;
-        h=content-transfer-encoding:in-reply-to:from:references:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=a5fyW1eX1RAR+NBmwPpWJ9Jn0eMpcCTBleyehK3tanw=;
-        b=dI+VsTBOeuWcF17PbIaKwKIAHsQiaN1CyKLTthJUUF1fTqQWqIYLaEMdKjdb2nlhSH
-         nnsukfMtXoufgnS6XRIMf7fNAKaePV0zu17YBG+15qpTTWKAl2RpEkipplssxc1EA8jk
-         l+9iFW8e7NflMM/MjbwEdWnA5Dja3VnOdYk1ZLOodvHYuombFFVtgxGulbiJtvVyPNNh
-         H9EHX5beZE+87tsp72rERa/s+iQRwCDxsKYB/ewPyNgq19Z1yXFGpEyc6isjx/kauHGV
-         hoMFgNpA1YNm2SAAwu1MGS/qJEXQ/MfryJ2Tfpb9qiNTcZvb/WGEjRn6pFljQyHsRArr
-         KVeQ==
-X-Gm-Message-State: AAQBX9e4seJZHU98bAgoa8C6dCyWju89bmxmPQS/tWNjGy92DMgaIMLD
-	9S0z17RgX7YZJqyYBqsD9W3opA==
-X-Google-Smtp-Source: AKy350bYJuSxq8c07X8GOgM+6HypZc8my/E583ZMsjqpdiOYZOwxDATAJ8NU9HcdX0ogeGKLpjFyIA==
-X-Received: by 2002:a17:907:c248:b0:931:ce20:db8e with SMTP id tj8-20020a170907c24800b00931ce20db8emr15303083ejc.51.1679987499545;
-        Tue, 28 Mar 2023 00:11:39 -0700 (PDT)
-Received: from ?IPV6:2a02:810d:15c0:828:9e92:dca6:241d:71b6? ([2a02:810d:15c0:828:9e92:dca6:241d:71b6])
-        by smtp.gmail.com with ESMTPSA id o23-20020a170906289700b00922547486f9sm15222236ejd.146.2023.03.28.00.11.38
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 28 Mar 2023 00:11:39 -0700 (PDT)
-Message-ID: <a68c7693-9d43-0aa9-c77b-26183e5a0a06@linaro.org>
-Date: Tue, 28 Mar 2023 09:11:38 +0200
+	id 1ph5aS-00Djhu-2F;
+	Tue, 28 Mar 2023 09:25:54 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=cVfItfSS8ik/rNPlbLEcEnBg1R7qvXM2OfB3OtTj4k9BIVgrhR1Iii4ztcLHcru9UCG1ePfofFAgqgVWM75ulYg21oExY64dhsOlJyUk3htP2DLhmLzGsXI0AcP7Y/4x6EpJVMZDU7oDJTci+f1a+IZG3wqkDFYxom/zONJJK+0hx14sgOyLgXMe0ITczru60gQJtx71YjlwNQRqSu0gh6rZH6m4vqyyu/Fz+36nM0w2o5ELR2QaHWSKKlH5+qBz4Et8wGVg9MmUEloD71EDdddnLyfR6zVOFHsRFyP6bBCG8Qcb+d9Uxesee0S3U91emxbgCeFY0d9qMW05jpwhGg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=RSO0NKF8/hxKy6iYDnOj4iZUPfsYoJdhZHSt3FvIO9o=;
+ b=ZWip522fOd/Lveq6mpbhhX+D0bVYVFGx9OJ92BSAkwzS6ZxJNNMmGyXPOzR2xRwLC1gPrNg5M8IcpK+dfqrYtagNzM/sgsehZV2rU6nR6O3/7Bt6uBladsZLtwsxO8DN/A1/kyFb8k5NU1SipinD9/4B0BL2z2bNd3EQtEqB0YQoRxQM9S9+Oz5PekcNW69Nvt++KEmV0hqOZF489KvtwyHIeFERi91Ky8In4pE6gLCSRFTSYQFrbfXT0eMq9neV8vTizBaxEy31GNW8zrBx3WxNQ3lXDcgklxaa9ecZBTCqFME0eGpY9JhCzzEMHr3oOY+hkEtXIFkd+KoGBSz1NQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=RSO0NKF8/hxKy6iYDnOj4iZUPfsYoJdhZHSt3FvIO9o=;
+ b=dxev/6uHn72YZoKp8XYKgmAz5RvW5t6/+y1MqKnIVtmfJd01rNMCylW45BvfuAIrt9dALr2OBUkNUFPxNssPFYNeoHOewpv1YQwSshTvK2Sev5heih30JQJODxmiXxAbvAC47pr9L4ewxG9c5kbrhRAhac4aAGWlL/jbnAQ6o9I=
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from GV1PR04MB9055.eurprd04.prod.outlook.com (2603:10a6:150:1e::22)
+ by AS1PR04MB9581.eurprd04.prod.outlook.com (2603:10a6:20b:470::14) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6178.41; Tue, 28 Mar
+ 2023 09:25:46 +0000
+Received: from GV1PR04MB9055.eurprd04.prod.outlook.com
+ ([fe80::9c6d:d40c:fbe5:58bd]) by GV1PR04MB9055.eurprd04.prod.outlook.com
+ ([fe80::9c6d:d40c:fbe5:58bd%7]) with mapi id 15.20.6222.030; Tue, 28 Mar 2023
+ 09:25:45 +0000
+Date: Tue, 28 Mar 2023 12:25:41 +0300
+From: Ioana Ciornei <ioana.ciornei@nxp.com>
+To: Sean Anderson <sean.anderson@seco.com>
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	linux-phy@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	devicetree@vger.kernel.org, Madalin Bucur <madalin.bucur@nxp.com>,
+	Camelia Alexandra Groza <camelia.groza@nxp.com>,
+	Bagas Sanjaya <bagasdotme@gmail.com>,
+	linux-arm-kernel@lists.infradead.org, linuxppc-dev@lists.ozlabs.org,
+	Li Yang <leoyang.li@nxp.com>, Shawn Guo <shawnguo@kernel.org>
+Subject: Re: [PATCH v12 13/13] arm64: dts: ls1088ardb: Add serdes descriptions
+Message-ID: <20230328092541.og7mexyh4espbh6t@LXL00007.wbi.nxp.com>
+References: <20230321201313.2507539-1-sean.anderson@seco.com>
+ <20230321201313.2507539-14-sean.anderson@seco.com>
+ <20230324131701.4ucxf65sxfdtqcai@LXL00007.wbi.nxp.com>
+ <5ca4aeba-db2c-4c0c-c620-d380b4b839bb@seco.com>
+Content-Disposition: inline
+In-Reply-To: <5ca4aeba-db2c-4c0c-c620-d380b4b839bb@seco.com>
+X-ClientProxiedBy: VI1PR07CA0227.eurprd07.prod.outlook.com
+ (2603:10a6:802:58::30) To GV1PR04MB9055.eurprd04.prod.outlook.com
+ (2603:10a6:150:1e::22)
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.9.0
-Subject: Re: [PATCH v4 3/8] dt-bindings: usb: dwc3: Add IPQ9574 compatible
-Content-Language: en-US
-To: Varadarajan Narayanan <quic_varada@quicinc.com>, agross@kernel.org,
- andersson@kernel.org, konrad.dybcio@linaro.org, vkoul@kernel.org,
- kishon@kernel.org, robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
- gregkh@linuxfoundation.org, mturquette@baylibre.com, sboyd@kernel.org,
- quic_wcheng@quicinc.com, linux-arm-msm@vger.kernel.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org,
- linux-clk@vger.kernel.org
-References: <cover.1679909245.git.quic_varada@quicinc.com>
- <526f822a4d2397284f70ba632d92feaa3db0143e.1679909245.git.quic_varada@quicinc.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <526f822a4d2397284f70ba632d92feaa3db0143e.1679909245.git.quic_varada@quicinc.com>
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: GV1PR04MB9055:EE_|AS1PR04MB9581:EE_
+X-MS-Office365-Filtering-Correlation-Id: 292bc19f-f653-4a03-7a64-08db2f6e6897
+X-LD-Processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info:  kFt82b6VzR/iZdbPj+L18xRjQDBZ6uBKL03ukRe+nF1RYHn/g0t7Wz33ip1cyqtWy8Omz5rHiKRWOY6SsMmsu9FPIkgK+2YG+asrIaHWiDQttFzhQead8Im4Rq6T2pmMgij8JDh8LkO8vtv1Uw2dvwblTYhSSoRv6ERGOqAyxB4Fv70bSv1OWK0tnuz7l4czscx5Sl6PHJaaUgPVvLG0o4NfiFaFW+djBIZvtuA1JSWByhSGudSAz/Kdwk8s/gcwIV+7NXtMLwbTxMjq2KRA8WIeikUESAz2073juV9wCKCBhHS/Ko67LWBr/0gFuepKZGT8Nn/gPf/IkWcLXemrgSXhJLWiW8k/Bm9UiD3ebn8J5EyzK61uNbidMuXESoRrj98xQEQGHOpa2Q1Wf2xEJxM2+d+pRiEZHzrrNZPq062gr4dDoP3jAPgFBTRr9q8svIS/E0NnbsHfTBICPGczE1IVMGdOESXhzLRNTxRso4pggG9Me2hBtD8sNSt1rPS3KVLcCzeAurr9bn0uT+sdO+A6Ysd5hXnL863uoZOfwnJdFhuL4GyvKsxKexDUaUWI
+X-Forefront-Antispam-Report:  CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GV1PR04MB9055.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230028)(4636009)(396003)(346002)(136003)(39860400002)(366004)(376002)(451199021)(86362001)(44832011)(2906002)(478600001)(6666004)(26005)(83380400001)(54906003)(6486002)(1076003)(4326008)(66476007)(316002)(66556008)(66946007)(8676002)(186003)(6916009)(53546011)(38100700002)(5660300002)(6506007)(8936002)(7416002)(6512007)(41300700001);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0:  =?us-ascii?Q?b6JJsn8n46P610PVHv/NQEU6pwZ7Uoe3KC2wAFZHU6KWTdXAQQVthPsw4LHQ?=
+ =?us-ascii?Q?TDHpSf6JOmcJnb64dQ2ksO/vML9SWH3rMTPtl8A5NOqzAmoo4MXL/vUgILMn?=
+ =?us-ascii?Q?HAtEV3qX3lZbgJI5jkQmc16wqLSQTSmwRdhqxFrTlOKNfqE/6JoQNL3ozkDQ?=
+ =?us-ascii?Q?tlAJTRIGa3rYHCiLPXN0quZzvS7W5v+F23m0BpxwSIAE7CamSG+scD1JT/qa?=
+ =?us-ascii?Q?+S6RRSX4x4ipVQi7WJGIcCif4jFCTafw0lNZ88VMUObThdGoS580iF16X/Yx?=
+ =?us-ascii?Q?WS5smP7lvWouZFpWxKbTMLHwWq2r5Y6ER2Lc3YVyVLerSJ530MeFtJNBFl8/?=
+ =?us-ascii?Q?fNZ9kITuMb/QG0eDqGGz3ggC1tmngHCvhig7UPYB0WMd6D46p12PsAYQSy7X?=
+ =?us-ascii?Q?1AV7OGTkpS3kdGnDdMn5vCk5s2pehIpgZZOdzogk7FiATG6B3LdzM3IumYk7?=
+ =?us-ascii?Q?tAQkHRYX76YgdX6AJ5JooJrQV9dUeFV/YmyIvD2yZDO528ruteNfkoOZkvTZ?=
+ =?us-ascii?Q?gmehNb+AKliQZ0tlEQ+q15TH73LLLxs6x8+EI+yYTq25+fak1SmJKQMyTnqn?=
+ =?us-ascii?Q?i3MFOhI7BVWtzSt1jp1TJdqYC9pWFsW1bnXlpLNx4UFQKzMGUwViypvGfavL?=
+ =?us-ascii?Q?uV3dW933q0yn9r8gKCBTNhtQmt5/eZ4QerjlXNQ8t1cFcc+8BhPjUd92XazQ?=
+ =?us-ascii?Q?98512/eMBqqmlXLLfH75fiW8zliokoe9XSRkQ+ecN3+JQbLREZFdq9m4/ZQv?=
+ =?us-ascii?Q?YpBvqBjOY8yyqa9kvnMOji4hLoyCZL3ZNAMxjwk17tnXbmH2At0NiKIqYimw?=
+ =?us-ascii?Q?0Q9eAGIcvGGGkNZjU6Exvj6rc9Rzrt2SP9uudPcpkpwrFAlYJKTJUh2246+B?=
+ =?us-ascii?Q?2dc2S1Ni+df7Zds2iIMarVSm1yXNElBwPeD9chx1g+/vff8koqv1A9WwuTpU?=
+ =?us-ascii?Q?wUnd851sv3MH2dTPgwkvqcAnRSXTrgndonRxvRC9esd8Ct7KCFoGamzw9NOm?=
+ =?us-ascii?Q?ao0j1jyQFuDmQyw9NVRSM4iLh2BsoK+MHpOofdv+BEZ6LdIw1klF5rW/XILO?=
+ =?us-ascii?Q?0/QBrhT4M/goVZ5h3pkO8Ah0A6Zdq5+90IC4rxTkznxGMw0J3UdZRSMF0uvE?=
+ =?us-ascii?Q?hmPSOWy7cDjMYq6V/4vFsCGajTe8V35oqWb1nCkBi7n7y/HPkJ6/820ulvki?=
+ =?us-ascii?Q?PVafdiLKwzzSMpPzzuNf1Y9/A9fbfJegFkSGWY0oB98JIko+9tYd0/I0gaLN?=
+ =?us-ascii?Q?Y6xKpfwPPW4ThMZ9/9wEAgij2FubZJ3IMGxKhjLSfPn2ACalMudNZlNEeBa7?=
+ =?us-ascii?Q?Cp+OcLY6Rjecsvd6xljlmu8Bd9TFxD6kE+MiW93NjgHf70mTMJrn4/HZkQ72?=
+ =?us-ascii?Q?8VxLwMztv7TZlFU8/icdyfON7wBOQQM1xglJc/KKiZwVFWKyGplmF53wKKFE?=
+ =?us-ascii?Q?dADjH9AZvUEK+JIElc8e5xj5pF+KAZ7YthW97CrA9qLT0kaNtzaDha741B3K?=
+ =?us-ascii?Q?V4vc4hqg3/mjohmupt97lXJiQ7naI5QGlUkCm+TOrigTc74tuD/Q5hnnxFQS?=
+ =?us-ascii?Q?xs/mWShN/5UUeiCB+PmUv+j7WDdS/Czl72RMErxm?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 292bc19f-f653-4a03-7a64-08db2f6e6897
+X-MS-Exchange-CrossTenant-AuthSource: GV1PR04MB9055.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 28 Mar 2023 09:25:45.4329
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: mhPU9oEpcEQYozoLK91kTOsuKQ7fNb21ZIbgsM4iSGxQNapsQR8qdTldi8Spqp+Ckf481VTXhwZT20guxrcXQQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS1PR04MB9581
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230328_001141_755166_C8ADF5E9 
-X-CRM114-Status: GOOD (  13.46  )
+X-CRM114-CacheID: sfid-20230328_022552_765192_5AE2C465 
+X-CRM114-Status: GOOD (  34.78  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,65 +142,71 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 27/03/2023 11:30, Varadarajan Narayanan wrote:
-> Document the IPQ9574 dwc3 compatible.
+On Mon, Mar 27, 2023 at 02:15:47PM -0400, Sean Anderson wrote:
+> On 3/24/23 09:17, Ioana Ciornei wrote:
+> > On Tue, Mar 21, 2023 at 04:13:12PM -0400, Sean Anderson wrote:
+> >> This adds serdes support to the LS1088ARDB. I have tested the QSGMII
+> >> ports as well as the two 10G ports. The SFP slot is now fully supported,
+> >> instead of being modeled as a fixed-link.
+> >> 
+> >> Linux hangs around when the serdes is initialized if the si5341 is
+> >> enabled with the in-tree driver, so I have modeled it as a two fixed
+> >> clocks instead. There are a few registers in the QIXIS FPGA which
+> >> control the SFP GPIOs; I have modeled them as discrete GPIO controllers
+> >> for now. I never saw the AQR105 interrupt fire; not sure what was going
+> >> on, but I have removed it to force polling.
+> > 
+> > So you didn't see the interrupt fire even without these patches?
 > 
-> Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
-> ---
->  Changes in v4:
-> 	- Update other relevant sections
-> 	- Remove constraints not applicable to IPQ9574
-
-No, that's not way to go. These are required.
-
-> ---
->  .../devicetree/bindings/usb/qcom,dwc3.yaml         | 22 +++++++++++++++++++---
->  1 file changed, 19 insertions(+), 3 deletions(-)
+> Not sure. I went to check this, and discovered I could no longer get the
+> link to come up in Linux, even on v6.0 (before the rate adaptation
+> tuff). I see the LEDs blinking in U-Boot, so presumably it's some
+> configuration problem. I'm going to look into this further when I have
+> more time.
 > 
-> diff --git a/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml b/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
-> index a2aabda..3fc8c3c 100644
-> --- a/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
-> +++ b/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
-> @@ -17,6 +17,7 @@ properties:
->            - qcom,ipq6018-dwc3
->            - qcom,ipq8064-dwc3
->            - qcom,ipq8074-dwc3
-> +          - qcom,ipq9574-dwc3
->            - qcom,msm8953-dwc3
->            - qcom,msm8994-dwc3
->            - qcom,msm8996-dwc3
-> @@ -132,11 +133,8 @@ required:
->    - "#address-cells"
->    - "#size-cells"
->    - ranges
-> -  - power-domains
->    - clocks
->    - clock-names
-> -  - interrupts
-> -  - interrupt-names
->  
->  allOf:
->    - if:
-> @@ -242,6 +240,24 @@ allOf:
->          compatible:
->            contains:
->              enum:
-> +              - qcom,ipq9574-dwc3
-> +    then:
-> +      properties:
-> +        clocks:
-> +          maxItems: 5
-> +        clock-names:
-> +          items:
-> +            - const: sys_noc_axi
-> +            - const: anoc_axi
+> > I just tested this on a LS1088ARDB and it works.
+> > 
+> > 	root@localhost:~# cat /proc/interrupts | grep extirq
+> > 	 99:          5  ls-extirq   2 Level     0x0000000008b97000:00
+> > 	root@localhost:~# ip link set dev endpmac2 up
+> > 	root@localhost:~# cat /proc/interrupts | grep extirq
+> > 	 99:          6  ls-extirq   2 Level     0x0000000008b97000:00
+> > 	root@localhost:~# ip link set dev endpmac2 down
+> > 	root@localhost:~# cat /proc/interrupts | grep extirq
+> > 	 99:          7  ls-extirq   2 Level     0x0000000008b97000:00
+> > 
+> > Please don't just remove things.
+> 
+> Well, polling isn't the worst thing for a single interface... I do
+> remember having a problem with the interrupt. If this series works
+> with interrupts enabled, I can leave it in.
+> 
+> Did you have a chance to look at the core (patches 7 and 8) of this
+> series? Does it make sense to you? Am I missing something which would
+> allow switching from 1G->10G?
+> 
 
-Heh, do we really need entirely different clock names for each new variant?
+For a bit of context, I also attempted dynamic switching from 1G to 10G
+on my own even before this patch set but I did not get a link up on the
+PCS (CDR lock was there through). Pretty much the same state as you.
 
+What I propose is to take this whole endeavor step by step.
+I am also interrested in getting this feature to actually work but I
+just didn't have the time to investigate in depth was is missing.
+And without the dynamic switching I cannot say that I find the addition
+of the SerDes PHY driver useful.
 
-Best regards,
-Krzysztof
+I have the Lynx 10G on my TODO list but I still have some other tasks
+on the Lynx 28G for the next 2-3 weeks. Once I get those done, I will
+look closer at the patches.
 
+In the meantime, some small thigs from this patch set can be submitted
+separately. For example, describing the SFP cage on the LS1088ARDB.
+I still have some small questions on the DTS implementation for the gpio
+controllers but I would be able to submit this myself if you do not find
+the time (with your authorship of course).
+
+Ioana
 
 -- 
 linux-phy mailing list
