@@ -4,140 +4,139 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AAB60C76196
-	for <linux-phy@archiver.kernel.org>; Tue, 28 Mar 2023 14:41:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 28469C761AF
+	for <linux-phy@archiver.kernel.org>; Wed, 29 Mar 2023 19:51:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:
-	References:Cc:To:Subject:Date:Message-ID:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=G0AbYBI7CH3yO7Icy0jIhwEEEt1li+Ldirho7zOxXbk=; b=x/63TvkQQxLdhCN1Gs+J81Hu9e
-	dwpKJkANmGizjoGtmKZFQ1deG1ZirPcdSy/USQ11QFASUfI+zJWoKHtwPbdpBanYa6VbMNhjAqsAA
-	/J0kqjUyEYjWBU3tMSvCYPfWXI6LMm5auwsqgx3h0Y04LnJ6zNljOojbnN+saxOF7I55x3m1R6LvM
-	Z9oDhg697eF1yd23doJDeppZL7VrUzXqUR0bvJ+x+qmqUz6XO61H7epBv60/TvXfeVFZWkRu8WS8O
-	g1Xl3X6JJwhgTDDMWAzr8S2fg4lu93fqxNmJrQG0qEDGtrs+2M+kneBRZ7zzSi/rvZnvdiOuQnSN6
-	WVnU+rqg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=Zt4UtCzkaSF8KVl93p0JmlgQ1qNyqizQv9dwIGkyHbg=; b=A2LK/qEgEA6A7YIlhfkTO8FNu/
+	vHsgV7AsAAcuVNvPQ5id6+tkOFobGIWZxahNy5Vs5idIJmnRaLV8WVubE6Y3zaSJRwuPtsKqFgzTt
+	JTOx0Afb8gqkvyO0V371Ya7IqpuV89I8J//fAeD4J2k63YBO0a67uv6AvEWxH2awJQfMzHw1gK2Eu
+	0ieo152GXy+YEOVxBjtMLugRYdGp7A+cSqeWJl6P/uqS+IHh3a6Df92R5eEa/iKvtJe34DljNLtTR
+	4KHK7dSZg3pbrT229XHMvxbBWv/pXrp1mtCk8o+zH6svzvPbIHzQDHpws2DQSM5ZJLsNlz0kSBobK
+	aiqLglPg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1phAVX-00Envu-10;
-	Tue, 28 Mar 2023 14:41:07 +0000
-Received: from mail-vi1eur04hn030a.outbound.protection.outlook.com ([2a01:111:f400:fe0e::30a] helo=EUR04-VI1-obe.outbound.protection.outlook.com)
+	id 1phbp5-001gXg-2Z;
+	Wed, 29 Mar 2023 19:51:07 +0000
+Received: from wnew3-smtp.messagingengine.com ([64.147.123.17])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1phAVR-00Enuh-34;
-	Tue, 28 Mar 2023 14:41:04 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=seco.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=DCVHh+vK6Shuw49FLJm7zlymeJC3niUaq1vB88vKNAE=;
- b=IP4kYvl/2tXQUb+5KFhZNSUsa3C1U7qudpyFQYLhnTHHmST8a33oZRFwovfWOm0s3QtydkXHCE/DIO1GUaCONO5gutVb5mw4Fzxgw8J3lDmHUIwpFgJmyo/hOrL5eOqFeBToMOp7zAV0K2QutSPL2yLQPHVRFOKVdfd3EEjFIIfrTTIGhWslSMuN521RnahfqcOehna6ES/feGAYts+6DEBuYV9XSW8eMbuDTtDjf/TP2YE5zioUDlcUh3HBtLuQMAkaeFBMeQa1QKtkU8nJP/BA43jqsh52KzjUKwXd7Npn73Bt/hNHz9leQ5QU/Vy+rLOvBa+3e3VDavfMFCHtvg==
-Received: from AM6PR04CA0056.eurprd04.prod.outlook.com (2603:10a6:20b:f0::33)
- by AM9PR03MB6994.eurprd03.prod.outlook.com (2603:10a6:20b:2d6::18) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6222.33; Tue, 28 Mar
- 2023 14:40:55 +0000
-Received: from VI1EUR05FT020.eop-eur05.prod.protection.outlook.com
- (2603:10a6:20b:f0:cafe::1d) by AM6PR04CA0056.outlook.office365.com
- (2603:10a6:20b:f0::33) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6178.43 via Frontend
- Transport; Tue, 28 Mar 2023 14:40:55 +0000
-X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 20.160.56.86)
- smtp.mailfrom=seco.com; dkim=pass (signature was verified)
- header.d=seco.com;dmarc=pass action=none header.from=seco.com;
-Received-SPF: Pass (protection.outlook.com: domain of seco.com designates
- 20.160.56.86 as permitted sender) receiver=protection.outlook.com;
- client-ip=20.160.56.86; helo=inpost-eu.tmcas.trendmicro.com; pr=C
-Received: from inpost-eu.tmcas.trendmicro.com (20.160.56.86) by
- VI1EUR05FT020.mail.protection.outlook.com (10.233.242.192) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.6222.22 via Frontend Transport; Tue, 28 Mar 2023 14:40:54 +0000
-Received: from outmta (unknown [192.168.82.140])
-	by inpost-eu.tmcas.trendmicro.com (Trend Micro CAS) with ESMTP id 5F4AC2008088D;
-	Tue, 28 Mar 2023 14:40:54 +0000 (UTC)
-Received: from EUR05-VI1-obe.outbound.protection.outlook.com (unknown [104.47.17.176])
-	by repre.tmcas.trendmicro.com (Trend Micro CAS) with ESMTPS id 79B492008006D;
-	Tue, 28 Mar 2023 14:41:01 +0000 (UTC)
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=ng0bQBkg5on6jn0+8Aur1ZIqWJP7wyQCW+73od6Wl+yTtieVHViJRw5028HDIdJ/D51q9H84pkw70vBUAGVkjIQvbM5Vadc3r3EUawTfuwdUQv6Vd5MRrHIbBKwP5mZE7njSXVdx4PHKFt8XEoilkKf70mbiHUfNOmt8eLgGD3FFPEyZtZgweAHU7JpxC1Vmp7FWqszZ/67a3eSWnA0P+9gNjwa1oyLqnZL6F+oFVr6kH7wE8x1YiL8mbEjzhZNyL+qZSLskCyPMZTqqonbdJha1Y0xJzoOJbJrGgr5cKcMIU+yDpcIRxhO4CdP3gj/xfTyY21v7KfZDg/5+XoDRog==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=DCVHh+vK6Shuw49FLJm7zlymeJC3niUaq1vB88vKNAE=;
- b=cmQGPaiHXYbrb1QsA0hLr5cftNhtUsa5lwlHFWmrGo7ENOaS5i/+wtr3YKyOYnfuMvrnOWQAL5SnsRgyPYgtNZw4wO1FRuD0l+aHvQ02mMDik0s7+vE7FTaNcG6Tw+xsqF+lFTELBqRXgr+j5GitumvKJn5y+0QymGZhenCv+d2T0a7nERyADIAqxy1FB8DQ4XJav4mRLM7ggI02GRTEhD8NyMp77IE2VorsXxqjC31BFFt0jS7DJQa3IdhLIiPZL8rjxbpCiSLz6OuS3vP398d0iTCUEY7iKGlsP1HcVox9oXHvpbsxJmqUhyAvplH05gReyV2ac0fV78ZbW+h9FA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=seco.com; dmarc=pass action=none header.from=seco.com;
- dkim=pass header.d=seco.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=seco.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=DCVHh+vK6Shuw49FLJm7zlymeJC3niUaq1vB88vKNAE=;
- b=IP4kYvl/2tXQUb+5KFhZNSUsa3C1U7qudpyFQYLhnTHHmST8a33oZRFwovfWOm0s3QtydkXHCE/DIO1GUaCONO5gutVb5mw4Fzxgw8J3lDmHUIwpFgJmyo/hOrL5eOqFeBToMOp7zAV0K2QutSPL2yLQPHVRFOKVdfd3EEjFIIfrTTIGhWslSMuN521RnahfqcOehna6ES/feGAYts+6DEBuYV9XSW8eMbuDTtDjf/TP2YE5zioUDlcUh3HBtLuQMAkaeFBMeQa1QKtkU8nJP/BA43jqsh52KzjUKwXd7Npn73Bt/hNHz9leQ5QU/Vy+rLOvBa+3e3VDavfMFCHtvg==
-Authentication-Results-Original: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=seco.com;
-Received: from DB9PR03MB8847.eurprd03.prod.outlook.com (2603:10a6:10:3dd::13)
- by AM7PR03MB6262.eurprd03.prod.outlook.com (2603:10a6:20b:141::16) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6222.28; Tue, 28 Mar
- 2023 14:40:48 +0000
-Received: from DB9PR03MB8847.eurprd03.prod.outlook.com
- ([fe80::2226:eb03:a8c:a7e5]) by DB9PR03MB8847.eurprd03.prod.outlook.com
- ([fe80::2226:eb03:a8c:a7e5%2]) with mapi id 15.20.6222.033; Tue, 28 Mar 2023
- 14:40:48 +0000
-Message-ID: <d3163201-2012-6cf9-c798-916bab9c7f72@seco.com>
-Date: Tue, 28 Mar 2023 10:40:41 -0400
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.4.0
-Subject: Re: [PATCH v12 13/13] arm64: dts: ls1088ardb: Add serdes descriptions
-Content-Language: en-US
-To: Ioana Ciornei <ioana.ciornei@nxp.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
- <kishon@kernel.org>, linux-phy@lists.infradead.org,
- Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- devicetree@vger.kernel.org, Madalin Bucur <madalin.bucur@nxp.com>,
- Camelia Alexandra Groza <camelia.groza@nxp.com>,
- Bagas Sanjaya <bagasdotme@gmail.com>, linux-arm-kernel@lists.infradead.org,
- linuxppc-dev@lists.ozlabs.org, Li Yang <leoyang.li@nxp.com>,
- Shawn Guo <shawnguo@kernel.org>
-References: <20230321201313.2507539-1-sean.anderson@seco.com>
- <20230321201313.2507539-14-sean.anderson@seco.com>
- <20230324131701.4ucxf65sxfdtqcai@LXL00007.wbi.nxp.com>
- <5ca4aeba-db2c-4c0c-c620-d380b4b839bb@seco.com>
- <20230328092541.og7mexyh4espbh6t@LXL00007.wbi.nxp.com>
-From: Sean Anderson <sean.anderson@seco.com>
-In-Reply-To: <20230328092541.og7mexyh4espbh6t@LXL00007.wbi.nxp.com>
-X-ClientProxiedBy: BLAPR03CA0040.namprd03.prod.outlook.com
- (2603:10b6:208:32d::15) To DB9PR03MB8847.eurprd03.prod.outlook.com
- (2603:10a6:10:3dd::13)
+	id 1phbp0-001gW0-2c;
+	Wed, 29 Mar 2023 19:51:04 +0000
+Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
+	by mailnew.west.internal (Postfix) with ESMTP id B22DC2B05BE1;
+	Wed, 29 Mar 2023 15:50:53 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+  by compute4.internal (MEProxy); Wed, 29 Mar 2023 15:50:58 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=cc
+	:cc:content-type:content-type:date:date:from:from:in-reply-to
+	:in-reply-to:message-id:mime-version:references:reply-to:sender
+	:subject:subject:to:to; s=fm3; t=1680119453; x=1680126653; bh=S0
+	0Xp8JXjn19UH995q1FPsxfz6/qb923iCtN7jshDa0=; b=bjfu/u+3WNSfLMbwG8
+	kgDlb33yFeBpTyDn26O0i5sMcaQYMH5k+w0P2n88u/CL6nmHobkHURfCmf1/C29t
+	U0Qh1AeatQqCeBn6lka/dn10E2764ErqPqb3njkwCEp0gR+damC3mrcUvTxoLGFt
+	C8YUuH43zoflGPvolh5JgeGOuMjpcUVK2XMglwkAj5Jbl90JOiW6MmIBfFxsj47Z
+	LmLClTdxuUi8kFNiCE0STmAKXFF18XHkXI+HXgSXZYmlUiBbZLpqDOcow+ybw2xE
+	2FoegJ/5RU8yvTqRDV9YushjRc122S3DH00UzJnafvUsGPLUeJnt1P45+mZXlwwx
+	9r5w==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	messagingengine.com; h=cc:cc:content-type:content-type:date:date
+	:feedback-id:feedback-id:from:from:in-reply-to:in-reply-to
+	:message-id:mime-version:references:reply-to:sender:subject
+	:subject:to:to:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender
+	:x-sasl-enc; s=fm2; t=1680119453; x=1680126653; bh=S00Xp8JXjn19U
+	H995q1FPsxfz6/qb923iCtN7jshDa0=; b=mDHZlaVnXucLsPRdtiP08QfOw0gbw
+	L+tUMJhcynxctO/kzDo9N9LThihIenJjo53qM0euM2lsFwMzIIJmLZaKDMEQ9gKS
+	btQwIniilAJ2KR0keHWJin00kBMMw6Fvxj0Tqr2fZDydPMLtTJ9/sGRArw3nvLEJ
+	Inl8nRAJ+p1On2TOo/Jkf5NvgfFrgD8xiz+wUxe+OLxZLqgad7dL+FZKdxkOCpJr
+	jXFB1C2jlktQjz7Pf5BdwXfRgXBHnZg2CeqLIpNinGTcVjw+BWRP0a6XnT9W3OK0
+	vrpjM1vniY/j4v5fsA1EOzPEQz9MwxVgK2edMj2xcjAO4WZgtdvUtY6ug==
+X-ME-Sender: <xms:mpYkZD7Ox3zkaNg9OIbaq_Geirriia0AyR5zsctORI6EJu7ND1ZsRQ>
+    <xme:mpYkZI6gfNEQJJATGLF-jP5tejftDvf4e2pRhn5b30pSmUBJQi8Q22RK3CYpCbdPk
+    nljkuFaqJebKdIGblI>
+X-ME-Received: <xmr:mpYkZKdImEiijk94na28hpIQuEi3cQuAMkQWm0nzJyixb0OJnKMRnOXbcA>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvhedrvdehiedgudeggecutefuodetggdotefrod
+    ftvfcurfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfgh
+    necuuegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmd
+    enucfjughrpeffhffvvefukfhfgggtuggjsehgtderredttddvnecuhfhrohhmpeforgig
+    ihhmvgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecuggftrf
+    grthhtvghrnhepteefffefgfektdefgfeludfgtdejfeejvddttdekteeiffejvdfgheeh
+    fffhvedunecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomh
+    epmhgrgihimhgvsegtvghrnhhordhtvggthh
+X-ME-Proxy: <xmx:mpYkZEJl9MrKZSU_H62ZAJfDV2fQB_Dukmg12b6sz6GsGnrs1I7MQA>
+    <xmx:mpYkZHItJM6rTbcj4kioTn3BMkpHiPds2sYYICneLW9ubA5TBI5WRQ>
+    <xmx:mpYkZNxhOoittDkCw7hbXZnCUDUd-FuZ-EKLeSqNz8AN2-VxFNYVfA>
+    <xmx:nZYkZIRJx8oRJdN_mOMdRd18Mh8SZ8lDvg6OQ5KdOS-_17hhw45Pa7Wurdo>
+Feedback-ID: i8771445c:Fastmail
+Received: by mail.messagingengine.com (Postfix) with ESMTPA; Wed,
+ 29 Mar 2023 15:50:49 -0400 (EDT)
+Date: Wed, 29 Mar 2023 21:50:49 +0200
+From: Maxime Ripard <maxime@cerno.tech>
+To: Stephen Boyd <sboyd@kernel.org>
+Cc: Mark Brown <broonie@kernel.org>,
+	Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+	Chen-Yu Tsai <wens@csie.org>, Daniel Vetter <daniel@ffwll.ch>,
+	Nicolas Ferre <nicolas.ferre@microchip.com>,
+	Thierry Reding <thierry.reding@gmail.com>,
+	Jaroslav Kysela <perex@perex.cz>, Shawn Guo <shawnguo@kernel.org>,
+	Fabio Estevam <festevam@gmail.com>,	Ulf Hansson <ulf.hansson@linaro.org>,
+	Claudiu Beznea <claudiu.beznea@microchip.com>,
+	Michael Turquette <mturquette@baylibre.com>,
+	Dinh Nguyen <dinguyen@kernel.org>,	Paul Cercueil <paul@crapouillou.net>,
+	Chunyan Zhang <zhang.lyra@gmail.com>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Andreas =?utf-8?Q?F=C3=A4rber?= <afaerber@suse.de>,
+	Jonathan Hunter <jonathanh@nvidia.com>,	Abel Vesa <abelvesa@kernel.org>,
+	Charles Keepax <ckeepax@opensource.cirrus.com>,
+	Alessandro Zummo <a.zummo@towertech.it>,
+	Peter De Schrijver <pdeschrijver@nvidia.com>,
+	Orson Zhai <orsonzhai@gmail.com>,
+	Alexandre Torgue <alexandre.torgue@foss.st.com>,
+	Prashant Gaikwad <pgaikwad@nvidia.com>,
+	Liam Girdwood <lgirdwood@gmail.com>,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Samuel Holland <samuel@sholland.org>,
+	Matthias Brugger <matthias.bgg@gmail.com>,
+	Richard Fitzgerald <rf@opensource.cirrus.com>,
+	Vinod Koul <vkoul@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+	Sekhar Nori <nsekhar@ti.com>,	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Linus Walleij <linus.walleij@linaro.org>,	Takashi Iwai <tiwai@suse.com>,
+ David Airlie <airlied@gmail.com>,
+	Luca Ceresoli <luca.ceresoli@bootlin.com>,
+	Jernej Skrabec <jernej.skrabec@gmail.com>,
+	Pengutronix Kernel Team <kernel@pengutronix.de>,
+	Baolin Wang <baolin.wang@linux.alibaba.com>,
+	David Lechner <david@lechnology.com>,
+	Sascha Hauer <s.hauer@pengutronix.de>,	Max Filippov <jcmvbkbc@gmail.com>,
+	Geert Uytterhoeven <geert+renesas@glider.be>,
+	linux-stm32@st-md-mailman.stormreply.com,	alsa-devel@alsa-project.org,
+ linux-mediatek@lists.infradead.org,	linux-phy@lists.infradead.org,
+ linux-mips@vger.kernel.org,	linux-renesas-soc@vger.kernel.org,
+	linux-actions@lists.infradead.org, linux-clk@vger.kernel.org,
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	patches@opensource.cirrus.com, linux-tegra@vger.kernel.org,
+	linux-rtc@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-sunxi@lists.linux.dev, linux-kernel@vger.kernel.org,
+	dri-devel@lists.freedesktop.org
+Subject: Re: [PATCH v2 43/65] ASoC: tlv320aic32x4: Add a determine_rate hook
+Message-ID: <20230329195049.lbdbkbqu6zbq5xii@penduick>
+References: <20221018-clk-range-checks-fixes-v2-0-f6736dec138e@cerno.tech>
+ <20221018-clk-range-checks-fixes-v2-43-f6736dec138e@cerno.tech>
+ <Y2UzdYyjgahJsbHg@sirena.org.uk>
+ <20221104155123.qomguvthehnogkdd@houat>
+ <Y2U2+ePwRieYkNjv@sirena.org.uk>
+ <20221107084322.gk4j75r52zo5k7xk@houat>
+ <Y2j0r0wX1XtQBvqO@sirena.org.uk>
+ <20221107152603.57qimyzkinhifx5p@houat>
+ <5819b1362f35ce306e1b6d566bfd44e5.sboyd@kernel.org>
 MIME-Version: 1.0
-X-MS-TrafficTypeDiagnostic: 	DB9PR03MB8847:EE_|AM7PR03MB6262:EE_|VI1EUR05FT020:EE_|AM9PR03MB6994:EE_
-X-MS-Office365-Filtering-Correlation-Id: b76c5453-0ac7-4ff0-9954-08db2f9a6fba
-X-TrendMicro-CAS-OUT-LOOP-IDENTIFIER: 656f966764b7fb185830381c646b41a1
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam-Untrusted: BCL:0;
-X-Microsoft-Antispam-Message-Info-Original:  55775eD4OhfLunRGQEgiAwZkhulJGYy5Kyaq3Dzv82v4J2NcLS8cTJPP3s5e/hGdsqA5wdKly78Nf949npXU5/SXbfn9lgmSRk/lAS0LEjwd6RIbdxrfFwHJTawzL6vUXQxxEq2FC2L8cDnAaTkFgGOu4Avu7QT9DXKdee+MdgMLxOjrXh8AKUfWMckqsmoww0LquEQNbRSjY4FOcgLj1W5eVDEF0hasTu2xYg19r27c5CzSc7e0xSDkbMUFsnptnEMXfGjleY5lsDtp+EqczYKyGfuIKHMW61Avh3oKTtyftkKjNJOL1ASFj94AIxTGyuOxfjWoxEemZJPwNXZM9p8sNN6ewG8+Z/ZHMGReZ0lQWdiKprQOMgxKFeqxtO07Csd7DDNYjUpeXLeWNypapddYQYAV7j9Ke2dWx4xfqEe9DVXUIyaLvQklMq6EH3oyv8MkV7nHeXLlOEOHcvIoGJ/mXnqEYfzwDLI1cyGu6NZWN5K3sn+ZZ9T3JGOK5WDhupgZPLOFYXETehI4qktqVxsOhnQo2ts9Das/8Lx1nojS+jyadb9hZiT82Gbb5n/stGIwoJlDV+fMCELcdm9+DexraWium6cMQZGGjH0nM9VEmg2qbF1PE5mWY5sGe0o/J9KDLBVSsIa97vjW+DtRkvcj9/xL7LgmAH6xuQJVuFJy9Ky6k24HxD/WBf63z4sZ
-X-Forefront-Antispam-Report-Untrusted:  CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DB9PR03MB8847.eurprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230028)(136003)(346002)(376002)(396003)(39850400004)(366004)(451199021)(2906002)(86362001)(54906003)(31696002)(38100700002)(6916009)(38350700002)(2616005)(53546011)(41300700001)(6512007)(6506007)(7416002)(8936002)(8676002)(66556008)(4326008)(66476007)(66946007)(5660300002)(36756003)(6666004)(6486002)(44832011)(52116002)(26005)(186003)(316002)(478600001)(83380400001)(31686004)(43740500002)(45980500001);DIR:OUT;SFP:1101;
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM7PR03MB6262
-X-EOPAttributedMessage: 0
-X-MS-Exchange-Transport-CrossTenantHeadersStripped:  VI1EUR05FT020.eop-eur05.prod.protection.outlook.com
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id-Prvs: 	09502c04-5299-4139-18df-08db2f9a6b93
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 	cVYrQ8mgdTTGwYt39CraCW2rarlrSM9J32z9hNtWWJaMCn2WaKYjPGB11f4pUwZS31fatPOgt6HLm0Kq2H3+EibEsxOhktw7+wgUnaaMGSbK0fCAU3rcu6SrYG1d3vN2KoS69TtxITOlV5S3TiVellVy2vce5VA0ZJuQK2nFJfXQmjXB+MTHiZy6upvxjnF+nWEfMCw06Q6vlY2hHd7Ksv0+fWDjvOdsH7eRTrdUzNjQUEcJeuIFCuQaH5K5n/UWZwyYfIcF/c/H4QQodqCpOmzJwF8reZSX3MMrlPblAL73/Hkt339tcggCQYttCFhPNaVs2P/g7MYRiO947AY3dlEi9rMNZYnnRpuJUChe3TxBqEW6IpSgDLTwlIAzvRPFba13uAjaP+KAeixwutHPlma0rrBsGawswWEdavqRXj0KaaOLzTbV0rttCAkHuI1FoFWAt8qrAoEYwqK6xCkUUrbPkijLKdudHRLeWoG1qbfCOR69M1xY4nXMhc+lywG8CWwzeln9akvZvx0E9xNW+qW2SAYWSQ9wVgITD0Yzl0+2tNUodKsugK7zP7gKMCPxluAATXVhy137gJjN600byUR7LDwikVQffDfZkHxn0gbCTuLmFI/tJptpL+elvjl9ArZ+WQkVnDCgMZyHCBcftG/kdl4a8gvBkP6g1ahH6mJcA/0xJ+OPKBD32LNNPhHJiqsEEPl1RTKi/XRhgjYH721IzOXqLbLj0U7Uac/CfYFWymsFODHfO1/6slXDtw/qb6wEGjMei8Gq36QVvXk2GIh2SaksNnCcB82vKyiH4fQ=
-X-Forefront-Antispam-Report: 	CIP:20.160.56.86;CTRY:NL;LANG:en;SCL:1;SRV:;IPV:CAL;SFV:NSPM;H:inpost-eu.tmcas.trendmicro.com;PTR:inpost-eu.tmcas.trendmicro.com;CAT:NONE;SFS:(13230028)(39850400004)(136003)(376002)(396003)(346002)(451199021)(5400799015)(46966006)(40470700004)(36840700001)(336012)(31686004)(36756003)(186003)(6512007)(53546011)(41300700001)(6506007)(26005)(82310400005)(83380400001)(2616005)(40460700003)(8676002)(4326008)(70206006)(5660300002)(70586007)(6916009)(316002)(7596003)(54906003)(356005)(7636003)(82740400003)(8936002)(40480700001)(47076005)(44832011)(7416002)(478600001)(2906002)(36860700001)(6486002)(34070700002)(86362001)(31696002)(6666004)(43740500002)(12100799027);DIR:OUT;SFP:1501;
-X-OriginatorOrg: seco.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 28 Mar 2023 14:40:54.7932
- (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: b76c5453-0ac7-4ff0-9954-08db2f9a6fba
-X-MS-Exchange-CrossTenant-Id: bebe97c3-6438-442e-ade3-ff17aa50e733
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=bebe97c3-6438-442e-ade3-ff17aa50e733;Ip=[20.160.56.86];Helo=[inpost-eu.tmcas.trendmicro.com]
-X-MS-Exchange-CrossTenant-AuthSource: 	VI1EUR05FT020.eop-eur05.prod.protection.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Anonymous
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM9PR03MB6994
+In-Reply-To: <5819b1362f35ce306e1b6d566bfd44e5.sboyd@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230328_074102_491792_815436BD 
-X-CRM114-Status: GOOD (  38.85  )
+X-CRM114-CacheID: sfid-20230329_125102_881557_31C99794 
+X-CRM114-Status: GOOD (  35.85  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -149,98 +148,106 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============0713207492861195862=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 3/28/23 05:25, Ioana Ciornei wrote:
-> On Mon, Mar 27, 2023 at 02:15:47PM -0400, Sean Anderson wrote:
->> On 3/24/23 09:17, Ioana Ciornei wrote:
->> > On Tue, Mar 21, 2023 at 04:13:12PM -0400, Sean Anderson wrote:
->> >> This adds serdes support to the LS1088ARDB. I have tested the QSGMII
->> >> ports as well as the two 10G ports. The SFP slot is now fully supported,
->> >> instead of being modeled as a fixed-link.
->> >> 
->> >> Linux hangs around when the serdes is initialized if the si5341 is
->> >> enabled with the in-tree driver, so I have modeled it as a two fixed
->> >> clocks instead. There are a few registers in the QIXIS FPGA which
->> >> control the SFP GPIOs; I have modeled them as discrete GPIO controllers
->> >> for now. I never saw the AQR105 interrupt fire; not sure what was going
->> >> on, but I have removed it to force polling.
->> > 
->> > So you didn't see the interrupt fire even without these patches?
->> 
->> Not sure. I went to check this, and discovered I could no longer get the
->> link to come up in Linux, even on v6.0 (before the rate adaptation
->> tuff). I see the LEDs blinking in U-Boot, so presumably it's some
->> configuration problem. I'm going to look into this further when I have
->> more time.
->> 
->> > I just tested this on a LS1088ARDB and it works.
->> > 
->> > 	root@localhost:~# cat /proc/interrupts | grep extirq
->> > 	 99:          5  ls-extirq   2 Level     0x0000000008b97000:00
->> > 	root@localhost:~# ip link set dev endpmac2 up
->> > 	root@localhost:~# cat /proc/interrupts | grep extirq
->> > 	 99:          6  ls-extirq   2 Level     0x0000000008b97000:00
->> > 	root@localhost:~# ip link set dev endpmac2 down
->> > 	root@localhost:~# cat /proc/interrupts | grep extirq
->> > 	 99:          7  ls-extirq   2 Level     0x0000000008b97000:00
->> > 
->> > Please don't just remove things.
->> 
->> Well, polling isn't the worst thing for a single interface... I do
->> remember having a problem with the interrupt. If this series works
->> with interrupts enabled, I can leave it in.
->> 
->> Did you have a chance to look at the core (patches 7 and 8) of this
->> series? Does it make sense to you? Am I missing something which would
->> allow switching from 1G->10G?
->> 
-> 
-> For a bit of context, I also attempted dynamic switching from 1G to 10G
-> on my own even before this patch set but I did not get a link up on the
-> PCS (CDR lock was there through). Pretty much the same state as you.
-> 
-> What I propose is to take this whole endeavor step by step.
-> I am also interrested in getting this feature to actually work but I
-> just didn't have the time to investigate in depth was is missing.
-> And without the dynamic switching I cannot say that I find the addition
-> of the SerDes PHY driver useful.
 
-Well, it's still useful for supporting 1G and 10G. I touched on this in
-the cover letter, but there are conflicting PLL defaults on the LS1046A.
-If you use SRDS_PRCTL 1133, the PLL mapping is 2211. But for 3333 it's
-2222. This means PLL2 is used for both 1G and 10G, but no reference
-frequency can work for both. This will cause the PBL to enter a reset
-loop, since it wants the PLLs to lock before booting, and this happens
-before any user configuration. To get around this, we disconnected
-RESET_REQ_B on our board, and we use this driver to configure the PLLs
-correctly for whatever SRDS_PRCTL we boot up with.  This way we can have
-two RCWs for 1G and 10G configuration.
+--===============0713207492861195862==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="bx2st77tq2vvri5u"
+Content-Disposition: inline
 
-> I have the Lynx 10G on my TODO list but I still have some other tasks
-> on the Lynx 28G for the next 2-3 weeks. Once I get those done, I will
-> look closer at the patches.
 
-OK, thanks.
+--bx2st77tq2vvri5u
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-> In the meantime, some small thigs from this patch set can be submitted
-> separately. For example, describing the SFP cage on the LS1088ARDB.
+Hi Stephen,
 
-I'll have a look at this. I suppose I will also split off the IRQ thing.
+On Wed, Mar 22, 2023 at 04:31:04PM -0700, Stephen Boyd wrote:
+> > It's also replacing one implicit behavior by another. The point of this
+> > series was to raise awareness on that particular point, so I'm not sure
+> > it actually fixes things. We'll see what Stephen thinks about it.
+> >=20
+>=20
+> Right. A decade ago (!) when determine_rate() was introduced we
+> introduced CLK_SET_RATE_NO_REPARENT and set it on each mux user (see
+> commit  819c1de344c5 ("clk: add CLK_SET_RATE_NO_REPARENT flag")). This
+> way driver behavior wouldn't change and the status quo would be
+> maintained, i.e. that clk_set_rate() on a mux wouldn't change parents.
+> We didn't enforce that determine_rate exists if the set_parent() op
+> existed at the same time though. Probably an oversight.
+>=20
+> Most of the replies to this series have been "DT is setting the parent",
+> which makes me believe that there are 'assigned-clock-parents' being
+> used.
 
-> I still have some small questions on the DTS implementation for the gpio
-> controllers but I would be able to submit this myself if you do not find
-> the time (with your authorship of course).
+Yes, that's my understanding as well.
 
-I am going to do another revision to address the GPIO binding problem,
-so please ask away.
+> The clk_set_parent() path is valid for those cases. Probably nobody
+> cares about determine_rate because they don't set rates on these clks.
+> Some drivers even explicitly left out determine_rate()/round_rate()
+> because they didn't want to have some other clk round up to the mux
+> and change the parent.
+>=20
+> Eventually we want drivers to migrate to determine_rate op so we can get
+> rid of the round_rate op and save a pointer (we're so greedy). It's been
+> 10 years though, and that hasn't been done. Sigh! I can see value in
+> this series from the angle of migrating, but adding a determine_rate op
+> when there isn't a round_rate op makes it hard to reason about. What if
+> something copies the clk_ops or sets a different flag? Now we've just
+> added parent changing support to clk_set_rate(). What if the clk has
+> CLK_SET_RATE_PARENT flag set? Now we're going to ask the parent clk to
+> change rate. Fun bugs.
+>=20
+> TL;DR: If the set_parent op exists but determine_rate/round_rate doesn't
+> then the clk is a mux that doesn't want to support clk_set_rate(). Make
+> a new mux function that's the contents of the CLK_SET_RATE_NO_REPARENT
+> branch in clk_mux_determine_rate_flags() and call that directly from the
+> clk_ops so it is clear what's happening,
+> clk_hw_mux_same_parent_determine_rate() or something with a better name.
+> Otherwise migrate the explicit determine_rate op to this new function
+> and don't set the flag.
+>=20
+> It may be possible to entirely remove the CLK_SET_RATE_NO_REPARENT flag
+> with this design, if the determine_rate clk_op can call the inner
+> wrapper function instead of __clk_mux_determine_rate*() (those
+> underscores are awful, we should just prefix them with clk_hw_mux_*()
+> and live happier). That should be another patch series.
 
---Sean
+Sorry but it's not really clear to me what you expect in the v2 of this
+series (if you even expect one). It looks that you don't like the
+assignment-if-missing idea Mark suggested, but should I just
+rebase/resend or did you expect something else?
+
+Maxime
+
+--bx2st77tq2vvri5u
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYKAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCZCSWmAAKCRDj7w1vZxhR
+xQXTAP0bPg2EVQxPktgSpE4coaiyyn0Cu6Bba/x8MkUcPgNRVQEAxpbYr0uDsXMC
+CE9ojO6fXNwPgqHm5ELQGJgnrvcQQQg=
+=B5xn
+-----END PGP SIGNATURE-----
+
+--bx2st77tq2vvri5u--
+
+
+--===============0713207492861195862==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============0713207492861195862==--
+
