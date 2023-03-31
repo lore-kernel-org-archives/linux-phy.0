@@ -4,61 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 68AD0C76196
-	for <linux-phy@archiver.kernel.org>; Fri, 31 Mar 2023 13:44:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C2FD1C76196
+	for <linux-phy@archiver.kernel.org>; Fri, 31 Mar 2023 13:46:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Nf5j0ZET26QmRuiiRxiwalNXDnVcchzpfeygkvVueRk=; b=sQJA8vyFGv1fjZ
-	r+9ndLaX8B2isJy2WgmFWRY0jKYb6DTHo71sJvabfxJhpLDGtalvIMQBkxnMAMLq4n5qcvA2SwGFc
-	DhfDVYbR37ra6+OXEIYVhV9vkBaZSLhv7UNp1QraOusH1A4quqQSQk90BbVwE+f49MRDHsxIehwMr
-	j9pS0LF4kaanOTcsc2rmK74kXfedbPA5ZqQGka+TSv5+Zs4fyyp39ispEmS2HGdJGA5QkjibBVYc9
-	qw6Q0uhwKCwjZFWeRZUO8UTq6QMXWzNoT64p3yI4fX1Tz11iLrIrOBgYoMy+WAEiXJV+/l7bjMg06
-	0g/ZBOW5E25Utmu7sH5w==;
+	List-Owner; bh=qvpUJhbGBrXt8aB9Yt7oFsxtNYuAJM+gV81wpD5WtTY=; b=bEIL2KkUNi8Wo/
+	vS0Zf/QtAycHXHb772Mg2kb8IkPZVJ9r1a3YcPTyg9we4oPTbmHbnO8+IjhyvEWzapm0MXsq1PQpZ
+	/j4qOtoi7sxwiy5C4K/5gSvyH3O6iy4dWJQiA0/mLq1rsRHHsjeMMuzN0748eVYpOEWZfxqwyvdA5
+	bAPn8/dKovttfEfQlkRIOgtvztxYIsb/mzUWkvS4ph8AtyIEx6Ll28NAF1azi8qpVV+CN8csyy0J+
+	jxsvx/3xf1BlFB5NqZhtu65ODvVdqia7GJwxY7uhW100f6GdWBCbt891dOtsQJJe2gtHE48kyJIpu
+	PQMTFL3jkrig5Sf/9+1Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1piF3o-007ZNS-08;
-	Fri, 31 Mar 2023 13:44:56 +0000
-Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
+	id 1piF5L-007ZZ9-0z;
+	Fri, 31 Mar 2023 13:46:31 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1piF3l-007ZMi-2o
+	id 1piF5I-007ZY8-1z
 	for linux-phy@lists.infradead.org;
-	Fri, 31 Mar 2023 13:44:55 +0000
+	Fri, 31 Mar 2023 13:46:29 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id 5D292B82FC3;
-	Fri, 31 Mar 2023 13:44:52 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 42F5DC433EF;
-	Fri, 31 Mar 2023 13:44:50 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 1811662953;
+	Fri, 31 Mar 2023 13:46:28 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9C16EC433EF;
+	Fri, 31 Mar 2023 13:46:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1680270291;
-	bh=d9Fe4OlQvEZdFcbBLYw4zSiNG69Za5tYzhCykGM8QAg=;
+	s=k20201202; t=1680270387;
+	bh=WvSCb902nMnpOOHpQb55tfRom86bobvNd9VxcVpayD8=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=tq3bgiWC/0VjSdLfisgRJ4dsJ9FfV/Me6jQmnw/pU24Tf3aufl6188YqMVJupxIh0
-	 DE1RhpJEycgL566GznxJcLvjxK3iNpNwIM1wvGNeKHdPlNYnla3eaz5P9eWfvJDF0+
-	 vOHDbTGRCyi1Z9kQ3GyXD4KrH36i9x/gwKxaWruBhDnf2byEfk/suVuYGZrmtgEqcD
-	 /o4A8ZAtJ2KIlEXjAQd4NU5pv8nLc+hmcT1u7u1nlhuJzgFzoZT/8kdfU1hNzWSsyj
-	 OzvalPPhmDQ20IToi7plb4Q+3QFXV3zepVrTjDX2VSiRbE0FGhyn7A98PikJbEPP/Z
-	 5D+7JNeSK4Q3Q==
-Date: Fri, 31 Mar 2023 19:14:45 +0530
+	b=FM4Oj6vV3l53BHlnTiIHj/d4cSR31Xgf4qeTWY4Hl0H2jQcc9fJ47l67lBGfMAkGV
+	 x6i3Wez+PxxqaFGM9cLWtWP3blM9dro2QqRbURynrICK1jGzDmwxewhESeoPWWTKND
+	 ujSXbxjxuc7e3WuvhlC7O1NvMmoHT9Th2yMmBVe7MGSxzsSLHMaRAEpIOgq+N2s0R0
+	 cVwYypMsxUvuv+zpj/NGt4uDGZC3j4WYIdiywzPFNnJjMSumPV+7d90tjA5DoGt8uE
+	 auK46+SyzRuG3tr+siKFpqTIDy1gE/7Pt4dRpC/xVG7Ol9kUd/bvSJ5xJrEvlWCvPF
+	 Ow1uh8t1SpaJA==
+Date: Fri, 31 Mar 2023 19:16:23 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Swapnil Jakhade <sjakhade@cadence.com>
-Cc: kishon@kernel.org, linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org, mparab@cadence.com, rogerq@kernel.org
-Subject: Re: [PATCH] phy: cadence: Sierra: Add PCIe + SGMII PHY multilink
- configuration
-Message-ID: <ZCbjzXB3GW8siHYz@matsya>
-References: <20230220141216.25326-1-sjakhade@cadence.com>
+To: Lars-Peter Clausen <lars@metafoo.de>
+Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
+	Swapnil Jakhade <sjakhade@cadence.com>,
+	linux-phy@lists.infradead.org
+Subject: Re: [PATCH 1/2] phy: cadence: Sierra: Replace `clk_register(`) with
+ `clk_hw_register()`
+Message-ID: <ZCbkL02etVCcQ1vW@matsya>
+References: <20230326011416.363318-1-lars@metafoo.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20230220141216.25326-1-sjakhade@cadence.com>
+In-Reply-To: <20230326011416.363318-1-lars@metafoo.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230331_064454_064479_93D0D204 
-X-CRM114-Status: UNSURE (   6.13  )
+X-CRM114-CacheID: sfid-20230331_064628_688189_5340C814 
+X-CRM114-Status: UNSURE (   8.25  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -76,11 +77,15 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 20-02-23, 15:12, Swapnil Jakhade wrote:
-> Add register sequences for PCIe + SGMII PHY multilink configuration.
-> This has been validated on TI J7 platforms.
+On 25-03-23, 18:14, Lars-Peter Clausen wrote:
+> The `devm_clk_register()` API is deprecated. Switch to
+> `devm_clk_hw_register()`.
+> 
+> Since the driver enables its own internal PLLs using the clock API we
+> still need to get a reference to the PLL clocks using the
+> `devm_clk_hw_get_clk()` API.
 
-This fails to apply for me, can you please rebase
+Applied, thanks
 
 -- 
 ~Vinod
