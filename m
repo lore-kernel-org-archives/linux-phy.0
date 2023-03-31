@@ -4,62 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A2A56C76196
-	for <linux-phy@archiver.kernel.org>; Fri, 31 Mar 2023 13:53:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D0317C76196
+	for <linux-phy@archiver.kernel.org>; Fri, 31 Mar 2023 13:54:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DFU2Y+OanXux/XKVLcNWlmaGeOIOBMrfo6+xckSOKWo=; b=039xSZQVesDZqD
-	CcnWI7In0bu4YM/t785XeE1EHmq8gv/s9WwshsP9MGt1JUYLFbuu2RFqgY/89tvapxJ6m3kXxjLup
-	OMPrkdLpptHwO8JoVshDIpIMP6z3iz7KdhUeSIVi8RDK7s5GIzjs7Nf/q09gSpv13KNItZ+axTdXF
-	kpdNR3ZXyBTnal/NKN/2mj9nqiI1wOfTbS9a5jxj9YBx4oAzcOVvidwMz40i9yF18VMSoZDeqU0Zs
-	y1FKB0O0BUNIZCtsvc2i99aB0KGuFVDB3AsckVLrv8yJgGw4WYkyC7Bx3naQk+mnPESuhLWwtz0GQ
-	4ViJUdE0oT7FPZD8+1MA==;
+	List-Owner; bh=OQXoX4b/F/wLTnbEgrLv+nUFTjNNrqw8zjcXdkgmGpY=; b=O5zwKj4Oc8O0cq
+	nCAS3mglrvRFh449ryq69x1Eul/+JkHMZAxfqyWQJ/Nnkyo5BDQJIhJa+Tx6iw33m5+z1QDFWvJaV
+	y9zmROVC+szHtvVE45vLZznw2KSIsSSeV1B0ttIZUYURmAHIGmiRu/IYRry4wKhnaZb81GqeVSJVJ
+	iQ7esak7GWk1vXasLJ0sxKvVOl2r2jWzcr5csZta0wIL05dIHTABceqVfZXVu+PPWLAj6Tj24fXad
+	5It6YI5eZDRiegfbTLRF5U4OyUMCGOlNaDDcXtweoCBvkMK4d4123T2DueYG6Y0HjUwuHT6lz1lFM
+	x6TkJ2yrJkp+pL9qa2yw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1piFCC-007bZ5-0f;
-	Fri, 31 Mar 2023 13:53:36 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1piFDH-007bo7-11;
+	Fri, 31 Mar 2023 13:54:43 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1piFC1-007bWg-24;
-	Fri, 31 Mar 2023 13:53:28 +0000
+	id 1piFDC-007bmi-2O
+	for linux-phy@lists.infradead.org;
+	Fri, 31 Mar 2023 13:54:39 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 13D0F62940;
-	Fri, 31 Mar 2023 13:53:25 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id DDBC9C433D2;
-	Fri, 31 Mar 2023 13:53:23 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 1434B62958;
+	Fri, 31 Mar 2023 13:54:38 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 89164C433EF;
+	Fri, 31 Mar 2023 13:54:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1680270804;
-	bh=iobnNx/k4Sc2xMbYMQJiH+DrwwFFMu9MAZjj3G/BEow=;
+	s=k20201202; t=1680270877;
+	bh=ShYnQF5sGPRHsnfF+6Il0ZMGhTHQ6CjbrVEJ8a5DiWQ=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=a4SmCF/0mzYQdQsMPReJLAifywz8g/9ccxuuOc1zINTi9oWXgfjZXskwB+h6Q1+9U
-	 kRPzZtTwMFZ9VzXer4L2cmi5Q9JtH7bgugAkEbvxfphndLHu69CmyzZm+qpNQem4Tf
-	 x2ZwXLfgcKWeXkh9uIlQbedWp71McJMkSI07P1J/jcRMN0x42NV4eULjpXvJ4HBZ4C
-	 4gESQ3fKOPHhAYILMfymW9G7D5oAW6JG2AifhtQfSF7Xkr7m0Pe0q1MmmyKIKnL+M5
-	 P5pXXoxDc5uH7pEaFq4X9A74IlcMTvvJnWU9AIpGWOMTHUWzkkQN7nSCV+6hHbZYo2
-	 ypHyZgTPOOuRQ==
-Date: Fri, 31 Mar 2023 19:23:20 +0530
+	b=eEd7lMx4zWzXFf7MKFXQMTXkO4hwvPwKXvO2KCsL/RuOFFneh+YeADbS93K1Xi9i/
+	 3xwPL/+iKOAsYUxzFJlrA1GufAWQr0oTRV3zS6XPeLODbBkpINv2e+mMbKr+nq5zEX
+	 kOQEpZl1y/DXh2OrNAbKfDd7RtEeteBfIv4B+mxkpA4H1d5HWvcZGzKzQbVBfgEJW5
+	 dm1PGTi3FX2/0Ae8r9amXHpY12B5wJuMJDOyS9+OvhVPbWNTx+hAMfNAZjtTIRvdK3
+	 3Bs4//h1VR+W+BMRWenWisR3SDUqV8+ac07/zdtJQ4Bs2RxzMA8UzjYecE7tT5SFqv
+	 PS9QjSq6gir9Q==
+Date: Fri, 31 Mar 2023 19:24:32 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Tom Rix <trix@redhat.com>
-Cc: kishon@kernel.org, heiko@sntech.de, nathan@kernel.org,
-	ndesaulniers@google.com, linux-phy@lists.infradead.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
-	llvm@lists.linux.dev
-Subject: Re: [PATCH] phy: rockchip-pcie: remove unused phy_rd_cfg function
-Message-ID: <ZCbl0Aa7gtvXZ/58@matsya>
-References: <20230321122503.1783311-1-trix@redhat.com>
+To: Rohit Agarwal <quic_rohiagar@quicinc.com>
+Cc: agross@kernel.org, andersson@kernel.org, konrad.dybcio@linaro.org,
+	kishon@kernel.org, robh+dt@kernel.org,
+	krzysztof.kozlowski+dt@linaro.org, manivannan.sadhasivam@linaro.org,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v3 0/2] Add support for PCIe PHY in SDX65
+Message-ID: <ZCbmGPfIup4YuEF0@matsya>
+References: <1679035114-19879-1-git-send-email-quic_rohiagar@quicinc.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20230321122503.1783311-1-trix@redhat.com>
+In-Reply-To: <1679035114-19879-1-git-send-email-quic_rohiagar@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230331_065325_737167_3313BFB6 
-X-CRM114-Status: UNSURE (   7.01  )
+X-CRM114-CacheID: sfid-20230331_065438_818253_B6CE64FA 
+X-CRM114-Status: UNSURE (   9.21  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -77,13 +78,16 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 21-03-23, 08:25, Tom Rix wrote:
-> clang with W=1 reports
-> drivers/phy/rockchip/phy-rockchip-pcie.c:122:19: error:
->   unused function 'phy_rd_cfg' [-Werror,-Wunused-function]
-> static inline u32 phy_rd_cfg(struct rockchip_pcie_phy *rk_phy,
->                   ^
-> This function is not used, so remove it.
+On 17-03-23, 12:08, Rohit Agarwal wrote:
+> Hi,
+> 
+> Changes in v3:
+>  - Addressed minor comments from Krzysztof of removing redundant binding
+>    usage in commit message.
+> 
+> Changes in v2:
+>  - Addressing Dmitry's comments and adjusting according to new bindings.
+>  - Rebased on top of 6.3-rc1.
 
 Applied, thanks
 
