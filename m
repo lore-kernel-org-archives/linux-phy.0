@@ -4,61 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2C92AC6FD18
-	for <linux-phy@archiver.kernel.org>; Fri, 31 Mar 2023 13:50:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A38CEC761A6
+	for <linux-phy@archiver.kernel.org>; Fri, 31 Mar 2023 13:50:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0BQlwH4fMQ4rJFifPPnY65iQ5fa3hcF38zpy7un6uc0=; b=pRRPrHVFc41RKi
-	pkzkh7iByYFGpSfr6JiwVacV94uSGMUxTWwV95jpDFGRgeES97Lrhqx0kn2czq/r0SdTIyuzwgA5M
-	9rvnIMW9rmCR6qe4rxcm8PvBTe9/75zmQ/FadevSm1uSCb2HgUZPUs/rxoUQ9uxKqp2O4dMUy9zyY
-	jRY9MYcHs//EDQl33CBliFRfyKPdaDvs3GqcyEwJimTQCdLPNi/cCqoCnlVy1+/h01dBi9a0IafOe
-	6AZi7Gx2q9i6OUXYlr9p5IS6wTmqGmEyyCLZTrVDMaPeVMJfAwiZ2opPyg0DJEwnPlMfjAX3glq9/
-	yhZdKw73sFYL2OR9oA7g==;
+	List-Owner; bh=hHMuYYX5sjf2jxpj6JWbesorO1yAoW3M+JwrQe6z6+s=; b=t4cgkyeo8baNW4
+	MzPN/NyeHLS1Eh+bY6w4JtTcECKdBWRY0YR3MpxnJQYV016JJsb8tGphWflXRv1gTo8Rjt1i1aGef
+	GmO4D3EeLGILyRD3gv/slrvwrCqOqmXldF85sy6YHS9EGM0Q8GXqa9JvcovUbX1nhJZHbUcgN7cjt
+	/hPO5Xovas1AxQ6yektEsdOVYrD1te+77mzoaoDHQ4Iv8OBvd20BwXYONrs2NF13kldOVjdO9UMyW
+	AKgdf90k2CjDEj2lPJKO2S0JpySnAkPCzX6mc/Nqvzhfbd5kVD5gtsPXtmdgtg5yXD/tThBlHvl4F
+	99MsOSU1ppCLls+Hu7ag==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1piF8w-007aYk-18;
-	Fri, 31 Mar 2023 13:50:15 +0000
-Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
+	id 1piF9I-007ahJ-0w;
+	Fri, 31 Mar 2023 13:50:36 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1piF8j-007aT3-06;
-	Fri, 31 Mar 2023 13:50:02 +0000
+	id 1piF9F-007afy-1r
+	for linux-phy@lists.infradead.org;
+	Fri, 31 Mar 2023 13:50:34 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id 47AFEB82E86;
-	Fri, 31 Mar 2023 13:49:59 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8A94FC433D2;
-	Fri, 31 Mar 2023 13:49:57 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 1DBCD62588;
+	Fri, 31 Mar 2023 13:50:33 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id EEEA2C4339C;
+	Fri, 31 Mar 2023 13:50:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1680270598;
-	bh=z/Ar//fKecpCf9wRkg18J/k+U8y/C1Zx2QWQGp9b4Uk=;
+	s=k20201202; t=1680270632;
+	bh=2cykrbzQ+KKCSCcE8DJnTcmAUhli8KdUwSPQn/1+oCQ=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=et0BefEu3QBhflB0a+HHoSnW5KubjrOSR95wqxNWiBBhpwxazaCrTjl8pIcvzQ/+6
-	 PWEGCOc+Gjt3SovdTeNO8RTYvvb52/lmxPe0v72S0cvh/JjieCMTjhMfJyvqiZqEJf
-	 juMEq0wI2jg3pZui65EK2GvBWLGo7DeAOWA3halnI8jvQwMl+TnY/WeA/3wvYMyXLX
-	 F+Zr/ZIgH/J/BvAVPvgmmjot8EWNYMey0RLRWuy2a0w8rrpodHSicO6ONgreUjdOH/
-	 xZPjXwUo4KbkOu2K+DhOD/MppezeqnF7WfoZOjQS5qAoFYOR+xVsFAgD34QgJaCtYE
-	 3rXUA2DCLxLtw==
-Date: Fri, 31 Mar 2023 19:19:54 +0530
+	b=g2kw+MJuxfkxrMlpRGDu7Hv5mveuj45k8vF1WmmYNmNZ6gVv3AA+T9tWdX8MITEFM
+	 cTkcslzZ2Mf6j7eJmKVjGpPHsW47g3R2rUT8dk8ACrPp6kGuOTCUqA/3vfqYDP7JQB
+	 wx/o0Eu1dXfgLzW61cTnwr80LbvOvjRxi/UMhbc0nOke5ZohczTE8daQU0XHghdHBu
+	 vxnNYCzMXeJXQn/RfWrZDUOsdcaTQTmYXJukgfYHwE3TJ78VCHFjLFwZ68pvK3DjTX
+	 p9ow5UcvbQu+/MW0CxDVt9WVWMbWSPvNlHpehn24jHOLF+j0H7kAgQynZBRAI0vHEO
+	 YvahmfzMUWtWA==
+Date: Fri, 31 Mar 2023 19:20:28 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Yang Li <yang.lee@linux.alibaba.com>
-Cc: neil.armstrong@linaro.org, khilman@baylibre.com, kishon@kernel.org,
-	jbrunet@baylibre.com, martin.blumenstingl@googlemail.com,
-	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
-	linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH -next] phy: dphy: Use devm_platform_ioremap_resource()
-Message-ID: <ZCblAoyNJhoRyyKd@matsya>
-References: <20230323073534.75037-1-yang.lee@linux.alibaba.com>
+To: ye.xingchen@zte.com.cn
+Cc: kishon@kernel.org, u.kleine-koenig@pengutronix.de, linmq006@gmail.com,
+	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH] phy: omap-usb2-phy: Use dev_err_probe()
+Message-ID: <ZCblJLBTPMS4z8Mf@matsya>
+References: <202303231545522162256@zte.com.cn>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20230323073534.75037-1-yang.lee@linux.alibaba.com>
+In-Reply-To: <202303231545522162256@zte.com.cn>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230331_065001_211630_835F7737 
-X-CRM114-Status: UNSURE (   7.58  )
+X-CRM114-CacheID: sfid-20230331_065033_651773_76360BE9 
+X-CRM114-Status: UNSURE (   6.42  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -76,12 +75,10 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 23-03-23, 15:35, Yang Li wrote:
-> According to commit 7945f929f1a7 ("drivers: provide
-> devm_platform_ioremap_resource()"), convert platform_get_resource(),
-> devm_ioremap_resource() to a single call to use
-> devm_platform_ioremap_resource(), as this is exactly what this function
-> does.
+On 23-03-23, 15:45, ye.xingchen@zte.com.cn wrote:
+> From: Ye Xingchen <ye.xingchen@zte.com.cn>
+> 
+> Replace the open-code with dev_err_probe() to simplify the code.
 
 Applied, thanks
 
