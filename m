@@ -4,64 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D0317C76196
-	for <linux-phy@archiver.kernel.org>; Fri, 31 Mar 2023 13:54:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0969CC761A6
+	for <linux-phy@archiver.kernel.org>; Fri, 31 Mar 2023 13:55:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OQXoX4b/F/wLTnbEgrLv+nUFTjNNrqw8zjcXdkgmGpY=; b=O5zwKj4Oc8O0cq
-	nCAS3mglrvRFh449ryq69x1Eul/+JkHMZAxfqyWQJ/Nnkyo5BDQJIhJa+Tx6iw33m5+z1QDFWvJaV
-	y9zmROVC+szHtvVE45vLZznw2KSIsSSeV1B0ttIZUYURmAHIGmiRu/IYRry4wKhnaZb81GqeVSJVJ
-	iQ7esak7GWk1vXasLJ0sxKvVOl2r2jWzcr5csZta0wIL05dIHTABceqVfZXVu+PPWLAj6Tj24fXad
-	5It6YI5eZDRiegfbTLRF5U4OyUMCGOlNaDDcXtweoCBvkMK4d4123T2DueYG6Y0HjUwuHT6lz1lFM
-	x6TkJ2yrJkp+pL9qa2yw==;
+	List-Owner; bh=IxYGykJRbNhjlTLp5wW/CIHoyMTmGIX7oHMbWU4bH6Y=; b=FWZv87I8wDkukQ
+	UUV+J75N6qGC/raMsRgSn9+eKoYAKPqiweRyQifmQeeW1+VwPi+ZmX3/UFuAWNGYH51Nwr6rQBodi
+	fOogx5NUFVTZglyGJ74Gafna+04+z/UmerkmxCmb3D+psV+kTit9jMTbd4JmDmD55zpL0shuawwg4
+	qLzEluUmlKa4ZAu7JDePzRmnoIjsSG9fq+Hbu2xZemVnRke1GKw1O0eEXwBHsISiNUjereN7N7S33
+	uK2SM8fVSVQwLOZcgioC4fCI4ga0pnb5JL7Lv5ISvUDzx2t0UOV4xfa2jrYl3OgJopbd1l6cAydbE
+	I/XALGrODolH5qrU8IWA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1piFDH-007bo7-11;
-	Fri, 31 Mar 2023 13:54:43 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1piFES-007byj-2E;
+	Fri, 31 Mar 2023 13:55:56 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1piFDC-007bmi-2O
-	for linux-phy@lists.infradead.org;
-	Fri, 31 Mar 2023 13:54:39 +0000
+	id 1piFEO-007bxg-0n;
+	Fri, 31 Mar 2023 13:55:53 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 1434B62958;
-	Fri, 31 Mar 2023 13:54:38 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 89164C433EF;
-	Fri, 31 Mar 2023 13:54:36 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 6394162956;
+	Fri, 31 Mar 2023 13:55:51 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E1C89C433EF;
+	Fri, 31 Mar 2023 13:55:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1680270877;
-	bh=ShYnQF5sGPRHsnfF+6Il0ZMGhTHQ6CjbrVEJ8a5DiWQ=;
+	s=k20201202; t=1680270950;
+	bh=AY4Vj7brLyfc8mcHlnnDPBFL372vQ2K2Eu+eeiVFgEc=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=eEd7lMx4zWzXFf7MKFXQMTXkO4hwvPwKXvO2KCsL/RuOFFneh+YeADbS93K1Xi9i/
-	 3xwPL/+iKOAsYUxzFJlrA1GufAWQr0oTRV3zS6XPeLODbBkpINv2e+mMbKr+nq5zEX
-	 kOQEpZl1y/DXh2OrNAbKfDd7RtEeteBfIv4B+mxkpA4H1d5HWvcZGzKzQbVBfgEJW5
-	 dm1PGTi3FX2/0Ae8r9amXHpY12B5wJuMJDOyS9+OvhVPbWNTx+hAMfNAZjtTIRvdK3
-	 3Bs4//h1VR+W+BMRWenWisR3SDUqV8+ac07/zdtJQ4Bs2RxzMA8UzjYecE7tT5SFqv
-	 PS9QjSq6gir9Q==
-Date: Fri, 31 Mar 2023 19:24:32 +0530
+	b=Mn5KEzt/zCHEHjmI1CMRw3yZ1ctrvM5Ac8vZBVgsk8xYO60grS+Q2I7AfPIAtkWtf
+	 SW/1CgV9R5XYxmRjAP8xCBQsIUatgHNh6CSQJECXrKCkxt9cDwyt+xhPcAQ5op9ZPY
+	 NrppV+jiIEyWVYgQWEvPjDFX1tfkt2ejAOFNJwQLxVAqM38NpRw4EUwTWBCXQQKQpa
+	 9QnqmvSgyyWWtRLCzG6iicIQmTrYGbkJYkh70Na/atT5F1lh5rSv6JHmgTvhMzSUX0
+	 MUah5n6UGpei2jSCDxPvlVkE+uoaq8KUyCk+r9PQiEZQtiBm9lkZCUScsnukO70UsM
+	 2GUra5cMhUKvQ==
+Date: Fri, 31 Mar 2023 19:25:46 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Rohit Agarwal <quic_rohiagar@quicinc.com>
-Cc: agross@kernel.org, andersson@kernel.org, konrad.dybcio@linaro.org,
-	kishon@kernel.org, robh+dt@kernel.org,
-	krzysztof.kozlowski+dt@linaro.org, manivannan.sadhasivam@linaro.org,
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v3 0/2] Add support for PCIe PHY in SDX65
-Message-ID: <ZCbmGPfIup4YuEF0@matsya>
-References: <1679035114-19879-1-git-send-email-quic_rohiagar@quicinc.com>
+To: Lucas Tanure <lucas.tanure@collabora.com>
+Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Heiko Stuebner <heiko@sntech.de>,
+	Thomas Gleixner <tglx@linutronix.de>, Marc Zyngier <maz@kernel.org>,
+	Lorenzo Pieralisi <lpieralisi@kernel.org>,
+	Krzysztof Wilczynski <kw@linux.com>,
+	Bjorn Helgaas <bhelgaas@google.com>, Qu Wenruo <wqu@suse.com>,
+	Piotr Oniszczuk <piotr.oniszczuk@gmail.com>,
+	Peter Geis <pgwipeout@gmail.com>,
+	Kever Yang <kever.yang@rock-chips.com>,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
+	linux-pci@vger.kernel.org, kernel@collabora.com
+Subject: Re: [PATCHv2 0/3] Add PCIe2 driver support for Rockchip
+Message-ID: <ZCbmYqvRTRbKw8wj@matsya>
+References: <20230314135555.44162-1-lucas.tanure@collabora.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1679035114-19879-1-git-send-email-quic_rohiagar@quicinc.com>
+In-Reply-To: <20230314135555.44162-1-lucas.tanure@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230331_065438_818253_B6CE64FA 
-X-CRM114-Status: UNSURE (   9.21  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230331_065552_324419_2BD3CC8C 
+X-CRM114-Status: GOOD (  12.31  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,16 +86,19 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 17-03-23, 12:08, Rohit Agarwal wrote:
-> Hi,
+On 14-03-23, 13:55, Lucas Tanure wrote:
+> I am assisting with PCIe and networking bring-up for Rock Pi 5B (RK3588).
+> We sent this series a few days ago:
+> https://lore.kernel.org/all/20230310080518.78054-1-lucas.tanure@collabora.com/
 > 
-> Changes in v3:
->  - Addressed minor comments from Krzysztof of removing redundant binding
->    usage in commit message.
+> >From that conversation we decided to send patches for Rockchip that don't
+> require GIC/ITS implementation. We will send that in a separed series.
+> Making easier for reviews and unblocking patches that don't require
+> GIC/ITS implementation.
 > 
-> Changes in v2:
->  - Addressing Dmitry's comments and adjusting according to new bindings.
->  - Rebased on top of 6.3-rc1.
+> This is work based on prior work from XiaoDong Huang and
+> Peter Geis fixing this issue specifically for Rockchip 356x.
+> Plus comments of Robin Murphy about Non-Coherent properties.
 
 Applied, thanks
 
