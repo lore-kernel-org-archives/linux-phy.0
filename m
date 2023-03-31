@@ -4,47 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C4935C761A6
-	for <linux-phy@archiver.kernel.org>; Fri, 31 Mar 2023 16:38:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 23F6AC76196
+	for <linux-phy@archiver.kernel.org>; Fri, 31 Mar 2023 16:38:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=s3Xzs7lUXChDPZaSYK30GOrbTpy7csg34ofFp2QHZ1c=; b=v+x+U9e55sg/Vr
-	ueKLcXjKkmcci9phaQ1TCoPsoSTBoO42oHZrrITkCXkl64v/HJAZ+54rR6zx5D7HIxD1Y3oz3lAm1
-	iVnskiCISn99EloYmGAlAE76UDAYf8V2m02jBQDCh51szryP+22Ypf7oUCeN1QHosoqRgvW84T9ti
-	tppX2h8a+1+hsI+kFBYoqX4t4ri1QFeykboduAFH062k8Eygdy+COFPxJ+3VPfI3I4Z4WB/ZA6R84
-	hLBk9os3CeZXrb4B1nTydpHRfB4X+DhN/jdNxAvo/hXug1k4P9ednZEf0bHxA93UBwjXJ9ZjWcSZk
-	1Q3q7sCKTQoVNuDA0yeQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=+sYNwrxUAqOSlLfRtaZBv8JwC4zYubsTHwshNnI8Vc0=; b=v79dgasCgnwS6E
+	q94NT1MEeXuX7Z1iMjAphq5Pct6t6Gk1ze23vH/6KWr2gDrJ4a3owavryTxviRhNA0Enub5aDpQDY
+	blHK6YOrmRnaL4UwwzK1GXJ4t7m6vtJvLqcMSQm02keAUs4RX1gjEGVH5TPWRoa5yLMfZSJ01WpSq
+	bBUSuUxlZfBz+SzM3M2C3sa41COS4LOQGd4+NWRWw5rkFnDiHVgi25L+2/bybQX4zvIP/TI/AHIWY
+	DoelmSq7T/T4GBTDLdaUaSiNFl1UdMqPp4UmAd7e5hyC7DjgNv2MnkaKY0AoecVWJja1/ZyDQrB1G
+	XR4NIa9h+1B30X0A7/DQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1piHlg-0089b5-1P;
-	Fri, 31 Mar 2023 16:38:24 +0000
+	id 1piHlo-0089ew-25;
+	Fri, 31 Mar 2023 16:38:32 +0000
 Received: from madras.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e5ab])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1piHla-0089Wm-0T;
-	Fri, 31 Mar 2023 16:38:19 +0000
+	id 1piHla-0089Wo-0T;
+	Fri, 31 Mar 2023 16:38:20 +0000
 Received: from jupiter.universe (dyndsl-091-248-213-136.ewe-ip-backbone.de [91.248.213.136])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
 	(No client certificate requested)
 	(Authenticated sender: sre)
-	by madras.collabora.co.uk (Postfix) with ESMTPSA id 9FA476603196;
+	by madras.collabora.co.uk (Postfix) with ESMTPSA id A20BB660319B;
 	Fri, 31 Mar 2023 17:38:16 +0100 (BST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
 	s=mail; t=1680280696;
-	bh=NwhmvCgwedXgOKj8QGZBS+73nuAtMHCK1PojwIJNulc=;
-	h=From:To:Cc:Subject:Date:From;
-	b=oafzbk93J4uWJGrA9/BmPIM36HVvrENIrRLm0OJLN1bmjubK13Cs+iIQLilL0M3TV
-	 DSMo+5ZTLRCNjhWZ4wTW6pbHZ9feIGRfIcAjGfG5Tz1xCahHpwGnxbLsmCrfL0PR8n
-	 Yw9Znw7Alolt1kp1V1MeUrkWhF1P0B0+tIHF4D0vpagFzVfhDxKcIh5sIC/G3W5TCA
-	 MU9kIGi5L6v/XC9V/EhE7Vaxz2/AB6GpU+IxhCpWfCKVYO52WIrZ0PctpDHxrE0wQu
-	 stIcrAjGbyHXnwHZ5ljVnzo2YIMq9gu5ulHWwhGbdp296IrN44fvu9PZCqBAndaDo8
-	 XnII8Tfp/r61g==
+	bh=Ang+ol8X8tHG4i9x5VTtRkot6uyY/w6cOxfWi5Scm1c=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=QwU6206cSlpL33GuYUrw1iMgQBkFj8NHBmYX6f+w1cGMY1chSiqS60D5K+k1BRqIa
+	 W9YBEJLyHflYZpD8ZxqbM2i1J6++vG8F36EeFC0pguWuPU9MATZIZV8nvzmAyFnz0Z
+	 qjwuDtj5PChcV4wzSClIkSbQNPKmDLM3lI+/EQURXnuUKioSYsvrMecDO9xCFwzQCO
+	 CsinIMQTAVv/cic/R86I9X5WqzGH6wjzQ3RHLyHL8dUkxGsOTxx5ebm7PTexNRQBws
+	 gHge9bLXo0vozsFKbD0d46WbtbgR7rNYqh56e9Ik97PtG0Q1/axq2PnM6oDh5HItIS
+	 /lxAPLkR7Bu5A==
 Received: by jupiter.universe (Postfix, from userid 1000)
-	id E6B104807E1; Fri, 31 Mar 2023 18:38:13 +0200 (CEST)
+	id E8E3C4807E2; Fri, 31 Mar 2023 18:38:13 +0200 (CEST)
 From: Sebastian Reichel <sebastian.reichel@collabora.com>
 To: Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
@@ -58,15 +58,16 @@ Cc: Heiko Stuebner <heiko@sntech.de>,
 	devicetree@vger.kernel.org,
 	Sebastian Reichel <sebastian.reichel@collabora.com>,
 	kernel@collabora.com
-Subject: [PATCHv1 0/3] phy-rockchip-inno-usb2: add RK3588 support
-Date: Fri, 31 Mar 2023 18:38:09 +0200
-Message-Id: <20230331163812.6124-1-sebastian.reichel@collabora.com>
+Subject: [PATCHv1 1/3] dt-bindings: soc: rockchip: add rk3588 usb2phy syscon
+Date: Fri, 31 Mar 2023 18:38:10 +0200
+Message-Id: <20230331163812.6124-2-sebastian.reichel@collabora.com>
 X-Mailer: git-send-email 2.39.2
+In-Reply-To: <20230331163812.6124-1-sebastian.reichel@collabora.com>
+References: <20230331163812.6124-1-sebastian.reichel@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230331_093818_336895_88A6FC36 
-X-CRM114-Status: UNSURE (   7.65  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230331_093818_337128_DFD071E2 
+X-CRM114-Status: GOOD (  10.71  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,22 +84,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi,
+The usb2phy is accessible via a syscon registers on RK3588, similar
+to rk3399.
 
-This adds RK3588 to the Rockchip Inno USB2 PHY driver.
+Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
+---
+That diff is quite hard to read :/ The first line adds the compatible
+to the list of allowed compatible values. The second line specifies
+that this node may have /schemas/phy/rockchip,inno-usb2phy.yaml subnodes.
+---
+ Documentation/devicetree/bindings/soc/rockchip/grf.yaml | 2 ++
+ 1 file changed, 2 insertions(+)
 
--- Sebastian
-
-Sebastian Reichel (3):
-  dt-bindings: soc: rockchip: add rk3588 usb2phy syscon
-  dt-bindings: phy: rockchip,inno-usb2phy: add rk3588
-  phy: phy-rockchip-inno-usb2: add rk3588 support
-
- .../bindings/phy/rockchip,inno-usb2phy.yaml   |  21 +-
- .../devicetree/bindings/soc/rockchip/grf.yaml |   2 +
- drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 214 ++++++++++++++++--
- 3 files changed, 220 insertions(+), 17 deletions(-)
-
+diff --git a/Documentation/devicetree/bindings/soc/rockchip/grf.yaml b/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
+index e697c928900d..a873f74564f2 100644
+--- a/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
++++ b/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
+@@ -52,6 +52,7 @@ properties:
+               - rockchip,rk3399-pmugrf
+               - rockchip,rk3568-grf
+               - rockchip,rk3568-pmugrf
++              - rockchip,rk3588-usb2phy-grf
+               - rockchip,rv1108-grf
+               - rockchip,rv1108-pmugrf
+               - rockchip,rv1126-grf
+@@ -195,6 +196,7 @@ allOf:
+               - rockchip,rk3308-usb2phy-grf
+               - rockchip,rk3328-usb2phy-grf
+               - rockchip,rk3399-grf
++              - rockchip,rk3588-usb2phy-grf
+               - rockchip,rv1108-grf
+ 
+     then:
 -- 
 2.39.2
 
