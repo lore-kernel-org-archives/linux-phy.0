@@ -4,61 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A38CEC761A6
-	for <linux-phy@archiver.kernel.org>; Fri, 31 Mar 2023 13:50:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 56FCFC76196
+	for <linux-phy@archiver.kernel.org>; Fri, 31 Mar 2023 13:52:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hHMuYYX5sjf2jxpj6JWbesorO1yAoW3M+JwrQe6z6+s=; b=t4cgkyeo8baNW4
-	MzPN/NyeHLS1Eh+bY6w4JtTcECKdBWRY0YR3MpxnJQYV016JJsb8tGphWflXRv1gTo8Rjt1i1aGef
-	GmO4D3EeLGILyRD3gv/slrvwrCqOqmXldF85sy6YHS9EGM0Q8GXqa9JvcovUbX1nhJZHbUcgN7cjt
-	/hPO5Xovas1AxQ6yektEsdOVYrD1te+77mzoaoDHQ4Iv8OBvd20BwXYONrs2NF13kldOVjdO9UMyW
-	AKgdf90k2CjDEj2lPJKO2S0JpySnAkPCzX6mc/Nqvzhfbd5kVD5gtsPXtmdgtg5yXD/tThBlHvl4F
-	99MsOSU1ppCLls+Hu7ag==;
+	List-Owner; bh=UBdL2d/LKD5k2kNSc0bLbRjgaUTdj27f+ZWhudR1gPo=; b=yS1uGjBLSyBl0Z
+	dpbrIIhqRIu4JDnLDjW4bBD0ncwSXv/0q0my93RLwtP9WQy9dL84UPFxsMW4HDJCdrZDkOagwDNb5
+	8EKbAiS6QhOUTuGD9ehk+Lp3P3edfjUwfp1ZP022g87k4JlVM6MpSFrnzIKIRiOckpiGsI6Xn5cWf
+	UG+/eW/i79hWXeyev1bkyjvhzfQCLDkcjvgkoQZ87i33QkJQn87QQK0wAznPcPrtqCWNNLMyt9J8f
+	LBF9Q9mP2QwaZmrtxZHwtb/sauj0NyjSEhPWK0orGRttz4zkVdZHAD0eZb1RrUou98BfGdl9gjFaF
+	3zB5+CezNrTHK78bEUoA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1piF9I-007ahJ-0w;
-	Fri, 31 Mar 2023 13:50:36 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1piFBO-007bMY-3B;
+	Fri, 31 Mar 2023 13:52:46 +0000
+Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1piF9F-007afy-1r
-	for linux-phy@lists.infradead.org;
-	Fri, 31 Mar 2023 13:50:34 +0000
+	id 1piFBK-007bJr-2q;
+	Fri, 31 Mar 2023 13:52:45 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 1DBCD62588;
-	Fri, 31 Mar 2023 13:50:33 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id EEEA2C4339C;
-	Fri, 31 Mar 2023 13:50:31 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTPS id 6B945CE2F25;
+	Fri, 31 Mar 2023 13:52:38 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2DF19C433D2;
+	Fri, 31 Mar 2023 13:52:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1680270632;
-	bh=2cykrbzQ+KKCSCcE8DJnTcmAUhli8KdUwSPQn/1+oCQ=;
+	s=k20201202; t=1680270756;
+	bh=uZ8ekznunZfHCtX9H3pfXo3r44jn8CX1qcu+00uMGFo=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=g2kw+MJuxfkxrMlpRGDu7Hv5mveuj45k8vF1WmmYNmNZ6gVv3AA+T9tWdX8MITEFM
-	 cTkcslzZ2Mf6j7eJmKVjGpPHsW47g3R2rUT8dk8ACrPp6kGuOTCUqA/3vfqYDP7JQB
-	 wx/o0Eu1dXfgLzW61cTnwr80LbvOvjRxi/UMhbc0nOke5ZohczTE8daQU0XHghdHBu
-	 vxnNYCzMXeJXQn/RfWrZDUOsdcaTQTmYXJukgfYHwE3TJ78VCHFjLFwZ68pvK3DjTX
-	 p9ow5UcvbQu+/MW0CxDVt9WVWMbWSPvNlHpehn24jHOLF+j0H7kAgQynZBRAI0vHEO
-	 YvahmfzMUWtWA==
-Date: Fri, 31 Mar 2023 19:20:28 +0530
+	b=i7igy4KZwlKs5fcsWxOyp8wxE6pI9xgIb42hAhuLdiLGRB1qhbYTspRkIEhbeT0Zp
+	 8GR2C+aeD0rwP+WfCMo2a9XAZ525KLPfZGYcZ99qpDoiXrQ1tyX6BM3HlO7DEIDotY
+	 MDckv6v0W8fvyqwL4iBwb7j0+AJXVAu5uRqnB/WGzkXWpXbDpNy96ap6qJTTwzliBM
+	 E09n1JyYWJxpb1R90LF4M8bQBtsn1sNMjI+qpDy6VczweGtsM2TzE61NCFPMu77sOq
+	 Nrt3lkr/yKQ52EjKO4K13mWxMV5Q0SurJdk727/9GOq1mYyfNXT0bF84S9U1EVk9pP
+	 Fk6WiJWVIFKFQ==
+Date: Fri, 31 Mar 2023 19:22:32 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: ye.xingchen@zte.com.cn
-Cc: kishon@kernel.org, u.kleine-koenig@pengutronix.de, linmq006@gmail.com,
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] phy: omap-usb2-phy: Use dev_err_probe()
-Message-ID: <ZCblJLBTPMS4z8Mf@matsya>
-References: <202303231545522162256@zte.com.cn>
+To: Changhuang Liang <changhuang.liang@starfivetech.com>
+Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Emil Renner Berthing <kernel@esmil.dk>,
+	Conor Dooley <conor@kernel.org>,
+	Paul Walmsley <paul.walmsley@sifive.com>,
+	Palmer Dabbelt <palmer@dabbelt.com>,
+	Albert Ou <aou@eecs.berkeley.edu>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Jack Zhu <jack.zhu@starfivetech.com>, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-riscv@lists.infradead.org
+Subject: Re: [PATCH v2 2/3] phy: starfive: Add mipi dphy rx support
+Message-ID: <ZCbloBdeffocT3Os@matsya>
+References: <20230223015952.201841-1-changhuang.liang@starfivetech.com>
+ <20230223015952.201841-3-changhuang.liang@starfivetech.com>
+ <ZBhTmTEcrV59oaw3@matsya>
+ <2aa1bdbd-e37e-941a-9422-0908545c14f7@starfivetech.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <202303231545522162256@zte.com.cn>
+In-Reply-To: <2aa1bdbd-e37e-941a-9422-0908545c14f7@starfivetech.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230331_065033_651773_76360BE9 
-X-CRM114-Status: UNSURE (   6.42  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230331_065243_318709_9D0C3274 
+X-CRM114-Status: GOOD (  26.76  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,12 +86,419 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 23-03-23, 15:45, ye.xingchen@zte.com.cn wrote:
-> From: Ye Xingchen <ye.xingchen@zte.com.cn>
+On 21-03-23, 14:08, Changhuang Liang wrote:
 > 
-> Replace the open-code with dev_err_probe() to simplify the code.
+> 
+> On 2023/3/20 20:37, Vinod Koul wrote:
+> > On 22-02-23, 17:59, Changhuang Liang wrote:
+> >> [...]
+> >> +++ b/drivers/phy/starfive/phy-starfive-dphy-rx.c
+> >> @@ -0,0 +1,362 @@
+> >> +// SPDX-License-Identifier: GPL-2.0+
+> >> +/*
+> >> + * DPHY driver for the StarFive JH7110 SoC
+> >> + *
+> >> + * Copyright (C) 2023 StarFive Technology Co., Ltd.
+> >> + */
+> >> +
+> >> +#include <linux/bitfield.h>
+> >> +#include <linux/bitops.h>
+> >> +#include <linux/clk.h>
+> >> +#include <linux/io.h>
+> >> +#include <linux/mfd/syscon.h>
+> >> +#include <linux/module.h>
+> >> +#include <linux/of_address.h>
+> >> +#include <linux/of_device.h>
+> >> +#include <linux/phy/phy.h>
+> >> +#include <linux/platform_device.h>
+> >> +#include <linux/regmap.h>
+> >> +#include <linux/reset.h>
+> >> +
+> >> +#define STF_DPHY_APBCFGSAIF__SYSCFG(x)		(x)
+> > 
+> > What is the purpose of this? also whats with __ ?
+> > 
+> 
+> In starfive jh7110 SoC, Dphy rx module register's name is called such as
+> STF_DPHY_APBCFGSAIF__SYSCFG_4, STF_DPHY_APBCFGSAIF__SYSCFG_8, STF_DPHY_APBCFGSAIF__SYSCFG_12...
+> so I merge them to use a marco STF_DPHY_APBCFGSAIF__SYSCFG(x).
+> 
+> Should I use one "_" is enoughed?
 
-Applied, thanks
+Yes, it should be enough
+
+
+> 
+> >> +
+> >> +#define STF_DPHY_DA_CDPHY_R100_CTRL0_2D1C_EFUSE_EN BIT(6)
+> >> +#define STF_DPHY_DA_CDPHY_R100_CTRL0_2D1C_EFUSE_IN GENMASK(12, 7)
+> >> +#define STF_DPHY_DA_CDPHY_R100_CTRL1_2D1C_EFUSE_EN BIT(19)
+> >> +#define STF_DPHY_DA_CDPHY_R100_CTRL1_2D1C_EFUSE_IN GENMASK(25, 20)
+> >> +
+> >> +#define STF_DPHY_DATA_BUS16_8			BIT(8)
+> >> +#define STF_DPHY_DEBUG_MODE_SEL			GENMASK(15, 9)
+> >> +
+> >> +#define STF_DPHY_ENABLE_CLK			BIT(6)
+> >> +#define STF_DPHY_ENABLE_CLK1			BIT(7)
+> >> +#define STF_DPHY_ENABLE_LAN0			BIT(8)
+> >> +#define STF_DPHY_ENABLE_LAN1			BIT(9)
+> >> +#define STF_DPHY_ENABLE_LAN2			BIT(10)
+> >> +#define STF_DPHY_ENABLE_LAN3			BIT(11)
+> >> +#define STF_DPHY_GPI_EN				GENMASK(17, 12)
+> >> +#define STF_DPHY_HS_FREQ_CHANGE_CLK		BIT(18)
+> >> +#define STF_DPHY_HS_FREQ_CHANGE_CLK1		BIT(19)
+> >> +#define STF_DPHY_LANE_SWAP_CLK			GENMASK(22, 20)
+> >> +#define STF_DPHY_LANE_SWAP_CLK1			GENMASK(25, 23)
+> >> +#define STF_DPHY_LANE_SWAP_LAN0			GENMASK(28, 26)
+> >> +#define STF_DPHY_LANE_SWAP_LAN1			GENMASK(31, 29)
+> >> +
+> >> +#define STF_DPHY_LANE_SWAP_LAN2			GENMASK(2, 0)
+> >> +#define STF_DPHY_LANE_SWAP_LAN3			GENMASK(5, 3)
+> >> +#define STF_DPHY_MP_TEST_EN			BIT(6)
+> >> +#define STF_DPHY_MP_TEST_MODE_SEL		GENMASK(11, 7)
+> >> +#define STF_DPHY_PLL_CLK_SEL			GENMASK(21, 12)
+> >> +#define STF_DPHY_PRECOUNTER_IN_CLK		GENMASK(29, 22)
+> >> +
+> >> +#define STF_DPHY_PRECOUNTER_IN_CLK1		GENMASK(7, 0)
+> >> +#define STF_DPHY_PRECOUNTER_IN_LAN0		GENMASK(15, 8)
+> >> +#define STF_DPHY_PRECOUNTER_IN_LAN1		GENMASK(23, 16)
+> >> +#define STF_DPHY_PRECOUNTER_IN_LAN2		GENMASK(31, 24)
+> >> +
+> >> +#define STF_DPHY_PRECOUNTER_IN_LAN3		GENMASK(7, 0)
+> >> +#define STF_DPHY_RX_1C2C_SEL			BIT(8)
+> >> +
+> >> +struct regval_t {
+> > 
+> > regval should be okay, no?
+> > 
+> 
+> OK, will change to regval
+> 
+> >> +	u32 addr;
+> >> +	u32 val;
+> >> +};
+> >> +
+> >> +struct stf_dphy {
+> >> +	struct device *dev;
+> >> +	void __iomem *regs;
+> >> +	struct clk *cfg_clk;
+> >> +	struct clk *ref_clk;
+> >> +	struct clk *tx_clk;
+> >> +	struct reset_control *rstc;
+> >> +	struct regulator *mipi_0p9;
+> >> +	struct phy *phy;
+> >> +	struct regmap *stf_aon_syscon;
+> >> +	unsigned int aon_gp_reg;
+> >> +};
+> >> +
+> >> +struct stf_dphy_info {
+> >> +	bool external_support;
+> >> +	int (*external_get)(struct stf_dphy *dphy);
+> >> +	void (*external_init)(struct stf_dphy *dphy);
+> >> +	void (*external_exit)(struct stf_dphy *dphy);
+> >> +};
+> >> +
+> >> +static const struct stf_dphy_info *stf_dphy_info;
+> >> +
+> >> +static const struct regval_t stf_dphy_init_list[] = {
+> >> +	{ STF_DPHY_APBCFGSAIF__SYSCFG(4), 0x00000000 },
+> >> +	{ STF_DPHY_APBCFGSAIF__SYSCFG(8), 0x00000000 },
+> >> +	{ STF_DPHY_APBCFGSAIF__SYSCFG(12), 0x0000fff0 },
+> >> +	{ STF_DPHY_APBCFGSAIF__SYSCFG(16), 0x00000000 },
+> >> +	{ STF_DPHY_APBCFGSAIF__SYSCFG(20), 0x00000000 },
+> >> +	{ STF_DPHY_APBCFGSAIF__SYSCFG(24), 0x00000000 },
+> >> +	{ STF_DPHY_APBCFGSAIF__SYSCFG(28), 0x00000000 },
+> >> +	{ STF_DPHY_APBCFGSAIF__SYSCFG(32), 0x00000000 },
+> >> +	{ STF_DPHY_APBCFGSAIF__SYSCFG(36), 0x00000000 },
+> >> +	{ STF_DPHY_APBCFGSAIF__SYSCFG(40), 0x00000000 },
+> >> +	{ STF_DPHY_APBCFGSAIF__SYSCFG(40), 0x00000000 },
+> >> +	{ STF_DPHY_APBCFGSAIF__SYSCFG(48), 0x24000000 },
+> >> +	{ STF_DPHY_APBCFGSAIF__SYSCFG(52), 0x00000000 },
+> >> +	{ STF_DPHY_APBCFGSAIF__SYSCFG(56), 0x00000000 },
+> >> +	{ STF_DPHY_APBCFGSAIF__SYSCFG(60), 0x00000000 },
+> >> +	{ STF_DPHY_APBCFGSAIF__SYSCFG(64), 0x00000000 },
+> >> +	{ STF_DPHY_APBCFGSAIF__SYSCFG(68), 0x00000000 },
+> >> +	{ STF_DPHY_APBCFGSAIF__SYSCFG(72), 0x00000000 },
+> >> +	{ STF_DPHY_APBCFGSAIF__SYSCFG(76), 0x00000000 },
+> >> +	{ STF_DPHY_APBCFGSAIF__SYSCFG(80), 0x00000000 },
+> >> +	{ STF_DPHY_APBCFGSAIF__SYSCFG(84), 0x00000000 },
+> >> +	{ STF_DPHY_APBCFGSAIF__SYSCFG(88), 0x00000000 },
+> >> +	{ STF_DPHY_APBCFGSAIF__SYSCFG(92), 0x00000000 },
+> >> +	{ STF_DPHY_APBCFGSAIF__SYSCFG(96), 0x00000000 },
+> >> +	{ STF_DPHY_APBCFGSAIF__SYSCFG(100), 0x02000000 },
+> >> +	{ STF_DPHY_APBCFGSAIF__SYSCFG(104), 0x00000000 },
+> >> +	{ STF_DPHY_APBCFGSAIF__SYSCFG(108), 0x00000000 },
+> >> +	{ STF_DPHY_APBCFGSAIF__SYSCFG(112), 0x00000000 },
+> >> +	{ STF_DPHY_APBCFGSAIF__SYSCFG(116), 0x00000000 },
+> >> +	{ STF_DPHY_APBCFGSAIF__SYSCFG(120), 0x00000000 },
+> >> +	{ STF_DPHY_APBCFGSAIF__SYSCFG(124), 0x0000000c },
+> >> +	{ STF_DPHY_APBCFGSAIF__SYSCFG(128), 0x00000000 },
+> >> +	{ STF_DPHY_APBCFGSAIF__SYSCFG(132), 0xcc500000 },
+> >> +	{ STF_DPHY_APBCFGSAIF__SYSCFG(136), 0x000000cc },
+> >> +	{ STF_DPHY_APBCFGSAIF__SYSCFG(140), 0x00000000 },
+> >> +	{ STF_DPHY_APBCFGSAIF__SYSCFG(144), 0x00000000 },
+> >> +};
+> >> +
+> >> +static int stf_dphy_configure(struct phy *phy, union phy_configure_opts *opts)
+> >> +{
+> >> +	struct stf_dphy *dphy = phy_get_drvdata(phy);
+> >> +	int map[6] = {4, 0, 1, 2, 3, 5};
+> > 
+> > what does this mean?
+> 
+> This is the physical lane and logical lane mapping table, should I add a note for it?
+
+Yes please. Also will the mapping be always static or ever change?
+
+
+> 
+> >> +	int i;
+> >> +
+> >> +	for (i = 0; i < ARRAY_SIZE(stf_dphy_init_list); i++)
+> >> +		writel(stf_dphy_init_list[i].val,
+> >> +		       dphy->regs + stf_dphy_init_list[i].addr);
+> >> +
+> >> +	writel(FIELD_PREP(STF_DPHY_DA_CDPHY_R100_CTRL0_2D1C_EFUSE_EN, 1) |
+> >> +	       FIELD_PREP(STF_DPHY_DA_CDPHY_R100_CTRL0_2D1C_EFUSE_IN, 0x1b) |
+> >> +	       FIELD_PREP(STF_DPHY_DA_CDPHY_R100_CTRL1_2D1C_EFUSE_EN, 1) |
+> >> +	       FIELD_PREP(STF_DPHY_DA_CDPHY_R100_CTRL1_2D1C_EFUSE_IN, 0x1b),
+> >> +	       dphy->regs + STF_DPHY_APBCFGSAIF__SYSCFG(0));
+> >> +
+> >> +	writel(FIELD_PREP(STF_DPHY_DATA_BUS16_8, 0) |
+> >> +	       FIELD_PREP(STF_DPHY_DEBUG_MODE_SEL, 0x5a),
+> >> +	       dphy->regs + STF_DPHY_APBCFGSAIF__SYSCFG(184));
+> >> +
+> >> +	writel(FIELD_PREP(STF_DPHY_ENABLE_CLK, 1) |
+> >> +	       FIELD_PREP(STF_DPHY_ENABLE_CLK1, 1) |
+> >> +	       FIELD_PREP(STF_DPHY_ENABLE_LAN0, 1) |
+> >> +	       FIELD_PREP(STF_DPHY_ENABLE_LAN1, 1) |
+> >> +	       FIELD_PREP(STF_DPHY_ENABLE_LAN2, 1) |
+> >> +	       FIELD_PREP(STF_DPHY_ENABLE_LAN3, 1) |
+> >> +	       FIELD_PREP(STF_DPHY_GPI_EN, 0) |
+> >> +	       FIELD_PREP(STF_DPHY_HS_FREQ_CHANGE_CLK, 0) |
+> >> +	       FIELD_PREP(STF_DPHY_HS_FREQ_CHANGE_CLK1, 0) |
+> >> +	       FIELD_PREP(STF_DPHY_LANE_SWAP_CLK, map[0]) |
+> >> +	       FIELD_PREP(STF_DPHY_LANE_SWAP_CLK1, map[5]) |
+> >> +	       FIELD_PREP(STF_DPHY_LANE_SWAP_LAN0, map[1]) |
+> >> +	       FIELD_PREP(STF_DPHY_LANE_SWAP_LAN1, map[2]),
+> >> +	       dphy->regs + STF_DPHY_APBCFGSAIF__SYSCFG(188));
+> >> +
+> >> +	writel(FIELD_PREP(STF_DPHY_LANE_SWAP_LAN2, map[3]) |
+> >> +	       FIELD_PREP(STF_DPHY_LANE_SWAP_LAN3, map[4]) |
+> >> +	       FIELD_PREP(STF_DPHY_MP_TEST_EN, 0) |
+> >> +	       FIELD_PREP(STF_DPHY_MP_TEST_MODE_SEL, 0) |
+> >> +	       FIELD_PREP(STF_DPHY_PLL_CLK_SEL, 0x37c) |
+> >> +	       FIELD_PREP(STF_DPHY_PRECOUNTER_IN_CLK, 8),
+> >> +	       dphy->regs + STF_DPHY_APBCFGSAIF__SYSCFG(192));
+> >> +
+> >> +	writel(FIELD_PREP(STF_DPHY_PRECOUNTER_IN_CLK1, 8) |
+> >> +	       FIELD_PREP(STF_DPHY_PRECOUNTER_IN_LAN0, 7) |
+> >> +	       FIELD_PREP(STF_DPHY_PRECOUNTER_IN_LAN1, 7) |
+> >> +	       FIELD_PREP(STF_DPHY_PRECOUNTER_IN_LAN2, 7),
+> >> +	       dphy->regs + STF_DPHY_APBCFGSAIF__SYSCFG(196));
+> >> +
+> >> +	writel(FIELD_PREP(STF_DPHY_PRECOUNTER_IN_LAN3, 7) |
+> >> +	       FIELD_PREP(STF_DPHY_RX_1C2C_SEL, 0),
+> >> +	       dphy->regs + STF_DPHY_APBCFGSAIF__SYSCFG(200));
+> >> +
+> >> +	return 0;
+> >> +}
+> >> +
+> >> +static int stf_dphy_init(struct phy *phy)
+> >> +{
+> >> +	struct stf_dphy *dphy = phy_get_drvdata(phy);
+> >> +	int ret;
+> >> +
+> >> +	ret = regulator_enable(dphy->mipi_0p9);
+> >> +	if (ret)
+> >> +		goto err_0p9;
+> >> +
+> >> +	if (stf_dphy_info->external_support && stf_dphy_info->external_init)
+> >> +		stf_dphy_info->external_init(dphy);
+> >> +
+> >> +	return 0;
+> >> +
+> >> +err_0p9:
+> >> +	return ret;
+> >> +}
+> >> +
+> >> +static int stf_dphy_exit(struct phy *phy)
+> >> +{
+> >> +	struct stf_dphy *dphy = phy_get_drvdata(phy);
+> >> +
+> >> +	if (stf_dphy_info->external_support && stf_dphy_info->external_exit)
+> >> +		stf_dphy_info->external_exit(dphy);
+> >> +
+> >> +	regulator_disable(dphy->mipi_0p9);
+> >> +
+> >> +	return 0;
+> >> +}
+> >> +
+> >> +static int stf_dphy_power_on(struct phy *phy)
+> >> +{
+> >> +	struct stf_dphy *dphy = phy_get_drvdata(phy);
+> >> +
+> >> +	clk_set_rate(dphy->cfg_clk, 99000000);
+> >> +	clk_set_rate(dphy->ref_clk, 49500000);
+> >> +	clk_set_rate(dphy->tx_clk, 19800000);
+> >> +	reset_control_deassert(dphy->rstc);
+> >> +
+> >> +	return 0;
+> >> +}
+> >> +
+> >> +static int stf_dphy_power_off(struct phy *phy)
+> >> +{
+> >> +	struct stf_dphy *dphy = phy_get_drvdata(phy);
+> >> +
+> >> +	reset_control_assert(dphy->rstc);
+> >> +
+> >> +	return 0;
+> >> +}
+> >> +
+> >> +static const struct phy_ops stf_dphy_ops = {
+> >> +	.init      = stf_dphy_init,
+> >> +	.exit      = stf_dphy_exit,
+> >> +	.configure = stf_dphy_configure,
+> >> +	.power_on  = stf_dphy_power_on,
+> >> +	.power_off = stf_dphy_power_off,
+> >> +};
+> >> +
+> >> +static int stf_dphy_probe(struct platform_device *pdev)
+> >> +{
+> >> +	struct phy_provider *phy_provider;
+> >> +	struct stf_dphy *dphy;
+> >> +	int ret;
+> >> +
+> >> +	dphy = devm_kzalloc(&pdev->dev, sizeof(*dphy), GFP_KERNEL);
+> >> +	if (!dphy)
+> >> +		return -ENOMEM;
+> >> +	stf_dphy_info = of_device_get_match_data(&pdev->dev);
+> >> +	dev_set_drvdata(&pdev->dev, dphy);
+> >> +	dphy->dev = &pdev->dev;
+> >> +
+> >> +	dphy->regs = devm_platform_ioremap_resource(pdev, 0);
+> >> +	if (IS_ERR(dphy->regs))
+> >> +		return PTR_ERR(dphy->regs);
+> >> +
+> >> +	dphy->cfg_clk = devm_clk_get(&pdev->dev, "cfg");
+> >> +	if (IS_ERR(dphy->cfg_clk))
+> >> +		return PTR_ERR(dphy->cfg_clk);
+> >> +
+> >> +	dphy->ref_clk = devm_clk_get(&pdev->dev, "ref");
+> >> +	if (IS_ERR(dphy->ref_clk))
+> >> +		return PTR_ERR(dphy->ref_clk);
+> >> +
+> >> +	dphy->tx_clk = devm_clk_get(&pdev->dev, "tx");
+> >> +	if (IS_ERR(dphy->tx_clk))
+> >> +		return PTR_ERR(dphy->tx_clk);
+> >> +
+> >> +	dphy->rstc = devm_reset_control_array_get_exclusive(&pdev->dev);
+> >> +	if (IS_ERR(dphy->rstc))
+> >> +		return PTR_ERR(dphy->rstc);
+> >> +
+> >> +	dphy->mipi_0p9 = devm_regulator_get(&pdev->dev, "mipi_0p9");
+> >> +	if (IS_ERR(dphy->mipi_0p9))
+> >> +		return PTR_ERR(dphy->mipi_0p9);
+> >> +
+> >> +	if (stf_dphy_info->external_support && stf_dphy_info->external_get) {
+> >> +		ret = stf_dphy_info->external_get(dphy);
+> >> +		if (ret < 0) {
+> >> +			dev_err(&pdev->dev, "Failed to get PHY external info\n");
+> >> +			return ret;
+> >> +		}
+> >> +	}
+> >> +
+> >> +	dphy->phy = devm_phy_create(&pdev->dev, NULL, &stf_dphy_ops);
+> >> +	if (IS_ERR(dphy->phy)) {
+> >> +		dev_err(&pdev->dev, "Failed to create PHY\n");
+> >> +		return PTR_ERR(dphy->phy);
+> >> +	}
+> >> +
+> >> +	phy_set_drvdata(dphy->phy, dphy);
+> >> +	phy_provider = devm_of_phy_provider_register(&pdev->dev,
+> >> +						     of_phy_simple_xlate);
+> >> +
+> >> +	return PTR_ERR_OR_ZERO(phy_provider);
+> >> +}
+> >> +
+> >> +static int stf_external_get(struct stf_dphy *dphy)
+> >> +{
+> >> +	struct of_phandle_args args;
+> >> +	int ret;
+> >> +
+> >> +	ret = of_parse_phandle_with_fixed_args(dphy->dev->of_node,
+> >> +					       "starfive,aon-syscon",
+> >> +					       1, 0, &args);
+> >> +	if (ret < 0) {
+> >> +		dev_err(dphy->dev, "Failed to parse starfive,aon-syscon\n");
+> >> +		return -EINVAL;
+> >> +	}
+> >> +
+> >> +	dphy->stf_aon_syscon = syscon_node_to_regmap(args.np);
+> >> +	of_node_put(args.np);
+> >> +	if (IS_ERR(dphy->stf_aon_syscon))
+> >> +		return PTR_ERR(dphy->stf_aon_syscon);
+> >> +
+> >> +	dphy->aon_gp_reg = args.args[0];
+> >> +
+> >> +	return 0;
+> >> +}
+> >> +
+> >> +static void stf_external_init(struct stf_dphy *dphy)
+> >> +{
+> >> +	regmap_update_bits(dphy->stf_aon_syscon, dphy->aon_gp_reg,
+> >> +			   BIT(31), BIT(31));
+> >> +}
+> >> +
+> >> +static void stf_external_exit(struct stf_dphy *dphy)
+> >> +{
+> >> +	regmap_update_bits(dphy->stf_aon_syscon, dphy->aon_gp_reg,
+> >> +			   BIT(31), 0);
+> >> +}
+> >> +
+> >> +static const struct stf_dphy_info starfive_dphy_info = {
+> >> +	.external_support = true,
+> >> +	.external_get = stf_external_get,
+> >> +	.external_init = stf_external_init,
+> >> +	.external_exit = stf_external_exit,
+> >> +};
+> >> +
+> >> +static const struct of_device_id stf_dphy_dt_ids[] = {
+> >> +	{
+> >> +		.compatible = "starfive,jh7110-dphy-rx",
+> >> +		.data = &starfive_dphy_info,
+> > 
+> > is there a plan to support multiple versions which need different
+> > get/init/exit methods?
+> > 
+> 
+> There is no plan to support multiple versions. So this different methods
+> interface can cancel?
+
+yes
+
+> 
+> >> +	},
+> >> +	{ /* sentinel */ },
+> >> +};
+> >> +MODULE_DEVICE_TABLE(of, stf_dphy_dt_ids);
+> >> +
+> >> +static struct platform_driver stf_dphy_driver = {
+> >> +	.probe = stf_dphy_probe,
+> >> +	.driver = {
+> >> +		.name	= "starfive-dphy-rx",
+> >> +		.of_match_table = stf_dphy_dt_ids,
+> >> +	},
+> >> +};
+> >> +module_platform_driver(stf_dphy_driver);
+> >> +
+> >> +MODULE_AUTHOR("Jack Zhu <jack.zhu@starfivetech.com>");
+> >> +MODULE_AUTHOR("Changhuang Liang <changhuang.liang@starfivetech.com>");
+> >> +MODULE_DESCRIPTION("Starfive DPHY RX driver");
+> >> +MODULE_LICENSE("GPL");
+> >> -- 
+> >> 2.25.1
+> > 
 
 -- 
 ~Vinod
