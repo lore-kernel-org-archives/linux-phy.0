@@ -4,72 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0969CC761A6
-	for <linux-phy@archiver.kernel.org>; Fri, 31 Mar 2023 13:55:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E6BF8C761A6
+	for <linux-phy@archiver.kernel.org>; Fri, 31 Mar 2023 13:56:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IxYGykJRbNhjlTLp5wW/CIHoyMTmGIX7oHMbWU4bH6Y=; b=FWZv87I8wDkukQ
-	UUV+J75N6qGC/raMsRgSn9+eKoYAKPqiweRyQifmQeeW1+VwPi+ZmX3/UFuAWNGYH51Nwr6rQBodi
-	fOogx5NUFVTZglyGJ74Gafna+04+z/UmerkmxCmb3D+psV+kTit9jMTbd4JmDmD55zpL0shuawwg4
-	qLzEluUmlKa4ZAu7JDePzRmnoIjsSG9fq+Hbu2xZemVnRke1GKw1O0eEXwBHsISiNUjereN7N7S33
-	uK2SM8fVSVQwLOZcgioC4fCI4ga0pnb5JL7Lv5ISvUDzx2t0UOV4xfa2jrYl3OgJopbd1l6cAydbE
-	I/XALGrODolH5qrU8IWA==;
+	List-Owner; bh=UL6pYaPBhoL82Q5QVOdaoRe3se8mq00a2yukjw7uQSk=; b=UV3eRxWcDL4Se7
+	oDR2IaFh6nefazfxT0VGv5w1JHNKqQvAdc37d29TjTLwSy8paCm8W7KazHzmsWWUWSeITu7KIDBPw
+	rq4FaYVD51jAyXrPH/tqztgTTJMN+CmMyzxLEf+WNPt1y3h6EtlAaXvkqbuh+WFqCXvojV+3fJgTO
+	JbdHuok692sjLA9ZVwPz6rdTBmIqT8D2yGpr5LPGn+/c32sDOtXGr9gBgcPqlYCmpn8A11PU0cjoC
+	2STf26S9iEuFHdj+qdS9/wBcQ9+bDs9M2kBORkgJF/sJuQCf2oUO3bvnb6/Zv1nE0gN2Khc17DZqE
+	B8339jlzb6nrgkPFGTYA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1piFES-007byj-2E;
-	Fri, 31 Mar 2023 13:55:56 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1piFFD-007c7S-1w;
+	Fri, 31 Mar 2023 13:56:43 +0000
+Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1piFEO-007bxg-0n;
-	Fri, 31 Mar 2023 13:55:53 +0000
+	id 1piFFA-007c6Y-1g
+	for linux-phy@lists.infradead.org;
+	Fri, 31 Mar 2023 13:56:41 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 6394162956;
-	Fri, 31 Mar 2023 13:55:51 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E1C89C433EF;
-	Fri, 31 Mar 2023 13:55:49 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTPS id A963DCE2FA9;
+	Fri, 31 Mar 2023 13:56:38 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 66CA4C433D2;
+	Fri, 31 Mar 2023 13:56:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1680270950;
-	bh=AY4Vj7brLyfc8mcHlnnDPBFL372vQ2K2Eu+eeiVFgEc=;
+	s=k20201202; t=1680270997;
+	bh=tdyhWVZJWvQtIo0NCyXFaWOwidIkaHKhv9pdGq4fVQQ=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=Mn5KEzt/zCHEHjmI1CMRw3yZ1ctrvM5Ac8vZBVgsk8xYO60grS+Q2I7AfPIAtkWtf
-	 SW/1CgV9R5XYxmRjAP8xCBQsIUatgHNh6CSQJECXrKCkxt9cDwyt+xhPcAQ5op9ZPY
-	 NrppV+jiIEyWVYgQWEvPjDFX1tfkt2ejAOFNJwQLxVAqM38NpRw4EUwTWBCXQQKQpa
-	 9QnqmvSgyyWWtRLCzG6iicIQmTrYGbkJYkh70Na/atT5F1lh5rSv6JHmgTvhMzSUX0
-	 MUah5n6UGpei2jSCDxPvlVkE+uoaq8KUyCk+r9PQiEZQtiBm9lkZCUScsnukO70UsM
-	 2GUra5cMhUKvQ==
-Date: Fri, 31 Mar 2023 19:25:46 +0530
+	b=p9OoGaVubXM/eClKx+159bJoqo9SvH2DaXpy8MKbmY6AlIxKF4gdF82Ltqgco2AJR
+	 6mxmV/uBXx+gHt1oIDre2jrQnB/wfio/MekU8vNdR12saUj8db+1HXVPdNk/Ylfwj/
+	 li6UszggnmqSMDpYyQCu20kzwKdggP3N+MYdhPnT3pL8lBRBL6tSCJ95H487B2TiXK
+	 Az4W/saYwIG/OON/8G/5hFe6d46emtE1jHvRYhR3ct0ypdpjdQT9Gk+PxqYD3Iyslz
+	 cNaiHnfxV/pHFrAI4FOvBY61dt8fo+r4SXUEi+/ha6kMgJAqE+sv5zOxc08DitWcPC
+	 7DZ+PQEHEpBUg==
+Date: Fri, 31 Mar 2023 19:26:33 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Lucas Tanure <lucas.tanure@collabora.com>
-Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Heiko Stuebner <heiko@sntech.de>,
-	Thomas Gleixner <tglx@linutronix.de>, Marc Zyngier <maz@kernel.org>,
-	Lorenzo Pieralisi <lpieralisi@kernel.org>,
-	Krzysztof Wilczynski <kw@linux.com>,
-	Bjorn Helgaas <bhelgaas@google.com>, Qu Wenruo <wqu@suse.com>,
-	Piotr Oniszczuk <piotr.oniszczuk@gmail.com>,
-	Peter Geis <pgwipeout@gmail.com>,
-	Kever Yang <kever.yang@rock-chips.com>,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
-	linux-pci@vger.kernel.org, kernel@collabora.com
-Subject: Re: [PATCHv2 0/3] Add PCIe2 driver support for Rockchip
-Message-ID: <ZCbmYqvRTRbKw8wj@matsya>
-References: <20230314135555.44162-1-lucas.tanure@collabora.com>
+To: Danila Tikhonov <danila@jiaxyga.com>
+Cc: agross@kernel.org, andersson@kernel.org, konrad.dybcio@linaro.org,
+	kishon@kernel.org, robh+dt@kernel.org,
+	krzysztof.kozlowski+dt@linaro.org, dmitry.baryshkov@linaro.org,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	davidwronek@gmail.com
+Subject: Re: [PATCH v2 0/2] phy: qcom-qmp-ufs: Add support for SM7150
+Message-ID: <ZCbmkRgCQCRHJHNQ@matsya>
+References: <20230311231733.141806-1-danila@jiaxyga.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20230314135555.44162-1-lucas.tanure@collabora.com>
+In-Reply-To: <20230311231733.141806-1-danila@jiaxyga.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230331_065552_324419_2BD3CC8C 
-X-CRM114-Status: GOOD (  12.31  )
+X-CRM114-CacheID: sfid-20230331_065640_744094_3E80E04A 
+X-CRM114-Status: GOOD (  10.28  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,19 +78,17 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 14-03-23, 13:55, Lucas Tanure wrote:
-> I am assisting with PCIe and networking bring-up for Rock Pi 5B (RK3588).
-> We sent this series a few days ago:
-> https://lore.kernel.org/all/20230310080518.78054-1-lucas.tanure@collabora.com/
+On 12-03-23, 02:17, Danila Tikhonov wrote:
+> This series adds UFS QMP support for Qualcomm SM7150 SoC.
 > 
-> >From that conversation we decided to send patches for Rockchip that don't
-> require GIC/ITS implementation. We will send that in a separed series.
-> Making easier for reviews and unblocking patches that don't require
-> GIC/ITS implementation.
-> 
-> This is work based on prior work from XiaoDong Huang and
-> Peter Geis fixing this issue specifically for Rockchip 356x.
-> Plus comments of Robin Murphy about Non-Coherent properties.
+> Changes in v2:
+> - Switch to new bindings (qcom,sc8280xp-qmp-ufs-phy.yaml)
+> - Fix compilation error
+> - Switch to 0xff instead of 0xFF
+> - Add offsets
+> - Set no_pcs_sw_reset to true
+> - Add Dmitry Reviewed-by on patch 2
+> - Link to v1: https://lore.kernel.org/all/20230309185049.170878-1-danila@jiaxyga.com/
 
 Applied, thanks
 
