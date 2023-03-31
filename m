@@ -4,64 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 17231C6FD18
-	for <linux-phy@archiver.kernel.org>; Fri, 31 Mar 2023 07:46:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BEB69C6FD18
+	for <linux-phy@archiver.kernel.org>; Fri, 31 Mar 2023 07:49:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
+	CC:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=F9SBkSZUyrWJwHV7y00mmnHbY+kcm2UZGlxrxlAu2Rg=; b=ayTG65pW46Aclo
-	49qd8RUCCxeYtY5glBSHmqYZ2B0H5ENGhjyaTmmGY12kLgKNGxTvFJQnEYgA1iNymKyJi2yLcJedY
-	G+ROGfQK6sZMu8VBWiXfqF3Pin5+zsFxzLxc2Dt1Fq/XwlQiYcPEBjtltf2CApodtv25g5fQrkjam
-	G6R4L8OnIA4xDUAwRoa1S1WGehZ4lTnCNXk6+pBeveeAatogmnse83N087y3Ix1WVBe4zRQwfNKDl
-	NNQOGhqXrqWrQieGrQtaULK2ONymJl7s/yYxrDQfWJOg0knin4o1NRukLLnjxfTYTNrxkDdD6klTU
-	NwoKRgCeKwQ5J8ranUfg==;
+	List-Owner; bh=C1IeughV8Hd6sfeCFrku/WzBu1uJ8zUgP71nrNSEFv4=; b=j8yi4etDqvv6tV
+	cZ9HhPDSgDyzs3poG14k2DNi/1BhHTQ2wxIBgmYjs/NMayX/NoQXMWiwcImxLD05sDW9GZijx4s+7
+	frW/EB/aLWTxKeShJyc/ra3wRkblhOoAQdmBfODGkxZ3tpfFimcNVP6gFXzfpPftl4AjQ4Q3Gxs+7
+	09WbA6qZoJLyRxWxrpt4Xp5OpCkuk05sgoB1uZCnqqZOxcDFKdIfnZn2nNz+td/d9/OIdTOl+UiPZ
+	yVu4dUciQeOcIkJ7ABN4cdN+Z7ja7cvWm2yxo5Nc4/oZ5aMYerLXsMuEDCe5/NefV1CL9mEnqYO1O
+	Fx/0VUsFsxAwBuRsYPsg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pi9SV-006Cnt-2B;
-	Fri, 31 Mar 2023 07:46:03 +0000
-Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
+	id 1pi9Vi-006EMW-1C;
+	Fri, 31 Mar 2023 07:49:22 +0000
+Received: from lelv0143.ext.ti.com ([198.47.23.248])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pi9SA-006Ci2-1w;
-	Fri, 31 Mar 2023 07:45:43 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id 37DABB82A70;
-	Fri, 31 Mar 2023 07:45:40 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3B93DC433EF;
-	Fri, 31 Mar 2023 07:45:36 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1680248738;
-	bh=taMOt2Lov9rC9wpDUTDWzToA4PfDhmbtIVAXI2i96Ic=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=FuLEiqjaRr490CXNwsFErE3yuBFxsWciBgGaYYoECVLftMYwMMO2ruOfHprtcmCsk
-	 eUqwKrz7qhr5S1OyWJHZB0gLvvERrDlvf04ZpWo83rwHBpqgvpVIALxrolbGH1KFGn
-	 MsDOYe4VZIWKTVjbOzgr4C2sNaKjoMoeVnmnANCzoCkFheMQ4owoXLKDF2krsdYOYV
-	 nTNlH49KesfOI7wS3iJoUUzAhQp8KQh8wrdHKph5a8STu+sVyRoNQiL0ODJ9e9Y81h
-	 M86mpYYx8VyBRMaSjlxXTFDnbjpQP7OeZAo0FaByk53XupbHTD7l2n0oP22+K8+JV/
-	 kwDqfCtESoxwQ==
-Message-ID: <38143d66-ad7b-9d13-5280-126bd1f077a4@kernel.org>
-Date: Fri, 31 Mar 2023 10:45:35 +0300
+	id 1pi9Ve-006EKT-05;
+	Fri, 31 Mar 2023 07:49:19 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+	by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 32V7nC89032086;
+	Fri, 31 Mar 2023 02:49:12 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+	s=ti-com-17Q1; t=1680248952;
+	bh=M9rGFzZVAKQIHFo+6Vrn0/FJ6eEqdHqLhsMOa8+fA2g=;
+	h=Date:CC:Subject:To:References:From:In-Reply-To;
+	b=i+p210SuKELCHvyTRorWzQJSGHo4Nglx39hmKW2uZZNPiaSfJBLEudFl5jocVGgaZ
+	 aKzj93o2mr9EIE6gQkX3YxqcAEieRAQ0pqCASd+dYS5j9UkmpCPGubRmUDW444aFNZ
+	 nF8w5fIw7ctpmHqhWJxzITaei0WvNjA6nMJoNxUs=
+Received: from DLEE104.ent.ti.com (dlee104.ent.ti.com [157.170.170.34])
+	by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 32V7nCb1116419
+	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+	Fri, 31 Mar 2023 02:49:12 -0500
+Received: from DLEE100.ent.ti.com (157.170.170.30) by DLEE104.ent.ti.com
+ (157.170.170.34) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.16; Fri, 31
+ Mar 2023 02:49:12 -0500
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE100.ent.ti.com
+ (157.170.170.30) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.16 via
+ Frontend Transport; Fri, 31 Mar 2023 02:49:12 -0500
+Received: from [172.24.145.61] (ileaxei01-snat2.itg.ti.com [10.180.69.6])
+	by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 32V7n9xx084053;
+	Fri, 31 Mar 2023 02:49:10 -0500
+Message-ID: <b5e426fb-8af9-c372-1076-63194e4de781@ti.com>
+Date: Fri, 31 Mar 2023 13:19:09 +0530
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.9.0
-Subject: Re: [PATCH 2/2] phy: ti: gmii-sel: Enable USXGMII mode for J784S4
-Content-Language: en-US
-To: Siddharth Vadapalli <s-vadapalli@ti.com>, vkoul@kernel.org,
- kishon@kernel.org
-Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, srk@ti.com
+CC: <vkoul@kernel.org>, <kishon@kernel.org>, <linux-phy@lists.infradead.org>,
+        <linux-kernel@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
+        <srk@ti.com>, <s-vadapalli@ti.com>
+Subject: Re: [PATCH 1/2] phy: ti: gmii-sel: Add support for CPSW9G GMII SEL in
+ J784S4
+To: Roger Quadros <rogerq@kernel.org>
 References: <20230331062521.529005-1-s-vadapalli@ti.com>
- <20230331062521.529005-3-s-vadapalli@ti.com>
-From: Roger Quadros <rogerq@kernel.org>
-In-Reply-To: <20230331062521.529005-3-s-vadapalli@ti.com>
+ <20230331062521.529005-2-s-vadapalli@ti.com>
+ <cfcdb25b-5426-2532-ab8c-224a5e33baf3@kernel.org>
+Content-Language: en-US
+From: Siddharth Vadapalli <s-vadapalli@ti.com>
+In-Reply-To: <cfcdb25b-5426-2532-ab8c-224a5e33baf3@kernel.org>
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230331_004542_784231_68DB866B 
-X-CRM114-Status: UNSURE (   7.56  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230331_004918_212575_6BAC816C 
+X-CRM114-Status: GOOD (  13.14  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,16 +88,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Hello Roger,
 
-
-On 31/03/2023 09:25, Siddharth Vadapalli wrote:
-> TI's J784S4 SoC supports USXGMII mode with the CPSW9G instance's MAC
-> ports 1 and 2. Add USXGMII mode to the extra_modes member of J784S4's
-> SoC data.
+On 31/03/23 13:15, Roger Quadros wrote:
 > 
-> Signed-off-by: Siddharth Vadapalli <s-vadapalli@ti.com>
+> 
+> On 31/03/2023 09:25, Siddharth Vadapalli wrote:
+>> Each of the CPSW9G ports in TI's J784S4 SoC support modes such as QSGMII.
+>>
+>> Add a new compatible for it and allow the usage of "ti,qsgmii-main-ports"
+>> property for J784S4.
+>>
+>> Signed-off-by: Siddharth Vadapalli <s-vadapalli@ti.com>
+>> ---
+>>  drivers/phy/ti/phy-gmii-sel.c | 13 +++++++++++++
+>>  1 file changed, 13 insertions(+)
+>>
+>> diff --git a/drivers/phy/ti/phy-gmii-sel.c b/drivers/phy/ti/phy-gmii-sel.c
+>> index c87118cb2af9..fba5c0c0771c 100644
+>> --- a/drivers/phy/ti/phy-gmii-sel.c
+>> +++ b/drivers/phy/ti/phy-gmii-sel.c
+>> @@ -235,6 +235,15 @@ struct phy_gmii_sel_soc_data phy_gmii_sel_cpsw9g_soc_j721e = {
+>>  	.num_qsgmii_main_ports = 2,
+>>  };
+>>  
+>> +static const
+>> +struct phy_gmii_sel_soc_data phy_gmii_sel_cpsw9g_soc_j784s4 = {
+> 
+> Please make it into one line
 
-Reviewed-by: Roger Quadros <rogerq@kernel.org>
+I was simply following the convention used for other SoC data structs in the
+same file. Please let me know why this has to be an exception and I will post
+the v2 series with the change accordingly.
+
+Regards,
+Siddharth.
 
 -- 
 linux-phy mailing list
