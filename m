@@ -4,74 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BEB69C6FD18
-	for <linux-phy@archiver.kernel.org>; Fri, 31 Mar 2023 07:49:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5BE04C6FD18
+	for <linux-phy@archiver.kernel.org>; Fri, 31 Mar 2023 07:53:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
-	CC:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=C1IeughV8Hd6sfeCFrku/WzBu1uJ8zUgP71nrNSEFv4=; b=j8yi4etDqvv6tV
-	cZ9HhPDSgDyzs3poG14k2DNi/1BhHTQ2wxIBgmYjs/NMayX/NoQXMWiwcImxLD05sDW9GZijx4s+7
-	frW/EB/aLWTxKeShJyc/ra3wRkblhOoAQdmBfODGkxZ3tpfFimcNVP6gFXzfpPftl4AjQ4Q3Gxs+7
-	09WbA6qZoJLyRxWxrpt4Xp5OpCkuk05sgoB1uZCnqqZOxcDFKdIfnZn2nNz+td/d9/OIdTOl+UiPZ
-	yVu4dUciQeOcIkJ7ABN4cdN+Z7ja7cvWm2yxo5Nc4/oZ5aMYerLXsMuEDCe5/NefV1CL9mEnqYO1O
-	Fx/0VUsFsxAwBuRsYPsg==;
+	List-Owner; bh=S3KRA/WDRXed7tbJ9pvpj7itgtYVsXb89l/FCtdrF34=; b=V06kRKGerF+KJr
+	CLOxmREIQGG7FTb+5n8xjGGviAwmodG2rPVy4icN9dPegnTh9z9boV8sb11P9U8IeuL6rYEH2E0eY
+	fVo1Qqzb5IVf4F1FNN7UK7XmGwr13uQW0pNFPg2J4DMXEYcX+ZBf0/qPS7FDtILup635fo2Pfszmv
+	EFdQeQcsr65I+EkGIWyHh574GPP8+/NplCkmddAz1SebruQj1VUHUghUy95tRYkvuu/ouRityv+aZ
+	xfURqQioJpLUVBwgY4gpxwpPoU86Hb9HErsCjMe2Mdx7ro3/m1SevExDDboN7kVl+d7wWVb9MikPP
+	Nzr0No1Tayy44ghTeYGw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pi9Vi-006EMW-1C;
-	Fri, 31 Mar 2023 07:49:22 +0000
-Received: from lelv0143.ext.ti.com ([198.47.23.248])
+	id 1pi9Zp-006F7b-0p;
+	Fri, 31 Mar 2023 07:53:37 +0000
+Received: from ams.source.kernel.org ([145.40.68.75])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pi9Ve-006EKT-05;
-	Fri, 31 Mar 2023 07:49:19 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
-	by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 32V7nC89032086;
-	Fri, 31 Mar 2023 02:49:12 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
-	s=ti-com-17Q1; t=1680248952;
-	bh=M9rGFzZVAKQIHFo+6Vrn0/FJ6eEqdHqLhsMOa8+fA2g=;
-	h=Date:CC:Subject:To:References:From:In-Reply-To;
-	b=i+p210SuKELCHvyTRorWzQJSGHo4Nglx39hmKW2uZZNPiaSfJBLEudFl5jocVGgaZ
-	 aKzj93o2mr9EIE6gQkX3YxqcAEieRAQ0pqCASd+dYS5j9UkmpCPGubRmUDW444aFNZ
-	 nF8w5fIw7ctpmHqhWJxzITaei0WvNjA6nMJoNxUs=
-Received: from DLEE104.ent.ti.com (dlee104.ent.ti.com [157.170.170.34])
-	by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 32V7nCb1116419
-	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Fri, 31 Mar 2023 02:49:12 -0500
-Received: from DLEE100.ent.ti.com (157.170.170.30) by DLEE104.ent.ti.com
- (157.170.170.34) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.16; Fri, 31
- Mar 2023 02:49:12 -0500
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE100.ent.ti.com
- (157.170.170.30) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.16 via
- Frontend Transport; Fri, 31 Mar 2023 02:49:12 -0500
-Received: from [172.24.145.61] (ileaxei01-snat2.itg.ti.com [10.180.69.6])
-	by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 32V7n9xx084053;
-	Fri, 31 Mar 2023 02:49:10 -0500
-Message-ID: <b5e426fb-8af9-c372-1076-63194e4de781@ti.com>
-Date: Fri, 31 Mar 2023 13:19:09 +0530
+	id 1pi9Zg-006F5I-0h;
+	Fri, 31 Mar 2023 07:53:34 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by ams.source.kernel.org (Postfix) with ESMTPS id 5F67EB82CAE;
+	Fri, 31 Mar 2023 07:53:24 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6B79FC433EF;
+	Fri, 31 Mar 2023 07:53:21 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1680249203;
+	bh=8FH7mQ2u8+g8iflRXHsu0r4l7PSoNLbMnI2avjCa0Cw=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=FB/Lnnk6X8luI2tmvT8OyUFvyvISzOtCnXXbzJCegdjPVDnknHhKAc0Iek8rmnskJ
+	 wsH8OIk83JcnRxIfEuWN+5F9YHfId1hcp2022hznAQGqmsliC1w+CE/aXMQ7eW6g9Z
+	 BshtmaZEn1z7Ug/bB7Xuor+vZst9wBP1bS3HQkPhLzhGzfdAOZJTWI1oL7LEcphpwc
+	 ePtQgP+Twia+u2xX8127gnMAZA6wxtikAc/KqwLKPEaEfzTb4QN7oU79eWet17XvhN
+	 NSvt/33lrTN22G3mN2bxRyMRsZbjICKGAVvEy734zEqpEe685N6RAkp+hejr38xkq/
+	 7QbBjknPNW2qw==
+Message-ID: <10ad789e-3dcc-0c74-5426-87f4a53d6fd0@kernel.org>
+Date: Fri, 31 Mar 2023 10:53:19 +0300
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.9.0
-CC: <vkoul@kernel.org>, <kishon@kernel.org>, <linux-phy@lists.infradead.org>,
-        <linux-kernel@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
-        <srk@ti.com>, <s-vadapalli@ti.com>
 Subject: Re: [PATCH 1/2] phy: ti: gmii-sel: Add support for CPSW9G GMII SEL in
  J784S4
-To: Roger Quadros <rogerq@kernel.org>
+Content-Language: en-US
+To: Siddharth Vadapalli <s-vadapalli@ti.com>
+Cc: vkoul@kernel.org, kishon@kernel.org, linux-phy@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ srk@ti.com
 References: <20230331062521.529005-1-s-vadapalli@ti.com>
  <20230331062521.529005-2-s-vadapalli@ti.com>
  <cfcdb25b-5426-2532-ab8c-224a5e33baf3@kernel.org>
-Content-Language: en-US
-From: Siddharth Vadapalli <s-vadapalli@ti.com>
-In-Reply-To: <cfcdb25b-5426-2532-ab8c-224a5e33baf3@kernel.org>
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+ <b5e426fb-8af9-c372-1076-63194e4de781@ti.com>
+From: Roger Quadros <rogerq@kernel.org>
+In-Reply-To: <b5e426fb-8af9-c372-1076-63194e4de781@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230331_004918_212575_6BAC816C 
-X-CRM114-Status: GOOD (  13.14  )
+X-CRM114-CacheID: sfid-20230331_005333_830101_42BF0C8C 
+X-CRM114-Status: GOOD (  15.26  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,41 +80,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hello Roger,
 
-On 31/03/23 13:15, Roger Quadros wrote:
-> 
-> 
-> On 31/03/2023 09:25, Siddharth Vadapalli wrote:
->> Each of the CPSW9G ports in TI's J784S4 SoC support modes such as QSGMII.
->>
->> Add a new compatible for it and allow the usage of "ti,qsgmii-main-ports"
->> property for J784S4.
->>
->> Signed-off-by: Siddharth Vadapalli <s-vadapalli@ti.com>
->> ---
->>  drivers/phy/ti/phy-gmii-sel.c | 13 +++++++++++++
->>  1 file changed, 13 insertions(+)
->>
->> diff --git a/drivers/phy/ti/phy-gmii-sel.c b/drivers/phy/ti/phy-gmii-sel.c
->> index c87118cb2af9..fba5c0c0771c 100644
->> --- a/drivers/phy/ti/phy-gmii-sel.c
->> +++ b/drivers/phy/ti/phy-gmii-sel.c
->> @@ -235,6 +235,15 @@ struct phy_gmii_sel_soc_data phy_gmii_sel_cpsw9g_soc_j721e = {
->>  	.num_qsgmii_main_ports = 2,
->>  };
->>  
->> +static const
->> +struct phy_gmii_sel_soc_data phy_gmii_sel_cpsw9g_soc_j784s4 = {
-> 
-> Please make it into one line
 
-I was simply following the convention used for other SoC data structs in the
-same file. Please let me know why this has to be an exception and I will post
-the v2 series with the change accordingly.
+On 31/03/2023 10:49, Siddharth Vadapalli wrote:
+> Hello Roger,
+> 
+> On 31/03/23 13:15, Roger Quadros wrote:
+>>
+>>
+>> On 31/03/2023 09:25, Siddharth Vadapalli wrote:
+>>> Each of the CPSW9G ports in TI's J784S4 SoC support modes such as QSGMII.
+>>>
+>>> Add a new compatible for it and allow the usage of "ti,qsgmii-main-ports"
+>>> property for J784S4.
+>>>
+>>> Signed-off-by: Siddharth Vadapalli <s-vadapalli@ti.com>
+>>> ---
+>>>  drivers/phy/ti/phy-gmii-sel.c | 13 +++++++++++++
+>>>  1 file changed, 13 insertions(+)
+>>>
+>>> diff --git a/drivers/phy/ti/phy-gmii-sel.c b/drivers/phy/ti/phy-gmii-sel.c
+>>> index c87118cb2af9..fba5c0c0771c 100644
+>>> --- a/drivers/phy/ti/phy-gmii-sel.c
+>>> +++ b/drivers/phy/ti/phy-gmii-sel.c
+>>> @@ -235,6 +235,15 @@ struct phy_gmii_sel_soc_data phy_gmii_sel_cpsw9g_soc_j721e = {
+>>>  	.num_qsgmii_main_ports = 2,
+>>>  };
+>>>  
+>>> +static const
+>>> +struct phy_gmii_sel_soc_data phy_gmii_sel_cpsw9g_soc_j784s4 = {
+>>
+>> Please make it into one line
+> 
+> I was simply following the convention used for other SoC data structs in the
+> same file. Please let me know why this has to be an exception and I will post
+> the v2 series with the change accordingly.
 
-Regards,
-Siddharth.
+Not that much of a deal. ;)
+
+Reviewed-by: Roger Quadros <rogerq@kernel.org>
 
 -- 
 linux-phy mailing list
