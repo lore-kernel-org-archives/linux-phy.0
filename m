@@ -4,66 +4,96 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3DC9BC76196
-	for <linux-phy@archiver.kernel.org>; Mon,  3 Apr 2023 13:10:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3A505C76188
+	for <linux-phy@archiver.kernel.org>; Mon,  3 Apr 2023 14:54:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Date:Subject:Message-Id:References:
-	In-Reply-To:Cc:To:From:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GfcTckSwxWtNk/ln5dxThtajr1W8TV+ZwOVSyomrDb0=; b=3fOuZLm7+US7lb
-	gNiSg5ceY7/OKZX/OxLDJt8gWC310x5Rg5T9GDKvZVceqMJFNC+PfouRVSxws4tLagL5bK3Hxa/kv
-	UwM9xKj2Wfr3hvvvHBQTveqGKAOfE1p/i3uDhd4zZs+x6HYJ5xnxT/3mP6IVUl3VJtw0uw0+8FU3u
-	ID6R6ZgvBMPrU2Zrl0alFVXbXbubUDtBAthfmV/2Z/Lh6JYzVkLyAEKdzd0H2OsPCG4phWDJLGzj6
-	z12GyonSARB4Wp0CNf3BGLLRNneSWvBiYXFuNoohksAfYktvD9ZdBJQUBfHQh075PJaMzmV2d890X
-	YkD0XRFveGASolBsNuPw==;
+	List-Owner; bh=CCzoubHAsC3+YyaRDGOFVv5paDDk/j8HGo1liUkq5e0=; b=w2w5ieMbgYHzz8
+	csZpZlRG839OYEAP7ez2naF9yhQFHKOSMurzR28X0bzJx6ambzCXu5t/RQXVw/aqb0UzusiPfQuRU
+	hDYXna3FHE94gC5ers5UvOXsfla/kfIdaGyInjM7rDPdGOo3agwu5rzaGqIrlqaBtEnZ4lSledv9q
+	vCtg0HF7A7H+Kj6xkvkmRwyE/OIWx0fZfR5mFAlcmFlCxhirMQRYDVE6YoN5K3TdtQIeuTXF5yaeW
+	Q0dU/YYkqOrr+vOe0LTnB29pvOc0K+qIuwpWGksv9ev+ycXxuRywRRL9pMoDTIyuxTxX60SpGj6C3
+	jLlkxakPHQStypTV1rAw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pjJxH-00FPMr-2u;
-	Mon, 03 Apr 2023 13:10:39 +0000
-Received: from mail-oa1-f47.google.com ([209.85.160.47])
+	id 1pjLZp-00FhNV-29;
+	Mon, 03 Apr 2023 14:54:33 +0000
+Received: from mail-ed1-x534.google.com ([2a00:1450:4864:20::534])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pjJxD-00FPKd-2I;
-	Mon, 03 Apr 2023 13:10:37 +0000
-Received: by mail-oa1-f47.google.com with SMTP id 586e51a60fabf-17aaa51a911so30693372fac.5;
-        Mon, 03 Apr 2023 06:10:33 -0700 (PDT)
+	id 1pjLZn-00FhM5-0r
+	for linux-phy@lists.infradead.org;
+	Mon, 03 Apr 2023 14:54:32 +0000
+Received: by mail-ed1-x534.google.com with SMTP id y4so118514689edo.2
+        for <linux-phy@lists.infradead.org>; Mon, 03 Apr 2023 07:54:27 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1680533666;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=4MYkMU1LTnOHVMP6HjNeFG2DRZjRa3eGm53fnJdgbc8=;
+        b=aHG4EQpPrwwrZ0xsU+6h+jgYLslKOOi5f0J6zlC90kyvgE9UTdn4Q0F7pOHcdeXnW7
+         ugGgxYwmhjEZKPhmZd/z6Og12wPvcP59GUXr9yluSvir/y4ynYPSdxiTWLo9lAIn8wIO
+         FHOuwq4hdWcrWbLElbUspEy5TTrdRXtL9PLOEnLnHnIFHowf3o9aOP531Cf4r+3JLIh1
+         3PkHDWQ+5nfm9SFo6Tm/sArpNSaVlKYiClE6W1G06KPvrhigzsAi3xwCat18zMHB3zIH
+         w3TYqVRGHPAx2r0pok5PyZYjGyCotgek0g/FAtKB8rdPuQIGJJsYmsEKuistr/NT/475
+         8gOA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112; t=1680527432;
-        h=date:subject:message-id:references:in-reply-to:cc:to:from
-         :mime-version:content-transfer-encoding:x-gm-message-state:from:to
-         :cc:subject:date:message-id:reply-to;
-        bh=3ZTdwXMG2el/ea1BKsWEd08tIXIZ8zFxXn8tPBkGQ5A=;
-        b=x8nbIRZOTKNF3A+sYviz96/E8oU48ExPSjJzHbxTJf5Ol7DCcioy0QXHb9JKQ/8/K3
-         z9W+VJVFu3q2Juhbbui2N0AlHa2Axim07nGHyjRhNNj/wj+qhvO0aoflWCtm+RGkKHz+
-         66XM1PfgFUK/TENMj4vuHgD5YUOreN0BTznnLd/iDmvIeZe+jzgFxATJAhGV2oFQrriT
-         j+Aw/bg4jvTcwrZFu10rHzknRZcKVxTddPK2GJGHZnvEwGsPsF3ZpHeNyZcsTn+3jh1M
-         B1wJesUAe7FGKRvzfNwM31BDx/OCpByoXhm9Z+S5Ik3V9ZeSAjs9SbplzbFXERlCAlCH
-         KvIQ==
-X-Gm-Message-State: AAQBX9c4wNRAjK1vU6sPPbAUNhiDj0ihvLTXcLUl6XJXmPrpcreOVnVu
-	COH7uSvvP3y73tqJZ358RhV2OGGZ1w==
-X-Google-Smtp-Source: AKy350bpXhr4xTknMKxWepZjrNZtrRCKwVKbMunz/PN41Xn3HTuhhAtDnaic+81eg7Onom6tpE9f9w==
-X-Received: by 2002:a05:6870:4587:b0:176:3731:69 with SMTP id y7-20020a056870458700b0017637310069mr7607069oao.24.1680527432711;
-        Mon, 03 Apr 2023 06:10:32 -0700 (PDT)
-Received: from robh_at_kernel.org (66-90-144-107.dyn.grandenetworks.net. [66.90.144.107])
-        by smtp.gmail.com with ESMTPSA id kw17-20020a056870ac1100b001802d3e181fsm3506534oab.14.2023.04.03.06.10.31
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 03 Apr 2023 06:10:32 -0700 (PDT)
-Received: (nullmailer pid 522008 invoked by uid 1000);
-	Mon, 03 Apr 2023 13:10:30 -0000
+        d=1e100.net; s=20210112; t=1680533666;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=4MYkMU1LTnOHVMP6HjNeFG2DRZjRa3eGm53fnJdgbc8=;
+        b=KksVmuGJ9vYW/8AS+25eOWvDDPXMKZQupJx50vWGON3QSPb6f4Yb/kEtuLrSnLEttE
+         0ngYbAJ7yXA804uqaDdk6yNmT4A9Zu9YYggcwML5LNnjkL74H9DfRSdX5iUX5SL5BQEU
+         mGUWgtm9HdmY+dhltRlvJvgsvaWKe0wR4yvC9bQN4tQTzHYVX4ZNhq9/JZYluKWo/M85
+         vM8RqzjJXAtRJhy7+wmEX+DS/EIGqby8NC5yONfuMKRVltoiv3b5jq+m/NstQuYuvlkE
+         X3YaEcbOow3/0HmA1ME8MNx2aAsEaTVY1RvOgXjAC7Iz1CidbrMJbSkycGL9+N6EStyP
+         zE2w==
+X-Gm-Message-State: AAQBX9dnpKq6hR+TbV4iVPjniQ4eGWsY4NotTou3SCdQb8OSZP6Lg84d
+	bJrgpL8hbttFXRYixt+6NoEvxQ==
+X-Google-Smtp-Source: AKy350bzC7zhyZol87P/h8Ao3cd9jxB9eNaY5b8cDld4A3nvsptLofinA2tasgAr9kVP46T3v1lsvQ==
+X-Received: by 2002:a17:906:b303:b0:933:48ce:73a5 with SMTP id n3-20020a170906b30300b0093348ce73a5mr33462885ejz.56.1680533665843;
+        Mon, 03 Apr 2023 07:54:25 -0700 (PDT)
+Received: from ?IPV6:2a02:810d:15c0:828:ae90:d80:1069:4805? ([2a02:810d:15c0:828:ae90:d80:1069:4805])
+        by smtp.gmail.com with ESMTPSA id q20-20020a50cc94000000b004bd6e3ed196sm4736781edi.86.2023.04.03.07.54.24
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 03 Apr 2023 07:54:25 -0700 (PDT)
+Message-ID: <6cd130bc-955a-9537-6a1a-301a38aac53f@linaro.org>
+Date: Mon, 3 Apr 2023 16:54:24 +0200
 MIME-Version: 1.0
-From: Rob Herring <robh@kernel.org>
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.9.0
+Subject: Re: [PATCH 1/2] dt-bindings: phy: add mtk-mipi-csi driver
+Content-Language: en-US
 To: Julien Stephan <jstephan@baylibre.com>
-Cc: Matthias Brugger <matthias.bgg@gmail.com>, linux-mediatek@lists.infradead.org, devicetree@vger.kernel.org, Andy Hsieh <andy.hsieh@mediatek.com>, AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, Chunfeng Yun <chunfeng.yun@mediatek.com>, Rob Herring <robh+dt@kernel.org>, Florian Sylvestre <fsylvestre@baylibre.com>, Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org
-In-Reply-To: <20230403071929.360911-2-jstephan@baylibre.com>
+Cc: Florian Sylvestre <fsylvestre@baylibre.com>,
+ Chunfeng Yun <chunfeng.yun@mediatek.com>,
+ Andy Hsieh <andy.hsieh@mediatek.com>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring
+ <robh+dt@kernel.org>, Krzysztof Kozlowski
+ <krzysztof.kozlowski+dt@linaro.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+ "moderated list:ARM/Mediatek USB3 PHY DRIVER"
+ <linux-arm-kernel@lists.infradead.org>,
+ "moderated list:ARM/Mediatek USB3 PHY DRIVER"
+ <linux-mediatek@lists.infradead.org>,
+ "open list:GENERIC PHY FRAMEWORK" <linux-phy@lists.infradead.org>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, open list <linux-kernel@vger.kernel.org>
 References: <20230403071929.360911-1-jstephan@baylibre.com>
  <20230403071929.360911-2-jstephan@baylibre.com>
-Message-Id: <168052512219.461959.16950455567862466256.robh@kernel.org>
-Subject: Re: [PATCH 1/2] dt-bindings: phy: add mtk-mipi-csi driver
-Date: Mon, 03 Apr 2023 08:10:30 -0500
+ <4837c3e0-60ed-601b-8512-30fda2176619@linaro.org>
+ <CAEHHSvYJrCZop8OvTjsLJjr5HHSrG8dsSQ+K_W2cjdKJ4xfodA@mail.gmail.com>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <CAEHHSvYJrCZop8OvTjsLJjr5HHSrG8dsSQ+K_W2cjdKJ4xfodA@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230403_061035_749323_B0A3EE19 
-X-CRM114-Status: GOOD (  11.14  )
+X-CRM114-CacheID: sfid-20230403_075431_332460_DE41F26F 
+X-CRM114-Status: GOOD (  14.86  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,52 +105,38 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-On Mon, 03 Apr 2023 09:19:28 +0200, Julien Stephan wrote:
-> From: Florian Sylvestre <fsylvestre@baylibre.com>
-> 
-> Signed-off-by: Florian Sylvestre <fsylvestre@baylibre.com>
-> Signed-off-by: Julien Stephan <jstephan@baylibre.com>
-> ---
->  .../bindings/phy/mediatek,csi-phy.yaml        | 41 +++++++++++++++++++
->  MAINTAINERS                                   |  6 +++
->  2 files changed, 47 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/mediatek,csi-phy.yaml
-> 
-
-My bot found errors running 'make DT_CHECKER_FLAGS=-m dt_binding_check'
-on your patch (DT_CHECKER_FLAGS is new in v5.13):
-
-yamllint warnings/errors:
-
-dtschema/dtc warnings/errors:
-/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/phy/mediatek,csi-phy.example.dtb: phy@10011800: reg: [[0, 268507136], [0, 96]] is too long
-	From schema: /builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/phy/mediatek,csi-phy.yaml
-
-doc reference errors (make refcheckdocs):
-
-See https://patchwork.ozlabs.org/project/devicetree-bindings/patch/20230403071929.360911-2-jstephan@baylibre.com
-
-The base for the series is generally the latest rc1. A different dependency
-should be noted in *this* patch.
-
-If you already ran 'make dt_binding_check' and didn't see the above
-error(s), then make sure 'yamllint' is installed and dt-schema is up to
-date:
-
-pip3 install dtschema --upgrade
-
-Please check and re-submit after running the above command yourself. Note
-that DT_SCHEMA_FILES can be set to your schema file to speed up checking
-your schema. However, it must be unset to test all examples with your schema.
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gMDMvMDQvMjAyMyAxNjo0MCwgSnVsaWVuIFN0ZXBoYW4gd3JvdGU6Cj4gSGkgS3J6eXN6dG9m
+LAo+IAo+IExlIGx1bi4gMyBhdnIuIDIwMjMgw6AgMTE6NDksIEtyenlzenRvZiBLb3psb3dza2kg
+PAo+IGtyenlzenRvZi5rb3psb3dza2lAbGluYXJvLm9yZz4gYSDDqWNyaXQgOgo+IAo+PiBPbiAw
+My8wNC8yMDIzIDA5OjE5LCBKdWxpZW4gU3RlcGhhbiB3cm90ZToKPj4+IEZyb206IEZsb3JpYW4g
+U3lsdmVzdHJlIDxmc3lsdmVzdHJlQGJheWxpYnJlLmNvbT4KPj4+Cj4+Cj4+IFRoZXJlIGlzIG5v
+IGNvbW1pdCBtc2cuCj4+Cj4+PiBTaWduZWQtb2ZmLWJ5OiBGbG9yaWFuIFN5bHZlc3RyZSA8ZnN5
+bHZlc3RyZUBiYXlsaWJyZS5jb20+Cj4+PiBTaWduZWQtb2ZmLWJ5OiBKdWxpZW4gU3RlcGhhbiA8
+anN0ZXBoYW5AYmF5bGlicmUuY29tPgo+Pj4gLS0tCj4+PiAgLi4uL2JpbmRpbmdzL3BoeS9tZWRp
+YXRlayxjc2ktcGh5LnlhbWwgICAgICAgIHwgNDEgKysrKysrKysrKysrKysrKysrKwo+Pj4gIE1B
+SU5UQUlORVJTICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB8ICA2ICsrKwo+Pj4g
+IDIgZmlsZXMgY2hhbmdlZCwgNDcgaW5zZXJ0aW9ucygrKQo+Pj4gIGNyZWF0ZSBtb2RlIDEwMDY0
+NAo+PiBEb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvcGh5L21lZGlhdGVrLGNzaS1w
+aHkueWFtbAo+Pj4KPj4+IGRpZmYgLS1naXQgYS9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmlu
+ZGluZ3MvcGh5L21lZGlhdGVrLGNzaS1waHkueWFtbAo+PiBiL0RvY3VtZW50YXRpb24vZGV2aWNl
+dHJlZS9iaW5kaW5ncy9waHkvbWVkaWF0ZWssY3NpLXBoeS55YW1sCj4+PiBuZXcgZmlsZSBtb2Rl
+IDEwMDY0NAo+Pj4gaW5kZXggMDAwMDAwMDAwMDAwLi5jMDI2ZTQzZjM1ZmQKPj4+IC0tLSAvZGV2
+L251bGwKPj4+ICsrKyBiL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9waHkvbWVk
+aWF0ZWssY3NpLXBoeS55YW1sCj4+Cj4+IEZpbGVuYW1lIGxpa2UgY29tcGF0aWJsZS4KPj4KPiBT
+aG91bGQgSSByZW5hbWUgdGhlIGJpbmRpbmcgIGZpbGUKPiBEb2N1bWVudGF0aW9uL2RldmljZXRy
+ZWUvYmluZGluZ3MvcGh5L21lZGlhdGVrLG10ODM2NS1taXBpLWNzaS55YW1sIG9yCgpUaGlzLgoK
+PiBzaG91bGQgSSByZW5hbWUgdGhlIGNvbXBhdGlibGUgc3RyaW5nIG1lZGlhdGVrLGNzaS1waHk/
+Cj4gVGhlIGNzaSBQSFkgbW9kdWxlIGlzIGEgbW9kdWxlIG9mIHRoZSBtdDgzNjUgc29jIGFuZCBj
+YW4gcG9zc2libHkgYmUgdXNlZAo+IG9uIG90aGVyIG1lZGlhdGVrIHNvYy4gIEkgdGhpbmsgdGhp
+cyBiaW5kaW5nIGlzIGdlbmVyaWMgZW5vdWdoIHRvIGhhdmUgYQo+IGdlbmVyaWMgbmFtZSwgd2hh
+dCBkbyB5b3UgdGhpbms/CgpZb3UgZGlkIG5vdCBhbGxvdyBhZGRpbmcgbmV3IHZhcmlhbnRzLCBh
+cyB5b3UgbWFkZSBpdCBjb25zdCwgbm90IGVudW0uCklmIHRoZXJlIGFyZSBvdGhlciBkZXZpY2Vz
+IHdpdGggdGhpcyBwaHksIHRoZXkgY291bGQgYmUgZXZlbiBhZGRlZCBub3cuCkJpbmRpbmdzIHNo
+b3VsZCBiZSByYXRoZXIgY29tcGxldGUuCgoKQmVzdCByZWdhcmRzLApLcnp5c3p0b2YKCgotLSAK
+bGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRw
+czovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
