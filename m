@@ -4,47 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D19ECC761AF
-	for <linux-phy@archiver.kernel.org>; Mon,  3 Apr 2023 20:23:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 03A54C76196
+	for <linux-phy@archiver.kernel.org>; Mon,  3 Apr 2023 20:23:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ycYV3/2A1qRls1+IBqa//DhRttugUqypEZ1NsoAqXBQ=; b=1vtTccPKC7hW7p
-	BfpxeQm46Lt12NEby12euNAIh8+9pxwQSNb2Vg2tprAh7sIM7mqxDcZusPvB8IgsWCLjVGOSnofzX
-	fCcjDG1spKTWt4bA5v7YBXw2LKAl6pyXAivUKSnP9uJgFOL/n/UZdT7X/9isc8KLAHxmFr68Dx9Ic
-	7ld8WIHPeiQYXveJz4CcSu+70sB4GFgcFWjixq8HLyXImzbPfon1q4OMAvOffIvzZYpn006SHa65Q
-	UB4qMtfbUY1FbVbXQqTgDVRAqPHZIK5Gdiyybij54fNZ6ozePehwWEiGhyk3N2vtQBLcexvWkC3C0
-	D8z7Q/56QYZv9DGver+A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=N0+lPFzjRPIGl7tbTybwqiOcB7Ftb+19wM39/Bkff/o=; b=FX4RcQ+2E6/wzc
+	9YeMyaJ/t1KtP61wmOyVYOC518G+DYEu5oAIAjriyt79RAwdsL0KatPwTf7ddW0j1BZ/eqswpwQ/B
+	olR1tOKfbXL9ou8Wtzhw6v3had5QibgcRsifAy6I39PExTSpiQG84dLDohch1HLYj/idlTb2XwOEl
+	9oe72Jj6gUupymt6vEmPpXVgCaPNqu6fiWKuR2e5tjW9R6AA/WU4M1oJ8UcwfK+iLQYfxV32VaOOI
+	XbI4upU5TKbDeAbcSC6iMKjmbr0La4vEupAA3XJ75Hrc5+KRsZ32DvCkRk1QHvZER2gyrGYk+LYwa
+	334RJGoX99LWpS4penXA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pjQi6-00Gawm-1Y;
-	Mon, 03 Apr 2023 20:23:26 +0000
+	id 1pjQi8-00Gay9-1q;
+	Mon, 03 Apr 2023 20:23:28 +0000
 Received: from madras.collabora.co.uk ([46.235.227.172])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pjQi1-00Gami-2x;
+	id 1pjQi1-00GalO-2w;
 	Mon, 03 Apr 2023 20:23:23 +0000
 Received: from jupiter.universe (dyndsl-091-248-212-192.ewe-ip-backbone.de [91.248.212.192])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
 	(No client certificate requested)
 	(Authenticated sender: sre)
-	by madras.collabora.co.uk (Postfix) with ESMTPSA id D3A316603162;
-	Mon,  3 Apr 2023 21:23:14 +0100 (BST)
+	by madras.collabora.co.uk (Postfix) with ESMTPSA id A86EB660312D;
+	Mon,  3 Apr 2023 21:23:11 +0100 (BST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1680553395;
-	bh=0AvnUkLP+KMEub7LlbfJLBC/RaxG7cnldhb+34NFfeU=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=kqT8QSd5xC5Zn0kxCvSR4k+bV5Mwq/AX6a3Esoh79VDC6EvNEl7QC07blK6+R5/AI
-	 Pj5sj5tTks1PhbhhLT3NqBjB6oNf8B5BST4g5XZl+4zzGn8RE0xzn7+ya3OBH0E+QH
-	 0ovrdHQ6Ok1XLtALq3T7Fwn+QMgJP5U1gQ8ChzTbkqvYrN03mXtEFSOdK8dIuNL+Az
-	 QHh04QCYqdPLmVp5zxq3ZcCTr0CIMONCxUxSjoQunoW0ayIa+2beS0ebtOWflpnpWw
-	 8hIkgPL3iKYUrfU/h+oh4GxYvKFv7wqFTKrFd8E05cbWPKglpXXlFpFfVQcTd+1NOF
-	 iIBaCwSIY0YGA==
+	s=mail; t=1680553391;
+	bh=sQ6dRJmgA+DiW2bmxGnApVDBaMlLaTvrDqylSpALvFc=;
+	h=From:To:Cc:Subject:Date:From;
+	b=EoITfGwZIX9Zfs4sZSAl39HzDrn0fzFHU1fHHb9y5O114oaC5djzz+xfH0OUjtuBb
+	 KOfM5zPFjgtv0nSq7KmJn7wXHcEGev33Whs72/o8cL+EauuQ/EAlOYA+HN0f8U37oJ
+	 vgVR0jPlMFfmB3M5lgJRcwZ5kzUgNhlrazeBDTEdX2CrpycNRoIzO3LzlC0ZahvHxO
+	 llifpkvFfN5PQbLHgpNC19Nco+HTyHFqKcHkUX9hMl4gZC5+WmmhkKWKYdM+xmTW1g
+	 wnUgdmEnNzj+Y955LL85RhYAnCyuQYVXS+A1JQxs05oDBu1mvybT+GJ9H9h6gCozRL
+	 TRV8zIyaCeePg==
 Received: by jupiter.universe (Postfix, from userid 1000)
-	id 14F3F4807F2; Mon,  3 Apr 2023 22:23:09 +0200 (CEST)
+	id 08AF74807E1; Mon,  3 Apr 2023 22:23:09 +0200 (CEST)
 From: Sebastian Reichel <sebastian.reichel@collabora.com>
 To: Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
@@ -58,16 +58,15 @@ Cc: Heiko Stuebner <heiko@sntech.de>,
 	devicetree@vger.kernel.org,
 	Sebastian Reichel <sebastian.reichel@collabora.com>,
 	kernel@collabora.com
-Subject: [PATCHv2 6/7] phy: phy-rockchip-inno-usb2: simplify phy clock handling
-Date: Mon,  3 Apr 2023 22:23:06 +0200
-Message-Id: <20230403202307.120562-7-sebastian.reichel@collabora.com>
+Subject: [PATCHv2 0/7] phy-rockchip-inno-usb2: add RK3588 support
+Date: Mon,  3 Apr 2023 22:23:00 +0200
+Message-Id: <20230403202307.120562-1-sebastian.reichel@collabora.com>
 X-Mailer: git-send-email 2.39.2
-In-Reply-To: <20230403202307.120562-1-sebastian.reichel@collabora.com>
-References: <20230403202307.120562-1-sebastian.reichel@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230403_132322_114250_943083AF 
-X-CRM114-Status: GOOD (  12.47  )
+X-CRM114-CacheID: sfid-20230403_132322_113806_F1A81E2A 
+X-CRM114-Status: UNSURE (   9.15  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,62 +83,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Simplify phyclk handling by using devm_clk_get_optional_enabled to
-acquire and enable the optional clock. This also fixes a resource
-leak in driver remove path and adds proper error handling.
+Hi,
 
-Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
----
- drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 19 ++++++-------------
- 1 file changed, 6 insertions(+), 13 deletions(-)
+This adds RK3588 to the Rockchip Inno USB2 PHY driver. I have tested this
+with USB2_0 and USB2_1.
 
-diff --git a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-index 9f6d09da7fbd..2de1408eaa60 100644
---- a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-+++ b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-@@ -1390,24 +1390,22 @@ static int rockchip_usb2phy_probe(struct platform_device *pdev)
- 	if (IS_ERR(rphy->phy_reset))
- 		return PTR_ERR(rphy->phy_reset);
- 
--	rphy->clk = of_clk_get_by_name(np, "phyclk");
--	if (!IS_ERR(rphy->clk)) {
--		clk_prepare_enable(rphy->clk);
--	} else {
--		dev_info(&pdev->dev, "no phyclk specified\n");
--		rphy->clk = NULL;
-+	rphy->clk = devm_clk_get_optional_enabled(dev, "phyclk");
-+	if (IS_ERR(rphy->clk)) {
-+		return dev_err_probe(&pdev->dev, PTR_ERR(rphy->clk),
-+				     "failed to get phyclk\n");
- 	}
- 
- 	ret = rockchip_usb2phy_clk480m_register(rphy);
- 	if (ret) {
- 		dev_err(dev, "failed to register 480m output clock\n");
--		goto disable_clks;
-+		return ret;
- 	}
- 
- 	if (rphy->phy_cfg->phy_tuning) {
- 		ret = rphy->phy_cfg->phy_tuning(rphy);
- 		if (ret)
--			goto disable_clks;
-+			return ret;
- 	}
- 
- 	index = 0;
-@@ -1470,11 +1468,6 @@ static int rockchip_usb2phy_probe(struct platform_device *pdev)
- 
- put_child:
- 	of_node_put(child_np);
--disable_clks:
--	if (rphy->clk) {
--		clk_disable_unprepare(rphy->clk);
--		clk_put(rphy->clk);
--	}
- 	return ret;
- }
- 
+Changes since PATCHv1:
+ * https://lore.kernel.org/all/20230331163812.6124-1-sebastian.reichel@collabora.com/
+ * Added patch simplifying phyclk handling
+ * Added patch simplifying matchdata handling
+ * Added patches for reset handling and PHY tuning; after doing more
+   testing I noticed my previous patchset does not support hotplug and
+   USB devices need to be plugged in at boot time (more specifically
+   in PATCHv1 it had to be plugged before the PHY is suspended). This
+   fixes the issue.
+
+-- Sebastian
+
+Sebastian Reichel (7):
+  dt-bindings: soc: rockchip: add rk3588 usb2phy syscon
+  dt-bindings: phy: rockchip,inno-usb2phy: add rk3588
+  phy: phy-rockchip-inno-usb2: add rk3588 support
+  phy: phy-rockchip-inno-usb2: add reset support
+  phy: phy-rockchip-inno-usb2: add rk3588 phy tuning support
+  phy: phy-rockchip-inno-usb2: simplify phy clock handling
+  phy: phy-rockchip-inno-usb2: simplify getting match data
+
+ .../bindings/phy/rockchip,inno-usb2phy.yaml   |  21 +-
+ .../devicetree/bindings/soc/rockchip/grf.yaml |   2 +
+ drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 352 ++++++++++++++++--
+ 3 files changed, 339 insertions(+), 36 deletions(-)
+
 -- 
 2.39.2
 
