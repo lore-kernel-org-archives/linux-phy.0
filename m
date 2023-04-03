@@ -4,73 +4,91 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 64812C76196
-	for <linux-phy@archiver.kernel.org>; Mon,  3 Apr 2023 06:40:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CC7F9C77B60
+	for <linux-phy@archiver.kernel.org>; Mon,  3 Apr 2023 07:20:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zensqQNAujn5vU4TkycPimX9IaXazBdYaRfQQSdQhrg=; b=gQMq0bbojAn46e
-	idbhUrmeLKSrRbO3jrEAwI1vlR1apNfMxeKkw5sgFcsTOhcuQ4ChfW052QjBC1FmjIgliYrLKt+PA
-	/gYwPe3VoIiBIGsZmpX4vf8lIoBe+bnoPTo51KHEzxgTpyuN/PHVKBMP7F1Zgc63Z3SRxs9x34aoO
-	cbLWza1Unx+IVcMrpZWcMs+jiFtvoLfjwqgc5PCWyQM29RrfNkYhiRgsLCfTxzVDfbpeDTCcNtIvL
-	ziWJC4Aegfe28RLxOmTxWriY42iwQfFPiaGwz33OocmcaDc3eqXzHNjQhmRcEfhwiO4dBfA6ujbmY
-	9kpMD/P0xwg7HGt08gtA==;
+	List-Owner; bh=8Cqus+5Qz0WkkRdMAZXZT8Pa2ClM5+bzIashbjjrrxc=; b=Jev7NUr6lCMI2D
+	g6rPniK+iN58NxZ6f2DyJsP0ynOVdJDMYzEDunvF050jUb+vcXviNrUN0k5WxtRhHeLnmR7HtLJHz
+	dtS6DQ6xcuV03qvZctGXOsY1bwjWYNtthEhQvlln9A7xQm7AVwaTlIbnJCQE9+fuJUbBlby6KKPc4
+	gKaoOfrCTop/3I+Cz/D48sAKnq6XuULgkxAgsWbPRHI9eujli86Ep4Pp5Iqt25uYfDweW5zj1qbu/
+	v1uU7x8i1QKFeBBZEB5wfC3g1xsdrUU4WiFtcQNzqw84NWTa5OKltJI3yJI9bLHUirP+G9eVhmg6C
+	nbVKtKykBNx4rNBI65aQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pjDrR-00EI0l-04;
-	Mon, 03 Apr 2023 06:40:13 +0000
-Received: from fd01.gateway.ufhost.com ([61.152.239.71])
-	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pjDrN-00EHza-0c;
-	Mon, 03 Apr 2023 06:40:11 +0000
-Received: from EXMBX165.cuchost.com (unknown [175.102.18.54])
-	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
-	(Client CN "EXMBX165", Issuer "EXMBX165" (not verified))
-	by fd01.gateway.ufhost.com (Postfix) with ESMTP id 38B2424E14F;
-	Mon,  3 Apr 2023 14:39:29 +0800 (CST)
-Received: from EXMBX162.cuchost.com (172.16.6.72) by EXMBX165.cuchost.com
- (172.16.6.75) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Mon, 3 Apr
- 2023 14:39:29 +0800
-Received: from [192.168.125.82] (183.27.97.179) by EXMBX162.cuchost.com
- (172.16.6.72) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Mon, 3 Apr
- 2023 14:39:28 +0800
-Message-ID: <374e7ebd-bf39-2792-2847-24b14d1d871d@starfivetech.com>
-Date: Mon, 3 Apr 2023 14:39:27 +0800
+	id 1pjEU1-00EMMj-1R;
+	Mon, 03 Apr 2023 07:20:05 +0000
+Received: from mail-wm1-x32f.google.com ([2a00:1450:4864:20::32f])
+	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
+	id 1pjETv-00EMHr-1C
+	for linux-phy@lists.infradead.org;
+	Mon, 03 Apr 2023 07:20:01 +0000
+Received: by mail-wm1-x32f.google.com with SMTP id l15-20020a05600c4f0f00b003ef6d684102so13795957wmq.3
+        for <linux-phy@lists.infradead.org>; Mon, 03 Apr 2023 00:19:58 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=baylibre-com.20210112.gappssmtp.com; s=20210112; t=1680506397;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=SVU4RWnnyUxN/4R/aQctGtgga+2F97ZjMTd4w/vQJpk=;
+        b=4UU7G4p85jYpbaznDqsi6k/mDKHAj8qWT5nGe+5FtXHC6uM3e+A3ES3ck75BH8EEdA
+         cfmNs4gqmcFKLXj3Ox9b20prhVLC8qkyx7JXK2b3WIaUncdlThZMSwDDA4kxibFeLVnH
+         XkaXjAvFUm/ar+eOmHPB8Wv3emiVJniLVfjCMPnDAhzSOitBKgJuKf2apIlIvL2w5cIb
+         l9+GLsw1c8Zw7hg20aSh+SIjFCMqN1ZoHMjD58Bja3iAiu8NMFX0eyt2z6Wz7cB8ioIH
+         exuB9Rn4WDQYSv4GKK2vXpgBg5zkozurLXhpRm60zKWQ8iOpumrar0QK7xOPMOKXuNSV
+         LCsQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112; t=1680506397;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=SVU4RWnnyUxN/4R/aQctGtgga+2F97ZjMTd4w/vQJpk=;
+        b=Lcl2JAH0Wxjg7vfJzfR2MrgYlB9Lh8w6fEmqJaPnTN9WXDhI8doy/O4qtxfcakHmNJ
+         elGV7rqYiKh5XZROpSRBO9AjRewmGDPKBkI0MN6gPKRbyHGpmqAZSAb+hrL438ZK2Tyc
+         92ZEo8p7A79zHOuKT0rPIxUdMnRxK28cpWMJCUFygMNo/aFMnMjWDuyEHSl00aFa07Xi
+         hjwgQgQkvbEAljdty7AoZQW2o/alOVL+MhQWoH/jw94Rdai5JaHdQAslgg/5UgHzOs86
+         NL9JISkNjOmVhSbaUNb7DscA4g0EpsuHKYM5H9jlF0hEUV+hFMc3M4Lq+DbrpgkLjtt+
+         hzKg==
+X-Gm-Message-State: AO0yUKVFRe1h8oMclRjuVvTdVE2L5iqzzqfNNZGKkVfsIzWE+CvG3p7H
+	5laxeY2BtKijN4s2zs/T2z439g==
+X-Google-Smtp-Source: AK7set9JfS6EkdNxsvq8m3JaM4HWW8unwj4xfBqnQFM5v1P4Yau30M6jCRGb3xcdcBySIEnH0yG3pg==
+X-Received: by 2002:a1c:4b13:0:b0:3ed:33a1:ba8e with SMTP id y19-20020a1c4b13000000b003ed33a1ba8emr24618383wma.1.1680506396912;
+        Mon, 03 Apr 2023 00:19:56 -0700 (PDT)
+Received: from localhost.localdomain ([2a01:e0a:55f:21e0:9e19:4376:dea6:dbfa])
+        by smtp.gmail.com with ESMTPSA id z3-20020a05600c0a0300b003ee6aa4e6a9sm19060418wmp.5.2023.04.03.00.19.56
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 03 Apr 2023 00:19:56 -0700 (PDT)
+From: Julien Stephan <jstephan@baylibre.com>
+To: 
+Cc: Florian Sylvestre <fsylvestre@baylibre.com>,
+	Julien Stephan <jstephan@baylibre.com>,
+	Chunfeng Yun <chunfeng.yun@mediatek.com>,
+	Andy Hsieh <andy.hsieh@mediatek.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Matthias Brugger <matthias.bgg@gmail.com>,
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	linux-arm-kernel@lists.infradead.org (moderated list:ARM/Mediatek USB3 PHY DRIVER),
+	linux-mediatek@lists.infradead.org (moderated list:ARM/Mediatek USB3 PHY DRIVER),
+	linux-phy@lists.infradead.org (open list:GENERIC PHY FRAMEWORK),
+	devicetree@vger.kernel.org (open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS),
+	linux-kernel@vger.kernel.org (open list)
+Subject: [PATCH 1/2] dt-bindings: phy: add mtk-mipi-csi driver
+Date: Mon,  3 Apr 2023 09:19:28 +0200
+Message-Id: <20230403071929.360911-2-jstephan@baylibre.com>
+X-Mailer: git-send-email 2.40.0
+In-Reply-To: <20230403071929.360911-1-jstephan@baylibre.com>
+References: <20230403071929.360911-1-jstephan@baylibre.com>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.9.0
-Subject: Re: [PATCH v2 2/3] phy: starfive: Add mipi dphy rx support
-Content-Language: en-US
-To: Vinod Koul <vkoul@kernel.org>
-CC: Conor Dooley <conor.dooley@microchip.com>, Kishon Vijay Abraham I
-	<kishon@kernel.org>, Rob Herring <robh+dt@kernel.org>, Krzysztof Kozlowski
-	<krzysztof.kozlowski+dt@linaro.org>, Emil Renner Berthing <kernel@esmil.dk>,
-	Conor Dooley <conor@kernel.org>, Paul Walmsley <paul.walmsley@sifive.com>,
-	Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>,
-	Philipp Zabel <p.zabel@pengutronix.de>, Jack Zhu <jack.zhu@starfivetech.com>,
-	<linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
-	<linux-kernel@vger.kernel.org>, <linux-riscv@lists.infradead.org>
-References: <20230223015952.201841-1-changhuang.liang@starfivetech.com>
- <20230223015952.201841-3-changhuang.liang@starfivetech.com>
- <ZBhTmTEcrV59oaw3@matsya>
- <2aa1bdbd-e37e-941a-9422-0908545c14f7@starfivetech.com>
- <ZCbloBdeffocT3Os@matsya>
- <d48ab612-213a-8d20-4b36-3f64f3d24721@starfivetech.com>
- <0dd5e35b-512e-41ed-af33-f94b7e2868c1@spud>
- <b07842e4-54cc-873e-3140-4a933e054802@starfivetech.com>
- <ZCpzjIrcKt4t93gn@matsya>
-From: Changhuang Liang <changhuang.liang@starfivetech.com>
-In-Reply-To: <ZCpzjIrcKt4t93gn@matsya>
-X-Originating-IP: [183.27.97.179]
-X-ClientProxiedBy: EXCAS064.cuchost.com (172.16.6.24) To EXMBX162.cuchost.com
- (172.16.6.72)
-X-YovoleRuleAgent: yovoleflag
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230402_234009_573962_736BA0AF 
-X-CRM114-Status: GOOD (  10.35  )
+X-CRM114-CacheID: sfid-20230403_001959_404956_B142F57D 
+X-CRM114-Status: GOOD (  14.86  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,42 +105,83 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+From: Florian Sylvestre <fsylvestre@baylibre.com>
 
+Signed-off-by: Florian Sylvestre <fsylvestre@baylibre.com>
+Signed-off-by: Julien Stephan <jstephan@baylibre.com>
+---
+ .../bindings/phy/mediatek,csi-phy.yaml        | 41 +++++++++++++++++++
+ MAINTAINERS                                   |  6 +++
+ 2 files changed, 47 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/mediatek,csi-phy.yaml
 
-On 2023/4/3 14:34, Vinod Koul wrote:
-> On 03-04-23, 14:31, Changhuang Liang wrote:
->>
->>
->> On 2023/4/3 14:24, Conor Dooley wrote:
->>> On Mon, Apr 03, 2023 at 09:39:00AM +0800, Changhuang Liang wrote:
->>>> On 2023/3/31 21:52, Vinod Koul wrote:
->>>>> On 21-03-23, 14:08, Changhuang Liang wrote:
->>>>>> On 2023/3/20 20:37, Vinod Koul wrote:
->>>>>>> On 22-02-23, 17:59, Changhuang Liang wrote:
-> 
->>>>>>>> +static int stf_dphy_configure(struct phy *phy, union phy_configure_opts *opts)
->>>>>>>> +{
->>>>>>>> +	struct stf_dphy *dphy = phy_get_drvdata(phy);
->>>>>>>> +	int map[6] = {4, 0, 1, 2, 3, 5};
->>>>>>>
->>>>>>> what does this mean?
->>>>>>
->>>>>> This is the physical lane and logical lane mapping table, should I add a note for it?
->>>>>
->>>>> Yes please. Also will the mapping be always static or ever change?
->>>>>  
->>>>
->>>> The mapping is always static on the visionfive2 single board computer.
->>>> Thanks for your comments.
->>>
->>> What about other boards featuring a JH7110?
->>
->> maybe add this mapping in the device tree, we just need to parse the device tree is better.
-> 
-> If the mapping is hw description then yes it makes sense
-> 
+diff --git a/Documentation/devicetree/bindings/phy/mediatek,csi-phy.yaml b/Documentation/devicetree/bindings/phy/mediatek,csi-phy.yaml
+new file mode 100644
+index 000000000000..c026e43f35fd
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/mediatek,csi-phy.yaml
+@@ -0,0 +1,41 @@
++# SPDX-License-Identifier: (GPL-2.0-Only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/mediatek,csi-phy.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Mediatek Sensor Interface MIPI CSI CD-PHY
++
++maintainers:
++  - Julien Stephan <jstephan@baylibre.com>
++  - Andy Hsieh <andy.hsieh@mediatek.com>
++
++description: |
++  The SENINF CD-PHY is a set of CD-PHY connected to the SENINF CSI-2
++  receivers. The number of PHYs depends on the SoC model.
++
++properties:
++  compatible:
++    const: mediatek,mt8365-mipi-csi
++
++  reg:
++    minItems: 1
++
++  '#phy-cells':
++    const: 1
++
++required:
++  - compatible
++  - reg
++  - '#phy-cells'
++
++additionalProperties: false
++
++examples:
++  - |
++    phy@10011800 {
++        compatible = "mediatek,mt8365-mipi-csi";
++        reg = <0 0x10011800 0 0x60>;
++        #phy-cells = <1>;
++    };
++...
+diff --git a/MAINTAINERS b/MAINTAINERS
+index 6d54f3193075..9308b4bb88bf 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -13098,6 +13098,12 @@ F:	Documentation/devicetree/bindings/media/mediatek-vpu.txt
+ F:	drivers/media/platform/mediatek/vcodec/
+ F:	drivers/media/platform/mediatek/vpu/
+ 
++MEDIATEK MIPI-CSI CDPHY DRIVER
++M:	Julien Stephan <jstephan@baylibre.com>
++M:	Andy Hsieh <andy.hsieh@mediatek.com>
++S:	Supported
++F:	Documentation/devicetree/bindings/phy/mediatek,csi-phy.yaml
++
+ MEDIATEK MMC/SD/SDIO DRIVER
+ M:	Chaotian Jing <chaotian.jing@mediatek.com>
+ S:	Maintained
+-- 
+2.40.0
 
-Yes, different hardware may be described differently, I will change it in next version.
 
 -- 
 linux-phy mailing list
