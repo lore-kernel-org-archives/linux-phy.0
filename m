@@ -4,68 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 57D9BC761A6
-	for <linux-phy@archiver.kernel.org>; Tue,  4 Apr 2023 14:27:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AC0BBC6FD1D
+	for <linux-phy@archiver.kernel.org>; Tue,  4 Apr 2023 14:27:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5TbxTzYnIgbp1avE1iqqjnJ4QnecUfYH/Z05MhfHip0=; b=W3r43KPyvnZbAg
-	h+/mbP6AO6MIqP+vKvQUZkXh23s3zAGBwJLEKvNiHz4e1kSdDxdS+V17303dhfn8ZIP54Hyoa9mfe
-	07ClWEz7G86Gw4AVhSgnWdLtr2zZBy6c0hOWnRckKBVwVjGVkilh651xLrm9ZVcgfOUulZiC5OQCW
-	vWA6lpkuUG9R0RoNC47rzOo4HF+M2xQIbmFQZYaPBSQGqaUwkOk4hhqZcE5j/18F5ZN8zNEUD3IeW
-	7mUQZN2iOhkNZ90zh9DyShGHX8WTGJGxCJrAFDG5YzdPwLAlG4bs+gwVt3iWL7Z6T0vPwrZvBCVYN
-	cBzdG3wm/vEDSlA03elA==;
+	List-Owner; bh=nDjA3FTUVi6cJCmDOxXoP49rG27GQ+QgVvXIXFmmR54=; b=e9u2vTG2j0iQPT
+	pFO2F/VRTVrw5c06NT/GJ0HFQuO3igVD/O3Bq4zuM6rSktCAuLAc5S/GD2MkFvig/7jJhXPbpEBhV
+	2UBWNBuAnh8GY1t/C8jjJ+EKKwVL/mghf9q3a/e1SV2D11FOmyupja+6ZyLU27d5DGr5h5NPd3sTV
+	c52KSWLwPUwrJPsJKTmxwOzNEtMTE2yVxbyxlucxNOGI9+UTBEjN5lqHShllImWnWxegxIrlYLA4z
+	67GG5jKJ8ZJpdQBMVStF3340r7ilrc7IhN4PSGRf5nfN5md5SLBeZw6UC3+xYBdoVBxJtHjNUBHVF
+	15aHCOe4fcWOOeZQ6rpQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pjhcm-001nmH-01;
-	Tue, 04 Apr 2023 14:27:04 +0000
-Received: from mail-oi1-f177.google.com ([209.85.167.177])
+	id 1pjhdJ-001o02-0u;
+	Tue, 04 Apr 2023 14:27:37 +0000
+Received: from mail-il1-f177.google.com ([209.85.166.177])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pjhci-001nkM-26;
-	Tue, 04 Apr 2023 14:27:01 +0000
-Received: by mail-oi1-f177.google.com with SMTP id bx42so8775434oib.6;
-        Tue, 04 Apr 2023 07:26:59 -0700 (PDT)
+	id 1pjhdF-001nxQ-2M;
+	Tue, 04 Apr 2023 14:27:34 +0000
+Received: by mail-il1-f177.google.com with SMTP id u8so17153431ilb.2;
+        Tue, 04 Apr 2023 07:27:32 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112; t=1680618419;
+        d=1e100.net; s=20210112; t=1680618451;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=GepwDY8pY6IPiy+4YgNweyquxm2+4jucNmXEMIhff7Y=;
-        b=lmibMvxsjVKWRWIPVvStSKlqcpaizSyz4FD8jIGSbtkIQnZUZj+vWpdKhP7oI8PXMb
-         Olpjd6sj7vUGmfWI3FyBkcFmp7raWtZM4AXoe9FGMTMoHwAOPz0RjHH6tnKnxhtwYcuG
-         /LhDGUnjLFg4GByZnF0jswq0TuuwBtfhLyxVjotJNmK15ezxKOWkMehzzboiGdjeJug3
-         nPVFLgEtMgnuMw/X8mHG3xP4llZdbeg+DPFYF3f+rpl3g7cqBzbN4T6leqnz60sy9xfh
-         G2z+jYw1KMDh8+XrLdn+1/gJj6KyWxFBsFhEvfGMzBCwF4ZKnmpmgqqx9qjYDpis+MTE
-         94pA==
-X-Gm-Message-State: AAQBX9eI6XB5BrlD/NdYOeHOK+jDN7vCm4oNtXPUfkFin0BWRU6rGfux
-	abBO+DtjKgCARON3aM88dg==
-X-Google-Smtp-Source: AKy350ZFLMdWujtv62S9b2atoWj5/+Ipi68c5D8aVR0u5Kg9UKFRTqw5ZWlxRl3ioOihcP+8ZlLrbg==
-X-Received: by 2002:aca:1702:0:b0:387:cfb5:98f1 with SMTP id j2-20020aca1702000000b00387cfb598f1mr1230525oii.27.1680618418614;
-        Tue, 04 Apr 2023 07:26:58 -0700 (PDT)
+        bh=E5fCjkpzhMrLdCd6YE6Gj8KInI7KEOI/E2WjYOm2J5E=;
+        b=OjaUw7EUJU4rx5FtXEctgYkvS3Ixs4UmzJVceX6KNoxgkn5rJlVz7xkX5nF3p+RsHE
+         NsTJHbgzMgaEKfRkUa+7HeUzX9j0bo6GeFveSa/3sEsmHbhGsjZDNYA01pDAczw1px0H
+         H/yr8XMAwTD+W99SGo5p70uc/HA+5NVjvKKiIBqOS+G59Px1sKKAP+XCptuckY+6e7A9
+         DmQtdj/4tJqWTUH76lAoJ5qIEIX9o9yvNrNBVQ1Wz8oyruqoUUdhst1JhNsOV94sz9WL
+         o2ih52rsimCwBIDG9SIj0kt9iThgvIyTNngfyraHm9FF/P79TGE947mNO+ylqxi38Y5r
+         DzZA==
+X-Gm-Message-State: AAQBX9cojMVECE05vfsNju5EGvnIVJsqec2vsiygvf3tHm/lPV+cCvvI
+	GdOBprp4UBePEVnzqJM5EQ==
+X-Google-Smtp-Source: AKy350Ybe9J9RjgT9nlmTSU6u1gQPWSSnkUo94oqYTwSnLUpGluAy7QTWx0ofhWEzV3bvW1FerTVqw==
+X-Received: by 2002:a92:c80c:0:b0:326:2c14:a718 with SMTP id v12-20020a92c80c000000b003262c14a718mr2808220iln.32.1680618451529;
+        Tue, 04 Apr 2023 07:27:31 -0700 (PDT)
 Received: from robh_at_kernel.org (66-90-144-107.dyn.grandenetworks.net. [66.90.144.107])
-        by smtp.gmail.com with ESMTPSA id a4-20020a4aae44000000b00524faf3d2d7sm5392916oon.41.2023.04.04.07.26.57
+        by smtp.gmail.com with ESMTPSA id bm12-20020a05663842cc00b0040631e8bf89sm3351879jab.38.2023.04.04.07.27.30
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 04 Apr 2023 07:26:58 -0700 (PDT)
-Received: (nullmailer pid 3835522 invoked by uid 1000);
-	Tue, 04 Apr 2023 14:26:57 -0000
-Date: Tue, 4 Apr 2023 09:26:57 -0500
+        Tue, 04 Apr 2023 07:27:31 -0700 (PDT)
+Received: (nullmailer pid 3836196 invoked by uid 1000);
+	Tue, 04 Apr 2023 14:27:30 -0000
+Date: Tue, 4 Apr 2023 09:27:30 -0500
 From: Rob Herring <robh@kernel.org>
 To: Sebastian Reichel <sebastian.reichel@collabora.com>
-Cc: Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, kernel@collabora.com, Kishon Vijay Abraham I <kishon@kernel.org>, linux-arm-kernel@lists.infradead.org, Rob Herring <robh+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>, devicetree@vger.kernel.org, linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, Vinod Koul <vkoul@kernel.org>, linux-rockchip@lists.infradead.org
-Subject: Re: [PATCHv2 1/7] dt-bindings: soc: rockchip: add rk3588 usb2phy
- syscon
-Message-ID: <168061841610.3835454.11500113945951398690.robh@kernel.org>
+Cc: Heiko Stuebner <heiko@sntech.de>, Rob Herring <robh+dt@kernel.org>, linux-rockchip@lists.infradead.org, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, kernel@collabora.com, Kishon Vijay Abraham I <kishon@kernel.org>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, linux-kernel@vger.kernel.org, Vinod Koul <vkoul@kernel.org>, linux-arm-kernel@lists.infradead.org
+Subject: Re: [PATCHv2 2/7] dt-bindings: phy: rockchip,inno-usb2phy: add rk3588
+Message-ID: <168061844969.3836135.11919397961372852948.robh@kernel.org>
 References: <20230403202307.120562-1-sebastian.reichel@collabora.com>
- <20230403202307.120562-2-sebastian.reichel@collabora.com>
+ <20230403202307.120562-3-sebastian.reichel@collabora.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20230403202307.120562-2-sebastian.reichel@collabora.com>
+In-Reply-To: <20230403202307.120562-3-sebastian.reichel@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230404_072700_686977_E120B40A 
-X-CRM114-Status: UNSURE (   9.42  )
+X-CRM114-CacheID: sfid-20230404_072733_764754_F11DC605 
+X-CRM114-Status: UNSURE (   8.95  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -84,17 +83,16 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Mon, 03 Apr 2023 22:23:01 +0200, Sebastian Reichel wrote:
-> The usb2phy is accessible via a syscon registers on RK3588, similar
-> to rk3399.
+On Mon, 03 Apr 2023 22:23:02 +0200, Sebastian Reichel wrote:
+> Add compatible for the USB2 phy in the Rockchip RK3588 SoC.
 > 
 > Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
 > ---
->  Documentation/devicetree/bindings/soc/rockchip/grf.yaml | 2 ++
->  1 file changed, 2 insertions(+)
+>  .../bindings/phy/rockchip,inno-usb2phy.yaml   | 21 ++++++++++++++++---
+>  1 file changed, 18 insertions(+), 3 deletions(-)
 > 
 
-Acked-by: Rob Herring <robh@kernel.org>
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 
 -- 
