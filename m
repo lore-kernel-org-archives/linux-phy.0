@@ -4,69 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D726AC76188
-	for <linux-phy@archiver.kernel.org>; Mon,  3 Apr 2023 20:23:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5B7A1C7618D
+	for <linux-phy@archiver.kernel.org>; Tue,  4 Apr 2023 07:05:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
+	CC:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bdlcufFgs3olleBXSmIa4OvW5zLx0JwwxZ7A6pt++Iw=; b=V99aSp9MYv6c0F
-	24547VwdvhBo/1muMfV6i4NufR+NMuevJgtSWz/uaqs3+yIRf9Xub5/df/wA9B1yIYC55CA6PaUai
-	RcXJv8ja/9BkLRYYYFfw4aekqZMvFbYC5ReJszXROBDRXKKtF48EVMUwPFRyNIsbdGEpBwl0+5Ubp
-	BUu5iIcWKWxt87i5z4srcqWOib+2WMV/QwH82i7lI6onun+2lp4mBabGau9set1gszr8V+mUIPCYg
-	x/b8QXnk0dZs2BMK5GK6nbpzobBULJDllPcOK5vbxrU5VhiixVwws82nLYcvQ9dBvdyO2j4D26dHq
-	8MQpTsxEyZv92EfKz0Ig==;
+	List-Owner; bh=XIQPlDGLZIy2ZsUxMg8V6ddjm6Vl8HUfaFFly5we9os=; b=vkZMMuYFShvNgj
+	ZPHXksn1QWUYJPAfR8g5/qwz3jsEC3P9GD9ZcIWv12nM60f01Iwbq9TyAjY7/+C2KjfZeccFa6pfI
+	LK8fOxiqo0U2bxpI4fjqBqyodcqPsd+/WY5auPxE3IX2+hUE1kUXf69H+UtiOa+2ksQo/vRIlaOom
+	KgawnIg4nJYJF9TVFhssFvoDBZ4HGLBUK2+17waVJ6A6pDY4WXo9iMrrQ1FIxHMnvoWqw0l8QjT9M
+	F8+JIxq+cc8prQD9Zga4skuXDv1kqeXMGOoZQs+hxyUKcnGwFlj3LvMSmPaqVlNkZbtzsejLksXR5
+	X9nZZuehOFqmYrJsUl1A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pjQiE-00Gb4A-1H;
-	Mon, 03 Apr 2023 20:23:34 +0000
-Received: from madras.collabora.co.uk ([46.235.227.172])
+	id 1pjaiz-000G3y-2V;
+	Tue, 04 Apr 2023 07:05:01 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pjQi1-00Gan2-2w;
-	Mon, 03 Apr 2023 20:23:24 +0000
-Received: from jupiter.universe (dyndsl-091-248-212-192.ewe-ip-backbone.de [91.248.212.192])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
-	(No client certificate requested)
-	(Authenticated sender: sre)
-	by madras.collabora.co.uk (Postfix) with ESMTPSA id DDF04660316C;
-	Mon,  3 Apr 2023 21:23:14 +0100 (BST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1680553395;
-	bh=IaXnd/TmDz+Pb/Lo3qVMIEFOaBSU3EHyiLnXscaJdlo=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=S3FDcWaNuohQVCrTCsFItK51ce4vVpzyorjjVHaXNJ3P/3sMyu85H+8zVM0NyntzK
-	 Qsd1xW2QcRLax4LNEUDacbACP8nX93jDHkxbswcoqpPR9lk9LR03LoxGZuriTm1i6Y
-	 q+5tEnFHDT0lFGRaS7wfMdQkDVeWeNa+cKDkivijl1IJW7GQHz3+d/HAxLiIWqzVQK
-	 gIQWRQRVUEKaxMMb076UtM09YCv8dPG0cKeXfVPzcGboPrwxrS3YbotxBTKjd47rFu
-	 grmtOJCYgByHQOu6udWI7RIsO9/tr/QiaqLqw+LbYXeisOtFGvlQegFwtGyQ3KYcZy
-	 etPpQUaor+uNw==
-Received: by jupiter.universe (Postfix, from userid 1000)
-	id 16D574807F3; Mon,  3 Apr 2023 22:23:09 +0200 (CEST)
-From: Sebastian Reichel <sebastian.reichel@collabora.com>
-To: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
-Cc: Heiko Stuebner <heiko@sntech.de>,
-	linux-phy@lists.infradead.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	devicetree@vger.kernel.org,
-	Sebastian Reichel <sebastian.reichel@collabora.com>,
-	kernel@collabora.com
-Subject: [PATCHv2 7/7] phy: phy-rockchip-inno-usb2: simplify getting match data
-Date: Mon,  3 Apr 2023 22:23:07 +0200
-Message-Id: <20230403202307.120562-8-sebastian.reichel@collabora.com>
-X-Mailer: git-send-email 2.39.2
-In-Reply-To: <20230403202307.120562-1-sebastian.reichel@collabora.com>
-References: <20230403202307.120562-1-sebastian.reichel@collabora.com>
+	id 1pjaiv-000G2C-0u;
+	Tue, 04 Apr 2023 07:04:58 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+	by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 33474pfm083483;
+	Tue, 4 Apr 2023 02:04:51 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+	s=ti-com-17Q1; t=1680591891;
+	bh=Xxal5gx/ThGxtq0kVEmh9gFXlfl/HsO/TSHzc+kJNrI=;
+	h=Date:CC:Subject:To:References:From:In-Reply-To;
+	b=MIScsozwyq1tFznyozpYDOKWeUbA8TlPjXcAiqdwhKFiuxFpmMP0QdoiPSYGg4ZjK
+	 HZtbTPcygIorH/i0Cz0CbO2SZXIG7KJf4g8WYLqF/G1NHX9B4qKzhit4H4TKGzCBMa
+	 c4nMI8KFvoGE3NqKBoYJTfp70lRFIfeDZZHW5/NY=
+Received: from DFLE105.ent.ti.com (dfle105.ent.ti.com [10.64.6.26])
+	by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 33474pXB018681
+	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+	Tue, 4 Apr 2023 02:04:51 -0500
+Received: from DFLE112.ent.ti.com (10.64.6.33) by DFLE105.ent.ti.com
+ (10.64.6.26) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.16; Tue, 4
+ Apr 2023 02:04:51 -0500
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE112.ent.ti.com
+ (10.64.6.33) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.16 via
+ Frontend Transport; Tue, 4 Apr 2023 02:04:51 -0500
+Received: from [172.24.145.61] (ileaxei01-snat.itg.ti.com [10.180.69.5])
+	by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 33474mbe098532;
+	Tue, 4 Apr 2023 02:04:49 -0500
+Message-ID: <66dbb0f3-cfb1-d6a5-42f9-3f3098ca1b90@ti.com>
+Date: Tue, 4 Apr 2023 12:34:47 +0530
 MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.9.0
+CC: <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+        <linux-arm-kernel@lists.infradead.org>, <srk@ti.com>,
+        <s-vadapalli@ti.com>
+Subject: Re: [PATCH v2 0/3] PHY-GMII-SEL: Add support for SGMII mode
+Content-Language: en-US
+To: <vkoul@kernel.org>, <kishon@kernel.org>, <rogerq@kernel.org>
+References: <20230309063514.398705-1-s-vadapalli@ti.com>
+From: Siddharth Vadapalli <s-vadapalli@ti.com>
+In-Reply-To: <20230309063514.398705-1-s-vadapalli@ti.com>
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230403_132322_116099_B1C4FE5D 
+X-CRM114-CacheID: sfid-20230404_000457_382120_2DF952B2 
 X-CRM114-Status: GOOD (  13.23  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -84,59 +85,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Simplify the code by directly getting the match data via
-device_get_match_data() instead of open coding its functionality.
+Hello,
 
-Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
----
- drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 12 ++++--------
- 1 file changed, 4 insertions(+), 8 deletions(-)
+This series applies cleanly as of next-20230404. Please merge this series
+followed by the series at:
+https://lore.kernel.org/r/20230331062521.529005-1-s-vadapalli@ti.com/
+in case of no concerns.
 
-diff --git a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-index 2de1408eaa60..e978c73ba1e5 100644
---- a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-+++ b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-@@ -1305,7 +1305,6 @@ static int rockchip_usb2phy_probe(struct platform_device *pdev)
- 	struct phy_provider *provider;
- 	struct rockchip_usb2phy *rphy;
- 	const struct rockchip_usb2phy_cfg *phy_cfgs;
--	const struct of_device_id *match;
- 	unsigned int reg;
- 	int index, ret;
- 
-@@ -1313,12 +1312,6 @@ static int rockchip_usb2phy_probe(struct platform_device *pdev)
- 	if (!rphy)
- 		return -ENOMEM;
- 
--	match = of_match_device(dev->driver->of_match_table, dev);
--	if (!match || !match->data) {
--		dev_err(dev, "phy configs are not assigned!\n");
--		return -EINVAL;
--	}
--
- 	if (!dev->parent || !dev->parent->of_node) {
- 		rphy->grf = syscon_regmap_lookup_by_phandle(np, "rockchip,usbgrf");
- 		if (IS_ERR(rphy->grf)) {
-@@ -1359,12 +1352,15 @@ static int rockchip_usb2phy_probe(struct platform_device *pdev)
- 	}
- 
- 	rphy->dev = dev;
--	phy_cfgs = match->data;
-+	phy_cfgs = device_get_match_data(dev);
- 	rphy->chg_state = USB_CHG_STATE_UNDEFINED;
- 	rphy->chg_type = POWER_SUPPLY_TYPE_UNKNOWN;
- 	rphy->irq = platform_get_irq_optional(pdev, 0);
- 	platform_set_drvdata(pdev, rphy);
- 
-+	if (!phy_cfgs)
-+		return dev_err_probe(dev, -EINVAL, "phy configs are not assigned!\n");
-+
- 	ret = rockchip_usb2phy_extcon_register(rphy);
- 	if (ret)
- 		return ret;
--- 
-2.39.2
+Regards,
+Siddharth.
 
+On 09/03/23 12:05, Siddharth Vadapalli wrote:
+> Hello,
+> 
+> This series adds support to configure the CPSW MAC's PHY in SGMII mode.
+> Also, SGMII mode is enabled for TI's J7200 and J721E SoCs.
+> 
+> Changes from v1:
+> 1. Add "break" statement within "case PHY_INTERFACE_MODE_SGMII".
+> 2. Add newline before "default" case.
+> 3. Update commit message of patch 1/3 to follow the existing convention.
+> 
+> v1:
+> https://lore.kernel.org/r/20230309062237.389444-1-s-vadapalli@ti.com/
+> 
+> Siddharth Vadapalli (3):
+>   phy: ti: gmii-sel: Add support for SGMII mode
+>   phy: ti: gmii-sel: Enable SGMII mode for J7200
+>   phy: ti: gmii-sel: Enable SGMII mode for J721E
+> 
+>  drivers/phy/ti/phy-gmii-sel.c | 12 ++++++++++--
+>  1 file changed, 10 insertions(+), 2 deletions(-)
+> 
 
 -- 
 linux-phy mailing list
