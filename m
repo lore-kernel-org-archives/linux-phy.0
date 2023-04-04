@@ -4,58 +4,142 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 41C1AC7619A
-	for <linux-phy@archiver.kernel.org>; Wed,  5 Apr 2023 12:15:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 91DB4C77B6C
+	for <linux-phy@archiver.kernel.org>; Wed,  5 Apr 2023 12:25:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XoxfTImX/6LHD5JXKQVg5mtiFNmf/ld/6Sshydhr1rI=; b=Pxwd3awED/u3CO
-	B03W/joyo9lBUOEAgdkicNkZ5NSpHMdS3QIWSObH0MPMADvLU5phkBu9yxYQJti8icBc/5LgYtFA6
-	kCY7eVsywnIDOYpgbmKJxjqdLgU2fHYPsrRYWtjS332AkL6aiMLFS6USFA8sG/R/HUkw/qYiitm4w
-	zgPtQP5Mh74NsUgQCrJmFe9/0CMZFbwhiys2lRhw9AXILlXzb85PEFYffKtWFgrrYFKWslYT3IdtS
-	cRELmda+9iDBV1jgnqTnbqijkzK8KGRxnRLUG6zWfhDdfvXCJfY5MZESFInlvWuO2oSXeuiZz4W7t
-	bx4yO2UjqnaSXPc7ez3g==;
+	List-Owner; bh=KXdmmH+NRdPa3Y26iMRQvM3aQhv5l5rasIUeB5C4Z2E=; b=Aw0s87AvHjMk+y
+	55D8+ZRCVbPVG449NWVCdLp4buX6qDg9OwhVKamdjd7M6M1pFsQDlJ73jFX9joh6v0XjDdfj7OI/I
+	GZdFa1+KjMaP0LUtKw7Opv/wda+24JnG18NRPSqci6TxYS7LKsduNQ+TbkGYiUZ9ZmSYWa4KF4LLs
+	HDhxNtAnZ6tmTZgSJYwi+6jyC5ft+i/+Be970DcF/6lOlbnW+aT25EuosisZf2QIlU0xB5005Vsrd
+	DZ0q+0cJVtfSm4zhC4+P+9ct2guIPUnKkAUyD9LYQqyNa1MV0rkRY4UO3qQWDfP+TDmeRUnCVAPAe
+	EBJfO+x/QbtFvKdLQlgw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pk22m-004N1q-2R;
-	Wed, 05 Apr 2023 12:15:16 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1pk2Cg-004OCd-0c;
+	Wed, 05 Apr 2023 12:25:30 +0000
+Received: from wnew2-smtp.messagingengine.com ([64.147.123.27])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pk22j-004N0N-0N
-	for linux-phy@lists.infradead.org;
-	Wed, 05 Apr 2023 12:15:14 +0000
-Received: from ptz.office.stw.pengutronix.de ([2a0a:edc0:0:900:1d::77] helo=irc.pengutronix.de)
-	by metis.ext.pengutronix.de with esmtp (Exim 4.92)
-	(envelope-from <j.zink@pengutronix.de>)
-	id 1pk22T-0003WC-Id; Wed, 05 Apr 2023 14:14:57 +0200
-Message-ID: <3f7257ee36dc44f162a87281c8279fd5bad91dea.camel@pengutronix.de>
-Subject: Re: [PATCH 1/2] dt-bindings: phy: imx8mq-usb: add phy tuning
- properties
-From: Johannes Zink <j.zink@pengutronix.de>
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, vkoul@kernel.org, 
- kishon@kernel.org, shawnguo@kernel.org, s.hauer@pengutronix.de, 
- kernel@pengutronix.de, festevam@gmail.com, linux-imx@nxp.com,
- robh+dt@kernel.org,  krzysztof.kozlowski+dt@linaro.org, jun.li@nxp.com,
- haibo.chen@nxp.com,  linux-phy@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org,  linux-kernel@vger.kernel.org,
- devicetree@vger.kernel.org
-Date: Wed, 05 Apr 2023 14:14:30 +0200
-In-Reply-To: <5398cbe0-c681-5dd7-0b3e-3a586cc4915f@linaro.org>
-References: <20230405112118.1256151-1-j.zink@pengutronix.de>
-	 <20230405112118.1256151-2-j.zink@pengutronix.de>
-	 <5398cbe0-c681-5dd7-0b3e-3a586cc4915f@linaro.org>
-User-Agent: Evolution 3.38.3-1+deb11u1 
+	id 1pk2Cc-004O9m-0n;
+	Wed, 05 Apr 2023 12:25:27 +0000
+Received: from compute5.internal (compute5.nyi.internal [10.202.2.45])
+	by mailnew.west.internal (Postfix) with ESMTP id E031F2B06740;
+	Wed,  5 Apr 2023 08:25:11 -0400 (EDT)
+Received: from mailfrontend2 ([10.202.2.163])
+  by compute5.internal (MEProxy); Wed, 05 Apr 2023 08:25:21 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=cc
+	:cc:content-transfer-encoding:content-type:content-type:date
+	:date:from:from:in-reply-to:in-reply-to:message-id:mime-version
+	:references:reply-to:sender:subject:subject:to:to; s=fm3; t=
+	1680697511; x=1680704711; bh=gWfanKGu7k0uR6sCschsWvSUb9iXlQk4TW0
+	N04BwoCQ=; b=Wts/Ah4xwykIELLuVOyydo/p1UGL9G/HJY/ERkwIccdne8UsCAw
+	X0PmG5K0bcqaEyRUzoWHG0oVt+49ZELc6VwPM2bbnB7Q6KDqcs8OOo8ckMbMZ+RL
+	DKwDb8ModcB/XpwqnfSu9kwYDO781wqKfc3k85DrB5IrzhsEsb5/w+mH3LJR/fmM
+	XbWCKuHGNs/G2Ncxgv0wXe0b7UZjnUDqlm/H+vVP7y6M5EzJSI5hwcXryt/7TWcn
+	x2PoNUmovZSVXjqXU442ELIWyFCb2TK0OquEZRilwLsEUnxWf2tD6NYbDZuxZaBO
+	1e9oE8wU1U+oCwmBb981th4h8d6MQ6I15rA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	messagingengine.com; h=cc:cc:content-transfer-encoding
+	:content-type:content-type:date:date:feedback-id:feedback-id
+	:from:from:in-reply-to:in-reply-to:message-id:mime-version
+	:references:reply-to:sender:subject:subject:to:to:x-me-proxy
+	:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; t=
+	1680697511; x=1680704711; bh=gWfanKGu7k0uR6sCschsWvSUb9iXlQk4TW0
+	N04BwoCQ=; b=TJt8SE1IgEzc0KpglToUainSE4eNFtJFqOIadR3Aw0w4iPzOBCp
+	T7zZ1chmtSiOBxN3MvHWzyoyNC43zazRBLNOMgwV2goNvpcmLNoxWEHiDb/9V03T
+	WqbkUOPppAfDp1lfLQERD4d9RtAdodePkq783ksNdsQOEtZ0YNss3Eprqjfvt/nN
+	kO7L5DariGDXLonWJO+hWIpoZxEYQCsypuK/jqg0nKXQ3uvKiqloZ1BiukZJzPz1
+	YpR3d+y3y6G243Ad9Cj01eNNPcdlL1pIs4n9C1Ejcg0dYX17CKsF9c3c6oJA9TLj
+	OI6pgZjc8LIQJcEp85pkrQBuBvOHfuhKBEg==
+X-ME-Sender: <xms:pGgtZOMldRw9UEzMSSw9I_16P6Nh8uWoC4G5IxdeXhaf6cgqrrzPkw>
+    <xme:pGgtZM8vJW0v5RLXKfpP1B30xBya9iCZQG9f3N4LOeu6GPgZLeDUnDyQ9xb3eVe8U
+    Jjfq16Xf1lnK5HolA0>
+X-ME-Received: <xmr:pGgtZFSt_W3SaLhjt9yJ8c7kyZV5sinLzmDcveP-bhjWLgYOnINQKkWGt_VoysCLks7z4FJH18Z3Iufubf4jHvGpiizZ09U>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvhedrvdejuddgheefucetufdoteggodetrfdotf
+    fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+    uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
+    cujfgurhephfffufggtgfgkfhfjgfvvefosehtjeertdertdejnecuhfhrohhmpeforgig
+    ihhmvgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecuggftrf
+    grthhtvghrnhepvedvleeijeegvdekffehkeehieelhfeggfffheetkeeuledvtdeuffeh
+    teeltdffnecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomh
+    epmhgrgihimhgvsegtvghrnhhordhtvggthh
+X-ME-Proxy: <xmx:pGgtZOuwD6V3-SK77MsB7UnDET01NWQ1J0FEM_a_tHDV_Wd8LAX3nA>
+    <xmx:pGgtZGc6iX9GiPe48LHMJqyM2e5beO91F8WcGBskctjFG2kJLt3MBQ>
+    <xmx:pGgtZC0EwUEqmao45oOU_dJyzQL31Mo4S3zcbaFAhGu0aeI6ljMT_w>
+    <xmx:p2gtZGJX-HkMFt7mgRW1BHWYhPPxWlY5gUmeCqa4tyFNOW-Njt8_xUIYlj4>
+Feedback-ID: i8771445c:Fastmail
+Received: by mail.messagingengine.com (Postfix) with ESMTPA; Wed,
+ 5 Apr 2023 08:25:07 -0400 (EDT)
+From: Maxime Ripard <maxime@cerno.tech>
+Date: Tue, 04 Apr 2023 12:11:53 +0200
+Subject: [PATCH v3 63/65] ASoC: tlv320aic32x4: pll: Switch to
+ determine_rate
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 2a0a:edc0:0:900:1d::77
-X-SA-Exim-Mail-From: j.zink@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de); SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-phy@lists.infradead.org
+Message-Id: <20221018-clk-range-checks-fixes-v3-63-9a1358472d52@cerno.tech>
+References: <20221018-clk-range-checks-fixes-v3-0-9a1358472d52@cerno.tech>
+In-Reply-To: <20221018-clk-range-checks-fixes-v3-0-9a1358472d52@cerno.tech>
+To: Michael Turquette <mturquette@baylibre.com>,
+  Stephen Boyd <sboyd@kernel.org>,
+  =?utf-8?q?Andreas_F=C3=A4rber?= <afaerber@suse.de>,
+  Manivannan Sadhasivam <mani@kernel.org>,
+  Nicolas Ferre <nicolas.ferre@microchip.com>,
+  Alexandre Belloni <alexandre.belloni@bootlin.com>,
+  Claudiu Beznea <claudiu.beznea@microchip.com>,
+  Max Filippov <jcmvbkbc@gmail.com>,
+  Charles Keepax <ckeepax@opensource.cirrus.com>,
+  Richard Fitzgerald <rf@opensource.cirrus.com>,
+  Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+  Alexandre Torgue <alexandre.torgue@foss.st.com>,
+  Luca Ceresoli <luca.ceresoli@bootlin.com>,
+  David Lechner <david@lechnology.com>, Sekhar Nori <nsekhar@ti.com>,
+  Abel Vesa <abelvesa@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+  Sascha Hauer <s.hauer@pengutronix.de>,
+  Pengutronix Kernel Team <kernel@pengutronix.de>,
+  Fabio Estevam <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
+  Matthias Brugger <matthias.bgg@gmail.com>,
+  Geert Uytterhoeven <geert+renesas@glider.be>,
+  Dinh Nguyen <dinguyen@kernel.org>,
+  Peter De Schrijver <pdeschrijver@nvidia.com>,
+  Prashant Gaikwad <pgaikwad@nvidia.com>,
+  Thierry Reding <thierry.reding@gmail.com>,
+  Jonathan Hunter <jonathanh@nvidia.com>,
+  Ulf Hansson <ulf.hansson@linaro.org>,
+  Linus Walleij <linus.walleij@linaro.org>,
+ David Airlie <airlied@gmail.com>,  Daniel Vetter <daniel@ffwll.ch>,
+ Vinod Koul <vkoul@kernel.org>,
+  Kishon Vijay Abraham I <kishon@kernel.org>,
+  Alessandro Zummo <a.zummo@towertech.it>, Chen-Yu Tsai <wens@csie.org>,
+  Jernej Skrabec <jernej.skrabec@gmail.com>,
+  Samuel Holland <samuel@sholland.org>,
+ Liam Girdwood <lgirdwood@gmail.com>,  Mark Brown <broonie@kernel.org>,
+ Jaroslav Kysela <perex@perex.cz>,  Takashi Iwai <tiwai@suse.com>,
+ Paul Cercueil <paul@crapouillou.net>,  Orson Zhai <orsonzhai@gmail.com>,
+  Baolin Wang <baolin.wang@linux.alibaba.com>,
+  Chunyan Zhang <zhang.lyra@gmail.com>
+Cc: linux-clk@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, 
+ linux-arm-kernel@lists.infradead.org, linux-actions@lists.infradead.org, 
+ patches@opensource.cirrus.com, linux-stm32@st-md-mailman.stormreply.com, 
+ linux-mediatek@lists.infradead.org, linux-renesas-soc@vger.kernel.org, 
+ linux-tegra@vger.kernel.org, dri-devel@lists.freedesktop.org, 
+ linux-phy@lists.infradead.org, linux-rtc@vger.kernel.org, 
+ linux-sunxi@lists.linux.dev, alsa-devel@alsa-project.org, 
+ linux-mips@vger.kernel.org, Maxime Ripard <maxime@cerno.tech>
+X-Mailer: b4 0.12.1
+X-Developer-Signature: v=1; a=openpgp-sha256; l=3060; i=maxime@cerno.tech;
+ h=from:subject:message-id; bh=H89ybMftU/jF/mSnT7t9XXRlldLTbWRKBAeeojhOMGw=;
+ b=owGbwMvMwCX2+D1vfrpE4FHG02pJDCna37ez8VvEii39va+tcvoZfzdxxUPd2wRkdwVYPMp1lo9Z
+ pGHcUcrCIMbFICumyBIjbL4k7tSs151sfPNg5rAygQxh4OIUgIuIMvzT6NRk4a6VklCfFrt34pOivT
+ dO/vx0ZleDzy3WQH7/Ndt8GP4Xn+z4wbyskuNe7PtDUnKLNxhutHRaJHJKenEay+7oL/bMAA==
+X-Developer-Key: i=maxime@cerno.tech; a=openpgp;
+ fpr=BE5675C37E818C8B5764241C254BCFC56BF6CE8D
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230405_051513_168561_EF41098A 
-X-CRM114-Status: GOOD (  17.34  )
+X-CRM114-CacheID: sfid-20230405_052526_480440_CA9BC2E8 
+X-CRM114-Status: GOOD (  20.69  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -67,53 +151,93 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SGkgS3J5c3p0b2YsCgp0aGFua3MgZm9yIHlvdXIgcmV2aWV3LCBwbGVhc2UgZmluZCBteSBxdWVz
-dGlvbnMgYmVsb3cuCgpPbiBXZWQsIDIwMjMtMDQtMDUgYXQgMTM6NTEgKzAyMDAsIEtyenlzenRv
-ZiBLb3psb3dza2kgd3JvdGU6Cj4gW3NuaXBdCj4gPiDCoMKgwqDCoMKgwqAgQSBwaGFuZGxlIHRv
-IHRoZSByZWd1bGF0b3IgZm9yIFVTQiBWQlVTLgo+ID4gwqAKPiA+ICvCoCBmc2wscGh5LXR4LXZy
-ZWYtdHVuZToKPiA+ICvCoMKgwqAgZGVzY3JpcHRpb246Cj4gPiArwqDCoMKgwqDCoCBIUyBEQyBW
-b2x0YWdlIGxldmVsIGFkanVzdG1lbnQKPiAKPiAiTGV2ZWwiIGluIHdoYXQgdW5pdHM/Cj4gCgpU
-aGUgZGF0YXNoZWV0IGp1c3Qgc2hvd3MgcGVyY2VudCwgcmFuZ2luZyBmcm9tIC02IHRvICsyNCUs
-IGluIDIlCmluY3JlbWVudHMuIFdoYXQgdW5pdCB3b3VsZCB5b3Ugc3VnZ2VzdD8KCj4gPiArwqDC
-oMKgICRyZWY6IC9zY2hlbWFzL3R5cGVzLnlhbWwjL2RlZmluaXRpb25zL3VpbnQzMgo+ID4gK8Kg
-wqDCoCBlbnVtOiBbMCwgMSwgMiwgMywgNCwgNSwgNiwgNywgOCwgOSwgMTAsIDExLCAxMiwgMTMs
-IDE0LCAxNSwKPiA+IDE2XQo+ID4gKwo+ID4gK8KgIGZzbCxwaHktdHgtcmlzZS10dW5lOgo+ID4g
-K8KgwqDCoCBkZXNjcmlwdGlvbjoKPiA+ICvCoMKgwqDCoMKgIEhTIFRyYW5zbWl0dGVyIFJpc2Uv
-RmFsbCBUaW1lIEFkanVzdG1lbnQKPiA+ICvCoMKgwqAgJHJlZjogL3NjaGVtYXMvdHlwZXMueWFt
-bCMvZGVmaW5pdGlvbnMvdWludDMyCj4gPiArwqDCoMKgIGVudW06IFswLCAxLCAyLCAzXQo+ID4g
-Kwo+ID4gK8KgIGZzbCxwaHktdHgtcHJlZW1wLWFtcC10dW5lOgo+ID4gK8KgwqDCoCBkZXNjcmlw
-dGlvbjoKPiA+ICvCoMKgwqDCoMKgIEhTIFRyYW5zbWl0dGVyIFByZS1FbXBoYXNpcyBDdXJyZW50
-IENvbnRyb2wKPiAKPiBJZiB0aGlzIGlzIGN1cnJlbnQgdGhlbiB1c2Ugc3RhbmRhcmQgdW5pdCBz
-dWZmaXhlcy4KCkFjY29yZGluZyB0byB0aGUgZGF0YXNoZWV0IHRoaXMgaXMgaW4gInVuaXQgYW1v
-bnRzIiBvZiA2MDB1QSwgYmFzaWNhbGx5CjB4NjAwdUEsIDF4NjAwdUEgZXRjLiBTaG91bGQgSSBq
-dXN0IHN1ZmZpeCBpdCB3aXRoIHVBIHRoZW4/Cgo+IAo+ID4gK8KgwqDCoCAkcmVmOiAvc2NoZW1h
-cy90eXBlcy55YW1sIy9kZWZpbml0aW9ucy91aW50MzIKPiA+ICvCoMKgwqAgZW51bTogWzAsIDEs
-IDIsIDNdCj4gPiArCj4gPiArwqAgZnNsLHBoeS10eC12Ym9vc3QtbGV2ZWw6Cj4gPiArwqDCoMKg
-IGRlc2NyaXB0aW9uOgo+ID4gK8KgwqDCoMKgwqAgVFggVm9sdGFnZSBCb29zdCBMZXZlbAo+ID4g
-K8KgwqDCoCAkcmVmOiAvc2NoZW1hcy90eXBlcy55YW1sIy9kZWZpbml0aW9ucy91aW50MzIKPiA+
-ICvCoMKgwqAgZW51bTogWzAsIDIsIDNdCj4gPiArCj4gPiArwqAgZnNsLHBoeS1jb21wLWRpcy10
-dW5lOgo+ID4gK8KgwqDCoCBkZXNjcmlwdGlvbjoKPiA+ICvCoMKgwqDCoMKgIERpc2Nvbm5lY3Qg
-VGhyZXNob2xkIEFkanVzdG1lbnQKPiA+ICvCoMKgwqAgJHJlZjogL3NjaGVtYXMvdHlwZXMueWFt
-bCMvZGVmaW5pdGlvbnMvdWludDMyCj4gPiArwqDCoMKgIGVudW06IFswLCAxLCAyLCAzLCA0LCA1
-LCA2LCA3XQo+ID4gKwo+ID4gK8KgIGZzbCxwaHktcGNzLXR4LWRlZW1waC0zcDVkYjoKPiA+ICvC
-oMKgwqAgZGVzY3JpcHRpb246Cj4gPiArwqDCoMKgwqDCoCBUWCBEZS1FbXBoYXNpcyBhdCAzLjUg
-ZEIKPiA+ICvCoMKgwqAgJHJlZjogL3NjaGVtYXMvdHlwZXMueWFtbCMvZGVmaW5pdGlvbnMvdWlu
-dDMyCj4gPiArCj4gPiArwqAgZnNsLHBoeS1wY3MtdHgtc3dpbmctZnVsbDoKPiA+ICvCoMKgwqAg
-ZGVzY3JpcHRpb246Cj4gPiArwqDCoMKgwqDCoCBUWCBBbXBsaXR1ZGUKPiAKPiBJIGhhdmUgZmVl
-bGluZyB5b3UganVzdCBwYXN0ZWQgaGVyZSBzaG9ydCB0aXRsZXMgZnJvbSBkYXRhc2hlZXQuIFRo
-ZXkKPiBhcmUgbm90IHRoYXQgaGVscGZ1bC4KCmFjaywgSSB3aWxsIGFkZCBzb21lIG1vcmUgdGV4
-dCBmcm9tIHRoZSByZWdpc3RlciBkZXNjcmlwdGlvbiwgc2luY2UgSQpoYXZlIG5vIG90aGVyIHNv
-dXJjZSBvZiBpbmZvcm1hdGlvbiBvbiB0aGVzZS4KCkJlc3QgcmVnYXJkcwpKb2hhbm5lcwoKPiAK
-PiAKPiAKPiBCZXN0IHJlZ2FyZHMsCj4gS3J6eXN6dG9mCj4gCj4gCj4gCgotLSAKUGVuZ3V0cm9u
-aXggZS5LLiAgICAgICAgICAgICAgICB8IEpvaGFubmVzIFppbmsgICAgICAgICAgICAgICAgICB8
-ClN0ZXVlcndhbGRlciBTdHIuIDIxICAgICAgICAgICAgfCBodHRwczovL3d3dy5wZW5ndXRyb25p
-eC5kZS8gICAgfAozMTEzNyBIaWxkZXNoZWltLCBHZXJtYW55ICAgICAgIHwgUGhvbmU6ICs0OS01
-MTIxLTIwNjkxNy0wICAgICAgIHwKQW10c2dlcmljaHQgSGlsZGVzaGVpbSwgSFJBIDI2ODZ8IEZh
-eDogICArNDktNTEyMS0yMDY5MTctNTU1NSAgICB8CgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxp
-c3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQu
-b3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+The tlv320aic32x4 PLL clocks implements a mux with a set_parent hook, but
+doesn't provide a determine_rate implementation.
+
+This is a bit odd, since set_parent() is there to, as its name implies,
+change the parent of a clock. However, the most likely candidate to
+trigger that parent change is a call to clk_set_rate(), with
+determine_rate() figuring out which parent is the best suited for a
+given rate.
+
+The other trigger would be a call to clk_set_parent(), but it's far less
+used, and it doesn't look like there's any obvious user for that clock.
+
+So, the set_parent hook is effectively unused, possibly because of an
+oversight. However, it could also be an explicit decision by the
+original author to avoid any reparenting but through an explicit call to
+clk_set_parent().
+
+The driver does implement round_rate() though, which means that we can
+change the rate of the clock, but we will never get to change the
+parent.
+
+However, It's hard to tell whether it's been done on purpose or not.
+
+Since we'll start mandating a determine_rate() implementation, let's
+convert the round_rate() implementation to a determine_rate(), which
+will also make the current behavior explicit. And if it was an
+oversight, the clock behaviour can be adjusted later on.
+
+Signed-off-by: Maxime Ripard <maxime@cerno.tech>
+---
+ sound/soc/codecs/tlv320aic32x4-clk.c | 19 ++++++++++++-------
+ 1 file changed, 12 insertions(+), 7 deletions(-)
+
+diff --git a/sound/soc/codecs/tlv320aic32x4-clk.c b/sound/soc/codecs/tlv320aic32x4-clk.c
+index 65b72373cb95..d8b8ea3eaa12 100644
+--- a/sound/soc/codecs/tlv320aic32x4-clk.c
++++ b/sound/soc/codecs/tlv320aic32x4-clk.c
+@@ -205,18 +205,23 @@ static unsigned long clk_aic32x4_pll_recalc_rate(struct clk_hw *hw,
+ 	return clk_aic32x4_pll_calc_rate(&settings, parent_rate);
+ }
+ 
+-static long clk_aic32x4_pll_round_rate(struct clk_hw *hw,
+-			unsigned long rate,
+-			unsigned long *parent_rate)
++static int clk_aic32x4_pll_determine_rate(struct clk_hw *hw,
++					  struct clk_rate_request *req)
+ {
+ 	struct clk_aic32x4_pll_muldiv settings;
++	unsigned long rate;
+ 	int ret;
+ 
+-	ret = clk_aic32x4_pll_calc_muldiv(&settings, rate, *parent_rate);
++	ret = clk_aic32x4_pll_calc_muldiv(&settings, req->rate, req->best_parent_rate);
+ 	if (ret < 0)
+-		return 0;
++		return -EINVAL;
+ 
+-	return clk_aic32x4_pll_calc_rate(&settings, *parent_rate);
++	rate = clk_aic32x4_pll_calc_rate(&settings, req->best_parent_rate);
++	if (rate < 0)
++		return rate;
++
++	req->rate = rate;
++	return 0;
+ }
+ 
+ static int clk_aic32x4_pll_set_rate(struct clk_hw *hw,
+@@ -267,7 +272,7 @@ static const struct clk_ops aic32x4_pll_ops = {
+ 	.unprepare = clk_aic32x4_pll_unprepare,
+ 	.is_prepared = clk_aic32x4_pll_is_prepared,
+ 	.recalc_rate = clk_aic32x4_pll_recalc_rate,
+-	.round_rate = clk_aic32x4_pll_round_rate,
++	.determine_rate = clk_aic32x4_pll_determine_rate,
+ 	.set_rate = clk_aic32x4_pll_set_rate,
+ 	.set_parent = clk_aic32x4_pll_set_parent,
+ 	.get_parent = clk_aic32x4_pll_get_parent,
+
+-- 
+2.39.2
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
