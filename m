@@ -4,141 +4,109 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BDBBBC6FD1D
-	for <linux-phy@archiver.kernel.org>; Tue,  4 Apr 2023 15:02:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 671E7C77B6E
+	for <linux-phy@archiver.kernel.org>; Tue,  4 Apr 2023 15:26:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=D8ovyapJ4rDOKuYhwnSzK+D5KTZQuZ33KdonxO77MsY=; b=QbcxOedswxuk/L
-	AQpg7thv64weoByvu5Hk90m+kc/zBFDEtWNzwZybrjcrL4nv7RR2PKt2X5AxQHE2KCNbAHckiSGAU
-	RSwKqw4I1zbI5irqBREIGP15r2vvuFT8lp9uQ3gR3kHK7T4lisJDpvn4HuoID2QCZSX66cVo6CM05
-	VbttU1qisHT2Q6L02mzv/DvA9T6EzQVNTJEI1w6x5thWLpLLMUBUE94B8BIpmoRjwKixOhNQtOkPb
-	ELLgeQRJPErpiMHUVOMGKuOYve/8fhn5FtEYM86N5J5OAAz2eNvqGe97+by4xoo4aPXZQ9FeWnrdG
-	kMdsMTcK0nulnfAhwMlA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=C0ff0GzTasCfZlcOqx2LKAIPRY3oRwWPFYww3I+NBWA=; b=e1zCvo+TdpJxBMglb8nDG0pAa1
+	BVijTzerLRX358sd9ajBz0fxEs+MlhWyZAte74KufNtGujr5cSI2WxwlltbpgFBzXszd9YY61QILd
+	j4kC3LSh9/bD1YpgbQhq8whVBIk/1jzV4RGWPS8vNROQD/FmfmsH9wB1YWafgTHUPjpCj/diIvhJa
+	OJXDsSjq1ut5o3flji1kTHGCVjIBeqgYI+md9RTHJgjzvbvl2/eTX09quruhoxEmzKkGhWnPNaOCF
+	70hiXWXAXVGJGl6STzuWW+JoPLXo1s/NGmdHMVp0tggIxXbd/fwA1G0AuTZB4WRVhHlcDcEy0DMIn
+	A9JsFY9Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pjiAz-001vQm-1N;
-	Tue, 04 Apr 2023 15:02:25 +0000
-Received: from new3-smtp.messagingengine.com ([66.111.4.229])
+	id 1pjiYS-0020D3-0A;
+	Tue, 04 Apr 2023 15:26:40 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pjhA1-001egL-2O;
-	Tue, 04 Apr 2023 13:57:23 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
-	by mailnew.nyi.internal (Postfix) with ESMTP id 7FBE458215F;
-	Tue,  4 Apr 2023 09:57:20 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
-  by compute4.internal (MEProxy); Tue, 04 Apr 2023 09:57:20 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=cc
-	:cc:content-transfer-encoding:content-type:content-type:date
-	:date:from:from:in-reply-to:in-reply-to:message-id:mime-version
-	:references:reply-to:sender:subject:subject:to:to; s=fm3; t=
-	1680616640; x=1680623840; bh=YkG+C+vV7ZctkwqPaFXw45PShNJ45xIMivA
-	+SkZxzuo=; b=sDfzMxiK88EsNOBKkSSkJVT4SHez239NYbVPxUcUDHCJ3gvleKv
-	YK6K/vHJrOYlhuVt0qbmOJv3cD2bygdHHR2jLfnDtUyu8bn7KNGK52vvnVEX/+5A
-	7Rb5noqFC+X9RTWxEf/XbQ/+muGS+fX8S3JmZYcbuFnIbrnJaXk6RwUKVHi4yELI
-	Xihf49FwlVT6jYZN+8C09LvlxLYKVNL/P+nbYq2t7Ixlqa/4/5I8T5ITKTnoq0NU
-	9gvZjq4WxeiDgoig3Q55PcBH2ZqZT5OSzzpMJ++UWbJguYUMwoMUhKGOiV5ThEtv
-	MrYlQqZHGozllmmgEowpIdl8HbJGR27IiRQ==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
-	messagingengine.com; h=cc:cc:content-transfer-encoding
-	:content-type:content-type:date:date:feedback-id:feedback-id
-	:from:from:in-reply-to:in-reply-to:message-id:mime-version
-	:references:reply-to:sender:subject:subject:to:to:x-me-proxy
-	:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; t=
-	1680616640; x=1680623840; bh=YkG+C+vV7ZctkwqPaFXw45PShNJ45xIMivA
-	+SkZxzuo=; b=ov2Y1K0AWHY4Y9MMVw/JCWk6F927YjLN7fHGibqzLlN4V73W3Ym
-	OZapqDqbKE/2gTHmym/0v1IYVDGxtMNpgSL2bPesKc/iMQA7Q3RJj7kjlPps2q8z
-	em+Dpe7XrpIycSbZ/jrvD5SY2XFM4vtU4cmwdr2Yo/bfK+Ovgq75TvVc3ioFSXLr
-	8jfe8nhvLNXQMvwRTWwc8KFHA2bgaLoEDxbpVlUBNqF9V4X7Tc7G5DApJoKWaIBB
-	i/bcGWYn3BfyxwnYNsrEI/955ykS53OPSvbSY6KNbIpoUDSq8lY0tfjfbHXgj1qO
-	woFs+6seQd3Uuzz6yNxkPeR7KCLq5+rK9dA==
-X-ME-Sender: <xms:wCwsZPDiFLjq0l6yOMFyt1jdNbQ6paasgPsSTf8-Tgr60yM5Q_97vQ>
-    <xme:wCwsZFhc_sE5mRgWyPCuER3FeIkYkYfc6eM0qnSUOKiJUGWdFZXkI2YWzZkPyz0o1
-    Ar9JmIGJLwsmgPPW9E>
-X-ME-Received: <xmr:wCwsZKm5xIgGAfHNCBb220urrUKdq-EiejPETyuE9hMOoS2ndtV39_2uQFH2jXE5ZouNODtdAubInzxZ1uAXY5rghpWBqQU>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvhedrvdeiledgjedtucetufdoteggodetrfdotf
-    fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
-    uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
-    cujfgurhephfffufggtgfgkfhfjgfvvefosehtjeertdertdejnecuhfhrohhmpeforgig
-    ihhmvgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecuggftrf
-    grthhtvghrnhepvedvleeijeegvdekffehkeehieelhfeggfffheetkeeuledvtdeuffeh
-    teeltdffnecuvehluhhsthgvrhfuihiivgepudenucfrrghrrghmpehmrghilhhfrhhomh
-    epmhgrgihimhgvsegtvghrnhhordhtvggthh
-X-ME-Proxy: <xmx:wCwsZBxPQPUtXqfGhVBZ7NR9LH6uRHESCV_wDbw1a58s3bjLfg79og>
-    <xmx:wCwsZESbiKUK_hhVdwvl0k-l7lMfNoYNY5b3gep7pmQWQXg1DM1JDw>
-    <xmx:wCwsZEbQP9Ld5upFj47SpoLBj3Yr-hUnv8etSD46pBmF6Dhb5qoy2A>
-    <xmx:wCwsZAcOwF7rXWcaR9pAGsRzG-ELDwUDd9wfklYt9lU6IIZ5DjBtOA>
-Feedback-ID: i8771445c:Fastmail
-Received: by mail.messagingengine.com (Postfix) with ESMTPA; Tue,
- 4 Apr 2023 09:57:18 -0400 (EDT)
-From: Maxime Ripard <maxime@cerno.tech>
-Date: Tue, 04 Apr 2023 12:11:45 +0200
-Subject: [PATCH v3 55/65] clk: imx: scu: Switch to determine_rate
-MIME-Version: 1.0
-Message-Id: <20221018-clk-range-checks-fixes-v3-55-9a1358472d52@cerno.tech>
+	id 1pjiYN-0020BU-13;
+	Tue, 04 Apr 2023 15:26:36 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 9E2866351D;
+	Tue,  4 Apr 2023 15:26:34 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 166DCC4339B;
+	Tue,  4 Apr 2023 15:26:21 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1680621994;
+	bh=S5RX+65IdJoFD1RV6kPG02G0jupKJXUIf9T04GMrChI=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=juLKZrGeWUX9d0oOR/CCL+88qbCAb/xWCfYJOewm4RggCItQtMsffW8KgmQJXRJdf
+	 wIGDohsQC49Uu+Ack+4kjWMLAjsoMV3eb751vy96HTaqKD91T/UUKbpSlW86M8yyWU
+	 kzibdkPn/HM0qi9cV+Pg+vpi80+5XFQ+v5x9mDGc2lQrl4NnUSCzI4lyIjnRln2nSD
+	 O5kE/0LQwnVa4MaO8VpBvXstlEflZ23NPK1LSMQlUuVw1QtKT/IAOLsLs/T1N/El4F
+	 IlKMU2toIuXW4dsXuO5nqayGgzbPTQ/Kz+zZdF9SFWy3SohdZ+M+0IoBj9mTyg+9sZ
+	 lTrq/E6gLN+BQ==
+Date: Tue, 4 Apr 2023 16:26:18 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Maxime Ripard <maxime@cerno.tech>
+Cc: Michael Turquette <mturquette@baylibre.com>,
+	Stephen Boyd <sboyd@kernel.org>,
+	Andreas =?iso-8859-1?Q?F=E4rber?= <afaerber@suse.de>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Nicolas Ferre <nicolas.ferre@microchip.com>,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Claudiu Beznea <claudiu.beznea@microchip.com>,
+	Max Filippov <jcmvbkbc@gmail.com>,
+	Charles Keepax <ckeepax@opensource.cirrus.com>,
+	Richard Fitzgerald <rf@opensource.cirrus.com>,
+	Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+	Alexandre Torgue <alexandre.torgue@foss.st.com>,
+	Luca Ceresoli <luca.ceresoli@bootlin.com>,
+	David Lechner <david@lechnology.com>, Sekhar Nori <nsekhar@ti.com>,
+	Abel Vesa <abelvesa@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+	Sascha Hauer <s.hauer@pengutronix.de>,
+	Pengutronix Kernel Team <kernel@pengutronix.de>,
+	Fabio Estevam <festevam@gmail.com>,
+	NXP Linux Team <linux-imx@nxp.com>,
+	Matthias Brugger <matthias.bgg@gmail.com>,
+	Geert Uytterhoeven <geert+renesas@glider.be>,
+	Dinh Nguyen <dinguyen@kernel.org>,
+	Peter De Schrijver <pdeschrijver@nvidia.com>,
+	Prashant Gaikwad <pgaikwad@nvidia.com>,
+	Thierry Reding <thierry.reding@gmail.com>,
+	Jonathan Hunter <jonathanh@nvidia.com>,
+	Ulf Hansson <ulf.hansson@linaro.org>,
+	Linus Walleij <linus.walleij@linaro.org>,
+	David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Alessandro Zummo <a.zummo@towertech.it>,
+	Chen-Yu Tsai <wens@csie.org>,
+	Jernej Skrabec <jernej.skrabec@gmail.com>,
+	Samuel Holland <samuel@sholland.org>,
+	Liam Girdwood <lgirdwood@gmail.com>,
+	Jaroslav Kysela <perex@perex.cz>, Takashi Iwai <tiwai@suse.com>,
+	Paul Cercueil <paul@crapouillou.net>,
+	Orson Zhai <orsonzhai@gmail.com>,
+	Baolin Wang <baolin.wang@linux.alibaba.com>,
+	Chunyan Zhang <zhang.lyra@gmail.com>, linux-clk@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	linux-arm-kernel@lists.infradead.org,
+	linux-actions@lists.infradead.org, patches@opensource.cirrus.com,
+	linux-stm32@st-md-mailman.stormreply.com,
+	linux-mediatek@lists.infradead.org,
+	linux-renesas-soc@vger.kernel.org, linux-tegra@vger.kernel.org,
+	dri-devel@lists.freedesktop.org, linux-phy@lists.infradead.org,
+	linux-rtc@vger.kernel.org, linux-sunxi@lists.linux.dev,
+	alsa-devel@alsa-project.org, linux-mips@vger.kernel.org
+Subject: Re: [PATCH v3 43/65] ASoC: tlv320aic32x4: Add a determine_rate hook
+Message-ID: <01f32440-8dd2-4030-9006-a3123be55845@sirena.org.uk>
 References: <20221018-clk-range-checks-fixes-v3-0-9a1358472d52@cerno.tech>
-In-Reply-To: <20221018-clk-range-checks-fixes-v3-0-9a1358472d52@cerno.tech>
-To: Michael Turquette <mturquette@baylibre.com>,
-  Stephen Boyd <sboyd@kernel.org>,
-  =?utf-8?q?Andreas_F=C3=A4rber?= <afaerber@suse.de>,
-  Manivannan Sadhasivam <mani@kernel.org>,
-  Nicolas Ferre <nicolas.ferre@microchip.com>,
-  Alexandre Belloni <alexandre.belloni@bootlin.com>,
-  Claudiu Beznea <claudiu.beznea@microchip.com>,
-  Max Filippov <jcmvbkbc@gmail.com>,
-  Charles Keepax <ckeepax@opensource.cirrus.com>,
-  Richard Fitzgerald <rf@opensource.cirrus.com>,
-  Maxime Coquelin <mcoquelin.stm32@gmail.com>,
-  Alexandre Torgue <alexandre.torgue@foss.st.com>,
-  Luca Ceresoli <luca.ceresoli@bootlin.com>,
-  David Lechner <david@lechnology.com>, Sekhar Nori <nsekhar@ti.com>,
-  Abel Vesa <abelvesa@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
-  Sascha Hauer <s.hauer@pengutronix.de>,
-  Pengutronix Kernel Team <kernel@pengutronix.de>,
-  Fabio Estevam <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
-  Matthias Brugger <matthias.bgg@gmail.com>,
-  Geert Uytterhoeven <geert+renesas@glider.be>,
-  Dinh Nguyen <dinguyen@kernel.org>,
-  Peter De Schrijver <pdeschrijver@nvidia.com>,
-  Prashant Gaikwad <pgaikwad@nvidia.com>,
-  Thierry Reding <thierry.reding@gmail.com>,
-  Jonathan Hunter <jonathanh@nvidia.com>,
-  Ulf Hansson <ulf.hansson@linaro.org>,
-  Linus Walleij <linus.walleij@linaro.org>,
- David Airlie <airlied@gmail.com>,  Daniel Vetter <daniel@ffwll.ch>,
- Vinod Koul <vkoul@kernel.org>,
-  Kishon Vijay Abraham I <kishon@kernel.org>,
-  Alessandro Zummo <a.zummo@towertech.it>, Chen-Yu Tsai <wens@csie.org>,
-  Jernej Skrabec <jernej.skrabec@gmail.com>,
-  Samuel Holland <samuel@sholland.org>,
- Liam Girdwood <lgirdwood@gmail.com>,  Mark Brown <broonie@kernel.org>,
- Jaroslav Kysela <perex@perex.cz>,  Takashi Iwai <tiwai@suse.com>,
- Paul Cercueil <paul@crapouillou.net>,  Orson Zhai <orsonzhai@gmail.com>,
-  Baolin Wang <baolin.wang@linux.alibaba.com>,
-  Chunyan Zhang <zhang.lyra@gmail.com>
-Cc: linux-clk@vger.kernel.org, linux-kernel@vger.kernel.org, 
- AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, 
- linux-arm-kernel@lists.infradead.org, linux-actions@lists.infradead.org, 
- patches@opensource.cirrus.com, linux-stm32@st-md-mailman.stormreply.com, 
- linux-mediatek@lists.infradead.org, linux-renesas-soc@vger.kernel.org, 
- linux-tegra@vger.kernel.org, dri-devel@lists.freedesktop.org, 
- linux-phy@lists.infradead.org, linux-rtc@vger.kernel.org, 
- linux-sunxi@lists.linux.dev, alsa-devel@alsa-project.org, 
- linux-mips@vger.kernel.org, Maxime Ripard <maxime@cerno.tech>
-X-Mailer: b4 0.12.1
-X-Developer-Signature: v=1; a=openpgp-sha256; l=2723; i=maxime@cerno.tech;
- h=from:subject:message-id; bh=b8SqxOytwDE+KkaHfp5gKpFnsaNRQtdPkb4IDowdilo=;
- b=owGbwMvMwCX2+D1vfrpE4FHG02pJDCna37eH9Ozk8vnJkrxq7Z5tOdek/x02zC4/J/zPasPlso6Z
- 82fEdZSyMIhxMciKKbLECJsviTs163UnG988mDmsTCBDGLg4BWAi100Z/uerpJnWWxfK8R39caTjUs
- IPdaXzzDKLprdPfveU9cn819UM/9M2TbKdHLTu+Etjgc86WRIXxCwlPi5SiBd/33anTu/CPlYA
-X-Developer-Key: i=maxime@cerno.tech; a=openpgp;
- fpr=BE5675C37E818C8B5764241C254BCFC56BF6CE8D
+ <20221018-clk-range-checks-fixes-v3-43-9a1358472d52@cerno.tech>
+MIME-Version: 1.0
+In-Reply-To: <20221018-clk-range-checks-fixes-v3-43-9a1358472d52@cerno.tech>
+X-Cookie: Being ugly isn't illegal.  Yet.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230404_065721_888443_92CEA96D 
-X-CRM114-Status: GOOD (  22.18  )
+X-CRM114-CacheID: sfid-20230404_082635_441913_51F96F19 
+X-CRM114-Status: GOOD (  26.31  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -150,90 +118,87 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============7510546923843462218=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The iMX SCU clocks implements a mux with a set_parent hook, but doesn't
-provide a determine_rate implementation.
 
-This is a bit odd, since set_parent() is there to, as its name implies,
-change the parent of a clock. However, the most likely candidate to
-trigger that parent change is a call to clk_set_rate(), with
-determine_rate() figuring out which parent is the best suited for a
-given rate.
+--===============7510546923843462218==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="pRxU5n1hMJtSd1CQ"
+Content-Disposition: inline
 
-The other trigger would be a call to clk_set_parent(), but it's far less
-used, and it doesn't look like there's any obvious user for that clock.
 
-So, the set_parent hook is effectively unused, possibly because of an
-oversight. However, it could also be an explicit decision by the
-original author to avoid any reparenting but through an explicit call to
-clk_set_parent().
+--pRxU5n1hMJtSd1CQ
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-The driver does implement round_rate() though, which means that we can
-change the rate of the clock, but we will never get to change the
-parent.
+On Tue, Apr 04, 2023 at 12:11:33PM +0200, Maxime Ripard wrote:
+> The tlv320aic32x4 clkin clock implements a mux with a set_parent hook,
+> but doesn't provide a determine_rate implementation.
 
-However, It's hard to tell whether it's been done on purpose or not.
+> This is a bit odd, since set_parent() is there to, as its name implies,
+> change the parent of a clock. However, the most likely candidate to
+> trigger that parent change is a call to clk_set_rate(), with
+> determine_rate() figuring out which parent is the best suited for a
+> given rate.
 
-Since we'll start mandating a determine_rate() implementation, let's
-convert the round_rate() implementation to a determine_rate(), which
-will also make the current behavior explicit. The round_rate()
-implementation being shared with other clocks, it's not removed.
+> The other trigger would be a call to clk_set_parent(), but it's far less
+> used, and it doesn't look like there's any obvious user for that clock.
 
-And if it was an oversight, the clock behaviour can be adjusted later
-on.
+It could be configured from device tree as well couldn't it?
 
-Signed-off-by: Maxime Ripard <maxime@cerno.tech>
----
- drivers/clk/imx/clk-scu.c | 19 ++++++++++++++++++-
- 1 file changed, 18 insertions(+), 1 deletion(-)
+> So, the set_parent hook is effectively unused, possibly because of an
+> oversight. However, it could also be an explicit decision by the
+> original author to avoid any reparenting but through an explicit call to
+> clk_set_parent().
 
-diff --git a/drivers/clk/imx/clk-scu.c b/drivers/clk/imx/clk-scu.c
-index 66e49fea5f8a..bbdc1b23f6f5 100644
---- a/drivers/clk/imx/clk-scu.c
-+++ b/drivers/clk/imx/clk-scu.c
-@@ -250,6 +250,23 @@ static unsigned long clk_scu_recalc_rate(struct clk_hw *hw,
- 	return le32_to_cpu(msg.data.resp.rate);
- }
- 
-+/*
-+ * clk_scu_determine_rate - Returns the closest rate for a SCU clock
-+ * @hw: clock to round rate for
-+ * @req: clock rate request
-+ *
-+ * Returns 0 on success, a negative error on failure
-+ */
-+static int clk_scu_determine_rate(struct clk_hw *hw,
-+				  struct clk_rate_request *req)
-+{
-+	/*
-+	 * Assume we support all the requested rate and let the SCU firmware
-+	 * to handle the left work
-+	 */
-+	return 0;
-+}
-+
- /*
-  * clk_scu_round_rate - Round clock rate for a SCU clock
-  * @hw: clock to round rate for
-@@ -425,7 +442,7 @@ static void clk_scu_unprepare(struct clk_hw *hw)
- 
- static const struct clk_ops clk_scu_ops = {
- 	.recalc_rate = clk_scu_recalc_rate,
--	.round_rate = clk_scu_round_rate,
-+	.determine_rate = clk_scu_determine_rate,
- 	.set_rate = clk_scu_set_rate,
- 	.get_parent = clk_scu_get_parent,
- 	.set_parent = clk_scu_set_parent,
+Historically clk_set_rate() wouldn't reparent IIRC.
 
--- 
-2.39.2
+> The latter case would be equivalent to setting the flag
+> CLK_SET_RATE_NO_REPARENT, together with setting our determine_rate hook
+> to __clk_mux_determine_rate(). Indeed, if no determine_rate
+> implementation is provided, clk_round_rate() (through
+> clk_core_round_rate_nolock()) will call itself on the parent if
+> CLK_SET_RATE_PARENT is set, and will not change the clock rate
+> otherwise. __clk_mux_determine_rate() has the exact same behavior when
+> CLK_SET_RATE_NO_REPARENT is set.
 
+> And if it was an oversight, then we are at least explicit about our
+> behavior now and it can be further refined down the line.
+
+To be honest it's surprising that we'd have to manually specify this, I
+would expect to be able to reparent.  I suspect it'd be better to go the
+other way here and allow reparenting.
+
+--pRxU5n1hMJtSd1CQ
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAmQsQZoACgkQJNaLcl1U
+h9C4KAf9FbCqTcQH5npaqJcyqXkbkD2B/+L43dup6TDsW3MJ6KnGh7YONz0DFQtI
+yTePWQzrTp7lltc9dQ8/QOvh4Xj3HSYJ30m5Ok0oX7lCLwy3LjEHtJiou/laIivq
+v+hAN2lVJPs0oOLwI+1tyi2p+UjtHzWUJcD37bHzIsY4esaL/B/Bp7m6z1JNpyoj
+rIleJHkETKjUABBzN/UR62y6TPaPPm/hSUcy0eudfmZZhPOWkuX/iBrFcXcUgc+c
+XOAtB0+uAsDUhULdGhXZSInCoKu0mdVwLr1QoZOB7q7J3Tl83t/8Mxuk8Dr+XEWh
+JBFDNPB3HM8uQvBR5j9pbnSLt/7E/A==
+=Jkqi
+-----END PGP SIGNATURE-----
+
+--pRxU5n1hMJtSd1CQ--
+
+
+--===============7510546923843462218==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============7510546923843462218==--
+
