@@ -4,109 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 671E7C77B6E
-	for <linux-phy@archiver.kernel.org>; Tue,  4 Apr 2023 15:26:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4F861C6FD1D
+	for <linux-phy@archiver.kernel.org>; Tue,  4 Apr 2023 16:49:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=C0ff0GzTasCfZlcOqx2LKAIPRY3oRwWPFYww3I+NBWA=; b=e1zCvo+TdpJxBMglb8nDG0pAa1
-	BVijTzerLRX358sd9ajBz0fxEs+MlhWyZAte74KufNtGujr5cSI2WxwlltbpgFBzXszd9YY61QILd
-	j4kC3LSh9/bD1YpgbQhq8whVBIk/1jzV4RGWPS8vNROQD/FmfmsH9wB1YWafgTHUPjpCj/diIvhJa
-	OJXDsSjq1ut5o3flji1kTHGCVjIBeqgYI+md9RTHJgjzvbvl2/eTX09quruhoxEmzKkGhWnPNaOCF
-	70hiXWXAXVGJGl6STzuWW+JoPLXo1s/NGmdHMVp0tggIxXbd/fwA1G0AuTZB4WRVhHlcDcEy0DMIn
-	A9JsFY9Q==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=u8El2HkbH8+7NeIh5HupoyE9UmI0lsigz0TlmGU7Njc=; b=w7Y+HhRlpbkYG6
+	WoCal7+g+7MVHvL7LlyJZ+AtCRQv4/zz7Halm0QvlWrvleVgE43XA2tJqNJXSgVYLKTyn+lXwJTcz
+	YVhpNWEPfALzJgUOZW/DTkrIlqJFyXZGyiyu1k22+sYJBu+fik4vqzJw5HwpfXmWZMLDPjTym7Cxd
+	l192xKmJXWzcPTihJGyKEOsySfN+OIBmQ8V7E6GSz0y2ovVBJq9WAYwt5+AcaDvUowcD6R5KoVsZb
+	BwMokAwJXay40YfYDxQdEjMhwJi8fPMUIHCVDpDRcGYM1BZghGIqmlsgiOynfuc1qYMB8lWC8XAbB
+	KNv2EZL0SC4DaB5reJcA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pjiYS-0020D3-0A;
-	Tue, 04 Apr 2023 15:26:40 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1pjjqD-002Gew-2c;
+	Tue, 04 Apr 2023 16:49:05 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pjiYN-0020BU-13;
-	Tue, 04 Apr 2023 15:26:36 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 9E2866351D;
-	Tue,  4 Apr 2023 15:26:34 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 166DCC4339B;
-	Tue,  4 Apr 2023 15:26:21 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1680621994;
-	bh=S5RX+65IdJoFD1RV6kPG02G0jupKJXUIf9T04GMrChI=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=juLKZrGeWUX9d0oOR/CCL+88qbCAb/xWCfYJOewm4RggCItQtMsffW8KgmQJXRJdf
-	 wIGDohsQC49Uu+Ack+4kjWMLAjsoMV3eb751vy96HTaqKD91T/UUKbpSlW86M8yyWU
-	 kzibdkPn/HM0qi9cV+Pg+vpi80+5XFQ+v5x9mDGc2lQrl4NnUSCzI4lyIjnRln2nSD
-	 O5kE/0LQwnVa4MaO8VpBvXstlEflZ23NPK1LSMQlUuVw1QtKT/IAOLsLs/T1N/El4F
-	 IlKMU2toIuXW4dsXuO5nqayGgzbPTQ/Kz+zZdF9SFWy3SohdZ+M+0IoBj9mTyg+9sZ
-	 lTrq/E6gLN+BQ==
-Date: Tue, 4 Apr 2023 16:26:18 +0100
-From: Mark Brown <broonie@kernel.org>
-To: Maxime Ripard <maxime@cerno.tech>
-Cc: Michael Turquette <mturquette@baylibre.com>,
-	Stephen Boyd <sboyd@kernel.org>,
-	Andreas =?iso-8859-1?Q?F=E4rber?= <afaerber@suse.de>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Nicolas Ferre <nicolas.ferre@microchip.com>,
-	Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Claudiu Beznea <claudiu.beznea@microchip.com>,
-	Max Filippov <jcmvbkbc@gmail.com>,
-	Charles Keepax <ckeepax@opensource.cirrus.com>,
-	Richard Fitzgerald <rf@opensource.cirrus.com>,
-	Maxime Coquelin <mcoquelin.stm32@gmail.com>,
-	Alexandre Torgue <alexandre.torgue@foss.st.com>,
-	Luca Ceresoli <luca.ceresoli@bootlin.com>,
-	David Lechner <david@lechnology.com>, Sekhar Nori <nsekhar@ti.com>,
-	Abel Vesa <abelvesa@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
-	Sascha Hauer <s.hauer@pengutronix.de>,
-	Pengutronix Kernel Team <kernel@pengutronix.de>,
-	Fabio Estevam <festevam@gmail.com>,
-	NXP Linux Team <linux-imx@nxp.com>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	Geert Uytterhoeven <geert+renesas@glider.be>,
-	Dinh Nguyen <dinguyen@kernel.org>,
-	Peter De Schrijver <pdeschrijver@nvidia.com>,
-	Prashant Gaikwad <pgaikwad@nvidia.com>,
-	Thierry Reding <thierry.reding@gmail.com>,
-	Jonathan Hunter <jonathanh@nvidia.com>,
-	Ulf Hansson <ulf.hansson@linaro.org>,
-	Linus Walleij <linus.walleij@linaro.org>,
-	David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Alessandro Zummo <a.zummo@towertech.it>,
-	Chen-Yu Tsai <wens@csie.org>,
-	Jernej Skrabec <jernej.skrabec@gmail.com>,
-	Samuel Holland <samuel@sholland.org>,
-	Liam Girdwood <lgirdwood@gmail.com>,
-	Jaroslav Kysela <perex@perex.cz>, Takashi Iwai <tiwai@suse.com>,
-	Paul Cercueil <paul@crapouillou.net>,
-	Orson Zhai <orsonzhai@gmail.com>,
-	Baolin Wang <baolin.wang@linux.alibaba.com>,
-	Chunyan Zhang <zhang.lyra@gmail.com>, linux-clk@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	linux-arm-kernel@lists.infradead.org,
-	linux-actions@lists.infradead.org, patches@opensource.cirrus.com,
-	linux-stm32@st-md-mailman.stormreply.com,
-	linux-mediatek@lists.infradead.org,
-	linux-renesas-soc@vger.kernel.org, linux-tegra@vger.kernel.org,
-	dri-devel@lists.freedesktop.org, linux-phy@lists.infradead.org,
-	linux-rtc@vger.kernel.org, linux-sunxi@lists.linux.dev,
-	alsa-devel@alsa-project.org, linux-mips@vger.kernel.org
-Subject: Re: [PATCH v3 43/65] ASoC: tlv320aic32x4: Add a determine_rate hook
-Message-ID: <01f32440-8dd2-4030-9006-a3123be55845@sirena.org.uk>
-References: <20221018-clk-range-checks-fixes-v3-0-9a1358472d52@cerno.tech>
- <20221018-clk-range-checks-fixes-v3-43-9a1358472d52@cerno.tech>
+	id 1pjjqA-002GeB-1d
+	for linux-phy@lists.infradead.org;
+	Tue, 04 Apr 2023 16:49:04 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 334E5hE9000809;
+	Tue, 4 Apr 2023 16:48:53 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
+ subject : date : message-id : mime-version : content-type; s=qcppdkim1;
+ bh=xq5sbhEZFEE7jSOavNjgMoKUDELZyorIuW0tEx2/Ho8=;
+ b=bNi5vFsRqC1WGWHdGg4HKnWEo5RsDAQCLAE8AfKBhUY49vY/DaxOPczRzpj0DZYhlKP6
+ +McpLUAXTsKC4KCq1eiv/NzO+iYgV6EPI20Dkc9+6zpLKUhhVyraJqPfubEM430qEh+l
+ qhPcJ8GHXy2ADCzA4YmgddIk5L0HrVNgJEFx5jcTwmspIaNG8WHZJ8EbioiwHlaDtK1n
+ LCMfUwz7SU3b+Hg+sgQ75NstKAn2EBJJ7S0KbsR5jp/AodL53iebetv/LBVeIKqtYFzf
+ fdkMteobzUg94OerAWphLQEiqMlBJwSlFekt+Zzs55HUHQI5ZHrZXBSXN1HQMhB4+aU3 +Q== 
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3prnbt0fh6-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 04 Apr 2023 16:48:53 +0000
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 334GmqML005062
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 4 Apr 2023 16:48:52 GMT
+Received: from devipriy-linux.qualcomm.com (10.80.80.8) by
+ nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.986.42; Tue, 4 Apr 2023 09:48:43 -0700
+From: Devi Priya <quic_devipriy@quicinc.com>
+To: <agross@kernel.org>, <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
+        <lpieralisi@kernel.org>, <kw@linux.com>, <robh@kernel.org>,
+        <bhelgaas@google.com>, <krzysztof.kozlowski+dt@linaro.org>,
+        <vkoul@kernel.org>, <kishon@kernel.org>, <mturquette@baylibre.com>,
+        <sboyd@kernel.org>, <mani@kernel.org>, <p.zabel@pengutronix.de>,
+        <linus.walleij@linaro.org>, <linux-arm-msm@vger.kernel.org>,
+        <linux-pci@vger.kernel.org>, <devicetree@vger.kernel.org>,
+        <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+        <linux-clk@vger.kernel.org>, <linux-gpio@vger.kernel.org>
+CC: <quic_srichara@quicinc.com>, <quic_gokulsri@quicinc.com>,
+        <quic_sjaganat@quicinc.com>, <quic_kathirav@quicinc.com>,
+        <quic_arajkuma@quicinc.com>, <quic_anusha@quicinc.com>,
+        <quic_ipkumar@quicinc.com>
+Subject: [PATCH V2 0/9] Add PCIe support for IPQ9574
+Date: Tue, 4 Apr 2023 22:18:19 +0530
+Message-ID: <20230404164828.8031-1-quic_devipriy@quicinc.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-In-Reply-To: <20221018-clk-range-checks-fixes-v3-43-9a1358472d52@cerno.tech>
-X-Cookie: Being ugly isn't illegal.  Yet.
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: Wy0ULt0xuLpRLu0KwbayI96Plg9KvEmW
+X-Proofpoint-GUID: Wy0ULt0xuLpRLu0KwbayI96Plg9KvEmW
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.254,Aquarius:18.0.942,Hydra:6.0.573,FMLib:17.11.170.22
+ definitions=2023-04-04_08,2023-04-04_05,2023-02-09_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
+ malwarescore=0 suspectscore=0 lowpriorityscore=0 mlxlogscore=628
+ bulkscore=0 impostorscore=0 spamscore=0 clxscore=1011 adultscore=0
+ mlxscore=0 phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2303200000 definitions=main-2304040155
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230404_082635_441913_51F96F19 
-X-CRM114-Status: GOOD (  26.31  )
+X-CRM114-CacheID: sfid-20230404_094902_551621_9A37E47B 
+X-CRM114-Status: GOOD (  16.10  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -118,87 +98,56 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============7510546923843462218=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+PCIe0, PCIe1, PCIe2, PCIe3 (and corresponding PHY) devices
+are found on IPQ9574 platform. The PCIe0 & PCIe1 are 1-lane
+Gen3 host whereas PCIe2 & PCIe3 are 2-lane Gen3 host.
 
---===============7510546923843462218==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="pRxU5n1hMJtSd1CQ"
-Content-Disposition: inline
+This series adds support for enabling the same
 
+DTS patch is based on the below series
+https://lore.kernel.org/linux-arm-msm/20230329053726.14860-1-quic_kathirav@quicinc.com/
 
---pRxU5n1hMJtSd1CQ
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+Changes in V2:
+	- Reordered the patches and splitted the board DT changes
+	  into a separate patch as suggested
+	- Detailed change logs are added to the respective patches
 
-On Tue, Apr 04, 2023 at 12:11:33PM +0200, Maxime Ripard wrote:
-> The tlv320aic32x4 clkin clock implements a mux with a set_parent hook,
-> but doesn't provide a determine_rate implementation.
+Devi Priya (9):
+  dt-bindings: clock: Add PCIe pipe clock definitions
+  clk: qcom: gcc-ipq9574: Add PCIe pipe clocks
+  dt-bindings: phy: qcom,qmp-pcie: Add ipq9574 bindings
+  phy: qcom-qmp-pcie: Add support for IPQ9574 g3x1 and g3x2 PCIEs
+  dt-bindings: PCI: qcom: Add IPQ9574
+  dt-bindings: pinctrl: qcom: Add few missing functions
+  arm64: dts: qcom: ipq9574: Add PCIe PHYs and controller nodes
+  arm64: dts: qcom: ipq9574: Enable PCIe PHYs and controllers
+  PCI: qcom: Add support for IPQ9574
 
-> This is a bit odd, since set_parent() is there to, as its name implies,
-> change the parent of a clock. However, the most likely candidate to
-> trigger that parent change is a call to clk_set_rate(), with
-> determine_rate() figuring out which parent is the best suited for a
-> given rate.
-
-> The other trigger would be a call to clk_set_parent(), but it's far less
-> used, and it doesn't look like there's any obvious user for that clock.
-
-It could be configured from device tree as well couldn't it?
-
-> So, the set_parent hook is effectively unused, possibly because of an
-> oversight. However, it could also be an explicit decision by the
-> original author to avoid any reparenting but through an explicit call to
-> clk_set_parent().
-
-Historically clk_set_rate() wouldn't reparent IIRC.
-
-> The latter case would be equivalent to setting the flag
-> CLK_SET_RATE_NO_REPARENT, together with setting our determine_rate hook
-> to __clk_mux_determine_rate(). Indeed, if no determine_rate
-> implementation is provided, clk_round_rate() (through
-> clk_core_round_rate_nolock()) will call itself on the parent if
-> CLK_SET_RATE_PARENT is set, and will not change the clock rate
-> otherwise. __clk_mux_determine_rate() has the exact same behavior when
-> CLK_SET_RATE_NO_REPARENT is set.
-
-> And if it was an oversight, then we are at least explicit about our
-> behavior now and it can be further refined down the line.
-
-To be honest it's surprising that we'd have to manually specify this, I
-would expect to be able to reparent.  I suspect it'd be better to go the
-other way here and allow reparenting.
-
---pRxU5n1hMJtSd1CQ
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAmQsQZoACgkQJNaLcl1U
-h9C4KAf9FbCqTcQH5npaqJcyqXkbkD2B/+L43dup6TDsW3MJ6KnGh7YONz0DFQtI
-yTePWQzrTp7lltc9dQ8/QOvh4Xj3HSYJ30m5Ok0oX7lCLwy3LjEHtJiou/laIivq
-v+hAN2lVJPs0oOLwI+1tyi2p+UjtHzWUJcD37bHzIsY4esaL/B/Bp7m6z1JNpyoj
-rIleJHkETKjUABBzN/UR62y6TPaPPm/hSUcy0eudfmZZhPOWkuX/iBrFcXcUgc+c
-XOAtB0+uAsDUhULdGhXZSInCoKu0mdVwLr1QoZOB7q7J3Tl83t/8Mxuk8Dr+XEWh
-JBFDNPB3HM8uQvBR5j9pbnSLt/7E/A==
-=Jkqi
------END PGP SIGNATURE-----
-
---pRxU5n1hMJtSd1CQ--
+ .../devicetree/bindings/pci/qcom,pcie.yaml    |  48 +++
+ .../phy/qcom,sc8280xp-qmp-pcie-phy.yaml       | 103 ++++-
+ .../bindings/pinctrl/qcom,ipq9574-tlmm.yaml   |   6 +-
+ arch/arm64/boot/dts/qcom/ipq9574-rdp433.dts   |  62 +++
+ arch/arm64/boot/dts/qcom/ipq9574.dtsi         | 375 +++++++++++++++++-
+ drivers/clk/qcom/gcc-ipq9574.c                |  76 ++++
+ drivers/pci/controller/dwc/pcie-qcom.c        |  62 ++-
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c      | 332 ++++++++++++++++
+ .../phy/qualcomm/phy-qcom-qmp-pcs-pcie-v5.h   |  26 +-
+ .../phy/qualcomm/phy-qcom-qmp-qserdes-pll.h   |   3 +
+ include/dt-bindings/clock/qcom,ipq9574-gcc.h  |   4 +
+ 11 files changed, 1046 insertions(+), 51 deletions(-)
 
 
---===============7510546923843462218==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+base-commit: 31bd35b66249699343d2416658f57e97314a433a
+-- 
+2.17.1
+
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============7510546923843462218==--
-
