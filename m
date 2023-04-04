@@ -4,68 +4,155 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AC0BBC6FD1D
-	for <linux-phy@archiver.kernel.org>; Tue,  4 Apr 2023 14:27:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6E9F0C6FD1D
+	for <linux-phy@archiver.kernel.org>; Tue,  4 Apr 2023 14:45:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nDjA3FTUVi6cJCmDOxXoP49rG27GQ+QgVvXIXFmmR54=; b=e9u2vTG2j0iQPT
-	pFO2F/VRTVrw5c06NT/GJ0HFQuO3igVD/O3Bq4zuM6rSktCAuLAc5S/GD2MkFvig/7jJhXPbpEBhV
-	2UBWNBuAnh8GY1t/C8jjJ+EKKwVL/mghf9q3a/e1SV2D11FOmyupja+6ZyLU27d5DGr5h5NPd3sTV
-	c52KSWLwPUwrJPsJKTmxwOzNEtMTE2yVxbyxlucxNOGI9+UTBEjN5lqHShllImWnWxegxIrlYLA4z
-	67GG5jKJ8ZJpdQBMVStF3340r7ilrc7IhN4PSGRf5nfN5md5SLBeZw6UC3+xYBdoVBxJtHjNUBHVF
-	15aHCOe4fcWOOeZQ6rpQ==;
+	List-Owner; bh=gfR5CAeD+pMPSDaGuC7cGbI9KAy9XezPzwV1y969yfg=; b=ipGw8b7Rm0Y7/o
+	MNbfuXDVHz4EMxXk8u3pJ2kbyUuIhDjZFkMEWawtUYWU4k0wNYmVKAJi9bQ+jgMLxHCYKbGgaDkw/
+	5P3qiamWAv7CAv/JthXciXLUb3mzUryilRFcSWrcsuGRM/GNGA782rkYvV3/95MLA6EZlRaLUX0YD
+	s61KrRWVuwA6AQiQoIkobnz5oJrsoPOZ56HSXRz0Jyles8S3g1AXYJ9SGttVwJRyAC6L3/LskOupC
+	4VoqW1j0G/u/CW9YRxrPoNX5bryEWwNdk0UZp3HpBrto1vayVlFdtR9bkMMTxQltde4JF5j4Id+Um
+	gYddPG+Rbx7HZxEvNeaQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pjhdJ-001o02-0u;
-	Tue, 04 Apr 2023 14:27:37 +0000
-Received: from mail-il1-f177.google.com ([209.85.166.177])
+	id 1pjhuf-001rLB-2w;
+	Tue, 04 Apr 2023 14:45:33 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pjhdF-001nxQ-2M;
-	Tue, 04 Apr 2023 14:27:34 +0000
-Received: by mail-il1-f177.google.com with SMTP id u8so17153431ilb.2;
-        Tue, 04 Apr 2023 07:27:32 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112; t=1680618451;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=E5fCjkpzhMrLdCd6YE6Gj8KInI7KEOI/E2WjYOm2J5E=;
-        b=OjaUw7EUJU4rx5FtXEctgYkvS3Ixs4UmzJVceX6KNoxgkn5rJlVz7xkX5nF3p+RsHE
-         NsTJHbgzMgaEKfRkUa+7HeUzX9j0bo6GeFveSa/3sEsmHbhGsjZDNYA01pDAczw1px0H
-         H/yr8XMAwTD+W99SGo5p70uc/HA+5NVjvKKiIBqOS+G59Px1sKKAP+XCptuckY+6e7A9
-         DmQtdj/4tJqWTUH76lAoJ5qIEIX9o9yvNrNBVQ1Wz8oyruqoUUdhst1JhNsOV94sz9WL
-         o2ih52rsimCwBIDG9SIj0kt9iThgvIyTNngfyraHm9FF/P79TGE947mNO+ylqxi38Y5r
-         DzZA==
-X-Gm-Message-State: AAQBX9cojMVECE05vfsNju5EGvnIVJsqec2vsiygvf3tHm/lPV+cCvvI
-	GdOBprp4UBePEVnzqJM5EQ==
-X-Google-Smtp-Source: AKy350Ybe9J9RjgT9nlmTSU6u1gQPWSSnkUo94oqYTwSnLUpGluAy7QTWx0ofhWEzV3bvW1FerTVqw==
-X-Received: by 2002:a92:c80c:0:b0:326:2c14:a718 with SMTP id v12-20020a92c80c000000b003262c14a718mr2808220iln.32.1680618451529;
-        Tue, 04 Apr 2023 07:27:31 -0700 (PDT)
-Received: from robh_at_kernel.org (66-90-144-107.dyn.grandenetworks.net. [66.90.144.107])
-        by smtp.gmail.com with ESMTPSA id bm12-20020a05663842cc00b0040631e8bf89sm3351879jab.38.2023.04.04.07.27.30
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 04 Apr 2023 07:27:31 -0700 (PDT)
-Received: (nullmailer pid 3836196 invoked by uid 1000);
-	Tue, 04 Apr 2023 14:27:30 -0000
-Date: Tue, 4 Apr 2023 09:27:30 -0500
-From: Rob Herring <robh@kernel.org>
-To: Sebastian Reichel <sebastian.reichel@collabora.com>
-Cc: Heiko Stuebner <heiko@sntech.de>, Rob Herring <robh+dt@kernel.org>, linux-rockchip@lists.infradead.org, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, kernel@collabora.com, Kishon Vijay Abraham I <kishon@kernel.org>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, linux-kernel@vger.kernel.org, Vinod Koul <vkoul@kernel.org>, linux-arm-kernel@lists.infradead.org
-Subject: Re: [PATCHv2 2/7] dt-bindings: phy: rockchip,inno-usb2phy: add rk3588
-Message-ID: <168061844969.3836135.11919397961372852948.robh@kernel.org>
-References: <20230403202307.120562-1-sebastian.reichel@collabora.com>
- <20230403202307.120562-3-sebastian.reichel@collabora.com>
+	id 1pjhuc-001rJD-1P;
+	Tue, 04 Apr 2023 14:45:30 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Cc:To:In-Reply-To:References:
+	Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
+	From:Sender:Reply-To:Content-ID:Content-Description;
+	bh=u5IaUxp37Eo22Z56jEIWVdhJKniriGtZUw7vNfPP1hQ=; b=QQdYONxSh5k6yR0Nv/byK51ZJ5
+	k/dB1izzKSYg96ccVvJafLt70C+PML4ewWI2NRUcsBOdK8oNDpXXkjRVfdjU2s9vyAFKfbrF2Knf3
+	HZTZTTeQpw56V1KlhMbdhn2mVOI8GYTKQKy2hKKdMYjRKzTB7ZeQgvbGQRST6cJ/d3uW5z6I0CwJQ
+	LvMvFRv0RpIGWCvGAi/vlWAlP/UwTsqb0ESl22CvHTvZ+ZssuemINR9mRnXgMorcZ8X+nGlgkDrzF
+	CcoHFouYlB0jY3+vKS5H7qC3eBBGtrw6ePVmsmxLfchKooiAGL35jLYZmWQieH4XzXMlkpe3c6xGh
+	Z0jsGDqg==;
+Received: from new3-smtp.messagingengine.com ([66.111.4.229])
+	by desiato.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
+	id 1pjhAC-009HVa-2S;
+	Tue, 04 Apr 2023 13:57:39 +0000
+Received: from compute2.internal (compute2.nyi.internal [10.202.2.46])
+	by mailnew.nyi.internal (Postfix) with ESMTP id 93B4B582182;
+	Tue,  4 Apr 2023 09:57:23 -0400 (EDT)
+Received: from mailfrontend2 ([10.202.2.163])
+  by compute2.internal (MEProxy); Tue, 04 Apr 2023 09:57:23 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=cc
+	:cc:content-transfer-encoding:content-type:content-type:date
+	:date:from:from:in-reply-to:in-reply-to:message-id:mime-version
+	:references:reply-to:sender:subject:subject:to:to; s=fm3; t=
+	1680616643; x=1680623843; bh=u5IaUxp37Eo22Z56jEIWVdhJKniriGtZUw7
+	vNfPP1hQ=; b=e+xt/OOvKjKGuDtA0Ahj98cbkLitDqUU/UKcS7yZvjtyc7psjqk
+	LLw1N3v1gT2lsI/jgZA00iUrVTwZQxGKzydhUwln9Tj+wVAEXYIgbj3+MsmLaCaE
+	Cdo43DrAYaRpuSPg3B7Q7p+OsKoFrmKWU52+BSzHDJ1vA0+MtqsVego5xt5NE4Fb
+	XmbZatqcMRhZuyd5Vm0CAuUt4jPlErlw+Mec+xBQ8k/0s2XKZJjz4y+43nkwzhAh
+	vCvnI1CKC25cC7E2n7m/B0np80epZ7fwDkl4RIbHNtgoZe92XFv8vVJr4POIg/P0
+	es8wZkSwpUBx2vbqr+t8TgShtC0OsLucfSg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	messagingengine.com; h=cc:cc:content-transfer-encoding
+	:content-type:content-type:date:date:feedback-id:feedback-id
+	:from:from:in-reply-to:in-reply-to:message-id:mime-version
+	:references:reply-to:sender:subject:subject:to:to:x-me-proxy
+	:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; t=
+	1680616643; x=1680623843; bh=u5IaUxp37Eo22Z56jEIWVdhJKniriGtZUw7
+	vNfPP1hQ=; b=NXOXR9qVx9GhB0bCSr2MeQseIneXnaIVjiGYQJEvq0EZ31TnNDj
+	RptliQ+Rq4cWDdoPDc66MlDR2SDmZZZNuJCK7UVliZva62cXnBLaSluuuBoPDA69
+	pNSOkZk95veaoI39rp0+uzJhRgkiCawy98yPzfTC+q4CBYvb0OfiRZf7mvKk423z
+	VTAmddPC+8W8DD039rTb8mFeqaTPFl4qq5z3lTvvHaMcII8D0u6A6F967BqCHpRA
+	AqY6g65szcumC5rvueD4FsAd83aexoCXosZV4WGQIgfRPrC2DW3reUqp9dtEchD1
+	SR1X0sqOYKpt7s6rc2nTiqdHTGREkC7SOVw==
+X-ME-Sender: <xms:wywsZNiCxmvgcKric11KJvKuEq1FehZqEcIxwniPsULXBadQlxvF2w>
+    <xme:wywsZCDiKXQ-SwIPeBZdKU0x6Oe3k4wqeumQLw3sO5StItxIkxX0NPDS5XP8x78Rr
+    KOCKwU-fc1G-sB162I>
+X-ME-Received: <xmr:wywsZNFf3kNKAQom6E7PTWT_AclJRPGTzSMo5gMkrGzVQNAQWEkSOL4Oul0Nyq0ovjI3B-6TXoUd03airWEzvyGtHYhjJZc>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvhedrvdeiledgjedtucetufdoteggodetrfdotf
+    fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+    uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
+    cujfgurhephfffufggtgfgkfhfjgfvvefosehtjeertdertdejnecuhfhrohhmpeforgig
+    ihhmvgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecuggftrf
+    grthhtvghrnhepvedvleeijeegvdekffehkeehieelhfeggfffheetkeeuledvtdeuffeh
+    teeltdffnecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomh
+    epmhgrgihimhgvsegtvghrnhhordhtvggthh
+X-ME-Proxy: <xmx:wywsZCT-U4e-6PkOEQgY4RIEhmT1p7JS2YyOE-sY9IGIKSFnO6pszw>
+    <xmx:wywsZKxRi9LUhyDXJmLOyS6WVxSfn71QPg6OgjWVUhsROrBPL-9x0A>
+    <xmx:wywsZI7qKMRHIbetV5AV9nEa0pScwXAhYlU19ov_TQRMFoqsmt8EsA>
+    <xmx:wywsZK--zs-8fCvMuaT7dX3Yp0547dKOF-7Od2LEpp5JmlfcUPbh2w>
+Feedback-ID: i8771445c:Fastmail
+Received: by mail.messagingengine.com (Postfix) with ESMTPA; Tue,
+ 4 Apr 2023 09:57:21 -0400 (EDT)
+From: Maxime Ripard <maxime@cerno.tech>
+Date: Tue, 04 Apr 2023 12:11:46 +0200
+Subject: [PATCH v3 56/65] clk: ingenic: cgu: Switch to determine_rate
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20230403202307.120562-3-sebastian.reichel@collabora.com>
+Message-Id: <20221018-clk-range-checks-fixes-v3-56-9a1358472d52@cerno.tech>
+References: <20221018-clk-range-checks-fixes-v3-0-9a1358472d52@cerno.tech>
+In-Reply-To: <20221018-clk-range-checks-fixes-v3-0-9a1358472d52@cerno.tech>
+To: Michael Turquette <mturquette@baylibre.com>,
+  Stephen Boyd <sboyd@kernel.org>,
+  =?utf-8?q?Andreas_F=C3=A4rber?= <afaerber@suse.de>,
+  Manivannan Sadhasivam <mani@kernel.org>,
+  Nicolas Ferre <nicolas.ferre@microchip.com>,
+  Alexandre Belloni <alexandre.belloni@bootlin.com>,
+  Claudiu Beznea <claudiu.beznea@microchip.com>,
+  Max Filippov <jcmvbkbc@gmail.com>,
+  Charles Keepax <ckeepax@opensource.cirrus.com>,
+  Richard Fitzgerald <rf@opensource.cirrus.com>,
+  Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+  Alexandre Torgue <alexandre.torgue@foss.st.com>,
+  Luca Ceresoli <luca.ceresoli@bootlin.com>,
+  David Lechner <david@lechnology.com>, Sekhar Nori <nsekhar@ti.com>,
+  Abel Vesa <abelvesa@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+  Sascha Hauer <s.hauer@pengutronix.de>,
+  Pengutronix Kernel Team <kernel@pengutronix.de>,
+  Fabio Estevam <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
+  Matthias Brugger <matthias.bgg@gmail.com>,
+  Geert Uytterhoeven <geert+renesas@glider.be>,
+  Dinh Nguyen <dinguyen@kernel.org>,
+  Peter De Schrijver <pdeschrijver@nvidia.com>,
+  Prashant Gaikwad <pgaikwad@nvidia.com>,
+  Thierry Reding <thierry.reding@gmail.com>,
+  Jonathan Hunter <jonathanh@nvidia.com>,
+  Ulf Hansson <ulf.hansson@linaro.org>,
+  Linus Walleij <linus.walleij@linaro.org>,
+ David Airlie <airlied@gmail.com>,  Daniel Vetter <daniel@ffwll.ch>,
+ Vinod Koul <vkoul@kernel.org>,
+  Kishon Vijay Abraham I <kishon@kernel.org>,
+  Alessandro Zummo <a.zummo@towertech.it>, Chen-Yu Tsai <wens@csie.org>,
+  Jernej Skrabec <jernej.skrabec@gmail.com>,
+  Samuel Holland <samuel@sholland.org>,
+ Liam Girdwood <lgirdwood@gmail.com>,  Mark Brown <broonie@kernel.org>,
+ Jaroslav Kysela <perex@perex.cz>,  Takashi Iwai <tiwai@suse.com>,
+ Paul Cercueil <paul@crapouillou.net>,  Orson Zhai <orsonzhai@gmail.com>,
+  Baolin Wang <baolin.wang@linux.alibaba.com>,
+  Chunyan Zhang <zhang.lyra@gmail.com>
+Cc: linux-clk@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, 
+ linux-arm-kernel@lists.infradead.org, linux-actions@lists.infradead.org, 
+ patches@opensource.cirrus.com, linux-stm32@st-md-mailman.stormreply.com, 
+ linux-mediatek@lists.infradead.org, linux-renesas-soc@vger.kernel.org, 
+ linux-tegra@vger.kernel.org, dri-devel@lists.freedesktop.org, 
+ linux-phy@lists.infradead.org, linux-rtc@vger.kernel.org, 
+ linux-sunxi@lists.linux.dev, alsa-devel@alsa-project.org, 
+ linux-mips@vger.kernel.org, Maxime Ripard <maxime@cerno.tech>
+X-Mailer: b4 0.12.1
+X-Developer-Signature: v=1; a=openpgp-sha256; l=2991; i=maxime@cerno.tech;
+ h=from:subject:message-id; bh=p50VsOqv1T6k93woaLiN8Bd5AJfocwfLhT9fhB9gDvw=;
+ b=owGbwMvMwCX2+D1vfrpE4FHG02pJDCna37f7LQ1ZEGqj8Ozv94ZVPP9uWmyJX/grlLV048y9bA11
+ ZetXd5SyMIhxMciKKbLECJsviTs163UnG988mDmsTCBDGLg4BWAiN44zMlz8f591su6Xe0mLwu49kf
+ 8nqznpSaNM1fGOHzGZPyPsVl5m+O+76l2DYc/ex/dTXp3UD9hYzthavZp1tWOT0zOjtOvTl3MAAA==
+X-Developer-Key: i=maxime@cerno.tech; a=openpgp;
+ fpr=BE5675C37E818C8B5764241C254BCFC56BF6CE8D
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230404_072733_764754_F11DC605 
-X-CRM114-Status: UNSURE (   8.95  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230404_145735_762228_A0ADBE3A 
+X-CRM114-Status: GOOD (  20.72  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,17 +169,85 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+The Ingenic CGU clocks implements a mux with a set_parent hook, but
+doesn't provide a determine_rate implementation.
 
-On Mon, 03 Apr 2023 22:23:02 +0200, Sebastian Reichel wrote:
-> Add compatible for the USB2 phy in the Rockchip RK3588 SoC.
-> 
-> Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
-> ---
->  .../bindings/phy/rockchip,inno-usb2phy.yaml   | 21 ++++++++++++++++---
->  1 file changed, 18 insertions(+), 3 deletions(-)
-> 
+This is a bit odd, since set_parent() is there to, as its name implies,
+change the parent of a clock. However, the most likely candidate to
+trigger that parent change is a call to clk_set_rate(), with
+determine_rate() figuring out which parent is the best suited for a
+given rate.
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+The other trigger would be a call to clk_set_parent(), but it's far less
+used, and it doesn't look like there's any obvious user for that clock.
+
+So, the set_parent hook is effectively unused, possibly because of an
+oversight. However, it could also be an explicit decision by the
+original author to avoid any reparenting but through an explicit call to
+clk_set_parent().
+
+The driver does implement round_rate() though, which means that we can
+change the rate of the clock, but we will never get to change the
+parent.
+
+However, It's hard to tell whether it's been done on purpose or not.
+
+Since we'll start mandating a determine_rate() implementation, let's
+convert the round_rate() implementation to a determine_rate(), which
+will also make the current behavior explicit. And if it was an
+oversight, the clock behaviour can be adjusted later on.
+
+Signed-off-by: Maxime Ripard <maxime@cerno.tech>
+---
+ drivers/clk/ingenic/cgu.c | 15 ++++++++-------
+ 1 file changed, 8 insertions(+), 7 deletions(-)
+
+diff --git a/drivers/clk/ingenic/cgu.c b/drivers/clk/ingenic/cgu.c
+index 1f7ba30f5a1b..0c9c8344ad11 100644
+--- a/drivers/clk/ingenic/cgu.c
++++ b/drivers/clk/ingenic/cgu.c
+@@ -491,22 +491,23 @@ ingenic_clk_calc_div(struct clk_hw *hw,
+ 	return div;
+ }
+ 
+-static long
+-ingenic_clk_round_rate(struct clk_hw *hw, unsigned long req_rate,
+-		       unsigned long *parent_rate)
++static int ingenic_clk_determine_rate(struct clk_hw *hw,
++				      struct clk_rate_request *req)
+ {
+ 	struct ingenic_clk *ingenic_clk = to_ingenic_clk(hw);
+ 	const struct ingenic_cgu_clk_info *clk_info = to_clk_info(ingenic_clk);
+ 	unsigned int div = 1;
+ 
+ 	if (clk_info->type & CGU_CLK_DIV)
+-		div = ingenic_clk_calc_div(hw, clk_info, *parent_rate, req_rate);
++		div = ingenic_clk_calc_div(hw, clk_info, req->best_parent_rate,
++					   req->rate);
+ 	else if (clk_info->type & CGU_CLK_FIXDIV)
+ 		div = clk_info->fixdiv.div;
+ 	else if (clk_hw_can_set_rate_parent(hw))
+-		*parent_rate = req_rate;
++		req->best_parent_rate = req->rate;
+ 
+-	return DIV_ROUND_UP(*parent_rate, div);
++	req->rate = DIV_ROUND_UP(req->best_parent_rate, div);
++	return 0;
+ }
+ 
+ static inline int ingenic_clk_check_stable(struct ingenic_cgu *cgu,
+@@ -626,7 +627,7 @@ static const struct clk_ops ingenic_clk_ops = {
+ 	.set_parent = ingenic_clk_set_parent,
+ 
+ 	.recalc_rate = ingenic_clk_recalc_rate,
+-	.round_rate = ingenic_clk_round_rate,
++	.determine_rate = ingenic_clk_determine_rate,
+ 	.set_rate = ingenic_clk_set_rate,
+ 
+ 	.enable = ingenic_clk_enable,
+
+-- 
+2.39.2
 
 
 -- 
