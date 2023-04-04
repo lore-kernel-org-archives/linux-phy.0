@@ -4,62 +4,141 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8763CC6FD1D
-	for <linux-phy@archiver.kernel.org>; Tue,  4 Apr 2023 12:13:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B12F2C761AF
+	for <linux-phy@archiver.kernel.org>; Tue,  4 Apr 2023 12:34:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=itlbJ7Kwy5sDIC2mU7/zoykpI8EsmTpXPwE3DD7Hwd8=; b=G1OowRJM9Ztc9W
-	JpvjS/hMo3u/3pW2jlYOFaBrCn4fm3/4CkLAZGHrE/+NHuCUf1G9Otp3lKu/+dEclT236GpGyXYjt
-	jROaPHD5KOy6WSDqSwUbkZiM5cQk1PvI+Zfh/6RUZcsb9+lOVg7tvDxPHsCa7644Ji9j4ypTXJzuO
-	vJSKUOcrpK/P+BwtOauIpzibULON/FRmYs/nwEIJHcw42RY9wjbdl5f1sallEvoDriRo2iiGbC/sF
-	Ce7cHQ33nBTOc6DiiaMEL+1xfzaDpZ/fOpp5lTI/aWjW4BYYr5tZW33xDQ7V7s5lWSeJgYwJ4uEyi
-	8NFZYb75Sc4SsMHc9mQA==;
+	List-Owner; bh=lqdRvXqjW2Y02xkCGcQdSsRE2f8/CF3A9MNssah0A3Y=; b=tuuksLsbOLoVLi
+	h0Q4KJOGkk0NjzUXgKLN8aUOcG43gbUrqiFX9fLhOFkNS5P0t/lW8A8QqCHCNO8P2fbUt6TJusApc
+	fpAHn2lG1yN5MQET3YNluPrz6Po4PrptRDiMFNVvaE/b2hT1V6Xmuw8HKhhXGTGm09dwgHcE375NM
+	nx60BbDXyJ4c3YjXYXHSKyWCJNnVlx2+Fh4CCz2Dq2LRU9CKXCrGwKw1PgXw2mP/12icBAMOOr4ry
+	T+0OwJ3CLMtqNXfkSz6K7m8JI+ILJLu0BlSbDDtPkPkqDyEGx41T37fZneP6bObWCLbCYMLEfqE/9
+	QwdbOeiiPbKQb7SZLPiQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pjfXt-001DzD-0e;
-	Tue, 04 Apr 2023 12:13:53 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1pjfrS-001HOC-0W;
+	Tue, 04 Apr 2023 12:34:06 +0000
+Received: from new3-smtp.messagingengine.com ([66.111.4.229])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pjfXp-001Dy5-2F;
-	Tue, 04 Apr 2023 12:13:51 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 22A1661512;
-	Tue,  4 Apr 2023 12:13:49 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id AEA27C433EF;
-	Tue,  4 Apr 2023 12:13:46 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1680610428;
-	bh=kBLWTzI4Ec3Tgm3PQcE9dHuMDi02IfmCduhDnazZ9YY=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=f/SzTtuPKL+FeY9p/qLiRDcrMowMa5080F1nb9Ne3bZZ8K2QKEvDbZAVp4CFMtwxi
-	 HJLL91Vm99Vm2leQ/VMOD8jAAnC0tbdltFotedxlnBUF99kKJ3JtRll9TD5V2xECJ4
-	 vchGtel3UyYejCJw7NS1FKgEKJLdt4/ASCN1OofD2Z8Cd/pwtlnRTgLVCRTHkp8Z42
-	 UpurcQzf/8UHtwCUXOZEem0LE6wseZMBy/QuPiNaXgFwKoBQmcIxUA81m/N/9aky7R
-	 SPjGv+zGKz2/SfqYQewaZJ5IJa1/fQ71d2UbjX3tbnOY0IWil5UMXmRFf5KUFoQ96h
-	 2koyJkcIBkuAw==
-Message-ID: <ae922f41-63a0-baf3-c204-73d4e8d0fe08@kernel.org>
-Date: Tue, 4 Apr 2023 15:13:44 +0300
+	id 1pjfrO-001HMe-0b;
+	Tue, 04 Apr 2023 12:34:03 +0000
+Received: from compute6.internal (compute6.nyi.internal [10.202.2.47])
+	by mailnew.nyi.internal (Postfix) with ESMTP id C199A582093;
+	Tue,  4 Apr 2023 08:34:00 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+  by compute6.internal (MEProxy); Tue, 04 Apr 2023 08:34:00 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=cc
+	:cc:content-transfer-encoding:content-type:content-type:date
+	:date:from:from:in-reply-to:in-reply-to:message-id:mime-version
+	:references:reply-to:sender:subject:subject:to:to; s=fm3; t=
+	1680611640; x=1680618840; bh=o+OQnLpJCCiwmnk+lu4hNKvy3ldBNEpHSiF
+	2EVuNWrw=; b=Vv5mOQOK6GqYKsXZhaDRRGnogUYmOWzpL0+oPX228bsNMy0GT5y
+	IDv4+zGaRyNZMISm4ZkDjDqN64KDKK9ue0dvTG0tA/STDGjJAHNwj2AT7kbp3zL+
+	3TK+XjC3kTZ39yfL42vn9pDhzjSb9sdpCEjQ0s6UsbXSN1j0JrfulscAV+iK5+H/
+	qI4X31sljo0ipj9VbVNH6TJzf4PdXIQ2RwNHOY9nvqpsFn1iw4zQ7AsRhv3sWIH0
+	RTwcc2EkG9wtlaiMXKHeAB32cBi0knHP4jnZihtRN6FqAqi57kgd8lY8EOIJVZQy
+	ISOiRkmkJNQ8HCOZ7If1C90P5EX0I0jDuxA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	messagingengine.com; h=cc:cc:content-transfer-encoding
+	:content-type:content-type:date:date:feedback-id:feedback-id
+	:from:from:in-reply-to:in-reply-to:message-id:mime-version
+	:references:reply-to:sender:subject:subject:to:to:x-me-proxy
+	:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; t=
+	1680611640; x=1680618840; bh=o+OQnLpJCCiwmnk+lu4hNKvy3ldBNEpHSiF
+	2EVuNWrw=; b=jvwNaRMYpiKcIImHYx3fUYeRkvnBREkVTZiMIcM3vpHLnA5MQAw
+	dHInOGAzviFHCBRdelYoI32OC0V4Wu92y6lrBQzSRpwRxByaY1wa6qQUrMMFqEct
+	irY0SeiiTASzR+UhXX7wBiBt5o+Etf1WRxR1zDeRBc9Db486qDFioanzBqBzdVzm
+	QdrOcxJxhDV1ue1nnTk/sNwA+AQ4As9Uh+JhGBxItGzrU730KOKAQyEDr6v2aZSU
+	N6uWf7xSc0RZ0nZR4iGZwH/PL0PeMY+G74d0itft2P/176H8u9xfqeTTS5h/cqfi
+	jAu14plMUQgUxigzFFTK8u27AxcsMuraAhA==
+X-ME-Sender: <xms:NhksZCkh63te2D71qbUIrEn6R5uvFX2wZniVfu1SizGfejFdNK8-zA>
+    <xme:NhksZJ0QqmrCRDIxxwoiVIVDPHitgiRsO0Q61sHGjbqPgKzDifY3GJqNaRI361ex9
+    gy7ZMfAbtcYVY1Kydo>
+X-ME-Received: <xmr:NhksZAp5cqPR1eU1KSJNSj2jQalF9lpYaygmE5Rgu8T1vrgQKhIjtJNTHcSTTEGKgWpKp8grENFK1XEwnYMWLiu63_wfC40>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvhedrvdeiledgheefucetufdoteggodetrfdotf
+    fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+    uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
+    cujfgurhephfffufggtgfgkfhfjgfvvefosehtjeertdertdejnecuhfhrohhmpeforgig
+    ihhmvgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecuggftrf
+    grthhtvghrnhepvedvleeijeegvdekffehkeehieelhfeggfffheetkeeuledvtdeuffeh
+    teeltdffnecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomh
+    epmhgrgihimhgvsegtvghrnhhordhtvggthh
+X-ME-Proxy: <xmx:NhksZGnxl_bVVCnVGNyL6aFKGbWm3tVo8tNFh7aKX47KU8zPbCYv5w>
+    <xmx:NhksZA3kpVg8p2YtOu4UqxGHJQzhhcni8fDyXpRWCuAyEOrTug5pGg>
+    <xmx:NhksZNtjaMzBDhkaJ5pst-Tvc63Rtn6WlYW1UwUJUOFcpQoT9LqC3A>
+    <xmx:OBksZHh0vIuFIZMpbt-UsjwvGeyE7PdPqIb3MKqM2buJqWP25WqfDQ>
+Feedback-ID: i8771445c:Fastmail
+Received: by mail.messagingengine.com (Postfix) with ESMTPA; Tue,
+ 4 Apr 2023 08:33:57 -0400 (EDT)
+From: Maxime Ripard <maxime@cerno.tech>
+Date: Tue, 04 Apr 2023 12:11:01 +0200
+Subject: [PATCH v3 11/65] clk: k210: aclk: Add a determine_rate hook
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.9.0
-Subject: Re: [PATCH v2 0/3] PHY-GMII-SEL: Add support for SGMII mode
-Content-Language: en-US
-To: Siddharth Vadapalli <s-vadapalli@ti.com>, vkoul@kernel.org,
- kishon@kernel.org
-Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, srk@ti.com
-References: <20230309063514.398705-1-s-vadapalli@ti.com>
-From: Roger Quadros <rogerq@kernel.org>
-In-Reply-To: <20230309063514.398705-1-s-vadapalli@ti.com>
+Message-Id: <20221018-clk-range-checks-fixes-v3-11-9a1358472d52@cerno.tech>
+References: <20221018-clk-range-checks-fixes-v3-0-9a1358472d52@cerno.tech>
+In-Reply-To: <20221018-clk-range-checks-fixes-v3-0-9a1358472d52@cerno.tech>
+To: Michael Turquette <mturquette@baylibre.com>,
+  Stephen Boyd <sboyd@kernel.org>,
+  =?utf-8?q?Andreas_F=C3=A4rber?= <afaerber@suse.de>,
+  Manivannan Sadhasivam <mani@kernel.org>,
+  Nicolas Ferre <nicolas.ferre@microchip.com>,
+  Alexandre Belloni <alexandre.belloni@bootlin.com>,
+  Claudiu Beznea <claudiu.beznea@microchip.com>,
+  Max Filippov <jcmvbkbc@gmail.com>,
+  Charles Keepax <ckeepax@opensource.cirrus.com>,
+  Richard Fitzgerald <rf@opensource.cirrus.com>,
+  Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+  Alexandre Torgue <alexandre.torgue@foss.st.com>,
+  Luca Ceresoli <luca.ceresoli@bootlin.com>,
+  David Lechner <david@lechnology.com>, Sekhar Nori <nsekhar@ti.com>,
+  Abel Vesa <abelvesa@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+  Sascha Hauer <s.hauer@pengutronix.de>,
+  Pengutronix Kernel Team <kernel@pengutronix.de>,
+  Fabio Estevam <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
+  Matthias Brugger <matthias.bgg@gmail.com>,
+  Geert Uytterhoeven <geert+renesas@glider.be>,
+  Dinh Nguyen <dinguyen@kernel.org>,
+  Peter De Schrijver <pdeschrijver@nvidia.com>,
+  Prashant Gaikwad <pgaikwad@nvidia.com>,
+  Thierry Reding <thierry.reding@gmail.com>,
+  Jonathan Hunter <jonathanh@nvidia.com>,
+  Ulf Hansson <ulf.hansson@linaro.org>,
+  Linus Walleij <linus.walleij@linaro.org>,
+ David Airlie <airlied@gmail.com>,  Daniel Vetter <daniel@ffwll.ch>,
+ Vinod Koul <vkoul@kernel.org>,
+  Kishon Vijay Abraham I <kishon@kernel.org>,
+  Alessandro Zummo <a.zummo@towertech.it>, Chen-Yu Tsai <wens@csie.org>,
+  Jernej Skrabec <jernej.skrabec@gmail.com>,
+  Samuel Holland <samuel@sholland.org>,
+ Liam Girdwood <lgirdwood@gmail.com>,  Mark Brown <broonie@kernel.org>,
+ Jaroslav Kysela <perex@perex.cz>,  Takashi Iwai <tiwai@suse.com>,
+ Paul Cercueil <paul@crapouillou.net>,  Orson Zhai <orsonzhai@gmail.com>,
+  Baolin Wang <baolin.wang@linux.alibaba.com>,
+  Chunyan Zhang <zhang.lyra@gmail.com>
+Cc: linux-clk@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, 
+ linux-arm-kernel@lists.infradead.org, linux-actions@lists.infradead.org, 
+ patches@opensource.cirrus.com, linux-stm32@st-md-mailman.stormreply.com, 
+ linux-mediatek@lists.infradead.org, linux-renesas-soc@vger.kernel.org, 
+ linux-tegra@vger.kernel.org, dri-devel@lists.freedesktop.org, 
+ linux-phy@lists.infradead.org, linux-rtc@vger.kernel.org, 
+ linux-sunxi@lists.linux.dev, alsa-devel@alsa-project.org, 
+ linux-mips@vger.kernel.org, Maxime Ripard <maxime@cerno.tech>
+X-Mailer: b4 0.12.1
+X-Developer-Signature: v=1; a=openpgp-sha256; l=2288; i=maxime@cerno.tech;
+ h=from:subject:message-id; bh=utithzISL6/XPhGmUQu4qYiVhTK9xJ+xmbkbSMagrCk=;
+ b=owGbwMvMwCX2+D1vfrpE4FHG02pJDCna37eey66s69xk4OgiNH0bz7VYH9eVbEyzT+a6nV0wZ8P5
+ r4YMHaUsDGJcDLJiiiwxwuZL4k7Net3JxjcPZg4rE8gQBi5OAZjI4leMDA83z/XqdGq66b1crFDYPX
+ nTDp/kj1JhG01OGKwJ3MK1PpCR4cPuc38L62b6Cs4VeODYW7txwrWICSERpcVGK5lbuju6uQE=
+X-Developer-Key: i=maxime@cerno.tech; a=openpgp;
+ fpr=BE5675C37E818C8B5764241C254BCFC56BF6CE8D
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230404_051349_769035_367946D8 
-X-CRM114-Status: GOOD (  14.35  )
+X-CRM114-CacheID: sfid-20230404_053402_422757_6387FFBD 
+X-CRM114-Status: GOOD (  18.12  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,34 +155,64 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+The K210 ACLK clock implements a mux with a set_parent hook, but
+doesn't provide a determine_rate implementation.
 
+This is a bit odd, since set_parent() is there to, as its name implies,
+change the parent of a clock. However, the most likely candidate to
+trigger that parent change is a call to clk_set_rate(), with
+determine_rate() figuring out which parent is the best suited for a
+given rate.
 
-On 09/03/2023 08:35, Siddharth Vadapalli wrote:
-> Hello,
-> 
-> This series adds support to configure the CPSW MAC's PHY in SGMII mode.
-> Also, SGMII mode is enabled for TI's J7200 and J721E SoCs.
-> 
-> Changes from v1:
-> 1. Add "break" statement within "case PHY_INTERFACE_MODE_SGMII".
-> 2. Add newline before "default" case.
-> 3. Update commit message of patch 1/3 to follow the existing convention.
-> 
-> v1:
-> https://lore.kernel.org/r/20230309062237.389444-1-s-vadapalli@ti.com/
-> 
-> Siddharth Vadapalli (3):
->   phy: ti: gmii-sel: Add support for SGMII mode
->   phy: ti: gmii-sel: Enable SGMII mode for J7200
->   phy: ti: gmii-sel: Enable SGMII mode for J721E
-> 
->  drivers/phy/ti/phy-gmii-sel.c | 12 ++++++++++--
->  1 file changed, 10 insertions(+), 2 deletions(-)
-> 
+The other trigger would be a call to clk_set_parent(), but it's far less
+used, and it doesn't look like there's any obvious user for that clock.
 
-For the series:
+So, the set_parent hook is effectively unused, possibly because of an
+oversight. However, it could also be an explicit decision by the
+original author to avoid any reparenting but through an explicit call to
+clk_set_parent().
 
-Reviewed-by: Roger Quadros <rogerq@kernel.org>
+The latter case would be equivalent to setting the flag
+CLK_SET_RATE_NO_REPARENT, together with setting our determine_rate hook
+to __clk_mux_determine_rate(). Indeed, if no determine_rate
+implementation is provided, clk_round_rate() (through
+clk_core_round_rate_nolock()) will call itself on the parent if
+CLK_SET_RATE_PARENT is set, and will not change the clock rate
+otherwise. __clk_mux_determine_rate() has the exact same behavior when
+CLK_SET_RATE_NO_REPARENT is set.
+
+And if it was an oversight, then we are at least explicit about our
+behavior now and it can be further refined down the line.
+
+Signed-off-by: Maxime Ripard <maxime@cerno.tech>
+---
+ drivers/clk/clk-k210.c | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/drivers/clk/clk-k210.c b/drivers/clk/clk-k210.c
+index a96ab8611e1f..4cd6544ab102 100644
+--- a/drivers/clk/clk-k210.c
++++ b/drivers/clk/clk-k210.c
+@@ -639,6 +639,7 @@ static unsigned long k210_aclk_get_rate(struct clk_hw *hw,
+ }
+ 
+ static const struct clk_ops k210_aclk_ops = {
++	.determine_rate = __clk_mux_determine_rate,
+ 	.set_parent	= k210_aclk_set_parent,
+ 	.get_parent	= k210_aclk_get_parent,
+ 	.recalc_rate	= k210_aclk_get_rate,
+@@ -661,6 +662,7 @@ static int __init k210_register_aclk(struct device_node *np,
+ 	init.parent_data = parent_data;
+ 	init.num_parents = 2;
+ 	init.ops = &k210_aclk_ops;
++	init.flags = CLK_SET_RATE_NO_REPARENT;
+ 	ksc->aclk.init = &init;
+ 
+ 	ret = of_clk_hw_register(np, &ksc->aclk);
+
+-- 
+2.39.2
+
 
 -- 
 linux-phy mailing list
