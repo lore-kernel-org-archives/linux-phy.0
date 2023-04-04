@@ -4,141 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3EAE4C77B75
-	for <linux-phy@archiver.kernel.org>; Tue,  4 Apr 2023 10:22:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8763CC6FD1D
+	for <linux-phy@archiver.kernel.org>; Tue,  4 Apr 2023 12:13:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=venKZVEw4Ut3AIWX+ICZuk1mJNolIUEaqqzLroewseo=; b=QhOfAxufKq9L3T
-	LeurcOreAn4aPK3tb6d9hkxp42GLi/Gj/q1FSBXT32yK61bghbfqYWtl1/tBT+biYoVsbQxlVOplj
-	OZ2xVWKdU+8onUJtyLyCx0axltZ4czhCXYPjl3DGDa2bVebHsCrFkog+KqyxCAar7m8qNi1lU7+dR
-	dw3O0RewD7GeF9CFDBrptBdw6aquV5Zy4IZljjVOvyKBJQd7hGBvg+0A1akavIS0E3NXkb+SKaR8Y
-	u2O3PJIX6Pb7yl8YTgeptU2a5mVQSkE9fZsK1uo9WBpwH51zrcQGX6a3m5rk17o6Hvkp0NZQs8/qp
-	rHDLG357ZpsmRvQHZlvg==;
+	List-Owner; bh=itlbJ7Kwy5sDIC2mU7/zoykpI8EsmTpXPwE3DD7Hwd8=; b=G1OowRJM9Ztc9W
+	JpvjS/hMo3u/3pW2jlYOFaBrCn4fm3/4CkLAZGHrE/+NHuCUf1G9Otp3lKu/+dEclT236GpGyXYjt
+	jROaPHD5KOy6WSDqSwUbkZiM5cQk1PvI+Zfh/6RUZcsb9+lOVg7tvDxPHsCa7644Ji9j4ypTXJzuO
+	vJSKUOcrpK/P+BwtOauIpzibULON/FRmYs/nwEIJHcw42RY9wjbdl5f1sallEvoDriRo2iiGbC/sF
+	Ce7cHQ33nBTOc6DiiaMEL+1xfzaDpZ/fOpp5lTI/aWjW4BYYr5tZW33xDQ7V7s5lWSeJgYwJ4uEyi
+	8NFZYb75Sc4SsMHc9mQA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pjdoH-000sOh-2p;
-	Tue, 04 Apr 2023 10:22:41 +0000
-Received: from new4-smtp.messagingengine.com ([66.111.4.230])
+	id 1pjfXt-001DzD-0e;
+	Tue, 04 Apr 2023 12:13:53 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pjdo5-000sCg-2d;
-	Tue, 04 Apr 2023 10:22:32 +0000
-Received: from compute2.internal (compute2.nyi.internal [10.202.2.46])
-	by mailnew.nyi.internal (Postfix) with ESMTP id 00159582163;
-	Tue,  4 Apr 2023 06:22:28 -0400 (EDT)
-Received: from mailfrontend2 ([10.202.2.163])
-  by compute2.internal (MEProxy); Tue, 04 Apr 2023 06:22:29 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=cc
-	:cc:content-transfer-encoding:content-type:content-type:date
-	:date:from:from:in-reply-to:in-reply-to:message-id:mime-version
-	:references:reply-to:sender:subject:subject:to:to; s=fm3; t=
-	1680603748; x=1680610948; bh=Y91dNVRC560xUvx2fMAi/mWKBqMyfZBI+Kp
-	XEHHEN9g=; b=OZEponvylEnXflhuY8Pa/uMr6kPZI8uy7C27QHYzERputK8PFyj
-	nPusGsKhQqWQTAWGMuU/jFKFHxMENuvsN96gsc2qRsN72iDMgJlt8jQNXu9j09AC
-	ZncdFytpz0SfEhc/HfGOhG/qj/yCVtwbQS2JDEQ/qpyMzZ8+UVzxcHyFedHFqlu7
-	STkxuqlGbKKvggHnOS/hbKfjTUvAAPHmQWso9IaEKOn+R9RKdxIhIOXi+MY+fWJs
-	U8sYvsrFReQTwEzMVMRgXOPLVupSoYKg9FFtu4o3L6aoj/I00Mh79FKJdOYd5mE2
-	4FvMw7EL4VWRD2CPqyYD0BIi/gdMAuHiCPQ==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
-	messagingengine.com; h=cc:cc:content-transfer-encoding
-	:content-type:content-type:date:date:feedback-id:feedback-id
-	:from:from:in-reply-to:in-reply-to:message-id:mime-version
-	:references:reply-to:sender:subject:subject:to:to:x-me-proxy
-	:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; t=
-	1680603748; x=1680610948; bh=Y91dNVRC560xUvx2fMAi/mWKBqMyfZBI+Kp
-	XEHHEN9g=; b=qNYSFBdULXpzc2blFVma8VlW8cwRBsN1qtqo3bd9XX7gyScq5Rw
-	ywm5VSv1BJfDg5Cgk5PGuneL9leymiZl1GuoVVNJBEzRhHGyZi06SLZBtymH4zsR
-	As9bSpXomue4N6PLLGJxKpi2d5E0vumbRd2cocmGiKhjvqYkvuwCA/3arXzBoGTx
-	URY+lRltXiCE+PoJI1Hiq7uB+yTodeei2rMwY91mLLQln/9Q+qt+KgK6OdHlxifs
-	MNuZW/55ZCtkl6tX5+Os6zM1iuk5fx61em+mDjCAyc1dsP9cFzEs7rl2vPnfeeIr
-	9K9GRT45MkrB18L3AQAwttlu3PjkXFXkcdA==
-X-ME-Sender: <xms:ZPorZKTRBWkmcfnlzz1RL0m7fNkZwkm0yGMxLRBBpiGF_33jzfM-UA>
-    <xme:ZPorZPy2-bSQ-aNL7KwRxfjaUtfh87x_2rzV7qCb8Tt5_X7H4cQ76UZrwFm58RstQ
-    ewyhS68AUyEmwDKjps>
-X-ME-Received: <xmr:ZPorZH2paZiRSBTAumRkSoyMO3J4e6Z67wXRfanbP1ksP3cXr8ip_1xC80G1sBaGAQeNX4wy6InwqWKuSaN_S--VlDto3X4>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvhedrvdeiledgvdejucetufdoteggodetrfdotf
-    fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
-    uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
-    cujfgurhephfffufggtgfgkfhfjgfvvefosehtjeertdertdejnecuhfhrohhmpeforgig
-    ihhmvgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecuggftrf
-    grthhtvghrnhepvedvleeijeegvdekffehkeehieelhfeggfffheetkeeuledvtdeuffeh
-    teeltdffnecuvehluhhsthgvrhfuihiivgepvdenucfrrghrrghmpehmrghilhhfrhhomh
-    epmhgrgihimhgvsegtvghrnhhordhtvggthh
-X-ME-Proxy: <xmx:ZPorZGDkYr2idebGaoMxJDtv57Xzfvopes69ah9ClSc5n3bpeFsiag>
-    <xmx:ZPorZDhBDYE_mkQ2xxhFkfcHyh11XwYhOWdaAxoFr-vfn2iPY4iqaQ>
-    <xmx:ZPorZCqxwwuEpa2mjh4WDlwztpS1H5uiSXkZDmY4EUZaT8XhZpAYCQ>
-    <xmx:ZPorZBsPulsBNyB8imiTYQ-FKgCG1DOW2Vy4NhI2LqUG495349RB8g>
-Feedback-ID: i8771445c:Fastmail
-Received: by mail.messagingengine.com (Postfix) with ESMTPA; Tue,
- 4 Apr 2023 06:22:27 -0400 (EDT)
-From: Maxime Ripard <maxime@cerno.tech>
-Date: Tue, 04 Apr 2023 12:11:00 +0200
-Subject: [PATCH v3 10/65] clk: k210: pll: Add a determine_rate hook
+	id 1pjfXp-001Dy5-2F;
+	Tue, 04 Apr 2023 12:13:51 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 22A1661512;
+	Tue,  4 Apr 2023 12:13:49 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id AEA27C433EF;
+	Tue,  4 Apr 2023 12:13:46 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1680610428;
+	bh=kBLWTzI4Ec3Tgm3PQcE9dHuMDi02IfmCduhDnazZ9YY=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=f/SzTtuPKL+FeY9p/qLiRDcrMowMa5080F1nb9Ne3bZZ8K2QKEvDbZAVp4CFMtwxi
+	 HJLL91Vm99Vm2leQ/VMOD8jAAnC0tbdltFotedxlnBUF99kKJ3JtRll9TD5V2xECJ4
+	 vchGtel3UyYejCJw7NS1FKgEKJLdt4/ASCN1OofD2Z8Cd/pwtlnRTgLVCRTHkp8Z42
+	 UpurcQzf/8UHtwCUXOZEem0LE6wseZMBy/QuPiNaXgFwKoBQmcIxUA81m/N/9aky7R
+	 SPjGv+zGKz2/SfqYQewaZJ5IJa1/fQ71d2UbjX3tbnOY0IWil5UMXmRFf5KUFoQ96h
+	 2koyJkcIBkuAw==
+Message-ID: <ae922f41-63a0-baf3-c204-73d4e8d0fe08@kernel.org>
+Date: Tue, 4 Apr 2023 15:13:44 +0300
 MIME-Version: 1.0
-Message-Id: <20221018-clk-range-checks-fixes-v3-10-9a1358472d52@cerno.tech>
-References: <20221018-clk-range-checks-fixes-v3-0-9a1358472d52@cerno.tech>
-In-Reply-To: <20221018-clk-range-checks-fixes-v3-0-9a1358472d52@cerno.tech>
-To: Michael Turquette <mturquette@baylibre.com>,
-  Stephen Boyd <sboyd@kernel.org>,
-  =?utf-8?q?Andreas_F=C3=A4rber?= <afaerber@suse.de>,
-  Manivannan Sadhasivam <mani@kernel.org>,
-  Nicolas Ferre <nicolas.ferre@microchip.com>,
-  Alexandre Belloni <alexandre.belloni@bootlin.com>,
-  Claudiu Beznea <claudiu.beznea@microchip.com>,
-  Max Filippov <jcmvbkbc@gmail.com>,
-  Charles Keepax <ckeepax@opensource.cirrus.com>,
-  Richard Fitzgerald <rf@opensource.cirrus.com>,
-  Maxime Coquelin <mcoquelin.stm32@gmail.com>,
-  Alexandre Torgue <alexandre.torgue@foss.st.com>,
-  Luca Ceresoli <luca.ceresoli@bootlin.com>,
-  David Lechner <david@lechnology.com>, Sekhar Nori <nsekhar@ti.com>,
-  Abel Vesa <abelvesa@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
-  Sascha Hauer <s.hauer@pengutronix.de>,
-  Pengutronix Kernel Team <kernel@pengutronix.de>,
-  Fabio Estevam <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
-  Matthias Brugger <matthias.bgg@gmail.com>,
-  Geert Uytterhoeven <geert+renesas@glider.be>,
-  Dinh Nguyen <dinguyen@kernel.org>,
-  Peter De Schrijver <pdeschrijver@nvidia.com>,
-  Prashant Gaikwad <pgaikwad@nvidia.com>,
-  Thierry Reding <thierry.reding@gmail.com>,
-  Jonathan Hunter <jonathanh@nvidia.com>,
-  Ulf Hansson <ulf.hansson@linaro.org>,
-  Linus Walleij <linus.walleij@linaro.org>,
- David Airlie <airlied@gmail.com>,  Daniel Vetter <daniel@ffwll.ch>,
- Vinod Koul <vkoul@kernel.org>,
-  Kishon Vijay Abraham I <kishon@kernel.org>,
-  Alessandro Zummo <a.zummo@towertech.it>, Chen-Yu Tsai <wens@csie.org>,
-  Jernej Skrabec <jernej.skrabec@gmail.com>,
-  Samuel Holland <samuel@sholland.org>,
- Liam Girdwood <lgirdwood@gmail.com>,  Mark Brown <broonie@kernel.org>,
- Jaroslav Kysela <perex@perex.cz>,  Takashi Iwai <tiwai@suse.com>,
- Paul Cercueil <paul@crapouillou.net>,  Orson Zhai <orsonzhai@gmail.com>,
-  Baolin Wang <baolin.wang@linux.alibaba.com>,
-  Chunyan Zhang <zhang.lyra@gmail.com>
-Cc: linux-clk@vger.kernel.org, linux-kernel@vger.kernel.org, 
- AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, 
- linux-arm-kernel@lists.infradead.org, linux-actions@lists.infradead.org, 
- patches@opensource.cirrus.com, linux-stm32@st-md-mailman.stormreply.com, 
- linux-mediatek@lists.infradead.org, linux-renesas-soc@vger.kernel.org, 
- linux-tegra@vger.kernel.org, dri-devel@lists.freedesktop.org, 
- linux-phy@lists.infradead.org, linux-rtc@vger.kernel.org, 
- linux-sunxi@lists.linux.dev, alsa-devel@alsa-project.org, 
- linux-mips@vger.kernel.org, Maxime Ripard <maxime@cerno.tech>
-X-Mailer: b4 0.12.1
-X-Developer-Signature: v=1; a=openpgp-sha256; l=3674; i=maxime@cerno.tech;
- h=from:subject:message-id; bh=XeSprVIIyV/zrzbwClEFi3glvsdpjWNha9xD/jrwm8I=;
- b=owGbwMvMwCX2+D1vfrpE4FHG02pJDCna37fW3go1M1YpvFiplc2y3N3T39BP8sDt/8drHnrdeOAd
- sjqpo5SFQYyLQVZMkSVG2HxJ3KlZrzvZ+ObBzGFlAhnCwMUpABOZWcfwv3hir+py1csVXsffsRyWLG
- yXT2T+lcsey7gyReX9qdn/ZRgZ3vZwcO1f/yonqulLnU7ar6tXe5ItLRpfifwQMRD70PObBwA=
-X-Developer-Key: i=maxime@cerno.tech; a=openpgp;
- fpr=BE5675C37E818C8B5764241C254BCFC56BF6CE8D
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.9.0
+Subject: Re: [PATCH v2 0/3] PHY-GMII-SEL: Add support for SGMII mode
+Content-Language: en-US
+To: Siddharth Vadapalli <s-vadapalli@ti.com>, vkoul@kernel.org,
+ kishon@kernel.org
+Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, srk@ti.com
+References: <20230309063514.398705-1-s-vadapalli@ti.com>
+From: Roger Quadros <rogerq@kernel.org>
+In-Reply-To: <20230309063514.398705-1-s-vadapalli@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230404_032229_957346_25252D56 
-X-CRM114-Status: GOOD (  19.60  )
+X-CRM114-CacheID: sfid-20230404_051349_769035_367946D8 
+X-CRM114-Status: GOOD (  14.35  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -155,98 +76,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The K210 PLL clock implements a mux with a set_parent hook, but
-doesn't provide a determine_rate implementation.
 
-This is a bit odd, since set_parent() is there to, as its name implies,
-change the parent of a clock. However, the most likely candidate to
-trigger that parent change is a call to clk_set_rate(), with
-determine_rate() figuring out which parent is the best suited for a
-given rate.
 
-The other trigger would be a call to clk_set_parent(), but it's far less
-used, and it doesn't look like there's any obvious user for that clock.
+On 09/03/2023 08:35, Siddharth Vadapalli wrote:
+> Hello,
+> 
+> This series adds support to configure the CPSW MAC's PHY in SGMII mode.
+> Also, SGMII mode is enabled for TI's J7200 and J721E SoCs.
+> 
+> Changes from v1:
+> 1. Add "break" statement within "case PHY_INTERFACE_MODE_SGMII".
+> 2. Add newline before "default" case.
+> 3. Update commit message of patch 1/3 to follow the existing convention.
+> 
+> v1:
+> https://lore.kernel.org/r/20230309062237.389444-1-s-vadapalli@ti.com/
+> 
+> Siddharth Vadapalli (3):
+>   phy: ti: gmii-sel: Add support for SGMII mode
+>   phy: ti: gmii-sel: Enable SGMII mode for J7200
+>   phy: ti: gmii-sel: Enable SGMII mode for J721E
+> 
+>  drivers/phy/ti/phy-gmii-sel.c | 12 ++++++++++--
+>  1 file changed, 10 insertions(+), 2 deletions(-)
+> 
 
-So, the set_parent hook is effectively unused, possibly because of an
-oversight. However, it could also be an explicit decision by the
-original author to avoid any reparenting but through an explicit call to
-clk_set_parent().
+For the series:
 
-The latter case would be equivalent to setting the flag
-CLK_SET_RATE_NO_REPARENT, together with setting our determine_rate hook
-to __clk_mux_determine_rate(). Indeed, if no determine_rate
-implementation is provided, clk_round_rate() (through
-clk_core_round_rate_nolock()) will call itself on the parent if
-CLK_SET_RATE_PARENT is set, and will not change the clock rate
-otherwise. __clk_mux_determine_rate() has the exact same behavior when
-CLK_SET_RATE_NO_REPARENT is set.
-
-And if it was an oversight, then we are at least explicit about our
-behavior now and it can be further refined down the line.
-
-Signed-off-by: Maxime Ripard <maxime@cerno.tech>
----
- drivers/clk/clk-k210.c | 12 ++++++++----
- 1 file changed, 8 insertions(+), 4 deletions(-)
-
-diff --git a/drivers/clk/clk-k210.c b/drivers/clk/clk-k210.c
-index 4eed667eddaf..a96ab8611e1f 100644
---- a/drivers/clk/clk-k210.c
-+++ b/drivers/clk/clk-k210.c
-@@ -537,6 +537,7 @@ static const struct clk_ops k210_pll2_ops = {
- 	.disable	= k210_pll_disable,
- 	.is_enabled	= k210_pll_is_enabled,
- 	.recalc_rate	= k210_pll_get_rate,
-+	.determine_rate = __clk_mux_determine_rate,
- 	.set_parent	= k210_pll2_set_parent,
- 	.get_parent	= k210_pll2_get_parent,
- };
-@@ -544,7 +545,8 @@ static const struct clk_ops k210_pll2_ops = {
- static int __init k210_register_pll(struct device_node *np,
- 				    struct k210_sysclk *ksc,
- 				    enum k210_pll_id pllid, const char *name,
--				    int num_parents, const struct clk_ops *ops)
-+				    int num_parents, const struct clk_ops *ops,
-+				    unsigned long flags)
- {
- 	struct k210_pll *pll = &ksc->plls[pllid];
- 	struct clk_init_data init = {};
-@@ -558,6 +560,7 @@ static int __init k210_register_pll(struct device_node *np,
- 	init.parent_data = parent_data;
- 	init.num_parents = num_parents;
- 	init.ops = ops;
-+	init.flags = flags;
- 
- 	pll->hw.init = &init;
- 	pll->ksc = ksc;
-@@ -574,19 +577,20 @@ static int __init k210_register_plls(struct device_node *np,
- 		k210_init_pll(ksc->regs, i, &ksc->plls[i]);
- 
- 	/* PLL0 and PLL1 only have IN0 as parent */
--	ret = k210_register_pll(np, ksc, K210_PLL0, "pll0", 1, &k210_pll_ops);
-+	ret = k210_register_pll(np, ksc, K210_PLL0, "pll0", 1, &k210_pll_ops, 0);
- 	if (ret) {
- 		pr_err("%pOFP: register PLL0 failed\n", np);
- 		return ret;
- 	}
--	ret = k210_register_pll(np, ksc, K210_PLL1, "pll1", 1, &k210_pll_ops);
-+	ret = k210_register_pll(np, ksc, K210_PLL1, "pll1", 1, &k210_pll_ops, 0);
- 	if (ret) {
- 		pr_err("%pOFP: register PLL1 failed\n", np);
- 		return ret;
- 	}
- 
- 	/* PLL2 has IN0, PLL0 and PLL1 as parents */
--	ret = k210_register_pll(np, ksc, K210_PLL2, "pll2", 3, &k210_pll2_ops);
-+	ret = k210_register_pll(np, ksc, K210_PLL2, "pll2", 3, &k210_pll2_ops,
-+				CLK_SET_RATE_NO_REPARENT);
- 	if (ret) {
- 		pr_err("%pOFP: register PLL2 failed\n", np);
- 		return ret;
-
--- 
-2.39.2
-
+Reviewed-by: Roger Quadros <rogerq@kernel.org>
 
 -- 
 linux-phy mailing list
