@@ -4,52 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4F861C6FD1D
-	for <linux-phy@archiver.kernel.org>; Tue,  4 Apr 2023 16:49:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9FAC8C6FD1D
+	for <linux-phy@archiver.kernel.org>; Tue,  4 Apr 2023 16:49:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=u8El2HkbH8+7NeIh5HupoyE9UmI0lsigz0TlmGU7Njc=; b=w7Y+HhRlpbkYG6
-	WoCal7+g+7MVHvL7LlyJZ+AtCRQv4/zz7Halm0QvlWrvleVgE43XA2tJqNJXSgVYLKTyn+lXwJTcz
-	YVhpNWEPfALzJgUOZW/DTkrIlqJFyXZGyiyu1k22+sYJBu+fik4vqzJw5HwpfXmWZMLDPjTym7Cxd
-	l192xKmJXWzcPTihJGyKEOsySfN+OIBmQ8V7E6GSz0y2ovVBJq9WAYwt5+AcaDvUowcD6R5KoVsZb
-	BwMokAwJXay40YfYDxQdEjMhwJi8fPMUIHCVDpDRcGYM1BZghGIqmlsgiOynfuc1qYMB8lWC8XAbB
-	KNv2EZL0SC4DaB5reJcA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=LR6zjmF4J5LAnCVWgoe0cYziQ+zWonr550iXo0ztuac=; b=JLqMJLB6E1yZUi
+	uZw49rTR4MNtm3h+w1zHIdtdI2xTBMJL4mM+0jk4P5eCNvXkavSXLWcSZXhtCRWqu3HMQ6ZKcV05H
+	pk8rWEGneJIWUuAceD3p1zqWw46u2aduHsD6pthvezbydGZUZiRyqaGptt8HJa83uDVwZsu/JPLWI
+	M0BfIf3QUx44+sp5YgnHI3MjTzBHdEV6imWufhP7FtT8Sf170i/3QKbZLjsvgKLOJ0WqmRbg0jKxX
+	d/bdix7p8uaVqxy6oKZuF11DiAApXOSw3t0hMAgMgNqLrEqA612g6+iQRXM9y4Z502rKrHPNe7m7q
+	3ZQgY2G+0H+XpnkpyVjA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pjjqD-002Gew-2c;
-	Tue, 04 Apr 2023 16:49:05 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1pjjqL-002Ggy-0u;
+	Tue, 04 Apr 2023 16:49:13 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pjjqA-002GeB-1d
+	id 1pjjqI-002Gfk-1O
 	for linux-phy@lists.infradead.org;
-	Tue, 04 Apr 2023 16:49:04 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 334E5hE9000809;
-	Tue, 4 Apr 2023 16:48:53 GMT
+	Tue, 04 Apr 2023 16:49:11 +0000
+Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 334EdhlU016999;
+	Tue, 4 Apr 2023 16:49:02 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
- subject : date : message-id : mime-version : content-type; s=qcppdkim1;
- bh=xq5sbhEZFEE7jSOavNjgMoKUDELZyorIuW0tEx2/Ho8=;
- b=bNi5vFsRqC1WGWHdGg4HKnWEo5RsDAQCLAE8AfKBhUY49vY/DaxOPczRzpj0DZYhlKP6
- +McpLUAXTsKC4KCq1eiv/NzO+iYgV6EPI20Dkc9+6zpLKUhhVyraJqPfubEM430qEh+l
- qhPcJ8GHXy2ADCzA4YmgddIk5L0HrVNgJEFx5jcTwmspIaNG8WHZJ8EbioiwHlaDtK1n
- LCMfUwz7SU3b+Hg+sgQ75NstKAn2EBJJ7S0KbsR5jp/AodL53iebetv/LBVeIKqtYFzf
- fdkMteobzUg94OerAWphLQEiqMlBJwSlFekt+Zzs55HUHQI5ZHrZXBSXN1HQMhB4+aU3 +Q== 
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3prnbt0fh6-1
+ subject : date : message-id : in-reply-to : references : mime-version :
+ content-type; s=qcppdkim1;
+ bh=TXumSIg1JnTwi0d2UfVx6RFtjQMCEgTbELbinV0XZRw=;
+ b=gTiDBoGU+FaTzsUF75JpYlxn9XIg8YBWLKS94DMK2S3C+qgX8s4V0MZEwg4fl/Hiww5D
+ 2ObqoEwOfHL2gOjDcOxXanrUqFx09TMrI5K+MV8AtQJkeqPruyTOJmtDBlnN1WBDLX5/
+ ADzbT13gaG9gvE6IygAfJMNlJkM8Hp3LbY7gJ9Jhl37PlJ30vj7X+REbX+uPM/yevEze
+ jSscmfqjVCeONoTSUTF98gJUgvgBrNzcDlu/lW20bTzTmA8BiFtBprtGjn+eIaWNh8TW
+ AT2INIO9n/xhglefpqOt6cV0QY7T8YDceNiXFbHH6Co59SQJzuJ1jJi+GvEg41MYnTnr MQ== 
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3prnusgdc6-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 04 Apr 2023 16:48:53 +0000
+	Tue, 04 Apr 2023 16:49:02 +0000
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 334GmqML005062
+	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 334Gn1gF004627
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 4 Apr 2023 16:48:52 GMT
+	Tue, 4 Apr 2023 16:49:01 GMT
 Received: from devipriy-linux.qualcomm.com (10.80.80.8) by
  nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.986.42; Tue, 4 Apr 2023 09:48:43 -0700
+ 15.2.986.42; Tue, 4 Apr 2023 09:48:52 -0700
 From: Devi Priya <quic_devipriy@quicinc.com>
 To: <agross@kernel.org>, <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
         <lpieralisi@kernel.org>, <kw@linux.com>, <robh@kernel.org>,
@@ -64,29 +65,31 @@ CC: <quic_srichara@quicinc.com>, <quic_gokulsri@quicinc.com>,
         <quic_sjaganat@quicinc.com>, <quic_kathirav@quicinc.com>,
         <quic_arajkuma@quicinc.com>, <quic_anusha@quicinc.com>,
         <quic_ipkumar@quicinc.com>
-Subject: [PATCH V2 0/9] Add PCIe support for IPQ9574
-Date: Tue, 4 Apr 2023 22:18:19 +0530
-Message-ID: <20230404164828.8031-1-quic_devipriy@quicinc.com>
+Subject: [PATCH V2 1/9] dt-bindings: clock: Add PCIe pipe clock definitions
+Date: Tue, 4 Apr 2023 22:18:20 +0530
+Message-ID: <20230404164828.8031-2-quic_devipriy@quicinc.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20230404164828.8031-1-quic_devipriy@quicinc.com>
+References: <20230404164828.8031-1-quic_devipriy@quicinc.com>
 MIME-Version: 1.0
 X-Originating-IP: [10.80.80.8]
 X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: Wy0ULt0xuLpRLu0KwbayI96Plg9KvEmW
-X-Proofpoint-GUID: Wy0ULt0xuLpRLu0KwbayI96Plg9KvEmW
+X-Proofpoint-GUID: Jr9WBnvHd376hiqRDNzjgckApGGVlkC7
+X-Proofpoint-ORIG-GUID: Jr9WBnvHd376hiqRDNzjgckApGGVlkC7
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.254,Aquarius:18.0.942,Hydra:6.0.573,FMLib:17.11.170.22
  definitions=2023-04-04_08,2023-04-04_05,2023-02-09_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
- malwarescore=0 suspectscore=0 lowpriorityscore=0 mlxlogscore=628
- bulkscore=0 impostorscore=0 spamscore=0 clxscore=1011 adultscore=0
- mlxscore=0 phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0
+ priorityscore=1501 impostorscore=0 suspectscore=0 bulkscore=0 mlxscore=0
+ clxscore=1015 malwarescore=0 mlxlogscore=961 adultscore=0 phishscore=0
+ lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.12.0-2303200000 definitions=main-2304040155
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230404_094902_551621_9A37E47B 
-X-CRM114-Status: GOOD (  16.10  )
+X-CRM114-CacheID: sfid-20230404_094910_587919_4DC136F5 
+X-CRM114-Status: GOOD (  12.78  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,46 +106,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-PCIe0, PCIe1, PCIe2, PCIe3 (and corresponding PHY) devices
-are found on IPQ9574 platform. The PCIe0 & PCIe1 are 1-lane
-Gen3 host whereas PCIe2 & PCIe3 are 2-lane Gen3 host.
+Add PCIe pipe clock definitions for IPQ9574 SoC
 
-This series adds support for enabling the same
+Co-developed-by: Anusha Rao <quic_anusha@quicinc.com>
+Signed-off-by: Anusha Rao <quic_anusha@quicinc.com>
+Signed-off-by: Devi Priya <quic_devipriy@quicinc.com>
+---
+ Changes in V2:
+	- Moved the pipe clock definitions to the end
 
-DTS patch is based on the below series
-https://lore.kernel.org/linux-arm-msm/20230329053726.14860-1-quic_kathirav@quicinc.com/
+ include/dt-bindings/clock/qcom,ipq9574-gcc.h | 4 ++++
+ 1 file changed, 4 insertions(+)
 
-Changes in V2:
-	- Reordered the patches and splitted the board DT changes
-	  into a separate patch as suggested
-	- Detailed change logs are added to the respective patches
-
-Devi Priya (9):
-  dt-bindings: clock: Add PCIe pipe clock definitions
-  clk: qcom: gcc-ipq9574: Add PCIe pipe clocks
-  dt-bindings: phy: qcom,qmp-pcie: Add ipq9574 bindings
-  phy: qcom-qmp-pcie: Add support for IPQ9574 g3x1 and g3x2 PCIEs
-  dt-bindings: PCI: qcom: Add IPQ9574
-  dt-bindings: pinctrl: qcom: Add few missing functions
-  arm64: dts: qcom: ipq9574: Add PCIe PHYs and controller nodes
-  arm64: dts: qcom: ipq9574: Enable PCIe PHYs and controllers
-  PCI: qcom: Add support for IPQ9574
-
- .../devicetree/bindings/pci/qcom,pcie.yaml    |  48 +++
- .../phy/qcom,sc8280xp-qmp-pcie-phy.yaml       | 103 ++++-
- .../bindings/pinctrl/qcom,ipq9574-tlmm.yaml   |   6 +-
- arch/arm64/boot/dts/qcom/ipq9574-rdp433.dts   |  62 +++
- arch/arm64/boot/dts/qcom/ipq9574.dtsi         | 375 +++++++++++++++++-
- drivers/clk/qcom/gcc-ipq9574.c                |  76 ++++
- drivers/pci/controller/dwc/pcie-qcom.c        |  62 ++-
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c      | 332 ++++++++++++++++
- .../phy/qualcomm/phy-qcom-qmp-pcs-pcie-v5.h   |  26 +-
- .../phy/qualcomm/phy-qcom-qmp-qserdes-pll.h   |   3 +
- include/dt-bindings/clock/qcom,ipq9574-gcc.h  |   4 +
- 11 files changed, 1046 insertions(+), 51 deletions(-)
-
-
-base-commit: 31bd35b66249699343d2416658f57e97314a433a
+diff --git a/include/dt-bindings/clock/qcom,ipq9574-gcc.h b/include/dt-bindings/clock/qcom,ipq9574-gcc.h
+index 5a2961bfe893..2d7b46027ce9 100644
+--- a/include/dt-bindings/clock/qcom,ipq9574-gcc.h
++++ b/include/dt-bindings/clock/qcom,ipq9574-gcc.h
+@@ -210,4 +210,8 @@
+ #define GCC_SNOC_PCIE1_1LANE_S_CLK			201
+ #define GCC_SNOC_PCIE2_2LANE_S_CLK			202
+ #define GCC_SNOC_PCIE3_2LANE_S_CLK			203
++#define GCC_PCIE0_PIPE_CLK				204
++#define GCC_PCIE1_PIPE_CLK				205
++#define GCC_PCIE2_PIPE_CLK				206
++#define GCC_PCIE3_PIPE_CLK				207
+ #endif
 -- 
 2.17.1
 
