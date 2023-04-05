@@ -4,41 +4,41 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EA838C76188
-	for <linux-phy@archiver.kernel.org>; Wed,  5 Apr 2023 11:21:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 51886C76188
+	for <linux-phy@archiver.kernel.org>; Wed,  5 Apr 2023 11:21:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gK8yUhdSWQDVvnVZvScRuDV0/06RX5dBBhcIRqbdZys=; b=Lly9KVfme9Axce
-	UiuXWjtYycJtTUyqCT+43xrzcHcPzaWhYqTtgBezGDjcbcFRtVbP0P4PL1JOWBLYvz6ypOXPqzViK
-	XaU4nv1gFKrqGr+zQVhGsNoS2mYXf2WL/fNKYwbcOJN0IbJQumHoeFGmChtVkVslk58Rtc20X9DGa
-	lan1Q864OglAuTnM2ateOvoZzO3VkaPz1jTwPQmkg6QKnaCajoXO+9qsMZAHNsXuOi9HwhHmiBlrn
-	F+Mwmu+6XaO14iP6lRxWEp3s0BrmmzfHl5E+0zW2EBdT0KXzMipAcVkcRtNkPtyNcoJAsiEr1QfzR
-	CttjAf/Yt3EC9PylRDHg==;
+	List-Owner; bh=DSg4qxAZIjsLkkgKB5QvQE9tBaKPOmz1pFJDOGBmXN0=; b=3J4h6DjbUA1P/1
+	lepcc0FsDW/ZZkQk1yyFppTh7bGRUpyY2VHVKBTjqLv7Vy1YyqppaoNOtWYGKlFyiyBbuCDNs4wRp
+	Jo2AKblXNmtj3p7KSa51/gL6erl8miLg6D3ed1PCoLSWdByHFgVscLMc5bi67IwTY3uzEsjJNyysb
+	22er1o4WKrXnCt/FqDDRrtDwt9bXEHZhG1UsxOn0gNkLq0TJ1TVR1KkM6lSctcM+oZ4DWiWyecdGQ
+	f+Yt7BdsaVEgrfBMNXZ/IjLdWql2crd96Dwg9I9WSFeCNHQCN2bIVv+N4zxSl2If3M01Cr25wcaLR
+	At/jltpmyIqEVQUf2aug==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pk1Cu-004FWJ-1v;
-	Wed, 05 Apr 2023 11:21:40 +0000
+	id 1pk1Cx-004FXe-36;
+	Wed, 05 Apr 2023 11:21:43 +0000
 Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pk1Cr-004FVP-2H
+	id 1pk1Cv-004FWV-2V
 	for linux-phy@lists.infradead.org;
-	Wed, 05 Apr 2023 11:21:39 +0000
+	Wed, 05 Apr 2023 11:21:43 +0000
 Received: from drehscheibe.grey.stw.pengutronix.de ([2a0a:edc0:0:c01:1d::a2])
 	by metis.ext.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
 	(Exim 4.92)
 	(envelope-from <jzi@pengutronix.de>)
-	id 1pk1Ce-0004S2-00; Wed, 05 Apr 2023 13:21:24 +0200
+	id 1pk1Ce-0004S4-00; Wed, 05 Apr 2023 13:21:24 +0200
 Received: from [2a0a:edc0:0:1101:1d::39] (helo=dude03.red.stw.pengutronix.de)
 	by drehscheibe.grey.stw.pengutronix.de with esmtp (Exim 4.94.2)
 	(envelope-from <jzi@pengutronix.de>)
-	id 1pk1Cc-0098SJ-2v; Wed, 05 Apr 2023 13:21:22 +0200
+	id 1pk1Cc-0098SP-HB; Wed, 05 Apr 2023 13:21:22 +0200
 Received: from jzi by dude03.red.stw.pengutronix.de with local (Exim 4.94.2)
 	(envelope-from <jzi@pengutronix.de>)
-	id 1pk1Cb-005Gtt-BZ; Wed, 05 Apr 2023 13:21:21 +0200
+	id 1pk1Cb-005Gtp-Ab; Wed, 05 Apr 2023 13:21:21 +0200
 From: Johannes Zink <j.zink@pengutronix.de>
 To: vkoul@kernel.org,
 	kishon@kernel.org,
@@ -56,9 +56,9 @@ To: vkoul@kernel.org,
 	linux-kernel@vger.kernel.org,
 	devicetree@vger.kernel.org
 Cc: j.zink@pengutronix.de
-Subject: [PATCH 2/2] phy: fsl-imx8mp-usb: add support for phy tuning
-Date: Wed,  5 Apr 2023 13:21:18 +0200
-Message-Id: <20230405112118.1256151-3-j.zink@pengutronix.de>
+Subject: [PATCH 1/2] dt-bindings: phy: imx8mq-usb: add phy tuning properties
+Date: Wed,  5 Apr 2023 13:21:17 +0200
+Message-Id: <20230405112118.1256151-2-j.zink@pengutronix.de>
 X-Mailer: git-send-email 2.39.2
 In-Reply-To: <20230405112118.1256151-1-j.zink@pengutronix.de>
 References: <20230405112118.1256151-1-j.zink@pengutronix.de>
@@ -68,8 +68,9 @@ X-SA-Exim-Mail-From: jzi@pengutronix.de
 X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de); SAEximRunCond expanded to false
 X-PTX-Original-Recipient: linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230405_042137_740661_A3AE9E91 
-X-CRM114-Status: GOOD (  14.54  )
+X-CRM114-CacheID: sfid-20230405_042141_813848_F66EBC24 
+X-CRM114-Status: UNSURE (   7.49  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,178 +87,64 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Li Jun <jun.li@nxp.com>
+Add optional properties for tuning of usb phy.
 
-Add USB PHY parameter tuning for USB certifications.
-
-Reviewed-by: Haibo Chen <haibo.chen@nxp.com>
-Signed-off-by: Li Jun <jun.li@nxp.com>
-[j.zink: ported to v6.3-rc1 from NXP downstream repo + cleanups]
 Signed-off-by: Johannes Zink <j.zink@pengutronix.de>
 ---
- drivers/phy/freescale/phy-fsl-imx8mq-usb.c | 124 +++++++++++++++++++++
- 1 file changed, 124 insertions(+)
+ .../bindings/phy/fsl,imx8mq-usb-phy.yaml      | 40 +++++++++++++++++++
+ 1 file changed, 40 insertions(+)
 
-diff --git a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c b/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
-index a29b4a6f7c24..ee1975aaab7e 100644
---- a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
-+++ b/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
-@@ -27,17 +27,137 @@
- #define PHY_CTRL2_TXENABLEN0		BIT(8)
- #define PHY_CTRL2_OTG_DISABLE		BIT(9)
+diff --git a/Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.yaml b/Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.yaml
+index e6f9f5540cc3..f452a41b4f32 100644
+--- a/Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.yaml
+@@ -35,6 +35,46 @@ properties:
+     description:
+       A phandle to the regulator for USB VBUS.
  
-+#define PHY_CTRL3			0xc
-+#define PHY_CTRL3_COMPDISTUNE_MASK	GENMASK(2, 0)
-+#define PHY_CTRL3_TXPREEMP_TUNE_MASK	GENMASK(16, 15)
-+#define PHY_CTRL3_TXRISE_TUNE_MASK	GENMASK(21, 20)
-+#define PHY_CTRL3_TXVREF_TUNE_MASK	GENMASK(25, 22)
-+#define PHY_CTRL3_TX_VBOOST_LEVEL_MASK	GENMASK(31, 29)
++  fsl,phy-tx-vref-tune:
++    description:
++      HS DC Voltage level adjustment
++    $ref: /schemas/types.yaml#/definitions/uint32
++    enum: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
 +
-+#define PHY_CTRL4			0x10
-+#define PHY_CTRL4_PCS_TX_DEEMPH_3P5DB_MASK	GENMASK(20, 15)
++  fsl,phy-tx-rise-tune:
++    description:
++      HS Transmitter Rise/Fall Time Adjustment
++    $ref: /schemas/types.yaml#/definitions/uint32
++    enum: [0, 1, 2, 3]
 +
-+#define PHY_CTRL5			0x14
-+#define PHY_CTRL5_DMPWD_OVERRIDE_SEL	BIT(23)
-+#define PHY_CTRL5_DMPWD_OVERRIDE	BIT(22)
-+#define PHY_CTRL5_DPPWD_OVERRIDE_SEL	BIT(21)
-+#define PHY_CTRL5_DPPWD_OVERRIDE	BIT(20)
-+#define PHY_CTRL5_PCS_TX_SWING_FULL_MASK	GENMASK(6, 0)
++  fsl,phy-tx-preemp-amp-tune:
++    description:
++      HS Transmitter Pre-Emphasis Current Control
++    $ref: /schemas/types.yaml#/definitions/uint32
++    enum: [0, 1, 2, 3]
 +
- #define PHY_CTRL6			0x18
- #define PHY_CTRL6_ALT_CLK_EN		BIT(1)
- #define PHY_CTRL6_ALT_CLK_SEL		BIT(0)
- 
-+#define PHY_TUNE_DEFAULT		0xffffffff
++  fsl,phy-tx-vboost-level:
++    description:
++      TX Voltage Boost Level
++    $ref: /schemas/types.yaml#/definitions/uint32
++    enum: [0, 2, 3]
 +
- struct imx8mq_usb_phy {
- 	struct phy *phy;
- 	struct clk *clk;
- 	void __iomem *base;
- 	struct regulator *vbus;
-+	u32 pcs_tx_swing_full;
-+	u32 pcs_tx_deemph_3p5db;
-+	u32 tx_vref_tune;
-+	u32 tx_rise_tune;
-+	u32 tx_preemp_amp_tune;
-+	u32 tx_vboost_level;
-+	u32 comp_dis_tune;
- };
- 
-+static void imx8m_get_phy_tuning_data(struct imx8mq_usb_phy *imx_phy)
-+{
-+	struct device *dev = imx_phy->phy->dev.parent;
++  fsl,phy-comp-dis-tune:
++    description:
++      Disconnect Threshold Adjustment
++    $ref: /schemas/types.yaml#/definitions/uint32
++    enum: [0, 1, 2, 3, 4, 5, 6, 7]
 +
-+	if (device_property_read_u32(dev, "fsl,phy-tx-vref-tune",
-+				     &imx_phy->tx_vref_tune))
-+		imx_phy->tx_vref_tune = PHY_TUNE_DEFAULT;
++  fsl,phy-pcs-tx-deemph-3p5db:
++    description:
++      TX De-Emphasis at 3.5 dB
++    $ref: /schemas/types.yaml#/definitions/uint32
 +
-+	if (device_property_read_u32(dev, "fsl,phy-tx-rise-tune",
-+				     &imx_phy->tx_rise_tune))
-+		imx_phy->tx_rise_tune = PHY_TUNE_DEFAULT;
++  fsl,phy-pcs-tx-swing-full:
++    description:
++      TX Amplitude
++    $ref: /schemas/types.yaml#/definitions/uint32
 +
-+	if (device_property_read_u32(dev, "fsl,phy-tx-preemp-amp-tune",
-+				     &imx_phy->tx_preemp_amp_tune))
-+		imx_phy->tx_preemp_amp_tune = PHY_TUNE_DEFAULT;
-+
-+	if (device_property_read_u32(dev, "fsl,phy-tx-vboost-level",
-+				     &imx_phy->tx_vboost_level))
-+		imx_phy->tx_vboost_level = PHY_TUNE_DEFAULT;
-+
-+	if (device_property_read_u32(dev, "fsl,phy-comp-dis-tune",
-+				     &imx_phy->comp_dis_tune))
-+		imx_phy->comp_dis_tune = PHY_TUNE_DEFAULT;
-+
-+	if (device_property_read_u32(dev, "fsl,pcs-tx-deemph-3p5db",
-+				     &imx_phy->pcs_tx_deemph_3p5db))
-+		imx_phy->pcs_tx_deemph_3p5db = PHY_TUNE_DEFAULT;
-+
-+	if (device_property_read_u32(dev, "fsl,phy-pcs-tx-swing-full",
-+				     &imx_phy->pcs_tx_swing_full))
-+		imx_phy->pcs_tx_swing_full = PHY_TUNE_DEFAULT;
-+}
-+
-+static void imx8m_phy_tune(struct imx8mq_usb_phy *imx_phy)
-+{
-+	u32 value;
-+
-+	/* PHY tuning */
-+	if (imx_phy->pcs_tx_deemph_3p5db != PHY_TUNE_DEFAULT) {
-+		value = readl(imx_phy->base + PHY_CTRL4);
-+		value &= ~PHY_CTRL4_PCS_TX_DEEMPH_3P5DB_MASK;
-+		value |= FIELD_PREP(PHY_CTRL4_PCS_TX_DEEMPH_3P5DB_MASK,
-+				   imx_phy->pcs_tx_deemph_3p5db);
-+		writel(value, imx_phy->base + PHY_CTRL4);
-+	}
-+
-+	if (imx_phy->pcs_tx_swing_full != PHY_TUNE_DEFAULT) {
-+		value = readl(imx_phy->base + PHY_CTRL5);
-+		value |= FIELD_PREP(PHY_CTRL5_PCS_TX_SWING_FULL_MASK,
-+				   imx_phy->pcs_tx_swing_full);
-+		writel(value, imx_phy->base + PHY_CTRL5);
-+	}
-+
-+	if ((imx_phy->tx_vref_tune & imx_phy->tx_rise_tune &
-+	     imx_phy->tx_preemp_amp_tune & imx_phy->comp_dis_tune &
-+	     imx_phy->tx_vboost_level) == PHY_TUNE_DEFAULT)
-+		/* If all are the default values, no need update. */
-+		return;
-+
-+	value = readl(imx_phy->base + PHY_CTRL3);
-+
-+	if (imx_phy->tx_vref_tune != PHY_TUNE_DEFAULT) {
-+		value &= ~PHY_CTRL3_TXVREF_TUNE_MASK;
-+		value |= FIELD_PREP(PHY_CTRL3_TXVREF_TUNE_MASK,
-+				   imx_phy->tx_vref_tune);
-+	}
-+
-+	if (imx_phy->tx_rise_tune != PHY_TUNE_DEFAULT) {
-+		value &= ~PHY_CTRL3_TXRISE_TUNE_MASK;
-+		value |= FIELD_PREP(PHY_CTRL3_TXRISE_TUNE_MASK,
-+				    imx_phy->tx_rise_tune);
-+	}
-+
-+	if (imx_phy->tx_preemp_amp_tune != PHY_TUNE_DEFAULT) {
-+		value &= ~PHY_CTRL3_TXPREEMP_TUNE_MASK;
-+		value |= FIELD_PREP(PHY_CTRL3_TXPREEMP_TUNE_MASK,
-+				imx_phy->tx_preemp_amp_tune);
-+	}
-+
-+	if (imx_phy->comp_dis_tune != PHY_TUNE_DEFAULT) {
-+		value &= ~PHY_CTRL3_COMPDISTUNE_MASK;
-+		value |= FIELD_PREP(PHY_CTRL3_COMPDISTUNE_MASK,
-+				    imx_phy->comp_dis_tune);
-+	}
-+
-+	if (imx_phy->tx_vboost_level != PHY_TUNE_DEFAULT) {
-+		value &= ~PHY_CTRL3_TX_VBOOST_LEVEL_MASK;
-+		value |= FIELD_PREP(PHY_CTRL3_TX_VBOOST_LEVEL_MASK,
-+				    imx_phy->tx_vboost_level);
-+	}
-+
-+	writel(value, imx_phy->base + PHY_CTRL3);
-+}
-+
- static int imx8mq_usb_phy_init(struct phy *phy)
- {
- 	struct imx8mq_usb_phy *imx_phy = phy_get_drvdata(phy);
-@@ -99,6 +219,8 @@ static int imx8mp_usb_phy_init(struct phy *phy)
- 	value &= ~(PHY_CTRL1_RESET | PHY_CTRL1_ATERESET);
- 	writel(value, imx_phy->base + PHY_CTRL1);
- 
-+	imx8m_phy_tune(imx_phy);
-+
- 	return 0;
- }
- 
-@@ -182,6 +304,8 @@ static int imx8mq_usb_phy_probe(struct platform_device *pdev)
- 
- 	phy_set_drvdata(imx_phy->phy, imx_phy);
- 
-+	imx8m_get_phy_tuning_data(imx_phy);
-+
- 	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
- 
- 	return PTR_ERR_OR_ZERO(phy_provider);
+ required:
+   - compatible
+   - reg
 -- 
 2.39.2
 
