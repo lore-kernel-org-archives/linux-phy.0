@@ -4,71 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 36D89C7619A
-	for <linux-phy@archiver.kernel.org>; Wed,  5 Apr 2023 06:44:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 46734C77B70
+	for <linux-phy@archiver.kernel.org>; Wed,  5 Apr 2023 06:47:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0qLCTdFMpT5jPk2VLcSS7uJv1fefRO3IRRB4sw946VQ=; b=Cs26lXhCRWpJ7S
-	AvDwFSDtfH1Fu3dFae48ZTvqljCtJFA/2s8GPCnIoM3ZCLhoWdY2aIOdbG1AI0/2RYG0YrkCkb76c
-	0UYEBXVI1pCqQuiEt+KVZpTVVbrPVS14ZA8/7HOZcwVhI6iA3fG+/Y6sZMAb9PMofQ/fyjr23bi4S
-	1HhAn1FWytEWjqHrp9MBdAPZ5FOvydinkKP76BUhsUc0acE+XH4mcG7UOeQ80dolwMlCtI/aTR3Uy
-	apEEm7wA0rmXFSW5aGC1Fl4LnAlhKL5/bY9zbx1dvAGdnB392bYkWX/sLEOPpcHlirGVg+EgYFGXA
-	btoB5y7fG07iajaG6sbg==;
+	List-Owner; bh=R9e0aDZyyhecAI7LLf23TlTiVFlHuCLG3h1uUO3ncts=; b=juoyeFYpHJW3i8
+	NMlIw3bGeGrdRPThQnCUQsJxnyh0Ry82HAHy/kbFiflVCDlzj9hcTNT+im9s787qAKe6FSPxhFhY3
+	9t7gFpnwTkgFKc7GNLcz3zRqdV3ql+/yaVHZxOpd542xMJI9qYqVeQdtbwzOd/67T7moLtRbwjV3k
+	dzNascFyB3HcWMFAvr6YeV7YcHpYkSwS/fhWaU+jndcy1lqmFpNHkVpibOXHyHTvDdz3qj8UjiZOO
+	tqq/mROAQ1nKG+evRoz7uA2bPF2NYJWDO/Vbd09e0j6B8m6C+hbqN6zma+p5Ii2sqMJdG564Hg4dk
+	8o0j6lyXseaVaYwHZeCA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pjwse-003XaD-2H;
-	Wed, 05 Apr 2023 06:44:28 +0000
-Received: from mail-ed1-x529.google.com ([2a00:1450:4864:20::529])
+	id 1pjwv5-003Xsk-2e;
+	Wed, 05 Apr 2023 06:46:59 +0000
+Received: from mail-ed1-x536.google.com ([2a00:1450:4864:20::536])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pjwsa-003XYQ-34
+	id 1pjwv3-003Xrj-01
 	for linux-phy@lists.infradead.org;
-	Wed, 05 Apr 2023 06:44:26 +0000
-Received: by mail-ed1-x529.google.com with SMTP id 4fb4d7f45d1cf-4fa3ca41384so185350a12.2
-        for <linux-phy@lists.infradead.org>; Tue, 04 Apr 2023 23:44:22 -0700 (PDT)
+	Wed, 05 Apr 2023 06:46:58 +0000
+Received: by mail-ed1-x536.google.com with SMTP id y4so138624902edo.2
+        for <linux-phy@lists.infradead.org>; Tue, 04 Apr 2023 23:46:54 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1680677061;
+        d=linaro.org; s=google; t=1680677213;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=PzMtt/+vqlhPhKEy36o5CActC8iYX52jJaVN8GSnXcQ=;
-        b=LfovZoCG2SVqRXzMoF1BOW6WOu641pUE4VOtpxBuEznEagbZ24i0TdaKpsn5OhzW95
-         8JqUDJPHnp4MFU4N79WFdH2qGjFH3+bj2EgkDosnGb+hC+NVENzgGI7cE4RzkaWW0UmQ
-         1BvKC8+MTTiCDXrRpaF2XuaZqhkfcgRjUirRI0Ps9o9lj2J/9L1GNNUzSn6ufafNJCj8
-         +0BRjxSq1yNNaPflfYv9CXvXI9vOT2XDZ1eA/i/WwAB3LQ0Nb1yrYI3kHQTtehA+VA+C
-         OsUHrc0/CRyrFn818/QPhCuUsfuPRR0TiAsk/SjhMjeod/gJJGynLlT43WFmUpCt9jCz
-         0hVg==
+        bh=aFIIRnrBNKokC228F+QRUypbBbxmHo1ru9OG9LqymOk=;
+        b=bZw9ufpJnzBKuImrMGDvlIZcYpkuP7trTFI1zth/LoLk5RKEEHsKUn89UYPbQy8Zql
+         cQpyE5JyNsaDMEkuJE+U2waLytyUnd/msaYyNbbClT/oQBgfd2ZlqDTTh9NuawqcWu/X
+         QwWKCa2jZz5ICvPgguUoxvw0fyALbAOBDNJn3G0TY9S/005blsFtzTi84wRLOnnwza6B
+         5mzxEo+962RX8+UZ+mJ6VdGQ4Rx1jL1VyaTkLc+hgwYFdFGNu220LHvXr3VhWA3uer5U
+         +DWgrZh2vZlZS8KER1PbZXpfamjeJ3zg/ug2OB8leUM7ULl+fbJKISnEb17Is4QkwxBP
+         gSxw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112; t=1680677061;
+        d=1e100.net; s=20210112; t=1680677213;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=PzMtt/+vqlhPhKEy36o5CActC8iYX52jJaVN8GSnXcQ=;
-        b=7vw8AsKScXoLecs7dOfxQgjgfrcKTmggm4ZOvLVdLDMpW9BeNz6uaD3RBOueogqVmv
-         5HVUN+3Ao22ErJ/vBG+lKqPc7E2j8P+tuw1SPbdYVENvG4Ee6+AnW/XAHqgGc2/OydCD
-         lcxTATF1hgg0RVgWBVoJnisEmTLi7taJMpU6bQgnB3BqzSxIUxtGKSvhJ1hOZhI+KcVi
-         FfVBoWbA0evoNwmgmY2ZgNRj/QEeY1/bAMEd3UHOB6UH6o7tVnVfi6yNZxNL7cwVoSrt
-         H0ktQn+/kTiCTPvyG8+JBm+YiTbsJjA5UlqFol2NV2n6pBwitDWLpuIk02sp2Xq3WjQ3
-         FmXQ==
-X-Gm-Message-State: AAQBX9dh+H/ihr5R2p70oriUHU8ou6m4jsM7NNmDzoluC6sRhwKWX7/J
-	/CsjTUJorfG0q6y+w3FxPdtAWg==
-X-Google-Smtp-Source: AKy350byi1qoH8xnW36dqj5Cus1D3+6KM4I460DlQJAFckUuaVBla6hgAtyHzqnYArOvUhdOQBgFKQ==
-X-Received: by 2002:a05:6402:10c3:b0:4ac:bde4:ff14 with SMTP id p3-20020a05640210c300b004acbde4ff14mr870989edu.42.1680677061020;
-        Tue, 04 Apr 2023 23:44:21 -0700 (PDT)
+        bh=aFIIRnrBNKokC228F+QRUypbBbxmHo1ru9OG9LqymOk=;
+        b=7IDAbe0P0G0aSYCgBGIqjBhuZFF7feo4r5EoMaMVFOoRBZUpFMvObpRNL4cnxwIEqQ
+         3kky2qe5Bp7W+v7ZEM7G/uByfwUf9cRXwv2IAYKvrweHmorRYBjk/ibItGTdoqg4bq7v
+         tVsc6p/NdGXGkRSkm/M9mJhImVSFmDadwRw/OZW6T9nY8dyX2Ip8JaSYBxSFQBUbSOjR
+         OpOCBbLp2cH0jH+v8rqvp05gWwbH0Jspx8WO++3uWjsg6SroHchPfC4u0YgSwuG1fuNc
+         WbWuN/yhutM+x5o/gO77unwKI2JdssULK5+G+onCCc+r4kZtGi9Nqs4IeJQd+5cFw8Sh
+         SoZg==
+X-Gm-Message-State: AAQBX9eIOmPyJBajTovzCRFxxdk7Xnfcrhf9eh4HdZOMlUDxx6YSeYCv
+	kNE6Vgrf54/dy+Kkl7/+Ead2pA==
+X-Google-Smtp-Source: AKy350aA1HLQgP9Fc8eNFl7f3RG7nlo1DaAaMg6OdwCzdNf2oo2Fy3A+7OlkjujnS9dUZa9CiI0hdw==
+X-Received: by 2002:a17:906:8244:b0:93d:e141:e958 with SMTP id f4-20020a170906824400b0093de141e958mr1872119ejx.15.1680677213323;
+        Tue, 04 Apr 2023 23:46:53 -0700 (PDT)
 Received: from ?IPV6:2a02:810d:15c0:828:3f:6b2:54cd:498e? ([2a02:810d:15c0:828:3f:6b2:54cd:498e])
-        by smtp.gmail.com with ESMTPSA id z95-20020a509e68000000b004c10b4f9ebesm6829736ede.15.2023.04.04.23.44.19
+        by smtp.gmail.com with ESMTPSA id by20-20020a170906a2d400b0093120a11a5dsm6963824ejb.92.2023.04.04.23.46.51
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 04 Apr 2023 23:44:20 -0700 (PDT)
-Message-ID: <c674def6-f4b7-c6bc-6688-9f8c65c441b3@linaro.org>
-Date: Wed, 5 Apr 2023 08:44:19 +0200
+        Tue, 04 Apr 2023 23:46:52 -0700 (PDT)
+Message-ID: <26194da1-95ad-ad04-ae14-319d3e309c1c@linaro.org>
+Date: Wed, 5 Apr 2023 08:46:51 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.9.0
-Subject: Re: [PATCH V2 1/9] dt-bindings: clock: Add PCIe pipe clock
- definitions
+Subject: Re: [PATCH V2 3/9] dt-bindings: phy: qcom,qmp-pcie: Add ipq9574
+ bindings
 Content-Language: en-US
 To: Devi Priya <quic_devipriy@quicinc.com>, agross@kernel.org,
  andersson@kernel.org, konrad.dybcio@linaro.org, lpieralisi@kernel.org,
@@ -84,12 +84,12 @@ Cc: quic_srichara@quicinc.com, quic_gokulsri@quicinc.com,
  quic_sjaganat@quicinc.com, quic_kathirav@quicinc.com,
  quic_arajkuma@quicinc.com, quic_anusha@quicinc.com, quic_ipkumar@quicinc.com
 References: <20230404164828.8031-1-quic_devipriy@quicinc.com>
- <20230404164828.8031-2-quic_devipriy@quicinc.com>
+ <20230404164828.8031-4-quic_devipriy@quicinc.com>
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20230404164828.8031-2-quic_devipriy@quicinc.com>
+In-Reply-To: <20230404164828.8031-4-quic_devipriy@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230404_234424_989668_775EE204 
-X-CRM114-Status: UNSURE (   6.06  )
+X-CRM114-CacheID: sfid-20230404_234657_071266_FF84CC7F 
+X-CRM114-Status: UNSURE (   8.50  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -108,16 +108,17 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 04/04/2023 18:48, Devi Priya wrote:
-> Add PCIe pipe clock definitions for IPQ9574 SoC
+> Add bindings for the PCIe QMP PHYs found on IPQ9574
 > 
-> Co-developed-by: Anusha Rao <quic_anusha@quicinc.com>
-> Signed-off-by: Anusha Rao <quic_anusha@quicinc.com>
 > Signed-off-by: Devi Priya <quic_devipriy@quicinc.com>
 > ---
 >  Changes in V2:
+> 	- Added the ipq9574 bindings here as the phy nodes in the DT
+> 	  are modified to follow the latest style (without child node)
+> 
 
-
-Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+The amount of changes and optionality of few properties suggests this
+should be new binding.
 
 Best regards,
 Krzysztof
