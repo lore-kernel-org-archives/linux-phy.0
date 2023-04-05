@@ -4,53 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B2829C77B6C
-	for <linux-phy@archiver.kernel.org>; Wed,  5 Apr 2023 09:55:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 24A20C761AF
+	for <linux-phy@archiver.kernel.org>; Wed,  5 Apr 2023 09:55:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GwyVBeD7/KwTj9tz2cgQO1k5C5HAMl7oMJOBp9uyrfk=; b=REaNriftV5FKKO
-	PZOWUR6pr0oPVcKA7sn0hYhWztbgdIKwiJjHs+UIYAglmyInhiQLFiJo1r+HiZWt9pXZ9Rc30UcYc
-	3+wlVnOGevaK+EoaorMDdmNzBVQq+RuOYELCxi59U0fL+prbkbR7XjKW3xqMdIzk/ILoupzZkrL2I
-	VkRG+5ua9izGAldyeaP4wOpKoz/ZQVduXwgMt5q762rrwy9trIIJ3ipUxFN6tYRsjEDm/FORVLqeM
-	rXdDPvk8J38l2ovKWWdJfRasOGvysW0DkdaaLpSzfBqjWlIezzuzYz29DTNA3kPTLHpyfP+T6DcSl
-	PlXAu1DA2oMU88yc5KGw==;
+	List-Owner; bh=vUdmwVSVbG69CLcDekNpv4xIa40kO879IgHNsA/FUGY=; b=SSFtxnSczlYbjl
+	GZu58dOd5gDRq6lHC2e/0Fg2jH0bZa2KTCWy8jVMd/mheXfn2Pwyh9hwubpitFvAudBos9Eg4nVR9
+	FQisXg8PHwCYpS+nkJXUMk22HPQR2hlJywSdrkSAdXrdPXCPvrGbX33ZbGLixgTJCVGIyU896U/0B
+	LFWn4eU361Mt8W8kP9HiAu7Gd5fx92a+qCAgrcqz6XlygPmhpjprHsKd0HTCn/NXW9I8ldt0DPdu8
+	B2WWA8kLPzIxXYsQTwqeLvO6NARdRtx9k8neHCSjJ5Aozjd0kPjq/+9omypxsYbAqwWRJBBODkYy+
+	Zowa1BYkk/GkOyMKXLbA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pjzr2-0041Wc-1B;
-	Wed, 05 Apr 2023 09:55:00 +0000
+	id 1pjzr7-0041Yx-2X;
+	Wed, 05 Apr 2023 09:55:05 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pjzqz-0041Vt-26
+	id 1pjzr5-0041Xu-1h
 	for linux-phy@lists.infradead.org;
-	Wed, 05 Apr 2023 09:54:58 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3359bP4l029779;
-	Wed, 5 Apr 2023 09:54:53 GMT
+	Wed, 05 Apr 2023 09:55:04 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3359aVkw021778;
+	Wed, 5 Apr 2023 09:54:59 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
  subject : date : message-id : in-reply-to : references : mime-version :
  content-type; s=qcppdkim1;
- bh=Dgg+OESJLWskkpR8sqfieVAvWfxCQ2M4CDXzU2Hn/Ys=;
- b=nWYNtie/4bbF/M0BWQeW2r7AoKJDVSAh3+CeTjIVfqqwTZ+r9dD8DRbKbqa38ZgMBdyN
- sG8yrXMqwfaQvUFPMOdo16GqBnh3wakDcKuYDoq2+TGz2vbRDWwMmlJSKmYrg53Apwg3
- IuIgX1+7HhsHOYFhaPd8t0fl85Ber88kun4DBStSP13wbnmf5r6fRivkC0kwOchs21Ya
- +63Uf3jdbV3r7Ctwbd5LcfiadxdDYiLSkOnx61YNexL1hLL4QcibR70OuwJSYaBtQeCu
- W+QX30fd6LPr0t/p5na3MxFOSKRutQVgM9zTvz3GxCRyQckaOBLETaljdrNwj2OtI3kt 8Q== 
-Received: from nasanppmta02.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3prpg229cw-1
+ bh=ChqmUJrlRTEyWBsDOBatmTkEdc/WMissf/EhuQoASVo=;
+ b=JHoneKFYBIN7/zOHlfQ927PF2qkFggxnBNgUy8Jx6paDEHMVPyDkLR1SK7GDdWjQMSRC
+ jdGraxbj25Rc3QXLPqGpdi+Yr703tfIauEzfGrUWySi11XJ0ePSsLMUyvflms0f6Ne8C
+ zk2KP/eWAmM2ENCwVnWawrG/9DAr0jXglDqWa/F3aDWERoVcYuhFm3I1kaQHCsuUGtu2
+ Z2WZ/NmfFSuBHSQVVyeI0iM+7itKMdYvGRaiAHvSuPJopGZEo7lVBh2K426vEBkOTq3u
+ dRLlBLb9hWJ8s9HGmGBa8shxjAE1xTNIX3U6tf+bhd8Rx/uDz8aqKjgWOh3jSHpUubqd TA== 
+Received: from nasanppmta05.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3prppuj76v-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 05 Apr 2023 09:54:53 +0000
+	Wed, 05 Apr 2023 09:54:59 +0000
 Received: from nasanex01a.na.qualcomm.com (nasanex01a.na.qualcomm.com [10.52.223.231])
-	by NASANPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 3359sqin031221
+	by NASANPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 3359swoj022445
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 5 Apr 2023 09:54:52 GMT
+	Wed, 5 Apr 2023 09:54:58 GMT
 Received: from varda-linux.qualcomm.com (10.80.80.8) by
  nasanex01a.na.qualcomm.com (10.52.223.231) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.986.42; Wed, 5 Apr 2023 02:54:46 -0700
+ 15.2.986.42; Wed, 5 Apr 2023 02:54:52 -0700
 From: Varadarajan Narayanan <quic_varada@quicinc.com>
 To: <agross@kernel.org>, <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
         <vkoul@kernel.org>, <kishon@kernel.org>, <robh+dt@kernel.org>,
@@ -61,9 +61,9 @@ To: <agross@kernel.org>, <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
         <linux-kernel@vger.kernel.org>, <linux-usb@vger.kernel.org>,
         <linux-clk@vger.kernel.org>
 CC: Varadarajan Narayanan <quic_varada@quicinc.com>
-Subject: [PATCH v7 1/8] dt-bindings: phy: qcom,qusb2: Document IPQ9574 compatible
-Date: Wed, 5 Apr 2023 15:23:58 +0530
-Message-ID: <8a21cddd0fa65efd854a631fabee900f84a5a30a.1680688209.git.quic_varada@quicinc.com>
+Subject: [PATCH v7 2/8] dt-bindings: phy: qcom,qmp-usb: Add IPQ9574 USB3 PHY
+Date: Wed, 5 Apr 2023 15:23:59 +0530
+Message-ID: <03c728a008017d78e6aa3e4c6f218592a0a7dd21.1680688209.git.quic_varada@quicinc.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <cover.1680688209.git.quic_varada@quicinc.com>
 References: <cover.1680688209.git.quic_varada@quicinc.com>
@@ -73,19 +73,19 @@ X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nasanex01a.na.qualcomm.com (10.52.223.231)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: 5q4d90w4UYUr07qWbaSFwhvnMrE4naCC
-X-Proofpoint-ORIG-GUID: 5q4d90w4UYUr07qWbaSFwhvnMrE4naCC
+X-Proofpoint-GUID: keQAmnVJbFflvkbCN69IJEVmgwLqNQsv
+X-Proofpoint-ORIG-GUID: keQAmnVJbFflvkbCN69IJEVmgwLqNQsv
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.254,Aquarius:18.0.942,Hydra:6.0.573,FMLib:17.11.170.22
  definitions=2023-04-05_05,2023-04-04_05,2023-02-09_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 adultscore=0
- bulkscore=0 impostorscore=0 clxscore=1015 priorityscore=1501
- suspectscore=0 mlxscore=0 spamscore=0 mlxlogscore=859 lowpriorityscore=0
- malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0
+ lowpriorityscore=0 clxscore=1015 malwarescore=0 suspectscore=0
+ adultscore=0 mlxlogscore=974 phishscore=0 bulkscore=0 priorityscore=1501
+ mlxscore=0 spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.12.0-2303200000 definitions=main-2304050091
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230405_025457_694690_CE56C583 
-X-CRM114-Status: GOOD (  14.73  )
+X-CRM114-CacheID: sfid-20230405_025503_571801_C1B3873D 
+X-CRM114-Status: GOOD (  14.97  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,48 +102,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Document the compatible string used for the qusb2 phy in IPQ9574.
+Add dt-bindings for USB3 PHY found on Qualcomm IPQ9574
 
-Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
-
 ---
- Changes in v5:
-	- Undo v4 changes
+ Changes in v6:
+	- Made power-domains optional
 
- Changes in v4:
-	- Remove constraints not applicable to IPQ9574
-
- Changes in v3:
-	- Maintain the proper sorted order
-
- Changes in v2:
-	- Moved ipq6018 to the proper place and placed ipq9574
-	  next to it as suggested by Dmitry
+Note: In the earlier patch sets, had used the (legacy)
+specification available in qcom,msm8996-qmp-usb3-phy.yaml. Moved
+to newer specification in qcom,sc8280xp-qmp-usb3-uni-phy.yaml
 ---
- Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ .../devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml         | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml
-index 543c1a2..95eecba 100644
---- a/Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml
-@@ -18,13 +18,14 @@ properties:
-     oneOf:
-       - items:
-           - enum:
-+              - qcom,ipq6018-qusb2-phy
-               - qcom,ipq8074-qusb2-phy
-+              - qcom,ipq9574-qusb2-phy
-               - qcom,msm8953-qusb2-phy
-               - qcom,msm8996-qusb2-phy
-               - qcom,msm8998-qusb2-phy
-               - qcom,qcm2290-qusb2-phy
-               - qcom,sdm660-qusb2-phy
--              - qcom,ipq6018-qusb2-phy
-               - qcom,sm4250-qusb2-phy
-               - qcom,sm6115-qusb2-phy
-       - items:
+diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml
+index 16fce10..0c0a548 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml
+@@ -16,6 +16,7 @@ description:
+ properties:
+   compatible:
+     enum:
++      - qcom,ipq9574-qmp-usb3-phy
+       - qcom,sc8280xp-qmp-usb3-uni-phy
+ 
+   reg:
+@@ -60,7 +61,6 @@ required:
+   - reg
+   - clocks
+   - clock-names
+-  - power-domains
+   - resets
+   - reset-names
+   - vdda-phy-supply
 -- 
 2.7.4
 
