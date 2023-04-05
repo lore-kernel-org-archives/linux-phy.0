@@ -4,60 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4D8CEC761A6
-	for <linux-phy@archiver.kernel.org>; Tue,  4 Apr 2023 20:12:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6FD5AC7619A
+	for <linux-phy@archiver.kernel.org>; Wed,  5 Apr 2023 04:06:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Date:To:Cc:From:Subject:References:
-	In-Reply-To:MIME-Version:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=L5ytZSh75H6RdH2OUQrm3C8FFKWBuKlbQHKRwKhWE/c=; b=CTfGJ4fwnYQqoB
-	kxHONJyGNhV523rdKk3xYSNncAp+5OxVzIMaORXL7hXfXK81cpecmY5GRomFKsCJeIcZNgy6bfWXG
-	wGa2PVTdfua6BrSrDCQVRE5ePjYxtglJDhmOB7eOCdRBOlWdz71w2oNdclK9ibBXrXDGU3QAFaF6y
-	hWsaXBFmSqXmnY1wQ3lx69I1rbxByf9xCeID5ueVxD4BCYC3TO9DQfZg+RxoZkbk4c/p8Y6j7xtOF
-	MgEyLFQgjHnIIbEWASaQdLzrGGZGztFtgTDV0DQZIsxT6Woj0UOTJ1MEJPDYfHS9LH7RuYsgmYl8h
-	xyVpf10aR+nvKKDbauEw==;
+	List-Owner; bh=8FP+4rY13jwsxddB2siJzpj6relAM0P5HWQsonZRdwI=; b=f1s3FtfWkWeymY
+	YRnwlNuU+glplXRXsy9rkrrJjn0uGZgPeA+DXgfOBqvtAxF6DEcujxyZlSljSiEomGxrRbVzsCk2Z
+	KNF7RVHcvNvXhSD636Kunw7bcVPq55yqF70+2VHL9Rtsr7rWUm9ODVgtyM4TCRV1qJV5sEZ7FKi3Z
+	T88l/jC8nQYINHeiqOW1SwvQvgLs8DnH5pENcZU5PG5B0hhfu4XTzXKM5HRRvfXlYpepy1+0q+s9x
+	DEo9ui1LKzEiLZUjEV1luB1drb7SwqtusJ7EdWnlD2bTjgNL6Gn1SnnlJ0Apk+8IvMZxlRlttnGhF
+	yjI36yQelpGl8LTJG/Hg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pjn0i-002n2i-36;
-	Tue, 04 Apr 2023 20:12:08 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1pjuQ1-003HNY-2x;
+	Wed, 05 Apr 2023 04:06:45 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pjn0g-002n2L-1u
+	id 1pjuPz-003HMh-1W
 	for linux-phy@lists.infradead.org;
-	Tue, 04 Apr 2023 20:12:07 +0000
+	Wed, 05 Apr 2023 04:06:44 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 2C635632B0;
-	Tue,  4 Apr 2023 20:12:06 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7E94EC433D2;
-	Tue,  4 Apr 2023 20:12:05 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 1063163B04;
+	Wed,  5 Apr 2023 04:06:43 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 19089C43324;
+	Wed,  5 Apr 2023 04:06:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1680639125;
-	bh=3QRJlwqia2QDWk/e0n89D0bcrqXQfIZCY1IoEbSO2IE=;
-	h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
-	b=n8Mq0qza7dwTNwPm0nIIDwj6E/Gjsoqi8BwFRJviM5zeek6Y544V4IUOncLBLsXrx
-	 yir2J11YboyfJb8uLDWZGO5kaedpkYcrwMhu3QGTtA2EjbXaOlsPbyaj/f9PVQSopt
-	 cp2a9lJEPwKES/zLJVVozX7jiK6tqNmM1lwsWGu1nJsKBcmfGxOiFEAaOcEk+Tg5dh
-	 68rnzYotyjpbyrBOvLwtuaCaRNGuB8UKPsH9M1YyJYDsF2nMA/5jd+2H9soaCCym5W
-	 NwyNMUdP/luC2md/JKNLcw6nbFRj8Cux20os2XRY6H+1QOQ998HSQ+xjNfBWKV1dCj
-	 dmDNOdISwT8sA==
-Message-ID: <1d7dae8417d7978eccdc01d7f60107f8.sboyd@kernel.org>
+	s=k20201202; t=1680667602;
+	bh=F35Yo8CMdTUZ+xGUntt/U4RBF4z2aepfzc1/ck9Ojxw=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=JdCshkzEhkUcabh3ygObV5AxGeiLE0Okvfc91ka2CufTi/UjCM8Y4k6kI/R+Hd0Tq
+	 M8y+4ujE0Af8VrxBK6upf7RGU+hgRXQRIb2AEyLYdRAZP3uCGWjv/mXOAEcl39rNXK
+	 dP2RX6PzQ25bdLHZOnppJ3huYrVZeIY3R4aGIrDdIct76sBXW1FAtnFmPzE7/FTFp4
+	 LWUfohWz3JMhkCk2He0rDqoELE8EzADxOogt7uTIeWOBg+5sqIj7eIijLa4LA4xgz3
+	 MH37HL3rvP/Qx8+2sZfW80KC0Pwdo5gjrAyb3WHfTspMGO7XmWEVDvt9DeIANL5uuO
+	 3eDKFIBUGPTgQ==
+From: Bjorn Andersson <andersson@kernel.org>
+To: Lorenzo Pieralisi <lpieralisi@kernel.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Georgi Djakov <djakov@kernel.org>,
+	Mark Brown <broonie@kernel.org>,
+	Bjorn Helgaas <bhelgaas@google.com>
+Cc: linux-arm-msm@vger.kernel.org,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Marc Zyngier <maz@kernel.org>,
+	Liam Girdwood <lgirdwood@gmail.com>,
+	linux-kernel@vger.kernel.org,
+	linux-pci@vger.kernel.org,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	linux-pm@vger.kernel.org,
+	Rob Herring <robh+dt@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Avri Altman <avri.altman@wdc.com>,
+	devicetree@vger.kernel.org,
+	linux-usb@vger.kernel.org,
+	=?UTF-8?q?Krzysztof=20Wilczy=C5=84ski?= <kw@linux.com>,
+	linux-phy@lists.infradead.org,
+	Thomas Gleixner <tglx@linutronix.de>,
+	linux-scsi@vger.kernel.org,
+	Bart Van Assche <bvanassche@acm.org>,
+	Alim Akhtar <alim.akhtar@samsung.com>,
+	Wesley Cheng <quic_wcheng@quicinc.com>
+Subject: Re: (subset) [PATCH v2 00/12] Introduce the SC8180x devices
+Date: Tue,  4 Apr 2023 21:09:11 -0700
+Message-Id: <168066774419.443656.6508694636390869164.b4-ty@kernel.org>
+X-Mailer: git-send-email 2.39.2
+In-Reply-To: <20230325122444.249507-1-vkoul@kernel.org>
+References: <20230325122444.249507-1-vkoul@kernel.org>
 MIME-Version: 1.0
-In-Reply-To: <20230404164828.8031-3-quic_devipriy@quicinc.com>
-References: <20230404164828.8031-1-quic_devipriy@quicinc.com> <20230404164828.8031-3-quic_devipriy@quicinc.com>
-Subject: Re: [PATCH V2 2/9] clk: qcom: gcc-ipq9574: Add PCIe pipe clocks
-From: Stephen Boyd <sboyd@kernel.org>
-Cc: quic_srichara@quicinc.com, quic_gokulsri@quicinc.com, quic_sjaganat@quicinc.com, quic_kathirav@quicinc.com, quic_arajkuma@quicinc.com, quic_anusha@quicinc.com, quic_ipkumar@quicinc.com
-To: Devi Priya <quic_devipriy@quicinc.com>, agross@kernel.org, andersson@kernel.org, bhelgaas@google.com, devicetree@vger.kernel.org, kishon@kernel.org, konrad.dybcio@linaro.org, krzysztof.kozlowski+dt@linaro.org, kw@linux.com, linus.walleij@linaro.org, linux-arm-msm@vger.kernel.org, linux-clk@vger.kernel.org, linux-gpio@vger.kernel.org, linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org, linux-phy@lists.infradead.org, lpieralisi@kernel.org, mani@kernel.org, mturquette@baylibre.com, p.zabel@pengutronix.de, robh@kernel.org, vkoul@kernel.org
-Date: Tue, 04 Apr 2023 13:12:03 -0700
-User-Agent: alot/0.10
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230404_131206_691714_C3083DC4 
-X-CRM114-Status: UNSURE (   5.73  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230404_210643_546276_92453EDF 
+X-CRM114-Status: GOOD (  11.08  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,15 +97,24 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Quoting Devi Priya (2023-04-04 09:48:21)
-> Add the PCIe pipe clocks needed for enabling PCIe in IPQ9574
+On Sat, 25 Mar 2023 17:54:32 +0530, Vinod Koul wrote:
+> This introduces Qualcomm SC8180x SoC which features in Lenovo Flex 5G
+> laptop. This also adds support for Primus platform as well as Lenovo Flex 5G
+> laptop.
 > 
-> Co-developed-by: Anusha Rao <quic_anusha@quicinc.com>
-> Signed-off-by: Anusha Rao <quic_anusha@quicinc.com>
-> Signed-off-by: Devi Priya <quic_devipriy@quicinc.com>
-> ---
+> I would be great if submaintainers can ack the binding patch so that
+> everything can go thru qcom tree
+> 
+> [...]
 
-Acked-by: Stephen Boyd <sboyd@kernel.org>
+Applied, thanks!
+
+[01/12] dt-bindings: firmware: document Qualcomm SC8180X SCM
+        commit: c78ad8597ed961e822bf86ce7f1916dbfba255ef
+
+Best regards,
+-- 
+Bjorn Andersson <andersson@kernel.org>
 
 -- 
 linux-phy mailing list
