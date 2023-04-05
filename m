@@ -4,90 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 99499C76188
-	for <linux-phy@archiver.kernel.org>; Wed,  5 Apr 2023 10:00:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EA838C76188
+	for <linux-phy@archiver.kernel.org>; Wed,  5 Apr 2023 11:21:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=deB2aVgYoA3Ys6ElxkJji6+zYtbHjsb3IN4AWaJHy8I=; b=gmVylMtZemreYa
-	u3pJoUa2KG3S9f07xFYXTy71VBa7C+rHL9Mqu80vczFFBQGliOBXk5mDCyiCHqWA1Gk5mcWtkjATo
-	gCElnTXp6tEK8rrAxQ194VjGD2hEnBGtUSzxhbL4B/wVFf2XoIWDgYShF4JWO28rwdbeflmw+NDHL
-	u5vHQZmdCqOpS9j/NyxbPqBxU56N6W7RJ7NL6u2TPO1b7jMgghFNyFR3rq7P/7Onf89aQCrK0ETHv
-	8UTefusEGI1zUz7ZQpLM6w3xkmWPrZAzEbJ8OJpRr/I7ewb1CZe+EW9hdybw1XTpFGstuSmhpKzAP
-	91V9ZUtOZ0pnrM727b6Q==;
+	List-Owner; bh=gK8yUhdSWQDVvnVZvScRuDV0/06RX5dBBhcIRqbdZys=; b=Lly9KVfme9Axce
+	UiuXWjtYycJtTUyqCT+43xrzcHcPzaWhYqTtgBezGDjcbcFRtVbP0P4PL1JOWBLYvz6ypOXPqzViK
+	XaU4nv1gFKrqGr+zQVhGsNoS2mYXf2WL/fNKYwbcOJN0IbJQumHoeFGmChtVkVslk58Rtc20X9DGa
+	lan1Q864OglAuTnM2ateOvoZzO3VkaPz1jTwPQmkg6QKnaCajoXO+9qsMZAHNsXuOi9HwhHmiBlrn
+	F+Mwmu+6XaO14iP6lRxWEp3s0BrmmzfHl5E+0zW2EBdT0KXzMipAcVkcRtNkPtyNcoJAsiEr1QfzR
+	CttjAf/Yt3EC9PylRDHg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pjzwU-0042IR-0S;
-	Wed, 05 Apr 2023 10:00:38 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1pk1Cu-004FWJ-1v;
+	Wed, 05 Apr 2023 11:21:40 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pjzwQ-0042Hs-1h
+	id 1pk1Cr-004FVP-2H
 	for linux-phy@lists.infradead.org;
-	Wed, 05 Apr 2023 10:00:36 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3359cUWa002449;
-	Wed, 5 Apr 2023 10:00:27 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=date : from : to :
- cc : subject : message-id : references : mime-version : content-type :
- in-reply-to; s=qcppdkim1; bh=RcU5QX2H+naJU/RnfYHZlRtFeE/30+0/6/b4AeyX1+s=;
- b=W/B+J02YJ2TrNlMViira1wQagewemDFqr2kMzEqkInVtYMi1JRAENkmOj49T52RJUQVz
- Qftqmz42ZbcKKIJjSO+4VFLz1e4+bKNivNJzIFfX9c30n8E+pN2/CIKdr08+srj0bH0m
- 5rUH6Hw9LIhXnuZw/ZJA4ipS0bjRcAuoUZgxB+PKLyEQcNDeWQRW5zeP4nhs1V4avG+X
- g4gLz/tAyo3cRtUvoKgzp72bODCnPgxS2+5BY1yHXG4TDlOAmtjPVDg5oB5lTm1Rt7+i
- 4pPys54PYCSAAvMhy/+EJ7V11VwKh19G6U0wk8Q71caYjHdfGEX7eAQbcy7ELNXwVg30 JA== 
-Received: from nasanppmta04.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3prnvg2dnn-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 05 Apr 2023 10:00:27 +0000
-Received: from nasanex01a.na.qualcomm.com (nasanex01a.na.qualcomm.com [10.52.223.231])
-	by NASANPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 335A0PhX002702
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 5 Apr 2023 10:00:26 GMT
-Received: from varda-linux.qualcomm.com (10.80.80.8) by
- nasanex01a.na.qualcomm.com (10.52.223.231) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.986.42; Wed, 5 Apr 2023 03:00:20 -0700
-Date: Wed, 5 Apr 2023 15:30:16 +0530
-From: Varadarajan Narayanan <quic_varada@quicinc.com>
-To: Johan Hovold <johan@kernel.org>
-CC: <agross@kernel.org>, <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
-        <vkoul@kernel.org>, <kishon@kernel.org>, <robh+dt@kernel.org>,
-        <krzysztof.kozlowski+dt@linaro.org>, <gregkh@linuxfoundation.org>,
-        <mturquette@baylibre.com>, <sboyd@kernel.org>,
-        <quic_wcheng@quicinc.com>, <linux-arm-msm@vger.kernel.org>,
-        <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
-        <linux-kernel@vger.kernel.org>, <linux-usb@vger.kernel.org>,
-        <linux-clk@vger.kernel.org>
-Subject: Re: [PATCH v6 7/8] arm64: dts: qcom: ipq9574: Add USB related nodes
-Message-ID: <20230405100015.GA11731@varda-linux.qualcomm.com>
-References: <cover.1680682939.git.quic_varada@quicinc.com>
- <aaf44ceccef9c7b20a08b8c9fa534f99468f8856.1680682939.git.quic_varada@quicinc.com>
- <ZC08PfY+TN3+lBT4@hovoldconsulting.com>
+	Wed, 05 Apr 2023 11:21:39 +0000
+Received: from drehscheibe.grey.stw.pengutronix.de ([2a0a:edc0:0:c01:1d::a2])
+	by metis.ext.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
+	(Exim 4.92)
+	(envelope-from <jzi@pengutronix.de>)
+	id 1pk1Ce-0004S2-00; Wed, 05 Apr 2023 13:21:24 +0200
+Received: from [2a0a:edc0:0:1101:1d::39] (helo=dude03.red.stw.pengutronix.de)
+	by drehscheibe.grey.stw.pengutronix.de with esmtp (Exim 4.94.2)
+	(envelope-from <jzi@pengutronix.de>)
+	id 1pk1Cc-0098SJ-2v; Wed, 05 Apr 2023 13:21:22 +0200
+Received: from jzi by dude03.red.stw.pengutronix.de with local (Exim 4.94.2)
+	(envelope-from <jzi@pengutronix.de>)
+	id 1pk1Cb-005Gtt-BZ; Wed, 05 Apr 2023 13:21:21 +0200
+From: Johannes Zink <j.zink@pengutronix.de>
+To: vkoul@kernel.org,
+	kishon@kernel.org,
+	shawnguo@kernel.org,
+	s.hauer@pengutronix.de,
+	kernel@pengutronix.de,
+	festevam@gmail.com,
+	linux-imx@nxp.com,
+	robh+dt@kernel.org,
+	krzysztof.kozlowski+dt@linaro.org,
+	jun.li@nxp.com,
+	haibo.chen@nxp.com,
+	linux-phy@lists.infradead.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	devicetree@vger.kernel.org
+Cc: j.zink@pengutronix.de
+Subject: [PATCH 2/2] phy: fsl-imx8mp-usb: add support for phy tuning
+Date: Wed,  5 Apr 2023 13:21:18 +0200
+Message-Id: <20230405112118.1256151-3-j.zink@pengutronix.de>
+X-Mailer: git-send-email 2.39.2
+In-Reply-To: <20230405112118.1256151-1-j.zink@pengutronix.de>
+References: <20230405112118.1256151-1-j.zink@pengutronix.de>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <ZC08PfY+TN3+lBT4@hovoldconsulting.com>
-User-Agent: Mutt/1.5.24 (2015-08-30)
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nasanex01a.na.qualcomm.com (10.52.223.231)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: lfx1yn7mrgcHaXzzz0_KPmdmKXrrlXZx
-X-Proofpoint-ORIG-GUID: lfx1yn7mrgcHaXzzz0_KPmdmKXrrlXZx
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.254,Aquarius:18.0.942,Hydra:6.0.573,FMLib:17.11.170.22
- definitions=2023-04-05_06,2023-04-04_05,2023-02-09_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 suspectscore=0
- priorityscore=1501 malwarescore=0 adultscore=0 spamscore=0 mlxscore=0
- bulkscore=0 impostorscore=0 lowpriorityscore=0 mlxlogscore=927
- phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2303200000 definitions=main-2304050091
+X-SA-Exim-Connect-IP: 2a0a:edc0:0:c01:1d::a2
+X-SA-Exim-Mail-From: jzi@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de); SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230405_030034_685485_DBCAF8FA 
-X-CRM114-Status: GOOD (  16.89  )
+X-CRM114-CacheID: sfid-20230405_042137_740661_A3AE9E91 
+X-CRM114-Status: GOOD (  14.54  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,58 +86,181 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Apr 05, 2023 at 11:15:41AM +0200, Johan Hovold wrote:
-> On Wed, Apr 05, 2023 at 02:26:42PM +0530, Varadarajan Narayanan wrote:
-> > Add USB phy and controller related nodes
-> >
-> > Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
-> > ---
-> >  Changes in v6:
-> > 	- Introduce fixed regulators for the phy
-> > 	- Resolved all 'make dtbs_check' messages
->
->
-> > +		usb_0_qmpphy: phy@7d000 {
-> > +			compatible = "qcom,ipq9574-qmp-usb3-phy";
-> > +			reg = <0x0007d000 0xa00>;
-> > +			#phy-cells = <0>;
-> > +
-> > +			clocks = <&gcc GCC_USB0_AUX_CLK>,
-> > +				 <&xo_board_clk>,
-> > +				 <&gcc GCC_USB0_PHY_CFG_AHB_CLK>,
-> > +				 <&gcc GCC_USB0_PIPE_CLK>;
-> > +			clock-names = "aux",
-> > +				      "ref",
-> > +				      "com_aux",
->
-> Looks like you just ignored my comment that you need to rename this
-> clock (and update the binding). :(
->
-> 	https://lore.kernel.org/lkml/ZCaznloORtzgioOP@hovoldconsulting.com/
+From: Li Jun <jun.li@nxp.com>
 
-Sorry. My mistake. Will post a new patch.
-Ignore V7. Missed the update in the binding.
+Add USB PHY parameter tuning for USB certifications.
 
-Thanks
-Varada
->
-> > +				      "pipe";
-> > +
-> > +			resets = <&gcc GCC_USB0_PHY_BCR>,
-> > +				 <&gcc GCC_USB3PHY_0_PHY_BCR>;
-> > +			reset-names = "phy",
-> > +				      "phy_phy";
-> > +
-> > +			vdda-pll-supply = <&reg_usb_1p8>;
-> > +			vdda-phy-supply = <&reg_usb_0p925>;
-> > +
-> > +			status = "disabled";
-> > +
-> > +			#clock-cells = <0>;
-> > +			clock-output-names = "usb0_pipe_clk";
-> > +		};A
->
-> Johan
+Reviewed-by: Haibo Chen <haibo.chen@nxp.com>
+Signed-off-by: Li Jun <jun.li@nxp.com>
+[j.zink: ported to v6.3-rc1 from NXP downstream repo + cleanups]
+Signed-off-by: Johannes Zink <j.zink@pengutronix.de>
+---
+ drivers/phy/freescale/phy-fsl-imx8mq-usb.c | 124 +++++++++++++++++++++
+ 1 file changed, 124 insertions(+)
+
+diff --git a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c b/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
+index a29b4a6f7c24..ee1975aaab7e 100644
+--- a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
++++ b/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
+@@ -27,17 +27,137 @@
+ #define PHY_CTRL2_TXENABLEN0		BIT(8)
+ #define PHY_CTRL2_OTG_DISABLE		BIT(9)
+ 
++#define PHY_CTRL3			0xc
++#define PHY_CTRL3_COMPDISTUNE_MASK	GENMASK(2, 0)
++#define PHY_CTRL3_TXPREEMP_TUNE_MASK	GENMASK(16, 15)
++#define PHY_CTRL3_TXRISE_TUNE_MASK	GENMASK(21, 20)
++#define PHY_CTRL3_TXVREF_TUNE_MASK	GENMASK(25, 22)
++#define PHY_CTRL3_TX_VBOOST_LEVEL_MASK	GENMASK(31, 29)
++
++#define PHY_CTRL4			0x10
++#define PHY_CTRL4_PCS_TX_DEEMPH_3P5DB_MASK	GENMASK(20, 15)
++
++#define PHY_CTRL5			0x14
++#define PHY_CTRL5_DMPWD_OVERRIDE_SEL	BIT(23)
++#define PHY_CTRL5_DMPWD_OVERRIDE	BIT(22)
++#define PHY_CTRL5_DPPWD_OVERRIDE_SEL	BIT(21)
++#define PHY_CTRL5_DPPWD_OVERRIDE	BIT(20)
++#define PHY_CTRL5_PCS_TX_SWING_FULL_MASK	GENMASK(6, 0)
++
+ #define PHY_CTRL6			0x18
+ #define PHY_CTRL6_ALT_CLK_EN		BIT(1)
+ #define PHY_CTRL6_ALT_CLK_SEL		BIT(0)
+ 
++#define PHY_TUNE_DEFAULT		0xffffffff
++
+ struct imx8mq_usb_phy {
+ 	struct phy *phy;
+ 	struct clk *clk;
+ 	void __iomem *base;
+ 	struct regulator *vbus;
++	u32 pcs_tx_swing_full;
++	u32 pcs_tx_deemph_3p5db;
++	u32 tx_vref_tune;
++	u32 tx_rise_tune;
++	u32 tx_preemp_amp_tune;
++	u32 tx_vboost_level;
++	u32 comp_dis_tune;
+ };
+ 
++static void imx8m_get_phy_tuning_data(struct imx8mq_usb_phy *imx_phy)
++{
++	struct device *dev = imx_phy->phy->dev.parent;
++
++	if (device_property_read_u32(dev, "fsl,phy-tx-vref-tune",
++				     &imx_phy->tx_vref_tune))
++		imx_phy->tx_vref_tune = PHY_TUNE_DEFAULT;
++
++	if (device_property_read_u32(dev, "fsl,phy-tx-rise-tune",
++				     &imx_phy->tx_rise_tune))
++		imx_phy->tx_rise_tune = PHY_TUNE_DEFAULT;
++
++	if (device_property_read_u32(dev, "fsl,phy-tx-preemp-amp-tune",
++				     &imx_phy->tx_preemp_amp_tune))
++		imx_phy->tx_preemp_amp_tune = PHY_TUNE_DEFAULT;
++
++	if (device_property_read_u32(dev, "fsl,phy-tx-vboost-level",
++				     &imx_phy->tx_vboost_level))
++		imx_phy->tx_vboost_level = PHY_TUNE_DEFAULT;
++
++	if (device_property_read_u32(dev, "fsl,phy-comp-dis-tune",
++				     &imx_phy->comp_dis_tune))
++		imx_phy->comp_dis_tune = PHY_TUNE_DEFAULT;
++
++	if (device_property_read_u32(dev, "fsl,pcs-tx-deemph-3p5db",
++				     &imx_phy->pcs_tx_deemph_3p5db))
++		imx_phy->pcs_tx_deemph_3p5db = PHY_TUNE_DEFAULT;
++
++	if (device_property_read_u32(dev, "fsl,phy-pcs-tx-swing-full",
++				     &imx_phy->pcs_tx_swing_full))
++		imx_phy->pcs_tx_swing_full = PHY_TUNE_DEFAULT;
++}
++
++static void imx8m_phy_tune(struct imx8mq_usb_phy *imx_phy)
++{
++	u32 value;
++
++	/* PHY tuning */
++	if (imx_phy->pcs_tx_deemph_3p5db != PHY_TUNE_DEFAULT) {
++		value = readl(imx_phy->base + PHY_CTRL4);
++		value &= ~PHY_CTRL4_PCS_TX_DEEMPH_3P5DB_MASK;
++		value |= FIELD_PREP(PHY_CTRL4_PCS_TX_DEEMPH_3P5DB_MASK,
++				   imx_phy->pcs_tx_deemph_3p5db);
++		writel(value, imx_phy->base + PHY_CTRL4);
++	}
++
++	if (imx_phy->pcs_tx_swing_full != PHY_TUNE_DEFAULT) {
++		value = readl(imx_phy->base + PHY_CTRL5);
++		value |= FIELD_PREP(PHY_CTRL5_PCS_TX_SWING_FULL_MASK,
++				   imx_phy->pcs_tx_swing_full);
++		writel(value, imx_phy->base + PHY_CTRL5);
++	}
++
++	if ((imx_phy->tx_vref_tune & imx_phy->tx_rise_tune &
++	     imx_phy->tx_preemp_amp_tune & imx_phy->comp_dis_tune &
++	     imx_phy->tx_vboost_level) == PHY_TUNE_DEFAULT)
++		/* If all are the default values, no need update. */
++		return;
++
++	value = readl(imx_phy->base + PHY_CTRL3);
++
++	if (imx_phy->tx_vref_tune != PHY_TUNE_DEFAULT) {
++		value &= ~PHY_CTRL3_TXVREF_TUNE_MASK;
++		value |= FIELD_PREP(PHY_CTRL3_TXVREF_TUNE_MASK,
++				   imx_phy->tx_vref_tune);
++	}
++
++	if (imx_phy->tx_rise_tune != PHY_TUNE_DEFAULT) {
++		value &= ~PHY_CTRL3_TXRISE_TUNE_MASK;
++		value |= FIELD_PREP(PHY_CTRL3_TXRISE_TUNE_MASK,
++				    imx_phy->tx_rise_tune);
++	}
++
++	if (imx_phy->tx_preemp_amp_tune != PHY_TUNE_DEFAULT) {
++		value &= ~PHY_CTRL3_TXPREEMP_TUNE_MASK;
++		value |= FIELD_PREP(PHY_CTRL3_TXPREEMP_TUNE_MASK,
++				imx_phy->tx_preemp_amp_tune);
++	}
++
++	if (imx_phy->comp_dis_tune != PHY_TUNE_DEFAULT) {
++		value &= ~PHY_CTRL3_COMPDISTUNE_MASK;
++		value |= FIELD_PREP(PHY_CTRL3_COMPDISTUNE_MASK,
++				    imx_phy->comp_dis_tune);
++	}
++
++	if (imx_phy->tx_vboost_level != PHY_TUNE_DEFAULT) {
++		value &= ~PHY_CTRL3_TX_VBOOST_LEVEL_MASK;
++		value |= FIELD_PREP(PHY_CTRL3_TX_VBOOST_LEVEL_MASK,
++				    imx_phy->tx_vboost_level);
++	}
++
++	writel(value, imx_phy->base + PHY_CTRL3);
++}
++
+ static int imx8mq_usb_phy_init(struct phy *phy)
+ {
+ 	struct imx8mq_usb_phy *imx_phy = phy_get_drvdata(phy);
+@@ -99,6 +219,8 @@ static int imx8mp_usb_phy_init(struct phy *phy)
+ 	value &= ~(PHY_CTRL1_RESET | PHY_CTRL1_ATERESET);
+ 	writel(value, imx_phy->base + PHY_CTRL1);
+ 
++	imx8m_phy_tune(imx_phy);
++
+ 	return 0;
+ }
+ 
+@@ -182,6 +304,8 @@ static int imx8mq_usb_phy_probe(struct platform_device *pdev)
+ 
+ 	phy_set_drvdata(imx_phy->phy, imx_phy);
+ 
++	imx8m_get_phy_tuning_data(imx_phy);
++
+ 	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
+ 
+ 	return PTR_ERR_OR_ZERO(phy_provider);
+-- 
+2.39.2
+
 
 -- 
 linux-phy mailing list
