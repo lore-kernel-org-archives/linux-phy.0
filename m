@@ -4,53 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F0FFAC761A6
-	for <linux-phy@archiver.kernel.org>; Wed,  5 Apr 2023 11:42:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5FB3AC7619A
+	for <linux-phy@archiver.kernel.org>; Wed,  5 Apr 2023 11:42:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ggaOCNhGPZR1kV+vy/+LC4t0JlfN4d8Jkemjh5JUQKc=; b=mnl+D0k2QwsB+N
-	/5e8NyB4XvymrsfIiCJ+NbVR3zEBS3d84gulh9lm9vIECrtJHAmwrvx+qU/DAkU+8AkRKw52St+Yj
-	9FB+ip9ongMDCI7egphXJQKi4QpFcRsO4AZ6VFppsMPWecxfgk6sIzfjD1rG4iB1czRZ7l+E4XP4B
-	xMBWbzyq4q5I7TIcyYOCXWXzxMI0vSBUR3/tvdjMXG4caD3aZbIdRthcuRLC3FHPWtb2H5hLyx6ro
-	NuDZ3jfYxy1mEompgFPsQv9LTk66miMeXFbIqBEyCJMOT1n1ezhytAg62V7qaUiUZwdCZO4W30Wzi
-	PfRnEaYnoKQAlxv3DS3g==;
+	List-Owner; bh=59wjaogDq9ajowpMxZ4qdAV/pxbITSo67J4BsgsYQfY=; b=YrF2Qp9YPILef5
+	3y9tdl8vzmaasryuFhcuAUSmtulgKoew9qSwZXK5OMtozk6S1Ho0nTIUNhcJWiyL9tSKlFU9X+BUl
+	hZL3jkZIyBn94mb+IOYOrE41zfP1O3bQnk3j+3MJSQBxC17ceu7ieF8x/ZogBiObUOiFnqFRfwCaO
+	NKMVdCZagdZaK+gSxYJ8we/eAAjYknrLv7ZPB4i00eTQhaSOEXTQ/9SppbBYC6St5CHDW9lGatb/q
+	AumcyatJKSR5iso/KuFbIT5CzSzixAnAJWoowUjLwPwQ5i8+1VZk2AUMPtCaUZGllMfDdRnmsCDZp
+	09fVJK0Dt9dQCKU1utoQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pk1Wd-004ITe-1x;
-	Wed, 05 Apr 2023 11:42:03 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1pk1Wh-004IVE-04;
+	Wed, 05 Apr 2023 11:42:07 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pk1Wb-004ISA-1Z
+	id 1pk1We-004ITd-07
 	for linux-phy@lists.infradead.org;
-	Wed, 05 Apr 2023 11:42:03 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 335ApmmR004370;
-	Wed, 5 Apr 2023 11:41:54 GMT
+	Wed, 05 Apr 2023 11:42:05 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3359cjhg002563;
+	Wed, 5 Apr 2023 11:42:00 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
  subject : date : message-id : in-reply-to : references : mime-version :
  content-type; s=qcppdkim1;
- bh=MP8vY5b3c3LbYhyxq8wfVu3i4CjBKlxbpCsn4bvRI78=;
- b=koBvBqDS0gRj49Jvog1xBD+qz2n6YwbnPGyVKrKMDcaIZjbrOB6C+r7EFHTY5kOBP7Wq
- kgXUbI6/3L2xtv+4Xvd9Jr+gyXw4Bier/V8hc0v3cKmQCaG4tnTdkdqaPhCcLSSqvJy2
- V9tUMyP4EpOG3DfUWDrle+jre0KfXdrhsMAqipHqc9524npoiju8KhUcFr53RgKrqn2t
- aqGdTf1wgWrIxkrGvG6gHi+v6frlNnXS27S53kAb0lsqKw8VdJWtehdPXDRU1uvHssx+
- /iBwWcJIWYhTHRRTcn107O4HqrflqA2zrodAE6cU4pEitMwFhLQFGYJVv+O7hbTo+UDP dg== 
+ bh=LG7tLRvP0u5ZX/K7WNtsXB8otVa6AGmVhABVmL3DtbI=;
+ b=KFApxxQ24mfdTVNybGUcyqCCTTjqf4UlDnXKagYdJIAPOw1/hKFi31BZ8ouL/IeuUeCe
+ CUrj1bKItjgWcI08nSanZJtLaRefpayR8GZ8fgFoln7Sbn+oMCLPhAAbm/mV9967pd/D
+ 1n6an9hSHuHhEvJK+Mf4qRqRTNvrQRT9b4xsQMnzCm5iViT678b6h7/xrWOB8IsUYPls
+ IFxiAJCU2vEvC4zo4fLphVTwQsPumdoTKE3i/QBHVfwGX6mSheYxqe48tOS862/3iWPr
+ /lvG9IccsRr1XtHnZHr2z1Dj2e14wzaSmZiUAzl1PvqQKNjVPUD9KCDKxIGI6xEQ+5uO tg== 
 Received: from nasanppmta01.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3prpg22ftn-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3prnvg2m2e-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 05 Apr 2023 11:41:53 +0000
+	Wed, 05 Apr 2023 11:41:59 +0000
 Received: from nasanex01a.na.qualcomm.com (nasanex01a.na.qualcomm.com [10.52.223.231])
-	by NASANPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 335Bfrsf021910
+	by NASANPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 335Bfwgw022005
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 5 Apr 2023 11:41:53 GMT
+	Wed, 5 Apr 2023 11:41:58 GMT
 Received: from varda-linux.qualcomm.com (10.80.80.8) by
  nasanex01a.na.qualcomm.com (10.52.223.231) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.986.42; Wed, 5 Apr 2023 04:41:47 -0700
+ 15.2.986.42; Wed, 5 Apr 2023 04:41:53 -0700
 From: Varadarajan Narayanan <quic_varada@quicinc.com>
 To: <agross@kernel.org>, <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
         <vkoul@kernel.org>, <kishon@kernel.org>, <robh+dt@kernel.org>,
@@ -61,9 +61,9 @@ To: <agross@kernel.org>, <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
         <linux-kernel@vger.kernel.org>, <linux-usb@vger.kernel.org>,
         <linux-clk@vger.kernel.org>
 CC: Varadarajan Narayanan <quic_varada@quicinc.com>
-Subject: [PATCH v8 2/8] dt-bindings: phy: qcom,qmp-usb: Add IPQ9574 USB3 PHY
-Date: Wed, 5 Apr 2023 17:11:21 +0530
-Message-ID: <1efa9a64499767d939efadd0aef897ac4a6e54eb.1680693149.git.quic_varada@quicinc.com>
+Subject: [PATCH v8 3/8] dt-bindings: usb: dwc3: Add IPQ9574 compatible
+Date: Wed, 5 Apr 2023 17:11:22 +0530
+Message-ID: <3ee3163e6933b52e3eb4144c8041062dbd15e6c2.1680693149.git.quic_varada@quicinc.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <cover.1680693149.git.quic_varada@quicinc.com>
 References: <cover.1680693149.git.quic_varada@quicinc.com>
@@ -73,19 +73,19 @@ X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nasanex01a.na.qualcomm.com (10.52.223.231)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: B6iaiRNoKuyA0cIResqyGA-h3aK3622A
-X-Proofpoint-ORIG-GUID: B6iaiRNoKuyA0cIResqyGA-h3aK3622A
+X-Proofpoint-GUID: yTi1EYuy08mtKjFWmmxUztv6hYkJBuLA
+X-Proofpoint-ORIG-GUID: yTi1EYuy08mtKjFWmmxUztv6hYkJBuLA
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.254,Aquarius:18.0.942,Hydra:6.0.573,FMLib:17.11.170.22
  definitions=2023-04-05_07,2023-04-05_01,2023-02-09_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 adultscore=0
- bulkscore=0 impostorscore=0 clxscore=1015 priorityscore=1501
- suspectscore=0 mlxscore=0 spamscore=0 mlxlogscore=999 lowpriorityscore=0
- malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 suspectscore=0
+ priorityscore=1501 malwarescore=0 adultscore=0 spamscore=0 mlxscore=0
+ bulkscore=0 impostorscore=0 lowpriorityscore=0 mlxlogscore=999
+ phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.12.0-2303200000 definitions=main-2304050106
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230405_044201_544878_97D57847 
-X-CRM114-Status: GOOD (  14.44  )
+X-CRM114-CacheID: sfid-20230405_044204_193751_5C1FBE98 
+X-CRM114-Status: GOOD (  14.51  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,98 +102,71 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add dt-bindings for USB3 PHY found on Qualcomm IPQ9574
+Document the IPQ9574 dwc3 compatible.
 
 Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
 ---
- Changes in v8:
-	- Update clock names for ipq9574
-
  Changes in v6:
-	- Made power-domains optional
+	- Made power-domains as optional
+	- Resolved all 'make dtbs_check' messages
 
-Note: In the earlier patch sets, had used the (legacy)
-specification available in qcom,msm8996-qmp-usb3-phy.yaml. Moved
-to newer specification in qcom,sc8280xp-qmp-usb3-uni-phy.yaml
+ Changes in v5:
+	- Restore removed constraints
+
+ Changes in v4:
+	- Update other relevant sections
+	- Remove constraints not applicable to IPQ9574
 ---
- .../phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml        | 43 +++++++++++++++++++---
- 1 file changed, 37 insertions(+), 6 deletions(-)
+ .../devicetree/bindings/usb/qcom,dwc3.yaml         | 22 +++++++++++++++++++++-
+ 1 file changed, 21 insertions(+), 1 deletion(-)
 
-diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml
-index 16fce10..e902a0d 100644
---- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml
-@@ -16,6 +16,7 @@ description:
- properties:
-   compatible:
-     enum:
-+      - qcom,ipq9574-qmp-usb3-phy
-       - qcom,sc8280xp-qmp-usb3-uni-phy
- 
-   reg:
-@@ -25,11 +26,7 @@ properties:
-     maxItems: 4
- 
-   clock-names:
--    items:
--      - const: aux
--      - const: ref
--      - const: com_aux
--      - const: pipe
-+    maxItems: 4
- 
-   power-domains:
-     maxItems: 1
-@@ -60,7 +57,6 @@ required:
-   - reg
+diff --git a/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml b/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
+index d842819..f5dd268 100644
+--- a/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
++++ b/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
+@@ -17,6 +17,7 @@ properties:
+           - qcom,ipq6018-dwc3
+           - qcom,ipq8064-dwc3
+           - qcom,ipq8074-dwc3
++          - qcom,ipq9574-dwc3
+           - qcom,msm8953-dwc3
+           - qcom,msm8994-dwc3
+           - qcom,msm8996-dwc3
+@@ -133,7 +134,6 @@ required:
+   - "#address-cells"
+   - "#size-cells"
+   - ranges
+-  - power-domains
    - clocks
    - clock-names
--  - power-domains
-   - resets
-   - reset-names
-   - vdda-phy-supply
-@@ -71,6 +67,41 @@ required:
- 
- additionalProperties: false
- 
-+allOf:
-+  - if:
-+      properties:
-+        compatible:
-+          contains:
-+            enum:
-+              - qcom,ipq9574-qmp-usb3-phy
-+    then:
-+      properties:
-+        clocks:
-+          maxItems: 4
-+        clock-names:
-+          items:
-+            - const: aux
-+            - const: ref
-+            - const: cfg_ahb
-+            - const: pipe
+   - interrupts
+@@ -197,6 +197,26 @@ allOf:
+             - const: iface
+             - const: sleep
+             - const: mock_utmi
++      required:
++        - power-domains
 +
 +  - if:
 +      properties:
 +        compatible:
 +          contains:
 +            enum:
-+              - qcom,sc8280xp-qmp-usb3-uni-phy
++              - qcom,ipq9574-dwc3
 +    then:
 +      properties:
 +        clocks:
-+          maxItems: 4
++          maxItems: 5
 +        clock-names:
 +          items:
-+            - const: aux
-+            - const: ref
-+            - const: com_aux
-+            - const: pipe
-+
- examples:
-   - |
-     #include <dt-bindings/clock/qcom,gcc-sc8280xp.h>
++            - const: cfg_noc
++            - const: core
++            - const: iface
++            - const: sleep
++            - const: mock_utmi
+ 
+   - if:
+       properties:
 -- 
 2.7.4
 
