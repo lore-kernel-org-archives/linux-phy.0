@@ -4,115 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 77C73C7619A
-	for <linux-phy@archiver.kernel.org>; Wed,  5 Apr 2023 16:09:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B12E7C7619A
+	for <linux-phy@archiver.kernel.org>; Wed,  5 Apr 2023 19:19:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CFvk1IPs7g0/kZp6IkHmMAbYMGIgejd2t/mCtZj+X+U=; b=PUlZJNYnnfv1v7
-	LkIL9xS4yEYovjIo1NFkto7XqRaOB9vsmVpKlG/ZiftcbWKq9NgGPS09NoMsqoemOy2aKIlm0xtaA
-	zVHo71cTxwRhkib3l3aTo9z+ezInFPkihbzHYb1/l8S38GhXdm9MHBLfOMBJU66LGIy8X41SSgshg
-	39/6tRwx0Hi8KcqKBGsONlfXK6C/w2WMcnD3kXltJ+1exKn9EVPMqG1JNTiC9WB+9cA6SK2I+xGPS
-	fBNrJ6QYRANdBr/38Adpg97w2Upv4/bSzGRuSCGh32bvQYdRL++r+lJttYcT/SM/t4+2AdsgGMxyl
-	7mid8vINyMRsBJV/cM2Q==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=07a8GltwO/KlXRePvPYmhlvSGfjDREOxUFnWCTIDJ1g=; b=uiI38P/mIGbZ9d
+	xfCksBOTuUMqeUbh6Dldkugp262zTvKDzD31PcK21FUoXh1Jzqx+tZc/i0qthxtxDixlWel5g82NP
+	JOc6wyIT6dHX6E+oy6zqp1zbM4z6oyexydMxI5RegrMkCrFqy493A1f+qul4Jzx29FoqG3fOd5sEn
+	T1O6smonJKdYKDypIcy650gEEJzk0zWLnEDHSwD1hsFbpUrujCA1DO/kWhCQ3cflPXPJEVYYmgEba
+	O+6C7SA9Hyw3xKa9o4EDlatPk6Bl3rColJeQR1d+RCbGYrt0qrdGaWxxKGJNX34JyEVk9vT12J751
+	eyImceSEiip5WnYXchqw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pk5hH-0054c1-3C;
-	Wed, 05 Apr 2023 16:09:19 +0000
-Received: from vern.gendns.com ([98.142.107.122])
+	id 1pk8f6-005Urs-0x;
+	Wed, 05 Apr 2023 19:19:16 +0000
+Received: from mail-pl1-x62c.google.com ([2607:f8b0:4864:20::62c])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pk5hD-0054aK-02;
-	Wed, 05 Apr 2023 16:09:16 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lechnology.com; s=default; h=Content-Transfer-Encoding:Content-Type:
-	In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:Sender
-	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
-	List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
-	bh=PEOSsUi8JIMvoW7QnnkpkkJijxo4IUuMnZ9vv3EjUhQ=; b=PlcvWllVCZZLIxn7TA0uYZOD2i
-	8Timk2idYv+lLO3yZJhWhHPsl92ZREHTEkcZ2uj1e53hz36DkB/efojzcWFV0Na8cR9Qj+10qLhOH
-	ta3+36sHegS1o46TQyP99X9cQQUBT/Z1QMqvJ9krER9Ob1/RWq++SuzdzpDHI3Xhy5MHfqna5eIZw
-	+3KCwr3As0xZzcRdS0d74nyj+RIivO7MbcvRaGz8ll694eT/OgE8InMgGs8kJwhgkR/6hUQpNlGNz
-	Za3hBrO3EltLq0JnttfLThWdO07VZ32OqVzWbWH2mgZNY1LmC2nLtlkLnHo1jx4ghOCQVGFpuJj4L
-	hqCUbhxg==;
-Received: from ip98-183-112-29.ok.ok.cox.net ([98.183.112.29]:48320 helo=[192.168.0.134])
-	by vern.gendns.com with esmtpsa  (TLS1.2) tls TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
-	(Exim 4.96)
-	(envelope-from <david@lechnology.com>)
-	id 1pk5gX-00020w-28;
-	Wed, 05 Apr 2023 12:08:34 -0400
-Message-ID: <9d163cc7-d7ee-55e8-c01d-a1d4b3b19877@lechnology.com>
-Date: Wed, 5 Apr 2023 11:07:56 -0500
+	id 1pk8f3-005Ur7-2A
+	for linux-phy@lists.infradead.org;
+	Wed, 05 Apr 2023 19:19:15 +0000
+Received: by mail-pl1-x62c.google.com with SMTP id ja10so35360771plb.5
+        for <linux-phy@lists.infradead.org>; Wed, 05 Apr 2023 12:19:12 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1680722352;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=3zlksD92y91W/zBiGYAiTH3OBW9sw1/DW7nrq7m6H8A=;
+        b=Tl8NBWMiJl9vi0VjN3/5ExPfrReizRoo5kUk43xO2MZ4ES/Meyyl10g8bSByHqrnA7
+         nXq8pLWn8eup0i1CwY3XfmnQM86lZQvv9y3Hgnfyd7LlO1iOSh6fj74qJWf5ZKnMu2LC
+         UPjngBqvWGV2POebFrjV23T02xTWE/vlJArmaLwNMbCfsGZ+9Fic3gmBFtq8Goar2bmk
+         VOD8Z0NY6OiRBjK3v10or97jKnbUTQdQJma2x4MFObp7E/4cVLWZVTzO0SRAh6AXIbW2
+         QgD39X+nNeNPPjbNa93ExmFP3hH5/A86Qu3TDraeNoTx3vN3xa6pafG7Z31vC8UrvOkF
+         WEvg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112; t=1680722352;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=3zlksD92y91W/zBiGYAiTH3OBW9sw1/DW7nrq7m6H8A=;
+        b=4h34xIEKu1kI6kErRKueeGNxoi+wIOs+FVXuSMwfsYicWV0fE3k1Fm4rWtzElHxQAR
+         eNefaGgfSpzCv/Qi3QdrExlHfHNjR8RZmmeaS5JdRDm9BQNugTAh2wiQnlB0d7zd91tT
+         dqlAsIb7Fhbdm1dUWBtUr6PQfdIcJU3Pa690p57hw3pvCNtjFIo56WjCbYmrVQIZZDKY
+         87367c3O5/eWDwy2M1+qUhtB7i3tiF9iHXjZHFOYHIEPQR7IqY2gwpiNEHl1nJYNHhw6
+         ifomDxASOXFHU4sP8xZUsjkupXjI9ivUpsBH9YCnSfPDaqakrbKIPn+AhLSgkLT7Iyr/
+         qIXg==
+X-Gm-Message-State: AAQBX9e6OZe11iHb00wbXCcjaxnggMQXDEhkQSJJui+GHSvTbzJiEWbX
+	yghIRGudCda8Hlx8qPrzHuf69w==
+X-Google-Smtp-Source: AKy350ZnCH0zsQ7BpkuAXwC/NfeSdLVgSm8Gk9+vTwYOmSnoat6y6vPz+7X6Fr1oyoUrhW00QR6npg==
+X-Received: by 2002:a17:902:fb05:b0:19a:9610:b234 with SMTP id le5-20020a170902fb0500b0019a9610b234mr3167771plb.1.1680722352018;
+        Wed, 05 Apr 2023 12:19:12 -0700 (PDT)
+Received: from localhost.localdomain ([223.233.67.41])
+        by smtp.gmail.com with ESMTPSA id d9-20020a170902aa8900b001a1d7329235sm10478097plr.234.2023.04.05.12.19.07
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 05 Apr 2023 12:19:11 -0700 (PDT)
+From: Bhupesh Sharma <bhupesh.sharma@linaro.org>
+To: linux-arm-msm@vger.kernel.org,
+	devicetree@vger.kernel.org,
+	linux-phy@lists.infradead.org
+Cc: agross@kernel.org,
+	linux-kernel@vger.kernel.org,
+	andersson@kernel.org,
+	bhupesh.sharma@linaro.org,
+	bhupesh.linux@gmail.com,
+	krzysztof.kozlowski@linaro.org,
+	robh+dt@kernel.org,
+	konrad.dybcio@linaro.org,
+	kishon@kernel.org,
+	vkoul@kernel.org,
+	krzysztof.kozlowski+dt@linaro.org
+Subject: [PATCH v5 0/2] Enable USB SS qmp phy for Qualcomm SM6115 SoC
+Date: Thu,  6 Apr 2023 00:46:31 +0530
+Message-Id: <20230405191633.1864671-1-bhupesh.sharma@linaro.org>
+X-Mailer: git-send-email 2.38.1
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.9.0
-Subject: Re: [PATCH v3 54/65] clk: da8xx: clk48: Switch to determine_rate
-Content-Language: en-US
-To: Maxime Ripard <maxime@cerno.tech>
-Cc: Michael Turquette <mturquette@baylibre.com>,
- Stephen Boyd <sboyd@kernel.org>, =?UTF-8?Q?Andreas_F=c3=a4rber?=
- <afaerber@suse.de>, Manivannan Sadhasivam <mani@kernel.org>,
- Nicolas Ferre <nicolas.ferre@microchip.com>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Claudiu Beznea <claudiu.beznea@microchip.com>,
- Max Filippov <jcmvbkbc@gmail.com>,
- Charles Keepax <ckeepax@opensource.cirrus.com>,
- Richard Fitzgerald <rf@opensource.cirrus.com>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Alexandre Torgue <alexandre.torgue@foss.st.com>,
- Luca Ceresoli <luca.ceresoli@bootlin.com>, Sekhar Nori <nsekhar@ti.com>,
- Abel Vesa <abelvesa@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
- Sascha Hauer <s.hauer@pengutronix.de>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- Dinh Nguyen <dinguyen@kernel.org>,
- Peter De Schrijver <pdeschrijver@nvidia.com>,
- Prashant Gaikwad <pgaikwad@nvidia.com>,
- Thierry Reding <thierry.reding@gmail.com>,
- Jonathan Hunter <jonathanh@nvidia.com>, Ulf Hansson
- <ulf.hansson@linaro.org>, Linus Walleij <linus.walleij@linaro.org>,
- David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Alessandro Zummo <a.zummo@towertech.it>, Chen-Yu Tsai <wens@csie.org>,
- Jernej Skrabec <jernej.skrabec@gmail.com>,
- Samuel Holland <samuel@sholland.org>, Liam Girdwood <lgirdwood@gmail.com>,
- Mark Brown <broonie@kernel.org>, Jaroslav Kysela <perex@perex.cz>,
- Takashi Iwai <tiwai@suse.com>, Paul Cercueil <paul@crapouillou.net>,
- Orson Zhai <orsonzhai@gmail.com>, Baolin Wang
- <baolin.wang@linux.alibaba.com>, Chunyan Zhang <zhang.lyra@gmail.com>,
- linux-clk@vger.kernel.org, linux-kernel@vger.kernel.org,
- AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
- linux-arm-kernel@lists.infradead.org, linux-actions@lists.infradead.org,
- patches@opensource.cirrus.com, linux-stm32@st-md-mailman.stormreply.com,
- linux-mediatek@lists.infradead.org, linux-renesas-soc@vger.kernel.org,
- linux-tegra@vger.kernel.org, dri-devel@lists.freedesktop.org,
- linux-phy@lists.infradead.org, linux-rtc@vger.kernel.org,
- linux-sunxi@lists.linux.dev, alsa-devel@alsa-project.org,
- linux-mips@vger.kernel.org
-References: <20221018-clk-range-checks-fixes-v3-0-9a1358472d52@cerno.tech>
- <20221018-clk-range-checks-fixes-v3-54-9a1358472d52@cerno.tech>
- <04f5d305-9992-bcdc-cd54-111eb8254155@lechnology.com>
- <3nyoulu5eba6eyo644crhbtog63jh7vockbp7dz6mxquj2omsn@j56kn6vkbktg>
-From: David Lechner <david@lechnology.com>
-In-Reply-To: <3nyoulu5eba6eyo644crhbtog63jh7vockbp7dz6mxquj2omsn@j56kn6vkbktg>
-X-AntiAbuse: This header was added to track abuse, please include it with any abuse report
-X-AntiAbuse: Primary Hostname - vern.gendns.com
-X-AntiAbuse: Original Domain - lists.infradead.org
-X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
-X-AntiAbuse: Sender Address Domain - lechnology.com
-X-Get-Message-Sender-Via: vern.gendns.com: authenticated_id: davidmain+lechnology.com/only user confirmed/virtual account not confirmed
-X-Authenticated-Sender: vern.gendns.com: davidmain@lechnology.com
-X-Source: 
-X-Source-Args: 
-X-Source-Dir: 
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230405_090915_284759_0A9655CF 
-X-CRM114-Status: GOOD (  15.87  )
+X-CRM114-CacheID: sfid-20230405_121913_741981_B6BCD274 
+X-CRM114-Status: UNSURE (   8.75  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -124,43 +96,47 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 4/5/23 10:22 AM, Maxime Ripard wrote:
-> Hi David,
-> 
-> On Wed, Apr 05, 2023 at 10:03:24AM -0500, David Lechner wrote:
->> On 4/4/23 5:11 AM, Maxime Ripard wrote:
->>> The TI DA8xx USB0 clk48 clocks implements a mux with a set_parent
->>> hook, but doesn't provide a determine_rate implementation.
->>>
->>> This is a bit odd, since set_parent() is there to, as its name implies,
->>> change the parent of a clock. However, the most likely candidate to
->>> trigger that parent change is a call to clk_set_rate(), with
->>> determine_rate() figuring out which parent is the best suited for a
->>> given rate.
->>>
->>
->> As mentioned in my previous review, parent is selected by device
->> tree and should never be changed after init.
-> 
-> Great minds think alike then, because the driver implements exactly
-> that, either before or after that patch.
-> 
-> That patch makes the current behaviour explicit but doesn't change it in
-> any way.
-> 
-> So I guess that means that I can add your Acked-by on the three patches
-> you reviewed with the same message?
-> 
-> Maxime
+Changes since v4:
+-----------------
+- v4 can be seen here: https://lore.kernel.org/linux-arm-msm/20230401154725.1059563-1-bhupesh.sharma@linaro.org/ 
+- Collected Krzysztof's Ack for [PATCH 1/2].
+- Added more descriptive commit logs as per Dmitry's comments on v4.
 
-Yes, preferably with a simplified commit message.
+Changes since v3:
+-----------------
+- v3 can be seen here: https://lore.kernel.org/linux-arm-msm/20221215094532.589291-4-bhupesh.sharma@linaro.org/
+- Fixed v4 as per the downstream driver code: https://android.googlesource.com/kernel/msm-extra/devicetree/+/refs/heads/android-msm-bramble-4.19-android11-qpr1/qcom/bengal-usb.dtsi#296
 
-Acked-by: David Lechner <david@lechnology.com>
+This patchset adds the support for USB SS qmp phy for Qualcomm SM6115
+SoC. For the previous versions of this patch there were conversations
+on irc as to whether this was a 'qcom,usb-ssphy-qmp-usb3-or-dp' or a
+'qcom,usb-ssphy-qmp-dp-combo' as per downstream code and hardware
+documentation.
+
+But after a careful look at downstream dtsi (see [1]) it appears that
+this indeed is a 'qcom,usb-ssphy-qmp-usb3-or-dp' phy and not a
+'dp-combo' phy.
+
+[1]. https://android.googlesource.com/kernel/msm-extra/devicetree/+/refs/heads/android-msm-bramble-4.19-android11-qpr1/qcom/bengal-usb.dtsi#296
+
+Bhupesh Sharma (2):
+  dt-bindings: phy: qcom,qmp-usb: Fix phy subnode for SM6115 & QCM2290
+    USB3 PHY
+  arm64: dts: qcom: sm6115: Add USB SS qmp phy node
+
+ .../phy/qcom,msm8996-qmp-usb3-phy.yaml        |  4 +--
+ .../boot/dts/qcom/sm4250-oneplus-billie2.dts  |  3 ++
+ arch/arm64/boot/dts/qcom/sm6115.dtsi          | 36 +++++++++++++++++--
+ .../boot/dts/qcom/sm6115p-lenovo-j606f.dts    |  3 ++
+ 4 files changed, 42 insertions(+), 4 deletions(-)
+
+-- 
+2.38.1
 
 
 -- 
