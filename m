@@ -4,86 +4,143 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D466FC761A6
-	for <linux-phy@archiver.kernel.org>; Wed,  5 Apr 2023 13:51:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C888FC7619A
+	for <linux-phy@archiver.kernel.org>; Wed,  5 Apr 2023 14:51:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qym9IkS4Pajk9G9G3r9UnAfZrG1Blq8GqLtN2FBP3BQ=; b=pOBxiGwF8/MAeo
-	Zu61UEwNx+7CMVJW/Tx3L/+JEFOGMdjVYslOU2uZ7nGrKFcf3dOpKwgQRCYGcg1414cdQooHt0AVM
-	7VY0vqpIDgJIID9MZ7z9rJ+lcldlpm3MYcHoOuXhXHmBFc8k/5GvvPl+q6dAkwYfWZ8zP/zLftmFY
-	sHt31SWA0MeBkSjXltNKvc5dt6tnUlFp71eKjjdyhJBYvX9ytg1ffOMtaY/pFcFXSU2SqsvYZLNvi
-	VRxINmwAg8t5jH2FlvpBoIqZaB3jO7dkZK0jO2eZnWxE68KB4AnXJhauW7Tt5PAXc/3fWXfTkArx/
-	Juxj3+c9hcdiWjwusyCg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=YDdmobpYhzPBert3gE4vXk7BaAPz3W5Wz9R7ypj1e9c=; b=gB3KxKSIfYhS7lHs+XNMkaRe3W
+	uFhleY7O2bCNmDzJLEFokRw5YxWEEiuBlCIW1dPpxvTb5cqXC5yurnDgalSiOD00L4UKXkKarOmDz
+	w+tEjVoxcJGpi6fkiLX/6fnwvrOR++ZQkWPY3clgqqTLlTIbs2Dwbjz7ycB3oaYDj2JOe3MzOkyTl
+	1ADgrOCQklAGM0TcAXG2qxAB0QruOn2vp4fbGiIwlYrubY0D2qYOWaAJQeNHziQ9DjAFQYvc1uXWS
+	x94EMNKVsrIXn5kMgpSNiLM/sXUgP/Q/qbAXfcS3W/m13sSfn8bfIkAOFJDzUpZZ8GoL62/9RUX5s
+	oTn0TQrA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pk3Xu-004ZnC-1T;
-	Wed, 05 Apr 2023 13:51:30 +0000
-Received: from mail-ed1-x531.google.com ([2a00:1450:4864:20::531])
+	id 1pk4Tq-004jAo-1Q;
+	Wed, 05 Apr 2023 14:51:22 +0000
+Received: from wnew3-smtp.messagingengine.com ([64.147.123.17])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pk3Xq-004Zlh-28
-	for linux-phy@lists.infradead.org;
-	Wed, 05 Apr 2023 13:51:28 +0000
-Received: by mail-ed1-x531.google.com with SMTP id r11so141280085edd.5
-        for <linux-phy@lists.infradead.org>; Wed, 05 Apr 2023 06:51:25 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1680702684;
-        h=content-transfer-encoding:in-reply-to:from:references:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=uPqH7o+0wiRlBmcx0MUrrIJplx2idVv42J11sE3f/KY=;
-        b=HSDwUFhV0XqGiVO+Xtk10tawmjOw1BmkD0h5DCHj7+7lDSU9h0va60K2EuqPQAJ0wJ
-         vh17eJDGLMXGwvFJc2Lh7N8y2Qzx+9BDw+B1XDfjJkbEGmma5uQ7p4GXrdqzdGPkhiJK
-         /cuLGMpm0w1aC1SsAKpQI1+Wp2q6E0EWUe1eTmgk6R2V1/Wa7KAm8RYjB7TgXo1DUSOr
-         mxGdz4W4ZfehzI6DY7FqsJiQCXFTMYPWhm1VbcuJhNHqhLFTR8YS2kVzAdhBTHcepKIY
-         3m4qwI+zq8LlvwesdwMxCViebZRXhiKtGuCHxVd8zkGSu7+cOz906fFSNDrtV+ez+Yyq
-         pM6g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112; t=1680702684;
-        h=content-transfer-encoding:in-reply-to:from:references:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=uPqH7o+0wiRlBmcx0MUrrIJplx2idVv42J11sE3f/KY=;
-        b=o5UiuxK8d9h5k4Rb3BB5TzzhbafLBXUJzz9xqOeHhw0FCA4oTGA0icJ8NNeeNMHjDw
-         WwbiN8HuRaZ7OMc9JnU0M6GdmU12lEMU5jka+8D+ipQO9vnw7pJQRlvhpWK4fdqQRKsa
-         3FEvMB1iEMds5GR64AUp331d1i0gQUa4zD8ylndv1s8sdeft99aO7Fu9QzfxooeNJNzj
-         dOZDp3VDwK2zzIfiIktdXgHKaT4fDsYxV6eFrjQJjfpT2l/+Xir8UWdhG7v/SrfNrvOU
-         by7l+0PLNsxSeS18SkpRBDham/1sTIwH80Xc5/NiJeYCAktlvXYel+lvzdynUcIs62Xh
-         Zcvg==
-X-Gm-Message-State: AAQBX9c0kQ6FDXaDQ0u61Bt/jVY3hh7FlD6Lr+7/V+V3QJb80sNqvBxu
-	YLDboaKKuSj6v3g/efsDdP6jYw==
-X-Google-Smtp-Source: AKy350aCSBtfQNEG9ivhJDXRScDkDl7K9FxzN5uKgWKy9JhdSLbTTf3hT9NuDFad11cE5iNMfsxaLw==
-X-Received: by 2002:a17:907:8b95:b0:932:c1e2:9984 with SMTP id tb21-20020a1709078b9500b00932c1e29984mr3530013ejc.58.1680702683903;
-        Wed, 05 Apr 2023 06:51:23 -0700 (PDT)
-Received: from ?IPV6:2a02:810d:15c0:828:3f:6b2:54cd:498e? ([2a02:810d:15c0:828:3f:6b2:54cd:498e])
-        by smtp.gmail.com with ESMTPSA id m23-20020a509317000000b004fbd365fb33sm7391465eda.38.2023.04.05.06.51.22
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 05 Apr 2023 06:51:23 -0700 (PDT)
-Message-ID: <5bbf9452-43b4-4b7a-8879-003efa26b0f5@linaro.org>
-Date: Wed, 5 Apr 2023 15:51:22 +0200
+	id 1pk4Tm-004j9E-0B;
+	Wed, 05 Apr 2023 14:51:19 +0000
+Received: from compute2.internal (compute2.nyi.internal [10.202.2.46])
+	by mailnew.west.internal (Postfix) with ESMTP id 297162B066F9;
+	Wed,  5 Apr 2023 10:51:03 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+  by compute2.internal (MEProxy); Wed, 05 Apr 2023 10:51:12 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=cc
+	:cc:content-type:content-type:date:date:from:from:in-reply-to
+	:in-reply-to:message-id:mime-version:references:reply-to:sender
+	:subject:subject:to:to; s=fm3; t=1680706262; x=1680713462; bh=12
+	Dan7+hixlpFENmGLL4GqaHPQrKwrlwcpNYaShrlRU=; b=hkUfRXi9ZUU/v0L/+I
+	gVrH+uthhloeGbMuMyLFaLPGdmHx+ZfnEv71Adty8UoYbiAE/xjl8u5KqVjg9iph
+	dDL+1SNtFZ1DIoSql0P9/+KZLkrmQQF9uAj4XJ3/r3yzAoVDyU+3UZyu1+aTEPER
+	OWkJxOHbEINNDSPozQUVQlhGFT/1jQ99cutqUong+yuWAY6hka25mlIqIA3GjQ0M
+	xDl9zwU8ch2EEnAt9r2dDdVWFEMDWJMeeAG6cjRIoFxOKPLQyawDWpS1LKq7S1Sc
+	MGSHJpnZvjWdEWmQvJiSBEknGcWQYWFHfj+4DYMwd9wCkAvA7EmYRRWbg1P2K/Fd
+	qCiA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	messagingengine.com; h=cc:cc:content-type:content-type:date:date
+	:feedback-id:feedback-id:from:from:in-reply-to:in-reply-to
+	:message-id:mime-version:references:reply-to:sender:subject
+	:subject:to:to:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender
+	:x-sasl-enc; s=fm2; t=1680706262; x=1680713462; bh=12Dan7+hixlpF
+	ENmGLL4GqaHPQrKwrlwcpNYaShrlRU=; b=lOTStozRcIhNQiVpqSWvy6hRgVXT/
+	Z8/ftiEBKyaVp1oyePcUHHGpoOaAaw1wd36ZBldHKB440gbnuuWDgL4aZxY4t+D2
+	JoJRCNbY0NF2d9BzWQZ6I8nmk8bEGEJ52MOxbUnQvnpqprCtvLgw9V0VvdXk8yjW
+	C/YVrE2H0tJEXEaoqCnm6pQNlv7lYnQwjCa/Zg4z9cPIiCtx72SsV2zfomP957up
+	I+sHEZnv3M0+ChpZ9XsHO6Dx8kCKXakzvR1oF5fyxjofwoD6OTcV2p4PzM7eDPWe
+	UjJ4Qg64vq3vbaPOW4sz1a3L5/0xOG6j9Rn4k8PPs7pnugtw7Htymzhvg==
+X-ME-Sender: <xms:1IotZPUuMsHKcRIV1tn8qjLzvF2oPV7C1u5MRVolQHZ2CdI44Gsrcg>
+    <xme:1IotZHk4YGCS6J8sDxTrZTGDxzKZcR2TlvRV3xQhuYyw2YgyyrkEFWI9FNsau1Oxz
+    7biG3a4ROm7r4_f2cw>
+X-ME-Received: <xmr:1IotZLYZoXCiLfJAril3onbQaZKPqh_r1AoINPLHEvj2IgoW0Z7RkujzYMTIWt_jWufho636g6-ftQYTaczYPPB_G36PK4o>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvhedrvdejuddgkedvucetufdoteggodetrfdotf
+    fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+    uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
+    cujfgurhepfffhvfevuffkfhggtggujgesghdtsfertddtudenucfhrhhomhepofgrgihi
+    mhgvucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucggtffrrg
+    htthgvrhhnpeefjeeiueeiheevtddvgfeluedufeeigeeijefhveelfeevueefieehuefg
+    ffetteenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhrohhmpe
+    hmrgigihhmvgestggvrhhnohdrthgvtghh
+X-ME-Proxy: <xmx:1IotZKXiXH4XvSiK_3aa4fqs5l2lv1GpNF5NGvI7WsaC9GLK8gzAGA>
+    <xmx:1IotZJmCjINoZE4kymmtgWXz9xLJzq_D049KW1UQySfT5mjHyygKrg>
+    <xmx:1IotZHetG9QWgJCeQdyxnOMLtU3uerimAkHUHXaEXwRWPSNKWtET1A>
+    <xmx:1ootZOSLB3yQ5ftmsB4dyjGTTS9hWpXHNN90QPLp89JeVXerMhgMeNFYNDs>
+Feedback-ID: i8771445c:Fastmail
+Received: by mail.messagingengine.com (Postfix) with ESMTPA; Wed,
+ 5 Apr 2023 10:50:59 -0400 (EDT)
+Date: Wed, 5 Apr 2023 16:50:56 +0200
+From: Maxime Ripard <maxime@cerno.tech>
+To: Paul Cercueil <paul@crapouillou.net>
+Cc: Aidan MacDonald <aidanmacdonald.0x0@gmail.com>,
+ 	Stephen Boyd <sboyd@kernel.org>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ 	Chen-Yu Tsai <wens@csie.org>, Daniel Vetter <daniel@ffwll.ch>,
+ 	Nicolas Ferre <nicolas.ferre@microchip.com>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ 	Jaroslav Kysela <perex@perex.cz>, Shawn Guo <shawnguo@kernel.org>,
+ 	Fabio Estevam <festevam@gmail.com>,
+ Ulf Hansson <ulf.hansson@linaro.org>,
+ 	Claudiu Beznea <claudiu.beznea@microchip.com>,
+ Michael Turquette <mturquette@baylibre.com>,
+ 	Dinh Nguyen <dinguyen@kernel.org>, Chunyan Zhang <zhang.lyra@gmail.com>,
+ 	Manivannan Sadhasivam <mani@kernel.org>,
+ Andreas =?utf-8?Q?F=C3=A4rber?= <afaerber@suse.de>,
+ 	Jonathan Hunter <jonathanh@nvidia.com>, Abel Vesa <abelvesa@kernel.org>,
+ 	Charles Keepax <ckeepax@opensource.cirrus.com>,
+ Alessandro Zummo <a.zummo@towertech.it>,
+ 	Peter De Schrijver <pdeschrijver@nvidia.com>,
+ Orson Zhai <orsonzhai@gmail.com>,
+ 	Alexandre Torgue <alexandre.torgue@foss.st.com>,
+ Prashant Gaikwad <pgaikwad@nvidia.com>,
+ 	Liam Girdwood <lgirdwood@gmail.com>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ 	Samuel Holland <samuel@sholland.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ 	Richard Fitzgerald <rf@opensource.cirrus.com>,
+ Vinod Koul <vkoul@kernel.org>, 	NXP Linux Team <linux-imx@nxp.com>,
+ Sekhar Nori <nsekhar@ti.com>,
+ 	Kishon Vijay Abraham I <kishon@kernel.org>,
+ Linus Walleij <linus.walleij@linaro.org>, 	Takashi Iwai <tiwai@suse.com>,
+ David Airlie <airlied@gmail.com>,
+ 	Luca Ceresoli <luca.ceresoli@bootlin.com>,
+ Jernej Skrabec <jernej.skrabec@gmail.com>,
+ 	Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Baolin Wang <baolin.wang@linux.alibaba.com>,
+ 	David Lechner <david@lechnology.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>, 	Mark Brown <broonie@kernel.org>,
+ Max Filippov <jcmvbkbc@gmail.com>,
+ 	Geert Uytterhoeven <geert+renesas@glider.be>,
+ linux-stm32@st-md-mailman.stormreply.com, 	alsa-devel@alsa-project.org,
+ linux-mediatek@lists.infradead.org, 	linux-phy@lists.infradead.org,
+ linux-mips@vger.kernel.org, linux-renesas-soc@vger.kernel.org,
+ 	linux-actions@lists.infradead.org, linux-clk@vger.kernel.org,
+ 	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+ patches@opensource.cirrus.com, linux-tegra@vger.kernel.org,
+ 	linux-rtc@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ 	linux-sunxi@lists.linux.dev, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org
+Subject: Re: [PATCH v2 56/65] clk: ingenic: cgu: Switch to determine_rate
+Message-ID: <g24dkwtsobslw6qdvs4vbcdmk2txrlrephm5zmlff2fusrxheo@mqxrprzctymk>
+References: <cp7Yh29ndlOOi1yW8KwCcpzoLPLxm1vR@localhost>
+ <20221107085417.xrsh6xy3ouwdkp4z@houat>
+ <ucJ6KSBqdPTxfxUQqLUr9C9RGiQRnY1I@localhost>
+ <20221109110045.j24vwkaq3s4yzoy3@houat>
+ <06a293adc75990ed3e297b076fc38d8a.sboyd@kernel.org>
+ <xpKMzGb1sOsucWMTlJIMzrT5KjLlZ7JP@localhost>
+ <20230324111959.frjf4neopbs67ugd@houat>
+ <rTJKpeLOBeu3eOLW5z3P5fEpcOJJLrGs@localhost>
+ <20230327192430.b2cp3yyrkzy4g4vw@penduick>
+ <1e0e8e9fe44c27e844e7e918a985704e58da2c27.camel@crapouillou.net>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.9.0
-Subject: Re: [PATCH v8 0/8] Enable IPQ9754 USB
-Content-Language: en-US
-To: Varadarajan Narayanan <quic_varada@quicinc.com>, agross@kernel.org,
- andersson@kernel.org, konrad.dybcio@linaro.org, vkoul@kernel.org,
- kishon@kernel.org, robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
- gregkh@linuxfoundation.org, mturquette@baylibre.com, sboyd@kernel.org,
- quic_wcheng@quicinc.com, linux-arm-msm@vger.kernel.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org,
- linux-clk@vger.kernel.org
-References: <cover.1680693149.git.quic_varada@quicinc.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <cover.1680693149.git.quic_varada@quicinc.com>
+In-Reply-To: <1e0e8e9fe44c27e844e7e918a985704e58da2c27.camel@crapouillou.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230405_065126_707801_B9690959 
-X-CRM114-Status: UNSURE (   9.45  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230405_075118_152238_3B05DEF2 
+X-CRM114-Status: GOOD (  42.30  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,38 +152,116 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============1458772141371757351=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 05/04/2023 13:41, Varadarajan Narayanan wrote:
-> This patch series adds the relevant phy and controller
-> configurations for enabling USB on IPQ9754
-> 
-> Depends on:
-> https://lore.kernel.org/all/20230217142030.16012-1-quic_devipriy@quicinc.com/
-> 
-> [v8]:
-> 	- Update bindings for the clock name change
-> [v7]:
-> 	- com_aux -> cfg_ahb in patch 7
-> 
-> [v6]:
->         - Incorporated review comments
-> 	- Resolve make dtbs_check messages
-> 	- Fixed pcs_usb offset
-> 	- Board dts file name changed
-> 
 
-Thanks for the patches. Three submissions within few hours it is a bit
-too many. Please slow down a bit, give reviewers chance to respond and
-wait with new versions at least one day.
-Best regards,
-Krzysztof
+--===============1458772141371757351==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="i7uz65y3usvns4hs"
+Content-Disposition: inline
 
+
+--i7uz65y3usvns4hs
+Content-Type: text/plain; charset=iso-8859-1
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Wed, Apr 05, 2023 at 02:57:26PM +0200, Paul Cercueil wrote:
+> Le lundi 27 mars 2023 =E0 21:24 +0200, Maxime Ripard a =E9crit=A0:
+> > On Fri, Mar 24, 2023 at 08:58:48PM +0000, Aidan MacDonald wrote:
+> > > > > My suggestion: add a per-clock bitmap to keep track of which
+> > > > > parents
+> > > > > are allowed. Any operation that would select a parent clock not
+> > > > > on the
+> > > > > whitelist should fail. Automatic reparenting should only select
+> > > > > from
+> > > > > clocks on the whitelist. And we need new DT bindings for
+> > > > > controlling
+> > > > > the whitelist, for example:
+> > > > >=20
+> > > > > =A0=A0=A0 clock-parents-0 =3D <&clk1>, <&pll_c>;
+> > > > > =A0=A0=A0 clock-parents-1 =3D <&clk2>, <&pll_a>, <&pll_b>;
+> > > > >=20
+> > > > > This means that clk1 can only have pll_c as a parent, while
+> > > > > clk2 can
+> > > > > have pll_a or pll_b as parents. By default every clock will be
+> > > > > able
+> > > > > to use any parent, so a list is only needed if the machine
+> > > > > needs a
+> > > > > more restrictive policy.
+> > > > >=20
+> > > > > assigned-clock-parents should disable automatic reparenting,
+> > > > > but allow
+> > > > > explicit clk_set_parent(). This will allow clock drivers to
+> > > > > start doing
+> > > > > reparenting without breaking old DTs.
+> > > >=20
+> > > > I'm generally not a fan of putting all these policies in the
+> > > > device
+> > > > tree. Do you have an example where it wouldn't be possible to do
+> > > > exactly
+> > > > this from the driver itself?
+> > >=20
+> > > I'm confused. What's implicit in the example is clk1 and clk2 might
+> > > have *other* possible choices of parent clock and the device tree
+> > > is
+> > > limiting what the OS is allowed to choose.
+> > >=20
+> > > Why would you put such arbitrary limitations into the driver?
+> >=20
+> > Why would we put such arbitrary limitations in the firmware? As this
+> > entire thread can attest, people are already using the device tree to
+> > work around the limitations of the Linux driver, or reduce the
+> > features of Linux because they can rely on the device tree. Either
+> > way, it's linked to the state of the Linux driver, and any other OS
+> > or
+> > Linux version could very well implement something more dynamic.
+>=20
+> Probably because if we have to choose between setting policy in the
+> kernel or in the firmware, it is arguably better to set it in the
+> firmware.
+
+I have a very different view on this I guess. Firmware is (most of the
+time) hard to update, and the policy depend on the state of support of a
+given OS so it's likely to evolve. The kernel is the best place to me to
+put that kind of policy. Why do you think differently?
+
+> Especially when talking about clocks, as the firmware is already the
+> one programming the boot clocks.
+
+I'm not sure what your point is there. I don't think I ever saw a
+firmware getting the clocks right for every possible scenario on a given
+platform. And if it was indeed the case, then we wouldn't even a kernel
+driver.
+
+Maxime
+
+--i7uz65y3usvns4hs
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYKAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCZC2KyAAKCRDj7w1vZxhR
+xbx0AQDo/091Al9F55xVR4k44hMshHS0Db7q/bHfCkOFHJG+RwEAxo0zFijQl/Op
+i9WCXbYvyuKQciwCDCJE5/F+69faAgw=
+=nWIA
+-----END PGP SIGNATURE-----
+
+--i7uz65y3usvns4hs--
+
+
+--===============1458772141371757351==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============1458772141371757351==--
+
