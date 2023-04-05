@@ -4,46 +4,46 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E9E73C7619A
-	for <linux-phy@archiver.kernel.org>; Wed,  5 Apr 2023 15:10:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 02AC0C7619A
+	for <linux-phy@archiver.kernel.org>; Wed,  5 Apr 2023 15:10:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
 	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
 	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=rwTQKT27sw8jGbgT5SUUSDjgpTb23CZDoBevaZYgdxQ=; b=kLq2xR5hPPcMxFjU2hCAyBWgyT
-	/XrPeobdNaYbqbJnUZzanuFt5MZOhH67YYeHdoEUwX+uDAwTKCSHonkDGFUlVRVYze9/FRPZuiH4I
-	kgVIDC+g5VcscX8TYBtjgNKyrgIBKpQu8WBuZferHQvS8EsqYRZe6bjScHqUfZQGWT+8cVpyu8SI7
-	WQL+OdDC1xeCTruRxRErxMowLWQg/DwEizmF43jBYGgSY3aewkf12ylDmWkLr1CGWcDkvASryn2nw
-	cCspdbPmNw5ZQ5qL8oB5Oe2ZWo3J1rFD0XptYHRfvOWkwRGL2QjQZz/sbLXwhlduV1nW1elIncwev
-	VrtXheBg==;
+	bh=T+iczByZ3vNR06bY2LnkWR09zUUn2WI6FP1hktBYMx4=; b=FJOAxCEKWpMDeZ+Lrr30eqvw5+
+	DuQNcrCKPLWrrbc89rKWaCjScuwDoFZzT0w2vFpVwLTjoPoS73f+ZVi5Du2YYUm5Vi7XGapWg8prV
+	aDDcQc4Mn8a6CcQ7Om1ZC10bWPkSHk6s9LlYO8FUeie3TubYTdunO+9zUzJi7CdAzArwKPGWnhUtb
+	UJidUGclWC8Of5LxktWXSfB6YXs/AxOoshjtBoRRoQGdqIBYb0Jcul6WD2MAIjlDnpFj1LK1bCn+O
+	VC4R7xfdsCIUDPSibTLtTOf2c5FZouKLP2vu84PDce12q6aQWDd+AYBQHwpqK/W5qr48tZkptBACj
+	SPpKwabQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pk4m5-004oH1-1u;
-	Wed, 05 Apr 2023 15:10:13 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1pk4mn-004oeK-1z;
+	Wed, 05 Apr 2023 15:10:57 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pk4ly-004oCd-20;
-	Wed, 05 Apr 2023 15:10:09 +0000
+	id 1pk4me-004oZ2-1A;
+	Wed, 05 Apr 2023 15:10:52 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id CD7E2626EA;
-	Wed,  5 Apr 2023 15:10:05 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 604D1C433D2;
-	Wed,  5 Apr 2023 15:09:52 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id D947E625CB;
+	Wed,  5 Apr 2023 15:10:47 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A41DAC433D2;
+	Wed,  5 Apr 2023 15:10:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1680707405;
-	bh=rJ3M+zYS15q5Quad0wzrZG7xL5+9ADdP5E4EpauPQDA=;
+	s=k20201202; t=1680707447;
+	bh=D4YX5DK0pun7qG4OSMVc8e9vaDN+H7CmPuWpZRhiBTU=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=uwvoLG9Mg6dizDLr402j7UdbsqsQxuYjteYBhYwhrJlAsrbTC9nd6DQo1IzXxCIaN
-	 9U72nBXMiZahaLCTdTcDIyoRUQ+ocS5hUtOmf5c/huPkH9rNDWmoozW7pynZHzH+D0
-	 BGkdmKh+F8uLhLLPmXVxsc28WnJBRX2V3SfGP8T4wKvdqas3AfRJERK4rgMzIwhb2E
-	 qUgFyspMctrP+YLPss7RMpYkfaXUxCSqnJxvkR2qxW/mhhhcEOUM7AD8vA30RzOHfq
-	 MNkaCuaeprkDAK/eetegajbSH5jkLfbeRNdoBlc7xa5It9mB4L6J4Y1vI1mBg8lIkR
-	 DpSUyJSUzAZBg==
-Date: Wed, 5 Apr 2023 16:09:49 +0100
+	b=H++unxUb7nt0bWB0cZRIpirjyl6fMUIanjR0IybKKbOFCDZQ7fl3nGRfgXxHBmOTc
+	 aLr8pCNoVrScF3nXsYVeVlit6tFVqt3RTHudqPjdJeU4XNb3Fm+L6FyB4ZGRpA8mku
+	 uHDprHNH/IIWooGinODcsKEp00ZKOvzTS5e+wLSdqGlH/MPkZGOJVa2hJjKHooD4a0
+	 m1oiZgR8OnAyymsDZMT9AjB6JLhQsxqkpcXhI/shb8qZ4C8ggWEHL6au6GNGlms1bf
+	 2LcKx7iD5BDrkm8i9BaGwlDiJoOZSwNIUEO5nDNUcLF6Xb9gQmEcDK0dMfWFuHYUX9
+	 29DfTcAe3KLQg==
+Date: Wed, 5 Apr 2023 16:10:25 +0100
 From: Mark Brown <broonie@kernel.org>
 To: Maxime Ripard <maxime@cerno.tech>
 Cc: Michael Turquette <mturquette@baylibre.com>,
@@ -97,16 +97,16 @@ Cc: Michael Turquette <mturquette@baylibre.com>,
 	dri-devel@lists.freedesktop.org, linux-phy@lists.infradead.org,
 	linux-rtc@vger.kernel.org, linux-sunxi@lists.linux.dev,
 	alsa-devel@alsa-project.org, linux-mips@vger.kernel.org
-Subject: Re: [PATCH v3 63/65] ASoC: tlv320aic32x4: pll: Switch to
+Subject: Re: [PATCH v3 64/65] ASoC: tlv320aic32x4: div: Switch to
  determine_rate
-Message-ID: <6b83dd87-3819-4db4-bd07-92487a1df09d@sirena.org.uk>
+Message-ID: <692983f2-4aef-4ab9-9777-43f46b9cb4ba@sirena.org.uk>
 References: <20221018-clk-range-checks-fixes-v3-0-9a1358472d52@cerno.tech>
- <20221018-clk-range-checks-fixes-v3-63-9a1358472d52@cerno.tech>
+ <20221018-clk-range-checks-fixes-v3-64-9a1358472d52@cerno.tech>
 MIME-Version: 1.0
-In-Reply-To: <20221018-clk-range-checks-fixes-v3-63-9a1358472d52@cerno.tech>
+In-Reply-To: <20221018-clk-range-checks-fixes-v3-64-9a1358472d52@cerno.tech>
 X-Cookie: 1 bulls, 3 cows.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230405_081006_771417_111A1997 
+X-CRM114-CacheID: sfid-20230405_081048_489584_31FC6373 
 X-CRM114-Status: GOOD (  19.67  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -119,22 +119,22 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============3735202257665311199=="
+Content-Type: multipart/mixed; boundary="===============5449926203182262052=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
---===============3735202257665311199==
+--===============5449926203182262052==
 Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="bXPsTMNAHQ2iLa6U"
+	protocol="application/pgp-signature"; boundary="3Lzv7qB7yUCBJADV"
 Content-Disposition: inline
 
 
---bXPsTMNAHQ2iLa6U
+--3Lzv7qB7yUCBJADV
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 
-On Tue, Apr 04, 2023 at 12:11:53PM +0200, Maxime Ripard wrote:
+On Tue, Apr 04, 2023 at 12:11:54PM +0200, Maxime Ripard wrote:
 
 > The driver does implement round_rate() though, which means that we can
 > change the rate of the clock, but we will never get to change the
@@ -151,25 +151,25 @@ Similar comments to the other patch, I'm pretty sure this is just
 surprising design on the part of the clock API and we should just allow
 reparenting.
 
---bXPsTMNAHQ2iLa6U
+--3Lzv7qB7yUCBJADV
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAmQtjzwACgkQJNaLcl1U
-h9AOwgf9ErN1u2S7sQlFKj2SeLpE5lRKnNP6D1ooc6560nzhA27lBtrYHbRW8SJl
-T+kbhVrNtrlNbq+4ODnnfurtCWZnzgv4x6SDSb4ifzjckcCo4hjqHk9kcGQk/0Cw
-pe5S6KjNiGE3LWSWa85iqnAHH8XPVms/VcjAtDbLdiXBqV0fBmvKHpKkqpQ2IKiJ
-CPVabkZYMXj4Qh+tGAScos2ZPgNI6nG1euebgm1iPDvutLxcxU8RVHA++BVKNa62
-/ijunLrZY+U2Msq+RZQGuSWr7TfdD1DUhxhdnTG4Hjm4Q3r0KaWeixGyICYY6TyC
-r4CUzpWuZDn+9YNx2ETW7ACv6ayuMg==
-=P5db
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAmQtj2AACgkQJNaLcl1U
+h9C6nwf/eAXWoy2nqSW5TGkiJhKHJv8x94Toi8TRODFF+R/hoCeBiwbDpLoGU2W+
+XtYiCa4AsVVTQShMscEuygSt4HqR2Hm7gaw+SoRwfdX/dEpqMCCF1Uzc9IAgRRv/
+3aWJLZtx/5Mpyu3eaA6b7ul2tFP8PDE90ePyk1zHCZGUE189FK95s3Xc6zmVnuy2
+Es8Td9JeVAZhnxCyLYGLVjoUw8/LsBEXAQWpSr/ayacNPTQa9PlPM3k/HCggwR7g
+3NRnovXN1XYJ2pkkaN9RB9yifiB9Doz8KnLhSJVYG2lIaFMyYDSuYFu2zEIa8M/y
+YabesVhSGONiNYKoP8QmdjTZqKi2nw==
+=i5C8
 -----END PGP SIGNATURE-----
 
---bXPsTMNAHQ2iLa6U--
+--3Lzv7qB7yUCBJADV--
 
 
---===============3735202257665311199==
+--===============5449926203182262052==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -180,5 +180,5 @@ linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
 
---===============3735202257665311199==--
+--===============5449926203182262052==--
 
