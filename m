@@ -4,68 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4F50BC76196
-	for <linux-phy@archiver.kernel.org>; Thu,  6 Apr 2023 16:47:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 26B2FC76196
+	for <linux-phy@archiver.kernel.org>; Thu,  6 Apr 2023 16:47:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ISn+iM2b/f18UD7sHVUDVriSID5MivPzIBBCm9LZzUk=; b=YQXq14G/iwHPM6
-	OMciTbWcE2ogu+B7gIM+puRTrrfERTOBmHyq+yKIMcbBRUP8hBz5Es13gg8OR7sHan7A61hFAV+0L
-	CLRlAcSOLNhDb32/8olXokyyWaoLNTfKt8ST4u9r/opDhl/LN+hWAcMBUfatNLMfZcIukvai+1I5X
-	UdyVqDhl3wgKmvvlxK1YLJX7sMz9/h2zw7NoHXupFkHRh0aQ5h7cvv7xRpuXA5AOljSKIChD2S9K3
-	ElxmEwB4NaezzxpgCFKf91xKxUjaUiwZhtffKw30ekhGMGJlRQ8Ugt7k3QY3TuAb+IBfypLmdp9tP
-	YgtnF+EqSOsXkrY6le2Q==;
+	List-Owner; bh=oogp0NDvrFhfDu094YR+5ASD215VO+fgJ1ohFqZWyeI=; b=q+QHyrIyeVMm8p
+	t+rq4UVmP/z9nKbBslueWXl63qb0nVG4FVIjnRRsZz2YLECZ9b8eBxrIFUioY8YLxMbkWQI65x9no
+	keBZzCtcNNFiX8BFnvCc4QqCrbmajev4DozhJ1EwRXXb7Gu3Q1JnV/78Fw8Ji39n2cpZidrCaPfCM
+	QUo7y+KN16NZppS2ibtGIL6MhBUfbb6UVGbRF+Iihkke7uw//86oqegxhdChdKBHCY7wkhtFCttdV
+	PMb8HFBaVS/sP83Gx5Z5ySqb0wUOfojHSap9DskJiJyOdEassCjfrOHphqvk6+Aom0GJo1/XcqR76
+	hF7dM/u/k0PUITt6xrzg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pkSlM-00832v-35;
-	Thu, 06 Apr 2023 16:47:04 +0000
-Received: from mail-ot1-f53.google.com ([209.85.210.53])
+	id 1pkSld-00835j-27;
+	Thu, 06 Apr 2023 16:47:21 +0000
+Received: from mail-oi1-f171.google.com ([209.85.167.171])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pkSlL-00831j-18
+	id 1pkSlb-00834i-0Z
 	for linux-phy@lists.infradead.org;
-	Thu, 06 Apr 2023 16:47:04 +0000
-Received: by mail-ot1-f53.google.com with SMTP id f19-20020a9d5f13000000b00693ce5a2f3eso20991148oti.8
-        for <linux-phy@lists.infradead.org>; Thu, 06 Apr 2023 09:46:59 -0700 (PDT)
+	Thu, 06 Apr 2023 16:47:20 +0000
+Received: by mail-oi1-f171.google.com with SMTP id f14so15937271oiw.10
+        for <linux-phy@lists.infradead.org>; Thu, 06 Apr 2023 09:47:15 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112; t=1680799619; x=1683391619;
+        d=1e100.net; s=20210112; t=1680799634; x=1683391634;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=y5R2nnvokLlBhefou6r+FxkRDSzpDeUjT394xl/l7UI=;
-        b=vWqp7GlfLwfkQVFX91P/eJi8Z8SWUs7Bx8R0e+O35zp8bHs4KMfKHAaWPQCJZdRBsk
-         Hqbh83JcZm3LGEIETTA1Z9rgs+tabncBw+zOKLf9nf59B7E+VhJDBGQNP/ZySojsJwdI
-         oYr8VHBc94EjhwjIrqCCbZbaIQXtG0MCrJp539EfkwXohU3yQNzkeX1BvyHhEPEm6ZqZ
-         ewHtHZdjhRJwUUCVjC8cyZXFGocOkJVGBLmWKO8njlouBNWXKvVI+G4hkG4YzrZyhoHu
-         PxUGYep3mAAJiw7tJoDw1hIyShI8OFvO//HI3pOtKR+oOkeRa/KIVR/tlDzb76zWH60k
-         6Xuw==
-X-Gm-Message-State: AAQBX9fvJi9kJ7y9Nbi35pxoFS7l9eYokTGSTt6z4sfO7HNiVZqpRdtp
-	wKtCt9gEbs4cVGs8gNQfpA==
-X-Google-Smtp-Source: AKy350Z3OYaa76+/4YxtLF2Qu+11ekm4rdpDupLiBwu+MAGdjJcY/6Zgjftgeu/hCJZiZwQrzIXP8g==
-X-Received: by 2002:a05:6830:1be4:b0:69f:91db:51f1 with SMTP id k4-20020a0568301be400b0069f91db51f1mr4937068otb.29.1680799618832;
-        Thu, 06 Apr 2023 09:46:58 -0700 (PDT)
+        bh=4YfchWdjXjTn0JuMSZJ2W3hFarimqnpUe1TA/nvAeH0=;
+        b=ZCumhtTjV8tryajo3u62htLk2hphmfSH5yXLkruAKp9wQWu//JROvTQSXJL/OIHcQk
+         /JPqNtPc78mmpwdkmVJIAqp4ildM7wlArhHHPdqaZuJxvU9kDEBRZpEC62HmirngVHYr
+         FTwLZli8O6DXY7W+1kmOLtV4JnVWygUiGk082GLgNSkC5D4wy/Y+v9RqASDX4zQdkNDZ
+         w6FFr4S4XhNpSuWmcYTsocCZ2phcgrpoOFHRCelSFnDYvDguvz3gqlQ70FZ3NZpAFFAH
+         LMMeaiVlKb535So9blEDrO0gI7ZOArBWX8Ut6G8WFMzPGX5x/8KNcB9DX1BshQBVFoIT
+         Y6TQ==
+X-Gm-Message-State: AAQBX9e5D90dkxHp6+TgHhFosOaCVrZsTkbGisZ/lHAPaymcLRTYflcb
+	SUnT+YBjgGtsPOJS5gLihQ==
+X-Google-Smtp-Source: AKy350bbuaIAoZEiwjlysJa0+efhJhrgeaPw7tJOM4quQaWsEDJyjqAZugMjUjS4tmDtQcileK3kag==
+X-Received: by 2002:a05:6808:257:b0:387:1b0f:c03d with SMTP id m23-20020a056808025700b003871b0fc03dmr4863580oie.28.1680799634503;
+        Thu, 06 Apr 2023 09:47:14 -0700 (PDT)
 Received: from robh_at_kernel.org (66-90-144-107.dyn.grandenetworks.net. [66.90.144.107])
-        by smtp.gmail.com with ESMTPSA id s7-20020a0568301e0700b006a1508d348dsm875024otr.22.2023.04.06.09.46.58
+        by smtp.gmail.com with ESMTPSA id bj22-20020a056808199600b0038733b00a5fsm856210oib.10.2023.04.06.09.47.13
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 06 Apr 2023 09:46:58 -0700 (PDT)
-Received: (nullmailer pid 3281922 invoked by uid 1000);
-	Thu, 06 Apr 2023 16:46:57 -0000
-Date: Thu, 6 Apr 2023 11:46:57 -0500
+        Thu, 06 Apr 2023 09:47:14 -0700 (PDT)
+Received: (nullmailer pid 3282311 invoked by uid 1000);
+	Thu, 06 Apr 2023 16:47:13 -0000
+Date: Thu, 6 Apr 2023 11:47:13 -0500
 From: Rob Herring <robh@kernel.org>
 To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Cc: Vinod Koul <vkoul@kernel.org>, Swapnil Jakhade <sjakhade@cadence.com>, Abraham I <kishon@ti.com>, linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>, devicetree@vger.kernel.org, Yuti Amonkar <yamonkar@cadence.com>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Kishon Vijay Abraham I <kishon@kernel.org>, linux-phy@lists.infradead.org
-Subject: Re: [PATCH 1/5] dt-bindings: phy: cadence-sierra: drop
+Cc: Abraham I <kishon@ti.com>, Yuti Amonkar <yamonkar@cadence.com>, linux-phy@lists.infradead.org, Kishon Vijay Abraham I <kishon@kernel.org>, Vinod Koul <vkoul@kernel.org>, devicetree@vger.kernel.org, Swapnil Jakhade <sjakhade@cadence.com>, linux-kernel@vger.kernel.org, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Rob Herring <robh+dt@kernel.org>
+Subject: Re: [PATCH 2/5] dt-bindings: phy: cadence-torrent: drop
  assigned-clocks
-Message-ID: <168079961708.3281867.11311371291138451400.robh@kernel.org>
+Message-ID: <168079962419.3282109.11445334016801468789.robh@kernel.org>
 References: <20230404190115.546973-1-krzysztof.kozlowski@linaro.org>
+ <20230404190115.546973-2-krzysztof.kozlowski@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20230404190115.546973-1-krzysztof.kozlowski@linaro.org>
+In-Reply-To: <20230404190115.546973-2-krzysztof.kozlowski@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230406_094703_388805_4666371B 
-X-CRM114-Status: UNSURE (   9.98  )
+X-CRM114-CacheID: sfid-20230406_094719_214000_18B9C19E 
+X-CRM114-Status: UNSURE (   9.16  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -84,7 +85,7 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Tue, 04 Apr 2023 21:01:11 +0200, Krzysztof Kozlowski wrote:
+On Tue, 04 Apr 2023 21:01:12 +0200, Krzysztof Kozlowski wrote:
 > The meta schema from DT schema already defines assigned-clocks, so there
 > is no need for device schema to mention it at all.  There are also no
 > benefits of having it here and a board could actually need more of clock
@@ -92,8 +93,8 @@ On Tue, 04 Apr 2023 21:01:11 +0200, Krzysztof Kozlowski wrote:
 > 
 > Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 > ---
->  .../devicetree/bindings/phy/phy-cadence-sierra.yaml       | 8 --------
->  1 file changed, 8 deletions(-)
+>  .../devicetree/bindings/phy/phy-cadence-torrent.yaml        | 6 ------
+>  1 file changed, 6 deletions(-)
 > 
 
 Reviewed-by: Rob Herring <robh@kernel.org>
