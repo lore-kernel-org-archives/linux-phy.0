@@ -4,64 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8D4DEC7618D
-	for <linux-phy@archiver.kernel.org>; Thu,  6 Apr 2023 07:29:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7F532C7618D
+	for <linux-phy@archiver.kernel.org>; Thu,  6 Apr 2023 07:42:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KE6RDF8M7olUTG9Z79GFBNJS8t5URkUANc37vocnBGo=; b=tH5RxnBZAi5DdJ
-	rv47lG2R5ivBgWiTR+J9HoUlZ/LXyXcTLaOucuCqB3r8qhKTi5DHt9NL43KH+h3JbAVNgX/Q1E3lU
-	WKPL4Fg4a/aWpXDxyEiN/0KLiVLGHU/JiEot8JNZAb4Z7lEs6teMtWi0VEDVTFftzmCcXaTAhbcuf
-	ckrMWaL5z0m4hi7RdreGGhO7G5Tn3myw+lOe04d88+97Ff35mNcf6R0S8AcT6VBheL0YhtwvgPWur
-	N+AA4btfVdanqtMn9ZjzH+TPUUqr4+ebjcmQ6HoJHrAC28+HMTl9dA3aaP8NqL+HBFbC72jgeEAB9
-	Vr9MI4k1A8pZY7GRR0Og==;
+	List-Owner; bh=KatV9oTgxS1FE6EHEgE3Cm1fyrvrx8oKcN8WozNjlhE=; b=b2ymJT1oWg9o7V
+	1ypNN5c2xaLeaJtTkhKqc1eVxE2sktXGRZfeCkMG1W/1y36nrb7t4xSkW+6H4d3bIg6WgmsV8Pf0l
+	sA6LT+gBK4catXKo7+BFqKhUfHSiqmuMnttP5fyNVEj0fnO6YPl+6vYk73hErCBE40BB7NWeQTrnJ
+	Q8d+Hq44yZlJjmElnh53PlFU7iECUmnrDAimxUyLnc+Zo5ENPspE6YE0PvndD0O5cX3HoSm/1+uTD
+	wN5twOO+zXos+w8mBb++tOGU+1KNjd6gLU3lErK2fU5exEAmIs8L56aNSxymsItqpyAf0/KxAJ4Cu
+	IaShDmJoPS8vJ1XELAIA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pkK3a-006d10-0h;
-	Thu, 06 Apr 2023 07:29:18 +0000
-Received: from relay5-d.mail.gandi.net ([2001:4b98:dc4:8::225])
+	id 1pkKFv-006f8A-0Z;
+	Thu, 06 Apr 2023 07:42:03 +0000
+Received: from mail-ed1-x52f.google.com ([2a00:1450:4864:20::52f])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pkK3W-006d01-1m
+	id 1pkKFp-006f5r-19
 	for linux-phy@lists.infradead.org;
-	Thu, 06 Apr 2023 07:29:17 +0000
-Received: (Authenticated sender: herve.codina@bootlin.com)
-	by mail.gandi.net (Postfix) with ESMTPSA id 50A0E1C000B;
-	Thu,  6 Apr 2023 07:29:07 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
-	t=1680766149;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=3N0MhR4UYPZqjjIJvCfac3PeMhUE3Q3jLEyIQ0jdrco=;
-	b=EUYCN/AWFMTjvujuAKiAKwj/VmBeL/nIoOV0dvYnKt3iBE5JMxuOOT9akAY2HcqPJ3z0nu
-	SlJloGIh0syhJSYVb2Fp1+2jd2/wzh+8PrUC+dx2A9o9oFsPMjpQHvYRsQDQqsOOK5obTi
-	v5jH2wATkipLFNTyV0flAZn/6r0H/Jy5BkCWm8oWoGT4LG/hzEGaI60x8y7tQJNxmNG+mA
-	u/S5tDyZowoNjr1UFuJOkXN1V/jQdph98yrrrcbink3ugR9u6t2x17UZBnqnWk8xLX3M5k
-	d58+/CRAgk4AixYwBOOYVPy7WcyqZ0C9oODAhH78rg+Ua7ObCuZNso1kpo6EWA==
-Date: Thu, 6 Apr 2023 09:29:06 +0200
-From: Herve Codina <herve.codina@bootlin.com>
-To: Herve Codina <herve.codina@bootlin.com>, "David S. Miller"
- <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>, Jakub Kicinski
- <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, Vinod Koul
- <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>
-Cc: linux-kernel@vger.kernel.org, netdev@vger.kernel.org,
- linux-phy@lists.infradead.org, Christophe Leroy
- <christophe.leroy@csgroup.eu>, Thomas Petazzoni
- <thomas.petazzoni@bootlin.com>
-Subject: Re: [RFC PATCH 0/4] Add support for QMC HDLC and PHY
-Message-ID: <20230406092906.658889a2@bootlin.com>
-In-Reply-To: <20230323103154.264546-1-herve.codina@bootlin.com>
-References: <20230323103154.264546-1-herve.codina@bootlin.com>
-Organization: Bootlin
-X-Mailer: Claws Mail 4.1.1 (GTK 3.24.37; x86_64-redhat-linux-gnu)
+	Thu, 06 Apr 2023 07:42:01 +0000
+Received: by mail-ed1-x52f.google.com with SMTP id ek18so147234350edb.6
+        for <linux-phy@lists.infradead.org>; Thu, 06 Apr 2023 00:41:52 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1680766911;
+        h=content-transfer-encoding:in-reply-to:from:references:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=hpp+0JOz+FKGY7fsBLSsdfNUNXwCqAnXR6glr6qNRMw=;
+        b=U9/EmzMV+No/XF5Nq4LYvmSGD7hlHQqob5/GLw7OH9v6PeKs+BIbVHC4yEqvo3zLIM
+         ewwpZeEJXgJJICeVEqDaWdKohsl5KIMAZuYGR7CgDPjCq1y3vV8etQO+WiSNRj+qmNEW
+         Rjf/rCSk22jFq/DmvYb2cnlASTRzytXbuTVClOVDAhm1CxAMtuLT6RgUnkxcSvKQj2Cn
+         eV03fmlQsJ8QyuN+/0Ul+K5dZvyTx2+dhtU2prTABH4Bf/7VsuzHIEXHeW9mVABRH3fJ
+         QK9U5oMPUAguypNu/vx3B8jF5ZlHBPKr9evFQieqkQKvQ0lHM3kaZNvm6ywNXt4uhuy5
+         o3aw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112; t=1680766911;
+        h=content-transfer-encoding:in-reply-to:from:references:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=hpp+0JOz+FKGY7fsBLSsdfNUNXwCqAnXR6glr6qNRMw=;
+        b=BR00Ph4ORf3FuBmZMj5XZ62o6pECSA0TASxFLyKgptkVb+gBhrG861Eho5bYZTz5l3
+         66wfiqilg6lparN9kdcc0AipbaVqtVCLXMP5Z+gK81mVorgapHFrwf+BkadVChM/sZzD
+         COdnlAH4b9DGHwW/5uaw/peqthnw4P0RO2WzZujaCfsBxE3mOofmI444TnkPD/RJOYD3
+         n/8TWiKiOVBElHCUCz3XOGgXGMXsqAAECduOQDxaYcl1v8IZqu4DyAeZBfT3p24yuQ6v
+         NuBP1qwz910sF5Nx9aYGnDxad1UNAt73WIUKS/PnUpIn3kNEaeztu9m0ACyx7bFYXk9+
+         8r5w==
+X-Gm-Message-State: AAQBX9c5vsfHQ4K/WIxmnT3buf/oKVDBjqp3IEVk3jOIAwYcjPXg/BM6
+	g+Ux1dmREUkieD3FHavkMB+0Ew==
+X-Google-Smtp-Source: AKy350bkNdf5O2eZ4KmOp+DCXA33pjr3OARoKNaTAwi7CozBGDwR42LmdRmdeTHeYyrr7Aa+Kp1SBA==
+X-Received: by 2002:a17:906:c014:b0:947:c8d5:bfab with SMTP id e20-20020a170906c01400b00947c8d5bfabmr5034771ejz.35.1680766910962;
+        Thu, 06 Apr 2023 00:41:50 -0700 (PDT)
+Received: from ?IPV6:2a02:810d:15c0:828:49e6:bb8c:a05b:c4ed? ([2a02:810d:15c0:828:49e6:bb8c:a05b:c4ed])
+        by smtp.gmail.com with ESMTPSA id y11-20020a17090629cb00b00949173c1dcfsm455419eje.18.2023.04.06.00.41.49
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 06 Apr 2023 00:41:50 -0700 (PDT)
+Message-ID: <0a66e291-a86d-1ff9-e674-839b8cc8f1da@linaro.org>
+Date: Thu, 6 Apr 2023 09:41:49 +0200
 MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.9.0
+Subject: Re: [PATCH v8 2/8] dt-bindings: phy: qcom,qmp-usb: Add IPQ9574 USB3
+ PHY
+Content-Language: en-US
+To: Varadarajan Narayanan <quic_varada@quicinc.com>, agross@kernel.org,
+ andersson@kernel.org, konrad.dybcio@linaro.org, vkoul@kernel.org,
+ kishon@kernel.org, robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
+ gregkh@linuxfoundation.org, mturquette@baylibre.com, sboyd@kernel.org,
+ quic_wcheng@quicinc.com, linux-arm-msm@vger.kernel.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org,
+ linux-clk@vger.kernel.org
+References: <cover.1680693149.git.quic_varada@quicinc.com>
+ <1efa9a64499767d939efadd0aef897ac4a6e54eb.1680693149.git.quic_varada@quicinc.com>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <1efa9a64499767d939efadd0aef897ac4a6e54eb.1680693149.git.quic_varada@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230406_002915_059444_9A8279EE 
-X-CRM114-Status: GOOD (  27.69  )
+X-CRM114-CacheID: sfid-20230406_004157_394235_B897E7D8 
+X-CRM114-Status: GOOD (  17.29  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,64 +96,126 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SGkgYWxsLAoKSSBoYXZlbid0IHJlY2VpdmVkIGFueSBmZWVkYmFjayBvbiB0aGlzIFJGQy4KSGF2
-ZSB5b3UgaGFkIGEgY2hhbmNlIHRvIHJldmlldyBpdCA/CgpCZXN0IHJlZ2FyZHMsCkhlcnbDqQoK
-T24gVGh1LCAyMyBNYXIgMjAyMyAxMTozMTo1MCArMDEwMApIZXJ2ZSBDb2RpbmEgPGhlcnZlLmNv
-ZGluYUBib290bGluLmNvbT4gd3JvdGU6Cgo+IEhpLAo+IAo+IEkgaGF2ZSBhIHN5c3RlbSB3aGVy
-ZSBJIG5lZWQgdG8gaGFuZGxlIGFuIEhETEMgaW50ZXJmYWNlLgo+IAo+IFRoZSBIRExDIGRhdGEg
-YXJlIHRyYW5zZmVycmVkIHVzaW5nIGEgVERNIGJ1cyBvbiB3aGljaCBhIFBFRjIyNTYgaXMKPiBw
-cmVzZW50LiBUaGUgUEVGMjI1NiB0cmFuc2ZlcnMgZGF0YSBmcm9tL3RvIHRoZSBURE0gYnVzIHRv
-L2Zyb20gRTEgbGluZS4KPiBUaGlzIFBFRjIyNTYgaXMgYWxzbyBjb25uZWN0ZWQgdG8gYSBQb3dl
-clFVSUNDIFNvQyBmb3IgdGhlIGNvbnRyb2wgcGF0aAo+IGFuZCB0aGUgVERNIGlzIGNvbm5lY3Rl
-ZCB0byB0aGUgU29DIChRTUMgY29tcG9uZW50KSBmb3IgdGhlIGRhdGEgcGF0aC4KPiAKPiBGcm9t
-IHRoZSBIRExDIGRyaXZlciwgSSBuZWVkIHRvIGhhbmRsZSBkYXRhIHVzaW5nIHRoZSBRTUMgYW5k
-IGNhcnJpZXIKPiBkZXRlY3Rpb24gdXNpbmcgdGhlIFBFRjIyNTYgKEUxIGxpbmUgY2Fycmllciku
-Cj4gCj4gVGhlIEhETEMgZHJpdmVyIGNvbnNpZGVyIHRoZSBQRUYyMjU2IGFzIGEgZ2VuZXJpYyBQ
-SFkuCj4gU28sIHRoZSBkZXNpZ24gaXMgdGhlIGZvbGxvd2luZzoKPiAKPiArLS0tLS0tLS0tLSsg
-ICAgICAgICAgKy0tLS0tLS0tLS0tLS0rICAgICAgICAgICAgICArLS0tLS0tLS0tKwo+IHwgSERM
-QyBkcnYgfCA8LWRhdGEtPiB8IFFNQyBjaGFubmVsIHwgPC0tIFRETSAtLT4gIHwgUEVGMjI1NiB8
-Cj4gKy0tLS0tLS0tLS0rICAgICAgICAgICstLS0tLS0tLS0tLS0tKyAgICAgICAgICAgICAgfCAg
-ICAgICAgIHwgPC0tPiBFMQo+ICAgIF4gICArLS0tLS0tLS0tKyAgICAgKy0tLS0tLS0tLSsgICAg
-ICAgICAgICAgICAgIHwgICAgICAgICB8Cj4gICAgKy0+IHwgR2VuIFBIWSB8IDwtPiB8IFBFRjIy
-NTYgfCA8LSBsb2NhbCBidXMgLT4gfCAgICAgICAgIHwKPiAgICAgICAgKy0tLS0tLS0tLSsgICAg
-IHwgUEhZIGRydiB8ICAgICAgICAgICAgICAgICArLS0tLS0tLS0tKwo+ICAgICAgICAgICAgICAg
-ICAgICAgICAgKy0tLS0tLS0tLSsKPiAKPiBJbiBvcmRlciB0byBpbXBsZW1lbnQgdGhpcywgSSBo
-YWQgdG86Cj4gIDEgLSBFeHRlbmQgdGhlIGdlbmVyaWMgUEhZIEFQSSB0byBzdXBwb3J0IGdldF9z
-dGF0dXMoKSBhbmQgbm90aWZpY2F0aW9uCj4gICAgICBvbiBzdGF0dXMgY2hhbmdlLgo+ICAyIC0g
-SW50cm9kdWNlIGEgbmV3IGtpbmQgb2YgZ2VuZXJpYyBQSFkgbmFtZWQgImJhc2ljIHBoeSIuIFRo
-aXMgUEhZCj4gICAgICBmYW1pbGx5IGNhbiBwcm92aWRlIGEgbGluayBzdGF0dXMgaW4gdGhlIGdl
-dF9zdGF0dXMoKSBkYXRhLgo+ICAzIC0gU3VwcG9ydCB0aGUgUEVGMjI1NiBQSFkgYXMgYSAiYmFz
-aWMgcGh5Igo+IAo+IFRoZSBwdXJwb3NlIG9mIHRoaXMgUkZDIHNlcmllcyBpcyB0byBkaXNjdXNz
-IHRoaXMgZGVzaWduLgo+IAo+IFRoZSBRTUMgZHJpdmVyIGNvZGUgaXMgYXZhaWxhYmxlIG9uIGxp
-bnV4LW5leHQuIEluIHRoaXMgc2VyaWVzOgo+IC0gcGF0Y2ggMTogZHJpdmVyIEhETEMgdXNpbmcg
-dGhlIFFNQyBjaGFubmVsCj4gLSBwYXRjaCAyOiBFeHRlbmQgdGhlIGdlbmVyaWMgUEhZIEFQSQo+
-IC0gcGF0Y2ggMzogVXNlIHRoZSAiYmFzaWMgcGh5IiBpbiB0aGUgSERMQyBkcml2ZXIKPiAtIHBh
-dGNoIDQ6IEltcGxlbWVudCB0aGUgUEVGMjI1NiBQSFkgZHJpdmVyCj4gCj4gSSBkaWQgMiBwYXRj
-aGVzIGZvciB0aGUgSERMQyBkcml2ZXIgaW4gb3JkZXIgdG8gcG9pbnQgdGhlIG5ldyBQSFkgZmFt
-aWx5Cj4gdXNhZ2UgaW4gdGhlIEhETEMgZHJpdmVyLiBJbiB0aGUgZW5kLCB0aGVzZSB0d28gcGF0
-Y2hlcyB3aWxsIGJlIHNxdWFzaGVkCj4gYW5kIHRoZSBiaW5kaW5ncyB3aWxsIGJlIGFkZGVkLgo+
-IAo+IEhvcGUgdG8gaGF2ZSBzb21lIGZlZWRiYWNrIG9uIHRoaXMgcHJvcG9zYWwuCj4gCj4gQmVz
-dCByZWdhcmRzLAo+IEhlcnbDqQo+IAo+IEhlcnZlIENvZGluYSAoNCk6Cj4gICBuZXQ6IHdhbjog
-QWRkIHN1cHBvcnQgZm9yIFFNQyBIRExDCj4gICBwaHk6IEV4dGVuZCBBUEkgdG8gc3VwcG9ydCAn
-c3RhdHVzJyBnZXQgYW5kIG5vdGlmaWNhdGlvbgo+ICAgbmV0OiB3YW46IGZzbF9xbWNfaGRsYzog
-QWRkIFBIWSBzdXBwb3J0Cj4gICBwaHk6IGxhbnRpcTogQWRkIFBFRjIyNTYgUEhZIHN1cHBvcnQK
-PiAKPiAgZHJpdmVycy9uZXQvd2FuL0tjb25maWcgICAgICAgICAgICAgICAgIHwgIDEyICsKPiAg
-ZHJpdmVycy9uZXQvd2FuL01ha2VmaWxlICAgICAgICAgICAgICAgIHwgICAxICsKPiAgZHJpdmVy
-cy9uZXQvd2FuL2ZzbF9xbWNfaGRsYy5jICAgICAgICAgIHwgNTU4ICsrKysrKysrKysrKysrKysr
-KysrKysrKwo+ICBkcml2ZXJzL3BoeS9sYW50aXEvS2NvbmZpZyAgICAgICAgICAgICAgfCAgMTUg
-Kwo+ICBkcml2ZXJzL3BoeS9sYW50aXEvTWFrZWZpbGUgICAgICAgICAgICAgfCAgIDEgKwo+ICBk
-cml2ZXJzL3BoeS9sYW50aXEvcGh5LWxhbnRpcS1wZWYyMjU2LmMgfCAxMzEgKysrKysrCj4gIGRy
-aXZlcnMvcGh5L3BoeS1jb3JlLmMgICAgICAgICAgICAgICAgICB8ICA4OCArKysrCj4gIGluY2x1
-ZGUvbGludXgvcGh5L3BoeS1iYXNpYy5oICAgICAgICAgICB8ICAyNyArKwo+ICBpbmNsdWRlL2xp
-bnV4L3BoeS9waHkuaCAgICAgICAgICAgICAgICAgfCAgODkgKysrLQo+ICA5IGZpbGVzIGNoYW5n
-ZWQsIDkyMSBpbnNlcnRpb25zKCspLCAxIGRlbGV0aW9uKC0pCj4gIGNyZWF0ZSBtb2RlIDEwMDY0
-NCBkcml2ZXJzL25ldC93YW4vZnNsX3FtY19oZGxjLmMKPiAgY3JlYXRlIG1vZGUgMTAwNjQ0IGRy
-aXZlcnMvcGh5L2xhbnRpcS9waHktbGFudGlxLXBlZjIyNTYuYwo+ICBjcmVhdGUgbW9kZSAxMDA2
-NDQgaW5jbHVkZS9saW51eC9waHkvcGh5LWJhc2ljLmgKPiAKCgotLSAKbGludXgtcGh5IG1haWxp
-bmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJh
-ZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+On 05/04/2023 13:41, Varadarajan Narayanan wrote:
+> Add dt-bindings for USB3 PHY found on Qualcomm IPQ9574
+> 
+> Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
+> ---
+>  Changes in v8:
+> 	- Update clock names for ipq9574
+> 
+>  Changes in v6:
+> 	- Made power-domains optional
+> 
+> Note: In the earlier patch sets, had used the (legacy)
+> specification available in qcom,msm8996-qmp-usb3-phy.yaml. Moved
+> to newer specification in qcom,sc8280xp-qmp-usb3-uni-phy.yaml
+> ---
+>  .../phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml        | 43 +++++++++++++++++++---
+>  1 file changed, 37 insertions(+), 6 deletions(-)
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml
+> index 16fce10..e902a0d 100644
+> --- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml
+> @@ -16,6 +16,7 @@ description:
+>  properties:
+>    compatible:
+>      enum:
+> +      - qcom,ipq9574-qmp-usb3-phy
+>        - qcom,sc8280xp-qmp-usb3-uni-phy
+>  
+>    reg:
+> @@ -25,11 +26,7 @@ properties:
+>      maxItems: 4
+>  
+>    clock-names:
+> -    items:
+> -      - const: aux
+> -      - const: ref
+> -      - const: com_aux
+> -      - const: pipe
+> +    maxItems: 4
+>  
+>    power-domains:
+>      maxItems: 1
+> @@ -60,7 +57,6 @@ required:
+>    - reg
+>    - clocks
+>    - clock-names
+> -  - power-domains
+>    - resets
+>    - reset-names
+>    - vdda-phy-supply
+> @@ -71,6 +67,41 @@ required:
+>  
+>  additionalProperties: false
+>  
+> +allOf:
+
+As you can see in example-schema, allOf goes before
+additionalProperties: false.
+
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            enum:
+> +              - qcom,ipq9574-qmp-usb3-phy
+> +    then:
+> +      properties:
+> +        clocks:
+> +          maxItems: 4
+
+Don't need clocks here.
+
+> +        clock-names:
+> +          items:
+> +            - const: aux
+> +            - const: ref
+> +            - const: cfg_ahb
+> +            - const: pipe
+> +
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            enum:
+> +              - qcom,sc8280xp-qmp-usb3-uni-phy
+> +    then:
+> +      properties:
+> +        clocks:
+> +          maxItems: 4
+
+Neither here.
+
+> +        clock-names:
+> +          items:
+> +            - const: aux
+> +            - const: ref
+> +            - const: com_aux
+
+Can anyone explain me why do we name these (here and other Qualcomm
+bindings) based on clock name, not input? Just because different clock
+is fed to the block, does not necessarily mean the input should be named
+differently.
+
+> +            - const: pipe
+> +
+>  examples:
+>    - |
+>      #include <dt-bindings/clock/qcom,gcc-sc8280xp.h>
+
+Best regards,
+Krzysztof
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
