@@ -4,70 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B5F46C76196
-	for <linux-phy@archiver.kernel.org>; Thu,  6 Apr 2023 16:48:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E5C75C77B6E
+	for <linux-phy@archiver.kernel.org>; Thu,  6 Apr 2023 18:42:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HrdOka8KVy0eCeXDd0OvyucvhS5N3zdgBozG82g3e4Q=; b=uR2cyC2ffMUdOK
-	ltDlg90IYD9thQ4Yr5rWC0lDyOx4ZsffURa+PGTvDNzYunfayqqQwWu94kvS6OzgRtpHNN6Z3WXIm
-	eRbNEig8Fo5xM2OpnmlKFmfG+4j336aCpVD+BeLnWOTlQLpG5Nmcz5SRaujADQwAyODK1/zPEU6BQ
-	8tgLbX6e7A+sXvVeXssj6cQyZo788ytchUrltGPTHzpW+sMl9c2rAVz28xiJCcc6qfjBMO6/SjOto
-	7SjxNhBUPTjYKOdfqX5NAaRFdSHdSizZQsKkGWUeZS25m2yyV7hzM74j2gQdD53zgmVerh5ZxqCGC
-	bnDDgdwEAx+AJdvUq74g==;
+	List-Owner; bh=N+PXn98k/E+5nby+kFRcffE7RuoG9OJPAgQSMdWd9iw=; b=kfpGCwsAZwz9LE
+	EBXI/fm50KLEq5nI+1dl/st2+5GLqke4fZpa0/YxVf9+x9sZwFduv3kDXzqiRrTFtVsi5cob6txRI
+	uIdzflQvbcHVZLGWuNe+9iuCHeABvHHeWGJEWHBCx+lr6Sr9WRUAljZw4YfcNqbeqRF4v3zO/2gxX
+	DFQw6gaqKiJfLlfaLfBugvsxkKtT7IOa746ZGKgpIaBViXoUusINqrPVA7/IfA2avKJSdGPTf+Fyp
+	ksaP+ycOB1PNORkAT5El7p6SuetNe1Q5BbIbI0jJhJ9mMwvk6XM8lM/sUd56noOkAFv/KYnP7Fzkd
+	W9jPqscIM62hKvpybXYA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pkSmp-0083IU-1B;
-	Thu, 06 Apr 2023 16:48:35 +0000
-Received: from mail-oo1-f50.google.com ([209.85.161.50])
+	id 1pkUYt-008HrD-26;
+	Thu, 06 Apr 2023 18:42:19 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pkSmn-0083HI-0B
+	id 1pkUYr-008Hqh-2L
 	for linux-phy@lists.infradead.org;
-	Thu, 06 Apr 2023 16:48:34 +0000
-Received: by mail-oo1-f50.google.com with SMTP id m6-20020a4ae846000000b0053b9059edd5so6242997oom.3
-        for <linux-phy@lists.infradead.org>; Thu, 06 Apr 2023 09:48:31 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112; t=1680799711; x=1683391711;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=ZoIKZZqHzGJyVdkCs91+pdHog4YytlT4U9+saTPsm+g=;
-        b=FWpCFoTNWmsuyIhtGB632kEwhX7s5kaVE5zL9ky4WTkmK0Ik77JT8FyZDCnX/Qa+Ab
-         J/2ZDMda/6MuIap+mbH/lG+ZG8tfK8gIQDtswbxo9XILQLkn/cGg2GqTYMjGF9Y1hCZw
-         fxlCHKWeBU1Oo2QHrBbw4QZN1mjRPwjZ/4Wv1Kkm+7VsruhtXAkUCzznwDTuvTw8DAij
-         uS+8ufj8Aqw8Blya5y4CB3BjBo6XaLH6t7H4I7sQqRS9iyn8wqlAMqZ13JuhQKiHw3aT
-         CnjrE8FGj14rHCB9ayumgp/6uoCmdi6s5KRxb25KdebHNM1pLtGhcwEnLRnDceZIf3oO
-         tNUA==
-X-Gm-Message-State: AAQBX9cB994BHsO2fFNu9xM8vmBd/ERm0yW4KBgFDWg2HGBe6rL0QYAr
-	v+VO/XONAPhKNzPpVKZTVA==
-X-Google-Smtp-Source: AKy350bLaW+BX3c2Xv1k762fNr+o+vedJksgFUYP/cJObhkX4zHsPA7YruOqiMaeTFLd/cH01dIJqA==
-X-Received: by 2002:a4a:58c1:0:b0:525:36b1:86dd with SMTP id f184-20020a4a58c1000000b0052536b186ddmr68684oob.7.1680799711017;
-        Thu, 06 Apr 2023 09:48:31 -0700 (PDT)
-Received: from robh_at_kernel.org (66-90-144-107.dyn.grandenetworks.net. [66.90.144.107])
-        by smtp.gmail.com with ESMTPSA id i128-20020acaea86000000b00386eff32f58sm858979oih.13.2023.04.06.09.48.30
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 06 Apr 2023 09:48:30 -0700 (PDT)
-Received: (nullmailer pid 3283911 invoked by uid 1000);
-	Thu, 06 Apr 2023 16:48:30 -0000
-Date: Thu, 6 Apr 2023 11:48:30 -0500
-From: Rob Herring <robh@kernel.org>
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Cc: Vinod Koul <vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Yuti Amonkar <yamonkar@cadence.com>, Abraham I <kishon@ti.com>, devicetree@vger.kernel.org, Swapnil Jakhade <sjakhade@cadence.com>, linux-kernel@vger.kernel.org, Kishon Vijay Abraham I <kishon@kernel.org>, linux-phy@lists.infradead.org
-Subject: Re: [PATCH 5/5] dt-bindings: phy: ti,phy-j721e-wiz: document
- clock-output-names
-Message-ID: <168079970960.3283855.16770288555764334439.robh@kernel.org>
-References: <20230404190115.546973-1-krzysztof.kozlowski@linaro.org>
- <20230404190115.546973-5-krzysztof.kozlowski@linaro.org>
+	Thu, 06 Apr 2023 18:42:18 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 97486649F8;
+	Thu,  6 Apr 2023 18:42:16 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id D14C4C433EF;
+	Thu,  6 Apr 2023 18:42:14 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1680806536;
+	bh=TYg6LIY1PZ5kQT6OISGeT6SEjX/2L5Unzfeoc5UztMQ=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=HWeRrnzu3MAhOJg1LJp9tu1KcIN5zs5XUHT3O81/od3FX16fu7AAE3miXeUYufjiP
+	 nEtirGd+fwAVe/uYE1sMg+izdpuQQbl2FvJK5324yyjzWvHl6Ji30/blxzchY5745J
+	 O9X7DO1a84rIXgakz8tUcd5T4CCzgqSgrh1APZnKZPAMAYAaxpQeQFKgRtRUkfsKoQ
+	 x8cWD7Sxf17iT+5mg6ofT3cor+xBso0RgCe0fnpdbQOrwbyTXDSOyQiGtN+4E4Z4OO
+	 X5g3XBooU/PoWaA8p3g3n/w1b7m3XyieyQ9LiEuhiAUK1dB5KBVOmawppIT+iYKYEP
+	 7EjuyD0oTMR4g==
+Date: Thu, 6 Apr 2023 11:45:06 -0700
+From: Bjorn Andersson <andersson@kernel.org>
+To: Varadarajan Narayanan <quic_varada@quicinc.com>
+Cc: agross@kernel.org, konrad.dybcio@linaro.org, vkoul@kernel.org,
+	kishon@kernel.org, robh+dt@kernel.org,
+	krzysztof.kozlowski+dt@linaro.org, gregkh@linuxfoundation.org,
+	mturquette@baylibre.com, sboyd@kernel.org, quic_wcheng@quicinc.com,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-usb@vger.kernel.org, linux-clk@vger.kernel.org
+Subject: Re: [PATCH v2 4/8] clk: qcom: gcc-ipq9574: Add USB related clocks
+Message-ID: <20230406184506.65d2gjycuvrley6f@ripper>
+References: <cover.1677749625.git.quic_varada@quicinc.com>
+ <cover.1679388632.git.quic_varada@quicinc.com>
+ <24293be77ccdcf5e9b1fa0fd219de6152f234616.1679388632.git.quic_varada@quicinc.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20230404190115.546973-5-krzysztof.kozlowski@linaro.org>
+In-Reply-To: <24293be77ccdcf5e9b1fa0fd219de6152f234616.1679388632.git.quic_varada@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230406_094833_090224_31511307 
-X-CRM114-Status: UNSURE (   8.65  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230406_114217_828738_231F4249 
+X-CRM114-Status: GOOD (  11.06  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,21 +81,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On Tue, Mar 21, 2023 at 02:24:22PM +0530, Varadarajan Narayanan wrote:
+> diff --git a/drivers/clk/qcom/gcc-ipq9574.c b/drivers/clk/qcom/gcc-ipq9574.c
+[..]
+> diff --git a/include/dt-bindings/clock/qcom,ipq9574-gcc.h b/include/dt-bindings/clock/qcom,ipq9574-gcc.h
+> index c89e96d..96b7c0b 100644
+> --- a/include/dt-bindings/clock/qcom,ipq9574-gcc.h
+> +++ b/include/dt-bindings/clock/qcom,ipq9574-gcc.h
+> @@ -214,4 +214,6 @@
+>  #define GCC_SNOC_PCIE1_1LANE_S_CLK			205
+>  #define GCC_SNOC_PCIE2_2LANE_S_CLK			206
+>  #define GCC_SNOC_PCIE3_2LANE_S_CLK			207
+> +#define GCC_USB0_PIPE_CLK				208
+> +#define GCC_USB0_SLEEP_CLK				209
 
-On Tue, 04 Apr 2023 21:01:15 +0200, Krzysztof Kozlowski wrote:
-> Document the clock-output-names property of clock children, even though
-> the nodes are actually deprecated, to fix dtbs_check warnings like:
-> 
->   k3-j7200-common-proc-board.dtb: wiz@5060000: refclk-dig: 'clock-output-names' does not match any of the regexes: 'pinctrl-[0-9]+'
-> 
-> Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-> ---
->  .../devicetree/bindings/phy/ti,phy-j721e-wiz.yaml        | 9 +++++++++
->  1 file changed, 9 insertions(+)
-> 
+Please split out the dt binding/include change in a separate patch, to
+better facilitate picking both the clock and dts patch for the same
+kernel version.
 
-Reviewed-by: Rob Herring <robh@kernel.org>
-
+Thanks,
+Bjorn
 
 -- 
 linux-phy mailing list
