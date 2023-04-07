@@ -4,69 +4,91 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6061DC6FD1D
-	for <linux-phy@archiver.kernel.org>; Fri,  7 Apr 2023 06:59:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C9406C77B61
+	for <linux-phy@archiver.kernel.org>; Fri,  7 Apr 2023 08:45:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Q8eS12TqwNLXPrG8mZgtXAHzO6WU/NO2ybtTbDhbTRY=; b=eLb+nlQ54RpBpi
-	V4+M7m4SVmU3IYJrUM3bsX5NEq+BzaqjP3yEiLCHP55ekpzbHJhj8BxINHiZhKu1qs+3bhGqus+ww
-	NiOO2T/sWUcDQNpC4wOS9YT5NAqc8RqciIpU0jommsr4Xza66Qg208vnJ7QhCLQVkYHdzyORKkOEQ
-	Nu9mGJx9EgpmlGmFyO7Je5FYaM3KRWyBQldJQTPn0mXYslh510p5HSkqBNvQGMi0uqDTWfz/fjlLQ
-	CCglY1dXfzFzVB/3oqXLcRE9y67kUuSU9m2+dCYkVEL0UPGocZcn8uKghBzjqEOkloO3sVZVORwHj
-	ZBW0xxR4FmgHWcfeKdCw==;
+	List-Owner; bh=fSX9H3LeKqdDjpyyPKxPCE29v03f1Hzdrpl/4zOl/1w=; b=MFRbfZNp1qOE3V
+	h2/KU20QXZtrqrOpDQKfljHDf7W/ODhTQxIA4mgfo4M1MDDan0DHF05Ue8w1gnKcY2HMFJF8kVn+E
+	ue6qHKHgc8+9qofajJryOsLa73wkAENkqSEd95q8Y4ondqRL18ob+642lRlXb8m6SIcNHUrYhwLyy
+	wwhWPEz3FcyKU7dug4M/Y4ca4yBtrrm9bTC5+4AWjcJ7BCmQXF03yH9hEIoPt8DX7AUzy26Y8UJ5d
+	j0jvj05rv9JzfTRJj9wJaVftiff+Wn0bqkxLIWz18gWTUshZKbeOP0HckWTjCi7ERkIaRuYDjDgj+
+	YIWXdy5B8+nCgqx4ROlg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pkg4J-009L2i-3A;
-	Fri, 07 Apr 2023 06:59:31 +0000
-Received: from fd01.gateway.ufhost.com ([61.152.239.71])
-	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pkg4H-009Kz4-1n;
-	Fri, 07 Apr 2023 06:59:31 +0000
-Received: from EXMBX165.cuchost.com (unknown [175.102.18.54])
-	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
-	(Client CN "EXMBX165", Issuer "EXMBX165" (not verified))
-	by fd01.gateway.ufhost.com (Postfix) with ESMTP id B52D424E2EE;
-	Fri,  7 Apr 2023 14:58:49 +0800 (CST)
-Received: from EXMBX162.cuchost.com (172.16.6.72) by EXMBX165.cuchost.com
- (172.16.6.75) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Fri, 7 Apr
- 2023 14:58:50 +0800
-Received: from [192.168.125.82] (183.27.97.179) by EXMBX162.cuchost.com
- (172.16.6.72) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Fri, 7 Apr
- 2023 14:58:48 +0800
-Message-ID: <5dc4ddc2-9d15-ebb2-38bc-8a544ca67e0d@starfivetech.com>
-Date: Fri, 7 Apr 2023 14:58:47 +0800
+	id 1pkhj5-009Xmg-0x;
+	Fri, 07 Apr 2023 08:45:43 +0000
+Received: from mail-ej1-x631.google.com ([2a00:1450:4864:20::631])
+	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
+	id 1pkhj2-009Xln-1T
+	for linux-phy@lists.infradead.org;
+	Fri, 07 Apr 2023 08:45:41 +0000
+Received: by mail-ej1-x631.google.com with SMTP id j22so6997112ejv.1
+        for <linux-phy@lists.infradead.org>; Fri, 07 Apr 2023 01:45:38 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1680857137;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=EkzZhTvOzLRcCGpfrge05I6LlNCd0VLnVsi76p0/Q9Y=;
+        b=tidL1h228tOzQTBOUqn76zpPuR/cmWNKWhR2GufNT0+O1y7j3oF2OSRoqiUVqkC5qI
+         vY2BAyE2ubUgiRQ2Y/O6RRY9teFunLs7RVjucHn5es55NYCvw3LpQtTL9VsogpVwPWq4
+         xXrUU3p05SPEeWazhXCGVXFC5Q2AmP7aABD7xTd/FRcPSVoY904UT6oYaJHBglQaqG0K
+         5WBajTPFS/M+EtIoWUjcbVLVQpRJev7tEJwrrmHuJT0nmhKdJ+QVgMJ9TUDx1/yF9iVx
+         R/nDMN+yvJtQHUv0nltGy5t/JpoOdTa1RdJaAjbPTGZXVsiNlDx916SCzNqMW7Wzfqbp
+         bMhw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112; t=1680857137;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=EkzZhTvOzLRcCGpfrge05I6LlNCd0VLnVsi76p0/Q9Y=;
+        b=A8ar1DLlDmJUSZ9Ng0lRxzPaR5s9KcRNWwq0s0piP36jgwncj0dvlqLKwXoBee23sU
+         i1YbyiDvKnWyEpcOBqH7D9r0kozbCFABnOCNro24Tlfudohf+RdTuumW8xqGzWFofuhc
+         RFcNwpyZPD16TwP2Tkrl5U1RX/ASEdY6mJJJfl0Daheff+BBTS9wKgGtsq1fvLPcgl/6
+         7k6aRu6RlVbeCoHr87HAA3RyyLOKpuf+7Fs1Zm5sBhIxqopQMsiMnYukNaL599dlwEzo
+         WN6f2BnFMKS6czeIj2JDQj4tH0SSqMpjmSWp4v3gvBMZ21NfLzFVafZxyubL3Jb+i6p8
+         8wSg==
+X-Gm-Message-State: AAQBX9fSn6+Yjyok5trQKdP3YxWJrBxETxCjWYwei0DlQRmPIu8dF148
+	w4ODF84xF6jNWZZBbhgF3Qsmgg==
+X-Google-Smtp-Source: AKy350brdfe8nxr1JYdpIW6N0eS4YwtysVwTUFW03OaK40Lq1FF//oAXxsoNoLZ77c3KBnpLWspb/g==
+X-Received: by 2002:a17:907:7608:b0:8b1:7ae9:647 with SMTP id jx8-20020a170907760800b008b17ae90647mr1063441ejc.76.1680857136910;
+        Fri, 07 Apr 2023 01:45:36 -0700 (PDT)
+Received: from ?IPV6:2a02:810d:15c0:828:14a3:366:3172:3c37? ([2a02:810d:15c0:828:14a3:366:3172:3c37])
+        by smtp.gmail.com with ESMTPSA id r13-20020a170906a20d00b008d044ede804sm1802700ejy.163.2023.04.07.01.45.35
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 07 Apr 2023 01:45:36 -0700 (PDT)
+Message-ID: <0762cb76-a1cb-d25d-2a8f-8f9eda21cc81@linaro.org>
+Date: Fri, 7 Apr 2023 10:45:35 +0200
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.9.0
-Subject: Re: [PATCH v3 1/3] dt-bindings: phy: Add starfive,jh7110-dphy-rx
+Subject: Re: [PATCH v2 1/5] dt-bindings: ufs: qcom: add compatible for sa8775p
 Content-Language: en-US
-To: Krzysztof Kozlowski <krzk@kernel.org>, Rob Herring <robh@kernel.org>
-CC: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Emil Renner Berthing
-	<kernel@esmil.dk>, Conor Dooley <conor@kernel.org>, Paul Walmsley
-	<paul.walmsley@sifive.com>, Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou
-	<aou@eecs.berkeley.edu>, Philipp Zabel <p.zabel@pengutronix.de>, Jack Zhu
-	<jack.zhu@starfivetech.com>, <linux-phy@lists.infradead.org>,
-	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-	<linux-riscv@lists.infradead.org>
-References: <20230315100421.133428-1-changhuang.liang@starfivetech.com>
- <20230315100421.133428-2-changhuang.liang@starfivetech.com>
- <20230320151437.GA1709620-robh@kernel.org>
- <fa13e903-809d-064f-baff-c7e7474b52da@starfivetech.com>
- <06a17138-cccc-1283-d235-fa54275c1651@kernel.org>
-From: Changhuang Liang <changhuang.liang@starfivetech.com>
-In-Reply-To: <06a17138-cccc-1283-d235-fa54275c1651@kernel.org>
-X-Originating-IP: [183.27.97.179]
-X-ClientProxiedBy: EXCAS066.cuchost.com (172.16.6.26) To EXMBX162.cuchost.com
- (172.16.6.72)
-X-YovoleRuleAgent: yovoleflag
+To: Bartosz Golaszewski <brgl@bgdev.pl>, Andy Gross <agross@kernel.org>,
+ Bjorn Andersson <andersson@kernel.org>,
+ Konrad Dybcio <konrad.dybcio@linaro.org>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring
+ <robh+dt@kernel.org>, Krzysztof Kozlowski
+ <krzysztof.kozlowski+dt@linaro.org>, Manivannan Sadhasivam
+ <mani@kernel.org>, Alim Akhtar <alim.akhtar@samsung.com>,
+ Avri Altman <avri.altman@wdc.com>, Bart Van Assche <bvanassche@acm.org>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-scsi@vger.kernel.org,
+ Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
+References: <20230406194703.495836-1-brgl@bgdev.pl>
+ <20230406194703.495836-2-brgl@bgdev.pl>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <20230406194703.495836-2-brgl@bgdev.pl>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230406_235929_759646_EB74B89C 
-X-CRM114-Status: GOOD (  10.95  )
+X-CRM114-CacheID: sfid-20230407_014540_521964_E88CAE3C 
+X-CRM114-Status: UNSURE (   7.25  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,44 +105,19 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-
-On 2023/4/7 14:54, Krzysztof Kozlowski wrote:
-> On 07/04/2023 08:51, Changhuang Liang wrote:
->>>> +
->>>> +  resets:
->>>> +    items:
->>>> +      - description: DPHY_HW reset
->>>> +      - description: DPHY_B09_ALWAYS_ON reset
->>>> +
->>>> +  starfive,aon-syscon:
->>>> +    $ref: /schemas/types.yaml#/definitions/phandle-array
->>>> +    items:
->>>> +      - items:
->>>> +          - description: phandle of AON SYSCON
->>>> +          - description: register offset
->>>> +    description: The power of dphy rx is configured by AON SYSCON
->>>> +      in this property.
->>>
->>> Sounds like AON SYSCON should be a power-domains provider. Custom 
->>> phandle links are for things which don't fit standard bindings.
->>>
->>
->> Hi, Rob,
->>
->> On visionfive2 jh7110 SoC, this AON SYSCON is the Secondary power switch to the DPHY Rx.
->> When we open the pmic switch, we also need to configure the AON SYSCON register to turn 
->> on the switch, it is used to link the pmic and the DPHY Rx, So I think it just use syscon
->> framework is enought. What about your comments.
+On 06/04/2023 21:46, Bartosz Golaszewski wrote:
+> From: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
 > 
-> Which sounds exactly like power domain provider...
+> Add the compatible string for the UFS on sa8775p platforms.
 > 
+> Signed-off-by: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
 
-OK, thanks for your comment, I will try to use power domain framework in next patch.
 
-> Best regards,
-> Krzysztof
-> 
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+
+Best regards,
+Krzysztof
+
 
 -- 
 linux-phy mailing list
