@@ -4,63 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 353E1C77B6E
-	for <linux-phy@archiver.kernel.org>; Wed, 12 Apr 2023 16:18:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2A6BAC7619A
+	for <linux-phy@archiver.kernel.org>; Wed, 12 Apr 2023 16:21:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ygcT/elKqjDU5s2NvE5WlG/8t1AWU7zmlJBXp+vTKvo=; b=X7RmbQE/m5Oy+0
-	bL/LW84WnMxboNSt4PCAw9+HOmuhWTSA+s+T666g0QarZgPUUuaXRzqtwlxyKWS3AuGWvQfQwnW15
-	GNmXgSCtBbYlY1Tws6atUI+y4/3gk/xYJYG0BZqpUoAWR7jM1hXmWUl+TnbGxUdZfzCpKLIXFuRk5
-	DMs3TCx4d0tlaiY8Tw3FrenrIS+1wzQ3+lyqEHM6nZGo6xW+KgSCNic91hCyLChx+8v3NA2TUtNM/
-	3sDw6OVwEmy0luFzjlqoxLhsJZ67ZwAyaXdMK6eo+cgVwKBjMEnXYlKgKfe67QJj43wNMtKPdzgHn
-	Y1UdKBxFQ8C98fa0JuWg==;
+	List-Owner; bh=j+FlCmNz3Uu5IS2S5DME17B1LYbYaFY4OtNrbP/qRBE=; b=01J3ozXBRaMAQE
+	2r7KDDWh3LGzzQwFTV/H/59FUD+q7kAA9v+EYnBsuBzH7pvcHPS6iph4ugt1g+W5qKlxmrjzOso7W
+	wm+JY08xMY/26Vr2rVL/9SaprOPD+Te7ymchEr+aB6UEGgDWomRjJNxkzQgchaZY0VhC0FJoLArWl
+	8fg94sdgkqe27p4ns3x+N8Gb6HnKbVKuS/qc0osdOC/ozfEn9gv+fmEouCML4TVSU2sgllwO4vy1/
+	/7XtN2Yku9JGsABB+IrtSm536ic6M1TsqMJtUdffXt8GK17YQfYTO/xPWhi6+BU1NfbGD1+qne9tl
+	AHivrHvzgkFgixO+qPRw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pmdAe-003mkr-2q;
-	Wed, 12 Apr 2023 16:18:08 +0000
+	id 1pmdDa-003nB8-2g;
+	Wed, 12 Apr 2023 16:21:10 +0000
 Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pmdAb-003mkG-2m;
-	Wed, 12 Apr 2023 16:18:06 +0000
+	id 1pmdDY-003nAV-0m
+	for linux-phy@lists.infradead.org;
+	Wed, 12 Apr 2023 16:21:09 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id EC13562D5D;
-	Wed, 12 Apr 2023 16:18:03 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C52C7C433D2;
-	Wed, 12 Apr 2023 16:18:02 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 9AB76636EF;
+	Wed, 12 Apr 2023 16:21:07 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 88FCEC433D2;
+	Wed, 12 Apr 2023 16:21:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1681316283;
-	bh=ekb4B5t2XeTS1EzHo39Eex1si9nprBeZ4QjX7H+9Rz8=;
+	s=k20201202; t=1681316467;
+	bh=21dBoDUPAhRFz5u/I/SNMkgZ5X/vQ2e+XmdjNlj1Du8=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=uKofJ1OApH9Tb+TfEPSfQN1530xUSfbnwpIJcEjtaGGYgowFKpuqlBVwNpoIUQrJB
-	 riI1RmGgq7N5nuNHwWyQm3gSg41TQWX0Zf50YmU3RHxxAR/s2XHSvIjrW3AireZG0S
-	 yFA6gfH3qhCWAnaq/WpYjhg52ITRSpo2R5VQpLycpW8Do2yMt3QPQw7Qf7rek8jQnl
-	 CHwiAE5qg+JmANL22jpFIdTSZaX6RnBUuxzntw3++veEgg7N1nPRE+CtAbugPS1Y0c
-	 BoHLNkMAy3JLli0Gl8gWiGlP+MZ7SgMJH3ntaIsLY9IoUwGYVqIUq7pJbNYmW6kOTl
-	 pbrdS/pzthWPA==
-Date: Wed, 12 Apr 2023 21:47:59 +0530
+	b=QTmU8TEKf4jN9ncm84CyFOfQThd9BDS0h6DQ0hlWZ/7s+XTuljeLkMja1C6+MbTaz
+	 +1Lr2wdMbgfevnk4lP1ZxL/sR1uTyNGm5KoHxK3ZFEL1N5IbzLOCQzgRT91DELBbyq
+	 68nUz/MDpAjZ8lQpjK3mFZ8cK8RqwFdVOf9Hk2an2qLS0u3LmXsoy8JeQ+9sbT4UeP
+	 j3vqoBoJYgdv4gA+39eDk96nicOOq+sGO5MOjZuyhVoD7i2Lnn8Cyse5F1AnLJ41V8
+	 HwjHmSd2De+7l9eWdXASDzPGOlvPeHC52kYT2xWO2G0y1Ie6gc9lsdMZARLdtfBOdC
+	 S++JQF4p30xSQ==
+Date: Wed, 12 Apr 2023 21:51:03 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Tom Rix <trix@redhat.com>
-Cc: kishon@kernel.org, heiko@sntech.de, nathan@kernel.org,
-	ndesaulniers@google.com, linux-phy@lists.infradead.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
-	llvm@lists.linux.dev
-Subject: Re: [PATCH] phy: rockchip: remove unused hw_to_inno function
-Message-ID: <ZDbZtwc278NRc+vy@matsya>
-References: <20230324132649.2649166-1-trix@redhat.com>
+To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Swapnil Jakhade <sjakhade@cadence.com>,
+	Yuti Amonkar <yamonkar@cadence.com>, Abraham I <kishon@ti.com>,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 1/5] dt-bindings: phy: cadence-sierra: drop
+ assigned-clocks
+Message-ID: <ZDbabx/fgDjqh1qm@matsya>
+References: <20230404190115.546973-1-krzysztof.kozlowski@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20230324132649.2649166-1-trix@redhat.com>
+In-Reply-To: <20230404190115.546973-1-krzysztof.kozlowski@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230412_091805_943729_EBAC077D 
-X-CRM114-Status: UNSURE (   6.24  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230412_092108_325345_30C37F66 
+X-CRM114-Status: GOOD (  14.33  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,13 +80,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 24-03-23, 09:26, Tom Rix wrote:
-> clang with W=1 reports
-> drivers/phy/rockchip/phy-rockchip-inno-dsidphy.c:284:36: error:
->   unused function 'hw_to_inno' [-Werror,-Wunused-function]
-> static inline struct inno_dsidphy *hw_to_inno(struct clk_hw *hw)
+On 04-04-23, 21:01, Krzysztof Kozlowski wrote:
+> The meta schema from DT schema already defines assigned-clocks, so there
+> is no need for device schema to mention it at all.  There are also no
+> benefits of having it here and a board could actually need more of clock
+> assignments than the schema allows.
 
-Applied, thanks
+Applied all, thanks
+
+> 
+> Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+> ---
+>  .../devicetree/bindings/phy/phy-cadence-sierra.yaml       | 8 --------
+>  1 file changed, 8 deletions(-)
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/phy-cadence-sierra.yaml b/Documentation/devicetree/bindings/phy/phy-cadence-sierra.yaml
+> index 6a09472740ed..1de699fe5306 100644
+> --- a/Documentation/devicetree/bindings/phy/phy-cadence-sierra.yaml
+> +++ b/Documentation/devicetree/bindings/phy/phy-cadence-sierra.yaml
+> @@ -61,14 +61,6 @@ properties:
+>        - const: pll0_refclk
+>        - const: pll1_refclk
+>  
+> -  assigned-clocks:
+> -    minItems: 1
+> -    maxItems: 2
+> -
+> -  assigned-clock-parents:
+> -    minItems: 1
+> -    maxItems: 2
+> -
+>    cdns,autoconf:
+>      type: boolean
+>      description:
+> -- 
+> 2.34.1
 
 -- 
 ~Vinod
