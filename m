@@ -4,45 +4,45 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1C2E8C7619A
-	for <linux-phy@archiver.kernel.org>; Wed, 12 Apr 2023 11:28:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1EF57C7619A
+	for <linux-phy@archiver.kernel.org>; Wed, 12 Apr 2023 11:29:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xHb3VpzFfPaFm1/MAnL7m2/n3CIKaB6m8srxZkBF3zI=; b=ayWZzxjzM0fKCB
-	g8QxOj3+JY567mfOKjWPOY6XPcJv1Ui6ITSNgXeGAC/bBTUl2ufMEvWWjy4SlXcxLrKpD55qV06+V
-	KpDF50k5aArz7huVn6xARJ9AejZ6xBuh9tnmX9btfp6F0QGuTlAvo9xDEkpfhIxtdZUnuT0ULTBLX
-	i/jV/Y5WkURJb21OE6s6RK+cvhqnpQcN0qRlm2zzbZ8UWoSLZFKdwFihqaVrNZ+ojmWLiffnl59a3
-	HA9HpfE06u+NhHnN2yBZJ+QwnWaPLJc0Bq/vcCyioofQb2z20bTYrCG+0UBphHOUFs06Mb77qoDIU
-	THmEpu3PcCMPZOMCd76g==;
+	List-Owner; bh=bcD7p+NEqovT9jQwvxJMitq0PjLzgobC0JCPo5B4B1s=; b=wzs3dOZkEdH3Er
+	33Y9wc5Sb2xrI1c99Cehs1wq2BJlEi9kQiSK48PAFhbIHBE5URRr+6u3NeGICEycQs+w44rLW55um
+	9AZo8D+rDXW6MocTzg4yCBYyESUaBx1MBdpf4sFrXkSEWmSw4FnoHAMzxIahXZgF7ldeF71u0FYIP
+	SJm4xcKtIK7Qbxuo44QSBq21hTkqlRz68OtiV3z/mMm+ZMQQkcgc2usQNs6eYD9rSfFJTKMsgjeRc
+	mauDOe7ptJaTPUEnwzR6rOLZFqq25D9h5PMJBWHcLHRhtrIack/IXxg9GgqNrx3CVpzy0rso4ZYqb
+	mM9c7ni7ZpETwbfrr4fg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pmYeo-002oih-0d;
-	Wed, 12 Apr 2023 11:28:58 +0000
-Received: from madras.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e5ab])
+	id 1pmYeu-002oq4-2U;
+	Wed, 12 Apr 2023 11:29:04 +0000
+Received: from madras.collabora.co.uk ([46.235.227.172])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pmYdp-002nfU-2b;
-	Wed, 12 Apr 2023 11:27:59 +0000
+	id 1pmYdr-002nh1-0x;
+	Wed, 12 Apr 2023 11:28:01 +0000
 Received: from IcarusMOD.eternityproject.eu (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
 	(Authenticated sender: kholk11)
-	by madras.collabora.co.uk (Postfix) with ESMTPSA id 626796603246;
-	Wed, 12 Apr 2023 12:27:55 +0100 (BST)
+	by madras.collabora.co.uk (Postfix) with ESMTPSA id BD5396603222;
+	Wed, 12 Apr 2023 12:27:56 +0100 (BST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1681298876;
-	bh=/nr515MQrSV6wPJ0nOqHA4/ts+hd9gZh930X4zNFcK0=;
+	s=mail; t=1681298878;
+	bh=xWx6EegFN/Cbl8Z4PW24l4hQjXItZf81rLKoJwUO+Qo=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=liKeWPdnCzkgOpOcdSoox+hQIFk3KrNnhAlYX5GaRDjE/U1nsApu8XhVgG6ZEA946
-	 61WYHCLpok3pWq7lw/IEHoe8xUBC/UO6IYOEQQrxf1gixrZxoe/pmgZArwDKsOPo1b
-	 CLbjjH5Sf2qpxU+zc9V5wW7vLRiLct+bey6Kh/s+IF/q0oRb8jf1oFPod+hanX1hMs
-	 FgaH5hEy5I/I2vPMk1v4Xzo3O/zfVcQGSJp596c50b5GgrJKIrJKpPIvuri6u8YM/1
-	 u5NW3fp1Tb+QdD0Y4p+04baBqq2k7Dq8TMZe2AgrG9+yrS9LIFDPH6/9hHs6lUm0w9
-	 49u1/Jj6dfJNw==
+	b=en1fQNlpo7h26/3IGRfMpiL0JCdY+sdr34CvR3a22Mg5ATikZObWikLJOC5tP/Zq8
+	 yeNSzjV2lluyQoldlcc351dLO/sfJIWdfEtvAmFU/daLTEr18dweZIbLx0uyyEBD0d
+	 VI9oB28mqgxMHs6Erw1BBiXpgRJjHV7j0WrfaGcaGhalGxcCqtEseHI4F/XQpcq9Oc
+	 zyAh6aIfUVyaaTH2A8HCzS8Kyt9Kx3Yxx0LMqZ2Hb1X+lD1tOJRnF79Z4zdEOGxV3r
+	 4BP5lZkpcjNQcHoSt2Cj0D5weFNsgCx7Q8y4+lRBRubKn3Y2Q21jHLcQVWe/sCt7nZ
+	 b2pQWmeXfT2AA==
 From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 To: matthias.bgg@gmail.com
 Cc: p.zabel@pengutronix.de,
@@ -72,16 +72,16 @@ Cc: p.zabel@pengutronix.de,
 	kernel@collabora.com,
 	phone-devel@vger.kernel.org,
 	~postmarketos/upstreaming@lists.sr.ht
-Subject: [PATCH 08/27] dt-bindings: display: mediatek: wdma: Add compatible for MediaTek MT6795
-Date: Wed, 12 Apr 2023 13:27:20 +0200
-Message-Id: <20230412112739.160376-9-angelogioacchino.delregno@collabora.com>
+Subject: [PATCH 09/27] dt-bindings: display: mediatek: color: Add compatible for MediaTek MT6795
+Date: Wed, 12 Apr 2023 13:27:21 +0200
+Message-Id: <20230412112739.160376-10-angelogioacchino.delregno@collabora.com>
 X-Mailer: git-send-email 2.40.0
 In-Reply-To: <20230412112739.160376-1-angelogioacchino.delregno@collabora.com>
 References: <20230412112739.160376-1-angelogioacchino.delregno@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230412_042758_015591_E5D373B9 
-X-CRM114-Status: UNSURE (   7.93  )
+X-CRM114-CacheID: sfid-20230412_042759_493161_3200DBC4 
+X-CRM114-Status: UNSURE (   7.80  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -99,28 +99,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add a compatible string for MediaTek Helio X10 MT6795's WDMA block: this
+Add a compatible string for MediaTek Helio X10 MT6795's COLOR block: this
 is the same as MT8173.
 
 Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 ---
- .../devicetree/bindings/display/mediatek/mediatek,wdma.yaml    | 3 +++
- 1 file changed, 3 insertions(+)
+ .../devicetree/bindings/display/mediatek/mediatek,color.yaml     | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/Documentation/devicetree/bindings/display/mediatek/mediatek,wdma.yaml b/Documentation/devicetree/bindings/display/mediatek/mediatek,wdma.yaml
-index 7d7cc1ab526b..1a19b3ef036f 100644
---- a/Documentation/devicetree/bindings/display/mediatek/mediatek,wdma.yaml
-+++ b/Documentation/devicetree/bindings/display/mediatek/mediatek,wdma.yaml
-@@ -23,6 +23,9 @@ properties:
-     oneOf:
+diff --git a/Documentation/devicetree/bindings/display/mediatek/mediatek,color.yaml b/Documentation/devicetree/bindings/display/mediatek/mediatek,color.yaml
+index 62306c88f485..449b37c7560f 100644
+--- a/Documentation/devicetree/bindings/display/mediatek/mediatek,color.yaml
++++ b/Documentation/devicetree/bindings/display/mediatek/mediatek,color.yaml
+@@ -35,6 +35,7 @@ properties:
+           - const: mediatek,mt2701-disp-color
        - items:
-           - const: mediatek,mt8173-disp-wdma
-+      - items:
-+          - const: mediatek,mt6795-disp-wdma
-+          - const: mediatek,mt8173-disp-wdma
- 
-   reg:
-     maxItems: 1
+           - enum:
++              - mediatek,mt6795-disp-color
+               - mediatek,mt8183-disp-color
+               - mediatek,mt8186-disp-color
+               - mediatek,mt8188-disp-color
 -- 
 2.40.0
 
