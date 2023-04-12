@@ -4,70 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0A928C77B6E
-	for <linux-phy@archiver.kernel.org>; Wed, 12 Apr 2023 12:36:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D1632C7619A
+	for <linux-phy@archiver.kernel.org>; Wed, 12 Apr 2023 12:36:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=C40EJisWVsJj9MRn8gqJQV2WSxSVnetbOg2cZ87qtH8=; b=DsAk8rQwdqZrOC
-	ryXuWUM/F6ea0AZCMU+ez0iAklekDH27LCyru1HoQa19rX6onUAnJ5i8SwEaNdAgsEP2iuSeC1GKn
-	6+TN8QSxJEobYPIMV8p64B1GY11g19tDlFz7zfn5+qalGOy8x75NpPOxxSBBC5BPM7eaeUxkcR67O
-	UbDYw+LJ9R6DKCf+HpWkh9IJ9ScswTc/e/PUcrsgM4AbJFVqVn1AiJqqaMO+XKsxfV8WTIt25MEax
-	kK/lSd/Om7O60tRd+5c6WQmYeVuym+GJ9wrwCpsP7InySCokcgO1ey3Eww0nQP0H5YRrxVKB3uzT5
-	ABDLNEkB3Au1KaRLvUCw==;
+	List-Owner; bh=zq/yp5i+NlHN5dXsfswETeGebLaL/FoQkb7xu3FmFJQ=; b=xGHbKKbX1ikAgx
+	LHwbLQv+d5ApiWX7CJjOM5UXxAcNJ5/SHGGYpg8CeD8u438GsKVcHrnPRmdupwOZ4ELoo+cAD05WA
+	rPZxhZqaCnK1xXFGA0YUp/BH2yAZj+g0r1rW3BWDZ29QOJZSadXT5V9D4CH/CYX3gJ486ybSciGfr
+	wy0ZODUThQiZur2NP0Jcm4wcsArChQkJH07kiY/c8wN/VT61Z6hQ49a2L+TyDrjub/foa9y6YQoe9
+	7Qvc4qzOB8hXp8TXTnLrnL77gQjWYCOaWXntQ0PA6ocuaiWZWJvelxcYu/MpKy5tSkTy1HUAQbsrb
+	iBRz4ZoZNFH1A32B1/IQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pmZhr-0038Iv-29;
-	Wed, 12 Apr 2023 12:36:11 +0000
-Received: from mail-wr1-x430.google.com ([2a00:1450:4864:20::430])
+	id 1pmZia-0038Zt-1Y;
+	Wed, 12 Apr 2023 12:36:56 +0000
+Received: from mail-wr1-x42c.google.com ([2a00:1450:4864:20::42c])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pmZhm-0038FB-2A;
-	Wed, 12 Apr 2023 12:36:07 +0000
-Received: by mail-wr1-x430.google.com with SMTP id j11so14380347wrd.2;
-        Wed, 12 Apr 2023 05:36:04 -0700 (PDT)
+	id 1pmZiV-0038WA-0t;
+	Wed, 12 Apr 2023 12:36:52 +0000
+Received: by mail-wr1-x42c.google.com with SMTP id j11so14382796wrd.2;
+        Wed, 12 Apr 2023 05:36:48 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20221208; t=1681302963; x=1683894963;
+        d=gmail.com; s=20221208; t=1681303008; x=1683895008;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=wE7N70141Au9hlevZXAZoj6fncNpv5mG2/2AtTaaiCY=;
-        b=NEcoZuzS8P4iLio4nXH/fPKA+WVpnLFtlrKOnIPIT3Hx2KjonjAQrokGpRwlwnOBGO
-         bGLkPeH7icTnEBAVVxA2h5hVZ/1gQr30E7WY8UkQUX7V3g/i1ZR3jOpLBmCjnONzLIqC
-         p+1OB+B2Y9WPOSeoN4GbT1ZuCIZaYDEw8spi4Z8ZyVEtkGNDLFEuM0hEDHsgjQZFOKN+
-         3zjg0YwBt3OUh20M6jYtvdwRP69s7PEMPcGL2c0bvNnWZCQFOgyvdvYS6OVvygJMRzR7
-         5RAtXlaNgLtQpZeh2eBC2qzZ3blTgUd8gC3wOngl0DnYAfrFQ3N3kRQ9qTWHHc79qnlr
-         J2ig==
+        bh=5+yJqelcjnVJsBvuc5XbMPT6WJPDQKryMhB4y470pSo=;
+        b=LLjqDK8tdTHUH7mzFIFmfQT8xQyuLtVYbmR7OQrKeNzsqHXLj5BBQMhtKqzkyUOumi
+         Sn/FVrn77yRrZUvVN/HJuEHXk/hHx7wn1bvjgdWUlsHOf/xX2c58NYs7Pb4IjjyABuXJ
+         w3agsCkggYVx3P+20Poa/ChhqMclxJlCHVv6UQRDUKXEyh2AO/A2pJg8bMu868T2DGa+
+         hhoq5XcdPPbLdXlR/sjZKqdDnicTwRtks9MloCIznQD29X6PMwXA0qlZEltcag2yqo0k
+         qPm6j05xWOMfFQ7zE8JislSdbLHAMo8LpDUZSfG5aZy/z2WIvaDc7lTllYO7QMVQsCju
+         InTA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112; t=1681302963; x=1683894963;
+        d=1e100.net; s=20210112; t=1681303008; x=1683895008;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=wE7N70141Au9hlevZXAZoj6fncNpv5mG2/2AtTaaiCY=;
-        b=U54oTjS6WZRv9RmnheSKl2bsNkmvT12vGo+1zsvMku2aNdZqkB40erXDWrii5p/rUY
-         p8CE+sSaEgEqhHgsq+hfgR9zUF0OojXOIvgZepiOynZfHWnYuXlmLsCqX91UO8mafU2a
-         JyFtWShrYRzk8hbGLXUj6usxYBppO/Gzi0bHEbdHg2G/MVV4nbmwk2yIQBiudLEi3Qab
-         OvVzwl1RKWnC1qXJilTLUVgxvoTi0XzgOWB3M5LsVFykAqRtvEe8NGhaR8+1W+g4coFS
-         zLBLK+rMpYkryo9BYVIhnnf++IaxKrfmaXGL9XMs1iJ/nyr3d7tSsvdey3eHnmZWxhJX
-         UptA==
-X-Gm-Message-State: AAQBX9f5FOuyrkj8LkZQvKT2rH5FB+4M+liCy06HlCbOeVlmTd5NFfJr
-	fk55w1Rlsh9FQ4e1w1UFT1A=
-X-Google-Smtp-Source: AKy350aeuLyAiDRCHx8WCMaCn9uP+PuosubsGjcr6o2UO9HCVUKys6W1CjIDSWkAVTjaxq4gQgUTDw==
-X-Received: by 2002:adf:e441:0:b0:2f1:d17f:cf95 with SMTP id t1-20020adfe441000000b002f1d17fcf95mr7353387wrm.12.1681302963216;
-        Wed, 12 Apr 2023 05:36:03 -0700 (PDT)
+        bh=5+yJqelcjnVJsBvuc5XbMPT6WJPDQKryMhB4y470pSo=;
+        b=kPQW0jAFnisHphHPpMwt3xIWNz6vQ6t8vIYSe3G0vkKnUPoa18WA2V86pEqoQ1vmLW
+         Jh88pexP+gJnE76RpkHPCG6P8bMTmPFZseclzNoHKwZpMEUppZAFYRwWlMGLfrXuMuxT
+         GtGO5tMVgVXO5M0tIi/qPN4tzv4LdCUnhzHP478nYGrpliKQbkQSo2/VchJ4aZpxLsPW
+         PJ426Lf8IbcO6gof+gE4yKahl9Us80rEzfdg77Sg9I7RGDh2FoFUPI3PZq5n4bqppeN4
+         dMWt5j83qYk0V3CaI0IdFd4UyOLSkfeoRvPqZlYq0SA0U65d22quUb1Pl47fkZ/ZXfLM
+         68bA==
+X-Gm-Message-State: AAQBX9dMFBf+k1+GOEcOIl/DURf3xxZmeJaY8TbAvEE680HX/oDhS8wH
+	7zA4uTQ+D98Abt7A/n/6M3M=
+X-Google-Smtp-Source: AKy350YfaWPBQRxXe37/4nw4RvtdvOSXPdUuUJj6f7mSjFILGvCzsrsicMkzLrBGLQ3m32F6fCsuGw==
+X-Received: by 2002:adf:ec82:0:b0:2d7:67bc:344a with SMTP id z2-20020adfec82000000b002d767bc344amr13517948wrn.37.1681303007626;
+        Wed, 12 Apr 2023 05:36:47 -0700 (PDT)
 Received: from [192.168.2.177] ([207.188.167.132])
-        by smtp.gmail.com with ESMTPSA id f5-20020a0560001b0500b002cfe3f842c8sm17040059wrz.56.2023.04.12.05.36.01
+        by smtp.gmail.com with ESMTPSA id m8-20020adffe48000000b002c55521903bsm17181465wrs.51.2023.04.12.05.36.45
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 12 Apr 2023 05:36:02 -0700 (PDT)
-Message-ID: <b9424113-f812-2f2d-5068-b04bb789e0de@gmail.com>
-Date: Wed, 12 Apr 2023 14:36:00 +0200
+        Wed, 12 Apr 2023 05:36:46 -0700 (PDT)
+Message-ID: <3e8c6b55-5b5e-5141-8f63-d7f0fc7d1699@gmail.com>
+Date: Wed, 12 Apr 2023 14:36:44 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.6.1
-Subject: Re: [PATCH 05/27] dt-bindings: display: mediatek: dsi: Add compatible
- for MediaTek MT6795
+Subject: Re: [PATCH 08/27] dt-bindings: display: mediatek: wdma: Add
+ compatible for MediaTek MT6795
 Content-Language: en-US
 To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 Cc: p.zabel@pengutronix.de, airlied@gmail.com, daniel@ffwll.ch,
@@ -82,12 +82,12 @@ Cc: p.zabel@pengutronix.de, airlied@gmail.com, daniel@ffwll.ch,
  linux-pwm@vger.kernel.org, kernel@collabora.com,
  phone-devel@vger.kernel.org, ~postmarketos/upstreaming@lists.sr.ht
 References: <20230412112739.160376-1-angelogioacchino.delregno@collabora.com>
- <20230412112739.160376-6-angelogioacchino.delregno@collabora.com>
+ <20230412112739.160376-9-angelogioacchino.delregno@collabora.com>
 From: Matthias Brugger <matthias.bgg@gmail.com>
-In-Reply-To: <20230412112739.160376-6-angelogioacchino.delregno@collabora.com>
+In-Reply-To: <20230412112739.160376-9-angelogioacchino.delregno@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230412_053606_710332_A59AE38D 
-X-CRM114-Status: GOOD (  12.84  )
+X-CRM114-CacheID: sfid-20230412_053651_310568_71CB5D94 
+X-CRM114-Status: GOOD (  12.93  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -107,43 +107,29 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
 On 12/04/2023 13:27, AngeloGioacchino Del Regno wrote:
-> Add a compatible string for MediaTek Helio X10 MT6795, using the same
-> DSI block as MT8173.
+> Add a compatible string for MediaTek Helio X10 MT6795's WDMA block: this
+> is the same as MT8173.
 > 
 > Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 > ---
->   .../display/mediatek/mediatek,dsi.yaml        | 19 ++++++++++++-------
->   1 file changed, 12 insertions(+), 7 deletions(-)
+>   .../devicetree/bindings/display/mediatek/mediatek,wdma.yaml    | 3 +++
+>   1 file changed, 3 insertions(+)
 > 
-> diff --git a/Documentation/devicetree/bindings/display/mediatek/mediatek,dsi.yaml b/Documentation/devicetree/bindings/display/mediatek/mediatek,dsi.yaml
-> index 4707b60238b0..12441b937684 100644
-> --- a/Documentation/devicetree/bindings/display/mediatek/mediatek,dsi.yaml
-> +++ b/Documentation/devicetree/bindings/display/mediatek/mediatek,dsi.yaml
-> @@ -22,13 +22,18 @@ allOf:
->   
->   properties:
->     compatible:
-> -    enum:
-> -      - mediatek,mt2701-dsi
-> -      - mediatek,mt7623-dsi
-> -      - mediatek,mt8167-dsi
-> -      - mediatek,mt8173-dsi
-> -      - mediatek,mt8183-dsi
-> -      - mediatek,mt8186-dsi
-> +    oneOf:
-> +      - enum:
-> +          - mediatek,mt2701-dsi
-> +          - mediatek,mt7623-dsi
-> +          - mediatek,mt8167-dsi
-> +          - mediatek,mt8173-dsi
-> +          - mediatek,mt8183-dsi
-> +          - mediatek,mt8186-dsi
+> diff --git a/Documentation/devicetree/bindings/display/mediatek/mediatek,wdma.yaml b/Documentation/devicetree/bindings/display/mediatek/mediatek,wdma.yaml
+> index 7d7cc1ab526b..1a19b3ef036f 100644
+> --- a/Documentation/devicetree/bindings/display/mediatek/mediatek,wdma.yaml
+> +++ b/Documentation/devicetree/bindings/display/mediatek/mediatek,wdma.yaml
+> @@ -23,6 +23,9 @@ properties:
+>       oneOf:
+>         - items:
+>             - const: mediatek,mt8173-disp-wdma
 > +      - items:
-> +          - enum:
-> +              - mediatek,mt6795-dsi
-> +          - const: mediatek,mt8173-dsi
+> +          - const: mediatek,mt6795-disp-wdma
+> +          - const: mediatek,mt8173-disp-wdma
 
-Same here, why not const?
+:D
+
+Reviewed-by: Matthias Brugger <matthias.bgg@gmail.com>
 
 >   
 >     reg:
