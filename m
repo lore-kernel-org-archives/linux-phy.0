@@ -4,89 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9D34DC7619A
-	for <linux-phy@archiver.kernel.org>; Wed, 12 Apr 2023 11:34:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8525CC77B6E
+	for <linux-phy@archiver.kernel.org>; Wed, 12 Apr 2023 12:31:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9D7No6nGdfixE4M+jdy4cXCXT0j6mVRMDJ8JsV7Orqw=; b=eJMig4uT0IpusP
-	dgnqxgG/yiWEUEhQ+1ryhfUvlon4Fa9bltAQ8WLCxqTWIX2RVbLvY165NGcxTpEwf43u8701bmjt/
-	Vxek1gEbC9pkWLQc0RKcrChf24dHQonqdxrrTP7P37wH5SMYfnSb4cejknHClkxlGBQnjmDVhyZat
-	2K7jpHFEHv1EpnwhYjeWFii8bmufr1Ah/szG7hEoPOfQ4rnBggpIR+ST74QsrrivO6M8ww1eSFbxS
-	eOPJZzN69YUH/8YgDMCvXkseSMocSkGTrxiIHrN0GcIwgK0ZPJreudf+VudQnn/d0tCXkcz8mw13u
-	Sz+FIxZMhjuUbCx9Pocw==;
+	List-Owner; bh=QldvX7ypuA1gO7UQeEVgDxP6NvCmoxs5cLYLL39Sokc=; b=SvTTpDe0xH3NVQ
+	po5Xf5hA9dGxwjv4toVMyEPQvINlj069v1q5tzRXNxXLlbAQ4kaIz1NiL2BWtdpePpr6g71B9Kv0Y
+	VamYEfef5jiNlIJisRZmjzB0wPzgN4xgOlNFlB2zTG6fUXsb0eVw4sYGe/YYCgU2ESdGUvUPJ76N2
+	0KwtHpJtpFKc7lm6ki5iOpfir0CnqFZgcjuMKNCesNsBmVC88I7cOlR3LxIbqUSHz4uAnzHyV76U0
+	K+lpSl0YdcnS4WvWIMuUfDoO1w8JQakDvP3sDYaGTenTIJVpkEt32THWxIFXzWApaO0e8sFGt6do/
+	HSOHpO3Dcuge6jnAY7FA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pmYk2-002ta4-0B;
-	Wed, 12 Apr 2023 11:34:22 +0000
-Received: from mail-lf1-x133.google.com ([2a00:1450:4864:20::133])
+	id 1pmZd0-00376p-04;
+	Wed, 12 Apr 2023 12:31:10 +0000
+Received: from mail-wm1-x32d.google.com ([2a00:1450:4864:20::32d])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pmYjy-002tWe-2l
-	for linux-phy@lists.infradead.org;
-	Wed, 12 Apr 2023 11:34:20 +0000
-Received: by mail-lf1-x133.google.com with SMTP id h12so9317294lfj.8
-        for <linux-phy@lists.infradead.org>; Wed, 12 Apr 2023 04:34:17 -0700 (PDT)
+	id 1pmZcv-00374K-2B;
+	Wed, 12 Apr 2023 12:31:06 +0000
+Received: by mail-wm1-x32d.google.com with SMTP id eo6-20020a05600c82c600b003ee5157346cso7949636wmb.1;
+        Wed, 12 Apr 2023 05:31:02 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1681299256;
+        d=gmail.com; s=20221208; t=1681302660; x=1683894660;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=LxsivSQwSNGU8AJzuwSv8w61igpz8AHkC54naIDyexI=;
-        b=gwjW5QtuRbOOWCGb1dONAXAbjmFVfvKKircAtLFrbHDHFvYVlzDF5RyrRu7gHFH4uK
-         vuhlstToooIlcw0h4Wpps4ko40UZH6/bHQVOQZPzBtTxpUqM+NDyY6Uf+SqKqQBVrQfG
-         ogODpwGkP/40If5n9YAcLxLpUzAli65yuYcjp52Ud1a+AaHKKKN/nxp0s4AUcwHabfsc
-         9AZXNJAax+ENZJD6sAQlIsu9i7Dfs8TtAbAux/+o6JFnQABKwVyv29tSey5md14NMMHj
-         JlE4eaMnT9JtWqJX2tAgkvrAjKcGdEsdc9kAzkVZSGMFbyVNz6K89St/hfn0e9DxO1U+
-         GcYw==
+        bh=LH8FUEh+YJu8DH3rQ9pd4R0sfMJTPR3+WipwFABmNG4=;
+        b=SKj8hts1928ziujgAoLnuqVkvDvGcPZx36SBJHxw+/0D/ZFODDY4QCuDaPwslggRoY
+         AL0fHbhDZ54IiymSNRpgOcztfTVCMYJBahVeQxJRhHfMUx1zzQkD5fAr1uhNC8NkJj+2
+         TlI+Xs2wdnQ4C2SbpWPLQAgzPsSE96He+YrPPhFhhWu7QXZIA7tL25TZaWLHKmmfolOT
+         mgk5iGo1cZD7lug3KA6VJnE9zKrDfk0tJNM1YvwkgmiDXk29Cjt9H6nW/pcdYSMAbLPj
+         FwqojBdj6zG94Wa5EDAvxojVaN46+6GMtSP1CZ/UqkOysvuH+mRZNQ5kNfJvr74I9E9u
+         j1cQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112; t=1681299256;
+        d=1e100.net; s=20210112; t=1681302660; x=1683894660;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=LxsivSQwSNGU8AJzuwSv8w61igpz8AHkC54naIDyexI=;
-        b=ubs480gHtJMPI1CxuC8jXRznOTtaEM/Q4AwFFnh/MvQMAm6kJfWdTA7fZUfOvqTsva
-         7toOtNUDW965HeZhpF06KvBlp+jOXggPIgMB+Zvxx3RnOIKLD4vteL+aadryuAlb5gCZ
-         1CcE6t2G5N0PzpoH1HL/EwsV8n3zGbWwelTRRUb0GxaUt0FzDXXldMgXXQGuhJRUuDnM
-         i9w05eaolF9zFpXKbLWV7YrRfGOol7JoyokldtSM3FVsWn/vPD+MOb0AoUjowaLO4Dvs
-         zZMlHivw0L6wSYS9JJaZLp8LSVOFA5XGpyRVC6QlHMelIwTqVk94jl0TXE5qP9gbkM73
-         Lj4A==
-X-Gm-Message-State: AAQBX9eQxnW9zFPpVrx3dLFM/eB42CYNWj0pPlTVh5l0/hmLybU9DFnr
-	f+j3Hj28L2AdyMfvofictwhhJA==
-X-Google-Smtp-Source: AKy350Y6SI3oUzoCiPhWbY7FYgE1XH0PFnLrVCnn38wtCsCdGB0IrxcVCSFEseYoJY1ywr5ToEXxSw==
-X-Received: by 2002:ac2:5dc2:0:b0:4ec:a218:4f9b with SMTP id x2-20020ac25dc2000000b004eca2184f9bmr309937lfq.2.1681299255813;
-        Wed, 12 Apr 2023 04:34:15 -0700 (PDT)
-Received: from ?IPV6:2a02:810d:15c0:828:8fa0:9989:3f72:b14f? ([2a02:810d:15c0:828:8fa0:9989:3f72:b14f])
-        by smtp.gmail.com with ESMTPSA id v5-20020ac25605000000b004b55ddeb7e3sm2964212lfd.309.2023.04.12.04.34.14
+        bh=LH8FUEh+YJu8DH3rQ9pd4R0sfMJTPR3+WipwFABmNG4=;
+        b=jnPUZ3Dwxnl3n618fsM538Ml1tFJVD12U1SNwRasc5PeByPMWEoMDQZHC0RDGTCsK0
+         3+eXTdB9Evz6AMCDqr4Fcwac218+9/a2SXBqD+9W2Ov5BNHEVtqBcfLnbXLBdjivcVAT
+         S1/y56XIAR+Y490vqnO+fQGkJ4PDKbN92d1BbZH3vl0r3pmidfu8QiGMqX+vadEz7KTJ
+         FMNt3BYGl921/GGAZmRm0Pw57d3zHqJibjsrsaKJ1nvyn7SwyXMnyiTdL/Di47CBLkaV
+         CwjmfSJsrQ0GE3qYjDB1ebPlRvYOn/rl5k8MOjNqlvVpbHZ5AIR3C/XiSvU+ZRHyTkH6
+         SkmQ==
+X-Gm-Message-State: AAQBX9fwZnU0ke35W90CWyqTIUcvv/Pi2GdVwGkjmGqNGwUQjUW8juy1
+	0ElPtFjFtsHmh4bs9/7DCmk=
+X-Google-Smtp-Source: AKy350bn9uF0IQIwzgop3ifBPq286Rptgb8qr/QNLk/Ydb6m3Rimef/MNKrhRejMvnS2eP3FRuoY/A==
+X-Received: by 2002:a05:600c:21c4:b0:3f0:4428:9444 with SMTP id x4-20020a05600c21c400b003f044289444mr11979874wmj.10.1681302660547;
+        Wed, 12 Apr 2023 05:31:00 -0700 (PDT)
+Received: from [192.168.2.177] ([207.188.167.132])
+        by smtp.gmail.com with ESMTPSA id c3-20020adffb43000000b002de99432fc8sm17058331wrs.49.2023.04.12.05.30.58
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 12 Apr 2023 04:34:15 -0700 (PDT)
-Message-ID: <8dd0dc63-e0df-8764-f756-da032d9d671c@linaro.org>
-Date: Wed, 12 Apr 2023 13:34:13 +0200
+        Wed, 12 Apr 2023 05:30:59 -0700 (PDT)
+Message-ID: <40b46002-fad7-9751-fc2c-5d96a5ce6b75@gmail.com>
+Date: Wed, 12 Apr 2023 14:30:57 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.9.1
-Subject: Re: [PATCH v4 1/3] dt-bindings: phy: Add starfive,jh7110-dphy-rx
+ Thunderbird/102.6.1
+Subject: Re: [PATCH 01/27] dt-bindings: pwm: Add compatible for MediaTek
+ MT6795
 Content-Language: en-US
-To: Changhuang Liang <changhuang.liang@starfivetech.com>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Emil Renner Berthing <kernel@esmil.dk>, Conor Dooley <conor@kernel.org>,
- Paul Walmsley <paul.walmsley@sifive.com>, Palmer Dabbelt
- <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>,
- Philipp Zabel <p.zabel@pengutronix.de>
-Cc: Jack Zhu <jack.zhu@starfivetech.com>, linux-phy@lists.infradead.org,
+To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Cc: p.zabel@pengutronix.de, airlied@gmail.com, daniel@ffwll.ch,
+ robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
+ jassisinghbrar@gmail.com, chunfeng.yun@mediatek.com, vkoul@kernel.org,
+ kishon@kernel.org, thierry.reding@gmail.com, u.kleine-koenig@pengutronix.de,
+ chunkuang.hu@kernel.org, ck.hu@mediatek.com, jitao.shi@mediatek.com,
+ xinlei.lee@mediatek.com, houlong.wei@mediatek.com,
+ dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-riscv@lists.infradead.org
-References: <20230412084540.295411-1-changhuang.liang@starfivetech.com>
- <20230412084540.295411-2-changhuang.liang@starfivetech.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20230412084540.295411-2-changhuang.liang@starfivetech.com>
+ linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
+ linux-pwm@vger.kernel.org, kernel@collabora.com,
+ phone-devel@vger.kernel.org, ~postmarketos/upstreaming@lists.sr.ht
+References: <20230412112739.160376-1-angelogioacchino.delregno@collabora.com>
+ <20230412112739.160376-2-angelogioacchino.delregno@collabora.com>
+From: Matthias Brugger <matthias.bgg@gmail.com>
+In-Reply-To: <20230412112739.160376-2-angelogioacchino.delregno@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230412_043418_897221_D33A79DB 
-X-CRM114-Status: GOOD (  16.83  )
+X-CRM114-CacheID: sfid-20230412_053105_715772_7369F4C2 
+X-CRM114-Status: GOOD (  14.14  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,98 +99,40 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 12/04/2023 10:45, Changhuang Liang wrote:
-> StarFive SoCs like the jh7110 use a MIPI D-PHY RX controller based on
-> a M31 IP. Add a binding for it.
-
-So this is D-PHY? Or the other patch is D-PHY? The naming is quite
-confusing and your commit msgs are not helping here.
-
-Also the power domain phandle here adds to the confusion.
 
 
+On 12/04/2023 13:27, AngeloGioacchino Del Regno wrote:
+> Add a compatible string for MediaTek Helio X10 MT6795's display PWM
+> block: this is the same as MT8173.
 > 
-> Signed-off-by: Changhuang Liang <changhuang.liang@starfivetech.com>
+> Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+
+Reviewed-by: Matthias Brugger <matthias.bgg@gmail.com>
+
 > ---
->  .../bindings/phy/starfive,jh7110-dphy-rx.yaml | 85 +++++++++++++++++++
->  1 file changed, 85 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-rx.yaml
+>   Documentation/devicetree/bindings/pwm/mediatek,pwm-disp.yaml | 4 +++-
+>   1 file changed, 3 insertions(+), 1 deletion(-)
 > 
-> diff --git a/Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-rx.yaml b/Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-rx.yaml
-> new file mode 100644
-> index 000000000000..5fb2f14af816
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-rx.yaml
-> @@ -0,0 +1,85 @@
-> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/starfive,jh7110-dphy-rx.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: StarFive SoC MIPI D-PHY Rx Controller
-> +
-> +maintainers:
-> +  - Jack Zhu <jack.zhu@starfivetech.com>
-> +  - Changhuang Liang <changhuang.liang@starfivetech.com>
-> +
-> +description:
-> +  The StarFive SoC uses the MIPI CSI D-PHY based on M31 IP to transfer
-> +  CSI camera data.
-> +
-> +properties:
-> +  compatible:
-> +    const: starfive,jh7110-dphy-rx
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    items:
-> +      - description: config clock
-> +      - description: reference clock
-> +      - description: escape mode transmit clock
-> +
-> +  clock-names:
-> +    items:
-> +      - const: cfg
-> +      - const: ref
-> +      - const: tx
-> +
-> +  resets:
-> +    items:
-> +      - description: DPHY_HW reset
-> +      - description: DPHY_B09_ALWAYS_ON reset
-> +
-> +  power-domains:
-> +    maxItems: 1
-> +
-> +  lane_maps:
-
-Why did this appear? Underscores are not allowed. It looks like you
-re-implement some standard property.
-
-> +    $ref: /schemas/types.yaml#/definitions/uint8-array
-> +    description:
-> +      D-PHY rx controller physical lanes and logic lanes mapping table.
-> +    items:
-> +      - description: logic lane index point to physical lane clock lane 0
-> +      - description: logic lane index point to physical lane data lane 0
-> +      - description: logic lane index point to physical lane data lane 1
-> +      - description: logic lane index point to physical lane data lane 2
-> +      - description: logic lane index point to physical lane data lane 3
-> +      - description: logic lane index point to physical lane clock lane 1
-> +
-
-
-Best regards,
-Krzysztof
-
+> diff --git a/Documentation/devicetree/bindings/pwm/mediatek,pwm-disp.yaml b/Documentation/devicetree/bindings/pwm/mediatek,pwm-disp.yaml
+> index 0088bc8e7c54..153e146df7d4 100644
+> --- a/Documentation/devicetree/bindings/pwm/mediatek,pwm-disp.yaml
+> +++ b/Documentation/devicetree/bindings/pwm/mediatek,pwm-disp.yaml
+> @@ -22,7 +22,9 @@ properties:
+>             - mediatek,mt8173-disp-pwm
+>             - mediatek,mt8183-disp-pwm
+>         - items:
+> -          - const: mediatek,mt8167-disp-pwm
+> +          - enum:
+> +              - mediatek,mt6795-disp-pwm
+> +              - mediatek,mt8167-disp-pwm
+>             - const: mediatek,mt8173-disp-pwm
+>         - items:
+>             - enum:
 
 -- 
 linux-phy mailing list
