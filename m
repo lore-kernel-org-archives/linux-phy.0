@@ -4,72 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AC2BEC77B6E
-	for <linux-phy@archiver.kernel.org>; Wed, 12 Apr 2023 16:15:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 353E1C77B6E
+	for <linux-phy@archiver.kernel.org>; Wed, 12 Apr 2023 16:18:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AyIE5wHWzW/GStFZAG2fwcyhe3w2GreM31bZ06+Mq7o=; b=OxW02L/bMp3bOf
-	ti+3b8Gv8M36D45cvbfRr0ORl+QGSuDF0YM5Seo/UC+mQfkWyifit4IbfA9uM20Tl6wUlcvNHgB7E
-	2Fvz3GxL8HJe4hAMQdwqCcmuW581LId/weQ0N9vxsc1UTFB2JKy5/HQIghqftBMhZclDazaLoiTs2
-	LKAKLIrh8Proz1q+520mxD9AiyB4O0XbsOVvPwfARonjU3BbTMkmAfzDduRs+g4FE+cnsL6ImN1KV
-	NvQ4TN7xOn4CvUmHoC5aiMAxga75XA8xEWCpEK18txyabP9BuzXQjIswsralX9r6ikrYBboITxECH
-	Hhb1S2nAkyoiblE/kGSg==;
+	List-Owner; bh=ygcT/elKqjDU5s2NvE5WlG/8t1AWU7zmlJBXp+vTKvo=; b=X7RmbQE/m5Oy+0
+	bL/LW84WnMxboNSt4PCAw9+HOmuhWTSA+s+T666g0QarZgPUUuaXRzqtwlxyKWS3AuGWvQfQwnW15
+	GNmXgSCtBbYlY1Tws6atUI+y4/3gk/xYJYG0BZqpUoAWR7jM1hXmWUl+TnbGxUdZfzCpKLIXFuRk5
+	DMs3TCx4d0tlaiY8Tw3FrenrIS+1wzQ3+lyqEHM6nZGo6xW+KgSCNic91hCyLChx+8v3NA2TUtNM/
+	3sDw6OVwEmy0luFzjlqoxLhsJZ67ZwAyaXdMK6eo+cgVwKBjMEnXYlKgKfe67QJj43wNMtKPdzgHn
+	Y1UdKBxFQ8C98fa0JuWg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pmd7k-003mKV-0m;
-	Wed, 12 Apr 2023 16:15:08 +0000
+	id 1pmdAe-003mkr-2q;
+	Wed, 12 Apr 2023 16:18:08 +0000
 Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pmd7g-003mJI-1T
-	for linux-phy@lists.infradead.org;
-	Wed, 12 Apr 2023 16:15:06 +0000
+	id 1pmdAb-003mkG-2m;
+	Wed, 12 Apr 2023 16:18:06 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 8C672621E1;
-	Wed, 12 Apr 2023 16:15:03 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 47877C433EF;
-	Wed, 12 Apr 2023 16:15:02 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id EC13562D5D;
+	Wed, 12 Apr 2023 16:18:03 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C52C7C433D2;
+	Wed, 12 Apr 2023 16:18:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1681316103;
-	bh=1PY7+OsGBN+uCgRUYtBU8jXFz852lXmdaStSRrPi68o=;
+	s=k20201202; t=1681316283;
+	bh=ekb4B5t2XeTS1EzHo39Eex1si9nprBeZ4QjX7H+9Rz8=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=bDDdDbgMIwY2ntwzM2O1KIrFMCN78ube1lhT9aPdwSVOjJDN4h3EF3Dh0h78su7gH
-	 GSjafhtiYaeEDKi43zNOEkJOTmHsSrQ0pFRHORK8UmEE3WrQztxAB4jmNEaEMKdfZz
-	 3LUb8tJzkhMiUoFdSoibSSc1Puu/W7HJxZd2sa46/NO8YypOiTvzik6Ety/QV5kpDB
-	 pdCmF+WZory6u5bHriS3UXxQaMfaFEwZMnpLIbjOVSKJttMczq/7af8W+A4ceBhJXW
-	 hekeuiqX3w14iwLreNQ/ZlcZXL4vzPMfdYJ63ISpWHqKlhj4eoxJ2BUt9OWYZ7uXbW
-	 olDwBLDUJjD1A==
-Date: Wed, 12 Apr 2023 21:44:59 +0530
+	b=uKofJ1OApH9Tb+TfEPSfQN1530xUSfbnwpIJcEjtaGGYgowFKpuqlBVwNpoIUQrJB
+	 riI1RmGgq7N5nuNHwWyQm3gSg41TQWX0Zf50YmU3RHxxAR/s2XHSvIjrW3AireZG0S
+	 yFA6gfH3qhCWAnaq/WpYjhg52ITRSpo2R5VQpLycpW8Do2yMt3QPQw7Qf7rek8jQnl
+	 CHwiAE5qg+JmANL22jpFIdTSZaX6RnBUuxzntw3++veEgg7N1nPRE+CtAbugPS1Y0c
+	 BoHLNkMAy3JLli0Gl8gWiGlP+MZ7SgMJH3ntaIsLY9IoUwGYVqIUq7pJbNYmW6kOTl
+	 pbrdS/pzthWPA==
+Date: Wed, 12 Apr 2023 21:47:59 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Bartosz Golaszewski <brgl@bgdev.pl>
-Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Alim Akhtar <alim.akhtar@samsung.com>,
-	Avri Altman <avri.altman@wdc.com>,
-	Bart Van Assche <bvanassche@acm.org>, linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-scsi@vger.kernel.org,
-	Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
-Subject: Re: [PATCH v3 3/5] phy: qualcomm: phy-qcom-qmp-ufs: add definitions
- for sa8775p
-Message-ID: <ZDbZA3AnbTTylFdb@matsya>
-References: <20230411130446.401440-1-brgl@bgdev.pl>
- <20230411130446.401440-4-brgl@bgdev.pl>
+To: Tom Rix <trix@redhat.com>
+Cc: kishon@kernel.org, heiko@sntech.de, nathan@kernel.org,
+	ndesaulniers@google.com, linux-phy@lists.infradead.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
+	llvm@lists.linux.dev
+Subject: Re: [PATCH] phy: rockchip: remove unused hw_to_inno function
+Message-ID: <ZDbZtwc278NRc+vy@matsya>
+References: <20230324132649.2649166-1-trix@redhat.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20230411130446.401440-4-brgl@bgdev.pl>
+In-Reply-To: <20230324132649.2649166-1-trix@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230412_091504_576162_05EE2B1D 
-X-CRM114-Status: GOOD (  18.36  )
+X-CRM114-CacheID: sfid-20230412_091805_943729_EBAC077D 
+X-CRM114-Status: UNSURE (   6.24  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,80 +77,13 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 11-04-23, 15:04, Bartosz Golaszewski wrote:
-> From: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
-> 
-> Add QMP PHY config for sa8775p and add support for the new compatible.
-> 
-> Signed-off-by: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
-> ---
->  drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 38 +++++++++++++++++++++++++
->  1 file changed, 38 insertions(+)
-> 
-> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-> index d58822049211..5612282eb378 100644
-> --- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-> @@ -853,6 +853,41 @@ static const struct qmp_phy_cfg msm8996_ufsphy_cfg = {
->  	.no_pcs_sw_reset	= true,
->  };
->  
-> +
+On 24-03-23, 09:26, Tom Rix wrote:
+> clang with W=1 reports
+> drivers/phy/rockchip/phy-rockchip-inno-dsidphy.c:284:36: error:
+>   unused function 'hw_to_inno' [-Werror,-Wunused-function]
+> static inline struct inno_dsidphy *hw_to_inno(struct clk_hw *hw)
 
-There was already an empty line, this didnt make sense. Please run
-checkpatch to avoid missing these style issues
-
-I have fixed it up and applied
-
-> +static const struct qmp_phy_cfg sa8775p_ufsphy_cfg = {
-> +	.lanes			= 2,
-> +
-> +	.offsets		= &qmp_ufs_offsets,
-> +
-> +	.tbls = {
-> +		.serdes		= sm8350_ufsphy_serdes,
-> +		.serdes_num	= ARRAY_SIZE(sm8350_ufsphy_serdes),
-> +		.tx		= sm8350_ufsphy_tx,
-> +		.tx_num		= ARRAY_SIZE(sm8350_ufsphy_tx),
-> +		.rx		= sm8350_ufsphy_rx,
-> +		.rx_num		= ARRAY_SIZE(sm8350_ufsphy_rx),
-> +		.pcs		= sm8350_ufsphy_pcs,
-> +		.pcs_num	= ARRAY_SIZE(sm8350_ufsphy_pcs),
-> +	},
-> +	.tbls_hs_b = {
-> +		.serdes		= sm8350_ufsphy_hs_b_serdes,
-> +		.serdes_num	= ARRAY_SIZE(sm8350_ufsphy_hs_b_serdes),
-> +	},
-> +	.tbls_hs_g4 = {
-> +		.tx		= sm8350_ufsphy_g4_tx,
-> +		.tx_num		= ARRAY_SIZE(sm8350_ufsphy_g4_tx),
-> +		.rx		= sm8350_ufsphy_g4_rx,
-> +		.rx_num		= ARRAY_SIZE(sm8350_ufsphy_g4_rx),
-> +		.pcs		= sm8350_ufsphy_g4_pcs,
-> +		.pcs_num	= ARRAY_SIZE(sm8350_ufsphy_g4_pcs),
-> +	},
-> +	.clk_list		= sm8450_ufs_phy_clk_l,
-> +	.num_clks		= ARRAY_SIZE(sm8450_ufs_phy_clk_l),
-> +	.vreg_list		= qmp_phy_vreg_l,
-> +	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
-> +	.regs			= ufsphy_v5_regs_layout,
-> +};
-> +
->  static const struct qmp_phy_cfg sc8280xp_ufsphy_cfg = {
->  	.lanes			= 2,
->  
-> @@ -1600,6 +1635,9 @@ static const struct of_device_id qmp_ufs_of_match_table[] = {
->  	}, {
->  		.compatible = "qcom,msm8998-qmp-ufs-phy",
->  		.data = &sdm845_ufsphy_cfg,
-> +	}, {
-> +		.compatible = "qcom,sa8775p-qmp-ufs-phy",
-> +		.data = &sa8775p_ufsphy_cfg,
->  	}, {
->  		.compatible = "qcom,sc8180x-qmp-ufs-phy",
->  		.data = &sm8150_ufsphy_cfg,
-> -- 
-> 2.37.2
+Applied, thanks
 
 -- 
 ~Vinod
