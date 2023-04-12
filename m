@@ -4,71 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 72917C7619A
-	for <linux-phy@archiver.kernel.org>; Wed, 12 Apr 2023 16:27:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8C99CC7619A
+	for <linux-phy@archiver.kernel.org>; Wed, 12 Apr 2023 16:36:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FkfENsT2xCmlbs9vCVJkPUU5CCniTxv6DLgdFGF1SaM=; b=NmQCDdlGmjiiEP
-	hsrBHnRDxcxhRp1RkJzRTGSF+4hYQY0P2HpwlnZ5Rh43co4TOJ0kcWxkcoTBPc3uROPsDYUcuUG61
-	5M6xH5EcLb8frZxyleyrc4RTL/TtxwJ/uCdMS4JC+c/xYOjrQHirH3aMMCsUpf/EXaHjsFWReVsi7
-	9FQtwjNgXvVdmBgGqBnwmAONf1KNT/J+InKWZVjlaYt5igDOFTgu1wT4mO2FO+eDDRlJPwCCTK+OR
-	cu1tyJvoAhSN/Y+l6f05rDEvLyCFxfAKSMFypvJzcSKvQwf3LEVv6UaDhCzAiQfeYyr1CXqMQdw54
-	kA/Yo8fmnnLDCM8eQybQ==;
+	List-Owner; bh=W2C9DV8LKHdWjTCA4BFaLb3sTPj995/YHYE+yK/YuzI=; b=yAJwG8s4pbJDOb
+	ghIN2ISJj6KnMfdbkQNCkZt6vbFagvtObwQj8AtBfrpdsHy7BjY6mAC0+nFJ4GefcJipx1XOwWIB+
+	7q3dKA/K12uYYdirOw/kz0tViSJFdOf7JmE5XWPbZ3R7aMbPBpcYyAfyIKrXxn2vMLBARhHLt2uNA
+	DpGhghduPGWtscRBo7bbwHbg5yDY2rUOQgOPr5xGUIk9WmfaIw12bGOqTk8zwOAw0iIoS44IrSYNW
+	H3z30zfHFO+/BmWoXp6US2TJxh3l77yw4fYV7/N29igBVO89GJSWYy+9cqHOoQTodtoHKAV1Otr7+
+	FOBpuuLMyAUzVqzwDjeA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pmdJF-003o5L-06;
-	Wed, 12 Apr 2023 16:27:01 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1pmdSb-003pMc-0g;
+	Wed, 12 Apr 2023 16:36:41 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pmdJB-003o4C-06;
-	Wed, 12 Apr 2023 16:26:58 +0000
+	id 1pmdSZ-003pMF-0F
+	for linux-phy@lists.infradead.org;
+	Wed, 12 Apr 2023 16:36:40 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 4BDB862E88;
-	Wed, 12 Apr 2023 16:26:56 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id EAFFAC433D2;
-	Wed, 12 Apr 2023 16:26:54 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 9944C6371C;
+	Wed, 12 Apr 2023 16:36:38 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2D840C433EF;
+	Wed, 12 Apr 2023 16:36:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1681316815;
-	bh=AmBsB2SaL2/nqORtPMIw+AC5nOY+5hArVvhxKihAVlA=;
+	s=k20201202; t=1681317398;
+	bh=vQSQ8z70vQR5lakDmdXjIBl1mV7WOpHuztNaPFlvceI=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=HpqLETwJGWpvpVscapsgzgCNberlHMLS7pXWQ3MzMO9FnXwsxZT2m8rX2I7fvpWzg
-	 8qPSwy7V+MqT4yKLXK+sU5JsmvyqGh9Ibr3WOIDgCtpcNWo5JleVRFXt3LCrt4ao0Q
-	 Qr5Nxz1e2PjsIQk3qXHcY6ImMlC95nlwQLENfnypTkJEnm2p77H+6MQ9ziQ+dULuf2
-	 ahGJH03k1XslFI3w+0Q0Ch9ccTMGoklsT9/NqKMc8/eqqboTDTUQ8NKe7phh/LTOK6
-	 Tb3LMA2pKxlWMUYejrIQARkySmeY8/k3Q1cbndSWcf4vDRfD2YajWqf5bgiJaDwo10
-	 XDVMiS1iv/DUQ==
-Date: Wed, 12 Apr 2023 21:56:51 +0530
+	b=Mf1LYuoR0qZgWebKg2fAO7YEJgB87gF9PwGfrJS4Lk6f8LuvisN/CXDbvjwpht2Tm
+	 BSV7Wf2mGWWs8ZZYuac2GCMhT+a40gY/Vb8zsKWFdd0orKn91U8LE8p+sz+7llgFba
+	 7NDoLOZwGd7uTmQ+83ScuVs3/ivSxB0XZXH0hD9IKD66M+dxZwryXExwDcKDkEWFEj
+	 Ayy7LfzOEyM18N2iTxapwmb8V4sU8SmPehZuVixNqlb6Rk/aqBea1hgEe8zsxth4rG
+	 pOFWFui38yMyrCNhDG2Q8j/RJX4Iyq4PzkUiSicQqFXG+41PXg3Kgw4aGIY+wVIyhH
+	 vnICFXF3pjIUA==
+Date: Wed, 12 Apr 2023 22:06:33 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Guillaume Ranquet <granquet@baylibre.com>
-Cc: Chunfeng Yun <chunfeng.yun@mediatek.com>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	Chun-Kuang Hu <chunkuang.hu@kernel.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
-	CK Hu <ck.hu@mediatek.com>, Jitao shi <jitao.shi@mediatek.com>,
-	linux-arm-kernel@lists.infradead.org,
-	linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	mac.shen@mediatek.com, stuart.lee@mediatek.com
-Subject: Re: [PATCH v8 0/3] Add MT8195 HDMI phy support
-Message-ID: <ZDbby+Tem2vcvhBn@matsya>
-References: <20220919-v8-0-a84c80468fe9@baylibre.com>
+To: Swapnil Jakhade <sjakhade@cadence.com>
+Cc: kishon@kernel.org, linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org, mparab@cadence.com, rogerq@kernel.org,
+	s-vadapalli@ti.com
+Subject: Re: [PATCH v2] phy: cadence: Sierra: Add PCIe + SGMII PHY multilink
+ configuration
+Message-ID: <ZDbeEUKIZ7kJPm3k@matsya>
+References: <20230403085644.10187-1-sjakhade@cadence.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20220919-v8-0-a84c80468fe9@baylibre.com>
+In-Reply-To: <20230403085644.10187-1-sjakhade@cadence.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230412_092657_104404_F37357D7 
-X-CRM114-Status: UNSURE (   8.92  )
+X-CRM114-CacheID: sfid-20230412_093639_148579_0613E020 
+X-CRM114-Status: UNSURE (   6.32  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -86,10 +77,9 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 16-02-23, 17:02, Guillaume Ranquet wrote:
-> Add support for HDMI phy on MT8195.
-> 
-> This is based on top of next-20230213
+On 03-04-23, 10:56, Swapnil Jakhade wrote:
+> Add register sequences for PCIe + SGMII PHY multilink configuration.
+> This has been validated on TI J7 platforms.
 
 Applied, thanks
 
