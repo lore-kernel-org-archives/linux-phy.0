@@ -4,104 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 35A5EC77B6C
-	for <linux-phy@archiver.kernel.org>; Wed, 12 Apr 2023 22:45:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F02EBC7619A
+	for <linux-phy@archiver.kernel.org>; Wed, 12 Apr 2023 22:45:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Date:Subject:Message-Id:References:
+	In-Reply-To:Cc:To:From:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0bVBun3gyj3DB9W/VNA8H3h/O3GybBGy7dsEPecQmYQ=; b=CU41jiYdkNDMi+
-	Zgi+vVLaVjmwks1GRh000j13yjuASDGlLw1tsgcz76qdJ5UR3MIPVu6xwZEwJ0bJO6qMGv05/MJJU
-	a5RX+an4YoaXJo6zbhYvufgMGNkpwaFwMQSwGEnP8GuGTq/hURZ8j8WWdN8Y+JPpOVGcmRWf/3LFq
-	Gt5vO02hBUPI9eR/7DdB9GZubwWbKMzyRD5o6NCRj9alQrdtd0ipcro33/lCXVWBLQH5DkIa5vEzG
-	MYBHWw18pw47N3s25A8XBO806PWE5UAqDA0wZ2BfP70Wu0ZRTTgsFCorAwqEj8r1LTgUU4lWHzeG2
-	tULthrAd6N70MUDS/UkQ==;
+	List-Owner; bh=6V8okFxA+6IvQQDqlIcd3zHCoclF5cfD9T5anfE2APA=; b=hDHEsWVOzYx9n1
+	UGQLLgX9e4wRCvwwG8YfdQCfwynRm3CFguYFDEauU+bn/jjDgDpKWJOUogW3er1TWOYVLKqKzXYBD
+	471WfBDoPNMUUdyMUminzM6KBIwfuZCJ7biEG8y8bdwxF8dDQVjl96XZlIs2aih3UTCX0ePJ+FAQx
+	HqamMWL+jGnBifac0JBF3r33U7MQfZPFG7Oa5AQZVoytUch+do3IPg+BUpHhOrGewRO1kmQzFNtlc
+	LjzgXLC9RGaEflCu7pyiT6JUlrYrK0nP3oMJ/BOvr9avxtCcHs8XMYsnyCjAddQF98+IPw4lVU9rn
+	aTPMxHDdOJ/3dZDr2vDw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pmjDa-004Ylf-2S;
-	Wed, 12 Apr 2023 22:45:34 +0000
+	id 1pmjDe-004Yn2-1n;
+	Wed, 12 Apr 2023 22:45:38 +0000
 Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pmjDZ-004YlF-17
-	for linux-phy@bombadil.infradead.org;
-	Wed, 12 Apr 2023 22:45:33 +0000
+	id 1pmjDc-004YmI-0y;
+	Wed, 12 Apr 2023 22:45:36 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
-	:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:
+	d=infradead.org; s=desiato.20200630; h=Date:Subject:Message-Id:References:
+	In-Reply-To:Cc:To:From:MIME-Version:Content-Transfer-Encoding:Content-Type:
 	Sender:Reply-To:Content-ID:Content-Description;
-	bh=TouGPU+Efoq/WGt/vDKkhltZTB+4TxGu4UL9u2kA4UE=; b=BcuSL2mPdBoTs+E7d2RwA6+6A3
-	d03HY5sxvQtBxDa9JtWJd33dNKJBVt0UiRi91s/I/GXFToTLmTMh0STNY6QLru8Ff1RtXRm0sZQ29
-	zOGTIEQaR8zZZQg+8xFaA0nKWiJ7+WWPmEiKPISkKVsOtoXqMaLgGESO3d6z7ZwgnSHu7wxKxw47K
-	Gpp71ta4wruTsT3ANmowKfT+Kbzd3KStl8UGOqU1aUbJNZzEFp51VgvGcYO457eP1NOLkbAqHTG/S
-	4rlZcm5nmV1d3NA/RAR844cctsQgK3y2khU/8cVMMPqyEVM3OnajDD4OJ/wQ5g7oCOojEKw09dC4y
-	SoQkTUSw==;
-Received: from mail-lf1-x135.google.com ([2a00:1450:4864:20::135])
+	bh=FLw3uwkCeeUAAV03Tbbd6RIpAi5xQgVb6ft9jGrKTas=; b=KSN5PLtVbt2vcwU7iJSL67zobf
+	04FjaKWOzQWGOSps0EqKCeoN06iB+tRhIW7NzeuVAPv+JmDwSGKndDGfkVjIuj2xjg4UH9Y+5p4u+
+	f2uWkoNHlT0kgq0d+QUAuR7uac7WconTmK0Nhil30JO++FkFtJSfY//DJTTW3iKXq3PAfZdhi6jR0
+	Er1wpaXN5Qaev4+i61WPeqXIzmsUNu/gUPB20uddup/QoWoiZyAmOgVScnO03HUHYwto7QcFWKMSc
+	PGREQzSTYU+WYBHc5vZd+trDQXSCnZ1rRFLMwUG43OvELOtXsfoorxzURDGsf9H2EFDHB+pHl8ko1
+	W0sfZzmA==;
+Received: from mail-oa1-f52.google.com ([209.85.160.52])
 	by desiato.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pmhgj-00E2UK-0W
-	for linux-phy@lists.infradead.org;
-	Wed, 12 Apr 2023 21:07:51 +0000
-Received: by mail-lf1-x135.google.com with SMTP id i6so4703252lfp.1
-        for <linux-phy@lists.infradead.org>; Wed, 12 Apr 2023 14:07:28 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1681333647; x=1683925647;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=TouGPU+Efoq/WGt/vDKkhltZTB+4TxGu4UL9u2kA4UE=;
-        b=uM9DmsgCbpsezm1URvfxA1QlpROL2JDARNWITPqAhDWCPoJrX7aKohknLbrgtm0zUV
-         xhY9VfEH1Mr5O9m9+Ff8qZpev+gC3BUBPrjWOBvzsTv2mXeOe88nMIC9A1Gd67HuuQXa
-         rwKPBdychE/adJ1gHlPw/9gZkAuOAZPWH90JZ+PsfLoH9Ehzkt+zAsxlaeV4jonWVliM
-         sSFzBoDFiUWOZeiJWtXBYy1ssRQyq5A159Zi6S5ncs1ggbjZCGHpUWkoTy4OTP1j5Wza
-         tPUlRrXIAE5q/5nbj5gtrpG5FLm36G1y7zOTD9sz779btG6mJCt+EXz/o3fdQdO/Qu4m
-         IPSg==
+	id 1pmhdA-00E2MN-15;
+	Wed, 12 Apr 2023 21:04:07 +0000
+Received: by mail-oa1-f52.google.com with SMTP id 586e51a60fabf-1842eb46746so15279692fac.4;
+        Wed, 12 Apr 2023 14:03:51 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1681333647; x=1683925647;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=TouGPU+Efoq/WGt/vDKkhltZTB+4TxGu4UL9u2kA4UE=;
-        b=WhZtP6cFrJy9cAFEnZhz9TPbh3QmVtWSCZYvyA0mRXAZnDTvxN/QMH613IQxHWyOmI
-         t63vWABhfij6ijLerI+5M6aL8J7P9IcCI2w+Z3DTpSQe1y5gk35eqfqYBpUIfNlNbDj2
-         7KSbfivSqIMe9EakvCIjSqQdibYU0pyjFXPcNWi3b5JukXkhuJhFVGGWZn/CEOeGQm2a
-         9oyjNVHGDR4GZrYn6brKElYurw8F66eQf/95Q9MncP3SIaPvynhCbK1XuxYEH+Rq29cP
-         2/HTjdIy24rxpTSF8Z5p2zjfP8OaShtb/Ts1W1vvPhx64Ag+bS+pHim2yyT6OI4o8MRg
-         rSOw==
-X-Gm-Message-State: AAQBX9d6Mv+pzeahbjbqUvtBA7f0EI4uOkJI6+vOx0Gs5HSLbZjWCqm4
-	vAEysUbEVolrBcTPO/yUupFcjQ==
-X-Google-Smtp-Source: AKy350bX2h3G0tTnQ38bAbnmsibh59UeenWLaYQupyr78fByKFQuaH3FwLV2XZmERAmoTvQ+8nje4w==
-X-Received: by 2002:a05:6512:49c:b0:4e9:67ee:6383 with SMTP id v28-20020a056512049c00b004e967ee6383mr64065lfq.2.1681333647186;
-        Wed, 12 Apr 2023 14:07:27 -0700 (PDT)
-Received: from [192.168.1.101] (abxj23.neoplus.adsl.tpnet.pl. [83.9.3.23])
-        by smtp.gmail.com with ESMTPSA id v17-20020ac25931000000b004ec8b638115sm1487244lfi.193.2023.04.12.14.07.25
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 12 Apr 2023 14:07:26 -0700 (PDT)
-Message-ID: <07b8731d-f9b6-c759-808d-56ae5881e251@linaro.org>
-Date: Wed, 12 Apr 2023 23:07:24 +0200
+        d=1e100.net; s=20221208; t=1681333430; x=1683925430;
+        h=date:subject:message-id:references:in-reply-to:cc:to:from
+         :mime-version:content-transfer-encoding:x-gm-message-state:from:to
+         :cc:subject:date:message-id:reply-to;
+        bh=FLw3uwkCeeUAAV03Tbbd6RIpAi5xQgVb6ft9jGrKTas=;
+        b=E+MSVZ/4bEfggMeq+T4NpxtZ4W1Er+26EgKcHPIyipdSNf/eT0RQlUd4a0oo6biwGf
+         EBO2L9yQM8lghrvdsfVKqIm9iN7E2ihrQEtM8grqy+6I2viFYmV8V3G+uIc+VtDfgNlD
+         Hci3fFbFFyIe+/9lU0fog13qbwTr9eiEHnM32py1r96aPrtk1F2no2Fo8S7M4xXppj+p
+         lmotbr1zzqQmT+jMwDtSoklP+7X0rFHDvOK7RDyQyZeQ0Vu6Ka+F2EzRY1HShO6HlGcj
+         6307EiTBBC/Jr4zRejtOlQHP1Cmq58pvBO4DMrd+TlzJxFty8th1+R+BgYrU6B7Z+/qi
+         05Fw==
+X-Gm-Message-State: AAQBX9cC+oF4xJmxBwEFz2nRoN5xus8ydGwZQx8xa974AaaB+vh8nioL
+	h68EJy198wDMx147cq1Gwg==
+X-Google-Smtp-Source: AKy350ZSC5jj3xISsp6oFnvk6oBWEtks02c+F/U24WBNcLmHcB6s1GI9dgP3edZehcoihI5kfSHupw==
+X-Received: by 2002:a05:6870:c6a3:b0:187:76e6:7527 with SMTP id cv35-20020a056870c6a300b0018776e67527mr202541oab.17.1681333430215;
+        Wed, 12 Apr 2023 14:03:50 -0700 (PDT)
+Received: from robh_at_kernel.org (66-90-144-107.dyn.grandenetworks.net. [66.90.144.107])
+        by smtp.gmail.com with ESMTPSA id z21-20020a056871039500b00183ff6b45a2sm66090oaf.10.2023.04.12.14.03.48
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 12 Apr 2023 14:03:49 -0700 (PDT)
+Received: (nullmailer pid 3200541 invoked by uid 1000);
+	Wed, 12 Apr 2023 21:03:44 -0000
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.9.1
-Subject: Re: [PATCH v3 5/5] arm64: dts: qcom: sa8775p-ride: enable UFS
-Content-Language: en-US
-To: Bartosz Golaszewski <brgl@bgdev.pl>, Andy Gross <agross@kernel.org>,
- Bjorn Andersson <andersson@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring
- <robh+dt@kernel.org>, Krzysztof Kozlowski
- <krzysztof.kozlowski+dt@linaro.org>, Manivannan Sadhasivam
- <mani@kernel.org>, Alim Akhtar <alim.akhtar@samsung.com>,
- Avri Altman <avri.altman@wdc.com>, Bart Van Assche <bvanassche@acm.org>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-scsi@vger.kernel.org,
- Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
-References: <20230411130446.401440-1-brgl@bgdev.pl>
- <20230411130446.401440-6-brgl@bgdev.pl>
-From: Konrad Dybcio <konrad.dybcio@linaro.org>
-In-Reply-To: <20230411130446.401440-6-brgl@bgdev.pl>
+From: Rob Herring <robh@kernel.org>
+To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Cc: chunfeng.yun@mediatek.com, robh+dt@kernel.org, linux-mediatek@lists.infradead.org, devicetree@vger.kernel.org, p.zabel@pengutronix.de, matthias.bgg@gmail.com, chunkuang.hu@kernel.org, vkoul@kernel.org, daniel@ffwll.ch, kishon@kernel.org, thierry.reding@gmail.com, airlied@gmail.com, linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, ck.hu@mediatek.com, phone-devel@vger.kernel.org, u.kleine-koenig@pengutronix.de, dri-devel@lists.freedesktop.org, houlong.wei@mediatek.com, xinlei.lee@mediatek.com, jassisinghbrar@gmail.com, linux-pwm@vger.kernel.org, linux-kernel@vger.kernel.org, krzysztof.kozlowski+dt@linaro.org, jitao.shi@mediatek.com, ~postmarketos/upstreaming@lists.sr.ht, kernel@collabora.com
+In-Reply-To: <20230412112739.160376-15-angelogioacchino.delregno@collabora.com>
+References: <20230412112739.160376-1-angelogioacchino.delregno@collabora.com>
+ <20230412112739.160376-15-angelogioacchino.delregno@collabora.com>
+Message-Id: <168133319930.3191493.4677860733560353143.robh@kernel.org>
+Subject: Re: [PATCH 14/27] dt-bindings: display: mediatek: od: Add
+ compatible for MediaTek MT6795
+Date: Wed, 12 Apr 2023 16:03:44 -0500
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230412_220736_926874_CF409B4C 
-X-CRM114-Status: GOOD (  13.13  )
+X-CRM114-CacheID: sfid-20230412_220359_027013_A3D36DD2 
+X-CRM114-Status: GOOD (  10.32  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -119,64 +96,32 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-
-On 11.04.2023 15:04, Bartosz Golaszewski wrote:
-> From: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
+On Wed, 12 Apr 2023 13:27:26 +0200, AngeloGioacchino Del Regno wrote:
+> Add a compatible string for MediaTek Helio X10 MT6795's OverDrive (OD)
+> block: this is the same as MT8173.
 > 
-> Enable the UFS and its PHY on sa8775p-ride.
-> 
-> Signed-off-by: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
+> Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 > ---
-Reviewed-by: Konrad Dybcio <konrad.dybcio@linaro.org>
-
-Konrad
->  arch/arm64/boot/dts/qcom/sa8775p-ride.dts | 19 +++++++++++++++++++
->  1 file changed, 19 insertions(+)
+>  .../devicetree/bindings/display/mediatek/mediatek,od.yaml      | 3 +++
+>  1 file changed, 3 insertions(+)
 > 
-> diff --git a/arch/arm64/boot/dts/qcom/sa8775p-ride.dts b/arch/arm64/boot/dts/qcom/sa8775p-ride.dts
-> index f238a02a5448..2bb001a3ea55 100644
-> --- a/arch/arm64/boot/dts/qcom/sa8775p-ride.dts
-> +++ b/arch/arm64/boot/dts/qcom/sa8775p-ride.dts
-> @@ -5,6 +5,7 @@
->  
->  /dts-v1/;
->  
-> +#include <dt-bindings/gpio/gpio.h>
->  #include <dt-bindings/regulator/qcom,rpmh-regulator.h>
->  
->  #include "sa8775p.dtsi"
-> @@ -20,6 +21,7 @@ aliases {
->  		serial2 = &uart17;
->  		i2c18 = &i2c18;
->  		spi16 = &spi16;
-> +		ufshc1 = &ufs_mem_hc;
->  	};
->  
->  	chosen {
-> @@ -426,6 +428,23 @@ &uart17 {
->  	status = "okay";
->  };
->  
-> +&ufs_mem_hc {
-> +	reset-gpios = <&tlmm 149 GPIO_ACTIVE_LOW>;
-> +	vcc-supply = <&vreg_l8a>;
-> +	vcc-max-microamp = <1100000>;
-> +	vccq-supply = <&vreg_l4c>;
-> +	vccq-max-microamp = <1200000>;
-> +
-> +	status = "okay";
-> +};
-> +
-> +&ufs_mem_phy {
-> +	vdda-phy-supply = <&vreg_l4a>;
-> +	vdda-pll-supply = <&vreg_l1c>;
-> +
-> +	status = "okay";
-> +};
-> +
->  &xo_board_clk {
->  	clock-frequency = <38400000>;
->  };
+
+Running 'make dtbs_check' with the schema in this patch gives the
+following warnings. Consider if they are expected or the schema is
+incorrect. These may not be new warnings.
+
+Note that it is not yet a requirement to have 0 warnings for dtbs_check.
+This will change in the future.
+
+Full log is available here: https://patchwork.ozlabs.org/project/devicetree-bindings/patch/20230412112739.160376-15-angelogioacchino.delregno@collabora.com
+
+
+od@14023000: 'mediatek,gce-client-reg' does not match any of the regexes: 'pinctrl-[0-9]+'
+	arch/arm64/boot/dts/mediatek/mt8173-elm.dtb
+	arch/arm64/boot/dts/mediatek/mt8173-elm-hana.dtb
+	arch/arm64/boot/dts/mediatek/mt8173-elm-hana-rev7.dtb
+	arch/arm64/boot/dts/mediatek/mt8173-evb.dtb
+
 
 -- 
 linux-phy mailing list
