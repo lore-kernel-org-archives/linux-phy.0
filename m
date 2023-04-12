@@ -4,45 +4,45 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 65C6FC77B76
-	for <linux-phy@archiver.kernel.org>; Wed, 12 Apr 2023 11:28:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 463F8C77B77
+	for <linux-phy@archiver.kernel.org>; Wed, 12 Apr 2023 11:28:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SmEuGQGgfRr8E9FaXP7Mrc8EtMshWMLlEtC4Uem7Zv0=; b=JJ/M5T21CY/bZ4
-	yHSWRd5vnsPT38N2+O5NPYgyny0CKU/f2NK4fJPZ317Co0aXjRTIdrppfSEuFiCV+HgBdqOCICKmc
-	bF6BNF51a8/AQH9+OoA84AOzuQCJcN/RbGI7GHvCdgJDwZwK7kNoQr2YjsVFAiNmomb+PuGrfWa1/
-	/AMWspl7zvdVxIHQQTwCEwX7mvK28hgBdRqMpUmvGnu+K1oKV1iN0hl3iVN337SowndKj7Pxm836H
-	BAx3Ivak86HI8UwxFd8rB5H8KkUQB477vs4Ybc+3r0Vu/Qb8zM087WFP1LoDzgiKp2u1K7IJ4L10E
-	3EyA7nd5g1zY4a3yezwQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Ovfc1pzMPC4WsM4T5NAPKT++MP8mjkngq9RauzaIopM=; b=ahUoADoCcef+2r
+	QqAUDybV8+xnGLwUuNXFYoUWaeu0tceuvYVjK5DG/pZaocMoBneNp3DZlaKsgEA65JNoOAR2hTjjO
+	b8ePFlW9uBUwqCPM0M7CtXVziApYqwvzPh7ggSqToQXLk0fsEE+PRH6Y6/rz5AgG2dur8q7X2UX2z
+	jVJLtlJl8vAssghOD0/dOd+bgNdSCXUz1R3o3DQH2mhObgwr2/lR7SGhh3n7SuOnOiDzIuLEdSUHp
+	6QTrJ9z+D3j/yTtzq0KuFzpy7okvgqeLWhBQvFXV+dZktL0oFSvUZJH45LlAas8rgRMsoJv5FCUj6
+	Sd8kX1JesDwB8920jT5w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pmYe1-002ns6-2r;
-	Wed, 12 Apr 2023 11:28:09 +0000
+	id 1pmYe3-002nuh-2L;
+	Wed, 12 Apr 2023 11:28:11 +0000
 Received: from madras.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e5ab])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pmYdk-002ncT-0M;
+	id 1pmYdj-002nc6-1H;
 	Wed, 12 Apr 2023 11:27:54 +0000
 Received: from IcarusMOD.eternityproject.eu (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
 	(Authenticated sender: kholk11)
-	by madras.collabora.co.uk (Postfix) with ESMTPSA id A92A8660321B;
-	Wed, 12 Apr 2023 12:27:49 +0100 (BST)
+	by madras.collabora.co.uk (Postfix) with ESMTPSA id E9F0166031FD;
+	Wed, 12 Apr 2023 12:27:43 +0100 (BST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1681298871;
-	bh=ldbfDeNpQ5/zM9eHSB8JeIaBEL0OQKQfjXn1SCCi2DU=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=mxXjiJZ7p1YY1OBLjncsrhMXEP05TZ0vQDDw0eNavUZTqfIUSBJNLAPI/rIf/1mBq
-	 fW8TNlmIwFwmGQfnFIQf05/YA2CPZVCyesNm6ws6hfc0FknxVQR6pzmR9dot980XC4
-	 pWZ6jir2AzEAzQ9AHpJLlrT0sXC/TCV9e9WLeWaKkQhhWaCvE7xD6KueZe4vjo25HE
-	 /01O4v6h5nBb8/KUU8c/v8uqAY3B1YccUB4i8RTLhfvuE87uV6ei8Q1lZL4t2vYIYx
-	 yB/4gBkWRSWVVX1eelHbULStSTgwINvWXqhXuWzIK3HPlsjrHXwvNzvRz0la2VFOc9
-	 bLAKwfRYagZeA==
+	s=mail; t=1681298865;
+	bh=32UdFXijYBib4vR9joUGUAiEkWAou0hF5vRoluMMzmk=;
+	h=From:To:Cc:Subject:Date:From;
+	b=BiBaGeFnyTrcIxvJX6jmx3uPgTyhmYXutJUmtZYAcc439FhGgMtJWa0u9UEl5UIda
+	 GDZIZCJF1kGnqsFs21NB3AwPeD216mgM8jcj28XYHnggRV2M/t4GEnZLSzczsMnoZx
+	 QnxEalzaxf1jPZsAnbf+4WuTj5hpQBYgWqqR261FIlruszRUWgOgcT2oe80m/INuM6
+	 7p9hjVjRvZiEGXq/4Odxo0hA0mWvxreaoKJe4Hz8HJ/MUOPntGD1+87uq/l/IbcO7c
+	 RItxu5syCydks3mijaUHvoh2SHNIoAyIvigQqLKZyejdfy2vwokLhMXHeyOyJkqHqp
+	 ui0QOYiDsGRZg==
 From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 To: matthias.bgg@gmail.com
 Cc: p.zabel@pengutronix.de,
@@ -72,17 +72,14 @@ Cc: p.zabel@pengutronix.de,
 	kernel@collabora.com,
 	phone-devel@vger.kernel.org,
 	~postmarketos/upstreaming@lists.sr.ht
-Subject: [PATCH 04/27] dt-bindings: display: mediatek: aal: Add compatible for MediaTek MT6795
-Date: Wed, 12 Apr 2023 13:27:16 +0200
-Message-Id: <20230412112739.160376-5-angelogioacchino.delregno@collabora.com>
+Subject: [PATCH 00/27] MediaTek Helio X10 - Mailbox, Display, MMC/SD/SDIO
+Date: Wed, 12 Apr 2023 13:27:12 +0200
+Message-Id: <20230412112739.160376-1-angelogioacchino.delregno@collabora.com>
 X-Mailer: git-send-email 2.40.0
-In-Reply-To: <20230412112739.160376-1-angelogioacchino.delregno@collabora.com>
-References: <20230412112739.160376-1-angelogioacchino.delregno@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230412_042752_275334_A4E2F137 
-X-CRM114-Status: UNSURE (   7.52  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230412_042751_712437_10142AC2 
+X-CRM114-Status: GOOD (  16.44  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,26 +96,104 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add a compatible string for MediaTek Helio X10 MT6795: similarly to
-MT8173, this SoC has the gamma LUT registers in DISP_AAL.
+In this series I'm adding support for the DDC (display) block found
+in the MediaTek Helio X10, the MT6331 PMIC and its peripherals, and
+eMMC, MicroSD slot and SDIO.
+Support for the PMIC (...regulators!) is essential to get all of the
+mtk-sd hardware to work, especially the eMMC where vol switching is
+happening (3.3 -> 1.8V for DDR -> UHS timing switch!).
 
-Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
----
- .../devicetree/bindings/display/mediatek/mediatek,aal.yaml       | 1 +
- 1 file changed, 1 insertion(+)
+As for the GCE mailbox, MMSYS and IOMMU... these were included in
+the previous series but couldn't make it due to the bindings not
+being reviewed in time (btw, thanks Matthias for reducing my backlog
+by partially picking the applicable commits in the previous one, that
+was highly appreciated!), so they're making yet another appearance in
+this series.
 
-diff --git a/Documentation/devicetree/bindings/display/mediatek/mediatek,aal.yaml b/Documentation/devicetree/bindings/display/mediatek/mediatek,aal.yaml
-index 92741486c24d..7fd42c8fdc32 100644
---- a/Documentation/devicetree/bindings/display/mediatek/mediatek,aal.yaml
-+++ b/Documentation/devicetree/bindings/display/mediatek/mediatek,aal.yaml
-@@ -27,6 +27,7 @@ properties:
-       - items:
-           - enum:
-               - mediatek,mt2712-disp-aal
-+              - mediatek,mt6795-disp-aal
-           - const: mediatek,mt8173-disp-aal
-       - items:
-           - enum:
+Regarding the display blocks, they're tested on the Sony Xperia M5
+with its internal panel (on DSI0) but the panel node is not included
+in this series because I have to cleanup the timings a bit before
+upstreaming it.
+
+...and regarding everything else, it's all, again, tested on that
+same Xperia M5 smartphone :-)
+
+
+* Important note: *
+
+Devicetree commits of this series all depend on the dt-bindings
+commits of this same series.
+This series also depends on [1] for PMIC functionality, as all of the
+(older only?) MediaTek smartphone platforms have two PMICs, a main
+one and a companion one - in this specific case, it's MT6331+MT6332.
+
+[1]: https://lore.kernel.org/all/20230324094205.33266-1-angelogioacchino.delregno@collabora.com/
+
+AngeloGioacchino Del Regno (27):
+  dt-bindings: pwm: Add compatible for MediaTek MT6795
+  dt-bindings: phy: mediatek,dsi-phy: Add compatible for MT6795 Helio
+    X10
+  dt-bindings: display: mediatek: dpi: Add compatible for MediaTek
+    MT6795
+  dt-bindings: display: mediatek: aal: Add compatible for MediaTek
+    MT6795
+  dt-bindings: display: mediatek: dsi: Add compatible for MediaTek
+    MT6795
+  dt-bindings: display: mediatek: ovl: Add compatible for MediaTek
+    MT6795
+  dt-bindings: display: mediatek: rdma: Add compatible for MediaTek
+    MT6795
+  dt-bindings: display: mediatek: wdma: Add compatible for MediaTek
+    MT6795
+  dt-bindings: display: mediatek: color: Add compatible for MediaTek
+    MT6795
+  dt-bindings: display: mediatek: gamma: Add compatible for MediaTek
+    MT6795
+  dt-bindings: display: mediatek: merge: Add compatible for MediaTek
+    MT6795
+  dt-bindings: display: mediatek: split: Add compatible for MediaTek
+    MT6795
+  dt-bindings: display: mediatek: ufoe: Add compatible for MediaTek
+    MT6795
+  dt-bindings: display: mediatek: od: Add compatible for MediaTek MT6795
+  dt-bindings: mailbox: mediatek,gce-mailbox: Add support for MT6795
+  arm64: dts: mediatek: mt6795: Add support for the CMDQ/GCE mailbox
+  arm64: dts: mediatek: mt6795: Add MMSYS node for multimedia clocks
+  arm64: dts: mediatek: mt6795: Add support for IOMMU and LARBs
+  arm64: dts: mediatek: mt6795: Add support for display blocks and
+    DPI/DSI
+  arm64: dts: mediatek: mt6795: Add tertiary PWM node
+  arm64: dts: mediatek: mt6795: Add PMIC Wrapper node
+  arm64: dts: mediatek: mt6795: Copyright header additions
+  arm64: dts: mediatek: Add MT6331 PMIC devicetree
+  arm64: dts: mediatek: mt6795-xperia-m5: Add MT6331 Combo PMIC
+  arm64: dts: mediatek: mt6795-xperia-m5: Add eMMC, MicroSD slot, SDIO
+  arm64: dts: mediatek: mt6795-xperia-m5: Add Bosch BMA255 Accelerometer
+  arm64: dts: mediatek: mt6795-xperia-m5: Add Bosch BMM050 Magnetometer
+
+ .../display/mediatek/mediatek,aal.yaml        |   1 +
+ .../display/mediatek/mediatek,color.yaml      |   1 +
+ .../display/mediatek/mediatek,dpi.yaml        |  23 +-
+ .../display/mediatek/mediatek,dsi.yaml        |  19 +-
+ .../display/mediatek/mediatek,gamma.yaml      |   4 +
+ .../display/mediatek/mediatek,merge.yaml      |   3 +
+ .../display/mediatek/mediatek,od.yaml         |   3 +
+ .../display/mediatek/mediatek,ovl.yaml        |   4 +
+ .../display/mediatek/mediatek,rdma.yaml       |   4 +
+ .../display/mediatek/mediatek,split.yaml      |   3 +
+ .../display/mediatek/mediatek,ufoe.yaml       |   3 +
+ .../display/mediatek/mediatek,wdma.yaml       |   3 +
+ .../mailbox/mediatek,gce-mailbox.yaml         |  20 +-
+ .../bindings/phy/mediatek,dsi-phy.yaml        |   4 +
+ .../bindings/pwm/mediatek,pwm-disp.yaml       |   4 +-
+ arch/arm64/boot/dts/mediatek/mt6331.dtsi      | 284 ++++++++++++++
+ .../dts/mediatek/mt6795-sony-xperia-m5.dts    | 121 ++++++
+ arch/arm64/boot/dts/mediatek/mt6795.dtsi      | 365 ++++++++++++++++++
+ include/dt-bindings/gce/mediatek,mt6795-gce.h | 123 ++++++
+ 19 files changed, 968 insertions(+), 25 deletions(-)
+ create mode 100644 arch/arm64/boot/dts/mediatek/mt6331.dtsi
+ create mode 100644 include/dt-bindings/gce/mediatek,mt6795-gce.h
+
 -- 
 2.40.0
 
