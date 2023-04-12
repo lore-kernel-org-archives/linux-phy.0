@@ -4,70 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E1E75C77B6E
-	for <linux-phy@archiver.kernel.org>; Wed, 12 Apr 2023 08:26:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 44196C77B6E
+	for <linux-phy@archiver.kernel.org>; Wed, 12 Apr 2023 08:26:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=90fNm18/hMaH6G0FNKlbbGKJmjiFx8nFlF11P546pjk=; b=EGptpjNtWEcXQK
-	gY3kLVGNbHjhVxxxeC1E2VYlGb0ir0Xg8E4iniGTwVAz9yyi8bYFd7t6AGf4z/Iuln0tw2L5w7EWV
-	X3/U1YCtDCHbcm4RVai9mfdY8xvVv3FgyIDeW/G7mzLWvKFi6eydAPcihOvyHLk8cbuTQVQx9K4u9
-	NF1cH2vRWSYiKKg3cebwh/EzTNK5fMYd7U8M2ECk/2rcAIP8P0myoF+zxDiaVDAzoM2i7OTj6UIhq
-	cRP81+K3nPo6u/XxWm19isE9NlzkChyzv+O5FEnzDp0DLz3/tMyddjdM6BHPH9T03/DByfBd/vLnG
-	pTG3J8jus2FBEE3jwbHQ==;
+	List-Owner; bh=EgphSuu9x05O9z6fsT6rAu/YP5peronW4X1nQCn5iUI=; b=hD3AYuktgylDsX
+	WQYA2l+OW1XEQNrt7q0E4xhj/gppk1smG6Y+QMzKHK3nRa+X07Js8QNPshu0WgrVU8TmFEiFP14nT
+	fmyt9JJBXcStD/a5uXeNp1OAnMKz4KI4+txmZHDTFtOuzl64AWGBvNXUyBBAbD8CwkpRaYpL6MQi7
+	o/GcTwezF1V3WYEycq7ODHAa6yKj2ABejB/xxwC/PmHnkT5K7Nkl/JLNLNiekuwn77zgFZ1+/YCC9
+	fUaA0AkPV9IVLd0pLfmDH+0dRB/bvt1CjsiOYFSUV1ra6XF+AC4ZkFICqq0omGQ+DZLP+jIbYmOZC
+	DJY7H1N3+r9LQuSTl8yw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pmVoD-002FcZ-1p;
-	Wed, 12 Apr 2023 08:26:29 +0000
-Received: from mail-ej1-x634.google.com ([2a00:1450:4864:20::634])
+	id 1pmVoa-002Fh4-2z;
+	Wed, 12 Apr 2023 08:26:52 +0000
+Received: from mail-ej1-x636.google.com ([2a00:1450:4864:20::636])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pmVo9-002Fbk-2s
+	id 1pmVoY-002Ffl-2d
 	for linux-phy@lists.infradead.org;
-	Wed, 12 Apr 2023 08:26:27 +0000
-Received: by mail-ej1-x634.google.com with SMTP id ud9so26569390ejc.7
-        for <linux-phy@lists.infradead.org>; Wed, 12 Apr 2023 01:26:25 -0700 (PDT)
+	Wed, 12 Apr 2023 08:26:52 +0000
+Received: by mail-ej1-x636.google.com with SMTP id kt17so14580563ejb.11
+        for <linux-phy@lists.infradead.org>; Wed, 12 Apr 2023 01:26:50 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1681287984;
+        d=linaro.org; s=google; t=1681288008;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=j2PxCMT017KlB0q2xlNRaCGejb/YR8xF1pSERbKtDdk=;
-        b=ut5iKziJbkhCRP2QUkIsIJ3zForqv1B4G84k9L8PMEQPpjP9OOKF3K5C+Ph++Q6KNC
-         HKnux+4fYx2cgFWxsBYbCa8pRkXzb+3re1ycRPZer16yI6pB/myfNsYVEoOHY9qS4xcN
-         ivX/NPbZT2tWzX2DL7oVASp3eXzF6Rs4ptJP7t9ePPcco5og9bqwREp8AaXY+6HIidNR
-         FMWhXmKXYP7+Lu5YmOy9F719/t5D2W9A2sE3OOUShJpXiNxbrfnne3gYPRzCGp2dy2e2
-         IPrMycolgbQqm65pcwD2pmRKxybkm+Uiv2HgJUT/Vr9YZk4S2wnyDUAxyFIraFwdjEhC
-         0vFw==
+        bh=hMWwvJSoPwKHnqvGb8XJbpQWFhUmBxXG2ION9BwWYgo=;
+        b=WK/FDp+Tl2Ed7T3aBlcejCbbqL7ed+dzTD2hjOiuNFg15S6gnQqK78s1PbCu6x5Zhd
+         VhmFw5he/pO3oTFEJqLfZ+MeRHs+ykAHs/rqNaV5/DCNLua3DsSrRd3XRVllYvaqH2VS
+         H4fgmEAxTFLtnxGdOqhSzZCAhgdnJwlTYV9arrrFtg+p7GU9+j3f0V+PzWl7NIgJ/JZ2
+         g5iuvnLVMHGzVg1A6W0x1aQysj0l4tzr72r4MrW9eSDuM95nVGT0LAzYRhm3oIkozK8+
+         9VM7xyszT3o5K/CGIhNGMkMaQmE5u0Z49EqJFAOxlVAeAeDBXBywqsur0lUNO+GM+qMv
+         OWUA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112; t=1681287984;
+        d=1e100.net; s=20210112; t=1681288008;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=j2PxCMT017KlB0q2xlNRaCGejb/YR8xF1pSERbKtDdk=;
-        b=PeXZ6cNIp+v0W4K8ZQZLKwvmqSTGFXclyiD1GPddDS7OFwEpd978ow1cJpIgEmsgQg
-         4azi0Kd9Q2u9mOfFcTON8JH/m7vQJ1NhEwgLTN2yL+LdX8iFjgFc7iPB6PCr/99xq2Mq
-         cXXY1M+BdECOo05hiYNRMkICD/aMo4oepxZvxSJZeJUKsy/Ye9KUK7ubt57urqmQSiZX
-         i4gE35iJQv61xCOIXV+oS9UYuJjLM/vUa6hBGsyyTlS13S/uK6YdKaVupNj9AgIbpfYy
-         3c9oo+lYWea2ISXPCFSM260lR+aeETLZUrm/nRYHF6xg9pyNp04osguGBJRavZdlUeL/
-         A2cw==
-X-Gm-Message-State: AAQBX9fXB1/L/mEiXkLiGGl44264DyN9XI9zOGHj6cZzNcMnNp1hlkTZ
-	Y4aGgYET+1PpUoJ4RVhwm5YuSg==
-X-Google-Smtp-Source: AKy350Zr+e/Sw+RDS0dZq1qjB9lNG0/WPzuMdlGLrj16g35xPrnosRO3RyM+ukd++hO58/GtPz1KnQ==
-X-Received: by 2002:a17:906:bcf0:b0:87b:e105:5d9a with SMTP id op16-20020a170906bcf000b0087be1055d9amr10810505ejb.67.1681287984101;
-        Wed, 12 Apr 2023 01:26:24 -0700 (PDT)
+        bh=hMWwvJSoPwKHnqvGb8XJbpQWFhUmBxXG2ION9BwWYgo=;
+        b=nR3Cmb1642N2zNJ81whHbRjNYm2NahI3nLRXZ73sefOxHCts6sojOkxZwArirYvQiy
+         5n4++uWUr2elcM/WWYe05B5vXQfKWuVskXnyA9oBF5WpUvmChCHFV6PWKJA1NMTADp3x
+         k/4/eImoxhQYluhbhdXCb1HuEYFy8qZftDsHG2lPLxGeuaH4faREFwN/74fWzTHMVujL
+         S11ojxzpxQfvNg0IU4Rau/1HSgXM1zx2NnDCJzcTabJHbo28NYHR5GzuHYn+HEd19VpK
+         C7jtDUsWcjjjlYtcTTRPphQYltaJ/IW8yfcCWwxmjcrW9WvgQfdaSArTeuteteCBfcoE
+         AyvA==
+X-Gm-Message-State: AAQBX9enp3VeGq2nLm7ADTeQ+xjkxNbzY6wlNmG+pZH3eDdkmLGSjhqe
+	9oOV1xSnG1cm4hkJ5iAH62UyCA==
+X-Google-Smtp-Source: AKy350aSpn6IBfYoqOrlQzXnS7Z0c4dRP9jbb3No1mXXaRs8vawGd2eCrz6GKriL9sBKdDPEJd/6ZQ==
+X-Received: by 2002:a17:906:4e95:b0:94a:5c39:fdce with SMTP id v21-20020a1709064e9500b0094a5c39fdcemr11272322eju.24.1681288008375;
+        Wed, 12 Apr 2023 01:26:48 -0700 (PDT)
 Received: from ?IPV6:2a02:810d:15c0:828:8fa0:9989:3f72:b14f? ([2a02:810d:15c0:828:8fa0:9989:3f72:b14f])
-        by smtp.gmail.com with ESMTPSA id tx6-20020a1709078e8600b0094a70a89bffsm3327733ejc.205.2023.04.12.01.26.22
+        by smtp.gmail.com with ESMTPSA id ig13-20020a1709072e0d00b0093210cf625bsm7044930ejc.187.2023.04.12.01.26.46
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 12 Apr 2023 01:26:23 -0700 (PDT)
-Message-ID: <517670ca-ba2e-811e-3eb2-7f38011c9690@linaro.org>
-Date: Wed, 12 Apr 2023 10:26:22 +0200
+        Wed, 12 Apr 2023 01:26:47 -0700 (PDT)
+Message-ID: <2b263c46-2b5e-341b-cb10-bf3b88f6632f@linaro.org>
+Date: Wed, 12 Apr 2023 10:26:46 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.9.1
-Subject: Re: [PATCH v4 0/7] Add JH7110 USB and USB PHY driver support
+Subject: Re: [PATCH v4 1/7] dt-bindings: phy: Add StarFive JH7110 USB document
 Content-Language: en-US
 To: Minda Chen <minda.chen@starfivetech.com>,
  Emil Renner Berthing <emil.renner.berthing@canonical.com>,
@@ -84,11 +84,12 @@ Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>,
  Mason Huo <mason.huo@starfivetech.com>
 References: <20230406015216.27034-1-minda.chen@starfivetech.com>
+ <20230406015216.27034-2-minda.chen@starfivetech.com>
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20230406015216.27034-1-minda.chen@starfivetech.com>
+In-Reply-To: <20230406015216.27034-2-minda.chen@starfivetech.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230412_012625_932921_D7859EAB 
-X-CRM114-Status: GOOD (  23.77  )
+X-CRM114-CacheID: sfid-20230412_012650_859658_1119ED9E 
+X-CRM114-Status: GOOD (  13.33  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,128 +107,42 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 06/04/2023 03:52, Minda Chen wrote:
-> This patchset adds USB driver and USB PHY for the StarFive JH7110 SoC.
-> USB work mode is peripheral and using USB 2.0 PHY in VisionFive 2 board.
-> The patch has been tested on the VisionFive 2 board.
+> Add StarFive JH7110 SoC USB 2.0 PHY dt-binding.
+
+Not much improvements in the subject. I asked to drop, not replace
+document with document.
+
+"Add StarFive JH7110 USB PHY"
+
+
+
 > 
-> This patchset should be applied after the patchset [1], [2] and[3]:
-> [1] https://patchwork.kernel.org/project/linux-riscv/cover/20230314124404.117592-1-xingyu.wu@starfivetech.com/
-> [2] https://lore.kernel.org/all/20230315055813.94740-1-william.qiu@starfivetech.com/
-> [3] https://patchwork.kernel.org/project/linux-phy/cover/20230315100421.133428-1-changhuang.liang@starfivetech.com/
-> 
-> This patchset is base on v6.3-rc4
-> 
-> patch 1 is usb phy dt-binding document.
-> patch 2 is Pcie PHY dt-binding document.
-> patch 3 is USB 2.0 PHY driver.
-> patch 4 is PCIe PHY driver.
-> patch 5 is usb dt-binding document.
-> patch 6 is the wrapper module driver of Cadence USB3. USB controller IP is Cadence USB3.
-> patch 7 is USB device tree configuration.
-> 
-> previous version
+> Signed-off-by: Minda Chen <minda.chen@starfivetech.com>
 > ---
-> v1: https://patchwork.kernel.org/project/linux-usb/cover/20230306095212.25840-1-minda.chen@starfivetech.com/
-> v2: https://patchwork.kernel.org/project/linux-usb/cover/20230308082800.3008-1-minda.chen@starfivetech.com/
-
-This is v2.
-
-> v3: https://patchwork.kernel.org/project/linux-usb/cover/20230315104411.73614-1-minda.chen@starfivetech.com/
-> 
-> changes
-> v4:
->   1. (patch 1) split PCIe PHY dt-binding doc to patch 2.
->   2. (patch 2) PCIe PHY add stg and sys con configuration to dt-binding doc.
->   3. (patch 3)
->      - split PCIe PHY driver to patch 4.
->      - replace dr_mode to phy mode in jh7110_usb2_phy.
->   4. (patch 4) 
->      - Makefile and Kconfig sorted by alphabet sequence.
->      - Add PCIe PHY stg and syscon PHY connection configuration
->        for USB 3.0.
->   5. (patch 5)
->      - commit message changed.
->      - merge wrapper dts node and cdns3 node in example.
->      - Add interrupts, reg, phy and dr_mode in property.
->      - Add reset-name in property example.
->   6. (patch 6)
->      - For dts node is merged, Using platform_device_alloc and
->        platform_device_add to generate cadence sub device.
->      - IOMEM and IRQ resource are passed to Cadence sub device.
->      - Add PHY ops process for PHY dts setting can not be passed to
->        Cadence USB driver.
->      - remove the stg and sys USB 3.0 PHY configuration.
->      - Change the suspend clock reset and clock enable sequence.
->      - Get all reset and clock resources before enable them in 
->        cdns_clk_rst_init.
->      - commit message changed.
->   7. (patch 7)
->      - merge wrapper dts node and cdns3 node in usb dts.
->      - move the stg and sys USB 3.0 PHY confiuration to
->        PCIe PHY dts node.
->      - commit message changed.
->      - Add reset-names dts.
-> 
-> v3:
->   1. Add patch 1 - 4. Add USB PHY driver and dt-binding doc. 
->      USB PHY codes are moved to patch 3 and patch 4.
->   2. (patch 5)
->      - USB wrapper module dts document is moved to usb directory.
->      - Remove the 'dr_mode' and 'starfive,usb2-only' setting.
->      - Some dts format changes. dts binding check pass.
->   3. (patch 6)
->      - Remove the PHY codes. 
->      - Search 'dr_mode' and phy setting from Cadence subnode.
->   4. (patch 7)
->      - Add USB PHY dts configurion. 
->      - 'dr_mode' is moved to Cadence controller submode.
-> 
-> v2:
->   1. (patch 5) dt-binding changes. The document example is the same as dts config.
->   2. (patch 6) using dev_err_probe and syscon_regmap_lookup_by_phandle_args function. Some formats changes
->   3. (patch 7) dts nodes sorted by the address after @
-> 
-> 
-> Minda Chen (7):
->   dt-bindings: phy: Add StarFive JH7110 USB document
->   dt-bindings: phy: Add StarFive JH7110 PCIe document
->   phy: starfive: add JH7110 USB 2.0 PHY driver.
->   phy: starfive: add JH7110 PCIE 2.0 PHY driver.
->   dt-bindings: usb: Add StarFive JH7110 USB Bindings YAML schemas
->   usb: cdns3: add StarFive JH7110 USB driver.
->   riscv: dts: starfive: add USB dts configuration for JH7110
-> 
->  .../phy/starfive,jh7110-pcie-phy.yaml         |  58 +++
->  .../bindings/phy/starfive,jh7110-usb-phy.yaml |  50 +++
->  .../bindings/usb/starfive,jh7110-usb.yaml     | 136 +++++++
->  MAINTAINERS                                   |  16 +
->  .../jh7110-starfive-visionfive-2.dtsi         |   7 +
->  arch/riscv/boot/dts/starfive/jh7110.dtsi      |  44 ++
->  drivers/phy/starfive/Kconfig                  |  22 +
->  drivers/phy/starfive/Makefile                 |   2 +
->  drivers/phy/starfive/phy-jh7110-pcie.c        | 197 +++++++++
->  drivers/phy/starfive/phy-jh7110-usb.c         | 161 ++++++++
->  drivers/usb/cdns3/Kconfig                     |  11 +
->  drivers/usb/cdns3/Makefile                    |   1 +
->  drivers/usb/cdns3/cdns3-starfive.c            | 378 ++++++++++++++++++
->  drivers/usb/cdns3/core.h                      |   3 +
->  14 files changed, 1086 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/starfive,jh7110-pcie-phy.yaml
+>  .../bindings/phy/starfive,jh7110-usb-phy.yaml | 50 +++++++++++++++++++
+>  1 file changed, 50 insertions(+)
 >  create mode 100644 Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy.yaml
->  create mode 100644 Documentation/devicetree/bindings/usb/starfive,jh7110-usb.yaml
->  create mode 100644 drivers/phy/starfive/phy-jh7110-pcie.c
->  create mode 100644 drivers/phy/starfive/phy-jh7110-usb.c
->  create mode 100644 drivers/usb/cdns3/cdns3-starfive.c
 > 
-> 
-> base-commit: 0ec57cfa721fbd36b4c4c0d9ccc5d78a78f7fa35
-> prerequisite-patch-id: 24a6e3442ed1f5454ffb4a514cfd768436a87090
-> prerequisite-patch-id: 55390537360f25c8b9cbfdc30b73ade004f436f7
+> diff --git a/Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy.yaml b/Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy.yaml
+> new file mode 100644
+> index 000000000000..80604dfe01f0
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy.yaml
+> @@ -0,0 +1,50 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/phy/starfive,jh7110-usb-phy.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: StarFive USB 2.0 PHY
 
-fatal: bad object 55390537360f25c8b9cbfdc30b73ade004f436f7
+Missing model name.
 
-What commits do you reference? How are they helpful?
-
+> +
+> +maintainers:
+> +  - Minda Chen <minda.chen@starfivetech.com>
+> +
 
 Best regards,
 Krzysztof
