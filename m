@@ -4,73 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D7368C7619A
-	for <linux-phy@archiver.kernel.org>; Wed, 12 Apr 2023 13:24:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 15B27C77B6F
+	for <linux-phy@archiver.kernel.org>; Wed, 12 Apr 2023 13:39:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vEoR7gVuTpH1MN/LXqK5oS5Qv+lTpfL/DaRLQyo/uv8=; b=uQ2/fDw4nybC8A
-	aaBg7wpsNE0y0dcnYei+SbLs5q051HMUTfauqwdXvHEGin68Qgupylrp/GSU1ITy9R/V4xhMPYkZ4
-	8Qx7tImT7l6Qu18jC7mBWBSXv7eCOT05RRU1+Y+Sug8K6F24DxVBV2sGnOF8L5IHJdGXNn4+98NV9
-	r0Vu8peETxA7/CNTkfQeqA06exZ4XJ1nRHjDP4STQc3f0K/xaNNZ+Whexc6OmfoDU4pJLgzJOHUVX
-	WjVKcke40gj1wpt7QFWXiolwwio85jkkS+3BYiU4Lu7XfVhrp35tRW6F3/ml0pE4M651iGhL4+TNS
-	ZFTgEbStlUnJEqjlRI3w==;
+	List-Owner; bh=7cFgtM3YnvIXg2Lav41eWKz7AOMznUFjLMDbRr5Nkko=; b=AltoX4TqojiOpo
+	LNSq/9aDV2re1d2G622ZRRwJwf/HnuGPowpAtyDSoNpJqDvOYsA1NBEbVzUjtw7t5HsFBNNGNnnUd
+	HB0hKDUI+KuSUrGz+cDnh4YM7mhhWR9P4IJLsTh6mEh/YlPXj2XzPDW60AP2LqAfuH0y8QX8s655O
+	Y2Lhv0OSzjdpJmehIOaGuTOd4vRSDI+msIGUfXSBCkrSU5XOSWk4cnMjpzKTEkp662uQ68PPN+A5H
+	ypHd/E55VNGApuiPMSoujhCsZEBY0jniaYuJirzvFXo59E2NJDgGsdrr7ZkVFkxUgTE0d2SASAfH7
+	D26v3JAc0YYHAhZBD0LQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pmaSA-003Kma-1W;
-	Wed, 12 Apr 2023 13:24:02 +0000
-Received: from madras.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e5ab])
+	id 1pmahE-003NIK-27;
+	Wed, 12 Apr 2023 13:39:36 +0000
+Received: from mail-oa1-f47.google.com ([209.85.160.47])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pmaS6-003Kkz-0w;
-	Wed, 12 Apr 2023 13:23:59 +0000
-Received: from [192.168.1.100] (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
-	(No client certificate requested)
-	(Authenticated sender: kholk11)
-	by madras.collabora.co.uk (Postfix) with ESMTPSA id 681776603102;
-	Wed, 12 Apr 2023 14:23:55 +0100 (BST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1681305836;
-	bh=C+NuJI3gJQOvg2W2Jt6ytwX+Z1SaqR9sW/KQiI2QbiI=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=Mbo9WZ5dvorklyrGK5QC93j7iWln5Nb1/0dZiovAp8HYc7dmf9gr1K3T6vJUTMDWF
-	 KBjARKXpwJsIkz1QJ6vDHsZNtV8kVU8Jj0BV/XrzMCX1c1zsD2DUMe4viOORDcm+52
-	 D80e6axsE5IlRNwR26L7uf7pl+V6gFyzIck6f29rFY9zvzhCBp1KiKmTBlTC9kQ/9M
-	 nyf4m+rOp2OB3OrxR2uLA6qWo7Ku1L2tyeEtuX5E/XpQrCrk7x6GAIxCwcOCbvoPUc
-	 8UrR0BepUKP3t0nKCa3Is6oXrI8kWwrNKpeDT69WR3iL8uathgheIz0FQheBvmzc8w
-	 wAERQg2FZvT8g==
-Message-ID: <c66642f5-470f-9d39-19d8-e76f8b6288b3@collabora.com>
-Date: Wed, 12 Apr 2023 15:23:53 +0200
+	id 1pmahC-003NFJ-0A;
+	Wed, 12 Apr 2023 13:39:35 +0000
+Received: by mail-oa1-f47.google.com with SMTP id 586e51a60fabf-18782426c4bso600595fac.9;
+        Wed, 12 Apr 2023 06:39:23 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112; t=1681306763; x=1683898763;
+        h=in-reply-to:content-transfer-encoding:content-disposition
+         :mime-version:references:message-id:subject:cc:to:from:date
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=wqTBOiXW+OSKCG/B6dEs6T+l192CJMJlj9OxbNQfKPY=;
+        b=Qz4RPj5V0Jyl6iQ6zJnBMQKe3SBJoTFXsjecni3W1PtuL9vuxCyya3XiPS71+PdSuD
+         34D4PTUTrY+0nkKauNAnmzHPhrNv/yynixCkh25zbmLiVSKzzrcl1TV3cUuXu9Y1KTpk
+         /PlAbNsr2fq2GzKNC1DGM4/rdQ0WoQoqCwTUam7ZJpOdkjETYnR+akYMjs68K1Emih3A
+         jwJjDPSln0PI9ycSRfcsm/npZgrz1zSiU+DGMVv9iLlQYwrI4rbMgJ/hoDntODpZ6IRu
+         PQvQOekaCPsp7jK9yPpHxZGQm0g8XfAAg2H15R5hlTN1WzSokXMbzRULYdi1VvfNliei
+         N9Kw==
+X-Gm-Message-State: AAQBX9d89ZVieerJxhfOvV1/poPt8GdHuMxiNFVusjHlEpYaMq0SRnbg
+	dA9mVpSjdAUHGQE7e+VSsA==
+X-Google-Smtp-Source: AKy350ackMhPHZrmUsBkYtWkgvuVjprseT2ZSz58PZgTnUQvLVrAPQN80r7cK3FqlRLxKHggFOITwQ==
+X-Received: by 2002:a05:6870:f228:b0:17e:9798:6e34 with SMTP id t40-20020a056870f22800b0017e97986e34mr8351022oao.32.1681306762985;
+        Wed, 12 Apr 2023 06:39:22 -0700 (PDT)
+Received: from robh_at_kernel.org (66-90-144-107.dyn.grandenetworks.net. [66.90.144.107])
+        by smtp.gmail.com with ESMTPSA id r17-20020a05687080d100b001726cfeea97sm6143360oab.29.2023.04.12.06.39.22
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 12 Apr 2023 06:39:22 -0700 (PDT)
+Received: (nullmailer pid 2193869 invoked by uid 1000);
+	Wed, 12 Apr 2023 13:39:21 -0000
+Date: Wed, 12 Apr 2023 08:39:21 -0500
+From: Rob Herring <robh@kernel.org>
+To: Johannes Zink <j.zink@pengutronix.de>
+Cc: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, vkoul@kernel.org, kishon@kernel.org, shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com, linux-imx@nxp.com, krzysztof.kozlowski+dt@linaro.org, jun.li@nxp.com, haibo.chen@nxp.com, linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, devicetree@vger.kernel.org
+Subject: Re: [PATCH 1/2] dt-bindings: phy: imx8mq-usb: add phy tuning
+ properties
+Message-ID: <20230412133921.GA2017891-robh@kernel.org>
+References: <20230405112118.1256151-1-j.zink@pengutronix.de>
+ <20230405112118.1256151-2-j.zink@pengutronix.de>
+ <5398cbe0-c681-5dd7-0b3e-3a586cc4915f@linaro.org>
+ <3f7257ee36dc44f162a87281c8279fd5bad91dea.camel@pengutronix.de>
+ <95b4afd4-c93e-628b-fd22-6fcbc1d1234e@linaro.org>
+ <b394b456540943b1022a7b093bf369924fca0566.camel@pengutronix.de>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.9.1
-Subject: Re: [PATCH 22/27] arm64: dts: mediatek: mt6795: Copyright header
- additions
-Content-Language: en-US
-To: Matthias Brugger <matthias.bgg@gmail.com>
-Cc: p.zabel@pengutronix.de, airlied@gmail.com, daniel@ffwll.ch,
- robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
- jassisinghbrar@gmail.com, chunfeng.yun@mediatek.com, vkoul@kernel.org,
- kishon@kernel.org, thierry.reding@gmail.com, u.kleine-koenig@pengutronix.de,
- chunkuang.hu@kernel.org, ck.hu@mediatek.com, jitao.shi@mediatek.com,
- xinlei.lee@mediatek.com, houlong.wei@mediatek.com,
- dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
- linux-pwm@vger.kernel.org, kernel@collabora.com,
- phone-devel@vger.kernel.org, ~postmarketos/upstreaming@lists.sr.ht
-References: <20230412112739.160376-1-angelogioacchino.delregno@collabora.com>
- <20230412112739.160376-23-angelogioacchino.delregno@collabora.com>
- <7466cf12-9411-cb35-8e8b-fa50f5efe492@gmail.com>
-From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-In-Reply-To: <7466cf12-9411-cb35-8e8b-fa50f5efe492@gmail.com>
+Content-Disposition: inline
+In-Reply-To: <b394b456540943b1022a7b093bf369924fca0566.camel@pengutronix.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230412_062358_458206_CE90709D 
-X-CRM114-Status: GOOD (  14.24  )
+X-CRM114-CacheID: sfid-20230412_063934_089795_1D9749C1 
+X-CRM114-Status: GOOD (  23.92  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,34 +81,89 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SWwgMTIvMDQvMjMgMTQ6NDEsIE1hdHRoaWFzIEJydWdnZXIgaGEgc2NyaXR0bzoKPiAKPiAKPiBP
-biAxMi8wNC8yMDIzIDEzOjI3LCBBbmdlbG9HaW9hY2NoaW5vIERlbCBSZWdubyB3cm90ZToKPj4g
-SSBoYXZlIGFkZGVkIG1vcmUgdGhhbiA4MDAgbGluZXMgdG8gdGhpcyBkZXZpY2V0cmVlOiBhZGRp
-bmcgbXlzZWxmIHRvCj4+IHRoZSBjb3B5cmlnaHQgaGVhZGVyLgo+Pgo+PiBTaWduZWQtb2ZmLWJ5
-OiBBbmdlbG9HaW9hY2NoaW5vIERlbCBSZWdubyA8YW5nZWxvZ2lvYWNjaGluby5kZWxyZWdub0Bj
-b2xsYWJvcmEuY29tPgo+PiAtLS0KPj4gwqAgYXJjaC9hcm02NC9ib290L2R0cy9tZWRpYXRlay9t
-dDY3OTUuZHRzaSB8IDMgKysrCj4+IMKgIDEgZmlsZSBjaGFuZ2VkLCAzIGluc2VydGlvbnMoKykK
-Pj4KPj4gZGlmZiAtLWdpdCBhL2FyY2gvYXJtNjQvYm9vdC9kdHMvbWVkaWF0ZWsvbXQ2Nzk1LmR0
-c2kgCj4+IGIvYXJjaC9hcm02NC9ib290L2R0cy9tZWRpYXRlay9tdDY3OTUuZHRzaQo+PiBpbmRl
-eCAyOWNhOWE3YmYwYjMuLmE0Yzk1MGI2NTAwNiAxMDA2NDQKPj4gLS0tIGEvYXJjaC9hcm02NC9i
-b290L2R0cy9tZWRpYXRlay9tdDY3OTUuZHRzaQo+PiArKysgYi9hcmNoL2FybTY0L2Jvb3QvZHRz
-L21lZGlhdGVrL210Njc5NS5kdHNpCj4+IEBAIC0yLDYgKzIsOSBAQAo+PiDCoCAvKgo+PiDCoMKg
-ICogQ29weXJpZ2h0IChjKSAyMDE1IE1lZGlhVGVrIEluYy4KPj4gwqDCoCAqIEF1dGhvcjogTWFy
-cy5DIDxtYXJzLmNoZW5nQG1lZGlhdGVrLmNvbT4KPj4gKyAqCj4+ICsgKiBDb3B5cmlnaHQgKEMp
-IDIwMjMgQ29sbGFib3JhIEx0ZC4KPj4gKyAqwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqAgQW5nZWxvR2lvYWNjaGlubyBEZWwgUmVnbm8gCj4+IDxhbmdlbG9naW9hY2NoaW5v
-LmRlbHJlZ25vQGNvbGxhYm9yYS5jb20+Cj4gCj4gSW5kZW50YXRpb24/Cj4gCj4gQlRXIGZyb20g
-d2hhdCBJIHVuZGVyc3RhbmQgdGhlIGNvcHlyaWdodCB3aWxsIGJlIGJ5IHlvdXIgZW1wbG95ZXIs
-IENvbGxhYm9yYSBub3QgCj4geW91LCBidXQgSSdtIG5vdCBhbiBsZWdhbCBleHBlcnQgOikKPiAK
-ClRoZSBjb3B5cmlnaHQgKmlzKiBieSBteSBlbXBsb3llciAuLi4gYnV0IGF0IHRoZSBzYW1lIHRp
-bWUgSSdtIGFkZGluZyBteSBuYW1lLApiZWNhdXNlIGl0J3MgbWUgcGVyZm9ybWluZyB0aGUgd29y
-ay4KCkkgZGlkbid0IHdyaXRlIChjKSBteW5hbWUsIGJ1dCAoYykgZW1wbG95ZXIsIG15bmFtZSAt
-IHRoYXQncyBvayA6LSkKCk9yIHdhcyB0aGUgY29tbWVudCBhYm91dCB0aGUgY29tbWl0IGRlc2Ny
-aXB0aW9uPyBTaG91bGQgdGhhdCBiZSByZXdvcmRlZD8KCkNoZWVycywKQW5nZWxvCgoKLS0gCmxp
-bnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6
-Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+On Tue, Apr 11, 2023 at 04:22:37PM +0200, Johannes Zink wrote:
+> Hi Krzystof,
+> =
+
+> thank you for your explanations. As I'm still quite new to writing
+> bindings, I still have some questions:
+> =
+
+> On Fri, 2023-04-07 at 11:03 +0200, Krzysztof Kozlowski wrote:
+> > On 05/04/2023 14:14, Johannes Zink wrote:
+> > > Hi Krysztof,
+> > > =
+
+> > > thanks for your review, please find my questions below.
+> > > =
+
+> > > On Wed, 2023-04-05 at 13:51 +0200, Krzysztof Kozlowski wrote:
+> > > > [snip]
+> > > > > =A0=A0=A0=A0=A0=A0 A phandle to the regulator for USB VBUS.
+> > > > > =A0
+> > > > > +=A0 fsl,phy-tx-vref-tune:
+> > > > > +=A0=A0=A0 description:
+> > > > > +=A0=A0=A0=A0=A0 HS DC Voltage level adjustment
+> > > > =
+
+> > > > "Level" in what units?
+> > > > =
+
+> > > =
+
+> > > The datasheet just shows percent, ranging from -6 to +24%, in 2%
+> > > increments. What unit would you suggest?
+> > =
+
+> > percent
+> > https://github.com/devicetree-org/dt-schema/blob/main/dtschema/schemas/=
+property-units.yaml
+> =
+
+> I am still a bit confused how to use this properly. How can I restrict
+> the values to multiples of 2 in order to avoid illegal values?
+> =
+
+> At the moment the only thing I could come up with is something like
+> =
+
+> fsl,phy-tx-vref-tune-percent:                 =
+
+>   description: |                              =
+
+>     Adjusts the high-speed DC level voltage   =
+
+>   $ref: /schemas/types.yaml#/definitions/int32
+
+Note that with standard unit suffixes, you don't need a type.
+
+>   minimum: -6                                 =
+
+>   maximum: 24                                 =
+
+>   default: 0                                  =
+
+> =
+
+> Does something like this work? I am not quite sure if I am on the right
+> track here, especially as this requires a signed int, of which I have
+> not seen many examples so far.
+
+We'd have to change the type for -percent to signed. That's possible, =
+
+but for vendor specific properties there's not much advantage to use =
+
+standard units instead of just using the register values directly.
+
+Rob
+
+-- =
+
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
