@@ -4,69 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 10584C7619A
-	for <linux-phy@archiver.kernel.org>; Wed, 12 Apr 2023 12:43:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DB001C77B6E
+	for <linux-phy@archiver.kernel.org>; Wed, 12 Apr 2023 12:44:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YxlFqMhnwZUdrbAmSSwe0DrYJxk6nzJVy28I7k34BhU=; b=mJ3W5bGzwBv5Ie
-	lBc5QPR1bHEsZu0g+V+5BJg43c3+/h5qCBjLR+Q21BsnfjhGZOinOb2k0i4F8Jpsh+Byq2X6Kgcfv
-	XFoNOCrGSYEWX0aesWpenWbhFC8kNtKmeR5w8Jiazqyq0m1lY1Wro+HYyvori5/JJH+/oYYlEhaLh
-	/BngyYZ1C7uSgwZZWbxwQ7AZmeMh8UpMNaGpqJG6CfTDpxvd63gAe7eAqpV0MB65OsC9pHP5M8k+K
-	hsc+4wIyXRWOAcy288pEIOwVV5S9Qn4YDZPn3ceRcZf6LoLpfE7X/0e5yTVLw6iHL2wN2hHqQ7YJY
-	TmprHkHmuKIlNxX4YyJA==;
+	List-Owner; bh=Mz8GDjLZSG6fMLuCQ2Xp6xYf//OtjZ4sSCtvBRwLno0=; b=zl8zpHTWQdFCpP
+	yWxIiEZUOfJ4B8fqyRkZ8ZhZ6P09bNdkOL8z74RaejNU1EV6a83U1M1vgpzDRa2uNG5vX632gBJ3j
+	HD69BleqWV7fK3gBWGu509XhxextEfyWCJ+ZjKwdMDkv/LoPlX/2WnSiy1xSBE3fpLdPiEX6m4Cdp
+	aMtajXdoxIkNWbfoPfer0HYkIhofDq593YBeJ7kg3SaSYvB7dq6kWH8u56oTpbM4fcIR6f7IbGgic
+	eTkdXoW8VjdNOK8bhRNWxSFrvJFVuMesautt7rMhjbPFYnDcQR4+HrOCy4jN5e2ELG1dVYJJlQkdY
+	1O95ZFVACmDkHik76Kpw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pmZox-003BfP-2S;
-	Wed, 12 Apr 2023 12:43:31 +0000
-Received: from mail-wm1-x336.google.com ([2a00:1450:4864:20::336])
+	id 1pmZqB-003CCr-1W;
+	Wed, 12 Apr 2023 12:44:47 +0000
+Received: from mail-wm1-x335.google.com ([2a00:1450:4864:20::335])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pmZot-003BdC-0m;
-	Wed, 12 Apr 2023 12:43:28 +0000
-Received: by mail-wm1-x336.google.com with SMTP id hg25-20020a05600c539900b003f05a99a841so14030413wmb.3;
-        Wed, 12 Apr 2023 05:43:26 -0700 (PDT)
+	id 1pmZq7-003C8h-1N;
+	Wed, 12 Apr 2023 12:44:44 +0000
+Received: by mail-wm1-x335.google.com with SMTP id m8so20156643wmq.5;
+        Wed, 12 Apr 2023 05:44:40 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20221208; t=1681303405; x=1683895405;
+        d=gmail.com; s=20221208; t=1681303479; x=1683895479;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=cUF7LoitQw5OkHRbbbgY1vxHPcwK0X9aUiqFfbPiOwE=;
-        b=Ex9hVrKzu4VnZn/KwKympLWVqnLG00mRzfW1qoaZcqweDNRIjvzttcA6d175fMltO+
-         s+44KFje1bNbbW1gDNTtg3qY1PPlw3F6d9BWgDp5ictRbUsF4ftSM4bJjPQMO6OS7krV
-         WDqO6hovL/h7RbDXLeZqyLjg5Qml1ZqBKnYXAfpbj0yw6PJpcjNMTmPNNP+LuJE0Ksx4
-         f2a3OtOGJpRCwm0v1TC3plUl5VKW2RjLu5fJ8uFc1o42cl7iQU1v2I1Iyp5y54YckBNf
-         D0U3zJQ3MW5AoxCy1/Sr1gNtfHVX1dSBBiIJ4aSoCN9fzRfjxTDzAT7ZaF+BegoXfL2F
-         Eceg==
+        bh=H9NXku2pSRV2wSCRtuxBqdlKYT3KNs95Y1/l9wS3vzw=;
+        b=OyUCjn9d2mWZw6/j9UH76T6MvVfV73nrX7flAEHmexvlXuDR1A3kUxIjr+44xDCrDR
+         k//7Zw99Qqcchw/qWW0ytKHFb8rCDg0FSSOQiwNs2dwvTwNVjp8nk0Cu2NfAfjmw9Zc8
+         5uzci64ZRXvrjB0zjvaimqizCRF1+OKTRXwW/zN3C0pT8ZwRwRaQ6Xx/6f+OROOMWKG6
+         cMyn8GGHWv15mf6E752bYcMrKPUww+r3RV4+3atyPQuSPI9VETbjjn0N4Uxt2Pn/UyoH
+         ccqI2akgk2fhK3+m1y6MYcSTCHHj84THPSfcHDOGBvGTZqhWb9Y2KoXB3FK5Oj3oqwwm
+         pI5g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112; t=1681303405; x=1683895405;
+        d=1e100.net; s=20210112; t=1681303479; x=1683895479;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=cUF7LoitQw5OkHRbbbgY1vxHPcwK0X9aUiqFfbPiOwE=;
-        b=cXk7NWUONHeonuHK/+Ytn4hnAV7bOvVV5xOOB9wm39+Wmv6ZEGCWWfaSNAGoLIIjfi
-         ldDS2r3pBcWhoozGMW8zsK8wM0N1cWpGpwoFGDoa1kzODzFSwjhrToKTzmdDtbeVFmCb
-         lZLF65Yf/1rp17IPp7mA1Cth+EcMBC+txkeLlqtMyfOG6V4B6i9vvhXqnIgz3QLU2mXe
-         IUwTwWr20pcmkoAvTcy9aX+wEFzZQwlykUSwQSQjPOMLIv+S/spbhxkCWY8JrbIp1qDI
-         tz1VsRGx8lxcbo2ujaVJg/qyTeJpmLv0v2MoLfIEsIszyAGWRIONRkGCrCC9nItecSbe
-         3+zw==
-X-Gm-Message-State: AAQBX9dH3o7n9yuBzLRo7OKNY4tchjYCwi4C5cYOudy5xgWjHTMtr/6z
-	Penw+oAX+bYhpGY+C1JRCjg=
-X-Google-Smtp-Source: AKy350aAVnydjEmaeKZAWvOiy1vncejnZ4Satpe9Geuus5lfYY1lSqu4hz+nbW5+onECFdEVwDSGCQ==
-X-Received: by 2002:a05:600c:c1:b0:3ed:9ce3:4a39 with SMTP id u1-20020a05600c00c100b003ed9ce34a39mr9980309wmm.26.1681303405450;
-        Wed, 12 Apr 2023 05:43:25 -0700 (PDT)
+        bh=H9NXku2pSRV2wSCRtuxBqdlKYT3KNs95Y1/l9wS3vzw=;
+        b=C1wj9Nv6NwLBAGQdk7s7cEnkrgfFXnDTq+soUojDsLUX6tm3VDFvuTxORske6suNjz
+         8H+FW8Mk+Ac/T7PsINrXpSCbcXxULnrPEx1mnRhH3XcbtizkHEUj9XRp5UxurcNirDVK
+         rKj6EOQsaAH1Gc0ekzLwMNPe/06MfdTJJ4t+vnBhkNKDxdaRy2jWOz3NepyOCQqN0EGQ
+         ouSfZdtPFMOL6jcpjhN3hfeIAKG698peXTXtD1dpGELzJrSHdDSvFvPPb73F/zHwzldF
+         LDMm/Gqb+D8w7N3Qi4y4W785tSZaIvu8yxn2yy4636CQCZV0oJhIa5Qq+8hE1KX+wpFx
+         2EtQ==
+X-Gm-Message-State: AAQBX9ctrfKCaVNmIfUGE6WeawF7mCmMyKeWE0DIUsCjelXXbYe/zEuY
+	7VtMj4nZ63BCL5al4TymdPM=
+X-Google-Smtp-Source: AKy350Z9J6ofOu5x2SAuA+Yid54vROa2O2IpNFieU9+eQdR2LmXWIs2SlT696xFupy+hn+OrZ4Z+vg==
+X-Received: by 2002:a1c:f20b:0:b0:3ed:418a:ec06 with SMTP id s11-20020a1cf20b000000b003ed418aec06mr11959758wmc.28.1681303479096;
+        Wed, 12 Apr 2023 05:44:39 -0700 (PDT)
 Received: from [192.168.2.177] ([207.188.167.132])
-        by smtp.gmail.com with ESMTPSA id 6-20020a05600c028600b003ee0d191539sm2269003wmk.10.2023.04.12.05.43.22
+        by smtp.gmail.com with ESMTPSA id p23-20020a1c7417000000b003f0824e8c92sm2294201wmc.7.2023.04.12.05.44.36
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 12 Apr 2023 05:43:24 -0700 (PDT)
-Message-ID: <95aec24f-b393-e36d-b4dd-4c0a228fc619@gmail.com>
-Date: Wed, 12 Apr 2023 14:43:22 +0200
+        Wed, 12 Apr 2023 05:44:38 -0700 (PDT)
+Message-ID: <d892f4d4-f311-4795-ded4-6b735739dd94@gmail.com>
+Date: Wed, 12 Apr 2023 14:44:35 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.6.1
-Subject: Re: [PATCH 20/27] arm64: dts: mediatek: mt6795: Add tertiary PWM node
+Subject: Re: [PATCH 26/27] arm64: dts: mediatek: mt6795-xperia-m5: Add Bosch
+ BMA255 Accelerometer
 Content-Language: en-US
 To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 Cc: p.zabel@pengutronix.de, airlied@gmail.com, daniel@ffwll.ch,
@@ -81,12 +82,12 @@ Cc: p.zabel@pengutronix.de, airlied@gmail.com, daniel@ffwll.ch,
  linux-pwm@vger.kernel.org, kernel@collabora.com,
  phone-devel@vger.kernel.org, ~postmarketos/upstreaming@lists.sr.ht
 References: <20230412112739.160376-1-angelogioacchino.delregno@collabora.com>
- <20230412112739.160376-21-angelogioacchino.delregno@collabora.com>
+ <20230412112739.160376-27-angelogioacchino.delregno@collabora.com>
 From: Matthias Brugger <matthias.bgg@gmail.com>
-In-Reply-To: <20230412112739.160376-21-angelogioacchino.delregno@collabora.com>
+In-Reply-To: <20230412112739.160376-27-angelogioacchino.delregno@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230412_054327_282549_B4CCBCC2 
-X-CRM114-Status: GOOD (  15.84  )
+X-CRM114-CacheID: sfid-20230412_054443_465370_02D27162 
+X-CRM114-Status: GOOD (  12.59  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,49 +107,49 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
 On 12/04/2023 13:27, AngeloGioacchino Del Regno wrote:
-> The PWM at 0x11006000 is the tertiary PWM; unlike PWM0, PWM1, this is
-> not display specific and can be used as a generic PWM controller.
-> 
-> This node is left disabled as usage is board-specific.
+> Add the BMA255 Accelerometer on I2C3 and its pin definitions.
 > 
 > Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 
-Applied, thanks!
+Applied, thanks
 
 > ---
->   arch/arm64/boot/dts/mediatek/mt6795.dtsi | 19 +++++++++++++++++++
->   1 file changed, 19 insertions(+)
+>   .../boot/dts/mediatek/mt6795-sony-xperia-m5.dts   | 15 +++++++++++++++
+>   1 file changed, 15 insertions(+)
 > 
-> diff --git a/arch/arm64/boot/dts/mediatek/mt6795.dtsi b/arch/arm64/boot/dts/mediatek/mt6795.dtsi
-> index cf45cb4ad3d2..50d9276d18c6 100644
-> --- a/arch/arm64/boot/dts/mediatek/mt6795.dtsi
-> +++ b/arch/arm64/boot/dts/mediatek/mt6795.dtsi
-> @@ -583,6 +583,25 @@ uart3: serial@11005000 {
->   			status = "disabled";
->   		};
->   
-> +		pwm2: pwm@11006000 {
-> +			compatible = "mediatek,mt6795-pwm";
-> +			reg = <0 0x11006000 0 0x1000>;
-> +			#pwm-cells = <2>;
-> +			interrupts = <GIC_SPI 77 IRQ_TYPE_LEVEL_LOW>;
-> +			clocks = <&topckgen CLK_TOP_PWM_SEL>,
-> +				 <&pericfg CLK_PERI_PWM>,
-> +				 <&pericfg CLK_PERI_PWM1>,
-> +				 <&pericfg CLK_PERI_PWM2>,
-> +				 <&pericfg CLK_PERI_PWM3>,
-> +				 <&pericfg CLK_PERI_PWM4>,
-> +				 <&pericfg CLK_PERI_PWM5>,
-> +				 <&pericfg CLK_PERI_PWM6>,
-> +				 <&pericfg CLK_PERI_PWM7>;
-> +			clock-names = "top", "main", "pwm1", "pwm2", "pwm3",
-> +				      "pwm4", "pwm5", "pwm6", "pwm7";
-> +			status = "disabled";
-> +		};
+> diff --git a/arch/arm64/boot/dts/mediatek/mt6795-sony-xperia-m5.dts b/arch/arm64/boot/dts/mediatek/mt6795-sony-xperia-m5.dts
+> index 155a573eac4c..0b0519f6b2f1 100644
+> --- a/arch/arm64/boot/dts/mediatek/mt6795-sony-xperia-m5.dts
+> +++ b/arch/arm64/boot/dts/mediatek/mt6795-sony-xperia-m5.dts
+> @@ -68,6 +68,13 @@ &i2c1 {
+>   	pinctrl-names = "default";
+>   	pinctrl-0 = <&i2c1_pins>;
+>   	status = "okay";
 > +
->   		i2c0: i2c@11007000 {
->   			compatible = "mediatek,mt6795-i2c", "mediatek,mt8173-i2c";
->   			reg = <0 0x11007000 0 0x70>, <0 0x11000100 0 0x80>;
+> +	accelerometer@10 {
+> +		compatible = "bosch,bma255";
+> +		reg = <0x10>;
+> +		pinctrl-names = "default";
+> +		pinctrl-0 = <&accel_pins>;
+> +	};
+>   };
+>   
+>   &i2c2 {
+> @@ -247,6 +254,14 @@ pins-irq {
+>   		};
+>   	};
+>   
+> +	accel_pins: accelerometer-pins {
+> +		pins-irq {
+> +			pinmux = <PINMUX_GPIO12__FUNC_GPIO12>;
+> +			bias-pull-up;
+> +			input-enable;
+> +		};
+> +	};
+> +
+>   	i2c0_pins: i2c0-pins {
+>   		pins-bus {
+>   			pinmux = <PINMUX_GPIO45__FUNC_SDA0>,
 
 -- 
 linux-phy mailing list
