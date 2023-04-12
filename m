@@ -4,85 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3548AC77B77
-	for <linux-phy@archiver.kernel.org>; Wed, 12 Apr 2023 11:31:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9D34DC7619A
+	for <linux-phy@archiver.kernel.org>; Wed, 12 Apr 2023 11:34:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3Qql7zXzepGKkJ0ytEZ3IbTMEikrRzIWGUo5qHHJyYI=; b=P+kXo+J+irtc1V
-	huy0RrHflTSfKSmrI+3EgJek88fNr/x009Cnq+aMoSCUpJXPRwQuyHmmw48abZWv5tH7td/LNYfsN
-	zZCsv2Klot7Sd54Z67b8fkgcvEtIqSlo+dn7HxpQg5EcvCDbTH/3e6Dam+gclSih1etVOjIzIDX3H
-	APXKaxfKSQlwLhuyu6frpPZSVnqU8Smo+aIrrHwwEp2GHmZ5IZZYrQJhdSWPLVeKF562psl+h5/CX
-	9+5vK3apVolvlHYGmlfkqgefukZnOWXNF8OoSGx0u65H1VwiEXcaYmuIwHCzjCs6SypVx7aoYe5+b
-	Jyj7xfi3Ep0LVcYt+i5w==;
+	List-Owner; bh=9D7No6nGdfixE4M+jdy4cXCXT0j6mVRMDJ8JsV7Orqw=; b=eJMig4uT0IpusP
+	dgnqxgG/yiWEUEhQ+1ryhfUvlon4Fa9bltAQ8WLCxqTWIX2RVbLvY165NGcxTpEwf43u8701bmjt/
+	Vxek1gEbC9pkWLQc0RKcrChf24dHQonqdxrrTP7P37wH5SMYfnSb4cejknHClkxlGBQnjmDVhyZat
+	2K7jpHFEHv1EpnwhYjeWFii8bmufr1Ah/szG7hEoPOfQ4rnBggpIR+ST74QsrrivO6M8ww1eSFbxS
+	eOPJZzN69YUH/8YgDMCvXkseSMocSkGTrxiIHrN0GcIwgK0ZPJreudf+VudQnn/d0tCXkcz8mw13u
+	Sz+FIxZMhjuUbCx9Pocw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pmYhR-002rLP-27;
-	Wed, 12 Apr 2023 11:31:41 +0000
-Received: from madras.collabora.co.uk ([46.235.227.172])
+	id 1pmYk2-002ta4-0B;
+	Wed, 12 Apr 2023 11:34:22 +0000
+Received: from mail-lf1-x133.google.com ([2a00:1450:4864:20::133])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pmYeG-002o9z-2p;
-	Wed, 12 Apr 2023 11:28:35 +0000
-Received: from IcarusMOD.eternityproject.eu (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	(Authenticated sender: kholk11)
-	by madras.collabora.co.uk (Postfix) with ESMTPSA id 3B916660324D;
-	Wed, 12 Apr 2023 12:28:22 +0100 (BST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1681298903;
-	bh=FrZ0bhYSUc3f/6EFDPkgRvN3ofxA9mQ25dTr2lufmAQ=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=H8J6WREJiSELQuQdZAUz06U2x3wIhPE+Q73DAEJDcHAcSc9VSJDn3cW93Gr96UhOP
-	 cDi5DV6unFsMDzilzcl3hZLFPCTwx3Pukl2mFwU71JHaBzJ2yyXe3Z7KA+s/JC7jho
-	 y4DZuZ/BblFZ2xonu/ZK+OUKSyeyZPQdRQHXyq87SORhUaosLkUSNPmhb/gnmvwnY/
-	 2di2KwWct0SxcrpIrPd9Bc6FCCLRBHerlNBBM84qKxMEIk+ZlJJhWcrxJJqhEtNGl+
-	 1tiwyeWlhwQkAdiHk8G+xC5NTgFQd86wKoDDajqup5ztiKjP/29yuHs9/1tB6gIyp3
-	 3SJCSlOfuWxBg==
-From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-To: matthias.bgg@gmail.com
-Cc: p.zabel@pengutronix.de,
-	airlied@gmail.com,
-	daniel@ffwll.ch,
-	robh+dt@kernel.org,
-	krzysztof.kozlowski+dt@linaro.org,
-	jassisinghbrar@gmail.com,
-	chunfeng.yun@mediatek.com,
-	vkoul@kernel.org,
-	kishon@kernel.org,
-	thierry.reding@gmail.com,
-	u.kleine-koenig@pengutronix.de,
-	chunkuang.hu@kernel.org,
-	angelogioacchino.delregno@collabora.com,
-	ck.hu@mediatek.com,
-	jitao.shi@mediatek.com,
-	xinlei.lee@mediatek.com,
-	houlong.wei@mediatek.com,
-	dri-devel@lists.freedesktop.org,
-	linux-mediatek@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-phy@lists.infradead.org,
-	linux-pwm@vger.kernel.org,
-	kernel@collabora.com,
-	phone-devel@vger.kernel.org,
-	~postmarketos/upstreaming@lists.sr.ht
-Subject: [PATCH 27/27] arm64: dts: mediatek: mt6795-xperia-m5: Add Bosch BMM050 Magnetometer
-Date: Wed, 12 Apr 2023 13:27:39 +0200
-Message-Id: <20230412112739.160376-28-angelogioacchino.delregno@collabora.com>
-X-Mailer: git-send-email 2.40.0
-In-Reply-To: <20230412112739.160376-1-angelogioacchino.delregno@collabora.com>
-References: <20230412112739.160376-1-angelogioacchino.delregno@collabora.com>
+	id 1pmYjy-002tWe-2l
+	for linux-phy@lists.infradead.org;
+	Wed, 12 Apr 2023 11:34:20 +0000
+Received: by mail-lf1-x133.google.com with SMTP id h12so9317294lfj.8
+        for <linux-phy@lists.infradead.org>; Wed, 12 Apr 2023 04:34:17 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1681299256;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=LxsivSQwSNGU8AJzuwSv8w61igpz8AHkC54naIDyexI=;
+        b=gwjW5QtuRbOOWCGb1dONAXAbjmFVfvKKircAtLFrbHDHFvYVlzDF5RyrRu7gHFH4uK
+         vuhlstToooIlcw0h4Wpps4ko40UZH6/bHQVOQZPzBtTxpUqM+NDyY6Uf+SqKqQBVrQfG
+         ogODpwGkP/40If5n9YAcLxLpUzAli65yuYcjp52Ud1a+AaHKKKN/nxp0s4AUcwHabfsc
+         9AZXNJAax+ENZJD6sAQlIsu9i7Dfs8TtAbAux/+o6JFnQABKwVyv29tSey5md14NMMHj
+         JlE4eaMnT9JtWqJX2tAgkvrAjKcGdEsdc9kAzkVZSGMFbyVNz6K89St/hfn0e9DxO1U+
+         GcYw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112; t=1681299256;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=LxsivSQwSNGU8AJzuwSv8w61igpz8AHkC54naIDyexI=;
+        b=ubs480gHtJMPI1CxuC8jXRznOTtaEM/Q4AwFFnh/MvQMAm6kJfWdTA7fZUfOvqTsva
+         7toOtNUDW965HeZhpF06KvBlp+jOXggPIgMB+Zvxx3RnOIKLD4vteL+aadryuAlb5gCZ
+         1CcE6t2G5N0PzpoH1HL/EwsV8n3zGbWwelTRRUb0GxaUt0FzDXXldMgXXQGuhJRUuDnM
+         i9w05eaolF9zFpXKbLWV7YrRfGOol7JoyokldtSM3FVsWn/vPD+MOb0AoUjowaLO4Dvs
+         zZMlHivw0L6wSYS9JJaZLp8LSVOFA5XGpyRVC6QlHMelIwTqVk94jl0TXE5qP9gbkM73
+         Lj4A==
+X-Gm-Message-State: AAQBX9eQxnW9zFPpVrx3dLFM/eB42CYNWj0pPlTVh5l0/hmLybU9DFnr
+	f+j3Hj28L2AdyMfvofictwhhJA==
+X-Google-Smtp-Source: AKy350Y6SI3oUzoCiPhWbY7FYgE1XH0PFnLrVCnn38wtCsCdGB0IrxcVCSFEseYoJY1ywr5ToEXxSw==
+X-Received: by 2002:ac2:5dc2:0:b0:4ec:a218:4f9b with SMTP id x2-20020ac25dc2000000b004eca2184f9bmr309937lfq.2.1681299255813;
+        Wed, 12 Apr 2023 04:34:15 -0700 (PDT)
+Received: from ?IPV6:2a02:810d:15c0:828:8fa0:9989:3f72:b14f? ([2a02:810d:15c0:828:8fa0:9989:3f72:b14f])
+        by smtp.gmail.com with ESMTPSA id v5-20020ac25605000000b004b55ddeb7e3sm2964212lfd.309.2023.04.12.04.34.14
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 12 Apr 2023 04:34:15 -0700 (PDT)
+Message-ID: <8dd0dc63-e0df-8764-f756-da032d9d671c@linaro.org>
+Date: Wed, 12 Apr 2023 13:34:13 +0200
 MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.9.1
+Subject: Re: [PATCH v4 1/3] dt-bindings: phy: Add starfive,jh7110-dphy-rx
+Content-Language: en-US
+To: Changhuang Liang <changhuang.liang@starfivetech.com>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Emil Renner Berthing <kernel@esmil.dk>, Conor Dooley <conor@kernel.org>,
+ Paul Walmsley <paul.walmsley@sifive.com>, Palmer Dabbelt
+ <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>,
+ Philipp Zabel <p.zabel@pengutronix.de>
+Cc: Jack Zhu <jack.zhu@starfivetech.com>, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-riscv@lists.infradead.org
+References: <20230412084540.295411-1-changhuang.liang@starfivetech.com>
+ <20230412084540.295411-2-changhuang.liang@starfivetech.com>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <20230412084540.295411-2-changhuang.liang@starfivetech.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230412_042825_096151_AB7CF600 
-X-CRM114-Status: UNSURE (   8.63  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230412_043418_897221_D33A79DB 
+X-CRM114-Status: GOOD (  16.83  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,34 +103,92 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This smartphone features a Bosch BMM050 Magnetometer on I2C3: enable
-it with the BMM150 binding, as that driver supports BMM050 as well.
-For this sensor, there is no interrupt pin;
-readings were validated in sysfs.
+On 12/04/2023 10:45, Changhuang Liang wrote:
+> StarFive SoCs like the jh7110 use a MIPI D-PHY RX controller based on
+> a M31 IP. Add a binding for it.
 
-Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
----
- arch/arm64/boot/dts/mediatek/mt6795-sony-xperia-m5.dts | 5 +++++
- 1 file changed, 5 insertions(+)
+So this is D-PHY? Or the other patch is D-PHY? The naming is quite
+confusing and your commit msgs are not helping here.
 
-diff --git a/arch/arm64/boot/dts/mediatek/mt6795-sony-xperia-m5.dts b/arch/arm64/boot/dts/mediatek/mt6795-sony-xperia-m5.dts
-index 0b0519f6b2f1..b5746e6d0b15 100644
---- a/arch/arm64/boot/dts/mediatek/mt6795-sony-xperia-m5.dts
-+++ b/arch/arm64/boot/dts/mediatek/mt6795-sony-xperia-m5.dts
-@@ -75,6 +75,11 @@ accelerometer@10 {
- 		pinctrl-names = "default";
- 		pinctrl-0 = <&accel_pins>;
- 	};
-+
-+	magnetometer@12 {
-+		compatible = "bosch,bmm150";
-+		reg = <0x12>;
-+	};
- };
- 
- &i2c2 {
--- 
-2.40.0
+Also the power domain phandle here adds to the confusion.
+
+
+> 
+> Signed-off-by: Changhuang Liang <changhuang.liang@starfivetech.com>
+> ---
+>  .../bindings/phy/starfive,jh7110-dphy-rx.yaml | 85 +++++++++++++++++++
+>  1 file changed, 85 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-rx.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-rx.yaml b/Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-rx.yaml
+> new file mode 100644
+> index 000000000000..5fb2f14af816
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-rx.yaml
+> @@ -0,0 +1,85 @@
+> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/phy/starfive,jh7110-dphy-rx.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: StarFive SoC MIPI D-PHY Rx Controller
+> +
+> +maintainers:
+> +  - Jack Zhu <jack.zhu@starfivetech.com>
+> +  - Changhuang Liang <changhuang.liang@starfivetech.com>
+> +
+> +description:
+> +  The StarFive SoC uses the MIPI CSI D-PHY based on M31 IP to transfer
+> +  CSI camera data.
+> +
+> +properties:
+> +  compatible:
+> +    const: starfive,jh7110-dphy-rx
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    items:
+> +      - description: config clock
+> +      - description: reference clock
+> +      - description: escape mode transmit clock
+> +
+> +  clock-names:
+> +    items:
+> +      - const: cfg
+> +      - const: ref
+> +      - const: tx
+> +
+> +  resets:
+> +    items:
+> +      - description: DPHY_HW reset
+> +      - description: DPHY_B09_ALWAYS_ON reset
+> +
+> +  power-domains:
+> +    maxItems: 1
+> +
+> +  lane_maps:
+
+Why did this appear? Underscores are not allowed. It looks like you
+re-implement some standard property.
+
+> +    $ref: /schemas/types.yaml#/definitions/uint8-array
+> +    description:
+> +      D-PHY rx controller physical lanes and logic lanes mapping table.
+> +    items:
+> +      - description: logic lane index point to physical lane clock lane 0
+> +      - description: logic lane index point to physical lane data lane 0
+> +      - description: logic lane index point to physical lane data lane 1
+> +      - description: logic lane index point to physical lane data lane 2
+> +      - description: logic lane index point to physical lane data lane 3
+> +      - description: logic lane index point to physical lane clock lane 1
+> +
+
+
+Best regards,
+Krzysztof
 
 
 -- 
