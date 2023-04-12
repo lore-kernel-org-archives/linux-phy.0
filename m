@@ -4,68 +4,91 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D348FC77B6F
-	for <linux-phy@archiver.kernel.org>; Wed, 12 Apr 2023 16:48:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2D2ACC7619A
+	for <linux-phy@archiver.kernel.org>; Wed, 12 Apr 2023 16:55:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sTw8BsU2RecYxyMSKdMGQfNUmHHSamPHeDRDSbnbPrM=; b=P20AkuHngP4zej
-	9OwHeSbAfYbTJp5bX1uTA6RHOIumYjKbuNGvz4QId8DaMcRAIKV6kv7EA0YJjqf3BNuY4weqfZKOD
-	OjAhAZMR5w1j11geoTVGDEr5e6QKxGsD93/pO1w+AR3t21T4M5QZCbW4qiJFLa+9JkOb8HEt3xS+n
-	H3vaWMqCCC9P45O6yXz0mQo2t3CXukLZBhG27IFW5lG4eJFKYrflP2PIAgcm9wjgjVzfnGpe6+1lm
-	55vgaOFuVlKsS0SPNUWTIIDcrEsg2hQAy378wfa5f8f8/5kpo1bVFDQt43AWWbYcl0WNrdrTlcYx/
-	uLzmhDZW5Siz5VdSEy7A==;
+	List-Owner; bh=qV2YX/FWZwGCUT5mkHJgstUMf7p1pOIw/pnerqXlzIE=; b=KlsDy0W74K3RMo
+	eFr14uANkaigWosCLj+CcoXTwFAGsMtkXIun8N/lc+HPLfsqNMfsy1JZXMsG7eXJhDuipqvrZkzL2
+	Ii34ftWcB8pO9RJ69HxlviEbdsAcTJbZK7BVL9ULqgBYHfSji74ZXRwLLDiZgEBdt461upIeOWbQb
+	aQQAVECM4fhm4KXfQJH09NE8ko1zO19rQoHfbXTEDv82TPQwuyO3TTqiIoG1oe2Rpvnlt1tV839ju
+	v7K+c7qfM7WUgCv8QNK/PhXkP5KwiwEGLRiwbhyH16yIIHYMd3sYfTmTX3XIz0qUi619JgVx/u5RN
+	ulvculgL6cLWZHRC8cSg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pmdeP-003rzH-1J;
-	Wed, 12 Apr 2023 16:48:53 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1pmdkw-003szC-2i;
+	Wed, 12 Apr 2023 16:55:38 +0000
+Received: from mail-ej1-x633.google.com ([2a00:1450:4864:20::633])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pmdeM-003ryT-0D
+	id 1pmdkt-003sxh-18
 	for linux-phy@lists.infradead.org;
-	Wed, 12 Apr 2023 16:48:52 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 89F4362C24;
-	Wed, 12 Apr 2023 16:48:49 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1AA1EC433EF;
-	Wed, 12 Apr 2023 16:48:47 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1681318129;
-	bh=7qe6tDINt8atXyxbretT9jduzqXkPutQK0imrEiy+jo=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=PZUq7itMDWtTyuJxZZ7hnxLSxoYqyEqPpkXLHoOo/ISgDljUXmwlYcrACkWfi63dm
-	 VSdnEw+KjcR53FZqpWqbjLJ/IFcd5KfkKeWCBrUkilEQgJ610Uu5u0qBaYPVSumBQN
-	 mOA0mYad6qXgUJ4TtNAllT4nhdguqyPRwPQfSrV9aH9n2Vn1hyGrGbQtP0+x2fusCT
-	 3SBxZn4jYNjwwf7pN86zhx6qnlKSzn1f4jENG0ybKUck1c7OXDvbtACohDwAvGQUod
-	 VURAs4el3aGXSunUoOLQhNK0FSgG4Tx5759uloWOYmHfq1zz1Sl1UwsBQVMG5DLm6q
-	 xWsS0OXK2LvLA==
-Date: Wed, 12 Apr 2023 22:18:44 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Herve Codina <herve.codina@bootlin.com>
-Cc: "David S. Miller" <davem@davemloft.net>,
-	Eric Dumazet <edumazet@google.com>,
-	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	linux-kernel@vger.kernel.org, netdev@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	Christophe Leroy <christophe.leroy@csgroup.eu>,
-	Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Subject: Re: [RFC PATCH 2/4] phy: Extend API to support 'status' get and
- notification
-Message-ID: <ZDbg7HMj+x88QXwN@matsya>
-References: <20230323103154.264546-1-herve.codina@bootlin.com>
- <20230323103154.264546-3-herve.codina@bootlin.com>
+	Wed, 12 Apr 2023 16:55:36 +0000
+Received: by mail-ej1-x633.google.com with SMTP id dm2so30621378ejc.8
+        for <linux-phy@lists.infradead.org>; Wed, 12 Apr 2023 09:55:34 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1681318533;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=mL1Dmw1t8cH96ZKM0Y0rJ8RmORlNySoRf2nYIAB9Jzo=;
+        b=d28p+fne4GmzRaXHcfIxScgVDg2XtPaJGzWNaeaYsnNrQP/mFYMAIAV3JVbIhWDMbu
+         Fa+/y0rOjrQPkLzfSI6ggc0jbtP9nYDqnOK077i5kTPh8kOdV3bpjER9aYcC8vx/sHXf
+         HdT2ny8s6RCRLIUyjNv7y+Ibx+zZyzkG8t5szrFkZzvxweU3bHSpAcmn+pNldAXxUH8d
+         p1ZhmAYs7zvjgQiOszonoIM3nAVZ/FLwjfVIHk9otAEY6sN0RaSz9SJ3uqwLgFyz5u8A
+         wEZkcdzxtdnDXXTnp4vMPvK7zFjOCAV86N8J/5DyF+XoPB3yX3zTK3yYn/4clac6Z2gG
+         bFMw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1681318533;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=mL1Dmw1t8cH96ZKM0Y0rJ8RmORlNySoRf2nYIAB9Jzo=;
+        b=RoPqb/2TDShHTv910l4JkM3o2sFtpMzjrwBqutYN3sdE8nRTuz/wfRyT5TYAnU9LGf
+         kpXg4NmmyDpaN+zQ3OSJss6snLKADI3FW66rQXHz3Pjc3tafhDaC4eOZgXm8wtpc50BB
+         AbsLeFw+vpVixfOnYgwuVmdrvXRe8N5+S5MwoY+iWdLC6NHrk9y8xUej7rLRBG2VtOJC
+         0y+3DVResm9DtgF2aWS0rd13k8V+Hubx3z2dTijBzoR5QjDcJfooK4ekHd8UuyxGxApx
+         rfBzEtIXeHEsPE70vP30UzNGxT4iV4k1jFomXkyhk0pDnayueJU1XwfPZ9mXVFtyQor9
+         3hzw==
+X-Gm-Message-State: AAQBX9fcvtYnF4nhEbtJO0EZrltRHP+F8TLbtBBBP3dUuP6gFAyv2fPU
+	x8H5DPWz8amWPN0c1PIkdO6qWA==
+X-Google-Smtp-Source: AKy350Z1Gn9hA8XdncuSMlmsY8g62jmSran04JCDS9kQw1y/M/VsEQjsDf8807x9ocMfcFbFGA7tSQ==
+X-Received: by 2002:a17:906:538d:b0:94a:582d:169f with SMTP id g13-20020a170906538d00b0094a582d169fmr12936153ejo.5.1681318532872;
+        Wed, 12 Apr 2023 09:55:32 -0700 (PDT)
+Received: from ?IPV6:2a02:810d:15c0:828:938a:b3db:7c59:795e? ([2a02:810d:15c0:828:938a:b3db:7c59:795e])
+        by smtp.gmail.com with ESMTPSA id f9-20020aa7d849000000b00505034c27b9sm822863eds.28.2023.04.12.09.55.31
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 12 Apr 2023 09:55:32 -0700 (PDT)
+Message-ID: <f6a4fb28-d635-4d99-44bb-d929cb41eef2@linaro.org>
+Date: Wed, 12 Apr 2023 18:55:31 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20230323103154.264546-3-herve.codina@bootlin.com>
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.9.1
+Subject: Re: [PATCH v4 1/3] dt-bindings: phy: Add starfive,jh7110-dphy-rx
+Content-Language: en-US
+To: Changhuang Liang <changhuang.liang@starfivetech.com>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Emil Renner Berthing <kernel@esmil.dk>, Conor Dooley <conor@kernel.org>,
+ Paul Walmsley <paul.walmsley@sifive.com>, Palmer Dabbelt
+ <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>,
+ Philipp Zabel <p.zabel@pengutronix.de>
+Cc: Jack Zhu <jack.zhu@starfivetech.com>, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-riscv@lists.infradead.org
+References: <20230412084540.295411-1-changhuang.liang@starfivetech.com>
+ <20230412084540.295411-2-changhuang.liang@starfivetech.com>
+ <8dd0dc63-e0df-8764-f756-da032d9d671c@linaro.org>
+ <eb47b7c7-bdbb-92d9-ba39-604ce487f297@starfivetech.com>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <eb47b7c7-bdbb-92d9-ba39-604ce487f297@starfivetech.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230412_094850_179844_3DAFEEA3 
-X-CRM114-Status: GOOD (  40.91  )
+X-CRM114-CacheID: sfid-20230412_095535_400273_EF12A3EC 
+X-CRM114-Status: GOOD (  16.24  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,322 +105,56 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 23-03-23, 11:31, Herve Codina wrote:
-> The PHY API provides functions to control and pass information from the
-> PHY consumer to the PHY provider.
-> There is no way for the consumer to get direct information from the PHY
-> or be notified by the PHY.
+On 12/04/2023 14:42, Changhuang Liang wrote:
 > 
-> To fill this hole, two API function are provided:
 > 
-> - phy_get_status()
->   This function can be used to get a "status" from the PHY. It is built
->   as the same ways as the configure() function. The status information
->   present in the status retrieved depends on the PHY's phy_mode.
->   This allows to get a "status" depending on the kind of PHY.
+> On 2023/4/12 19:34, Krzysztof Kozlowski wrote:
+>> On 12/04/2023 10:45, Changhuang Liang wrote:
+>>> StarFive SoCs like the jh7110 use a MIPI D-PHY RX controller based on
+>>> a M31 IP. Add a binding for it.
+>>
+>> So this is D-PHY? Or the other patch is D-PHY? The naming is quite
+>> confusing and your commit msgs are not helping here.
+>>
+>> Also the power domain phandle here adds to the confusion.
+>>
+> 
+> Yes, this is DPHY, DPHY has rx and tx, and last version we are discussing that 
+> use power domain replace syscon:
+> https://lore.kernel.org/all/5dc4ddc2-9d15-ebb2-38bc-8a544ca67e0d@starfivetech.com/
 
-what does 'status' mean and communicate to used? How does having this
-help?
+The other patch - DPHY PMU - is confusing. Instead of writing short
+commits, explain more.
 
 > 
-> - phy_atomic_notifier_(un)register()
->   These functions can be used to register/unregister an atomic notifier
->   block. The event available at this time is the PHY_EVENT_STATUS status
->   event which purpose is to signal some changes in the status available
->   using phy_get_status().
+>>>
+>>> Signed-off-by: Changhuang Liang <changhuang.liang@starfivetech.com>
+>>> ---
+>>>  .../bindings/phy/starfive,jh7110-dphy-rx.yaml | 85 +++++++++++++++++++
+>>>  1 file changed, 85 insertions(+)
+>>>  create mode 100644 Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-rx.yaml
+>>>
+> [...]
+>>> +
+>>> +  power-domains:
+>>> +    maxItems: 1
+>>> +
+>>> +  lane_maps:
+>>
+>> Why did this appear? Underscores are not allowed. It looks like you
+>> re-implement some standard property.
+>>
 > 
-> An new kind of PHY is added: PHY_MODE_BASIC.
-> This new kind of PHY represents a basic PHY offering a basic status This
-> status contains a link state indication.
-> With the new API, a link state indication can be retrieve using
-> phy_get_status() and link state changes can be notified.
-> 
-> Signed-off-by: Herve Codina <herve.codina@bootlin.com>
-> ---
->  drivers/phy/phy-core.c        | 88 ++++++++++++++++++++++++++++++++++
->  include/linux/phy/phy-basic.h | 27 +++++++++++
->  include/linux/phy/phy.h       | 89 ++++++++++++++++++++++++++++++++++-
->  3 files changed, 203 insertions(+), 1 deletion(-)
->  create mode 100644 include/linux/phy/phy-basic.h
-> 
-> diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
-> index 9951efc03eaa..c7b568b99dce 100644
-> --- a/drivers/phy/phy-core.c
-> +++ b/drivers/phy/phy-core.c
-> @@ -551,6 +551,94 @@ int phy_validate(struct phy *phy, enum phy_mode mode, int submode,
->  }
->  EXPORT_SYMBOL_GPL(phy_validate);
->  
-> +/**
-> + * phy_get_status() - Gets the phy status
-> + * @phy: the phy returned by phy_get()
-> + * @status: the status to retrieve
-> + *
-> + * Used to get the PHY status. phy_init() must have been called
-> + * on the phy. The status will be retrieved from the current phy mode,
-> + * that can be changed using phy_set_mode().
-> + *
-> + * Return: %0 if successful, a negative error code otherwise
-> + */
-> +int phy_get_status(struct phy *phy, union phy_status *status)
-> +{
-> +	int ret;
-> +
-> +	if (!phy)
-> +		return -EINVAL;
-> +
-> +	if (!phy->ops->get_status)
-> +		return -EOPNOTSUPP;
-> +
-> +	mutex_lock(&phy->mutex);
-> +	ret = phy->ops->get_status(phy, status);
-> +	mutex_unlock(&phy->mutex);
-> +
-> +	return ret;
-> +}
-> +EXPORT_SYMBOL_GPL(phy_get_status);
-> +
-> +/**
-> + * phy_atomic_notifier_register() - Registers an atomic notifier
-> + * @phy: the phy returned by phy_get()
-> + * @nb: the notifier block to register
-> + *
-> + * Used to register a notifier block on PHY events. phy_init() must have
-> + * been called on the phy.
-> + * The notifier function given in the notifier_block must not sleep.
-> + * The available PHY events are present in enum phy_events
-> + *
-> + * Return: %0 if successful, a negative error code otherwise
-> + */
-> +int phy_atomic_notifier_register(struct phy *phy, struct notifier_block *nb)
-> +{
-> +	int ret;
-> +
-> +	if (!phy)
-> +		return -EINVAL;
-> +
-> +	if (!phy->ops->atomic_notifier_register ||
-> +	    !phy->ops->atomic_notifier_unregister)
-> +		return -EOPNOTSUPP;
-> +
-> +	mutex_lock(&phy->mutex);
-> +	ret = phy->ops->atomic_notifier_register(phy, nb);
-> +	mutex_unlock(&phy->mutex);
-> +
-> +	return ret;
-> +}
-> +EXPORT_SYMBOL_GPL(phy_atomic_notifier_register);
-> +
-> +/**
-> + * phy_atomic_notifier_unregister() - Unregisters an atomic notifier
-> + * @phy: the phy returned by phy_get()
-> + * @nb: the notifier block to unregister
-> + *
-> + * Used to unregister a notifier block. phy_init() must have
-> + * been called on the phy.
-> + *
-> + * Return: %0 if successful, a negative error code otherwise
-> + */
-> +int phy_atomic_notifier_unregister(struct phy *phy, struct notifier_block *nb)
-> +{
-> +	int ret;
-> +
-> +	if (!phy)
-> +		return -EINVAL;
-> +
-> +	if (!phy->ops->atomic_notifier_unregister)
-> +		return -EOPNOTSUPP;
-> +
-> +	mutex_lock(&phy->mutex);
-> +	ret = phy->ops->atomic_notifier_unregister(phy, nb);
-> +	mutex_unlock(&phy->mutex);
-> +
-> +	return ret;
-> +}
-> +EXPORT_SYMBOL_GPL(phy_atomic_notifier_unregister);
-> +
->  /**
->   * _of_phy_get() - lookup and obtain a reference to a phy by phandle
->   * @np: device_node for which to get the phy
-> diff --git a/include/linux/phy/phy-basic.h b/include/linux/phy/phy-basic.h
-> new file mode 100644
-> index 000000000000..95668c610c78
-> --- /dev/null
-> +++ b/include/linux/phy/phy-basic.h
-> @@ -0,0 +1,27 @@
-> +/* SPDX-License-Identifier: GPL-2.0 */
-> +/*
-> + * Copyright 2023 CS GROUP France
-> + *
-> + * Author: Herve Codina <herve.codina@bootlin.com>
-> + */
-> +
-> +#ifndef __PHY_BASIC_H_
-> +#define __PHY_BASIC_H_
-> +
-> +#include <linux/types.h>
-> +
-> +/**
-> + * struct phy_status_basic - Basic PHY status
-> + *
-> + * This structure is used to represent the status of a Basic phy.
-> + */
-> +struct phy_status_basic {
-> +	/**
-> +	 * @link_state:
-> +	 *
-> +	 * Link state. true, the link is on, false, the link is off.
-> +	 */
-> +	bool link_is_on;
-> +};
-> +
-> +#endif /* __PHY_DP_H_ */
-> diff --git a/include/linux/phy/phy.h b/include/linux/phy/phy.h
-> index 3a570bc59fc7..40370d41012b 100644
-> --- a/include/linux/phy/phy.h
-> +++ b/include/linux/phy/phy.h
-> @@ -16,6 +16,7 @@
->  #include <linux/pm_runtime.h>
->  #include <linux/regulator/consumer.h>
->  
-> +#include <linux/phy/phy-basic.h>
->  #include <linux/phy/phy-dp.h>
->  #include <linux/phy/phy-lvds.h>
->  #include <linux/phy/phy-mipi-dphy.h>
-> @@ -42,7 +43,8 @@ enum phy_mode {
->  	PHY_MODE_MIPI_DPHY,
->  	PHY_MODE_SATA,
->  	PHY_MODE_LVDS,
-> -	PHY_MODE_DP
-> +	PHY_MODE_DP,
-> +	PHY_MODE_BASIC,
->  };
->  
->  enum phy_media {
-> @@ -67,6 +69,22 @@ union phy_configure_opts {
->  	struct phy_configure_opts_lvds		lvds;
->  };
->  
-> +/**
-> + * union phy_status - Opaque generic phy status
-> + *
-> + * @basic:	Status availbale phys supporting the Basic phy mode.
-> + */
-> +union phy_status {
-> +	struct phy_status_basic		basic;
-> +};
-> +
-> +/**
-> + * phy_event - event available for notification
-> + */
-> +enum phy_event {
-> +	PHY_EVENT_STATUS,	/* Event notified on phy_status changes */
-> +};
-> +
->  /**
->   * struct phy_ops - set of function pointers for performing phy operations
->   * @init: operation to be performed for initializing phy
-> @@ -120,6 +138,45 @@ struct phy_ops {
->  	 */
->  	int	(*validate)(struct phy *phy, enum phy_mode mode, int submode,
->  			    union phy_configure_opts *opts);
-> +
-> +	/**
-> +	 * @get_status:
-> +	 *
-> +	 * Optional.
-> +	 *
-> +	 * Used to get the PHY status. phy_init() must have
-> +	 * been called on the phy.
-> +	 *
-> +	 * Returns: 0 if successful, an negative error code otherwise
-> +	 */
-> +	int	(*get_status)(struct phy *phy, union phy_status *status);
-> +
-> +	/**
-> +	 * @atomic_notifier_register:
-> +	 *
-> +	 * Optional.
-> +	 *
-> +	 * Used to register a notifier block on PHY events. phy_init() must have
-> +	 * been called on the phy.
-> +	 * The notifier function given in the notifier_block must not sleep.
-> +	 * The available PHY events are present in enum phy_events
-> +	 *
-> +	 * Returns: 0 if successful, an negative error code otherwise
-> +	 */
-> +	int	(*atomic_notifier_register)(struct phy *phy, struct notifier_block *nb);
-> +
-> +	/**
-> +	 * @atomic_notifier_unregister:
-> +	 *
-> +	 * Mandatoty if @atomic_notifier_register is set.
-> +	 *
-> +	 * Used to unregister a notifier block on PHY events. phy_init() must have
-> +	 * been called on the phy.
-> +	 *
-> +	 * Returns: 0 if successful, an negative error code otherwise
-> +	 */
-> +	int	(*atomic_notifier_unregister)(struct phy *phy, struct notifier_block *nb);
-> +
->  	int	(*reset)(struct phy *phy);
->  	int	(*calibrate)(struct phy *phy);
->  	void	(*release)(struct phy *phy);
-> @@ -234,6 +291,10 @@ int phy_set_speed(struct phy *phy, int speed);
->  int phy_configure(struct phy *phy, union phy_configure_opts *opts);
->  int phy_validate(struct phy *phy, enum phy_mode mode, int submode,
->  		 union phy_configure_opts *opts);
-> +int phy_get_status(struct phy *phy, union phy_status *status);
-> +int phy_atomic_notifier_register(struct phy *phy, struct notifier_block *nb);
-> +int phy_atomic_notifier_unregister(struct phy *phy, struct notifier_block *nb);
-> +
->  
->  static inline enum phy_mode phy_get_mode(struct phy *phy)
->  {
-> @@ -412,6 +473,32 @@ static inline int phy_validate(struct phy *phy, enum phy_mode mode, int submode,
->  	return -ENOSYS;
->  }
->  
-> +static inline int phy_get_status(struct phy *phy, union phy_status *status)
-> +{
-> +	if (!phy)
-> +		return 0;
-> +
-> +	return -ENOSYS;
-> +}
-> +
-> +static inline int phy_atomic_notifier_register(struct phy *phy,
-> +					       struct notifier_block *nb)
-> +{
-> +	if (!phy)
-> +		return 0;
-> +
-> +	return -ENOSYS;
-> +}
-> +
-> +static inline int phy_atomic_notifier_unregister(struct phy *phy,
-> +						 struct notifier_block *nb)
-> +{
-> +	if (!phy)
-> +		return 0;
-> +
-> +	return -ENOSYS;
-> +}
-> +
->  static inline int phy_get_bus_width(struct phy *phy)
->  {
->  	return -ENOSYS;
-> -- 
-> 2.39.2
-> 
-> 
-> -- 
-> linux-phy mailing list
-> linux-phy@lists.infradead.org
-> https://lists.infradead.org/mailman/listinfo/linux-phy
+> Will change to lane-maps.
+> Yes, according to Vinod advice, lane mapping table use device tree
+> to parse makes sense.
 
--- 
-~Vinod
+Hm, I have a feeling that I saw such property, so you should dig into
+existing and in-flight bindings.
+
+Best regards,
+Krzysztof
+
 
 -- 
 linux-phy mailing list
