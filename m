@@ -4,74 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DEC75C77B61
-	for <linux-phy@archiver.kernel.org>; Thu, 13 Apr 2023 09:29:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E2DE4C77B6C
+	for <linux-phy@archiver.kernel.org>; Thu, 13 Apr 2023 10:43:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jaXdPP7KyWsZ0EEpG6Lm27dwn9IgXxrbSuY07e4CFro=; b=KdYxoY/rm5MHHq
-	BTWKFCjKEGWIvvA1xHVz+KNWWJIRr9FKJxFV6+RMVgA/inFu8WwEhLW/ZSPc+jLv1QHamCh5mAYUC
-	or8cdJoM1uOSMuKIhTwTKsG0xOoIoF/sZ4ururtomLuOsWi4nYr5MwRPb82XQHGedDWunVSd4Ofow
-	0hzE9m7evqkaC2OPZ8HokZueeYeUAQys8K6CkWGMWx9sq0+TzIcOK5DgvOKgoZjnN4VHSDmazfH65
-	w9MBL/de7yF1llRSqz5WiE4jkGYwAMJlBc/cn5NL5IgPeKrNKETRqcrTxeuL3u9sFqjF4IkICGGG4
-	0pHktebDrgqRSsHEK0MQ==;
+	List-Owner; bh=Cn24q5yX+IcXpJEUswtQoF75Nve/OIg4DsrfIM/9XxM=; b=V44/NX9RoboOpf
+	a9OKd6F6/UbFZlUqE/w8c59DV0TrL0A2c9idMrL9So9tdJQeoPLbE6O8xclsUAGPwcebmlHLpamH/
+	wXA5pBdsB8w4avbKEVHkJ0Ub272RivJ6cFU5cSooceYuIkFrTdvugbrDDfNiD1VF/FZBL9QC+3wsL
+	LOwciR3FFTdCzrBOMO6TTUILCB7FekRR527iO5z1eOoRGZGW8LB9cLFl7lG7DOlxo7/bnG/6/VVxV
+	wNsy2g5muAdttTgREFrilajWPLs8y6ORyez4TIeSwd6MbCm/J6cRYdhGPyDr8H4/x6nhB+XXKAdqs
+	uzVeHQxZwbVgf5MH20jg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pmtGJ-005cxq-1h;
-	Thu, 13 Apr 2023 09:29:03 +0000
-Received: from madras.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e5ab])
-	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pmtGB-005csn-0b;
-	Thu, 13 Apr 2023 09:28:56 +0000
-Received: from [192.168.1.100] (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
-	(No client certificate requested)
-	(Authenticated sender: kholk11)
-	by madras.collabora.co.uk (Postfix) with ESMTPSA id 461686603207;
-	Thu, 13 Apr 2023 10:28:52 +0100 (BST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1681378133;
-	bh=XjK0zXGcRUwWwMF6tZnTtwrjb64IJRzNjt7p/8KBhjs=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=d6UgCefhED/N6R8YjSiNAxuQU77pHTuH671k0sortzz+h8HWsWRqZ+jYQSW7fvRuT
-	 eyERdIo/mVGeDewj1B8XzdivfyeIBoj4BbuwUO+g6g4nueknODvGQJMPlI4yxePiu7
-	 NuOwzs1nxxvQLZoT6Gz6QqlumXZ/LPPtoRalL/PNZBRzWi21FDr1ERMSzf5/YdQ0ao
-	 SuCRTmMDLW4w6pVFA5oYs7uzGfTMJDl8OlQ+a74HPRNcFs/xWKKxq7XUUUEEK9E3RM
-	 B6DPGx+OyIBsldxVd+4s/2jbWuEmIGhyaXfSXOHhbMSK51XO+1b02CwJ3aQWBP1d/D
-	 z/bAWlEu4eshg==
-Message-ID: <4a016428-be44-27e3-5bc2-dc517922fa15@collabora.com>
-Date: Thu, 13 Apr 2023 11:28:49 +0200
+	id 1pmuQE-005uCD-1F;
+	Thu, 13 Apr 2023 10:43:22 +0000
+Received: from fd01.gateway.ufhost.com ([61.152.239.71])
+	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
+	id 1pmuQ8-005trP-2z;
+	Thu, 13 Apr 2023 10:43:20 +0000
+Received: from EXMBX165.cuchost.com (unknown [175.102.18.54])
+	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
+	(Client CN "EXMBX165", Issuer "EXMBX165" (not verified))
+	by fd01.gateway.ufhost.com (Postfix) with ESMTP id 6A80224E2AE;
+	Thu, 13 Apr 2023 18:42:30 +0800 (CST)
+Received: from EXMBX171.cuchost.com (172.16.6.91) by EXMBX165.cuchost.com
+ (172.16.6.75) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Thu, 13 Apr
+ 2023 18:42:30 +0800
+Received: from [192.168.125.108] (183.27.97.249) by EXMBX171.cuchost.com
+ (172.16.6.91) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Thu, 13 Apr
+ 2023 18:42:29 +0800
+Message-ID: <fc30ac6c-7103-f601-429f-c9a180869284@starfivetech.com>
+Date: Thu, 13 Apr 2023 18:42:28 +0800
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
  Thunderbird/102.9.1
-Subject: Re: [PATCH 01/27] dt-bindings: pwm: Add compatible for MediaTek
- MT6795
+Subject: Re: [PATCH v4 5/7] dt-bindings: usb: Add StarFive JH7110 USB Bindings
+ YAML schemas
 Content-Language: en-US
-To: Matthias Brugger <matthias.bgg@gmail.com>, Rob Herring <robh@kernel.org>
-Cc: p.zabel@pengutronix.de, linux-pwm@vger.kernel.org, kernel@collabora.com,
- chunkuang.hu@kernel.org, linux-phy@lists.infradead.org, ck.hu@mediatek.com,
- jitao.shi@mediatek.com, houlong.wei@mediatek.com,
- linux-kernel@vger.kernel.org, phone-devel@vger.kernel.org, vkoul@kernel.org,
- chunfeng.yun@mediatek.com, daniel@ffwll.ch, robh+dt@kernel.org,
- linux-mediatek@lists.infradead.org, xinlei.lee@mediatek.com,
- airlied@gmail.com, u.kleine-koenig@pengutronix.de,
- linux-arm-kernel@lists.infradead.org, krzysztof.kozlowski+dt@linaro.org,
- kishon@kernel.org, ~postmarketos/upstreaming@lists.sr.ht,
- thierry.reding@gmail.com, devicetree@vger.kernel.org,
- dri-devel@lists.freedesktop.org, jassisinghbrar@gmail.com
-References: <20230412112739.160376-1-angelogioacchino.delregno@collabora.com>
- <20230412112739.160376-2-angelogioacchino.delregno@collabora.com>
- <168133318912.3190428.16120880490622098945.robh@kernel.org>
- <5c0bc1f2-5917-ab84-8b0b-f2adc48f8be7@gmail.com>
-From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-In-Reply-To: <5c0bc1f2-5917-ab84-8b0b-f2adc48f8be7@gmail.com>
+To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, Emil Renner Berthing
+	<emil.renner.berthing@canonical.com>, Conor Dooley <conor@kernel.org>, "Vinod
+ Koul" <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, "Rob
+ Herring" <robh+dt@kernel.org>, Krzysztof Kozlowski
+	<krzysztof.kozlowski+dt@linaro.org>, Pawel Laszczak <pawell@cadence.com>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Peter Chen
+	<peter.chen@kernel.org>, Roger Quadros <rogerq@kernel.org>, Philipp Zabel
+	<p.zabel@pengutronix.de>
+CC: <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+	<linux-phy@lists.infradead.org>, <linux-usb@vger.kernel.org>,
+	<linux-riscv@lists.infradead.org>, Paul Walmsley <paul.walmsley@sifive.com>,
+	Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>,
+	"Mason Huo" <mason.huo@starfivetech.com>
+References: <20230406015216.27034-1-minda.chen@starfivetech.com>
+ <20230406015216.27034-6-minda.chen@starfivetech.com>
+ <a22dff0a-56e6-be1b-10b2-ce3b31f420c5@linaro.org>
+From: Minda Chen <minda.chen@starfivetech.com>
+In-Reply-To: <a22dff0a-56e6-be1b-10b2-ce3b31f420c5@linaro.org>
+X-Originating-IP: [183.27.97.249]
+X-ClientProxiedBy: EXCAS062.cuchost.com (172.16.6.22) To EXMBX171.cuchost.com
+ (172.16.6.91)
+X-YovoleRuleAgent: yovoleflag
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230413_022855_367986_AC42F1E8 
-X-CRM114-Status: GOOD (  13.66  )
+X-CRM114-CacheID: sfid-20230413_034317_302475_2B190016 
+X-CRM114-Status: GOOD (  18.11  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,28 +81,140 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SWwgMTMvMDQvMjMgMTA6NTIsIE1hdHRoaWFzIEJydWdnZXIgaGEgc2NyaXR0bzoKPiAKPiAKPiBP
-biAxMi8wNC8yMDIzIDIzOjAzLCBSb2IgSGVycmluZyB3cm90ZToKPj4KPj4gT24gV2VkLCAxMiBB
-cHIgMjAyMyAxMzoyNzoxMyArMDIwMCwgQW5nZWxvR2lvYWNjaGlubyBEZWwgUmVnbm8gd3JvdGU6
-Cj4+PiBBZGQgYSBjb21wYXRpYmxlIHN0cmluZyBmb3IgTWVkaWFUZWsgSGVsaW8gWDEwIE1UNjc5
-NSdzIGRpc3BsYXkgUFdNCj4+PiBibG9jazogdGhpcyBpcyB0aGUgc2FtZSBhcyBNVDgxNzMuCj4+
-Pgo+Pj4gU2lnbmVkLW9mZi1ieTogQW5nZWxvR2lvYWNjaGlubyBEZWwgUmVnbm8gPGFuZ2Vsb2dp
-b2FjY2hpbm8uZGVscmVnbm9AY29sbGFib3JhLmNvbT4KPj4+IC0tLQo+Pj4gwqAgRG9jdW1lbnRh
-dGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3B3bS9tZWRpYXRlayxwd20tZGlzcC55YW1sIHwgNCAr
-KystCj4+PiDCoCAxIGZpbGUgY2hhbmdlZCwgMyBpbnNlcnRpb25zKCspLCAxIGRlbGV0aW9uKC0p
-Cj4+Pgo+Pgo+PiBSdW5uaW5nICdtYWtlIGR0YnNfY2hlY2snIHdpdGggdGhlIHNjaGVtYSBpbiB0
-aGlzIHBhdGNoIGdpdmVzIHRoZQo+PiBmb2xsb3dpbmcgd2FybmluZ3MuIENvbnNpZGVyIGlmIHRo
-ZXkgYXJlIGV4cGVjdGVkIG9yIHRoZSBzY2hlbWEgaXMKPj4gaW5jb3JyZWN0LiBUaGVzZSBtYXkg
-bm90IGJlIG5ldyB3YXJuaW5ncy4KPj4KPiAKPiBUaGVzZSBhcmUgbm90IG5ldyB3YXJuaW5ncy4g
-SSB0aGluayB3ZSBzaG91bGQgYWRkcmVzcyB0aGVtIGluIGEgZGlmZmVyZW50IHBhdGNoLiBJbiAK
-PiBteSBvcGluaW9uIGl0IHNob3VsZG4ndCBibG9jayB0aGlzIHBhdGNoLiBJbiB0aGUgZW5kIGl0
-IG9ubHkgYWRkIGFzIGNvbXBhdGlibGUgaGVyZS4KPiAKCkkgYWdyZWUuIFRoZXNlIHdhcm5pbmdz
-IHNob3VsZCBub3QgYmxvY2sgdGhpcyBwYXRjaCwgYXMgdGhleSdyZSB0b3RhbGx5IHVucmVsYXRl
-ZAp0byBpdC4KClJlZ2FyZHMsCkFuZ2VsbwoKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0Cmxp
-bnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9t
-YWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+
+
+On 2023/4/12 16:32, Krzysztof Kozlowski wrote:
+> On 06/04/2023 03:52, Minda Chen wrote:
+>> StarFive JH7110 platforms USB have a wrapper module around
+>> the Cadence USBSS-DRD controller. Add binding information doc
+>> for that.
+> 
+> That's one of the most redundant subjects I saw. You basically used four
+> words for one meaning. These are not exactly synonyms, but they all are
+> either imprecise or meaning the same.
+> 
+> Subject: drop second/last, redundant "Bindings YAML schemas". The
+> "dt-bindings" prefix is already stating that these are bindings.
+> 
+> 
+ok
+> 
+>> 
+>> Signed-off-by: Minda Chen <minda.chen@starfivetech.com>
+>> Reviewed-by: Peter Chen <peter.chen@kernel.org>
+>> ---
+>>  .../bindings/usb/starfive,jh7110-usb.yaml     | 136 ++++++++++++++++++
+>>  1 file changed, 136 insertions(+)
+>>  create mode 100644 Documentation/devicetree/bindings/usb/starfive,jh7110-usb.yaml
+>> 
+>> diff --git a/Documentation/devicetree/bindings/usb/starfive,jh7110-usb.yaml b/Documentation/devicetree/bindings/usb/starfive,jh7110-usb.yaml
+>> new file mode 100644
+>> index 000000000000..c8b30b583854
+>> --- /dev/null
+>> +++ b/Documentation/devicetree/bindings/usb/starfive,jh7110-usb.yaml
+>> @@ -0,0 +1,136 @@
+>> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+>> +%YAML 1.2
+>> +---
+>> +$id: http://devicetree.org/schemas/usb/starfive,jh7110-usb.yaml#
+>> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+>> +
+>> +title: StarFive JH7110 wrapper module for the Cadence USBSS-DRD controller
+> 
+> What do you wrap here? Are you sure this is a wrapper? I think this is
+> just USB controller?
+> 
+Since the previous version is wrapper module. I forgot change this.
+I will change to "StarFive JH7110 Cadence USBSS-DRD SoC controller"
+>> +
+>> +maintainers:
+>> +  - Minda Chen <minda.chen@starfivetech.com>
+>> +
+>> +properties:
+>> +  compatible:
+>> +    const: starfive,jh7110-usb
+>> +
+>> +  reg:
+>> +    items:
+>> +      - description: OTG controller registers
+>> +      - description: XHCI Host controller registers
+>> +      - description: DEVICE controller registers
+>> +
+>> +  reg-names:
+>> +    items:
+>> +      - const: otg
+>> +      - const: xhci
+>> +      - const: dev
+>> +
+>> +  interrupts:
+>> +    items:
+>> +      - description: XHCI host controller interrupt
+>> +      - description: Device controller interrupt
+>> +      - description: OTG/DRD controller interrupt
+>> +
+>> +  interrupt-names:
+>> +    items:
+>> +      - const: host
+>> +      - const: peripheral
+>> +      - const: otg
+>> +
+>> +  clocks:
+>> +    items:
+>> +      - description: lpm clock
+>> +      - description: stb clock
+>> +      - description: apb clock
+>> +      - description: axi clock
+>> +      - description: utmi apb clock
+>> +
+>> +  clock-names:
+>> +    items:
+>> +      - const: lpm
+>> +      - const: stb
+>> +      - const: apb
+>> +      - const: axi
+>> +      - const: utmi_apb
+>> +
+>> +  resets:
+>> +    items:
+>> +      - description: PWRUP reset
+>> +      - description: APB clock reset
+>> +      - description: AXI clock reset
+>> +      - description: UTMI_APB clock reset
+>> +
+>> +  reset-names:
+>> +    items:
+>> +      - const: pwrup
+>> +      - const: apb
+>> +      - const: axi
+>> +      - const: utmi
+>> +
+>> +  starfive,stg-syscon:
+>> +    $ref: /schemas/types.yaml#/definitions/phandle-array
+>> +    items:
+>> +      items:
+> 
+> Same problem as for other patches.
+> 
+I am sorry about this. I should change this in this version.
+PCIe PHY dt-binding doc will be also changed. 
+>> +        - description: phandle to System Register Controller stg_syscon node.
+>> +        - description: register offset of STG_SYSCONSAIF__SYSCFG register for USB.
+>> +    description:
+>> +      The phandle to System Register Controller syscon node and the offset
+>> +      of STG_SYSCONSAIF__SYSCFG register for USB.
+>> +
+> 
+> 
+> Best regards,
+> Krzysztof
+> 
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
