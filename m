@@ -4,82 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AB122C77B6C
-	for <linux-phy@archiver.kernel.org>; Wed, 12 Apr 2023 22:45:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EAD20C7619A
+	for <linux-phy@archiver.kernel.org>; Thu, 13 Apr 2023 01:30:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Date:Subject:Message-Id:References:
-	In-Reply-To:Cc:To:From:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yvtSWlsGJhjOBKLRcxHRJxXG+l84WQwnrxmqd1Rz1V8=; b=bYuo3dzhAyoE6c
-	pX5wximIN8GmCHoIqrfxk0G5Usj5QLZuXhYlPYvbWzvrn0Y0pNAD96+4oKxday7CvFV/sK4wQW2hg
-	vXnelYwSbtJH2Y+G1ASYiWptTB31sUnAVZD3g3oqKD7bg5AB0dK1zqs+ICTok/VBB8hHbG/Aa66bE
-	SKtAn3cw08yj+Tay1aB3Lr581BQ7fsK7WGeckeSxhLl5C+ul5bAucBk8cNFPmE0XNSBOqUog+hKL5
-	JLuqtq66XMdBkUp2Zuid6i+qIQ9uMeJUaHN810lBXg8gk/lNyiY86YIKUV2yRgK5MQJAdE6l2oiD5
-	EkHX7Ea0WgMOYddePKXg==;
+	List-Owner; bh=i21NI8zTzIpIPnBpBceXnxZTYhfmVZh6sAAKwpo2eQM=; b=qnB1ERNfavcyTg
+	FHtCj7YKfT7QNMcsvGzidq76v6U+so1XZ09jrqICvY8/kxKMS0HSqmtK43ucdYpkM6OmaYDKUgzLG
+	VhnEmbFbcjij46dPK2O5BHDT508e3cgg79LIZQP7FhwkOgHtK1wA5t5GQFBufZq3bRO0KjWBwdZIF
+	5HRYrEwQwToZ71HO84emuobYKfa8D1CnHyiDeSfirNoAAyK3Jql5tZwWlqoREie+fdiEu5xhrZ6xR
+	EwrMa/9ZsbSInwz5VQ323j8wDJaA9OAbqXNVIBgRBTYTKBZSyFEVl31Bo6IXPECVZQDmN/TksHcfW
+	J/64XGbJ9vaMbEWuB27Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pmjDo-004Yqb-0f;
-	Wed, 12 Apr 2023 22:45:48 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
-	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pmjDm-004YmI-1L;
-	Wed, 12 Apr 2023 22:45:46 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Date:Subject:Message-Id:References:
-	In-Reply-To:Cc:To:From:MIME-Version:Content-Transfer-Encoding:Content-Type:
-	Sender:Reply-To:Content-ID:Content-Description;
-	bh=v+uWMvL1JjVQ02tgsbvMPzDV91ZJCdH7YAirSLH3VxE=; b=F9Xya8tfiMi57mPSH40zC4CQrc
-	gFKNhC5vE36nMku6A7QdIqce5Hh7ndH+En6ptkuOwNf9QTPH74N/5o5faHjSRa7xJq4GLU9oneEgR
-	OsA76cmt0UXH0kFR3cDerMMGEo5kQQwOhlZvio91ISSYHR0lnI+PKhG4rul6wSCFP1Br1JuqGfY3I
-	EJGCwU3xWqMlUOorOWZS5vlwW+lAZeblOiyO2fGFzWnvqCwPVJ0rLvT2+G1oSGmreIcqYakIWiBIr
-	yxQTQqUYgbM1vXaJo91tMMJgIEQzKPid9NA96cDvwFaCav6uvBx+slcuAITO1pmB6O4vBpbR98yVm
-	HxRp415w==;
-Received: from mail-oa1-f50.google.com ([209.85.160.50])
-	by desiato.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pmhdA-00E2ML-16;
-	Wed, 12 Apr 2023 21:04:18 +0000
-Received: by mail-oa1-f50.google.com with SMTP id 586e51a60fabf-1842cddca49so15515416fac.1;
-        Wed, 12 Apr 2023 14:03:49 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1681333428; x=1683925428;
-        h=date:subject:message-id:references:in-reply-to:cc:to:from
-         :mime-version:content-transfer-encoding:x-gm-message-state:from:to
-         :cc:subject:date:message-id:reply-to;
-        bh=v+uWMvL1JjVQ02tgsbvMPzDV91ZJCdH7YAirSLH3VxE=;
-        b=SslR/lcAml5Sgt+n8xKwp6pXm9GkSrZx+d2/F74tJ9Hb+jtZL4FtIeUFGUSkaoQqLV
-         /6/wjswYnrt28dootuZDAczvK6G1RvjosCCR9C9i3BwjvOeetAVGz49myDFACyiQEZ8t
-         O1IjBRtbgKwEc3eVIoBeWdhOcobJ/0wm8ni2UXA8o/C8/2I9AvGgHgd/kSgdt+8QlLv7
-         2JOKeEZmzkZHQ0GCBwbAOusBfHL4v7Q6gX6mKMnuH+ATw2wkjoI27ptKTDZbtm78g+p8
-         urX1ttdKtnwjENfXOpQ4uDJBcKPcnSGZ/v2vqCGdFw54HKBrbo7Z/FCwdv1KIkmICGDg
-         tK1A==
-X-Gm-Message-State: AAQBX9fRRWb7vwaTyqDGgwTIdLtG517QWX3w5w569qwPwViVTOlXN7Gf
-	dRiK30JQaUjDH+tebp+A1Q==
-X-Google-Smtp-Source: AKy350ZGedVWO+UH7Kb/1/nuC17CI2iBehcLz3EF/x0xZ+eL9nRB9pTxfFGFz39F3+ADZj4wEBMRIg==
-X-Received: by 2002:a05:6871:592:b0:177:c62f:b059 with SMTP id u18-20020a056871059200b00177c62fb059mr104163oan.49.1681333428270;
-        Wed, 12 Apr 2023 14:03:48 -0700 (PDT)
-Received: from robh_at_kernel.org (66-90-144-107.dyn.grandenetworks.net. [66.90.144.107])
-        by smtp.gmail.com with ESMTPSA id ef42-20020a0568701aaa00b0018449ae08cesm65854oab.13.2023.04.12.14.03.47
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 12 Apr 2023 14:03:47 -0700 (PDT)
-Received: (nullmailer pid 3200531 invoked by uid 1000);
-	Wed, 12 Apr 2023 21:03:44 -0000
+	id 1pmlmj-004l6B-0q;
+	Thu, 13 Apr 2023 01:30:01 +0000
+Received: from fd01.gateway.ufhost.com ([61.152.239.71])
+	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
+	id 1pmlmf-004l5C-0G;
+	Thu, 13 Apr 2023 01:29:59 +0000
+Received: from EXMBX166.cuchost.com (unknown [175.102.18.54])
+	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
+	(Client CN "EXMBX166", Issuer "EXMBX166" (not verified))
+	by fd01.gateway.ufhost.com (Postfix) with ESMTP id A4D907FEF;
+	Thu, 13 Apr 2023 09:29:27 +0800 (CST)
+Received: from EXMBX162.cuchost.com (172.16.6.72) by EXMBX166.cuchost.com
+ (172.16.6.76) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Thu, 13 Apr
+ 2023 09:29:27 +0800
+Received: from [192.168.125.82] (183.27.97.249) by EXMBX162.cuchost.com
+ (172.16.6.72) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Thu, 13 Apr
+ 2023 09:29:26 +0800
+Message-ID: <b05a43df-1138-3dbd-08a9-0f2bc9b74807@starfivetech.com>
+Date: Thu, 13 Apr 2023 09:29:25 +0800
 MIME-Version: 1.0
-From: Rob Herring <robh@kernel.org>
-To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-Cc: linux-pwm@vger.kernel.org, chunkuang.hu@kernel.org, linux-phy@lists.infradead.org, krzysztof.kozlowski+dt@linaro.org, devicetree@vger.kernel.org, thierry.reding@gmail.com, ck.hu@mediatek.com, kishon@kernel.org, chunfeng.yun@mediatek.com, matthias.bgg@gmail.com, phone-devel@vger.kernel.org, linux-arm-kernel@lists.infradead.org, vkoul@kernel.org, linux-mediatek@lists.infradead.org, houlong.wei@mediatek.com, ~postmarketos/upstreaming@lists.sr.ht, jitao.shi@mediatek.com, linux-kernel@vger.kernel.org, airlied@gmail.com, p.zabel@pengutronix.de, jassisinghbrar@gmail.com, xinlei.lee@mediatek.com, robh+dt@kernel.org, daniel@ffwll.ch, dri-devel@lists.freedesktop.org, kernel@collabora.com, u.kleine-koenig@pengutronix.de
-In-Reply-To: <20230412112739.160376-6-angelogioacchino.delregno@collabora.com>
-References: <20230412112739.160376-1-angelogioacchino.delregno@collabora.com>
- <20230412112739.160376-6-angelogioacchino.delregno@collabora.com>
-Message-Id: <168133319295.3190915.16401727674710547355.robh@kernel.org>
-Subject: Re: [PATCH 05/27] dt-bindings: display: mediatek: dsi: Add
- compatible for MediaTek MT6795
-Date: Wed, 12 Apr 2023 16:03:44 -0500
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.9.0
+Subject: Re: [PATCH v4 1/3] dt-bindings: phy: Add starfive,jh7110-dphy-rx
+Content-Language: en-US
+To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, Vinod Koul
+	<vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring
+	<robh+dt@kernel.org>, Krzysztof Kozlowski
+	<krzysztof.kozlowski+dt@linaro.org>, Emil Renner Berthing <kernel@esmil.dk>,
+	Conor Dooley <conor@kernel.org>, Paul Walmsley <paul.walmsley@sifive.com>,
+	Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>,
+	Philipp Zabel <p.zabel@pengutronix.de>
+CC: Jack Zhu <jack.zhu@starfivetech.com>, <linux-phy@lists.infradead.org>,
+	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+	<linux-riscv@lists.infradead.org>
+References: <20230412084540.295411-1-changhuang.liang@starfivetech.com>
+ <20230412084540.295411-2-changhuang.liang@starfivetech.com>
+ <8dd0dc63-e0df-8764-f756-da032d9d671c@linaro.org>
+ <eb47b7c7-bdbb-92d9-ba39-604ce487f297@starfivetech.com>
+ <f6a4fb28-d635-4d99-44bb-d929cb41eef2@linaro.org>
+From: Changhuang Liang <changhuang.liang@starfivetech.com>
+In-Reply-To: <f6a4fb28-d635-4d99-44bb-d929cb41eef2@linaro.org>
+X-Originating-IP: [183.27.97.249]
+X-ClientProxiedBy: EXCAS064.cuchost.com (172.16.6.24) To EXMBX162.cuchost.com
+ (172.16.6.72)
+X-YovoleRuleAgent: yovoleflag
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230412_220407_404421_3A2944AB 
-X-CRM114-Status: UNSURE (   9.72  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230412_182957_454142_F4702700 
+X-CRM114-Status: GOOD (  14.50  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,87 +85,68 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Wed, 12 Apr 2023 13:27:17 +0200, AngeloGioacchino Del Regno wrote:
-> Add a compatible string for MediaTek Helio X10 MT6795, using the same
-> DSI block as MT8173.
+
+On 2023/4/13 0:55, Krzysztof Kozlowski wrote:
+> On 12/04/2023 14:42, Changhuang Liang wrote:
+>>
+>>
+>> On 2023/4/12 19:34, Krzysztof Kozlowski wrote:
+>>> On 12/04/2023 10:45, Changhuang Liang wrote:
+>>>> StarFive SoCs like the jh7110 use a MIPI D-PHY RX controller based on
+>>>> a M31 IP. Add a binding for it.
+>>>
+>>> So this is D-PHY? Or the other patch is D-PHY? The naming is quite
+>>> confusing and your commit msgs are not helping here.
+>>>
+>>> Also the power domain phandle here adds to the confusion.
+>>>
+>>
+>> Yes, this is DPHY, DPHY has rx and tx, and last version we are discussing that 
+>> use power domain replace syscon:
+>> https://lore.kernel.org/all/5dc4ddc2-9d15-ebb2-38bc-8a544ca67e0d@starfivetech.com/
 > 
-> Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-> ---
->  .../display/mediatek/mediatek,dsi.yaml        | 19 ++++++++++++-------
->  1 file changed, 12 insertions(+), 7 deletions(-)
+> The other patch - DPHY PMU - is confusing. Instead of writing short
+> commits, explain more.
 > 
 
-Running 'make dtbs_check' with the schema in this patch gives the
-following warnings. Consider if they are expected or the schema is
-incorrect. These may not be new warnings.
+OK, I will add more commit message in DPHY PMU dt-binding patch, for example:
 
-Note that it is not yet a requirement to have 0 warnings for dtbs_check.
-This will change in the future.
+dt-bindings: power: Add JH7110 DPHY PMU support.
 
-Full log is available here: https://patchwork.ozlabs.org/project/devicetree-bindings/patch/20230412112739.160376-6-angelogioacchino.delregno@collabora.com
+Add DPHY PMU for StarFive JH7110 SoC, it can be used to turn on/off DPHY rx/tx
+power switch, and it don't need the reg and interrupt properties.
 
+I think this commit message will helpful for you to distinguish them.
 
-dsi@1400c000: compatible: 'oneOf' conditional failed, one must be fixed:
-	arch/arm/boot/dts/mt7623n-bananapi-bpi-r2.dtb
-	arch/arm/boot/dts/mt7623n-rfb-emmc.dtb
-
-dsi@14014000: 'port' is a required property
-	arch/arm64/boot/dts/mediatek/mt8183-evb.dtb
-	arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-burnet.dtb
-	arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-cozmo.dtb
-	arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-damu.dtb
-	arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-fennel14.dtb
-	arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-fennel14-sku2.dtb
-	arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-fennel-sku1.dtb
-	arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-fennel-sku6.dtb
-	arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-fennel-sku7.dtb
-	arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-juniper-sku16.dtb
-	arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-kappa.dtb
-	arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-kenzo.dtb
-	arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-willow-sku0.dtb
-	arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-willow-sku1.dtb
-	arch/arm64/boot/dts/mediatek/mt8183-kukui-kakadu.dtb
-	arch/arm64/boot/dts/mediatek/mt8183-kukui-kakadu-sku22.dtb
-	arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama-sku16.dtb
-	arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama-sku272.dtb
-	arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama-sku288.dtb
-	arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama-sku32.dtb
-	arch/arm64/boot/dts/mediatek/mt8183-kukui-krane-sku0.dtb
-	arch/arm64/boot/dts/mediatek/mt8183-kukui-krane-sku176.dtb
-
-dsi@14014000: Unevaluated properties are not allowed ('ports' was unexpected)
-	arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-burnet.dtb
-	arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-cozmo.dtb
-	arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-damu.dtb
-	arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-fennel14.dtb
-	arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-fennel14-sku2.dtb
-	arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-fennel-sku1.dtb
-	arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-fennel-sku6.dtb
-	arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-fennel-sku7.dtb
-	arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-juniper-sku16.dtb
-	arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-kappa.dtb
-	arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-kenzo.dtb
-	arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-willow-sku0.dtb
-	arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-willow-sku1.dtb
-	arch/arm64/boot/dts/mediatek/mt8183-kukui-kakadu.dtb
-	arch/arm64/boot/dts/mediatek/mt8183-kukui-kakadu-sku22.dtb
-	arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama-sku16.dtb
-	arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama-sku272.dtb
-	arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama-sku288.dtb
-	arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama-sku32.dtb
-	arch/arm64/boot/dts/mediatek/mt8183-kukui-krane-sku0.dtb
-	arch/arm64/boot/dts/mediatek/mt8183-kukui-krane-sku176.dtb
-
-dsi@1401b000: 'port' is a required property
-	arch/arm64/boot/dts/mediatek/mt8173-elm.dtb
-	arch/arm64/boot/dts/mediatek/mt8173-elm-hana.dtb
-	arch/arm64/boot/dts/mediatek/mt8173-elm-hana-rev7.dtb
-
-dsi@1401b000: Unevaluated properties are not allowed ('ports' was unexpected)
-	arch/arm64/boot/dts/mediatek/mt8173-elm.dtb
-	arch/arm64/boot/dts/mediatek/mt8173-elm-hana.dtb
-	arch/arm64/boot/dts/mediatek/mt8173-elm-hana-rev7.dtb
-
+>>
+>>>>
+>>>> Signed-off-by: Changhuang Liang <changhuang.liang@starfivetech.com>
+>>>> ---
+>>>>  .../bindings/phy/starfive,jh7110-dphy-rx.yaml | 85 +++++++++++++++++++
+>>>>  1 file changed, 85 insertions(+)
+>>>>  create mode 100644 Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-rx.yaml
+>>>>
+>> [...]
+>>>> +
+>>>> +  power-domains:
+>>>> +    maxItems: 1
+>>>> +
+>>>> +  lane_maps:
+>>>
+>>> Why did this appear? Underscores are not allowed. It looks like you
+>>> re-implement some standard property.
+>>>
+>>
+>> Will change to lane-maps.
+>> Yes, according to Vinod advice, lane mapping table use device tree
+>> to parse makes sense.
+> 
+> Hm, I have a feeling that I saw such property, so you should dig into
+> existing and in-flight bindings.
+> 
+> Best regards,
+> Krzysztof
+> 
 
 -- 
 linux-phy mailing list
