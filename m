@@ -4,72 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9C96DC77B61
-	for <linux-phy@archiver.kernel.org>; Thu, 13 Apr 2023 09:04:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DEC75C77B61
+	for <linux-phy@archiver.kernel.org>; Thu, 13 Apr 2023 09:29:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JLKm/OMuD+OOrqJ2FBjDvSjdltOKxoCjNy2du9ydjEs=; b=n6GUb7uhE6ja7L
-	Vsfrh3ObtoGT0oR7TPND2rTLCBxnk6q1fzNwXNwVqBcvvONjQxzpSugtv8FBntHmDsNM0MrZRCWgD
-	HD1qR0Rlsgw0aG/FJOl8tlzgyRLyXvO+iGyLwIjlhMT+klg++tyyfmByRL0HyxPW3FLCwLF3iHsuR
-	2ElnP0jd0ZaKfOQVaaTqdDKEbArC0AQh2pAVobqNwIWU87uOo8/XdNByX7rlIYKOUwbAugkGbVQvc
-	SkaS1KkKt0mhqXtLt5or2UCpeVfbHDJvdSinPzpwTmoNdR7Kbs0FuQ7GGrYkDYUfBcfxSli/UINJx
-	XXP7YRP283QJLw0j3zeg==;
+	List-Owner; bh=jaXdPP7KyWsZ0EEpG6Lm27dwn9IgXxrbSuY07e4CFro=; b=KdYxoY/rm5MHHq
+	BTWKFCjKEGWIvvA1xHVz+KNWWJIRr9FKJxFV6+RMVgA/inFu8WwEhLW/ZSPc+jLv1QHamCh5mAYUC
+	or8cdJoM1uOSMuKIhTwTKsG0xOoIoF/sZ4ururtomLuOsWi4nYr5MwRPb82XQHGedDWunVSd4Ofow
+	0hzE9m7evqkaC2OPZ8HokZueeYeUAQys8K6CkWGMWx9sq0+TzIcOK5DgvOKgoZjnN4VHSDmazfH65
+	w9MBL/de7yF1llRSqz5WiE4jkGYwAMJlBc/cn5NL5IgPeKrNKETRqcrTxeuL3u9sFqjF4IkICGGG4
+	0pHktebDrgqRSsHEK0MQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pmssH-005Vhs-0w;
-	Thu, 13 Apr 2023 09:04:13 +0000
-Received: from fd01.gateway.ufhost.com ([61.152.239.71])
-	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pmssB-005VX2-2u;
-	Thu, 13 Apr 2023 09:04:11 +0000
-Received: from EXMBX165.cuchost.com (unknown [175.102.18.54])
-	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
-	(Client CN "EXMBX165", Issuer "EXMBX165" (not verified))
-	by fd01.gateway.ufhost.com (Postfix) with ESMTP id A83E48067;
-	Thu, 13 Apr 2023 17:03:00 +0800 (CST)
-Received: from EXMBX162.cuchost.com (172.16.6.72) by EXMBX165.cuchost.com
- (172.16.6.75) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Thu, 13 Apr
- 2023 17:03:00 +0800
-Received: from [192.168.125.82] (183.27.97.249) by EXMBX162.cuchost.com
- (172.16.6.72) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Thu, 13 Apr
- 2023 17:02:59 +0800
-Message-ID: <0c94aadf-fac3-d05c-1c54-ae8337526849@starfivetech.com>
-Date: Thu, 13 Apr 2023 17:02:58 +0800
+	id 1pmtGJ-005cxq-1h;
+	Thu, 13 Apr 2023 09:29:03 +0000
+Received: from madras.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e5ab])
+	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
+	id 1pmtGB-005csn-0b;
+	Thu, 13 Apr 2023 09:28:56 +0000
+Received: from [192.168.1.100] (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
+	(No client certificate requested)
+	(Authenticated sender: kholk11)
+	by madras.collabora.co.uk (Postfix) with ESMTPSA id 461686603207;
+	Thu, 13 Apr 2023 10:28:52 +0100 (BST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1681378133;
+	bh=XjK0zXGcRUwWwMF6tZnTtwrjb64IJRzNjt7p/8KBhjs=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=d6UgCefhED/N6R8YjSiNAxuQU77pHTuH671k0sortzz+h8HWsWRqZ+jYQSW7fvRuT
+	 eyERdIo/mVGeDewj1B8XzdivfyeIBoj4BbuwUO+g6g4nueknODvGQJMPlI4yxePiu7
+	 NuOwzs1nxxvQLZoT6Gz6QqlumXZ/LPPtoRalL/PNZBRzWi21FDr1ERMSzf5/YdQ0ao
+	 SuCRTmMDLW4w6pVFA5oYs7uzGfTMJDl8OlQ+a74HPRNcFs/xWKKxq7XUUUEEK9E3RM
+	 B6DPGx+OyIBsldxVd+4s/2jbWuEmIGhyaXfSXOHhbMSK51XO+1b02CwJ3aQWBP1d/D
+	 z/bAWlEu4eshg==
+Message-ID: <4a016428-be44-27e3-5bc2-dc517922fa15@collabora.com>
+Date: Thu, 13 Apr 2023 11:28:49 +0200
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.9.0
-Subject: Re: [PATCH v4 1/3] dt-bindings: phy: Add starfive,jh7110-dphy-rx
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.9.1
+Subject: Re: [PATCH 01/27] dt-bindings: pwm: Add compatible for MediaTek
+ MT6795
 Content-Language: en-US
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, Vinod Koul
-	<vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring
-	<robh+dt@kernel.org>, Krzysztof Kozlowski
-	<krzysztof.kozlowski+dt@linaro.org>, Emil Renner Berthing <kernel@esmil.dk>,
-	Conor Dooley <conor@kernel.org>, Paul Walmsley <paul.walmsley@sifive.com>,
-	Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>,
-	Philipp Zabel <p.zabel@pengutronix.de>
-CC: Jack Zhu <jack.zhu@starfivetech.com>, <linux-phy@lists.infradead.org>,
-	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-	<linux-riscv@lists.infradead.org>
-References: <20230412084540.295411-1-changhuang.liang@starfivetech.com>
- <20230412084540.295411-2-changhuang.liang@starfivetech.com>
- <8dd0dc63-e0df-8764-f756-da032d9d671c@linaro.org>
- <eb47b7c7-bdbb-92d9-ba39-604ce487f297@starfivetech.com>
- <f6a4fb28-d635-4d99-44bb-d929cb41eef2@linaro.org>
- <b34a8d59-34e4-8358-9d2b-367f4707ca7c@starfivetech.com>
- <f0d82428-aaa5-3dd4-bc29-f1057fe749bc@linaro.org>
-From: Changhuang Liang <changhuang.liang@starfivetech.com>
-In-Reply-To: <f0d82428-aaa5-3dd4-bc29-f1057fe749bc@linaro.org>
-X-Originating-IP: [183.27.97.249]
-X-ClientProxiedBy: EXCAS066.cuchost.com (172.16.6.26) To EXMBX162.cuchost.com
- (172.16.6.72)
-X-YovoleRuleAgent: yovoleflag
+To: Matthias Brugger <matthias.bgg@gmail.com>, Rob Herring <robh@kernel.org>
+Cc: p.zabel@pengutronix.de, linux-pwm@vger.kernel.org, kernel@collabora.com,
+ chunkuang.hu@kernel.org, linux-phy@lists.infradead.org, ck.hu@mediatek.com,
+ jitao.shi@mediatek.com, houlong.wei@mediatek.com,
+ linux-kernel@vger.kernel.org, phone-devel@vger.kernel.org, vkoul@kernel.org,
+ chunfeng.yun@mediatek.com, daniel@ffwll.ch, robh+dt@kernel.org,
+ linux-mediatek@lists.infradead.org, xinlei.lee@mediatek.com,
+ airlied@gmail.com, u.kleine-koenig@pengutronix.de,
+ linux-arm-kernel@lists.infradead.org, krzysztof.kozlowski+dt@linaro.org,
+ kishon@kernel.org, ~postmarketos/upstreaming@lists.sr.ht,
+ thierry.reding@gmail.com, devicetree@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, jassisinghbrar@gmail.com
+References: <20230412112739.160376-1-angelogioacchino.delregno@collabora.com>
+ <20230412112739.160376-2-angelogioacchino.delregno@collabora.com>
+ <168133318912.3190428.16120880490622098945.robh@kernel.org>
+ <5c0bc1f2-5917-ab84-8b0b-f2adc48f8be7@gmail.com>
+From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+In-Reply-To: <5c0bc1f2-5917-ab84-8b0b-f2adc48f8be7@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230413_020408_255341_D2268FAA 
-X-CRM114-Status: GOOD (  12.13  )
+X-CRM114-CacheID: sfid-20230413_022855_367986_AC42F1E8 
+X-CRM114-Status: GOOD (  13.66  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,54 +83,28 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-
-On 2023/4/13 16:41, Krzysztof Kozlowski wrote:
-> On 13/04/2023 04:34, Changhuang Liang wrote:
->>>>>> +  lane_maps:
->>>>>
->>>>> Why did this appear? Underscores are not allowed. It looks like you
->>>>> re-implement some standard property.
->>>>>
->>>>
->>>> Will change to lane-maps.
->>>> Yes, according to Vinod advice, lane mapping table use device tree
->>>> to parse makes sense.
->>>
->>> Hm, I have a feeling that I saw such property, so you should dig into
->>> existing and in-flight bindings.
->>>
->>> Best regards,
->>> Krzysztof
->>>
->>
->> A standard property? Like "clocks" or "resets"?
-> 
-> Like lane-polarities now submitted to one MIPI.
-> 
-> Anyway it does not look like a property of a board. You said it is fixed
-> per SoC, so it should be implied from the compatible. Otherwise please
-> explain in description and provide some rationale.
-> 
-> Best regards,
-> Krzysztof
-> 
-
-This property is the only one used for this IP, I have compared this IP with
-other DPHY rx module, DPHY modules form the other manufacturers not have this
-configure.
-And we also have a SoC called JH7100. It DPHY rx module is the same as JH7110.
-But we don't do the upstream work on it. If it use this lane-maps will be 
-configure as "lane_maps = /bits/ 8 <0 1 2 3 4 5>;".
-So what do you think? Can this configure be implemented into a property?
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+SWwgMTMvMDQvMjMgMTA6NTIsIE1hdHRoaWFzIEJydWdnZXIgaGEgc2NyaXR0bzoKPiAKPiAKPiBP
+biAxMi8wNC8yMDIzIDIzOjAzLCBSb2IgSGVycmluZyB3cm90ZToKPj4KPj4gT24gV2VkLCAxMiBB
+cHIgMjAyMyAxMzoyNzoxMyArMDIwMCwgQW5nZWxvR2lvYWNjaGlubyBEZWwgUmVnbm8gd3JvdGU6
+Cj4+PiBBZGQgYSBjb21wYXRpYmxlIHN0cmluZyBmb3IgTWVkaWFUZWsgSGVsaW8gWDEwIE1UNjc5
+NSdzIGRpc3BsYXkgUFdNCj4+PiBibG9jazogdGhpcyBpcyB0aGUgc2FtZSBhcyBNVDgxNzMuCj4+
+Pgo+Pj4gU2lnbmVkLW9mZi1ieTogQW5nZWxvR2lvYWNjaGlubyBEZWwgUmVnbm8gPGFuZ2Vsb2dp
+b2FjY2hpbm8uZGVscmVnbm9AY29sbGFib3JhLmNvbT4KPj4+IC0tLQo+Pj4gwqAgRG9jdW1lbnRh
+dGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3B3bS9tZWRpYXRlayxwd20tZGlzcC55YW1sIHwgNCAr
+KystCj4+PiDCoCAxIGZpbGUgY2hhbmdlZCwgMyBpbnNlcnRpb25zKCspLCAxIGRlbGV0aW9uKC0p
+Cj4+Pgo+Pgo+PiBSdW5uaW5nICdtYWtlIGR0YnNfY2hlY2snIHdpdGggdGhlIHNjaGVtYSBpbiB0
+aGlzIHBhdGNoIGdpdmVzIHRoZQo+PiBmb2xsb3dpbmcgd2FybmluZ3MuIENvbnNpZGVyIGlmIHRo
+ZXkgYXJlIGV4cGVjdGVkIG9yIHRoZSBzY2hlbWEgaXMKPj4gaW5jb3JyZWN0LiBUaGVzZSBtYXkg
+bm90IGJlIG5ldyB3YXJuaW5ncy4KPj4KPiAKPiBUaGVzZSBhcmUgbm90IG5ldyB3YXJuaW5ncy4g
+SSB0aGluayB3ZSBzaG91bGQgYWRkcmVzcyB0aGVtIGluIGEgZGlmZmVyZW50IHBhdGNoLiBJbiAK
+PiBteSBvcGluaW9uIGl0IHNob3VsZG4ndCBibG9jayB0aGlzIHBhdGNoLiBJbiB0aGUgZW5kIGl0
+IG9ubHkgYWRkIGFzIGNvbXBhdGlibGUgaGVyZS4KPiAKCkkgYWdyZWUuIFRoZXNlIHdhcm5pbmdz
+IHNob3VsZCBub3QgYmxvY2sgdGhpcyBwYXRjaCwgYXMgdGhleSdyZSB0b3RhbGx5IHVucmVsYXRl
+ZAp0byBpdC4KClJlZ2FyZHMsCkFuZ2VsbwoKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0Cmxp
+bnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9t
+YWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
