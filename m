@@ -4,93 +4,140 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D2132C77B6E
-	for <linux-phy@archiver.kernel.org>; Thu, 13 Apr 2023 14:13:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8FD93C77B6E
+	for <linux-phy@archiver.kernel.org>; Thu, 13 Apr 2023 16:00:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZOPmksti2X76+oO7k08HbT+IFonhd4pH9CXbMHxIf0s=; b=tEUGkTD7y2opSe
-	rF+RAiqicCc8MfzrQTNzH+2/pWykzZ322L7pWmXfYkraoIrulLXeXi85QJPEbFWJMdtqv6Vrb2Vuf
-	me65wdspVX0RX3KEs3lip4ddzbJYPXdGg1rKkxfexJ6d03loAevZLxfswG8j2nGdP5exfME3RgqQi
-	Ksp18MnWTQ6htcKdg/4nTcwc4D9uDOHxTyXR23arJQ4tnh8hVmkQnuczcn4GAFPkbFiQYkFrD5QJi
-	EaAPmhd1GZKQmKYwCoA5ee00OTKgRZPDQdeAzhTy/zbgfi6ztiB7jgHg+ya8rEIA68kaw6ZGdVprs
-	hKtBP8KkDeYh5ESCbE2g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:
+	References:Cc:To:Subject:Date:Message-ID:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=uJYkLngcG6PkoHOCeUO8bWcpQDbgbX2fBkO6WAvkzlY=; b=kmspQcB1cJxSnB5ipHFwYoLYHU
+	XwqJwDky//cR22rgyKJnFJfuq8r4wbCjFOA7a1g23Ax9pKW3WwjxWl43SlIyu/rhutz5eBdORqTJ2
+	l5mMy8Vvys8iuq1JJCnjQ10SCTmLwi/8J+UfB6mwWr6WlCSDapBhd+jdlUYf/Nq1MiKLvOF5EwUD1
+	6QXeEDMJyNmX+R9UCmWZUnb8+SVEebl12ZPdN4AhYM8g4xF01jVTmmflYvx05gpnhSUkHXiyjnjvK
+	81KAy60n+lvPd+6yGZd9a1G+IC77j293K7bqTyry7JJUcQth8S6GO/2+6dj9SBiAx5WgDuhSXevR6
+	i/gAMsew==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pmxhX-006NCl-18;
-	Thu, 13 Apr 2023 14:13:27 +0000
-Received: from mail-ej1-x629.google.com ([2a00:1450:4864:20::629])
+	id 1pmzNT-006YAR-0i;
+	Thu, 13 Apr 2023 16:00:51 +0000
+Received: from mail-am7eur03hn20315.outbound.protection.outlook.com ([2a01:111:f400:7eaf::315] helo=EUR03-AM7-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pmxhR-006NAu-2a
-	for linux-phy@lists.infradead.org;
-	Thu, 13 Apr 2023 14:13:25 +0000
-Received: by mail-ej1-x629.google.com with SMTP id si1so7613488ejb.10
-        for <linux-phy@lists.infradead.org>; Thu, 13 Apr 2023 07:13:18 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1681395197; x=1683987197;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=XUg/Vhl4ma9csERVssXScNUtMrmvSNZoznhCnpPJffE=;
-        b=o3pqnoQR4q+ECIpxDAjZaH/4ZWbbQfmxWI6mJm3FRP3DH1F5T10tUc8vA+LQkAPG4U
-         IvrPmcpwx1owZ8nbuwzp309bofZsDRqgVggAMO3fC8hOfX0Rkj9v31IOD83GO/yNikat
-         n7X4vEP4prszZMluVSt81aL4wqkHgbJUq/eNKBqB59fmqjxEJwnChR7FfFvURf+nzBMH
-         TUXCZfE/EU9F4C52w5qHtJCetUCRleFf+IMG+aZIlkM2DmXtGdpNKnjqMR8xR/hVgb1C
-         9Z2iYsiutkweUPzWyxpxe3Ob9tyL5vmr+ffXHYpu8ZWbZWf9JrO4kd1I/xOXvgNLTGns
-         4hMg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1681395197; x=1683987197;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=XUg/Vhl4ma9csERVssXScNUtMrmvSNZoznhCnpPJffE=;
-        b=j2rbySpTyD2Z1UEf0zew2//Pxglsqj1Hix0WSHfaYl6WFOEx5pwhftnU2r2MxG84lw
-         XDoaNmq1PjnrREci9HLBxYvRqPWoLlz8OmzbigFsMJzo3lzDytkc/uU7JAeLzN3nlUBZ
-         cbNTbl2C+ajtOSDWKy6SOQDhItqHBFGw14dAFC8V0qvxqWIkwXdBbTG/nU+yRyiJ/Ijz
-         3LIGRGJONgHUHYlR8bIEsIRrSqyFYIVdnZTEk9tAp0sdUvirN1z8WanmfSqAn3PeB5nh
-         +cVyAzPfJ9I/+DVXikiqNdT6Fml8Xn5oq2ba7KvxpHL9VIGPji5Hd/O0GRHd6PS8VVYa
-         QgUA==
-X-Gm-Message-State: AAQBX9ckqoDs357PPJNj1CB/MqIHGi0ZcWHWK5rTYstdY73cJaLpNK+Q
-	l8v4s/1VEQaNKTjDeok29b3KNA==
-X-Google-Smtp-Source: AKy350bqaGf9G9UynCwnECkBk51iC6Y9ZmFekAq/MvRpTO/3kxt99/nMVf+P8TxZ4KgLopGpGReGLQ==
-X-Received: by 2002:a17:906:e25a:b0:94a:96c4:2361 with SMTP id gq26-20020a170906e25a00b0094a96c42361mr2684805ejb.73.1681395197078;
-        Thu, 13 Apr 2023 07:13:17 -0700 (PDT)
-Received: from ?IPV6:2a02:810d:15c0:828:5032:d2d4:ece5:b035? ([2a02:810d:15c0:828:5032:d2d4:ece5:b035])
-        by smtp.gmail.com with ESMTPSA id bi24-20020a170906a25800b0092f38a6d082sm999572ejb.209.2023.04.13.07.13.15
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 13 Apr 2023 07:13:16 -0700 (PDT)
-Message-ID: <5953bc83-9609-6d12-7e9b-ca5202151fb3@linaro.org>
-Date: Thu, 13 Apr 2023 16:13:15 +0200
-MIME-Version: 1.0
+	id 1pmzNO-006Y9T-2N;
+	Thu, 13 Apr 2023 16:00:49 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=seco.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=1o6eO9AyHpg8fLI7uLH1x0GDM3hiqBLmkTNaR9raDnY=;
+ b=JOgnrEGGKhVDIccDedewCr/k/hKI28UjeJR/g0PPcLgrMLaQMrOiLrD/ahxdt80s6NVJT8SGnYtY8eoNuK9621VfVgfSHsthTQuiooyChZUpm0uY9SG2d7ONio13GKxWLrUNv9D4fMx9hHV/JM+cZULUZ5dZBmjH8/7RxoB3rGPZreWuHSJwdoE4gwwfhvT+QxFWGKejykmxf0XK6i8T9UPhRA/eGfjW+aH83o+RRqLihQX9HlLlbBV5/WJqmLR7FCYsQlrPPXo3GevwgyS8GnWSRgJqyfx58Pqfgd7G1DtlzBnxffBbE5ly2EG4PlyIDis5pctTwYCnKPDW3jRtZA==
+Received: from DB8PR09CA0001.eurprd09.prod.outlook.com (2603:10a6:10:a0::14)
+ by DB9PR03MB7690.eurprd03.prod.outlook.com (2603:10a6:10:2c6::11) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6298.30; Thu, 13 Apr
+ 2023 16:00:42 +0000
+Received: from DB8EUR05FT067.eop-eur05.prod.protection.outlook.com
+ (2603:10a6:10:a0:cafe::8d) by DB8PR09CA0001.outlook.office365.com
+ (2603:10a6:10:a0::14) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6298.32 via Frontend
+ Transport; Thu, 13 Apr 2023 16:00:42 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 20.160.56.80)
+ smtp.mailfrom=seco.com; dkim=pass (signature was verified)
+ header.d=seco.com;dmarc=pass action=none header.from=seco.com;
+Received-SPF: Pass (protection.outlook.com: domain of seco.com designates
+ 20.160.56.80 as permitted sender) receiver=protection.outlook.com;
+ client-ip=20.160.56.80; helo=inpost-eu.tmcas.trendmicro.com; pr=C
+Received: from inpost-eu.tmcas.trendmicro.com (20.160.56.80) by
+ DB8EUR05FT067.mail.protection.outlook.com (10.233.238.176) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.6298.32 via Frontend Transport; Thu, 13 Apr 2023 16:00:41 +0000
+Received: from outmta (unknown [192.168.82.135])
+	by inpost-eu.tmcas.trendmicro.com (Trend Micro CAS) with ESMTP id AA0B02008026F;
+	Thu, 13 Apr 2023 16:00:41 +0000 (UTC)
+Received: from EUR05-VI1-obe.outbound.protection.outlook.com (unknown [104.47.17.176])
+	by repre.tmcas.trendmicro.com (Trend Micro CAS) with ESMTPS id 594EC2008006F;
+	Thu, 13 Apr 2023 16:01:44 +0000 (UTC)
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=OIHNbHpovov/YUWy/0nNmWupseieanfZDRA4pvQVckhfE1YrXgMWTysRwGG627EREYgGJLgNiOq55jK2zl2e0ENA30AD6VkNI54EDqkbySxPo1wAV74HjLP32t9RdifdqoctHLa51CzIlxoGpk1gMvU+izQszsXA0VuW0Z3uYrh3Axy7wQsFXxeO8pyt3QPrpI+VtZaWKDK1H+EaCYe2KretxtCMvwNo9Zam+b48OwNoHEEBRrroYYIydnW73ZxcqojhP5pHcJE3IWJP2vFrWcWquRx16+QiHcce61jliBcmTaSnGOivlXwnuSLqfHESubsVR0pe3iXNHGUiPUba1w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=1o6eO9AyHpg8fLI7uLH1x0GDM3hiqBLmkTNaR9raDnY=;
+ b=crbWJOH4R8VfO1KWrcEGsgB+869ZKgvQBc5XPgMlvyCBME6Q/KECn+jbkgm++e3xtraOtxdG5wYDlxETwysaQ89tGGrEa3Oy9HHzOPeFrComvZOUDSPHl8AAs6RVizDTmvUF5KbGtnV6Y+cWX/dFA2BopUyUM67rf8sAo7PFpvhFYseC6C2i8HFpEg8OTO2WAP3Un/21vLWOct70vUZHADwQbxZ7sXCVnNLeo7PaR469amSH2aRtcEHYRdr01Yl+GIx31wE6ZwepwGCj1jekpQbOM1KuFVZ/i27mVgrAWp86qD/x0rmRNzhUTr+k17O9RmnYAjhhNhSJGZPZFpT0hQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=seco.com; dmarc=pass action=none header.from=seco.com;
+ dkim=pass header.d=seco.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=seco.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=1o6eO9AyHpg8fLI7uLH1x0GDM3hiqBLmkTNaR9raDnY=;
+ b=JOgnrEGGKhVDIccDedewCr/k/hKI28UjeJR/g0PPcLgrMLaQMrOiLrD/ahxdt80s6NVJT8SGnYtY8eoNuK9621VfVgfSHsthTQuiooyChZUpm0uY9SG2d7ONio13GKxWLrUNv9D4fMx9hHV/JM+cZULUZ5dZBmjH8/7RxoB3rGPZreWuHSJwdoE4gwwfhvT+QxFWGKejykmxf0XK6i8T9UPhRA/eGfjW+aH83o+RRqLihQX9HlLlbBV5/WJqmLR7FCYsQlrPPXo3GevwgyS8GnWSRgJqyfx58Pqfgd7G1DtlzBnxffBbE5ly2EG4PlyIDis5pctTwYCnKPDW3jRtZA==
+Authentication-Results-Original: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=seco.com;
+Received: from DB9PR03MB8847.eurprd03.prod.outlook.com (2603:10a6:10:3dd::13)
+ by AS8PR03MB9557.eurprd03.prod.outlook.com (2603:10a6:20b:5a5::21) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6298.28; Thu, 13 Apr
+ 2023 16:00:34 +0000
+Received: from DB9PR03MB8847.eurprd03.prod.outlook.com
+ ([fe80::2226:eb03:a8c:a7e5]) by DB9PR03MB8847.eurprd03.prod.outlook.com
+ ([fe80::2226:eb03:a8c:a7e5%2]) with mapi id 15.20.6298.030; Thu, 13 Apr 2023
+ 16:00:34 +0000
+Message-ID: <ca621582-a0c8-ac43-3260-9ebd5178019e@seco.com>
+Date: Thu, 13 Apr 2023 12:00:29 -0400
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.9.1
-Subject: Re: [PATCH v4 0/7] Add JH7110 USB and USB PHY driver support
+ Thunderbird/102.4.0
+Subject: Re: [PATCH v13 03/15] dt-bindings: Convert gpio-mmio to yaml
 Content-Language: en-US
-To: Minda Chen <minda.chen@starfivetech.com>,
- Emil Renner Berthing <emil.renner.berthing@canonical.com>,
- Conor Dooley <conor@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring
- <robh+dt@kernel.org>, Krzysztof Kozlowski
- <krzysztof.kozlowski+dt@linaro.org>, Pawel Laszczak <pawell@cadence.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Peter Chen <peter.chen@kernel.org>, Roger Quadros <rogerq@kernel.org>,
- Philipp Zabel <p.zabel@pengutronix.de>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-usb@vger.kernel.org,
- linux-riscv@lists.infradead.org, Paul Walmsley <paul.walmsley@sifive.com>,
- Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>,
- Mason Huo <mason.huo@starfivetech.com>
-References: <20230406015216.27034-1-minda.chen@starfivetech.com>
- <517670ca-ba2e-811e-3eb2-7f38011c9690@linaro.org>
- <985d0a57-1fc8-5725-4d3a-33dcc5d49d67@starfivetech.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <985d0a57-1fc8-5725-4d3a-33dcc5d49d67@starfivetech.com>
+To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ linux-phy@lists.infradead.org
+Cc: Camelia Alexandra Groza <camelia.groza@nxp.com>,
+ Bagas Sanjaya <bagasdotme@gmail.com>, Ioana Ciornei <ioana.ciornei@nxp.com>,
+ linux-arm-kernel@lists.infradead.org, Madalin Bucur <madalin.bucur@nxp.com>,
+ devicetree@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ linuxppc-dev@lists.ozlabs.org, Linus Walleij <linus.walleij@linaro.org>,
+ Bartosz Golaszewski <brgl@bgdev.pl>, =?UTF-8?Q?Fern=c3=a1ndez_Rojas?=
+ <noltari@gmail.com>, Jonas Gorski <jonas.gorski@gmail.com>,
+ linux-gpio@vger.kernel.org
+References: <20230411184313.3679145-1-sean.anderson@seco.com>
+ <20230411184313.3679145-4-sean.anderson@seco.com>
+ <848f5e3e-44ca-3648-2d6b-7e06ce7b5cda@linaro.org>
+From: Sean Anderson <sean.anderson@seco.com>
+In-Reply-To: <848f5e3e-44ca-3648-2d6b-7e06ce7b5cda@linaro.org>
+X-ClientProxiedBy: BL0PR0102CA0057.prod.exchangelabs.com
+ (2603:10b6:208:25::34) To DB9PR03MB8847.eurprd03.prod.outlook.com
+ (2603:10a6:10:3dd::13)
+MIME-Version: 1.0
+X-MS-TrafficTypeDiagnostic: 	DB9PR03MB8847:EE_|AS8PR03MB9557:EE_|DB8EUR05FT067:EE_|DB9PR03MB7690:EE_
+X-MS-Office365-Filtering-Correlation-Id: 941c2db7-dc38-41b1-c9cc-08db3c383baf
+X-TrendMicro-CAS-OUT-LOOP-IDENTIFIER: 656f966764b7fb185830381c646b41a1
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam-Untrusted: BCL:0;
+X-Microsoft-Antispam-Message-Info-Original:  Wn2mHHyAZjf4pQ3FgrzibXODc61lYLNPWDB8IuAUGMc1PyMccYAal2/xdhnZVsXLk4GjnMsPlDqfJfx6xJ8ozlhU2vvnK985ahHjcNuulqAMQEdKxq9I+0n3yyezjHXk3wmgR2kkuzfPibyflFbdEVJQywbr5Q9a3WbQcoHhrbkSFMlW7B/gJ1G4zHZUXUzsNbI6Iz96foCcRumbJTielQ0nU68Tah7JEMGL8vWgFiM+zkPaUpgF0zqno6L8LlKe9cjDhVK/kwqHnwJbJ71tIlAGAcU+MQKXDvrMhTbE67KvKgc3l/R7zEcf3qgyNgHtpMagW4bITkLlr/t7j/ZcBTh/ojuTLONpZDNeF+c8li/EMm/5fMcG4yt0u5d0Hcxc0Yu3PG6Pg3dj5Nj+16cAilk5bFxITr0I9ewi64UumJc88w+H36/Cd/PVGYzyWBmD3/5U4Ld6CccRVHtM8ToymcthQalcrIKGubyKb+Bh2i1ZrkucSO1Ff468VPewzL7+nyxLX82jnrsGJVMHFJrV0Nlyx2Jt148EbIZ3GO4CEfmiwVKH4wUrZ0HUaYBWad4t9uJrKWIse6zcHfJ8/NonyHOQgxrdpBzA0uElZd+65ZLxO38as0nmXVi6gvDfg2h6A77Im4/VM/e33O1tUrpd04RjD0FvdNszy7UQ/6GCf9yhCHfh95WAnlzF5bt980B7
+X-Forefront-Antispam-Report-Untrusted:  CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DB9PR03MB8847.eurprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230028)(136003)(396003)(39850400004)(376002)(346002)(366004)(451199021)(54906003)(110136005)(316002)(6512007)(6666004)(6506007)(26005)(53546011)(478600001)(31686004)(41300700001)(83380400001)(2616005)(6486002)(186003)(66946007)(52116002)(66476007)(66556008)(4326008)(5660300002)(44832011)(7416002)(8936002)(38350700002)(8676002)(38100700002)(2906002)(86362001)(31696002)(36756003)(45980500001)(43740500002);DIR:OUT;SFP:1101;
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS8PR03MB9557
+X-EOPAttributedMessage: 0
+X-MS-Exchange-Transport-CrossTenantHeadersStripped:  DB8EUR05FT067.eop-eur05.prod.protection.outlook.com
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id-Prvs: 	1a7325ab-637e-4191-8030-08db3c3836ca
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: 	0OF+U3ETzGITsUJgQG1Htw2ktz/GMPCK7OzqJejkOTUsSxbPOpZmxCZc04Xs0s1+n9JtXXIltZT660hubn1kp4E9wh5cBtsGSTFtP0QP0RPGIIeGk9IMysPQ+5CDG3LH14IDfOt3A2Tg0fIrBPiTnRYBWKsvLvkSWLONg9C//k/32WwbRo8XUdwr89v1UtkfoRYFzpbS8B9Ar7Cm2vGdM0Cr6fp01hxCHjRSwSugDtDgilHLmWSLIKyXUWk4NEDq2p1afaXIhddL1tqES3jn8ufS32PA91jpMi1LzhYwZ/CcWzB+YTrxEjw02ZhCj0x5MhFzE8b7kbxI/Gx1fVk+xygoZmN0su+JcxQl9QrzeVl1KTYQf3+6cmbvmeWUCJJ2Ie2hohDSs2vgnoODloTaK6TPEkXzuVb/C1qDvI0sHfd4Pwu9jevLK2ln8rCTDrWMn3veJH+1MAzD5dmsEQ+mxHNSzRTBUI8VGQRnSIJTgJmomZGW36inlOyGjHDpsGuRxxg/sOowJqWaADQtI07RqI3W2AlZWUr6zXSRkp3chronsP8QGC3Tqj8MQE4aM1e9ULEvAY9MmUNHSSdc9x1D/dJ/noowFP+Y33lrfiRRCxVxNHHkuQZRRVxeoWvxlOriccRntuQNNUM3T+Vy8hBejPeBr33qAn+ZImVk82rQ4yKTTonMLuYAI9bLOkXj0yC1fU8JOQDCjAwmsihUiLhCqpW5JhMVEhjUwRSdvbNJzmNxd+o/Ky333LVnvLV7jLevo+hcIIpVc+Py0PbDACxxV7wj812LWBau2EemocjB3t4=
+X-Forefront-Antispam-Report: 	CIP:20.160.56.80;CTRY:NL;LANG:en;SCL:1;SRV:;IPV:CAL;SFV:NSPM;H:inpost-eu.tmcas.trendmicro.com;PTR:inpost-eu.tmcas.trendmicro.com;CAT:NONE;SFS:(13230028)(376002)(136003)(39850400004)(346002)(396003)(5400799015)(451199021)(46966006)(36840700001)(40470700004)(86362001)(54906003)(44832011)(110136005)(7416002)(40460700003)(34070700002)(7596003)(478600001)(7636003)(356005)(316002)(41300700001)(82740400003)(8676002)(8936002)(5660300002)(70206006)(40480700001)(70586007)(31696002)(53546011)(6512007)(6506007)(36756003)(26005)(336012)(31686004)(186003)(36860700001)(4326008)(6666004)(83380400001)(2906002)(2616005)(6486002)(82310400005)(47076005)(43740500002)(12100799027);DIR:OUT;SFP:1501;
+X-OriginatorOrg: seco.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 13 Apr 2023 16:00:41.9331
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 941c2db7-dc38-41b1-c9cc-08db3c383baf
+X-MS-Exchange-CrossTenant-Id: bebe97c3-6438-442e-ade3-ff17aa50e733
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=bebe97c3-6438-442e-ade3-ff17aa50e733;Ip=[20.160.56.80];Helo=[inpost-eu.tmcas.trendmicro.com]
+X-MS-Exchange-CrossTenant-AuthSource: 	DB8EUR05FT067.eop-eur05.prod.protection.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB9PR03MB7690
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230413_071321_856508_4ABEDAEE 
-X-CRM114-Status: GOOD (  18.04  )
+X-CRM114-CacheID: sfid-20230413_090047_111525_9C5BA32D 
+X-CRM114-Status: GOOD (  13.94  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,148 +149,32 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 13/04/2023 12:44, Minda Chen wrote:
-> 
-> 
-> On 2023/4/12 16:26, Krzysztof Kozlowski wrote:
->> On 06/04/2023 03:52, Minda Chen wrote:
->>> This patchset adds USB driver and USB PHY for the StarFive JH7110 SoC.
->>> USB work mode is peripheral and using USB 2.0 PHY in VisionFive 2 board.
->>> The patch has been tested on the VisionFive 2 board.
->>>
->>> This patchset should be applied after the patchset [1], [2] and[3]:
->>> [1] https://patchwork.kernel.org/project/linux-riscv/cover/20230314124404.117592-1-xingyu.wu@starfivetech.com/
->>> [2] https://lore.kernel.org/all/20230315055813.94740-1-william.qiu@starfivetech.com/
->>> [3] https://patchwork.kernel.org/project/linux-phy/cover/20230315100421.133428-1-changhuang.liang@starfivetech.com/
->>>
->>> This patchset is base on v6.3-rc4
->>>
->>> patch 1 is usb phy dt-binding document.
->>> patch 2 is Pcie PHY dt-binding document.
->>> patch 3 is USB 2.0 PHY driver.
->>> patch 4 is PCIe PHY driver.
->>> patch 5 is usb dt-binding document.
->>> patch 6 is the wrapper module driver of Cadence USB3. USB controller IP is Cadence USB3.
->>> patch 7 is USB device tree configuration.
->>>
->>> previous version
->>> ---
->>> v1: https://patchwork.kernel.org/project/linux-usb/cover/20230306095212.25840-1-minda.chen@starfivetech.com/
->>> v2: https://patchwork.kernel.org/project/linux-usb/cover/20230308082800.3008-1-minda.chen@starfivetech.com/
->>
->> This is v2.
->>
->>> v3: https://patchwork.kernel.org/project/linux-usb/cover/20230315104411.73614-1-minda.chen@starfivetech.com/
->>>
->>> changes
->>> v4:
->>>   1. (patch 1) split PCIe PHY dt-binding doc to patch 2.
->>>   2. (patch 2) PCIe PHY add stg and sys con configuration to dt-binding doc.
->>>   3. (patch 3)
->>>      - split PCIe PHY driver to patch 4.
->>>      - replace dr_mode to phy mode in jh7110_usb2_phy.
->>>   4. (patch 4) 
->>>      - Makefile and Kconfig sorted by alphabet sequence.
->>>      - Add PCIe PHY stg and syscon PHY connection configuration
->>>        for USB 3.0.
->>>   5. (patch 5)
->>>      - commit message changed.
->>>      - merge wrapper dts node and cdns3 node in example.
->>>      - Add interrupts, reg, phy and dr_mode in property.
->>>      - Add reset-name in property example.
->>>   6. (patch 6)
->>>      - For dts node is merged, Using platform_device_alloc and
->>>        platform_device_add to generate cadence sub device.
->>>      - IOMEM and IRQ resource are passed to Cadence sub device.
->>>      - Add PHY ops process for PHY dts setting can not be passed to
->>>        Cadence USB driver.
->>>      - remove the stg and sys USB 3.0 PHY configuration.
->>>      - Change the suspend clock reset and clock enable sequence.
->>>      - Get all reset and clock resources before enable them in 
->>>        cdns_clk_rst_init.
->>>      - commit message changed.
->>>   7. (patch 7)
->>>      - merge wrapper dts node and cdns3 node in usb dts.
->>>      - move the stg and sys USB 3.0 PHY confiuration to
->>>        PCIe PHY dts node.
->>>      - commit message changed.
->>>      - Add reset-names dts.
->>>
->>> v3:
->>>   1. Add patch 1 - 4. Add USB PHY driver and dt-binding doc. 
->>>      USB PHY codes are moved to patch 3 and patch 4.
->>>   2. (patch 5)
->>>      - USB wrapper module dts document is moved to usb directory.
->>>      - Remove the 'dr_mode' and 'starfive,usb2-only' setting.
->>>      - Some dts format changes. dts binding check pass.
->>>   3. (patch 6)
->>>      - Remove the PHY codes. 
->>>      - Search 'dr_mode' and phy setting from Cadence subnode.
->>>   4. (patch 7)
->>>      - Add USB PHY dts configurion. 
->>>      - 'dr_mode' is moved to Cadence controller submode.
->>>
->>> v2:
->>>   1. (patch 5) dt-binding changes. The document example is the same as dts config.
->>>   2. (patch 6) using dev_err_probe and syscon_regmap_lookup_by_phandle_args function. Some formats changes
->>>   3. (patch 7) dts nodes sorted by the address after @
->>>
->>>
->>> Minda Chen (7):
->>>   dt-bindings: phy: Add StarFive JH7110 USB document
->>>   dt-bindings: phy: Add StarFive JH7110 PCIe document
->>>   phy: starfive: add JH7110 USB 2.0 PHY driver.
->>>   phy: starfive: add JH7110 PCIE 2.0 PHY driver.
->>>   dt-bindings: usb: Add StarFive JH7110 USB Bindings YAML schemas
->>>   usb: cdns3: add StarFive JH7110 USB driver.
->>>   riscv: dts: starfive: add USB dts configuration for JH7110
->>>
->>>  .../phy/starfive,jh7110-pcie-phy.yaml         |  58 +++
->>>  .../bindings/phy/starfive,jh7110-usb-phy.yaml |  50 +++
->>>  .../bindings/usb/starfive,jh7110-usb.yaml     | 136 +++++++
->>>  MAINTAINERS                                   |  16 +
->>>  .../jh7110-starfive-visionfive-2.dtsi         |   7 +
->>>  arch/riscv/boot/dts/starfive/jh7110.dtsi      |  44 ++
->>>  drivers/phy/starfive/Kconfig                  |  22 +
->>>  drivers/phy/starfive/Makefile                 |   2 +
->>>  drivers/phy/starfive/phy-jh7110-pcie.c        | 197 +++++++++
->>>  drivers/phy/starfive/phy-jh7110-usb.c         | 161 ++++++++
->>>  drivers/usb/cdns3/Kconfig                     |  11 +
->>>  drivers/usb/cdns3/Makefile                    |   1 +
->>>  drivers/usb/cdns3/cdns3-starfive.c            | 378 ++++++++++++++++++
->>>  drivers/usb/cdns3/core.h                      |   3 +
->>>  14 files changed, 1086 insertions(+)
->>>  create mode 100644 Documentation/devicetree/bindings/phy/starfive,jh7110-pcie-phy.yaml
->>>  create mode 100644 Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy.yaml
->>>  create mode 100644 Documentation/devicetree/bindings/usb/starfive,jh7110-usb.yaml
->>>  create mode 100644 drivers/phy/starfive/phy-jh7110-pcie.c
->>>  create mode 100644 drivers/phy/starfive/phy-jh7110-usb.c
->>>  create mode 100644 drivers/usb/cdns3/cdns3-starfive.c
->>>
->>>
->>> base-commit: 0ec57cfa721fbd36b4c4c0d9ccc5d78a78f7fa35
->>> prerequisite-patch-id: 24a6e3442ed1f5454ffb4a514cfd768436a87090
->>> prerequisite-patch-id: 55390537360f25c8b9cbfdc30b73ade004f436f7
->>
->> fatal: bad object 55390537360f25c8b9cbfdc30b73ade004f436f7
->>
->> What commits do you reference? How are they helpful?
->>
-> I use "git format-patch --base=(commit) to generate patchset.
-> Maybe I set the wrong base commit.
-
-How are they helpful if these are private commits?
-
-Best regards,
-Krzysztof
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gNC8xMi8yMyAwNDowNCwgS3J6eXN6dG9mIEtvemxvd3NraSB3cm90ZToKPiBPbiAxMS8wNC8y
+MDIzIDIwOjQzLCBTZWFuIEFuZGVyc29uIHdyb3RlOgo+PiBUaGlzIGlzIGEgZ2VuZXJpYyBiaW5k
+aW5nIGZvciBzaW1wbGUgTU1JTyBHUElPIGNvbnRyb2xsZXJzLiBBbHRob3VnaCB3ZQo+PiBoYXZl
+IGEgc2luZ2xlIGRyaXZlciBmb3IgdGhlc2UgY29udHJvbGxlcnMsIHRoZXkgd2VyZSBwcmV2aW91
+c2x5IHNwcmVhZAo+PiBvdmVyIHNldmVyYWwgZmlsZXMuIENvbnNvbGlkYXRlIHRoZW0uIFRoZSBy
+ZWdpc3RlciBkZXNjcmlwdGlvbnMgYXJlCj4+IGFkYXB0ZWQgZnJvbSB0aGUgY29tbWVudHMgaW4g
+dGhlIHNvdXJjZS4gVGhlcmUgaXMgbm8gc2V0IG9yZGVyIGZvciB0aGUKPj4gcmVnaXN0ZXJzLCBh
+bmQgc29tZSByZWdpc3RlcnMgbWF5IGJlIG9taXR0ZWQuIEJlY2F1c2Ugb2YgdGhpcywgcmVnLW5h
+bWVzCj4+IGlzIG1hbmRhdG9yeSwgYW5kIG5vIG9yZGVyIGlzIHNwZWNpZmllZC4KPj4gCj4+IFJl
+bmFtZSBicmNtLGJjbTYzNDUtZ3BpbyB0byBicmNtLGJjbTYzeHgtZ3BpbyB0byByZWZsZWN0IHRo
+YXQgYmNtNjM0NQo+PiBoYXMgbW92ZWQuCj4+IAo+PiBTaWduZWQtb2ZmLWJ5OiBTZWFuIEFuZGVy
+c29uIDxzZWFuLmFuZGVyc29uQHNlY28uY29tPgo+PiBSZXZpZXdlZC1ieTogTGludXMgV2FsbGVp
+aiA8bGludXMud2FsbGVpakBsaW5hcm8ub3JnPgo+PiAtLS0KPj4gTGludXMgb3IgQmFydG9zeiwg
+ZmVlbCBmcmVlIHRvIHBpY2sgdGhpcyB1cCBhcyB0aGUgcmVzdCBvZiB0aGlzIHNlcmllcwo+PiBt
+YXkgbm90IGJlIG1lcmdlZCBhbnkgdGltZSBzb29uLgo+PiAKPj4gQ2hhbmdlcyBpbiB2MTM6Cj4+
+IC0gRml4IHJlZmVyZW5jZXMgdG8gYnJjbSxiY202M3h4LWdwaW8ueWFtbCAobmVlzIEgYnJjbSxi
+Y202MzQ1LWdwaW8pCj4gCj4gWW91IGdvdCBzb21lIG9mIHRoZSBzYW1lIGVycm9ycyBhcyBsYXN0
+IHRpbWUuCgpUaGVzZSBhcmUgZGlmZmVyZW50IGVycm9ycy4KCj4gVGVzdCB5b3VyIHBhdGNoZXMg
+YmVmb3JlIHNlbmRpbmcuCgpJIHR5cGljYWxseSBydW4gZHRfYmluZGluZ3NfY2hlY2sgd2l0aCBE
+VF9TQ0hFTUFfRklMRVM9Li4uIGJlY2F1c2UKcnVubmluZyB0aGUgd2hvbGUgdGhpbmcgdGFrZXMg
+bG9uZ2VyIHRoYW4gY29tcGlsaW5nIGEga2VybmVsIGZyb20Kc2NyYXRjaC4gSXQgc2VlbXMgSSBu
+ZWdsZWN0ZWQgdG8gcnVuIGl0IG9uIHRoZSBhZmZlY3RlZCBzY2hlbWFzLgoKLS1TZWFuCgotLSAK
+bGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRw
+czovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
