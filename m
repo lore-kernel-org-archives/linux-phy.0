@@ -4,83 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 53B39C77B72
-	for <linux-phy@archiver.kernel.org>; Fri, 14 Apr 2023 12:53:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B31D9C77B72
+	for <linux-phy@archiver.kernel.org>; Fri, 14 Apr 2023 14:55:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:
-	MIME-Version:In-Reply-To:References:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=ECY7HTfOEg3Vlcmr4w/tRq/ktEb/5D/Hv9TOCevb6Yk=; b=2f53tyK3AGfyOqYjM3tQL1Szs3
-	h+IxvtB5Uxwk7Dr1G2EYUxHFOkWNH6EcIxvTgXdJkM4qUdv2Y6Kyf6WBeZXJruIhOgHQrR1YhxSA2
-	IIkI9hiLLrcfAOq0cvSHM9xIjLAGykfnv1to56dwC0+e8nuO2JFaRZsqH5B0dlCuGQ7R4UzcbWg9Q
-	YtazBddLy4Z55cC0F0SEJsNCVCErBysfhEIdGGrksRx9HfY9NDtSdC5MM0ujx5rNQGPTa6OMdo54B
-	RXakUBhGxBpv+HrN2vM9WcA6RetDsGZhAIqy6DVBGD4YnpazIgZfhDB5JtVRk4USyhKnzucMuPgku
-	MV/jCn8w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=NNbw1+YgkfjX/aOgzfAXPI6tKPddPrA84+dLsVoCKrQ=; b=2UJQHIASvFkYW7
+	jjqm8GqP2e+CcY2ZjvmJOWNCZB77FKNicByTZZO9qIg/MOh+5sJuCRZiRFhnvTva2dB+BxjZ95TBk
+	Fv0KmT/0AMxATV3/3SXLobGEqLl5XbQM3pCn5K1rlsT8T82Uk0w90xnQr++RoJ5sS0QNCL8BI6/6q
+	pLDj1FYZ6okqEU4scc8a8/02ebgboEPgAkgWHOqIfJo/BAuuWxqj5MDR3eMIPbGVPOKelxmIaQTPh
+	hC7weNSopwaDxxU3vgWlgLd+nL9pjuEp6i/kz9A4csB9OTxIVBYnKYZEGB5wZy8uBqXxZQf2ZYlWR
+	9rTDf3MmL6iQp+Uy+n2w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pnIvL-009ZKd-2g;
-	Fri, 14 Apr 2023 12:53:07 +0000
-Received: from mail-qv1-xf31.google.com ([2607:f8b0:4864:20::f31])
+	id 1pnKpd-009t5b-0C;
+	Fri, 14 Apr 2023 14:55:21 +0000
+Received: from relay1-d.mail.gandi.net ([217.70.183.193])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pnIvF-009ZIH-0U
+	id 1pnKpZ-009t4D-0b
 	for linux-phy@lists.infradead.org;
-	Fri, 14 Apr 2023 12:53:03 +0000
-Received: by mail-qv1-xf31.google.com with SMTP id ks30so1004300qvb.4
-        for <linux-phy@lists.infradead.org>; Fri, 14 Apr 2023 05:53:00 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=baylibre-com.20221208.gappssmtp.com; s=20221208; t=1681476777; x=1684068777;
-        h=cc:to:subject:message-id:date:mime-version:in-reply-to:references
-         :user-agent:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=c1mRBvmkKWpgvM1gONebrVKM3TA+ePdq5Jwjyb83ndI=;
-        b=hfxcYBA6wKz0ja41R5GILX3KMG8FLrGhi8JWeM0W+y08tHIeAr1vzeBz6MD4JxzdBF
-         QIhHkA3pbw59fZMAbr6b0i7r250bHgCCQTtKAKttdlfD8JhZyvUmQNuAj/uhdZtlKR7B
-         KH05LZDkOItVIJbkhdHUcPbhGF37Iuzi2x+KKmUQGbaXez7ZikZDtNYtH6a64wNFe3lT
-         DhyEQk8l44mdyq2Y4kI730hkh110qFH4d7oMA7EiD2VeMU9FLouu/qguZi9jRdHRRWaw
-         +3u1tDfvw2LIjhSEsl0CC8jA7Lp6j743ttLMCvJJ42APWUvnVVahAUfe6mF3GO9ThAtK
-         ehnw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1681476777; x=1684068777;
-        h=cc:to:subject:message-id:date:mime-version:in-reply-to:references
-         :user-agent:from:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=c1mRBvmkKWpgvM1gONebrVKM3TA+ePdq5Jwjyb83ndI=;
-        b=bkPKcM0ELF+5JGQwMpmPq6DcUTvTmSmRUVefwDTC5LpEcxGRNTfYLyGWncGvgHwMZ8
-         6T+WkV+wFFy83QQFUG/OP9i7d+XY4aKVNabPfRDNrmO/RCJ25EYwLpjurElNLl4Lrj3d
-         mfRfEWLGJWVO0rVPRG6lbyLbY6f/YvRvPCv328tcTbb76nweM8XWHOEO//So753EB1cR
-         ersg4T0uMeFNLsSKc/IAKgbAXMwtX12BqJxVzf2xzYbeVMtAvm9hgIZbVUHNCt9WT86C
-         MdMX9NfZKosut1dYXwloZB33bEcKKIz/Jp+ZlDX2i54azgP3LLYOmYajBo+80onmVlmB
-         m8fA==
-X-Gm-Message-State: AAQBX9fl8Mu2VP3aTDZjYxbii+QLJ5U3sSe/w2s2aFsGId+SZ4OgSSsY
-	ccuyy7F+joErn8MesBPPospIKiNaixL7PnplEOC9MA==
-X-Google-Smtp-Source: AKy350bwrlQ1k6Id6taPs74WKZ2MYVEoCM7n+Fk3n2G+lg7Txm3HQS1LILK4QlW1vfVH9uPVwc8hFNllM10fhh8EPyk=
-X-Received: by 2002:a05:6214:2504:b0:56f:728:19d4 with SMTP id
- gf4-20020a056214250400b0056f072819d4mr3900460qvb.26.1681476777521; Fri, 14
- Apr 2023 05:52:57 -0700 (PDT)
-Received: from 753933720722 named unknown by gmailapi.google.com with
- HTTPREST; Fri, 14 Apr 2023 05:52:57 -0700
-From: Guillaume Ranquet <granquet@baylibre.com>
-User-Agent: meli 0.7.2
-References: <20230413-fixes-for-mt8195-hdmi-phy-v1-0-b8482458df0d@baylibre.com>
- <20230413-fixes-for-mt8195-hdmi-phy-v1-1-b8482458df0d@baylibre.com> <ada769e0-0141-634f-3753-eb3a50f0eee3@collabora.com>
-In-Reply-To: <ada769e0-0141-634f-3753-eb3a50f0eee3@collabora.com>
+	Fri, 14 Apr 2023 14:55:19 +0000
+Received: (Authenticated sender: herve.codina@bootlin.com)
+	by mail.gandi.net (Postfix) with ESMTPSA id 14271240002;
+	Fri, 14 Apr 2023 14:55:05 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
+	t=1681484110;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=qYy47sl74TgDHd1JkFN/WszmVyDzzzCSFWb60vPYy+0=;
+	b=S8uYckW7R+GfvkffcwP4D4MY1ukU9yz+ZPzKL+N3hwVDwDtAEe7tj5uKF58Q2y1BtBS0EZ
+	YULYeii9S4yLhFQRedV0sLv3CbhMQGcqwEzKlVqDoWTnV+jnHloHa7YejLyIPHk+G8fu6D
+	D6GVwBkKndJ1yckKs/xip2ON356TsIUCx88umFwgmFkrx05Cvd9P/W/OBv0zlb/zxj/fwb
+	/Re15kObG7sv6pephz1IW0xLrr3KdG5nSuwV/O7iGayX4UDGBi9pvU68d6CJtQBPBs9+j+
+	9MvE7kIOxNoVXDdxGF8oVhwXindJhPQXWRN/I9bhmM+6n6Zwyv6m+k/glh0nMQ==
+Date: Fri, 14 Apr 2023 16:55:04 +0200
+From: Herve Codina <herve.codina@bootlin.com>
+To: Andrew Lunn <andrew@lunn.ch>
+Cc: "David S. Miller" <davem@davemloft.net>, Eric Dumazet
+ <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>, Paolo Abeni
+ <pabeni@redhat.com>, Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
+ <kishon@kernel.org>, linux-kernel@vger.kernel.org, netdev@vger.kernel.org,
+ linux-phy@lists.infradead.org, Christophe Leroy
+ <christophe.leroy@csgroup.eu>, Thomas Petazzoni
+ <thomas.petazzoni@bootlin.com>
+Subject: Re: [RFC PATCH 0/4] Add support for QMC HDLC and PHY
+Message-ID: <20230414165504.7da4116f@bootlin.com>
+In-Reply-To: <885e4f20-614a-4b8e-827e-eb978480af87@lunn.ch>
+References: <20230323103154.264546-1-herve.codina@bootlin.com>
+	<885e4f20-614a-4b8e-827e-eb978480af87@lunn.ch>
+Organization: Bootlin
+X-Mailer: Claws Mail 4.1.1 (GTK 3.24.37; x86_64-redhat-linux-gnu)
 MIME-Version: 1.0
-Date: Fri, 14 Apr 2023 05:52:57 -0700
-Message-ID: <CABnWg9v+DXatKqUkwDZBRxivtg869SocPGtHibtFNr7tnyVggg@mail.gmail.com>
-Subject: Re: [PATCH 1/2] phy: mediatek: hdmi: mt8195: fix uninitialized
- variable usage in pll_calc
-To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, 
-	Matthias Brugger <matthias.bgg@gmail.com>, Chun-Kuang Hu <chunkuang.hu@kernel.org>, 
-	Philipp Zabel <p.zabel@pengutronix.de>, Chunfeng Yun <chunfeng.yun@mediatek.com>, 
-	Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>
-Cc: dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org, 
-	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org, 
-	linux-kernel@vger.kernel.org, kernel test robot <lkp@intel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230414_055301_393812_2D1D3148 
-X-CRM114-Status: GOOD (  14.99  )
+X-CRM114-CacheID: sfid-20230414_075517_665380_0CFB0CA0 
+X-CRM114-Status: GOOD (  35.40  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,86 +74,86 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, 14 Apr 2023 12:31, AngeloGioacchino Del Regno
-<angelogioacchino.delregno@collabora.com> wrote:
->Il 13/04/23 14:46, Guillaume Ranquet ha scritto:
->> The ret variable in mtk_hdmi_pll_calc() was used unitialized as reported
->> by the kernel test robot.
->>
->> Fix the issue by removing the variable altogether and testing out the
->> return value of mtk_hdmi_pll_set_hw()
->>
->> Fixes: 45810d486bb44 ("phy: mediatek: add support for phy-mtk-hdmi-mt8195")
->> Reported-by: kernel test robot <lkp@intel.com>
->> Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
->> ---
->>   drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c | 7 +++----
->>   1 file changed, 3 insertions(+), 4 deletions(-)
->>
->> diff --git a/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c b/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c
->> index abfc077fb0a8..e10da6c4147e 100644
->> --- a/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c
->> +++ b/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c
->> @@ -213,7 +213,7 @@ static int mtk_hdmi_pll_calc(struct mtk_hdmi_phy *hdmi_phy, struct clk_hw *hw,
->>   	u64 tmds_clk, pixel_clk, da_hdmitx21_ref_ck, ns_hdmipll_ck, pcw;
->>   	u8 txpredivs[4] = { 2, 4, 6, 12 };
->>   	u32 fbkdiv_low;
->> -	int i, ret;
->> +	int i;
->>
->>   	pixel_clk = rate;
->>   	tmds_clk = pixel_clk;
->> @@ -292,10 +292,9 @@ static int mtk_hdmi_pll_calc(struct mtk_hdmi_phy *hdmi_phy, struct clk_hw *hw,
->>   	if (!(digital_div <= 32 && digital_div >= 1))
->>   		return -EINVAL;
->>
->> -	mtk_hdmi_pll_set_hw(hw, PLL_PREDIV, fbkdiv_high, fbkdiv_low,
->> +	if (mtk_hdmi_pll_set_hw(hw, PLL_PREDIV, fbkdiv_high, fbkdiv_low,
->>   			    PLL_FBKDIV_HS3, posdiv1, posdiv2, txprediv,
->> -			    txposdiv, digital_div);
->> -	if (ret)
->> +			    txposdiv, digital_div))
->>   		return -EINVAL;
->>
->
->I don't get why we're returning -EINVAL unconditionally in the first place, here.
->
->Function mtk_hdmi_pll_set_hw() should return zero or a negative error number: in
->that case, the previous *intention* was fine, so this should be
->
-
-Hi Angelo,
-I was maybe a bit too quick on fixing this that way.
-Anyway it doesn't change a thing as mtk_hdmi_pll_set_hw() eitheir
-returns 0 or -EINVAL.
-But I agree that the logic is dubious and propagating the return value
-is the right thing
-to do.
-
-I see that Arnd and Tom posted versions that you might prefer:
-
-https://lore.kernel.org/linux-phy/20230414075842.4006164-1-arnd@kernel.org/
-https://lore.kernel.org/linux-phy/20230414122253.3171524-1-trix@redhat.com/
-
-Thx,
-Guillaume.
-
->	ret = mtk_hdmi_pll_set_hw(....)
->	if (ret)
->		return ret;
->
->	return 0;
->
->
->Regards,
->Angelo
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+SGkgQW5kcmV3LAoKT24gVGh1LCAxMyBBcHIgMjAyMyAxNDo0ODozMCArMDIwMApBbmRyZXcgTHVu
+biA8YW5kcmV3QGx1bm4uY2g+IHdyb3RlOgoKPiBPbiBUaHUsIE1hciAyMywgMjAyMyBhdCAxMToz
+MTo1MEFNICswMTAwLCBIZXJ2ZSBDb2RpbmEgd3JvdGU6Cj4gPiBIaSwKPiA+IAo+ID4gSSBoYXZl
+IGEgc3lzdGVtIHdoZXJlIEkgbmVlZCB0byBoYW5kbGUgYW4gSERMQyBpbnRlcmZhY2UuCj4gPiAK
+PiA+IFRoZSBIRExDIGRhdGEgYXJlIHRyYW5zZmVycmVkIHVzaW5nIGEgVERNIGJ1cyBvbiB3aGlj
+aCBhIFBFRjIyNTYgaXMKPiA+IHByZXNlbnQuIFRoZSBQRUYyMjU2IHRyYW5zZmVycyBkYXRhIGZy
+b20vdG8gdGhlIFRETSBidXMgdG8vZnJvbSBFMSBsaW5lLgo+ID4gVGhpcyBQRUYyMjU2IGlzIGFs
+c28gY29ubmVjdGVkIHRvIGEgUG93ZXJRVUlDQyBTb0MgZm9yIHRoZSBjb250cm9sIHBhdGgKPiA+
+IGFuZCB0aGUgVERNIGlzIGNvbm5lY3RlZCB0byB0aGUgU29DIChRTUMgY29tcG9uZW50KSBmb3Ig
+dGhlIGRhdGEgcGF0aC4KPiA+IAo+ID4gRnJvbSB0aGUgSERMQyBkcml2ZXIsIEkgbmVlZCB0byBo
+YW5kbGUgZGF0YSB1c2luZyB0aGUgUU1DIGFuZCBjYXJyaWVyCj4gPiBkZXRlY3Rpb24gdXNpbmcg
+dGhlIFBFRjIyNTYgKEUxIGxpbmUgY2FycmllcikuCj4gPiAKPiA+IFRoZSBIRExDIGRyaXZlciBj
+b25zaWRlciB0aGUgUEVGMjI1NiBhcyBhIGdlbmVyaWMgUEhZLgo+ID4gU28sIHRoZSBkZXNpZ24g
+aXMgdGhlIGZvbGxvd2luZzoKPiA+IAo+ID4gKy0tLS0tLS0tLS0rICAgICAgICAgICstLS0tLS0t
+LS0tLS0tKyAgICAgICAgICAgICAgKy0tLS0tLS0tLSsKPiA+IHwgSERMQyBkcnYgfCA8LWRhdGEt
+PiB8IFFNQyBjaGFubmVsIHwgPC0tIFRETSAtLT4gIHwgUEVGMjI1NiB8Cj4gPiArLS0tLS0tLS0t
+LSsgICAgICAgICAgKy0tLS0tLS0tLS0tLS0rICAgICAgICAgICAgICB8ICAgICAgICAgfCA8LS0+
+IEUxCj4gPiAgICBeICAgKy0tLS0tLS0tLSsgICAgICstLS0tLS0tLS0rICAgICAgICAgICAgICAg
+ICB8ICAgICAgICAgfAo+ID4gICAgKy0+IHwgR2VuIFBIWSB8IDwtPiB8IFBFRjIyNTYgfCA8LSBs
+b2NhbCBidXMgLT4gfCAgICAgICAgIHwKPiA+ICAgICAgICArLS0tLS0tLS0tKyAgICAgfCBQSFkg
+ZHJ2IHwgICAgICAgICAgICAgICAgICstLS0tLS0tLS0rCj4gPiAgICAgICAgICAgICAgICAgICAg
+ICAgICstLS0tLS0tLS0rICAKPiAKPiBIaSBIZXJ2ZXIKPiAKPiBTb3JyeSwgaSdtIGxhdGUgdG8g
+dGhlIGNvbnZlcnNhdGlvbi4gSSdtIGxvb2tpbmcgYXQgdGhpcyBmcm9tIHR3bwo+IGRpZmZlcmVu
+dCBwZXJzcGVjdGl2ZXMuIEkgaGVscCBtYWludGFpbiBFdGhlcm5ldCBQSFlzLiBBbmQgaSBoYXZl
+Cj4gaGFja2VkIG9uIHRoZSBJRFQgODJQMjI4OCBFMS9UMS9KMSBmcmFtZXIuCj4gCj4gSSB0aGlu
+ayB0aGVyZSBpcyBhIGJsb2NrIG1pc3NpbmcgZnJvbSB0aGlzIGRpYWdyYW0uIFRoZXJlIGFwcGVh
+cnMgdG8KPiBiZSBhbiBNRkQgZHJpdmVyIGZvciB0aGUgUEVGMjI1Nj8gQXQgbGVhc3QsIGkgc2Vl
+IGFuIGluY2x1ZGUgZm9yCj4gbGludXgvbWZkL3BlZjIyNTYuaC4KCkluZGVlZCwgdGhlcmUgaXMg
+dGhlIE1GRCBkcml2ZXIgYW5kIHRoaXMgTUZEIGRyaXZlciBkb2VzIHRoZSBQRUYyMjU2CnNldHVw
+IChsaW5lIGNvbmZpZ3VyYXRpb24sIHNwZWVkLCAuLi4pLgoKPiAKPiBXaGVuIGkgbG9vayBhdCB0
+aGUgJ3BoeScgZHJpdmVyLCBpIGRvbid0IHNlZSBhbnl0aGluZyBhIHR5cGljYWwgUEhZCj4gZHJp
+dmVyIHVzZWQgZm9yIG5ldHdvcmtpbmcgd291bGQgaGF2ZS4gQSBuZXR3b3JraW5nIFBIWSBkcml2
+ZXIgb2Z0ZW4KPiBoYXMgdGhlIGFiaWxpdHkgdG8gY2hhbmdlIGJldHdlZW4gbW9kZXMsIGxpa2Ug
+U0dNSUksIFFTR01JSSwgMTBHQkFTRVIuCj4gVGhlIGVxdWl2YWxlbnQgaGVyZSB3b3VsZCBiZSBj
+aGFuZ2luZyBiZXR3ZWVuIEUxLCBUMSBhbmQgSjEuIEl0IGhhcwo+IHRoZSBhYmlsaXR5IHRvIGNo
+YW5nZSB0aGUgc3BlZWQsIDFHLCAyLjVHLCAxMEcgZXRjLiBUaGlzIGNvdWxkIGJlCj4gaW1wbGll
+ZCB2aWEgdGhlIG1vZGUsIEUxIGlzIDIuMDQ4TWJwcywgVDEgMS41NDRNYnBzLCBhbmQgaSBmb3Jn
+ZXQgd2hhdAo+IEoxIGlzLiBUaGUgUEVGMjI1NiBhbHNvIHNlZW1zIHRvIHN1cHBvcnQgRTEvVDEv
+SjEuIEhvdyBpcyBpdHMgbW9kZXMKPiBjb25maWd1cmVkPwoKQWxsIG9mIHRoZXNlIGFyZSBzZXQg
+YnkgdGhlIE1GRCBkcml2ZXIgZHVyaW5nIGl0cyBwcm9iZSgpLgpUaGUgZXhwZWN0ZWQgc2V0dGlu
+ZyBjb21lIGZyb20gc2V2ZXJhbCBwcm9wZXJ0aWVzIHByZXNlbnQgaW4gdGhlIHBlZjIyNTYKRFQg
+bm9kZS4gVGhlIGJpbmRpbmcgY2FuIGJlIGZvdW5kIGhlcmU6CiAgaHR0cHM6Ly9sb3JlLmtlcm5l
+bC5vcmcvYWxsLzIwMjMwMzI4MDkyNjQ1LjYzNDM3NS0yLWhlcnZlLmNvZGluYUBib290bGluLmNv
+bS8KCkZ1cnRoZXIgbW9yZSwgdGhlIFFNQyBIRExDIGlzIG5vdCB0aGUgb25seSBQRUYyMjU2IGNv
+bnN1bWVyLgpUaGUgUEVGMjI1NiBpcyBhbHNvIHVzZWQgZm9yIGF1ZGlvIHBhdGggKGllIGF1ZGlv
+IG92ZXIgRTEpIGFuZCBzbyB0aGUKY29uZmlndXJhdGlvbiBpcyBzaGFyZWQgYmV0d2VlbiBuZXR3
+b3JrIGFuZCBhdWRpby4gVGhlIHNldHRpbmcgY2Fubm90IGJlCmhhbmRsZSBieSB0aGUgbmV0d29y
+ayBwYXJ0IGFzIHRoZSBQRUYyMjU2IG11c3QgYmUgYXZhaWxhYmxlIGFuZCBjb3JyZWN0bHkKY29u
+ZmlndXJlZCBldmVuIGlmIHRoZSBuZXR3b3JrIHBhcnQgaXMgbm90IHByZXNlbnQuCgo+IAo+IElu
+IGZhY3QsIHRoaXMgUEhZIGRyaXZlciBkb2VzIG5vdCBzZWVtIHRvIGRvIGFueSBjb25maWd1cmF0
+aW9uIG9mIGFueQo+IHNvcnQgb24gdGhlIGZyYW1lci4gQWxsIGl0IHNlZW1zIHRvIGJlIGRvaW5n
+IGlzIHRha2Ugbm90aWZpY2F0aW9uIGZyb20KPiBvbmUgY2hhaW4gYW5kIHNlbmQgdGhlbSBvdXQg
+YW5vdGhlciBjaGFpbiEKCkNvbmZpZ3VyYXRpb24gaXMgZG9uZSBieSB0aGUgcGFyZW50IE1GRCBk
+cml2ZXIuClRoZSBQSFkgZHJpdmVyIGhhcyBub3RoaW5nIG1vcmUgdG8gZG8uCgo+IAo+IEkgYWxz
+byB3b3VuZGVyIGlmIHRoaXMgZ2V0X3N0YXR1cygpIGNhbGwgaXMgc3VmZmljaWVudC4gRG9uJ3Qg
+eW91IGFsc28KPiB3YW50IFJlZCwgWWVsbG93IGFuZCBCbHVlIGFsYXJtcz8gSXQgaXMgbm90IGp1
+c3QgdGhlIGNhcnJpZXIgaXMgZG93biwKPiBidXQgd2h5IGl0IGlzIGRvd24uCgpJIGRvbid0IG5l
+ZWQgdGhlbSBpbiBteSB1c2UgY2FzZSBidXQgaWYgbmVlZGVkIGNhbid0IHRoZXkgYmUgYWRkZWQg
+bGF0ZXI/CkFsc28sIGZyb20gdGhlIEhETEMgZGV2aWNlIHBvaW50IG9mIHZpZXcgd2hhdCBjYW4g
+YmUgZG9uZSB3aXRoIHRoZXNlIGFsYXJtcz8KCj4gCj4gT3ZlcmFsbCwgaSBkb24ndCBzZWUgd2h5
+IHlvdSB3YW50IGEgUEhZLiBXaGF0IHZhbHVlIGRvZXMgaXQgYWRkPwoKSSBuZWVkIHRvIGRldGVj
+dCBjYXJyaWVyIG9uL29mZiBhY2NvcmRpbmcgdG8gdGhlIEUxIGxpbmsgc3RhdGUuClRoZSBIRExD
+IGRyaXZlciBpcyBhIGRyaXZlciBmb3IgYSBRTUMgZGV2aWNlLgpUaGUgUU1DIGRldmljZSBwcmVz
+ZW50IGluIHNvbWUgUG93ZXJQQyBTT0Mgb2ZmZXJzIHRoZSBwb3NzaWJpbGl0eSB0byBzZW5kCmRh
+dGEgb3ZlciBhIFRETSBidXMuCkZyb20gdGhlIFFNQyBIRExDIGRyaXZlciBJIGRvbid0IHdhbnQg
+dG8gcmVmZXIgdGhlIFBFRjIyNTYgYXMgdGhlIGRyaXZlciBoYXMKbm90aGluZyB0byBkbyB3aXRo
+IHRoZSBQRUYyMjU2IGRpcmVjdGx5LgpUaGUgUU1DIEhETEMgZHJpdmVyIHNlbmQgZGF0YSB0byBh
+IFRETSBidXMgdXNpbmcgdGhlIFFNQyBkZXZpY2UuCgpUaGUgUEVGMjI1NiBpcyBhbiBpbnRlcmZh
+Y2UgaW4gdGhlIGRhdGEgcGF0aCBiZXR3ZWVuIHRoZSBRTUMgb3V0cHV0IChURE0gYnVzKSBhbmQK
+dGhlIEUxIGxpbmUuCgpXZSBzZW5kIEhETEMgb3ZlciBFMSBiZWNhdXNlIHRoZXJlIGlzIHRoaXMg
+a2luZCBvZiBpbnRlcmZhY2UgYnV0IHdlIHdvdWxkCmhhdmUgc2VudCBIRExDIG92ZXIgYW55dGhp
+bmcgZWxzZSBpZiB0aGlzIGludGVyZmFjZSB3YXMgZGlmZmVyZW50LgoKVXNpbmcgYSBQSFkgdG8g
+cmVwcmVzZW50IHRoaXMgaW50ZXJmYWNlIHdhcyBjb2hlcmVudCBmb3IgbWUuClVzaW5nIHRoZSBn
+ZW5lcmljIFBIWSBzdWJzeXN0ZW0gYWxsb3dzIHRvIGFic3RyYWN0IHRoZSBzcGVjaWZpYyBwcm92
+aWRlciAoUEVGMjI1NikKZnJvbSB0aGUgY29uc3VtZXIgKFFNQyBIRExDKS4KCkJlc3QgcmVnYXJk
+cywKSGVydsOpCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5m
+cmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9s
+aW51eC1waHkK
