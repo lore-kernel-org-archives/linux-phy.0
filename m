@@ -4,84 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 281D9C77B72
-	for <linux-phy@archiver.kernel.org>; Fri, 14 Apr 2023 16:13:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3385BC77B6E
+	for <linux-phy@archiver.kernel.org>; Fri, 14 Apr 2023 16:15:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KBjYn3BK+oVisswo43L80lg66LhRlcdiLCXzycX0inU=; b=XHDHk0WjKqr5I9
-	gCp/+AEmH8v0wZgWzbGDs2G8w/dY+ucAAFj6z/djwY6S1bmzRddIIOpDA8C6dVfUDSWQFunN4oQBA
-	qHwX9i77NJEAN1TtCvfmkVX1U9R9gKK5239eQm8QcesX4pg94ueibUYmbp0J7vArABAtFP66u/QJh
-	nLOVkBDV4+zfm2RRNIgTdu5rlgdKg6dj6Tfdvo5onMmS/YiA/gY/11H2g3qyfQJTLrpdLaQO/C0r/
-	BSpRhosO0LSvaDzTrkuziLDbSm70ZAQg0wrA/asqNIYLGUfuZCFqCFRHloC7lhHFcD3i4mvA5j1PH
-	TaSFLRsZV4A25YxJgKzA==;
+	List-Owner; bh=kkJ3X9AzxwZF2arhzNCzL+VrQ0o/SAZgl7u6EVKZ51o=; b=uDqdW6s7T1u84X
+	9YMNQBAS9tWosmNP587QPTxAnx29O0Z5IuZJSncu5jYhPZ3jrAprpjtxHCnJnax9Np/H9zo9KwJ7l
+	FVLnJx7o+FmhpVzohtdtBDTkkKcY02HZjt6O+6hhPECObt/YdcZezscj6kiMVprgmihlJTIsA2Ilz
+	CiAgnYbV8dfLBsepze8Q9Jwg3Jsn4Yw2LnkksgnHuA858e2eUQSZIduQylwR4W9iPyVNU/NV+aDGG
+	XiL7ZvF+Qs9yER2hbDyolJiOn9lR9USEM7VGyJdhv6Gbdbu2zKvI+09Hdfix2H7z3FnitZhK6aZK6
+	h+NiSvTWwngptm31ZYgQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pnM32-00A4Yh-2c;
-	Fri, 14 Apr 2023 16:13:16 +0000
-Received: from mail-ej1-x633.google.com ([2a00:1450:4864:20::633])
+	id 1pnM5c-00A5Ao-2n;
+	Fri, 14 Apr 2023 16:15:56 +0000
+Received: from vps0.lunn.ch ([156.67.10.101])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pnM2t-00A4Pv-02
+	id 1pnM5Z-00A58d-0F
 	for linux-phy@lists.infradead.org;
-	Fri, 14 Apr 2023 16:13:08 +0000
-Received: by mail-ej1-x633.google.com with SMTP id a640c23a62f3a-94a342f7c4cso432930166b.0
-        for <linux-phy@lists.infradead.org>; Fri, 14 Apr 2023 09:13:04 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=baylibre-com.20221208.gappssmtp.com; s=20221208; t=1681488783; x=1684080783;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :mime-version:subject:date:from:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=flkZrEmQ4lhBir76YpEsiit3KQbCll7hap6g9ky4XjY=;
-        b=zaTmkBAJWvJky4Aq1jB49C5WY+IgRDVMOCslR69Vl6Fgr4/MRocM/kLTVgfUS8Vc9t
-         Q5XzQKszCuzICokhmRt1Go9VJJvcH1uT6f+5rfYnMRm/VGeYBqxiP4x2NmQ1MevYDkjN
-         Lxk0CUgrBgJbq5FMC8z4GlSzvTMMDwmIo9sndS4eHwEvB5es271P2gctIkx59RCxGrjD
-         qQOHmZ/zRLOW555qQAT+JAPtnfGECgKfLCX77sAM0b2vkpi1jeX85CPnkPEabfcUueWU
-         o/6fqwlu5lZhedeQOhwirSYVKUm8EFzTq31Ybde4rBY1SDN7cNyHo866FrH2kGX024ZB
-         3Y+Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1681488783; x=1684080783;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :mime-version:subject:date:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=flkZrEmQ4lhBir76YpEsiit3KQbCll7hap6g9ky4XjY=;
-        b=bklUb0zn+T5GpN2UrRoEzDrG5mC2wK7oar1GAwrohqGLp7xARbvtigbWbe5lmIjeTA
-         ulYeUQdtYnfVaRRXkNlCgFGJ293VnGyKaCxuBvqKdKqjaKm0zMzr3G+wCHnPwsgtgGdn
-         pHbwGa7GSrYB0ab0OvxB90BxfTITQlgSvdINEfZLHNU58UMq47oUzc/HtTicT/9vr2gT
-         wgr5MLd7UWe1x6LfcMFyOCRUKYLjvzyYUCyiKsAaq2LHO9m5fRT/1I9nKl4tOut8116+
-         2u8Gp4KUsNKfTStGNNXzzdAAYeQJMXBkeb5XLk072ztZ4kA7bx1NifNiKJ9ZCL/VCBFb
-         RDNA==
-X-Gm-Message-State: AAQBX9eYpVd+Zik5rf9pOXIOC+jWzpia+yXWY26qaoBkvYyeWOlFWd/W
-	fNvzIHBJsf9XDSmGcc1RJG4AgA==
-X-Google-Smtp-Source: AKy350b2JE8Qx2Y+iWCoW/RhZBJ5V4rhMWPwFiGL7k5VHEtk/DsRY4ZLJHBMfiz8yCcBW8ZuvdtkfQ==
-X-Received: by 2002:aa7:d85a:0:b0:506:8e06:8b4b with SMTP id f26-20020aa7d85a000000b005068e068b4bmr290176eds.8.1681488783366;
-        Fri, 14 Apr 2023 09:13:03 -0700 (PDT)
-Received: from [127.0.0.1] (2a02-8440-d20f-2c76-3074-96af-9642-0003.rev.sfr.net. [2a02:8440:d20f:2c76:3074:96af:9642:3])
-        by smtp.gmail.com with ESMTPSA id h23-20020aa7c957000000b005066ca60b2csm2242687edt.63.2023.04.14.09.13.02
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 14 Apr 2023 09:13:03 -0700 (PDT)
-From: Guillaume Ranquet <granquet@baylibre.com>
-Date: Fri, 14 Apr 2023 18:07:47 +0200
-Subject: [PATCH v2 2/2] phy: mediatek: hdmi: mt8195: fix wrong pll calculus
+	Fri, 14 Apr 2023 16:15:54 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
+	s=20171124; h=In-Reply-To:Content-Disposition:Content-Type:MIME-Version:
+	References:Message-ID:Subject:Cc:To:From:Date:From:Sender:Reply-To:Subject:
+	Date:Message-ID:To:Cc:MIME-Version:Content-Type:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Content-Disposition:In-Reply-To:References;
+	bh=y77Vn1iQ2Yr8r94PJbu25E6c2t/sA9gRbZHB/9bHBWk=; b=sgynuWJ1+GOxbplFPJ2IKiq5oX
+	/0JSnWlKYR9E1aamdcGDR2pOlNQXbnqQdu1Z5TcAiXan78/lTWDYRcvX/2vTAk6OIrn9E5UjMFrD8
+	TaREFVUstQ4tCbiJYRTBJajZo4WrOzgEmroxCtNOFm1bon6dQdCmFT19UH/RGKTm5TwE=;
+Received: from andrew by vps0.lunn.ch with local (Exim 4.94.2)
+	(envelope-from <andrew@lunn.ch>)
+	id 1pnM5C-00AIdW-9F; Fri, 14 Apr 2023 18:15:30 +0200
+Date: Fri, 14 Apr 2023 18:15:30 +0200
+From: Andrew Lunn <andrew@lunn.ch>
+To: Herve Codina <herve.codina@bootlin.com>
+Cc: "David S. Miller" <davem@davemloft.net>,
+	Eric Dumazet <edumazet@google.com>,
+	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	linux-kernel@vger.kernel.org, netdev@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	Christophe Leroy <christophe.leroy@csgroup.eu>,
+	Thomas Petazzoni <thomas.petazzoni@bootlin.com>
+Subject: Re: [RFC PATCH 0/4] Add support for QMC HDLC and PHY
+Message-ID: <c99a99c5-139d-41c5-89a4-0722e0627aea@lunn.ch>
+References: <20230323103154.264546-1-herve.codina@bootlin.com>
+ <885e4f20-614a-4b8e-827e-eb978480af87@lunn.ch>
+ <20230414165504.7da4116f@bootlin.com>
 MIME-Version: 1.0
-Message-Id: <20230413-fixes-for-mt8195-hdmi-phy-v2-2-bbad62e64321@baylibre.com>
-References: <20230413-fixes-for-mt8195-hdmi-phy-v2-0-bbad62e64321@baylibre.com>
-In-Reply-To: <20230413-fixes-for-mt8195-hdmi-phy-v2-0-bbad62e64321@baylibre.com>
-To: Chun-Kuang Hu <chunkuang.hu@kernel.org>, 
- Philipp Zabel <p.zabel@pengutronix.de>, 
- Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, 
- Matthias Brugger <matthias.bgg@gmail.com>, 
- AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-Cc: dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org, 
- linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org, 
- linux-kernel@vger.kernel.org, Guillaume Ranquet <granquet@baylibre.com>
-X-Mailer: b4 0.13-dev
+Content-Disposition: inline
+In-Reply-To: <20230414165504.7da4116f@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230414_091307_089761_E832648B 
-X-CRM114-Status: GOOD (  10.99  )
+X-CRM114-CacheID: sfid-20230414_091553_111428_41F99D3A 
+X-CRM114-Status: GOOD (  32.23  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,45 +77,79 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The clock rate calculus in mtk_hdmi_pll_calc() was wrong when it has
-been replaced by 'div_u64'.
+> > When i look at the 'phy' driver, i don't see anything a typical PHY
+> > driver used for networking would have. A networking PHY driver often
+> > has the ability to change between modes, like SGMII, QSGMII, 10GBASER.
+> > The equivalent here would be changing between E1, T1 and J1. It has
+> > the ability to change the speed, 1G, 2.5G, 10G etc. This could be
+> > implied via the mode, E1 is 2.048Mbps, T1 1.544Mbps, and i forget what
+> > J1 is. The PEF2256 also seems to support E1/T1/J1. How is its modes
+> > configured?
+> 
+> All of these are set by the MFD driver during its probe().
+> The expected setting come from several properties present in the pef2256
+> DT node. The binding can be found here:
+>   https://lore.kernel.org/all/20230328092645.634375-2-herve.codina@bootlin.com/
 
-Fix the issue by multiplying the values in the denominator instead of
-dividing them.
+I'm surprised to see so much in the binding. I assume you are familiar
+with DAHDI. It allows nearly everything to be configured at
+runtime. The systems i've used allow you to select the clock
+configuration, line build out, user side vs networks side signalling
+CRC4 enables or not, etc.
 
-Fixes: 45810d486bb44 ("phy: mediatek: add support for phy-mtk-hdmi-mt8195")
-Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
----
- drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+> Further more, the QMC HDLC is not the only PEF2256 consumer.
+> The PEF2256 is also used for audio path (ie audio over E1) and so the
+> configuration is shared between network and audio. The setting cannot be
+> handle by the network part as the PEF2256 must be available and correctly
+> configured even if the network part is not present.
 
-diff --git a/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c b/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c
-index 054b73cb31ee..caa953780bee 100644
---- a/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c
-+++ b/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c
-@@ -271,7 +271,7 @@ static int mtk_hdmi_pll_calc(struct mtk_hdmi_phy *hdmi_phy, struct clk_hw *hw,
- 	 * [32,24] 9bit integer, [23,0]:24bit fraction
- 	 */
- 	pcw = div_u64(((u64)ns_hdmipll_ck) << PCW_DECIMAL_WIDTH,
--		      da_hdmitx21_ref_ck / PLL_FBKDIV_HS3);
-+		      da_hdmitx21_ref_ck * PLL_FBKDIV_HS3);
+But there is no reason why the MFD could not provide a generic PHY to
+actually configure the 'PHY'. The HDLC driver can then also use the
+generic PHY. It would make your generic PHY less 'pointless'. I'm not
+saying it has to be this way, but it is an option.
  
- 	if (pcw > GENMASK_ULL(32, 0))
- 		return -EINVAL;
-@@ -288,7 +288,7 @@ static int mtk_hdmi_pll_calc(struct mtk_hdmi_phy *hdmi_phy, struct clk_hw *hw,
- 	posdiv2 = 1;
- 
- 	/* Digital clk divider, max /32 */
--	digital_div = div_u64((u64)ns_hdmipll_ck, posdiv1 / posdiv2 / pixel_clk);
-+	digital_div = div_u64(ns_hdmipll_ck, posdiv1 * posdiv2 * pixel_clk);
- 	if (!(digital_div <= 32 && digital_div >= 1))
- 		return -EINVAL;
- 
+> > In fact, this PHY driver does not seem to do any configuration of any
+> > sort on the framer. All it seems to be doing is take notification from
+> > one chain and send them out another chain!
+> 
+> Configuration is done by the parent MFD driver.
+> The PHY driver has nothing more to do.
+> 
+> > 
+> > I also wounder if this get_status() call is sufficient. Don't you also
+> > want Red, Yellow and Blue alarms? It is not just the carrier is down,
+> > but why it is down.
+> 
+> I don't need them in my use case but if needed can't they be added later?
+> Also, from the HDLC device point of view what can be done with these alarms?
 
--- 
-2.40.0
+https://elixir.bootlin.com/linux/latest/source/Documentation/networking/ethtool-netlink.rst#L472
 
+> Requests link state information. Link up/down flag (as provided by
+> ``ETHTOOL_GLINK`` ioctl command) is provided. Optionally, extended
+> state might be provided as well. In general, extended state
+> describes reasons for why a port is down, or why it operates in some
+> non-obvious mode.
+
+The colour of the Alarm gives you an idea which end of the system has
+the problem.
+
+> > Overall, i don't see why you want a PHY. What value does it add?
+> 
+> I need to detect carrier on/off according to the E1 link state.
+
+Why not just use the MFD notifier? What is the value of a PHY driver
+translating one notifier into another?
+
+And why is the notifier specific to the PEF2256? What would happen if
+i used a analog devices DS2155, DS21Q55, and DS2156, or the IDT
+82P2281? Would each have its own notifier? And hence each would need
+its own PHY which translates one notifier into another?
+
+There are enough E1/T1/J1 framers we should have a generic API between
+the framer and the HDLC device.
+
+    Andrew
 
 -- 
 linux-phy mailing list
