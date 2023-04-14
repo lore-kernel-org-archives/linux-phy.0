@@ -4,93 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D7D4EC77B6E
-	for <linux-phy@archiver.kernel.org>; Fri, 14 Apr 2023 10:31:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EF89EC77B6F
+	for <linux-phy@archiver.kernel.org>; Fri, 14 Apr 2023 10:31:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YOkJuezdMkdFpgw8HCBBNhT/gg0I6tGaolhc9s5CgH8=; b=UbwD9IrcxVP4LO
-	p+Zg0AiNfxugA/C1LjpAv90TrQJjoa0246KBiePRzH/1Ju7k/kXsylwAbjjdilCtxd2E6k+/abbV0
-	EGTw7JNv5coivUPYEEawFn9iz9jObiH7H2DgOxyFRWxCL6ePs8mBv2P+mahddKqRLdgshVl0tAd7J
-	8e95n8KXkQ8ZRcU4NWfOOl7cPpC8lvrLLfF/Runzvl46VCDBTerc3zObzNUButZd78xmGMYtG3KFG
-	rwcbCWOuCj/rWf8dJkHTKvS5rrOEeWjxYSAC68VxJUXwtydd3bXReahXryB5Y8yRbg6Oec3yA17Ts
-	sNBCdtlSPW1q2ONrJhaQ==;
+	List-Owner; bh=t/UaRDN7dW1RsFf7wbZnnlVQAuqqt9xKqy5ueYBiGf4=; b=pBYXKH5pgSSFmF
+	I7FwoQGU9KvSNzfFWOcLby+IHn1i3BsNMCSFDQP3VO0y3F9yqssCBlntbA1gJurWAvNbLgarOM+EL
+	K2Z48dnlnWMhbn88B8oZPeMFeF1bqE5qcOjnjLR0IY4ObokZTFwvBEmsDujihMlaCsRTO5/r25l8T
+	Zqdg5F/5MB03YcnwkGtaRe77vxRV1RUb5kcV75DyGgW7q4E5Ps3TAbkJjBI76OFtDlnFVXW029Ii1
+	821oC/M4bPz6Vf+z09uC09Diur41Y3X12umqO5OzgPb87lf2jHEwNbpogUImCIJtDEdukVIClHx3g
+	FLfXhco8QpTxhMzBMqeQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pnGiW-0099gS-1R;
-	Fri, 14 Apr 2023 10:31:44 +0000
-Received: from mail-ed1-x531.google.com ([2a00:1450:4864:20::531])
+	id 1pnGij-0099oe-1d;
+	Fri, 14 Apr 2023 10:31:57 +0000
+Received: from madras.collabora.co.uk ([46.235.227.172])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pnGiT-0099eB-0S
-	for linux-phy@lists.infradead.org;
-	Fri, 14 Apr 2023 10:31:42 +0000
-Received: by mail-ed1-x531.google.com with SMTP id 4fb4d7f45d1cf-504fce3d7fbso1924577a12.2
-        for <linux-phy@lists.infradead.org>; Fri, 14 Apr 2023 03:31:40 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1681468300; x=1684060300;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=1720p3siIfGtX4Ig+Z8rM9FJYarwB+pzhTTSt4MACL8=;
-        b=P4W8iZ2w1Gh7w85Jw+AojjPgK8APjJ7qSz1fTCyoPkCa8pfiyXaWxx90phdGQQOHuu
-         bPac1TD/9gNZKaxRbz72Wunu/xHXHKFL4Cjd+Kbo52qxYaxOIcxUROS9Zy3LzFzKcr5I
-         vrNiZB9B8jI3QK3Thuhu/5A0m1jUs5B6xfgGgfbTJB7LU72BfxDmi6sw0t1l9pGk3YQp
-         jJ05crgXl9OPB3wfvTnJ0+FiJaAaNf5r2bwoioghBIUqWem/txWIR74BMuNN6nnS29eV
-         FGQJ/+bVKmWcbBYbm982gzUtSJCvXphxxoWHiJskFaVd/XvHtsbTh68neo11aAgkcmFw
-         tzaw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1681468300; x=1684060300;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=1720p3siIfGtX4Ig+Z8rM9FJYarwB+pzhTTSt4MACL8=;
-        b=FISAarMyTMLJvv3I0YrUl6e6aEIBjuImoC+2JDG2aTmH4GFgWznKhf5Fdkdad0lTNV
-         RiNQ/WwjGLl+Omo2hgUERwImscW/RzMOHwwKw1DhCzA2saQo+5yyErQ5k4qV7UgFU2m1
-         JnQwUOR8Nx5ov6IZaR11BhDl+SCnUMyzeaxVtVvE8BZB+hjFV/2ge3Wc4ezEWgrXEAVj
-         eKfTnMTT2hCy+hR//6msvmJQXqcDio8aobhy/NrXLFJxqFXu3ZyYtv9TPEYFoXV/YyYz
-         mnTgHHSf3/fCnhwiule3vOAPN9o5sXtWbtU2EPQAK1Pey2kIcmxKV4BqKt3xTxzApVpF
-         S7/w==
-X-Gm-Message-State: AAQBX9cR9xZKFEbgOthphjqNMh2L39QFB5u5bsIq0qKOXAraGcyxPtwe
-	zHAAS+K00PPlZ9KF4Fe8Fwft4Q==
-X-Google-Smtp-Source: AKy350ZIjMP6TMSw+k6xUakCFEXrjNxzNtDnPVbQjujlC0FIdzUT/htNABiisXWE6rAig7qQ68+/Ig==
-X-Received: by 2002:aa7:d947:0:b0:501:cf67:97f3 with SMTP id l7-20020aa7d947000000b00501cf6797f3mr5612068eds.25.1681468299842;
-        Fri, 14 Apr 2023 03:31:39 -0700 (PDT)
-Received: from ?IPV6:2a02:810d:15c0:828:40b9:8c57:b112:651d? ([2a02:810d:15c0:828:40b9:8c57:b112:651d])
-        by smtp.gmail.com with ESMTPSA id d25-20020a05640208d900b004fa99a22c3bsm1949428edz.61.2023.04.14.03.31.38
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 14 Apr 2023 03:31:39 -0700 (PDT)
-Message-ID: <eea67985-261f-6ce0-031e-2acf0e682375@linaro.org>
-Date: Fri, 14 Apr 2023 12:31:37 +0200
+	id 1pnGie-0099kl-36;
+	Fri, 14 Apr 2023 10:31:54 +0000
+Received: from [192.168.1.100] (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
+	(No client certificate requested)
+	(Authenticated sender: kholk11)
+	by madras.collabora.co.uk (Postfix) with ESMTPSA id CFFAF6603223;
+	Fri, 14 Apr 2023 11:31:50 +0100 (BST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1681468311;
+	bh=9+BjnTU2PKzLgcfmAc7Ppk7BV0SarnBlAnMFkT6+Sro=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=KJwTN+lqObpyJIkpZIex7p/iBPvjgDo7GjlFB6i4ud2CnlgumnXBakFwJbxOOPaKf
+	 I7XcfNXo1uqetIeW59Xf9kio1NPBIp+dUa31eV+1NlHzUHV+X8jlbMizLf0ZkCj4cG
+	 wLULtn9Hi4FA7ibenylvQxbPNqe63u6l9qInS5bKlCirFJjnUeOc1binABMSV05Gdc
+	 PssCdJKYuHONBH44iwItSFCsnLY0fjAmASNUFzNBTEVMVs9LbN+LFyrLQPDCeWv9tp
+	 0mTHqHHK4C5xopoi1Sz22iRu7o7r5dg5oQB3+8fmOveKuosMjYHeYUUArk1BgZZsEg
+	 izMllf2WwSBCw==
+Message-ID: <ada769e0-0141-634f-3753-eb3a50f0eee3@collabora.com>
+Date: Fri, 14 Apr 2023 12:31:47 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.9.1
-Subject: Re: [PATCH 01/27] dt-bindings: pwm: Add compatible for MediaTek
- MT6795
+Subject: Re: [PATCH 1/2] phy: mediatek: hdmi: mt8195: fix uninitialized
+ variable usage in pll_calc
 Content-Language: en-US
-To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
- matthias.bgg@gmail.com
-Cc: p.zabel@pengutronix.de, airlied@gmail.com, daniel@ffwll.ch,
- robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
- jassisinghbrar@gmail.com, chunfeng.yun@mediatek.com, vkoul@kernel.org,
- kishon@kernel.org, thierry.reding@gmail.com, u.kleine-koenig@pengutronix.de,
- chunkuang.hu@kernel.org, ck.hu@mediatek.com, jitao.shi@mediatek.com,
- xinlei.lee@mediatek.com, houlong.wei@mediatek.com,
- dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+To: Guillaume Ranquet <granquet@baylibre.com>,
+ Chun-Kuang Hu <chunkuang.hu@kernel.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>
+Cc: dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org,
  linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
- linux-pwm@vger.kernel.org, kernel@collabora.com,
- phone-devel@vger.kernel.org, ~postmarketos/upstreaming@lists.sr.ht
-References: <20230412112739.160376-1-angelogioacchino.delregno@collabora.com>
- <20230412112739.160376-2-angelogioacchino.delregno@collabora.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20230412112739.160376-2-angelogioacchino.delregno@collabora.com>
+ linux-kernel@vger.kernel.org, kernel test robot <lkp@intel.com>
+References: <20230413-fixes-for-mt8195-hdmi-phy-v1-0-b8482458df0d@baylibre.com>
+ <20230413-fixes-for-mt8195-hdmi-phy-v1-1-b8482458df0d@baylibre.com>
+From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+In-Reply-To: <20230413-fixes-for-mt8195-hdmi-phy-v1-1-b8482458df0d@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230414_033141_175154_39A234C9 
-X-CRM114-Status: UNSURE (   7.13  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230414_033153_130494_45272413 
+X-CRM114-Status: GOOD (  17.22  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,23 +78,65 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 12/04/2023 13:27, AngeloGioacchino Del Regno wrote:
-> Add a compatible string for MediaTek Helio X10 MT6795's display PWM
-> block: this is the same as MT8173.
+Il 13/04/23 14:46, Guillaume Ranquet ha scritto:
+> The ret variable in mtk_hdmi_pll_calc() was used unitialized as reported
+> by the kernel test robot.
 > 
-> Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+> Fix the issue by removing the variable altogether and testing out the
+> return value of mtk_hdmi_pll_set_hw()
+> 
+> Fixes: 45810d486bb44 ("phy: mediatek: add support for phy-mtk-hdmi-mt8195")
+> Reported-by: kernel test robot <lkp@intel.com>
+> Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
+> ---
+>   drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c | 7 +++----
+>   1 file changed, 3 insertions(+), 4 deletions(-)
+> 
+> diff --git a/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c b/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c
+> index abfc077fb0a8..e10da6c4147e 100644
+> --- a/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c
+> +++ b/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c
+> @@ -213,7 +213,7 @@ static int mtk_hdmi_pll_calc(struct mtk_hdmi_phy *hdmi_phy, struct clk_hw *hw,
+>   	u64 tmds_clk, pixel_clk, da_hdmitx21_ref_ck, ns_hdmipll_ck, pcw;
+>   	u8 txpredivs[4] = { 2, 4, 6, 12 };
+>   	u32 fbkdiv_low;
+> -	int i, ret;
+> +	int i;
+>   
+>   	pixel_clk = rate;
+>   	tmds_clk = pixel_clk;
+> @@ -292,10 +292,9 @@ static int mtk_hdmi_pll_calc(struct mtk_hdmi_phy *hdmi_phy, struct clk_hw *hw,
+>   	if (!(digital_div <= 32 && digital_div >= 1))
+>   		return -EINVAL;
+>   
+> -	mtk_hdmi_pll_set_hw(hw, PLL_PREDIV, fbkdiv_high, fbkdiv_low,
+> +	if (mtk_hdmi_pll_set_hw(hw, PLL_PREDIV, fbkdiv_high, fbkdiv_low,
+>   			    PLL_FBKDIV_HS3, posdiv1, posdiv2, txprediv,
+> -			    txposdiv, digital_div);
+> -	if (ret)
+> +			    txposdiv, digital_div))
+>   		return -EINVAL;
+>   
+
+I don't get why we're returning -EINVAL unconditionally in the first place, here.
+
+Function mtk_hdmi_pll_set_hw() should return zero or a negative error number: in
+that case, the previous *intention* was fine, so this should be
+
+	ret = mtk_hdmi_pll_set_hw(....)
+	if (ret)
+		return ret;
+
+	return 0;
 
 
-Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-
-Best regards,
-Krzysztof
-
+Regards,
+Angelo
 
 -- 
 linux-phy mailing list
