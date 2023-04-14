@@ -4,77 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AD9BAC77B78
-	for <linux-phy@archiver.kernel.org>; Fri, 14 Apr 2023 15:25:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8DB47C77B6E
+	for <linux-phy@archiver.kernel.org>; Fri, 14 Apr 2023 15:43:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uJVh1jZ7IonhFSJon7scdhgodp9PANXb38vdzmpbvX0=; b=KQSJs9MP0vSwE+
-	O+jNerEA74DcDDEO9UoqVOeanqZAAAKbuebHRenCMD33zMjWe0LIZVmLKWVr/0OKVfKuLWF0UAN8i
-	AwyqfKIV0F0m6dSeNZ5JML47JvJ/djTwK9NX4K4eEckSJFXyePZbXeMkP8jpheOIZjas/XrqXTfaY
-	4k7nlxaK6bhwHywTCVdBCKAMOZVaGvy/N0j+klnPdOXLoNAIaEi7Zu4VcVSW5ap7kuM8jyp4liBOl
-	0jLwhuZVrBckzEkIGqtD1pdGkBwrOOYn5TAW4B20l+eP+WW5Uco4Puj0jZT6DY3sxQ/G07zdGbMYc
-	CNbqAMI8CdCL/l9U5gwg==;
+	List-Owner; bh=TpWEsUGz4FvzJ5rL1e4lvKdGCV2gaGkKo67r0pX5bbk=; b=RYGdopRi/Jpbvq
+	hCY8oibnZtjwh/ErcW7Sf+4SINdMpLtYum+bv4SAd3mBZt5dui6z0Pniz98L5sBHOWDhgHWlvRKpL
+	y5XwsJ4EVK7sQEk2Q7XfS+1xikUTV7hPkFtYAEoJu6fZgGsRUOxPQAyCbi5w1phZVz49CWwFZmjwu
+	G8VqnOybjYI+1f0Hc2ciH22o4BrDMbJ33B/aJV9sPvlNpRDoyer234OAOYrTBSSZ4Dg1VACEAhtlT
+	cW259TNiFGh5mMLjITlb6shszXbd1h2zH9SnzR1w9ibTXyLKdTUr3apVojZMweVUNvEPFpipYytJn
+	bhbqOvHJ6n1JT0u4NitQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pnLIN-009wyC-18;
-	Fri, 14 Apr 2023 15:25:03 +0000
-Received: from mx.sberdevices.ru ([45.89.227.171])
+	id 1pnLag-009zfG-0S;
+	Fri, 14 Apr 2023 15:43:58 +0000
+Received: from mail-wm1-x334.google.com ([2a00:1450:4864:20::334])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pnLI2-009wjE-36;
-	Fri, 14 Apr 2023 15:24:44 +0000
-Received: from s-lin-edge02.sberdevices.ru (localhost [127.0.0.1])
-	by mx.sberdevices.ru (Postfix) with ESMTP id C972E5FD28;
-	Fri, 14 Apr 2023 18:24:35 +0300 (MSK)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sberdevices.ru;
-	s=mail; t=1681485875;
-	bh=lYTwixrqbd9SStEuaH+MOse4j7UjK4ooo6t7FaqVmeA=;
-	h=From:To:Subject:Date:Message-ID:MIME-Version:Content-Type;
-	b=bF8ixADUwckraKrGckmTlpKLzIPe2taZI4ZDH36oDfoCLnHmMQY+Q6IX6ktbuH9Fj
-	 b3PkRnF9hGxtw7tAn5kdAb2tx4+RGui2lvuWv6LCMzF2WzRRA0XV1acTu9Yll2uj3K
-	 iSex5JgZ05czVfj3KPq3hNQUPWMNL/knmpGQYQtp1Y5xTKCmrfszqQ9iqAhBAa7ncG
-	 WIqmXhWhjbPmxzig7uJFhw8KNl3HycaQgxyCZbrtCY4abqCmAYcaVo7IJ/rDVGC6rL
-	 ntgemjifCH6Wypv+RuFyZn2wMTbHzWOY+sxLGz4WsuDB0S8ylOEtwdZIjfa9eg+RNh
-	 Ojv7Qq5tMTO7A==
-Received: from S-MS-EXCH01.sberdevices.ru (S-MS-EXCH01.sberdevices.ru [172.16.1.4])
-	by mx.sberdevices.ru (Postfix) with ESMTP;
-	Fri, 14 Apr 2023 18:24:35 +0300 (MSK)
-From: Dmitry Rokosov <ddrokosov@sberdevices.ru>
-To: <gregkh@linuxfoundation.org>, <robh+dt@kernel.org>,
-	<krzysztof.kozlowski+dt@linaro.org>, <neil.armstrong@linaro.org>,
-	<khilman@baylibre.com>, <jbrunet@baylibre.com>,
-	<martin.blumenstingl@googlemail.com>, <mturquette@baylibre.com>,
-	<vkoul@kernel.org>, <kishon@kernel.org>, <hminas@synopsys.com>,
-	<Thinh.Nguyen@synopsys.com>
-CC: <yue.wang@amlogic.com>, <hanjie.lin@amlogic.com>, <kernel@sberdevices.ru>,
-	<rockosov@gmail.com>, <linux-usb@vger.kernel.org>,
-	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-	<linux-arm-kernel@lists.infradead.org>, <linux-amlogic@lists.infradead.org>,
-	<linux-phy@lists.infradead.org>, Dmitry Rokosov <ddrokosov@sberdevices.ru>
-Subject: [PATCH v1 5/5] arm64: dts: meson: a1: support USB controller in OTG mode
-Date: Fri, 14 Apr 2023 18:24:23 +0300
-Message-ID: <20230414152423.19842-6-ddrokosov@sberdevices.ru>
-X-Mailer: git-send-email 2.36.0
-In-Reply-To: <20230414152423.19842-1-ddrokosov@sberdevices.ru>
-References: <20230414152423.19842-1-ddrokosov@sberdevices.ru>
+	id 1pnLab-009zcz-1b;
+	Fri, 14 Apr 2023 15:43:54 +0000
+Received: by mail-wm1-x334.google.com with SMTP id he13so15604464wmb.2;
+        Fri, 14 Apr 2023 08:43:51 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20221208; t=1681487030; x=1684079030;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=YIbNvnDJkbKIDG9W40wHYyYsAJM6e0/VxMfL2/QQhNY=;
+        b=QXpobAtYXuuja8eAnUitUYYdJFXqaConoab7s3RSbwHCOgxUoVFacXpnQJBcpA+JQb
+         5N5tvC74yxQMqIqvqsop1XuZ4P+M7IaoRPqSbiY/1c2NeOfnuh57dPnBNRYtuvpOuOYQ
+         d4ovTXDqN0R67vvA11ZrTveMDsLXR57NkWxMv0PtrbwpGTIEWGxabu7b6Kc4D1VC/yVL
+         ftBSnh4ajvZ0aKZhcFea4GRL9sEGf22K7vufTD/WbjkwkdvB2NQi/q4ApF1oXBGDeC/I
+         rZ1ZyK37G8LoSePqAYSqaAqTRIwbVHk0FT/40JaT1ZT4QJ2nRUPTFVGP/TsKf+MDR3mA
+         gvvQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1681487030; x=1684079030;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=YIbNvnDJkbKIDG9W40wHYyYsAJM6e0/VxMfL2/QQhNY=;
+        b=jwZ0eqAB1EK+HjbMu1YdeVsgGsIn9bAeLt6Ai2Whd3Uo/JABrrPtFbo7kULbCrG71P
+         8hiPglrtbFouI6g7Z8JAu3oHdy8VzZEFsombXUqEcBFnNpNTW8w8hELi91wg8NkVr9hY
+         jx8paoYNv/0DMPRXURsJUmNXv2sAgH5nH6dg3E2dkqfmskXAYMUcIddmLn/nTpRyynjo
+         rk3q7DBcN1rbutqcc93k7zI2COVAol1ipiZgh5bwV1pKt3k3VuzU7M3mvUBrOjI0AfnT
+         g6BiAZFmWUcX5nCzfRGbH4+XxwfRP3DoPnUHhdqDa//JMmT9QWHX2Itz6y3ChDPl4CfC
+         VbDg==
+X-Gm-Message-State: AAQBX9fnQsvKJpbv+0hZ1iBAyvQytesn8MywRqWbQgRDf8bPs61mgiba
+	xX6ZKeDwUvEmH3upCU1jWGo=
+X-Google-Smtp-Source: AKy350a/b5Qg3ihzSVs/aHO9rCG1Yz359ZRWoVzo+MEmLSGdlhob8RT2eGiZbxTyHZHZZ5H4owZGGA==
+X-Received: by 2002:a1c:770d:0:b0:3ed:95a5:3257 with SMTP id t13-20020a1c770d000000b003ed95a53257mr5261946wmi.2.1681487029517;
+        Fri, 14 Apr 2023 08:43:49 -0700 (PDT)
+Received: from [192.168.2.177] ([207.188.167.132])
+        by smtp.gmail.com with ESMTPSA id r4-20020a05600c458400b003f0a090d798sm6510629wmo.18.2023.04.14.08.43.47
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 14 Apr 2023 08:43:48 -0700 (PDT)
+Message-ID: <3242b862-0e7c-b7e9-14cd-3fbcbb87ba04@gmail.com>
+Date: Fri, 14 Apr 2023 17:43:46 +0200
 MIME-Version: 1.0
-X-Originating-IP: [172.16.1.6]
-X-ClientProxiedBy: S-MS-EXCH01.sberdevices.ru (172.16.1.4) To
- S-MS-EXCH01.sberdevices.ru (172.16.1.4)
-X-KSMG-Rule-ID: 4
-X-KSMG-Message-Action: clean
-X-KSMG-AntiSpam-Status: not scanned, disabled by settings
-X-KSMG-AntiSpam-Interceptor-Info: not scanned
-X-KSMG-AntiPhishing: not scanned, disabled by settings
-X-KSMG-AntiVirus: Kaspersky Secure Mail Gateway, version 1.1.2.30, bases: 2023/04/14 08:08:00 #21104846
-X-KSMG-AntiVirus-Status: Clean, skipped
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.6.1
+Subject: Re: [PATCH] phy: mediatek: fix returning garbage
+Content-Language: en-US
+To: Tom Rix <trix@redhat.com>, chunkuang.hu@kernel.org,
+ p.zabel@pengutronix.de, chunfeng.yun@mediatek.com, vkoul@kernel.org,
+ kishon@kernel.org, angelogioacchino.delregno@collabora.com,
+ nathan@kernel.org, ndesaulniers@google.com, granquet@baylibre.com
+Cc: dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
+ linux-kernel@vger.kernel.org, llvm@lists.linux.dev
+References: <20230414122253.3171524-1-trix@redhat.com>
+From: Matthias Brugger <matthias.bgg@gmail.com>
+In-Reply-To: <20230414122253.3171524-1-trix@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230414_082443_363137_0D19E520 
-X-CRM114-Status: UNSURE (   8.23  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230414_084353_539142_5964C051 
+X-CRM114-Status: GOOD (  13.73  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,108 +92,47 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Amlogic A1 SoC family has USB2.0 controller based on dwc2 and dwc3
-heads. It supports otg/host/peripheral modes.
 
-Signed-off-by: Yue Wang <yue.wang@amlogic.com>
-Signed-off-by: Hanjie Lin <hanjie.lin@amlogic.com>
-Signed-off-by: Dmitry Rokosov <ddrokosov@sberdevices.ru>
----
- arch/arm64/boot/dts/amlogic/meson-a1.dtsi | 59 +++++++++++++++++++++++
- 1 file changed, 59 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/amlogic/meson-a1.dtsi b/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
-index ae7d39cff07a..02af0aac6780 100644
---- a/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
-+++ b/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
-@@ -8,6 +8,8 @@
- #include <dt-bindings/gpio/meson-a1-gpio.h>
- #include <dt-bindings/clock/amlogic,a1-pll-clkc.h>
- #include <dt-bindings/clock/amlogic,a1-clkc.h>
-+#include <dt-bindings/power/meson-a1-power.h>
-+#include <dt-bindings/reset/amlogic,meson-a1-reset.h>
- 
- / {
- 	compatible = "amlogic,a1";
-@@ -169,6 +171,17 @@ gpio_intc: interrupt-controller@0440 {
- 				amlogic,channel-interrupts =
- 					<49 50 51 52 53 54 55 56>;
- 			};
-+
-+			usb2_phy1: phy@4000 {
-+				compatible = "amlogic,a1-usb2-phy";
-+				clocks = <&clkc CLKID_USB_PHY_IN>;
-+				clock-names = "xtal";
-+				reg = <0x0 0x4000 0x0 0x60>;
-+				resets = <&reset RESET_USBPHY>;
-+				reset-names = "phy";
-+				#phy-cells = <0>;
-+				power-domains = <&pwrc PWRC_USB_ID>;
-+			};
- 		};
- 
- 		gic: interrupt-controller@ff901000 {
-@@ -192,6 +205,52 @@ spifc: spi@fd000400 {
- 			#size-cells = <0>;
- 			status = "disabled";
- 		};
-+
-+		usb: usb@fe004400 {
-+			status = "disabled";
-+			compatible = "amlogic,meson-a1-usb-ctrl";
-+			reg = <0x0 0xfe004400 0x0 0xa0>;
-+			interrupts = <GIC_SPI 88 IRQ_TYPE_LEVEL_HIGH>;
-+			#address-cells = <2>;
-+			#size-cells = <2>;
-+			ranges;
-+
-+			clocks = <&clkc CLKID_USB_CTRL>,
-+				 <&clkc CLKID_USB_BUS>,
-+				 <&clkc CLKID_USB_CTRL_IN>;
-+			clock-names = "usb_ctrl", "usb_bus", "xtal_usb_ctrl";
-+			resets = <&reset RESET_USBCTRL>;
-+			reset-name = "usb_ctrl";
-+
-+			dr_mode = "otg";
-+
-+			phys = <&usb2_phy1>;
-+			phy-names = "usb2-phy1";
-+
-+			dwc2: usb@ff500000 {
-+				compatible = "amlogic,meson-a1-usb", "snps,dwc2";
-+				reg = <0x0 0xff500000 0x0 0x40000>;
-+				interrupts = <GIC_SPI 89 IRQ_TYPE_LEVEL_HIGH>;
-+				phys = <&usb2_phy1>;
-+				phy-names = "usb2_phy";
-+				clocks = <&clkc CLKID_USB_PHY>;
-+				clock-names = "otg";
-+				dr_mode = "peripheral";
-+				g-rx-fifo-size = <192>;
-+				g-np-tx-fifo-size = <128>;
-+				g-tx-fifo-size = <128 128 16 16 16>;
-+			};
-+
-+			dwc3: usb@ff400000 {
-+				compatible = "snps,dwc3";
-+				reg = <0x0 0xff400000 0x0 0x100000>;
-+				interrupts = <GIC_SPI 90 IRQ_TYPE_LEVEL_HIGH>;
-+				dr_mode = "host";
-+				snps,dis_u2_susphy_quirk;
-+				snps,quirk-frame-length-adjustment = <0x20>;
-+				snps,parkmode-disable-ss-quirk;
-+			};
-+		};
- 	};
- 
- 	timer {
--- 
-2.36.0
+On 14/04/2023 14:22, Tom Rix wrote:
+> clang reports
+> drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c:298:6: error: variable
+>    'ret' is uninitialized when used here [-Werror,-Wuninitialized]
+>          if (ret)
+>              ^~~
+> ret should have been set by the preceding call to mtk_hdmi_pll_set_hw.
+> 
+> Fixes: 45810d486bb4 ("phy: mediatek: add support for phy-mtk-hdmi-mt8195")
+> Signed-off-by: Tom Rix <trix@redhat.com>
 
+Reviewed-by: Matthias Brugger <matthias.bgg@gmail.com>
+
+> ---
+>   drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c | 6 +++---
+>   1 file changed, 3 insertions(+), 3 deletions(-)
+> 
+> diff --git a/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c b/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c
+> index abfc077fb0a8..c63294e451d6 100644
+> --- a/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c
+> +++ b/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c
+> @@ -292,9 +292,9 @@ static int mtk_hdmi_pll_calc(struct mtk_hdmi_phy *hdmi_phy, struct clk_hw *hw,
+>   	if (!(digital_div <= 32 && digital_div >= 1))
+>   		return -EINVAL;
+>   
+> -	mtk_hdmi_pll_set_hw(hw, PLL_PREDIV, fbkdiv_high, fbkdiv_low,
+> -			    PLL_FBKDIV_HS3, posdiv1, posdiv2, txprediv,
+> -			    txposdiv, digital_div);
+> +	ret = mtk_hdmi_pll_set_hw(hw, PLL_PREDIV, fbkdiv_high, fbkdiv_low,
+> +				  PLL_FBKDIV_HS3, posdiv1, posdiv2, txprediv,
+> +				  txposdiv, digital_div);
+>   	if (ret)
+>   		return -EINVAL;
+>   
 
 -- 
 linux-phy mailing list
