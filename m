@@ -4,92 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 87848C77B70
-	for <linux-phy@archiver.kernel.org>; Fri, 14 Apr 2023 08:46:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 044B9C77B6F
+	for <linux-phy@archiver.kernel.org>; Fri, 14 Apr 2023 09:44:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3TtYAu/0YUS1FcTGz1ZpGl/lM5yc+yBl0wgZy9iHMoA=; b=LAfj5BWWQBeXS5
-	+gRLy9Fzgk4seDcVzj1TrLcPSIxkqlaF7ycsz1po8rNJf/LEQc3jUVdDPAUYW7sauQZOoAtgNr4V/
-	XTfc41Ee9oN6l+8FgVrro27jtCPoY7QqWnDHDmL042zGoNMnuzPHH0J+cKeNM+Ghqeiye+8sF0uqp
-	McokXz1TMT7ZkLnQVHcb2V8Vzx5x8wpS8y5IYYMZnPWvdUC3rFeeVMs0fiKWLGEZ8rIu/zk5AKFli
-	FDFs/oPv36ujfxTHVqEfm+Va1bmBMzQ1BzYGtYazCvCvHN+UQH+oSEvFpLZS4mroiqxxx0rZoQbai
-	/Yk5E5xhajtJr1XJjDXQ==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Au9elvymGNoevXvC7N8Q7HAH+Iu/aLJNV0CE5zvQPPU=; b=i0O5/xE6HN33Km
+	RiTHic4YPEtKq4Hr6NhhXfrKEqh3VNpqpxmKAh4bmjzqbp1iWe6q5I0/pFREeteMkpNL+VWRdvpcn
+	LS98J/oBs3B8QGyRDzB03fbKuZJRSvgUX7+YGpbmaz4ZLurW8mcBNdmvj4yw91IOd6Su6OT9tgK+p
+	/rTvM60WGsgD9hj559iBUTiLEvCJ5KHvW88/76hK6ieRYPMO9Vz7Hj6gOrgsdohk7rwUVL8cg9mbD
+	T6u3U6H4z+MTqCZG10NrNpmkybs4+0/7FTwJwKzdsycQoomEsX7jFT1mZSnoIqfXfepJlaw0odd1C
+	m7CY73iRwfF5JBJcuk8w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pnF4f-008m8N-0B;
-	Fri, 14 Apr 2023 08:46:29 +0000
-Received: from mail-ej1-x62c.google.com ([2a00:1450:4864:20::62c])
+	id 1pnFz1-008uQw-21;
+	Fri, 14 Apr 2023 09:44:43 +0000
+Received: from mail-vs1-xe36.google.com ([2607:f8b0:4864:20::e36])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pnF4b-008m65-1l
+	id 1pnFyz-008uPt-19
 	for linux-phy@lists.infradead.org;
-	Fri, 14 Apr 2023 08:46:26 +0000
-Received: by mail-ej1-x62c.google.com with SMTP id ud9so43636897ejc.7
-        for <linux-phy@lists.infradead.org>; Fri, 14 Apr 2023 01:46:25 -0700 (PDT)
+	Fri, 14 Apr 2023 09:44:42 +0000
+Received: by mail-vs1-xe36.google.com with SMTP id f10so4167267vsv.13
+        for <linux-phy@lists.infradead.org>; Fri, 14 Apr 2023 02:44:39 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1681461984; x=1684053984;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=wl3Btv+PwNxWwtewM+dP8afRzoBywyqwx59JWQAoqUA=;
-        b=xp9uWY+38EX8iXKhDxwuf/8P6/uzkYqJiZSNi9vbejNbCSdunJ1Q9htZtm13dmHSwZ
-         eB2ixQjldDhVwyuix6HrldPkLC68my3bBZD1+VnwEJYIEqao34hsl9FKzJhaqbncEL3k
-         /KmdhyM5haVIHZSXu9JatbD4YRave9CEPpq90sLNHZvf9sW6wBpDPzjaSX+WnuQwT6Us
-         silZOQPudvwxoBZsEswx2cagU4lJtHv+hGWoQ6PsUugjiC08giCkVUTO/lm19lCPilgW
-         E1f808oQegKlCwXB4Qm2/bYW5g5Cs/6JKEFvAraCZ2Qt5rX7g9UAPhvFrP8zZfj27pql
-         c0MA==
+        d=linaro.org; s=google; t=1681465479; x=1684057479;
+        h=cc:to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=A9qtR8MfLyUro92cvio9eras0UzllKy7Sr+yZKv+eGI=;
+        b=nhby+tqpg7YJ3N4OPK8KreZkbQg6ksdB/JTX68tRFhDyAoY8mLfE8+n4fUhA1he3SH
+         syCBC1bzBBLpYlc3A6zC35W3pKoXnhoZAkQFOHA/EBh8KWjR/hpHC7ViDP61qU78nVsA
+         X1p10pbqhmbWwu2QEn9P5BQVleAflNQwm7V1IzntisfmnxN/M7cEMZCwJVQ9TMocTEHo
+         V9MmnYyG91LKOtQl49ZnItrsYJRFZY45kRDhK9g6hVxsu0PsjFTlEPrINxJbMYMkp/gO
+         2r+Cldw2TYaPuiQZ++ihVAXcfiReaeZ1SA6hYyME9IASPr7mnD1wwXGdLfp1kA9c/Llt
+         V31g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1681461984; x=1684053984;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=wl3Btv+PwNxWwtewM+dP8afRzoBywyqwx59JWQAoqUA=;
-        b=AIrQj4PRADvyOvWSb9PjgqZR6ptgE/tivVqEkTCETO3zFhsMXd/CiIePGmBgIqU9Wq
-         f2tkCh2RfUPc1vfCNNrFPXfNnz2Rp376r5e37zZsPZSxXY+I46fXLyS7Qv9iJiyirz7x
-         fFRrykHEa7DQbGZW4qI8ey0dFTc6g79GWKG2F97x0LJXy1cm0HHl5BDMvwbRuU+HVJNm
-         kGaquzeHdIcCh9J6wqbjN9zjGcTyIabE+Wmh/W9fJSKatzWrZ64yT6qLRhsMpJ+SHga9
-         3eqA0UdEaVav5sKeCczDb/E10Cfo2eQO/rr3+rlRJIdd8fBn0sCWZ6hdGrO/YTVIKiB0
-         XMiw==
-X-Gm-Message-State: AAQBX9e5tqwb+R/yjZYN0s4673/3ADKuum2+2HySbQU9LX5M/sFIK+8U
-	3cyWAyA1Gi/2UQYyooYKyBhkcg==
-X-Google-Smtp-Source: AKy350Zv7NbHUiKpmnlHoLbQyKG9G9zKPHkXSd3wH7bVQzjdvDDsKYYR9UPKlRsG7vTDe9V2aEOkog==
-X-Received: by 2002:a17:907:25c9:b0:94e:ef09:544c with SMTP id ae9-20020a17090725c900b0094eef09544cmr659459ejc.10.1681461984189;
-        Fri, 14 Apr 2023 01:46:24 -0700 (PDT)
-Received: from ?IPV6:2a02:810d:15c0:828:8a60:6b0f:105a:eefb? ([2a02:810d:15c0:828:8a60:6b0f:105a:eefb])
-        by smtp.gmail.com with ESMTPSA id h7-20020a170906584700b0094e597f0e4dsm2087436ejs.121.2023.04.14.01.46.22
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 14 Apr 2023 01:46:23 -0700 (PDT)
-Message-ID: <6fc26e38-ac45-b4a3-32f0-2bae686371db@linaro.org>
-Date: Fri, 14 Apr 2023 10:46:22 +0200
+        d=1e100.net; s=20221208; t=1681465479; x=1684057479;
+        h=cc:to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=A9qtR8MfLyUro92cvio9eras0UzllKy7Sr+yZKv+eGI=;
+        b=gCBcGS68HwyNvqTiE6dhUWrHaRKP2QbU+gu1g3if9e6ET1XChAJoFYZw9GnAQAZ0Q8
+         EtlqsE/afEa0/iXyEGWyMtm2dNnlrUxq9zLtTiaKWkVPM42S7/xIguaJ/zsUad0XIWsR
+         ZnbxSAnqt4/f0u+Z6/plOv5TYc9BDwWHsoGV42w4DNLjIxOv6+6hL7lbM3bRHc83iNwr
+         CoFgmjtOHl0c8k/GKEcPQmtJPywlcPeVfKY2uCqogeFqmwpzZ4ajVlDThvU332FdwwS6
+         bvpMv0a7tDZ2WehBzbIIHo1d33nET4kt2L4b7TNiydEA5cT0LsMDmw56lJ6E479+eHhB
+         FpPQ==
+X-Gm-Message-State: AAQBX9ddZ85TGa9RBr32Vfwq3T2AfO5+TTc+659HHCWTZZwQ0Hp06c0S
+	JGTQdJpZ0cJbLqdlY6am2FB7gJeWVzgodqIJPS91mg==
+X-Google-Smtp-Source: AKy350bKBwBmi6cLGqm9/lBs1aIURMXTFZrrJBXiy+LtGEE/iALnQZQfMf/HVW2YEzuMSo6l8V/a9yUF8SDrFi8kr64=
+X-Received: by 2002:a67:cb8d:0:b0:42e:3b77:b77 with SMTP id
+ h13-20020a67cb8d000000b0042e3b770b77mr1289462vsl.1.1681465478942; Fri, 14 Apr
+ 2023 02:44:38 -0700 (PDT)
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.9.1
-Subject: Re: [PATCH 22/27] arm64: dts: mediatek: mt6795: Copyright header
- additions
-Content-Language: en-US
-To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
- matthias.bgg@gmail.com
-Cc: p.zabel@pengutronix.de, airlied@gmail.com, daniel@ffwll.ch,
- robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
- jassisinghbrar@gmail.com, chunfeng.yun@mediatek.com, vkoul@kernel.org,
- kishon@kernel.org, thierry.reding@gmail.com, u.kleine-koenig@pengutronix.de,
- chunkuang.hu@kernel.org, ck.hu@mediatek.com, jitao.shi@mediatek.com,
- xinlei.lee@mediatek.com, houlong.wei@mediatek.com,
- dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
- linux-pwm@vger.kernel.org, kernel@collabora.com,
- phone-devel@vger.kernel.org, ~postmarketos/upstreaming@lists.sr.ht
-References: <20230412112739.160376-1-angelogioacchino.delregno@collabora.com>
- <20230412112739.160376-23-angelogioacchino.delregno@collabora.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20230412112739.160376-23-angelogioacchino.delregno@collabora.com>
+From: Naresh Kamboju <naresh.kamboju@linaro.org>
+Date: Fri, 14 Apr 2023 15:14:27 +0530
+Message-ID: <CA+G9fYu4o0-ZKSthi7kdCjz_kFazZS-rn17Z2NPz3=1Oayr9cw@mail.gmail.com>
+Subject: next: allmodconfig: phy-mtk-hdmi-mt8195.c:298:6: error: variable
+ 'ret' is uninitialized when used here [-Werror,-Wuninitialized]
+To: open list <linux-kernel@vger.kernel.org>, lkft-triage@lists.linaro.org, 
+	llvm@lists.linux.dev, linux-phy@lists.infradead.org, 
+	"moderated list:ARM/Mediatek SoC..." <linux-mediatek@lists.infradead.org>
+Cc: Guillaume Ranquet <granquet@baylibre.com>, Vinod Koul <vkoul@kernel.org>, Kishon <kishon@ti.com>, 
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, Netdev <netdev@vger.kernel.org>, 
+	chunfeng.yun@mediatek.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230414_014625_582562_BE36EEE9 
-X-CRM114-Status: GOOD (  13.61  )
+X-CRM114-CacheID: sfid-20230414_024441_405867_F3BB06B1 
+X-CRM114-Status: UNSURE (   1.78  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,34 +89,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 12/04/2023 13:27, AngeloGioacchino Del Regno wrote:
-> I have added more than 800 lines to this devicetree: adding myself to
-> the copyright header.
-> 
-> Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-> ---
->  arch/arm64/boot/dts/mediatek/mt6795.dtsi | 3 +++
->  1 file changed, 3 insertions(+)
-> 
-> diff --git a/arch/arm64/boot/dts/mediatek/mt6795.dtsi b/arch/arm64/boot/dts/mediatek/mt6795.dtsi
-> index 29ca9a7bf0b3..a4c950b65006 100644
-> --- a/arch/arm64/boot/dts/mediatek/mt6795.dtsi
-> +++ b/arch/arm64/boot/dts/mediatek/mt6795.dtsi
-> @@ -2,6 +2,9 @@
->  /*
->   * Copyright (c) 2015 MediaTek Inc.
->   * Author: Mars.C <mars.cheng@mediatek.com>
-> + *
-> + * Copyright (C) 2023 Collabora Ltd.
-> + *                    AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Following build warnings / errors noticed while building allmodconfig for arm64
+with clang-16 on Linux next-20230414.
 
-Copyright is a result of significant changes, thus it is a part of
-commit(s) making these changes. Adding copyrights in separate commits
-looks like you are spreading them unjustified. Squash it.
+Reported-by: Linux Kernel Functional Testing <lkft@linaro.org>
 
-Best regards,
-Krzysztof
+drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c:298:6: error: variable
+'ret' is uninitialized when used here [-Werror,-Wuninitialized]
+        if (ret)
+            ^~~
+drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c:216:12: note: initialize
+the variable 'ret' to silence this warning
+        int i, ret;
+                  ^
+                   = 0
+1 error generated.
 
+
+--
+Linaro LKFT
+https://lkft.linaro.org
 
 -- 
 linux-phy mailing list
