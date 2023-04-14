@@ -4,44 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CEB40C77B6E
-	for <linux-phy@archiver.kernel.org>; Fri, 14 Apr 2023 15:24:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4614FC77B72
+	for <linux-phy@archiver.kernel.org>; Fri, 14 Apr 2023 15:24:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QeXX9t1j4a/r0kuilBlNgdFEfHhNGOBj4OQD9htxKhU=; b=q4mag+OEpfA30a
-	VV4YQ0IajTGbxrnkh/geivc898FRjHKqevMfxsSFIROQyI8LZcNvuVGnaW0UqOKUu+1IHCPn7FVZp
-	+8a1sm2b05qzmvk18Hcmzhu31J6ajgTqa3QOTnPZIJg/jEO0NKTu4rtUvuzwPfMr20SFPht5uuCDw
-	zEal41aUgq13+/P/gQ9L6o3VI308vYVIGYHxcU9CtwQBSpqLGwMlRDSuURmjmoHVMGFKCVH6NxFG9
-	3c5+mJ21RObOgzAnutR7AOCFa2J7WrQ6jh77lynx/qS5DZ27NRZyuDKvAmRgVnHMUA2Z+BATWKswT
-	tTIo8ECcoe8swLxhgLGg==;
+	List-Owner; bh=5r2S87e6k21D30oQ2PY+fQhzX9tcdeTNKUQStkJcKmA=; b=UQOLHLw5yC/Zvo
+	p92ZjZrU17sQH74iXvim2SJlf+PpS3jkUUt86y9ZwIuFMu8e2dJEoDx5Pv6b+KAxDvWR/1I23u5W+
+	DelwW9R60AWkPPgTsHqHw0JzvSN+EwUDSFceouTD1jZ7fR28SnXTLxaFBwiaeGk/Jpy9SeovSco6Z
+	WFaJpjlgdnrkGNrJHhg8rJ+MEHcQf4mErREuHeTN+HmBGnjnFs1P57VHzrna8FmxpXyvfKFbKnQNY
+	xTuls39zFlwmO9rj3A/e76x1nd5wgULMoTNcGCgdMT5K1ersrNV5b+FWJU7iXWHQJVSA9rf9aE7cX
+	oozZbl/Y4oaBd0BN/AZw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pnLI6-009wma-1N;
+	id 1pnLI6-009wml-2D;
 	Fri, 14 Apr 2023 15:24:46 +0000
 Received: from mx.sberdevices.ru ([45.89.227.171])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pnLHz-009wdv-2Z;
+	id 1pnLHz-009weC-2e;
 	Fri, 14 Apr 2023 15:24:41 +0000
 Received: from s-lin-edge02.sberdevices.ru (localhost [127.0.0.1])
-	by mx.sberdevices.ru (Postfix) with ESMTP id 1D0375FD24;
-	Fri, 14 Apr 2023 18:24:33 +0300 (MSK)
+	by mx.sberdevices.ru (Postfix) with ESMTP id ECF2C5FD27;
+	Fri, 14 Apr 2023 18:24:34 +0300 (MSK)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sberdevices.ru;
-	s=mail; t=1681485873;
-	bh=tOUyWscI9lZ1BfORK8wKAfGeDsR5jeAkMWXUSzV4nOo=;
+	s=mail; t=1681485875;
+	bh=LsFSCOE/U7ctFiRSO+kttWX/RvhA2tL+4PMkcrQ5e54=;
 	h=From:To:Subject:Date:Message-ID:MIME-Version:Content-Type;
-	b=CFdpljegFDGexcztw33NhE658VcGlcFo5wn3igYeJFqCtORsOzU1iJZtNx5OimR/Y
-	 yrWTJo1YWhhrl+k6uGaY0UtI+OpMNNpWiDZoxhjzFUJ/Q5PK+Ra57awx4f5TUZNIzv
-	 1ouylhk4YsGKFNyAtBKR2dLW1xkSnUEP9FnyRkFofutwcV4uyDLEZIAAY1l3cWXehw
-	 hd6oIkmEoGKt4L2uEmlsUdSK5/mVTzLdzekjD/fDlr7Dit+h1uDMHIYZEoZfb6LqtS
-	 ZLcSfn2SSLUPzZ5jCA/DCJi9HoDnbTYfRaukxs5vN3AGDjRiYc7J0mF1jkLj8R2oFx
-	 p2KNLorzVL5zQ==
+	b=DCPYUaMz60Nl/RmT7yM88Yzy3adQ6G3ZPztlvKLMMHmWigHQ74VVmrsOIRibpLc2m
+	 cCwojrhnuzPzkEay4O5INDE2OsrP+FNrLfxgBV+GDOfP9YpUYQSuyX2p5yMux2crDp
+	 8srpJotp+JwjAzegvx1/WjvvuR/MlcKPrgfEZZ04+XLMSuCRHiENWA9jIfWIrOAa9m
+	 eQJ/Mho4V+V6Hk4yCrseev6BCxZyc0+0vwTxFX2mJLXmGUnw9NZ8aOGK4xByKUNVnI
+	 M2uVFDtZkSCjSzLx4V2L9OoWsk7v9ogaueGA+/bEeK4rF/W7tTGLfnJBSRu0g6UX8T
+	 tfik05VQ2pe1A==
 Received: from S-MS-EXCH01.sberdevices.ru (S-MS-EXCH01.sberdevices.ru [172.16.1.4])
 	by mx.sberdevices.ru (Postfix) with ESMTP;
-	Fri, 14 Apr 2023 18:24:33 +0300 (MSK)
+	Fri, 14 Apr 2023 18:24:34 +0300 (MSK)
 From: Dmitry Rokosov <ddrokosov@sberdevices.ru>
 To: <gregkh@linuxfoundation.org>, <robh+dt@kernel.org>,
 	<krzysztof.kozlowski+dt@linaro.org>, <neil.armstrong@linaro.org>,
@@ -54,9 +54,9 @@ CC: <yue.wang@amlogic.com>, <hanjie.lin@amlogic.com>, <kernel@sberdevices.ru>,
 	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
 	<linux-arm-kernel@lists.infradead.org>, <linux-amlogic@lists.infradead.org>,
 	<linux-phy@lists.infradead.org>, Dmitry Rokosov <ddrokosov@sberdevices.ru>
-Subject: [PATCH v1 1/5] phy: amlogic: during USB PHY clkin obtaining, enable it
-Date: Fri, 14 Apr 2023 18:24:19 +0300
-Message-ID: <20230414152423.19842-2-ddrokosov@sberdevices.ru>
+Subject: [PATCH v1 4/5] usb: dwc3-meson-g12a: support OTG switch
+Date: Fri, 14 Apr 2023 18:24:22 +0300
+Message-ID: <20230414152423.19842-5-ddrokosov@sberdevices.ru>
 X-Mailer: git-send-email 2.36.0
 In-Reply-To: <20230414152423.19842-1-ddrokosov@sberdevices.ru>
 References: <20230414152423.19842-1-ddrokosov@sberdevices.ru>
@@ -72,8 +72,8 @@ X-KSMG-AntiPhishing: not scanned, disabled by settings
 X-KSMG-AntiVirus: Kaspersky Secure Mail Gateway, version 1.1.2.30, bases: 2023/04/14 08:08:00 #21104846
 X-KSMG-AntiVirus-Status: Clean, skipped
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230414_082440_033165_E12F9ADA 
-X-CRM114-Status: GOOD (  11.76  )
+X-CRM114-CacheID: sfid-20230414_082440_035424_3C63B8AC 
+X-CRM114-Status: GOOD (  10.91  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,30 +90,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Previously, all Amlogic boards used the XTAL clock as the USB PHY input
-clock, and it did not need to be enabled as it was the default board
-clock. However, in new Amlogic SoCs such as the A1 family, USB PHY uses
-a gated clock, so it is necessary to enable this gated clock during
-probing.
+From now, the Amlogic A1 USB controller is capable of switching between
+host and gadget modes, based on the status of the OTG_ID signal or
+by manual usb role changing.
 
 Signed-off-by: Dmitry Rokosov <ddrokosov@sberdevices.ru>
 ---
- drivers/phy/amlogic/phy-meson-g12a-usb2.c | 2 +-
+ drivers/usb/dwc3/dwc3-meson-g12a.c | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/phy/amlogic/phy-meson-g12a-usb2.c b/drivers/phy/amlogic/phy-meson-g12a-usb2.c
-index 9d1efa0d9394..26b99fbe1026 100644
---- a/drivers/phy/amlogic/phy-meson-g12a-usb2.c
-+++ b/drivers/phy/amlogic/phy-meson-g12a-usb2.c
-@@ -315,7 +315,7 @@ static int phy_meson_g12a_usb2_probe(struct platform_device *pdev)
- 	if (IS_ERR(priv->regmap))
- 		return PTR_ERR(priv->regmap);
+diff --git a/drivers/usb/dwc3/dwc3-meson-g12a.c b/drivers/usb/dwc3/dwc3-meson-g12a.c
+index b282ad0e69c6..10469b95deb9 100644
+--- a/drivers/usb/dwc3/dwc3-meson-g12a.c
++++ b/drivers/usb/dwc3/dwc3-meson-g12a.c
+@@ -242,7 +242,7 @@ static const struct dwc3_meson_g12a_drvdata g12a_drvdata = {
+ };
  
--	priv->clk = devm_clk_get(dev, "xtal");
-+	priv->clk = devm_clk_get_enabled(dev, "xtal");
- 	if (IS_ERR(priv->clk))
- 		return PTR_ERR(priv->clk);
- 
+ static const struct dwc3_meson_g12a_drvdata a1_drvdata = {
+-	.otg_switch_supported = false,
++	.otg_switch_supported = true,
+ 	.clks = meson_a1_clocks,
+ 	.num_clks = ARRAY_SIZE(meson_a1_clocks),
+ 	.phy_names = meson_a1_phy_names,
 -- 
 2.36.0
 
